@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.widget.AKVerticalGestureHandler;
 import com.taobao.android.order.bundle.widget.OffsetBodyWrapper;
@@ -117,7 +117,7 @@ public class hyx implements OffsetBodyWrapper.a {
                 String optString = jSONObject.optJSONObject("css") == null ? null : jSONObject.getJSONObject("css").optString("backGroundColor");
                 if (hyk.d()) {
                     Drawable drawable = this.f.getResources().getDrawable(R.drawable.babel_body_bg);
-                    if ((drawable instanceof LayerDrawable) && !TextUtils.isEmpty(optString)) {
+                    if ((drawable instanceof LayerDrawable) && !StringUtils.isEmpty(optString)) {
                         LayerDrawable layerDrawable = (LayerDrawable) drawable;
                         try {
                             int parseColor = Color.parseColor(optString);

@@ -2,7 +2,7 @@ package com.taobao.android.processors;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.jump.JumpAbility;
 import tb.kge;
@@ -38,7 +38,7 @@ public class k implements com.taobao.android.nav.e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("873c91c1", new Object[]{this, intent, dVar})).booleanValue();
         }
-        if (intent != null && (data = intent.getData()) != null && !data.isOpaque() && TextUtils.equals(data.getQueryParameter(com.taobao.android.detail.wrapper.nav.c.STDPOP_NAV_MODE), com.taobao.android.detail.wrapper.nav.c.STDPOP_MODE_VALUE)) {
+        if (intent != null && (data = intent.getData()) != null && !data.isOpaque() && StringUtils.equals(data.getQueryParameter(com.taobao.android.detail.wrapper.nav.c.STDPOP_NAV_MODE), com.taobao.android.detail.wrapper.nav.c.STDPOP_MODE_VALUE)) {
             dVar.c(JumpAbility.JUMP_ABILITY_FLOATING_WINDOW);
         }
         return true;

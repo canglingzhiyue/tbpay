@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.service.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -163,7 +163,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8bb6538e", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str) || obj == null) {
+        } else if (StringUtils.isEmpty(str) || obj == null) {
         } else {
             this.f.put(str, obj);
         }
@@ -203,10 +203,10 @@ public class d {
             return (String) ipChange.ipc$dispatch("e424ba30", new Object[]{this});
         }
         JSONObject c = c();
-        if (c != null && !TextUtils.isEmpty(c.getString("identifier"))) {
+        if (c != null && !StringUtils.isEmpty(c.getString("identifier"))) {
             this.i = c.getString("identifier");
         }
-        if (TextUtils.isEmpty(this.i) && d() != null) {
+        if (StringUtils.isEmpty(this.i) && d() != null) {
             this.i = d().key;
         }
         return this.i;

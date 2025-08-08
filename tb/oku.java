@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public class oku {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2c168fcd", new Object[]{this, bArr, str, str2, str3});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 String.format("dealCommandData serverID = %s, content = %s", str3, str);
                 jhg a2 = jhc.a().a(bArr, str, str2, str3);

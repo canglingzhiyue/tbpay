@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.FileProvider;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import tb.kge;
@@ -62,7 +62,7 @@ public class c {
             try {
                 if (context.getApplicationInfo().targetSdkVersion >= 24 && Build.VERSION.SDK_INT >= 24) {
                     String str = f1613a;
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = context.getPackageName() + ".interactProvider";
                     }
                     return FileProvider.getUriForFile(context, str, file);

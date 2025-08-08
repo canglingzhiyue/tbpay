@@ -1,7 +1,7 @@
 package com.taobao.accs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.asp.APreferencesManager;
@@ -87,18 +87,18 @@ public final class ACCSManager {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("93254468", new Object[]{context});
         }
-        if (TextUtils.isEmpty(mDefaultAppkey)) {
+        if (StringUtils.isEmpty(mDefaultAppkey)) {
             ALog.e(TAG, "old interface!!, please AccsManager.setAppkey() first!", new Object[0]);
             String b = o.b(context, Constants.SP_KEY_DEFAULT_APPKEY, null);
             mDefaultAppkey = b;
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 try {
                     mDefaultAppkey = SecurityGuardManager.getInstance(context).getStaticDataStoreComp().getAppKeyByIndex(0, null);
                 } catch (Throwable th) {
                     ALog.e(TAG, "getDefaultAppkey", th, new Object[0]);
                 }
             }
-            if (TextUtils.isEmpty(mDefaultAppkey)) {
+            if (StringUtils.isEmpty(mDefaultAppkey)) {
                 mDefaultAppkey = "0";
             }
         }
@@ -110,7 +110,7 @@ public final class ACCSManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7c1b5aea", new Object[]{context, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ALog.i(TAG, "setDefaultConfig", Constants.KEY_CONFIG_TAG, str);
             mDefaultConfigTag = str;
@@ -127,7 +127,7 @@ public final class ACCSManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("73478e79", new Object[]{context, str, str2, str3, iAppReceiver});
-        } else if (TextUtils.isEmpty(mDefaultAppkey)) {
+        } else if (StringUtils.isEmpty(mDefaultAppkey)) {
             throw new RuntimeException("old interface!!, please AccsManager.setAppkey() first!");
         } else {
             o.a();
@@ -160,7 +160,7 @@ public final class ACCSManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("82ad1531", new Object[]{context, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(mDefaultAppkey)) {
+        } else if (StringUtils.isEmpty(mDefaultAppkey)) {
             throw new RuntimeException("old interface!!, please AccsManager.setAppkey() first!");
         } else {
             getManagerImpl(context).bindUser(context, str, z);
@@ -399,7 +399,7 @@ public final class ACCSManager {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("6ad17e12", new Object[]{context, str, str2});
         }
-        if (context == null || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str2)) {
             ALog.e(TAG, "getAccsInstance param null", Constants.KEY_CONFIG_TAG, str2);
             return null;
         }
@@ -454,7 +454,7 @@ public final class ACCSManager {
         try {
             String string = APreferencesManager.getSharedPreferences(context, Constants.SP_FILE_NAME, 0).getString("appkey", null);
             ALog.i(TAG, "getAppkey:" + string, new Object[0]);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return string.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
             }
             return null;

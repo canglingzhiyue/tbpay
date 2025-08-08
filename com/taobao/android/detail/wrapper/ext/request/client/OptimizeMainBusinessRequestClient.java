@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.request.client;
 import android.app.Activity;
 import android.content.Context;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.spindle.stage.b;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -162,7 +162,7 @@ public class OptimizeMainBusinessRequestClient extends MtopRequestClient<MainReq
             ipChange.ipc$dispatch("7aa9dc19", new Object[]{this, new Integer(i), mtopResponse, baseOutDo, obj});
             return;
         }
-        if (!TextUtils.isEmpty(this.mTraceId)) {
+        if (!StringUtils.isEmpty(this.mTraceId)) {
             MainRequestParams mainRequestParams = this.mMainRequestParams;
             traceSuccessEvent(mainRequestParams != null ? mainRequestParams.mItemNumId : "", this.mTraceId, mtopResponse);
         }

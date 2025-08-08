@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.preload.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -106,7 +106,7 @@ public class PreloadWeexServiceImpl implements IPreloadWeexService {
             return;
         }
         String weexLoadUrl = getWeexLoadUrl();
-        if (!sjt.b(this.mFluidContext) || TextUtils.isEmpty(weexLoadUrl)) {
+        if (!sjt.b(this.mFluidContext) || StringUtils.isEmpty(weexLoadUrl)) {
             return;
         }
         updatePreloadAsyncWeexInstanceFlag();

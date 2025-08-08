@@ -1,7 +1,7 @@
 package com.alipay.mobile.monitor.track.spm.merge;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.behavor.Behavor;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.alipay.mobile.monitor.track.spm.SpmLogCator;
@@ -146,7 +146,7 @@ public enum MergeCenter {
             } else if (mergeTracker == null || mergeTracker.getBehavorBuilder() == null) {
             } else {
                 Behavor build = mergeTracker.getBehavorBuilder().build();
-                if (TextUtils.isEmpty(build.getSeedID()) || TextUtils.isEmpty(build.getPageId())) {
+                if (StringUtils.isEmpty(build.getSeedID()) || StringUtils.isEmpty(build.getPageId())) {
                     MergeCenter.this.g.commitTracker(mergeTracker);
                     SpmLogCator.debug(MergeCenter.this.f5765a, "execute behavorKey is null. ");
                     return;

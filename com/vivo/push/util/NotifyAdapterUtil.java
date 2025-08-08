@@ -5,7 +5,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.vivo.push.f.u;
 import com.vivo.push.model.InsideNotificationItem;
@@ -75,7 +75,7 @@ public class NotifyAdapterUtil {
         u.d(TAG, "pushNotification");
         initAdapter(context);
         int notifyMode = NotifyUtil.getNotifyDataAdapter(context).getNotifyMode(insideNotificationItem);
-        if (!TextUtils.isEmpty(insideNotificationItem.getPurePicUrl()) && list != null && list.size() > 1 && list.get(1) != null) {
+        if (!StringUtils.isEmpty(insideNotificationItem.getPurePicUrl()) && list != null && list.size() > 1 && list.get(1) != null) {
             notifyMode = 1;
         }
         if (notifyMode == 2) {

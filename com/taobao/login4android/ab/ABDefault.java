@@ -1,6 +1,6 @@
 package com.taobao.login4android.ab;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ErrorConstant;
 import com.ali.user.mobile.info.AppInfo;
 import com.alibaba.fastjson.JSON;
@@ -45,10 +45,10 @@ public class ABDefault {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e64c4313", new Object[]{str, str2, str3})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return ErrorConstant.ERROR_IO_EXCEPTION;
         }
         try {
@@ -118,7 +118,7 @@ public class ABDefault {
         }
         LoginTLogAdapter.trace(TAG, "getHashCode() called with: utdid = [" + str + "], testKey = [" + str2 + "], needRandom = [" + z + "], expDo = [" + abtestExpDo + riy.ARRAY_END_STR);
         if (z) {
-            if (!TextUtils.isEmpty(abtestExpDo.testKey)) {
+            if (!StringUtils.isEmpty(abtestExpDo.testKey)) {
                 str2 = abtestExpDo.testKey;
             }
             if (str.length() > 16) {

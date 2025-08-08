@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -252,10 +252,10 @@ public class kqu {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this});
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             sb.append(this.d);
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             sb.append(" \n ");
             sb.append(this.c);
         }

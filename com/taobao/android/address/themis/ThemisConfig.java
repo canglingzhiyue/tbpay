@@ -3,7 +3,7 @@ package com.taobao.android.address.themis;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.address.f;
 import com.taobao.android.nav.Nav;
@@ -36,17 +36,17 @@ public class ThemisConfig {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.equals(str, SCENE_MANAGER) || TextUtils.equals(str, SCENE_SELECT)) {
+        if (StringUtils.equals(str, SCENE_MANAGER) || StringUtils.equals(str, SCENE_SELECT)) {
             c = efe.c("isAddressMgrUseWeex2");
-        } else if (TextUtils.equals(str, "change")) {
+        } else if (StringUtils.equals(str, "change")) {
             c = efe.c("isAddressChangeUserWeex");
-        } else if (TextUtils.equals(str, "cart")) {
+        } else if (StringUtils.equals(str, "cart")) {
             c = efe.c("isAddressCartUseWeex2");
-        } else if (TextUtils.equals(str, SCENE_LBS_LIST)) {
+        } else if (StringUtils.equals(str, SCENE_LBS_LIST)) {
             c = efe.c("isAddressLbsUserWeex2");
-        } else if (TextUtils.equals(str, "purchase")) {
+        } else if (StringUtils.equals(str, "purchase")) {
             c = efe.c("isAddressPurchaseWeex2");
-        } else if (TextUtils.equals(str, SCENE_TMALLMARKET)) {
+        } else if (StringUtils.equals(str, SCENE_TMALLMARKET)) {
             c = efe.c("isAddressTmallMarketWeex2");
         } else {
             return efe.c("isAddressUseWeex2_" + str);
@@ -65,9 +65,9 @@ public class ThemisConfig {
             return (String) ipChange.ipc$dispatch("7cbf62c1", new Object[]{activity, str, str2, new Integer(i), bundle});
         }
         String a2 = a(str, str2);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             Nav.from(activity).withFlags(i).withExtras(bundle).toUri(gvl.a(activity, a2));
-            if ((TextUtils.equals(str, SCENE_MANAGER) || TextUtils.equals(str, SCENE_SELECT)) && efe.e()) {
+            if ((StringUtils.equals(str, SCENE_MANAGER) || StringUtils.equals(str, SCENE_SELECT)) && efe.e()) {
                 activity.overridePendingTransition(R.anim.address_slide_in_from_right, R.anim.address_fade_out);
             }
         }
@@ -87,15 +87,15 @@ public class ThemisConfig {
             sb.append("bp.m.taobao.com/");
         }
         sb.append("app/vip/receiver-address-weex2/");
-        if (TextUtils.equals(str, SCENE_MANAGER)) {
+        if (StringUtils.equals(str, SCENE_MANAGER)) {
             sb.append("lists?voiceMode=true&isUnfrequent=true&pageType=1");
-        } else if (TextUtils.equals(str, SCENE_SELECT)) {
+        } else if (StringUtils.equals(str, SCENE_SELECT)) {
             sb.append("lists?voiceMode=true&isUnfrequent=true&pageType=0");
-        } else if (TextUtils.equals(str, "change")) {
+        } else if (StringUtils.equals(str, "change")) {
             sb.append("change?wx_opaque=0&is_loading=0");
-        } else if (TextUtils.equals(str, SCENE_LBS_LIST)) {
+        } else if (StringUtils.equals(str, SCENE_LBS_LIST)) {
             sb.append("lbs-list?voiceMode=true");
-        } else if (TextUtils.equals(str, "cart")) {
+        } else if (StringUtils.equals(str, "cart")) {
             sb.append("lists?wx_statusbar_hidden=true&wx_opaque=0&is_loading=0&isNewBuy=true&uniVessel=true&bizId=iCart");
         } else {
             sb.append("lists?wx_statusbar_hidden=true&wx_opaque=0&is_loading=0&isUnfrequent=true&pageType=0&bizId=");
@@ -104,7 +104,7 @@ public class ThemisConfig {
         sb.append("&wh_weex=true&weex_mode=dom&wx_navbar_hidden=true&x-ssr=true");
         String b = efe.b(str, sb.toString());
         String c = efe.c(b, "addressClientScene=" + str + "&" + str2);
-        return (TextUtils.equals(str, SCENE_MANAGER) || TextUtils.equals(str, SCENE_SELECT)) ? efe.a(f.a(), c) : c;
+        return (StringUtils.equals(str, SCENE_MANAGER) || StringUtils.equals(str, SCENE_SELECT)) ? efe.a(f.a(), c) : c;
     }
 
     public static boolean b(String str) {
@@ -113,7 +113,7 @@ public class ThemisConfig {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
         String c = c(str);
-        return TextUtils.equals("iCart", c) || TextUtils.equals("purchase", c) || TextUtils.equals(SCENE_TMALLMARKET, c);
+        return StringUtils.equals("iCart", c) || StringUtils.equals("purchase", c) || StringUtils.equals(SCENE_TMALLMARKET, c);
     }
 
     public static String c(String str) {

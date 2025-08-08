@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -29,7 +29,7 @@ public class lpq extends dlg {
         if (ipChange instanceof IpChange) {
             return (dkx) ipChange.ipc$dispatch("1c5b757e", new Object[]{this, dlhVar, dleVar, dllVar});
         }
-        if (TextUtils.isEmpty(dlhVar.c("content"))) {
+        if (StringUtils.isEmpty(dlhVar.c("content"))) {
             ldf.d("HomepageToastAbility", "tip is null");
             return new dla();
         }

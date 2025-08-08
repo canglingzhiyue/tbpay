@@ -3,7 +3,7 @@ package com.ali.user.mobile.login.presenter;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.helper.SDKExceptionHelper;
@@ -215,12 +215,12 @@ public class UserLoginPresenter extends BaseLoginPresenter {
         } else {
             final HashMap hashMap = new HashMap();
             ArrayList arrayList = new ArrayList();
-            if (!TextUtils.isEmpty(mtopFoundPasswordResponseData.mobileLoginUrl)) {
+            if (!StringUtils.isEmpty(mtopFoundPasswordResponseData.mobileLoginUrl)) {
                 String string = this.mViewer.getBaseActivity().getResources().getString(R.string.aliuser_find_pwd_phone_hint, StringUtil.dataMasking(mtopFoundPasswordResponseData.secMobile));
                 hashMap.put(string, mtopFoundPasswordResponseData.mobileLoginUrl);
                 arrayList.add(string);
             }
-            if (!TextUtils.isEmpty(mtopFoundPasswordResponseData.passwordFindUrl)) {
+            if (!StringUtils.isEmpty(mtopFoundPasswordResponseData.passwordFindUrl)) {
                 String string2 = this.mViewer.getBaseActivity().getResources().getString(R.string.aliuser_alert_findpwd);
                 hashMap.put(string2, mtopFoundPasswordResponseData.passwordFindUrl);
                 arrayList.add(string2);
@@ -241,7 +241,7 @@ public class UserLoginPresenter extends BaseLoginPresenter {
                             ipChange2.ipc$dispatch("7e49304d", new Object[]{this, dialogInterface, new Integer(i)});
                         } else if (UserLoginPresenter.this.mViewer == null || !UserLoginPresenter.this.mViewer.isActive()) {
                         } else {
-                            boolean equals = TextUtils.equals(UserLoginPresenter.this.mViewer.getBaseActivity().getResources().getString(R.string.aliuser_cancel), strArr[i]);
+                            boolean equals = StringUtils.equals(UserLoginPresenter.this.mViewer.getBaseActivity().getResources().getString(R.string.aliuser_cancel), strArr[i]);
                             String str4 = UTConstant.PageName.UT_PAGE_HISTORY_LOGIN;
                             if (equals) {
                                 UserTrackAdapter.control(str4, "Button-ForgetPwd-Cancel");

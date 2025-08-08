@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.business;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.common.LiveItem;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ public class i extends com.taobao.taolive.sdk.business.b {
         itemActionQueryRequest.itemId = String.valueOf(liveItem.itemId);
         itemActionQueryRequest.recordId = liveItem.extendVal.secKillRecordId;
         itemActionQueryRequest.itemActionData = liveItem.itemActionData;
-        if (!TextUtils.isEmpty(liveItem.asac)) {
+        if (!StringUtils.isEmpty(liveItem.asac)) {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("asac", liveItem.asac);
             itemActionQueryRequest.asac = liveItem.asac;

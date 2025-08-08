@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.lab.comfrm.aura.INeedContainer;
 import com.taobao.message.lab.comfrm.core.Action;
@@ -35,7 +35,7 @@ public class UpdateStateEventHandler implements EventHandler {
             return;
         }
         String stringFromData = ActionExtKt.getStringFromData(action, "updateActionName");
-        if (TextUtils.isEmpty(stringFromData)) {
+        if (StringUtils.isEmpty(stringFromData)) {
             stringFromData = event.getName();
         }
         Action build = new Action.Build(stringFromData).data(event.getData()).context(event.getContext()).build();

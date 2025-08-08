@@ -3,7 +3,7 @@ package com.etao.feimagesearch.album;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.capture.scan.ScanFromEnum;
 import com.etao.feimagesearch.capture.scan.ScanMode;
@@ -90,7 +90,7 @@ public class a {
             return;
         }
         cot.c("_scancode_AlbumPreprocessor", "preProcess path:" + str + ", pssource:" + str3);
-        if (str == null || TextUtils.isEmpty(str)) {
+        if (str == null || StringUtils.isEmpty(str)) {
             cot.b("_scancode_AlbumPreprocessor", "path is null");
             return;
         }
@@ -151,7 +151,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (C0207a) ipChange.ipc$dispatch("2a914284", new Object[]{this, str});
         }
-        if (this.f6486a != null && !TextUtils.isEmpty(str) && Objects.equals(this.f6486a.a(), str)) {
+        if (this.f6486a != null && !StringUtils.isEmpty(str) && Objects.equals(this.f6486a.a(), str)) {
             return this.f6486a;
         }
         return null;

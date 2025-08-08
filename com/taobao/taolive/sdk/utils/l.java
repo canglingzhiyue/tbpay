@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import tb.kge;
@@ -137,7 +137,7 @@ public class l {
         StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (i > 0) {
                     stringBuffer.append(c);
                 }

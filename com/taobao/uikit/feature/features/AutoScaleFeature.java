@@ -3,7 +3,7 @@ package com.taobao.uikit.feature.features;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public class AutoScaleFeature extends AbsFeature<TextView> implements LayoutCall
         }
         int width = (getHost().getWidth() - getHost().getPaddingLeft()) - getHost().getPaddingRight();
         String charSequence = getHost().getText().toString();
-        if (width <= 0 || TextUtils.isEmpty(charSequence)) {
+        if (width <= 0 || StringUtils.isEmpty(charSequence)) {
             return;
         }
         Paint paint = new Paint(getHost().getPaint());

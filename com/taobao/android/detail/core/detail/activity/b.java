@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.IBinder;
 import android.support.v4.app.DialogFragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -982,7 +982,7 @@ public class b implements j, d {
             return (com.taobao.android.trade.locator.callback.a) ipChange.ipc$dispatch("29902195", new Object[]{this, str});
         }
         i.d(TAG, "locator id " + str);
-        if (!TextUtils.isEmpty(str) && (nestedScrollContainer = this.f9420a) != null && (scrollChildList = nestedScrollContainer.getScrollChildList()) != null) {
+        if (!StringUtils.isEmpty(str) && (nestedScrollContainer = this.f9420a) != null && (scrollChildList = nestedScrollContainer.getScrollChildList()) != null) {
             for (int i = 0; i < scrollChildList.size(); i++) {
                 if (str.equals(scrollChildList.get(i).f())) {
                     if (s.b()) {

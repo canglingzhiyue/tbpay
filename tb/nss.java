@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -78,7 +78,7 @@ public abstract class nss<BEAN extends BaseCellBean> extends a<BEAN> {
             return;
         }
         String jSONString = jSONObject.toJSONString();
-        if (TextUtils.isEmpty(jSONString)) {
+        if (StringUtils.isEmpty(jSONString)) {
             k.a("CellAdapterParser", "beanStr is empty");
             return;
         }

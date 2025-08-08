@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -71,23 +71,23 @@ public final class ntk {
         JSONObject jSONObject = dynamicCardBean.mOriginData;
         String string = jSONObject.getString("recedItems");
         String string2 = jSONObject.getString("recedItem");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.b.setParam("recedItems", string);
-        } else if (!TextUtils.isEmpty(string2)) {
+        } else if (!StringUtils.isEmpty(string2)) {
             this.b.addParam("recedItems", string2);
         }
         int b = d.b(jSONObject.getString("position"), -1);
-        if (TextUtils.equals(jSONObject.getString("insertType"), AgooConstants.MESSAGE_POPUP)) {
+        if (StringUtils.equals(jSONObject.getString("insertType"), AgooConstants.MESSAGE_POPUP)) {
             b(dynamicCardBean);
         } else if (b >= 0) {
             a(b, commonSearchResult2, dynamicCardBean);
         } else {
             String itemId = jSONObject.getString("itemId");
             JSONObject b2 = a.b(jSONObject, "info");
-            if (b2 != null && TextUtils.isEmpty(itemId)) {
+            if (b2 != null && StringUtils.isEmpty(itemId)) {
                 itemId = b2.getString("itemId");
             }
-            if (TextUtils.isEmpty(itemId)) {
+            if (StringUtils.isEmpty(itemId)) {
                 return;
             }
             q.a((Object) itemId, "itemId");
@@ -206,7 +206,7 @@ public final class ntk {
                     return;
                 }
                 BaseCellBean cell = baseSearchResult.getCell(i);
-                if (TextUtils.equals(cell.cardType, "item") && TextUtils.equals(cell.itemId, str)) {
+                if (StringUtils.equals(cell.cardType, "item") && StringUtils.equals(cell.itemId, str)) {
                     RecyclerView.Adapter adapter = partnerRecyclerView.getAdapter();
                     if (!(adapter instanceof TRecyclerView.HeaderViewAdapter)) {
                         adapter = null;

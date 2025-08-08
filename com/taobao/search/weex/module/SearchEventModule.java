@@ -2,7 +2,7 @@ package com.taobao.search.weex.module;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.inputmethod.InputMethodManager;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -166,7 +166,7 @@ public class SearchEventModule extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8a3afb65", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.b(TAG, "event为空");
         } else if (!checkInstanceAvailable()) {
             q.b(TAG, str + ": instance不支持");

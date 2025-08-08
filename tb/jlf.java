@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
@@ -31,7 +31,7 @@ public class jlf extends jku {
         if (ipChange instanceof IpChange) {
             return (jlf) ipChange.ipc$dispatch("e2617f04", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@foreachQuery")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@foreachQuery")) {
             return null;
         }
         return new jlf(str);
@@ -51,7 +51,7 @@ public class jlf extends jku {
                 for (String str : queryParameterNames) {
                     if (a2 == null || !a2.contains(str)) {
                         String queryParameter = b.getQueryParameter(str);
-                        if (!TextUtils.isEmpty(queryParameter)) {
+                        if (!StringUtils.isEmpty(queryParameter)) {
                             String encode = Uri.encode(queryParameter);
                             jkq.a(jku.TAG, "origin value = " + queryParameter + "; encode value = " + encode);
                             jSONObject.put(str, (Object) encode);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.DWContext;
@@ -77,7 +77,7 @@ public class kca implements kcd {
                 DWTimelineObject dWTimelineObject = new DWTimelineObject(interactive.optJSONObject(i));
                 int startTime = dWTimelineObject.getStartTime();
                 String source = dWTimelineObject.getSource();
-                if (!TextUtils.isEmpty(source) && startTime >= 0 && this.e > 0 && (a2 = kbz.a(source, this.f29955a.getActivity())) != null) {
+                if (!StringUtils.isEmpty(source) && startTime >= 0 && this.e > 0 && (a2 = kbz.a(source, this.f29955a.getActivity())) != null) {
                     int i2 = this.e;
                     if (startTime >= i2) {
                         startTime = i2;

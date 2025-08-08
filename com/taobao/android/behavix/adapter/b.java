@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.adapter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.d;
 import org.json.JSONObject;
@@ -50,7 +50,7 @@ public class b {
             return;
         }
         kth a2 = ktk.a();
-        if (a2 == null || TextUtils.isEmpty(str)) {
+        if (a2 == null || StringUtils.isEmpty(str)) {
             return;
         }
         a2.b(str);
@@ -63,7 +63,7 @@ public class b {
             return;
         }
         kth a2 = ktk.a();
-        if (a2 == null || TextUtils.isEmpty(str)) {
+        if (a2 == null || StringUtils.isEmpty(str)) {
             return;
         }
         a2.a(str, str2);
@@ -76,7 +76,7 @@ public class b {
             return;
         }
         kth a2 = ktk.a();
-        if (a2 == null || TextUtils.isEmpty(str) || jSONObject == null) {
+        if (a2 == null || StringUtils.isEmpty(str) || jSONObject == null) {
             return;
         }
         a2.a(str, jSONObject);

@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import tb.cot;
@@ -28,7 +28,7 @@ public class i {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str) && !str.startsWith("content:") && (split = str.split("/")) != null && split.length != 0) {
+            if (!StringUtils.isEmpty(str) && !str.startsWith("content:") && (split = str.split("/")) != null && split.length != 0) {
                 boolean z = false;
                 boolean z2 = false;
                 for (String str2 : split) {

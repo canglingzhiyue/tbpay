@@ -3,7 +3,7 @@ package com.taobao.pexode.common;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.FileDescriptor;
 import tb.kge;
@@ -70,7 +70,7 @@ public class NdkCore {
             try {
                 if (Build.VERSION.SDK_INT >= 21) {
                     String nativeGetCpuAbiList = nativeGetCpuAbiList();
-                    if (!TextUtils.isEmpty(nativeGetCpuAbiList)) {
+                    if (!StringUtils.isEmpty(nativeGetCpuAbiList)) {
                         b = nativeGetCpuAbiList.split(",");
                     }
                 } else {

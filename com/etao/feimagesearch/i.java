@@ -2,7 +2,7 @@ package com.etao.feimagesearch;
 
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
 import com.taobao.phenix.intf.event.FailPhenixEvent;
@@ -118,7 +118,7 @@ public class i implements cop {
         }).fetch();
         try {
             countDownLatch.await(10L, TimeUnit.SECONDS);
-            if (cosVar.a() == null && !TextUtils.isEmpty(cosVar.b()) && !TextUtils.isEmpty(cosVar.c())) {
+            if (cosVar.a() == null && !StringUtils.isEmpty(cosVar.b()) && !StringUtils.isEmpty(cosVar.c())) {
                 cosVar.a("-10086");
                 cosVar.a(true);
                 cosVar.b("Download Timeout");

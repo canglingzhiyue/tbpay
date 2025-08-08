@@ -1,6 +1,6 @@
 package com.ali.user.mobile.app.constant;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.model.LoginType;
 import com.ali.user.mobile.model.TokenType;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -111,7 +111,7 @@ public class UTConstant {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d1875ed3", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str.startsWith(LoginType.LocalLoginType.SCAN_FACE_LOGIN)) {
                 return LoginType.LocalLoginType.SCAN_FACE_LOGIN;
             }
@@ -158,11 +158,11 @@ public class UTConstant {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4f840ae0", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
-            if (TextUtils.equals(str, TokenType.TAOBAO_SSO)) {
+        if (!StringUtils.isEmpty(str)) {
+            if (StringUtils.equals(str, TokenType.TAOBAO_SSO)) {
                 return LoginType.LocalLoginType.SSO_LOGIN;
             }
-            if (TextUtils.equals(str, TokenType.ALIPAY_SSO)) {
+            if (StringUtils.equals(str, TokenType.ALIPAY_SSO)) {
                 return LoginType.LocalLoginType.ASO_LOGIN;
             }
         }

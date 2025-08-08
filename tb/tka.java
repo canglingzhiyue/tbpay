@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -109,7 +109,7 @@ public class tka implements oiq {
             final Context applicationContext = nym.a().getApplicationContext();
             String str2 = j.description;
             f g = e.b().g();
-            if (g != null && !TextUtils.isEmpty(g.f19632a)) {
+            if (g != null && !StringUtils.isEmpty(g.f19632a)) {
                 str2 = g.f19632a + " " + str2;
             }
             final a aVar = new a();
@@ -120,7 +120,7 @@ public class tka implements oiq {
             aVar.f = j.shareScene;
             aVar.j = j.extraParams;
             aVar.b = j.title;
-            if (!TextUtils.isEmpty("other")) {
+            if (!StringUtils.isEmpty("other")) {
                 aVar.m = "other".toLowerCase();
             } else {
                 aVar.m = "other";
@@ -148,9 +148,9 @@ public class tka implements oiq {
                             return;
                         }
                     }
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         String str4 = aVar.c;
-                        str3 = b.c(TextUtils.isEmpty(str4) ? aVar.d : str4.concat(" ").concat(aVar.d));
+                        str3 = b.c(StringUtils.isEmpty(str4) ? aVar.d : str4.concat(" ").concat(aVar.d));
                         oah.a(applicationContext, aVar.d);
                     }
                     if (Build.VERSION.SDK_INT >= 11) {
@@ -295,7 +295,7 @@ public class tka implements oiq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95562904", new Object[]{this, context, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             Toast toast = f34172a;
             if (toast == null) {

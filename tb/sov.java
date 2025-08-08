@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
@@ -47,10 +47,10 @@ public class sov {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
-                if (ogv.a(parseObject) || !TextUtils.equals(parseObject.getString("target"), "web")) {
+                if (ogv.a(parseObject) || !StringUtils.equals(parseObject.getString("target"), "web")) {
                     return parseObject;
                 }
                 spz.c("PickPreloadController_ParseUtils", "PickPreloadControllerNew，getExtParamsByQuery: target = web，不承接");
@@ -87,14 +87,14 @@ public class sov {
                 if (f33782a == null) {
                     f33782a = new HashMap<>();
                 }
-                if (!TextUtils.isEmpty(str) && f33782a.containsKey(str)) {
+                if (!StringUtils.isEmpty(str) && f33782a.containsKey(str)) {
                     return f33782a.get(str);
                 }
             } else {
                 str = null;
             }
             String a2 = a(JSONObject.parseObject(new String(mtopResponse.getBytedata())), pair, z);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 f33782a.put(str, a2);
             }
             return a2;
@@ -120,10 +120,10 @@ public class sov {
             if (pair == null) {
                 return string;
             }
-            if (!TextUtils.isEmpty((CharSequence) pair.second) && d.d()) {
+            if (!StringUtils.isEmpty((CharSequence) pair.second) && d.d()) {
                 return d(string);
             }
-            return (TextUtils.isEmpty((CharSequence) pair.first) || !d.c()) ? string : d(string);
+            return (StringUtils.isEmpty((CharSequence) pair.first) || !d.c()) ? string : d(string);
         } catch (Throwable th) {
             spz.a("PickPreloadController_ParseUtils", th.getMessage(), th);
             return null;
@@ -225,7 +225,7 @@ public class sov {
             return null;
         }
         String queryParameter = uri.getQueryParameter("extParams");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return null;
         }
         try {

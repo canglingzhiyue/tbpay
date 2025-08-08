@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import mtopsdk.network.impl.ResponseProtocolType;
 
@@ -36,7 +36,7 @@ public class O00O0o00 implements O00O0Oo0 {
                 public void O000000o(O00o00 o00o00) {
                     if (o00o00.O00000o()) {
                         O00O0o00.this.O00000Oo(O00O0o00.this.O00000o0.O000000o(o00OoOO0, o00o00, aVar), o00o0, aVar);
-                    } else if (TextUtils.isEmpty(O00O0o00.this.O00000o0.O000000o())) {
+                    } else if (StringUtils.isEmpty(O00O0o00.this.O00000o0.O000000o())) {
                         o00o0.O000000o(o00o00);
                     } else {
                         O00O0o00.this.O00000Oo(O00O0o00.this.O00000o0.O00000Oo(o00OoOO0, o00o00, aVar), o00o0, aVar);

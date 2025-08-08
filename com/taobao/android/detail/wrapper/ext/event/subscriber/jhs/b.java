@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.event.subscriber.jhs;
 
 import android.net.Uri;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.detail.kit.utils.n;
@@ -178,7 +178,7 @@ public class b implements com.taobao.android.trade.boost.request.mtop.a<RemindRe
         } else if (cVar == null || cVar.f10055a == null) {
         } else {
             ScheduleDTO scheduleDTO = new ScheduleDTO();
-            if (!TextUtils.isEmpty(String.valueOf(cVar.i()))) {
+            if (!StringUtils.isEmpty(String.valueOf(cVar.i()))) {
                 scheduleDTO.setEventId(String.valueOf(cVar.i()));
             } else {
                 scheduleDTO.setEventId(String.valueOf(n.a()));
@@ -202,7 +202,7 @@ public class b implements com.taobao.android.trade.boost.request.mtop.a<RemindRe
             scheduleDTO.setRemind(180);
             scheduleDTO.setIsallday(0);
             ItemNode c = eqb.c(cVar.f10055a);
-            if (c != null && !TextUtils.isEmpty(c.itemUrl)) {
+            if (c != null && !StringUtils.isEmpty(c.itemUrl)) {
                 scheduleDTO.setLink(Uri.parse(c.itemUrl).buildUpon().appendQueryParameter("reminded", "1").appendQueryParameter("fromCalendar", "1").appendQueryParameter("backurl", "index").build().toString());
             }
             CalendarAidlAdapter calendarAidlAdapter = CalendarAidlAdapter.getInstance();

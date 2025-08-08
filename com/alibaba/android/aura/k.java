@@ -1,6 +1,6 @@
 package com.alibaba.android.aura;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.nodemodel.AURAPluginContainerNodeModel;
 import com.alibaba.android.aura.nodemodel.AURAPluginNodeModel;
 import com.alibaba.fastjson.JSON;
@@ -343,7 +343,7 @@ public final class k implements s {
         if (cVar == null) {
             return true;
         }
-        if (TextUtils.isEmpty(cVar.f2155a)) {
+        if (StringUtils.isEmpty(cVar.f2155a)) {
             return Boolean.parseBoolean(cVar.b);
         }
         if (!b()) {

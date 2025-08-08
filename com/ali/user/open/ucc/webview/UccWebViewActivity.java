@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.ali.user.mobile.ui.WebConstant;
@@ -160,7 +160,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         }
         String str2 = this.TAG;
         Log.e(str2, "load url:" + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (this.memberWebView != null) {
@@ -186,7 +186,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         }
         this.mUccParams = (UccParams) JSON.parseObject(intent.getStringExtra(UccConstants.PARAM_UCC_PARAMS), UccParams.class);
         this.mNeedSession = intent.getStringExtra("needSession");
-        if (!TextUtils.isEmpty(this.mNeedSession)) {
+        if (!StringUtils.isEmpty(this.mNeedSession)) {
             this.isReassignNeedSession = true;
         }
         this.mNeedCookieOnly = intent.getStringExtra(ParamsConstants.Key.PARAM_NEED_LOCAL_COOKIE_ONLY);
@@ -194,7 +194,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         this.scene = intent.getStringExtra("scene");
         this.mNeedToast = intent.getStringExtra("needToast");
         String stringExtra = intent.getStringExtra("params");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             this.mParams = Utils.convertJsonStrToMap(stringExtra);
         }
         this.mNeedLocalSession = intent.getStringExtra(ParamsConstants.Key.PARAM_NEED_LOCAL_SESSION);
@@ -208,7 +208,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         } else if (uri == null) {
         } else {
             String queryParameter = uri.getQueryParameter("hideTitleBar");
-            if (getSupportActionBar() == null || !TextUtils.equals(queryParameter, "true")) {
+            if (getSupportActionBar() == null || !StringUtils.equals(queryParameter, "true")) {
                 return;
             }
             getSupportActionBar().e();
@@ -222,7 +222,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         } else if (uri == null) {
         } else {
             String queryParameter = uri.getQueryParameter("hideTitleBar");
-            if (getSupportActionBar() == null || TextUtils.equals(queryParameter, "true")) {
+            if (getSupportActionBar() == null || StringUtils.equals(queryParameter, "true")) {
                 return;
             }
             getSupportActionBar().d();
@@ -240,17 +240,17 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         }
         checkUccParam(serialBundle);
         String string = serialBundle.getString("action");
-        if (TextUtils.isEmpty(string) || TextUtils.equals("quit", string)) {
+        if (StringUtils.isEmpty(string) || StringUtils.equals("quit", string)) {
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_Cancel", this.mUccParams, new HashMap());
             finish();
             UccCallback uccCallback = (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE));
-            if (uccCallback == null || !TextUtils.equals("true", serialBundle.getString("isSuc"))) {
+            if (uccCallback == null || !StringUtils.equals("true", serialBundle.getString("isSuc"))) {
                 return true;
             }
             uccCallback.onSuccess(this.mUccParams.bindSite, null);
             CallbackManager.unregisterCallback(UccConstants.UCC_H5_CALLBACK_TYPE);
             return true;
-        } else if (TextUtils.equals("close", string)) {
+        } else if (StringUtils.equals("close", string)) {
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_Cancel", this.mUccParams, new HashMap());
             UccCallback uccCallback2 = (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE));
             finish();
@@ -259,7 +259,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
                 CallbackManager.unregisterCallback(UccConstants.UCC_H5_CALLBACK_TYPE);
             }
             return true;
-        } else if (TextUtils.equals(a.ATOM_EXT_bind, string)) {
+        } else if (StringUtils.equals(a.ATOM_EXT_bind, string)) {
             String string2 = serialBundle.getString("requestToken");
             String string3 = serialBundle.getString("bindUserToken");
             String string4 = serialBundle.getString("type");
@@ -270,43 +270,43 @@ public class UccWebViewActivity extends BaseWebViewActivity {
             if (ApiConstants.ApiField.BIND_NEED_UPGRADE.equals(string4)) {
                 this.mUccParams.needUpgrade = "true";
             }
-            if (!TextUtils.isEmpty(serialBundle.getString("scene"))) {
+            if (!StringUtils.isEmpty(serialBundle.getString("scene"))) {
                 this.mUccParams.scene = serialBundle.getString("scene");
             }
             UccBindPresenter.getInstance().bindAfterRecommend(this, string2, this.mUccParams, string3, this.mNeedToast, this.mParams, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
             return true;
-        } else if (TextUtils.equals("bindAfterIdentify", string)) {
+        } else if (StringUtils.equals("bindAfterIdentify", string)) {
             String string5 = serialBundle.getString(ParamsConstants.UrlConstant.H5_REQUEST_TOKEN);
             String string6 = serialBundle.getString("havana_iv_token");
             String string7 = serialBundle.getString("userBindToken");
             addSessionParam(serialBundle);
             UccBindPresenter.getInstance().bindIdentify(this, string5, this.mUccParams, string6, string7, this.mNeedToast, this.mParams, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
             return true;
-        } else if (TextUtils.equals("continueLogin", string)) {
+        } else if (StringUtils.equals("continueLogin", string)) {
             String query = uri.getQuery();
             addSessionParam(serialBundle);
             UccTrustLoginPresenter.getInstance().tokenLogin(this, this.mUccParams, this.scene, this.token, query, this.mParams, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
             return true;
-        } else if (TextUtils.equals(ApiConstants.ApiField.TRUST_LOGIN, string)) {
+        } else if (StringUtils.equals(ApiConstants.ApiField.TRUST_LOGIN, string)) {
             String string8 = serialBundle.getString("token");
             String string9 = serialBundle.getString("scene");
             String query2 = uri.getQuery();
-            if (TextUtils.isEmpty(string9)) {
+            if (StringUtils.isEmpty(string9)) {
                 string9 = this.scene;
             }
             UccTrustLoginPresenter.getInstance().tokenLogin(this, this.mUccParams, string9, string8, query2, null, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
             return true;
-        } else if (TextUtils.equals("login", string)) {
+        } else if (StringUtils.equals("login", string)) {
             Map<String, String> generateMap = generateMap(serialBundle);
             generateMap.put("needSession", "1");
             UccBindPresenter.getInstance().bindByRequestToken(this, this.mUccParams, serialBundle.getString(ParamsConstants.UrlConstant.H5_REQUEST_TOKEN), serialBundle.getString("userToken"), serialBundle.getString(WebConstant.WEB_LOGIN_TOKEN_TYPE), generateMap, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
             return true;
-        } else if (TextUtils.equals("taobao_auth_token", string)) {
+        } else if (StringUtils.equals("taobao_auth_token", string)) {
             addSessionParam(serialBundle);
             Map<String, String> generateMap2 = generateMap(serialBundle);
             if (ApiConstants.ApiName.BIND_BY_REQUEST_TOKEN.equals(serialBundle.getString("api"))) {
                 Map<String, String> map = this.mParams;
-                if (map != null && TextUtils.equals(map.get("scene"), ParamsConstants.UrlConstant.NEW_YOUKU_UPGRADE)) {
+                if (map != null && StringUtils.equals(map.get("scene"), ParamsConstants.UrlConstant.NEW_YOUKU_UPGRADE)) {
                     generateMap2.put("needSession", "1");
                 }
                 this.mUccParams.topAuthCode = serialBundle.getString("top_auth_code");
@@ -314,7 +314,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
                 UccBindPresenter.getInstance().bindByRequestToken(this, this.mUccParams, serialBundle.getString(ParamsConstants.UrlConstant.H5_REQUEST_TOKEN), serialBundle.getString("top_auth_code"), "oauthcode", generateMap2, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
             } else {
                 Map<String, String> map2 = this.mParams;
-                if (map2 != null && TextUtils.equals(map2.get("scene"), ParamsConstants.UrlConstant.NEW_YOUKU_UPGRADE)) {
+                if (map2 != null && StringUtils.equals(map2.get("scene"), ParamsConstants.UrlConstant.NEW_YOUKU_UPGRADE)) {
                     generateMap2.put("needSession", "1");
                     UccBindPresenter.getInstance().getUserInfo(this, this.mUccParams, serialBundle.getString("top_auth_code"), "oauthcode", "h5", generateMap2, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
                 } else {
@@ -329,16 +329,16 @@ public class UccWebViewActivity extends BaseWebViewActivity {
                 }
             }
             return true;
-        } else if (TextUtils.equals("registerSuc", string) || TextUtils.equals("afterBindMobile", string)) {
-            if (TextUtils.equals("registerSuc", string)) {
+        } else if (StringUtils.equals("registerSuc", string) || StringUtils.equals("afterBindMobile", string)) {
+            if (StringUtils.equals("registerSuc", string)) {
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_registerSuc", this.mUccParams, null);
             }
             String string10 = serialBundle.getString("message");
-            if (TextUtils.equals(this.mNeedSession, "1")) {
+            if (StringUtils.equals(this.mNeedSession, "1")) {
                 UccBindPresenter.getInstance().tokenLoginAfterBind(this, this.mUccParams, serialBundle.getString("trustToken"), string, this.mNeedToast, string10, this.mParams, (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE)));
                 return true;
             }
-            if (!TextUtils.isEmpty(string10) && TextUtils.equals(this.mNeedToast, "1")) {
+            if (!StringUtils.isEmpty(string10) && StringUtils.equals(this.mNeedToast, "1")) {
                 ToastUtil.showToast(getApplicationContext(), string10, 0);
             }
             UccCallback uccCallback3 = (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE));
@@ -348,12 +348,12 @@ public class UccWebViewActivity extends BaseWebViewActivity {
             }
             finish();
             return true;
-        } else if (TextUtils.equals("UCC_ContinueLogin", string)) {
+        } else if (StringUtils.equals("UCC_ContinueLogin", string)) {
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBindWithIbb_H5Skip", this.mUccParams, null);
             String string11 = serialBundle.getString("requestToken");
             String string12 = serialBundle.getString("userToken");
             String string13 = serialBundle.getString(ApiConstants.ApiField.USER_ACTION);
-            if (TextUtils.isEmpty(string11)) {
+            if (StringUtils.isEmpty(string11)) {
                 finish();
             } else {
                 Map<String, String> generateMap3 = generateMap(serialBundle);
@@ -367,7 +367,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
             }
             finish();
             return true;
-        } else if (TextUtils.equals("skip_bind", string)) {
+        } else if (StringUtils.equals("skip_bind", string)) {
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBindWithIbb_H5Skip", this.mUccParams, null);
             UccCallback uccCallback4 = (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE));
             if (uccCallback4 != null) {
@@ -376,7 +376,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
             }
             finish();
             return true;
-        } else if (TextUtils.equals("UCC_Upgrade", string)) {
+        } else if (StringUtils.equals("UCC_Upgrade", string)) {
             if (this.mUccParams == null) {
                 this.mUccParams = new UccParams();
                 this.mUccParams.traceId = Utils.generateTraceId("h5");
@@ -388,13 +388,13 @@ public class UccWebViewActivity extends BaseWebViewActivity {
             String string18 = serialBundle.getString(ParamsConstants.Key.PARAM_H5ONLY);
             String string19 = serialBundle.getString("h5Url");
             Map<String, String> generateMap4 = generateMap(serialBundle);
-            if (this.isReassignNeedSession && !TextUtils.isEmpty(this.mNeedSession)) {
+            if (this.isReassignNeedSession && !StringUtils.isEmpty(this.mNeedSession)) {
                 generateMap4.put("needSession", this.mNeedSession);
             } else {
                 generateMap4.put("needSession", "1");
             }
             generateMap4.put(ParamsConstants.Key.PARAM_NEED_LOCAL_SESSION, this.mNeedLocalSession);
-            if (!TextUtils.isEmpty(string16)) {
+            if (!StringUtils.isEmpty(string16)) {
                 generateMap4.put(ParamsConstants.Key.PARAM_SCENE_CODE, string16);
             }
             String string20 = serialBundle.getString("type");
@@ -406,25 +406,25 @@ public class UccWebViewActivity extends BaseWebViewActivity {
                 if ("true".equals(string18)) {
                     generateMap4.put(ParamsConstants.Key.PARAM_H5ONLY, "1");
                 }
-                if (!TextUtils.isEmpty(string19)) {
+                if (!StringUtils.isEmpty(string19)) {
                     String str = string19 + "&request_token=" + string15;
                     String string22 = serialBundle.getString("env");
-                    if (!TextUtils.isEmpty(string22)) {
+                    if (!StringUtils.isEmpty(string22)) {
                         str = str + "&env=" + string22;
                     }
                     String string23 = serialBundle.getString("appEntrance");
-                    if (!TextUtils.isEmpty(string23)) {
+                    if (!StringUtils.isEmpty(string23)) {
                         str = str + "&appEntrance=" + string23;
                     }
                     String string24 = serialBundle.getString("needTopToken");
-                    if (!TextUtils.isEmpty(string24)) {
+                    if (!StringUtils.isEmpty(string24)) {
                         str = str + "&needTopToken=" + string24;
                     }
-                    if (!TextUtils.isEmpty(serialBundle.getString("topTokenAppName"))) {
+                    if (!StringUtils.isEmpty(serialBundle.getString("topTokenAppName"))) {
                         str = str + "&topTokenAppName=" + serialBundle.getString("topTokenAppName");
                     }
                     String string25 = serialBundle.getString("redirectUri");
-                    if (!TextUtils.isEmpty(string25)) {
+                    if (!StringUtils.isEmpty(string25)) {
                         str = str + "&redirectUri=" + string25;
                     }
                     generateMap4.put(UccConstants.PARAM_BIND_URL, str);
@@ -437,7 +437,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
                 finish();
                 return true;
             }
-        } else if (TextUtils.equals("agreeAuthorize", string)) {
+        } else if (StringUtils.equals("agreeAuthorize", string)) {
             finish();
             UccCallback uccCallback5 = (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE));
             if (uccCallback5 == null) {
@@ -446,7 +446,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
             uccCallback5.onSuccess(this.mUccParams.bindSite, null);
             CallbackManager.unregisterCallback(UccConstants.UCC_H5_CALLBACK_TYPE);
             return true;
-        } else if (TextUtils.equals("refuseAuthorize", string)) {
+        } else if (StringUtils.equals("refuseAuthorize", string)) {
             finish();
             UccCallback uccCallback6 = (UccCallback) CallbackManager.getCallback(Integer.valueOf(UccConstants.UCC_H5_CALLBACK_TYPE));
             if (uccCallback6 == null) {
@@ -455,7 +455,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
             uccCallback6.onFail(this.mUccParams.bindSite, 1201, "");
             CallbackManager.unregisterCallback(UccConstants.UCC_H5_CALLBACK_TYPE);
             return true;
-        } else if (!TextUtils.equals("bindAlipayFail", string)) {
+        } else if (!StringUtils.equals("bindAlipayFail", string)) {
             return false;
         } else {
             finish();
@@ -494,10 +494,10 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         }
         String string = bundle.getString("bindSite");
         String string2 = bundle.getString("userToken");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.mUccParams.bindSite = string;
         }
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return;
         }
         this.mUccParams.userToken = string2;
@@ -512,13 +512,13 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         String string2 = bundle.getString("site");
         String string3 = bundle.getString("bindSite");
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             hashMap.put("site", string2);
         }
-        if (!TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string3)) {
             hashMap.put("bindSite", string3);
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             hashMap.put("scene", string);
         }
         return hashMap;
@@ -557,7 +557,7 @@ public class UccWebViewActivity extends BaseWebViewActivity {
         if (checkWebviewBridge(str)) {
             return overrideCallback(parse);
         }
-        if (!TextUtils.isEmpty(str) && !str.startsWith("http") && !str.startsWith("https")) {
+        if (!StringUtils.isEmpty(str) && !str.startsWith("http") && !str.startsWith("https")) {
             try {
                 Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
                 intent.setFlags(268435456);

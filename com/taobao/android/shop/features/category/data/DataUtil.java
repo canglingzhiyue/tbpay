@@ -1,6 +1,6 @@
 package com.taobao.android.shop.features.category.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.shop.features.category.CategoryData;
 import tb.kge;
@@ -29,6 +29,6 @@ public class DataUtil {
             return containerType;
         }
         String str = categoryData.type;
-        return !TextUtils.isEmpty(str) ? str.equals("native") ? ContainerType.ContainerType_Native : str.equals("weex") ? ContainerType.ContainerType_Weex : containerType : containerType;
+        return !StringUtils.isEmpty(str) ? str.equals("native") ? ContainerType.ContainerType_Native : str.equals("weex") ? ContainerType.ContainerType_Weex : containerType : containerType;
     }
 }

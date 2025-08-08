@@ -2,7 +2,7 @@ package android.taobao.safemode;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.TCrashSDK;
 import tb.ovw;
@@ -83,7 +83,7 @@ public class h {
         if (kVar == null) {
             return;
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             try {
                 this.d = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
             } catch (Exception unused) {

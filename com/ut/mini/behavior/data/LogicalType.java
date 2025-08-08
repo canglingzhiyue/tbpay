@@ -1,6 +1,6 @@
 package com.ut.mini.behavior.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public enum LogicalType {
@@ -15,7 +15,7 @@ public enum LogicalType {
 
     public static LogicalType getLogicalType(String str) {
         LogicalType[] values;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return AND;
         }
         for (LogicalType logicalType : values()) {

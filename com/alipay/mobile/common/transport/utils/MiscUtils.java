@@ -10,7 +10,7 @@ import android.os.Environment;
 import android.os.PowerManager;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -89,7 +89,7 @@ public final class MiscUtils {
         }
         try {
             String externalStorageState = Environment.getExternalStorageState();
-            if (!TextUtils.equals("mounted", externalStorageState) && !TextUtils.equals("mounted_ro", externalStorageState)) {
+            if (!StringUtils.equals("mounted", externalStorageState) && !StringUtils.equals("mounted_ro", externalStorageState)) {
                 return null;
             }
             File filesDir = TransportEnvUtil.getContext().getFilesDir();
@@ -156,18 +156,18 @@ public final class MiscUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ce6c810a", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(RELEASE_TYPE)) {
+        if (!StringUtils.isEmpty(RELEASE_TYPE)) {
             return RELEASE_TYPE;
         }
         synchronized (MiscUtils.class) {
-            if (!TextUtils.isEmpty(RELEASE_TYPE)) {
+            if (!StringUtils.isEmpty(RELEASE_TYPE)) {
                 return RELEASE_TYPE;
             }
             try {
                 Properties properties = new Properties();
                 properties.load(context.getAssets().open("channel.config"));
                 for (Map.Entry entry : properties.entrySet()) {
-                    if (TextUtils.equals(String.valueOf(entry.getKey()), "release_type")) {
+                    if (StringUtils.equals(String.valueOf(entry.getKey()), "release_type")) {
                         Object value = entry.getValue();
                         if (value == null) {
                             RELEASE_TYPE = "unkown";
@@ -191,18 +191,18 @@ public final class MiscUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d623ff8c", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(CHANNEL_ID)) {
+        if (!StringUtils.isEmpty(CHANNEL_ID)) {
             return CHANNEL_ID;
         }
         synchronized (MiscUtils.class) {
-            if (!TextUtils.isEmpty(CHANNEL_ID)) {
+            if (!StringUtils.isEmpty(CHANNEL_ID)) {
                 return CHANNEL_ID;
             }
             try {
                 Properties properties = new Properties();
                 properties.load(context.getAssets().open("channel.config"));
                 for (Map.Entry entry : properties.entrySet()) {
-                    if (TextUtils.equals(String.valueOf(entry.getKey()), d.BUNDLE_BUSINESS_ID)) {
+                    if (StringUtils.equals(String.valueOf(entry.getKey()), d.BUNDLE_BUSINESS_ID)) {
                         Object value = entry.getValue();
                         if (value == null) {
                             CHANNEL_ID = "unkown";
@@ -235,7 +235,7 @@ public final class MiscUtils {
             return false;
         }
         String releaseChannelId = getReleaseChannelId(TransportEnvUtil.getContext());
-        if (TextUtils.isEmpty(releaseChannelId)) {
+        if (StringUtils.isEmpty(releaseChannelId)) {
             return false;
         }
         return releaseChannelId.contains("sandbox") || releaseChannelId.contains("special_channel");
@@ -269,7 +269,7 @@ public final class MiscUtils {
                 while (true) {
                     try {
                         String readLine = bufferedReader2.readLine();
-                        if (TextUtils.isEmpty(readLine)) {
+                        if (StringUtils.isEmpty(readLine)) {
                             bufferedReader2.close();
                             break;
                         }
@@ -320,7 +320,7 @@ public final class MiscUtils {
         }
         String curProcessName = getCurProcessName(context);
         LogCatUtil.info(TAG, "curProcessName:" + curProcessName);
-        if (!TextUtils.equals(context.getPackageName(), curProcessName)) {
+        if (!StringUtils.equals(context.getPackageName(), curProcessName)) {
             LogCatUtil.verbose(TAG, "Other Process");
             b = true;
         } else {
@@ -369,7 +369,7 @@ public final class MiscUtils {
     }
 
     public static final String getCurProcessName(Context context) {
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             return c;
         }
         try {
@@ -377,7 +377,7 @@ public final class MiscUtils {
                 c = Application.getProcessName();
                 LogCatUtil.info(TAG, "curProcessName from Application= " + c);
             }
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 return c;
             }
         } catch (Throwable th) {
@@ -395,7 +395,7 @@ public final class MiscUtils {
         } catch (Throwable th2) {
             LogCatUtil.warn(TAG, "class load fail for ActivityThread. ex=" + th2.toString());
         }
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             return c;
         }
         try {
@@ -405,7 +405,7 @@ public final class MiscUtils {
         } catch (Throwable th3) {
             LogCatUtil.warn(TAG, "class load fail for DdmHandleAppName. ex=" + th3.toString());
         }
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             return c;
         }
         int myPid = Process.myPid();
@@ -569,7 +569,7 @@ public final class MiscUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("73978218", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.equals(str2, "0") && !TextUtils.equals(str2, "-1")) {
+        if (!StringUtils.equals(str2, "0") && !StringUtils.equals(str2, "-1")) {
             try {
                 String[] split = str2.split(",");
                 int[] iArr = new int[split.length];
@@ -673,7 +673,7 @@ public final class MiscUtils {
             if (i2 >= strArr.length) {
                 return false;
             }
-            if (TextUtils.equals(strArr[i2], str)) {
+            if (StringUtils.equals(strArr[i2], str)) {
                 return true;
             }
             i2++;
@@ -695,7 +695,7 @@ public final class MiscUtils {
             return ((Boolean) ipChange.ipc$dispatch("7c16415c", new Object[]{url})).booleanValue();
         }
         try {
-            return TextUtils.equals(url.getHost(), DnsValue.DOMAIN_MOBILE_GW);
+            return StringUtils.equals(url.getHost(), DnsValue.DOMAIN_MOBILE_GW);
         } catch (Throwable th) {
             LogCatUtil.error(TAG, th);
             return false;
@@ -708,7 +708,7 @@ public final class MiscUtils {
             return ((Boolean) ipChange.ipc$dispatch("cd19f9e0", new Object[]{url})).booleanValue();
         }
         try {
-            return TextUtils.equals(url.getHost(), "mobilegwpre.alipay.com");
+            return StringUtils.equals(url.getHost(), "mobilegwpre.alipay.com");
         } catch (Throwable th) {
             LogCatUtil.error(TAG, th);
             return false;
@@ -721,7 +721,7 @@ public final class MiscUtils {
             return ((Boolean) ipChange.ipc$dispatch("382605fd", new Object[]{url})).booleanValue();
         }
         try {
-            return TextUtils.equals(url.getHost(), getTest_1_64_gwHost());
+            return StringUtils.equals(url.getHost(), getTest_1_64_gwHost());
         } catch (Throwable th) {
             LogCatUtil.error(TAG, th);
             return false;
@@ -734,7 +734,7 @@ public final class MiscUtils {
             return ((Boolean) ipChange.ipc$dispatch("8e2af73c", new Object[]{url})).booleanValue();
         }
         try {
-            return TextUtils.equals(url.getHost(), "mobilegw.alipaydev.com");
+            return StringUtils.equals(url.getHost(), "mobilegw.alipaydev.com");
         } catch (Throwable th) {
             LogCatUtil.error(TAG, th);
             return false;
@@ -747,7 +747,7 @@ public final class MiscUtils {
             return (String) ipChange.ipc$dispatch("a62a6522", new Object[0]);
         }
         try {
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 d = new String(Base64.decode(testGwUrlBase64, 0), "UTF-8");
             }
             LogCatUtil.debug(TAG, "testGwUrl= " + d);
@@ -764,7 +764,7 @@ public final class MiscUtils {
             return (String) ipChange.ipc$dispatch("74994f65", new Object[0]);
         }
         try {
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 e = new String(Base64.decode(test_1_64_gwHostBase64, 0), "UTF-8");
             }
             LogCatUtil.debug(TAG, "test_1_64_gwHost= " + e);
@@ -781,7 +781,7 @@ public final class MiscUtils {
             return ((Boolean) ipChange.ipc$dispatch("a2ee52f", new Object[]{str})).booleanValue();
         }
         for (String str2 : RPC_LOG_BACKLIST) {
-            if (TextUtils.equals(str2, str)) {
+            if (StringUtils.equals(str2, str)) {
                 return true;
             }
         }
@@ -793,7 +793,7 @@ public final class MiscUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("af2f671b", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         for (String str2 : LOGIN_APIS) {
@@ -909,7 +909,7 @@ public final class MiscUtils {
             return bool.booleanValue();
         }
         String packageName = context.getPackageName();
-        if (TextUtils.isEmpty(packageName)) {
+        if (StringUtils.isEmpty(packageName)) {
             return false;
         }
         for (String str : h) {
@@ -926,7 +926,7 @@ public final class MiscUtils {
 
     public static final boolean isTFSHost(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dcb4654", new Object[]{str})).booleanValue() : TextUtils.equals(str, "tfsimg.alipay.com");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dcb4654", new Object[]{str})).booleanValue() : StringUtils.equals(str, "tfsimg.alipay.com");
     }
 
     public static final String replaceTFS2CDN(URI uri) {
@@ -1155,7 +1155,7 @@ public final class MiscUtils {
         try {
             Context context = TransportEnvUtil.getContext();
             String string = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getString("sandbox.amnet.server");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             return string;
@@ -1175,9 +1175,9 @@ public final class MiscUtils {
                 return false;
             }
             String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.MDAP_APIS);
-            if (!TextUtils.isEmpty(stringValue) && !TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(stringValue) && !StringUtils.isEmpty(str)) {
                 for (String str2 : stringValue.split(",")) {
-                    if (TextUtils.equals(str2, str)) {
+                    if (StringUtils.equals(str2, str)) {
                         return true;
                     }
                 }
@@ -1267,7 +1267,7 @@ public final class MiscUtils {
             return n;
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.URLCONNECTION_HOST_LIST);
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             return null;
         }
         try {

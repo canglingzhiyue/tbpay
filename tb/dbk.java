@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.heytap.mspsdk.keychain.impl.b;
 import com.opos.process.bridge.annotation.IBridgeTargetIdentify;
 import com.opos.process.bridge.provider.BridgeExecuteException;
@@ -47,16 +47,16 @@ public class dbk extends dbj {
             }
             String str = "query Authorities:" + b.a(this.j);
             for (String str2 : this.j) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     if (str2.contains("${applicationId}")) {
                         str2 = str2.replace("${applicationId}", context.getPackageName());
                     }
                     ProviderInfo resolveContentProvider = packageManager.resolveContentProvider(str2, 128);
-                    if (resolveContentProvider != null && !TextUtils.isEmpty(resolveContentProvider.packageName) && (TextUtils.isEmpty(a()) || resolveContentProvider.name.equals(a()))) {
+                    if (resolveContentProvider != null && !StringUtils.isEmpty(resolveContentProvider.packageName) && (StringUtils.isEmpty(a()) || resolveContentProvider.name.equals(a()))) {
                         List<dbo> list = this.d;
                         String str3 = resolveContentProvider.packageName;
                         String str4 = resolveContentProvider.name;
-                        if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
                             dboVar = null;
                         } else {
                             dboVar = new dbo();

@@ -1,7 +1,7 @@
 package com.taobao.desktop.widget.template.dynamic;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -79,25 +79,25 @@ public class a extends c implements kia {
             str = str3;
             str2 = str;
         } else {
-            if (!TextUtils.isEmpty(widgetDynamicData.getExt().getTitle())) {
+            if (!StringUtils.isEmpty(widgetDynamicData.getExt().getTitle())) {
                 string = widgetDynamicData.getExt().getTitle();
             }
-            str = !TextUtils.isEmpty(widgetDynamicData.getDeepLink()) ? widgetDynamicData.getDeepLink() : str3;
-            str2 = !TextUtils.isEmpty(widgetDynamicData.getImageUrl()) ? widgetDynamicData.getImageUrl() : str3;
-            if (!TextUtils.isEmpty(widgetDynamicData.getExt().getCollect())) {
+            str = !StringUtils.isEmpty(widgetDynamicData.getDeepLink()) ? widgetDynamicData.getDeepLink() : str3;
+            str2 = !StringUtils.isEmpty(widgetDynamicData.getImageUrl()) ? widgetDynamicData.getImageUrl() : str3;
+            if (!StringUtils.isEmpty(widgetDynamicData.getExt().getCollect())) {
                 str3 = widgetDynamicData.getExt().getCollect();
             }
         }
         final RemoteViews remoteViews = new RemoteViews(this.f16976a.getPackageName(), R.layout.widget_dynamic);
         remoteViews.setTextViewText(R.id.tv_widget_dynamic_name, string);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             remoteViews.setViewVisibility(R.id.tv_widget_dynamic_count, 0);
             remoteViews.setTextViewText(R.id.tv_widget_dynamic_count, str3);
         } else {
             remoteViews.setViewVisibility(R.id.tv_widget_dynamic_count, 8);
         }
         c(remoteViews, R.id.iv_widget_dynamic_icon, str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             b(remoteViews, list, j);
         } else {
             com.taobao.phenix.intf.b.h().a(this.f16976a).a(str2).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.desktop.widget.template.dynamic.a.1

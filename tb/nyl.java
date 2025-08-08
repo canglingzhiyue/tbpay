@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -83,7 +83,7 @@ public class nyl {
         try {
             OrangeConfig orangeConfig = OrangeConfig.getInstance();
             String config = orangeConfig.getConfig("android_share", "TaoFriendPort_" + str, "");
-            if (TextUtils.isEmpty(config)) {
+            if (StringUtils.isEmpty(config)) {
                 config = OrangeConfig.getInstance().getConfig("android_share", "isNewContacts_ports", "");
             }
             return (List) JSONArray.parse(config);
@@ -125,9 +125,9 @@ public class nyl {
         if (!"true".equals(OrangeConfig.getInstance().getConfig("android_share", "isShowErrorDialog", "false"))) {
             return false;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String config = OrangeConfig.getInstance().getConfig("android_share", "disableErrorList", "");
-            if (!TextUtils.isEmpty(config) && (split = config.split(",")) != null && split.length > 0) {
+            if (!StringUtils.isEmpty(config) && (split = config.split(",")) != null && split.length > 0) {
                 for (String str2 : split) {
                     if (str.equals(str2.trim())) {
                         return false;
@@ -187,7 +187,7 @@ public class nyl {
             return (String) ipChange.ipc$dispatch("696f900f", new Object[]{map, str, str2});
         }
         String str3 = (String) a(map, str, str2);
-        return TextUtils.isEmpty(str3) ? str2 : str3;
+        return StringUtils.isEmpty(str3) ? str2 : str3;
     }
 
     public static boolean c(String str) {

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Network;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import anet.channel.strategy.StrategyCenter;
@@ -393,7 +393,7 @@ public class NetworkStatusHelper {
         }
         if (networkStatus.isWifi()) {
             String md5ToHex = StringUtils.md5ToHex(getWifiBSSID());
-            if (TextUtils.isEmpty(md5ToHex)) {
+            if (StringUtils.isEmpty(md5ToHex)) {
                 md5ToHex = "";
             }
             return "WIFI$" + md5ToHex;

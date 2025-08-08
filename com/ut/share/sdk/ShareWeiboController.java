@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.sina.weibo.sdk.api.ImageObject;
 import com.sina.weibo.sdk.api.TextObject;
@@ -147,7 +147,7 @@ public class ShareWeiboController {
             WeiboMultiMessage weiboMultiMessage = new WeiboMultiMessage();
             if (z) {
                 String text = shareData.getText();
-                if (!TextUtils.isEmpty(text)) {
+                if (!StringUtils.isEmpty(text)) {
                     TextObject textObject = new TextObject();
                     textObject.text = text;
                     weiboMultiMessage.textObject = textObject;
@@ -159,13 +159,13 @@ public class ShareWeiboController {
                 if (imageFromPath != null) {
                     imageObject.setImageData(ShareUtils.imageZoom(imageFromPath, 2048.0d));
                 } else {
-                    TextUtils.isEmpty(shareData.getImageUrl());
+                    StringUtils.isEmpty(shareData.getImageUrl());
                 }
                 weiboMultiMessage.imageObject = imageObject;
             }
-            if ((z4 || z3) && !TextUtils.isEmpty(shareData.getLink())) {
+            if ((z4 || z3) && !StringUtils.isEmpty(shareData.getLink())) {
                 String text2 = shareData.getText();
-                if (!TextUtils.isEmpty(text2)) {
+                if (!StringUtils.isEmpty(text2)) {
                     TextObject textObject2 = new TextObject();
                     textObject2.text = text2;
                     weiboMultiMessage.textObject = textObject2;
@@ -178,7 +178,7 @@ public class ShareWeiboController {
                 if (imageFromPath2 != null) {
                     webpageObject.thumbData = ShareUtils.bmp2Bytes(ShareUtils.imageZoom(imageFromPath2, 32.0d));
                 } else {
-                    TextUtils.isEmpty(shareData.getImageUrl());
+                    StringUtils.isEmpty(shareData.getImageUrl());
                 }
                 webpageObject.actionUrl = shareData.getLink();
                 weiboMultiMessage.mediaObject = webpageObject;
@@ -196,7 +196,7 @@ public class ShareWeiboController {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("69280351", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return str;
         }
         return str + " " + str2;

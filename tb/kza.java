@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -24,7 +24,7 @@ public class kza extends kyx {
         } else {
             String str = (String) objArr[0];
             String str2 = objArr.length > 1 ? (String) objArr[1] : null;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 c.a("setPopClientParams ", "args key is null");
                 return;
             }

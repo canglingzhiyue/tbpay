@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -160,7 +160,7 @@ public class i {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("a82c75dd", new Object[]{this, pmwVar});
-                } else if (pmwVar == null || TextUtils.isEmpty(pmwVar.f32765a) || !TextUtils.equals(pmwVar.f32765a, i.this.b())) {
+                } else if (pmwVar == null || StringUtils.isEmpty(pmwVar.f32765a) || !StringUtils.equals(pmwVar.f32765a, i.this.b())) {
                 } else {
                     i.this.f13849a = pmwVar.b;
                     String f = i.f();

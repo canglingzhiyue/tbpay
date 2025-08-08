@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -32,7 +32,7 @@ public class bek {
         }
         ArrayList arrayList = new ArrayList();
         for (IDMComponent iDMComponent : list) {
-            if (iDMComponent != null && !TextUtils.isEmpty(iDMComponent.getKey())) {
+            if (iDMComponent != null && !StringUtils.isEmpty(iDMComponent.getKey())) {
                 arrayList.add(iDMComponent.getKey());
             }
         }
@@ -77,7 +77,7 @@ public class bek {
             return new ArrayList<>(hashSet);
         }
         for (String str : a4) {
-            if (!TextUtils.isEmpty(str) && (a2 = a(str, u)) != null) {
+            if (!StringUtils.isEmpty(str) && (a2 = a(str, u)) != null) {
                 hashSet.addAll(a2);
             }
         }
@@ -136,7 +136,7 @@ public class bek {
         if (ipChange instanceof IpChange) {
             return (DXRootView) ipChange.ipc$dispatch("6d36e206", new Object[]{viewGroup, str});
         }
-        if (viewGroup != null && !TextUtils.isEmpty(str)) {
+        if (viewGroup != null && !StringUtils.isEmpty(str)) {
             for (int childCount = viewGroup.getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = viewGroup.getChildAt(childCount);
                 if ((childAt instanceof DXRootView) && (data = (dXRootView = (DXRootView) childAt).getData()) != null && (string = data.getString("tag")) != null && string.startsWith(str)) {

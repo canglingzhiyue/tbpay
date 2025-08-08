@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes4.dex */
@@ -71,7 +71,7 @@ public class dwn {
 
     public String e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this}) : TextUtils.isEmpty(this.d) ? "" : this.d;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this}) : StringUtils.isEmpty(this.d) ? "" : this.d;
     }
 
     public void c(String str) {
@@ -85,7 +85,7 @@ public class dwn {
 
     public String f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("50938a53", new Object[]{this}) : TextUtils.isEmpty(this.e) ? "" : this.e;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("50938a53", new Object[]{this}) : StringUtils.isEmpty(this.e) ? "" : this.e;
     }
 
     public void d(String str) {

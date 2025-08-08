@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -135,7 +135,7 @@ public class nyg {
         }
         String str = map.get("taopassword_character_blacklist");
         String str2 = "setTPCharacterBlackList 1 listStr=" + str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "￥,¥";
         }
         oag.a(Arrays.asList(str.split(",")));
@@ -154,7 +154,7 @@ public class nyg {
             return;
         }
         String str = map.get("share_qrTemplate_count");
-        if (TextUtils.isEmpty(str) || (parseInt = StringUtil.parseInt(str)) <= 0) {
+        if (StringUtils.isEmpty(str) || (parseInt = StringUtil.parseInt(str)) <= 0) {
             return;
         }
         b = parseInt;
@@ -173,7 +173,7 @@ public class nyg {
         }
         try {
             String str = map.get("share_disable_picPassword_new");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             c = Boolean.parseBoolean(str);
@@ -202,7 +202,7 @@ public class nyg {
         if (OrangeConfig.getInstance().getConfig("android_share", "videoBackBlackBrandList", "").contains(Build.BRAND) || OrangeConfig.getInstance().getConfig("android_share", "videoBackBlackModelList", "").contains(Build.MODEL)) {
             return false;
         }
-        return TextUtils.equals(OrangeConfig.getInstance().getConfig("android_share", "videoBackFlowAvailable", "false"), "true");
+        return StringUtils.equals(OrangeConfig.getInstance().getConfig("android_share", "videoBackFlowAvailable", "false"), "true");
     }
 
     public static int f() {
@@ -225,12 +225,12 @@ public class nyg {
 
     public static boolean g() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("android_share", "isWxAgainstMode", "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("android_share", "isWxAgainstMode", "true"), "true");
     }
 
     public static boolean k() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("android_share", "isPreCheckMode", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("android_share", "isPreCheckMode", "false"), "true");
     }
 
     public static String a(boolean z) {
@@ -254,11 +254,11 @@ public class nyg {
         if (j != null && asList.contains(j.businessId)) {
             return false;
         }
-        return TextUtils.equals(OrangeConfig.getInstance().getConfig("shareui_theme", "share_disable_qrcode", "false"), "true");
+        return StringUtils.equals(OrangeConfig.getInstance().getConfig("shareui_theme", "share_disable_qrcode", "false"), "true");
     }
 
     public static boolean i() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dd2874", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("android_share_bizconfig", KEY_READ_PHOTO_ALBUM, "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dd2874", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("android_share_bizconfig", KEY_READ_PHOTO_ALBUM, "false"), "true");
     }
 }

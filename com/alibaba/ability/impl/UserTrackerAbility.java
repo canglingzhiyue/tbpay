@@ -3,7 +3,7 @@ package com.alibaba.ability.impl;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.FinishResult;
@@ -104,9 +104,9 @@ public final class UserTrackerAbility extends alm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("84162689", new Object[]{this, str, str2, map});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
-            UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = !TextUtils.isEmpty(str) ? new UTHitBuilders.UTControlHitBuilder(str, str2) : new UTHitBuilders.UTControlHitBuilder(str2);
+            UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = !StringUtils.isEmpty(str) ? new UTHitBuilders.UTControlHitBuilder(str, str2) : new UTHitBuilders.UTControlHitBuilder(str2);
             uTControlHitBuilder.setProperties(map);
             UTAnalytics uTAnalytics = UTAnalytics.getInstance();
             q.b(uTAnalytics, "UTAnalytics.getInstance()");
@@ -126,7 +126,7 @@ public final class UserTrackerAbility extends alm {
         UTAnalytics uTAnalytics2 = UTAnalytics.getInstance();
         q.b(uTAnalytics2, "UTAnalytics.getInstance()");
         uTAnalytics2.getDefaultTracker().updatePageProperties(context, map);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         UTAnalytics uTAnalytics3 = UTAnalytics.getInstance();

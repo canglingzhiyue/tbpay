@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 
@@ -14,6 +14,6 @@ public class nyv {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && (nyo.f31844a.equals(str) || nyo.b.equals(str) || OrangeConfig.getInstance().getConfig("android_share", "DetailPageActivitys", "").contains(str));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && (nyo.f31844a.equals(str) || nyo.b.equals(str) || OrangeConfig.getInstance().getConfig("android_share", "DetailPageActivitys", "").contains(str));
     }
 }

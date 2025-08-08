@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,7 +54,7 @@ public class npt {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         String a2 = npu.a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             q.a("SearchBase64CacheUtil", "encrypted content is empty");
             return "";
         }

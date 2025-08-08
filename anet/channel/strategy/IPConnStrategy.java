@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.strategy.StrategyResultParser;
 import anet.channel.strategy.utils.Utils;
@@ -78,7 +78,7 @@ public class IPConnStrategy implements IConnStrategy, Serializable {
         if (ipChange instanceof IpChange) {
             return (IPConnStrategy) ipChange.ipc$dispatch("c4f88320", new Object[]{str, new Integer(i), connProtocol, new Integer(i2), new Integer(i3), new Integer(i4), new Integer(i5), str2, str3, str4});
         }
-        if (!TextUtils.isEmpty(str) && connProtocol != null && i > 0) {
+        if (!StringUtils.isEmpty(str) && connProtocol != null && i > 0) {
             return new IPConnStrategy(str, i, connProtocol, i2, i3, i4, i5, str2, str3, str4);
         }
         return null;

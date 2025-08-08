@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -226,15 +226,15 @@ public class eaa extends c<egt> {
         } else {
             String str = hintBanner.text;
             String str2 = hintBanner.subText;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = str + str2;
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.i.setText(str);
-                if (!TextUtils.isEmpty(hintBanner.bgColor)) {
+                if (!StringUtils.isEmpty(hintBanner.bgColor)) {
                     try {
                         this.k.setBackgroundColor(com.taobao.android.detail.core.utils.c.a(hintBanner.bgColor));
                     } catch (Exception unused) {
@@ -242,7 +242,7 @@ public class eaa extends c<egt> {
                 }
                 this.k.setVisibility(0);
                 g += this.f9568a.getResources().getDimensionPixelSize(R.dimen.detail_bottom_bar_hint_height);
-                if (TextUtils.isEmpty(hintBanner.buttonText)) {
+                if (StringUtils.isEmpty(hintBanner.buttonText)) {
                     return;
                 }
                 this.i.setGravity(16);
@@ -262,7 +262,7 @@ public class eaa extends c<egt> {
                         }
                         ActionModel actionModel = new ActionModel(new JSONObject());
                         actionModel.type = hintBanner.eventId;
-                        if (!TextUtils.isEmpty(eaa.this.m)) {
+                        if (!StringUtils.isEmpty(eaa.this.m)) {
                             JSONObject jSONObject = new JSONObject();
                             jSONObject.put("url", (Object) eaa.this.m);
                             actionModel.params = new JSONObject(jSONObject);

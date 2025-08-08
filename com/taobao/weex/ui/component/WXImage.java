@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -209,7 +209,7 @@ public class WXImage extends WXComponent<ImageView> {
             return (ImageView.ScaleType) ipChange.ipc$dispatch("43237972", new Object[]{this, str});
         }
         ImageView.ScaleType scaleType = ImageView.ScaleType.FIT_XY;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return scaleType;
         }
         char c = 65535;
@@ -283,7 +283,7 @@ public class WXImage extends WXComponent<ImageView> {
                 hostView.setImageDrawable(null);
                 return;
             }
-            if (hostView != null && hostView.getDrawable() != null && !TextUtils.equals(this.mSrc, str)) {
+            if (hostView != null && hostView.getDrawable() != null && !StringUtils.equals(this.mSrc, str)) {
                 hostView.setImageDrawable(null);
             }
             this.mSrc = str;

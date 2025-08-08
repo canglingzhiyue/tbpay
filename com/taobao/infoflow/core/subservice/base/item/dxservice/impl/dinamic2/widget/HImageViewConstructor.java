@@ -2,7 +2,7 @@ package com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic2.wi
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -64,13 +64,13 @@ public class HImageViewConstructor extends h {
             ipChange.ipc$dispatch("7a33971c", new Object[]{this, tUrlImageView, str, str2, str3});
             return;
         }
-        boolean z = !TextUtils.equals(str, "match_content") && TextUtils.equals(str2, "match_content");
-        if (!z && (!TextUtils.equals(str, "match_content") || TextUtils.equals(str2, "match_content"))) {
+        boolean z = !StringUtils.equals(str, "match_content") && StringUtils.equals(str2, "match_content");
+        if (!z && (!StringUtils.equals(str, "match_content") || StringUtils.equals(str2, "match_content"))) {
             return;
         }
         double d = -1.0d;
         try {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 d = Double.parseDouble(str3);
             }
         } catch (Throwable th) {
@@ -127,7 +127,7 @@ public class HImageViewConstructor extends h {
             return;
         }
         tUrlImageView.setPlaceHoldForeground(drawable);
-        if (ldb.a(tUrlImageView.getContext()) && !TextUtils.isEmpty(str2)) {
+        if (ldb.a(tUrlImageView.getContext()) && !StringUtils.isEmpty(str2)) {
             tUrlImageView.setImageUrl(str2);
         } else {
             tUrlImageView.setImageUrl(str);
@@ -139,7 +139,7 @@ public class HImageViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c8f03242", new Object[]{this, tUrlImageView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             tUrlImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         } else {
             int parseInt = Integer.parseInt(str);
@@ -159,7 +159,7 @@ public class HImageViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("36223c59", new Object[]{this, tUrlImageView, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2) && TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2) && StringUtils.isEmpty(str3)) {
             if (((ImageShapeFeature) tUrlImageView.findFeature(ImageShapeFeature.class)) == null) {
                 return;
             }

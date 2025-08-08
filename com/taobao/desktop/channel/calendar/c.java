@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.BadParcelableException;
 import android.os.Build;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.khc;
@@ -113,7 +113,7 @@ public class c {
         }
         String a2 = a("hw_sc.build.platform.version");
         khu.a("CalenderHuaweiManager.isHuaWeiHmOS3：" + a2);
-        return !TextUtils.isEmpty(a2) && a2.compareTo("3.0.0") >= 0;
+        return !StringUtils.isEmpty(a2) && a2.compareTo("3.0.0") >= 0;
     }
 
     public static String a(String str) {

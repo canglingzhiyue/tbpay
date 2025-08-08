@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Choreographer;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class jly {
         }
         String a2 = jmh.a(str, "");
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(a2) && (parseArray = JSONObject.parseArray(a2, String.class)) != null) {
+        if (!StringUtils.isEmpty(a2) && (parseArray = JSONObject.parseArray(a2, String.class)) != null) {
             arrayList.addAll(parseArray);
         }
         return arrayList;
@@ -61,7 +61,7 @@ public class jly {
                 return;
             }
             String simpleName = activity.getClass().getSimpleName();
-            if (!TextUtils.equals(simpleName, "TBMainActivity") && !TextUtils.equals(simpleName, "Welcome")) {
+            if (!StringUtils.equals(simpleName, "TBMainActivity") && !StringUtils.equals(simpleName, "Welcome")) {
                 a(a(jmg.CONFIG_KEY_ACTIVITIES), simpleName);
             }
         } catch (Throwable th) {
@@ -89,7 +89,7 @@ public class jly {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c6e0ee3", new Object[]{this, list, str});
-        } else if (TextUtils.isEmpty(str) || !list.contains(str) || Build.VERSION.SDK_INT < 16) {
+        } else if (StringUtils.isEmpty(str) || !list.contains(str) || Build.VERSION.SDK_INT < 16) {
         } else {
             jmb jmbVar = new jmb();
             jmbVar.a(new jmb.a() { // from class: tb.jly.1

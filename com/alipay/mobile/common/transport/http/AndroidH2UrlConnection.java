@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.http;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.transport.context.TransportContext;
 import com.alipay.mobile.common.transport.io.RpcBufferedOutputStream;
@@ -275,15 +275,15 @@ public class AndroidH2UrlConnection {
             while (i < length3) {
                 Header header3 = allHeaders3[i];
                 String name = header3.getName();
-                if (TextUtils.isEmpty(name)) {
+                if (StringUtils.isEmpty(name)) {
                     LogCatUtil.warn("AndroidH2UrlConnection", "O, headerKey is null.");
                 } else {
                     String lowerCase = name.toLowerCase(Locale.US);
                     String str = (String) hashMap.get(lowerCase);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         httpURLConnection.addRequestProperty(header3.getName(), header3.getValue());
                         hashMap.put(lowerCase, header3.getValue());
-                    } else if (!TextUtils.equals(str, header3.getValue())) {
+                    } else if (!StringUtils.equals(str, header3.getValue())) {
                         String str2 = "There is a duplicate header that needs to be switched to http/1.1 。key=[" + header3.getName() + "], value1=[" + str + "]、value2=[" + header3.getValue() + "].";
                         LogCatUtil.warn("AndroidH2UrlConnection", str2);
                         throw new RequestSwitchDirectionException(str2);
@@ -518,14 +518,14 @@ public class AndroidH2UrlConnection {
             Header firstHeader = basicHttpResponse.getFirstHeader("X-Android-Selected-Protocol");
             String str = "";
             String value = firstHeader != null ? firstHeader.getValue() : str;
-            if (!TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(value)) {
                 transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.PROTOCOL, value);
             }
             StringBuilder sb = new StringBuilder();
             sb.append("[monitorFromRespHeaderInfos] urlconnection code:");
             sb.append(httpURLConnection.getResponseCode());
             sb.append(",protocol:");
-            if (TextUtils.isEmpty(value)) {
+            if (StringUtils.isEmpty(value)) {
                 value = "null";
             }
             sb.append(value);
@@ -537,7 +537,7 @@ public class AndroidH2UrlConnection {
             if (firstHeader2 != null) {
                 str = firstHeader2.getValue();
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.H5_RESPONSE_SOURCE, str);

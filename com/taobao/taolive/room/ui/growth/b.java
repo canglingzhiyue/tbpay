@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.ui.growth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import com.alibaba.fastjson.JSONObject;
@@ -71,7 +71,7 @@ public class b extends h {
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("jumpParam");
         String string = jSONObject2.getString("componentName");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             a(string, jSONObject2);
         }
         return true;

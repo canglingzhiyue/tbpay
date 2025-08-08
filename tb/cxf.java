@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
@@ -40,7 +40,7 @@ public class cxf implements cxh {
     }
 
     public static boolean a(String str) {
-        return !TextUtils.isEmpty(str) && Pattern.matches("^\\[!([A-Fa-f0-9]*)]", str);
+        return !StringUtils.isEmpty(str) && Pattern.matches("^\\[!([A-Fa-f0-9]*)]", str);
     }
 
     static String b(String str) {

@@ -1,7 +1,7 @@
 package com.taobao.android.searchbaseframe.chitu;
 
 import android.os.Parcel;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.request.BodyEntry;
 import anetwork.channel.entity.RequestImpl;
 import anetwork.channel.http.HttpNetwork;
@@ -72,7 +72,7 @@ public class a {
             if (r9 != 0) goto L1d
             return
         L1d:
-            boolean r1 = android.text.TextUtils.isEmpty(r10)
+            boolean r1 = android.text.StringUtils.isEmpty(r10)
             if (r1 == 0) goto L24
             return
         L24:
@@ -89,7 +89,7 @@ public class a {
             java.lang.String r4 = "serverRewrite"
             java.lang.String r5 = ""
             java.lang.String r1 = r1.getString(r4, r5)     // Catch: org.json.JSONException -> L51
-            boolean r4 = android.text.TextUtils.isEmpty(r1)     // Catch: org.json.JSONException -> L51
+            boolean r4 = android.text.StringUtils.isEmpty(r1)     // Catch: org.json.JSONException -> L51
             if (r4 != 0) goto L5d
             org.json.JSONObject r4 = new org.json.JSONObject     // Catch: org.json.JSONException -> L51
             r4.<init>(r1)     // Catch: org.json.JSONException -> L51
@@ -111,7 +111,7 @@ public class a {
             if (r4 == 0) goto Lea
             java.lang.String r1 = "groupAlias"
             java.lang.String r1 = r4.optString(r1)
-            boolean r5 = android.text.TextUtils.isEmpty(r1)
+            boolean r5 = android.text.StringUtils.isEmpty(r1)
             java.lang.String r6 = "chituGroupAlias"
             if (r5 != 0) goto L7d
             r9.put(r6, r1)
@@ -174,7 +174,7 @@ public class a {
             return (Map) ipChange.ipc$dispatch("4fc7ad92", new Object[]{this, map});
         }
         String str = map.get("params");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return JSON.parseObject(str);
         }
         return null;
@@ -187,12 +187,12 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && this.d.l().a()) {
+        if (!StringUtils.isEmpty(str) && this.d.l().a()) {
             try {
                 String string = this.d.j().a().getString("serverRewrite", "");
-                if (!TextUtils.isEmpty(string) && (optJSONObject = new JSONObject(string).optJSONObject(SERVERS)) != null && (optJSONObject2 = optJSONObject.optJSONObject(str)) != null) {
+                if (!StringUtils.isEmpty(string) && (optJSONObject = new JSONObject(string).optJSONObject(SERVERS)) != null && (optJSONObject2 = optJSONObject.optJSONObject(str)) != null) {
                     String optString = optJSONObject2.optString("server");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         return optString;
                     }
                 }
@@ -212,7 +212,7 @@ public class a {
             return str;
         }
         String a2 = a(str2);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return str;
         }
         Map<String, String> a3 = r.a(str);
@@ -226,7 +226,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8f9b1931", new Object[]{this, str, bArr, str2, new Boolean(z)});
-        } else if (!this.d.l().a() || TextUtils.isEmpty(this.b) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str) || bArr == null) {
+        } else if (!this.d.l().a() || StringUtils.isEmpty(this.b) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str) || bArr == null) {
         } else {
             try {
                 str3 = new String(bArr, "UTF-8");

@@ -8,7 +8,7 @@ import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.extra.uc.remotefetch.WVUCRemoteFetcher;
 import android.taobao.windvane.thread.WVThreadPool;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uc.webview.base.io.PathUtils;
 import com.uc.webview.export.extension.U4Engine;
@@ -136,7 +136,7 @@ public class UCCoreStartup {
             return PathUtils.getDirCoreLib(runningDir).getAbsolutePath();
         }
         String fetchUCRemoteLocal = WVUCRemoteFetcher.fetchUCRemoteLocal();
-        return (TextUtils.isEmpty(fetchUCRemoteLocal) || (extractDir = U4Engine.getExtractDir(context, new File(fetchUCRemoteLocal))) == null) ? "" : PathUtils.getDirCoreLib(extractDir).getAbsolutePath();
+        return (StringUtils.isEmpty(fetchUCRemoteLocal) || (extractDir = U4Engine.getExtractDir(context, new File(fetchUCRemoteLocal))) == null) ? "" : PathUtils.getDirCoreLib(extractDir).getAbsolutePath();
     }
 
     @Deprecated
@@ -159,7 +159,7 @@ public class UCCoreStartup {
             return runningDir.getAbsolutePath();
         }
         String fetchUCRemoteLocal = WVUCRemoteFetcher.fetchUCRemoteLocal();
-        return (TextUtils.isEmpty(fetchUCRemoteLocal) || (extractDir = U4Engine.getExtractDir(context, new File(fetchUCRemoteLocal))) == null) ? "" : extractDir.getAbsolutePath();
+        return (StringUtils.isEmpty(fetchUCRemoteLocal) || (extractDir = U4Engine.getExtractDir(context, new File(fetchUCRemoteLocal))) == null) ? "" : extractDir.getAbsolutePath();
     }
 
     @Deprecated

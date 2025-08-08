@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.poplayer.config.model.style.StyleModel;
@@ -144,7 +144,7 @@ public class bzm {
             if ("100%".equals(str)) {
                 return -1;
             }
-            return (int) iVar.a(context, !TextUtils.isEmpty(str) ? Float.parseFloat(str) : 0.0f);
+            return (int) iVar.a(context, !StringUtils.isEmpty(str) ? Float.parseFloat(str) : 0.0f);
         } catch (Throwable th) {
             c.a("transWidthAndHeight.error.", th);
             return 0;

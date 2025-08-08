@@ -1,6 +1,6 @@
 package com.taobao.taobao.scancode.barcode.object.recommend;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import mtopsdk.mtop.domain.IMTOPDataObject;
 import tb.kge;
 
@@ -19,6 +19,6 @@ public class GetQRMedicineUrlRequest implements IMTOPDataObject {
     }
 
     public static boolean isQRMedicneCode(String str) {
-        return !TextUtils.isEmpty(str) && str.startsWith("6") && str.length() == 20 && TextUtils.isDigitsOnly(str);
+        return !StringUtils.isEmpty(str) && str.startsWith("6") && str.length() == 20 && StringUtils.isDigitsOnly(str);
     }
 }

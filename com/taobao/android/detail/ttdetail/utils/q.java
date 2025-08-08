@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.utils;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.intf.PhenixCreator;
@@ -125,7 +125,7 @@ public class q {
             i2 = width;
         }
         String decideUrl = ImageStrategyDecider.decideUrl(str, Integer.valueOf(i2), Integer.valueOf(i), ImageStrategyConfig.a("detail", 15).a(TaobaoImageUrlStrategy.ImageQuality.q30).a());
-        return TextUtils.isEmpty(decideUrl) ? str : decideUrl;
+        return StringUtils.isEmpty(decideUrl) ? str : decideUrl;
     }
 
     public static ImageStrategyConfig a(TaobaoImageUrlStrategy.ImageQuality imageQuality) {
@@ -153,7 +153,7 @@ public class q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6421a875", new Object[]{str, new Integer(i), new Integer(i2), new Boolean(z), imageStrategyConfig});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             final String a2 = l.a(str);
             if (i <= 0) {
@@ -181,9 +181,9 @@ public class q {
                     if (ipChange2 instanceof IpChange) {
                         return ((Boolean) ipChange2.ipc$dispatch("64c1ef50", new Object[]{this, failPhenixEvent})).booleanValue();
                     }
-                    if (TextUtils.equals(decideUrl, failPhenixEvent.getUrl())) {
+                    if (StringUtils.equals(decideUrl, failPhenixEvent.getUrl())) {
                         i.a("ImageUtils", "preloadImageUrl failure with: " + decideUrl);
-                        if (!TextUtils.equals(decideUrl, a2)) {
+                        if (!StringUtils.equals(decideUrl, a2)) {
                             q.a(a2, z);
                             i.a("ImageUtils", "preloadImageUrl failure with: " + decideUrl + " reload with originalUrl: " + a2);
                         }
@@ -204,7 +204,7 @@ public class q {
                     if (ipChange2 instanceof IpChange) {
                         return ((Boolean) ipChange2.ipc$dispatch("3b4dd374", new Object[]{this, succPhenixEvent})).booleanValue();
                     }
-                    if (TextUtils.equals(decideUrl, succPhenixEvent.getUrl()) && !succPhenixEvent.isIntermediate()) {
+                    if (StringUtils.equals(decideUrl, succPhenixEvent.getUrl()) && !succPhenixEvent.isIntermediate()) {
                         i.a("ImageUtils", "preloadImageUrl success with: " + decideUrl);
                     }
                     return true;
@@ -304,7 +304,7 @@ public class q {
         Object tag = imageView.getTag(c);
         if (tag instanceof com.taobao.phenix.intf.c) {
             com.taobao.phenix.intf.c cVar = (com.taobao.phenix.intf.c) tag;
-            if (!TextUtils.isEmpty(str) && cVar.b(str)) {
+            if (!StringUtils.isEmpty(str) && cVar.b(str)) {
                 if (cVar.c()) {
                     return true;
                 }
@@ -328,7 +328,7 @@ public class q {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("297f1b3a", new Object[]{imageView, str, new Integer(i)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return true;
         }
         if (i != -1) {
@@ -352,7 +352,7 @@ public class q {
         Drawable drawable = imageView.getDrawable();
         Object tag = imageView.getTag(b);
         boolean z = tag != null && Boolean.parseBoolean(tag.toString());
-        if (!TextUtils.equals(str, str2) || drawable == null || !z) {
+        if (!StringUtils.equals(str, str2) || drawable == null || !z) {
             return false;
         }
         imageView.setTag(c, null);
@@ -382,7 +382,7 @@ public class q {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0076, code lost:
-        if (android.text.TextUtils.isEmpty(r7) != false) goto L14;
+        if (android.text.StringUtils.isEmpty(r7) != false) goto L14;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -430,7 +430,7 @@ public class q {
             }
             String url = succPhenixEvent.getUrl();
             String str = (String) imageView.getTag(q.a());
-            if (TextUtils.equals(url, str)) {
+            if (StringUtils.equals(url, str)) {
                 BitmapDrawable drawable = succPhenixEvent.getDrawable();
                 imageView.setImageDrawable(drawable);
                 int b = q.b();
@@ -483,9 +483,9 @@ public class q {
             }
             String url = failPhenixEvent.getUrl();
             String str = (String) imageView.getTag(q.a());
-            if (TextUtils.equals(url, str)) {
+            if (StringUtils.equals(url, str)) {
                 String str2 = (String) imageView.getTag(q.c());
-                if (!TextUtils.equals(str, str2)) {
+                if (!StringUtils.equals(str, str2)) {
                     q.a(imageView, str2, this.b, this.c, false, true);
                     i.a("ImageUtils", "loadImageWithUrl failure with: " + str + " reload with originalUrl: " + str2);
                 } else {

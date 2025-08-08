@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.taobao.util.l;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -179,7 +179,7 @@ public class sfq {
             if (!sfq.b(sfq.this)) {
                 sfq.c(sfq.this);
             }
-            if (!TextUtils.equals(this.c, sfq.d(sfq.this))) {
+            if (!StringUtils.equals(this.c, sfq.d(sfq.this))) {
                 return;
             }
             this.e = !sfq.a(sfq.this, this, this.f33529a, this.d, this.e);
@@ -330,7 +330,7 @@ public class sfq {
                         boolean z2 = false;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("dce89cd6", new Object[]{this, mRTRuntimeException, map});
-                        } else if (!TextUtils.equals(ppjVar.d, sfq.d(sfq.this))) {
+                        } else if (!StringUtils.equals(ppjVar.d, sfq.d(sfq.this))) {
                             sfq.a(sfq.this, 4001, sft.LIVE_ALGO_FAILURE_BIZCODE_ERROR);
                         } else {
                             if (mRTRuntimeException != null) {
@@ -338,7 +338,7 @@ public class sfq {
                                 ppjVar.g++;
                             } else {
                                 sft.a(sft.LIVE_SINGLE_FRAME_DURATION, String.valueOf(System.currentTimeMillis() - currentTimeMillis), "");
-                                if (map == null || !TextUtils.equals(String.valueOf(map.get(UTConstant.Args.UT_PROPERTY_SUCCESS)), "1")) {
+                                if (map == null || !StringUtils.equals(String.valueOf(map.get(UTConstant.Args.UT_PROPERTY_SUCCESS)), "1")) {
                                     ppjVar.g++;
                                     sfq.a(sfq.this, 4002, sft.LIVE_ALGO_FAILURE_RESULT_ISNULL_ERROR);
                                 } else {

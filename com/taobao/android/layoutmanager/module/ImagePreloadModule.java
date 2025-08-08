@@ -1,7 +1,7 @@
 package com.taobao.android.layoutmanager.module;
 
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.zoloz.toyger.blob.BlobManager;
@@ -39,7 +39,7 @@ public class ImagePreloadModule {
                 JSONObject jSONObject = a2.getJSONObject(i3);
                 if (jSONObject != null) {
                     String string = jSONObject.getString("url");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         int a3 = ohd.a(cVar.a(), oec.a(jSONObject.get("viewWidth"), -1));
                         int a4 = ohd.a(cVar.a(), oec.a(jSONObject.get(Constants.Name.VIEW_HEIGHT), -1));
                         int i4 = oec.a(jSONObject.get(BlobManager.UPLOAD_IMAGE_TYPE_WEBP), false) ? 4 : 0;

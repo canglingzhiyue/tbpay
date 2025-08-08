@@ -13,7 +13,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Process;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.application.common.a;
 import com.taobao.login4android.api.Login;
@@ -110,7 +110,7 @@ public class rkj {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d9378d6f", new Object[]{str, str2})).intValue();
         }
-        if (TextUtils.equals(str, str2)) {
+        if (StringUtils.equals(str, str2)) {
             return 0;
         }
         String[] split = str.split("\\.");
@@ -248,16 +248,16 @@ public class rkj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8f5a9927", new Object[]{context, str, str2, str3, str4});
-        } else if (context == null || TextUtils.isEmpty(str3)) {
+        } else if (context == null || StringUtils.isEmpty(str3)) {
         } else {
             Uri parse = Uri.parse(str3);
             Intent intent = new Intent();
             intent.setFlags(268468224);
             intent.setData(parse);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 intent.putExtra("AliAgooMsgID", str4);
             }
-            if (TextUtils.equals("true", str)) {
+            if (StringUtils.equals("true", str)) {
                 intent.setPackage("com.taobao.taobao");
                 intent.putExtra("source", str2);
                 intent.putExtra("messageId", str4);
@@ -312,7 +312,7 @@ public class rkj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             try {
                 ArrayList arrayList = (ArrayList) ((ActivityManager) context.getSystemService("activity")).getRunningServices(1000);
                 if (arrayList != null && arrayList.size() != 0) {
@@ -420,7 +420,7 @@ public class rkj {
 
     public static boolean b(Context context, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9b80d80d", new Object[]{context, str})).booleanValue() : (context == null || TextUtils.isEmpty(str) || c(context, str) == null) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9b80d80d", new Object[]{context, str})).booleanValue() : (context == null || StringUtils.isEmpty(str) || c(context, str) == null) ? false : true;
     }
 
     public static ApplicationInfo c(Context context, String str) {
@@ -431,7 +431,7 @@ public class rkj {
         if (context == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
             } catch (Exception unused) {
                 return null;

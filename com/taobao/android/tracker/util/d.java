@@ -1,6 +1,6 @@
 package com.taobao.android.tracker.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jjk;
 import tb.kge;
@@ -19,10 +19,10 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bfa4f210", new Object[]{str, str2, str3, str4});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return null;
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         return str + "." + str2 + "." + str3 + "." + str4;
@@ -33,10 +33,10 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         return str + str2;

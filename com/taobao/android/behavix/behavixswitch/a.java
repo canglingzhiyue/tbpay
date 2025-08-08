@@ -2,7 +2,7 @@ package com.taobao.android.behavix.behavixswitch;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -252,7 +252,7 @@ public class a {
                 return ((Boolean) ipChange.ipc$dispatch("ab8b84ae", new Object[]{new Boolean(z)})).booleanValue();
             }
             String a2 = a("enableUserActionUpload", "false", z);
-            return !TextUtils.isEmpty(a2) && a2.equalsIgnoreCase("true");
+            return !StringUtils.isEmpty(a2) && a2.equalsIgnoreCase("true");
         }
 
         private static void d(String str) {
@@ -270,7 +270,7 @@ public class a {
                 return ((Boolean) ipChange.ipc$dispatch("ad405d4d", new Object[]{new Boolean(z)})).booleanValue();
             }
             String a2 = a("enable_user_track", "true", z);
-            return !TextUtils.isEmpty(a2) && a2.equalsIgnoreCase("true");
+            return !StringUtils.isEmpty(a2) && a2.equalsIgnoreCase("true");
         }
 
         private static void e(String str) {
@@ -341,7 +341,7 @@ public class a {
                 return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
             }
             String a2 = C0354a.a(str, str2, str3);
-            return TextUtils.equals(a2, a.h()) ? str3 : a2;
+            return StringUtils.equals(a2, a.h()) ? str3 : a2;
         }
     }
 
@@ -461,7 +461,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue();
         }
         String a2 = a(str, z + "");
-        return TextUtils.isEmpty(a2) ? z : a2.trim().toLowerCase().equals("true");
+        return StringUtils.isEmpty(a2) ? z : a2.trim().toLowerCase().equals("true");
     }
 
     public static boolean b(String str, boolean z) {
@@ -471,7 +471,7 @@ public class a {
         }
         e a2 = e.a();
         String a3 = a2.a(INIT_FAST_GROUP_NAME, str, z + "");
-        return TextUtils.isEmpty(a3) ? z : a3.trim().toLowerCase().equals("true");
+        return StringUtils.isEmpty(a3) ? z : a3.trim().toLowerCase().equals("true");
     }
 
     public static String b(String str, String str2) {
@@ -481,7 +481,7 @@ public class a {
         }
         e a2 = e.a();
         String a3 = a2.a(INIT_FAST_GROUP_NAME, str, str2 + "");
-        return TextUtils.isEmpty(a3) ? str2 : a3;
+        return StringUtils.isEmpty(a3) ? str2 : a3;
     }
 
     public static int a(String str, int i2) {
@@ -673,7 +673,7 @@ public class a {
             if (B == null) {
                 String a2 = e.a().a(a.ORANGE_GROUP_NAME, "slideGestureScenesV2", "[\"com.taobao.tao.TBMainActivity\",\"com.taobao.tao.welcome.Welcome\",\"com.taobao.search.sf.MainSearchResultActivity\"]");
                 HashSet hashSet = new HashSet();
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     try {
                         JSONArray parseArray = JSON.parseArray(a2);
                         for (int i2 = 0; i2 < parseArray.size(); i2++) {
@@ -765,7 +765,7 @@ public class a {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 String[] split = str.split(",");
                 HashMap hashMap = new HashMap(split.length);
                 for (String str2 : split) {
@@ -783,7 +783,7 @@ public class a {
             if (ipChange instanceof IpChange) {
                 return (Set) ipChange.ipc$dispatch("d2e8bc22", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return new HashSet();
             }
             return new HashSet(Arrays.asList(str.split(",")));
@@ -811,7 +811,7 @@ public class a {
                 return;
             }
             try {
-                if (TextUtils.isEmpty(str) || TextUtils.equals(str, o) || (parseObject = JSON.parseObject(str)) == null) {
+                if (StringUtils.isEmpty(str) || StringUtils.equals(str, o) || (parseObject = JSON.parseObject(str)) == null) {
                     return;
                 }
                 JSONArray jSONArray = new JSONArray();

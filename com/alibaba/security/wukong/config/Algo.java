@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
@@ -34,17 +34,17 @@ public class Algo implements Serializable {
 
     public boolean isBehavior() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("469db027", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.type) && this.type.equalsIgnoreCase(dck.COL_SEQ);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("469db027", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.type) && this.type.equalsIgnoreCase(dck.COL_SEQ);
     }
 
     public boolean isCpp() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("17d8c424", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.type) && this.type.equalsIgnoreCase("cpp");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("17d8c424", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.type) && this.type.equalsIgnoreCase("cpp");
     }
 
     public boolean isPython() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c902e431", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.type) && this.type.equalsIgnoreCase(dqy.TYPE);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c902e431", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.type) && this.type.equalsIgnoreCase(dqy.TYPE);
     }
 
     public boolean isSupport(String str) {

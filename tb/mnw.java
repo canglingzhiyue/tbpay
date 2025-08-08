@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.FrameMetrics;
 import android.view.Window;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -232,7 +232,7 @@ public class mnw implements Window.OnFrameMetricsAvailableListener {
     }
 
     private String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "无法分析出原因";
         }
         char c = 65535;

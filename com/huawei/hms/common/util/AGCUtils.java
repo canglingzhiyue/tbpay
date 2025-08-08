@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidException;
 import com.huawei.hms.support.log.HMSLog;
 import com.huawei.hms.utils.HMSPackageManager;
@@ -92,7 +92,7 @@ public class AGCUtils {
             r7 = r1
         L5e:
             com.huawei.hms.utils.IOUtils.closeQuietly(r3)
-            boolean r0 = android.text.TextUtils.isEmpty(r7)
+            boolean r0 = android.text.StringUtils.isEmpty(r7)
             if (r0 != 0) goto L68
             return r7
         L68:
@@ -146,7 +146,7 @@ public class AGCUtils {
         String str;
         if (c(context)) {
             str = a(context, "client/app_id");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         } else {
@@ -161,11 +161,11 @@ public class AGCUtils {
         } catch (NullPointerException unused) {
             HMSLog.e("AGCUtils", "Get appId with AGConnectServicesConfig failed");
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String a3 = a(context);
-        return !TextUtils.isEmpty(a3) ? a3 : a(context, "client/app_id");
+        return !StringUtils.isEmpty(a3) ? a3 : a(context, "client/app_id");
     }
 
     public static String getCpId(Context context) {
@@ -182,10 +182,10 @@ public class AGCUtils {
         } catch (NullPointerException unused) {
             HMSLog.e("AGCUtils", "Get cpid with AGConnectServicesConfig failed");
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String b = b(context);
-        return !TextUtils.isEmpty(b) ? b : a(context, "client/cp_id");
+        return !StringUtils.isEmpty(b) ? b : a(context, "client/cp_id");
     }
 }

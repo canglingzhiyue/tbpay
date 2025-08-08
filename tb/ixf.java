@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes6.dex */
@@ -18,7 +18,7 @@ public class ixf {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return null;
         }
         return str + str3 + str2;

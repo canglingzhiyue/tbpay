@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -270,7 +270,7 @@ public class DXRootView extends DXNativeFrameLayout {
             if (getBindingXManager() != null) {
                 str = getBindingXManager().f11887a;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "dinamicx";
             }
             com.taobao.android.dinamicx.monitor.b.a(str, null, DXMonitorConstant.DX_MONITOR_BINDINGX, DXMonitorConstant.DX_BINDINGX_CRASH, s.BINDINGX_POST_MSG_CRASH, com.taobao.android.dinamicx.exception.a.a(th));
@@ -563,7 +563,7 @@ public class DXRootView extends DXNativeFrameLayout {
         if (getBindingXManager() != null) {
             str = getBindingXManager().f11887a;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "dinamicx";
         }
         com.taobao.android.dinamicx.monitor.b.a(str, getDxTemplateItem(), "native", DXMonitorConstant.NATIVE_CRASH, i, com.taobao.android.dinamicx.exception.a.a(th));

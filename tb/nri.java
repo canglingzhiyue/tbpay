@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -73,7 +73,7 @@ public final class nri extends ius<nrh, View, SearchDoorContext> {
             if (model2 == null || (str = model2.a("channelSrp")) == null) {
                 str = str4;
             }
-            if (TextUtils.isEmpty(str) && ((model = nri.this.getModel()) == null || (str = model.a(nde.G_CHANNELSRP)) == null)) {
+            if (StringUtils.isEmpty(str) && ((model = nri.this.getModel()) == null || (str = model.a(nde.G_CHANNELSRP)) == null)) {
                 str = str4;
             }
             LinkedHashMap linkedHashMap = new LinkedHashMap();

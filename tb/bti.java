@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.n;
 import com.alibaba.appmonitor.event.EventType;
 import com.alibaba.fastjson.JSON;
@@ -199,7 +199,7 @@ public class bti extends n {
         int size2 = list.size();
         for (int i2 = 0; i2 < size2; i2++) {
             bth bthVar2 = list.get(i2);
-            if (TextUtils.isEmpty(bthVar2.f26128a)) {
+            if (StringUtils.isEmpty(bthVar2.f26128a)) {
                 bthVar.a(bthVar2.b, bthVar2);
             } else {
                 bthVar.b(bthVar2.b).a(bthVar2.f26128a, bthVar2);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.update.apk.ApkUpdateContext;
 import com.taobao.update.apk.MainUpdateData;
@@ -89,7 +89,7 @@ public class rfj implements b<ApkUpdateContext> {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("ab067fa9", new Object[]{str, new Integer(i)});
-            } else if (TextUtils.isEmpty(str) || i <= 0) {
+            } else if (StringUtils.isEmpty(str) || i <= 0) {
             } else {
                 int i2 = get(str);
                 SharedPreferences.Editor edit = getDatabase().edit();
@@ -122,7 +122,7 @@ public class rfj implements b<ApkUpdateContext> {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("1161055a", new Object[]{str})).intValue();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return getDatabase().getInt(a(str), -1);
             }
             return -1;
@@ -133,7 +133,7 @@ public class rfj implements b<ApkUpdateContext> {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             String format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -236,7 +236,7 @@ public class jxs extends iut implements b {
         }
         this.j.add(Integer.valueOf(i));
         String a2 = com.taobao.android.xsearchplugin.jarvis.utils.b.a(baseTypedBean, this.o);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         Boolean bool = this.h.get(a2);
@@ -316,7 +316,7 @@ public class jxs extends iut implements b {
         } else if (this.g.g()) {
             JSONObject jSONObject = cVar.b;
             String str = cVar.f29283a;
-            if (TextUtils.isEmpty(str) || jSONObject == null || !JarvisConstant.EVENT_RECORD_ITME_CLICk.equals(str)) {
+            if (StringUtils.isEmpty(str) || jSONObject == null || !JarvisConstant.EVENT_RECORD_ITME_CLICk.equals(str)) {
                 return;
             }
             String string = jSONObject.getString("itemId");
@@ -325,7 +325,7 @@ public class jxs extends iut implements b {
             if (jSONObject2 != null) {
                 for (String str2 : jSONObject2.keySet()) {
                     String string2 = jSONObject2.getString(str2);
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         arrayMap.put(str2, string2);
                     }
                 }
@@ -338,7 +338,7 @@ public class jxs extends iut implements b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (!TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(str)) {
             Map<String, String> map2 = this.r;
             if (map2 != null) {
                 map.putAll(map2);
@@ -375,7 +375,7 @@ public class jxs extends iut implements b {
         }
         super.onCtxResume();
         m();
-        if (!this.g.g() || TextUtils.isEmpty(this.p)) {
+        if (!this.g.g() || StringUtils.isEmpty(this.p)) {
             return;
         }
         Iterator<jye> it = n().iterator();
@@ -497,7 +497,7 @@ public class jxs extends iut implements b {
         ArrayList<BaseCellBean> arrayList2 = new ArrayList();
         for (int cellsCount = baseSearchResult.getCellsCount() - 1; cellsCount >= 0; cellsCount--) {
             BaseCellBean baseCellBean = baseSearchResult.getCells().get(cellsCount);
-            if (TextUtils.equals(baseCellBean.cardType, "item")) {
+            if (StringUtils.equals(baseCellBean.cardType, "item")) {
                 if (baseCellBean.isP4p) {
                     arrayList2.add(baseCellBean);
                 } else {
@@ -537,7 +537,7 @@ public class jxs extends iut implements b {
         } else if (baseSearchResult == null) {
         } else {
             String popExtMod = baseSearchResult.popExtMod(JarvisConstant.KEY_JARVIS_CONFIG);
-            if (TextUtils.isEmpty(popExtMod)) {
+            if (StringUtils.isEmpty(popExtMod)) {
                 return;
             }
             try {

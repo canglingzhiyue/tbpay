@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -67,21 +67,21 @@ public class i extends com.alibaba.android.ultron.event.q {
                     return;
                 }
                 String string = fields.getString("page");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 String string2 = fields.getString("arg1");
                 String string3 = fields.getString("arg2");
                 String string4 = fields.getString("arg3");
-                String str = TextUtils.isEmpty(string3) ? "" : string3;
-                String str2 = TextUtils.isEmpty(string4) ? "" : string4;
+                String str = StringUtils.isEmpty(string3) ? "" : string3;
+                String str2 = StringUtils.isEmpty(string4) ? "" : string4;
                 JSONObject jSONObject2 = fields.getJSONObject("args");
                 HashMap hashMap = new HashMap();
                 if (jSONObject2 != null) {
                     for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
                         String key = entry.getKey();
                         Object value = entry.getValue();
-                        if (!TextUtils.isEmpty(key) && value != null) {
+                        if (!StringUtils.isEmpty(key) && value != null) {
                             hashMap.put(key, String.valueOf(value));
                         }
                     }
@@ -105,7 +105,7 @@ public class i extends com.alibaba.android.ultron.event.q {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && value != null) {
+            if (!StringUtils.isEmpty(key) && value != null) {
                 hashMap.put(key, String.valueOf(value));
             }
         }

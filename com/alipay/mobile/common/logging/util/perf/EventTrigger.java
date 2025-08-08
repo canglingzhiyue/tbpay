@@ -3,7 +3,7 @@ package com.alipay.mobile.common.logging.util.perf;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -66,7 +66,7 @@ public class EventTrigger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d365127a", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (map == null) {
                 map = new HashMap<>();
@@ -102,7 +102,7 @@ public class EventTrigger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             synchronized (this.c) {
                 z = !Constants.VAL_YES.equals(this.c.get(str));
                 this.c.put(str, Constants.VAL_YES);

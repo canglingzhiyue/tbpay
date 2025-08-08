@@ -2,7 +2,7 @@ package com.taobao.android.editionswitcher.homepage;
 
 import android.content.Context;
 import android.os.CountDownTimer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListAdapter;
@@ -76,7 +76,7 @@ public class HTaoEditionSwitchView extends EditionSwitchView {
         this.mCountryNameTextView.setText(c.countryName);
         this.mCountryNameTextView.setTag(c.countryCode);
         HImageView hImageView = (HImageView) findViewById(R.id.iv_change_country_reason);
-        if (!TextUtils.isEmpty(c.ext.hTaoContentImg)) {
+        if (!StringUtils.isEmpty(c.ext.hTaoContentImg)) {
             hImageView.setPlaceHoldForeground(getResources().getDrawable(R.drawable.area_switch_service_other));
         }
         hImageView.setImageUrl(c.ext.hTaoContentImg);
@@ -141,14 +141,14 @@ public class HTaoEditionSwitchView extends EditionSwitchView {
         LinkedHashMap<String, PositionInfo> a2 = com.taobao.android.editionswitcher.d.a();
         ArrayList arrayList = new ArrayList();
         for (String str : a2.keySet()) {
-            if (!TextUtils.equals(str, "CUN") && !TextUtils.equals(str, "OLD")) {
+            if (!StringUtils.equals(str, "CUN") && !StringUtils.equals(str, "OLD")) {
                 arrayList.add(str);
             }
         }
         ArrayList arrayList2 = new ArrayList();
         PositionInfo b = com.taobao.android.editionswitcher.b.b(context);
         String obj = this.mCountryNameTextView.getTag() == null ? "" : this.mCountryNameTextView.getTag().toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             obj = b == null ? "CN" : b.countryCode;
         }
         PositionInfo c = com.taobao.android.editionswitcher.b.c(context);
@@ -159,13 +159,13 @@ public class HTaoEditionSwitchView extends EditionSwitchView {
             a aVar = new a();
             aVar.f12297a = ((String) arrayList.get(a3[i2])).trim();
             aVar.b = a2.get(aVar.f12297a).countryName.trim();
-            if (TextUtils.equals(aVar.f12297a, obj)) {
+            if (StringUtils.equals(aVar.f12297a, obj)) {
                 aVar.d = true;
                 z = true;
             } else {
                 aVar.d = false;
             }
-            if (TextUtils.equals(aVar.f12297a, "CN")) {
+            if (StringUtils.equals(aVar.f12297a, "CN")) {
                 i = i2;
             }
             arrayList2.add(aVar);

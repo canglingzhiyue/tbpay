@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,10 +53,10 @@ public class pez {
         }
         String str = u.broadCaster.accountName;
         String format = String.format("%1$s的直播简直有毒，快来看！\n%2$s", str, u.title);
-        if (!TextUtils.isEmpty(aa.ae())) {
+        if (!StringUtils.isEmpty(aa.ae())) {
             format = String.format(aa.ae(), str, u.title);
         }
-        return pmd.a().p().b(this.f32579a, format, TextUtils.isEmpty(u.shareUrlDO.bgImgUrl) ? u.coverImg : u.shareUrlDO.bgImgUrl, u.liveId, u.topic, false, u.shareUrlDO.shareUrl, u.shareUrlDO.shareCardUrl, "zhibo_normal", null);
+        return pmd.a().p().b(this.f32579a, format, StringUtils.isEmpty(u.shareUrlDO.bgImgUrl) ? u.coverImg : u.shareUrlDO.bgImgUrl, u.liveId, u.topic, false, u.shareUrlDO.shareUrl, u.shareUrlDO.shareCardUrl, "zhibo_normal", null);
     }
 
     public void a(Menu menu) {

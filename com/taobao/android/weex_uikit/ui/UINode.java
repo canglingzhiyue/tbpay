@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -478,11 +478,11 @@ public class UINode extends aa implements INode, Serializable {
             return null;
         }
         String D = getNodeInfo().D();
-        if (!TextUtils.isEmpty(D)) {
+        if (!StringUtils.isEmpty(D)) {
             return D;
         }
         String str = (String) getExtra("ariaLabel");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         if (!hasEvent("click")) {
@@ -596,7 +596,7 @@ public class UINode extends aa implements INode, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9e0245c5", new Object[]{this, tVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(tVar.f16074a)) {
+        if (StringUtils.isEmpty(tVar.f16074a)) {
             return false;
         }
         String str = tVar.f16074a;
@@ -910,7 +910,7 @@ public class UINode extends aa implements INode, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("208452f3", new Object[]{this, uINode, str, mUSValue})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (this.styleHelper == null) {
@@ -949,7 +949,7 @@ public class UINode extends aa implements INode, Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a5cdfa2d", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (!com.taobao.android.weex_framework.util.g.a()) {
                 return;
             }
@@ -994,7 +994,7 @@ public class UINode extends aa implements INode, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f77acf1b", new Object[]{this, str, mUSValue})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         com.taobao.android.weex_framework.ui.d<UINode> dVar = this.nodeHolder;
@@ -1548,8 +1548,8 @@ public class UINode extends aa implements INode, Serializable {
             ipChange.ipc$dispatch("c767fbf7", new Object[]{this, map});
         } else if (!map.isEmpty()) {
             for (Map.Entry<String, Object> entry : map.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey())) {
-                    if (TextUtils.equals(entry.getKey(), "ariaLabel")) {
+                if (!StringUtils.isEmpty(entry.getKey())) {
+                    if (StringUtils.equals(entry.getKey(), "ariaLabel")) {
                         updateAriaLabel();
                     } else {
                         onUpdateExtra(this, getMountContent(), entry.getKey(), entry.getValue());

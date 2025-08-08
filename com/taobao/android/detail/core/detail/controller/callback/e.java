@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONArray;
@@ -444,17 +444,17 @@ public class e implements o {
                 JSONObject e = com.taobao.android.sku.utils.g.e(jSONObject);
                 String str = this.f.f9411a.f27180a;
                 String b2 = d.b(e);
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     str = b2;
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                     str = "emptyItemId";
                 }
                 String a4 = this.l.a(this.f, e, str);
-                StringBuilder sb = !TextUtils.isEmpty(a4) ? new StringBuilder(a4) : new StringBuilder();
+                StringBuilder sb = !StringUtils.isEmpty(a4) ? new StringBuilder(a4) : new StringBuilder();
                 enh a5 = a(emyVar, jSONObject, sb);
                 try {
                     String sb2 = sb.toString();
-                    if ((a5 != null) && !TextUtils.isEmpty(sb2)) {
+                    if ((a5 != null) && !StringUtils.isEmpty(sb2)) {
                         a(sb2);
                     } else {
                         DetailCoreActivity detailCoreActivity = this.f;
@@ -477,7 +477,7 @@ public class e implements o {
             if (enhVar != null && enhVar.b != null && enhVar.b.b != null && enhVar.b.b.f10055a != null) {
                 com.taobao.android.detail.datasdk.model.datamodel.node.b bVar2 = enhVar.b.b.f10055a;
                 String k = bVar2.k();
-                if (!TextUtils.isEmpty(k) && (j = epj.j()) != null) {
+                if (!StringUtils.isEmpty(k) && (j = epj.j()) != null) {
                     j.activateServerTest(k, this.f);
                 }
                 FeatureNode f = eqb.f(bVar2);
@@ -607,7 +607,7 @@ public class e implements o {
                     return;
                 }
                 com.taobao.android.detail.datasdk.protocol.adapter.core.d c2 = epj.c();
-                if (TextUtils.isEmpty(c2.e()) || Long.valueOf(c2.e()).longValue() % intValue > intValue2) {
+                if (StringUtils.isEmpty(c2.e()) || Long.valueOf(c2.e()).longValue() % intValue > intValue2) {
                     return;
                 }
                 JSONArray jSONArray = new JSONArray();
@@ -643,7 +643,7 @@ public class e implements o {
             }
             d(a3.a());
             TradeNode e = eqb.e(a3);
-            if (e != null && !TextUtils.isEmpty(e.degradeUrl) && !TextUtils.isEmpty(sb)) {
+            if (e != null && !StringUtils.isEmpty(e.degradeUrl) && !StringUtils.isEmpty(sb)) {
                 e.degradeUrl = sb.toString();
             }
             this.f.c(a3.m());
@@ -668,11 +668,11 @@ public class e implements o {
             epu.b("bizName", str);
             ept.a(str);
             i.d(j.a("MainRequestListener"), "detailProcess t3");
-            if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(sb)) {
                 a2 = new enh(null);
                 if (e != null) {
                     try {
-                        if (!TextUtils.isEmpty(e.degradeUrl)) {
+                        if (!StringUtils.isEmpty(e.degradeUrl)) {
                             sb.replace(0, sb.length(), e.degradeUrl);
                         }
                     } catch (Throwable th) {
@@ -868,7 +868,7 @@ public class e implements o {
                         str = jSONObject3.getString(Constants.WEIBO_REDIRECTURL_KEY);
                     }
                     String d = e.d(e.this);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = god.q + d;
                     }
                     ecg.b(d);
@@ -1115,7 +1115,7 @@ public class e implements o {
             com.taobao.android.detail.core.detail.activity.DetailCoreActivity r1 = r7.f     // Catch: java.lang.Throwable -> L48
             java.lang.String r1 = com.ta.utdid2.device.UTDevice.getUtdid(r1)     // Catch: java.lang.Throwable -> L48
             if (r0 == 0) goto L48
-            boolean r4 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L48
+            boolean r4 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L48
             if (r4 != 0) goto L48
             java.lang.String r4 = "android_detail"
             java.lang.String r5 = "tb_async_task"

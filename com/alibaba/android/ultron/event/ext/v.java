@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event.ext;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jpr;
@@ -37,7 +37,7 @@ public class v extends p {
         String string = e.getString("code");
         String string2 = e.getString("pageName");
         String string3 = e.getString("success");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
             return;
         }
         String string4 = e.getString("message");

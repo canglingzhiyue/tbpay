@@ -3,7 +3,7 @@ package com.taobao.android.ucp.util;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.util.TypeUtils;
@@ -73,7 +73,7 @@ public class UCPTrackBroadCastReceiver extends BroadcastReceiver {
         JSONObject a4 = Utils.a((JSONObject) intent.getSerializableExtra("bizTrackInfo"));
         if (!a4.getBooleanValue("displayed")) {
             String a5 = a.a("compensateErrorCodes", "");
-            if (TextUtils.isEmpty(a5)) {
+            if (StringUtils.isEmpty(a5)) {
                 a2 = Arrays.asList("OnViewJSClose", bzy.POINT_CONFIG_FAIL, "OnViewErrorClose", "Error");
             } else {
                 a2 = g.a(JSON.parseArray(a5), String.class);

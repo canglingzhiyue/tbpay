@@ -1,7 +1,7 @@
 package com.taobao.message.sp.category.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -143,7 +143,7 @@ public class StickFrameLayout extends FrameLayout implements ViewCenterUIEventMa
         } else {
             JSONObject jSONObject2 = (JSONObject) viewObject.data;
             String string = jSONObject2.getString("templateId");
-            if (!TextUtils.equals(jSONObject2.getJSONObject("props").getString("tag"), "v3_stickyHeader") || (jSONArray = jSONObject2.getJSONArray("list")) == null || (jSONObject = jSONArray.getJSONObject(i)) == null) {
+            if (!StringUtils.equals(jSONObject2.getJSONObject("props").getString("tag"), "v3_stickyHeader") || (jSONArray = jSONObject2.getJSONArray("list")) == null || (jSONObject = jSONArray.getJSONObject(i)) == null) {
                 return;
             }
             String string2 = jSONObject.getString("code");

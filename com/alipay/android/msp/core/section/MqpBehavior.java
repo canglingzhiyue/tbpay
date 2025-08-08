@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core.section;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
@@ -92,7 +92,7 @@ public class MqpBehavior implements IMqpSectionListener {
                         }
                         JSONObject jSONObject = new JSONObject();
                         String apLinkToken = mspContext.getApLinkToken();
-                        if (!TextUtils.isEmpty(apLinkToken)) {
+                        if (!StringUtils.isEmpty(apLinkToken)) {
                             jSONObject.put("aplinktoken", (Object) apLinkToken);
                         }
                         AlertIntelligenceEngine.recordBizInfo(mspContext, "contextInit");
@@ -336,7 +336,7 @@ public class MqpBehavior implements IMqpSectionListener {
             try {
                 String actionName = mspEvent.getActionName();
                 MqpBizSection.handleCmd(mspContext, mspEvent);
-                if (TextUtils.equals(actionName, "continue") || TextUtils.equals(actionName, "feedback") || TextUtils.equals(actionName, MspEventTypes.ACTION_TPL_MSG) || TextUtils.equals(actionName, MspEventTypes.ACTION_STRING_BNCB) || TextUtils.equals(actionName, "log") || TextUtils.equals(actionName, MspEventTypes.ACTION_INVOKE_QR_GEN) || TextUtils.equals(actionName, MspEventTypes.ACTION_STRING_DATABASE)) {
+                if (StringUtils.equals(actionName, "continue") || StringUtils.equals(actionName, "feedback") || StringUtils.equals(actionName, MspEventTypes.ACTION_TPL_MSG) || StringUtils.equals(actionName, MspEventTypes.ACTION_STRING_BNCB) || StringUtils.equals(actionName, "log") || StringUtils.equals(actionName, MspEventTypes.ACTION_INVOKE_QR_GEN) || StringUtils.equals(actionName, MspEventTypes.ACTION_STRING_DATABASE)) {
                     return;
                 }
                 String str = eventAction.getEventFrom() + "_" + mspEvent.getActionName();

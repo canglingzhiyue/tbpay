@@ -1,6 +1,6 @@
 package com.taobao.android.tab2liveroom.liveroom;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -206,15 +206,15 @@ public class LiveRoomEventHandler implements com.taobao.taolive.room.controller2
                 hashMap.put("officialAccountName", videoInfo.officialLiveInfo.accountName);
                 hashMap.put("officialHeadImg", videoInfo.officialLiveInfo.officialHeadImg);
                 hashMap.put("officialFollow", videoInfo.officialLiveInfo.follow);
-                if (TextUtils.equals(videoInfo.officialLiveInfo.officialLive, "official")) {
+                if (StringUtils.equals(videoInfo.officialLiveInfo.officialLive, "official")) {
                     str2 = "mainroom";
                 } else {
-                    str2 = TextUtils.equals(videoInfo.officialLiveInfo.officialLive, "rebroadcast") ? "subroom" : "none";
+                    str2 = StringUtils.equals(videoInfo.officialLiveInfo.officialLive, "rebroadcast") ? "subroom" : "none";
                 }
                 hashMap.put("officialLiveType", str2);
             }
             str = videoInfo.liveId;
-            if (videoInfo.officialLiveInfo != null && !TextUtils.isEmpty(videoInfo.officialLiveInfo.officialLiveId)) {
+            if (videoInfo.officialLiveInfo != null && !StringUtils.isEmpty(videoInfo.officialLiveInfo.officialLiveId)) {
                 str = videoInfo.officialLiveInfo.officialLiveId;
             }
         } else {
@@ -222,7 +222,7 @@ public class LiveRoomEventHandler implements com.taobao.taolive.room.controller2
             hashMap = null;
             str = null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f15280a.a(videoInfo, str, this.c);
         }
         this.f15280a.b("onLiveDetailChanged", hashMap);

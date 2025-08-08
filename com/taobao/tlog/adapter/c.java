@@ -1,7 +1,7 @@
 package com.taobao.tlog.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -24,7 +24,7 @@ public class c implements com.taobao.tao.log.statistics.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (com.taobao.tao.log.statistics.d.UT_TLOG_FILE_SIZE.equals(str)) {
                 a(map);

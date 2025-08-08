@@ -1,6 +1,6 @@
 package com.android.taobao.safeclean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -41,7 +41,7 @@ public interface c<T> {
         @Override // com.android.taobao.safeclean.c
         public boolean a(String str, String str2) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !str.equals(str2);
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || !str.equals(str2);
         }
     }
 
@@ -57,7 +57,7 @@ public interface c<T> {
         @Override // com.android.taobao.safeclean.c
         public boolean a(String str, String str2) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && str.equals(str2);
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && str.equals(str2);
         }
     }
 }

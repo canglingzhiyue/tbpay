@@ -1,7 +1,7 @@
 package com.taobao.alimama.cpm;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.c;
@@ -20,7 +20,7 @@ public final class e {
 
     public static boolean a(CpmAdvertise cpmAdvertise, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7fa62f11", new Object[]{cpmAdvertise, new Boolean(z)})).booleanValue() : !TextUtils.isEmpty(cpmAdvertise.clickUrl) && !TextUtils.isEmpty(cpmAdvertise.pid) && !(z && cpmAdvertise.bitmap == null && cpmAdvertise.animatedDrawable == null);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7fa62f11", new Object[]{cpmAdvertise, new Boolean(z)})).booleanValue() : !StringUtils.isEmpty(cpmAdvertise.clickUrl) && !StringUtils.isEmpty(cpmAdvertise.pid) && !(z && cpmAdvertise.bitmap == null && cpmAdvertise.animatedDrawable == null);
     }
 
     public static Pair<Long, Long> a(CpmAdvertiseBundle cpmAdvertiseBundle, String str) {
@@ -28,11 +28,11 @@ public final class e {
         if (ipChange instanceof IpChange) {
             return (Pair) ipChange.ipc$dispatch("33c1dc99", new Object[]{cpmAdvertiseBundle, str});
         }
-        if (!TextUtils.isEmpty(str) && cpmAdvertiseBundle != null && cpmAdvertiseBundle.advertises != null) {
+        if (!StringUtils.isEmpty(str) && cpmAdvertiseBundle != null && cpmAdvertiseBundle.advertises != null) {
             for (CpmAdvertise cpmAdvertise : cpmAdvertiseBundle.advertises.values()) {
                 if (a(cpmAdvertise, false)) {
                     String queryParameter = Uri.parse(cpmAdvertise.clickUrl).getQueryParameter(c.E_URL);
-                    if (!TextUtils.isEmpty(queryParameter) && queryParameter.equals(str)) {
+                    if (!StringUtils.isEmpty(queryParameter) && queryParameter.equals(str)) {
                         return new Pair<>(Long.valueOf(cpmAdvertiseBundle.timeStamp), Long.valueOf(cpmAdvertise.cachetime * 1000));
                     }
                 }
@@ -46,7 +46,7 @@ public final class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("eb33b832", new Object[]{cpmAdvertiseBundle, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && cpmAdvertiseBundle != null && cpmAdvertiseBundle.advertises != null) {
+        if (!StringUtils.isEmpty(str) && cpmAdvertiseBundle != null && cpmAdvertiseBundle.advertises != null) {
             for (CpmAdvertise cpmAdvertise : cpmAdvertiseBundle.advertises.values()) {
                 if (a(cpmAdvertise, false) && str.equals(cpmAdvertise.ifs)) {
                     return true;

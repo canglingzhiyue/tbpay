@@ -1,7 +1,7 @@
 package com.ta.utdid2.device;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.Variables;
 import com.ta.audid.upload.UtdidKeyFile;
@@ -41,7 +41,7 @@ public class a {
             if (jSONObject2.has("data") && (jSONObject = jSONObject2.getJSONObject("data")) != null) {
                 if (jSONObject.has(com.alibaba.analytics.core.config.a.KEY)) {
                     String string = jSONObject.getString(com.alibaba.analytics.core.config.a.KEY);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         UtdidKeyFile.writeAudidFile(string);
                     }
                 }

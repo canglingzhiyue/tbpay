@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.d;
@@ -29,7 +29,7 @@ public class eik {
             JSONObject data = detailOptNode.getData();
             if (data == null) {
                 i.c(l.a("DetailOptConfigService"), "保存开关配置数据不成功：detailOptJson为空");
-            } else if (TextUtils.isEmpty(detailOptNode.preloadChannel)) {
+            } else if (StringUtils.isEmpty(detailOptNode.preloadChannel)) {
                 i.c(l.a("DetailOptConfigService"), "保存开关配置数据不成功：配置数据中没有preloadChannel");
             } else {
                 if ("navPreload".equals(detailOptNode.preloadChannel)) {

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -264,13 +264,13 @@ public class eai extends c<com.taobao.android.detail.datasdk.model.viewmodel.mai
             Iterator<PriceNode.a> it = cVar.e.iterator();
             while (it.hasNext()) {
                 PriceNode.a next = it.next();
-                if (next != null && !TextUtils.isEmpty(next.f9986a)) {
+                if (next != null && !StringUtils.isEmpty(next.f9986a)) {
                     TextView textView = new TextView(this.f9568a);
                     textView.setMaxLines(1);
-                    textView.setEllipsize(TextUtils.TruncateAt.END);
+                    textView.setEllipsize(StringUtils.TruncateAt.END);
                     textView.setText(next.f9986a);
                     textView.setTextSize(0, this.f9568a.getResources().getDimensionPixelOffset(R.dimen.detail_extra_price_descs_text_size));
-                    if (TextUtils.isEmpty(next.b)) {
+                    if (StringUtils.isEmpty(next.b)) {
                         a2 = this.f9568a.getResources().getColor(R.color.detail_whole_price_desc_default_text_color);
                     } else {
                         a2 = com.taobao.android.detail.core.utils.c.a(next.b);
@@ -401,7 +401,7 @@ public class eai extends c<com.taobao.android.detail.datasdk.model.viewmodel.mai
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("90365652", new Object[]{this, sb, arrayList, str, new Integer(i)});
-        } else if (sb != null && arrayList != null && !TextUtils.isEmpty(str)) {
+        } else if (sb != null && arrayList != null && !StringUtils.isEmpty(str)) {
             String[] split = str.split("-");
             if (split.length <= 0) {
                 return;
@@ -412,7 +412,7 @@ public class eai extends c<com.taobao.android.detail.datasdk.model.viewmodel.mai
                     sb.append("-");
                     a(arrayList, length, length + 1, i, 1);
                 }
-                if (!TextUtils.isEmpty(split[i2])) {
+                if (!StringUtils.isEmpty(split[i2])) {
                     String[] split2 = split[i2].split(Pattern.quote("."));
                     if (split2.length > 0) {
                         int length2 = sb.length();
@@ -523,12 +523,12 @@ public class eai extends c<com.taobao.android.detail.datasdk.model.viewmodel.mai
             return null;
         }
         SpannableString a3 = a(priceData, i);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return null;
         }
         TextView textView = new TextView(this.f9568a);
         textView.setText(a3);
-        if (TextUtils.isEmpty(priceData.priceColor)) {
+        if (StringUtils.isEmpty(priceData.priceColor)) {
             a2 = a(i);
         } else {
             a2 = com.taobao.android.detail.core.utils.c.a(priceData.priceColor);
@@ -560,7 +560,7 @@ public class eai extends c<com.taobao.android.detail.datasdk.model.viewmodel.mai
         if (bVar == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(bVar.f9987a)) {
+        if (!StringUtils.isEmpty(bVar.f9987a)) {
             TextView textView = new TextView(this.f9568a);
             textView.setText(bVar.f9987a);
             textView.setTextSize(1, 10.0f);
@@ -569,7 +569,7 @@ public class eai extends c<com.taobao.android.detail.datasdk.model.viewmodel.mai
                 textView.setPadding(epo.d, 0, epo.d, 0);
                 textView.setTextColor(this.f9568a.getResources().getColor(R.color.detail_theme_color));
             } else {
-                int a2 = TextUtils.isEmpty(bVar.c) ? g : com.taobao.android.detail.core.utils.c.a(bVar.c);
+                int a2 = StringUtils.isEmpty(bVar.c) ? g : com.taobao.android.detail.core.utils.c.a(bVar.c);
                 textView.setTextColor(a2);
                 GradientDrawable gradientDrawable = new GradientDrawable();
                 gradientDrawable.setColor(-1);
@@ -584,7 +584,7 @@ public class eai extends c<com.taobao.android.detail.datasdk.model.viewmodel.mai
                 textView.setIncludeFontPadding(false);
             }
             return textView;
-        } else if (TextUtils.isEmpty(bVar.d)) {
+        } else if (StringUtils.isEmpty(bVar.d)) {
             return null;
         } else {
             WidthVariableImageView widthVariableImageView = new WidthVariableImageView(this.f9568a);

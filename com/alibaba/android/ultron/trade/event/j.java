@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.trade.event;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -227,7 +227,7 @@ public class j extends d {
             return false;
         }
         for (String str : jSONObject.keySet()) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             Object obj = jSONObject.get(str);

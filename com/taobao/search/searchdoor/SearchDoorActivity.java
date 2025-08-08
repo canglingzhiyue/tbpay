@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -479,7 +479,7 @@ public class SearchDoorActivity extends SearchBaseActivity implements com.taobao
         } else {
             F();
         }
-        if (TextUtils.isEmpty(this.o)) {
+        if (StringUtils.isEmpty(this.o)) {
             return;
         }
         s.f18233a.a(o.f18229a.a(this).c()).a("search_door_opt", this.o);
@@ -611,16 +611,16 @@ public class SearchDoorActivity extends SearchBaseActivity implements com.taobao
         }
         if (intent != null && (data = intent.getData()) != null) {
             String queryParameter = data.getQueryParameter("channelSrp");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 queryParameter = data.getQueryParameter(nde.G_CHANNELSRP);
             }
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 queryParameter = intent.getStringExtra("channelSrp");
             }
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 queryParameter = intent.getStringExtra(nde.G_CHANNELSRP);
             }
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 return true;
             }
         }
@@ -717,7 +717,7 @@ public class SearchDoorActivity extends SearchBaseActivity implements com.taobao
                         }
                         try {
                             String a2 = i.a(SearchDoorActivity.o(SearchDoorActivity.this));
-                            if (TextUtils.isEmpty(a2)) {
+                            if (StringUtils.isEmpty(a2)) {
                                 return;
                             }
                             JSONObject parseObject = JSON.parseObject(a2);
@@ -1063,7 +1063,7 @@ public class SearchDoorActivity extends SearchBaseActivity implements com.taobao
         }
         try {
             if (this.f19325a != null) {
-                return TextUtils.equals(this.f19325a.f19370a.a(noa.KEY_G_POP_UP), "true");
+                return StringUtils.equals(this.f19325a.f19370a.a(noa.KEY_G_POP_UP), "true");
             }
             return false;
         } catch (Exception unused) {
@@ -1173,14 +1173,14 @@ public class SearchDoorActivity extends SearchBaseActivity implements com.taobao
             Uri data = intent.getData();
             if (data != null) {
                 str = data.getQueryParameter(nde.G_CHANNELSRP);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = data.getQueryParameter("channelSrp");
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intent.getStringExtra(nde.G_CHANNELSRP);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intent.getStringExtra("channelSrp");
             }
         }
@@ -1262,7 +1262,7 @@ public class SearchDoorActivity extends SearchBaseActivity implements com.taobao
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("5c99a0f1", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, "connectivity") && r.bV()) {
+        if (StringUtils.equals(str, "connectivity") && r.bV()) {
             return getApplicationContext().getSystemService(str);
         }
         return super.getSystemService(str);
@@ -1348,7 +1348,7 @@ public class SearchDoorActivity extends SearchBaseActivity implements com.taobao
             return;
         }
         String stringExtra = intent.getStringExtra("q");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return;
         }
         this.f19325a.postEvent(nrk.a.a(stringExtra, ""));

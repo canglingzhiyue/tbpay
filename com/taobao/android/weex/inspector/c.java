@@ -1,6 +1,6 @@
 package com.taobao.android.weex.inspector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.fulltrace.NWFullTracePlugin;
 import com.taobao.android.weex.WeexInstanceImpl;
@@ -42,7 +42,7 @@ public class c {
                 juk jukVar = (juk) weexInstanceImpl.getExtend(juk.class);
                 if (jukVar != null) {
                     String str = jukVar.i().get("raster_end_time_stamp_opt");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         try {
                             jSONObject.getJSONObject("value").getJSONObject(NWFullTracePlugin.FullTraceJSParam.STAGES).put(jvw.KEY_PAGE_STAGES_RASTER_INTERACTION_OPT, Long.parseLong(str));
                         } catch (NumberFormatException unused) {

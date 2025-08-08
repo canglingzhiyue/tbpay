@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.miniLive.sdk.c;
@@ -680,8 +680,8 @@ public class a {
             if (this.c == null) {
                 return;
             }
-            int intValue = TextUtils.isEmpty(str) ? 0 : Integer.valueOf(str).intValue();
-            if (!TextUtils.isEmpty(str2)) {
+            int intValue = StringUtils.isEmpty(str) ? 0 : Integer.valueOf(str).intValue();
+            if (!StringUtils.isEmpty(str2)) {
                 i = Integer.valueOf(str2).intValue();
             }
             this.c.a(intValue, i);
@@ -717,7 +717,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ce688d5a", new Object[]{this, context, str, map, onClickListener, aVar, dVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (Build.VERSION.SDK_INT >= 24) {
                 if (Settings.canDrawOverlays(context)) {
@@ -816,13 +816,13 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ecbbe698", new Object[]{this, context, str, map, onClickListener, aVar, dVar});
-        } else if (this.b || map == null || TextUtils.isEmpty(str)) {
+        } else if (this.b || map == null || StringUtils.isEmpty(str)) {
             hue.a("TBLiveService", "internalStartMiniLive condition was not satisfied");
         } else {
             hue.a("TBLiveService", "isShowFloatWindow = " + this.b);
             String a2 = huc.a(map, "bizCode");
             String a3 = huc.a(map, "algParams");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             if (a(str)) {

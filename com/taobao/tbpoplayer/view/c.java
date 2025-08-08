@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.view;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.factory.view.base.PopLayerBaseView;
@@ -146,7 +146,7 @@ public class c {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && aVar != null) {
+            if (!StringUtils.isEmpty(str) && aVar != null) {
                 b bVar = this.c.get(str);
                 if (bVar == null) {
                     bVar = new b();
@@ -192,7 +192,7 @@ public class c {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.alibaba.poplayer.utils.c.a("PopPageEventCenter.unRegisterPageEventLifecycle.Failed.sourceNameIsNull.", new Object[0]);
                 return;
             }
@@ -231,7 +231,7 @@ public class c {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 b bVar = this.c.get(str);
                 if (bVar == null) {
                     com.alibaba.poplayer.utils.c.a("PopPageEventCenter.sourceNameInvalid.", new Object[0]);
@@ -329,7 +329,7 @@ public class c {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && collection != null && !collection.isEmpty() && popLayerBaseView != null && !popLayerBaseView.isClosed()) {
+            if (!StringUtils.isEmpty(str) && collection != null && !collection.isEmpty() && popLayerBaseView != null && !popLayerBaseView.isClosed()) {
                 b bVar = this.c.get(str);
                 if (bVar == null) {
                     bVar = new b();
@@ -387,7 +387,7 @@ public class c {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && collection != null && !collection.isEmpty() && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && collection != null && !collection.isEmpty() && !StringUtils.isEmpty(str2)) {
                 b bVar = this.c.get(str);
                 if (bVar != null && bVar.c != null) {
                     for (Object obj : collection) {
@@ -434,7 +434,7 @@ public class c {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.alibaba.poplayer.utils.c.a("PopPageEventCenter.removeAllPageEventListener.paramInvalid.", new Object[0]);
                 return;
             }

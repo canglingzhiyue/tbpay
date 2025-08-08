@@ -1,7 +1,7 @@
 package com.taobao.tao.scancode;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.taopassword.b;
@@ -66,12 +66,12 @@ public class a implements nzb {
                 }
                 String link = shareData.getLink();
                 String urlBackFlow = ShareServiceApi.urlBackFlow(shareData.getBusinessId(), "QRCode-Scan", shareData.getLink());
-                if (TextUtils.isEmpty(urlBackFlow)) {
+                if (StringUtils.isEmpty(urlBackFlow)) {
                     return link;
                 }
                 String shortenURL = new nzp().shortenURL(urlBackFlow);
                 b.a(ShareTargetType.Share2ScanCode.getValue());
-                return (TextUtils.isEmpty(shortenURL) || urlBackFlow.equals(shortenURL)) ? link : shortenURL;
+                return (StringUtils.isEmpty(shortenURL) || urlBackFlow.equals(shortenURL)) ? link : shortenURL;
             }
 
             public void a(String str2) {

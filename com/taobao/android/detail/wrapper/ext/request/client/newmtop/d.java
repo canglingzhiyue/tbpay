@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.request.client.newmtop;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -198,7 +198,7 @@ public class d {
             return;
         }
         fef.a aVar = a2.f27850a;
-        if (aVar != null && TextUtils.equals(aVar.f27849a, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
+        if (aVar != null && StringUtils.equals(aVar.f27849a, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
             fef.b(this.i.mRequestID);
             ecg.c(this.b);
             com.taobao.android.detail.core.utils.i.c(k.a(f11361a), "main request has executed, won't execute prefetch request, clear prefetchInfo");
@@ -207,7 +207,7 @@ public class d {
         fef.c cVar = a2.b;
         if (cVar == null) {
             com.taobao.android.detail.core.utils.i.a(k.a(f11361a), "prefetchRequest is null");
-        } else if (TextUtils.equals(cVar.d, BaseFBPlugin.VERIFY_STATUS.abort)) {
+        } else if (StringUtils.equals(cVar.d, BaseFBPlugin.VERIFY_STATUS.abort)) {
             fef.b(this.i.mRequestID);
             com.taobao.android.detail.core.utils.i.c(k.a(f11361a), "prefetchRequest is aborted, clear prefetchInfo");
         } else {

@@ -20,7 +20,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -388,7 +388,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         this.mView = this.inflater.inflate(R.layout.share_longpic_qrcode_view, (ViewGroup) null);
         initTopAndBottomViewByConfig(str2, z, tBShareContent != null ? tBShareContent.disableHeadUrl : false);
         this.mQrTipsTextView = (TextView) this.mView.findViewById(R.id.qr_tips_text);
-        if (tBShareContent != null && !TextUtils.isEmpty(tBShareContent.qrTipsTxt)) {
+        if (tBShareContent != null && !StringUtils.isEmpty(tBShareContent.qrTipsTxt)) {
             this.mQrTipsTextView.setText(tBShareContent.qrTipsTxt);
         }
         View findViewById = this.mView.findViewById(R.id.super_user_container);
@@ -401,7 +401,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         this.linearLayout = (LinearLayout) this.mView.findViewById(R.id.snapshot_image_layout);
         String sourceType = shareData.getSourceType();
         String text = shareData.getText();
-        if (!TextUtils.isEmpty(text) && !z2) {
+        if (!StringUtils.isEmpty(text) && !z2) {
             if ("shop".equals(sourceType)) {
                 TextView textView = (TextView) this.mView.findViewById(R.id.snapshot_title_shop);
                 textView.setText(text);
@@ -412,10 +412,10 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                 textView2.setVisibility(0);
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             TextView textView3 = (TextView) this.mView.findViewById(R.id.snapshot_price);
             SpannableStringBuilder buildPrice = buildPrice(str);
-            if (!TextUtils.isEmpty(buildPrice)) {
+            if (!StringUtils.isEmpty(buildPrice)) {
                 textView3.setText(buildPrice);
                 textView3.setVisibility(0);
             }
@@ -425,10 +425,10 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         this.mQRCodeLogoView = (TUrlImageView) this.mView.findViewById(R.id.snapshot_qrcode_logo);
         this.mQRCodeLogoView.setVisibility(4);
         String i = obi.b.i();
-        if (TextUtils.isEmpty(i)) {
+        if (StringUtils.isEmpty(i)) {
             i = TAO_LOGO_URL;
         }
-        if (!ShareBizAdapter.getInstance().getLogin().b() || !TextUtils.equals(obi.a(obi.b.KEY_NEED_SHOW_AVATAR, "false"), "true")) {
+        if (!ShareBizAdapter.getInstance().getLogin().b() || !StringUtils.equals(obi.a(obi.b.KEY_NEED_SHOW_AVATAR, "false"), "true")) {
             z4 = false;
         } else {
             i = ShareBizAdapter.getInstance().getLogin().c();
@@ -504,7 +504,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         tUrlImageView.setStrategyConfig(nyr.f31846a);
         if (z2) {
             tUrlImageView.setVisibility(8);
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             if ("false".equals(str)) {
                 tUrlImageView.setVisibility(8);
             } else {
@@ -512,7 +512,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
             }
         } else {
             String h = obi.b.h();
-            if (!TextUtils.isEmpty(h)) {
+            if (!StringUtils.isEmpty(h)) {
                 tUrlImageView.setImageUrl(h);
             } else {
                 tUrlImageView.setVisibility(8);
@@ -613,7 +613,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                     JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                     if (jSONObject2 != null) {
                         String string = jSONObject2.getString("type");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             if ("image".equals(string)) {
                                 dealImageType(jSONObject2, floatValue, this.frameLayout, this.linearLayout);
                             } else if ("text".equals(string)) {
@@ -644,7 +644,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         } else if (jSONObject == null || jSONObject.getString(QR_URL) == null) {
         } else {
             String string = jSONObject.getString(QR_URL);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             final TUrlImageView tUrlImageView = new TUrlImageView(this.mContext);
@@ -766,7 +766,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("content");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             TextView textView = new TextView(this.mContext);
@@ -776,7 +776,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
             String string2 = jSONObject.getString("color");
             int parseColor = Color.parseColor("#666666");
             try {
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     parseColor = Color.parseColor(string2);
                 }
             } catch (Throwable unused) {
@@ -784,7 +784,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
             textView.setTextColor(parseColor);
             String string3 = jSONObject.getString("size");
             int i = 16;
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 if ("small".equals(string3)) {
                     i = 12;
                 } else if (com.taobao.android.weex_framework.util.a.ATOM_EXT_big.equals(string3)) {
@@ -810,7 +810,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                 }
                 textView.setLayoutParams(layoutParams);
             }
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
         }
     }
 
@@ -917,7 +917,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         if (a2 != -1) {
             i = a2;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             nyu.a(this.mContext, com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_23569));
             onLoadingFinish();
             this.mGetBitmapFinish = true;
@@ -990,7 +990,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
             return;
         }
         String a2 = obi.a(obi.b.PIIIC_QRCODE_URL, "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             doMergerBitmap(i, null);
         } else {
             com.taobao.phenix.intf.b.h().a(a2).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.longpic.ShareNewQRCodeView.2
@@ -1170,7 +1170,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                 tUrlImageView2.setVisibility(8);
             }
             String i2 = obi.b.i();
-            if (!TextUtils.isEmpty(i2)) {
+            if (!StringUtils.isEmpty(i2)) {
                 com.taobao.phenix.intf.b.h().a(i2).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.longpic.ShareNewQRCodeView.5
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1307,7 +1307,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                 if (bitmap != null && !bitmap.isRecycled()) {
                     createViewBitmap.recycle();
                 }
-                return Boolean.valueOf(!TextUtils.isEmpty(a2));
+                return Boolean.valueOf(!StringUtils.isEmpty(a2));
             }
 
             public void a(Boolean bool) {
@@ -1321,7 +1321,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                     if (!ShareNewQRCodeView.access$1700(ShareNewQRCodeView.this)) {
                         ShareNewQRCodeView.access$1702(ShareNewQRCodeView.this, true);
                         ShareNewQRCodeView.access$1800(ShareNewQRCodeView.this, str, shareData);
-                        if (!TextUtils.isEmpty(ShareNewQRCodeView.access$1900(ShareNewQRCodeView.this))) {
+                        if (!StringUtils.isEmpty(ShareNewQRCodeView.access$1900(ShareNewQRCodeView.this))) {
                             obc.a(ShareNewQRCodeView.access$200(ShareNewQRCodeView.this), obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY, ShareNewQRCodeView.access$1900(ShareNewQRCodeView.this));
                         }
                         TBS.Ext.commitEvent("Page_QRCode_SaveSuccess", (Properties) null);
@@ -1389,7 +1389,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                             if (createViewBitmap != null && !createViewBitmap.isRecycled()) {
                                 createViewBitmap.recycle();
                             }
-                            return Boolean.valueOf(!TextUtils.isEmpty(a2));
+                            return Boolean.valueOf(!StringUtils.isEmpty(a2));
                         }
 
                         public void a(Boolean bool) {
@@ -1403,7 +1403,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                                 if (!ShareNewQRCodeView.access$1700(ShareNewQRCodeView.this)) {
                                     ShareNewQRCodeView.access$1702(ShareNewQRCodeView.this, true);
                                     ShareNewQRCodeView.access$1800(ShareNewQRCodeView.this, str, shareData);
-                                    if (!TextUtils.isEmpty(ShareNewQRCodeView.access$1900(ShareNewQRCodeView.this))) {
+                                    if (!StringUtils.isEmpty(ShareNewQRCodeView.access$1900(ShareNewQRCodeView.this))) {
                                         obc.a(ShareNewQRCodeView.access$200(ShareNewQRCodeView.this), obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY, ShareNewQRCodeView.access$1900(ShareNewQRCodeView.this));
                                     }
                                     TBS.Ext.commitEvent("Page_QRCode_SaveSuccess", (Properties) null);
@@ -1496,7 +1496,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
                     str2 = "weibo";
                 } else {
                     String a2 = obc.a(tPTargetType);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         obc.d(ShareNewQRCodeView.access$200(ShareNewQRCodeView.this), a2);
                     }
                     str2 = nyk.KEY_SHARE_CONFIG_WEIXIN.equals(tPTargetType.getInfo()) ? nyk.KEY_SHARE_CONFIG_WEIXIN : "qq";
@@ -1673,7 +1673,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         if (ipChange instanceof IpChange) {
             return (SpannableStringBuilder) ipChange.ipc$dispatch("c6f3bfef", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.contains("-")) {
@@ -1759,7 +1759,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("90540891", new Object[]{this, context, str, bool, imageView});
-        } else if (context == null || TextUtils.isEmpty(str) || imageView == null) {
+        } else if (context == null || StringUtils.isEmpty(str) || imageView == null) {
         } else {
             if (bool.booleanValue()) {
                 com.taobao.phenix.intf.b.h().a(context).a(str).bitmapProcessors(new com.taobao.phenix.compat.effects.c()).into(imageView);
@@ -1910,7 +1910,7 @@ public class ShareNewQRCodeView implements PopupWindow.OnDismissListener {
             } else {
                 c0868b.d.setVisibility(8);
             }
-            if (TextUtils.isEmpty(aVar.g())) {
+            if (StringUtils.isEmpty(aVar.g())) {
                 c0868b.e.setVisibility(8);
             } else {
                 c0868b.e.setVisibility(0);

@@ -1,6 +1,6 @@
 package com.ut.share.business;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.alipay.mobile.verifyidentity.common.ModuleConstants;
 import tb.nyk;
@@ -54,7 +54,7 @@ public enum ShareTargetType {
     }
 
     public static String getTargetByType(String str) {
-        return Share2SinaWeibo.getValue().equals(str) ? "WB" : Share2Wangxin.getValue().equals(str) ? "WX" : Share2Weixin.getValue().equals(str) ? "WEIXIN" : Share2WeixinTimeline.getValue().equals(str) ? "WXFRIEND" : Share2Copy.getValue().equals(str) ? "COPY" : Share2Contact.getValue().equals(str) ? "CONTACTS" : Share2QRCode.getValue().equals(str) ? "QR" : Share2ScanCode.getValue().equals(str) ? "SCAN" : Share2Alipay.getValue().equals(str) ? "ALIPAY" : Share2QQ.getValue().equals(str) ? "QQ" : Share2IPresent.getValue().equals(str) ? "PRESENT" : Share2IShopping.getValue().equals(str) ? "GUANGJIE" : Share2DingTalk.getValue().equals(str) ? RPCDataItems.DT : Share2SMS.getValue().equals(str) ? ModuleConstants.VI_MODULE_NAME_SMS : Share2Messenger.getValue().equals(str) ? "MESSENGER" : Share2Telegram.getValue().equals(str) ? "TELEGRAM" : Share2WeChat.getValue().equals(str) ? "WECHAT" : Share2WhatsApp.getValue().equals(str) ? "WHATSAPP" : Share2Instagram.getValue().equals(str) ? "INSTAGRAM" : Share2Facebook.getValue().equals(str) ? "FACEBOOK" : Share2I18Napp.getValue().equals(str) ? "I18NAPP" : Share2Line.getValue().equals(str) ? "LINE" : !TextUtils.isEmpty(str) ? str : "UNKNOWN";
+        return Share2SinaWeibo.getValue().equals(str) ? "WB" : Share2Wangxin.getValue().equals(str) ? "WX" : Share2Weixin.getValue().equals(str) ? "WEIXIN" : Share2WeixinTimeline.getValue().equals(str) ? "WXFRIEND" : Share2Copy.getValue().equals(str) ? "COPY" : Share2Contact.getValue().equals(str) ? "CONTACTS" : Share2QRCode.getValue().equals(str) ? "QR" : Share2ScanCode.getValue().equals(str) ? "SCAN" : Share2Alipay.getValue().equals(str) ? "ALIPAY" : Share2QQ.getValue().equals(str) ? "QQ" : Share2IPresent.getValue().equals(str) ? "PRESENT" : Share2IShopping.getValue().equals(str) ? "GUANGJIE" : Share2DingTalk.getValue().equals(str) ? RPCDataItems.DT : Share2SMS.getValue().equals(str) ? ModuleConstants.VI_MODULE_NAME_SMS : Share2Messenger.getValue().equals(str) ? "MESSENGER" : Share2Telegram.getValue().equals(str) ? "TELEGRAM" : Share2WeChat.getValue().equals(str) ? "WECHAT" : Share2WhatsApp.getValue().equals(str) ? "WHATSAPP" : Share2Instagram.getValue().equals(str) ? "INSTAGRAM" : Share2Facebook.getValue().equals(str) ? "FACEBOOK" : Share2I18Napp.getValue().equals(str) ? "I18NAPP" : Share2Line.getValue().equals(str) ? "LINE" : !StringUtils.isEmpty(str) ? str : "UNKNOWN";
     }
 
     public String getValue() {

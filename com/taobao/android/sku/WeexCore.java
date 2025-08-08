@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -518,7 +518,7 @@ public class WeexCore {
         }
         iyf.a().b("onPreSkuShow", "afterMtop");
         t();
-        if (TextUtils.isEmpty(this.n)) {
+        if (StringUtils.isEmpty(this.n)) {
             o.a("TouchDown preShowSku return because url empty weexType=" + this.w);
             return;
         }
@@ -627,7 +627,7 @@ public class WeexCore {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123b0d2", new Object[]{this, str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = this.c.g().g().getJSONObject("skuTimeStamp");
@@ -668,7 +668,7 @@ public class WeexCore {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
@@ -707,7 +707,7 @@ public class WeexCore {
             return;
         }
         String string = jSONObject.getString("bottomMode");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "ADDCART_AND_BUYNOW";
         }
         this.m = string;
@@ -825,7 +825,7 @@ public class WeexCore {
 
     public static boolean c(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{str, str2})).booleanValue() : !TextUtils.isEmpty(str2) && !b(str, str2) && n.a("enable_newbuy_downto_skuv3");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{str, str2})).booleanValue() : !StringUtils.isEmpty(str2) && !b(str, str2) && n.a("enable_newbuy_downto_skuv3");
     }
 
     public static boolean b(String str, String str2) {
@@ -833,10 +833,10 @@ public class WeexCore {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             Uri parse = Uri.parse(str);
             Uri parse2 = Uri.parse(str2);
-            if (TextUtils.equals(parse.getHost(), parse2.getHost()) && TextUtils.equals(parse.getPath(), parse2.getPath())) {
+            if (StringUtils.equals(parse.getHost(), parse2.getHost()) && StringUtils.equals(parse.getPath(), parse2.getPath())) {
                 return true;
             }
         }
@@ -879,7 +879,7 @@ public class WeexCore {
         IpChange ipChange = $ipChange;
         return ipChange instanceof IpChange ? (JSONObject) ipChange.ipc$dispatch("572adfd8", new Object[]{this, str, str2, str3, str4, str5, str6, str7, str8}) : new JSONObject() { // from class: com.taobao.android.sku.WeexCore.5
             {
-                put("actionFrom", (Object) (!TextUtils.isEmpty(str) ? str : "NULL"));
+                put("actionFrom", (Object) (!StringUtils.isEmpty(str) ? str : "NULL"));
                 put("inputMode", (Object) WeexCore.d(WeexCore.this));
                 put("buyNow", (Object) new JSONObject() { // from class: com.taobao.android.sku.WeexCore.5.1
                     {
@@ -887,11 +887,11 @@ public class WeexCore {
                         put("skuId", (Object) str2);
                         put("quantity", (Object) str3);
                         String str9 = "";
-                        put("serviceId", (Object) (!TextUtils.isEmpty(str4) ? str4 : str9));
-                        put("tgKey", (Object) (!TextUtils.isEmpty(str5) ? str5 : str9));
-                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_BOOKING_DATE, (Object) (!TextUtils.isEmpty(str6) ? str6 : str9));
-                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_ENTRANCE_DATE, (Object) (!TextUtils.isEmpty(str7) ? str7 : str9));
-                        put("exParams", (Object) (!TextUtils.isEmpty(str8) ? str8 : str9));
+                        put("serviceId", (Object) (!StringUtils.isEmpty(str4) ? str4 : str9));
+                        put("tgKey", (Object) (!StringUtils.isEmpty(str5) ? str5 : str9));
+                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_BOOKING_DATE, (Object) (!StringUtils.isEmpty(str6) ? str6 : str9));
+                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_ENTRANCE_DATE, (Object) (!StringUtils.isEmpty(str7) ? str7 : str9));
+                        put("exParams", (Object) (!StringUtils.isEmpty(str8) ? str8 : str9));
                     }
                 });
                 put(tfu.ADD_CART, (Object) new JSONObject() { // from class: com.taobao.android.sku.WeexCore.5.2

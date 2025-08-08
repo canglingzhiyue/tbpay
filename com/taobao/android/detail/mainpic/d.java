@@ -1,7 +1,7 @@
 package com.taobao.android.detail.mainpic;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -96,7 +96,7 @@ public class d {
         if (j > 0) {
             aVar.b(j);
         }
-        if (!TextUtils.isEmpty(c.b)) {
+        if (!StringUtils.isEmpty(c.b)) {
             aVar.i(true);
             com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar2 = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
             DWFrontCoverBean dWFrontCoverBean = new DWFrontCoverBean(0L, null, c.b);
@@ -163,7 +163,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("73527f0b", new Object[]{this, iDMComponent});
-        } else if (this.b.j() || (c = c((b = euq.b(iDMComponent)))) == null || TextUtils.isEmpty(c.f10144a) || TextUtils.isEmpty(c.b)) {
+        } else if (this.b.j() || (c = c((b = euq.b(iDMComponent)))) == null || StringUtils.isEmpty(c.f10144a) || StringUtils.isEmpty(c.b)) {
         } else {
             String str = c.f10144a + c.b;
             if (!this.f10143a.containsKey(Integer.valueOf(str.hashCode()))) {

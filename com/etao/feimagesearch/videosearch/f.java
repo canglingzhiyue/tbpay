@@ -7,7 +7,7 @@ import android.animation.ObjectAnimator;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -182,7 +182,7 @@ public class f extends b<cud> implements com.taobao.android.weex_framework.g {
             cox.c("VideoSearchDetect", "CardExpose", "index", String.valueOf(cudVar.o), BioDetector.EXT_KEY_BOX_ID, String.valueOf(cudVar.o), "boxType", "item", "item_id", cudVar.l, com.etao.feimagesearch.util.h.KEY_VIDEO_ID, String.valueOf(this.t.g()));
             cox.c("VideoSearchDetect", "CardAriseFrameIndex", com.etao.feimagesearch.util.h.KEY_VIDEO_ID, String.valueOf(this.t.g()), "time", String.valueOf(this.t.h()), SPManager.FPS_KEY, String.valueOf(this.t.d()));
         }
-        if (!TextUtils.isEmpty(cudVar.k)) {
+        if (!StringUtils.isEmpty(cudVar.k)) {
             if (this.l != null) {
                 this.f.setImageUrl(cudVar.f);
                 this.f.setVisibility(0);

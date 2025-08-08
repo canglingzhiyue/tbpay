@@ -2,7 +2,7 @@ package com.taobao.phenix.compat.mtop;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -78,7 +78,7 @@ public class b implements com.taobao.phenix.loader.network.b {
         requestImpl.setReadTimeout(this.c);
         requestImpl.addHeader("f-refer", "picture");
         if ((!com.taobao.phenix.intf.b.h().H() || SceneIdentifier.getDeviceLevel() != 3) && com.taobao.phenix.intf.b.h().A() && !com.taobao.phenix.intf.b.h().y()) {
-            if (!(map != null && Boolean.parseBoolean(map.get("retry_request"))) && !TextUtils.isEmpty(str) && (str.contains("/O1CN") || a.b(str))) {
+            if (!(map != null && Boolean.parseBoolean(map.get("retry_request"))) && !StringUtils.isEmpty(str) && (str.contains("/O1CN") || a.b(str))) {
                 Object[] objArr = new Object[1];
                 objArr[0] = com.taobao.phenix.intf.b.h().B() ? ",image/heia" : "";
                 requestImpl.addHeader(HttpRequest.HEADER_ACCEPT, String.format("image/heic%s,image/webp,image/*;q=0.9,*/*;q=0.8", objArr));
@@ -95,7 +95,7 @@ public class b implements com.taobao.phenix.loader.network.b {
         if (map != null && (str4 = map.get("open_trace_context")) != null) {
             requestImpl.setTraceContext(a(str4));
         }
-        if (!TextUtils.isEmpty(str2) && g.c()) {
+        if (!StringUtils.isEmpty(str2) && g.c()) {
             StringBuilder sb = new StringBuilder(64);
             sb.append("TBAndroid/Native");
             sb.append(" ");
@@ -191,7 +191,7 @@ public class b implements com.taobao.phenix.loader.network.b {
             java.lang.String r1 = "retry_request"
             java.lang.Object r1 = r7.get(r1)
             java.lang.String r1 = (java.lang.String) r1
-            boolean r4 = android.text.TextUtils.isEmpty(r1)
+            boolean r4 = android.text.StringUtils.isEmpty(r1)
             if (r4 != 0) goto L4f
             boolean r1 = java.lang.Boolean.parseBoolean(r1)
             if (r1 == 0) goto L4f
@@ -255,7 +255,7 @@ public class b implements com.taobao.phenix.loader.network.b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bbc5dc40", new Object[]{this, context});
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             return this.d;
         }
         if (context != null) {

@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Looper;
 import android.os.MessageQueue;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -68,7 +68,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("a8b0d9d2", new Object[]{this, aaVar, oglVar, str, obj});
-            } else if (!TextUtils.equals(str, "tint-color") || !(oglVar instanceof ogj)) {
+            } else if (!StringUtils.equals(str, "tint-color") || !(oglVar instanceof ogj)) {
             } else {
                 ((ogj) oglVar).b(aaVar.N(), obj);
             }
@@ -341,7 +341,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
         if (ipChange instanceof IpChange) {
             return (com.taobao.tao.flexbox.layoutmanager.core.c) ipChange.ipc$dispatch("1e262aca", new Object[]{this, str});
         }
-        if (oeb.a("enableOptImageAttr", true) && TextUtils.equals(str, "tint-color")) {
+        if (oeb.a("enableOptImageAttr", true) && StringUtils.equals(str, "tint-color")) {
             return this.l;
         }
         return super.getAttributeHandler(str);
@@ -377,7 +377,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
         }
         updateAPMToken(a2, com.taobao.monitor.procedure.v.APM_VIEW_INVALID);
         Drawable a4 = ogu.a(((ogj) this.viewParams).f, true);
-        if (a4 == null && !TextUtils.isEmpty(((ogj) this.viewParams).bd)) {
+        if (a4 == null && !StringUtils.isEmpty(((ogj) this.viewParams).bd)) {
             a4 = ogu.a(((ogj) this.viewParams).bd, true);
         }
         if (a4 != null) {
@@ -409,7 +409,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
             m mVar = this.e;
             tNodeImageView.loadImageIfInSlowScroll(mVar != null ? mVar.g() : true);
             if (!oec.a(((ogj) this.viewParams).e, ((TNodeImageView) this.view).getImageSrc())) {
-                if (TextUtils.isEmpty(((ogj) this.viewParams).bd) || !this.node.k().n()) {
+                if (StringUtils.isEmpty(((ogj) this.viewParams).bd) || !this.node.k().n()) {
                     if (((TNodeImageView) this.view).getDrawable() == null) {
                         if (((ogj) this.viewParams).j != 1) {
                             ((TNodeImageView) this.view).setImageDrawable(new ColorDrawable(((ogj) this.viewParams).j));
@@ -441,7 +441,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
                     ((TNodeImageView) this.view).setShowAnimation(((ogj) this.viewParams).n);
                 }
                 String str = null;
-                if (!TextUtils.equals(((ogj) this.viewParams).g, ((ogj) this.viewParams).f)) {
+                if (!StringUtils.equals(((ogj) this.viewParams).g, ((ogj) this.viewParams).f)) {
                     str = ((ogj) this.viewParams).g;
                 }
                 String str2 = str;
@@ -449,7 +449,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
                 ((TNodeImageView) this.view).setImageSrc(this.node.k(), ((ogj) this.viewParams).e, str2, j[0], j[1], ImageLoader.a.a((ogj) this.viewParams, this.node), ((ogj) this.viewParams).bh, a(((ogj) this.viewParams).e));
             } else if (this.node.c("src")) {
                 Drawable drawable = ((TNodeImageView) this.view).getDrawable();
-                if ((drawable instanceof com.taobao.phenix.animate.b) && !TextUtils.equals(((ogj) this.viewParams).m, "png")) {
+                if ((drawable instanceof com.taobao.phenix.animate.b) && !StringUtils.equals(((ogj) this.viewParams).m, "png")) {
                     ((com.taobao.phenix.animate.b) drawable).b();
                 }
             }
@@ -458,7 +458,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
             com.taobao.tao.flexbox.layoutmanager.drawable.c cVar = (com.taobao.tao.flexbox.layoutmanager.drawable.c) this.drawable[1];
             m mVar2 = this.e;
             cVar.a(mVar2 != null ? mVar2.g() : true);
-            if (!TextUtils.equals(((ogj) this.viewParams).g, ((com.taobao.tao.flexbox.layoutmanager.drawable.c) this.drawable[1]).c())) {
+            if (!StringUtils.equals(((ogj) this.viewParams).g, ((com.taobao.tao.flexbox.layoutmanager.drawable.c) this.drawable[1]).c())) {
                 if (((ogj) this.viewParams).j != 1) {
                     ((com.taobao.tao.flexbox.layoutmanager.drawable.c) this.drawable[1]).c(((ogj) this.viewParams).j);
                 }
@@ -805,7 +805,7 @@ public class j extends com.taobao.tao.flexbox.layoutmanager.core.d<TNodeImageVie
         if (getNode() != null && getNode().d() != null) {
             String b = getNode().d().b();
             String a2 = ogu.a(((ogj) this.viewParams).f, b);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 ((ogj) this.viewParams).g = a2;
             } else {
                 ((ogj) this.viewParams).g = ogw.a(this.node.k(), this.node.N(), ((ogj) this.viewParams).f, j[0], j[1], ImageLoader.a.a((ogj) this.viewParams, this.node), a(((ogj) this.viewParams).f));

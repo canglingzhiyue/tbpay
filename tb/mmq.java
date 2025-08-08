@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.utils.b;
@@ -61,7 +61,7 @@ public class mmq {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f31115a) && this.b != null && !TextUtils.isEmpty(this.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f31115a) && this.b != null && !StringUtils.isEmpty(this.c);
     }
 
     /* loaded from: classes7.dex */
@@ -115,14 +115,14 @@ public class mmq {
             if (ipChange instanceof IpChange) {
                 return (mmq) ipChange.ipc$dispatch("f07d86d", new Object[]{this});
             }
-            if (this.f31116a == null || ((this.b == null || TextUtils.isEmpty(this.c)) && TextUtils.isEmpty(this.d))) {
+            if (this.f31116a == null || ((this.b == null || StringUtils.isEmpty(this.c)) && StringUtils.isEmpty(this.d))) {
                 return new mmq();
             }
             Map<String, String> b = b();
             mmq mmqVar = new mmq();
             mmq.a(mmqVar, this.f31116a);
             mmq.a(mmqVar, b);
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 this.b.remove(mly.VALID_STORAGE_DATE);
                 Object remove = this.b.remove(mly.VALID_STORAGE_PID);
                 Object remove2 = this.b.remove(mly.VALID_STORAGE_LAUNCH_SESSION);
@@ -154,7 +154,7 @@ public class mmq {
             hashMap.put("appVersion", mlx.e);
             hashMap.put("process", mlx.q);
             hashMap.put("osApiLevel", String.valueOf(Build.VERSION.SDK_INT));
-            if (!TextUtils.isEmpty(mlx.v) && !"unknown".equals(mlx.v)) {
+            if (!StringUtils.isEmpty(mlx.v) && !"unknown".equals(mlx.v)) {
                 hashMap.put("lastAppVersion", mlx.v);
             }
             return hashMap;

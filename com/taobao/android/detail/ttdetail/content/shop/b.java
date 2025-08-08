@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.content.shop;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.widget.TTDetailViewPager;
 import tb.kge;
@@ -31,7 +31,7 @@ public class b {
             return;
         }
         d();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.c = str;

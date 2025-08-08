@@ -1,6 +1,6 @@
 package anet.channel.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.request.Request;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URL;
@@ -43,7 +43,7 @@ public class HttpHelper {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("677c03f0", new Object[]{map, str});
         }
-        if (map != null && !map.isEmpty() && !TextUtils.isEmpty(str)) {
+        if (map != null && !map.isEmpty() && !StringUtils.isEmpty(str)) {
             for (Map.Entry<String, List<String>> entry : map.entrySet()) {
                 if (str.equalsIgnoreCase(entry.getKey())) {
                     return entry.getValue();

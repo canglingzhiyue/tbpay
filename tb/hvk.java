@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.t;
 
@@ -15,7 +15,7 @@ public class hvk {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

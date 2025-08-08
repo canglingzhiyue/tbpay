@@ -2,7 +2,7 @@ package com.taobao.android.tmgcontainer.router;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.d;
 import com.taobao.android.nav.e;
@@ -47,10 +47,10 @@ public class a implements e {
             if (uri.contains("renderType=2") && !uri.contains("wh_weex=true")) {
                 uri = data.buildUpon().appendQueryParameter("wh_weex", "true").build().toString();
             }
-            if (!TextUtils.isEmpty(uri) && uri.contains("renderType=2")) {
+            if (!StringUtils.isEmpty(uri) && uri.contains("renderType=2")) {
                 intent.setClass(dVar.a(), TMGCashierActivity.class);
                 intent.setData(Uri.parse(uri));
-            } else if (!TextUtils.isEmpty(uri) && !uri.contains("wh_weex=true")) {
+            } else if (!StringUtils.isEmpty(uri) && !uri.contains("wh_weex=true")) {
                 intent.setClass(dVar.a(), TMGCashierActivity.class);
                 intent.putExtra("hasNavBar", uri.contains("hasNavBar=1") ? 1 : 0);
                 intent.putExtra("url", uri);

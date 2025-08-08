@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
@@ -415,7 +415,7 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
                     AnchorInfoFrame.access$200(AnchorInfoFrame.this).setVisibility(8);
                     if (aVar2.d && aVar2.e != null) {
                         AccountInfo.BroadCasterTag broadCasterTag = aVar2.e;
-                        if (!TextUtils.isEmpty(broadCasterTag.icon) && !TextUtils.isEmpty(broadCasterTag.text)) {
+                        if (!StringUtils.isEmpty(broadCasterTag.icon) && !StringUtils.isEmpty(broadCasterTag.text)) {
                             AnchorInfoFrame.access$1000(AnchorInfoFrame.this).setText(broadCasterTag.text);
                             AnchorInfoFrame.access$1100(AnchorInfoFrame.this).setImageUrl(broadCasterTag.icon);
                             AnchorInfoFrame.access$400(AnchorInfoFrame.this, false);
@@ -682,22 +682,22 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
         }
         String str = "";
         TextView textView2 = this.nickNameView;
-        if (textView2 != null && !TextUtils.isEmpty(textView2.getText()) && this.nickNameView.getVisibility() == 0) {
+        if (textView2 != null && !StringUtils.isEmpty(textView2.getText()) && this.nickNameView.getVisibility() == 0) {
             str = str + ((Object) this.nickNameView.getText());
         }
         TextView textView3 = this.nickNameViewV2;
-        if (textView3 != null && !TextUtils.isEmpty(textView3.getText()) && this.nickNameViewV2.getVisibility() == 0) {
+        if (textView3 != null && !StringUtils.isEmpty(textView3.getText()) && this.nickNameViewV2.getVisibility() == 0) {
             str = str + ((Object) this.nickNameViewV2.getText());
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = str + "，";
         }
         TextView textView4 = this.watchNum;
-        if (textView4 != null && !TextUtils.isEmpty(textView4.getText()) && this.watchNum.getVisibility() == 0) {
+        if (textView4 != null && !StringUtils.isEmpty(textView4.getText()) && this.watchNum.getVisibility() == 0) {
             str = str + ((Object) this.watchNum.getText());
             z = true;
         }
-        if (!z && (textView = this.watchNumV2) != null && !TextUtils.isEmpty(textView.getText()) && this.watchNumV2.getVisibility() == 0) {
+        if (!z && (textView = this.watchNumV2) != null && !StringUtils.isEmpty(textView.getText()) && this.watchNumV2.getVisibility() == 0) {
             str = str + ((Object) this.watchNumV2.getText());
         }
         this.mContainer.setImportantForAccessibility(1);
@@ -734,7 +734,7 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8bc32647", new Object[]{this});
-        } else if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null && this.mLiveDataModel.mVideoInfo.admireInfo != null && !TextUtils.isEmpty(this.mLiveDataModel.mVideoInfo.admireInfo.accountJumpUrl)) {
+        } else if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null && this.mLiveDataModel.mVideoInfo.admireInfo != null && !StringUtils.isEmpty(this.mLiveDataModel.mVideoInfo.admireInfo.accountJumpUrl)) {
             s.a(this.mContext, this.mLiveDataModel.mVideoInfo.admireInfo.accountJumpUrl);
             phg.a().a(this.mFrameContext, "HeadPortrait", (Map<String, String>) new HashMap());
         } else {
@@ -746,7 +746,7 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
                 return;
             }
             String str = null;
-            String str2 = (this.mLiveDataModel == null || this.mLiveDataModel.mVideoInfo == null || this.mLiveDataModel.mVideoInfo.broadCaster == null || TextUtils.isEmpty(this.mLiveDataModel.mVideoInfo.broadCaster.accountInfoUrl)) ? null : this.mLiveDataModel.mVideoInfo.broadCaster.accountInfoUrl;
+            String str2 = (this.mLiveDataModel == null || this.mLiveDataModel.mVideoInfo == null || this.mLiveDataModel.mVideoInfo.broadCaster == null || StringUtils.isEmpty(this.mLiveDataModel.mVideoInfo.broadCaster.accountInfoUrl)) ? null : this.mLiveDataModel.mVideoInfo.broadCaster.accountInfoUrl;
             if (b.a().b(this.mLiveDataModel)) {
                 VideoInfo.OfficialLiveInfo officialLiveInfo = this.mLiveDataModel.mVideoInfo.officialLiveInfo;
                 JSONObject jSONObject = new JSONObject();
@@ -923,7 +923,7 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
                                 str = AnchorInfoFrame.this.mFrameContext.G();
                             }
                             e.a(xkw.EVENT_TIMESHIFT_LIVING_ID_CHANGE, access$2100, str);
-                            if (TextUtils.isEmpty(AnchorInfoFrame.access$2100(AnchorInfoFrame.this))) {
+                            if (StringUtils.isEmpty(AnchorInfoFrame.access$2100(AnchorInfoFrame.this))) {
                                 return;
                             }
                             AnchorInfoFrame.access$2200(AnchorInfoFrame.this, true);
@@ -1065,7 +1065,7 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
                 return;
             }
             String str = videoInfo.broadCaster.vicons.get(0);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.nickNameView.setMaxWidth(dp2px(this.mContext, 83));
                 this.vLabelImage.setImageUrl(str);
                 this.vLabelImage.setVisibility(0);
@@ -1095,7 +1095,7 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
             return;
         }
         String str = videoInfo.officialLiveInfo.vicons.get(0);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.nickNameView.setMaxWidth(dp2px(this.mContext, 83));
             this.vLabelImage.setImageUrl(str);
             this.vLabelImage.setVisibility(0);
@@ -1234,9 +1234,9 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
             ipChange.ipc$dispatch("a528f3af", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String trim = str.trim();
-            if (!TextUtils.isEmpty(trim)) {
+            if (!StringUtils.isEmpty(trim)) {
                 this.locNameView.setVisibility(0);
                 this.locNameView.setText(getLocationStr(trim));
                 this.locDivider.setVisibility(0);
@@ -1291,7 +1291,7 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
             this.curWatchNum = j;
             try {
                 VideoInfo videoInfo = this.mLiveDataModel.mVideoInfo;
-                if (this.mEnableRemoteOnlineLimitNumberFormat && !TextUtils.isEmpty(str)) {
+                if (this.mEnableRemoteOnlineLimitNumberFormat && !StringUtils.isEmpty(str)) {
                     this.watchNum.setText(str);
                     this.watchNumV2.setText(str);
                 } else if (plz.a(videoInfo)) {
@@ -1314,10 +1314,10 @@ public class AnchorInfoFrame extends BaseFrame implements pmo, pmx {
             ipChange.ipc$dispatch("dcf7abc5", new Object[]{this, str, str2, str3});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.avatarView.setImageUrl(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.nickNameView.setText(str2);
             this.nickNameViewV2.setText(str2);
         }

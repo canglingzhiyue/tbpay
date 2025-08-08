@@ -2,7 +2,7 @@ package com.taobao.bootimage.view;
 
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -130,8 +130,8 @@ public abstract class b extends c {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
             return;
         }
-        String str3 = TextUtils.isEmpty(this.h.sceneType) ? "" : this.h.sceneType;
-        String str4 = TextUtils.isEmpty(this.h.bizType) ? "" : this.h.bizType;
+        String str3 = StringUtils.isEmpty(this.h.sceneType) ? "" : this.h.sceneType;
+        String str4 = StringUtils.isEmpty(this.h.bizType) ? "" : this.h.bizType;
         kej.a("BootImageAbstractBaseController", "commitPlayVideoMonitor sceneType: " + str3 + " ,bizType: " + str4);
         com.taobao.bootimage.linked.h.a("").h().a(str3, keo.i(), str, str4, str2, null);
     }

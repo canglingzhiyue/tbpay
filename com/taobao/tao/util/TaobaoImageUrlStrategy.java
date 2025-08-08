@@ -2,7 +2,7 @@ package com.taobao.tao.util;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
@@ -237,11 +237,11 @@ public class TaobaoImageUrlStrategy {
         setExactExcludeDomain(strArr3);
         setFuzzyExcludePath(strArr4);
         setExcludeDomainPath(strArr);
-        this.mHeifImageDomain = TextUtils.isEmpty(str2) ? HEIF_DOMAIN_DEST : str2;
+        this.mHeifImageDomain = StringUtils.isEmpty(str2) ? HEIF_DOMAIN_DEST : str2;
         this.mHeifBizWhiteList = iArr7;
-        this.mAvifImageDomain = TextUtils.isEmpty(str3) ? AVIF_DOMAIN_DEST : str3;
+        this.mAvifImageDomain = StringUtils.isEmpty(str3) ? AVIF_DOMAIN_DEST : str3;
         this.mAvifBizWhiteList = iArr8;
-        this.mSpecialDomain = TextUtils.isEmpty(str4) ? SPECIAL_DOMAIN_DEST : str4;
+        this.mSpecialDomain = StringUtils.isEmpty(str4) ? SPECIAL_DOMAIN_DEST : str4;
     }
 
     public boolean isDomainSwitch() {
@@ -402,7 +402,7 @@ public class TaobaoImageUrlStrategy {
         if (ipChange instanceof IpChange) {
             return (TaobaoImageUrlStrategy) ipChange.ipc$dispatch("b16b4eaa", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mDoMainDest = str;
         } else {
             this.mDoMainDest = DOMAIN_DEST;
@@ -865,7 +865,7 @@ public class TaobaoImageUrlStrategy {
         if (!isNetworkSlow()) {
             str = str2;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (!z) {
@@ -881,7 +881,7 @@ public class TaobaoImageUrlStrategy {
             ipChange.ipc$dispatch("3e62f809", new Object[]{this, new Boolean(z), stringBuffer, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             stringBuffer.append(str);
             z = true;
         }
@@ -953,7 +953,7 @@ public class TaobaoImageUrlStrategy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("163154f1", new Object[]{this, strArr, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (strArr != null) {
@@ -993,7 +993,7 @@ public class TaobaoImageUrlStrategy {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ba078300", new Object[]{this, strArr, strArr2, str, str2, str3, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str)) {
             return new String[]{str, str2};
         }
         if (str2 == null && (parse = Uri.parse(str)) != null) {
@@ -1275,7 +1275,7 @@ public class TaobaoImageUrlStrategy {
                 ipChange.ipc$dispatch("47517317", new Object[]{this, str});
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = ImageQuality.q75.getImageQuality();
             }
             this.lowNetQ = str;
@@ -1292,7 +1292,7 @@ public class TaobaoImageUrlStrategy {
                 ipChange.ipc$dispatch("44525229", new Object[]{this, str});
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = ImageQuality.q90.getImageQuality();
             }
             this.highNetQ = str;
@@ -1309,7 +1309,7 @@ public class TaobaoImageUrlStrategy {
                 ipChange.ipc$dispatch("79628379", new Object[]{this, str});
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.lowNetSharpen;
             }
             this.lowNetSharpen = str;
@@ -1326,7 +1326,7 @@ public class TaobaoImageUrlStrategy {
                 ipChange.ipc$dispatch("fc304d0b", new Object[]{this, str});
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.highNetSharpen;
             }
             this.highNetSharpen = str;
@@ -1451,7 +1451,7 @@ public class TaobaoImageUrlStrategy {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("18d3b662", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             if (str.startsWith(ado.URL_SEPARATOR)) {

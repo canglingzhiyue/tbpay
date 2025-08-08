@@ -3,7 +3,7 @@ package tb;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
@@ -234,8 +234,8 @@ public class lgr implements lgp {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e41e301b", new Object[]{this, outLinkModel, str})).intValue();
         }
-        if (!TextUtils.equals("infoFlow", outLinkModel.getArea())) {
-            ldf.d("!TextUtils.equals(INFOFLOW, area),area is :" + outLinkModel.getArea(), new String[0]);
+        if (!StringUtils.equals("infoFlow", outLinkModel.getArea())) {
+            ldf.d("!StringUtils.equals(INFOFLOW, area),area is :" + outLinkModel.getArea(), new String[0]);
             return -1;
         }
         int offset = outLinkModel.getOffset();
@@ -248,7 +248,7 @@ public class lgr implements lgp {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ldf.d("ScrollToItemOperator", "infoFlowCardStartBizCode为空");
             return -1;
         }

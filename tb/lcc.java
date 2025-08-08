@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -161,7 +161,7 @@ public class lcc extends DXWidgetNode implements l {
                     this.n = Resources.getSystem().getDisplayMetrics().heightPixels;
                     this.o = Resources.getSystem().getDisplayMetrics().widthPixels;
                     mMAdLottieView.setImageUrl(this.d);
-                    if (TextUtils.isEmpty(this.f)) {
+                    if (StringUtils.isEmpty(this.f)) {
                         return;
                     }
                     mMAdLottieView.setLottieUrl(this.f);

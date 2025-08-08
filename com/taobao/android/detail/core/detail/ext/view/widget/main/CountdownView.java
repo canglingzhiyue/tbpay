@@ -9,7 +9,7 @@ import android.graphics.Typeface;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -175,7 +175,7 @@ public class CountdownView extends View {
         int size = View.MeasureSpec.getSize(i);
         if (this.needMeasure || this.layout == null) {
             this.needMeasure = false;
-            if (TextUtils.isEmpty(this.mText)) {
+            if (StringUtils.isEmpty(this.mText)) {
                 Resources resources = getContext().getResources();
                 int i3 = R.string.detail_countdown_start;
                 String[] strArr = this.TIMES;
@@ -200,7 +200,7 @@ public class CountdownView extends View {
         }
         super.onDraw(canvas);
         String str = this.mText;
-        boolean isEmpty = TextUtils.isEmpty(str);
+        boolean isEmpty = StringUtils.isEmpty(str);
         if (isEmpty) {
             if (!refreshTime()) {
                 return;

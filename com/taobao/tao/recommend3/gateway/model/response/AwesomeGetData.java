@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend3.gateway.model.response;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.infoflow.protocol.model.datamodel.response.IBizDataModel;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.model.card.SectionModel;
@@ -141,7 +141,7 @@ public class AwesomeGetData implements IBizDataModel<AwesomeGetContainerData>, S
             if (sectionModel.containsKey("index")) {
                 str = sectionModel.getString("index");
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 SubSectionModel mo1098getSubSection = sectionModel.mo1098getSubSection();
                 if (mo1098getSubSection == null) {
                     mo1098getSubSection = new SubSectionModel(new JSONObject(1));

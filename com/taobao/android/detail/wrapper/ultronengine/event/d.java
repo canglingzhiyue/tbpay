@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ultronengine.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -160,7 +160,7 @@ public class d extends com.alibaba.android.ultron.event.q {
                                     ipChange3.ipc$dispatch("93e51c7a", new Object[]{this, map2});
                                     return;
                                 }
-                                if (map2 != null && map2.containsKey(aw.PARAM_ACTIVITY_URL) && !TextUtils.isEmpty((String) map2.get(aw.PARAM_ACTIVITY_URL))) {
+                                if (map2 != null && map2.containsKey(aw.PARAM_ACTIVITY_URL) && !StringUtils.isEmpty((String) map2.get(aw.PARAM_ACTIVITY_URL))) {
                                     String str = (String) map2.get(aw.PARAM_ACTIVITY_URL);
                                     if (detailCoreActivity.hasWindowFocus()) {
                                         epj.f().navigateTo(detailCoreActivity, str, null);
@@ -211,7 +211,7 @@ public class d extends com.alibaba.android.ultron.event.q {
                 hashMap2.put(InputFrame3.TYPE_RESPONSE, map);
                 ecg.c(detailCoreActivity, "add_favorite", str, str2, hashMap2);
                 ecg.j(detailCoreActivity, bVar.b, str, str2);
-                if (!TextUtils.isEmpty(str2) && z) {
+                if (!StringUtils.isEmpty(str2) && z) {
                     if (ErrorConstant.isSessionInvalid(str) || "ANDROID_SYS_LOGIN_CANCEL".equals(str)) {
                         epo.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_not_login));
                         com.taobao.android.detail.core.utils.i.a("CollectClickedSubscriber", "收藏失败，没有登陆");
@@ -273,7 +273,7 @@ public class d extends com.alibaba.android.ultron.event.q {
                 ecg.c(detailCoreActivity, "cancel_favorite", str, str2, hashMap2);
                 ecg.k(detailCoreActivity, bVar.b, str, str2);
                 com.taobao.android.detail.core.utils.n.a("DelCollectItem", "80004", str2);
-                if (!TextUtils.isEmpty(str2) && z) {
+                if (!StringUtils.isEmpty(str2) && z) {
                     if (ErrorConstant.isSessionInvalid(str) || "ANDROID_SYS_LOGIN_CANCEL".equals(str)) {
                         epo.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_not_login));
                         com.taobao.android.detail.core.utils.i.a("CollectClickedSubscriber", "取消收藏失败,没有登录");

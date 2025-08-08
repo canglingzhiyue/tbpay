@@ -3,7 +3,7 @@ package com.android.tools.bundleInfo;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.j;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -513,7 +513,7 @@ public class b {
             }
             for (BundleListing.a aVar : this.c.getBundles().values()) {
                 String str2 = aVar.m.get(str);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     return str2;
                 }
             }
@@ -541,12 +541,12 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1a00ca85", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (this.f) {
             for (DynamicFeatureInfo dynamicFeatureInfo : this.f.values()) {
-                if (dynamicFeatureInfo != null && !TextUtils.isEmpty(dynamicFeatureInfo.featureInitalClass) && dynamicFeatureInfo.featureInitalClass.equals(str)) {
+                if (dynamicFeatureInfo != null && !StringUtils.isEmpty(dynamicFeatureInfo.featureInitalClass) && dynamicFeatureInfo.featureInitalClass.equals(str)) {
                     return dynamicFeatureInfo.featureName;
                 }
             }

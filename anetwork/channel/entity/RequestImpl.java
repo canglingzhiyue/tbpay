@@ -1,6 +1,6 @@
 package anetwork.channel.entity;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.request.BodyEntry;
 import anet.channel.util.ALog;
 import anetwork.channel.Header;
@@ -448,7 +448,7 @@ public class RequestImpl implements Request {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("506a336f", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.extProperties == null) {
                 this.extProperties = new HashMap();

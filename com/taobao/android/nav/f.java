@@ -3,7 +3,7 @@ package com.taobao.android.nav;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import java.util.ArrayList;
@@ -180,7 +180,7 @@ public abstract class f implements b, e, k<f> {
         } else if (scheme.startsWith(ado.URL_SEPARATOR)) {
             str = "http:" + uri;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return uri;
         }
         TLog.loge("Nav", "The Url used to determine has a scheme added, urlString: " + str);

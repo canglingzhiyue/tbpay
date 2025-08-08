@@ -1,6 +1,6 @@
 package com.loc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.httpdns.DnsUtil;
 
 @ba(a = "a")
@@ -119,7 +119,7 @@ public final class w {
     }
 
     public final String a() {
-        if (TextUtils.isEmpty(this.j) && !TextUtils.isEmpty(this.f7855a)) {
+        if (StringUtils.isEmpty(this.j) && !StringUtils.isEmpty(this.f7855a)) {
             this.j = x.c(this.f7855a);
         }
         return this.j;
@@ -134,17 +134,17 @@ public final class w {
     }
 
     public final String c() {
-        if (TextUtils.isEmpty(this.h) && !TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.h) && !StringUtils.isEmpty(this.b)) {
             this.h = x.c(this.b);
         }
         return this.h;
     }
 
     public final String d() {
-        if (TextUtils.isEmpty(this.k) && !TextUtils.isEmpty(this.f)) {
+        if (StringUtils.isEmpty(this.k) && !StringUtils.isEmpty(this.f)) {
             this.k = x.c(this.f);
         }
-        if (TextUtils.isEmpty(this.k)) {
+        if (StringUtils.isEmpty(this.k)) {
             this.k = "standard";
         }
         return this.k;
@@ -177,7 +177,7 @@ public final class w {
 
     public final String[] f() {
         String[] strArr = this.l;
-        if ((strArr == null || strArr.length == 0) && !TextUtils.isEmpty(this.e)) {
+        if ((strArr == null || strArr.length == 0) && !StringUtils.isEmpty(this.e)) {
             this.l = a(x.c(this.e));
         }
         return (String[]) this.l.clone();

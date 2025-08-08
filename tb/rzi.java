@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -132,10 +132,10 @@ public class rzi implements rzm {
         String a6 = mtopsdk.ssrcore.util.c.a(this.f33434a.context, parse.getHost());
         String b = mtopsdk.ssrcore.util.c.b(a6);
         String a7 = mtopsdk.ssrcore.util.c.a(a6);
-        if (!TextUtils.isEmpty(a6) && !TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(a6) && !StringUtils.isEmpty(b)) {
             hashMap.put(HttpHeaderConstant.X_SERVICE_DOMAIN, a6);
             hashMap.put(HttpHeaderConstant.X_SERVICE_IPS, b);
-            if (!TextUtils.isEmpty(a7)) {
+            if (!StringUtils.isEmpty(a7)) {
                 hashMap.put(HttpHeaderConstant.X_SERVICE_UNIT, a7);
             }
             HashMap hashMap3 = new HashMap();

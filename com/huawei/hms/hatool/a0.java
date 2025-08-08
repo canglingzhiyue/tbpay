@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -56,7 +56,7 @@ public class a0 implements g {
             String a2 = n1.a(this.d, this.e);
             String a3 = d.a(this.f7448a, "stat_v2_1", a2, "");
             try {
-                jSONArray = !TextUtils.isEmpty(a3) ? new JSONArray(a3) : new JSONArray();
+                jSONArray = !StringUtils.isEmpty(a3) ? new JSONArray(a3) : new JSONArray();
             } catch (JSONException unused) {
                 v.d("hmsSdk", "Cached data corrupted: stat_v2_1");
                 jSONArray = new JSONArray();

@@ -3,7 +3,7 @@ package com.taobao.android.detail2.core.framework.base.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.fjt;
@@ -34,7 +34,7 @@ public abstract class NewDetailBaseWVPlugin extends e {
             return false;
         }
         String string = parseObject.getString("from");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             fjt.a(fjt.TAG_WINDVANE, "handleUpdateData from is null");
         }
         return onExecute(str, parseObject, wVCallBackContext, string);

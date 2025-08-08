@@ -1,6 +1,6 @@
 package com.taobao.pha.core.rescache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.p;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class e {
     public e(List<String> list) {
         for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     this.b.add(Pattern.compile(str));
                 } catch (Exception e) {
@@ -47,7 +47,7 @@ public class e {
         }
         try {
             String a2 = p.c().a(str);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return null;
             }
             return a2.split(",");

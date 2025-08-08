@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.Constants;
@@ -39,7 +39,7 @@ public class aop implements f.a {
             return;
         }
         apr.b("SampleIpv6Listener", "parseConfig value", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         try {

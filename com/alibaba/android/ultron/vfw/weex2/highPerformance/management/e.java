@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.highPerformance.management;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridStage;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -114,7 +114,7 @@ public class e implements k {
             }
             for (com.alibaba.android.ultron.vfw.weex2.highPerformance.model.d dVar : b.c) {
                 if (dVar != null && dVar.f == null) {
-                    if (!TextUtils.equals(dVar.c.c, "destroy")) {
+                    if (!StringUtils.equals(dVar.c.c, "destroy")) {
                         UnifyLog.b("UltronTradeHybridStorageManager.deleteStorageByPreRequest", "need't to destroy");
                     } else {
                         String str2 = str + "_" + dVar.f2791a;

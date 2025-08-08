@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.taobao.windvane.jsbridge.h;
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.jsbridge.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -155,7 +155,7 @@ public final class WXWindVaneModule extends WeexInnerModule {
             return;
         }
         jvb adapterMUSInstance = ((WeexInstanceImpl) getWeexInstance()).getAdapterMUSInstance();
-        if (adapterMUSInstance == null || adapterMUSInstance.getUIContext() == null || TextUtils.isEmpty(str)) {
+        if (adapterMUSInstance == null || adapterMUSInstance.getUIContext() == null || StringUtils.isEmpty(str)) {
             return;
         }
         if (this.mEntryManager == null) {
@@ -185,7 +185,7 @@ public final class WXWindVaneModule extends WeexInnerModule {
             return;
         }
         jvb adapterMUSInstance = ((WeexInstanceImpl) getWeexInstance()).getAdapterMUSInstance();
-        if (adapterMUSInstance == null || adapterMUSInstance.getUIContext() == null || TextUtils.isEmpty(str2)) {
+        if (adapterMUSInstance == null || adapterMUSInstance.getUIContext() == null || StringUtils.isEmpty(str2)) {
             return;
         }
         if (this.mEntryManager == null) {
@@ -199,7 +199,7 @@ public final class WXWindVaneModule extends WeexInnerModule {
         h hVar = new h();
         try {
             JSON.parseObject(str2);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 if (bVar2 != null) {
                     bVar2.a(new Object[0]);
                 }

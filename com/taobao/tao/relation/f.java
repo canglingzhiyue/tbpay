@@ -2,7 +2,7 @@ package com.taobao.tao.relation;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.substitute.api.Constants;
 import com.alipay.android.msp.biz.substitute.SubstituteConstants;
@@ -42,8 +42,8 @@ public class f implements Nav.h {
             String queryParameter6 = data.getQueryParameter("title");
             String queryParameter7 = data.getQueryParameter(SubstituteConstants.KEY_SUBSTITUTE_PAY_PAYURL);
             String queryParameter8 = data.getQueryParameter("itemPicUrl");
-            if (!TextUtils.isEmpty(queryParameter) && !TextUtils.isEmpty(queryParameter2) && !TextUtils.isEmpty(queryParameter3) && !TextUtils.isEmpty(queryParameter4) && !TextUtils.isEmpty(queryParameter5)) {
-                if (!TextUtils.isEmpty(queryParameter7)) {
+            if (!StringUtils.isEmpty(queryParameter) && !StringUtils.isEmpty(queryParameter2) && !StringUtils.isEmpty(queryParameter3) && !StringUtils.isEmpty(queryParameter4) && !StringUtils.isEmpty(queryParameter5)) {
+                if (!StringUtils.isEmpty(queryParameter7)) {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("amount", (Object) Uri.decode(queryParameter5));

@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -45,7 +45,7 @@ public class WuKongEventConfigData implements Serializable {
             return (Map) ipChange.ipc$dispatch("8e9178f1", new Object[]{this, str});
         }
         for (Algo algo : a()) {
-            if (TextUtils.equals(algo.code, str)) {
+            if (StringUtils.equals(algo.code, str)) {
                 return algo.config;
             }
         }
@@ -116,6 +116,6 @@ public class WuKongEventConfigData implements Serializable {
     @JSONField(serialize = false)
     public boolean isValid(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("77e5607", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(this.ccrcCode) && this.ccrcCode.equals(str) && !TextUtils.isEmpty(this.eventCode) && this.sceneList != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("77e5607", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(this.ccrcCode) && this.ccrcCode.equals(str) && !StringUtils.isEmpty(this.eventCode) && this.sceneList != null;
     }
 }

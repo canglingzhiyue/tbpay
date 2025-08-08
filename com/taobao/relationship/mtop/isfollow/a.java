@@ -2,7 +2,7 @@ package com.taobao.relationship.mtop.isfollow;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,7 +53,7 @@ public class a implements a.InterfaceC0830a {
             jSONObject.put("followedId", (Object) Long.valueOf(bVar.b));
             jSONObject.put("accountType", (Object) Integer.valueOf(bVar.c));
             jSONObject.put("type", (Object) Integer.valueOf(bVar.d));
-            if (!TextUtils.isEmpty(bVar.i)) {
+            if (!StringUtils.isEmpty(bVar.i)) {
                 jSONObject.put("extra", (Object) bVar.i);
             }
             JSONObject jSONObject2 = new JSONObject();
@@ -106,7 +106,7 @@ public class a implements a.InterfaceC0830a {
             }
             if (this.b != null) {
                 r rVar = new r();
-                if (!TextUtils.isEmpty(followDetail.followExtra)) {
+                if (!StringUtils.isEmpty(followDetail.followExtra)) {
                     rVar.a(nmf.PARAMS_MTOP_RESULT_EXTRA, followDetail.followExtra);
                 }
                 if (followDetail.follow) {
@@ -121,7 +121,7 @@ public class a implements a.InterfaceC0830a {
                 return;
             }
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(followDetail.followExtra)) {
+            if (!StringUtils.isEmpty(followDetail.followExtra)) {
                 jSONObject.put(nmf.PARAMS_MTOP_RESULT_EXTRA, (Object) followDetail.followExtra);
             }
             if (followDetail.follow) {

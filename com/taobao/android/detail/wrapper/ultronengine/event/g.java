@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ultronengine.event;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,7 +62,7 @@ public class g extends com.alibaba.android.ultron.event.q {
         DMEvent dMEvent;
         JSONObject fields;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c03fdde4", new Object[]{this, eVar})).booleanValue() : (eVar == null || (dMEvent = (DMEvent) eVar.i()) == null || (fields = dMEvent.getFields()) == null || TextUtils.isEmpty(fields.getString("url"))) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c03fdde4", new Object[]{this, eVar})).booleanValue() : (eVar == null || (dMEvent = (DMEvent) eVar.i()) == null || (fields = dMEvent.getFields()) == null || StringUtils.isEmpty(fields.getString("url"))) ? false : true;
     }
 
     private String a(DetailCoreActivity detailCoreActivity) {
@@ -81,9 +81,9 @@ public class g extends com.alibaba.android.ultron.event.q {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("265168f9", new Object[]{this, detailCoreActivity, str, str2});
         }
-        if (!TextUtils.isEmpty(str)) {
-            String a2 = !TextUtils.isEmpty(a(detailCoreActivity)) ? a(detailCoreActivity) : str;
-            if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str)) {
+            String a2 = !StringUtils.isEmpty(a(detailCoreActivity)) ? a(detailCoreActivity) : str;
+            if (!StringUtils.isEmpty(str2)) {
                 return (a2 + "&currentAddress=" + str2) + "&item_id=" + detailCoreActivity.y().t.i() + "&seller_id=" + detailCoreActivity.y().t.h();
             }
         }

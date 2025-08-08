@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.user.UserAbility;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -278,7 +278,7 @@ public class PreloadDelegate {
             return (ab) ipChange.ipc$dispatch("d414eeeb", new Object[]{str});
         }
         String d = d(str);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return null;
         }
         synchronized (PreloadDelegate.class) {
@@ -300,7 +300,7 @@ public class PreloadDelegate {
             return (ab) ipChange.ipc$dispatch("7082eb4a", new Object[]{str});
         }
         String d = d(str);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return null;
         }
         synchronized (PreloadDelegate.class) {
@@ -323,7 +323,7 @@ public class PreloadDelegate {
         } else {
             synchronized (PreloadDelegate.class) {
                 String remove = i.remove(abVar);
-                if (!TextUtils.isEmpty(remove)) {
+                if (!StringUtils.isEmpty(remove)) {
                     h.remove(remove);
                     j.remove(remove);
                 }
@@ -338,7 +338,7 @@ public class PreloadDelegate {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
         String d = d(str);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return false;
         }
         synchronized (PreloadDelegate.class) {
@@ -354,12 +354,12 @@ public class PreloadDelegate {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String queryParameter = Uri.parse(str).getQueryParameter("tnode");
-        String queryParameter2 = !TextUtils.isEmpty(queryParameter) ? Uri.parse(queryParameter).getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_ENGINE_PRELOAD) : null;
-        return TextUtils.isEmpty(queryParameter2) ? b(str, null) : queryParameter2;
+        String queryParameter2 = !StringUtils.isEmpty(queryParameter) ? Uri.parse(queryParameter).getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_ENGINE_PRELOAD) : null;
+        return StringUtils.isEmpty(queryParameter2) ? b(str, null) : queryParameter2;
     }
 
     private static String a(String str, String str2) {
@@ -367,15 +367,15 @@ public class PreloadDelegate {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         String b2 = b(str, str2);
         Uri parse = Uri.parse(str);
         String queryParameter = parse.getQueryParameter("tnode");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             Uri parse2 = Uri.parse(queryParameter);
-            if (TextUtils.isEmpty(parse2.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_ENGINE_PRELOAD))) {
+            if (StringUtils.isEmpty(parse2.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_ENGINE_PRELOAD))) {
                 parse2 = parse2.buildUpon().appendQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_ENGINE_PRELOAD, b2).build();
             }
             parse = oec.a(parse, "tnode", parse2.toString());
@@ -388,11 +388,11 @@ public class PreloadDelegate {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String c = ohk.c(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             c = c + str2;
         }
         return ogz.a(c);

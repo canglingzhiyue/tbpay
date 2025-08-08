@@ -3,7 +3,7 @@ package android.support.v4.app;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v4.app.BackStackRecord;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -44,9 +44,9 @@ public final class BackStackState implements Parcelable {
         this.mName = parcel.readString();
         this.mIndex = parcel.readInt();
         this.mBreadCrumbTitleRes = parcel.readInt();
-        this.mBreadCrumbTitleText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mBreadCrumbTitleText = (CharSequence) StringUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.mBreadCrumbShortTitleRes = parcel.readInt();
-        this.mBreadCrumbShortTitleText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mBreadCrumbShortTitleText = (CharSequence) StringUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.mSharedElementSourceNames = parcel.createStringArrayList();
         this.mSharedElementTargetNames = parcel.createStringArrayList();
         this.mReorderingAllowed = parcel.readInt() != 0;
@@ -149,9 +149,9 @@ public final class BackStackState implements Parcelable {
         parcel.writeString(this.mName);
         parcel.writeInt(this.mIndex);
         parcel.writeInt(this.mBreadCrumbTitleRes);
-        TextUtils.writeToParcel(this.mBreadCrumbTitleText, parcel, 0);
+        StringUtils.writeToParcel(this.mBreadCrumbTitleText, parcel, 0);
         parcel.writeInt(this.mBreadCrumbShortTitleRes);
-        TextUtils.writeToParcel(this.mBreadCrumbShortTitleText, parcel, 0);
+        StringUtils.writeToParcel(this.mBreadCrumbShortTitleText, parcel, 0);
         parcel.writeStringList(this.mSharedElementSourceNames);
         parcel.writeStringList(this.mSharedElementTargetNames);
         parcel.writeInt(this.mReorderingAllowed ? 1 : 0);

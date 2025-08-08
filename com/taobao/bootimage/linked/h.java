@@ -1,6 +1,6 @@
 package com.taobao.bootimage.linked;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -275,7 +275,7 @@ public final class h {
                     DXTemplateItem dXTemplateItem = new DXTemplateItem();
                     JSONObject jSONObject5 = (JSONObject) next;
                     if (jSONObject5 != null && (jSONObject2 = jSONObject5.getJSONObject("subSection")) != null && !jSONObject2.isEmpty() && (jSONObject3 = jSONObject2.getJSONObject(PopStrategy.IDENTIFIER_SPLASH)) != null && !jSONObject3.isEmpty() && (jSONObject4 = jSONObject3.getJSONObject("template")) != null) {
-                        if (!TextUtils.isEmpty(jSONObject4.getString("version"))) {
+                        if (!StringUtils.isEmpty(jSONObject4.getString("version"))) {
                             dXTemplateItem.b = Long.parseLong(jSONObject4.getString("version"));
                         }
                         dXTemplateItem.f11925a = jSONObject4.getString("name");

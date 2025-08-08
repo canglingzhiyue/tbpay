@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -209,7 +209,7 @@ public final class M3PriceView extends BaseItemView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fd741b5", new Object[]{this, eVar});
-        } else if (TextUtils.isEmpty(eVar.k())) {
+        } else if (StringUtils.isEmpty(eVar.k())) {
         } else {
             g gVar = this.comment;
             String k = eVar.k();
@@ -225,7 +225,7 @@ public final class M3PriceView extends BaseItemView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4b25c0b7", new Object[]{this, eVar});
-        } else if (TextUtils.isEmpty(eVar.l())) {
+        } else if (StringUtils.isEmpty(eVar.l())) {
         } else {
             g gVar = this.location;
             String l = eVar.l();
@@ -241,7 +241,7 @@ public final class M3PriceView extends BaseItemView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4702e42b", new Object[]{this, eVar, new Boolean(z)});
-        } else if (TextUtils.isEmpty(eVar.j())) {
+        } else if (StringUtils.isEmpty(eVar.j())) {
         } else {
             g gVar = this.sold;
             String j = eVar.j();
@@ -257,7 +257,7 @@ public final class M3PriceView extends BaseItemView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("765f7f19", new Object[]{this, eVar});
-        } else if (TextUtils.isEmpty(eVar.h())) {
+        } else if (StringUtils.isEmpty(eVar.h())) {
         } else {
             g gVar = this.originPrice;
             String h = eVar.h();
@@ -273,7 +273,7 @@ public final class M3PriceView extends BaseItemView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4ae9df63", new Object[]{this, eVar});
-        } else if (TextUtils.isEmpty(eVar.f())) {
+        } else if (StringUtils.isEmpty(eVar.f())) {
         } else {
             g gVar = this.subText;
             String f = eVar.f();
@@ -290,7 +290,7 @@ public final class M3PriceView extends BaseItemView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("656a46d3", new Object[]{this, eVar});
-        } else if (TextUtils.isEmpty(eVar.d())) {
+        } else if (StringUtils.isEmpty(eVar.d())) {
         } else {
             g gVar = this.suffixText;
             String d = eVar.d();
@@ -330,7 +330,7 @@ public final class M3PriceView extends BaseItemView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fab27186", new Object[]{this, eVar});
-        } else if (TextUtils.isEmpty(eVar.b()) || TextUtils.isEmpty(eVar.b())) {
+        } else if (StringUtils.isEmpty(eVar.b()) || StringUtils.isEmpty(eVar.b())) {
         } else {
             g gVar = this.preText;
             String b2 = eVar.b();

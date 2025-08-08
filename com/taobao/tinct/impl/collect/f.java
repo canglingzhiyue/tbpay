@@ -1,6 +1,6 @@
 package com.taobao.tinct.impl.collect;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public class f extends ITinctOperater {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f910ddba", new Object[]{this, str, str2, str3, str4});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4)) {
         } else {
             if (!qrn.a().get()) {
                 a(ABChangeInfo.builder(str2, str3, str4).setBizName(str));
@@ -81,7 +81,7 @@ public class f extends ITinctOperater {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c4e16fd3", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             if (!qrn.a().get()) {
                 OrangeChangeInfo orangeChangeInfo = new OrangeChangeInfo();
@@ -107,7 +107,7 @@ public class f extends ITinctOperater {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4211a92b", new Object[]{this, str, str2});
-        } else if (!TextUtils.isEmpty(str2) && qrn.a().get() && com.taobao.tinct.impl.config.a.f()) {
+        } else if (!StringUtils.isEmpty(str2) && qrn.a().get() && com.taobao.tinct.impl.config.a.f()) {
             List<String> j = com.taobao.tinct.impl.config.a.j();
             String[] split = str2.split("_");
             if (split.length <= 0 || j.isEmpty()) {
@@ -173,7 +173,7 @@ public class f extends ITinctOperater {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a80ef40d", new Object[]{this, str});
         }
-        if (!qrn.a().get() || TextUtils.isEmpty(str)) {
+        if (!qrn.a().get() || StringUtils.isEmpty(str)) {
             return "";
         }
         StringBuilder sb = new StringBuilder();

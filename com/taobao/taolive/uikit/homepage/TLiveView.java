@@ -10,7 +10,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -341,7 +341,7 @@ public class TLiveView extends TUrlImageView implements Application.ActivityLife
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("71d85192", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mLiveUrl) || prc.d(getContext())) {
+        } else if (StringUtils.isEmpty(this.mLiveUrl) || prc.d(getContext())) {
         } else {
             MediaLiveInfo mediaLiveInfo = null;
             try {

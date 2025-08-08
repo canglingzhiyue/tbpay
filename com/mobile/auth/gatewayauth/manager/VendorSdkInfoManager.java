@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.mobile.auth.OO0oO;
 import com.mobile.auth.gatewayauth.Constant;
@@ -239,7 +239,7 @@ public class VendorSdkInfoManager {
             } catch (Exception e) {
                 this.O0000O0o.O00000o("Loading vendorConfigs from disk failed!", czp.a(e));
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             try {
@@ -395,7 +395,7 @@ public class VendorSdkInfoManager {
 
     public boolean O000000o() {
         try {
-            return !TextUtils.isEmpty(this.O00000o0);
+            return !StringUtils.isEmpty(this.O00000o0);
         } catch (Throwable th) {
             try {
                 ExceptionProcessor.processException(th);
@@ -532,12 +532,12 @@ public class VendorSdkInfoManager {
 
     public void setLocalVendorSdkInfo(String str) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             try {
                 String b = czn.b(str, this.O00000oo.O000000o() + this.O00000oo.O00000Oo());
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     return;
                 }
                 String[] split = b.split(",");

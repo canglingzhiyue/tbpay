@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 
@@ -32,10 +32,10 @@ public class mtf {
         }
         HashMap<String, String> hashMap = new HashMap<>();
         String a2 = mti.a().a("forward_domains", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             for (String str : a2.split(",")) {
                 String a3 = mti.a().a(str, "");
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     hashMap.put(str, a3);
                 }
             }

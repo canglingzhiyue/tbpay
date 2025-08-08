@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -134,7 +134,7 @@ public final class ar {
     }
 
     private static boolean a(aq aqVar) {
-        if (!TextUtils.isEmpty(b("ro.miui.ui.version.name"))) {
+        if (!StringUtils.isEmpty(b("ro.miui.ui.version.name"))) {
             String b2 = b(com.alibaba.security.realidentity.m.x);
             a(aqVar, b2);
             aqVar.b(b2);
@@ -146,7 +146,7 @@ public final class ar {
     private static String b(String str) {
         Properties properties = b;
         String property = properties.getProperty(riy.ARRAY_START_STR + str + riy.ARRAY_END_STR, null);
-        return TextUtils.isEmpty(property) ? c(str) : property.replace(riy.ARRAY_START_STR, "").replace(riy.ARRAY_END_STR, "");
+        return StringUtils.isEmpty(property) ? c(str) : property.replace(riy.ARRAY_START_STR, "").replace(riy.ARRAY_END_STR, "");
     }
 
     private static Properties b() {
@@ -162,7 +162,7 @@ public final class ar {
     private static boolean b(aq aqVar) {
         String b2 = b("ro.flyme.published");
         String b3 = b("ro.meizu.setupwizard.flyme");
-        if (!TextUtils.isEmpty(b2) || !TextUtils.isEmpty(b3)) {
+        if (!StringUtils.isEmpty(b2) || !StringUtils.isEmpty(b3)) {
             String b4 = b("ro.build.display.id");
             a(aqVar, b4);
             aqVar.b(b4);
@@ -212,7 +212,7 @@ public final class ar {
 
     private static boolean c(aq aqVar) {
         String b2 = b(com.alibaba.security.realidentity.m.v);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;
@@ -222,7 +222,7 @@ public final class ar {
 
     private static boolean d(aq aqVar) {
         String b2 = b(com.alibaba.security.realidentity.m.y);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;
@@ -232,7 +232,7 @@ public final class ar {
 
     private static boolean e(aq aqVar) {
         String b2 = b(com.alibaba.security.realidentity.m.w);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;
@@ -242,7 +242,7 @@ public final class ar {
 
     private static boolean f(aq aqVar) {
         String b2 = b("ro.smartisan.version");
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;
@@ -252,7 +252,7 @@ public final class ar {
 
     private static boolean g(aq aqVar) {
         String b2 = b("ro.build.display.id");
-        if (TextUtils.isEmpty(b2) || !b2.matches("amigo([\\d.]+)[a-zA-Z]*")) {
+        if (StringUtils.isEmpty(b2) || !b2.matches("amigo([\\d.]+)[a-zA-Z]*")) {
             return false;
         }
         a(aqVar, b2);
@@ -262,7 +262,7 @@ public final class ar {
 
     private static boolean h(aq aqVar) {
         String b2 = b(com.alibaba.security.realidentity.m.z);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;
@@ -272,7 +272,7 @@ public final class ar {
 
     private static boolean i(aq aqVar) {
         String b2 = b("ro.build.sense.version");
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;
@@ -282,7 +282,7 @@ public final class ar {
 
     private static boolean j(aq aqVar) {
         String b2 = b("sys.lge.lgmdm_version");
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;
@@ -302,7 +302,7 @@ public final class ar {
 
     private static boolean l(aq aqVar) {
         String b2 = b("ro.build.nubia.rom.code");
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             a(aqVar, b2);
             aqVar.b(b2);
             return true;

@@ -1,7 +1,7 @@
 package com.taobao.login4android.membercenter.account.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -171,7 +171,7 @@ public class NewAccountAdapter extends BaseAdapter {
         try {
             SessionModel sessionModel = this.mListAccounts.get(i);
             aVar.b.setText(StringUtil.dataMasking(getAccount(sessionModel), true));
-            if (!TextUtils.isEmpty(sessionModel.headPicLink)) {
+            if (!StringUtils.isEmpty(sessionModel.headPicLink)) {
                 aVar.f17904a.setTag(sessionModel.headPicLink);
                 new LoadImageTask(DataProviderFactory.getApplicationContext(), this.mListView, "ListHeadImages", 160, true, this.mLoginMode).execute(sessionModel.headPicLink);
             } else {
@@ -248,6 +248,6 @@ public class NewAccountAdapter extends BaseAdapter {
             return (String) ipChange.ipc$dispatch("79fe8144", new Object[]{this, sessionModel});
         }
         String str = sessionModel.showLoginId;
-        return TextUtils.isEmpty(str) ? sessionModel.nick : str;
+        return StringUtils.isEmpty(str) ? sessionModel.nick : str;
     }
 }

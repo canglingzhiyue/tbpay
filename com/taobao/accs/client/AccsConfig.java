@@ -1,6 +1,6 @@
 package com.taobao.accs.client;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSManager;
 import com.taobao.accs.AccsClientConfig;
@@ -60,7 +60,7 @@ public class AccsConfig {
         if (ipChange instanceof IpChange) {
             return (AccsClientConfig.Builder) ipChange.ipc$dispatch("9b0f56f9", new Object[0]);
         }
-        if (TextUtils.isEmpty(ACCSManager.mDefaultAppkey)) {
+        if (StringUtils.isEmpty(ACCSManager.mDefaultAppkey)) {
             throw new RuntimeException("old interface!!, please AccsManager.setAppkey() first!");
         }
         if (mBuilder == null) {
@@ -92,7 +92,7 @@ public class AccsConfig {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c47690e7", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             ALog.e(TAG, "setAccsCenterHost null", new Object[0]);
         } else {
             ALog.i(TAG, "setAccsCenterHost", "env", Integer.valueOf(ACCSManager.mEnv), "releaseHost", str, "prepareHost", str2, "dailyHost", str3);

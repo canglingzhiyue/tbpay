@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.widget;
 
 import android.arch.lifecycle.Lifecycle;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.android.ultron.vfw.weex2.Weex2ContainerFrameLayout;
@@ -153,7 +153,7 @@ public class h {
                     }
                     double doubleValue = ((Double) map.get("pixels")).doubleValue();
                     double doubleValue2 = ((Double) map.get("velocity")).doubleValue();
-                    if (!TextUtils.equals((String) map.get("axis"), "vertical")) {
+                    if (!StringUtils.equals((String) map.get("axis"), "vertical")) {
                         return;
                     }
                     if (doubleValue > mto.a.GEO_NOT_SUPPORT) {

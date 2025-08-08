@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
@@ -135,7 +135,7 @@ public final class dxp implements axc {
         if (m instanceof Activity) {
             eps.a(m, "teavideo", new Pair[0]);
         }
-        if (!f.r() || (dVar = this.b) == null || (g = dVar.g()) == null || !TextUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+        if (!f.r() || (dVar = this.b) == null || (g = dVar.g()) == null || !StringUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
             return;
         }
         g.b();
@@ -153,7 +153,7 @@ public final class dxp implements axc {
         }
         String str = this.f27066a;
         i.d(str, "onPause: " + awzVar + ",mUserTriggeredPause=" + this.d);
-        if (!f.r() || (dVar = this.b) == null || !this.d || (g = dVar.g()) == null || !TextUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PAUSING)) {
+        if (!f.r() || (dVar = this.b) == null || !this.d || (g = dVar.g()) == null || !StringUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PAUSING)) {
             return;
         }
         g.a();

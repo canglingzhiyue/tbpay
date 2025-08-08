@@ -1,7 +1,7 @@
 package com.taobao.search.sf.realtimetag;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseSearchResult;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseTypedBean;
@@ -60,7 +60,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("97060d0e", new Object[]{baseTypedBean, map, activity, new Integer(i), aVar});
-        } else if (baseTypedBean == null || TextUtils.equals(baseTypedBean.cardType, "item") || TextUtils.isEmpty(baseTypedBean.clickTrace)) {
+        } else if (baseTypedBean == null || StringUtils.equals(baseTypedBean.cardType, "item") || StringUtils.isEmpty(baseTypedBean.clickTrace)) {
         } else {
             HashMap hashMap = new HashMap();
             a(hashMap, aVar, baseTypedBean, i);

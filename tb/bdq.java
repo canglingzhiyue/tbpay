@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.EditText;
 import com.alibaba.ability.localization.b;
@@ -127,7 +127,7 @@ public class bdq {
             return;
         }
         EditText c2 = c(bmzVar);
-        if (c2 == null || c2.getText() == null || TextUtils.isEmpty(c2.getText().toString()) || TextUtils.isEmpty(c2.getText().toString().trim())) {
+        if (c2 == null || c2.getText() == null || StringUtils.isEmpty(c2.getText().toString()) || StringUtils.isEmpty(c2.getText().toString().trim())) {
             d.a(this.c, e);
             return;
         }

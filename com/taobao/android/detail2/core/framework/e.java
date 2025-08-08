@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -187,7 +187,7 @@ public class e {
             MUSEngine.registerPlatformView("livephotoview", LivePhotoWeexView.class);
             fig.j = true;
         }
-        if (!TextUtils.isEmpty(p().k().J)) {
+        if (!StringUtils.isEmpty(p().k().J)) {
             UTAnalytics.getInstance().getDefaultTracker().addTPKCache(kuh.ALI_TRACK_ID, p().k().J);
         }
         if (ipa.a("fast_key_delay_init_plt_mus")) {
@@ -266,7 +266,7 @@ public class e {
         this.h = new com.taobao.android.detail2.core.framework.internallistener.detail.a(this, fmdVar);
         String k = k();
         String ag = this.g.h().b().ag();
-        if (!TextUtils.isEmpty(ag)) {
+        if (!StringUtils.isEmpty(ag)) {
             k = ag;
         }
         fjt.a(fjt.TAG_INSIDE_DETAIL, "initDetailListener 注册详情半屏生命周期。" + k);
@@ -516,7 +516,7 @@ public class e {
         if (this.g.h().b().af()) {
             String k = k();
             String ag = this.g.h().b().ag();
-            if (!TextUtils.isEmpty(ag)) {
+            if (!StringUtils.isEmpty(ag)) {
                 k = ag;
             }
             fjt.a(fjt.TAG_INSIDE_DETAIL, "initDetailListener 反注册详情半屏生命周期。" + k);

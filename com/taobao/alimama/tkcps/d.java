@@ -1,6 +1,6 @@
 package com.taobao.alimama.tkcps;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.muniontaobaosdk.util.TaoLog;
 import com.taobao.orange.OrangeConfig;
@@ -82,7 +82,7 @@ public class d {
         long j = 86400;
         String config = OrangeConfig.getInstance().getConfig("alimama_ad", "taoke_config", "");
         try {
-            JSONObject jSONObject = TextUtils.isEmpty(config) ? null : new JSONObject(config);
+            JSONObject jSONObject = StringUtils.isEmpty(config) ? null : new JSONObject(config);
             if (jSONObject != null) {
                 j = jSONObject.optLong("timeout", 86400L);
             }

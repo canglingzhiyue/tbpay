@@ -1,7 +1,7 @@
 package com.taobao.taolive.sdk.business;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -55,7 +55,7 @@ public class h {
                 } else {
                     try {
                         HashMap hashMap = new HashMap();
-                        if (!TextUtils.isEmpty(((b.a) obj).f21805a) && aVar != null) {
+                        if (!StringUtils.isEmpty(((b.a) obj).f21805a) && aVar != null) {
                             HashMap hashMap2 = (HashMap) JSONObject.parseObject(((b.a) obj).f21805a, HashMap.class);
                             if (hashMap2 != null && hashMap2.get("list") != null) {
                                 aVar.a(JSONArray.parseArray(JSON.toJSONString(hashMap2.get("list")), ShareGoodsListMessage.class));
@@ -206,7 +206,7 @@ public class h {
             if (this.b == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(aVar.f21805a)) {
+            if (!StringUtils.isEmpty(aVar.f21805a)) {
                 this.b.a(aVar);
             } else {
                 this.b.b(aVar);

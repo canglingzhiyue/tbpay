@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
@@ -200,7 +200,7 @@ public class roj extends roe {
                 a(this.e, rolVar.g);
             } else {
                 Proxy proxy = null;
-                if (!TextUtils.isEmpty(rolVar.c) && rolVar.d > 0) {
+                if (!StringUtils.isEmpty(rolVar.c) && rolVar.d > 0) {
                     proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(rolVar.c, rolVar.d));
                 }
                 if (proxy != null) {

@@ -1,6 +1,6 @@
 package com.taobao.taolive.taolivemorelive.morelive.ui;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class MoreLiveFakeExposeCtrl {
 
     public MoreLiveFakeExposeCtrl() {
         String a2 = pqo.a("KEY_FAKE_EXPOSE_MORE_LIVE");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 this.f21974a = (ExposeData) JSON.parseObject(a2, ExposeData.class);
             } catch (Exception unused) {

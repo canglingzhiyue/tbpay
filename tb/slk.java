@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -346,7 +346,7 @@ public class slk implements sli {
         }
         sps sessionParams = ((ISceneConfigService) this.f33696a.getService(ISceneConfigService.class)).getSessionParams();
         String str2 = sessionParams.j;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "{}";
         }
         String str3 = str2;
@@ -355,7 +355,7 @@ public class slk implements sli {
         } else {
             this.h++;
         }
-        return com.taobao.android.fluid.framework.data.remote.newmodel.a.a(this.f33696a, sessionParams, str, bVar.c(), str3, z ? this.i : this.h, TextUtils.isEmpty(sessionParams.u) ? "0" : sessionParams.u, z2, z3);
+        return com.taobao.android.fluid.framework.data.remote.newmodel.a.a(this.f33696a, sessionParams, str, bVar.c(), str3, z ? this.i : this.h, StringUtils.isEmpty(sessionParams.u) ? "0" : sessionParams.u, z2, z3);
     }
 
     @Override // tb.sli

@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.vfw.weex2.highPerformance.management;
 
 import android.content.Context;
 import android.taobao.windvane.export.prerender.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridDestroyPolicy;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -86,7 +86,7 @@ public class c implements k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronTradeHybridPreRenderManager.generatePreRenderInstance", "preRenderUrl is empty");
         } else {
             abm abmVar = this.b;
@@ -123,7 +123,7 @@ public class c implements k {
             if (aVar != null) {
                 if (!b(str, aVar.f2786a)) {
                     jqg.b("UltronTradeHybridPreRenderManager.generatePreRenderInstanceByScene", String.format("%s-%s switcher is off", str, aVar.f2786a));
-                } else if (!TextUtils.equals(aVar.d, str2)) {
+                } else if (!StringUtils.equals(aVar.d, str2)) {
                     UnifyLog.a("UltronTradeHybridPreRenderManager.generatePreRenderInstanceByScene", "no match stage");
                 } else {
                     a(context, aVar.b);
@@ -152,9 +152,9 @@ public class c implements k {
             if (aVar != null) {
                 if (!b(str2, aVar.f2786a)) {
                     jqg.b("UltronTradeHybridPreRenderManager.generatePreRenderInstanceByScene", String.format("%s-%s switcher is off", str2, aVar.f2786a));
-                } else if (!TextUtils.equals(aVar.d, str3)) {
+                } else if (!StringUtils.equals(aVar.d, str3)) {
                     UnifyLog.a("UltronTradeHybridPreRenderManager.generatePreRenderInstanceByScene", String.format("no match stage: %s", aVar.d));
-                } else if (!TextUtils.equals(aVar.f2786a, str)) {
+                } else if (!StringUtils.equals(aVar.f2786a, str)) {
                     UnifyLog.a("UltronTradeHybridPreRenderManager.generatePreRenderInstanceByScene", String.format("no match bizName: %s", aVar.f2786a));
                 } else {
                     a(context, aVar.b);
@@ -168,7 +168,7 @@ public class c implements k {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("17307540", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronTradeHybridPreRenderManager.getPreRenderInstance", "preRenderUrl is empty");
             return null;
         }
@@ -190,7 +190,7 @@ public class c implements k {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("73a838bc", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronTradeHybridPreRenderManager.getBackgroundPreRenderInstance", "preRenderUrl is empty");
             return null;
         }
@@ -211,7 +211,7 @@ public class c implements k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronTradeHybridPreRenderManager.destroyPreRenderInstance", "preRenderUrl is empty");
         } else {
             abm abmVar = this.b;
@@ -284,12 +284,12 @@ public class c implements k {
             if (aVar != null) {
                 if (!b(str2, aVar.f2786a)) {
                     jqg.b("UltronTradeHybridPreRenderManager.destroyPreRenderInstanceByPolicy", String.format("%s-%s switcher is off", str2, aVar.f2786a));
-                } else if (!TextUtils.equals(aVar.f, "none")) {
-                    if (TextUtils.equals(aVar.f, "destroy")) {
+                } else if (!StringUtils.equals(aVar.f, "none")) {
+                    if (StringUtils.equals(aVar.f, "destroy")) {
                         b(aVar.b);
-                    } else if (!TextUtils.equals(aVar.f, UltronTradeHybridDestroyPolicy.DESTROY_ON_LOW_MEMORY)) {
-                        if (TextUtils.equals(aVar.f, UltronTradeHybridDestroyPolicy.DESTROY_ON_STAGE)) {
-                            if (aVar.g != null && TextUtils.equals(str, aVar.g)) {
+                    } else if (!StringUtils.equals(aVar.f, UltronTradeHybridDestroyPolicy.DESTROY_ON_LOW_MEMORY)) {
+                        if (StringUtils.equals(aVar.f, UltronTradeHybridDestroyPolicy.DESTROY_ON_STAGE)) {
+                            if (aVar.g != null && StringUtils.equals(str, aVar.g)) {
                                 b(aVar.b);
                             }
                         } else {
@@ -335,7 +335,7 @@ public class c implements k {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put(str, jSONObject);
                 return;
             }
@@ -347,7 +347,7 @@ public class c implements k {
         Object tag = pVar.getTag("bizId");
         if (tag instanceof String) {
             String str2 = (String) tag;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put(str2, jSONObject);
                 return;
             }
@@ -366,7 +366,7 @@ public class c implements k {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x002b, code lost:
-        if (android.text.TextUtils.isEmpty(r0) == false) goto L10;
+        if (android.text.StringUtils.isEmpty(r0) == false) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -396,7 +396,7 @@ public class c implements k {
             boolean r1 = r0 instanceof java.lang.String
             if (r1 == 0) goto L2e
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L2e
             goto L36
         L2e:
@@ -439,7 +439,7 @@ public class c implements k {
             if (aVar != null) {
                 if (!b(str, aVar.f2786a)) {
                     jqg.a("UltronTradeHybridPreRenderManager", "preRenderTMSInstance:", String.format("%s-%s switcher is off", str, aVar.f2786a));
-                } else if (!TextUtils.equals(aVar.d, str2)) {
+                } else if (!StringUtils.equals(aVar.d, str2)) {
                     jqg.a("UltronTradeHybridPreRenderManager", "preRenderTMSInstance:", "no match stage");
                 } else {
                     a(aVar, jSONObject);
@@ -459,17 +459,17 @@ public class c implements k {
             List<String> list = aVar.k;
             String str2 = "default";
             if (jSONObject != null) {
-                if (!TextUtils.isEmpty(jSONObject.getString("themisPreRenderUrl"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("themisPreRenderUrl"))) {
                     str = jSONObject.getString("themisPreRenderUrl");
                 }
-                if (!TextUtils.isEmpty(jSONObject.getString("themisQueryIgnores"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("themisQueryIgnores"))) {
                     list = JSONObject.parseArray(jSONObject.getString("themisQueryIgnores"), String.class);
                 }
-                if (!TextUtils.isEmpty(jSONObject.getString("themisBizName"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("themisBizName"))) {
                     str2 = jSONObject.getString("themisBizName");
                 }
             }
-            if (!TextUtils.isEmpty(str) && list != null && !list.isEmpty()) {
+            if (!StringUtils.isEmpty(str) && list != null && !list.isEmpty()) {
                 if (jSONObject != null) {
                     this.e.put(str2, jSONObject);
                 } else {

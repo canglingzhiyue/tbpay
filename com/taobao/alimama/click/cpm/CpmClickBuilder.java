@@ -1,7 +1,7 @@
 package com.taobao.alimama.click.cpm;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.munion.taosdk.MunionUrlBuilder;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class CpmClickBuilder {
         if (ipChange instanceof IpChange) {
             return (CpmClickBuilder) ipChange.ipc$dispatch("b8187658", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mArgsMap.put("epid", str);
         }
         return this;
@@ -38,7 +38,7 @@ public class CpmClickBuilder {
         if (ipChange instanceof IpChange) {
             return (CpmClickBuilder) ipChange.ipc$dispatch("f34e2215", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mArgsMap.put("aurl", str);
         }
         return this;
@@ -49,7 +49,7 @@ public class CpmClickBuilder {
         if (ipChange instanceof IpChange) {
             return (CpmClickBuilder) ipChange.ipc$dispatch("db7b8077", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mArgsMap.put("eadt", str);
         }
         return this;
@@ -71,7 +71,7 @@ public class CpmClickBuilder {
         if (ipChange instanceof IpChange) {
             return (CpmClickBuilder) ipChange.ipc$dispatch("ab598ef9", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             this.mArgsMap.put(str, str2);
         }
         return this;
@@ -95,11 +95,11 @@ public class CpmClickBuilder {
             ipChange.ipc$dispatch("11990eb5", new Object[]{this});
             return;
         }
-        if (TextUtils.isEmpty(this.mArgsMap.get("epid"))) {
+        if (StringUtils.isEmpty(this.mArgsMap.get("epid"))) {
             String str = this.mArgsMap.get("aurl");
-            if (!TextUtils.isEmpty(str) && (parse = Uri.parse(str)) != null && parse.isHierarchical()) {
+            if (!StringUtils.isEmpty(str) && (parse = Uri.parse(str)) != null && parse.isHierarchical()) {
                 String queryParameter = parse.getQueryParameter("epid");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     withArgPid(queryParameter);
                 }
             }
@@ -112,7 +112,7 @@ public class CpmClickBuilder {
             if (!parse2.isHierarchical()) {
                 return;
             }
-            if (TextUtils.isEmpty(this.mArgsMap.get("eadt"))) {
+            if (StringUtils.isEmpty(this.mArgsMap.get("eadt"))) {
                 withArgEadt(parse2.getQueryParameter("eadt"));
             }
             String queryParameter2 = parse2.getQueryParameter("mmAdArgs");

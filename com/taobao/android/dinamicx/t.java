@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.expression.event.DXEvent;
 import com.taobao.android.dinamicx.monitor.DXMonitorConstant;
@@ -49,7 +49,7 @@ public class t implements com.taobao.android.dinamicx.expression.expr_v2.a, com.
         if (ipChange instanceof IpChange) {
             return (com.taobao.android.dinamicx.expression.expr_v2.f) ipChange.ipc$dispatch("fb06c1e9", new Object[]{this, dXRuntimeContext, str});
         }
-        if (!TextUtils.isEmpty(str) && (hashMap = this.f11921a) != null && hashMap.size() != 0 && (jVar = this.f11921a.get(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (hashMap = this.f11921a) != null && hashMap.size() != 0 && (jVar = this.f11921a.get(str)) != null) {
             return com.taobao.android.dinamicx.expression.expr_v2.f.a(jVar);
         }
         return null;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -43,7 +43,7 @@ public class inq {
         }
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("code", (Object) Integer.valueOf(i));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("message", (Object) str);
         }
         if (obj != null) {

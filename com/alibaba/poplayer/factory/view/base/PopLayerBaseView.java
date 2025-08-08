@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -590,7 +590,7 @@ public abstract class PopLayerBaseView<InnerView, Request extends PopRequest> ex
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("620946e9", new Object[]{this, str, new Boolean(z), jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Request request = this.mPopRequest;
             if (!(request instanceof d)) {
@@ -726,7 +726,7 @@ public abstract class PopLayerBaseView<InnerView, Request extends PopRequest> ex
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && str.startsWith("poplayer")) {
+            if (!StringUtils.isEmpty(str) && str.startsWith("poplayer")) {
                 return;
             }
             this.mPopRequest.t().a(str);
@@ -801,7 +801,7 @@ public abstract class PopLayerBaseView<InnerView, Request extends PopRequest> ex
         } else if (jSONObject != null && !jSONObject.isEmpty()) {
             try {
                 for (String str : jSONObject.keySet()) {
-                    if (!TextUtils.isEmpty(str) && (obj = jSONObject.get(str)) != null) {
+                    if (!StringUtils.isEmpty(str) && (obj = jSONObject.get(str)) != null) {
                         this.mPopRequest.t().ar.put(str, obj);
                     }
                 }

@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.util.UUID;
 import javax.crypto.Cipher;
@@ -13,7 +13,7 @@ public final class OO0o00 {
         try {
             try {
                 String replace = UUID.randomUUID().toString().replace("-", "");
-                return (TextUtils.isEmpty(replace) || replace.length() < 32) ? OOO.O00000o0().substring(0, 32) : replace;
+                return (StringUtils.isEmpty(replace) || replace.length() < 32) ? OOO.O00000o0().substring(0, 32) : replace;
             } catch (Exception e) {
                 e.printStackTrace();
                 return "";

@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -295,13 +295,13 @@ public class BGContainerView extends FrameLayout {
         } catch (Throwable unused) {
             i = -1;
         }
-        if (i != 0 && !TextUtils.isEmpty(this.bgConfig.darkBeginColor) && !TextUtils.isEmpty(this.bgConfig.darkEndColor)) {
+        if (i != 0 && !StringUtils.isEmpty(this.bgConfig.darkBeginColor) && !StringUtils.isEmpty(this.bgConfig.darkEndColor)) {
             int parseColor = Color.parseColor(this.bgConfig.darkBeginColor);
             i2 = Color.parseColor(this.bgConfig.darkEndColor);
             i = parseColor;
         } else {
-            i = TextUtils.isEmpty(this.bgConfig.beginColor) ? -1 : Color.parseColor(this.bgConfig.beginColor);
-            if (TextUtils.isEmpty(this.bgConfig.endColor)) {
+            i = StringUtils.isEmpty(this.bgConfig.beginColor) ? -1 : Color.parseColor(this.bgConfig.beginColor);
+            if (StringUtils.isEmpty(this.bgConfig.endColor)) {
                 i2 = -1;
                 i = i;
             } else {
@@ -552,7 +552,7 @@ public class BGContainerView extends FrameLayout {
         } else if (com.taobao.homepage.view.widgets.bgcontainer.a.a()) {
         } else {
             String string = jSONObject == null ? null : jSONObject.getString("bgConfig");
-            if (TextUtils.isEmpty(string) || list == null || list.isEmpty()) {
+            if (StringUtils.isEmpty(string) || list == null || list.isEmpty()) {
                 resetBG();
                 return;
             }
@@ -635,7 +635,7 @@ public class BGContainerView extends FrameLayout {
         } else {
             height = view.getHeight();
         }
-        if (!TextUtils.isEmpty(this.bgConfig.bottomMaskImg)) {
+        if (!StringUtils.isEmpty(this.bgConfig.bottomMaskImg)) {
             if (this.bottomMaskView == null) {
                 this.bottomMaskView = new HImageView(getContext());
                 this.bottomMaskView.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -667,7 +667,7 @@ public class BGContainerView extends FrameLayout {
         boolean z2 = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ddc8ffe9", new Object[]{this, bGConfig, new Boolean(z)});
-        } else if (!TextUtils.isEmpty(this.bgConfig.animationImg)) {
+        } else if (!StringUtils.isEmpty(this.bgConfig.animationImg)) {
             int ap2px = ap2px(getContext(), this.bgConfig.centerY);
             this.screenAniHeight = ap2px(getContext(), this.bgConfig.animationHeight);
             int i = ap2px << 1;
@@ -750,10 +750,10 @@ public class BGContainerView extends FrameLayout {
             }
             this.animationView.setLayoutParams(marginLayoutParams2);
             String str = z ? this.bgConfig.degradeAnimationImg : this.bgConfig.animationImg;
-            if (this.animationView.isDrawableSameWith(null) || !TextUtils.equals(str, this.animationView.getImageUrl())) {
+            if (this.animationView.isDrawableSameWith(null) || !StringUtils.equals(str, this.animationView.getImageUrl())) {
                 z2 = false;
             }
-            if (bGConfig != null && z2 && TextUtils.equals(this.bgConfig.animationType, bGConfig.animationType) && this.bgConfig.animationTime == bGConfig.animationTime && this.bgConfig.animationCount == bGConfig.animationCount) {
+            if (bGConfig != null && z2 && StringUtils.equals(this.bgConfig.animationType, bGConfig.animationType) && this.bgConfig.animationTime == bGConfig.animationTime && this.bgConfig.animationCount == bGConfig.animationCount) {
                 return;
             }
             if (z2) {
@@ -791,7 +791,7 @@ public class BGContainerView extends FrameLayout {
             ipChange.ipc$dispatch("780a4b21", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.bgConfig.maskImg)) {
+        if (!StringUtils.isEmpty(this.bgConfig.maskImg)) {
             if (this.maskView == null) {
                 this.maskView = new HImageView(getContext());
                 addView(this.maskView);
@@ -813,7 +813,7 @@ public class BGContainerView extends FrameLayout {
                 ksp.a(TAG, "homeBgMaskImage_clear");
             }
         }
-        if (!TextUtils.isEmpty(this.bgConfig.topMaskImg)) {
+        if (!StringUtils.isEmpty(this.bgConfig.topMaskImg)) {
             if (this.topMaskView == null) {
                 this.topMaskView = new HImageView(getContext());
                 addView(this.topMaskView);
@@ -860,7 +860,7 @@ public class BGContainerView extends FrameLayout {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("87a133e2", new Object[]{this, bGConfig, bGConfig2});
         } else if (this.animationView != null) {
-            if (TextUtils.equals(bGConfig2.animationType, "scale")) {
+            if (StringUtils.equals(bGConfig2.animationType, "scale")) {
                 if (this.animationView2 == null) {
                     this.animationView2 = new HImageView(getContext());
                     this.animationView2.setScaleType(ImageView.ScaleType.CENTER_CROP);
@@ -910,7 +910,7 @@ public class BGContainerView extends FrameLayout {
                     this.scaleAnimation2.setRepeatCount(bGConfig2.animationCount);
                     this.scaleAnimation2.setDuration(bGConfig2.animationTime / 4);
                 }
-            } else if (TextUtils.equals(bGConfig2.animationType, "rotate")) {
+            } else if (StringUtils.equals(bGConfig2.animationType, "rotate")) {
                 ValueAnimator valueAnimator = this.rotateAnimator;
                 if (valueAnimator == null) {
                     this.rotateAnimator = ObjectAnimator.ofFloat(this.animationView, "rotation", 0.0f, 360.0f);
@@ -926,7 +926,7 @@ public class BGContainerView extends FrameLayout {
                 ksp.c(TAG, "unknownBackgroundAnimationType");
                 ksr.b("unknownBackgroundAnimationType", "1.0", "unknownBackgroundAnimationType", "unknownBackgroundAnimationType", "", "");
             }
-            if (bGConfig != null && TextUtils.equals(bGConfig2.animationType, bGConfig.animationType)) {
+            if (bGConfig != null && StringUtils.equals(bGConfig2.animationType, bGConfig.animationType)) {
                 z = true;
             }
             if (z) {
@@ -942,7 +942,7 @@ public class BGContainerView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("786f6ef", new Object[]{this, new Integer(i)});
-        } else if (!this.isIdle || (bGConfig = this.bgConfig) == null || TextUtils.isEmpty(bGConfig.animationType)) {
+        } else if (!this.isIdle || (bGConfig = this.bgConfig) == null || StringUtils.isEmpty(bGConfig.animationType)) {
         } else {
             String str = this.bgConfig.animationType;
             if (ktp.a(com.taobao.tao.infoflow.multitab.e.KEY_BG_IMG, "animation")) {
@@ -953,7 +953,7 @@ public class BGContainerView extends FrameLayout {
             ksp.a(TAG, "bgView_ani_status:" + i);
             if (i == 1) {
                 endAnimation(str);
-                if (TextUtils.equals("scale", str)) {
+                if (StringUtils.equals("scale", str)) {
                     AnimationSet animationSet = this.scaleAnimation;
                     if (animationSet != null && (!animationSet.hasStarted() || this.scaleAnimation.hasEnded())) {
                         e.a(TAG, "start scaleAnimation start animation");
@@ -968,13 +968,13 @@ public class BGContainerView extends FrameLayout {
                     }
                     e.a(TAG, "start scaleAnimation2 start animation");
                     this.animationView2.startAnimation(this.scaleAnimation2);
-                } else if (!TextUtils.equals("rotate", str) || (valueAnimator = this.rotateAnimator) == null || valueAnimator.isRunning()) {
+                } else if (!StringUtils.equals("rotate", str) || (valueAnimator = this.rotateAnimator) == null || valueAnimator.isRunning()) {
                 } else {
                     e.a(TAG, "start rotateAnimator start animation");
                     this.rotateAnimator.start();
                 }
             } else if (i == 2) {
-                if (TextUtils.equals("scale", str)) {
+                if (StringUtils.equals("scale", str)) {
                     AnimationSet animationSet2 = this.scaleAnimation;
                     if (animationSet2 != null && animationSet2.hasEnded()) {
                         e.a(TAG, "resume scaleAnimation start animation");
@@ -986,7 +986,7 @@ public class BGContainerView extends FrameLayout {
                     }
                     e.a(TAG, "resume scaleAnimation2 start animation");
                     this.scaleAnimation2.start();
-                } else if (!TextUtils.equals("rotate", str)) {
+                } else if (!StringUtils.equals("rotate", str)) {
                 } else {
                     if (Build.VERSION.SDK_INT >= 19) {
                         ValueAnimator valueAnimator2 = this.rotateAnimator;
@@ -1006,7 +1006,7 @@ public class BGContainerView extends FrameLayout {
                     endAnimation(str);
                 } else if (i != 5) {
                 } else {
-                    if (TextUtils.equals("scale", str)) {
+                    if (StringUtils.equals("scale", str)) {
                         if (this.scaleAnimation != null) {
                             e.a(TAG, "restart scaleAnimation start animation");
                             this.animationView.startAnimation(this.scaleAnimation);
@@ -1016,14 +1016,14 @@ public class BGContainerView extends FrameLayout {
                         }
                         e.a(TAG, "restart scaleAnimation2 start animation");
                         this.animationView2.startAnimation(this.scaleAnimation2);
-                    } else if (!TextUtils.equals("rotate", str) || this.rotateAnimator == null) {
+                    } else if (!StringUtils.equals("rotate", str) || this.rotateAnimator == null) {
                     } else {
                         e.a(TAG, "start rotateAnimator start animation");
                         this.rotateAnimator.end();
                         this.rotateAnimator.start();
                     }
                 }
-            } else if (TextUtils.equals("scale", str)) {
+            } else if (StringUtils.equals("scale", str)) {
                 AnimationSet animationSet3 = this.scaleAnimation;
                 if (animationSet3 != null && !animationSet3.hasEnded()) {
                     e.a(TAG, "pause scaleAnimation cancel animation");
@@ -1035,7 +1035,7 @@ public class BGContainerView extends FrameLayout {
                 }
                 e.a(TAG, "pause scaleAnimation2 cancel animation");
                 this.scaleAnimation2.cancel();
-            } else if (!TextUtils.equals("rotate", str)) {
+            } else if (!StringUtils.equals("rotate", str)) {
             } else {
                 if (Build.VERSION.SDK_INT >= 19) {
                     ValueAnimator valueAnimator3 = this.rotateAnimator;
@@ -1061,7 +1061,7 @@ public class BGContainerView extends FrameLayout {
             return;
         }
         clearViewAnimation();
-        if (TextUtils.equals("rotate", str)) {
+        if (StringUtils.equals("rotate", str)) {
             AnimationSet animationSet = this.scaleAnimation;
             if (animationSet != null && !animationSet.hasEnded()) {
                 e.a(TAG, "finish scaleAnimation cancel animation");
@@ -1078,7 +1078,7 @@ public class BGContainerView extends FrameLayout {
             }
             this.animationContainer.removeView(hImageView);
             this.animationView2 = null;
-        } else if (!TextUtils.equals("scale", str) || (valueAnimator = this.rotateAnimator) == null || !valueAnimator.isRunning()) {
+        } else if (!StringUtils.equals("scale", str) || (valueAnimator = this.rotateAnimator) == null || !valueAnimator.isRunning()) {
         } else {
             e.a(TAG, "finish rotateAnimator cancel animation");
             this.rotateAnimator.end();

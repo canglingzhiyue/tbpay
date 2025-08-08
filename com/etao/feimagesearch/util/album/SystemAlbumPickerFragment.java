@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -143,9 +143,9 @@ public final class SystemAlbumPickerFragment extends Fragment {
         }
         q.a((Object) type, "data.type ?: \"\"");
         String str = type;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             String str2 = path;
-            if (TextUtils.isEmpty(str2) || (!n.b((CharSequence) str2, (CharSequence) "video", false, 2, (Object) null) && !n.b((CharSequence) str2, (CharSequence) "Video", false, 2, (Object) null) && !n.b((CharSequence) str2, (CharSequence) "VID", false, 2, (Object) null) && !n.b((CharSequence) str2, (CharSequence) MspEventTypes.ACTION_STRING_VID, false, 2, (Object) null))) {
+            if (StringUtils.isEmpty(str2) || (!n.b((CharSequence) str2, (CharSequence) "video", false, 2, (Object) null) && !n.b((CharSequence) str2, (CharSequence) "Video", false, 2, (Object) null) && !n.b((CharSequence) str2, (CharSequence) "VID", false, 2, (Object) null) && !n.b((CharSequence) str2, (CharSequence) MspEventTypes.ACTION_STRING_VID, false, 2, (Object) null))) {
                 z = false;
             }
         } else {
@@ -222,7 +222,7 @@ public final class SystemAlbumPickerFragment extends Fragment {
             cox.a(com.etao.feimagesearch.structure.capture.a.f6987a, "videoSearchTimeLimitExceeded", 19999, "totalTime", String.valueOf(oVar.e()));
             return true;
         } else {
-            boolean equals = TextUtils.equals(this.pssource, "sys_album");
+            boolean equals = StringUtils.equals(this.pssource, "sys_album");
             cox.a("SelectedVideo", new String[0]);
             csz.a(oVar.e(), true);
             if (!equals) {

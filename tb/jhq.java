@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.ali.user.mobile.ui.WebConstant;
 import com.alibaba.fastjson.JSONObject;
@@ -31,7 +31,7 @@ public class jhq extends b {
             return (jhh) ipChange.ipc$dispatch("7c71106a", new Object[]{this, str});
         }
         String a2 = jhz.a();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = jhz.a();
         }
         String str2 = str;

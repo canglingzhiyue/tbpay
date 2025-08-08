@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -441,14 +441,14 @@ public class PopLayerComponent extends e implements ai, com.taobao.tao.flexbox.l
                 attributes.x = ohd.b(ab.a()) / 4;
                 this.animationDialogWindow.setAttributes(attributes);
             }
-            if (TextUtils.equals(((c) this.viewParams).f20019a, "none")) {
+            if (StringUtils.equals(((c) this.viewParams).f20019a, "none")) {
                 this.animationDialogWindow.setWindowAnimations(R.style.TNodePopLayer);
             }
-            if (TextUtils.equals("nothing", ((c) this.viewParams).e)) {
+            if (StringUtils.equals("nothing", ((c) this.viewParams).e)) {
                 this.animationDialogWindow.setSoftInputMode(48);
-            } else if (TextUtils.equals(Constants.Name.RESIZE, ((c) this.viewParams).e)) {
+            } else if (StringUtils.equals(Constants.Name.RESIZE, ((c) this.viewParams).e)) {
                 this.animationDialogWindow.setSoftInputMode(16);
-            } else if (TextUtils.equals("pan", ((c) this.viewParams).e)) {
+            } else if (StringUtils.equals("pan", ((c) this.viewParams).e)) {
                 this.animationDialogWindow.setSoftInputMode(32);
             }
             this.animationDialog.setOnShowListener(new DialogInterface.OnShowListener() { // from class: com.taobao.tao.flexbox.layoutmanager.component.PopLayerComponent.5
@@ -574,7 +574,7 @@ public class PopLayerComponent extends e implements ai, com.taobao.tao.flexbox.l
         if (!oeb.a("fixPopLayerLifecycleMsg", true)) {
             return true;
         }
-        return TextUtils.equals(oec.a(map.get("type"), "page"), "page");
+        return StringUtils.equals(oec.a(map.get("type"), "page"), "page");
     }
 
     @Override // com.taobao.tao.flexbox.layoutmanager.core.s

@@ -1,6 +1,6 @@
 package com.ta.audid.store;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.utils.RC4;
 import com.ta.audid.utils.UtdidLogger;
@@ -20,7 +20,7 @@ public class UtdidContentUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("df65868e", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {

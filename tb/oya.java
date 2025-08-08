@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
 import com.taobao.tao.remotebusiness.RemoteBusiness;
@@ -25,7 +25,7 @@ public class oya {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("934bf004", new Object[]{this, str, iRemoteBaseListener});
-        } else if (TextUtils.isEmpty(str) || iRemoteBaseListener == null) {
+        } else if (StringUtils.isEmpty(str) || iRemoteBaseListener == null) {
         } else {
             oys.a().a("Encode_REQ_getShorturl");
             ComTaobaoXcodeQrcodeCreateRequest comTaobaoXcodeQrcodeCreateRequest = new ComTaobaoXcodeQrcodeCreateRequest();

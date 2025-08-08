@@ -1,6 +1,6 @@
 package com.alibaba.flexa.compat;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitinstall.h;
 import com.alibaba.android.split.core.splitinstall.j;
@@ -59,7 +59,7 @@ public class c {
             return;
         }
         final String e = f3104a.e(str);
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             b.d("forName:%s from Feature:%s", e, str);
             ArrayList arrayList = new ArrayList();
             arrayList.add(e);

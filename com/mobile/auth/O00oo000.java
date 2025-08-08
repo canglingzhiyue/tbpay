@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.u2;
 import com.taobao.android.change.app.icon.core.Constrant;
 import com.taobao.login4android.constants.LoginConstants;
@@ -84,7 +84,7 @@ public class O00oo000 extends O00Oo0 {
             jSONObject.put("AID", this.O0000ooo);
             jSONObject.put("sysOperType", this.O00oOooO);
             jSONObject.put("scripType", this.O00oOooo);
-            if (!TextUtils.isEmpty(this.O000O00o)) {
+            if (!StringUtils.isEmpty(this.O000O00o)) {
                 jSONObject.put("networkTypeByAPI", this.O000O00o);
             }
         } catch (JSONException e) {

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.request;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.request.a;
@@ -67,7 +67,7 @@ public class b {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                         return;
                     }
-                    if (TextUtils.isEmpty(intent.getStringExtra(PreloadTaskBroadcastReceiver.START_PRELOAD_TASKS))) {
+                    if (StringUtils.isEmpty(intent.getStringExtra(PreloadTaskBroadcastReceiver.START_PRELOAD_TASKS))) {
                         JSONObject a2 = h.a().a(ak.a(intent));
                         if (a2 != null) {
                             List<String> a3 = aw.a(a2);
@@ -240,7 +240,7 @@ public class b {
             String a2 = b.a();
             MtopInfo b2 = b.b();
             i.a("RequestManager", "从缓存中获取主接口数据，直接回调");
-            if (TextUtils.equals(a2, "success")) {
+            if (StringUtils.equals(a2, "success")) {
                 i.a("RequestManager", "mtopInfo.status=" + b2.a());
                 soaVar.a(b2, 0, null, null);
             } else {

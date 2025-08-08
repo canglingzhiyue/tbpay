@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.alibaba.analytics.core.model.LogField;
 import com.alibaba.fastjson.JSONObject;
@@ -69,7 +69,7 @@ public class m implements f.a {
         this.c.clear();
         this.d.clear();
         this.b.clear();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 for (Map.Entry entry : ((HashMap) JSONObject.parseObject(str, Map.class)).entrySet()) {
                     String str2 = (String) entry.getKey();

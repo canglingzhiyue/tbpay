@@ -1,6 +1,6 @@
 package com.taobao.android.behavir.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -102,7 +102,7 @@ public class j extends com.ut.mini.module.trackerlistener.a {
                     return (NativeBroadcast.Callback) ipChange2.ipc$dispatch("3cc80256", new Object[]{this});
                 }
                 String str3 = (String) a2.get(UCPManager.UCP_CALLBACK_ID);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     return NativeBroadcast.Callback.recover(Integer.parseInt(str3));
                 }
                 return null;
@@ -163,7 +163,7 @@ public class j extends com.ut.mini.module.trackerlistener.a {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("4fc7ad92", new Object[]{this, map});
         }
-        if (!TextUtils.isEmpty(map.get("ucpTrackInfo"))) {
+        if (!StringUtils.isEmpty(map.get("ucpTrackInfo"))) {
             return map;
         }
         String str = map.get(LogField.ARGS.toString());

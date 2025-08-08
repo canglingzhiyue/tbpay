@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -323,7 +323,7 @@ public class FloatVesselFragment extends FloatFragment {
             this.mVesselType = VesselType.Weex;
         }
         try {
-            if (!TextUtils.isEmpty(this.mUri)) {
+            if (!StringUtils.isEmpty(this.mUri)) {
                 this.mVesselView.loadUrl(this.mVesselType, this.mUri, this.mVesselParams);
             } else {
                 this.mVesselView.loadData(this.mVesselType, this.mVesselData);
@@ -608,7 +608,7 @@ public class FloatVesselFragment extends FloatFragment {
             this.mVesselView.onDestroy();
         }
         String str = this.mAddressId;
-        if (str == null || TextUtils.equals(str, this.mOriginalAddressId)) {
+        if (str == null || StringUtils.equals(str, this.mOriginalAddressId)) {
             return;
         }
         Intent intent = new Intent();

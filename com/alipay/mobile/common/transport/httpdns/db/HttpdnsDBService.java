@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.httpdns.DnsUtil;
 import com.alipay.mobile.common.transport.httpdns.HttpDns;
 import com.alipay.mobile.common.transport.httpdns.HttpdnsIPEntry;
@@ -58,7 +58,7 @@ public class HttpdnsDBService {
             }
             SQLiteDatabase writableDatabase = this.b.getWritableDatabase();
             try {
-                if (!TextUtils.isEmpty(httpdnsIP.getCname())) {
+                if (!StringUtils.isEmpty(httpdnsIP.getCname())) {
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("domain", str);
                     contentValues.put("time", Long.valueOf(httpdnsIP.getTime()));
@@ -117,7 +117,7 @@ public class HttpdnsDBService {
                     if (isHostInDB(entry.getKey(), i)) {
                         removeIpInfoFromDB(entry.getKey(), i);
                     }
-                    if (!TextUtils.isEmpty(entry.getValue().getCname())) {
+                    if (!StringUtils.isEmpty(entry.getValue().getCname())) {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put("domain", entry.getKey());
                         contentValues.put("time", Long.valueOf(entry.getValue().getTime()));
@@ -211,7 +211,7 @@ public class HttpdnsDBService {
                         removeIpInfoFromDB(entry.getKey(), i);
                     }
                     sQLiteDatabase2 = this.b.getWritableDatabase();
-                    if (!TextUtils.isEmpty(entry.getValue().getCname())) {
+                    if (!StringUtils.isEmpty(entry.getValue().getCname())) {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put("domain", entry.getKey());
                         contentValues.put("time", Long.valueOf(entry.getValue().getTime()));
@@ -275,7 +275,7 @@ public class HttpdnsDBService {
         }
         Cursor cursor = null;
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.debug("HDNS_HttpdnsDBService", "isHostInDB : host is null");
                 return false;
             }
@@ -309,7 +309,7 @@ public class HttpdnsDBService {
         }
         Cursor cursor = null;
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.debug("HDNS_HttpdnsDBService", "isHostInDBIngoreNetType : host is null");
                 return false;
             }
@@ -340,7 +340,7 @@ public class HttpdnsDBService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1115baf2", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.debug("HDNS_HttpdnsDBService", "removeIpInfoFromDB : host is null");
         } else {
             this.b.getWritableDatabase().execSQL(HttpdnsDBSql.REMOVEIPINFOFROMDB_INGORE_NETTYPE, new String[]{str});
@@ -351,7 +351,7 @@ public class HttpdnsDBService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("11a21651", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.debug("HDNS_HttpdnsDBService", "removeIpInfoFromDB : host is null");
         } else {
             this.b.getWritableDatabase().execSQL(HttpdnsDBSql.removeIpInfoFromDB, new String[]{str, String.valueOf(i)});
@@ -365,7 +365,7 @@ public class HttpdnsDBService {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.b.getWritableDatabase().execSQL(HttpdnsDBSql.removeSingleIpInfoFromDB, new String[]{str, String.valueOf(str2), String.valueOf(i)});

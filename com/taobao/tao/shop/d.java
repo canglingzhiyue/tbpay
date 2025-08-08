@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -182,7 +182,7 @@ public class d {
             if (a2 != null && b.a().n() && a2.isMiniAppRenderStyle()) {
                 a2 = null;
             }
-            if (a2 == null || TextUtils.isEmpty(a2.getShopTargetUrl())) {
+            if (a2 == null || StringUtils.isEmpty(a2.getShopTargetUrl())) {
                 String str = "shortcut url NOT matched, original url is " + b2.toString();
                 Log.e("TBSREngine main-cost", "shortcut url NOT matched");
                 AppMonitor.Alarm.commitFail("Shop", ShopConstants.POINT_SHOP_SHORTCUT, ShopConstants.ARG_SHOP_NAV_ONCE, "-1", ShopConstants.ALL_WEEX_MONITOR_ERROR_MSG);
@@ -204,8 +204,8 @@ public class d {
             return ((Boolean) ipChange.ipc$dispatch("3d63e1d0", new Object[]{this, str, str2, context})).booleanValue();
         }
         long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
-            ouu.b("match()  -   TextUtils.isEmpty(url) || TextUtils.isEmpty(bundleName) ");
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
+            ouu.b("match()  -   StringUtils.isEmpty(url) || StringUtils.isEmpty(bundleName) ");
             return false;
         }
         ouu.a("originalURL： " + str2);
@@ -326,8 +326,8 @@ public class d {
             return;
         }
         String a2 = a(uri, str);
-        if (TextUtils.isEmpty(a2)) {
-            ouu.a("performAssembleUrl()   ->  TextUtils.isEmpty(targetUrl)");
+        if (StringUtils.isEmpty(a2)) {
+            ouu.a("performAssembleUrl()   ->  StringUtils.isEmpty(targetUrl)");
         } else {
             a(tBShopPageType, a2, str2, (Bundle) null);
         }
@@ -357,7 +357,7 @@ public class d {
             if ("new".equals(queryParameter)) {
                 if (equals) {
                     String e = com.taobao.tao.shop.rule.util.c.e(str);
-                    if (TextUtils.isEmpty(e)) {
+                    if (StringUtils.isEmpty(e)) {
                         a(str);
                         return;
                     } else {
@@ -373,7 +373,7 @@ public class d {
                     return;
                 }
                 String a2 = a(parse, "http://shop.m.taobao.com/shophomepage/index.htm");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     a(str);
                     return;
                 } else if (equals) {
@@ -585,7 +585,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f7e1cdd7", new Object[]{this, uri, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String trim = str.trim();
@@ -604,7 +604,7 @@ public class d {
         }
         sb.append(uri2);
         a(sb, contains);
-        if (a2 != null && !TextUtils.isEmpty(a2.get("shop_id"))) {
+        if (a2 != null && !StringUtils.isEmpty(a2.get("shop_id"))) {
             sb.append("&shop_id=");
             sb.append(a2.get("shop_id"));
         }
@@ -644,7 +644,7 @@ public class d {
         if (this.d == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.d.a(TBShopPageType.SHOP_PAGE_PROCESSED_ERROR, str2, bundle);
             return;
         }
@@ -693,7 +693,7 @@ public class d {
                 sb.append(queryParameter2);
                 sb.append("&wx_navbar_hidden=true&");
                 sb.append("isShopToPopLayerSDK=true");
-                if (!TextUtils.isEmpty(queryParameter3)) {
+                if (!StringUtils.isEmpty(queryParameter3)) {
                     sb.append("&currentClickTime=");
                     sb.append(queryParameter3);
                 }

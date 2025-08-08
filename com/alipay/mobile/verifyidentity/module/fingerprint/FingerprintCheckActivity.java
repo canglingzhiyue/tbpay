@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -649,7 +649,7 @@ public class FingerprintCheckActivity extends BaseVerifyActivity {
             return;
         }
         VerifyLogCat.i("FingerprintCheckActivityTag", "开始切密码");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.h.updateTipToPwd(str);
         }
         updateVerifyStatus("end");
@@ -742,7 +742,7 @@ public class FingerprintCheckActivity extends BaseVerifyActivity {
                     mICRpcRequest.data = FingerprintCheckActivity.access$000(FingerprintCheckActivity.this).fingerprintResultData;
                     if (FingerprintCheckActivity.access$000(FingerprintCheckActivity.this).multiBio) {
                         String preBioType = FingerprintCheckActivity.access$000(FingerprintCheckActivity.this).getPreBioType();
-                        if (!TextUtils.isEmpty(preBioType)) {
+                        if (!StringUtils.isEmpty(preBioType)) {
                             JSONObject parseObject2 = JSON.parseObject(FingerprintCheckActivity.access$000(FingerprintCheckActivity.this).fingerprintResultData);
                             parseObject2.put("preType", (Object) preBioType);
                             if (FingerprintCheckActivity.access$000(FingerprintCheckActivity.this).isIntelligent) {
@@ -771,13 +771,13 @@ public class FingerprintCheckActivity extends BaseVerifyActivity {
                     }
                     boolean handleZimMessage = FingerprintCheckActivity.access$000(FingerprintCheckActivity.this).handleZimMessage(sendRpcRequest);
                     if (sendRpcRequest.verifySuccess) {
-                        if (!TextUtils.isEmpty(sendRpcRequest.data) && sendRpcRequest.data.contains("bicAsyncData") && (parseObject = JSON.parseObject(sendRpcRequest.data)) != null) {
+                        if (!StringUtils.isEmpty(sendRpcRequest.data) && sendRpcRequest.data.contains("bicAsyncData") && (parseObject = JSON.parseObject(sendRpcRequest.data)) != null) {
                             AuthenticatorManager.getInstance(FingerprintCheckActivity.this).processAfterAuth(parseObject.getString("bicAsyncData"));
                         }
                         FingerprintCheckActivity.access$000(FingerprintCheckActivity.this).notifyResult(sendRpcRequest, false, FingerprintCheckActivity.access$1600(FingerprintCheckActivity.this).needKeepInside.get());
                     } else if (sendRpcRequest.finish) {
                         String str = sendRpcRequest.verifyMessage;
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             str = FingerprintCheckActivity.this.getResources().getString(R.string.verifyidentity_wrong_data);
                         }
                         FingerprintCheckActivity.this.alert("", str, FingerprintCheckActivity.this.getResources().getString(R.string.verifyidentity_confirm), new DialogInterface.OnClickListener() { // from class: com.alipay.mobile.verifyidentity.module.fingerprint.FingerprintCheckActivity.4.1

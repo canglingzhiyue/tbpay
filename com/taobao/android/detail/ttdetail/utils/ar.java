@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.fastjson.JSON;
@@ -33,7 +33,7 @@ public class ar {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("popId", (Object) str2);
         jSONObject2.put("bizId", (Object) "tbDetail");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             JSONObject parseObject = JSON.parseObject(str3);
             if (e.a(eyxVar.g())) {
                 parseObject.put("maxHeight", (Object) "1.0");

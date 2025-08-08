@@ -1,6 +1,6 @@
 package com.taobao.bootimage.linked;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.linked.b;
@@ -375,7 +375,7 @@ public class c {
         }
         try {
             LinkedSplashData linkedSplashData = this.e;
-            if (linkedSplashData != null && TextUtils.equals(com.taobao.mmad.data.b.TYPE_BANNER, linkedSplashData.getLinkedDataType())) {
+            if (linkedSplashData != null && StringUtils.equals(com.taobao.mmad.data.b.TYPE_BANNER, linkedSplashData.getLinkedDataType())) {
                 kej.a("LinkedSplashCooperator", "terminate, enter topview compat = " + this.e);
                 if (!this.f) {
                     kej.a("LinkedSplashCooperator", "terminate, trigger animationStart for topview");
@@ -404,7 +404,7 @@ public class c {
         }
         String linkedDataType = linkedSplashData.getLinkedDataType();
         kej.a("LinkedSplashCooperator", "peekCallback, linkedDataType " + linkedDataType);
-        if (TextUtils.isEmpty(linkedDataType)) {
+        if (StringUtils.isEmpty(linkedDataType)) {
             kej.a("LinkedSplashCooperator", "wtf!!!, peekCallback, linkedSplashType is empty");
             return this.f16705a;
         }
@@ -527,7 +527,7 @@ public class c {
             return;
         }
         try {
-            if (this.j == null || kdzVar == null || TextUtils.isEmpty(kdzVar.a())) {
+            if (this.j == null || kdzVar == null || StringUtils.isEmpty(kdzVar.a())) {
                 return;
             }
             kej.a("LinkedSplashCooperator", "addInteractCallback, callback = " + kdzVar);
@@ -548,7 +548,7 @@ public class c {
                 if (this.j != null) {
                     String linkedDataType = linkedSplashData.getLinkedDataType();
                     kej.a("LinkedSplashCooperator", "peekInteractCallback, linkedDataType " + linkedDataType);
-                    if (TextUtils.isEmpty(linkedDataType)) {
+                    if (StringUtils.isEmpty(linkedDataType)) {
                         kej.a("LinkedSplashCooperator", "wtf!!!, peekInteractCallback, linkedSplashType is empty");
                         return null;
                     }

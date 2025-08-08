@@ -3,7 +3,7 @@ package com.taobao.taolive.room.ui.chat.view;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.comments.chat.view.a;
@@ -119,7 +119,7 @@ public class b implements a.InterfaceC0528a, com.taobao.taolive.sdk.model.a, ddv
                     Object next = it.next();
                     if (next instanceof ChatMessage) {
                         ChatMessage chatMessage = (ChatMessage) next;
-                        chatMessage.mType = (TextUtils.isEmpty(chatMessage.mContent) || !chatMessage.mContent.startsWith(j.SYS_PREFIX)) ? ChatMessage.MessageType.TXT : ChatMessage.MessageType.FOLLOW;
+                        chatMessage.mType = (StringUtils.isEmpty(chatMessage.mContent) || !chatMessage.mContent.startsWith(j.SYS_PREFIX)) ? ChatMessage.MessageType.TXT : ChatMessage.MessageType.FOLLOW;
                         arrayList.add(chatMessage);
                     }
                 }
@@ -480,7 +480,7 @@ public class b implements a.InterfaceC0528a, com.taobao.taolive.sdk.model.a, ddv
             Iterator<ChatMessage> it = a2.iterator();
             while (it.hasNext()) {
                 ChatMessage next = it.next();
-                if (!TextUtils.isEmpty(next.mContent) && next.mContent.startsWith(j.SYS_PREFIX)) {
+                if (!StringUtils.isEmpty(next.mContent) && next.mContent.startsWith(j.SYS_PREFIX)) {
                     next.mType = ChatMessage.MessageType.FOLLOW;
                 } else {
                     next.mType = ChatMessage.MessageType.TXT;

@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,7 +81,7 @@ public class i {
             return false;
         }
         String string = jSONObject.getString("timingUpShelfStatus");
-        if (!TextUtils.isEmpty(string) && TextUtils.equals("0", string)) {
+        if (!StringUtils.isEmpty(string) && StringUtils.equals("0", string)) {
             long longValue = jSONObject.getLongValue("timingStarts");
             long a2 = hiq.a();
             if (longValue > 0 && a2 > longValue) {
@@ -101,10 +101,10 @@ public class i {
             return false;
         }
         String string = jSONObject.getString("preSaleStatus");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
-        if (TextUtils.equals("0", string) || TextUtils.equals("1", string)) {
+        if (StringUtils.equals("0", string) || StringUtils.equals("1", string)) {
             long longValue = jSONObject.getLongValue("depositBegin");
             long longValue2 = jSONObject.getLongValue("depositEnd");
             long a2 = hiq.a();
@@ -112,7 +112,7 @@ public class i {
                 if (a2 >= longValue2) {
                     jSONObject.put("preSaleStatus", "2");
                     return true;
-                } else if (a2 >= longValue && !TextUtils.equals("1", string)) {
+                } else if (a2 >= longValue && !StringUtils.equals("1", string)) {
                     jSONObject.put("preSaleStatus", "1");
                     return true;
                 }
@@ -219,11 +219,11 @@ public class i {
             return;
         }
         String string = jSONObject.getString("itemId");
-        if (TextUtils.isEmpty(string) || this.f13868a.x() == null || this.f13868a.x().g().isEmpty()) {
+        if (StringUtils.isEmpty(string) || this.f13868a.x() == null || this.f13868a.x().g().isEmpty()) {
             return;
         }
         for (e.b bVar : this.f13868a.x().g()) {
-            if (bVar != null && TextUtils.equals(string, bVar.c)) {
+            if (bVar != null && StringUtils.equals(string, bVar.c)) {
                 jSONObject2.put("expansionRedPacket", (Object) bVar.b);
                 return;
             }

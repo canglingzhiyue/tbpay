@@ -22,7 +22,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -282,7 +282,7 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4daeb983", new Object[]{this, obj, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 String decode = URLDecoder.decode(str, "utf-8");
@@ -298,12 +298,12 @@ public class WebAppInterface extends e {
                     bundle.putString("icon", optString);
                     bundle.putString("title", optString2);
                     bundle.putBoolean("stretch", optBoolean3);
-                    if (TextUtils.isEmpty(optString2)) {
-                        if (!TextUtils.isEmpty(optString3)) {
+                    if (StringUtils.isEmpty(optString2)) {
+                        if (!StringUtils.isEmpty(optString3)) {
                             bundle.putString("iconType", optString3);
                         } else {
                             String str2 = optBoolean ? optBoolean2 ? "IconFont" : "Native" : "Base64";
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 bundle.putString("iconType", str2);
                             }
                         }
@@ -331,14 +331,14 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8d060cca", new Object[]{this, obj, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 str = URLDecoder.decode(str, "utf-8");
                 JSONObject jSONObject = new JSONObject(str);
                 String string = jSONObject.getString("linkhref");
                 String string2 = jSONObject.getString("linkonclick");
-                if (TextUtils.isEmpty(string) && TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string) && StringUtils.isEmpty(string2)) {
                     return;
                 }
                 Bundle bundle = new Bundle();
@@ -379,13 +379,13 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("29f92768", new Object[]{this, wVCallBackContext, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 final String optString = jSONObject.optString("title");
                 final String optString2 = jSONObject.optString("icon");
                 final String optString3 = jSONObject.optString("url");
-                if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString2) && !TextUtils.isEmpty(optString3) && Uri.parse(optString2).isHierarchical() && Uri.parse(optString3).isHierarchical()) {
+                if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString2) && !StringUtils.isEmpty(optString3) && Uri.parse(optString2).isHierarchical() && Uri.parse(optString3).isHierarchical()) {
                     new AsyncTask() { // from class: com.taobao.browser.jsbridge.WebAppInterface.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -526,10 +526,10 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6da4225b", new Object[]{this, wVCallBackContext, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 final String optString = new JSONObject(str).optString("title");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     new AsyncTask() { // from class: com.taobao.browser.jsbridge.WebAppInterface.4
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -649,7 +649,7 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9d911b07", new Object[]{this, wVCallBackContext, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 final Bundle bundle = new Bundle();
@@ -658,7 +658,7 @@ public class WebAppInterface extends e {
                 String optString3 = jSONObject.optString("url");
                 String optString4 = jSONObject.optString("buttonText");
                 this.mAutoHideShortCut = jSONObject.optBoolean("autoReset", false);
-                if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString4) && !TextUtils.isEmpty(optString2) && !TextUtils.isEmpty(optString3) && Uri.parse(optString2).isHierarchical() && Uri.parse(optString3).isHierarchical()) {
+                if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString4) && !StringUtils.isEmpty(optString2) && !StringUtils.isEmpty(optString3) && Uri.parse(optString2).isHierarchical() && Uri.parse(optString3).isHierarchical()) {
                     bundle.putString("title", optString);
                     bundle.putString("icon", optString2);
                     bundle.putString("url", optString3);
@@ -759,7 +759,7 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4ea771d2", new Object[]{this, wVCallBackContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
@@ -791,7 +791,7 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23afcfe", new Object[]{this, wVCallBackContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
@@ -823,7 +823,7 @@ public class WebAppInterface extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("add04441", new Object[]{this, wVCallBackContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 this.mAutoHideMenuMoreItem = new JSONObject(str).optBoolean("autoReset", false);
@@ -1001,7 +1001,7 @@ public class WebAppInterface extends e {
         try {
             String optString = new JSONObject(str).optString(hyt.ZZB_BUNDLE_KEY, "");
             if (this.mWebView != null && (this.mWebView instanceof BrowserHybridWebView)) {
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     BrowserUtil.a(TAG, "setPageUserInfo", "setData2H5", null, null);
                 }
                 ((BrowserHybridWebView) this.mWebView).setData2H5(optString);
@@ -1063,7 +1063,7 @@ public class WebAppInterface extends e {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("naviBar", "");
             boolean optBoolean = jSONObject.optBoolean("noTimeCheck", false);
-            if (!TextUtils.isEmpty(optString) && !"none".equals(optString)) {
+            if (!StringUtils.isEmpty(optString) && !"none".equals(optString)) {
                 boolean a2 = FestivalMgr.a().a("global");
                 if (!optBoolean && !a2) {
                     r rVar = new r();

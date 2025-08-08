@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.apr;
@@ -41,7 +41,7 @@ public class d implements f.a {
             return;
         }
         apr.b("SpdyCloseCallbackConfigListener", "parseConfig value", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if ("1".equalsIgnoreCase(str)) {

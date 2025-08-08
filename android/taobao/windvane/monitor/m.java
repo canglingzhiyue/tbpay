@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.taobao.windvane.extra.performance2.WVWPData;
 import android.taobao.windvane.monitor.l;
 import android.taobao.windvane.monitor.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashSet;
@@ -167,7 +167,7 @@ public class m implements d, n, q {
             if (r5 == 0) goto L2f
         L77:
             java.lang.String r5 = r4.code
-            boolean r5 = android.text.TextUtils.isEmpty(r5)
+            boolean r5 = android.text.StringUtils.isEmpty(r5)
             if (r5 != 0) goto L8d
             if (r8 == 0) goto L8d
             java.lang.String r4 = r4.code
@@ -304,16 +304,16 @@ public class m implements d, n, q {
             if (i2 > 1 && c.stat.fromType <= 1) {
                 c.stat.fromType = i2;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 c.stat.packageAppVersion = str2;
             }
             if (map != null) {
                 c.args.via = map.get("via");
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 c.stat.packageAppName = str3;
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 return;
             }
             c.stat.appSeq = str4;
@@ -509,7 +509,7 @@ public class m implements d, n, q {
                             Uri parse = Uri.parse(str);
                             if (parse != null && parse.isHierarchical()) {
                                 String queryParameter = parse.getQueryParameter("wvAppMonitor");
-                                if (!TextUtils.isEmpty(queryParameter)) {
+                                if (!StringUtils.isEmpty(queryParameter)) {
                                     lVar.wvAppMonitor = Integer.valueOf(queryParameter).intValue();
                                 }
                             }
@@ -588,7 +588,7 @@ public class m implements d, n, q {
             ipChange.ipc$dispatch("e985e08e", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "UnKnow";
         }
         a.commitWVWrapType(str);
@@ -601,7 +601,7 @@ public class m implements d, n, q {
             ipChange.ipc$dispatch("62851eb4", new Object[]{this, new Long(j), str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "UnKnow";
         }
         a.commitCoreInitTime(j, str);
@@ -614,10 +614,10 @@ public class m implements d, n, q {
             ipChange.ipc$dispatch("ee480cbc", new Object[]{this, str, str2, str3, str4});
             return;
         }
-        if (TextUtils.isEmpty("UnKnow")) {
+        if (StringUtils.isEmpty("UnKnow")) {
             str = "UnKnow";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "UnKnow";
         }
         a.commitCoreTypeByPV(str, str2, str3, str4);

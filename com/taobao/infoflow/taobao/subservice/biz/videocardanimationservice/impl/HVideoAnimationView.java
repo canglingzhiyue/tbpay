@@ -2,7 +2,7 @@ package com.taobao.infoflow.taobao.subservice.biz.videocardanimationservice.impl
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -365,12 +365,12 @@ public class HVideoAnimationView extends FrameLayout {
         ldf.d(TAG, "playVideo START:");
         ldk.a(d.VIDEO_ANIMATION, keq.VIDEO_PLAY_START, "", d.VIDEO_ANIMATION_BIZ_NAME, "", null);
         showCoverImageView();
-        if (!this.mIsAttachedToWindow || TextUtils.isEmpty(this.mCoverImageUrl) || this.mVideoView == null || TextUtils.isEmpty(this.mLocalPath)) {
+        if (!this.mIsAttachedToWindow || StringUtils.isEmpty(this.mCoverImageUrl) || this.mVideoView == null || StringUtils.isEmpty(this.mLocalPath)) {
             ldf.d(TAG, "playVideo error attachedToWindow:" + this.mIsAttachedToWindow + ",mCoverImageUrl:" + this.mCoverImageUrl + ",mVideoView is null:" + this.mVideoView + ",mLocalPath:" + this.mLocalPath);
             HashMap hashMap = new HashMap(2);
             String str = "null";
-            hashMap.put("coverImage", TextUtils.isEmpty(this.mCoverImageUrl) ? str : "notNull");
-            if (!TextUtils.isEmpty(this.mLocalPath)) {
+            hashMap.put("coverImage", StringUtils.isEmpty(this.mCoverImageUrl) ? str : "notNull");
+            if (!StringUtils.isEmpty(this.mLocalPath)) {
                 str = "notNull";
             }
             hashMap.put("videoPath", str);

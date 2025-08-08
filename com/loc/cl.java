@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import mtopsdk.common.util.SymbolExpUtil;
 
 /* loaded from: classes4.dex */
@@ -39,7 +39,7 @@ public final class cl extends co {
         }
         String a2 = x.a(System.currentTimeMillis(), "yyyyMMdd");
         String a3 = at.a(this.b, this.f7723a);
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             String[] split = a3.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
             if (split == null || split.length < 2) {
                 at.b(this.b, this.f7723a);
@@ -61,7 +61,7 @@ public final class cl extends co {
             return false;
         }
         String a2 = at.a(this.b, this.f7723a);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return true;
         }
         String[] split = a2.split(SymbolExpUtil.SYMBOL_VERTICALBAR);

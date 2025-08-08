@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -190,7 +190,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a9854189", new Object[]{imageView, drawable, str, bVar})).booleanValue();
         }
-        if (imageView == null || drawable == null || TextUtils.isEmpty(str) || bVar == null) {
+        if (imageView == null || drawable == null || StringUtils.isEmpty(str) || bVar == null) {
             return false;
         }
         final Context context = imageView.getContext();

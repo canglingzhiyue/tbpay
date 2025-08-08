@@ -1,0 +1,63 @@
+{
+  "easyGoVersion": "1.0",
+  "client": "com.taobao.taobao",
+  "signInfo": "XXX",
+  "logicEntities": [
+    {
+      "head": {
+        "function": "magicwindow",
+        "required": "true"
+      },
+      "body": {
+        "mode":"0",
+		"activityPairs":[
+			{"from":"com.taobao.android.detail.wrapper.activity.DetailActivity","to":"com.taobao.android.detail.wrapper.activity.DetailActivity"},
+			{"from":"com.taobao.android.detail.wrapper.activity.DetailActivity","to":"com.taobao.weex.WXActivity"},
+			{"from":"com.taobao.browser.BrowserActivity","to":"com.taobao.browser.exbrowser.BrowserUpperActivity"},
+			{"from":"com.taobao.browser.exbrowser.BrowserUpperActivity","to":"com.taobao.android.detail.wrapper.activity.DetailActivity"},
+			{"from":"com.taobao.android.detail.wrapper.activity.DetailActivity","to":"com.taobao.message.activity.ChatActivity"},
+			{"from":"com.taobao.tao.TBMainActivity","to":"com.taobao.tao.rate.ui.ratedetail.RateDetailActivity"},
+			{"from":"com.taobao.search.sf.MainSearchResultActivity","to":"com.taobao.android.detail.wrapper.activity.DetailActivity"},
+			{"from":"com.taobao.search.sf.MainSearchResultActivity","to":"com.taobao.weex.WXActivity"},
+			{"from":"com.taobao.search.sf.MainSearchResultActivity","to":"com.taobao.search.sf.NxResultActivity"},
+			{"from":"com.taobao.search.sf.MainSearchResultActivity","to":"com.taobao.android.detail.wrapper.activity.DetailActivity"},
+			{"from":"com.taobao.search.sf.MainSearchResultActivity","to":"com.taobao.android.shop.activity.ShopRenderActivity"},
+			{"from":"com.taobao.android.detail.wrapper.activity.DetailActivity","to":"com.taobao.android.shop.activity.ShopRenderActivity"},
+			{"from":"com.taobao.android.detail.wrapper.activity.DetailActivity","to":"com.taobao.android.trade.cart.CartActivity"},
+			{"from":"com.taobao.android.trade.cart.CartActivity","to":"com.taobao.android.detail.wrapper.activity.DetailActivity"},
+			{"from":"com.taobao.order.list.OrderListActivity","to":"com.taobao.order.detail.ui.OrderDetailActivity"},
+			{"from":"com.taobao.tao.TBMainActivity","to":"com.taobao.android.detail.wrapper.activity.DetailActivity"},
+			{"from":"com.taobao.tao.TBMainActivity","to":"com.taobao.message.activity.ChatActivity"},
+			{"from":"com.taobao.taolive.room.TaoLiveVideoActivity","to":"com.taobao.android.detail.wrapper.activity.DetailActivity"},
+			{"mainPage":"com.taobao.tao.TBMainActivity","relatedPage":"com.taobao.homepage.page.MagicWindowActivity"}
+		],
+		"transActivities":[
+			"com.taobao.android.shop.activity.ShopUrlRouterActivity",
+			"com.taobao.linkmanager.afc.TbFlowInActivity",
+			"com.taobao.cun.bundle.community.ui.activity.CuntaoRouterActivity",
+			"com.taobao.tao.rushpromotion.luaview.activity.LuaOrH5RouterActivity",
+			"com.taobao.browser.router.FromH5RouterActivity",
+			"com.taobao.android.shop.activity.ShopUrlRouterActivity",
+			"com.taobao.taolive.room.TaoLiveRouterActivity"
+		],
+		"isRelaunchwhenResize":"true",
+        "defSwitch": "full",
+		"supportLock": "true",
+        "UX": {
+            "supportRotationUxCompat": "true"
+        },
+        "Activities": [
+          {
+            "name": "com.taobao.taolive.room.TaoLiveVideoActivity",
+            "lockSide": "primary"
+          },
+			{
+			"name": "com.taobao.search.searchdoor.SearchDoorActivity",
+			"isSupportMultiInstance": "true"
+			}
+
+        ]
+      }
+    }
+  ]
+}

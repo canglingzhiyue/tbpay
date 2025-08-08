@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -600,21 +600,21 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
             str2 = "Page_SearchSpuItemList";
         } else {
             String str3 = str;
-            if (TextUtils.equals(nne.PAGE_NAME_MAIN_SPU, str3)) {
+            if (StringUtils.equals(nne.PAGE_NAME_MAIN_SPU, str3)) {
                 str2 = "Page_SearchSpuList";
-            } else if (TextUtils.equals(nne.PAGE_NAME_MAIN, str3)) {
+            } else if (StringUtils.equals(nne.PAGE_NAME_MAIN, str3)) {
                 str2 = "Page_SearchItemList";
-            } else if (TextUtils.equals(nne.PAGE_NAME_TMALL, str3)) {
+            } else if (StringUtils.equals(nne.PAGE_NAME_TMALL, str3)) {
                 str2 = "Page_SearchTmallList";
-            } else if (TextUtils.equals(nne.PAGE_NAME_TMALL_SPU, str3)) {
+            } else if (StringUtils.equals(nne.PAGE_NAME_TMALL_SPU, str3)) {
                 str2 = "Page_SearchTmallSpuList";
-            } else if (TextUtils.equals(nne.PAGE_NAME_SHOP, str3)) {
+            } else if (StringUtils.equals(nne.PAGE_NAME_SHOP, str3)) {
                 str2 = "Page_SearchShopList";
             } else if (it.newSearch) {
                 str2 = it.getMainInfo().pageTraceName;
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "Page_SearchItemList";
         }
         HashMap hashMap = new HashMap();
@@ -626,20 +626,20 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
             kotlin.jvm.internal.q.b("searchContext");
         }
         String param = commonSearchContext.getParam("pageName");
-        if (!TextUtils.isEmpty(param)) {
+        if (!StringUtils.isEmpty(param)) {
             CommonSearchContext commonSearchContext2 = this.d;
             if (commonSearchContext2 == null) {
                 kotlin.jvm.internal.q.b("searchContext");
             }
             String param2 = commonSearchContext2.getParam("psqk");
-            if (!TextUtils.isEmpty(param2)) {
+            if (!StringUtils.isEmpty(param2)) {
                 hashMap.put("psqk", param2);
             }
             str2 = param;
         }
         String keyword = scopeDataSource.getKeyword();
         String str4 = keyword;
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             HashMap hashMap2 = hashMap;
             hashMap2.put(Constants.KEY_SEARCH_KEYWORD, keyword);
             hashMap2.put("keyword", keyword);
@@ -652,7 +652,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         if (onesearch != null && (map = onesearch.nextPageTraceMap) != null) {
             hashMap3.putAll(map);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             HashMap hashMap4 = hashMap3;
             hashMap4.put(Constants.KEY_SEARCH_KEYWORD, keyword);
             hashMap4.put("keyword", keyword);
@@ -730,13 +730,13 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
             ((npb) pVar).b(scopeDataSource);
             return;
         }
-        if (TextUtils.isEmpty(scopeDataSource.getKeyword())) {
+        if (StringUtils.isEmpty(scopeDataSource.getKeyword())) {
             CommonSearchContext commonSearchContext2 = this.d;
             if (commonSearchContext2 == null) {
                 kotlin.jvm.internal.q.b("searchContext");
             }
             String keyword = commonSearchContext2.getKeyword();
-            if (!TextUtils.isEmpty(keyword)) {
+            if (!StringUtils.isEmpty(keyword)) {
                 scopeDataSource.setParam("q", keyword);
             }
         }
@@ -794,7 +794,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         }
         kotlin.jvm.internal.q.c(scopeDataSource, "scopeDataSource");
         if (z) {
-            if (TextUtils.equals(map != null ? map.get("searchType") : null, "preload")) {
+            if (StringUtils.equals(map != null ? map.get("searchType") : null, "preload")) {
                 return;
             }
         }
@@ -843,11 +843,11 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
             commonSearchResult = null;
         }
         MSearchResult mSearchResult = (MSearchResult) commonSearchResult;
-        if (mSearchResult == null || !mSearchResult.isRedirectMode() || TextUtils.isEmpty(mSearchResult.getRedirectUrl())) {
+        if (mSearchResult == null || !mSearchResult.isRedirectMode() || StringUtils.isEmpty(mSearchResult.getRedirectUrl())) {
             return false;
         }
         SFOnesearchBean onesearch = mSearchResult.getOnesearch();
-        if (onesearch != null && !TextUtils.isEmpty(onesearch.utLogMap) && !TextUtils.isEmpty(onesearch.expArg1)) {
+        if (onesearch != null && !StringUtils.isEmpty(onesearch.utLogMap) && !StringUtils.isEmpty(onesearch.expArg1)) {
             HashMap hashMap = new HashMap();
             String b2 = y.b(onesearch.utLogMap);
             kotlin.jvm.internal.q.a((Object) b2, "SearchUrlUtil.encodeByUTF8(onesearch.utLogMap)");
@@ -866,7 +866,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         if (component == null) {
             kotlin.jvm.internal.q.a();
         }
-        if (!TextUtils.equals(canonicalName, component.getClassName())) {
+        if (!StringUtils.equals(canonicalName, component.getClassName())) {
             Nav.from(c().getActivity()).toUri(mSearchResult.getRedirectUrl());
             new Handler(Looper.getMainLooper()).post(new c(jVar));
             return true;
@@ -876,7 +876,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         if (commonSearchContext == null) {
             kotlin.jvm.internal.q.b("searchContext");
         }
-        if (!TextUtils.equals(queryParameter, commonSearchContext.getParam("q"))) {
+        if (!StringUtils.equals(queryParameter, commonSearchContext.getParam("q"))) {
             return false;
         }
         CommonSearchContext commonSearchContext2 = this.d;
@@ -889,7 +889,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
             kotlin.jvm.internal.q.b("searchContext");
         }
         commonSearchContext3.updateParams(com.taobao.android.searchbaseframe.util.f.a(Uri.parse(mSearchResult.getRedirectUrl())));
-        if (!TextUtils.isEmpty(param)) {
+        if (!StringUtils.isEmpty(param)) {
             CommonSearchContext commonSearchContext4 = this.d;
             if (commonSearchContext4 == null) {
                 kotlin.jvm.internal.q.b("searchContext");
@@ -1084,7 +1084,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1924606a", new Object[]{this, jVar});
-        } else if (!TextUtils.equals(jVar.getParamValue("addToHistory"), "true")) {
+        } else if (!StringUtils.equals(jVar.getParamValue("addToHistory"), "true")) {
         } else {
             new nqh(null, jVar.getParamValueIncludingGlobal(noa.KEY_CHANNEL_HISTORY_KEY)).a(jVar.getKeyword());
         }
@@ -1092,7 +1092,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
 
     private final boolean g(j jVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e6d5dff0", new Object[]{this, jVar})).booleanValue() : TextUtils.isEmpty(jVar.getParamValueIncludingGlobal("channelSrp")) && TextUtils.isEmpty(jVar.getParamValue("m")) && !c().A();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e6d5dff0", new Object[]{this, jVar})).booleanValue() : StringUtils.isEmpty(jVar.getParamValueIncludingGlobal("channelSrp")) && StringUtils.isEmpty(jVar.getParamValue("m")) && !c().A();
     }
 
     private final void a(com.taobao.search.refactor.e eVar, boolean z, boolean z2) {
@@ -1123,7 +1123,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         ResultMainInfoBean resultMainInfoBean = null;
         if (z) {
             Map<String, String> e2 = config.e();
-            if (TextUtils.equals(e2 != null ? e2.get("searchType") : null, "preload")) {
+            if (StringUtils.equals(e2 != null ? e2.get("searchType") : null, "preload")) {
                 return;
             }
         }
@@ -1132,7 +1132,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         }
         if (!z) {
             Map<String, String> e3 = config.e();
-            if (TextUtils.equals(e3 != null ? e3.get("searchType") : null, "all") && (this.g instanceof k)) {
+            if (StringUtils.equals(e3 != null ? e3.get("searchType") : null, "all") && (this.g instanceof k)) {
                 if (g(scopeDataSource)) {
                     a(scopeDataSource);
                 }
@@ -1212,12 +1212,12 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
 
     private final boolean a(JSONObject jSONObject) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue() : !TextUtils.isEmpty(jSONObject.getString(nsk.KEY_NEW_SEARCH_URL));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue() : !StringUtils.isEmpty(jSONObject.getString(nsk.KEY_NEW_SEARCH_URL));
     }
 
     private final boolean b(JSONObject jSONObject) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("63b9982b", new Object[]{this, jSONObject})).booleanValue() : !TextUtils.isEmpty(jSONObject.getString(nsk.KEY_GUIDE_SEARCH_URL));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("63b9982b", new Object[]{this, jSONObject})).booleanValue() : !StringUtils.isEmpty(jSONObject.getString(nsk.KEY_GUIDE_SEARCH_URL));
     }
 
     public iru<j> b(j initDataSource) {
@@ -1463,7 +1463,7 @@ public class g extends com.taobao.android.meta.srp.b<j, com.taobao.search.refact
         }
         int size = tabs.size();
         for (int i = 0; i < size; i++) {
-            if (TextUtils.equals(tabs.get(i).param, str)) {
+            if (StringUtils.equals(tabs.get(i).param, str)) {
                 c().e_(i);
                 com.taobao.android.meta.structure.childpage.g b2 = c().b(i);
                 if (b2 == null || (iruVar = (iru) b2.getModel()) == null || (bVar = (com.taobao.android.meta.data.b) iruVar.d()) == null || jSONObject == null) {

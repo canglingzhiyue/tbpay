@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.alipay.birdnest.api.BirdNestEngine;
@@ -321,7 +321,7 @@ public class FBImg extends FBView implements ImageLoader.ILayoutListener, ImageL
             ipChange.ipc$dispatch("c310ec95", new Object[]{this, str, str2});
         } else if (str == null || isDestroyed()) {
         } else {
-            if (!TextUtils.equals(str, "-webkit-filter") && !TextUtils.equals(str, "webkitFilter")) {
+            if (!StringUtils.equals(str, "-webkit-filter") && !StringUtils.equals(str, "webkitFilter")) {
                 super.updateCSS(str, str2);
                 return;
             }
@@ -331,7 +331,7 @@ public class FBImg extends FBView implements ImageLoader.ILayoutListener, ImageL
             if (str2.startsWith(Constants.Event.BLUR)) {
                 this.I = (int) e(replace);
             } else if (str2.startsWith("grayscale")) {
-                this.G = TextUtils.equals(replace, "1");
+                this.G = StringUtils.equals(replace, "1");
             }
             if (!this.mDoc.isOnloadFinish()) {
                 return;

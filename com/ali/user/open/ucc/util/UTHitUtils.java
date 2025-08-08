@@ -1,6 +1,6 @@
 package com.ali.user.open.ucc.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.service.UserTrackerService;
 import com.ali.user.open.ucc.model.UccParams;
@@ -25,7 +25,7 @@ public class UTHitUtils {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (uccParams == null || TextUtils.isEmpty(uccParams.site)) {
+        if (uccParams == null || StringUtils.isEmpty(uccParams.site)) {
             hashMap.put("site", AliMemberSDK.getMasterSite());
         } else {
             hashMap.put("site", uccParams.site);
@@ -33,7 +33,7 @@ public class UTHitUtils {
         if (uccParams != null) {
             hashMap.put("bindSite", uccParams.bindSite);
             hashMap.put("userToken", uccParams.userToken);
-            if (!TextUtils.isEmpty(uccParams.miniAppId)) {
+            if (!StringUtils.isEmpty(uccParams.miniAppId)) {
                 hashMap.put("miniAppId", uccParams.miniAppId);
             }
             hashMap.put(UTHitBuilders.a.FIELD_ARG2, uccParams.traceId);

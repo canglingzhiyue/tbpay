@@ -1,7 +1,7 @@
 package com.taobao.orange.sync;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,7 +98,7 @@ public abstract class e<T> extends c<T> {
         String utdid = UTDevice.getUtdid(com.taobao.orange.a.g);
         String valueOf2 = String.valueOf(System.currentTimeMillis() / 1000);
         String a2 = com.taobao.orange.util.c.a(valueOf2 + utdid);
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(valueOf) || TextUtils.isEmpty(str4) || TextUtils.isEmpty(str5) || TextUtils.isEmpty(utdid) || TextUtils.isEmpty(valueOf2) || TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(valueOf) || StringUtils.isEmpty(str4) || StringUtils.isEmpty(str5) || StringUtils.isEmpty(utdid) || StringUtils.isEmpty(valueOf2) || StringUtils.isEmpty(a2)) {
             OLog.e("BaseCriticalRequest", "formatNetConnection get request params error", "appKey", str2, "appVersion", str3, "osVersion", valueOf, "brand", str4, "model", str5, "deviceId", utdid, "timestamp", valueOf2, "sign", a2);
             return;
         }

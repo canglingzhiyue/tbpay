@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -65,7 +65,7 @@ public class TplUpdateStore extends LocalEventStore {
                             arrayList.add(mspRenderImpl.notifyTplUpdate(str2, jSONObject.getString(str2)).tplId);
                             LogUtil.record(2, "TplUpdateStore", "download success ".concat(String.valueOf(str2)));
                         } catch (Throwable th) {
-                            str = TextUtils.isEmpty(str) ? "download error: ".concat(String.valueOf(str2)) : str + ", " + str2;
+                            str = StringUtils.isEmpty(str) ? "download error: ".concat(String.valueOf(str2)) : str + ", " + str2;
                             LogUtil.record(8, "TplUpdateStore", "download error ".concat(String.valueOf(str2)));
                             LogUtil.printExceptionStackTrace(th);
                         }
@@ -89,7 +89,7 @@ public class TplUpdateStore extends LocalEventStore {
         JSONArray jSONArray = new JSONArray();
         jSONArray.addAll(arrayList);
         jSONObject.put("updatedArr", (Object) jSONArray);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("error", (Object) str);
         }
         return jSONObject;

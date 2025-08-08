@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Outline;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
@@ -148,7 +148,7 @@ public class ImageSearchView extends FrameLayout {
             return ((Boolean) ipChange.ipc$dispatch("1b8ebed0", new Object[]{this})).booleanValue();
         }
         String config = OrangeConfig.getInstance().getConfig("image_search", "detail_new_flag", "false");
-        return TextUtils.isEmpty(config) || TextUtils.equals(config, "true");
+        return StringUtils.isEmpty(config) || StringUtils.equals(config, "true");
     }
 
     public void addToParent(LinearLayout linearLayout, final View.OnClickListener onClickListener) {
@@ -232,7 +232,7 @@ public class ImageSearchView extends FrameLayout {
         L1a:
             java.lang.String r0 = "tbAndroidPltDetailQuery"
             java.lang.String r0 = com.taobao.search.rainbow.a.a(r0)
-            boolean r3 = android.text.TextUtils.isEmpty(r0)
+            boolean r3 = android.text.StringUtils.isEmpty(r0)
             if (r3 == 0) goto L27
             return r1
         L27:
@@ -283,7 +283,7 @@ public class ImageSearchView extends FrameLayout {
             return false;
         }
         String config = OrangeConfig.getInstance().getConfig("android_detail", "detail_black_list", "");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return true;
         }
         try {

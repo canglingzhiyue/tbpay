@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.session.dns.DnsNavConfigTask;
 import com.alibaba.fastjson.JSONArray;
@@ -124,7 +124,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             com.taobao.desktop.channel.desktoplinktask.trigger.b bVar = new com.taobao.desktop.channel.desktoplinktask.trigger.b(this.f16950a, DesktopTaskServiceReceiver.class);
             kgz.a("TaskTrigger.triggerOnceTask.newConfig=%s", str);
@@ -148,12 +148,12 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             kgz.a("TaskTrigger.triggerLocalTask.newConfig=%s", str);
             Pair<String, JSONObject> b2 = this.d.b(str);
             long longValue = b2.second != null ? ((JSONObject) b2.second).getLongValue("indexId") : -1L;
-            if (!TextUtils.isEmpty((CharSequence) b2.first)) {
+            if (!StringUtils.isEmpty((CharSequence) b2.first)) {
                 e.a(false, longValue);
                 kgz.a("TaskTrigger.triggerLocalTask.stopOldTimer.", new Object[0]);
                 return;
@@ -313,7 +313,7 @@ public class d {
             String str = "";
             bundle.putString("record", a2 != null ? a2.toJSONString() : str);
             String userId = Login.getUserId();
-            if (!TextUtils.isEmpty(userId)) {
+            if (!StringUtils.isEmpty(userId)) {
                 str = userId;
             }
             bundle.putString("uid", str);

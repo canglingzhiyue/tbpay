@@ -1,6 +1,6 @@
 package com.taobao.detail.rate.vivid.presenter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -283,7 +283,7 @@ public class b {
             str = a8;
             a9 = a5;
         }
-        if (!TextUtils.isEmpty(a7)) {
+        if (!StringUtils.isEmpty(a7)) {
             if (a3.get("rateType") != null) {
                 string = a3.getString("rateType");
             } else {
@@ -305,7 +305,7 @@ public class b {
             str2 = "0";
             str3 = string;
         }
-        if (!TextUtils.isEmpty(a7)) {
+        if (!StringUtils.isEmpty(a7)) {
             str4 = str;
             i = a6;
             str5 = "1";
@@ -338,7 +338,7 @@ public class b {
             if (a9.equals(AgooConstants.ACK_FLAG_NULL)) {
                 str12 = AgooConstants.ACK_FLAG_NULL;
             } else {
-                str12 = !TextUtils.isEmpty(a11) ? "4" : "-1";
+                str12 = !StringUtils.isEmpty(a11) ? "4" : "-1";
             }
         }
         String a12 = fxr.a("vids", fxr.a("initSelectSku", this.f17049a, (JSONObject) null), str10);

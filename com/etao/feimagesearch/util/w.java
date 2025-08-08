@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -93,7 +93,7 @@ public class w {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     if (asList3.contains(key)) {
                         hashMap.put(key, value);
                     } else if (asList2.contains(key)) {

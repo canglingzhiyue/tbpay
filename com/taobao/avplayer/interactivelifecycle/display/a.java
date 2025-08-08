@@ -1,6 +1,6 @@
 package com.taobao.avplayer.interactivelifecycle.display;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -280,7 +280,7 @@ public abstract class a extends b {
             layoutParams = new FrameLayout.LayoutParams(-2, -2);
         }
         View view = aVar.f16482a.getView();
-        if (view != null && !TextUtils.isEmpty(aVar.f16482a.getSource())) {
+        if (view != null && !StringUtils.isEmpty(aVar.f16482a.getSource())) {
             view.setTag(R.id.weex_view_source, aVar.f16482a.getSource());
             view.setTag(R.id.target_screen_type, dWVideoScreenType.toString());
         }

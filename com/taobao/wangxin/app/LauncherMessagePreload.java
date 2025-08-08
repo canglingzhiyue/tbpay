@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.flexa.compat.c;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -120,7 +120,7 @@ public class LauncherMessagePreload {
                         } catch (Throwable th) {
                             TLog.loge(LauncherMessagePreload.TAG, Log.getStackTraceString(th));
                         }
-                        if (!TextUtils.equals(intent.getAction(), LoginBroadcastReceiver.NOTIFY_LOGIN_SUCCESS) || BundleSplitUtil.INSTANCE.isMsgBundleReady(false)) {
+                        if (!StringUtils.equals(intent.getAction(), LoginBroadcastReceiver.NOTIFY_LOGIN_SUCCESS) || BundleSplitUtil.INSTANCE.isMsgBundleReady(false)) {
                             return;
                         }
                         LauncherMessagePreload.access$000(application);

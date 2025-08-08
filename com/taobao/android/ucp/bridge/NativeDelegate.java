@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.alibaba.fastjson.JSON;
@@ -265,7 +265,7 @@ public class NativeDelegate {
                     } else {
                         String string = jSONObject.getString("status");
                         String string2 = jSONObject.getString("dbPath");
-                        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+                        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                             return;
                         }
                         DAIKVStoreage.put("BehaviX", "BXDBMoveStatus", string);
@@ -491,7 +491,7 @@ public class NativeDelegate {
                     } else if (jSONObject == null || callback == null) {
                     } else {
                         String string = jSONObject.getString(noa.KEY_MODEL_NAME);
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             string = jSONObject.getString("pythonName");
                         }
                         final boolean booleanValue = jSONObject.getBooleanValue("isAlias");
@@ -659,7 +659,7 @@ public class NativeDelegate {
                             return;
                         }
                         String string = jSONObject.getString("reachViewKey");
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             backflowException("ReachView", "InnerError", "reach view's key is empty", callback);
                             return;
                         }
@@ -723,7 +723,7 @@ public class NativeDelegate {
                             callback.close();
                             return;
                         }
-                        jSONObject.put(h.KEY_URI_SET, (Object) TextUtils.join(",", jSONObject.getJSONArray(h.KEY_URI_SET)));
+                        jSONObject.put(h.KEY_URI_SET, (Object) StringUtils.join(",", jSONObject.getJSONArray(h.KEY_URI_SET)));
                         JSONObject jSONObject3 = new JSONObject();
                         jSONObject3.put("nativeCallback", (Object) callback);
                         jSONObject3.put("fromNative", (Object) true);
@@ -735,7 +735,7 @@ public class NativeDelegate {
                         TLog.loge("registerNotifyPop", "sendBroadcast end");
                     } else {
                         Intent intent = new Intent(PopLayer.ACTION_PRE_DEAL_CUSTOM_TRIGGER);
-                        intent.putExtra(h.KEY_URI_SET, TextUtils.join(",", jSONObject.getJSONArray(h.KEY_URI_SET)));
+                        intent.putExtra(h.KEY_URI_SET, StringUtils.join(",", jSONObject.getJSONArray(h.KEY_URI_SET)));
                         intent.putExtra(h.KEY_INDEX_MAP, jSONObject.getString(h.KEY_INDEX_MAP));
                         intent.putExtra(h.KEY_NO_ALG_FILTER_MAP, jSONObject.getString(h.KEY_NO_ALG_FILTER_MAP));
                         intent.putExtra("traceId", jSONObject.getString("traceId"));
@@ -905,7 +905,7 @@ public class NativeDelegate {
                         com.alibaba.fastjson.JSONObject r1 = r10.getTaskInfo()
                         java.lang.String r6 = "taskType"
                         java.lang.String r6 = r1.getString(r6)
-                        boolean r7 = android.text.TextUtils.isEmpty(r6)
+                        boolean r7 = android.text.StringUtils.isEmpty(r6)
                         if (r7 == 0) goto L34
                         return r0
                     L34:
@@ -1050,7 +1050,7 @@ public class NativeDelegate {
                     } else if (jSONObject == null) {
                     } else {
                         String string = jSONObject.getString("data");
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             return;
                         }
                         UTAnalytics.getInstance().getDefaultTracker().updateNextPageUtparam(string);
@@ -1250,7 +1250,7 @@ public class NativeDelegate {
                     } else {
                         String string = jSONObject.getString("broadcastName");
                         JSONObject jSONObject2 = jSONObject.getJSONObject("args");
-                        if (TextUtils.isEmpty(string) || jSONObject2 == null) {
+                        if (StringUtils.isEmpty(string) || jSONObject2 == null) {
                             return;
                         }
                         Intent access$300 = NativeDelegate.access$300(string, jSONObject2);
@@ -1313,7 +1313,7 @@ public class NativeDelegate {
         }
         jSONObject2.put("popIndexId", (Object) str);
         jSONObject2.put("msg", (Object) str2);
-        return TextUtils.isEmpty(str2);
+        return StringUtils.isEmpty(str2);
     }
 
     public static boolean nativeCheckFatigue(JSONObject jSONObject, JSONObject jSONObject2) {
@@ -1331,7 +1331,7 @@ public class NativeDelegate {
             obj = innerCheckFatigue[1];
         }
         jSONObject2.put("msg", obj);
-        return TextUtils.equals(str, "true");
+        return StringUtils.equals(str, "true");
     }
 
     public static void nativeCheckDisplaySyncWithCode(String str, JSONObject jSONObject) {
@@ -1341,7 +1341,7 @@ public class NativeDelegate {
             return;
         }
         String innerCheckDisplaySyncWithCode = innerCheckDisplaySyncWithCode(str);
-        if (TextUtils.isEmpty(innerCheckDisplaySyncWithCode)) {
+        if (StringUtils.isEmpty(innerCheckDisplaySyncWithCode)) {
             return;
         }
         jSONObject.putAll(JSON.parseObject(innerCheckDisplaySyncWithCode));
@@ -1387,7 +1387,7 @@ public class NativeDelegate {
             return "";
         }
         String str2 = map.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return "";
         }
         return "PopLayer_" + str2;

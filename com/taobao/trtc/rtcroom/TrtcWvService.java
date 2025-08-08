@@ -3,7 +3,7 @@ package com.taobao.trtc.rtcroom;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.trtc.utils.TrtcLog;
 import tb.kge;
@@ -32,7 +32,7 @@ public class TrtcWvService extends Service implements android.taobao.windvane.js
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("fa8f40b7", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !str.equals("artc_wv_bridge")) {
+        if (StringUtils.isEmpty(str) || !str.equals("artc_wv_bridge")) {
             return null;
         }
         TrtcLog.d(TrtcWvService.class.getName(), "get bridge for trtc");

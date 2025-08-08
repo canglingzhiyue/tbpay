@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.monitor.networkqos;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -103,7 +103,7 @@ public class QosInterfereHelper {
 
     private boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : TextUtils.equals("T", TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.NET_QOS_INTERFER));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : StringUtils.equals("T", TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.NET_QOS_INTERFER));
     }
 
     private static double a(double d2) {

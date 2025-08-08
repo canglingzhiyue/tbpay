@@ -2,7 +2,7 @@ package android.taobao.windvane.config;
 
 import android.app.Application;
 import android.taobao.windvane.config.f;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -79,10 +79,10 @@ public class a {
         if (hVar == null) {
             return false;
         }
-        if (TextUtils.isEmpty(hVar.e)) {
+        if (StringUtils.isEmpty(hVar.e)) {
             throw new NullPointerException("initParams error, appKey is empty");
         }
-        if (TextUtils.isEmpty(hVar.f1560a)) {
+        if (StringUtils.isEmpty(hVar.f1560a)) {
             this.g = DEFAULT_TTID;
         } else {
             this.g = hVar.f1560a;
@@ -95,7 +95,7 @@ public class a {
         this.m = hVar.g;
         this.n = hVar.h;
         a(hVar.i);
-        if (!TextUtils.isEmpty(hVar.l)) {
+        if (!StringUtils.isEmpty(hVar.l)) {
             this.o = hVar.l;
         }
         this.p = hVar.m;

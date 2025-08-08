@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.iprank;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.iprank.mng.speedtest.BaseSpeedTest;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transportext.biz.diagnose.network.SpeedTestLinkData;
@@ -19,7 +19,7 @@ public class SpeeTestImpl implements BaseSpeedTest {
     public int speedTest(String str, int i) {
         try {
             SpeedTestLinkData diagnoseByLink = SpeedTestManager.instance().diagnoseByLink(str, false);
-            if (TextUtils.equals(diagnoseByLink.result, "y")) {
+            if (StringUtils.equals(diagnoseByLink.result, "y")) {
                 return (int) diagnoseByLink.connTime;
             }
             int i2 = diagnoseByLink.errCode;

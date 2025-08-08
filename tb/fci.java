@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitinstall.j;
 import com.alibaba.android.split.core.splitinstall.m;
 import com.alibaba.android.split.core.splitinstall.o;
@@ -167,17 +167,17 @@ public class fci implements DetailBusinessDetector {
             ipChange.ipc$dispatch("3fd4e743", new Object[]{this, bVar});
         } else if (bVar != null) {
             try {
-                if (TextUtils.isEmpty(this.c) || (e = eqb.e(bVar)) == null) {
+                if (StringUtils.isEmpty(this.c) || (e = eqb.e(bVar)) == null) {
                     return;
                 }
                 String str = e.degradeUrl;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 Uri parse = Uri.parse(this.c);
                 for (String str2 : parse.getQueryParameterNames()) {
                     String queryParameter = parse.getQueryParameter(str2);
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         str = p.a(str, str2, queryParameter);
                     }
                 }

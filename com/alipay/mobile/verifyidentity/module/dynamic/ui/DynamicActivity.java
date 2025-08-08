@@ -9,7 +9,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.view.KeyEvent;
 import android.view.View;
@@ -584,7 +584,7 @@ public class DynamicActivity extends BaseVerifyActivity {
         String str2 = f5890a;
         VerifyLogCat.i(str2, "cancel [subcode]: " + str);
         DefaultModuleResult defaultModuleResult = new DefaultModuleResult("1003");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (defaultModuleResult.getExtInfo() == null) {
                 defaultModuleResult.setExtInfo(new HashMap<>());
             }
@@ -636,9 +636,9 @@ public class DynamicActivity extends BaseVerifyActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("eec39c2f", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            final String replace = "js_function && js_function('$jsonData$');".replace("js_function", str).replace("$jsonData$", TextUtils.isEmpty(str2) ? "" : str2.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"));
+            final String replace = "js_function && js_function('$jsonData$');".replace("js_function", str).replace("$jsonData$", StringUtils.isEmpty(str2) ? "" : str2.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"));
             runOnUiThread(new Runnable() { // from class: com.alipay.mobile.verifyidentity.module.dynamic.ui.DynamicActivity.10
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -710,7 +710,7 @@ public class DynamicActivity extends BaseVerifyActivity {
             final JSONObject jSONObject2 = parseObject.getJSONObject("params");
             String jSONString = jSONObject2 != null ? jSONObject2.toJSONString() : "";
             if (DynamicConstants.DYNAMIC_EVENT_RPC_VALIDATE.equalsIgnoreCase(string)) {
-                if (!TextUtils.isEmpty(string3) && "CC_PAINTEXT_HK".equalsIgnoreCase(string3)) {
+                if (!StringUtils.isEmpty(string3) && "CC_PAINTEXT_HK".equalsIgnoreCase(string3)) {
                     final String string5 = parseObject.getString("showLoading");
                     AsyncTaskExecutor.getInstance().execute(new Runnable() { // from class: com.alipay.mobile.verifyidentity.module.dynamic.ui.DynamicActivity.7
                         public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -787,7 +787,7 @@ public class DynamicActivity extends BaseVerifyActivity {
                         jSONObject3 = JSON.parseObject(dynamicActivity.tplData);
                     } catch (JSONException unused) {
                     }
-                    new BankCardVerifyHelper(dynamicActivity.j).startAddCard(dynamicActivity.mModule, (jSONObject3 == null || (jSONObject = jSONObject3.getJSONObject(RVConstants.EXTRA_START_PARAMS)) == null || TextUtils.isEmpty(jSONObject.getString("source"))) ? "verify" : jSONObject.getString("source"));
+                    new BankCardVerifyHelper(dynamicActivity.j).startAddCard(dynamicActivity.mModule, (jSONObject3 == null || (jSONObject = jSONObject3.getJSONObject(RVConstants.EXTRA_START_PARAMS)) == null || StringUtils.isEmpty(jSONObject.getString("source"))) ? "verify" : jSONObject.getString("source"));
                 } else if (DynamicConstants.DYNAMIC_EVENT_BACKCARD_VERIFY.equalsIgnoreCase(string)) {
                     try {
                         jSONObject3 = JSON.parseObject(dynamicActivity.tplData);

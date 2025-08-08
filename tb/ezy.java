@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 
@@ -45,17 +45,17 @@ public class ezy {
             return null;
         }
         String valueOf = String.valueOf(obj);
-        if (!TextUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
             String str = "";
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
                     String obj3 = obj2.toString();
-                    if (!TextUtils.isEmpty(obj3)) {
+                    if (!StringUtils.isEmpty(obj3)) {
                         str = str + "&" + str2 + "=" + obj3;
                     }
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             return str + "&request_key=" + valueOf;
@@ -75,17 +75,17 @@ public class ezy {
             return null;
         }
         String valueOf = String.valueOf(obj);
-        if (!TextUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
             String str = "";
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
                     String obj3 = obj2.toString();
-                    if (!TextUtils.isEmpty(obj3)) {
+                    if (!StringUtils.isEmpty(obj3)) {
                         str = str + "&" + str2 + "=" + obj3;
                     }
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             return str + "&transparent_key=" + valueOf;
@@ -101,7 +101,7 @@ public class ezy {
             ipChange.ipc$dispatch("e9095b97", new Object[]{map, bundle});
         } else if (map != null && !map.isEmpty() && bundle != null && (obj = map.get(noa.KEY_MSOA_TRANS_KEY)) != null) {
             String valueOf = String.valueOf(obj);
-            if (TextUtils.isEmpty(valueOf)) {
+            if (StringUtils.isEmpty(valueOf)) {
                 return;
             }
             String[] split = valueOf.split(",");
@@ -111,9 +111,9 @@ public class ezy {
             }
             bundle.putString(noa.KEY_MSOA_TRANS_KEY, valueOf);
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
                     String obj3 = obj2.toString();
-                    if (!TextUtils.isEmpty(obj3)) {
+                    if (!StringUtils.isEmpty(obj3)) {
                         bundle.putString(str2, obj3);
                     }
                 }

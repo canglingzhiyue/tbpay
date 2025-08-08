@@ -1,7 +1,7 @@
 package com.alibaba.evo.internal.bucketing.model;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.database.ExperimentDO;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -180,7 +180,7 @@ public class ExperimentV5 implements Serializable {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("26216a2", new Object[]{this});
         }
-        if (this.tracks == null && (experimentDO = this.experimentDO) != null && !TextUtils.isEmpty(experimentDO.getTracks())) {
+        if (this.tracks == null && (experimentDO = this.experimentDO) != null && !StringUtils.isEmpty(experimentDO.getTracks())) {
             synchronized (this) {
                 List<ExperimentTrack> list = (List) g.a(this.experimentDO.getTracks(), new TypeReference<List<ExperimentTrack>>() { // from class: com.alibaba.evo.internal.bucketing.model.ExperimentV5.1
                 }.getType());
@@ -207,7 +207,7 @@ public class ExperimentV5 implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Expression) ipChange.ipc$dispatch("4ddc1ea", new Object[]{this});
         }
-        if (this.conditionExpression == null && (experimentDO = this.experimentDO) != null && !TextUtils.isEmpty(experimentDO.getCondition())) {
+        if (this.conditionExpression == null && (experimentDO = this.experimentDO) != null && !StringUtils.isEmpty(experimentDO.getCondition())) {
             synchronized (this) {
                 setConditionExpression((Expression) g.a(this.experimentDO.getCondition(), (Class<Object>) Expression.class));
             }
@@ -289,7 +289,7 @@ public class ExperimentV5 implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("6a5875b2", new Object[]{this});
         }
-        if (this.variations == null && (experimentDO = this.experimentDO) != null && !TextUtils.isEmpty(experimentDO.getVariations())) {
+        if (this.variations == null && (experimentDO = this.experimentDO) != null && !StringUtils.isEmpty(experimentDO.getVariations())) {
             synchronized (this) {
                 setVariations((Map) g.a(this.experimentDO.getVariations(), new TypeReference<Map<String, String>>() { // from class: com.alibaba.evo.internal.bucketing.model.ExperimentV5.2
                 }.getType()));
@@ -313,13 +313,13 @@ public class ExperimentV5 implements Serializable {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("f0879d6", new Object[]{this});
         }
-        if (this.groups == null && (experimentDO = this.experimentDO) != null && !TextUtils.isEmpty(experimentDO.getGroups())) {
+        if (this.groups == null && (experimentDO = this.experimentDO) != null && !StringUtils.isEmpty(experimentDO.getGroups())) {
             synchronized (this) {
                 List<ExperimentGroupV5> list = (List) g.a(this.experimentDO.getGroups(), new TypeReference<List<ExperimentGroupV5>>() { // from class: com.alibaba.evo.internal.bucketing.model.ExperimentV5.3
                 }.getType());
                 if (list != null && !list.isEmpty()) {
                     for (ExperimentGroupV5 experimentGroupV5 : list) {
-                        if (!TextUtils.isEmpty(experimentGroupV5.getCondition())) {
+                        if (!StringUtils.isEmpty(experimentGroupV5.getCondition())) {
                             experimentGroupV5.setConditionExpression((Expression) g.a(experimentGroupV5.getCondition(), (Class<Object>) Expression.class));
                             experimentGroupV5.setCondition(null);
                         }
@@ -350,7 +350,7 @@ public class ExperimentV5 implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("ffc648d0", new Object[]{this});
         }
-        if (this.variationConfigs == null && (experimentDO = this.experimentDO) != null && !TextUtils.isEmpty(experimentDO.getVariationConfigs())) {
+        if (this.variationConfigs == null && (experimentDO = this.experimentDO) != null && !StringUtils.isEmpty(experimentDO.getVariationConfigs())) {
             synchronized (this) {
                 setVariationConfigs((Map) g.a(this.experimentDO.getVariationConfigs(), new TypeReference<Map<String, ExperimentVariationConfigV5>>() { // from class: com.alibaba.evo.internal.bucketing.model.ExperimentV5.4
                 }.getType()));

@@ -1,6 +1,6 @@
 package com.taobao.tao.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
 import com.taobao.share.globalmodel.b;
@@ -48,20 +48,20 @@ public class AnalyticsUtil {
                 str6 = aVar.d();
                 if (aVar.g() != null) {
                     String userId = aVar.g().getUserId();
-                    if (TextUtils.isEmpty(userId)) {
+                    if (StringUtils.isEmpty(userId)) {
                         userId = aVar.g().getCcode();
                     }
                     sb.append(userId);
                     sb.append("^");
                 }
-                if (i.c == ContactType.LINK && !TextUtils.isEmpty(aVar.h()) && AgooConstants.ACK_PACK_NOBIND.equals(i.d)) {
+                if (i.c == ContactType.LINK && !StringUtils.isEmpty(aVar.h()) && AgooConstants.ACK_PACK_NOBIND.equals(i.d)) {
                     TBS.Ext.commitEvent("Page_Share", 19999, "Page_Detail_creatgroup_expose", (Object) null, (Object) null);
                 }
                 if (tBShareContent != null) {
                     String contactShowEventName = UTAnalyticsHelper.getContactShowEventName(aVar);
                     if (aVar.g() != null) {
                         String userId2 = aVar.g().getUserId();
-                        str3 = TextUtils.isEmpty(userId2) ? aVar.g().getCcode() : userId2;
+                        str3 = StringUtils.isEmpty(userId2) ? aVar.g().getCcode() : userId2;
                     } else {
                         str3 = null;
                     }
@@ -114,7 +114,7 @@ public class AnalyticsUtil {
         if (a2 != null) {
             str4 = a2.c;
         }
-        if (TextUtils.isEmpty(b) || e.b().j() == null) {
+        if (StringUtils.isEmpty(b) || e.b().j() == null) {
             return;
         }
         String str6 = a3.businessId;
@@ -124,14 +124,14 @@ public class AnalyticsUtil {
             str3 = "withPic=0&PicUrl=" + a3.imageUrl + "&passwordKey=" + str2;
         }
         String str7 = str3 + "&" + a3.originUTArgs();
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             TBS.Ext.commitEvent("Page_Extend", 5002, str6, str5, str, str7);
         }
         Properties properties = new Properties();
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             properties.put("Type", str4);
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             properties.put("bizID", str6);
         }
         a3.fillUTProperties(properties);
@@ -146,18 +146,18 @@ public class AnalyticsUtil {
         } else {
             oig.a a2 = oig.a(bVar.b());
             TBShareContent a3 = bVar.a().a();
-            if (TextUtils.isEmpty(bVar.b()) || e.b().j() == null) {
+            if (StringUtils.isEmpty(bVar.b()) || e.b().j() == null) {
                 return;
             }
             String str = a3.businessId;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 TBS.Ext.commitEvent(5002, str, a2.b, a3.url, a3.originUTArgs());
             }
             Properties properties = new Properties();
-            if (!TextUtils.isEmpty(a2.c)) {
+            if (!StringUtils.isEmpty(a2.c)) {
                 properties.put("Type", a2.c);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 properties.put("bizID", str);
             }
             a3.fillUTProperties(properties);
@@ -209,7 +209,7 @@ public class AnalyticsUtil {
             return;
         }
         String str2 = j.businessId;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         oig.a a2 = oig.a(bVar.b());
@@ -220,7 +220,7 @@ public class AnalyticsUtil {
             return;
         }
         String str3 = "withPic=0";
-        if (TextUtils.equals(ShareTargetType.Share2Copy.getValue(), bVar.b())) {
+        if (StringUtils.equals(ShareTargetType.Share2Copy.getValue(), bVar.b())) {
             String g = ShareBizAdapter.getInstance().getAppEnv().g();
             try {
                 str3 = str3 + "&passwordKey=" + URLEncoder.encode(g, "UTF-8");

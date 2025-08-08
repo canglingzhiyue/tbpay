@@ -1,7 +1,7 @@
 package com.taobao.android.cachecleaner.autoclear;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
@@ -175,7 +175,7 @@ public class MatchBasedAutoClear {
             java.io.File r8 = (java.io.File) r8
             return r8
         L18:
-            boolean r0 = android.text.TextUtils.isEmpty(r9)
+            boolean r0 = android.text.StringUtils.isEmpty(r9)
             r1 = 0
             if (r0 == 0) goto L20
             return r1
@@ -283,7 +283,7 @@ public class MatchBasedAutoClear {
                 return ((Boolean) ipChange.ipc$dispatch("778ef542", new Object[]{this, file, matchBasedData})).booleanValue();
             }
             String name = file.getName();
-            return (matchBasedData.fileNameLen == 0 || ((long) name.length()) == matchBasedData.fileNameLen) && file.length() >= (matchBasedData.sizeThreshold << 10) && System.currentTimeMillis() - file.lastModified() >= (((matchBasedData.lmfThreshold * 24) * 60) * 60) * 1000 && System.currentTimeMillis() - file.lastModified() >= matchBasedData.lmfThresholdSec * 1000 && (TextUtils.isEmpty(matchBasedData.suffix) || name.endsWith(matchBasedData.suffix)) && (TextUtils.isEmpty(matchBasedData.prefix) || name.startsWith(matchBasedData.prefix));
+            return (matchBasedData.fileNameLen == 0 || ((long) name.length()) == matchBasedData.fileNameLen) && file.length() >= (matchBasedData.sizeThreshold << 10) && System.currentTimeMillis() - file.lastModified() >= (((matchBasedData.lmfThreshold * 24) * 60) * 60) * 1000 && System.currentTimeMillis() - file.lastModified() >= matchBasedData.lmfThresholdSec * 1000 && (StringUtils.isEmpty(matchBasedData.suffix) || name.endsWith(matchBasedData.suffix)) && (StringUtils.isEmpty(matchBasedData.prefix) || name.startsWith(matchBasedData.prefix));
         }
     }
 
@@ -302,7 +302,7 @@ public class MatchBasedAutoClear {
         @Override // com.taobao.android.cachecleaner.autoclear.MatchBasedAutoClear.c
         public boolean a(File file, MatchBasedData matchBasedData) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("778ef542", new Object[]{this, file, matchBasedData})).booleanValue() : TextUtils.equals(file.getName(), matchBasedData.fileName) && System.currentTimeMillis() - file.lastModified() >= (((matchBasedData.lmfThreshold * 24) * 60) * 60) * 1000 && System.currentTimeMillis() - file.lastModified() >= matchBasedData.lmfThresholdSec * 1000;
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("778ef542", new Object[]{this, file, matchBasedData})).booleanValue() : StringUtils.equals(file.getName(), matchBasedData.fileName) && System.currentTimeMillis() - file.lastModified() >= (((matchBasedData.lmfThreshold * 24) * 60) * 60) * 1000 && System.currentTimeMillis() - file.lastModified() >= matchBasedData.lmfThresholdSec * 1000;
         }
     }
 

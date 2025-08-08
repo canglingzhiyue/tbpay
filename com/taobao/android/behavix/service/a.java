@@ -11,7 +11,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.birdnest.util.UiUtil;
@@ -206,7 +206,7 @@ public class a {
             if ("WIFI".equalsIgnoreCase(activeNetworkInfo.getTypeName())) {
                 return "WIFI";
             }
-            if (!TextUtils.isEmpty(activeNetworkInfo.getSubtypeName())) {
+            if (!StringUtils.isEmpty(activeNetworkInfo.getSubtypeName())) {
                 str = activeNetworkInfo.getSubtypeName();
             } else if (activeNetworkInfo.getSubtype() == 16) {
                 str = NetUtil.TYPE_GSM;
@@ -218,7 +218,7 @@ public class a {
                 str = activeNetworkInfo.getSubtype() == 19 ? NetUtil.TYPE_TDS_HSUPA : str2;
             }
             try {
-                if (str.equals(str2) || TextUtils.isEmpty(activeNetworkInfo.getExtraInfo())) {
+                if (str.equals(str2) || StringUtils.isEmpty(activeNetworkInfo.getExtraInfo())) {
                     return str;
                 }
                 return str + "|" + activeNetworkInfo.getExtraInfo();

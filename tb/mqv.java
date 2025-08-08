@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.design.widget.TabLayout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,7 +103,7 @@ public class mqv implements iyw {
             int j = this.c.j();
             for (ezf ezfVar : list) {
                 String b = ezfVar.b();
-                if (j > 1 && TextUtils.equals(ezfVar.a(), i) && !TextUtils.isEmpty(h)) {
+                if (j > 1 && StringUtils.equals(ezfVar.a(), i) && !StringUtils.isEmpty(h)) {
                     b = b + "·" + h;
                 }
                 TabLayout tabLayout = this.e;
@@ -127,16 +127,16 @@ public class mqv implements iyw {
                 TabLayout.d tabAt = this.e.getTabAt(i);
                 if (tabAt != null) {
                     ezf ezfVar = (ezf) tabAt.a();
-                    if (TextUtils.equals(ezfVar.a(), str)) {
+                    if (StringUtils.equals(ezfVar.a(), str)) {
                         if (j > 1) {
                             StringBuilder sb = new StringBuilder();
                             sb.append(ezfVar.b());
-                            sb.append(!TextUtils.isEmpty(h) ? "·" + h : "");
+                            sb.append(!StringUtils.isEmpty(h) ? "·" + h : "");
                             b = sb.toString();
                         } else {
                             b = ezfVar.b();
                         }
-                        if (!TextUtils.equals(tabAt.e(), b)) {
+                        if (!StringUtils.equals(tabAt.e(), b)) {
                             tabAt.a((CharSequence) b);
                             final View b2 = tabAt.b();
                             if (b2 != null) {

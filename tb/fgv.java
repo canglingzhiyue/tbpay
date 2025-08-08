@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -100,7 +100,7 @@ public class fgv {
         String str = c2 != null ? c2.itemId : "";
         StringBuilder sb = new StringBuilder("[新头图未命中]\n");
         for (String str2 : arrayList) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 Object a3 = jju.a(a2, "${" + str2 + riy.BLOCK_END_STR);
                 if ((a3 instanceof Boolean) && Boolean.parseBoolean(a3.toString())) {
                     sb.append(str2 + " : 为true \n");
@@ -121,7 +121,7 @@ public class fgv {
                         sb.append(str2 + " : 为true \n");
                         fgw.a(str2, str);
                     } else if (!z2 || !"false".equalsIgnoreCase(a3.toString())) {
-                        if (a3 != null && !TextUtils.isEmpty(a3.toString())) {
+                        if (a3 != null && !StringUtils.isEmpty(a3.toString())) {
                             sb.append(str2 + " : toString不为空 \n");
                             fgw.a(str2, str);
                         }

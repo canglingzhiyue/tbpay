@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.dynamic.helper;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.render.api.ext.BirdNestRender;
 import com.alipay.mobile.verifyidentity.engine.MicroModuleContext;
@@ -68,7 +68,7 @@ public class ExtEventHandler {
         String string = jSONObject.getString("url");
         String str = f5888a;
         VerifyLogCat.d(str, "[url]: " + string);
-        if (!TextUtils.equals("Y", jSONObject.getString("useViWebView"))) {
+        if (!StringUtils.equals("Y", jSONObject.getString("useViWebView"))) {
             ReflectUtils.invokeStaticMethod("com.alipay.mobile.verifyidentity.alipay.util.H5Utils", "startH5", new Class[]{String.class}, new Object[]{string});
             return;
         }

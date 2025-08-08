@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliUserTrackerInterface;
 import com.taobao.android.detail.datasdk.model.datamodel.node.b;
@@ -74,7 +74,7 @@ public class fdx implements eom, eou {
             return null;
         }
         String a2 = eoy.a(iDMComponent);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         if (a2.hashCode() != -198916691 || !a2.equals("desc_weex_component")) {

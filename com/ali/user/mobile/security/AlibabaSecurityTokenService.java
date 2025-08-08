@@ -1,6 +1,6 @@
 package com.ali.user.mobile.security;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.safetoken.ISafeTokenComponent;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -23,7 +23,7 @@ public class AlibabaSecurityTokenService {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("fef2849b", new Object[]{str, str2})).booleanValue();
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 SecurityUTHitUtils.utHit("60001", "key = null", "Event_saveTokenFail");
                 return true;
             } else {
@@ -69,7 +69,7 @@ public class AlibabaSecurityTokenService {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("70fdd84b", new Object[]{str, treeMap});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             SecurityUTHitUtils.utHit("60003", "signError key is null", "Event_signFail");
             return null;
         }

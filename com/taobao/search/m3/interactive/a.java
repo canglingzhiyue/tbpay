@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -58,7 +58,7 @@ public final class a implements com.taobao.search.m3.c {
         this.g = new TextPaint(1);
         this.h = new TextPaint(1);
         this.i = new Paint(1);
-        this.j = !TextUtils.isEmpty(this.k.a());
+        this.j = !StringUtils.isEmpty(this.k.a());
         this.g.setTextSize(u);
         this.h.setTextSize(u);
     }
@@ -121,7 +121,7 @@ public final class a implements com.taobao.search.m3.c {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
             return;
         }
-        if (TextUtils.isEmpty(this.k.b())) {
+        if (StringUtils.isEmpty(this.k.b())) {
             com.taobao.search.m3.d dVar = this.b;
             int i = m;
             dVar.a("https://gw.alicdn.com/imgextra/i3/O1CN01o98VCR1uM7obPMPs0_!!6000000006022-2-tps-24-24.png", i, i);
@@ -131,7 +131,7 @@ public final class a implements com.taobao.search.m3.c {
             int i2 = m;
             dVar2.a(b, i2, i2);
         }
-        if (TextUtils.isEmpty(this.k.a())) {
+        if (StringUtils.isEmpty(this.k.a())) {
             return;
         }
         com.taobao.search.m3.d dVar3 = this.c;
@@ -222,7 +222,7 @@ public final class a implements com.taobao.search.m3.c {
             if (this.j) {
                 f = f + n + o;
             }
-            this.e = (TextUtils.isEmpty(this.k.f()) || this.k.c() == null || ((c = this.k.c()) != null && c.intValue() == 0)) ? 0.0f : i.Companion.a(this.k.f(), this.h);
+            this.e = (StringUtils.isEmpty(this.k.f()) || this.k.c() == null || ((c = this.k.c()) != null && c.intValue() == 0)) ? 0.0f : i.Companion.a(this.k.f(), this.h);
             float f2 = this.e;
             if (f2 > 0) {
                 f = f + f2 + (this.y ? z : t);

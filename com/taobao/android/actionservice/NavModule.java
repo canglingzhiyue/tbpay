@@ -3,7 +3,7 @@ package com.taobao.android.actionservice;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -45,12 +45,12 @@ public class NavModule {
         } else {
             string = json instanceof JSONArray ? ((JSONArray) json).getString(0) : null;
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         String queryParameter = Uri.parse(string).getQueryParameter("fromSeq");
         String concat = string.concat("&fromAction=TAOBAO.OCEAN.ActionServiceBC");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             aVar.g.put(queryParameter, new a.d(bVar, interfaceC0830a, null));
         }
         Nav.from(com.taobao.tao.flexbox.layoutmanager.actionservice.core.a.a()).toUri(concat);
@@ -77,7 +77,7 @@ public class NavModule {
         }
         JSONObject jSONObject = (JSONObject) json;
         String string = jSONObject.getString("name");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         Intent intent = new Intent(string);
@@ -101,11 +101,11 @@ public class NavModule {
         }
         String string = ((JSONObject) json).getString("name");
         String valueOf = String.valueOf(System.currentTimeMillis());
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         aVar.a(string, valueOf);
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             return;
         }
         aVar.g.put(valueOf, new a.d(bVar, interfaceC0830a, null));
@@ -121,10 +121,10 @@ public class NavModule {
         JSONObject jSONObject = (JSONObject) json;
         String string = jSONObject.getString("msg");
         String string2 = jSONObject.getString("duration");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
-        if (!TextUtils.isEmpty(string2) && TextUtils.isDigitsOnly(string2)) {
+        if (!StringUtils.isEmpty(string2) && StringUtils.isDigitsOnly(string2)) {
             i = Integer.valueOf(string2).intValue() / 1000;
         }
         Toast.makeText(com.taobao.tao.flexbox.layoutmanager.actionservice.core.a.a(), string, i).show();

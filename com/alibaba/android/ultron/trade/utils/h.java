@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.trade.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -17,7 +17,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         try {
@@ -32,7 +32,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e567", new Object[]{str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         try {

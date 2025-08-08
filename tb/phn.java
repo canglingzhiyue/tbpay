@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -61,14 +61,14 @@ public class phn implements d {
             String p = poz.p(n.b(this.b));
             JSONObject jSONObject = null;
             String str3 = (this.b.r() == null || this.b.r().initParams == null) ? null : this.b.r().initParams.get(aw.PARAM_TCP_OUTER_PARAM);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 jSONObject = new JSONObject();
                 jSONObject.put(aw.PARAM_TCP_OUTER_PARAM, (Object) str3);
                 a("send from url outerTraceContext = " + jSONObject);
             }
             if (jSONObject == null) {
                 String a2 = ae.a(TAG);
-                if (!TextUtils.isEmpty(a2) && (outerTraceLocalInfo = (OuterTraceLocalInfo) JSON.parseObject(a2, OuterTraceLocalInfo.class)) != null && outerTraceLocalInfo.localCacheContext != null && !outerTraceLocalInfo.localCacheContext.isEmpty()) {
+                if (!StringUtils.isEmpty(a2) && (outerTraceLocalInfo = (OuterTraceLocalInfo) JSON.parseObject(a2, OuterTraceLocalInfo.class)) != null && outerTraceLocalInfo.localCacheContext != null && !outerTraceLocalInfo.localCacheContext.isEmpty()) {
                     for (int i = 0; i < outerTraceLocalInfo.localCacheContext.size(); i++) {
                         OuterTraceLocalInfo.LocalOuterParam localOuterParam = outerTraceLocalInfo.localCacheContext.get(i);
                         if (localOuterParam != null && System.currentTimeMillis() <= localOuterParam.expireTime) {

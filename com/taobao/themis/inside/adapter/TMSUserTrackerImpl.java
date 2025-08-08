@@ -1,7 +1,7 @@
 package com.taobao.themis.inside.adapter;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.ext.m;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -176,7 +176,7 @@ public class TMSUserTrackerImpl implements IUserTrackerAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca06ef46", new Object[]{this, activity, str});
-        } else if (activity == null || TextUtils.isEmpty(str)) {
+        } else if (activity == null || StringUtils.isEmpty(str)) {
         } else {
             UTAnalytics.getInstance().getDefaultTracker().updatePageName(activity, str);
         }
@@ -187,7 +187,7 @@ public class TMSUserTrackerImpl implements IUserTrackerAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("235542fa", new Object[]{this, activity, str});
-        } else if (activity == null || TextUtils.isEmpty(str)) {
+        } else if (activity == null || StringUtils.isEmpty(str)) {
         } else {
             UTAnalytics.getInstance().getDefaultTracker().updatePageUrl(activity, o.b(str));
         }

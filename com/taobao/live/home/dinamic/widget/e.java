@@ -2,7 +2,7 @@ package com.taobao.live.home.dinamic.widget;
 
 import android.content.Context;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -301,7 +301,7 @@ public class e extends DXWidgetNode {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("42764d9f", new Object[]{this, new Long(j), str});
         } else if (j == DXTBLVWEBVIEW_WEBURL) {
-            if (!TextUtils.isEmpty(this.b) && !this.b.equals(str)) {
+            if (!StringUtils.isEmpty(this.b) && !this.b.equals(str)) {
                 this.g = true;
             }
             mfj.c("DXTBLVWebViewWidgetNode", "onSetStringAttribute " + this + " webUrl:" + this.b);

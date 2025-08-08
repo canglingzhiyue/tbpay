@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -141,7 +141,7 @@ public class gay extends DXImageWidgetNode {
                 return;
             }
             super.onBindEvent(context, view, j);
-        } else if (j == 9859228430928305L && !TextUtils.isEmpty(this.f28253a)) {
+        } else if (j == 9859228430928305L && !StringUtils.isEmpty(this.f28253a)) {
             this.c.a(new b.a() { // from class: tb.gay.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -157,7 +157,7 @@ public class gay extends DXImageWidgetNode {
                     gay.this.postEvent(dXRichTextLinkEvent);
                 }
             });
-        } else if (j == 5176476879387311985L && !TextUtils.isEmpty(this.b)) {
+        } else if (j == 5176476879387311985L && !StringUtils.isEmpty(this.b)) {
             this.c.a(new b.InterfaceC0479b() { // from class: tb.gay.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -266,7 +266,7 @@ public class gay extends DXImageWidgetNode {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0062, code lost:
-        if (android.text.TextUtils.isEmpty(r7) == false) goto L23;
+        if (android.text.StringUtils.isEmpty(r7) == false) goto L23;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -309,7 +309,7 @@ public class gay extends DXImageWidgetNode {
         L3c:
             java.lang.String r1 = r5.getImageUrl()
             if (r7 != 0) goto L65
-            boolean r7 = android.text.TextUtils.isEmpty(r1)
+            boolean r7 = android.text.StringUtils.isEmpty(r1)
             if (r7 != 0) goto L65
             com.taobao.android.dinamicx.widget.ao r7 = com.taobao.android.dinamicx.u.d()
             if (r7 == 0) goto L65
@@ -317,7 +317,7 @@ public class gay extends DXImageWidgetNode {
             int r3 = r6.d()
             com.taobao.android.dinamicx.widget.DXImageWidgetNode$d r4 = r5.buildSimpleImageOption()
             java.lang.String r7 = r7.a(r1, r2, r3, r4)
-            boolean r2 = android.text.TextUtils.isEmpty(r7)
+            boolean r2 = android.text.StringUtils.isEmpty(r7)
             if (r2 != 0) goto L65
             goto L66
         L65:

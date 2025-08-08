@@ -1,6 +1,6 @@
 package com.taobao.weex.ui.animation;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.WXSDKManager;
@@ -23,7 +23,7 @@ public class WXAnimationModule extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bbbe643a", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || this.mWXSDKInstance == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || this.mWXSDKInstance == null) {
         } else {
             GraphicActionAnimation graphicActionAnimation = new GraphicActionAnimation(this.mWXSDKInstance, str, str2, str3);
             WXSDKManager.getInstance().getWXRenderManager().postGraphicAction(graphicActionAnimation.getPageId(), graphicActionAnimation);

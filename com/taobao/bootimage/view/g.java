@@ -1,7 +1,7 @@
 package com.taobao.bootimage.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -52,7 +52,7 @@ public class g extends b {
             this.f16713a = (TextView) this.g.findViewById(R.id.textview);
             View findViewById = this.g.findViewById(R.id.close);
             View findViewById2 = this.g.findViewById(R.id.click_image);
-            if (!TextUtils.isEmpty(this.h.targetUrl) && findViewById2 != null) {
+            if (!StringUtils.isEmpty(this.h.targetUrl) && findViewById2 != null) {
                 findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.bootimage.view.g.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -64,7 +64,7 @@ public class g extends b {
                             return;
                         }
                         kej.a(kem.TAG, "targetUrl onClick show image: click jump");
-                        if (TextUtils.isEmpty(g.this.h.targetUrl)) {
+                        if (StringUtils.isEmpty(g.this.h.targetUrl)) {
                             return;
                         }
                         if (g.this.d != null) {
@@ -108,7 +108,7 @@ public class g extends b {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         kej.a(kem.TAG, "BootImageImageController show image: start");
-        if (this.h == null || TextUtils.isEmpty(this.h.imgUrl) || this.i.get() == null || this.g == null) {
+        if (this.h == null || StringUtils.isEmpty(this.h.imgUrl) || this.i.get() == null || this.g == null) {
             kej.a(kem.TAG, "BootImageImageController show image failed: data error.");
             return false;
         } else if (!super.b()) {

@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.nativerender.render.component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,13 +52,13 @@ public class b extends c<PopCloseBtnModel> {
             return (View) ipChange.ipc$dispatch("876fa4a2", new Object[]{this, context});
         }
         final ImageView imageView = new ImageView(context);
-        imageView.setContentDescription(!TextUtils.isEmpty(((PopCloseBtnModel) this.b).alt) ? ((PopCloseBtnModel) this.b).alt : "关闭按钮");
+        imageView.setContentDescription(!StringUtils.isEmpty(((PopCloseBtnModel) this.b).alt) ? ((PopCloseBtnModel) this.b).alt : "关闭按钮");
         if (((PopCloseBtnModel) this.b).url.contains("gw.alicdn.com/imgextra/i1/O1CN01pu2yug24D6I5h7JbZ_!!6000000007356-2-tps-72-72.png")) {
             imageView.setImageResource(R.drawable.native_close_btn_light);
             this.f22246a.i();
         } else {
             final String a2 = p.a(this.f22246a, ((PopCloseBtnModel) this.b).url);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 this.f22246a.a("RenderError", "imageUrlIsEmpty");
                 return null;
             }

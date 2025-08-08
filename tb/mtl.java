@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -45,7 +45,7 @@ public class mtl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (map != null && map.size() != 0 && !TextUtils.isEmpty(str)) {
+        } else if (map != null && map.size() != 0 && !StringUtils.isEmpty(str)) {
             JSONArray jSONArray = new JSONArray();
             JSONObject jSONObject = new JSONObject();
             for (Map.Entry<String, String> entry : map.entrySet()) {
@@ -69,7 +69,7 @@ public class mtl {
         }
         HashMap hashMap = new HashMap();
         String string = this.f31248a.getString(str, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return hashMap;
         }
         try {

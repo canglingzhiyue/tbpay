@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public class UCPJSBridge extends e {
             boolean r8 = r8.booleanValue()
             return r8
         L22:
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 == 0) goto L29
             return r6
         L29:
@@ -212,7 +212,7 @@ public class UCPJSBridge extends e {
         }
         String string = parseObject.getString("name");
         JSONObject jSONObject = parseObject.getJSONObject("userInfo");
-        if (TextUtils.isEmpty(string) || jSONObject == null) {
+        if (StringUtils.isEmpty(string) || jSONObject == null) {
             wVCallBackContext.error("name为空");
             return false;
         } else if (d.b() == null) {
@@ -284,7 +284,7 @@ public class UCPJSBridge extends e {
             return false;
         }
         String string = parseObject.getString(WXConfig.logLevel);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             wVCallBackContext.error("logLevel can not be null");
             return false;
         }

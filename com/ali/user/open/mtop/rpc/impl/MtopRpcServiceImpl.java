@@ -1,6 +1,6 @@
 package com.ali.user.open.mtop.rpc.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.config.ConfigManager;
 import com.ali.user.open.core.context.KernelContext;
 import com.ali.user.open.core.device.DeviceInfo;
@@ -36,7 +36,7 @@ public class MtopRpcServiceImpl implements RpcService {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 CommonUtils.sendUT("ucc_register_session_info_" + str);
                 SDKLogger.e(TAG, "ucc_register_session_info_" + str);
                 Mtop.instance(str, KernelContext.applicationContext, "", 0).registerSessionInfo(str2, str3);

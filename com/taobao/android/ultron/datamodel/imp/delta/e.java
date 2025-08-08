@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp.delta;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class e extends a {
         } else if (jSONObject == null || bVar == null) {
         } else {
             String string = jSONObject.getString("target");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             JSONObject o = bVar.o();
@@ -62,7 +62,7 @@ public class e extends a {
                 return;
             }
             for (String str : jSONObject2.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     Object obj = jSONObject2.get(str);
                     Object obj2 = jSONObject.get(str);
                     if ((obj2 instanceof JSONObject) && (obj instanceof JSONObject)) {

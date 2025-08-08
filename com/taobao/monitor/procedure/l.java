@@ -3,7 +3,7 @@ package com.taobao.monitor.procedure;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
@@ -192,7 +192,7 @@ public class l implements f, j {
         if (ipChange instanceof IpChange) {
             return (g) ipChange.ipc$dispatch("5ccf4590", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return g.DEFAULT;
         }
         return c(this.h.get(str));
@@ -398,10 +398,10 @@ public class l implements f, j {
             return (u) ipChange.ipc$dispatch("215fb6d6", new Object[]{this, gVar, str});
         }
         u b = b(gVar);
-        if (b != null && b.l().get("H5_URL") != null && !TextUtils.isEmpty(b.l().get("H5_URL").toString()) && a(str, b.l().get("H5_URL").toString())) {
+        if (b != null && b.l().get("H5_URL") != null && !StringUtils.isEmpty(b.l().get("H5_URL").toString()) && a(str, b.l().get("H5_URL").toString())) {
             return b;
         }
-        if (b != null && b.l().get("schemaUrl") != null && !TextUtils.isEmpty(b.l().get("schemaUrl").toString()) && a(str, b.l().get("schemaUrl").toString())) {
+        if (b != null && b.l().get("schemaUrl") != null && !StringUtils.isEmpty(b.l().get("schemaUrl").toString()) && a(str, b.l().get("schemaUrl").toString())) {
             return b;
         }
         return null;

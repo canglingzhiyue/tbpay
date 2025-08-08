@@ -13,7 +13,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityManager;
@@ -469,7 +469,7 @@ public class ToygerWorkspace implements BioUploadCallBack, ICameraCallback, Toyg
         this.i = toygerCirclePattern;
         this.E = this.i.getCameraSurfaceViewWrapper();
         String topText = this.r.getTopText();
-        if (!TextUtils.isEmpty(topText)) {
+        if (!StringUtils.isEmpty(topText)) {
             this.i.setTopTipViewsetVisibility(0);
             this.i.getTopTip().setText(topText);
         }
@@ -927,7 +927,7 @@ public class ToygerWorkspace implements BioUploadCallBack, ICameraCallback, Toyg
         }
         BioLog.d("ToygerWorkspace.commandFinished(), mWorkState=" + this.G);
         if (this.F != null) {
-            if (TextUtils.equals("Android", this.E.getCameraName())) {
+            if (StringUtils.equals("Android", this.E.getCameraName())) {
                 this.F.closeCamera();
                 ToygerCirclePattern toygerCirclePattern = this.i;
                 if (toygerCirclePattern != null && toygerCirclePattern.isGarfieldFaceless) {
@@ -2011,7 +2011,7 @@ public class ToygerWorkspace implements BioUploadCallBack, ICameraCallback, Toyg
                 this.p = true;
                 this.f6338a.write(ToygerRecordService.DETECT_COND_END, ToygerFrameUtil.getFaceParam(toygerFrame.tgFaceAttr));
             }
-            if (TextUtils.isEmpty(topText_no_face)) {
+            if (StringUtils.isEmpty(topText_no_face)) {
                 this.i.setTopTipViewsetVisibility(4);
                 this.i.setMaskViewsetVisibility(4);
                 this.i.getTopTip().setText("");
@@ -2332,7 +2332,7 @@ public class ToygerWorkspace implements BioUploadCallBack, ICameraCallback, Toyg
             }
             if (z2) {
                 String message = switchAuthCfg.getMessage();
-                if (TextUtils.isEmpty(message)) {
+                if (StringUtils.isEmpty(message)) {
                     message = this.c.getResources().getString(R.string.face_eye_other_auth);
                 }
                 textView.setText(message);

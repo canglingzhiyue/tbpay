@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.huawei.hms.push.utils.DateUtil;
 import com.huawei.hms.push.utils.JsonUtil;
@@ -202,7 +202,7 @@ public class RemoteMessage implements Parcelable {
             this.l = bundle.getString(RemoteMessageConst.Notification.INTENT_URI);
             this.o = bundle.getInt("notifyId");
             String string = bundle.getString("url");
-            this.n = !TextUtils.isEmpty(string) ? Uri.parse(string) : null;
+            this.n = !StringUtils.isEmpty(string) ? Uri.parse(string) : null;
             this.p = bundle.getString(RemoteMessageConst.Notification.NOTIFY_ICON);
             this.q = bundle.getInt(RemoteMessageConst.Notification.DEFAULT_LIGHT_SETTINGS);
             this.r = bundle.getInt(RemoteMessageConst.Notification.DEFAULT_SOUND);
@@ -331,7 +331,7 @@ public class RemoteMessage implements Parcelable {
 
         public Long getWhen() {
             String str;
-            if (!TextUtils.isEmpty(this.u)) {
+            if (!StringUtils.isEmpty(this.u)) {
                 try {
                     return Long.valueOf(DateUtil.parseUtcToMillisecond(this.u));
                 } catch (StringIndexOutOfBoundsException unused) {
@@ -618,7 +618,7 @@ public class RemoteMessage implements Parcelable {
     public long getSentTime() {
         try {
             String string = this.f7515a.getString(RemoteMessageConst.SEND_TIME);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return 0L;
             }
             return Long.parseLong(string);

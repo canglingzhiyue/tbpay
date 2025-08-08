@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.FeatureNode;
@@ -102,7 +102,7 @@ public abstract class b extends eoz {
             return;
         }
         ComponentModel componentModel = this.component;
-        if (componentModel == null || TextUtils.isEmpty(componentModel.style)) {
+        if (componentModel == null || StringUtils.isEmpty(componentModel.style)) {
             return;
         }
         if (biy.a()) {
@@ -432,11 +432,11 @@ public abstract class b extends eoz {
             str = this.component.mapping.getString("url");
             jSONObject = this.component.mapping.getJSONObject(DxContainerActivity.PARAMS_URL_BUSINESS_PARAMS);
         }
-        if (TextUtils.isEmpty(str) && (iDMComponent = this.dmComponent) != null && iDMComponent.getFields() != null) {
+        if (StringUtils.isEmpty(str) && (iDMComponent = this.dmComponent) != null && iDMComponent.getFields() != null) {
             str = this.dmComponent.getFields().getString("url");
             jSONObject = this.dmComponent.getFields().getJSONObject(DxContainerActivity.PARAMS_URL_BUSINESS_PARAMS);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         HashMap hashMap2 = new HashMap();
@@ -469,7 +469,7 @@ public abstract class b extends eoz {
         String string = jSONObject.getString("name");
         String string2 = jSONObject.getString("version");
         String string3 = jSONObject.getString("url");
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             string3 = jSONObject.getString("android");
         }
         HashMap hashMap = new HashMap();
@@ -488,7 +488,7 @@ public abstract class b extends eoz {
         if (componentModel != null && componentModel.actionModelList != null && !this.component.actionModelList.isEmpty()) {
             ArrayList arrayList = new ArrayList();
             for (ActionModel actionModel : this.component.actionModelList) {
-                if (actionModel != null && !TextUtils.isEmpty(actionModel.type)) {
+                if (actionModel != null && !StringUtils.isEmpty(actionModel.type)) {
                     arrayList.add(actionModel.type);
                 }
             }
@@ -507,7 +507,7 @@ public abstract class b extends eoz {
                 List<com.taobao.android.ultron.common.model.b> list = this.dmComponent.getEventMap().get(str);
                 if (list == null) {
                     for (com.taobao.android.ultron.common.model.b bVar : list) {
-                        if (bVar != null && !TextUtils.isEmpty(bVar.getType())) {
+                        if (bVar != null && !StringUtils.isEmpty(bVar.getType())) {
                             arrayList2.add(bVar.getType());
                         }
                     }

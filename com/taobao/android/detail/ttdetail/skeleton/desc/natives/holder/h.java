@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -62,10 +62,10 @@ public class h extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             layoutParams.height = i2;
             this.g.setLayoutParams(layoutParams);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.g.setTextColor(com.taobao.android.detail.ttdetail.utils.w.a(str2));
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.g.setBackgroundColor(com.taobao.android.detail.ttdetail.utils.w.a(str3));
         }
         if (i3 > 0) {
@@ -84,6 +84,6 @@ public class h extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
     /* renamed from: c  reason: avoid collision after fix types in other method */
     public boolean c2(com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel.h hVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("354b17c2", new Object[]{this, hVar})).booleanValue() : TextUtils.isEmpty(hVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("354b17c2", new Object[]{this, hVar})).booleanValue() : StringUtils.isEmpty(hVar.b);
     }
 }

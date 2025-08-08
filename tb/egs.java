@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ItemNode;
 import com.taobao.android.detail.datasdk.model.datamodel.node.TradeNode;
@@ -55,8 +55,8 @@ public class egs extends egv {
         ItemNode c = eqb.c(bVar);
         this.j = e.isBuyEnable;
         this.k = e.isCartEnable;
-        this.l = TextUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
-        this.m = TextUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
+        this.l = StringUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
+        this.m = StringUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
         this.h = c.title;
         this.i = c.itemUrl;
         if (g == null || g.presaleNode == null) {
@@ -88,8 +88,8 @@ public class egs extends egv {
         ItemNode c = eqb.c(bVar);
         this.j = e.isBuyEnable;
         this.k = e.isCartEnable;
-        this.l = TextUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
-        this.m = TextUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
+        this.l = StringUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
+        this.m = StringUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
         this.h = c.title;
         this.i = c.itemUrl;
         if (g == null || g.presaleNode == null) {

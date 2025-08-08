@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -24,18 +24,18 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String trim = str.trim();
-        if (TextUtils.isEmpty(trim)) {
+        if (StringUtils.isEmpty(trim)) {
             return "";
         }
         try {
             Uri parse = Uri.parse(trim);
             for (String str3 : parse.getQueryParameterNames()) {
                 String queryParameter = parse.getQueryParameter(str3);
-                if (!TextUtils.isEmpty(str3) && str3.equals(str2)) {
+                if (!StringUtils.isEmpty(str3) && str3.equals(str2)) {
                     return queryParameter;
                 }
             }
@@ -50,19 +50,19 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String trim = str.trim();
-        if (TextUtils.isEmpty(trim)) {
+        if (StringUtils.isEmpty(trim)) {
             return null;
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return trim;
         }
         String trim2 = str2.trim();
         String trim3 = str3.trim();
-        if (TextUtils.isEmpty(trim2) || TextUtils.isEmpty(trim3)) {
+        if (StringUtils.isEmpty(trim2) || StringUtils.isEmpty(trim3)) {
             return trim;
         }
         try {
@@ -108,7 +108,7 @@ public class p {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
+        if (!StringUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
             for (String str2 : queryParameterNames) {
                 hashMap.put(str2, parse.getQueryParameter(str2));
             }

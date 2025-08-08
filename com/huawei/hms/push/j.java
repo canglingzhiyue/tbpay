@@ -2,7 +2,7 @@ package com.huawei.hms.push;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.HmsInstanceId;
 import com.huawei.hms.aaid.plugin.ProxyCenter;
 import com.huawei.hms.aaid.plugin.PushProxy;
@@ -28,7 +28,7 @@ public class j {
             bundle.putString("proxyType", proxy.getProxyType());
         }
         bundle.putString(RemoteMessageConst.MSGID, str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             bundle.putString(RemoteMessageConst.ANALYTIC_INFO, str2);
         }
         return bundle;

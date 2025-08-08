@@ -3,7 +3,7 @@ package com.xiaomi.push;
 import android.app.NotificationChannel;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ju;
 import com.xiaomi.push.ke;
 
@@ -17,7 +17,7 @@ public class jm {
     private static int a(Context context, String str, String str2) {
         com.xiaomi.push.service.aw a2;
         NotificationChannel m2291a;
-        if (Build.VERSION.SDK_INT < 26 || context == null || TextUtils.isEmpty(str) || (a2 = com.xiaomi.push.service.aw.a(context, str)) == null || (m2291a = a2.m2291a(a2.m2294a(str2))) == null) {
+        if (Build.VERSION.SDK_INT < 26 || context == null || StringUtils.isEmpty(str) || (a2 = com.xiaomi.push.service.aw.a(context, str)) == null || (m2291a = a2.m2291a(a2.m2294a(str2))) == null) {
             return 0;
         }
         int i = (m2291a.getImportance() != 0 ? 1 : 2) + 0;
@@ -75,7 +75,7 @@ public class jm {
     private static int b(Context context, String str, String str2) {
         com.xiaomi.push.service.aw a2;
         NotificationChannel m2291a;
-        if (Build.VERSION.SDK_INT < 26 || context == null || TextUtils.isEmpty(str) || (a2 = com.xiaomi.push.service.aw.a(context, str)) == null || (m2291a = a2.m2291a(a2.m2294a(str2))) == null) {
+        if (Build.VERSION.SDK_INT < 26 || context == null || StringUtils.isEmpty(str) || (a2 = com.xiaomi.push.service.aw.a(context, str)) == null || (m2291a = a2.m2291a(a2.m2294a(str2))) == null) {
             return 0;
         }
         return m2291a.getImportance() != 0 ? 32 : 64;

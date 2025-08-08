@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.desktop.channel.desktoplinktask.trigger.f;
@@ -19,7 +19,7 @@ public class ors {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("21127ca2", new Object[]{this, str, str2, jSONObject, messenger, ppiVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             f fVar = new f(3);
             fVar.b = str;

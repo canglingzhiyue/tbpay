@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.profile;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -200,8 +200,8 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
             return;
         }
         c.c(this.mFrameContext, this.mSourceType, isFollow());
-        if (TextUtils.equals(this.mData.chatGroupInfo.isInChatGroup, "true")) {
-            if (TextUtils.isEmpty(this.mData.chatGroupInfo.chatGroupID)) {
+        if (StringUtils.equals(this.mData.chatGroupInfo.isInChatGroup, "true")) {
+            if (StringUtils.isEmpty(this.mData.chatGroupInfo.chatGroupID)) {
                 return;
             }
             Context context = this.mContext;
@@ -473,7 +473,7 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3d7740fc", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mExternalLiveId)) {
+        if (!StringUtils.isEmpty(this.mExternalLiveId)) {
             return this.mExternalLiveId;
         }
         if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null) {
@@ -551,7 +551,7 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("a82c75dd", new Object[]{this, pmwVar});
-                } else if (pmwVar == null || TextUtils.isEmpty(pmwVar.f32765a) || !TextUtils.equals(pmwVar.f32765a, LiveAvatarNewFrame.access$200(LiveAvatarNewFrame.this)) || LiveAvatarNewFrame.access$100(LiveAvatarNewFrame.this) == null) {
+                } else if (pmwVar == null || StringUtils.isEmpty(pmwVar.f32765a) || !StringUtils.equals(pmwVar.f32765a, LiveAvatarNewFrame.access$200(LiveAvatarNewFrame.this)) || LiveAvatarNewFrame.access$100(LiveAvatarNewFrame.this) == null) {
                 } else {
                     LiveAvatarNewFrame.access$100(LiveAvatarNewFrame.this).refreshFollowStatus(pmwVar.b);
                 }
@@ -565,7 +565,7 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("387f3cc7", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mExternalAccountId)) {
+        if (!StringUtils.isEmpty(this.mExternalAccountId)) {
             return this.mExternalAccountId;
         }
         if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null && this.mLiveDataModel.mVideoInfo.broadCaster != null) {
@@ -805,10 +805,10 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
                 request(true, "live");
             }
         } else if (xkw.EVENT_AVATAR_CARD__HIDE.equals(str)) {
-            if (hkk.I() && (obj instanceof String) && TextUtils.equals("openReputationDetail", (String) obj) && this.mData.anchorTags != null && this.mData.anchorTags.size() > 0) {
+            if (hkk.I() && (obj instanceof String) && StringUtils.equals("openReputationDetail", (String) obj) && this.mData.anchorTags != null && this.mData.anchorTags.size() > 0) {
                 c.b(this.mFrameContext, isFollow(), this.mSourceType, this.mData.anchorTags != null && this.mData.anchorTags.size() > 0);
                 for (int i = 0; i < this.mData.anchorTags.size(); i++) {
-                    if (!TextUtils.isEmpty(this.mData.anchorTags.get(i).detailTitle) || !TextUtils.isEmpty(this.mData.anchorTags.get(i).detailTitle)) {
+                    if (!StringUtils.isEmpty(this.mData.anchorTags.get(i).detailTitle) || !StringUtils.isEmpty(this.mData.anchorTags.get(i).detailTitle)) {
                         z = true;
                         break;
                     }
@@ -823,18 +823,18 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
                 phg.b().a("@ali/alivemodx-live-guarantee-details", hashMap);
             }
             hide();
-        } else if (TextUtils.equals("com.taobao.taolive.anchor_avatar_follow_changed", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.anchor_avatar_follow_changed", str)) {
             if (!(obj instanceof String)) {
                 return;
             }
-            if (TextUtils.equals("true", (String) obj)) {
+            if (StringUtils.equals("true", (String) obj)) {
                 gotoUnFollowAnchor();
             } else {
                 gotoFollowAnchor();
             }
-        } else if (TextUtils.equals("com.taobao.taolive.anchor_avatar_join_group", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.anchor_avatar_join_group", str)) {
             joinGroupOrJumpGroup();
-        } else if (TextUtils.equals("com.taobao.taolive.room.install_widget_success", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.room.install_widget_success", str)) {
             if (!kpj.b(this.mFrameContext, this.mLiveDataModel) || !(obj instanceof String)) {
                 return;
             }
@@ -849,7 +849,7 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
             }
             this.mLiveAvatarNewView.refreshLiveDataModel(this.mLiveDataModel);
             this.mLiveAvatarNewView.refreshTopUi(this.mData, false);
-        } else if (TextUtils.equals("com.taobao.taolive.anchor_avatar_favorite_result", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.anchor_avatar_favorite_result", str)) {
             this.mLiveAvatarNewView.refreshTopFollowStatus(Boolean.parseBoolean((String) obj));
         } else if (xkw.EVENT_OPEN_WIDGET_INSTALL_GUIDE.equals(str)) {
             if (this.mLiveDataModel == null || this.mLiveDataModel.mVideoInfo == null || this.mLiveDataModel.mVideoInfo.broadCaster == null || this.mLiveDataModel.mVideoInfo.broadCaster.widgetTip == null) {
@@ -907,7 +907,7 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
             long b = l.b(this.mLiveDataModel.mVideoInfo.broadCaster.accountId);
             long b2 = l.b(this.mLiveDataModel.mVideoInfo.liveId);
             String str2 = this.mLiveDataModel.mVideoInfo.broadCaster.encodeAccountId;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = String.valueOf(b);
             }
             this.mBusiness.a(b2, b, str2, this.mSourceType, isOpenRoom());
@@ -916,7 +916,7 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
             AccountInfo accountInfo = this.mLiveDataModel.mFandomInfo.broadCaster;
             long b3 = l.b(accountInfo.accountId);
             String str3 = accountInfo.encodeAccountId;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = String.valueOf(b3);
             }
             this.mBusiness.a(0L, b3, str3, this.mSourceType, isOpenRoom());
@@ -1066,7 +1066,7 @@ public class LiveAvatarNewFrame extends BaseFrame implements d, ddv, sgr {
             liveAvatarNewView.updateData(liveAvatarInfoCardResponseData, this.mSourceType, this.widgetInstalled);
             return;
         }
-        if (!TextUtils.isEmpty(this.mDataModel.mVideoInfo.broadCaster.accountInfoUrl)) {
+        if (!StringUtils.isEmpty(this.mDataModel.mVideoInfo.broadCaster.accountInfoUrl)) {
             pmd.a().r().a(this.mContext, this.mDataModel.mVideoInfo.broadCaster.accountInfoUrl, null);
         } else {
             Toast.makeText(this.mContext, "出错啦，请稍后再试～", 0).show();

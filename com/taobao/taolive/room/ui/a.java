@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowInsets;
@@ -406,7 +406,7 @@ public class a {
         } catch (Exception e2) {
             Log.e("SupportDisplayCutout", "isCutoutScreenByOrange exception:", e2);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONArray jSONArray = new JSONArray(str);
@@ -424,7 +424,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("43881515", new Object[0]);
         }
-        if (TextUtils.isEmpty(f21689a)) {
+        if (StringUtils.isEmpty(f21689a)) {
             f21689a = Build.MODEL;
         }
         return f21689a;
@@ -468,7 +468,7 @@ public class a {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             String str = (String) cls.getMethod("get", String.class, String.class).invoke(cls, "ro.oppo.screen.heteromorphism", "");
             String str2 = "getCutoutInfoByOppo property:" + str;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             String str3 = "getCutoutInfoByOppo :" + str;
@@ -528,7 +528,7 @@ public class a {
         } catch (Exception e2) {
             Log.e("SupportDisplayCutout", "getCutoutInfoByOrange exception:", e2);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         JSONArray jSONArray = new JSONArray(str);
@@ -558,7 +558,7 @@ public class a {
         } catch (Exception e2) {
             Log.e("SupportDisplayCutout", "getOppoSwitchStatus exception", e2);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Log.e(RPCDataItems.SWITCH_TAG_LOG, "pkgName can't be null");
             return false;
         }

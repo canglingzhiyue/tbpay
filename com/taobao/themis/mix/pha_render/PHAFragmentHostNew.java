@@ -2,7 +2,7 @@ package com.taobao.themis.mix.pha_render;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -174,10 +174,10 @@ public class PHAFragmentHostNew extends PHAFragment {
         this.hasDowngrade = true;
         String str = this.mDowngradeUrl;
         addDowngradeMonitor();
-        if (TextUtils.isEmpty(str) && this.mAppController != null) {
+        if (StringUtils.isEmpty(str) && this.mAppController != null) {
             str = this.mAppController.getDowngradeUrlFromManifest();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         Uri b = o.b(str);

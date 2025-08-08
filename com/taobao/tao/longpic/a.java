@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,9 +80,9 @@ public class a implements nzf {
             }
             final String link = this.f20743a.getLink();
             String urlBackFlow = ShareServiceApi.urlBackFlow(this.f20743a.getBusinessId(), nym.TYPE_GEN3_CODE.equals(this.b) ? "QRCodeAnti" : "QRCode", this.f20743a.getLink());
-            if (!TextUtils.isEmpty(urlBackFlow)) {
+            if (!StringUtils.isEmpty(urlBackFlow)) {
                 b.a(ShareTargetType.Share2QRCode.getValue());
-                if (!TextUtils.isEmpty(urlBackFlow) && !link.equals(urlBackFlow)) {
+                if (!StringUtils.isEmpty(urlBackFlow) && !link.equals(urlBackFlow)) {
                     link = urlBackFlow;
                 }
             }
@@ -100,7 +100,7 @@ public class a implements nzf {
                             ipChange2.ipc$dispatch("dbeaf3eb", new Object[]{this, obdVar, eVar});
                             return;
                         }
-                        final String d = b.d((eVar == null || TextUtils.isEmpty(eVar.d)) ? link : nym.TYPE_GEN3_CODE.equals(AnonymousClass2.this.b) ? UriUtil.appendQueryParameter(link, DispatchConstants.CONFIG_VERSION, UriUtil.getValue(Uri.parse(eVar.d), DispatchConstants.CONFIG_VERSION)).toString() : eVar.d);
+                        final String d = b.d((eVar == null || StringUtils.isEmpty(eVar.d)) ? link : nym.TYPE_GEN3_CODE.equals(AnonymousClass2.this.b) ? UriUtil.appendQueryParameter(link, DispatchConstants.CONFIG_VERSION, UriUtil.getValue(Uri.parse(eVar.d), DispatchConstants.CONFIG_VERSION)).toString() : eVar.d);
                         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.taobao.tao.longpic.a.2.1.1
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 

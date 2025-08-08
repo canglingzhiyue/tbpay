@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.mmd.util.e;
 import kotlin.jvm.JvmStatic;
@@ -28,7 +28,7 @@ public final class nti {
         }
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("class", str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "TBSearch_Default";
         }
         e.a(str, "Code_Offline", arrayMap, (String) null);

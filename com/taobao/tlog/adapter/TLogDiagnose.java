@@ -2,7 +2,7 @@ package com.taobao.tlog.adapter;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -73,7 +73,7 @@ public class TLogDiagnose extends android.taobao.windvane.jsbridge.e {
             return;
         }
         super.onDestroy();
-        if (TextUtils.isEmpty(this.sessionID)) {
+        if (StringUtils.isEmpty(this.sessionID)) {
             return;
         }
         TLogEventHelper.c(this.sessionID);
@@ -269,14 +269,14 @@ public class TLogDiagnose extends android.taobao.windvane.jsbridge.e {
                 String optString5 = jSONObject.optString("days", "");
                 this.sessionID = jSONObject.optString(com.taobao.tao.log.statistics.d.PARAM_SESSION_ID, "");
                 String.format("sessionID=%s, bizType=%s, bizCode=%s, %s-%s", this.sessionID, optString, optString2, optString3, optString4);
-                if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString2)) {
-                    if (TextUtils.isEmpty(this.sessionID)) {
+                if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString2)) {
+                    if (StringUtils.isEmpty(this.sessionID)) {
                         error(wVCallBackContext, ERROR_NEED_SESSION_ID);
                         return;
                     }
                     long j2 = -1;
                     long j3 = -2;
-                    if (TextUtils.isEmpty(optString5)) {
+                    if (StringUtils.isEmpty(optString5)) {
                         try {
                             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                             j2 = simpleDateFormat.parse(optString3).getTime();
@@ -329,7 +329,7 @@ public class TLogDiagnose extends android.taobao.windvane.jsbridge.e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("431e8d55", new Object[]{this, wVCallBackContext, str, str2, str3, map});
-        } else if (!TextUtils.isEmpty(str) && str.equals(this.sessionID)) {
+        } else if (!StringUtils.isEmpty(str) && str.equals(this.sessionID)) {
             String.format("UploadDiagnose: sessionID=%s, stage=%s, event=%s, data=%s", str, str2, str3, map);
             try {
                 JSONObject jSONObject = new JSONObject();

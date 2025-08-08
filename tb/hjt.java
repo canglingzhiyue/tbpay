@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -134,7 +134,7 @@ public class hjt extends PagerAdapter implements PagerSlidingTabStripAType.b {
         if (list != null && list.size() > i) {
             LiveExpressionTabItem liveExpressionTabItem = this.c.get(i);
             TUrlImageView tUrlImageView = (TUrlImageView) inflate.findViewById(R.id.taolive_expression_tab_image);
-            if (!TextUtils.isEmpty(liveExpressionTabItem.resUrl)) {
+            if (!StringUtils.isEmpty(liveExpressionTabItem.resUrl)) {
                 tUrlImageView.setImageUrl(liveExpressionTabItem.resUrl);
             }
         }

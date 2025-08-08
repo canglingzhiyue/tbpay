@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -43,11 +43,11 @@ public class h implements com.alibaba.android.ultron.vfw.viewholder.f {
             return 0;
         }
         String string = containerInfo.getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return 0;
         }
         for (Pair<String, Integer> pair : this.b) {
-            if (pair != null && TextUtils.equals(string, (CharSequence) pair.first)) {
+            if (pair != null && StringUtils.equals(string, (CharSequence) pair.first)) {
                 return ((Integer) pair.second).intValue();
             }
         }

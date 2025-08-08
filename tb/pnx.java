@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -107,7 +107,7 @@ public class pnx {
         }
         String string = jSONObject.getString("utLogMap");
         try {
-            return !TextUtils.isEmpty(string) ? JSON.parseObject(URLDecoder.decode(string, "utf-8")) : jSONObject2;
+            return !StringUtils.isEmpty(string) ? JSON.parseObject(URLDecoder.decode(string, "utf-8")) : jSONObject2;
         } catch (UnsupportedEncodingException e) {
             ldf.a("TitleInfoUserTraceReporter", "getAlgorithmParams error", e);
             return jSONObject2;

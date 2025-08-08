@@ -1,6 +1,6 @@
 package com.taobao.search.sf.datasource;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -58,7 +58,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (JSONArray) ipChange.ipc$dispatch("e47bc7cc", new Object[]{this, str});
         }
-        if (!TextUtils.equals(str, this.f19439a)) {
+        if (!StringUtils.equals(str, this.f19439a)) {
             return null;
         }
         return this.b;

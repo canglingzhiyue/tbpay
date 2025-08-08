@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.localization.b;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -57,14 +57,14 @@ public final class npd {
                 if (a2 != null) {
                     tBErrorView.setStatus(TBErrorView.Status.STATUS_EMPTY);
                     String optString = a2.optString("mainTitle", "");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         tBErrorView.setTitle(optString);
                     }
-                    if (!TextUtils.isEmpty(a2.optString(MspFlybirdDefine.FLYBIRD_DIALOG_SUB_TITLE, ""))) {
+                    if (!StringUtils.isEmpty(a2.optString(MspFlybirdDefine.FLYBIRD_DIALOG_SUB_TITLE, ""))) {
                         tBErrorView.setTitle(optString);
                     }
                     String optString2 = a2.optString("imageUrl");
-                    if (!TextUtils.isEmpty(optString2)) {
+                    if (!StringUtils.isEmpty(optString2)) {
                         tBErrorView.setIconUrl(optString2);
                     }
                     if (!a2.optBoolean("showRetry", true)) {

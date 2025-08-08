@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -119,7 +119,7 @@ public class nue implements iua {
             return;
         }
         this.b = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             k.e("SearchTemplateRewrite", "CONFIG_EMPTY");
             return;
         }
@@ -131,7 +131,7 @@ public class nue implements iua {
             String string2 = jSONObject.getString("newUrl");
             String string3 = jSONObject.getString("md5");
             String string4 = jSONObject.getString("ab");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3) && !TextUtils.isEmpty(string4)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3) && !StringUtils.isEmpty(string4)) {
                 if (Integer.parseInt(string4) > c) {
                     k.e("SearchTemplateRewrite", "REWRITE: " + jSONObject.toJSONString());
                     this.b.put(string, new Pair<>(string2, string3));

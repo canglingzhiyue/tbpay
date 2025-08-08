@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.desktop.channel.desktoplinktask.floatwindow.b;
@@ -44,7 +44,7 @@ public class kgx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f26f657", new Object[]{eVar, bVar, str, list});
-        } else if (TextUtils.isEmpty(str) || (a2 = a(str, list)) == null) {
+        } else if (StringUtils.isEmpty(str) || (a2 = a(str, list)) == null) {
         } else {
             JSONObject jSONObject = a2.trigger;
             if ("autoCountDown".equals(str)) {

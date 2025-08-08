@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,9 +19,9 @@ public class cuh {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str) && str.indexOf("?") > 0) {
+        if (!StringUtils.isEmpty(str) && str.indexOf("?") > 0) {
             String substring = str.substring(str.indexOf("?") + 1);
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 return hashMap;
             }
             for (String str2 : substring.split("&")) {

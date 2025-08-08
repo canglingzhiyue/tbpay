@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -201,7 +201,7 @@ public class IrpParamModel extends e {
             return ((Boolean) ipChange.ipc$dispatch("e0a07589", new Object[]{this})).booleanValue();
         }
         Map<String, String> map = this.k;
-        return map != null && TextUtils.equals(map.get("tkExtension"), "true");
+        return map != null && StringUtils.equals(map.get("tkExtension"), "true");
     }
 
     public void setFromOuterApp(boolean z) {
@@ -241,7 +241,7 @@ public class IrpParamModel extends e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e75548ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int lastIndexOf = str.lastIndexOf("://a.m.taobao.com/i");
@@ -257,7 +257,7 @@ public class IrpParamModel extends e {
             }
             str2 = "";
         }
-        return TextUtils.isEmpty(str2) ? "" : str2;
+        return StringUtils.isEmpty(str2) ? "" : str2;
     }
 
     public static ImageRule getImageRule(Context context) {
@@ -321,7 +321,7 @@ public class IrpParamModel extends e {
         builder.appendQueryParameter(d.KEY_RATIO, String.valueOf(this.o));
         builder.appendQueryParameter(d.KEY_DISTANCE, String.valueOf(this.p));
         String intelliHint = getIntelliHint();
-        if (!TextUtils.isEmpty(intelliHint)) {
+        if (!StringUtils.isEmpty(intelliHint)) {
             builder.appendQueryParameter(d.KEY_IRP_INTELLI_HINT, intelliHint);
         }
         Map<String, String> map = this.k;
@@ -330,10 +330,10 @@ public class IrpParamModel extends e {
                 builder.appendQueryParameter(entry.getKey(), entry.getValue());
             }
         }
-        if (!TextUtils.isEmpty(getSellerId())) {
+        if (!StringUtils.isEmpty(getSellerId())) {
             builder.appendQueryParameter("sellerId", getSellerId());
         }
-        if (!TextUtils.isEmpty(getShopId())) {
+        if (!StringUtils.isEmpty(getShopId())) {
             builder.appendQueryParameter("shopId", getShopId());
         }
         Map<String, String> map2 = this.l;
@@ -392,13 +392,13 @@ public class IrpParamModel extends e {
         irpParamModel.setPssource(bundle.getString("pssource"));
         irpParamModel.setPicUrl(Uri.parse(string));
         String string2 = bundle.getString("source");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             irpParamModel.setPhotoSource(Integer.parseInt(string2));
         } else {
             irpParamModel.setPhotoSource(0);
         }
         String string3 = bundle.getString(d.KEY_PHOTO_FROM);
-        if (!TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string3)) {
             irpParamModel.setPhotoFrom(PhotoFrom.Values.parseValue(string3));
         } else {
             irpParamModel.setPhotoFrom(PhotoFrom.Values.PREVIEW);
@@ -423,29 +423,29 @@ public class IrpParamModel extends e {
             }
         }
         String queryParameter = data.getQueryParameter("region");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             irpParamModel.setRegion(queryParameter);
         }
         String queryParameter2 = data.getQueryParameter("shopId");
-        if (!TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter2)) {
             irpParamModel.setShopId(queryParameter2);
         }
         String queryParameter3 = data.getQueryParameter("sellerId");
-        if (TextUtils.isEmpty(queryParameter3)) {
+        if (StringUtils.isEmpty(queryParameter3)) {
             queryParameter3 = data.getQueryParameter("seller_id");
         }
-        if (TextUtils.isEmpty(queryParameter3)) {
+        if (StringUtils.isEmpty(queryParameter3)) {
             queryParameter3 = data.getQueryParameter("sellerid");
         }
         irpParamModel.setSellerId(queryParameter3);
         String queryParameter4 = data.getQueryParameter(d.KEY_PIC_URL);
-        if (!TextUtils.isEmpty(queryParameter4)) {
+        if (!StringUtils.isEmpty(queryParameter4)) {
             irpParamModel.setPicUrl(Uri.parse(queryParameter4));
         }
         irpParamModel.setOrientation(cov.a(data.getQueryParameter("orientation"), 0));
         irpParamModel.setPhotoFrom(PhotoFrom.Values.parseValue(data.getQueryParameter(d.KEY_PHOTO_FROM)));
         String queryParameter5 = data.getQueryParameter(d.KEY_IRP_PAGE_CONFIG);
-        if (!TextUtils.isEmpty(queryParameter5)) {
+        if (!StringUtils.isEmpty(queryParameter5)) {
             irpParamModel.setPageConfig(IrpPageConfig.createFromJson(queryParameter5));
         }
         irpParamModel.setIntelliDetect(data.getBooleanQueryParameter(d.KEY_IRP_INTELLI, false));
@@ -458,7 +458,7 @@ public class IrpParamModel extends e {
             }
         }
         String queryParameter7 = data.getQueryParameter(d.KEY_IRP_JS_EXTRA);
-        if (!TextUtils.isEmpty(queryParameter7)) {
+        if (!StringUtils.isEmpty(queryParameter7)) {
             try {
                 for (Map.Entry<String, Object> entry : JSONObject.parseObject(queryParameter7).entrySet()) {
                     Object value = entry.getValue();
@@ -492,7 +492,7 @@ public class IrpParamModel extends e {
         if (ipChange instanceof IpChange) {
             return (RectF) ipChange.ipc$dispatch("e93e32e8", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             return null;
         }
         String[] split = this.e.split(",");
@@ -555,7 +555,7 @@ public class IrpParamModel extends e {
             return ((Boolean) ipChange.ipc$dispatch("b6bf26e0", new Object[]{this})).booleanValue();
         }
         Uri uri = this.f6804a;
-        if (uri != null && !TextUtils.isEmpty(uri.toString())) {
+        if (uri != null && !StringUtils.isEmpty(uri.toString())) {
             try {
                 String scheme = this.f6804a.getScheme();
                 if (!"http".equals(scheme) && !"https".equals(scheme)) {
@@ -580,7 +580,7 @@ public class IrpParamModel extends e {
             return ((Boolean) ipChange.ipc$dispatch("7d679ce5", new Object[]{this})).booleanValue();
         }
         Uri uri = this.f6804a;
-        if (uri == null || TextUtils.isEmpty(uri.toString())) {
+        if (uri == null || StringUtils.isEmpty(uri.toString())) {
             return false;
         }
         try {
@@ -740,7 +740,7 @@ public class IrpParamModel extends e {
     public String getExtraParamValue(String str) {
         Map<String, String> map;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("4cf5e991", new Object[]{this, str}) : (TextUtils.isEmpty(str) || (map = this.k) == null || map.isEmpty()) ? "" : this.k.get(str);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("4cf5e991", new Object[]{this, str}) : (StringUtils.isEmpty(str) || (map = this.k) == null || map.isEmpty()) ? "" : this.k.get(str);
     }
 
     public void addJsExtraParam(String str, String str2) {
@@ -837,7 +837,7 @@ public class IrpParamModel extends e {
                 break;
             }
             String str2 = bg[i];
-            if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(this.k.get(str2))) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(this.k.get(str2))) {
                 z = true;
                 break;
             }
@@ -867,7 +867,7 @@ public class IrpParamModel extends e {
                 break;
             }
             String str3 = bf[i3];
-            if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(this.k.get(str3))) {
+            if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(this.k.get(str3))) {
                 z2 = true;
                 break;
             }

@@ -1,7 +1,7 @@
 package com.taobao.flowcustoms.afc.utils;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
 import com.ut.mini.UTAnalytics;
@@ -109,7 +109,7 @@ public class b {
         String c = kog.a().c(mpa.COLD);
         long a4 = kog.a().a(0L);
         String d = kog.a().d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             d = d.toLowerCase();
         }
         map.put("isInBackground", String.valueOf(a3));

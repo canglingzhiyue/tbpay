@@ -1,6 +1,6 @@
 package com.taobao.themis.open.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONArray;
@@ -69,12 +69,12 @@ public class TMSSubPackageBridge implements com.taobao.themis.kernel.ability.bas
                 return;
             }
             String string = jSONArray.getString(0);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.FORBIDDEN_ERROR);
                 return;
             }
             String string2 = e.getString(string);
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.FORBIDDEN_ERROR);
                 return;
             }
@@ -135,7 +135,7 @@ public class TMSSubPackageBridge implements com.taobao.themis.kernel.ability.bas
             ITMSPage d = apiContext.d();
             if (d == null) {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.FORBIDDEN_ERROR);
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 TMSLogger.d("TMSSubPackageBridge", "loadSubPackage...non getSubPackages" + c.v());
                 bridgeCallback.sendBridgeResponse(new BridgeResponse.Error(11, "非分包模式_3"));
             } else {

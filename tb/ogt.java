@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.procedure.g;
@@ -55,7 +55,7 @@ public class ogt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1820ffa6", new Object[]{abVar, str});
         }
-        if (abVar.A() != null && abVar.A().c() != null && abVar.A().c().a() != null && !TextUtils.isEmpty(abVar.A().c().a().h)) {
+        if (abVar.A() != null && abVar.A().c() != null && abVar.A().c().a() != null && !StringUtils.isEmpty(abVar.A().c().a().h)) {
             return "gg_" + abVar.A().c().a().h + "_" + str;
         }
         return "gg_" + b(abVar.f()) + "_" + str;
@@ -66,7 +66,7 @@ public class ogt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("df88db6a", new Object[]{hVar, str});
         }
-        if (hVar.a() != null && !TextUtils.isEmpty(hVar.a().h)) {
+        if (hVar.a() != null && !StringUtils.isEmpty(hVar.a().h)) {
             return "gg_" + hVar.a().h + "_" + str;
         }
         return "gg_" + c(hVar.b) + "_" + str;
@@ -191,7 +191,7 @@ public class ogt {
             return (String) e2;
         }
         String str = (String) aaVar.a(1);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         ab.h c = aaVar.c();
@@ -204,7 +204,7 @@ public class ogt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "TNodeDefaultPageName";
         }
         Uri parse = Uri.parse(str);
@@ -222,7 +222,7 @@ public class ogt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "TNodeDefaultPageName";
         }
         String[] split = str.split("\\/");

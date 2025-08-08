@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.fragment.WVWebViewFragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -298,7 +298,7 @@ public class AuthEntranceActivity extends AppCompatActivity {
                 try {
                     Intent intent = new Intent();
                     intent.setData(Uri.parse(this.d));
-                    if (!TextUtils.isEmpty(this.e)) {
+                    if (!StringUtils.isEmpty(this.e)) {
                         intent.setAction(this.e);
                     }
                     List<ResolveInfo> queryIntentActivities = getPackageManager().queryIntentActivities(intent, 0);
@@ -315,10 +315,10 @@ public class AuthEntranceActivity extends AppCompatActivity {
                 if (getIntent() != null) {
                     Uri.Builder buildUpon = getIntent().getData().buildUpon();
                     buildUpon.appendQueryParameter(a.g, a.C0351a.c);
-                    if (!TextUtils.isEmpty(f)) {
+                    if (!StringUtils.isEmpty(f)) {
                         buildUpon.appendQueryParameter("callingPackage", f);
                     }
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         buildUpon.appendQueryParameter("callingPackageSign", str);
                     }
                     buildUpon.appendQueryParameter("supportAppSize", String.valueOf(i));
@@ -475,7 +475,7 @@ public class AuthEntranceActivity extends AppCompatActivity {
         if (getIntent() != null) {
             Log.e("login.AuthEntrance", "Nav.6 in data!=null");
             String dataString = getIntent().getDataString();
-            if (!TextUtils.isEmpty(dataString)) {
+            if (!StringUtils.isEmpty(dataString)) {
                 JSONObject bundleToJSON = BundleUtil.bundleToJSON(Uri.parse(dataString).getEncodedQuery());
                 try {
                     long currentTimeMillis = System.currentTimeMillis() - bundleToJSON.getLong("t").longValue();
@@ -559,7 +559,7 @@ public class AuthEntranceActivity extends AppCompatActivity {
         }
         UserTrackAdapter.sendUT(a(), "onBackPressed");
         try {
-            if (!TextUtils.isEmpty(a.h)) {
+            if (!StringUtils.isEmpty(a.h)) {
                 JSONObject parseObject = JSON.parseObject(a.h);
                 if (parseObject != null) {
                     parseObject.put(SSOIPCConstants.APPLY_SSO_RESULT, (Object) 504);

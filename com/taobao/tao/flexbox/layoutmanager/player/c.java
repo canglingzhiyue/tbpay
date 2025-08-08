@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.player;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -232,11 +232,11 @@ public class c implements e {
             return true;
         }
         if (viewParams.aO_()) {
-            if (TextUtils.isEmpty(viewParams.O)) {
+            if (StringUtils.isEmpty(viewParams.O)) {
                 ogg.a("playVideo failed for liveUrl empty");
                 return false;
             }
-        } else if (TextUtils.isEmpty(viewParams.f) && TextUtils.isEmpty(viewParams.e)) {
+        } else if (StringUtils.isEmpty(viewParams.f) && StringUtils.isEmpty(viewParams.e)) {
             ogg.a("playVideo failed for videoId empty");
             return false;
         }
@@ -465,7 +465,7 @@ public class c implements e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4be9f888", new Object[]{this, aVar, str});
-        } else if (aVar == null || TextUtils.isEmpty(str)) {
+        } else if (aVar == null || StringUtils.isEmpty(str)) {
         } else {
             this.m.put(str, aVar);
         }
@@ -495,7 +495,7 @@ public class c implements e {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("669e4a6a", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str) || (aVar = this.m.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (aVar = this.m.get(str)) == null) {
             return 0;
         }
         return aVar.b;

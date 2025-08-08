@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -307,7 +307,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
         } else if (!com.taobao.search.common.util.r.c()) {
             String i = this.f31639a.i();
             Map<String, String> c = this.f31639a.c();
-            if (TextUtils.equals(i, "all") && (f = this.f31639a.f(i)) != null && f.discovery != null && f.discovery.activateItems != null) {
+            if (StringUtils.equals(i, "all") && (f = this.f31639a.f(i)) != null && f.discovery != null && f.discovery.activateItems != null) {
                 StringBuilder sb = new StringBuilder();
                 for (ActivateBean activateBean : f.discovery.activateItems) {
                     if (sb.length() > 0) {
@@ -316,16 +316,16 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
                     sb.append(activateBean.keyword);
                 }
                 String sb2 = sb.toString();
-                if (!TextUtils.isEmpty(sb2)) {
+                if (!StringUtils.isEmpty(sb2)) {
                     c.put("multi_hintq_show", sb2);
                 }
             }
             SearchBarHintBean f2 = this.f31639a.f("all");
             if (f2 != null) {
-                if (TextUtils.equals(f2.aac, "true")) {
+                if (StringUtils.equals(f2.aac, "true")) {
                     c.put("isAacUser", "true");
                 }
-                if (!TextUtils.isEmpty(f2.iconName)) {
+                if (!StringUtils.isEmpty(f2.iconName)) {
                     c.put(ChangeAppIconBridge.KEY_ICONNAME, f2.iconName);
                 }
             }
@@ -362,7 +362,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
         } else if (map == null || !com.taobao.search.common.util.r.aJ()) {
         } else {
             String a2 = com.taobao.search.common.util.b.c().a(com.taobao.search.common.util.b.INVOKE_ID_SEARCH_DOOR_MAIN_PAGE, SearchDoorActivity.PAGE_NAME, Integer.valueOf(com.taobao.search.common.util.r.aM()));
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             map.put("bxFeature", a2);
@@ -379,7 +379,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
             postEvent(nqw.d.a(bVar));
             nrn.a().b(Integer.valueOf(this.f31639a.hashCode()), bVar.l);
         }
-        if (bVar == null || (TextUtils.isEmpty(bVar.j) && (bVar.d == null || bVar.d.size() == 0))) {
+        if (bVar == null || (StringUtils.isEmpty(bVar.j) && (bVar.d == null || bVar.d.size() == 0))) {
             q.b("ActivateWidget", "activate cell list is empty");
             AppMonitor.Alarm.commitFail("Page_SearchItemList", "SearchDoorMain", "10001", "EMPTY_RES");
             return;
@@ -395,7 +395,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
         if (!bVar.s) {
             a(bVar.f);
         }
-        if (!TextUtils.isEmpty(bVar.j)) {
+        if (!StringUtils.isEmpty(bVar.j)) {
             this.mActivity.runOnUiThread(new Runnable() { // from class: tb.nqd.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -441,7 +441,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             InterceptFrameLayout interceptFrameLayout = this.l;
             if (interceptFrameLayout == null) {
@@ -452,7 +452,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
                 interceptFrameLayout.setVisibility(0);
                 ((TRecyclerView) getView()).setVisibility(8);
             }
-            if (!TextUtils.isEmpty(this.n)) {
+            if (!StringUtils.isEmpty(this.n)) {
                 return;
             }
             this.n = str;
@@ -507,14 +507,14 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
 
     private boolean e(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : TextUtils.equals(com.taobao.android.searchbaseframe.util.r.a(str, "weex_mode"), "dom");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : StringUtils.equals(com.taobao.android.searchbaseframe.util.r.a(str, "weex_mode"), "dom");
     }
 
     public void a(List<ActivateTypedBean> list, com.taobao.search.searchdoor.sf.widgets.activate.data.bean.b bVar) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("85fa6ea5", new Object[]{this, list, bVar});
-        } else if (!TextUtils.equals("all", this.f31639a.i())) {
+        } else if (!StringUtils.equals("all", this.f31639a.i())) {
         } else {
             SearchDoorContext searchDoorContext = this.f31639a;
             SearchBarHintBean f = searchDoorContext.f(searchDoorContext.i());
@@ -727,7 +727,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
         if (ipChange instanceof IpChange) {
             return (TemplateBean) ipChange.ipc$dispatch("45058b5e", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.o.get(str);
         }
         return null;
@@ -739,7 +739,7 @@ public class nqd extends ius<Void, TRecyclerView, SearchDoorContext> implements 
         if (ipChange instanceof IpChange) {
             return (jvm.c) ipChange.ipc$dispatch("ad662293", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.p.get(str);
         }
         return null;

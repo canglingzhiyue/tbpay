@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.umbrella.link.export.TraceLogEventType;
@@ -691,7 +691,7 @@ public abstract class d<T extends com.taobao.android.detail2.core.framework.data
             ipChange.ipc$dispatch("199c9874", new Object[]{this, jSONObject, aVar});
         } else if (jSONObject == null || this.i == null) {
         } else {
-            if (!TextUtils.equals(jSONObject.getString("nid"), this.i.k)) {
+            if (!StringUtils.equals(jSONObject.getString("nid"), this.i.k)) {
                 a(false, "20803", "nid unmatch", aVar);
             } else if (this.k.m() == null || this.k.m().size() <= 1) {
                 a(false, "20804", "only one card", aVar);
@@ -739,7 +739,7 @@ public abstract class d<T extends com.taobao.android.detail2.core.framework.data
                 return;
             }
             String string = this.i.x().getString("nid");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.i.A.add(string);
             }
             this.i.c(jSONObject2);
@@ -799,7 +799,7 @@ public abstract class d<T extends com.taobao.android.detail2.core.framework.data
         } else if (jSONObject == null || this.k == null) {
         } else {
             String string = jSONObject.getString(KEY_SCROLL_ENABLE);
-            if (TextUtils.isEmpty(string) || !this.k.b("true".equals(string)) || ipa.B()) {
+            if (StringUtils.isEmpty(string) || !this.k.b("true".equals(string)) || ipa.B()) {
                 return;
             }
             fjt.a(fjt.TAG_SET_SCROLL_ENABLE, fjt.a("", jSONObject, this.k));
@@ -947,9 +947,9 @@ public abstract class d<T extends com.taobao.android.detail2.core.framework.data
             String string = jSONObject.getString("originalNid");
             String string2 = jSONObject.getString("targetNid");
             JSONObject jSONObject2 = jSONObject.getJSONObject("queryParams");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 a(aVar, "updateDetailResult", false, "20001", "originalNid为空");
-            } else if (TextUtils.isEmpty(string2)) {
+            } else if (StringUtils.isEmpty(string2)) {
                 a(aVar, "updateDetailResult", false, "20002", "targetNid为空");
             } else {
                 if (string.equals(string2)) {

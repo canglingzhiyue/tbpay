@@ -2,7 +2,7 @@ package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.mipush.sdk.b;
 import com.xiaomi.push.BuildConfig;
 import com.xiaomi.push.bm;
@@ -52,7 +52,7 @@ public class MiPushClient4Hybrid {
     private static short getDeviceStatus(MiPushMessage miPushMessage, boolean z) {
         String str = miPushMessage.getExtra() == null ? "" : miPushMessage.getExtra().get(Constants.EXTRA_KEY_HYBRID_DEVICE_STATUS);
         int i = 0;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             i = Integer.valueOf(str).intValue();
         }
         if (!z) {
@@ -73,7 +73,7 @@ public class MiPushClient4Hybrid {
             b.m1665a(context).a(c, aVar);
         }
         ArrayList arrayList = null;
-        if (!TextUtils.isEmpty(jdVar.f734e)) {
+        if (!StringUtils.isEmpty(jdVar.f734e)) {
             arrayList = new ArrayList();
             arrayList.add(jdVar.f734e);
         }
@@ -141,7 +141,7 @@ public class MiPushClient4Hybrid {
         jcVar.a(iq.Init);
         if (!com.xiaomi.push.j.m2123d()) {
             String d = com.xiaomi.push.i.d(context);
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 jcVar.i(bm.a(d));
             }
         }
@@ -160,7 +160,7 @@ public class MiPushClient4Hybrid {
 
     public static void removeDuplicateCache(Context context, MiPushMessage miPushMessage) {
         String str = miPushMessage.getExtra() != null ? miPushMessage.getExtra().get("jobkey") : null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = miPushMessage.getMessageId();
         }
         am.a(context, str);
@@ -177,7 +177,7 @@ public class MiPushClient4Hybrid {
             isVar.a(miPushMessage.getMessageId());
             isVar.a(Long.valueOf(miPushMessage.getExtra().get(Constants.EXTRA_KEY_HYBRID_MESSAGE_TS)).longValue());
             isVar.a(getDeviceStatus(miPushMessage, z));
-            if (!TextUtils.isEmpty(miPushMessage.getTopic())) {
+            if (!StringUtils.isEmpty(miPushMessage.getTopic())) {
                 isVar.c(miPushMessage.getTopic());
             }
             ao.a(context).a((ao) isVar, ic.AckMessage, false, bs.a(PushMessageHelper.generateMessage(miPushMessage)));

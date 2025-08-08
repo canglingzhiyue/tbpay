@@ -11,7 +11,7 @@ import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
@@ -297,7 +297,7 @@ public class SignalStateHelper {
             return;
         }
         try {
-            if (!TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.SINGAL_STATE_SWITCH), "T")) {
+            if (!StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.SINGAL_STATE_SWITCH), "T")) {
                 LogCatUtil.debug("SSMonitor", "singal state is off");
             } else if (!MiscUtils.isInAlipayClient(TransportEnvUtil.getContext())) {
                 LogCatUtil.debug("SSMonitor", "Not in Alipay,return.");
@@ -345,13 +345,13 @@ public class SignalStateHelper {
         monitorLoggerModel.setSubType("SignalState");
         monitorLoggerModel.setParam1(MonitorLoggerUtils.getLogBizType("SignalState"));
         monitorLoggerModel.setParam2("INFO");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             monitorLoggerModel.getExtPramas().put(RPCDataItems.CELLINFO, str3);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             monitorLoggerModel.getExtPramas().put(RPCDataItems.SIGNAL_STATE, str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             monitorLoggerModel.getExtPramas().put(RPCDataItems.SIGNAL_STATE, str2);
         }
         monitorLoggerModel.getExtPramas().put(RPCDataItems.QOS, String.valueOf(AlipayQosService.getInstance().getQosLevel()));

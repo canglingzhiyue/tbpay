@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.datasource.impl.cell;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,22 +55,22 @@ public abstract class a<BEAN extends BaseCellBean> extends c<BEAN, BaseSearchRes
         }
         JSONObject b = com.taobao.android.searchbaseframe.util.a.b(jSONObject, "info");
         bean.cardType = jSONObject.getString(fjp.BIZ_CONTEXT_KEY_CARD_TYPE);
-        if (TextUtils.isEmpty(bean.cardType) && b != null) {
+        if (StringUtils.isEmpty(bean.cardType) && b != null) {
             bean.cardType = b.getString(fjp.BIZ_CONTEXT_KEY_CARD_TYPE);
         }
         bean.bizItemId = jSONObject.getString("bizItemId");
-        if (TextUtils.isEmpty(bean.bizItemId) && b != null) {
+        if (StringUtils.isEmpty(bean.bizItemId) && b != null) {
             bean.bizItemId = b.getString("bizItemId");
         }
         bean.isP4p = jSONObject.getBooleanValue(nog.PRD_IS_P4P);
         bean.isDynamicLandP4p = jSONObject.getBooleanValue(nog.PRD_IS_DYNAMIC_LAND_P4P);
         bean.itemId = jSONObject.getString("item_id");
         String string = jSONObject.getString("curItemIds");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             bean.curItemIds = string.split(",");
         }
         String string2 = jSONObject.getString("curP4pIds");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             bean.curP4pIds = string2.split(",");
         }
         super.a(jSONObject, (JSONObject) bean, (BEAN) baseSearchResult);

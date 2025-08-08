@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.nextrpc.AURANextRPCEndpoint;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,11 +64,11 @@ public class bqh {
             mtopBusiness.mo1340setBizId(bizId);
         }
         String unitStrategy = aURANextRPCEndpoint.getUnitStrategy();
-        if (!TextUtils.isEmpty(unitStrategy)) {
+        if (!StringUtils.isEmpty(unitStrategy)) {
             mtopBusiness.mo1328setUnitStrategy(unitStrategy);
         }
         String ttid = aURANextRPCEndpoint.getTtid();
-        if (!TextUtils.isEmpty(ttid)) {
+        if (!StringUtils.isEmpty(ttid)) {
             mtopBusiness.mo1332ttid(ttid);
         }
         int timeout = aURANextRPCEndpoint.getTimeout();
@@ -80,7 +80,7 @@ public class bqh {
             mtopBusiness.mo1326setSocketTimeoutMilliSecond(socketTimeoutMilliSecond);
         }
         String pageUrl = aURANextRPCEndpoint.getPageUrl();
-        if (!TextUtils.isEmpty(pageUrl)) {
+        if (!StringUtils.isEmpty(pageUrl)) {
             mtopBusiness.mo1321setPageUrl(pageUrl);
         }
         Map<String, String> requestHeaders = aURANextRPCEndpoint.getRequestHeaders();
@@ -92,7 +92,7 @@ public class bqh {
             mtopBusiness.mo1339retryTime(retryTime);
         }
         String topic = aURANextRPCEndpoint.getTopic();
-        if (!TextUtils.isEmpty(topic)) {
+        if (!StringUtils.isEmpty(topic)) {
             mtopBusiness.mo1310setBizTopic(topic);
         }
         if (aURANextRPCEndpoint.getPrefetchMode() == 1) {

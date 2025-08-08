@@ -7,7 +7,7 @@ import android.location.LocationManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 
@@ -80,7 +80,7 @@ public class ndr {
         String c2 = this.g.c();
         boolean parseBoolean = Boolean.parseBoolean(this.g.b());
         nea.c("lbs_passive.loc_LPCF", "[isGatheringEnabled] reportSwitch=" + parseBoolean + ",clientSwitchStatus=" + c2);
-        if (TextUtils.isEmpty(c2)) {
+        if (StringUtils.isEmpty(c2)) {
             return parseBoolean;
         }
         nea.c("lbs_passive.loc_LPCF", "[isGatheringEnabled] clientSwitchStatus=" + c2);

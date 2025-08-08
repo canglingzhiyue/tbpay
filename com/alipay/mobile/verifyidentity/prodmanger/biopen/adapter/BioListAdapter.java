@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.prodmanger.biopen.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -217,7 +217,7 @@ public class BioListAdapter extends BaseAdapter {
                 aVar.b.setVisibility(8);
             } else if ("close".equalsIgnoreCase(bioMenuData.sliderStatus)) {
                 aVar.d.setChecked(false);
-                if (!TextUtils.isEmpty(bioMenuData.desc)) {
+                if (!StringUtils.isEmpty(bioMenuData.desc)) {
                     aVar.b.setVisibility(0);
                     aVar.b.setText(bioMenuData.desc);
                 } else {

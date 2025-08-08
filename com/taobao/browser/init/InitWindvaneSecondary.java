@@ -8,7 +8,7 @@ import android.taobao.windvane.d;
 import android.taobao.windvane.jsbridge.c;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.h;
 import com.taobao.calendar.aidl.business.CalendarAidlAdapter;
@@ -48,7 +48,7 @@ public class InitWindvaneSecondary implements Serializable {
                 @Override // android.taobao.windvane.jsbridge.c
                 public Class<? extends e> getBridgeClass(String str) {
                     ServiceInfo serviceInfo;
-                    if (application != null && !TextUtils.isEmpty(str)) {
+                    if (application != null && !StringUtils.isEmpty(str)) {
                         Intent intent = new Intent(str.contains(q.a().f1672a) ? q.a().f1672a : str);
                         intent.setPackage(application.getPackageName());
                         List<ResolveInfo> queryIntentServices = application.getPackageManager().queryIntentServices(intent, 4);

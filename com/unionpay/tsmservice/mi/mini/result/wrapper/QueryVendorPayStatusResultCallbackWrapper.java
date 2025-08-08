@@ -2,7 +2,7 @@ package com.unionpay.tsmservice.mi.mini.result.wrapper;
 
 import android.os.Bundle;
 import android.os.Parcel;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.unionpay.tsmservice.mi.mini.ITsmCallback;
 import com.unionpay.tsmservice.mi.mini.result.QueryVendorPayStatusResult;
@@ -16,7 +16,7 @@ public class QueryVendorPayStatusResultCallbackWrapper extends BaseResultCallbac
     private void getCallbackResultData(Bundle bundle) {
         Parcel obtain = Parcel.obtain();
         String string = bundle.getString("result");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             byte[] decode = Base64.decode(string, 0);
             if (decode != null && decode.length != 0) {
                 obtain.unmarshall(decode, 0, decode.length);

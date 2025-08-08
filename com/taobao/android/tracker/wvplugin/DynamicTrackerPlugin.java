@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tracker.util.a;
@@ -27,7 +27,7 @@ public class DynamicTrackerPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         c.a("updateConfig  start");
-        if (!TextUtils.isEmpty(str) && "updateConfig".equalsIgnoreCase(str)) {
+        if (!StringUtils.isEmpty(str) && "updateConfig".equalsIgnoreCase(str)) {
             updateConfig(str2);
         }
         c.a("updateConfig  end");

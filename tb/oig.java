@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
 import com.taobao.share.globalmodel.e;
@@ -61,7 +61,7 @@ public class oig {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("2d0431ca", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap<String, a> a2 = a();
@@ -76,17 +76,17 @@ public class oig {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || (j = e.b().j()) == null) {
+        } else if (StringUtils.isEmpty(str) || (j = e.b().j()) == null) {
         } else {
             String str4 = j.businessId;
             if (ShareTargetType.Share2Contact.getValue().equals(str)) {
                 return;
             }
             Properties properties = new Properties();
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 properties.put("Type", str3);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 properties.put("bizID", str4);
             }
             j.fillUTProperties(properties);

@@ -7,7 +7,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -31,7 +31,7 @@ public class mtb {
         }
         Intent intent = new Intent();
         intent.setFlags(335544320);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String str2 = "notification--[url:" + str + riy.ARRAY_END_STR;
             try {
                 intent.setData(Uri.parse(str));
@@ -41,7 +41,7 @@ public class mtb {
                 ResolveInfo resolveActivity = context.getPackageManager().resolveActivity(intent, 65536);
                 if (resolveActivity != null && (activityInfo = resolveActivity.activityInfo) != null) {
                     String str3 = activityInfo.name;
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         intent.setClassName(packageName, str3);
                         String str4 = "activityInfo.name--[" + activityInfo.name + riy.ARRAY_END_STR;
                     }
@@ -66,7 +66,7 @@ public class mtb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a729a6a", new Object[]{context, str, bundle});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             a(context, str);
         } else {
             Nav.from(context).withExtras(bundle).withFlags(335544320).toUri(str);

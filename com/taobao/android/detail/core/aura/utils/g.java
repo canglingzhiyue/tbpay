@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.aura.utils;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
 import com.alibaba.fastjson.JSONArray;
@@ -37,21 +37,21 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         String[] split2 = str2.split(":");
-        if (split2.length != 2 || TextUtils.isEmpty(split2[0])) {
+        if (split2.length != 2 || StringUtils.isEmpty(split2[0])) {
             return null;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         StringBuilder sb = new StringBuilder();
         for (String str3 : str.split(";")) {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 String[] split3 = str3.split(":");
-                if (split3.length == 2 && TextUtils.equals(split3[0], split2[0])) {
+                if (split3.length == 2 && StringUtils.equals(split3[0], split2[0])) {
                     str3 = str2;
                 }
                 sb.append(";");
@@ -122,10 +122,10 @@ public class g {
             return ((Boolean) ipChange.ipc$dispatch("c1aa3527", new Object[]{str, list})).booleanValue();
         }
         if (list == null || list.isEmpty()) {
-            return TextUtils.isEmpty(str);
+            return StringUtils.isEmpty(str);
         }
         for (String str2 : list) {
-            if (TextUtils.equals(str2, str)) {
+            if (StringUtils.equals(str2, str)) {
                 return true;
             }
         }
@@ -153,7 +153,7 @@ public class g {
         int b = emj.b(recyclerView);
         int size = a3.size();
         AURARenderComponent aURARenderComponent = null;
-        if (TextUtils.equals(str, a((b < 0 || b >= size) ? null : a3.get(b)))) {
+        if (StringUtils.equals(str, a((b < 0 || b >= size) ? null : a3.get(b)))) {
             return true;
         }
         int i = 0;
@@ -162,7 +162,7 @@ public class g {
                 break;
             }
             AURARenderComponent aURARenderComponent2 = a3.get(i);
-            if (TextUtils.equals(str, a(aURARenderComponent2))) {
+            if (StringUtils.equals(str, a(aURARenderComponent2))) {
                 aURARenderComponent = aURARenderComponent2;
                 break;
             }
@@ -192,7 +192,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3eb52596", new Object[]{context, aURAEventIO, str});
-        } else if (context == null || aURAEventIO == null || TextUtils.isEmpty(str) || !(context instanceof DetailCoreActivity) || aURAEventIO.getEventModel().c() == null) {
+        } else if (context == null || aURAEventIO == null || StringUtils.isEmpty(str) || !(context instanceof DetailCoreActivity) || aURAEventIO.getEventModel().c() == null) {
         } else {
             aURAEventIO.getEventModel().c().put(KEY_PV_PATH, (Object) str);
             Event a3 = d.a((DetailCoreActivity) context, aURAEventIO, d.ROUTE_TABLE);

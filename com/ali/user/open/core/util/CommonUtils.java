@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.WebView;
 import android.widget.Toast;
 import com.ali.user.open.core.AliMemberSDK;
@@ -59,7 +59,7 @@ public class CommonUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("483ed10d", new Object[]{str, map});
-        } else if (TextUtils.isEmpty(str) || AliMemberSDK.getService(UserTrackerService.class) == null) {
+        } else if (StringUtils.isEmpty(str) || AliMemberSDK.getService(UserTrackerService.class) == null) {
         } else {
             ((UserTrackerService) AliMemberSDK.getService(UserTrackerService.class)).send(str, map);
         }
@@ -349,8 +349,8 @@ public class CommonUtils {
                 HashSet<String> hashSet = new HashSet();
                 String absolutePath = context.getDataDir().getAbsolutePath();
                 String processName = getProcessName(context);
-                if (!TextUtils.equals(context.getPackageName(), processName)) {
-                    if (TextUtils.isEmpty(processName)) {
+                if (!StringUtils.equals(context.getPackageName(), processName)) {
+                    if (StringUtils.isEmpty(processName)) {
                         processName = context.getPackageName();
                     }
                     WebView.setDataDirectorySuffix(processName);

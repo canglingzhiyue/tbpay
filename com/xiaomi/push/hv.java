@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transportext.biz.diagnose.network.Configuration;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -72,7 +72,7 @@ public class hv {
         }
 
         public boolean a(a aVar) {
-            return TextUtils.equals(aVar.f489a, this.f489a) && TextUtils.equals(aVar.f491b, this.f491b) && aVar.f24535a == this.f24535a && aVar.b == this.b && Math.abs(aVar.f488a - this.f488a) <= 5000;
+            return StringUtils.equals(aVar.f489a, this.f489a) && StringUtils.equals(aVar.f491b, this.f491b) && aVar.f24535a == this.f24535a && aVar.b == this.b && Math.abs(aVar.f488a - this.f488a) <= 5000;
         }
     }
 
@@ -116,7 +116,7 @@ public class hv {
     /* renamed from: a  reason: collision with other method in class */
     private static synchronized String m2020a(Context context) {
         synchronized (hv.class) {
-            if (!TextUtils.isEmpty(f486a)) {
+            if (!StringUtils.isEmpty(f486a)) {
                 return f486a;
             }
             return "";
@@ -131,7 +131,7 @@ public class hv {
     private static void a(Context context, String str, long j, boolean z, long j2) {
         int a2;
         boolean isEmpty;
-        if (context == null || TextUtils.isEmpty(str) || !"com.xiaomi.xmsf".equals(context.getPackageName()) || "com.xiaomi.xmsf".equals(str) || -1 == (a2 = a(context))) {
+        if (context == null || StringUtils.isEmpty(str) || !"com.xiaomi.xmsf".equals(context.getPackageName()) || "com.xiaomi.xmsf".equals(str) || -1 == (a2 = a(context))) {
             return;
         }
         synchronized (f485a) {
@@ -161,7 +161,7 @@ public class hv {
     /* renamed from: a  reason: collision with other method in class */
     public static synchronized void m2023a(String str) {
         synchronized (hv.class) {
-            if (!j.m2123d() && !TextUtils.isEmpty(str)) {
+            if (!j.m2123d() && !StringUtils.isEmpty(str)) {
                 f486a = str;
             }
         }

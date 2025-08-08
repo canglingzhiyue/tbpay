@@ -8,7 +8,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.jsbridge.q;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.webkit.ConsoleMessage;
@@ -193,7 +193,7 @@ public class PopLayerWebView extends PopLayerBaseView<WVUCWebView, d> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("89757c7a", new Object[]{this, str});
-        } else if (getWebView() == null || TextUtils.isEmpty(str)) {
+        } else if (getWebView() == null || StringUtils.isEmpty(str)) {
         } else {
             CommonJsApiManager.initCommonJsbridge();
             com.alibaba.poplayer.utils.c.a("Load url : %s.", str);
@@ -282,7 +282,7 @@ public class PopLayerWebView extends PopLayerBaseView<WVUCWebView, d> {
         try {
             super.init(context, (Context) dVar);
             String str = dVar.x().params;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject = (JSONObject) new JSONTokener(str).nextValue();
             }
         } catch (Throwable th) {

@@ -1,7 +1,7 @@
 package com.taobao.themis.web.solution;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -112,7 +112,7 @@ public class TMSLegacyWebSolution extends TMSBaseSolution {
                     return;
                 }
                 String g = access$000.g();
-                if (TextUtils.isEmpty(g) || !"true".equals(o.b(g).getQueryParameter("status_bar_transparent"))) {
+                if (StringUtils.isEmpty(g) || !"true".equals(o.b(g).getQueryParameter("status_bar_transparent"))) {
                     return;
                 }
                 com.taobao.themis.utils.b.c(access$000.o(), false);
@@ -163,7 +163,7 @@ public class TMSLegacyWebSolution extends TMSBaseSolution {
         Window.a aVar = new Window.a();
         aVar.a(Window.Theme.LIGHT);
         String pageBgColor = this.mInstance.q().getPageBgColor();
-        if (!TextUtils.isEmpty(pageBgColor)) {
+        if (!StringUtils.isEmpty(pageBgColor)) {
             aVar.a(pageBgColor);
         }
         Uri b = o.b(this.mInstance.g());

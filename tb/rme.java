@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -33,7 +33,7 @@ public class rme extends rmj {
         } else if (!(obj instanceof LinearLayout) || (linearLayout = (LinearLayout) obj) == null) {
         } else {
             String str4 = rlz.a().g(str3).get(str2);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str2 = str4;
             }
             HashMap<String, Object> hashMap = rlz.a().d(str, str3).get(str2);
@@ -63,7 +63,7 @@ public class rme extends rmj {
         } else if (linearLayout != null && hashMap != null && hashMap.size() != 0) {
             for (Map.Entry<String, Object> entry : hashMap.entrySet()) {
                 String valueOf = String.valueOf(entry.getKey());
-                if (!TextUtils.isEmpty(valueOf)) {
+                if (!StringUtils.isEmpty(valueOf)) {
                     Object value = entry.getValue();
                     try {
                         switch (rlp.a(valueOf)) {

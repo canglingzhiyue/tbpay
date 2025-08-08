@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.e;
@@ -32,7 +32,7 @@ public class fpr {
             return i;
         }
         String lowerCase = String.valueOf(obj).toLowerCase();
-        if (TextUtils.isEmpty(lowerCase)) {
+        if (StringUtils.isEmpty(lowerCase)) {
             if (e.a()) {
                 fpa.a(e.TAG, "size属性为空字符串");
             }

@@ -1,7 +1,7 @@
 package com.taobao.tblive.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -75,7 +75,7 @@ public class TBLiveWeexComponent extends WXComponent {
         String str2 = (String) getAttrs().get("bizCode");
         String str3 = (String) getAttrs().get("autoplay");
         String str4 = (String) getAttrs().get("receivePM");
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             this.mReceivePM = Boolean.valueOf(str4).booleanValue();
         }
         initLiveView(str, str2, Boolean.valueOf(str3).booleanValue());

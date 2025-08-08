@@ -3,7 +3,7 @@ package tb;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONAware;
@@ -200,7 +200,7 @@ public class neh implements c.a {
                 }
                 neh.b(neh.this);
                 final String a2 = neh.a(neh.this, manifestModel);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     neh.this.a();
                     return;
                 }
@@ -249,12 +249,12 @@ public class neh implements c.a {
             return null;
         }
         String str2 = manifestModel.worker.source;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.c = 4;
             return str2;
         }
         String str3 = manifestModel.worker.url;
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return null;
         }
         OfflineResourceInterceptor n = this.f.n();
@@ -263,24 +263,24 @@ public class neh implements c.a {
             z = false;
         } else {
             str = OfflineResourceInterceptor.a(str3);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.c = 2;
             }
         }
         com.taobao.pha.core.tabcontainer.c v = this.f.H().v();
-        if (TextUtils.isEmpty(str) && v != null) {
+        if (StringUtils.isEmpty(str) && v != null) {
             str = v.a(str3);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.c = 5;
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             nfh a2 = ngs.a(str3, "GET", null);
             if (a2 == null) {
                 aVar = new a(PHAErrorType.REFERENCE_ERROR, a.ERR_MSG_WORKER_DOWNLOAD_FAILED);
             } else if (a2.a() == 200) {
                 str = new String(a2.c());
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.c = 0;
                 }
             } else {
@@ -293,7 +293,7 @@ public class neh implements c.a {
                 this.f.P().a(nfc.PHA_MONITOR_MODULE_POINT_LOAD_APPWORKER, aVar);
             }
         }
-        if (!TextUtils.isEmpty(str) && z && this.c == 0) {
+        if (!StringUtils.isEmpty(str) && z && this.c == 0) {
             OfflineResourceInterceptor.a(str3, str);
         }
         ngr.c(d, "fetch work js, fetchType is " + this.c + ",cost " + (System.currentTimeMillis() - currentTimeMillis) + " ms");
@@ -311,7 +311,7 @@ public class neh implements c.a {
             return;
         }
         String a2 = j.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         a(a2);
@@ -322,7 +322,7 @@ public class neh implements c.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e19fb517", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a(new Runnable() { // from class: tb.neh.4
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -346,7 +346,7 @@ public class neh implements c.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Runnable runnable = new Runnable() { // from class: tb.neh.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -493,7 +493,7 @@ public class neh implements c.a {
                                     jSONAware = obj instanceof JSON ? (JSON) obj : null;
                                 }
                                 final String string = parseObject.getString("callbackId");
-                                if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+                                if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
                                     a.InterfaceC0751a interfaceC0751a = new a.InterfaceC0751a() { // from class: tb.neh.8.1
                                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -561,7 +561,7 @@ public class neh implements c.a {
                         return ipChange2.ipc$dispatch("b04b5f0", new Object[]{this, nemVar});
                     }
                     String b = nemVar.b(0);
-                    if (!TextUtils.isEmpty(b)) {
+                    if (!StringUtils.isEmpty(b)) {
                         try {
                             manifestModel = (ManifestModel) JSONObject.parseObject(b, ManifestModel.class);
                         } catch (Throwable unused) {
@@ -633,7 +633,7 @@ public class neh implements c.a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str2});
-                } else if (TextUtils.isEmpty(str2)) {
+                } else if (StringUtils.isEmpty(str2)) {
                 } else {
                     String uri = neh.e(neh.this).t().toString();
                     JSONObject jSONObject = new JSONObject();

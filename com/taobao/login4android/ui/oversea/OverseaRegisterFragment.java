@@ -2,7 +2,7 @@ package com.taobao.login4android.ui.oversea;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
@@ -87,7 +87,7 @@ public class OverseaRegisterFragment extends TaobaoTwoStepMobileRegFragment {
         super.initViews(view);
         String regBgImage = UserLoginActivity.getRegBgImage(this.mFireAppLaunchRes);
         int i = 8;
-        if (!TextUtils.isEmpty(regBgImage)) {
+        if (!StringUtils.isEmpty(regBgImage)) {
             if (this.mWelcomeTV != null) {
                 this.mWelcomeTV.setVisibility(8);
             }

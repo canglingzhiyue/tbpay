@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -109,7 +109,7 @@ public class b {
         } else {
             String string = liveItem.itemExtData.getString("timingUpShelfStatus");
             long longValue = liveItem.itemExtData.getLongValue("timingStarts");
-            if (!TextUtils.equals("0", string) || longValue <= 0 || !TextUtils.isEmpty(liveItem.itemExtData.getString("native_timingStarts"))) {
+            if (!StringUtils.equals("0", string) || longValue <= 0 || !StringUtils.isEmpty(liveItem.itemExtData.getString("native_timingStarts"))) {
                 return;
             }
             liveItem.itemExtData.put("native_timingStarts", (Object) hiq.a(longValue, "开抢"));
@@ -145,7 +145,7 @@ public class b {
         } else {
             if (!z) {
                 liveItem.itemExtData.remove("preSaleStatus");
-            } else if (!TextUtils.equals("0", liveItem.itemExtData.getString("preSaleStatus"))) {
+            } else if (!StringUtils.equals("0", liveItem.itemExtData.getString("preSaleStatus"))) {
             } else {
                 long b = l.b(liveItem.itemExtData.getString("depositBegin"));
                 if (b < 0 || liveItem.itemExtData.containsKey("native_depositBegin")) {
@@ -161,7 +161,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ff4f9f87", new Object[]{this, liveItem});
-        } else if (liveItem == null || liveItem.extendVal == null || TextUtils.isEmpty(liveItem.extendVal.timeMovingTypeInfo) || (b = pqj.b(liveItem.extendVal.timeMovingTypeInfo)) == null || "1".equals((String) b.get(String.valueOf(liveItem.itemId)))) {
+        } else if (liveItem == null || liveItem.extendVal == null || StringUtils.isEmpty(liveItem.extendVal.timeMovingTypeInfo) || (b = pqj.b(liveItem.extendVal.timeMovingTypeInfo)) == null || "1".equals((String) b.get(String.valueOf(liveItem.itemId)))) {
         } else {
             liveItem.extendVal.playUrl = null;
             liveItem.extendVal.timeMovingPlayInfo = null;
@@ -194,10 +194,10 @@ public class b {
             ipChange.ipc$dispatch("72c5b593", new Object[]{liveItem, videoInfo, str});
         } else if (liveItem == null || videoInfo == null || !com.taobao.taolive.sdk.goodlist.d.a(videoInfo.itemTransferInfo)) {
         } else {
-            if (!TextUtils.isEmpty(liveItem.extendVal.tradeParamsForPcg)) {
+            if (!StringUtils.isEmpty(liveItem.extendVal.tradeParamsForPcg)) {
                 liveItem.extendVal.tradeParams = liveItem.extendVal.tradeParamsForPcg;
             }
-            if (!TextUtils.equals(str, Long.toString(liveItem.itemId))) {
+            if (!StringUtils.equals(str, Long.toString(liveItem.itemId))) {
                 return;
             }
             liveItem.itemExtData.put("rec0", (Object) "true");
@@ -238,7 +238,7 @@ public class b {
             ipChange.ipc$dispatch("78396405", new Object[]{liveItem});
         } else if (liveItem != null && liveItem.itemExtData != null) {
             for (String str : liveItem.itemExtData.keySet()) {
-                if (!TextUtils.isEmpty(str) && (obj = liveItem.itemExtData.get(str)) != null && !(obj instanceof JSON)) {
+                if (!StringUtils.isEmpty(str) && (obj = liveItem.itemExtData.get(str)) != null && !(obj instanceof JSON)) {
                     liveItem.itemExtData.put(str, (Object) obj.toString());
                 }
             }
@@ -269,7 +269,7 @@ public class b {
             }
             for (int i = 0; i < parseArray.size(); i++) {
                 JSONObject jSONObject2 = parseArray.getJSONObject(i);
-                if (jSONObject2 != null && !TextUtils.isEmpty(jSONObject2.getString("type")) && !a(liveItem.native_itemBenefits, jSONObject2)) {
+                if (jSONObject2 != null && !StringUtils.isEmpty(jSONObject2.getString("type")) && !a(liveItem.native_itemBenefits, jSONObject2)) {
                     jSONArray.add(jSONObject2);
                 }
             }
@@ -289,8 +289,8 @@ public class b {
                     JSONObject jSONObject3 = (JSONObject) obj;
                     JSONObject jSONObject4 = (JSONObject) obj2;
                     int i2 = Integer.MAX_VALUE;
-                    int a4 = !TextUtils.isEmpty(jSONObject3.getString("orderVal")) ? l.a(jSONObject3.getString("orderVal")) : Integer.MAX_VALUE;
-                    if (!TextUtils.isEmpty(jSONObject4.getString("orderVal"))) {
+                    int a4 = !StringUtils.isEmpty(jSONObject3.getString("orderVal")) ? l.a(jSONObject3.getString("orderVal")) : Integer.MAX_VALUE;
+                    if (!StringUtils.isEmpty(jSONObject4.getString("orderVal"))) {
                         i2 = l.a(jSONObject4.getString("orderVal"));
                     }
                     return a4 - i2;
@@ -306,7 +306,7 @@ public class b {
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject2 = jSONArray.getJSONObject(i);
-            if (jSONObject2 != null && TextUtils.equals(jSONObject.getString("type"), jSONObject2.getString("type"))) {
+            if (jSONObject2 != null && StringUtils.equals(jSONObject.getString("type"), jSONObject2.getString("type"))) {
                 return true;
             }
         }

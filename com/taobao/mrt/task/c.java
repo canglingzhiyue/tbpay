@@ -1,6 +1,6 @@
 package com.taobao.mrt.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.service.a;
 import com.taobao.mrt.task.desc.MRTResourceDescription;
@@ -126,10 +126,10 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c4d2b3cd", new Object[]{this, str, mRTResourceDescription})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.mrt.utils.a.c("MRTDownloadTask", "zipFilePath is null");
             return false;
-        } else if (TextUtils.isEmpty(mRTResourceDescription.resourceRootDirectory)) {
+        } else if (StringUtils.isEmpty(mRTResourceDescription.resourceRootDirectory)) {
             com.taobao.mrt.utils.a.c("MRTDownloadTask", "resourceRootDirectory is null");
             return false;
         } else {

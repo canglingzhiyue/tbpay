@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -182,7 +182,7 @@ public class TRNestedRenderContainer extends FrameLayout {
                     return;
                 }
                 super.handleMessage(message);
-                if (TRNestedRenderContainer.access$000(TRNestedRenderContainer.this) == null || message.what != 1 || TextUtils.isEmpty(TRNestedRenderContainer.access$100(TRNestedRenderContainer.this)) || TRNestedRenderContainer.access$100(TRNestedRenderContainer.this).indexOf("flagship_loft_show=1") >= 0 || TRNestedRenderContainer.access$200(TRNestedRenderContainer.this) || Math.abs(TRNestedRenderContainer.access$300(TRNestedRenderContainer.this) - TRNestedRenderContainer.access$400(TRNestedRenderContainer.this)) <= 1.0f) {
+                if (TRNestedRenderContainer.access$000(TRNestedRenderContainer.this) == null || message.what != 1 || StringUtils.isEmpty(TRNestedRenderContainer.access$100(TRNestedRenderContainer.this)) || TRNestedRenderContainer.access$100(TRNestedRenderContainer.this).indexOf("flagship_loft_show=1") >= 0 || TRNestedRenderContainer.access$200(TRNestedRenderContainer.this) || Math.abs(TRNestedRenderContainer.access$300(TRNestedRenderContainer.this) - TRNestedRenderContainer.access$400(TRNestedRenderContainer.this)) <= 1.0f) {
                     return;
                 }
                 TRNestedRenderContainer.access$000(TRNestedRenderContainer.this).a("if(window.__WEEX_SCROLL__ && typeof window.__WEEX_SCROLL__ === 'function') {window['__WEEX_SCROLL(" + TRNestedRenderContainer.access$500(TRNestedRenderContainer.this) + ")__'](" + cbc.b(TRNestedRenderContainer.this.getContext(), -TRNestedRenderContainer.access$300(TRNestedRenderContainer.this)) + ")}");
@@ -279,8 +279,8 @@ public class TRNestedRenderContainer extends FrameLayout {
             this.firstMoveOffsetY = 0.0f;
             this.lastSendOffsetY = 0.0f;
             this.currentSendOffsetY = 0.0f;
-            if (this.render != null && !TextUtils.isEmpty(this.url) && this.url.indexOf("flagship_loft_show=1") < 0) {
-                if (TextUtils.isEmpty(this.mWeexViewID)) {
+            if (this.render != null && !StringUtils.isEmpty(this.url) && this.url.indexOf("flagship_loft_show=1") < 0) {
+                if (StringUtils.isEmpty(this.mWeexViewID)) {
                     this.render.a("if(window.__WEEX_SCROLL__ && typeof window.__WEEX_SCROLL__ === 'function') {window.__WEEX_SCROLL__('onTouchEnd')}");
                 } else {
                     this.render.a("if(window.__WEEX_SCROLL__ && typeof window.__WEEX_SCROLL__ === 'function') {window['__WEEX_SCROLL(" + this.mWeexViewID + ")__']('onTouchEnd')}");

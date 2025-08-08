@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.highPerformance.management;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridStage;
 import com.alibaba.fastjson.JSONObject;
@@ -209,9 +209,9 @@ public class g implements k {
             }
             for (com.alibaba.android.ultron.vfw.weex2.highPerformance.model.g gVar : b.d) {
                 if (gVar != null) {
-                    if (!TextUtils.equals(gVar.c, str2)) {
+                    if (!StringUtils.equals(gVar.c, str2)) {
                         jqg.b("UltronTradeHybridPreRequestFrontEndManager.launchPreRequestByScene", String.format("onFailure: %s_%s: no match stage", str, str2));
-                    } else if (TextUtils.isEmpty(gVar.b)) {
+                    } else if (StringUtils.isEmpty(gVar.b)) {
                         jqg.b("UltronTradeHybridPreRequestFrontEndManager.launchPreRequestByScene", String.format("onFailure: %s_%s: frontEndUrl is empty", str, str2));
                     } else {
                         com.alibaba.android.ultron.vfw.weex2.highPerformance.model.a c = this.f2779a.c(gVar.b);

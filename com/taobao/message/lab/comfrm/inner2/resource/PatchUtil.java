@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2.resource;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class PatchUtil {
         if (patchInfo != null && patchInfo2 == null) {
             return true;
         }
-        return (patchInfo == null || patchInfo2 == null || TextUtils.equals(patchInfo.patchVersion, patchInfo2.patchVersion)) ? false : true;
+        return (patchInfo == null || patchInfo2 == null || StringUtils.equals(patchInfo.patchVersion, patchInfo2.patchVersion)) ? false : true;
     }
 
     public static void commitMonitor(String str, String str2, String str3, boolean z, String str4) {
@@ -43,7 +43,7 @@ public class PatchUtil {
             return;
         }
         HashMap hashMap = new HashMap(4);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("patchVersion", str);
         }
         hashMap.put("stage", str2);
@@ -51,7 +51,7 @@ public class PatchUtil {
             str3 = "";
         }
         hashMap.put("file", str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             hashMap.put("hit", z ? "1" : "0");
             AppMonitor.Alarm.commitSuccess(Constants.Monitor.MODULE_MONITOR, Constants.Monitor.POINT_PATCH, JSON.toJSONString(hashMap));
             return;

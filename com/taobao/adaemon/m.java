@@ -152,7 +152,7 @@ public class m {
             r0 = 0
             java.lang.String r5 = "link_launch"
             java.lang.String r13 = r12.a(r13, r5)     // Catch: java.lang.Throwable -> L3b
-            boolean r5 = android.text.TextUtils.isEmpty(r13)     // Catch: java.lang.Throwable -> L3b
+            boolean r5 = android.text.StringUtils.isEmpty(r13)     // Catch: java.lang.Throwable -> L3b
             if (r5 != 0) goto L3b
             long r5 = java.lang.Long.parseLong(r13)     // Catch: java.lang.Throwable -> L3b
             goto L3c

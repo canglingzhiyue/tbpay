@@ -3,7 +3,7 @@ package tb;
 import android.text.GetChars;
 import android.text.Layout;
 import android.text.Spanned;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ReplacementSpan;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Array;
@@ -151,7 +151,7 @@ public class ofu implements GetChars, Spanned {
             ipChange.ipc$dispatch("989204ad", new Object[]{this, new Integer(i), new Integer(i2), cArr, new Integer(i3)});
             return;
         }
-        TextUtils.getChars(this.f32018a, i, i2, cArr, i3);
+        StringUtils.getChars(this.f32018a, i, i2, cArr, i3);
         Layout layout = this.b;
         if (layout == null) {
             return;

@@ -16,7 +16,7 @@ import android.support.v4.view.ViewCompat;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.TransformationMethod;
 import android.util.AttributeSet;
 import android.util.Property;
@@ -400,7 +400,7 @@ public class SwitchCompat extends CompoundButton {
             return super.getCompoundPaddingLeft();
         }
         int compoundPaddingLeft = super.getCompoundPaddingLeft() + this.mSwitchWidth;
-        return !TextUtils.isEmpty(getText()) ? compoundPaddingLeft + this.mSwitchPadding : compoundPaddingLeft;
+        return !StringUtils.isEmpty(getText()) ? compoundPaddingLeft + this.mSwitchPadding : compoundPaddingLeft;
     }
 
     @Override // android.widget.CompoundButton, android.widget.TextView
@@ -409,7 +409,7 @@ public class SwitchCompat extends CompoundButton {
             return super.getCompoundPaddingRight();
         }
         int compoundPaddingRight = super.getCompoundPaddingRight() + this.mSwitchWidth;
-        return !TextUtils.isEmpty(getText()) ? compoundPaddingRight + this.mSwitchPadding : compoundPaddingRight;
+        return !StringUtils.isEmpty(getText()) ? compoundPaddingRight + this.mSwitchPadding : compoundPaddingRight;
     }
 
     public boolean getShowText() {
@@ -557,9 +557,9 @@ public class SwitchCompat extends CompoundButton {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(ACCESSIBILITY_EVENT_CLASS_NAME);
         CharSequence charSequence = isChecked() ? this.mTextOn : this.mTextOff;
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             CharSequence text = accessibilityNodeInfo.getText();
-            if (TextUtils.isEmpty(text)) {
+            if (StringUtils.isEmpty(text)) {
                 accessibilityNodeInfo.setText(charSequence);
                 return;
             }

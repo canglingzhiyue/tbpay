@@ -1,6 +1,6 @@
 package com.o2o.ad.click.cpa;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.xsearchplugin.jarvis.utils.JarvisConstant;
 import java.util.HashMap;
@@ -51,7 +51,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("154c93a4", new Object[]{this, map});
         }
-        if (TextUtils.isEmpty(this.f8099a)) {
+        if (StringUtils.isEmpty(this.f8099a)) {
             return "";
         }
         String a2 = a();

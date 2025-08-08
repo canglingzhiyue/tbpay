@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.actions.InvokeActionPlugin;
@@ -34,7 +34,7 @@ public class LoadingStore extends LocalEventStore {
             MspDialogHelper mspDialogHelper = this.f4584a.getMspDialogHelper();
             if (mspDialogHelper != null) {
                 if (bool != null) {
-                    if (!TextUtils.equals(string2, InvokeActionPlugin.SHOW_LOADING_STYLE_PLAIN)) {
+                    if (!StringUtils.equals(string2, InvokeActionPlugin.SHOW_LOADING_STYLE_PLAIN)) {
                         if (bool.booleanValue()) {
                             mspDialogHelper.showDefaultLoading(string);
                         } else {

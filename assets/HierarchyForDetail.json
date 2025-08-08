@@ -1,0 +1,345 @@
+{
+  "hierarchy": {
+    "root": "detail",
+    "structure": {
+      "detail": [
+        "navibar",
+        "detailHome"
+      ],
+      "navibar": [
+        "naviItemLeft",
+        "naviItemCenter",
+        "naviItemCustom",
+        "naviItemRight",
+        "naviTabs"
+      ],
+      "naviTabs": [
+        "naviTabInfo",
+        "naviTabRate",
+        "naviTabDesc",
+        "naviTabDescRecmd"
+      ],
+      "detailHome": [
+        "detailInfo",
+        "divisionDesc",
+        "detailDesc",
+        "divisionDescRecmd",
+        "descRecmd",
+        "divisionEnd"
+      ]
+    }
+  },
+  "components": {
+    "detail": {
+      "type": "detail"
+    },
+    "navibar": {
+      "type": "detailNavibar"
+    },
+    "naviTabs": {
+      "type": "detailNaviTabs"
+    },
+    "naviItemLeft": {
+      "type": "detailNaviItem",
+      "payload": {
+        "accessHint": "返回",
+        "positionKey": "left",
+        "value": "ꁺ",
+        "titleSizeRatio": "0.375",
+        "secondActions": [
+          {
+            "type": "go_detail_home",
+            "eventToken": "${eventToken}",
+            "domain": "detail"
+          }
+        ]
+      },
+      "actions": [
+        "gotoPreviewPage"
+      ]
+    },
+    "naviItemCenter": {
+      "type": "detailNaviItem",
+      "payload": {
+        "itemType": "2",
+        "accessHint": "图片",
+        "positionKey": "center",
+        "value": "${item.images[0]}"
+      },
+      "actions": [
+        "naviShowBigPic",
+        "utNaviShowBigPic"
+      ]
+    },
+    "naviItemCustom": {
+      "type": "detailNaviItem",
+      "payload": {
+        "accessHint": "购物车",
+        "positionKey": "custom",
+        "value": "ꁊ",
+        "titleSizeRatio": "0.35"
+      },
+      "actions": [
+        "utGotoCart",
+        "openPageCart"
+      ]
+    },
+    "naviItemRight": {
+      "type": "detailNaviItem",
+      "payload": {
+        "accessHint": "更多",
+        "positionKey": "right",
+        "value": "ꁪ",
+        "titleSizeRatio": "0.375"
+      },
+      "actions": [
+        "showMenu"
+      ]
+    },
+    "naviTabInfo": {
+      "type": "detailNaviTabItem",
+      "payload": {
+        "iconUrl": "//img.alicdn.com/tps/TB1ZGAeOFXXXXa6XXXXXXXXXXXX",
+        "title": "宝贝"
+      },
+      "actions": [
+        "gotoDetailInfo",
+        "utClickDetailInfo"
+      ],
+      "style": "tab"
+    },
+    "naviTabRate": {
+      "type": "detailNaviTabItem",
+      "payload": {
+        "iconUrl": "//img.alicdn.com/tps/TB1ZGAeOFXXXXa6XXXXXXXXXXXX",
+        "title": "评价",
+        "pageName": "Page_DetailComments",
+        "secondActions": [
+          {
+            "type": "goto_rate_top",
+            "eventToken": "${eventToken}",
+            "domain": "detail"
+          }
+        ]
+      },
+      "actions": [
+        "gotoDetailRate",
+        "utClickDetailRate",
+        "utExposureDetailRate"
+      ],
+      "style": "tab"
+    },
+    "naviTabDesc": {
+      "type": "detailNaviTabItem",
+      "payload": {
+        "iconUrl": "//img.alicdn.com/tps/TB1ZGAeOFXXXXa6XXXXXXXXXXXX",
+        "title": "详情"
+      },
+      "actions": [
+        "gotoDetailDesc",
+        "utClickDetailDesc"
+      ],
+      "style": "tab"
+    },
+    "naviTabDescRecmd": {
+      "type": "detailNaviTabItem",
+      "payload": {
+        "iconUrl": "//img.alicdn.com/tps/TB1ZGAeOFXXXXa6XXXXXXXXXXXX",
+        "title": "推荐"
+      },
+      "actions": [
+        "gotoDescRecommend",
+        "utClickDescRecommend"
+      ],
+      "style": "tab"
+    },
+    "detailHome": {
+      "type": "detailHome",
+      "locatorId": "detailHome"
+    },
+    "detailInfo": {
+      "type": "detailInfo",
+      "locatorId": "detailInfo"
+    },
+    "divisionDesc": {
+      "type": "division",
+      "locatorId": "divisionDesc",
+      "payload": {
+        "displayType": "text",
+        "iconUrl": "//img.alicdn.com/tps/TB1182hOVXXXXcQXXXXXXXXXXXX",
+        "title": "详情",
+        "fgcolor": "0x999999"
+      }
+    },
+    "detailDesc": {
+      "type": "detailDesc",
+      "locatorId": "detailDesc",
+      "payload": {
+        "userId": "${seller.userId}",
+        "shopId": "${seller.shopId}",
+        "itemId": "${item.itemId}",
+        "moduleDescParams": "${item.moduleDescParams}",
+        "taobaoDescUrl": "${item.taobaoDescUrl}",
+        "taobaoPcDescUrl": "${item.taobaoPcDescUrl}"
+      },
+      "actions": [
+        "utExposureDetailDesc"
+      ]
+    },
+    "divisionDescRecmd": {
+      "type": "division",
+      "locatorId": "divisionDescRecmd",
+      "payload": {
+        "displayType": "text",
+        "iconUrl": "//img.alicdn.com/tps/TB1PGyPOVXXXXa8aXXXXXXXXXXX",
+        "title": "推荐",
+        "fgcolor": "0x999999"
+      }
+    },
+    "descRecmd": {
+      "type": "descRecmd",
+      "locatorId": "descRecmd",
+      "payload": {
+        "itemId": "${item.itemId}",
+        "from": "recCube",
+        "userId": "${seller.userId}",
+        "shopId": "${seller.shopId}"
+      },
+      "actions": [
+        "utExposureDescRecommend"
+      ]
+    },
+    "divisionEnd": {
+      "type": "division",
+      "payload": {
+        "displayType": "text",
+        "title": "已经到底了",
+        "fgcolor": "0x999999"
+      }
+    }
+  },
+  "actions": {
+    "gotoDetailInfo": {
+      "type": "locator",
+      "event": "click",
+      "params": {
+        "locatorId": "detailInfo"
+      }
+    },
+    "utClickDetailInfo": {
+      "type": "user_track",
+      "event": "click",
+      "params": {
+        "trackName": "GotoDetailHome",
+        "trackNamePre": "Button-"
+      }
+    },
+    "gotoDetailDesc": {
+      "type": "locator",
+      "event": "click",
+      "params": {
+        "locatorId": "divisionDesc"
+      }
+    },
+    "utClickDetailDesc": {
+      "type": "user_track",
+      "event": "click",
+      "params": {
+        "trackName": "gotoDetailDesc",
+        "trackNamePre": "Button-"
+      }
+    },
+    "utExposureDetailDesc": {
+      "type": "ut_exposure",
+      "params": {
+        "spm": "a2141.7631564.1999077549",
+        "scm": "",
+        "trackPage": "Page_Detail_Show_ProductDetail"
+      }
+    },
+    "gotoDetailRate": {
+      "type": "locator",
+      "event": "click",
+      "params": {
+        "locatorId": "divisionRate"
+      }
+    },
+    "utClickDetailRate": {
+      "type": "user_track",
+      "event": "click",
+      "params": {
+        "trackName": "GotoDetailRate",
+        "trackNamePre": "Button-"
+      }
+    },
+    "gotoUserTalk": {
+      "type": "locator",
+      "event": "click",
+      "params": {
+        "locatorId": "userSay"
+      }
+    },
+    "gotoDescRecommend": {
+      "type": "locator",
+      "event": "click",
+      "params": {
+        "locatorId": "divisionDescRecmd"
+      }
+    },
+    "utClickDescRecommend": {
+      "type": "user_track",
+      "event": "click",
+      "params": {
+        "trackName": "GotoShopRecommend",
+        "trackNamePre": "Button-"
+      }
+    },
+    "utExposureDescRecommend": {
+      "type": "ut_exposure",
+      "params": {
+        "spm": "a2141.7631564.2737766",
+        "trackPage": "Page_Detail_Show_Recommend"
+      }
+    },
+    "gotoPreviewPage": {
+      "type": "go_back"
+    },
+    "utGotoCart": {
+      "type": "user_track",
+      "params": {
+        "trackName": "cart",
+        "trackNamePre": "Button-"
+      }
+    },
+    "openPageCart": {
+      "type": "open_url",
+      "params": {
+        "url": "https://h5.m.taobao.com/awp/base/cart.htm",
+        "urlParams": {
+          "cartfrom": "detail",
+          "itemId": "${item.itemId}"
+        }
+      }
+    },
+    "naviShowBigPic": {
+      "type": "show_big_pic"
+    },
+    "utNaviShowBigPic": {
+      "type": "user_track",
+      "params": {
+        "trackName": "NaviShowBigPic",
+        "trackNamePre": "Button-"
+      }
+    },
+    "showMenu": {
+      "type": "show_menu"
+    },
+    "utExposureDetailRate": {
+      "type": "ut_exposure",
+      "params": {
+        "trackPage": "Page_Detail_Show_Detail",
+        "spm": "a2141.7631564.2737664"
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ package com.taobao.umipublish.draft;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.alidatabasees.CallableStatement;
 import com.ali.alidatabasees.Database;
 import com.ali.alidatabasees.PreparedStatement;
@@ -145,7 +145,7 @@ public class a implements c {
 
     private boolean a(DraftModel draftModel) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("da839f87", new Object[]{this, draftModel})).booleanValue() : draftModel != null && draftModel.meta != null && !TextUtils.equals(draftModel.meta.mode, "lite") && !TextUtils.equals(draftModel.meta.mode, "quick");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("da839f87", new Object[]{this, draftModel})).booleanValue() : draftModel != null && draftModel.meta != null && !StringUtils.equals(draftModel.meta.mode, "lite") && !StringUtils.equals(draftModel.meta.mode, "quick");
     }
 
     private byte[] b(DraftModel draftModel) {
@@ -221,7 +221,7 @@ public class a implements c {
             return (c.a) ipChange.ipc$dispatch("98cce354", new Object[]{this, str, str2, draftModel});
         }
         if (e(str, str2)) {
-            boolean isEmpty = TextUtils.isEmpty(draftModel.draftId);
+            boolean isEmpty = StringUtils.isEmpty(draftModel.draftId);
             int a3 = a(str, str2);
             if (isEmpty && a3 >= tek.a(str)) {
                 return new c.a("103", c.a.ERROR_MSG_DRAFT_LIMIT);

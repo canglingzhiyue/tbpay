@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.request.callback;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -68,7 +68,7 @@ public class RedPacketRequestCallback implements IRemoteBaseListener {
             return;
         }
         String message = getMessage(mtopResponse);
-        if (TextUtils.isEmpty(message)) {
+        if (StringUtils.isEmpty(message)) {
             return;
         }
         Toast.makeText(this.mContext, message, 0).show();
@@ -95,7 +95,7 @@ public class RedPacketRequestCallback implements IRemoteBaseListener {
             if (mtopResponse.getBytedata() != null) {
                 str = new String(mtopResponse.getBytedata());
             }
-            return (TextUtils.isEmpty(str) || (jSONObject = JSON.parseObject(str).getJSONObject("data")) == null || (jSONObject2 = jSONObject.getJSONObject("data")) == null) ? "" : jSONObject2.getString("message");
+            return (StringUtils.isEmpty(str) || (jSONObject = JSON.parseObject(str).getJSONObject("data")) == null || (jSONObject2 = jSONObject.getJSONObject("data")) == null) ? "" : jSONObject2.getString("message");
         } catch (Exception e) {
             i.a(TAG, "getMessage parse json error", e);
             return "";

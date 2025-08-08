@@ -2,7 +2,7 @@ package com.taobao.themis.kernel.utils;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -86,7 +86,7 @@ public class t {
             return false;
         }
         String queryParameter = uri.getQueryParameter(com.taobao.themis.kernel.i.APP_ID);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             return c(queryParameter);
         }
         return d(uri.toString());
@@ -99,7 +99,7 @@ public class t {
         }
         try {
             String configByGroupAndNameFromLocal = ((IConfigAdapter) qpt.a(IConfigAdapter.class)).getConfigByGroupAndNameFromLocal(com.taobao.themis.kernel.i.ORANGE_GROUP_THEMIS_WHITE_LIST_CONFIG, "tms_fragment_pub_white_list", "");
-            if (!TextUtils.isEmpty(configByGroupAndNameFromLocal)) {
+            if (!StringUtils.isEmpty(configByGroupAndNameFromLocal)) {
                 return configByGroupAndNameFromLocal.contains(str);
             }
             return false;
@@ -121,7 +121,7 @@ public class t {
         }
         try {
             String configByGroupAndNameFromLocal = ((IConfigAdapter) qpt.a(IConfigAdapter.class)).getConfigByGroupAndNameFromLocal(com.taobao.themis.kernel.i.ORANGE_GROUP_THEMIS_WHITE_LIST_CONFIG, "tms_fragment_url_white_list", "");
-            if (TextUtils.isEmpty(configByGroupAndNameFromLocal)) {
+            if (StringUtils.isEmpty(configByGroupAndNameFromLocal)) {
                 return false;
             }
             if (configByGroupAndNameFromLocal.equals("*")) {
@@ -148,7 +148,7 @@ public class t {
             if (f22576a < 0) {
                 return false;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 parseObject = new JSONObject();
             } else {
                 parseObject = JSON.parseObject(str);
@@ -191,7 +191,7 @@ public class t {
                 return;
             }
             String utdid = UTDevice.getUtdid(context);
-            if (TextUtils.isEmpty(utdid)) {
+            if (StringUtils.isEmpty(utdid)) {
                 return;
             }
             f22576a = Math.abs((utdid.hashCode() % 49993) % 100);
@@ -212,7 +212,7 @@ public class t {
                 return;
             }
             String utdid = UTDevice.getUtdid(context);
-            if (TextUtils.isEmpty(utdid)) {
+            if (StringUtils.isEmpty(utdid)) {
                 return;
             }
             g = Math.abs((utdid.hashCode() % 49993) % 100);
@@ -245,7 +245,7 @@ public class t {
             if (f22576a < 0) {
                 return false;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 parseObject = new JSONObject();
             } else {
                 parseObject = JSON.parseObject(str);

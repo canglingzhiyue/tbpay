@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.mnn.channel;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.d;
 import kotlin.jvm.internal.q;
@@ -33,7 +33,7 @@ public final class a {
 
     public final boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.b) && !q.a((Object) "unknown", (Object) this.b) && !q.a((Object) "notScreenShots", (Object) this.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.b) && !q.a((Object) "unknown", (Object) this.b) && !q.a((Object) "notScreenShots", (Object) this.b);
     }
 
     public final Integer b() {

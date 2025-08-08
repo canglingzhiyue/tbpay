@@ -191,7 +191,7 @@ public class fti extends fum {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0041, code lost:
-        if (android.text.TextUtils.isEmpty(r1.q()) != false) goto L24;
+        if (android.text.StringUtils.isEmpty(r1.q()) != false) goto L24;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -227,7 +227,7 @@ public class fti extends fum {
             boolean r2 = r1.p()
             if (r2 != 0) goto L76
             java.lang.String r1 = r1.q()
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 == 0) goto L76
         L43:
             return r3
@@ -244,7 +244,7 @@ public class fti extends fum {
             boolean r2 = r1.p()
             if (r2 != 0) goto L76
             java.lang.String r1 = r1.q()
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 == 0) goto L76
             return r3
         L6f:

@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,7 +169,7 @@ public abstract class b<T extends epf> extends com.taobao.android.detail.core.de
         if (eplVar == null) {
             eplVar = new epl.a().a();
         }
-        if (detailImageView == null || TextUtils.isEmpty(str)) {
+        if (detailImageView == null || StringUtils.isEmpty(str)) {
             return;
         }
         epl eplVar2 = null;

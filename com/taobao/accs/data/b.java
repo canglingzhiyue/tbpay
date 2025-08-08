@@ -2,7 +2,7 @@ package com.taobao.accs.data;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import com.alibaba.triver.triver_shop.container.shopLoft.b;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -509,10 +509,10 @@ public class b {
                         this.e = i.a(jSONObject4, Constants.KEY_ACCS_TOKEN, null);
                         this.f = i.a(jSONObject4, "deviceToken", null);
                         String a2 = i.a(jSONObject4, "regId", null);
-                        if (!TextUtils.isEmpty(this.f)) {
+                        if (!StringUtils.isEmpty(this.f)) {
                             Config.setDeviceToken(this.h, this.f);
                         }
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             String q = l.q(this.h);
                             if (!a2.equals(q)) {
                                 this.i.l().a();
@@ -693,7 +693,7 @@ public class b {
                 }
                 a(map, c);
                 c.a().b(this.h, c);
-                if (TextUtils.isEmpty(message.serviceId)) {
+                if (StringUtils.isEmpty(message.serviceId)) {
                     return;
                 }
                 d.a("accs", BaseMonitor.COUNT_POINT_TO_BUSS, "1commandId=" + message.command + "serviceId=" + message.serviceId, mto.a.GEO_NOT_SUPPORT);
@@ -818,7 +818,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("e4e45566", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return this.g.remove(new Message.Id(0, str));
@@ -829,7 +829,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.k.containsKey(str);
         }
         return false;
@@ -853,7 +853,7 @@ public class b {
                     }
                     String str2 = map.get(18);
                     String str3 = map.get(15);
-                    long parseLong = !TextUtils.isEmpty(str3) ? Long.parseLong(str3) : 0L;
+                    long parseLong = !StringUtils.isEmpty(str3) ? Long.parseLong(str3) : 0L;
                     a aVar = this.l.get(str);
                     if (aVar == null) {
                         if (ALog.isPrintLog(ALog.Level.I)) {
@@ -877,7 +877,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.k.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || this.k.containsKey(str)) {
         } else {
             this.k.put(str, str);
             com.taobao.accs.common.a.e().execute(new Runnable() { // from class: com.taobao.accs.data.b.2
@@ -1001,10 +1001,10 @@ public class b {
             ipChange.ipc$dispatch("2786ecf4", new Object[]{this, intent, str, str2, new Short(s)});
         } else if (intent == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 intent.putExtra("source", str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 intent.putExtra("target", str2);
             }
             intent.putExtra("flags", s);

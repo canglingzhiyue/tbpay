@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -34,7 +34,7 @@ public class ohi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95562904", new Object[]{context, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             oec.a(new Runnable() { // from class: tb.ohi.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

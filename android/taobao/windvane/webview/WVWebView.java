@@ -17,7 +17,7 @@ import android.taobao.windvane.jsbridge.WVBridgeEngine;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.jsbridge.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.MotionEvent;
@@ -502,7 +502,7 @@ public class WVWebView extends WebView implements Handler.Callback, IWVWebView, 
             }
             if (android.taobao.windvane.util.p.b(str) && android.taobao.windvane.config.p.c(str, this)) {
                 String b = s.a().b();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     HashMap hashMap = new HashMap(2);
                     hashMap.put("cause", "GET_ACCESS_FORBIDDEN");
                     hashMap.put("url", str);
@@ -594,7 +594,7 @@ public class WVWebView extends WebView implements Handler.Callback, IWVWebView, 
         } else {
             if (android.taobao.windvane.util.p.b(str) && android.taobao.windvane.config.p.c(str, this)) {
                 String b = s.a().b();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     HashMap hashMap = new HashMap(2);
                     hashMap.put("cause", "GET_ACCESS_FORBIDDEN");
                     hashMap.put("url", str);
@@ -627,7 +627,7 @@ public class WVWebView extends WebView implements Handler.Callback, IWVWebView, 
         } else {
             if (android.taobao.windvane.util.p.b(str) && android.taobao.windvane.config.p.c(str, this)) {
                 String b = s.a().b();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     HashMap hashMap = new HashMap(2);
                     hashMap.put("cause", "POST_ACCESS_FORBIDDEN");
                     hashMap.put("url", str);
@@ -766,10 +766,10 @@ public class WVWebView extends WebView implements Handler.Callback, IWVWebView, 
         String i = android.taobao.windvane.config.a.a().i();
         String userAgentString = settings.getUserAgentString();
         if (userAgentString != null) {
-            if (!TextUtils.isEmpty(h) && !TextUtils.isEmpty(i)) {
+            if (!StringUtils.isEmpty(h) && !StringUtils.isEmpty(i)) {
                 userAgentString = userAgentString + " AliApp(" + h + "/" + i + riy.BRACKET_END_STR;
             }
-            if (!userAgentString.contains("TTID/") && !TextUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
+            if (!userAgentString.contains("TTID/") && !StringUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
                 userAgentString = userAgentString + " TTID/" + android.taobao.windvane.config.a.a().b();
             }
         }

@@ -1,7 +1,7 @@
 package com.taobao.speech.util;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
@@ -237,7 +237,7 @@ public final class d extends com.taobao.speech.util.a implements SpeechRecognize
             return ((Number) ipChange.ipc$dispatch("a8219750", new Object[]{this, new Long(j)})).longValue();
         }
         String config = OrangeConfig.getInstance().getConfig(r.SEARCH_BIZ_NAME, r.NLS_SPEECH_TOKEN_EXPIRE_THRESHOLD, "");
-        return TextUtils.isEmpty(config) ? j : com.taobao.search.mmd.util.d.a(config, j);
+        return StringUtils.isEmpty(config) ? j : com.taobao.search.mmd.util.d.a(config, j);
     }
 
     private final void e() {

@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.fc;
 import com.xiaomi.push.fd;
 import java.util.HashSet;
@@ -45,7 +45,7 @@ public class a implements Application.ActivityLifecycleCallbacks {
         }
         String stringExtra = intent.getStringExtra("messageId");
         int intExtra = intent.getIntExtra("eventMessageType", -1);
-        if (TextUtils.isEmpty(stringExtra) || intExtra <= 0 || this.f24300a.contains(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra) || intExtra <= 0 || this.f24300a.contains(stringExtra)) {
             return;
         }
         this.f24300a.add(stringExtra);

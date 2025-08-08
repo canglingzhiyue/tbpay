@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
@@ -84,7 +84,7 @@ public class C1205e extends BaseActionPerform {
                 String str6 = (String) BaseActionPerform.getSafely(jSONArray, 3, String.class);
                 String str7 = (String) BaseActionPerform.getSafely(jSONArray, 4, String.class);
                 Boolean bool2 = (Boolean) BaseActionPerform.getSafely(jSONArray, 5, Boolean.class);
-                if (bool2 != null && bool2.booleanValue() && TextUtils.isEmpty(str5)) {
+                if (bool2 != null && bool2.booleanValue() && StringUtils.isEmpty(str5)) {
                     str5 = C1211g.a(inferContext, sampleData);
                 }
                 arrayList.add(new Label(str6, str7));

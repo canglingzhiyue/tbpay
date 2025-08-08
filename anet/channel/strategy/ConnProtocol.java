@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.entity.ConnType;
 import anet.channel.strategy.StrategyResultParser;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class ConnProtocol implements Serializable {
         if (ipChange instanceof IpChange) {
             return (ConnProtocol) ipChange.ipc$dispatch("61989f57", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String buildName = buildName(str, str2, str3);
@@ -93,12 +93,12 @@ public class ConnProtocol implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f61fa862", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return str;
         }
         StringBuilder sb = new StringBuilder(18);
         sb.append(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append("_");
             sb.append(str2);
         } else {

@@ -1,6 +1,6 @@
 package com.taobao.tao.detail.uimodel.ebook;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.text.DecimalFormat;
@@ -45,7 +45,7 @@ public class EbookVO implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d97e9a97", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {

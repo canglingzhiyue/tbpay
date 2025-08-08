@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.C1238p;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
@@ -66,7 +66,7 @@ public class oyx {
             HashMap hashMap2 = new HashMap();
             HashMap hashMap3 = new HashMap();
             Object opt = jSONObject.opt("bytes");
-            int parseInt = (opt == null || !TextUtils.isDigitsOnly(opt.toString())) ? 0 : Integer.parseInt(opt.toString());
+            int parseInt = (opt == null || !StringUtils.isDigitsOnly(opt.toString())) ? 0 : Integer.parseInt(opt.toString());
             Object opt2 = jSONObject.opt("videoInfoList");
             if (opt2 != null && (opt2 instanceof JSONArray)) {
                 JSONArray jSONArray = (JSONArray) opt2;
@@ -79,12 +79,12 @@ public class oyx {
                             String obj = opt3 == null ? null : opt3.toString();
                             Object opt4 = optJSONObject.opt("url");
                             String obj2 = opt4 == null ? null : opt4.toString();
-                            if (obj != null && !TextUtils.isEmpty(obj) && obj2 != null && !TextUtils.isEmpty(obj2)) {
+                            if (obj != null && !StringUtils.isEmpty(obj) && obj2 != null && !StringUtils.isEmpty(obj2)) {
                                 hashMap2.put(obj, obj2);
                             }
                             Object opt5 = optJSONObject.opt("cacheKey");
                             String obj3 = opt5 == null ? null : opt5.toString();
-                            if (obj != null && !TextUtils.isEmpty(obj) && obj3 != null && !TextUtils.isEmpty(obj3)) {
+                            if (obj != null && !StringUtils.isEmpty(obj) && obj3 != null && !StringUtils.isEmpty(obj3)) {
                                 hashMap3.put(obj, obj3);
                             }
                         }
@@ -98,11 +98,11 @@ public class oyx {
                 str = null;
                 str2 = null;
             }
-            if (str2 == null || TextUtils.isEmpty(str2)) {
+            if (str2 == null || StringUtils.isEmpty(str2)) {
                 str2 = (String) hashMap2.get("h264");
                 str = (String) hashMap3.get("h264");
             }
-            if (str2 != null && !TextUtils.isEmpty(str2)) {
+            if (str2 != null && !StringUtils.isEmpty(str2)) {
                 if (parseInt < 1048576) {
                     parseInt = 1048576;
                 }
@@ -113,11 +113,11 @@ public class oyx {
                     return null;
                 }
                 StringBuilder sb = new StringBuilder(100);
-                if (str != null && !TextUtils.isEmpty(str)) {
+                if (str != null && !StringUtils.isEmpty(str)) {
                     sb.append("videoCacheId=" + str);
                 }
                 String a2 = b.a(str2, sb);
-                if (!TextUtils.isEmpty(oyw.a(context, a2))) {
+                if (!StringUtils.isEmpty(oyw.a(context, a2))) {
                     if (dVar != null) {
                         try {
                             dVar.a(str2);
@@ -144,18 +144,18 @@ public class oyx {
                 sb.append("&");
                 sb.append("preLoad=true");
                 String optString = jSONObject.optString("videoId");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     sb.append("&");
                     sb.append("videoId=" + optString);
                 }
                 if (hashMap != null) {
                     String str3 = hashMap.get("from");
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         sb.append("&");
                         sb.append("bizCode=" + str3);
                     }
                     String str4 = hashMap.get(oyw.VIDEO_PLAY_SCENES);
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         sb.append("&");
                         sb.append("videoPlayScenes=" + str4);
                     }
@@ -185,7 +185,7 @@ public class oyx {
         }
         c cVar = new c(jSONObject);
         mediaPlayControlContext.mVideoId = cVar.l();
-        return (TextUtils.isEmpty(mediaPlayControlContext.mVideoId) || (a2 = cVar.a()) == null || a2.size() == 0) ? false : true;
+        return (StringUtils.isEmpty(mediaPlayControlContext.mVideoId) || (a2 = cVar.a()) == null || a2.size() == 0) ? false : true;
     }
 
     private static MediaPlayControlContext a(Context context, JSONObject jSONObject, int i) {
@@ -255,7 +255,7 @@ public class oyx {
         }
         String videoUrl = a2.getVideoUrl();
         String str = a2.mVideoId;
-        if (TextUtils.isEmpty(videoUrl) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(videoUrl) || StringUtils.isEmpty(str)) {
             return null;
         }
         String cacheKey = a2.getCacheKey();
@@ -265,11 +265,11 @@ public class oyx {
             videoUrl = "http:" + videoUrl;
         }
         StringBuilder sb = new StringBuilder(256);
-        if (cacheKey != null && !TextUtils.isEmpty(cacheKey)) {
+        if (cacheKey != null && !StringUtils.isEmpty(cacheKey)) {
             sb.append("videoCacheId=" + cacheKey);
         }
         String a4 = b.a(videoUrl, sb);
-        if (!TextUtils.isEmpty(oyw.a(context, a4))) {
+        if (!StringUtils.isEmpty(oyw.a(context, a4))) {
             try {
                 dVar.a(videoUrl);
                 dVar.a(a3);
@@ -299,19 +299,19 @@ public class oyx {
         }
         if (hashMap != null) {
             String str2 = hashMap.get("from");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 sb.append("&");
                 sb.append("bizCode=" + str2);
             }
             String str3 = hashMap.get(oyw.VIDEO_PLAY_SCENES);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 sb.append("&");
                 sb.append("videoPlayScenes=" + str3);
             }
         }
         oyu.a(MediaConstant.ABTEST_TAG_BUFFERED_SIZE);
         if (oyu.w && oyu.u != null && hashMap != null && hashMap.get("from") != null && oyu.u.contains(hashMap.get("from")) && oyu.x) {
-            if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb.append("&");
             }
             sb.append("preloadNetCutSize=" + oyu.t);
@@ -372,11 +372,11 @@ public class oyx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{context, str});
-        } else if (context == null || TextUtils.isEmpty(str) || (a2 = oyw.a(context)) == null) {
+        } else if (context == null || StringUtils.isEmpty(str) || (a2 = oyw.a(context)) == null) {
         } else {
             boolean startsWith = str.startsWith("http");
             String a3 = startsWith ? m.a().a(str) : str;
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 a2.b(a3);
             }
             if (startsWith) {

@@ -2,7 +2,7 @@ package com.taobao.themis.utils;
 
 import android.net.Uri;
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
@@ -47,7 +47,7 @@ public class o {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a(str, false);
         }
         return null;
@@ -60,7 +60,7 @@ public class o {
             return (Map) ipChange.ipc$dispatch("573ccb97", new Object[]{str, new Boolean(z)});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         if (z) {
@@ -105,7 +105,7 @@ public class o {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("95fe68aa", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Uri uri = f22889a.get(str);
@@ -165,19 +165,19 @@ public class o {
             android.net.Uri r1 = b(r7)
             java.lang.String r4 = r0.getHost()
             java.lang.String r5 = r1.getHost()
-            boolean r4 = android.text.TextUtils.equals(r4, r5)
+            boolean r4 = android.text.StringUtils.equals(r4, r5)
             if (r4 != 0) goto L33
             return r3
         L33:
             java.lang.String r4 = r0.getPath()
             java.lang.String r5 = r1.getPath()
-            boolean r4 = android.text.TextUtils.equals(r4, r5)
+            boolean r4 = android.text.StringUtils.equals(r4, r5)
             if (r4 != 0) goto L42
             return r3
         L42:
             java.lang.String r0 = r0.getFragment()
             java.lang.String r1 = r1.getFragment()
-            boolean r0 = android.text.TextUtils.equals(r0, r1)
+            boolean r0 = android.text.StringUtils.equals(r0, r1)
             if (r0 != 0) goto L51
             return r3
         L51:

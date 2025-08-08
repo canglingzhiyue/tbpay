@@ -1,6 +1,6 @@
 package com.taobao.accs.sync.queue;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -170,7 +170,7 @@ public class c<T extends dch> extends AbstractQueue<T> {
     }
 
     public c(String str, String str2, int i, int i2, long j, boolean z, a aVar) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || aVar == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || aVar == null) {
             throw new IllegalArgumentException("SyncExecutor.arguments are illegal");
         }
         this.f8284a = new dcj(GlobalClientInfo.getContext());
@@ -340,7 +340,7 @@ public class c<T extends dch> extends AbstractQueue<T> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e4dcea73", new Object[]{this, t})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.e) || !this.e.equals(t.e())) {
+        if (StringUtils.isEmpty(this.e) || !this.e.equals(t.e())) {
             dcl.a("SyncExecutor", "offer failed", "mStream", this.e, "msgStream", t.e());
             return false;
         } else if (t.f() <= this.k) {

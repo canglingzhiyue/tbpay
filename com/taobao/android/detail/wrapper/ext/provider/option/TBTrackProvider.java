@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.provider.option;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.ut.abtest.UTABTest;
@@ -96,7 +96,7 @@ public class TBTrackProvider implements ITrackAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8e187d40", new Object[]{this, activity, str, str2, str3});
-        } else if (this.mAliUserTrackerInterface == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (this.mAliUserTrackerInterface == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.mAliUserTrackerInterface.a(activity, str2);
             this.mAliUserTrackerInterface.b(activity, str2);
@@ -108,7 +108,7 @@ public class TBTrackProvider implements ITrackAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("497aa095", new Object[]{this, activity, str, str2});
-        } else if (this.mAliUserTrackerInterface == null || TextUtils.isEmpty(str)) {
+        } else if (this.mAliUserTrackerInterface == null || StringUtils.isEmpty(str)) {
         } else {
             this.mAliUserTrackerInterface.a((Object) activity);
         }
@@ -147,7 +147,7 @@ public class TBTrackProvider implements ITrackAdapter {
             }
             map.put("container_type", eaz.DINAMIC_MODULE_NAME);
             this.mAliUserTrackerInterface.a(activity, map);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "Detail";
             }
             try {
@@ -171,7 +171,7 @@ public class TBTrackProvider implements ITrackAdapter {
         }
         aliUserTrackerInterface.b(activity, "Page_" + str);
         this.mAliUserTrackerInterface.a(activity, map);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "Detail";
         }
         try {
@@ -188,7 +188,7 @@ public class TBTrackProvider implements ITrackAdapter {
             ipChange.ipc$dispatch("9d53815c", new Object[]{this, str, trackType, str2, strArr});
         } else if (this.mAliUserTrackerInterface == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mAliUserTrackerInterface.a(null, AliUserTrackerCT.Button, str2, strArr);
             } else {
                 this.mAliUserTrackerInterface.b(str, AliUserTrackerCT.Button, str2, strArr);
@@ -228,7 +228,7 @@ public class TBTrackProvider implements ITrackAdapter {
                     }
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mAliUserTrackerInterface.a(i, obj, obj2, obj3, strArr2);
             } else {
                 this.mAliUserTrackerInterface.a(str, i, obj, obj2, obj3, strArr2);
@@ -287,7 +287,7 @@ public class TBTrackProvider implements ITrackAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6ee2d18f", new Object[]{this, str, context});
-        } else if (TextUtils.isEmpty(str) || context == null) {
+        } else if (StringUtils.isEmpty(str) || context == null) {
         } else {
             UTABTest.activateServer(str, context);
         }
@@ -371,7 +371,7 @@ public class TBTrackProvider implements ITrackAdapter {
                                 strArr[length3] = next.getKey() + "=" + next.getValue();
                             }
                         }
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             TBTrackProvider.access$100(TBTrackProvider.this).a("Page_Detail", AliUserTrackerCT.Button, str2, strArr);
                         } else {
                             TBTrackProvider.access$100(TBTrackProvider.this).b(str, AliUserTrackerCT.Button, str2, strArr);
@@ -522,7 +522,7 @@ public class TBTrackProvider implements ITrackAdapter {
                 }
                 strArr2[strArr.length] = "container_type=xdetail";
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mAliUserTrackerInterface.a(i, obj, obj2, obj3, strArr2);
             } else {
                 this.mAliUserTrackerInterface.a(str, i, obj, obj2, obj3, strArr2);

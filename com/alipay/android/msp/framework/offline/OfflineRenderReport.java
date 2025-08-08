@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.offline;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.helper.Tid;
 import com.alipay.android.msp.framework.helper.TidHelper;
 import com.alipay.android.msp.framework.storage.FileUtils;
@@ -71,12 +71,12 @@ public class OfflineRenderReport {
         String string = PrefUtils.getString("cashier_offline_render", "birdnest_ver", null);
         String string2 = PrefUtils.getString("cashier_offline_render", "msp_ver", null);
         try {
-            z = !TextUtils.equals(FileUtils.md5(b), PrefUtils.getString("cashier_offline_render", "tHash", null));
+            z = !StringUtils.equals(FileUtils.md5(b), PrefUtils.getString("cashier_offline_render", "tHash", null));
         } catch (Exception e) {
             LogUtil.printExceptionStackTrace(e);
             z = false;
         }
-        return !TextUtils.equals(templateVersion, string) || !TextUtils.equals(mspVersion, string2) || z;
+        return !StringUtils.equals(templateVersion, string) || !StringUtils.equals(mspVersion, string2) || z;
     }
 
     private static String b(Context context) {
@@ -110,7 +110,7 @@ public class OfflineRenderReport {
         String string = PrefUtils.getString("cashier_offline_render", "birdnest_ver", null);
         String string2 = PrefUtils.getString("cashier_offline_render", "msp_ver", null);
         String string3 = PrefUtils.getString("cashier_offline_render", "tHash", null);
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3)) {
             z = false;
         }
         if (z) {

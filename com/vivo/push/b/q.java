@@ -1,6 +1,6 @@
 package com.vivo.push.b;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 
 /* loaded from: classes9.dex */
@@ -31,7 +31,7 @@ public final class q extends v {
     public final void d(com.vivo.push.d dVar) {
         super.d(dVar);
         this.b = dVar.a("notification_v1");
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             this.f24165a = com.vivo.push.util.v.a(this.b);
             InsideNotificationItem insideNotificationItem = this.f24165a;
             if (insideNotificationItem == null) {
@@ -42,7 +42,7 @@ public final class q extends v {
     }
 
     public final String e() {
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             InsideNotificationItem insideNotificationItem = this.f24165a;
             if (insideNotificationItem != null) {
                 return com.vivo.push.util.v.b(insideNotificationItem);

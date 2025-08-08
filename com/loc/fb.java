@@ -20,7 +20,7 @@ import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.Constants;
 import com.uc.webview.base.cyclone.BSError;
 import java.util.ArrayList;
@@ -412,7 +412,7 @@ public final class fb {
         TelephonyManager telephonyManager = this.b;
         if (telephonyManager != null) {
             this.k = telephonyManager.getNetworkOperator();
-            if (!TextUtils.isEmpty(this.k)) {
+            if (!StringUtils.isEmpty(this.k)) {
                 this.j = true;
             }
         }
@@ -703,10 +703,10 @@ public final class fb {
             }
             String str = this.h.checkSelfPermission(com.taobao.tao.homepage.a.ACCESS_FINE_LOCATION) == 0 ? "hasFineLocPerm" : "hasNoFineLocPerm";
             String str2 = this.h.checkSelfPermission("android.permission.READ_PHONE_STATE") == 0 ? "hasReadPhoneStatePerm" : "hasNoReadPhoneStatePerm";
-            if (!TextUtils.isEmpty(this.t) && !this.t.equals(str)) {
+            if (!StringUtils.isEmpty(this.t) && !this.t.equals(str)) {
                 z = true;
             }
-            if (!TextUtils.isEmpty(this.s) && !this.s.equals(str2)) {
+            if (!StringUtils.isEmpty(this.s) && !this.s.equals(str2)) {
                 z = true;
             }
             if (!z) {
@@ -871,10 +871,10 @@ public final class fb {
     public final boolean n() {
         try {
             if (this.b != null) {
-                if (!TextUtils.isEmpty(this.b.getSimOperator())) {
+                if (!StringUtils.isEmpty(this.b.getSimOperator())) {
                     return true;
                 }
-                if (!TextUtils.isEmpty(this.b.getSimCountryIso())) {
+                if (!StringUtils.isEmpty(this.b.getSimCountryIso())) {
                     return true;
                 }
             }

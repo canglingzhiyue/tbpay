@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class mqw {
             jSONObject = new JSONObject();
         }
         String string = jSONObject.getString("feedId");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 mqwVar.d = Long.parseLong(string);
             } catch (Exception unused) {
@@ -74,7 +74,7 @@ public class mqw {
         }
         mqwVar.c = jSONObject.getString("skuVids");
         String string2 = jSONObject.getString("invokeSource");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             try {
                 mqwVar.e = Integer.parseInt(string2);
             } catch (Exception unused2) {

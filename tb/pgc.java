@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -200,7 +200,7 @@ public class pgc extends sig {
         }
         q.a("SeckillOpt", "follow :" + a2);
         if (com.taobao.taolive.sdk.goodlist.d.f()) {
-            if (!jSONObject2.containsKey("threshold") || (jSONObject3 = jSONObject2.getJSONObject("threshold")) == null || !jSONObject3.containsKey("isFollowThreshold") || !TextUtils.equals(jSONObject3.getString("isFollowThreshold"), "true")) {
+            if (!jSONObject2.containsKey("threshold") || (jSONObject3 = jSONObject2.getJSONObject("threshold")) == null || !jSONObject3.containsKey("isFollowThreshold") || !StringUtils.equals(jSONObject3.getString("isFollowThreshold"), "true")) {
                 z = false;
             } else {
                 q.a("SeckillOpt", "isFollowThreshold true");
@@ -356,7 +356,7 @@ public class pgc extends sig {
             liveItem.personalityData.put("goodsSubscribeStatus", (Object) "102");
         }
         String string = liveItem.personalityData.getString("goodsSubscribeStatus");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             hashMap.put("action", "103".equals(string) ? "cancel" : "reserve");
             hashMap.put("itemId", String.valueOf(liveItem.itemId));

@@ -2,7 +2,7 @@ package com.taobao.android.sku;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.alibaba.fastjson.JSON;
@@ -339,12 +339,12 @@ public class f {
                 return "";
             }
             String string = a2.getString("optionalUrl");
-            return TextUtils.isEmpty(string) ? this.g.a(this.f.r()) : string;
+            return StringUtils.isEmpty(string) ? this.g.a(this.f.r()) : string;
         } else if (!a2.getBooleanValue("downgrade")) {
             return "";
         } else {
             String string2 = a2.getString("url");
-            return TextUtils.isEmpty(string2) ? this.g.d() : string2;
+            return StringUtils.isEmpty(string2) ? this.g.d() : string2;
         }
     }
 
@@ -358,7 +358,7 @@ public class f {
             return "";
         }
         String r = aVar.r();
-        if (TextUtils.isEmpty(r)) {
+        if (StringUtils.isEmpty(r)) {
             return null;
         }
         Uri.Builder buildUpon = Uri.parse(r).buildUpon();
@@ -514,7 +514,7 @@ public class f {
                     }
                     f fVar = f.this;
                     String str3 = f.$ipChange;
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         f fVar2 = f.this;
                         String str4 = str;
                         str3 = f.$ipChange;
@@ -522,7 +522,7 @@ public class f {
                         z2 = false;
                     }
                     String str5 = "degradeSkuH5Url";
-                    if (!TextUtils.isEmpty(str3) && !d.TOKEN_FROM_DOWNGRADE_SKUH5URL.equals(str)) {
+                    if (!StringUtils.isEmpty(str3) && !d.TOKEN_FROM_DOWNGRADE_SKUH5URL.equals(str)) {
                         f.a(f.this, str3, bVar);
                         if (z2) {
                             o.a(19999, "Open_DegradeSkuH5Url", new HashMap<String, String>() { // from class: com.taobao.android.sku.SkuCore$3.1
@@ -657,9 +657,9 @@ public class f {
         String e = aVar.e();
         String f = aVar.f();
         boolean equalsIgnoreCase = "BUYNOW".equalsIgnoreCase(h());
-        if (TextUtils.isEmpty(e) || !this.j || !equalsIgnoreCase || this.d.k()) {
-            if (TextUtils.isEmpty(f) || !this.k || ((equalsIgnoreCase && !WeexCore.c(e, f)) || this.e.k())) {
-                i = (TextUtils.isEmpty(aVar.a(this.f.r())) || this.c.f()) ? 1 : 2;
+        if (StringUtils.isEmpty(e) || !this.j || !equalsIgnoreCase || this.d.k()) {
+            if (StringUtils.isEmpty(f) || !this.k || ((equalsIgnoreCase && !WeexCore.c(e, f)) || this.e.k())) {
+                i = (StringUtils.isEmpty(aVar.a(this.f.r())) || this.c.f()) ? 1 : 2;
             } else {
                 i = 4;
             }
@@ -679,7 +679,7 @@ public class f {
         JSONObject g = this.g.g();
         if (g != null && (jSONObject = g.getJSONObject("id_biz_bottom")) != null) {
             String string = jSONObject.getString("bottomMode");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return string;
             }
         }

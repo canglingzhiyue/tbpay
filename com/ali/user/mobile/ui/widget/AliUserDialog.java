@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -126,7 +126,7 @@ public class AliUserDialog extends Dialog {
         TextView textView = (TextView) findViewById(R.id.aliuser_dialog_title);
         TextView textView2 = (TextView) findViewById(R.id.aliuser_dialog_message);
         View findViewById = findViewById(R.id.aliuser_dialog_split);
-        if (!TextUtils.isEmpty(this.mTitle)) {
+        if (!StringUtils.isEmpty(this.mTitle)) {
             textView.setText(this.mTitle);
             textView.setVisibility(0);
             try {
@@ -138,7 +138,7 @@ public class AliUserDialog extends Dialog {
         } else {
             textView.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(this.mMessage)) {
+        if (!StringUtils.isEmpty(this.mMessage)) {
             textView2.setText(this.mMessage);
             textView2.setVisibility(0);
             if (!this.mMessageCenter) {
@@ -147,14 +147,14 @@ public class AliUserDialog extends Dialog {
         } else {
             textView2.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(this.mPositiveText)) {
+        if (!StringUtils.isEmpty(this.mPositiveText)) {
             button.setText(this.mPositiveText);
             button.setVisibility(0);
             button.setFocusable(false);
         } else {
             button.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(this.mNegativeText)) {
+        if (!StringUtils.isEmpty(this.mNegativeText)) {
             button2.setText(this.mNegativeText);
             button2.setVisibility(0);
             button2.setFocusable(false);
@@ -191,7 +191,7 @@ public class AliUserDialog extends Dialog {
                 }
             });
         }
-        if (!TextUtils.isEmpty(this.mPositiveText) && !TextUtils.isEmpty(this.mNegativeText)) {
+        if (!StringUtils.isEmpty(this.mPositiveText) && !StringUtils.isEmpty(this.mNegativeText)) {
             findViewById.setVisibility(0);
         } else {
             findViewById.setVisibility(8);

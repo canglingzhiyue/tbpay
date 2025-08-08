@@ -6,7 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import java.util.Map;
 
@@ -22,7 +22,7 @@ public class ff extends Notification.Builder {
     }
 
     public int a(Resources resources, String str, String str2, String str3) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return resources.getIdentifier(str, str2, str3);
         }
         return 0;
@@ -59,7 +59,7 @@ public class ff extends Notification.Builder {
 
     /* renamed from: a  reason: collision with other method in class */
     public ff m1924a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 bh.a((Object) this, "setColor", Integer.valueOf(Color.parseColor(str)));
             } catch (Exception e) {

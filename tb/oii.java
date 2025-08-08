@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
@@ -48,15 +48,15 @@ public class oii implements oiq {
         shareData.setLink(j.url);
         shareData.setSourceType(e.b().c());
         shareData.setUserInfo(j.activityParams);
-        if (!TextUtils.isEmpty(j.imageUrl)) {
-            if ((!TextUtils.isEmpty(j.imageUrl) && j.imageUrl.startsWith(k.HTTP_PREFIX)) || j.imageUrl.startsWith(k.HTTPS_PREFIX)) {
+        if (!StringUtils.isEmpty(j.imageUrl)) {
+            if ((!StringUtils.isEmpty(j.imageUrl) && j.imageUrl.startsWith(k.HTTP_PREFIX)) || j.imageUrl.startsWith(k.HTTPS_PREFIX)) {
                 shareData.setImageUrl(j.imageUrl);
             } else {
                 shareData.setImagePath(j.imageUrl);
             }
         }
         List<String> list = j.snapshotImages;
-        if ((list == null || list.size() == 0) && !TextUtils.isEmpty(j.imageUrl)) {
+        if ((list == null || list.size() == 0) && !StringUtils.isEmpty(j.imageUrl)) {
             list = new ArrayList<>();
             list.add(j.imageUrl);
         }

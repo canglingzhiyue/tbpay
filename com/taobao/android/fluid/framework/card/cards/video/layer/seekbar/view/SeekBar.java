@@ -14,7 +14,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
@@ -380,7 +380,7 @@ public class SeekBar {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         a[] rangeSeekBarState = this.b.getRangeSeekBarState();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (this.f12490a) {
                 DecimalFormat decimalFormat = this.v;
                 if (decimalFormat != null) {

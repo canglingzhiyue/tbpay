@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.content;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -99,12 +99,12 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b0d6dd4d", new Object[]{str, jSONArray})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             String string = jSONArray.getJSONObject(i).getString("id");
-            if (!TextUtils.isEmpty(str) && str.equals(string)) {
+            if (!StringUtils.isEmpty(str) && str.equals(string)) {
                 return i;
             }
         }

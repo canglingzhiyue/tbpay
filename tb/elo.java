@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,7 +73,7 @@ public final class elo extends atl {
             return (elq) ipChange.ipc$dispatch("1e677c72", new Object[]{this});
         }
         String a2 = a(this.c);
-        if (TextUtils.isEmpty(a2) && baw.a()) {
+        if (StringUtils.isEmpty(a2) && baw.a()) {
             throw new IllegalArgumentException("必须在AURAUserContext中传入token,并且保证不为空");
         }
         if (this.d == null) {
@@ -368,7 +368,7 @@ public final class elo extends atl {
             return null;
         }
         String string = jSONArray.getString(0);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return jSONObject2.getJSONObject(string);
         }
         return null;
@@ -406,7 +406,7 @@ public final class elo extends atl {
             return (String) ipChange.ipc$dispatch("e2c2912d", new Object[]{this, aURARenderComponent});
         }
         String str = aURARenderComponent.key;
-        return TextUtils.isEmpty(str) ? "headerPic" : str;
+        return StringUtils.isEmpty(str) ? "headerPic" : str;
     }
 
     private void l() {

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.request.client.newmtop;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.BTags;
@@ -317,9 +317,9 @@ public abstract class MtopRequestCallback implements IRemoteBaseListener {
         }
         String str = "emptyItemId";
         if (jSONObject == null) {
-            if (!TextUtils.isEmpty("data json parse error")) {
+            if (!StringUtils.isEmpty("data json parse error")) {
                 String str2 = this.mParams.mItemNumId;
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = str;
                 }
                 ecb.d(this.mContext, str2, "data json parse error");
@@ -332,9 +332,9 @@ public abstract class MtopRequestCallback implements IRemoteBaseListener {
             if (jSONObject2 != null && !jSONObject2.isEmpty()) {
                 JSONObject jSONObject3 = jSONObject2.getJSONObject("feature");
                 if (jSONObject3 == null) {
-                    if (!TextUtils.isEmpty("")) {
+                    if (!StringUtils.isEmpty("")) {
                         String str3 = this.mParams.mItemNumId;
-                        if (TextUtils.isEmpty(str3)) {
+                        if (StringUtils.isEmpty(str3)) {
                             str3 = str;
                         }
                         ecb.d(this.mContext, str3, "");
@@ -343,9 +343,9 @@ public abstract class MtopRequestCallback implements IRemoteBaseListener {
                     return false;
                 }
                 boolean parseBoolean = Boolean.parseBoolean(jSONObject3.getString("degradeToOldMtop"));
-                if (!TextUtils.isEmpty("")) {
+                if (!StringUtils.isEmpty("")) {
                     String str4 = this.mParams.mItemNumId;
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         str = str4;
                     }
                     ecb.d(this.mContext, str, "");
@@ -353,9 +353,9 @@ public abstract class MtopRequestCallback implements IRemoteBaseListener {
                 }
                 return parseBoolean;
             }
-            if (!TextUtils.isEmpty("data node is empty")) {
+            if (!StringUtils.isEmpty("data node is empty")) {
                 String str5 = this.mParams.mItemNumId;
-                if (TextUtils.isEmpty(str5)) {
+                if (StringUtils.isEmpty(str5)) {
                     str5 = str;
                 }
                 ecb.d(this.mContext, str5, "data node is empty");
@@ -365,9 +365,9 @@ public abstract class MtopRequestCallback implements IRemoteBaseListener {
         } catch (Throwable th) {
             try {
                 String str6 = "exception: " + th.toString();
-                if (!TextUtils.isEmpty(str6)) {
+                if (!StringUtils.isEmpty(str6)) {
                     String str7 = this.mParams.mItemNumId;
-                    if (TextUtils.isEmpty(str7)) {
+                    if (StringUtils.isEmpty(str7)) {
                         str7 = str;
                     }
                     ecb.d(this.mContext, str7, str6);
@@ -375,9 +375,9 @@ public abstract class MtopRequestCallback implements IRemoteBaseListener {
                 }
                 return true;
             } catch (Throwable th2) {
-                if (!TextUtils.isEmpty("")) {
+                if (!StringUtils.isEmpty("")) {
                     String str8 = this.mParams.mItemNumId;
-                    if (!TextUtils.isEmpty(str8)) {
+                    if (!StringUtils.isEmpty(str8)) {
                         str = str8;
                     }
                     ecb.d(this.mContext, str, "");

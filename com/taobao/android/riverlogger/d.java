@@ -1,6 +1,6 @@
 package com.taobao.android.riverlogger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
 import org.json.JSONStringer;
@@ -78,7 +78,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.c = str;
         }
@@ -88,7 +88,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.d = str;
         }
@@ -99,7 +99,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         this.e = str;
@@ -123,7 +123,7 @@ public class d {
             }
             return false;
         }
-        if (!TextUtils.isEmpty(obj2) && !"0".contentEquals(obj2)) {
+        if (!StringUtils.isEmpty(obj2) && !"0".contentEquals(obj2)) {
             this.f = obj2;
             if (this.f14902a.value > RVLLevel.Warn.value) {
                 this.f14902a = RVLLevel.Error;

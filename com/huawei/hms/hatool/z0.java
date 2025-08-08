@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.LinkedHashMap;
 
 /* loaded from: classes4.dex */
@@ -37,7 +37,7 @@ public class z0 {
         String str;
         if (i != 2) {
             s0 b = b(i);
-            if (b != null && !TextUtils.isEmpty(b.h())) {
+            if (b != null && !StringUtils.isEmpty(b.h())) {
                 return true;
             }
             str = "verifyURL(): URL check failed. type: " + i;

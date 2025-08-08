@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.json.JSONArray;
@@ -19,7 +19,7 @@ class cp {
     }
 
     public cp(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f24404a = str;
             return;
         }

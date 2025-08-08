@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -509,7 +509,7 @@ public class MUSOverlayView extends View {
             return null;
         }
         Activity activity = (Activity) this.mMusOverlay.getInstance().getUIContext();
-        if (!TextUtils.isEmpty(this.mDisplayMode) && a.ATOM_EXT_window.equals(this.mDisplayMode)) {
+        if (!StringUtils.isEmpty(this.mDisplayMode) && a.ATOM_EXT_window.equals(this.mDisplayMode)) {
             viewGroup = (ViewGroup) activity.findViewById(16908290);
         } else {
             viewGroup = (ViewGroup) this.mMusOverlay.getInstance().getTag("MUSOverlayContainerHolder");
@@ -812,7 +812,7 @@ public class MUSOverlayView extends View {
 
     private boolean shouldBlock() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f736fe25", new Object[]{this})).booleanValue() : TextUtils.equals(this.mRole, "dialog");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f736fe25", new Object[]{this})).booleanValue() : StringUtils.equals(this.mRole, "dialog");
     }
 
     private void showSliceToContainer(MUSOverlayContainer mUSOverlayContainer) {

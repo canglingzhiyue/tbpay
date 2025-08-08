@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.sf.util.tlog.TLogTracker;
@@ -43,7 +43,7 @@ public class cfi {
         } else {
             try {
                 String e = e(str, objArr);
-                if (!TextUtils.isEmpty(e)) {
+                if (!StringUtils.isEmpty(e)) {
                     int i2 = 2048;
                     if (e.length() > 2048) {
                         int length = e.length();
@@ -140,13 +140,13 @@ public class cfi {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = f26265a;
         }
         StackTraceElement c2 = c();
         if (c2 != null) {
             String className = c2.getClassName();
-            if (!TextUtils.isEmpty(className)) {
+            if (!StringUtils.isEmpty(className)) {
                 str2 = className.substring(className.lastIndexOf(46) + 1);
                 return str + str2 + "." + String.valueOf(Process.myPid()) + "." + (Thread.currentThread().getId() + "");
             }

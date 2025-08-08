@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -23,7 +23,7 @@ public class fxr {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("58d80d18", new Object[]{str, jSONObject, t});
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 T t2 = (T) jSONObject.get(str);
                 return t2 == null ? t : t2;
@@ -39,7 +39,7 @@ public class fxr {
         if (ipChange instanceof IpChange) {
             return (JSONArray) ipChange.ipc$dispatch("bb94b758", new Object[]{str, jSONObject, jSONArray});
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 JSONArray jSONArray2 = jSONObject.getJSONArray(str);
                 return jSONArray2 == null ? jSONArray : jSONArray2;
@@ -55,7 +55,7 @@ public class fxr {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("d54ff8d2", new Object[]{str, jSONObject, jSONObject2});
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 JSONObject jSONObject3 = jSONObject.getJSONObject(str);
                 return jSONObject3 == null ? jSONObject2 : jSONObject3;
@@ -71,7 +71,7 @@ public class fxr {
         if (ipChange instanceof IpChange) {
             return (Boolean) ipChange.ipc$dispatch("b329b14c", new Object[]{str, jSONObject, bool});
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 Boolean bool2 = jSONObject.getBoolean(str);
                 return bool2 == null ? bool : bool2;
@@ -87,7 +87,7 @@ public class fxr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cb330a58", new Object[]{str, jSONObject, str2});
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
                 return string == null ? str2 : string;
@@ -103,7 +103,7 @@ public class fxr {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("608255b8", new Object[]{str, jSONObject, new Integer(i)})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 Integer integer = jSONObject.getInteger(str);
                 return integer == null ? i : integer.intValue();
@@ -119,7 +119,7 @@ public class fxr {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("60824a72", new Object[]{str, jSONObject, new Float(f)})).floatValue();
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 Float f2 = jSONObject.getFloat(str);
                 return f2 == null ? f : f2.floatValue();

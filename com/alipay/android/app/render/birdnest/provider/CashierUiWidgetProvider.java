@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
@@ -85,16 +85,16 @@ public class CashierUiWidgetProvider implements BirdNestEngine.UiWidgetProvider 
         if (ipChange instanceof IpChange) {
             return (Dialog) ipChange.ipc$dispatch("ef6a404b", new Object[]{this, context, str, str2, str3, strArr, onItemClickListener});
         }
-        if (!TextUtils.equals(str, "actionSheet")) {
+        if (!StringUtils.equals(str, "actionSheet")) {
             return null;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             builder.setTitle(str2);
         } else {
             builder.setTitle("");
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             builder.setMessage(str3);
         }
         builder.setItems(strArr, new DialogInterface.OnClickListener() { // from class: com.alipay.android.app.render.birdnest.provider.CashierUiWidgetProvider.1

@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -182,7 +182,7 @@ public class XRichTextViewV3 extends DXNativeTextView {
             return;
         }
         if (this.mSpannableStringBuilder == null) {
-            if (!TextUtils.isEmpty(getText())) {
+            if (!StringUtils.isEmpty(getText())) {
                 this.mSpannableStringBuilder = new SpannableStringBuilder(getText());
             } else {
                 this.mSpannableStringBuilder = new SpannableStringBuilder();
@@ -233,7 +233,7 @@ public class XRichTextViewV3 extends DXNativeTextView {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("631d83e6", new Object[]{this})).intValue();
         }
-        if (!TextUtils.isEmpty(this.mSpanColor)) {
+        if (!StringUtils.isEmpty(this.mSpanColor)) {
             return Color.parseColor(this.mSpanColor);
         }
         return getCurrentTextColor();

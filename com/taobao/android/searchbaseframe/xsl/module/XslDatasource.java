@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.xsl.module;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,7 +98,7 @@ public class XslDatasource extends com.taobao.android.meta.data.b<htg, XslSearch
 
     public void setApi(String str, String str2) {
         ((f) this.mAdapter).a(str, str2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mJsParamReady = true;
         }
     }
@@ -109,7 +109,7 @@ public class XslDatasource extends com.taobao.android.meta.data.b<htg, XslSearch
             return;
         }
         ((f) this.mAdapter).a(str, str2, str3);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.mJsParamReady = true;
@@ -237,7 +237,7 @@ public class XslDatasource extends com.taobao.android.meta.data.b<htg, XslSearch
     public JSONObject dumpDebugParamsInfo() {
         JSONObject dumpDebugParamsInfo = super.dumpDebugParamsInfo();
         String string = dumpDebugParamsInfo.getString("params");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 dumpDebugParamsInfo.put("params", (Object) JSON.parseObject(string));
             } catch (Exception e) {

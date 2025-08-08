@@ -3,7 +3,7 @@ package com.taobao.tao.shop.fetcher;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.e;
 import com.taobao.tao.shop.fetcher.adapter.TBSRDownloadAdapter;
@@ -140,7 +140,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b480a23", new Object[]{this, str, str2, mtopTaobaoWirelessShopRouteProcessResponseData});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             long f = this.b.f();
             if (mtopTaobaoWirelessShopRouteProcessResponseData.isMiniAppRenderStyle()) {

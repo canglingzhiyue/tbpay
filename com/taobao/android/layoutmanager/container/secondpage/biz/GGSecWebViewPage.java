@@ -12,7 +12,7 @@ import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -343,7 +343,7 @@ public class GGSecWebViewPage extends ofz {
                 parseObject.put("spm-cnt", (Object) (string + "." + string2 + ".0.0"));
             } catch (Exception unused) {
             }
-            if (TextUtils.isEmpty(currentUrl) || parseObject == null) {
+            if (StringUtils.isEmpty(currentUrl) || parseObject == null) {
                 wVCallBackContext.error();
                 return true;
             }

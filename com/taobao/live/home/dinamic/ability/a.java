@@ -1,7 +1,7 @@
 package com.taobao.live.home.dinamic.ability;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class a extends dlg {
         String string = c.getString("requestUrl");
         String string2 = c.getString("timeout");
         String string3 = c.getString("usePost");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return new dky();
         }
         new b(string, string2, string3, dllVar).execute(new String[0]);

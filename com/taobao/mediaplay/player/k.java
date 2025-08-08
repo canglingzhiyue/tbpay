@@ -14,7 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.view.PixelCopy;
@@ -390,7 +390,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         } else {
             this.bc = false;
         }
-        if (this.o.getControlParams() != null && !TextUtils.isEmpty(this.o.getControlParams().get("LiveRoomInit"))) {
+        if (this.o.getControlParams() != null && !StringUtils.isEmpty(this.o.getControlParams().get("LiveRoomInit"))) {
             this.bE = com.taobao.taobaoavsdk.util.b.a(this.o.getControlParams().get("LiveRoomInit"));
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TextureVideoView init: get LiveRoomInit=" + this.bE + " from mMediaContext.getControlParams() ");
         }
@@ -424,7 +424,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         this.ax = (AudioManager) this.o.getContext().getApplicationContext().getSystemService("audio");
         this.ar = new Handler(this);
         this.aA = str;
-        str = TextUtils.isEmpty(str) ? com.taobao.taobaoavsdk.util.b.c() : str;
+        str = StringUtils.isEmpty(str) ? com.taobao.taobaoavsdk.util.b.c() : str;
         if (this.o.mMediaPlayContext.mTBLive) {
             this.m = ozi.g().b(str, this);
         } else {
@@ -706,7 +706,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             if (this.bB != null && this.bA) {
                 a(this.m.f, this.bB);
             }
-            if (!TextUtils.isEmpty(this.aA)) {
+            if (!StringUtils.isEmpty(this.aA)) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TextureVideoView setSurface in initMediaPlayer");
                 if (ak() != null) {
                     a(this.m.f, ak());
@@ -780,9 +780,9 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (this.H && !TextUtils.isEmpty(this.f) && !this.f.equals(str) && this.aA != null && this.m != null && this.m.f != null) {
+            if (this.H && !StringUtils.isEmpty(this.f) && !this.f.equals(str) && this.aA != null && this.m != null && this.m.f != null) {
                 this.f = str;
                 this.aA = null;
                 this.N = false;
@@ -810,7 +810,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                 this.bC = false;
             } else if (this.m == null || !b(this.m.e) || this.H) {
             } else {
-                if ((this.u != 1 && this.u != 8) || TextUtils.isEmpty(this.f) || this.m.d) {
+                if ((this.u != 1 && this.u != 8) || StringUtils.isEmpty(this.f) || this.m.d) {
                     return;
                 }
                 if (this.u == 1) {
@@ -1048,7 +1048,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         if (this.o != null) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "textureVideoView=" + this + "startVideo##PlayState:" + this.m.e + " VideoUrl:" + this.f + ",playToken=" + this.o.mPlayToken);
         }
-        if (com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", "fixSelectUrlNameEmptyAtStart", "true")) && !TextUtils.isEmpty(this.f) && this.f.contains("artc") && this.o != null && this.o.mMediaPlayContext != null) {
+        if (com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", "fixSelectUrlNameEmptyAtStart", "true")) && !StringUtils.isEmpty(this.f) && this.f.contains("artc") && this.o != null && this.o.mMediaPlayContext != null) {
             this.o.mMediaPlayContext.mSelectedUrlName = MediaConstant.RTCLIVE_URL_NAME;
         }
         this.y = true;
@@ -1103,20 +1103,20 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             this.C = true;
             this.az = System.currentTimeMillis();
         }
-        if (b(this.m.e) && !TextUtils.isEmpty(this.f)) {
+        if (b(this.m.e) && !StringUtils.isEmpty(this.f)) {
             X();
-            if (TextUtils.isEmpty(this.aA) && this.m.e != 3) {
+            if (StringUtils.isEmpty(this.aA) && this.m.e != 3) {
                 this.m.e = 8;
                 this.m.d = false;
             }
-        } else if (this.m != null && this.m.f != null && this.m.e == 5 && !TextUtils.isEmpty(this.f) && this.P) {
+        } else if (this.m != null && this.m.f != null && this.m.e == 5 && !StringUtils.isEmpty(this.f) && this.P) {
             D();
             this.m.f.start();
             t();
             V();
-        } else if (this.m != null && this.m.f != null && !TextUtils.isEmpty(this.aA) && (this.m.e == 2 || this.m.e == 1 || this.m.e == 4)) {
+        } else if (this.m != null && this.m.f != null && !StringUtils.isEmpty(this.aA) && (this.m.e == 2 || this.m.e == 1 || this.m.e == 4)) {
             n();
-        } else if (this.m != null && this.m.f != null && !TextUtils.isEmpty(this.aA) && this.m.e == 8) {
+        } else if (this.m != null && this.m.f != null && !StringUtils.isEmpty(this.aA) && this.m.e == 8) {
             a(this.m.f);
         }
         if (((!this.aQ && !this.aR) || !this.aS) && !this.by) {
@@ -1131,9 +1131,9 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && str.startsWith(TaoLiveVideoView.TBLIVE_GRTN_SCHEMA) && this.o != null && this.o.mMediaPlayContext != null) {
+        if (!StringUtils.isEmpty(str) && str.startsWith(TaoLiveVideoView.TBLIVE_GRTN_SCHEMA) && this.o != null && this.o.mMediaPlayContext != null) {
             String str2 = this.o.mMediaPlayContext.mSelectedUrlName;
-            if (!TextUtils.isEmpty(str2) && MediaConstant.RTCLIVE_URL_NAME.equals(str2)) {
+            if (!StringUtils.isEmpty(str2) && MediaConstant.RTCLIVE_URL_NAME.equals(str2)) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "warmup path is valid." + str);
                 return true;
             }
@@ -1185,13 +1185,13 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             this.m.c = 5;
             F();
             this.C = false;
-        } else if (!b(this.m.e) || TextUtils.isEmpty(this.f) || !f(this.f)) {
+        } else if (!b(this.m.e) || StringUtils.isEmpty(this.f) || !f(this.f)) {
         } else {
             this.aD = true;
             this.o.setWarmupFlag(mediaLiveWarmupConfig.mWarmupFlag);
             this.o.setWarmupLevel(mediaLiveWarmupConfig.mWarmupLevel);
             X();
-            if (!TextUtils.isEmpty(this.aA)) {
+            if (!StringUtils.isEmpty(this.aA)) {
                 return;
             }
             this.m.e = 8;
@@ -1218,11 +1218,11 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             this.m.c = 5;
             F();
             this.C = false;
-        } else if (!b(this.m.e) || TextUtils.isEmpty(this.f)) {
+        } else if (!b(this.m.e) || StringUtils.isEmpty(this.f)) {
         } else {
             this.o.setPrepareToFirstFrame(true);
             X();
-            if (!TextUtils.isEmpty(this.aA)) {
+            if (!StringUtils.isEmpty(this.aA)) {
                 return;
             }
             this.m.e = 8;
@@ -1382,7 +1382,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             if (k() != null) {
                 a(this.m.f, k());
             }
-            if (!TextUtils.isEmpty(this.aA)) {
+            if (!StringUtils.isEmpty(this.aA)) {
                 c((IMediaPlayer) this.m.f);
             }
             a(this.m.f);
@@ -1645,7 +1645,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             this.ah = 0L;
             this.ai = false;
             this.ae = false;
-            if (!TextUtils.isEmpty(this.aM)) {
+            if (!StringUtils.isEmpty(this.aM)) {
                 a("-1", this.aM, this.o.mMediaPlayContext.mSeamlessSwitchingSelectName, "{\"msg\":\"rtc switch fail\", \"error\":-4}");
                 this.aM = null;
                 this.o.mMediaPlayContext.mSwitchingPlayerQualityItem = null;
@@ -1667,7 +1667,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             }
             ozm.h().c();
             String videoDefinition = this.o.mMediaPlayContext.getVideoDefinition();
-            if (this.o.mScenarioType == 0 && !TextUtils.isEmpty(this.f) && !this.f.contains(".flv")) {
+            if (this.o.mScenarioType == 0 && !StringUtils.isEmpty(this.f) && !this.f.contains(".flv")) {
                 this.m.e = 3;
                 this.by = true;
                 this.aT = true;
@@ -1676,7 +1676,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                     com.taobao.taobaoavsdk.util.c.c(ddgVar2, "notifyMediaRetry##VideoOnError >>> what: " + i + ", extra :" + i2 + ",videoURL:" + this.f);
                     return true;
                 }
-            } else if (!TextUtils.isEmpty(videoDefinition) && videoDefinition.contains("266")) {
+            } else if (!StringUtils.isEmpty(videoDefinition) && videoDefinition.contains("266")) {
                 this.m.e = 3;
                 this.by = true;
                 this.aT = true;
@@ -1826,7 +1826,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                         this.ah = 0L;
                         this.ai = false;
                         this.ae = false;
-                        if (!TextUtils.isEmpty(this.aM)) {
+                        if (!StringUtils.isEmpty(this.aM)) {
                             a("-1", this.aM, this.o.mMediaPlayContext.mSeamlessSwitchingSelectName, "{\"msg\":\"rtc switch fail\", \"error\":-4}");
                             str = null;
                             this.aM = null;
@@ -1859,7 +1859,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                     this.ah = 0L;
                     this.ai = false;
                     this.ae = false;
-                    if (!TextUtils.isEmpty(this.aM)) {
+                    if (!StringUtils.isEmpty(this.aM)) {
                         a("-1", this.aM, this.o.mMediaPlayContext.mSeamlessSwitchingSelectName, "{\"msg\":\"error when switch fail\", \"error\":-4}");
                         this.aM = null;
                         this.o.mMediaPlayContext.mSwitchingPlayerQualityItem = null;
@@ -1879,7 +1879,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                         this.aq = (int) j3;
                         ae();
                     }
-                } else if (!TextUtils.isEmpty(this.f) && ((this.o.mScenarioType == 0 || this.o.mScenarioType == 1) && this.f.contains(".flv") && !this.f.contains(".m3u8") && !this.f.contains(keu.SUFFIX_MP4) && 10004 == j && ((d() == 1 || d() == 8 || d() == 5) && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("MediaLive", "degradeMcodecDecodeError", "true")) && this.o.mMediaPlayContext.mTBLive))) {
+                } else if (!StringUtils.isEmpty(this.f) && ((this.o.mScenarioType == 0 || this.o.mScenarioType == 1) && this.f.contains(".flv") && !this.f.contains(".m3u8") && !this.f.contains(keu.SUFFIX_MP4) && 10004 == j && ((d() == 1 || d() == 8 || d() == 5) && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("MediaLive", "degradeMcodecDecodeError", "true")) && this.o.mMediaPlayContext.mTBLive))) {
                     if (this.o.mMediaPlayContext.mTBLive) {
                         ozi.g().a(this.m.f32509a, this);
                         oyu.c = false;
@@ -1890,12 +1890,12 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                     }
                 } else {
                     boolean z2 = false;
-                    if (TextUtils.isEmpty(this.f) || (!(this.o.mScenarioType == 0 || this.o.mScenarioType == 1) || (!(10005 == j || 10006 == j) || (!(d() == 1 || d() == 8 || d() == 5) || !com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_DEGRADE_RENDER_EGL, "true")) || !this.o.mMediaPlayContext.mTBLive)))) {
+                    if (StringUtils.isEmpty(this.f) || (!(this.o.mScenarioType == 0 || this.o.mScenarioType == 1) || (!(10005 == j || 10006 == j) || (!(d() == 1 || d() == 8 || d() == 5) || !com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_DEGRADE_RENDER_EGL, "true")) || !this.o.mMediaPlayContext.mTBLive)))) {
                         if (12110 == j) {
                             String str5 = (String) obj;
                             boolean z3 = "ud".equals(str5) || MediaConstant.DEFINITION_UD_60.equals(str5);
                             boolean z4 = !z3 || (this.T && !this.ab);
-                            if (!TextUtils.isEmpty(str5) && z4 && (mediaLiveInfo = this.o.mMediaPlayContext.mMediaLiveInfo) != null && mediaLiveInfo.liveUrlList != null) {
+                            if (!StringUtils.isEmpty(str5) && z4 && (mediaLiveInfo = this.o.mMediaPlayContext.mMediaLiveInfo) != null && mediaLiveInfo.liveUrlList != null) {
                                 if (iMediaPlayer != null && (iMediaPlayer instanceof TaobaoMediaPlayer)) {
                                     str4 = ((TaobaoMediaPlayer) iMediaPlayer).getPlayingLiveDefinition();
                                 }
@@ -1906,7 +1906,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                                         hashMap2.put("recomDefinition", str5);
                                         hashMap2.put("recomDefinitionName", qualityLiveItem.newName);
                                     }
-                                    if (!TextUtils.isEmpty(str4) && str4.equals(qualityLiveItem.newDefinition) && !this.ac) {
+                                    if (!StringUtils.isEmpty(str4) && str4.equals(qualityLiveItem.newDefinition) && !this.ac) {
                                         hashMap2.put("currentDefinition", str4);
                                         hashMap2.put("currentDefinitionName", qualityLiveItem.newName);
                                     }
@@ -2031,7 +2031,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             if ((this.o.mMediaPlayContext.mTBLive || this.o.mMediaPlayContext.mEmbed) && this.o.mScenarioType != 2) {
                 z = true;
             }
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 if (this.f.contains(".flv")) {
                     return;
                 }
@@ -2613,10 +2613,10 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             this.m.c = 5;
             F();
             this.C = false;
-        } else if (!b(this.m.e) || TextUtils.isEmpty(this.f)) {
+        } else if (!b(this.m.e) || StringUtils.isEmpty(this.f)) {
         } else {
             X();
-            if (!TextUtils.isEmpty(this.aA)) {
+            if (!StringUtils.isEmpty(this.aA)) {
                 return;
             }
             this.m.e = 8;
@@ -2646,7 +2646,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         }
         if (MediaAdapteManager.mConfigAdapter != null) {
             String str = this.o.mMediaPlayContext.mBusinessId;
-            if (!TextUtils.isEmpty(this.o.mMediaPlayContext.getFrom())) {
+            if (!StringUtils.isEmpty(this.o.mMediaPlayContext.getFrom())) {
                 str = str + "-" + this.o.mMediaPlayContext.getFrom();
             }
             this.o.mMediaPlayContext.setPlayerType(com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter, "DWInteractive", this.o.mMediaPlayContext.mBusinessId, str, this.o.mMediaPlayContext.getPlayerType()));
@@ -2657,10 +2657,10 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         if (this.o.mMediaPlayContext.getPlayerType() == 2 && this.f.contains(".m3u8")) {
             this.o.mMediaPlayContext.setPlayerType(1);
         }
-        if (!TextUtils.isEmpty(this.f) && this.f.contains(TaoLiveVideoView.TBLIVE_ARTP_SCHEMA) && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("tblive", "ARTPUseIJK", "false"))) {
+        if (!StringUtils.isEmpty(this.f) && this.f.contains(TaoLiveVideoView.TBLIVE_ARTP_SCHEMA) && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("tblive", "ARTPUseIJK", "false"))) {
             this.o.mMediaPlayContext.setPlayerType(1);
         }
-        if (!TextUtils.isEmpty(this.f) && this.f.contains(TaoLiveVideoView.TBLIVE_GRTN_SCHEMA) && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("tblive", "BFRTCUseIJK", "false"))) {
+        if (!StringUtils.isEmpty(this.f) && this.f.contains(TaoLiveVideoView.TBLIVE_GRTN_SCHEMA) && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("tblive", "BFRTCUseIJK", "false"))) {
             this.o.mMediaPlayContext.setPlayerType(1);
         }
         cVar.bi = this.o.mAnalysis;
@@ -2683,7 +2683,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         cVar.Y = this.o.mMediaPlayContext.mOnlyVideoEnable && this.o.mMediaPlayContext.isMute();
         cVar.ao = this.o.mMediaPlayContext.getForceMuteMode();
         cVar.aY = this.o.mMediaPlayContext.mChooseVVCReason.getValue();
-        if (!TextUtils.isEmpty(this.o.mMediaPlayContext.getHighCachePath())) {
+        if (!StringUtils.isEmpty(this.o.mMediaPlayContext.getHighCachePath())) {
             cVar.s = this.o.mMediaPlayContext.getHighCachePath();
             cVar.D = this.o.mMediaPlayContext.mHighVideoDefinition;
         }
@@ -2740,7 +2740,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         if (this.o.getControlParams() != null) {
             cVar.be = new HashMap();
             cVar.be.putAll(this.o.getControlParams());
-            if (!TextUtils.isEmpty(cVar.be.get("LiveRoomInit"))) {
+            if (!StringUtils.isEmpty(cVar.be.get("LiveRoomInit"))) {
                 this.bE = com.taobao.taobaoavsdk.util.b.a(cVar.be.get("LiveRoomInit"));
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TextureVideoView: get LiveRoomInit=" + this.bE + " from addControlParams");
             }
@@ -2798,11 +2798,11 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         Map<String, String> uTParams = this.o.getUTParams();
         if (uTParams != null) {
             String str2 = uTParams.get("product_type");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 cVar.z = str2;
             }
             String str3 = uTParams.get("spm-cnt");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 cVar.az = str3;
             }
         }
@@ -2999,14 +2999,14 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         if (z) {
             String str = this.o.mMediaPlayContext.mQualityLiveItem.liveUrlMiniBfrtc;
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "canSwitchStream " + z + ", check for " + this.o.mMediaPlayContext.mSelectedUrlName + ", miniBfrtcUrl=" + str);
-            if ((MediaConstant.RTCLIVE_URL_NAME.equals(this.o.mMediaPlayContext.mSelectedUrlName) || MediaConstant.BFRTC_URL_NAME.equals(this.o.mMediaPlayContext.mSelectedUrlName)) && !TextUtils.isEmpty(str)) {
+            if ((MediaConstant.RTCLIVE_URL_NAME.equals(this.o.mMediaPlayContext.mSelectedUrlName) || MediaConstant.BFRTC_URL_NAME.equals(this.o.mMediaPlayContext.mSelectedUrlName)) && !StringUtils.isEmpty(str)) {
                 return true;
             }
         } else {
             String str2 = this.o.mMediaPlayContext.mQualityLiveItem.rtcLiveUrl;
             String str3 = this.o.mMediaPlayContext.mQualityLiveItem.bfrtcUrl;
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "canSwitchStream " + z + ", check for " + this.o.mMediaPlayContext.mSelectedUrlName + ", rtcLiveUrl=" + str2 + ", bfrtcUrl=" + str3);
-            if (MediaConstant.MINI_BFRTC_URL_NAME.equals(this.o.mMediaPlayContext.mSelectedUrlName) && (!TextUtils.isEmpty(str2) || !TextUtils.isEmpty(str3))) {
+            if (MediaConstant.MINI_BFRTC_URL_NAME.equals(this.o.mMediaPlayContext.mSelectedUrlName) && (!StringUtils.isEmpty(str2) || !StringUtils.isEmpty(str3))) {
                 return true;
             }
         }
@@ -3112,7 +3112,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             return;
         }
         this.aN = i;
-        if (this.m == null || this.m.f == null || !(this.m.f instanceof TaobaoMediaPlayer) || this.o.mMediaPlayContext.mPlayerQualityItem == null || TextUtils.isEmpty(str)) {
+        if (this.m == null || this.m.f == null || !(this.m.f instanceof TaobaoMediaPlayer) || this.o.mMediaPlayContext.mPlayerQualityItem == null || StringUtils.isEmpty(str)) {
             a("-1", str, "", "{\"msg\":\"error when init\", \"error\":-5}");
             return;
         }
@@ -3154,7 +3154,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                     qualityLiveItem2 = arrayList.get(i5);
                     i4 = i5;
                 }
-                if (this.X && !TextUtils.isEmpty(arrayList.get(i5).newDefinition) && a2.equals(com.taobao.mediaplay.i.a(arrayList.get(i5).rtcLiveUrl)) && i5 != i2) {
+                if (this.X && !StringUtils.isEmpty(arrayList.get(i5).newDefinition) && a2.equals(com.taobao.mediaplay.i.a(arrayList.get(i5).rtcLiveUrl)) && i5 != i2) {
                     AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, this + " switchToNewDefinition stream index not consistent playingInex: " + i2 + riy.BRACKET_START_STR + str3 + "), realStreamIndex: " + i5 + riy.BRACKET_START_STR + arrayList.get(i5).newDefinition + riy.BRACKET_END_STR);
                     z5 = false;
                 }
@@ -3177,7 +3177,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         }
         String str4 = qualityLiveItem.rtcLiveUrl;
         this.o.mMediaPlayContext.pauseFrameLock(qualityLiveItem);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             this.o.mMediaPlayContext.mSeamlessSwitchingSelectName = MediaConstant.RTCLIVE_URL_NAME;
             if (str4.contains("&rtclive=1")) {
                 this.o.mMediaPlayContext.mSeamlessSwitchingVideoPath = str4 + "&grtn_fix_ts_reset=off&ali_stream_jitter=0";
@@ -3298,7 +3298,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         cVar.g = 1;
         cVar.f = 1;
         this.o.mMediaPlayContext.setPlayerType(2);
-        if (!TextUtils.isEmpty(this.o.mMediaPlayContext.getBackupVideoUrl()) && this.o.mMediaPlayContext.isH265()) {
+        if (!StringUtils.isEmpty(this.o.mMediaPlayContext.getBackupVideoUrl()) && this.o.mMediaPlayContext.isH265()) {
             this.f = this.o.mMediaPlayContext.getBackupVideoUrl();
             this.o.mMediaPlayContext.setVideoUrl(this.f);
             this.o.mMediaPlayContext.setVideoDefinition(this.o.mMediaPlayContext.getBackupVideoDefinition());
@@ -3354,7 +3354,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
                 this.V = true;
             }
             String lowSpeedArtpCommonParamsJson = this.o.mMediaPlayContext.getLowSpeedArtpCommonParamsJson();
-            if (!TextUtils.isEmpty(lowSpeedArtpCommonParamsJson)) {
+            if (!StringUtils.isEmpty(lowSpeedArtpCommonParamsJson)) {
                 taobaoMediaPlayer._setOption(1, "artp_weak_net_common_params", lowSpeedArtpCommonParamsJson);
             }
             if (!this.V) {
@@ -3398,10 +3398,10 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             if (this.W && this.R) {
                 taobaoMediaPlayer.setLiveDefinitionAutoSwitch(this.o.mMediaPlayContext.isLiveDefinitionAutoSwitch());
             }
-            if (this.W && !TextUtils.isEmpty(this.Z)) {
+            if (this.W && !StringUtils.isEmpty(this.Z)) {
                 taobaoMediaPlayer._setOption(1, "artp_adaption_param_json", this.Z);
             }
-            if (TextUtils.isEmpty(this.aa)) {
+            if (StringUtils.isEmpty(this.aa)) {
                 return;
             }
             taobaoMediaPlayer._setOption(1, "artp_switch_param_json", this.aa);
@@ -3687,7 +3687,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             b(this.m.f);
         }
         this.aL = null;
-        if (!TextUtils.isEmpty(this.aA) && 1 == this.m.e) {
+        if (!StringUtils.isEmpty(this.aA) && 1 == this.m.e) {
             b(true);
         }
         String str = this.m.f32509a;
@@ -3769,7 +3769,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
         if (this.m.f != null && (this.m.f instanceof TaobaoMediaPlayer)) {
             ((TaobaoMediaPlayer) this.m.f).setPlayingLiveDefinition(this.aM);
         }
-        if (!TextUtils.isEmpty(this.aM)) {
+        if (!StringUtils.isEmpty(this.aM)) {
             this.o.mMediaPlayContext.mPlayerQualityItem = this.o.mMediaPlayContext.mSwitchingPlayerQualityItem;
             PlayerQualityItem playerQualityItem = this.o.mMediaPlayContext.mPlayerQualityItem;
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, " handleSwitchStreamSuccInfo name=" + playerQualityItem.name + ",  newName=" + playerQualityItem.newName + " ,definition=" + playerQualityItem.definition + " ,newDefinition=" + playerQualityItem.newDefinition);
@@ -4255,7 +4255,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             }
             ((TaobaoMediaPlayer) this.m.f).stopRtcAdaption();
             ((TaobaoMediaPlayer) this.m.f).startRtcAdaption(this.o.mMediaPlayContext.getRtcSwitchLiveInfo(this.o.mMediaPlayContext.mMediaLiveInfo));
-        } else if (!MediaConstant.CMD_ENABLE_AUTO_PAUSE_IN_BACKGROUND.equals(str) || TextUtils.isEmpty(str2)) {
+        } else if (!MediaConstant.CMD_ENABLE_AUTO_PAUSE_IN_BACKGROUND.equals(str) || StringUtils.isEmpty(str2)) {
         } else {
             if ("1".equals(str2)) {
                 this.o.mMediaPlayContext.mEnableAutoPauseInBackground = true;
@@ -4310,7 +4310,7 @@ public class k extends com.taobao.mediaplay.player.b implements Handler.Callback
             }
             String config = OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_DISABLE_LONG_AUDIO_FOCUS_SBT, MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264);
             String str2 = this.o.mMediaPlayContext.mFrom;
-            if ((!TextUtils.isEmpty(config) && !TextUtils.isEmpty(str2) && com.taobao.taobaoavsdk.util.b.b(str2, config)) || this.o.mMediaPlayContext.mRequestShortAudioFocus) {
+            if ((!StringUtils.isEmpty(config) && !StringUtils.isEmpty(str2) && com.taobao.taobaoavsdk.util.b.b(str2, config)) || this.o.mMediaPlayContext.mRequestShortAudioFocus) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TextureVideoView " + this + "," + str + ", sbt=" + str2 + " only request short AudioFocus with mVolume: " + this.m.i);
                 ipw.a(this.o.getContext()).a(this.o.mAudioFocusChangeListener, 2);
             } else {

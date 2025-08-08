@@ -1,7 +1,7 @@
 package com.taobao.tao.handler.worker;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -89,7 +89,7 @@ public class b extends oir {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-                    } else if (TextUtils.equals(str, "ANTISPAM_BLACK_USER")) {
+                    } else if (StringUtils.equals(str, "ANTISPAM_BLACK_USER")) {
                         b.a(b.this, com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_23576));
                     } else {
                         b.a(b.this, com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_23575));
@@ -105,7 +105,7 @@ public class b extends oir {
                     if (bVar2 == null) {
                         return false;
                     }
-                    if (!TextUtils.isEmpty(bVar2.c)) {
+                    if (!StringUtils.isEmpty(bVar2.c)) {
                         Date date = new Date(Long.parseLong(bVar2.c));
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17874));
                         String str = com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17831) + simpleDateFormat.format(date) + com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17857);
@@ -113,14 +113,14 @@ public class b extends oir {
                         oup.a(str, bVar2.c);
                     }
                     if (nyl.a()) {
-                        AnalyticsUtil.traceWXAndQQShare(bVar, TextUtils.isEmpty(bVar2.d) ? bVar.a().a().url : bVar2.d, true, bVar2.b);
+                        AnalyticsUtil.traceWXAndQQShare(bVar, StringUtils.isEmpty(bVar2.d) ? bVar.a().a().url : bVar2.d, true, bVar2.b);
                     }
                     if (b.a(b.this) == null) {
                         oup.a(1);
                         oafVar.a();
                         return false;
                     }
-                    if (TextUtils.equals("common", com.taobao.share.globalmodel.e.b().j().templateId)) {
+                    if (StringUtils.equals("common", com.taobao.share.globalmodel.e.b().j().templateId)) {
                         b.a(b.this).e().i();
                     } else {
                         b.a(b.this).e().g();
@@ -128,7 +128,7 @@ public class b extends oir {
                     if (SpUtils.getGuide(context, SpUtils.SHARE_GUIDE)) {
                         return true;
                     }
-                    if (!TextUtils.equals("common", com.taobao.share.globalmodel.e.b().j().templateId)) {
+                    if (!StringUtils.equals("common", com.taobao.share.globalmodel.e.b().j().templateId)) {
                         b.a(b.this).a(oafVar);
                         return false;
                     }
@@ -160,7 +160,7 @@ public class b extends oir {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("3dd7e573", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                         TLog.loge("CreatePassWorker", "onDidCopyed: isEmpty" + str);
                     } else {
                         com.taobao.share.taopassword.b.a();
@@ -202,7 +202,7 @@ public class b extends oir {
                 }
                 Toast.makeText(com.taobao.tao.config.a.a(), com.alibaba.ability.localization.b.a(R.string.share_str_wx_copy_tips), 0).show();
                 this.b.a();
-                obc.d(context, obc.a(TextUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) ? TPTargetType.WEIXIN : TPTargetType.QQFRIEND));
+                obc.d(context, obc.a(StringUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) ? TPTargetType.WEIXIN : TPTargetType.QQFRIEND));
                 return;
             }
             oafVar.b();

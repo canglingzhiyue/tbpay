@@ -2,7 +2,7 @@ package com.ut.mini;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.analytics.core.config.s;
 import com.alibaba.analytics.core.model.LogField;
@@ -710,7 +710,7 @@ public class UTTracker {
                     }
                 }
             }
-            if (TextUtils.isEmpty(str5)) {
+            if (StringUtils.isEmpty(str5)) {
                 return;
             }
             try {
@@ -726,7 +726,7 @@ public class UTTracker {
                         return;
                     }
                     String str6 = map.get("utparam-cnt");
-                    if (TextUtils.isEmpty(str6)) {
+                    if (StringUtils.isEmpty(str6)) {
                         map.put("utparam-cnt", JSON.toJSONString(parseJsonToMap));
                         return;
                     }
@@ -819,7 +819,7 @@ public class UTTracker {
             return;
         }
         map.put(LogField.SDKTYPE.toString(), anz.SDK_TYPE);
-        if (!TextUtils.isEmpty(this.mAppKey)) {
+        if (!StringUtils.isEmpty(this.mAppKey)) {
             map.put(LogField.APPKEY.toString(), this.mAppKey);
         } else {
             map.put(LogField.APPKEY.toString(), any.d().c());

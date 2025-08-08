@@ -1,6 +1,6 @@
 package com.huawei.hms.hatool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 import org.json.JSONArray;
@@ -54,7 +54,7 @@ public class h1 implements o1 {
             jSONObject2.put("events", jSONArray);
             try {
                 String a4 = n.a(k1.a(jSONObject2.toString().getBytes("UTF-8")), this.f);
-                if (TextUtils.isEmpty(a4)) {
+                if (StringUtils.isEmpty(a4)) {
                     v.e("hmsSdk", "eventInfo encrypt failed,report over!");
                     return null;
                 }

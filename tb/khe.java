@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.db.MspDBHelper;
@@ -61,7 +61,7 @@ public class khe {
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.put("encryptedUid", (Object) khn.a(khm.a().c()).d());
             jSONObject2.put("encryptedUser", (Object) jSONObject3);
-            if (khgVar != null && !TextUtils.isEmpty(khgVar.a())) {
+            if (khgVar != null && !StringUtils.isEmpty(khgVar.a())) {
                 jSONObject2.put(i.CDN_REQUEST_TYPE, (Object) khgVar.a());
             }
             hashMap.put("extMap", String.valueOf(jSONObject2));

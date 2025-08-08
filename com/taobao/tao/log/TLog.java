@@ -1,7 +1,7 @@
 package com.taobao.tao.log;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.utils.MainAnrOptThreadPool;
@@ -51,10 +51,10 @@ public class TLog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dfb58f69", new Object[]{logLevel, str, str2, str3});
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
         } else {
-            if (TextUtils.isEmpty(str)) {
-                if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str2)) {
                     str = "module";
                 } else if (str2.contains(".")) {
                     String substring = str2.substring(0, str2.indexOf("."));
@@ -64,7 +64,7 @@ public class TLog {
                     str = str2;
                 }
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "tag";
             }
             if (d.l()) {
@@ -389,7 +389,7 @@ public class TLog {
         if (str3 == null) {
             str3 = "";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             sb.append(str2);
         } else {
             sb.append(str);

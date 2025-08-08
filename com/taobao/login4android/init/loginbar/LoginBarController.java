@@ -10,7 +10,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -153,7 +153,7 @@ public class LoginBarController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("eab74714", new Object[]{new Integer(i), activity, fragmentManager});
-        } else if (Login.checkSessionValid() || !TextUtils.isEmpty(Login.getLoginToken())) {
+        } else if (Login.checkSessionValid() || !StringUtils.isEmpty(Login.getLoginToken())) {
         } else {
             try {
                 handleLoginBar(i, activity, fragmentManager, getLoginBarProfileStr(activity));
@@ -175,7 +175,7 @@ public class LoginBarController {
         String country = getCountry();
         OrangeConfig orangeConfig = OrangeConfig.getInstance();
         String config = orangeConfig.getConfig("login4android", "login_bar_profile_" + country + "_" + language, "");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             return config;
         }
         OrangeConfig orangeConfig2 = OrangeConfig.getInstance();
@@ -186,7 +186,7 @@ public class LoginBarController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("24aebb23", new Object[]{new Integer(i), activity});
-        } else if (Login.checkSessionValid() || !TextUtils.isEmpty(Login.getLoginToken())) {
+        } else if (Login.checkSessionValid() || !StringUtils.isEmpty(Login.getLoginToken())) {
         } else {
             try {
                 handleLoginBar(i, activity, null, getLoginBarProfileStr(activity));
@@ -301,7 +301,7 @@ public class LoginBarController {
             ipChange.ipc$dispatch("9a43798", new Object[]{new Integer(i), activity, fragmentManager, loginBarProfile, appLaunchInfo});
         } else if (activity == null || activity.isFinishing()) {
         } else {
-            if ((loginBarProfile != null && TextUtils.equals(loginBarProfile.isOpenLoginButton, "false")) || (frameLayout = (FrameLayout) activity.getWindow().getDecorView()) == null) {
+            if ((loginBarProfile != null && StringUtils.equals(loginBarProfile.isOpenLoginButton, "false")) || (frameLayout = (FrameLayout) activity.getWindow().getDecorView()) == null) {
                 return;
             }
             FrameLayout frameLayout2 = (FrameLayout) frameLayout.findViewById(16908290);
@@ -329,7 +329,7 @@ public class LoginBarController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a5a85846", new Object[]{new Integer(i), activity, loginBarProfile, str});
-        } else if (!TextUtils.isEmpty(Login.getOldUserId())) {
+        } else if (!StringUtils.isEmpty(Login.getOldUserId())) {
             setView(i, activity, 1, loginBarProfile);
         } else {
             setView(i, activity, 2, loginBarProfile);
@@ -405,7 +405,7 @@ public class LoginBarController {
             if ("alipay".equals(str) && iSupportAlipay) {
                 setView(i, activity, 6, loginBarProfile, appLaunchInfo);
                 return true;
-            } else if (!"sim".equals(str) || TextUtils.isEmpty(maskMobile)) {
+            } else if (!"sim".equals(str) || StringUtils.isEmpty(maskMobile)) {
                 return false;
             } else {
                 setView(i, activity, 3, loginBarProfile, appLaunchInfo);
@@ -417,7 +417,7 @@ public class LoginBarController {
         } else if ("umidIv".equals(str)) {
             setView(i, activity, 5, loginBarProfile, appLaunchInfo);
             return true;
-        } else if (!"sim".equals(str) || TextUtils.isEmpty(maskMobile)) {
+        } else if (!"sim".equals(str) || StringUtils.isEmpty(maskMobile)) {
             return false;
         } else {
             setView(i, activity, 3, loginBarProfile, appLaunchInfo);
@@ -528,7 +528,7 @@ public class LoginBarController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1348e274", new Object[]{tUrlImageView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             tUrlImageView.setVisibility(8);
         } else {
             try {
@@ -550,7 +550,7 @@ public class LoginBarController {
         String showLoginId = getShowLoginId(appLaunchInfo);
         Bundle bundle = new Bundle();
         String maskMobile = getMaskMobile();
-        if (TextUtils.isEmpty(maskMobile)) {
+        if (StringUtils.isEmpty(maskMobile)) {
             doPrefetch();
         }
         String str = null;
@@ -562,10 +562,10 @@ public class LoginBarController {
             str = "simbar";
             str2 = "sim";
         } else if (i2 == 5) {
-            if (!TextUtils.isEmpty(maskMobile) && containsSim(appLaunchInfo)) {
+            if (!StringUtils.isEmpty(maskMobile) && containsSim(appLaunchInfo)) {
                 buildSimLoginBundle(bundle, umidLoginToken, showLoginId);
                 str2 = "sim";
-            } else if (!TextUtils.isEmpty(umidLoginToken)) {
+            } else if (!StringUtils.isEmpty(umidLoginToken)) {
                 bundle.putString("login_type", str2);
                 bundle.putString(LoginConstant.UMID_TOKEN, umidLoginToken);
             } else {
@@ -575,7 +575,7 @@ public class LoginBarController {
         } else {
             str2 = i2 == 4 ? "defaultLogin" : TokenType.LOGIN;
         }
-        if (!TextUtils.isEmpty(getBenifitText(appLaunchInfo))) {
+        if (!StringUtils.isEmpty(getBenifitText(appLaunchInfo))) {
             LoginContext.mFrom = HOME_BENEFIT_FROM;
         } else {
             LoginContext.mFrom = HOME_FROM;
@@ -616,10 +616,10 @@ public class LoginBarController {
         }
         bundle.putString("source", "Page_Login5-simLogin");
         bundle.putString("login_type", "sim");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             bundle.putString(LoginConstant.UMID_TOKEN, str);
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         bundle.putString("showLoginId", str2);
@@ -712,7 +712,7 @@ public class LoginBarController {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ef7b440a", new Object[]{activity, loginBarProfile});
         }
-        if (loginBarProfile == null || TextUtils.isEmpty(loginBarProfile.loginSubText)) {
+        if (loginBarProfile == null || StringUtils.isEmpty(loginBarProfile.loginSubText)) {
             return b.a(R.string.aliuser_bar_more_suprise);
         }
         return loginBarProfile.loginSubText;
@@ -729,7 +729,7 @@ public class LoginBarController {
             ipChange.ipc$dispatch("1475e2f7", new Object[]{str, textView, str2});
         } else if (textView == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 textView.setText(str);
             } else {
                 textView.setText(str2);
@@ -755,7 +755,7 @@ public class LoginBarController {
         try {
             UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder(str);
             uTCustomHitBuilder.setEventPage(UTConstant.PageName.UT_PAGE_LOGIN_BAR);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_ARG2, str2);
             }
             if (map != null) {

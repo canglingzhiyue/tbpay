@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import com.alibaba.android.ultron.vfw.weex2.f;
@@ -88,7 +88,7 @@ public class adg {
         }
         for (int i2 = 0; i2 < aVar.c - i; i2++) {
             String a2 = adh.a(context, aVar);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 jqg.b("UltronTradeHybridPreRenderPool.generateInstance", "generatePreRenderInstance failed,count:" + i2);
             } else {
                 MUSDKInstance a3 = f.a().a(a2, true);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.calendar.sdk.db.schedule.Repeat;
 import java.util.List;
@@ -75,7 +75,7 @@ public final class ifz {
             for (Map.Entry<String, Long> entry : map.entrySet()) {
                 a2.a(entry.getKey(), entry.getValue().longValue());
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 a2.d(str2);
             }
             a2.b(b(f));

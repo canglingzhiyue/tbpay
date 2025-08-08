@@ -1,7 +1,7 @@
 package com.taobao.search.m3.widget;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -152,7 +152,7 @@ public final class f extends com.taobao.search.m3.widget.b {
             return (String) ipChange.ipc$dispatch("8fa94d5", new Object[]{this, bean});
         }
         q.c(bean, "bean");
-        if (!TextUtils.isEmpty(bean.getUprightImage())) {
+        if (!StringUtils.isEmpty(bean.getUprightImage())) {
             return bean.getUprightImage();
         }
         return bean.getPicPath();
@@ -175,7 +175,7 @@ public final class f extends com.taobao.search.m3.widget.b {
             return ((Boolean) ipChange.ipc$dispatch("c1e057ce", new Object[]{this, bean})).booleanValue();
         }
         q.c(bean, "bean");
-        return !TextUtils.isEmpty(bean.getUprightImage());
+        return !StringUtils.isEmpty(bean.getUprightImage());
     }
 
     @Override // com.taobao.search.m3.widget.b, tb.itd

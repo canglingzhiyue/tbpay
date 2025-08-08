@@ -1,6 +1,6 @@
 package com.taobao.android.detail2.core.framework.data.net.recommend;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.bio.api.BioDetector;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -102,7 +102,7 @@ public class RecRequestParamsV2 implements Serializable, fla {
         if (ipChange instanceof IpChange) {
             return (RecRequestParamsV2) ipChange.ipc$dispatch("f9042c7e", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mBizParams.put("exposedItemIds", (Object) str);
         }
         return this;
@@ -113,7 +113,7 @@ public class RecRequestParamsV2 implements Serializable, fla {
         if (ipChange instanceof IpChange) {
             return (RecRequestParamsV2) ipChange.ipc$dispatch("1cf63bbd", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mBizParams.put("exposeComplexIds", (Object) str);
         }
         return this;
@@ -124,7 +124,7 @@ public class RecRequestParamsV2 implements Serializable, fla {
         if (ipChange instanceof IpChange) {
             return (RecRequestParamsV2) ipChange.ipc$dispatch("f5da20de", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mBizParams.put("exposedCardSubType", (Object) str);
         }
         return this;

@@ -1,6 +1,6 @@
 package com.taobao.message.sp.framework.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -187,7 +187,7 @@ public class SimpleMessageListOriginal {
             TLog.loge("SimpleMessageListResult", Log.getStackTraceString(th));
         }
         if (z) {
-            if (TextUtils.isEmpty(simpleMessageObject.senderName)) {
+            if (StringUtils.isEmpty(simpleMessageObject.senderName)) {
                 simpleMessage.setSender(SimpleTarget.obtain(Login.getNick()));
             } else {
                 simpleMessage.setSender(SimpleTarget.obtain(simpleMessageObject.senderName));

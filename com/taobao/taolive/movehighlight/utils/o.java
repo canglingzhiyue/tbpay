@@ -1,7 +1,7 @@
 package com.taobao.taolive.movehighlight.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.live.timemove.base.data.RecModel;
 import com.taobao.taolive.room.service.TBLiveRecEngineV2;
@@ -70,7 +70,7 @@ public class o {
         com.taobao.taolive.sdk.core.g b = com.taobao.taolive.room.utils.n.b(aVar);
         if (b instanceof com.taobao.taolive.sdk.controller.e) {
             com.taobao.taolive.sdk.controller.e eVar = (com.taobao.taolive.sdk.controller.e) b;
-            if (!TextUtils.isEmpty(eVar.n)) {
+            if (!StringUtils.isEmpty(eVar.n)) {
                 return eVar.n;
             }
         }
@@ -116,21 +116,21 @@ public class o {
                 arrayList.add("feed_id=" + str3);
                 arrayList.add("account_id=" + str4);
                 arrayList.add("deviceLevel=" + com.taobao.taolive.room.utils.k.a());
-                if (!TextUtils.isEmpty(D.aw())) {
+                if (!StringUtils.isEmpty(D.aw())) {
                     arrayList.add("pkid=" + D.aw());
                 }
-                if (!TextUtils.isEmpty(D.e())) {
+                if (!StringUtils.isEmpty(D.e())) {
                     arrayList.add("spm-url=" + D.e());
                 }
-                if (!TextUtils.isEmpty(D.e())) {
+                if (!StringUtils.isEmpty(D.e())) {
                     arrayList.add("spm=" + D.e());
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     arrayList.add("trackInfo=" + str2);
-                } else if (!TextUtils.isEmpty(D.f())) {
+                } else if (!StringUtils.isEmpty(D.f())) {
                     arrayList.add("trackInfo=" + D.f());
                 }
-                if (!TextUtils.isEmpty(D.j())) {
+                if (!StringUtils.isEmpty(D.j())) {
                     arrayList.add("liveoprt_id=" + D.j());
                 }
                 StringBuilder sb = new StringBuilder();
@@ -194,7 +194,7 @@ public class o {
                 arrayList.add("queryKey=" + D.D());
                 arrayList.add("clickid=" + D.aj());
                 arrayList.add("room_type=live");
-                if (!TextUtils.isEmpty(aA.tvChannelId)) {
+                if (!StringUtils.isEmpty(aA.tvChannelId)) {
                     arrayList.add("officialchannel_id=" + aA.tvChannelId);
                 }
                 if (strArr != null && strArr.length > 0) {
@@ -209,7 +209,7 @@ public class o {
                 }
                 sb6.append(str5);
                 arrayList.add(sb6.toString());
-                if (u.aj() && !TextUtils.isEmpty(D.g())) {
+                if (u.aj() && !StringUtils.isEmpty(D.g())) {
                     arrayList.add("utparam-url=" + D.g());
                 }
                 if (pmd.a().e() == null) {
@@ -280,12 +280,12 @@ public class o {
                         map.put(ag.KEY_LIVE_STATUS, String.valueOf(aA.status));
                         String str2 = aA.liveId;
                         String str3 = aA.broadCaster.accountId;
-                        if (!TextUtils.isEmpty(D.e())) {
+                        if (!StringUtils.isEmpty(D.e())) {
                             map.put("spm-url", D.e());
                         }
                         map.put("feed_id", str2);
                         map.put("account_id", str3);
-                        if (!TextUtils.isEmpty(aA.tvChannelId)) {
+                        if (!StringUtils.isEmpty(aA.tvChannelId)) {
                             map.put(ag.KEY_OFFICIAL_CHANNEL_ID, aA.tvChannelId);
                         }
                     }
@@ -331,7 +331,7 @@ public class o {
                 String str4 = aA.broadCaster.accountId;
                 hashMap.put("liveAdParams", Uri.encode(D.B()));
                 hashMap.put("accounttype", com.taobao.taolive.sdk.controller.k.a(aA.broadCaster.type) + "");
-                if (!TextUtils.isEmpty(D.e())) {
+                if (!StringUtils.isEmpty(D.e())) {
                     hashMap.put("spm-url", D.e());
                 }
                 hashMap.put("feed_id", str3);
@@ -362,20 +362,20 @@ public class o {
                 hashMap.put("isUp", String.valueOf(D.w()));
                 hashMap.put("queryKey", D.D());
                 hashMap.put("clickid", D.aj());
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     hashMap.put("trackInfo", str2);
-                } else if (!TextUtils.isEmpty(D.f())) {
+                } else if (!StringUtils.isEmpty(D.f())) {
                     hashMap.put("trackInfo", D.f());
                 }
-                if (!TextUtils.isEmpty(D.j())) {
+                if (!StringUtils.isEmpty(D.j())) {
                     hashMap.put(aw.PARAM_TRACK_LIVEOPRT_ID, D.j());
                 }
-                if (!TextUtils.isEmpty(D.e())) {
+                if (!StringUtils.isEmpty(D.e())) {
                     hashMap.put("spm", D.e());
                 }
                 hashMap.put("spm-cnt", c(aVar));
                 hashMap.put("timestampT", System.currentTimeMillis() + "");
-                if (!TextUtils.isEmpty(aA.tvChannelId)) {
+                if (!StringUtils.isEmpty(aA.tvChannelId)) {
                     hashMap.put(ag.KEY_OFFICIAL_CHANNEL_ID, aA.tvChannelId);
                 }
                 hashMap.put("product_type", RecModel.MEDIA_TYPE_TIMEMOVE);
@@ -452,10 +452,10 @@ public class o {
                 if (u.am()) {
                     hashMap.put("clickid", D.aj());
                 }
-                if (!TextUtils.isEmpty(D.f())) {
+                if (!StringUtils.isEmpty(D.f())) {
                     hashMap.put("trackInfo", D.f());
                 }
-                if (!TextUtils.isEmpty(D.j())) {
+                if (!StringUtils.isEmpty(D.j())) {
                     hashMap.put(aw.PARAM_TRACK_LIVEOPRT_ID, D.j());
                 }
                 if (pmd.a().e() == null) {
@@ -479,7 +479,7 @@ public class o {
             return;
         }
         List<String> a2 = a(aVar, strArr);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = b(aVar);
         }
         cgl.s().a("taobaolive", str, str2, str3, (String[]) a2.toArray(new String[0]));
@@ -519,7 +519,7 @@ public class o {
                     arrayList.add("accountId=" + str);
                     arrayList.add("roomStatus=" + aA.roomStatus);
                 }
-                if (!TextUtils.isEmpty(D.f())) {
+                if (!StringUtils.isEmpty(D.f())) {
                     arrayList.add("trackInfo=" + D.f());
                 }
                 arrayList.add("serverParams=" + D.i());

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -40,11 +40,11 @@ public class xpd {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("8fafb607", new Object[]{this, iContainerDataModel, jSONObject, str});
-                } else if (jSONObject == null || TextUtils.isEmpty(str)) {
+                } else if (jSONObject == null || StringUtils.isEmpty(str)) {
                     e.e("CacheDataValidator", "containerId or actionParams is null.");
                 } else {
                     String string = jSONObject.getString(i.CDN_REQUEST_TYPE);
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         e.e("CacheDataValidator", "requestType is null.");
                         return;
                     }

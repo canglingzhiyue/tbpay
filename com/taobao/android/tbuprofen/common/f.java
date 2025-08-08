@@ -1,6 +1,6 @@
 package com.taobao.android.tbuprofen.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.log.TBPLogLevel;
 import com.taobao.tao.log.LogLevel;
@@ -61,7 +61,7 @@ public class f implements com.taobao.android.tbuprofen.d {
 
     private static String a(String str, Object... objArr) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("dee72cc1", new Object[]{str, objArr}) : TextUtils.isEmpty(str) ? "" : String.format(str, objArr);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("dee72cc1", new Object[]{str, objArr}) : StringUtils.isEmpty(str) ? "" : String.format(str, objArr);
     }
 
     @Override // com.taobao.android.tbuprofen.d

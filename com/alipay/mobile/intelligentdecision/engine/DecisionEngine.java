@@ -3,7 +3,7 @@ package com.alipay.mobile.intelligentdecision.engine;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.intelligentdecision.DecisionContext;
 import com.alipay.mobile.intelligentdecision.callback.IDResultListener;
@@ -69,7 +69,7 @@ public class DecisionEngine {
         }
         String str4 = b;
         DecisionLogcat.b(str4, "startDecisionWithParams:" + str2 + ", bizId:" + str + ", sceneid:" + str3);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             IDecisionResult iDecisionResult = new IDecisionResult();
             iDecisionResult.success = false;
             iDecisionResult.state = "error";
@@ -112,7 +112,7 @@ public class DecisionEngine {
         String str4 = b;
         DecisionLogcat.b(str4, "startDataCollect:" + str);
         final DecisonLogBehavior a2 = DecisonLogBehavior.a();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         final Context context = DecisionContext.getInstance().getContext();
@@ -166,7 +166,7 @@ public class DecisionEngine {
         final AIManager a2 = AIManager.a();
         String str4 = AIManager.f5735a;
         DecisionLogcat.b(str4, "startPredit:" + str + ", sceneid:" + str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         final Context context = DecisionContext.getInstance().getContext();
@@ -260,7 +260,7 @@ public class DecisionEngine {
                         String string4 = bundle.getString("extend3");
                         String string5 = bundle.getString("cancel_type");
                         String string6 = bundle.getString("sceneId");
-                        if (TextUtils.isEmpty(string3)) {
+                        if (StringUtils.isEmpty(string3)) {
                             string3 = string4;
                         }
                         DecisionLogcat.b("IDCacheManager", "spendTime:" + j + ", result:" + string + ", vid:" + string2 + ", product:" + string3 + ", proResult:" + string5 + ",sceneid:" + string6);

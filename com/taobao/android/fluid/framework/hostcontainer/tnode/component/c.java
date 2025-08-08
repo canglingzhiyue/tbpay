@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.hostcontainer.tnode.component;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -24,7 +24,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Uri parse = Uri.parse(str);
             String queryParameter = parse.getQueryParameter("tabid");
             String queryParameter2 = parse.getQueryParameter("tabItemId");
@@ -42,7 +42,7 @@ public class c {
                 c = 1;
             }
             if (c == 0 || c == 1) {
-                return TextUtils.equals(queryParameter, str2);
+                return StringUtils.equals(queryParameter, str2);
             }
             if (c == 2) {
                 return a(parse, queryParameter, queryParameter2, str2);
@@ -57,19 +57,19 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("acd7ca81", new Object[]{uri, str, str2, str3})).booleanValue();
         }
-        if (uri == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (uri == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return false;
         }
-        if (TextUtils.equals(str, "more")) {
+        if (StringUtils.equals(str, "more")) {
             JSONObject a2 = a(uri);
-            if (!ogv.a(a2) && TextUtils.equals(oec.a(a2.get("tabItemId"), (String) null), obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
+            if (!ogv.a(a2) && StringUtils.equals(oec.a(a2.get("tabItemId"), (String) null), obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
                 z = true;
             }
-            if (TextUtils.equals(str2, obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
+            if (StringUtils.equals(str2, obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
                 z = true;
             }
         }
-        if (!TextUtils.equals(str, obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
+        if (!StringUtils.equals(str, obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
             return z;
         }
         return true;
@@ -84,7 +84,7 @@ public class c {
             return null;
         }
         String queryParameter = uri.getQueryParameter("extParams");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return null;
         }
         try {

@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -400,8 +400,8 @@ public class LocationCallBack implements com.taobao.location.client.a {
                         TBRevisionSwitchManager.i().a(map, true, 0);
                         f.a().a(map);
                         TLog.loge("Page_Home", "EditionPositionSwitcher", "elderHomeForLocation=" + homeLocationResult.elderHome + "elderTags=" + map.get("evo_is_large_font"));
-                        if (TextUtils.equals(homeLocationResult.isVillageUser, "y") && !com.taobao.android.editionswitcher.b.l(context)) {
-                            if (TextUtils.equals(homeLocationResult.forceSwitch, "y")) {
+                        if (StringUtils.equals(homeLocationResult.isVillageUser, "y") && !com.taobao.android.editionswitcher.b.l(context)) {
+                            if (StringUtils.equals(homeLocationResult.forceSwitch, "y")) {
                                 com.taobao.android.editionswitcher.b.b(context, "CUN");
                                 TBS.Ext.commitEvent(2201, "Page_Home", "edition-switcher-cun-force");
                                 return;
@@ -419,12 +419,12 @@ public class LocationCallBack implements com.taobao.location.client.a {
                         PositionInfo b2 = com.taobao.android.editionswitcher.b.b(context);
                         String str3 = b2.editionCode;
                         String str4 = homeLocationResult.editionCode;
-                        if (!TextUtils.equals(str4, str3)) {
-                            if (!TextUtils.equals("CN", str3) && !TextUtils.equals(str4, "CN") && (TextUtils.equals("CN", b2.countryCode) || TextUtils.equals("CN", homeLocationResult.countryId))) {
+                        if (!StringUtils.equals(str4, str3)) {
+                            if (!StringUtils.equals("CN", str3) && !StringUtils.equals(str4, "CN") && (StringUtils.equals("CN", b2.countryCode) || StringUtils.equals("CN", homeLocationResult.countryId))) {
                                 TLog.loge("EditionPositionSwitcher", String.format("%s %s 不能直接互切", str3, str4));
-                            } else if (TextUtils.equals("OLD", str4) && (TextUtils.isEmpty(homeLocationResult.oldDialogTitle) || TextUtils.isEmpty(homeLocationResult.oldDialogSubTitle) || TextUtils.isEmpty(homeLocationResult.oldDialogContentImg))) {
+                            } else if (StringUtils.equals("OLD", str4) && (StringUtils.isEmpty(homeLocationResult.oldDialogTitle) || StringUtils.isEmpty(homeLocationResult.oldDialogSubTitle) || StringUtils.isEmpty(homeLocationResult.oldDialogContentImg))) {
                             } else {
-                                if (TextUtils.equals("OLD", str4) && "1".equals(str2)) {
+                                if (StringUtils.equals("OLD", str4) && "1".equals(str2)) {
                                     LocationCallBack.a(LocationCallBack.this).a(new Runnable() { // from class: com.taobao.android.editionswitcher.LocationCallBack.1.1
                                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -462,7 +462,7 @@ public class LocationCallBack implements com.taobao.location.client.a {
                                     TLog.loge("EditionPositionSwitcher", str4 + "一周内提示过了");
                                 }
                             }
-                        } else if (!TextUtils.equals("CN", str4) || !"1".equals(homeLocationResult.invitedElder) || f.c()) {
+                        } else if (!StringUtils.equals("CN", str4) || !"1".equals(homeLocationResult.invitedElder) || f.c()) {
                         } else {
                             LocationCallBack.a(LocationCallBack.this).a(new Runnable() { // from class: com.taobao.android.editionswitcher.LocationCallBack.1.2
                                 public static volatile transient /* synthetic */ IpChange $ipChange;

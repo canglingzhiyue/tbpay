@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitinstall.g;
 import com.alibaba.android.split.core.splitinstall.h;
@@ -423,7 +423,7 @@ public class dct implements dcs {
             return tBLocationDTO;
         }
         String d = d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             this.d = (TBLocationDTO) JSON.parseObject(d, TBLocationDTO.class);
         }
         return this.d;

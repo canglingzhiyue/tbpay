@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.b;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -36,7 +36,7 @@ public class fdv implements eos {
             return null;
         }
         String string = iDMComponent.getFields().getString("type");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         if (string.hashCode() != -219723137 || !string.equals("guessYouLike")) {

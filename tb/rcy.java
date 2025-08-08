@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.c;
@@ -22,7 +22,7 @@ public class rcy {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("30dda510", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

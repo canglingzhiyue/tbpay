@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.track;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.dx.hanlerimpl.ExpansionRPGetter;
@@ -33,11 +33,11 @@ public class d {
             JSONObject jSONObject3 = aVar.b.getJSONObject("extendVal");
             hashMap.put("itemBizType", jSONObject3.getString("itemBizType"));
             hashMap.put("isYanxuan", jSONObject3.getString("isYanxuan"));
-            if (!TextUtils.isEmpty(jSONObject3.getString(aw.PARAM_PLAY_URL))) {
+            if (!StringUtils.isEmpty(jSONObject3.getString(aw.PARAM_PLAY_URL))) {
                 hashMap.put("kanjiangjie", str2);
             }
         }
-        if (aVar.b != null && (jSONObject2 = aVar.b.getJSONObject("personalityData")) != null && TextUtils.equals(jSONObject2.getString("goodsSubscribeStatus"), "102")) {
+        if (aVar.b != null && (jSONObject2 = aVar.b.getJSONObject("personalityData")) != null && StringUtils.equals(jSONObject2.getString("goodsSubscribeStatus"), "102")) {
             hashMap.put("kaijiangtixing", str2);
         }
         com.taobao.taolive.sdk.goodlist.c.a(hashMap, aVar.b);
@@ -67,17 +67,17 @@ public class d {
             str2 = "0";
         }
         hashMap.put("is_expansion", str2);
-        hashMap.put("glopenfrom", TextUtils.isEmpty(qna.d(cVar)) ? "" : qna.d(cVar));
+        hashMap.put("glopenfrom", StringUtils.isEmpty(qna.d(cVar)) ? "" : qna.d(cVar));
         if (aVar.f21830a == 2) {
             if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() == null) {
                 return;
             }
             HashMap<String, String> hashMap2 = null;
-            if (cVar != null && cVar.e() != null && !TextUtils.isEmpty(cVar.e().utParams)) {
+            if (cVar != null && cVar.e() != null && !StringUtils.isEmpty(cVar.e().utParams)) {
                 hashMap2 = a(cVar.e().utParams);
             }
             com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j().c("GoodsListExchange_RedPacket", hashMap2);
-        } else if ((aVar.f21830a != 7 && aVar.f21830a != 6 && aVar.f21830a != 4) || TextUtils.isEmpty(aVar.e) || com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() == null) {
+        } else if ((aVar.f21830a != 7 && aVar.f21830a != 6 && aVar.f21830a != 4) || StringUtils.isEmpty(aVar.e) || com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() == null) {
         } else {
             com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j().c("Show-detail", hashMap);
         }

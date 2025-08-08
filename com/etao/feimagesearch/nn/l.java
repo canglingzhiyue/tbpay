@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.nn;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.datapoints.StatisticalDataPoint;
 import com.etao.feimagesearch.util.r;
@@ -35,13 +35,13 @@ public class l {
             return "";
         }
         cot.b("UnitBuildUtil", "model cdnUrl = %s", str);
-        if (TextUtils.isEmpty(str) || !TextUtils.isEmpty(cst.a(com.b(), str))) {
+        if (StringUtils.isEmpty(str) || !StringUtils.isEmpty(cst.a(com.b(), str))) {
             return "";
         }
         long currentTimeMillis = System.currentTimeMillis();
         String a2 = v.a(com.b(), str, z2, str2);
         long currentTimeMillis2 = System.currentTimeMillis();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             long j = currentTimeMillis2 - currentTimeMillis;
             cox.b(StatisticalDataPoint.PageName.PHOTO_SEARCH_TAKE.getPageName(), "detectModelDownloadFinish", "time", String.valueOf(j));
             cot.b("UnitBuildUtil", "detectModelDownloadFinish time= %d", Long.valueOf(j));
@@ -59,11 +59,11 @@ public class l {
             return (String) ipChange.ipc$dispatch("ce2a666a", new Object[]{str, new Boolean(z), str2, str3});
         }
         String a2 = cst.a(com.b(), str, str2);
-        String str4 = TextUtils.isEmpty(str3) ? "-1" : str3;
-        if (TextUtils.isEmpty(a2)) {
+        String str4 = StringUtils.isEmpty(str3) ? "-1" : str3;
+        if (StringUtils.isEmpty(a2)) {
             long currentTimeMillis = System.currentTimeMillis();
             String a3 = a(str, true, z, str2);
-            dpn.a(NetConfig.ALINN_BIZ_NAME, str3, "0", "", !TextUtils.isEmpty(a3), (float) (System.currentTimeMillis() - currentTimeMillis));
+            dpn.a(NetConfig.ALINN_BIZ_NAME, str3, "0", "", !StringUtils.isEmpty(a3), (float) (System.currentTimeMillis() - currentTimeMillis));
             String pageName = StatisticalDataPoint.PageName.PHOTO_SEARCH_TAKE.getPageName();
             cox.b(pageName, "selfDownload" + str4, new String[0]);
             return a3;
@@ -79,7 +79,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (!com.etao.feimagesearch.config.b.dh() && com.b() != null && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!com.etao.feimagesearch.config.b.dh() && com.b() != null && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             File file = new File(com.b().getCacheDir(), "festival");
             if (!file.exists()) {
                 return "";
@@ -100,7 +100,7 @@ public class l {
             try {
                 bufferedInputStream.read(bArr, 0, length);
                 com.etao.feimagesearch.mnn.utils.d.a(bufferedInputStream);
-                if (!TextUtils.equals(r.b(bArr), str2)) {
+                if (!StringUtils.equals(r.b(bArr), str2)) {
                     com.etao.feimagesearch.util.i.a(file2);
                     return "";
                 }

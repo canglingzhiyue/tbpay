@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.business.getredpacket;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.GoodListSearchResponse;
 import com.taobao.taolive.sdk.adapter.network.d;
@@ -26,7 +26,7 @@ public class a extends b {
             ipChange.ipc$dispatch("ba326ce5", new Object[]{this, getPacketRequest});
             return;
         }
-        if (!TextUtils.isEmpty(getPacketRequest.asac)) {
+        if (!StringUtils.isEmpty(getPacketRequest.asac)) {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("asac", getPacketRequest.asac);
             a(hashMap);

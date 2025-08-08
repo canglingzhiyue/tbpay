@@ -2,7 +2,7 @@ package com.taobao.pha.core.controller;
 
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -274,10 +274,10 @@ public class i {
                 s.a(entry.getKey(), entry.getValue(), this.x);
             }
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(this.n)) {
+            if (!StringUtils.isEmpty(this.n)) {
                 hashMap.put("errorCode", this.n);
             }
-            if (!TextUtils.isEmpty(this.o)) {
+            if (!StringUtils.isEmpty(this.o)) {
                 hashMap.put("errorMsg", this.o);
             }
             ManifestModel u = this.k.u();
@@ -298,13 +298,13 @@ public class i {
                 str = "1";
             }
             hashMap.put(nfc.PHA_MONITOR_DIMENSION_IS_FROM_WINDVANE, str);
-            if (z && !TextUtils.isEmpty(this.z)) {
+            if (z && !StringUtils.isEmpty(this.z)) {
                 hashMap.put(nfc.PHA_MONITOR_DIMENSION_WINDVANE_PATH_STAGE, this.z);
             }
             if (this.k.p() != null) {
                 hashMap.put("appType", this.k.p().name());
             }
-            hashMap.put(nfc.PHA_MONITOR_DIMENSION_PRELOAD_URL, TextUtils.isEmpty(this.s) ? "" : this.s);
+            hashMap.put(nfc.PHA_MONITOR_DIMENSION_PRELOAD_URL, StringUtils.isEmpty(this.s) ? "" : this.s);
             hashMap.put(nfc.PHA_MONITOR_DIMENSION_PAGE_URL, this.t);
             hashMap.put(com.taobao.pha.core.o.phaVersion, "");
             h k = this.k.k();
@@ -344,7 +344,7 @@ public class i {
         } else {
             nfc s = p.b().s();
             String b = ngn.b(this.k.t().toString());
-            if (TextUtils.isEmpty(b) || s == null || this.b) {
+            if (StringUtils.isEmpty(b) || s == null || this.b) {
                 return;
             }
             this.b = true;
@@ -379,7 +379,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3531c42", new Object[]{this, str, new Long(j2), new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.p.put(str, (Object) Long.valueOf(j2));
             if (z) {

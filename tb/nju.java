@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -37,7 +37,7 @@ public class nju implements njt {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("9458c0f9", new Object[]{this, str, new Boolean(z)});
-            } else if (!TextUtils.equals("android_pop_center", str) || z) {
+            } else if (!StringUtils.equals("android_pop_center", str) || z) {
             } else {
                 nju.a();
             }
@@ -72,7 +72,7 @@ public class nju implements njt {
         if (ipChange instanceof IpChange) {
             return (PopStrategyGroup) ipChange.ipc$dispatch("3b283f7d", new Object[]{this, str});
         }
-        if (b(str) || TextUtils.equals(OrangeConfigLocal.getInstance().getConfig("android_pop_center", "popOperationDegradeSwitch", "false"), "true")) {
+        if (b(str) || StringUtils.equals(OrangeConfigLocal.getInstance().getConfig("android_pop_center", "popOperationDegradeSwitch", "false"), "true")) {
             return null;
         }
         PopStrategyGroup popStrategyGroup = f31507a.get(str);
@@ -97,7 +97,7 @@ public class nju implements njt {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             b.getStrategyByIdentifier(str).showDirect = z;
@@ -118,7 +118,7 @@ public class nju implements njt {
             f31507a.put(HOME_PAGE, b);
             String config = OrangeConfigLocal.getInstance().getConfig("android_pop_center", "popOperationMainKey", "");
             String str = "load main config=" + config;
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 String str2 = "get configData=" + config;
                 JSONObject parseObject = JSON.parseObject(config);
                 List<PopStrategyGroup> parseArray = JSONArray.parseArray(parseObject.getString("mainPagesStrategy"), PopStrategyGroup.class);
@@ -146,12 +146,12 @@ public class nju implements njt {
         if (ipChange instanceof IpChange) {
             return (PopStrategyGroup) ipChange.ipc$dispatch("3fbda93b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String config = OrangeConfigLocal.getInstance().getConfig("android_pop_center", str + "popOperationOtherKey_", "");
         String str2 = "load other config=" + config;
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return null;
         }
         try {

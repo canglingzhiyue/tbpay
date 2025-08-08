@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.RemoteViews;
 import com.alibaba.fastjson.JSON;
@@ -101,7 +101,7 @@ public class PicPriceNotification extends msq {
         PicPrice picPrice = (PicPrice) JSON.parseObject(this.mMsgData.sceneTemplateData.toString(), PicPrice.class);
         RemoteViews remoteViews = new RemoteViews(packageName, R.layout.personal_pic_price);
         msx.a a2 = msx.a();
-        if (a2 != null && !TextUtils.isEmpty(a2.a())) {
+        if (a2 != null && !StringUtils.isEmpty(a2.a())) {
             String a3 = a2.a();
             if (a.ATOM_EXT_white.equals(a3)) {
                 remoteViews.setViewVisibility(R.id.notificationWhiteBackground, 0);
@@ -115,7 +115,7 @@ public class PicPriceNotification extends msq {
             remoteViews.setViewVisibility(R.id.notificationBlackBackground, 8);
             remoteViews.setViewVisibility(R.id.notificationWhiteBackground, 8);
         }
-        if (a2 != null && !TextUtils.isEmpty(a2.c())) {
+        if (a2 != null && !StringUtils.isEmpty(a2.c())) {
             remoteViews.setTextColor(R.id.NotificationTextLeft, Color.parseColor(a2.c()));
             remoteViews.setTextColor(R.id.NotificationTextCenter, Color.parseColor(a2.c()));
             remoteViews.setTextColor(R.id.NotificationTextRight, Color.parseColor(a2.c()));

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.d;
 import com.vivo.push.e.b;
 import com.vivo.push.i;
@@ -35,17 +35,17 @@ public final class a {
         try {
             boolean d = aa.d(context, str);
             String str2 = d ? "com.vivo.pushservice.action.RECEIVE" : "com.vivo.pushclient.action.RECEIVE";
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 u.c(context, "消息接受者包名为空！");
                 throw new Exception("消息接受者包名为空！");
             } else if (!d && !a(context, str2, str)) {
             } else {
-                if (TextUtils.isEmpty(vVar.a())) {
+                if (StringUtils.isEmpty(vVar.a())) {
                     vVar.a(context.getPackageName());
                 }
                 Intent intent = new Intent();
                 intent.setFlags(1048576);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     intent.setAction(str2);
                 }
                 intent.setPackage(str);
@@ -68,7 +68,7 @@ public final class a {
         boolean c = vVar.c();
         i a2 = i.a(context, c ? "com.vivo.vms.upstageservice" : "com.vivo.vms.aidlservice");
         boolean a3 = a2.a();
-        if (TextUtils.isEmpty(vVar.a())) {
+        if (StringUtils.isEmpty(vVar.a())) {
             vVar.a(context.getPackageName());
         }
         if (a3 && !"com.vivo.pushservice".equals(context.getPackageName())) {

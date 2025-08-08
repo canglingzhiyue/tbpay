@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.concurrent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Observable;
@@ -187,7 +187,7 @@ public class ZFutureTask<V> extends FutureTask<V> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("54ada043", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mTaskId)) {
+        if (StringUtils.isEmpty(this.mTaskId)) {
             this.mTaskId = String.valueOf(this.callable.hashCode());
         }
         return this.mTaskId;

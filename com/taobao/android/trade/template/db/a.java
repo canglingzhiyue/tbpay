@@ -3,7 +3,7 @@ package com.taobao.android.trade.template.db;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.template.db.Entry;
 import java.lang.reflect.Field;
@@ -205,7 +205,7 @@ public final class a {
                 sb.append(c0604a.f15634a);
                 sb.append(' ');
                 sb.append(f15633a[c0604a.b]);
-                if (!TextUtils.isEmpty(c0604a.e)) {
+                if (!StringUtils.isEmpty(c0604a.e)) {
                     sb.append(" DEFAULT ");
                     sb.append(c0604a.e);
                 }

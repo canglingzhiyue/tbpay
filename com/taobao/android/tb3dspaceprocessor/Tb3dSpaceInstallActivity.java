@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -202,7 +202,7 @@ public class Tb3dSpaceInstallActivity extends BaseFeatureDownloadActivity {
             return;
         }
         String queryParameter = data.getQueryParameter("CustomLoadPage");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             queryParameter = data.getQueryParameter("appUrl");
             try {
                 queryParameter = Uri.parse(queryParameter).getQueryParameter("CustomLoadPage");
@@ -215,7 +215,7 @@ public class Tb3dSpaceInstallActivity extends BaseFeatureDownloadActivity {
             } catch (UnsupportedEncodingException unused2) {
             }
         }
-        if (TextUtils.isEmpty(this.k)) {
+        if (StringUtils.isEmpty(this.k)) {
             e();
             return;
         }
@@ -250,7 +250,7 @@ public class Tb3dSpaceInstallActivity extends BaseFeatureDownloadActivity {
         if (hybridWebView == null) {
             return;
         }
-        if (TextUtils.equals(hybridWebView.getUrl(), str)) {
+        if (StringUtils.equals(hybridWebView.getUrl(), str)) {
             this.h.refresh();
         } else {
             this.h.loadUrl(str);

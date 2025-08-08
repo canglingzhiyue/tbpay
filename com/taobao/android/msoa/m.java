@@ -1,7 +1,7 @@
 package com.taobao.android.msoa;
 
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -41,7 +41,7 @@ public class m {
             config = OrangeConfig.getInstance().getConfig(ORANGE_GROUP_MSOA_PERMISSION, "global", "");
             config2 = OrangeConfig.getInstance().getConfig(ORANGE_GROUP_MSOA_PERMISSION, "scene", "");
         }
-        if (!TextUtils.isEmpty(config) && (parseObject2 = JSONObject.parseObject(config)) != null) {
+        if (!StringUtils.isEmpty(config) && (parseObject2 = JSONObject.parseObject(config)) != null) {
             for (String str : parseObject2.keySet()) {
                 Boolean bool = parseObject2.getBoolean(str);
                 if (bool != null && !bool.booleanValue()) {
@@ -49,7 +49,7 @@ public class m {
                 }
             }
         }
-        if (TextUtils.isEmpty(config2) || (parseObject = JSONObject.parseObject(config2)) == null) {
+        if (StringUtils.isEmpty(config2) || (parseObject = JSONObject.parseObject(config2)) == null) {
             return;
         }
         for (String str2 : parseObject.keySet()) {

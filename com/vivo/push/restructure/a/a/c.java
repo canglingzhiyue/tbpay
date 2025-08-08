@@ -3,7 +3,7 @@ package com.vivo.push.restructure.a.a;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.wireless.security.SecExceptionCode;
 import com.vivo.push.util.aa;
@@ -34,7 +34,7 @@ public final class c extends a<com.vivo.push.restructure.a.a> {
         }
         Intent b2 = aVar.b();
         String b3 = com.vivo.push.sdk.a.a().b();
-        if (!TextUtils.isEmpty(b3) && b3.contains("CommandService")) {
+        if (!StringUtils.isEmpty(b3) && b3.contains("CommandService")) {
             if (!(b2 != null && a(b2) && b(b2))) {
                 u.a("CheckNode", " !checkIntentIsSecurity(intent)");
                 return SecExceptionCode.SEC_ERROR_SENSOR_INVALID_PARA;
@@ -43,7 +43,7 @@ public final class c extends a<com.vivo.push.restructure.a.a> {
         Context b4 = com.vivo.push.restructure.a.a().b();
         String packageName = b4.getPackageName();
         String stringExtra = b2.getStringExtra("command_type");
-        if (!TextUtils.isEmpty(stringExtra) && stringExtra.equals("reflect_receiver")) {
+        if (!StringUtils.isEmpty(stringExtra) && stringExtra.equals("reflect_receiver")) {
             int intExtra = b2.getIntExtra("command", -1);
             if (intExtra < 0) {
                 intExtra = b2.getIntExtra("method", -1);
@@ -53,7 +53,7 @@ public final class c extends a<com.vivo.push.restructure.a.a> {
                 return 2803;
             }
             String action = b2.getAction();
-            if (TextUtils.isEmpty(com.vivo.push.restructure.a.a().e().a(b4, action))) {
+            if (StringUtils.isEmpty(com.vivo.push.restructure.a.a().e().a(b4, action))) {
                 u.d("CheckNode", " reflectReceiver error: receiver for: " + action + " not found, package: " + packageName);
                 b2.setPackage(packageName);
                 b4.sendBroadcast(b2);
@@ -68,8 +68,8 @@ public final class c extends a<com.vivo.push.restructure.a.a> {
     private static boolean a(Intent intent) {
         try {
             String stringExtra = intent.getStringExtra("security_avoid_pull");
-            if (TextUtils.isEmpty(stringExtra)) {
-                u.a("CheckNode", "checkIntentIsSecurityTextUtils.isEmpty");
+            if (StringUtils.isEmpty(stringExtra)) {
+                u.a("CheckNode", "checkIntentIsSecurityStringUtils.isEmpty");
                 return true;
             }
             try {
@@ -97,13 +97,13 @@ public final class c extends a<com.vivo.push.restructure.a.a> {
             Context b2 = com.vivo.push.restructure.a.a().b();
             String b3 = ag.b(b2, "com.vivo.pushservice");
             u.d("CheckNode", " 配置的验签参数 = ".concat(String.valueOf(b3)));
-            if (!TextUtils.equals(b3, "1")) {
+            if (!StringUtils.equals(b3, "1")) {
                 return true;
             }
             String stringExtra = intent.getStringExtra("security_avoid_pull_rsa");
             String stringExtra2 = intent.getStringExtra("security_avoid_rsa_public_key");
-            if (!TextUtils.isEmpty(stringExtra) && !TextUtils.isEmpty(stringExtra2)) {
-                if (!TextUtils.equals(stringExtra, "com.vivo.pushservice") && !TextUtils.equals(stringExtra2, "com.vivo.pushservice")) {
+            if (!StringUtils.isEmpty(stringExtra) && !StringUtils.isEmpty(stringExtra2)) {
+                if (!StringUtils.equals(stringExtra, "com.vivo.pushservice") && !StringUtils.equals(stringExtra2, "com.vivo.pushservice")) {
                     if (com.vivo.push.e.b.a().a(b2).a("com.vivo.pushservice".getBytes("UTF-8"), ab.a(stringExtra2), Base64.decode(stringExtra, 2))) {
                         u.d("CheckNode", " RSA验签通过  ");
                         return true;

@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.provider.option;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliConfigInterface;
 import com.taobao.android.detail.core.utils.i;
@@ -160,9 +160,9 @@ public class d implements com.taobao.android.detail.datasdk.protocol.adapter.opt
                         Looper.loop();
                         str = str2;
                     } else {
-                        str = !TextUtils.isEmpty(b2.getLongitude()) ? b2.getLongitude() : str2;
+                        str = !StringUtils.isEmpty(b2.getLongitude()) ? b2.getLongitude() : str2;
                         try {
-                            if (!TextUtils.isEmpty(b2.getLatitude())) {
+                            if (!StringUtils.isEmpty(b2.getLatitude())) {
                                 str2 = b2.getLatitude();
                             }
                         } catch (Throwable th2) {

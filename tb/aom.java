@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -37,7 +37,7 @@ public class aom implements f.a {
             return;
         }
         apr.b("CloseDetectIpv6Listener", "parseConfig value", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if ("1".equalsIgnoreCase(str)) {

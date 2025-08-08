@@ -1,7 +1,7 @@
 package com.ta.audid.utils;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -200,7 +200,7 @@ public class UtdidLogger {
         StackTraceElement stackTrace = getStackTrace();
         if (stackTrace != null) {
             String className = stackTrace.getClassName();
-            str2 = !TextUtils.isEmpty(className) ? className.substring(className.lastIndexOf(46) + 1) : "";
+            str2 = !StringUtils.isEmpty(className) ? className.substring(className.lastIndexOf(46) + 1) : "";
             str = stackTrace.getMethodName();
         } else {
             str = "";

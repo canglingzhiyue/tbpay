@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
 import com.taobao.tao.log.TLog;
@@ -52,7 +52,7 @@ public class xkv extends org {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c1c350fb", new Object[]{this, traceModel, new Boolean(z)})).booleanValue();
         }
-        return traceModel.getPriority() != 4 && !TextUtils.isEmpty(traceModel.getName());
+        return traceModel.getPriority() != 4 && !StringUtils.isEmpty(traceModel.getName());
     }
 
     @Override // tb.org

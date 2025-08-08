@@ -6,7 +6,7 @@ import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.taobao.TBActionBar;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -199,7 +199,7 @@ public class f extends ius<Void, View, iru<? extends com.taobao.android.searchba
         textView.setContentDescription(com.alibaba.ability.localization.b.a(R.string.taobao_app_1005_1_16703) + str);
         this.c.setOnClickListener(this);
         String param = this.i.getParam("searchTips");
-        if (!TextUtils.isEmpty(param)) {
+        if (!StringUtils.isEmpty(param)) {
             this.c.setHint(param);
         }
         this.d = toolbar.findViewById(R.id.searchbar_inner);
@@ -232,11 +232,11 @@ public class f extends ius<Void, View, iru<? extends com.taobao.android.searchba
             arrayMap2.put("user_id", this.i.getParam("sellerId", ""));
             String param = this.i.getParam(noa.KEY_MINI_APP);
             String param2 = this.i.getParam(noa.KEY_MINI_APP_CATEGORY_URL);
-            if (!TextUtils.equals("true", param) || TextUtils.isEmpty(param2)) {
+            if (!StringUtils.equals("true", param) || StringUtils.isEmpty(param2)) {
                 z = false;
             }
             arrayMap2.put("isNewStyle", getModel().d().getParamValue("isNewStyle"));
-            if (TextUtils.equals(this.i.getParam("from"), "category")) {
+            if (StringUtils.equals(this.i.getParam("from"), "category")) {
                 this.b.finish();
             } else {
                 arrayMap2.put("spm", InshopResultActivity.SEARCH_PAGE_SPM);
@@ -256,20 +256,20 @@ public class f extends ius<Void, View, iru<? extends com.taobao.android.searchba
             arrayMap3.put("sellerId", this.i.getParam("sellerId", ""));
             arrayMap3.put(DISPLAY_Q, ((Object) this.c.getText()) + "");
             String param3 = this.i.getParam("photoSearch");
-            if (!TextUtils.isEmpty(param3)) {
+            if (!StringUtils.isEmpty(param3)) {
                 arrayMap3.put("photoSearch", param3);
             }
             String param4 = this.i.getParam("storeId");
-            if (!TextUtils.isEmpty(param4)) {
+            if (!StringUtils.isEmpty(param4)) {
                 arrayMap3.put("storeId", param4);
             }
             String param5 = this.i.getParam("searchTips");
             String param6 = this.i.getParam("searchWord");
-            if (!TextUtils.isEmpty(param5) && !TextUtils.isEmpty(param6)) {
+            if (!StringUtils.isEmpty(param5) && !StringUtils.isEmpty(param6)) {
                 arrayMap3.put("searchTips", param5);
                 arrayMap3.put("searchWord", param6);
             }
-            arrayMap3.put("spm", TextUtils.equals(this.i.getParam("from"), "category") ? InshopResultActivity.CATEGORY_PAGE_SPM : InshopResultActivity.SEARCH_PAGE_SPM);
+            arrayMap3.put("spm", StringUtils.equals(this.i.getParam("from"), "category") ? InshopResultActivity.CATEGORY_PAGE_SPM : InshopResultActivity.SEARCH_PAGE_SPM);
             arrayMap3.put("isNewStyle", getModel().d().getParamValue("isNewStyle"));
             if ("true".equals(this.i.getParam(noa.KEY_SEARCH_ELDER_HOME_OPEN))) {
                 arrayMap3.put(noa.KEY_SHOP_SEARCH_ELDER, nto.IN_SHOP_ELDER_HIT_VALUE);

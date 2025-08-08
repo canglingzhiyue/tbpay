@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import com.taobao.taolive.room.utils.v;
@@ -113,7 +113,7 @@ public class ppf {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this});
         }
         TBLiveDataModel tBLiveDataModel = this.k;
-        if (tBLiveDataModel != null && !TextUtils.isEmpty(tBLiveDataModel.mRawData)) {
+        if (tBLiveDataModel != null && !StringUtils.isEmpty(tBLiveDataModel.mRawData)) {
             return this.k.mRawData;
         }
         if (f() != null && pmd.a().F() != null && (pmd.a().F().c() instanceof TBLiveDataModel)) {

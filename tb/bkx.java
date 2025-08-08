@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.ext.event.util.h;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,7 +25,7 @@ public class bkx extends bkt {
         if (jSONObject.get("nextUrl") instanceof String) {
             JSONObject jSONObject3 = new JSONObject();
             String string = jSONObject.getString("nextUrl");
-            if (TextUtils.equals("responseUrl", string)) {
+            if (StringUtils.equals("responseUrl", string)) {
                 string = "@data{data.url}";
             }
             jSONObject3.put("url", (Object) string);

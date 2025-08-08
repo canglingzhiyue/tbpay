@@ -2,7 +2,7 @@ package com.taobao.android.jarviswe.jsbridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
@@ -185,7 +185,7 @@ public class a {
                 jSONObject16.put("overallInfo", str2 != null ? "运行时间" + str2 : "未运行");
                 JSONArray jSONArray7 = new JSONArray();
                 String str3 = (String) a2.get(e.MODEL_STATUS_KEY_LAST_ERROR);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     org.json.JSONObject jSONObject17 = new org.json.JSONObject();
                     jSONObject17.put("name", "运行错误");
                     jSONObject17.put("value", str3);
@@ -231,7 +231,7 @@ public class a {
             org.json.JSONObject jSONObject = new org.json.JSONObject(str);
             String optString = jSONObject.optString("groupName");
             String optString2 = jSONObject.optString("key");
-            if (TextUtils.isEmpty(optString2)) {
+            if (StringUtils.isEmpty(optString2)) {
                 config = OrangeConfig.getInstance().getCustomConfig(optString, "");
             } else {
                 config = OrangeConfig.getInstance().getConfig(optString, optString2, "");
@@ -391,7 +391,7 @@ public class a {
                         return;
                     }
                     String valueOf = String.valueOf(((HashMap) objArr[0]).get("result"));
-                    if (TextUtils.isEmpty(valueOf)) {
+                    if (StringUtils.isEmpty(valueOf)) {
                         return;
                     }
                     HashMap hashMap2 = new HashMap();
@@ -430,7 +430,7 @@ public class a {
             }
         });
         try {
-            if (TextUtils.equals(new org.json.JSONObject(str).optString("betaSwitch"), "true")) {
+            if (StringUtils.equals(new org.json.JSONObject(str).optString("betaSwitch"), "true")) {
                 f.a("WalleBridge", "betaOn", "true");
                 b();
             } else {

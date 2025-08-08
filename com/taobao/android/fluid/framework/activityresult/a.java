@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.activityresult;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
@@ -30,7 +30,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cbf22822", new Object[]{this, fluidContext, fragment, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.b == null) {
                 this.b = new SparseArray<>();
@@ -52,7 +52,7 @@ public class a {
         } else if ((65280 & i) != 256 || i2 != 1 || (sparseArray = this.b) == null) {
         } else {
             String str2 = sparseArray.get(i & 255);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             HashMap hashMap = new HashMap();

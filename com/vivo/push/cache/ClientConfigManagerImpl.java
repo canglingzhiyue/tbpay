@@ -1,7 +1,7 @@
 package com.vivo.push.cache;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.ContextDelegate;
 import com.vivo.push.util.u;
 import java.util.HashSet;
@@ -64,7 +64,7 @@ public class ClientConfigManagerImpl implements d {
     }
 
     public String getValueByKey(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         this.mPushConfigSettings.c();
@@ -74,7 +74,7 @@ public class ClientConfigManagerImpl implements d {
     public Set<Long> getWhiteLogList() {
         HashSet hashSet = new HashSet();
         String valueByKey = getValueByKey("WLL");
-        if (!TextUtils.isEmpty(valueByKey)) {
+        if (!StringUtils.isEmpty(valueByKey)) {
             for (String str : valueByKey.split(",")) {
                 try {
                     hashSet.add(Long.valueOf(Long.parseLong(str)));
@@ -98,7 +98,7 @@ public class ClientConfigManagerImpl implements d {
             com.vivo.push.cache.e r0 = r3.preparePushConfigSettings()
             java.lang.String r1 = "PSM"
             java.lang.String r0 = r0.c(r1)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             r2 = 0
             if (r1 != 0) goto L1a
             int r0 = java.lang.Integer.parseInt(r0)     // Catch: java.lang.NumberFormatException -> L16
@@ -141,10 +141,10 @@ public class ClientConfigManagerImpl implements d {
     public boolean isInBlackList(long j) {
         String[] split;
         String c = preparePushConfigSettings().c("BL");
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             for (String str : c.split(",")) {
                 try {
-                    if (!TextUtils.isEmpty(str) && Long.parseLong(str) == j) {
+                    if (!StringUtils.isEmpty(str) && Long.parseLong(str) == j) {
                         return true;
                     }
                 } catch (NumberFormatException e) {

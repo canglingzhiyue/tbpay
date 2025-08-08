@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -53,7 +53,7 @@ public final class azw extends aso {
             return;
         }
         String key = data.getKey();
-        if (TextUtils.isEmpty(key)) {
+        if (StringUtils.isEmpty(key)) {
             arc.a().a("shareContext扩展点实现componentKey为null");
             return;
         }
@@ -217,7 +217,7 @@ public final class azw extends aso {
             return ipChange.ipc$dispatch("805a9220", new Object[]{this, jSONObject, str});
         }
         String a2 = a(str);
-        return (TextUtils.isEmpty(a2) || TextUtils.equals(a2, "*")) ? jSONObject : bbd.b.a(a2.split("\\."), jSONObject);
+        return (StringUtils.isEmpty(a2) || StringUtils.equals(a2, "*")) ? jSONObject : bbd.b.a(a2.split("\\."), jSONObject);
     }
 
     private String a(String str) {

@@ -2,7 +2,7 @@ package com.taobao.dai.realtimedebug;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.c;
@@ -18,7 +18,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.equals("startRealtimeDebug", str) && !TextUtils.isEmpty(str2)) {
+        if (StringUtils.equals("startRealtimeDebug", str) && !StringUtils.isEmpty(str2)) {
             return a(str2, false);
         }
         return false;
@@ -65,7 +65,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         RealtimeDebugConfig realtimeDebugConfig = null;
@@ -74,7 +74,7 @@ public class a {
         } catch (Throwable th) {
             com.taobao.mrt.utils.a.a("MRTRealtimeDebugHandle", "", th);
         }
-        if (realtimeDebugConfig == null && TextUtils.isEmpty(realtimeDebugConfig.debugId)) {
+        if (realtimeDebugConfig == null && StringUtils.isEmpty(realtimeDebugConfig.debugId)) {
             return false;
         }
         com.taobao.mrt.utils.a.a(realtimeDebugConfig.debugId);

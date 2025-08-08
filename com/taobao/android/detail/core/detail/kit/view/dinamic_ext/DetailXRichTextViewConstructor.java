@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.view.dinamic_ext;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.View;
@@ -41,7 +41,7 @@ public class DetailXRichTextViewConstructor extends DTextViewConstructor impleme
     @DinamicAttr(attrSet = {"rIconUrl"})
     public void setImageUrl(final XRichTextView xRichTextView, String str) {
         xRichTextView.setIcon(null);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             dzv.a(str, xRichTextView.getContext(), new c.a() { // from class: com.taobao.android.detail.core.detail.kit.view.dinamic_ext.DetailXRichTextViewConstructor.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -61,7 +61,7 @@ public class DetailXRichTextViewConstructor extends DTextViewConstructor impleme
     @Override // com.taobao.android.dinamic.constructor.DTextViewConstructor
     @DinamicAttr(attrSet = {"dText"})
     public void setText(TextView textView, String str) {
-        if (textView != null && (textView instanceof XRichTextView) && !TextUtils.isEmpty(str)) {
+        if (textView != null && (textView instanceof XRichTextView) && !StringUtils.isEmpty(str)) {
             XRichTextView xRichTextView = (XRichTextView) textView;
             xRichTextView.setSpannableStringBuilder(replaceStrWithColorSpan(new SpannableStringBuilder(str), "#", "@", xRichTextView.getSpanColorInt()));
             return;
@@ -71,7 +71,7 @@ public class DetailXRichTextViewConstructor extends DTextViewConstructor impleme
 
     @DinamicAttr(attrSet = {"dLineSpace"})
     public void setLineSpace(TextView textView, String str) {
-        if (textView == null || !(textView instanceof XRichTextView) || TextUtils.isEmpty(str)) {
+        if (textView == null || !(textView instanceof XRichTextView) || StringUtils.isEmpty(str)) {
             return;
         }
         ((XRichTextView) textView).setLineSpace(fpr.a(textView.getContext(), str, 3));
@@ -79,7 +79,7 @@ public class DetailXRichTextViewConstructor extends DTextViewConstructor impleme
 
     @DinamicAttr(attrSet = {"dStyledColor"})
     public void setStyledFontColor(TextView textView, String str) {
-        if (textView == null || !(textView instanceof XRichTextView) || TextUtils.isEmpty(str)) {
+        if (textView == null || !(textView instanceof XRichTextView) || StringUtils.isEmpty(str)) {
             return;
         }
         ((XRichTextView) textView).setSpanColor(str);

@@ -3,7 +3,7 @@ package com.alipay.security.mobile.alipayauthenticatorservice.fingerprint.manage
 import android.content.Context;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.CancellationSignal;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.security.mobile.alipayauthenticatorservice.fingerprint.util.CryptoUtils;
 import com.alipay.security.mobile.alipayauthenticatorservice.fingerprint.util.KeyMasterUtils;
@@ -224,7 +224,7 @@ public class IFAAFingerprintProtectedByKMCompat implements IFAAFingerprintManage
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("7a5d5791", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.authChallenge)) {
+        if (StringUtils.isEmpty(this.authChallenge)) {
             this.authChallenge = initChallenge();
         }
         try {

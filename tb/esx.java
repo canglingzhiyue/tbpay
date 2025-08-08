@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -48,7 +48,7 @@ public final class esx extends sur {
                 return null;
             }
             Object obj = map != null ? map.get("type") : null;
-            if (TextUtils.isEmpty(String.valueOf(obj))) {
+            if (StringUtils.isEmpty(String.valueOf(obj))) {
                 com.taobao.tab2interact.core.utils.a.b(this, "LiveTabMessage", "解析直播Tab消息实体，type为空，返回空");
                 return null;
             }

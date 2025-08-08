@@ -9,7 +9,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1040,7 +1040,7 @@ public class j implements a, com.taobao.mediaplay.player.e, mjv {
 
     public j(MediaContext mediaContext) {
         this.f18023a = mediaContext;
-        if (!TextUtils.isEmpty(this.f18023a.getVideoToken())) {
+        if (!StringUtils.isEmpty(this.f18023a.getVideoToken())) {
             MediaContext mediaContext2 = this.f18023a;
             this.b = new com.taobao.mediaplay.player.k(mediaContext2, mediaContext2.getVideoToken());
         } else {
@@ -1078,7 +1078,7 @@ public class j implements a, com.taobao.mediaplay.player.e, mjv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-        } else if ((this.b.d() == 1 && TextUtils.isEmpty(this.f18023a.getVideoToken())) || (!TextUtils.isEmpty(this.f18023a.getVideoToken()) && this.b.d() == 1)) {
+        } else if ((this.b.d() == 1 && StringUtils.isEmpty(this.f18023a.getVideoToken())) || (!StringUtils.isEmpty(this.f18023a.getVideoToken()) && this.b.d() == 1)) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "start index=null because return by mVideoView.getVideoState()=" + this.b.d());
             com.taobao.mediaplay.player.b bVar = this.b;
             if (!(bVar instanceof com.taobao.mediaplay.player.k)) {
@@ -1103,7 +1103,7 @@ public class j implements a, com.taobao.mediaplay.player.e, mjv {
             ipChange.ipc$dispatch("63fccf7", new Object[]{this});
             return;
         }
-        if ((this.b.d() == 1 && TextUtils.isEmpty(this.f18023a.getVideoToken())) || (!TextUtils.isEmpty(this.f18023a.getVideoToken()) && this.b.d() == 1)) {
+        if ((this.b.d() == 1 && StringUtils.isEmpty(this.f18023a.getVideoToken())) || (!StringUtils.isEmpty(this.f18023a.getVideoToken()) && this.b.d() == 1)) {
             z = true;
         }
         if (z) {
@@ -1116,7 +1116,7 @@ public class j implements a, com.taobao.mediaplay.player.e, mjv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("64de478", new Object[]{this});
-        } else if (this.b.d() == 5 || this.b.d() == 8 || !TextUtils.isEmpty(this.f18023a.getVideoToken())) {
+        } else if (this.b.d() == 5 || this.b.d() == 8 || !StringUtils.isEmpty(this.f18023a.getVideoToken())) {
             this.b.l();
         } else if (this.b.d() == 4 || (this.b.e() && this.b.f() == 4)) {
             if (this.b.e()) {
@@ -1139,7 +1139,7 @@ public class j implements a, com.taobao.mediaplay.player.e, mjv {
             return;
         }
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, " enter setVideoSource , Url is " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             MediaContext mediaContext = this.f18023a;
             if (mediaContext == null) {
                 return;

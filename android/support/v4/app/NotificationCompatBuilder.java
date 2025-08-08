@@ -4,7 +4,7 @@ import android.app.Notification;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.widget.RemoteViews;
 import java.util.ArrayList;
@@ -99,7 +99,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             if (builder.mColorizedSet) {
                 this.mBuilder.setColorized(builder.mColorized);
             }
-            if (TextUtils.isEmpty(builder.mChannelId)) {
+            if (StringUtils.isEmpty(builder.mChannelId)) {
                 return;
             }
             this.mBuilder.setSound(null).setDefaults(0).setLights(0, 0, 0).setVibrate(null);

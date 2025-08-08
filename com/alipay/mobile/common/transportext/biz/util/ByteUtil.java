@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
 import tb.riy;
@@ -114,7 +114,7 @@ public class ByteUtil {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("d9ab89e8", new Object[]{str});
         }
-        if (str == null || TextUtils.equals(str, "")) {
+        if (str == null || StringUtils.equals(str, "")) {
             return null;
         }
         String upperCase = str.toUpperCase();

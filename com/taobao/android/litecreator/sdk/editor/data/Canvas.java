@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.editor.data.base.EditableBean;
@@ -77,6 +77,6 @@ public class Canvas extends EditableBean<Canvas> {
             return false;
         }
         Canvas canvas = (Canvas) obj;
-        return this.aspectRatioX == canvas.aspectRatioX && this.aspectRatioY == canvas.aspectRatioY && TextUtils.equals(this.aspectRatioTitle, canvas.aspectRatioTitle) && this.width == canvas.width && this.height == canvas.height && this.customizeBg == canvas.customizeBg && this.bgColor == canvas.bgColor && this.xPosition == canvas.xPosition && this.yPosition == canvas.yPosition && TextUtils.equals(this.bgPath, canvas.bgPath) && this.tid == canvas.tid;
+        return this.aspectRatioX == canvas.aspectRatioX && this.aspectRatioY == canvas.aspectRatioY && StringUtils.equals(this.aspectRatioTitle, canvas.aspectRatioTitle) && this.width == canvas.width && this.height == canvas.height && this.customizeBg == canvas.customizeBg && this.bgColor == canvas.bgColor && this.xPosition == canvas.xPosition && this.yPosition == canvas.yPosition && StringUtils.equals(this.bgPath, canvas.bgPath) && this.tid == canvas.tid;
     }
 }

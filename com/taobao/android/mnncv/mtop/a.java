@@ -2,7 +2,7 @@ package com.taobao.android.mnncv.mtop;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.mnncv.MNNCV;
 import com.taobao.mrt.task.desc.MRTPythonLibDescription;
@@ -45,7 +45,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
         String b = b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return false;
         }
         c cVar = new c(b);

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.eik;
 import tb.eiq;
@@ -37,7 +37,7 @@ public class e {
         if (!a(str) && !b(str)) {
             com.taobao.android.detail.core.utils.i.c(l.a("DetailPreloadOptService"), "isCanUsePreload-->不能进行预加载");
             return false;
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             com.taobao.android.detail.core.utils.i.c(l.a("DetailPreloadOptService"), "isCanUsePreload-->不能进行预加载: itemId 为空");
             return false;
         } else if (com.taobao.android.detail.core.performance.preload.k.a().b(str2) == null) {
@@ -64,7 +64,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.detail.core.utils.i.c(l.a("DetailPreloadOptService"), "isCanCacheRequestData-->渠道来源为空");
             return false;
         } else if (!a(str)) {

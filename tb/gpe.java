@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Method;
@@ -27,7 +27,7 @@ public class gpe {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bbc5dc40", new Object[]{context});
         }
-        if (TextUtils.isEmpty(f28417a)) {
+        if (StringUtils.isEmpty(f28417a)) {
             f28417a = c(context);
         }
         return f28417a;

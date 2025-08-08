@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.common.VideoInfo;
 import com.taobao.taolive.sdk.utils.u;
@@ -26,7 +26,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         if (str.contains("goodstimemove")) {
@@ -82,7 +82,7 @@ public class i {
             arrayList.add("accountId=" + str);
             arrayList.add("roomStatus=" + u.roomStatus);
         }
-        if (!TextUtils.isEmpty(poy.L(aVar))) {
+        if (!StringUtils.isEmpty(poy.L(aVar))) {
             arrayList.add("trackInfo=" + poy.L(aVar));
         }
         arrayList.add("serverParams=" + poy.n(aVar));

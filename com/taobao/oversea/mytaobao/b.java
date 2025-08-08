@@ -1,6 +1,6 @@
 package com.taobao.oversea.mytaobao;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
@@ -176,7 +176,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9fc6ce88", new Object[]{this, aVar});
-        } else if (TextUtils.isEmpty(this.b) || aVar == null) {
+        } else if (StringUtils.isEmpty(this.b) || aVar == null) {
         } else {
             Coordinator.execute(new AnonymousClass1(aVar));
         }

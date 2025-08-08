@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -88,7 +88,7 @@ public class lgb extends DXImageWidgetNode {
                     }
                 }
                 String str = map.get("errorCode");
-                ldh.a("Page_Home", "HomeItemLoad", map.toString(), TextUtils.isEmpty(str) ? "61000" : str, "首页图片加载失败");
+                ldh.a("Page_Home", "HomeItemLoad", map.toString(), StringUtils.isEmpty(str) ? "61000" : str, "首页图片加载失败");
                 ldk.a("HomeItemLoad", "", "1.0", "Page_Home_Pic", null, map, str, "首页图片加载失败");
             }
         };
@@ -232,12 +232,12 @@ public class lgb extends DXImageWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("39926709", new Object[]{this, hImageView});
-        } else if (!TextUtils.isEmpty(getImageUrl())) {
+        } else if (!StringUtils.isEmpty(getImageUrl())) {
             onq.a(hImageView, getImageUrl(), null, lfx.GUESS_IMAGE_STRATEGY_CONFIG);
             hImageView.setImageUrl(getImageUrl());
         } else if (getLocalImageDrawable() != null) {
             setLocalImage(hImageView, getLocalImageDrawable());
-        } else if (!TextUtils.isEmpty(getImageName())) {
+        } else if (!StringUtils.isEmpty(getImageName())) {
             setLocalRes(hImageView, getImageName());
         } else {
             hImageView.setImageUrl(null);

@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -37,7 +37,7 @@ public class q {
                 String m = eVar.a().m();
                 HashSet hashSet = new HashSet();
                 for (StateModel stateModel : e.component) {
-                    if (stateModel != null && stateModel.isValid() && !TextUtils.isEmpty(m) && !m.equals(stateModel.id)) {
+                    if (stateModel != null && stateModel.isValid() && !StringUtils.isEmpty(m) && !m.equals(stateModel.id)) {
                         if (stateModel.isMultiVersion()) {
                             for (StateVersionModel stateVersionModel : stateModel.versions) {
                                 a(stateVersionModel.children, hashSet);
@@ -66,7 +66,7 @@ public class q {
                 String string = jSONObject.getString("type");
                 if (qnt.TYPE_CLOSE_BTN.equals(string) || qnt.TYPE_IMAGE.equals(string)) {
                     String string2 = jSONObject.getString("url");
-                    if (!TextUtils.isEmpty(string2) && !p.a(string2)) {
+                    if (!StringUtils.isEmpty(string2) && !p.a(string2)) {
                         set.add(string2);
                     }
                 } else if (qnt.TYPE_BLOCK.equals(string)) {

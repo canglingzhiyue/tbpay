@@ -1,6 +1,6 @@
 package com.taobao.zcache.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -37,7 +37,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("eb874e12", new Object[]{str, map, map2});
-        } else if (f23638a && !TextUtils.isEmpty(str) && (indexOf = str.indexOf(46)) >= 0) {
+        } else if (f23638a && !StringUtils.isEmpty(str) && (indexOf = str.indexOf(46)) >= 0) {
             String substring = str.substring(0, indexOf);
             String substring2 = str.substring(indexOf + 1);
             if (map == null) {

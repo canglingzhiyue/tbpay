@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -77,7 +77,7 @@ public class ae extends WidgetViewModel {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.f10410a) && !TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.f10410a) && !StringUtils.isEmpty(this.b)) {
             return super.isValid();
         }
         return false;

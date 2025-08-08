@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.monitor.MTBizReportName;
@@ -219,7 +219,7 @@ public class ExceptionCollector {
                 String[] split = string.split(",");
                 this.b.clear();
                 for (String str : split) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         this.b.add(Long.valueOf(Long.parseLong(str)));
                     }
                 }
@@ -276,7 +276,7 @@ public class ExceptionCollector {
             if (a2 != null) {
                 String string = a2.getString("exceptions", "");
                 LoggerFactory.getTraceLogger().info("ExceptionCollector", "getExceptions: ".concat(String.valueOf(string)));
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.c.clear();
                     JSONArray jSONArray = new JSONArray(string);
                     for (int i = 0; i < jSONArray.length(); i++) {

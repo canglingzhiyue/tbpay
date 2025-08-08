@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ public class tfv {
             obj = ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         } else {
             Map<String, String> map = f34082a;
-            if (TextUtils.isEmpty(map.get(str + "_" + str2))) {
+            if (StringUtils.isEmpty(map.get(str + "_" + str2))) {
                 if (pmd.a().d() != null) {
                     str3 = pmd.a().d().a(str, str2, str3);
                 }

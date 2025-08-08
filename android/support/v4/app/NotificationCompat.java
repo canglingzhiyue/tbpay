@@ -18,7 +18,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.text.BidiFormatter;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.TextAppearanceSpan;
 import android.util.SparseArray;
 import android.widget.RemoteViews;
@@ -1424,7 +1424,7 @@ public class NotificationCompat {
             List<Message> list;
             for (int size = this.mMessages.size() - 1; size >= 0; size--) {
                 Message message = this.mMessages.get(size);
-                if (!TextUtils.isEmpty(message.getSender())) {
+                if (!StringUtils.isEmpty(message.getSender())) {
                     return message;
                 }
             }
@@ -1454,7 +1454,7 @@ public class NotificationCompat {
             int i = z ? -16777216 : -1;
             CharSequence sender = message.getSender();
             CharSequence charSequence = "";
-            if (TextUtils.isEmpty(message.getSender())) {
+            if (StringUtils.isEmpty(message.getSender())) {
                 sender = this.mUserDisplayName;
                 if (sender == null) {
                     sender = charSequence;

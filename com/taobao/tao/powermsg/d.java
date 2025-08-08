@@ -1,6 +1,6 @@
 package com.taobao.tao.powermsg;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.model.BaseMessage;
 import com.taobao.tao.messagekit.core.model.b;
@@ -37,14 +37,14 @@ public class d {
         create.content = powerMessage.data;
         create.sysCode = 1;
         create.needACK = powerMessage.needAck;
-        if (!TextUtils.isEmpty(powerMessage.topic)) {
+        if (!StringUtils.isEmpty(powerMessage.topic)) {
             create.header.f31524a = powerMessage.topic;
         }
         create.header.g = powerMessage.type;
-        if (!TextUtils.isEmpty(powerMessage.from)) {
+        if (!StringUtils.isEmpty(powerMessage.from)) {
             create.body.f31517a = powerMessage.from;
         }
-        if (!TextUtils.isEmpty(powerMessage.to)) {
+        if (!StringUtils.isEmpty(powerMessage.to)) {
             create.body.b = powerMessage.to;
         }
         create.body.c = powerMessage.timestamp;

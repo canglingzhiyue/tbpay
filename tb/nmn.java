@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -86,7 +86,7 @@ public class nmn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4db6d0a2", new Object[]{str, str2, dVar});
-        } else if (TextUtils.isEmpty(str) || dVar == null || dVar.f18987a == null || dVar.b == null) {
+        } else if (StringUtils.isEmpty(str) || dVar == null || dVar.f18987a == null || dVar.b == null) {
             tfr.b("AppMonitorUtil", "commitPermissionCheckResult: param is empty, exit.");
         } else {
             if (str2 == null) {
@@ -110,7 +110,7 @@ public class nmn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("14c2b7a3", new Object[]{str, str2, dVar});
-        } else if (TextUtils.isEmpty(str) || dVar == null || dVar.f18987a == null || dVar.b == null) {
+        } else if (StringUtils.isEmpty(str) || dVar == null || dVar.f18987a == null || dVar.b == null) {
             tfr.b("AppMonitorUtil", "commitPermissionCheckResult: param is empty, exit.");
         } else {
             if (str2 == null) {
@@ -154,7 +154,7 @@ public class nmn {
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis() - this.f31573a;
-            String str4 = TextUtils.isEmpty(str) ? "default" : str;
+            String str4 = StringUtils.isEmpty(str) ? "default" : str;
             String str5 = str2 == null ? "" : str2;
             for (int i = 0; i < strArr.length; i++) {
                 if (i < iArr.length) {

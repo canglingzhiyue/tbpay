@@ -12,7 +12,7 @@ import android.os.Environment;
 import android.os.Process;
 import android.os.StatFs;
 import android.support.v4.net.ConnectivityManagerCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -77,7 +77,7 @@ public class rgq {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7512d303", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(sCurrentProcessName)) {
+        if (!StringUtils.isEmpty(sCurrentProcessName)) {
             return sCurrentProcessName;
         }
         int myPid = Process.myPid();

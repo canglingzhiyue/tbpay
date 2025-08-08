@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.module.menu.ui;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -66,7 +66,7 @@ public class MenuActivity extends BaseVerifyActivity {
             try {
                 MenuActivity.this.showProgressDialog("");
                 MICRpcRequest mICRpcRequest = new MICRpcRequest();
-                mICRpcRequest.module = MenuActivity.access$400(MenuActivity.this) ? this.b : !TextUtils.isEmpty(this.f5915a) ? "INIT" : ModuleConstants.VI_MODULE_VERIFY_INIT;
+                mICRpcRequest.module = MenuActivity.access$400(MenuActivity.this) ? this.b : !StringUtils.isEmpty(this.f5915a) ? "INIT" : ModuleConstants.VI_MODULE_VERIFY_INIT;
                 mICRpcRequest.verifyId = MenuActivity.access$500(MenuActivity.this).getVerifyId();
                 mICRpcRequest.token = this.f5915a;
                 MICRpcResponse dispatch = new MICRpcServiceBiz().dispatch(mICRpcRequest);
@@ -148,7 +148,7 @@ public class MenuActivity extends BaseVerifyActivity {
             notifyError();
         } else {
             String stringExtra = getIntent().getStringExtra(MenuModule.ModuleData);
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 notifyError();
             } else {
                 this.e = getIntent().getBooleanExtra(PayPwdModule.IS_IPAY, false);

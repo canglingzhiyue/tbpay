@@ -2,7 +2,7 @@ package com.etao.feimagesearch.result;
 
 import android.graphics.Bitmap;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.o;
@@ -89,7 +89,7 @@ public final class h {
                 } else {
                     str = str3;
                 }
-                if (TextUtils.isEmpty(this.e)) {
+                if (StringUtils.isEmpty(this.e)) {
                     str2 = "0,0,0,0";
                 } else {
                     str2 = this.e;
@@ -106,10 +106,10 @@ public final class h {
             this.f.put("full_region_size", str2);
             o.a(this.f);
             o.b(this.f);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 this.f.put(o.KEY_IMG, str3);
             }
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 this.f.put("searchimg", this.c);
             }
             o.a((String) null, com.etao.feimagesearch.config.b.I(), com.etao.feimagesearch.config.b.J(), this.f, new a());

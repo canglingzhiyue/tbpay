@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -99,7 +99,7 @@ public class pro {
             return (HashMap) ipChange.ipc$dispatch("632e701a", new Object[]{str});
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject.keySet().size() > 0) {

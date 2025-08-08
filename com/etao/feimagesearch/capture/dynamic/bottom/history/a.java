@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -425,7 +425,7 @@ public final class a extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         StringBuilder sb = new StringBuilder();
         sb.append(com.alibaba.ability.localization.b.a(auctionItemVO.isVideo ? R.string.taobao_app_1007_item_video : R.string.taobao_app_1007_item_image));
         sb.append("，");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_unknown_time);
         }
         sb.append(a2);
@@ -449,7 +449,7 @@ public final class a extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         StringBuilder sb = new StringBuilder();
         sb.append(com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_code_link));
         sb.append("，");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_unknown_time);
         }
         sb.append(a2);
@@ -470,7 +470,7 @@ public final class a extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             if (scanDo.getProduct() != null) {
                 Product product = scanDo.getProduct();
                 q.a((Object) product, "item.product");
-                if (!TextUtils.isEmpty(product.getPic())) {
+                if (!StringUtils.isEmpty(product.getPic())) {
                     c0213a.a().setVisibility(0);
                     c0213a.d().setVisibility(8);
                     c0213a.c().setVisibility(0);
@@ -495,7 +495,7 @@ public final class a extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             c0213a.e().setLayoutParams(layoutParams2);
             c0213a.e().setImageUrl("https://gw.alicdn.com/imgextra/i1/O1CN01Egikvh27OxTJ8lj4r_!!6000000007788-49-tps-112-112.webp");
             TextView f = c0213a.f();
-            if (TextUtils.isEmpty(scanDo.getTitle())) {
+            if (StringUtils.isEmpty(scanDo.getTitle())) {
                 localizationTitle = com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_1_18912);
             } else {
                 localizationTitle = scanDo.getLocalizationTitle();
@@ -546,7 +546,7 @@ public final class a extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             layoutParams4.width = a5;
             c0213a.e().setLayoutParams(layoutParams4);
             c0213a.e().setImageUrl("https://gw.alicdn.com/imgextra/i2/O1CN01V6My0l1czpGUV2Bbp_!!6000000003672-49-tps-112-112.webp");
-            if (TextUtils.isEmpty(scanDo.getLink())) {
+            if (StringUtils.isEmpty(scanDo.getLink())) {
                 c0213a.f().setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_1_18930));
             } else {
                 c0213a.f().setText(scanDo.getLink());

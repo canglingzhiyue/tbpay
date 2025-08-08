@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -167,7 +167,7 @@ public final class nex {
         }
         for (String str : jSONObject.keySet()) {
             String string = jSONObject.getString(str);
-            if ("injectScriptUrl".equals(str) && !TextUtils.isEmpty(string) && !Uri.decode(string).equals(this.j)) {
+            if ("injectScriptUrl".equals(str) && !StringUtils.isEmpty(string) && !Uri.decode(string).equals(this.j)) {
                 z = true;
             }
         }
@@ -224,12 +224,12 @@ public final class nex {
             }
         }
         String string = jSONObject.getString(MusWeex.ATTR_SCRIPT_URL);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             if (sgjVar == null) {
                 return;
             }
             sgjVar.a(-1, "scripturl is null");
-        } else if (TextUtils.equals(this.o, string) && sgjVar != null) {
+        } else if (StringUtils.equals(this.o, string) && sgjVar != null) {
             sgjVar.a();
         } else {
             a(string, sgjVar);
@@ -246,7 +246,7 @@ public final class nex {
             try {
                 d(ngs.a(str, null));
                 this.o = str;
-                if (TextUtils.isEmpty(this.p)) {
+                if (StringUtils.isEmpty(this.p)) {
                     if (sgjVar == null) {
                         return;
                     }
@@ -279,7 +279,7 @@ public final class nex {
         } else {
             final String string = jSONObject.getString("debugId");
             final String string2 = jSONObject.getString("appWsUrl");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             this.h = jSONObject;

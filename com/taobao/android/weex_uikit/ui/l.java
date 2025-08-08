@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.ui;
 
 import android.support.v4.view.animation.PathInterpolatorCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -179,8 +179,8 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("21e4b8ad", new Object[]{str, str2, str3, str4, str5});
         }
-        boolean isEmpty = TextUtils.isEmpty(str);
-        boolean isEmpty2 = TextUtils.isEmpty(str2);
+        boolean isEmpty = StringUtils.isEmpty(str);
+        boolean isEmpty2 = StringUtils.isEmpty(str2);
         String[] strArr = null;
         if (isEmpty && isEmpty2) {
             return null;
@@ -206,13 +206,13 @@ public class l {
                 linkedList.add(new a(a4, c, c(trim3.trim()), b, a(trim4, b)));
             }
             return linkedList;
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
             return null;
         } else {
             String[] split = str2.split(",");
             String[] split2 = str3.split(",");
-            String[] split3 = TextUtils.isEmpty(str4) ? null : str4.split(",");
-            String[] split4 = TextUtils.isEmpty(str5) ? null : str5.split(",");
+            String[] split3 = StringUtils.isEmpty(str4) ? null : str4.split(",");
+            String[] split4 = StringUtils.isEmpty(str5) ? null : str5.split(",");
             if (split2.length != 1 && split2.length != split.length) {
                 return null;
             }

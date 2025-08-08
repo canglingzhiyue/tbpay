@@ -1,6 +1,6 @@
 package com.taobao.android.preload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.preload.core.task.PreloadTaskEntity;
 import java.util.ArrayList;
@@ -67,7 +67,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             f.b(e.a("PreloadTaskLoader"), "params is null");
         } else {
             a().execute(new Runnable() { // from class: com.taobao.android.preload.h.1
@@ -95,7 +95,7 @@ public class h {
         try {
             PreloadTaskEntity parser = PreloadTaskEntity.parser(str, this.h);
             String str2 = parser.sourceFrom;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 f.a(e.a("PreloadTaskLoader"), "sourceFrom is null");
             } else if (this.g != null && this.g.a(str2)) {
             } else {
@@ -119,7 +119,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             f.b(e.a("PreloadTaskLoader"), "dataSourceParams is null");
         } else {
             a().execute(new Runnable() { // from class: com.taobao.android.preload.h.2
@@ -133,7 +133,7 @@ public class h {
                         return;
                     }
                     String str2 = PreloadTaskEntity.parser(str, h.a(h.this)).sourceFrom;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         f.a(e.a("PreloadTaskLoader"), "sourceFrom is null");
                     } else if (h.b(h.this) != null && h.b(h.this).a(str2)) {
                     } else {
@@ -148,7 +148,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             f.b(e.a("PreloadTaskLoader"), "params is null");
         } else {
             a().execute(new Runnable() { // from class: com.taobao.android.preload.h.3
@@ -162,7 +162,7 @@ public class h {
                         return;
                     }
                     String str2 = PreloadTaskEntity.parser(str, h.a(h.this)).sourceFrom;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         f.a(e.a("PreloadTaskLoader"), "sourceFrom is null");
                     } else if (h.b(h.this) != null && h.b(h.this).a(str2)) {
                     } else {
@@ -177,7 +177,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             f.b(e.a("PreloadTaskLoader"), "params is null");
         } else {
             a().execute(new Runnable() { // from class: com.taobao.android.preload.h.4
@@ -191,7 +191,7 @@ public class h {
                         return;
                     }
                     DetailPreloadBucket parser = DetailPreloadBucket.parser(str);
-                    if (parser == null || TextUtils.isEmpty(parser.sourceFrom)) {
+                    if (parser == null || StringUtils.isEmpty(parser.sourceFrom)) {
                         return;
                     }
                     h.d(h.this).put(parser.sourceFrom, parser);

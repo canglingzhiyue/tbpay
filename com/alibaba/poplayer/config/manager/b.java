@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.config.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
 import com.alibaba.poplayer.utils.Monitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,10 +43,10 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f7197a3a", new Object[]{this, new Boolean(z), str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (TextUtils.isEmpty(this.f3176a) || "mock".equals(str) || "mock".equals(this.f3176a)) {
+        if (StringUtils.isEmpty(this.f3176a) || "mock".equals(str) || "mock".equals(this.f3176a)) {
             return true;
         }
         return z;
@@ -73,7 +73,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0b1e2e4", new Object[]{this, str, baseConfigItem});
-        } else if (TextUtils.isEmpty(str) || baseConfigItem == null) {
+        } else if (StringUtils.isEmpty(str) || baseConfigItem == null) {
         } else {
             this.e.put(str, baseConfigItem);
         }
@@ -83,7 +83,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1aa3523", new Object[]{this, str, list});
-        } else if (TextUtils.isEmpty(str) || list == null || list.isEmpty()) {
+        } else if (StringUtils.isEmpty(str) || list == null || list.isEmpty()) {
         } else {
             this.d.put(str, list);
         }
@@ -94,7 +94,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (Set) ipChange.ipc$dispatch("bf40e8a1", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.c.get(str);
         }
         return null;
@@ -105,7 +105,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (BaseConfigItem) ipChange.ipc$dispatch("689088f9", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.e.get(str);
         }
         return null;
@@ -116,7 +116,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("eb209513", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !this.d.containsKey(str)) {
+        if (StringUtils.isEmpty(str) || !this.d.containsKey(str)) {
             com.alibaba.poplayer.utils.c.a("ConfigInfoNew.getConfigItemsByUri.NO URI.mCacheUriConfigMap=%s.uri=%s", this.d, str);
             return null;
         }

@@ -4,7 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.multiapp.ShareBizAdapter;
 import com.taobao.share.taopassword.constants.TPTargetType;
@@ -22,11 +22,11 @@ public class obd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bc23ba6", new Object[]{this, context, tPTargetType, str, oakVar});
-        } else if (tPTargetType == null || TextUtils.isEmpty(str)) {
+        } else if (tPTargetType == null || StringUtils.isEmpty(str)) {
         } else {
             String a2 = obc.a(tPTargetType);
             a(context, str, oakVar);
-            if (!TextUtils.isEmpty(a2) && !a.b) {
+            if (!StringUtils.isEmpty(a2) && !a.b) {
                 obc.d(context, a2);
             }
             oakVar.a(true);
@@ -37,7 +37,7 @@ public class obd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("11d44f21", new Object[]{this, context, str, oakVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (oakVar == null) {
                 return;
             }

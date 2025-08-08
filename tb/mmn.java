@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -35,7 +35,7 @@ public class mmn implements Runnable {
             return;
         }
         try {
-            if (TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.c)) {
                 return;
             }
             if (!a()) {

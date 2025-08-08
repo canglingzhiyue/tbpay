@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class r {
         }
         try {
             GradientDrawable gradientDrawable = new GradientDrawable();
-            if (!TextUtils.isEmpty(styleModel.background)) {
+            if (!StringUtils.isEmpty(styleModel.background)) {
                 gradientDrawable.setColor(Color.parseColor(p.a(eVar, styleModel.background, false)));
                 z = true;
             }
@@ -67,7 +67,7 @@ public class r {
             com.alibaba.poplayer.utils.c.a("PopComponent.initLayoutParams.parseBorderBg.error.id=" + componentBaseModel.id, e);
             eVar.a("RenderFailed.parseBorderBg.id=" + componentBaseModel.id, "");
         }
-        if (!TextUtils.isEmpty(styleModel.opacity)) {
+        if (!StringUtils.isEmpty(styleModel.opacity)) {
             try {
                 view.setAlpha(Float.parseFloat(styleModel.opacity));
             } catch (NumberFormatException e2) {
@@ -75,7 +75,7 @@ public class r {
                 eVar.a("RenderFailed.setAlpha.id=" + componentBaseModel.id, "");
             }
         }
-        if (!TextUtils.isEmpty(styleModel.translateX)) {
+        if (!StringUtils.isEmpty(styleModel.translateX)) {
             try {
                 view.setTranslationX(l.a(a2, Float.parseFloat(styleModel.translateX)));
             } catch (NumberFormatException e3) {
@@ -83,7 +83,7 @@ public class r {
                 eVar.a("RenderFailed.setTranslationX.id=" + componentBaseModel.id, "");
             }
         }
-        if (!TextUtils.isEmpty(styleModel.translateY)) {
+        if (!StringUtils.isEmpty(styleModel.translateY)) {
             try {
                 view.setTranslationY(l.a(a2, Float.parseFloat(styleModel.translateY)));
             } catch (NumberFormatException e4) {
@@ -91,7 +91,7 @@ public class r {
                 eVar.a("RenderFailed.setTranslationY.id=" + componentBaseModel.id, "");
             }
         }
-        if (!TextUtils.isEmpty(styleModel.rotateX)) {
+        if (!StringUtils.isEmpty(styleModel.rotateX)) {
             try {
                 view.setRotationX(l.a(a2, Float.parseFloat(styleModel.rotateX)));
             } catch (NumberFormatException e5) {
@@ -99,7 +99,7 @@ public class r {
                 eVar.a("RenderFailed.setRotationX.id=" + componentBaseModel.id, "");
             }
         }
-        if (!TextUtils.isEmpty(styleModel.rotateY)) {
+        if (!StringUtils.isEmpty(styleModel.rotateY)) {
             try {
                 view.setRotationY(l.a(a2, Float.parseFloat(styleModel.rotateY)));
             } catch (NumberFormatException e6) {
@@ -107,7 +107,7 @@ public class r {
                 eVar.a("RenderFailed.setRotationY.id=" + componentBaseModel.id, "");
             }
         }
-        if (!TextUtils.isEmpty(styleModel.rotate)) {
+        if (!StringUtils.isEmpty(styleModel.rotate)) {
             try {
                 view.setRotation(l.a(a2, Float.parseFloat(styleModel.rotate)));
             } catch (NumberFormatException e7) {
@@ -115,7 +115,7 @@ public class r {
                 eVar.a("RenderFailed.setRotation.id=" + componentBaseModel.id, "");
             }
         }
-        if (!TextUtils.isEmpty(styleModel.scaleX)) {
+        if (!StringUtils.isEmpty(styleModel.scaleX)) {
             try {
                 view.setScaleX(l.a(a2, Float.parseFloat(styleModel.scaleX)));
             } catch (NumberFormatException e8) {
@@ -123,7 +123,7 @@ public class r {
                 eVar.a("RenderFailed.setScaleX.id=" + componentBaseModel.id, "");
             }
         }
-        if (TextUtils.isEmpty(styleModel.scaleY)) {
+        if (StringUtils.isEmpty(styleModel.scaleY)) {
             return;
         }
         try {

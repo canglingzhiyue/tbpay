@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.favorite.FavoriteConstants;
 import java.util.regex.Matcher;
@@ -22,11 +22,11 @@ public class ebw {
             return (String) ipChange.ipc$dispatch("b1abe71b", new Object[]{intent});
         }
         String a2 = ecp.a(intent, "id");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         String a3 = ecp.a(intent, "item_id");
-        return !TextUtils.isEmpty(a3) ? a3 : b(intent);
+        return !StringUtils.isEmpty(a3) ? a3 : b(intent);
     }
 
     private static String b(Intent intent) {
@@ -37,7 +37,7 @@ public class ebw {
         }
         String str2 = "";
         String str3 = null;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str = ecp.a(intent, FavoriteConstants.DetailConstants_DETAIL_URL);
             } catch (Exception unused) {
@@ -47,7 +47,7 @@ public class ebw {
                 str2 = a(str);
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
         try {

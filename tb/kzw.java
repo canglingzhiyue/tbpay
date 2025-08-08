@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,7 +50,7 @@ public class kzw {
         } else {
             String scrollToSection = iPopData.getPopConfig().getScrollToSection();
             int i = -1;
-            if (!TextUtils.isEmpty(scrollToSection)) {
+            if (!StringUtils.isEmpty(scrollToSection)) {
                 i = this.f30428a.a(scrollToSection);
             }
             if (i < 0) {
@@ -67,7 +67,7 @@ public class kzw {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (this.f30428a != null && !TextUtils.isEmpty(str) && (a2 = this.f30428a.a(str)) >= 0) {
+        if (this.f30428a != null && !StringUtils.isEmpty(str) && (a2 = this.f30428a.a(str)) >= 0) {
             return this.f30428a.c(a2);
         }
         return false;

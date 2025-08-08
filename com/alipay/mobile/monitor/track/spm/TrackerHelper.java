@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ContextThemeWrapper;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.alipay.mobile.framework.MpaasClassInfo;
@@ -61,7 +61,7 @@ public enum TrackerHelper {
     }
 
     private static String a(String str, String str2, String str3) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
             return str;
         }
         if (!str.contains("?")) {
@@ -102,7 +102,7 @@ public enum TrackerHelper {
             android.os.Bundle r0 = r0.getArguments()     // Catch: java.lang.Exception -> L70
             if (r0 == 0) goto L2c
             java.lang.String r1 = r0.getString(r2)     // Catch: java.lang.Exception -> L70
-            boolean r1 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Exception -> L70
+            boolean r1 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Exception -> L70
             if (r1 == 0) goto L3c
         L2c:
             r1 = r5
@@ -167,12 +167,12 @@ public enum TrackerHelper {
                 SpmLogCator.warn(str2, "checkSrcSpm exception:" + e.toString());
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             PageInfo c = c(obj);
             if (c == null) {
                 return;
             }
-            str = TextUtils.isEmpty(c.lastClickSpm) ? c.spm : c.lastClickSpm;
+            str = StringUtils.isEmpty(c.lastClickSpm) ? c.spm : c.lastClickSpm;
         }
         updateSrcSpm(obj, str);
     }
@@ -246,7 +246,7 @@ public enum TrackerHelper {
 
     public final String getLastClickSpmId() {
         String lastClickViewSpm = SpmTrackIntegrator.getInstance().getLastClickViewSpm();
-        return TextUtils.isEmpty(lastClickViewSpm) ? "" : lastClickViewSpm;
+        return StringUtils.isEmpty(lastClickViewSpm) ? "" : lastClickViewSpm;
     }
 
     public final String getLastClickSpmIdByPage(Object obj) {
@@ -297,7 +297,7 @@ public enum TrackerHelper {
             return "";
         }
         String lastClickSem = getLastClickSem(obj);
-        if (!TextUtils.isEmpty(lastClickSem)) {
+        if (!StringUtils.isEmpty(lastClickSem)) {
             return lastClickSem;
         }
         String str = this.f5764a;
@@ -333,11 +333,11 @@ public enum TrackerHelper {
 
     public final String mergeTrackerParamToUrl(String str) {
         String lastSpmIdOfTopPage = getLastSpmIdOfTopPage();
-        if (!TextUtils.isEmpty(lastSpmIdOfTopPage)) {
+        if (!StringUtils.isEmpty(lastSpmIdOfTopPage)) {
             str = a(str, "srcSpm", lastSpmIdOfTopPage);
         }
         String srcSem = getSrcSem(SpmMonitor.INTANCE.getTopPage());
-        return !TextUtils.isEmpty(srcSem) ? a(str, Constant.KEY_SRC_SEM, srcSem) : str;
+        return !StringUtils.isEmpty(srcSem) ? a(str, Constant.KEY_SRC_SEM, srcSem) : str;
     }
 
     public final void onPageCreate(Object obj) {
@@ -355,7 +355,7 @@ public enum TrackerHelper {
 
     public final void onPageResume(Object obj) {
         PageInfo g2 = g(obj);
-        if (g2 == null || !TextUtils.isEmpty(g2.srcSpm)) {
+        if (g2 == null || !StringUtils.isEmpty(g2.srcSpm)) {
             return;
         }
         b(obj);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.view.adapter.main;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -350,7 +350,7 @@ public class DetailMainViewAdapter extends BaseAdapter implements l {
                     dXTemplateItem.f11925a = cVar.d.f9766a;
                     try {
                         dXTemplateItem.b = Long.parseLong(cVar.d.d);
-                        if (eaz.a(this.mActivity) && !TextUtils.isEmpty(cVar.d.c)) {
+                        if (eaz.a(this.mActivity) && !StringUtils.isEmpty(cVar.d.c)) {
                             dXTemplateItem.c = cVar.d.c;
                         }
                         arrayList.add(dXTemplateItem);

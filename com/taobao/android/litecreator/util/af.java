@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -35,7 +35,7 @@ public class af {
             ipChange.ipc$dispatch("3fe5ccb0", new Object[]{iUGCMedia, str});
         } else if (iUGCMedia != null) {
             String publishSessionId = iUGCMedia.getPublishSessionId();
-            if (TextUtils.isEmpty(publishSessionId)) {
+            if (StringUtils.isEmpty(publishSessionId)) {
                 return;
             }
             List<UGCImage> images = iUGCMedia.getImages();
@@ -45,7 +45,7 @@ public class af {
                 for (UGCImage uGCImage : images) {
                     MediaStatInfo mediaStatInfo = (MediaStatInfo) uGCImage.getMeta("mediaStatInfo");
                     if (mediaStatInfo != null) {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             mediaStatInfo.goods_id = str;
                         }
                         jSONArray.add(JSONObject.toJSON(mediaStatInfo));
@@ -55,7 +55,7 @@ public class af {
                 for (UGCVideo uGCVideo : videos) {
                     MediaStatInfo mediaStatInfo2 = (MediaStatInfo) uGCVideo.getMeta("mediaStatInfo");
                     if (mediaStatInfo2 != null) {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             mediaStatInfo2.goods_id = str;
                         }
                         jSONArray.add(JSONObject.toJSON(mediaStatInfo2));
@@ -69,7 +69,7 @@ public class af {
                 }
                 MediaStatInfo mediaStatInfo3 = new MediaStatInfo(iUGCMedia.getPublishSessionId());
                 mediaStatInfo3.template_scene_labels = jSONArray2;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     mediaStatInfo3.goods_id = str;
                 }
                 jSONArray.add(JSONObject.toJSON(mediaStatInfo3));

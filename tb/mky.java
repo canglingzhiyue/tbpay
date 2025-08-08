@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.usertrack.track.ut.videotracker.RenderTrackUtils;
@@ -139,7 +139,7 @@ public abstract class mky<CollectResult> extends mkh<CollectResult> {
 
     private String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : TextUtils.isEmpty(str) ? "unknown" : str.replace("^", "%5E").replace("=", "%equal");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : StringUtils.isEmpty(str) ? "unknown" : str.replace("^", "%5E").replace("=", "%equal");
     }
 
     private String a() {
@@ -147,7 +147,7 @@ public abstract class mky<CollectResult> extends mkh<CollectResult> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.h)) {
+        if (StringUtils.isEmpty(this.h)) {
             return "unknown";
         }
         Uri uri = this.j;
@@ -158,11 +158,11 @@ public abstract class mky<CollectResult> extends mkh<CollectResult> {
             return d() + ":" + this.j.getHost() + this.j.getPath();
         }
         String queryParameter = this.j.getQueryParameter(i.APP_ID);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             return d() + ":_ariver_appid->" + queryParameter;
         }
         String queryParameter2 = this.j.getQueryParameter("shopId");
-        if (!TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter2)) {
             return d() + ":shopId->" + queryParameter2;
         }
         return d();
@@ -173,7 +173,7 @@ public abstract class mky<CollectResult> extends mkh<CollectResult> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("43881515", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             return this.h;
         }
         return this.h + "_" + this.i;

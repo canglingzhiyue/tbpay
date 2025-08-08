@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class ooo extends fnl {
             return ipChange.ipc$dispatch("1fe05363", new Object[]{this, list, fpdVar});
         }
         if (list != null && list.size() == 1 && (list.get(0) instanceof String)) {
-            return Boolean.valueOf(TextUtils.equals((String) list.get(0), "Android"));
+            return Boolean.valueOf(StringUtils.equals((String) list.get(0), "Android"));
         }
         return null;
     }

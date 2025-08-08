@@ -1,7 +1,7 @@
 package com.amap.api.location;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.loc.fr;
 import com.loc.ft;
 import com.loc.fw;
@@ -141,7 +141,7 @@ public class CoordinateConverter {
         }
         if (z) {
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put("amap_loc_coordinate", str);
             }
             fw.a(this.j, "O021", jSONObject);

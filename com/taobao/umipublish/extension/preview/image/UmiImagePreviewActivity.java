@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -450,7 +450,7 @@ public class UmiImagePreviewActivity extends BasePreviewActivity implements com.
         Iterator<UGCImage> it = this.f.getImages().iterator();
         while (it.hasNext()) {
             UGCImage next = it.next();
-            if (next.compress != null && TextUtils.equals(next.compress.path, media.path)) {
+            if (next.compress != null && StringUtils.equals(next.compress.path, media.path)) {
                 it.remove();
                 return;
             }
@@ -526,7 +526,7 @@ public class UmiImagePreviewActivity extends BasePreviewActivity implements com.
             return null;
         }
         String stringExtra = intent.getStringExtra("music");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             return (Music) JSON.parseObject(stringExtra, Music.class);
         }
         return null;

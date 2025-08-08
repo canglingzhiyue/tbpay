@@ -3,7 +3,7 @@ package com.taobao.adaemon;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.Kb;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
@@ -255,7 +255,7 @@ public class j {
         }
         try {
             String a2 = a(this.f8362a, "clear_activity_block", BundleSplitUtil.ACTIVITY_NAME);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return Arrays.asList(a2.split(","));
             }
         } catch (Throwable th) {
@@ -328,7 +328,7 @@ public class j {
         }
         try {
             String b2 = b("predict_interval");
-            if (!TextUtils.isEmpty(b2)) {
+            if (!StringUtils.isEmpty(b2)) {
                 return Integer.parseInt(b2);
             }
         } catch (Throwable unused) {
@@ -343,7 +343,7 @@ public class j {
         }
         try {
             String a2 = a(this.f8362a, str, "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 String[] split = a2.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
                 if (split.length > 0) {
                     for (String str2 : split) {
@@ -423,7 +423,7 @@ public class j {
 
     public boolean t() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6782aff", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(a(this.f8362a, "app_list", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6782aff", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(a(this.f8362a, "app_list", ""));
     }
 
     public boolean u() {
@@ -439,7 +439,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !l.c()) {
+        if (StringUtils.isEmpty(str) || !l.c()) {
             return false;
         }
         try {

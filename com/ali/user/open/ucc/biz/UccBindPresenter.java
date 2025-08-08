@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.rpc.ApiConstants;
@@ -110,7 +110,7 @@ public class UccBindPresenter {
             uccParams2 = new UccParams();
         }
         final UccParams uccParams3 = uccParams2;
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams3.site = map.get("site");
         } else {
             uccParams3.site = AliMemberSDK.getMasterSite();
@@ -121,7 +121,7 @@ public class UccBindPresenter {
         uccParams3.bindUserTokenType = str2;
         uccParams3.requestToken = map.get("requestToken");
         uccParams3.scene = map.get("scene");
-        if (map != null && TextUtils.equals("1", map.get("needSession"))) {
+        if (map != null && StringUtils.equals("1", map.get("needSession"))) {
             uccParams3.createBindSiteSession = true;
         } else {
             uccParams3.createBindSiteSession = false;
@@ -139,9 +139,9 @@ public class UccBindPresenter {
                 UccBindPresenter.dismissProgress(activity);
                 rpcResultlHit(rpcResponse.code + "", rpcResponse.actionType);
                 String str4 = (String) rpcResponse.returnValue;
-                if (TextUtils.equals("CHANGEBIND", rpcResponse.actionType)) {
+                if (StringUtils.equals("CHANGEBIND", rpcResponse.actionType)) {
                     UccBindPresenter.this.changeBind(activity, uccParams3, 0, rpcResponse.message, ((BindResult) JSON.parseObject(str4, BindResult.class)).changeBindToken, "0", map, uccCallback);
-                } else if (TextUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
+                } else if (StringUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
                     UccBindPresenter.access$000(UccBindPresenter.this, activity, uccParams3, 0, rpcResponse.message, ((BindResult) JSON.parseObject(str4, BindResult.class)).requestToken, "0", map, uccCallback);
                 } else {
                     HashMap hashMap2 = new HashMap();
@@ -181,7 +181,7 @@ public class UccBindPresenter {
                 UccBindPresenter.dismissProgress(activity);
                 final int buidErrorCode = Utils.buidErrorCode(rpcResponse, 1007);
                 rpcResultlHit(buidErrorCode + "", "");
-                if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                     JSONObject parseObject = JSON.parseObject((String) rpcResponse.returnValue);
                     if (parseObject != null) {
                         String string = parseObject.getString("returnUrl");
@@ -199,7 +199,7 @@ public class UccBindPresenter {
                         return;
                     }
                     uccCallback3.onFail(uccParams3.bindSite, buidErrorCode, Utils.buidErrorMessage(rpcResponse, "bindByNativeAuth接口报错"));
-                } else if (TextUtils.equals(ApiConstants.ResultActionType.TOAST, rpcResponse.actionType) && !TextUtils.isEmpty(rpcResponse.message)) {
+                } else if (StringUtils.equals(ApiConstants.ResultActionType.TOAST, rpcResponse.actionType) && !StringUtils.isEmpty(rpcResponse.message)) {
                     ((MemberExecutorService) AliMemberSDK.getService(MemberExecutorService.class)).postUITask(new Runnable() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.1.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -221,7 +221,7 @@ public class UccBindPresenter {
                         return;
                     }
                     uccCallback2.onFail(uccParams3.bindSite, buidErrorCode, Utils.buidErrorMessage(rpcResponse, "bindByNativeAuth接口报错"));
-                } else if (TextUtils.equals(ApiConstants.ResultActionType.ALERT, rpcResponse.actionType) && !TextUtils.isEmpty(rpcResponse.message)) {
+                } else if (StringUtils.equals(ApiConstants.ResultActionType.ALERT, rpcResponse.actionType) && !StringUtils.isEmpty(rpcResponse.message)) {
                     DialogHelper.getInstance().alert(activity, "", rpcResponse.message, activity.getString(R.string.member_sdk_iknow), new DialogInterface.OnClickListener() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.1.2
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -259,7 +259,7 @@ public class UccBindPresenter {
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_NativeAuthBindResult", uccParams3, hashMap2);
             }
         };
-        if (map != null && !TextUtils.isEmpty(uccParams3.requestToken)) {
+        if (map != null && !StringUtils.isEmpty(uccParams3.requestToken)) {
             showProgress(activity);
             DataRepository.bindByRequestToken(uccParams3, rpcRequestCallbackWithCode);
             return;
@@ -283,7 +283,7 @@ public class UccBindPresenter {
             uccParams2 = new UccParams();
         }
         final UccParams uccParams3 = uccParams2;
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams3.site = map.get("site");
         } else {
             uccParams3.site = AliMemberSDK.getMasterSite();
@@ -291,14 +291,14 @@ public class UccBindPresenter {
         uccParams3.bindSite = uccParams3.bindSite;
         uccParams3.userToken = uccParams3.userToken;
         String str5 = "";
-        uccParams3.bindUserToken = TextUtils.isEmpty(str2) ? str5 : str2;
-        uccParams3.bindUserTokenType = TextUtils.isEmpty(str3) ? str5 : str3;
-        if (!TextUtils.isEmpty(str)) {
+        uccParams3.bindUserToken = StringUtils.isEmpty(str2) ? str5 : str2;
+        uccParams3.bindUserTokenType = StringUtils.isEmpty(str3) ? str5 : str3;
+        if (!StringUtils.isEmpty(str)) {
             str5 = str;
         }
         uccParams3.requestToken = str5;
         uccParams3.scene = map.get("scene");
-        if (map != null && TextUtils.equals("1", map.get("needSession"))) {
+        if (map != null && StringUtils.equals("1", map.get("needSession"))) {
             uccParams3.createBindSiteSession = true;
         } else {
             uccParams3.createBindSiteSession = false;
@@ -315,9 +315,9 @@ public class UccBindPresenter {
                 }
                 rpcResultlHit(rpcResponse.code + "", rpcResponse.actionType);
                 String str6 = (String) rpcResponse.returnValue;
-                if (TextUtils.equals("CHANGEBIND", rpcResponse.actionType)) {
+                if (StringUtils.equals("CHANGEBIND", rpcResponse.actionType)) {
                     UccBindPresenter.this.changeBind(activity, uccParams3, 0, rpcResponse.message, ((BindResult) JSON.parseObject(str6, BindResult.class)).changeBindToken, "0", map, uccCallback);
-                } else if (TextUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
+                } else if (StringUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
                     UccBindPresenter.access$000(UccBindPresenter.this, activity, uccParams3, 0, rpcResponse.message, ((BindResult) JSON.parseObject(str6, BindResult.class)).requestToken, "0", map, uccCallback);
                 } else {
                     HashMap hashMap2 = new HashMap();
@@ -354,7 +354,7 @@ public class UccBindPresenter {
                 }
                 int buidErrorCode = Utils.buidErrorCode(rpcResponse, 1007);
                 rpcResultlHit(buidErrorCode + "", "");
-                if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                     JSONObject parseObject = JSON.parseObject((String) rpcResponse.returnValue);
                     if (parseObject != null) {
                         String string = parseObject.getString("returnUrl");
@@ -400,7 +400,7 @@ public class UccBindPresenter {
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_BindByRequestTokenResult", uccParams3, hashMap2);
             }
         };
-        if (uccParams3 != null && !TextUtils.isEmpty(uccParams3.requestToken)) {
+        if (uccParams3 != null && !StringUtils.isEmpty(uccParams3.requestToken)) {
             DataRepository.bindByRequestToken(uccParams3, rpcRequestCallbackWithCode);
         } else {
             uccCallback.onFail(uccParams3.bindSite, -1, "token.authcode入参报错");
@@ -542,9 +542,9 @@ public class UccBindPresenter {
                     }
                     rpcResultlHit(rpcResponse.code + "");
                     String str3 = (String) rpcResponse.returnValue;
-                    if (TextUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
+                    if (StringUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
                         UccBindPresenter.access$000(UccBindPresenter.this, activity, uccParams, 0, rpcResponse.message, ((BindResult) JSON.parseObject(str3, BindResult.class)).requestToken, "0", map, uccCallback);
-                    } else if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                    } else if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                         JSONObject parseObject = JSON.parseObject(str3);
                         if (parseObject != null) {
                             String string = parseObject.getString("returnUrl");
@@ -571,9 +571,9 @@ public class UccBindPresenter {
                         uccCallback2.onFail(uccParams.bindSite, 1008, Utils.buidErrorMessage(rpcResponse, "换绑失败"));
                     } else {
                         HashMap hashMap = new HashMap();
-                        hashMap.put("needLogin", (TextUtils.isEmpty(str3) || str3.length() < 10) ? UTConstant.Args.UT_SUCCESS_F : "T");
+                        hashMap.put("needLogin", (StringUtils.isEmpty(str3) || str3.length() < 10) ? UTConstant.Args.UT_SUCCESS_F : "T");
                         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_Success", uccParams, hashMap);
-                        if (activity != null && !TextUtils.isEmpty(rpcResponse.message) && TextUtils.equals(str2, "1")) {
+                        if (activity != null && !StringUtils.isEmpty(rpcResponse.message) && StringUtils.equals(str2, "1")) {
                             ((MemberExecutorService) AliMemberSDK.getService(MemberExecutorService.class)).postUITask(new Runnable() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.7.1
                                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -760,11 +760,11 @@ public class UccBindPresenter {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("bindUserToken", str3);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("bizToken", str2);
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_BindIdentify_IV", uccParams, hashMap);
             i = 1;
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             hashMap.put("bizToken", str);
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_BindIdentify_oauthLogin", uccParams, hashMap);
             i = 2;
@@ -866,11 +866,11 @@ public class UccBindPresenter {
             UccBindPresenter.dismissProgress(this.context);
             rpcResultlHit(rpcResponse.code + "", rpcResponse.actionType);
             String str = (String) rpcResponse.returnValue;
-            if (TextUtils.equals("CHANGEBIND", rpcResponse.actionType)) {
+            if (StringUtils.equals("CHANGEBIND", rpcResponse.actionType)) {
                 UccBindPresenter.this.changeBind(this.context, this.uccParams, this.bizType, rpcResponse.message, ((BindResult) JSON.parseObject(str, BindResult.class)).changeBindToken, this.needToast, this.bizParams, this.uccCallback);
-            } else if (TextUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
+            } else if (StringUtils.equals("CONFLICTUPGRADE", rpcResponse.actionType)) {
                 UccBindPresenter.access$000(UccBindPresenter.this, this.context, this.uccParams, 0, rpcResponse.message, ((BindResult) JSON.parseObject(str, BindResult.class)).requestToken, "0", this.bizParams, this.uccCallback);
-            } else if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+            } else if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject != null) {
                     String string = parseObject.getString("returnUrl");
@@ -897,9 +897,9 @@ public class UccBindPresenter {
                 uccCallback.onFail(this.uccParams.bindSite, 1005, Utils.buidErrorMessage(rpcResponse, "免登失败"));
             } else {
                 HashMap hashMap = new HashMap();
-                hashMap.put("needLogin", (TextUtils.isEmpty(str) || str.length() < 10) ? UTConstant.Args.UT_SUCCESS_F : "T");
+                hashMap.put("needLogin", (StringUtils.isEmpty(str) || str.length() < 10) ? UTConstant.Args.UT_SUCCESS_F : "T");
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_Success", this.uccParams, hashMap);
-                if (this.context != null && !TextUtils.isEmpty(rpcResponse.message) && TextUtils.equals(this.needToast, "1")) {
+                if (this.context != null && !StringUtils.isEmpty(rpcResponse.message) && StringUtils.equals(this.needToast, "1")) {
                     ((MemberExecutorService) AliMemberSDK.getService(MemberExecutorService.class)).postUITask(new Runnable() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.BindRpcRequestCallback.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -939,7 +939,7 @@ public class UccBindPresenter {
             UccBindPresenter.dismissProgress(this.context);
             final int buidErrorCode = Utils.buidErrorCode(rpcResponse, 1007);
             rpcResultlHit(buidErrorCode + "", "");
-            if (TextUtils.equals(this.needToast, "1")) {
+            if (StringUtils.equals(this.needToast, "1")) {
                 DialogHelper.getInstance().alert(this.context, "", Utils.buidErrorMessage(rpcResponse, "绑定失败"), this.context.getString(R.string.member_sdk_iknow), new DialogInterface.OnClickListener() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.BindRpcRequestCallback.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -999,10 +999,10 @@ public class UccBindPresenter {
             if (this.type == 1) {
                 hashMap.put("bizToken", this.uccParams.requestToken);
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_RecommendBindResult", this.uccParams, hashMap);
-            } else if (!TextUtils.isEmpty(this.uccParams.ivToken)) {
+            } else if (!StringUtils.isEmpty(this.uccParams.ivToken)) {
                 hashMap.put("bizToken", this.uccParams.ivToken);
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_BindIdentifyResult_IV", this.uccParams, hashMap);
-            } else if (TextUtils.isEmpty(this.uccParams.requestToken)) {
+            } else if (StringUtils.isEmpty(this.uccParams.requestToken)) {
             } else {
                 hashMap.put("bizToken", this.uccParams.requestToken);
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_BindIdentifyResult_oauthLogin", this.uccParams, hashMap);
@@ -1032,7 +1032,7 @@ public class UccBindPresenter {
                 }
                 rpcResultlHit(rpcResponse.code + "");
                 String str5 = (String) rpcResponse.returnValue;
-                if (context != null && !TextUtils.isEmpty(str4) && TextUtils.equals(str3, "1")) {
+                if (context != null && !StringUtils.isEmpty(str4) && StringUtils.equals(str3, "1")) {
                     ((MemberExecutorService) AliMemberSDK.getService(MemberExecutorService.class)).postUITask(new Runnable() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.8.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1150,12 +1150,12 @@ public class UccBindPresenter {
         hashMap.put("type", str3);
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_GetAuthInfo", uccParams, hashMap);
         final UccParams uccParams2 = new UccParams();
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams2.site = map.get("site");
         } else {
             uccParams2.site = AliMemberSDK.getMasterSite();
         }
-        if (map != null && !TextUtils.isEmpty(map.get("bindSite"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("bindSite"))) {
             uccParams2.bindSite = map.get("bindSite");
         } else {
             uccParams2.bindSite = uccParams.bindSite;
@@ -1164,7 +1164,7 @@ public class UccBindPresenter {
         uccParams2.bindUserToken = str;
         uccParams2.bindUserTokenType = str2;
         uccParams2.createBindSiteSession = true;
-        if (map != null && !TextUtils.isEmpty(map.get("scene"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("scene"))) {
             uccParams2.scene = map.get("scene");
         }
         DataRepository.getUserInfo(uccParams2, str3, new RpcRequestCallbackWithCode() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.9
@@ -1187,7 +1187,7 @@ public class UccBindPresenter {
                     return;
                 }
                 String str4 = (String) rpcResponse.returnValue;
-                if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                     JSONObject parseObject = JSON.parseObject(str4);
                     if (parseObject != null) {
                         String string = parseObject.getString("h5Url");
@@ -1234,7 +1234,7 @@ public class UccBindPresenter {
                 String str5 = "";
                 sb.append(str5);
                 rpcResultlHit(sb.toString(), str5);
-                if (TextUtils.equals(str3, "h5")) {
+                if (StringUtils.equals(str3, "h5")) {
                     if (rpcResponse != null) {
                         str5 = rpcResponse.message;
                     }
@@ -1274,7 +1274,7 @@ public class UccBindPresenter {
                 String str5 = "";
                 sb.append(str5);
                 rpcResultlHit(sb.toString(), str5);
-                if (TextUtils.equals(str3, "h5")) {
+                if (StringUtils.equals(str3, "h5")) {
                     if (rpcResponse != null) {
                         str5 = rpcResponse.message;
                     }
@@ -1309,12 +1309,12 @@ public class UccBindPresenter {
                 }
                 HashMap hashMap2 = new HashMap();
                 hashMap2.put("code", str4);
-                hashMap2.put("type", TextUtils.isEmpty(str3) ? "" : str3);
+                hashMap2.put("type", StringUtils.isEmpty(str3) ? "" : str3);
                 hashMap2.put("actionType", str5);
-                if (!TextUtils.isEmpty(uccParams2.bindUserToken)) {
+                if (!StringUtils.isEmpty(uccParams2.bindUserToken)) {
                     hashMap2.put("bindUserToken", uccParams2.bindUserToken);
                 }
-                if (!TextUtils.isEmpty(uccParams2.scene)) {
+                if (!StringUtils.isEmpty(uccParams2.scene)) {
                     hashMap2.put("scene", uccParams2.scene);
                 }
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_GetAuthInfoResult", uccParams, hashMap2);
@@ -1346,12 +1346,12 @@ public class UccBindPresenter {
         hashMap.put("type", str);
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_LoginContinue", uccParams, hashMap);
         final UccParams uccParams2 = new UccParams();
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams2.site = map.get("site");
         } else {
             uccParams2.site = AliMemberSDK.getMasterSite();
         }
-        if (map != null && !TextUtils.isEmpty(map.get("bindSite"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("bindSite"))) {
             uccParams2.bindSite = map.get("bindSite");
         } else {
             uccParams2.bindSite = uccParams.bindSite;
@@ -1359,7 +1359,7 @@ public class UccBindPresenter {
         uccParams2.userToken = uccParams.userToken;
         uccParams2.requestToken = uccParams.requestToken;
         uccParams2.createBindSiteSession = true;
-        if (map != null && !TextUtils.isEmpty(map.get("scene"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("scene"))) {
             uccParams2.scene = map.get("scene");
         }
         DataRepository.skipUpgrade(uccParams, str, new RpcRequestCallbackWithCode() { // from class: com.ali.user.open.ucc.biz.UccBindPresenter.10
@@ -1417,7 +1417,7 @@ public class UccBindPresenter {
                 String str3 = "";
                 sb.append(str3);
                 rpcResultlHit(sb.toString(), str3);
-                if (TextUtils.equals(str, "h5")) {
+                if (StringUtils.equals(str, "h5")) {
                     if (rpcResponse != null) {
                         str3 = rpcResponse.message;
                     }
@@ -1452,10 +1452,10 @@ public class UccBindPresenter {
                 }
                 HashMap hashMap2 = new HashMap();
                 hashMap2.put("code", str2);
-                hashMap2.put("type", TextUtils.isEmpty(str) ? "" : str);
+                hashMap2.put("type", StringUtils.isEmpty(str) ? "" : str);
                 hashMap2.put("actionType", str3);
                 hashMap2.put("requestToken", uccParams.requestToken);
-                if (!TextUtils.isEmpty(uccParams2.scene)) {
+                if (!StringUtils.isEmpty(uccParams2.scene)) {
                     hashMap2.put("scene", uccParams2.scene);
                 }
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_LoginContinueResult", uccParams, hashMap2);
@@ -1477,7 +1477,7 @@ public class UccBindPresenter {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("88061ca", new Object[]{this, rpcResponse});
-                    } else if (rpcResponse != null && rpcResponse.returnValue != 0 && (mLoginTokenReturnValue = (MLoginTokenReturnValue) rpcResponse.returnValue) != null && !TextUtils.isEmpty(mLoginTokenReturnValue.token)) {
+                    } else if (rpcResponse != null && rpcResponse.returnValue != 0 && (mLoginTokenReturnValue = (MLoginTokenReturnValue) rpcResponse.returnValue) != null && !StringUtils.isEmpty(mLoginTokenReturnValue.token)) {
                         HashMap hashMap = new HashMap();
                         hashMap.put("token", mLoginTokenReturnValue.token);
                         uccCallback.onSuccess(uccParams.bindSite, hashMap);
@@ -1505,7 +1505,7 @@ public class UccBindPresenter {
                     }
                     UccCallback uccCallback2 = uccCallback;
                     String str3 = uccParams.bindSite;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "rpc error";
                     }
                     uccCallback2.onFail(str3, 1602, str2);
@@ -1609,7 +1609,7 @@ public class UccBindPresenter {
             return;
         }
         String str = "0";
-        if (map != null && !TextUtils.isEmpty(map.get("needToast"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("needToast"))) {
             str = map.get("needToast");
         }
         DataRepository.noActionBind(uccParams, new BindRpcRequestCallback(activity, 3, 0, uccParams, str, new HashMap(), uccCallback));
@@ -1718,7 +1718,7 @@ public class UccBindPresenter {
         }
         String string = JSON.parseObject(str2).getString("authorizationResponse");
         UccServiceProvider uccServiceProvider = UccServiceProviderFactory.getInstance().getUccServiceProvider(str);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             uccServiceProvider.refreshWhenLogin(str, string, z);
         } else {
             uccServiceProvider.refreshWhenLogin(str, str2, z);
@@ -1733,20 +1733,20 @@ public class UccBindPresenter {
             ipChange.ipc$dispatch("ef88f96a", new Object[]{this, uccParams, map, str, uccCallback});
             return;
         }
-        if (map == null || !TextUtils.equals(map.get(ParamsConstants.Key.PARAM_NEED_LOCAL_SESSION), "0")) {
+        if (map == null || !StringUtils.equals(map.get(ParamsConstants.Key.PARAM_NEED_LOCAL_SESSION), "0")) {
             z = true;
         }
         boolean isCookieOnly = UccOauthLoginPresenter.isCookieOnly(map);
-        if (!TextUtils.isEmpty(str) && z) {
+        if (!StringUtils.isEmpty(str) && z) {
             refreshWhenLogin(uccParams.bindSite, str, isCookieOnly);
         }
         if (uccCallback == null) {
             return;
         }
         Map<String, String> buildSessionInfo = buildSessionInfo(uccParams.bindSite, str);
-        if (!TextUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
             String string = parseObject.getString("authorizationResponse");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 buildSessionInfo.put(UccConstants.PARAM_LOGIN_DATA, str);
             } else {
                 buildSessionInfo.put(UccConstants.PARAM_LOGIN_DATA, string);
@@ -1761,12 +1761,12 @@ public class UccBindPresenter {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("9649eda6", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return new HashMap();
         }
         String string = JSON.parseObject(str2).getString("authorizationResponse");
         UccServiceProvider uccServiceProvider = UccServiceProviderFactory.getInstance().getUccServiceProvider(str);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return uccServiceProvider.buildSessionInfo(str, string);
         }
         return uccServiceProvider.buildSessionInfo(str, str2);

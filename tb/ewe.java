@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.event.basic.f;
@@ -35,7 +35,7 @@ public class ewe {
         if (ipChange instanceof IpChange) {
             return (Event) ipChange.ipc$dispatch("70d46a61", new Object[]{this, actionModel, jSONObject});
         }
-        if (actionModel != null && !TextUtils.isEmpty(actionModel.type)) {
+        if (actionModel != null && !StringUtils.isEmpty(actionModel.type)) {
             if ("open_url".equals(actionModel.type)) {
                 return new r(actionModel.params);
             }

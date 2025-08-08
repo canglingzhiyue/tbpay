@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.smartlanding.business.SmartLandingTask;
 import java.util.Map;
@@ -23,7 +23,7 @@ public final class aww extends aqm {
         }
         String str = map.get("value");
         String str2 = map.get("diff");
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             bax.a a2 = bax.a();
             if (a2.f25741a == 0) {
                 return false;

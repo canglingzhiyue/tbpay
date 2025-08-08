@@ -1,7 +1,7 @@
 package com.taobao.android.tschedule.protocol;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.c;
@@ -61,7 +61,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (!jmi.a(e.b()) || TextUtils.isEmpty(str2)) {
+        } else if (!jmi.a(e.b()) || StringUtils.isEmpty(str2)) {
         } else {
             Intent intent = new Intent(TYPE_CHANGE_WEBVIEW_PROTOCOL);
             intent.putExtra(KET_PROTOCOL_BIZ_CODE, str);
@@ -74,7 +74,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{str, str2});
-        } else if (!jmi.a(e.b()) || TextUtils.isEmpty(str2)) {
+        } else if (!jmi.a(e.b()) || StringUtils.isEmpty(str2)) {
         } else {
             Intent intent = new Intent(TYPE_CHANGE_TRIVER_PROTOCOL);
             intent.putExtra(KET_PROTOCOL_BIZ_CODE, str);
@@ -87,7 +87,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a84591ae", new Object[]{str, str2, arrayList});
-        } else if (!jmi.a(e.b()) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!jmi.a(e.b()) || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             Intent intent = new Intent(TYPE_SCHEDULE_TASK);
             intent.putExtra(KET_TASK_URL, str);
@@ -102,7 +102,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c84014d", new Object[]{str, str2, arrayList});
-        } else if (!jmi.a(e.b()) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || arrayList == null || arrayList.isEmpty()) {
+        } else if (!jmi.a(e.b()) || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || arrayList == null || arrayList.isEmpty()) {
         } else {
             ArrayList<String> arrayList2 = new ArrayList<>();
             Iterator<ScheduleTask> it = arrayList.iterator();
@@ -153,7 +153,7 @@ public class a {
             ArrayList<ScheduleTask> arrayList = new ArrayList();
             for (String str2 : list) {
                 try {
-                    if (!TextUtils.isEmpty(str2) && (a2 = h.a(str, JSON.parseObject(str2))) != null) {
+                    if (!StringUtils.isEmpty(str2) && (a2 = h.a(str, JSON.parseObject(str2))) != null) {
                         arrayList.add(a2);
                     }
                 } catch (Throwable unused) {

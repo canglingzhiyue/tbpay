@@ -2,7 +2,7 @@ package com.taobao.android.tbuprofen.adapter.anr;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -35,7 +35,7 @@ public class i {
 
     private static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : TextUtils.equals(str, "com.taobao.taobao");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : StringUtils.equals(str, "com.taobao.taobao");
     }
 
     public static synchronized void a(Context context, com.taobao.android.tbuprofen.adapter.a aVar) {

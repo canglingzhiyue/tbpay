@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class kzv {
             return updateViewModel;
         }
         Collection<IPopData> a2 = com.taobao.homepage.pop.ucp.c.a(allPopData.values());
-        if (a2 != null && !a2.isEmpty() && z && !TextUtils.equals(str, "coldStart")) {
+        if (a2 != null && !a2.isEmpty() && z && !StringUtils.equals(str, "coldStart")) {
             this.c.i().a("request", str);
         }
         this.c.g().a(this.c, this.b);
@@ -198,7 +198,7 @@ public class kzv {
         for (int i = a2[0]; i <= a2[1]; i++) {
             View b = ladVar.b(i);
             String a3 = ladVar.a(i);
-            if (b != null && !TextUtils.isEmpty(a3)) {
+            if (b != null && !StringUtils.isEmpty(a3)) {
                 this.c.c().a(i, b, a3);
             }
         }

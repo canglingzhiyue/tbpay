@@ -1,7 +1,7 @@
 package anetwork.channel.unified;
 
 import android.taobao.windvane.connect.HttpConnector;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.Config;
 import anet.channel.GlobalAppRuntimeInfo;
@@ -227,10 +227,10 @@ public class NetworkTask implements IUnifiedTask {
             return (SessionCenter) ipChange.ipc$dispatch("8c52c77d", new Object[]{this});
         }
         String requestProperty = this.rc.config.getRequestProperty(RequestConstant.APPKEY);
-        if (TextUtils.isEmpty(requestProperty)) {
+        if (StringUtils.isEmpty(requestProperty)) {
             requestProperty = GlobalAppRuntimeInfo.getAppkey();
         }
-        if (TextUtils.isEmpty(requestProperty)) {
+        if (StringUtils.isEmpty(requestProperty)) {
             return SessionCenter.getInstance();
         }
         ENV env = ENV.ONLINE;
@@ -420,10 +420,10 @@ public class NetworkTask implements IUnifiedTask {
         long currentTimeMillis = System.currentTimeMillis();
         if (this.rc.config.isRequestCookieEnabled() && !AwcnConfig.isAllowNoCookieList(this.rc.config.getUrlString())) {
             String cookie = CookieManager.getCookie(this.rc.config.getUrlString());
-            if (!TextUtils.isEmpty(cookie)) {
+            if (!StringUtils.isEmpty(cookie)) {
                 builder = request.newBuilder();
                 String str2 = request.getHeaders().get("Cookie");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     cookie = StringUtils.concatString(str2, "; ", cookie);
                 }
                 if (AwcnConfig.isHostInCookiePrintLogWhiteList(request.getHost())) {
@@ -456,11 +456,11 @@ public class NetworkTask implements IUnifiedTask {
         if (NetworkConfigCenter.isFalcoIdEnable() && ((NetworkConfigCenter.isFalcoIdWhiteList(request.getHost()) || "picture".equalsIgnoreCase(this.f_refer)) && !request.getHeaders().containsKey("x-falco-id"))) {
             String str3 = request.getHeaders().get(HttpConstant.USER_AGENT);
             String str4 = this.rc.config.rs.falcoId;
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 if (builder == null) {
                     builder = request.newBuilder();
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     builder.addHeader(HttpConstant.USER_AGENT, StringUtils.concatString(str3, " ", str4));
                 } else {
                     builder.addHeader(HttpConstant.USER_AGENT, str4);
@@ -473,7 +473,7 @@ public class NetworkTask implements IUnifiedTask {
             if (builder == null) {
                 builder = request.newBuilder();
             }
-            if (TextUtils.isEmpty(request.getHeaders().get("Accept-Encoding")) || AwcnConfig.isHostInAcceptEncodeWhiteList(request.getHost())) {
+            if (StringUtils.isEmpty(request.getHeaders().get("Accept-Encoding")) || AwcnConfig.isHostInAcceptEncodeWhiteList(request.getHost())) {
                 this.rc.config.dueToAcceptEncode(builder);
             }
         }

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -251,14 +251,14 @@ public class tau extends af {
             ipChange.ipc$dispatch("c5b033c1", new Object[]{this, xRichTextViewByCouponV3, str, str2, str3, new Integer(i2), new Integer(i3), new Integer(i4), new Boolean(z), str4});
         } else if (xRichTextViewByCouponV3 == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 xRichTextViewByCouponV3.setSeparator(str);
             }
             xRichTextViewByCouponV3.setXIconHeight(i2);
             xRichTextViewByCouponV3.setTextBgPaddingH(i3);
             xRichTextViewByCouponV3.setTextBgPaddingV(i4);
             xRichTextViewByCouponV3.setIcon(null);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 tbj.a(str2, y.a(xRichTextViewByCouponV3), new tbj.a() { // from class: tb.tau.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -273,7 +273,7 @@ public class tau extends af {
                     }
                 }, null);
             }
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return;
             }
             tbj.a(str3, y.a(xRichTextViewByCouponV3), new tbj.a() { // from class: tb.tau.2

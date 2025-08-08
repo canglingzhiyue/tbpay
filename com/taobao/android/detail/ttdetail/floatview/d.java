@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -339,7 +339,7 @@ public class d implements com.taobao.android.detail.ttdetail.communication.g<i> 
         }
         try {
             Object obj = jSONObject.get("operate");
-            if (!(obj instanceof String) || !TextUtils.equals((String) obj, "destroy")) {
+            if (!(obj instanceof String) || !StringUtils.equals((String) obj, "destroy")) {
                 return;
             }
             f();

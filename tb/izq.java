@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -62,7 +62,7 @@ public abstract class izq extends dlg<l> {
         if (d == null) {
             return a("rootWidget为空", true);
         }
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             a2 = lVar.j();
             if (a2 == null || !c.equals(a2.getUserId())) {
                 a2 = d.queryWidgetNodeByUserId(c);

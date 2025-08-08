@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,7 +68,7 @@ public final class LVBridgeEngine {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 access$formatJsonString = "{}";
             } else {
                 LVBridgeEngine lVBridgeEngine = LVBridgeEngine.this;
@@ -97,7 +97,7 @@ public final class LVBridgeEngine {
                 return;
             }
             LVBridgeEngine lVBridgeEngine = LVBridgeEngine.this;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "{}";
             } else {
                 q.a((Object) str);
@@ -181,11 +181,11 @@ public final class LVBridgeEngine {
         }
         com.taobao.android.lightvane.jsbridge.e eVar = new com.taobao.android.lightvane.jsbridge.e(this.webview);
         String str5 = str2;
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             i iVar = new i();
             iVar.a("HY_NO_CLASS");
             new com.taobao.android.lightvane.jsbridge.d(this.webview, "null", "null", null, getFailCallback(str)).b(iVar);
-        } else if (TextUtils.isEmpty(str3) && TextUtils.isEmpty(str5)) {
+        } else if (StringUtils.isEmpty(str3) && StringUtils.isEmpty(str5)) {
             i iVar2 = new i();
             iVar2.a("HY_NO_HANDLER");
             new com.taobao.android.lightvane.jsbridge.d(this.webview, "null", "null", null, getFailCallback(str)).b(iVar2);
@@ -193,7 +193,7 @@ public final class LVBridgeEngine {
             eVar.a(str2);
             eVar.b(str3);
             eVar.a(this.webview);
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = "{}";
             }
             eVar.c(str4);

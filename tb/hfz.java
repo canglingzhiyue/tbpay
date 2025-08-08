@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -89,7 +89,7 @@ public abstract class hfz extends hfy {
                 return;
             }
             TextView textView = this.f28605a;
-            textView.setText(TextUtils.ellipsize(textView.getText(), this.f28605a.getPaint(), i, TextUtils.TruncateAt.END));
+            textView.setText(StringUtils.ellipsize(textView.getText(), this.f28605a.getPaint(), i, StringUtils.TruncateAt.END));
         }
     }
 }

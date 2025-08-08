@@ -1,6 +1,6 @@
 package com.alipay.android.app.cctemplate.transport;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alipay.android.app.cctemplate.TemplateValue;
 import com.alipay.android.app.cctemplate.api.TemplateService;
@@ -31,7 +31,7 @@ public class TemplateManager {
             return null;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.equals(str, " ")) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.equals(str, " ")) {
                 JSONObject jSONObject = new JSONObject(str);
                 template = new Template();
                 try {
@@ -109,13 +109,13 @@ public class TemplateManager {
         sb.append(str7);
         sb.append("\",");
         sb.append("\"platform\":\"android\"");
-        if (!TextUtils.isEmpty(str8)) {
+        if (!StringUtils.isEmpty(str8)) {
             sb.append(",");
             sb.append("\"expId\":\"");
             sb.append(str8);
             sb.append("\"");
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             sb.append(",");
             sb.append("\"uid\":\"");
             sb.append(str5);
@@ -130,13 +130,13 @@ public class TemplateManager {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d9bbef41", new Object[]{str, str2})).intValue();
         }
-        if (TextUtils.equals(str, str2)) {
+        if (StringUtils.equals(str, str2)) {
             return 0;
         }
-        if (!TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
             return 1;
         }
-        if (TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return -1;
         }
         String[] split = str.split("\\.");
@@ -145,7 +145,7 @@ public class TemplateManager {
             return str.compareTo(str2);
         }
         for (int i = 0; i < 3; i++) {
-            if (!TextUtils.equals(split[i], split2[i])) {
+            if (!StringUtils.equals(split[i], split2[i])) {
                 return Integer.parseInt(split[i]) - Integer.parseInt(split2[i]);
             }
         }
@@ -171,11 +171,11 @@ public class TemplateManager {
             LogUtils.record(2, "TemplateManager::whetherNeedUpdate", "local template is null, need update");
             return true;
         } else {
-            boolean z4 = !TextUtils.isEmpty(template.publishVersion) && TextUtils.equals(template.publishVersion, template2.publishVersion);
+            boolean z4 = !StringUtils.isEmpty(template.publishVersion) && StringUtils.equals(template.publishVersion, template2.publishVersion);
             int compareVersion = compareVersion(template.tplVersion, template2.tplVersion);
-            boolean equals = TextUtils.equals(template.tplId, template2.tplId);
-            boolean z5 = !TextUtils.isEmpty(template.expId);
-            if (!z5 ? !equals || (compareVersion <= 0 && (compareVersion != 0 || (z4 && template.time != null && template.time.compareTo(template2.time) <= 0))) : (!equals || (z4 && compareVersion == 0 && template.time != null && template.time.compareTo(template2.time) == 0)) && TextUtils.equals(template2.tplHash, template.tplHash)) {
+            boolean equals = StringUtils.equals(template.tplId, template2.tplId);
+            boolean z5 = !StringUtils.isEmpty(template.expId);
+            if (!z5 ? !equals || (compareVersion <= 0 && (compareVersion != 0 || (z4 && template.time != null && template.time.compareTo(template2.time) <= 0))) : (!equals || (z4 && compareVersion == 0 && template.time != null && template.time.compareTo(template2.time) == 0)) && StringUtils.equals(template2.tplHash, template.tplHash)) {
                 z = false;
             }
             StringBuilder sb = new StringBuilder("模版更新:");
@@ -204,10 +204,10 @@ public class TemplateManager {
         if (template == null || template2 == null) {
             LogUtils.record(2, "TemplateManager::needRollback rollbackString:", "time version equals");
             return false;
-        } else if (TextUtils.equals(template.time, template2.time) && TextUtils.equals(template.tplVersion, template2.tplVersion)) {
+        } else if (StringUtils.equals(template.time, template2.time) && StringUtils.equals(template.tplVersion, template2.tplVersion)) {
             LogUtils.record(2, "TemplateManager::needRollback rollbackString:", "time version equals");
             return false;
-        } else if (TextUtils.isEmpty(template.rollbackString)) {
+        } else if (StringUtils.isEmpty(template.rollbackString)) {
             LogUtils.record(2, "TemplateManager::needRollback rollbackString:", "isEmpty");
             return false;
         } else {
@@ -219,7 +219,7 @@ public class TemplateManager {
                     com.alibaba.fastjson.JSONObject jSONObject = parseArray.getJSONObject(i);
                     String string = jSONObject.getString("tplVersion");
                     String string2 = jSONObject.getString("time");
-                    if (TextUtils.equals(string, template2.tplVersion) && TextUtils.equals(string2, template2.time)) {
+                    if (StringUtils.equals(string, template2.tplVersion) && StringUtils.equals(string2, template2.time)) {
                         LogUtils.record(2, "TemplateManager::needRollback:", string + " " + string2 + " false");
                         return true;
                     }

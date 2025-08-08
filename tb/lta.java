@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -136,7 +136,7 @@ public class lta {
             return (PlayControllerConfig) ipChange.ipc$dispatch("ab8b7f1c", new Object[]{this, str});
         }
         String a2 = liz.a(b(str), null);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return (PlayControllerConfig) JSON.parseObject(a2, PlayControllerConfig.class);
         }
         return null;

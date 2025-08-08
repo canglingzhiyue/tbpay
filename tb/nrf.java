@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -231,7 +231,7 @@ public class nrf extends iut implements View.OnClickListener, ImagePopTask.a {
             }
             String f = this.m.getModel().f();
             String str2 = "sskview";
-            if (!TextUtils.isEmpty(f)) {
+            if (!StringUtils.isEmpty(f)) {
                 str2 = str2 + "-" + f;
             }
             bundle.putString(d.EXTRA_KEY_PIC_URI, this.g);
@@ -319,7 +319,7 @@ public class nrf extends iut implements View.OnClickListener, ImagePopTask.a {
         int measuredWidth = inflate.getMeasuredWidth();
         int measuredHeight = inflate.getMeasuredHeight();
         String V = r.V();
-        if (!TextUtils.isEmpty(V)) {
+        if (!StringUtils.isEmpty(V)) {
             ((TextView) inflate.findViewById(R.id.tv_guide_text)).setText(V);
         }
         int measuredWidth2 = (this.k.getMeasuredWidth() / 2) - (measuredWidth / 2);
@@ -392,7 +392,7 @@ public class nrf extends iut implements View.OnClickListener, ImagePopTask.a {
             ipChange.ipc$dispatch("881e4e63", new Object[]{this, str, new Boolean(z), map});
         } else if (getActivity() == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 b(str, z, map);
             } else {
                 z2 = b();

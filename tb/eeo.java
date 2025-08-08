@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class eeo extends eei<OpenCommonDialogEvent> {
         com.taobao.android.detail.core.utils.i.d(com.taobao.android.detail.core.performance.i.a("OpenCommonDialogSubscriber", BTags.CommonDlg), "handleEvent");
         String str = this.f27239a.f9411a.f27180a;
         String b = b(openCommonDialogEvent);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             com.taobao.android.detail.core.utils.i.a(com.taobao.android.detail.core.performance.i.a("OpenCommonDialogSubscriber", BTags.CommonDlg), b);
             eca.a(this.f27239a, "MegaFloat", this.b, str, this.c, b);
             return i.FAILURE;
@@ -100,7 +100,7 @@ public class eeo extends eei<OpenCommonDialogEvent> {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("popId", (Object) dataModel.popId);
         jSONObject.put("bizId", (Object) "tbDetail");
-        if (!TextUtils.isEmpty(dataModel.popConfig)) {
+        if (!StringUtils.isEmpty(dataModel.popConfig)) {
             jSONObject.put(c.KEY_POP_CONFIG, JSONObject.parse(dataModel.popConfig));
         }
         jSONObject.put("url", (Object) dataModel.url);

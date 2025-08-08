@@ -2,7 +2,7 @@ package com.taobao.tao;
 
 import android.app.Application;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import javax.annotation.Nonnull;
 import tb.kge;
@@ -43,7 +43,7 @@ public class Globals {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f011eacc", new Object[0]);
         }
-        if (!TextUtils.isEmpty(sInstalledVersionName)) {
+        if (!StringUtils.isEmpty(sInstalledVersionName)) {
             return sInstalledVersionName;
         }
         try {
@@ -60,7 +60,7 @@ public class Globals {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b947cc3a", new Object[0]);
         }
-        if (TextUtils.isEmpty(sInstalledVersionName)) {
+        if (StringUtils.isEmpty(sInstalledVersionName)) {
             getVersionName();
         }
         return sInstalledVersionName;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.taopai.charge.data.TpChargeBean;
@@ -132,11 +132,11 @@ public class izf {
             return;
         }
         String a2 = izh.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         String a3 = izi.a(a2);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         this.f29421a.addAll(JSON.parseArray(a3, TpChargeBean.class));
@@ -149,7 +149,7 @@ public class izf {
             return;
         }
         String a2 = izh.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         izi.a(a2, JSON.toJSONString(list));

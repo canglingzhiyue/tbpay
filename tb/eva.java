@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes4.dex */
@@ -15,7 +15,7 @@ public class eva {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || euy.f() == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || euy.f() == null) {
         } else {
             euy.f().a(str, str2);
         }
@@ -25,7 +25,7 @@ public class eva {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || euy.f() == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || euy.f() == null) {
         } else {
             euy.f().b(str, str2);
         }
@@ -35,7 +35,7 @@ public class eva {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || euy.f() == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || euy.f() == null) {
         } else {
             euy.f().c(str, str2);
         }

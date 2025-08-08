@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tlog.protocol.model.reply.base.UploadTokenInfo;
 import com.taobao.tao.log.f;
@@ -47,7 +47,7 @@ public class ole {
                 olhVar.e = uploadEventInfo;
                 for (UploadTokenInfo uploadTokenInfo : uploadTokenInfoArr) {
                     String str3 = uploadTokenInfo.fileInfo.absolutePath;
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         olhVar.a(str3);
                     }
                 }

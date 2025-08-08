@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import com.taobao.search.searchdoor.searchbar.data.SearchBarHintBean;
@@ -21,7 +21,7 @@ public class npx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("49d6ff89", new Object[]{this, str, searchBarHintBean});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.b("SearchBarHintManager", "addSearchBarHint tab is empty");
         } else if (searchBarHintBean == null) {
             q.b("SearchBarHintManager", "searchBarHint is null");
@@ -35,7 +35,7 @@ public class npx {
         if (ipChange instanceof IpChange) {
             return (SearchBarHintBean) ipChange.ipc$dispatch("9e49b8dd", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             q.b("SearchBarHintManager", "getSearchBarHint tab is empty");
             return null;
         }

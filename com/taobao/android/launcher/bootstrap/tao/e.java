@@ -3,7 +3,7 @@ package com.taobao.android.launcher.bootstrap.tao;
 import android.app.Application;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.application.common.a;
@@ -39,7 +39,7 @@ public class e implements Handler.Callback, a.c {
             return;
         }
         this.f13086a = aVar;
-        if (TextUtils.equals(gtxVar.b, gtxVar.f28453a)) {
+        if (StringUtils.equals(gtxVar.b, gtxVar.f28453a)) {
             h.b("Sche-LifeCycle", "startup watchdog setup");
             this.d.sendEmptyMessageDelayed(2, orq.FRAME_CHECK_TIMEOUT);
             this.d.sendEmptyMessageDelayed(3, sad.DEFAULT_TCP_CONNECT_TIMEOUT_MS);

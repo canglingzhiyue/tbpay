@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliLoginInterface;
 import com.taobao.android.detail2.core.framework.data.global.NewDetailScreenConfig;
@@ -42,7 +42,7 @@ public class fjm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("602fb802", new Object[]{context, str, str2, new Integer(i)})).intValue();
         }
-        if (context != null && !TextUtils.isEmpty(str2)) {
+        if (context != null && !StringUtils.isEmpty(str2)) {
             try {
                 str2 = URLDecoder.decode(str2, "utf-8");
             } catch (UnsupportedEncodingException unused) {

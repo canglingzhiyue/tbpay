@@ -1,6 +1,6 @@
 package com.uc.webview.base.io;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.Log;
 import java.io.Closeable;
 import java.io.File;
@@ -30,7 +30,7 @@ public final class b {
     public b(File file, boolean z, String str) {
         this.c = z;
         this.f23788a = new File(file.getAbsolutePath() + ".lk");
-        this.b = TextUtils.isEmpty(str) ? "FileLocker" : "FileLocker.".concat(String.valueOf(str));
+        this.b = StringUtils.isEmpty(str) ? "FileLocker" : "FileLocker.".concat(String.valueOf(str));
     }
 
     private void a(Closeable closeable) {

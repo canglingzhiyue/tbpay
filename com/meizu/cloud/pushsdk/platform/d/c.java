@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
@@ -65,7 +65,7 @@ public abstract class c<T extends BasicPushStatus> {
 
     protected String a(Context context, String str) {
         String str2 = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             List<ResolveInfo> queryIntentServices = context.getPackageManager().queryIntentServices(new Intent(str), 0);
             if (queryIntentServices != null) {
                 Iterator<ResolveInfo> it = queryIntentServices.iterator();
@@ -81,7 +81,7 @@ public abstract class c<T extends BasicPushStatus> {
                         break;
                     }
                 }
-                if (TextUtils.isEmpty(str2) && queryIntentServices.size() > 0) {
+                if (StringUtils.isEmpty(str2) && queryIntentServices.size() > 0) {
                     this.i = queryIntentServices.get(0).serviceInfo.packageName;
                     str2 = queryIntentServices.get(0).serviceInfo.name;
                 }
@@ -161,6 +161,6 @@ public abstract class c<T extends BasicPushStatus> {
     protected abstract int j();
 
     protected boolean l() {
-        return this.h && this.g && !TextUtils.isEmpty(a(this.b, PushConstants.MZ_PUSH_MANAGER_SERVICE_ACTION));
+        return this.h && this.g && !StringUtils.isEmpty(a(this.b, PushConstants.MZ_PUSH_MANAGER_SERVICE_ACTION));
     }
 }

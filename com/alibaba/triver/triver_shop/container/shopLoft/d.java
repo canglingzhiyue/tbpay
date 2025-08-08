@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -220,7 +220,7 @@ public final class d implements com.alibaba.triver.triver_shop.container.shopLof
         }
         TextView textView2 = this.n;
         if (textView2 != null) {
-            if (TextUtils.isEmpty(this.f)) {
+            if (StringUtils.isEmpty(this.f)) {
                 FrameLayout frameLayout5 = this.m;
                 if (frameLayout5 != null) {
                     o.d(frameLayout5);

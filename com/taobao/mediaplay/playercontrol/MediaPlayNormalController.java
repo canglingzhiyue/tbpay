@@ -2,7 +2,7 @@ package com.taobao.mediaplay.playercontrol;
 
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -271,7 +271,7 @@ public class MediaPlayNormalController implements Handler.Callback, SeekBar.OnSe
             ipChange.ipc$dispatch("f694024", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
+        if (!StringUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
             this.duration = this.mDWContext.getVideo().d();
             this.mControllerHolder.c.setText(MediaTimeUtils.msStringForTime(this.duration));
         }
@@ -291,7 +291,7 @@ public class MediaPlayNormalController implements Handler.Callback, SeekBar.OnSe
             ipChange.ipc$dispatch("c715ea20", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
+        if (!StringUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
             this.duration = this.mDWContext.getVideo().d();
             this.mControllerHolder.c.setText(MediaTimeUtils.msStringForTime(this.duration));
         }

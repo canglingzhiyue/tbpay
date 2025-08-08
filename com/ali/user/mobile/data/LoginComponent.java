@@ -1,7 +1,7 @@
 package com.ali.user.mobile.data;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
@@ -190,7 +190,7 @@ public class LoginComponent {
         }
         if (loginBaseParam != null) {
             try {
-                if (!TextUtils.isEmpty(loginBaseParam.utPageName)) {
+                if (!StringUtils.isEmpty(loginBaseParam.utPageName)) {
                     str = loginBaseParam.utPageName;
                     if (rpcResponse == null && rpcResponse.actionType != null) {
                         if ("SUCCESS".equals(rpcResponse.actionType)) {
@@ -223,7 +223,7 @@ public class LoginComponent {
             return;
         }
         String valueOf = rpcResponse != null ? String.valueOf(rpcResponse.code) : UTConstant.CustomEvent.UT_NETWORK_FAIL;
-        if (loginBaseParam != null && !TextUtils.isEmpty(loginBaseParam.utPageName)) {
+        if (loginBaseParam != null && !StringUtils.isEmpty(loginBaseParam.utPageName)) {
             str = loginBaseParam.utPageName;
         } else {
             str = (loginBaseParam == null || !loginBaseParam.isFromAccount) ? UTConstant.PageName.UT_PAGE_SMS_LOGIN1 : UTConstant.PageName.UT_PAGE_SMS_LOGIN2;
@@ -399,7 +399,7 @@ public class LoginComponent {
             if (rpcResponse != null) {
                 str2 = String.valueOf(rpcResponse.code);
             }
-            if (!TextUtils.isEmpty(loginBaseParam.utPageName)) {
+            if (!StringUtils.isEmpty(loginBaseParam.utPageName)) {
                 str = loginBaseParam.utPageName;
             } else {
                 str = loginBaseParam.isFromAccount ? UTConstant.PageName.UT_PAGE_SMS_LOGIN2 : UTConstant.PageName.UT_PAGE_SMS_LOGIN1;

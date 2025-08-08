@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.common.MUSConstants;
 import java.util.Arrays;
@@ -195,7 +195,7 @@ public class fzj {
             }
         }
         LinkedList linkedList2 = linkedList.isEmpty() ? null : linkedList;
-        if (linkedList2 != null || TextUtils.isEmpty(str.trim())) {
+        if (linkedList2 != null || StringUtils.isEmpty(str.trim())) {
             return linkedList2;
         }
         throw new IllegalArgumentException("Invalid Transform format: " + str);

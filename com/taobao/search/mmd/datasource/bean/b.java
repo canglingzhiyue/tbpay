@@ -1,6 +1,6 @@
 package com.taobao.search.mmd.datasource.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -91,7 +91,7 @@ public final class b {
             }
             q.c(jsonObject, "jsonObject");
             String url = jsonObject.optString("url");
-            if (TextUtils.isEmpty(url)) {
+            if (StringUtils.isEmpty(url)) {
                 return null;
             }
             int optInt = jsonObject.optInt("totalCount", 0);

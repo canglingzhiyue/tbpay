@@ -3,7 +3,7 @@ package com.taobao.tao.alipay.callservice;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.pay.PayTask;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -35,10 +35,10 @@ public class WVAlipayApiPlugin extends e {
         if (wVCallBackContext == null) {
             return false;
         }
-        if (TextUtils.equals(str, ACTION_DECRYPT)) {
+        if (StringUtils.equals(str, ACTION_DECRYPT)) {
             alipayDecrypt(str2, wVCallBackContext);
             return true;
-        } else if (!TextUtils.equals(str, ACTION_GET_ALIPAY_CASHIER_PARAMS)) {
+        } else if (!StringUtils.equals(str, ACTION_GET_ALIPAY_CASHIER_PARAMS)) {
             return false;
         } else {
             getAlipayCashierParams(str2, wVCallBackContext);
@@ -50,12 +50,12 @@ public class WVAlipayApiPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1c19371", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             callbackError(wVCallBackContext, ERROR_STRING_INVALID_ARGS);
         } else {
             try {
                 JSONObject parseObject = JSONObject.parseObject(str);
-                if (parseObject == null || TextUtils.isEmpty(parseObject.getString(KEY_OBFS))) {
+                if (parseObject == null || StringUtils.isEmpty(parseObject.getString(KEY_OBFS))) {
                     callbackError(wVCallBackContext, ERROR_STRING_INVALID_ARGS);
                     return;
                 }
@@ -78,7 +78,7 @@ public class WVAlipayApiPlugin extends e {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSONObject.parseObject(str);
                 for (String str2 : parseObject.keySet()) {

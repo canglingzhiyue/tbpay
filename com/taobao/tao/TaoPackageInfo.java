@@ -3,7 +3,7 @@ package com.taobao.tao;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.android.virtual_thread.CarrierCachedPoolImpl;
@@ -388,7 +388,7 @@ public class TaoPackageInfo {
 
     private static boolean isTTIDInvalid(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1697cf87", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1697cf87", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str);
     }
 
     public static String getTTIDPackage() {
@@ -402,7 +402,7 @@ public class TaoPackageInfo {
         if (odn.ZIP_COMMENT_TTID_TYPE.equals(string)) {
             str = odn.a(Globals.getApplication());
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             try {
                 str = BuiltConfig.getString(R.string.ttid);
             } catch (Resources.NotFoundException unused) {

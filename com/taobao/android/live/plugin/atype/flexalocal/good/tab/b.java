@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.good.tab;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -83,7 +83,7 @@ public class b implements c {
         boolean z2 = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e8400aec", new Object[]{this, viewPager, pagerAdapter, arrayList});
-        } else if (arrayList != null && arrayList.size() != 0 && pagerAdapter != null && !TextUtils.isEmpty(arrayList.get(0).type)) {
+        } else if (arrayList != null && arrayList.size() != 0 && pagerAdapter != null && !StringUtils.isEmpty(arrayList.get(0).type)) {
             ArrayList arrayList2 = new ArrayList();
             boolean z3 = false;
             for (int i = 0; i < arrayList.size(); i++) {

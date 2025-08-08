@@ -2,7 +2,7 @@ package com.taobao.runtimepermission.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -73,7 +73,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             tfr.b(f18985a, "updateRules: config is empty!");
         } else {
             try {
@@ -114,7 +114,7 @@ public class a {
                     return;
                 }
                 String config = OrangeConfig.getInstance().getConfig(a.c(), a.d(), null);
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     a.a(a.this, config);
                 } else {
                     a.a(a.this);
@@ -125,7 +125,7 @@ public class a {
 
     public boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && (str.equals("common") || str.startsWith("triver-"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && (str.equals("common") || str.startsWith("triver-"));
     }
 
     public String c(String str) {
@@ -172,14 +172,14 @@ public class a {
             return (Map) ipChange.ipc$dispatch("ddd6ceb", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         try {
             for (Map.Entry<String, Object> entry : JSONObject.parseObject(str).entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && (value instanceof String)) {
+                if (!StringUtils.isEmpty(key) && (value instanceof String)) {
                     hashMap.put(key, (String) value);
                 }
             }

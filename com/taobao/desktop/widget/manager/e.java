@@ -1,7 +1,7 @@
 package com.taobao.desktop.widget.manager;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.widgetvivo.server.WidgetVivoService;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ public class e {
             if (f16980a == null || f16980a.isEmpty()) {
                 f16980a = khw.a(context).a(khp.SP_ORANGE_MANUFACTURER_REACH);
             }
-            if (!TextUtils.isEmpty(f16980a.get(str))) {
+            if (!StringUtils.isEmpty(f16980a.get(str))) {
                 return f16980a.get(str);
             }
         } catch (Throwable th) {

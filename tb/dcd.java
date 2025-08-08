@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -162,7 +162,7 @@ public class dcd {
             return;
         }
         int i = (!z || !UtilityImpl.isAppKeepAlive()) ? 1 : 33;
-        if (!TextUtils.isEmpty(str3) && m.h().contains(str3)) {
+        if (!StringUtils.isEmpty(str3) && m.h().contains(str3)) {
             ALog.e(TAG, "bindServiceAsync", "serviceId", str2, FluidException.SERVICE_NAME, str3);
             jzv.a(intent, b(context, intent, str, z, str2), i, $$Lambda$dcd$2__hpkHAfcAqTMf3_UaPpcomAZg.INSTANCE);
             return;
@@ -391,7 +391,7 @@ public class dcd {
                 return;
             }
         }
-        if (!TextUtils.isEmpty(className) && m.h().contains(className)) {
+        if (!StringUtils.isEmpty(className) && m.h().contains(className)) {
             jzv.a(serviceConnection);
         } else {
             context.unbindService(serviceConnection);

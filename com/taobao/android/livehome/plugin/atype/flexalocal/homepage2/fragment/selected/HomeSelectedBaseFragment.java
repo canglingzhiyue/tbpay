@@ -1,7 +1,7 @@
 package com.taobao.android.livehome.plugin.atype.flexalocal.homepage2.fragment.selected;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.security.realidentity.g4;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -168,7 +168,7 @@ public abstract class HomeSelectedBaseFragment extends HomeBaseFragment2 {
             return;
         }
         super.onTabAppear();
-        if (this.mLiveHomeContext.o == null || TextUtils.isEmpty(this.mChannelType)) {
+        if (this.mLiveHomeContext.o == null || StringUtils.isEmpty(this.mChannelType)) {
             return;
         }
         mfj.c(TAG, "onTabAppear " + this.mChannelType);

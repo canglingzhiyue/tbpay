@@ -6,7 +6,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.ViewGroup;
 import com.alibaba.security.realidentity.p1;
@@ -128,7 +128,7 @@ public class HardWareInfo {
                                 }
                                 try {
                                     String readLine6 = bufferedReader.readLine();
-                                    if (!TextUtils.isEmpty(readLine6)) {
+                                    if (!StringUtils.isEmpty(readLine6)) {
                                         this.j = readLine6;
                                     } else {
                                         this.j = b();
@@ -296,7 +296,7 @@ public class HardWareInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             return this.j;
         }
         try {
@@ -393,8 +393,8 @@ public class HardWareInfo {
     public void e() {
         String str;
         String upperCase = Build.HARDWARE.toUpperCase();
-        if (!TextUtils.isEmpty(upperCase)) {
-            if (!TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(this.f1802a)) {
+        if (!StringUtils.isEmpty(upperCase)) {
+            if (!StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(this.f1802a)) {
                 return;
             }
             if (upperCase.contains("EXYNOS")) {
@@ -415,7 +415,7 @@ public class HardWareInfo {
                 } catch (Exception unused2) {
                     str = null;
                 }
-                if (upperCase != null && upperCase.length() >= 4 && (TextUtils.isEmpty(str) || str.equals("unknown") || str.contains("samsungexynos") || str.contains("mrvl"))) {
+                if (upperCase != null && upperCase.length() >= 4 && (StringUtils.isEmpty(str) || str.equals("unknown") || str.contains("samsungexynos") || str.contains("mrvl"))) {
                     str = upperCase;
                 }
             }

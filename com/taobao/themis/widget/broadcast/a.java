@@ -1,6 +1,6 @@
 package com.taobao.themis.widget.broadcast;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -78,7 +78,7 @@ public final class a {
         ArrayList<BroadcastMsg> arrayList = new ArrayList<>(1);
         arrayList.add(msg);
         for (c cVar : this.f22915a.values()) {
-            if (!TextUtils.equals(cVar.a(), instanceId)) {
+            if (!StringUtils.equals(cVar.a(), instanceId)) {
                 cVar.a(arrayList);
             }
         }

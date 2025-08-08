@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.httpdns;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dns.DnsValue;
 import com.alipay.mobile.common.amnet.biz.AmnetOperationManager;
 import com.alipay.mobile.common.transport.TransportStrategy;
@@ -150,7 +150,7 @@ public class AlipayHttpDnsClient implements DnsLocalManager, DnsService {
         this.c = true;
         this.d = System.currentTimeMillis();
         this.httpdnsStorage = HttpdnsStorage.getInstance(this.mContext);
-        if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DNS_PRE_LOAD), "T")) {
+        if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DNS_PRE_LOAD), "T")) {
             LogCatUtil.debug(TAG, "preload dns");
             reloadDns();
         }
@@ -161,7 +161,7 @@ public class AlipayHttpDnsClient implements DnsLocalManager, DnsService {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn(TAG, "isInHosts : host is null.");
             return false;
         }
@@ -249,7 +249,7 @@ public class AlipayHttpDnsClient implements DnsLocalManager, DnsService {
             return;
         }
         try {
-            if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DNS_FEEDBACK), "T") && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DNS_FEEDBACK), "T") && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 if (!NetworkUtils.isNetworkAvailable(TransportEnvUtil.getContext())) {
                     LogCatUtil.debug(TAG, "network unavailable,do nothing");
                     return;
@@ -274,7 +274,7 @@ public class AlipayHttpDnsClient implements DnsLocalManager, DnsService {
         }
         try {
             HttpDns.HttpdnsIP queryLocalIPByHost = queryLocalIPByHost(str);
-            if (queryLocalIPByHost != null && !TextUtils.isEmpty(queryLocalIPByHost.getCname())) {
+            if (queryLocalIPByHost != null && !StringUtils.isEmpty(queryLocalIPByHost.getCname())) {
                 return this.dnsClient.getAllByNameFromInetAddr(queryLocalIPByHost.getCname());
             }
             return this.dnsClient.getAllByNameFromInetAddr(str);
@@ -328,7 +328,7 @@ public class AlipayHttpDnsClient implements DnsLocalManager, DnsService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             throw new UnknownHostException("host is null");
         } else {
             if (!TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.BLACK_LIST_DNS_HOST_NAME).contains(str)) {
@@ -358,7 +358,7 @@ public class AlipayHttpDnsClient implements DnsLocalManager, DnsService {
             return (InetAddress[]) ipChange.ipc$dispatch("897542c8", new Object[]{this, str});
         }
         try {
-            if ((TextUtils.equals(str, DnsValue.DOMAIN_MOBILE_GW) || TextUtils.equals(str, "mobilegwspdy.alipay.com")) && (b = b()) != null && !b.isEmpty()) {
+            if ((StringUtils.equals(str, DnsValue.DOMAIN_MOBILE_GW) || StringUtils.equals(str, "mobilegwspdy.alipay.com")) && (b = b()) != null && !b.isEmpty()) {
                 return (InetAddress[]) b.toArray(new InetAddress[b.size()]);
             }
             return null;
@@ -374,7 +374,7 @@ public class AlipayHttpDnsClient implements DnsLocalManager, DnsService {
             return (List) ipChange.ipc$dispatch("4a17df3e", new Object[]{this});
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.MOBILEGW_PRE_SET_IPS);
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             return null;
         }
         StringTokenizer stringTokenizer = new StringTokenizer(stringValue, ",");

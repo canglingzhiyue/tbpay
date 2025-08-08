@@ -1,7 +1,7 @@
 package com.taobao.android.icart.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alibaba.android.nextrpc.internal.utils.UnifyLog;
@@ -107,7 +107,7 @@ public class h extends af {
             return (String) ipChange.ipc$dispatch("ba403242", new Object[]{textView, str2, afVar});
         }
         float measuredWidth = (afVar.getMeasuredWidth() - afVar.getPaddingLeft()) - afVar.getPaddingRight();
-        if (!TextUtils.isEmpty(str) && measuredWidth > 0.0f) {
+        if (!StringUtils.isEmpty(str) && measuredWidth > 0.0f) {
             String str3 = measuredWidth + "_" + str2;
             String str4 = f12882a.get(str3);
             if (b && str4 != null) {

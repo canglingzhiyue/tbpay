@@ -1,6 +1,6 @@
 package anetwork.network.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import java.security.MessageDigest;
@@ -233,7 +233,7 @@ public class a implements b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "mtop_apicache_";
         }
         return "mtop_apicache_" + str;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.monitor.info.CacheOverviewInfo;
 import com.taobao.android.cachecleaner.monitor.info.node.a;
@@ -77,7 +77,7 @@ public class dvh extends dvf {
         if (parent == null) {
             return;
         }
-        if (!TextUtils.equals(parent.getName(), "/ExternalCache/cache") && !TextUtils.equals(parent.getName(), "/ExternalFiles/files")) {
+        if (!StringUtils.equals(parent.getName(), "/ExternalCache/cache") && !StringUtils.equals(parent.getName(), "/ExternalFiles/files")) {
             return;
         }
         this.f27016a.a(aVar);

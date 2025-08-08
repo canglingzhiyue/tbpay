@@ -2,7 +2,7 @@ package android.taobao.windvane.config;
 
 import android.net.Uri;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OConstant;
@@ -107,7 +107,7 @@ public class t {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c0bfeb4e", new Object[]{this, str, str2, str3, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "urlMatcherConfig: 输入参数为空!");
         } else {
             if (z) {
@@ -125,7 +125,7 @@ public class t {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "setUrlPatterns: 输入配置为空");
         } else if ("AllowAllUrl".equals(str)) {
             this.k = true;
@@ -146,7 +146,7 @@ public class t {
                 while (keys.hasNext()) {
                     String next = keys.next();
                     String optString = jSONObject.optString(next, "");
-                    if (TextUtils.isEmpty(optString)) {
+                    if (StringUtils.isEmpty(optString)) {
                         android.taobao.windvane.util.m.e("URLMATCHER", "setUrlPatterns: 未能正确获取URL:" + next + "的权限组，请检查配置");
                     } else if (!a(aVar, l(next), optString)) {
                         android.taobao.windvane.util.m.e("URLMATCHER", "setUrlPatterns: URL insert error! url is:" + next);
@@ -171,7 +171,7 @@ public class t {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "setUrlRulesMap: 输入参数为空!");
         } else {
             try {
@@ -182,7 +182,7 @@ public class t {
                     while (keys.hasNext()) {
                         String next = keys.next();
                         String optString = jSONObject.optString(next, "");
-                        if (TextUtils.isEmpty(optString)) {
+                        if (StringUtils.isEmpty(optString)) {
                             android.taobao.windvane.util.m.e("URLMATCHER", "setUrlRulesMap: 未能正确获取权限组:" + next + "的权限,请检查配置");
                         } else {
                             JSONObject jSONObject2 = new JSONObject(optString);
@@ -191,7 +191,7 @@ public class t {
                             while (keys2.hasNext()) {
                                 String next2 = keys2.next();
                                 String optString2 = jSONObject2.optString(next2);
-                                if (TextUtils.isEmpty(optString2)) {
+                                if (StringUtils.isEmpty(optString2)) {
                                     android.taobao.windvane.util.m.e("URLMATCHER", "setUrlRulesMap: 未能正确获取权限:" + next2 + "的值,请检查配置");
                                 } else {
                                     hashMap.put(next2, optString2);
@@ -216,7 +216,7 @@ public class t {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "setApiGroup: 输入参数为空");
         } else {
             try {
@@ -271,7 +271,7 @@ public class t {
         }
         if (android.taobao.windvane.runtimepermission.a.PERMISSION_ALLOW.equalsIgnoreCase(a(str, "open"))) {
             String a2 = a(str, "api");
-            if (TextUtils.equals(a2, "Group_All")) {
+            if (StringUtils.equals(a2, "Group_All")) {
                 if (this.j) {
                     AppMonitor.Alarm.commitFail("WindVane", MONITOR_POINT_NEW_SECURITY_ALLOW, str, AgooConstants.REPORT_MESSAGE_NULL, "ali域名允许打开");
                 }
@@ -395,7 +395,7 @@ public class t {
         if (dVar != null) {
             return dVar.a(str, str2);
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "getUrlPermissionInfo: 输入参数为空!");
             return null;
         } else if (this.d == null || this.d.f1573a.isEmpty()) {
@@ -404,12 +404,12 @@ public class t {
         } else {
             synchronized (this.e) {
                 if (this.e != null && !this.e.isEmpty()) {
-                    if (TextUtils.equals(str2, "open") && (str.startsWith("javascript:") || str.startsWith("about:") || str.startsWith("tel:") || str.startsWith(WVUCWebViewClient.SCHEME_SMS) || str.startsWith("mailto:"))) {
+                    if (StringUtils.equals(str2, "open") && (str.startsWith("javascript:") || str.startsWith("about:") || str.startsWith("tel:") || str.startsWith(WVUCWebViewClient.SCHEME_SMS) || str.startsWith("mailto:"))) {
                         return android.taobao.windvane.runtimepermission.a.PERMISSION_ALLOW;
                     }
                     try {
                         String j = j(str);
-                        if (TextUtils.isEmpty(j)) {
+                        if (StringUtils.isEmpty(j)) {
                             android.taobao.windvane.util.m.e("URLMATCHER", "getUrlPermissionInfo: 该url未在配置内，禁止访问! " + str);
                             return null;
                         }
@@ -417,7 +417,7 @@ public class t {
                             Map<String, String> map = this.e.get(j);
                             if (map != null && !map.isEmpty()) {
                                 String str3 = map.get(str2);
-                                if (!TextUtils.isEmpty(str3)) {
+                                if (!StringUtils.isEmpty(str3)) {
                                     return str3;
                                 }
                                 android.taobao.windvane.util.m.e("URLMATCHER", "getUrlPermissionInfo: 未在权限组:" + j + " 中找到权限:" + str2 + "的配置");
@@ -428,7 +428,7 @@ public class t {
                         }
                     } catch (Throwable th) {
                         th.printStackTrace();
-                        if (TextUtils.equals(str2, "open")) {
+                        if (StringUtils.equals(str2, "open")) {
                             android.taobao.windvane.util.m.e("URLMATCHER", "获取open权限时，出现匹配错误，已允许该URL打开，url:" + str);
                             if (!this.j) {
                                 return android.taobao.windvane.runtimepermission.a.PERMISSION_ALLOW;
@@ -463,14 +463,14 @@ public class t {
         if (cVar != null) {
             return cVar.a(str, str2, str3);
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "checkApiPermission: 输入参数为空!");
             return false;
         }
         synchronized (this.f) {
             if (this.f != null && !this.f.isEmpty()) {
                 String a2 = a(str, "api");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     android.taobao.windvane.util.m.e("URLMATCHER", "checkApiPermission: 未能正确获取api权限组:" + str);
                     return false;
                 } else if (c(str, a2)) {
@@ -515,7 +515,7 @@ public class t {
         if (!j.commonConfig.bj) {
             return false;
         }
-        if (TextUtils.equals(str2, "Group_None")) {
+        if (StringUtils.equals(str2, "Group_None")) {
             if (p.b(str)) {
                 if (this.j) {
                     AppMonitor.Alarm.commitFail("WindVane", android.taobao.windvane.monitor.a.MONITOR_MATCH_URL_FAILED, str, "12", "api错误地拒绝了");
@@ -527,7 +527,7 @@ public class t {
                 AppMonitor.Alarm.commitFail("WindVane", "NewSecurityBlock", str, "4", "非阿里名单拦截");
             }
             android.taobao.windvane.util.m.e("URLMATCHER", "非阿里名单拦截 " + str);
-        } else if (TextUtils.equals(str2, "Group_All")) {
+        } else if (StringUtils.equals(str2, "Group_All")) {
             if (this.j) {
                 AppMonitor.Alarm.commitFail("WindVane", MONITOR_POINT_NEW_SECURITY_ALLOW, str, "3", "允许访问jsbridge");
             }
@@ -579,7 +579,7 @@ public class t {
             return (String) ipChange.ipc$dispatch("1a00ca85", new Object[]{this, str});
         }
         String str2 = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "searchUrlForGroup: 输入的URL不应为空！");
             return null;
         } else if (this.d == null || this.d.f1573a == null || this.d.f1573a.isEmpty()) {
@@ -655,7 +655,7 @@ public class t {
                     map.put(new ArrayList<>(arrayList), a.b(aVar.f1573a.get("*")));
                     arrayList.remove("*");
                     return;
-                } else if (TextUtils.equals(a.a(aVar), "/") && a.b(aVar) != null && a(bVar, aVar)) {
+                } else if (StringUtils.equals(a.a(aVar), "/") && a.b(aVar) != null && a(bVar, aVar)) {
                     map.put(new ArrayList<>(arrayList), a.b(aVar));
                 }
             }
@@ -708,7 +708,7 @@ public class t {
             if (!aVar.f1573a.containsKey("*")) {
                 return;
             }
-            if (z2 && i2 == 0 && TextUtils.equals(str, "/")) {
+            if (z2 && i2 == 0 && StringUtils.equals(str, "/")) {
                 arrayList.add("*");
                 a(bVar, z2, aVar.f1573a.get("*"), arrayList, i2, map);
                 arrayList.remove("*");
@@ -736,7 +736,7 @@ public class t {
         if (bVar == null || aVar == null) {
             return false;
         }
-        if (TextUtils.equals(aVar.a(), b[0])) {
+        if (StringUtils.equals(aVar.a(), b[0])) {
             String[] strArr = b;
             int length = strArr.length;
             int i = 0;
@@ -744,7 +744,7 @@ public class t {
                 if (i >= length) {
                     z2 = false;
                     break;
-                } else if (TextUtils.equals(strArr[i], bVar.f1574a)) {
+                } else if (StringUtils.equals(strArr[i], bVar.f1574a)) {
                     z2 = true;
                     break;
                 } else {
@@ -754,7 +754,7 @@ public class t {
             if (!z2) {
                 return false;
             }
-        } else if (!TextUtils.equals(bVar.f1574a, aVar.a())) {
+        } else if (!StringUtils.equals(bVar.f1574a, aVar.a())) {
             return false;
         }
         if (aVar.b().size() == 0) {
@@ -794,7 +794,7 @@ public class t {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("3d486bdf", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             android.taobao.windvane.util.m.e("URLMATCHER", "dropUrl: 输入的URL为空!!");
             return null;
         }
@@ -813,7 +813,7 @@ public class t {
             uri = null;
         }
         bVar.f1574a = uri.getScheme();
-        if (TextUtils.isEmpty(uri.getHost()) || uri.getPath() == null) {
+        if (StringUtils.isEmpty(uri.getHost()) || uri.getPath() == null) {
             android.taobao.windvane.util.m.e("URLMATCHER", "parseUrl: 输入的URL不符合规范");
             if (this.j) {
                 AppMonitor.Alarm.commitFail("WindVane", android.taobao.windvane.monitor.a.MONITOR_MATCH_URL_FAILED, str, "7", "解析URL出现错误");
@@ -822,7 +822,7 @@ public class t {
         }
         bVar.b = a(uri.getHost().split("\\."));
         bVar.c = uri.getPath().split("/");
-        if (bVar.c.length > 0 && TextUtils.equals("", bVar.c[0])) {
+        if (bVar.c.length > 0 && StringUtils.equals("", bVar.c[0])) {
             bVar.c[0] = "/";
         }
         if (bVar.c.length == 0) {

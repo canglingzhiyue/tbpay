@@ -1,7 +1,7 @@
 package com.taobao.taolive.movehighlight.bundle.timeshift.timeshiftDx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -203,7 +203,7 @@ public class TimeShiftItemTimeShiftDXFrame extends AbstractTimeShiftDXFrame impl
             return;
         }
         int a2 = pfnVar.a(str3, str2);
-        if (this.mIsFirst || (!TextUtils.isEmpty(str) && "goodsList".equals(str) && a2 == -1)) {
+        if (this.mIsFirst || (!StringUtils.isEmpty(str) && "goodsList".equals(str) && a2 == -1)) {
             a aVar = this.timeShiftRequestDx;
             if (aVar == null) {
                 return;

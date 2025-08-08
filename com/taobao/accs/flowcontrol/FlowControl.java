@@ -1,7 +1,7 @@
 package com.taobao.accs.flowcontrol;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.ALog;
 import java.io.Serializable;
@@ -172,7 +172,7 @@ public class FlowControl {
                 ipChange.ipc$dispatch("49b69ef9", new Object[]{this, str, str2, flowControlInfo});
                 return;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = str + "_" + str2;
             }
             if (this.flowCtrlMap == null) {
@@ -189,7 +189,7 @@ public class FlowControl {
             if (this.flowCtrlMap == null) {
                 return null;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = str + "_" + str2;
             }
             return this.flowCtrlMap.get(str);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -371,23 +371,23 @@ public class tpn implements d, com.taobao.taolive.sdk.model.a, ddv, tqg {
             String str3 = (String) hashMap.get("eventType");
             String str4 = (String) hashMap.get("notifyId");
             VideoInfo videoInfo = this.d;
-            if (videoInfo == null || TextUtils.equals(videoInfo.liveId, str2)) {
+            if (videoInfo == null || StringUtils.equals(videoInfo.liveId, str2)) {
                 his.b("ShowcaseControllerAdapter", "onEvent | liveid check failed. liveId=" + str2);
                 return;
             }
             his.a("ShowcaseControllerAdapter", "onEvent | eventType=" + str3);
-            if (TextUtils.equals(tqa.AUCTION_CARD_SHOW, str3)) {
+            if (StringUtils.equals(tqa.AUCTION_CARD_SHOW, str3)) {
                 this.f = new a(str3, str4);
                 a(false);
-            } else if (!TextUtils.equals(tqa.AUCTION_CARD_HIDE, str3)) {
+            } else if (!StringUtils.equals(tqa.AUCTION_CARD_HIDE, str3)) {
             } else {
                 a(true);
                 a(false, new a(str3, str4));
                 this.f = null;
             }
-        } else if (TextUtils.equals("com.taobao.taolive.goods.showcase.close", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.goods.showcase.close", str)) {
             a();
-        } else if (TextUtils.equals("com.taobao.taolive.goods.showcase.update", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.goods.showcase.update", str)) {
             if (!(obj instanceof LiveItem)) {
                 return;
             }
@@ -634,7 +634,7 @@ public class tpn implements d, com.taobao.taolive.sdk.model.a, ddv, tqg {
         if (hkk.P() && this.j && liveItem != null && (liveItem.sabItemAtmosphere != null || liveItem.sabItemAtmospherePreHeat != null)) {
             ddw.a().a("com.taobao.taolive.room.init_sab_atmosphere", liveItem);
         }
-        if (!hkk.ab() || liveItem == null || liveItem.itemExtData == null || !TextUtils.equals(liveItem.itemExtData.getString("smallCardItemType"), "itemZone")) {
+        if (!hkk.ab() || liveItem == null || liveItem.itemExtData == null || !StringUtils.equals(liveItem.itemExtData.getString("smallCardItemType"), "itemZone")) {
             return;
         }
         ad.a("new_user_zone_card_show_count", ad.b("new_user_zone_card_show_count", 0) + 1);

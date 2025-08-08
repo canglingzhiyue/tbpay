@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -123,10 +123,10 @@ public class p extends n {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("ee2b483", new Object[]{this, str, str2, str3, str4})).intValue();
         }
-        if (TextUtils.isEmpty(str) || !this.f2067a.containsKey(str) || (aVar = this.f2067a.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || !this.f2067a.containsKey(str) || (aVar = this.f2067a.get(str)) == null) {
             return 0;
         }
-        if (!TextUtils.isEmpty(str2) || !TextUtils.isEmpty(str3) || !TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str2) || !StringUtils.isEmpty(str3) || !StringUtils.isEmpty(str4)) {
             return aVar.a(str2, str3, str4);
         }
         return 0;
@@ -143,7 +143,7 @@ public class p extends n {
         f();
         for (String str2 : map.keySet()) {
             String str3 = map.get(str2);
-            if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                 if (str2.equals("time")) {
                     int b = b(str3);
                     if (b >= 3 && b <= 20) {

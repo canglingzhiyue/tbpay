@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.remote;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.utils.AfcUtils;
@@ -64,10 +64,10 @@ public class LoginReceiver extends BroadcastReceiver {
         HashMap hashMap = new HashMap();
         hashMap.put("userid", userId);
         b.a("afc_login_report", "", "", hashMap);
-        if (TextUtils.equals(str, userId)) {
+        if (StringUtils.equals(str, userId)) {
             return;
         }
-        if (!TextUtils.isEmpty(userId)) {
+        if (!StringUtils.isEmpty(userId)) {
             f.a(context).a("afc_login_user", userId);
         }
         HashMap hashMap2 = new HashMap();

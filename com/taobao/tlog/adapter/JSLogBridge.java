@@ -3,7 +3,7 @@ package com.taobao.tlog.adapter;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.model.StEvent;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public class JSLogBridge extends android.taobao.windvane.jsbridge.e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && wVCallBackContext != null) {
+        if (!StringUtils.isEmpty(str) && wVCallBackContext != null) {
             if (GETLOGLEVEL.equals(str)) {
                 r rVar = new r();
                 rVar.a(WXConfig.logLevel, AdapterForTLog.getLogLevel());
@@ -182,7 +182,7 @@ public class JSLogBridge extends android.taobao.windvane.jsbridge.e {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 wVCallBackContext.error("the content is null!");
                 return;
             }
@@ -198,7 +198,7 @@ public class JSLogBridge extends android.taobao.windvane.jsbridge.e {
             int optInt = jSONObject.optInt("eventType", 0);
             String optString8 = jSONObject.optString("bizCode", "");
             String optString9 = jSONObject.optString("ext", "");
-            if (TextUtils.isEmpty(optString5)) {
+            if (StringUtils.isEmpty(optString5)) {
                 wVCallBackContext.error("the eventName is null!");
                 return;
             }

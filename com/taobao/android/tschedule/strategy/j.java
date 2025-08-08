@@ -1,7 +1,7 @@
 package com.taobao.android.tschedule.strategy;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Set;
@@ -34,13 +34,13 @@ public class j {
         }
         String host = uri.getHost();
         String host2 = uri2.getHost();
-        if (!TextUtils.equals(host, host2)) {
+        if (!StringUtils.equals(host, host2)) {
             jkq.a("UrlChecker", "host equal=[false],require=[" + host + "],real=[" + host2 + riy.ARRAY_END_STR);
             return false;
         }
         String path = uri.getPath();
         String path2 = uri2.getPath();
-        if (TextUtils.equals(path, path2)) {
+        if (StringUtils.equals(path, path2)) {
             return true;
         }
         jkq.a("UrlChecker", "path equal=[false],require=[" + path + "],real=[" + path2 + riy.ARRAY_END_STR);
@@ -64,13 +64,13 @@ public class j {
         for (String str : queryParameterNames) {
             String queryParameter = uri.getQueryParameter(str);
             String queryParameter2 = uri2.getQueryParameter(str);
-            if (!TextUtils.equals(queryParameter, queryParameter2)) {
+            if (!StringUtils.equals(queryParameter, queryParameter2)) {
                 try {
                     JSONObject parseObject = JSONObject.parseObject(queryParameter);
                     JSONObject parseObject2 = JSONObject.parseObject(queryParameter2);
                     if (parseObject2 != null && parseObject != null) {
                         for (String str2 : parseObject.keySet()) {
-                            if (!TextUtils.equals(parseObject.getString(str2), parseObject2.getString(str2))) {
+                            if (!StringUtils.equals(parseObject.getString(str2), parseObject2.getString(str2))) {
                                 jkq.a("UrlChecker", "query value is not equal, queryKey=" + str + ", originalVal=" + queryParameter + ", comparedVal=" + queryParameter2);
                                 return false;
                             }

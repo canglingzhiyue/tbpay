@@ -1,6 +1,6 @@
 package com.taobao.login4android.membercenter.account.adapter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.login.model.SessionModel;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.Login;
@@ -20,7 +20,7 @@ public class AccountHelper {
             return ((Boolean) ipChange.ipc$dispatch("5655d0e", new Object[]{sessionModel})).booleanValue();
         }
         if (sessionModel != null) {
-            return TextUtils.equals(Login.getUserId(), String.valueOf(sessionModel.userId));
+            return StringUtils.equals(Login.getUserId(), String.valueOf(sessionModel.userId));
         }
         return false;
     }

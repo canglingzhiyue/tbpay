@@ -3,7 +3,7 @@ package com.taobao.tao.log.statistics;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.g;
@@ -71,7 +71,7 @@ public class c {
             String a2 = g.a(currentTimeMillis);
             SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
             String string = defaultSharedPreferences.getString("tlog_file_statistics_timestamp", "");
-            if (!TextUtils.isEmpty(a2) && !a2.equals(string)) {
+            if (!StringUtils.isEmpty(a2) && !a2.equals(string)) {
                 String a3 = g.a(currentTimeMillis - 86400000);
                 ArrayList arrayList = new ArrayList();
                 Iterator<String> it2 = com.taobao.tao.log.utils.a.f().iterator();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -50,7 +50,7 @@ public final class dxa extends arv {
             TLog.loge("AliDetailSKUChangeEvent", "getArgs is null");
         } else {
             String a3 = a(aURAEventIO.getEventModel().e());
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 TLog.loge("AliDetailSKUChangeEvent", "getSelectedPropPath is null");
             }
             if (!(b().e() instanceof a) || (a2 = ((a) b().e()).a()) == null) {

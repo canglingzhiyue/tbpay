@@ -1,6 +1,6 @@
 package com.alipay.security.mobile.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Constructor;
@@ -18,7 +18,7 @@ public class CompatUtils {
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("f7d6f780", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -33,7 +33,7 @@ public class CompatUtils {
         if (ipChange instanceof IpChange) {
             return (Method) ipChange.ipc$dispatch("3e76b86d", new Object[]{cls, str, clsArr});
         }
-        if (cls != null && !TextUtils.isEmpty(str)) {
+        if (cls != null && !StringUtils.isEmpty(str)) {
             try {
                 return cls.getDeclaredMethod(str, clsArr);
             } catch (Exception unused) {
@@ -47,7 +47,7 @@ public class CompatUtils {
         if (ipChange instanceof IpChange) {
             return (Field) ipChange.ipc$dispatch("90de8d19", new Object[]{cls, str});
         }
-        if (cls != null && !TextUtils.isEmpty(str)) {
+        if (cls != null && !StringUtils.isEmpty(str)) {
             try {
                 return cls.getDeclaredField(str);
             } catch (Exception unused) {

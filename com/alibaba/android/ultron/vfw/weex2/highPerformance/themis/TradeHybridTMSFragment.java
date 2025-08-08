@@ -9,7 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -541,7 +541,7 @@ public final class TradeHybridTMSFragment extends DialogFragment {
         com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a a2 = com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a.a();
         q.b(a2, "UltronTradeHybridManager.getInstance()");
         com.alibaba.android.ultron.vfw.weex2.highPerformance.model.a d = a2.b().d(this.tmsPageUrl);
-        if (d == null || TextUtils.isEmpty(d.e)) {
+        if (d == null || StringUtils.isEmpty(d.e)) {
             jqg.a(TAG, "onDestroy:", "preRenderModel is invalid");
             return;
         }

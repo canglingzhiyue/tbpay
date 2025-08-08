@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -27,7 +27,7 @@ public class h {
             return false;
         }
         String string = jSONObject.getString("type");
-        return !TextUtils.isEmpty(string) && (jSONObject2 = bVar.j().get(string)) != null && "popup_window".equals(jSONObject2.getString("name"));
+        return !StringUtils.isEmpty(string) && (jSONObject2 = bVar.j().get(string)) != null && "popup_window".equals(jSONObject2.getString("name"));
     }
 
     public static void a(b bVar, JSONObject jSONObject) {
@@ -53,7 +53,7 @@ public class h {
 
     public static boolean a(JSONObject jSONObject) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{jSONObject})).booleanValue() : jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("protocolVersion")) && jSONObject.getString("protocolVersion").compareTo("4.0") >= 0 && jSONObject.getJSONObject("umfVersions") != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{jSONObject})).booleanValue() : jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("protocolVersion")) && jSONObject.getString("protocolVersion").compareTo("4.0") >= 0 && jSONObject.getJSONObject("umfVersions") != null;
     }
 
     private static void b(JSONObject jSONObject) {
@@ -65,7 +65,7 @@ public class h {
             return;
         }
         JSONObject jSONObject4 = jSONObject.getJSONObject("hierarchy");
-        if (jSONObject4 == null || (jSONObject2 = jSONObject4.getJSONObject("structure")) == null || TextUtils.isEmpty(jSONObject4.getString("root")) || (jSONObject3 = jSONObject.getJSONObject("data")) == null) {
+        if (jSONObject4 == null || (jSONObject2 = jSONObject4.getJSONObject("structure")) == null || StringUtils.isEmpty(jSONObject4.getString("root")) || (jSONObject3 = jSONObject.getJSONObject("data")) == null) {
             return;
         }
         for (String str : jSONObject2.keySet()) {
@@ -154,7 +154,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("48075352", new Object[]{jSONObject, str});
-        } else if (!TextUtils.isEmpty(jSONObject.getString("tag")) && !TextUtils.isEmpty(jSONObject.getString("id"))) {
+        } else if (!StringUtils.isEmpty(jSONObject.getString("tag")) && !StringUtils.isEmpty(jSONObject.getString("id"))) {
         } else {
             jSONObject.put("tag", (Object) str);
             jSONObject.put("id", (Object) str);

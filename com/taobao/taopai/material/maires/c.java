@@ -1,7 +1,7 @@
 package com.taobao.taopai.material.maires;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -45,13 +45,13 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7d83ff70", new Object[]{str, aVar});
-        } else if (TextUtils.isEmpty(str) || !str.endsWith("require.json")) {
+        } else if (StringUtils.isEmpty(str) || !str.endsWith("require.json")) {
             aVar.a(5);
         } else if (!new File(str).exists()) {
             aVar.a(2);
         } else {
             String d = qcg.d(str);
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 try {
                     aVar.a((MaiResDependenceList) JSONObject.parseObject(d, MaiResDependenceList.class));
                     return;

@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.statisticsv2.model;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.Grammar;
 import com.alipay.android.msp.utils.LogUtil;
 import com.alipay.android.msp.utils.ThreadSafeDateFormat;
@@ -86,7 +86,7 @@ public class StEvent implements IModel, IUpdateContinuous {
 
     private static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.equals(str, Grammar.ATTR_DEFAULT_VALUE);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.equals(str, Grammar.ATTR_DEFAULT_VALUE);
     }
 
     private void b(String str) {

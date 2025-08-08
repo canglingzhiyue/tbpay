@@ -3,7 +3,7 @@ package com.huawei.hms.activity;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.huawei.hms.activity.internal.BusResponseCallback;
 import com.huawei.hms.activity.internal.BusResponseResult;
@@ -237,12 +237,12 @@ public class ForegroundBusDelegate implements IBridgeActivityDelegate {
             return;
         }
         foregroundInnerHeader.fromJson(intent.getStringExtra(HMS_FOREGROUND_REQ_INNER));
-        if (TextUtils.isEmpty(this.f7319a.getApiName())) {
+        if (StringUtils.isEmpty(this.f7319a.getApiName())) {
             a(0, "action is invalid");
             return;
         }
         a();
-        if (!TextUtils.isEmpty(intent.getStringExtra(INNER_PKG_NAME))) {
+        if (!StringUtils.isEmpty(intent.getStringExtra(INNER_PKG_NAME))) {
             HMSLog.i("ForegroundBusDelegate", "isUseInnerHms: true");
             this.f = true;
         }

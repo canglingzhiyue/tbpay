@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -283,7 +283,7 @@ public class ebl extends DXWidgetNode {
                 this.b = getLayoutHeight();
                 this.m = a(this.l);
                 TextView textView = null;
-                if (!TextUtils.isEmpty(this.o)) {
+                if (!StringUtils.isEmpty(this.o)) {
                     textView = a(getDXRuntimeContext().m(), this.o, (this.b - this.e) - this.f, this.i, this.j, this.k);
                 }
                 a(xWrapTagViewV3, textView);

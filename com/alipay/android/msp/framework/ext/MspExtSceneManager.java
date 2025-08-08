@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.accessibility.AccessibilityManager;
 import com.alibaba.fastjson.JSONObject;
@@ -288,7 +288,7 @@ public class MspExtSceneManager {
                 if (!jSONObject2.containsKey(str2)) {
                     return false;
                 }
-                return TextUtils.equals("Y", jSONObject2.getString(str2));
+                return StringUtils.equals("Y", jSONObject2.getString(str2));
             }
             return false;
         } catch (Exception e) {
@@ -332,7 +332,7 @@ public class MspExtSceneManager {
                 if (!jSONObject.containsKey(str2)) {
                     return false;
                 }
-                return TextUtils.equals("Y", jSONObject.getString(str2));
+                return StringUtils.equals("Y", jSONObject.getString(str2));
             }
             return false;
         } catch (Exception e) {

@@ -2,7 +2,7 @@ package com.alibaba.security.realidentity;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -115,7 +115,7 @@ public class i3 {
         String b2 = b(c, valueOf);
         String b3 = i.b(b(c, valueOf));
         String a2 = a(context);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return new Pair<>("0", b2);
         }
         File file2 = new File(a2, b3);

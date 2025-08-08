@@ -2,7 +2,7 @@ package com.taobao.android.fluid.framework.preload.task;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -198,7 +198,7 @@ public abstract class a implements IPreloadTask {
             if (map != null) {
                 str2 = sku.d((JSONObject) map);
             }
-            if (TextUtils.isEmpty(str2) && str != null) {
+            if (StringUtils.isEmpty(str2) && str != null) {
                 str2 = sov.b(str);
             }
         }
@@ -290,12 +290,12 @@ public abstract class a implements IPreloadTask {
             return;
         }
         String b = sku.b(jSONObject);
-        if (TextUtils.isEmpty(b) && detailCacheData != null) {
+        if (StringUtils.isEmpty(b) && detailCacheData != null) {
             b = detailCacheData.getVideoResourceStr();
         }
         final String str = b;
         spz.c("PickPreloadController_BasePreloadTask_PreloadVideoModule", "[preloadvideo]dealCacheOrDetailData,  preDownload=" + z + " ; cacheData=" + detailCacheData + " videoResourceStr=" + str);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (z && soq.a(this.i.g)) {
                 spz.c("PickPreloadController_BasePreloadTask_PreloadVideoModule", "[preloadvideo]PickPreloadControllerNew,start preDownload");
                 pil.a(this.b, null, "gg_pickpreload_preDownload");
@@ -445,7 +445,7 @@ public abstract class a implements IPreloadTask {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7bdef076", new Object[]{this, context, str, cVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ImageLoader.a a2 = ImageLoader.a.a(0, ImageAdapter.IMAGE_QUALITY_Q90, "", "", com.taobao.tao.flexbox.layoutmanager.player.c.image_test_biz_name, 9103, ImageLoader.Scene.FIRST_FRAME);
             String a3 = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().i().a(str, 1200, 1200, a2);

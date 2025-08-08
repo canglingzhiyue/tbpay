@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -175,7 +175,7 @@ public class kql {
             return -1;
         }
         String string = jSONObject.getString(FeedsData.KEY_VIDEO_CURRENT_POSITION);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ldf.d(lsk.SPLASH_BUSINESS_TAG, "TopShowInsert#getSeekTime splashVideoCurrentPosition is null ");
             return -1;
         }
@@ -256,9 +256,9 @@ public class kql {
             return a(list, i, false);
         }
         String b = b();
-        if (TextUtils.equals(b, "dynamic")) {
+        if (StringUtils.equals(b, "dynamic")) {
             this.b = a(list, false);
-        } else if (TextUtils.equals(b, "lock1")) {
+        } else if (StringUtils.equals(b, "lock1")) {
             b(list, false);
         } else {
             int size = list.size();
@@ -271,8 +271,8 @@ public class kql {
                 SectionModel sectionModel = list.get(i2);
                 if (sectionModel != null) {
                     String sectionBizCode = sectionModel.getSectionBizCode();
-                    if (TextUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
-                        if (TextUtils.equals("mainAndSubSeparator", sectionBizCode)) {
+                    if (StringUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
+                        if (StringUtils.equals("mainAndSubSeparator", sectionBizCode)) {
                             this.b = i2 + 1;
                             z = true;
                         } else {
@@ -304,8 +304,8 @@ public class kql {
             SectionModel sectionModel = list.get(i3);
             if (sectionModel != null) {
                 String sectionBizCode = sectionModel.getSectionBizCode();
-                if (TextUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
-                    if (TextUtils.equals("mainAndSubSeparator", sectionBizCode)) {
+                if (StringUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
+                    if (StringUtils.equals("mainAndSubSeparator", sectionBizCode)) {
                         i2 = i3 + 1;
                         z = true;
                     } else {
@@ -332,8 +332,8 @@ public class kql {
             SectionModel sectionModel = list.get(i2);
             if (sectionModel != null) {
                 String sectionBizCode = sectionModel.getSectionBizCode();
-                if (TextUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
-                    if (TextUtils.equals("mainAndSubSeparator", sectionBizCode)) {
+                if (StringUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
+                    if (StringUtils.equals("mainAndSubSeparator", sectionBizCode)) {
                         this.b = i2 + 1;
                         z = true;
                     } else {
@@ -376,7 +376,7 @@ public class kql {
             return false;
         }
         String string = jSONObject.getString("x_object_type");
-        return !TextUtils.isEmpty(string) && string.startsWith("k2brand");
+        return !StringUtils.isEmpty(string) && string.startsWith("k2brand");
     }
 
     private String b() {
@@ -400,7 +400,7 @@ public class kql {
         }
         JSONObject ext = baseSectionModel.getExt();
         if (ext != null) {
-            return TextUtils.equals(ext.getString("sectionCardType"), "activity_algo");
+            return StringUtils.equals(ext.getString("sectionCardType"), "activity_algo");
         }
         return false;
     }
@@ -418,8 +418,8 @@ public class kql {
             SectionModel sectionModel = list.get(i2);
             if (sectionModel != null) {
                 String sectionBizCode = sectionModel.getSectionBizCode();
-                if (TextUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
-                    if (!TextUtils.equals("mainAndSubSeparator", sectionBizCode)) {
+                if (StringUtils.equals("mainAndSubSeparator", sectionBizCode) || z) {
+                    if (!StringUtils.equals("mainAndSubSeparator", sectionBizCode)) {
                         this.b = i + i2;
                         break;
                     }

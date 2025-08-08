@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -123,7 +123,7 @@ public class lie {
             return ((Boolean) ipChange.ipc$dispatch("db5e8271", new Object[]{this, baseTemplateModel})).booleanValue();
         }
         if (baseTemplateModel != null) {
-            return TextUtils.equals("one", baseTemplateModel.getColumnType());
+            return StringUtils.equals("one", baseTemplateModel.getColumnType());
         }
         return false;
     }

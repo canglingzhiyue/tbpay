@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -25,7 +25,7 @@ public class c1 {
     public static Map<String, List<b1>> a(Context context, String str, String str2) {
         Map<String, List<b1>> a2;
         Map<String, List<b1>> a3;
-        if ("alltype".equals(str2) || TextUtils.isEmpty(str)) {
+        if ("alltype".equals(str2) || StringUtils.isEmpty(str)) {
             v.c("hmsSdk", "read all event records");
             a2 = a(context, "stat_v2_1");
             a3 = a(context, "cached_v2_1");
@@ -66,7 +66,7 @@ public class c1 {
     private static void a(String str, String str2, Map<String, List<b1>> map) {
         ArrayList arrayList = new ArrayList();
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             JSONArray jSONArray = new JSONArray(str2);

@@ -3,7 +3,7 @@ package com.alipay.zoloz.hardware.camera;
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.zoloz.camera.BuildConfig;
 import com.alipay.zoloz.hardware.DeviceSetting;
 import com.alipay.zoloz.hardware.camera.abs.AbsCamera;
@@ -145,7 +145,7 @@ public class AndroidCamera extends AbsColorCamera implements Camera.ErrorCallbac
             AndroidCameraUtil.dumpCameraParameters(parameters);
             parameters.setPreviewFormat(c(((ColorCameraParam) this.d).format));
             parameters.setRotation(((ColorCameraParam) this.d).rotate);
-            if (TextUtils.equals("Android", BuildConfig.CAMERA_ASTRA_S1)) {
+            if (StringUtils.equals("Android", BuildConfig.CAMERA_ASTRA_S1)) {
                 if (this.e == 0) {
                     ((ColorCameraParam) this.d).width = 480;
                     ((ColorCameraParam) this.d).height = 640;
@@ -238,7 +238,7 @@ public class AndroidCamera extends AbsColorCamera implements Camera.ErrorCallbac
             return;
         }
         Log.i("SetMode scanMode:" + i2);
-        if (!TextUtils.equals("Android", BuildConfig.CAMERA_ASTRA_S1)) {
+        if (!StringUtils.equals("Android", BuildConfig.CAMERA_ASTRA_S1)) {
             return;
         }
         String b = b(i2);

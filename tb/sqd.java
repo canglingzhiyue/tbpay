@@ -1,7 +1,7 @@
 package tb;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -46,8 +46,8 @@ public class sqd implements b {
             }
             wVCallBackContext.success();
             String string = jSONObject.getString("index");
-            int parseInt = TextUtils.isEmpty(string) ? 0 : Integer.parseInt(string);
-            if (TextUtils.equals(jSONObject.getString("area"), "infoFlow")) {
+            int parseInt = StringUtils.isEmpty(string) ? 0 : Integer.parseInt(string);
+            if (StringUtils.equals(jSONObject.getString("area"), "infoFlow")) {
                 return z.smoothScrollToPositionFromInfoFlow(parseInt);
             }
             return false;

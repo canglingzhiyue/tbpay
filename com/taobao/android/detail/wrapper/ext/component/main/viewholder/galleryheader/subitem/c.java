@@ -9,7 +9,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -324,7 +324,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
             return;
         }
         String str = this.f.imageUrl;
-        if (TextUtils.isEmpty(this.f.imageUrl)) {
+        if (StringUtils.isEmpty(this.f.imageUrl)) {
             Handler handler = this.m;
             if (handler == null) {
                 return;
@@ -411,7 +411,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
                     if (ipChange2 instanceof IpChange) {
                         return ((Boolean) ipChange2.ipc$dispatch("7edba102", new Object[]{this, view})).booleanValue();
                     }
-                    if (c.b(c.this).supportLongPress && TextUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "HeaderDetailImageLongPressShare", "false"))) {
+                    if (c.b(c.this).supportLongPress && StringUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "HeaderDetailImageLongPressShare", "false"))) {
                         eoi eoiVar = new eoi(TitleViewModel.ShareType.SHARE_TYPE_DEFAULT);
                         eoiVar.b = new HashMap();
                         eoiVar.b.put("share_businessId", "picture");
@@ -448,7 +448,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
                         return ((Boolean) ipChange2.ipc$dispatch("7edba102", new Object[]{this, view})).booleanValue();
                     }
                     if (c.b(c.this).supportLongPress && 2 != ((TouchImageView) c.g(c.this)).getMode()) {
-                        if (TextUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "HeaderTouchImageLongPressShare", "false"))) {
+                        if (StringUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "HeaderTouchImageLongPressShare", "false"))) {
                             eoi eoiVar = new eoi(TitleViewModel.ShareType.SHARE_TYPE_DEFAULT);
                             eoiVar.b = new HashMap();
                             eoiVar.b.put("share_businessId", "picture");
@@ -478,7 +478,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
             layoutParams.setMargins(d, 0, 0, 0);
         }
         this.i.addView(this.j, layoutParams);
-        if (TextUtils.isEmpty(this.f.skuBottomText)) {
+        if (StringUtils.isEmpty(this.f.skuBottomText)) {
             return;
         }
         TextView textView = new TextView(this.h);
@@ -499,7 +499,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f8a3efa", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f.parentModel.itemId)) {
+        } else if (StringUtils.isEmpty(this.f.parentModel.itemId)) {
         } else {
             Context context = this.h;
             eps.a(context, "MovePic", new Pair("spm", "a2141.7631564.1999020712." + this.f.getIndex()), new Pair("imageUrl", this.f.imageUrl));
@@ -633,7 +633,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
                 detailImageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             }
         };
-        if (z && !TextUtils.isEmpty(this.g.b)) {
+        if (z && !StringUtils.isEmpty(this.g.b)) {
             str = this.g.b;
         } else if (this.b) {
             MultiMediaViewModel.a aVar3 = this.n;
@@ -642,7 +642,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
             } else {
                 a2 = g.a(this.h, this.g.f27129a, h());
             }
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 str = a2.replace("END_IMAGE_URL", "");
             } else {
                 str = this.g.f27129a;
@@ -650,7 +650,7 @@ public class c implements Handler.Callback, com.taobao.android.detail.wrapper.ex
         } else {
             str = this.g.f27129a;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             epj.b().a(str.replaceAll("END_IMAGE_URL", ""), detailImageView, new epl.a().a(R.drawable.detail_img_load_fail).a(), this.k);
         }
         return true;

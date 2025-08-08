@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.base.jsbridgeservice.impl.bridge.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -67,10 +67,10 @@ public class JsActionModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mContainer)) {
+        if (StringUtils.isEmpty(this.mContainer)) {
             ldf.d(TAG, "containerId 为空，不符合协议约定");
             return false;
-        } else if (!TextUtils.isEmpty(this.mAction)) {
+        } else if (!StringUtils.isEmpty(this.mAction)) {
             return true;
         } else {
             ldf.d(TAG, "action 为空，不符合协议约定");

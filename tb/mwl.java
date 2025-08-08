@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -91,7 +91,7 @@ public class mwl extends af {
                 return;
             }
             super.onSetStringAttribute(j, str);
-        } else if (!TextUtils.isEmpty(str) && mxs.a(str) > 0) {
+        } else if (!StringUtils.isEmpty(str) && mxs.a(str) > 0) {
             setText(a(str));
             setVisibility(0);
         } else {
@@ -195,7 +195,7 @@ public class mwl extends af {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (a2 = mxs.a(str, 0)) <= 0) {
+        if (StringUtils.isEmpty(str) || (a2 = mxs.a(str, 0)) <= 0) {
             return "";
         }
         if (a2 > 99) {

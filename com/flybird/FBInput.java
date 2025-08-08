@@ -11,7 +11,7 @@ import android.text.InputFilter;
 import android.text.Selection;
 import android.text.Spannable;
 import android.text.Spanned;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.text.method.NumberKeyListener;
 import android.view.KeyEvent;
@@ -331,7 +331,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
                     FBInput fBInput = FBInput.this;
                     if (fBInput.K) {
                         String obj = fBInput.B.getText().toString();
-                        if (!TextUtils.equals(obj, FBInput.this.Q)) {
+                        if (!StringUtils.equals(obj, FBInput.this.Q)) {
                             FBInput fBInput2 = FBInput.this;
                             fBInput2.Q = obj;
                             FBView.nativePlatformOnInput(fBInput2.mNode, obj);
@@ -368,7 +368,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
             getFBDocument().getClass();
         } catch (Exception unused) {
         }
-        if (TextUtils.equals("number", this.N)) {
+        if (StringUtils.equals("number", this.N)) {
             if (this.mDoc != null && this.mDoc.getTemplateKeyboardService() != null && this.mDoc.getTemplateKeyboardService().getClass().getSimpleName().equals("FlybirdTemplateKeyboardService")) {
                 return true;
             }
@@ -384,10 +384,10 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
             return;
         }
         EditText editText = this.B;
-        if (editText == null || !editText.isEnabled() || TextUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
+        if (editText == null || !editText.isEnabled() || StringUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
             return;
         }
-        if (!TextUtils.isEmpty(this.B.getText()) && this.D != null && this.B.isFocused()) {
+        if (!StringUtils.isEmpty(this.B.getText()) && this.D != null && this.B.isFocused()) {
             if (!this.J) {
                 return;
             }
@@ -520,10 +520,10 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
         L1c:
             java.lang.String r0 = r8.N
             java.lang.String r1 = "month"
-            boolean r0 = android.text.TextUtils.equals(r0, r1)
+            boolean r0 = android.text.StringUtils.equals(r0, r1)
             if (r0 == 0) goto L76
             java.lang.String r9 = r8.L
-            boolean r9 = android.text.TextUtils.isEmpty(r9)
+            boolean r9 = android.text.StringUtils.isEmpty(r9)
             r0 = -1
             if (r9 != 0) goto L3b
             java.lang.String r9 = r8.L     // Catch: java.lang.Throwable -> L3b
@@ -535,7 +535,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
             r3 = -1
         L3c:
             java.lang.String r9 = r8.M
-            boolean r9 = android.text.TextUtils.isEmpty(r9)
+            boolean r9 = android.text.StringUtils.isEmpty(r9)
             if (r9 != 0) goto L50
             java.lang.String r9 = r8.M     // Catch: java.lang.Throwable -> L50
             java.lang.Integer r9 = java.lang.Integer.valueOf(r9)     // Catch: java.lang.Throwable -> L50
@@ -561,7 +561,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
         L76:
             java.lang.String r0 = r8.N
             java.lang.String r1 = "checkbox"
-            boolean r0 = android.text.TextUtils.equals(r0, r1)
+            boolean r0 = android.text.StringUtils.equals(r0, r1)
             if (r0 != 0) goto L84
             r8.i()
             return
@@ -607,7 +607,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
             super.onLoadFinish();
             h();
             this.B.setOnTouchListener(this);
-            if (!TextUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_CHECKBOX) && !TextUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
+            if (!StringUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_CHECKBOX) && !StringUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
                 if (this.O) {
                     this.mDoc.getClass();
                     View view = (View) this.B.getParent();
@@ -619,22 +619,22 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
                     return;
                 }
                 String obj = editableText.toString();
-                if (TextUtils.isEmpty(obj)) {
+                if (StringUtils.isEmpty(obj)) {
                     return;
                 }
                 this.B.setSelection(obj.length());
                 return;
             }
-            if (TextUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_CHECKBOX) && this.R != null) {
+            if (StringUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_CHECKBOX) && this.R != null) {
                 this.C.setButtonDrawable(UiUtil.genButtonSelector(this.mDoc.k, this.N, this.mWidth, this.mHeight, this.R));
                 this.C.setBackgroundDrawable(null);
             }
-            if (!TextUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
+            if (!StringUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
                 return;
             }
             this.K = false;
             String obj2 = this.B.getEditableText().toString();
-            if (!TextUtils.isEmpty(obj2) && obj2.length() == 4) {
+            if (!StringUtils.isEmpty(obj2) && obj2.length() == 4) {
                 EditText editText = this.B;
                 editText.setText(obj2.substring(0, 2) + "/" + obj2.substring(2));
             }
@@ -1042,7 +1042,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
                     }
                     this.Q = this.B.getText().toString();
                     this.K = true;
-                    if (!TextUtils.equals(str2, "")) {
+                    if (!StringUtils.equals(str2, "")) {
                         return;
                     }
                     this.I = false;
@@ -1218,10 +1218,10 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
                     } else if (str2.equals("right")) {
                         this.B.setGravity(21);
                         return;
-                    } else if (TextUtils.equals("top", str2)) {
+                    } else if (StringUtils.equals("top", str2)) {
                         this.B.setGravity(48);
                         return;
-                    } else if (TextUtils.equals("bottom", str2)) {
+                    } else if (StringUtils.equals("bottom", str2)) {
                         this.B.setGravity(80);
                         return;
                     } else {
@@ -1257,7 +1257,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
         } else if (isDestroyed()) {
         } else {
             super.updateFunc(str, str2);
-            if (TextUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_CHECKBOX)) {
+            if (StringUtils.equals(this.N, UiUtil.INPUT_TYPE_VALUE_CHECKBOX)) {
                 return;
             }
             str.hashCode();
@@ -1331,7 +1331,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
             ipChange.ipc$dispatch("1c6cb136", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(this.S) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(this.S) && !StringUtils.isEmpty(str)) {
             String str2 = "<font size='" + this.S + "'>" + str + "</font>";
             try {
                 charSequence = HtmlLite.fromHtml(this.mDoc.k, FBDocumentAssistor.getDp(), str2, null, FBDocumentAssistor.c(this.mDoc), FBDocumentAssistor.b(this.mDoc), this.themeModeUseColorMapping);
@@ -1339,7 +1339,7 @@ public class FBInput extends FBView implements View.OnFocusChangeListener, FBFoc
                 charSequence = Html.fromHtml(str2);
             }
         } else {
-            boolean isEmpty = TextUtils.isEmpty(str);
+            boolean isEmpty = StringUtils.isEmpty(str);
             charSequence = str;
             if (isEmpty) {
                 charSequence = "";

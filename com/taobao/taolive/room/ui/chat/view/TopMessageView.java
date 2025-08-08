@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Message;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -248,7 +248,7 @@ public class TopMessageView extends TRoundLinearLayout implements com.taobao.tao
             return;
         }
         String fansIcon = getFansIcon();
-        if (!TextUtils.isEmpty(fansIcon)) {
+        if (!StringUtils.isEmpty(fansIcon)) {
             this.mFanLevelIcon.setVisibility(0);
             this.mFanLevelIcon.setImageUrl(fansIcon);
             return;
@@ -550,7 +550,7 @@ public class TopMessageView extends TRoundLinearLayout implements com.taobao.tao
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setCornerRadius(d.a(this.mContext, 12.0f));
         gradientDrawable.setColor(Color.parseColor("#000000"));
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             int parseColor = Color.parseColor(c);
             if (parseColor != 0) {
                 Drawable wrap = DrawableCompat.wrap(gradientDrawable);
@@ -572,7 +572,7 @@ public class TopMessageView extends TRoundLinearLayout implements com.taobao.tao
         if (!this.mTopMessage.showFansIcon()) {
             str = "0";
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.equals(str, "0")) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.equals(str, "0")) {
             return com.taobao.taolive.room.ui.fanslevel.a.a().a(str);
         }
         return null;
@@ -668,7 +668,7 @@ public class TopMessageView extends TRoundLinearLayout implements com.taobao.tao
         }
         try {
             String str = this.mTopMessage.renders.get(com.taobao.taolive.room.ui.fanslevel.a.FANS_LEVEL_RENDER);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             return Integer.valueOf(str).intValue() >= aa.R();

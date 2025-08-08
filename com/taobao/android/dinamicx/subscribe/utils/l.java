@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.d;
 import com.taobao.android.nav.e;
@@ -41,7 +41,7 @@ public class l implements e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("873c91c1", new Object[]{this, intent, dVar})).booleanValue();
         }
-        if (intent != null && intent.getData() != null && !a(dVar.a()) && (data = intent.getData()) != null && TextUtils.isEmpty(data.getQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY))) {
+        if (intent != null && intent.getData() != null && !a(dVar.a()) && (data = intent.getData()) != null && StringUtils.isEmpty(data.getQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY))) {
             Uri.Builder buildUpon = Uri.parse(data.toString()).buildUpon();
             buildUpon.appendQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY, "fullscreen");
             intent.setData(buildUpon.build());

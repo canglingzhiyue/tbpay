@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.weex2;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class TBRegisterWeex2Module extends e {
             return false;
         } else {
             try {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     registerWeexPlatformViews(JSONObject.parseObject(str2).getString("tagName"), wVCallBackContext);
                 }
             } catch (Exception unused) {

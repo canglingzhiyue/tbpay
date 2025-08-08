@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -26,7 +26,7 @@ public class bdg extends fuf {
             return null;
         }
         String str = (String) objArr[0];
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return Collections.emptyMap();
         }
         int a2 = a(str);

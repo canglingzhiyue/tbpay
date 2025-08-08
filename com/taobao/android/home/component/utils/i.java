@@ -1,6 +1,6 @@
 package com.taobao.android.home.component.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.PositionInfo;
@@ -73,7 +73,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             PositionInfo b2 = com.taobao.android.editionswitcher.l.b(Globals.getApplication());
             if ("CN".equalsIgnoreCase(b2.editionCode)) {
                 d = "main";
@@ -92,7 +92,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || str2 == null) {
+        } else if (StringUtils.isEmpty(str) || str2 == null) {
         } else {
             c.put(str, str2);
         }

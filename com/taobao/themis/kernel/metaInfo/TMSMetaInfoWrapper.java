@@ -1,7 +1,7 @@
 package com.taobao.themis.kernel.metaInfo;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.AppInfoModel;
 import com.alibaba.ariver.resource.api.models.AppModel;
 import com.alibaba.ariver.resource.api.models.PermissionModel;
@@ -299,7 +299,7 @@ public final class TMSMetaInfoWrapper {
             q.a(appModel);
             AppInfoModel appInfoModel = appModel.getAppInfoModel();
             String alias = appInfoModel != null ? appInfoModel.getAlias() : null;
-            if (!TextUtils.isEmpty(alias)) {
+            if (!StringUtils.isEmpty(alias)) {
                 return alias;
             }
             AppModel appModel2 = this.f22542a;

@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.adapter;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class d implements com.taobao.android.nav.e {
         }
         try {
             String dataString = intent.getDataString();
-            if (!TextUtils.isEmpty(dataString) && dataString.startsWith("poplayer")) {
+            if (!StringUtils.isEmpty(dataString) && dataString.startsWith("poplayer")) {
                 com.alibaba.poplayer.utils.c.b("triggerEvent", "", "MatchSchema.BroadcastTrigger.PopLayerHooker.url=" + dataString);
                 Intent intent2 = new Intent("com.alibaba.poplayer.PopLayer.action.POP");
                 intent2.putExtra("event", dataString);

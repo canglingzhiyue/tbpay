@@ -1,6 +1,6 @@
 package com.taobao.themis.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -19,7 +19,7 @@ public class m {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c26", new Object[]{str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         try {

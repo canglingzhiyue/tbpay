@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taopai.material.jni.ResourceJniInteract;
@@ -114,7 +114,7 @@ public class qbx implements qbv {
             ipChange.ipc$dispatch("19a0b49b", new Object[]{this, list, new Boolean(z)});
         } else if (list != null && list.size() != 0) {
             for (final String str : list) {
-                if (z || TextUtils.isEmpty(ResourceJniInteract.getResourceFromCacheWithIdOrTag(str))) {
+                if (z || StringUtils.isEmpty(ResourceJniInteract.getResourceFromCacheWithIdOrTag(str))) {
                     com.taobao.taopai.material.maires.d.a(str, new qbt<MaterialDetailBean>() { // from class: tb.qbx.2
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -214,7 +214,7 @@ public class qbx implements qbv {
         ListIterator<WeakReference<d>> listIterator = this.f32894a.listIterator();
         while (listIterator.hasNext()) {
             WeakReference<d> next = listIterator.next();
-            if (next.get() != null && TextUtils.equals(next.get().f22074a, materialDetailBean.resourceUrl)) {
+            if (next.get() != null && StringUtils.equals(next.get().f22074a, materialDetailBean.resourceUrl)) {
                 listIterator.remove();
                 return;
             }

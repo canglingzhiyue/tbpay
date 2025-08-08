@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,11 +63,11 @@ public class nqs extends nqr<CombineHistoryCellBean, b> {
         combineHistoryCellBean.needToSync = jSONObject2.getBooleanValue("needToSync");
         combineHistoryCellBean.rownnum = jSONObject2.getIntValue("rownum");
         String string = jSONObject2.getString("picModName");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             combineHistoryCellBean.setPicModName(string);
         }
         String string2 = jSONObject2.getString("showPicMod");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             combineHistoryCellBean.setShowPicMod("true".equals(string2));
         }
         combineHistoryCellBean.setShowGuide(jSONObject2.getBooleanValue("showPop"));

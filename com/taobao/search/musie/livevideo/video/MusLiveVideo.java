@@ -1,7 +1,7 @@
 package com.taobao.search.musie.livevideo.video;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -431,7 +431,7 @@ public class MusLiveVideo extends UINode implements p.b, a {
             return;
         }
         if (this.controlByList) {
-            if (TextUtils.equals(this.currState, "play")) {
+            if (StringUtils.equals(this.currState, "play")) {
                 mUSLiveVideoView.play();
             } else {
                 stop();
@@ -603,7 +603,7 @@ public class MusLiveVideo extends UINode implements p.b, a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d63f0e06", new Object[]{this, str, str2});
-        } else if (TextUtils.equals(str, "visibility")) {
+        } else if (StringUtils.equals(str, "visibility")) {
             if ("disappear".equals(str2)) {
                 stop();
                 onVideoStop();
@@ -623,9 +623,9 @@ public class MusLiveVideo extends UINode implements p.b, a {
             ipChange.ipc$dispatch("28a4b174", new Object[]{this, str});
         } else if (!isControlByList()) {
         } else {
-            if (TextUtils.equals(str, "play")) {
+            if (StringUtils.equals(str, "play")) {
                 play();
-            } else if (!TextUtils.equals(str, "stop")) {
+            } else if (!StringUtils.equals(str, "stop")) {
             } else {
                 stop();
                 onVideoStop();

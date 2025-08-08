@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.context.MetricContext;
@@ -274,7 +274,7 @@ public class mmj extends mme<mkr, mkq> {
         }
         mly.a c = e().a("threads").c();
         for (Map.Entry<String, Float> entry : map.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey())) {
+            if (!StringUtils.isEmpty(entry.getKey())) {
                 c.c(entry.getKey(), String.valueOf(entry.getValue()));
             }
         }
@@ -288,7 +288,7 @@ public class mmj extends mme<mkr, mkq> {
         }
         mly.a c = e().a("highLoadThreads").c();
         for (Map.Entry<String, Float> entry : map.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null && entry.getValue().floatValue() >= 0.5d) {
+            if (!StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null && entry.getValue().floatValue() >= 0.5d) {
                 c.a(entry.getKey());
             }
         }

@@ -2,7 +2,7 @@ package com.taobao.android.order.core.dinamicX.view;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -84,9 +84,9 @@ public class d extends af {
             return;
         }
         super.onBeforeMeasure(textView);
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             textView.setText(this.c);
-        } else if (TextUtils.isEmpty(this.d)) {
+        } else if (StringUtils.isEmpty(this.d)) {
         } else {
             textView.setText(this.d);
         }
@@ -104,9 +104,9 @@ public class d extends af {
             return;
         }
         TextView textView = (TextView) view;
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             textView.setText(this.c);
-        } else if (TextUtils.isEmpty(this.d)) {
+        } else if (StringUtils.isEmpty(this.d)) {
         } else {
             textView.setText(this.d);
         }
@@ -165,7 +165,7 @@ public class d extends af {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         char[] charArray = str.toCharArray();

@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.parse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.r;
@@ -26,7 +26,7 @@ public class TypedBean implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("57c89ca0", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.startsWith("nx_") || str.startsWith("wx_") || str.startsWith("lt_");
@@ -37,7 +37,7 @@ public class TypedBean implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("be4f849e", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.startsWith("ms_");
         }
         return false;

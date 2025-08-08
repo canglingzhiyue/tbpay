@@ -1,6 +1,6 @@
 package com.ali.user.mobile.ability.excutor.login;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.ability.excutor.BaseExecutor;
 import com.ali.user.mobile.ability.excutor.ExecutorContext;
 import com.ali.user.mobile.ability.excutor.ExecutorResult;
@@ -32,7 +32,7 @@ public class SendLoginCodeExecutor extends BaseExecutor<LoginExecutorParams> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("30748690", new Object[]{this, executorContext, loginExecutorParams, dataCallback});
-        } else if (executorContext == null || executorContext.context == null || loginExecutorParams == null || loginExecutorParams.params == null || TextUtils.isEmpty(loginExecutorParams.type)) {
+        } else if (executorContext == null || executorContext.context == null || loginExecutorParams == null || loginExecutorParams.params == null || StringUtils.isEmpty(loginExecutorParams.type)) {
             callback(dataCallback, ExecutorResult.buildParamError(executorContext));
         } else {
             LoginApi.commonSend(loginExecutorParams.type, loginExecutorParams.params, executorContext.mView, new LoginTasksCallback<LoginReturnData>() { // from class: com.ali.user.mobile.ability.excutor.login.SendLoginCodeExecutor.1

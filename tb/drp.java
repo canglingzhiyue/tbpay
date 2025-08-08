@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.statisticsv2.model.StWindow;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public abstract class drp {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.w) && (map = this.v) != null && map.size() > 0) {
+        if (StringUtils.isEmpty(this.w) && (map = this.v) != null && map.size() > 0) {
             this.w = new JSONObject(this.v).toJSONString();
         }
         return this.w;

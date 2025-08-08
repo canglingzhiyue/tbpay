@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.notification.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,7 +52,7 @@ public class AdvanceSettingEx implements Parcelable {
 
     public static AdvanceSettingEx parse(String str) {
         JSONObject jSONObject;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 jSONObject = new JSONObject(str);
             } catch (JSONException e) {

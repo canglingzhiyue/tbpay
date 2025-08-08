@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.event.Event;
@@ -56,7 +56,7 @@ public class eve implements Event {
         for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
             if (entry != null && entry.getValue() != null) {
                 String obj = entry.getValue().toString();
-                if (TextUtils.isEmpty(obj)) {
+                if (StringUtils.isEmpty(obj)) {
                     obj = "";
                 }
                 this.b.put(entry.getKey(), obj);
@@ -71,7 +71,7 @@ public class eve implements Event {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("SKUBuyNowButtonText");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "";
             }
             this.f27595a = string;

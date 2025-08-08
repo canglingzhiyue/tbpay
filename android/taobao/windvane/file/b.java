@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.taobao.windvane.config.j;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,7 +35,7 @@ public class b {
             return (File) ipChange.ipc$dispatch("90186323", new Object[]{context, str});
         }
         String absolutePath = context.getFilesDir().getAbsolutePath();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             absolutePath = absolutePath + File.separator + str;
         }
         File file = new File(absolutePath);
@@ -288,7 +288,7 @@ public class b {
                     sb = null;
                 }
             }
-            if (!TextUtils.isEmpty(str) && sb != null) {
+            if (!StringUtils.isEmpty(str) && sb != null) {
                 sb.append(str);
                 sb.append(File.separator);
                 sb.append(str2);
@@ -312,7 +312,7 @@ public class b {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(application.getCacheDir().getAbsolutePath());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(File.separator);
             sb.append(str);
         }
@@ -333,7 +333,7 @@ public class b {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(application.getFilesDir().getAbsolutePath());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(File.separator);
             sb.append(str);
         }

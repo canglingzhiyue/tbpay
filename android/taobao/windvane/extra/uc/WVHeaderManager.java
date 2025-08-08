@@ -2,7 +2,7 @@ package android.taobao.windvane.extra.uc;
 
 import android.taobao.windvane.connect.HttpConnector;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
@@ -109,7 +109,7 @@ public class WVHeaderManager {
         if (map == null) {
             m.e(LOGTAG, "addHeaderCheck: 待添加的header为空");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             m.e(LOGTAG, "addHeaderCheck: url为空!");
         } else if (this.registerCustomHeadersList == null || this.registerCustomHeadersList.isEmpty()) {
             m.b(LOGTAG, "addHeaderCheck: 配置的url组为空，不添加任何header");
@@ -123,7 +123,7 @@ public class WVHeaderManager {
                             break;
                         } else if (convertUrl.equals(it.next())) {
                             for (Map.Entry<String, String> entry : customRequestHeader.headers.entrySet()) {
-                                if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                                if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                                     if (map.containsKey(entry.getKey())) {
                                         m.e(LOGTAG, "addHeaderCheck: 重复添加header:" + entry.getKey());
                                     } else if (isInW3CHeaders(entry.getKey())) {
@@ -149,7 +149,7 @@ public class WVHeaderManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9e738dc3", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             m.e(LOGTAG, "isInW3CHeaders: 检测对象为空");
             return false;
         }
@@ -166,7 +166,7 @@ public class WVHeaderManager {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("652ec3f3", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             m.e(LOGTAG, "convertUrl: 需转换的url为空!");
             return str;
         }

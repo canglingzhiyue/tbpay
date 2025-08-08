@@ -1,7 +1,7 @@
 package org.android.agoo.oppo;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.heytap.msp.push.HeytapPushManager;
 import com.heytap.msp.push.callback.ICallBackResultService;
@@ -216,7 +216,7 @@ public class OppoRegister {
                 return;
             }
             ALog.e(OppoRegister.TAG, "onRegister called, regid=" + str, "err_code", Integer.valueOf(i));
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             OppoRegister.access$200(OppoRegister.access$100(), str);
@@ -296,7 +296,7 @@ public class OppoRegister {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1fbf10e6", new Object[]{context, str});
-        } else if (reportedInOneRegister || TextUtils.isEmpty(str) || context == null) {
+        } else if (reportedInOneRegister || StringUtils.isEmpty(str) || context == null) {
         } else {
             if (m.c() && AgooUtils.isOptimizationEnabled(context)) {
                 reportedInOneRegister = true;

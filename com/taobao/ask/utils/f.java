@@ -1,6 +1,6 @@
 package com.taobao.ask.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class f {
         }
         MtopRequest mtopRequest = new MtopRequest();
         mtopRequest.setApiName(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "1.0";
         }
         mtopRequest.setVersion(str2);

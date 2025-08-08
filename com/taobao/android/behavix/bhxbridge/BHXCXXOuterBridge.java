@@ -1,7 +1,7 @@
 package com.taobao.android.behavix.bhxbridge;
 
 import android.support.v4.app.NotificationManagerCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.monitor.NetworkQualityMonitor;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -37,7 +37,7 @@ public class BHXCXXOuterBridge extends BHXCXXBaseBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7b793658", new Object[]{str, str2, str3});
-        } else if (str == null || TextUtils.isEmpty(str2)) {
+        } else if (str == null || StringUtils.isEmpty(str2)) {
         } else {
             uploadDataToUT("Mobile_Intelligent", UtUtils.CHANGED_UPP_EVENT_ID, "BehaviX", str, str2, "BehaviData=" + URLEncoder.encode(str3));
         }
@@ -151,7 +151,7 @@ public class BHXCXXOuterBridge extends BHXCXXBaseBridge {
             jSONObject.put("predictBandWidth", (Object) Double.valueOf(NetworkQualityMonitor.getInstance().getGlobalPredictBandWidth()));
             jSONObject.put("netLevel", (Object) a());
             String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-            if (TextUtils.isEmpty(globalProperty)) {
+            if (StringUtils.isEmpty(globalProperty)) {
                 globalProperty = "";
             }
             jSONObject.put("afcId", (Object) globalProperty);

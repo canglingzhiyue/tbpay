@@ -1,6 +1,6 @@
 package android.taobao.windvane.webview;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -41,7 +41,7 @@ public class h {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (str.startsWith("\"") && str.endsWith("\"")) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -224,7 +224,7 @@ public class apr {
         String str2 = "";
         if (g != null) {
             String className = g.getClassName();
-            if (!TextUtils.isEmpty(className)) {
+            if (!StringUtils.isEmpty(className)) {
                 str2 = className.substring(className.lastIndexOf(46) + 1);
             }
             str = g.getMethodName();

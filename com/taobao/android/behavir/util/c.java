@@ -2,7 +2,7 @@ package com.taobao.android.behavir.util;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -24,6 +24,6 @@ public class c {
         }
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(com.taobao.android.behavix.d.b());
         String string = defaultSharedPreferences.getString("PREF_KEY_SELECTED_EDITION_CODE", null);
-        return TextUtils.isEmpty(string) ? defaultSharedPreferences.getString("PREF_KEY_CHECKED_COUNTRY_CODE", "CN") : string;
+        return StringUtils.isEmpty(string) ? defaultSharedPreferences.getString("PREF_KEY_CHECKED_COUNTRY_CODE", "CN") : string;
     }
 }

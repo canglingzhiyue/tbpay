@@ -2,7 +2,7 @@ package com.taobao.android.buy.toggle;
 
 import android.os.SystemClock;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilitykit.ability.pop.model.c;
 import java.util.Collections;
@@ -71,7 +71,7 @@ public class b {
             return;
         }
         String a2 = bam.a("AB_", f9254a, "style", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             b.put("style", a2);
         }
         String a3 = bam.a("AB_", f9254a, c.KEY_POP_CONFIG, "");
@@ -106,7 +106,7 @@ public class b {
         }
         String a2 = a("style");
         String a3 = a(c.KEY_POP_CONFIG);
-        if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(a3)) {
             return null;
         }
         HashMap hashMap = new HashMap();

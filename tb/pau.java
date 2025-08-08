@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aa;
 import com.taobao.taolive.room.utils.ai;
@@ -76,7 +76,7 @@ public class pau implements Application.ActivityLifecycleCallbacks {
         } else if (!a(activity)) {
         } else {
             UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(this.f32541a.get());
-            Map map = !TextUtils.isEmpty(this.c) ? (Map) pqj.a(this.c, Map.class) : null;
+            Map map = !StringUtils.isEmpty(this.c) ? (Map) pqj.a(this.c, Map.class) : null;
             if (map == null) {
                 map = new HashMap();
             }

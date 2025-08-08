@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.wireless.security.open.SecException;
@@ -56,7 +56,7 @@ public class khn {
         }
         try {
             String b = b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return null;
             }
             JSONObject parseObject = JSON.parseObject(b);
@@ -94,7 +94,7 @@ public class khn {
                     }
                     Class<?> cls = getClass();
                     khu.a(cls, "saveLoginUid: " + str);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         khn.a(khn.a(khn.this)).c("");
                         khn.a(khn.a(khn.this)).d("");
                         return;

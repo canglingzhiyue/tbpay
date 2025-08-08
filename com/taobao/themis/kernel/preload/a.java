@@ -2,7 +2,7 @@ package com.taobao.themis.kernel.preload;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.AppInfoScene;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -123,7 +123,7 @@ public class a {
         }
         JSONArray jSONArray = new JSONArray();
         String D = n.D();
-        if (!TextUtils.isEmpty(D)) {
+        if (!StringUtils.isEmpty(D)) {
             for (String str : D.split(",")) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("app_id", (Object) str);

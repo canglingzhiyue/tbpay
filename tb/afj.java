@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,7 +29,7 @@ public class afj {
         }
         if (z2) {
             String str3 = f25312a.get(str2);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 return Boolean.parseBoolean(str3);
             }
         }
@@ -54,7 +54,7 @@ public class afj {
         }
         if (z) {
             String str4 = f25312a.get(str2);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 return str4;
             }
         }

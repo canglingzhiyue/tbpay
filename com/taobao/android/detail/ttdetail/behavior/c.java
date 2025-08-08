@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.behavior;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -31,7 +31,7 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("6367f77", new Object[]{jSONArray, new Integer(i)})).booleanValue();
         }
         if (jSONArray != null && jSONArray.size() > 0) {
-            return TextUtils.equals(a.e(i), jSONArray.getJSONObject(jSONArray.size() - 1).getString("behavior_type"));
+            return StringUtils.equals(a.e(i), jSONArray.getJSONObject(jSONArray.size() - 1).getString("behavior_type"));
         }
         return false;
     }
@@ -62,7 +62,7 @@ public class c {
                     JSONObject jSONObject = jSONArray.getJSONObject(i);
                     if (jSONObject != null && !jSONObject.isEmpty()) {
                         final String string = jSONObject.getString("text");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             jSONArray2.add(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.behavior.UserBehaviorUtils$1
                                 {
                                     put("text", (Object) string);
@@ -95,7 +95,7 @@ public class c {
                     JSONObject jSONObject = jSONArray.getJSONObject(i);
                     if (jSONObject != null && !jSONObject.isEmpty()) {
                         final String string = jSONObject.getString("text");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             jSONArray2.add(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.behavior.UserBehaviorUtils$2
                                 {
                                     put("text", (Object) string);
@@ -149,7 +149,7 @@ public class c {
                     JSONObject jSONObject = jSONArray.getJSONObject(i);
                     if (jSONObject != null && !jSONObject.isEmpty()) {
                         final String string = jSONObject.getString("word");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             jSONArray2.add(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.behavior.UserBehaviorUtils$3
                                 {
                                     put("word", (Object) string);

@@ -1,6 +1,6 @@
 package com.taobao.split.diff;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.PatchSplitFileInfo;
 import com.alibaba.android.split.SplitFileInfo;
 import com.alibaba.android.split.k;
@@ -44,7 +44,7 @@ public class f extends n {
             str2 = null;
         }
         this.f19714a.d(str + " diff patch baseVersion:" + str2, new Object[0]);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return super.a(str);
         }
         if (d.a().a(str, str2) && b(str)) {

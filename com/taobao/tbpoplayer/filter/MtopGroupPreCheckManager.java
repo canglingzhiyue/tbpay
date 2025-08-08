@@ -3,7 +3,7 @@ package com.taobao.tbpoplayer.filter;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -258,7 +258,7 @@ public class MtopGroupPreCheckManager {
     public boolean a(PopRequest popRequest) {
         BaseConfigItem x;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a9690e78", new Object[]{this, popRequest})).booleanValue() : (popRequest instanceof d) && (x = ((d) popRequest).x()) != null && !TextUtils.isEmpty(x.preCheckGroupId);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a9690e78", new Object[]{this, popRequest})).booleanValue() : (popRequest instanceof d) && (x = ((d) popRequest).x()) != null && !StringUtils.isEmpty(x.preCheckGroupId);
     }
 
     public boolean a(PopRequest popRequest, JSONObject jSONObject, IUserCheckRequestListener iUserCheckRequestListener) {
@@ -320,7 +320,7 @@ public class MtopGroupPreCheckManager {
             Iterator<String> it = this.f22209a.keySet().iterator();
             while (it.hasNext()) {
                 String next = it.next();
-                if (!TextUtils.isEmpty(next) && (next.equals(str) || next.startsWith(str))) {
+                if (!StringUtils.isEmpty(next) && (next.equals(str) || next.startsWith(str))) {
                     it.remove();
                 }
             }
@@ -413,7 +413,7 @@ public class MtopGroupPreCheckManager {
             int intValue = jSONObject.containsKey("timeoutMs") ? jSONObject.getInteger("timeoutMs").intValue() : 3000;
             boolean booleanValue = jSONObject.getBooleanValue("login");
             boolean booleanValue2 = jSONObject.getBooleanValue("wua");
-            if (booleanValue && TextUtils.isEmpty(Login.getUserId())) {
+            if (booleanValue && StringUtils.isEmpty(Login.getUserId())) {
                 dVar.t().aj = false;
                 aVar.a(RequestState.noLogin, str, OnePopModule.OnePopLoseReasonCode.MtopPreCheckNoPop, "userIdEmpty", null);
                 return;
@@ -433,7 +433,7 @@ public class MtopGroupPreCheckManager {
             jSONObject2.put("popEnableList", (Object) aVar.d);
             jSONObject2.put("popEnableMap", (Object) aVar.c);
             JSONObject jSONObject3 = new JSONObject();
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 jSONObject3 = JSON.parseObject(string2);
             }
             if (jSONObject3 == null) {
@@ -592,7 +592,7 @@ public class MtopGroupPreCheckManager {
             return (Map) ipChange.ipc$dispatch("c27656b1", new Object[]{this, str, str2});
         }
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return concurrentHashMap;
         }
         try {

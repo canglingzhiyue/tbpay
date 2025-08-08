@@ -18,7 +18,7 @@ import android.os.Message;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -1067,7 +1067,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             return;
         }
         m.a(TAG, "MediaPlay Control playStreamUrl mLiveContextKey = " + this.mLiveContextKey);
-        if (this.mTaoVideoView == null || TextUtils.isEmpty(str)) {
+        if (this.mTaoVideoView == null || StringUtils.isEmpty(str)) {
             return;
         }
         this.mTaoVideoView.q();
@@ -1092,7 +1092,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             if (a2 != null && !z5) {
                 a2.h265 = false;
             }
-            if (a2 != null && !TextUtils.isEmpty(a2.dataTracks) && (t = pmd.a().t()) != null) {
+            if (a2 != null && !StringUtils.isEmpty(a2.dataTracks) && (t = pmd.a().t()) != null) {
                 t.a(a2.dataTracks, this.mContext);
             }
             this.mTaoVideoView.a(a2, (String) null);
@@ -1117,8 +1117,8 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             ipChange.ipc$dispatch("7252b271", new Object[]{this, str, new Boolean(z), str2, new Integer(i)});
         } else if (this.mTaoVideoView == null) {
         } else {
-            boolean z3 = !TextUtils.isEmpty(str2) && !str2.equals(this.highlightCurrentPlay);
-            if (!TextUtils.isEmpty(str2) || TextUtils.isEmpty(str) || str.equals(this.highlightCurrentPlay)) {
+            boolean z3 = !StringUtils.isEmpty(str2) && !str2.equals(this.highlightCurrentPlay);
+            if (!StringUtils.isEmpty(str2) || StringUtils.isEmpty(str) || str.equals(this.highlightCurrentPlay)) {
                 z2 = false;
             }
             if (!z3 && !z2 && this.mTaoVideoView.l()) {
@@ -1134,7 +1134,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             if (o.g() && i > 0) {
                 this.mTaoVideoView.e(i);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 setMediaId(str2);
                 this.highlightCurrentPlay = str2;
             } else {
@@ -1346,7 +1346,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6dd23429", new Object[]{this, str});
-        } else if (!o.a() || TextUtils.isEmpty(str) || this.mTaoVideoView == null) {
+        } else if (!o.a() || StringUtils.isEmpty(str) || this.mTaoVideoView == null) {
         } else {
             Uri parse = Uri.parse(str);
             String queryParameter = parse != null ? parse.getQueryParameter("timeMovingCacheKey") : "";
@@ -1506,7 +1506,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             ipChange.ipc$dispatch("9966b6c3", new Object[]{this, new Boolean(z)});
         } else if (this.mErrorController == null) {
         } else {
-            if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null && !TextUtils.equals(this.mLiveDataModel.mVideoInfo.roomStatus, "1")) {
+            if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null && !StringUtils.equals(this.mLiveDataModel.mVideoInfo.roomStatus, "1")) {
                 this.mErrorController.a(VideoFrameErrorController.PlayerErrorState.PLAYER_ERROR_STATE_LIVE_END);
             } else if (z) {
                 this.mErrorController.a(VideoFrameErrorController.PlayerErrorState.PLAYER_ERROR_STATE_ANCHOR_LEAVE);
@@ -1561,7 +1561,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             } else {
                 this.mErrorHint.setText(this.mContext.getString(R.string.taolive_anchor_leave_hint));
                 VideoInfo videoInfo = getVideoInfo();
-                if (videoInfo != null && videoInfo.landScape && !TextUtils.isEmpty(videoInfo.coverImg169)) {
+                if (videoInfo != null && videoInfo.landScape && !StringUtils.isEmpty(videoInfo.coverImg169)) {
                     final View childAt = this.mErrorImgLayout.getChildAt(0);
                     if (childAt instanceof ImageView) {
                         pmd.a().l().a(videoInfo.coverImg169).a(new pnf() { // from class: com.taobao.taolive.sdk.ui.component.VideoFrame.12
@@ -1620,7 +1620,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
                     this.mErrorView.setBackgroundResource(R.drawable.taolive_slice_scroll_common);
                 }
             }
-            if (!TextUtils.isEmpty(this.mBackBtnText)) {
+            if (!StringUtils.isEmpty(this.mBackBtnText)) {
                 this.mBackBtn.setText(this.mBackBtnText);
             }
             this.mReloadBtn.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.taolive.sdk.ui.component.VideoFrame.13
@@ -1940,7 +1940,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1e6fb110", new Object[]{this, str, str2, new Boolean(z), str3, new Integer(i)});
-        } else if ((TextUtils.isEmpty(str) && TextUtils.isEmpty(str3)) || this.mTaoVideoView == null) {
+        } else if ((StringUtils.isEmpty(str) && StringUtils.isEmpty(str3)) || this.mTaoVideoView == null) {
         } else {
             if ("video".equals(str2)) {
                 this.mTaoVideoView.d(2);
@@ -2282,7 +2282,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5b423788", new Object[]{this, str});
-        } else if (this.mTaoVideoView == null || TextUtils.isEmpty(str)) {
+        } else if (this.mTaoVideoView == null || StringUtils.isEmpty(str)) {
         } else {
             this.mTaoVideoView.b(str);
         }
@@ -2344,7 +2344,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             ipChange.ipc$dispatch("45afebaf", new Object[]{this, phsVar});
         } else if (phsVar == null) {
         } else {
-            if (!TextUtils.isEmpty(phsVar.c)) {
+            if (!StringUtils.isEmpty(phsVar.c)) {
                 try {
                     this.mRootView.setBackgroundColor(Color.parseColor(phsVar.c));
                 } catch (Exception e2) {
@@ -2463,7 +2463,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
             startLiveProjectScreen(obj);
         } else if ("com.taobao.taolive.room.stop_live_project_screen".equals(str)) {
             stopLiveProjectScreen();
-        } else if (!xkw.EVENT_LIVE_IMMERSIVE_EXPERIENCE.equals(str) || !(obj instanceof HashMap) || this.mLiveDataModel.mVideoInfo.landScape || this.mFrameContext.K || TextUtils.equals(this.mLiveDataModel.mVideoInfo.roomStatus, "2")) {
+        } else if (!xkw.EVENT_LIVE_IMMERSIVE_EXPERIENCE.equals(str) || !(obj instanceof HashMap) || this.mLiveDataModel.mVideoInfo.landScape || this.mFrameContext.K || StringUtils.equals(this.mLiveDataModel.mVideoInfo.roomStatus, "2")) {
         } else {
             HashMap<String, String> hashMap = (HashMap) obj;
             hashMap.put("bizCode", this.mFrameContext.o().bizCode);
@@ -2510,7 +2510,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
                     }
                     final JSONObject jSONObject = (JSONObject) obj2;
                     String string = jSONObject.getString("templateName");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
                     g2.a(VideoFrame.this.mContext, string, new phj.a() { // from class: com.taobao.taolive.sdk.ui.component.VideoFrame.5.1
@@ -3204,7 +3204,7 @@ public class VideoFrame extends BaseFrame implements com.taobao.taolive.sdk.mode
         }
         aVar2.a(this.mLiveDataModel);
         this.mErrorController.a(poy.W(this.mFrameContext));
-        if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null && !TextUtils.equals(this.mLiveDataModel.mVideoInfo.roomStatus, "1")) {
+        if (this.mLiveDataModel != null && this.mLiveDataModel.mVideoInfo != null && !StringUtils.equals(this.mLiveDataModel.mVideoInfo.roomStatus, "1")) {
             this.mErrorController.a(VideoFrameErrorController.PlayerErrorState.PLAYER_ERROR_STATE_LIVE_END);
         }
         this.mErrorController.c();

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -19,7 +19,7 @@ public class an {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("6832b116", new Object[]{uri});
         }
-        if (!TextUtils.equals("/awp/core/detail/inside.htm", uri.getPath()) && !"true".equals(uri.getQueryParameter("insideDetail"))) {
+        if (!StringUtils.equals("/awp/core/detail/inside.htm", uri.getPath()) && !"true".equals(uri.getQueryParameter("insideDetail"))) {
             return uri;
         }
         String queryParameter = uri.getQueryParameter("stdPopId");

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -164,7 +164,7 @@ public abstract class d<T extends eyy> {
         if (ipChange instanceof IpChange) {
             return (C) ipChange.ipc$dispatch("2d63d1e0", new Object[]{this, str});
         }
-        if (!TextUtils.equals(str, this.mComponentData.b())) {
+        if (!StringUtils.equals(str, this.mComponentData.b())) {
             return null;
         }
         return this;
@@ -175,7 +175,7 @@ public abstract class d<T extends eyy> {
         if (ipChange instanceof IpChange) {
             return (C) ipChange.ipc$dispatch("2c508b56", new Object[]{this, str});
         }
-        if (!TextUtils.equals(str, this.mComponentData.r())) {
+        if (!StringUtils.equals(str, this.mComponentData.r())) {
             return null;
         }
         return this;

@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -118,19 +118,19 @@ public abstract class hh {
     /* renamed from: a */
     public Bundle mo2009a() {
         Bundle bundle = new Bundle();
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             bundle.putString("ext_ns", this.d);
         }
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             bundle.putString("ext_from", this.g);
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             bundle.putString("ext_to", this.f);
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             bundle.putString("ext_pkt_id", this.e);
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             bundle.putString("ext_chid", this.h);
         }
         hl hlVar = this.f470a;

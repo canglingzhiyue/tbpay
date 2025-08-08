@@ -2,7 +2,7 @@ package com.taobao.accs.antibrush;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,7 +81,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
         String str2 = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         StringTokenizer stringTokenizer = new StringTokenizer(str, ";");

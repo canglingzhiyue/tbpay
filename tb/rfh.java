@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import com.taobao.update.apk.ApkUpdateContext;
@@ -24,7 +24,7 @@ public class rfh implements b<ApkUpdateContext> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aeed841b", new Object[]{this, apkUpdateContext});
-        } else if (!TextUtils.isEmpty(apkUpdateContext.apkPath)) {
+        } else if (!StringUtils.isEmpty(apkUpdateContext.apkPath)) {
         } else {
             if (rgq.getNetworkType() == 0) {
                 apkUpdateContext.success = false;

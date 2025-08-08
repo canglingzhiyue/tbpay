@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.utils.f;
@@ -105,7 +105,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6635bcfe", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             this.f22223a.f().put(str.replaceAll("[$]", ""), (Object) jSONObject);
         }
@@ -115,7 +115,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f2bf4cf4", new Object[]{this, str, str2, jSONObject});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || jSONObject == null) {
         } else {
             String replaceAll = str.replaceAll("[$]", "");
             String replaceAll2 = str2.replaceAll("[$]", "");

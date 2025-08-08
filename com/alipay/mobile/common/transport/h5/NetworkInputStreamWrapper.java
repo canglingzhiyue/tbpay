@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.h5;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.TraficConsumeModel;
 import com.alipay.mobile.common.transport.context.TransportContext;
@@ -203,7 +203,7 @@ public class NetworkInputStreamWrapper extends RpcBufferedInputStream {
             int i2 = this.mTransportContext.bizType == 5 ? 5 : i;
             String str = this.mTransportContext.url;
             String dataItem = this.mTransportContext.getCurrentDataContainer().getDataItem(RPCDataItems.REQ_SIZE);
-            TraficConsumeModel obtain = TraficConsumeModel.obtain(i2, str, !TextUtils.isEmpty(dataItem) ? Long.valueOf(dataItem).longValue() : 0L, getReaded(), null);
+            TraficConsumeModel obtain = TraficConsumeModel.obtain(i2, str, !StringUtils.isEmpty(dataItem) ? Long.valueOf(dataItem).longValue() : 0L, getReaded(), null);
             obtain.isUpload = false;
             obtain.bizId = this.d.getOriginRequest().getTag("bizId");
             obtain.reqHeaders = this.d.getOriginRequest().getHttpUriRequest().getAllHeaders();
@@ -212,7 +212,7 @@ public class NetworkInputStreamWrapper extends RpcBufferedInputStream {
             if (originRequest != null && (originRequest instanceof H5HttpUrlRequest)) {
                 H5HttpUrlRequest h5HttpUrlRequest = (H5HttpUrlRequest) originRequest;
                 MonitorLogRecordUtil.recordCtrlPrintURLFlagToDataflow(obtain, h5HttpUrlRequest.isPrintUrlToMonitorLog());
-                if (!TextUtils.isEmpty(h5HttpUrlRequest.getRefer())) {
+                if (!StringUtils.isEmpty(h5HttpUrlRequest.getRefer())) {
                     obtain.extParams.put("h5_refer", h5HttpUrlRequest.getRefer());
                 }
             }
@@ -221,7 +221,7 @@ public class NetworkInputStreamWrapper extends RpcBufferedInputStream {
             LogCatUtil.warn("NetworkInputStreamWrapper", "NetworkISW.outer", th2);
         }
         String dataItem2 = this.mTransportContext.getCurrentDataContainer().getDataItem(RPCDataItems.READ_TIME);
-        if (TextUtils.isEmpty(dataItem2)) {
+        if (StringUtils.isEmpty(dataItem2)) {
             return;
         }
         try {

@@ -1,7 +1,7 @@
 package com.alibaba.appmonitor.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.alibaba.analytics.core.network.NetworkUtil;
 import com.alibaba.appmonitor.model.UTDimensionValueSet;
@@ -63,7 +63,7 @@ public class e {
             return (UTDimensionValueSet) ipChange.ipc$dispatch("cb9ee45a", new Object[]{this, new Integer(i), l, str, str2});
         }
         UTDimensionValueSet uTDimensionValueSet = (UTDimensionValueSet) com.alibaba.appmonitor.pool.a.a().a(UTDimensionValueSet.class, new Object[0]);
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             uTDimensionValueSet.setValue(LogField.ACCESS.toString(), str);
             uTDimensionValueSet.setValue(LogField.ACCESS_SUBTYPE.toString(), str2);
         } else {

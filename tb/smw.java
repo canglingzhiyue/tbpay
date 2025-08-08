@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.m;
@@ -36,7 +36,7 @@ public class smw extends dlg {
             String string2 = c.getString("pageName");
             String string3 = c.getString("arg1");
             JSONObject jSONObject = c.getJSONObject("args");
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 JSONObject jSONObject2 = c.getJSONObject("data");
                 String string4 = jSONObject2.getString("arg1");
                 jSONObject = jSONObject2.getJSONObject("args");
@@ -44,9 +44,9 @@ public class smw extends dlg {
             } else {
                 str = string3;
             }
-            if (TextUtils.equals("click", string)) {
+            if (StringUtils.equals("click", string)) {
                 odg.l().a(string2, str, (String) null, m.a((Map<String, ? extends Object>) jSONObject));
-            } else if (TextUtils.equals("appear", string)) {
+            } else if (StringUtils.equals("appear", string)) {
                 odg.l().a(string2, str, null, null, m.a((Map<String, ? extends Object>) jSONObject));
             }
             return new dla();

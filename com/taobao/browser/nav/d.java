@@ -3,7 +3,7 @@ package com.taobao.browser.nav;
 import android.app.Application;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,7 +43,7 @@ public class d {
                     return false;
                 }
                 String a2 = a(jSONArray, str);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return false;
                 }
                 return ABGlobal.isFeatureOpened(application, "TMS_H5_SWITCH_" + a2);
@@ -76,7 +76,7 @@ public class d {
                 if (jSONObject2 != null && (jSONObject = jSONObject2.getJSONObject("condition")) != null) {
                     String string = jSONObject.getString("host");
                     String string2 = jSONObject.getString("path");
-                    if (TextUtils.equals(host, string) && TextUtils.equals(path, string2)) {
+                    if (StringUtils.equals(host, string) && StringUtils.equals(path, string2)) {
                         return jSONObject2.getString("name");
                     }
                 }

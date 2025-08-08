@@ -12,7 +12,7 @@ import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -502,7 +502,7 @@ public class NewTaobaoSettingActivity extends CustomBaseActivity implements e {
                 TBS.Ext.commitEvent("Page_MYTBSettingVC", Integer.parseInt("2101"), "Page_MYTBSettingVC_个人信息", null, null, "spm=a2141.20998086.1.2");
                 String config = OrangeConfig.getInstance().getConfig(mxj.GROUP_NAME, "weexProfileEditorUrlV2", "https://web.m.taobao.com/app/message-social-front/user-info-edit/home?wh_weex=true&weex_mode=dom&wx_navbar_hidden=true&wx_statusbar_hidden=true");
                 Nav from = Nav.from(NewTaobaoSettingActivity.this);
-                if (TextUtils.isEmpty(config)) {
+                if (StringUtils.isEmpty(config)) {
                     config = "https://web.m.taobao.com/app/message-social-front/user-info-edit/home?wh_weex=true&weex_mode=dom&wx_navbar_hidden=true&wx_statusbar_hidden=true";
                 }
                 from.toUri(config);
@@ -568,7 +568,7 @@ public class NewTaobaoSettingActivity extends CustomBaseActivity implements e {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-                    } else if (intent == null || TextUtils.isEmpty(intent.getAction()) || NewTaobaoSettingActivity.AnonymousClass11.f18410a[LoginAction.valueOf(intent.getAction()).ordinal()] != 1) {
+                    } else if (intent == null || StringUtils.isEmpty(intent.getAction()) || NewTaobaoSettingActivity.AnonymousClass11.f18410a[LoginAction.valueOf(intent.getAction()).ordinal()] != 1) {
                     } else {
                         NewTaobaoSettingActivity.f(NewTaobaoSettingActivity.this);
                         NewTaobaoSettingActivity.this.finish();
@@ -650,7 +650,7 @@ public class NewTaobaoSettingActivity extends CustomBaseActivity implements e {
                         }
                         if (NewTaobaoSettingActivity.j(NewTaobaoSettingActivity.this) != null) {
                             String str = userProfile.jianghuNick;
-                            if (TextUtils.isEmpty(str)) {
+                            if (StringUtils.isEmpty(str)) {
                                 str = "点击设置淘宝昵称";
                             }
                             NewTaobaoSettingActivity.j(NewTaobaoSettingActivity.this).setText(str);
@@ -704,7 +704,7 @@ public class NewTaobaoSettingActivity extends CustomBaseActivity implements e {
             return null;
         }
         String a2 = com.taobao.mytaobao.newSettingV2.a.INSTANCE.a("mtbSettingsPageSnsp");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 DynamicSettingPageResponse dynamicSettingPageResponse = (DynamicSettingPageResponse) JSONObject.parseObject(a2, DynamicSettingPageResponse.class);
                 if (dynamicSettingPageResponse.data != null) {
@@ -939,7 +939,7 @@ public class NewTaobaoSettingActivity extends CustomBaseActivity implements e {
             return;
         }
         String string = jSONObject.getString("arg1");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         com.taobao.mytaobao.ut.c.b("Page_MyTaobao", string, com.taobao.mytaobao.ut.c.a(jSONObject.getJSONObject("params")));
@@ -1055,8 +1055,8 @@ public class NewTaobaoSettingActivity extends CustomBaseActivity implements e {
             }
         }
         DynamicSettingItem dynamicSettingItem = (DynamicSettingItem) arrayList.get(arrayList.size() - 1);
-        if (TextUtils.equals(dynamicSettingItem.moduleNumber, "-1")) {
-            if (!TextUtils.isEmpty(dynamicSettingItem.key)) {
+        if (StringUtils.equals(dynamicSettingItem.moduleNumber, "-1")) {
+            if (!StringUtils.isEmpty(dynamicSettingItem.key)) {
                 this.i = dynamicSettingItem.key;
             }
             if (dynamicSettingItem.showRedDot) {
@@ -1114,7 +1114,7 @@ public class NewTaobaoSettingActivity extends CustomBaseActivity implements e {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
             }
-            if (!TextUtils.isEmpty(str) && TextUtils.isDigitsOnly(str)) {
+            if (!StringUtils.isEmpty(str) && StringUtils.isDigitsOnly(str)) {
                 return Integer.valueOf(str).intValue();
             }
             return 99;

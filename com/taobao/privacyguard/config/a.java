@@ -1,7 +1,7 @@
 package com.taobao.privacyguard.config;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.wireless.security.aopsdk.AopEntry;
 import com.alibaba.wireless.security.aopsdk.AopManager;
@@ -69,7 +69,7 @@ public class a {
             Log.e(f18945a, "registerOrangeListener: register Orange listener with a null context!");
         } else {
             String b = b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 Log.e(f18945a, "registerOrangeListener: Orange namespace is null!");
                 return;
             }
@@ -132,7 +132,7 @@ public class a {
             Log.e(f18945a, "PGBridge: package is google play ttid, shut down secaop.");
             return false;
         } else if (!com.taobao.privacyguard.a.a().d() && !com.taobao.privacyguard.a.a().f()) {
-            return isEnable && (!TextUtils.isEmpty(b.abComponent) ? ABGlobal.isFeatureOpened(com.taobao.privacyguard.a.a().b(), b.abComponent) : false);
+            return isEnable && (!StringUtils.isEmpty(b.abComponent) ? ABGlobal.isFeatureOpened(com.taobao.privacyguard.a.a().b(), b.abComponent) : false);
         } else {
             String str = f18945a;
             Log.e(str, "PGBridge: package is debuggable or gray scale, open secaop: " + isEnable);

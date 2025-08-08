@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import com.taobao.tao.log.TLog;
@@ -34,7 +34,7 @@ public class gvq implements Runnable {
         }
         SharedPreferences sharedPreferences = LauncherRuntime.h.getSharedPreferences(this.c, 0);
         String string = sharedPreferences.getString(this.d, null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         if (string.split(SymbolExpUtil.SYMBOL_VERTICALBAR).length < 3) {

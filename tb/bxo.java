@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -38,7 +38,7 @@ public class bxo {
             ldf.d("LiveRoomTransitionUtil", "命中了直播间新交互，服务端放量标记。");
             z = true;
         }
-        if (!z || !baseSubItemModel.containsKey("content") || (jSONObject = baseSubItemModel.getJSONObject("content")) == null || !jSONObject.containsKey("imageUrl") || TextUtils.isEmpty(jSONObject.getString("imageUrl"))) {
+        if (!z || !baseSubItemModel.containsKey("content") || (jSONObject = baseSubItemModel.getJSONObject("content")) == null || !jSONObject.containsKey("imageUrl") || StringUtils.isEmpty(jSONObject.getString("imageUrl"))) {
             ldf.d("LiveRoomTransitionUtil", "一二跳交互优化，直播间新交互，未命中。return false ");
             return false;
         }

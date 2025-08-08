@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -132,8 +132,8 @@ public class kdr implements njr {
             kdtVar.b.isColdStart = true;
             this.f29989a = kek.a(kdtVar.b, this.h.getContext(), this.h);
             this.l = h.a(this.g).h();
-            this.j = !TextUtils.isEmpty(kdtVar.b.bizType) ? kdtVar.b.bizType : "";
-            this.k = !TextUtils.isEmpty(kdtVar.b.sceneType) ? kdtVar.b.sceneType : tiq.BIZ_CODE;
+            this.j = !StringUtils.isEmpty(kdtVar.b.bizType) ? kdtVar.b.bizType : "";
+            this.k = !StringUtils.isEmpty(kdtVar.b.sceneType) ? kdtVar.b.sceneType : tiq.BIZ_CODE;
             c cVar = this.f29989a;
             if (cVar == null) {
                 this.l.a(this.k, "ColdStart", keq.EXPOSE_ERROR, this.j, keq.CODE_VIEW_CREATE_FAIL, "bootImageContent null");
@@ -153,7 +153,7 @@ public class kdr implements njr {
                     return;
                 }
                 try {
-                    if (TextUtils.equals(kdtVar.b.actionResponse, "1") || TextUtils.equals(kdtVar.b.actionResponse, "2")) {
+                    if (StringUtils.equals(kdtVar.b.actionResponse, "1") || StringUtils.equals(kdtVar.b.actionResponse, "2")) {
                         z = true;
                     }
                     if (kel.d() && z) {

@@ -3,7 +3,7 @@ package com.taobao.tbliveweexvideo;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaAdapteManager;
@@ -142,7 +142,7 @@ public class TBLiveWeexVideoComponent extends WXComponent {
                     return;
                 }
                 String action = intent.getAction();
-                if (TextUtils.isEmpty(action) || !action.equals("com.taobao.avplayer.start") || TBLiveWeexVideoComponent.access$000(TBLiveWeexVideoComponent.this) == null) {
+                if (StringUtils.isEmpty(action) || !action.equals("com.taobao.avplayer.start") || TBLiveWeexVideoComponent.access$000(TBLiveWeexVideoComponent.this) == null) {
                     return;
                 }
                 TBLiveWeexVideoComponent.access$000(TBLiveWeexVideoComponent.this).i();
@@ -178,7 +178,7 @@ public class TBLiveWeexVideoComponent extends WXComponent {
         com.taobao.taobaoavsdk.widget.media.c cVar = null;
         String str6 = "video";
         if ("live".equals(str)) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 cVar = new com.taobao.taobaoavsdk.widget.media.c(str2);
                 cVar.y = str3;
                 cVar.B = str4;

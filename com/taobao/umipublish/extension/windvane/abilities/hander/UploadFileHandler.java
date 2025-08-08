@@ -1,6 +1,6 @@
 package com.taobao.umipublish.extension.windvane.abilities.hander;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,13 +57,13 @@ public class UploadFileHandler extends BaseHandler {
         JSONArray jSONArray = jSONObject.getJSONArray("fileList");
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject2 = jSONArray.getJSONObject(i);
-            if (TextUtils.equals(jSONObject2.getString("type"), "video")) {
+            if (StringUtils.equals(jSONObject2.getString("type"), "video")) {
                 this.d.mPublishVideo.fileId = m.a(jSONObject2, "fileId", "");
                 this.d.mPublishVideo.path = m.a(jSONObject2, "path", "");
                 this.d.mPublishVideo.mediaType = "video";
                 this.d.mPublishVideo.statInfo = tem.a(this.b);
                 a(this.d.mPublishVideo.statInfo, this.d);
-            } else if (TextUtils.equals(jSONObject2.getString("type"), "cover")) {
+            } else if (StringUtils.equals(jSONObject2.getString("type"), "cover")) {
                 this.d.mPublishCover.path = m.a(jSONObject2, "path", "");
                 this.d.mPublishCover.width = Integer.valueOf(m.a(jSONObject2, "width", 0));
                 this.d.mPublishCover.height = Integer.valueOf(m.a(jSONObject2, "height", 0));

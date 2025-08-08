@@ -1,6 +1,6 @@
 package com.taobao.update.instantpatch.flow;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.update.instantpatch.d;
 import com.taobao.update.instantpatch.model.InstantUpdateInfo;
@@ -66,7 +66,7 @@ public class a {
             dVar.success = false;
             dVar.errorMsg = th.getMessage();
         }
-        if (!TextUtils.isEmpty(this.f23435a.path) && new File(this.f23435a.path).exists()) {
+        if (!StringUtils.isEmpty(this.f23435a.path) && new File(this.f23435a.path).exists()) {
             return;
         }
         d dVar2 = this.f23435a;

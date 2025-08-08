@@ -1,7 +1,7 @@
 package com.ali.user.mobile.app;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.callback.CommonDataCallback;
 import com.ali.user.mobile.info.AppInfo;
 import com.ali.user.mobile.model.CommonCallback;
@@ -45,7 +45,7 @@ public class LoginContext {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9afc202f", new Object[0]);
         }
-        if (TextUtils.isEmpty(traceid)) {
+        if (StringUtils.isEmpty(traceid)) {
             traceid = AppInfo.getInstance().getUtdid() + "_" + (System.currentTimeMillis() / 1000) + "_" + Build.BRAND;
         }
         return traceid;

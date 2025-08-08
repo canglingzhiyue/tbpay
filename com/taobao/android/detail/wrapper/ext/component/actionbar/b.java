@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.support.v7.taobao.TBActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -503,7 +503,7 @@ public class b extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
             this.g.setTabSelectedColor(a5);
             this.g.setTabUnSelectedColor(a6);
             this.g.setActionBarBackgroundColor(a7);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             com.taobao.phenix.intf.b.h().a(a3).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.android.detail.wrapper.ext.component.actionbar.b.2
@@ -617,9 +617,9 @@ public class b extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
                 while (it.hasNext()) {
                     ehf next = it.next();
                     if (next != null) {
-                        if (!TextUtils.isEmpty(next.d)) {
+                        if (!StringUtils.isEmpty(next.d)) {
                             taoDetailActionBarV2.addTabWithImage(next.d, next.events);
-                        } else if (!TextUtils.isEmpty(next.c)) {
+                        } else if (!StringUtils.isEmpty(next.c)) {
                             taoDetailActionBarV2.addTabWithText(next.c, next.events);
                         }
                     }
@@ -708,7 +708,7 @@ public class b extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("234c0a93", new Object[]{this, c0438b});
         }
-        if (c0438b == null || TextUtils.isEmpty(c0438b.c()) || TextUtils.isEmpty(c0438b.b())) {
+        if (c0438b == null || StringUtils.isEmpty(c0438b.c()) || StringUtils.isEmpty(c0438b.b())) {
             return null;
         }
         int a2 = c0438b.a();
@@ -820,10 +820,10 @@ public class b extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         }
         TextView textView = (TextView) view.findViewById(R.id.if_action_bar_search_icon);
         TextView textView2 = (TextView) this.j.findViewById(R.id.if_action_bar_search_text);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             textView.setText(str4);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             textView2.setText(str);
         }
         textView2.setContentDescription(str + "搜索文本栏");
@@ -861,7 +861,7 @@ public class b extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{this, str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("utParams", str);
         }
         if (!(this.f9568a instanceof DetailCoreActivity)) {
@@ -909,13 +909,13 @@ public class b extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         com.taobao.android.detail.core.detail.kit.utils.d.a(this.f9568a, this.c, tIconFontTextView, eheVar.events);
         if (eheVar.component != null && eheVar.component.mapping != null && eheVar.component.mapping.containsKey("accessHint")) {
             String string = eheVar.component.mapping.getString("accessHint");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 tIconFontTextView.setContentDescription(string);
             }
         }
         if (eheVar.dmComponent != null && eheVar.dmComponent.getFields() != null && eheVar.dmComponent.getFields().getJSONObject("payload") != null && eheVar.dmComponent.getFields().getJSONObject("payload").containsKey("accessHint")) {
             String string2 = eheVar.dmComponent.getFields().getJSONObject("payload").getString("accessHint");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 tIconFontTextView.setContentDescription(string2);
             }
         }

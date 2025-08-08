@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.compute;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -113,7 +113,7 @@ public class ServiceListener {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4b771549", new Object[]{this, str, str2, list, list2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || list == null || list2 == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || list == null || list2 == null) {
             return false;
         }
         try {
@@ -129,7 +129,7 @@ public class ServiceListener {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c9e0bb4c", new Object[]{this, str, str2, map, map2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || map == null || map2 == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || map == null || map2 == null) {
             return false;
         }
         try {
@@ -154,7 +154,7 @@ public class ServiceListener {
         }
         Map map = null;
         try {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 try {
                     map = (Map) JSON.parse(str3);
                 } catch (Throwable unused) {

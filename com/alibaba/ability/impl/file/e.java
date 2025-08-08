@@ -1,6 +1,6 @@
 package com.alibaba.ability.impl.file;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.security.MessageDigest;
 import java.util.Locale;
@@ -26,7 +26,7 @@ public final class e {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, text});
         }
         q.d(text, "text");
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return null;
         }
         MessageDigest messageDigest = null;

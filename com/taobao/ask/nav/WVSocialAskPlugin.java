@@ -136,7 +136,7 @@ public class WVSocialAskPlugin extends android.taobao.windvane.jsbridge.e {
             android.net.Uri r11 = (android.net.Uri) r11
             com.taobao.social.sdk.jsbridge.a.registerListener(r2, r12)
             if (r11 == 0) goto Le9
-            boolean r12 = android.text.TextUtils.isEmpty(r6)
+            boolean r12 = android.text.StringUtils.isEmpty(r6)
             if (r12 != 0) goto Ldf
             java.lang.String r12 = "question"
             boolean r12 = r12.equals(r5)

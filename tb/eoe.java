@@ -11,7 +11,7 @@ import android.os.IBinder;
 import android.os.PowerManager;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -201,7 +201,7 @@ public class eoe {
         } else {
             com.taobao.adaemon.e.b("APower", "start dumpAll", new Object[0]);
             ezb.b bF_ = this.f27489a.bF_();
-            if (bF_ == null || TextUtils.isEmpty(bF_.d)) {
+            if (bF_ == null || StringUtils.isEmpty(bF_.d)) {
                 return;
             }
             bF_.a();

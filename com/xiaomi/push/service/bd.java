@@ -1,6 +1,6 @@
 package com.xiaomi.push.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.xiaomi.push.du;
 import com.xiaomi.push.em;
@@ -29,7 +29,7 @@ public class bd {
 
     private void a(he heVar) {
         String c = heVar.c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             String[] split = c.split(";");
             com.xiaomi.push.co a2 = com.xiaomi.push.cs.a().a(gr.a(), false);
             if (a2 == null || split.length <= 0) {
@@ -45,7 +45,7 @@ public class bd {
         bf.b a2;
         String l = hhVar.l();
         String k = hhVar.k();
-        if (TextUtils.isEmpty(l) || TextUtils.isEmpty(k) || (a2 = bf.a().a(k, l)) == null) {
+        if (StringUtils.isEmpty(l) || StringUtils.isEmpty(k) || (a2 = bf.a().a(k, l)) == null) {
             return;
         }
         hv.a(this.f24660a, a2.f957a, hv.a(hhVar.m2007a()), true, true, System.currentTimeMillis());
@@ -55,7 +55,7 @@ public class bd {
         bf.b a2;
         String g = gfVar.g();
         String num = Integer.toString(gfVar.a());
-        if (TextUtils.isEmpty(g) || TextUtils.isEmpty(num) || (a2 = bf.a().a(num, g)) == null) {
+        if (StringUtils.isEmpty(g) || StringUtils.isEmpty(num) || (a2 = bf.a().a(num, g)) == null) {
             return;
         }
         hv.a(this.f24660a, a2.f957a, gfVar.c(), true, true, System.currentTimeMillis());
@@ -77,7 +77,7 @@ public class bd {
             b(hhVar);
         }
         String k = hhVar.k();
-        if (TextUtils.isEmpty(k)) {
+        if (StringUtils.isEmpty(k)) {
             k = "1";
             hhVar.l(k);
         }
@@ -152,7 +152,7 @@ public class bd {
             } else if ("CONF".equals(gfVar.m1969b())) {
                 bw.a().a(em.b.a(gfVar.m1966a()));
                 return;
-            } else if (TextUtils.equals("U", gfVar.m1969b())) {
+            } else if (StringUtils.equals("U", gfVar.m1969b())) {
                 em.k a4 = em.k.a(gfVar.m1966a());
                 du.a(this.f24660a).a(a4.mo1910a(), a4.mo1912b(), new Date(a4.mo1910a()), new Date(a4.mo1912b()), a4.c() << 10, a4.e());
                 gf gfVar2 = new gf();
@@ -162,7 +162,7 @@ public class bd {
                 XMPushService xMPushService = this.f24660a;
                 xMPushService.a(new bu(xMPushService, gfVar2));
                 return;
-            } else if (!TextUtils.equals("P", gfVar.m1969b())) {
+            } else if (!StringUtils.equals("P", gfVar.m1969b())) {
                 return;
             } else {
                 em.i a5 = em.i.a(gfVar.m1966a());

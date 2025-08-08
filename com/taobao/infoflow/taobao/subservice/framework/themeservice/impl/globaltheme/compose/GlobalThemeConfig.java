@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.framework.themeservice.impl.globaltheme.compose;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbtheme.kit.ThemeData;
 import java.io.Serializable;
@@ -29,7 +29,7 @@ public class GlobalThemeConfig implements Serializable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             GlobalThemeConfig globalThemeConfig = (GlobalThemeConfig) obj;
-            if (TextUtils.equals(this.separatorImageUrl, globalThemeConfig.separatorImageUrl) && TextUtils.equals(this.maskBackgroundColor, globalThemeConfig.maskBackgroundColor) && TextUtils.equals(this.bgEndSection, globalThemeConfig.bgEndSection) && equals(this.themeData, globalThemeConfig.themeData)) {
+            if (StringUtils.equals(this.separatorImageUrl, globalThemeConfig.separatorImageUrl) && StringUtils.equals(this.maskBackgroundColor, globalThemeConfig.maskBackgroundColor) && StringUtils.equals(this.bgEndSection, globalThemeConfig.bgEndSection) && equals(this.themeData, globalThemeConfig.themeData)) {
                 return true;
             }
         }

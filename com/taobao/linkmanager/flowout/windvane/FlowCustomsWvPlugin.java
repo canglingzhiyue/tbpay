@@ -3,7 +3,7 @@ package com.taobao.linkmanager.flowout.windvane;
 import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.linkmanager.afc.utils.TFCCommonUtils;
 import com.taobao.linkmanager.flowout.c;
@@ -29,7 +29,7 @@ public class FlowCustomsWvPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !str.equals(ACTION_OPEN_URL)) {
+        if (StringUtils.isEmpty(str) || !str.equals(ACTION_OPEN_URL)) {
             return false;
         }
         try {
@@ -38,7 +38,7 @@ public class FlowCustomsWvPlugin extends e {
             String optString2 = jSONObject.optString("failMode");
             String optString3 = jSONObject.optString("url");
             String optString4 = jSONObject.optString(c.DEGTAGE_H5URL);
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 optString = jSONObject.optString(c.VISA);
             }
             HashMap hashMap = new HashMap(16);

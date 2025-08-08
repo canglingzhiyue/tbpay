@@ -1,6 +1,6 @@
 package com.taobao.themis.open.ability.file;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONArray;
@@ -224,7 +224,7 @@ public final class FSManagerBridge implements com.taobao.themis.kernel.ability.b
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String str2 = str;
-        return TextUtils.isEmpty(str2) ? str : (TextUtils.equals(str2, "ucs2") || TextUtils.equals(str2, "ucs-2") || TextUtils.equals(str2, "utf16le") || TextUtils.equals(str2, "utf-16le")) ? "UTF-16LE" : str;
+        return StringUtils.isEmpty(str2) ? str : (StringUtils.equals(str2, "ucs2") || StringUtils.equals(str2, "ucs-2") || StringUtils.equals(str2, "utf16le") || StringUtils.equals(str2, "utf-16le")) ? "UTF-16LE" : str;
     }
 
     private final void c(f fVar, JSONObject jSONObject, BridgeCallback bridgeCallback) {
@@ -332,7 +332,7 @@ public final class FSManagerBridge implements com.taobao.themis.kernel.ability.b
         tll a2 = tlk.a(file2.getPath());
         q.b(a2, "SafeLibCore.stat(current.path)");
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(substring)) {
+        if (StringUtils.isEmpty(substring)) {
             if (file2.isDirectory()) {
                 jSONObject.put((JSONObject) "path", "/");
             }

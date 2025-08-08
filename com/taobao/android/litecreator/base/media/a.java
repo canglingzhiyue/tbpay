@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.base.media;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -35,7 +35,7 @@ public class a {
         StringBuilder sb = new StringBuilder();
         sb.append(str);
         sb.append(":");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = str3;
         }
         sb.append(str2);

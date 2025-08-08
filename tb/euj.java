@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.q;
 import com.alibaba.fastjson.JSONObject;
@@ -33,7 +33,7 @@ public class euj extends q {
         if (i != null && (children = i.getChildren()) != null && children.size() > 0) {
             for (IDMComponent iDMComponent : children) {
                 JSONObject fields = iDMComponent.getFields();
-                if (fields != null && TextUtils.equals(fields.getString("imageType"), "apng")) {
+                if (fields != null && StringUtils.equals(fields.getString("imageType"), "apng")) {
                     break;
                 }
             }

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.text.SimpleDateFormat;
@@ -51,15 +51,15 @@ public class ClientIdHelper {
             java.lang.Object r8 = r8.getSystemService(r6)     // Catch: java.lang.Throwable -> L58
             android.telephony.TelephonyManager r8 = (android.telephony.TelephonyManager) r8     // Catch: java.lang.Throwable -> L58
             java.lang.String r4 = com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY.proxy_getSubscriberId(r8)     // Catch: java.lang.Throwable -> L58
-            boolean r6 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L58
+            boolean r6 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L58
             if (r6 == 0) goto L58
             java.lang.String r1 = com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY.proxy_getDeviceId(r8)     // Catch: java.lang.Throwable -> L58
-            boolean r8 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L58
+            boolean r8 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L58
             if (r8 != 0) goto L58
             com.alipay.mobile.common.logging.util.LoggingSPCache r8 = com.alipay.mobile.common.logging.util.LoggingSPCache.getInstance()     // Catch: java.lang.Throwable -> L58
             r8.putStringApply(r5, r1)     // Catch: java.lang.Throwable -> L58
         L58:
-            boolean r8 = android.text.TextUtils.isEmpty(r0)
+            boolean r8 = android.text.StringUtils.isEmpty(r0)
             if (r8 == 0) goto L60
             r8 = 0
             goto L66
@@ -161,7 +161,7 @@ public class ClientIdHelper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         byte[] bytes = str.getBytes();

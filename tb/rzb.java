@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.login.e;
 import com.taobao.tao.remotebusiness.login.h;
@@ -33,7 +33,7 @@ public class rzb implements rzj, rzk {
             return (String) ipChange.ipc$dispatch("352515cf", new Object[]{this, cVar});
         }
         try {
-            if (TextUtils.equals(cVar.h.i(), "none")) {
+            if (StringUtils.equals(cVar.h.i(), "none")) {
                 return FilterResult.CONTINUE;
             }
             Mtop mtop = cVar.j;

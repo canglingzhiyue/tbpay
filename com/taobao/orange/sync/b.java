@@ -1,6 +1,6 @@
 package com.taobao.orange.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.util.OLog;
 import tb.kge;
@@ -65,12 +65,12 @@ public abstract class b<T> extends c<T> {
                 newInstance.e();
                 i2++;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.d = -2;
                 this.e = "content is empty";
                 OLog.e("CdnRequest", "syncRequest fail", "code", Integer.valueOf(this.d), "msg", this.e);
                 return null;
-            } else if (!TextUtils.isEmpty(this.b) && !this.b.equals(com.taobao.orange.util.c.a(str))) {
+            } else if (!StringUtils.isEmpty(this.b) && !this.b.equals(com.taobao.orange.util.c.a(str))) {
                 this.d = -3;
                 this.e = "content is broken";
                 OLog.e("CdnRequest", "syncRequest fail", "code", Integer.valueOf(this.d), "msg", this.e);

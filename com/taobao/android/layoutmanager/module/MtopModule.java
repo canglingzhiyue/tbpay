@@ -1,6 +1,6 @@
 package com.taobao.android.layoutmanager.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -241,10 +241,10 @@ public class MtopModule {
             boolean booleanValue2 = jSONObject4.getBooleanValue("prefetch");
             z = booleanValue;
             int a2 = oec.a(jSONObject4.get("prefetchTimeout"), 10000);
-            if (TextUtils.isEmpty(string4)) {
+            if (StringUtils.isEmpty(string4)) {
                 string4 = jSONObject4.getString("bizId");
             }
-            if (TextUtils.isEmpty(string5)) {
+            if (StringUtils.isEmpty(string5)) {
                 string5 = jSONObject4.getString(KEY_MTOP_BIZ_TOPIC);
             }
             i = a2;
@@ -520,10 +520,10 @@ public class MtopModule {
         sb.append(" pageIndex:");
         sb.append(i5);
         ogg.a("mtop", sb.toString());
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             remoteBusiness.mo1309setBizId(str6);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             remoteBusiness.mo1310setBizTopic(str3);
         }
         if (i5 > 0) {
@@ -768,13 +768,13 @@ public class MtopModule {
                 }
                 List<String> list2 = mtopResponse.getHeaderFields().get(HttpConstant.EAGLE_EYE_ID_2);
                 str = (list2 == null || list2.isEmpty()) ? null : list2.get(0);
-                if (TextUtils.isEmpty(str) && (list = mtopResponse.getHeaderFields().get("eagleeye-traceid")) != null && !list.isEmpty()) {
+                if (StringUtils.isEmpty(str) && (list = mtopResponse.getHeaderFields().get("eagleeye-traceid")) != null && !list.isEmpty()) {
                     str = list.get(0);
                 }
             } else {
                 str = null;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = mtopStat.eagleEyeTraceId;
             }
             map.put("traceId", mtopStat.fullTraceId);
@@ -820,7 +820,7 @@ public class MtopModule {
         if (map != null) {
             str2 = map.get("entityId");
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             int i = mtopRequestId;
             mtopRequestId = i + 1;
             str2 = String.valueOf(i);

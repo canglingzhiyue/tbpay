@@ -2,7 +2,7 @@ package com.taobao.search.searchdoor;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
 import tb.kge;
@@ -43,10 +43,10 @@ public final class c implements com.taobao.android.nav.e {
             return true;
         }
         String queryParameter = data.getQueryParameter(noa.KEY_SEARCHDOOR_LAUNCH_MODE);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             queryParameter = data.getQueryParameter("g_launchMode");
         }
-        if (TextUtils.equals(queryParameter, noa.VALUE_SEARCHDOOR_LAUNCH_MODE_NEW_TASK)) {
+        if (StringUtils.equals(queryParameter, noa.VALUE_SEARCHDOOR_LAUNCH_MODE_NEW_TASK)) {
             intent.addCategory(k.MULTIPLE_SEARCHDOOR_CATEGORY);
         }
         return true;

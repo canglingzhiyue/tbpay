@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.statist.StatisticData;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -55,7 +55,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("75285d6f", new Object[]{str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             i.a("MtopStatsUtils", "intentFlag为空");
         } else {
             a aVar = f9941a.get(str);
@@ -71,7 +71,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7926ce90", new Object[]{str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             i.a("MtopStatsUtils", "intentFlag为空");
         } else {
             a aVar = f9941a.get(str);
@@ -100,7 +100,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123b0d2", new Object[]{str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             i.a("MtopStatsUtils", "intentFlag为空");
         } else {
             a aVar = f9941a.get(str);
@@ -116,7 +116,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7d253fb1", new Object[]{str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             i.a("MtopStatsUtils", "intentFlag为空");
         } else {
             a aVar = f9941a.get(str);
@@ -133,7 +133,7 @@ public class o {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("1fc98086", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i.a("MtopStatsUtils", "intentFlag为空");
             return null;
         }
@@ -144,7 +144,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f9941a.remove(str);
         }
@@ -154,7 +154,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ea322bd3", new Object[]{str, mtopStatistics});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             i.a("MtopStatsUtils", "intentFlag为空");
         } else {
             a aVar = f9941a.get(str);
@@ -171,7 +171,7 @@ public class o {
         if (ipChange instanceof IpChange) {
             return (MtopStatistics) ipChange.ipc$dispatch("f5b4e283", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         a aVar = f9941a.get(str);
@@ -186,7 +186,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a aVar = f9941a.get(str);
             if (aVar == null) {

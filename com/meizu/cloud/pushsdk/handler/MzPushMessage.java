@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.handler;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.f.g.e;
 import java.io.Serializable;
@@ -28,10 +28,10 @@ public class MzPushMessage implements Serializable {
     }
 
     private static String selfDefineContentString(String str, Map<String, String> map) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (map != null) {
                 str = map.get("sk");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = e.a((Map) map).toString();
                 }
             } else {

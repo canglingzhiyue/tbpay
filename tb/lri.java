@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
 import com.taobao.infoflow.protocol.model.datamodel.response.IContainerDataModel;
@@ -60,7 +60,7 @@ public class lri {
             return false;
         }
         String sectionBizCode = baseSectionModel.getSectionBizCode();
-        if (TextUtils.isEmpty(sectionBizCode)) {
+        if (StringUtils.isEmpty(sectionBizCode)) {
             ldf.d("UpdateDataHandler", "updateData sectionBizCode is empty");
             return false;
         }

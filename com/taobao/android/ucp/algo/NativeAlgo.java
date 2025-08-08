@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -104,7 +104,7 @@ public class NativeAlgo {
             return false;
         }
         String b = a.b(j.b.K_NATIVE_ALGO_NAMES, "[\"cml_cc_ucp2_home_pop_worker\"]");
-        if (!TextUtils.isEmpty(b) && (parseArray = JSON.parseArray(b)) != null) {
+        if (!StringUtils.isEmpty(b) && (parseArray = JSON.parseArray(b)) != null) {
             if (parseArray.contains(str)) {
                 return true;
             }
@@ -190,7 +190,7 @@ public class NativeAlgo {
                     } else {
                         JSONObject access$1002 = NativeAlgo.access$100(map);
                         String string = jSONObject.getString("msg");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             access$1002.put("error", (Object) g.a("msg", string));
                         }
                         dVar.a("NativeAlgo", "5002", "模型执行失败了", access$1002);
@@ -217,7 +217,7 @@ public class NativeAlgo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ce2f8404", new Object[]{str});
-        } else if (!innerIsEnableNativeAlgo() || TextUtils.isEmpty(str) || TextUtils.equals(getLocalUrl(), str)) {
+        } else if (!innerIsEnableNativeAlgo() || StringUtils.isEmpty(str) || StringUtils.equals(getLocalUrl(), str)) {
         } else {
             if (downloadHandler == null) {
                 synchronized (NativeAlgo.class) {
@@ -278,7 +278,7 @@ public class NativeAlgo {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("614575f5", new Object[]{bArr, str});
         }
-        if (bArr == null || TextUtils.isEmpty(str)) {
+        if (bArr == null || StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap hashMap = new HashMap();

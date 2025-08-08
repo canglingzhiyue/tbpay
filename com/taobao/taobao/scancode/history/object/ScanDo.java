@@ -1,6 +1,6 @@
 package com.taobao.taobao.scancode.history.object;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.taobao.taobao.R;
 import com.taobao.taobao.scancode.v2.result.MaResult;
@@ -109,7 +109,7 @@ public class ScanDo implements Serializable, IMTOPDataObject {
     }
 
     public String getLocalizationTitle() {
-        if (TextUtils.isEmpty(this.title)) {
+        if (StringUtils.isEmpty(this.title)) {
             return "";
         }
         if (this.title.equals("淘宝网网址")) {

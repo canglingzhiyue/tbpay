@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
@@ -585,7 +585,7 @@ public class f implements ovm {
         g.a("MultiTabHelper", "外链拉起: " + uri);
         String queryParameter = uri.getQueryParameter("categoryTabId");
         this.w = dVar;
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             e();
             a.d dVar2 = this.w;
             if (dVar2 == null) {
@@ -618,7 +618,7 @@ public class f implements ovm {
             return null;
         }
         HashMap hashMap = new HashMap(1);
-        if (TextUtils.equals("MultiTabSelect", str) && !this.r) {
+        if (StringUtils.equals("MultiTabSelect", str) && !this.r) {
             z = false;
         }
         com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.a(jSONObject2, z);
@@ -635,13 +635,13 @@ public class f implements ovm {
         ArrayList arrayList = new ArrayList();
         if (z) {
             String a2 = this.f.a(this.f20638a, false);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 arrayList.add(a2);
             }
         }
         if (z2) {
             String a3 = this.f.a(this.f20638a, true);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 arrayList.add(a3);
             }
         }
@@ -676,7 +676,7 @@ public class f implements ovm {
         } else if (!u) {
         } else {
             this.t = true;
-            if (TextUtils.isEmpty(this.s) || !x()) {
+            if (StringUtils.isEmpty(this.s) || !x()) {
                 return;
             }
             g.a("MultiTabHelper", "外链拉起补偿: " + this.s);
@@ -786,7 +786,7 @@ public class f implements ovm {
             return;
         }
         g.a("MultiTabHelper", "commitMessiah leaveTabId: " + this.o + ", enterTabId: " + str);
-        if (TextUtils.isEmpty(this.o)) {
+        if (StringUtils.isEmpty(this.o)) {
             return;
         }
         HashMap hashMap = new HashMap(2);
@@ -912,7 +912,7 @@ public class f implements ovm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9c90002f", new Object[]{this, tmvVar, str, str2});
-        } else if (TextUtils.equals(com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE, str)) {
+        } else if (StringUtils.equals(com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE, str)) {
             a(tmvVar, str2);
         } else {
             b(tmvVar, str, str2);

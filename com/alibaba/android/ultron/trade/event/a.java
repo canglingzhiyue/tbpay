@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.trade.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.trade.event.model.AdjustWithPopupWindowEventModel;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -86,7 +86,7 @@ public class a extends d {
             return true;
         }
         String string = jSONObject.getString(KEY_ADJUSt_BEFORE_POPUP);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return Boolean.parseBoolean(string);
         }
         return true;

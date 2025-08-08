@@ -12,7 +12,7 @@ import android.os.Build;
 import android.os.Process;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
 import com.alipay.android.msp.framework.taskscheduler.TaskHelper;
@@ -76,7 +76,7 @@ public class DeviceInfo {
         } catch (Exception e2) {
             LogUtil.printExceptionStackTrace(e2);
         }
-        if (TextUtils.isEmpty(this.f4872a)) {
+        if (StringUtils.isEmpty(this.f4872a)) {
             this.f4872a = "10.0.0";
         }
         a(context);
@@ -94,7 +94,7 @@ public class DeviceInfo {
                 return;
             }
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
-            if (telephonyManager != null && Build.VERSION.SDK_INT < 29 && ActivityCompat.checkSelfPermission(context, "android.permission.READ_PHONE_STATE") == 0 && !TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_imei_10556"), nom.VALUE_YES)) {
+            if (telephonyManager != null && Build.VERSION.SDK_INT < 29 && ActivityCompat.checkSelfPermission(context, "android.permission.READ_PHONE_STATE") == 0 && !StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_imei_10556"), nom.VALUE_YES)) {
                 b(ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY.proxy_getDeviceId(telephonyManager));
             }
             boolean isSimImsi = isSimImsi();
@@ -105,7 +105,7 @@ public class DeviceInfo {
                 a("000000000000000");
             } else if (telephonyManager == null || Build.VERSION.SDK_INT >= 29 || ActivityCompat.checkSelfPermission(context, "android.permission.READ_PHONE_STATE") != 0) {
             } else {
-                if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_imsi_10556"), nom.VALUE_YES)) {
+                if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_imsi_10556"), nom.VALUE_YES)) {
                     a("000000000000000");
                 } else {
                     a(ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY.proxy_getSubscriberId(telephonyManager));
@@ -129,13 +129,13 @@ public class DeviceInfo {
                 LogUtil.record(4, "DeviceInfo:setMacAddress", "return context: ".concat(String.valueOf(context)));
                 return "02:00:00:00:00:00";
             } else if (Build.VERSION.SDK_INT >= 23) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str = str2;
                 }
                 str.replaceAll(";", ":");
                 return "02:00:00:00:00:00";
-            } else if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_mac_addr_10556"), nom.VALUE_YES)) {
-                if (!TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_mac_addr_10556"), nom.VALUE_YES)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str = str2;
                 }
                 str.replaceAll(";", ":");
@@ -148,7 +148,7 @@ public class DeviceInfo {
                 if (wifiManager != null) {
                     str2 = wifiManager.getConnectionInfo().getMacAddress();
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str2 = str2.toLowerCase();
                     char[] charArray = str2.toCharArray();
                     int length = charArray.length;
@@ -167,7 +167,7 @@ public class DeviceInfo {
                     }
                 }
                 String str3 = z ? "00:00:00:00" : str2;
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = str;
                 }
                 return str3.replaceAll(";", ":");
@@ -175,12 +175,12 @@ public class DeviceInfo {
         } catch (Throwable th) {
             try {
                 LogUtil.printExceptionStackTrace(th);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str = str2;
                 }
                 return str.replaceAll(";", ":");
             } finally {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str = str2;
                 }
                 str.replaceAll(";", ":");
@@ -193,7 +193,7 @@ public class DeviceInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bee4406f", new Object[]{this, context});
         }
-        if (TextUtils.isEmpty(this.b) && !PhoneCashierMspEngine.getMspWallet().isBackgroundRunning(context)) {
+        if (StringUtils.isEmpty(this.b) && !PhoneCashierMspEngine.getMspWallet().isBackgroundRunning(context)) {
             TaskHelper.execute(new Runnable() { // from class: com.alipay.android.msp.framework.sys.DeviceInfo.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -208,7 +208,7 @@ public class DeviceInfo {
                 }
             });
         }
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = "000000000000000";
         }
         return this.b;
@@ -219,7 +219,7 @@ public class DeviceInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("95cf663d", new Object[]{this, context});
         }
-        if (TextUtils.isEmpty(this.c) && Build.VERSION.SDK_INT < 29 && !PhoneCashierMspEngine.getMspWallet().isBackgroundRunning(context)) {
+        if (StringUtils.isEmpty(this.c) && Build.VERSION.SDK_INT < 29 && !PhoneCashierMspEngine.getMspWallet().isBackgroundRunning(context)) {
             TaskHelper.execute(new Runnable() { // from class: com.alipay.android.msp.framework.sys.DeviceInfo.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -234,7 +234,7 @@ public class DeviceInfo {
                 }
             });
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = "000000000000000";
         }
         return this.c;
@@ -249,7 +249,7 @@ public class DeviceInfo {
         if (str != null) {
             str = (str + "000000000000000").substring(0, 15);
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             return;
         }
         this.b = str;
@@ -271,7 +271,7 @@ public class DeviceInfo {
             String str2 = new String(bytes);
             str = (str2 + "000000000000000").substring(0, 15);
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             return;
         }
         this.c = str;
@@ -310,7 +310,7 @@ public class DeviceInfo {
         if (context == null || PhoneCashierMspEngine.getMspWallet().isBackgroundRunning(context)) {
             LogUtil.record(4, "DeviceInfo:getWifiSSID", "getWifiSSID null by ctx + ".concat(String.valueOf(context)));
             return "00";
-        } else if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_ssid_10556"), nom.VALUE_YES)) {
+        } else if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_ssid_10556"), nom.VALUE_YES)) {
             return "00";
         } else {
             try {
@@ -334,12 +334,12 @@ public class DeviceInfo {
 
     public static boolean isInAlipayWallet(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("79181d87", new Object[]{str})).booleanValue() : TextUtils.equals("com.eg.android.AlipayGphone", str) || TextUtils.equals("com.eg.android.AlipayGphoneRC", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("79181d87", new Object[]{str})).booleanValue() : StringUtils.equals("com.eg.android.AlipayGphone", str) || StringUtils.equals("com.eg.android.AlipayGphoneRC", str);
     }
 
     public static boolean isInTaobao(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d4e760d2", new Object[]{str})).booleanValue() : TextUtils.equals("com.taobao.taobao", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d4e760d2", new Object[]{str})).booleanValue() : StringUtils.equals("com.taobao.taobao", str);
     }
 
     public static boolean hasAlipayWallet(Context context) {
@@ -376,7 +376,7 @@ public class DeviceInfo {
                 return false;
             }
             String a2 = a(b(context));
-            if (a2 != null && !TextUtils.equals(a2, "b6cbad6cbd5ed0d209afc69ad3b7a617efaae9b3c47eabe0be42d924936fa78c8001b1fd74b079e5ff9690061dacfa4768e981a526b9ca77156ca36251cf2f906d105481374998a7e6e6e18f75ca98b8ed2eaf86ff402c874cca0a263053f22237858206867d210020daa38c48b20cc9dfd82b44a51aeb5db459b22794e2d649")) {
+            if (a2 != null && !StringUtils.equals(a2, "b6cbad6cbd5ed0d209afc69ad3b7a617efaae9b3c47eabe0be42d924936fa78c8001b1fd74b079e5ff9690061dacfa4768e981a526b9ca77156ca36251cf2f906d105481374998a7e6e6e18f75ca98b8ed2eaf86ff402c874cca0a263053f22237858206867d210020daa38c48b20cc9dfd82b44a51aeb5db459b22794e2d649")) {
                 return false;
             }
             return packageInfo.versionCode >= 96;
@@ -456,7 +456,7 @@ public class DeviceInfo {
                 ActivityManager activityManager = (ActivityManager) context.getSystemService("activity");
                 if (activityManager != null) {
                     for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : activityManager.getRunningAppProcesses()) {
-                        if (TextUtils.equals(str, String.valueOf(runningAppProcessInfo.pid))) {
+                        if (StringUtils.equals(str, String.valueOf(runningAppProcessInfo.pid))) {
                             return true;
                         }
                     }
@@ -467,7 +467,7 @@ public class DeviceInfo {
                     for (File file : listFiles) {
                         if (file.isDirectory()) {
                             try {
-                                if (TextUtils.equals(str, String.valueOf(Integer.parseInt(file.getName())))) {
+                                if (StringUtils.equals(str, String.valueOf(Integer.parseInt(file.getName())))) {
                                     return true;
                                 }
                             } catch (NumberFormatException e2) {
@@ -486,12 +486,12 @@ public class DeviceInfo {
 
     public static String getOSVersion() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("3514bdfb", new Object[0]) : TextUtils.isEmpty(Build.VERSION.RELEASE) ? "unknow" : Build.VERSION.RELEASE;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("3514bdfb", new Object[0]) : StringUtils.isEmpty(Build.VERSION.RELEASE) ? "unknow" : Build.VERSION.RELEASE;
     }
 
     public static String getModel() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("a78b0366", new Object[0]) : TextUtils.isEmpty(Build.MODEL) ? "unknow" : Build.MODEL.replace(";", " ");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("a78b0366", new Object[0]) : StringUtils.isEmpty(Build.MODEL) ? "unknow" : Build.MODEL.replace(";", " ");
     }
 
     public static String getRoot() {
@@ -505,7 +505,7 @@ public class DeviceInfo {
                 String str = strArr[i] + "su";
                 if (new File(str).exists()) {
                     String a2 = a(new String[]{RVStartParams.KEY_LANDSCAPE_SHORT, "-l", str});
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         if (a2.indexOf("root") != a2.lastIndexOf("root")) {
                             return "1";
                         }
@@ -619,7 +619,7 @@ public class DeviceInfo {
             try {
                 TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
                 if (telephonyManager != null && ActivityCompat.checkSelfPermission(context, "android.permission.READ_PHONE_STATE") == 0) {
-                    if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_imsi_10556"), nom.VALUE_YES)) {
+                    if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_imsi_10556"), nom.VALUE_YES)) {
                         return "-1";
                     }
                     str = ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY.proxy_getSubscriberId(telephonyManager);

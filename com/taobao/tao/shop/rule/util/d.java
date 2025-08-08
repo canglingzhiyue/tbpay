@@ -1,6 +1,6 @@
 package com.taobao.tao.shop.rule.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.data.TBBundleUrlRuleInfo;
 import tb.kge;
@@ -18,7 +18,7 @@ public final class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
             String[] split = str2.trim().split("\\.");
             TBBundleUrlRuleInfo a2 = com.taobao.tao.shop.rule.b.a(str);
             if (a2 == null) {
@@ -42,7 +42,7 @@ public final class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             String[] split = str.trim().split("\\.");
             String[] split2 = str2.trim().split("\\.");
             if (split.length != 2 && split2.length != 2) {

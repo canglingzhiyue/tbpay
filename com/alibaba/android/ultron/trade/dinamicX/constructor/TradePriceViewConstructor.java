@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.trade.dinamicX.constructor;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.RelativeSizeSpan;
 import android.util.AttributeSet;
 import android.view.View;
@@ -102,7 +102,7 @@ public class TradePriceViewConstructor extends DTextViewConstructor {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("2a578559", new Object[]{this, obj, new Float(f)})).floatValue();
         }
-        if (obj != null && !TextUtils.isEmpty(obj.toString())) {
+        if (obj != null && !StringUtils.isEmpty(obj.toString())) {
             try {
                 return Float.valueOf(obj.toString()).floatValue();
             } catch (Throwable unused) {
@@ -147,7 +147,7 @@ public class TradePriceViewConstructor extends DTextViewConstructor {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e7fcd673", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         char[] charArray = str.toCharArray();

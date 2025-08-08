@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.CT;
@@ -42,7 +42,7 @@ public class kik {
             }
             str3 = sb.toString();
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             TBS.Adv.ctrlClicked(str, CT.Button, str2);
         } else {
             TBS.Adv.ctrlClicked(str, CT.Button, str2, str3.split(","));

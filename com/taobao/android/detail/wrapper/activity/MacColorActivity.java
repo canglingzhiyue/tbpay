@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -82,7 +82,7 @@ public class MacColorActivity extends FragmentActivity {
                     Map map2 = null;
                     for (Map map3 : list) {
                         String str3 = (String) map3.get("pvId");
-                        if (!TextUtils.isEmpty(str3) && str3.contains(str2)) {
+                        if (!StringUtils.isEmpty(str3) && str3.contains(str2)) {
                             map3.put("macVidChanged", "true");
                             map2 = map3;
                         }

@@ -6,7 +6,7 @@ import android.location.LocationManager;
 import android.os.Build;
 import android.os.SystemClock;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.pay.GlobalSdkConstant;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class UserLocation {
         }
         try {
             sEnabled = z;
-            if (!z || PhoneCashierMspEngine.getMspWallet().isBackgroundRunning(context) || TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_location_10556"), nom.VALUE_YES)) {
+            if (!z || PhoneCashierMspEngine.getMspWallet().isBackgroundRunning(context) || StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_location_10556"), nom.VALUE_YES)) {
                 return;
             }
             if (!GlobalSdkConstant.getSdkType()) {

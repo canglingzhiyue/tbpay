@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.rule;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
@@ -101,7 +101,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ouu.b("checkRuleUpdate() - bundleName is empty");
         } else if (oux.a(str2)) {
             ouu.b("checkRuleUpdate() - localVersion is empty");

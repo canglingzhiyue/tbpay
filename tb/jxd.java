@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_uikit.widget.richtext.RichText;
@@ -56,7 +56,7 @@ public class jxd extends a {
             for (a aVar : this.g) {
                 sb.append(aVar.m());
             }
-        } else if (!TextUtils.isEmpty(j())) {
+        } else if (!StringUtils.isEmpty(j())) {
             if (com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_break_all.equals(d())) {
                 CharSequence j = j();
                 new StringBuilder();

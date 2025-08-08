@@ -1,6 +1,6 @@
 package com.taobao.android.change.app.icon.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.change.app.icon.core.Constrant;
 import tb.kge;
@@ -18,7 +18,7 @@ public class ChangeAppIconJSModel {
 
     public boolean isBackgroud() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fbaef6d", new Object[]{this})).booleanValue() : TextUtils.equals(this.changeType, Constrant.ChangeType.BG);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fbaef6d", new Object[]{this})).booleanValue() : StringUtils.equals(this.changeType, Constrant.ChangeType.BG);
     }
 
     public String toString() {

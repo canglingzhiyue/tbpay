@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -141,7 +141,7 @@ public class hji extends PagerAdapter implements PagerSlidingTabStripAType.b {
             TextView textView = (TextView) inflate.findViewById(R.id.taolive_goods_strip_text);
             textView.setText(itemCategory.name);
             AliUrlImageView aliUrlImageView = (AliUrlImageView) inflate.findViewById(R.id.taolive_goods_strip_image_icon);
-            if (!TextUtils.isEmpty(itemCategory.iconUrl)) {
+            if (!StringUtils.isEmpty(itemCategory.iconUrl)) {
                 aliUrlImageView.setImageUrl(itemCategory.iconUrl);
                 aliUrlImageView.setVisibility(0);
                 if (a.a(this.c)) {
@@ -161,11 +161,11 @@ public class hji extends PagerAdapter implements PagerSlidingTabStripAType.b {
             aliUrlImageView3.setScaleType(ImageView.ScaleType.FIT_START);
             hiq.a(this.b, aliUrlImageView2, 14.0f);
             hiq.a(this.b, aliUrlImageView3, 14.0f);
-            if (!TextUtils.isEmpty(itemCategory.selectedPic)) {
+            if (!StringUtils.isEmpty(itemCategory.selectedPic)) {
                 aliUrlImageView2.setImageUrl(itemCategory.selectedPic);
                 textView.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(itemCategory.unSelectedPic)) {
+            if (!StringUtils.isEmpty(itemCategory.unSelectedPic)) {
                 aliUrlImageView3.setImageUrl(itemCategory.unSelectedPic);
                 textView.setVisibility(8);
             }

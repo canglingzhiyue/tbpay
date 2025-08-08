@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -177,7 +177,7 @@ public class pgh implements PlayerController2.b, PlayerController2.c, PlayerCont
                     } else if (!(obj instanceof LiveItem.TimeMovingPlayInfo)) {
                     } else {
                         LiveItem.TimeMovingPlayInfo timeMovingPlayInfo = (LiveItem.TimeMovingPlayInfo) obj;
-                        if (!TextUtils.isEmpty(timeMovingPlayInfo.itemId)) {
+                        if (!StringUtils.isEmpty(timeMovingPlayInfo.itemId)) {
                             pgh.this.c = timeMovingPlayInfo.itemId;
                         }
                         pgh.a(pgh.this, (List) null);

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.ActionsCreator;
@@ -39,14 +39,14 @@ public class RedoStore extends LocalEventStore {
                 String string = parseObject.getString("loadstyle");
                 if (parseObject.containsKey(MspWebActivity.LOADTXT)) {
                     str = parseObject.getString(MspWebActivity.LOADTXT);
-                    if (!TextUtils.isEmpty(str) && mo545getIView != null) {
-                        if (!TextUtils.equals(string, InvokeActionPlugin.SHOW_LOADING_STYLE_PLAIN)) {
+                    if (!StringUtils.isEmpty(str) && mo545getIView != null) {
+                        if (!StringUtils.equals(string, InvokeActionPlugin.SHOW_LOADING_STYLE_PLAIN)) {
                             mo545getIView.showLoadingView(str);
                         }
                         mo545getIView.showCusLoadingView(str);
                     }
                 } else if (mo545getIView != null) {
-                    if (TextUtils.equals(string, InvokeActionPlugin.SHOW_LOADING_STYLE_PLAIN)) {
+                    if (StringUtils.equals(string, InvokeActionPlugin.SHOW_LOADING_STYLE_PLAIN)) {
                         str = "";
                         mo545getIView.showCusLoadingView(str);
                     } else {

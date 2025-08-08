@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 import android.os.Looper;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -96,7 +96,7 @@ public class e {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     } else if (e.a(e.this) == null) {
                     } else {
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             e.a(e.this).success();
                             return;
                         }
@@ -172,7 +172,7 @@ public class e {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     } else if (e.a(e.this) == null) {
                     } else {
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             e.a(e.this).error();
                             return;
                         }

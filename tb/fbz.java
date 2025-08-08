@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -88,7 +88,7 @@ public class fbz extends b {
             return this.c;
         }
         a aVar = this.b.get(i);
-        return TextUtils.isEmpty(aVar.f27777a) ? this.c : aVar.f27777a;
+        return StringUtils.isEmpty(aVar.f27777a) ? this.c : aVar.f27777a;
     }
 
     public String b(int i) {
@@ -101,7 +101,7 @@ public class fbz extends b {
             return null;
         }
         a aVar = this.b.get(i);
-        if (!TextUtils.isEmpty(aVar.b)) {
+        if (!StringUtils.isEmpty(aVar.b)) {
             return aVar.b;
         }
         return null;
@@ -110,7 +110,7 @@ public class fbz extends b {
     @Override // com.taobao.android.detail.datasdk.model.viewmodel.main.b
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.d > 0 || !TextUtils.isEmpty(this.f27774a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.d > 0 || !StringUtils.isEmpty(this.f27774a);
     }
 
     public fbz(IDMComponent iDMComponent, com.taobao.android.detail.datasdk.model.datamodel.node.b bVar) {

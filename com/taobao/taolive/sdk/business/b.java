@@ -3,7 +3,7 @@ package com.taobao.taolive.sdk.business;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
@@ -318,10 +318,10 @@ public class b {
             try {
                 if (b.a(b.this) != null && pmd.a().g() != null) {
                     HashMap hashMap = new HashMap();
-                    if (!TextUtils.isEmpty(b.b(b.this))) {
+                    if (!StringUtils.isEmpty(b.b(b.this))) {
                         hashMap.put("x-m-biz-live-bizcode", b.b(b.this));
                     }
-                    if (!TextUtils.isEmpty(b.c(b.this))) {
+                    if (!StringUtils.isEmpty(b.c(b.this))) {
                         hashMap.put("x-m-biz-live-biztoken", b.c(b.this));
                     }
                     if (("mtop.tblive.live.detail.query".equals(b.a(b.this).getApiName()) || "mtop.mediaplatform.live.livedetail".equals(b.a(b.this).getApiName())) && pmd.a().u() != null) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -191,7 +191,7 @@ public class sol extends o<ezg> implements g {
                     x j = b.j(childAt);
                     if (j != null) {
                         String f = j.f();
-                        if (TextUtils.isEmpty(f)) {
+                        if (StringUtils.isEmpty(f)) {
                             f = c(i);
                         }
                         if ("header".equals(f)) {
@@ -230,7 +230,7 @@ public class sol extends o<ezg> implements g {
             View childAt = this.f33768a.getChildAt(i2);
             if (childAt != null && (j = b.j(childAt)) != null) {
                 String f = j.f();
-                if (!TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(f)) {
                     return f;
                 }
             }
@@ -382,7 +382,7 @@ public class sol extends o<ezg> implements g {
                 a(xVar);
                 this.f33768a.addNestedComponent(xVar);
                 List<String> list = this.k;
-                if (list != null && !list.isEmpty() && !TextUtils.isEmpty(xVar.f())) {
+                if (list != null && !list.isEmpty() && !StringUtils.isEmpty(xVar.f())) {
                     this.k.remove(xVar.f());
                 }
             }
@@ -458,7 +458,7 @@ public class sol extends o<ezg> implements g {
         }
         if (dVar instanceof soc) {
             String str = ((soc) dVar).f33763a;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             this.f33768a.stopScroll();
@@ -473,7 +473,7 @@ public class sol extends o<ezg> implements g {
                 x j = b.j(childAt);
                 if (j != null) {
                     String f = j.f();
-                    if (!TextUtils.isEmpty(f) && childAt.getVisibility() != 8) {
+                    if (!StringUtils.isEmpty(f) && childAt.getVisibility() != 8) {
                         int e = i == 0 ? 0 : e();
                         if (str.equals(f)) {
                             this.f33768a.scrollToChildWithOffset(childAt, e);

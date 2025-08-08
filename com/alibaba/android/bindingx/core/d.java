@@ -1,7 +1,7 @@
 package com.alibaba.android.bindingx.core;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.internal.BindingXConstants;
 import com.alibaba.android.bindingx.core.internal.w;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -135,7 +135,7 @@ public class d implements g {
             return;
         }
         h.b("disable binding [" + str + "," + str2 + riy.ARRAY_END_STR);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             h.b("disable binding failed(0x1) [" + str + "," + str2 + riy.ARRAY_END_STR);
             return;
         }
@@ -193,14 +193,14 @@ public class d implements g {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c9207977", new Object[]{this, context, str, str2, str3, str4, map, map2, objArr});
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             h.d("[doPrepare] failed. can not found eventType");
             return null;
         } else if (context == null) {
             h.d("[doPrepare] failed. context or wxInstance is null");
             return null;
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = d();
             }
             if (this.f2222a == null) {
@@ -314,7 +314,7 @@ public class d implements g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e2f9e562", new Object[]{this, str, bVar});
-        } else if (TextUtils.isEmpty(str) || bVar == null) {
+        } else if (StringUtils.isEmpty(str) || bVar == null) {
         } else {
             this.b.put(str, bVar);
         }
@@ -324,7 +324,7 @@ public class d implements g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("77385501", new Object[]{str, bVar});
-        } else if (TextUtils.isEmpty(str) || bVar == null) {
+        } else if (StringUtils.isEmpty(str) || bVar == null) {
         } else {
             c.put(str, bVar);
         }

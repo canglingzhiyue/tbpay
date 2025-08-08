@@ -3,7 +3,7 @@ package com.taobao.wireless.link.webApp;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -28,7 +28,7 @@ public class WebAppJSBridge extends e {
         if (wVCallBackContext == null) {
             return false;
         }
-        if (TextUtils.equals(str, ACTION_ADD_SHORTCUT)) {
+        if (StringUtils.equals(str, ACTION_ADD_SHORTCUT)) {
             try {
                 JSONObject jSONObject = new JSONObject(str2);
                 String str3 = (String) jSONObject.get("labelName");

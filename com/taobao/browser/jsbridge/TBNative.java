@@ -15,7 +15,7 @@ import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -267,7 +267,7 @@ public class TBNative extends e {
                 Variation variation = UTABTest.activate(UTABTest.COMPONENT_NAV, string).getVariation("bucket");
                 if (variation != null) {
                     String valueAsString = variation.getValueAsString(null);
-                    if (!TextUtils.isEmpty(valueAsString)) {
+                    if (!StringUtils.isEmpty(valueAsString)) {
                         m.c(TAG, "openWindow replace AB url = [" + valueAsString + riy.ARRAY_END_STR);
                     }
                 }

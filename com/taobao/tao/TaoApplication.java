@@ -1,7 +1,7 @@
 package com.taobao.tao;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.lifecycle.PanguApplication;
@@ -65,7 +65,7 @@ public class TaoApplication extends PanguApplication {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7512d303", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(sProcessName)) {
+        if (!StringUtils.isEmpty(sProcessName)) {
             return sProcessName;
         }
         return TaobaoApplication.getProcessName(context);
@@ -76,7 +76,7 @@ public class TaoApplication extends PanguApplication {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("34b1a51a", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(sPackageName)) {
+        if (!StringUtils.isEmpty(sPackageName)) {
             return sPackageName;
         }
         return TaobaoApplication.getPackageName(context);

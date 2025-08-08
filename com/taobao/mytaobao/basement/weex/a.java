@@ -2,7 +2,7 @@ package com.taobao.mytaobao.basement.weex;
 
 import android.app.Application;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -251,7 +251,7 @@ public final class a {
                         String str = (String) a2;
                         if (str != null) {
                             TLog.loge("BasementFeedDP", "imgUrl=" + str);
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 arrayList.add(str + "_760x760q90.jpg_.webp");
                             }
                         }
@@ -977,7 +977,7 @@ public final class a {
         }
         String string = jSONObject.getString("apiMethod");
         String string2 = jSONObject.getString("apiVersion");
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
             mtopRequest = new MtopRequest();
             mtopRequest.setApiName(string);
             mtopRequest.setVersion(string2);

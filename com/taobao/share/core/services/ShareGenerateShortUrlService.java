@@ -1,7 +1,7 @@
 package com.taobao.share.core.services;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -73,9 +73,9 @@ public class ShareGenerateShortUrlService extends AidlService<IShareGenerateShor
             }
             final String str2 = a2.d;
             String urlBackFlow = ShareServiceApi.urlBackFlow(a2.f19662a, "QRCode", a2.d);
-            if (!TextUtils.isEmpty(urlBackFlow)) {
+            if (!StringUtils.isEmpty(urlBackFlow)) {
                 b.a(ShareTargetType.Share2QRCode.getValue());
-                if (!TextUtils.isEmpty(urlBackFlow) && !str2.equals(urlBackFlow)) {
+                if (!StringUtils.isEmpty(urlBackFlow) && !str2.equals(urlBackFlow)) {
                     str2 = urlBackFlow;
                 }
             }
@@ -92,8 +92,8 @@ public class ShareGenerateShortUrlService extends AidlService<IShareGenerateShor
                             ipChange.ipc$dispatch("dbeaf3eb", new Object[]{this, obdVar, eVar});
                             return;
                         }
-                        String d = b.d((eVar == null || TextUtils.isEmpty(eVar.d)) ? str2 : eVar.d);
-                        if (!TextUtils.isEmpty(d)) {
+                        String d = b.d((eVar == null || StringUtils.isEmpty(eVar.d)) ? str2 : eVar.d);
+                        if (!StringUtils.isEmpty(d)) {
                             obc.a(nym.a(), obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY, d);
                         }
                         IShareGenerateShortUrlCallBack iShareGenerateShortUrlCallBack2 = iShareGenerateShortUrlCallBack;
@@ -129,7 +129,7 @@ public class ShareGenerateShortUrlService extends AidlService<IShareGenerateShor
                 aVar2.e = (String) map.get(ShareBusiness.SHARE_INTENT_EXTAR_IMAGE_URL);
                 aVar2.f = (String) map.get(ShareBusiness.SHARE_INTENT_EXTAR_CONTENTTYPE);
                 String str2 = (String) map.get(ShareBusiness.SHARE_INTENT_EXTAR_PARAMS);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     aVar2.j = (Map) JSON.parse(str2);
                 }
                 aVar2.b = (String) map.get(ShareBusiness.SHARE_INTENT_EXTAR_TITLE);

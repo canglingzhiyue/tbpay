@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.reflect.InvocationTargetException;
 
 /* loaded from: classes4.dex */
@@ -82,11 +82,11 @@ public abstract class o {
     }
 
     public static String a(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         String a2 = a("android.os.SystemProperties", str, str2);
-        return TextUtils.isEmpty(a2) ? a("com.huawei.android.os.SystemPropertiesEx", str, str2) : a2;
+        return StringUtils.isEmpty(a2) ? a("com.huawei.android.os.SystemPropertiesEx", str, str2) : a2;
     }
 
     private static String a(String str, String str2, String str3) {
@@ -97,7 +97,7 @@ public abstract class o {
     public static String b() {
         String a2 = a("com.huawei.android.os.SystemPropertiesEx", "ro.huawei.build.display.id", "");
         v.c("hmsSdk", "SystemPropertiesEx: get rom_ver: " + a2);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             String str = Build.DISPLAY;
             v.c("hmsSdk", "SystemProperties: get rom_ver: " + str);
             return str;

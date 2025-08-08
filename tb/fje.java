@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.base.media.videodecide.b;
 import com.taobao.android.detail2.core.framework.data.model.MainMediaInfo;
@@ -213,7 +213,7 @@ public class fje {
                     return;
                 }
                 this.f27998a = fmdVar.c().getContext();
-                if (this.l && TextUtils.equals(this.s, b(this.n))) {
+                if (this.l && StringUtils.equals(this.s, b(this.n))) {
                     a(this.f27998a);
                 }
                 List<d> m = this.p.m();
@@ -362,7 +362,7 @@ public class fje {
             final String str = mainMediaInfo.data.contentId;
             String str2 = mainMediaInfo.data.videoResourceStr;
             final JSONObject jSONObject = null;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     JSONObject jSONObject2 = new JSONObject(str2);
                     try {
@@ -397,12 +397,12 @@ public class fje {
                                     return;
                                 }
                                 fjt.a("PreLoadManagerNew", "预下载超时了。取消当前视频，下载下一个");
-                                if (TextUtils.equals(fje.e(fje.this), str)) {
+                                if (StringUtils.equals(fje.e(fje.this), str)) {
                                     fje.a(fje.this, context);
                                     fje.a(fje.this, (String) null);
                                     fje.b(fje.this, null);
                                     if (fje.f(fje.this) != null) {
-                                        if (fje.f(fje.this).size() <= 0 || !TextUtils.equals((CharSequence) fje.f(fje.this).get(0), str)) {
+                                        if (fje.f(fje.this).size() <= 0 || !StringUtils.equals((CharSequence) fje.f(fje.this).get(0), str)) {
                                             fje.f(fje.this).add(str);
                                         } else {
                                             fje.g(fje.this).add(str);
@@ -441,7 +441,7 @@ public class fje {
                                 if (i2 > 0) {
                                     fje.g(fje.this).add(str);
                                 }
-                                if (TextUtils.equals(fje.e(fje.this), str)) {
+                                if (StringUtils.equals(fje.e(fje.this), str)) {
                                     fje.a(fje.this, (String) null);
                                     fje.b(fje.this, null);
                                 }
@@ -475,7 +475,7 @@ public class fje {
                 return;
             }
             list = this.c;
-            if (list != null && list.size() > 0 && !TextUtils.equals(this.c.get(0), str)) {
+            if (list != null && list.size() > 0 && !StringUtils.equals(this.c.get(0), str)) {
                 this.c.clear();
             }
             this.v = new Runnable() { // from class: tb.fje.2
@@ -489,12 +489,12 @@ public class fje {
                         return;
                     }
                     fjt.a("PreLoadManagerNew", "预下载超时了。取消当前视频，下载下一个");
-                    if (TextUtils.equals(fje.e(fje.this), str)) {
+                    if (StringUtils.equals(fje.e(fje.this), str)) {
                         fje.a(fje.this, context);
                         fje.a(fje.this, (String) null);
                         fje.b(fje.this, null);
                         if (fje.f(fje.this) != null) {
-                            if (fje.f(fje.this).size() <= 0 || !TextUtils.equals((CharSequence) fje.f(fje.this).get(0), str)) {
+                            if (fje.f(fje.this).size() <= 0 || !StringUtils.equals((CharSequence) fje.f(fje.this).get(0), str)) {
                                 fje.f(fje.this).add(str);
                             } else {
                                 fje.g(fje.this).add(str);
@@ -533,7 +533,7 @@ public class fje {
                     if (i22 > 0) {
                         fje.g(fje.this).add(str);
                     }
-                    if (TextUtils.equals(fje.e(fje.this), str)) {
+                    if (StringUtils.equals(fje.e(fje.this), str)) {
                         fje.a(fje.this, (String) null);
                         fje.b(fje.this, null);
                     }

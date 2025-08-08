@@ -4,7 +4,7 @@ import android.content.Context;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -172,7 +172,7 @@ public class UmiResourceDownloadBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.equals(str, ACTION_DOWNLOAD_RESOURCE)) {
+        if (!StringUtils.equals(str, ACTION_DOWNLOAD_RESOURCE)) {
             return false;
         }
         downloadResource(str2, wVCallBackContext);
@@ -192,7 +192,7 @@ public class UmiResourceDownloadBridge extends e {
             return;
         }
         String string = parseObject.getString(Constants.Name.SUFFIX);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = ".mp4";
         }
         downloadResourceWithURL(parseObject.getString("url"), string, wVCallBackContext);
@@ -205,7 +205,7 @@ public class UmiResourceDownloadBridge extends e {
             return;
         }
         String str3 = sDownloadedCache.get(str);
-        if (!TextUtils.isEmpty(str3) && k.a(str3)) {
+        if (!StringUtils.isEmpty(str3) && k.a(str3)) {
             onDownloadSuccess(str, str3, wVCallBackContext);
             return;
         }

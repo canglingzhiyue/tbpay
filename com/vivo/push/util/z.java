@@ -1,7 +1,7 @@
 package com.vivo.push.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public final class z extends c {
@@ -29,7 +29,7 @@ public final class z extends c {
             Object a3 = ag.a(context, packageName, "app_id");
             obj = a3 != null ? a3.toString() : "";
         }
-        return TextUtils.isEmpty(obj) ? b("APP_APPID", "") : obj;
+        return StringUtils.isEmpty(obj) ? b("APP_APPID", "") : obj;
     }
 
     public final String c() {
@@ -43,6 +43,6 @@ public final class z extends c {
             Object a3 = ag.a(context, packageName, "api_key");
             obj = a3 != null ? a3.toString() : "";
         }
-        return TextUtils.isEmpty(obj) ? b("APP_APIKEY", "") : obj;
+        return StringUtils.isEmpty(obj) ? b("APP_APIKEY", "") : obj;
     }
 }

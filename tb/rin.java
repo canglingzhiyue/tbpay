@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.vpm.adapter.IConfigAdapter;
@@ -13,6 +13,6 @@ public class rin implements IConfigAdapter {
     @Override // com.taobao.vpm.adapter.IConfigAdapter
     public String getConfig(String str, String str2, String str3) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("611c4ee3", new Object[]{this, str, str2, str3}) : TextUtils.isEmpty(str) ? OrangeConfig.getInstance().getConfig(VPMConstant.VPM_ORANGE_GROUP_NAME, str2, str3) : OrangeConfig.getInstance().getConfig(str, str2, str3);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("611c4ee3", new Object[]{this, str, str2, str3}) : StringUtils.isEmpty(str) ? OrangeConfig.getInstance().getConfig(VPMConstant.VPM_ORANGE_GROUP_NAME, str2, str3) : OrangeConfig.getInstance().getConfig(str, str2, str3);
     }
 }

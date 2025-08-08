@@ -3,7 +3,7 @@ package com.tmall.android.dai.internal.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.internal.jsbridge.a;
 import com.tmall.android.dai.internal.jsbridge.b;
@@ -79,7 +79,7 @@ public class WVDaiApiPlugin extends e {
             if (map != null) {
                 jSONObject.put("result", new JSONObject(map));
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put("msg", str);
             }
         } catch (Exception e) {

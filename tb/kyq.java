@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
 import com.taobao.homepage.messiah.model.TbHRLogModel;
@@ -158,7 +158,7 @@ public class kyq {
         }
         ArrayList arrayList = new ArrayList();
         String a2 = j.a("stabilityDataUploadTimingWhiteList", "Page_Home_monitor_page_disappear");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             arrayList.addAll(Arrays.asList(a2.split(",")));
         }
         return arrayList;

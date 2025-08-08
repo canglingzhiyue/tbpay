@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.business.usertrack.ITrackService;
@@ -266,7 +266,7 @@ public class sjw implements hjj, sjy, sjz, ska, skb, skc, ske {
             }
             a.c a2 = ((IDataService) this.f33639a.getService(IDataService.class)).getCurrentMediaSetData().a();
             String B = a2.B();
-            if (!TextUtils.isEmpty(B)) {
+            if (!StringUtils.isEmpty(B)) {
                 ITrackService iTrackService = (ITrackService) this.f33639a.getService(ITrackService.class);
                 if (iTrackService != null) {
                     Map<String, String> activeCardCommonTrack = iTrackService.getActiveCardCommonTrack();

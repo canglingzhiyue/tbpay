@@ -2,7 +2,7 @@ package com.taobao.login4android.jsbridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.log.UserTrackAdapter;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class TBLoginJSBridge extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 UserTrackAdapter.sendUT(str);
             }
         } catch (Exception e) {

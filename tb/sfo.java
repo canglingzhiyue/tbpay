@@ -8,7 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -217,7 +217,7 @@ public class sfo {
         } else {
             String c = c(a(jSONObject, "content"), "imageUrl");
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 ldf.d("HomeTransitionForNewAnim", "mainImageUrl is empty , processLiveExtrasParams abort.");
                 return;
             }
@@ -399,7 +399,7 @@ public class sfo {
             ldf.a("HomeTransitionForNewAnim", "TPPUtils.getNdAnimFeatureList 出错。", th);
             str = str2;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             ldf.d("HomeTransitionForNewAnim", "homeTransitionTppAnimSwitchListStr:" + str);
         }
         try {
@@ -407,7 +407,7 @@ public class sfo {
         } catch (Throwable th2) {
             ldf.a("HomeTransitionForNewAnim", "调用HomeClientABTestTool.getAbTestValue 出错。", th2);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             ldf.d("HomeTransitionForNewAnim", "homeNavSjsAnimSwitchListStr:" + str2);
         }
         return new Pair<>(str, str2);
@@ -462,7 +462,7 @@ public class sfo {
             return false;
         }
         String a2 = ldj.a("orange_key_anim_switch_fixed_url_list", "//newdetail.taobao.com,//litedetail.taobao.com,http://newdetail.taobao.com,https://newdetail.taobao.com,http://litedetail.taobao.com,https://litedetail.taobao.com");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             ldf.d("HomeTransitionForNewAnim", "Error:拉取到的 Orange url 列表为空 ，不执行无极缩放开关固化。");
             if (bundle != null) {
                 bundle.putString("extraFrameAnimReason", "orangeIsNull");

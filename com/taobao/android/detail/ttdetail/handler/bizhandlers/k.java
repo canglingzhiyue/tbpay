@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.data.meta.Delivery;
@@ -57,7 +57,7 @@ public class k implements ezm {
             com.taobao.android.detail.ttdetail.utils.ao.a(true);
             return true;
         }
-        if (TextUtils.equals("openAddress", aVar.a())) {
+        if (StringUtils.equals("openAddress", aVar.a())) {
             final JSONObject b = a(aVar) ? b(aVar) : c(aVar);
             this.b.c().a(new com.taobao.android.detail.ttdetail.handler.event.a(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.handler.bizhandlers.OpenAddressImplementor$1
                 {
@@ -65,7 +65,7 @@ public class k implements ezm {
                     put("fields", (Object) b);
                 }
             }), runtimeAbilityParamArr);
-        } else if (TextUtils.equals(EVENT_TYPE_ALTERNATIVE_BACK_UP, aVar.a())) {
+        } else if (StringUtils.equals(EVENT_TYPE_ALTERNATIVE_BACK_UP, aVar.a())) {
             final JSONObject c = c(aVar);
             this.b.c().a(new com.taobao.android.detail.ttdetail.handler.event.a(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.handler.bizhandlers.OpenAddressImplementor$2
                 {
@@ -76,7 +76,7 @@ public class k implements ezm {
         } else {
             String encode = Uri.encode(com.taobao.android.detail.ttdetail.utils.d.a((Delivery) this.b.a().a(Delivery.class), ""));
             String a2 = a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = "//market.m.taobao.com/apps/market/detailrax/address-picker.html?spm=a2116h.app.0.0.16d957e9nDYOzv&wh_weex=true";
             }
             final String a3 = a(b(), a(a2, encode));
@@ -100,7 +100,7 @@ public class k implements ezm {
             return (Map) ipChange.ipc$dispatch("c27656b1", new Object[]{this, str, str2});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("currentAddress", str2);
@@ -127,7 +127,7 @@ public class k implements ezm {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str) || map == null || map.isEmpty()) {
+        if (StringUtils.isEmpty(str) || map == null || map.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
@@ -143,7 +143,7 @@ public class k implements ezm {
             return ((Boolean) ipChange.ipc$dispatch("6be74927", new Object[]{this, aVar})).booleanValue();
         }
         JSONObject b = aVar.b();
-        return b != null && !TextUtils.isEmpty(b.getString("url"));
+        return b != null && !StringUtils.isEmpty(b.getString("url"));
     }
 
     private JSONObject b(com.taobao.android.detail.ttdetail.handler.event.a aVar) {
@@ -205,14 +205,14 @@ public class k implements ezm {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = str;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         return (a2 + "&currentAddress=" + str2) + "&item_id=" + com.taobao.android.detail.ttdetail.utils.d.b((Item) this.b.a().a(Item.class), "") + "&seller_id=" + com.taobao.android.detail.ttdetail.utils.d.a((Seller) this.b.a().a(Seller.class), "");

@@ -3,7 +3,7 @@ package com.xiaomi.push.service;
 import android.app.NotificationChannel;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.xiaomi.push.service.ax;
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class f {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(Context context, String str) {
         List<NotificationChannel> m2295a;
-        if (!com.xiaomi.push.j.m2118a(context) || TextUtils.isEmpty(str) || (m2295a = aw.a(context, str).m2295a()) == null) {
+        if (!com.xiaomi.push.j.m2118a(context) || StringUtils.isEmpty(str) || (m2295a = aw.a(context, str).m2295a()) == null) {
             return;
         }
         synchronized (f.class) {
@@ -56,7 +56,7 @@ public class f {
             ArrayList arrayList = new ArrayList();
             for (NotificationChannel notificationChannel : m2295a) {
                 String str2 = (String) com.xiaomi.push.bh.a(notificationChannel, "mId");
-                if (!TextUtils.isEmpty(str2) && a2.contains(str2)) {
+                if (!StringUtils.isEmpty(str2) && a2.contains(str2)) {
                     arrayList.add(str2);
                 }
             }
@@ -68,7 +68,7 @@ public class f {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(Context context, String str, String str2, int i, String str3, boolean z, int i2) {
-        if (!com.xiaomi.push.j.m2118a(context) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (!com.xiaomi.push.j.m2118a(context) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             if (!com.xiaomi.push.j.m2118a(context)) {
                 return;
             }

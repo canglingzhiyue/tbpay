@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.file.FileAbility;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -197,7 +197,7 @@ public class MspCacheManager {
                             str2 = MspCacheManager.c(MspCacheManager.this).get(str);
                         }
                     }
-                    if (!TextUtils.isEmpty(str2) || !z) {
+                    if (!StringUtils.isEmpty(str2) || !z) {
                         return str2;
                     }
                     try {
@@ -206,10 +206,10 @@ public class MspCacheManager {
                         } else {
                             b = MspCacheManager.b(MspCacheManager.this, str);
                         }
-                        if (!TextUtils.isEmpty(b)) {
+                        if (!StringUtils.isEmpty(b)) {
                             MspCacheManager.c(MspCacheManager.this).put(str, b);
                         }
-                        if (TextUtils.isEmpty(b) || strArr == null || strArr.length <= 0) {
+                        if (StringUtils.isEmpty(b) || strArr == null || strArr.length <= 0) {
                             return b;
                         }
                         JSONObject parseObject = JSON.parseObject(b);
@@ -268,10 +268,10 @@ public class MspCacheManager {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                         return;
                     }
-                    if (z && TextUtils.isEmpty(MspCacheManager.c(MspCacheManager.this).get(str))) {
+                    if (z && StringUtils.isEmpty(MspCacheManager.c(MspCacheManager.this).get(str))) {
                         try {
                             String a2 = z2 ? MspCacheManager.a(MspCacheManager.this, str) : MspCacheManager.b(MspCacheManager.this, str);
-                            if (!TextUtils.isEmpty(a2)) {
+                            if (!StringUtils.isEmpty(a2)) {
                                 MspCacheManager.c(MspCacheManager.this).put(str, a2);
                             }
                         } catch (Exception e) {
@@ -325,7 +325,7 @@ public class MspCacheManager {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
         String string = PrefUtils.getString(str, str2, "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         try {

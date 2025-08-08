@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.standard.annotation.AliSDetailScaleType;
@@ -116,7 +116,7 @@ public class pbh {
 
     public static int d(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("d23b17e8", new Object[]{str})).intValue() : (!TextUtils.isEmpty(str) && !"oval".equals(str) && "roundRect".equals(str)) ? 1 : 0;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("d23b17e8", new Object[]{str})).intValue() : (!StringUtils.isEmpty(str) && !"oval".equals(str) && "roundRect".equals(str)) ? 1 : 0;
     }
 
     public static float a(Context context, String str) {
@@ -124,7 +124,7 @@ public class pbh {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("61b6361a", new Object[]{context, str})).floatValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return fpr.a(context, str, 0);
         }
         return 0.0f;

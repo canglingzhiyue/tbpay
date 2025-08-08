@@ -9,7 +9,7 @@ import android.taobao.windvane.extra.uc.interfaces.IRequest;
 import android.taobao.windvane.monitor.o;
 import android.taobao.windvane.util.a;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Header;
 import anetwork.channel.Request;
 import anetwork.channel.Response;
@@ -151,7 +151,7 @@ public class AliRequestAdapter implements IRequest {
                     justConvergeAndWebP = ImageStrategyDecider.justConvergeAndWebP(str);
                     m.a(this.TAG, " use default decideUrl=" + justConvergeAndWebP);
                 }
-                if (!TextUtils.isEmpty(justConvergeAndWebP) && !justConvergeAndWebP.equals(str)) {
+                if (!StringUtils.isEmpty(justConvergeAndWebP) && !justConvergeAndWebP.equals(str)) {
                     m.c(this.TAG, str + " decideUrl to : " + justConvergeAndWebP);
                     this.originalUrl = str;
                     str = justConvergeAndWebP;
@@ -178,18 +178,18 @@ public class AliRequestAdapter implements IRequest {
                         break;
                     }
                 }
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     str4 = HttpRequest.HEADER_ACCEPT;
                 }
                 if (z3) {
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "image/heic";
                     } else {
                         str3 = "image/heic," + str3;
                     }
                 }
                 if (z4) {
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "image/heia";
                     } else {
                         str3 = "image/heia," + str3;
@@ -414,8 +414,8 @@ public class AliRequestAdapter implements IRequest {
             Uri parse = Uri.parse(str);
             if (parse != null) {
                 String host = parse.getHost();
-                if (!TextUtils.equals("gw.alicdn.com", host)) {
-                    if (TextUtils.equals("img.alicdn.com", host)) {
+                if (!StringUtils.equals("gw.alicdn.com", host)) {
+                    if (StringUtils.equals("img.alicdn.com", host)) {
                     }
                 }
                 return true;

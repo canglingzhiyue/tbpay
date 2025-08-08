@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public class pbl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7d5bb9ac", new Object[]{this, dXTemplateItem, jSONObject, context, frameLayout});
-        } else if (dXTemplateItem == null || TextUtils.isEmpty(dXTemplateItem.f11925a) || (dinamicXEngine = this.b) == null) {
+        } else if (dXTemplateItem == null || StringUtils.isEmpty(dXTemplateItem.f11925a) || (dinamicXEngine = this.b) == null) {
         } else {
             if (dinamicXEngine.a(dXTemplateItem) != null) {
                 b(dXTemplateItem, jSONObject, context, frameLayout);

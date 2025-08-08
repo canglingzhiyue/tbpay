@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -45,7 +45,7 @@ public class jlw extends jlv {
             return (MtopPrefetch.CompareResult) ipChange.ipc$dispatch("d373501", new Object[]{this, mtopRequest, mtopRequest2, list});
         }
         MtopPrefetch.CompareResult compareResult = new MtopPrefetch.CompareResult();
-        if (TextUtils.isEmpty(mtopRequest.getKey()) || !mtopRequest.getKey().equals(mtopRequest2.getKey())) {
+        if (StringUtils.isEmpty(mtopRequest.getKey()) || !mtopRequest.getKey().equals(mtopRequest2.getKey())) {
             compareResult.getData().put("missKey", "apiKey");
             compareResult.getData().put("missMsg", "missApi");
             compareResult.getData().put("prefetchValue", mtopRequest2.getKey());
@@ -72,11 +72,11 @@ public class jlw extends jlv {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1b20e93f", new Object[]{this, str, str2, str3, list, compareResult})).booleanValue();
         }
-        if (TextUtils.equals(str2, str3)) {
+        if (StringUtils.equals(str2, str3)) {
             return true;
         }
         String str5 = "missKey";
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             compareResult.getData().put(str5, str);
             compareResult.getData().put("missMsg", "emptyValue");
             compareResult.getData().put("prefetchValue", str2);
@@ -95,12 +95,12 @@ public class jlw extends jlv {
                 HashMap hashMap = new HashMap();
                 HashMap hashMap2 = new HashMap();
                 for (String str6 : parseObject.keySet()) {
-                    if (!TextUtils.isEmpty(str6) && (list == null || !list.contains(str6))) {
+                    if (!StringUtils.isEmpty(str6) && (list == null || !list.contains(str6))) {
                         hashMap.put(str6, parseObject.get(str6));
                     }
                 }
                 for (String str7 : parseObject2.keySet()) {
-                    if (!TextUtils.isEmpty(str7) && (list == null || !list.contains(str7))) {
+                    if (!StringUtils.isEmpty(str7) && (list == null || !list.contains(str7))) {
                         hashMap2.put(str7, parseObject2.get(str7));
                     }
                 }
@@ -154,7 +154,7 @@ public class jlw extends jlv {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String trim = str.trim();

@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.ui.fb.plugin;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.log.VerifyLogCat;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -61,7 +61,7 @@ public class VIFBPluginManager {
                 ipChange.ipc$dispatch("77b1fd8d", new Object[]{str});
                 return;
             }
-            if (!TextUtils.isEmpty(str) && !cachedPlugins.isEmpty()) {
+            if (!StringUtils.isEmpty(str) && !cachedPlugins.isEmpty()) {
                 ArrayList<BaseFBPlugin> arrayList = cachedPlugins.get(str);
                 if (arrayList != null && !arrayList.isEmpty()) {
                     plugins.put(str, arrayList);
@@ -82,7 +82,7 @@ public class VIFBPluginManager {
             return (BaseFBPlugin) ipChange.ipc$dispatch("b31ffd1f", new Object[]{str, str2});
         }
         ArrayList<BaseFBPlugin> arrayList = plugins.get(str);
-        if (TextUtils.isEmpty(str2) || arrayList == null) {
+        if (StringUtils.isEmpty(str2) || arrayList == null) {
             return null;
         }
         Iterator<BaseFBPlugin> it = arrayList.iterator();
@@ -152,7 +152,7 @@ public class VIFBPluginManager {
             if (plugins != null && arrayList != null) {
                 Iterator<BaseFBPlugin> it = arrayList.iterator();
                 while (it.hasNext()) {
-                    if (TextUtils.equals(it.next().getPluginName(), str2)) {
+                    if (StringUtils.equals(it.next().getPluginName(), str2)) {
                         it.remove();
                         String str3 = f6087a;
                         VerifyLogCat.i(str3, "删除插件: " + str2 + ", 对应verifyId为: " + str);

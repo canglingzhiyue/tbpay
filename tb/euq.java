@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -68,12 +68,12 @@ public class euq {
 
     public static boolean a(IDMComponent iDMComponent, IDMComponent iDMComponent2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1bc096ec", new Object[]{iDMComponent, iDMComponent2})).booleanValue() : (iDMComponent == null || iDMComponent2 == null || !TextUtils.equals(iDMComponent.getFields().getString("alias"), iDMComponent2.getFields().getString("alias"))) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1bc096ec", new Object[]{iDMComponent, iDMComponent2})).booleanValue() : (iDMComponent == null || iDMComponent2 == null || !StringUtils.equals(iDMComponent.getFields().getString("alias"), iDMComponent2.getFields().getString("alias"))) ? false : true;
     }
 
     public static boolean a(String str, IDMComponent iDMComponent) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("76cad266", new Object[]{str, iDMComponent})).booleanValue() : (iDMComponent == null || str == null || iDMComponent.getFields() == null || !TextUtils.equals(iDMComponent.getFields().getString("locator"), str)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("76cad266", new Object[]{str, iDMComponent})).booleanValue() : (iDMComponent == null || str == null || iDMComponent.getFields() == null || !StringUtils.equals(iDMComponent.getFields().getString("locator"), str)) ? false : true;
     }
 
     public static IDMComponent b(IDMComponent iDMComponent) {
@@ -115,7 +115,7 @@ public class euq {
         }
         if (iDMComponent != null && iDMComponent.getChildren() != null) {
             for (IDMComponent iDMComponent2 : iDMComponent.getChildren()) {
-                if (iDMComponent2 != null && TextUtils.isEmpty(iDMComponent2.getPosition())) {
+                if (iDMComponent2 != null && StringUtils.isEmpty(iDMComponent2.getPosition())) {
                     return true;
                 }
             }

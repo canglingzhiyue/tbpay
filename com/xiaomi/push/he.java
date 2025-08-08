@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -157,7 +157,7 @@ public class he implements hi {
 
     /* renamed from: a  reason: collision with other method in class */
     public void m2003a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.c = hs.a(str);
         } else {
             this.c = str;
@@ -169,7 +169,7 @@ public class he implements hi {
     }
 
     public String c() {
-        return !TextUtils.isEmpty(this.c) ? hs.b(this.c) : this.c;
+        return !StringUtils.isEmpty(this.c) ? hs.b(this.c) : this.c;
     }
 
     @Override // com.xiaomi.push.hi
@@ -177,7 +177,7 @@ public class he implements hi {
         StringBuilder sb = new StringBuilder();
         sb.append("<");
         sb.append(this.f24518a);
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             sb.append(" ");
             sb.append("xmlns=");
             sb.append("\"");
@@ -187,7 +187,7 @@ public class he implements hi {
         String[] strArr = this.f462a;
         if (strArr != null && strArr.length > 0) {
             for (int i = 0; i < this.f462a.length; i++) {
-                if (!TextUtils.isEmpty(this.f463b[i])) {
+                if (!StringUtils.isEmpty(this.f463b[i])) {
                     sb.append(" ");
                     sb.append(this.f462a[i]);
                     sb.append("=\"");
@@ -196,7 +196,7 @@ public class he implements hi {
                 }
             }
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             sb.append(">");
             sb.append(this.c);
         } else {

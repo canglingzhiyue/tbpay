@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.model.CartGlobal;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -42,7 +42,7 @@ public class v extends bca {
         JSONObject jSONObject = null;
         List<IDMComponent> list2 = null;
         for (com.taobao.android.ultron.common.model.b bVar : list) {
-            if (TextUtils.equals(bVar.getType(), "openPopupWindow")) {
+            if (StringUtils.equals(bVar.getType(), "openPopupWindow")) {
                 list2 = bei.a(this.b, bVar);
             }
         }

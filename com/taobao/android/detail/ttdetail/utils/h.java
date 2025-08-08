@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.utils;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -27,7 +27,7 @@ public class h {
         if (strArr != null && strArr.length > 0) {
             String a2 = a(a());
             for (String str : strArr) {
-                if (TextUtils.equals(a2, str)) {
+                if (StringUtils.equals(a2, str)) {
                     return true;
                 }
             }

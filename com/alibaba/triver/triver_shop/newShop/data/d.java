@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -1402,7 +1402,7 @@ public final class d {
                 Object obj = jSONArray2.get(i2);
                 if (obj instanceof JSONObject) {
                     JSONObject jSONObject = (JSONObject) obj;
-                    if (TextUtils.equals(c(jSONObject).getString("name"), com.alibaba.triver.triver_shop.newShop.ext.g.KEY_ALL_ITEMS)) {
+                    if (StringUtils.equals(c(jSONObject).getString("name"), com.alibaba.triver.triver_shop.newShop.ext.g.KEY_ALL_ITEMS)) {
                         JSONArray d = d(jSONObject);
                         d.size();
                         return d(d.getJSONObject(0));
@@ -2738,7 +2738,7 @@ public final class d {
         if (z) {
             str = this.O;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             q.a((Object) str);
             return com.alibaba.triver.triver_shop.newShop.ext.h.a(str, I());
         }

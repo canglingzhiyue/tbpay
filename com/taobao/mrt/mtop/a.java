@@ -1,6 +1,6 @@
 package com.taobao.mrt.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.c;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -64,7 +64,7 @@ public class a {
         }
         RemoteBusiness build = RemoteBusiness.build(mtopRequest);
         String str = c.f18243a;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             build.mo1332ttid(str);
         } else {
             com.taobao.mrt.utils.a.b("DataSender", "TTID为空！");

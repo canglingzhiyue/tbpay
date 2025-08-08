@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.data.remote.newmodel;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (IMTOPRequest) ipChange.ipc$dispatch("efbd293b", new Object[]{fluidContext, spsVar, str, str2, str3, new Integer(i), str4, new Boolean(z), new Boolean(z2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = spsVar.d;
         }
         if (skk.a(fluidContext)) {

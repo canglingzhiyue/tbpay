@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.util.ALog;
@@ -437,7 +437,7 @@ public class SceneIdentifier {
         d a2 = c.a();
         if (a2 != null) {
             String a3 = a2.a("currFragmentName", (String) null);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 return currentPageName + "_" + a3;
             }
         }
@@ -562,7 +562,7 @@ public class SceneIdentifier {
         Intent intent = activity.getIntent();
         if (intent != null) {
             String dataString = intent.getDataString();
-            if (!TextUtils.isEmpty(dataString) && dataString.contains("s.click.taobao.com")) {
+            if (!StringUtils.isEmpty(dataString) && dataString.contains("s.click.taobao.com")) {
                 return false;
             }
         }

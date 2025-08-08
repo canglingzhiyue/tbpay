@@ -1,6 +1,6 @@
 package com.loc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Map;
 
 /* loaded from: classes4.dex */
@@ -41,7 +41,7 @@ public final class fl extends r {
 
     @Override // com.loc.r, com.loc.bt
     public final String c() {
-        return !TextUtils.isEmpty(this.e) ? this.e : super.c();
+        return !StringUtils.isEmpty(this.e) ? this.e : super.c();
     }
 
     public final void c(String str) {

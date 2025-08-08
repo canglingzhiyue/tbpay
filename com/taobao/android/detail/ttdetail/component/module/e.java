@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -434,7 +434,7 @@ public class e extends d {
                 str2 = "dxName: error";
                 str3 = "dxVersion: error";
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "no info";
             }
             this.w.setText(j());
@@ -450,7 +450,7 @@ public class e extends d {
             return (String) ipChange.ipc$dispatch("6aaa74cf", new Object[]{this});
         }
         String b = bq.b(this);
-        return !TextUtils.isEmpty(b) ? b : "dxUltronName: error";
+        return !StringUtils.isEmpty(b) ? b : "dxUltronName: error";
     }
 
     private void d(View view) {
@@ -571,7 +571,7 @@ public class e extends d {
                 } else {
                     int a3 = com.taobao.android.detail.ttdetail.utils.f.a(this.mContext);
                     boolean a4 = com.taobao.android.detail.ttdetail.utils.e.a(this.mContext);
-                    if (TextUtils.equals(com.taobao.android.detail.ttdetail.constant.a.STYLE_DOUBLE_COLUMN, this.v)) {
+                    if (StringUtils.equals(com.taobao.android.detail.ttdetail.constant.a.STYLE_DOUBLE_COLUMN, this.v)) {
                         if (a4) {
                             a3 /= 2;
                         }

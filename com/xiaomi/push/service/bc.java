@@ -1,6 +1,6 @@
 package com.xiaomi.push.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class bc {
@@ -12,7 +12,7 @@ public class bc {
     private static String f946a = "";
 
     public static String a() {
-        if (TextUtils.isEmpty(f946a)) {
+        if (StringUtils.isEmpty(f946a)) {
             f946a = com.xiaomi.push.bm.a(4);
         }
         StringBuilder sb = new StringBuilder();
@@ -24,7 +24,7 @@ public class bc {
     }
 
     public static String a(String str) {
-        if (TextUtils.isEmpty(str) || str.length() < 32) {
+        if (StringUtils.isEmpty(str) || str.length() < 32) {
             return str;
         }
         try {

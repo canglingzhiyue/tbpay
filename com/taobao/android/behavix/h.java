@@ -1,6 +1,6 @@
 package com.taobao.android.behavix;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.config.BHRTaskConfigBase;
@@ -87,7 +87,7 @@ public class h extends i {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("eff9459b", new Object[]{str, strArr});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return strArr;
         }
         if (strArr == null || strArr.length == 0) {
@@ -102,7 +102,7 @@ public class h extends i {
 
     private static String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : !"taobao".equals(d.c()) ? "" : TextUtils.equals(str, "Page_Home") ? "a2141.1" : TextUtils.equals(str, "Page_MyTaobao") ? "a2141.7631743" : TextUtils.equals(str, "Page_MiniDetail") ? "a218fy.minidetail" : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : !"taobao".equals(d.c()) ? "" : StringUtils.equals(str, "Page_Home") ? "a2141.1" : StringUtils.equals(str, "Page_MyTaobao") ? "a2141.7631743" : StringUtils.equals(str, "Page_MiniDetail") ? "a218fy.minidetail" : "";
     }
 
     public static void b(String str, String str2, Object obj, String... strArr) {
@@ -143,12 +143,12 @@ public class h extends i {
                     } else if (!a.b()) {
                     } else {
                         String e = dro.e(str);
-                        if (TextUtils.equals(e, o.PAGE_NAME) && !a.a("enableSKUPV", false)) {
+                        if (StringUtils.equals(e, o.PAGE_NAME) && !a.a("enableSKUPV", false)) {
                             return;
                         }
                         String source = i.getSource(hashMap, strArr);
                         Object obj2 = weakReference.get();
-                        if (obj2 == null || TextUtils.isEmpty(e)) {
+                        if (obj2 == null || StringUtils.isEmpty(e)) {
                             TLog.loge("behavix_track", i.TAG, "commitLeave context or scene empty");
                             return;
                         }
@@ -239,7 +239,7 @@ public class h extends i {
                     } else {
                         String e = dro.e(str);
                         String source = i.getSource(hashMap, strArr);
-                        if (!TextUtils.equals(source, BHRTaskConfigBase.TYPE_CONFIG_UT)) {
+                        if (!StringUtils.equals(source, BHRTaskConfigBase.TYPE_CONFIG_UT)) {
                             return;
                         }
                         BHXCXXActionBridge.commitCustom(source, e, str2, str3, hashMap, strArr);
@@ -498,7 +498,7 @@ public class h extends i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("739d2211", new Object[]{str, list, new Boolean(z)});
-        } else if (a() || TextUtils.isEmpty(str) || com.taobao.android.behavix.utils.g.a(list)) {
+        } else if (a() || StringUtils.isEmpty(str) || com.taobao.android.behavix.utils.g.a(list)) {
         } else {
             dsc.a(new Runnable() { // from class: com.taobao.android.behavix.h.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -537,7 +537,7 @@ public class h extends i {
                     } else {
                         g.a("initConfig");
                         Object obj2 = weakReference.get();
-                        if (obj2 == null || TextUtils.isEmpty(str)) {
+                        if (obj2 == null || StringUtils.isEmpty(str)) {
                             TLog.loge("behavix_track", i.TAG, "commitAppIn context or scene empty");
                             dsb.b("logic", str, null, "logic_error", "commitAppIn context or scene empty");
                             return;
@@ -570,7 +570,7 @@ public class h extends i {
                     } else if (!a.b()) {
                     } else {
                         Object obj2 = weakReference.get();
-                        if (obj2 == null || TextUtils.isEmpty(str)) {
+                        if (obj2 == null || StringUtils.isEmpty(str)) {
                             TLog.loge("behavix_track", i.TAG, "commitAppOut context or scene empty");
                             dsb.b("logic", str, null, "logic_error", "commitAppOut context or scene empty");
                             return;
@@ -607,7 +607,7 @@ public class h extends i {
                     } else if (!a.b()) {
                     } else {
                         String e = dro.e(str);
-                        if (weakReference.get() == null || TextUtils.isEmpty(e)) {
+                        if (weakReference.get() == null || StringUtils.isEmpty(e)) {
                             TLog.loge("behavix_track", i.TAG, "updateSceneBizArgs context or scene empty");
                             return;
                         }

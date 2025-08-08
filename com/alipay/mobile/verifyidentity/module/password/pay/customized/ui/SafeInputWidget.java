@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
@@ -39,7 +39,7 @@ public class SafeInputWidget implements View.OnTouchListener, VISafeInputInterfa
     private EditText b = null;
     private SimplePassword c = null;
     private View e = null;
-    private EditTextUtil f = EditTextManager.getEditTextUtils();
+    private EditTextUtil f = EditTextManager.getEditStringUtils();
     private View g = null;
     private OnConfirmListener j = null;
     private View.OnFocusChangeListener k = null;
@@ -134,7 +134,7 @@ public class SafeInputWidget implements View.OnTouchListener, VISafeInputInterfa
                 }
                 SafeInputWidget.access$100(SafeInputWidget.this).OnTextChanged(SafeInputWidget.access$000(SafeInputWidget.this), charSequence.toString(), i, i2, i3);
                 if (SafeInputWidget.access$200(SafeInputWidget.this) != null) {
-                    if (TextUtils.isEmpty(charSequence)) {
+                    if (StringUtils.isEmpty(charSequence)) {
                         SafeInputWidget.access$200(SafeInputWidget.this).setTextColor(-7829368);
                         SafeInputWidget.access$200(SafeInputWidget.this).setClickable(false);
                     } else {
@@ -329,7 +329,7 @@ public class SafeInputWidget implements View.OnTouchListener, VISafeInputInterfa
             ipChange.ipc$dispatch("7d6662f", new Object[]{safeInputWidget});
         } else if (!safeInputWidget.b.isEnabled()) {
         } else {
-            if (!TextUtils.isEmpty(safeInputWidget.b.getText()) && safeInputWidget.m != null && safeInputWidget.b.isFocused()) {
+            if (!StringUtils.isEmpty(safeInputWidget.b.getText()) && safeInputWidget.m != null && safeInputWidget.b.isFocused()) {
                 safeInputWidget.l = true;
                 safeInputWidget.b.setOnTouchListener(safeInputWidget);
                 safeInputWidget.b.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, safeInputWidget.m, (Drawable) null);

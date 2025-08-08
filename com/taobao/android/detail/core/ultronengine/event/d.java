@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.ultronengine.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.q;
@@ -222,7 +222,7 @@ public class d extends q {
         JSONObject a2 = a(mtopResponse);
         try {
             boolean isEmpty = true ^ a2.getJSONObject("data").getJSONArray("result").isEmpty();
-            if (!TextUtils.isEmpty(a2.getJSONObject("data").getString("text"))) {
+            if (!StringUtils.isEmpty(a2.getJSONObject("data").getString("text"))) {
                 z = isEmpty;
             }
         } catch (Exception unused) {
@@ -282,7 +282,7 @@ public class d extends q {
             jSONObject3.putAll(jSONObject2);
         }
         mtopRequest.setData(jSONObject3.toJSONString());
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             UnifyLog.d("ShopRecommendSubscriber", "error: apiMethod or apiVersion is null");
             return;
         }

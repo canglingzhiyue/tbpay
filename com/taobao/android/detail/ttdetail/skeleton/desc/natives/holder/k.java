@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +65,7 @@ public class k extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         }
         String str = oVar.f10885a;
         final String str2 = oVar.b;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.h.setText(str);
             this.h.setVisibility(0);
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -94,12 +94,12 @@ public class ktp {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             this.d = g.b();
             com.taobao.android.home.component.utils.e.c("EffectSwitchCoordinator", "deviceHML=" + this.d);
         }
         String a2 = j.a(str + "_" + str2, (String) null);
-        if (!TextUtils.isEmpty(a2) && (hashMap = (HashMap) JSON.parseObject(a2, new TypeReference<HashMap<String, String>>() { // from class: tb.ktp.1
+        if (!StringUtils.isEmpty(a2) && (hashMap = (HashMap) JSON.parseObject(a2, new TypeReference<HashMap<String, String>>() { // from class: tb.ktp.1
         }, new Feature[0])) != null) {
             return "off".equals(hashMap.get(this.d));
         }

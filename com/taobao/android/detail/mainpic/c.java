@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -485,7 +485,7 @@ public class c {
         });
         TextView textView = (TextView) this.e.findViewById(R.id.main_pic_scroll_limit_tip_text);
         String f = this.f10129a.k().f();
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             textView.setText(f);
         }
         ((ImageView) this.c.findViewById(R.id.main_pic_scroll_limit_tip_image)).setImageResource(R.drawable.main_pic_scroll_limit_arrow);

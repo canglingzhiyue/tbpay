@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.adapter.a;
@@ -28,7 +28,7 @@ public class ohh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8bb6538e", new Object[]{str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f32059a.put(str, obj);
         }
@@ -39,7 +39,7 @@ public class ohh {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("17307540", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f32059a.get(str);
         }
         return null;
@@ -50,7 +50,7 @@ public class ohh {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("18567e93", new Object[]{str, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (obj != null) {
@@ -67,7 +67,7 @@ public class ohh {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         b.remove(str2);
@@ -110,7 +110,7 @@ public class ohh {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("6e4e661f", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Object obj = f32059a.get(str);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ut.abtest.UTABEnvironment;
 import com.alibaba.ut.abtest.UTABMethod;
@@ -329,7 +329,7 @@ public final class cex {
         }
         this.r = n.b(str);
         k.b().c("uid", this.r);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         k.b().c("luid", this.r);
@@ -348,7 +348,7 @@ public final class cex {
         }
         this.s = n.b(str);
         k.b().c("un", this.s);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         k.b().c("lun", this.s);

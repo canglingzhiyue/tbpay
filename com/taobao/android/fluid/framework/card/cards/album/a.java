@@ -11,7 +11,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -837,7 +837,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5f95772", new Object[]{this});
-        } else if (this.E != null || this.F == null || TextUtils.isEmpty(this.H)) {
+        } else if (this.E != null || this.F == null || StringUtils.isEmpty(this.H)) {
         } else {
             sps sessionParams = ((ISceneConfigService) this.C.getService(ISceneConfigService.class)).getSessionParams();
             s.a aVar = new s.a((Activity) this.B);
@@ -931,7 +931,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || this.F == null || (activeCardCommonTrack = ((ITrackService) this.C.getService(ITrackService.class)).getActiveCardCommonTrack()) == null || (sessionParams = ((ISceneConfigService) this.C.getService(ISceneConfigService.class)).getSessionParams()) == null) {
+        if (StringUtils.isEmpty(str) || this.F == null || (activeCardCommonTrack = ((ITrackService) this.C.getService(ITrackService.class)).getActiveCardCommonTrack()) == null || (sessionParams = ((ISceneConfigService) this.C.getService(ISceneConfigService.class)).getSessionParams()) == null) {
             return null;
         }
         JSONObject jSONObject = new JSONObject();
@@ -966,7 +966,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
             jSONObject2.put(com.taobao.android.weex_framework.util.a.ATOM_length, this.J);
             jSONObject2.put("video_url", this.H);
             jSONArray.put(jSONObject2);
-            if (!TextUtils.isEmpty(this.I)) {
+            if (!StringUtils.isEmpty(this.I)) {
                 jSONObject.put("caches", jSONArray);
             }
             jSONObject.put("resources", jSONArray);
@@ -1132,7 +1132,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
                 a(musicInfoVO.musicParams.playPairs.startTime, musicInfoVO.musicParams.playPairs.endTime);
             }
         }
-        if (TextUtils.isEmpty(this.F.i().publishStatus) || TextUtils.isEmpty(this.F.f().music) || !TextUtils.isEmpty(this.H)) {
+        if (StringUtils.isEmpty(this.F.i().publishStatus) || StringUtils.isEmpty(this.F.f().music) || !StringUtils.isEmpty(this.H)) {
             return;
         }
         this.H = this.F.f().music;
@@ -1300,7 +1300,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
             ipChange.ipc$dispatch("1a6e9779", new Object[]{this, list, new Integer(i), new Integer(i2)});
         } else if (i2 >= 0 && i2 < i && (picElement = list.get(i2)) != null && (list2 = picElement.anchors) != null) {
             for (PicElement.Anchor anchor : list2) {
-                if (anchor != null && !TextUtils.isEmpty(anchor.itemId)) {
+                if (anchor != null && !StringUtils.isEmpty(anchor.itemId)) {
                     com.taobao.android.fluid.business.usertrack.track.b.b(this.C, anchor.itemId);
                 }
             }
@@ -1515,7 +1515,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
                 }
             }));
             String str = ((IDataService) a.f(a.this).getService(IDataService.class)).getConfig().j().B;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 FluidSDK.getImageAdapter().load(str, new com.taobao.android.fluid.framework.adapter.mtop.a<String, BitmapDrawable>() { // from class: com.taobao.android.fluid.framework.card.cards.album.a.b.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1558,7 +1558,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
             this.d = new LabelContainer(this.itemView.getContext());
             this.d.enableMove(false);
             ((ViewGroup) this.itemView).addView((View) this.d, (ViewGroup.LayoutParams) layoutParams);
-            if (TextUtils.isEmpty(picElement.getDecideUrl())) {
+            if (StringUtils.isEmpty(picElement.getDecideUrl())) {
                 picElement.setDecideUrl(FluidSDK.getImageAdapter().decideUrl(picElement.url, dVar.d, dVar.c));
             }
             this.c.setImageUrl(picElement.getDecideUrl());
@@ -1609,7 +1609,7 @@ public final class a extends psy implements a.InterfaceC0490a, aw, ba, snz {
                         return ((Boolean) ipChange2.ipc$dispatch("24bb398b", new Object[]{this, labelData2})).booleanValue();
                     }
                     String c = a.c(a.this, (String) labelData2.extra.get("targetUrl"));
-                    if (!TextUtils.isEmpty(c)) {
+                    if (!StringUtils.isEmpty(c)) {
                         FluidSDK.getNavAdapter().nav(a.f(a.this), a.l(a.this), c, null);
                     }
                     com.taobao.android.fluid.business.usertrack.track.b.a(a.f(a.this), (String) labelData2.extra.get("itemId"));

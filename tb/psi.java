@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import com.taobao.taolive.sdk.ui.media.IMediaPlayer;
@@ -113,7 +113,7 @@ public class psi {
         }
         String str2 = f32863a;
         TLog.loge(str2, "handlePlayError  what = " + i + " extra = " + i2);
-        if (TextUtils.isEmpty(this.d) && TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.d) && StringUtils.isEmpty(this.e)) {
             return false;
         }
         a(context, pseVar, i, str);

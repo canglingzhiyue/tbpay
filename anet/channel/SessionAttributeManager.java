@@ -1,6 +1,6 @@
 package anet.channel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collection;
@@ -26,7 +26,7 @@ public class SessionAttributeManager {
         } else if (sessionInfo == null) {
             throw new NullPointerException("info is null");
         } else {
-            if (TextUtils.isEmpty(sessionInfo.host)) {
+            if (StringUtils.isEmpty(sessionInfo.host)) {
                 throw new IllegalArgumentException("host cannot be null or empty");
             }
             ALog.e("awcn.SessionAttributeManager", "[registerSessionInfo] host=" + sessionInfo.host, null, new Object[0]);
@@ -57,7 +57,7 @@ public class SessionAttributeManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("db5ec55f", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("host cannot be null or empty");
         } else {
             synchronized (this.publicKeyMap) {

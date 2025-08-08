@@ -58,7 +58,7 @@ public class ShortcutManagerCompat {
             android.content.pm.ResolveInfo r1 = (android.content.pm.ResolveInfo) r1
             android.content.pm.ActivityInfo r1 = r1.activityInfo
             java.lang.String r1 = r1.permission
-            boolean r3 = android.text.TextUtils.isEmpty(r1)
+            boolean r3 = android.text.StringUtils.isEmpty(r1)
             if (r3 != 0) goto L4c
             boolean r1 = r0.equals(r1)
             if (r1 == 0) goto L30

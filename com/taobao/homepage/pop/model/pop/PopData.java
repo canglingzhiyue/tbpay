@@ -1,6 +1,6 @@
 package com.taobao.homepage.pop.model.pop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.pop.model.section.PopSectionModel;
@@ -109,7 +109,7 @@ public class PopData implements IPopData<PopSectionModel>, Serializable {
     public boolean valid() {
         PopConfig popConfig;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bdc1b687", new Object[]{this})).booleanValue() : (TextUtils.isEmpty(this.businessID) || (popConfig = this.popConfig) == null || (popConfig.getPopContentType() == 1 && mo1070fetchPopSection() == null)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bdc1b687", new Object[]{this})).booleanValue() : (StringUtils.isEmpty(this.businessID) || (popConfig = this.popConfig) == null || (popConfig.getPopContentType() == 1 && mo1070fetchPopSection() == null)) ? false : true;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -133,7 +133,7 @@ public class PopData implements IPopData<PopSectionModel>, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("447743af", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         PopConfig popConfig = this.popConfig;

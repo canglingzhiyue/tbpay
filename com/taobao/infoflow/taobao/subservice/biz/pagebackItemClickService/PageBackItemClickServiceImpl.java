@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.pagebackItemClickService;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,7 +62,7 @@ public class PageBackItemClickServiceImpl implements IPageBackItemClickService {
                     if (ipChange2 instanceof IpChange) {
                         return (Map) ipChange2.ipc$dispatch("add74dce", new Object[]{this, lliVar, str});
                     }
-                    if (!Constant.KEY_PAGEBACK.equals(str) || TextUtils.isEmpty(PageBackItemClickServiceImpl.access$000(PageBackItemClickServiceImpl.this))) {
+                    if (!Constant.KEY_PAGEBACK.equals(str) || StringUtils.isEmpty(PageBackItemClickServiceImpl.access$000(PageBackItemClickServiceImpl.this))) {
                         return null;
                     }
                     HashMap hashMap = new HashMap();

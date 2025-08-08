@@ -2,7 +2,7 @@ package com.taobao.live.home.business;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.livehome.plugin.atype.flexalocal.utils.k;
@@ -117,7 +117,7 @@ public abstract class a<ResponseBaseOutDo extends FeedListResponse, ItemClass ex
             return null;
         }
         String str2 = (String) a2;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         MtopResponse mtopResponse = new MtopResponse();

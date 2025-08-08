@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -88,8 +88,8 @@ public final class AURALocatorEvent extends arv {
             arc.a().b("AURALocatorEvent fun:innerHandleEvent case: eventFields 为空");
             return;
         }
-        String a2 = TextUtils.isEmpty(c.getString("target")) ? a(eventModel.e(), 1) : c.getString("target");
-        if (TextUtils.isEmpty(a2)) {
+        String a2 = StringUtils.isEmpty(c.getString("target")) ? a(eventModel.e(), 1) : c.getString("target");
+        if (StringUtils.isEmpty(a2)) {
             arc.a().b("AURALocatorEvent fun:innerHandleEvent case: target 为空");
         } else if (this.b == null || bau.a(this.f2194a)) {
             arc.a().b("AURALocatorEvent fun:innerHandleEvent case: recycleView 为空");

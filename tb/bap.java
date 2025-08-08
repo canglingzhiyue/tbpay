@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -121,7 +121,7 @@ public class bap {
         if (map != null) {
             map.put("c1", JSON.toJSONString(hashMap));
         }
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             hashMap.put("message", a(str7));
         }
         UTAnalytics.getInstance().getDefaultTracker().send(new UTOriginalCustomHitBuilder(k.HTTP_PREFIX + str4, 19999, "/jstracker.3", "", "", hashMap).build());

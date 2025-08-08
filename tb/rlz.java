@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -79,7 +79,7 @@ public class rlz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             rly.a().f33229a = str;
         }
@@ -121,7 +121,7 @@ public class rlz {
                 this.e.put(str3, true);
                 this.f.put(str3, jSONArray.subList(0, jSONArray.size()));
             }
-            if (!TextUtils.isEmpty(str2) && parseObject.containsKey(str2)) {
+            if (!StringUtils.isEmpty(str2) && parseObject.containsKey(str2)) {
                 a(str2, parseObject.getJSONObject(str2), hashMap, str3);
             }
             for (Map.Entry<String, Object> entry : parseObject.entrySet()) {
@@ -220,7 +220,7 @@ public class rlz {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String obj = entry.getKey().toString();
                 String obj2 = entry.getValue().toString();
-                if (!TextUtils.isEmpty(obj) && !TextUtils.isEmpty(obj2)) {
+                if (!StringUtils.isEmpty(obj) && !StringUtils.isEmpty(obj2)) {
                     if (h(str).containsKey(obj)) {
                         obj = h(str).get(obj);
                     }
@@ -250,12 +250,12 @@ public class rlz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b7fade75", new Object[]{this, str, jSONObject, str2, hashMap, str3});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             if (hashMap == null) {
                 hashMap = new HashMap<>();
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = this.m;
             }
             HashMap<String, HashMap<String, Object>> hashMap2 = null;
@@ -283,7 +283,7 @@ public class rlz {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             if (entry.getValue() instanceof JSONObject) {
                 String obj = entry.getKey().toString();
-                if (!TextUtils.isEmpty(obj)) {
+                if (!StringUtils.isEmpty(obj)) {
                     if (this.e.containsKey(str2) && this.e.get(str2).booleanValue()) {
                         hashMap.putAll(b(str, (JSONObject) entry.getValue(), str2));
                     } else {
@@ -300,7 +300,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("9eb660a", new Object[]{this, str, jSONObject, str2});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null) {
+        if (StringUtils.isEmpty(str) || jSONObject == null) {
             return null;
         }
         HashMap<String, HashMap<String, Object>> hashMap = new HashMap<>();
@@ -318,11 +318,11 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("911f569", new Object[]{this, str, jSONObject, str2});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null) {
+        if (StringUtils.isEmpty(str) || jSONObject == null) {
             return null;
         }
         HashMap<String, Object> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(this.m) && d(str2) != null && d(str2).get(this.m) != null && d(str2).get(this.m).get(str) != null) {
+        if (!StringUtils.isEmpty(this.m) && d(str2) != null && d(str2).get(this.m) != null && d(str2).get(this.m).get(str) != null) {
             hashMap.putAll(d(str2).get(this.m).get(str));
         }
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
@@ -347,7 +347,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("9f66eee1", new Object[]{this, str, jSONObject});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null) {
+        if (StringUtils.isEmpty(str) || jSONObject == null) {
             return null;
         }
         HashMap<String, Object> hashMap = new HashMap<>();
@@ -369,7 +369,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("49ee1a18", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = rly.a().b;
         }
         HashMap<String, HashMap<String, HashMap<String, HashMap<String, Object>>>> hashMap = d;
@@ -384,7 +384,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("8f924222", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "common";
         }
         if (d(str2) != null && d(str2).containsKey(str)) {
@@ -414,10 +414,10 @@ public class rlz {
             ipChange.ipc$dispatch("3ea4d824", new Object[]{this, jSONObject, str, str2, str3, rlvVar, str4});
         } else if (jSONObject == null) {
         } else {
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = rly.a().b;
             }
-            if (!TextUtils.isEmpty(str3) && str3.equals(c.get(str4)) && (hashMap = d) != null && hashMap.get(str4) != null && d.get(str4).size() > 0) {
+            if (!StringUtils.isEmpty(str3) && str3.equals(c.get(str4)) && (hashMap = d) != null && hashMap.get(str4) != null && d.get(str4).size() > 0) {
                 return;
             }
             try {
@@ -444,7 +444,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("632e701a", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = rly.a().b;
         }
         return this.h.get(str) == null ? new HashMap<>() : this.h.get(str);
@@ -472,7 +472,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("efce9b1b", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = rly.a().b;
         }
         if (f33231a.get(str) == null) {
@@ -486,7 +486,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("7c6ec61c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = rly.a().b;
         }
         if (b.get(str) == null) {
@@ -505,7 +505,7 @@ public class rlz {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("331040cd", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = rly.a().b;
         }
         return this.f.get(str) == null ? new ArrayList() : this.f.get(str);

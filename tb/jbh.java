@@ -7,7 +7,7 @@ import android.os.SystemClock;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -232,7 +232,7 @@ public class jbh extends ptg {
             pil.a(this.d.getContext(), j, "gg_interactive_render_h5");
         }
         String a2 = a(this.e);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             spz.c("GlobalH5MessageHandler", "init web view, url is empty");
             this.i = 3;
             if (this.d != null) {
@@ -490,7 +490,7 @@ public class jbh extends ptg {
 
     private boolean m() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6158678", new Object[]{this})).booleanValue() : TextUtils.equals("true", OrangeConfig.getInstance().getConfig("ShortVideo", "disableOnResume", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6158678", new Object[]{this})).booleanValue() : StringUtils.equals("true", OrangeConfig.getInstance().getConfig("ShortVideo", "disableOnResume", "true"));
     }
 
     private long n() {

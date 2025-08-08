@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.network.diagnosis.model.NetworkAbility;
@@ -142,7 +142,7 @@ public final class qqx extends d.a {
             String str3 = this.f33039a;
             q.a((Object) str3);
             b().b().a(ITMSPageFactory.a.a(m, str3, new Window(null, null, null, null, Integer.valueOf(Color.parseColor("#ffffff")), false, null, null, null, null, null, null, null, null, null, null, 65487, null), null, null, 8, null));
-        } else if (!TextUtils.isEmpty(this.b)) {
+        } else if (!StringUtils.isEmpty(this.b)) {
         } else {
             a(e());
             super.c();

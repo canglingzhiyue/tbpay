@@ -2,7 +2,7 @@ package com.taobao.android.address.miniapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.ariver.engine.api.bridge.extension.annotation.BindingApiContext;
@@ -159,7 +159,7 @@ public class AddressBridgeExtension implements BridgeExtension {
             String string = jSONObject.getString("bizIdentity");
             switch (i) {
                 case 11:
-                    b.a(a(), string, jSONObject.getString("channel"), TextUtils.equals(jSONObject.getString(aw.PARAM_FORCE_REFRESH), "true"), jSONObject.getString("bizName"), new a() { // from class: com.taobao.android.address.miniapp.AddressBridgeExtension.1
+                    b.a(a(), string, jSONObject.getString("channel"), StringUtils.equals(jSONObject.getString(aw.PARAM_FORCE_REFRESH), "true"), jSONObject.getString("bizName"), new a() { // from class: com.taobao.android.address.miniapp.AddressBridgeExtension.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
                         @Override // com.taobao.android.address.a

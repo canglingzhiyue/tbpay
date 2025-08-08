@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -330,7 +330,7 @@ public class LayoutProtocol {
             userTrack.spmC = userTrackItemInfo.spmC;
             userTrack.spmD = userTrackItemInfo.spmD;
             userTrack.eventId = userTrackItemInfo.eventId;
-            if (TextUtils.isEmpty(userTrackItemInfo.actionName)) {
+            if (StringUtils.isEmpty(userTrackItemInfo.actionName)) {
                 userTrack.actionName = event.getName();
             } else {
                 userTrack.actionName = userTrackItemInfo.actionName;

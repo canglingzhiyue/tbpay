@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.nio.charset.Charset;
 import java.util.Set;
@@ -37,7 +37,7 @@ public final class n {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int length = str.length();

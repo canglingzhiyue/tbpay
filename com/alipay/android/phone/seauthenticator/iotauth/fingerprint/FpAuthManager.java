@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.IAuthenticatorManager;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.PreDataHelper;
 import com.alipay.android.phone.seauthenticator.iotauth.fingerprint.IBiometricValidateDialog;
@@ -222,7 +222,7 @@ public class FpAuthManager {
             fpFullViewDialog = new FpFullViewDialog();
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_TITLE);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             int type = authenticatorMessage.getType();
             if (type == 2) {
                 clientText = context.getString(R.string.fp_auth_start_title);
@@ -351,7 +351,7 @@ public class FpAuthManager {
         }
         try {
             String deviceId = IFAADevice.getInstance(context).getDeviceId();
-            if (TextUtils.isEmpty(deviceId)) {
+            if (StringUtils.isEmpty(deviceId)) {
                 deviceId = "null";
             }
             String str = deviceId;

@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.data.remote.newmodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -149,7 +149,7 @@ public class b {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("d17d431f", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject jSONObject = this.f12538a.getJSONObject("headers");
                 if (jSONObject == null) {
                     jSONObject = new JSONObject();
@@ -317,7 +317,7 @@ public class b {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("a1bf056e", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f12538a.put("type", (Object) str);
             }
             return this;

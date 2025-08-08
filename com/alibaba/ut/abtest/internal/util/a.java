@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.ut.abtest.internal.bucketing.ExperimentRoutingType;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -30,7 +30,7 @@ public final class a {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ad023781", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (split = TextUtils.split(str, "##")) == null || split.length != 2) {
+        if (StringUtils.isEmpty(str) || (split = StringUtils.split(str, "##")) == null || split.length != 2) {
             return null;
         }
         return split;
@@ -43,14 +43,14 @@ public final class a {
         }
         if (experimentRoutingType == ExperimentRoutingType.UserId) {
             String r = cex.a().r();
-            if (!TextUtils.isEmpty(r)) {
+            if (!StringUtils.isEmpty(r)) {
                 return a(r, str, str2);
             }
             h.b("ABUtils", "userId 获取失败，请检查是否登陆！");
             return null;
         }
         String b = o.a().b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return a(b, str, str2);
         }
         h.b("ABUtils", "utdid 获取失败");

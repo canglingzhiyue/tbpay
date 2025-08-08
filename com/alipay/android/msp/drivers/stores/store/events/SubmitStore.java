@@ -3,7 +3,7 @@ package com.alipay.android.msp.drivers.stores.store.events;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.Constants;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -170,15 +170,15 @@ public class SubmitStore extends LocalEventStore {
                 if (!jSONObject2.containsKey(str)) {
                     str = jSONObject2.containsKey("spwd") ? "spwd" : "";
                 }
-                if (!TextUtils.isEmpty(str) && !this.g) {
+                if (!StringUtils.isEmpty(str) && !this.g) {
                     String editTextContent = EditTextManager.getEditTextContent(this.e);
-                    if (TextUtils.isEmpty(editTextContent)) {
+                    if (StringUtils.isEmpty(editTextContent)) {
                         editTextContent = jSONObject2.getString(str);
                     }
                     jSONObject2.put(str, (Object) editTextContent);
-                    EditTextUtil editTextUtils = EditTextManager.getEditTextUtils();
-                    if (editTextUtils != null) {
-                        editTextUtils.clear(this.e);
+                    EditTextUtil editStringUtils = EditTextManager.getEditStringUtils();
+                    if (editStringUtils != null) {
+                        editStringUtils.clear(this.e);
                     }
                 }
             }

@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -218,7 +218,7 @@ public class DetailWeexFragment extends Fragment implements a, d {
             this.mInstance.a(this);
         }
         Bundle arguments = getArguments();
-        if (arguments != null && !TextUtils.isEmpty(arguments.getString("bundle_url"))) {
+        if (arguments != null && !StringUtils.isEmpty(arguments.getString("bundle_url"))) {
             this.mUrl = arguments.getString("bundle_url");
         }
         final HashMap hashMap = new HashMap();
@@ -446,7 +446,7 @@ public class DetailWeexFragment extends Fragment implements a, d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("832309b", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 getActivity().getActionBar().setTitle(JSONObject.parseObject(URLDecoder.decode(str, "utf-8")).getString("title"));
                 return true;

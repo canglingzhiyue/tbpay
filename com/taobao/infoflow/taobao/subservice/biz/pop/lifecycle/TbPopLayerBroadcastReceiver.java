@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.subservice.biz.pop.lifecycle;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -108,7 +108,7 @@ public class TbPopLayerBroadcastReceiver extends BroadcastReceiver {
         }
         try {
             String a2 = c.a.a("homepage_switch", "popLayerTypeFilterList", (String) null);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return f17498a;
             }
             return (List) JSON.parseObject(a2, new TypeReference<ArrayList<String>>() { // from class: com.taobao.infoflow.taobao.subservice.biz.pop.lifecycle.TbPopLayerBroadcastReceiver.1

@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.nativerender;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import anetwork.channel.NetworkEvent;
 import anetwork.channel.degrade.DegradableNetwork;
@@ -164,7 +164,7 @@ public class k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e09b09a", new Object[]{hVar, componentBaseModel, str, actionModel, list});
-        } else if (hVar == null || componentBaseModel == null || TextUtils.isEmpty(str)) {
+        } else if (hVar == null || componentBaseModel == null || StringUtils.isEmpty(str)) {
         } else {
             hVar.m().b(new Runnable() { // from class: com.taobao.tbpoplayer.nativerender.-$$Lambda$k$GlzyGbF3tKqE2K10dyIJ2EnRusQ
                 @Override // java.lang.Runnable
@@ -273,7 +273,7 @@ public class k {
             arrayList.add(jSONObject2);
             jSONObject.put(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_ACTIONS, (Object) arrayList);
             String str3 = aVar.e.userResult;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 if ("click".equals(str3)) {
                     UserResultTrack.a(aVar.b, UserResultTrack.USER_RESULT_CLICK_ACTION, z, jSONObject);
                     return;
@@ -521,7 +521,7 @@ public class k {
         jSONObject.put("componentId", (Object) (componentBaseModel != null ? componentBaseModel.id : ""));
         jSONObject.put(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_ACTIONS, (Object) jSONArray);
         String str2 = actionsItemModel.userResult;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if ("click".equals(str2)) {
                 UserResultTrack.a(popRequest, UserResultTrack.USER_RESULT_CLICK_ACTION, z, jSONObject);
                 return;
@@ -569,10 +569,10 @@ public class k {
         String str = null;
         try {
             if (z) {
-                if (!TextUtils.isEmpty(actionModel.withToast)) {
+                if (!StringUtils.isEmpty(actionModel.withToast)) {
                     str = p.a(hVar.m(), actionModel.withToast);
                 }
-            } else if (!TextUtils.isEmpty(actionModel.fallbackToast)) {
+            } else if (!StringUtils.isEmpty(actionModel.fallbackToast)) {
                 str = p.a(hVar.m(), actionModel.fallbackToast);
             }
             qnu.a(hVar.m(), str);
@@ -591,14 +591,14 @@ public class k {
         e eVar = aVar.f22234a;
         String a2 = p.a(eVar, actionModel.content);
         if ("app".equals(str)) {
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return false;
             }
             String b2 = eVar.b(a2);
             eVar.a(m(aVar));
             aVar.h.a(b2, (a.InterfaceC0922a) null);
         } else if ("url".equals(str)) {
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return false;
             }
             eVar.a(m(aVar));
@@ -639,7 +639,7 @@ public class k {
         JSONObject parseObject = JSONObject.parseObject(actionModel.content);
         if (parseObject != null) {
             String string = parseObject.getString("targetGroupStates");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 try {
                     arrayList = (List) JSON.parseObject(string, new TypeReference<List<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.6
                     }, new Feature[0]);
@@ -649,7 +649,7 @@ public class k {
             }
             if (arrayList2 == null || arrayList2.isEmpty()) {
                 String string2 = parseObject.getString("targetStates");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     try {
                         arrayList2 = (List) JSON.parseObject(string2, new TypeReference<List<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.7
                         }, new Feature[0]);
@@ -916,7 +916,7 @@ public class k {
         String string7 = jSONObject.getString("safeToken");
         e eVar = aVar.f22234a;
         String a2 = p.a(eVar, string6);
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string3) || TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string3) || StringUtils.isEmpty(a2)) {
             if (z2 && aVar.f != null) {
                 aVar.f.a(aVar, "paramInvalid", "");
             }
@@ -924,8 +924,8 @@ public class k {
         }
         MtopRequest mtopRequest = new MtopRequest();
         mtopRequest.setApiName(string3);
-        if (TextUtils.isEmpty(string4)) {
-            string4 = !TextUtils.isEmpty(string5) ? string5 : "1.0";
+        if (StringUtils.isEmpty(string4)) {
+            string4 = !StringUtils.isEmpty(string5) ? string5 : "1.0";
         }
         mtopRequest.setVersion(string4);
         mtopRequest.setNeedEcode(booleanValue2);
@@ -935,7 +935,7 @@ public class k {
         if (booleanValue) {
             mo1305reqMethod.mo1335useWua();
         }
-        if (!TextUtils.isEmpty(string7)) {
+        if (!StringUtils.isEmpty(string7)) {
             mo1305reqMethod.mo1289addHttpQueryParameter("asac", string7);
         }
         if (booleanValue2) {
@@ -958,7 +958,7 @@ public class k {
         String string3 = jSONObject.getString("requestParams");
         e eVar = aVar.f22234a;
         String a2 = p.a(eVar, string3);
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(a2)) {
             if (z2 && aVar.f != null) {
                 aVar.f.a(aVar, "paramInvalid", "");
             }
@@ -1027,7 +1027,7 @@ public class k {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null && !parseObject.isEmpty()) {
+                if (!StringUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null && !parseObject.isEmpty()) {
                     eVar.a(str2, parseObject);
                 }
                 if (k.a(aVar, jSONObject)) {
@@ -1083,10 +1083,10 @@ public class k {
             String string3 = jSONObject.getString("params");
             String a2 = p.a(aVar.f22234a, string);
             String a3 = p.a(aVar.f22234a, string3);
-            if (!TextUtils.isEmpty(a2) && a2.startsWith("https")) {
+            if (!StringUtils.isEmpty(a2) && a2.startsWith("https")) {
                 DegradableNetwork degradableNetwork = new DegradableNetwork(PopLayer.getReference().internalGetCurrentActivity());
                 RequestImpl requestImpl = new RequestImpl(a2);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     JSONObject parseObject = JSONObject.parseObject(a3);
                     ArrayList arrayList = new ArrayList();
                     for (String str : parseObject.keySet()) {
@@ -1155,12 +1155,12 @@ public class k {
             e eVar = aVar.f22234a;
             String string = jSONObject.getString("afterRequestSuccess");
             if ("toastText".equals(string)) {
-                if (!TextUtils.isEmpty(aVar.e.withToast)) {
+                if (!StringUtils.isEmpty(aVar.e.withToast)) {
                     com.alibaba.poplayer.utils.c.a("PopAction.onRequestActionSuccess.shouldUseWithToast.return", new Object[0]);
                     return;
                 }
                 String a2 = p.a(eVar, jSONObject.getString("toastText"));
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 qnu.a(eVar, a2);
@@ -1171,7 +1171,7 @@ public class k {
                 List<String> list = null;
                 if ("jumpUrl".equals(string)) {
                     String a3 = p.a(eVar, jSONObject.getString("jumpUrl"));
-                    if (TextUtils.isEmpty(a3)) {
+                    if (StringUtils.isEmpty(a3)) {
                         return;
                     }
                     eVar.a(m(aVar));
@@ -1180,9 +1180,9 @@ public class k {
                 } else {
                     String string2 = jSONObject.getString("switchStateGroup");
                     String string3 = jSONObject.getString("switchState");
-                    List<String> list2 = !TextUtils.isEmpty(string2) ? (List) JSON.parseObject(string2, new TypeReference<ArrayList<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.10
+                    List<String> list2 = !StringUtils.isEmpty(string2) ? (List) JSON.parseObject(string2, new TypeReference<ArrayList<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.10
                     }.getType(), new Feature[0]) : null;
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         list = (List) JSON.parseObject(string3, new TypeReference<ArrayList<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.2
                         }.getType(), new Feature[0]);
                     }
@@ -1208,12 +1208,12 @@ public class k {
             e eVar = aVar.f22234a;
             String string = jSONObject.getString("afterRequestFail");
             if ("errToastText".equals(string)) {
-                if (!TextUtils.isEmpty(aVar.e.fallbackToast)) {
+                if (!StringUtils.isEmpty(aVar.e.fallbackToast)) {
                     com.alibaba.poplayer.utils.c.a("PopAction.onRequestActionFailed.shouldUseFallbackToast.return", new Object[0]);
                     return;
                 }
                 String a2 = p.a(eVar, jSONObject.getString("errToastText"));
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 qnu.a(eVar, a2);
@@ -1224,7 +1224,7 @@ public class k {
                 List<String> list = null;
                 if ("errJumpUrl".equals(string)) {
                     String a3 = p.a(eVar, jSONObject.getString("errJumpUrl"));
-                    if (TextUtils.isEmpty(a3)) {
+                    if (StringUtils.isEmpty(a3)) {
                         return;
                     }
                     eVar.a(m(aVar));
@@ -1233,9 +1233,9 @@ public class k {
                 } else {
                     String string2 = jSONObject.getString("errSwitchStateGroup");
                     String string3 = jSONObject.getString("errSwitchState");
-                    List<String> list2 = !TextUtils.isEmpty(string2) ? (List) JSON.parseObject(string2, new TypeReference<ArrayList<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.3
+                    List<String> list2 = !StringUtils.isEmpty(string2) ? (List) JSON.parseObject(string2, new TypeReference<ArrayList<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.3
                     }.getType(), new Feature[0]) : null;
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         list = (List) JSON.parseObject(string3, new TypeReference<ArrayList<String>>() { // from class: com.taobao.tbpoplayer.nativerender.k.8
                         }.getType(), new Feature[0]);
                     }

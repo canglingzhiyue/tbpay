@@ -1,6 +1,6 @@
 package com.taobao.android.order.core.dinamicX.parser;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public class t extends fuf {
             return null;
         }
         String a4 = a2.t().a(a2);
-        if (!TextUtils.isEmpty(a4)) {
+        if (!StringUtils.isEmpty(a4)) {
             return a4;
         }
         return null;

@@ -1,7 +1,7 @@
 package com.huawei.hms.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.support.log.HMSLog;
 import java.io.File;
@@ -74,7 +74,7 @@ public abstract class c {
 
     public static boolean a(JSONObject jSONObject, JSONObject jSONObject2, String str) {
         if (jSONObject != null) {
-            return TextUtils.isEmpty(str) && jSONObject2 == null;
+            return StringUtils.isEmpty(str) && jSONObject2 == null;
         }
         return true;
     }

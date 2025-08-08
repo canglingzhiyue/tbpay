@@ -1,7 +1,7 @@
 package com.ali.user.mobile.security;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.app.init.Debuggable;
 import com.alibaba.wireless.security.open.SecException;
@@ -58,7 +58,7 @@ public class SSOSecurityService {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d3e8c701", new Object[]{this, str, treeMap, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         StringBuilder sb = new StringBuilder();
@@ -83,7 +83,7 @@ public class SSOSecurityService {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("INPUT", str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("ATLAS", str3);
         }
         if (DataProviderFactory.getDataProvider().getEnvType() == 1) {

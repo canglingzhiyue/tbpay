@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.framework.data.remote.a;
 import com.taobao.android.fluid.framework.data.remote.c;
@@ -43,7 +43,7 @@ public final class slq {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d387b9e", new Object[]{spsVar, map});
         }
-        Map a2 = (spsVar == null || TextUtils.isEmpty(spsVar.i)) ? null : obz.a(spsVar.i);
+        Map a2 = (spsVar == null || StringUtils.isEmpty(spsVar.i)) ? null : obz.a(spsVar.i);
         if (ogv.a(a2)) {
             a2 = map;
         } else if (!ogv.a(map)) {
@@ -57,7 +57,7 @@ public final class slq {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a7d93e1f", new Object[]{spsVar, map});
         }
-        if (spsVar == null || TextUtils.isEmpty(spsVar.i)) {
+        if (spsVar == null || StringUtils.isEmpty(spsVar.i)) {
             return null;
         }
         if (map == null || map.isEmpty()) {
@@ -101,7 +101,7 @@ public final class slq {
                     String a2 = skk.d() ? obz.a(gwe.a()) : null;
                     if (sll.a(spsVar) && jcs.f()) {
                         str2 = sll.b();
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             spz.c("DetailParams", "buildDetailParams refreshType=" + str + " ;lbsString=" + a2 + " ;bxFeature=" + str2);
                             aVar.b(a2).c(str).a(str2);
                         }

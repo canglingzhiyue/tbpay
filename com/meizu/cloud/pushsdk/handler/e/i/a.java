@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e.i;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.e.j.g;
@@ -72,7 +72,7 @@ public class a extends com.meizu.cloud.pushsdk.handler.e.a<g> {
         int i;
         DebugLogger.i("AbstractMessageHandler", "start LogUploadMessageHandler match");
         String stringExtra = intent.getStringExtra(PushConstants.MZ_PUSH_CONTROL_MESSAGE);
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             com.meizu.cloud.pushsdk.handler.e.j.b a2 = com.meizu.cloud.pushsdk.handler.e.j.b.a(stringExtra);
             if (a2.a() != null) {
                 i = a2.a().a();

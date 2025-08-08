@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -89,10 +89,10 @@ public class oso implements com.taobao.android.gateway.msgcenter.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1be9bf67", new Object[]{this, message});
-        } else if (!TextUtils.equals(message.getChannelId(), a()) || (params = message.getParams()) == null) {
+        } else if (!StringUtils.equals(message.getChannelId(), a()) || (params = message.getParams()) == null) {
         } else {
             final String string = params.getString("_msgType");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if (opb.b()) {
@@ -120,27 +120,27 @@ public class oso implements com.taobao.android.gateway.msgcenter.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6635bcfe", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.equals(str, "dinamicX3")) {
+        } else if (StringUtils.equals(str, "dinamicX3")) {
             a(jSONObject);
         } else {
             String string = jSONObject.getString("containerId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             String substring = string.substring(string.lastIndexOf(95) + 1);
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 return;
             }
-            if (TextUtils.equals(jSONObject.getString("dataSourceType"), "remote") && (jSONObject.get("containerModel") instanceof AwesomeGetContainerData) && TextUtils.equals(str, "uiRefresh") && (awesomeGetContainerData = (AwesomeGetContainerData) jSONObject.get("containerModel")) != null && awesomeGetContainerData.getBaseRemind() != null) {
+            if (StringUtils.equals(jSONObject.getString("dataSourceType"), "remote") && (jSONObject.get("containerModel") instanceof AwesomeGetContainerData) && StringUtils.equals(str, "uiRefresh") && (awesomeGetContainerData = (AwesomeGetContainerData) jSONObject.get("containerModel")) != null && awesomeGetContainerData.getBaseRemind() != null) {
                 kxf.a().a(new kxv(awesomeGetContainerData.getBaseRemind(), false));
             }
             HomeChildRecyclerView homeChildRecyclerView = this.c.get();
             if (homeChildRecyclerView == null) {
                 return;
             }
-            if (TextUtils.equals(str, "scrollToTop")) {
+            if (StringUtils.equals(str, "scrollToTop")) {
                 b(jSONObject, substring, homeChildRecyclerView);
-            } else if (!TextUtils.equals(str, "uiRefresh")) {
+            } else if (!StringUtils.equals(str, "uiRefresh")) {
             } else {
                 a(jSONObject, string, homeChildRecyclerView);
             }
@@ -154,7 +154,7 @@ public class oso implements com.taobao.android.gateway.msgcenter.a {
             return;
         }
         String string = jSONObject.getString("dataChangeType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ((h) homeChildRecyclerView.getAdapter()).a();
             this.e.e();
             a aVar = this.b;
@@ -174,7 +174,7 @@ public class oso implements com.taobao.android.gateway.msgcenter.a {
             return;
         }
         boolean a2 = a(str, awesomeGetContainerData, string);
-        boolean equals = TextUtils.equals(jSONObject.getString("dataSourceType"), "local");
+        boolean equals = StringUtils.equals(jSONObject.getString("dataSourceType"), "local");
         boolean a3 = opb.a(awesomeGetContainerData.getPageParams().isLastPage);
         a aVar3 = this.b;
         if (aVar3 != null) {
@@ -182,7 +182,7 @@ public class oso implements com.taobao.android.gateway.msgcenter.a {
         }
         try {
             h hVar = (h) homeChildRecyclerView.getAdapter();
-            if (equals && hVar.getItemCount() > 1 && TextUtils.equals(this.d.f30287a, str)) {
+            if (equals && hVar.getItemCount() > 1 && StringUtils.equals(this.d.f30287a, str)) {
                 a(a2, true, a3);
                 return;
             }
@@ -217,7 +217,7 @@ public class oso implements com.taobao.android.gateway.msgcenter.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ffa0e757", new Object[]{this, str, iContainerDataModel, str2})).booleanValue();
         }
-        boolean equals = TextUtils.equals(str2, "base");
+        boolean equals = StringUtils.equals(str2, "base");
         return (Boolean.parseBoolean(otj.a(str, "isNextPageToDeltaRefresh", "true")) && equals && (mo1280getPageParams = iContainerDataModel.getBase().mo1280getPageParams()) != null) ? mo1280getPageParams.getPageNum() == 0 : equals;
     }
 
@@ -254,7 +254,7 @@ public class oso implements com.taobao.android.gateway.msgcenter.a {
         }
         String string = jSONObject.getString("sectionBizCode");
         Object obj = jSONObject.get("DX3Params");
-        if (TextUtils.isEmpty(string) || obj == null || !(obj instanceof JSONObject) || (homeChildRecyclerView = this.c.get()) == null || (b = ((h) homeChildRecyclerView.getAdapter()).b()) == null || b.isEmpty() || (a2 = opb.a(string, b)) < 0 || a2 >= b.size() || (findViewByPosition = homeChildRecyclerView.getLayoutManager().findViewByPosition(a2)) == null || !(findViewByPosition instanceof ViewGroup)) {
+        if (StringUtils.isEmpty(string) || obj == null || !(obj instanceof JSONObject) || (homeChildRecyclerView = this.c.get()) == null || (b = ((h) homeChildRecyclerView.getAdapter()).b()) == null || b.isEmpty() || (a2 = opb.a(string, b)) < 0 || a2 >= b.size() || (findViewByPosition = homeChildRecyclerView.getLayoutManager().findViewByPosition(a2)) == null || !(findViewByPosition instanceof ViewGroup)) {
             return;
         }
         ViewGroup viewGroup = (ViewGroup) findViewByPosition;

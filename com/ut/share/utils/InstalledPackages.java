@@ -3,7 +3,7 @@ package com.ut.share.utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -29,7 +29,7 @@ public class InstalledPackages {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bbabe952", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mPackageName)) {
+        if (StringUtils.isEmpty(this.mPackageName)) {
             this.mPackageInfo = null;
             this.mIsInstalled = -1;
             return false;

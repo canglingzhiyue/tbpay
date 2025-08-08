@@ -1,7 +1,7 @@
 package com.vivo.push.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.sdk.PushMessageCallback;
 
 /* loaded from: classes9.dex */
@@ -23,7 +23,7 @@ final class i implements Runnable {
     public final void run() {
         Context context;
         Context context2;
-        if (!TextUtils.isEmpty(this.f24195a)) {
+        if (!StringUtils.isEmpty(this.f24195a)) {
             PushMessageCallback pushMessageCallback = this.c.b;
             context2 = this.c.f24241a;
             pushMessageCallback.onReceiveRegId(context2, this.f24195a);

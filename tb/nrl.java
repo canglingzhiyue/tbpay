@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -204,7 +204,7 @@ public abstract class nrl extends ius<Void, TRecyclerView, SearchDoorContext> im
             this.f.a(false);
         }
         String q = this.f.q();
-        if (!TextUtils.isEmpty(q)) {
+        if (!StringUtils.isEmpty(q)) {
             c.put("lastQ", q);
         }
         c.put(noa.KEY_GRAY_HAIR, String.valueOf("true".equals(this.f.a(noa.KEY_SEARCH_ELDER_HOME_OPEN))));
@@ -338,7 +338,7 @@ public abstract class nrl extends ius<Void, TRecyclerView, SearchDoorContext> im
         if (ipChange instanceof IpChange) {
             return (TemplateBean) ipChange.ipc$dispatch("45058b5e", new Object[]{this, str});
         }
-        if (!this.g.isEmpty() && !TextUtils.isEmpty(str)) {
+        if (!this.g.isEmpty() && !StringUtils.isEmpty(str)) {
             return this.g.get(str);
         }
         return null;
@@ -350,7 +350,7 @@ public abstract class nrl extends ius<Void, TRecyclerView, SearchDoorContext> im
         if (ipChange instanceof IpChange) {
             return (jvm.c) ipChange.ipc$dispatch("ad662293", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.h.get(str);
         }
         return null;

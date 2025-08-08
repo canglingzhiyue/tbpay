@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -103,7 +103,7 @@ public class g extends FragmentPagerAdapter {
         if (instantiate instanceof c) {
             c cVar = (c) instantiate;
             cVar.setPageIndex(pageModel2.pageIndex);
-            if (!TextUtils.isEmpty(this.d) && (instantiate instanceof LazyPageFragment)) {
+            if (!StringUtils.isEmpty(this.d) && (instantiate instanceof LazyPageFragment)) {
                 ((LazyPageFragment) instantiate).setAppearNavigationType(this.d);
             }
             this.c.a(cVar, pageModel2.key);
@@ -129,7 +129,7 @@ public class g extends FragmentPagerAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a141ccc", new Object[]{this, viewGroup, new Integer(i), obj});
-        } else if (!(obj instanceof LazyPageFragment) || (mo1202getPageModel = ((LazyPageFragment) obj).mo1202getPageModel()) == null || !TextUtils.equals("low", mo1202getPageModel.priority)) {
+        } else if (!(obj instanceof LazyPageFragment) || (mo1202getPageModel = ((LazyPageFragment) obj).mo1202getPageModel()) == null || !StringUtils.equals("low", mo1202getPageModel.priority)) {
         } else {
             ngr.b("ViewPagerAdapter", "destroyItem" + i + " " + obj);
             super.destroyItem(viewGroup, i, obj);

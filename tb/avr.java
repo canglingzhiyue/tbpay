@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -191,7 +191,7 @@ public final class avr extends arv {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("48075356", new Object[]{this, jSONObject, str})).booleanValue();
             }
-            if (TextUtils.isEmpty(str) || !str.matches("^\\$\\{.+\\}$")) {
+            if (StringUtils.isEmpty(str) || !str.matches("^\\$\\{.+\\}$")) {
                 return false;
             }
             try {
@@ -222,7 +222,7 @@ public final class avr extends arv {
             for (JSONObject jSONObject : list) {
                 if (jSONObject != null) {
                     String string = jSONObject.getString("type");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         d dVar = new d();
                         dVar.a(this.b);
                         dVar.a("" + System.currentTimeMillis());
@@ -239,11 +239,11 @@ public final class avr extends arv {
             if (ipChange instanceof IpChange) {
                 return (AURARenderComponent) ipChange.ipc$dispatch("cb48fc1d", new Object[]{this, str});
             }
-            if (this.d != null && !TextUtils.isEmpty(str) && (list = (List) this.d.get("render_view_item_models", List.class)) != null && !list.isEmpty()) {
+            if (this.d != null && !StringUtils.isEmpty(str) && (list = (List) this.d.get("render_view_item_models", List.class)) != null && !list.isEmpty()) {
                 for (Object obj : list) {
                     if (obj instanceof AURARenderComponent) {
                         AURARenderComponent aURARenderComponent = (AURARenderComponent) obj;
-                        if (TextUtils.equals(aURARenderComponent.key, str)) {
+                        if (StringUtils.equals(aURARenderComponent.key, str)) {
                             return aURARenderComponent;
                         }
                     }

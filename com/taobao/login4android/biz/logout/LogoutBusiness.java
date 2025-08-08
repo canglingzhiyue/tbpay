@@ -1,6 +1,6 @@
 package com.taobao.login4android.biz.logout;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.info.AlipayInfo;
@@ -68,7 +68,7 @@ public class LogoutBusiness {
             RpcRequest rpcRequest = new RpcRequest();
             rpcRequest.API_NAME = ApiConstants.ApiName.LOGOUT;
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put(SessionConstants.SUBSID, str2);
             }
             logoutRequest.attributes = hashMap;

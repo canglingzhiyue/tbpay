@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes8.dex */
@@ -18,12 +18,12 @@ public final class qtd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (str2 == null || TextUtils.isEmpty(str2)) {
+            if (str2 == null || StringUtils.isEmpty(str2)) {
                 str2 = "";
             }
-            if (!TextUtils.isEmpty(this.f33055a)) {
+            if (!StringUtils.isEmpty(this.f33055a)) {
                 String str3 = this.f33055a;
                 this.f33055a = str3 + ",";
             }
@@ -37,7 +37,7 @@ public final class qtd {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f33055a)) {
+        if (StringUtils.isEmpty(this.f33055a)) {
             return "";
         }
         return "[{" + this.f33055a + "}]";

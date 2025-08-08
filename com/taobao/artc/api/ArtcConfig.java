@@ -1,7 +1,7 @@
 package com.taobao.artc.api;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.artc.api.AConstants;
 import com.taobao.trtc.accs.a;
@@ -379,7 +379,7 @@ public class ArtcConfig {
 
     public boolean verifyVaild() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4b4e9e28", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.appKey) && !TextUtils.isEmpty(this.localUserId);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4b4e9e28", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.appKey) && !StringUtils.isEmpty(this.localUserId);
     }
 
     public String getLocalUserId() {

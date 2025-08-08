@@ -20,7 +20,7 @@ import android.os.StatFs;
 import android.os.storage.StorageManager;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
@@ -167,7 +167,7 @@ public final class o {
 
         private String a() {
             try {
-                if (!TextUtils.isEmpty(f7841a)) {
+                if (!StringUtils.isEmpty(f7841a)) {
                     return f7841a;
                 }
                 byte[] digest = MessageDigest.getInstance(x.c("IU0hBMQ")).digest(this.b.getPackageManager().getPackageInfo(this.b.getPackageName(), 64).signatures[0].toByteArray());
@@ -176,7 +176,7 @@ public final class o {
                     stringBuffer.append(Integer.toHexString((b & 255) | 256).substring(1, 3));
                 }
                 String stringBuffer2 = stringBuffer.toString();
-                if (!TextUtils.isEmpty(stringBuffer2)) {
+                if (!StringUtils.isEmpty(stringBuffer2)) {
                     f7841a = stringBuffer2;
                 }
                 return stringBuffer2;
@@ -268,12 +268,12 @@ public final class o {
     }
 
     private static String A(Context context) {
-        if (!TextUtils.isEmpty(F)) {
+        if (!StringUtils.isEmpty(F)) {
             return F;
         }
         try {
             String b2 = bd.b(context, "open_common", "a1", "");
-            if (TextUtils.isEmpty(b2)) {
+            if (StringUtils.isEmpty(b2)) {
                 F = IAddressMap.MAP_TYPE_AMAP + UUID.randomUUID().toString().replace("_", "").toLowerCase();
                 SharedPreferences.Editor a2 = bd.a(context, "open_common");
                 bd.a(a2, "a1", x.b(F));
@@ -295,7 +295,7 @@ public final class o {
         if (b(context, x.c("WYW5kcm9pZC5wZXJtaXNzaW9uLlJFQURfUEhPTkVfU1RBVEU=")) && (F2 = F(context)) != null) {
             String simOperatorName = F2.getSimOperatorName();
             O = simOperatorName;
-            if (TextUtils.isEmpty(simOperatorName)) {
+            if (StringUtils.isEmpty(simOperatorName)) {
                 O = F2.getNetworkOperatorName();
             }
             P = true;
@@ -355,7 +355,7 @@ public final class o {
             str = H(context);
         } catch (Throwable unused) {
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             c = false;
             return "";
         }
@@ -375,7 +375,7 @@ public final class o {
         } catch (Throwable unused) {
             str = "";
         }
-        return !TextUtils.isEmpty(str) ? str : context == null ? "" : context.getSharedPreferences(x.c("SU2hhcmVkUHJlZmVyZW5jZUFkaXU"), 0).getString(s.a(x.c("RYW1hcF9kZXZpY2VfYWRpdQ")), "");
+        return !StringUtils.isEmpty(str) ? str : context == null ? "" : context.getSharedPreferences(x.c("SU2hhcmVkUHJlZmVyZW5jZUFkaXU"), 0).getString(s.a(x.c("RYW1hcF9kZXZpY2VfYWRpdQ")), "");
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor
@@ -403,7 +403,7 @@ public final class o {
             java.lang.String r1 = com.loc.x.c(r1)
             java.lang.String r1 = com.loc.s.a(r1)
             java.lang.String r8 = J(r8)
-            boolean r3 = android.text.TextUtils.isEmpty(r8)
+            boolean r3 = android.text.StringUtils.isEmpty(r8)
             if (r3 == 0) goto L2c
             return r2
         L2c:
@@ -453,7 +453,7 @@ public final class o {
             byte[] r3 = r5.toByteArray()     // Catch: java.lang.Throwable -> Lce
             java.lang.String r6 = "UTF-8"
             r8.<init>(r3, r6)     // Catch: java.lang.Throwable -> Lce
-            boolean r3 = android.text.TextUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> Lce
+            boolean r3 = android.text.StringUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> Lce
             if (r3 != 0) goto Lc5
             java.lang.String r3 = com.loc.x.c(r0)     // Catch: java.lang.Throwable -> Lce
             boolean r3 = r8.contains(r3)     // Catch: java.lang.Throwable -> Lce
@@ -465,7 +465,7 @@ public final class o {
             r3 = 2
             if (r0 != r3) goto Lc5
             r0 = r8[r7]     // Catch: java.lang.Throwable -> Lce
-            boolean r0 = android.text.TextUtils.equals(r1, r0)     // Catch: java.lang.Throwable -> Lce
+            boolean r0 = android.text.StringUtils.equals(r1, r0)     // Catch: java.lang.Throwable -> Lce
             if (r0 == 0) goto Lc5
             r0 = 1
             r8 = r8[r0]     // Catch: java.lang.Throwable -> Lce
@@ -551,7 +551,7 @@ public final class o {
     }
 
     public static String a(final Context context) {
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return b;
         }
         if (context == null) {
@@ -559,7 +559,7 @@ public final class o {
         }
         String G2 = G(context);
         b = G2;
-        if (!TextUtils.isEmpty(G2)) {
+        if (!StringUtils.isEmpty(G2)) {
             return b;
         }
         if (c() == null || n) {
@@ -572,12 +572,12 @@ public final class o {
                 try {
                     Map<String, String> b2 = o.g.b();
                     String a2 = o.g.a(o.f(context), "", "", o.n());
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         return;
                     }
                     bo.a();
                     String a3 = o.g.a(context, new String(bo.a(o.g.a(a2.getBytes(), b2)).f7708a));
-                    if (TextUtils.isEmpty(a3)) {
+                    if (StringUtils.isEmpty(a3)) {
                         return;
                     }
                     o.b = a3;
@@ -606,7 +606,7 @@ public final class o {
             c cVar = new c(context, i2);
             if (context.bindService(intent, cVar, 1)) {
                 int i3 = 0;
-                while (i3 < 100 && TextUtils.isEmpty(o)) {
+                while (i3 < 100 && StringUtils.isEmpty(o)) {
                     i3++;
                     Thread.sleep(15L);
                 }
@@ -641,7 +641,7 @@ public final class o {
 
     public static String b() {
         try {
-            return !TextUtils.isEmpty(e) ? e : g == null ? "" : g.a();
+            return !StringUtils.isEmpty(e) ? e : g == null ? "" : g.a();
         } catch (Throwable unused) {
             return "";
         }
@@ -704,7 +704,7 @@ public final class o {
         if (p) {
             return "";
         }
-        if (TextUtils.isEmpty(o) && !q) {
+        if (StringUtils.isEmpty(o) && !q) {
             if (Looper.getMainLooper() == Looper.myLooper()) {
                 cr.a().b(new cs() { // from class: com.loc.o.2
                     @Override // com.loc.cs
@@ -735,14 +735,14 @@ public final class o {
             if (b(context, x.c("WYW5kcm9pZC5wZXJtaXNzaW9uLldSSVRFX1NFVFRJTkdT"))) {
                 f7835a = Settings.System.getString(context.getContentResolver(), "mqBRboGZkQPcAkyk");
             }
-            if (!TextUtils.isEmpty(f7835a)) {
+            if (!StringUtils.isEmpty(f7835a)) {
                 r = true;
                 return f7835a;
             }
             try {
                 String v2 = v(context);
                 f7835a = v2;
-                if (!TextUtils.isEmpty(v2)) {
+                if (!StringUtils.isEmpty(v2)) {
                     r = true;
                     return f7835a;
                 }
@@ -770,7 +770,7 @@ public final class o {
                 return "";
             }
             String networkOperator = F2.getNetworkOperator();
-            if (!TextUtils.isEmpty(networkOperator) && networkOperator.length() >= 3) {
+            if (!StringUtils.isEmpty(networkOperator) && networkOperator.length() >= 3) {
                 return networkOperator.substring(0, 3);
             }
             return "";
@@ -798,7 +798,7 @@ public final class o {
             return y;
         }
         String networkOperator = F2.getNetworkOperator();
-        if (!TextUtils.isEmpty(networkOperator) && networkOperator.length() >= 3) {
+        if (!StringUtils.isEmpty(networkOperator) && networkOperator.length() >= 3) {
             y = networkOperator.substring(3);
             z = true;
             return y;
@@ -947,7 +947,7 @@ public final class o {
     }
 
     public static String p() {
-        if (!TextUtils.isEmpty(K)) {
+        if (!StringUtils.isEmpty(K)) {
             return K;
         }
         String property = System.getProperty("os.arch");
@@ -960,19 +960,19 @@ public final class o {
         try {
             String k2 = k();
             try {
-                if (TextUtils.isEmpty(k2)) {
+                if (StringUtils.isEmpty(k2)) {
                     k2 = a(context);
                 }
-                if (TextUtils.isEmpty(k2)) {
+                if (StringUtils.isEmpty(k2)) {
                     k2 = f(context);
                 }
-                if (TextUtils.isEmpty(k2)) {
+                if (StringUtils.isEmpty(k2)) {
                     k2 = e(context);
                 }
-                if (TextUtils.isEmpty(k2)) {
+                if (StringUtils.isEmpty(k2)) {
                     k2 = g();
                 }
-                return TextUtils.isEmpty(k2) ? A(context) : k2;
+                return StringUtils.isEmpty(k2) ? A(context) : k2;
             } catch (Throwable unused) {
                 return str;
             }
@@ -1083,7 +1083,7 @@ public final class o {
 
     public static String t(Context context) {
         try {
-            if (TextUtils.isEmpty(m)) {
+            if (StringUtils.isEmpty(m)) {
                 m = ae.a(context);
             }
         } catch (Throwable unused) {
@@ -1094,7 +1094,7 @@ public final class o {
     private static String v(Context context) {
         try {
             String b2 = bd.b(context, "Alvin2", "UTDID2", "");
-            return TextUtils.isEmpty(b2) ? bd.b(context, "Alvin2", "UTDID", "") : b2;
+            return StringUtils.isEmpty(b2) ? bd.b(context, "Alvin2", "UTDID", "") : b2;
         } catch (Throwable unused) {
             return "";
         }

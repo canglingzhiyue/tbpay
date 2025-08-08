@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.ext.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ public class d extends j {
             return;
         }
         String str = (String) a(1);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         HashMap hashMap = new HashMap();

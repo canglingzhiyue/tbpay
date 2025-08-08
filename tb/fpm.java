@@ -56,7 +56,7 @@ public class fpm extends fpf {
             return r1
         L8:
             java.lang.String r0 = r6.name
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L11
             return r1
         L11:

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.StrategyCallBackHelper;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.interceptor.InterceptorManager;
@@ -345,7 +345,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7508d46d", new Object[]{this, context, oConfig});
-        } else if (context == null || TextUtils.isEmpty(oConfig.appKey) || TextUtils.isEmpty(oConfig.appVersion)) {
+        } else if (context == null || StringUtils.isEmpty(oConfig.appKey) || StringUtils.isEmpty(oConfig.appVersion)) {
             OLog.e("ConfigCenter", "init start", "input param error");
         } else {
             e.a(new AnonymousClass1(context, oConfig));
@@ -451,7 +451,7 @@ public class ConfigCenter {
             return;
         }
         try {
-            if (!TextUtils.equals("null", str3) || (configDO = this.i.a().get(str)) == null) {
+            if (!StringUtils.equals("null", str3) || (configDO = this.i.a().get(str)) == null) {
                 return;
             }
             com.taobao.orange.util.d.a(str, configDO.version, configDO.getChangeVersion(), str2);
@@ -507,7 +507,7 @@ public class ConfigCenter {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("17307540", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             OLog.e("ConfigCenter", "getConfigObj error, namespace is empty", new Object[0]);
             return null;
         } else if ("orange".equals(str) || mzv.INDEX_STORE_NAME.equals(str)) {
@@ -643,7 +643,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4337f705", new Object[]{this, str, parcelableConfigListener, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || parcelableConfigListener == null) {
+        } else if (StringUtils.isEmpty(str) || parcelableConfigListener == null) {
         } else {
             synchronized (this.c) {
                 Set<ParcelableConfigListener> set = this.c.get(str);
@@ -754,7 +754,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b557cef6", new Object[]{this, str, parcelableConfigListener});
-        } else if (TextUtils.isEmpty(str) || parcelableConfigListener == null) {
+        } else if (StringUtils.isEmpty(str) || parcelableConfigListener == null) {
         } else {
             synchronized (this.c) {
                 Set<ParcelableConfigListener> set = this.c.get(str);
@@ -769,7 +769,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("80b11fb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (this.c) {
                 this.c.remove(str);
@@ -790,7 +790,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("946c6b51", new Object[]{this, str, str2, new Boolean(z), new Boolean(z2)});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             hashMap.put("fromCache", String.valueOf(z));
             hashMap.put("isCritical", String.valueOf(z2));
@@ -866,7 +866,7 @@ public class ConfigCenter {
         if (indexUpdateInfo == null || !indexUpdateInfo.checkValid()) {
             OLog.e("ConfigCenter", "updateIndex param is null", new Object[0]);
             return false;
-        } else if (!TextUtils.isEmpty(this.h.b().md5) && this.h.b().md5.equals(indexUpdateInfo.md5)) {
+        } else if (!StringUtils.isEmpty(this.h.b().md5) && this.h.b().md5.equals(indexUpdateInfo.md5)) {
             OLog.w("ConfigCenter", "loadIndex fail", "cdnMd5 is match");
             return false;
         } else {
@@ -1033,21 +1033,21 @@ public class ConfigCenter {
                 return;
             }
             String str = (String) map2.get("processIsolated");
-            boolean z = !TextUtils.isEmpty(str) && Boolean.parseBoolean(str) != a.A;
+            boolean z = !StringUtils.isEmpty(str) && Boolean.parseBoolean(str) != a.A;
             String str2 = (String) map2.get(OConstant.SYSKEY_PROCESS_QUERY);
-            if (!TextUtils.isEmpty(str2) && Boolean.parseBoolean(str2) != a.B) {
+            if (!StringUtils.isEmpty(str2) && Boolean.parseBoolean(str2) != a.B) {
                 z = true;
             }
             String str3 = (String) map2.get(OConstant.SYSKEY_PROCESS_QUERY_FORBID_TIME);
-            if (!TextUtils.isEmpty(str3) && !a.C.equals(str3)) {
+            if (!StringUtils.isEmpty(str3) && !a.C.equals(str3)) {
                 z = true;
             }
             String str4 = (String) map2.get(OConstant.SYSKEY_PROCESS_QUERY_STRATEGY);
-            if (!TextUtils.isEmpty(str4) && !a.D.equals(str4)) {
+            if (!StringUtils.isEmpty(str4) && !a.D.equals(str4)) {
                 z = true;
             }
             String str5 = (String) map2.get(OConstant.SYSKEY_PROCESS_MEMORY_OPTIMIZE);
-            if (!TextUtils.isEmpty(str5) && Boolean.parseBoolean(str5) != a.H) {
+            if (!StringUtils.isEmpty(str5) && Boolean.parseBoolean(str5) != a.H) {
                 z = true;
             }
             if (z && (configDO = this.i.a().get("orange")) != null) {
@@ -1065,17 +1065,17 @@ public class ConfigCenter {
                 com.taobao.orange.util.b.b(configDO2, OConstant.PROCESS_ISOLATED_LOCAL_CONFIG);
             }
             String str6 = (String) map2.get(OConstant.SYSKEY_FALLBACK_AVOID);
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 a.x = Boolean.parseBoolean(str6);
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_FALLBACK_AVOID, Boolean.valueOf(a.x));
             }
             String str7 = (String) map2.get(OConstant.SYSKEY_INDEX_ENV_CHECK);
-            if (!TextUtils.isEmpty(str7)) {
+            if (!StringUtils.isEmpty(str7)) {
                 a.E = Boolean.parseBoolean(str7);
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_INDEX_ENV_CHECK, Boolean.valueOf(a.E));
             }
             String str8 = (String) map2.get(OConstant.SYSKEY_REQ_RETRY_NUM);
-            if (!TextUtils.isEmpty(str8)) {
+            if (!StringUtils.isEmpty(str8)) {
                 int parseInt = Integer.parseInt(str8);
                 if (parseInt > 5) {
                     parseInt = 5;
@@ -1084,12 +1084,12 @@ public class ConfigCenter {
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_REQ_RETRY_NUM, Integer.valueOf(a.q));
             }
             String str9 = (String) map2.get(OConstant.SYSKEY_REPORT_UPDACK);
-            if (!TextUtils.isEmpty(str9)) {
+            if (!StringUtils.isEmpty(str9)) {
                 a.r = Integer.parseInt(str9) == 1;
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_REPORT_UPDACK, Boolean.valueOf(a.r));
             }
             String str10 = (String) map2.get(OConstant.SYSKEY_DELAYACK_INTERVAL);
-            if (!TextUtils.isEmpty(str10)) {
+            if (!StringUtils.isEmpty(str10)) {
                 long parseLong = Long.parseLong(str10);
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_DELAYACK_INTERVAL, Long.valueOf(parseLong));
                 if (parseLong > 0) {
@@ -1098,23 +1098,23 @@ public class ConfigCenter {
                 }
             }
             String str11 = (String) map2.get(OConstant.SYSKEY_INDEXUPD_MODE);
-            if (!TextUtils.isEmpty(str11)) {
+            if (!StringUtils.isEmpty(str11)) {
                 a.v = OConstant.UPDMODE.valueOf(Integer.parseInt(str11));
                 OLog.i("ConfigCenter", "updateSystemConfig", "indexUpdMode", a.v);
             }
             String str12 = (String) map2.get("downgrade");
-            if (!TextUtils.isEmpty(str12)) {
+            if (!StringUtils.isEmpty(str12)) {
                 if (Boolean.valueOf(str12).booleanValue()) {
                     a.w = 2;
                 }
                 OLog.i("ConfigCenter", "updateSystemConfig", "downgrade", Integer.valueOf(a.w));
             }
             String str13 = (String) map2.get("hosts");
-            if (!TextUtils.isEmpty(str13) && (parseArray3 = JSON.parseArray(str13)) != null && parseArray3.size() >= 0) {
+            if (!StringUtils.isEmpty(str13) && (parseArray3 = JSON.parseArray(str13)) != null && parseArray3.size() >= 0) {
                 ArrayList arrayList = new ArrayList(parseArray3.size());
                 for (int i2 = 0; i2 < parseArray3.size(); i2++) {
                     String string = parseArray3.getJSONObject(i2).getString("host");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         arrayList.add(string);
                     }
                 }
@@ -1125,19 +1125,19 @@ public class ConfigCenter {
                 }
             }
             String str14 = (String) map2.get(OConstant.SYSKEY_DCVIPS);
-            if (!TextUtils.isEmpty(str14) && (parseArray2 = JSON.parseArray(str14, String.class)) != null && parseArray2.size() > 0) {
+            if (!StringUtils.isEmpty(str14) && (parseArray2 = JSON.parseArray(str14, String.class)) != null && parseArray2.size() > 0) {
                 a.L.clear();
                 a.L.addAll(parseArray2);
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_DCVIPS, a.L);
             }
             String str15 = (String) map2.get(OConstant.SYSKEY_ACKVIPS);
-            if (!TextUtils.isEmpty(str15) && (parseArray = JSON.parseArray(str15, String.class)) != null && parseArray.size() > 0) {
+            if (!StringUtils.isEmpty(str15) && (parseArray = JSON.parseArray(str15, String.class)) != null && parseArray.size() > 0) {
                 a.N.clear();
                 a.N.addAll(parseArray);
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_ACKVIPS, a.N);
             }
             String str16 = (String) map2.get(OConstant.SYSKEY_BIND_TIMEOUT);
-            if (!TextUtils.isEmpty(str16)) {
+            if (!StringUtils.isEmpty(str16)) {
                 int parseInt2 = StringUtil.parseInt(str16);
                 Context context = a.g;
                 if (parseInt2 == 0) {
@@ -1146,19 +1146,19 @@ public class ConfigCenter {
                 h.a(context, OConstant.SYSKEY_BIND_TIMEOUT, Integer.valueOf(parseInt2));
             }
             String str17 = (String) map2.get(OConstant.SYSKEY_RECOVERY_SERVICE_STATE);
-            if (!TextUtils.isEmpty(str17)) {
+            if (!StringUtils.isEmpty(str17)) {
                 h.a(a.g, OConstant.SYSKEY_RECOVERY_SERVICE_STATE, Integer.valueOf(StringUtil.parseInt(str17)));
             }
             String str18 = (String) map2.get(OConstant.SYSKEY_CHANNEL_CONFIGS);
-            if (!TextUtils.isEmpty(str18)) {
+            if (!StringUtils.isEmpty(str18)) {
                 h.a(a.g, OConstant.SYSKEY_CHANNEL_CONFIGS, (Object) new HashSet(JSON.parseArray(str18, String.class)));
             }
             String str19 = (String) map2.get(OConstant.SYSKEY_INDEX_CHECK_ENABLE);
-            if (!TextUtils.isEmpty(str19)) {
+            if (!StringUtils.isEmpty(str19)) {
                 h.a(a.g, OConstant.SYSKEY_INDEX_CHECK_ENABLE, Boolean.valueOf(Boolean.parseBoolean(str19)));
             }
             String str20 = (String) map2.get(OConstant.SYSKEY_REINIT_SERVICE_DELAY_TIME);
-            if (!TextUtils.isEmpty(str20)) {
+            if (!StringUtils.isEmpty(str20)) {
                 long parseLong2 = Long.parseLong(str20);
                 if (parseLong2 > 0) {
                     h.a(a.g, OConstant.SYSKEY_REINIT_SERVICE_DELAY_TIME, Long.valueOf(parseLong2));
@@ -1176,13 +1176,13 @@ public class ConfigCenter {
                 }
             }
             String str21 = (String) map2.get(OConstant.SYSKEY_SERVICE_DELAY_BIND);
-            if (!TextUtils.isEmpty(str21)) {
+            if (!StringUtils.isEmpty(str21)) {
                 boolean parseBoolean = Boolean.parseBoolean(str21);
                 h.a(a.g, OConstant.SYSKEY_SERVICE_DELAY_BIND, Boolean.valueOf(parseBoolean));
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_SERVICE_DELAY_BIND, Boolean.valueOf(parseBoolean));
             }
             String str22 = (String) map2.get(OConstant.SYSKEY_MAIN_BIND_SERVICE_DELAY_TIME);
-            if (!TextUtils.isEmpty(str22)) {
+            if (!StringUtils.isEmpty(str22)) {
                 long parseLong3 = Long.parseLong(str22);
                 if (parseLong3 > 0) {
                     h.a(a.g, OConstant.SYSKEY_MAIN_BIND_SERVICE_DELAY_TIME, Long.valueOf(parseLong3));
@@ -1193,19 +1193,19 @@ public class ConfigCenter {
                 }
             }
             String str23 = (String) map2.get(OConstant.SYSKEY_ENABLE_FETCH_CRITICAL_CONFIGS);
-            if (!TextUtils.isEmpty(str23)) {
+            if (!StringUtils.isEmpty(str23)) {
                 int parseInt3 = Integer.parseInt(str23);
                 h.a(a.g, OConstant.SYSKEY_ENABLE_FETCH_CRITICAL_CONFIGS, Integer.valueOf(parseInt3));
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_ENABLE_FETCH_CRITICAL_CONFIGS, Integer.valueOf(parseInt3));
             }
             String str24 = (String) map2.get(OConstant.SYSKEY_ENABLE_REMOVE_MAIN_SERVICE);
-            if (!TextUtils.isEmpty(str24)) {
+            if (!StringUtils.isEmpty(str24)) {
                 boolean parseBoolean2 = Boolean.parseBoolean(str24);
                 h.c(a.g, OConstant.SYSKEY_ENABLE_REMOVE_MAIN_SERVICE, Boolean.valueOf(parseBoolean2));
                 OLog.i("ConfigCenter", "updateSystemConfig", OConstant.SYSKEY_ENABLE_REMOVE_MAIN_SERVICE, Boolean.valueOf(parseBoolean2));
             }
             String str25 = (String) map2.get(OConstant.SYSKEY_WAIT_STRATEGY_CALLBACK_TIME);
-            if (TextUtils.isEmpty(str25)) {
+            if (StringUtils.isEmpty(str25)) {
                 return;
             }
             long a2 = com.taobao.orange.util.f.a(str25);
@@ -1240,7 +1240,7 @@ public class ConfigCenter {
         }
         ArrayList arrayList = new ArrayList(strArr.length);
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 arrayList.add(str);
             }
         }
@@ -1258,7 +1258,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (this.b) {
                 if (this.b.add(str) && OLog.isPrintLog(2)) {
@@ -1272,7 +1272,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cdf6fed3", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (this.b) {
                 if (this.b.remove(str) && OLog.isPrintLog(2)) {
@@ -1330,7 +1330,7 @@ public class ConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f18536a.remove(str);
         }
@@ -1402,17 +1402,17 @@ public class ConfigCenter {
             this.isWaitingIdle.set(true);
         } else if (!z && !this.isWaitingIdle.get()) {
         } else {
-            if (TextUtils.isEmpty(a.R)) {
+            if (StringUtils.isEmpty(a.R)) {
                 a.R = (String) h.b(a.g, "appVersion", "");
             }
-            if (TextUtils.isEmpty(a.S)) {
+            if (StringUtils.isEmpty(a.S)) {
                 a.S = (String) h.b(a.g, "osVersion", "");
             }
-            if (!TextUtils.equals(a.R, a.j)) {
+            if (!StringUtils.equals(a.R, a.j)) {
                 a.R = a.j;
                 h.a(a.g, "appVersion", a.R);
             }
-            if (TextUtils.equals(a.S, String.valueOf(Build.VERSION.SDK_INT))) {
+            if (StringUtils.equals(a.S, String.valueOf(Build.VERSION.SDK_INT))) {
                 return;
             }
             a.S = String.valueOf(Build.VERSION.SDK_INT);
@@ -1558,7 +1558,7 @@ public class ConfigCenter {
                 if (ipChange2 instanceof IpChange) {
                     return (List) ipChange2.ipc$dispatch("287b5bd5", new Object[]{this, str});
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return Collections.emptyList();
                 }
                 ArrayList arrayList = new ArrayList();

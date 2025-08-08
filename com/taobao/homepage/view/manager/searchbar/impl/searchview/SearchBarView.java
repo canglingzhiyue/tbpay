@@ -1,7 +1,7 @@
 package com.taobao.homepage.view.manager.searchbar.impl.searchview;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -291,7 +291,7 @@ public class SearchBarView extends FrameLayout {
         float f = 0.0f;
         if (jSONObject2 != null) {
             String string = jSONObject2.getString("marginTop");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 try {
                     f = Integer.parseInt(string);
                 } catch (NumberFormatException unused) {

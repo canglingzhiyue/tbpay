@@ -3,7 +3,7 @@ package com.taobao.android.purchase.aura.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class b {
             return jSONObject;
         }
         String a2 = e.a(e.BUY_POP_QUERY, "{\"isTBBuyFloatMode\":\"true\",\"99tm\":\"true\",\"pageType\":\"float\"}");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             f14752a = null;
             return null;
         }
@@ -93,13 +93,13 @@ public class b {
         }
         String stringExtra = intent.getStringExtra(com.taobao.android.abilitykit.ability.pop.model.c.KEY_POP_CONFIG);
         Uri data = intent.getData();
-        if (data != null && TextUtils.isEmpty(stringExtra)) {
+        if (data != null && StringUtils.isEmpty(stringExtra)) {
             stringExtra = data.getQueryParameter(com.taobao.android.abilitykit.ability.pop.model.c.KEY_POP_CONFIG);
         }
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             stringExtra = d(intent);
         }
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return null;
         }
         try {

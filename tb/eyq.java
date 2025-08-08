@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
 import android.support.transition.ae;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -509,7 +509,7 @@ public class eyq implements g<ShowLightOffMessage> {
                     int count = eyq.f(eyq.this).getCount();
                     for (int i = 0; i < count; i++) {
                         h a2 = eyq.f(eyq.this).a(i);
-                        if (a2 != null && TextUtils.equals(b, ((ezc) a2.getComponentData()).b()) && i != eyq.c(eyq.this).getCurrentItem()) {
+                        if (a2 != null && StringUtils.equals(b, ((ezc) a2.getComponentData()).b()) && i != eyq.c(eyq.this).getCurrentItem()) {
                             eyq.c(eyq.this).setCurrentItem(i, false);
                             eyq.a(eyq.this, a2);
                             return;
@@ -742,7 +742,7 @@ public class eyq implements g<ShowLightOffMessage> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1c6cb136", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (l = this.c.l()) == null) {
+        } else if (StringUtils.isEmpty(str) || (l = this.c.l()) == null) {
         } else {
             try {
                 l.d().getJSONObject("bottomBar").put(iok.KEY_PRICE_SECTION, (Object) JSON.parseObject(str).getJSONObject(iok.KEY_PRICE_SECTION));
@@ -775,7 +775,7 @@ public class eyq implements g<ShowLightOffMessage> {
             }
             String d = d(b + ((b(i2, b) - b) * f));
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.h.getLayoutParams();
-            if (!TextUtils.equals(d, layoutParams.B)) {
+            if (!StringUtils.equals(d, layoutParams.B)) {
                 layoutParams.B = d;
                 this.h.requestLayout();
             }
@@ -797,7 +797,7 @@ public class eyq implements g<ShowLightOffMessage> {
         }
         final ViewGroup viewGroup = (ViewGroup) activity.findViewById(R.id.ll_header_image_container);
         ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) viewGroup.getLayoutParams();
-        if (TextUtils.equals(str, layoutParams.B)) {
+        if (StringUtils.equals(str, layoutParams.B)) {
             return;
         }
         layoutParams.B = str;
@@ -829,7 +829,7 @@ public class eyq implements g<ShowLightOffMessage> {
             ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.h.getLayoutParams();
             float a2 = f.a(layoutParams.B);
             String d = d(f);
-            if (TextUtils.equals(d, d(a2))) {
+            if (StringUtils.equals(d, d(a2))) {
                 return;
             }
             ValueAnimator valueAnimator = this.q;
@@ -975,7 +975,7 @@ public class eyq implements g<ShowLightOffMessage> {
             d = d(f4 / (f5 + (((f4 / f2) - f5) * max)));
         }
         ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.h.getLayoutParams();
-        if (TextUtils.equals(d, layoutParams.B)) {
+        if (StringUtils.equals(d, layoutParams.B)) {
             return;
         }
         layoutParams.B = d;
@@ -1009,7 +1009,7 @@ public class eyq implements g<ShowLightOffMessage> {
                 m();
                 String d = d(b(this.i.getCurrentItem(), 1.0f));
                 ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.h.getLayoutParams();
-                if (!TextUtils.equals(d, layoutParams.B)) {
+                if (!StringUtils.equals(d, layoutParams.B)) {
                     layoutParams.B = d;
                     this.h.requestLayout();
                 }
@@ -1095,10 +1095,10 @@ public class eyq implements g<ShowLightOffMessage> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.equals(str, com.taobao.android.detail.ttdetail.utils.a.a(this.j.a(this.i.getCurrentItem())))) {
+        } else if (!StringUtils.equals(str, com.taobao.android.detail.ttdetail.utils.a.a(this.j.a(this.i.getCurrentItem())))) {
             int count = this.j.getCount();
             for (int i = 0; i < count; i++) {
-                if (TextUtils.equals(com.taobao.android.detail.ttdetail.utils.a.a(this.j.a(i)), str) && i != this.i.getCurrentItem()) {
+                if (StringUtils.equals(com.taobao.android.detail.ttdetail.utils.a.a(this.j.a(i)), str) && i != this.i.getCurrentItem()) {
                     this.i.setCurrentItem(i, o());
                     ezs ezsVar = this.f;
                     if (ezsVar == null || !ezsVar.isShowing()) {
@@ -1130,7 +1130,7 @@ public class eyq implements g<ShowLightOffMessage> {
         this.k = i;
         final String a3 = k.a(this.j.a(), this.k);
         TextView textView = this.o;
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             i2 = 8;
         }
         textView.setVisibility(i2);
@@ -1208,7 +1208,7 @@ public class eyq implements g<ShowLightOffMessage> {
         }
         for (int i = 0; i < this.j.getCount(); i++) {
             h a2 = this.j.a(i);
-            if (TextUtils.equals(((ezc) a2.getComponentData()).b(), str) && a2.k()) {
+            if (StringUtils.equals(((ezc) a2.getComponentData()).b(), str) && a2.k()) {
                 a2.f();
                 return;
             }
@@ -1286,7 +1286,7 @@ public class eyq implements g<ShowLightOffMessage> {
         for (int i = 0; i < count; i++) {
             h a2 = this.j.a(i);
             if (a2 != null && a2.k()) {
-                a2.a(TextUtils.equals(str, ((ezc) a2.getComponentData()).b()));
+                a2.a(StringUtils.equals(str, ((ezc) a2.getComponentData()).b()));
             }
         }
     }
@@ -1304,7 +1304,7 @@ public class eyq implements g<ShowLightOffMessage> {
             return this.g.d();
         }
         h a2 = this.j.a(this.i.getCurrentItem());
-        if (a2 != null && TextUtils.equals(b, ((ezc) a2.getComponentData()).b())) {
+        if (a2 != null && StringUtils.equals(b, ((ezc) a2.getComponentData()).b())) {
             return a2.b();
         }
         return null;
@@ -1358,7 +1358,7 @@ public class eyq implements g<ShowLightOffMessage> {
             return ((Number) ipChange.ipc$dispatch("5eb3fe4", new Object[]{this})).intValue();
         }
         h a2 = this.j.a(this.i.getCurrentItem());
-        if (a2 == null || (ezcVar = (ezc) a2.getComponentData()) == null || TextUtils.isEmpty(ezcVar.j())) {
+        if (a2 == null || (ezcVar = (ezc) a2.getComponentData()) == null || StringUtils.isEmpty(ezcVar.j())) {
             return 0;
         }
         ezg a3 = ezcVar.a();
@@ -1405,7 +1405,7 @@ public class eyq implements g<ShowLightOffMessage> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!TextUtils.equals(str, i())) {
+        } else if (!StringUtils.equals(str, i())) {
             JSONObject a2 = m.a(this.b.a());
             a2.put("locatorId", (Object) str);
             m.a(2101, "DetailLocator_industry", a2);
@@ -1413,7 +1413,7 @@ public class eyq implements g<ShowLightOffMessage> {
             int size = a3.size();
             for (int i = 0; i < size; i++) {
                 ezc ezcVar = (ezc) a3.get(i).getComponentData();
-                if (ezcVar != null && (ezdVar = (ezd) ezcVar.a()) != null && TextUtils.equals(str, ezdVar.i())) {
+                if (ezcVar != null && (ezdVar = (ezd) ezcVar.a()) != null && StringUtils.equals(str, ezdVar.i())) {
                     this.i.setCurrentItem(i, o());
                     return;
                 }
@@ -1504,7 +1504,7 @@ public class eyq implements g<ShowLightOffMessage> {
             return ((Boolean) ipChange.ipc$dispatch("e7cf8277", new Object[]{this, eyyVar})).booleanValue();
         }
         if (eyyVar != null && (d = eyyVar.d()) != null) {
-            return TextUtils.equals("right", d.getString("position"));
+            return StringUtils.equals("right", d.getString("position"));
         }
         return false;
     }
@@ -1660,7 +1660,7 @@ public class eyq implements g<ShowLightOffMessage> {
                 TTObservedImageView tTObservedImageView = new TTObservedImageView(this.f27647a);
                 tTObservedImageView.setTag(R.id.tt_detail_preload_adapter_position, Integer.valueOf(i4));
                 tTObservedImageView.setWidthRatio(this.j.getPageWidth(i4));
-                if (!TextUtils.isEmpty(q)) {
+                if (!StringUtils.isEmpty(q)) {
                     q.a(tTObservedImageView, 480, 480, l.a(q), -1, true, q.a(TaobaoImageUrlStrategy.ImageQuality.q30), false);
                     ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-1, -1);
                     marginLayoutParams.rightMargin = i5;
@@ -1693,7 +1693,7 @@ public class eyq implements g<ShowLightOffMessage> {
             this.P.put("preloadFrameUrl", (Object) this.O);
             this.P.put("preloadTraceId", this.b.e().a("traceId"));
             this.P.put("preloadItemId", this.b.e().a("requestItemId"));
-        } else if (this.N || TextUtils.isEmpty(this.O)) {
+        } else if (this.N || StringUtils.isEmpty(this.O)) {
         } else {
             h a3 = this.j.a(0);
             if (a3 != null) {
@@ -1703,7 +1703,7 @@ public class eyq implements g<ShowLightOffMessage> {
                 return;
             }
             String r = ((com.taobao.android.detail.ttdetail.component.module.k) dVar).r();
-            if (!TextUtils.equals(this.O, r)) {
+            if (!StringUtils.equals(this.O, r)) {
                 this.P.put("realFrameUrl", (Object) r);
                 this.P.put("realTraceId", this.b.e().a("traceId"));
                 this.P.put("realItemId", this.b.e().a("requestItemId"));
@@ -1756,7 +1756,7 @@ public class eyq implements g<ShowLightOffMessage> {
             }
             String a3 = k.a(this.j.a(), max);
             TextView textView = this.o;
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 i2 = 8;
             }
             textView.setVisibility(i2);

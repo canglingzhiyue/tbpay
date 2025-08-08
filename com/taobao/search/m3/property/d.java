@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -151,7 +151,7 @@ public final class d extends com.taobao.search.m3.b {
         }
         q.c(canvas, "canvas");
         if (this.h.c()) {
-            boolean isEmpty = TextUtils.isEmpty(this.h.a());
+            boolean isEmpty = StringUtils.isEmpty(this.h.a());
             this.b.setTextSize(k);
             Paint.FontMetrics fontMetrics = this.b.getFontMetrics();
             float height = (((isEmpty ? this.i.getHeight() : k) - fontMetrics.bottom) - fontMetrics.top) / 2.0f;
@@ -176,7 +176,7 @@ public final class d extends com.taobao.search.m3.b {
             com.taobao.search.m3.a.a(canvas, this.d, 0.0f, this.h.a(), k + q, this.i.getHeight());
             return;
         }
-        boolean isEmpty2 = TextUtils.isEmpty(this.h.a());
+        boolean isEmpty2 = StringUtils.isEmpty(this.h.a());
         this.d.setColor(p);
         com.taobao.search.m3.a.a(canvas, this.d, 0.0f, this.h.b(), 0.0f, isEmpty2 ? this.i.getHeight() : j);
         if (isEmpty2) {

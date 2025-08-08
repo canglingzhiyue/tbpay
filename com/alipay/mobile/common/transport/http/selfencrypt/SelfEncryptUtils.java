@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http.selfencrypt;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
 import com.alipay.mobile.common.transport.http.HttpUrlRequest;
@@ -18,7 +18,7 @@ public class SelfEncryptUtils {
 
     public static boolean isRpcEncryptSwitchOn() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("12385de8", new Object[0])).booleanValue() : TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPC_SELF_ENCTYPT), "T");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("12385de8", new Object[0])).booleanValue() : StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPC_SELF_ENCTYPT), "T");
     }
 
     public static boolean isNeedSelfEncrypt() {

@@ -9,7 +9,7 @@ import android.content.pm.ServiceInfo;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.opos.process.bridge.annotation.IBridgeTargetIdentify;
 import com.opos.process.bridge.provider.BridgeExecuteException;
 import java.util.ArrayList;
@@ -80,7 +80,7 @@ public class dbl extends dbj {
     public Intent a(String str, String str2, String str3, Bundle bundle) {
         String str4 = "getServiceIntent --- packageName:" + str + ", targetClass:" + str2 + ", action" + str3 + ", bundle:" + bundle;
         Intent intent = new Intent();
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             intent.setComponent(new ComponentName(str, str2));
         }
         intent.setPackage(str);
@@ -104,7 +104,7 @@ public class dbl extends dbj {
         try {
             String a2 = dbn.a(context.getApplicationContext());
             ResolveInfo resolveService = context.getApplicationContext().getPackageManager().resolveService(a(this.k, a(), this.l, null), 128);
-            if (resolveService != null && !TextUtils.isEmpty(resolveService.serviceInfo.processName) && resolveService.serviceInfo.processName.equals(a2)) {
+            if (resolveService != null && !StringUtils.isEmpty(resolveService.serviceInfo.processName) && resolveService.serviceInfo.processName.equals(a2)) {
                 this.j.compareAndSet(-1, 0);
                 return false;
             }
@@ -115,7 +115,7 @@ public class dbl extends dbj {
     }
 
     public Intent b() {
-        if (TextUtils.isEmpty(this.k) || TextUtils.isEmpty(this.l)) {
+        if (StringUtils.isEmpty(this.k) || StringUtils.isEmpty(this.l)) {
             b(this.f26657a);
         }
         return a(this.k, a(), this.l, this.b);
@@ -133,18 +133,18 @@ public class dbl extends dbj {
             }
             String str = "query actions:" + com.heytap.mspsdk.keychain.impl.b.a(this.m);
             for (String str2 : this.m) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     if (str2.contains("${applicationId}")) {
                         str2 = str2.replace("${applicationId}", context.getPackageName());
                     }
                     for (ResolveInfo resolveInfo : packageManager.queryIntentServices(a(this.k, a(), str2, null), 128)) {
                         ServiceInfo serviceInfo = resolveInfo.serviceInfo;
-                        if (serviceInfo != null && !TextUtils.isEmpty(serviceInfo.packageName)) {
+                        if (serviceInfo != null && !StringUtils.isEmpty(serviceInfo.packageName)) {
                             List<dbo> list = this.d;
                             ServiceInfo serviceInfo2 = resolveInfo.serviceInfo;
                             String str3 = serviceInfo2.packageName;
                             String str4 = serviceInfo2.name;
-                            if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+                            if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
                                 dboVar = null;
                             } else {
                                 dboVar = new dbo();

@@ -1,7 +1,7 @@
 package com.taobao.android.msoa;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -156,7 +156,7 @@ public class q {
                 sb.append(readLine);
             }
             String sb2 = sb.toString();
-            if (!TextUtils.isEmpty(sb2) && (parseArray = JSONArray.parseArray(sb2)) != null && parseArray.size() > 0) {
+            if (!StringUtils.isEmpty(sb2) && (parseArray = JSONArray.parseArray(sb2)) != null && parseArray.size() > 0) {
                 for (int i = 0; i < parseArray.size(); i++) {
                     JSONObject jSONObject = parseArray.getJSONObject(i);
                     if (jSONObject != null) {
@@ -263,7 +263,7 @@ public class q {
                 sb.append(readLine);
             }
             String sb2 = sb.toString();
-            if (!TextUtils.isEmpty(sb2) && (parseArray = JSON.parseArray(sb2)) != null && parseArray.size() > 0) {
+            if (!StringUtils.isEmpty(sb2) && (parseArray = JSON.parseArray(sb2)) != null && parseArray.size() > 0) {
                 for (int i = 0; i < parseArray.size(); i++) {
                     JSONObject jSONObject = parseArray.getJSONObject(i);
                     if (jSONObject != null) {

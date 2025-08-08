@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.widget.TabHost;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -197,7 +197,7 @@ public class BController extends HostController implements TabHost.OnTabChangeLi
             return;
         }
         String queryParameter = data.getQueryParameter("h5Url");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             intent.setData(Uri.parse("http://m.taobao.com/index.htm"));
             return;
         }
@@ -221,7 +221,7 @@ public class BController extends HostController implements TabHost.OnTabChangeLi
             return false;
         }
         String queryParameter = data.getQueryParameter("h5Url");
-        return TextUtils.isEmpty(queryParameter) || !com.taobao.linkmanager.afc.utils.e.b(Uri.parse(queryParameter));
+        return StringUtils.isEmpty(queryParameter) || !com.taobao.linkmanager.afc.utils.e.b(Uri.parse(queryParameter));
     }
 
     @Override // com.taobao.tao.welcome.HostController

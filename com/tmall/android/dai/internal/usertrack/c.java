@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.usertrack;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.DAICallback;
@@ -89,7 +89,7 @@ public class c extends com.ut.mini.module.plugin.a {
         if (map != null) {
             HashMap hashMap = new HashMap();
             String str5 = map.get("ARGS");
-            if (!TextUtils.isEmpty(str5) && (a2 = f.a(str5, ",", "=", true)) != null) {
+            if (!StringUtils.isEmpty(str5) && (a2 = f.a(str5, ",", "=", true)) != null) {
                 userTrackDO.setAuctionId(h.a(a2.get("item_id"), 0L));
                 hashMap.putAll(a2);
             }

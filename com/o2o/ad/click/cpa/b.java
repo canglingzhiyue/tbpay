@@ -1,6 +1,6 @@
 package com.o2o.ad.click.cpa;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -30,7 +30,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("3a538fae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f8101a.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, str);
         }
         return this;
@@ -41,7 +41,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("f3cb1d4d", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f8101a.put("namespace", str);
         }
         return this;

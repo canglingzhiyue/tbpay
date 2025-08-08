@@ -3,7 +3,7 @@ package com.taobao.message.lab.comfrm.inner2;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -376,7 +376,7 @@ public class Container implements IResourceChangePublisher {
                 String queryParameter = uri.getQueryParameter(str6);
                 if (ApplicationUtil.isDebug() && map != null && map.containsKey(str6)) {
                     Object obj = map.get(str6);
-                    if (!(obj instanceof String) || !TextUtils.equals((CharSequence) obj, queryParameter)) {
+                    if (!(obj instanceof String) || !StringUtils.equals((CharSequence) obj, queryParameter)) {
                         throw new RuntimeException("URL中参数覆盖了代码显示传入参数，需要加白名单|key|" + str6 + "|uriParameterValue|" + queryParameter + "|innerParameterValue|" + obj);
                     }
                 }
@@ -478,11 +478,11 @@ public class Container implements IResourceChangePublisher {
         if (snapshot != null) {
             final Snapshot.SnapshotData snapshotData = snapshot.getSnapshotData();
             if (snapshotData != null) {
-                boolean z = TextUtils.equals(snapshotData.version, this.mVersion) && TextUtils.equals(snapshotData.viewObject.info.uniqueId, this.mConfigInfo.layout.uniqueId);
-                if (!TextUtils.equals(snapshotData.appVersion, ApplicationBuildInfo.getAppVersionName())) {
+                boolean z = StringUtils.equals(snapshotData.version, this.mVersion) && StringUtils.equals(snapshotData.viewObject.info.uniqueId, this.mConfigInfo.layout.uniqueId);
+                if (!StringUtils.equals(snapshotData.appVersion, ApplicationBuildInfo.getAppVersionName())) {
                     JSONArray jSONArray = null;
                     String value = ConfigUtil.getValue(Constants.OrangeNS.CONTAINER, "disableSnapshotAppVers", null);
-                    if (!TextUtils.isEmpty(value)) {
+                    if (!StringUtils.isEmpty(value)) {
                         try {
                             jSONArray = JSON.parseArray(value);
                         } catch (Throwable unused) {

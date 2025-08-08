@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.change.app.icon.biz.ChangeAppIconBridge;
@@ -43,7 +43,7 @@ public class npw {
         Iterator<String> keys = jSONObject.keys();
         while (keys.hasNext()) {
             String next = keys.next();
-            if (!TextUtils.isEmpty(next) && (a2 = a(jSONObject.optJSONObject(next))) != null) {
+            if (!StringUtils.isEmpty(next) && (a2 = a(jSONObject.optJSONObject(next))) != null) {
                 a2.suggestRn = str;
                 arrayMap.put(next, a2);
             }
@@ -66,9 +66,9 @@ public class npw {
         Iterator<String> keys = jSONObject.keys();
         while (keys.hasNext()) {
             String next = keys.next();
-            if (!TextUtils.isEmpty(next)) {
+            if (!StringUtils.isEmpty(next)) {
                 String trim = jSONObject.optString(next, "").trim();
-                if (!TextUtils.isEmpty(trim)) {
+                if (!StringUtils.isEmpty(trim)) {
                     hashMap.put(next, trim);
                 }
             }
@@ -86,7 +86,7 @@ public class npw {
         searchBarHintBean.iconWidth = d.b((String) hashMap.remove("iconWidth"), 0);
         searchBarHintBean.iconHeight = d.b((String) hashMap.remove("iconHeight"), 0);
         String str = (String) hashMap.remove("advInfo");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 searchBarHintBean.advInfo = SearchBarHintADBean.parseADInfo(JSON.parseObject(str));
             } catch (Exception unused) {
@@ -94,7 +94,7 @@ public class npw {
             }
         }
         String str2 = (String) hashMap.remove("structuredHintInfo");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 searchBarHintBean.structuredInfo = SearchBarHintStructuredBean.parseStructuredInfo(JSON.parseObject(str2));
             } catch (Exception unused2) {
@@ -102,7 +102,7 @@ public class npw {
             }
         }
         String str3 = (String) hashMap.remove("atmos");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             try {
                 com.alibaba.fastjson.JSONObject parseObject2 = JSON.parseObject(str3);
                 searchBarHintBean.atmosImg = parseObject2.getString("boxAtmosImgForsearch");
@@ -111,7 +111,7 @@ public class npw {
             }
         }
         String str4 = (String) hashMap.remove("utParams");
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             try {
                 searchBarHintBean.utParams = a.a(JSON.parseObject(str4));
             } catch (Exception unused4) {
@@ -119,7 +119,7 @@ public class npw {
             }
         }
         String str5 = (String) hashMap.remove("searchparams");
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             searchBarHintBean.extraParams = new HashMap<>();
             try {
                 jSONArray = new JSONArray(str5);
@@ -134,14 +134,14 @@ public class npw {
                 if (optJSONObject != null) {
                     String optString = optJSONObject.optString("key");
                     String optString2 = optJSONObject.optString("value");
-                    if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString2)) {
+                    if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString2)) {
                         searchBarHintBean.extraParams.put(optString, optString2);
                     }
                 }
             }
         }
         String str6 = (String) hashMap.remove(ndl.TAB_DISCOVER);
-        if (!TextUtils.isEmpty(str6) && (parseObject = JSON.parseObject(str6)) != null) {
+        if (!StringUtils.isEmpty(str6) && (parseObject = JSON.parseObject(str6)) != null) {
             ActivateCellBean activateCellBean = new ActivateCellBean();
             activateCellBean.suggestRn = searchBarHintBean.suggestRn;
             activateCellBean.name = parseObject.getString("name");
@@ -175,7 +175,7 @@ public class npw {
                                 if (jSONObject3 != null) {
                                     String string = jSONObject3.getString("key");
                                     String string2 = jSONObject3.getString("value");
-                                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                                         hashMap2.put(string, string2);
                                     }
                                 }
@@ -197,7 +197,7 @@ public class npw {
         if (ipChange instanceof IpChange) {
             return (SearchBarHintBean) ipChange.ipc$dispatch("9e49b8dd", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             q.g("SearchHintParserHelper", "searchHintConfigStr is empty");
             return null;
         }

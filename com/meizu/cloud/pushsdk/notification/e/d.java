@@ -3,7 +3,7 @@ package com.meizu.cloud.pushsdk.notification.e;
 import android.app.Notification;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
 import com.meizu.cloud.pushsdk.handler.MessageV4;
@@ -53,7 +53,7 @@ public class d extends c {
             String str = MzSystemUtils.getDocumentsPath(this.f8000a) + "/pushSdkAct/" + messageV3.getUploadDataPackageName();
             String valueOf = String.valueOf(System.currentTimeMillis());
             String actUrl = parse.getActVideoSetting().getActUrl();
-            if (!TextUtils.isEmpty(actUrl) && com.meizu.cloud.pushsdk.e.a.a(actUrl, str, valueOf).a().b().c()) {
+            if (!StringUtils.isEmpty(actUrl) && com.meizu.cloud.pushsdk.e.a.a(actUrl, str, valueOf).a().b().c()) {
                 DebugLogger.i("AbstractPushNotification", "down load " + actUrl + " success");
                 StringBuilder sb = new StringBuilder();
                 sb.append(str);

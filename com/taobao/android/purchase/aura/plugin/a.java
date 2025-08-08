@@ -1,7 +1,7 @@
 package com.taobao.android.purchase.aura.plugin;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.ui.webview.jsbridge.BaseJsExecutor;
@@ -52,7 +52,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("cc691d3a", new Object[]{this, jSONObject, bVar, bVar2})).booleanValue();
         }
         String string = jSONObject.getString(BaseJsExecutor.NAME_VERIFY_TOKEN);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             bVar.a(a("verifyToken is null"));
             arc.a().b("TBBuyJsBridge verifyToken is null!!");
         }
@@ -85,7 +85,7 @@ public class a {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{this, str});
         }
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             jSONObject.put("message", (Object) str);
         }
         return jSONObject;

@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.xiaomi.push.ah;
 import java.io.Closeable;
@@ -43,7 +43,7 @@ public class ek extends ah.a {
         r2 = null;
         fileInputStream2 = null;
         FileLock fileLock2 = null;
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         ArrayList arrayList = new ArrayList();

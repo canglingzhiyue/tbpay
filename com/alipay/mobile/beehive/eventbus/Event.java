@@ -1,6 +1,6 @@
 package com.alipay.mobile.beehive.eventbus;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class Event {
     public Event(String str, Object obj) {
         this.name = str;
         this.data = obj;
-        this.key = TextUtils.isEmpty(str) ? obj != null ? obj.getClass() : null : str;
+        this.key = StringUtils.isEmpty(str) ? obj != null ? obj.getClass() : null : str;
     }
 
     public String toString() {
@@ -38,7 +38,7 @@ public class Event {
             return true;
         }
         if ((obj instanceof String) && (obj2 instanceof String)) {
-            return TextUtils.equals((String) obj, (String) obj2);
+            return StringUtils.equals((String) obj, (String) obj2);
         }
         return false;
     }
@@ -61,7 +61,7 @@ public class Event {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d4263306", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.f5344a == null) {
                 this.f5344a = new ArrayList();
@@ -80,7 +80,7 @@ public class Event {
             return false;
         }
         for (String str2 : list) {
-            if (TextUtils.equals(str, str2)) {
+            if (StringUtils.equals(str, str2)) {
                 return true;
             }
         }

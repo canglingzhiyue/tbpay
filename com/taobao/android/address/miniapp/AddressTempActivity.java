@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -138,7 +138,7 @@ public class AddressTempActivity extends Activity {
                     }
                     AddressTempActivity addressTempActivity = AddressTempActivity.this;
                     BridgeCallback bridgeCallback = AddressTempActivity.b;
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = "";
                     }
                     AddressTempActivity.a(addressTempActivity, bridgeCallback, i, str);
@@ -191,7 +191,7 @@ public class AddressTempActivity extends Activity {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4af7346f", new Object[]{this, new Integer(i), new Integer(i2), intent});
         } else if (i == 2001) {
-            if (i2 != -1 && !TextUtils.isEmpty(b.f8967a)) {
+            if (i2 != -1 && !StringUtils.isEmpty(b.f8967a)) {
                 i2 = -1;
             }
             b.a(i, i2, intent);

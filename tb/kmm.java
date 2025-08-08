@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,12 +39,12 @@ public class kmm {
         if (this.b == null || (list = this.f30166a) == null || list.isEmpty()) {
             kmv.c("DownloadRequest", "validate", "param is null");
             return false;
-        } else if (TextUtils.isEmpty(this.b.h)) {
+        } else if (StringUtils.isEmpty(this.b.h)) {
             kmv.c("DownloadRequest", "validate", "param fileStorePath is null");
             return false;
         } else {
             for (kmo kmoVar : this.f30166a) {
-                if (TextUtils.isEmpty(kmoVar.f30167a)) {
+                if (StringUtils.isEmpty(kmoVar.f30167a)) {
                     kmv.c("DownloadRequest", "validate", "param url is null");
                     return false;
                 }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.ext.p;
 import com.alibaba.android.ultron.vfw.instance.d;
@@ -61,7 +61,7 @@ public class ial extends p {
         }
         if (jSONObject != null && jSONObject.getString(FOLD_STATE) != null) {
             String string = jSONObject.getString(FOLD_STATE);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if ("HIDE".equals(string.toUpperCase())) {

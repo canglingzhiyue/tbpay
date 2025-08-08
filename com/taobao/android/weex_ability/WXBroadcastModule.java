@@ -1,6 +1,6 @@
 package com.taobao.android.weex_ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.container.shopLoft.b;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -107,7 +107,7 @@ public final class WXBroadcastModule extends WeexInnerModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("afaadd82", new Object[]{this, jSONObject, bVar, bVar2});
-        } else if (getWeexInstance().getContext() == null || jSONObject == null || TextUtils.isEmpty(jSONObject.getString("name")) || TextUtils.isEmpty(jSONObject.getString("instanceId"))) {
+        } else if (getWeexInstance().getContext() == null || jSONObject == null || StringUtils.isEmpty(jSONObject.getString("name")) || StringUtils.isEmpty(jSONObject.getString("instanceId"))) {
             if (bVar2 != null) {
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("result", (Object) "-1");
@@ -158,7 +158,7 @@ public final class WXBroadcastModule extends WeexInnerModule {
         } else if (this.messageTokenChannels == null) {
         } else {
             String string = jSONObject.getString("instanceId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 if (bVar2 != null) {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("result", (Object) "-1");
@@ -214,7 +214,7 @@ public final class WXBroadcastModule extends WeexInnerModule {
             ipChange.ipc$dispatch("47c8a6a2", new Object[]{this, jSONObject, bVar, bVar2});
         } else if (this.messageTokenChannels == null) {
         } else {
-            if (TextUtils.isEmpty(jSONObject.getString("instanceId")) || !jSONObject.containsKey("message")) {
+            if (StringUtils.isEmpty(jSONObject.getString("instanceId")) || !jSONObject.containsKey("message")) {
                 if (bVar2 != null) {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("result", (Object) "-1");

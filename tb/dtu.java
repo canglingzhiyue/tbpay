@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -109,12 +109,12 @@ public final class dtu extends arv {
         JSONObject jSONObject = new JSONObject();
         String str = (String) bbc.a(map, "itemId", String.class, null);
         String str2 = (String) bbc.a(map, "skuId", String.class, null);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             arc.a().a("AURAMSOAExtension skuId is null");
             return;
         }
         jSONObject.put("skuId", (Object) str2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("itemId", (Object) str);
         }
         duw.a(b(), aURARenderComponent, aURAEventIO, jSONObject);

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.actions;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -90,7 +90,7 @@ public class MspEventCreator {
             } else if (parseObject.containsKey("param")) {
                 str3 = parseObject.getString("param");
             }
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = parseObject.toString();
             }
             JSONObject parseObject2 = JSON.parseObject(str3);
@@ -129,7 +129,7 @@ public class MspEventCreator {
                 EventAction.MspEvent[] mspEventArr2 = new EventAction.MspEvent[a2.length];
                 for (int i = 0; i < a2.length; i++) {
                     String str = a2[i];
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return;
                     }
                     mspEventArr2[i] = new EventAction.MspEvent();
@@ -172,7 +172,7 @@ public class MspEventCreator {
             return ((Boolean) ipChange.ipc$dispatch("6ba17c51", new Object[]{mspEvent, str})).booleanValue();
         }
         String substring = str.substring(0, str.indexOf(riy.BRACKET_START_STR));
-        if (TextUtils.isEmpty(substring)) {
+        if (StringUtils.isEmpty(substring)) {
             return false;
         }
         mspEvent.setActionName(substring);
@@ -188,7 +188,7 @@ public class MspEventCreator {
             if (jSONObject == null) {
                 jSONObject = new JSONObject();
             }
-            if ((!TextUtils.isEmpty(substring) && substring.contains(MspEventTypes.ACTION_STRING_RETURNDATA)) || (!TextUtils.isEmpty(substring) && substring.contains(MspEventTypes.ACTION_STRING_SHAREPAY))) {
+            if ((!StringUtils.isEmpty(substring) && substring.contains(MspEventTypes.ACTION_STRING_RETURNDATA)) || (!StringUtils.isEmpty(substring) && substring.contains(MspEventTypes.ACTION_STRING_SHAREPAY))) {
                 str2 = URLDecoder.decode(str2, "UTF-8");
             }
             if (str2 != null && str2.startsWith(riy.BLOCK_START_STR) && str2.endsWith(riy.BLOCK_END_STR) && (parseObject2 = JSON.parseObject(str2)) != null) {
@@ -221,13 +221,13 @@ public class MspEventCreator {
             return ((Boolean) ipChange.ipc$dispatch("b3a0dab0", new Object[]{mspEvent, str})).booleanValue();
         }
         String substring = str.substring(0, str.indexOf(riy.BRACKET_START_STR));
-        if (TextUtils.isEmpty(substring)) {
+        if (StringUtils.isEmpty(substring)) {
             return false;
         }
         mspEvent.setActionName(substring);
         try {
             String substring2 = str.substring(str.indexOf(riy.BRACKET_START_STR) + 1, str.length() - 1);
-            if (!TextUtils.isEmpty(substring2)) {
+            if (!StringUtils.isEmpty(substring2)) {
                 String trim = substring2.trim();
                 if (trim.startsWith("'") && trim.endsWith("'")) {
                     String[] split = trim.substring(1, trim.length() - 1).split("'\\s*,\\s*'", -1);
@@ -268,7 +268,7 @@ public class MspEventCreator {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ad023781", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(";");

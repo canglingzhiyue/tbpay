@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.request.AttachedResponse;
 import com.alibaba.android.nextrpc.request.CachedMainResponse;
 import com.alibaba.android.nextrpc.request.NextRpcRequest;
@@ -1172,10 +1172,10 @@ public class NextRpcRequester implements job {
             } catch (Exception unused) {
             }
         }
-        if (!TextUtils.isEmpty(this.F)) {
+        if (!StringUtils.isEmpty(this.F)) {
             mtopBusiness.mo1310setBizTopic(this.F);
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             mtopBusiness.mo1328setUnitStrategy(this.h);
         }
         Map<String, String> map = this.k;

@@ -2,7 +2,7 @@ package com.taobao.monitor;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.procedure.d;
 import com.taobao.monitor.procedure.o;
@@ -67,7 +67,7 @@ public class b {
         }
         if (obj instanceof String) {
             String str2 = (String) obj;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 return str2;
             }
         }
@@ -82,7 +82,7 @@ public class b {
         Object obj = map.get("appVersion");
         if (obj instanceof String) {
             String str = (String) obj;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         }
@@ -103,7 +103,7 @@ public class b {
         Object obj = map.get("process");
         if (obj instanceof String) {
             String str = (String) obj;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         }
@@ -149,7 +149,7 @@ public class b {
         L36:
             r1.printStackTrace()
         L39:
-            boolean r1 = android.text.TextUtils.isEmpty(r2)
+            boolean r1 = android.text.StringUtils.isEmpty(r2)
             if (r1 != 0) goto L44
             com.taobao.monitor.procedure.d.l = r2
             com.taobao.monitor.procedure.d.k = r0

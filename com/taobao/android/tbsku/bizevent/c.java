@@ -1,6 +1,6 @@
 package com.taobao.android.tbsku.bizevent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbsku.image.l;
@@ -38,15 +38,15 @@ public class c implements iyd {
             return;
         }
         String string = jSONObject.getString("mainPic");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         String string2 = jSONObject.getString("mainDesc");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "";
         }
         String string3 = jSONObject.getString("mainPVId");
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             string3 = "";
         }
         l lVar = new l();

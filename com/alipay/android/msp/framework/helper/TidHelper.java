@@ -2,7 +2,7 @@ package com.alipay.android.msp.framework.helper;
 
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.helper.Tid;
@@ -185,14 +185,14 @@ public class TidHelper {
         } else if (map == null) {
         } else {
             String str = map.get("msp_switch");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 JSONObject jSONObject = parseObject.getJSONObject("content");
                 String string = parseObject.getString(MspDBHelper.RecordEntry.COLUMN_NAME_VERSION);
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 DrmManager.getInstance(context).onUpdate(jSONObject, string);

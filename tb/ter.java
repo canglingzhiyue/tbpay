@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.res.AssetManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -106,10 +106,10 @@ public class ter implements Runnable {
         kxt.a(" extractLanguageConfig ");
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key) && key.contains(str)) {
+            if (!StringUtils.isEmpty(key) && key.contains(str)) {
                 JSONObject parseObject = JSONObject.parseObject(new String(fwn.a().a(entry.getValue(), dXWidgetNode.getDXRuntimeContext())));
                 String replace = new String(key.getBytes()).replace(str, "");
-                if (!TextUtils.isEmpty(replace)) {
+                if (!StringUtils.isEmpty(replace)) {
                     dXWidgetNode.addLanguageConfig(replace.replace(".json", ""), parseObject);
                 }
                 z = true;
@@ -127,10 +127,10 @@ public class ter implements Runnable {
         boolean z = false;
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key) && key.indexOf(str) == 0) {
+            if (!StringUtils.isEmpty(key) && key.indexOf(str) == 0) {
                 JSONObject parseObject = JSONObject.parseObject(new String(fwn.a().a(entry.getValue(), dXWidgetNode.getDXRuntimeContext())));
                 String substring = key.substring(str.length());
-                if (!TextUtils.isEmpty(substring) && substring.length() > 5) {
+                if (!StringUtils.isEmpty(substring) && substring.length() > 5) {
                     dXWidgetNode.addLanguageConfig(substring.substring(0, substring.length() - 5), parseObject);
                 }
                 z = true;
@@ -148,7 +148,7 @@ public class ter implements Runnable {
         boolean z = false;
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key) && key.indexOf(str) == 0) {
+            if (!StringUtils.isEmpty(key) && key.indexOf(str) == 0) {
                 kxt.a(" extractLanguageConfigBugfix  loader start ");
                 byte[] a2 = fwn.a().a(entry.getValue(), dXWidgetNode.getDXRuntimeContext());
                 kxt.a(" extractLanguageConfigBugfix  loader end ");
@@ -188,7 +188,7 @@ public class ter implements Runnable {
         kxt.a(" extractLanguageConfigPerfOpt realKey " + str2);
         String str3 = map.get(str2);
         kxt.a(" extractLanguageConfigPerfOpt filePath " + str3);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return false;
         }
         kxt.a(" extractLanguageConfigPerfOpt load start  ");

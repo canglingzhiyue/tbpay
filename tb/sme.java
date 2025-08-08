@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
 import com.taobao.android.fluid.framework.deprecated.message.IMessageService;
@@ -71,7 +71,7 @@ public class sme {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("url", str);
-        if (sicVar.h() == null || sicVar.h().f12530a == null || TextUtils.isEmpty(sicVar.h().f12530a.c)) {
+        if (sicVar.h() == null || sicVar.h().f12530a == null || StringUtils.isEmpty(sicVar.h().f12530a.c)) {
             return;
         }
         ((IMessageService) sicVar.z().getService(IMessageService.class)).sendMessage(new spy("VSMSG_liveModeGotoLiveRoom", sicVar.h().f12530a.c, hashMap));

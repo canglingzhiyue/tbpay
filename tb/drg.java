@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -68,10 +68,10 @@ public class drg {
         }
         try {
             String a2 = a.a(j.a.K_NODE_FILTERS, com.taobao.android.behavix.adapter.a.a(j.a.K_NODE_FILTERS));
-            if (TextUtils.equals(a2, this.d)) {
+            if (StringUtils.equals(a2, this.d)) {
                 return;
             }
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 g();
                 return;
             }
@@ -100,10 +100,10 @@ public class drg {
         }
         try {
             String a2 = a.a(j.a.K_TABLE_CONFIG, "{\"dc_userBehavior_custom_node\":{\"limit\":1000,\"expire\":30}}");
-            if (TextUtils.equals(a2, this.f)) {
+            if (StringUtils.equals(a2, this.f)) {
                 return;
             }
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 this.e = new JSONObject();
                 return;
             }

@@ -3,7 +3,7 @@ package com.alipay.birdnest.view;
 import android.content.Context;
 import android.os.Build;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.TextView;
 import com.alipay.birdnest.api.BirdNestEngine;
 import com.alipay.birdnest.platform.Platform;
@@ -84,8 +84,8 @@ public class TextViewWrapper extends TextView {
             leftPaddingOffset = Math.max(leftPaddingOffset, i5);
         }
         CharSequence text = getText();
-        CharSequence ellipsize = TextUtils.ellipsize(text, getPaint(), leftPaddingOffset, getEllipsize());
-        if (TextUtils.equals(ellipsize, text)) {
+        CharSequence ellipsize = StringUtils.ellipsize(text, getPaint(), leftPaddingOffset, getEllipsize());
+        if (StringUtils.equals(ellipsize, text)) {
             return;
         }
         if (text.length() > ellipsize.length()) {
@@ -139,7 +139,7 @@ public class TextViewWrapper extends TextView {
             this.b = renderEmojiReturncount;
             if (renderEmojiReturncount > 0 && getEllipsize() != null) {
                 if (a() == 1) {
-                    super.setText(TextUtils.ellipsize(spannableStringBuilder, getPaint(), this.c, getEllipsize()), bufferType);
+                    super.setText(StringUtils.ellipsize(spannableStringBuilder, getPaint(), this.c, getEllipsize()), bufferType);
                 } else {
                     super.setText(spannableStringBuilder, bufferType);
                 }

@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.MimeTypeMap;
 import java.io.File;
 import java.io.IOException;
@@ -218,7 +218,7 @@ public class FileProvider extends ContentProvider {
                     }
                     if (file != null) {
                         File buildPath = buildPath(file, attributeValue2);
-                        if (TextUtils.isEmpty(attributeValue)) {
+                        if (StringUtils.isEmpty(attributeValue)) {
                             throw new IllegalArgumentException("Name must not be empty");
                         }
                         try {

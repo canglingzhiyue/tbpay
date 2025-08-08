@@ -1,6 +1,6 @@
 package com.taobao.tao.powermsg.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.model.BaseMessage;
@@ -98,7 +98,7 @@ public class Report extends BaseMessage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("67dae25a", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.body.f31519a = str;
         }

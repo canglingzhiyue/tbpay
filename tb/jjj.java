@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -90,7 +90,7 @@ public class jjj extends jjh implements c {
         } else if (message == null || message.obj == null) {
         } else {
             String b = a.b(message.obj.toString());
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             a(b);
@@ -101,10 +101,10 @@ public class jjj extends jjh implements c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("795c762c", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str) || aVar == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null) {
         } else {
             String b = a.b(str);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             this.b.put(b, aVar);
@@ -140,10 +140,10 @@ public class jjj extends jjh implements c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a2b0cb6d", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str) || aVar == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null) {
         } else {
             final String b = a.b(str);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             jjl b2 = b(b);
@@ -199,13 +199,13 @@ public class jjj extends jjh implements c {
     private boolean e(String str) {
         jjl b;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && b() && (b = b(str)) != null && b.h();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && b() && (b = b(str)) != null && b.h();
     }
 
     private boolean f(String str) {
         jjl b;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && (b = b(str)) != null && b.i();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && (b = b(str)) != null && b.i();
     }
 
     @Override // tb.jjh
@@ -217,10 +217,10 @@ public class jjj extends jjh implements c {
         if (view == null) {
             return false;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = i.d(view);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String b = a.b(str);
@@ -238,12 +238,12 @@ public class jjj extends jjh implements c {
         if (ipChange instanceof IpChange) {
             return (com.ut.mini.internal.b) ipChange.ipc$dispatch("5d54bfd6", new Object[]{this, str, view});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = i.d(view);
         }
         String b = a.b(str);
         com.ut.mini.internal.b bVar = null;
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             jjl b2 = b(b);
             if (b2 == null) {
                 return null;
@@ -291,11 +291,11 @@ public class jjj extends jjh implements c {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("8b709ddf", new Object[]{this, str, view, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = i.d(view);
         }
         String b2 = a.b(str);
-        if (TextUtils.isEmpty(b2) || (b = b(b2)) == null || !b.b() || (a2 = a(b, str, view, TrackerType.TrackerType_Exposure)) == null) {
+        if (StringUtils.isEmpty(b2) || (b = b(b2)) == null || !b.b() || (a2 = a(b, str, view, TrackerType.TrackerType_Exposure)) == null) {
             return null;
         }
         return a.a(a2.g, a2.j);
@@ -310,11 +310,11 @@ public class jjj extends jjh implements c {
         } else {
             String string = message.getData().getString(MspDBHelper.ActionEntry.COLUMN_NAME_PAGE_ID);
             String string2 = message.getData().getString("page_config");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             final String b = a.b(string);
-            if (TextUtils.isEmpty(b) || !(a2 = a(b, string2))) {
+            if (StringUtils.isEmpty(b) || !(a2 = a(b, string2))) {
                 return;
             }
             if (Looper.getMainLooper().getThread() == Thread.currentThread() && a2) {
@@ -342,7 +342,7 @@ public class jjj extends jjh implements c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             if (b(str) != null) {
                 this.e.remove(str);
             }
@@ -379,7 +379,7 @@ public class jjj extends jjh implements c {
         } else if (map == null || !map.containsKey("url")) {
         } else {
             String b = a.b(map.get("url"));
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             jjl b2 = b(b);
@@ -396,7 +396,7 @@ public class jjj extends jjh implements c {
         if (ipChange instanceof IpChange) {
             return (jjl) ipChange.ipc$dispatch("7d1dc407", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return this.e.get(str);
@@ -405,7 +405,7 @@ public class jjj extends jjh implements c {
     private boolean g(String str) {
         jjl b;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && (b = b(str)) != null && b.d();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && (b = b(str)) != null && b.d();
     }
 
     public jjk a(jjl jjlVar, String str, View view, TrackerType trackerType) {

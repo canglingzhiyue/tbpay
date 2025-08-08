@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -135,7 +135,7 @@ public class kxi implements j<kwy> {
         }
         try {
             String string = jSONObject.getString(com.taobao.tao.infoflow.multitab.e.KEY_BG_COLOR);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 lboVar.a().getRootView().setBackgroundColor(com.taobao.android.tbtheme.c.a(2, Color.parseColor(string)));
             } else {
                 lboVar.a().getRootView().setBackgroundResource(R.color.homepage_background);

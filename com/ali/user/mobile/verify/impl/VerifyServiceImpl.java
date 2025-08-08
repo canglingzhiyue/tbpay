@@ -1,6 +1,6 @@
 package com.ali.user.mobile.verify.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.info.AppInfo;
@@ -87,7 +87,7 @@ public class VerifyServiceImpl {
         buildBaseRequest.addParam("sdkVersion", AppInfo.getInstance().getSdkVersion());
         long currentTimeMillis = System.currentTimeMillis();
         buildBaseRequest.addParam("t", Long.valueOf(currentTimeMillis));
-        if (!TextUtils.isEmpty(verifyParam.deviceTokenKey)) {
+        if (!StringUtils.isEmpty(verifyParam.deviceTokenKey)) {
             buildBaseRequest.addParam("deviceTokenKey", verifyParam.deviceTokenKey);
             DeviceTokenSignParam deviceTokenSignParam = new DeviceTokenSignParam();
             deviceTokenSignParam.addActionType(verifyParam.actionType);

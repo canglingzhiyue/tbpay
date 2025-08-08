@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.b;
@@ -299,7 +299,7 @@ public final class brq implements brk {
         }
         for (b.a aVar : a2) {
             String b = aVar.b();
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 for (AURARenderComponent aURARenderComponent : renderTreeList) {
                     if (b.equals(aURARenderComponent.key)) {
                         bqcVar.a(aURARenderComponent, aVar);

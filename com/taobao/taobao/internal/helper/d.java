@@ -3,7 +3,7 @@ package com.taobao.taobao.internal.helper;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.alipay.export.CashdeskConstants;
@@ -54,7 +54,7 @@ public class d {
         intent.setAction(ALIPAY_ACTION);
         intent.addCategory("android.intent.category.DEFAULT");
         intent.putExtra("from", "tbPay");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             intent.putExtra("result", str2);
         }
         intent.putExtra("stage", str);
@@ -80,10 +80,10 @@ public class d {
             return;
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("action", (Object) str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             jSONObject.put("result", (Object) str2);
         }
         new com.alibaba.alibity.container.broadcast.b().a("tbPay", CashdeskConstants.TB_CASH_DESK_BROADCAST_RESULT_ACTION, jSONObject);

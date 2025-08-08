@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ultronengine.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,7 +45,7 @@ public class n extends com.alibaba.android.ultron.event.q {
         if (ipChange instanceof IpChange) {
             return (eoi) ipChange.ipc$dispatch("290068df", new Object[]{this, jSONObject});
         }
-        if (jSONObject.containsKey("iconType") && !TextUtils.isEmpty(jSONObject.getString("iconType"))) {
+        if (jSONObject.containsKey("iconType") && !StringUtils.isEmpty(jSONObject.getString("iconType"))) {
             int parseInt = Integer.parseInt(jSONObject.getString("iconType"));
             if (parseInt == 2) {
                 return new eoi(TitleViewModel.ShareType.SHARE_TYPE_PRESENT);

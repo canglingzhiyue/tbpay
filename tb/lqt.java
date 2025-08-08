@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.eventchain.l;
@@ -38,7 +38,7 @@ public class lqt extends dlg<l> {
             return null;
         }
         String string = popSectionModel.getExt().getString("sectionBizCode");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         d.b(string);

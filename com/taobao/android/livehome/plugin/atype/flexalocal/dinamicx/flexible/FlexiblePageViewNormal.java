@@ -3,7 +3,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.dinamicx.flexible;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -363,7 +363,7 @@ public class FlexiblePageViewNormal extends RelativeLayout implements AbsFlexibl
             layoutParams.leftMargin = adjustDP(i3, 12);
             layoutParams.topMargin = adjustDP(i3, 8);
             this.mTitleExpend.setLayoutParams(layoutParams);
-            if (!TextUtils.isEmpty(this.mPageViewEntity.titleExpendColor) && (parseColor4 = parseColor(this.mPageViewEntity.titleExpendColor)) != 0) {
+            if (!StringUtils.isEmpty(this.mPageViewEntity.titleExpendColor) && (parseColor4 = parseColor(this.mPageViewEntity.titleExpendColor)) != 0) {
                 this.mTitleExpend.setTextColor(parseColor4);
             }
         }
@@ -378,7 +378,7 @@ public class FlexiblePageViewNormal extends RelativeLayout implements AbsFlexibl
             layoutParams2.topMargin = adjustDP(i3, 30);
             layoutParams2.leftMargin = adjustDP(i3, 12);
             this.mSubTitleExpend.setLayoutParams(layoutParams2);
-            if (!TextUtils.isEmpty(this.mPageViewEntity.subtitleExpendColor) && (parseColor3 = parseColor(this.mPageViewEntity.subtitleExpendColor)) != 0) {
+            if (!StringUtils.isEmpty(this.mPageViewEntity.subtitleExpendColor) && (parseColor3 = parseColor(this.mPageViewEntity.subtitleExpendColor)) != 0) {
                 this.mSubTitleExpend.setTextColor(parseColor3);
             }
         }
@@ -400,7 +400,7 @@ public class FlexiblePageViewNormal extends RelativeLayout implements AbsFlexibl
             layoutParams4.height = adjustDP(i3, 22);
             layoutParams4.topMargin = adjustDP(i3, 8);
             this.mTitleFolded.setLayoutParams(layoutParams4);
-            if (!TextUtils.isEmpty(this.mPageViewEntity.titleFoldedColor) && (parseColor2 = parseColor(this.mPageViewEntity.titleFoldedColor)) != 0) {
+            if (!StringUtils.isEmpty(this.mPageViewEntity.titleFoldedColor) && (parseColor2 = parseColor(this.mPageViewEntity.titleFoldedColor)) != 0) {
                 this.mTitleFolded.setTextColor(parseColor2);
             }
         }
@@ -414,7 +414,7 @@ public class FlexiblePageViewNormal extends RelativeLayout implements AbsFlexibl
             layoutParams5.width = i2 - adjustDP(i3, 6);
             layoutParams5.topMargin = adjustDP(i3, 30);
             this.mSubTitleFolded.setLayoutParams(layoutParams5);
-            if (!TextUtils.isEmpty(this.mPageViewEntity.subtitleFoldedColor) && (parseColor = parseColor(this.mPageViewEntity.subtitleFoldedColor)) != 0) {
+            if (!StringUtils.isEmpty(this.mPageViewEntity.subtitleFoldedColor) && (parseColor = parseColor(this.mPageViewEntity.subtitleFoldedColor)) != 0) {
                 this.mSubTitleFolded.setTextColor(parseColor);
             }
         }
@@ -442,7 +442,7 @@ public class FlexiblePageViewNormal extends RelativeLayout implements AbsFlexibl
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("29f5f0b7", new Object[]{this, new Integer(i)});
-        } else if (!TextUtils.isEmpty(this.mPageViewEntity.buttonTitle) || !TextUtils.isEmpty(this.mPageViewEntity.buttonBackgourdImg)) {
+        } else if (!StringUtils.isEmpty(this.mPageViewEntity.buttonTitle) || !StringUtils.isEmpty(this.mPageViewEntity.buttonBackgourdImg)) {
             this.mButtonLayoutExpend.setVisibility(0);
             RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.mButtonLayoutExpend.getLayoutParams();
             if (layoutParams == null) {
@@ -462,7 +462,7 @@ public class FlexiblePageViewNormal extends RelativeLayout implements AbsFlexibl
             if (checkIsNotEmpty(this.mButtonExpend, this.mPageViewEntity.buttonTitle)) {
                 this.mButtonExpend.setText(this.mPageViewEntity.buttonTitle);
                 this.mButtonExpend.setTextSize(0, adjustDP(i, 12));
-                if (!TextUtils.isEmpty(this.mPageViewEntity.buttonTitleColor) && (parseColor = parseColor(this.mPageViewEntity.buttonTitleColor)) != 0) {
+                if (!StringUtils.isEmpty(this.mPageViewEntity.buttonTitleColor) && (parseColor = parseColor(this.mPageViewEntity.buttonTitleColor)) != 0) {
                     this.mButtonExpend.setTextColor(parseColor);
                 }
             }
@@ -507,7 +507,7 @@ public class FlexiblePageViewNormal extends RelativeLayout implements AbsFlexibl
         if (view == null) {
             return false;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             view.setVisibility(4);
             return false;
         }

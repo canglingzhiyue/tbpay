@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -39,7 +39,7 @@ public class ddz implements b {
             return;
         }
         String a2 = pmd.a().d().a("tblive", "componentStrategyConfig", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 JSONObject parseObject = JSON.parseObject(a2);
                 if (parseObject == null) {

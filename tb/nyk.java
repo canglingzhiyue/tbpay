@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -151,7 +151,7 @@ public class nyk {
             return;
         }
         String string = a2.getString(f31841a);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "1";
         }
         if ("1".equals(string)) {
@@ -179,7 +179,7 @@ public class nyk {
 
     public static String a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("aff6e538", new Object[0]) : TextUtils.isEmpty(d) ? ".*http(s?)://(baron|share).laiwang.com.*tm=.*" : d;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("aff6e538", new Object[0]) : StringUtils.isEmpty(d) ? ".*http(s?)://(baron|share).laiwang.com.*tm=.*" : d;
     }
 
     private static void c(Map<String, String> map) {
@@ -217,7 +217,7 @@ public class nyk {
         }
         String str = map.get("taopassword_character_blacklist");
         String str2 = "setTPCharacterBlackList 1 listStr=" + str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "￥,¥";
         }
         String str3 = "setTPCharacterBlackList 2 listStr=" + str;
@@ -249,7 +249,7 @@ public class nyk {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
         String a2 = nyl.a(b, "reflow_plan", "B");
-        return TextUtils.isEmpty(a2) ? "B" : a2;
+        return StringUtils.isEmpty(a2) ? "B" : a2;
     }
 
     public static String c() {
@@ -260,13 +260,13 @@ public class nyk {
         }
         Application b2 = ShareBizAdapter.getInstance().getAppEnv().b();
         String a2 = nyl.a(b, "plan_a_regex", DETAULT_PLAN_A_PASSWORD_REGEX);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             str = b(b2);
         } else {
             a(b2, a2);
             str = a2;
         }
-        return TextUtils.isEmpty(str) ? DETAULT_PLAN_A_PASSWORD_REGEX : str;
+        return StringUtils.isEmpty(str) ? DETAULT_PLAN_A_PASSWORD_REGEX : str;
     }
 
     public static String d() {
@@ -275,7 +275,7 @@ public class nyk {
             return (String) ipChange.ipc$dispatch("43881515", new Object[0]);
         }
         String a2 = nyl.a(b, "plan_b_regex", DEFAULT_PLAN_B_PASSWORD_REGEX);
-        return TextUtils.isEmpty(a2) ? DEFAULT_PLAN_B_PASSWORD_REGEX : a2;
+        return StringUtils.isEmpty(a2) ? DEFAULT_PLAN_B_PASSWORD_REGEX : a2;
     }
 
     public static String g() {

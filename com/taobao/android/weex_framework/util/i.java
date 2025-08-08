@@ -2,7 +2,7 @@ package com.taobao.android.weex_framework.util;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSValue;
 import tb.kge;
@@ -42,7 +42,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123a1be", new Object[]{str, new Float(f)})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("value is empty or null");
         }
         if (str.length() > 2) {
@@ -72,7 +72,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("7d25309d", new Object[]{str, new Float(f)})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("value is empty or null");
         }
         if (str.length() > 2) {

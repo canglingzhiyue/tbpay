@@ -3,7 +3,7 @@ package com.taobao.android.detail2.core.framework.base.weex;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
@@ -129,7 +129,7 @@ public class h {
             fjt.a("WeexAsyncPreLoadUtil", "TikTest preloadWeexV2FromCache 执行中。");
             Application application = Global.getApplication();
             String a2 = fky.a(application, fky.a(application));
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 fjt.a("WeexAsyncPreLoadUtil", "TikTest mainPicUrl is empty.");
                 return;
             }

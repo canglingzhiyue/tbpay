@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -95,7 +95,7 @@ public class tol implements rxm, rxn {
         String singleHeaderFieldByKey = HeaderHandlerUtil.getSingleHeaderFieldByKey(aVar.c.getHeaderFields(), HttpHeaderConstant.X_UNIT);
         if (StringUtils.isNotBlank(singleHeaderFieldByKey)) {
             String str = this.f34245a.get(singleHeaderFieldByKey);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String key = aVar.b.getKey();
                 String str2 = aVar.h;
                 TBSdkLog.e("mtopsdk.UnitCorrectionDuplexFilter", str2, "[unit store]api=" + key + ", unit=" + str);

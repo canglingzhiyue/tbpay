@@ -1,7 +1,7 @@
 package com.taobao.tao.powermsg.managers;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.taobao.tao.messagekit.core.model.BaseMessage;
@@ -57,7 +57,7 @@ public class c implements muz<com.taobao.tao.messagekit.core.model.b> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             remove = ipChange.ipc$dispatch("63a690b3", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             return null;
         } else {
             remove = e.remove(str);
@@ -69,7 +69,7 @@ public class c implements muz<com.taobao.tao.messagekit.core.model.b> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             StreamFullLinkMonitor streamFullLinkMonitor = new StreamFullLinkMonitor();
             streamFullLinkMonitor.namespace = str2;
@@ -84,7 +84,7 @@ public class c implements muz<com.taobao.tao.messagekit.core.model.b> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             obj = ipChange.ipc$dispatch("a5bdbe12", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             return null;
         } else {
             obj = e.get(str);

@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.parse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.parse.TypedBean;
@@ -59,7 +59,7 @@ public class c<BEAN extends TypedBean, CTX> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return TypedBean.isWeex(str);
         }
         return false;
@@ -70,7 +70,7 @@ public class c<BEAN extends TypedBean, CTX> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return TypedBean.isMuise(str);
         }
         return false;
@@ -109,10 +109,10 @@ public class c<BEAN extends TypedBean, CTX> {
             return (String) ipChange.ipc$dispatch("15c87a18", new Object[]{jSONObject});
         }
         String string = jSONObject.getString("tItemType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = jSONObject.getString("type");
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         return null;

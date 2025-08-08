@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.node.service.data.rule;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.parse.AURAParseIO;
 import com.alibaba.android.umf.datamodel.protocol.ultron.Hierarchy;
 import com.alibaba.android.umf.datamodel.protocol.ultron.UltronDeltaProtocol;
@@ -35,7 +35,7 @@ public class c {
         UltronDeltaProtocol ultronDeltaProtocol = null;
         HashMap hashMap = new HashMap();
         for (com.alibaba.android.umf.datamodel.service.rule.a aVar : list) {
-            if (!TextUtils.isEmpty(aVar.b)) {
+            if (!StringUtils.isEmpty(aVar.b)) {
                 if (hashMap.containsKey(aVar.b)) {
                     aVar.d = hashMap.get(aVar.b);
                 }
@@ -65,7 +65,7 @@ public class c {
                 Iterator<Delta> it = ultronDeltaProtocol.getHierarchy().getDelta().iterator();
                 while (true) {
                     if (it.hasNext()) {
-                        if (TextUtils.equals(delta.getTarget(), it.next().getTarget())) {
+                        if (StringUtils.equals(delta.getTarget(), it.next().getTarget())) {
                             z = true;
                             break;
                         }

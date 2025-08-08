@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ImageSpan;
 import android.util.LruCache;
 import android.util.SparseArray;
@@ -64,7 +64,7 @@ public class ExpressionTable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("59ebab24", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (split = str.split("/:")) == null || split.length <= 1) {
+        if (StringUtils.isEmpty(str) || (split = str.split("/:")) == null || split.length <= 1) {
             return str;
         }
         if (complexStringCache.get(str) != null) {
@@ -73,7 +73,7 @@ public class ExpressionTable {
         String str2 = str;
         int i = 0;
         for (int i2 = 0; i2 < split.length; i2++) {
-            if (!TextUtils.isEmpty(split[i2])) {
+            if (!StringUtils.isEmpty(split[i2])) {
                 if (split[i2].contains("O=O")) {
                     str2 = str2.replace("/:O=O", DisplayUtil.localizedString(R.string.mp_boss_1));
                     i++;
@@ -133,7 +133,7 @@ public class ExpressionTable {
         }
         int i = 0;
         for (int i2 = 0; i2 < split.length; i2++) {
-            if (!TextUtils.isEmpty(split[i2])) {
+            if (!StringUtils.isEmpty(split[i2])) {
                 if (!str.substring(i, i + 2).equals("/:")) {
                     return true;
                 }
@@ -161,12 +161,12 @@ public class ExpressionTable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ab8ecbf2", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (split = str.split("/:")) == null || split.length <= 1) {
+        if (StringUtils.isEmpty(str) || (split = str.split("/:")) == null || split.length <= 1) {
             return str;
         }
         String str2 = str;
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i])) {
+            if (!StringUtils.isEmpty(split[i])) {
                 if (split[i].contains("O=O")) {
                     str2 = str2.replace("/:O=O", "");
                 } else {
@@ -205,7 +205,7 @@ public class ExpressionTable {
         if (split != null && split.length > 1) {
             int i2 = 0;
             for (int i3 = 0; i3 < split.length; i3++) {
-                if (!TextUtils.isEmpty(split[i3])) {
+                if (!StringUtils.isEmpty(split[i3])) {
                     if (!charSequence2.substring(i2, i2 + 2).equals("/:")) {
                         length = split[i3].length();
                     } else {

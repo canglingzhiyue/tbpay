@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.bg;
 import com.xiaomi.push.bh;
 import com.xiaomi.push.bl;
@@ -32,16 +32,16 @@ public class i {
         String string = sharedPreferences.getString(a2, "");
         String m1673c = b.m1665a(context).m1673c();
         String string2 = sharedPreferences.getString("last_check_token", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("ASSEMBLE_PUSH : can not find the key of token used in sp file");
             return 0;
-        } else if (TextUtils.isEmpty(string)) {
+        } else if (StringUtils.isEmpty(string)) {
             return 1;
         } else {
             if (!string.equals(str)) {
                 return 2;
             }
-            if (!TextUtils.equals(m1673c, string2)) {
+            if (!StringUtils.equals(m1673c, string2)) {
                 return 3;
             }
             if (m1690a(eVar)) {
@@ -55,7 +55,7 @@ public class i {
 
     public static MiPushMessage a(String str) {
         MiPushMessage miPushMessage = new MiPushMessage();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 if (jSONObject.has("messageId")) {
@@ -153,12 +153,12 @@ public class i {
             SharedPreferences sharedPreferences = context.getSharedPreferences("mipush_extra", 0);
             if (z) {
                 String string = sharedPreferences.getString("syncingToken", "");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     return string;
                 }
             }
             String a2 = a(eVar);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return sharedPreferences.getString(a2, "");
             }
             return "";
@@ -304,7 +304,7 @@ public class i {
         SharedPreferences sharedPreferences = context.getSharedPreferences("mipush_extra", 0);
         String a2 = a(e.ASSEMBLE_PUSH_HUAWEI);
         String a3 = a(e.ASSEMBLE_PUSH_FCM);
-        if (!TextUtils.isEmpty(sharedPreferences.getString(a2, "")) && TextUtils.isEmpty(sharedPreferences.getString(a3, ""))) {
+        if (!StringUtils.isEmpty(sharedPreferences.getString(a2, "")) && StringUtils.isEmpty(sharedPreferences.getString(a3, ""))) {
             z = true;
         }
         if (z) {
@@ -315,7 +315,7 @@ public class i {
     /* renamed from: a  reason: collision with other method in class */
     public static void m1686a(Context context, e eVar) {
         String a2 = a(eVar);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         com.xiaomi.push.p.a(context.getSharedPreferences("mipush_extra", 0).edit().putString(a2, ""));
@@ -323,7 +323,7 @@ public class i {
 
     /* renamed from: a  reason: collision with other method in class */
     public static void m1687a(Context context, e eVar, String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             int a2 = a(context, eVar, str);
             if (a2 == 0) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("ASSEMBLE_PUSH : do not need to send token");
@@ -431,7 +431,7 @@ public class i {
     public static synchronized void d(Context context, e eVar, String str) {
         synchronized (i.class) {
             String a2 = a(eVar);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("ASSEMBLE_PUSH : can not find the key of token used in sp file");
                 return;
             }

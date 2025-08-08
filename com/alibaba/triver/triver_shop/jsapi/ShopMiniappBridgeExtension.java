@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
@@ -146,7 +146,7 @@ public class ShopMiniappBridgeExtension implements BridgeExtension {
         JSONObject jSONObject = new JSONObject();
         if (app == null || app.getAppContext() == null || app.getAppContext().getContext() == null) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.newError(5, "context is null"));
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             Map<String, WXSDKInstance> map = this.f3778a;
@@ -218,7 +218,7 @@ public class ShopMiniappBridgeExtension implements BridgeExtension {
         } else if (app == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     return;
                 }
                 b a2 = b.a().a(app).a(app.getStartParams()).i(nfc.PHA_MONITOR_MEASURE_PAGE_RENDER_FINISHED).a(Double.valueOf(1.0d)).a();

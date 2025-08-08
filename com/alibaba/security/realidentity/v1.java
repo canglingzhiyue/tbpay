@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.model.HttpRequest;
 import com.alibaba.security.common.http.model.HttpResponse;
 import com.alibaba.security.realidentity.biz.bucket.BucketParams;
@@ -76,7 +76,7 @@ public class v1 extends o1 {
         if (this.g.isRepeatedSubmitted()) {
             return new BucketParams.ErrorCode(RPResult.AUDIT_PASS, String.valueOf(0), "the verification has passed", 0);
         }
-        if (!TextUtils.isEmpty(this.g.retCode)) {
+        if (!StringUtils.isEmpty(this.g.retCode)) {
             return new BucketParams.ErrorCode(RPResult.AUDIT_NOT, String.valueOf((int) e2.A), this.g.retMsg, e2.A);
         }
         return new BucketParams.ErrorCode(RPResult.AUDIT_NOT, String.valueOf((int) e2.A), b.a(this.g), e2.A);

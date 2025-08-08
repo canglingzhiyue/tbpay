@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,17 +41,17 @@ public class nde {
         try {
             jSONObject.getJSONObject(e.KEY_SMART_CONTENT).put("displayText", (Object) str);
             String string = jSONObject.getString("targetUrl");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if (string.contains(G_CHANNELSRP) || string.contains(G_BIZFILTER) || string.contains("placeholder")) {
                 String a2 = a(string, "\\?");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     a2 = "";
                 }
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     string = a(string, "&");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                     }
                 }
                 string = a2;
@@ -91,7 +91,7 @@ public class nde {
         }
         try {
             JSONObject parseObject = JSON.parseObject(str);
-            if (parseObject != null && !TextUtils.isEmpty(parseObject.toJSONString())) {
+            if (parseObject != null && !StringUtils.isEmpty(parseObject.toJSONString())) {
                 JSONObject parseObject2 = JSON.parseObject(parseObject.toJSONString());
                 dVar.a(parseObject2.getString(ECHO) == null ? "" : parseObject2.getString(ECHO));
                 if (parseObject2.getBoolean("end") == null || !parseObject2.getBoolean("end").booleanValue()) {

@@ -1,6 +1,6 @@
 package com.taobao.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.login.e;
@@ -23,7 +23,7 @@ public class LoginInfo implements Serializable {
     @JSONField(serialize = false)
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.userId) && !TextUtils.isEmpty(this.nickname);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.userId) && !StringUtils.isEmpty(this.nickname);
     }
 
     public boolean equals(Object obj) {
@@ -38,7 +38,7 @@ public class LoginInfo implements Serializable {
             return false;
         }
         LoginInfo loginInfo = (LoginInfo) obj;
-        return TextUtils.equals(loginInfo.nickname, this.nickname) && TextUtils.equals(loginInfo.userId, this.userId);
+        return StringUtils.equals(loginInfo.nickname, this.nickname) && StringUtils.equals(loginInfo.userId, this.userId);
     }
 
     public static LoginInfo from(e eVar) {

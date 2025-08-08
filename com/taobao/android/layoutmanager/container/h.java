@@ -2,7 +2,7 @@ package com.taobao.android.layoutmanager.container;
 
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class h implements n {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Object b2 = ohh.b("tnode_prefetch_config_" + str);
@@ -83,7 +83,7 @@ public class h implements n {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ca048181", new Object[]{this, str, yVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (a2 = a(str)) == null || (jSONArray = a2.getJSONArray("list")) == null) {
+        if (StringUtils.isEmpty(str) || (a2 = a(str)) == null || (jSONArray = a2.getJSONArray("list")) == null) {
             return false;
         }
         boolean z = false;
@@ -193,7 +193,7 @@ public class h implements n {
             if (map != null) {
                 this.c.put("query", (Object) map);
                 String str = map.get("tnode");
-                if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
+                if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
                     return;
                 }
                 HashMap hashMap = new HashMap();
@@ -259,10 +259,10 @@ public class h implements n {
         if (!z) {
             return false;
         }
-        if (!TextUtils.isEmpty(str) && !oec.a(Globals.getApplication().getPackageManager().getPackageInfo(Globals.getApplication().getPackageName(), 16384).versionName, str)) {
+        if (!StringUtils.isEmpty(str) && !oec.a(Globals.getApplication().getPackageManager().getPackageInfo(Globals.getApplication().getPackageName(), 16384).versionName, str)) {
             return false;
         }
-        if (!TextUtils.isEmpty(str2) && !oec.a(Build.VERSION.RELEASE, str2)) {
+        if (!StringUtils.isEmpty(str2) && !oec.a(Build.VERSION.RELEASE, str2)) {
             return false;
         }
         if (z2) {

@@ -12,7 +12,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -218,7 +218,7 @@ public class Utils {
     }
 
     public static String replaceOrAddQueryParameter(String str, String str2, String str3) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return str;
         }
         int indexOf = str.indexOf(str2 + "=");

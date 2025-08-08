@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.standard.mainpic.weex;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.arc;
@@ -25,17 +25,17 @@ public abstract class AbsPicGalleryWindvaneApiPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || wVCallBackContext == null) {
+        if (StringUtils.isEmpty(str) || wVCallBackContext == null) {
             ard a2 = arc.a();
             StringBuilder sb = new StringBuilder();
             sb.append("invalid input:");
-            sb.append(TextUtils.isEmpty(str) ? "action is empty" : "wvCallBackContext is null.");
+            sb.append(StringUtils.isEmpty(str) ? "action is empty" : "wvCallBackContext is null.");
             a2.c("AbsPicGalleryWindvaneApiPlugin", com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE, sb.toString());
             return false;
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.putAll(JSONObject.parseObject(str2));
             }
         } catch (Exception e) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.utils.Monitor;
 import com.alibaba.poplayer.utils.b;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class caf {
         this.e = str4;
         this.f = str5;
         this.i = z;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             this.h.put(str, str2);
         }
         this.j = SystemClock.elapsedRealtime();
@@ -96,7 +96,7 @@ public class caf {
 
     public String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : TextUtils.isEmpty(str) ? "" : this.h.get(str);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : StringUtils.isEmpty(str) ? "" : this.h.get(str);
     }
 
     public String e() {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
 
@@ -47,7 +47,7 @@ public class jkw extends jku {
             int r7 = r7.intValue()
             return r7
         L1c:
-            boolean r0 = android.text.TextUtils.isEmpty(r7)
+            boolean r0 = android.text.StringUtils.isEmpty(r7)
             r1 = -1
             if (r0 == 0) goto L24
             return r1
@@ -117,7 +117,7 @@ public class jkw extends jku {
         if (ipChange instanceof IpChange) {
             return (jkw) ipChange.ipc$dispatch("e2617d52", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@os.")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@os.")) {
             return null;
         }
         return new jkw(str);

@@ -12,7 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.ArrayMap;
 import android.view.ContextThemeWrapper;
 import android.view.View;
@@ -143,11 +143,11 @@ public class dms {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f0dec1d1", new Object[]{intent, str});
         }
-        if (intent == null || TextUtils.isEmpty(str)) {
+        if (intent == null || StringUtils.isEmpty(str)) {
             return "";
         }
         String stringExtra = intent.getStringExtra(str);
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             stringExtra = b(intent, str);
         }
         return stringExtra == null ? "" : stringExtra;

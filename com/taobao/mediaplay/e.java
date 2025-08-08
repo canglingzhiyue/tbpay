@@ -9,7 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -201,7 +201,7 @@ public class e implements b, c, com.taobao.mediaplay.player.e, com.taobao.mediap
         this.c.a((com.taobao.mediaplay.player.h) this);
         this.h = new g(this.f18013a.mMediaPlayContext);
         this.j = com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", "useMediaInfoParamsPlay", "true"));
-        if (!TextUtils.isEmpty(this.f18013a.mMediaPlayContext.getVideoUrl()) || !TextUtils.isEmpty(this.f18013a.mMediaPlayContext.mVideoId) || this.f18013a.mMediaPlayContext.mMediaLiveInfo != null || (this.f18013a.mMediaPlayContext.getMediaInfoParams() != null && this.j)) {
+        if (!StringUtils.isEmpty(this.f18013a.mMediaPlayContext.getVideoUrl()) || !StringUtils.isEmpty(this.f18013a.mMediaPlayContext.mVideoId) || this.f18013a.mMediaPlayContext.mMediaLiveInfo != null || (this.f18013a.mMediaPlayContext.getMediaInfoParams() != null && this.j)) {
             this.h.a(this);
         }
         this.k = com.taobao.taobaoavsdk.util.b.b(OrangeConfig.getInstance().getConfig("DWInteractive", "updateMediaInfoParamByVideoId1", "2"));
@@ -448,13 +448,13 @@ public class e implements b, c, com.taobao.mediaplay.player.e, com.taobao.mediap
             return false;
         }
         String videoUrl = this.f18013a.mMediaPlayContext.getVideoUrl();
-        if (TextUtils.isEmpty(videoUrl)) {
+        if (StringUtils.isEmpty(videoUrl)) {
             return false;
         }
         this.h.q();
         this.h.a(this);
         String videoUrl2 = this.f18013a.mMediaPlayContext.getVideoUrl();
-        if (TextUtils.isEmpty(videoUrl2) || videoUrl2.equals(videoUrl)) {
+        if (StringUtils.isEmpty(videoUrl2) || videoUrl2.equals(videoUrl)) {
             return false;
         }
         this.f18013a.mMediaPlayContext.unselectS266OfPlay();
@@ -586,7 +586,7 @@ public class e implements b, c, com.taobao.mediaplay.player.e, com.taobao.mediap
             return true;
         }
         String videoDefinition = this.f18013a.mMediaPlayContext.getVideoDefinition();
-        return !TextUtils.isEmpty(videoDefinition) && videoDefinition.contains("266") && b(i, i2);
+        return !StringUtils.isEmpty(videoDefinition) && videoDefinition.contains("266") && b(i, i2);
     }
 
     @Override // com.taobao.mediaplay.player.h
@@ -642,7 +642,7 @@ public class e implements b, c, com.taobao.mediaplay.player.e, com.taobao.mediap
             if (this.f18013a.mMediaPlayContext.mMediaLiveInfo != null && this.k != 2) {
                 return;
             }
-            if ((this.f18013a.mMediaPlayContext.getMediaInfoParams() != null && this.j) || TextUtils.isEmpty(this.f18013a.mMediaPlayContext.mVideoId) || this.f18013a.mMediaPlayContext.mTBLive) {
+            if ((this.f18013a.mMediaPlayContext.getMediaInfoParams() != null && this.j) || StringUtils.isEmpty(this.f18013a.mMediaPlayContext.mVideoId) || this.f18013a.mMediaPlayContext.mTBLive) {
                 return;
             }
             j jVar = this.c;
@@ -939,7 +939,7 @@ public class e implements b, c, com.taobao.mediaplay.player.e, com.taobao.mediap
                 if (z) {
                     if (kVar.d() == 1 && (e.d(e.this) || Build.VERSION.SDK_INT < 17)) {
                         e.this.a(MediaLifecycleType.PLAY);
-                    } else if (TextUtils.isEmpty(e.c(e.this).getVideoToken()) || kVar.d() != 1) {
+                    } else if (StringUtils.isEmpty(e.c(e.this).getVideoToken()) || kVar.d() != 1) {
                         z2 = false;
                     } else {
                         e.this.a(MediaLifecycleType.PLAY);
@@ -1348,7 +1348,7 @@ public class e implements b, c, com.taobao.mediaplay.player.e, com.taobao.mediap
             ipChange.ipc$dispatch("ad405d49", new Object[]{this, new Boolean(z)});
         } else if (this.c == null) {
         } else {
-            if (!oyu.a(this.f18013a.getContext()) && !TextUtils.isEmpty(this.f18013a.mMediaPlayContext.mSeamlessSwitchingSelectName)) {
+            if (!oyu.a(this.f18013a.getContext()) && !StringUtils.isEmpty(this.f18013a.mMediaPlayContext.mSeamlessSwitchingSelectName)) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "SwitchStream seamlessSwitchStream return when mSeamlessSwitchingSelectName is not null");
                 return;
             }

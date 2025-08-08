@@ -2,7 +2,7 @@ package com.alibaba.security.realidentity;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.interfaces.OnHttpCallBack;
 import com.alibaba.security.common.http.model.HttpRequest;
 import com.alibaba.security.realidentity.algo.wrapper.entity.result.ALBiometricsResult;
@@ -164,10 +164,10 @@ public class d2 extends i1 {
         ArrayList arrayList = new ArrayList();
         UploadResultParams uploadResultParams = this.g;
         if (uploadResultParams != null && (aLBiometricsResult = uploadResultParams.h) != null) {
-            if (!TextUtils.isEmpty(aLBiometricsResult.collectedData)) {
+            if (!StringUtils.isEmpty(aLBiometricsResult.collectedData)) {
                 arrayList.add("sensorActionLog");
             }
-            if (!TextUtils.isEmpty(this.g.h.bh)) {
+            if (!StringUtils.isEmpty(this.g.h.bh)) {
                 arrayList.add("flActionLog");
             }
         }

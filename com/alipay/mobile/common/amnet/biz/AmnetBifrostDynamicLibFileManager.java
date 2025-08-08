@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.biz;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.netsdkextdependapi.userinfo.UserInfoUtil;
@@ -63,7 +63,7 @@ public class AmnetBifrostDynamicLibFileManager {
                         }
                         AmnetBifrostDynamicLibFileManager.access$502(AmnetBifrostDynamicLibFileManager.this, true);
                         int i = 10;
-                        if (TextUtils.isEmpty(UserInfoUtil.getLastUserId())) {
+                        if (StringUtils.isEmpty(UserInfoUtil.getLastUserId())) {
                             i = 5;
                         }
                         NetworkAsyncTaskExecutor.schedule(new Runnable() { // from class: com.alipay.mobile.common.amnet.biz.AmnetBifrostDynamicLibFileManager.DownloadBifrostLibFileRunnable.1
@@ -298,7 +298,7 @@ public class AmnetBifrostDynamicLibFileManager {
             return (File) ipChange.ipc$dispatch("c26a5a1b", new Object[]{this, str});
         }
         String mapLibraryName = System.mapLibraryName("Bifrost");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             mapLibraryName = mapLibraryName + "." + str;
         }
         return new File(AmnetEnvHelper.getAppContext().getDir("plugins_lib", 0), mapLibraryName);
@@ -413,7 +413,7 @@ public class AmnetBifrostDynamicLibFileManager {
         }
         String f = f();
         LogCatUtil.info("AmnetBifrostDynamicLibFileManager", "[checkArchitecture] Get current architecture: " + f);
-        if (TextUtils.isEmpty(f)) {
+        if (StringUtils.isEmpty(f)) {
             LogCatUtil.warn("AmnetBifrostDynamicLibFileManager", "[checkArchitecture] Unsupported architecture its null.");
             return false;
         } else if (f.trim().toLowerCase().startsWith("armeabi")) {
@@ -431,7 +431,7 @@ public class AmnetBifrostDynamicLibFileManager {
         }
         try {
             String config = NetworkConfigDAO.getInstance().getConfig("bifrost_dynamic_lib_last_download_time");
-            if (TextUtils.isEmpty(config)) {
+            if (StringUtils.isEmpty(config)) {
                 LogCatUtil.info("AmnetBifrostDynamicLibFileManager", "[checkDownloadInterval] lastDownloadTimeStr empty, return true.");
                 return true;
             }
@@ -466,7 +466,7 @@ public class AmnetBifrostDynamicLibFileManager {
             return (String) ipChange.ipc$dispatch("50938a53", new Object[]{this});
         }
         String str = Build.CPU_ABI;
-        return !TextUtils.isEmpty(str) ? str : Build.CPU_ABI2;
+        return !StringUtils.isEmpty(str) ? str : Build.CPU_ABI2;
     }
 
     private boolean a(File file) {
@@ -490,7 +490,7 @@ public class AmnetBifrostDynamicLibFileManager {
                 }
             }
             String encodeToString = Base64.encodeToString(messageDigest.digest(), 2);
-            if (TextUtils.equals(encodeToString, "NPTNV6/MvZCLVucWnbhqNA==")) {
+            if (StringUtils.equals(encodeToString, "NPTNV6/MvZCLVucWnbhqNA==")) {
                 return true;
             }
             LogCatUtil.warn("AmnetBifrostDynamicLibFileManager", "[PostExecuteRunnable] Signatures are not equal. target signature:" + encodeToString + ", raw signature:NPTNV6/MvZCLVucWnbhqNA==");

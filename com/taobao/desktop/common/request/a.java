@@ -1,7 +1,7 @@
 package com.taobao.desktop.common.request;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
 import com.taobao.tao.remotebusiness.IRemoteListener;
@@ -100,7 +100,7 @@ public class a {
         } else if (!khv.a()) {
         } else {
             String d = khm.a().d();
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 mtop.registerTtid(d);
             }
             int e = khm.a().e();

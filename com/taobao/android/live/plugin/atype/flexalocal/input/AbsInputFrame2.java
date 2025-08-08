@@ -12,7 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -282,7 +282,7 @@ public abstract class AbsInputFrame2 extends BaseFrame implements View.OnClickLi
                     ipChange2.ipc$dispatch("77fdbb29", new Object[]{this, editable});
                     return;
                 }
-                boolean isEmpty = TextUtils.isEmpty(AbsInputFrame2.this.mEditText.getText());
+                boolean isEmpty = StringUtils.isEmpty(AbsInputFrame2.this.mEditText.getText());
                 if (isEmpty) {
                     AbsInputFrame2.access$000(AbsInputFrame2.this, false);
                     AbsInputFrame2.this.mDeleteBtn.setEnabled(false);
@@ -391,7 +391,7 @@ public abstract class AbsInputFrame2 extends BaseFrame implements View.OnClickLi
         if (pasteEditText != null) {
             pasteEditText.resetPasteText();
         }
-        if (TextUtils.isEmpty(this.mRepliedCommentId) || TextUtils.isEmpty(this.mRepliedCommentNick)) {
+        if (StringUtils.isEmpty(this.mRepliedCommentId) || StringUtils.isEmpty(this.mRepliedCommentNick)) {
             return;
         }
         this.mEditText.setText("");
@@ -937,7 +937,7 @@ public abstract class AbsInputFrame2 extends BaseFrame implements View.OnClickLi
             return;
         }
         String str = stickerConfig.matchKey;
-        if (this.mEditText == null || TextUtils.isEmpty(str) || drawable == null || drawable.getConstantState() == null) {
+        if (this.mEditText == null || StringUtils.isEmpty(str) || drawable == null || drawable.getConstantState() == null) {
             return;
         }
         if (this.mEditText.getText().length() + str.length() > this.mLimitCnt) {
@@ -981,7 +981,7 @@ public abstract class AbsInputFrame2 extends BaseFrame implements View.OnClickLi
         }
         try {
             HashMap hashMap = new HashMap();
-            hashMap.put("type", TextUtils.equals("1", stickerConfig.type) ? "longword" : ChatInputConstant.PANEL_ID_EMOJI);
+            hashMap.put("type", StringUtils.equals("1", stickerConfig.type) ? "longword" : ChatInputConstant.PANEL_ID_EMOJI);
             hashMap.put("emoticon_id", stickerConfig.id);
             phg.a().a(this.mFrameContext, "Comment_EmoticonConvenient", (Map<String, String>) hashMap);
         } catch (Exception e) {
@@ -994,7 +994,7 @@ public abstract class AbsInputFrame2 extends BaseFrame implements View.OnClickLi
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e7f411f6", new Object[]{this, stickerConfig, drawable, str, new Boolean(z)});
-        } else if (this.mEditText == null || TextUtils.isEmpty(stickerConfig.matchKey) || drawable == null || drawable.getConstantState() == null) {
+        } else if (this.mEditText == null || StringUtils.isEmpty(stickerConfig.matchKey) || drawable == null || drawable.getConstantState() == null) {
         } else {
             if (this.mEditText.getText().length() + stickerConfig.matchKey.length() > this.mLimitCnt) {
                 Context context = this.mContext;

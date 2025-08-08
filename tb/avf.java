@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.parse.AURAParseIO;
 import com.alibaba.android.aura.datamodel.rule.AURALocalAdjustIO;
@@ -87,7 +87,7 @@ public class avf extends avc {
             return (Component) ipChange.ipc$dispatch("1b3507b3", new Object[]{this, aVar, jSONObject, jSONObject2});
         }
         String string = jSONObject.getString("type");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             c().a(new b(1, "AURAEventServiceDomain", "-1000_EMPTY_TYPE", "执行事件失败, eventType 为空"));
             return null;
         }

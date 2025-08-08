@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -137,7 +137,7 @@ public final class cpn extends ctc<cpm, b, CaptureManager> implements cpo {
             return;
         }
         q.c(outerAlbumBean, "outerAlbumBean");
-        if (TextUtils.isEmpty(outerAlbumBean.getImgKey()) || (cpmVar = (cpm) this.b) == null) {
+        if (StringUtils.isEmpty(outerAlbumBean.getImgKey()) || (cpmVar = (cpm) this.b) == null) {
             return;
         }
         cpmVar.a(outerAlbumBean);

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.model.template;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class ComponentModel implements Serializable {
 
     public ComponentModel(String str, IProtocol iProtocol, JSONObject jSONObject) {
         tpc.a("com.taobao.android.detail.sdk.model.template.ComponentModel");
-        if (TextUtils.isEmpty(str) || iProtocol == null || jSONObject == null) {
+        if (StringUtils.isEmpty(str) || iProtocol == null || jSONObject == null) {
             throw new IllegalArgumentException();
         }
         this.mProtocolManager = iProtocol;
@@ -72,7 +72,7 @@ public class ComponentModel implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("98de2fc8", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             parseRule(str);
         }
@@ -88,7 +88,7 @@ public class ComponentModel implements Serializable {
         if (findRuleById == null) {
             return;
         }
-        this.mapping = TextUtils.isEmpty(findRuleById.mapping) ? null : JSONObject.parseObject(findRuleById.mapping);
+        this.mapping = StringUtils.isEmpty(findRuleById.mapping) ? null : JSONObject.parseObject(findRuleById.mapping);
         JSONObject jSONObject = this.mapping;
         if (jSONObject != null) {
             jSONObject.put("componentId", (Object) str);

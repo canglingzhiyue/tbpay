@@ -1,7 +1,7 @@
 package com.taobao.search.sf.widgets.headerskin;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -251,7 +251,7 @@ public class a extends ius<Void, View, iru<? extends com.taobao.android.searchba
         }
         if (this.e && (view instanceof TopCropImageView)) {
             TopCropImageView topCropImageView = (TopCropImageView) view;
-            if (!TextUtils.isEmpty(sFPromotionBean.b)) {
+            if (!StringUtils.isEmpty(sFPromotionBean.b)) {
                 topCropImageView.setImageUrl(this.f19494a.b);
             } else {
                 topCropImageView.setBackgroundColor(this.f19494a.c);
@@ -259,7 +259,7 @@ public class a extends ius<Void, View, iru<? extends com.taobao.android.searchba
         } else if ((getActivity() instanceof com.taobao.android.xsearchplugin.muise.f) && ((com.taobao.android.xsearchplugin.muise.f) getActivity()).g()) {
             view.setBackgroundResource(R.color.tbsearch_main_card_bg_night);
         } else if (this.b != null) {
-            if (!TextUtils.isEmpty(this.f19494a.b)) {
+            if (!StringUtils.isEmpty(this.f19494a.b)) {
                 this.b.a(this.f19494a.b);
             } else if (this.c) {
             } else {
@@ -269,7 +269,7 @@ public class a extends ius<Void, View, iru<? extends com.taobao.android.searchba
         } else if (!(view instanceof SearchUrlImageView)) {
         } else {
             SearchUrlImageView searchUrlImageView = (SearchUrlImageView) view;
-            if (!TextUtils.isEmpty(this.f19494a.b)) {
+            if (!StringUtils.isEmpty(this.f19494a.b)) {
                 searchUrlImageView.setImageUrl(this.f19494a.b);
                 return;
             }

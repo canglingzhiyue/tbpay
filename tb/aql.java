@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.j;
 import com.alibaba.android.aura.nodemodel.a;
 import com.alibaba.android.aura.nodemodel.branch.b;
@@ -59,7 +59,7 @@ public class aql {
         String str = cVar.f2155a;
         boolean parseBoolean = Boolean.parseBoolean(cVar.b);
         String str2 = cVar.c;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             arc.a().a("branchValue#branchCode is empty", arc.a.a().b("AURABranchManager").a("默认值", parseBoolean).b());
             return parseBoolean;
         }

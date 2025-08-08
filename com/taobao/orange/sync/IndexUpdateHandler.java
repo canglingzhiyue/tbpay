@@ -1,6 +1,6 @@
 package com.taobao.orange.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.ConfigCenter;
@@ -134,7 +134,7 @@ public class IndexUpdateHandler {
         if (ipChange instanceof IpChange) {
             return (IndexUpdateInfo) ipChange.ipc$dispatch("c1594ef8", new Object[]{str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (z) {
@@ -196,7 +196,7 @@ public class IndexUpdateHandler {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("2b6d1a5f", new Object[]{this})).booleanValue();
             }
-            if (!TextUtils.isEmpty(this.cdn) && !TextUtils.isEmpty(this.resourceId) && !TextUtils.isEmpty(this.md5)) {
+            if (!StringUtils.isEmpty(this.cdn) && !StringUtils.isEmpty(this.resourceId) && !StringUtils.isEmpty(this.md5)) {
                 return true;
             }
             OLog.w("IndexUpdateHandler", "lack param", new Object[0]);

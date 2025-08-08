@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.business.taoke;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.d;
 import com.taobao.taolive.sdk.business.b;
@@ -26,7 +26,7 @@ public class a extends b {
             ipChange.ipc$dispatch("fa210a1c", new Object[]{this, str, new Long(j), str2});
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "taolive";
         }
         TaokeRequest taokeRequest = new TaokeRequest();

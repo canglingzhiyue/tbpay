@@ -2,7 +2,7 @@ package com.taobao.taolive.room.utils;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -28,7 +28,7 @@ public class v {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         int e = ply.e();
-        if (e <= 0 || TextUtils.isEmpty(str) || str.length() <= e) {
+        if (e <= 0 || StringUtils.isEmpty(str) || str.length() <= e) {
             return str;
         }
         return str.substring(0, e) + "...";
@@ -135,7 +135,7 @@ public class v {
                 ArrayList arrayList2 = new ArrayList();
                 for (int i = 0; i < parseArray.size(); i++) {
                     try {
-                        if (!TextUtils.isEmpty(parseArray.getString(i))) {
+                        if (!StringUtils.isEmpty(parseArray.getString(i))) {
                             arrayList2.add(parseArray.getString(i));
                         }
                     } catch (Throwable unused) {
@@ -145,11 +145,11 @@ public class v {
             }
         } catch (Throwable unused2) {
         }
-        if (!TextUtils.isEmpty(str) && arrayList != null) {
+        if (!StringUtils.isEmpty(str) && arrayList != null) {
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
                 String str3 = (String) it.next();
-                if (!TextUtils.isEmpty(str3) && str3.equalsIgnoreCase(str)) {
+                if (!StringUtils.isEmpty(str3) && str3.equalsIgnoreCase(str)) {
                     return true;
                 }
             }
@@ -167,7 +167,7 @@ public class v {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("14a6f7e8", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || str.length() <= 1) {
+        if (StringUtils.isEmpty(str) || str.length() <= 1) {
             return str;
         }
         if (str.length() == 2) {
@@ -181,7 +181,7 @@ public class v {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d638caf3", new Object[]{context, aVar, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         HashMap<String, JSONObject> atmosphereInstanceGetStickerKeyMatchMap = com.taobao.android.live.plugin.proxy.f.f().atmosphereInstanceGetStickerKeyMatchMap(aVar);

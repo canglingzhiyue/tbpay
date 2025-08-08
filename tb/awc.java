@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.aura.service.event.c;
@@ -98,7 +98,7 @@ public class awc {
             AutoUt autoUt = treeNode.data().getAutoUt();
             JSONObject jSONObject = new JSONObject();
             String arg1 = autoUt.getArg1();
-            if (TextUtils.isEmpty(arg1)) {
+            if (StringUtils.isEmpty(arg1)) {
                 arg1 = a(aURARenderComponent, i, autoUt.getPageName(), str, str2);
             }
             jSONObject.put("arg1", (Object) arg1);
@@ -127,7 +127,7 @@ public class awc {
             sb.append("-");
             sb.append(str3);
         } else if (i == 2201) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 sb.append("-Exposure");
             } else {
                 sb.append("-");
@@ -146,10 +146,10 @@ public class awc {
         } else if (treeNode != null && (data = treeNode.data()) != null) {
             AutoUt autoUt = data.getAutoUt();
             if (autoUt != null) {
-                if (TextUtils.isEmpty(jSONObject.getString("arg2"))) {
+                if (StringUtils.isEmpty(jSONObject.getString("arg2"))) {
                     jSONObject.put("arg2", (Object) autoUt.getArg2());
                 }
-                if (TextUtils.isEmpty(jSONObject.getString("arg3"))) {
+                if (StringUtils.isEmpty(jSONObject.getString("arg3"))) {
                     jSONObject.put("arg3", (Object) autoUt.getArg3());
                 }
                 JSONObject jSONObject2 = jSONObject.getJSONObject("args");
@@ -158,7 +158,7 @@ public class awc {
                         String key = entry.getKey();
                         if (key instanceof String) {
                             String str = key;
-                            if (TextUtils.isEmpty(jSONObject2.getString(str))) {
+                            if (StringUtils.isEmpty(jSONObject2.getString(str))) {
                                 jSONObject2.put(str, entry.getValue());
                             }
                         }

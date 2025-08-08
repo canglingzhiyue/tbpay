@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.MessageQueue;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -283,7 +283,7 @@ public class bny {
         if (aVar != null) {
             this.K = new bpb(this, aVar);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.B = str;
             this.G = str;
         }
@@ -745,7 +745,7 @@ public class bny {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8bb6538e", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.C.put(str, obj);
         }
@@ -1324,7 +1324,7 @@ public class bny {
             for (com.taobao.android.ultron.common.model.a aVar : this.k.d()) {
                 if (aVar != null && (!a2 || !this.m.a(aVar.c, aVar.e))) {
                     String str = aVar.b;
-                    if (!TextUtils.equals("native", str)) {
+                    if (!StringUtils.equals("native", str)) {
                         List list = (List) hashMap.get(str);
                         if (list != null) {
                             list.add(aVar);
@@ -1697,7 +1697,7 @@ public class bny {
         } else if (list != null) {
             for (IDMComponent iDMComponent : list) {
                 String key = iDMComponent.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     bnx bnxVar = new bnx(key, this.N, r(), iDMComponent, this.O, this);
                     iDMComponent.setMessageChannel(bnxVar);
                     this.N.a(bnxVar);
@@ -1710,7 +1710,7 @@ public class bny {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("21e7dfcb", new Object[]{this, str, bmbVar});
-        } else if (TextUtils.isEmpty(str) || bmbVar == null) {
+        } else if (StringUtils.isEmpty(str) || bmbVar == null) {
         } else {
             this.O.put(str, bmbVar);
         }

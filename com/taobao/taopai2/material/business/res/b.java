@@ -1,6 +1,6 @@
 package com.taobao.taopai2.material.business.res;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import tb.kge;
@@ -65,10 +65,10 @@ public class b extends qbq {
             return (File) ipChange.ipc$dispatch("e4e27fb0", new Object[]{str, str2});
         }
         String a2 = qbs.a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return new File(a2, str + ".mp3");
         }
         return new File(a2, str + "_" + str2 + ".mp3");
@@ -80,10 +80,10 @@ public class b extends qbq {
             return (File) ipChange.ipc$dispatch("fefdfe4f", new Object[]{str, str2});
         }
         String a2 = qbs.a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return new File(a2, str + "_wave.txt");
         }
         return new File(a2, str + "_" + str2 + "_wave.txt");

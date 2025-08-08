@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.workflow.annotation.WorkflowNode;
 import com.taobao.android.litecreator.util.u;
@@ -46,7 +46,7 @@ public final class d {
             return true;
         }
         String checkerClassName = workflowNode.checkerClassName();
-        if (!TextUtils.isEmpty(checkerClassName)) {
+        if (!StringUtils.isEmpty(checkerClassName)) {
             try {
                 return ((gwu) Class.forName(checkerClassName).newInstance()).check((IWorkflowData) intent.getSerializableExtra(IWorkflowData.KEY));
             } catch (Throwable unused) {
@@ -77,7 +77,7 @@ public final class d {
             Class<?> cls = null;
             try {
                 String stringExtra = intent.getStringExtra("std_pop_origin_component_cls_name");
-                if (TextUtils.isEmpty(stringExtra)) {
+                if (StringUtils.isEmpty(stringExtra)) {
                     stringExtra = resolveActivity.activityInfo.name;
                 }
                 cls = Class.forName(stringExtra);
@@ -157,7 +157,7 @@ public final class d {
             return false;
         }
         String bothWayJudge = workflowNode.bothWayJudge();
-        if (!TextUtils.isEmpty(bothWayJudge)) {
+        if (!StringUtils.isEmpty(bothWayJudge)) {
             try {
                 return ((IBothWayJudge) Class.forName(bothWayJudge).newInstance()).isBothWayNode(intent);
             } catch (Throwable unused) {

@@ -3,7 +3,7 @@ package com.taobao.android.fluid.business.globalinteraction.render;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -193,7 +193,7 @@ public class a implements snd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str) || this.l != null || ((ILifecycleService) this.f12392a.getService(ILifecycleService.class)).getPageState() == 5) {
+        } else if (StringUtils.isEmpty(str) || this.l != null || ((ILifecycleService) this.f12392a.getService(ILifecycleService.class)).getPageState() == 5) {
         } else {
             spz.c("InteractRenderManager", "IdleTaskHelper globalVCH5 开始执行 attachGlobalVCH5Internal --- ");
             TNodeView c = c();
@@ -276,7 +276,7 @@ public class a implements snd {
                         return;
                     }
                     String queryParameter = fluidUrl.getQueryParameter("dxShareData");
-                    if (!TextUtils.equals(fluidUrl.getQueryParameter("type"), a.GUANGGUANG_COLLECTION)) {
+                    if (!StringUtils.equals(fluidUrl.getQueryParameter("type"), a.GUANGGUANG_COLLECTION)) {
                         return;
                     }
                     com.taobao.android.fluid.framework.data.datamodel.a aVar = iqy.a().b().get(queryParameter);
@@ -314,12 +314,12 @@ public class a implements snd {
         }
         ogh.a("initGlobalInteractHandler");
         skl j = ((IDataService) this.f12392a.getService(IDataService.class)).getConfig().j();
-        if (iqw.f() && !TextUtils.isEmpty(j.g) && !((IQuickOpenService) this.f12392a.getService(IQuickOpenService.class)).isInQuickOpenMode()) {
+        if (iqw.f() && !StringUtils.isEmpty(j.g) && !((IQuickOpenService) this.f12392a.getService(IQuickOpenService.class)).isInQuickOpenMode()) {
             z = true;
         }
         this.n = z;
         if (z) {
-            if (!TextUtils.isEmpty(j.i) && this.i == null) {
+            if (!StringUtils.isEmpty(j.i) && this.i == null) {
                 ogh.a("initGlobalTNodeMessageHandler");
                 this.i = new jck(((IContainerService) this.f12392a.getService(IContainerService.class)).getMainContentView(), this.f12392a);
                 this.i.a(j.i, 1, -1, o());

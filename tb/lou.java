@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -190,7 +190,7 @@ public class lou {
         } else if (map == null || !(map.get("event") instanceof String)) {
         } else {
             String str = (String) map.get("event");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if ("TBHomeWeexGetTabInfo".equals(str) && aVar != null) {

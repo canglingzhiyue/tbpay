@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.alibaba.fastjson.JSONObject;
@@ -305,7 +305,7 @@ public class kwr extends DXWidgetNode {
             return false;
         }
         String str2 = "";
-        if (TextUtils.equals(str, "play")) {
+        if (StringUtils.equals(str, "play")) {
             ((HVideoView) v).playVideo();
             String[] strArr = new String[2];
             strArr[0] = "start video: section:";
@@ -315,7 +315,7 @@ public class kwr extends DXWidgetNode {
             }
             strArr[1] = str2;
             e.c("dx.HVideoView", strArr);
-        } else if (TextUtils.equals(str, "pause")) {
+        } else if (StringUtils.equals(str, "pause")) {
             ((HVideoView) v).pauseVideo();
             String[] strArr2 = new String[2];
             strArr2[0] = "pause video: section:";

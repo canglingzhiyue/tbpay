@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.watermask;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -150,7 +150,7 @@ public class a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                 } else {
                     try {
                         c.a("WaterMaskInfoManager.fetchInfo.onResponseSuccess=%s", str);
@@ -210,7 +210,7 @@ public class a {
             return;
         }
         try {
-            if (!this.b && !TextUtils.isEmpty(str) && (d = d()) != null && d.isValid()) {
+            if (!this.b && !StringUtils.isEmpty(str) && (d = d()) != null && d.isValid()) {
                 boolean z = a(d, str, str2) != null;
                 c.a("WaterMaskInfoManager.hitMatchScene=" + z, new Object[0]);
                 if (!z) {
@@ -267,7 +267,7 @@ public class a {
     public boolean a(String str, String str2) {
         WaterMaskInfo d;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(str) && (d = d()) != null && d.enable && a(d, str, str2) != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(str) && (d = d()) != null && d.enable && a(d, str, str2) != null;
     }
 
     public float b(String str, String str2) {
@@ -277,7 +277,7 @@ public class a {
             return ((Number) ipChange.ipc$dispatch("65d7b86d", new Object[]{this, str, str2})).floatValue();
         }
         WaterMaskInfo d = d();
-        if (d != null && d.enable && (a2 = a(d, str, str2)) != null && !TextUtils.isEmpty(a2.alpha)) {
+        if (d != null && d.enable && (a2 = a(d, str, str2)) != null && !StringUtils.isEmpty(a2.alpha)) {
             return Float.parseFloat(a2.alpha) / 100.0f;
         }
         return 0.04f;
@@ -306,7 +306,7 @@ public class a {
             return waterMaskInfo;
         }
         String d = bzo.d("waterMaskInfo");
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return null;
         }
         try {

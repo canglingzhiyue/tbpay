@@ -1,6 +1,6 @@
 package anet.channel.detect;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import anet.channel.status.NetworkStatusHelper;
@@ -89,7 +89,7 @@ public class RTTDetector implements IRTTDetector {
                     } else if (!AwcnConfig.isRTTDetectEnable()) {
                     } else {
                         String uniqueId = NetworkStatusHelper.getUniqueId(networkStatus);
-                        if (TextUtils.isEmpty(uniqueId) || !uniqueId.equalsIgnoreCase(RTTDetector.access$000(RTTDetector.this))) {
+                        if (StringUtils.isEmpty(uniqueId) || !uniqueId.equalsIgnoreCase(RTTDetector.access$000(RTTDetector.this))) {
                             return;
                         }
                         RTTDetector.access$102(RTTDetector.this, new LimitedQueue(10));

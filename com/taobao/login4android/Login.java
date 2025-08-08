@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.webkit.CookieManager;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -150,10 +150,10 @@ public class Login {
                 }
                 DataProviderFactory.setDataProvider(dataProvider);
                 HashMap hashMap = new HashMap();
-                boolean z3 = !TextUtils.isEmpty(getLoginToken());
+                boolean z3 = !StringUtils.isEmpty(getLoginToken());
                 hashMap.put("isValidLogin", String.valueOf(checkSessionValid()));
                 hashMap.put("canAutoLogin", String.valueOf(z3));
-                if (!TextUtils.isEmpty(getOldUserId())) {
+                if (!StringUtils.isEmpty(getOldUserId())) {
                     z2 = true;
                 }
                 hashMap.put("onceLogined", String.valueOf(z2));
@@ -189,26 +189,26 @@ public class Login {
                                 SessionManager.getInstance(context).updateUserAccount(true, Login.session.getNick() == null ? "" : Login.session.getNick(), Login.session.getUserId() == null ? "" : Login.session.getUserId(), Login.session.getUidDigest() == null ? "" : Login.session.getUidDigest(), "", false);
                                 UserTrackAdapter.sendUT("init_step_update_usertrack");
                                 if (Login.session.checkSessionValid()) {
-                                    if (DataProviderFactory.getDataProvider().isCheckCookieValid() && TextUtils.equals(LoginThreadHelper.getCurProcessName(context), context.getPackageName())) {
+                                    if (DataProviderFactory.getDataProvider().isCheckCookieValid() && StringUtils.equals(LoginThreadHelper.getCurProcessName(context), context.getPackageName())) {
                                         try {
                                             SessionConstants.IS_CHECK_COOKIE_VALID = true;
                                             CookieManager cookieManager = CookieManager.getInstance();
                                             cookieManager.setAcceptCookie(true);
                                             String cookie = cookieManager.getCookie(".taobao.com");
-                                            if (TextUtils.isEmpty(cookie)) {
+                                            if (StringUtils.isEmpty(cookie)) {
                                                 z4 = false;
                                             } else {
                                                 String str4 = "";
                                                 String str5 = str4;
                                                 for (String str6 : cookie.split(";")) {
-                                                    if (!TextUtils.isEmpty(str6) && str6.trim().startsWith("unb")) {
+                                                    if (!StringUtils.isEmpty(str6) && str6.trim().startsWith("unb")) {
                                                         str4 = str6.split("=")[1];
-                                                    } else if (!TextUtils.isEmpty(str6) && str6.trim().startsWith("munb")) {
+                                                    } else if (!StringUtils.isEmpty(str6) && str6.trim().startsWith("munb")) {
                                                         str5 = str6.split("=")[1];
                                                     }
                                                 }
-                                                if (!TextUtils.equals(Login.session.getUserId(), str4) && (!TextUtils.isEmpty(str4) || !TextUtils.equals(Login.session.getUserId(), str5))) {
-                                                    if (!TextUtils.isEmpty(str4) || !TextUtils.isEmpty(str5)) {
+                                                if (!StringUtils.equals(Login.session.getUserId(), str4) && (!StringUtils.isEmpty(str4) || !StringUtils.equals(Login.session.getUserId(), str5))) {
+                                                    if (!StringUtils.isEmpty(str4) || !StringUtils.isEmpty(str5)) {
                                                         Login.session.setSessionExpiredTime(1L);
                                                         LoginTLogAdapter.e(Login.TAG, "SessionNotEqual:  cookie:" + cookie);
                                                         str3 = "SessionNotEqual";
@@ -229,7 +229,7 @@ public class Login {
                                         if (LoginSwitch.getSwitch(LoginSwitch.FORCE_SID_CHECK, "false")) {
                                             try {
                                                 String encode = URLEncoder.encode(Login.getSid(), "utf-8");
-                                                if (TextUtils.isEmpty(encode) || !encode.contains(riy.MOD)) {
+                                                if (StringUtils.isEmpty(encode) || !encode.contains(riy.MOD)) {
                                                     ((RpcService) ServiceFactory.getService(RpcService.class)).registerSessionInfo(Login.session.getSid(), Login.session.getUserId(), Login.session.getSessionDisastergrd());
                                                 } else {
                                                     LoginTLogAdapter.e(Login.TAG, "sid encode is invalid: urlEncodeSid=" + encode + ",sid=" + Login.getSid());
@@ -252,7 +252,7 @@ public class Login {
                                     }
                                 }
                             }
-                            if (TextUtils.isEmpty(dataProvider.getAppkey())) {
+                            if (StringUtils.isEmpty(dataProvider.getAppkey())) {
                                 LoginBroadcastHelper.sentInitFailBroadcast(DataProviderFactory.getApplicationContext());
                             }
                             com.ali.user.mobile.app.LoginContext.times.put("login_init_step_0_end", System.currentTimeMillis() + "");
@@ -283,7 +283,7 @@ public class Login {
         } else if (ServiceFactory.getService(NumberAuthService.class) == null || !LoginSwitch.getSwitch("enable_auth_prefetch", "true")) {
         } else {
             try {
-                if (TextUtils.isEmpty(getLoginToken())) {
+                if (StringUtils.isEmpty(getLoginToken())) {
                     LoginTLogAdapter.e(TAG, "call authsdk prefetch");
                     ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).preFecth();
                 } else if ((checkSessionValid() && !LoginSwitch.getSwitch("prefetch_ignore_session", "true")) || !DeviceUtils.shouldReportSample(AppInfo.getInstance().getUtdid())) {
@@ -534,7 +534,7 @@ public class Login {
             return;
         }
         Properties properties = new Properties();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             properties.put("scene", str);
         }
         UserTrackAdapter.sendUT("LoginAPI_NavByScene", properties);
@@ -566,7 +566,7 @@ public class Login {
             return;
         }
         Properties properties = new Properties();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             properties.put("scene", str);
         }
         UserTrackAdapter.sendUT("LoginAPI_navToIV", properties);
@@ -705,7 +705,7 @@ public class Login {
 
     public static boolean canAutoLogin() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dcacb095", new Object[0])).booleanValue() : !TextUtils.isEmpty(getLoginToken());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dcacb095", new Object[0])).booleanValue() : !StringUtils.isEmpty(getLoginToken());
     }
 
     public static String getSid() {
@@ -884,7 +884,7 @@ public class Login {
             return "";
         }
         String loginPhone = iSession.getLoginPhone();
-        return TextUtils.isEmpty(loginPhone) ? "" : StringUtil.dataMasking(loginPhone);
+        return StringUtils.isEmpty(loginPhone) ? "" : StringUtil.dataMasking(loginPhone);
     }
 
     public static void setOneTimeToken(String str) {
@@ -969,11 +969,11 @@ public class Login {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b54cae36", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         Pattern[] patternArr = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String[] split = str.split("[;]");
             patternArr = new Pattern[split.length];
             int length = patternArr.length;
@@ -1038,7 +1038,7 @@ public class Login {
             return ((Boolean) ipChange.ipc$dispatch("f2eae706", new Object[]{str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str.contains("qrcodeCheck.htm");
             }
             return false;

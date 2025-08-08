@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -39,7 +39,7 @@ public class ftv extends fuf {
         }
         Object obj2 = objArr[0];
         String str = "";
-        String str2 = (!(obj2 instanceof String) || TextUtils.isEmpty((CharSequence) obj2)) ? str : (String) obj2;
+        String str2 = (!(obj2 instanceof String) || StringUtils.isEmpty((CharSequence) obj2)) ? str : (String) obj2;
         Object obj3 = objArr[1];
         if (obj3 instanceof String) {
             str = (String) obj3;
@@ -47,10 +47,10 @@ public class ftv extends fuf {
         if (objArr.length >= 3) {
             obj = objArr[2];
         }
-        if (TextUtils.isEmpty(str) || (d = dXRuntimeContext.d()) == null) {
+        if (StringUtils.isEmpty(str) || (d = dXRuntimeContext.d()) == null) {
             return obj;
         }
-        if (TextUtils.isEmpty(str2) || str2.equals(d.getUserId())) {
+        if (StringUtils.isEmpty(str2) || str2.equals(d.getUserId())) {
             dXWidgetNode = d;
         } else {
             dXWidgetNode = d.queryWidgetNodeByUserId(str2);

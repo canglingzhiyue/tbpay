@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -42,7 +42,7 @@ public class fsx extends fuf {
             return -21;
         }
         String obj = objArr[0].toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             return -3;
         }
         DXRootView s = dXRuntimeContext.s();
@@ -62,7 +62,7 @@ public class fsx extends fuf {
             return -7;
         }
         String obj2 = objArr[1].toString();
-        if (TextUtils.isEmpty(obj2)) {
+        if (StringUtils.isEmpty(obj2)) {
             return -8;
         }
         int a2 = ((DXRecyclerLayout) queryWTByUserId).a(obj2);

@@ -3,7 +3,7 @@ package com.taobao.android.weex_framework.module.builtin;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class c {
         }
         jvb jvbVar = (jvb) mUSModule.getInstance();
         String b = jvbVar.b();
-        if (!TextUtils.isEmpty(b) && (parse = Uri.parse(b)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
+        if (!StringUtils.isEmpty(b) && (parse = Uri.parse(b)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
             l.a().p().a(mUSModule, str);
             if (bVar != null) {
                 bVar.a("MUS_SUCCESS");
@@ -68,14 +68,14 @@ public class c {
         jvb jvbVar = (jvb) mUSModule.getInstance();
         jvbVar.setIgnoreWhiteScreenReport(true);
         String b = jvbVar.b();
-        if (!TextUtils.isEmpty(b) && (parse = Uri.parse(b)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
+        if (!StringUtils.isEmpty(b) && (parse = Uri.parse(b)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
             l.a().p().b(mUSModule, str);
             if (bVar != null) {
                 bVar.a("MUS_SUCCESS");
             }
             return true;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (jvbVar.getActivityNav() != null) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("url", (Object) str);
@@ -91,11 +91,11 @@ public class c {
             }
             try {
                 String string = JSON.parseObject(str).getString("url");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     Uri parse2 = Uri.parse(string);
                     String scheme = parse2.getScheme();
                     Uri.Builder buildUpon = parse2.buildUpon();
-                    if (TextUtils.isEmpty(scheme)) {
+                    if (StringUtils.isEmpty(scheme)) {
                         buildUpon.scheme("http");
                     }
                     Intent intent = new Intent("android.intent.action.VIEW", buildUpon.build());

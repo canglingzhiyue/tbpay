@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -74,14 +74,14 @@ public class hl extends com.taobao.android.launcher.biz.task.j {
                 }
                 com.taobao.tao.log.e.a().a(com.taobao.tao.log.g.a(application.getResources().getString(R.string.tlog_module)));
                 String str2 = (String) com.taobao.android.launcher.common.c.a("process", null);
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = hl.a(application);
                 }
                 String str3 = (String) com.taobao.android.launcher.common.c.a("packageName", null);
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = application.getPackageName();
                 }
-                String str4 = TextUtils.isEmpty(str2) ? "DEFAULT" : str2;
+                String str4 = StringUtils.isEmpty(str2) ? "DEFAULT" : str2;
                 LogLevel b = com.taobao.tao.log.g.b(application.getResources().getString(R.string.tlog_level));
                 if (!application.getResources().getBoolean(R.bool.tlog_switch)) {
                     b = LogLevel.N;
@@ -93,16 +93,16 @@ public class hl extends com.taobao.android.launcher.biz.task.j {
                 }
                 try {
                     String str5 = (String) com.taobao.android.launcher.common.c.a("appVersion", null);
-                    if (TextUtils.isEmpty(str5)) {
+                    if (StringUtils.isEmpty(str5)) {
                         str5 = Globals.getVersionName();
                     }
                     String str6 = str5;
                     String str7 = (String) com.taobao.android.launcher.common.c.a("deviceId", null);
-                    if (TextUtils.isEmpty(str7)) {
+                    if (StringUtils.isEmpty(str7)) {
                         str7 = UTDevice.getUtdid(application);
                     }
                     com.taobao.tao.log.f h = com.taobao.tao.log.f.a().a(application, logLevel, "logs", str4, str, str6).a(application).e(c).g(Login.getNick()).d(str7).a("12278902@android").b(str2).c(str3).a(new com.taobao.tlog.adapter.c(application)).b(new jgz()).h(com.android.taobao.zstd.d.b());
-                    if (TextUtils.equals(str2, "com.taobao.taobao:channel")) {
+                    if (StringUtils.equals(str2, "com.taobao.taobao:channel")) {
                         h.a(200);
                         h.b(300);
                     }

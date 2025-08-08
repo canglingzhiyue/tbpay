@@ -1,7 +1,7 @@
 package com.taobao.tao.image;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.util.OssImageUrlStrategy;
@@ -181,7 +181,7 @@ public class c {
         HashMap<String, TaobaoImageUrlStrategy.ServiceImageSwitch> hashMap = new HashMap<>();
         for (String str : strArr) {
             String a2 = this.b.a(IMAGE_CONFIG, str, f20623a.get(str));
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 JSONObject jSONObject = null;
                 try {
                     jSONObject = JSONObject.parseObject(a2);
@@ -214,7 +214,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (int[]) ipChange.ipc$dispatch("81233af2", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(",");
@@ -230,7 +230,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("39a26282", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.split(",");
         }
         return null;

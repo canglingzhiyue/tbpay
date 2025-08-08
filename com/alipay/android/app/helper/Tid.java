@@ -1,6 +1,6 @@
 package com.alipay.android.app.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes3.dex */
@@ -54,6 +54,6 @@ public class Tid {
 
     public boolean isEmpty() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f187dd4e", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.tid);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f187dd4e", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.tid);
     }
 }

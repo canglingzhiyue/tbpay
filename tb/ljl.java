@@ -3,7 +3,7 @@ package tb;
 import android.os.SystemClock;
 import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.startup.UCInitializerInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -80,7 +80,7 @@ public class ljl {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (TextUtils.equals(str, LAUNCHER_START_TIME)) {
+        if (StringUtils.equals(str, LAUNCHER_START_TIME)) {
             this.f30680a.put("isUcSupport", (Object) Boolean.valueOf(WVCore.getInstance().isUCSupport()));
         }
         this.f30680a.put(str, (Object) String.valueOf(System.currentTimeMillis()));

@@ -1,6 +1,6 @@
 package com.taobao.android.preload.core.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class PreloadTaskEntity implements Serializable {
             String string = jSONObject.getString("url");
             JSONObject jSONObject2 = jSONObject.getJSONObject("queryParams");
             String string2 = jSONObject.getString("itemIds");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 aVar.d = string;
                 aVar.c = l.a(string);
                 if (bVar == null) {
@@ -70,7 +70,7 @@ public class PreloadTaskEntity implements Serializable {
             } else if (jSONObject2 != null) {
                 aVar.c = (Map) JSONObject.toJavaObject(jSONObject2, Map.class);
                 aVar.e = jSONObject.getString("itemId");
-            } else if (!TextUtils.isEmpty(string2)) {
+            } else if (!StringUtils.isEmpty(string2)) {
                 aVar.f = jSONObject.getString("itemIds");
             }
             return aVar;
@@ -85,7 +85,7 @@ public class PreloadTaskEntity implements Serializable {
                 return "";
             }
             String str = map.get("id");
-            return TextUtils.isEmpty(str) ? map.get("itemId") : str;
+            return StringUtils.isEmpty(str) ? map.get("itemId") : str;
         }
 
         public String toString() {
@@ -140,7 +140,7 @@ public class PreloadTaskEntity implements Serializable {
             PreloadTaskEntity preloadTaskEntity = new PreloadTaskEntity();
             JSONObject parseObject = JSONObject.parseObject(str);
             preloadTaskEntity.bizName = parseObject.getString("bizName");
-            if (TextUtils.isEmpty(preloadTaskEntity.bizName)) {
+            if (StringUtils.isEmpty(preloadTaskEntity.bizName)) {
                 preloadTaskEntity.bizName = "page_detail";
             }
             preloadTaskEntity.sourceFrom = parseObject.getString(SOURCE_FROM);
@@ -154,7 +154,7 @@ public class PreloadTaskEntity implements Serializable {
                 a2.f14676a = preloadTaskEntity.bizName;
                 a2.b = preloadTaskEntity.sourceFrom;
                 a2.g = preloadTaskEntity.pageToken;
-                if (TextUtils.isEmpty(a2.f)) {
+                if (StringUtils.isEmpty(a2.f)) {
                     arrayList.add(a2);
                 } else {
                     splitItemIds(a2, arrayList);
@@ -176,7 +176,7 @@ public class PreloadTaskEntity implements Serializable {
         }
         String[] split = aVar.f.split(",");
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i])) {
+            if (!StringUtils.isEmpty(split[i])) {
                 a aVar2 = new a();
                 aVar2.e = split[i];
                 aVar2.f14676a = aVar.f14676a;

@@ -3,7 +3,7 @@ package com.taobao.ugc.imagecontent.detailpage.nav;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.d;
@@ -120,7 +120,7 @@ public class a implements e {
         } else {
             fjt.a("ImageContentDetailFragmentNavProcessor", "preloadImageContentData will check.");
             String dataString = intent.getDataString();
-            if (TextUtils.isEmpty(dataString)) {
+            if (StringUtils.isEmpty(dataString)) {
                 a(intent, j);
                 fjt.a("ImageContentDetailFragmentNavProcessor", "preloadImageContentData Abort. intentDataStr is null.");
                 return;
@@ -132,7 +132,7 @@ public class a implements e {
                 queryParameter = parse.getQueryParameter("id");
             }
             j a2 = k.a(flp.PRELOAD_REQUESTER_BIZ_NAME_LITE);
-            if (TextUtils.isEmpty(queryParameter) || a2 == null) {
+            if (StringUtils.isEmpty(queryParameter) || a2 == null) {
                 a(intent, j);
                 fjt.a("ImageContentDetailFragmentNavProcessor", "preloadImageContentData Abort. targetId or preloadTaskStore is null.");
                 return;
@@ -144,7 +144,7 @@ public class a implements e {
                 return;
             }
             String a4 = fjs.a(fjs.a(fjs.b(fjs.a(fjs.b((JSONObject) a3.e, "mainImage")), "data")), "url");
-            if (TextUtils.isEmpty(a4)) {
+            if (StringUtils.isEmpty(a4)) {
                 fjt.a("ImageContentDetailFragmentNavProcessor", "preloadImageContentData Abort.firstPicUrl is null.");
                 return;
             }
@@ -162,12 +162,12 @@ public class a implements e {
         } else if (intent == null || (extras = intent.getExtras()) == null) {
         } else {
             String string = extras.getString("targetParams");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             try {
                 String a2 = fjs.a(fjs.a(fjs.b(fjs.a(fjs.b(JSONObject.parseObject(string).getJSONObject("simpleDeliverData"), "mainImage")), "data")), "url");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     fjt.a("ImageContentDetailFragmentNavProcessor", "preFetchDeliverPic Abort.firstPicUrl is null.");
                     return;
                 }

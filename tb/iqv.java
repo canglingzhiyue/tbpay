@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.g;
@@ -64,7 +64,7 @@ public class iqv {
                 }
                 try {
                     String config = OrangeConfig.getInstance().getConfig("powermsg", "pm_thread_opt_switch", null);
-                    if (!TextUtils.isEmpty(config)) {
+                    if (!StringUtils.isEmpty(config)) {
                         iqv.a(iqv.this).edit().putBoolean("pm_thread_opt_switch", Boolean.parseBoolean(config)).apply();
                     } else {
                         iqv.a(iqv.this).edit().remove("pm_thread_opt_switch").apply();

@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.secure.android.common.util.c;
 import java.io.UnsupportedEncodingException;
 import java.util.Collection;
@@ -14,7 +14,7 @@ public class StringUtils {
     private static final String TAG = "StringUtils";
 
     public static String anonymizeMessage(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         char[] charArray = str.toCharArray();
@@ -106,7 +106,7 @@ public class StringUtils {
                 Logger.w(TAG, "SafeString.substring error");
             }
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(charSequence)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(charSequence)) {
             return str;
         }
         try {
@@ -117,7 +117,7 @@ public class StringUtils {
     }
 
     public static byte[] str2Byte(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new byte[0];
         }
         try {
@@ -136,7 +136,7 @@ public class StringUtils {
     }
 
     public static boolean stringToBoolean(String str, boolean z) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return z;
         }
         try {
@@ -148,7 +148,7 @@ public class StringUtils {
     }
 
     public static int stringToInteger(String str, int i) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {
@@ -160,7 +160,7 @@ public class StringUtils {
     }
 
     public static long stringToLong(String str, long j) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return j;
         }
         try {
@@ -179,7 +179,7 @@ public class StringUtils {
                 Logger.w(TAG, "SafeString.substring error");
             }
         }
-        if (!TextUtils.isEmpty(str) && str.length() >= i && i >= 0) {
+        if (!StringUtils.isEmpty(str) && str.length() >= i && i >= 0) {
             try {
                 return str.substring(i);
             } catch (Exception unused2) {
@@ -196,7 +196,7 @@ public class StringUtils {
                 Logger.w(TAG, "SafeString.substring error");
             }
         }
-        if (!TextUtils.isEmpty(str) && i >= 0 && i2 <= str.length() && i2 >= i) {
+        if (!StringUtils.isEmpty(str) && i >= 0 && i2 <= str.length() && i2 >= i) {
             try {
                 return str.substring(i, i2);
             } catch (Exception unused2) {

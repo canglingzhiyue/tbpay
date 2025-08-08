@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.xiaomi.push.ip;
@@ -63,7 +63,7 @@ public class as {
         notificationChannel.enableLights(z);
         if ((i & 1) == 0) {
             notificationChannel.setSound(null, null);
-        } else if (!TextUtils.isEmpty(str3)) {
+        } else if (!StringUtils.isEmpty(str3)) {
             if (str3.startsWith("android.resource://" + awVar.m2293a())) {
                 notificationChannel.setSound(Uri.parse(str3), Notification.AUDIO_ATTRIBUTES_DEFAULT);
             }
@@ -119,7 +119,7 @@ public class as {
     }
 
     public static void a(Context context, String str) {
-        if (!com.xiaomi.push.j.m2118a(context) || TextUtils.isEmpty(str)) {
+        if (!com.xiaomi.push.j.m2118a(context) || StringUtils.isEmpty(str)) {
             return;
         }
         c(context, str);
@@ -165,7 +165,7 @@ public class as {
             a("appChannelId:" + id + " oldChannelId:" + a2);
         }
         boolean z = true;
-        if (com.xiaomi.push.j.m2118a(m2292a) && !TextUtils.equals(id, a2)) {
+        if (com.xiaomi.push.j.m2118a(m2292a) && !StringUtils.equals(id, a2)) {
             NotificationManager notificationManager = (NotificationManager) m2292a.getSystemService(RemoteMessageConst.NOTIFICATION);
             NotificationChannel notificationChannel2 = notificationManager.getNotificationChannel(a2);
             NotificationChannel m2291a = awVar.m2291a(id);
@@ -237,7 +237,7 @@ public class as {
         if (notificationChannel == null || notificationChannel2 == null) {
             return false;
         }
-        if (!TextUtils.equals(notificationChannel.getName(), notificationChannel2.getName())) {
+        if (!StringUtils.equals(notificationChannel.getName(), notificationChannel2.getName())) {
             if (f24646a) {
                 a("appHack channelConfigLowerCompare:getName");
             }
@@ -245,7 +245,7 @@ public class as {
         } else {
             z = false;
         }
-        if (!TextUtils.equals(notificationChannel.getDescription(), notificationChannel2.getDescription())) {
+        if (!StringUtils.equals(notificationChannel.getDescription(), notificationChannel2.getDescription())) {
             if (f24646a) {
                 a("appHack channelConfigLowerCompare:getDescription");
             }

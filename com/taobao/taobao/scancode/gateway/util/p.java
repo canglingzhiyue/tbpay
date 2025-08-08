@@ -1,7 +1,7 @@
 package com.taobao.taobao.scancode.gateway.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +23,7 @@ public class p {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6c026498", new Object[]{layoutInflater, context, str});
-        } else if (context == null || layoutInflater == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || layoutInflater == null || StringUtils.isEmpty(str)) {
         } else {
             Toast toast = new Toast(context);
             View inflate = layoutInflater.inflate(R.layout.scancode_gateway_toast, (ViewGroup) null);

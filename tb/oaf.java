@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.share.globalmodel.TBShareContent;
@@ -39,7 +39,7 @@ public class oaf {
                 oaf.a(oaf.this, bVar);
                 if (bVar == null) {
                     oaf.a(oaf.this).a("", "NO RESULT");
-                } else if (TextUtils.isEmpty(bVar.b) || !oaf.a(oaf.this).a(oaf.b(oaf.this), obdVar, bVar)) {
+                } else if (StringUtils.isEmpty(bVar.b) || !oaf.a(oaf.this).a(oaf.b(oaf.this), obdVar, bVar)) {
                 } else {
                     new Handler(Looper.myLooper()).postDelayed(new Runnable() { // from class: tb.oaf.1.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -151,7 +151,7 @@ public class oaf {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
         } else if (this.j == null) {
         } else {
-            if (("true".equals(OrangeConfig.getInstance().getConfig("android_share", "shareWeChatFriendFlag", "false")) || TextUtils.equals(this.j.g, "true")) && this.d == TaoPasswordShareType.ShareTypeWeixin) {
+            if (("true".equals(OrangeConfig.getInstance().getConfig("android_share", "shareWeChatFriendFlag", "false")) || StringUtils.equals(this.j.g, "true")) && this.d == TaoPasswordShareType.ShareTypeWeixin) {
                 this.i.a(this.b, this.j.e, this.k);
                 obb.a(this.b, this.j.e);
                 this.k.a(true);
@@ -211,7 +211,7 @@ public class oaf {
             } else {
                 str = null;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.h.a("", "target is null");
             } else {
                 a(this.f, taoPasswordShareType, str);
@@ -227,7 +227,7 @@ public class oaf {
         }
         String str2 = tBShareContent.description;
         f g = e.b().g();
-        if (g != null && !TextUtils.isEmpty(g.f19632a)) {
+        if (g != null && !StringUtils.isEmpty(g.f19632a)) {
             str2 = g.f19632a + " " + str2;
         }
         com.taobao.share.taopassword.genpassword.model.a aVar = new com.taobao.share.taopassword.genpassword.model.a();
@@ -244,7 +244,7 @@ public class oaf {
         } else if ("detail".equals(tBShareContent.templateId)) {
             aVar.o = TemplateId.ITEM.toString();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             aVar.m = str.toLowerCase();
         } else {
             aVar.m = "other";
@@ -263,10 +263,10 @@ public class oaf {
             ipChange.ipc$dispatch("6ea49473", new Object[]{this, context, taoPasswordShareType, aVar});
         } else if (context == null || aVar == null) {
             this.h.a("", "context or content is null");
-        } else if (TextUtils.isEmpty(aVar.c) || TextUtils.isEmpty(aVar.d)) {
+        } else if (StringUtils.isEmpty(aVar.c) || StringUtils.isEmpty(aVar.d)) {
             this.h.a("", com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_18116));
         } else {
-            if (TextUtils.isEmpty(aVar.f)) {
+            if (StringUtils.isEmpty(aVar.f)) {
                 aVar.f = "other";
             }
             this.b = context;
@@ -291,20 +291,20 @@ public class oaf {
         aLCreatePassWordModel.b = aVar.c;
         aLCreatePassWordModel.f19654a = aVar.d;
         if (aVar.f != null) {
-            if (TextUtils.equals(aVar.f, "item")) {
+            if (StringUtils.equals(aVar.f, "item")) {
                 aLCreatePassWordModel.a("item");
-            } else if (TextUtils.equals(aVar.f, "shop")) {
+            } else if (StringUtils.equals(aVar.f, "shop")) {
                 aLCreatePassWordModel.a("shop");
             } else {
                 aLCreatePassWordModel.a("other");
             }
         }
         if (aVar.m != null) {
-            if (TextUtils.equals(aVar.m, "copy")) {
+            if (StringUtils.equals(aVar.m, "copy")) {
                 aLCreatePassWordModel.a("copy");
-            } else if (TextUtils.equals(aVar.m, ALCreatePassWordModel.QQ)) {
+            } else if (StringUtils.equals(aVar.m, ALCreatePassWordModel.QQ)) {
                 aLCreatePassWordModel.a(ALCreatePassWordModel.QQ);
-            } else if (TextUtils.equals(aVar.m, ALCreatePassWordModel.WeiXin)) {
+            } else if (StringUtils.equals(aVar.m, ALCreatePassWordModel.WeiXin)) {
                 aLCreatePassWordModel.a(ALCreatePassWordModel.WeiXin);
             } else {
                 aLCreatePassWordModel.a("other");

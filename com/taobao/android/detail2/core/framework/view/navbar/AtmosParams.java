@@ -1,6 +1,6 @@
 package com.taobao.android.detail2.core.framework.view.navbar;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.p;
@@ -116,7 +116,7 @@ public class AtmosParams implements Serializable {
 
     public boolean isHigherAtmosType() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a3524bca", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.atmosType) && ATMOS_TYPE_HIGHER.equals(this.atmosType);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a3524bca", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.atmosType) && ATMOS_TYPE_HIGHER.equals(this.atmosType);
     }
 
     private void refreshAtmosParamsModel() {

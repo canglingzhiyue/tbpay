@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.ui.coordinatorcard;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -41,7 +41,7 @@ public final class FactoryType {
             return TYPE_INVALID;
         }
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return TYPE_INVALID;
         }
         String str3 = (String) n.b((CharSequence) str2, new String[]{"_"}, false, 0, 6, (Object) null).get(0);

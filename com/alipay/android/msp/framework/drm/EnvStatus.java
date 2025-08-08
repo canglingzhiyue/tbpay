@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.drm;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.storage.PrefUtils;
 import com.alipay.android.msp.framework.sys.DeviceInfo;
 import com.alipay.android.msp.pay.GlobalSdkConstant;
@@ -42,7 +42,7 @@ public final class EnvStatus {
         String os = DeviceInfo.getOS();
         String mspVersion = GlobalSdkConstant.getMspVersion();
         String packageName = this.f.getPackageName();
-        if (!TextUtils.equals(this.b, os) || !TextUtils.equals(this.d, mspVersion) || !TextUtils.equals(this.e, packageName)) {
+        if (!StringUtils.equals(this.b, os) || !StringUtils.equals(this.d, mspVersion) || !StringUtils.equals(this.e, packageName)) {
             z = true;
         }
         LogUtil.record(1, "Drm", "EnvStatus", "isChanged:".concat(String.valueOf(z)));

@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
@@ -58,7 +58,7 @@ public final class axj implements arx {
             return false;
         }
         String eventType = aURAEventIO.getEventType();
-        if (TextUtils.isEmpty(eventType)) {
+        if (StringUtils.isEmpty(eventType)) {
             arc.a().b("AURAMegaEventRedirectExtensionImpl.handleEventRedirect:eventType is empty");
             return false;
         }
@@ -159,7 +159,7 @@ public final class axj implements arx {
                             break;
                         }
                         Object obj = list.get(i);
-                        if ((obj instanceof AURARenderComponent) && TextUtils.equals(((AURARenderComponent) obj).key, aURARenderComponent.key)) {
+                        if ((obj instanceof AURARenderComponent) && StringUtils.equals(((AURARenderComponent) obj).key, aURARenderComponent.key)) {
                             view2 = recyclerView.getLayoutManager().findViewByPosition(i);
                             break;
                         }

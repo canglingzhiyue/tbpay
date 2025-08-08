@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.util.List;
 import java.util.Map;
@@ -79,7 +79,7 @@ public class O000OO0o {
             if (list != null && !list.isEmpty()) {
                 for (int i = 0; i < list.size(); i++) {
                     String str = (String) list.get(0);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         O000O0OO.O00000Oo(context, str);
                     }
                 }
@@ -87,7 +87,7 @@ public class O000OO0o {
             List list2 = (List) headerFields.get("p-ikgx");
             if (list2 != null && !list2.isEmpty()) {
                 String str2 = (String) list2.get(0);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     return str2;
                 }
             }

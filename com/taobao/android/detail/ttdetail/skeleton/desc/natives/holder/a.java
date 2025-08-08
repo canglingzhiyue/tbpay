@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
 import android.text.Html;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -66,11 +66,11 @@ public class a extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             String str = aVar.f10867a;
             String str2 = aVar.b;
             String str3 = aVar.c;
-            if (!TextUtils.isEmpty(str) && (textView2 = this.h) != null) {
+            if (!StringUtils.isEmpty(str) && (textView2 = this.h) != null) {
                 textView2.setText(str);
                 this.h.setVisibility(0);
             }
-            if (!TextUtils.isEmpty(str2) && (textView = this.i) != null) {
+            if (!StringUtils.isEmpty(str2) && (textView = this.i) != null) {
                 textView.setText(Html.fromHtml(str2));
                 this.i.setVisibility(0);
             }

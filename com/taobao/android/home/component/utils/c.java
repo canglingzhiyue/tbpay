@@ -3,7 +3,7 @@ package com.taobao.android.home.component.utils;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import java.util.Map;
@@ -88,7 +88,7 @@ public class c {
         } else {
             a2 = a.a("homepage_switch", str, str2);
         }
-        return TextUtils.equals(a2, f12725a) ? str2 : a2;
+        return StringUtils.equals(a2, f12725a) ? str2 : a2;
     }
 
     public String a(String str, String str2, String str3) {
@@ -96,11 +96,11 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.equals("homepage_switch", str)) {
+        if (StringUtils.equals("homepage_switch", str)) {
             return a(str2, str3);
         }
         String a2 = a.a(str, str2, str3);
-        return TextUtils.equals(a2, f12725a) ? str3 : a2;
+        return StringUtils.equals(a2, f12725a) ? str3 : a2;
     }
 
     public void a(Map<String, String> map) {

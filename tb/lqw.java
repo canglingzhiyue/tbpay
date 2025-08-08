@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class lqw implements lac {
         }
         IHostService iHostService = this.f30841a;
         if (iHostService != null && (h = iHostService.getInvokeCallback().h()) != null) {
-            return TextUtils.equals(h.a(), h.b());
+            return StringUtils.equals(h.a(), h.b());
         }
         return false;
     }
@@ -89,7 +89,7 @@ public class lqw implements lac {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("fef0fbf4", new Object[]{this, str});
         }
-        if (this.f30841a != null && !TextUtils.isEmpty(str) && (f = this.f30841a.getInvokeCallback().f()) != null) {
+        if (this.f30841a != null && !StringUtils.isEmpty(str) && (f = this.f30841a.getInvokeCallback().f()) != null) {
             return f.a(str);
         }
         return null;

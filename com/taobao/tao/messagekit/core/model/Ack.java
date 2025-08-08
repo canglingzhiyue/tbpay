@@ -1,6 +1,6 @@
 package com.taobao.tao.messagekit.core.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.utils.e;
@@ -149,7 +149,7 @@ public class Ack extends BaseMessage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c884e3ce", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.header.f = str;
         }

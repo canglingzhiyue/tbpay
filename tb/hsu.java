@@ -2,7 +2,7 @@ package tb;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -27,12 +27,12 @@ public final class hsu {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9e721362", new Object[]{str, jSONObject});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null) {
+        if (StringUtils.isEmpty(str) || jSONObject == null) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+            if (!StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                 buildUpon.appendQueryParameter(entry.getKey(), entry.getValue().toString());
             }
         }
@@ -52,7 +52,7 @@ public final class hsu {
             Set<String> keySet = jSONObject.keySet();
             q.b(keySet, "paramsJson.keys");
             for (String str : keySet) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     Object obj = jSONObject.get(str);
                     if (obj instanceof Boolean) {
                         bundle.putBoolean(str, ((Boolean) obj).booleanValue());

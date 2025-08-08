@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -52,7 +52,7 @@ public final class s {
             } else {
                 try {
                     pVar.initWithURL(Uri.parse(str));
-                    if (!TextUtils.equals(str, str2)) {
+                    if (!StringUtils.equals(str, str2)) {
                         pVar.addInstanceEnv("bundleUrl", str2);
                     }
                     com.taobao.android.weex_framework.r monitorInfo = pVar.getMonitorInfo();

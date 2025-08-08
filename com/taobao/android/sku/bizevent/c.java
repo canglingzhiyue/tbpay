@@ -2,7 +2,7 @@ package com.taobao.android.sku.bizevent;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.p;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,7 +80,7 @@ public class c extends p {
                 }
             }, 20L);
         }
-        if (this.b == null || TextUtils.isEmpty(e)) {
+        if (this.b == null || StringUtils.isEmpty(e)) {
             return;
         }
         this.b.a();

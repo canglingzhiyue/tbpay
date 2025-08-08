@@ -1,6 +1,6 @@
 package com.taobao.android.weex_framework.module.builtin;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -52,7 +52,7 @@ public class MUSDomModule extends MUSModule {
             return;
         }
         MUSDKInstance mUSDKInstance = (MUSDKInstance) getInstance();
-        if (mUSDKInstance == null || mUSDKInstance.isDestroyed() || !TextUtils.equals("fontFace", str)) {
+        if (mUSDKInstance == null || mUSDKInstance.isDestroyed() || !StringUtils.equals("fontFace", str)) {
             return;
         }
         if (mUSDKInstance.getInstanceConfig() != null && mUSDKInstance.getInstanceConfig().j() == MUSInstanceConfig.MUSRenderType.MUSRenderTypeUnicorn) {
@@ -60,12 +60,12 @@ public class MUSDomModule extends MUSModule {
             return;
         }
         FontDO parseFontDO = parseFontDO(jSONObject, mUSDKInstance);
-        if (parseFontDO == null || TextUtils.isEmpty(parseFontDO.e())) {
+        if (parseFontDO == null || StringUtils.isEmpty(parseFontDO.e())) {
             return;
         }
         synchronized (LOCK) {
             FontDO a2 = com.taobao.android.weex_framework.widget.a.a().a(parseFontDO.e());
-            if (a2 != null && TextUtils.equals(a2.a(), parseFontDO.a())) {
+            if (a2 != null && StringUtils.equals(a2.a(), parseFontDO.a())) {
                 com.taobao.android.weex_framework.widget.a.a().a(a2, true);
             }
             com.taobao.android.weex_framework.widget.a.a().a(parseFontDO);

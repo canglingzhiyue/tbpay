@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.diagnose.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
 import com.alipay.mobile.common.transport.monitor.MonitorLoggerUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -68,7 +68,7 @@ public class UploadManager {
                         }
                         int i2 = 0;
                         for (String str2 : arrayList) {
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 i2++;
                                 monitorLoggerModel.addExtParam("RES_" + i2, str2);
                                 z = true;

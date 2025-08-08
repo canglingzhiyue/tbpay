@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.base.Versions;
@@ -211,7 +211,7 @@ public class ksx implements ksz {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.equals(str, "tbGlobalMuteSetting")) {
+        if (StringUtils.equals(str, "tbGlobalMuteSetting")) {
             return com.taobao.global.setting.d.a().b();
         }
         boolean a2 = com.taobao.global.setting.util.a.a(str);
@@ -224,7 +224,7 @@ public class ksx implements ksz {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("42bc9164", new Object[]{str, t});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("key cannot be empty!");
         }
         SharedPreferences a2 = d.a();

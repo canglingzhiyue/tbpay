@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.log.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.engine.MicroModuleContext;
 import com.alipay.mobile.verifyidentity.log.VerifyLogCat;
 import com.alipay.mobile.verifyidentity.rpc.RpcException;
@@ -52,7 +52,7 @@ public class LogReportHelper {
             return;
         }
         getAndReportData();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             hashMap.put(c, str);
             a(hashMap, str, str2);
@@ -65,7 +65,7 @@ public class LogReportHelper {
             ipChange.ipc$dispatch("1fbc1846", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             hashMap.put(c, str);
             a(hashMap, str, "");
@@ -78,7 +78,7 @@ public class LogReportHelper {
             ipChange.ipc$dispatch("617f9fe2", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             hashMap.put(d, str);
             a(hashMap, str, "");
@@ -113,7 +113,7 @@ public class LogReportHelper {
             try {
                 if (file.getAbsolutePath().contains(".vi.log")) {
                     String read = EncryptFileUtils.read(file);
-                    if (TextUtils.isEmpty(read)) {
+                    if (StringUtils.isEmpty(read)) {
                         ZFileUtil.delete(file);
                     } else {
                         final HashMap hashMap = new HashMap();
@@ -185,7 +185,7 @@ public class LogReportHelper {
                                 return;
                             }
                             VerifyLogCat.i(LogReportHelper.access$000(), "暂留日志需要存到本地");
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 EncryptFileUtils.write(LogReportHelper.getLogFileName(), str);
                             } else {
                                 EncryptFileUtils.write(LogReportHelper.getDispersedLogFileName(), str);
@@ -193,7 +193,7 @@ public class LogReportHelper {
                         } catch (RpcException e) {
                             VerifyLogCat.w(LogReportHelper.access$000(), "rpc got an RPC exception: ", e);
                             VerifyLogCat.i(LogReportHelper.access$000(), "暂留日志需要存到本地");
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 EncryptFileUtils.write(LogReportHelper.getLogFileName(), str);
                             } else {
                                 EncryptFileUtils.write(LogReportHelper.getDispersedLogFileName(), str);
@@ -201,7 +201,7 @@ public class LogReportHelper {
                         } catch (Exception e2) {
                             VerifyLogCat.w(LogReportHelper.access$000(), "rpc got an exception: ", e2);
                             VerifyLogCat.i(LogReportHelper.access$000(), "暂留日志需要存到本地");
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 EncryptFileUtils.write(LogReportHelper.getLogFileName(), str);
                             } else {
                                 EncryptFileUtils.write(LogReportHelper.getDispersedLogFileName(), str);
@@ -209,7 +209,7 @@ public class LogReportHelper {
                         }
                     } catch (Throwable th) {
                         VerifyLogCat.i(LogReportHelper.access$000(), "暂留日志需要存到本地");
-                        EncryptFileUtils.write(!TextUtils.isEmpty(str2) ? LogReportHelper.getLogFileName() : LogReportHelper.getDispersedLogFileName(), str);
+                        EncryptFileUtils.write(!StringUtils.isEmpty(str2) ? LogReportHelper.getLogFileName() : LogReportHelper.getDispersedLogFileName(), str);
                         throw th;
                     }
                 }

@@ -2,7 +2,7 @@ package com.taobao.android.buy.internal;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.ability.excutor.BaseExecutor;
 import com.alibaba.android.aura.AURAAliBuyCorePluginCenter;
@@ -572,7 +572,7 @@ public final class a implements dst {
             return;
         }
         String a2 = dsxVar.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         this.f = a2;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes2.dex */
@@ -22,7 +22,7 @@ public class fkh {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (!TextUtils.equals(f28009a, "unknown")) {
+        if (!StringUtils.equals(f28009a, "unknown")) {
             return f28009a;
         }
         try {

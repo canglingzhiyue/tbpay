@@ -12,7 +12,7 @@ import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -88,7 +88,7 @@ public class SystemImageSharePlugin implements obk.a {
             return;
         }
         final TBShareContent a2 = bVar.a().a();
-        if (TextUtils.isEmpty(a2.imageUrl) || !new File(a2.imageUrl).exists() || (fragmentActivity = (FragmentActivity) ShareBizAdapter.getInstance().getAppEnv().c()) == null) {
+        if (StringUtils.isEmpty(a2.imageUrl) || !new File(a2.imageUrl).exists() || (fragmentActivity = (FragmentActivity) ShareBizAdapter.getInstance().getAppEnv().c()) == null) {
             return;
         }
         new oif().a("screenshot", true, new e.a() { // from class: com.taobao.tao.adapter.biz.plugins.SystemImageSharePlugin.1

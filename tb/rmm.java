@@ -3,7 +3,7 @@ package tb;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.ui.engine.friend.a;
 
@@ -25,7 +25,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         if (str.startsWith("#")) {
@@ -39,12 +39,12 @@ public class rmm {
 
     public static String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : k(str);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : k(str);
     }
 
     public static CharSequence c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (CharSequence) ipChange.ipc$dispatch("9ffa5e86", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : l(str);
+        return ipChange instanceof IpChange ? (CharSequence) ipChange.ipc$dispatch("9ffa5e86", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : l(str);
     }
 
     public static Drawable d(String str) {
@@ -52,7 +52,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return (Drawable) ipChange.ipc$dispatch("7064a5a5", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return h(str);
         }
         return null;
@@ -63,7 +63,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1c6cb126", new Object[]{str})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.0f;
         }
         if (str.startsWith(DIMEN_RESOURCE)) {
@@ -81,7 +81,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("669e4a6a", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         if (str.startsWith(DIMEN_RESOURCE)) {
@@ -99,14 +99,14 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b0cfe3ab", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         if (str.startsWith(COLOR_RESOURCE)) {
             str = str.replace(COLOR_RESOURCE, "");
         }
         try {
-            if (rlx.a().d() != null && !TextUtils.isEmpty(rlx.a().b())) {
+            if (rlx.a().d() != null && !StringUtils.isEmpty(rlx.a().b())) {
                 int c = c(rlx.a().d(), str, rlx.a().b());
                 if (c == 0) {
                     return m(str);
@@ -145,14 +145,14 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return (Drawable) ipChange.ipc$dispatch("a4190221", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.startsWith(DRAWABLE_RESOURCE)) {
             str = str.replace(DRAWABLE_RESOURCE, "");
         }
         try {
-            if (rlx.a().d() != null && !TextUtils.isEmpty(rlx.a().b())) {
+            if (rlx.a().d() != null && !StringUtils.isEmpty(rlx.a().b())) {
                 int b = b(rlx.a().d(), str, rlx.a().b());
                 if (b == 0) {
                     return n(str);
@@ -188,14 +188,14 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("4533162d", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         if (str.startsWith(DIMEN_RESOURCE)) {
             str = str.replace(DIMEN_RESOURCE, "");
         }
         try {
-            if (rlx.a().d() != null && !TextUtils.isEmpty(rlx.a().b())) {
+            if (rlx.a().d() != null && !StringUtils.isEmpty(rlx.a().b())) {
                 int d = d(rlx.a().d(), str, rlx.a().b());
                 if (d == 0) {
                     return o(str);
@@ -231,14 +231,14 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8f64af6b", new Object[]{str})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.0f;
         }
         if (str.startsWith(DIMEN_RESOURCE)) {
             str = str.replace(DIMEN_RESOURCE, "");
         }
         try {
-            if (rlx.a().d() != null && !TextUtils.isEmpty(rlx.a().b())) {
+            if (rlx.a().d() != null && !StringUtils.isEmpty(rlx.a().b())) {
                 int d = d(rlx.a().d(), str, rlx.a().b());
                 if (d == 0) {
                     return p(str);
@@ -274,14 +274,14 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("711ebb64", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.startsWith(STRING_RESOURCE)) {
             str = str.replace(STRING_RESOURCE, "");
         }
         try {
-            if (rlx.a().d() != null && !TextUtils.isEmpty(rlx.a().b())) {
+            if (rlx.a().d() != null && !StringUtils.isEmpty(rlx.a().b())) {
                 int a2 = a(rlx.a().d(), str, rlx.a().b());
                 if (a2 == 0) {
                     return q(str);
@@ -314,14 +314,14 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return (CharSequence) ipChange.ipc$dispatch("252e591d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.startsWith(STRING_RESOURCE)) {
             str = str.replace(STRING_RESOURCE, "");
         }
         try {
-            if (rlx.a().d() != null && !TextUtils.isEmpty(rlx.a().b())) {
+            if (rlx.a().d() != null && !StringUtils.isEmpty(rlx.a().b())) {
                 int a2 = a(rlx.a().d(), str, rlx.a().b());
                 if (a2 == 0) {
                     return r(str);
@@ -354,7 +354,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("bda56080", new Object[]{resources, str, str2})).intValue();
         }
-        if (resources == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (resources == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return 0;
         }
         String a2 = a(str, "string", str2);
@@ -372,7 +372,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3ff0155f", new Object[]{resources, str, str2})).intValue();
         }
-        if (resources == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (resources == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return 0;
         }
         String a2 = a(str, a.CONTACTS_INFO_NOT_EMPTY_STATUS, str2);
@@ -390,7 +390,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c23aca3e", new Object[]{resources, str, str2})).intValue();
         }
-        if (resources == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (resources == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return 0;
         }
         String a2 = a(str, "color", str2);
@@ -408,7 +408,7 @@ public class rmm {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("44857f1d", new Object[]{resources, str, str2})).intValue();
         }
-        if (resources == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (resources == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return 0;
         }
         String a2 = a(str, "dimen", str2);

@@ -2,7 +2,7 @@ package com.taobao.share.aidl;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,7 +36,7 @@ public class ShareCopy {
             return ((Boolean) ipChange.ipc$dispatch("6fe5c5ad", new Object[]{context, str, str2, str3, str4})).booleanValue();
         }
         String tbsForItemCopy = tbsForItemCopy(str, str3, str4);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             e.b().a(str4);
         } else {
             e.b().a("other");
@@ -51,7 +51,7 @@ public class ShareCopy {
             return ((Boolean) ipChange.ipc$dispatch("316d25a3", new Object[]{context, str, str2, str3})).booleanValue();
         }
         String tbsForItemCopy = tbsForItemCopy(str, str3, null);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             nyy.a(TAG, b.a(R.string.taobao_app_1010_1_18296));
             return false;
         }
@@ -63,13 +63,13 @@ public class ShareCopy {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("42e1288f", new Object[]{str, str2, str3});
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str2 = ShareServiceApi.urlBackFlow(str, "GoodsTitleURL", str2);
         }
-        if ("item".equals(str3) || (!TextUtils.isEmpty(str2) && str2.contains("sourceType=item"))) {
+        if ("item".equals(str3) || (!StringUtils.isEmpty(str2) && str2.contains("sourceType=item"))) {
             TBS.Ext.commitEvent(5002, str, "GoodsTitleURL", str2);
         } else {
-            TextUtils.isEmpty(str2);
+            StringUtils.isEmpty(str2);
         }
         return str2;
     }
@@ -79,7 +79,7 @@ public class ShareCopy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("36408376", new Object[]{context, str, str2, str3})).booleanValue();
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             a.a(context, str2);
             ShareBizAdapter.getInstance().getAppEnv().b(str2);
             new Handler(context.getMainLooper()).post(new Runnable() { // from class: com.taobao.share.aidl.ShareCopy.1

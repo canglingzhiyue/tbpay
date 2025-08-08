@@ -3,7 +3,7 @@ package tb;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -60,7 +60,7 @@ public class tjz {
             Iterator<WeakReference<a>> it = this.c.iterator();
             while (it.hasNext()) {
                 a aVar = it.next().get();
-                if (aVar != null && TextUtils.equals(a.a(aVar), str)) {
+                if (aVar != null && StringUtils.equals(a.a(aVar), str)) {
                     it.remove();
                     return aVar;
                 }

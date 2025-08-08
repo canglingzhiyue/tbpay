@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -126,12 +126,12 @@ public class RewardFrame extends BaseFrame {
             }
             TUrlImageView tUrlImageView = (TUrlImageView) this.mRootView.findViewById(R.id.iv_taolive_reward);
             String str = admireInfo.giftIcon;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 tUrlImageView.setImageUrl("https://img.alicdn.com/imgextra/i4/O1CN014NmoZJ1rDw2gRLkL5_!!6000000005598-2-tps-108-108.png");
             } else {
                 tUrlImageView.setImageUrl(str);
             }
-            if (TextUtils.equals(phg.a().c(), phg.a().b()) && "1".equals(getFrameContext().g().get(aw.PARAM_OPEN_REWARD_PANEL))) {
+            if (StringUtils.equals(phg.a().c(), phg.a().b()) && "1".equals(getFrameContext().g().get(aw.PARAM_OPEN_REWARD_PANEL))) {
                 showRewardPanel(null);
             }
             String str2 = getFrameContext().g().get(aw.PARAM_INTENT_URL);

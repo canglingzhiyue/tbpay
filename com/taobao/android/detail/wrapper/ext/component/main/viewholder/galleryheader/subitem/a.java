@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.component.main.viewholder.galleryh
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -147,7 +147,7 @@ public class a implements com.taobao.android.detail.wrapper.ext.component.main.v
         if (this.e.parentModel.isPopupMode) {
             mainPicText = this.e.getLightOffText();
         }
-        if (TextUtils.isEmpty(mainPicText)) {
+        if (StringUtils.isEmpty(mainPicText)) {
             return;
         }
         this.c.setText(mainPicText);

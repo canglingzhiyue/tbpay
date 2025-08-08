@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -62,7 +62,7 @@ public class TransportEnvUtil {
 
     public static final boolean isRunningJunitEnv() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("883c93ff", new Object[0])).booleanValue() : TextUtils.equals(System.getProperty("OS_ENV"), "OS_ENV_JUNIT");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("883c93ff", new Object[0])).booleanValue() : StringUtils.equals(System.getProperty("OS_ENV"), "OS_ENV_JUNIT");
     }
 
     public static final boolean isRunningWalletEnv() {
@@ -71,8 +71,8 @@ public class TransportEnvUtil {
             return ((Boolean) ipChange.ipc$dispatch("94f7098a", new Object[0])).booleanValue();
         }
         String property = System.getProperty("OS_ENV");
-        if (!TextUtils.isEmpty(property)) {
-            return TextUtils.equals(property, "OS_ENV_WALLET");
+        if (!StringUtils.isEmpty(property)) {
+            return StringUtils.equals(property, "OS_ENV_WALLET");
         }
         return true;
     }

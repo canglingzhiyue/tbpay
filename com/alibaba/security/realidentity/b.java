@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
@@ -32,7 +32,7 @@ public final class b {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("f26a7d9c", new Object[]{str, cls});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -61,7 +61,7 @@ public final class b {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("2ffdff69", new Object[]{str, cls, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (z) {

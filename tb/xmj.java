@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,11 +47,11 @@ public class xmj extends xmk.a {
         this.b = l.a(b.getString(StEvent.SHOW_TIME), 0);
         View findViewById = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.taolive_gl_toast_expand_rp, (ViewGroup) null).findViewById(R.id.taolive_good_toast_root);
         TUrlImageView tUrlImageView = (TUrlImageView) findViewById.findViewById(R.id.taolive_gl_expand_rp_left_icon);
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             tUrlImageView.setImageUrl(string2);
         }
         TUrlImageView tUrlImageView2 = (TUrlImageView) findViewById.findViewById(R.id.taolive_gl_expand_rp_right_icon);
-        if (!TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string3)) {
             tUrlImageView2.setImageUrl(string3);
         }
         ((TextView) findViewById.findViewById(R.id.taolive_gl_expand_rp_text)).setText(string);

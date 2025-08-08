@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.biz;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -95,7 +95,7 @@ public class AlipayRootCAManager {
                     }
                 }
                 String sb2 = sb.toString();
-                if (!TextUtils.isEmpty(sb2)) {
+                if (!StringUtils.isEmpty(sb2)) {
                     LogCatUtil.info("AlipayRootCAManager", "[loadCacertsFromFile] Finished. ca bytes len: " + sb2.getBytes("UTF-8").length);
                     if (sb.length() > 0) {
                         sb.delete(0, sb.length());

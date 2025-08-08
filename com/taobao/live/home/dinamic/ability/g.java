@@ -1,6 +1,6 @@
 package com.taobao.live.home.dinamic.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.profile.LiveAvatarNewFrame;
@@ -42,7 +42,7 @@ public class g extends dlg {
             String string2 = c.getString("subFrom");
             String string3 = c.getString("activityType");
             boolean parseBoolean = Boolean.parseBoolean(c.getString("isSubscribe"));
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
                 return new dky();
             }
             if (parseBoolean) {
@@ -122,7 +122,7 @@ public class g extends dlg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a089835", new Object[]{str, str2, str3, bVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             SubscribeUtils.INSTANCE.doSubscribe(str, str3, null, str2, new IObserver<SubScribeCenterResultDTO>() { // from class: com.taobao.live.home.dinamic.ability.g.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -185,7 +185,7 @@ public class g extends dlg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8313e3b6", new Object[]{str, str2, str3, bVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             SubscribeUtils.INSTANCE.cancelSubscribe(str, str3, null, str2, new IObserver<SubScribeCenterResultDTO>() { // from class: com.taobao.live.home.dinamic.ability.g.4
                 public static volatile transient /* synthetic */ IpChange $ipChange;

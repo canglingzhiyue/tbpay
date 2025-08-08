@@ -2,7 +2,7 @@ package com.taobao.search.mmd.uikit.iconlist;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.animate.b;
 import com.taobao.phenix.intf.PhenixCreator;
@@ -189,7 +189,7 @@ public class a {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
         } else if (this.e == 2 || this.l <= 0 || this.m <= 0) {
         } else {
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 com.taobao.phenix.intf.b.h().a(this.d);
                 a((BitmapDrawable) null);
                 return;
@@ -218,7 +218,7 @@ public class a {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.equals(this.b, str)) {
+        if (!StringUtils.equals(this.b, str)) {
             this.f = false;
         }
         this.b = str;

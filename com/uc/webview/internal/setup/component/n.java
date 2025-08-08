@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.uc.webview.base.EnvInfo;
@@ -139,7 +139,7 @@ public final class n {
         public void b(String str) {
             ArrayList arrayList = new ArrayList();
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 hashMap.put("target_product", this.d);
             }
             hashMap.put("browser_arch", EnvInfo.is64Bit() ? "armv8" : "armv7-a");

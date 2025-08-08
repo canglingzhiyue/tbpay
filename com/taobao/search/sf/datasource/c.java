@@ -2,7 +2,7 @@ package com.taobao.search.sf.datasource;
 
 import android.os.Build;
 import android.taobao.util.g;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -256,13 +256,13 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
             SearchParamImpl currentParam = getCurrentParam();
             HashSet hashSet = new HashSet();
             String remove = map.remove(noa.KEY_MULTI_VALUE_KEYS);
-            if (!TextUtils.isEmpty(remove)) {
+            if (!StringUtils.isEmpty(remove)) {
                 hashSet.addAll(Arrays.asList(remove.split(",")));
             }
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     if (value == null) {
                         value = "";
                     }
@@ -295,7 +295,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
             return (String) ipChange.ipc$dispatch("9ed849c7", new Object[]{this});
         }
         String paramValue = getParamValue("page_name");
-        return !TextUtils.isEmpty(paramValue) ? paramValue : getParamValue("m");
+        return !StringUtils.isEmpty(paramValue) ? paramValue : getParamValue("m");
     }
 
     public String s() {
@@ -338,32 +338,32 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
 
     public boolean v() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6945a01", new Object[]{this})).booleanValue() : TextUtils.equals("shop", getParamValue("tab"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6945a01", new Object[]{this})).booleanValue() : StringUtils.equals("shop", getParamValue("tab"));
     }
 
     public boolean w() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6a27182", new Object[]{this})).booleanValue() : TextUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR, c(noa.KEY_SHOWTYPE));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6a27182", new Object[]{this})).booleanValue() : StringUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR, c(noa.KEY_SHOWTYPE));
     }
 
     public boolean x() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6b08903", new Object[]{this})).booleanValue() : TextUtils.equals(noa.VALUE_SHOWTYPE_SAME, c(noa.KEY_SHOWTYPE));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6b08903", new Object[]{this})).booleanValue() : StringUtils.equals(noa.VALUE_SHOWTYPE_SAME, c(noa.KEY_SHOWTYPE));
     }
 
     public boolean y() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6bea084", new Object[]{this})).booleanValue() : TextUtils.equals(noa.VALUE_MODULE_SPUITEM, c("m"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6bea084", new Object[]{this})).booleanValue() : StringUtils.equals(noa.VALUE_MODULE_SPUITEM, c("m"));
     }
 
     public boolean z() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6ccb805", new Object[]{this})).booleanValue() : TextUtils.equals(noa.VALUE_MODULE_INSHOP, c("m"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6ccb805", new Object[]{this})).booleanValue() : StringUtils.equals(noa.VALUE_MODULE_INSHOP, c("m"));
     }
 
     public boolean A() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3a97c4c", new Object[]{this})).booleanValue() : TextUtils.equals(noa.VALUE_BOT_SEARCH, c("m"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3a97c4c", new Object[]{this})).booleanValue() : StringUtils.equals(noa.VALUE_BOT_SEARCH, c("m"));
     }
 
     public String c(String str) {
@@ -376,14 +376,14 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         String paramValue = getParamValue(noa.GLOBAL_PARAM_PREFIX + str);
-        if (TextUtils.isEmpty(paramValue)) {
+        if (StringUtils.isEmpty(paramValue)) {
             paramValue = getParamValue(str);
         }
-        return TextUtils.isEmpty(paramValue) ? str2 : paramValue;
+        return StringUtils.isEmpty(paramValue) ? str2 : paramValue;
     }
 
     public String d(String str) {
@@ -396,21 +396,21 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         String paramStr = getParamStr(noa.GLOBAL_PARAM_PREFIX + str);
-        if (TextUtils.isEmpty(paramStr)) {
+        if (StringUtils.isEmpty(paramStr)) {
             paramStr = getParamStr(str);
         }
-        return TextUtils.isEmpty(paramStr) ? str2 : paramStr;
+        return StringUtils.isEmpty(paramStr) ? str2 : paramStr;
     }
 
     public void B() {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3b793c9", new Object[]{this});
-        } else if (r.cq() && !TextUtils.isEmpty(getParamStr(noa.KEY_NEED_TABS))) {
+        } else if (r.cq() && !StringUtils.isEmpty(getParamStr(noa.KEY_NEED_TABS))) {
         } else {
             setParam(noa.KEY_NEED_TABS, "true");
         }
@@ -420,7 +420,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || !TextUtils.equals(str2, c(str))) {
+        } else if (StringUtils.isEmpty(str) || !StringUtils.equals(str2, c(str))) {
         } else {
             removeParam(str, str2);
             removeParam(noa.GLOBAL_PARAM_PREFIX + str, str2);
@@ -436,7 +436,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         for (Map.Entry<String, String> entry : getParamsSnapShot().entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value) && key.startsWith(noa.GLOBAL_PARAM_PREFIX)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value) && key.startsWith(noa.GLOBAL_PARAM_PREFIX)) {
                 hashMap.put(key, value);
             }
         }
@@ -452,7 +452,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         }
         for (String str : Arrays.asList(noa.KEY_POP_UP_STYLE, noa.KEY_POP_UP, "tbsearch_popup_animated")) {
             String paramValue = getParamValue(str);
-            if (!TextUtils.isEmpty(paramValue)) {
+            if (!StringUtils.isEmpty(paramValue)) {
                 map.put(str, paramValue);
             }
         }
@@ -630,33 +630,33 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         }
         map.put("info", g.c(Globals.getApplication()));
         String a3 = o.a();
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             map.put("network", a3);
         }
         map.put(MspDBHelper.BizEntry.COLUMN_NAME_DEVICE, Build.MODEL);
         map.put("brand", Build.BRAND);
         String b2 = com.taobao.search.mmd.util.g.b();
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             map.put("areaCode", b2);
         }
         String c2 = com.taobao.search.mmd.util.g.c();
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             map.put(noa.KEY_COUNTRY_NUM, c2);
         }
         String d = com.taobao.search.mmd.util.g.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             map.put(noa.KEY_EDITION_CODE, d);
         }
-        if (!TextUtils.isEmpty(com.taobao.search.common.util.f.a())) {
+        if (!StringUtils.isEmpty(com.taobao.search.common.util.f.a())) {
             map.put(noa.KEY_HOMEPAGE_VERSION, com.taobao.search.common.util.f.a());
         }
         String b3 = com.taobao.search.common.util.f.b();
-        if (!TextUtils.isEmpty(b3)) {
+        if (!StringUtils.isEmpty(b3)) {
             map.put("LBS", b3);
         }
-        if (TextUtils.isEmpty(map.get(noa.KEY_GLOBAL_LBS))) {
+        if (StringUtils.isEmpty(map.get(noa.KEY_GLOBAL_LBS))) {
             String c3 = com.taobao.search.common.util.o.INSTANCE.c(Globals.getApplication());
-            if (!TextUtils.isEmpty(c3)) {
+            if (!StringUtils.isEmpty(c3)) {
                 map.put(noa.KEY_GLOBAL_LBS, c3);
             }
         }
@@ -726,7 +726,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         if (commonSearchResult == null || !commonSearchResult.isSuccess() || (mainInfo = commonSearchResult.getMainInfo()) == null) {
             return uIListStyle;
         }
-        if (TextUtils.equals(mainInfo.pageName, nne.PAGE_NAME_MAIN_SPU)) {
+        if (StringUtils.equals(mainInfo.pageName, nne.PAGE_NAME_MAIN_SPU)) {
             return ListStyle.LIST;
         }
         return (v() || "shopsearch".equals(getParamValue("m"))) ? ListStyle.LIST : uIListStyle;
@@ -787,7 +787,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         }
         String str = a2.f15014a;
         String str2 = a2.b;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 int M = M();
                 CountDownLatch countDownLatch = new CountDownLatch(2);
@@ -809,7 +809,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
                 }
                 countDownLatch.await(M, TimeUnit.MILLISECONDS);
                 String b2 = b(O, P, concurrentHashMap);
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     map.put("pvFeature", b2);
                 }
                 a(O, P, concurrentHashMap);
@@ -824,11 +824,11 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
             return (String) ipChange.ipc$dispatch("21b097e4", new Object[]{this, new Boolean(z), new Boolean(z2), map});
         }
         String str = map.get("pvFeature");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.f19441a;
         }
         String str2 = map.get("nativePvFeature");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = this.b;
         }
         if (str == null) {
@@ -851,12 +851,12 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         }
         String str = map.get("pvFeature");
         String str2 = map.get("nativePvFeature");
-        if (z && !TextUtils.isEmpty(str)) {
+        if (z && !StringUtils.isEmpty(str)) {
             AppMonitor.Alarm.commitSuccess("JarvisWE", "pvFeature_python");
         } else if (z) {
             AppMonitor.Alarm.commitFail("JarvisWE", "pvFeature_python", "", "", "");
         }
-        if (z2 && !TextUtils.isEmpty(str2)) {
+        if (z2 && !StringUtils.isEmpty(str2)) {
             AppMonitor.Alarm.commitSuccess("JarvisWE", "pvFeature_native");
         } else if (!z2) {
         } else {
@@ -906,7 +906,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
                 if (cVar == null) {
                     return;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 this.b.put("pvFeature", str2);
@@ -959,7 +959,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
                 if (cVar == null) {
                     return;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 this.b.put("nativePvFeature", str2);
@@ -1002,11 +1002,11 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
             return;
         }
         this.e = z;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String tab = getTab();
-        if (TextUtils.isEmpty(tab)) {
+        if (StringUtils.isEmpty(tab)) {
             tab = "default";
         }
         this.d = str + "_" + tab;
@@ -1017,7 +1017,7 @@ public abstract class c extends com.taobao.android.meta.data.b<com.taobao.search
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1a4cbd85", new Object[]{this, commonSearchResult});
-        } else if (TextUtils.isEmpty(this.d) || (commonSearchResult2 = (CommonSearchResult) getTotalSearchResult()) == null) {
+        } else if (StringUtils.isEmpty(this.d) || (commonSearchResult2 = (CommonSearchResult) getTotalSearchResult()) == null) {
         } else {
             if (commonSearchResult2.getPageNo() == 1) {
                 com.taobao.search.sf.detailpre.a.b().b(commonSearchResult2.getMainInfo().abtest, this.e);

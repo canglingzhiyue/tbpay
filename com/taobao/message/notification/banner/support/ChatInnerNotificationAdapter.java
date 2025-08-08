@@ -3,7 +3,7 @@ package com.taobao.message.notification.banner.support;
 import android.app.Activity;
 import android.content.Context;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -62,7 +62,7 @@ public class ChatInnerNotificationAdapter extends InnerNotificationAdapter {
             this.mTemplateId = parseBody.get("templateId");
             this.mMsgType = parseBody.get("msg_type_id");
             this.mUrl = parseBody.get(d.BUNDLE_BUSINESS_JUMP_URL);
-            if (TextUtils.isEmpty(this.mUrl)) {
+            if (StringUtils.isEmpty(this.mUrl)) {
                 this.mUrl = parseBody.get("url");
             }
         }

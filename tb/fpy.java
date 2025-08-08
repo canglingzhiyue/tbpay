@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v4.util.Pools;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.tempate.DinamicTemplate;
 import com.taobao.android.dinamic.view.b;
@@ -63,7 +63,7 @@ public class fpy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3b9f96fd", new Object[]{this, str, str2, dXRootView});
-        } else if (dXRootView == null || TextUtils.isEmpty(str) || str2 == null) {
+        } else if (dXRootView == null || StringUtils.isEmpty(str) || str2 == null) {
         } else {
             Map<String, DXRootView> map = this.d.get(str);
             if (map == null) {
@@ -81,7 +81,7 @@ public class fpy {
         if (ipChange instanceof IpChange) {
             return (DXRootView) ipChange.ipc$dispatch("15c981e3", new Object[]{this, context, str, str2});
         }
-        if (str2 == null || TextUtils.isEmpty(str) || (map = this.d.get(str)) == null || (remove = map.remove(str2)) == null) {
+        if (str2 == null || StringUtils.isEmpty(str) || (map = this.d.get(str)) == null || (remove = map.remove(str2)) == null) {
             return null;
         }
         if ((remove.getContext() instanceof fpz) && context != null) {
@@ -94,7 +94,7 @@ public class fpy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("52634642", new Object[]{this, bVar, dinamicTemplate, str});
-        } else if (bVar == null || TextUtils.isEmpty(str) || dinamicTemplate == null) {
+        } else if (bVar == null || StringUtils.isEmpty(str) || dinamicTemplate == null) {
         } else {
             String a2 = a(dinamicTemplate);
             Map<String, Pools.Pool<b>> map = this.f28110a.get(str);
@@ -118,7 +118,7 @@ public class fpy {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("6d1e2bfa", new Object[]{this, context, dinamicTemplate, str});
         }
-        if (dinamicTemplate == null || TextUtils.isEmpty(str) || (map = this.f28110a.get(str)) == null || (pool = map.get(a(dinamicTemplate))) == null) {
+        if (dinamicTemplate == null || StringUtils.isEmpty(str) || (map = this.f28110a.get(str)) == null || (pool = map.get(a(dinamicTemplate))) == null) {
             return null;
         }
         b acquire = pool.acquire();
@@ -135,7 +135,7 @@ public class fpy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cb29699d", new Object[]{this, dXRootView, dXTemplateItem, str});
-        } else if (dXRootView == null || TextUtils.isEmpty(str) || dXTemplateItem == null) {
+        } else if (dXRootView == null || StringUtils.isEmpty(str) || dXTemplateItem == null) {
         } else {
             Map<String, Pools.Pool<DXRootView>> map = this.c.get(str);
             if (map == null) {
@@ -158,7 +158,7 @@ public class fpy {
         if (ipChange instanceof IpChange) {
             return (DXRootView) ipChange.ipc$dispatch("1fb6665", new Object[]{this, context, dXTemplateItem, str});
         }
-        if (dXTemplateItem == null || TextUtils.isEmpty(str) || (map = this.c.get(str)) == null || (pool = map.get(dXTemplateItem.b())) == null) {
+        if (dXTemplateItem == null || StringUtils.isEmpty(str) || (map = this.c.get(str)) == null || (pool = map.get(dXTemplateItem.b())) == null) {
             return null;
         }
         DXRootView acquire = pool.acquire();
@@ -173,7 +173,7 @@ public class fpy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (map = this.c) == null) {
+        } else if (StringUtils.isEmpty(str) || (map = this.c) == null) {
         } else {
             map.remove(str);
             this.d.remove(str);
@@ -184,7 +184,7 @@ public class fpy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6038511c", new Object[]{this, dXRootView, dXTemplateItem, str});
-        } else if (dXRootView == null || TextUtils.isEmpty(str) || dXTemplateItem == null) {
+        } else if (dXRootView == null || StringUtils.isEmpty(str) || dXTemplateItem == null) {
         } else {
             Map<String, Pools.Pool<DXRootView>> map = this.b.get(str);
             if (map == null) {
@@ -207,7 +207,7 @@ public class fpy {
         if (ipChange instanceof IpChange) {
             return (DXRootView) ipChange.ipc$dispatch("f67b80e4", new Object[]{this, context, dXTemplateItem, str});
         }
-        if (dXTemplateItem == null || TextUtils.isEmpty(str) || (map = this.b.get(str)) == null || (pool = map.get(dXTemplateItem.b())) == null) {
+        if (dXTemplateItem == null || StringUtils.isEmpty(str) || (map = this.b.get(str)) == null || (pool = map.get(dXTemplateItem.b())) == null) {
             return null;
         }
         DXRootView acquire = pool.acquire();
@@ -222,7 +222,7 @@ public class fpy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (map = this.b) == null) {
+        } else if (StringUtils.isEmpty(str) || (map = this.b) == null) {
         } else {
             map.remove(str);
         }

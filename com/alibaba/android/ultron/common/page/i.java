@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.LinearLayout;
 import com.alibaba.android.ultron.common.page.provider.UltronCommonDataProviderDataSourceType;
 import com.alibaba.android.ultron.common.page.provider.a;
@@ -337,8 +337,8 @@ public class i {
                         if (jSONObject6 != null) {
                             jSONObject5 = jSONObject6.getJSONObject(bip.a.m);
                         }
-                        boolean z2 = jSONObject5 != null && TextUtils.equals("true", jSONObject5.getString(bip.a.n));
-                        if (jSONObject5 == null || !TextUtils.equals("true", jSONObject5.getString(bip.a.l))) {
+                        boolean z2 = jSONObject5 != null && StringUtils.equals("true", jSONObject5.getString(bip.a.n));
+                        if (jSONObject5 == null || !StringUtils.equals("true", jSONObject5.getString(bip.a.l))) {
                             z = false;
                         }
                         i.a(i.this, new bil(z2, z));
@@ -347,8 +347,8 @@ public class i {
                     i.a(i.this, null);
                 }
             });
-            boolean equals = TextUtils.equals("true", this.b.getString(bip.a.c));
-            boolean equals2 = TextUtils.equals("true", this.b.getString(bip.a.d));
+            boolean equals = StringUtils.equals("true", this.b.getString(bip.a.c));
+            boolean equals2 = StringUtils.equals("true", this.b.getString(bip.a.d));
             if (equals && equals2) {
                 this.f2530a.setMode(PullBase.Mode.BOTH);
                 return;

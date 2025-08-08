@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.template.ComponentModel;
@@ -45,7 +45,7 @@ public class h extends com.taobao.android.detail.datasdk.model.viewmodel.main.b 
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.f9771a)) {
+        if (!StringUtils.isEmpty(this.f9771a)) {
             return super.isValid();
         }
         return false;

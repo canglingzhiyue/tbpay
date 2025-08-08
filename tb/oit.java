@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.b;
 import com.taobao.share.globalmodel.e;
@@ -39,7 +39,7 @@ public class oit extends oio {
             return;
         }
         a aVar = (a) bVar;
-        if (aVar.c == null || !TextUtils.equals("true", aVar.c.getString("isDisabled"))) {
+        if (aVar.c == null || !StringUtils.equals("true", aVar.c.getString("isDisabled"))) {
             e.b().j()._defineToolUrl = aVar.d().a();
             obk.a().onEvent(bVar);
         }

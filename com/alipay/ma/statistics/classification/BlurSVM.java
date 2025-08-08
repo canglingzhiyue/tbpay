@@ -1,6 +1,6 @@
 package com.alipay.ma.statistics.classification;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.ma.MaLogger;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -52,7 +52,7 @@ public class BlurSVM {
             ipChange.ipc$dispatch("53b59820", new Object[]{str});
             return;
         }
-        if (!TextUtils.isEmpty(str) && str.indexOf("#") >= 0) {
+        if (!StringUtils.isEmpty(str) && str.indexOf("#") >= 0) {
             try {
                 String[] split = str.split("#");
                 if (split != null && split.length >= 9) {

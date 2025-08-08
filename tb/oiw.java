@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,7 +63,7 @@ public class oiw extends oio {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3095705c", new Object[]{this, context, bVar, new Integer(i), bVar2})).booleanValue();
         }
-        return bVar != null && TextUtils.equals((bVar == null ? ComponentType.CONTACT_ITEM : bVar.c()).desc, ComponentType.CHANNEL_ITEM.desc);
+        return bVar != null && StringUtils.equals((bVar == null ? ComponentType.CONTACT_ITEM : bVar.c()).desc, ComponentType.CHANNEL_ITEM.desc);
     }
 
     @Override // tb.oio
@@ -78,7 +78,7 @@ public class oiw extends oio {
             this.b = (b) bVar2.f19682a;
         }
         String str = (bVar == null ? ComponentType.CONTACT_ITEM : bVar.c()).desc;
-        if (bVar == null || !TextUtils.equals(str, ComponentType.CHANNEL_ITEM.desc)) {
+        if (bVar == null || !StringUtils.equals(str, ComponentType.CHANNEL_ITEM.desc)) {
             return;
         }
         if (nyk.b(e.b().j().businessId)) {
@@ -145,7 +145,7 @@ public class oiw extends oio {
         oig.a(bVar.b(), null);
         AnalyticsUtil.traceViewClickOthers(bVar, com.taobao.share.globalmodel.e.b().j().url);
         if (this.b != null) {
-            if (TextUtils.equals(ShareTargetType.Share2Copy.getValue(), bVar.b())) {
+            if (StringUtils.equals(ShareTargetType.Share2Copy.getValue(), bVar.b())) {
                 this.b.e().d();
                 this.b.e().i();
                 new Handler().postDelayed(new Runnable() { // from class: tb.oiw.2
@@ -165,7 +165,7 @@ public class oiw extends oio {
                 return;
             }
             b bVar2 = this.b;
-            if (TextUtils.equals(ShareTargetType.Share2QRCode.getValue(), bVar.b()) || TextUtils.equals(ShareTargetType.Share2ScanCode.getValue(), bVar.b())) {
+            if (StringUtils.equals(ShareTargetType.Share2QRCode.getValue(), bVar.b()) || StringUtils.equals(ShareTargetType.Share2ScanCode.getValue(), bVar.b())) {
                 z = false;
             }
             bVar2.b = z;
@@ -186,7 +186,7 @@ public class oiw extends oio {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                 } else if (oiw.a(oiw.this) == null) {
                 } else {
-                    if ((TextUtils.equals(ShareTargetType.Share2Copy.getValue(), bVar.b()) && a.c) || a.d) {
+                    if ((StringUtils.equals(ShareTargetType.Share2Copy.getValue(), bVar.b()) && a.c) || a.d) {
                         oup.b(bVar.b(), "code");
                         return;
                     }

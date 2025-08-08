@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONObject;
@@ -258,7 +258,7 @@ public final class TMSCalendarBridge implements com.taobao.themis.kernel.ability
         }
         if ((apiContext != null ? apiContext.a() : null) == null || apiContext.c() == null) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.UNKNOWN_ERROR);
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             Ref.ObjectRef objectRef = new Ref.ObjectRef();
@@ -320,7 +320,7 @@ public final class TMSCalendarBridge implements com.taobao.themis.kernel.ability
         q.d(title, "title");
         if ((apiContext != null ? apiContext.a() : null) == null || apiContext.c() == null) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.UNKNOWN_ERROR);
-        } else if (TextUtils.isEmpty(startDate) || TextUtils.isEmpty(endDate) || TextUtils.isEmpty(title)) {
+        } else if (StringUtils.isEmpty(startDate) || StringUtils.isEmpty(endDate) || StringUtils.isEmpty(title)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             Activity a2 = apiContext.a();
@@ -393,7 +393,7 @@ public final class TMSCalendarBridge implements com.taobao.themis.kernel.ability
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str3 = n.a("\n            " + str3 + "\n            " + str2 + "\n            ");
         }
         this.f22636a = builder.setTitle(str).setMessage(str3).setPositiveButton("同意", onClickListener).setNegativeButton("拒绝", onClickListener2).create();

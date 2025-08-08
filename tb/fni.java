@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.d;
@@ -69,7 +69,7 @@ public class fni implements Runnable {
             } else {
                 String b = a2.b().b();
                 fux.a("DinamicX", "DinamicX", "asyncCreateTemplateView fail:\n" + b);
-                if (TextUtils.isEmpty(b) || (!b.contains(com.taobao.android.dinamic.view.a.ERROR_CODE_TEMPLATE_FILE_LOST) && !b.contains(com.taobao.android.dinamic.view.a.ERROR_CODE_TEMPLATE_NOT_FOUND))) {
+                if (StringUtils.isEmpty(b) || (!b.contains(com.taobao.android.dinamic.view.a.ERROR_CODE_TEMPLATE_FILE_LOST) && !b.contains(com.taobao.android.dinamic.view.a.ERROR_CODE_TEMPLATE_NOT_FOUND))) {
                     if (dinamicTemplate != null) {
                         dXTemplateItem = a(dinamicTemplate);
                     }
@@ -91,7 +91,7 @@ public class fni implements Runnable {
         try {
             DXTemplateItem dXTemplateItem = new DXTemplateItem();
             dXTemplateItem.f11925a = dinamicTemplate.name;
-            if (!TextUtils.isEmpty(dinamicTemplate.version)) {
+            if (!StringUtils.isEmpty(dinamicTemplate.version)) {
                 dXTemplateItem.b = Long.parseLong(dinamicTemplate.version);
             } else {
                 dXTemplateItem.b = -1L;

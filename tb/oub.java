@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
 import com.taobao.share.globalmodel.c;
@@ -96,7 +96,7 @@ public abstract class oub implements b.InterfaceC0815b, b.a, nze {
         }
         this.mIsHasInitConfigData = true;
         long currentTimeMillis = System.currentTimeMillis();
-        tBShareContent.activityUrl = TextUtils.isEmpty(str4) ? "" : str4;
+        tBShareContent.activityUrl = StringUtils.isEmpty(str4) ? "" : str4;
         this.mShareContext.a(tBShareContent);
         AnalyticsUtil.traceShowShareView(tBShareContent);
         com.taobao.android.share.resource.a.a().a(com.taobao.android.share.resource.a.KEY_SHAREPANELGETSHARECONFIGEND);

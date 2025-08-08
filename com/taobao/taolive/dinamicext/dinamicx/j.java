@@ -134,7 +134,7 @@ public class j extends DXWidgetNode {
             r8.setTag(r7)
         L28:
             java.lang.String r7 = r6.c
-            boolean r7 = android.text.TextUtils.isEmpty(r7)
+            boolean r7 = android.text.StringUtils.isEmpty(r7)
             if (r7 != 0) goto L6e
             java.lang.String r7 = r6.d     // Catch: java.lang.Exception -> L3f
             int r7 = tb.prf.a(r7)     // Catch: java.lang.Exception -> L3f

@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.RelativeLayout;
@@ -99,10 +99,10 @@ public class d extends b<eph> {
             return;
         }
         String str = ephVar.f27506a;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.l.setTextColor(com.taobao.android.detail.core.utils.c.a(str));
         }
-        if (!TextUtils.isEmpty(ephVar.d)) {
+        if (!StringUtils.isEmpty(ephVar.d)) {
             this.k.setBackgroundColor(com.taobao.android.detail.core.utils.c.a(ephVar.d));
         }
         String str2 = ephVar.h;
@@ -116,10 +116,10 @@ public class d extends b<eph> {
             this.k.setPadding(0, 0, 0, epo.b(i));
         }
         String str3 = ephVar.b;
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.m.setBackgroundColor(com.taobao.android.detail.core.utils.c.a(str3));
         }
-        if (!TextUtils.isEmpty(ephVar.f)) {
+        if (!StringUtils.isEmpty(ephVar.f)) {
             this.n.setVisibility(0);
             this.n.setText("큚");
             this.o.setText(ephVar.f);
@@ -131,7 +131,7 @@ public class d extends b<eph> {
         }
         this.l.setText(ephVar.c);
         String str4 = ephVar.e;
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             this.p.setVisibility(8);
             return;
         }
@@ -176,15 +176,15 @@ public class d extends b<eph> {
         } else {
             a(this.g);
             String str = ephVar.f27506a;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.l.setTextColor(com.taobao.android.detail.core.utils.c.a(str));
             }
             String str2 = ephVar.b;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.m.setBackgroundColor(com.taobao.android.detail.core.utils.c.a(str2));
             }
             String str3 = ephVar.c;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 this.l.setText(str3);
             }
             d(ephVar);
@@ -225,7 +225,7 @@ public class d extends b<eph> {
             return;
         }
         DetailImageView detailImageView = (DetailImageView) this.q.findViewById(R.id.divider_logo);
-        if (!TextUtils.isEmpty(ephVar.e)) {
+        if (!StringUtils.isEmpty(ephVar.e)) {
             epj.b().a(ephVar.e, detailImageView, new epl.a().a(true).a());
             detailImageView.setVisibility(0);
         } else {
@@ -234,10 +234,10 @@ public class d extends b<eph> {
         String str = ephVar.c == null ? "" : ephVar.c;
         TextView textView = (TextView) this.q.findViewById(R.id.divider_text);
         textView.setText(str);
-        if (!TextUtils.isEmpty(ephVar.f27506a)) {
+        if (!StringUtils.isEmpty(ephVar.f27506a)) {
             textView.setTextColor(com.taobao.android.detail.core.utils.c.a(ephVar.f27506a));
         }
-        if (TextUtils.isEmpty(ephVar.d)) {
+        if (StringUtils.isEmpty(ephVar.d)) {
             return;
         }
         this.q.setBackgroundColor(com.taobao.android.detail.core.utils.c.a(ephVar.d));

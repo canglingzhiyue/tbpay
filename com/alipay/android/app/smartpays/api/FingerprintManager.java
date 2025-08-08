@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.base.SPTaskHelper;
 import com.alipay.android.app.safepaylog.utils.LogUtils;
 import com.alipay.android.app.smartpays.api.callback.IFingerprintCallback;
@@ -701,7 +701,7 @@ public class FingerprintManager {
         }
         IResourceLoader a2 = a(activity);
         String str = fingerprintRequest.mTipsMsg;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = activity.getString(a2.getStringId("safepay_fp_tips"));
         }
         fingerprintDialog.setResourceLoader(a2);

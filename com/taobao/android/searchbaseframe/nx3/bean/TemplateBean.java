@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.nx3.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.e;
 import java.io.Serializable;
@@ -79,7 +79,7 @@ public class TemplateBean implements Serializable {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(String.format("%s\n    %s\n    %s", getFileName(), this.url, this.md5));
-        if (TextUtils.isEmpty(this.dItemType)) {
+        if (StringUtils.isEmpty(this.dItemType)) {
             str = "";
         } else {
             str = "    dItemType: " + this.dItemType;

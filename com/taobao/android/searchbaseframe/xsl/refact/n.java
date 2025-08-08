@@ -1,7 +1,7 @@
 package com.taobao.android.searchbaseframe.xsl.refact;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -60,7 +60,7 @@ public final class n {
             return ((Number) ipChange.ipc$dispatch("6635bcf1", new Object[]{this, str, jSONObject})).intValue();
         }
         String string = jSONObject.getString(str);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return 0;
         }
         try {

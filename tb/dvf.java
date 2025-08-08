@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.android.cachecleaner.monitor.info.CacheOverviewInfo;
@@ -53,7 +53,7 @@ public abstract class dvf implements b.a, b.InterfaceC0360b, c.b {
         if (aVar == null) {
             return false;
         }
-        return TextUtils.equals(aVar.getName(), dvq.a()) || TextUtils.equals(aVar.path(), dvq.b()) || TextUtils.equals(aVar.path(), dvq.c());
+        return StringUtils.equals(aVar.getName(), dvq.a()) || StringUtils.equals(aVar.path(), dvq.b()) || StringUtils.equals(aVar.path(), dvq.c());
     }
 
     public void a(Map<String, Long> map, a aVar, long j) {

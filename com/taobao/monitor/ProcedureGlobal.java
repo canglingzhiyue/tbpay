@@ -3,7 +3,7 @@ package com.taobao.monitor;
 import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.procedure.l;
 import com.taobao.monitor.procedure.q;
@@ -65,7 +65,7 @@ public class ProcedureGlobal {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c22", new Object[]{this, str})).floatValue();
         }
-        if (TextUtils.isEmpty(str) || (f = this.e.get(str)) == null || f.floatValue() < 0.0f || f.floatValue() > 1.0f) {
+        if (StringUtils.isEmpty(str) || (f = this.e.get(str)) == null || f.floatValue() < 0.0f || f.floatValue() > 1.0f) {
             return 1.0f;
         }
         return f.floatValue();
@@ -79,7 +79,7 @@ public class ProcedureGlobal {
         }
         try {
             this.e.clear();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             String[] split = str.split(",");
@@ -88,7 +88,7 @@ public class ProcedureGlobal {
             }
             for (String str2 : split) {
                 String[] split2 = str2.split(":");
-                if (split2.length == 2 && !TextUtils.isEmpty(split2[0]) && !TextUtils.isEmpty(split2[1])) {
+                if (split2.length == 2 && !StringUtils.isEmpty(split2[0]) && !StringUtils.isEmpty(split2[1])) {
                     this.e.put(split2[0], Float.valueOf(a(split2[1], 1.0f)));
                     mpi.c("ProcedureGlobal", split2[0], split2[1]);
                 }
@@ -104,7 +104,7 @@ public class ProcedureGlobal {
             return ((Number) ipChange.ipc$dispatch("8123a1be", new Object[]{str, new Float(f)})).floatValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Float.parseFloat(str);
             }
         } catch (NumberFormatException e) {

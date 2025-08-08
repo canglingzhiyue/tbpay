@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.taobao.adapter.extension.tinct;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.umf.datamodel.protocol.ultron.UltronProtocol;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
@@ -61,20 +61,20 @@ public final class a extends aso implements axy {
         String string = jSONObject.getString("changeCode");
         String string2 = jSONObject.getString("page");
         JSONArray jSONArray = jSONObject.getJSONArray("config");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || bau.a(jSONArray)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || bau.a(jSONArray)) {
             return;
         }
         this.f25572a.update("aura.userMark.dyeingInfo.globalData.key", jSONObject.toJSONString());
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject2 = jSONArray.getJSONObject(i);
             String string3 = jSONObject2.getString("businessCode");
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 String string4 = jSONObject2.getString("groupCode");
-                if (TextUtils.isEmpty(string4)) {
+                if (StringUtils.isEmpty(string4)) {
                     string4 = "aura_default";
                 }
                 String string5 = jSONObject2.getString("isGray");
-                if (TextUtils.isEmpty(string5)) {
+                if (StringUtils.isEmpty(string5)) {
                     string5 = "true";
                 }
                 bga.c.a(string4, string2, string3, string, Boolean.valueOf(string5).booleanValue());
@@ -93,7 +93,7 @@ public final class a extends aso implements axy {
             return null;
         }
         final String str = (String) this.f25572a.get("aura.userMark.dyeingInfo.globalData.key", String.class);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new HashMap<String, String>() { // from class: com.alibaba.android.aura.taobao.adapter.extension.tinct.AURAUserMarkTinctExtension$1
                 {
                     a.this = this;

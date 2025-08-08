@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -84,7 +84,7 @@ public class bm extends DXImageWidgetNode {
         if (this.decidedUrl != null) {
             str = this.decidedUrl;
         } else if (needHandleDark(getDXRuntimeContext())) {
-            if (!TextUtils.isEmpty(getDarkImageUrl())) {
+            if (!StringUtils.isEmpty(getDarkImageUrl())) {
                 str = getDarkImageUrl();
             } else {
                 str = this.imageUrl;
@@ -100,7 +100,7 @@ public class bm extends DXImageWidgetNode {
         } catch (Throwable th) {
             com.taobao.android.dinamicx.exception.a.b(th);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             decidedUrlWithExpectedSize.m = true;
             int layoutWidth = getLayoutWidth();
             int layoutHeight = getLayoutHeight();
@@ -180,7 +180,7 @@ public class bm extends DXImageWidgetNode {
             }
         } else if (this.localImageDrawable != null) {
             setLocalImage(imageView, this.localImageDrawable);
-        } else if (!TextUtils.isEmpty(getImageName())) {
+        } else if (!StringUtils.isEmpty(getImageName())) {
             setLocalRes(imageView, getImageName());
         } else {
             imageView.setImageDrawable(null);

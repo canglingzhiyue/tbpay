@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,7 +45,7 @@ public class liw {
             } else {
                 String string = jSONObject4.getString("utLogMap");
                 try {
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         jSONObject3.put(kox.X_OBJECT_ID, (Object) JSONObject.parseObject(URLDecoder.decode(string, "utf-8")).getString(kox.X_OBJECT_ID));
                     }
                 } catch (UnsupportedEncodingException e) {
@@ -146,7 +146,7 @@ public class liw {
             jSONObject3.put(aw.PARAM_PVID, (Object) baseSectionModel.getJSONObject("args").getString(aw.PARAM_PVID));
         }
         String a3 = a(baseSectionModel);
-        if (TextUtils.isEmpty(a3) && (a2 = a(ljsVar, baseSectionModel)) != null) {
+        if (StringUtils.isEmpty(a3) && (a2 = a(ljsVar, baseSectionModel)) != null) {
             a3 = a(a2);
         }
         if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("clickParam")) == null) {
@@ -272,7 +272,7 @@ public class liw {
             r5.<init>()
             java.lang.String r6 = "x_item_ids"
             java.lang.String r6 = r4.getString(r6)     // Catch: java.lang.Throwable -> L91
-            boolean r7 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L92
+            boolean r7 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L92
             if (r7 == 0) goto L63
             java.lang.String r7 = "x_object_id"
             java.lang.String r6 = r4.getString(r7)     // Catch: java.lang.Throwable -> L92
@@ -403,7 +403,7 @@ public class liw {
             return ((Boolean) ipChange.ipc$dispatch("63b9982b", new Object[]{jSONObject})).booleanValue();
         }
         if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("ext")) != null) {
-            if (TextUtils.equals(jSONObject2.getString("kSectionHasBxAppeared"), "1")) {
+            if (StringUtils.equals(jSONObject2.getString("kSectionHasBxAppeared"), "1")) {
                 return false;
             }
             jSONObject2.put("kSectionHasBxAppeared", "1");

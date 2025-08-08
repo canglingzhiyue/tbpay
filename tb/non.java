@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
 import com.taobao.search.common.util.q;
@@ -57,7 +57,7 @@ public class non {
         while (keys.hasNext()) {
             String next = keys.next();
             String optString = optJSONObject.optString(next);
-            if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(optString)) {
                 map.put(next, optString);
             }
         }
@@ -84,7 +84,7 @@ public class non {
             if (b != null) {
                 sb.append(b.b);
                 sb.append("/");
-                if (!TextUtils.equals(b.f31607a, "botSearch")) {
+                if (!StringUtils.equals(b.f31607a, "botSearch")) {
                     arrayList.add(b);
                 }
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
@@ -66,20 +66,20 @@ public class cqx extends NetConfig {
         }
         String b = b.b("opt_detect_error_hint", "");
         try {
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             JSONObject jSONObject = new JSONObject(b);
             String string = jSONObject.getString("blur_ratio");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.f26459a = Float.parseFloat(string);
             }
             String string2 = jSONObject.getString("blur_conf");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 this.b = Float.parseFloat(string2);
             }
             String string3 = jSONObject.getString("undersize_ratio");
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 return;
             }
             this.c = Float.parseFloat(string3);

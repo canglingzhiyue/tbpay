@@ -1,6 +1,6 @@
 package com.taobao.homepage.pop.view.container.sub;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.pop.model.pop.PopAnchorViewInfo;
@@ -117,7 +117,7 @@ public class a implements com.taobao.homepage.pop.view.container.a {
         }
         View b = kyuVar.d().b(i);
         if (b != null) {
-            return TextUtils.isEmpty(point.getItemBizCode()) ? b : com.taobao.homepage.pop.utils.b.a(b, point.getItemBizCode());
+            return StringUtils.isEmpty(point.getItemBizCode()) ? b : com.taobao.homepage.pop.utils.b.a(b, point.getItemBizCode());
         }
         c.a("PopAnchorManager ", "cardView is null");
         return null;

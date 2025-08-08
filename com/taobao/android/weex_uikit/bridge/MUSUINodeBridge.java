@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.bridge;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex.WeexInstanceImpl;
@@ -316,7 +316,7 @@ public class MUSUINodeBridge implements Serializable {
         } else if (mUSValue == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(mUSValue.getStringValue())) {
+                if (StringUtils.isEmpty(mUSValue.getStringValue())) {
                     return;
                 }
                 mUSDKInstance.enqueueTask(new o() { // from class: com.taobao.android.weex_uikit.bridge.MUSUINodeBridge.2
@@ -355,7 +355,7 @@ public class MUSUINodeBridge implements Serializable {
         } else if (mUSValue == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(mUSValue.getStringValue())) {
+                if (StringUtils.isEmpty(mUSValue.getStringValue())) {
                     return;
                 }
                 mUSDKInstance.enqueueTask(new o() { // from class: com.taobao.android.weex_uikit.bridge.MUSUINodeBridge.3

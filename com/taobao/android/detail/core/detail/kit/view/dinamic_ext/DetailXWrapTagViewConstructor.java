@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.view.dinamic_ext;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,7 +103,7 @@ public class DetailXWrapTagViewConstructor extends h implements IMTOPDataObject 
             TextView textView = null;
             if (map.containsKey("dFixedTag")) {
                 this.fixedTagString = (String) map.get("dFixedTag");
-                if (!TextUtils.isEmpty(this.fixedTagString)) {
+                if (!StringUtils.isEmpty(this.fixedTagString)) {
                     int b = epo.b(11);
                     textView = createFixedTextTag(context, this.fixedTagString, (this.containerHeight - this.contentPaddingTop) - this.contentPaddingBottom, b, this.textColor, this.tagBackgroundColor);
                 }

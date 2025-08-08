@@ -1,7 +1,7 @@
 package com.taobao.login4android.init;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.log.UserTrackAdapter;
@@ -122,7 +122,7 @@ public class LoginInitializer implements Serializable {
                     }
                     try {
                         int i = LoginSwitch.getSwitch("restore_session_launch_time_limit", 0);
-                        if (!TextUtils.isEmpty(Login.getOldUserId()) || LoginContext.getLaunchTimes() > i || !LoginSwitch.isInABTestRegion("init_login_sdk_speed_up_uninstall", 10000)) {
+                        if (!StringUtils.isEmpty(Login.getOldUserId()) || LoginContext.getLaunchTimes() > i || !LoginSwitch.isInABTestRegion("init_login_sdk_speed_up_uninstall", 10000)) {
                             return;
                         }
                         UserTrackAdapter.sendUserTrack("page_login_restore_session", "restore_session_init_speed_up", null);

@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Looper;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.lifecycle.PanguApplication;
@@ -109,7 +109,7 @@ public class PassiveLocationApplication {
                     } else {
                         PassiveLocationApplication.this.savePermissionCheckState(ndw.f31376a, PassiveLocationApplication.access$000(PassiveLocationApplication.this), "true".equalsIgnoreCase(OrangeConfig.getInstance().getConfig("tblocationcommon", "isOpenLaunchPermissionCheck", "true")));
                         String config = OrangeConfig.getInstance().getConfig("tblocationcommon", PassiveLocationApplication.USE_SERVICE, "false");
-                        if (TextUtils.isEmpty(config)) {
+                        if (StringUtils.isEmpty(config)) {
                             return;
                         }
                         PassiveLocationApplication.this.savePermissionCheckState(ndw.f31376a, PassiveLocationApplication.USE_SERVICE, "true".equals(config));

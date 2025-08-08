@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class hg extends hh {
@@ -63,7 +63,7 @@ public class hg extends hh {
     /* renamed from: a */
     public Bundle mo2009a() {
         Bundle mo2009a = super.mo2009a();
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             mo2009a.putString("ext_msg_type", this.b);
         }
         String str = this.d;
@@ -78,7 +78,7 @@ public class hg extends hh {
         if (str3 != null) {
             mo2009a.putString("ext_msg_body", str3);
         }
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             mo2009a.putString("ext_body_encode", this.g);
         }
         String str4 = this.c;
@@ -92,19 +92,19 @@ public class hg extends hh {
         if (this.f24521a) {
             mo2009a.putBoolean("ext_msg_trans", true);
         }
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             mo2009a.putString("ext_msg_seq", this.i);
         }
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             mo2009a.putString("ext_msg_mseq", this.j);
         }
-        if (!TextUtils.isEmpty(this.k)) {
+        if (!StringUtils.isEmpty(this.k)) {
             mo2009a.putString("ext_msg_fseq", this.k);
         }
         if (this.f466b) {
             mo2009a.putBoolean("ext_msg_encrypt", true);
         }
-        if (!TextUtils.isEmpty(this.l)) {
+        if (!StringUtils.isEmpty(this.l)) {
             mo2009a.putString("ext_msg_status", this.l);
         }
         return mo2009a;
@@ -136,22 +136,22 @@ public class hg extends hh {
             sb.append(hs.a(l()));
             sb.append("\"");
         }
-        if (!TextUtils.isEmpty(d())) {
+        if (!StringUtils.isEmpty(d())) {
             sb.append(" seq=\"");
             sb.append(d());
             sb.append("\"");
         }
-        if (!TextUtils.isEmpty(e())) {
+        if (!StringUtils.isEmpty(e())) {
             sb.append(" mseq=\"");
             sb.append(e());
             sb.append("\"");
         }
-        if (!TextUtils.isEmpty(f())) {
+        if (!StringUtils.isEmpty(f())) {
             sb.append(" fseq=\"");
             sb.append(f());
             sb.append("\"");
         }
-        if (!TextUtils.isEmpty(g())) {
+        if (!StringUtils.isEmpty(g())) {
             sb.append(" status=\"");
             sb.append(g());
             sb.append("\"");
@@ -169,12 +169,12 @@ public class hg extends hh {
         if (this.f24521a) {
             sb.append(" transient=\"true\"");
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             sb.append(" appid=\"");
             sb.append(c());
             sb.append("\"");
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             sb.append(" type=\"");
             sb.append(this.b);
             sb.append("\"");
@@ -190,7 +190,7 @@ public class hg extends hh {
         }
         if (this.f != null) {
             sb.append("<body");
-            if (!TextUtils.isEmpty(this.g)) {
+            if (!StringUtils.isEmpty(this.g)) {
                 sb.append(" encode=\"");
                 sb.append(this.g);
                 sb.append("\"");

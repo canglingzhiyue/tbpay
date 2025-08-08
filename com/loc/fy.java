@@ -15,7 +15,7 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.support.v4.view.MotionEventCompat;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.NetUtil;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.DPoint;
@@ -144,7 +144,7 @@ public final class fy {
     */
     public static java.lang.String a(long r4, java.lang.String r6) {
         /*
-            boolean r0 = android.text.TextUtils.isEmpty(r6)
+            boolean r0 = android.text.StringUtils.isEmpty(r6)
             if (r0 == 0) goto L9
             java.lang.String r6 = "yyyy-MM-dd HH:mm:ss"
         L9:
@@ -390,7 +390,7 @@ public final class fy {
     */
     public static boolean a(android.database.sqlite.SQLiteDatabase r13, java.lang.String r14) {
         /*
-            boolean r0 = android.text.TextUtils.isEmpty(r14)
+            boolean r0 = android.text.StringUtils.isEmpty(r14)
             r1 = 0
             if (r0 == 0) goto L8
             return r1
@@ -520,11 +520,11 @@ public final class fy {
     }
 
     public static boolean a(String str) {
-        return !TextUtils.isEmpty(str) && !"00:00:00:00:00:00".equals(str) && !"02:00:00:00:00:00".equals(str) && !str.contains(" :");
+        return !StringUtils.isEmpty(str) && !"00:00:00:00:00:00".equals(str) && !"02:00:00:00:00:00".equals(str) && !str.contains(" :");
     }
 
     public static boolean a(String str, String str2) {
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             ArrayList<String> b2 = b(str);
             String[] split = str2.toString().split("#");
             int i = 0;
@@ -574,7 +574,7 @@ public final class fy {
         String[] strArr;
         String networkOperator = telephonyManager != null ? telephonyManager.getNetworkOperator() : null;
         String[] strArr2 = {"0", "0"};
-        if (!TextUtils.isEmpty(networkOperator) && TextUtils.isDigitsOnly(networkOperator) && networkOperator.length() > 4) {
+        if (!StringUtils.isEmpty(networkOperator) && StringUtils.isDigitsOnly(networkOperator) && networkOperator.length() > 4) {
             strArr2[0] = networkOperator.substring(0, 3);
             char[] charArray = networkOperator.substring(3).toCharArray();
             int i2 = 0;
@@ -630,7 +630,7 @@ public final class fy {
 
     public static String b(Context context) {
         PackageInfo packageInfo;
-        if (!TextUtils.isEmpty(fr.j)) {
+        if (!StringUtils.isEmpty(fr.j)) {
             return fr.j;
         }
         CharSequence charSequence = null;
@@ -644,7 +644,7 @@ public final class fy {
             packageInfo = null;
         }
         try {
-            if (TextUtils.isEmpty(fr.k)) {
+            if (StringUtils.isEmpty(fr.k)) {
                 fr.k = null;
             }
         } catch (Throwable th2) {
@@ -658,16 +658,16 @@ public final class fy {
             if (charSequence != null) {
                 sb.append(charSequence.toString());
             }
-            if (!TextUtils.isEmpty(packageInfo.versionName)) {
+            if (!StringUtils.isEmpty(packageInfo.versionName)) {
                 sb.append(packageInfo.versionName);
             }
         }
         String c2 = l.c(context);
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             sb.append(",");
             sb.append(c2);
         }
-        if (!TextUtils.isEmpty(fr.k)) {
+        if (!StringUtils.isEmpty(fr.k)) {
             sb.append(",");
             sb.append(fr.k);
         }
@@ -678,7 +678,7 @@ public final class fy {
 
     public static ArrayList<String> b(String str) {
         ArrayList<String> arrayList = new ArrayList<>();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String[] split = str.split("#");
             for (int i = 0; i < split.length; i++) {
                 if (split[i].contains(",nb") || split[i].contains(",access")) {
@@ -942,10 +942,10 @@ public final class fy {
 
     public static String i(Context context) {
         String h = o.h();
-        if (TextUtils.isEmpty(h) || h.equals("00:00:00:00:00:00")) {
+        if (StringUtils.isEmpty(h) || h.equals("00:00:00:00:00:00")) {
             h = fx.a(context);
         }
-        return TextUtils.isEmpty(h) ? "00:00:00:00:00:00" : h;
+        return StringUtils.isEmpty(h) ? "00:00:00:00:00:00" : h;
     }
 
     public static boolean j(Context context) {

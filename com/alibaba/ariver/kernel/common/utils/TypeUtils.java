@@ -1,6 +1,6 @@
 package com.alibaba.ariver.kernel.common.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.mto;
@@ -32,7 +32,7 @@ public class TypeUtils {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             if (str.charAt(0) == '#') {
@@ -60,7 +60,7 @@ public class TypeUtils {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             if (str.charAt(0) == '#') {
@@ -82,7 +82,7 @@ public class TypeUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("43fb87e3", new Object[]{str})).doubleValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return mto.a.GEO_NOT_SUPPORT;
         }
         try {
@@ -98,7 +98,7 @@ public class TypeUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("19d449c0", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         try {
@@ -114,7 +114,7 @@ public class TypeUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("6eaba914", new Object[]{str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         try {
@@ -130,7 +130,7 @@ public class TypeUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1646a52a", new Object[]{str})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.0f;
         }
         try {

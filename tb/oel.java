@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.graphics.PointF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -322,7 +322,7 @@ public class oel {
             ArrayList arrayList = new ArrayList();
             for (oej oejVar3 : oegVar.g) {
                 ArrayList arrayList2 = new ArrayList();
-                if (!TextUtils.isEmpty(oejVar3.d.b)) {
+                if (!StringUtils.isEmpty(oejVar3.d.b)) {
                     arrayList2.add(a(a2, oejVar3.d.b));
                 }
                 if (oejVar3.e != null) {
@@ -343,9 +343,9 @@ public class oel {
             animatorSet.playTogether(arrayList);
             oejVar = oejVar2;
         } else {
-            if (oegVar.h != null || !TextUtils.isEmpty(oegVar.f.b) || dVar != null) {
+            if (oegVar.h != null || !StringUtils.isEmpty(oegVar.f.b) || dVar != null) {
                 ArrayList arrayList3 = new ArrayList();
-                if (!TextUtils.isEmpty(oegVar.f.b)) {
+                if (!StringUtils.isEmpty(oegVar.f.b)) {
                     arrayList3.add(a(a2, oegVar.f.b));
                 }
                 arrayList3.addAll(b(a2, oegVar.h, dVar, oeb.cf()));
@@ -787,7 +787,7 @@ public class oel {
         if (ipChange instanceof IpChange) {
             return (Interpolator) ipChange.ipc$dispatch("757bb07c", new Object[]{oegVar});
         }
-        return a((oegVar == null || oegVar.f == null || TextUtils.isEmpty(oegVar.f.f31972a)) ? "linear" : oegVar.f.f31972a);
+        return a((oegVar == null || oegVar.f == null || StringUtils.isEmpty(oegVar.f.f31972a)) ? "linear" : oegVar.f.f31972a);
     }
 
     public static Interpolator a(String str) {

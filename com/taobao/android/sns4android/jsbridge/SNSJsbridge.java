@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.base.helper.BroadCastHelper;
 import com.ali.user.mobile.log.ApiReferer;
 import com.ali.user.mobile.log.UserTrackAdapter;
@@ -99,7 +99,7 @@ public class SNSJsbridge extends e {
                 return;
             }
             final Properties properties = new Properties();
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 properties.put("type", string);
             }
             Activity activity = (Activity) this.mContext;
@@ -155,7 +155,7 @@ public class SNSJsbridge extends e {
                     LoginTLogAdapter.e(ApiReferer.TAG, "auth jsbridge onError:" + i + "," + str3);
                     SNSJsbridge.mWeixinListener = null;
                     SNSJsbridge sNSJsbridge = SNSJsbridge.this;
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = SNSJsbridge.AUTH_FAIL_MESSAGE;
                     }
                     SNSJsbridge.access$100(sNSJsbridge, i, str3);

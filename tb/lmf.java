@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -116,7 +116,7 @@ public class lmf {
         if (this.h == null) {
             this.h = (TUrlImageView) this.b.findViewById(R.id.iv_play_btn);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             i = fpr.a(this.f30704a, str, 0);
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.h.getLayoutParams();
@@ -133,7 +133,7 @@ public class lmf {
         if (this.h == null) {
             this.h = (TUrlImageView) this.b.findViewById(R.id.iv_play_btn);
         }
-        if (this.h == null || TextUtils.isEmpty(str)) {
+        if (this.h == null || StringUtils.isEmpty(str)) {
             return;
         }
         int a2 = fpr.a(this.f30704a, str, 0);
@@ -231,7 +231,7 @@ public class lmf {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a();
         }
         onq.a(this.d, str, null, lfx.GUESS_IMAGE_STRATEGY_CONFIG);

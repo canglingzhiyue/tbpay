@@ -6,7 +6,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.apmobilesecuritysdk.face.APSecuritySdk;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.homepage.a;
@@ -43,7 +43,7 @@ public final class cjv {
             hashMap.put("wifiName", "-1");
             hashMap.put("wifiMac", "00");
             String str = (String) hashMap.get("wifiName");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str = str.replaceAll(";", "").replaceAll(riy.MOD, "");
             }
             jSONObject.put("wifiName", a(str));
@@ -57,7 +57,7 @@ public final class cjv {
 
     private static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace(";", "；").replace("&", "");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace(";", "；").replace("&", "");
     }
 
     private static Map<String, String> b(Context context) {

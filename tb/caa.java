@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.config.model.predeal.PreDealCustomEventParams;
@@ -252,7 +252,7 @@ public class caa {
         } else if (dVar == null) {
         } else {
             try {
-                if (dVar.y() != null && !TextUtils.isEmpty(str) && (y = dVar.y()) != null && y.source == 4) {
+                if (dVar.y() != null && !StringUtils.isEmpty(str) && (y = dVar.y()) != null && y.source == 4) {
                     BaseConfigItem x = dVar.x();
                     PreDealCustomEventParams preDealCustomEventParams = y.getPreDealCustomEventParams();
                     if (preDealCustomEventParams == null || !preDealCustomEventParams.needTrack() || (trackMap = preDealCustomEventParams.getTrackMap()) == null) {
@@ -301,7 +301,7 @@ public class caa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             c.b("sdkLifeCycle", "", "UCPActionTrack.UCPFragmentPageSwitchTrack.pageUri=" + str);
             if (!f26218a.compareAndSet(false, true)) {

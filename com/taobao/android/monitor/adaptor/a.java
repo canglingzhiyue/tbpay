@@ -3,7 +3,7 @@ package com.taobao.android.monitor.adaptor;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import com.taobao.tlog.adapter.d;
@@ -28,11 +28,11 @@ public final class a {
                 num = num2.toString();
             }
             String str = (String) a(map, "bizType", String.class, "FEEDBACK");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "FEEDBACK";
             }
             String str2 = (String) a(map, "bizCode", String.class, "taobao4android_feedback_21646297");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "taobao4android_feedback_21646297";
             }
             HashMap hashMap = new HashMap(3);

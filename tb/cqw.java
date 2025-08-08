@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONArray;
@@ -449,11 +449,11 @@ public final class cqw extends igj<FrameLayout, IrpDatasource> {
         linkedHashMap.put("nativeReq", "true");
         linkedHashMap.put("subSearchType", "imageText_v2");
         String p = m().p();
-        if (!TextUtils.isEmpty(p)) {
+        if (!StringUtils.isEmpty(p)) {
             linkedHashMap.put("shopId", p);
         }
         String q = m().q();
-        if (!TextUtils.isEmpty(q)) {
+        if (!StringUtils.isEmpty(q)) {
             linkedHashMap.put("sellerId", q);
         }
         String f = m().f("cat");
@@ -472,7 +472,7 @@ public final class cqw extends igj<FrameLayout, IrpDatasource> {
             Activity g = g();
             Uri b = m().b();
             String a2 = a(g, b != null ? b.toString() : null);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 linkedHashMap.put("meta_info", a2);
             }
         }
@@ -516,7 +516,7 @@ public final class cqw extends igj<FrameLayout, IrpDatasource> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{this, context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         Uri uri = Uri.parse(str);
@@ -526,9 +526,9 @@ public final class cqw extends igj<FrameLayout, IrpDatasource> {
             if (str == null) {
                 q.a();
             }
-        } else if (TextUtils.equals(uri.getScheme(), "file")) {
+        } else if (StringUtils.equals(uri.getScheme(), "file")) {
             str = uri.getPath();
-        } else if (TextUtils.equals(uri.getScheme(), "content")) {
+        } else if (StringUtils.equals(uri.getScheme(), "content")) {
             try {
                 Cursor query = MediaStore.Images.Media.query(context.getContentResolver(), uri, new String[]{"_data"}, null, null, null);
                 if (query != null && query.moveToFirst() && query.getCount() != 0) {
@@ -543,7 +543,7 @@ public final class cqw extends igj<FrameLayout, IrpDatasource> {
         } else {
             str = str2;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -554,19 +554,19 @@ public final class cqw extends igj<FrameLayout, IrpDatasource> {
             jSONObject.put("path", str);
             ExifInterface exifInterface = new ExifInterface(str);
             String attribute = exifInterface.getAttribute(android.support.media.ExifInterface.TAG_MAKE);
-            if (!TextUtils.isEmpty(attribute)) {
+            if (!StringUtils.isEmpty(attribute)) {
                 jSONObject.put("manufacturer", attribute);
             }
             String attribute2 = exifInterface.getAttribute(android.support.media.ExifInterface.TAG_MODEL);
-            if (!TextUtils.isEmpty(attribute2)) {
+            if (!StringUtils.isEmpty(attribute2)) {
                 jSONObject.put(MspDBHelper.BizEntry.COLUMN_NAME_DEVICE, attribute2);
             }
             String attribute3 = exifInterface.getAttribute(android.support.media.ExifInterface.TAG_IMAGE_WIDTH);
-            if (!TextUtils.isEmpty(attribute3)) {
+            if (!StringUtils.isEmpty(attribute3)) {
                 jSONObject.put("width", attribute3);
             }
             String attribute4 = exifInterface.getAttribute(android.support.media.ExifInterface.TAG_IMAGE_LENGTH);
-            if (!TextUtils.isEmpty(attribute4)) {
+            if (!StringUtils.isEmpty(attribute4)) {
                 jSONObject.put("height", attribute4);
             }
             if (exifInterface.getLatLong(new float[2])) {

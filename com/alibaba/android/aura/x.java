@@ -1,7 +1,7 @@
 package com.alibaba.android.aura;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collection;
 import java.util.Queue;
@@ -49,7 +49,7 @@ public class x {
             a2.a(d);
         }
         String e = wVar.e();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             if (!f2220a && e == null) {
                 throw new AssertionError();
             }
@@ -104,10 +104,10 @@ public class x {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2c404a19", new Object[]{this, str, wVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             d("preLoadAURAInstance failed, bizName is null");
             return true;
-        } else if (!TextUtils.isEmpty(wVar.e())) {
+        } else if (!StringUtils.isEmpty(wVar.e())) {
             return false;
         } else {
             d("preLoadAURAInstance failed, configAssetFileName is null");

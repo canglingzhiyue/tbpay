@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.template;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.template.download.DXTemplateItem;
@@ -141,7 +141,7 @@ public final class g implements fve {
         if (ipChange instanceof IpChange) {
             return (IDMComponent) ipChange.ipc$dispatch("14b9cf67", new Object[]{this, list, str});
         }
-        if (list != null && !TextUtils.isEmpty(str)) {
+        if (list != null && !StringUtils.isEmpty(str)) {
             for (IDMComponent iDMComponent : list) {
                 if (iDMComponent != null && (containerInfo = iDMComponent.getContainerInfo()) != null) {
                     String string = containerInfo.getString("name");

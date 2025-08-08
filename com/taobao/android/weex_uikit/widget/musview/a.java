@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.widget.musview;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -114,7 +114,7 @@ public class a {
             ((MUSView) renderRoot).setRecycleWhenDetach(false);
         }
         String str = (String) uINode.getAttribute("bundleUrl");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = mUSDKInstance.getInstanceEnv("bundleUrl");
         }
         mUSUrlHost.mount(uINode, (String) uINode.getAttribute(MusWeex.ATTR_SCRIPT_URL), str, (JSONObject) uINode.getAttribute("data"), (JSONObject) uINode.getAttribute("env"), c0623a);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import anet.channel.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
@@ -88,7 +88,7 @@ public class mfm {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
         String a2 = a(str);
-        return TextUtils.isEmpty(a2) ? d(str, str2) : a2;
+        return StringUtils.isEmpty(a2) ? d(str, str2) : a2;
     }
 
     public static void a(final Map<String, String> map) {
@@ -153,7 +153,7 @@ public class mfm {
         try {
             if (x()) {
                 String a2 = a(str, str2, str3);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     String str5 = b;
                     Log.e(str5, "ab使用测试工具持久化值 " + str + "_" + str2 + "_" + str3 + " value " + a2);
                     return a2;

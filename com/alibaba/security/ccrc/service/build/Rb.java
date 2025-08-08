@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service.build;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.service.CcrcService;
 import com.alibaba.security.wukong.model.multi.file.AudioFileRiskSample;
@@ -36,7 +36,7 @@ public class Rb extends Ub<AudioFileRiskSample> {
             return;
         }
         String filePath = audioFileRiskSample.getFilePath();
-        if (TextUtils.isEmpty(filePath)) {
+        if (StringUtils.isEmpty(filePath)) {
             if (this.e != null) {
                 a(ccrcService, "pcm file path is empty", audioFileRiskSample);
                 this.e.onFileDetectFail(audioFileRiskSample.getSampleId(), "pcm file path is empty");

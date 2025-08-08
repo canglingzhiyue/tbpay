@@ -2,7 +2,7 @@ package com.taobao.activelocation.report.service;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.location.common.TBLocationDTO;
@@ -81,7 +81,7 @@ public class ActiveReportService extends IntentService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d8033c25", new Object[]{intent});
-        } else if ("off".equalsIgnoreCase(OrangeConfig.getInstance().getConfig("gps", "activeReport", "off")) || intent == null || TextUtils.isEmpty(intent.getAction())) {
+        } else if ("off".equalsIgnoreCase(OrangeConfig.getInstance().getConfig("gps", "activeReport", "off")) || intent == null || StringUtils.isEmpty(intent.getAction())) {
         } else {
             try {
                 z = intent.getBooleanExtra(REPORT_TIME_THRESHOLD_CKECKED, false);
@@ -156,7 +156,7 @@ public class ActiveReportService extends IntentService {
         a(lbsdto);
         try {
             String jSONString = JSON.toJSONString(lbsdto);
-            if (TextUtils.isEmpty(jSONString)) {
+            if (StringUtils.isEmpty(jSONString)) {
                 return;
             }
             jSONArray.put(new JSONObject(jSONString));
@@ -172,7 +172,7 @@ public class ActiveReportService extends IntentService {
         }
         dcu dcuVar = new dcu(Globals.getApplication());
         dcuVar.registerRemoteListener(new DataReportListener());
-        if (jSONArray == null || jSONArray.length() <= 0 || TextUtils.isEmpty(jSONArray.toString())) {
+        if (jSONArray == null || jSONArray.length() <= 0 || StringUtils.isEmpty(jSONArray.toString())) {
             return;
         }
         dcuVar.a(jSONArray.toString());
@@ -274,7 +274,7 @@ public class ActiveReportService extends IntentService {
         } else if (lbsdto != null && lbsdto.wifis != null) {
             for (LBSWifiDTO lBSWifiDTO : lbsdto.wifis) {
                 String ssid = lBSWifiDTO.getSsid();
-                if (!TextUtils.isEmpty(ssid)) {
+                if (!StringUtils.isEmpty(ssid)) {
                     lBSWifiDTO.setSsid(new String(android.taobao.util.a.a(ssid.getBytes())));
                 }
             }

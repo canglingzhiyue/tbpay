@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -399,7 +399,7 @@ public class i implements com.taobao.mytaobao.base.e, mtu {
         nwv.b("beforeInitData 6.55");
         this.b.setBasementView(this.d);
         tUrlImageView.setImageUrl("https://gw.alicdn.com/imgextra/i3/O1CN0102AGvY1sfhbYFAQhR_!!6000000005794-2-tps-78-78.png");
-        if (TextUtils.equals("2", com.taobao.mytaobao.base.c.o()) || TextUtils.equals("3", com.taobao.mytaobao.base.c.o())) {
+        if (StringUtils.equals("2", com.taobao.mytaobao.base.c.o()) || StringUtils.equals("3", com.taobao.mytaobao.base.c.o())) {
             i2 = R.drawable.mtb_basement_placeholder2;
         } else {
             i2 = R.drawable.mtb_basement_placeholder;
@@ -739,7 +739,7 @@ public class i implements com.taobao.mytaobao.base.e, mtu {
         } else if (3 != i || this.o) {
         } else {
             String c = com.taobao.mytaobao.basement.a.c();
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 b(c);
             } else {
                 mtx.b("【错误】检查容器状态，weexUrl=null");
@@ -1222,7 +1222,7 @@ public class i implements com.taobao.mytaobao.base.e, mtu {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                 return;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("spm-url", str2);
                 UTAnalytics.getInstance().getDefaultTracker().updateNextPageProperties(hashMap);

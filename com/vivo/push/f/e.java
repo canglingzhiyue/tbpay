@@ -3,7 +3,7 @@ package com.vivo.push.f;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 import com.vivo.push.model.UPSNotificationMessage;
 import com.vivo.push.util.NotifyAdapterUtil;
@@ -61,7 +61,7 @@ public final class e extends aa {
         hashMap.put("messageID", String.valueOf(pVar.e()));
         hashMap.put("platform", this.f24241a.getPackageName());
         String a3 = com.vivo.push.restructure.a.a().e().a();
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             hashMap.put("remoteAppId", a3);
         }
         xVar.a(hashMap);
@@ -104,12 +104,12 @@ public final class e extends aa {
             } catch (Exception e) {
                 com.vivo.push.util.u.a("NotifyOpenClientTask", "open activity error : ".concat(String.valueOf(skipContent2)), e);
             }
-            if (!TextUtils.isEmpty(str2) && !this.f24241a.getPackageName().equals(str2)) {
+            if (!StringUtils.isEmpty(str2) && !this.f24241a.getPackageName().equals(str2)) {
                 com.vivo.push.util.u.a("NotifyOpenClientTask", "open activity error : local pkgName is " + this.f24241a.getPackageName() + "; but remote pkgName is " + parseUri.getPackage());
                 return;
             }
             String packageName = parseUri.getComponent() == null ? null : parseUri.getComponent().getPackageName();
-            if (!TextUtils.isEmpty(packageName) && !this.f24241a.getPackageName().equals(packageName)) {
+            if (!StringUtils.isEmpty(packageName) && !this.f24241a.getPackageName().equals(packageName)) {
                 com.vivo.push.util.u.a("NotifyOpenClientTask", "open activity component error : local pkgName is " + this.f24241a.getPackageName() + "; but remote pkgName is " + parseUri.getPackage());
                 return;
             }

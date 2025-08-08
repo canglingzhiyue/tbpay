@@ -1,7 +1,7 @@
 package com.taobao.share.taopassword.busniess.mtop.request;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -146,11 +146,11 @@ public class PasswordCheckRequest implements IRemoteBaseListener, nzw {
         cVar.t = map.get("weakShow");
         cVar.v = map.get("shareDataTrack");
         String str = map.get("chatPopMap");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             cVar.L = (com.taobao.share.taopassword.busniess.model.a) JSON.parseObject(str, com.taobao.share.taopassword.busniess.model.a.class);
             if (cVar.L != null) {
                 com.taobao.share.taopassword.busniess.model.a aVar = cVar.L;
-                if (TextUtils.isEmpty(cVar.C) || !"true".equals(cVar.C)) {
+                if (StringUtils.isEmpty(cVar.C) || !"true".equals(cVar.C)) {
                     z = false;
                 }
                 aVar.f19655a = z;

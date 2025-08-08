@@ -1,7 +1,7 @@
 package com.taobao.infoflow.taobao.subservice.biz.prefetchservice;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ut.abtest.UTABTest;
@@ -119,7 +119,7 @@ public class PrefetchServiceImpl implements h.b, IPrefetchService {
         Variation variation = activate == null ? null : activate.getVariation("prefetchItem");
         String valueAsString = variation == null ? null : variation.getValueAsString("");
         ldf.d(TAG, "当前命中的实验配置: " + valueAsString + ", component=AB_HomePage_IconClickPrefetch, module=" + str + ", args=prefetchItem");
-        if (TextUtils.isEmpty(valueAsString)) {
+        if (StringUtils.isEmpty(valueAsString)) {
             return null;
         }
         try {
@@ -127,7 +127,7 @@ public class PrefetchServiceImpl implements h.b, IPrefetchService {
             if (parseObject == null) {
                 return Collections.emptyList();
             }
-            if (!parseObject.isEmpty() && (parseObject.get("type") instanceof String) && TextUtils.equals(parseObject.getString("type"), "zcache") && (parseObject.get("resources") instanceof List)) {
+            if (!parseObject.isEmpty() && (parseObject.get("type") instanceof String) && StringUtils.equals(parseObject.getString("type"), "zcache") && (parseObject.get("resources") instanceof List)) {
                 return (List) parseObject.get("resources");
             }
             return Collections.emptyList();
@@ -142,7 +142,7 @@ public class PrefetchServiceImpl implements h.b, IPrefetchService {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2750fc91", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ldf.d(TAG, "异常：curSection=" + str);
             return false;
         }
@@ -152,7 +152,7 @@ public class PrefetchServiceImpl implements h.b, IPrefetchService {
             return false;
         }
         String string = iConfigService.getString("htapNavPrefetchEnabledSections", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ldf.d(TAG, "Orange未配置任何section启用预取：orangeConfig=" + string);
             return false;
         }
@@ -172,7 +172,7 @@ public class PrefetchServiceImpl implements h.b, IPrefetchService {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("f5978759", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ldf.d(TAG, "异常：curItemBizCode=" + str);
             return null;
         }
@@ -182,7 +182,7 @@ public class PrefetchServiceImpl implements h.b, IPrefetchService {
             return null;
         }
         String string = iConfigService.getString("homepageNavPrefetchConfig", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ldf.d(TAG, "Orange未配置启用预取的item：config=" + string);
             return null;
         }
@@ -204,7 +204,7 @@ public class PrefetchServiceImpl implements h.b, IPrefetchService {
                 }
             }
             return null;
-        } while (!TextUtils.equals(jSONObject.getString("type"), "zcache"));
+        } while (!StringUtils.equals(jSONObject.getString("type"), "zcache"));
         return (List) jSONObject.get("resources");
     }
 

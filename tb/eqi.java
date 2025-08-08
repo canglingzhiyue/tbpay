@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.SkuBaseNode;
 import java.util.ArrayList;
@@ -77,7 +77,7 @@ public class eqi {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int indexOf = str.indexOf(":");
@@ -89,7 +89,7 @@ public class eqi {
 
     public static String d(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.substring(str.indexOf(":") + 1);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.substring(str.indexOf(":") + 1);
     }
 
     public static List<String> a(String str, List<SkuBaseNode.SkuIdPropPath> list) {
@@ -99,14 +99,14 @@ public class eqi {
         }
         ArrayList arrayList = new ArrayList();
         String str2 = null;
-        if (!TextUtils.isEmpty(str) && list != null) {
+        if (!StringUtils.isEmpty(str) && list != null) {
             for (SkuBaseNode.SkuIdPropPath skuIdPropPath : list) {
                 if (eqg.a(skuIdPropPath.skuId, str)) {
                     str2 = skuIdPropPath.propPath;
                 }
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             for (String str3 : str2.split(";")) {
                 arrayList.add(str3);
             }
@@ -119,7 +119,7 @@ public class eqi {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return "";
         }
         return str + ":" + str2;

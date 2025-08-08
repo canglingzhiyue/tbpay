@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tab2liveroom.liveroom.a;
 
@@ -34,6 +34,6 @@ public class mqn {
 
     public boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : oeb.a("enableReplayStatusShowLiveEnd", true) && TextUtils.equals("true", oeb.b("liveroom.hideReplay.enableHidePlay", "false"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : oeb.a("enableReplayStatusShowLiveEnd", true) && StringUtils.equals("true", oeb.b("liveroom.hideReplay.enableHidePlay", "false"));
     }
 }

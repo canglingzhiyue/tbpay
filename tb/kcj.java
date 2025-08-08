@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes6.dex */
@@ -17,7 +17,7 @@ public class kcj {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         StringBuilder sb = new StringBuilder(20);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
             sb.append("_");
         }
@@ -31,7 +31,7 @@ public class kcj {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
         StringBuilder sb = new StringBuilder("android");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append("_");
             sb.append(str2);
         }

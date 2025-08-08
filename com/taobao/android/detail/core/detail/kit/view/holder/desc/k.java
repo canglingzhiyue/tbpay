@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -265,7 +265,7 @@ public class k extends b<com.taobao.android.detail.core.model.viewmodel.desc.g> 
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("15b99301", new Object[]{this, aVar});
-                } else if (aVar == null || TextUtils.isEmpty(aVar.f10068a)) {
+                } else if (aVar == null || StringUtils.isEmpty(aVar.f10068a)) {
                 } else {
                     ecg.e(k.this.g, aVar.f10068a, null);
                 }
@@ -402,7 +402,7 @@ public class k extends b<com.taobao.android.detail.core.model.viewmodel.desc.g> 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9a6a4ed8", new Object[]{this, gVar});
-        } else if (TextUtils.isEmpty(gVar.c)) {
+        } else if (StringUtils.isEmpty(gVar.c)) {
         } else {
             a2(gVar);
             this.k.setOnClickListener(this);
@@ -417,7 +417,7 @@ public class k extends b<com.taobao.android.detail.core.model.viewmodel.desc.g> 
 
     public boolean d(com.taobao.android.detail.core.model.viewmodel.desc.g gVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a06e1a3b", new Object[]{this, gVar})).booleanValue() : TextUtils.isEmpty(gVar.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a06e1a3b", new Object[]{this, gVar})).booleanValue() : StringUtils.isEmpty(gVar.c);
     }
 
     @Override // com.taobao.android.detail.core.detail.kit.view.holder.desc.b, com.taobao.android.detail.core.detail.kit.view.holder.c
@@ -439,7 +439,7 @@ public class k extends b<com.taobao.android.detail.core.model.viewmodel.desc.g> 
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7edba102", new Object[]{this, view})).booleanValue();
         }
-        if (TextUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "DetailImageLongPressShare", "false"))) {
+        if (StringUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "DetailImageLongPressShare", "false"))) {
             eoi eoiVar = new eoi(TitleViewModel.ShareType.SHARE_TYPE_DEFAULT);
             eoiVar.b = new HashMap();
             eoiVar.b.put("share_businessId", "picture-desc");

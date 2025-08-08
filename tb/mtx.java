@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.BatteryManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
@@ -445,43 +445,43 @@ public class mtx implements mtw {
                     } else if (mtx.a(mtx.this) == 0) {
                     } else {
                         long currentTimeMillis = System.currentTimeMillis();
-                        if (TextUtils.equals(str, "PageInit")) {
+                        if (StringUtils.equals(str, "PageInit")) {
                             if (mtx.d(mtx.this) >= 0) {
                                 return;
                             }
                             mtx.b(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "MainInterface")) {
+                        } else if (StringUtils.equals(str, "MainInterface")) {
                             if (mtx.e(mtx.this) >= 0) {
                                 return;
                             }
                             mtx.c(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "NaitveRender")) {
+                        } else if (StringUtils.equals(str, "NaitveRender")) {
                             if (mtx.f(mtx.this) >= 0) {
                                 return;
                             }
                             mtx.d(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "PreloadInterface")) {
+                        } else if (StringUtils.equals(str, "PreloadInterface")) {
                             if (mtx.g(mtx.this) >= 0) {
                                 return;
                             }
                             mtx.e(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "WebCreat")) {
+                        } else if (StringUtils.equals(str, "WebCreat")) {
                             if (mtx.h(mtx.this) >= 0) {
                                 return;
                             }
                             mtx.f(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "WebLoad")) {
+                        } else if (StringUtils.equals(str, "WebLoad")) {
                             if (mtx.i(mtx.this) >= 0) {
                                 return;
                             }
                             mtx.g(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "firstPreload")) {
+                        } else if (StringUtils.equals(str, "firstPreload")) {
                             mtx.h(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "secondPreload")) {
+                        } else if (StringUtils.equals(str, "secondPreload")) {
                             mtx.i(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "renderList")) {
+                        } else if (StringUtils.equals(str, "renderList")) {
                             mtx.j(mtx.this, currentTimeMillis);
-                        } else if (TextUtils.equals(str, "renderFirstCard")) {
+                        } else if (StringUtils.equals(str, "renderFirstCard")) {
                             mtx.k(mtx.this, currentTimeMillis);
                         }
                         mtx.a(mtx.this, String.format("startPoint step:%s startTime:%s", str, String.valueOf(currentTimeMillis)));

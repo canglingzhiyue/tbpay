@@ -2,7 +2,7 @@ package com.alibaba.poplayer.trigger;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.export.UMLLCons;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -57,7 +57,7 @@ public class e {
             intent.putExtra("triggerEvent", jSONObject.toJSONString());
             intent.putExtra("config", dVar.x().json);
             intent.putExtra("indexId", dVar.x().indexID);
-            intent.putExtra("layerType", !TextUtils.isEmpty(dVar.x().layerType) ? dVar.x().layerType : "default");
+            intent.putExtra("layerType", !StringUtils.isEmpty(dVar.x().layerType) ? dVar.x().layerType : "default");
             intent.putExtra("nativeUri", y.curPage);
             intent.putExtra("nativeUrl", y.curPageUrl);
         }

@@ -3,19 +3,19 @@ package com.xiaomi.push;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes9.dex */
 public class ey implements ev {
     private void a(Service service, Intent intent) {
         String stringExtra = intent.getStringExtra("awake_info");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             eo.a(service.getApplicationContext(), "service", 1008, "B get a incorrect message");
             return;
         }
         String b = en.b(stringExtra);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             eo.a(service.getApplicationContext(), b, 1007, "play with service successfully");
         } else {
             eo.a(service.getApplicationContext(), "service", 1008, "B get a incorrect message");
@@ -27,8 +27,8 @@ public class ey implements ev {
         String b = erVar.b();
         String d = erVar.d();
         int a2 = erVar.a();
-        if (context == null || TextUtils.isEmpty(m1914a) || TextUtils.isEmpty(b) || TextUtils.isEmpty(d)) {
-            if (TextUtils.isEmpty(d)) {
+        if (context == null || StringUtils.isEmpty(m1914a) || StringUtils.isEmpty(b) || StringUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 eo.a(context, "service", 1008, "argument error");
             } else {
                 eo.a(context, d, 1008, "argument error");

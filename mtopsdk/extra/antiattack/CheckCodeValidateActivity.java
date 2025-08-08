@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import anet.channel.util.HttpConstant;
@@ -95,7 +95,7 @@ public class CheckCodeValidateActivity extends Activity {
                     if (ipChange2 instanceof IpChange) {
                         return ((Boolean) ipChange2.ipc$dispatch("dacf25f5", new Object[]{this, webView, str})).booleanValue();
                     }
-                    if (TextUtils.isEmpty(str) || !str.equalsIgnoreCase(CheckCodeValidateActivity.this.b)) {
+                    if (StringUtils.isEmpty(str) || !str.equalsIgnoreCase(CheckCodeValidateActivity.this.b)) {
                         return super.shouldOverrideUrlLoading(webView, str);
                     }
                     CheckCodeValidateActivity.a(CheckCodeValidateActivity.this, "success");
@@ -148,7 +148,7 @@ public class CheckCodeValidateActivity extends Activity {
         }
         String query = new URL(str).getQuery();
         StringBuilder sb = new StringBuilder(32);
-        if (!TextUtils.isEmpty(query)) {
+        if (!StringUtils.isEmpty(query)) {
             String str2 = null;
             for (String str3 : query.split("&")) {
                 if (str3.startsWith("http_referer=")) {

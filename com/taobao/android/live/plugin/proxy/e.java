@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitinstall.h;
 import com.alibaba.android.split.core.splitinstall.j;
@@ -215,7 +215,7 @@ public class e {
                             } else {
                                 str = mVar.a() == e.b(e.this) ? e.BTYPE : null;
                             }
-                            if (TextUtils.isEmpty(str)) {
+                            if (StringUtils.isEmpty(str)) {
                                 return;
                             }
                             e.c("[onStateUpdate] module: " + str + ", " + ((String) e.c(e.this).get(Integer.valueOf(mVar.b()))) + " , state: " + mVar);
@@ -278,7 +278,7 @@ public class e {
                     } else {
                         str = mVar.a() == e.b(e.this) ? e.BTYPE : null;
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return;
                     }
                     e.c("[onStateUpdate] module: " + str + ", " + ((String) e.c(e.this).get(Integer.valueOf(mVar.b()))) + " , state: " + mVar);
@@ -340,7 +340,7 @@ public class e {
             return true;
         }
         String string = sharedPreferences.getString(str, null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             c("[getOrangeValue] not set orange value, default true, key = " + str);
             return true;
         }
@@ -361,7 +361,7 @@ public class e {
         if (phg.d().a()) {
             c("[useLocalPlugin] isDianTaoApp, return");
             return true;
-        } else if (TextUtils.isEmpty(str) || a().a(str)) {
+        } else if (StringUtils.isEmpty(str) || a().a(str)) {
             return false;
         } else {
             c("[useLocalPlugin] orange value = false");
@@ -388,7 +388,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (!com.taobao.taolive.room.utils.d.a()) {
                 Log.e("FlexaLiveX", str);
@@ -429,7 +429,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             DynamicFeatureInfo d = d(str);
             if (d == null) {
@@ -549,7 +549,7 @@ public class e {
         }
         ArrayList<String> arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        if (str == null || TextUtils.isEmpty(str)) {
+        if (str == null || StringUtils.isEmpty(str)) {
             return;
         }
         char c2 = 65535;
@@ -686,7 +686,7 @@ public class e {
                 }
             }
         } : null;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         j a2 = j.a().a(bhe.a(f(), str2).a(new bhc.b<cak>() { // from class: com.taobao.android.live.plugin.proxy.e.5

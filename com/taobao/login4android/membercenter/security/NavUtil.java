@@ -1,7 +1,7 @@
 package com.taobao.login4android.membercenter.security;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.common.api.AliUserLogin;
 import com.ali.user.mobile.helper.INavHelper;
@@ -21,7 +21,7 @@ public class NavUtil {
 
     public static void navTo(Context context, String str) {
         String str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (str.contains("?")) {

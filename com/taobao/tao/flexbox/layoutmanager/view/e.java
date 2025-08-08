@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -244,7 +244,7 @@ public class e {
         this.e.setLayoutParams(new FrameLayout.LayoutParams(-1, -2));
         this.e.setBackgroundColor(-7829368);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Button button = new Button(this.f20536a);
             button.setText(str);
             button.setBackgroundColor(-1);

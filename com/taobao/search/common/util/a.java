@@ -1,6 +1,6 @@
 package com.taobao.search.common.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -79,7 +79,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (C0757a) ipChange.ipc$dispatch("99219303", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "all";
         }
         C0757a c0757a = new C0757a();
@@ -92,7 +92,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (C0757a) ipChange.ipc$dispatch("beb59c04", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "all";
         }
         return this.c.get(str);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
 import com.taobao.android.tschedule.taskcontext.baseparams.TimeContent;
@@ -39,7 +39,7 @@ public class jlj extends jku {
         if (ipChange instanceof IpChange) {
             return (jlj) ipChange.ipc$dispatch("e2617f80", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith(PREFIX)) {
+        if (StringUtils.isEmpty(str) || !str.startsWith(PREFIX)) {
             return null;
         }
         return new jlj(str);
@@ -56,7 +56,7 @@ public class jlj extends jku {
             long correctionTimeMillis = SDKUtils.getCorrectionTimeMillis();
             long j = -1;
             for (TimeContent timeContent2 : h) {
-                if (!TextUtils.isEmpty(timeContent2.validTime)) {
+                if (!StringUtils.isEmpty(timeContent2.validTime)) {
                     try {
                         Date parse = sDateFormat.parse(timeContent2.validTime);
                         if (parse != null) {

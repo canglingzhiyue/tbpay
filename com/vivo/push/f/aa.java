@@ -3,7 +3,7 @@ package com.vivo.push.f;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.vivo.push.model.NotifyArriveCallbackByUser;
@@ -52,9 +52,9 @@ public abstract class aa extends com.vivo.push.s {
         }
         if (publicKey == null) {
             str3 = "vertify key is null";
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             str3 = "contentTag is null";
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             try {
                 com.vivo.push.util.u.d("OnVerifyCallBackCommand", str.hashCode() + " = " + str2);
                 if (com.vivo.push.util.ab.a(str.getBytes("UTF-8"), publicKey, Base64.decode(str2, 2))) {

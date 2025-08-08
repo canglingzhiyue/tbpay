@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -31,7 +31,7 @@ public class ktu extends kts {
             return ipChange.ipc$dispatch("6bbc6f25", new Object[]{this, str, strArr});
         }
         String a2 = c.a.a("homepage_common", str, "");
-        if (TextUtils.isEmpty(a2) || strArr == null || strArr.length <= 0) {
+        if (StringUtils.isEmpty(a2) || strArr == null || strArr.length <= 0) {
             return a2;
         }
         try {
@@ -49,7 +49,7 @@ public class ktu extends kts {
         JSONObject parseObject = JSONObject.parseObject(str);
         JSONObject jSONObject = new JSONObject(a(strArr.length));
         for (String str2 : strArr) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.put(str2, (Object) parseObject.getString(str2));
             }
         }

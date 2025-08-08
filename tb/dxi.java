@@ -107,7 +107,7 @@ public class dxi {
             java.lang.String r1 = r1.toString()
             java.lang.String r2 = "ImageSpanGenerator"
             com.taobao.android.detail.core.utils.i.d(r2, r1)
-            boolean r1 = android.text.TextUtils.isEmpty(r3)
+            boolean r1 = android.text.StringUtils.isEmpty(r3)
             if (r1 != 0) goto L47
             float r3 = java.lang.Float.parseFloat(r3)     // Catch: java.lang.Throwable -> L47
             goto L48

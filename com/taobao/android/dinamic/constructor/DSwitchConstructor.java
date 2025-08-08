@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.support.v7.widget.SwitchCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -90,7 +90,7 @@ public class DSwitchConstructor extends h {
             return;
         }
         String str3 = (String) map.get("dEnabled");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             setEnable(view, i.a(str3));
         } else {
             setEnable(view, true);
@@ -252,7 +252,7 @@ public class DSwitchConstructor extends h {
                 return;
             }
             Object tag = compoundButton.getTag(R.id.change_with_attribute);
-            if (TextUtils.isEmpty(this.mOnChangeExpression) || "true".equals(tag)) {
+            if (StringUtils.isEmpty(this.mOnChangeExpression) || "true".equals(tag)) {
                 return;
             }
             ArrayList arrayList = new ArrayList(5);

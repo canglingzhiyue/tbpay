@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
@@ -57,14 +57,14 @@ public class LoginObserver extends FragmentManager.FragmentLifecycleCallbacks {
             if (PopJSBridge.homepageFirstResumed == null) {
                 PopJSBridge.homepageFirstResumed = true;
             }
-            if (Login.checkSessionValid() || !TextUtils.isEmpty(Login.getLoginToken())) {
+            if (Login.checkSessionValid() || !StringUtils.isEmpty(Login.getLoginToken())) {
                 return;
             }
             try {
                 String config2 = OrangeConfig.getInstance().getConfig("login4android", LoginSwitch.WEAK_REFERENCE_HOME_ACT, "true");
                 String str = this.TAG;
                 LoginTLogAdapter.e(str, "weak_reference_home_act weakOpen:" + config2);
-                if (TextUtils.equals("true", config2) && activity != null) {
+                if (StringUtils.equals("true", config2) && activity != null) {
                     if (activity.getComponentName() != null) {
                         String str2 = this.TAG;
                         LoginTLogAdapter.e(str2, "weak_reference_home_act:" + activity.getComponentName().getShortClassName());

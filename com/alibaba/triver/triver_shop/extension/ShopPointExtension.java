@@ -1,6 +1,6 @@
 package com.alibaba.triver.triver_shop.extension;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.app.api.App;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.utils.RVLogger;
@@ -52,7 +52,7 @@ public class ShopPointExtension implements ILogNetworkPoint {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("190cf7f7", new Object[]{this, str, app, new Boolean(z)});
-        } else if (!z || TextUtils.isEmpty(str) || !SHOP_PAGE_DATA_URL.equals(str)) {
+        } else if (!z || StringUtils.isEmpty(str) || !SHOP_PAGE_DATA_URL.equals(str)) {
         } else {
             ((ITriverAppMonitorProxy) RVProxy.get(ITriverAppMonitorProxy.class)).commitTriverPerf(b.a().a(app).a(app != null ? app.getStartParams() : null).i(KEY_STAGE_PAGE_DATA_PREFETCH_HIT).a(Double.valueOf(1.0d)).a());
         }
@@ -62,7 +62,7 @@ public class ShopPointExtension implements ILogNetworkPoint {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4ade22aa", new Object[]{this, str, app, new Long(j)});
-        } else if (TextUtils.isEmpty(str) || !SHOP_PAGE_DATA_URL.equals(str)) {
+        } else if (StringUtils.isEmpty(str) || !SHOP_PAGE_DATA_URL.equals(str)) {
         } else {
             ((ITriverAppMonitorProxy) RVProxy.get(ITriverAppMonitorProxy.class)).commitTriverPerf(b.a().a(app).a(app != null ? app.getStartParams() : null).i(KEY_SRAGE_PAGE_DATA_COST).a(Double.valueOf(1.0d)).a(), j);
         }

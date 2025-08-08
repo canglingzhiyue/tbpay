@@ -1,7 +1,7 @@
 package com.taobao.android.interactive_common.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -84,7 +84,7 @@ public class PageViewItemLayout extends FrameLayout {
             scaleType = ImageView.ScaleType.FIT_CENTER;
         }
         this.photoView.setScaleType(scaleType);
-        if (!TextUtils.isEmpty(str) && str.endsWith(".gif")) {
+        if (!StringUtils.isEmpty(str) && str.endsWith(".gif")) {
             if (grt.b()) {
                 this.photoView.setSkipAutoSize(false);
             } else {

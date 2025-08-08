@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.DeadSystemException;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,7 +80,7 @@ public class a {
             return;
         }
         String message = badParcelableException.getMessage();
-        if (TextUtils.isEmpty(message) || !message.startsWith("ClassNotFoundException when unmarshalling:")) {
+        if (StringUtils.isEmpty(message) || !message.startsWith("ClassNotFoundException when unmarshalling:")) {
             return;
         }
         String substring = message.substring(43);

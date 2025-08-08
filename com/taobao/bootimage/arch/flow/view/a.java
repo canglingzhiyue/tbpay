@@ -3,7 +3,7 @@ package com.taobao.bootimage.arch.flow.view;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -253,7 +253,7 @@ public class a implements d, d.a, njr {
             return false;
         }
         String a2 = ssf.a(this.q.sceneType, str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             kej.a("2ARCH_BootImageBaseView", "initPlayService localVideoPath null, videoUrl =" + str);
             return false;
         }
@@ -515,7 +515,7 @@ public class a implements d, d.a, njr {
             if (skipStyle.background != -1) {
                 this.c.setBackgroundResource(skipStyle.background);
             }
-            if (!TextUtils.isEmpty(skipStyle.skipText)) {
+            if (!StringUtils.isEmpty(skipStyle.skipText)) {
                 this.d.setText(skipStyle.skipText);
             }
             if (skipStyle.skipTextSize != 0) {

@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 
 /* loaded from: classes9.dex */
@@ -75,7 +75,7 @@ public final class es {
     }
 
     public void a(Context context, String str, int i, String str2, String str3) {
-        if (context != null && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+        if (context != null && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
             a(i);
             ah.a(this.f332a).a(new et(this, str, context, str2, str3));
             return;

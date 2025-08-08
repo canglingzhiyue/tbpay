@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -61,11 +61,11 @@ public class n implements ezm {
             return false;
         }
         this.d = b.getString("url");
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             return false;
         }
         this.e = b;
-        if (!TextUtils.isEmpty(this.e.getString("needLogin"))) {
+        if (!StringUtils.isEmpty(this.e.getString("needLogin"))) {
             try {
                 if (Boolean.parseBoolean(this.e.getString("needLogin").toLowerCase()) && !com.taobao.android.detail.ttdetail.utils.ao.c()) {
                     com.taobao.android.detail.ttdetail.utils.ao.a(true);
@@ -97,7 +97,7 @@ public class n implements ezm {
         } else if (this.e == null || !Boolean.TRUE.toString().equals(this.e.getString("needAddressId"))) {
         } else {
             String a2 = this.c.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             this.d = a(this.d, "addressId", a2);
@@ -109,7 +109,7 @@ public class n implements ezm {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str) || map.isEmpty()) {
+        if (StringUtils.isEmpty(str) || map.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();

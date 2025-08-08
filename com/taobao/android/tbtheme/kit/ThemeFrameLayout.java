@@ -3,7 +3,7 @@ package com.taobao.android.tbtheme.kit;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -296,7 +296,7 @@ public class ThemeFrameLayout extends FrameLayout {
                 str = this.mThemeData.actionBarBackgroundColor;
                 str2 = this.mThemeData.actionBarBackgroundImage;
             }
-            if (!TextUtils.isEmpty(str) && !p.a(getContext())) {
+            if (!StringUtils.isEmpty(str) && !p.a(getContext())) {
                 i = c.a(str);
                 this.mUrlIvBg.setBackgroundColor(i);
             }
@@ -309,7 +309,7 @@ public class ThemeFrameLayout extends FrameLayout {
                 return;
             }
             setPicColor(i);
-            if (TextUtils.isEmpty(str2) || this.mThemeData.ignoreImageColor) {
+            if (StringUtils.isEmpty(str2) || this.mThemeData.ignoreImageColor) {
                 return;
             }
             j.a().a(str2, new i.a() { // from class: com.taobao.android.tbtheme.kit.ThemeFrameLayout.1

@@ -1,6 +1,6 @@
 package com.taobao.themis.canvas.launch_step;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ut.monitor.DataReceiveMonitor;
 import com.taobao.themis.container.utils.TMSSwitchUtils;
@@ -111,7 +111,7 @@ public final class e extends TMSBaseLaunchStep {
                 a2 = o.a(mInstance2.g(), "jsfm");
             }
             IExecutorService iExecutorService = (IExecutorService) qpt.b(IExecutorService.class);
-            if (!TextUtils.isEmpty(a2) && iExecutorService != null) {
+            if (!StringUtils.isEmpty(a2) && iExecutorService != null) {
                 iExecutorService.getExecutor(ExecutorType.NETWORK).execute(new a(a2));
             } else {
                 c();

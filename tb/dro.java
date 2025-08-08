@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
@@ -317,7 +317,7 @@ public final class dro {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -419,7 +419,7 @@ public final class dro {
         StringBuilder sb = new StringBuilder();
         for (String str : map.keySet()) {
             String str2 = map.get(str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 sb.append(str);
                 sb.append(":");
                 sb.append(str2);

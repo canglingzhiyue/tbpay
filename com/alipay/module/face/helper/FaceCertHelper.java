@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.bio.api.BioCallback;
@@ -211,7 +211,7 @@ public class FaceCertHelper {
             return;
         }
         VerifyLogCat.d("FaceCertHelper", "FaceCertHelper onStart");
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             VerifyLogCat.w("FaceCertHelper", "mModuleData is empty");
             MicroModuleContext.getInstance().notifyAndFinishModule(this.f6115a, this.b, this.d.getModuleName(), new DefaultModuleResult("2002"));
             return;
@@ -266,12 +266,12 @@ public class FaceCertHelper {
                 this.c = parseObject2.toJSONString();
             }
             bundle2.putString(BioDetector.EXT_KEY_MODULE_DATA_BUNDLE, this.c);
-            bundle2.putString("verifyid", TextUtils.isEmpty(this.f6115a) ? str3 : this.f6115a);
-            if (TextUtils.isEmpty(apdid)) {
+            bundle2.putString("verifyid", StringUtils.isEmpty(this.f6115a) ? str3 : this.f6115a);
+            if (StringUtils.isEmpty(apdid)) {
                 apdid = str3;
             }
             bundle2.putString("APDID", apdid);
-            bundle2.putString("TOKEN_ID", TextUtils.isEmpty(this.b) ? str3 : this.b);
+            bundle2.putString("TOKEN_ID", StringUtils.isEmpty(this.b) ? str3 : this.b);
         } catch (Exception e) {
             VerifyLogCat.e("FaceCertHelper", e);
         }
@@ -281,7 +281,7 @@ public class FaceCertHelper {
         bioParameter.setAutoClose(false);
         bioParameter.setBundle(bundle2);
         String string3 = this.e.getString(ToygerBaseService.KEY_PUBLIC_KEY);
-        if (!TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string3)) {
             str3 = string3;
         }
         bioParameter.addExtProperty(ToygerBaseService.KEY_PUBLIC_KEY, str3);

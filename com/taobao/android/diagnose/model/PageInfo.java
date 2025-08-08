@@ -3,7 +3,7 @@ package com.taobao.android.diagnose.model;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.common.CircularList;
@@ -101,7 +101,7 @@ public class PageInfo implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("eecb45af", new Object[]{this, str});
-        } else if (TextUtils.equals(this.pageUrl, str)) {
+        } else if (StringUtils.equals(this.pageUrl, str)) {
         } else {
             this.pageUrl = str;
             this.isUrlChanged = true;
@@ -209,7 +209,7 @@ public class PageInfo implements Cloneable {
             return true;
         }
         if (obj != null && getClass() == obj.getClass()) {
-            return TextUtils.equals(this.pageID, ((PageInfo) obj).pageID);
+            return StringUtils.equals(this.pageID, ((PageInfo) obj).pageID);
         }
         return false;
     }

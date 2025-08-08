@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -34,7 +34,7 @@ public class icn {
         if (ipChange instanceof IpChange) {
             return (icl) ipChange.ipc$dispatch("7d1d3561", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         icl iclVar = this.f28906a.get(str);

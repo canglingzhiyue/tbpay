@@ -17,7 +17,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -967,7 +967,7 @@ public class TaoLiveWebBottomFragment extends BottomSheetDialogFragment implemen
             Intent intent2 = this.activityIntent;
             if (intent2 == null) {
                 this.activityIntent = intent;
-            } else if (!TextUtils.equals(intent2.toURI(), intent.toURI())) {
+            } else if (!StringUtils.equals(intent2.toURI(), intent.toURI())) {
                 pmd.a().m().a(TAG, "半屏容器关闭，Activity Single Instance启动，intent 改变");
                 dismissAllowingStateLoss();
                 this.resumeTimestamp = -1L;
@@ -1014,7 +1014,7 @@ public class TaoLiveWebBottomFragment extends BottomSheetDialogFragment implemen
             WeakReference<c> weakReference = this.mWeakContainer;
             if (weakReference != null && weakReference.get() != null) {
                 c cVar = this.mWeakContainer.get();
-                if (!TextUtils.isEmpty(cVar.k)) {
+                if (!StringUtils.isEmpty(cVar.k)) {
                     this.closeFromSource = cVar.k;
                 }
             }

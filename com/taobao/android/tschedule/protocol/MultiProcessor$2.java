@@ -3,7 +3,7 @@ package com.taobao.android.tschedule.protocol;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jkq;
 import tb.jmi;
@@ -20,7 +20,7 @@ public class MultiProcessor$2 extends BroadcastReceiver {
             return;
         }
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         jkq.a("TS.MultiProcessor", "onReceive, action=" + action + ", process=" + jmi.a());
@@ -55,10 +55,10 @@ public class MultiProcessor$2 extends BroadcastReceiver {
             b.a().c(intent.getStringExtra(a.KET_PROTOCOL_BIZ_CODE), intent.getStringExtra(a.KET_PROTOCOL_CLASS));
         } else if (c == 1) {
             b.a().d(intent.getStringExtra(a.KET_PROTOCOL_BIZ_CODE), intent.getStringExtra(a.KET_PROTOCOL_CLASS));
-        } else if ((c != 2 && c != 3) || !TextUtils.equals(intent.getStringExtra(a.KET_TARGET_PROCESS), jmi.a())) {
+        } else if ((c != 2 && c != 3) || !StringUtils.equals(intent.getStringExtra(a.KET_TARGET_PROCESS), jmi.a())) {
         } else {
             String stringExtra = intent.getStringExtra(a.KET_TASK_URL);
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 return;
             }
             if (action == a.TYPE_SCHEDULE_TASK) {

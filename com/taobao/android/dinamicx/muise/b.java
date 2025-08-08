@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.muise;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -181,7 +181,7 @@ public class b {
         } else if (dXWidgetNode != null) {
             String ref = dXWidgetNode.getRef();
             JSONArray exportMethods = dXWidgetNode.exportMethods();
-            if (!TextUtils.isEmpty(ref)) {
+            if (!StringUtils.isEmpty(ref)) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("ref", (Object) ref);
                 if (exportMethods == null) {

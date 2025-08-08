@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.TTDetailPageManager;
@@ -66,7 +66,7 @@ public class ab {
         if (jSONObject2 != null) {
             str2 = jSONObject2.getString(Constants.WEIBO_REDIRECTURL_KEY);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
         return j.m() + str;
@@ -163,7 +163,7 @@ public class ab {
         if (uri != null) {
             hashMap.put("uri", uri.toString());
         }
-        hashMap.put("reason", !TextUtils.isEmpty(str4) ? str4 : "no reason");
+        hashMap.put("reason", !StringUtils.isEmpty(str4) ? str4 : "no reason");
         if (map != null && !map.isEmpty()) {
             hashMap.putAll(map);
         }
@@ -196,7 +196,7 @@ public class ab {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("742d5b91", new Object[]{context, str, str2, map});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             if (map != null) {
                 l.a(str2, map);

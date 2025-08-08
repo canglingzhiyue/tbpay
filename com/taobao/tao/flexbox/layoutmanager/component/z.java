@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.birdnest.util.UiUtil;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -214,7 +214,7 @@ public class z extends e implements com.taobao.tao.flexbox.layoutmanager.core.s,
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(a.c((a) this.viewParams))) {
+        if (!StringUtils.isEmpty(a.c((a) this.viewParams))) {
             com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().d(this.node, a.c((a) this.viewParams));
             com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().b(this.node, a.c((a) this.viewParams));
         }
@@ -228,7 +228,7 @@ public class z extends e implements com.taobao.tao.flexbox.layoutmanager.core.s,
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.isEmpty(a.c((a) this.viewParams))) {
+        } else if (StringUtils.isEmpty(a.c((a) this.viewParams))) {
         } else {
             com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().a(this.node);
         }
@@ -236,7 +236,7 @@ public class z extends e implements com.taobao.tao.flexbox.layoutmanager.core.s,
 
     public boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(a.c((a) this.viewParams));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(a.c((a) this.viewParams));
     }
 
     public String e() {
@@ -330,7 +330,7 @@ public class z extends e implements com.taobao.tao.flexbox.layoutmanager.core.s,
         }
         if (c == 0) {
             String a2 = oec.a(eVar.d.get("type"), "add");
-            if (TextUtils.equals("page", a2) || TextUtils.equals("tab", a2)) {
+            if (StringUtils.equals("page", a2) || StringUtils.equals("tab", a2)) {
                 com.taobao.tao.flexbox.layoutmanager.core.aa aaVar = eVar.f20300a;
                 if (aaVar.J() != null && (aaVar.J().I() instanceof ofw)) {
                     final ofw ofwVar = (ofw) aaVar.J().I();
@@ -487,7 +487,7 @@ public class z extends e implements com.taobao.tao.flexbox.layoutmanager.core.s,
         }
         this.h.removeMessages(2);
         this.h.removeMessages(1);
-        if ((this.node.k().g() instanceof com.taobao.tao.flexbox.layoutmanager.container.f) || !TextUtils.isEmpty(a.c((a) this.viewParams))) {
+        if ((this.node.k().g() instanceof com.taobao.tao.flexbox.layoutmanager.container.f) || !StringUtils.isEmpty(a.c((a) this.viewParams))) {
             c(false);
         } else {
             this.h.sendEmptyMessage(2);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.preload;
 
 import android.content.res.Resources;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -89,13 +89,13 @@ public class DetailPreloadRequester implements eiu {
             if (map == null) {
                 map = new HashMap();
             }
-            if (TextUtils.isEmpty((CharSequence) map.get("from"))) {
-                map.put("from", TextUtils.isEmpty(preloadTaskEntity.sourceFrom) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : preloadTaskEntity.sourceFrom);
+            if (StringUtils.isEmpty((CharSequence) map.get("from"))) {
+                map.put("from", StringUtils.isEmpty(preloadTaskEntity.sourceFrom) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : preloadTaskEntity.sourceFrom);
             }
-            if (!TextUtils.isEmpty(preloadTaskEntity.preloadType)) {
+            if (!StringUtils.isEmpty(preloadTaskEntity.preloadType)) {
                 map.put(nfc.PHA_MONITOR_DIMENSION_PRELOAD_TYPE, preloadTaskEntity.preloadType);
             }
-            if (!TextUtils.isEmpty(preloadTaskEntity.bizName)) {
+            if (!StringUtils.isEmpty(preloadTaskEntity.bizName)) {
                 map.put("bizName", preloadTaskEntity.bizName);
             }
             hashMap.put(next.e, JSONObject.toJSONString(map));

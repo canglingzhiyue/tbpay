@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.http;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
 import com.alipay.mobile.common.transport.context.TransportContext;
@@ -25,7 +25,7 @@ public final class GwCookieCacheHelper {
                 ipChange.ipc$dispatch("6ab48d27", new Object[]{str, map});
                 return;
             }
-            if (!TextUtils.isEmpty(str) && !map.isEmpty()) {
+            if (!StringUtils.isEmpty(str) && !map.isEmpty()) {
                 getCookieMapByDomain(str).putAll(map);
             }
         }
@@ -36,7 +36,7 @@ public final class GwCookieCacheHelper {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("18d1fc43", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn(TAG, "[getCookieMapByDomain] domain is empty.");
             return null;
         }
@@ -60,13 +60,13 @@ public final class GwCookieCacheHelper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("893b12ab", new Object[]{context, str, transportContext});
         }
-        if (TextUtils.isEmpty(str) || context == null) {
+        if (StringUtils.isEmpty(str) || context == null) {
             return "";
         }
         String topDomain = MiscUtils.getTopDomain(str);
         if (TransportConfigureManager.getInstance().equalsString(TransportConfigureItem.COOKIE_CACHE_SWITCH, "T") && transportContext != null && transportContext.bizType == 1) {
             String cookie2 = getCookie(topDomain);
-            if (!TextUtils.isEmpty(cookie2)) {
+            if (!StringUtils.isEmpty(cookie2)) {
                 LogCatUtil.info(TAG, "[getCookieWrapper] Use old cache cookie. add cookie=[" + cookie2 + "]. url=" + str);
                 return cookie2;
             }
@@ -79,13 +79,13 @@ public final class GwCookieCacheHelper {
         if (z) {
             synchronized (GwCookieCacheHelper.class) {
                 String cookie3 = getCookie(topDomain);
-                if (!TextUtils.isEmpty(cookie3)) {
+                if (!StringUtils.isEmpty(cookie3)) {
                     LogCatUtil.info(TAG, "[getCookieWrapper] Use new cache cookie. add cookie=[" + cookie3 + "]. url=" + str);
                     return cookie3;
                 }
                 cookie = CookieAccessHelper.getCookie(str, context);
                 LogCatUtil.info(TAG, "[getCookieWrapper] get from CookieManager complete");
-                if (TextUtils.isEmpty(cookie)) {
+                if (StringUtils.isEmpty(cookie)) {
                     return "";
                 }
                 cookieStringToMap(cookie, getCookieMapByDomain(topDomain));
@@ -93,7 +93,7 @@ public final class GwCookieCacheHelper {
             }
         } else {
             cookie = CookieAccessHelper.getCookie(str, context);
-            if (TextUtils.isEmpty(cookie)) {
+            if (StringUtils.isEmpty(cookie)) {
                 return "";
             }
         }
@@ -147,7 +147,7 @@ public final class GwCookieCacheHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f34b7a08", new Object[]{str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn(TAG, "[cookieStringToMap] localCookie is empty.");
         } else if (map == null) {
             LogCatUtil.warn(TAG, "[cookieStringToMap] map is null.");
@@ -155,7 +155,7 @@ public final class GwCookieCacheHelper {
             StringTokenizer stringTokenizer = new StringTokenizer(str, ";");
             while (stringTokenizer.hasMoreTokens()) {
                 String trim = stringTokenizer.nextToken().trim();
-                if (TextUtils.isEmpty(trim)) {
+                if (StringUtils.isEmpty(trim)) {
                     LogCatUtil.warn(TAG, "[cookieStringToMap] kvPairStr is empty.");
                 } else {
                     int indexOf = trim.indexOf("=", 0);

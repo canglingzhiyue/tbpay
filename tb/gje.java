@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -280,7 +280,7 @@ public class gje {
             try {
                 gjb.f(skinConfig.skinUrl);
                 gjb.f(skinConfig.skinCode);
-                if (!TextUtils.isEmpty(skinConfig.skinZipUrl)) {
+                if (!StringUtils.isEmpty(skinConfig.skinZipUrl)) {
                     gjb.e(skinConfig.skinCode);
                 }
             } catch (Throwable th) {
@@ -463,7 +463,7 @@ public class gje {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
         SkinConfig skinConfig = this.c;
-        if (skinConfig != null && !TextUtils.isEmpty(skinConfig.skinCode) && !TextUtils.isEmpty(this.c.skinZipUrl)) {
+        if (skinConfig != null && !StringUtils.isEmpty(skinConfig.skinCode) && !StringUtils.isEmpty(this.c.skinZipUrl)) {
             String str3 = gjb.b(this.c.skinCode) + str + File.separator + str2 + ".png";
             if (new File(str3).exists()) {
                 return com.taobao.phenix.request.d.a(str3);
@@ -492,7 +492,7 @@ public class gje {
             return (String) ipChange.ipc$dispatch("5bded401", new Object[]{this, str, str2});
         }
         SkinConfig skinConfig = this.c;
-        if (skinConfig != null && !TextUtils.isEmpty(skinConfig.skinCode) && !TextUtils.isEmpty(this.c.skinZipUrl)) {
+        if (skinConfig != null && !StringUtils.isEmpty(skinConfig.skinCode) && !StringUtils.isEmpty(this.c.skinZipUrl)) {
             String b2 = gjb.b(this.c.skinCode);
             File file = new File(b2 + str);
             if (file.exists()) {
@@ -549,7 +549,7 @@ public class gje {
                 return (Map) ipChange.ipc$dispatch("d61a4289", new Object[]{this, voidArr});
             }
             String g = gjb.g(gjb.SP_KEY_CACHED_SKIN_MAP);
-            if (TextUtils.isEmpty(g)) {
+            if (StringUtils.isEmpty(g)) {
                 return null;
             }
             gje.a(gje.this).putAll((Map) JSON.parseObject(g, new TypeReference<Map<String, SkinConfig>>() { // from class: tb.gje.a.1
@@ -561,7 +561,7 @@ public class gje {
                 gjb.a(gjb.SP_KEY_DEFAULT_CUSTOMER_AREA_SKIN, "false");
                 return null;
             }
-            if (!TextUtils.isEmpty(g2) && !gje.a(gje.this).isEmpty()) {
+            if (!StringUtils.isEmpty(g2) && !gje.a(gje.this).isEmpty()) {
                 SkinConfig skinConfig = (SkinConfig) gje.a(gje.this).get(g2);
                 gje.a(gje.this, skinConfig);
                 if (skinConfig != null && skinConfig.isValidConfig()) {
@@ -571,7 +571,7 @@ public class gje {
                         gje gjeVar2 = gje.this;
                         gje.b(gjeVar2, gjeVar2.a(skinConfig));
                     }
-                    if (!TextUtils.isEmpty(skinConfig.skinZipUrl)) {
+                    if (!StringUtils.isEmpty(skinConfig.skinZipUrl)) {
                         new gjd().a(skinConfig.skinCode, skinConfig.skinZipUrl, null);
                     }
                     return gje.c(gje.this);

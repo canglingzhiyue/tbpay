@@ -3,7 +3,7 @@ package com.taobao.relationship.jsbridge;
 import android.app.Activity;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.intf.b;
@@ -50,10 +50,10 @@ public class AllSparkFollowJsBridge extends e {
                 String optString = jSONObject.optString("guideToastUrl");
                 String optString2 = jSONObject.optString("guideCardUrl");
                 if (nmg.a()) {
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         b.h().a(optString);
                     }
-                    if (!TextUtils.isEmpty(optString2)) {
+                    if (!StringUtils.isEmpty(optString2)) {
                         b.h().a(optString2);
                     }
                 }
@@ -61,28 +61,28 @@ public class AllSparkFollowJsBridge extends e {
                 return true;
             }
             long j = 0;
-            if (!TextUtils.isEmpty(jSONObject.optString("accountId"))) {
+            if (!StringUtils.isEmpty(jSONObject.optString("accountId"))) {
                 j = Long.parseLong(jSONObject.optString("accountId"));
-            } else if (!TextUtils.isEmpty(jSONObject.optString("followedId"))) {
+            } else if (!StringUtils.isEmpty(jSONObject.optString("followedId"))) {
                 j = Long.parseLong(jSONObject.optString("followedId"));
             }
-            int parseInt = !TextUtils.isEmpty(jSONObject.optString("accountType")) ? Integer.parseInt(jSONObject.optString("accountType")) : 0;
+            int parseInt = !StringUtils.isEmpty(jSONObject.optString("accountType")) ? Integer.parseInt(jSONObject.optString("accountType")) : 0;
             String optString3 = jSONObject.optString("originBiz");
             String optString4 = jSONObject.optString("originPage");
             String optString5 = jSONObject.optString("originFlag");
             String optString6 = jSONObject.optString("extra");
             String optString7 = jSONObject.optString("origin");
-            if (TextUtils.isEmpty(optString7) || (split = optString7.split(SymbolExpUtil.SYMBOL_VERTICALBAR)) == null) {
+            if (StringUtils.isEmpty(optString7) || (split = optString7.split(SymbolExpUtil.SYMBOL_VERTICALBAR)) == null) {
                 str3 = optString3;
             } else {
                 str3 = optString3;
                 if (split.length >= 2) {
-                    String str4 = !TextUtils.isEmpty(split[0]) ? split[0] : str3;
-                    if (!TextUtils.isEmpty(split[1])) {
+                    String str4 = !StringUtils.isEmpty(split[0]) ? split[0] : str3;
+                    if (!StringUtils.isEmpty(split[1])) {
                         optString4 = split[1];
                     }
                     str3 = str4;
-                    if (split.length >= 3 && !TextUtils.isEmpty(split[2])) {
+                    if (split.length >= 3 && !StringUtils.isEmpty(split[2])) {
                         optString5 = split[2];
                     }
                 }
@@ -108,7 +108,7 @@ public class AllSparkFollowJsBridge extends e {
                     activity = (Activity) this.mContext;
                 }
                 bVar.f18974a = activity;
-                if (TextUtils.equals(optString8, "true")) {
+                if (StringUtils.equals(optString8, "true")) {
                     String optString9 = jSONObject.optString("guideToastUrl");
                     String optString10 = jSONObject.optString("guideCardUrl");
                     bVar.j = true;
@@ -144,19 +144,19 @@ public class AllSparkFollowJsBridge extends e {
         StringBuilder sb = new StringBuilder();
         sb.append("account_id=" + j);
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (!str.contains("|")) {
                     return sb.toString();
                 }
                 String[] split = str.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
                 if (split != null && split.length >= 2) {
-                    if (!TextUtils.isEmpty(split[0])) {
+                    if (!StringUtils.isEmpty(split[0])) {
                         sb.append(",Origin=" + split[0]);
                     }
-                    if (!TextUtils.isEmpty(split[1])) {
+                    if (!StringUtils.isEmpty(split[1])) {
                         sb.append(",Page=" + split[1]);
                     }
-                    if (split.length >= 3 && !TextUtils.isEmpty(split[2])) {
+                    if (split.length >= 3 && !StringUtils.isEmpty(split[2])) {
                         sb.append(",Extend=" + split[2]);
                     }
                 }

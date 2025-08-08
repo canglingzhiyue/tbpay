@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.m;
@@ -34,7 +34,7 @@ public final class rhs {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(str) && TextUtils.equals(ior.f29193a, key)) {
+                if (!StringUtils.isEmpty(str) && StringUtils.equals(ior.f29193a, key)) {
                     arrayList.add(key + '=' + str);
                 } else {
                     arrayList.add(key + '=' + value);

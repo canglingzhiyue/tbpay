@@ -1,7 +1,7 @@
 package com.taobao.android.detail.mainpic.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliUrlImageView;
@@ -32,7 +32,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("d5a4924c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (b.containsKey(str)) {
@@ -62,7 +62,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || !b.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !b.containsKey(str)) {
         } else {
             b.get(str).a();
             b.remove(str);

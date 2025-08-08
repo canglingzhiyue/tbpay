@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Set;
@@ -50,9 +50,9 @@ public final class jot {
             return;
         }
         for (String str : jSONObject.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String string = jSONObject.getString(str);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     String[] split = str.split("\\.");
                     if (split.length != 0 && (a2 = a(jSONObject2, split)) != null && (a3 = a(jSONObject3, split)) != null) {
                         String str2 = split[split.length - 1];

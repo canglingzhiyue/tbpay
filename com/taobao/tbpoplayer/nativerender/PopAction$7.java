@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
@@ -115,7 +115,7 @@ public class PopAction$7 implements IRemoteBaseListener {
                 byte[] bytedata = mtopResponse.getBytedata();
                 String str2 = bytedata != null ? new String(bytedata, "UTF-8") : "";
                 JSONObject jSONObject2 = null;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     jSONObject2 = JSON.parseObject(str2).getJSONObject("data");
                 }
                 if (jSONObject2 != null && !jSONObject2.isEmpty()) {

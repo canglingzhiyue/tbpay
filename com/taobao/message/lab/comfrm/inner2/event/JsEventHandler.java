@@ -1,7 +1,7 @@
 package com.taobao.message.lab.comfrm.inner2.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.PropertyFilter;
@@ -97,7 +97,7 @@ public class JsEventHandler implements EventHandler {
                     break;
                 }
                 String fetchResource = this.mResourceManager.fetchResource(this.mFiles[i]);
-                if (TextUtils.isEmpty(fetchResource)) {
+                if (StringUtils.isEmpty(fetchResource)) {
                     z = false;
                     break;
                 } else {

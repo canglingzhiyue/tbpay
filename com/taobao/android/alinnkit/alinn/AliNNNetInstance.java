@@ -1,7 +1,7 @@
 package com.taobao.android.alinnkit.alinn;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -141,7 +141,7 @@ public class AliNNNetInstance extends AliNNKitBaseNet {
         if (ipChange instanceof IpChange) {
             return (AliNNNetInstance) ipChange.ipc$dispatch("400edeca", new Object[]{context, str, str2, str3, str4, str5});
         }
-        if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4) || TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4) || StringUtils.isEmpty(str5)) {
             return a(context, str, str2);
         }
         long currentTimeMillis = System.currentTimeMillis();

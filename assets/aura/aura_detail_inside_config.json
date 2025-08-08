@@ -1,0 +1,158 @@
+{
+  "plugin": {
+    "name": "详情黑灯页交易inside",
+    "bizCode": "detailLightOff",
+    "flows": [
+      {
+        "code": "aura.workflow.render",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "aura.impl.parse.stateTree.decrypt",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.autoTrack",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.autoTrack.config": [
+                      {
+                        "code": "alibuy.impl.autoTrack.config",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.abTest",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "aura.impl.component.lifeCycle.autoTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.createItem",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render": [
+                {
+                  "code": "aura.impl.performance.monitor.render",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.performance.monitor.render.ext": [
+                      {
+                        "code": "aura.impl.performance.monitor.render.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "message.impl.render.contentView.created",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.performance.monitor",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.performance.monitor.ext": [
+                  {
+                    "code": "aura.impl.performance.monitor.ext",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "alibuy.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.lifeCycle.createItem",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.event",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.event",
+            "type": "service",
+            "extensions": {
+              "aura.extension.event": [
+                {
+                  "code": "aura.impl.event.userTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.openUrl",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aldetail.impl.aspect.error.eventRedirectError",
+              "type": "extension"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

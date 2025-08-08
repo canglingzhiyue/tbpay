@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Button;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -33,7 +33,7 @@ public class rma extends rmi {
         } else if (!(obj instanceof Button) || (button = (Button) obj) == null) {
         } else {
             String str4 = rlz.a().g(str3).get(str2);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str2 = str4;
             }
             HashMap<String, Object> hashMap = rlz.a().d(str, str3).get(str2);
@@ -63,7 +63,7 @@ public class rma extends rmi {
         } else if (button != null && hashMap != null && hashMap.size() != 0) {
             for (Map.Entry<String, Object> entry : hashMap.entrySet()) {
                 String valueOf = String.valueOf(entry.getKey());
-                if (TextUtils.isEmpty(valueOf)) {
+                if (StringUtils.isEmpty(valueOf)) {
                     return;
                 }
                 Object value = entry.getValue();

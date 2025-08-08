@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -239,7 +239,7 @@ public final class hfw extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a32cdfc8", new Object[]{this, chatMessage})).booleanValue();
         }
-        if (chatMessage.mType == ChatMessage.MessageType.TXT && !TextUtils.isEmpty(chatMessage.mContent) && (chatMessage.renders == null || TextUtils.isEmpty(chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)))) {
+        if (chatMessage.mType == ChatMessage.MessageType.TXT && !StringUtils.isEmpty(chatMessage.mContent) && (chatMessage.renders == null || StringUtils.isEmpty(chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)))) {
             for (int size = this.b.size() - 1; size >= Math.max(0, this.b.size() - 20); size--) {
                 ChatMessage chatMessage3 = this.b.get(size);
                 if (chatMessage3 != null && chatMessage.mContent.equals(chatMessage3.mContent)) {

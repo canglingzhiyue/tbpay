@@ -5,7 +5,7 @@ import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.AudioPlaybackConfiguration;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspTradeContext;
@@ -60,7 +60,7 @@ public class MspExperimentHelper {
         String string = jSONObject.getString("expValue");
         f4791a.put(str, jSONObject.toJSONString());
         LogUtil.i("MspExperimentHelper", "isGray", str + " 命中灰度");
-        return TextUtils.equals(string, "1");
+        return StringUtils.equals(string, "1");
     }
 
     public static void reportEvent(MspContext mspContext, String str) {
@@ -96,7 +96,7 @@ public class MspExperimentHelper {
                 if (drmValueFromKey == null || !drmValueFromKey.containsKey("expValue")) {
                     return;
                 }
-                if (TextUtils.equals(drmValueFromKey.getString("expValue"), "1")) {
+                if (StringUtils.equals(drmValueFromKey.getString("expValue"), "1")) {
                     mspTradeContext.setTranslucentBg(true);
                 }
                 reportResult(mspTradeContext, DrmKey.GRAY_EXP_OUTPAY_LIVESHOW_IMMERSIVE, drmValueFromKey.toJSONString());
@@ -132,7 +132,7 @@ public class MspExperimentHelper {
             hashMap.put("experimenType", "NativeConfig");
             hashMap.put("experimenConfig", str2);
             hashMap.put("experimenParams", jSONObject.toJSONString());
-            if (TextUtils.equals("10000", PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_degrade_exp_antevent_bizcode_payimp"))) {
+            if (StringUtils.equals("10000", PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_degrade_exp_antevent_bizcode_payimp"))) {
                 EventLogUtil.logPayEvent("10101054", hashMap);
             } else {
                 EventLogUtil.logPayImpEvent("10101054", hashMap);
@@ -186,7 +186,7 @@ public class MspExperimentHelper {
                 return KEY_TYPE_DEFAULT;
             }
             String string = parseObject.getString("expValue");
-            return TextUtils.equals(string, "1") ? KEY_TYPE_EXP : TextUtils.equals(string, "0") ? KEY_TYPE_CONTROL : KEY_TYPE_DEFAULT;
+            return StringUtils.equals(string, "1") ? KEY_TYPE_EXP : StringUtils.equals(string, "0") ? KEY_TYPE_CONTROL : KEY_TYPE_DEFAULT;
         } catch (Throwable th) {
             LogUtil.printExceptionStackTrace(th);
             return KEY_TYPE_DEFAULT;

@@ -2,7 +2,7 @@ package android.taobao.windvane.monitor;
 
 import android.net.Uri;
 import android.taobao.windvane.monitor.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.ag;
@@ -122,7 +122,7 @@ public class l {
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add("fromType=" + this.stat.fromType);
-        if (!TextUtils.isEmpty(this.stat.appSeq)) {
+        if (!StringUtils.isEmpty(this.stat.appSeq)) {
             arrayList.add("PackageApp-Seq=" + this.stat.appSeq);
             arrayList.add("PackageApp-Version=" + this.stat.packageAppVersion);
             arrayList.add("PackageApp-Name=" + this.stat.packageAppName);

@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -63,7 +63,7 @@ public class HStretchView extends ImageView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3d53c31c", new Object[]{this, str, new Float(f), new Float(f2), bitmapDrawable});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             b.h().a(getContext()).a("homepage-ads", str).addLoaderExtra(esr.BUNDLE_BIZ_CODE, onq.b(str, "5401")).succListener(new a<SuccPhenixEvent>() { // from class: com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic3.view.HStretchView.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

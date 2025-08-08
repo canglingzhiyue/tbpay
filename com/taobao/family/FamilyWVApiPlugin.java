@@ -2,7 +2,7 @@ package com.taobao.family;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
 import org.json.JSONException;
@@ -21,11 +21,11 @@ public class FamilyWVApiPlugin extends android.taobao.windvane.jsbridge.e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !str.equals(ACTION_GET_SOCIAL_FAMILY_DATA)) {
+        if (StringUtils.isEmpty(str) || !str.equals(ACTION_GET_SOCIAL_FAMILY_DATA)) {
             return false;
         }
         String userId = Login.getUserId();
-        if (TextUtils.isEmpty(userId)) {
+        if (StringUtils.isEmpty(userId)) {
             wVCallBackContext.error();
         } else if (FamilyManager.dataStoreComponent == null) {
             wVCallBackContext.error();
@@ -33,7 +33,7 @@ public class FamilyWVApiPlugin extends android.taobao.windvane.jsbridge.e {
         } else {
             String a2 = FamilyManager.dataStoreComponent.a(userId);
             r rVar = new r();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 try {
                     rVar.a("data", new JSONObject(a2));
                 } catch (JSONException unused) {

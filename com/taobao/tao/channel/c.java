@@ -1,6 +1,6 @@
 package com.taobao.tao.channel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.core.share.mtop.a;
 import com.taobao.share.globalmodel.TBShareContent;
@@ -107,7 +107,7 @@ public class c {
                             IpChange ipChange2 = $ipChange;
                             if (ipChange2 instanceof IpChange) {
                                 ipChange2.ipc$dispatch("ea4f7f05", new Object[]{this, tBShareContent2});
-                            } else if (!TextUtils.equals(tBShareContent2.businessId, str) || !TextUtils.equals(tBShareContent2.url, str2)) {
+                            } else if (!StringUtils.equals(tBShareContent2.businessId, str) || !StringUtils.equals(tBShareContent2.url, str2)) {
                                 com.taobao.tao.channel.b.a().a(tBShareContent2, aVar, aVar2, z, true);
                             } else {
                                 c.a(c.this, false);
@@ -173,7 +173,7 @@ public class c {
             aVar = this.f;
         }
         b.a aVar2 = aVar;
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             this.f19860a.a(this.d, this.e, aVar2);
         } else {
             this.f19860a.a(this.d, this.e, aVar2, this.g, this.h, this.i);

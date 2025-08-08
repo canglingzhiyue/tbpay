@@ -11,7 +11,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -422,7 +422,7 @@ public class AKPopContainer<PARAMS extends com.taobao.android.abilitykit.ability
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f18c1ce2", new Object[]{this});
-        } else if (!this.mPopConfig.v() && TextUtils.isEmpty(this.mPopConfig.N())) {
+        } else if (!this.mPopConfig.v() && StringUtils.isEmpty(this.mPopConfig.N())) {
         } else {
             if (this.mContentView.getLayoutParams() == null) {
                 marginLayoutParams = new FrameLayout.LayoutParams(-1, -1);
@@ -448,7 +448,7 @@ public class AKPopContainer<PARAMS extends com.taobao.android.abilitykit.ability
                         }
                     }
                 });
-                if (!TextUtils.isEmpty(this.mPopConfig.N())) {
+                if (!StringUtils.isEmpty(this.mPopConfig.N())) {
                     TextView textView = (TextView) this.mTitleBar.findViewById(R.id.title_bar_pop_title);
                     textView.setVisibility(0);
                     textView.setText(this.mPopConfig.N());
@@ -758,7 +758,7 @@ public class AKPopContainer<PARAMS extends com.taobao.android.abilitykit.ability
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("6db3bfad", new Object[]{this, str, str2})).intValue();
         }
-        if ("color".equals(str) && !TextUtils.isEmpty(str2)) {
+        if ("color".equals(str) && !StringUtils.isEmpty(str2)) {
             try {
                 return Color.parseColor(str2);
             } catch (IllegalArgumentException unused) {

@@ -2,7 +2,7 @@ package com.taobao.android.tschedule.task;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Network;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
@@ -163,7 +163,7 @@ public class HttpScheduleTask extends ScheduleTask<HttpTaskContext> {
             return (Response) ipChange.ipc$dispatch("aa63499f", new Object[]{this, str, objArr});
         }
         HttpTaskContext.HttpParams httpParams = ((HttpTaskContext) this.taskContext).params;
-        if (TextUtils.equals(((HttpTaskContext) this.taskContext).bizCode, "miniApp")) {
+        if (StringUtils.equals(((HttpTaskContext) this.taskContext).bizCode, "miniApp")) {
             TScheduleHTTPProtocol c = b.a().c();
             if (c == null || (headers = c.getHeaders(e.b(), e.c(), e.d())) == null || headers.isEmpty()) {
                 return null;

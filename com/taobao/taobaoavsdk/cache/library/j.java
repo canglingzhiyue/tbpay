@@ -3,7 +3,7 @@ package com.taobao.taobaoavsdk.cache.library;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
 import com.taobao.orange.OrangeConfig;
@@ -156,7 +156,7 @@ public final class j implements e, g, l {
             } catch (Exception e) {
                 AVSDKLog.e("TBNetStatistic", "commitTBNetData error:" + e.getMessage());
             }
-            if (TextUtils.isEmpty(g)) {
+            if (StringUtils.isEmpty(g)) {
                 return;
             }
             String[] split = g.split(",");
@@ -288,9 +288,9 @@ public final class j implements e, g, l {
             return;
         }
         synchronized (this.G) {
-            if (!TextUtils.isEmpty(str) && r != null && this.m != null && this.m.b != null) {
+            if (!StringUtils.isEmpty(str) && r != null && this.m != null && this.m.b != null) {
                 String a2 = this.m.b.a(str);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 r rVar = new r();
@@ -312,9 +312,9 @@ public final class j implements e, g, l {
             return (r) ipChange.ipc$dispatch("114d72ad", new Object[]{this, str});
         }
         synchronized (this.G) {
-            if (!TextUtils.isEmpty(str) && r != null && !r.isEmpty() && this.m != null && this.m.b != null) {
+            if (!StringUtils.isEmpty(str) && r != null && !r.isEmpty() && this.m != null && this.m.b != null) {
                 String a2 = this.m.b.a(str);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return null;
                 }
                 r rVar = r.get(a2);

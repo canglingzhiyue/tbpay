@@ -1,6 +1,6 @@
 package com.taobao.android.detail.mainpic.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -49,7 +49,7 @@ public class LocatorsModel {
         }
         for (LocatorItemModel locatorItemModel : this.f10195a) {
             if (locatorItemModel.show) {
-                if (TextUtils.equals(locatorItemModel.locator, this.b)) {
+                if (StringUtils.equals(locatorItemModel.locator, this.b)) {
                     return i;
                 }
                 i++;
@@ -66,7 +66,7 @@ public class LocatorsModel {
         }
         for (LocatorItemModel locatorItemModel : this.f10195a) {
             if (locatorItemModel.show) {
-                if (TextUtils.equals(locatorItemModel.locator, this.c)) {
+                if (StringUtils.equals(locatorItemModel.locator, this.c)) {
                     return i;
                 }
                 i++;

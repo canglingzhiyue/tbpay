@@ -3,7 +3,7 @@ package com.taobao.android.sku;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -212,7 +212,7 @@ public class d extends a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -292,7 +292,7 @@ public class d extends a {
             return;
         }
         String string = jSONObject.getString("bottomMode");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "ADDCART_AND_BUYNOW";
         }
         this.g = string;
@@ -370,7 +370,7 @@ public class d extends a {
             case 1:
             case 2:
             case 3:
-                if (!TextUtils.isEmpty(this.g)) {
+                if (!StringUtils.isEmpty(this.g)) {
                     z = "ADDCART".equals(this.g);
                     z2 = "BUYNOW".equals(this.g);
                     if ("CONFIRM".equals(this.g)) {
@@ -446,7 +446,7 @@ public class d extends a {
             }
             try {
                 String string = h.getJSONObject(ShippingNode.TAG).getString(mrm.KEY_AREA_ID);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     hashMap.put("divisionId", string);
                 }
             } catch (Throwable unused2) {
@@ -505,7 +505,7 @@ public class d extends a {
         IpChange ipChange = $ipChange;
         return ipChange instanceof IpChange ? (JSONObject) ipChange.ipc$dispatch("6a97a3a2", new Object[]{this, str, str2, str3, str4, str5, str6, str7, str8, str9}) : new JSONObject() { // from class: com.taobao.android.sku.H5Core$4
             {
-                put("actionFrom", (Object) (!TextUtils.isEmpty(str) ? str : "NULL"));
+                put("actionFrom", (Object) (!StringUtils.isEmpty(str) ? str : "NULL"));
                 put("inputMode", (Object) d.b(d.this));
                 put("buyNow", (Object) new JSONObject() { // from class: com.taobao.android.sku.H5Core$4.1
                     {
@@ -513,11 +513,11 @@ public class d extends a {
                         put("skuId", (Object) str2);
                         put("quantity", (Object) str3);
                         String str10 = "";
-                        put("serviceId", (Object) (!TextUtils.isEmpty(str4) ? str4 : str10));
-                        put("tgKey", (Object) (!TextUtils.isEmpty(str5) ? str5 : str10));
-                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_BOOKING_DATE, (Object) (!TextUtils.isEmpty(str6) ? str6 : str10));
-                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_ENTRANCE_DATE, (Object) (!TextUtils.isEmpty(str7) ? str7 : str10));
-                        put("exParams", (Object) (!TextUtils.isEmpty(str8) ? str8 : str10));
+                        put("serviceId", (Object) (!StringUtils.isEmpty(str4) ? str4 : str10));
+                        put("tgKey", (Object) (!StringUtils.isEmpty(str5) ? str5 : str10));
+                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_BOOKING_DATE, (Object) (!StringUtils.isEmpty(str6) ? str6 : str10));
+                        put(com.taobao.android.detail.core.event.subscriber.trade.b.K_ENTRANCE_DATE, (Object) (!StringUtils.isEmpty(str7) ? str7 : str10));
+                        put("exParams", (Object) (!StringUtils.isEmpty(str8) ? str8 : str10));
                     }
                 });
                 put(tfu.ADD_CART, (Object) new JSONObject() { // from class: com.taobao.android.sku.H5Core$4.2
@@ -525,7 +525,7 @@ public class d extends a {
                         put("itemId", (Object) d.c(d.this));
                         put("skuId", (Object) str2);
                         put("quantity", (Object) str3);
-                        put("exParams", (Object) (!TextUtils.isEmpty(str9) ? str9 : ""));
+                        put("exParams", (Object) (!StringUtils.isEmpty(str9) ? str9 : ""));
                     }
                 });
             }
@@ -539,7 +539,7 @@ public class d extends a {
             return;
         }
         this.o = true;
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "小二很忙，系统很累，请稍后重试!";
         }
         p.a(this.f15153a, 3, str3, "");
@@ -591,7 +591,7 @@ public class d extends a {
             }
             try {
                 String string = h.getJSONObject(ShippingNode.TAG).getString("addressId");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     hashMap.put("addressId", string);
                 }
             } catch (Throwable unused2) {

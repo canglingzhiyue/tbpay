@@ -1,6 +1,6 @@
 package com.alipay.android.msp.core.frame;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
@@ -165,8 +165,8 @@ public class MspWindowFrameDispatcher {
                     String localizedStringForKey = LanguageHelper.localizedStringForKey("mini_app_error", this.f4547a.getContext().getString(R.string.mini_app_error), new Object[0]);
                     if (jSONObject != null) {
                         String string = jSONObject.getString("msg");
-                        String string2 = (!TextUtils.isEmpty(string) || !jSONObject.containsKey(MUSAppMonitor.ERROR_MSG)) ? string : jSONObject.getString(MUSAppMonitor.ERROR_MSG);
-                        if (TextUtils.isEmpty(string2)) {
+                        String string2 = (!StringUtils.isEmpty(string) || !jSONObject.containsKey(MUSAppMonitor.ERROR_MSG)) ? string : jSONObject.getString(MUSAppMonitor.ERROR_MSG);
+                        if (StringUtils.isEmpty(string2)) {
                             string2 = localizedStringForKey;
                         }
                         str2 = ExceptionUtils.createExceptionMsg(string2, 302);
@@ -189,7 +189,7 @@ public class MspWindowFrameDispatcher {
                     mspWindowFrame.setUserId(str3);
                 }
                 String fingerUserStatus = FingerDataUtil.getFingerUserStatus(jSONObject8, str3);
-                if (jSONObject8 != null && !TextUtils.isEmpty(fingerUserStatus)) {
+                if (jSONObject8 != null && !StringUtils.isEmpty(fingerUserStatus)) {
                     jSONObject8.put(MspFlybirdDefine.FLYBIRD_LOCALDATA_FINGER_STATUS, (Object) fingerUserStatus);
                 }
                 mspWindowFrame.setTemplateContentData(jSONObject8);
@@ -225,7 +225,7 @@ public class MspWindowFrameDispatcher {
             MspContainerContext.fillSceneParams(mspWindowFrame, (MspContainerContext) this.f4547a);
         }
         LogUtil.record(2, "phonecashiermsp#flybird", "MspWindowFrameDispatcher.createWindowFrame", " frame=".concat(String.valueOf(mspWindowFrame)));
-        if (!TextUtils.isEmpty(mspWindowFrame.getUserId())) {
+        if (!StringUtils.isEmpty(mspWindowFrame.getUserId())) {
             this.f4547a.setServerFoundUserId(mspWindowFrame.getUserId());
         }
         if (this.f4547a.isBizAppCollectMoneyPage) {
@@ -240,7 +240,7 @@ public class MspWindowFrameDispatcher {
         } else if (mspWindowFrame.getWindowType() == 13 && (windowData = mspWindowFrame.getWindowData()) != null) {
             str3 = windowData.getString("bizErrorCode");
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             AlertIntelligenceEngine.startAction(this.f4547a, "err", "se_".concat(String.valueOf(str3)), mspWindowFrame.getFrameId(), mspWindowFrame.getTplId());
         } else if (MspFlybirdDefine.FLYBIRD_ERROR_TPL.equals(mspWindowFrame.getTplId())) {
             JSONObject templateContentData2 = mspWindowFrame.getTemplateContentData();

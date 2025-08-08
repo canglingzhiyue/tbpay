@@ -5,7 +5,7 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -283,7 +283,7 @@ public final class CoordinatorCardView extends FrameLayout {
             ipChange.ipc$dispatch("1f31fb40", new Object[]{this, list});
         } else if (list != null) {
             for (ctm ctmVar : list) {
-                if (!TextUtils.isEmpty(ctmVar.g()) && ctmVar.f() != null) {
+                if (!StringUtils.isEmpty(ctmVar.g()) && ctmVar.f() != null) {
                     int a2 = ctmVar.a();
                     if (a2 == 0) {
                         attachCard(ctmVar);

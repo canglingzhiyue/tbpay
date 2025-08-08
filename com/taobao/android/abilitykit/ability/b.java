@@ -1,6 +1,6 @@
 package com.taobao.android.abilitykit.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.dkv;
 import tb.dkw;
@@ -29,7 +29,7 @@ public class b extends dlg {
             return (dkx) ipChange.ipc$dispatch("1c5b757e", new Object[]{this, dlhVar, dleVar, dllVar});
         }
         String c = dlhVar.c("key");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return new dkw(new dkv(10007, "KEY 入参为空"), false);
         }
         Object f = dlhVar.f("value");

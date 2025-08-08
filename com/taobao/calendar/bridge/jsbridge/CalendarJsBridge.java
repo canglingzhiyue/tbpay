@@ -7,7 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -89,7 +89,7 @@ public class CalendarJsBridge extends e {
     }
 
     private void checkCalendarPlanIsExist(WVCallBackContext wVCallBackContext, String str) {
-        if (TextUtils.isEmpty(str) || wVCallBackContext == null) {
+        if (StringUtils.isEmpty(str) || wVCallBackContext == null) {
             wVCallBackContext.error(getFailedData(CalendarResult.KTCALENDAR_INVALID_PARAM.getCode(), CalendarResult.KTCALENDAR_INVALID_PARAM.getMessage()));
             return;
         }
@@ -127,7 +127,7 @@ public class CalendarJsBridge extends e {
         } else if (z2) {
             excuteAction(str, str2, wVCallBackContext);
         } else {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     JSONObject parseObject = JSONObject.parseObject(str2);
                     if (parseObject != null) {

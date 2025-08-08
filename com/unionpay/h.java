@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.unionpay.utils.UPUtils;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -53,11 +53,11 @@ public final class h implements Handler.Callback {
         ArrayList arrayList = null;
         try {
             String a2 = com.unionpay.utils.b.a(str, hVar.d);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 arrayList = com.unionpay.utils.b.b(hVar.b(), a2);
             }
             hVar.a(arrayList);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             a(hVar.b(), hVar.d, str);
@@ -93,10 +93,10 @@ public final class h implements Handler.Callback {
         }
         String c = UPUtils.c(com.unionpay.utils.b.a(this.d));
         String a2 = a(b());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             a(com.unionpay.utils.b.b(b(), a2));
         }
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             Executors.newSingleThreadExecutor().execute(new i(this, c));
             return;
         }

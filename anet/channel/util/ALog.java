@@ -1,6 +1,6 @@
 package anet.channel.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -281,7 +281,7 @@ public class ALog {
             return "";
         }
         StringBuilder sb = new StringBuilder(64);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(LOG_BREAK);
             sb.append("[seq:");
             sb.append(str2);

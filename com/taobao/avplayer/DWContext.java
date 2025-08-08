@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.View;
 import android.view.Window;
@@ -356,7 +356,7 @@ public class DWContext implements IDWObject {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(this.mPlayToken)) {
+            if (!StringUtils.isEmpty(this.mPlayToken)) {
                 return;
             }
             if (getUserInfoAdapter() != null) {
@@ -790,7 +790,7 @@ public class DWContext implements IDWObject {
             Iterator<String> it = arrayList.iterator();
             while (it.hasNext()) {
                 String next = it.next();
-                if (!TextUtils.isEmpty(next)) {
+                if (!StringUtils.isEmpty(next)) {
                     this.whiteWeexCmpList.put(next, true);
                 }
             }
@@ -806,7 +806,7 @@ public class DWContext implements IDWObject {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e1afc03b", new Object[]{this, str});
-        } else if (this.mDWToastContainer == null || TextUtils.isEmpty(str) || isHiddenToastView()) {
+        } else if (this.mDWToastContainer == null || StringUtils.isEmpty(str) || isHiddenToastView()) {
         } else {
             this.mDWToastContainer.a(str, this.mToastTopMargin);
         }
@@ -1585,7 +1585,7 @@ public class DWContext implements IDWObject {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7091fcc5", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mBackCoverWXUrl)) {
+        if (StringUtils.isEmpty(this.mBackCoverWXUrl)) {
             return "";
         }
         StringBuilder sb = new StringBuilder();

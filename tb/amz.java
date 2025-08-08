@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.JvmUncaughtCrashListener;
 import com.taobao.weex.WXEnvironment;
@@ -27,7 +27,7 @@ public class amz implements JvmUncaughtCrashListener {
             return (Map) ipChange.ipc$dispatch("d9b5b942", new Object[]{this, thread, th});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(this.f25449a)) {
+        if (!StringUtils.isEmpty(this.f25449a)) {
             hashMap.put(WXEnvironment.WEEX_CURRENT_KEY, this.f25449a);
         }
         return hashMap;

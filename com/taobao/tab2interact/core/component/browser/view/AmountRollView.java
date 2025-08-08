@@ -5,7 +5,7 @@ import android.graphics.Path;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -581,7 +581,7 @@ public class AmountRollView extends FrameLayout {
         String autoFillZero = autoFillZero(String.valueOf(i));
         String autoFillZero2 = autoFillZero(String.valueOf(i + 1));
         for (int i2 = 0; i2 < 4; i2++) {
-            if (!TextUtils.equals(String.valueOf(autoFillZero.charAt(i2)), String.valueOf(autoFillZero2.charAt(i2)))) {
+            if (!StringUtils.equals(String.valueOf(autoFillZero.charAt(i2)), String.valueOf(autoFillZero2.charAt(i2)))) {
                 digitalPlusOne(this.mSwitcherList.get(i2), autoFillZero2.charAt(i2), j);
             }
         }

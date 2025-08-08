@@ -3,7 +3,7 @@ package com.taobao.wireless.link.common;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.wireless.link.pop.d;
 import org.json.JSONObject;
@@ -28,11 +28,11 @@ public class PushStateJsbridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals("false", b.a(rjt.a().f33186a, "is_push_api_open", "true"))) {
+        if (StringUtils.equals("false", b.a(rjt.a().f33186a, "is_push_api_open", "true"))) {
             rkg.a("link_tag", "PushStateJsbridge === execute === h5调用获取通知权限,功能开关关闭");
             return false;
         }
-        if (TextUtils.equals(str, ACTION_SWITCH)) {
+        if (StringUtils.equals(str, ACTION_SWITCH)) {
             if (wVCallBackContext != null) {
                 JSONObject jSONObject = new JSONObject();
                 String h = d.h(rjt.a().f33186a);
@@ -47,7 +47,7 @@ public class PushStateJsbridge extends e {
                 wVCallBackContext.success(rVar);
                 return true;
             }
-        } else if (TextUtils.equals(str, ACTION_JUMP_SWITCH)) {
+        } else if (StringUtils.equals(str, ACTION_JUMP_SWITCH)) {
             d.i(rjt.a().f33186a);
             rkg.a("link_tag", "PushStateJsbridge === execute === h5调用跳转到通知权限开通页面");
         }

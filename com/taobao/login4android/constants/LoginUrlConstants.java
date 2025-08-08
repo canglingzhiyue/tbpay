@@ -1,6 +1,6 @@
 package com.taobao.login4android.constants;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -39,7 +39,7 @@ public class LoginUrlConstants {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b8cd515", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.contains(ALIBABA_SCAN_PREFIX);
         }
         return false;
@@ -50,7 +50,7 @@ public class LoginUrlConstants {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e99c2f12", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.contains(COMMON_SCAN_URL) || str.contains(COMMON_SCAN_URL_PRE);

@@ -3,7 +3,7 @@ package com.etao.feimagesearch.model;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -94,7 +94,7 @@ public abstract class e {
         if (com.etao.feimagesearch.config.b.am()) {
             return false;
         }
-        return !TextUtils.isEmpty(this.c) || !TextUtils.isEmpty(this.d);
+        return !StringUtils.isEmpty(this.c) || !StringUtils.isEmpty(this.d);
     }
 
     public final void a(Uri uri) {
@@ -113,14 +113,14 @@ public abstract class e {
         setShopId(uri.getQueryParameter("shopId"));
         String queryParameter2 = uri.getQueryParameter("sessionId");
         try {
-            if (!TextUtils.isEmpty(queryParameter2)) {
+            if (!StringUtils.isEmpty(queryParameter2)) {
                 this.f = Long.parseLong(queryParameter2);
             }
         } catch (Exception unused) {
             this.f = -1L;
         }
         String queryParameter3 = uri.getQueryParameter("pageSpm");
-        if (TextUtils.isEmpty(queryParameter3)) {
+        if (StringUtils.isEmpty(queryParameter3)) {
             return;
         }
         this.g = queryParameter3;
@@ -133,7 +133,7 @@ public abstract class e {
             return;
         }
         builder.appendQueryParameter("pssource", getPssource());
-        if (TextUtils.isEmpty(this.g) || !com.etao.feimagesearch.config.b.bc()) {
+        if (StringUtils.isEmpty(this.g) || !com.etao.feimagesearch.config.b.bc()) {
             return;
         }
         builder.appendQueryParameter("spm", this.g);

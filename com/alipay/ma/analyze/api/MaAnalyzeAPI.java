@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.graphics.YuvImage;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.ma.analyze.helper.MaResultTypeHelper;
 import com.alipay.ma.decode.DecodeResult;
 import com.alipay.ma.decode.DecodeType;
@@ -45,7 +45,7 @@ public class MaAnalyzeAPI {
         }
         ArrayList arrayList = new ArrayList();
         for (DecodeResult decodeResult : codeDecode) {
-            if (decodeResult != null && !TextUtils.isEmpty(decodeResult.strCode) && (decodeResult.type | i4) > 0) {
+            if (decodeResult != null && !StringUtils.isEmpty(decodeResult.strCode) && (decodeResult.type | i4) > 0) {
                 decodeResult.resultMaType = MaResultTypeHelper.getMaType(decodeResult);
                 arrayList.add(decodeResult);
             }
@@ -86,10 +86,10 @@ public class MaAnalyzeAPI {
         if (ipChange instanceof IpChange) {
             return (DecodeResult[]) ipChange.ipc$dispatch("e42f6d85", new Object[]{str, new Integer(i), new Integer(i2), new Boolean(z)});
         }
-        if (!TextUtils.isEmpty(str) && (codeDecodePictureWithQr = MaDecode.codeDecodePictureWithQr(str, i, i2, z)) != null && codeDecodePictureWithQr.length != 0) {
+        if (!StringUtils.isEmpty(str) && (codeDecodePictureWithQr = MaDecode.codeDecodePictureWithQr(str, i, i2, z)) != null && codeDecodePictureWithQr.length != 0) {
             ArrayList arrayList = new ArrayList();
             for (DecodeResult decodeResult : codeDecodePictureWithQr) {
-                if (decodeResult == null || TextUtils.isEmpty(decodeResult.strCode)) {
+                if (decodeResult == null || StringUtils.isEmpty(decodeResult.strCode)) {
                     return null;
                 }
                 decodeResult.resultMaType = MaResultTypeHelper.getMaType(decodeResult);
@@ -118,10 +118,10 @@ public class MaAnalyzeAPI {
         if (ipChange instanceof IpChange) {
             return (DecodeResult[]) ipChange.ipc$dispatch("a9ab8aaf", new Object[]{str, context, new Integer(i), new Integer(i2), new Boolean(z)});
         }
-        if (!TextUtils.isEmpty(str) && context != null && (codeDecodePictureWithQr = MaDecode.codeDecodePictureWithQr(str, context, i, i2, z)) != null && codeDecodePictureWithQr.length != 0) {
+        if (!StringUtils.isEmpty(str) && context != null && (codeDecodePictureWithQr = MaDecode.codeDecodePictureWithQr(str, context, i, i2, z)) != null && codeDecodePictureWithQr.length != 0) {
             ArrayList arrayList = new ArrayList();
             for (DecodeResult decodeResult : codeDecodePictureWithQr) {
-                if (decodeResult == null || TextUtils.isEmpty(decodeResult.strCode)) {
+                if (decodeResult == null || StringUtils.isEmpty(decodeResult.strCode)) {
                     return null;
                 }
                 decodeResult.resultMaType = MaResultTypeHelper.getMaType(decodeResult);
@@ -202,7 +202,7 @@ public class MaAnalyzeAPI {
         if (codeDecodePictureWithQr != null && codeDecodePictureWithQr.length != 0) {
             ArrayList arrayList = new ArrayList();
             for (DecodeResult decodeResult : codeDecodePictureWithQr) {
-                if (decodeResult == null || TextUtils.isEmpty(decodeResult.strCode)) {
+                if (decodeResult == null || StringUtils.isEmpty(decodeResult.strCode)) {
                     return null;
                 }
                 decodeResult.resultMaType = MaResultTypeHelper.getMaType(decodeResult);

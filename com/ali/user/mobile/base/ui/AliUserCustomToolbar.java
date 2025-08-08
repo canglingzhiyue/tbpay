@@ -5,7 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,12 +106,12 @@ public class AliUserCustomToolbar extends Toolbar {
             ipChange.ipc$dispatch("70050a41", new Object[]{this, charSequence});
             return;
         }
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             if (this.mTitleTextView == null) {
                 Context context = getContext();
                 this.mTitleTextView = new TextView(context);
                 this.mTitleTextView.setSingleLine();
-                this.mTitleTextView.setEllipsize(TextUtils.TruncateAt.END);
+                this.mTitleTextView.setEllipsize(StringUtils.TruncateAt.END);
                 int i = this.mTitleTextAppearance;
                 if (i != 0) {
                     this.mTitleTextView.setTextAppearance(context, i);

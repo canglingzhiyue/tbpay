@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -522,7 +522,7 @@ public class ese implements shm, snd {
             return ((Boolean) ipChange.ipc$dispatch("a821939f", new Object[]{this, new Integer(i)})).booleanValue();
         }
         for (String str : b) {
-            if (TextUtils.equals(str, String.valueOf(i))) {
+            if (StringUtils.equals(str, String.valueOf(i))) {
                 return true;
             }
         }

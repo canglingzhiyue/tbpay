@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -597,7 +597,7 @@ public class HotAnswerView extends RelativeLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3dbbac8", new Object[]{this, compoundButton});
-        } else if ((this.answer == null && !this.canClick.booleanValue()) || (i = this.currAnswerIndex) < 0 || i >= this.answer.size() || (editText = this.answer.get(this.currAnswerIndex)) == null || editText.getText() == null || !TextUtils.isEmpty(editText.getText().toString())) {
+        } else if ((this.answer == null && !this.canClick.booleanValue()) || (i = this.currAnswerIndex) < 0 || i >= this.answer.size() || (editText = this.answer.get(this.currAnswerIndex)) == null || editText.getText() == null || !StringUtils.isEmpty(editText.getText().toString())) {
         } else {
             editText.setText(compoundButton.getTag().toString());
             b bVar = new b();
@@ -627,7 +627,7 @@ public class HotAnswerView extends RelativeLayout {
             return i2;
         }
         EditText editText = this.answer.get(i2);
-        return (editText.getText() == null || TextUtils.isEmpty(editText.getText().toString())) ? i2 : getNextAnswer(i2);
+        return (editText.getText() == null || StringUtils.isEmpty(editText.getText().toString())) ? i2 : getNextAnswer(i2);
     }
 
     private void submitOrder() {
@@ -640,7 +640,7 @@ public class HotAnswerView extends RelativeLayout {
             Iterator<EditText> it = this.answer.iterator();
             while (it.hasNext()) {
                 EditText next = it.next();
-                if (next.getText() == null || TextUtils.isEmpty(next.getText().toString())) {
+                if (next.getText() == null || StringUtils.isEmpty(next.getText().toString())) {
                     return;
                 }
                 sb.append((CharSequence) next.getText());

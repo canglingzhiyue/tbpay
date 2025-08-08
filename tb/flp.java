@@ -5,7 +5,7 @@ import android.app.Application;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitinstall.g;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.bundleInfo.b;
@@ -181,7 +181,7 @@ public class flp implements fmj, fmm {
             return (fmh) ipChange.ipc$dispatch("7c6f51b3", new Object[]{str});
         }
         WeakHashMap<String, fmh> weakHashMap = f28038a;
-        if (weakHashMap != null && weakHashMap.size() != 0 && !TextUtils.isEmpty(str)) {
+        if (weakHashMap != null && weakHashMap.size() != 0 && !StringUtils.isEmpty(str)) {
             return f28038a.get(str);
         }
         return null;
@@ -207,7 +207,7 @@ public class flp implements fmj, fmm {
             return null;
         }
         String a2 = a(uri);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a(a2);
         }
         return null;

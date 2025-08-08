@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -111,12 +111,12 @@ public abstract class gow implements gok {
             fields.put("type", (Object) str);
             fields.put("from", (Object) h);
             fields.put("fromBundleId", (Object) g);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 fields.put("to", (Object) str2);
             } else {
                 fields.remove("to");
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 fields.put("toBundleId", (Object) str3);
             } else {
                 fields.remove("toBundleId");

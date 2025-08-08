@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.request.stream;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.request.MtopInfo;
@@ -62,7 +62,7 @@ public class MtopStreamRequestCallback implements IMtopStreamListener {
             return;
         }
         i.a(TAG, "streamId=" + this.mStreamId + ", 主接口流式请求回调，onReceiveData");
-        if (!TextUtils.equals(this.mStreamId, com.taobao.android.detail.ttdetail.request.a.b(this.mToken))) {
+        if (!StringUtils.equals(this.mStreamId, com.taobao.android.detail.ttdetail.request.a.b(this.mToken))) {
             ae.a(-300014, "丢弃流式回调结果");
             return;
         }
@@ -180,7 +180,7 @@ public class MtopStreamRequestCallback implements IMtopStreamListener {
             return;
         }
         i.a(TAG, "streamId=" + this.mStreamId + ", 主接口流式请求回调，onError");
-        if (!TextUtils.equals(this.mStreamId, com.taobao.android.detail.ttdetail.request.a.b(this.mToken))) {
+        if (!StringUtils.equals(this.mStreamId, com.taobao.android.detail.ttdetail.request.a.b(this.mToken))) {
             ae.a(-300014, "丢弃流式回调结果");
             return;
         }
@@ -249,7 +249,7 @@ public class MtopStreamRequestCallback implements IMtopStreamListener {
             return;
         }
         i.a(TAG, "streamId=" + this.mStreamId + ", 主接口流式请求回调，onFinish");
-        if (!TextUtils.equals(this.mStreamId, com.taobao.android.detail.ttdetail.request.a.b(this.mToken))) {
+        if (!StringUtils.equals(this.mStreamId, com.taobao.android.detail.ttdetail.request.a.b(this.mToken))) {
             ae.a(-300014, "丢弃流式回调结果");
             return;
         }

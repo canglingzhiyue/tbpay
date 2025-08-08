@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
@@ -35,7 +35,7 @@ public class jky extends jku {
         if (ipChange instanceof IpChange) {
             return (jky) ipChange.ipc$dispatch("e2617d90", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@hcUA")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@hcUA")) {
             return null;
         }
         return new jky(str);
@@ -65,10 +65,10 @@ public class jky extends jku {
         String h = android.taobao.windvane.config.a.a().h();
         String i = android.taobao.windvane.config.a.a().i();
         String str = "Prefetch/Nav";
-        if (!TextUtils.isEmpty(h) && !TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(h) && !StringUtils.isEmpty(i)) {
             str = str + " AliApp(" + h + "/" + i + riy.BRACKET_END_STR;
         }
-        if (!str.contains("TTID/") && !TextUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
+        if (!str.contains("TTID/") && !StringUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
             str = str + " TTID/" + android.taobao.windvane.config.a.a().b();
         }
         return str + " WindVane/8.3.0";

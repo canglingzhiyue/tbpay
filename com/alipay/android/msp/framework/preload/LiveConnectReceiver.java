@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
 import com.alipay.android.msp.framework.helper.MspConfig;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
@@ -33,13 +33,13 @@ public class LiveConnectReceiver extends BroadcastReceiver {
             String action = intent.getAction();
             LogUtil.record(1, AlipaySDKJSBridge.LOG_TAG, action, "");
             String str = intent.getPackage();
-            if (TextUtils.equals("com.taobao.taobao", str) || TextUtils.equals("com.taobao.litetao", str) || TextUtils.equals("com.taobao.mobile.dipei", str)) {
+            if (StringUtils.equals("com.taobao.taobao", str) || StringUtils.equals("com.taobao.litetao", str) || StringUtils.equals("com.taobao.mobile.dipei", str)) {
                 GlobalHelper.getInstance().init(context);
                 LogUtil.record(1, AlipaySDKJSBridge.LOG_TAG, "LiveConnectReceiver.onReceive", "广播预连接传入ip地址：".concat(String.valueOf(intent.getStringExtra("dns_ip"))));
                 if (intent.getBooleanExtra("msp_pre_load", false)) {
                     a(context);
                 }
-                if (!TextUtils.equals(action, "com.alipay.phonecashier.prepay")) {
+                if (!StringUtils.equals(action, "com.alipay.phonecashier.prepay")) {
                     return;
                 }
                 try {

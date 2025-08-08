@@ -2,7 +2,7 @@ package tb;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.subservice.framework.container.mainfeeds.recycleview.adapter.model.a;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -49,7 +49,7 @@ public class lig {
 
     private boolean a(List<BaseSectionModel> list) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c705295d", new Object[]{this, list})).booleanValue() : list != null && !list.isEmpty() && list.size() > 1 && TextUtils.equals(list.get(list.size() - 1).getSectionBizCode(), "loading");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c705295d", new Object[]{this, list})).booleanValue() : list != null && !list.isEmpty() && list.size() > 1 && StringUtils.equals(list.get(list.size() - 1).getSectionBizCode(), "loading");
     }
 
     private boolean b(List<BaseSectionModel> list) {

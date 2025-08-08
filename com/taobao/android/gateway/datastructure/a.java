@@ -1,6 +1,6 @@
 package com.taobao.android.gateway.datastructure;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +85,7 @@ public class a {
                 subList.set(size2, "");
             }
         }
-        return TextUtils.join(".", subList);
+        return StringUtils.join(".", subList);
     }
 
     public static String a(String[] strArr, int i) {

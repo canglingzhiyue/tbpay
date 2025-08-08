@@ -6,7 +6,7 @@ import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.OnLifecycleEvent;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.container.shopLoft.b;
@@ -312,11 +312,11 @@ public class ShopTwoFloorSingleRoomController extends ssr implements com.alibaba
         } else {
             this.d = v.e(jSONObject.getString("initMuteStatus"));
             jSONObject.put(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID, (Object) jSONObject.getString("id"));
-            if (TextUtils.isEmpty(jSONObject.getString("livesource"))) {
+            if (StringUtils.isEmpty(jSONObject.getString("livesource"))) {
                 jSONObject.put("livesource", "shop2F");
             }
             String string = jSONObject.getString("sellerId");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jSONObject.put("accountId", (Object) string);
             }
             JSONObject jSONObject3 = jSONObject.getJSONObject("liveTransParams");
@@ -324,7 +324,7 @@ public class ShopTwoFloorSingleRoomController extends ssr implements com.alibaba
                 jSONObject.put(aw.PARAM_IGNORE_PV, (Object) jSONObject3.getString(aw.PARAM_IGNORE_PV));
             }
             String string2 = jSONObject.getString("itemId");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 jSONObject.put(aw.PARAM_SJSD_ITEM_ID, (Object) string2);
             }
             String str = "a2141.23201685";
@@ -339,7 +339,7 @@ public class ShopTwoFloorSingleRoomController extends ssr implements com.alibaba
             }
             jSONObject.put("spm", (Object) str);
             String string4 = jSONObject.getString("playerViewToken");
-            if (!TextUtils.isEmpty(string4) && !com.taobao.taolive.sdk.ui.media.g.a().d(string4)) {
+            if (!StringUtils.isEmpty(string4) && !com.taobao.taolive.sdk.ui.media.g.a().d(string4)) {
                 string4 = null;
             }
             jSONObject.put("playerViewToken", (Object) string4);
@@ -601,7 +601,7 @@ public class ShopTwoFloorSingleRoomController extends ssr implements com.alibaba
                     return null;
                 }
                 String str = videoInfo.broadCaster.accountName;
-                return (ShareContent) pmd.a().p().b((Activity) this.e, TextUtils.isEmpty(aa.ae()) ? this.e.getString(R.string.taolive_share_live, str, videoInfo.title) : String.format(aa.ae(), str, videoInfo.title), TextUtils.isEmpty(videoInfo.shareUrlDO.bgImgUrl) ? videoInfo.coverImg : videoInfo.shareUrlDO.bgImgUrl, videoInfo.liveId, videoInfo.topic, false, videoInfo.shareUrlDO.shareUrl, videoInfo.shareUrlDO.shareCardUrl, "zhibo", null);
+                return (ShareContent) pmd.a().p().b((Activity) this.e, StringUtils.isEmpty(aa.ae()) ? this.e.getString(R.string.taolive_share_live, str, videoInfo.title) : String.format(aa.ae(), str, videoInfo.title), StringUtils.isEmpty(videoInfo.shareUrlDO.bgImgUrl) ? videoInfo.coverImg : videoInfo.shareUrlDO.bgImgUrl, videoInfo.liveId, videoInfo.topic, false, videoInfo.shareUrlDO.shareUrl, videoInfo.shareUrlDO.shareCardUrl, "zhibo", null);
             }
         }
         videoInfo = null;

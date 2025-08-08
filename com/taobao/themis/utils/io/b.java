@@ -1,6 +1,6 @@
 package com.taobao.themis.utils.io;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.security.MessageDigest;
 import kotlin.Metadata;
@@ -29,7 +29,7 @@ public final class b {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{text});
         }
         q.d(text, "text");
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return null;
         }
         MessageDigest messageDigest = null;

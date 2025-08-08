@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,12 +69,12 @@ public final class dtq extends arv {
             return;
         }
         String string = jSONObject.getString("content");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             arc.a().a("content is null !!");
             return;
         }
         String string2 = jSONObject.getString("showOnceCode");
-        if (!TextUtils.isEmpty(string2) && !a(e, string2)) {
+        if (!StringUtils.isEmpty(string2) && !a(e, string2)) {
             arc.a().a("needShown is false !!");
         } else {
             a((Activity) e, eventModel, string);

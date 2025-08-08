@@ -1,6 +1,6 @@
 package com.taobao.downloader.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.downloader.TbDownloader;
@@ -124,7 +124,7 @@ public class a {
                     return;
                 }
                 final SyncItem syncItem = c.get(this.b);
-                if (!TextUtils.isEmpty(syncItem.version) && !c.a(syncItem.version)) {
+                if (!StringUtils.isEmpty(syncItem.version) && !c.a(syncItem.version)) {
                     kmv.c(TAG, "download item vesion is not need to download", "url", syncItem.url, "version", syncItem.version);
                     syncItem.finish = true;
                     this.b++;
@@ -134,7 +134,7 @@ public class a {
                 this.c = true;
                 kmv.b(TAG, "download start sync", "url", syncItem.url);
                 kmm convert = syncItem.convert();
-                if (!TextUtils.isEmpty(TbDownloader.getInstance().a(convert.b.h, convert.f30166a.get(0)))) {
+                if (!StringUtils.isEmpty(TbDownloader.getInstance().a(convert.b.h, convert.f30166a.get(0)))) {
                     this.b++;
                     this.c = false;
                     c();

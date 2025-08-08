@@ -2,7 +2,7 @@ package com.taobao.search.m3;
 
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.adapter.MUSImageQuality;
@@ -68,7 +68,7 @@ public final class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3526812", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.b != null || TextUtils.isEmpty(str)) {
+        } else if (this.b != null || StringUtils.isEmpty(str)) {
         } else {
             com.taobao.android.weex_framework.adapter.d dVar = this.d;
             if (dVar == null) {

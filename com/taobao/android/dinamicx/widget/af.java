@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.v4.widget.TextViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -272,7 +272,7 @@ public class af extends DXWidgetNode {
             }
             onBeforeMeasure(this.textViewUtilForMeasure);
             this.textViewUtilForMeasure.onMeasure(i, i2);
-            if (TextUtils.isEmpty(this.text) && this.layoutHeight == -2) {
+            if (StringUtils.isEmpty(this.text) && this.layoutHeight == -2) {
                 setMeasuredDimension(this.textViewUtilForMeasure.getMeasuredWidthAndState(), 0);
             } else {
                 setMeasuredDimension(this.textViewUtilForMeasure.getMeasuredWidthAndState(), this.textViewUtilForMeasure.getMeasuredHeightAndState());
@@ -325,7 +325,7 @@ public class af extends DXWidgetNode {
         if (textSize != f) {
             textView.setTextSize(0, f);
         }
-        if (!TextUtils.isEmpty(getFont())) {
+        if (!StringUtils.isEmpty(getFont())) {
             setNativeTextFont(textView, getFont(), this.textStyle);
         } else {
             setNativeTextStyle(textView, this.textStyle);
@@ -407,7 +407,7 @@ public class af extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b25fcd1b", new Object[]{this, textView, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
             textView.setText("");
         } else {
             textView.setText(charSequence);
@@ -440,7 +440,7 @@ public class af extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b1cf11", new Object[]{this, textView, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 if (DinamicXEngine.i() == null) {
@@ -795,7 +795,7 @@ public class af extends DXWidgetNode {
             }
             textView.setTextColor(tryFetchDarkModeColor("textColor", 0, this.textColor));
             textView.setTextSize(0, this.textSize);
-            if (!TextUtils.isEmpty(getFont())) {
+            if (!StringUtils.isEmpty(getFont())) {
                 setNativeTextFont(textView, getFont(), this.textStyle);
             } else {
                 int i = this.textStyle;
@@ -881,12 +881,12 @@ public class af extends DXWidgetNode {
         } else if (i == 0) {
             textView.setEllipsize(null);
         } else if (i == 1) {
-            textView.setEllipsize(TextUtils.TruncateAt.START);
+            textView.setEllipsize(StringUtils.TruncateAt.START);
         } else if (i == 2) {
-            textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+            textView.setEllipsize(StringUtils.TruncateAt.MIDDLE);
         } else if (i != 3) {
         } else {
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
         }
     }
 
@@ -1058,7 +1058,7 @@ public class af extends DXWidgetNode {
                                     i6 = i2;
                                 }
                                 measuredWidthAndState = dXMeasuredTextView.getMeasuredWidthAndState();
-                                measuredHeightAndState = (TextUtils.isEmpty(af.this.text) || af.this.layoutHeight != -2) ? dXMeasuredTextView.getMeasuredHeightAndState() : 0;
+                                measuredHeightAndState = (StringUtils.isEmpty(af.this.text) || af.this.layoutHeight != -2) ? dXMeasuredTextView.getMeasuredHeightAndState() : 0;
                                 if (measuredWidthAndState != i3 && measuredHeightAndState == i4) {
                                     return;
                                 }
@@ -1069,7 +1069,7 @@ public class af extends DXWidgetNode {
                             i6 = i2;
                             dXMeasuredTextView.onMeasure(i5, i6);
                             measuredWidthAndState = dXMeasuredTextView.getMeasuredWidthAndState();
-                            if (TextUtils.isEmpty(af.this.text)) {
+                            if (StringUtils.isEmpty(af.this.text)) {
                             }
                             if (measuredWidthAndState != i3) {
                             }

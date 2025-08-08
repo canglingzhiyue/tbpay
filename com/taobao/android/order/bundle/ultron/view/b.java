@@ -1,7 +1,7 @@
 package com.taobao.android.order.bundle.ultron.view;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,10 +46,10 @@ public class b extends com.alibaba.android.ultron.vfw.viewholder.b {
             try {
                 String string = jSONObject.getString("backGroundColor");
                 String string2 = jSONObject.getString("cardGroupHeight");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     this.e.getLayoutParams().height = hyo.a(this.e.getContext(), Integer.parseInt(string2));
                 }
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 this.e.setBackgroundColor(Color.parseColor(string));

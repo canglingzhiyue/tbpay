@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.standard.video;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -224,7 +224,7 @@ public class j implements d {
             return null;
         }
         for (Map.Entry<String, AbsPicGalleryVideoPlayer> entry : this.b.entrySet()) {
-            if (TextUtils.equals(entry.getKey(), mVar.a()) && TextUtils.equals(mVar.c(), entry.getValue().n().c())) {
+            if (StringUtils.equals(entry.getKey(), mVar.a()) && StringUtils.equals(mVar.c(), entry.getValue().n().c())) {
                 return entry.getValue();
             }
         }
@@ -245,7 +245,7 @@ public class j implements d {
             return (AbsPicGalleryVideoPlayer) ipChange.ipc$dispatch("6d0f1770", new Object[]{this, str});
         }
         for (AbsPicGalleryVideoPlayer absPicGalleryVideoPlayer : this.b.values()) {
-            if (TextUtils.equals(str, absPicGalleryVideoPlayer.b.a())) {
+            if (StringUtils.equals(str, absPicGalleryVideoPlayer.b.a())) {
                 return absPicGalleryVideoPlayer;
             }
         }

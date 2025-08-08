@@ -2,7 +2,7 @@ package com.taobao.android.behavix.feature;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.testutils.log.LogUtils;
@@ -46,7 +46,7 @@ public abstract class a {
             return ((Boolean) ipChange.ipc$dispatch("6f32d06c", new Object[]{this, jSONObject, jSONObject2})).booleanValue();
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             LogUtils.a(LogUtils.BX_BIZ_NAME, "broadcastFeature", "featureName is null");
             return false;
         } else if (jSONObject == null) {

@@ -3,7 +3,7 @@ package com.alipay.mobile.common.transportext.biz.mmtp;
 import android.content.Context;
 import android.content.Intent;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.amnet.ipcapi.pushproc.OutEventNotifyService;
 import com.alipay.mobile.common.ipc.api.IPCApiFactory;
@@ -191,7 +191,7 @@ public class MainProcNetInfoReceiver extends NwRigorousNetworkConnReceiver {
             return;
         }
         String b = b(context);
-        if (TextUtils.isEmpty(b) || !a()) {
+        if (StringUtils.isEmpty(b) || !a()) {
             return;
         }
         a(b, z, c(context));
@@ -242,7 +242,7 @@ public class MainProcNetInfoReceiver extends NwRigorousNetworkConnReceiver {
                 }
                 str = networkInfo;
             }
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 return str;
             }
             return str + " lastTypeName=[" + this.d + riy.ARRAY_END_STR;
@@ -278,7 +278,7 @@ public class MainProcNetInfoReceiver extends NwRigorousNetworkConnReceiver {
             monitorLoggerModel.getExtPramas().put("Ground", "Bg");
         }
         String b = b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             monitorLoggerModel.getExtPramas().put("Loc", b);
         }
         String str2 = "T";
@@ -296,11 +296,11 @@ public class MainProcNetInfoReceiver extends NwRigorousNetworkConnReceiver {
             extPramas.put("BTOpen", str2);
         }
         String localIPv6Address = NetworkUtils.getLocalIPv6Address();
-        if (!TextUtils.isEmpty(localIPv6Address)) {
+        if (!StringUtils.isEmpty(localIPv6Address)) {
             monitorLoggerModel.getExtPramas().put("localIPv6", localIPv6Address);
         }
         String gateWayAddress = NetworkUtils.getGateWayAddress();
-        if (!TextUtils.isEmpty(gateWayAddress)) {
+        if (!StringUtils.isEmpty(gateWayAddress)) {
             monitorLoggerModel.getExtPramas().put("gateway", gateWayAddress);
         }
         MonitorLoggerUtils.uploadPerfLog(monitorLoggerModel);
@@ -316,7 +316,7 @@ public class MainProcNetInfoReceiver extends NwRigorousNetworkConnReceiver {
         try {
             String latitude = DeviceInfoUtil.getLatitude();
             String longitude = DeviceInfoUtil.getLongitude();
-            if (!TextUtils.isEmpty(latitude) && !TextUtils.isEmpty(longitude)) {
+            if (!StringUtils.isEmpty(latitude) && !StringUtils.isEmpty(longitude)) {
                 return latitude + "_" + longitude;
             }
             return "";

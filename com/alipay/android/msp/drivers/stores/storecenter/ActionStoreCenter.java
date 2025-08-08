@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.storecenter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.clients.MspWindowClient;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspTradeContext;
@@ -72,7 +72,7 @@ public class ActionStoreCenter extends StoreCenter {
                 }
                 if (a2 == null) {
                     continue;
-                } else if (TextUtils.equals(mspEvent.getActionName(), "submit") && this.b != null && ((MspTradeContext) this.b).isSubmitState()) {
+                } else if (StringUtils.equals(mspEvent.getActionName(), "submit") && this.b != null && ((MspTradeContext) this.b).isSubmitState()) {
                     return "";
                 } else {
                     str = a2.onstMspAction(eventAction, mspEvent);
@@ -102,7 +102,7 @@ public class ActionStoreCenter extends StoreCenter {
             return;
         }
         LogUtil.i("ActionStoreCenter", "registerJsPluginWhenHandleAction", "actionName=".concat(String.valueOf(str)));
-        if (TextUtils.equals(str, "continue")) {
+        if (StringUtils.equals(str, "continue")) {
             return;
         }
         this.b.getStatisticInfo().addError(ErrorType.DEFAULT, "lazy_register_plugin", "pluginName=".concat(String.valueOf(str)));

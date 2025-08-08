@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.u2;
 import com.meizu.cloud.pushsdk.notification.model.AdvertisementOption;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
@@ -104,7 +104,7 @@ public final class O000OOo0 {
         try {
             StringBuilder sb = new StringBuilder();
             if (map != null && !map.isEmpty()) {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = "&";
                 }
                 for (Map.Entry<String, String> entry : map.entrySet()) {

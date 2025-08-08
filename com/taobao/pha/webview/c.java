@@ -9,7 +9,7 @@ import android.os.Build;
 import android.taobao.windvane.extra.uc.WVUCClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -474,7 +474,7 @@ public class c implements ngf {
                             IpChange ipChange3 = $ipChange;
                             if (ipChange3 instanceof IpChange) {
                                 ipChange3.ipc$dispatch("61764185", new Object[]{this, str});
-                            } else if (!TextUtils.equals("\"1\"", str) || nggVar == null) {
+                            } else if (!StringUtils.equals("\"1\"", str) || nggVar == null) {
                             } else {
                                 nggVar.a();
                             }

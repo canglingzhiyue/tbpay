@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.widget.desc.image;
 
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliImageCreatorInterface;
@@ -59,7 +59,7 @@ public class f implements e {
             ipChange.ipc$dispatch("8e597ab7", new Object[]{this, str, detailImageView, dVar, cVar});
         } else if (detailImageView == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 detailImageView.setImageDrawable(null);
             } else if (dVar == null || dVar.c == 0) {
                 throw new IllegalArgumentException("option is invalid");

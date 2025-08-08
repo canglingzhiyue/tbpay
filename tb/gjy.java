@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.datastructure.GatewayActionInfo;
@@ -30,7 +30,7 @@ public class gjy {
                     arrayList.add(bVar.b());
                 }
             }
-            TLog.logd("gateway2-GatewayEventPipeline.triggerEvents", TextUtils.join(",", arrayList));
+            TLog.logd("gateway2-GatewayEventPipeline.triggerEvents", StringUtils.join(",", arrayList));
         }
         d(c(b(list, gjzVar), gjzVar), gjzVar);
     }

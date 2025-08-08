@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.d;
@@ -173,7 +173,7 @@ public class ohg {
             Map<String, String> configs = OrangeConfig.getInstance().getConfigs(str);
             String string = this.c.getString(str, null);
             String str2 = map.get("configVersion");
-            if (configs == null || TextUtils.equals(string, str2)) {
+            if (configs == null || StringUtils.equals(string, str2)) {
                 return;
             }
             SharedPreferences.Editor edit = this.c.edit();
@@ -199,7 +199,7 @@ public class ohg {
             Map<String, String> configs = OrangeConfig.getInstance().getConfigs(str);
             String string = this.c.getString(str, null);
             String str2 = map.get("configVersion");
-            if (configs == null || TextUtils.equals(string, str2)) {
+            if (configs == null || StringUtils.equals(string, str2)) {
                 return;
             }
             Map<String, ?> all = this.c.getAll();
@@ -241,10 +241,10 @@ public class ohg {
             String a3 = a(str, str2);
             String string = this.c.getString(a3, str3);
             String config = OrangeConfig.getInstance().getConfig(str, str2, str3);
-            if (TextUtils.equals(string, config)) {
+            if (StringUtils.equals(string, config)) {
                 return config;
             }
-            if (TextUtils.equals(config, str3)) {
+            if (StringUtils.equals(config, str3)) {
                 return string;
             }
             this.c.edit().putString(a3, config).apply();
@@ -340,7 +340,7 @@ public class ohg {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
         for (String str2 : f32056a) {
-            if (TextUtils.equals(str2, str)) {
+            if (StringUtils.equals(str2, str)) {
                 return true;
             }
         }

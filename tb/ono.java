@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -170,7 +170,7 @@ public class ono extends RecyclerView.Adapter<a> {
         }
         d a2 = aVar.a();
         String a3 = bq.a(a2);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         c.a(this.f32213a, a2);
@@ -189,7 +189,7 @@ public class ono extends RecyclerView.Adapter<a> {
                 return;
             }
             String a2 = bq.a(dVar);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             b.a(this.f32213a, a2, 2);

@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.InputStreamReader;
@@ -28,7 +28,7 @@ public final class ab {
         try {
             String a2 = y.a(context);
             try {
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     return a2;
                 }
                 uuid = UUID.randomUUID().toString();
@@ -68,7 +68,7 @@ public final class ab {
             if (readLine != null) {
                 String[] split = readLine.split("\\.");
                 Date a2 = a(split[0]);
-                if (!TextUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
+                if (!StringUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
                     str = (a2.getTime() / 1000) + "." + c(trim);
                 } else {
                     str = String.valueOf(a2.getTime() / 1000);
@@ -97,7 +97,7 @@ public final class ab {
 
     private static int c(String str) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return 0;
             }
             return Integer.parseInt(str);
@@ -115,7 +115,7 @@ public final class ab {
             if (readLine != null) {
                 String[] split = readLine.split("\\.");
                 Date a2 = a(split[0]);
-                if (!TextUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
+                if (!StringUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
                     str = (a2.getTime() / 1000) + "." + c(trim);
                 } else {
                     str = String.valueOf(a2.getTime() / 1000);
@@ -136,7 +136,7 @@ public final class ab {
             if (readLine != null) {
                 String[] split = readLine.split("\\.");
                 Date a2 = a(split[0]);
-                if (!TextUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
+                if (!StringUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
                     str = (a2.getTime() / 1000) + "." + c(trim);
                 } else {
                     str = String.valueOf(a2.getTime() / 1000);
@@ -157,7 +157,7 @@ public final class ab {
             if (readLine != null) {
                 String[] split = readLine.split("\\.");
                 Date a2 = a(split[0]);
-                if (!TextUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
+                if (!StringUtils.isEmpty(split[1] != null ? split[1].split("\\+")[0].trim() : str)) {
                     str = (a2.getTime() / 1000) + "." + c(trim);
                 } else {
                     str = String.valueOf(a2.getTime() / 1000);

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.base.ui.BaseActivity;
@@ -128,7 +128,7 @@ public class LoginProxyActivity extends BaseActivity {
                 String host = data.getHost();
                 data.getPath();
                 String queryParameter = data.getQueryParameter(LoginType.LocalLoginType.SMS_LOGIN);
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     if (bundle == null) {
                         bundle = new Bundle();
                     }
@@ -140,7 +140,7 @@ public class LoginProxyActivity extends BaseActivity {
                 }
             }
             String stringExtra = getIntent().getStringExtra("action");
-            if (TextUtils.equals(stringExtra, ACTION_ALIPAY_AUTH)) {
+            if (StringUtils.equals(stringExtra, ACTION_ALIPAY_AUTH)) {
                 LoginParam loginParam = new LoginParam();
                 loginParam.sdkTraceId = ApiReferer.generateTraceId(LoginType.LocalLoginType.ASO_LOGIN, UTConstant.PageName.UT_PAGE_LOGIN_BAR);
                 loginParam.utPageName = UTConstant.PageName.UT_PAGE_LOGIN_BAR;
@@ -151,7 +151,7 @@ public class LoginProxyActivity extends BaseActivity {
                 AlipayAuth.alipayAuth(this);
                 finish();
                 return;
-            } else if (TextUtils.equals(ACTION_TYPE_ACCOUNT_SWITCH, stringExtra)) {
+            } else if (StringUtils.equals(ACTION_TYPE_ACCOUNT_SWITCH, stringExtra)) {
                 showAccountSwitchDialogFragment(getIntent().getStringExtra("message"));
                 return;
             }
@@ -164,7 +164,7 @@ public class LoginProxyActivity extends BaseActivity {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-                } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+                } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
                 } else {
                     int i = AnonymousClass4.f17844a[LoginAction.valueOf(intent.getAction()).ordinal()];
                     if (i != 1 && i != 2 && i != 3) {

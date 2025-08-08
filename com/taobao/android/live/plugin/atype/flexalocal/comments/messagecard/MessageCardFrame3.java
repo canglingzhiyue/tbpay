@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.comments.messagecard;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -157,7 +157,7 @@ public class MessageCardFrame3 extends BaseFrame {
                 } else {
                     try {
                         MessageCardInfo messageCardInfo = (MessageCardInfo) JSONObject.parseObject((String) obj, MessageCardInfo.class);
-                        if (messageCardInfo == null || TextUtils.isEmpty(messageCardInfo.action)) {
+                        if (messageCardInfo == null || StringUtils.isEmpty(messageCardInfo.action)) {
                             return;
                         }
                         String str = messageCardInfo.action;
@@ -327,7 +327,7 @@ public class MessageCardFrame3 extends BaseFrame {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("761da87f", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("type", str);

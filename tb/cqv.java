@@ -5,7 +5,7 @@ import android.content.Context;
 import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -144,7 +144,7 @@ public final class cqv extends cqt {
         q.c(activity, "activity");
         String c = b.c("https://market.m.taobao.com/app/imagesearch-page/s-imgsearch-result/index");
         q.a((Object) c, "ConfigModel.getIrpWebUrl…-imgsearch-result/index\")");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             cqt.a i = i();
             if (i == null) {
                 return;
@@ -209,7 +209,7 @@ public final class cqv extends cqt {
             }
             String itemidFromUrl = IrpParamModel.getItemidFromUrl(str);
             if (!super.shouldOverrideUrlLoading(webView, str)) {
-                if (e.a(str) && !TextUtils.isEmpty(itemidFromUrl)) {
+                if (e.a(str) && !StringUtils.isEmpty(itemidFromUrl)) {
                     cou.a(this.b, str, itemidFromUrl);
                 } else {
                     cou.a(this.b, str);

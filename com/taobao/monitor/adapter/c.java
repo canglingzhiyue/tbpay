@@ -2,7 +2,7 @@ package com.taobao.monitor.adapter;
 
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.am;
 import com.taobao.monitor.ProcedureGlobal;
@@ -261,7 +261,7 @@ public class c {
                     }
                     gVar.a("taskEnd", a2);
                     gVar.a("cpuEndTime", currentThreadTimeMillis);
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         gVar.a("errorType", str2);
                     }
                     Map map2 = map;
@@ -269,7 +269,7 @@ public class c {
                         try {
                             for (Map.Entry entry : map.entrySet()) {
                                 String valueOf = String.valueOf(entry.getKey());
-                                if (!TextUtils.isEmpty(valueOf)) {
+                                if (!StringUtils.isEmpty(valueOf)) {
                                     gVar.a(valueOf, entry.getValue());
                                 }
                             }

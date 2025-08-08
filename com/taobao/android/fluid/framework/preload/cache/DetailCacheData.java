@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.preload.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -122,15 +122,15 @@ public class DetailCacheData implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("17fec801", new Object[]{this})).intValue();
         }
-        if (TextUtils.equals("1", getVersion())) {
-            if (!TextUtils.equals(getMixCacheType(), "1")) {
+        if (StringUtils.equals("1", getVersion())) {
+            if (!StringUtils.equals(getMixCacheType(), "1")) {
                 i = 2;
             } else {
                 z = true;
                 i = -1;
             }
         }
-        boolean equals = TextUtils.equals(getSceneName(), IDetailCache.SCENE_NAME_SHORT_VIDEO_INTERNAL_EXPOSED);
+        boolean equals = StringUtils.equals(getSceneName(), IDetailCache.SCENE_NAME_SHORT_VIDEO_INTERNAL_EXPOSED);
         if (z && !equals && isExpired()) {
             return 3;
         }
@@ -196,7 +196,7 @@ public class DetailCacheData implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("12f8727b", new Object[]{this});
         }
-        if (!TextUtils.equals(this.videoResourceStr, "null")) {
+        if (!StringUtils.equals(this.videoResourceStr, "null")) {
             return this.videoResourceStr;
         }
         return null;
@@ -207,9 +207,9 @@ public class DetailCacheData implements Serializable {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("c3f2cf19", new Object[]{this});
         }
-        if (!soq.b() && TextUtils.isEmpty(this.enableVerticalLayout)) {
+        if (!soq.b() && StringUtils.isEmpty(this.enableVerticalLayout)) {
             this.detailResponseData = null;
-        } else if (!TextUtils.isEmpty(this.enableVerticalLayout) && !TextUtils.equals(this.enableVerticalLayout, String.valueOf(sjt.u()))) {
+        } else if (!StringUtils.isEmpty(this.enableVerticalLayout) && !StringUtils.equals(this.enableVerticalLayout, String.valueOf(sjt.u()))) {
             this.detailResponseData = null;
         }
         return this.detailResponseData;

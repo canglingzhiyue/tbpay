@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -84,7 +84,7 @@ public class qpy {
 
     public String c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this}) : TextUtils.isEmpty(this.b) ? "GET" : this.b;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this}) : StringUtils.isEmpty(this.b) ? "GET" : this.b;
     }
 
     public Map<String, String> d() {

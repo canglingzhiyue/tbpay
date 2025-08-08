@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.async.mtop;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -56,7 +56,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cb1e5fdc", new Object[]{this, interfaceC0402a});
-        } else if (interfaceC0402a == null || TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.d) || this.e == null) {
+        } else if (interfaceC0402a == null || StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.d) || this.e == null) {
         } else {
             MtopRequest mtopRequest = new MtopRequest();
             mtopRequest.setData(this.e.toJSONString());

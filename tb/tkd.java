@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -77,7 +77,7 @@ public class tkd implements e {
             String queryParameter2 = data.getQueryParameter("fromchannel");
             List<String> c2 = tho.c();
             String d2 = tho.d();
-            if (("pages.tmall.com".equals(host) || "pre-wormhole.wapa.tmall.com".equals(host)) && c2.size() > 0 && c2.contains(path) && !TextUtils.isEmpty(d2) && TextUtils.equals(queryParameter, "pop") && !TextUtils.isEmpty(queryParameter2)) {
+            if (("pages.tmall.com".equals(host) || "pre-wormhole.wapa.tmall.com".equals(host)) && c2.size() > 0 && c2.contains(path) && !StringUtils.isEmpty(d2) && StringUtils.equals(queryParameter, "pop") && !StringUtils.isEmpty(queryParameter2)) {
                 TLog.logi(TLOG_MODULE, f34180a, "拦截到支付成功页页面！");
                 String queryParameter3 = data.getQueryParameter("bizOrderIds");
                 if (!thn.a(queryParameter2)) {
@@ -122,7 +122,7 @@ public class tkd implements e {
             ipChange.ipc$dispatch("40e233fc", new Object[]{str, dVar});
             return;
         }
-        if (TextUtils.equals(str, tho.e())) {
+        if (StringUtils.equals(str, tho.e())) {
             TLog.logi(TLOG_MODULE, f34180a, "直播间场景，发送广播、关闭中间页");
             LocalBroadcastManager.getInstance(dVar.a()).sendBroadcast(new Intent("TradePay.Event.livebag.close"));
         } else {
@@ -181,7 +181,7 @@ public class tkd implements e {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("89cdf874", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             TLog.logi(TLOG_MODULE, f34180a, "fromChannel is null");
             return null;
         }

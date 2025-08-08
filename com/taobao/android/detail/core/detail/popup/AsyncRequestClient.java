@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.popup;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -84,7 +84,7 @@ public class AsyncRequestClient extends MtopRequestClient<AsyncRequestParams, JS
         } else {
             JSONObject jSONObject = null;
             String str = mtopResponse.getBytedata() != null ? new String(mtopResponse.getBytedata()) : null;
-            if (!TextUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
+            if (!StringUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
                 jSONObject = parseObject.getJSONObject("data");
             }
             MtopRequestListener mtopRequestListener = (MtopRequestListener) this.mRequestListenerRef.get();

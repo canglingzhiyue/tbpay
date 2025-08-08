@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -444,7 +444,7 @@ public class gba extends DXWidgetNode {
         if (ipChange instanceof IpChange) {
             return (c) ipChange.ipc$dispatch("416c82f8", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.m)) {
+        if (StringUtils.isEmpty(this.m)) {
             return null;
         }
         int l = l();

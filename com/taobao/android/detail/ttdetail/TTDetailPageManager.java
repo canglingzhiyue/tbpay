@@ -11,7 +11,7 @@ import android.net.Uri;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -974,7 +974,7 @@ public class TTDetailPageManager {
         } else if (!this.p) {
         } else {
             String a2 = bq.a(this.B.f());
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.taobao.android.detail.ttdetail.behavior.b.a(this.c, a2, 2);
             }
             soy soyVar = this.J;
@@ -1051,7 +1051,7 @@ public class TTDetailPageManager {
 
     private String z() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d3061ebf", new Object[]{this}) : !TextUtils.isEmpty(this.T) ? this.T : "Page_Detail";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d3061ebf", new Object[]{this}) : !StringUtils.isEmpty(this.T) ? this.T : "Page_Detail";
     }
 
     public void c(String str) {
@@ -1126,7 +1126,7 @@ public class TTDetailPageManager {
             this.b.e().a("requestItemId", e);
         }
         String a2 = k.a(intent);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.b.e().a("lastPageSetSkuId", a2);
         }
         this.b.e().a("is99tm", Boolean.valueOf(this.f.g()));
@@ -1139,7 +1139,7 @@ public class TTDetailPageManager {
         } else if (intent == null) {
         } else {
             String stringExtra = this.d.getStringExtra(com.taobao.android.detail.ttdetail.constant.a.KEY_NAV_ORIGINAL_HOST);
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 this.t = stringExtra;
             }
             this.d.removeExtra(com.taobao.android.detail.ttdetail.constant.a.KEY_NAV_ORIGINAL_HOST);
@@ -1171,9 +1171,9 @@ public class TTDetailPageManager {
         if (map != null) {
             String str = map.get(DetailCoreActivity.DETAIL_ITEM_ID);
             String str2 = map.get(fgl.TARGETITEMID);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f.a(str);
-            } else if (!TextUtils.isEmpty(str2) && !TextUtils.equals(this.f.e(), str2)) {
+            } else if (!StringUtils.isEmpty(str2) && !StringUtils.equals(this.f.e(), str2)) {
                 this.f.a(str2);
             }
         }
@@ -1201,7 +1201,7 @@ public class TTDetailPageManager {
                     }
                     try {
                         String a3 = TTDetailPageManager.a(TTDetailPageManager.this, map, mtopInfo, (Map) this.d, z2, true);
-                        if (!TextUtils.isEmpty(a3)) {
+                        if (!StringUtils.isEmpty(a3)) {
                             com.taobao.android.detail.ttdetail.utils.i.a("TTDetailPageManager", "onFinish setMtopDataInternal errorMsg: " + a3);
                         }
                         lus lusVar2 = lusVar;
@@ -1218,7 +1218,7 @@ public class TTDetailPageManager {
                                 TTDetailPageManager.a(TTDetailPageManager.this, c, b, h);
                                 com.taobao.android.detail.ttdetail.utils.i.a("TTDetailPageManager", "mtop callback onFinish() exception to h5", th);
                                 String str3 = (String) TTDetailPageManager.c(TTDetailPageManager.this).e().a("traceId");
-                                if (TextUtils.isEmpty(str3)) {
+                                if (StringUtils.isEmpty(str3)) {
                                     str3 = "";
                                 }
                                 ab.a(b, h, str3, TTDetailPageManager.a(TTDetailPageManager.this, TTDetailPageManager.b(TTDetailPageManager.this)), "mtop callback onFinish() exception", new HashMap<String, String>(1) { // from class: com.taobao.android.detail.ttdetail.TTDetailPageManager.18.1
@@ -1386,7 +1386,7 @@ public class TTDetailPageManager {
                     a(c, b, h);
                     com.taobao.android.detail.ttdetail.utils.i.a("TTDetailPageManager", "setMtopData() exception to h5", th);
                     String str2 = (String) this.b.e().a("traceId");
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "";
                     }
                     ab.a(b, h, str2, a(this.c), "setMtopData() exception", new HashMap<String, String>(1) { // from class: com.taobao.android.detail.ttdetail.TTDetailPageManager.21
@@ -1413,17 +1413,17 @@ public class TTDetailPageManager {
                         }
                     });
                 }
-                if (!TextUtils.isEmpty(null)) {
+                if (!StringUtils.isEmpty(null)) {
                     sb = new StringBuilder();
                 }
             } catch (Throwable th2) {
-                if (!TextUtils.isEmpty(null)) {
+                if (!StringUtils.isEmpty(null)) {
                     com.taobao.android.detail.ttdetail.utils.i.a("TTDetailPageManager", "开放化业务设置数据 setMtopDataInternal errorMsg: " + ((String) null));
                 }
                 throw th2;
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb = new StringBuilder();
             sb.append("开放化业务设置数据 setMtopDataInternal errorMsg: ");
             sb.append(str);
@@ -1468,13 +1468,13 @@ public class TTDetailPageManager {
         }
         if (z) {
             String a2 = a(map, mtopInfo, map2);
-            if (!TextUtils.isEmpty(a2) || com.taobao.android.detail.ttdetail.request.a.a(mtopInfo)) {
+            if (!StringUtils.isEmpty(a2) || com.taobao.android.detail.ttdetail.request.a.a(mtopInfo)) {
                 map2.clear();
             }
             return a2;
         }
         String b = b(map, mtopInfo, map2);
-        if (!TextUtils.isEmpty(b) || com.taobao.android.detail.ttdetail.request.a.b(mtopInfo)) {
+        if (!StringUtils.isEmpty(b) || com.taobao.android.detail.ttdetail.request.a.b(mtopInfo)) {
             map2.clear();
         }
         return b;
@@ -1798,7 +1798,7 @@ public class TTDetailPageManager {
                             TTDetailPageManager.a(TTDetailPageManager.this, jSONObject2, b, h);
                             com.taobao.android.detail.ttdetail.utils.i.a("TTDetailPageManager", "setMtopRawData() exception to h5", th);
                             String str = (String) TTDetailPageManager.c(TTDetailPageManager.this).e().a("traceId");
-                            if (TextUtils.isEmpty(str)) {
+                            if (StringUtils.isEmpty(str)) {
                                 str = "";
                             }
                             String str2 = str;
@@ -1840,12 +1840,12 @@ public class TTDetailPageManager {
         }
         if (!a3) {
             String a4 = ab.a(this.c, jSONObject, h);
-            if (!TextUtils.isEmpty(a4) && a(c, a4, h)) {
+            if (!StringUtils.isEmpty(a4) && a(c, a4, h)) {
                 ab.a(a4, h, str);
                 return false;
             }
             String a5 = com.taobao.android.detail.ttdetail.utils.d.a(h, c);
-            if (!TextUtils.isEmpty(a5) && a(c, a5, h)) {
+            if (!StringUtils.isEmpty(a5) && a(c, a5, h)) {
                 ab.a(a5, false, h, str);
                 return false;
             }
@@ -2063,7 +2063,7 @@ public class TTDetailPageManager {
                         TTDetailPageManager.a(TTDetailPageManager.this, jSONObject, b, h);
                         com.taobao.android.detail.ttdetail.utils.i.a("TTDetailPageManager", "main thread refreshLayout() exception to h5", th);
                         String str = (String) TTDetailPageManager.c(TTDetailPageManager.this).e().a("traceId");
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             str = "";
                         }
                         String str2 = str;
@@ -2103,7 +2103,7 @@ public class TTDetailPageManager {
             boolean e = com.taobao.android.detail.ttdetail.utils.d.e(jSONObject);
             av.c(this.b, e ? "preRefreshLayout" : "refreshLayout", System.currentTimeMillis());
             String k = com.taobao.android.detail.ttdetail.utils.d.k(jSONObject);
-            if (!TextUtils.isEmpty(k) && !TextUtils.equals(k, this.f.h())) {
+            if (!StringUtils.isEmpty(k) && !StringUtils.equals(k, this.f.h())) {
                 this.f.a(k);
             }
             this.f.i();
@@ -2137,7 +2137,7 @@ public class TTDetailPageManager {
                             TTDetailPageManager.a(TTDetailPageManager.this, jSONObject, b, h);
                             com.taobao.android.detail.ttdetail.utils.i.a("TTDetailPageManager", "bottomBar container is empty to h5");
                             String str = (String) TTDetailPageManager.c(TTDetailPageManager.this).e().a("traceId");
-                            if (TextUtils.isEmpty(str)) {
+                            if (StringUtils.isEmpty(str)) {
                                 str = "";
                             }
                             String str2 = str;
@@ -2150,7 +2150,7 @@ public class TTDetailPageManager {
             }
             if (!e) {
                 String a2 = bq.a(this.B.f());
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     com.taobao.android.detail.ttdetail.behavior.b.a(this.c, a2, 2);
                     com.taobao.android.detail.ttdetail.behavior.b.a(this.c, a2, 1);
                 }
@@ -2284,7 +2284,7 @@ public class TTDetailPageManager {
         }
         JSONObject jSONObject = new JSONObject();
         String r = r();
-        if (!TextUtils.isEmpty(r)) {
+        if (!StringUtils.isEmpty(r)) {
             jSONObject.put("contain_miniapp", (Object) "1");
             jSONObject.put("miniappid", (Object) r);
             HashMap hashMap = new HashMap();
@@ -2301,11 +2301,11 @@ public class TTDetailPageManager {
         if (item != null) {
             String categoryId = item.getCategoryId();
             String rootCategoryId = item.getRootCategoryId();
-            if (TextUtils.isEmpty(categoryId)) {
+            if (StringUtils.isEmpty(categoryId)) {
                 categoryId = "";
             }
             jSONObject.put("categoryId", (Object) categoryId);
-            if (TextUtils.isEmpty(rootCategoryId)) {
+            if (StringUtils.isEmpty(rootCategoryId)) {
                 rootCategoryId = "";
             }
             jSONObject.put("rootCategoryId", (Object) rootCategoryId);

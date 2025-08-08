@@ -6,7 +6,7 @@ import android.taobao.windvane.cache.a;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -30,7 +30,7 @@ public class SearchScreenShotBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.equals(ACTION_NAME, str)) {
+        if (!StringUtils.equals(ACTION_NAME, str)) {
             return false;
         }
         View decorView = ((Activity) getContext()).getWindow().getDecorView();

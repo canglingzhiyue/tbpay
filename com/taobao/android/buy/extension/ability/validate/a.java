@@ -3,7 +3,7 @@ package com.taobao.android.buy.extension.ability.validate;
 import android.app.Activity;
 import android.content.Context;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
@@ -62,7 +62,7 @@ public final class a extends arv {
         String string = c.getString("actionParams");
         String string2 = c.getString("passValue");
         String string3 = c.getString("noPassValue");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
             arc.a().a("validateData事件缺少actionParams|passValue|passValue 参数");
             return;
         }
@@ -138,7 +138,7 @@ public final class a extends arv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str) || !(context instanceof Activity)) {
+        } else if (StringUtils.isEmpty(str) || !(context instanceof Activity)) {
         } else {
             bat.a((Activity) context, str);
         }

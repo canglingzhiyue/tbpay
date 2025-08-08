@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.io.SharedPreferencesUtils;
@@ -68,7 +68,7 @@ public class dht implements d {
             if (this.f26767a == null) {
                 try {
                     String string = SharedPreferencesUtils.getString("login_info", "");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         this.f26767a = (LoginInfo) JSON.parseObject(string, LoginInfo.class);
                     }
                 } catch (Exception unused) {

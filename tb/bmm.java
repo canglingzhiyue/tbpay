@@ -1,7 +1,7 @@
 package tb;
 
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.EditText;
 import com.alibaba.android.ultron.trade.utils.b;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,7 +25,7 @@ public class bmm {
             ipChange.ipc$dispatch("5a41dde1", new Object[]{editText, str});
         } else if (editText == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 editText.setInputType(1);
                 return;
             }
@@ -50,7 +50,7 @@ public class bmm {
             ipChange.ipc$dispatch("940c7fc0", new Object[]{editText, str});
         } else if (editText == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Integer.MAX_VALUE)});
                 return;
             }
@@ -69,7 +69,7 @@ public class bmm {
             ipChange.ipc$dispatch("cdd7219f", new Object[]{editText, str});
         } else if (editText == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             editText.setHint(str);

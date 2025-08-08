@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Iterator;
@@ -79,9 +79,9 @@ public class lyh extends lyi {
                 Map.Entry<String, String> next = it.next();
                 String key = next.getKey();
                 String value = next.getValue();
-                if (!TextUtils.isEmpty(value) && value.startsWith("${") && value.endsWith(riy.BLOCK_END_STR) && value.length() > 2) {
+                if (!StringUtils.isEmpty(value) && value.startsWith("${") && value.endsWith(riy.BLOCK_END_STR) && value.length() > 2) {
                     String a2 = lyl.a(uri, value.substring(2, value.length() - 1), "");
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         map.put(key, a2);
                     } else {
                         it.remove();

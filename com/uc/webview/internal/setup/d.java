@@ -1,7 +1,7 @@
 package com.uc.webview.internal.setup;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.ErrorCode;
 import com.uc.webview.base.GlobalSettings;
@@ -184,7 +184,7 @@ public final class d implements U4Engine.Extractor {
                             if (aVar.e.c()) {
                                 Log.d("UnZipper", "unzip finished");
                                 aVar.e.a();
-                                if (!TextUtils.isEmpty(null)) {
+                                if (!StringUtils.isEmpty(null)) {
                                     com.uc.webview.base.zip.a.f23813a.remove(null);
                                 }
                                 bVar = aVar.f;
@@ -222,7 +222,7 @@ public final class d implements U4Engine.Extractor {
                                     com.uc.webview.base.zip.a.a(file3, aVar.d);
                                 }
                                 aVar.e.a();
-                                if (!TextUtils.isEmpty(absolutePath)) {
+                                if (!StringUtils.isEmpty(absolutePath)) {
                                     com.uc.webview.base.zip.a.f23813a.remove(absolutePath);
                                 }
                                 bVar = aVar.f;

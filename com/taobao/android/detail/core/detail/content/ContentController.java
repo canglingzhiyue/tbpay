@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.detail.content;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -191,7 +191,7 @@ public class ContentController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.equals(this.c.i(), str)) {
+        } else if (StringUtils.equals(this.c.i(), str)) {
         } else {
             this.c.a(str);
             this.d.a(this.c.h(), this.c.g());

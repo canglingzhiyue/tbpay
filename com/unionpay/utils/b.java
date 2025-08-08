@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -22,7 +22,7 @@ public final class b {
     private static HashMap f24047a = new c();
 
     public static int a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return Integer.parseInt(str);
             } catch (Exception unused) {
@@ -47,14 +47,14 @@ public final class b {
             java.lang.String r3 = com.unionpay.utils.UPUtils.a(r9, r3)
             java.lang.String r4 = "or"
             java.lang.String r9 = com.unionpay.utils.UPUtils.a(r9, r4)
-            boolean r4 = android.text.TextUtils.isEmpty(r2)
+            boolean r4 = android.text.StringUtils.isEmpty(r2)
             r5 = 0
             r6 = 2
             java.lang.String r7 = ""
             if (r4 != 0) goto L92
-            boolean r4 = android.text.TextUtils.isEmpty(r3)
+            boolean r4 = android.text.StringUtils.isEmpty(r3)
             if (r4 != 0) goto L92
-            boolean r4 = android.text.TextUtils.isEmpty(r9)
+            boolean r4 = android.text.StringUtils.isEmpty(r9)
             if (r4 != 0) goto L92
             org.json.JSONObject r4 = new org.json.JSONObject     // Catch: java.lang.Exception -> L92
             r4.<init>(r2)     // Catch: java.lang.Exception -> L92
@@ -79,7 +79,7 @@ public final class b {
         L5f:
             r1 = r7
         L60:
-            boolean r0 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Exception -> L92
+            boolean r0 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Exception -> L92
             if (r0 == 0) goto L67
             r1 = r7
         L67:
@@ -92,7 +92,7 @@ public final class b {
             java.lang.String r9 = com.unionpay.utils.UPUtils.a(r9)     // Catch: java.lang.Exception -> L92
             java.lang.String r9 = b(r9)     // Catch: java.lang.Exception -> L92
             java.lang.String r0 = com.unionpay.utils.UPUtils.a(r3, r2)     // Catch: java.lang.Exception -> L92
-            boolean r1 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Exception -> L92
+            boolean r1 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Exception -> L92
             if (r1 != 0) goto L92
             boolean r9 = r0.equals(r9)     // Catch: java.lang.Exception -> L92
             if (r9 == 0) goto L92
@@ -148,20 +148,20 @@ public final class b {
     }
 
     public static String a(String str, String str2) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
             String a2 = i.a(jSONObject, "sign");
             String a3 = i.a(jSONObject, "configs");
-            if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(a3)) {
                 return null;
             }
             String str3 = new String(Base64.decode(a3, 2));
             String b = b(UPUtils.a(str3));
             String a4 = UPUtils.a(a(str2), a2);
-            if (TextUtils.isEmpty(a4)) {
+            if (StringUtils.isEmpty(a4)) {
                 return null;
             }
             if (!a4.equals(b)) {
@@ -205,7 +205,7 @@ public final class b {
         if (context != null) {
             try {
                 PackageManager packageManager = context.getPackageManager();
-                if (packageManager != null && !TextUtils.isEmpty(str)) {
+                if (packageManager != null && !StringUtils.isEmpty(str)) {
                     packageInfo = packageManager.getPackageInfo(str, 0);
                 }
             } catch (Exception unused) {
@@ -228,7 +228,7 @@ public final class b {
     public static boolean a(Context context, String str, String str2, String str3) {
         if (context != null) {
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                     int e = e(context, str);
                     int f = f(str3);
                     if (a(context, str) && e >= f) {
@@ -253,15 +253,15 @@ public final class b {
         /*
             r0 = 0
             if (r4 == 0) goto L77
-            boolean r1 = android.text.TextUtils.isEmpty(r5)     // Catch: java.lang.Exception -> L77
+            boolean r1 = android.text.StringUtils.isEmpty(r5)     // Catch: java.lang.Exception -> L77
             if (r1 != 0) goto L77
-            boolean r1 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L77
+            boolean r1 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L77
             if (r1 != 0) goto L77
-            boolean r1 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Exception -> L77
+            boolean r1 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Exception -> L77
             if (r1 != 0) goto L77
             java.lang.String r1 = "11"
             if (r8 == 0) goto L1f
-            boolean r2 = android.text.TextUtils.isEmpty(r8)     // Catch: java.lang.Exception -> L77
+            boolean r2 = android.text.StringUtils.isEmpty(r8)     // Catch: java.lang.Exception -> L77
             if (r2 == 0) goto L20
         L1f:
             r8 = r1
@@ -269,7 +269,7 @@ public final class b {
             java.lang.String r2 = d(r4, r5)     // Catch: java.lang.Exception -> L77
             boolean r3 = e(r8)     // Catch: java.lang.Exception -> L77
             if (r3 == 0) goto L31
-            boolean r3 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L77
+            boolean r3 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L77
             if (r3 == 0) goto L31
             return r0
         L31:
@@ -477,11 +477,11 @@ public final class b {
     }
 
     public static String c(String str) {
-        return !TextUtils.isEmpty((CharSequence) f24047a.get(str)) ? (String) f24047a.get(str) : str;
+        return !StringUtils.isEmpty((CharSequence) f24047a.get(str)) ? (String) f24047a.get(str) : str;
     }
 
     public static String d(Context context, String str) {
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -504,7 +504,7 @@ public final class b {
     }
 
     private static int e(Context context, String str) {
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return 0;
         }
         try {

@@ -2,7 +2,7 @@ package com.alipay.android.app.render.birdnest.service.impl;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.app.render.api.ICashierProvider;
 import com.alipay.android.app.render.birdnest.BirdNestBuilder;
@@ -303,7 +303,7 @@ public class BirdNestSDKService extends BirdNestService {
             params.initialWinWidth = birdNestBuilder.displayWidth;
         }
         String str = params.tplHtml;
-        if (TextUtils.isEmpty(str) || TextUtils.equals("{}", str)) {
+        if (StringUtils.isEmpty(str) || StringUtils.equals("{}", str)) {
             str = params.tplJson;
         } else {
             i = 0;

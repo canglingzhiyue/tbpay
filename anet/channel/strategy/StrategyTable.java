@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -238,7 +238,7 @@ public class StrategyTable implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e6cf1c1a", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         synchronized (this.hostStrategyMap) {
@@ -264,7 +264,7 @@ public class StrategyTable implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("601c614", new Object[]{this, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (this.hostStrategyMap) {
@@ -287,7 +287,7 @@ public class StrategyTable implements Serializable {
         }
         ALog.e(TAG, "update strategyTable with httpDns response", this.uniqueId, new Object[0]);
         try {
-            if (!TextUtils.isEmpty(httpDnsResponse.clientIp) && !httpDnsResponse.clientIp.equalsIgnoreCase(this.clientIp)) {
+            if (!StringUtils.isEmpty(httpDnsResponse.clientIp) && !httpDnsResponse.clientIp.equalsIgnoreCase(this.clientIp)) {
                 AnalysisFactory.getV3Instance().recordAppStatus("Client_IP", httpDnsResponse.clientIp);
             }
             this.clientIp = httpDnsResponse.clientIp;
@@ -439,7 +439,7 @@ public class StrategyTable implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f21757b9", new Object[]{this, new Boolean(z), str, new Boolean(z2)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (this.hostStrategyMap) {
                 strategyCollection = (StrategyCollection) this.hostStrategyMap.get(str);

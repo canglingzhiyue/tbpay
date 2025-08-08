@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -73,10 +73,10 @@ public final class ely implements axy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cf743d94", new Object[]{this, ayaVar})).booleanValue();
         }
-        if (ayaVar == null || !TextUtils.equals(String.valueOf(ayaVar.c), "19997")) {
+        if (ayaVar == null || !StringUtils.equals(String.valueOf(ayaVar.c), "19997")) {
             return false;
         }
-        return TextUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_APPEAR) || TextUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_CLICK) || TextUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_DISAPPEAR) || TextUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_SCROLL);
+        return StringUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_APPEAR) || StringUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_CLICK) || StringUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_DISAPPEAR) || StringUtils.equals(ayaVar.e, UserMotionActionType.COMPONENT_SCROLL);
     }
 
     private boolean a(AURARenderComponent aURARenderComponent, String str) {
@@ -84,9 +84,9 @@ public final class ely implements axy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1a501ee1", new Object[]{this, aURARenderComponent, str})).booleanValue();
         }
-        if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && !TextUtils.isEmpty(str)) {
+        if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && !StringUtils.isEmpty(str)) {
             Object obj = aURARenderComponent.data.fields.get("type");
-            if ((obj instanceof String) && TextUtils.equals((String) obj, str)) {
+            if ((obj instanceof String) && StringUtils.equals((String) obj, str)) {
                 return true;
             }
         }

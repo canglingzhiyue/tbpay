@@ -4,7 +4,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
 import com.meizu.cloud.pushsdk.notification.PushNotificationBuilder;
@@ -21,7 +21,7 @@ public class a extends c {
         if (messageV3.getNotificationStyle() == null || a()) {
             return;
         }
-        if (TextUtils.isEmpty(messageV3.getNotificationStyle().getExpandableImageUrl()) || (a2 = a(messageV3.getNotificationStyle().getExpandableImageUrl())) == null) {
+        if (StringUtils.isEmpty(messageV3.getNotificationStyle().getExpandableImageUrl()) || (a2 = a(messageV3.getNotificationStyle().getExpandableImageUrl())) == null) {
             remoteViews.setViewVisibility(com.meizu.cloud.pushsdk.notification.g.c.b(this.f8000a), 8);
             return;
         }

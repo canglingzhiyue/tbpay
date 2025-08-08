@@ -3,7 +3,7 @@ package com.alipay.android.msp.drivers.stores.store.events;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.drivers.actions.ActionsCreator;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -36,7 +36,7 @@ public class TelStore extends LocalEventStore {
         String[] actionParamsArray = mspEvent.getActionParamsArray();
         call(activity, actionParamsArray);
         if (actionParamsArray != null && actionParamsArray.length != 0) {
-            if (actionParamsArray.length <= 1 || TextUtils.equals(actionParamsArray[1], "0")) {
+            if (actionParamsArray.length <= 1 || StringUtils.equals(actionParamsArray[1], "0")) {
                 z = true;
             }
             LogUtil.record(2, "TelEvent::isExit", "exit:".concat(String.valueOf(z)));

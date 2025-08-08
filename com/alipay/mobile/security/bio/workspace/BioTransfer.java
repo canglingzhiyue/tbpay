@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.bis.core.protocol.BioRuntimeDependency;
@@ -81,7 +81,7 @@ public class BioTransfer implements BioDetector {
             String action = intent.getAction();
             String stringExtra = intent.getStringExtra(Constant.BIOLOGY_INTENT_ACTION_REV);
             BioLog.i("rev action='" + action);
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 BioLog.w(new RuntimeException("why the AuthBroadCastReceiver.rev is empty?"));
                 return;
             }
@@ -101,7 +101,7 @@ public class BioTransfer implements BioDetector {
                 return;
             }
             BioCallback bioCallback = BioTransfer.access$100(BioTransfer.this).getBioCallback(tag);
-            if (TextUtils.equals(Constant.BIOLOGY_CALLBACK_PROGRESS_ACTION, action)) {
+            if (StringUtils.equals(Constant.BIOLOGY_CALLBACK_PROGRESS_ACTION, action)) {
                 BioLog.i("zolozTime", "rev progress action!");
                 if (bioCallback == null) {
                     BioLog.w(new RuntimeException("Failed to getBioCallback() by " + tag));
@@ -184,7 +184,7 @@ public class BioTransfer implements BioDetector {
         if (a()) {
             BioLog.d("BioTransfer:cannot create BioServiceManager, has other busy detector");
         } else {
-            if (TextUtils.isEmpty(zimId)) {
+            if (StringUtils.isEmpty(zimId)) {
                 BioServiceManager.createInstance(context);
             } else {
                 BioServiceManager.createInstance(context, zimId);
@@ -299,7 +299,7 @@ public class BioTransfer implements BioDetector {
             String put = this.g.put(a2, bioCallback);
             String remoteURL = bioParameter.getRemoteURL();
             BioLog.d("BioTransfer.auth(): remoteUrl:" + remoteURL);
-            if (!TextUtils.isEmpty(remoteURL)) {
+            if (!StringUtils.isEmpty(remoteURL)) {
                 ((BioRPCService) this.f5830a.getBioService(BioRPCService.class)).setRemoteUrl(remoteURL);
             }
             BioUploadService bioUploadService = (BioUploadService) this.f5830a.getBioService(BioUploadService.class);
@@ -339,7 +339,7 @@ public class BioTransfer implements BioDetector {
         BioLog.d("BioTransfer|init(): appTag: " + put);
         String remoteURL = bioParameter.getRemoteURL();
         BioLog.d("BioTransfer|init: remoteUrl:" + remoteURL);
-        if (!TextUtils.isEmpty(remoteURL)) {
+        if (!StringUtils.isEmpty(remoteURL)) {
             ((BioRPCService) this.f5830a.getBioService(BioRPCService.class)).setRemoteUrl(remoteURL);
         }
         ((BioUploadService) this.f5830a.getBioService(BioUploadService.class)).clearUp();
@@ -391,7 +391,7 @@ public class BioTransfer implements BioDetector {
         }
         String string = bundle.getString(BioDetector.EXT_KEY_MODULE_DATA_BUNDLE);
         BioLog.i("moduleData:" + string);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             BioLog.e("buildBioParameter failed: bundle's moduleData is null");
             return bioParameter;
         }
@@ -409,51 +409,51 @@ public class BioTransfer implements BioDetector {
         if (!StringUtil.isNullorEmpty(string4)) {
             bioParameter.setProtocol(string4);
         }
-        if (TextUtils.isEmpty(string7)) {
+        if (StringUtils.isEmpty(string7)) {
             string7 = "";
         }
         bioParameter.addExtProperty("verifyid", string7);
-        if (TextUtils.isEmpty(string6)) {
+        if (StringUtils.isEmpty(string6)) {
             string6 = "";
         }
         bioParameter.addExtProperty("APDID", string6);
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "";
         }
         bioParameter.addExtProperty("SCENE_ID", string2);
-        if (TextUtils.isEmpty(string5)) {
+        if (StringUtils.isEmpty(string5)) {
             string5 = "";
         }
         bioParameter.addExtProperty("TOKEN_ID", string5);
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             string3 = "";
         }
         bioParameter.addExtProperty("userid", string3);
-        if (TextUtils.isEmpty(string8)) {
+        if (StringUtils.isEmpty(string8)) {
             string8 = "";
         }
         bioParameter.addExtProperty("appid", string8);
-        if (TextUtils.isEmpty(string9)) {
+        if (StringUtils.isEmpty(string9)) {
             string9 = "false";
         }
         bioParameter.addExtProperty(BioDetector.EXT_KEY_HAS_OTHERS, string9);
         if (bundle.containsKey("RequestPage")) {
             String valueOf = String.valueOf(bundle.getInt("RequestPage"));
-            if (TextUtils.isEmpty(valueOf)) {
+            if (StringUtils.isEmpty(valueOf)) {
                 valueOf = "";
             }
             bioParameter.addExtProperty(BioDetector.EXT_KEY_PAGENUM, valueOf);
         }
         if (bundle.containsKey("RequestCardType")) {
             String string10 = bundle.getString("RequestCardType");
-            if (TextUtils.isEmpty(string10)) {
+            if (StringUtils.isEmpty(string10)) {
                 string10 = "";
             }
             bioParameter.addExtProperty(BioDetector.EXT_KEY_CARD_TYPE, string10);
         }
         if (bundle.containsKey("RequestTotalPagesNum")) {
             String valueOf2 = String.valueOf(bundle.getInt("RequestTotalPagesNum"));
-            if (TextUtils.isEmpty(valueOf2)) {
+            if (StringUtils.isEmpty(valueOf2)) {
                 valueOf2 = "";
             }
             bioParameter.addExtProperty(BioDetector.EXT_KEY_TOTAL_PAGE_NUM, valueOf2);

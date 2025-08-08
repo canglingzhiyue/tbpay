@@ -2,7 +2,7 @@ package com.taobao.android.detail.alittdetail.bridge;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.ariver.engine.api.bridge.extension.annotation.BindingCallback;
@@ -56,7 +56,7 @@ public class TBDetailBridgeExtension implements BridgeExtension {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d77afdfe", new Object[]{this, str, bridgeCallback});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             Intent intent = new Intent();

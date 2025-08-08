@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
 
@@ -27,7 +27,7 @@ public class gou extends gmv<goq> {
         }
         IDMComponent b = goqVar.b();
         IDMComponent a2 = gof.a(goqVar.c(), goqVar.d(), goqVar.e());
-        if (a2 != null && TextUtils.equals(gof.i(b), gof.i(a2))) {
+        if (a2 != null && StringUtils.equals(gof.i(b), gof.i(a2))) {
             return b(goqVar);
         }
         return true;

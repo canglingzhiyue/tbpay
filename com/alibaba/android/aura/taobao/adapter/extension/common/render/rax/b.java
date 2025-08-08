@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.taobao.adapter.extension.common.render.rax;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
@@ -60,7 +60,7 @@ public class b extends d {
             dVar.a(c);
         }
         String string = c.getString("option");
-        if (!"cancel".equals(string) && !TextUtils.isEmpty(string)) {
+        if (!"cancel".equals(string) && !StringUtils.isEmpty(string)) {
             return;
         }
         c.put("isCancel", (Object) true);

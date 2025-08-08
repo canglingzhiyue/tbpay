@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes8.dex */
@@ -17,7 +17,7 @@ public class prf {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str) || str.charAt(0) != '#') {
+        if (StringUtils.isEmpty(str) || str.charAt(0) != '#') {
             throw new IllegalArgumentException("Unknown color");
         }
         long parseLong = Long.parseLong(str.substring(1), 16);

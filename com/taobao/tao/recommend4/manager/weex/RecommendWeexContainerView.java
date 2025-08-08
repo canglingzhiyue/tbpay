@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -251,7 +251,7 @@ public class RecommendWeexContainerView extends WXVContainer<FrameLayout> implem
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("576f7fc1", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject parseObject = JSON.parseObject(str);
             ksk b = ksk.b(parseObject.getString("channel"));
@@ -265,7 +265,7 @@ public class RecommendWeexContainerView extends WXVContainer<FrameLayout> implem
             this.isShowLoading = HomePageUtility.a(parseObject.getString("showLoading"));
             Map<String, Object> map = null;
             try {
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     map = (Map) JSON.parseObject(string3, Map.class);
                 }
             } catch (Throwable unused) {

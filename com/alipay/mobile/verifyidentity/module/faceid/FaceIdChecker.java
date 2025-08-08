@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.login.model.LoginConstant;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
@@ -286,14 +286,14 @@ public class FaceIdChecker extends NoPwdBaseChecker {
                     if (102 == result) {
                         VerifyLogCat.i(FaceIdChecker.access$200(), "3D人脸【取消】");
                         if (!"Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.openOldAlert)) && FaceIdChecker.access$700(FaceIdChecker.this).isPluginMode) {
-                            if (TextUtils.equals(FaceIdChecker.access$800(FaceIdChecker.this).mPlugin.getActConf("supportEmbedVi"), "Y")) {
+                            if (StringUtils.equals(FaceIdChecker.access$800(FaceIdChecker.this).mPlugin.getActConf("supportEmbedVi"), "Y")) {
                                 VerifyLogCat.i(FaceIdChecker.access$200(), "faceId supportEmbedVi CANCLE_TO_PWD");
                                 FaceIdChecker.access$900(FaceIdChecker.this).logFpResBehavior("CANCLE_FACEID_TO_PWD", BaseFBPlugin.VERIFY_TYPE.faceid);
                                 FaceIdChecker.access$1000(FaceIdChecker.this, str, authenticatorResponse);
                                 return;
                             }
                             String actConf = FaceIdChecker.access$1100(FaceIdChecker.this).mPlugin.getActConf(BaseFBPlugin.ACT_CONF.supportRetain);
-                            if (!TextUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf)) {
+                            if (!StringUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf)) {
                                 FaceIdChecker.access$1200(FaceIdChecker.this).logFpResBehavior("CANCLE_FACEID", "REMOVE_ALERT");
                                 FaceIdChecker.this.updateVerifyStatusWithScene(BaseFBPlugin.VERIFY_STATUS.abort, LoginConstant.FETCH_IV_FAIL_CANCEL);
                                 FaceIdChecker.access$1300(FaceIdChecker.this).notifyResult(new DefaultModuleResult("1003"));
@@ -350,7 +350,7 @@ public class FaceIdChecker extends NoPwdBaseChecker {
                     } else if (result != 138) {
                     } else {
                         String access$2600 = FaceIdChecker.access$2600(FaceIdChecker.this, R.string.vi_fp_tip_sys_faceid_error_retry);
-                        if (TextUtils.isEmpty(access$2600)) {
+                        if (StringUtils.isEmpty(access$2600)) {
                             return;
                         }
                         DialogHelper.makeToast(FaceIdChecker.access$2700(FaceIdChecker.this), 0, access$2600, 0).show();
@@ -442,7 +442,7 @@ public class FaceIdChecker extends NoPwdBaseChecker {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     return;
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     if (FaceIdChecker.access$3000(FaceIdChecker.this).isFP()) {
                         FaceIdChecker.access$3100(FaceIdChecker.this).errorForFp = str2;
                     } else {

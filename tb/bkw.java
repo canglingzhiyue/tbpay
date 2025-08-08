@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.ext.event.util.h;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -22,7 +22,7 @@ public class bkw extends bkt {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("type", "mtopV3");
         jSONObject2.put("fields", (Object) h.a(jSONObject));
-        if ((jSONObject.get("reloadType") instanceof String) && !TextUtils.equals("none", jSONObject.getString("reloadType"))) {
+        if ((jSONObject.get("reloadType") instanceof String) && !StringUtils.equals("none", jSONObject.getString("reloadType"))) {
             a(jSONObject2, "success", "refreshPageV3", (JSONObject) null);
         }
         if (jSONObject.get("nextUrl") instanceof String) {

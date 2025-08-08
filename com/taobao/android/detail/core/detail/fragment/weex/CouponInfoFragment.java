@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.Html;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -519,7 +519,7 @@ public class CouponInfoFragment extends FloatFragment {
                 aVar.d = (LinearLayout) view2.findViewById(R.id.coupon_container);
                 CouponInfoModel.FullItem fullItem = (CouponInfoModel.FullItem) CouponInfoFragment.access$100(CouponInfoFragment.this).get(i);
                 aVar.f9498a.setText(fullItem.title);
-                if (!TextUtils.isEmpty(fullItem.helpUrl)) {
+                if (!StringUtils.isEmpty(fullItem.helpUrl)) {
                     aVar.b.setText(R.string.taodetail_iconfont_question);
                     aVar.b.setVisibility(0);
                     aVar.b.setTag(fullItem.helpUrl);
@@ -527,7 +527,7 @@ public class CouponInfoFragment extends FloatFragment {
                 } else {
                     aVar.b.setVisibility(8);
                 }
-                if (!TextUtils.isEmpty(CouponInfoFragment.access$200(CouponInfoFragment.this)) && i == 0) {
+                if (!StringUtils.isEmpty(CouponInfoFragment.access$200(CouponInfoFragment.this)) && i == 0) {
                     aVar.c.setVisibility(0);
                     if (CouponInfoFragment.access$800(CouponInfoFragment.this)) {
                         aVar.c.setText(CouponInfoFragment.access$200(CouponInfoFragment.this).replace("%d", "计算中"));
@@ -557,41 +557,41 @@ public class CouponInfoFragment extends FloatFragment {
                             } else {
                                 tMTicket.setWatermarkUrl("http:" + couponInfo.styles.bgImage);
                             }
-                            if (!TextUtils.isEmpty(couponInfo.styles.bgColor)) {
+                            if (!StringUtils.isEmpty(couponInfo.styles.bgColor)) {
                                 try {
                                     tMTicket.setBgColor(Color.parseColor(couponInfo.styles.bgColor));
                                 } catch (Exception unused) {
                                 }
                             }
-                            if (!TextUtils.isEmpty(couponInfo.styles.textColor)) {
+                            if (!StringUtils.isEmpty(couponInfo.styles.textColor)) {
                                 try {
                                     tMTicket.setTextColor(Color.parseColor(couponInfo.styles.textColor));
                                 } catch (Exception unused2) {
                                 }
                             }
-                            if (!TextUtils.isEmpty(couponInfo.styles.bottomTextColor)) {
+                            if (!StringUtils.isEmpty(couponInfo.styles.bottomTextColor)) {
                                 try {
                                     tMTicket.setBottomTextColor(Color.parseColor(couponInfo.styles.bottomTextColor));
                                 } catch (Exception unused3) {
                                 }
                             }
-                            if (!TextUtils.isEmpty(couponInfo.styles.dashColor)) {
+                            if (!StringUtils.isEmpty(couponInfo.styles.dashColor)) {
                                 try {
                                     tMTicket.setDashColor(Color.parseColor(couponInfo.styles.dashColor));
                                 } catch (Exception unused4) {
                                 }
                             }
-                            if (!TextUtils.isEmpty(couponInfo.styles.bgBottomColor)) {
+                            if (!StringUtils.isEmpty(couponInfo.styles.bgBottomColor)) {
                                 try {
                                     tMTicket.setBottomBgColor(Color.parseColor(couponInfo.styles.bgBottomColor));
                                 } catch (Exception unused5) {
                                 }
                             }
                         }
-                        if (!TextUtils.isEmpty(couponInfo.titleLeftText)) {
+                        if (!StringUtils.isEmpty(couponInfo.titleLeftText)) {
                             tMTicket.setLeftPrefTitle(Html.fromHtml(couponInfo.titleLeftText));
                         }
-                        if (!TextUtils.isEmpty(couponInfo.title)) {
+                        if (!StringUtils.isEmpty(couponInfo.title)) {
                             try {
                                 Float.parseFloat(couponInfo.title);
                                 i2 = 30;
@@ -600,7 +600,7 @@ public class CouponInfoFragment extends FloatFragment {
                             }
                             tMTicket.setLeftTitle(couponInfo.title, i2);
                         }
-                        if (!TextUtils.isEmpty(couponInfo.promotionUrl)) {
+                        if (!StringUtils.isEmpty(couponInfo.promotionUrl)) {
                             tMTicket.setleftTitleSuffixImage(couponInfo.promotionUrl);
                         }
                         if (couponInfo.promotionList != null && couponInfo.promotionList.size() > 0) {
@@ -609,11 +609,11 @@ public class CouponInfoFragment extends FloatFragment {
                         if (couponInfo.subtitles != null && couponInfo.subtitles.size() > 0) {
                             tMTicket.setLeftDesc(couponInfo.subtitles);
                         }
-                        if (!TextUtils.isEmpty(couponInfo.applyText)) {
-                            if (!TextUtils.isEmpty(CouponInfoFragment.access$200(CouponInfoFragment.this))) {
+                        if (!StringUtils.isEmpty(couponInfo.applyText)) {
+                            if (!StringUtils.isEmpty(CouponInfoFragment.access$200(CouponInfoFragment.this))) {
                                 CouponInfoFragment.access$300(CouponInfoFragment.this);
                             }
-                            TextUtils.isEmpty(couponInfo.countText);
+                            StringUtils.isEmpty(couponInfo.countText);
                             boolean equals = "true".equals(couponInfo.enabled);
                             String str = couponInfo.applyText;
                             Object[] objArr = new Object[1];
@@ -624,7 +624,7 @@ public class CouponInfoFragment extends FloatFragment {
                             tMTicket.setRightTitle(Html.fromHtml(CouponInfoFragment.YUAN_LOGO), true);
                             tMTicket.setRightTitleSize(20);
                         }
-                        if (!TextUtils.isEmpty(couponInfo.countText)) {
+                        if (!StringUtils.isEmpty(couponInfo.countText)) {
                             if (couponInfo.displayType == 1) {
                                 tMTicket.setRightSubTitle(couponInfo.countText, true);
                                 tMTicket.setRightSubTitleSize(16);
@@ -640,13 +640,13 @@ public class CouponInfoFragment extends FloatFragment {
                                 tMTicket.setRightSubTitle(spannableString, false);
                             }
                         }
-                        if (!TextUtils.isEmpty(couponInfo.bottomButtonText)) {
+                        if (!StringUtils.isEmpty(couponInfo.bottomButtonText)) {
                             tMTicket.setBottomButton(couponInfo.bottomButtonText);
                         }
-                        if (!TextUtils.isEmpty(couponInfo.bottomButtonJumpUrl)) {
+                        if (!StringUtils.isEmpty(couponInfo.bottomButtonJumpUrl)) {
                             tMTicket.setBottomJumpUrl(couponInfo.bottomButtonJumpUrl);
                         }
-                        if (!TextUtils.isEmpty(couponInfo.bottomTitle)) {
+                        if (!StringUtils.isEmpty(couponInfo.bottomTitle)) {
                             tMTicket.setBottomText(couponInfo.bottomTitle);
                         }
                         if (couponInfo.displayType == 1) {
@@ -659,20 +659,20 @@ public class CouponInfoFragment extends FloatFragment {
                         }
                         if (couponInfo.displayType == 4) {
                             tMTicket.hasMiddlePit(z);
-                            if (!TextUtils.isEmpty(couponInfo.leftIcon)) {
+                            if (!StringUtils.isEmpty(couponInfo.leftIcon)) {
                                 tMTicket.setLeftMoneyIconUrl(couponInfo.leftIcon);
                             }
-                            if (!TextUtils.isEmpty(couponInfo.styles.rightBgImg)) {
+                            if (!StringUtils.isEmpty(couponInfo.styles.rightBgImg)) {
                                 tMTicket.setRightBgUrl(couponInfo.styles.rightBgImg);
                             }
                         }
-                        if (!TextUtils.isEmpty(couponInfo.styles.applyTextColor)) {
+                        if (!StringUtils.isEmpty(couponInfo.styles.applyTextColor)) {
                             try {
                                 tMTicket.setApplyTextColor(Color.parseColor(couponInfo.styles.applyTextColor));
                             } catch (Exception unused7) {
                             }
                         }
-                        if (!TextUtils.isEmpty(couponInfo.styles.countTextColor)) {
+                        if (!StringUtils.isEmpty(couponInfo.styles.countTextColor)) {
                             try {
                                 tMTicket.setCountTextColor(Color.parseColor(couponInfo.styles.countTextColor));
                             } catch (Exception unused8) {
@@ -775,12 +775,12 @@ public class CouponInfoFragment extends FloatFragment {
                                 }
                             }
                             if (!j.a(CouponInfoFragment.access$1600(CouponInfoFragment.this))) {
-                                if (!TextUtils.isEmpty(fetchCouponInfoModel.applyDo.title)) {
+                                if (!StringUtils.isEmpty(fetchCouponInfoModel.applyDo.title)) {
                                     str = "" + fetchCouponInfoModel.applyDo.title;
                                 } else {
                                     str = "";
                                 }
-                                if (!TextUtils.isEmpty(fetchCouponInfoModel.applyDo.subtitle)) {
+                                if (!StringUtils.isEmpty(fetchCouponInfoModel.applyDo.subtitle)) {
                                     str = str + ":" + fetchCouponInfoModel.applyDo.subtitle;
                                 }
                                 if ("".equals(str)) {
@@ -816,7 +816,7 @@ public class CouponInfoFragment extends FloatFragment {
                             CouponInfoFragment.access$1500(CouponInfoFragment.this);
                             AnonymousClass1.this.f9499a.isLoading = false;
                             String retMsg = mtopResponse.getRetMsg();
-                            if (TextUtils.isEmpty(retMsg)) {
+                            if (StringUtils.isEmpty(retMsg)) {
                                 retMsg = "小二很忙，系统很累，请稍后重试";
                             }
                             Toast.makeText(CouponInfoFragment.this.getActivity(), retMsg, 0).show();
@@ -849,7 +849,7 @@ public class CouponInfoFragment extends FloatFragment {
                 return;
             }
             String bottomJumpUrl = tMTicket.getBottomJumpUrl();
-            if (TextUtils.isEmpty(bottomJumpUrl)) {
+            if (StringUtils.isEmpty(bottomJumpUrl)) {
                 return;
             }
             f.a(CouponInfoFragment.access$1001(CouponInfoFragment.this), new enu(bottomJumpUrl));
@@ -921,7 +921,7 @@ public class CouponInfoFragment extends FloatFragment {
         if (applyDo.applyText != null) {
             tMTicket.setRightTitle(applyDo.applyText, "true".equals(applyDo.enabled));
         }
-        if (!TextUtils.isEmpty(applyDo.countText)) {
+        if (!StringUtils.isEmpty(applyDo.countText)) {
             if (type == 1) {
                 tMTicket.setRightSubTitle(applyDo.countText, true);
                 tMTicket.setRightSubTitleSize(16);
@@ -936,13 +936,13 @@ public class CouponInfoFragment extends FloatFragment {
         } else if (applyDo.countText != null) {
             tMTicket.setRightSubTitle(applyDo.countText, false);
         }
-        if (!TextUtils.isEmpty(applyDo.applyTextColor)) {
+        if (!StringUtils.isEmpty(applyDo.applyTextColor)) {
             try {
                 tMTicket.setApplyTextColor(Color.parseColor(applyDo.applyTextColor));
             } catch (Exception unused) {
             }
         }
-        if (!TextUtils.isEmpty(applyDo.countTextColor)) {
+        if (!StringUtils.isEmpty(applyDo.countTextColor)) {
             try {
                 tMTicket.setCountTextColor(Color.parseColor(applyDo.countTextColor));
             } catch (Exception unused2) {

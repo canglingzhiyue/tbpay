@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.view.embed.c;
@@ -53,7 +53,7 @@ public class hfk {
                 if (a()) {
                     JSONObject parseObject = JSON.parseObject(Uri.parse(str).getQueryParameter("params"));
                     String b = b();
-                    if (TextUtils.isEmpty(b)) {
+                    if (StringUtils.isEmpty(b)) {
                         return;
                     }
                     HashMap hashMap = new HashMap();

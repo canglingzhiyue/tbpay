@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -109,7 +109,7 @@ public class MetaOpenUrlStore extends LocalEventStore {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             StEvent stEvent = this.f;
             stEvent.onStatistic("action", "metaOpenUrl|" + Utils.truncateString(str, 100));
             if (str.startsWith(MspGlobalDefine.AFWEALTH_SCHEME)) {
@@ -129,9 +129,9 @@ public class MetaOpenUrlStore extends LocalEventStore {
                 currentPresenter.mo545getIView().openActivity(intent2, null);
             } else {
                 String packageName = this.g.getPackageName();
-                if (TextUtils.equals(packageName, MspGlobalDefine.PACKAGE_AFWEALTH) && str.startsWith(MspGlobalDefine.ALIPAYS_SCHEME)) {
+                if (StringUtils.equals(packageName, MspGlobalDefine.PACKAGE_AFWEALTH) && str.startsWith(MspGlobalDefine.ALIPAYS_SCHEME)) {
                     str = str.replaceFirst(MspGlobalDefine.ALIPAYS_SCHEME, MspGlobalDefine.AFWEALTH_SCHEME);
-                } else if (TextUtils.equals(packageName, "hk.alipay.wallet") && str.startsWith(MspGlobalDefine.ALIPAYS_SCHEME)) {
+                } else if (StringUtils.equals(packageName, "hk.alipay.wallet") && str.startsWith(MspGlobalDefine.ALIPAYS_SCHEME)) {
                     str = str.replaceFirst(MspGlobalDefine.ALIPAYS_SCHEME, MspGlobalDefine.ALIPAYHK_SCHEME);
                 }
                 if (this.f4584a != null && this.f4584a.isFromWallet()) {

@@ -17,7 +17,7 @@ import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.runtimepermission.b;
 import android.taobao.windvane.thread.WVThreadPool;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -388,7 +388,7 @@ public class WVContacts extends e {
                     return;
                 }
                 String lastPathSegment = data.getLastPathSegment();
-                if (!TextUtils.isEmpty(lastPathSegment)) {
+                if (!StringUtils.isEmpty(lastPathSegment)) {
                     List<a> phoneContacts = getPhoneContacts(lastPathSegment, null, null);
                     if (phoneContacts == null || phoneContacts.isEmpty()) {
                         m.d(TAG, "contact result is empty");
@@ -396,7 +396,7 @@ public class WVContacts extends e {
                         return;
                     }
                     a aVar = phoneContacts.get(0);
-                    if (!TextUtils.isEmpty(aVar.b)) {
+                    if (!StringUtils.isEmpty(aVar.b)) {
                         r rVar = new r();
                         rVar.a("name", aVar.f1643a);
                         rVar.a("phone", aVar.b);

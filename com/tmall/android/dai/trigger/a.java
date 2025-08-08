@@ -1,6 +1,6 @@
 package com.tmall.android.dai.trigger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.internal.usertrack.UTExt;
 import com.tmall.android.dai.internal.usertrack.UserTrackDO;
@@ -69,7 +69,7 @@ public class a {
         hashMap.put("type", "utext");
         String pageName = userTrackDO.getPageName();
         String str2 = "";
-        if (!TextUtils.isEmpty(pageName)) {
+        if (!StringUtils.isEmpty(pageName)) {
             int pageNameSizeForUtext = userTrackDO.getPageNameSizeForUtext();
             if (pageNameSizeForUtext > 0 && pageNameSizeForUtext < pageName.length()) {
                 hashMap.put("page", pageName.substring(0, pageNameSizeForUtext));
@@ -101,7 +101,7 @@ public class a {
         }
         hashMap.put("auctionId", str);
         hashMap.put("pageStayTime", userTrackDO.getPageStayTime() + str2);
-        if (TextUtils.equals(userTrackDO.getArg3(), UTExt.ARG3_USE_NEW_UTEXT)) {
+        if (StringUtils.equals(userTrackDO.getArg3(), UTExt.ARG3_USE_NEW_UTEXT)) {
             hashMap.put("createTime", userTrackDO.getCreateTime() + str2);
         } else {
             hashMap.put("createTime", userTrackDO.getArg3() + str2);

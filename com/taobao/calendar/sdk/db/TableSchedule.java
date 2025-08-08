@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.android.task.Coordinator;
@@ -256,7 +256,7 @@ public class TableSchedule {
                     break;
                 }
                 z = true;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = next.getUserId();
                 }
             }
@@ -272,7 +272,7 @@ public class TableSchedule {
     }
 
     public static void cancelSchedule(final String str, final int i, QueryHandler queryHandler, String str2) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "0";
         }
         final String str3 = str2;
@@ -299,7 +299,7 @@ public class TableSchedule {
 
     public static void commit(String str) {
         CalendarAlarm.reset(DBase.getContext());
-        if (!TextUtils.equals(str, "0")) {
+        if (!StringUtils.equals(str, "0")) {
             CalendarAlarm.syn(DBase.getContext(), str);
         }
     }
@@ -308,7 +308,7 @@ public class TableSchedule {
         if (cursor != null) {
             JSONObject jSONObject = new JSONObject();
             String string = cursor.getString(cursor.getColumnIndex(COL_SOURCE_ID));
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "0";
             }
             jSONObject.put("userId", (Object) cursor.getString(cursor.getColumnIndex("user_id")));
@@ -333,7 +333,7 @@ public class TableSchedule {
     }
 
     public static void deleteSchedule(final String str, QueryHandler queryHandler, final String str2) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "0";
         }
         final Handler queryHandler2 = getQueryHandler(queryHandler, 2);
@@ -357,7 +357,7 @@ public class TableSchedule {
 
     public static void getCommingSchedule(QueryHandler queryHandler, String str) {
         final long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "0";
         }
         final String str2 = str;
@@ -597,7 +597,7 @@ public class TableSchedule {
     }
 
     public static void getScheduleBetween(final String str, final String str2, QueryHandler queryHandler, String str3) {
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "0";
         }
         final String str4 = str3;
@@ -696,7 +696,7 @@ public class TableSchedule {
             java.lang.String r13 = "link"
             java.lang.String[] r3 = new java.lang.String[]{r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13}
             java.lang.String r4 = "user_id = ? AND thedate >= ? AND thedate <= ? AND deleted = 0"
-            boolean r0 = android.text.TextUtils.isEmpty(r15)
+            boolean r0 = android.text.StringUtils.isEmpty(r15)
             if (r0 == 0) goto L35
             java.lang.String r0 = "0"
             goto L36
@@ -818,7 +818,7 @@ public class TableSchedule {
         Cursor cursor;
         SQLiteDatabase readableDatabase = DBase.getReadableDatabase(contextStatic);
         String[] strArr2 = {"link"};
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             strArr = new String[]{str, str2};
             str5 = "source_id = ? AND thedate >= ? AND deleted = 0";
         } else {
@@ -864,7 +864,7 @@ public class TableSchedule {
         Cursor cursor;
         SQLiteDatabase readableDatabase = DBase.getReadableDatabase(contextStatic);
         String[] strArr2 = {"event_id", "link", "type", COL_ALARM_TIME, COL_START_TIME};
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             strArr = new String[]{str, str2};
             str5 = "source_id = ? AND thedate >= ? AND deleted = 0";
         } else {
@@ -921,7 +921,7 @@ public class TableSchedule {
             public void run() {
                 long j;
                 String str2;
-                String str3 = TextUtils.isEmpty(str) ? "0" : str;
+                String str3 = StringUtils.isEmpty(str) ? "0" : str;
                 try {
                     SQLiteDatabase writableDatabase = DBase.getWritableDatabase(TableSchedule.contextStatic);
                     ContentValues contentValues = new ContentValues();
@@ -956,7 +956,7 @@ public class TableSchedule {
                     contentValues.put(TableSchedule.COL_ISALLDAY, Integer.valueOf(scheduleDO.isAllDay ? 1 : 0));
                     contentValues.put(TableSchedule.COL_ISREPEAT, Integer.valueOf(scheduleDO.repeat.isRepeat() ? 1 : 0));
                     contentValues.put(TableSchedule.COL_ISEDITABLE, Boolean.valueOf(scheduleDO.isEditable));
-                    contentValues.put("sync", TextUtils.equals(str3, "0") ? 2 : 0);
+                    contentValues.put("sync", StringUtils.equals(str3, "0") ? 2 : 0);
                     contentValues.put(TableSchedule.COL_DELETED, (Integer) 0);
                     long replace = writableDatabase.replace(TableSchedule.TABLE_NAME, null, contentValues);
                     String str5 = (scheduleDO.startTime - (scheduleDO.remind * 1000)) + "";
@@ -979,10 +979,10 @@ public class TableSchedule {
         int i = 0;
         String[] strArr = {str, str2};
         String str8 = "thedate >= ? AND thedate <= ?";
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str8 = str8 + " AND source_id =" + str3;
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             str7 = str8 + " AND user_id =" + str4;
         } else {
             str7 = str8;
@@ -1027,10 +1027,10 @@ public class TableSchedule {
         String[] strArr = {COL_THEDATE, "count(*) as remindCount"};
         String[] strArr2 = {str, str2};
         String str7 = "thedate >= ? AND thedate <= ?";
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str7 = str7 + " AND source_id =" + str3;
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             str6 = str7 + " AND user_id =" + str4;
         } else {
             str6 = str7;
@@ -1049,7 +1049,7 @@ public class TableSchedule {
             while (cursor.moveToNext()) {
                 JSONObject jSONObject = new JSONObject();
                 String string = cursor.getString(0);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     jSONObject.put("key", (Object) string.replace("-", ""));
                     jSONObject.put("value", (Object) cursor.getString(1));
                     jSONObject.put("count", (Object) Integer.valueOf(cursor.getInt(1)));
@@ -1080,7 +1080,7 @@ public class TableSchedule {
     }
 
     public static void updateScheduleByType(ArrayList<ScheduleDO> arrayList, final long[] jArr, final boolean z, QueryHandler queryHandler, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "0";
         }
         final String str2 = str;

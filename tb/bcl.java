@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.alibaba.android.ultron.trade.event.h;
 import com.alibaba.android.ultron.vfw.viewholder.BundleLineComponent;
@@ -267,7 +267,7 @@ public class bcl extends bcj {
         } else if (iDMComponent == null || (fields = iDMComponent.getFields()) == null || !"item".equals(iDMComponent.getTag()) || !bei.b(iDMComponent) || !bei.a(iDMComponent)) {
         } else {
             String string = fields.getString("cartId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if (fields.getBooleanValue("isRepeatBuy")) {

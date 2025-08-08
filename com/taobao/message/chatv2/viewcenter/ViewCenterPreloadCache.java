@@ -1,6 +1,6 @@
 package com.taobao.message.chatv2.viewcenter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.lab.comfrm.render.WidgetInterface;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public class ViewCenterPreloadCache {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("11af32ca", new Object[]{str, str2, widgetInterface});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Map<String, WidgetInterface> map = widgetInterfaceCache;
             map.put(str + str2, widgetInterface);
@@ -56,7 +56,7 @@ public class ViewCenterPreloadCache {
         if (ipChange instanceof IpChange) {
             return (WidgetInterface) ipChange.ipc$dispatch("b7b061fd", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Map<String, WidgetInterface> map = widgetInterfaceCache;
@@ -67,7 +67,7 @@ public class ViewCenterPreloadCache {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57c8234c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Map<String, WidgetInterface> map = widgetInterfaceCache;
             map.remove(str + str2);

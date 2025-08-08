@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.autoclear.biz.data.BizTaskData;
 import java.util.HashMap;
@@ -78,6 +78,6 @@ public class afk {
         if (data == null) {
             return stringExtra;
         }
-        return TextUtils.isEmpty(stringExtra) ? data.getQueryParameter("openFrom") : null;
+        return StringUtils.isEmpty(stringExtra) ? data.getQueryParameter("openFrom") : null;
     }
 }

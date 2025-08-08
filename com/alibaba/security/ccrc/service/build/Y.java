@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.wukong.plugin.BaseWuKongContentRiskPlugin;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class Y {
                 return null;
             }
             for (String str : list) {
-                if (!TextUtils.isEmpty(str) && !hashMap.containsKey(str)) {
+                if (!StringUtils.isEmpty(str) && !hashMap.containsKey(str)) {
                     Class<?> cls = Class.forName(str);
                     if (BaseWuKongContentRiskPlugin.class.isAssignableFrom(cls)) {
                         hashMap.put(str, cls);

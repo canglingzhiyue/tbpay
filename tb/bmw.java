@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -180,7 +180,7 @@ public class bmw extends AlertDialog {
             bmu.b(this.b, this.c);
         }
         Editable text = this.b.getText();
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return;
         }
         this.b.setSelection(text.length());

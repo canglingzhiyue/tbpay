@@ -8,7 +8,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.webview.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -432,9 +432,9 @@ public class DetailHybridWebView extends WVUCWebView {
             return ((Boolean) ipChange.ipc$dispatch("66ebfb0b", new Object[]{this})).booleanValue();
         }
         String str = Build.MODEL;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String a2 = epj.h().a("android_detail", "close_wvhw_list", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 if (a2.contains("," + str.toLowerCase(Locale.getDefault()) + ",")) {
                     return true;
                 }
@@ -481,7 +481,7 @@ public class DetailHybridWebView extends WVUCWebView {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("eda1d580", new Object[]{webView, str})).booleanValue();
             }
-            if (TextUtils.isEmpty(str) || str.contains("innerWebview")) {
+            if (StringUtils.isEmpty(str) || str.contains("innerWebview")) {
                 return false;
             }
             epq.a(webView.getContext().getApplicationContext(), str);
@@ -494,21 +494,21 @@ public class DetailHybridWebView extends WVUCWebView {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("7bd541f", new Object[]{webView, str})).booleanValue();
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return true;
             }
             String trim = str.trim();
-            if (TextUtils.isEmpty(trim)) {
+            if (StringUtils.isEmpty(trim)) {
                 return true;
             }
             if (!trim.startsWith("tel:") && !trim.startsWith("mailto:")) {
                 for (String str2 : egn.NAV_URL_DETAIL) {
-                    if (!TextUtils.isEmpty(str2) && trim.startsWith(str2)) {
+                    if (!StringUtils.isEmpty(str2) && trim.startsWith(str2)) {
                         epq.a(webView.getContext().getApplicationContext(), trim);
                         return true;
                     }
                 }
-                if (!TextUtils.isEmpty("https://shop.m.taobao.com/shop/shop_index.htm") && trim.startsWith("https://shop.m.taobao.com/shop/shop_index.htm")) {
+                if (!StringUtils.isEmpty("https://shop.m.taobao.com/shop/shop_index.htm") && trim.startsWith("https://shop.m.taobao.com/shop/shop_index.htm")) {
                     epq.a(webView.getContext().getApplicationContext(), trim);
                     return true;
                 }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.services.IBaseService;
 import com.taobao.alimama.services.LoginInfo;
@@ -31,6 +31,6 @@ public final class dbe {
             str3 = b.nickname;
             str2 = b.userId;
         }
-        TaoLog.Logi("O2OAdSdk", String.format("[step=%s,th=%s,ver=%s,user=%s,uid=%s] args: %s", str, Thread.currentThread().getName(), "5.15.6", str3, str2, TextUtils.join(",", strArr)));
+        TaoLog.Logi("O2OAdSdk", String.format("[step=%s,th=%s,ver=%s,user=%s,uid=%s] args: %s", str, Thread.currentThread().getName(), "5.15.6", str3, str2, StringUtils.join(",", strArr)));
     }
 }

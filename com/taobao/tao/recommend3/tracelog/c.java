@@ -3,7 +3,7 @@ package com.taobao.tao.recommend3.tracelog;
 import android.os.Build;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.l;
@@ -92,7 +92,7 @@ public class c {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : l.f(Globals.getApplication()) && LauncherRuntime.k == 0 && TextUtils.equals(str, oqc.a().m());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : l.f(Globals.getApplication()) && LauncherRuntime.k == 0 && StringUtils.equals(str, oqc.a().m());
     }
 
     public static boolean c() {

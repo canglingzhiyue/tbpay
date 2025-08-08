@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.parser.JSONLexer;
 import com.alipay.mobile.common.transportext.amnet.AmnetConstant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -362,7 +362,7 @@ public class ogl {
             if (ipChange instanceof IpChange) {
                 return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             List<String> b = oec.b(str.trim(), ',');
@@ -1280,7 +1280,7 @@ public class ogl {
                     break;
                 case 'M':
                     String a8 = oec.a(value, (String) null);
-                    if (!TextUtils.isEmpty(a8)) {
+                    if (!StringUtils.isEmpty(a8)) {
                         List asList = Arrays.asList(a8.split(","));
                         if (this.bA == null) {
                             this.bA = new int[4];
@@ -1675,7 +1675,7 @@ public class ogl {
             return ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, obj});
         }
         aa.g c2 = c();
-        if (c2 != null && c2.b && !TextUtils.isEmpty(c2.f20302a) && !d() && ("auto".equals(c2.f20302a) || odx.THEME_FORCE_DARK.equals(c2.f20302a))) {
+        if (c2 != null && c2.b && !StringUtils.isEmpty(c2.f20302a) && !d() && ("auto".equals(c2.f20302a) || odx.THEME_FORCE_DARK.equals(c2.f20302a))) {
             if (g() && "auto".equals(c2.f20302a)) {
                 String str2 = "dark-theme-" + str;
                 Map i = i();
@@ -1748,7 +1748,7 @@ public class ogl {
 
     public boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : TextUtils.equals("hidden", this.aY);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : StringUtils.equals("hidden", this.aY);
     }
 
     public boolean f() {

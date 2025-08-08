@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class ea implements Application.ActivityLifecycleCallbacks {
@@ -41,11 +41,11 @@ public class ea implements Application.ActivityLifecycleCallbacks {
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityPaused(Activity activity) {
         String localClassName = activity.getLocalClassName();
-        if (TextUtils.isEmpty(this.f251a) || TextUtils.isEmpty(localClassName)) {
+        if (StringUtils.isEmpty(this.f251a) || StringUtils.isEmpty(localClassName)) {
             return;
         }
         this.b = "";
-        if (!TextUtils.isEmpty(this.b) && !TextUtils.equals(this.b, localClassName)) {
+        if (!StringUtils.isEmpty(this.b) && !StringUtils.equals(this.b, localClassName)) {
             this.f251a = "";
             return;
         }
@@ -56,7 +56,7 @@ public class ea implements Application.ActivityLifecycleCallbacks {
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityResumed(Activity activity) {
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = activity.getLocalClassName();
         }
         this.f251a = String.valueOf(System.currentTimeMillis() / 1000);

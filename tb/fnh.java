@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.scene.engine.action.a;
 import com.taobao.android.diagnose.scene.engine.reader.RuleDefine;
@@ -22,10 +22,10 @@ public class fnh extends c {
         if (ipChange instanceof IpChange) {
             return (fmy) ipChange.ipc$dispatch("82f9794", new Object[]{this, ruleDefine});
         }
-        if (ruleDefine == null || TextUtils.isEmpty(ruleDefine.id) || TextUtils.isEmpty(ruleDefine.sceneCode) || TextUtils.isEmpty(ruleDefine.sceneRuleCode) || ruleDefine.actions == null || ruleDefine.actions.isEmpty()) {
+        if (ruleDefine == null || StringUtils.isEmpty(ruleDefine.id) || StringUtils.isEmpty(ruleDefine.sceneCode) || StringUtils.isEmpty(ruleDefine.sceneRuleCode) || ruleDefine.actions == null || ruleDefine.actions.isEmpty()) {
             v.a("ELV1RuleFactory", "Rule define invalid!!");
             return null;
-        } else if ("scene_custom".equals(ruleDefine.sceneCode) && TextUtils.isEmpty(ruleDefine.bizName)) {
+        } else if ("scene_custom".equals(ruleDefine.sceneCode) && StringUtils.isEmpty(ruleDefine.bizName)) {
             v.a("ELV1RuleFactory", "Custom Rule define invalid!!");
             return null;
         } else {

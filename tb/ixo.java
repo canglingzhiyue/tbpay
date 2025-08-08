@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.expression.event.DXEvent;
@@ -34,7 +34,7 @@ public class ixo implements brd {
         } else if (!(dXEvent instanceof DXScrollEvent) || objArr.length < 2 || objArr[0] == null) {
         } else {
             String obj = objArr[1].toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 return;
             }
             map.put(obj, Integer.valueOf(gbg.c(this.f29397a, ((DXScrollEvent) dXEvent).getOffsetX())));

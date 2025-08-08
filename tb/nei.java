@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.controller.AppController;
@@ -67,7 +67,7 @@ public class nei implements nek {
             arrayList.add("PHA is finished.");
             a(a3, a2, arrayList);
             return null;
-        } else if (!TextUtils.isEmpty(b) && !TextUtils.isEmpty(b2)) {
+        } else if (!StringUtils.isEmpty(b) && !StringUtils.isEmpty(b2)) {
             c cVar = new c();
             cVar.d = JSBridge.parseParamsToOptions(b3);
             cVar.b = b;

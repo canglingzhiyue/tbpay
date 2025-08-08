@@ -3,7 +3,7 @@ package com.xiaomi.mipush.sdk;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.xiaomi.push.ic;
 import com.xiaomi.push.iy;
@@ -64,7 +64,7 @@ public class FCMPushHelper {
             goto L81
         L31:
             java.lang.String r0 = android.util.Base64.encodeToString(r8, r5)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L3e
             java.lang.String r0 = "fcm message buf base64 encode failed"
             goto L81
@@ -134,7 +134,7 @@ public class FCMPushHelper {
     public static void notifyFCMNotificationCome(Context context, Map<String, String> map) {
         PushMessageReceiver a2;
         String str = map.get("pushMsg");
-        if (TextUtils.isEmpty(str) || (a2 = i.a(context)) == null) {
+        if (StringUtils.isEmpty(str) || (a2 = i.a(context)) == null) {
             return;
         }
         a2.onNotificationMessageArrived(context, i.a(str));
@@ -143,11 +143,11 @@ public class FCMPushHelper {
     public static Map<String, String> notifyFCMPassThoughMessageCome(Context context, Map<String, String> map) {
         PushMessageReceiver a2;
         String str = map.get("pushMsg");
-        if (!TextUtils.isEmpty(str) && (a2 = i.a(context)) != null) {
+        if (!StringUtils.isEmpty(str) && (a2 = i.a(context)) != null) {
             a2.onReceivePassThroughMessage(context, i.a(str));
         }
         String str2 = map.get("mipushContainer");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 byte[] decode = Base64.decode(str2, 2);
                 a(context, com.xiaomi.push.service.z.a(decode));

@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.aura.extension.event.openUrl;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.service.event.AURAEventIO;
 import com.alibaba.fastjson.JSONObject;
@@ -80,7 +80,7 @@ public final class a extends arv {
             return ((Boolean) ipChange.ipc$dispatch("3dfc3cda", new Object[]{this, aURAEventIO})).booleanValue();
         }
         JSONObject c = aURAEventIO.getEventModel().c();
-        return c != null && !TextUtils.isEmpty(c.getString("url"));
+        return c != null && !StringUtils.isEmpty(c.getString("url"));
     }
 
     private com.alibaba.android.aura.service.event.d a(DetailCoreActivity detailCoreActivity, AURAEventIO aURAEventIO) {
@@ -161,9 +161,9 @@ public final class a extends arv {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("265168f9", new Object[]{this, detailCoreActivity, str, str2});
         }
-        if (!TextUtils.isEmpty(str)) {
-            String a2 = !TextUtils.isEmpty(a(detailCoreActivity)) ? a(detailCoreActivity) : str;
-            if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str)) {
+            String a2 = !StringUtils.isEmpty(a(detailCoreActivity)) ? a(detailCoreActivity) : str;
+            if (!StringUtils.isEmpty(str2)) {
                 com.taobao.android.detail.datasdk.model.datamodel.node.c cVar = detailCoreActivity.y().t;
                 return (a2 + "&currentAddress=" + str2) + "&item_id=" + cVar.i() + "&seller_id=" + cVar.h();
             }

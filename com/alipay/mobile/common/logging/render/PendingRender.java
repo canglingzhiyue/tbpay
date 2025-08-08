@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.render;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.IRender;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
@@ -135,9 +135,9 @@ public class PendingRender implements IRender {
         try {
             if (baseRender instanceof BehavorRender) {
                 Behavor behavor = (Behavor) this.k[1];
-                if (this.i && behavor != null && TextUtils.isEmpty(behavor.getAbTestInfo()) && LoggerFactory.getLogContext() != null && (abtestInfoGetter2 = LoggerFactory.getLogContext().getAbtestInfoGetter()) != null) {
+                if (this.i && behavor != null && StringUtils.isEmpty(behavor.getAbTestInfo()) && LoggerFactory.getLogContext() != null && (abtestInfoGetter2 = LoggerFactory.getLogContext().getAbtestInfoGetter()) != null) {
                     String seedID = behavor.getSeedID();
-                    if (!TextUtils.isEmpty(seedID) && seedID.contains(".")) {
+                    if (!StringUtils.isEmpty(seedID) && seedID.contains(".")) {
                         behavor.setAbTestInfo(abtestInfoGetter2.getLogForSpmID(seedID));
                         if ((abtestInfoGetter2 instanceof AbtestInfoGetterV2) && (extInfoForSpmID2 = ((AbtestInfoGetterV2) abtestInfoGetter2).getExtInfoForSpmID(seedID)) != null) {
                             for (Map.Entry<String, String> entry : extInfoForSpmID2.entrySet()) {
@@ -207,9 +207,9 @@ public class PendingRender implements IRender {
                 return null;
             } else {
                 AntEvent antEvent = (AntEvent) this.k[0];
-                if (this.i && antEvent != null && TextUtils.isEmpty(antEvent.getAbtestId()) && LoggerFactory.getLogContext() != null && (abtestInfoGetter = LoggerFactory.getLogContext().getAbtestInfoGetter()) != null) {
+                if (this.i && antEvent != null && StringUtils.isEmpty(antEvent.getAbtestId()) && LoggerFactory.getLogContext() != null && (abtestInfoGetter = LoggerFactory.getLogContext().getAbtestInfoGetter()) != null) {
                     String str7 = antEvent.getExtParams().get("spm");
-                    if (!TextUtils.isEmpty(str7) && str7.contains(".")) {
+                    if (!StringUtils.isEmpty(str7) && str7.contains(".")) {
                         new AntEventWrapper(antEvent).setAbtestId(abtestInfoGetter.getLogForSpmID(str7));
                         if ((abtestInfoGetter instanceof AbtestInfoGetterV2) && (extInfoForSpmID = ((AbtestInfoGetterV2) abtestInfoGetter).getExtInfoForSpmID(str7)) != null) {
                             for (Map.Entry<String, String> entry2 : extInfoForSpmID.entrySet()) {

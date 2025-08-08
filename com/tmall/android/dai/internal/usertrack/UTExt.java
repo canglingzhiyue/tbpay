@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.usertrack;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.DAICallback;
@@ -26,7 +26,7 @@ public class UTExt {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("5f21def2", new Object[]{str, str2, str3, str4, str5, map, dAICallback});
         }
-        boolean equals = TextUtils.equals(ARG3_USE_NEW_UTEXT, str5);
+        boolean equals = StringUtils.equals(ARG3_USE_NEW_UTEXT, str5);
         UserTrackDO userTrackDO = new UserTrackDO();
         userTrackDO.setPageName(str + "." + str2);
         userTrackDO.setPageNameSizeForUtext(str.length());
@@ -95,7 +95,7 @@ public class UTExt {
             return (Map) ipChange.ipc$dispatch("a7cb4b2f", new Object[]{str, str2, str3, str4, str5, str6});
         }
         Map<String, String> map2 = null;
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             if (str6.startsWith(riy.BLOCK_START_STR)) {
                 try {
                     map = (Map) JSONObject.parseObject(str6, Map.class);

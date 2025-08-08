@@ -1,6 +1,6 @@
 package com.taobao.share.core.share.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.core.share.interceptor.b;
@@ -50,7 +50,7 @@ public class a {
                 getSharePanelBizActivityInfoRequest.setTitle(tBShareContent.description);
                 HashMap hashMap = new HashMap();
                 String f = e.b().f();
-                if (!TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(f)) {
                     hashMap.put("itemId", f);
                     getSharePanelBizActivityInfoRequest.setBizParams(JSON.toJSONString((Object) hashMap, true));
                 }
@@ -88,16 +88,16 @@ public class a {
                                 dataJsonObject.put("originTitle", tBShareContent.description);
                                 tBShareContent._shareBizActivityInfo = dataJsonObject.toString();
                                 if (getBizActivityInfoResponseData.isChangeParams) {
-                                    if (!TextUtils.isEmpty(tBShareContent.businessId)) {
+                                    if (!StringUtils.isEmpty(tBShareContent.businessId)) {
                                         tBShareContent.originBizCode = tBShareContent.businessId;
                                     }
-                                    if (!TextUtils.isEmpty(getBizActivityInfoResponseData.bizcode)) {
+                                    if (!StringUtils.isEmpty(getBizActivityInfoResponseData.bizcode)) {
                                         tBShareContent.businessId = getBizActivityInfoResponseData.bizcode;
                                     }
-                                    if (!TextUtils.isEmpty(getBizActivityInfoResponseData.targetUrl)) {
+                                    if (!StringUtils.isEmpty(getBizActivityInfoResponseData.targetUrl)) {
                                         tBShareContent.url = getBizActivityInfoResponseData.targetUrl;
                                     }
-                                    if (!TextUtils.isEmpty(getBizActivityInfoResponseData.title)) {
+                                    if (!StringUtils.isEmpty(getBizActivityInfoResponseData.title)) {
                                         tBShareContent.description = getBizActivityInfoResponseData.title;
                                     }
                                 }

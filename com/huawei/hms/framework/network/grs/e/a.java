@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.e;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.network.grs.GrsBaseInfo;
@@ -85,7 +85,7 @@ public class a {
                 this.c.b(grsParasKey, dVar.j());
                 this.f7417a.put(grsParasKey, com.huawei.hms.framework.network.grs.a.a(dVar.j()));
             }
-            if (!TextUtils.isEmpty(dVar.e())) {
+            if (!StringUtils.isEmpty(dVar.e())) {
                 c cVar2 = this.c;
                 cVar2.b(grsParasKey + HeaderConstant.HEADER_KEY_ETAG, dVar.e());
             }
@@ -105,7 +105,7 @@ public class a {
         c cVar = this.c;
         String a3 = cVar.a(grsParasKey + "time", "0");
         long j = 0;
-        if (!TextUtils.isEmpty(a3) && a3.matches("\\d+")) {
+        if (!StringUtils.isEmpty(a3) && a3.matches("\\d+")) {
             try {
                 j = Long.parseLong(a3);
             } catch (NumberFormatException e) {

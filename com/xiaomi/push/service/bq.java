@@ -1,7 +1,7 @@
 package com.xiaomi.push.service;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.fq;
 import com.xiaomi.push.fr;
 import com.xiaomi.push.service.XMPushService;
@@ -80,7 +80,7 @@ public class bq {
     }
 
     private void a(String str, c cVar) {
-        if (TextUtils.isEmpty(str) || cVar == null) {
+        if (StringUtils.isEmpty(str) || cVar == null) {
             return;
         }
         HashMap hashMap = new HashMap();

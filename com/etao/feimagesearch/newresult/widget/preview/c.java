@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -352,7 +352,7 @@ public final class c extends com.etao.feimagesearch.newresult.widget.preview.d i
         JSONObject jSONObject = null;
         ctm ctmVar = null;
         ArrayList arrayList = new ArrayList();
-        if (TextUtils.isEmpty(this.l)) {
+        if (StringUtils.isEmpty(this.l)) {
             this.l = list.get(0).a();
         }
         for (i iVar : list) {
@@ -565,12 +565,12 @@ public final class c extends com.etao.feimagesearch.newresult.widget.preview.d i
             return;
         }
         String a2 = cov.a(rectF);
-        if (a2 == null || TextUtils.isEmpty(a2)) {
+        if (a2 == null || StringUtils.isEmpty(a2)) {
             return;
         }
         ArrayList arrayList = new ArrayList();
         String str = this.k;
-        if (str != null && !TextUtils.isEmpty(str)) {
+        if (str != null && !StringUtils.isEmpty(str)) {
             ctm ctmVar = new ctm(str);
             ctmVar.a(1);
             arrayList.add(ctmVar);
@@ -632,7 +632,7 @@ public final class c extends com.etao.feimagesearch.newresult.widget.preview.d i
             ipChange.ipc$dispatch("266fb88", new Object[]{this, jSONObject});
         } else if (com.taobao.android.searchbaseframe.util.a.a(jSONObject, "isScanRegion", false)) {
             String a3 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "region", "");
-            if (TextUtils.isEmpty(a3) || (a2 = m().a(cov.a(a3, 1, 1))) == null) {
+            if (StringUtils.isEmpty(a3) || (a2 = m().a(cov.a(a3, 1, 1))) == null) {
                 return;
             }
             com.etao.feimagesearch.capture.scan.irp.b.a().a((FragmentActivity) g(), a2);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tracker.util.e;
 import com.taobao.android.tracker.util.f;
@@ -114,7 +114,7 @@ public class jiz implements jix {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{this, str, str2, str3});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (orangeConfig = OrangeConfig.getInstance()) != null) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (orangeConfig = OrangeConfig.getInstance()) != null) {
             return orangeConfig.getConfig(str, str2, null);
         }
         return null;
@@ -126,7 +126,7 @@ public class jiz implements jix {
             return ((Boolean) ipChange.ipc$dispatch("4dbad4dc", new Object[]{this, str, str2, new Boolean(z)})).booleanValue();
         }
         String a2 = a(str, str2, (String) null);
-        return !TextUtils.isEmpty(a2) ? Boolean.valueOf(a2).booleanValue() : z;
+        return !StringUtils.isEmpty(a2) ? Boolean.valueOf(a2).booleanValue() : z;
     }
 
     public void a(String str) {

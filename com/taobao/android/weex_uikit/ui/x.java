@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.ui;
 
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.common.MUSConstants;
@@ -166,7 +166,7 @@ public class x extends h<x> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.equals(str, n())) {
+        } else if (StringUtils.equals(str, n())) {
         } else {
             b("transform", str);
         }
@@ -176,7 +176,7 @@ public class x extends h<x> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.equals(str, j())) {
+        } else if (StringUtils.equals(str, j())) {
         } else {
             b("transition", str);
         }
@@ -186,7 +186,7 @@ public class x extends h<x> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1c6cb136", new Object[]{this, str});
-        } else if (TextUtils.equals(str, c())) {
+        } else if (StringUtils.equals(str, c())) {
         } else {
             b("transitionProperty", str);
         }
@@ -196,7 +196,7 @@ public class x extends h<x> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("669e4a77", new Object[]{this, str});
-        } else if (TextUtils.equals(str, d())) {
+        } else if (StringUtils.equals(str, d())) {
         } else {
             b("transitionDuration", str);
         }
@@ -206,7 +206,7 @@ public class x extends h<x> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0cfe3b8", new Object[]{this, str});
-        } else if (TextUtils.equals(str, e())) {
+        } else if (StringUtils.equals(str, e())) {
         } else {
             b("transitionDelay", str);
         }
@@ -216,7 +216,7 @@ public class x extends h<x> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fb017cf9", new Object[]{this, str});
-        } else if (TextUtils.equals(str, f())) {
+        } else if (StringUtils.equals(str, f())) {
         } else {
             b("transitionTimingFunction", str);
         }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,7 +85,7 @@ public class lsn {
         if (this.b == null) {
             return null;
         }
-        if (!"DXSearchBar".equals(str) || TextUtils.isEmpty(str2)) {
+        if (!"DXSearchBar".equals(str) || StringUtils.isEmpty(str2)) {
             ldf.d(lsk.SPLASH_BUSINESS_TAG, "getNaviBarLocation-> 必传参数有误，获取搜索栏坐标失败。bizCode:" + str + " viewTag:" + str2);
             return null;
         }

@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework.base.windvane;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.event.Event;
@@ -50,7 +50,7 @@ public class NewDetailWVPlugin extends NewDetailBaseWVPlugin {
             return false;
         }
         String string = jSONObject.getString("token");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             handleCallbackFail("10002", ERROR_MSG_EMPTY_TOKEN, wVCallBackContext);
             return false;
         }
@@ -73,7 +73,7 @@ public class NewDetailWVPlugin extends NewDetailBaseWVPlugin {
             return false;
         }
         String string = parseObject.getString("from");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             fjt.a(fjt.TAG_WINDVANE, "handleUpdateData from is null");
         }
         a aVar = new a(wVCallBackContext, str, string);
@@ -88,7 +88,7 @@ public class NewDetailWVPlugin extends NewDetailBaseWVPlugin {
             return false;
         }
         String string2 = parseObject.getString("token");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             handleCallbackFail("10002", ERROR_MSG_EMPTY_TOKEN, wVCallBackContext);
             return false;
         }
@@ -134,7 +134,7 @@ public class NewDetailWVPlugin extends NewDetailBaseWVPlugin {
                 r rVar = new r("HY_FAILED");
                 if (jSONObject2 != null) {
                     for (String str : jSONObject2.keySet()) {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             rVar.a(str, jSONObject2.getString(str));
                         }
                     }

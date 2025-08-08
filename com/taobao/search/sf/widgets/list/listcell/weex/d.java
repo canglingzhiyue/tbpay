@@ -3,7 +3,7 @@ package com.taobao.search.sf.widgets.list.listcell.weex;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -407,7 +407,7 @@ public class d extends jzc<iru<? extends com.taobao.android.searchbaseframe.data
         } else if (jSONObject != null && (a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "keys")) != null) {
             for (int i = 0; i < a2.size(); i++) {
                 String string = a2.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     P().clearParam(string);
                 }
             }

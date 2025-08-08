@@ -2,7 +2,7 @@ package com.taobao.weex.dom;
 
 import android.support.v4.util.ArrayMap;
 import android.text.Layout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.Constants;
@@ -192,24 +192,24 @@ public class WXStyle implements Cloneable, Map<String, Object> {
         }
         Layout.Alignment alignment = z ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL;
         String str = (String) map.get("textAlign");
-        if (TextUtils.equals("left", str)) {
+        if (StringUtils.equals("left", str)) {
             return Layout.Alignment.ALIGN_NORMAL;
         }
-        if (TextUtils.equals("center", str)) {
+        if (StringUtils.equals("center", str)) {
             return Layout.Alignment.ALIGN_CENTER;
         }
-        return TextUtils.equals("right", str) ? Layout.Alignment.ALIGN_OPPOSITE : alignment;
+        return StringUtils.equals("right", str) ? Layout.Alignment.ALIGN_OPPOSITE : alignment;
     }
 
-    public static TextUtils.TruncateAt getTextOverflow(Map<String, Object> map) {
+    public static StringUtils.TruncateAt getTextOverflow(Map<String, Object> map) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
-            return (TextUtils.TruncateAt) ipChange.ipc$dispatch("78d12f6f", new Object[]{map});
+            return (StringUtils.TruncateAt) ipChange.ipc$dispatch("78d12f6f", new Object[]{map});
         }
-        if (!TextUtils.equals("ellipsis", (String) map.get("textOverflow"))) {
+        if (!StringUtils.equals("ellipsis", (String) map.get("textOverflow"))) {
             return null;
         }
-        return TextUtils.TruncateAt.END;
+        return StringUtils.TruncateAt.END;
     }
 
     public static int getLines(Map<String, Object> map) {

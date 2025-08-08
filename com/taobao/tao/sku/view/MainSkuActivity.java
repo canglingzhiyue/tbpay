@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
@@ -83,7 +83,7 @@ public class MainSkuActivity extends FragmentActivity {
         String str = "null";
         if (ovcVar != null) {
             String str2 = ovcVar.f32448a;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = str2;
             }
         }
@@ -104,7 +104,7 @@ public class MainSkuActivity extends FragmentActivity {
         Map<String, String> map = this.c;
         if (map != null) {
             this.b = map.get("bottom_bar_style");
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 this.b = "bottombar_style_buyaddcart";
             }
         }
@@ -252,7 +252,7 @@ public class MainSkuActivity extends FragmentActivity {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4df13f17", new Object[]{this, str, str2, str3, str4, str5, map, str6, str7, str8, str9})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str9)) {
+        if (!StringUtils.isEmpty(str9)) {
             String jSONString = new JSONObject() { // from class: com.taobao.tao.sku.view.MainSkuActivity.4
                 {
                     put("bizName", (Object) str9);
@@ -274,12 +274,12 @@ public class MainSkuActivity extends FragmentActivity {
         sb.append("&ignore_toast=true");
         sb.append("&downgradeStr=");
         sb.append(URLEncoder.encode(str4));
-        sb.append(!TextUtils.isEmpty(str8) ? "&urlSolid=" + URLEncoder.encode(str8) : "");
-        if (TextUtils.isEmpty(str6)) {
+        sb.append(!StringUtils.isEmpty(str8) ? "&urlSolid=" + URLEncoder.encode(str8) : "");
+        if (StringUtils.isEmpty(str6)) {
             str6 = "";
         }
         sb.append(str6);
-        if (TextUtils.isEmpty(str7)) {
+        if (StringUtils.isEmpty(str7)) {
             str7 = "";
         }
         sb.append(str7);

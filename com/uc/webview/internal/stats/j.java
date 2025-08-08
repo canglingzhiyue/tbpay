@@ -1,6 +1,6 @@
 package com.uc.webview.internal.stats;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.Log;
 import com.uc.webview.base.io.a;
 import java.io.File;
@@ -77,9 +77,9 @@ public final class j {
             int r7 = r5 + 1
             r7 = r3[r7]     // Catch: java.lang.Throwable -> L87
             int r5 = r5 + 2
-            boolean r8 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L87
+            boolean r8 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L87
             if (r8 != 0) goto L61
-            boolean r8 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L87
+            boolean r8 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L87
             if (r8 != 0) goto L61
             r4.put(r6, r7)     // Catch: java.lang.Throwable -> L87
         L61:
@@ -160,13 +160,13 @@ public final class j {
         long j = 0;
         com.uc.webview.base.io.a c = c();
         for (d dVar : list) {
-            if (!TextUtils.isEmpty(dVar.f23997a) && dVar.b != null && !dVar.b.isEmpty()) {
+            if (!StringUtils.isEmpty(dVar.f23997a) && dVar.b != null && !dVar.b.isEmpty()) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(dVar.f23997a);
                 for (Map.Entry<String, String> entry : dVar.b.entrySet()) {
                     String key = entry.getKey();
                     String value = entry.getValue();
-                    if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                    if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                         sb.append("`");
                         sb.append(key);
                         sb.append("`");

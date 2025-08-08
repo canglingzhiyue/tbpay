@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -174,7 +174,7 @@ public class hgp implements c, d.a, ddv {
                     }
                     hgp.a(hgp.this).a(importantEventItem);
                     hgp.a(hgp.this, importantEventItem, "ImportantEventNoticeIssue");
-                    if (hgp.b(hgp.this) && (importantEventItem2 = importantEventItem) != null && TextUtils.equals(importantEventItem2.isHighestPriority, "true")) {
+                    if (hgp.b(hgp.this) && (importantEventItem2 = importantEventItem) != null && StringUtils.equals(importantEventItem2.isHighestPriority, "true")) {
                         hgp.a(hgp.this, importantEventItem);
                     } else if (hgp.this.a(importantEventItem)) {
                         plx.a("SubCommonImportantEventController", "onMessageReceived isNeedWaitFrontComponent true type:" + importantEventItem.type);
@@ -213,7 +213,7 @@ public class hgp implements c, d.a, ddv {
             ipChange.ipc$dispatch("c7052959", new Object[]{this, list});
         } else if (list != null) {
             for (ImportantEventItem importantEventItem : list) {
-                if (this.g && TextUtils.equals(importantEventItem.isHighestPriority, "true")) {
+                if (this.g && StringUtils.equals(importantEventItem.isHighestPriority, "true")) {
                     this.b.add(importantEventItem);
                 } else if (a(importantEventItem)) {
                     this.c.add(importantEventItem);
@@ -279,7 +279,7 @@ public class hgp implements c, d.a, ddv {
                 z = false;
                 for (int i = 0; i < this.b.size(); i++) {
                     ImportantEventItem importantEventItem = this.b.get(i);
-                    if (importantEventItem != null && TextUtils.equals(importantEventItem.isHighestPriority, "true")) {
+                    if (importantEventItem != null && StringUtils.equals(importantEventItem.isHighestPriority, "true")) {
                         z = true;
                     }
                 }
@@ -357,7 +357,7 @@ public class hgp implements c, d.a, ddv {
         if (importantEventItem == null || importantEventItem.configInfo == null || !importantEventItem.configInfo.containsKey("name") || !importantEventItem.configInfo.containsKey("type")) {
             return false;
         }
-        return TextUtils.equals(importantEventItem.configInfo.getString("type"), "h5Component") && !this.f28628a.a(importantEventItem.configInfo.getString("name"));
+        return StringUtils.equals(importantEventItem.configInfo.getString("type"), "h5Component") && !this.f28628a.a(importantEventItem.configInfo.getString("name"));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0071  */
@@ -441,7 +441,7 @@ public class hgp implements c, d.a, ddv {
         }
         HashMap<String, String> hashMap = new HashMap<>();
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 for (String str2 : str.split(",")) {
                     if (str2.contains("=")) {
                         String[] split2 = str2.split("=");
@@ -606,7 +606,7 @@ public class hgp implements c, d.a, ddv {
         }
         if (hkk.x() && this.f != null && importantEventItem != null && importantEventItem.dataMessage != null) {
             String string = importantEventItem.dataMessage.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(this.f.d) && !string.equals(this.f.d)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(this.f.d) && !string.equals(this.f.d)) {
                 return true;
             }
         }

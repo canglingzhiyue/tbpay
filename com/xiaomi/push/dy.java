@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.xiaomi.channel.commonutils.logger.LoggerInterface;
@@ -75,7 +75,7 @@ public class dy implements LoggerInterface {
         try {
             try {
                 try {
-                    if (TextUtils.isEmpty(this.c) && (externalFilesDir = this.f247a.getExternalFilesDir(null)) != null) {
+                    if (StringUtils.isEmpty(this.c) && (externalFilesDir = this.f247a.getExternalFilesDir(null)) != null) {
                         this.c = externalFilesDir.getAbsolutePath() + "";
                     }
                     File file = new File(this.c + f244a);

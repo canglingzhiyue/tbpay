@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -190,9 +190,9 @@ public final class faa extends atm {
         }
         long j5 = j2 - j3;
         long H = j2 - y.H();
-        if (TextUtils.equals(str, "aura_preload_visible")) {
+        if (StringUtils.equals(str, "aura_preload_visible")) {
             h.b(detailCoreActivity, j4, j5, H);
-        } else if (TextUtils.equals(str, "aura_visible")) {
+        } else if (StringUtils.equals(str, "aura_visible")) {
             h.a(detailCoreActivity, j4, j5, H);
         }
         try {

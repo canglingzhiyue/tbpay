@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import com.cmic.sso.sdk.b;
 import java.util.UUID;
@@ -54,9 +54,9 @@ public class O00O000o {
                     String O000000o2 = O0O0OO0.O000000o(this.O00000Oo);
                     StringBuilder sb = new StringBuilder();
                     sb.append("解密phoneScript ");
-                    sb.append(!TextUtils.isEmpty(O000000o2));
+                    sb.append(!StringUtils.isEmpty(O000000o2));
                     O0O000o.O00000Oo("AuthnBusiness", sb.toString());
-                    if (!TextUtils.isEmpty(O000000o2)) {
+                    if (!StringUtils.isEmpty(O000000o2)) {
                         aVar.a("phonescrip", O000000o2);
                     } else {
                         O000000o = false;

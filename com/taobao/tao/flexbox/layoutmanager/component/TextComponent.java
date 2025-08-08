@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.Spanned;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -52,7 +52,7 @@ public class TextComponent extends com.taobao.tao.flexbox.layoutmanager.core.d<V
             textComponent.setupLayoutHelper((ogk) TextComponent.access$500(textComponent), -1);
             TextComponent.this.textLayoutHelper.a(yogaMeasureMode, f);
             TextComponent.this.textLayoutHelper.a(((ogk) TextComponent.access$600(TextComponent.this)).y);
-            if (TextUtils.isEmpty(((ogk) TextComponent.access$700(TextComponent.this)).y) || TextComponent.this.textLayoutHelper.m() == null) {
+            if (StringUtils.isEmpty(((ogk) TextComponent.access$700(TextComponent.this)).y) || TextComponent.this.textLayoutHelper.m() == null) {
                 return YogaMeasureOutput.make(0, 0);
             }
             int i = ((ogk) TextComponent.access$800(TextComponent.this)).u;
@@ -76,7 +76,7 @@ public class TextComponent extends com.taobao.tao.flexbox.layoutmanager.core.d<V
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("a8b0d9d2", new Object[]{this, aaVar, oglVar, str, obj});
-            } else if (!(oglVar instanceof ogk) || !TextUtils.equals(str, "color")) {
+            } else if (!(oglVar instanceof ogk) || !StringUtils.equals(str, "color")) {
             } else {
                 ((ogk) oglVar).b(aaVar.N(), obj);
             }
@@ -132,7 +132,7 @@ public class TextComponent extends com.taobao.tao.flexbox.layoutmanager.core.d<V
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("a8b0d9d2", new Object[]{this, aaVar, oglVar, str, obj});
-            } else if (!(oglVar instanceof ogk) || !TextUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_box_shadow)) {
+            } else if (!(oglVar instanceof ogk) || !StringUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_box_shadow)) {
             } else {
                 ((ogk) oglVar).h(aaVar.N(), obj);
             }
@@ -327,10 +327,10 @@ public class TextComponent extends com.taobao.tao.flexbox.layoutmanager.core.d<V
             return (com.taobao.tao.flexbox.layoutmanager.core.c) ipChange.ipc$dispatch("1e262aca", new Object[]{this, str});
         }
         if (oeb.a("enableOptTextAttr", true)) {
-            if (TextUtils.equals(str, "color")) {
+            if (StringUtils.equals(str, "color")) {
                 return this.color;
             }
-            if (TextUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_box_shadow)) {
+            if (StringUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_box_shadow)) {
                 return this.boxshadow;
             }
         }
@@ -450,10 +450,10 @@ public class TextComponent extends com.taobao.tao.flexbox.layoutmanager.core.d<V
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("207c651f", new Object[]{this, charSequence, charSequence2})).booleanValue();
         }
-        if (TextUtils.isEmpty(charSequence) && TextUtils.isEmpty(charSequence2)) {
+        if (StringUtils.isEmpty(charSequence) && StringUtils.isEmpty(charSequence2)) {
             return true;
         }
-        return TextUtils.equals(charSequence, charSequence2);
+        return StringUtils.equals(charSequence, charSequence2);
     }
 
     @Override // com.taobao.tao.flexbox.layoutmanager.core.d
@@ -527,7 +527,7 @@ public class TextComponent extends com.taobao.tao.flexbox.layoutmanager.core.d<V
                 if ((view instanceof EditText) && (selectionStart = (textView = (TextView) view).getSelectionStart()) == textView.getSelectionEnd()) {
                     ((EditText) view).setSelection(Math.min(selectionStart, ogkVar.y.length()));
                 }
-            } else if (considerLayoutAnimation() && (eVar = this.textLayoutHelper) != null && eVar.k() != ogkVar.m && TextUtils.equals(this.textLayoutHelper.j(), ogkVar.y)) {
+            } else if (considerLayoutAnimation() && (eVar = this.textLayoutHelper) != null && eVar.k() != ogkVar.m && StringUtils.equals(this.textLayoutHelper.j(), ogkVar.y)) {
                 Animator a2 = oel.a(this, this.textLayoutHelper.k(), ogkVar.m);
                 a2.setDuration(150L);
                 a2.start();

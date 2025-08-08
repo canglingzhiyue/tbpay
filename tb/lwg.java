@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.statisticsv2.model.StWindow;
@@ -128,7 +128,7 @@ public class lwg {
         String string = jSONObject.getString(StWindow.UPDATE_TYPE);
         String string2 = jSONObject.getString("updateTarget");
         String string3 = jSONObject.getString("updatePosition");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
             this.f.append("1");
             return;
         }
@@ -139,12 +139,12 @@ public class lwg {
             this.f.append("8");
         } else if (a2 < 0) {
             this.f.append("9");
-        } else if (TextUtils.equals(string, "insert")) {
+        } else if (StringUtils.equals(string, "insert")) {
             list.add(a2, sectionModel);
-        } else if (TextUtils.equals(string, "update")) {
+        } else if (StringUtils.equals(string, "update")) {
             list.remove(a2);
             list.add(a2, sectionModel);
-        } else if (!TextUtils.equals(string, "remove")) {
+        } else if (!StringUtils.equals(string, "remove")) {
         } else {
             list.remove(a2);
         }
@@ -185,7 +185,7 @@ public class lwg {
             return r9
         L28:
             java.lang.String r0 = "position"
-            boolean r0 = android.text.TextUtils.equals(r0, r10)
+            boolean r0 = android.text.StringUtils.equals(r0, r10)
             r1 = -1
             if (r0 == 0) goto L42
             int r9 = r8.a(r9)
@@ -297,26 +297,26 @@ public class lwg {
             this.j = true;
             this.h.get(str);
             a(this.h, list, this.e, i);
-            b b = (this.f30938a == null || TextUtils.isEmpty(this.b)) ? null : this.f30938a.b(this.b);
+            b b = (this.f30938a == null || StringUtils.isEmpty(this.b)) ? null : this.f30938a.b(this.b);
             if (b != null) {
                 JSONObject deltaExt = this.g.getDeltaExt();
-                if (TextUtils.equals("bottom", str2)) {
+                if (StringUtils.equals("bottom", str2)) {
                     String string = jSONObject.getString("bottomInsertFree");
-                    if (TextUtils.isEmpty(string) && deltaExt != null) {
+                    if (StringUtils.isEmpty(string) && deltaExt != null) {
                         string = deltaExt.getString("bottomInsertFree");
                     }
-                    i2 = b.a(this.b, i, TextUtils.equals("true", string));
-                } else if (TextUtils.equals("top", str2)) {
+                    i2 = b.a(this.b, i, StringUtils.equals("true", string));
+                } else if (StringUtils.equals("top", str2)) {
                     i2 = b.a(this.b, i);
                 } else {
                     this.f.append("4");
                     i2 = -1;
                 }
                 String string2 = jSONObject.getString("exposeRatioFree");
-                if (TextUtils.isEmpty(string2) && deltaExt != null) {
+                if (StringUtils.isEmpty(string2) && deltaExt != null) {
                     string2 = deltaExt.getString("exposeRatioFree");
                 }
-                boolean equals = TextUtils.equals("true", string2);
+                boolean equals = StringUtils.equals("true", string2);
                 if (i2 >= 0 && !equals) {
                     double b2 = b.b(this.b, i2);
                     float a2 = a(this.g.getDeltaExt());
@@ -383,7 +383,7 @@ public class lwg {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c1aa3516", new Object[]{str, list})).intValue();
         }
-        if (TextUtils.isEmpty(str) || list == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(str) || list == null || list.isEmpty()) {
             return -1;
         }
         for (int i = 0; i < list.size(); i++) {
@@ -399,9 +399,9 @@ public class lwg {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.equals(str, str2)) {
-            if (!TextUtils.equals(str + "_delta", str2)) {
-                if (!TextUtils.equals(str, str2 + "_delta")) {
+        if (!StringUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str + "_delta", str2)) {
+                if (!StringUtils.equals(str, str2 + "_delta")) {
                     return false;
                 }
             }
@@ -437,7 +437,7 @@ public class lwg {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("a5543672", new Object[]{this, jSONObject, str});
         }
-        if (jSONObject != null && !jSONObject.isEmpty() && !TextUtils.isEmpty(str) && (jSONObject2 = jSONObject.getJSONObject("edgeComputeConfig")) != null) {
+        if (jSONObject != null && !jSONObject.isEmpty() && !StringUtils.isEmpty(str) && (jSONObject2 = jSONObject.getJSONObject("edgeComputeConfig")) != null) {
             return jSONObject2.getJSONObject(str);
         }
         return null;

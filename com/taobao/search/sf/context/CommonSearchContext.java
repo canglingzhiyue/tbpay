@@ -2,7 +2,7 @@ package com.taobao.search.sf.context;
 
 import android.content.Intent;
 import android.os.Parcel;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.context.BaseSearchContext;
 import com.taobao.android.searchbaseframe.util.f;
@@ -45,7 +45,7 @@ public class CommonSearchContext extends BaseSearchContext {
         this.mTabParamsMap = new HashMap();
         updateBlackList();
         String param = getParam("catId", "");
-        if (!TextUtils.isEmpty(param)) {
+        if (!StringUtils.isEmpty(param)) {
             setParam(noa.KEY_CATMAP, param);
         }
     }
@@ -54,7 +54,7 @@ public class CommonSearchContext extends BaseSearchContext {
         this.mParams.clear();
         handleParams(filterBlackListParams(map));
         String param = getParam("catId", "");
-        if (!TextUtils.isEmpty(param)) {
+        if (!StringUtils.isEmpty(param)) {
             setParam(noa.KEY_CATMAP, param);
         }
     }
@@ -71,7 +71,7 @@ public class CommonSearchContext extends BaseSearchContext {
                     return;
                 }
                 String B = r.B();
-                if (TextUtils.isEmpty(B)) {
+                if (StringUtils.isEmpty(B)) {
                     return;
                 }
                 List unused = CommonSearchContext.sBlackList = new ArrayList(Arrays.asList(B.split("&")));
@@ -102,7 +102,7 @@ public class CommonSearchContext extends BaseSearchContext {
     }
 
     public void setTabParams(String str, String str2, String str3) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         Map<String, String> map = this.mTabParamsMap.get(str);
@@ -137,7 +137,7 @@ public class CommonSearchContext extends BaseSearchContext {
         for (Map.Entry<String, String> entry : a2.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 setParam(key, value);
             }
         }
@@ -151,10 +151,10 @@ public class CommonSearchContext extends BaseSearchContext {
         String removeParam = removeParam("query");
         String removeParam2 = removeParam("search");
         String param = getParam("q");
-        if (!TextUtils.isEmpty(param)) {
+        if (!StringUtils.isEmpty(param)) {
             removeParam = param;
         }
-        if (TextUtils.isEmpty(removeParam)) {
+        if (StringUtils.isEmpty(removeParam)) {
             removeParam = removeParam2;
         }
         if (removeParam == null || "null".equals(removeParam)) {
@@ -164,19 +164,19 @@ public class CommonSearchContext extends BaseSearchContext {
     }
 
     public boolean isSimilarModule() {
-        return TextUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR, getParam(noa.KEY_SHOWTYPE));
+        return StringUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR, getParam(noa.KEY_SHOWTYPE));
     }
 
     public boolean isSameStyleModule() {
-        return TextUtils.equals(noa.VALUE_SHOWTYPE_SAME, getParam(noa.KEY_SHOWTYPE));
+        return StringUtils.equals(noa.VALUE_SHOWTYPE_SAME, getParam(noa.KEY_SHOWTYPE));
     }
 
     public boolean isShopSimilarSearchModule() {
-        return TextUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR_SHOP, getParam("m")) || TextUtils.equals(noa.VALUE_SIMILAR_SHOP_NEW, getParam("m"));
+        return StringUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR_SHOP, getParam("m")) || StringUtils.equals(noa.VALUE_SIMILAR_SHOP_NEW, getParam("m"));
     }
 
     public boolean isLongSleeveRecommendModule() {
-        return TextUtils.equals(noa.VALUE_LONG_SLEEVE_RECOMMEND, getParam("m"));
+        return StringUtils.equals(noa.VALUE_LONG_SLEEVE_RECOMMEND, getParam("m"));
     }
 
     public Map<String, String> getGlobalParams() {
@@ -184,7 +184,7 @@ public class CommonSearchContext extends BaseSearchContext {
         for (Map.Entry<String, String> entry : getParamsSnapshot().entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value) && key.startsWith(noa.GLOBAL_PARAM_PREFIX)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value) && key.startsWith(noa.GLOBAL_PARAM_PREFIX)) {
                 hashMap.put(key, value);
             }
         }
@@ -193,7 +193,7 @@ public class CommonSearchContext extends BaseSearchContext {
 
     public String getChannelSrp() {
         String param = getParam(nde.G_CHANNELSRP);
-        return TextUtils.isEmpty(param) ? getParam("channelSrp") : param;
+        return StringUtils.isEmpty(param) ? getParam("channelSrp") : param;
     }
 
     public boolean isGallerySrp() {
@@ -205,35 +205,35 @@ public class CommonSearchContext extends BaseSearchContext {
         if (!r.bI()) {
             return false;
         }
-        return TextUtils.equals(param, "true");
+        return StringUtils.equals(param, "true");
     }
 
     public boolean isChannelSrp() {
-        return !TextUtils.isEmpty(getChannelSrp());
+        return !StringUtils.isEmpty(getChannelSrp());
     }
 
     public boolean isPopupDrag() {
-        return TextUtils.equals(getParamIncludingGlobal(noa.KEY_POP_UP_STYLE), kgt.EVENT_DRAG);
+        return StringUtils.equals(getParamIncludingGlobal(noa.KEY_POP_UP_STYLE), kgt.EVENT_DRAG);
     }
 
     public boolean isPopupIcon() {
-        return TextUtils.equals(getParamIncludingGlobal(noa.KEY_POP_UP_STYLE), "icon");
+        return StringUtils.equals(getParamIncludingGlobal(noa.KEY_POP_UP_STYLE), "icon");
     }
 
     public boolean isPopupCloseStyle() {
-        return TextUtils.equals(getParamIncludingGlobal(noa.KEY_POP_UP_STYLE), "close");
+        return StringUtils.equals(getParamIncludingGlobal(noa.KEY_POP_UP_STYLE), "close");
     }
 
     public float getPopupHeight() {
         String param = getParam(noa.KEY_POP_UP_HEIGHT);
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             return -1.0f;
         }
         return g.a(param, -1.0f);
     }
 
     public static boolean isGallerySrp(String str) {
-        return TextUtils.equals(str, "pictureview");
+        return StringUtils.equals(str, "pictureview");
     }
 
     public Map<String, String> getOtherTabParams() {
@@ -241,7 +241,7 @@ public class CommonSearchContext extends BaseSearchContext {
         for (Map.Entry<String, String> entry : this.mParams.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && (sOtherTabWhiteList.contains(key) || key.startsWith(noa.GLOBAL_PARAM_PREFIX))) {
+            if (!StringUtils.isEmpty(key) && (sOtherTabWhiteList.contains(key) || key.startsWith(noa.GLOBAL_PARAM_PREFIX))) {
                 hashMap.put(key, value);
             }
         }
@@ -257,7 +257,7 @@ public class CommonSearchContext extends BaseSearchContext {
                 break;
             }
             String param = getParam(strArr[i]);
-            if (!TextUtils.isEmpty(param)) {
+            if (!StringUtils.isEmpty(param)) {
                 this.mParams.put("sellerId", param);
                 break;
             }
@@ -266,7 +266,7 @@ public class CommonSearchContext extends BaseSearchContext {
         this.mParams.remove("userId");
         this.mParams.remove("user_id");
         String param2 = getParam("shop_id");
-        if (!TextUtils.isEmpty(param2)) {
+        if (!StringUtils.isEmpty(param2)) {
             this.mParams.remove("shop_id");
             this.mParams.put("shopId", param2);
         }
@@ -278,7 +278,7 @@ public class CommonSearchContext extends BaseSearchContext {
 
     public String getParamIncludingGlobal(String str) {
         String param = getParam(str);
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             return getParam(noa.GLOBAL_PARAM_PREFIX + str);
         }
         return param;

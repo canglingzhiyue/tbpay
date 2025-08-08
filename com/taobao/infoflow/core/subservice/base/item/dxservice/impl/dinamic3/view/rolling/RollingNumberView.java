@@ -2,7 +2,7 @@ package com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic3.vi
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -386,7 +386,7 @@ public class RollingNumberView extends LinearLayout {
             return ((Number) ipChange.ipc$dispatch("f300606c", new Object[]{this, str})).intValue();
         }
         String a2 = liz.a(str, "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             ldf.d(TAG, "value == null");
             return 0;
         }
@@ -397,7 +397,7 @@ public class RollingNumberView extends LinearLayout {
         }
         String str2 = split[1];
         String str3 = split[0];
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
             if (b.a(Long.parseLong(str3))) {
                 ldf.d(TAG, "距离上一次超过24小时了");
                 return 0;

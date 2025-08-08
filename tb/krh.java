@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.bf;
 import com.taobao.android.detail.ttdetail.utils.f;
@@ -139,9 +139,9 @@ public class krh {
                 try {
                     TBLocationDTO b2 = TBLocationClient.b();
                     if (b2 != null || krh.b()) {
-                        str = !TextUtils.isEmpty(b2.getLongitude()) ? b2.getLongitude() : str2;
+                        str = !StringUtils.isEmpty(b2.getLongitude()) ? b2.getLongitude() : str2;
                         try {
-                            if (!TextUtils.isEmpty(b2.getLatitude())) {
+                            if (!StringUtils.isEmpty(b2.getLatitude())) {
                                 str2 = b2.getLatitude();
                             }
                         } catch (Throwable th2) {

@@ -3,7 +3,7 @@ package com.taobao.android.sku.weex;
 import android.content.Context;
 import android.graphics.Rect;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -486,7 +486,7 @@ public class WeexWrapper {
             if (jSONObject == null) {
                 jSONObject = new JSONObject();
             }
-            this.b.c(!TextUtils.isEmpty(str) ? str : o.PAGE_NAME, str, null, jSONObject.toJSONString(), WXRenderStrategy.APPEND_ASYNC);
+            this.b.c(!StringUtils.isEmpty(str) ? str : o.PAGE_NAME, str, null, jSONObject.toJSONString(), WXRenderStrategy.APPEND_ASYNC);
         }
 
         @Override // com.taobao.android.sku.weex.WeexWrapper.b

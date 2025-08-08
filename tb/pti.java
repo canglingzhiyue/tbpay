@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -185,7 +185,7 @@ public class pti extends ptk {
             skl j = ((IDataService) this.c.getService(IDataService.class)).getConfig().j();
             String str = null;
             String str2 = j != null ? j.n : null;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = Uri.parse(str2).getQueryParameter(a.CONFIG_POLICY);
                 int indexOf = str2.indexOf("?");
                 if (indexOf != -1) {

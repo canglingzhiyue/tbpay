@@ -1,6 +1,6 @@
 package com.taobao.android.sku;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import com.alibaba.android.ultron.engine.logic.b;
@@ -294,7 +294,7 @@ public class e {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                        } else if (TextUtils.isEmpty(str) || (a3 = bpp.a()) == null) {
+                        } else if (StringUtils.isEmpty(str) || (a3 = bpp.a()) == null) {
                         } else {
                             HashMap hashMap = new HashMap();
                             hashMap.put("errorMsg", str);

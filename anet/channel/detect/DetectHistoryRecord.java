@@ -2,7 +2,7 @@ package anet.channel.detect;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.util.ALog;
@@ -54,7 +54,7 @@ public class DetectHistoryRecord {
             return;
         }
         String string = this.sharedPreferences.getString(str, null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         try {

@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.mobile.auth.O0Oo00;
 import com.mobile.auth.O0o;
@@ -231,7 +231,7 @@ public class TokenMaskManager {
     }
 
     private synchronized void O000000o(String str, String str2, CacheKey cacheKey, String str3, long j) {
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return;
         }
         if (O00000Oo(cacheKey)) {
@@ -278,7 +278,7 @@ public class TokenMaskManager {
 
     private synchronized boolean O000000o(String str, String str2, LruCache<String, Cache<String>> lruCache, long j) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             return this.O00000Oo.O000000o(str2, lruCache.get(str), j);
@@ -350,7 +350,7 @@ public class TokenMaskManager {
     }
 
     private synchronized void O00000Oo(String str, String str2, CacheKey cacheKey, String str3, long j) {
-        if (!TextUtils.isEmpty(str3) || !O00000Oo(cacheKey)) {
+        if (!StringUtils.isEmpty(str3) || !O00000Oo(cacheKey)) {
             Cache cache = this.O0000Oo.get(str);
             if (cache == null) {
                 cache = Cache.newIpCache().O000000o();
@@ -374,7 +374,7 @@ public class TokenMaskManager {
     private boolean O00000Oo(CacheKey cacheKey) {
         if (cacheKey != null) {
             try {
-                return TextUtils.isEmpty(cacheKey.getKey());
+                return StringUtils.isEmpty(cacheKey.getKey());
             } catch (Throwable th) {
                 try {
                     ExceptionProcessor.processException(th);
@@ -424,7 +424,7 @@ public class TokenMaskManager {
         try {
             String decryptContent = this.O00000Oo.decryptContent(this.O0000Ooo.a());
             HashMap hashMap = null;
-            if (!TextUtils.isEmpty(decryptContent)) {
+            if (!StringUtils.isEmpty(decryptContent)) {
                 JSONObject jSONObject = new JSONObject(decryptContent);
                 if (jSONObject.length() > 0) {
                     hashMap = new HashMap(jSONObject.length());
@@ -454,7 +454,7 @@ public class TokenMaskManager {
         try {
             String decryptContent = this.O00000Oo.decryptContent(this.O0000o0.a());
             cache = null;
-            if (!TextUtils.isEmpty(decryptContent)) {
+            if (!StringUtils.isEmpty(decryptContent)) {
                 JSONObject jSONObject = new JSONObject(decryptContent);
                 Iterator<String> keys = jSONObject.keys();
                 if (jSONObject.length() > 0) {
@@ -466,7 +466,7 @@ public class TokenMaskManager {
                 }
             }
             String decryptContent2 = this.O00000Oo.decryptContent(this.O0000o0O.a());
-            if (!TextUtils.isEmpty(decryptContent2)) {
+            if (!StringUtils.isEmpty(decryptContent2)) {
                 cache = Cache.fromJson(new JSONObject(decryptContent2), new d<LoginPhoneInfo>() { // from class: com.mobile.auth.gatewayauth.manager.TokenMaskManager.4
                 });
             }
@@ -511,7 +511,7 @@ public class TokenMaskManager {
         try {
             String decryptContent = this.O00000Oo.decryptContent(this.O0000o00.a());
             HashMap hashMap = null;
-            if (!TextUtils.isEmpty(decryptContent)) {
+            if (!StringUtils.isEmpty(decryptContent)) {
                 JSONObject jSONObject = new JSONObject(decryptContent);
                 if (jSONObject.length() > 0) {
                     hashMap = new HashMap(jSONObject.length());
@@ -761,7 +761,7 @@ public class TokenMaskManager {
         try {
             String O000000o = O000000o(str2, str, cacheKey, j2);
             com.mobile.auth.gatewayauth.utils.O00000o0.O000000o().O000000o(str3, "tokenCache", System.currentTimeMillis());
-            if (!TextUtils.isEmpty(O000000o)) {
+            if (!StringUtils.isEmpty(O000000o)) {
                 requestCallback.onSuccess(com.mobile.auth.gatewayauth.manager.base.O00000Oo.O000000o().O000000o(true).O00000o0(O000000o).O000000o());
                 this.O0000O0o.O000000o("Get VerifyToken from cache!");
             } else if (this.O000000o.O00000o()) {
@@ -951,7 +951,7 @@ public class TokenMaskManager {
         try {
             String O000000o = O000000o(str2, cacheKey, j2);
             com.mobile.auth.gatewayauth.utils.O00000o0.O000000o().O000000o(str3, "tokenCache", System.currentTimeMillis());
-            if (!TextUtils.isEmpty(O000000o)) {
+            if (!StringUtils.isEmpty(O000000o)) {
                 this.O0000O0o.O000000o("Get LoginToken from cache!");
                 requestCallback.onSuccess(com.mobile.auth.gatewayauth.manager.base.O00000Oo.O000000o().O00000o0(O000000o).O000000o(true).O000000o());
             } else if (this.O000000o.O000000o(i)) {
@@ -1049,7 +1049,7 @@ public class TokenMaskManager {
                             TokenMaskManager.O000000o(TokenMaskManager.this, cacheKey, build, str);
                             requestCallback.onSuccess(com.mobile.auth.gatewayauth.manager.base.O00000Oo.O000000o().O000000o(false).O000000o(build).O000000o());
                             oO000o.O00000Oo().O000000o(Math.min(System.currentTimeMillis() + 86400000, oO000o.O00000Oo().O00000oo()));
-                            if (TextUtils.isEmpty(oO000o.O00000Oo().O00000o())) {
+                            if (StringUtils.isEmpty(oO000o.O00000Oo().O00000o())) {
                                 return;
                             }
                             TokenMaskManager.O000000o(TokenMaskManager.this, str2, str, vendorCacheKey, oO000o.O00000Oo().O00000o(), oO000o.O00000Oo().O00000oo());

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class fwj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6635bcfe", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             this.f28155a.put(str, jSONObject);
         }
@@ -78,7 +78,7 @@ public class fwj {
 
     public boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && this.f28155a.get(str) == null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && this.f28155a.get(str) == null;
     }
 
     /* loaded from: classes.dex */
@@ -175,7 +175,7 @@ public class fwj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aac527d4", new Object[]{this, str, str2, linkedList});
-        } else if (linkedList == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (linkedList == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             synchronized (this.b) {
                 Map<String, Set<Long>> map = this.b.get(str);
@@ -248,7 +248,7 @@ public class fwj {
             return null;
         }
         String string = jSONObject2.getString(fxb.DX_MAIN_TEMPLATE_NAME);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             if (DinamicXEngine.j()) {
                 fuw.c("DXTemplateInfoManager", str + '|' + dXTemplateItem.f11925a + "内置索引文件缺少主模板路径");
             }
@@ -297,7 +297,7 @@ public class fwj {
                 hashMap2.put(str2, sb2 + fxb.DIR + str2);
             }
             String str3 = hashMap2.get(fxb.DX_MAIN_TEMPLATE_NAME);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return null;
             }
             hashMap2.remove(fxb.DX_MAIN_TEMPLATE_NAME);
@@ -394,7 +394,7 @@ public class fwj {
         if (ipChange instanceof IpChange) {
             return (Set) ipChange.ipc$dispatch("83c050b", new Object[]{this, str, new Long(j), str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         synchronized (this.d) {

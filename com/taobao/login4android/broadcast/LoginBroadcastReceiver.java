@@ -3,7 +3,7 @@ package com.taobao.login4android.broadcast;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.constants.LoginConstants;
@@ -47,7 +47,7 @@ public class LoginBroadcastReceiver extends BroadcastReceiver {
                         return;
                     case NOTIFY_LOGOUT:
                         SessionManager.sendCustomTrack(UTConstant.PageName.UT_PAGE_EXTEND, "RECEIVED_LOGOUT_BROADCAST", null);
-                        if (TextUtils.equals(intent.getStringExtra(LoginConstants.LOGOUT_TYPE), LoginConstants.LogoutType.CHANGE_ACCOUNT.getType())) {
+                        if (StringUtils.equals(intent.getStringExtra(LoginConstants.LOGOUT_TYPE), LoginConstants.LogoutType.CHANGE_ACCOUNT.getType())) {
                             return;
                         }
                         LoginStatus.resetLoginFlag();

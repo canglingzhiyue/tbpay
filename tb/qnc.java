@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
@@ -44,7 +44,7 @@ public class qnc {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         if (str.contains("&" + str2 + "=")) {
@@ -64,10 +64,10 @@ public class qnc {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             Uri parse = Uri.parse(str);
             Uri parse2 = Uri.parse(str2);
-            if (parse != null && parse2 != null && TextUtils.equals(parse.getHost(), parse2.getHost())) {
+            if (parse != null && parse2 != null && StringUtils.equals(parse.getHost(), parse2.getHost())) {
                 return true;
             }
         }

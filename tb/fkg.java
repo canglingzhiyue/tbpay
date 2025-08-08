@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridStage;
 import com.alibaba.fastjson.JSONObject;
@@ -35,7 +35,7 @@ public class fkg {
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        return TextUtils.isEmpty(c) ? "" : c.equalsIgnoreCase(alz.BizKeyOrderList) ? alz.BizKeyOrderList : c.equalsIgnoreCase(alz.BizKeyOrderDetail) ? alz.BizKeyOrderDetail : "";
+        return StringUtils.isEmpty(c) ? "" : c.equalsIgnoreCase(alz.BizKeyOrderList) ? alz.BizKeyOrderList : c.equalsIgnoreCase(alz.BizKeyOrderDetail) ? alz.BizKeyOrderDetail : "";
     }
 
     private static JSONObject b(String str, DXRuntimeContext dXRuntimeContext) {
@@ -46,7 +46,7 @@ public class fkg {
         JSONObject jSONObject = new JSONObject();
         if (dXRuntimeContext != null && dXRuntimeContext.m() != null) {
             jSONObject.put("context", (Object) dXRuntimeContext.m());
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             jSONObject.put("bizName", (Object) str);

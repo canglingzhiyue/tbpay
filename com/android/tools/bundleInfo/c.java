@@ -3,7 +3,7 @@ package com.android.tools.bundleInfo;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashSet;
 import java.util.Map;
@@ -57,7 +57,7 @@ public class c {
             this.b = this.f6423a.getSharedPreferences("dynamicdeploy_features", 0);
             Context context2 = this.f6423a;
             this.c = context2.getSharedPreferences("dynamicdeploy_features_bak-" + str, 0);
-            if (!TextUtils.isEmpty(cjd.a()) && context.getPackageName().equals(cjd.a())) {
+            if (!StringUtils.isEmpty(cjd.a()) && context.getPackageName().equals(cjd.a())) {
                 c(str);
             }
         } catch (Exception e) {

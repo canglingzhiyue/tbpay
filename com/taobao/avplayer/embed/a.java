@@ -1,7 +1,7 @@
 package com.taobao.avplayer.embed;
 
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -19,7 +19,7 @@ public class a {
             ipChange.ipc$dispatch("c28bb0ea", new Object[]{iWVWebView, str, str2, str3});
             return;
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "{}";
         }
         iWVWebView.fireEvent("embedviewevent", String.format("{\"param\":{\"eventType\":\"%s\",\"bridgeId\":\"%s\",\"params\":%s}}", str2, str, str3));

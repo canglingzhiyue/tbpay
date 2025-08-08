@@ -1,6 +1,6 @@
 package com.taobao.tbliveinteractive.componentlist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.d;
@@ -25,7 +25,7 @@ public class a extends com.taobao.taolive.sdk.business.b {
             return;
         }
         MtopMediaplatformDetailComponentlistRequestNew mtopMediaplatformDetailComponentlistRequestNew = new MtopMediaplatformDetailComponentlistRequestNew();
-        if (!TextUtils.isEmpty(str) && TextUtils.isDigitsOnly(str)) {
+        if (!StringUtils.isEmpty(str) && StringUtils.isDigitsOnly(str)) {
             mtopMediaplatformDetailComponentlistRequestNew.setContentId(Long.parseLong(str));
             mtopMediaplatformDetailComponentlistRequestNew.setChannel(str2);
             mtopMediaplatformDetailComponentlistRequestNew.entryLiveSource = str3;

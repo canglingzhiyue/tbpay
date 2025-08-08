@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -274,7 +274,7 @@ public class m extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (lVar == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(lVar.b)) {
+        if (!StringUtils.isEmpty(lVar.b)) {
             float f = lVar.c / ((com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel.l) this.f).d;
             int a2 = com.taobao.android.detail.ttdetail.utils.f.a(this.f10821a);
             int i = (int) (f * a2);
@@ -283,7 +283,7 @@ public class m extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             DetailImageView detailImageView = new DetailImageView(this.f10821a);
             detailImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             this.g.addView(detailImageView, new RelativeLayout.LayoutParams(-1, -1));
-            if (!TextUtils.isEmpty(lVar.f10880a)) {
+            if (!StringUtils.isEmpty(lVar.f10880a)) {
                 a(detailImageView, lVar.f10880a, new com.taobao.android.detail.ttdetail.widget.desc.image.g(a2, i), null, null);
             } else {
                 detailImageView.setBackgroundColor(com.taobao.android.detail.ttdetail.utils.w.a("#000000"));
@@ -328,7 +328,7 @@ public class m extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         this.m = LayoutInflater.from(this.f10821a).inflate(R.layout.tt_detail_desc_video_text_info, (ViewGroup) null);
         TextView textView = (TextView) this.m.findViewById(R.id.desc_video_text_info_title);
         TextView textView2 = (TextView) this.m.findViewById(R.id.desc_video_text_info_desc);
-        if (!TextUtils.isEmpty(lVar.f) && !TextUtils.isEmpty(lVar.g)) {
+        if (!StringUtils.isEmpty(lVar.f) && !StringUtils.isEmpty(lVar.g)) {
             textView.setText(lVar.f);
             textView2.setText(lVar.g);
         }
@@ -343,7 +343,7 @@ public class m extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3813ba2", new Object[]{this});
-        } else if (this.f == 0 || TextUtils.isEmpty(((com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel.l) this.f).b)) {
+        } else if (this.f == 0 || StringUtils.isEmpty(((com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel.l) this.f).b)) {
         } else {
             if (this.k == null) {
                 szm szmVar = new szm(this.i.i, this.i.b, this.i.f10880a, this.g, this.i.d, this.i.c);

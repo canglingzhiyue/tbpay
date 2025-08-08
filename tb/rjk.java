@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 
@@ -33,7 +33,7 @@ public class rjk {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aba112c3", new Object[]{this, str, str2, str3, new Integer(i)});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         if (i == 1) {
@@ -47,16 +47,16 @@ public class rjk {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : TextUtils.equals(a("weitao_switch", "enable_async_init_publish", "true", 2), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : StringUtils.equals(a("weitao_switch", "enable_async_init_publish", "true", 2), "true");
     }
 
     public boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : TextUtils.equals(a("weitao_switch", "enable_async_publish", "true", 2), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : StringUtils.equals(a("weitao_switch", "enable_async_publish", "true", 2), "true");
     }
 
     public boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : TextUtils.equals(a("weitao_switch", "startDownloadDxTemplate", "false", 2), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : StringUtils.equals(a("weitao_switch", "startDownloadDxTemplate", "false", 2), "true");
     }
 }

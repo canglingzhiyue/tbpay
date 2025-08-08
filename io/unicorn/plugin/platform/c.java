@@ -1,6 +1,6 @@
 package io.unicorn.plugin.platform;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.weex_framework.ui.m;
 import com.taobao.android.weex_framework.util.s;
 import io.unicorn.embedding.engine.FlutterJNI;
@@ -43,7 +43,7 @@ public class c {
             }
         }
         for (String str : m.b()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 flutterJNI.registerPlatformView(str);
             }
         }

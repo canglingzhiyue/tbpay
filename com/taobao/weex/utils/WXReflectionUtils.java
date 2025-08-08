@@ -74,7 +74,7 @@ public class WXReflectionUtils {
             return
         L18:
             if (r3 == 0) goto Lc5
-            boolean r0 = android.text.TextUtils.isEmpty(r4)
+            boolean r0 = android.text.StringUtils.isEmpty(r4)
             if (r0 == 0) goto L22
             goto Lc5
         L22:

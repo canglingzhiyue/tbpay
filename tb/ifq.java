@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXEnvironment;
 import com.taobao.weex.WXSDKManager;
@@ -100,7 +100,7 @@ public class ifq {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         String findLibrary = ((BaseDexClassLoader) WXEnvironment.class.getClassLoader()).findLibrary(str);
-        if (!TextUtils.isEmpty(findLibrary)) {
+        if (!StringUtils.isEmpty(findLibrary)) {
             File file = new File(findLibrary);
             if (file.exists()) {
                 WXLogUtils.e(str + "'s Path is" + findLibrary);
@@ -110,7 +110,7 @@ public class ifq {
         }
         String str2 = "lib" + str + bgy.SO_EXTENSION;
         String b = b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             WXLogUtils.e("cache dir is null");
             return "";
         }
@@ -180,10 +180,10 @@ public class ifq {
         if (obj == null) {
             return bool;
         }
-        if (TextUtils.equals("false", obj.toString())) {
+        if (StringUtils.equals("false", obj.toString())) {
             return false;
         }
-        if (!TextUtils.equals("true", obj.toString())) {
+        if (!StringUtils.equals("true", obj.toString())) {
             return bool;
         }
         return true;

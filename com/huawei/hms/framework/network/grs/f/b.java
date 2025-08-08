@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.AssetsUtil;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.network.grs.GrsApp;
@@ -49,7 +49,7 @@ public class b {
     public String a(Context context, com.huawei.hms.framework.network.grs.e.a aVar, GrsBaseInfo grsBaseInfo, String str, String str2, boolean z) {
         synchronized (c) {
             String a2 = this.f7421a.a(context, aVar, grsBaseInfo, str, str2, z);
-            if (!TextUtils.isEmpty(a2) || !this.f7421a.d()) {
+            if (!StringUtils.isEmpty(a2) || !this.f7421a.d()) {
                 return a2;
             }
             a(context, true);
@@ -80,7 +80,7 @@ public class b {
         String appConfigName = GrsApp.getInstance().getAppConfigName();
         Logger.i("LocalManagerProxy", "appConfigName is: " + appConfigName);
         this.f7421a = new d(false, z);
-        if (arrayList.contains("grs_app_global_route_config.json") || !TextUtils.isEmpty(appConfigName)) {
+        if (arrayList.contains("grs_app_global_route_config.json") || !StringUtils.isEmpty(appConfigName)) {
             this.f7421a = new d(context, appConfigName, z);
         }
         if (!this.f7421a.e() && arrayList.contains("grs_sdk_global_route_config.json")) {

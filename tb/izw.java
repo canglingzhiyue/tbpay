@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.eventchain.l;
@@ -36,10 +36,10 @@ public class izw extends dlg<l> {
             return new dkw(new dkv(30009, "rootWidget为空"), true);
         }
         String c = dlhVar.c("userId");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             c = dlhVar.c("recyclerNodeId");
         }
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             a2 = d.queryWidgetNodeByUserId(c);
         } else {
             a2 = a(lVar.j());
@@ -48,14 +48,14 @@ public class izw extends dlg<l> {
             return new dkw(new dkv(30009, "查找recycler出错"), true);
         }
         String c2 = dlhVar.c("offset");
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             try {
                 i = Integer.parseInt(c2);
             } catch (NumberFormatException unused) {
             }
         }
         String c3 = dlhVar.c("animation");
-        if (!TextUtils.isEmpty(c3)) {
+        if (!StringUtils.isEmpty(c3)) {
             z = "true".equals(c3);
         }
         final DXRecyclerLayout dXRecyclerLayout = (DXRecyclerLayout) a2;

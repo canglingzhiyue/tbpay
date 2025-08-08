@@ -2,7 +2,7 @@ package com.taobao.android.linkback;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
 import com.taobao.tao.remotebusiness.IRemoteListener;
@@ -24,7 +24,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8cd6cc98", new Object[]{context, str, map, handler, new Integer(i)});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             MtopRequest mtopRequest = new MtopRequest();
             mtopRequest.setApiName(str);

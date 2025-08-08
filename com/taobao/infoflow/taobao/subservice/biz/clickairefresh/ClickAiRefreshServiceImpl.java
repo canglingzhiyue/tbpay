@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.subservice.biz.clickairefresh;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -304,7 +304,7 @@ public class ClickAiRefreshServiceImpl implements IClickAiRefreshService {
                     if (findItemDataByPosition3 != null && findItemDataByPosition3.getSectionBizCode() != null) {
                         str = findItemDataByPosition3.getSectionBizCode();
                     }
-                    if (TextUtils.equals("loading", str) && (findItemDataByPosition = ClickAiRefreshServiceImpl.access$300(ClickAiRefreshServiceImpl.this).findItemDataByPosition(i5 - 1)) != null && findItemDataByPosition.getSectionBizCode() != null) {
+                    if (StringUtils.equals("loading", str) && (findItemDataByPosition = ClickAiRefreshServiceImpl.access$300(ClickAiRefreshServiceImpl.this).findItemDataByPosition(i5 - 1)) != null && findItemDataByPosition.getSectionBizCode() != null) {
                         str = findItemDataByPosition.getSectionBizCode();
                     }
                     if (ClickAiRefreshServiceImpl.access$000(ClickAiRefreshServiceImpl.this) == null || str == null) {

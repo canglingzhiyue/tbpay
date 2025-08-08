@@ -1,6 +1,6 @@
 package com.taobao.tao.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.image.c;
 import com.taobao.tao.image.d;
@@ -96,23 +96,23 @@ public class ImageStrategyExtra {
             String group = matcher.group(2);
             String group2 = matcher.group(3);
             String group3 = matcher.group(4);
-            imageUrlInfo.existCo = !TextUtils.isEmpty(matcher.group(5));
-            imageUrlInfo.existCi = !TextUtils.isEmpty(matcher.group(6));
+            imageUrlInfo.existCo = !StringUtils.isEmpty(matcher.group(5));
+            imageUrlInfo.existCi = !StringUtils.isEmpty(matcher.group(6));
             String group4 = matcher.group(7);
             String group5 = matcher.group(8);
-            if (!TextUtils.isEmpty(group)) {
+            if (!StringUtils.isEmpty(group)) {
                 imageUrlInfo.width = Integer.parseInt(group);
             }
-            if (!TextUtils.isEmpty(group2)) {
+            if (!StringUtils.isEmpty(group2)) {
                 imageUrlInfo.height = Integer.parseInt(group2);
             }
-            if (!TextUtils.isEmpty(group3)) {
+            if (!StringUtils.isEmpty(group3)) {
                 imageUrlInfo.cj = group3;
             }
-            if (!TextUtils.isEmpty(group4)) {
+            if (!StringUtils.isEmpty(group4)) {
                 imageUrlInfo.quality = group4;
             }
-            if (!TextUtils.isEmpty(group5)) {
+            if (!StringUtils.isEmpty(group5)) {
                 imageUrlInfo.sharpen = group5;
             }
         } catch (NumberFormatException e) {

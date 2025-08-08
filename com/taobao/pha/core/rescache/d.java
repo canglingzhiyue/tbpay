@@ -1,7 +1,7 @@
 package com.taobao.pha.core.rescache;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayInputStream;
@@ -65,7 +65,7 @@ public class d implements c {
             return null;
         }
         String a3 = a(a2.toString(), ngdVar.c());
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return null;
         }
         a aVar = new a(f.a(a2), null, new ByteArrayInputStream(a3.getBytes()));
@@ -104,7 +104,7 @@ public class d implements c {
                 return null;
             }
             String str2 = list.get(0);
-            if (TextUtils.isEmpty(str2) || !TextUtils.equals(str2, ngn.a(c))) {
+            if (StringUtils.isEmpty(str2) || !StringUtils.equals(str2, ngn.a(c))) {
                 return null;
             }
             return new String(c);

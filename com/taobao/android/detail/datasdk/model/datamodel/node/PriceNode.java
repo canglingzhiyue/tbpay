@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.datamodel.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ResourceNode;
@@ -289,8 +289,8 @@ public class PriceNode extends DetailNode {
             }
             StringBuilder sb = new StringBuilder();
             String str = "";
-            sb.append(TextUtils.isEmpty(this.priceChar) ? str : this.priceChar);
-            if (!TextUtils.isEmpty(this.priceText)) {
+            sb.append(StringUtils.isEmpty(this.priceChar) ? str : this.priceChar);
+            if (!StringUtils.isEmpty(this.priceText)) {
                 str = this.priceText;
             }
             sb.append(str);

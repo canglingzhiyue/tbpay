@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.TextureView;
@@ -295,7 +295,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
                 this.k.b(this.q.mPanoType);
             }
         }
-        if (this.q != null && this.q.mConfigAdapter != null && !TextUtils.isEmpty(this.q.mFrom) && this.q.mConfigAdapter.c(this.q.mFrom)) {
+        if (this.q != null && this.q.mConfigAdapter != null && !StringUtils.isEmpty(this.q.mFrom) && this.q.mConfigAdapter.c(this.q.mFrom)) {
             this.G = 18;
         }
         if (this.q.getActivity() != null) {
@@ -309,7 +309,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
             F = 100;
         }
         this.ab = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = com.taobao.taobaoavsdk.util.b.c();
         } else if (MediaAdapteManager.mConfigAdapter != null) {
             this.ac = com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("DWInteractive", "tmpNotifyVideoStartForToken", "true"));
@@ -323,11 +323,11 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
         this.as = com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", "enGlobalKeepScreenOn", "true"));
         V();
         String config = OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_DISABLE_LONG_AUDIO_FOCUS_SBT, MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264);
-        if ((!TextUtils.isEmpty(config) && !TextUtils.isEmpty(this.q.mFrom) && com.taobao.taobaoavsdk.util.b.b(this.q.mFrom, config)) || this.q.mUseShortAudioFocus) {
+        if ((!StringUtils.isEmpty(config) && !StringUtils.isEmpty(this.q.mFrom) && com.taobao.taobaoavsdk.util.b.b(this.q.mFrom, config)) || this.q.mUseShortAudioFocus) {
             this.aw = true;
         }
         String config2 = OrangeConfig.getInstance().getConfig("DWInteractive", "abandonFocusAtPauseSBT", MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264);
-        if ((TextUtils.isEmpty(config2) || TextUtils.isEmpty(this.q.mFrom) || !com.taobao.taobaoavsdk.util.b.b(this.q.mFrom, config2)) && (!this.q.mUseShortAudioFocus || !this.q.mReleaseShortFocusWhenPause)) {
+        if ((StringUtils.isEmpty(config2) || StringUtils.isEmpty(this.q.mFrom) || !com.taobao.taobaoavsdk.util.b.b(this.q.mFrom, config2)) && (!this.q.mUseShortAudioFocus || !this.q.mReleaseShortFocusWhenPause)) {
             return;
         }
         this.ax = true;
@@ -511,7 +511,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
                 a(this.o.f, this.g);
             }
         }
-        if (!TextUtils.isEmpty(this.ab)) {
+        if (!StringUtils.isEmpty(this.ab)) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "DWTextureVideoView setSurface in initMediaPlayer");
             if (this.K != null && n() != null) {
                 a(this.o.f, n());
@@ -631,14 +631,14 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
             return;
         }
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TextureVideoView " + this + ", + setVideoPath " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.f = str;
         if (this.o == null || !b(this.o.e) || this.D) {
             return;
         }
-        if ((this.r != 1 && this.r != 8) || TextUtils.isEmpty(this.f) || this.o.d) {
+        if ((this.r != 1 && this.r != 8) || StringUtils.isEmpty(this.f) || this.o.d) {
             return;
         }
         if (this.r == 1) {
@@ -707,23 +707,23 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
             this.z = true;
             this.W = System.currentTimeMillis();
         }
-        if (b(this.o.e) && ((this.q.isFirstRenderOptimize() || (!this.q.isFirstRenderOptimize() && this.g != null)) && !TextUtils.isEmpty(this.f))) {
+        if (b(this.o.e) && ((this.q.isFirstRenderOptimize() || (!this.q.isFirstRenderOptimize() && this.g != null)) && !StringUtils.isEmpty(this.f))) {
             Z();
-            if (!TextUtils.isEmpty(this.ab) || this.o.e == 3) {
+            if (!StringUtils.isEmpty(this.ab) || this.o.e == 3) {
                 return;
             }
             this.o.e = 8;
             this.o.d = false;
-        } else if (this.o != null && this.o.f != null && this.o.e == 5 && !TextUtils.isEmpty(this.f) && this.M) {
+        } else if (this.o != null && this.o.f != null && this.o.e == 5 && !StringUtils.isEmpty(this.f) && this.M) {
             this.ao = true;
             J();
             c("startVideo");
             this.o.f.start();
             c(this.T);
             X();
-        } else if (this.o != null && this.o.f != null && !TextUtils.isEmpty(this.ab) && (this.o.e == 2 || this.o.e == 1 || this.o.e == 4)) {
+        } else if (this.o != null && this.o.f != null && !StringUtils.isEmpty(this.ab) && (this.o.e == 2 || this.o.e == 1 || this.o.e == 4)) {
             q();
-        } else if (this.o == null || this.o.f == null || TextUtils.isEmpty(this.ab) || this.o.e != 8) {
+        } else if (this.o == null || this.o.f == null || StringUtils.isEmpty(this.ab) || this.o.e != 8) {
         } else {
             a(this.o.f);
         }
@@ -850,7 +850,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
             if (R() != null) {
                 a(this.o.f, R());
             }
-            if (!TextUtils.isEmpty(this.ab)) {
+            if (!StringUtils.isEmpty(this.ab)) {
                 a((IMediaPlayer) this.o.f);
             }
             a(this.o.f);
@@ -1433,7 +1433,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
         } else if (this.q == null || (customParams = this.q.getCustomParams()) == null || !customParams.containsKey("_progressTime")) {
         } else {
             String str = customParams.get("_progressTime");
-            if (TextUtils.isEmpty(str) || (b = com.taobao.taobaoavsdk.util.b.b(str)) <= 0) {
+            if (StringUtils.isEmpty(str) || (b = com.taobao.taobaoavsdk.util.b.b(str)) <= 0) {
                 return;
             }
             F = Math.min(this.ah, Math.max(this.ag, b));
@@ -1501,16 +1501,16 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
             return;
         }
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, this + " onSurfaceTextureAvailable " + surfaceTexture + ", try to setSurface by isFirstRenderOptimize=" + this.q.isFirstRenderOptimize() + ",mPlayState=" + this.o.e);
-        if (((!this.q.isFirstRenderOptimize() && !TextUtils.isEmpty(this.ab)) || this.q.isFirstRenderOptimize()) && this.o != null && this.o.f != null) {
+        if (((!this.q.isFirstRenderOptimize() && !StringUtils.isEmpty(this.ab)) || this.q.isFirstRenderOptimize()) && this.o != null && this.o.f != null) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "DWTextureVideoView setSurface in onSurfaceTextureAvailable 1.");
             a(this.o.f, n());
             if (z) {
                 this.o.f.setSurfaceSize(this.c, this.d);
             }
         }
-        if ((!this.q.isFirstRenderOptimize() && this.o.e == 0 && !TextUtils.isEmpty(this.f)) || (!TextUtils.isEmpty(this.ab) && this.o.e == 3)) {
+        if ((!this.q.isFirstRenderOptimize() && this.o.e == 0 && !StringUtils.isEmpty(this.f)) || (!StringUtils.isEmpty(this.ab) && this.o.e == 3)) {
             Z();
-            if (!TextUtils.isEmpty(this.ab) || this.o.e == 3) {
+            if (!StringUtils.isEmpty(this.ab) || this.o.e == 3) {
                 return;
             }
             this.o.e = 8;
@@ -1680,10 +1680,10 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
             this.o.c = 5;
             L();
             this.z = false;
-        } else if (!b(this.o.e) || this.g == null || TextUtils.isEmpty(this.f)) {
+        } else if (!b(this.o.e) || this.g == null || StringUtils.isEmpty(this.f)) {
         } else {
             Z();
-            if (!TextUtils.isEmpty(this.ab)) {
+            if (!StringUtils.isEmpty(this.ab)) {
                 return;
             }
             this.o.e = 8;
@@ -1713,14 +1713,14 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
         if (this.al) {
             this.q.setPrepareToFirstFrame(true);
         }
-        if (!b(this.o.e) || TextUtils.isEmpty(this.f)) {
+        if (!b(this.o.e) || StringUtils.isEmpty(this.f)) {
             return;
         }
         if (!this.al) {
             this.q.setPrepareToFirstFrame(true);
         }
         Z();
-        if (!TextUtils.isEmpty(this.ab)) {
+        if (!StringUtils.isEmpty(this.ab)) {
             return;
         }
         this.o.e = 8;
@@ -1753,7 +1753,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
         cVar.q = this.q.mPlayContext.mConfigGroup;
         cVar.ag = this.q.mNeedVideoCache;
         cVar.ak = this.q.mPanoType;
-        if (!TextUtils.isEmpty(this.q.mPlayContext.getHighCachePath())) {
+        if (!StringUtils.isEmpty(this.q.mPlayContext.getHighCachePath())) {
             cVar.s = this.q.mPlayContext.getHighCachePath();
             cVar.D = this.q.mPlayContext.mHighVideoDefinition;
         }
@@ -1815,11 +1815,11 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
         Map<String, String> uTParams = this.q.getUTParams();
         if (uTParams != null) {
             String str = uTParams.get("product_type");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 cVar.z = str;
             }
             String str2 = uTParams.get("spm-cnt");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 cVar.az = str2;
             }
         }
@@ -1961,7 +1961,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
         cVar.g = 1;
         cVar.f = 1;
         this.q.mPlayContext.setPlayerType(2);
-        if (!TextUtils.isEmpty(this.q.mPlayContext.getBackupVideoUrl()) && this.q.mPlayContext.isH265()) {
+        if (!StringUtils.isEmpty(this.q.mPlayContext.getBackupVideoUrl()) && this.q.mPlayContext.isH265()) {
             this.f = this.q.mPlayContext.getBackupVideoUrl();
             this.q.mPlayContext.setVideoUrl(this.f);
             this.q.mPlayContext.setH265(false);
@@ -2163,7 +2163,7 @@ public class c extends a implements Handler.Callback, TextureView.SurfaceTexture
         if (this.o != null && this.o.f != null) {
             b(this.o.f);
         }
-        if (!TextUtils.isEmpty(this.ab) && 1 == this.o.e) {
+        if (!StringUtils.isEmpty(this.ab) && 1 == this.o.e) {
             b(true);
         }
         this.D = true;

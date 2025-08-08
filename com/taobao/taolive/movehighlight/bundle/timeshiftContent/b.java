@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.bundle.timeshiftContent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.movehighlight.utils.j;
 import com.taobao.taolive.room.utils.aw;
@@ -61,7 +61,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a821939b", new Object[]{this, new Integer(i)});
-        } else if (!TextUtils.isEmpty(this.b)) {
+        } else if (!StringUtils.isEmpty(this.b)) {
             this.c = (this.c + i) - 1;
         } else {
             this.c += i;

@@ -2,7 +2,7 @@ package com.taobao.message.sp.chat.widget;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,13 +106,13 @@ public class ImageMessageWidget extends WidgetInstance<JSONObject> {
             }
             this.imageView.setErrorImageResId(R.drawable.alimp_chatfrom_pic_bubble);
             ImageInfo imageInfo = new ImageInfo();
-            if (!TextUtils.isEmpty(string) && !URLUtil.isNetUrl(string) && new File(string).exists()) {
+            if (!StringUtils.isEmpty(string) && !URLUtil.isNetUrl(string) && new File(string).exists()) {
                 this.localUrl = string;
             }
             imageInfo.origPath = string;
             imageInfo.origWidth = jSONObject.getIntValue("width");
             imageInfo.origHeight = jSONObject.getIntValue("height");
-            if (!TextUtils.isEmpty(this.localUrl)) {
+            if (!StringUtils.isEmpty(this.localUrl)) {
                 decideImageSize(this.imageView, imageInfo);
                 UiUtils.setImageUrl(this.imageView, this.localUrl);
                 UiUtils.fetchAndSetA11yOCR(this.imageView, this.localUrl);
@@ -221,11 +221,11 @@ public class ImageMessageWidget extends WidgetInstance<JSONObject> {
         layoutParams.height = i4;
         layoutParams.width = constrain;
         view.setLayoutParams(layoutParams);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if ("1".equals(str2)) {
                 str = str + "&thumb_width=" + i5 + "&thumb_height=" + i3;
             } else {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     Matcher matcher = Pattern.compile("(&\\d+x\\d+$)").matcher(str);
                     if (matcher.find()) {
                         str = matcher.replaceFirst("");

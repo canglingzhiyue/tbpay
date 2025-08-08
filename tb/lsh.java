@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.data.SplashInteractData;
@@ -69,11 +69,11 @@ public class lsh {
             return null;
         }
         String string = a2.getString("imageUrl");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             arrayList.add(string);
         }
         String string2 = a2.getString("videoCoverUrl");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             arrayList.add(string2);
         }
         return arrayList;

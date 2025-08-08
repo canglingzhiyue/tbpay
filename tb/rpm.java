@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.i;
@@ -156,7 +156,7 @@ public class rpm {
                 return;
             }
             apr.b(i.TAG, "commitSceneEnter scene", str, "properties", map);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             final String str2 = "" + System.currentTimeMillis();
@@ -205,7 +205,7 @@ public class rpm {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("e8a5f021", new Object[]{str, map, new Boolean(z)});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 final String str2 = "" + System.currentTimeMillis();
                 rpl.a(new Runnable() { // from class: tb.rpm.4

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.instance.UltronError;
 import com.alibaba.android.ultron.vfw.instance.c;
 import com.alibaba.android.ultron.vfw.instance.d;
@@ -119,7 +119,7 @@ public class dyc {
             return;
         }
         String str2 = dyaVar.f.f27180a;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         dyaVar.a(str2, egn.NAV_URL_DETAIL[2] + "?id=" + str2 + "&hybrid=true", str);

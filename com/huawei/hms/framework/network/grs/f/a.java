@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
 import com.huawei.hms.framework.network.grs.GrsApp;
@@ -61,7 +61,7 @@ public abstract class a {
 
     private int f(String str) {
         int b;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         if (this.e && (b = b(str)) != 0) {
@@ -74,7 +74,7 @@ public abstract class a {
     private int g(String str) {
         List<com.huawei.hms.framework.network.grs.local.model.b> list;
         int c;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         return (!this.e || ((list = this.b) != null && !list.isEmpty()) || (c = c(str)) == 0) ? d(str) : c;
@@ -292,9 +292,9 @@ public abstract class a {
             java.lang.Object r11 = r10.next()
             java.lang.String r11 = (java.lang.String) r11
             java.lang.String r12 = r7.getString(r11)
-            boolean r13 = android.text.TextUtils.isEmpty(r11)
+            boolean r13 = android.text.StringUtils.isEmpty(r11)
             if (r13 != 0) goto L8c
-            boolean r12 = android.text.TextUtils.isEmpty(r12)
+            boolean r12 = android.text.StringUtils.isEmpty(r12)
             if (r12 != 0) goto L8c
             java.lang.String r12 = r7.getString(r11)
             r8.put(r11, r12)

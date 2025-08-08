@@ -1,7 +1,7 @@
 package com.taobao.weex.ui;
 
 import android.opengl.GLES10;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.WXErrorCode;
@@ -56,7 +56,7 @@ public class WXRenderManager {
         if (ipChange instanceof IpChange) {
             return (WXComponent) ipChange.ipc$dispatch("fea6387a", new Object[]{this, str, str2});
         }
-        if (str != null && !TextUtils.isEmpty(str2) && (renderContext = getRenderContext(str)) != null) {
+        if (str != null && !StringUtils.isEmpty(str2) && (renderContext = getRenderContext(str)) != null) {
             return renderContext.getComponent(str2);
         }
         return null;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -175,7 +175,7 @@ public class HImageView extends TUrlImageView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("59908b32", new Object[]{this});
-        } else if (!this.isImageFailed || TextUtils.isEmpty(getImageUrl())) {
+        } else if (!this.isImageFailed || StringUtils.isEmpty(getImageUrl())) {
         } else {
             reload();
         }
@@ -431,7 +431,7 @@ public class HImageView extends TUrlImageView {
             return;
         }
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
-        if (!(layoutParams != null && ((layoutParams.width == -2 && layoutParams.height != -2) || (layoutParams.height == -2 && layoutParams.width != -2)) && this.newRatio > 0.0f && !TextUtils.isEmpty(getImageUrl()) && !isDrawableSameWith(null)) || this.oldRatio != this.newRatio) {
+        if (!(layoutParams != null && ((layoutParams.width == -2 && layoutParams.height != -2) || (layoutParams.height == -2 && layoutParams.width != -2)) && this.newRatio > 0.0f && !StringUtils.isEmpty(getImageUrl()) && !isDrawableSameWith(null)) || this.oldRatio != this.newRatio) {
             z = true;
         }
         if (z) {

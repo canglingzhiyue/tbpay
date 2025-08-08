@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -652,7 +652,7 @@ public class fja implements fiy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fb017cfd", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || this.d == null || (mainMediaInfo = this.e) == null || mainMediaInfo.data == null) {
+        if (StringUtils.isEmpty(str) || this.d == null || (mainMediaInfo = this.e) == null || mainMediaInfo.data == null) {
             return false;
         }
         if (DimensionEnum.NINE_SIXTEEN.getDimensionRatio().equals(this.e.data.dimension) && this.e.data.bottomAreaHeight == null && !l()) {
@@ -799,7 +799,7 @@ public class fja implements fiy {
         aVar.b(true);
         if (ipa.a("fast_key_simple_bind_video_data") || ipa.aL()) {
             String str = this.e.data.videoResourceStr;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     fjt.a(fjt.TAG_TIP, "传递一跳的播控数据成功。");
                     aVar.a(new org.json.JSONObject(str));
@@ -810,7 +810,7 @@ public class fja implements fiy {
         } else {
             if (fkd.a((Object) Boolean.valueOf(this.e.config != null && this.e.config.enableStreamOpti), false)) {
                 String str2 = this.e.data.videoResourceStr;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     fjt.a(fjt.TAG_MEDIA_CONTROLLER, "PickPreloadController创建播放器使用播控");
                     try {
                         org.json.JSONObject jSONObject = new org.json.JSONObject(str2);

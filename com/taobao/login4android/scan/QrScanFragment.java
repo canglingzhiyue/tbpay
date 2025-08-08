@@ -6,7 +6,7 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -133,7 +133,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
             if (arguments != null) {
                 this.mUrl = (String) arguments.get(LoginConstant.SCAN_KEY);
             }
-            if (!TextUtils.isEmpty(this.mUrl) || this.mAttachedActivity == null) {
+            if (!StringUtils.isEmpty(this.mUrl) || this.mAttachedActivity == null) {
                 return;
             }
             this.mAttachedActivity.finish();
@@ -189,16 +189,16 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
                             String str = ((CommonScanResult) commonScanResponse.returnValue).titleMsg;
                             String str2 = ((CommonScanResult) commonScanResponse.returnValue).subTitleMsg;
                             QrScanFragment.this.mConfirmMsg = ((CommonScanResult) commonScanResponse.returnValue).confirmMsg;
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 QrScanFragment.this.mScanTitleTextView.setText(str);
                             }
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 QrScanFragment.this.mScanSubTitleView.setText(str2);
                             }
                             TextView textView = QrScanFragment.this.mScanSubTitleView;
                             Resources resources = QrScanFragment.this.mAttachedActivity.getResources();
                             QrScanFragment qrScanFragment = QrScanFragment.this;
-                            textView.setTextColor(resources.getColor(qrScanFragment.getSubTitleTextColor(true ^ TextUtils.isEmpty(qrScanFragment.mConfirmMsg))));
+                            textView.setTextColor(resources.getColor(qrScanFragment.getSubTitleTextColor(true ^ StringUtils.isEmpty(qrScanFragment.mConfirmMsg))));
                             QrScanFragment.this.updateLogo(((CommonScanResult) commonScanResponse.returnValue).logoUrl);
                             return;
                         }
@@ -210,7 +210,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
                         QrScanFragment.this.handleH5(commonScanResponse);
                     } else if (QrScanFragment.this.handleIntercept(commonScanResponse)) {
                     } else {
-                        if (!TextUtils.isEmpty(commonScanResponse.message)) {
+                        if (!StringUtils.isEmpty(commonScanResponse.message)) {
                             QrScanFragment.access$000(QrScanFragment.this, commonScanResponse);
                             return;
                         }
@@ -243,10 +243,10 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
         commonScanParam.havanaId = Login.getUserId();
         commonScanParam.sid = Login.getSid();
         commonScanParam.currentSite = Login.getLoginSite();
-        if (TextUtils.isEmpty(this.mUrl)) {
+        if (StringUtils.isEmpty(this.mUrl)) {
             return null;
         }
-        if (TextUtils.isEmpty(this.mScanKey) && (serialBundle = BundleUtil.serialBundle(Uri.parse(this.mUrl).getQuery())) != null) {
+        if (StringUtils.isEmpty(this.mScanKey) && (serialBundle = BundleUtil.serialBundle(Uri.parse(this.mUrl).getQuery())) != null) {
             this.mScanKey = serialBundle.getString("lgToken");
         }
         commonScanParam.key = this.mScanKey;
@@ -257,7 +257,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4ec399a5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             new LoadImageTask(this.mAttachedActivity.getApplicationContext(), this.mHintImageView, "LogoImages", 800).execute(str);
         }
@@ -297,7 +297,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bc2afe36", new Object[]{this, commonScanResponse});
-        } else if (commonScanResponse == null || TextUtils.isEmpty(commonScanResponse.message)) {
+        } else if (commonScanResponse == null || StringUtils.isEmpty(commonScanResponse.message)) {
         } else {
             alertMessage(commonScanResponse.message);
         }
@@ -307,7 +307,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("33e19f5c", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             alert("", str, this.mAttachedActivity.getResources().getString(R.string.aliuser_confirm), new DialogInterface.OnClickListener() { // from class: com.taobao.login4android.scan.QrScanFragment.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -379,7 +379,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
         int id = view.getId();
         if (id == R.id.aliuser_scan_confirmButton) {
             UserTrackAdapter.sendControlUT(getPageName(), "Confirm_Click");
-            if (TextUtils.isEmpty(this.mConfirmMsg)) {
+            if (StringUtils.isEmpty(this.mConfirmMsg)) {
                 handleConfirm();
             } else {
                 alert("", this.mConfirmMsg, this.mAttachedActivity.getResources().getString(R.string.aliuser_confirm), new DialogInterface.OnClickListener() { // from class: com.taobao.login4android.scan.QrScanFragment.3
@@ -440,7 +440,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
                             QrScanFragment.this.handleH5(commonScanResponse);
                         } else if (QrScanFragment.this.handleIntercept(commonScanResponse)) {
                         } else {
-                            if (!TextUtils.isEmpty(commonScanResponse.message)) {
+                            if (!StringUtils.isEmpty(commonScanResponse.message)) {
                                 QrScanFragment.access$000(QrScanFragment.this, commonScanResponse);
                                 return;
                             }
@@ -468,10 +468,10 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dbefcec", new Object[]{this, commonScanResponse});
         } else if (commonScanResponse.returnValue != 0) {
-            if (!TextUtils.isEmpty(((CommonScanResult) commonScanResponse.returnValue).h5Url)) {
+            if (!StringUtils.isEmpty(((CommonScanResult) commonScanResponse.returnValue).h5Url)) {
                 Login.openUrl(this.mAttachedActivity, ((CommonScanResult) commonScanResponse.returnValue).h5Url);
                 this.mAttachedActivity.finish();
-            } else if (!TextUtils.isEmpty(commonScanResponse.message)) {
+            } else if (!StringUtils.isEmpty(commonScanResponse.message)) {
                 alertMessage(commonScanResponse);
             } else {
                 toast(this.mAttachedActivity.getResources().getString(R.string.aliuser_network_error), 0);
@@ -493,7 +493,7 @@ public class QrScanFragment extends BaseLogonFragment implements View.OnClickLis
         }
         if (rpcResponse instanceof CommonScanResponse) {
             CommonScanResponse commonScanResponse = (CommonScanResponse) rpcResponse;
-            if (!TextUtils.isEmpty(commonScanResponse.message)) {
+            if (!StringUtils.isEmpty(commonScanResponse.message)) {
                 alertMessage(commonScanResponse);
                 return;
             } else {

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
@@ -948,7 +948,7 @@ public class DMRequester implements jnz {
         if (-1 != i) {
             build.mo1340setBizId(i);
         }
-        if (!TextUtils.isEmpty(this.B)) {
+        if (!StringUtils.isEmpty(this.B)) {
             build.mo1310setBizTopic(this.B);
         }
         String str3 = this.j;

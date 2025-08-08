@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
 import com.taobao.share.globalmodel.e;
@@ -64,7 +64,7 @@ public class c {
             }
             try {
                 final long currentTimeMillis = System.currentTimeMillis();
-                if (TextUtils.isEmpty(this.f19650a)) {
+                if (StringUtils.isEmpty(this.f19650a)) {
                     c.b(c.this).post(new Runnable() { // from class: com.taobao.share.qrcode.c.1.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 

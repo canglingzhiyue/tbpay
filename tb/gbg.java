@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class gbg {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("2ca17e3d", new Object[]{dinamicXEngine, context, str, new Integer(i), new Boolean(z)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (DinamicXEngine.j()) {
                 fuw.a("DinamicX", "size属性为空字符串");
             }

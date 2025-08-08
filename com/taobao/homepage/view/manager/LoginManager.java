@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.model.LoginType;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.c;
@@ -176,7 +176,7 @@ public class LoginManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5c0f96e", new Object[]{this});
-        } else if (Login.checkSessionValid() || TextUtils.isEmpty(Login.getLoginToken())) {
+        } else if (Login.checkSessionValid() || StringUtils.isEmpty(Login.getLoginToken())) {
         } else {
             Login.login(false);
         }
@@ -222,10 +222,10 @@ public class LoginManager {
         }
         String string = bundle.getString("uid");
         String string2 = bundle.getString("shop_id");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             lan.a(str);
             Nav.from(g.a()).toUri(String.format(NavUrls.nav_urls_shop[2], string));
-        } else if (TextUtils.isEmpty(string2)) {
+        } else if (StringUtils.isEmpty(string2)) {
         } else {
             lan.a(str);
             Nav.from(g.a()).toUri(String.format(NavUrls.nav_urls_shop[1], string2));
@@ -327,7 +327,7 @@ public class LoginManager {
         try {
             String dataString = intent.getDataString();
             String stringExtra = intent.getStringExtra(AlipayConstant.LOGIN_ALIPAY_TOKEN_KEY);
-            if (TextUtils.isEmpty(dataString)) {
+            if (StringUtils.isEmpty(dataString)) {
                 return;
             }
             Uri parse = Uri.parse(dataString);
@@ -335,19 +335,19 @@ public class LoginManager {
             if (extras == null) {
                 extras = new Bundle();
             }
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 stringExtra = parse.getQueryParameter(AlipayConstant.LOGIN_ALIPAY_TOKEN_KEY);
-                if (!TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra)) {
                     extras.putString(AlipayConstant.LOGIN_ALIPAY_TOKEN_KEY, stringExtra);
                 }
             }
-            if (TextUtils.isEmpty(intent.getStringExtra("source"))) {
+            if (StringUtils.isEmpty(intent.getStringExtra("source"))) {
                 String queryParameter = parse.getQueryParameter("source");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     extras.putString("source", queryParameter);
                 }
             }
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 return;
             }
             Login.setLaunchBundle(extras);

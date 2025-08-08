@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.biz.multiclasstab.IMulticlassTabService;
@@ -40,7 +40,7 @@ public class lot implements lom {
         if (ipChange instanceof IpChange) {
             return (llm) ipChange.ipc$dispatch("16b90530", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             return new lol(this.b);
         }
         return null;

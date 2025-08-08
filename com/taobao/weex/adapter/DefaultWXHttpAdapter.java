@@ -1,6 +1,6 @@
 package com.taobao.weex.adapter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.WXSDKManager;
@@ -184,7 +184,7 @@ public class DefaultWXHttpAdapter implements IWXHttpAdapter {
                     onHttpListener.onHttpUploadProgress(100);
                 }
             }
-        } else if (!TextUtils.isEmpty(wXRequest.method)) {
+        } else if (!StringUtils.isEmpty(wXRequest.method)) {
             createConnection.setRequestMethod(wXRequest.method);
         } else {
             createConnection.setRequestMethod("GET");

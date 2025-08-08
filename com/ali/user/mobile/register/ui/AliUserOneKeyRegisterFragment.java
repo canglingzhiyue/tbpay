@@ -3,7 +3,7 @@ package com.ali.user.mobile.register.ui;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -233,7 +233,7 @@ public class AliUserOneKeyRegisterFragment extends BaseFragment implements View.
                 return;
             }
             String str = this.mRegistParam.externParams.get(LoginConstant.APPLAUNCH_INFO);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.mFireAppLaunchRes = (AppLaunchInfoResponseData) JSON.parseObject(str, AppLaunchInfoResponseData.class);
@@ -257,7 +257,7 @@ public class AliUserOneKeyRegisterFragment extends BaseFragment implements View.
         }
         try {
             this.mShowIdTextView = (TextView) view.findViewById(R.id.aliuser_onekey_reg_account_tv);
-            if (this.mShowIdTextView != null && !TextUtils.isEmpty(this.mOneKeyMobileNum)) {
+            if (this.mShowIdTextView != null && !StringUtils.isEmpty(this.mOneKeyMobileNum)) {
                 this.mShowIdTextView.setText(this.mOneKeyMobileNum);
             }
         } catch (Throwable th2) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.event.broadcast.c;
@@ -57,9 +57,9 @@ public final class jow {
             } else {
                 JSONObject jSONObject3 = (JSONObject) next;
                 String string = jSONObject3.getString("opType");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     String string2 = jSONObject3.getString("target");
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         jov jovVar = f29666a.get(string);
                         if (jovVar == null) {
                             jpu c = jpu.a(h).c("UltronDeltaParser");

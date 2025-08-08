@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.graphics.Color;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -269,12 +269,12 @@ public class nvv extends nvu<AuctionBaseBean> implements View.OnClickListener {
             ipChange.ipc$dispatch("8dfcefe2", new Object[]{this, view});
         } else if (!(view instanceof TextView)) {
             a();
-        } else if (TextUtils.isEmpty(Login.getSid())) {
+        } else if (StringUtils.isEmpty(Login.getSid())) {
             Login.login(true);
         } else {
             c d = getModel().d();
             String charSequence = ((TextView) view).getText().toString();
-            if (!TextUtils.equals(charSequence, b.a(R.string.app_favorite)) && !TextUtils.equals(charSequence, b.a(R.string.app_already_collected))) {
+            if (!StringUtils.equals(charSequence, b.a(R.string.app_favorite)) && !StringUtils.equals(charSequence, b.a(R.string.app_already_collected))) {
                 return;
             }
             a(this.b, !this.f31794a.isCollected, b.a(R.string.app_already_collected), "#ff5000", b.a(R.string.app_favorite), "#051b28");

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentLayout;
@@ -292,7 +292,7 @@ public final class ats implements atv {
         if (ipChange instanceof IpChange) {
             return (atz) ipChange.ipc$dispatch("9646083e", new Object[]{this, aURARenderComponent, new Boolean(z)});
         }
-        if (!aURARenderComponent.isValidLayout() || (aURARenderComponentData = aURARenderComponent.data) == null || (aURARenderComponentLayout = aURARenderComponentData.layout) == null || (str = aURARenderComponentLayout.type) == null || TextUtils.isEmpty(str)) {
+        if (!aURARenderComponent.isValidLayout() || (aURARenderComponentData = aURARenderComponent.data) == null || (aURARenderComponentLayout = aURARenderComponentData.layout) == null || (str = aURARenderComponentLayout.type) == null || StringUtils.isEmpty(str)) {
             return null;
         }
         if (!z && (atzVar = this.e.get(aURARenderComponent)) != null) {

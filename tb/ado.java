@@ -7,7 +7,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.taobao.windvane.cache.a;
 import android.taobao.windvane.cache.c;
 import android.taobao.windvane.util.d;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
@@ -148,7 +148,7 @@ public class ado {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int indexOf = str.indexOf("?");

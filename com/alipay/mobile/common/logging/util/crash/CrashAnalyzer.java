@@ -2,7 +2,7 @@ package com.alipay.mobile.common.logging.util.crash;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -46,7 +46,7 @@ public class CrashAnalyzer {
                 throw new RuntimeException("SP is null");
             }
             String string = a2.getString(CrashConstants.SP_KEY_CRASH_TYPES, "");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 JSONArray jSONArray = new JSONArray(string);
                 for (int i = 0; i < jSONArray.length(); i++) {
                     JSONObject jSONObject = jSONArray.getJSONObject(i);

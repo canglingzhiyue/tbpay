@@ -1,6 +1,6 @@
 package com.taobao.android.opencart;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -317,7 +317,7 @@ public class AddBagModel implements Serializable {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-            } else if (!TextUtils.isEmpty(this.f14480a)) {
+            } else if (!StringUtils.isEmpty(this.f14480a)) {
             } else {
                 hvh.a("AddBagModel", "netRequest", "", "necessary itemId miss", "");
             }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,7 +53,7 @@ public class pgb extends sig {
         }
         LiveTimemovingModel liveTimemovingModel = null;
         try {
-            if (objArr[0] != null && !TextUtils.isEmpty(objArr[0].toString())) {
+            if (objArr[0] != null && !StringUtils.isEmpty(objArr[0].toString())) {
                 liveTimemovingModel = (LiveTimemovingModel) pqj.a(((JSONObject) objArr[0]).toJSONString(), LiveTimemovingModel.class);
             }
             String str = (String) objArr[1];
@@ -81,12 +81,12 @@ public class pgb extends sig {
                 a2.e().b().a(liveTimemovingModel, intValue, dXRuntimeContext);
             } else if ("goPlaybackButton".equals(str)) {
                 String str2 = (String) objArr[2];
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     d.a(str2, aVar);
                     return;
                 }
                 VideoInfo u = poy.u(aVar);
-                if (u == null || TextUtils.isEmpty(u.liveId)) {
+                if (u == null || StringUtils.isEmpty(u.liveId)) {
                     return;
                 }
                 d.a(u.liveId, aVar);

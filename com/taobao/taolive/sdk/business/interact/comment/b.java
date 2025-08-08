@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.business.interact.comment;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -52,7 +52,7 @@ public class b extends com.taobao.taolive.sdk.business.b {
         } else if (cgn.b() == null) {
         } else {
             String a2 = a(cgn.b().a());
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             sendCommentsRequest.extraFlag = a2;
@@ -71,7 +71,7 @@ public class b extends com.taobao.taolive.sdk.business.b {
         sendCommentsRequest.content = str3;
         sendCommentsRequest.renders = hashMap;
         String a2 = a(map);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             sendCommentsRequest.extraFlag = a2;
         }
         a(1, sendCommentsRequest, SendCommentsResponse.class);
@@ -108,7 +108,7 @@ public class b extends com.taobao.taolive.sdk.business.b {
         sendCommentsRequest.content = str4;
         sendCommentsRequest.renders = hashMap;
         String a2 = a(map);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             sendCommentsRequest.extraFlag = a2;
         }
         a(1, sendCommentsRequest, SendCommentsResponse.class);

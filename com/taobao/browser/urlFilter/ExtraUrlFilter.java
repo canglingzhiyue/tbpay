@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -79,7 +79,7 @@ public class ExtraUrlFilter implements UrlFilter.URLFilterinterface {
             String queryParameter = parse.getQueryParameter("package_name");
             Intent intent2 = new Intent("android.intent.action.VIEW", parse);
             intent2.setFlags(268435456);
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 intent2.setPackage(queryParameter);
             }
             try {
@@ -91,9 +91,9 @@ public class ExtraUrlFilter implements UrlFilter.URLFilterinterface {
             obtain.what = 1105;
             this.mHandler.sendMessage(obtain);
             return true;
-        } else if (!TextUtils.isEmpty(scheme) && scheme.trim().matches("btaobao")) {
+        } else if (!StringUtils.isEmpty(scheme) && scheme.trim().matches("btaobao")) {
             String queryParameter2 = parse.getQueryParameter("client_id");
-            if (!TextUtils.isEmpty(queryParameter2)) {
+            if (!StringUtils.isEmpty(queryParameter2)) {
                 BrowserUtil.a(this.TAG, "doFilter", "url_filter_btaobao", str, null);
                 String queryParameter3 = parse.getQueryParameter("package_name");
                 Uri.Builder builder = new Uri.Builder();
@@ -104,7 +104,7 @@ public class ExtraUrlFilter implements UrlFilter.URLFilterinterface {
                 builder.fragment(parse.getFragment());
                 Intent intent3 = new Intent();
                 intent3.setAction("android.intent.action.VIEW");
-                if (!TextUtils.isEmpty(queryParameter3)) {
+                if (!StringUtils.isEmpty(queryParameter3)) {
                     intent3.setPackage(queryParameter3);
                 }
                 intent3.setData(builder.build());

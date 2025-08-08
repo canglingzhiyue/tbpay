@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -68,13 +68,13 @@ public class TImageViewConstructor extends h {
             ipChange.ipc$dispatch("7a33971c", new Object[]{this, tUrlImageView, str, str2, str3});
             return;
         }
-        boolean z = !TextUtils.equals(str, "match_content") && TextUtils.equals(str2, "match_content");
-        if (!z && (!TextUtils.equals(str, "match_content") || TextUtils.equals(str2, "match_content"))) {
+        boolean z = !StringUtils.equals(str, "match_content") && StringUtils.equals(str2, "match_content");
+        if (!z && (!StringUtils.equals(str, "match_content") || StringUtils.equals(str2, "match_content"))) {
             return;
         }
         double d = -1.0d;
         try {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 d = Double.valueOf(str3).doubleValue();
             }
         } catch (Throwable unused) {
@@ -191,7 +191,7 @@ public class TImageViewConstructor extends h {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("409026f", new Object[]{this, context, str})).intValue();
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return 0;
         }
         try {
@@ -207,7 +207,7 @@ public class TImageViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5da05548", new Object[]{this, tImageView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             tImageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         } else if (IMAGEVIEW_SCALE_TYPE_FIT_XY.equals(str)) {
             tImageView.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -229,7 +229,7 @@ public class TImageViewConstructor extends h {
         }
         view.setBackgroundColor(fpn.a(str4, 0));
         TImageView tImageView = (TImageView) view;
-        if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2) && TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2) && StringUtils.isEmpty(str3)) {
             if (((ImageShapeFeature) tImageView.findFeature(ImageShapeFeature.class)) == null) {
                 return;
             }

@@ -1,7 +1,7 @@
 package com.taobao.themis.external.embed;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -405,7 +405,7 @@ public final class WidgetStartParams extends StartParams implements Serializable
         try {
             Result.a aVar = Result.Companion;
             if (this.sceneParamsObject == null) {
-                this.sceneParamsObject = TextUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
+                this.sceneParamsObject = StringUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
                 t tVar = t.INSTANCE;
             }
             JSONObject jSONObject = this.sceneParamsObject;
@@ -426,7 +426,7 @@ public final class WidgetStartParams extends StartParams implements Serializable
         try {
             Result.a aVar = Result.Companion;
             if (this.sceneParamsObject == null) {
-                this.sceneParamsObject = TextUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
+                this.sceneParamsObject = StringUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
                 t tVar = t.INSTANCE;
             }
             return this.sceneParamsObject;
@@ -533,7 +533,7 @@ public final class WidgetStartParams extends StartParams implements Serializable
                         this.relationUrl = relationUrl;
                     }
                     if (tMSWidgetInfo.getConfigData() != null) {
-                        this.sceneParamsObject = TextUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
+                        this.sceneParamsObject = StringUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
                         JSONObject jSONObject = this.sceneParamsObject;
                         q.a(jSONObject);
                         jSONObject.put((JSONObject) "moduleData", (String) JSON.parse(tMSWidgetInfo.getConfigData()));
@@ -553,11 +553,11 @@ public final class WidgetStartParams extends StartParams implements Serializable
         if (str != null) {
             Uri parse = Uri.parse(str);
             String queryParameter = parse.getQueryParameter(com.taobao.themis.kernel.i.APP_ID);
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 this.widgetId = queryParameter;
             }
             String queryParameter2 = parse.getQueryParameter("relationUrl");
-            if (!TextUtils.isEmpty(queryParameter2)) {
+            if (!StringUtils.isEmpty(queryParameter2)) {
                 this.relationUrl = URLDecoder.decode(queryParameter2);
             }
         }

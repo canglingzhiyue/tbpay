@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.behavixswitch.a;
 import tb.kge;
@@ -30,7 +30,7 @@ public class c {
             return bool.booleanValue();
         }
         String i = a.b.i();
-        if (TextUtils.isEmpty(i)) {
+        if (StringUtils.isEmpty(i)) {
             return true;
         }
         String c = c();
@@ -41,7 +41,7 @@ public class c {
         while (true) {
             if (i2 >= length) {
                 break;
-            } else if (TextUtils.equals(split[i2], c)) {
+            } else if (StringUtils.equals(split[i2], c)) {
                 f9214a = true;
                 break;
             } else {

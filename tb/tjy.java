@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -206,7 +206,7 @@ public class tjy implements t {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
         for (String str2 : this.i) {
-            if (TextUtils.equals(str2, str)) {
+            if (StringUtils.equals(str2, str)) {
                 return true;
             }
         }
@@ -431,7 +431,7 @@ public class tjy implements t {
                 String a2 = oec.a(map.get("type"), (String) null);
                 String a3 = oec.a(map.get("name"), (String) null);
                 String a4 = oec.a(map.get("version"), (String) null);
-                if (TextUtils.equals(a2, "page")) {
+                if (StringUtils.equals(a2, "page")) {
                     bVar.f34167a = a3 + "_" + a4;
                 } else {
                     if (bVar.b == null) {

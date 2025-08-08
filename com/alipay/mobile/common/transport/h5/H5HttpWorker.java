@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.h5;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.TraficConsumeModel;
 import com.alipay.mobile.common.transport.Response;
 import com.alipay.mobile.common.transport.TransportStrategy;
@@ -200,7 +200,7 @@ public class H5HttpWorker extends ResourceHttpWorker {
             bool.booleanValue();
         }
         String tag = getOriginRequest().getTag(TransportConstants.KEY_H5_APP_TYPE);
-        if (tag != null && TextUtils.equals(tag, "mini_app")) {
+        if (tag != null && StringUtils.equals(tag, "mini_app")) {
             LogCatUtil.info(HttpWorker.TAG, "Current request from miniApp");
             this.f5541a = Boolean.TRUE;
         } else {
@@ -337,7 +337,7 @@ public class H5HttpWorker extends ResourceHttpWorker {
         if (this.noRespContent) {
             return super.monitorLog();
         }
-        return TextUtils.isEmpty(currentDataContainer.getDataItem("ERROR")) ? "" : super.monitorLog();
+        return StringUtils.isEmpty(currentDataContainer.getDataItem("ERROR")) ? "" : super.monitorLog();
     }
 
     @Override // com.alipay.mobile.common.transport.http.HttpWorker
@@ -371,19 +371,19 @@ public class H5HttpWorker extends ResourceHttpWorker {
         }
         try {
             String tag = originRequest.getTag(TransportConstants.KEY_IS_H5_MAIN_DOC_REQ);
-            if (!TextUtils.isEmpty(tag) && "true".equalsIgnoreCase(tag)) {
+            if (!StringUtils.isEmpty(tag) && "true".equalsIgnoreCase(tag)) {
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.H5_MAIN_DOC, "T");
             }
             String tag2 = originRequest.getTag(TransportConstants.KEY_JUMP_SRC_APPID);
-            if (!TextUtils.isEmpty(tag2)) {
+            if (!StringUtils.isEmpty(tag2)) {
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.JUMP_SRC_APPID, tag2);
             }
             String tag3 = originRequest.getTag(TransportConstants.KEY_BIZ_FLAG);
-            if (!TextUtils.isEmpty(tag3)) {
+            if (!StringUtils.isEmpty(tag3)) {
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.BIZ_FLAG, tag3);
             }
             String tag4 = originRequest.getTag(TransportConstants.KEY_H5_PAGE_TRACE_ID);
-            if (TextUtils.isEmpty(tag4)) {
+            if (StringUtils.isEmpty(tag4)) {
                 return;
             }
             DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.H5_PAGE_TRACE_ID, tag4);
@@ -438,7 +438,7 @@ public class H5HttpWorker extends ResourceHttpWorker {
         }
         H5HttpUrlRequest h5HttpUrlRequest = (H5HttpUrlRequest) originRequest;
         MonitorLogRecordUtil.recordCtrlPrintURLFlagToDataflow(traficConsumeModel, h5HttpUrlRequest.isPrintUrlToMonitorLog());
-        if (TextUtils.isEmpty(h5HttpUrlRequest.getRefer())) {
+        if (StringUtils.isEmpty(h5HttpUrlRequest.getRefer())) {
             return;
         }
         traficConsumeModel.extParams.put("h5_refer", h5HttpUrlRequest.getRefer());

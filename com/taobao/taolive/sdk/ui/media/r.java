@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.ui.media;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URI;
 import tb.kge;
@@ -43,11 +43,11 @@ public class r {
         }
         if (mediaData != null && mediaData.liveUrlList != null && mediaData.liveUrlList.size() > 1 && mediaData.liveUrlList.get(1) != null) {
             str = mediaData.liveUrlList.get(1).rtcLiveUrl != null ? mediaData.liveUrlList.get(1).rtcLiveUrl : null;
-            if (TextUtils.isEmpty(str) && mediaData.liveUrlList.get(1).flvUrl != null) {
+            if (StringUtils.isEmpty(str) && mediaData.liveUrlList.get(1).flvUrl != null) {
                 str = mediaData.liveUrlList.get(1).flvUrl;
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 String[] split = new URI(str).getPath().split("/");
                 if (split.length - 1 >= 0) {

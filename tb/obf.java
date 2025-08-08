@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.download.DownloadManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.multiapp.ShareBizAdapter;
@@ -159,7 +159,7 @@ public class obf {
             ipChange.ipc$dispatch("837ca297", new Object[]{context, str, str2, str3, new Boolean(z), aVar});
             return;
         }
-        if (TextUtils.isEmpty(str) || aVar == null) {
+        if (StringUtils.isEmpty(str) || aVar == null) {
             aVar.a(-1, "");
         }
         if (!str.contains("wh_ttid=native")) {
@@ -214,7 +214,7 @@ public class obf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7091c9d7", new Object[]{context, str, str2, str3, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (!str.contains("wh_ttid=native")) {
                 str = str + "&wh_ttid=native";

@@ -9,7 +9,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.kit.view.widget.main.IndicatorBar;
@@ -164,8 +164,8 @@ public class CustomMonthView extends MonthView {
             return;
         }
         Calendar.a calendarInfo = calendar.getCalendarInfo();
-        if (calendarInfo != null && !TextUtils.isEmpty(calendarInfo.f12088a)) {
-            if (!TextUtils.isEmpty(calendarInfo.b)) {
+        if (calendarInfo != null && !StringUtils.isEmpty(calendarInfo.f12088a)) {
+            if (!StringUtils.isEmpty(calendarInfo.b)) {
                 try {
                     this.mBackgroundPaint.setColor(Color.parseColor(calendar.getCalendarInfo().b));
                 } catch (Throwable unused) {

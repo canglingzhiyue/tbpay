@@ -13,7 +13,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -135,14 +135,14 @@ public class WVSocialPlugin extends e {
                 if (WVSocialPlugin.access$000(WVSocialPlugin.this) == null) {
                     return;
                 }
-                if (!TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra)) {
                     WVSocialPlugin.access$000(WVSocialPlugin.this).success(stringExtra);
                     return;
                 }
                 r rVar = new r();
                 rVar.a("HY_FAILED");
                 String stringExtra2 = intent.getStringExtra("errorMsg");
-                if (TextUtils.isEmpty(stringExtra2)) {
+                if (StringUtils.isEmpty(stringExtra2)) {
                     return;
                 }
                 rVar.a("errorMsg", stringExtra2);
@@ -185,7 +185,7 @@ public class WVSocialPlugin extends e {
             TLog.loge("commentSDK", "wvplugin  regit Broadcast Receivers error");
         }
         String str2 = null;
-        if (!TextUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
             try {
                 str2 = parseObject.getString("url");
             } catch (Exception e) {
@@ -225,14 +225,14 @@ public class WVSocialPlugin extends e {
             return;
         }
         Uri uri = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             JSONObject parseObject2 = JSON.parseObject(str);
             long currentTimeMillis = System.currentTimeMillis();
             if (parseObject2 != null) {
                 try {
                     String string = parseObject2.getString("param");
                     Uri.Builder buildUpon = Uri.parse("http://h5.m.taobao.com/comment/poplist.htm?").buildUpon();
-                    if (!TextUtils.isEmpty(string) && (parseObject = JSON.parseObject(string)) != null) {
+                    if (!StringUtils.isEmpty(string) && (parseObject = JSON.parseObject(string)) != null) {
                         new Bundle().putLong("windvaneStartTime", currentTimeMillis);
                         for (Map.Entry<String, Object> entry : parseObject.entrySet()) {
                             buildUpon.appendQueryParameter(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()));
@@ -296,7 +296,7 @@ public class WVSocialPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cc0b0390", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
         } else {
             try {
                 och.getInstance().like(getRequestParams(parseObject), new ISocialBusinessListener() { // from class: com.taobao.social.sdk.jsbridge.WVSocialPlugin.1
@@ -333,7 +333,7 @@ public class WVSocialPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c15a9f3f", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
         } else {
             try {
                 och.getInstance().cancelLike(getRequestParams(parseObject), new ISocialBusinessListener() { // from class: com.taobao.social.sdk.jsbridge.WVSocialPlugin.2
@@ -370,7 +370,7 @@ public class WVSocialPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("803bdc9e", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
         } else {
             try {
                 och.getInstance().getCountAndStatus(getRequestParams(parseObject), new ISocialBusinessListener() { // from class: com.taobao.social.sdk.jsbridge.WVSocialPlugin.3
@@ -407,7 +407,7 @@ public class WVSocialPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("69eef82", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
         } else {
             try {
                 och.getInstance().report(getRequestParams(parseObject), new ISocialBusinessListener() { // from class: com.taobao.social.sdk.jsbridge.WVSocialPlugin.4

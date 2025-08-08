@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -47,7 +47,7 @@ public class lnh implements IDxItemClickService.a {
             return;
         }
         String c = c(baseSubItemModel);
-        if (c == null || TextUtils.isEmpty(c)) {
+        if (c == null || StringUtils.isEmpty(c)) {
             ldf.d("DxItemClickListener", "realTimeClickParams == null");
         } else {
             this.f30741a.c(c);

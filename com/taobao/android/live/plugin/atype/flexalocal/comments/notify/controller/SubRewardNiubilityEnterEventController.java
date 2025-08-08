@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.constraint.ConstraintLayout;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -354,7 +354,7 @@ public class SubRewardNiubilityEnterEventController implements c, d.a {
                         ipChange2.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
                         return;
                     }
-                    if (TextUtils.equals(SubRewardNiubilityEnterEventController.a(SubRewardNiubilityEnterEventController.this), this.f13690a)) {
+                    if (StringUtils.equals(SubRewardNiubilityEnterEventController.a(SubRewardNiubilityEnterEventController.this), this.f13690a)) {
                         SubRewardNiubilityEnterEventController.a(SubRewardNiubilityEnterEventController.this, niubilityEnterEntity);
                     }
                     SubRewardNiubilityEnterEventController.b(SubRewardNiubilityEnterEventController.this);
@@ -367,7 +367,7 @@ public class SubRewardNiubilityEnterEventController implements c, d.a {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
                         return;
                     }
-                    if (TextUtils.equals(SubRewardNiubilityEnterEventController.a(SubRewardNiubilityEnterEventController.this), this.f13690a)) {
+                    if (StringUtils.equals(SubRewardNiubilityEnterEventController.a(SubRewardNiubilityEnterEventController.this), this.f13690a)) {
                         SubRewardNiubilityEnterEventController.a(SubRewardNiubilityEnterEventController.this, niubilityEnterEntity);
                     }
                     SubRewardNiubilityEnterEventController.b(SubRewardNiubilityEnterEventController.this);

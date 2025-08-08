@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
 import tb.eyx;
@@ -34,7 +34,7 @@ public class ac implements ezm {
             return ((Boolean) ipChange.ipc$dispatch("bbeca8d7", new Object[]{this, aVar, runtimeAbilityParamArr})).booleanValue();
         }
         String a2 = a(com.taobao.android.detail.ttdetail.utils.af.a(runtimeAbilityParamArr));
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         this.b.e().a(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH, com.taobao.android.detail.ttdetail.utils.k.a((String) this.b.e().a(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH), a2));

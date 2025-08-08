@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.view.Window;
 import android.view.animation.LinearInterpolator;
@@ -138,7 +138,7 @@ public class JumpLoading {
             rotateAnimation.setInterpolator(new LinearInterpolator());
             imageView.startAnimation(rotateAnimation);
             TextView textView = new TextView(context);
-            textView.setText(TextUtils.isEmpty(JumpLoading.b(JumpLoading.this)) ? JumpLoading.LOADING : JumpLoading.b(JumpLoading.this));
+            textView.setText(StringUtils.isEmpty(JumpLoading.b(JumpLoading.this)) ? JumpLoading.LOADING : JumpLoading.b(JumpLoading.this));
             textView.setTextSize(16.0f);
             textView.setTextColor(-1);
             LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(-2, -2);

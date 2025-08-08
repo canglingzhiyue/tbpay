@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class fnx implements fnz {
         }
         List list = (List) obj;
         try {
-            if (!TextUtils.isEmpty(str) && list != null && list.size() > 0) {
+            if (!StringUtils.isEmpty(str) && list != null && list.size() > 0) {
                 return list.get(Integer.parseInt(str));
             }
             return null;

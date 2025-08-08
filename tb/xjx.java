@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
@@ -36,7 +36,7 @@ public class xjx {
         } else if (scheme.startsWith(ado.URL_SEPARATOR)) {
             str = "http:" + uri;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return uri;
         }
         TLog.loge("Nav", "The Url used to determine has a scheme added, urlString: " + str);

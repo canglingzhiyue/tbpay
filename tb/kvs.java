@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.model.card.SectionModel;
@@ -26,7 +26,7 @@ public class kvs extends fuf {
             ope b = oqc.a().b();
             if (b != null) {
                 for (SectionModel sectionModel : b.g(ksk.NEW_FACE_PARENT.f30287a)) {
-                    if (TextUtils.equals(str, sectionModel.getString("sectionBizCode"))) {
+                    if (StringUtils.equals(str, sectionModel.getString("sectionBizCode"))) {
                         return sectionModel.get(str2);
                     }
                 }

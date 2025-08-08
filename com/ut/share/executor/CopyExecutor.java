@@ -4,7 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.share.SharePlatform;
 import com.ut.share.ShareResponse;
@@ -59,7 +59,7 @@ public class CopyExecutor implements IShareExecutor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("532a854a", new Object[]{this, context, shareData, shareListener});
-        } else if (shareData == null || (TextUtils.isEmpty(shareData.getText()) && TextUtils.isEmpty(shareData.getLink()))) {
+        } else if (shareData == null || (StringUtils.isEmpty(shareData.getText()) && StringUtils.isEmpty(shareData.getLink()))) {
             if (shareListener == null) {
                 return;
             }
@@ -68,9 +68,9 @@ public class CopyExecutor implements IShareExecutor {
             shareResponse.errorCode = ShareResponse.ErrorCode.ERR_FAIL;
             shareListener.onResponse(shareResponse);
         } else {
-            String text = !TextUtils.isEmpty(shareData.getText()) ? shareData.getText() : "";
-            if (!TextUtils.isEmpty(shareData.getLink())) {
-                if (TextUtils.isEmpty(text)) {
+            String text = !StringUtils.isEmpty(shareData.getText()) ? shareData.getText() : "";
+            if (!StringUtils.isEmpty(shareData.getLink())) {
+                if (StringUtils.isEmpty(text)) {
                     text = shareData.getLink();
                 } else {
                     text = text.concat(" ").concat(shareData.getLink());

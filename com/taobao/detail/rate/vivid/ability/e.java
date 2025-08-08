@@ -3,7 +3,7 @@ package com.taobao.detail.rate.vivid.ability;
 import android.taobao.windvane.jsbridge.IJsApiFailedCallBack;
 import android.taobao.windvane.jsbridge.IJsApiSucceedCallBack;
 import android.taobao.windvane.jsbridge.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -71,7 +71,7 @@ public class e extends dlg {
                     return;
                 }
                 JSONObject a2 = e.a(str);
-                if (a2 == null || !TextUtils.equals(a2.getString("errorCode"), "-2")) {
+                if (a2 == null || !StringUtils.equals(a2.getString("errorCode"), "-2")) {
                     z = false;
                 }
                 e.a(z ? "cancel" : "failure", a2, dllVar, pVar, hVar);

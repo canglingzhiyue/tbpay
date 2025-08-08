@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.birdnest.util.UiUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.util.UtUtils;
@@ -234,7 +234,7 @@ public class jcm {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (str.toLowerCase().contains("tencent") || str.toLowerCase().contains("qq") || str.toLowerCase().contains(nyk.KEY_SHARE_CONFIG_WEIXIN) || str.toLowerCase().contains("wechat"))) {
+        if (!StringUtils.isEmpty(str) && (str.toLowerCase().contains("tencent") || str.toLowerCase().contains("qq") || str.toLowerCase().contains(nyk.KEY_SHARE_CONFIG_WEIXIN) || str.toLowerCase().contains("wechat"))) {
             return false;
         }
         return b(str);
@@ -283,7 +283,7 @@ public class jcm {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String lowerCase = str.toLowerCase();

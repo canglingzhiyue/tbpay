@@ -1,12 +1,11 @@
-package tlb.fwm;
+package tb;
 
 import android.content.Context;
 import android.util.Log;
-import android.text.TextUtils;
 
+import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.DinamicXEngine;
-import com.taobao.android.dinamicx.exception.a;
 import com.taobao.android.dinamicx.expression.expr_v2.d;
 import com.taobao.android.dinamicx.model.b;
 import com.taobao.android.dinamicx.template.download.DXTemplateItem;
@@ -14,19 +13,13 @@ import com.taobao.android.dinamicx.widget.DXWidgetNode;
 import com.taobao.android.dinamicx.widget.ak;
 import com.taobao.android.dinamicx.widget.ac;
 import com.taobao.android.dinamicx.widget.m;
-import com.taobao.android.dinamicx.widget.bg;
 import com.taobao.android.dinamicx.eventchain.k;
 import com.taobao.android.dinamicx.s;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 
-import java.util.List;
 import java.util.Stack;
-import java.util.Map;
 
 public class fwm extends Object implements ggy {
-    public static volatile transient synthetic IpChange $ipChange = null;
+    public static volatile transient IpChange $ipChange = null;
     public static final int EVENTCHAIN_MINOR_VERSION = 7;
     public static final int MAJOR_VERSION = 3;
     public static final int MINOR_VERSION_0 = 0;
@@ -190,7 +183,7 @@ public class fwm extends Object implements ggy {
                 }
             }
         } catch (Exception e) {
-            a.b(e);
+            com.taobao.android.dinamicx.exception.a.b(e);
             runtimeContext.n().c.add(new s.a("Pipeline", "Pipeline_Stage_Load_Event_Chain_Binary", 0x1118f, a.a(e)));
         }
 
@@ -201,7 +194,8 @@ public class fwm extends Object implements ggy {
                 }
             }
         } catch (Throwable t) {
-            a.b(t);
+            com.taobao.android.dinamicx.exception.a.b(t);
+
             runtimeContext.n().c.add(new s.a("Pipeline", "Pipeline_Stage_Load_Binary", 0x11192, a.a(t)));
         }
 
@@ -246,7 +240,7 @@ public class fwm extends Object implements ggy {
             if (DinamicXEngine.j()) {
                 e.printStackTrace();
             }
-            runtimeContext.n().c.add(new s.a("Pipeline", "Pipeline_Stage_Load_Event_Chain_Binary", 0x11191, a.a(e)));
+            runtimeContext.n().c.add(new s.a("Pipeline", "Pipeline_Stage_Load_Event_Chain_Binary", 0x11191, com.taobao.android.dinamicx.exception.a.a(e)));
             return null;
         }
     }
@@ -327,8 +321,8 @@ public class fwm extends Object implements ggy {
 
             return root;
         } catch (Exception e) {
-            a.b(e);
-            runtimeContext.n().c.add(new s.a("Pipeline", "Pipeline_Stage_Load_Binary", 0x11185, a.a(e)));
+            com.taobao.android.dinamicx.exception.a.b(e);
+            runtimeContext.n().c.add(new s.a("Pipeline", "Pipeline_Stage_Load_Binary", 0x11185, com.taobao.android.dinamicx.exception.a.a(e)));
             Log.e("BinaryLoader_TMTEST", " DXBinaryLoader createWidgetTree error 70021");
             return null;
         }

@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -176,7 +176,7 @@ public final class eks extends ekq<TUrlImageView> {
             return;
         }
         String str = (String) bbc.a(map, "url", String.class, "");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ema.a("picture#componentInvalidUrl", "url is empty|component=" + aURARenderComponent.key, this.d);
             a(tUrlImageView);
             return;
@@ -246,7 +246,7 @@ public final class eks extends ekq<TUrlImageView> {
             return (String) ipChange.ipc$dispatch("e2c2912d", new Object[]{this, aURARenderComponent});
         }
         String str = aURARenderComponent.key;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         return a() + System.currentTimeMillis();

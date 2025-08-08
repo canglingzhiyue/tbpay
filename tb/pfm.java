@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -99,7 +99,7 @@ public class pfm {
         VideoInfo videoInfo = this.f32592a;
         if (videoInfo != null) {
             jSONObject.put("goodsNumber", (Object) String.valueOf(videoInfo.curItemNum));
-            if (this.f32592a.timeMovingPlayInfo != null && !TextUtils.isEmpty(this.f32592a.timeMovingPlayInfo.liveGuideTxt)) {
+            if (this.f32592a.timeMovingPlayInfo != null && !StringUtils.isEmpty(this.f32592a.timeMovingPlayInfo.liveGuideTxt)) {
                 jSONObject.put("liveGuideTxt", (Object) this.f32592a.timeMovingPlayInfo.liveGuideTxt);
             } else {
                 jSONObject.put("liveGuideTxt", "直播间抢购中");
@@ -146,7 +146,7 @@ public class pfm {
                 } else if (pfm.a(pfm.this) != null && pfm.a(pfm.this).mInitParams != null && pfm.b(pfm.this) != null) {
                     if ("livePointTab3".equals(pfm.a(pfm.this).mInitParams.get("livePointTab3")) && c.v()) {
                         String str = pfm.a(pfm.this).mInitParams.get("shop2fSkipTab3Url");
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             return;
                         }
                         s.a(pfm.b(pfm.this), str);
@@ -266,7 +266,7 @@ public class pfm {
         if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("model")) != null && l.d(jSONObject2.getString("hasLivingNow"))) {
             String string = jSONObject2.getString("livingRoomId");
             String string2 = jSONObject2.getString("livingStreamStatus");
-            if (!TextUtils.isEmpty(string) && !"0".equals(string2)) {
+            if (!StringUtils.isEmpty(string) && !"0".equals(string2)) {
                 this.g = string;
             }
         }
@@ -396,7 +396,7 @@ public class pfm {
         }
         pfb a2 = pfb.a(this.f);
         if (!"1".equals(this.f32592a.roomStatus)) {
-            if (TextUtils.isEmpty(this.g) || a2.l() == null) {
+            if (StringUtils.isEmpty(this.g) || a2.l() == null) {
                 return;
             }
             a2.l().d(this.f, this.g);

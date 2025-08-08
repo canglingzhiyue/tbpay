@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.SystemClock;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -73,7 +73,7 @@ public class c extends a implements TBMiniLiveFloatingVideoView.a {
             String action = intent.getAction();
             hue.a(c.g(), action);
             boolean booleanExtra = intent.getBooleanExtra("isMute", false);
-            if (!TextUtils.isEmpty(action) && action.equals("com.taobao.avplayer.start")) {
+            if (!StringUtils.isEmpty(action) && action.equals("com.taobao.avplayer.start")) {
                 if (booleanExtra) {
                     return;
                 }
@@ -82,13 +82,13 @@ public class c extends a implements TBMiniLiveFloatingVideoView.a {
                     return;
                 }
                 c.a(c.this).b();
-            } else if (!TextUtils.isEmpty(action) && action.equals("com.taobao.taolive.start")) {
+            } else if (!StringUtils.isEmpty(action) && action.equals("com.taobao.taolive.start")) {
                 c.this.a("dismiss");
                 if (c.a(c.this) == null) {
                     return;
                 }
                 c.a(c.this).b();
-            } else if (TextUtils.isEmpty(action) || !action.equals(com.taobao.taolive.sdk.playcontrol.d.ON_LIVE_CARD_START_ACTION)) {
+            } else if (StringUtils.isEmpty(action) || !action.equals(com.taobao.taolive.sdk.playcontrol.d.ON_LIVE_CARD_START_ACTION)) {
             } else {
                 String stringExtra = intent.getStringExtra("SubBusinessType");
                 if (!"TimeMovingPlay".equals(stringExtra) && !"ShopSampleCard".equals(stringExtra) && booleanExtra) {
@@ -296,11 +296,11 @@ public class c extends a implements TBMiniLiveFloatingVideoView.a {
         m();
         b(str);
         c(str);
-        if (TextUtils.equals("halfGoodDetail", str)) {
+        if (StringUtils.equals("halfGoodDetail", str)) {
             h();
             return;
         }
-        if (this.f != null && !TextUtils.equals(str, "liveroom")) {
+        if (this.f != null && !StringUtils.equals(str, "liveroom")) {
             this.f.i();
         }
         if (this.d != null) {
@@ -406,7 +406,7 @@ public class c extends a implements TBMiniLiveFloatingVideoView.a {
         int c = com.taobao.taolive.sdk.utils.b.c(this.t);
         int a4 = com.taobao.taolive.sdk.utils.b.a(this.t, 12.0f);
         int a5 = com.taobao.taolive.sdk.utils.b.a(this.t, 84.0f);
-        if (TextUtils.equals(this.h, "liveroom") || TextUtils.equals(this.h, "zoom")) {
+        if (StringUtils.equals(this.h, "liveroom") || StringUtils.equals(this.h, "zoom")) {
             a4 += (hud.v() * com.taobao.taolive.sdk.utils.b.c(this.t)) / 750;
             a5 += (hud.w() * com.taobao.taolive.sdk.utils.b.c(this.t)) / 750;
         }
@@ -429,18 +429,18 @@ public class c extends a implements TBMiniLiveFloatingVideoView.a {
         WindowManager.LayoutParams layoutParams2 = this.k;
         layoutParams2.width = a2;
         layoutParams2.height = a3;
-        if (TextUtils.equals("top-left", this.o)) {
+        if (StringUtils.equals("top-left", this.o)) {
             this.k.x = (int) Math.max(b * this.p, a4);
             this.k.y = (int) Math.max(c * this.q, a5);
-        } else if (TextUtils.equals("top-right", this.o)) {
+        } else if (StringUtils.equals("top-right", this.o)) {
             WindowManager.LayoutParams layoutParams3 = this.k;
             layoutParams3.x = (b - layoutParams3.width) - ((int) Math.max(b * this.p, a4));
             this.k.y = (int) Math.max(c * this.q, a5);
-        } else if (TextUtils.equals("bottom-left", this.o)) {
+        } else if (StringUtils.equals("bottom-left", this.o)) {
             this.k.x = (int) Math.max(b * this.p, a4);
             WindowManager.LayoutParams layoutParams4 = this.k;
             layoutParams4.y = (c - layoutParams4.height) - ((int) Math.max(c * this.q, a5));
-        } else if (TextUtils.equals("bottom-right", this.o)) {
+        } else if (StringUtils.equals("bottom-right", this.o)) {
             WindowManager.LayoutParams layoutParams5 = this.k;
             layoutParams5.x = (b - layoutParams5.width) - ((int) Math.max(b * this.p, a4));
             WindowManager.LayoutParams layoutParams6 = this.k;
@@ -531,7 +531,7 @@ public class c extends a implements TBMiniLiveFloatingVideoView.a {
         }
         hashMap.put("exposureTime", String.valueOf(((float) (SystemClock.uptimeMillis() - this.m)) / 1000.0f));
         hashMap.put("type", str);
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             hashMap.put("algParams", this.i);
         }
         huf.a(this.h, "FloatWindowExposure", hashMap);
@@ -566,7 +566,7 @@ public class c extends a implements TBMiniLiveFloatingVideoView.a {
         if (this.f == null) {
             return;
         }
-        if (TextUtils.equals(this.h, "liveroom") || TextUtils.equals(str, "liveroom")) {
+        if (StringUtils.equals(this.h, "liveroom") || StringUtils.equals(str, "liveroom")) {
             HashMap hashMap = new HashMap();
             hashMap.put("switchScene", "liveRoom");
             this.f.a((Map<String, String>) hashMap);

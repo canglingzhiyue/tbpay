@@ -1,7 +1,7 @@
 package mtopsdk.security.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -79,7 +79,7 @@ public class c {
                     b();
                     if (SwitchConfig.getInstance().signDegradedApiSet2 != null) {
                         for (ryy ryyVar : SwitchConfig.getInstance().signDegradedApiSet2) {
-                            if (SwitchConfig.getInstance().isABGlobalFeatureOpened(aVar.f25000a.getMtopConfig().context, TextUtils.isEmpty(ryyVar.a()) ? SwitchConfig.AB_SIGN_DEGRADED : "mtop_sign_degraded_" + ryyVar.a()) && (ryyVar.a("*") || ryyVar.a(aVar.b.getKey()))) {
+                            if (SwitchConfig.getInstance().isABGlobalFeatureOpened(aVar.f25000a.getMtopConfig().context, StringUtils.isEmpty(ryyVar.a()) ? SwitchConfig.AB_SIGN_DEGRADED : "mtop_sign_degraded_" + ryyVar.a()) && (ryyVar.a("*") || ryyVar.a(aVar.b.getKey()))) {
                                 return true;
                             }
                         }
@@ -164,11 +164,11 @@ public class c {
                     for (int i = 0; i < parseArray.size(); i++) {
                         JSONObject jSONObject = parseArray.getJSONObject(i);
                         String string = jSONObject.getString("ab");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             if (SwitchConfig.getInstance().isABGlobalFeatureOpened(context, "mtop_sign_degraded_" + string) && (jSONArray = jSONObject.getJSONArray("api")) != null && jSONArray.size() > 0) {
                                 for (int i2 = 0; i2 < jSONArray.size(); i2++) {
                                     String string2 = jSONArray.getString(i2);
-                                    if (!TextUtils.isEmpty(string2)) {
+                                    if (!StringUtils.isEmpty(string2)) {
                                         f25027a.add(string2);
                                     }
                                 }
@@ -199,7 +199,7 @@ public class c {
         if (c == null) {
             c = new Boolean(SwitchConfig.getInstance().isABGlobalFeatureOpened(context, "Home_Page_SecondRefreshOpt"));
         }
-        if (!c.booleanValue() || TextUtils.isEmpty(str)) {
+        if (!c.booleanValue() || StringUtils.isEmpty(str)) {
             return false;
         }
         Set<String> set = d;

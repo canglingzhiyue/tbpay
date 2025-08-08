@@ -1,6 +1,6 @@
 package com.taobao.android.tab2liveroom.liveroom;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -148,7 +148,7 @@ public class d {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("liveid", str);
         }
         hashMap.put("reason", "playerError");

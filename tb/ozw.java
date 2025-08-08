@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -37,7 +37,7 @@ public class ozw implements pmf {
         try {
             if (psm.G()) {
                 String a2 = a(str, str2, str3);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     plx.b("UTABTestAdapter", "debug包测试逻辑 activateDebug ab使用测试工具持久化值 " + str + "_" + str2 + "_" + str3 + " value " + a2);
                     return a2;
                 }
@@ -64,7 +64,7 @@ public class ozw implements pmf {
         try {
             if (psm.G()) {
                 String a2 = a(str, str2, str3);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     plx.b("UTABTestAdapter", "debug包测试逻辑 activateDebug ab使用测试工具持久化值 " + str + "_" + str2 + "_" + str3 + " value " + a2);
                     return a2;
                 }

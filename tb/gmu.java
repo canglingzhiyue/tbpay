@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
 import com.taobao.tao.TBMainHost;
@@ -104,7 +104,7 @@ public class gmu implements Application.ActivityLifecycleCallbacks {
         if (taoLiveVideoView == null) {
             return false;
         }
-        return context == activity || (TextUtils.equals(TBMainHost.a().getSimpleName(), activity.getLocalClassName()) && context == context.getApplicationContext());
+        return context == activity || (StringUtils.equals(TBMainHost.a().getSimpleName(), activity.getLocalClassName()) && context == context.getApplicationContext());
     }
 
     private void a(Context context) {

@@ -14,7 +14,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.i;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aw;
@@ -232,7 +232,7 @@ public class WVMotion extends e implements Handler.Callback {
         r rVar = new r();
         long j = 500;
         long j2 = 1000;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str = URLDecoder.decode(str, "utf-8");
             } catch (Exception unused) {

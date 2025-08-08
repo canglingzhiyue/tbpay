@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -149,7 +149,7 @@ public class t extends d {
         } else if (this.b) {
         } else {
             String b = b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             this.c.initWithURL(Uri.parse(b));

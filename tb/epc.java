@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -210,7 +210,7 @@ public class epc {
         String str3 = str2;
         for (Map.Entry<String, a> entry : entrySet) {
             a value = entry.getValue();
-            if (!TextUtils.isEmpty(value.f27504a)) {
+            if (!StringUtils.isEmpty(value.f27504a)) {
                 String str4 = value.f27504a;
                 long j2 = value.d;
                 if (str4.equals("load") || str4.equals("click")) {
@@ -220,7 +220,7 @@ public class epc {
                         str2 = str4;
                     }
                 } else if (j2 >= 0) {
-                    if (TextUtils.isEmpty(value.g)) {
+                    if (StringUtils.isEmpty(value.g)) {
                         hashMap2.put(str4, "" + j2);
                     } else {
                         str3 = value.g;
@@ -233,7 +233,7 @@ public class epc {
                 sb.append(value.d);
                 sb.append("");
                 map.put(str4, sb.toString());
-                hashMap.put(TextUtils.isEmpty(value.e) ? str4 : value.e, value.d + "");
+                hashMap.put(StringUtils.isEmpty(value.e) ? str4 : value.e, value.d + "");
                 epu.b(str4, str7);
                 ept.a(this.d);
             } else {
@@ -242,8 +242,8 @@ public class epc {
             a2 = j;
         }
         long j3 = a2;
-        if (!TextUtils.isEmpty(str2) && this.c > 0) {
-            if (TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str2) && this.c > 0) {
+            if (StringUtils.isEmpty(str3)) {
                 concat = hashMap2.toString();
             } else {
                 concat = hashMap2.toString().replace('}', ',').concat(str3).concat(riy.BLOCK_END_STR);
@@ -254,7 +254,7 @@ public class epc {
         f27503a.remove(str);
         this.d.clear();
         long a3 = eqd.a() - j3;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             epp.d("TimeProfiler", "TimeProfiler Page cann't find load event");
         }
         String str8 = "dump time =" + a3;

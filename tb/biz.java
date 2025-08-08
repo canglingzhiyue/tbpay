@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class biz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             obj = ipChange.ipc$dispatch("7c6d7459", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             return null;
         } else {
             obj = f25936a.get(str.trim().toLowerCase());

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.content;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -185,7 +185,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (JSONArray) ipChange.ipc$dispatch("fe97466b", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (parseObject = JSONObject.parseObject(str)) != null && parseObject.getJSONObject("data") != null && parseObject.getJSONObject("data").getJSONObject("data") != null && (b = b(parseObject.getJSONObject("data").getJSONObject("data"))) != null) {
+        if (!StringUtils.isEmpty(str) && (parseObject = JSONObject.parseObject(str)) != null && parseObject.getJSONObject("data") != null && parseObject.getJSONObject("data").getJSONObject("data") != null && (b = b(parseObject.getJSONObject("data").getJSONObject("data"))) != null) {
             return d(b);
         }
         return null;
@@ -199,7 +199,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || parseObject.getJSONObject("data") == null || parseObject.getJSONObject("data").getJSONObject("data") == null || (b = b((jSONObject = parseObject.getJSONObject("data").getJSONObject("data")))) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || parseObject.getJSONObject("data") == null || parseObject.getJSONObject("data").getJSONObject("data") == null || (b = b((jSONObject = parseObject.getJSONObject("data").getJSONObject("data")))) == null) {
         } else {
             JSONObject a2 = a(b);
             JSONArray d = d(b);

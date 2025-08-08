@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.android.app.IAlixPay;
 import com.alipay.android.app.IRemoteServiceCallback;
@@ -490,7 +490,7 @@ public class PayHelper {
         @Override // com.alipay.android.app.IRemoteServiceCallback
         public void r03(String str, String str2, Map map) throws RemoteException {
             StatisticManager.putAction(PayHelper.a(PayHelper.this), StatisticRecord.ET_WLT, str, str2);
-            if (!TextUtils.equals(str2, "ActivityStartSuccess") || PayHelper.d(PayHelper.this) == null) {
+            if (!StringUtils.equals(str2, "ActivityStartSuccess") || PayHelper.d(PayHelper.this) == null) {
                 return;
             }
             PayHelper.d(PayHelper.this).onStartActivity();

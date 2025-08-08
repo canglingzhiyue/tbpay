@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ContextThemeWrapper;
 import com.ali.user.open.core.trace.SDKLogger;
 import com.ali.user.open.core.webview.AUProgressDialog;
@@ -93,14 +93,14 @@ public class DialogHelper {
                         i = 16974393;
                     }
                     AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(activity, i));
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         builder.setTitle(str);
                     }
-                    builder.setMessage(!TextUtils.isEmpty(str2) ? str2 : activity.getString(R.string.member_sdk_network_not_available_message));
-                    if (!TextUtils.isEmpty(str3)) {
+                    builder.setMessage(!StringUtils.isEmpty(str2) ? str2 : activity.getString(R.string.member_sdk_network_not_available_message));
+                    if (!StringUtils.isEmpty(str3)) {
                         builder.setPositiveButton(str3, onClickListener);
                     }
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         builder.setNegativeButton(str4, onClickListener2);
                     }
                     try {

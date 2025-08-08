@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -164,15 +164,15 @@ public class nsq extends d {
         itt b = super.b(map, c0571a);
         itt.b bVar = (itt.b) b.d;
         if (bVar != null) {
-            if (TextUtils.equals(((itt.a) b.b).f29314a, nnd.WSEARCH_TPP_API_NAME_VALUE)) {
+            if (StringUtils.equals(((itt.a) b.b).f29314a, nnd.WSEARCH_TPP_API_NAME_VALUE)) {
                 bVar.c = MethodEnum.POST;
             }
-            if (TextUtils.equals((String) ((Map) b.c).remove(noa.KEY_XS_FORCE_LOGIN), "true")) {
+            if (StringUtils.equals((String) ((Map) b.c).remove(noa.KEY_XS_FORCE_LOGIN), "true")) {
                 bVar.b = true;
             }
             if (r.af()) {
                 String str = (String) ((Map) b.c).get("tab");
-                if (TextUtils.isEmpty(str) || "all".equals(str)) {
+                if (StringUtils.isEmpty(str) || "all".equals(str)) {
                     bVar.d = true;
                 }
             }
@@ -186,11 +186,11 @@ public class nsq extends d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8b3b88aa", new Object[]{map});
         }
-        if (TextUtils.equals(map.get("m"), noa.VALUE_MODULE_INSHOP)) {
+        if (StringUtils.equals(map.get("m"), noa.VALUE_MODULE_INSHOP)) {
             return "inshop-srp";
         }
         String str = map.get("tab");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "all";
         }
         if ("true".equals(map.get(noa.KEY_GOOD_PRICE))) {
@@ -211,11 +211,11 @@ public class nsq extends d {
         if (!r.aQ()) {
             k.d("[requestFallback]", "orange开关控制不开启兜底", new Object[0]);
             return false;
-        } else if (!TextUtils.equals(g.b(), "CN")) {
+        } else if (!StringUtils.equals(g.b(), "CN")) {
             return false;
         } else {
             String mtopCode = eVar.c().getMtopCode();
-            if (TextUtils.equals(mtopCode, "SUCCESS")) {
+            if (StringUtils.equals(mtopCode, "SUCCESS")) {
                 return false;
             }
             if (c(mtopCode)) {
@@ -244,12 +244,12 @@ public class nsq extends d {
 
     private boolean c(Map<String, String> map) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2985bedf", new Object[]{this, map})).booleanValue() : TextUtils.isEmpty(map.get("m"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2985bedf", new Object[]{this, map})).booleanValue() : StringUtils.isEmpty(map.get("m"));
     }
 
     private boolean d(Map<String, String> map) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1127953e", new Object[]{this, map})).booleanValue() : !TextUtils.isEmpty(map.get("channelSrp"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1127953e", new Object[]{this, map})).booleanValue() : !StringUtils.isEmpty(map.get("channelSrp"));
     }
 
     private boolean e(Map<String, String> map) {
@@ -258,7 +258,7 @@ public class nsq extends d {
             return ((Boolean) ipChange.ipc$dispatch("f8c96b9d", new Object[]{this, map})).booleanValue();
         }
         String str = map.get("tab");
-        return TextUtils.isEmpty(str) || TextUtils.equals(str, "all");
+        return StringUtils.isEmpty(str) || StringUtils.equals(str, "all");
     }
 
     private boolean f(Map<String, String> map) {
@@ -266,15 +266,15 @@ public class nsq extends d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e06b41fc", new Object[]{this, map})).booleanValue();
         }
-        if (!TextUtils.isEmpty(map.get(noa.KEY_AUCTION_TAG)) || !TextUtils.isEmpty(map.get(noa.KEY_FILTER_TAG)) || !TextUtils.isEmpty(map.get("service"))) {
+        if (!StringUtils.isEmpty(map.get(noa.KEY_AUCTION_TAG)) || !StringUtils.isEmpty(map.get(noa.KEY_FILTER_TAG)) || !StringUtils.isEmpty(map.get("service"))) {
             return true;
         }
         String aS = r.aS();
-        if (TextUtils.isEmpty(aS)) {
+        if (StringUtils.isEmpty(aS)) {
             return false;
         }
         for (String str : aS.split("/")) {
-            if (!TextUtils.isEmpty(map.get(str))) {
+            if (!StringUtils.isEmpty(map.get(str))) {
                 return true;
             }
         }
@@ -283,7 +283,7 @@ public class nsq extends d {
 
     private boolean g(Map<String, String> map) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c80d185b", new Object[]{this, map})).booleanValue() : TextUtils.equals(map.get("ignoreReveal"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c80d185b", new Object[]{this, map})).booleanValue() : StringUtils.equals(map.get("ignoreReveal"), "true");
     }
 
     private boolean c(String str) {
@@ -291,14 +291,14 @@ public class nsq extends d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (c.contains(str)) {
             return true;
         }
         String aR = r.aR();
-        if (!TextUtils.isEmpty(aR)) {
+        if (!StringUtils.isEmpty(aR)) {
             return aR.contains(str);
         }
         return false;
@@ -393,7 +393,7 @@ public class nsq extends d {
         hashMap.put("page", map.get("page"));
         hashMap.put("sversion", noa.SERVER_VERSION_VALUE);
         String str = map.get(noa.KEY_GOOD_PRICE);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "false";
         }
         hashMap.put(noa.KEY_GOOD_PRICE, str);
@@ -408,12 +408,12 @@ public class nsq extends d {
         }
         StringBuilder sb = new StringBuilder();
         String errorMsg = resultError.getErrorMsg();
-        if (!TextUtils.isEmpty(errorMsg)) {
+        if (!StringUtils.isEmpty(errorMsg)) {
             sb.append(errorMsg);
         }
         sb.append("|");
         Throwable exception = resultError.getException();
-        if (exception != null && !TextUtils.isEmpty(exception.getMessage())) {
+        if (exception != null && !StringUtils.isEmpty(exception.getMessage())) {
             sb.append(exception.getMessage());
         }
         sb.append("|");
@@ -443,7 +443,7 @@ public class nsq extends d {
         if (commonSearchResult.layoutParseTraceDigestMap != null && !commonSearchResult.layoutParseTraceDigestMap.isEmpty()) {
             for (Map.Entry<String, ioz> entry : commonSearchResult.layoutParseTraceDigestMap.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     ioz value = entry.getValue();
                     hashMap.put(key, value == null ? "" : value.f29197a);
                 }

@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.goodlist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -23,7 +23,7 @@ public class p extends com.taobao.taolive.sdk.business.b {
             return;
         }
         TemplateListRequest templateListRequest = new TemplateListRequest();
-        if (!TextUtils.isEmpty(d.d())) {
+        if (!StringUtils.isEmpty(d.d())) {
             templateListRequest.appVersion = d.d();
         }
         a(1, templateListRequest, TemplateListResponse.class);

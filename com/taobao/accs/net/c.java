@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.Config;
 import anet.channel.SessionCenter;
 import anet.channel.entity.ConnType;
@@ -198,7 +198,7 @@ public abstract class c {
                     ALog.e(g(), "sendMessage ready", "dataId", message.dataId, "type", Message.MsgType.name(message.getType()), "delay", Long.valueOf(message.delyTime));
                 }
                 try {
-                    if (TextUtils.isEmpty(this.k)) {
+                    if (StringUtils.isEmpty(this.k)) {
                         this.k = UtilityImpl.getDeviceId(this.d);
                     }
                     if (!message.isTimeOut()) {
@@ -300,7 +300,7 @@ public abstract class c {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(k.HTTPS_PREFIX);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         sb.append(str);

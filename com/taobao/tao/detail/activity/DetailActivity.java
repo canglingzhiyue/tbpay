@@ -3,7 +3,7 @@ package com.taobao.tao.detail.activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -79,7 +79,7 @@ public class DetailActivity extends FragmentActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a729a6a", new Object[]{this, context, str, bundle});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             if (bundle == null) {
                 Nav.from(context).toUri(str);

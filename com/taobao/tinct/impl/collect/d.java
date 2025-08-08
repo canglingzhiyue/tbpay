@@ -2,7 +2,7 @@ package com.taobao.tinct.impl.collect;
 
 import android.content.Context;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.ConfigCenter;
@@ -89,7 +89,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("552009f7", new Object[]{str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             b.a().a(OrangeChangeInfo.builder(str, str2).setGray(z));
         }
@@ -185,7 +185,7 @@ public class d {
                     try {
                         String patchVersion = InstantPatchChangeInfo.getPatchVersion(context);
                         String patchType = InstantPatchChangeInfo.getPatchType(context);
-                        if (TextUtils.isEmpty(patchVersion)) {
+                        if (StringUtils.isEmpty(patchVersion)) {
                             return;
                         }
                         InstantPatchChangeInfo instantPatchChangeInfo = new InstantPatchChangeInfo(patchVersion, patchType);
@@ -221,7 +221,7 @@ public class d {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("af0e2b09", new Object[]{this, str, new Boolean(z)});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         com.taobao.tinct.model.b bVar = new com.taobao.tinct.model.b(str, z);
                         b.a().a(bVar);

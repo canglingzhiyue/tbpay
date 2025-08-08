@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidRuntimeException;
 import android.webkit.WebView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public final class lst {
             }
             String b2 = gwl.b(context);
             q.b(b2, "CommonUtils.getProcessName(context)");
-            if (TextUtils.isEmpty(b2)) {
+            if (StringUtils.isEmpty(b2)) {
                 return;
             }
             WebView.setDataDirectorySuffix(b2);

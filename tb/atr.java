@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.SparseIntArray;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
@@ -567,7 +567,7 @@ public final class atr implements atv {
         if (ipChange instanceof IpChange) {
             return (auh) ipChange.ipc$dispatch("364880e4", new Object[]{this, aURARenderComponent});
         }
-        if (aURARenderComponent.isValidLayout() && (aURARenderComponentData = aURARenderComponent.data) != null && (aURARenderComponentLayout = aURARenderComponentData.layout) != null && (str = aURARenderComponentLayout.type) != null && !TextUtils.isEmpty(str)) {
+        if (aURARenderComponent.isValidLayout() && (aURARenderComponentData = aURARenderComponent.data) != null && (aURARenderComponentLayout = aURARenderComponentData.layout) != null && (str = aURARenderComponentLayout.type) != null && !StringUtils.isEmpty(str)) {
             return this.e.get(str);
         }
         return null;

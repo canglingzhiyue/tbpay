@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -25,9 +25,9 @@ public class fqc implements bbs {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("52a699f6", new Object[]{this, view, str});
         }
-        if (view == null || TextUtils.isEmpty(str)) {
+        if (view == null || StringUtils.isEmpty(str)) {
             if (DinamicXEngine.j()) {
-                fuw.b("未找到" + str + "对应的view  原因为：  view == null || TextUtils.isEmpty(ref)");
+                fuw.b("未找到" + str + "对应的view  原因为：  view == null || StringUtils.isEmpty(ref)");
             }
             return null;
         }

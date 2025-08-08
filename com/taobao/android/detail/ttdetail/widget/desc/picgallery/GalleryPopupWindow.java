@@ -7,7 +7,7 @@ import android.content.Context;
 import android.graphics.drawable.PaintDrawable;
 import android.os.Environment;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -317,7 +317,7 @@ public class GalleryPopupWindow extends PopupWindow implements ViewPager.OnPageC
             }
             this.supportLongPress = cVar.f11018a;
             this.fromDetailMain = cVar.b;
-            this.imageOffset = !TextUtils.isEmpty(this.galleryDTO.j) ? 1 : 0;
+            this.imageOffset = !StringUtils.isEmpty(this.galleryDTO.j) ? 1 : 0;
             this.totalPages = this.galleryDTO.e.size() + this.imageOffset;
             processBigImageUrl(this.galleryDTO);
             if (this.galleryDTO.d == null || this.galleryDTO.d.isEmpty()) {
@@ -484,7 +484,7 @@ public class GalleryPopupWindow extends PopupWindow implements ViewPager.OnPageC
             if (GalleryPopupWindow.access$400(GalleryPopupWindow.this).d == null || GalleryPopupWindow.access$400(GalleryPopupWindow.this).d.isEmpty()) {
                 return 0;
             }
-            if (TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).j)) {
+            if (StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).j)) {
                 return GalleryPopupWindow.access$400(GalleryPopupWindow.this).d.size() + (GalleryPopupWindow.access$300(GalleryPopupWindow.this) ? 1 : 0);
             }
             return GalleryPopupWindow.access$400(GalleryPopupWindow.this).d.size() + (GalleryPopupWindow.access$300(GalleryPopupWindow.this) ? 1 : 0) + 1;
@@ -496,7 +496,7 @@ public class GalleryPopupWindow extends PopupWindow implements ViewPager.OnPageC
             if (ipChange instanceof IpChange) {
                 return ipChange.ipc$dispatch("1038d332", new Object[]{this, viewGroup, new Integer(i)});
             }
-            if (i == 0 && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
+            if (i == 0 && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
                 if (this.e == null && (GalleryPopupWindow.access$600(GalleryPopupWindow.this) instanceof Activity)) {
                     bk.a aVar = new bk.a((Activity) GalleryPopupWindow.access$600(GalleryPopupWindow.this));
                     aVar.e("DETAILMAIN");
@@ -661,7 +661,7 @@ public class GalleryPopupWindow extends PopupWindow implements ViewPager.OnPageC
                 if (a2 != null && (obj instanceof ImageView)) {
                     a2.a((String) null, (DetailImageView) obj);
                 }
-                if (i == 0 && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
+                if (i == 0 && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
                     bk bkVar = this.e;
                     if (bkVar != null) {
                         bkVar.removeCoverView(this.g);
@@ -870,7 +870,7 @@ public class GalleryPopupWindow extends PopupWindow implements ViewPager.OnPageC
             return;
         }
         changeIndexPos(i);
-        if (i != 0 || a.a(this.mBigGalleryAdapter) == null || TextUtils.isEmpty(this.galleryDTO.k) || TextUtils.isEmpty(this.galleryDTO.l)) {
+        if (i != 0 || a.a(this.mBigGalleryAdapter) == null || StringUtils.isEmpty(this.galleryDTO.k) || StringUtils.isEmpty(this.galleryDTO.l)) {
             return;
         }
         g.a(this.mContext, this.galleryDTO.n, this.galleryDTO.o, null);
@@ -912,13 +912,13 @@ public class GalleryPopupWindow extends PopupWindow implements ViewPager.OnPageC
                 str2 = this.galleryDTO.i.get(str3);
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mTvDesc.setText(str);
             this.mTvDesc.setVisibility(0);
         } else {
             this.mTvDesc.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.mTvSubDesc.setText(str2);
             this.mSubDescContainer.setVisibility(0);
             return;
@@ -1013,7 +1013,7 @@ public class GalleryPopupWindow extends PopupWindow implements ViewPager.OnPageC
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f4c13b05", new Object[]{this, new Integer(i), new Float(f), new Integer(i2)});
-        } else if ((i == 0 && !TextUtils.isEmpty(this.galleryDTO.j)) || i != 0 || TextUtils.isEmpty(this.galleryDTO.k) || a.a(this.mBigGalleryAdapter) == null) {
+        } else if ((i == 0 && !StringUtils.isEmpty(this.galleryDTO.j)) || i != 0 || StringUtils.isEmpty(this.galleryDTO.k) || a.a(this.mBigGalleryAdapter) == null) {
         } else {
             int videoState = a.a(this.mBigGalleryAdapter).getVideoState();
             if (f >= 0.5d && videoState == 1) {

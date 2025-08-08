@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
@@ -323,7 +323,7 @@ public class nnu implements mjx {
                     ipChange2.ipc$dispatch("8fafb607", new Object[]{this, iContainerDataModel, jSONObject, str});
                     return;
                 }
-                if (TextUtils.equals("coldStart", jSONObject.getString(i.CDN_REQUEST_TYPE))) {
+                if (StringUtils.equals("coldStart", jSONObject.getString(i.CDN_REQUEST_TYPE))) {
                     nnu.a(nnu.this, "coldStart");
                     e.e("PullDownUpManager", "OnDataProcessListener,冷启刷新完成，开始初始化下拉刷新组件");
                 }
@@ -509,7 +509,7 @@ public class nnu implements mjx {
                     return;
                 }
                 super.onFragmentResumed(fragmentManager, fragment);
-                if (fragment == null || !TextUtils.equals("MyTaobaoFragment", fragment.getClass().getSimpleName()) || !com.taobao.homepage.page.weexv2.a.d()) {
+                if (fragment == null || !StringUtils.equals("MyTaobaoFragment", fragment.getClass().getSimpleName()) || !com.taobao.homepage.page.weexv2.a.d()) {
                     return;
                 }
                 e.e("PullDownUpManager", "去我淘了");

@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.certpay;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.core.context.MspContext;
@@ -34,7 +34,7 @@ public class CertSdkPayReceiver extends BroadcastReceiver {
         }
         String stringExtra = intent.getStringExtra("certpay_session");
         LogUtil.record(1, AlipaySDKJSBridge.LOG_TAG, "CertSdkPayReceiver.onReceive", stringExtra);
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return;
         }
         String stringExtra2 = intent.getStringExtra(MspGlobalDefine.SCHEME_PAY_RESULT);
@@ -42,7 +42,7 @@ public class CertSdkPayReceiver extends BroadcastReceiver {
             String oldSession = CertPayManager.getInstance(context).getOldSession(stringExtra);
             LogUtil.record(2, "AlipayStore:onMspAction", "oldSession=".concat(String.valueOf(oldSession)));
             int i = -1;
-            if (!TextUtils.isEmpty(oldSession)) {
+            if (!StringUtils.isEmpty(oldSession)) {
                 i = Integer.parseInt(oldSession);
             }
             MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i);

@@ -13,7 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
@@ -256,7 +256,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || !TextUtils.equals("com.alipay.android.app.pay.ACTION_PAY_SUCCESS", intent.getAction()) || context == null) {
+            } else if (intent == null || !StringUtils.equals("com.alipay.android.app.pay.ACTION_PAY_SUCCESS", intent.getAction()) || context == null) {
                 bxb.a(bxb.a.b(OrderBizCode.orderList, "payResultOfList").a(1.0f).a("支付失败").a(false));
             } else {
                 TBOrderListActivity.b(TBOrderListActivity.this);
@@ -813,9 +813,9 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                 bundle.putString("tabCode", this.f14505a.j());
                 JSONObject jSONObject4 = (JSONObject) obj;
                 String string = jSONObject4.getString("url");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     Object obj2 = jSONObject4.get("queryParams");
-                    if (!TextUtils.isEmpty(str) && (obj2 instanceof JSONObject)) {
+                    if (!StringUtils.isEmpty(str) && (obj2 instanceof JSONObject)) {
                         JSONObject jSONObject5 = (JSONObject) obj2;
                         jSONObject5.put(CoreConstants.PRESETRES_KEY, (Object) str);
                         for (String str2 : jSONObject5.keySet()) {
@@ -892,7 +892,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             this.f14505a.a(str);
         }
         this.f14505a.h().l().put("tabCode", this.f14505a.j());
-        this.b.enablePullRefresh(!TextUtils.equals(this.f14505a.j(), TabType.REFUND.getValue()));
+        this.b.enablePullRefresh(!StringUtils.equals(this.f14505a.j(), TabType.REFUND.getValue()));
         v();
         if (TabType.REFUND.getValue().equals(str) && a2) {
             hzc e2 = i().e();
@@ -907,7 +907,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                 return;
             }
             TBRefundInstanceManager.startPreRequestOnIdle();
-            if (!TextUtils.isEmpty(this.f.i())) {
+            if (!StringUtils.isEmpty(this.f.i())) {
                 str2 = this.f.i();
             }
             FrameLayout frameLayout = new FrameLayout(this);
@@ -1240,7 +1240,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             r();
             i().b();
             this.x = System.currentTimeMillis();
-            if (!TextUtils.isEmpty(this.f14505a.m()) && e.get(this.f14505a.m()) != null) {
+            if (!StringUtils.isEmpty(this.f14505a.m()) && e.get(this.f14505a.m()) != null) {
                 i().a(e.get(this.f14505a.m()), this);
                 e.remove(this.f14505a.m());
                 this.f14505a.b((String) null);
@@ -1306,7 +1306,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
         if (this.f14505a.q() != null) {
             this.f14505a.q().remove(CoreConstants.KEY_PAGE_CONTEXT);
             String a2 = com.taobao.android.purchase.aura.helper.a.a(this, false);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.f14505a.q().put("installApp", (Object) a2);
             }
             c_(this.f14505a.q());
@@ -1479,7 +1479,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             }
             String optString = optJSONObject2.optString(jjj.SPM_A);
             String optString2 = optJSONObject2.optString(jjj.SPM_B);
-            if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString2)) {
+            if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString2)) {
                 g(String.format("%s.%s.0.0", optString, optString2));
                 return true;
             }
@@ -1494,7 +1494,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0cfe3b8", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 UTTracker defaultTracker = UTAnalytics.getInstance().getDefaultTracker();
@@ -1519,24 +1519,24 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             HashMap hashMap = new HashMap();
             hashMap.put("searchKey", this.f14505a.g());
             String optString = jSONObject.optString(CoreConstants.IN_PARAM_ORDER_SEARCH_ID);
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 return;
             }
             this.f.b(optString);
             hashMap.put(CoreConstants.IN_PARAM_ORDER_SEARCH_ID, optString);
             hashMap.put("isSearchResult", "true");
-            hashMap.put("recommend", TextUtils.equals(this.f14505a.z(), this.f14505a.g()) ? "1" : "0");
+            hashMap.put("recommend", StringUtils.equals(this.f14505a.z(), this.f14505a.g()) ? "1" : "0");
             String b = com.taobao.android.order.bundle.helper.g.b(getIntent(), "utLogMap");
             String b2 = com.taobao.android.order.bundle.helper.g.b(getIntent(), "utArgs");
             String b3 = com.taobao.android.order.bundle.helper.g.b(getIntent(), "utParam");
             try {
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     hashMap.put("utLogMap", URLEncoder.encode(b, "UTF-8"));
                 }
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     hashMap.put("utArgs", URLEncoder.encode(b2, "UTF-8"));
                 }
-                if (!TextUtils.isEmpty(b3)) {
+                if (!StringUtils.isEmpty(b3)) {
                     hashMap.put("utParam", URLEncoder.encode(b3, "UTF-8"));
                 }
             } catch (Throwable unused) {
@@ -1568,7 +1568,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                 if (optJSONObject2 != null) {
                     d(optJSONObject2);
                 }
-                if (TextUtils.isEmpty(this.f14505a.C())) {
+                if (StringUtils.isEmpty(this.f14505a.C())) {
                     if ("true".equals(optJSONObject.optString("isBought4"))) {
                         this.f14505a.d("true");
                         this.f14505a.h().l().put("forceBoughtlist4", "true");
@@ -1588,14 +1588,14 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                 }
                 org.json.JSONObject optJSONObject3 = optJSONObject.optJSONObject("tocDegradeInfo");
                 if (optJSONObject3 != null) {
-                    this.g = TextUtils.equals("true", optJSONObject3.optString("isCloseTradeItemDetailTimeout"));
+                    this.g = StringUtils.equals("true", optJSONObject3.optString("isCloseTradeItemDetailTimeout"));
                 }
                 if (orderRecyclerView != null) {
                     orderRecyclerView.resetScroll();
                 }
                 if (optJSONObject.optJSONObject("routeControl") != null) {
                     String optString = optJSONObject.optJSONObject("routeControl").optString("taoTmRoute");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         JSONObject parseObject = JSONObject.parseObject(this.f14505a.h().l().get("condition"));
                         parseObject.put("taoTmRoute", (Object) optString);
                         this.f14505a.h().l().put("condition", parseObject.toJSONString());
@@ -1651,10 +1651,10 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                     orderRecyclerView.removeAllEndViews();
                 }
                 JSONObject jSONObject = new JSONObject();
-                if (!TextUtils.isEmpty(this.f14505a.z()) && TextUtils.equals(this.f14505a.z(), this.f14505a.g())) {
+                if (!StringUtils.isEmpty(this.f14505a.z()) && StringUtils.equals(this.f14505a.z(), this.f14505a.g())) {
                     jSONObject.put(com.taobao.android.order.bundle.helper.rec.c.PARAM_REC_QUERY, (Object) this.f14505a.z());
                     jSONObject.put("channelSrp", (Object) "gouhou_searchfg");
-                } else if (!TextUtils.isEmpty(this.f14505a.g())) {
+                } else if (!StringUtils.isEmpty(this.f14505a.g())) {
                     jSONObject.put(com.taobao.android.order.bundle.helper.rec.c.PARAM_REC_QUERY, (Object) this.f14505a.g());
                 }
                 this.i = new OrderRecommendWrapper(orderRecyclerView, this, this.f14505a.B() ? OrderRecommendWrapper.RecType.MAIN_SEARCH : OrderRecommendWrapper.RecType.GUESS, jSONObject);
@@ -1725,7 +1725,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             JSONObject jSONObject2 = jSONObject.getJSONObject("data");
             JSONObject jSONObject3 = jSONObject.getJSONObject("global");
             if (jSONObject2 != null && jSONObject3 != null) {
-                if (TextUtils.equals("true", OrangeConfig.getInstance().getConfig("babelorder", "orderDetailFilterEnablePreRender", "true"))) {
+                if (StringUtils.equals("true", OrangeConfig.getInstance().getConfig("babelorder", "orderDetailFilterEnablePreRender", "true"))) {
                     this.f14505a.a(this, jSONObject, this.f14505a.c(orderRecyclerView));
                 }
                 if (jSONObject3.getJSONObject("pageControl") != null) {
@@ -1774,7 +1774,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                         }
                         string = jSONObject4.getString("orderCount");
                     }
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
                     try {
@@ -1817,7 +1817,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             JSONArray optJSONArray = optJSONObject.optJSONArray("boughtlist");
             int i = 0;
             for (int i2 = 0; i2 < optJSONArray.length(); i2++) {
-                if (!TextUtils.isEmpty(optJSONArray.optString(i2)) && optJSONArray.optString(i2).startsWith("MainGroup")) {
+                if (!StringUtils.isEmpty(optJSONArray.optString(i2)) && optJSONArray.optString(i2).startsWith("MainGroup")) {
                     i++;
                 }
             }
@@ -1865,7 +1865,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                         e2.printStackTrace();
                     }
                     if (!this.f14505a.l() && z) {
-                        if (TextUtils.isEmpty(this.f14505a.g())) {
+                        if (StringUtils.isEmpty(this.f14505a.g())) {
                             this.f14505a.a(hyj.b());
                         } else {
                             this.f14505a.a(hyj.c());
@@ -1919,7 +1919,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
         } else {
             hyq.a(this, "TBOrderListActivity", "OrderList", str + "-" + this.f14505a.j(), this.f14505a.j(), mtopResponse);
         }
-        if (TextUtils.isEmpty(com.taobao.android.order.bundle.helper.g.c(getIntent()))) {
+        if (StringUtils.isEmpty(com.taobao.android.order.bundle.helper.g.c(getIntent()))) {
             d.a(this, this.f14505a.j(), str);
         } else {
             d.b(this, this.f14505a.g(), str);
@@ -2237,7 +2237,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
         if (orderConfigs == null || (d = orderConfigs.d()) == null) {
             return;
         }
-        d.a(this.k, true ^ TextUtils.equals(this.f14505a.j(), TabType.REFUND.getValue()));
+        d.a(this.k, true ^ StringUtils.equals(this.f14505a.j(), TabType.REFUND.getValue()));
     }
 
     private void x() {
@@ -2390,7 +2390,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             for (IDMComponent iDMComponent : b) {
                 if (arrayList.size() >= n) {
                     break;
-                } else if (iDMComponent != null && TextUtils.equals(iDMComponent.getTag(), "item")) {
+                } else if (iDMComponent != null && StringUtils.equals(iDMComponent.getTag(), "item")) {
                     arrayList.add(iDMComponent);
                 }
             }
@@ -2463,11 +2463,11 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                 Map<String, String> pageAllProperties = UTAnalytics.getInstance().getDefaultTracker().getPageAllProperties(TBOrderListActivity.this);
                 if (pageAllProperties != null && !pageAllProperties.isEmpty()) {
                     String str = "";
-                    this.b = TextUtils.isEmpty(pageAllProperties.get("spm-cnt")) ? str : pageAllProperties.get("spm-cnt");
-                    this.c = TextUtils.isEmpty(pageAllProperties.get("spm-url")) ? str : pageAllProperties.get("spm-url");
-                    this.d = TextUtils.isEmpty(pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE)) ? str : pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE);
-                    this.e = TextUtils.isEmpty(pageAllProperties.get(ag.KEY_UTPARAM_URL)) ? str : pageAllProperties.get(ag.KEY_UTPARAM_URL);
-                    if (!TextUtils.isEmpty(pageAllProperties.get("utparam-pre"))) {
+                    this.b = StringUtils.isEmpty(pageAllProperties.get("spm-cnt")) ? str : pageAllProperties.get("spm-cnt");
+                    this.c = StringUtils.isEmpty(pageAllProperties.get("spm-url")) ? str : pageAllProperties.get("spm-url");
+                    this.d = StringUtils.isEmpty(pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE)) ? str : pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE);
+                    this.e = StringUtils.isEmpty(pageAllProperties.get(ag.KEY_UTPARAM_URL)) ? str : pageAllProperties.get(ag.KEY_UTPARAM_URL);
+                    if (!StringUtils.isEmpty(pageAllProperties.get("utparam-pre"))) {
                         str = pageAllProperties.get("utparam-pre");
                     }
                     this.f = str;
@@ -2529,7 +2529,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             L44:
                 r6.mSpmCnt = r7     // Catch: java.lang.Throwable -> L7a
                 java.lang.String r7 = r5.b     // Catch: java.lang.Throwable -> L7a
-                boolean r7 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L7a
+                boolean r7 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L7a
                 if (r7 != 0) goto L58
                 com.taobao.android.order.bundle.base.parallelbiz.ParallelBizValueHelper$PageType r7 = r5.h     // Catch: java.lang.Throwable -> L7a
                 com.taobao.android.order.bundle.base.parallelbiz.ParallelBizValueHelper$PageType r1 = com.taobao.android.order.bundle.base.parallelbiz.ParallelBizValueHelper.PageType.logistics_detail     // Catch: java.lang.Throwable -> L7a
@@ -2543,7 +2543,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             L59:
                 r6.mSpmUrl = r7     // Catch: java.lang.Throwable -> L7a
                 java.lang.String r7 = r5.c     // Catch: java.lang.Throwable -> L7a
-                boolean r7 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L7a
+                boolean r7 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L7a
                 if (r7 == 0) goto L65
                 r7 = r0
                 goto L67
@@ -2552,7 +2552,7 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
             L67:
                 r6.mSpmPre = r7     // Catch: java.lang.Throwable -> L7a
                 java.lang.String r7 = r5.e     // Catch: java.lang.Throwable -> L7a
-                boolean r7 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L7a
+                boolean r7 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L7a
                 if (r7 == 0) goto L73
                 r7 = r0
                 goto L75
@@ -2588,11 +2588,11 @@ public class TBOrderListActivity extends TBOrderBaseActivity implements com.alib
                     return;
                 }
                 String str = "";
-                orNewUTPageStateObject.mSpmCnt = !TextUtils.isEmpty(this.b) ? this.b : str;
-                orNewUTPageStateObject.mSpmPre = !TextUtils.isEmpty(this.d) ? this.d : str;
-                orNewUTPageStateObject.mUtparamPre = !TextUtils.isEmpty(this.f) ? this.f : str;
-                orNewUTPageStateObject.mUtparamUrl = !TextUtils.isEmpty(this.e) ? this.e : str;
-                if (!TextUtils.isEmpty(this.c)) {
+                orNewUTPageStateObject.mSpmCnt = !StringUtils.isEmpty(this.b) ? this.b : str;
+                orNewUTPageStateObject.mSpmPre = !StringUtils.isEmpty(this.d) ? this.d : str;
+                orNewUTPageStateObject.mUtparamPre = !StringUtils.isEmpty(this.f) ? this.f : str;
+                orNewUTPageStateObject.mUtparamUrl = !StringUtils.isEmpty(this.e) ? this.e : str;
+                if (!StringUtils.isEmpty(this.c)) {
                     str = this.c;
                 }
                 orNewUTPageStateObject.mSpmUrl = str;

@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
@@ -268,7 +268,7 @@ public class c extends Dialog {
             return (c) ipChange.ipc$dispatch("55382a7b", new Object[]{this, str});
         }
         TextView textView = this.c;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i = 8;
         }
         textView.setVisibility(i);
@@ -292,7 +292,7 @@ public class c extends Dialog {
             return (c) ipChange.ipc$dispatch("b793415a", new Object[]{this, str});
         }
         TextView textView = this.b;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i = 8;
         }
         textView.setVisibility(i);

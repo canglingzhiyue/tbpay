@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
 import com.taobao.android.home.component.utils.j;
@@ -236,7 +236,7 @@ public class b implements pqu {
         }
         this.c = pshVar;
         if (this.c.l == null) {
-            if (!TextUtils.isEmpty(this.c.b)) {
+            if (!StringUtils.isEmpty(this.c.b)) {
                 this.b.a(null, this.c.b);
             } else {
                 this.c = null;

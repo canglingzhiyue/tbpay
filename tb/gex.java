@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.expression.expr_v2.DXExprFunctionError;
@@ -35,7 +35,7 @@ public class gex extends ggw {
             return gfx.a((Map<String, Object>) dXRuntimeContext.e());
         }
         String i2 = (gfxVarArr[0] == null || !gfxVarArr[0].k()) ? "" : gfxVarArr[0].i();
-        if (TextUtils.isEmpty(i2)) {
+        if (StringUtils.isEmpty(i2)) {
             str = gfxVarArr[1].i();
         } else {
             str = i2 + "." + gfxVarArr[1].i();

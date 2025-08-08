@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.client.smart.core.algo.SampleData;
 import com.alibaba.security.client.smart.core.constants.BaseConfigKey;
 import com.alibaba.security.wukong.model.meta.AlgoResult;
@@ -84,7 +84,7 @@ public class AlgoResultSample extends CCRCRiskSample {
     @Override // com.alibaba.security.wukong.model.CCRCRiskSample
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : super.isValid() && !TextUtils.isEmpty(getCode()) && getValue() != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : super.isValid() && !StringUtils.isEmpty(getCode()) && getValue() != null;
     }
 
     public void setAlgoResult(AlgoResult algoResult) {

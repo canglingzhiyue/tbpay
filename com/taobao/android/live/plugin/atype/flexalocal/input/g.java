@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import com.alibaba.fastjson.JSONArray;
@@ -78,13 +78,13 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
             String a3 = ad.a("quick_expression_catch_key");
             try {
                 final ArrayList arrayList = new ArrayList();
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     JSONArray jSONArray = (JSONArray) JSONObject.parse(a2);
                     for (int i = 0; i < jSONArray.size(); i++) {
                         Object obj = jSONArray.get(i);
                         if (obj instanceof String) {
                             String str = (String) obj;
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 arrayList.add(str);
                             }
                         }
@@ -93,12 +93,12 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
                 }
                 JSONArray jSONArray2 = (JSONArray) JSONObject.parse(a3);
                 final ArrayList arrayList2 = new ArrayList();
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     for (int i2 = 0; i2 < jSONArray2.size(); i2++) {
                         Object obj2 = jSONArray2.get(i2);
                         if (obj2 instanceof String) {
                             String str2 = (String) obj2;
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 arrayList2.add(str2);
                             }
                         }
@@ -298,11 +298,11 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                         long time = simpleDateFormat.parse(rule.startTime).getTime();
                         long time2 = simpleDateFormat.parse(rule.endTime).getTime();
-                        if (TextUtils.equals(rule.effective, "true") && b >= time && b <= time2) {
+                        if (StringUtils.equals(rule.effective, "true") && b >= time && b <= time2) {
                             list.add(stickerGroup);
                         }
                     } catch (Exception e) {
-                        if (TextUtils.equals(rule.effective, "true")) {
+                        if (StringUtils.equals(rule.effective, "true")) {
                             list.add(stickerGroup);
                         }
                         q.b("AtmosphereMultiCaseManager", "getOtherTabData catch exception:" + e.getMessage());
@@ -433,7 +433,7 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
         for (AtmosphereResListResponseData.AtmosphereResItem atmosphereResItem : this.h) {
             HashMap<String, StickerGroup> hashMap = this.c;
             StickerGroup stickerGroup = hashMap.get(atmosphereResItem.groupId + "_" + atmosphereResItem.version);
-            if (!TextUtils.equals(atmosphereResItem.type, "anchor_custom_sticker") && stickerGroup != null && stickerGroup.stickers != null && !stickerGroup.stickers.isEmpty()) {
+            if (!StringUtils.equals(atmosphereResItem.type, "anchor_custom_sticker") && stickerGroup != null && stickerGroup.stickers != null && !stickerGroup.stickers.isEmpty()) {
                 arrayList.add(stickerGroup);
             }
         }
@@ -505,7 +505,7 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
             ipChange.ipc$dispatch("1e30843f", new Object[]{this, hashMap, stickerConfig});
         } else if (stickerConfig == null) {
         } else {
-            boolean equals = TextUtils.equals("1", stickerConfig.type);
+            boolean equals = StringUtils.equals("1", stickerConfig.type);
             Iterator<String> it = this.r.iterator();
             int i2 = 0;
             int i3 = 0;
@@ -513,7 +513,7 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
             while (it.hasNext()) {
                 String next = it.next();
                 StickerConfig stickerConfig2 = hashMap.get(next);
-                if (stickerConfig2 != null && TextUtils.equals("1", stickerConfig2.type)) {
+                if (stickerConfig2 != null && StringUtils.equals("1", stickerConfig2.type)) {
                     i++;
                     i4 = this.r.indexOf(next);
                 } else {
@@ -644,7 +644,7 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
             return;
         }
         this.l = new com.taobao.android.live.plugin.atype.flexalocal.input.atmosphere.business.a(this);
-        if (this.f13919a && !TextUtils.isEmpty(str3)) {
+        if (this.f13919a && !StringUtils.isEmpty(str3)) {
             this.l.a(str, str2, str3);
         } else {
             this.l.a(str, str2);
@@ -783,8 +783,8 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
                     this.d.put(stickerConfig.matchKey, stickerConfig);
                     this.f.put(stickerConfig.id, stickerConfig);
                 }
-                if (!TextUtils.isEmpty(atmosphereResItem.stickerType)) {
-                    if (TextUtils.equals(atmosphereResItem.stickerType, "icon")) {
+                if (!StringUtils.isEmpty(atmosphereResItem.stickerType)) {
+                    if (StringUtils.equals(atmosphereResItem.stickerType, "icon")) {
                         stickerConfig.type = "0";
                     } else {
                         stickerConfig.type = "1";
@@ -910,8 +910,8 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
                     this.f.put(stickerConfig.id, stickerConfig);
                     this.e.put(stickerConfig.matchKey, stickerConfig);
                 }
-                if (!TextUtils.isEmpty(atmosphereResItem.stickerType)) {
-                    if (TextUtils.equals(atmosphereResItem.stickerType, "icon")) {
+                if (!StringUtils.isEmpty(atmosphereResItem.stickerType)) {
+                    if (StringUtils.equals(atmosphereResItem.stickerType, "icon")) {
                         stickerConfig.type = "0";
                     } else {
                         stickerConfig.type = "1";
@@ -1136,10 +1136,10 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
         for (AtmosphereResListResponseData.AtmosphereResItem atmosphereResItem : list) {
             if (atmosphereResItem != null) {
                 String str = atmosphereResItem.stickerType;
-                if (TextUtils.equals(str, "icon")) {
+                if (StringUtils.equals(str, "icon")) {
                     c(atmosphereResItem);
                     list2.add(atmosphereResItem);
-                } else if (TextUtils.equals(str, "strip")) {
+                } else if (StringUtils.equals(str, "strip")) {
                     e(atmosphereResItem);
                     list2.add(atmosphereResItem);
                 }
@@ -1281,18 +1281,18 @@ public class g implements com.taobao.taolive.sdk.adapter.network.d, b.a, ffg {
                     hashMap.put(this.f13924a.groupId + "_" + this.f13924a.version, stickerGroup);
                     q.b("AtmosphereMultiCaseManager", "onPostExecute type:" + stickerGroup.type + " size:" + list.size());
                     for (StickerConfig stickerConfig : list) {
-                        if (TextUtils.equals("official_strip_sticker", stickerGroup.type) || TextUtils.equals("anchor_custom_sticker", stickerGroup.type)) {
+                        if (StringUtils.equals("official_strip_sticker", stickerGroup.type) || StringUtils.equals("anchor_custom_sticker", stickerGroup.type)) {
                             stickerConfig.type = "1";
                         }
-                        if (!TextUtils.isEmpty(stickerGroup.stickerType)) {
-                            if (TextUtils.equals(stickerGroup.stickerType, "icon")) {
+                        if (!StringUtils.isEmpty(stickerGroup.stickerType)) {
+                            if (StringUtils.equals(stickerGroup.stickerType, "icon")) {
                                 stickerConfig.type = "0";
                             } else {
                                 stickerConfig.type = "1";
                             }
                         }
                         this.c.put(stickerConfig.matchKey, stickerConfig);
-                        if (TextUtils.equals(stickerGroup.type, "anchor_custom_sticker")) {
+                        if (StringUtils.equals(stickerGroup.type, "anchor_custom_sticker")) {
                             this.d.put(stickerConfig.id, stickerConfig);
                             this.e.put(stickerConfig.matchKey, stickerConfig);
                         }

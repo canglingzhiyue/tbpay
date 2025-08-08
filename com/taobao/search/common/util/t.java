@@ -1,6 +1,6 @@
 package com.taobao.search.common.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class t implements com.taobao.search.rainbow.c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "_default_";
         }
         JSONObject jSONObject = new JSONObject();

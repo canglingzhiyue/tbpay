@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.template.download;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.monitor.DXMonitorConstant;
 import com.taobao.android.dinamicx.s;
@@ -34,7 +34,7 @@ public class g implements h {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("4669a958", new Object[]{this, str, str2, dXTemplateItem});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             fux.a(str + "下载链接为空");
             try {
                 s sVar = new s(str2);

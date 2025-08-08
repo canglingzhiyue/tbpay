@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.NetworkCallBack;
@@ -192,7 +192,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             final Long valueOf = Long.valueOf(System.currentTimeMillis());
             if (d()) {
@@ -265,7 +265,7 @@ public class i {
             return null;
         }
         boolean z = !c(i);
-        if (d() && (concurrentHashMap = this.e) != null && concurrentHashMap.containsKey(i) && this.e.get(i) != null && !TextUtils.isEmpty(this.e.get(i).get())) {
+        if (d() && (concurrentHashMap = this.e) != null && concurrentHashMap.containsKey(i) && this.e.get(i) != null && !StringUtils.isEmpty(this.e.get(i).get())) {
             if (z) {
                 h(str);
             }
@@ -282,7 +282,7 @@ public class i {
             z = true;
         } else {
             str2 = (String) c().a(i.class.getClassLoader()).a().a(i, (Class<Object>) String.class);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.e.put(i, new SoftReference<>(str2));
             }
         }
@@ -292,7 +292,7 @@ public class i {
         long currentTimeMillis2 = System.currentTimeMillis();
         Object[] objArr = new Object[7];
         objArr[0] = "main-cost WeexCacheHelper 从统一存储读取结束. ";
-        objArr[1] = !TextUtils.isEmpty(str2) ? ResultCode.MSG_SUCCESS : "不存在";
+        objArr[1] = !StringUtils.isEmpty(str2) ? ResultCode.MSG_SUCCESS : "不存在";
         objArr[2] = z ? "开启远程更新" : "不更新";
         objArr[3] = "cost ";
         long j = currentTimeMillis2 - currentTimeMillis;
@@ -305,7 +305,7 @@ public class i {
         com.taobao.android.shop.utils.a.a(objArr);
         this.h = Long.valueOf(j);
         this.i = i;
-        this.j = TextUtils.isEmpty(str2) ? "Bundle不存在" : "统一存储-磁盘";
+        this.j = StringUtils.isEmpty(str2) ? "Bundle不存在" : "统一存储-磁盘";
         this.k = Boolean.valueOf(z);
         return str2;
     }
@@ -315,17 +315,17 @@ public class i {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -2;
         }
         if (this.e.containsKey(str) && this.e.get(str) != null && this.e.get(str).get() != null) {
             return -1;
         }
         String str2 = "";
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = (String) c().a(i.class.getClassLoader()).a().a(str, (Class<Object>) String.class);
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return 0;
         }
         this.e.put(str, new SoftReference<>(str2));
@@ -495,7 +495,7 @@ public class i {
                     com.taobao.android.shop.utils.a.c("----OnHttpListener-----wxResponse == null. 异步更新时发生网络错误");
                 } else {
                     if ("200".equals(wXResponse.statusCode)) {
-                        if (!TextUtils.isEmpty(wXResponse.data)) {
+                        if (!StringUtils.isEmpty(wXResponse.data)) {
                             str2 = wXResponse.data;
                         } else {
                             str2 = wXResponse.originalData != null ? new String(wXResponse.originalData) : "";
@@ -573,7 +573,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("332400c0", new Object[]{map, str});
         }
-        if (map == null || map.isEmpty() || TextUtils.isEmpty(str)) {
+        if (map == null || map.isEmpty() || StringUtils.isEmpty(str)) {
             return Collections.emptyList();
         }
         ArrayList arrayList = new ArrayList();
@@ -602,7 +602,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c2e2d9a6", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "emptyUrl";
         }
         try {
@@ -776,7 +776,7 @@ public class i {
                 ipChange.ipc$dispatch("512b11c", new Object[]{this, finishEvent});
                 return;
             }
-            if (TextUtils.equals(WXErrorCode.WX_DEGRAD_ERR_BUNDLE_CONTENTTYPE_ERROR.getErrorCode(), this.b.statusCode)) {
+            if (StringUtils.equals(WXErrorCode.WX_DEGRAD_ERR_BUNDLE_CONTENTTYPE_ERROR.getErrorCode(), this.b.statusCode)) {
                 com.taobao.android.shop.utils.a.c("-----NetworkListener------onHttpFinish : 网络错误");
             } else {
                 this.b.statusCode = String.valueOf(finishEvent.getHttpCode());

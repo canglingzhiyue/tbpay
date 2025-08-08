@@ -1,7 +1,7 @@
 package com.alipay.android.msp.pay.results;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.core.context.MspTradeContext;
@@ -65,7 +65,7 @@ public class MspPayResult {
 
     public boolean isSuccess() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6049a784", new Object[]{this})).booleanValue() : TextUtils.equals(this.c.read(), String.valueOf(ResultStatus.SUCCEEDED.getStatus()));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6049a784", new Object[]{this})).booleanValue() : StringUtils.equals(this.c.read(), String.valueOf(ResultStatus.SUCCEEDED.getStatus()));
     }
 
     public String getEndCode() {
@@ -81,7 +81,7 @@ public class MspPayResult {
         }
         synchronized (this.k) {
             LogUtil.record(2, "MspPayResult:setEndCode", "endcode=".concat(String.valueOf(str)));
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.c.write(str);
                 this.l = true;
             }
@@ -207,16 +207,16 @@ public class MspPayResult {
             if (context != null) {
                 str = context.getPackageName();
             }
-            if (TextUtils.equals(str, "hk.alipay.wallet") && !TextUtils.isEmpty(this.i)) {
+            if (StringUtils.equals(str, "hk.alipay.wallet") && !StringUtils.isEmpty(this.i)) {
                 return this.i;
             }
-            if (!TextUtils.isEmpty(this.m)) {
+            if (!StringUtils.isEmpty(this.m)) {
                 LogUtil.record(4, "MspPayResult.formatResult", "sourceResult=" + this.m);
                 return this.m;
             }
             StringBuilder sb2 = new StringBuilder();
             sb2.append(ResultStatus.START_ACTIVITY_FAILED.getStatus());
-            if (TextUtils.equals(this.c.read(), sb2.toString())) {
+            if (StringUtils.equals(this.c.read(), sb2.toString())) {
                 return "failed";
             }
             if (!this.l) {
@@ -232,17 +232,17 @@ public class MspPayResult {
                     sb3.append(ResultStatus.PAY_NETWORK_ERROR.getStatus());
                     dynDataWrapper.write(sb3.toString());
                 }
-                if (TextUtils.isEmpty(this.c.read())) {
+                if (StringUtils.isEmpty(this.c.read())) {
                     DynDataWrapper<String> dynDataWrapper2 = this.c;
                     StringBuilder sb4 = new StringBuilder();
                     sb4.append(ResultStatus.CANCELED.getStatus());
                     dynDataWrapper2.write(sb4.toString());
                 }
-                if (TextUtils.isEmpty(this.b.read())) {
+                if (StringUtils.isEmpty(this.b.read())) {
                     this.b.write(MspConfig.getInstance().getMemoUserCancel());
                 }
                 this.l = true;
-                if (this.f4952a != null && (tradeLogicData2 = this.f4952a.getTradeLogicData()) != null && !TextUtils.isEmpty(tradeLogicData2.getTradeNo()) && OrderInfoUtil.isCreateOrderRequest(this.f4952a)) {
+                if (this.f4952a != null && (tradeLogicData2 = this.f4952a.getTradeLogicData()) != null && !StringUtils.isEmpty(tradeLogicData2.getTradeNo()) && OrderInfoUtil.isCreateOrderRequest(this.f4952a)) {
                     this.h = tradeLogicData2.getTradeNo();
                     LogUtil.record(4, "MspPayResult:formatResultModel", "trade_no=" + this.h);
                 }
@@ -255,10 +255,10 @@ public class MspPayResult {
                         this.g = this.d.read().substring(indexOf2, indexOf3);
                     }
                 }
-                if (!TextUtils.isEmpty(this.d.read())) {
+                if (!StringUtils.isEmpty(this.d.read())) {
                     this.d.write(this.d.read().replaceAll("(\".*);(.*\")", "$1-$2"));
                 }
-                if (this.f4952a != null && this.f4952a.getContext() != null && OrderInfoUtil.isCreateOrderRequest(this.f4952a) && (tradeLogicData = this.f4952a.getTradeLogicData()) != null && !TextUtils.isEmpty(tradeLogicData.getTradeNo())) {
+                if (this.f4952a != null && this.f4952a.getContext() != null && OrderInfoUtil.isCreateOrderRequest(this.f4952a) && (tradeLogicData = this.f4952a.getTradeLogicData()) != null && !StringUtils.isEmpty(tradeLogicData.getTradeNo())) {
                     this.h = tradeLogicData.getTradeNo();
                 }
                 long openTime = LogAgent.getOpenTime();
@@ -282,7 +282,7 @@ public class MspPayResult {
                 sb.append("result={");
                 sb.append(this.d.read());
                 sb.append(riy.BLOCK_END_STR);
-                if (!TextUtils.isEmpty(this.g)) {
+                if (!StringUtils.isEmpty(this.g)) {
                     try {
                         if (this.g.startsWith("http%3A%2F%2F") || this.g.startsWith("https%3A%2F%2F")) {
                             this.g = URLDecoder.decode(this.g, "utf-8");
@@ -294,17 +294,17 @@ public class MspPayResult {
                     sb.append(this.g);
                     sb.append(riy.BLOCK_END_STR);
                 }
-                if (!TextUtils.isEmpty(this.h)) {
+                if (!StringUtils.isEmpty(this.h)) {
                     sb.append(";trade_no={");
                     sb.append(this.h);
                     sb.append(riy.BLOCK_END_STR);
                 }
-                if (!TextUtils.isEmpty(this.f)) {
+                if (!StringUtils.isEmpty(this.f)) {
                     sb.append(";openTime={");
                     sb.append(this.f);
                     sb.append(riy.BLOCK_END_STR);
                 }
-                if (!TextUtils.isEmpty(this.j)) {
+                if (!StringUtils.isEmpty(this.j)) {
                     sb.append(";renderTime={");
                     sb.append(this.j);
                     sb.append(riy.BLOCK_END_STR);

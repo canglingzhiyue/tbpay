@@ -1,0 +1,119 @@
+{
+  "props": {
+    "mainList": "messageFlow",
+    "oldToNew": "0"
+  },
+  "source": {
+    "initTimeout": 3000,
+    "sourceList": [
+      {
+        "name": "messageSource",
+        "type": "source.message.data.simpleMessageList",
+        "defaultLoad": 0
+      },
+      {
+        "name": "conversation",
+        "type": "source.message.data.simpleConversation",
+        "defaultLoad": 0
+      }
+    ]
+  },
+  "transformer": {
+    "jsFile": "",
+    "nativeTransformerList": [
+      {
+        "name": "messageSenderView",
+        "type": "transformer.message.messageFlow.simpleMessageSenderView"
+      },
+      {
+        "name": "messageFlowComposeViewObject",
+        "type": "transformer.message.messageFlow.simpleListStatus"
+      },
+      {
+        "name": "conversationBaseInfo",
+        "type": "transformer.message.conversation.simpleBaseInfo"
+      },
+      {
+        "name": "messageScroll",
+        "type": "transformer.message.messageFlow.simpleScroll"
+      }
+    ],
+    "jsTransformerList": [
+    ],
+    "finalTransformerList": [
+      {
+        "name": "messageCompose",
+        "type": "transformer.message.messageFlow.simpleMessageCompose"
+      }
+    ]
+  },
+  "event": {
+    "jsFile": ""
+  },
+  "layout": {
+    "renderTemplate": {
+      "name": "alimp_page_official",
+      "renderType": "dinamicX",
+      "renderData": {
+        "name": "alimp_page_official",
+        "version": "75",
+        "url": "https://dinamicx.alibabausercontent.com/l_pub/alimp_page_official/1695130508873/alimp_page_official.zip",
+        "heightMode": "fullScreen",
+        "convertJSON": "1",
+        "usePartRefresh": "1",
+        "recyclerLayoutRefresh": [{
+          "widgetId": "messageFlow",
+          "refreshType": "dxPartRefreshHanlder.message.messageflow.simpleCommon"
+        }]
+      }
+    },
+    "data": {
+      "props": "${props}",
+      "bizType": "${props.bizType}",
+      "title": "${runtimeData.conversationDisplayInfo.displayName}",
+      "ccode": "${props.ccode}",
+      "messageViewObjects": "${runtimeData.messageViewObjects}",
+      "__DXCMD": "${runtimeData.listStatus.cmd}"
+    },
+    "userTrack": {
+      "pageName": "${props.registry.pageName}",
+      "spmB": "${props.registry.spmb}",
+      "actions": {
+        "onAppear": {
+          "name": "Page_Chat",
+          "eventId": "2001",
+          "spmC": "0",
+          "spmD": "0",
+          "args": {
+            "folderId": "${props.nodeId}"
+          }
+        },
+        "onDisappear": {
+          "name": "Page_Chat",
+          "eventId": "2001",
+          "spmC": "0",
+          "spmD": "0",
+          "args": {
+            "folderId": "${props.nodeId}"
+          }
+        }
+      }
+    },
+    "eventHandler": {
+      "onDisappear": [
+        {
+          "type": "eventhandler.message.tab.pushRecall",
+          "data": {
+            "source": "imbaInnerPush"
+          }
+        }]
+    },
+
+    "children": {
+
+    }
+  },
+  "poplayer": {
+
+  }
+}

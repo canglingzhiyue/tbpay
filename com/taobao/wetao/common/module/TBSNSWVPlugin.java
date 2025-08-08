@@ -3,7 +3,7 @@ package com.taobao.wetao.common.module;
 import android.os.Vibrator;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -50,7 +50,7 @@ public class TBSNSWVPlugin extends e {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f7db2948", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("params null");
         } else {
             JSONObject parseObject = JSON.parseObject(str);
@@ -58,7 +58,7 @@ public class TBSNSWVPlugin extends e {
             String string2 = parseObject.getString("arg1");
             String string3 = parseObject.getString("arg2");
             String string4 = parseObject.getString("arg3");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3) && !TextUtils.isEmpty(string4)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3) && !StringUtils.isEmpty(string4)) {
                 z = false;
             }
             if (z) {
@@ -82,13 +82,13 @@ public class TBSNSWVPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("48d4f40", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Vibrator vibrator = (Vibrator) this.mContext.getSystemService("vibrator");
         try {
             String optString = new org.json.JSONObject(str).optString("type");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 optString = "light";
             }
             char c = 65535;
@@ -158,11 +158,11 @@ public class TBSNSWVPlugin extends e {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        if (!TextUtils.isEmpty(optString) && TextUtils.isDigitsOnly(optString)) {
+        if (!StringUtils.isEmpty(optString) && StringUtils.isDigitsOnly(optString)) {
             a.a().s().a(Integer.valueOf(optString).intValue());
             return true;
         }
-        if (!TextUtils.isEmpty(optString2)) {
+        if (!StringUtils.isEmpty(optString2)) {
             a.a().s().a(optString2);
             return true;
         }

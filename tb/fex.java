@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Looper;
 import android.os.MessageQueue;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -349,7 +349,7 @@ public class fex extends a {
             Activity activity = this.f27875a;
             sb.append(activity != null ? Boolean.valueOf(activity.isFinishing()) : "activity is null");
             i.d(a2, sb.toString());
-        } else if (TextUtils.isEmpty(this.f) || this.k) {
+        } else if (StringUtils.isEmpty(this.f) || this.k) {
         } else {
             this.k = true;
             this.d.setVisibility(8);
@@ -419,7 +419,7 @@ public class fex extends a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR) || !n()) {
+        if (StringUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR) || !n()) {
             return str;
         }
         return com.taobao.vessel.utils.b.HTTPS_SCHEMA + str;
@@ -559,7 +559,7 @@ public class fex extends a {
             return;
         }
         egy egyVar = this.e;
-        if (egyVar == null || TextUtils.isEmpty(egyVar.e)) {
+        if (egyVar == null || StringUtils.isEmpty(egyVar.e)) {
             return;
         }
         this.f = eqf.a(this.e.e, "newdetail", "1");

@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.msoa;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class NewDetailMSOAImpl implements Serializable {
         String str4 = "https://a.m.taobao.com/sku" + str2 + ".htm";
         Bundle bundle = new Bundle();
         bundle.putString(e.REQUEST_ID, str);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             try {
                 i = Integer.parseInt(str3);
             } catch (Exception unused) {
@@ -78,7 +78,7 @@ public class NewDetailMSOAImpl implements Serializable {
         emu.a("com.taobao.android.detail.wrapper.msoa.NewDetailMSOAImpl#addSMCart with token " + str3);
         if (emu.c()) {
             a.a(str, str2, str3, str4);
-        } else if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             c.a().a(str, "msoa_error_invalid_param", "invalid parameter", null);
         } else {
             try {
@@ -109,7 +109,7 @@ public class NewDetailMSOAImpl implements Serializable {
             if (i <= 0) {
                 i = 1;
             }
-            if (a2.y().t != null && !TextUtils.isEmpty(a2.y().t.y())) {
+            if (a2.y().t != null && !StringUtils.isEmpty(a2.y().t.y())) {
                 hashMap.put("tpId", a2.y().t.y());
             }
             f.a(a2, new edv(new com.taobao.android.detail.datasdk.event.params.c(new a.C0382a().a(i).b(str2).a(str5).a(hashMap).a(), false)), new com.taobao.android.trade.event.c<i>() { // from class: com.taobao.android.detail.wrapper.msoa.NewDetailMSOAImpl.1
@@ -213,19 +213,19 @@ public class NewDetailMSOAImpl implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("53420fc1", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             com.taobao.android.detail.core.utils.i.a(this.TAG, "requestId or type is null");
             c.a().b(str, "0", DetailFloatActivity.ERROR_MSG, null);
         } else {
             Uri.Builder buildUpon = Uri.parse(DetailFloatActivity.URI).buildUpon();
             buildUpon.appendQueryParameter(b.b, str2);
             buildUpon.appendQueryParameter(b.f11376a, str);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 try {
                     JSONObject parseObject = JSON.parseObject(str3);
                     if (parseObject != null) {
                         for (String str4 : parseObject.keySet()) {
-                            if (!TextUtils.isEmpty(str4) && (obj = parseObject.get(str4)) != null && (obj instanceof String)) {
+                            if (!StringUtils.isEmpty(str4) && (obj = parseObject.get(str4)) != null && (obj instanceof String)) {
                                 buildUpon.appendQueryParameter(str4, (String) obj);
                             }
                         }

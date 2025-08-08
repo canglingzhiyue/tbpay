@@ -6,7 +6,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -347,7 +347,7 @@ public class PreloadService implements IPreloadService {
         long currentTimeMillis = System.currentTimeMillis();
         ogh.a("startRender");
         this.mPreloadVideoTracker.a(this.mFluidContext);
-        if (TextUtils.equals("video", str)) {
+        if (StringUtils.equals("video", str)) {
             if (soq.a(soq.AB_KEY_OPT_VIDEO_PRELOADCACHE)) {
                 AsyncTask.THREAD_POOL_EXECUTOR.execute(new Runnable() { // from class: com.taobao.android.fluid.framework.preload.PreloadService.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;

@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -495,7 +495,7 @@ public final class h extends iez<FrameLayout, com.etao.feimagesearch.newresult.b
             try {
                 com.etao.feimagesearch.newresult.base.c i = h.this.m().i();
                 String f = i != null ? i.f() : null;
-                if (TextUtils.isEmpty(f)) {
+                if (StringUtils.isEmpty(f)) {
                     cox.a("changebox", com.etao.feimagesearch.model.d.KEY_PHOTO_FROM, h.this.m().a().getValue());
                 } else {
                     cox.a("changebox", "tfs", f, "region", String.valueOf(rectF.left) + "-" + rectF.top + "-" + rectF.right + "-" + rectF.bottom, com.etao.feimagesearch.model.d.KEY_PHOTO_FROM, h.this.m().a().getValue());
@@ -1503,7 +1503,7 @@ public final class h extends iez<FrameLayout, com.etao.feimagesearch.newresult.b
             strArr[0] = "for_bts";
             com.etao.feimagesearch.newresult.base.c i2 = m().i();
             String str = null;
-            if (TextUtils.isEmpty(i2 != null ? i2.g() : null)) {
+            if (StringUtils.isEmpty(i2 != null ? i2.g() : null)) {
                 str = "";
             } else {
                 com.etao.feimagesearch.newresult.base.c i3 = m().i();

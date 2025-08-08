@@ -1,6 +1,6 @@
 package com.taobao.avplayer.core.protocol;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.core.IDWObject;
 import com.taobao.weex.common.Constants;
@@ -164,7 +164,7 @@ public class DWTimelineObject implements IDWObject, Comparable<DWTimelineObject>
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d3efb2a1", new Object[]{this, str})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.0f;
         }
         String[] split = str.split(":");

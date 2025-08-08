@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ProgressBar;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -201,7 +201,7 @@ public class H5PopActivity extends AppCompatActivity {
         }
         String stringExtra = getIntent().getStringExtra(riu.e);
         AdapterForTLog.logd(TAG, "load url=" + stringExtra);
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return;
         }
         this.f8959a.loadUrl(stringExtra);

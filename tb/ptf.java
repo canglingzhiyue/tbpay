@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -423,7 +423,7 @@ public final class ptf implements shm {
         } else if (!FluidSDK.getRemoteConfigAdapter().getOrangeBooleanConfig("enableCardH5", false)) {
         } else {
             skl j = ((IDataService) this.d.z().getService(IDataService.class)).getConfig().j();
-            if ((!TextUtils.isEmpty(iqw.b(this.d.z()) ? j.l : j.k)) && this.m == null) {
+            if ((!StringUtils.isEmpty(iqw.b(this.d.z()) ? j.l : j.k)) && this.m == null) {
                 this.m = new rgc(this.e, this.d);
             }
             this.c.registerMessageHandler(this.m);
@@ -570,7 +570,7 @@ public final class ptf implements shm {
         HashMap hashMap = new HashMap();
         hashMap.put("state", z ? "appear" : "disappear");
         String a2 = ((ILifecycleService) this.f32876a.getService(ILifecycleService.class)).getConfig().a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("type", a2);
         }
         spz.c(TAG, "发送页面状态发生改变的消息到消息中心，args: " + hashMap);
@@ -631,7 +631,7 @@ public final class ptf implements shm {
             ipChange.ipc$dispatch("65bfbf9", new Object[]{this});
             return;
         }
-        boolean z = iqw.f() && !TextUtils.isEmpty(((IDataService) this.f32876a.getService(IDataService.class)).getConfig().j().g) && !((IQuickOpenService) this.f32876a.getService(IQuickOpenService.class)).isInQuickOpenMode();
+        boolean z = iqw.f() && !StringUtils.isEmpty(((IDataService) this.f32876a.getService(IDataService.class)).getConfig().j().g) && !((IQuickOpenService) this.f32876a.getService(IQuickOpenService.class)).isInQuickOpenMode();
         if (z) {
             ((IInteractionService) this.d.z().getService(IInteractionService.class)).getConfig().b(true);
             if (this.k == null) {

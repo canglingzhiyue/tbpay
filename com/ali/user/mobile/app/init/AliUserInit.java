@@ -3,7 +3,7 @@ package com.ali.user.mobile.app.init;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.app.dataprovider.IDataProvider;
@@ -116,7 +116,7 @@ public class AliUserInit {
                             return;
                         }
                         try {
-                            if (!LoginSwitch.isInABTestRegion("backToForeground", 10000) || ServiceFactory.getService(NumberAuthService.class) == null || !((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() || !TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getLoginToken())) {
+                            if (!LoginSwitch.isInABTestRegion("backToForeground", 10000) || ServiceFactory.getService(NumberAuthService.class) == null || !((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() || !StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getLoginToken())) {
                                 return;
                             }
                             ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).preFecth("backToForeground");
@@ -157,7 +157,7 @@ public class AliUserInit {
         }
         SharedPreferences sharedPreferences = DataProviderFactory.getApplicationContext().getSharedPreferences("userinfo", 4);
         String string = sharedPreferences.getString("accs_login", "");
-        if (!TextUtils.isEmpty(string) && (split = TextUtils.split(string, Constants.COOKIE_SPLIT)) != null && split.length == 2) {
+        if (!StringUtils.isEmpty(string) && (split = StringUtils.split(string, Constants.COOKIE_SPLIT)) != null && split.length == 2) {
             try {
                 if (System.currentTimeMillis() - Long.parseLong(split[1]) <= 300000) {
                     LoginContext.NEED_ACCS_LOGIN = true;

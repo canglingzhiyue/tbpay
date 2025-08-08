@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -133,7 +133,7 @@ public class lbr extends lbm {
         kxf.a().c(50018);
         Intent intent = curActivity.getIntent();
         Uri data = intent == null ? null : intent.getData();
-        if (data == null || !TextUtils.equals("homepage", data.getQueryParameter("target"))) {
+        if (data == null || !StringUtils.equals("homepage", data.getQueryParameter("target"))) {
             return;
         }
         UTAnalytics.getInstance().getDefaultTracker().setGlobalProperty("isOutpushBacktoHome", "1");
@@ -281,14 +281,14 @@ public class lbr extends lbm {
         } else {
             String queryParameter = data.getQueryParameter(oqn.KEY_PREVIEW_PARAM);
             String queryParameter2 = data.getQueryParameter("fontSize");
-            if (!TextUtils.isEmpty(queryParameter) && queryParameter.contains("templateMock=")) {
+            if (!StringUtils.isEmpty(queryParameter) && queryParameter.contains("templateMock=")) {
                 Intent intent2 = new Intent(this.f30455a.getCurActivity(), DXTemplatePreviewActivity.class);
                 intent2.putExtra(DXTemplatePreviewActivity.PREVIEW_INFO, queryParameter.substring(queryParameter.indexOf("=") + 1));
-                if (!TextUtils.isEmpty(queryParameter2)) {
+                if (!StringUtils.isEmpty(queryParameter2)) {
                     intent2.putExtra("fontSize", queryParameter2);
                 }
                 this.f30455a.getCurActivity().startActivity(intent2);
-            } else if (TextUtils.isEmpty(queryParameter)) {
+            } else if (StringUtils.isEmpty(queryParameter)) {
             } else {
                 d.b("Preview", oqn.KEY_PREVIEW_PARAM, false, queryParameter);
                 oqq.a(queryParameter);

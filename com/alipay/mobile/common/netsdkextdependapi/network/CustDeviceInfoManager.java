@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.netsdkextdependapi.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoManagerAdapter;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transport.utils.TransportEnvUtil;
@@ -30,7 +30,7 @@ public class CustDeviceInfoManager extends DeviceInfoManagerAdapter {
             return (String) ipChange.ipc$dispatch("79a7d1d2", new Object[]{this});
         }
         try {
-            return TextUtils.equals(MiscNetUtils.getAppId(), "TAOBAO_AND") ? "" : UTDevice.getUtdid(TransportEnvUtil.getContext());
+            return StringUtils.equals(MiscNetUtils.getAppId(), "TAOBAO_AND") ? "" : UTDevice.getUtdid(TransportEnvUtil.getContext());
         } catch (Throwable th) {
             LogCatUtil.debug("CustDeviceInfoManager", "getDeviceId ex= " + th.toString());
             return "";

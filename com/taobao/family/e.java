@@ -1,6 +1,6 @@
 package com.taobao.family;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -29,7 +29,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("34bbc8bd", new Object[]{this, str, map, iVar});
-        } else if (TextUtils.isEmpty(str) || map == null) {
+        } else if (StringUtils.isEmpty(str) || map == null) {
         } else {
             MtopRequest mtopRequest = new MtopRequest();
             mtopRequest.setApiName(str);

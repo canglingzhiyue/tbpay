@@ -1,6 +1,6 @@
 package com.taobao.android.behavir.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -172,7 +172,7 @@ public abstract class BHRTaskConfigBase implements Serializable {
         if (Double.compare(d, 1.0d) >= 0) {
             return true;
         }
-        if (TextUtils.isEmpty(dsj.f26943a)) {
+        if (StringUtils.isEmpty(dsj.f26943a)) {
             return false;
         }
         try {
@@ -203,7 +203,7 @@ public abstract class BHRTaskConfigBase implements Serializable {
         }
         if (obj instanceof BHRTaskConfigBase) {
             BHRTaskConfigBase bHRTaskConfigBase = (BHRTaskConfigBase) obj;
-            if (TextUtils.equals(this.configId, bHRTaskConfigBase.configId) && TextUtils.equals(this.configName, bHRTaskConfigBase.configName)) {
+            if (StringUtils.equals(this.configId, bHRTaskConfigBase.configId) && StringUtils.equals(this.configName, bHRTaskConfigBase.configName)) {
                 return true;
             }
         }

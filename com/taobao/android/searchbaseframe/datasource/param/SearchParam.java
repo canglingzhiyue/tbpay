@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.datasource.param;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.k;
 import java.io.Serializable;
@@ -280,7 +280,7 @@ public interface SearchParam extends Serializable {
                 return (String) ipChange.ipc$dispatch("363e3ca1", new Object[]{str});
             }
             String str2 = SEPARATOR_MAP.get(str);
-            return !TextUtils.isEmpty(str2) ? str2 : ",";
+            return !StringUtils.isEmpty(str2) ? str2 : ",";
         }
     }
 }

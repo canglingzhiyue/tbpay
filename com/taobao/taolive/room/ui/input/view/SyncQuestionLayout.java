@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.ui.input.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -177,7 +177,7 @@ public class SyncQuestionLayout extends LinearLayout implements View.OnClickList
         } else if (view.getId() != R.id.input_qa_entrance) {
         } else {
             String c = a.c(this.mTbLiveDataModel);
-            if (!TextUtils.isEmpty(c) && (aVar = this.mFrameContext) != null) {
+            if (!StringUtils.isEmpty(c) && (aVar = this.mFrameContext) != null) {
                 aVar.e().a(xkw.EVENT_SHOW_QA, c, this.mFrameContext.G());
             }
             com.taobao.alilive.aliliveframework.frame.a aVar2 = this.mFrameContext;
@@ -195,7 +195,7 @@ public class SyncQuestionLayout extends LinearLayout implements View.OnClickList
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("42b81260", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !this.mIsChecked) {
+        } else if (StringUtils.isEmpty(str) || !this.mIsChecked) {
         } else {
             String str2 = null;
             TBLiveDataModel tBLiveDataModel = this.mTbLiveDataModel;

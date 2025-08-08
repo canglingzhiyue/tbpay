@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -87,10 +87,10 @@ public class l {
                 jouVar.c(bVar, jSONObject);
                 bVar.l(n.getJSONObject("common"));
                 String G = bVar.G();
-                if (TextUtils.isEmpty(G)) {
+                if (StringUtils.isEmpty(G)) {
                     G = n2.getString("root");
                 }
-                if (TextUtils.isEmpty(G)) {
+                if (StringUtils.isEmpty(G)) {
                     bga.a.a(h, "FullResponseParse", ErrorConstants.PROTOCOL_ROOT_KEY_EMPTY.errorCode(), ErrorConstants.PROTOCOL_ROOT_KEY_EMPTY.errorMessage());
                     return new a(true, null);
                 }

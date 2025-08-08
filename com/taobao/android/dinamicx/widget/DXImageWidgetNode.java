@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import android.view.View;
@@ -430,7 +430,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
         if (z2 || z) {
             double d2 = this.aspectRatio;
             if (d2 <= mto.a.GEO_NOT_SUPPORT) {
-                if (!TextUtils.isEmpty(this.imageUrl)) {
+                if (!StringUtils.isEmpty(this.imageUrl)) {
                     Double d3 = imageRatioCache.get(this.imageUrl);
                     if (d3 != null) {
                         d2 = d3.doubleValue();
@@ -557,7 +557,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
         final String str = this.decidedUrl;
         if (str == null) {
             if (needHandleDark(getDXRuntimeContext())) {
-                if (!TextUtils.isEmpty(getDarkImageUrl())) {
+                if (!StringUtils.isEmpty(getDarkImageUrl())) {
                     str = getDarkImageUrl();
                 } else {
                     str = this.imageUrl;
@@ -574,7 +574,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
         } catch (Throwable th) {
             com.taobao.android.dinamicx.exception.a.b(th);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             decidedUrlWithExpectedSize.m = true;
             if (getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
                 decidedUrlWithExpectedSize.j = new c() { // from class: com.taobao.android.dinamicx.widget.DXImageWidgetNode.1
@@ -643,7 +643,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
             Drawable drawable = this.localImageDrawable;
             if (drawable != null) {
                 setLocalImage(imageView, drawable);
-            } else if (!TextUtils.isEmpty(getImageName())) {
+            } else if (!StringUtils.isEmpty(getImageName())) {
                 setLocalRes(imageView, getImageName());
             } else {
                 imageView.setImageDrawable(null);
@@ -749,7 +749,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
     @Override // com.taobao.android.dinamicx.widget.DXWidgetNode
     public boolean extraHandleDark() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("abe5f779", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(getDarkImageUrl()) || isNeedDarkModeOverlay();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("abe5f779", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(getDarkImageUrl()) || isNeedDarkModeOverlay();
     }
 
     @Override // com.taobao.android.dinamicx.widget.DXWidgetNode
@@ -798,7 +798,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
         }
         d dVar = new d();
         DXEngineConfig B = getDXRuntimeContext().B();
-        if (TextUtils.isEmpty(getImageBiztype()) && B != null) {
+        if (StringUtils.isEmpty(getImageBiztype()) && B != null) {
             dVar.e = B.h();
             dVar.a(B.t());
         } else {
@@ -941,7 +941,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("409026f", new Object[]{context, str})).intValue();
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return 0;
         }
         Integer num = resCache.get(str);
@@ -1237,7 +1237,7 @@ public class DXImageWidgetNode extends DXWidgetNode implements bs {
             ipChange.ipc$dispatch("cec106a7", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.decidedUrl = null;
         }
         this.imageUrl = str;

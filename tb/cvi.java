@@ -4,7 +4,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.taobao.taobao.R;
 
@@ -37,7 +37,7 @@ public class cvi {
                     return;
                 }
                 String string = context.getString(R.string.system_default_channel);
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     string = "System Default Channel";
                 }
                 cvz.c().a(cvi.this.a(context, cvi.DEFAULT_NOTIFICATION_CHANNEL_ID, string, 3));

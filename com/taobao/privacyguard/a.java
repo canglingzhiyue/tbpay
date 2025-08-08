@@ -1,7 +1,7 @@
 package com.taobao.privacyguard;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import tb.kge;
@@ -73,7 +73,7 @@ public class a {
 
     public boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : TextUtils.equals(this.c.split("@")[0], "212200");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : StringUtils.equals(this.c.split("@")[0], "212200");
     }
 
     public boolean f() {

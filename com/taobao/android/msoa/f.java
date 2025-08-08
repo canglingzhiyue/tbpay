@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.flexa.compat.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.bundleInfo.b;
@@ -297,10 +297,10 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("387a91d9", new Object[]{this, dVar});
         }
-        if (dVar != null && !TextUtils.isEmpty(dVar.a()) && dVar.b() != null) {
+        if (dVar != null && !StringUtils.isEmpty(dVar.a()) && dVar.b() != null) {
             String str = "msoa.interface." + dVar.b().getCanonicalName() + oan.DEFAULT_PLAN_B_PASSWORD_REGEX;
             String a2 = dVar.a();
-            if (!TextUtils.isEmpty(dVar.c())) {
+            if (!StringUtils.isEmpty(dVar.c())) {
                 a2 = dVar.a() + "@" + dVar.c();
             }
             com.taobao.android.msoa.util.d.a(str, "1.0", dVar.a(), dVar.c(), com.taobao.android.msoa.util.d.a(str), null, null, null, "MSOA_ObtainService");

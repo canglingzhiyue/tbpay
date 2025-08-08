@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.revisionswitch.core.f;
 import com.taobao.orange.OrangeConfig;
@@ -68,7 +68,7 @@ public class ilx {
                         if (ilx.ORANGE_GROUP_NAME.equals(str)) {
                             TLog.loge("OrangeSwitchManager", "into update orange tb_revision_homepage_switch config");
                             String customConfig = OrangeConfig.getInstance().getCustomConfig(str, null);
-                            if (TextUtils.equals(customConfig, ilx.a(ilx.this).b("orange"))) {
+                            if (StringUtils.equals(customConfig, ilx.a(ilx.this).b("orange"))) {
                                 return;
                             }
                             ilx.a(ilx.this).a("orange", customConfig);
@@ -76,7 +76,7 @@ public class ilx {
                         } else if (ilx.ORANGE_SIMPLE_GROUP_NAME.equals(str)) {
                             TLog.loge("OrangeSwitchManager", "into update orange tb_revision_simple_switch config");
                             String customConfig2 = OrangeConfig.getInstance().getCustomConfig(str, null);
-                            if (TextUtils.equals(customConfig2, ilx.a(ilx.this).b(ily.KEY_SIMPLE_SWITCH_ORANGE))) {
+                            if (StringUtils.equals(customConfig2, ilx.a(ilx.this).b(ily.KEY_SIMPLE_SWITCH_ORANGE))) {
                                 return;
                             }
                             ilx.a(ilx.this).a(ily.KEY_SIMPLE_SWITCH_ORANGE, customConfig2);
@@ -84,7 +84,7 @@ public class ilx {
                         } else {
                             TLog.loge("OrangeSwitchManager", "into update orange tb_revision_new_discovery_switch config");
                             String config = OrangeConfig.getInstance().getConfig(str, "open", null);
-                            if (TextUtils.equals(config, ilx.a(ilx.this).b(ily.KEY_NEW_DISCOVERY_ORANGE))) {
+                            if (StringUtils.equals(config, ilx.a(ilx.this).b(ily.KEY_NEW_DISCOVERY_ORANGE))) {
                                 return;
                             }
                             ilx.a(ilx.this).a(ily.KEY_NEW_DISCOVERY_ORANGE, config);

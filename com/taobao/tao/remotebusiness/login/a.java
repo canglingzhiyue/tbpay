@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.media.ExifInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ucp.util.LoginBroadcastReceiver;
@@ -358,13 +358,13 @@ public abstract class a implements c {
             jSONObject.put("v", (Object) this.d);
             jSONObject.put("processName", (Object) this.g);
             jSONObject.put("appBackGround", (Object) Boolean.valueOf(this.h));
-            if (!TextUtils.isEmpty(this.b)) {
+            if (!StringUtils.isEmpty(this.b)) {
                 jSONObject.put("long_nick", (Object) this.b);
             }
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 jSONObject.put("msgCode", (Object) this.e);
             }
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 jSONObject.put("S_STATUS", (Object) this.f);
             }
             return jSONObject.toJSONString();

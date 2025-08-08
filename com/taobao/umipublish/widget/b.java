@@ -3,7 +3,7 @@ package com.taobao.umipublish.widget;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -125,16 +125,16 @@ public class b extends Dialog {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             this.f23365a.setText(this.f);
         }
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             this.c.setText(this.g);
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             this.b.setText(this.h);
         }
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             this.d.setVisibility(8);
             return;
         }

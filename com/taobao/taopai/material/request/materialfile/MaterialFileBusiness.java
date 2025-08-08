@@ -2,7 +2,7 @@ package com.taobao.taopai.material.request.materialfile;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -184,7 +184,7 @@ public class MaterialFileBusiness extends BaseMaterialBusiness<String> {
             ipChange.ipc$dispatch("dd65e9f5", new Object[]{this});
         } else if (this.mFileParams.a()) {
             final String a2 = qbr.a(this.mFileParams.j(), this.mFileParams.i(), this.mFileParams.k());
-            if (!TextUtils.isEmpty(this.mFileParams.m())) {
+            if (!StringUtils.isEmpty(this.mFileParams.m())) {
                 a2 = a2 + File.separator + this.mFileParams.m();
             }
             if (!isCacheInvalid(a2)) {
@@ -480,11 +480,11 @@ public class MaterialFileBusiness extends BaseMaterialBusiness<String> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bfdfe4f8", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             aVar.a();
         } else {
             String d = qcg.d(str + File.separator + TEMPLATE_JSON);
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 AsyncTask.THREAD_POOL_EXECUTOR.execute(new AnonymousClass4(str, aVar, d));
             } else {
                 aVar.a();
@@ -553,7 +553,7 @@ public class MaterialFileBusiness extends BaseMaterialBusiness<String> {
         FunnyBean funnyBean = (FunnyBean) JSON.parseObject(str2, FunnyBean.class);
         if (funnyBean != null && funnyBean.stage != null && funnyBean.stage.decorators != null && !funnyBean.stage.decorators.isEmpty()) {
             for (FunnyDecorationBean funnyDecorationBean : funnyBean.stage.decorators) {
-                if (TextUtils.equals(funnyDecorationBean.type, "2")) {
+                if (StringUtils.equals(funnyDecorationBean.type, "2")) {
                     String str3 = str + File.separator + funnyDecorationBean.resourcePath + File.separator + REQUIRE_JSON;
                     if (new File(str3).exists()) {
                         new com.taobao.taopai.material.maires.b(this.mContext).a(this.mFileParams.b(), str3, 30, aVar);
@@ -628,7 +628,7 @@ public class MaterialFileBusiness extends BaseMaterialBusiness<String> {
             if (r0 == 0) goto L2d
             return r3
         L2d:
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 == 0) goto L34
             return r3
         L34:
@@ -648,7 +648,7 @@ public class MaterialFileBusiness extends BaseMaterialBusiness<String> {
             r0.<init>(r8)
             com.taobao.taopai.material.request.materialfile.b r8 = r7.mFileParams
             java.lang.String r8 = r8.m()
-            boolean r8 = android.text.TextUtils.isEmpty(r8)
+            boolean r8 = android.text.StringUtils.isEmpty(r8)
             if (r8 == 0) goto La7
             java.io.File[] r8 = r0.listFiles()
             if (r8 == 0) goto La6
@@ -662,11 +662,11 @@ public class MaterialFileBusiness extends BaseMaterialBusiness<String> {
             int r4 = r4.h()
             r5 = 7
             if (r4 != r5) goto L86
-            boolean r4 = android.text.TextUtils.isEmpty(r1)
+            boolean r4 = android.text.StringUtils.isEmpty(r1)
             if (r4 == 0) goto L86
             java.lang.String r1 = "marvel.json"
         L86:
-            boolean r4 = android.text.TextUtils.isEmpty(r1)
+            boolean r4 = android.text.StringUtils.isEmpty(r1)
             if (r4 != 0) goto L93
             boolean r8 = r7.isExistFile(r8, r1)
             if (r8 != 0) goto Lb8

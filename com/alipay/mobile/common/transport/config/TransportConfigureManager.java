@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.config;
 
 import android.content.Context;
 import android.os.FileObserver;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.transport.TransportStrategy;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -277,7 +277,7 @@ public class TransportConfigureManager extends ConfigureCtrlManagerImpl {
                 return;
             }
             String configFromSdcard = MiscUtils.getConfigFromSdcard(SDCARD_CONFIG_FILE);
-            if (TextUtils.isEmpty(configFromSdcard)) {
+            if (StringUtils.isEmpty(configFromSdcard)) {
                 return;
             }
             LogCatUtil.info("Conf_TransportConfigureManager", "loadConfigFromSdcard: " + configFromSdcard);
@@ -356,7 +356,7 @@ public class TransportConfigureManager extends ConfigureCtrlManagerImpl {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("bb74f7cb", new Object[]{this, new Integer(i), str});
-            } else if (TextUtils.isEmpty(str) || !str.equals(NwSharedSwitchUtil.SHARED_FILE) || i != 2) {
+            } else if (StringUtils.isEmpty(str) || !str.equals(NwSharedSwitchUtil.SHARED_FILE) || i != 2) {
             } else {
                 LogCatUtil.info("Conf_TransportConfigureManager", "ConfigFileListener. path=[" + str + "]  event=[" + i + "] ");
                 byte b = this.f5526a;
@@ -496,11 +496,11 @@ public class TransportConfigureManager extends ConfigureCtrlManagerImpl {
         }
         TransportConfigureManager transportConfigureManager2 = getInstance();
         String amnetDnsSetting = ReadSettingServerUrl.getInstance().getAmnetDnsSetting(context);
-        if (TextUtils.isEmpty(amnetDnsSetting)) {
+        if (StringUtils.isEmpty(amnetDnsSetting)) {
             return false;
         }
         String trim = amnetDnsSetting.trim();
-        if (TextUtils.isEmpty(trim)) {
+        if (StringUtils.isEmpty(trim)) {
             return false;
         }
         transportConfigureManager2.setValue(TransportConfigureItem.MMTP_URL, trim);

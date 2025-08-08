@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewStub;
 import android.view.animation.Animation;
@@ -228,7 +228,7 @@ public class kxy implements j<Event> {
 
     private String a(PositionInfo positionInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d6a55dc1", new Object[]{this, positionInfo}) : TextUtils.equals("CN", positionInfo.countryCode) ? positionInfo.editionCode : "global";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d6a55dc1", new Object[]{this, positionInfo}) : StringUtils.equals("CN", positionInfo.countryCode) ? positionInfo.editionCode : "global";
     }
 
     @Override // com.taobao.android.trade.event.j

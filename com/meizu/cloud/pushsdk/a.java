@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.util.MzSystemUtils;
@@ -29,11 +29,11 @@ public class a {
             DebugLogger.e("PullUpPush", "cloud pushService start");
             intent.setAction(PushConstants.PUSH_SERVICE_ACTION);
             intent.setClassName(str, PushConstants.MZ_PUSH_SERVICE_NAME);
-        } else if (!TextUtils.isEmpty(appVersionName) && MzSystemUtils.compareVersion(appVersionName, PushConstants.PUSH_FLYME_4_CHANGE_VERSION)) {
+        } else if (!StringUtils.isEmpty(appVersionName) && MzSystemUtils.compareVersion(appVersionName, PushConstants.PUSH_FLYME_4_CHANGE_VERSION)) {
             DebugLogger.e("PullUpPush", "flyme 4.x start register cloud versionName " + appVersionName);
             intent.setPackage(str);
             intent.setAction(PushConstants.MZ_PUSH_ON_START_PUSH_REGISTER);
-        } else if (TextUtils.isEmpty(appVersionName) || !appVersionName.startsWith("3")) {
+        } else if (StringUtils.isEmpty(appVersionName) || !appVersionName.startsWith("3")) {
             DebugLogger.e("PullUpPush", context.getPackageName() + " start register ");
             intent.setClassName(context.getPackageName(), PushConstants.MZ_PUSH_SERVICE_NAME);
             intent.setAction(PushConstants.PUSH_SERVICE_ACTION);

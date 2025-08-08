@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -234,7 +234,7 @@ public class b {
             sb.append(str);
             sb.append(" SET ");
             sb.append("last_access=?");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 sb.append(" WHERE ");
                 sb.append(str2);
             }

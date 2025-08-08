@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.CrashBridge;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -21,11 +21,11 @@ public class SubAppResumeEvent implements ClientEvent {
         }
         LogContext logContext = LoggerFactory.getLogContext();
         String str = (String) obj;
-        if (TextUtils.isEmpty(str) || str.equals(logContext.getContextParam(LogContext.STORAGE_APPID))) {
+        if (StringUtils.isEmpty(str) || str.equals(logContext.getContextParam(LogContext.STORAGE_APPID))) {
             return;
         }
         logContext.putContextParam(LogContext.STORAGE_APPID, str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         CrashBridge.d();

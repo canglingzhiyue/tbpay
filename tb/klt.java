@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.a;
 import java.io.File;
@@ -50,7 +50,7 @@ public class klt implements kln {
         if ((kmrVar.f.d & 4) != 4 && Build.VERSION.SDK_INT > 16) {
             request.setAllowedOverMetered(false);
         }
-        if (!TextUtils.isEmpty(kmrVar.f.k)) {
+        if (!StringUtils.isEmpty(kmrVar.f.k)) {
             request.setTitle(kmrVar.f.k);
             request.setDescription(kmrVar.f.l);
         }
@@ -152,7 +152,7 @@ public class klt implements kln {
                             return;
                         }
                         String string2 = query2.getString(query2.getColumnIndex("local_filename"));
-                        if (!TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string2)) {
                             this.e.d = string2;
                         }
                         kmr kmrVar = this.e;

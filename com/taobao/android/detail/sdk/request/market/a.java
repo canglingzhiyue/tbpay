@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.request.market;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.boost.request.mtop.b;
 import java.util.HashMap;
@@ -56,7 +56,7 @@ public class a implements b {
         if (str3 != null) {
             hashMap.put("logica", str3);
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             hashMap.put(mrm.KEY_AREA_ID, this.d);
         }
         hashMap.put("appId", "2015052019,2015052020");

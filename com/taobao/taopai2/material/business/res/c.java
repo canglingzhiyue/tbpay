@@ -1,6 +1,6 @@
 package com.taobao.taopai2.material.business.res;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taopai2.material.MaterialDataServer;
 import com.taobao.taopai2.material.business.musicdetail.MusicItemBean;
@@ -119,7 +119,7 @@ public class c {
             return;
         }
         MusicResource a2 = a(musicItemBean);
-        boolean z = !TextUtils.isEmpty(musicItemBean.waveformUrl);
+        boolean z = !StringUtils.isEmpty(musicItemBean.waveformUrl);
         a[] aVarArr = z ? new a[2] : new a[1];
         for (int i = 0; i < aVarArr.length; i++) {
             aVarArr[i] = new a();
@@ -221,7 +221,7 @@ public class c {
                             ipChange3.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                             return;
                         }
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             aVarArr[1].f22090a = 3;
                         } else if (!new File(str2).exists()) {
                             aVarArr[1].f22090a = 3;

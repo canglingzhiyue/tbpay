@@ -1,6 +1,6 @@
 package com.taobao.unit.center.sync.syncable;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.input.InputFrame3;
@@ -238,7 +238,7 @@ public final class TemplateSyncable implements ISyncable<TemplateRequest, JSONOb
         q.c(req, "req");
         q.c(remoteSingleSyncFunc, "remoteSingleSyncFunc");
         String valueOf = String.valueOf(req.getTemplateId());
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             TLog.loge(SyncConstant.TAG, "requestSingleTemplate 空templateId");
             return;
         }

@@ -1,6 +1,6 @@
 package anet.channel.statist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.entity.ConnType;
@@ -701,7 +701,7 @@ public class RequestStatistic extends StatObject {
         sb.append(this.isReqMain);
         sb.append(",process=");
         sb.append(this.process);
-        if (!TextUtils.isEmpty(this.speedBucket)) {
+        if (!StringUtils.isEmpty(this.speedBucket)) {
             sb.append(", speedBucket=");
             sb.append(this.speedBucket);
         }

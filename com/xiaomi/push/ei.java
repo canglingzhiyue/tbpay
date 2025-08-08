@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ah;
 
 /* loaded from: classes9.dex */
@@ -22,7 +22,7 @@ public abstract class ei extends ah.a {
     public static void a(Context context, ik ikVar) {
         eb m1834a = ec.a().m1834a();
         String a2 = m1834a == null ? "" : m1834a.a();
-        if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(ikVar.a())) {
+        if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(ikVar.a())) {
             a(context, ikVar, a2);
         }
     }
@@ -181,7 +181,7 @@ public abstract class ei extends ah.a {
     @Override // java.lang.Runnable
     public void run() {
         String b = b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         if (mo1839a()) {
@@ -190,7 +190,7 @@ public abstract class ei extends ah.a {
         }
         eb m1834a = ec.a().m1834a();
         String a2 = m1834a == null ? "" : m1834a.a();
-        if (TextUtils.isEmpty(a2) || !m1837b()) {
+        if (StringUtils.isEmpty(a2) || !m1837b()) {
             return;
         }
         if (m1838c()) {

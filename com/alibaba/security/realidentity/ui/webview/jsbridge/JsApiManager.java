@@ -3,7 +3,7 @@ package com.alibaba.security.realidentity.ui.webview.jsbridge;
 import android.content.Context;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.a;
 import com.alibaba.security.realidentity.biz.config.RPBizConfig;
 import com.alibaba.security.realidentity.c4;
@@ -57,7 +57,7 @@ public class JsApiManager {
             if (str2 == null) {
                 return false;
             }
-            return TextUtils.equals(str, this.topic) || Arrays.asList(str2.split(",")).contains(str);
+            return StringUtils.equals(str, this.topic) || Arrays.asList(str2.split(",")).contains(str);
         }
     }
 

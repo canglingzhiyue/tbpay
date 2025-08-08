@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.p;
@@ -52,7 +52,7 @@ public final class nxz {
             } else if (pVar == null) {
             } else {
                 pVar.initWithURL(Uri.parse(str));
-                if (!TextUtils.equals(str, str2)) {
+                if (!StringUtils.equals(str, str2)) {
                     pVar.addInstanceEnv("bundleUrl", str2);
                 }
                 pVar.render(jSONObject, map);

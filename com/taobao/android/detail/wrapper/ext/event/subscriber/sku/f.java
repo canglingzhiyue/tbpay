@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.sku;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.performance.n;
@@ -35,7 +35,7 @@ public class f implements eja {
             } else {
                 String b = dyo.b(f.a(f.this));
                 dyo.a b2 = dyo.b(b);
-                if (b2 == null || TextUtils.isEmpty(b2.d)) {
+                if (b2 == null || StringUtils.isEmpty(b2.d)) {
                     i.c(n.a("StreamSKUDataProvider"), "post delay 没有获取到数据");
                     f fVar = f.this;
                     f.a(fVar, f.b(fVar));
@@ -101,7 +101,7 @@ public class f implements eja {
         }
         String b = dyo.b(this.b);
         dyo.a b2 = dyo.b(b);
-        if (b2 == null || TextUtils.isEmpty(b2.d)) {
+        if (b2 == null || StringUtils.isEmpty(b2.d)) {
             i.c(n.a("StreamSKUDataProvider"), "获取流式分段合并数据的结果为空");
             return null;
         }

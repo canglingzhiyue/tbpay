@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.g;
 import com.taobao.android.tschedule.parser.a;
@@ -36,7 +36,7 @@ public class jli extends jku {
         if (ipChange instanceof IpChange) {
             return (jli) ipChange.ipc$dispatch("e2617f61", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith(PREFIX)) {
+        if (StringUtils.isEmpty(str) || !str.startsWith(PREFIX)) {
             return null;
         }
         return new jli(str);
@@ -47,7 +47,7 @@ public class jli extends jku {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("72c78bb0", new Object[]{this, aVar});
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             return g.a(this.b);
         }
         return null;

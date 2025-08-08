@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.TrafficStats;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.service.XMPushService;
 
 /* loaded from: classes9.dex */
@@ -99,7 +99,7 @@ public class ga implements gt {
             this.c = 0L;
         }
         if (c) {
-            if ((!TextUtils.equals(this.f394a, m1732a) && this.b > 30000) || this.b > 5400000) {
+            if ((!StringUtils.equals(this.f394a, m1732a) && this.b > 30000) || this.b > 5400000) {
                 c();
             }
             this.f394a = m1732a;

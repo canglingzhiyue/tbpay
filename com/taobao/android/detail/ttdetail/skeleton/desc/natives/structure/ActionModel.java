@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import java.io.Serializable;
 import tb.kge;
@@ -21,7 +21,7 @@ public class ActionModel implements Serializable {
     public ActionModel(JSONObject jSONObject) {
         this.key = jSONObject.getString("key");
         this.type = jSONObject.getString("type");
-        if (TextUtils.isEmpty(this.type)) {
+        if (StringUtils.isEmpty(this.type)) {
             this.type = this.key;
         }
         if (jSONObject.containsKey("params")) {

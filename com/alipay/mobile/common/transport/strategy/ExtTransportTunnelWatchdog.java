@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.strategy;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.biz.AmnetTunnelManager;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
@@ -245,7 +245,7 @@ public class ExtTransportTunnelWatchdog {
             return;
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.ALLOW_AMNET_DOWNGRADE);
-        if (TextUtils.isEmpty(stringValue) || !stringValue.startsWith("T")) {
+        if (StringUtils.isEmpty(stringValue) || !stringValue.startsWith("T")) {
             LogCatUtil.debug("EXT_Watchdog", "Config does not allow downgrade");
             return;
         }
@@ -310,7 +310,7 @@ public class ExtTransportTunnelWatchdog {
             monitorLoggerModel.setParam2(connType + "_" + networkType);
             monitorLoggerModel.setParam3(str);
             boolean isPushProcessRuning = MiscUtils.isPushProcessRuning(context);
-            if (TextUtils.equals(str, "downgrade")) {
+            if (StringUtils.equals(str, "downgrade")) {
                 monitorLoggerModel.getExtPramas().put(AmnetTunnelManager.LOG_KEY_RPC_FAILED_NUM, String.valueOf(this.f));
                 monitorLoggerModel.getExtPramas().put("bind_fc", String.valueOf(this.h));
                 monitorLoggerModel.getExtPramas().put("crash_fc", String.valueOf(this.i));
@@ -323,7 +323,7 @@ public class ExtTransportTunnelWatchdog {
             MonitorLoggerUtils.uploadPerfLog(monitorLoggerModel);
             LogCatUtil.debug("EXT_Watchdog", "Dumping perfLog:" + monitorLoggerModel.toString());
             MonitorInfoUtil.recordUnavailable("BIZ_NETWORK", "LINK_DOWNGRADE", "0", monitorLoggerModel.getExtPramas());
-            if (TextUtils.equals(str, "downgrade") && !isPushProcessRuning) {
+            if (StringUtils.equals(str, "downgrade") && !isPushProcessRuning) {
                 MonitorLoggerModel monitorLoggerModel2 = new MonitorLoggerModel();
                 monitorLoggerModel2.setSubType("PROCESS");
                 monitorLoggerModel2.setParam1(connType + "_" + networkType);
@@ -332,7 +332,7 @@ public class ExtTransportTunnelWatchdog {
                 monitorLoggerModel2.getExtPramas().putAll(monitorLoggerModel.getExtPramas());
                 MonitorLoggerUtils.uploadPerfLog(monitorLoggerModel2);
             }
-            if (!TextUtils.equals(str2, DOWNGRADE_REASON_BIND) && !TextUtils.equals(str2, DOWNGRADE_REASON_CRASH)) {
+            if (!StringUtils.equals(str2, DOWNGRADE_REASON_BIND) && !StringUtils.equals(str2, DOWNGRADE_REASON_CRASH)) {
                 z = false;
             }
             MonitorInfoUtil.kickOnNetworkBindService("network", z, str2);
@@ -380,7 +380,7 @@ public class ExtTransportTunnelWatchdog {
             return (String) ipChange.ipc$dispatch("bbc5dc40", new Object[]{this, context});
         }
         String stringData = SharedPreUtils.getStringData(context, SP_KEY_PROC_CRASH_TICK);
-        if (!TextUtils.isEmpty(stringData)) {
+        if (!StringUtils.isEmpty(stringData)) {
             return stringData;
         }
         a(context, System.currentTimeMillis() + this.e, 0);
@@ -401,7 +401,7 @@ public class ExtTransportTunnelWatchdog {
             LogCatUtil.verbose("EXT_Watchdog", "Already downgraded, no need to tick");
         } else {
             String a2 = a(context);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             try {

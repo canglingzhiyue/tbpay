@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -23,10 +23,10 @@ public class iqs extends fuf {
         }
         JSONObject parseObject = JSONObject.parseObject(objArr[0].toString());
         String string = parseObject.getString("targetUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return objArr[0];
         }
         Uri.parse(string).buildUpon();
-        return TextUtils.isEmpty(a.a().d()) ? objArr[0] : parseObject;
+        return StringUtils.isEmpty(a.a().d()) ? objArr[0] : parseObject;
     }
 }

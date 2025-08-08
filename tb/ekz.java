@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -286,7 +286,7 @@ public final class ekz extends atl {
                 } else {
                     ekz.a(ekz.this, true);
                     this.c = g.p();
-                    if (TextUtils.equals(this.c, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+                    if (StringUtils.equals(this.c, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
                         g.b();
                         g.h();
                     }
@@ -316,7 +316,7 @@ public final class ekz extends atl {
                     ipChange2.ipc$dispatch("57a83e9", new Object[]{this});
                 } else if (ekz.a(ekz.this) == null || (g = ekz.a(ekz.this).g()) == null) {
                 } else {
-                    if (TextUtils.equals(this.c, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+                    if (StringUtils.equals(this.c, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
                         g.a();
                     }
                     float f = this.d;

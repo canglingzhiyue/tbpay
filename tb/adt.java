@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.nx3.bean.TemplateBean;
@@ -54,7 +54,7 @@ public final class adt {
             templateBean.md5 = com.taobao.android.searchbaseframe.util.a.a(b, "md5", "");
             templateBean.version = com.taobao.android.searchbaseframe.util.a.a(b, "version", "");
             templateBean.templateName = com.taobao.android.searchbaseframe.util.a.a(b, "templateName", "");
-            if (TextUtils.isEmpty(templateBean.url)) {
+            if (StringUtils.isEmpty(templateBean.url)) {
                 return null;
             }
             adt adtVar = new adt();

@@ -5,7 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import com.alipay.android.msp.utils.LogUtil;
@@ -52,10 +52,10 @@ public class SystemDefaultDialog {
             return (AlertDialog.Builder) ipChange.ipc$dispatch("373cc764", new Object[]{context, str, onClickListener, str2, onClickListener2});
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context, 16973940);
-        if (!TextUtils.isEmpty(str) && onClickListener != null) {
+        if (!StringUtils.isEmpty(str) && onClickListener != null) {
             builder.setPositiveButton(str, onClickListener);
         }
-        if (!TextUtils.isEmpty(str2) && onClickListener2 != null) {
+        if (!StringUtils.isEmpty(str2) && onClickListener2 != null) {
             builder.setNegativeButton(str2, onClickListener2);
         }
         return builder;

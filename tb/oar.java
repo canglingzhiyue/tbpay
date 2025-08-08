@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.share.resource.a;
 import com.taobao.share.taopassword.busniess.model.g;
@@ -28,7 +28,7 @@ public class oar implements oaq {
         if (ipChange instanceof IpChange) {
             return (oat) ipChange.ipc$dispatch("78da37fc", new Object[]{this, context, oazVar});
         }
-        if (!TextUtils.isEmpty(oazVar.b)) {
+        if (!StringUtils.isEmpty(oazVar.b)) {
             return null;
         }
         if (nyg.k() && !h(oazVar.f31882a)) {
@@ -102,7 +102,7 @@ public class oar implements oaq {
         }
         oat oatVar = new oat();
         String a2 = obe.a(oan.b(), str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             oatVar.f31880a = false;
             return oatVar;
         }
@@ -130,7 +130,7 @@ public class oar implements oaq {
             c.f31880a = true;
             c.d = str;
             c.b = b(str);
-            if (TextUtils.equals(c.b, g.TAO)) {
+            if (StringUtils.equals(c.b, g.TAO)) {
                 c.f31880a = f(str);
             }
             return c;
@@ -148,7 +148,7 @@ public class oar implements oaq {
         }
         c.d = str;
         c.b = b(str);
-        if (TextUtils.equals(c.b, g.TAO)) {
+        if (StringUtils.equals(c.b, g.TAO)) {
             c.f31880a = f(str);
         } else {
             c.f31880a = true;
@@ -165,7 +165,7 @@ public class oar implements oaq {
         }
         a a2 = a.a();
         a2.a(a.KEY_SHAREBACKISTAOPASSWORDMTOPSTART);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Checkistaopassword.Request request = new Checkistaopassword.Request();

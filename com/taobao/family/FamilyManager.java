@@ -8,7 +8,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
 import com.taobao.login4android.broadcast.LoginAction;
@@ -116,7 +116,7 @@ public class FamilyManager implements Serializable {
                                 return;
                             }
                             String userId = Login.getUserId();
-                            if (TextUtils.isEmpty(userId) || userId.equals(FamilyManager.access$000())) {
+                            if (StringUtils.isEmpty(userId) || userId.equals(FamilyManager.access$000())) {
                                 return;
                             }
                             FamilyManager.sendGetFamilyRelationRequest();
@@ -154,7 +154,7 @@ public class FamilyManager implements Serializable {
             } else {
                 doInit(Globals.getApplication(), null);
                 bubbleListeners.add(cVar);
-                if (TextUtils.isEmpty(Login.getUserId())) {
+                if (StringUtils.isEmpty(Login.getUserId())) {
                     cVar.a(new ArrayList());
                     cVar.b(new ArrayList());
                     return;
@@ -173,7 +173,7 @@ public class FamilyManager implements Serializable {
                             FamilyManager.dataStoreComponent = new d(FamilyManager.access$100());
                         }
                         String a2 = FamilyManager.dataStoreComponent.a(Login.getUserId());
-                        if (TextUtils.isEmpty(a2)) {
+                        if (StringUtils.isEmpty(a2)) {
                             c.this.a(new ArrayList());
                             c.this.b(new ArrayList());
                             return;
@@ -254,7 +254,7 @@ public class FamilyManager implements Serializable {
                         return;
                     }
                     String userId = Login.getUserId();
-                    if (TextUtils.isEmpty(userId)) {
+                    if (StringUtils.isEmpty(userId)) {
                         return;
                     }
                     if (FamilyManager.dataStoreComponent == null) {
@@ -274,7 +274,7 @@ public class FamilyManager implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f4a01ee8", new Object[0]);
-        } else if (TextUtils.isEmpty(Login.getUserId())) {
+        } else if (StringUtils.isEmpty(Login.getUserId())) {
         } else {
             e.f17131a.a(e.API_NAME_GET_FAMILY_RELATION, new HashMap(), new i() { // from class: com.taobao.family.FamilyManager.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;

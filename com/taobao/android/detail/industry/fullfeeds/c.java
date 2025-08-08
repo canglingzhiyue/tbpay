@@ -1,7 +1,7 @@
 package com.taobao.android.detail.industry.fullfeeds;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.industry.tool.a;
@@ -150,7 +150,7 @@ public class c {
             return null;
         }
         String a2 = ecn.a(this.c, "fullFeedsIndustryDXTemplateItemData");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return d(a2);
         }
         return null;
@@ -162,10 +162,10 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
         String a2 = ecn.a(this.c, "fullFeedsIndustryBizCode");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             ecn.a(this.c, "fullFeedsIndustryBizCode", str);
         }
-        return !TextUtils.isEmpty(a2) && a2.equals(str);
+        return !StringUtils.isEmpty(a2) && a2.equals(str);
     }
 
     private DXTemplateItem d(String str) {
@@ -194,11 +194,11 @@ public class c {
             ipChange.ipc$dispatch("1c6cb136", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             ecn.a(this.c, "fullFeedsIndustryDXTemplateItemData", str);
         }
         DXTemplateItem d = d(str);
-        if (d == null || TextUtils.isEmpty(d.c)) {
+        if (d == null || StringUtils.isEmpty(d.c)) {
             this.f10078a.a();
         } else {
             this.f10078a.a(d);

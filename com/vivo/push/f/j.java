@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.List;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -114,7 +114,7 @@ public final class j extends com.vivo.push.s {
                 return;
             }
             String str = c.get(0).activityInfo.name;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.vivo.push.util.u.d("OnChangePushStatusTask", "disableReceiver error: className is null. ");
                 return;
             }
@@ -134,7 +134,7 @@ public final class j extends com.vivo.push.s {
                 return;
             }
             String str2 = c2.get(0).activityInfo.name;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 com.vivo.push.util.u.d("OnChangePushStatusTask", "enableReceiver error: className is null. ");
                 return;
             }
@@ -155,7 +155,7 @@ public final class j extends com.vivo.push.s {
                 return;
             }
             String str3 = c3.get(0).activityInfo.name;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 com.vivo.push.util.u.d("OnChangePushStatusTask", "defaultReceiver error: className is null. ");
                 return;
             }

@@ -2,7 +2,7 @@ package com.taobao.login4android.uninstall;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.helper.IFAAUtil;
 import com.ali.user.mobile.base.helper.StrategyHelper;
@@ -190,7 +190,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
                 HashMap hashMap = new HashMap();
                 hashMap.put("cost", String.valueOf(System.currentTimeMillis() - currentTimeMillis));
                 OppoUninstallServiceImpl.access$000(OppoUninstallServiceImpl.this, "restore_session_query_success", hashMap);
-                if (map == null || TextUtils.isEmpty(map.get("data"))) {
+                if (map == null || StringUtils.isEmpty(map.get("data"))) {
                     LoginTLogAdapter.trace(OppoUninstallServiceImpl.TAG, "tryToRestoreSession  restoreSessionIsNil");
                     OppoUninstallServiceImpl.access$000(OppoUninstallServiceImpl.this, "restoreSessionIsNil", hashMap);
                     if (LoginSwitch.getSwitch("uninstallTagCaseDataNil", "false")) {
@@ -223,7 +223,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
                         IpChange ipChange3 = $ipChange;
                         if (ipChange3 instanceof IpChange) {
                             ipChange3.ipc$dispatch("f3a64c32", new Object[]{this, str2});
-                        } else if (TextUtils.isEmpty(str2)) {
+                        } else if (StringUtils.isEmpty(str2)) {
                             int strategy = StrategyHelper.getStrategy("oppo_finger");
                             OppoUninstallServiceImpl.access$000(OppoUninstallServiceImpl.this, StrategyHelper.getUtArg1(strategy, "oppoFinger_"), null);
                             if (strategy == 2) {
@@ -303,7 +303,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
                     }
                     numberAuthService.removePrefetchResultObserver(this);
                     OppoUninstallServiceImpl.access$000(OppoUninstallServiceImpl.this, "restore_get_phone_by_notify", null);
-                    if (!TextUtils.equals(map.get("scene"), "networkConnected")) {
+                    if (!StringUtils.equals(map.get("scene"), "networkConnected")) {
                         CommonDataCallback commonDataCallback2 = commonDataCallback;
                         if (commonDataCallback2 == null) {
                             return;
@@ -312,7 +312,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
                         return;
                     }
                     String str2 = map.get("number");
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         CommonDataCallback commonDataCallback3 = commonDataCallback;
                         if (commonDataCallback3 == null) {
                             return;
@@ -385,7 +385,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
         NumberAuthService numberAuthService = (NumberAuthService) ServiceFactory.getService(NumberAuthService.class);
         if (numberAuthService == null) {
             dataCallback.result("");
-        } else if (!TextUtils.isEmpty(LoginSwitch.getConfig("restore_session_mock_phone", ""))) {
+        } else if (!StringUtils.isEmpty(LoginSwitch.getConfig("restore_session_mock_phone", ""))) {
             dataCallback.result(LoginSwitch.getConfig("restore_session_mock_phone", ""));
         } else {
             final HashMap<String, String> hashMap = new HashMap<>();
@@ -517,7 +517,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
         if (this.keyChain == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             track("restore_session_service_update_data_empty", null);
             return;
         }
@@ -562,7 +562,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a40daf4e", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 String substring = str.substring(0, 3);
                 String substring2 = str.substring(7, 11);
@@ -694,7 +694,7 @@ public class OppoUninstallServiceImpl implements UninstallService {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9b6791bb", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {

@@ -1,6 +1,6 @@
 package com.taobao.android.sns4android;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import tb.nyk;
 
@@ -32,22 +32,22 @@ public enum SNSPlatform {
     }
 
     public static SNSPlatform convertSNSPlatform(String str) {
-        if (TextUtils.equals(str, "qq")) {
+        if (StringUtils.equals(str, "qq")) {
             return PLATFORM_QQ;
         }
-        if (TextUtils.equals(str, "alipay") || TextUtils.equals(str, "alipay3")) {
+        if (StringUtils.equals(str, "alipay") || StringUtils.equals(str, "alipay3")) {
             return PLATFORM_ALIPAY;
         }
-        if (TextUtils.equals(str, "weibo") || TextUtils.equals(str, "sina")) {
+        if (StringUtils.equals(str, "weibo") || StringUtils.equals(str, "sina")) {
             return PLATFORM_WEIBO;
         }
-        if (TextUtils.equals(str, nyk.KEY_SHARE_CONFIG_WEIXIN) || TextUtils.equals(str, "wechat")) {
+        if (StringUtils.equals(str, nyk.KEY_SHARE_CONFIG_WEIXIN) || StringUtils.equals(str, "wechat")) {
             return PLATFORM_WEIXIN;
         }
-        if (TextUtils.equals(str, "taobao")) {
+        if (StringUtils.equals(str, "taobao")) {
             return PLATFORM_TAOBAO;
         }
-        if (!TextUtils.equals(str, MspGlobalDefine.ALIPAYHK_SCHEME)) {
+        if (!StringUtils.equals(str, MspGlobalDefine.ALIPAYHK_SCHEME)) {
             return null;
         }
         return PLATFORM_ALIPAYHK;

@@ -4,7 +4,7 @@ import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.webkit.WebView;
 import com.loc.bo;
@@ -84,7 +84,7 @@ public class AMapLocationClient {
     }
 
     public static void setHost(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             bo.f7690a = -1;
             str = "";
         } else {
@@ -189,7 +189,7 @@ public class AMapLocationClient {
             }
             aMapLocationClientOption.b = false;
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(aMapLocationClientOption.c)) {
+            if (!StringUtils.isEmpty(aMapLocationClientOption.c)) {
                 jSONObject.put("amap_loc_scenes_type", aMapLocationClientOption.c);
             }
             fw.a(this.f6378a, "O019", jSONObject);

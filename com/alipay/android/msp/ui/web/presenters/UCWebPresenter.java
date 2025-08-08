@@ -10,7 +10,7 @@ import android.net.http.SslError;
 import android.os.Build;
 import android.os.ResultReceiver;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -303,7 +303,7 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
                 });
             }
             this.b.setBackAction(jSONObject);
-            if (!TextUtils.isEmpty(this.j)) {
+            if (!StringUtils.isEmpty(this.j)) {
                 CookieSyncManager.createInstance(getActivity()).sync();
                 CookieManager.getInstance().setCookie(str, this.j);
                 CookieSyncManager.getInstance().sync();
@@ -396,7 +396,7 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
         if (str3 != null) {
             this.s.put(str3, webStatsEvent);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.e.loadUrl(str3);
             return;
         }
@@ -502,7 +502,7 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
                     return;
                 }
                 try {
-                    if (UCWebPresenter.f(UCWebPresenter.this) == null || webView == null || webView.getUrl() == null || webView.getUrl().endsWith(str) || !TextUtils.isEmpty(UCWebPresenter.g(UCWebPresenter.this))) {
+                    if (UCWebPresenter.f(UCWebPresenter.this) == null || webView == null || webView.getUrl() == null || webView.getUrl().endsWith(str) || !StringUtils.isEmpty(UCWebPresenter.g(UCWebPresenter.this))) {
                         return;
                     }
                     LogUtil.record(2, "UCWebPresenter#onReceivedTitle", str);
@@ -563,12 +563,12 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
                 return ((Boolean) ipChange.ipc$dispatch("dacf25f5", new Object[]{this, webView, str})).booleanValue();
             }
             LogUtil.record(2, "UCWebPresenter:shouldOverrideUrlLoading", "url=" + str + ", mExitUrl=" + UCWebPresenter.i(UCWebPresenter.this) + " , mbizid=" + UCWebPresenter.a(UCWebPresenter.this));
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
-            if (!TextUtils.isEmpty(UCWebPresenter.i(UCWebPresenter.this)) && str.startsWith(UCWebPresenter.i(UCWebPresenter.this))) {
+            if (!StringUtils.isEmpty(UCWebPresenter.i(UCWebPresenter.this)) && str.startsWith(UCWebPresenter.i(UCWebPresenter.this))) {
                 UCWebPresenter.a(UCWebPresenter.this, true);
-            } else if (!TextUtils.isEmpty(UCWebPresenter.i(UCWebPresenter.this)) && str.contains(UCWebPresenter.i(UCWebPresenter.this))) {
+            } else if (!StringUtils.isEmpty(UCWebPresenter.i(UCWebPresenter.this)) && str.contains(UCWebPresenter.i(UCWebPresenter.this))) {
                 MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(UCWebPresenter.a(UCWebPresenter.this));
                 if (mspContextByBizId != null) {
                     mspContextByBizId.setCallbackUrlForOpenWeb(str);
@@ -581,14 +581,14 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     UCWebPresenter.a(UCWebPresenter.this, nfc.PHA_MONITOR_MODULE_POINT_JS_API, str2.substring(17));
                 }
                 UCWebPresenter.a(UCWebPresenter.this, str);
-            } else if (TextUtils.equals(str, a.d)) {
+            } else if (StringUtils.equals(str, a.d)) {
                 UCWebPresenter.a(UCWebPresenter.this, false);
             } else if (str.startsWith(k.HTTP_PREFIX) || str.startsWith(k.HTTPS_PREFIX)) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     MspWebActivity.WebStatsEvent webStatsEvent = new MspWebActivity.WebStatsEvent();
                     webStatsEvent.stEvent = UCWebPresenter.newStEvent("webonload", UCWebPresenter.b(UCWebPresenter.this, str));
                     UCWebPresenter.h(UCWebPresenter.this).put(str, webStatsEvent);
@@ -961,13 +961,13 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
                     UCWebPresenter.a(UCWebPresenter.this, uCWebViewWindow);
                     UCWebPresenter.o(UCWebPresenter.this);
                     LogUtil.record(2, "UCWebPresenter:doJsPushWindow", "newurl=" + str);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         MspWebActivity.WebStatsEvent webStatsEvent = new MspWebActivity.WebStatsEvent();
                         webStatsEvent.stEvent = UCWebPresenter.newStEvent("webonload", UCWebPresenter.b(UCWebPresenter.this, str));
                         UCWebPresenter.h(UCWebPresenter.this).put(str, webStatsEvent);
                     }
                     UCWebPresenter.c(UCWebPresenter.this).loadUrl(str);
-                    if (TextUtils.isEmpty(str2) || UCWebPresenter.this.mo545getIView() == null) {
+                    if (StringUtils.isEmpty(str2) || UCWebPresenter.this.mo545getIView() == null) {
                         return;
                     }
                     UCWebPresenter.this.mo545getIView().setTitleText(str2);
@@ -1015,7 +1015,7 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String substring = str.length() > 20 ? str.substring(0, 19) : str;
@@ -1069,7 +1069,7 @@ public class UCWebPresenter extends MspBasePresenter<MspWebContract.IView> imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("361dea5d", new Object[]{uCWebPresenter, str, valueCallback});
-        } else if (TextUtils.isEmpty(str) || uCWebPresenter.getActivity() == null || uCWebPresenter.getActivity().isFinishing()) {
+        } else if (StringUtils.isEmpty(str) || uCWebPresenter.getActivity() == null || uCWebPresenter.getActivity().isFinishing()) {
         } else {
             TaskHelper.runOnUIThread(new Runnable() { // from class: com.alipay.android.msp.ui.web.presenters.UCWebPresenter.6
                 public static volatile transient /* synthetic */ IpChange $ipChange;

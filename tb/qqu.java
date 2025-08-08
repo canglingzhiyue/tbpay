@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -113,7 +113,7 @@ public final class qqu extends d.a {
         jSONObject2.put((JSONObject) "templateId", k.g(b()));
         jSONObject2.put((JSONObject) "templateVersion", k.i(b()));
         String openModel = b().q().getOpenModel();
-        if (TextUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_AFC_OPEN_LINK) || TextUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_BROWSER_LINK)) {
+        if (StringUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_AFC_OPEN_LINK) || StringUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_BROWSER_LINK)) {
             jSONObject2.put((JSONObject) "isFromOuter", "true");
         }
         return jSONObject;

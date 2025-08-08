@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.biz;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.amnet.api.AmnetGeneralEventManager;
@@ -471,11 +471,11 @@ public class AmnetGeneralEventManagerImpl implements AmnetGeneralEventManager {
             ipChange.ipc$dispatch("50ee1d34", new Object[]{this, str, str2});
             return;
         }
-        if (TextUtils.equals(Baggage.Linkage.GIFT_NOTIFYLOGINOUT, str)) {
+        if (StringUtils.equals(Baggage.Linkage.GIFT_NOTIFYLOGINOUT, str)) {
             LogCatUtil.debug("AmnetGeneralEventManager", "notifyGift,key=[notifyLoginOut] value=[" + str2 + riy.ARRAY_END_STR);
-            if (TextUtils.equals(str2, "true")) {
+            if (StringUtils.equals(str2, "true")) {
                 this.h = true;
-            } else if (TextUtils.equals(str2, "false")) {
+            } else if (StringUtils.equals(str2, "false")) {
                 this.h = false;
             }
         }
@@ -845,7 +845,7 @@ public class AmnetGeneralEventManagerImpl implements AmnetGeneralEventManager {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                        } else if (!TextUtils.isEmpty(str) && (map2 = map) != null && !map2.isEmpty()) {
+                        } else if (!StringUtils.isEmpty(str) && (map2 = map) != null && !map2.isEmpty()) {
                             int connType = ConnectionUtil.getConnType(AmnetEnvHelper.getAppContext());
                             int networkType = ConnectionUtil.getNetworkType(AmnetEnvHelper.getAppContext());
                             MonitorLoggerModel monitorLoggerModel = new MonitorLoggerModel();
@@ -859,9 +859,9 @@ public class AmnetGeneralEventManagerImpl implements AmnetGeneralEventManager {
                                 }
                             }
                             int intValue = TransportConfigureManager.getInstance().getIntValue(TransportConfigureItem.LOG_PRIO_SWITCH);
-                            if (TextUtils.equals(str, Baggage.Linkage.AMNET_DIAGNOSE_LOGTYPE)) {
+                            if (StringUtils.equals(str, Baggage.Linkage.AMNET_DIAGNOSE_LOGTYPE)) {
                                 MonitorLoggerUtils.uploadAutoDiagLog(monitorLoggerModel);
-                            } else if (!TextUtils.equals(str, "st") || intValue >= 3) {
+                            } else if (!StringUtils.equals(str, "st") || intValue >= 3) {
                                 MonitorLoggerUtils.uploadPerfLog(monitorLoggerModel);
                             }
                             LogCatUtil.info("AMNET-LOG", monitorLoggerModel.toString());
@@ -916,7 +916,7 @@ public class AmnetGeneralEventManagerImpl implements AmnetGeneralEventManager {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5b818819", new Object[]{this, str, new Double(d)});
-            } else if (TextUtils.equals(str, Baggage.Linkage.RPT_HEARTBEAT_RTT)) {
+            } else if (StringUtils.equals(str, Baggage.Linkage.RPT_HEARTBEAT_RTT)) {
             } else {
                 AmnetGeneralEventManagerImpl.this.notifyReport(str, d);
             }

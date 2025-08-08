@@ -2,7 +2,7 @@ package com.taobao.android.detail.mainpic;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -77,7 +77,7 @@ public class g implements b {
             return;
         }
         this.q = eqb.c(bVar).itemId;
-        if (this.m != bVar && !TextUtils.equals(this.n, this.q)) {
+        if (this.m != bVar && !StringUtils.equals(this.n, this.q)) {
             f fVar = this.d;
             if (fVar != null) {
                 fVar.a();
@@ -404,7 +404,7 @@ public class g implements b {
 
     public String y() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("4c806420", new Object[]{this}) : TextUtils.isEmpty(this.q) ? "" : this.q;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("4c806420", new Object[]{this}) : StringUtils.isEmpty(this.q) ? "" : this.q;
     }
 
     public List<IDMComponent> z() {

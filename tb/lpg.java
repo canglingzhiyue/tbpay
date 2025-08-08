@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.security.realidentity.ui.view.ALBiometricsActivityParentView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,7 +81,7 @@ public class lpg {
         if (ipChange instanceof IpChange) {
             return (lph) ipChange.ipc$dispatch("7c721730", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, "commonOverlay")) {
+        if (StringUtils.equals(str, "commonOverlay")) {
             if (this.c == null) {
                 this.c = b(str);
             }
@@ -92,7 +92,7 @@ public class lpg {
             this.b = b(str);
             return this.b;
         }
-        if (!TextUtils.equals(str, lphVar.b())) {
+        if (!StringUtils.equals(str, lphVar.b())) {
             this.b.a();
             this.b = b(str);
         }

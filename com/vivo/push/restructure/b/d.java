@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.PushConfig;
 import com.vivo.push.util.aa;
 import com.vivo.push.util.g;
@@ -29,7 +29,7 @@ public final class d implements a {
 
     private static String a(Context context, String str, String str2) {
         List<ResolveInfo> queryBroadcastReceivers;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         Intent intent = new Intent(str2);
@@ -51,12 +51,12 @@ public final class d implements a {
         c cVar = f24229a.get(com.vivo.push.restructure.a.a().b().getPackageName());
         if (cVar != null) {
             String a2 = cVar.a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return a2;
             }
         }
         String b = this.c.b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             if (cVar == null) {
                 cVar = new c();
             }
@@ -68,16 +68,16 @@ public final class d implements a {
 
     @Override // com.vivo.push.restructure.b.a
     public final String a(Context context, String str) {
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             return this.b;
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             u.a("PushRelyImpl", "getReceiverClassName() params error, context = " + context + ", action = " + str);
             return "";
         }
         String packageName = context.getPackageName();
         this.b = a(context, packageName, str);
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             u.d("PushRelyImpl", " reflectReceiver error: receiver for: " + str + " not found, package: " + packageName);
         }
         return this.b;
@@ -127,12 +127,12 @@ public final class d implements a {
         c cVar = f24229a.get(com.vivo.push.restructure.a.a().b().getPackageName());
         if (cVar != null) {
             String b = cVar.b();
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 return b;
             }
         }
         String c = this.c.c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             if (cVar == null) {
                 cVar = new c();
             }

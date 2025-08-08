@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alilive.adapter.uikit.d;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -199,7 +199,7 @@ public class a {
                 return;
             }
             ChatMessage chatMessage = this.n.get(this.p);
-            if (chatMessage.mType == ChatMessage.MessageType.TXT && !TextUtils.isEmpty(chatMessage.mContent)) {
+            if (chatMessage.mType == ChatMessage.MessageType.TXT && !StringUtils.isEmpty(chatMessage.mContent)) {
                 this.o = chatMessage;
                 this.f21696a = chatMessage.mContent;
                 this.j = v.b(chatMessage.renders.get(com.taobao.taolive.room.ui.fanslevel.a.FANS_LEVEL_RENDER));
@@ -310,7 +310,7 @@ public class a {
                             ipChange2.ipc$dispatch("a6251244", new Object[]{this, obj});
                             return;
                         }
-                        if (!TextUtils.isEmpty(commentIcon.name)) {
+                        if (!StringUtils.isEmpty(commentIcon.name)) {
                             BitmapDrawable bitmapDrawable = (BitmapDrawable) obj;
                             bitmapDrawable.setBounds(0, 0, (b.e(b.this) * bitmapDrawable.getIntrinsicWidth()) / bitmapDrawable.getIntrinsicHeight(), b.e(b.this));
                             SpannableString spannableString = new SpannableString(commentIcon.name);

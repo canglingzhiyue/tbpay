@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.utils.n;
@@ -65,7 +65,7 @@ public class orh extends org {
         if (z) {
             return false;
         }
-        return traceModel.getPriority() != 4 && !TextUtils.isEmpty(traceModel.getName());
+        return traceModel.getPriority() != 4 && !StringUtils.isEmpty(traceModel.getName());
     }
 
     @Override // tb.org
@@ -117,11 +117,11 @@ public class orh extends org {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.equals("homeFragmentOnStart", str)) {
+        } else if (StringUtils.equals("homeFragmentOnStart", str)) {
             this.e = c();
             this.e.a("HomePageLauncherAllStages");
             this.e.a("HomePageScrollAllStages");
-        } else if (!TextUtils.equals("homeFragmentOnStop", str) || this.e == null) {
+        } else if (!StringUtils.equals("homeFragmentOnStop", str) || this.e == null) {
         } else {
             if (b.compareAndSet(false, true)) {
                 this.e.e("HomePageLauncherAllStages", this.c);

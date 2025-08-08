@@ -2,7 +2,7 @@ package com.taobao.android.trade.ui.widget;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -43,7 +43,7 @@ public class PriceView extends TextView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("155a5588", new Object[]{this, charSequence, bufferType});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
             super.setText((CharSequence) null, bufferType);
         } else {
             String charSequence2 = charSequence.toString();
@@ -78,7 +78,7 @@ public class PriceView extends TextView {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e7fcd673", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         char[] charArray = str.toCharArray();

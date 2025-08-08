@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -133,7 +133,7 @@ public class u extends o<eze> {
         if (list != null && list2 != null) {
             for (String str : list) {
                 for (h hVar : list2) {
-                    if (TextUtils.equals(str, com.taobao.android.detail.ttdetail.utils.a.a(hVar))) {
+                    if (StringUtils.equals(str, com.taobao.android.detail.ttdetail.utils.a.a(hVar))) {
                         return str;
                     }
                 }

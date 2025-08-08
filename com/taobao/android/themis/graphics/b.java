@@ -2,7 +2,7 @@ package com.taobao.android.themis.graphics;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fcanvas.integration.FCanvas;
@@ -143,7 +143,7 @@ public class b implements d {
                     com.taobao.android.riverlogger.e.a(RVLLevel.Error, "themis:renderer", "notify that first frame called");
                 }
             }).f(bVar.g);
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 str = "default";
             } else {
                 str = this.d + "_default";

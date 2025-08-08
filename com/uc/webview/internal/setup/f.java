@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.ErrorCode;
 import com.uc.webview.base.Log;
@@ -48,7 +48,7 @@ public final class f extends com.uc.webview.base.task.c {
         String str;
         String str2;
         String str3 = null;
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             str = f;
             str2 = "buildLogInfo invalid type";
         } else {
@@ -69,11 +69,11 @@ public final class f extends com.uc.webview.base.task.c {
                 if (rootCause instanceof UCKnownException) {
                     StringBuilder sb = new StringBuilder();
                     sb.append(errCode);
-                    if (!TextUtils.isEmpty(uCKnownException.errCodeDescription())) {
+                    if (!StringUtils.isEmpty(uCKnownException.errCodeDescription())) {
                         sb.append(":");
                         sb.append(uCKnownException.errCodeDescription());
                     }
-                    if (!TextUtils.isEmpty(errMsg)) {
+                    if (!StringUtils.isEmpty(errMsg)) {
                         sb.append(":");
                         sb.append(errMsg);
                     }
@@ -96,7 +96,7 @@ public final class f extends com.uc.webview.base.task.c {
                     if (jVar3 != null) {
                         str3 = a(jVar3.coreClassLoader());
                     }
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         aVar.b("nativeLibsInfo", str3);
                     }
                     if (PathUtils.f23784a != null) {

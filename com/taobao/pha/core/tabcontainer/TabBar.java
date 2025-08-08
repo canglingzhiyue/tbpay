@@ -3,7 +3,7 @@ package com.taobao.pha.core.tabcontainer;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -124,10 +124,10 @@ public class TabBar extends PenetrateLinearLayout implements c.a {
         if (tabBarModel == null) {
             return;
         }
-        if (TextUtils.equals(tabBarModel.position, "absolute")) {
+        if (StringUtils.equals(tabBarModel.position, "absolute")) {
             this.mPosition = 2;
         }
-        if (!TextUtils.isEmpty(tabBarModel.html) || !TextUtils.isEmpty(tabBarModel.getUrl())) {
+        if (!StringUtils.isEmpty(tabBarModel.html) || !StringUtils.isEmpty(tabBarModel.getUrl())) {
             AppController appController = this.mAppController;
             if (appController != null) {
                 appController.P().b(21);
@@ -235,13 +235,13 @@ public class TabBar extends PenetrateLinearLayout implements c.a {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("897bf38d", new Object[]{this, str, str2, str3});
         } else if (getTabBarModel() != null) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 getTabBarModel().textColor = str;
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 getTabBarModel().selectedColor = str3;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 getTabBarModel().backgroundColor = str2;
             }
             setBackgroundColor(ngn.f(getTabBarModel().backgroundColor));

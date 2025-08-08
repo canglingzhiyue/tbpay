@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.ask.ASK_CONST;
 import com.taobao.search.common.util.k;
@@ -25,7 +25,7 @@ public class ohk {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -35,7 +35,7 @@ public class ohk {
             sb.append(parse.getPath());
             for (String str2 : new TreeSet(parse.getQueryParameterNames())) {
                 String queryParameter = parse.getQueryParameter(str2);
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     break;
                 }
                 if (b(queryParameter)) {
@@ -66,7 +66,7 @@ public class ohk {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{str, map});
         }
-        if (TextUtils.isEmpty(str) || map == null || map.size() == 0) {
+        if (StringUtils.isEmpty(str) || map == null || map.size() == 0) {
             return str;
         }
         Set<String> keySet = map.keySet();
@@ -85,7 +85,7 @@ public class ohk {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.startsWith(k.HTTP_PREFIX) || str.startsWith(k.HTTPS_PREFIX) || str.startsWith("h5.m.taobao.com") || str.startsWith("wapp.wapa.taobao.com");
@@ -97,7 +97,7 @@ public class ohk {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -107,11 +107,11 @@ public class ohk {
             sb.append(parse.getPath());
             String queryParameter = parse.getQueryParameter("tnode");
             Uri uri = null;
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 uri = oec.a(Uri.parse(queryParameter), b.sIgnoreTNodeQuery);
                 queryParameter = uri.toString();
             }
-            if (uri != null ? TextUtils.equals(uri.getQueryParameter("preload"), "true") : false) {
+            if (uri != null ? StringUtils.equals(uri.getQueryParameter("preload"), "true") : false) {
                 sb.append("?");
                 sb.append("tnode");
                 sb.append("=");
@@ -122,7 +122,7 @@ public class ohk {
                     if ("tnode".equals(str2)) {
                         queryParameter2 = queryParameter;
                     }
-                    if (!TextUtils.isEmpty(queryParameter2) && !b.sIgnoreBizQuery.contains(str2) && !ASK_CONST.KEY_TNODE_TIME.equals(str2)) {
+                    if (!StringUtils.isEmpty(queryParameter2) && !b.sIgnoreBizQuery.contains(str2) && !ASK_CONST.KEY_TNODE_TIME.equals(str2)) {
                         if (b(queryParameter2)) {
                             queryParameter2 = c(queryParameter2);
                         }
@@ -157,7 +157,7 @@ public class ohk {
             return "";
         }
         String queryParameter = uri.getQueryParameter("tnode");
-        return !TextUtils.isEmpty(queryParameter) ? Uri.parse(queryParameter).getPath() : "";
+        return !StringUtils.isEmpty(queryParameter) ? Uri.parse(queryParameter).getPath() : "";
     }
 
     public static Map<String, String> d(String str) {
@@ -165,7 +165,7 @@ public class ohk {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("fa35996a", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return b(Uri.parse(str));
         }
         return null;

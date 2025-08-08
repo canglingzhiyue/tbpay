@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.network.combo.QueryComboData;
@@ -48,7 +48,7 @@ public class c extends MainViewModel {
         super(componentModel, nodeBundle);
         tpc.a("com.taobao.android.detail.sdk.vmodel.main.ComboViewModel");
         JSONObject jSONObject = componentModel.mapping;
-        if (jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("comboKey"))) {
+        if (jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("comboKey"))) {
             this.e = nodeBundle.weappNode.weappList.get(jSONObject.getString("comboKey"));
             try {
                 this.i = (String) this.e.mtopModel.get(K_API_NAME);
@@ -106,6 +106,6 @@ public class c extends MainViewModel {
     @Override // com.taobao.android.detail.sdk.vmodel.main.MainViewModel
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.e != null || !TextUtils.isEmpty(this.i);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.e != null || !StringUtils.isEmpty(this.i);
     }
 }

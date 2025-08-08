@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.nav.detail;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
@@ -45,8 +45,8 @@ public class e extends com.taobao.android.order.bundle.nav.a<Intent> {
             String a2 = hxd.a(intent);
             String b = hxd.b(intent);
             String e = hyk.e();
-            boolean isEmpty = TextUtils.isEmpty(a2);
-            boolean isEmpty2 = TextUtils.isEmpty(e);
+            boolean isEmpty = StringUtils.isEmpty(a2);
+            boolean isEmpty2 = StringUtils.isEmpty(e);
             if (isEmpty || isEmpty2) {
                 a.a(13, intent, "orderId =" + isEmpty + "| degradeUlr empty =" + isEmpty2);
                 return false;

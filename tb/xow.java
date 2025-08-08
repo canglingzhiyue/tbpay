@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -336,7 +336,7 @@ public final class xow {
         textView.setTextColor(i);
         textView.setMaxLines(1);
         textView.setTextSize(2, 17.0f);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         this.c = textView;
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -1);
         layoutParams.weight = 1.0f;

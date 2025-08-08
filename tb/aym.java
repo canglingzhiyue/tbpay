@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.linkage.UMFLinkageTrigger;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -33,7 +33,7 @@ public class aym {
         }
         String string = c.getString("action");
         String string2 = c.getString("target");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             b2 = string2;
         }
         String string3 = c.getString(KEY_ADJUST_OPTIMIZE);
@@ -49,7 +49,7 @@ public class aym {
             return (String) ipChange.ipc$dispatch("ab3f456b", new Object[]{aURAEventIO});
         }
         d eventModel = aURAEventIO.getEventModel();
-        if (eventModel != null && (d = eventModel.d()) != null && !TextUtils.isEmpty(d.key)) {
+        if (eventModel != null && (d = eventModel.d()) != null && !StringUtils.isEmpty(d.key)) {
             return d.key;
         }
         return null;

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -35,20 +35,20 @@ public class ReturnDataStore extends LocalEventStore {
             return null;
         }
         String orderInfo = this.b.getOrderInfo();
-        if (!TextUtils.isEmpty(orderInfo) && orderInfo.contains("external_spec_action=\"/shareppay/sendMsg\"")) {
+        if (!StringUtils.isEmpty(orderInfo) && orderInfo.contains("external_spec_action=\"/shareppay/sendMsg\"")) {
             mspPayResult.setEndCode(Constant.CODE_GET_TOKEN_SUCCESS);
         }
         String string = actionParamsJson.getString("resultStatus");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             mspPayResult.setEndCode(string);
         }
         String string2 = actionParamsJson.getString("memo");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             mspPayResult.setMemo(string2);
         }
         try {
             String string3 = actionParamsJson.getString("result");
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 if (!JsonUtil.isJsonObjectString(string3) && string3.indexOf(riy.BLOCK_START_STR) == 0) {
                     string3 = string3.substring(1, string3.length() - 1);
                 }

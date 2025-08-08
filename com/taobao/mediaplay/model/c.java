@@ -1,6 +1,6 @@
 package com.taobao.mediaplay.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.auth.mobile.common.AlipayAuthConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -66,7 +66,7 @@ public class c {
             Object opt4 = this.f18046a.opt("id");
             this.p = opt4 == null ? null : String.valueOf(opt4);
             Object opt5 = this.f18046a.opt("duration");
-            this.c = (opt5 == null || !TextUtils.isDigitsOnly(opt5.toString())) ? 0L : Long.parseLong(opt5.toString());
+            this.c = (opt5 == null || !StringUtils.isDigitsOnly(opt5.toString())) ? 0L : Long.parseLong(opt5.toString());
             Object opt6 = this.f18046a.opt("passThroughData");
             this.n = opt6 == null ? "" : String.valueOf(opt6);
             Object opt7 = this.f18046a.opt("resources");
@@ -81,20 +81,20 @@ public class c {
                     int length = jSONArray.length();
                     for (int i = 0; i < length; i++) {
                         b bVar = new b(jSONArray.optJSONObject(i));
-                        if (!TextUtils.isEmpty(bVar.b()) && !TextUtils.isEmpty(bVar.a())) {
+                        if (!StringUtils.isEmpty(bVar.b()) && !StringUtils.isEmpty(bVar.a())) {
                             this.e.put(bVar.b(), bVar);
                             this.h.put(bVar.b(), Integer.valueOf(bVar.e()));
                             Object opt8 = jSONArray.optJSONObject(i).opt("passThroughData");
                             this.g.put(bVar.b(), opt8 == null ? "" : String.valueOf(opt8));
                         }
-                        if (!TextUtils.isEmpty(bVar.c()) && !TextUtils.isEmpty(bVar.a())) {
+                        if (!StringUtils.isEmpty(bVar.c()) && !StringUtils.isEmpty(bVar.a())) {
                             this.t.put(bVar.c(), bVar.a());
                             this.u.put(bVar.c(), bVar.b());
                         }
                         Object opt9 = jSONArray.optJSONObject(i).opt("encodeUniqueCode");
                         if (opt9 != null) {
                             String valueOf = String.valueOf(opt9);
-                            if (!TextUtils.isEmpty(valueOf)) {
+                            if (!StringUtils.isEmpty(valueOf)) {
                                 this.s += valueOf;
                             }
                         }
@@ -108,13 +108,13 @@ public class c {
                 if (opt11 != null && (opt11 instanceof JSONObject)) {
                     JSONObject jSONObject4 = (JSONObject) opt11;
                     Object opt12 = jSONObject4.opt("avdataBufferedMaxBytes");
-                    this.j = (opt12 == null || !TextUtils.isDigitsOnly(opt12.toString())) ? 0 : Integer.parseInt(opt12.toString());
+                    this.j = (opt12 == null || !StringUtils.isDigitsOnly(opt12.toString())) ? 0 : Integer.parseInt(opt12.toString());
                     Object opt13 = jSONObject4.opt("avdataBufferedMaxTime");
-                    this.k = (opt13 == null || !TextUtils.isDigitsOnly(opt13.toString())) ? 0 : Integer.parseInt(opt13.toString());
+                    this.k = (opt13 == null || !StringUtils.isDigitsOnly(opt13.toString())) ? 0 : Integer.parseInt(opt13.toString());
                     Object opt14 = jSONObject4.opt("currentLevel");
-                    this.l = (opt14 == null || !TextUtils.isDigitsOnly(opt14.toString())) ? 0 : Integer.parseInt(opt14.toString());
+                    this.l = (opt14 == null || !StringUtils.isDigitsOnly(opt14.toString())) ? 0 : Integer.parseInt(opt14.toString());
                     Object opt15 = jSONObject4.opt("maxLevel");
-                    this.m = (opt15 == null || !TextUtils.isDigitsOnly(opt15.toString())) ? 0 : Integer.parseInt(opt15.toString());
+                    this.m = (opt15 == null || !StringUtils.isDigitsOnly(opt15.toString())) ? 0 : Integer.parseInt(opt15.toString());
                 }
                 try {
                     Object opt16 = jSONObject3.opt(com.taobao.tao.flexbox.layoutmanager.player.videodecide.c.ARRAY_KEY_ENABLEVODABR);
@@ -133,7 +133,7 @@ public class c {
                     int length2 = jSONArray2.length();
                     for (int i2 = 0; i2 < length2; i2++) {
                         a aVar = new a(jSONArray2.optJSONObject(i2));
-                        if (!TextUtils.isEmpty(aVar.b()) && !TextUtils.isEmpty(aVar.a())) {
+                        if (!StringUtils.isEmpty(aVar.b()) && !StringUtils.isEmpty(aVar.a())) {
                             this.f.put(aVar.b(), aVar);
                         }
                     }
@@ -148,7 +148,7 @@ public class c {
                     for (int i3 = 0; i3 < length3; i3++) {
                         Object opt19 = jSONArray3.opt(i3);
                         String valueOf2 = opt19 == null ? null : String.valueOf(opt19);
-                        if (!TextUtils.isEmpty(valueOf2)) {
+                        if (!StringUtils.isEmpty(valueOf2)) {
                             this.o.add(valueOf2);
                         }
                     }
@@ -233,7 +233,7 @@ public class c {
             return "";
         }
         String str2 = map.get(str);
-        return TextUtils.isEmpty(str2) ? "" : str2;
+        return StringUtils.isEmpty(str2) ? "" : str2;
     }
 
     public List<String> j() {

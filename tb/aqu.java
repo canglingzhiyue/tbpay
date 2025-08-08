@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.j;
 import com.alibaba.android.aura.nodemodel.extend.AURAExtendModuleNodeModel;
 import com.alibaba.android.aura.service.aspect.a;
@@ -198,7 +198,7 @@ public final class aqu {
             return;
         }
         String string = jSONObject.getString("code");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         JSONObject jSONObject3 = jSONObject.getJSONObject("extensions");
@@ -340,7 +340,7 @@ public final class aqu {
             if (next instanceof JSONObject) {
                 JSONObject jSONObject3 = (JSONObject) next;
                 String string = jSONObject3.getString("code");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     arc.a().b("combineFunctionModules#功能模块不合法，code为空", arc.a.a().b("AURAConfigCombine").b());
                 } else if (a(string, jSONArray2) == null) {
                     jSONArray2.add(jSONObject3);
@@ -580,7 +580,7 @@ public final class aqu {
             list.add(jSONObject);
         }
         String string = jSONObject2.getString(AliFestivalWVPlugin.PARAMS_MODULE_NAME);
-        if (TextUtils.isEmpty(string) || list2.contains(string)) {
+        if (StringUtils.isEmpty(string) || list2.contains(string)) {
             return;
         }
         list2.add(string);

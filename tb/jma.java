@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.TSchedule;
 import com.taobao.android.tschedule.strategy.h;
@@ -29,7 +29,7 @@ public class jma implements jlz {
         h hVar = h.a.instance;
         String b = hVar.b();
         LinkedHashSet linkedHashSet = new LinkedHashSet();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             linkedHashSet.add(b);
         }
         List<String> c = jmh.c();

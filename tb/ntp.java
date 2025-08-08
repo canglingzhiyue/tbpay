@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -40,11 +40,11 @@ public class ntp extends ArrayMap<String, String> {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
         String str3 = f31755a.get(str);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return (String) super.put(str, str2);
         }
         String str4 = get(str);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return (String) super.put(str, str2);
         }
         return (String) super.put(str, str4 + str3 + str2);

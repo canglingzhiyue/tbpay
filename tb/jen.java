@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
 import java.io.File;
@@ -35,7 +35,7 @@ public class jen {
                 String readLine = bufferedReader.readLine();
                 if (readLine == null) {
                     break;
-                } else if (!TextUtils.isEmpty(readLine)) {
+                } else if (!StringUtils.isEmpty(readLine)) {
                     Matcher matcher = compile.matcher(readLine);
                     if (matcher.find()) {
                         matcher.group(1);

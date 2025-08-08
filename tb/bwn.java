@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.evo.internal.database.ExperimentDO;
 import com.alibaba.evo.internal.database.b;
@@ -102,10 +102,10 @@ public class bwn {
         if ((list == null || list.isEmpty()) && cex.a().j().y() && !this.d.containsKey(l)) {
             this.d.put(l, Boolean.TRUE);
             String string = cex.a().c().getSharedPreferences("ut-ab", 0).getString("layerId_" + l, "");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 for (String str : string.split("###")) {
                     String a2 = k.b().a("expKey_" + str, (String) null);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         a((ExperimentV5) JSONObject.parseObject(a2, ExperimentV5.class));
                     }
                 }

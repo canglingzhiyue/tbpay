@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.RemoteException;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.ut.abtest.UTABTest;
@@ -362,7 +362,7 @@ public class c implements nzi {
                         ComTaobaoGetContactsMessageResponseData.DataBean data = comTaobaoGetContactsMessageResponseData.getData();
                         bubbleTipsBean = data.getTips();
                         String recPicUrl = data.getRecPicUrl();
-                        if (!TextUtils.isEmpty(data.abtestParam)) {
+                        if (!StringUtils.isEmpty(data.abtestParam)) {
                             UTABTest.activateServer(data.abtestParam);
                         }
                         List<ComTaobaoGetContactsMessageResponseData.DataBean.ContactsBean> contacts = data.getContacts();
@@ -423,13 +423,13 @@ public class c implements nzi {
                 recentContactsModel.setGroupId(contacts.getGroupId() == null ? str : contacts.getGroupId());
                 recentContactsModel.setBizType(contacts.getBizType());
                 String entityType = contacts.getEntityType();
-                if (TextUtils.equals("U", entityType)) {
+                if (StringUtils.equals("U", entityType)) {
                     recentContactsModel.setContactType("1");
                     if (contacts.getUserId() != null) {
                         str = contacts.getUserId();
                     }
                     recentContactsModel.setCcode(str);
-                } else if (TextUtils.equals("G", entityType)) {
+                } else if (StringUtils.equals("G", entityType)) {
                     if (contacts.getGroupId() != null) {
                         str = contacts.getGroupId();
                     }
@@ -464,7 +464,7 @@ public class c implements nzi {
         }
         ArrayList arrayList = new ArrayList();
         this.c = 0;
-        if (guideSaoHuoDataBean != null && TextUtils.equals("true", guideSaoHuoDataBean.getIsShow())) {
+        if (guideSaoHuoDataBean != null && StringUtils.equals("true", guideSaoHuoDataBean.getIsShow())) {
             com.taobao.tao.friends.model.b bVar = new com.taobao.tao.friends.model.b(guideSaoHuoDataBean.getText(), "https://gw.alicdn.com/tfs/TB1DchCr3mTBuNjy1XbXXaMrVXa-160-160.png", 0, AgooConstants.ACK_PACK_NOBIND);
             com.taobao.tao.friends.model.a aVar = new com.taobao.tao.friends.model.a();
             aVar.f(str);
@@ -492,7 +492,7 @@ public class c implements nzi {
             if (recentMember.isTaoFriend()) {
                 this.c += i;
             }
-            if (TextUtils.isEmpty(recentMember.getHeadUrl())) {
+            if (StringUtils.isEmpty(recentMember.getHeadUrl())) {
                 recentMember.setHeadUrl("http://gtms03.alicdn.com/tps/i3/TB1ET85IVXXXXaXapXXEBEd5pXX-225-225.png");
             }
             com.taobao.tao.friends.model.b bVar2 = new com.taobao.tao.friends.model.b(recentMember.getName(), recentMember.getHeadUrl(), recentMember.getShareChannel(), recentMember.getBizSubType());

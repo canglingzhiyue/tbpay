@@ -1,7 +1,7 @@
 package com.taobao.android.icart.manager;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -172,7 +172,7 @@ public class d {
             return;
         }
         for (IDMComponent iDMComponent : e) {
-            if (!TextUtils.equals(str, iDMComponent.getFields().getString("_themeState"))) {
+            if (!StringUtils.equals(str, iDMComponent.getFields().getString("_themeState"))) {
                 iDMComponent.getFields().put("_themeState", (Object) str);
                 z = true;
             }

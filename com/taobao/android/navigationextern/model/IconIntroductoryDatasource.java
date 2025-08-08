@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class IconIntroductoryDatasource {
                 } catch (Exception e) {
                     hut.b("IconIntroductoryDatasource", "removeByConfig" + e);
                 }
-                if (!TextUtils.isEmpty(aVar.e) && !TextUtils.isEmpty(aVar.f) && !TextUtils.isEmpty(aVar.b)) {
+                if (!StringUtils.isEmpty(aVar.e) && !StringUtils.isEmpty(aVar.f) && !StringUtils.isEmpty(aVar.b)) {
                     this.b.a(aVar);
                 }
                 hut.b("IconIntroductoryDatasource", "removeByConfig error. dataCompat: " + aVar);
@@ -156,7 +156,7 @@ public class IconIntroductoryDatasource {
                 } catch (Exception e) {
                     hut.b("IconIntroductoryDatasource", "onConfigUpdated" + e);
                 }
-                if (!TextUtils.isEmpty(aVar.e) && !TextUtils.isEmpty(aVar.f) && aVar.d != null && !TextUtils.isEmpty(aVar.b) && !TextUtils.isEmpty(aVar.c) && !TextUtils.isEmpty(aVar.g)) {
+                if (!StringUtils.isEmpty(aVar.e) && !StringUtils.isEmpty(aVar.f) && aVar.d != null && !StringUtils.isEmpty(aVar.b) && !StringUtils.isEmpty(aVar.c) && !StringUtils.isEmpty(aVar.g)) {
                     this.b.a(aVar);
                 }
                 hut.b("IconIntroductoryDatasource", "onConfigUpdated error. dataCompat: " + aVar);

@@ -2,7 +2,7 @@ package com.taobao.android.interactive;
 
 import android.content.ComponentName;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.interactive_common.CXCommonActivity;
 import com.taobao.android.interactive_common.video.b;
@@ -44,7 +44,7 @@ public class e implements com.taobao.android.nav.e {
         }
         try {
             ComponentName component = intent.getComponent();
-            if (component != null && TextUtils.equals("com.taobao.android.interactive.timeline.VideoListActivity2", component.getClassName()) && b.a(intent)) {
+            if (component != null && StringUtils.equals("com.taobao.android.interactive.timeline.VideoListActivity2", component.getClassName()) && b.a(intent)) {
                 intent.setClassName(dVar.a(), CXCommonActivity.class.getName());
             }
         } catch (Throwable th) {

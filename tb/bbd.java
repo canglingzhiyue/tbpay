@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
@@ -31,7 +31,7 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return (List) ipChange.ipc$dispatch("332400c0", new Object[]{map, str});
             }
-            if (map != null && !map.isEmpty() && !TextUtils.isEmpty(str)) {
+            if (map != null && !map.isEmpty() && !StringUtils.isEmpty(str)) {
                 Object obj = map.get(str);
                 if (obj instanceof List) {
                     return (List) obj;
@@ -45,7 +45,7 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return (Map) ipChange.ipc$dispatch("b3a04afb", new Object[]{map, str});
             }
-            if (map == null || map.isEmpty() || TextUtils.isEmpty(str)) {
+            if (map == null || map.isEmpty() || StringUtils.isEmpty(str)) {
                 return null;
             }
             Object obj = map.get(str);
@@ -64,7 +64,7 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("5faf135b", new Object[]{map, str});
             }
-            if (map != null && !map.isEmpty() && !TextUtils.isEmpty(str)) {
+            if (map != null && !map.isEmpty() && !StringUtils.isEmpty(str)) {
                 Object obj = map.get(str);
                 if (obj instanceof String) {
                     return (String) obj;
@@ -75,17 +75,17 @@ public class bbd {
 
         public static boolean a(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^fields.*");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^fields.*");
         }
 
         public static boolean b(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^events\\..+\\[.+\\]\\.fields.*");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^events\\..+\\[.+\\]\\.fields.*");
         }
 
         public static boolean c(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^.+\\[.+\\]$");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^.+\\[.+\\]$");
         }
 
         public static String d(String str) {
@@ -121,9 +121,9 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return ipChange.ipc$dispatch("121a1a7f", new Object[]{str, map});
             }
-            if (!TextUtils.isEmpty(str) && map != null) {
+            if (!StringUtils.isEmpty(str) && map != null) {
                 String d = d(str);
-                if (!TextUtils.isEmpty(d) && (a2 = a(map, d)) != null && (e = e(str)) >= 0 && e <= a2.size()) {
+                if (!StringUtils.isEmpty(d) && (a2 = a(map, d)) != null && (e = e(str)) >= 0 && e <= a2.size()) {
                     return a2.get(e);
                 }
             }
@@ -217,7 +217,7 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return (Map) ipChange.ipc$dispatch("632fbaa1", new Object[]{str, component});
             }
-            if (!TextUtils.isEmpty(str) && component != null) {
+            if (!StringUtils.isEmpty(str) && component != null) {
                 if (a(str)) {
                     return component.getFields();
                 }
@@ -239,7 +239,7 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return (String[]) ipChange.ipc$dispatch("6c230e86", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             if (a(str)) {
@@ -268,12 +268,12 @@ public class bbd {
 
         public static boolean a(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^\\$\\{.+\\}$");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^\\$\\{.+\\}$");
         }
 
         public static boolean b(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^.*\\$\\{.+\\}.*$");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^.*\\$\\{.+\\}.*$");
         }
 
         public static String[] c(String str) {
@@ -281,7 +281,7 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return (String[]) ipChange.ipc$dispatch("c6428d83", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             String[] strArr = new String[3];
@@ -315,7 +315,7 @@ public class bbd {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str.substring(2, str.length() - 1);
             }
             return null;
@@ -341,12 +341,12 @@ public class bbd {
                             String str4 = c3[0];
                             String str5 = c3[2];
                             String d = d(c3[1]);
-                            if (TextUtils.isEmpty(d)) {
+                            if (StringUtils.isEmpty(d)) {
                                 a("emptyExpressionPath", str2, str3);
                                 return;
                             }
                             Object a2 = b.a(b.f(d), map);
-                            if (!TextUtils.isEmpty(str4) || !TextUtils.isEmpty(str5)) {
+                            if (!StringUtils.isEmpty(str4) || !StringUtils.isEmpty(str5)) {
                                 if (a2 != null) {
                                     str = a2.toString();
                                 }
@@ -387,12 +387,12 @@ public class bbd {
                                 String str8 = c4[0];
                                 String str9 = c4[c];
                                 String d2 = d(c4[c2]);
-                                if (TextUtils.isEmpty(d2)) {
+                                if (StringUtils.isEmpty(d2)) {
                                     a("emptyExpressionPath", "arrayIndex", str7);
                                     return;
                                 }
                                 Object a3 = b.a(b.f(d2), map);
-                                if (!TextUtils.isEmpty(str8) || !TextUtils.isEmpty(str9)) {
+                                if (!StringUtils.isEmpty(str8) || !StringUtils.isEmpty(str9)) {
                                     String obj4 = a3 == null ? str : a3.toString();
                                     list.remove(i);
                                     if (i < list.size()) {

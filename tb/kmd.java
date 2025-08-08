@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.a;
 import java.io.IOException;
@@ -55,7 +55,7 @@ public class kmd implements klz {
             return ((Number) ipChange.ipc$dispatch("596b2df", new Object[]{this})).longValue();
         }
         String headerField = this.f30156a.getHeaderField("Content-Length");
-        if (!TextUtils.isEmpty(headerField) && TextUtils.isDigitsOnly(headerField)) {
+        if (!StringUtils.isEmpty(headerField) && StringUtils.isDigitsOnly(headerField)) {
             return Long.valueOf(headerField).longValue();
         }
         return 0L;
@@ -143,7 +143,7 @@ public class kmd implements klz {
             return str;
         }
         String str3 = a2.get(i % a2.size());
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             return str.replaceFirst(str2, str3);
         }
         return str;

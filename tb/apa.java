@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.b;
 import com.alibaba.analytics.core.sync.e;
 import com.alibaba.analytics.core.sync.h;
@@ -60,11 +60,11 @@ public class apa implements e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (indexOf = (trim = str.trim()).indexOf(":")) == -1) {
+        } else if (StringUtils.isEmpty(str) || (indexOf = (trim = str.trim()).indexOf(":")) == -1) {
         } else {
             String substring = trim.substring(0, indexOf);
             int parseInt = Integer.parseInt(trim.substring(indexOf + 1, trim.length()));
-            if (TextUtils.isEmpty(substring) || parseInt <= 0) {
+            if (StringUtils.isEmpty(substring) || parseInt <= 0) {
                 return;
             }
             this.f25492a.a(substring);

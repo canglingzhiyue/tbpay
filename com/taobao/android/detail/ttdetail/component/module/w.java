@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,15 +61,15 @@ public class w extends x {
             return (C) ipChange.ipc$dispatch("2d63d1e0", new Object[]{this, str});
         }
         C c = (C) this.b.a(str);
-        if (c == null && TextUtils.equals("bottomBar", str)) {
+        if (c == null && StringUtils.equals("bottomBar", str)) {
             c = (C) this.b.e();
         }
         pif pifVar = (pif) this.mDetailContext.a().a(pie.PARSER_ID);
         if (pifVar != null && (h = pifVar.h()) != null) {
             qms<eze> qmsVar = null;
-            if (c == null && TextUtils.equals("headerPic", str)) {
+            if (c == null && StringUtils.equals("headerPic", str)) {
                 qmsVar = h.e();
-            } else if (c == null && TextUtils.equals("navBar", str)) {
+            } else if (c == null && StringUtils.equals("navBar", str)) {
                 qmsVar = h.d();
             }
             if (qmsVar != null) {

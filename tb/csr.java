@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Message;
 import android.support.v4.util.Pools;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.a;
 import com.alibaba.android.split.k;
 import com.alibaba.android.split.m;
@@ -41,7 +41,7 @@ public class csr extends Thread {
                 } else {
                     take.e = Class.forName(take.d).getDeclaredConstructor(new Class[0]).newInstance(new Object[0]);
                 }
-                if (take.i != null && take.i.get() != null && !TextUtils.isEmpty(take.h)) {
+                if (take.i != null && take.i.get() != null && !StringUtils.isEmpty(take.h)) {
                     ((com.alibaba.android.split.manager.a) k.a()).c().a(take.i.get(), take.h);
                     ((com.alibaba.android.split.manager.a) k.a()).c().a(take.i.get(), Collections.singletonList(m.a().a(take.h)));
                 }

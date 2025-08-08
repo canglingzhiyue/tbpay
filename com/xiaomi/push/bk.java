@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidParameterException;
 import java.security.MessageDigest;
@@ -22,7 +22,7 @@ public class bk {
     }
 
     public static String a(String str, String str2, Map<String, String> map, String str3) {
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             ArrayList<String> arrayList = new ArrayList();
             if (str != null) {
                 arrayList.add(str.toUpperCase());

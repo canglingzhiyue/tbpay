@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.context.MspTradeContext;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -49,7 +49,7 @@ public class ShareTokenStore extends LocalEventStore {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                } else if (TextUtils.isEmpty(string)) {
+                } else if (StringUtils.isEmpty(string)) {
                 } else {
                     MspShareTokenDialog.showDialog(activity, string, ShareTokenStore.a(ShareTokenStore.this), z);
                 }

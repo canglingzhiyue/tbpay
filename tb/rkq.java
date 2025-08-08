@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.utils.a;
 import com.tmall.android.dai.DAIConfiguration;
@@ -121,21 +121,21 @@ public class rkq {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d71944f2", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             return this.c;
         }
         String str = null;
         if (rkr.a() != null) {
             str = rkr.a().getUtdid();
         }
-        if (TextUtils.isEmpty(str) && e() != null) {
+        if (StringUtils.isEmpty(str) && e() != null) {
             try {
                 str = UTDevice.getUtdid(e());
             } catch (Exception unused) {
                 str = "";
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.c = str;
         }
         return str;

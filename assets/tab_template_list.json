@@ -1,0 +1,122 @@
+{
+  "result": [
+    {
+      "description": "手淘首页直播Tab 房间信息",
+      "name": "taolive_home_page_live_room_info",
+      "span": "1",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_home_page_live_room_info/1676025513084/taolive_home_page_live_room_info.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taolive_home_page_live_room_info/1676025513084/taolive_home_page_live_room_info.zip",
+      "version4Android": "52",
+      "version4IOS": "52"
+    },
+    {
+      "description": "首页直播，商品气泡卡片",
+      "name": "taobao_timemove_bubble_card",
+      "span": "1",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taobao_timemove_bubble_card/1675742028729/taobao_timemove_bubble_card.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taobao_timemove_bubble_card/1675742028729/taobao_timemove_bubble_card.zip",
+      "version4Android": "25",
+      "version4IOS": "25"
+    },
+    {
+      "description": "频道页单列流全屏卡2023",
+      "name": "taobao_channel_single_stream_container_card_202303",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_single_stream_container_card_202303/1679975343596/taobao_channel_single_stream_container_card_202303.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_single_stream_container_card_202303/1679975343596/taobao_channel_single_stream_container_card_202303.zip",
+      "version4Android": "54",
+      "version4IOS": "54"
+    },
+    {
+      "description": "首页直播，商品气泡卡片",
+      "name": "taobao_channel_livetab_bubble_card_202303",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_livetab_bubble_card_202303/1679312379977/taobao_channel_livetab_bubble_card_202303.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_livetab_bubble_card_202303/1679312379977/taobao_channel_livetab_bubble_card_202303.zip",
+      "version4Android": "15",
+      "version4IOS": "15"
+    },
+    {
+      "description": "手淘首页直播Tab 房间信息",
+      "name": "taolive_channel_livetab_room_info_202303",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_livetab_room_info_202303/1682247869925/taolive_channel_livetab_room_info_202303.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_livetab_room_info_202303/1682247869925/taolive_channel_livetab_room_info_202303.zip",
+      "version4Android": "11",
+      "version4IOS": "11"
+    },
+    {
+      "description": "单列流看点商品卡",
+      "name": "taobao_channel_livetab_timemove_bubble_card_202303",
+      "span": "1",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_livetab_timemove_bubble_card_202303/1677392215071/taobao_channel_livetab_timemove_bubble_card_202303.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_livetab_timemove_bubble_card_202303/1677392215071/taobao_channel_livetab_timemove_bubble_card_202303.zip",
+      "version4Android": "7",
+      "version4IOS": "7"
+    },
+    {
+      "description": "单列流看点主播房间卡",
+      "name": "taolive_channel_livetab_timemove_room_info_202303",
+      "span": "1",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_livetab_timemove_room_info_202303/1682247934908/taolive_channel_livetab_timemove_room_info_202303.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_livetab_timemove_room_info_202303/1682247934908/taolive_channel_livetab_timemove_room_info_202303.zip",
+      "version4Android": "22",
+      "version4IOS": "22"
+    },
+
+    {
+      "description": "单列流看点容器卡0315",
+      "name": "taobao_channel_single_stream_timemove_container_card_20230315",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_single_stream_timemove_container_card_20230315/1682404412026/taobao_channel_single_stream_timemove_container_card_20230315.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_single_stream_timemove_container_card_20230315/1682404412026/taobao_channel_single_stream_timemove_container_card_20230315.zip",
+      "version4Android": "26",
+      "version4IOS": "26"
+    },
+    {
+      "description": "频道页单列流全屏卡0315",
+      "name": "taobao_channel_single_stream_container_card_20230315",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_single_stream_container_card_20230315/1692271658980/taobao_channel_single_stream_container_card_20230315.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_single_stream_container_card_20230315/1692271658980/taobao_channel_single_stream_container_card_20230315.zip",
+      "version4Android": "41",
+      "version4IOS": "41"
+    },
+    {
+      "description": "单列流下滑引导20230315",
+      "name": "taobao_channel_livetab_updown_guide_card_20230315",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_livetab_updown_guide_card_20230315/1682403999406/taobao_channel_livetab_updown_guide_card_20230315.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taobao_channel_livetab_updown_guide_card_20230315/1682403999406/taobao_channel_livetab_updown_guide_card_20230315.zip",
+      "version4Android": "7",
+      "version4IOS": "7"
+    },
+    {
+      "description": "频道好看tab横滑话题流布局",
+      "name": "taolive_channel_haokan_topic_scroll_view",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_haokan_topic_scroll_view/1692271588680/taolive_channel_haokan_topic_scroll_view.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_haokan_topic_scroll_view/1692271588680/taolive_channel_haokan_topic_scroll_view.zip",
+      "version4Android": "42",
+      "version4IOS": "42"
+    },
+    {
+      "description": "首页直播tab双列流卡片",
+      "name": "taolive_homelivetab_feed_card",
+      "span": "1",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_homelivetab_feed_card/1705734019634/taolive_homelivetab_feed_card.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taolive_homelivetab_feed_card/1705734019634/taolive_homelivetab_feed_card.zip",
+      "version4Android": "7",
+      "version4IOS": "7"
+    },
+    {
+      "description": "首页直播tab常访模板",
+      "name": "taolive_homelivetab_recentwatch",
+      "span": "2",
+      "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_homelivetab_recentwatch/1705561028048/taolive_homelivetab_recentwatch.zip",
+      "url4IOS": "https://dinamicx.alibabausercontent.com/pub/taolive_homelivetab_recentwatch/1705561028048/taolive_homelivetab_recentwatch.zip",
+      "version4Android": "2",
+      "version4IOS": "2"
+    }
+  ]
+}

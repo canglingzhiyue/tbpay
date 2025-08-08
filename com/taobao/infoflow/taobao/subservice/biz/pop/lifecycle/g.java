@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.pop.lifecycle;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.action.IUiRefreshActionModel;
 import com.taobao.infoflow.protocol.model.datamodel.response.IContainerDataModel;
@@ -40,10 +40,10 @@ public class g implements IContainerService.a {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4935db30", new Object[]{this, iUiRefreshActionModel});
-        } else if (iUiRefreshActionModel == null || !TextUtils.equals(iUiRefreshActionModel.getUiOperationType(), "uiRefresh")) {
+        } else if (iUiRefreshActionModel == null || !StringUtils.equals(iUiRefreshActionModel.getUiOperationType(), "uiRefresh")) {
         } else {
-            boolean isEmpty = TextUtils.isEmpty(iUiRefreshActionModel.getErrorCode());
-            boolean equals = TextUtils.equals("remote", iUiRefreshActionModel.getDataSourceType());
+            boolean isEmpty = StringUtils.isEmpty(iUiRefreshActionModel.getErrorCode());
+            boolean equals = StringUtils.equals("remote", iUiRefreshActionModel.getDataSourceType());
             if (!equals || !isEmpty) {
                 com.taobao.homepage.pop.utils.c.a("PopOnUiRefreshListener ", "ui refresh error, isRemote=" + equals + ", success=" + isEmpty);
                 return;
@@ -58,12 +58,12 @@ public class g implements IContainerService.a {
                 com.taobao.homepage.pop.utils.c.a("PopOnUiRefreshListener ", "ui refresh error, base is null or pageParams is null");
                 return;
             }
-            boolean equals2 = TextUtils.equals(iUiRefreshActionModel.getDataChangeType(), "base");
-            if (TextUtils.equals("coldStart", iUiRefreshActionModel.getRequestType()) || base.mo1280getPageParams().getPageNum() == 0) {
+            boolean equals2 = StringUtils.equals(iUiRefreshActionModel.getDataChangeType(), "base");
+            if (StringUtils.equals("coldStart", iUiRefreshActionModel.getRequestType()) || base.mo1280getPageParams().getPageNum() == 0) {
                 z = true;
             }
             if (com.taobao.homepage.pop.utils.c.a() && z) {
-                z = !TextUtils.equals(iUiRefreshActionModel.getRequestType(), "scrollNextPage");
+                z = !StringUtils.equals(iUiRefreshActionModel.getRequestType(), "scrollNextPage");
             }
             if (equals2 && !z) {
                 com.taobao.homepage.pop.utils.c.a("PopOnUiRefreshListener ", "ui refresh error, not firstPage base refresh");

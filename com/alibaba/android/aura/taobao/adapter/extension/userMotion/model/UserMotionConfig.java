@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.taobao.adapter.extension.userMotion.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -20,6 +20,6 @@ public class UserMotionConfig {
 
     public static boolean isValid(UserMotionConfig userMotionConfig) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1629ecbb", new Object[]{userMotionConfig})).booleanValue() : userMotionConfig != null && !TextUtils.isEmpty(userMotionConfig.uid) && !TextUtils.isEmpty(userMotionConfig.page);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1629ecbb", new Object[]{userMotionConfig})).booleanValue() : userMotionConfig != null && !StringUtils.isEmpty(userMotionConfig.uid) && !StringUtils.isEmpty(userMotionConfig.page);
     }
 }

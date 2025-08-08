@@ -3,7 +3,7 @@ package com.taobao.accs.connection;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -100,7 +100,7 @@ public class a extends b {
         if (this.f.get(str) == null) {
             this.e = str;
             String a2 = f8214a.a(com.taobao.aranger.utils.c.a());
-            boolean z = TextUtils.isEmpty(a2) || a2.equals(this.d.getPackageName());
+            boolean z = StringUtils.isEmpty(a2) || a2.equals(this.d.getPackageName());
             if (o.e(this.d) && z) {
                 this.b = new ConnectionWrapper(str);
                 this.c = false;
@@ -149,7 +149,7 @@ public class a extends b {
         }
         String a2 = com.taobao.aranger.utils.c.a();
         String a3 = f8214a.a(a2);
-        boolean z = TextUtils.isEmpty(a3) || a3.equals(a2);
+        boolean z = StringUtils.isEmpty(a3) || a3.equals(a2);
         Boolean bool = this.g;
         if (bool == null || bool.booleanValue() != z) {
             ALog.e("AllWeatherConnectionService", "isCurProcessAllow2Connect", "process", a3, "allowed", Boolean.valueOf(z));

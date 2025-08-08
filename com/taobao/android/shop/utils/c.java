@@ -1,6 +1,6 @@
 package com.taobao.android.shop.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.performance.UmbrellaProcessTracker;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,7 +50,7 @@ public class c {
             return;
         }
         this.b = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         UmbrellaProcessTracker.addArgs("Shop", "mParamForLog", str);
@@ -64,7 +64,7 @@ public class c {
             return;
         }
         this.c = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         UmbrellaProcessTracker.addArgs("Shop", "mBundleUrl", str);
@@ -78,7 +78,7 @@ public class c {
             return;
         }
         this.d = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         UmbrellaProcessTracker.addArgs("Shop", "mShopNaviForLog", str);
@@ -92,7 +92,7 @@ public class c {
             return;
         }
         this.e = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         UmbrellaProcessTracker.addArgs("Shop", "mParamUUIDForLog", str);
@@ -106,7 +106,7 @@ public class c {
             return;
         }
         this.f = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         UmbrellaProcessTracker.addArgs("Shop", "shopId", str);

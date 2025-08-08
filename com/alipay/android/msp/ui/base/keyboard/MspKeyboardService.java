@@ -1,7 +1,7 @@
 package com.alipay.android.msp.ui.base.keyboard;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.ViewGroup;
@@ -137,7 +137,7 @@ public class MspKeyboardService implements TemplateKeyboardService {
         LogUtil.record(4, "", "MspKeyboardService::destroyKeyboard", "MspKeyboardService-destroyKeyboard:::enter");
         if (view == null) {
             LogUtil.record(4, "", "MspKeyboardService::destroyKeyboard", "MspKeyboardService-destroyKeyboard:::decorView is null");
-        } else if (TextUtils.equals(this.f4968a, BIRDNEST_RENDER) || (keyboard = com.alipay.android.app.safepaybase.alikeyboard.KeyboardManager.getKeyboard(view.hashCode())) == null) {
+        } else if (StringUtils.equals(this.f4968a, BIRDNEST_RENDER) || (keyboard = com.alipay.android.app.safepaybase.alikeyboard.KeyboardManager.getKeyboard(view.hashCode())) == null) {
         } else {
             keyboard.hideKeyboard();
             com.alipay.android.app.safepaybase.alikeyboard.KeyboardManager.unBindKeyboard(view.hashCode());

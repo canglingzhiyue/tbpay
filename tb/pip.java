@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.g4;
 import com.alibaba.triver.triver_shop.newShop.ext.g;
@@ -288,7 +288,7 @@ public class pip implements af.a, ddv {
         hashMap.put(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID, str);
         hashMap.put("itemId", str2);
         hashMap.put("alimamaLiveId", b);
-        hashMap.put("isSame", TextUtils.equals(str, b) ? "true" : "false");
+        hashMap.put("isSame", StringUtils.equals(str, b) ? "true" : "false");
         ai.b("alimamaTcpReportCheck", hashMap);
     }
 
@@ -414,7 +414,7 @@ public class pip implements af.a, ddv {
             if (u == null) {
                 return;
             }
-            if (((TextUtils.isEmpty(u.liveId) || TextUtils.isEmpty(q.adLiveId) || !q.adLiveId.equals(u.liveId)) && !TextUtils.isEmpty(q.adLiveId)) || q.action_list == null || q.action_list.size() <= 0 || !q.action_list.contains(str)) {
+            if (((StringUtils.isEmpty(u.liveId) || StringUtils.isEmpty(q.adLiveId) || !q.adLiveId.equals(u.liveId)) && !StringUtils.isEmpty(q.adLiveId)) || q.action_list == null || q.action_list.size() <= 0 || !q.action_list.contains(str)) {
                 return;
             }
             System.out.println(q.pay_url);
@@ -450,7 +450,7 @@ public class pip implements af.a, ddv {
                     return;
                 }
                 String str3 = p.interactiveid;
-                if (!TextUtils.isEmpty(str3) && poy.u(this.g) != null && poy.u(this.g).broadCaster != null && cgl.i() != null) {
+                if (!StringUtils.isEmpty(str3) && poy.u(this.g) != null && poy.u(this.g).broadCaster != null && cgl.i() != null) {
                     if (str3.contains("?")) {
                         str2 = str3 + "&action=" + str + "&liveId=" + poy.u(this.g).liveId + "&userId=" + cgl.i().a() + "&anchorId=" + poy.u(this.g).broadCaster.accountId;
                     } else {

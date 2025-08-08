@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.TBMainHost;
 import com.taobao.tao.k;
@@ -168,7 +168,7 @@ public final class cpe {
                 return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{scene})).intValue();
             }
             q.c(scene, "scene");
-            if (TextUtils.isEmpty(scene)) {
+            if (StringUtils.isEmpty(scene)) {
                 return -1;
             }
             int hashCode = scene.hashCode();

@@ -2,7 +2,7 @@ package com.alibaba.analytics.core.config;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,7 +37,7 @@ public class i {
             if (k == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(str2) && str2.length() > 100000) {
+            if (!StringUtils.isEmpty(str2) && str2.length() > 100000) {
                 return;
             }
             f2060a.put(str, str2);

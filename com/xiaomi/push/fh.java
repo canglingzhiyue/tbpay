@@ -14,7 +14,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.StatusBarNotification;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -101,7 +101,7 @@ public abstract class fh extends ff {
 
     /* renamed from: d  reason: collision with other method in class */
     private boolean m1928d() {
-        return !TextUtils.isEmpty(b()) && !TextUtils.isEmpty(this.f348a);
+        return !StringUtils.isEmpty(b()) && !StringUtils.isEmpty(this.f348a);
     }
 
     private boolean e() {

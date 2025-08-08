@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedInputStream;
@@ -161,7 +161,7 @@ public final class ocz {
         } else if (strArr != null) {
             ArrayList arrayList = new ArrayList();
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     arrayList.add(new File(str));
                 }
             }

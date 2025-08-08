@@ -1,6 +1,6 @@
 package com.alipay.mobile.monitor.track.spm.monitor.tracker;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.behavor.Behavor;
 import com.alipay.mobile.framework.MpaasClassInfo;
@@ -26,7 +26,7 @@ public class MergeTracker extends BaseTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c9f3a3e", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f5771a) || this.mBehavorBuilder == null) {
+        } else if (StringUtils.isEmpty(this.f5771a) || this.mBehavorBuilder == null) {
         } else {
             LoggerFactory.getBehavorLogger().event(this.f5771a, this.mBehavorBuilder.build());
             SpmUtils.printBehaviour(TAG, this.mBehavorBuilder, this.f5771a);

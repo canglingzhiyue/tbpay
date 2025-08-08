@@ -1,7 +1,7 @@
 package com.taobao.android.virtual_thread.adapter.tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.d;
@@ -102,7 +102,7 @@ public class b {
                 return false;
             }
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                if (!TextUtils.equals(entry.getValue(), map2.get(entry.getKey()))) {
+                if (!StringUtils.equals(entry.getValue(), map2.get(entry.getKey()))) {
                     return false;
                 }
             }

@@ -12,7 +12,7 @@ import android.taobao.windvane.extra.uc.remotefetch.WVUCRemoteFetcher;
 import android.taobao.windvane.file.NotEnoughSpace;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.b;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.MiscUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uc.webview.export.WebView;
@@ -94,13 +94,13 @@ public class WVCore {
             str = MiscUtils.KEY_RUNNING;
         } else if (innerSo(application)) {
             String ucCore7ZFilePath = UCCoreStartup.ucCore7ZFilePath(application);
-            if (!TextUtils.isEmpty(ucCore7ZFilePath)) {
+            if (!StringUtils.isEmpty(ucCore7ZFilePath)) {
                 runningDir = U4Engine.getExtractDir(application, new File(ucCore7ZFilePath));
             }
             str = "inner";
-        } else if (!TextUtils.isEmpty(WVUCRemoteFetcher.fetchUCRemoteLocal())) {
+        } else if (!StringUtils.isEmpty(WVUCRemoteFetcher.fetchUCRemoteLocal())) {
             String fetchUCRemoteLocal = WVUCRemoteFetcher.fetchUCRemoteLocal();
-            if (!TextUtils.isEmpty(fetchUCRemoteLocal)) {
+            if (!StringUtils.isEmpty(fetchUCRemoteLocal)) {
                 runningDir = U4Engine.getExtractDir(application, new File(fetchUCRemoteLocal));
             }
             str = "remoteso";
@@ -254,7 +254,7 @@ public class WVCore {
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] split = str.split(",");
                 if (split.length == 2) {
                     if (System.currentTimeMillis() - Long.valueOf(split[1]).longValue() > j.commonConfig.Y) {

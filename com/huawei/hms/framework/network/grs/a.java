@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
 import com.huawei.hms.framework.network.grs.g.h;
@@ -84,7 +84,7 @@ public class a {
                 Logger.i(a.e, "GrsClientManager.ayncGetGrsUrls：Return [%s] Urls is Empty", this.f7412a);
                 this.c.onCallBackFail(-5);
             } else {
-                if (!TextUtils.isEmpty(j)) {
+                if (!StringUtils.isEmpty(j)) {
                     Logger.e(a.e, "The serviceName[%s] is not configured on the GRS server.", this.f7412a);
                 }
                 Logger.i(a.e, "GrsClientManager.ayncGetGrsUrls: Get URL from Local JSON File");
@@ -125,10 +125,10 @@ public class a {
 
         @Override // com.huawei.hms.framework.network.grs.b
         public void a() {
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 Logger.i(a.e, "GrsClientManager.ayncGetGrsUrl: Return [%s][%s] Url: %s", this.f7413a, this.b, StringUtils.anonymizeMessage(this.d));
                 this.c.onCallBackSuccess(this.d);
-            } else if (!TextUtils.isEmpty(this.d)) {
+            } else if (!StringUtils.isEmpty(this.d)) {
                 Logger.i(a.e, "GrsClientManager.ayncGetGrsUrl：Return [%s][%s] Url is Empty", this.f7413a, this.b);
                 this.c.onCallBackFail(-3);
             } else {
@@ -151,16 +151,16 @@ public class a {
                 String str2 = this.b;
                 Logger.i(str, "GrsClientManager.ayncGetGrsUrl: Get URL from Current Called GRS Server, Return [%s][%s] Url: %s", this.f7413a, str2, StringUtils.anonymizeMessage(a2.get(str2)));
                 this.c.onCallBackSuccess(a2.get(this.b));
-            } else if (!TextUtils.isEmpty(this.d)) {
+            } else if (!StringUtils.isEmpty(this.d)) {
                 String str3 = a.e;
                 String str4 = this.b;
                 Logger.i(str3, "GrsClientManager.ayncGetGrsUrl: Return [%s][%s] Url: %s", this.f7413a, str4, StringUtils.anonymizeMessage(a2.get(str4)));
                 this.c.onCallBackSuccess(this.d);
-            } else if (!TextUtils.isEmpty(this.d)) {
+            } else if (!StringUtils.isEmpty(this.d)) {
                 Logger.i(a.e, "GrsClientManager.ayncGetGrsUrl：Return [%s][%s] Url is Empty", this.f7413a, this.b);
                 this.c.onCallBackFail(-5);
             } else {
-                if (!TextUtils.isEmpty(j)) {
+                if (!StringUtils.isEmpty(j)) {
                     Logger.e(a.e, "The serviceName[%s][%s] is not configured on the GRS server.", this.f7413a, this.b);
                 }
                 Logger.i(a.e, "GrsClientManager.ayncGetGrsUrl: Get URL from Local JSON File");
@@ -187,7 +187,7 @@ public class a {
 
     public static Map<String, Map<String, String>> a(String str) {
         ConcurrentHashMap concurrentHashMap = new ConcurrentHashMap(16);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Logger.v(e, "isSpExpire jsonValue is null.");
             return concurrentHashMap;
         }
@@ -197,7 +197,7 @@ public class a {
             while (keys.hasNext()) {
                 String next = keys.next();
                 JSONObject jSONObject2 = jSONObject.getJSONObject(next);
-                if (!TextUtils.isEmpty(next)) {
+                if (!StringUtils.isEmpty(next)) {
                     concurrentHashMap.put(next, a(jSONObject2));
                 }
             }
@@ -221,7 +221,7 @@ public class a {
 
     public static Map<String, String> a(String str, String str2) {
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Logger.w(e, "isSpExpire jsonValue from server is null.");
             return hashMap;
         }
@@ -251,7 +251,7 @@ public class a {
             while (keys.hasNext()) {
                 String next = keys.next();
                 String obj = jSONObject.get(next).toString();
-                if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(obj)) {
+                if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(obj)) {
                     concurrentHashMap.put(next, obj);
                 }
             }
@@ -270,18 +270,18 @@ public class a {
     public String a(String str, String str2, Context context) {
         com.huawei.hms.framework.network.grs.e.b bVar = new com.huawei.hms.framework.network.grs.e.b();
         String str3 = a(str, bVar, context).get(str2);
-        if (bVar.a() && !TextUtils.isEmpty(str3)) {
+        if (bVar.a() && !StringUtils.isEmpty(str3)) {
             Logger.i(e, "GrsClientManager.synGetGrsUrl: Return [%s][%s] Url: %s", str, str2, StringUtils.anonymizeMessage(str3));
             return str3;
         }
         String a2 = a(context, str);
         String str4 = a(a2, str).get(str2);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             Logger.i(e, "GrsClientManager.synGetGrsUrl: Get URL from Current Called GRS Server, Return [%s][%s] Url: %s", str, str2, StringUtils.anonymizeMessage(str4));
             return str4;
         }
-        if (TextUtils.isEmpty(str3)) {
-            if (!TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(a2)) {
                 Logger.e(e, "The serviceName[%s][%s] is not configured on the GRS server.", str, str2);
             }
             Logger.i(e, "GrsClientManager.synGetGrsUrl: Get URL from Local JSON File.");
@@ -308,7 +308,7 @@ public class a {
             return a4;
         }
         if (a2.isEmpty()) {
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 Logger.e(e, "The serviceName[%s] is not configured on the GRS server.", str);
             }
             Logger.i(e, "GrsClientManager.synGetGrsUrls: Get URL from Local JSON File.");
@@ -345,7 +345,7 @@ public class a {
         String str3 = a(str, bVar, context).get(str2);
         if (!bVar.a()) {
             this.c.a(new com.huawei.hms.framework.network.grs.g.k.c(this.f7411a, context), new b(str, str2, iQueryUrlCallBack, str3, context, this.f7411a, this.b), str, this.d);
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
             Logger.i(e, "GrsClientManager.ayncGetGrsUrl：Return [%s][%s] Url is Empty", str, str2);
             iQueryUrlCallBack.onCallBackFail(-5);
         } else {

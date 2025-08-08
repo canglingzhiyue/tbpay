@@ -74,7 +74,7 @@ public class TAKAbilityHubModule extends WXModule {
         L29:
             com.alibaba.fastjson.JSONObject r0 = new com.alibaba.fastjson.JSONObject
             r0.<init>()
-            boolean r1 = android.text.TextUtils.isEmpty(r6)
+            boolean r1 = android.text.StringUtils.isEmpty(r6)
             if (r1 != 0) goto L3a
             java.lang.String r1 = "type"
             r0.put(r1, r6)

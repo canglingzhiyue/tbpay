@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Looper;
 import android.os.MessageQueue;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.logging.util.perf.Constants;
 import com.alipay.mobile.security.zim.msgchannel.ZimMessageChannel;
@@ -60,9 +60,9 @@ public class oqm {
             return ((Boolean) ipChange.ipc$dispatch("78a1b3c0", new Object[]{this, opeVar, jSONObject})).booleanValue();
         }
         AwesomeGetData awesomeGetData = (AwesomeGetData) jSONObject.get("dataModel");
-        if (TextUtils.isEmpty(this.f32299a) || awesomeGetData == null || awesomeGetData.containers == null || awesomeGetData.containers.get(this.f32299a) == null) {
+        if (StringUtils.isEmpty(this.f32299a) || awesomeGetData == null || awesomeGetData.containers == null || awesomeGetData.containers.get(this.f32299a) == null) {
             String str = "null";
-            laq a2 = laq.a().a("MTopRequest").b("dataProcess").a("containerId", TextUtils.isEmpty(this.f32299a) ? str : this.f32299a);
+            laq a2 = laq.a().a("MTopRequest").b("dataProcess").a("containerId", StringUtils.isEmpty(this.f32299a) ? str : this.f32299a);
             if (awesomeGetData != null) {
                 str = "not null";
             }
@@ -137,7 +137,7 @@ public class oqm {
                 jSONObject2 = new JSONObject();
             }
             Boolean bool = (Boolean) m.a().a("homeNetLowOptimization", Boolean.class);
-            if (bool == null || !bool.booleanValue() || !TextUtils.equals(ldc.a(), "l")) {
+            if (bool == null || !bool.booleanValue() || !StringUtils.equals(ldc.a(), "l")) {
                 UppProtocolImpl.getInstance().addBizFeatures(jSONObject2, "Page_Home");
             }
             c.a("ucpConfig", jSONObject2.toString());
@@ -145,7 +145,7 @@ public class oqm {
         JSONObject jSONObject3 = new JSONObject();
         jSONObject3.put("containerId", (Object) this.f32299a);
         c.a("containerId", this.f32299a);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "pullRefresh";
         }
         jSONObject3.put(i.CDN_REQUEST_TYPE, (Object) string);
@@ -177,7 +177,7 @@ public class oqm {
                         return;
                     }
                     SharedPreferences.Editor edit = g.a().getSharedPreferences("homepage_common", 0).edit();
-                    if (!TextUtils.isEmpty(jSONObject.getString("lastVersion"))) {
+                    if (!StringUtils.isEmpty(jSONObject.getString("lastVersion"))) {
                         c.b(oqr.a(oqm.a(oqm.this)), jSONObject.getString("lastVersion"));
                         edit.putString("HomePageLatestVersion", jSONObject.getString("lastVersion"));
                     }

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -209,7 +209,7 @@ public class BarChart extends View {
                     int i12 = i10;
                     canvas.drawRect(0.0f, i10, (int) ((aVar2.b() * f) / f2), i10 + i6, this.mPaints[i11]);
                     String a2 = aVar2.a();
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         this.mTextPaint.getTextBounds(a2, 0, a2.length(), this.mTextBounds);
                         canvas.drawText(a2, this.mTextPadding, (i12 + (i6 / 2)) - this.mTextBounds.exactCenterY(), this.mTextPaint);
                     }

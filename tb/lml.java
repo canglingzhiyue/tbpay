@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -342,7 +342,7 @@ public class lml extends DXWidgetNode implements IVideoPlayControllerService.b, 
         if (cover != null) {
             onq.a(cover, cover.getImageUrl(), null, lfx.GUESS_IMAGE_STRATEGY_CONFIG);
             String imageUrl = cover.getImageUrl();
-            if (imageUrl != null && !TextUtils.equals(imageUrl, this.f30711a.i()) && tBLiveOpenCardView.isPlaying()) {
+            if (imageUrl != null && !StringUtils.equals(imageUrl, this.f30711a.i()) && tBLiveOpenCardView.isPlaying()) {
                 tBLiveOpenCardView.stopVideo();
             }
         }
@@ -364,13 +364,13 @@ public class lml extends DXWidgetNode implements IVideoPlayControllerService.b, 
         if (this.f30711a.y() > 0) {
             tBLiveOpenCardView.setPlayDuration(this.f30711a.y());
         }
-        if (!TextUtils.isEmpty(this.f30711a.c()) && -1 != (a4 = pbh.a(this.f30711a.c()))) {
+        if (!StringUtils.isEmpty(this.f30711a.c()) && -1 != (a4 = pbh.a(this.f30711a.c()))) {
             tBLiveOpenCardView.setBackgroundResource(a4);
         }
-        if (!TextUtils.isEmpty(this.f30711a.n()) && -1 != (a3 = pbh.a(this.f30711a.n()))) {
+        if (!StringUtils.isEmpty(this.f30711a.n()) && -1 != (a3 = pbh.a(this.f30711a.n()))) {
             tBLiveOpenCardView.setPlaceHoldImageResId(a3);
         }
-        if (!TextUtils.isEmpty(this.f30711a.m()) && -1 != (a2 = pbh.a(this.f30711a.m()))) {
+        if (!StringUtils.isEmpty(this.f30711a.m()) && -1 != (a2 = pbh.a(this.f30711a.m()))) {
             tBLiveOpenCardView.setColorFilter(a2);
         }
         if (this.f30711a.q() == null) {
@@ -386,7 +386,7 @@ public class lml extends DXWidgetNode implements IVideoPlayControllerService.b, 
             return;
         }
         String u = this.f30711a.u();
-        if (TextUtils.isEmpty(u) || tBLiveOpenCardView == null) {
+        if (StringUtils.isEmpty(u) || tBLiveOpenCardView == null) {
             return;
         }
         int a2 = pbh.a(u);
@@ -412,7 +412,7 @@ public class lml extends DXWidgetNode implements IVideoPlayControllerService.b, 
         }
         String w = this.f30711a.w();
         String d = this.f30711a.d();
-        if (TextUtils.isEmpty(w) || TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(w) || StringUtils.isEmpty(d)) {
             return;
         }
         if (w.equals(d)) {
@@ -431,7 +431,7 @@ public class lml extends DXWidgetNode implements IVideoPlayControllerService.b, 
             return;
         }
         String h = this.f30711a.h();
-        if (TextUtils.isEmpty(h)) {
+        if (StringUtils.isEmpty(h)) {
             return;
         }
         AbsFeature<? super ImageView> findFeature = tBLiveOpenCardView.findFeature(ImageShapeFeature.class);
@@ -446,7 +446,7 @@ public class lml extends DXWidgetNode implements IVideoPlayControllerService.b, 
         imageShapeFeature.setShape(d);
         String f = this.f30711a.f();
         double g = this.f30711a.g();
-        if (d != 1 || TextUtils.isEmpty(f)) {
+        if (d != 1 || StringUtils.isEmpty(f)) {
             return;
         }
         if (f.endsWith("ap") || f.endsWith("np")) {
@@ -500,7 +500,7 @@ public class lml extends DXWidgetNode implements IVideoPlayControllerService.b, 
         String j = this.f30711a.j();
         String s = this.f30711a.s();
         String r = this.f30711a.r();
-        if (TextUtils.isEmpty(k) && TextUtils.isEmpty(j) && TextUtils.isEmpty(s) && TextUtils.isEmpty(r)) {
+        if (StringUtils.isEmpty(k) && StringUtils.isEmpty(j) && StringUtils.isEmpty(s) && StringUtils.isEmpty(r)) {
             return;
         }
         float a2 = pbh.a(tBLiveOpenCardView.getContext(), k);

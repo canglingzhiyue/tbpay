@@ -1,7 +1,7 @@
 package com.ut.share.executor;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
@@ -56,7 +56,7 @@ public class WeiboExecutor implements IShareExecutor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("532a854a", new Object[]{this, context, shareData, shareListener});
-        } else if (!TextUtils.isEmpty(APP_KEY)) {
+        } else if (!StringUtils.isEmpty(APP_KEY)) {
             if (this.weibo == null) {
                 this.weibo = new ShareWeiboController(context, APP_KEY, REDIRECT_URL);
             }

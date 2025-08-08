@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
@@ -81,11 +81,11 @@ public class kpj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("219b503b", new Object[]{str, aVar, str2, componentData});
-        } else if (f30211a.equals(str2) && componentData != null && !TextUtils.isEmpty(componentData.componentName)) {
+        } else if (f30211a.equals(str2) && componentData != null && !StringUtils.isEmpty(componentData.componentName)) {
             HashMap hashMap = new HashMap();
             hashMap.put("data", componentData.params);
             phg.b().a(componentData.componentName, hashMap);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Map<String, Object> jSONObject = new JSONObject();
             jSONObject.put("componentName", (Object) "tblive-base-openWebview");
@@ -116,7 +116,7 @@ public class kpj {
         String format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date(cgl.j().a()));
         String string = sharedPreferences.getString("last_widget_anim_day", "");
         int i = sharedPreferences.getInt("widget_anim_count", 0);
-        if (!TextUtils.isEmpty(format) && string != null) {
+        if (!StringUtils.isEmpty(format) && string != null) {
             if (!string.equals(format)) {
                 sharedPreferences.edit().putString("last_widget_anim_day", format).putInt("widget_anim_count", 0).apply();
                 return true;

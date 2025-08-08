@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -67,7 +67,7 @@ public class inr {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     hashMap.put(key, value.toString());
                 }
             }

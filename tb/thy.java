@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -174,7 +174,7 @@ public class thy implements View.OnTouchListener, a {
             return (int[]) ipChange.ipc$dispatch("81233af2", new Object[]{this, str});
         }
         int[] iArr = new int[2];
-        if (TextUtils.isEmpty(str) || (thxVar = this.d) == null) {
+        if (StringUtils.isEmpty(str) || (thxVar = this.d) == null) {
             return iArr;
         }
         int c = thxVar.c(str);
@@ -254,7 +254,7 @@ public class thy implements View.OnTouchListener, a {
             return ((Number) ipChange.ipc$dispatch("b6e7fbc9", new Object[]{this, str, context})).intValue();
         }
         int i2 = 4;
-        if ((!com.taobao.homepage.utils.b.c() && !com.taobao.homepage.utils.b.b()) || TextUtils.isEmpty(str)) {
+        if ((!com.taobao.homepage.utils.b.c() && !com.taobao.homepage.utils.b.b()) || StringUtils.isEmpty(str)) {
             return 4;
         }
         try {

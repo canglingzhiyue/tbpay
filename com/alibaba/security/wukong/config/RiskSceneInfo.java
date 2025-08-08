@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.List;
@@ -32,7 +32,7 @@ public class RiskSceneInfo implements Serializable {
         List<Algo> list = this.algoList;
         if (list != null) {
             for (Algo algo : list) {
-                if (TextUtils.equals(str, algo.code)) {
+                if (StringUtils.equals(str, algo.code)) {
                     return true;
                 }
             }

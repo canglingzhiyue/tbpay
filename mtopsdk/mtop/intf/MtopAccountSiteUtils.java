@@ -1,6 +1,6 @@
 package mtopsdk.mtop.intf;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -22,7 +22,7 @@ public class MtopAccountSiteUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("30f61ee9", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return siteMap.get(str);
         }
         return null;
@@ -38,7 +38,7 @@ public class MtopAccountSiteUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f75b5cc", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && Mtop.getMtopInstance(str) != null && !siteMap.containsKey(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && Mtop.getMtopInstance(str) != null && !siteMap.containsKey(str2)) {
             synchronized (MtopAccountSiteUtils.class) {
                 if (!siteMap.containsKey(str2)) {
                     siteMap.put(str2, str);

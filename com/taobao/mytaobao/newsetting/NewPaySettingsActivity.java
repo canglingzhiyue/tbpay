@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSON;
@@ -219,7 +219,7 @@ public class NewPaySettingsActivity extends BaseActivity {
         this.e = (TextView) findViewById(R.id.tv_pay_setting_desc);
         this.f18402a.setLayoutManager(new LinearLayoutManager(this, 1, false));
         String str = mxz.e;
-        if (TextUtils.isEmpty(str) || (textView = this.e) == null) {
+        if (StringUtils.isEmpty(str) || (textView = this.e) == null) {
             return;
         }
         textView.setText(str);
@@ -337,7 +337,7 @@ public class NewPaySettingsActivity extends BaseActivity {
             }
         } catch (Exception unused) {
         }
-        if (!TextUtils.isEmpty(a2) && !z) {
+        if (!StringUtils.isEmpty(a2) && !z) {
             Nav.from(this).toUri(a2);
         } else {
             a();

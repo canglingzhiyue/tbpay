@@ -7,7 +7,7 @@ import android.taobao.windvane.jsbridge.h;
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.jsbridge.p;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -148,7 +148,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("223f72c", new Object[]{this, str, str2, interfaceC0922a})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || ((!str2.equals("allowJumpOut") && !str2.equals("market")) || (k = k(interfaceC0922a)) == null)) {
+        if (StringUtils.isEmpty(str2) || ((!str2.equals("allowJumpOut") && !str2.equals("market")) || (k = k(interfaceC0922a)) == null)) {
             return false;
         }
         if (str2.equals("allowJumpOut")) {
@@ -256,11 +256,11 @@ public class a {
         if (k == null) {
             return;
         }
-        String str7 = TextUtils.isEmpty(str) ? "commonJsClose" : str;
-        if (!TextUtils.isEmpty(str6)) {
+        String str7 = StringUtils.isEmpty(str) ? "commonJsClose" : str;
+        if (!StringUtils.isEmpty(str6)) {
             k.setContentId(str6);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             try {
                 k.putOnePopExtras(JSON.parseObject(str4));
             } catch (Throwable th) {
@@ -669,7 +669,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("10ba1e6", new Object[]{this, str, jSONObject, interfaceC0922a});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
             if (interfaceC0922a == null) {
                 return;
             }
@@ -737,7 +737,7 @@ public class a {
         int width = k.getWidth();
         int height = k.getHeight();
         ClickableAreaParam clickableAreaParam = new ClickableAreaParam();
-        if (TextUtils.isEmpty(str) || Boolean.parseBoolean(str)) {
+        if (StringUtils.isEmpty(str) || Boolean.parseBoolean(str)) {
             str9 = "";
             z = true;
         } else {
@@ -814,7 +814,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8eb3a5ef", new Object[]{this, context, numberFormat, str, new Integer(i)})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.0f;
         }
         if (str.contains(riy.MOD)) {

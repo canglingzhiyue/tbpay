@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ImageSpan;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public final class v {
             CharSequence a3 = a((CharSequence) a(this.f19288a.getString("title")));
             String a4 = a(this.f19288a.getString("width"));
             String string = this.f19288a.getString("iconWidth");
-            int a5 = TextUtils.isEmpty(string) ? 0 : (int) com.taobao.android.weex_framework.util.i.a(string);
+            int a5 = StringUtils.isEmpty(string) ? 0 : (int) com.taobao.android.weex_framework.util.i.a(string);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             spannableStringBuilder.append((CharSequence) " ");
             spannableStringBuilder.setSpan(new ImageSpan(new a(a5)), 0, 1, 33);
@@ -178,7 +178,7 @@ public final class v {
         kotlin.jvm.internal.q.a((Object) application, "Globals.getApplication()");
         Resources resources = application.getResources();
         kotlin.jvm.internal.q.a((Object) resources, "Globals.getApplication().resources");
-        TextLayoutBuilder f3 = textLayoutBuilder.d(resources.getDisplayMetrics().density).a((TextUtils.TruncateAt) null).e(100).a(0.0f, 0.0f, 0.0f, 0).b(false).a(charSequence).a((int) f2).a((int) f, i).a(true).a(0.0f).b(1.0f).a(Layout.Alignment.ALIGN_NORMAL).c(0).f(0);
+        TextLayoutBuilder f3 = textLayoutBuilder.d(resources.getDisplayMetrics().density).a((StringUtils.TruncateAt) null).e(100).a(0.0f, 0.0f, 0.0f, 0).b(false).a(charSequence).a((int) f2).a((int) f, i).a(true).a(0.0f).b(1.0f).a(Layout.Alignment.ALIGN_NORMAL).c(0).f(0);
         kotlin.jvm.internal.q.a((Object) f3, "layoutBuilder\n          …     .setBreakStrategy(0)");
         f3.g(0);
         if (Build.VERSION.SDK_INT >= 26) {
@@ -193,7 +193,7 @@ public final class v {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new RuntimeException("invalid value");
         }
         if (str == null) {

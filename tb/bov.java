@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.alibaba.android.ultron.vfw.perf.asynccomponent.PreloadAsyncComponent;
@@ -56,7 +56,7 @@ public class bov {
             b bVar = list.get(i);
             if (bVar != null) {
                 String type = bVar.getType();
-                if (!TextUtils.isEmpty(type)) {
+                if (!StringUtils.isEmpty(type)) {
                     e a2 = dVar.d().a().a(type);
                     a2.a(iDMComponent);
                     a2.e("createItem");

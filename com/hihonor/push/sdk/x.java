@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.hihonor.push.framework.aidl.DataBuffer;
 import com.hihonor.push.framework.aidl.IMessageEntity;
 import com.hihonor.push.framework.aidl.IPushInvoke;
@@ -214,7 +214,7 @@ public class x implements Handler.Callback {
                                             String a3 = ahVar.f7265a.a();
                                             String c2 = ahVar.f7265a.c();
                                             String d = ahVar.f7265a.d();
-                                            if (!TextUtils.isEmpty(d)) {
+                                            if (!StringUtils.isEmpty(d)) {
                                                 intent.setComponent(new ComponentName(a3, d));
                                             } else {
                                                 intent.setAction(c2);

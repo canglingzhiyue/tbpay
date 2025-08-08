@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -269,7 +269,7 @@ public abstract class BaseFBPlugin extends AbsFBPlugin implements View.OnClickLi
         }
         if (z) {
             VerifyLogCat.i(this.f6086a, "Module已经存在，不再创建，直接关联");
-        } else if (TextUtils.isEmpty(this.verifyId) || TextUtils.isEmpty(this.verifyData)) {
+        } else if (StringUtils.isEmpty(this.verifyId) || StringUtils.isEmpty(this.verifyData)) {
             VerifyLogCat.w(this.f6086a, "fail to addPlugin!");
         } else {
             if ("Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.synKillPre))) {
@@ -305,11 +305,11 @@ public abstract class BaseFBPlugin extends AbsFBPlugin implements View.OnClickLi
                             if (obj2 != null) {
                                 str6 = String.valueOf(obj2);
                             }
-                            if (!TextUtils.isEmpty(str6) && CommonConstant.CANCEL_SUB_BY_START_ACTIVITY_TIMEOUT.equalsIgnoreCase(str6)) {
+                            if (!StringUtils.isEmpty(str6) && CommonConstant.CANCEL_SUB_BY_START_ACTIVITY_TIMEOUT.equalsIgnoreCase(str6)) {
                                 BaseFBPlugin.this.handleEngineCancel();
-                            } else if (TextUtils.isEmpty(valueOf) || valueOf.endsWith("mobile_cashier_payment_N_2") || valueOf.endsWith("mobile_cashier_payment_2")) {
+                            } else if (StringUtils.isEmpty(valueOf) || valueOf.endsWith("mobile_cashier_payment_N_2") || valueOf.endsWith("mobile_cashier_payment_2")) {
                             } else {
-                                if ((!BaseFBPlugin.this.openDuplicatePayTaskFix() && (valueOf.endsWith("mobile_cashier_payment_N_1") || valueOf.endsWith("mobile_cashier_payment_1"))) || TextUtils.isEmpty(str6) || !"101".equalsIgnoreCase(str6)) {
+                                if ((!BaseFBPlugin.this.openDuplicatePayTaskFix() && (valueOf.endsWith("mobile_cashier_payment_N_1") || valueOf.endsWith("mobile_cashier_payment_1"))) || StringUtils.isEmpty(str6) || !"101".equalsIgnoreCase(str6)) {
                                     return;
                                 }
                                 if (BaseFBPlugin.this.openDuplicatePayTaskFix()) {
@@ -459,10 +459,10 @@ public abstract class BaseFBPlugin extends AbsFBPlugin implements View.OnClickLi
             ipChange.ipc$dispatch("eec39c2f", new Object[]{this, str, str2});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = KEY_COMMON_ACTION;
         }
-        final String replace = "js_function && js_function('$jsonData$');".replace("js_function", str).replace("$jsonData$", TextUtils.isEmpty(str2) ? "" : str2.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"));
+        final String replace = "js_function && js_function('$jsonData$');".replace("js_function", str).replace("$jsonData$", StringUtils.isEmpty(str2) ? "" : str2.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029"));
         this.mainHandler.post(new Runnable() { // from class: com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin.2
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -524,7 +524,7 @@ public abstract class BaseFBPlugin extends AbsFBPlugin implements View.OnClickLi
         MICRpcResponse mICRpcResponse = this.d;
         if (mICRpcResponse != null) {
             String str4 = mICRpcResponse.channelError;
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 String str5 = this.f6086a;
                 VerifyLogCat.i(str5, "鸟巢插件rpc出现 channelError: " + str4);
                 if ("-1002".equalsIgnoreCase(str4)) {
@@ -577,7 +577,7 @@ public abstract class BaseFBPlugin extends AbsFBPlugin implements View.OnClickLi
         } catch (Exception e2) {
             VerifyLogCat.e(this.f6086a, e2.getMessage());
         }
-        if (!TextUtils.isEmpty(mICRpcResponse.verifyCode)) {
+        if (!StringUtils.isEmpty(mICRpcResponse.verifyCode)) {
             hashMap.put(ModuleConstants.VI_TASK_VERIFYCODE, mICRpcResponse.verifyCode);
         }
         verifyIdentityResult.setExtInfo(hashMap);
@@ -607,10 +607,10 @@ public abstract class BaseFBPlugin extends AbsFBPlugin implements View.OnClickLi
             if (PLUGIN_ACTION.viToPWD.equalsIgnoreCase(str)) {
                 JSONObject jSONObject3 = new JSONObject();
                 jSONObject3.put(MspEventTypes.ACTION_STRING_VID, (Object) this.verifyId);
-                if (!TextUtils.isEmpty(jSONObject.getString("version"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("version"))) {
                     jSONObject3.put("version", (Object) jSONObject.getString("version"));
                 }
-                if (!TextUtils.isEmpty(jSONObject.getString("usePwd"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("usePwd"))) {
                     jSONObject3.put("usePwd", (Object) jSONObject.getString("usePwd"));
                 }
                 try {

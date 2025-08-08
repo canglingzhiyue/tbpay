@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.nodemodel.extend.AURAExtendModuleNodeModel;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -34,10 +34,10 @@ public class aqw {
         if (jSONObject2 == null) {
             a(str + "#不是合法的AURA配置#没有plugin节点", true);
             return true;
-        } else if (!TextUtils.equals(jSONObject2.getString("bizCode"), aURAExtendModuleNodeModel.bizCode)) {
+        } else if (!StringUtils.equals(jSONObject2.getString("bizCode"), aURAExtendModuleNodeModel.bizCode)) {
             a(str + "和扩展配置中的信息不一致：bizCode", true);
             return true;
-        } else if (TextUtils.equals(jSONObject2.getString("name"), aURAExtendModuleNodeModel.name)) {
+        } else if (StringUtils.equals(jSONObject2.getString("name"), aURAExtendModuleNodeModel.name)) {
             return false;
         } else {
             a(str + "#和平台层扩展信息不一致：name", true);
@@ -55,7 +55,7 @@ public class aqw {
             return null;
         }
         String a2 = bss.a(context, str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a("读取配置文件【" + str + "】失败", true);
             return null;
         }
@@ -68,7 +68,7 @@ public class aqw {
         if (jSONObject == null) {
             a("配置文件【" + str + "】没有plugin节点，不合法", true);
             return null;
-        } else if (!TextUtils.isEmpty(jSONObject.getString("bizCode"))) {
+        } else if (!StringUtils.isEmpty(jSONObject.getString("bizCode"))) {
             return parseObject;
         } else {
             a("配置文件【" + str + "】没有bizCode节点，不合法", true);
@@ -100,7 +100,7 @@ public class aqw {
         if (bbk.a(string4)) {
             a(str + "name", true);
             return null;
-        } else if (baw.a() && TextUtils.isEmpty(string2)) {
+        } else if (baw.a() && StringUtils.isEmpty(string2)) {
             a(str + "configPath", true);
             return null;
         } else {
@@ -119,7 +119,7 @@ public class aqw {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("72e64e7a", new Object[]{jSONArray, str});
         }
-        if (jSONArray != null && !TextUtils.isEmpty(str)) {
+        if (jSONArray != null && !StringUtils.isEmpty(str)) {
             Iterator<Object> it = jSONArray.iterator();
             while (it.hasNext()) {
                 Object next = it.next();
@@ -139,7 +139,7 @@ public class aqw {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ef0fe09f", new Object[]{jSONArray, str})).booleanValue();
         }
-        if (jSONArray != null && !TextUtils.isEmpty(str)) {
+        if (jSONArray != null && !StringUtils.isEmpty(str)) {
             Iterator<Object> it = jSONArray.iterator();
             while (it.hasNext()) {
                 Object next = it.next();
@@ -156,7 +156,7 @@ public class aqw {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("4ff470fc", new Object[]{jSONArray, str});
         }
-        if (jSONArray != null && !TextUtils.isEmpty(str)) {
+        if (jSONArray != null && !StringUtils.isEmpty(str)) {
             Iterator<Object> it = jSONArray.iterator();
             while (it.hasNext()) {
                 Object next = it.next();
@@ -176,7 +176,7 @@ public class aqw {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("be7b823d", new Object[]{jSONArray, str});
         }
-        if (jSONArray != null && !TextUtils.isEmpty(str)) {
+        if (jSONArray != null && !StringUtils.isEmpty(str)) {
             Iterator<Object> it = jSONArray.iterator();
             while (it.hasNext()) {
                 Object next = it.next();

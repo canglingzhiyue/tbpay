@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -30,7 +30,7 @@ public class bin {
             return;
         }
         String e = jnwVar.e();
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             iRemoteBaseListener.onError(-1, new MtopResponse("-1", "api is empty"), null);
             return;
         }

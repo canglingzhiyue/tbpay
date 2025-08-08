@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.login.model.LoginConstant;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -364,7 +364,7 @@ public class ZFaceChecker extends NoPwdBaseChecker {
                         } else {
                             VerifyLogCat.i(ZFaceChecker.access$500(), "2D人脸【用户在人脸里选择切密码】");
                             ZFaceChecker.access$1800(ZFaceChecker.this).proVerifyResult = "ZFACE_TO_PWD";
-                            if (!"Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.closeFaceBackgroudAction)) && !TextUtils.isEmpty(str3) && "Z1009".equalsIgnoreCase(str3)) {
+                            if (!"Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.closeFaceBackgroudAction)) && !StringUtils.isEmpty(str3) && "Z1009".equalsIgnoreCase(str3)) {
                                 VerifyLogCat.i(ZFaceChecker.access$500(), "收银台场景2D人脸压后台");
                                 return true;
                             }
@@ -597,7 +597,7 @@ public class ZFaceChecker extends NoPwdBaseChecker {
                 return;
             }
             String verifyId = zFaceChecker.getVerifyId();
-            if (TextUtils.isEmpty(verifyId)) {
+            if (StringUtils.isEmpty(verifyId)) {
                 return;
             }
             l.add(verifyId);
@@ -613,14 +613,14 @@ public class ZFaceChecker extends NoPwdBaseChecker {
             return;
         }
         if (!"Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.openOldAlert)) && zFaceChecker.mDataHelper.isPluginMode) {
-            if (TextUtils.equals(zFaceChecker.mDataHelper.mPlugin.getActConf("supportEmbedVi"), "Y")) {
+            if (StringUtils.equals(zFaceChecker.mDataHelper.mPlugin.getActConf("supportEmbedVi"), "Y")) {
                 VerifyLogCat.i(f5939a, "ZFACE supportEmbedVi CANCLE_TO_PWD");
                 zFaceChecker.mDataHelper.logFpResBehavior("CANCLE_ZFACE_TO_PWD", "zface");
                 zFaceChecker.a("", zIMResponse);
                 return;
             }
             String actConf = zFaceChecker.mDataHelper.mPlugin.getActConf(BaseFBPlugin.ACT_CONF.supportRetain);
-            if (!TextUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf)) {
+            if (!StringUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf)) {
                 zFaceChecker.mDataHelper.logFpResBehavior("CANCLE_ZFACE", "REMOVE_ALERT");
                 zFaceChecker.updateVerifyStatusWithScene(BaseFBPlugin.VERIFY_STATUS.abort, LoginConstant.FETCH_IV_FAIL_CANCEL);
                 zFaceChecker.mDataHelper.notifyResult(new DefaultModuleResult("1003"));
@@ -702,7 +702,7 @@ public class ZFaceChecker extends NoPwdBaseChecker {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     return;
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     if (ZFaceChecker.access$100(ZFaceChecker.this).isFP()) {
                         ZFaceChecker.access$200(ZFaceChecker.this).errorForFp = str2;
                     } else {

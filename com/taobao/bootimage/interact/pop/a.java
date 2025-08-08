@@ -1,6 +1,6 @@
 package com.taobao.bootimage.interact.pop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.linked.h;
 import tb.kdz;
@@ -32,8 +32,8 @@ public class a implements kdz {
         }
         try {
             String b = h.a(lsk.BIZ_NAME).d().b();
-            if (TextUtils.isEmpty(b)) {
-                kej.a("BootImage.Poplayer.BootImageInteractPopImpl", "onInteractSuccess, return, TextUtils.isEmpty(popIndexId), popIndexId = " + b);
+            if (StringUtils.isEmpty(b)) {
+                kej.a("BootImage.Poplayer.BootImageInteractPopImpl", "onInteractSuccess, return, StringUtils.isEmpty(popIndexId), popIndexId = " + b);
                 return;
             }
             String a2 = d.a(b);

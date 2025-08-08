@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public abstract class k {
                 for (int positionStartX = clickArea.getPositionStartX(); positionStartX < positionEndX; positionStartX++) {
                     for (int i = positionStartY; i < positionEndY; i++) {
                         int a2 = a("click_area_" + positionStartX + "_" + i);
-                        if (!TextUtils.isEmpty(clickArea.getAction())) {
+                        if (!StringUtils.isEmpty(clickArea.getAction())) {
                             a(remoteViews, a2, list2, clickArea.getAction());
                         } else {
                             a(remoteViews, a2, a(clickArea.getDeepUrl(), list2), clickArea.getAreaId());
@@ -73,7 +73,7 @@ public abstract class k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1143e35d", new Object[]{this, remoteViews, new Integer(i), str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             String str3 = this.b;
             Log.e(str3, "url is null in " + str2);
         } else {
@@ -146,7 +146,7 @@ public abstract class k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("83f30853", new Object[]{this, remoteViews, new Integer(i), str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             a(remoteViews, i);
             remoteViews.setTextViewText(i, str);
         } else {
@@ -158,7 +158,7 @@ public abstract class k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b1cba2b2", new Object[]{this, remoteViews, new Integer(i), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 remoteViews.setTextColor(i, Color.parseColor(str));
@@ -172,7 +172,7 @@ public abstract class k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dfa43d11", new Object[]{this, remoteViews, new Integer(i), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             remoteViews.setTextViewTextSize(i, 1, Float.parseFloat(str));
         }

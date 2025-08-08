@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
 import com.taobao.android.trade.event.ThreadMode;
@@ -37,7 +37,7 @@ public class kxh implements j<kwy> {
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("a1572764", new Object[]{this, kwyVar});
         }
-        if (!TextUtils.equals(com.taobao.android.home.component.utils.i.a(), kwyVar.c())) {
+        if (!StringUtils.equals(com.taobao.android.home.component.utils.i.a(), kwyVar.c())) {
             return i.FAILURE;
         }
         if (!kwyVar.b()) {

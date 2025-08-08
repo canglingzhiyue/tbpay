@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
 import com.alibaba.poplayer.utils.c;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,7 +27,7 @@ public class qny implements cae {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (map == null) {
@@ -39,7 +39,7 @@ public class qny implements cae {
                 c.a("TrackConfigManager category %s is not enable", str);
             } else {
                 if (!cac.a().a(str)) {
-                    if (baseConfigItem != null && !TextUtils.isEmpty(baseConfigItem.uuid)) {
+                    if (baseConfigItem != null && !StringUtils.isEmpty(baseConfigItem.uuid)) {
                         map.put("uuid", baseConfigItem.uuid);
                     }
                     if (z) {
@@ -47,7 +47,7 @@ public class qny implements cae {
                     }
                 }
                 UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder("PopLayer_" + str);
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "NonePage";
                 }
                 uTCustomHitBuilder.setEventPage(str2);

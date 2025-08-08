@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.ability.excutor.ExecutorCenter;
 import com.ali.user.mobile.ability.excutor.ExecutorContext;
@@ -83,7 +83,7 @@ public class BaseLoginPresenter implements BasePresenter {
         this.mViewer = baseLoginView;
         this.mLoginParam = loginParam;
         LoginParam loginParam2 = this.mLoginParam;
-        if (loginParam2 == null || !TextUtils.isEmpty(loginParam2.token)) {
+        if (loginParam2 == null || !StringUtils.isEmpty(loginParam2.token)) {
             return;
         }
         this.mLoginParam.site = this.mViewer.getLoginSite();
@@ -100,9 +100,9 @@ public class BaseLoginPresenter implements BasePresenter {
         if (loginParam == null) {
             return;
         }
-        if (!TextUtils.isEmpty(loginParam.token)) {
+        if (!StringUtils.isEmpty(loginParam.token)) {
             callApi();
-        } else if (TextUtils.isEmpty(this.mLoginParam.loginId)) {
+        } else if (StringUtils.isEmpty(this.mLoginParam.loginId)) {
         } else {
             this.mViewer.setLoginAccountInfo(this.mLoginParam.loginId);
         }
@@ -374,7 +374,7 @@ public class BaseLoginPresenter implements BasePresenter {
             return;
         }
         String str = executorResult.msg;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = ResourceUtil.getNetworkError();
         }
         BaseLoginView baseLoginView = this.mViewer;
@@ -432,7 +432,7 @@ public class BaseLoginPresenter implements BasePresenter {
         } else if (commonUICallback == null) {
         } else {
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("mobile", str);
             }
             commonUICallback.onResult(CommonUICallback.ACTION_ONEKEY_SEND_SMS, hashMap);
@@ -468,7 +468,7 @@ public class BaseLoginPresenter implements BasePresenter {
                     z = true;
                 }
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = ResourceUtil.getNetworkError();
             }
             if (!z) {
@@ -511,7 +511,7 @@ public class BaseLoginPresenter implements BasePresenter {
             DefaultLoginResponseData defaultLoginResponseData = (DefaultLoginResponseData) rpcResponse;
             UserLoginActivity userLoginActivity = (UserLoginActivity) activity;
             String string = activity.getResources().getString(R.string.aliuser_common_ok);
-            if (defaultLoginResponseData != null && !TextUtils.isEmpty(defaultLoginResponseData.codeGroup) && loginParam != null && TextUtils.equals(ApiConstants.CodeGroup.PWD_CAN_SMS_ERROR, defaultLoginResponseData.codeGroup)) {
+            if (defaultLoginResponseData != null && !StringUtils.isEmpty(defaultLoginResponseData.codeGroup) && loginParam != null && StringUtils.equals(ApiConstants.CodeGroup.PWD_CAN_SMS_ERROR, defaultLoginResponseData.codeGroup)) {
                 if (defaultLoginResponseData.returnValue == 0 || ((LoginReturnData) defaultLoginResponseData.returnValue).extMap == null) {
                     str = "";
                     str4 = str;
@@ -542,7 +542,7 @@ public class BaseLoginPresenter implements BasePresenter {
                         commonUICallback2.onResult(5001, null);
                     }
                 };
-            } else if (defaultLoginResponseData != null && !TextUtils.isEmpty(defaultLoginResponseData.codeGroup) && loginParam != null && TextUtils.equals(ApiConstants.CodeGroup.PWD_CAN_FACE_ERROR, defaultLoginResponseData.codeGroup) && ServiceFactory.getService(FaceService.class) != null) {
+            } else if (defaultLoginResponseData != null && !StringUtils.isEmpty(defaultLoginResponseData.codeGroup) && loginParam != null && StringUtils.equals(ApiConstants.CodeGroup.PWD_CAN_FACE_ERROR, defaultLoginResponseData.codeGroup) && ServiceFactory.getService(FaceService.class) != null) {
                 if (defaultLoginResponseData.returnValue == 0 || ((LoginReturnData) defaultLoginResponseData.returnValue).extMap == null) {
                     str = "";
                     str4 = str;
@@ -577,7 +577,7 @@ public class BaseLoginPresenter implements BasePresenter {
                         commonUICallback2.onResult(5002, null);
                     }
                 };
-            } else if (defaultLoginResponseData != null && !TextUtils.isEmpty(defaultLoginResponseData.codeGroup) && loginParam != null && userLoginActivity != null && userLoginActivity.mAlipayInstall && TextUtils.equals(ApiConstants.CodeGroup.PWD_CAN_ALIPAY, defaultLoginResponseData.codeGroup) && LoginSwitch.isInABTestRegion(LoginSwitch.PWD_ERROR_TO_ALIPAY, 10000)) {
+            } else if (defaultLoginResponseData != null && !StringUtils.isEmpty(defaultLoginResponseData.codeGroup) && loginParam != null && userLoginActivity != null && userLoginActivity.mAlipayInstall && StringUtils.equals(ApiConstants.CodeGroup.PWD_CAN_ALIPAY, defaultLoginResponseData.codeGroup) && LoginSwitch.isInABTestRegion(LoginSwitch.PWD_ERROR_TO_ALIPAY, 10000)) {
                 if (defaultLoginResponseData.returnValue == 0 || ((LoginReturnData) defaultLoginResponseData.returnValue).extMap == null) {
                     str = "";
                     str4 = str;
@@ -614,7 +614,7 @@ public class BaseLoginPresenter implements BasePresenter {
                 };
                 str2 = string2;
                 z = false;
-            } else if (defaultLoginResponseData == null || TextUtils.isEmpty(defaultLoginResponseData.codeGroup) || loginParam == null || (!TextUtils.equals(ApiConstants.CodeGroup.PWD_ERROR, defaultLoginResponseData.codeGroup) && !TextUtils.equals("noRecord", defaultLoginResponseData.codeGroup))) {
+            } else if (defaultLoginResponseData == null || StringUtils.isEmpty(defaultLoginResponseData.codeGroup) || loginParam == null || (!StringUtils.equals(ApiConstants.CodeGroup.PWD_ERROR, defaultLoginResponseData.codeGroup) && !StringUtils.equals("noRecord", defaultLoginResponseData.codeGroup))) {
                 positiveClickListener = null;
                 str = "";
                 str2 = str;
@@ -649,10 +649,10 @@ public class BaseLoginPresenter implements BasePresenter {
                 str3 = string;
                 str4 = str;
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = defaultLoginResponseData == null ? "" : defaultLoginResponseData.message;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = str4;
                 str4 = "";
             }
@@ -677,7 +677,7 @@ public class BaseLoginPresenter implements BasePresenter {
                     commonUICallback2.onResult(CommonUICallback.ACTION_PWD_ERROR_SHOW_EYE, null);
                 }
             });
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 onNegativeClickListener.setOnPositiveClickListener(str2, positiveClickListener);
             }
             this.mAliUserDialog = onNegativeClickListener.build().shown();
@@ -685,7 +685,7 @@ public class BaseLoginPresenter implements BasePresenter {
             if (defaultLoginResponseData != null) {
                 hashMap.put("code", String.valueOf(defaultLoginResponseData.code));
             }
-            if (defaultLoginResponseData != null && !TextUtils.isEmpty(defaultLoginResponseData.codeGroup)) {
+            if (defaultLoginResponseData != null && !StringUtils.isEmpty(defaultLoginResponseData.codeGroup)) {
                 hashMap.put("codeGroup", defaultLoginResponseData.codeGroup);
             }
             UserTrackAdapter.sendUserTrack(loginParam.utPageName, "ShowPwdError", hashMap);

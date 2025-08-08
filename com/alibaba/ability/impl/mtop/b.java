@@ -1,6 +1,6 @@
 package com.alibaba.ability.impl.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public final class b implements MtopPrefetch.IPrefetchComparator {
             return (MtopPrefetch.CompareResult) ipChange.ipc$dispatch("d373501", new Object[]{this, mtopRequest, mtopRequest2, list});
         }
         MtopPrefetch.CompareResult compareResult = new MtopPrefetch.CompareResult();
-        if (TextUtils.isEmpty(mtopRequest.getKey()) || (!q.a((Object) mtopRequest.getKey(), (Object) mtopRequest2.getKey()))) {
+        if (StringUtils.isEmpty(mtopRequest.getKey()) || (!q.a((Object) mtopRequest.getKey(), (Object) mtopRequest2.getKey()))) {
             HashMap<String, String> data = compareResult.getData();
             q.b(data, "result.data");
             data.put("missKey", "apiKey");
@@ -94,11 +94,11 @@ public final class b implements MtopPrefetch.IPrefetchComparator {
         }
         String str5 = str2;
         String str6 = str3;
-        if (TextUtils.equals(str5, str6)) {
+        if (StringUtils.equals(str5, str6)) {
             return true;
         }
         String str7 = "result.data";
-        if (TextUtils.isEmpty(str5) || TextUtils.isEmpty(str6)) {
+        if (StringUtils.isEmpty(str5) || StringUtils.isEmpty(str6)) {
             HashMap<String, String> data = compareResult.getData();
             q.b(data, str7);
             data.put("missKey", str);
@@ -119,13 +119,13 @@ public final class b implements MtopPrefetch.IPrefetchComparator {
             HashMap hashMap = new HashMap();
             HashMap hashMap2 = new HashMap();
             for (String key : parseObject.keySet()) {
-                if (!TextUtils.isEmpty(key) && (list == null || !list.contains(key))) {
+                if (!StringUtils.isEmpty(key) && (list == null || !list.contains(key))) {
                     q.b(key, "key");
                     hashMap.put(key, parseObject.get(key));
                 }
             }
             for (String key2 : parseObject2.keySet()) {
-                if (!TextUtils.isEmpty(key2) && (list == null || !list.contains(key2))) {
+                if (!StringUtils.isEmpty(key2) && (list == null || !list.contains(key2))) {
                     q.b(key2, "key");
                     hashMap2.put(key2, parseObject2.get(key2));
                 }

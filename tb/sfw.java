@@ -2,7 +2,7 @@ package tb;
 
 import android.content.SharedPreferences;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
@@ -237,7 +237,7 @@ public class sfw {
                 } else if (sfw.d(sfw.this) == null) {
                 } else {
                     sfw.a(sfw.this, iContainerDataModel);
-                    if (TextUtils.equals(str, Constant.KEY_PAGEBACK) && Login.checkSessionValid()) {
+                    if (StringUtils.equals(str, Constant.KEY_PAGEBACK) && Login.checkSessionValid()) {
                         if (sfw.c(sfw.this) != null) {
                             sfw.c(sfw.this).a();
                         }
@@ -248,7 +248,7 @@ public class sfw {
                     if (iContainerDataModel == null || iContainerDataModel.getBase() == null) {
                         return;
                     }
-                    boolean equals = TextUtils.equals(str, "coldStart");
+                    boolean equals = StringUtils.equals(str, "coldStart");
                     if (equals && ldj.a("enableColdStartPreRequestND", true)) {
                         sfw.b(sfw.this, 0);
                     } else {

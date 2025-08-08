@@ -2,7 +2,7 @@ package com.taobao.search.sf;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.r;
 import com.taobao.search.musie.MUSXSearchEventModule;
@@ -27,7 +27,7 @@ public final class l {
         if (r.cu() && (extras = intent.getExtras()) != null) {
             String params = extras.getString(MUSXSearchEventModule.KEY_OPEN_URL_EXTRAS);
             String str = params;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 q.a((Object) params, "params");
                 if (kotlin.text.n.b((CharSequence) str, (CharSequence) "topHeader", false, 2, (Object) null)) {
                     return true;

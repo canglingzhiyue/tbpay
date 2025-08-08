@@ -1,6 +1,6 @@
 package com.taobao.android.data_highway.jni;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -31,7 +31,7 @@ public class DataHighwayJava implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4d0fea8", new Object[]{new Integer(i), str, new Integer(i2), str2, str3, str4, new Integer(i3), str5, str6});
-        } else if (i2 <= 0 || TextUtils.isEmpty(str2) || str4 == null) {
+        } else if (i2 <= 0 || StringUtils.isEmpty(str2) || str4 == null) {
         } else {
             try {
                 MTOP.a(i, str, i2, str2, str3, str4, i3, str5, str6);

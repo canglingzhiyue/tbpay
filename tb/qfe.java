@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class qfe<T extends qfg> implements qff {
         } else if (t == null) {
         } else {
             String cachePath = this.f32907a.getCachePath();
-            if (TextUtils.isEmpty(cachePath)) {
+            if (StringUtils.isEmpty(cachePath)) {
                 return;
             }
             try {
@@ -88,7 +88,7 @@ public class qfe<T extends qfg> implements qff {
         }
         try {
             String d = qcg.d(cachePath);
-            if (!TextUtils.isEmpty(d) && (qfgVar = (qfg) JSON.parseObject(d, cls)) != null) {
+            if (!StringUtils.isEmpty(d) && (qfgVar = (qfg) JSON.parseObject(d, cls)) != null) {
                 return new Response(qfgVar);
             }
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class qfe<T extends qfg> implements qff {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         File file = new File(str);

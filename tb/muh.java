@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
@@ -79,7 +79,7 @@ public class muh {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fbedb2ca", new Object[]{str, serializable})).booleanValue();
         }
-        if (TextUtils.equals(a.DB_KEY_FEED_DATA, str)) {
+        if (StringUtils.equals(a.DB_KEY_FEED_DATA, str)) {
             Log.e("BasementFeedData", "setCacheObjectForKey, value=" + serializable.toString());
         }
         if (serializable != null && Login.checkSessionValid()) {
@@ -102,7 +102,7 @@ public class muh {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         Object b2 = b(str);
-        if (TextUtils.equals(a.DB_KEY_FEED_DATA, str)) {
+        if (StringUtils.equals(a.DB_KEY_FEED_DATA, str)) {
             StringBuilder sb = new StringBuilder();
             sb.append("getCacheString, value=");
             sb.append(b2 == null ? "null" : b2.toString());
@@ -120,8 +120,8 @@ public class muh {
             return ipChange.ipc$dispatch("6e4e661f", new Object[]{str});
         }
         boolean checkSessionValid = Login.checkSessionValid();
-        if (!checkSessionValid && TextUtils.isEmpty(d)) {
-            if (TextUtils.equals(a.DB_KEY_FEED_DATA, str)) {
+        if (!checkSessionValid && StringUtils.isEmpty(d)) {
+            if (StringUtils.equals(a.DB_KEY_FEED_DATA, str)) {
                 Log.e("BasementFeedData", "getCacheString, sessionValid=" + checkSessionValid + " userId=" + Login.getUserId());
             }
             return null;
@@ -146,7 +146,7 @@ public class muh {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.equals(a.DB_KEY_FEED_DATA, str)) {
+        if (StringUtils.equals(a.DB_KEY_FEED_DATA, str)) {
             Log.e("BasementFeedData", "removeCacheObjectForKey");
         }
         if (!Login.checkSessionValid()) {

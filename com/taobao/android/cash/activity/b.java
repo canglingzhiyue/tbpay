@@ -1,7 +1,7 @@
 package com.taobao.android.cash.activity;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.i;
@@ -54,7 +54,7 @@ public class b {
         if (this.f9309a == null) {
             return;
         }
-        if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
             return;
         }
         try {

@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.proxy;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -243,12 +243,12 @@ public class GoodProxyX implements IGoodProxy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6390a7b", new Object[]{this, rVar, str, str2});
-        } else if (TextUtils.isEmpty(str2) && !v.b.a("goodlist", "enableLandPortrait", true)) {
+        } else if (StringUtils.isEmpty(str2) && !v.b.a("goodlist", "enableLandPortrait", true)) {
         } else {
             c cVar = rVar instanceof c ? (c) rVar : null;
             b a2 = b.a(str, str2);
             com.taobao.android.live.plugin.atype.flexalocal.good.a.a().a(cVar, a2);
-            if (rVar == null || !d.c() || TextUtils.isEmpty(str2)) {
+            if (rVar == null || !d.c() || StringUtils.isEmpty(str2)) {
                 return;
             }
             a2.b(cVar.d());

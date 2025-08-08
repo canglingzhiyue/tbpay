@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -63,7 +63,7 @@ public class CartRefreshCheckBroadcast extends BroadcastReceiver {
             a(context, extras);
             b(context, extras);
             String stringExtra = intent.getStringExtra("stringifyAddCartResult");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 a(context, extras, null);
                 return;
             }
@@ -139,7 +139,7 @@ public class CartRefreshCheckBroadcast extends BroadcastReceiver {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("42cbb4fc", new Object[]{this, context, bundle, jSONObject});
-        } else if (bundle != null && bundle.containsKey("stringifyAddCartResult") && TextUtils.isEmpty(String.valueOf(bundle.get("stringifyAddCartResult")))) {
+        } else if (bundle != null && bundle.containsKey("stringifyAddCartResult") && StringUtils.isEmpty(String.valueOf(bundle.get("stringifyAddCartResult")))) {
         } else {
             if (bundle == null || bundle.getBoolean("itemCountChanged", true)) {
                 z = true;

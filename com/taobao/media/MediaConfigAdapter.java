@@ -1,6 +1,6 @@
 package com.taobao.media;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import tb.ddc;
@@ -21,7 +21,7 @@ public class MediaConfigAdapter implements ddc {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("611c4ee3", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return OrangeConfig.getInstance().getConfig("DWInteractive", str2, str3);
         }
         return OrangeConfig.getInstance().getConfig(str, str2, str3);

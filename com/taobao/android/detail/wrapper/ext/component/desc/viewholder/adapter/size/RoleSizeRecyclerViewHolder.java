@@ -135,7 +135,7 @@ public class RoleSizeRecyclerViewHolder extends RecyclerView.ViewHolder implemen
             int r5 = r5.getWidth()
             com.taobao.android.detail.wrapper.request.size.model.RoleSize$SizeDo r0 = r4.mWritableSizeDo
             java.lang.String r0 = r0.value
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 != 0) goto L38
             com.taobao.android.detail.wrapper.request.size.model.RoleSize$SizeDo r0 = r4.mWritableSizeDo     // Catch: java.lang.Exception -> L38
             java.lang.String r0 = r0.value     // Catch: java.lang.Exception -> L38

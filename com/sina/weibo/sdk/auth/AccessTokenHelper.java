@@ -2,7 +2,7 @@ package com.sina.weibo.sdk.auth;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.sina.weibo.sdk.a.b;
 import com.sina.weibo.sdk.a.e;
 import com.sina.weibo.sdk.net.c;
@@ -59,7 +59,7 @@ public class AccessTokenHelper {
     }
 
     public static void writeAccessToken(Context context, Oauth2AccessToken oauth2AccessToken) {
-        if (context == null || oauth2AccessToken == null || TextUtils.isEmpty(oauth2AccessToken.getAccessToken())) {
+        if (context == null || oauth2AccessToken == null || StringUtils.isEmpty(oauth2AccessToken.getAccessToken())) {
             return;
         }
         SharedPreferences.Editor edit = context.getSharedPreferences(PREFERENCES_NAME, 0).edit();

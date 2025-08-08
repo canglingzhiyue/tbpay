@@ -12,7 +12,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Handler;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.s;
 import com.alibaba.flexa.compat.b;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -229,7 +229,7 @@ public class TaobaoApplication extends PanguApplication implements a.c {
         } catch (PackageManager.NameNotFoundException unused) {
             sAppVersion = "1.0.0";
         }
-        if (TextUtils.equals(sProcessName, sPackageName)) {
+        if (StringUtils.equals(sProcessName, sPackageName)) {
             gso.a(context, this.getter);
             this.isIsolatedProcess = false;
         } else {
@@ -256,7 +256,7 @@ public class TaobaoApplication extends PanguApplication implements a.c {
         gtxVar.b = str2;
         gtxVar.d = sAppVersion;
         gtxVar.c = sStartTime;
-        if (TextUtils.equals(str2, str)) {
+        if (StringUtils.equals(str2, str)) {
             HashMap hashMap = new HashMap();
             hashMap.put("appVersion", sAppVersion);
             com.alibaba.android.patronus.g.a(this, hashMap);
@@ -305,7 +305,7 @@ public class TaobaoApplication extends PanguApplication implements a.c {
             return (SQLiteDatabase) ipChange.ipc$dispatch("e7c8cf78", new Object[]{this, str, new Integer(i), cursorFactory});
         }
         String str2 = sProcessName;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return hookDatabase(str, i, cursorFactory);
         }
         if (str2.equals(getPackageName())) {
@@ -354,7 +354,7 @@ public class TaobaoApplication extends PanguApplication implements a.c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("34b1a51a", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(sPackageName)) {
+        if (!StringUtils.isEmpty(sPackageName)) {
             return sPackageName;
         }
         if (context == null) {
@@ -370,7 +370,7 @@ public class TaobaoApplication extends PanguApplication implements a.c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7512d303", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(sProcessName)) {
+        if (!StringUtils.isEmpty(sProcessName)) {
             return sProcessName;
         }
         if (context == null) {
@@ -386,7 +386,7 @@ public class TaobaoApplication extends PanguApplication implements a.c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2e0d7a8", new Object[0]);
         }
-        if (TextUtils.isEmpty(sTTID)) {
+        if (StringUtils.isEmpty(sTTID)) {
             sTTID = TaoPackageInfo.getTTID();
         }
         return sTTID;
@@ -397,7 +397,7 @@ public class TaobaoApplication extends PanguApplication implements a.c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("65f009ac", new Object[0]);
         }
-        if (TextUtils.isEmpty(sAppVersion)) {
+        if (StringUtils.isEmpty(sAppVersion)) {
             sAppVersion = TaoPackageInfo.getVersion();
         }
         return sAppVersion;

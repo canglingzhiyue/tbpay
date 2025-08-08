@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -66,7 +66,7 @@ public class bnm {
         if (a2 != null) {
             for (String str : a2.keySet()) {
                 String string = a2.getString(str);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     a(str, string.split(SymbolExpUtil.SYMBOL_VERTICALBAR));
                 }
             }
@@ -88,7 +88,7 @@ public class bnm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d04957ad", new Object[]{this, str, strArr});
-        } else if (TextUtils.isEmpty(str) || strArr == null || strArr.length <= 0) {
+        } else if (StringUtils.isEmpty(str) || strArr == null || strArr.length <= 0) {
         } else {
             this.c.put(str, a(strArr));
         }
@@ -140,7 +140,7 @@ public class bnm {
             com.alibaba.fastjson.JSONObject r8 = (com.alibaba.fastjson.JSONObject) r8
             return r8
         L1f:
-            boolean r2 = android.text.TextUtils.isEmpty(r8)
+            boolean r2 = android.text.StringUtils.isEmpty(r8)
             r3 = 0
             if (r2 == 0) goto L27
             return r3

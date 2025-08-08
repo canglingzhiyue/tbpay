@@ -2,7 +2,7 @@ package tb;
 
 import android.os.AsyncTask;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseSearchResult;
@@ -283,7 +283,7 @@ public class isd {
         public f(String str) {
             SecurityManager securityManager = System.getSecurityManager();
             this.b = securityManager != null ? securityManager.getThreadGroup() : Thread.currentThread().getThreadGroup();
-            str = TextUtils.isEmpty(str) ? "tbsearch" : str;
+            str = StringUtils.isEmpty(str) ? "tbsearch" : str;
             this.d = str + "-pool-" + f29275a.getAndIncrement() + "-thread-";
         }
 

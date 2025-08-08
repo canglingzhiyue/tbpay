@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.common.c;
@@ -30,7 +30,7 @@ public class mmw implements mpl {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(mms.n)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(mms.n)) {
                 return;
             }
             a(str, str2);

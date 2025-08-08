@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.core.h;
@@ -516,7 +516,7 @@ public class af implements y, Utils.b {
                 bVar2.b = bVar.b;
                 bVar2.n = true;
                 h.b.a(bVar, bVar2);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     bVar.f = str2;
                 }
             }
@@ -986,7 +986,7 @@ public class af implements y, Utils.b {
         ArrayList<Map> arrayList = new ArrayList();
         Map map = a2 != null ? (Map) a2.get("theme") : null;
         if (map != null) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 List<String> b3 = oec.b(str2, ' ');
                 if (b3 != null) {
                     for (String str3 : b3) {

@@ -1,7 +1,7 @@
 package com.taobao.business.mtop;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
 import com.taobao.tao.remotebusiness.IRemoteListener;
@@ -29,7 +29,7 @@ public class MunionRemoteBusiness {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ef8887dd", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !TextUtils.isDigitsOnly(str)) {
+        } else if (StringUtils.isEmpty(str) || !StringUtils.isDigitsOnly(str)) {
         } else {
             this.mBizId = Integer.valueOf(str);
         }

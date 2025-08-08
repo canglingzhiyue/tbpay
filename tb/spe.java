@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.animation.RotateAnimation;
 import com.ali.user.mobile.login.model.LoginConstant;
@@ -54,7 +54,7 @@ public class spe implements spc {
         }
         try {
             JSONObject k = b.a().k(c(fluidContext));
-            if (TextUtils.isEmpty(k.getString("cardLayout"))) {
+            if (StringUtils.isEmpty(k.getString("cardLayout"))) {
                 k = (JSONObject) ohh.a("video_clicked_cardData");
             }
             MediaContentDetailData mediaContentDetailData = new MediaContentDetailData();
@@ -135,7 +135,7 @@ public class spe implements spc {
             if (jSONObject2 != null && "video".equals(jSONObject2.getString("type"))) {
                 JSONObject jSONObject3 = new JSONObject();
                 jSONObject3.put("type", (Object) "VIDEO");
-                jSONObject3.put("resourceStr", (Object) (TextUtils.isEmpty(jSONObject2.getString("resourceStr")) ? jSONObject2.getString("resourceStr4Detail") : jSONObject2.getString("resourceStr")));
+                jSONObject3.put("resourceStr", (Object) (StringUtils.isEmpty(jSONObject2.getString("resourceStr")) ? jSONObject2.getString("resourceStr4Detail") : jSONObject2.getString("resourceStr")));
                 jSONObject3.put("duration", (Object) oec.a((Object) jSONObject2.getString("duration"), "0"));
                 jSONObject3.put("firstFrameUrl", (Object) jSONObject2.getString("firstFramePicUrl"));
                 jSONObject3.put("height", (Object) jSONObject2.getString("height"));

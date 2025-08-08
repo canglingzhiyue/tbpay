@@ -2,7 +2,7 @@ package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.manager.CcrcContextImpl;
 import com.alibaba.security.ccrc.service.CcrcService;
 import com.alibaba.security.ccrc.service.build.X;
@@ -234,7 +234,7 @@ public class C1198bb {
         if (ipChange instanceof IpChange) {
             return (Eb) ipChange.ipc$dispatch("c9ffabfd", new Object[]{this, context, algo, interfaceC1260wb});
         }
-        if (TextUtils.equals(algo.code, AlgoCodeConstants.CODE_KEY_FRAME)) {
+        if (StringUtils.equals(algo.code, AlgoCodeConstants.CODE_KEY_FRAME)) {
             return new Db(context, algo, interfaceC1260wb);
         }
         return new Cb(context, algo, interfaceC1260wb);

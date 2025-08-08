@@ -3,7 +3,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.homepage2.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
@@ -371,7 +371,7 @@ public class TextBannerView extends RelativeLayout {
                     if (i.aa() && !z) {
                         str = this.mTaoliveSearchHotWords.get(i).rightInfo.reasonLong;
                     }
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         TextView textView2 = new TextView(getContext());
                         ReMeasureLinearlayout.LayoutParams layoutParams = new ReMeasureLinearlayout.LayoutParams(-2, -2);
                         layoutParams.leftMargin = c.a(getContext(), 3.0f);
@@ -386,10 +386,10 @@ public class TextBannerView extends RelativeLayout {
                             textView.setText(charSequence);
                         }
                     } else {
-                        textView.setEllipsize(TextUtils.TruncateAt.END);
+                        textView.setEllipsize(StringUtils.TruncateAt.END);
                     }
                 } else {
-                    textView.setEllipsize(TextUtils.TruncateAt.END);
+                    textView.setEllipsize(StringUtils.TruncateAt.END);
                 }
                 this.mViewFlipper.addView(reMeasureLinearlayout, i);
             }
@@ -461,7 +461,7 @@ public class TextBannerView extends RelativeLayout {
         }
         textView.setLayoutParams(layoutParams);
         if (!z) {
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
         } else {
             textView.setEllipsize(null);
         }
@@ -481,7 +481,7 @@ public class TextBannerView extends RelativeLayout {
         }
         textView.setText(str);
         textView.setSingleLine(this.isSingleLine);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         textView.setTag("tblSearchText");
         textView.setTextColor(this.mLabelTextColor);
         textView.setTextSize(this.mLabelTextSize);

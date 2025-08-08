@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_ability.page.b;
@@ -35,7 +35,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123a1d2", new Object[]{this, str, new Float(f)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String replace = str.replace(' ', '+');

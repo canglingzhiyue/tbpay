@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.entity.ConnType;
 import com.loc.w;
 import com.taobao.android.behavir.config.BHRTaskConfigBase;
@@ -100,7 +100,7 @@ public final class x {
             if (r6 <= 0) goto L51
             r0 = r3[r5]     // Catch: java.lang.Throwable -> L9d
         L51:
-            boolean r3 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L9d
+            boolean r3 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L9d
             if (r3 != 0) goto La3
             java.lang.String[] r3 = com.loc.x.b     // Catch: java.lang.Throwable -> L9d
             java.util.List r3 = java.util.Arrays.asList(r3)     // Catch: java.lang.Throwable -> L9d
@@ -108,7 +108,7 @@ public final class x {
             if (r3 == 0) goto La3
             android.content.pm.ApplicationInfo r7 = r7.getApplicationInfo()     // Catch: java.lang.Throwable -> L9d
             java.lang.String r7 = r7.nativeLibraryDir     // Catch: java.lang.Throwable -> L9d
-            boolean r3 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L9d
+            boolean r3 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L9d
             if (r3 != 0) goto La3
             java.lang.String r3 = java.io.File.separator     // Catch: java.lang.Throwable -> L9d
             int r3 = r7.lastIndexOf(r3)     // Catch: java.lang.Throwable -> L9d
@@ -134,7 +134,7 @@ public final class x {
             java.lang.String r1 = "gct_p"
             com.loc.as.a(r7, r2, r1)
         La3:
-            boolean r7 = android.text.TextUtils.isEmpty(r0)
+            boolean r7 = android.text.StringUtils.isEmpty(r0)
             if (r7 == 0) goto Lab
             java.lang.String r0 = android.os.Build.CPU_ABI
         Lab:
@@ -345,7 +345,7 @@ public final class x {
     }
 
     public static void a(ByteArrayOutputStream byteArrayOutputStream, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             try {
                 byteArrayOutputStream.write(new byte[]{0});
                 return;
@@ -386,7 +386,7 @@ public final class x {
     }
 
     public static byte[] a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new byte[0];
         }
         try {
@@ -671,7 +671,7 @@ public final class x {
         } catch (Throwable th) {
             as.a(th, BHRTaskConfigBase.TYPE_CONFIG_UT, "sPa");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String[] split = str.split("&");

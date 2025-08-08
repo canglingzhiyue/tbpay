@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteCallbackList;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -50,7 +50,7 @@ public class WidgetVivoService extends Service {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 kif.a(WidgetVivoService.LOG_TAG, "WidgetVivoService requestData onSuccess: " + str);
                 WidgetVivoService.b(WidgetVivoService.this, str, true);
@@ -65,7 +65,7 @@ public class WidgetVivoService extends Service {
                 return;
             }
             kif.a(WidgetVivoService.LOG_TAG, "WidgetVivoService requestData onError: " + str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             WidgetVivoService.b(WidgetVivoService.this, str, false);
@@ -313,7 +313,7 @@ public class WidgetVivoService extends Service {
             String format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Calendar.getInstance().getTime());
             String str = (String) khw.a(this.c).b(WIDGET_ORDER_MAX_REQUEST_TIMES, "");
             kif.a(LOG_TAG, "today: " + format + ",localTime: " + str);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] split = str.split(":");
                 String str2 = split[0];
                 int parseInt = Integer.parseInt(split[1]);

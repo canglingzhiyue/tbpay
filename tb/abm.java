@@ -1,7 +1,7 @@
 package tb;
 
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridDestroyPolicy;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridInstanceRenderMode;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridPreRenderRecyclePolicy;
@@ -82,11 +82,11 @@ public class abm {
         if (ipChange instanceof IpChange) {
             return (e) ipChange.ipc$dispatch("151918b4", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (e eVar : this.f25205a) {
-            if (eVar != null && TextUtils.equals(str, eVar.f2793a)) {
+            if (eVar != null && StringUtils.equals(str, eVar.f2793a)) {
                 return eVar;
             }
         }
@@ -98,7 +98,7 @@ public class abm {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("5d187697", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (e eVar : this.f25205a) {
@@ -123,7 +123,7 @@ public class abm {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("a517d4f6", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (e eVar : this.f25205a) {

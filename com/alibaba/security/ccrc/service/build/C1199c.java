@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.security.client.smart.core.algo.SampleData;
@@ -44,7 +44,7 @@ public class C1199c extends BaseActionPerform {
         for (JSONArray jSONArray : JSON.parseArray(str2, JSONArray.class)) {
             str5 = (String) BaseActionPerform.getSafely(jSONArray, 1, String.class);
         }
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             actionCallbackFail(sampleData, W.a("CCRC url is empty", sampleData.sampleId, sampleData.metaId, false, false));
         } else {
             actionCallbackSuccess(sampleData, W.a(sampleData, true, str5));

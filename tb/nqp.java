@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.location.common.TBLocationDTO;
 import com.taobao.search.common.util.o;
@@ -31,7 +31,7 @@ public class nqp extends nqa {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     b(key, value);
                 }
             }
@@ -46,14 +46,14 @@ public class nqp extends nqa {
         } else {
             b("searchhint", "off");
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             b("placeholder", str);
             b("searchquery", str2);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             b("tab", str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             b("searchdoorFrom", str5);
         }
         TBLocationDTO a2 = nnq.a();
@@ -63,7 +63,7 @@ public class nqp extends nqa {
             b(noa.KEY_CITY_CODE, a2.cityCode);
         }
         String c = o.INSTANCE.c(Globals.getApplication());
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             b(noa.KEY_GLOBAL_LBS, c);
         }
     }
@@ -77,10 +77,10 @@ public class nqp extends nqa {
             return "10211";
         }
         String a2 = noo.a(map, "channelSrp");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "10211";
         }
         String str = b.get(a2);
-        return TextUtils.isEmpty(str) ? "10211" : str;
+        return StringUtils.isEmpty(str) ? "10211" : str;
     }
 }

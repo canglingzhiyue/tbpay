@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
@@ -72,7 +72,7 @@ public final class spj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{str, str2, str3})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         try {
@@ -88,7 +88,7 @@ public final class spj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         String lowerCase = str2.toLowerCase();
@@ -185,7 +185,7 @@ public final class spj {
 
     public static boolean k(FluidContext fluidContext) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8b240ba8", new Object[]{fluidContext})).booleanValue() : TextUtils.equals("outside", fluidContext.getInstanceConfig().getTab3ComponentSource());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8b240ba8", new Object[]{fluidContext})).booleanValue() : StringUtils.equals("outside", fluidContext.getInstanceConfig().getTab3ComponentSource());
     }
 
     public static boolean d() {

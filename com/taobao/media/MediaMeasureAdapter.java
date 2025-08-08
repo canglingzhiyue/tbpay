@@ -243,7 +243,7 @@ public class MediaMeasureAdapter implements mjw {
             boolean r11 = r11.booleanValue()
             return r11
         L20:
-            boolean r2 = android.text.TextUtils.isEmpty(r11)
+            boolean r2 = android.text.StringUtils.isEmpty(r11)
             if (r2 == 0) goto L27
             return r5
         L27:

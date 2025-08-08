@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.mmd.datasource.bean.AuctionBaseBean;
@@ -36,13 +36,13 @@ public class nny {
             ipChange.ipc$dispatch("1dda899a", new Object[]{priceView, auctionBaseBean});
         } else if (priceView == null) {
         } else {
-            if (!TextUtils.isEmpty(auctionBaseBean.daySold)) {
+            if (!StringUtils.isEmpty(auctionBaseBean.daySold)) {
                 priceView.setSalesText(auctionBaseBean.daySold);
                 priceView.setSalesColor(daySoldTextColor);
-            } else if (!TextUtils.isEmpty(auctionBaseBean.realSales)) {
+            } else if (!StringUtils.isEmpty(auctionBaseBean.realSales)) {
                 priceView.setSalesText(auctionBaseBean.realSales);
                 priceView.setSalesColor(normalSoldTextColor);
-            } else if (!TextUtils.isEmpty(auctionBaseBean.selled)) {
+            } else if (!StringUtils.isEmpty(auctionBaseBean.selled)) {
                 String a2 = nol.a(auctionBaseBean.selled);
                 if (!StringUtil.isEmpty(a2)) {
                     priceView.setSalesText(a2 + b.a(R.string.taobao_app_1005_1_16682));

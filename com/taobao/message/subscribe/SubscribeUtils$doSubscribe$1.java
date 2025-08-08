@@ -2,7 +2,7 @@ package com.taobao.message.subscribe;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -206,7 +206,7 @@ public final class SubscribeUtils$doSubscribe$1 implements IRemoteBaseListener {
                                 if (mo2429getData8 != null && (subScribeCenterResultDTO6 = mo2429getData8.model) != null) {
                                     str2 = subScribeCenterResultDTO6.getToastText();
                                 }
-                                if (TextUtils.isEmpty(str2)) {
+                                if (StringUtils.isEmpty(str2)) {
                                     return;
                                 }
                                 UIHandler.post(new Runnable() { // from class: com.taobao.message.subscribe.SubscribeUtils$doSubscribe$1$onSuccess$$inlined$let$lambda$1.1
@@ -254,7 +254,7 @@ public final class SubscribeUtils$doSubscribe$1 implements IRemoteBaseListener {
                 LocalBroadcastManager.getInstance(Globals.getApplication()).sendBroadcast(intent);
                 return;
             }
-            if (mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse != null && (mo2429getData2 = mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse.mo2429getData()) != null && (subScribeCenterResultDTO = mo2429getData2.model) != null && (toastText = subScribeCenterResultDTO.getToastText()) != null && !TextUtils.isEmpty(toastText)) {
+            if (mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse != null && (mo2429getData2 = mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse.mo2429getData()) != null && (subScribeCenterResultDTO = mo2429getData2.model) != null && (toastText = subScribeCenterResultDTO.getToastText()) != null && !StringUtils.isEmpty(toastText)) {
                 UIHandler.post(new Runnable() { // from class: com.taobao.message.subscribe.SubscribeUtils$doSubscribe$1$onSuccess$3$1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -325,7 +325,7 @@ public final class SubscribeUtils$doSubscribe$1 implements IRemoteBaseListener {
                     q.a((Object) subScribeCenterResultDTO5, "response.data.model");
                     subScribeCenterResultDTO5.setRetMsg((String) b.get(1));
                 }
-                if (mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse != null && (mo2429getData3 = mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse.mo2429getData()) != null && (subScribeCenterResultDTO2 = mo2429getData3.model) != null && (toastText = subScribeCenterResultDTO2.getToastText()) != null && !TextUtils.isEmpty(toastText)) {
+                if (mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse != null && (mo2429getData3 = mtopTaobaoAlimpBentleySubscribeCenterActionBindingResponse.mo2429getData()) != null && (subScribeCenterResultDTO2 = mo2429getData3.model) != null && (toastText = subScribeCenterResultDTO2.getToastText()) != null && !StringUtils.isEmpty(toastText)) {
                     UIHandler.post(new Runnable() { // from class: com.taobao.message.subscribe.SubscribeUtils$doSubscribe$1$onError$2$1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 

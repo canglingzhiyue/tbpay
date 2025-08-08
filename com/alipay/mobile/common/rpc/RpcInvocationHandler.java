@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.rpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.rpc.transport.InnerRpcInvokeContext;
 import com.alipay.mobile.common.rpc.util.RpcInvokerUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -49,10 +49,10 @@ public class RpcInvocationHandler implements InvocationHandler {
         if (a2.bgRpc == null) {
             a2.bgRpc = Boolean.valueOf(this.b);
         }
-        if (TextUtils.isEmpty(a2.appKey)) {
+        if (StringUtils.isEmpty(a2.appKey)) {
             a2.appKey = this.mConfig.getAppKey();
         }
-        if (TextUtils.isEmpty(a2.gwUrl)) {
+        if (StringUtils.isEmpty(a2.gwUrl)) {
             a2.gwUrl = this.mConfig.getUrl();
         }
         if (a2.compress == null) {

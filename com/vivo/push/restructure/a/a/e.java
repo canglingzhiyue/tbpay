@@ -1,6 +1,6 @@
 package com.vivo.push.restructure.a.a;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.sdk.PushMessageCallback;
 import com.vivo.push.util.u;
 
@@ -28,7 +28,7 @@ public final class e extends a<com.vivo.push.restructure.a.a> {
             String l = aVar.l();
             if (k == 3) {
                 String i2 = com.vivo.push.m.a().i();
-                if (TextUtils.isEmpty(i2) || !TextUtils.equals(i2, l)) {
+                if (StringUtils.isEmpty(i2) || !StringUtils.equals(i2, l)) {
                     i = 2810;
                 }
             } else if (k == 4) {

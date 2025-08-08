@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.amnet.api;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.security.SecurityUtil;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -49,7 +49,7 @@ public class AmnetUserInfo {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("58ad3b3d", new Object[0]);
             }
-            if (TextUtils.isEmpty(f5354a)) {
+            if (StringUtils.isEmpty(f5354a)) {
                 f5354a = a();
             }
             return f5354a;
@@ -61,7 +61,7 @@ public class AmnetUserInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f8ede3e", new Object[0]);
         }
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             b = b();
         }
         return b;
@@ -83,7 +83,7 @@ public class AmnetUserInfo {
         }
         try {
             String string = AmnetEnvHelper.getAppContext().getSharedPreferences("amnetsui", 4).getString("userId", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return "";
             }
             String decrypt = SecurityUtil.decrypt(string);
@@ -102,7 +102,7 @@ public class AmnetUserInfo {
         }
         try {
             String string = AmnetEnvHelper.getAppContext().getSharedPreferences("amnetsui", 4).getString("sessionId", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return "";
             }
             String decrypt = SecurityUtil.decrypt(string);

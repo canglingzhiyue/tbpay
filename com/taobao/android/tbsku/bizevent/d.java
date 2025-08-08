@@ -1,6 +1,6 @@
 package com.taobao.android.tbsku.bizevent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class d extends com.taobao.android.sku.bizevent.e {
             return a2;
         }
         String string = jSONObject.getString("tgKey");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 jSONObject.put("tgKey", (Object) URLDecoder.decode(string, "utf-8"));
             } catch (Throwable unused) {

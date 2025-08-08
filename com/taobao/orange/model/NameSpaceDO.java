@@ -1,7 +1,7 @@
 package com.taobao.orange.model;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OConstant;
 import com.taobao.orange.util.OLog;
@@ -105,13 +105,13 @@ public class NameSpaceDO implements Serializable {
             return ((Boolean) ipChange.ipc$dispatch("9312da32", new Object[]{this, configDO, new Boolean(z)})).booleanValue();
         }
         if (!z) {
-            if (TextUtils.isEmpty(com.taobao.orange.a.R)) {
+            if (StringUtils.isEmpty(com.taobao.orange.a.R)) {
                 com.taobao.orange.a.R = (String) h.b(com.taobao.orange.a.g, "appVersion", "");
             }
-            if (TextUtils.isEmpty(com.taobao.orange.a.S)) {
+            if (StringUtils.isEmpty(com.taobao.orange.a.S)) {
                 com.taobao.orange.a.S = (String) h.b(com.taobao.orange.a.g, "osVersion", "");
             }
-            if (!TextUtils.equals(com.taobao.orange.a.R, com.taobao.orange.a.j) || !TextUtils.equals(com.taobao.orange.a.S, String.valueOf(Build.VERSION.SDK_INT))) {
+            if (!StringUtils.equals(com.taobao.orange.a.R, com.taobao.orange.a.j) || !StringUtils.equals(com.taobao.orange.a.S, String.valueOf(Build.VERSION.SDK_INT))) {
                 if (configDO != null) {
                     configDO.setConfigStatus(2);
                     OLog.e(TAG, "skipCheckConfigValid localEnvironment changed", new Object[0]);

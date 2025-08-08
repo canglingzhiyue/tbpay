@@ -1,6 +1,6 @@
 package com.taobao.android.order.core.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.core.c;
@@ -33,7 +33,7 @@ public class a {
             MtopRequest mtopRequest = new MtopRequest();
             String b = hVar.b();
             String d = hVar.d();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 hzy.a("MtopRequestHelper", "EVENT_CHAIN_PARAMS_VALID_ERROR", "error:  apiVersion is null");
                 return;
             }

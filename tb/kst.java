@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.c;
@@ -26,7 +26,7 @@ public class kst {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.equals(str, ksk.HOME_MAIN.b) && !TextUtils.equals(str, ksk.HOME_INTL.b) && !TextUtils.equals(str, ksk.HOME_CUN.b) && !TextUtils.equals(str, ksk.HOME_OLD.b) && !TextUtils.equals(str, ksk.REC_MAIN.b) && !TextUtils.equals(str, ksk.REC_INTL.b) && !TextUtils.equals(str, ksk.REC_CUN.b) && !TextUtils.equals(str, ksk.REC_OLD.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.equals(str, ksk.HOME_MAIN.b) && !StringUtils.equals(str, ksk.HOME_INTL.b) && !StringUtils.equals(str, ksk.HOME_CUN.b) && !StringUtils.equals(str, ksk.HOME_OLD.b) && !StringUtils.equals(str, ksk.REC_MAIN.b) && !StringUtils.equals(str, ksk.REC_INTL.b) && !StringUtils.equals(str, ksk.REC_CUN.b) && !StringUtils.equals(str, ksk.REC_OLD.b);
     }
 
     public static long a(long j) {
@@ -39,7 +39,7 @@ public class kst {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c1aa3516", new Object[]{str, list})).intValue();
         }
-        if (TextUtils.isEmpty(str) || list == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(str) || list == null || list.isEmpty()) {
             return -1;
         }
         for (int i = 0; i < list.size(); i++) {
@@ -55,9 +55,9 @@ public class kst {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.equals(str, str2)) {
-            if (!TextUtils.equals(str + "_delta", str2)) {
-                if (!TextUtils.equals(str, str2 + "_delta")) {
+        if (!StringUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str + "_delta", str2)) {
+                if (!StringUtils.equals(str, str2 + "_delta")) {
                     return false;
                 }
             }
@@ -85,7 +85,7 @@ public class kst {
             for (String str : jSONObject3.keySet()) {
                 JSONObject jSONObject5 = jSONObject3.getJSONObject(str);
                 JSONObject jSONObject6 = jSONObject4.getJSONObject(str);
-                if (jSONObject5 == jSONObject6 || (jSONObject5 != null && jSONObject6 != null && TextUtils.equals(jSONObject5.getString("content"), jSONObject6.getString("content")) && TextUtils.equals(jSONObject5.getString(e.KEY_SMART_CONTENT), jSONObject6.getString(e.KEY_SMART_CONTENT)) && TextUtils.equals(jSONObject5.getString("voiceText"), jSONObject6.getString("voiceText")) && TextUtils.equals(jSONObject5.getString("ext"), jSONObject6.getString("ext")))) {
+                if (jSONObject5 == jSONObject6 || (jSONObject5 != null && jSONObject6 != null && StringUtils.equals(jSONObject5.getString("content"), jSONObject6.getString("content")) && StringUtils.equals(jSONObject5.getString(e.KEY_SMART_CONTENT), jSONObject6.getString(e.KEY_SMART_CONTENT)) && StringUtils.equals(jSONObject5.getString("voiceText"), jSONObject6.getString("voiceText")) && StringUtils.equals(jSONObject5.getString("ext"), jSONObject6.getString("ext")))) {
                 }
                 return false;
             }
@@ -109,7 +109,7 @@ public class kst {
             for (String str3 : jSONObject.keySet()) {
                 JSONObject jSONObject9 = jSONObject.getJSONObject(str3);
                 JSONObject jSONObject10 = jSONObject2.getJSONObject(str3);
-                if (jSONObject9 != jSONObject10 && (jSONObject9 == null || jSONObject10 == null || !TextUtils.equals(jSONObject9.getString("content"), jSONObject10.getString("content")) || !TextUtils.equals(jSONObject9.getString(e.KEY_SMART_CONTENT), jSONObject10.getString(e.KEY_SMART_CONTENT)) || !TextUtils.equals(jSONObject9.getString("voiceText"), jSONObject10.getString("voiceText")) || !TextUtils.equals(jSONObject9.getString("ext"), jSONObject10.getString("ext")))) {
+                if (jSONObject9 != jSONObject10 && (jSONObject9 == null || jSONObject10 == null || !StringUtils.equals(jSONObject9.getString("content"), jSONObject10.getString("content")) || !StringUtils.equals(jSONObject9.getString(e.KEY_SMART_CONTENT), jSONObject10.getString(e.KEY_SMART_CONTENT)) || !StringUtils.equals(jSONObject9.getString("voiceText"), jSONObject10.getString("voiceText")) || !StringUtils.equals(jSONObject9.getString("ext"), jSONObject10.getString("ext")))) {
                     return false;
                 }
             }
@@ -139,7 +139,7 @@ public class kst {
         }
         ArrayList arrayList = new ArrayList(ksk.values().length);
         for (ksk kskVar : ksk.values()) {
-            if (TextUtils.equals(str, kskVar.b)) {
+            if (StringUtils.equals(str, kskVar.b)) {
                 arrayList.add(kskVar.f30287a);
             }
         }
@@ -152,7 +152,7 @@ public class kst {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
         String str = (String) c.a("ttid", null);
-        return TextUtils.isEmpty(str) ? TaoHelper.getTTID() : str;
+        return StringUtils.isEmpty(str) ? TaoHelper.getTTID() : str;
     }
 
     public static String c() {
@@ -161,7 +161,7 @@ public class kst {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[0]);
         }
         String str = (String) c.a("deviceId", null);
-        return TextUtils.isEmpty(str) ? UTDevice.getUtdid(g.a()) : str;
+        return StringUtils.isEmpty(str) ? UTDevice.getUtdid(g.a()) : str;
     }
 
     public static String d() {
@@ -170,7 +170,7 @@ public class kst {
             return (String) ipChange.ipc$dispatch("43881515", new Object[0]);
         }
         String str = (String) c.a("userId", null);
-        return TextUtils.isEmpty(str) ? i.b() : str;
+        return StringUtils.isEmpty(str) ? i.b() : str;
     }
 
     public static float a(JSONObject jSONObject) {

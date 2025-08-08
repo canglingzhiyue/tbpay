@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -144,7 +144,7 @@ public class ehi extends epe {
             if (l != null && l.salePromotion != null) {
                 this.f27310a = l.salePromotion.f;
                 this.d = l.salePromotion.h;
-                if (!TextUtils.isEmpty(l.salePromotion.g)) {
+                if (!StringUtils.isEmpty(l.salePromotion.g)) {
                     this.c = true;
                     try {
                         this.b = c.a(l.salePromotion.g);

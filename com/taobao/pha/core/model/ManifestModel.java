@@ -1,7 +1,7 @@
 package com.taobao.pha.core.model;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -144,7 +144,7 @@ public class ManifestModel implements Serializable {
             return;
         }
         String m = c.m();
-        if (TextUtils.isEmpty(m)) {
+        if (StringUtils.isEmpty(m)) {
             m = "<!DOCTYPE html><html><head><meta charset=\"utf-8\" /><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover\" /><title></title></head><body><div id=\"root\"></div></body></html>";
         }
         if (!buildTemplate(manifestModel, pageModel, m)) {
@@ -261,17 +261,17 @@ public class ManifestModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("18ca513d", new Object[]{manifestModel, pageModel, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(pageModel.html)) {
+        if (!StringUtils.isEmpty(pageModel.html)) {
             return true;
         }
         String str3 = pageModel.document;
-        if (TextUtils.isEmpty(str3) && manifestModel != null) {
+        if (StringUtils.isEmpty(str3) && manifestModel != null) {
             str3 = manifestModel.document;
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             pageModel.html = str3;
             return true;
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(pageModel.script)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(pageModel.script)) {
             return false;
         } else {
             StringBuilder sb = new StringBuilder();
@@ -283,7 +283,7 @@ public class ManifestModel implements Serializable {
                 arrayList2 = manifestModel.metas;
                 arrayList3 = manifestModel.links;
                 str2 = manifestModel.spm;
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     str4 = manifestModel.title;
                 }
             } else {
@@ -292,10 +292,10 @@ public class ManifestModel implements Serializable {
                 arrayList3 = null;
                 str2 = null;
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str = str.replace("<title></title>", "<title>" + str4 + "</title>");
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 sb.append("<meta name=\"data-spm\" content=\"" + str2 + "\">");
             }
             if (arrayList2 != null && arrayList2.size() > 0) {
@@ -310,17 +310,17 @@ public class ManifestModel implements Serializable {
                     sb.append(it2.next());
                 }
             }
-            if (!TextUtils.isEmpty(pageModel.stylesheet)) {
+            if (!StringUtils.isEmpty(pageModel.stylesheet)) {
                 sb.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"");
                 sb.append(pageModel.stylesheet);
                 sb.append("\"/>");
             }
             String sb2 = sb.toString();
-            if (!TextUtils.isEmpty(sb2)) {
+            if (!StringUtils.isEmpty(sb2)) {
                 str = str.replace("</head>", sb2 + "</head>");
             }
             StringBuilder sb3 = new StringBuilder();
-            if (!TextUtils.isEmpty(pageModel.spm)) {
+            if (!StringUtils.isEmpty(pageModel.spm)) {
                 sb3.append(" data-spm=\"");
                 sb3.append(pageModel.spm);
                 sb3.append("\"");
@@ -333,7 +333,7 @@ public class ManifestModel implements Serializable {
                 }
             }
             String sb4 = sb3.toString();
-            if (!TextUtils.isEmpty(sb4)) {
+            if (!StringUtils.isEmpty(sb4)) {
                 str = str.replace("<body>", "<body" + sb4);
             }
             StringBuilder sb5 = new StringBuilder();

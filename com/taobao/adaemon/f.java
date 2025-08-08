@@ -13,7 +13,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.PersistableBundle;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.adaemon.ProcessController;
@@ -721,7 +721,7 @@ public class f {
             ipChange.ipc$dispatch("5a4ca6c", new Object[]{this});
         } else if (!j.a().e()) {
             e.b("Worker", "startTargetProcess() not allowed, try to start light process", new Object[0]);
-            if (TextUtils.isEmpty(j.a().i())) {
+            if (StringUtils.isEmpty(j.a().i())) {
                 return;
             }
             g.b().a(500L, false);

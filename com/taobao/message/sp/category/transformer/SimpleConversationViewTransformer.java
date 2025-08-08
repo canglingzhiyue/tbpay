@@ -1,6 +1,6 @@
 package com.taobao.message.sp.category.transformer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -87,11 +87,11 @@ public class SimpleConversationViewTransformer implements Transformer {
         viewData.tipNumber = ValueUtil.getInteger(contentNode.getComputedData(), "tipNumber");
         SimpleMessageSummary lastMessageSummary = simpleConversation.getConversationContent().getLastMessageSummary();
         if (lastMessageSummary != null) {
-            if (!TextUtils.isEmpty(simpleConversation.getConversationContent().getDraft())) {
+            if (!StringUtils.isEmpty(simpleConversation.getConversationContent().getDraft())) {
                 viewData.contentTipLight = 1;
                 viewData.contentTip = DisplayUtil.localizedString(R.string.mp_draft);
                 viewData.summaryContent = simpleConversation.getConversationContent().getDraft();
-            } else if (TextUtils.isEmpty(lastMessageSummary.getContent())) {
+            } else if (StringUtils.isEmpty(lastMessageSummary.getContent())) {
                 viewData.summaryContent = DisplayUtil.localizedString(R.string.mp_no_new_messages);
             } else {
                 viewData.summaryContent = lastMessageSummary.getContent();

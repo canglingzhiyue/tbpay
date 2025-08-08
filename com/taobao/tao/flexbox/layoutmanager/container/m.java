@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.container;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public class m {
         sb.append(Uri.encode(str));
         if (z) {
             String query = Uri.parse(str).getQuery();
-            if (!TextUtils.isEmpty(query)) {
+            if (!StringUtils.isEmpty(query)) {
                 sb.append("&");
                 sb.append(query);
             }
@@ -141,7 +141,7 @@ public class m {
         }
         String uri2 = uri.toString();
         String queryParameter = uri.getQueryParameter("tnode");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             uri = Uri.parse(b(uri2, false));
             queryParameter = uri.getQueryParameter("tnode");
         }
@@ -168,7 +168,7 @@ public class m {
             str2 = null;
         }
         String a2 = ogy.a(queryParameter);
-        if (TextUtils.equals(a2, queryParameter)) {
+        if (StringUtils.equals(a2, queryParameter)) {
             z2 = z3;
         }
         Uri parse2 = Uri.parse(a2);
@@ -226,7 +226,7 @@ public class m {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a.a(Uri.parse(str));
         }
@@ -290,7 +290,7 @@ public class m {
                 return null;
             }
             String queryParameter = uri.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_URL_CONFIG_CACHE_KEY);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return null;
             }
             return f20265a.remove(queryParameter);

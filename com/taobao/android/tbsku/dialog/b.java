@@ -2,7 +2,7 @@ package com.taobao.android.tbsku.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -146,7 +146,7 @@ public class b {
         } else if (jSONObject == null || jSONObject.isEmpty()) {
         } else {
             String string = jSONObject.getString("viewId");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 iybVar.h().put(string, Integer.valueOf((int) (((i / 6) * 348.5f) - 1.0f)));
             }
             iybVar.b().b(new JSONObject() { // from class: com.taobao.android.tbsku.dialog.XSkuSingleScalePopWindow$2

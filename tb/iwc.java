@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -280,7 +280,7 @@ public class iwc implements a.b, a.c, g.a {
             java.lang.String r3 = "source_url"
             java.lang.Object r12 = r12.get(r3)     // Catch: java.lang.Throwable -> L78
             java.lang.String r12 = (java.lang.String) r12     // Catch: java.lang.Throwable -> L78
-            boolean r3 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L78
+            boolean r3 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L78
             if (r3 == 0) goto L2f
             r3 = r0
             goto L35
@@ -354,10 +354,10 @@ public class iwc implements a.b, a.c, g.a {
         shbVar.e = mpa.COLD.equals(a2) ? 1 : 0;
         shbVar.f = SceneIdentifier.isAppBackground() ? 1 : 0;
         sgw sgwVar = aVar.b;
-        if (TextUtils.isEmpty(sgwVar.f33565a) || TextUtils.isEmpty(sgwVar.b)) {
+        if (StringUtils.isEmpty(sgwVar.f33565a) || StringUtils.isEmpty(sgwVar.b)) {
             sgw sgwVar2 = new sgw();
-            sgwVar2.f33565a = TextUtils.isEmpty(sgwVar.f33565a) ? f() : sgwVar.f33565a;
-            sgwVar2.b = TextUtils.isEmpty(sgwVar.b) ? g() : sgwVar.b;
+            sgwVar2.f33565a = StringUtils.isEmpty(sgwVar.f33565a) ? f() : sgwVar.f33565a;
+            sgwVar2.b = StringUtils.isEmpty(sgwVar.b) ? g() : sgwVar.b;
             sgwVar2.c = sgwVar.c;
             sgwVar2.d = sgwVar.d;
             sgwVar = sgwVar2;

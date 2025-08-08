@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login.presenter;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.callback.LoginTasksCallback;
 import com.ali.user.mobile.coordinator.CoordinatorWrapper;
 import com.ali.user.mobile.exception.LoginException;
@@ -86,7 +86,7 @@ public class FaceLoginPresenter extends BaseLoginPresenter {
                         } else if (code == 3009) {
                             FaceLoginPresenter.this.mViewer.toast(FaceLoginPresenter.this.mViewer.getBaseActivity().getString(R.string.aliuser_scan_login_fail), 0);
                         } else {
-                            FaceLoginPresenter.this.mViewer.toast((loginException.getOrinResponse() == null || TextUtils.isEmpty(loginException.getOrinResponse().message)) ? FaceLoginPresenter.this.mViewer.getBaseActivity().getString(R.string.aliuser_network_error) : loginException.getOrinResponse().message, 0);
+                            FaceLoginPresenter.this.mViewer.toast((loginException.getOrinResponse() == null || StringUtils.isEmpty(loginException.getOrinResponse().message)) ? FaceLoginPresenter.this.mViewer.getBaseActivity().getString(R.string.aliuser_network_error) : loginException.getOrinResponse().message, 0);
                         }
                     }
                 }
@@ -148,7 +148,7 @@ public class FaceLoginPresenter extends BaseLoginPresenter {
                         ipChange2.ipc$dispatch("c4d1030f", new Object[]{this, getVerifyUrlResponse});
                     } else if (getVerifyUrlResponse == null) {
                     } else {
-                        if (getVerifyUrlResponse.code == 3000 && getVerifyUrlResponse.returnValue != 0 && !TextUtils.isEmpty(((GetVerifyUrlReturnData) getVerifyUrlResponse.returnValue).url)) {
+                        if (getVerifyUrlResponse.code == 3000 && getVerifyUrlResponse.returnValue != 0 && !StringUtils.isEmpty(((GetVerifyUrlReturnData) getVerifyUrlResponse.returnValue).url)) {
                             UrlParam urlParam = new UrlParam();
                             urlParam.url = ((GetVerifyUrlReturnData) getVerifyUrlResponse.returnValue).url;
                             urlParam.ivScene = "h5_non_login_open_verify";

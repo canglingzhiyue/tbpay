@@ -2,7 +2,7 @@ package tb;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class szz implements b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ldf.d("PassThroughDataHandler", "parseSectionBizCode homePageViewId == null");
             return null;
         } else if (!str.contains("&")) {
@@ -84,7 +84,7 @@ public class szz implements b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ldf.d("PassThroughDataHandler", "parseItemBizCode homePageViewId == null");
             return null;
         } else if (!str.contains("&")) {
@@ -103,7 +103,7 @@ public class szz implements b {
 
     private boolean a(String str, JSONObject jSONObject) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6635bd02", new Object[]{this, str, jSONObject})).booleanValue() : !TextUtils.isEmpty(str) && jSONObject != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6635bd02", new Object[]{this, str, jSONObject})).booleanValue() : !StringUtils.isEmpty(str) && jSONObject != null;
     }
 
     private boolean a(String str, String str2, tmv tmvVar) {
@@ -111,7 +111,7 @@ public class szz implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("413089b3", new Object[]{this, str, str2, tmvVar})).booleanValue();
         }
-        if (TextUtils.equals(str, "DXSearchBar")) {
+        if (StringUtils.equals(str, "DXSearchBar")) {
             return a(tmvVar, str2);
         }
         return b(str, str2, tmvVar);
@@ -137,7 +137,7 @@ public class szz implements b {
             return ((Boolean) ipChange.ipc$dispatch("543515a9", new Object[]{this, tmvVar, str})).booleanValue();
         }
         String c2 = c(str);
-        if (TextUtils.isEmpty(c2) || (c = c.a().c(c2)) == null) {
+        if (StringUtils.isEmpty(c2) || (c = c.a().c(c2)) == null) {
             return false;
         }
         c.passThroughData(tmvVar, null, null);
@@ -157,7 +157,7 @@ public class szz implements b {
         List<JSONObject> b = sqg.b(d);
         for (int i = 0; i < b.size(); i++) {
             JSONObject jSONObject = b.get(i).getJSONObject("content");
-            if (jSONObject != null && TextUtils.equals(jSONObject.getString("tabContentID"), str)) {
+            if (jSONObject != null && StringUtils.equals(jSONObject.getString("tabContentID"), str)) {
                 str2 = jSONObject.getString("type");
             }
         }
@@ -170,7 +170,7 @@ public class szz implements b {
             return ((Number) ipChange.ipc$dispatch("266fb7c", new Object[]{this, jSONObject})).longValue();
         }
         String string = jSONObject.getString("effectiveTime");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ldf.d("PassThroughDataHandler", "effectiveTime == null");
             return -1L;
         }

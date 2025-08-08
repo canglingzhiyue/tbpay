@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
@@ -196,7 +196,7 @@ public class AfcLifeCycleCenter {
                 }
                 AfcLifeCycleCenter.access$302(AfcLifeCycleCenter.this, new WeakReference(activity));
                 String b = AfcUtils.b(activity);
-                if (!TextUtils.isEmpty(b) && !TextUtils.isEmpty(AfcLifeCycleCenter.access$400(AfcLifeCycleCenter.this)) && AfcLifeCycleCenter.access$400(AfcLifeCycleCenter.this).equals(b)) {
+                if (!StringUtils.isEmpty(b) && !StringUtils.isEmpty(AfcLifeCycleCenter.access$400(AfcLifeCycleCenter.this)) && AfcLifeCycleCenter.access$400(AfcLifeCycleCenter.this).equals(b)) {
                     c.a("linkx", "AfcLifeCycleCenter: -->onActivityResumed === same page return === " + b);
                     return;
                 }
@@ -386,10 +386,10 @@ public class AfcLifeCycleCenter {
             }
             AfcUtils.a(AfcUtils.FlowType.LAUNCH, uri, hashMap);
             c.b("linkx", "AfcLifeCycleCenter === dealWithData: 自然冷启动埋点上报");
-        } else if (!TextUtils.isEmpty(a2) && !TextUtils.equals("com.taobao.taobao", a2)) {
+        } else if (!StringUtils.isEmpty(a2) && !StringUtils.equals("com.taobao.taobao", a2)) {
             isLauncherStart = false;
             afcLinkPoint(simpleName, data, uri, a2, intent);
-        } else if (TextUtils.equals("true", intent.getStringExtra("afcDeskTopMessage"))) {
+        } else if (StringUtils.equals("true", intent.getStringExtra("afcDeskTopMessage"))) {
             isLauncherStart = false;
             afcMessagePoint(intent, uri);
         } else if (e.a(data)) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.i;
@@ -37,7 +37,7 @@ public class kxe extends dlg {
             String jSONObject = c.getJSONObject("data").toString();
             StringBuilder sb = new StringBuilder();
             sb.append("openapi://");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "";
             }
             sb.append(string);

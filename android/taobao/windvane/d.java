@@ -16,7 +16,7 @@ import android.taobao.windvane.monitor.WVLocPerformanceMonitor;
 import android.taobao.windvane.monitor.o;
 import android.taobao.windvane.util.e;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.ProcessInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -74,7 +74,7 @@ public class d {
             } else {
                 c2 = android.taobao.windvane.util.a.c(context);
             }
-            if (TextUtils.isEmpty(c2) || c2.endsWith("sandboxed_process0") || c2.endsWith("sandboxed_privilege_process0") || c2.endsWith(ProcessInfo.ALIAS_GPU_PROCESS)) {
+            if (StringUtils.isEmpty(c2) || c2.endsWith("sandboxed_process0") || c2.endsWith("sandboxed_privilege_process0") || c2.endsWith(ProcessInfo.ALIAS_GPU_PROCESS)) {
                 return;
             }
             if (c.compareAndSet(false, true)) {

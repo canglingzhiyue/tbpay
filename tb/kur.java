@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.external.UCPManager;
 import com.taobao.android.home.component.utils.j;
@@ -104,7 +104,7 @@ public class kur implements ktx {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ad15", new Object[]{this, str, new Integer(i)})).booleanValue();
         }
-        if (str == null || TextUtils.isEmpty(str)) {
+        if (str == null || StringUtils.isEmpty(str)) {
             return false;
         }
         int length = str.toCharArray().length;

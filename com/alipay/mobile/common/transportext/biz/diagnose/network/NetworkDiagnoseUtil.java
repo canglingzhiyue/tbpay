@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.diagnose.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transportext.biz.diagnose.network.Configuration;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.InetAddress;
@@ -63,7 +63,7 @@ public class NetworkDiagnoseUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7a697ce6", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

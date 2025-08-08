@@ -3,7 +3,7 @@ package com.taobao.taolive.room.afccoldlunch;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.afccoldlunch.simple.MtopTbliveRecommendVideoSimpleQueryResponse;
 import com.taobao.taolive.room.afccoldlunch.simple.MtopTbliveRecommendVideoSimpleQueryResponseData;
@@ -261,7 +261,7 @@ public class b implements e {
         if (ipChange instanceof IpChange) {
             return (LiveItem.SpfPlayVideo) ipChange.ipc$dispatch("9783434a", new Object[]{simpleVideoInfo});
         }
-        if (simpleVideoInfo == null || TextUtils.isEmpty(simpleVideoInfo.timeMovingSpfPlayVideo)) {
+        if (simpleVideoInfo == null || StringUtils.isEmpty(simpleVideoInfo.timeMovingSpfPlayVideo)) {
             return null;
         }
         return (LiveItem.SpfPlayVideo) pqj.a(simpleVideoInfo.timeMovingSpfPlayVideo, LiveItem.SpfPlayVideo.class);

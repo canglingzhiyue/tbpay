@@ -1,6 +1,6 @@
 package com.taobao.mediaplay.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -33,7 +33,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.d) && (jSONObject = this.f18045a) != null) {
+        if (StringUtils.isEmpty(this.d) && (jSONObject = this.f18045a) != null) {
             Object opt = jSONObject.opt("video_url");
             this.d = opt == null ? null : opt.toString();
         }
@@ -46,7 +46,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.b) && (jSONObject = this.f18045a) != null) {
+        if (StringUtils.isEmpty(this.b) && (jSONObject = this.f18045a) != null) {
             Object opt = jSONObject.opt("definition");
             this.b = opt == null ? null : opt.toString();
         }
@@ -59,7 +59,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f) && (jSONObject = this.f18045a) != null) {
+        if (StringUtils.isEmpty(this.f) && (jSONObject = this.f18045a) != null) {
             Object opt = jSONObject.opt("cacheKey");
             this.f = opt == null ? null : opt.toString();
         }
@@ -75,7 +75,7 @@ public class b {
         try {
             if (this.e == 0 && this.f18045a != null) {
                 Object opt = this.f18045a.opt(com.taobao.android.weex_framework.util.a.ATOM_length);
-                double parseInt = (opt == null || !TextUtils.isDigitsOnly(opt.toString())) ? mto.a.GEO_NOT_SUPPORT : Integer.parseInt(opt.toString());
+                double parseInt = (opt == null || !StringUtils.isDigitsOnly(opt.toString())) ? mto.a.GEO_NOT_SUPPORT : Integer.parseInt(opt.toString());
                 if (parseInt >= 102400.0d && parseInt <= 2.097152E8d) {
                     i = (int) parseInt;
                     this.e = i;
@@ -98,7 +98,7 @@ public class b {
         }
         if (this.c == 0 && (jSONObject = this.f18045a) != null) {
             Object opt = jSONObject.opt("bitrate");
-            if (opt != null && TextUtils.isDigitsOnly(opt.toString())) {
+            if (opt != null && StringUtils.isDigitsOnly(opt.toString())) {
                 i = Integer.parseInt(opt.toString());
             }
             this.c = i;
@@ -115,7 +115,7 @@ public class b {
         }
         if (this.g == 0 && (jSONObject = this.f18045a) != null) {
             Object opt = jSONObject.opt("playableBytes");
-            if (opt != null && TextUtils.isDigitsOnly(opt.toString())) {
+            if (opt != null && StringUtils.isDigitsOnly(opt.toString())) {
                 i = Integer.parseInt(opt.toString());
             }
             this.g = i;

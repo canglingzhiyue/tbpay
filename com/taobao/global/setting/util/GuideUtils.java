@@ -1,7 +1,7 @@
 package com.taobao.global.setting.util;
 
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -79,7 +79,7 @@ public class GuideUtils {
             return;
         }
         String config = OrangeConfig.getInstance().getConfig("mytaobao_setting_sdk", "settingExt", "{\"fatigue\":[{\"key\":\"muteCountDown\",\"fatigue\":\"5\"},{\"key\":\"muteOpenTip\",\"fatigue\":\"1\"},{\"key\":\"muteOnPop\",\"fatigue\":\"1\"},{\"key\":\"muteOffPop\",\"fatigue\":\"1\"}]}");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return;
         }
         try {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import mtopsdk.common.util.HttpHeaderConstant;
 import mtopsdk.framework.domain.FilterResult;
@@ -42,7 +42,7 @@ public class rxy implements rxn {
         convert.s = aVar.g.falcoId;
         convert.t = aVar.g.openTraceContext;
         String launchInfoValue = aVar.g.launchInfoValue();
-        if (!TextUtils.isEmpty(launchInfoValue)) {
+        if (!StringUtils.isEmpty(launchInfoValue)) {
             convert.c.put(HttpHeaderConstant.LAUNCH_INFO_KEY, launchInfoValue);
         }
         aVar.k = convert;

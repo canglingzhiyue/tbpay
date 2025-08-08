@@ -1,7 +1,7 @@
 package com.taobao.android.detail.mainpic.holder;
 
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -114,7 +114,7 @@ public class j extends com.alibaba.android.ultron.vfw.viewholder.b {
         this.c = iDMComponent;
         this.g.setLayoutParams(new LinearLayout.LayoutParams(-1, this.i.u() ? -1 : euu.a(euq.a(iDMComponent), this.i)));
         JSONObject fields = this.c.getFields();
-        if (fields != null && TextUtils.equals(fields.getString("imageType"), "apng")) {
+        if (fields != null && StringUtils.equals(fields.getString("imageType"), "apng")) {
             this.g.setSkipAutoSize(true);
         }
         this.g.setImageUrl(iDMComponent.getFields().getString("url"));

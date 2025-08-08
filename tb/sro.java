@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -142,7 +142,7 @@ public class sro {
         Iterator<sre> it = this.f33869a.iterator();
         while (it.hasNext()) {
             sre next = it.next();
-            if (TextUtils.equals(next.a(), str)) {
+            if (StringUtils.equals(next.a(), str)) {
                 next.a(a2, i);
             }
         }

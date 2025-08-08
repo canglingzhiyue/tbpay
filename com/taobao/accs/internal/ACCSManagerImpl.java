@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Pair;
 import anet.channel.SessionCenter;
@@ -270,7 +270,7 @@ public class ACCSManagerImpl implements a {
                 return;
             }
             String appkey = getConnection().getAppkey();
-            if (TextUtils.isEmpty(appkey)) {
+            if (StringUtils.isEmpty(appkey)) {
                 ALog.e(this.TAG, "appKey null", new Object[0]);
                 return;
             }
@@ -313,7 +313,7 @@ public class ACCSManagerImpl implements a {
             } catch (Exception e) {
                 ALog.e(this.TAG, "unbindUser getAppkey exception", e, new Object[0]);
             }
-            if (TextUtils.isEmpty(appkey)) {
+            if (StringUtils.isEmpty(appkey)) {
                 return;
             }
             intent.putExtra("appKey", appkey);
@@ -346,7 +346,7 @@ public class ACCSManagerImpl implements a {
             } catch (Exception e) {
                 ALog.e(this.TAG, "bindService getAppkey exception", e, new Object[0]);
             }
-            if (TextUtils.isEmpty(appkey)) {
+            if (StringUtils.isEmpty(appkey)) {
                 return;
             }
             intent.putExtra("appKey", appkey);
@@ -389,7 +389,7 @@ public class ACCSManagerImpl implements a {
             } catch (Exception e) {
                 ALog.e(this.TAG, "unbindService getAppkey exception", e, new Object[0]);
             }
-            if (TextUtils.isEmpty(appkey)) {
+            if (StringUtils.isEmpty(appkey)) {
                 return;
             }
             intent.putExtra("appKey", appkey);
@@ -480,7 +480,7 @@ public class ACCSManagerImpl implements a {
             ALog.e(this.TAG, "sendRequest disable", new Object[0]);
             d.a("accs", BaseMonitor.ALARM_POINT_REQ_ERROR, accsRequest.serviceId, "1", "accs disable");
             return null;
-        } else if (TextUtils.isEmpty(getConnection().getAppkey())) {
+        } else if (StringUtils.isEmpty(getConnection().getAppkey())) {
             d.a("accs", BaseMonitor.ALARM_POINT_REQ_ERROR, accsRequest.serviceId, "1", "request appkey null");
             ALog.e(this.TAG, "sendRequest appkey null", new Object[0]);
             return null;
@@ -550,7 +550,7 @@ public class ACCSManagerImpl implements a {
                     return null;
                 }
                 String appkey = getConnection().getAppkey();
-                if (TextUtils.isEmpty(appkey)) {
+                if (StringUtils.isEmpty(appkey)) {
                     d.a("accs", BaseMonitor.ALARM_POINT_REQ_ERROR, accsRequest.serviceId, "1", "sendPushResponse appkey null");
                     ALog.e(this.TAG, "sendPushResponse appkey null", new Object[0]);
                     return null;
@@ -606,10 +606,10 @@ public class ACCSManagerImpl implements a {
                     intent2.putExtra("data", accsRequest.data);
                     intent2.putExtra("dataId", accsRequest.dataId);
                     intent2.putExtra(Constants.KEY_CONFIG_TAG, this.mConfigTag);
-                    if (!TextUtils.isEmpty(accsRequest.businessId)) {
+                    if (!StringUtils.isEmpty(accsRequest.businessId)) {
                         intent2.putExtra("businessId", accsRequest.businessId);
                     }
-                    if (!TextUtils.isEmpty(accsRequest.tag)) {
+                    if (!StringUtils.isEmpty(accsRequest.tag)) {
                         intent2.putExtra(Constants.KEY_EXT_TAG, accsRequest.tag);
                     }
                     if (accsRequest.target != null) {
@@ -751,7 +751,7 @@ public class ACCSManagerImpl implements a {
             return;
         }
         SharedPreferences.Editor edit = APreferencesManager.getSharedPreferences(context, Constants.SP_FILE_NAME, 0).edit();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             edit.putString(Constants.KEY_PROXY_HOST, str);
         }
         edit.putInt(Constants.KEY_PROXY_PORT, i);
@@ -782,10 +782,10 @@ public class ACCSManagerImpl implements a {
         String str4 = this.TAG;
         ALog.d(str4, "startInAppConnection APPKEY:" + str, new Object[0]);
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
-            if (!TextUtils.equals(getConnection().getAppkey(), str)) {
+            if (!StringUtils.equals(getConnection().getAppkey(), str)) {
                 getConnection().setTTid(str3);
                 getConnection().setAppkey(str);
                 UtilityImpl.saveAppKey(context, str);
@@ -1176,7 +1176,7 @@ public class ACCSManagerImpl implements a {
                     if (ipChange2 instanceof IpChange) {
                         return ipChange2.ipc$dispatch("17307540", new Object[]{this, str});
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return null;
                     }
                     try {
@@ -1184,24 +1184,24 @@ public class ACCSManagerImpl implements a {
                         if (indexOf > 0) {
                             Intent parseUri = Intent.parseUri(str.substring(0, indexOf), 0);
                             String substring = str.substring(indexOf + 5, str.length() - 1);
-                            if (TextUtils.isEmpty(substring)) {
+                            if (StringUtils.isEmpty(substring)) {
                                 return parseUri;
                             }
                             String[] split2 = substring.split(ACCSManagerImpl.PREFIX_DATA_SEPARATOR);
                             if (split2.length != 2) {
                                 return parseUri;
                             }
-                            if (!TextUtils.isEmpty(split2[0])) {
+                            if (!StringUtils.isEmpty(split2[0])) {
                                 HashMap hashMap = new HashMap();
                                 for (String str2 : split2[0].split(ACCSManagerImpl.PREFIX_EXT_SEPARATOR)) {
-                                    if (!TextUtils.isEmpty(str2)) {
+                                    if (!StringUtils.isEmpty(str2)) {
                                         String[] split3 = str2.split("=");
                                         hashMap.put(Integer.valueOf(Integer.parseInt(split3[0])), split3[1]);
                                     }
                                 }
                                 parseUri.putExtra(TaoBaseService.ExtraInfo.EXT_HEADER, hashMap);
                             }
-                            if (TextUtils.isEmpty(split2[1])) {
+                            if (StringUtils.isEmpty(split2[1])) {
                                 return parseUri;
                             }
                             parseUri.putExtra("data", Base64.decode(split2[1], 2));

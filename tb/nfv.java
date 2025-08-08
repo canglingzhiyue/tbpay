@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -253,7 +253,7 @@ public class nfv implements nfz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (str2 == null) {
                 return;
             }
@@ -385,7 +385,7 @@ public class nfv implements nfz {
         JSONObject a2 = o.a(this.c);
         a2.put("manifestPreset", (Object) Boolean.valueOf(this.b.manifestPreset));
         String d = d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             a2.put("pageKey", (Object) d);
         }
         a2.put("subPage", (Object) Boolean.valueOf(this.b.isSubPage()));
@@ -486,7 +486,7 @@ public class nfv implements nfz {
         for (Map.Entry<String, Object> entry : ngvVar.a(jSONObject).entrySet()) {
             if (entry.getValue() instanceof String) {
                 String str2 = (String) entry.getValue();
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     buildUpon.appendQueryParameter(entry.getKey(), str2);
                 }
             }
@@ -528,14 +528,14 @@ public class nfv implements nfz {
             }
             if (x != null && x.h()) {
                 String i = x.i();
-                if (!TextUtils.isEmpty(i)) {
+                if (!StringUtils.isEmpty(i)) {
                     sb.append(i);
                 }
             }
         }
         if (ngu.c()) {
             String a2 = qgo.a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 sb.append(a2);
             }
         }

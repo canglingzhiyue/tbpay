@@ -1,6 +1,6 @@
 package com.taobao.android.detail2.core.framework.view.navbar;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,7 +50,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new a(str).a();
         }
         return 0;

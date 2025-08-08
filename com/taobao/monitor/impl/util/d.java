@@ -2,7 +2,7 @@ package com.taobao.monitor.impl.util;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes.dex */
@@ -29,6 +29,6 @@ public class d {
             return "";
         }
         String dataString = intent.getDataString();
-        return !TextUtils.isEmpty(dataString) ? dataString : "";
+        return !StringUtils.isEmpty(dataString) ? dataString : "";
     }
 }

@@ -1,7 +1,7 @@
 package com.huawei.hms.opendevice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.android.SystemUtils;
 import com.huawei.hms.support.log.HMSLog;
@@ -37,18 +37,18 @@ public class m {
             } else if (m.b(this.f7503a)) {
             } else {
                 String a2 = com.huawei.hms.opendevice.b.a(this.f7503a);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     HMSLog.w("ReportAaidToken", "AAID is empty.");
                 } else if (!m.d(this.f7503a, a2, this.b)) {
                     HMSLog.d("ReportAaidToken", "This time need not report.");
                 } else {
                     String a3 = cwx.a(this.f7503a).a("region");
-                    if (TextUtils.isEmpty(a3)) {
+                    if (StringUtils.isEmpty(a3)) {
                         HMSLog.i("ReportAaidToken", "The data storage region is empty.");
                         return;
                     }
                     String a4 = k.a(this.f7503a, "com.huawei.hms.opendevicesdk", "ROOT", null, a3);
-                    if (TextUtils.isEmpty(a4)) {
+                    if (StringUtils.isEmpty(a4)) {
                         return;
                     }
                     String c = m.c(this.f7503a, a2, this.b);
@@ -119,7 +119,7 @@ public class m {
     /* JADX INFO: Access modifiers changed from: private */
     public static void b(Context context, String str, String str2, String str3) {
         String str4;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str4 = "Https response is empty.";
         } else {
             try {
@@ -189,7 +189,7 @@ public class m {
             return true;
         }
         String string = a2.getString("reportAaidAndToken");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             HMSLog.w("ReportAaidToken", "It has been reported, but report value is empty, this time needs report.");
             return true;
         }

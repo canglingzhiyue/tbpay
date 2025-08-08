@@ -1,6 +1,6 @@
 package dt;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
@@ -66,7 +66,7 @@ public abstract class c extends CommonMonitor {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ee9ccbb7", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !a.f24789a || (a2 = DTExperience.a()) == null) {
+        if (StringUtils.isEmpty(str) || !a.f24789a || (a2 = DTExperience.a()) == null) {
             return str;
         }
         try {

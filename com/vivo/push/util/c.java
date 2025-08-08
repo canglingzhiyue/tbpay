@@ -3,7 +3,7 @@ package com.vivo.push.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -67,7 +67,7 @@ public class c {
             return null;
         }
         String str2 = new String(Base64.decode(a2.toString(), 2));
-        if (!TextUtils.isEmpty(str2) && (split = str2.split(",#@")) != null && split.length >= 4) {
+        if (!StringUtils.isEmpty(str2) && (split = str2.split(",#@")) != null && split.length >= 4) {
             for (String str3 : split) {
                 arrayList.add(str3.replace(",#@", ""));
             }
@@ -101,7 +101,7 @@ public class c {
     }
 
     public final void a(Context context, String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.b = str;
             this.c = context.getSharedPreferences(this.b, 0);
             this.f24260a = context;
@@ -205,7 +205,7 @@ public class c {
         b();
         if (this.c != null) {
             str3 = this.c.getString(str, str2);
-            if (!TextUtils.isEmpty(str3) && !str3.equals(str2)) {
+            if (!StringUtils.isEmpty(str3) && !str3.equals(str2)) {
                 this.d.put(str, str3);
             }
         }

@@ -6,7 +6,7 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 import android.service.notification.StatusBarNotification;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.xiaomi.push.ih;
 import java.util.ArrayList;
@@ -81,7 +81,7 @@ public class aw {
     }
 
     public static String a(String str, String str2) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String a2 = a("mipush|%s|%s", str2, "");
             return str.startsWith(a2) ? a("mipush_%s_%s", str2, str.replace(a2, "")) : str;
         }
@@ -89,7 +89,7 @@ public class aw {
     }
 
     private static String a(String str, String str2, String str3) {
-        return TextUtils.isEmpty(str) ? "" : String.format(str, str2, str3);
+        return StringUtils.isEmpty(str) ? "" : String.format(str, str2, str3);
     }
 
     private static void a(Context context) {
@@ -180,7 +180,7 @@ public class aw {
 
     /* renamed from: a  reason: collision with other method in class */
     public String m2294a(String str) {
-        return TextUtils.isEmpty(str) ? b() : com.xiaomi.push.j.m2118a(m2292a()) ? b(str) : str;
+        return StringUtils.isEmpty(str) ? b() : com.xiaomi.push.j.m2118a(m2292a()) ? b(str) : str;
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor
@@ -348,14 +348,14 @@ public class aw {
 
     /* renamed from: a  reason: collision with other method in class */
     public boolean m2296a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.startsWith(b(""));
         }
         return false;
     }
 
     String b() {
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = b("default");
         }
         return this.b;

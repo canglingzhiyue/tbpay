@@ -1,6 +1,6 @@
 package com.taobao.android.change.app.icon.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tlog.adapter.AdapterForTLog;
@@ -32,7 +32,7 @@ public class h {
             return (String) ipChange.ipc$dispatch("75f5ebaf", new Object[]{str, new Integer(i)});
         }
         try {
-            return TextUtils.isEmpty(str) ? str : str.substring(0, Math.min(str.length(), i));
+            return StringUtils.isEmpty(str) ? str : str.substring(0, Math.min(str.length(), i));
         } catch (Exception e) {
             e.printStackTrace();
             return "-1";
@@ -89,7 +89,7 @@ public class h {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             String str3 = (String) cls.getDeclaredMethod("get", String.class).invoke(cls, str);
-            return TextUtils.isEmpty(str3) ? str2 : str3;
+            return StringUtils.isEmpty(str3) ? str2 : str3;
         } catch (Throwable th) {
             th.printStackTrace();
             return str2;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.job.core.a;
 import com.taobao.android.job.core.b;
@@ -117,7 +117,7 @@ public abstract class gtk implements o {
         if (ipChange instanceof IpChange) {
             return (gtk) ipChange.ipc$dispatch("a69e57b9", new Object[]{str, guaVar});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("processName invalid");
         }
         if ("com.taobao.taobao".equals(str)) {

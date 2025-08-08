@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.taolive.room.utils.aw;
@@ -27,7 +27,7 @@ public class hjv {
             String str = tBLiveDataModel.mInitParams.get(aw.PARAM_INTENT_URL);
             String str2 = tBLiveDataModel.mInitParams.get(aw.PARAM_302_URL);
             String str3 = tBLiveDataModel.mInitParams.get(aw.PARAM_302_TYPE);
-            if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
                 return;
             }
             gVar.B = true;
@@ -54,17 +54,17 @@ public class hjv {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9e6004ed", new Object[]{context, str, str2, tBLiveDataModel});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Uri parse = Uri.parse(str);
             String queryParameter = parse.getQueryParameter(aw.PARAM_ITEM_IDS);
             String queryParameter2 = parse.getQueryParameter(aw.PARAM_ITEM_HOLD_TYPE);
-            if (TextUtils.isEmpty(queryParameter) || TextUtils.isEmpty(queryParameter2)) {
+            if (StringUtils.isEmpty(queryParameter) || StringUtils.isEmpty(queryParameter2)) {
                 plx.b("Jump302Util", "[processShareItem]  holdItemIds or itemHoldType is empty");
                 return;
             }
             boolean z2 = (tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || tBLiveDataModel.mVideoInfo.status != 0) ? false : true;
-            boolean z3 = (tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || !TextUtils.equals("1", tBLiveDataModel.mVideoInfo.streamStatus)) ? false : true;
+            boolean z3 = (tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || !StringUtils.equals("1", tBLiveDataModel.mVideoInfo.streamStatus)) ? false : true;
             plx.b("Jump302Util", "[processShareItem]  isLive: " + z2 + ", isStreamLive: " + z3);
             if (z2 && z3) {
                 z = false;

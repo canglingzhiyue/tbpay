@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.service.utils.LinkageUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.heytap.mcssdk.constant.McsEventConstant;
@@ -41,7 +41,7 @@ public class cvo extends cvp {
             dataMessage.setDescription(cvw.d(intent.getStringExtra("description")));
             String d = cvw.d(intent.getStringExtra("notifyID"));
             int i2 = 0;
-            dataMessage.setNotifyID(TextUtils.isEmpty(d) ? 0 : Integer.parseInt(d));
+            dataMessage.setNotifyID(StringUtils.isEmpty(d) ? 0 : Integer.parseInt(d));
             dataMessage.setMiniProgramPkg(cvw.d(intent.getStringExtra("miniProgramPkg")));
             dataMessage.setMessageType(i);
             dataMessage.setEventId(cvw.d(intent.getStringExtra("eventId")));
@@ -49,7 +49,7 @@ public class cvo extends cvp {
             String d2 = cvw.d(intent.getStringExtra("data_extra"));
             dataMessage.setDataExtra(d2);
             String a2 = a(d2);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 i2 = Integer.parseInt(a2);
             }
             dataMessage.setMsgCommand(i2);
@@ -69,7 +69,7 @@ public class cvo extends cvp {
     }
 
     public String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {

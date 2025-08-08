@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.floatview;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,13 +118,13 @@ public class c implements h {
             String string2 = jSONObject2.getString("jumpUrl");
             String string3 = jSONObject2.getString("icon");
             String string4 = jSONObject2.getString(SimpleProfile.KEY_DISPLAYNAME);
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string3) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string3) || StringUtils.isEmpty(string2)) {
                 return false;
             }
             a();
             this.e.setText(string);
             this.f.setText(string4);
-            boolean isEmpty = TextUtils.isEmpty(string4);
+            boolean isEmpty = StringUtils.isEmpty(string4);
             TextView textView = this.f;
             if (isEmpty) {
                 i = 8;

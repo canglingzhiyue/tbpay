@@ -2,7 +2,7 @@ package com.alipay.android.msp.ui.presenters;
 
 import android.app.Activity;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.container.MspContainerClient;
 import com.alipay.android.msp.core.clients.MspUIClient;
@@ -219,7 +219,7 @@ public class MspBasePresenter<V extends MspBaseContract.IView> implements MspBas
         if (activity == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = LanguageHelper.localizedStringForKey("mini_net_error_weak", activity.getString(R.string.mini_net_error_weak), new Object[0]);
         }
         String localizedStringForKey = LanguageHelper.localizedStringForKey("mini_cancel", activity.getString(R.string.mini_cancel), new Object[0]);
@@ -281,7 +281,7 @@ public class MspBasePresenter<V extends MspBaseContract.IView> implements MspBas
             return;
         }
         String message = th.getMessage();
-        boolean isEmpty = TextUtils.isEmpty(message);
+        boolean isEmpty = StringUtils.isEmpty(message);
         if (mspContextByBizId.getMspNetHandler().hasNeecCode()) {
             mspContextByBizId.getMspNetHandler().setNeedNeec(true);
             message = LanguageHelper.localizedStringForKey("mini_server_error", activity.getString(R.string.mini_server_error), new Object[0]);

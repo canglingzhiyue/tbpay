@@ -1,0 +1,98 @@
+{
+  "container": {
+    "data": [
+      {
+        "name": "ol3_orderlisttitle",
+        "containerType": "dinamicx",
+        "version": "42",
+        "url": "https://dinamicx.alibabausercontent.com/pub/ol3_orderlisttitle/1714826645236/ol3_orderlisttitle.zip",
+        "md5": null,
+        "type": [
+          "dinamicx$ol3_orderlisttitle$0$boughtlist"
+        ]
+      },
+      {
+        "name": "ol3_orderlisttabs",
+        "containerType": "dinamicx",
+        "version": "29",
+        "url": "https://dinamicx.alibabausercontent.com/pub/ol3_orderlisttabs/1700189712314/ol3_orderlisttabs.zip",
+        "md5": null,
+        "type": [
+          "dinamicx$ol3_orderlisttabs$0$25"
+        ]
+      },
+      {
+        "name": "babel_listRefund",
+        "containerType": "weex2",
+        "version": "0",
+        "url": "https://meta.wapa.taobao.com/app/mtb/refund-list/home?wh_weex=true&weex_mode=dom",
+        "md5": null,
+        "type": [
+          "weex2$babel_listRefund"
+        ]
+      }
+    ]
+  },
+  "data": {
+    "orderList": {
+      "tag": "orderList"
+    },
+    "root": {
+      "tag": "root"
+    },
+    "listtitle": {
+      "tag": "listtitle",
+      "type": "dinamicx$ol3_orderlisttitle$0$boughtlist",
+      "position": "header",
+      "fields": {
+        "actionTitle": "我的包裹",
+        "actionUrl": "https://meta.m.taobao.com/app/dinamic/tb-logistics/home?wh_weex=true&weex_mode=dom",
+        "isNewSearch": "true",
+        "isSearchDowngrade": "false",
+        "isSearchResult": "false",
+        "navToCart": "false",
+        "orderFilter": "true",
+        "url": "https://meta.m.taobao.com/app/tb-trade/new-osearch/home?wh_weex=true&weex_mode=dom&wx_navbar_hidden=true&wx_navbar_transparent=true&_wx_statusbar_hidden=true&showBanner=true&newEntrance=true&newSearch=true"
+      }
+    },
+    "listtab": {
+      "tag": "listtab",
+      "type": "dinamicx$ol3_orderlisttabs$0$25",
+      "position": "header",
+      "fields": {
+        "isContainRefund": "true"
+      }
+    },
+    "listRefund": {
+      "tag": "weex2",
+      "type": "weex2$babel_listRefund",
+      "position": "body"
+    }
+  },
+  "linkage": {
+    "common": {
+      "compress": "false"
+    }
+  },
+  "hierarchy": {
+    "root": "orderList",
+    "structure": {
+      "orderList": [
+        "root"
+      ],
+      "root": [
+        "listtitle",
+        "listtab",
+        "listRefund"
+      ]
+    }
+  },
+  "endpoint": {
+    "ultronage": "true",
+    "protocolVersion": "3.0"
+  },
+  "global": {
+    "foldDeviceRelatedPage": "true"
+  },
+  "reload": "true"
+}

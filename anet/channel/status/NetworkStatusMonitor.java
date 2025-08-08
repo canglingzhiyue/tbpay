@@ -15,7 +15,7 @@ import android.os.Build;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import anet.channel.assist.ICapability;
@@ -363,7 +363,7 @@ public class NetworkStatusMonitor {
                     if (networkInfo.getType() == 0) {
                         String subtypeName = networkInfo.getSubtypeName();
                         String str3 = "";
-                        if (!TextUtils.isEmpty(subtypeName)) {
+                        if (!StringUtils.isEmpty(subtypeName)) {
                             str3 = subtypeName.replace(" ", str3);
                         }
                         resetStatus(parseNetworkStatus(networkInfo.getSubtype(), str3), str3);
@@ -454,7 +454,7 @@ public class NetworkStatusMonitor {
                     if (networkInfo.getType() == 0) {
                         String subtypeName = networkInfo.getSubtypeName();
                         String str3 = "";
-                        if (!TextUtils.isEmpty(subtypeName)) {
+                        if (!StringUtils.isEmpty(subtypeName)) {
                             str3 = subtypeName.replace(" ", str3);
                         }
                         resetStatus(parseNetworkStatus(networkInfo.getSubtype(), str3), str3);
@@ -585,7 +585,7 @@ public class NetworkStatusMonitor {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("65f61864", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase(Locale.US);
             if (lowerCase.contains("cmwap")) {
                 return "cmwap";
@@ -721,7 +721,7 @@ public class NetworkStatusMonitor {
         }
         String subtypeName = networkInfo.getSubtypeName();
         String str = "";
-        if (!TextUtils.isEmpty(subtypeName)) {
+        if (!StringUtils.isEmpty(subtypeName)) {
             str = subtypeName.replace(" ", str);
         }
         return parseNetworkStatus(networkInfo.getSubtype(), str);
@@ -734,7 +734,7 @@ public class NetworkStatusMonitor {
         }
         try {
             String property = System.getProperty("http.proxyHost");
-            if (TextUtils.isEmpty(property)) {
+            if (StringUtils.isEmpty(property)) {
                 return null;
             }
             return Pair.create(property, Integer.valueOf(Integer.parseInt(System.getProperty("http.proxyPort"))));
@@ -750,7 +750,7 @@ public class NetworkStatusMonitor {
             int length = strArr.length;
             for (int i = 0; i < length; i++) {
                 String str = (String) method.invoke(null, strArr[i]);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return str;
                 }
             }

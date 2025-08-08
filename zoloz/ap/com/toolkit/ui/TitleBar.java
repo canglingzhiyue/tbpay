@@ -3,7 +3,7 @@ package zoloz.ap.com.toolkit.ui;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -76,7 +76,7 @@ public class TitleBar extends RelativeLayout {
         this.mBackLayout = findViewById(i);
         TextView textView = (TextView) findViewById(i3);
         String string = getResources().getString(R.string.title_back);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             gone(i3);
             visible(i2);
             return;

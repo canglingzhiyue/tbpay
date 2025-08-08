@@ -1,6 +1,6 @@
 package com.taobao.android.tbuprofen.plugin;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes6.dex */
 public enum PluginCapacity {
@@ -23,7 +23,7 @@ public enum PluginCapacity {
     public static PluginCapacity parse(String str) {
         PluginCapacity[] values;
         for (PluginCapacity pluginCapacity : values()) {
-            if (TextUtils.equals(pluginCapacity.name, str)) {
+            if (StringUtils.equals(pluginCapacity.name, str)) {
                 return pluginCapacity;
             }
         }

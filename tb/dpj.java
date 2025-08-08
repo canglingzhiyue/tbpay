@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.request.ByteArrayEntry;
 import anetwork.channel.NetworkCallBack;
 import anetwork.channel.NetworkEvent;
@@ -118,7 +118,7 @@ public class dpj implements c {
             if (bVar.e == null) {
                 bVar.e = new HashMap();
             }
-            if (TextUtils.isEmpty(aVar.c)) {
+            if (StringUtils.isEmpty(aVar.c)) {
                 bVar.f15987a = String.valueOf(16);
                 bVar.d = "request url is empty!";
                 aVar3.a(bVar);
@@ -172,7 +172,7 @@ public class dpj implements c {
         } else {
             try {
                 String queryParameter = Uri.parse(str).getQueryParameter("wx_request_timeout");
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     return;
                 }
                 int parseFloat = (int) (Float.parseFloat(queryParameter) * 1000.0f);
@@ -222,14 +222,14 @@ public class dpj implements c {
         }
         requestImpl.addHeader(HeaderConstant.HEADER_KEY_ACCEPT_LANGUAGE, b());
         String str2 = aVar.d;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "GET";
         }
         requestImpl.setMethod(str2);
         requestImpl.setCharset("UTF-8");
         requestImpl.setRetryTime(2);
         requestImpl.setConnectTimeout(aVar.f);
-        if (!TextUtils.isEmpty(aVar.e)) {
+        if (!StringUtils.isEmpty(aVar.e)) {
             requestImpl.setBodyEntry(new ByteArrayEntry(aVar.e.getBytes()));
         }
         return requestImpl;
@@ -239,7 +239,7 @@ public class dpj implements c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3ca08f15", new Object[]{this, aVar, bVar, aVar2, aVar3});
-        } else if (TextUtils.equals("200", bVar.f15987a)) {
+        } else if (StringUtils.equals("200", bVar.f15987a)) {
             bVar.e.put(i.CDN_REQUEST_TYPE, "cache");
             bVar.e.put(WXPerformance.CACHE_TYPE, "zcache");
             a(aVar, bVar);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -428,7 +428,7 @@ public class TBLiveSubscribeView extends FrameLayout implements View.OnClickList
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e99898c3", new Object[]{context, str, str2, str3, aVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             SubscribeUtils.INSTANCE.doSubscribe(str, str3, null, str2, new IObserver<SubScribeCenterResultDTO>() { // from class: com.taobao.taolive.uikit.view.TBLiveSubscribeView.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -483,7 +483,7 @@ public class TBLiveSubscribeView extends FrameLayout implements View.OnClickList
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8dd9cd69", new Object[]{context, str, str2, str3, aVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             SubscribeUtils.INSTANCE.cancelSubscribe(str, str3, null, str2, new IObserver<SubScribeCenterResultDTO>() { // from class: com.taobao.taolive.uikit.view.TBLiveSubscribeView.4
                 public static volatile transient /* synthetic */ IpChange $ipChange;

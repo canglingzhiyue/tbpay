@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.jscore;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.ac.g;
 import com.taobao.tao.flexbox.layoutmanager.adapter.a;
@@ -127,20 +127,20 @@ public class TNodeJSCore implements com.taobao.tao.flexbox.layoutmanager.ac.c {
             return;
         }
         String str = null;
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return;
         }
         synchronized (TNodeJSCore.class) {
             ogh.a("loadCoreJS");
             String obj = a.a().u().a("TNodeCoreURL", "").toString();
-            if (!TextUtils.isEmpty(obj) && (a2 = a.a().p().a(obj)) != null && a2.length > 0) {
+            if (!StringUtils.isEmpty(obj) && (a2 = a.a().p().a(obj)) != null && a2.length > 0) {
                 try {
                     str = new String(a2, 0, a2.length, "utf-8");
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = oec.a("entry.html", ab.a());
             }
             b = a(str);
@@ -220,10 +220,10 @@ public class TNodeJSCore implements com.taobao.tao.flexbox.layoutmanager.ac.c {
             return (String) ipChange.ipc$dispatch("725263d1", new Object[]{this, abVar});
         }
         String f = abVar.f();
-        if (TextUtils.isEmpty(f) && abVar.A() != null) {
+        if (StringUtils.isEmpty(f) && abVar.A() != null) {
             f = abVar.A().W().f20296a;
         }
-        return TextUtils.isEmpty(f) ? "unknown" : f;
+        return StringUtils.isEmpty(f) ? "unknown" : f;
     }
 
     @Override // com.taobao.tao.flexbox.layoutmanager.ac.c

@@ -2,7 +2,7 @@ package com.alibaba.android.bindingx.core.internal;
 
 import android.animation.ArgbEvaluator;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.i;
 import com.alipay.mobile.common.transportext.amnet.AmnetConstant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -393,7 +393,7 @@ public class JSMath {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("170122f4", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("Unknown color");
         }
         if (str.startsWith("'") || str.startsWith("\"")) {

@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.alipay.listener;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alipay.mobile.verifyidentity.callback.VerifyIdentityListener;
 import com.alipay.mobile.verifyidentity.common.Constants;
@@ -29,7 +29,7 @@ public class H5PluginListener implements VerifyIdentityListener {
         }
         try {
             r rVar = new r();
-            if (verifyIdentityResult != null && !TextUtils.isEmpty(verifyIdentityResult.getMessage())) {
+            if (verifyIdentityResult != null && !StringUtils.isEmpty(verifyIdentityResult.getMessage())) {
                 rVar.a("message", verifyIdentityResult.getMessage());
             }
             if (verifyIdentityResult != null && verifyIdentityResult.getExtInfo() != null) {
@@ -44,7 +44,7 @@ public class H5PluginListener implements VerifyIdentityListener {
             rVar.a("token", str2);
             rVar.a("bizName", str3);
             rVar.a(Constants.VI_ENGINE_FAST_BIZ_RES_DATA, verifyIdentityResult.getBizResponseData());
-            if (verifyIdentityResult != null && !TextUtils.isEmpty(verifyIdentityResult.getCode())) {
+            if (verifyIdentityResult != null && !StringUtils.isEmpty(verifyIdentityResult.getCode())) {
                 rVar.a("code", verifyIdentityResult.getCode());
             } else {
                 rVar.a("code", "2002");

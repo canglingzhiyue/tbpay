@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.render;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.DeviceInfo;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -43,7 +43,7 @@ public class PerformanceRender extends BaseRender {
         if (map2 != null) {
             str7 = map2.get("header");
         }
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             sb.append(str7);
         } else {
             sb.append("D-MM");

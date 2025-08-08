@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -236,7 +236,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
             }
         });
         String actConf = getActConf(BaseFBPlugin.ACT_CONF.hwInputPwdTip);
-        if (!TextUtils.isEmpty(actConf)) {
+        if (!StringUtils.isEmpty(actConf)) {
             String str = f5893a;
             VerifyLogCat.i(str, "收银台指定了切换密码文案hwInputPwdTip：" + actConf);
             this.f.setText(actConf);
@@ -273,7 +273,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
         this.mModule = microModule;
         this.n = new DataHelper(this.mModule, str, this);
         String actConf = getActConf("usePwd");
-        boolean z2 = !TextUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf);
+        boolean z2 = !StringUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf);
         if (DataHelper.FP_TYPE_VALUE.equalsIgnoreCase(this.n.predata_type)) {
             this.viType = "fp";
             this.j.init(this.b, 1);
@@ -303,7 +303,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
                         return;
                     }
                     String string = this.b.getResources().getString(R.string.vi_fp_tip_sys_fingerprint_error_setting);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         DialogHelper.makeToast(this.b, 0, string, 0).show();
                     }
                 } else {
@@ -317,7 +317,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
                     DataHelper dataHelper = this.n;
                     dataHelper.proVerifyResult = "FP_STATUS-" + this.i;
                     String string2 = this.b.getResources().getString(R.string.vi_fp_tip_sys_fingerprint_error_setting);
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         this.n.updateTipToPwd(string2);
                     }
                     this.n.goToPayPwd(authenticatorResponse);
@@ -376,7 +376,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
                 } catch (Throwable unused) {
                     VerifyLogCat.i(f5893a, "延时判断出现异常，直接启动指纹");
                 }
-                if (!TextUtils.isEmpty(reportFlag)) {
+                if (!StringUtils.isEmpty(reportFlag)) {
                     long longValue = Long.valueOf(reportFlag).longValue() - (SystemClock.elapsedRealtime() - p);
                     String str3 = f5893a;
                     VerifyLogCat.i(str3, "本次调用指纹需要延时：[" + longValue + "]毫秒（只>0时延）");
@@ -466,7 +466,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
                 z = this.n.newUiParamsObj.getBooleanValue(ModuleConstants.VI_MODULE_NAME_PAY_PWD);
             }
             String actConf2 = getActConf(BaseFBPlugin.ACT_CONF.supportVersion);
-            if (!z && !TextUtils.isEmpty(actConf2) && "2.0".equalsIgnoreCase(actConf2)) {
+            if (!z && !StringUtils.isEmpty(actConf2) && "2.0".equalsIgnoreCase(actConf2)) {
                 this.h = true;
                 updateVerifyStatusNew("start");
                 return;
@@ -535,7 +535,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
                 DataHelper dataHelper = this.n;
                 dataHelper.proVerifyResult = "FP_STATUS-" + this.i;
                 String string = this.b.getResources().getString(R.string.vi_fp_tip_sys_fingerprint_error_setting);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.n.updateTipToPwd(string);
                 }
             }
@@ -546,7 +546,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
             DataHelper dataHelper2 = this.n;
             dataHelper2.proVerifyResult = "FP_STATUS-" + this.i;
             String string2 = this.b.getResources().getString(R.string.vi_fp_tip_sys_fingerprint_error_setting);
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 this.n.updateTipToPwd(string2);
             }
         }
@@ -672,7 +672,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a9d6ac0f", new Object[]{this, new Boolean(z)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.n.userId)) {
+        if (!StringUtils.isEmpty(this.n.userId)) {
             int checkUserStatus = this.j.checkUserStatus(this.n.userId);
             this.i = checkUserStatus;
             if (checkUserStatus == 2) {
@@ -723,7 +723,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
                         return;
                     }
                     String actConf = FingerprintPlugin.this.getActConf(str);
-                    if (!TextUtils.isEmpty(actConf)) {
+                    if (!StringUtils.isEmpty(actConf)) {
                         FingerprintPlugin.access$1700(FingerprintPlugin.this).setText(actConf);
                     } else if (DataHelper.confResidMap.get(str) == null) {
                     } else {
@@ -840,7 +840,7 @@ public class FingerprintPlugin extends BaseFBPlugin {
                         FingerprintPlugin.access$100(FingerprintPlugin.this).goToPayPwd();
                     } else {
                         String str = sendRpcRequest.verifyMessage;
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             str = FingerprintPlugin.access$1500(FingerprintPlugin.this).getResources().getString(R.string.verifyidentity_wrong_data);
                         }
                         MicroModuleContext.getInstance().alert("", str, FingerprintPlugin.access$1500(FingerprintPlugin.this).getResources().getString(R.string.verifyidentity_confirm), new DialogInterface.OnClickListener() { // from class: com.alipay.mobile.verifyidentity.module.dynamic.ui.plugin.FingerprintPlugin.4.1

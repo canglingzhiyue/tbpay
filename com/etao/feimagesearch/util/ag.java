@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class ag {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{str, map});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             if (map != null && map.size() != 0) {
@@ -46,7 +46,7 @@ public class ag {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 builder = builder.appendQueryParameter(key, value);
             }
         }
@@ -60,7 +60,7 @@ public class ag {
         }
         try {
             HashMap hashMap = new HashMap();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return hashMap;
             }
             Uri parse = Uri.parse(str);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.tanx.TanxArgNames;
@@ -31,7 +31,7 @@ public class ani {
         if (ipChange instanceof IpChange) {
             return (ani) ipChange.ipc$dispatch("7c6d0fb8", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f25454a.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, str);
         }
         return this;
@@ -42,7 +42,7 @@ public class ani {
         if (ipChange instanceof IpChange) {
             return (ani) ipChange.ipc$dispatch("7d19bb57", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f25454a.put("namespace", str);
         }
         return this;

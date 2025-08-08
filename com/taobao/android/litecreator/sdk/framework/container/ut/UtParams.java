@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.framework.container.ut;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.kge;
@@ -32,7 +32,7 @@ public class UtParams extends HashMap<String, String> {
         if (ipChange instanceof IpChange) {
             return (UtParams) ipChange.ipc$dispatch("221468e5", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             put(str, str2);
         }
         return this;

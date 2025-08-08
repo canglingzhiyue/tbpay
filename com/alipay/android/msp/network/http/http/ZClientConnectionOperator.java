@@ -1,7 +1,7 @@
 package com.alipay.android.msp.network.http.http;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.plugin.manager.PluginManager;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -97,7 +97,7 @@ public class ZClientConnectionOperator extends DefaultClientConnectionOperator {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7cf264cc", new Object[]{iOException});
-        } else if (iOException != null && !TextUtils.isEmpty(iOException.getMessage()) && iOException.getMessage().contains("shutdown")) {
+        } else if (iOException != null && !StringUtils.isEmpty(iOException.getMessage()) && iOException.getMessage().contains("shutdown")) {
             throw iOException;
         }
     }

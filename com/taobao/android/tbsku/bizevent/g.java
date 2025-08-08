@@ -1,7 +1,7 @@
 package com.taobao.android.tbsku.bizevent;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sku.utils.p;
@@ -37,12 +37,12 @@ public class g implements iyd {
         String string2 = jSONObject.getString("text");
         String string3 = jSONObject.getString("default");
         String string4 = jSONObject.getString("combText");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = string3;
         }
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             string4 = string2;
-        } else if (!TextUtils.isEmpty(string2)) {
+        } else if (!StringUtils.isEmpty(string2)) {
             string4 = string2 + "/n" + string4;
         }
         String string5 = jSONObject.getString("iconFont");

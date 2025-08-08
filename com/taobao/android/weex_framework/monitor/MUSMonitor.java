@@ -1,7 +1,7 @@
 package com.taobao.android.weex_framework.monitor;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -261,7 +261,7 @@ public class MUSMonitor {
             ipChange.ipc$dispatch("5c194ce8", new Object[]{this, new Boolean(z), new Boolean(z2)});
             return;
         }
-        if ((z2 || z) && TextUtils.isEmpty(this.j.g()) && TextUtils.isEmpty(this.j.i())) {
+        if ((z2 || z) && StringUtils.isEmpty(this.j.g()) && StringUtils.isEmpty(this.j.i())) {
             MUSAppMonitor.d(this.j);
         }
         if (z) {
@@ -410,10 +410,10 @@ public class MUSMonitor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
-        } else if (!c() || !c || (aVar = b) == null || !aVar.a() || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!c() || !c || (aVar = b) == null || !aVar.a() || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             String str4 = "unknown";
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 try {
                     str4 = Uri.parse(str3).buildUpon().clearQuery().build().toString();
                 } catch (Throwable unused) {

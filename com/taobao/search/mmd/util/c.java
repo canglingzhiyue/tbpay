@@ -3,7 +3,7 @@ package com.taobao.search.mmd.util;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import java.util.HashMap;
@@ -90,7 +90,7 @@ public class c {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         try {
@@ -115,9 +115,9 @@ public class c {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                if (!TextUtils.isEmpty(next)) {
+                if (!StringUtils.isEmpty(next)) {
                     String optString = jSONObject.optString(next, "");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         hashMap.put(next, optString);
                     }
                 }

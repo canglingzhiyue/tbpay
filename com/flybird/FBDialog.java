@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
 import android.view.View;
@@ -105,7 +105,7 @@ public class FBDialog extends FBView implements DialogInterface.OnKeyListener {
         } else if (getInnerView() == null || getInnerView().getContext() == null) {
         } else {
             Context context = getInnerView().getContext();
-            if (!TextUtils.isEmpty(this.E)) {
+            if (!StringUtils.isEmpty(this.E)) {
                 FBLogger.w(FBView.TAG, "showDialog: dlgType is not empty, not for shown. dlgType=" + this.E);
             } else if (this.A != null) {
                 if (!(context instanceof Activity) || ((Activity) context).isFinishing() || this.A.isShowing()) {
@@ -176,7 +176,7 @@ public class FBDialog extends FBView implements DialogInterface.OnKeyListener {
             return;
         }
         super.updateEvent(str, str2);
-        if (!TextUtils.equals(str, "event") || !TextUtils.equals(str2, "onkeydown")) {
+        if (!StringUtils.equals(str, "event") || !StringUtils.equals(str2, "onkeydown")) {
             return;
         }
         this.D = true;

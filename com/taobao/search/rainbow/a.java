@@ -1,7 +1,7 @@
 package com.taobao.search.rainbow;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.config.model.keep.KeepModel;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -78,7 +78,7 @@ public class a {
 
     private static final boolean e(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.split("\\.").length > 3;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.split("\\.").length > 3;
     }
 
     public static void b() {
@@ -111,7 +111,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{str});
         }
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return "";
         }
         f();
@@ -120,17 +120,17 @@ public class a {
         String a3 = com.taobao.search.rainbow.b.a();
         c cVar = e;
         if (cVar != null) {
-            cVar.a(!TextUtils.isEmpty(a2) ? a2 : a3);
+            cVar.a(!StringUtils.isEmpty(a2) ? a2 : a3);
         }
         String str2 = f19297a.get(g2);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
-        if (!TextUtils.isEmpty(a2) && TextUtils.equals(a2, a3)) {
+        if (!StringUtils.isEmpty(a2) && StringUtils.equals(a2, a3)) {
             if (f != null && f.containsKey(g2)) {
                 BucketDO bucketDO = f.get(g2);
                 String str3 = bucketDO == null ? "" : bucketDO.name;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     return str3;
                 }
             }
@@ -138,7 +138,7 @@ public class a {
             f.clear();
         }
         String b3 = h.b();
-        if (TextUtils.isEmpty(b3)) {
+        if (StringUtils.isEmpty(b3)) {
             return b(str);
         }
         JSONObject jSONObject = null;
@@ -150,7 +150,7 @@ public class a {
             return b(str);
         }
         String b4 = com.taobao.search.rainbow.b.b();
-        if (!TextUtils.isEmpty(b4) && !TextUtils.equals(b4, b)) {
+        if (!StringUtils.isEmpty(b4) && !StringUtils.equals(b4, b)) {
             com.taobao.search.rainbow.b.d();
             if (f != null) {
                 f.clear();
@@ -162,7 +162,7 @@ public class a {
         if (optJSONObject2 == null || optJSONObject2.length() == 0) {
             return b(str);
         }
-        String trim = TextUtils.isEmpty(c) ? "" : c.trim();
+        String trim = StringUtils.isEmpty(c) ? "" : c.trim();
         BucketDO a4 = a(optJSONObject2, g2, h(trim + g2));
         if (i && (b2 = b(com.taobao.search.rainbow.b.e())) != null && !b2.isNull(g2) && (optJSONObject = b2.optJSONObject(g2)) != null) {
             a4 = a(optJSONObject2, g2, optJSONObject);
@@ -190,7 +190,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("14a6f7e8", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (!str.startsWith("tbAndroid")) {
@@ -210,7 +210,7 @@ public class a {
         }
         BucketDO bucketDO = new BucketDO();
         bucketDO.testname = str;
-        bucketDO.shouldStat = !TextUtils.equals("true", jSONObject.optString("disableStat"));
+        bucketDO.shouldStat = !StringUtils.equals("true", jSONObject.optString("disableStat"));
         JSONArray optJSONArray = jSONObject.optJSONArray("buckets");
         int i3 = 0;
         boolean z2 = false;
@@ -368,7 +368,7 @@ public class a {
         for (Map.Entry<String, BucketDO> entry : c2.entrySet()) {
             String key = entry.getKey();
             BucketDO value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && value != null && (list == null || !list.contains(key))) {
+            if (!StringUtils.isEmpty(key) && value != null && (list == null || !list.contains(key))) {
                 f.put(key, value);
                 if (value.shouldStat) {
                     sb.append(str);
@@ -440,7 +440,7 @@ public class a {
         if (f != null) {
             f.clear();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i = false;
             return;
         }
@@ -467,7 +467,7 @@ public class a {
             String next = keys.next();
             JSONObject optJSONObject = jSONObject2.optJSONObject(next);
             if (optJSONObject != null && optJSONObject.length() != 0) {
-                BucketDO a2 = a(optJSONObject, next, h((TextUtils.isEmpty(c) ? "" : c.trim()) + next));
+                BucketDO a2 = a(optJSONObject, next, h((StringUtils.isEmpty(c) ? "" : c.trim()) + next));
                 JSONObject optJSONObject2 = jSONObject.optJSONObject(next);
                 if (optJSONObject2 != null && optJSONObject2.length() > 0) {
                     a2 = a(optJSONObject, next, optJSONObject2);
@@ -491,14 +491,14 @@ public class a {
         String optString2 = jSONObject2.optString("id");
         BucketDO bucketDO = new BucketDO();
         bucketDO.testname = str;
-        bucketDO.shouldStat = !TextUtils.equals("true", jSONObject.optString("disableStat"));
+        bucketDO.shouldStat = !StringUtils.equals("true", jSONObject.optString("disableStat"));
         JSONArray optJSONArray = jSONObject.optJSONArray("buckets");
         while (true) {
             if (i2 >= optJSONArray.length()) {
                 break;
             }
             JSONObject optJSONObject = optJSONArray.optJSONObject(i2);
-            if (TextUtils.equals(optJSONObject.optString("name"), optString) && TextUtils.equals(optJSONObject.optString("id"), optString2)) {
+            if (StringUtils.equals(optJSONObject.optString("name"), optString) && StringUtils.equals(optJSONObject.optString("id"), optString2)) {
                 a(optJSONObject, bucketDO);
                 break;
             }

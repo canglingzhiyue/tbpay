@@ -1,6 +1,6 @@
 package com.taobao.android.detail2.core.framework.base.weex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.p;
 import java.util.HashMap;
@@ -57,7 +57,7 @@ public class g {
         this.f11501a = str;
         if (ipa.g()) {
             this.d = idk.b(str);
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 return;
             }
             idk.a(str, new Runnable() { // from class: com.taobao.android.detail2.core.framework.base.weex.g.1

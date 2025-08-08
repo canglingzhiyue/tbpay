@@ -10,7 +10,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.extra.uc.WVUCWebViewFragment;
 import android.taobao.windvane.fragment.WVWebViewFragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -86,7 +86,7 @@ public class SimpleBrowserActivity extends BaseActivity {
         setContentView(R.layout.wvfragementcontainer);
         Bundle bundle2 = new Bundle();
         Intent intent = getIntent();
-        if (intent != null && !TextUtils.isEmpty(intent.getDataString())) {
+        if (intent != null && !StringUtils.isEmpty(intent.getDataString())) {
             bundle2.putString(WVWebViewFragment.URL, intent.getDataString());
         } else if (intent != null) {
             bundle2 = intent.getExtras();

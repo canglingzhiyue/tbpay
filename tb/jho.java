@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.ali.user.mobile.ui.WebConstant;
 import com.alibaba.fastjson.JSONObject;
@@ -29,7 +29,7 @@ public class jho extends b {
             return (jhh) ipChange.ipc$dispatch("7c71106a", new Object[]{this, str});
         }
         String a2 = jhz.a();
-        String a3 = !TextUtils.isEmpty(str) ? str : jhz.a();
+        String a3 = !StringUtils.isEmpty(str) ? str : jhz.a();
         JSONObject a4 = jhr.a(this, a2, a3);
         JSONObject jSONObject = new JSONObject();
         String str2 = this.f29560a;

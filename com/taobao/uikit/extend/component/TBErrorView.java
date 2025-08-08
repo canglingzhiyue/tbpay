@@ -3,7 +3,7 @@ package com.taobao.uikit.extend.component;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -469,7 +469,7 @@ public class TBErrorView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e70e8be", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mTopic = str;
         }
@@ -523,7 +523,7 @@ public class TBErrorView extends FrameLayout {
             ipChange.ipc$dispatch("a2e9d017", new Object[]{this});
         } else if (!NetUtil.isNetworkConnected(getContext())) {
             this.mSubTitle = getContext().getString(getNetworkErrorSubTitle());
-        } else if (this.mStatus == Status.STATUS_EMPTY && TextUtils.isEmpty(this.mSubTitle)) {
+        } else if (this.mStatus == Status.STATUS_EMPTY && StringUtils.isEmpty(this.mSubTitle)) {
             this.mSubTitle = getContext().getString(R.string.uik_default_empty_subtitle);
         } else if (this.mError == null || this.mStatus != Status.STATUS_ERROR) {
         } else {
@@ -537,7 +537,7 @@ public class TBErrorView extends FrameLayout {
             ipChange.ipc$dispatch("c2b7647", new Object[]{this});
         } else if (!NetUtil.isNetworkConnected(getContext())) {
             this.mTitle = getContext().getString(getNetworkErrorTitle());
-        } else if (this.mStatus == Status.STATUS_EMPTY && TextUtils.isEmpty(this.mTitle)) {
+        } else if (this.mStatus == Status.STATUS_EMPTY && StringUtils.isEmpty(this.mTitle)) {
             this.mTitle = getContext().getString(R.string.uik_default_empty_title);
         } else if (this.mError == null || this.mStatus != Status.STATUS_ERROR) {
         } else {
@@ -593,7 +593,7 @@ public class TBErrorView extends FrameLayout {
                 return;
             }
             String str = "";
-            if (TBErrorView.access$200(TBErrorView.this) != null && !TextUtils.isEmpty(TBErrorView.access$200(TBErrorView.this).errorCode)) {
+            if (TBErrorView.access$200(TBErrorView.this) != null && !StringUtils.isEmpty(TBErrorView.access$200(TBErrorView.this).errorCode)) {
                 str = TBErrorView.access$200(TBErrorView.this).errorCode;
             }
             String name = TBErrorView.this.getContext().getClass().getName();
@@ -631,7 +631,7 @@ public class TBErrorView extends FrameLayout {
             } catch (Exception unused) {
                 str = null;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mUri = URI;
                 return;
             }
@@ -719,15 +719,15 @@ public class TBErrorView extends FrameLayout {
             ipChange.ipc$dispatch("7c17e843", new Object[]{str, str2, str3, str4, error, str5});
             return;
         }
-        String str7 = TextUtils.isEmpty(str3) ? "null" : str3;
-        String str8 = (error == null || TextUtils.isEmpty(error.url)) ? "null" : error.url;
-        String str9 = TextUtils.isEmpty(str) ? "null" : str;
-        String str10 = TextUtils.isEmpty(str2) ? "null" : str2;
-        String str11 = (error == null || TextUtils.isEmpty(error.apiName)) ? "null" : error.apiName;
-        String str12 = (error == null || TextUtils.isEmpty(error.errorCode)) ? "null" : error.errorCode;
-        String str13 = (error == null || TextUtils.isEmpty(error.mappingCode)) ? "null" : error.mappingCode;
+        String str7 = StringUtils.isEmpty(str3) ? "null" : str3;
+        String str8 = (error == null || StringUtils.isEmpty(error.url)) ? "null" : error.url;
+        String str9 = StringUtils.isEmpty(str) ? "null" : str;
+        String str10 = StringUtils.isEmpty(str2) ? "null" : str2;
+        String str11 = (error == null || StringUtils.isEmpty(error.apiName)) ? "null" : error.apiName;
+        String str12 = (error == null || StringUtils.isEmpty(error.errorCode)) ? "null" : error.errorCode;
+        String str13 = (error == null || StringUtils.isEmpty(error.mappingCode)) ? "null" : error.mappingCode;
         String valueOf = error != null ? String.valueOf(error.responseCode) : "0";
-        String str14 = (error == null || TextUtils.isEmpty(error.errorMsg)) ? "null" : error.errorMsg;
+        String str14 = (error == null || StringUtils.isEmpty(error.errorMsg)) ? "null" : error.errorMsg;
         if (!isMonitorRegistered) {
             isMonitorRegistered = true;
             DimensionSet create = DimensionSet.create();
@@ -758,8 +758,8 @@ public class TBErrorView extends FrameLayout {
         create3.setValue(arz.KEY_MAPPING_CODE, str13);
         create3.setValue(ZimMessageChannel.K_RPC_RES_CODE, valueOf);
         create3.setValue("apiName", str11);
-        create3.setValue("topic", TextUtils.isEmpty(str4) ? str6 : str4);
-        create3.setValue("errorPageType", TextUtils.isEmpty(str5) ? str6 : str5);
+        create3.setValue("topic", StringUtils.isEmpty(str4) ? str6 : str4);
+        create3.setValue("errorPageType", StringUtils.isEmpty(str5) ? str6 : str5);
         create3.setValue("message", str14);
         MeasureValueSet create4 = MeasureValueSet.create();
         create4.setValue("value", mto.a.GEO_NOT_SUPPORT);

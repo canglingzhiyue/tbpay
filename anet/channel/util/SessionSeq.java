@@ -1,6 +1,6 @@
 package anet.channel.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.atomic.AtomicInteger;
 import tb.kge;
@@ -23,7 +23,7 @@ public class SessionSeq {
         if (mIndex.get() == Integer.MAX_VALUE) {
             mIndex.set(0);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return StringUtils.concatString(str, ".AWCN", String.valueOf(mIndex.incrementAndGet()));
         }
         return StringUtils.concatString("AWCN", String.valueOf(mIndex.incrementAndGet()));

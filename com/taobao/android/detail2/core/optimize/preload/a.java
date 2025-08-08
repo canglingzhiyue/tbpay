@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.optimize.preload;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.service.BUFS;
@@ -172,7 +172,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bcadfc21", new Object[]{fkrVar, bVar});
-        } else if (TextUtils.isEmpty(fkrVar.e())) {
+        } else if (StringUtils.isEmpty(fkrVar.e())) {
         } else {
             bVar.i = fkrVar.e();
         }
@@ -186,7 +186,7 @@ public class a {
         }
         try {
             String c = fkrVar.c(fkrVar.I());
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 return;
             }
             Uri parse = Uri.parse(c);

@@ -6,7 +6,7 @@ import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import com.alibaba.analytics.core.network.NetworkUtil;
@@ -76,7 +76,7 @@ public class aoi {
         }
         String string = sharedPreferences.getString("EI", null);
         String string2 = sharedPreferences.getString("SI", null);
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             return;
         }
         String string3 = sharedPreferences2.getString("EI", null);

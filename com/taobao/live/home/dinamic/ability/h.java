@@ -1,7 +1,7 @@
 package com.taobao.live.home.dinamic.ability;
 
 import android.os.CountDownTimer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -73,7 +73,7 @@ public class h {
             return;
         }
         HashMap<String, CountDownTimer> hashMap = this.f17734a;
-        if (hashMap == null || hashMap.size() == 0 || TextUtils.isEmpty(str)) {
+        if (hashMap == null || hashMap.size() == 0 || StringUtils.isEmpty(str)) {
             b = null;
             return;
         }

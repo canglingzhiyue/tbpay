@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.Site;
 import com.ali.user.open.core.callback.InitResultCallback;
@@ -181,14 +181,14 @@ public class UccJsBridge extends e {
             ipChange.ipc$dispatch("12d689c1", new Object[]{this, str, wVCallBackContext});
         } else if (wVCallBackContext == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     JSONObject jSONObject = new JSONObject(str);
                     Bundle bundle = new Bundle();
                     Iterator<String> keys = jSONObject.keys();
                     while (keys.hasNext()) {
                         String str2 = "" + ((Object) keys.next());
-                        if (!TextUtils.equals("site", str2)) {
+                        if (!StringUtils.equals("site", str2)) {
                             bundle.putString(str2, jSONObject.optString(str2));
                         }
                     }
@@ -211,7 +211,7 @@ public class UccJsBridge extends e {
             ipChange.ipc$dispatch("30f825de", new Object[]{this, str, wVCallBackContext});
         } else if (wVCallBackContext == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject jSONObject = new JSONObject(str);
                 Bundle bundle = new Bundle();
                 bundle.putString("url", (String) jSONObject.opt("url"));
@@ -268,7 +268,7 @@ public class UccJsBridge extends e {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            if (TextUtils.isEmpty(AliMemberSDK.getMasterSite())) {
+            if (StringUtils.isEmpty(AliMemberSDK.getMasterSite())) {
                 AliMemberSDK.setMasterSite("taobao");
             }
             AliMemberSDK.init(this.mContext.getApplicationContext(), new InitResultCallback() { // from class: com.ali.user.open.jsbridge.UccJsBridge.2
@@ -339,7 +339,7 @@ public class UccJsBridge extends e {
             }
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("site");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 onFailCallback(wVCallBackContext, 1108, "site不能为空");
                 return;
             }
@@ -350,7 +350,7 @@ public class UccJsBridge extends e {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String str2 = "" + ((Object) keys.next());
-                if (!TextUtils.equals("site", str2)) {
+                if (!StringUtils.equals("site", str2)) {
                     hashMap.put(str2, jSONObject.optString(str2));
                 }
             }
@@ -380,7 +380,7 @@ public class UccJsBridge extends e {
                     }
                     UccJsBridge uccJsBridge = UccJsBridge.this;
                     WVCallBackContext wVCallBackContext2 = wVCallBackContext;
-                    if (TextUtils.isEmpty(str4)) {
+                    if (StringUtils.isEmpty(str4)) {
                         str4 = "获取页面失败";
                     }
                     UccJsBridge.access$000(uccJsBridge, wVCallBackContext2, i, str4);
@@ -401,7 +401,7 @@ public class UccJsBridge extends e {
             }
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("site");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 onFailCallback(wVCallBackContext, 1108, "site不能为空");
                 return;
             }
@@ -409,7 +409,7 @@ public class UccJsBridge extends e {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String str2 = "" + ((Object) keys.next());
-                if (!TextUtils.equals("site", str2)) {
+                if (!StringUtils.equals("site", str2)) {
                     hashMap.put(str2, jSONObject.optString(str2));
                 }
             }
@@ -440,7 +440,7 @@ public class UccJsBridge extends e {
                     }
                     UccJsBridge uccJsBridge = UccJsBridge.this;
                     WVCallBackContext wVCallBackContext2 = wVCallBackContext;
-                    if (TextUtils.isEmpty(str4)) {
+                    if (StringUtils.isEmpty(str4)) {
                         str4 = "获取页面失败";
                     }
                     UccJsBridge.access$000(uccJsBridge, wVCallBackContext2, i, str4);
@@ -464,7 +464,7 @@ public class UccJsBridge extends e {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String str2 = "" + ((Object) keys.next());
-                if (!TextUtils.equals("site", str2)) {
+                if (!StringUtils.equals("site", str2)) {
                     hashMap.put(str2, jSONObject.optString(str2));
                 }
             }
@@ -514,12 +514,12 @@ public class UccJsBridge extends e {
             }
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("site");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 onFailCallback(wVCallBackContext, 1108, "site不能为空");
                 return;
             }
             String optString2 = jSONObject.optString("requestToken");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 onFailCallback(wVCallBackContext, 1108, "requestToken不能为空");
                 return;
             }
@@ -527,7 +527,7 @@ public class UccJsBridge extends e {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String str2 = "" + ((Object) keys.next());
-                if (!TextUtils.equals("site", str2)) {
+                if (!StringUtils.equals("site", str2)) {
                     hashMap.put(str2, jSONObject.optString(str2));
                 }
             }
@@ -564,13 +564,13 @@ public class UccJsBridge extends e {
                         r rVar = new r();
                         rVar.a("HY_FAILED");
                         rVar.a("code", String.valueOf(i));
-                        if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.isEmpty(str4)) {
                             try {
                                 JSONObject jSONObject2 = new JSONObject(str4);
                                 Iterator<String> keys2 = jSONObject2.keys();
                                 while (keys2.hasNext()) {
                                     String str5 = "" + ((Object) keys2.next());
-                                    if (!TextUtils.equals("site", str5)) {
+                                    if (!StringUtils.equals("site", str5)) {
                                         rVar.a(str5, jSONObject2.optString(str5));
                                     }
                                 }
@@ -596,7 +596,7 @@ public class UccJsBridge extends e {
         try {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("site");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 onFailCallback(wVCallBackContext, 1108, "site不能为空");
                 return;
             }
@@ -607,7 +607,7 @@ public class UccJsBridge extends e {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String str2 = "" + ((Object) keys.next());
-                if (!TextUtils.equals("site", str2)) {
+                if (!StringUtils.equals("site", str2)) {
                     hashMap.put(str2, jSONObject.optString(str2));
                 }
             }
@@ -637,7 +637,7 @@ public class UccJsBridge extends e {
                     }
                     UccJsBridge uccJsBridge = UccJsBridge.this;
                     WVCallBackContext wVCallBackContext2 = wVCallBackContext;
-                    if (TextUtils.isEmpty(str4)) {
+                    if (StringUtils.isEmpty(str4)) {
                         str4 = "免登失败";
                     }
                     UccJsBridge.access$000(uccJsBridge, wVCallBackContext2, i, str4);
@@ -669,7 +669,7 @@ public class UccJsBridge extends e {
         try {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("site");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 onFailCallback(wVCallBackContext, 1108, "site不能为空");
                 return;
             }
@@ -680,7 +680,7 @@ public class UccJsBridge extends e {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String str2 = "" + ((Object) keys.next());
-                if (!TextUtils.equals("site", str2)) {
+                if (!StringUtils.equals("site", str2)) {
                     hashMap.put(str2, jSONObject.optString(str2));
                 }
             }
@@ -710,7 +710,7 @@ public class UccJsBridge extends e {
                     }
                     UccJsBridge uccJsBridge = UccJsBridge.this;
                     WVCallBackContext wVCallBackContext2 = wVCallBackContext;
-                    if (TextUtils.isEmpty(str4)) {
+                    if (StringUtils.isEmpty(str4)) {
                         str4 = "绑定失败";
                     }
                     UccJsBridge.access$000(uccJsBridge, wVCallBackContext2, i, str4);
@@ -732,7 +732,7 @@ public class UccJsBridge extends e {
         }
         try {
             String optString = new JSONObject(str).optString("site");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 onFailCallback(wVCallBackContext, 1108, "site不能为空");
                 return;
             }
@@ -765,7 +765,7 @@ public class UccJsBridge extends e {
                     }
                     UccJsBridge uccJsBridge = UccJsBridge.this;
                     WVCallBackContext wVCallBackContext2 = wVCallBackContext;
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "解绑失败";
                     }
                     UccJsBridge.access$000(uccJsBridge, wVCallBackContext2, i, str3);

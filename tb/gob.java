@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import com.alibaba.ability.localization.b;
@@ -85,7 +85,7 @@ public class gob implements bfd {
                 return;
             }
             String a2 = b.a(R.string.app_network_error);
-            if (mtopResponse != null && !TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+            if (mtopResponse != null && !StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                 a2 = mtopResponse.getRetMsg();
             }
             String str = a2;

@@ -1,7 +1,7 @@
 package com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -193,7 +193,7 @@ public class c implements a {
                     } else {
                         g.a("PanelViewManager", "panelGuidePopView createPopView");
                         String a2 = c.a(c.this, jSONObject);
-                        if (TextUtils.isEmpty(a2)) {
+                        if (StringUtils.isEmpty(a2)) {
                             return;
                         }
                         int[] a3 = c.a(c.this).a(a2);
@@ -243,9 +243,9 @@ public class c implements a {
             JSONObject jSONObject2 = jSONObject.getJSONObject(String.valueOf(i));
             if (jSONObject2 != null) {
                 String c2 = b.c(jSONObject2);
-                if (!TextUtils.isEmpty(c2)) {
+                if (!StringUtils.isEmpty(c2)) {
                     this.d.a(c2, i, jSONObject2);
-                    if (TextUtils.equals(str, c2)) {
+                    if (StringUtils.equals(str, c2)) {
                         z = false;
                     }
                     JSONObject jSONObject3 = jSONObject2.getJSONObject("content");
@@ -272,7 +272,7 @@ public class c implements a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             g.a("PanelViewManager", "naviToTabId tabId为null");
         } else {
             com.taobao.tao.infoflow.multitab.viewprovider.tablayout.a aVar = (com.taobao.tao.infoflow.multitab.viewprovider.tablayout.a) this.c.a(com.taobao.tao.infoflow.multitab.viewprovider.tablayout.a.KEY);

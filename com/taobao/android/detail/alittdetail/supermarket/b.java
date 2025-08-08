@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.fastjson.JSON;
@@ -66,7 +66,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("daed263c", new Object[]{eyxVar, cVar, aVar})).booleanValue();
         }
         final String b = cVar.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return false;
         }
         final HashMap hashMap = new HashMap();
@@ -106,7 +106,7 @@ public class b {
                     return;
                 }
                 String string = afterAddToCartAction.getString("type");
-                if (TextUtils.isEmpty(jSONObject.getString("url")) || TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(jSONObject.getString("url")) || StringUtils.isEmpty(string)) {
                     return;
                 }
                 eyx.this.c().a(new com.taobao.android.detail.ttdetail.handler.event.a(afterAddToCartAction), new RuntimeAbilityParam[0]);
@@ -120,7 +120,7 @@ public class b {
                 }
                 Intent intent = new Intent();
                 intent.setAction("cartRefreshData");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = "";
                 }
                 intent.putExtra("stringifyAddCartResult", str);
@@ -143,7 +143,7 @@ public class b {
                 String a2 = cVar2.a();
                 String b2 = cVar2.b();
                 String a3 = d.a((Seller) eyx.this.a().a(Seller.class), "");
-                if (TextUtils.isEmpty(b2) || TextUtils.isEmpty(a3)) {
+                if (StringUtils.isEmpty(b2) || StringUtils.isEmpty(a3)) {
                     return;
                 }
                 b.a(a2, b2, a3);
@@ -186,7 +186,7 @@ public class b {
                 }
                 if (dataJsonObject != null && dataJsonObject.getBoolean(nom.KEY_IS_FULL)) {
                     final String string = dataJsonObject.getString("popLayerUrl");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
                     eyx.this.c().a(new com.taobao.android.detail.ttdetail.handler.event.a(new JSONObject() { // from class: com.taobao.android.detail.alittdetail.supermarket.SuperMarketAddCartHandler$2.1
@@ -206,7 +206,7 @@ public class b {
                     str = str2;
                 } else {
                     str = mtopResponse.getRetMsg();
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = AddCartSubscriber.ADD_CART_FAILED;
                     }
                 }
@@ -220,7 +220,7 @@ public class b {
                 if (aVar2 != null) {
                     aVar2.b();
                 }
-                if ((mtopResponse != null && (mtopResponse.isSessionInvalid() || "ANDROID_SYS_LOGIN_CANCEL".equals(mtopResponse.getRetCode()))) || TextUtils.isEmpty(b)) {
+                if ((mtopResponse != null && (mtopResponse.isSessionInvalid() || "ANDROID_SYS_LOGIN_CANCEL".equals(mtopResponse.getRetCode()))) || StringUtils.isEmpty(b)) {
                     return;
                 }
                 l.a(eyx.this.g(), String.format("https://a.m.taobao.com/i%s.htm", b));

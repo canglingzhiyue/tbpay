@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.aura.AURAFlowData;
@@ -117,7 +117,7 @@ public final class jtf extends atl {
             return jSONObject2;
         }
         String a2 = a(JSONObject.parseArray(jSONArray.toJSONString(), String.class));
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             jSONObject2.put("itemIds", (Object) a2);
         }
         String string = jSONObject.getString("mainOrderId");
@@ -126,7 +126,7 @@ public final class jtf extends atl {
         }
         jSONObject2.put("orderId", (Object) string);
         String a3 = a(JSONObject.parseArray(jSONArray2.toJSONString(), String.class));
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             jSONObject2.put("catIds", (Object) a3);
         }
         JSONObject jSONObject3 = jSONObject.getJSONObject("data");
@@ -147,7 +147,7 @@ public final class jtf extends atl {
         }
         StringBuilder sb = new StringBuilder();
         for (String str : list) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 sb.append(str);
                 sb.append(",");
             }

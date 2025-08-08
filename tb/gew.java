@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.expression.expr_v2.DXExprFunctionError;
@@ -31,11 +31,11 @@ public class gew extends ggw {
         }
         fqj fqjVar = new fqj();
         String i2 = gfxVarArr[0].i();
-        if (TextUtils.isEmpty(i2)) {
+        if (StringUtils.isEmpty(i2)) {
             return gfx.e();
         }
         String i3 = gfxVarArr[1].i();
-        if (TextUtils.isEmpty(i3)) {
+        if (StringUtils.isEmpty(i3)) {
             return gfx.e();
         }
         gfx e = gfxVarArr.length >= 3 ? gfxVarArr[2] : gfx.e();

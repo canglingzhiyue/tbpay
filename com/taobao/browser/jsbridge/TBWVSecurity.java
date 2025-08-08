@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.apmobilesecuritysdk.face.APSecuritySdk;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -43,7 +43,7 @@ public class TBWVSecurity extends e {
         String[] strArr = {"antsdaq.com", "antgroup.com", "aliloan.com", "mybank.cn", "alipay.com", "alipaydev.com", "alipayobjects.com", "zmxy.com.cn", "antcloud.com.cn", "antfortune.com", "alipay-cloud.com", "alipay-eco.com", "mayibank.net", "koubei.com", "h5.m.taobao.com", "h5.wapa.taobao.com", "h5.waptest.taobao.com", "wapp.waptest.taobao.com", "wapp.wapa.taobao.com", "wapp.m.taobao.com", "alipay.hk", "alipay.net", "taobao.com", "tmall.com", "render.alipaymo.com", "cainiao.com"};
         String config = OrangeConfig.getInstance().getConfig("WindVane", "secureTokenHosts", "");
         JSONArray jSONArray = null;
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             try {
                 jSONArray = new JSONArray(config);
             } catch (JSONException unused) {
@@ -52,7 +52,7 @@ public class TBWVSecurity extends e {
         r rVar = new r();
         try {
             String url = this.mWebView.getUrl();
-            if (!TextUtils.isEmpty(url)) {
+            if (!StringUtils.isEmpty(url)) {
                 String host = Uri.parse(url).getHost();
                 for (int i = 0; i < strArr.length; i++) {
                     if (!host.equals(strArr[i])) {

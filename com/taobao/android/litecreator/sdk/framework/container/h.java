@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.framework.container;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -122,7 +122,7 @@ public abstract class h extends hez implements d, e {
 
     public String B() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("65c54bf7", new Object[]{this}) : TextUtils.isEmpty(D().name) ? "undefine" : D().name;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("65c54bf7", new Object[]{this}) : StringUtils.isEmpty(D().name) ? "undefine" : D().name;
     }
 
     @Override // com.taobao.android.litecreator.sdk.framework.container.d
@@ -143,7 +143,7 @@ public abstract class h extends hez implements d, e {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("75f87684", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, "undefine") || !TextUtils.equals(str, B())) {
+        if (StringUtils.equals(str, "undefine") || !StringUtils.equals(str, B())) {
             return null;
         }
         return this;
@@ -240,7 +240,7 @@ public abstract class h extends hez implements d, e {
             final JSONObject jSONObject = D.params.getJSONObject("utParams");
             if (jSONObject != null) {
                 String string = jSONObject.getString("exposeUTName");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     K().a(string, c("exposeUTName"));
                 }
             }
@@ -263,7 +263,7 @@ public abstract class h extends hez implements d, e {
                         return;
                     }
                     String string2 = jSONObject2.getString("clickUTName");
-                    if (TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string2)) {
                         return;
                     }
                     h.this.K().b(string2, h.this.c("clickUTName"));
@@ -302,7 +302,7 @@ public abstract class h extends hez implements d, e {
 
     public boolean F() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3eff1d1", new Object[]{this})).booleanValue() : TextUtils.equals(Resource.TYPE_TEMPLATE_LITE, com.taobao.android.litecreator.base.workflow.e.e(this.r));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3eff1d1", new Object[]{this})).booleanValue() : StringUtils.equals(Resource.TYPE_TEMPLATE_LITE, com.taobao.android.litecreator.base.workflow.e.e(this.r));
     }
 
     public boolean a(Object obj) {

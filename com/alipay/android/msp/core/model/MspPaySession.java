@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.Signature;
 import android.os.Binder;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.framework.drm.DrmKey;
@@ -80,7 +80,7 @@ public class MspPaySession {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 String nameForUid = GlobalHelper.getInstance().getContext().getPackageManager().getNameForUid(MspPaySession.a(this.f4552a));
                 String orderSuffix = this.f4552a.getOrderSuffix();
-                if (!TextUtils.isEmpty(nameForUid) && !TextUtils.isEmpty(orderSuffix)) {
+                if (!StringUtils.isEmpty(nameForUid) && !StringUtils.isEmpty(orderSuffix)) {
                     this.f4552a.setOuterPackageName(nameForUid, true);
                 }
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
@@ -168,11 +168,11 @@ public class MspPaySession {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7666814e", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || TextUtils.equals(str, this.b)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.equals(str, this.b)) {
         } else {
             this.b = Utils.AliyunSlot(str);
             setBizId(Utils.getBizId(this.b));
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 return;
             }
             Map<String, String> extractExtInfoMapFromExternalInfo = OrderStrUtil.extractExtInfoMapFromExternalInfo(this.b);
@@ -180,7 +180,7 @@ public class MspPaySession {
                 extractExtInfoMapFromExternalInfo = new HashMap<>();
             }
             String str2 = extractExtInfoMapFromExternalInfo.get("ap_link_token");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (this.r) {
                     this.g = str2 + ApLinkTokenUtils.generateUniqueSuffixForOuterApLinkToken(this.b);
                 } else {
@@ -259,10 +259,10 @@ public class MspPaySession {
         } else if (map == null || map.isEmpty()) {
         } else {
             String str = map.get("ap_link_token");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = map.get("ap_scan_codec_link_token");
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (this.r && !str.contains("_INR") && !str.startsWith("UK")) {
                     str = str + ApLinkTokenUtils.generateUniqueSuffixForOuterApLinkToken(this.b);
                 }
@@ -274,7 +274,7 @@ public class MspPaySession {
             } else {
                 this.f = new HashMap(map);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f.put("ap_link_token", this.g);
             }
             Map<String, String> map3 = this.f;
@@ -286,16 +286,16 @@ public class MspPaySession {
             String str4 = map3.get(MspGlobalDefine.INVOKE_FROM_ID_KEY);
             String str5 = map3.get(MspGlobalDefine.INVOKE_FROM_REFER_URL);
             LogUtil.record(2, "parseInvokeFromSuite", "invokeFromSource=" + str2 + " ，invokeFromApi=" + str3 + " ， invokeFromId=" + str4 + " ，invokeFromUrlRefer=" + str5);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 setFromSource(str2);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 setFromApi(str3);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 setInvokeFromClientAppId(str4);
             }
-            if (TextUtils.isEmpty(str5)) {
+            if (StringUtils.isEmpty(str5)) {
                 return;
             }
             setInvokeFromUrlRefer(str5);
@@ -307,7 +307,7 @@ public class MspPaySession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("dd8b99bf", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             setApLinkToken(ApLinkTokenUtils.generateFallbackTradeToken(this.b));
         }
         return this.g;
@@ -317,7 +317,7 @@ public class MspPaySession {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("eb9eccff", new Object[]{this, str});
-        } else if (TextUtils.equals(str, this.g) || TextUtils.isEmpty(str)) {
+        } else if (StringUtils.equals(str, this.g) || StringUtils.isEmpty(str)) {
         } else {
             this.g = str;
             if (this.f == null) {
@@ -338,7 +338,7 @@ public class MspPaySession {
             return (String) ipChange.ipc$dispatch("a16c1946", new Object[]{this});
         }
         try {
-            return !TextUtils.isEmpty(this.b) ? URLEncoder.encode(this.b, "utf8") : "";
+            return !StringUtils.isEmpty(this.b) ? URLEncoder.encode(this.b, "utf8") : "";
         } catch (Throwable th) {
             LogUtil.printExceptionStackTrace(th);
             return "";
@@ -407,7 +407,7 @@ public class MspPaySession {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5239aa6b", new Object[]{this, str, new Boolean(z)});
-        } else if (!TextUtils.isEmpty(this.f4551a)) {
+        } else if (!StringUtils.isEmpty(this.f4551a)) {
         } else {
             this.f4551a = str;
             setInvokeFromAppName(str);

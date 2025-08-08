@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -104,7 +104,7 @@ public class sps {
         }
         String queryParameter = uri.getQueryParameter(aw.PARAM_UT_PARAMS);
         this.J = queryParameter;
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             this.I = null;
         } else {
             this.I = JSON.parseObject(queryParameter);
@@ -521,7 +521,7 @@ public class sps {
                     case '\"':
                         if (value != null) {
                             this.J = value;
-                            if (!TextUtils.isEmpty(value)) {
+                            if (!StringUtils.isEmpty(value)) {
                                 this.I = JSON.parseObject(value);
                                 break;
                             } else {

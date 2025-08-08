@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.event.Event;
@@ -42,8 +42,8 @@ public class kxv implements Event {
         if (jSONObject == null) {
             return null;
         }
-        boolean equals = TextUtils.equals(jSONObject.getString("_msgType"), "uiRefresh");
-        boolean equals2 = TextUtils.equals(jSONObject.getString("dataSourceType"), "remote");
+        boolean equals = StringUtils.equals(jSONObject.getString("_msgType"), "uiRefresh");
+        boolean equals2 = StringUtils.equals(jSONObject.getString("dataSourceType"), "remote");
         if (equals && equals2 && (jSONObject.get("containerModel") instanceof AwesomeGetContainerData) && (awesomeGetContainerData = (AwesomeGetContainerData) jSONObject.get("containerModel")) != null && awesomeGetContainerData.getBaseRemind() != null) {
             return new kxv(awesomeGetContainerData.getBaseRemind(), z);
         }

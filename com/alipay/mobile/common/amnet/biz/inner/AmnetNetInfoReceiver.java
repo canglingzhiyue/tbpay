@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.amnet.biz.OutEventNotifyManagerImpl;
 import com.alipay.mobile.common.transport.utils.ConnectionUtil;
@@ -168,7 +168,7 @@ public class AmnetNetInfoReceiver {
             } else if (i == 3) {
                 LogCatUtil.info("AmnetNetInfoReceiver", "4 new radio. ");
                 return false;
-            } else if (TextUtils.isEmpty(this.lastSubNetType)) {
+            } else if (StringUtils.isEmpty(this.lastSubNetType)) {
                 LogCatUtil.info("AmnetNetInfoReceiver", "5 new radio. ");
                 return false;
             } else if (!this.lastSubNetType.equals(Integer.toString(i2))) {

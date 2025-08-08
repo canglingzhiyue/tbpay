@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -112,7 +112,7 @@ public class ViWebViewActivity extends BaseVerifyActivity {
         if (getIntent() != null && getIntent().getExtras() != null) {
             this.d = getIntent().getExtras().getString("loadUrl");
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             VerifyLogCat.w("ViWebViewActivity", "invalid params");
             VerifyBehavorLogger.logBehavor(BehaviourIdEnum.EVENT, "UC-MobileIC-20221008-1", Constants.VI_ENGINE_APPID, "asfa", "", "", null, new HashMap());
             a(false);
@@ -151,7 +151,7 @@ public class ViWebViewActivity extends BaseVerifyActivity {
                 }
                 super.onPageFinished(webView2, str);
                 String title = webView2.getTitle();
-                if (TextUtils.isEmpty(title) || TextUtils.isEmpty(ViWebViewActivity.access$100(ViWebViewActivity.this))) {
+                if (StringUtils.isEmpty(title) || StringUtils.isEmpty(ViWebViewActivity.access$100(ViWebViewActivity.this))) {
                     return;
                 }
                 ViWebViewActivity.access$200(ViWebViewActivity.this).setTitleText(title);

@@ -4,7 +4,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 import com.vivo.push.model.NotifyArriveCallbackByUser;
 import java.security.PublicKey;
@@ -48,7 +48,7 @@ public abstract class b {
             }
             String a2 = com.vivo.push.e.b.a().a(context).a("com.vivo.pushservice");
             PublicKey a3 = com.vivo.push.e.b.a().a(context).a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = "com.vivo.pushservice";
             }
             intent.putExtra("security_avoid_pull_rsa", a2);
@@ -78,7 +78,7 @@ public abstract class b {
             HashMap hashMap = new HashMap();
             hashMap.put("messageID", String.valueOf(this.b));
             String a4 = com.vivo.push.restructure.a.a().e().a();
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 hashMap.put("remoteAppId", a4);
             }
             hashMap.put("ap", this.f24259a);

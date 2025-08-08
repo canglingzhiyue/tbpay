@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URI;
@@ -125,7 +125,7 @@ public class d {
             a2.a(this.d);
             if (this.d) {
                 str2 = "渲染完成";
-            } else if (!TextUtils.isEmpty(this.c)) {
+            } else if (!StringUtils.isEmpty(this.c)) {
                 str2 = this.c;
             }
             a2.a(str2);
@@ -218,10 +218,10 @@ public class d {
                 case 6:
                     return "lightbuy";
                 default:
-                    if (!TextUtils.equals(uri.getHost(), "go") || !TextUtils.equals(uri.getScheme(), "taobao")) {
+                    if (!StringUtils.equals(uri.getHost(), "go") || !StringUtils.equals(uri.getScheme(), "taobao")) {
                         return null;
                     }
-                    if (!TextUtils.equals(uri.getPath(), "/alipay")) {
+                    if (!StringUtils.equals(uri.getPath(), "/alipay")) {
                         return null;
                     }
                     return "alipay";

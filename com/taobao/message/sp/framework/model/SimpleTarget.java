@@ -1,6 +1,6 @@
 package com.taobao.message.sp.framework.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -58,7 +58,7 @@ public class SimpleTarget implements Serializable {
 
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.targetId);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.targetId);
     }
 
     public static SimpleTarget obtain(SimpleTarget simpleTarget) {
@@ -73,7 +73,7 @@ public class SimpleTarget implements Serializable {
 
     public static SimpleTarget obtain(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (SimpleTarget) ipChange.ipc$dispatch("f3deab34", new Object[]{str, str2}) : TextUtils.isEmpty(str) ? obtain(str2) : new SimpleTarget(str2, str);
+        return ipChange instanceof IpChange ? (SimpleTarget) ipChange.ipc$dispatch("f3deab34", new Object[]{str, str2}) : StringUtils.isEmpty(str) ? obtain(str2) : new SimpleTarget(str2, str);
     }
 
     public boolean equals(Object obj) {
@@ -86,12 +86,12 @@ public class SimpleTarget implements Serializable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             SimpleTarget simpleTarget = (SimpleTarget) obj;
-            if (!TextUtils.isEmpty(this.targetId)) {
-                if (TextUtils.equals(this.targetId, simpleTarget.getTargetId())) {
-                    return !TextUtils.isEmpty(this.targetType) ? TextUtils.equals(this.targetType, simpleTarget.targetType) : TextUtils.isEmpty(simpleTarget.targetType);
+            if (!StringUtils.isEmpty(this.targetId)) {
+                if (StringUtils.equals(this.targetId, simpleTarget.getTargetId())) {
+                    return !StringUtils.isEmpty(this.targetType) ? StringUtils.equals(this.targetType, simpleTarget.targetType) : StringUtils.isEmpty(simpleTarget.targetType);
                 }
-            } else if (TextUtils.isEmpty(simpleTarget.getTargetId())) {
-                return !TextUtils.isEmpty(this.targetType) ? TextUtils.equals(this.targetType, simpleTarget.targetType) : TextUtils.isEmpty(simpleTarget.targetType);
+            } else if (StringUtils.isEmpty(simpleTarget.getTargetId())) {
+                return !StringUtils.isEmpty(this.targetType) ? StringUtils.equals(this.targetType, simpleTarget.targetType) : StringUtils.isEmpty(simpleTarget.targetType);
             }
         }
         return false;

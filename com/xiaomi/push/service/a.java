@@ -1,7 +1,7 @@
 package com.xiaomi.push.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
@@ -188,14 +188,14 @@ public class a {
     }
 
     public String a() {
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             this.e = a(this.f901a, "mipush_region", "mipush_region.lock", this.f902a);
         }
         return this.e;
     }
 
     public void a(String str, boolean z) {
-        if (!TextUtils.equals(str, this.e)) {
+        if (!StringUtils.equals(str, this.e)) {
             this.e = str;
         }
         if (z) {
@@ -204,14 +204,14 @@ public class a {
     }
 
     public String b() {
-        if (TextUtils.isEmpty(this.f)) {
+        if (StringUtils.isEmpty(this.f)) {
             this.f = a(this.f901a, "mipush_country_code", "mipush_country_code.lock", this.b);
         }
         return this.f;
     }
 
     public void b(String str, boolean z) {
-        if (!TextUtils.equals(str, this.f)) {
+        if (!StringUtils.equals(str, this.f)) {
             this.f = str;
         }
         if (z) {

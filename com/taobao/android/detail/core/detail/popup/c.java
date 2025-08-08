@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.popup;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -211,7 +211,7 @@ public class c implements f {
             IDMComponent parent = iDMComponent.getParent();
             if (parent != null) {
                 String tag = parent.getTag();
-                if (!TextUtils.isEmpty(tag)) {
+                if (!StringUtils.isEmpty(tag)) {
                     this.d.put(tag, parent);
                 }
             }
@@ -272,7 +272,7 @@ public class c implements f {
         }
         JSONObject events = bVar.dmComponent.getEvents();
         String b = b(actionModel);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return null;
         }
         Iterator<Map.Entry<String, Object>> it = events.entrySet().iterator();
@@ -287,7 +287,7 @@ public class c implements f {
                 break;
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (com.taobao.android.ultron.common.model.b bVar2 : bVar.dmComponent.getEventMap().get(str)) {

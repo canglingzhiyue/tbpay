@@ -9,7 +9,7 @@ import android.support.v4.view.ViewPropertyAnimatorListenerAdapter;
 import android.support.v7.view.menu.e;
 import android.support.v7.view.menu.j;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -64,11 +64,11 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
         this.mDefaultNavigationIcon = obtainStyledAttributes.getDrawable(R.styleable.ActionBar_homeAsUpIndicator);
         if (z) {
             CharSequence text = obtainStyledAttributes.getText(R.styleable.ActionBar_title);
-            if (!TextUtils.isEmpty(text)) {
+            if (!StringUtils.isEmpty(text)) {
                 setTitle(text);
             }
             CharSequence text2 = obtainStyledAttributes.getText(R.styleable.ActionBar_subtitle);
-            if (!TextUtils.isEmpty(text2)) {
+            if (!StringUtils.isEmpty(text2)) {
                 setSubtitle(text2);
             }
             Drawable drawable2 = obtainStyledAttributes.getDrawable(R.styleable.ActionBar_logo);
@@ -162,7 +162,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
 
     private void updateHomeAccessibility() {
         if ((this.mDisplayOpts & 4) != 0) {
-            if (TextUtils.isEmpty(this.mHomeDescription)) {
+            if (StringUtils.isEmpty(this.mHomeDescription)) {
                 this.mToolbar.setNavigationContentDescription(this.mDefaultNavigationContentDescription);
             } else {
                 this.mToolbar.setNavigationContentDescription(this.mHomeDescription);
@@ -372,7 +372,7 @@ public class ToolbarWidgetWrapper implements DecorToolbar {
             return;
         }
         this.mDefaultNavigationContentDescription = i;
-        if (!TextUtils.isEmpty(this.mToolbar.getNavigationContentDescription())) {
+        if (!StringUtils.isEmpty(this.mToolbar.getNavigationContentDescription())) {
             return;
         }
         setNavigationContentDescription(this.mDefaultNavigationContentDescription);

@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -227,7 +227,7 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
             }
             String w = ies.w();
             mfj.c(w, "onNavIntercept " + str);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (ies.d(ies.this) && ies.e(ies.this) && ((str.contains("market.m.taobao.com/app/mtb/app-live-h5-room/home/index.html") || str.contains("h5.m.taobao.com/taolive/video.html") || str.contains("huodong.m.taobao.com/act/talent/live.html")) && ies.this.f28976a != null)) {
                     String w2 = ies.w();
                     mfj.c(w2, "onNavIntercept mEnableMixNavInterceptor " + ies.d(ies.this));
@@ -659,7 +659,7 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
             return;
         }
         String string = jSONObject.getString(d.LIVE_HOME_PAGE_TYPE);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.u = string;
         }
         this.m = this.q.getString("livesource");
@@ -816,9 +816,9 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
                         str = null;
                         str2 = null;
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         a3 = c.a(str3, "id", str2);
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             a3 = c.a(a3, aw.PARAM_CUSTOM_PLAY_CTRL, Uri.encode(str));
                         }
                     } else {
@@ -843,10 +843,10 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
                 ap.c = true;
             } else if (booleanValue && (viewGroup = this.e) != null) {
                 viewGroup.removeAllViews();
-                if (!TextUtils.isEmpty(this.m)) {
+                if (!StringUtils.isEmpty(this.m)) {
                     str3 = c.d(str3, this.m);
                 }
-                if (!TextUtils.isEmpty(this.z)) {
+                if (!StringUtils.isEmpty(this.z)) {
                     str3 = c.a(str3, "spm", this.z);
                 }
                 String a4 = c.a(str3, aw.PARAM_IS_LIVE_MUTE, String.valueOf(this.M));
@@ -863,17 +863,17 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
                             a2 = c.a(a2, aw.PARAM_UT_PARAMS, str7);
                         }
                     }
-                    if (!TextUtils.isEmpty(this.k.highlightSkipParams.keyPointId)) {
+                    if (!StringUtils.isEmpty(this.k.highlightSkipParams.keyPointId)) {
                         a2 = c.a(a2, aw.PARAM_TIMEMOVE_KEYPOINTID, this.k.highlightSkipParams.keyPointId);
                     }
-                    if (!TextUtils.isEmpty(this.k.highlightSkipParams.productType)) {
+                    if (!StringUtils.isEmpty(this.k.highlightSkipParams.productType)) {
                         a2 = c.a(a2, aw.PARAM_PRODUCT_TYPE, this.k.highlightSkipParams.productType);
                     }
-                    if (!TextUtils.isEmpty(this.k.highlightSkipParams.sjsdItemId)) {
+                    if (!StringUtils.isEmpty(this.k.highlightSkipParams.sjsdItemId)) {
                         a2 = c.a(a2, aw.PARAM_SJSD_ITEM_ID, this.k.highlightSkipParams.sjsdItemId);
                     }
                 } else {
-                    if (!TextUtils.isEmpty(this.g)) {
+                    if (!StringUtils.isEmpty(this.g)) {
                         a4 = c.a(a4, "id", this.g);
                     }
                     String str8 = this.A;
@@ -887,7 +887,7 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
                             a4 = c.a(a4, aw.PARAM_UT_PARAMS, str10);
                         }
                     }
-                    if (!TextUtils.isEmpty(this.h)) {
+                    if (!StringUtils.isEmpty(this.h)) {
                         a2 = c.a(a4, "userId", this.h);
                     } else {
                         a2 = c.a(a4, aw.PARAM_NEED_RECOMMEND, "true");
@@ -919,7 +919,7 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
             return;
         }
-        String a2 = c.a(str, aw.PARAM_LIVE_ROOM_SPM_PARAM, !TextUtils.isEmpty(this.y) ? this.y : "a2141.28646552");
+        String a2 = c.a(str, aw.PARAM_LIVE_ROOM_SPM_PARAM, !StringUtils.isEmpty(this.y) ? this.y : "a2141.28646552");
         String str2 = c;
         mfj.c(str2, "init url " + a2);
         v();
@@ -1131,7 +1131,7 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
 
     private boolean a(VideoInfo videoInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ead9f969", new Object[]{this, videoInfo})).booleanValue() : videoInfo != null && videoInfo.officialLiveInfo != null && !TextUtils.isEmpty(videoInfo.officialLiveInfo.officialLive) && "1".equals(videoInfo.roomStatus) && "official".equals(videoInfo.officialLiveInfo.officialLive);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ead9f969", new Object[]{this, videoInfo})).booleanValue() : videoInfo != null && videoInfo.officialLiveInfo != null && !StringUtils.isEmpty(videoInfo.officialLiveInfo.officialLive) && "1".equals(videoInfo.roomStatus) && "official".equals(videoInfo.officialLiveInfo.officialLive);
     }
 
     @Override // tb.pji
@@ -1197,7 +1197,7 @@ public class ies implements ier, mff, pjf, pjg, pji, pkf {
         } else {
             this.x = false;
             String str = "https://h5.m.taobao.com/taolive/video.html";
-            if (!TextUtils.isEmpty(this.m)) {
+            if (!StringUtils.isEmpty(this.m)) {
                 str = c.d(str, this.m);
             }
             Uri parse = Uri.parse(c.a(str, aw.PARAM_NEED_RECOMMEND, "true"));

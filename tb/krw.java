@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.d;
 import com.taobao.android.nav.e;
@@ -40,10 +40,10 @@ public class krw implements e {
         }
         if (intent.getData() != null) {
             String uri = intent.getData().toString();
-            if (!TextUtils.isEmpty(uri) && uri.contains("h5.m.taobao.com/taolive/search.html") && dVar.a() != null) {
+            if (!StringUtils.isEmpty(uri) && uri.contains("h5.m.taobao.com/taolive/search.html") && dVar.a() != null) {
                 Uri data = intent.getData();
                 String queryParameter = data.getQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY);
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     parse = data.buildUpon().appendQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY, "fullscreen").build();
                 } else {
                     String uri2 = data.toString();

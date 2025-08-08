@@ -1,7 +1,7 @@
 package com.taobao.trtc.rtcroom;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorCode;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -149,7 +149,7 @@ public class e implements FloatWindowListener {
         }
         if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("params")) != null) {
             String string = jSONObject2.getString("icon");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 TrtcLog.d("FloatWindowAdapter", "[serverCmd] Update iconUrl: " + string);
                 this.f.f23169a = string;
                 if (this.g != null && this.f23168a) {
@@ -251,7 +251,7 @@ public class e implements FloatWindowListener {
         }
         try {
             String a2 = com.taobao.trtc.utils.a.a(jSONObject, "iconUrl", this.f.f23169a);
-            if (!TextUtils.isEmpty(a2) && !a2.equalsIgnoreCase(this.f.f23169a)) {
+            if (!StringUtils.isEmpty(a2) && !a2.equalsIgnoreCase(this.f.f23169a)) {
                 this.f.f23169a = a2;
                 if (this.f23168a && this.g != null) {
                     this.g.setIcon(a2);
@@ -259,7 +259,7 @@ public class e implements FloatWindowListener {
                 }
             }
             String a3 = com.taobao.trtc.utils.a.a(jSONObject, "iconBgUrl", this.f.b);
-            if (!TextUtils.isEmpty(a3) && !a3.equalsIgnoreCase(this.f.b)) {
+            if (!StringUtils.isEmpty(a3) && !a3.equalsIgnoreCase(this.f.b)) {
                 this.f.b = a3;
                 if (this.f23168a && this.g != null) {
                     this.g.setIconBackground(a3);
@@ -267,7 +267,7 @@ public class e implements FloatWindowListener {
                 }
             }
             String a4 = com.taobao.trtc.utils.a.a(jSONObject, "navUrl", this.f.c);
-            if (!TextUtils.isEmpty(a4) && !a4.equalsIgnoreCase(this.f.c)) {
+            if (!StringUtils.isEmpty(a4) && !a4.equalsIgnoreCase(this.f.c)) {
                 this.f.c = a4;
             }
             if (!z) {
@@ -279,15 +279,15 @@ public class e implements FloatWindowListener {
                 return;
             }
             String string = jSONObject2.getString("waitAnswerText");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.f.f.put("waitAnswerText", string);
             }
             String string2 = jSONObject2.getString("answeredText");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 this.f.f.put("answeredText", string2);
             }
             String string3 = jSONObject2.getString("hangUpText");
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 this.f.f.put("hangUpText", string3);
             }
             if (!this.f23168a || this.g == null) {

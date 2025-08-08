@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.ultron.event.base.e;
@@ -55,7 +55,7 @@ public class iap extends p implements View.OnClickListener {
                 hzy.a("ShowMoreOrderOpSubscrib", "onHandleEventChain", jSONObject.toJSONString());
                 this.l = (ArrayList) JSONArray.parseArray(jSONObject.get("values").toString(), OperateFields.class);
                 String string = fields.getString("maxShow");
-                int parseInt = TextUtils.isEmpty(string) ? 3 : Integer.parseInt(string);
+                int parseInt = StringUtils.isEmpty(string) ? 3 : Integer.parseInt(string);
                 if (b.c()) {
                     parseInt = 2;
                 }

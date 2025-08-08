@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.layoutmanager.module.MtopModule;
 import com.taobao.login4android.session.constants.SessionConstants;
@@ -298,7 +298,7 @@ public class MtopBridge {
             hashMap.put("user-agent", bVar.b);
             hashMap.put("ttid", jSONObject.optString("ttid"));
             String optString3 = jSONObject.optString("pageUrl");
-            if (!TextUtils.isEmpty(optString3)) {
+            if (!StringUtils.isEmpty(optString3)) {
                 hashMap.put("pageUrl", optString3);
             } else {
                 hashMap.put("pageUrl", bVar.c);
@@ -311,7 +311,7 @@ public class MtopBridge {
             hashMap.put("bizId", jSONObject.optString("bizId"));
             hashMap.put(MtopModule.KEY_MTOP_BIZ_TOPIC, jSONObject.optString(MtopModule.KEY_MTOP_BIZ_TOPIC));
             String str2 = bVar.c;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 int indexOf = str2.indexOf("?");
                 if (indexOf != -1) {
                     str2 = str2.substring(0, indexOf);

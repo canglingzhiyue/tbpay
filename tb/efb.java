@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -95,7 +95,7 @@ public class efb implements j<edt> {
                     return;
                 }
                 String str = queryIsvUrlRequestResult.url;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     epo.a("系统异常，数据错误");
                 } else {
                     epq.a(efb.a(efb.this), str);

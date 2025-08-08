@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.capture.perf;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.g;
 import java.util.List;
@@ -186,7 +186,7 @@ public final class MnnOnceDetectRecord {
             MnnOnceDetectRecord mnnOnceDetectRecord = new MnnOnceDetectRecord(j, null, null, null, null, null, null, z, 126, null);
             if (str != null) {
                 String str2 = str;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     for (String str3 : n.b((CharSequence) str2, new String[]{"|"}, false, 0, 6, (Object) null)) {
                         List b = n.b((CharSequence) str3, new String[]{":"}, false, 0, 6, (Object) null);
                         if (b.size() == 2) {

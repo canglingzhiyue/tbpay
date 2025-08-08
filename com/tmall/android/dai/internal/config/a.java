@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.tmall.android.dai.DAI;
@@ -91,7 +91,7 @@ public class a {
                         return;
                     }
                     String config = OrangeConfig.getInstance().getConfig("ODCP_walle_config", "walle_config", "");
-                    if (TextUtils.equals(config, a.a(a.this))) {
+                    if (StringUtils.equals(config, a.a(a.this))) {
                         return;
                     }
                     a.a(a.this, config);

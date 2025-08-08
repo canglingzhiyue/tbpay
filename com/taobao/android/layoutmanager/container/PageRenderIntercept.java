@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -83,11 +83,11 @@ public class PageRenderIntercept extends j {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("8c2a86f3", new Object[]{uri});
         }
-        if (uri == null || !TextUtils.equals(uri.getScheme(), "tbopen")) {
+        if (uri == null || !StringUtils.equals(uri.getScheme(), "tbopen")) {
             return uri;
         }
         String queryParameter = uri.getQueryParameter("h5Url");
-        return !TextUtils.isEmpty(queryParameter) ? Uri.parse(queryParameter) : uri;
+        return !StringUtils.isEmpty(queryParameter) ? Uri.parse(queryParameter) : uri;
     }
 
     public static Uri a(Intent intent) {
@@ -146,7 +146,7 @@ public class PageRenderIntercept extends j {
                             return;
                         }
                         ogg.c("PageRenderIntercept", "onUpdate:" + str);
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             return;
                         }
                         gvw.a(application, Uri.parse(str));
@@ -157,7 +157,7 @@ public class PageRenderIntercept extends j {
             ab.a((Context) application);
             String a2 = oec.a(hashMap.get("startIntent"), (String) null);
             Log.e("PageRenderIntercept", "startIntent :" + a2);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             Uri d = d(Uri.parse(a2));

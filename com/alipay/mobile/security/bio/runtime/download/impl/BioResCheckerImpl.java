@@ -1,7 +1,7 @@
 package com.alipay.mobile.security.bio.runtime.download.impl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.ui.view.ALBiometricsActivityParentView;
 import com.alipay.bis.core.protocol.BioLibFile;
 import com.alipay.bis.core.protocol.BioModelFile;
@@ -36,7 +36,7 @@ public class BioResCheckerImpl implements BioResChecker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("624f99b", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.f5796a = str;
         } else {
             this.f5796a = new File(context.getFilesDir(), ALBiometricsActivityParentView.p).getAbsolutePath();
@@ -90,7 +90,7 @@ public class BioResCheckerImpl implements BioResChecker {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("967736df", new Object[]{this, context, bioDownloadItem});
         }
-        if (TextUtils.isEmpty(bioDownloadItem.getSavePath())) {
+        if (StringUtils.isEmpty(bioDownloadItem.getSavePath())) {
             bioDownloadItem.setSavePath(this.f5796a);
             return new File(this.f5796a, bioDownloadItem.getFileName());
         }
@@ -206,7 +206,7 @@ public class BioResCheckerImpl implements BioResChecker {
         if (!a2.exists() || !a2.isFile()) {
             return 1;
         }
-        if (TextUtils.isEmpty(bioLibFile.getMd5())) {
+        if (StringUtils.isEmpty(bioLibFile.getMd5())) {
             return 0;
         }
         return bioLibFile.getMd5().equalsIgnoreCase(a(a2)) ? 2 : 1;
@@ -221,7 +221,7 @@ public class BioResCheckerImpl implements BioResChecker {
         if (!a2.exists() || !a2.isFile()) {
             return 1;
         }
-        if (TextUtils.isEmpty(bioModelFile.getMd5())) {
+        if (StringUtils.isEmpty(bioModelFile.getMd5())) {
             return 0;
         }
         return bioModelFile.getMd5().equalsIgnoreCase(a(a2)) ? 2 : 1;

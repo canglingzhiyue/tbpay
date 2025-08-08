@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.dinamic_ext;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
@@ -36,10 +36,10 @@ public class DetailCommentTagsViewConstructor extends h implements IMTOPDataObje
         if (view instanceof DetailCommentTagsView) {
             DetailCommentTagsView detailCommentTagsView = (DetailCommentTagsView) view;
             detailCommentTagsView.setLineNum(str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 detailCommentTagsView.setTagTextColor(fpn.a(str2, 0));
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 detailCommentTagsView.setTagBgColor(fpn.a(str3, 0));
             }
             detailCommentTagsView.setTagList(jSONArray);

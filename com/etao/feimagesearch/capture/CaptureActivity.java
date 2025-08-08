@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -343,7 +343,7 @@ public class CaptureActivity extends FEISBaseActivity implements cpu {
         } else if (this.d || !b.cq()) {
         } else {
             String bW = b.bW();
-            if (TextUtils.isEmpty(bW)) {
+            if (StringUtils.isEmpty(bW)) {
                 return;
             }
             this.d = true;

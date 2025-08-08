@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.track;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.internal.util.h;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,16 +27,16 @@ public class a implements IMtopMonitor {
         }
         h.a("TrackMtopMonitor", "接收到MTOP响应信息, type=" + str + ", data=" + hashMap);
         try {
-            if (!TextUtils.equals(IMtopMonitor.MtopMonitorType.TYPE_RESPONSE, str) || hashMap == null) {
+            if (!StringUtils.equals(IMtopMonitor.MtopMonitorType.TYPE_RESPONSE, str) || hashMap == null) {
                 return;
             }
             String str2 = hashMap.get(HttpHeaderConstant.X_AB);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 UTABTest.activateServer(str2);
                 return;
             }
             String str3 = hashMap.get("mtop-x-ali-ab");
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return;
             }
             UTABTest.activateServer(str3);

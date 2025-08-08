@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -103,8 +103,8 @@ public class m {
         a.a(str);
         HashMap hashMap = new HashMap();
         hashMap.put("isLive", String.valueOf(z2));
-        String queryParameter = (TextUtils.isEmpty(str2) || (parse = Uri.parse(str2)) == null) ? null : parse.getQueryParameter(aw.PARAM_TCP_OUTER_PARAM);
-        hashMap.put("hasTcpOuterParams", TextUtils.isEmpty(queryParameter) ? "false" : "true");
+        String queryParameter = (StringUtils.isEmpty(str2) || (parse = Uri.parse(str2)) == null) ? null : parse.getQueryParameter(aw.PARAM_TCP_OUTER_PARAM);
+        hashMap.put("hasTcpOuterParams", StringUtils.isEmpty(queryParameter) ? "false" : "true");
         hashMap.put("tcpOuterParams", queryParameter);
         a(null, "first_init", b, hashMap);
     }

@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.provider.core;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import com.taobao.taobao.R;
@@ -71,6 +71,6 @@ public class e implements ehm {
     @Override // tb.ehm
     public boolean a(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9e1d6464", new Object[]{this, context})).booleanValue() : TextUtils.equals(android.taobao.util.g.c(context), "wifi");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9e1d6464", new Object[]{this, context})).booleanValue() : StringUtils.equals(android.taobao.util.g.c(context), "wifi");
     }
 }

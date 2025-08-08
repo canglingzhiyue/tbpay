@@ -1,6 +1,6 @@
 package com.taobao.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -291,7 +291,7 @@ public class g {
         }
         String a2 = m.a().a(MULTI_TAB_OPT);
         com.taobao.android.home.component.utils.e.e("HomepageOptUtils", "MultiTabBucketId: " + a2);
-        return TextUtils.isEmpty(a2) ? "" : a2;
+        return StringUtils.isEmpty(a2) ? "" : a2;
     }
 
     public boolean j() {

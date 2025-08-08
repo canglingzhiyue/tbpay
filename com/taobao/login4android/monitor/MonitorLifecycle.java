@@ -3,7 +3,7 @@ package com.taobao.login4android.monitor;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.log.UserTrackAdapter;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class MonitorLifecycle {
         String string5 = bundle.getString(AlipayConstant.LOGIN_ALIPAY_TOKEN_KEY);
         String string6 = bundle.getString("source");
         String string7 = bundle.getString("version");
-        if (!Login.checkSessionValid() && !TextUtils.isEmpty(string5) && !TextUtils.isEmpty(string6)) {
+        if (!Login.checkSessionValid() && !StringUtils.isEmpty(string5) && !StringUtils.isEmpty(string6)) {
             bundle.putString(AlipayConstant.LOGIN_ALIPAY_CLIENT_VERSION_KEY, "");
             bundle.putString(AlipayConstant.LOGIN_ALIPAY_USER_ID_KEY, "");
             bundle.putString("app_id", "");

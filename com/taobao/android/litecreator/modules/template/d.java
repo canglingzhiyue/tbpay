@@ -1,7 +1,7 @@
 package com.taobao.android.litecreator.modules.template;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.k;
 import com.taobao.android.litecreator.util.u;
@@ -146,7 +146,7 @@ public class d {
         }
         String str2 = Globals.getApplication().getCacheDir() + File.separator + "guangguang";
         k.g(str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2 + File.separator + "user_head_default.jpg";
         }
         return str2 + File.separator + "user_head_" + str.hashCode() + ".jpg";

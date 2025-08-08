@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -339,7 +339,7 @@ public class SourceManager implements CommandHandler {
                         return;
                     }
                     for (CI ci : SourceManager.access$200(SourceManager.this)) {
-                        if (((SourceItem) ci.getConfig()).name.equals(command.getSourceName()) && TextUtils.equals(((SourceItem) ci.getConfig()).instance, command.getSourceInstance())) {
+                        if (((SourceItem) ci.getConfig()).name.equals(command.getSourceName()) && StringUtils.equals(((SourceItem) ci.getConfig()).instance, command.getSourceInstance())) {
                             Logger.FormatLog.Builder point = new Logger.FormatLog.Builder().type(i).module(16).point(1004);
                             String[] strArr = new String[8];
                             strArr[i] = "commandName";
@@ -647,7 +647,7 @@ public class SourceManager implements CommandHandler {
             if (ipChange instanceof IpChange) {
                 return ipChange.ipc$dispatch("83ba8cd9", new Object[]{this, obj});
             }
-            if (!TextUtils.isEmpty(this.sourceItem.instance)) {
+            if (!StringUtils.isEmpty(this.sourceItem.instance)) {
                 return this.dist.get(SharedState.getKey(this.sourceItem.instance, (String) obj));
             }
             return this.dist.get(obj);
@@ -659,7 +659,7 @@ public class SourceManager implements CommandHandler {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("a5a3b867", new Object[]{this, obj})).booleanValue();
             }
-            if (!TextUtils.isEmpty(this.sourceItem.instance)) {
+            if (!StringUtils.isEmpty(this.sourceItem.instance)) {
                 return this.dist.containsKey(SharedState.getKey(this.sourceItem.instance, (String) obj));
             }
             return this.dist.containsKey(obj);

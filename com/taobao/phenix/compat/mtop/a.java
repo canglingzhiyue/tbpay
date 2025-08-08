@@ -2,7 +2,7 @@ package com.taobao.phenix.compat.mtop;
 
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,11 +25,11 @@ public class a {
             return (Pair) ipChange.ipc$dispatch("c2e055fc", new Object[]{str});
         }
         Pair<String, Boolean> pair = new Pair<>(str, false);
-        if (!TextUtils.isEmpty(str) && str.endsWith(".jpg") && !str.contains("-cib")) {
+        if (!StringUtils.isEmpty(str) && str.endsWith(".jpg") && !str.contains("-cib")) {
             try {
                 String c = c(str);
                 for (String str2 : f18907a) {
-                    if (TextUtils.equals(str2, c)) {
+                    if (StringUtils.equals(str2, c)) {
                         StringBuilder sb2 = new StringBuilder(str);
                         int indexOf = sb2.indexOf(str2);
                         if (!str.contains(".jpg_") && !str.contains(".png_")) {
@@ -64,7 +64,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.startsWith(ado.URL_SEPARATOR)) {
@@ -91,7 +91,7 @@ public class a {
         }
         String c = c(str);
         for (String str2 : f18907a) {
-            if (TextUtils.equals(str2, c)) {
+            if (StringUtils.equals(str2, c)) {
                 return true;
             }
         }

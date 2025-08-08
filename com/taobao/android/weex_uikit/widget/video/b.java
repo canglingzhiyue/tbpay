@@ -1,6 +1,6 @@
 package com.taobao.android.weex_uikit.widget.video;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -46,7 +46,7 @@ public class b implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c57f2546", new Object[]{uINode, str, jSONObject});
-        } else if (!uINode.hasEvent(str) || (uINode2 = uINode.getInstance()) == null || uINode2.isDestroyed() || TextUtils.isEmpty(str)) {
+        } else if (!uINode.hasEvent(str) || (uINode2 = uINode.getInstance()) == null || uINode2.isDestroyed() || StringUtils.isEmpty(str)) {
         } else {
             uINode2.fireEventOnNode(uINode.getNodeId(), str, jSONObject);
         }

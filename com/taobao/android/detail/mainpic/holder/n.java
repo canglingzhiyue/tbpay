@@ -130,7 +130,7 @@ public class n extends com.alibaba.android.ultron.vfw.web.d {
             r0.<init>(r1)
             r4.e = r0
             java.lang.String r0 = r4.g
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L4c
             tb.bny r5 = r4.f2738a
             android.content.Context r5 = r5.k()
@@ -143,7 +143,7 @@ public class n extends com.alibaba.android.ultron.vfw.web.d {
             java.lang.String r1 = r0.getQueryParameter(r1)
             java.lang.String r2 = "width"
             java.lang.String r0 = r0.getQueryParameter(r2)
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             r3 = -1
             if (r2 != 0) goto L6b
             int r1 = java.lang.Integer.parseInt(r1)     // Catch: java.lang.Exception -> L6b
@@ -151,7 +151,7 @@ public class n extends com.alibaba.android.ultron.vfw.web.d {
         L6b:
             r1 = -1
         L6c:
-            boolean r2 = android.text.TextUtils.isEmpty(r0)
+            boolean r2 = android.text.StringUtils.isEmpty(r0)
             if (r2 != 0) goto L77
             int r0 = java.lang.Integer.parseInt(r0)     // Catch: java.lang.Exception -> L77
             goto L78

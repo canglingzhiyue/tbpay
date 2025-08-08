@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.factory.manager.a;
 import com.taobao.android.detail.datasdk.model.datamodel.template.ActionModel;
@@ -40,7 +40,7 @@ public class enl extends ene<epf> {
         Iterator<b> it = arrayList.iterator();
         while (it.hasNext()) {
             b next = it.next();
-            if (!TextUtils.isEmpty(next.f10063a)) {
+            if (!StringUtils.isEmpty(next.f10063a)) {
                 this.b.put(next.f10063a, next);
             }
         }

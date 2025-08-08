@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,7 +45,7 @@ public class qnz {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f32970a)) {
+        if (StringUtils.isEmpty(this.f32970a)) {
             this.f32970a = UTDevice.getUtdid(PopLayer.getReference().getApp());
         }
         return this.f32970a;

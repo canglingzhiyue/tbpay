@@ -2,7 +2,7 @@ package com.uc.webview.export.extension;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.ErrorCode;
 import com.uc.webview.base.Log;
 import com.uc.webview.base.UCKnownException;
@@ -100,7 +100,7 @@ public final class JSILoader {
     public static boolean load(Context context, ClassLoader classLoader, File file, File file2, boolean z, Map<String, Object> map) throws UCKnownException {
         File file3 = null;
         String str = map != null ? (String) map.get(EXTRA_PARAM_SPECIFIED_DIR) : null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             file3 = new File(str);
         }
         return loadImpl(context, classLoader, file, file2, file3, z, map);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class ctv {
             return;
         }
         String d = fkt.d("enable_newdetail_optimize_when_nav_blacklist", "");
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             Collections.addAll(this.h, d.split(","));
         }
         if (jSONObject == null) {

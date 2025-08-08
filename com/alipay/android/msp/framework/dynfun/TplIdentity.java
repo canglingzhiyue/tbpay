@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.dynfun;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.utils.LogUtil;
 import com.alipay.android.msp.utils.UtilsMig;
@@ -54,7 +54,7 @@ public class TplIdentity {
             return false;
         }
         String str = tplIdentity.id;
-        if (str != null && !TextUtils.equals(str, tplIdentity2.id)) {
+        if (str != null && !StringUtils.equals(str, tplIdentity2.id)) {
             return false;
         }
         Integer num = tplIdentity.bizId;

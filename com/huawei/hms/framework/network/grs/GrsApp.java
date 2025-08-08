@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 
 /* loaded from: classes4.dex */
@@ -36,7 +36,7 @@ public class GrsApp {
     }
 
     public String getBrand(String str) {
-        if (TextUtils.isEmpty(BRAND)) {
+        if (StringUtils.isEmpty(BRAND)) {
             return "";
         }
         return BRAND + str;

@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.basemvplib.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.c;
@@ -93,7 +93,7 @@ public abstract class b<T extends hgw, M extends hgu> implements hgv {
         if (this.d.i()) {
             return 7;
         }
-        if (liveItem != null && liveItem.extendVal != null && !TextUtils.isEmpty(liveItem.extendVal.itemBizType) && "secKill".equals(liveItem.extendVal.itemBizType) && !com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.f() && d.a()) {
+        if (liveItem != null && liveItem.extendVal != null && !StringUtils.isEmpty(liveItem.extendVal.itemBizType) && "secKill".equals(liveItem.extendVal.itemBizType) && !com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.f() && d.a()) {
             return 6;
         }
         return i;

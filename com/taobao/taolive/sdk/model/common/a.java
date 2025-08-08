@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.model.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -124,7 +124,7 @@ public class a {
             if (jSONObject.containsKey(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) {
                 mediaData.liveId = jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
             }
-            if (TextUtils.isEmpty(mediaData.liveId) && jSONObject.containsKey("feedId")) {
+            if (StringUtils.isEmpty(mediaData.liveId) && jSONObject.containsKey("feedId")) {
                 mediaData.liveId = jSONObject.getString("feedId");
             }
             if (jSONObject.containsKey("pushFeature")) {

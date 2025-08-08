@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.JhsNode;
@@ -59,7 +59,7 @@ public class e extends com.taobao.android.detail.datasdk.model.viewmodel.main.b 
             this.f9768a = m.price;
             this.e = System.currentTimeMillis() - 1000;
             this.f = g.pintuanNode.endTimeMillis;
-            this.g = TextUtils.equals("GROUP_WAITING", g.pintuanNode.groupStatus);
+            this.g = StringUtils.equals("GROUP_WAITING", g.pintuanNode.groupStatus);
             if (m.priceTags != null && !m.priceTags.isEmpty()) {
                 try {
                     this.o = m.priceTags.get(0).f9987a;
@@ -90,11 +90,11 @@ public class e extends com.taobao.android.detail.datasdk.model.viewmodel.main.b 
             String str = g.ladyGoNode.mainPrice;
             String str2 = g.ladyGoNode.tagPrice;
             String str3 = g.ladyGoNode.tagPriceTitle;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f9768a = new PriceNode.PriceData();
                 this.f9768a.priceText = str;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 PriceNode.PriceData priceData = new PriceNode.PriceData();
                 priceData.priceText = str2;
                 priceData.priceTitle = str3;
@@ -142,7 +142,7 @@ public class e extends com.taobao.android.detail.datasdk.model.viewmodel.main.b 
             this.f9768a = m.price;
             this.e = System.currentTimeMillis() - 1000;
             this.f = g.pintuanNode.endTimeMillis;
-            this.g = TextUtils.equals("GROUP_WAITING", g.pintuanNode.groupStatus);
+            this.g = StringUtils.equals("GROUP_WAITING", g.pintuanNode.groupStatus);
             if (m.priceTags != null && !m.priceTags.isEmpty()) {
                 try {
                     this.o = m.priceTags.get(0).f9987a;
@@ -173,11 +173,11 @@ public class e extends com.taobao.android.detail.datasdk.model.viewmodel.main.b 
             String str = g.ladyGoNode.mainPrice;
             String str2 = g.ladyGoNode.tagPrice;
             String str3 = g.ladyGoNode.tagPriceTitle;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f9768a = new PriceNode.PriceData();
                 this.f9768a.priceText = str;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 PriceNode.PriceData priceData = new PriceNode.PriceData();
                 priceData.priceText = str2;
                 priceData.priceTitle = str3;

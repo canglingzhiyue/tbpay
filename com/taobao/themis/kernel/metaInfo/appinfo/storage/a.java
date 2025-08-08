@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.metaInfo.appinfo.storage;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -62,10 +62,10 @@ public class a {
             return null;
         }
         String str4 = "SELECT * FROM " + n.T() + " WHERE appId='" + str + "'";
-        if (!TextUtils.isEmpty(str2) && !"*".equals(str2)) {
+        if (!StringUtils.isEmpty(str2) && !"*".equals(str2)) {
             str4 = str4 + " AND version='" + str2 + "'";
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str4 = str4 + " AND templateId='" + str3 + "'";
         }
         List<AppInfoDao> selectAppInfo = tMSDBAdapter.selectAppInfo(str4 + " ORDER BY lastRequestTimeStamp DESC");
@@ -92,10 +92,10 @@ public class a {
         if (appInfoDao == null) {
             return false;
         }
-        if (!TextUtils.isEmpty(str) && !"*".equals(str) && !TextUtils.equals(str, appInfoDao.version)) {
+        if (!StringUtils.isEmpty(str) && !"*".equals(str) && !StringUtils.equals(str, appInfoDao.version)) {
             return false;
         }
-        return TextUtils.isEmpty(str2) || TextUtils.equals(str2, appInfoDao.templateId);
+        return StringUtils.isEmpty(str2) || StringUtils.equals(str2, appInfoDao.templateId);
     }
 
     public synchronized void a(AppInfoDao appInfoDao) {

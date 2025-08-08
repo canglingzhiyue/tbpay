@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.security.KeyFactory;
@@ -40,7 +40,7 @@ public final class OO0o {
                 String O000000o3 = OO0o0.O000000o(cipher.doFinal(O000000o.getBytes()));
                 String O000000o4 = OOOO00O.O000000o(context, context.getPackageName(), OOO0O0O.O00000Oo);
                 String O00000Oo2 = OOO.O00000Oo();
-                if (!TextUtils.isEmpty(O00000Oo2)) {
+                if (!StringUtils.isEmpty(O00000Oo2)) {
                     O00000Oo2 = "0";
                 }
                 String str2 = O000000o4 + "\n" + O00000o0 + "\n2.1\njson\n" + O00000Oo2 + "\n" + packageName + "\n" + O000000o2 + "\n" + O00000Oo + "\n" + O000000o3 + "\n" + sb2;
@@ -120,7 +120,7 @@ public final class OO0o {
                                             e.printStackTrace();
                                         }
                                     }
-                                    if (TextUtils.isEmpty(O000000o)) {
+                                    if (StringUtils.isEmpty(O000000o)) {
                                         ooo00o0.O000000o(i, 410002, "网络请求响应为空");
                                     } else {
                                         ooo00o0.O000000o(i, 1, O000000o);

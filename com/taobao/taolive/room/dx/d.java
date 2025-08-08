@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.dx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -93,7 +93,7 @@ public class d extends com.taobao.android.dinamicx.h {
             DXRuntimeContext dXRuntimeContext2 = this.f21621a;
             if (dXRuntimeContext2 != null) {
                 JSONObject e2 = dXRuntimeContext2.e();
-                if (e2 != null && TextUtils.equals(e2.getString("bottomType"), "2")) {
+                if (e2 != null && StringUtils.equals(e2.getString("bottomType"), "2")) {
                     Nav.from(dXRuntimeContext.m()).toUri(e2.getString("bottomUrl"));
                 } else {
                     a();

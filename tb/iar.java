@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.ext.p;
@@ -110,7 +110,7 @@ public class iar extends p {
                         jSONObject4.put("rightButtonText", (Object) jSONObject2.getJSONObject(str2).getString("text"));
                         str = "rightButtonEvent";
                     }
-                    if (iDMComponent.getFields() != null && iDMComponent.getFields().getJSONObject(bki.EVENT_CODE_CANCEL_ORDER_DOWNGRADE) != null && TextUtils.equals(iDMComponent.getFields().getJSONObject(bki.EVENT_CODE_CANCEL_ORDER_DOWNGRADE).getString(d.PARAM_OP_CODE), str2)) {
+                    if (iDMComponent.getFields() != null && iDMComponent.getFields().getJSONObject(bki.EVENT_CODE_CANCEL_ORDER_DOWNGRADE) != null && StringUtils.equals(iDMComponent.getFields().getJSONObject(bki.EVENT_CODE_CANCEL_ORDER_DOWNGRADE).getString(d.PARAM_OP_CODE), str2)) {
                         jSONObject4.put(bki.EVENT_CODE_CANCEL_ORDER_DOWNGRADE, (Object) iDMComponent.getFields().getJSONObject(bki.EVENT_CODE_CANCEL_ORDER_DOWNGRADE));
                         jSONObject4.put(str, (Object) bki.a(iDMComponent, str2));
                     } else {

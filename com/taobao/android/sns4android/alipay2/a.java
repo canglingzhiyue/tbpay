@@ -1,6 +1,6 @@
 package com.taobao.android.sns4android.alipay2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.log.UserTrackAdapter;
 import com.alipay.auth.mobile.AlipayAuthAPIFactory;
@@ -48,7 +48,7 @@ public class a {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("b9ce41b1", new Object[]{this, str, properties});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         UserTrackAdapter.sendUT(str, properties);
                     }

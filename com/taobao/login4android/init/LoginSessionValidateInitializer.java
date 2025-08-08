@@ -1,7 +1,7 @@
 package com.taobao.login4android.init;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
 import java.io.Serializable;
@@ -26,7 +26,7 @@ public class LoginSessionValidateInitializer implements Serializable {
             return;
         }
         String str = "LoginSessionValidateInitializer init() called with: application = [" + application + "], params = [" + hashMap + riy.ARRAY_END_STR;
-        if (!TextUtils.isEmpty(Login.getLoginToken()) || !TextUtils.isEmpty(Login.getUserId())) {
+        if (!StringUtils.isEmpty(Login.getLoginToken()) || !StringUtils.isEmpty(Login.getUserId())) {
             return;
         }
         Login.triggerLoginBundle();

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
 import java.util.Comparator;
@@ -146,7 +146,7 @@ public class dcf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1242956", new Object[]{this, str, str2, new Integer(i), new Integer(i2), new Long(j), new Boolean(z), dceVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             dcl.a("SyncManager", "subscribeStream() IllegalArguments", new Object[0]);
         } else {
             Message message = new Message();
@@ -167,7 +167,7 @@ public class dcf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             dcl.a("SyncManager", "unSubscribeStream() IllegalArguments", new Object[0]);
         } else {
             Message message = new Message();
@@ -183,7 +183,7 @@ public class dcf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("69987edc", new Object[]{this, str, str2, new Integer(i), new Integer(i2)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || i > i2) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || i > i2) {
             dcl.a("SyncManager", "query() IllegalArguments", new Object[0]);
         } else {
             Message message = new Message();
@@ -202,7 +202,7 @@ public class dcf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             dcl.a("SyncManager", "recover() IllegalArguments", new Object[0]);
         } else {
             Message message = new Message();
@@ -220,7 +220,7 @@ public class dcf {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f26675a.b(str);
         }
         return false;

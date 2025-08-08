@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -97,7 +97,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
             String action = intent.getAction();
             hue.a(TBMiniLiveFloatController.c(), action);
             boolean booleanExtra = intent.getBooleanExtra("isMute", false);
-            if (!TextUtils.isEmpty(action) && action.equals("com.taobao.avplayer.start")) {
+            if (!StringUtils.isEmpty(action) && action.equals("com.taobao.avplayer.start")) {
                 if (booleanExtra) {
                     return;
                 }
@@ -106,13 +106,13 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
                     return;
                 }
                 TBMiniLiveFloatController.d(TBMiniLiveFloatController.this).b();
-            } else if (!TextUtils.isEmpty(action) && action.equals("com.taobao.taolive.start")) {
+            } else if (!StringUtils.isEmpty(action) && action.equals("com.taobao.taolive.start")) {
                 TBMiniLiveFloatController.this.a("dismiss");
                 if (TBMiniLiveFloatController.d(TBMiniLiveFloatController.this) == null) {
                     return;
                 }
                 TBMiniLiveFloatController.d(TBMiniLiveFloatController.this).b();
-            } else if (TextUtils.isEmpty(action) || !action.equals(com.taobao.taolive.sdk.playcontrol.d.ON_LIVE_CARD_START_ACTION)) {
+            } else if (StringUtils.isEmpty(action) || !action.equals(com.taobao.taolive.sdk.playcontrol.d.ON_LIVE_CARD_START_ACTION)) {
             } else {
                 if (!"ShopSampleCard".equals(intent.getStringExtra("SubBusinessType")) && booleanExtra) {
                     return;
@@ -290,7 +290,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5a4ca6c", new Object[]{this});
-        } else if (TextUtils.equals(this.c, "liveroom") || !com.taobao.taolive.sdk.ui.media.mute.b.a(null) || (iMediaPlayer = this.B) == null || !iMediaPlayer.x()) {
+        } else if (StringUtils.equals(this.c, "liveroom") || !com.taobao.taolive.sdk.ui.media.mute.b.a(null) || (iMediaPlayer = this.B) == null || !iMediaPlayer.x()) {
         } else {
             this.B.a(false);
             String str = f14380a;
@@ -422,21 +422,21 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
                         TBMiniLiveFloatController.h(TBMiniLiveFloatController.this).onClick(view);
                     } else if (pmd.a().r() != null && TBMiniLiveFloatController.i(TBMiniLiveFloatController.this) != null) {
                         StringBuilder sb = new StringBuilder();
-                        if (!TextUtils.isEmpty(TBMiniLiveFloatController.j(TBMiniLiveFloatController.this))) {
+                        if (!StringUtils.isEmpty(TBMiniLiveFloatController.j(TBMiniLiveFloatController.this))) {
                             sb.append(TBMiniLiveFloatController.j(TBMiniLiveFloatController.this));
                         }
-                        if (TextUtils.isEmpty(sb)) {
+                        if (StringUtils.isEmpty(sb)) {
                             sb.append(hud.n());
                             sb.append("&id=");
                             sb.append(TBMiniLiveFloatController.k(TBMiniLiveFloatController.this));
                         }
-                        if (!TextUtils.isEmpty(TBMiniLiveFloatController.f(TBMiniLiveFloatController.this)) && sb.indexOf("entrySource") == -1) {
+                        if (!StringUtils.isEmpty(TBMiniLiveFloatController.f(TBMiniLiveFloatController.this)) && sb.indexOf("entrySource") == -1) {
                             sb.append("&entrySource=");
                             sb.append(TBMiniLiveFloatController.f(TBMiniLiveFloatController.this));
                         }
                         sb.append("&isLiveMute=");
                         sb.append(TBMiniLiveFloatController.l(TBMiniLiveFloatController.this));
-                        if (TBMiniLiveFloatController.m(TBMiniLiveFloatController.this) && !TextUtils.isEmpty(TBMiniLiveFloatController.n(TBMiniLiveFloatController.this))) {
+                        if (TBMiniLiveFloatController.m(TBMiniLiveFloatController.this) && !StringUtils.isEmpty(TBMiniLiveFloatController.n(TBMiniLiveFloatController.this))) {
                             sb.append("&playViewToken=");
                             sb.append(TBMiniLiveFloatController.n(TBMiniLiveFloatController.this));
                         }
@@ -444,7 +444,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
                         if (hud.x()) {
                             if (TBMiniLiveFloatController.b(TBMiniLiveFloatController.this) instanceof htx) {
                                 String s = ((htx) TBMiniLiveFloatController.b(TBMiniLiveFloatController.this)).s();
-                                if (!TextUtils.isEmpty(s)) {
+                                if (!StringUtils.isEmpty(s)) {
                                     sb.append("&playerToken=");
                                     sb.append(s);
                                 }
@@ -465,7 +465,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
                     }
                 }
             });
-            if (TextUtils.equals(str4, com.taobao.android.weex_framework.util.a.ATOM_EXT_window)) {
+            if (StringUtils.equals(str4, com.taobao.android.weex_framework.util.a.ATOM_EXT_window)) {
                 hue.a("TBLiveService", CommandID.setDataSource);
                 b(str);
             }
@@ -512,7 +512,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
         int c = com.taobao.taolive.sdk.utils.b.c(this.b);
         int a4 = com.taobao.taolive.sdk.utils.b.a(this.b, 12.0f);
         int a5 = com.taobao.taolive.sdk.utils.b.a(this.b, 84.0f);
-        if (TextUtils.equals(this.c, "liveroom") || TextUtils.equals(this.c, "zoom")) {
+        if (StringUtils.equals(this.c, "liveroom") || StringUtils.equals(this.c, "zoom")) {
             a4 += (hud.v() * com.taobao.taolive.sdk.utils.b.c(this.b)) / 750;
             a5 += (hud.w() * com.taobao.taolive.sdk.utils.b.c(this.b)) / 750;
         }
@@ -535,18 +535,18 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
         WindowManager.LayoutParams layoutParams2 = this.z;
         layoutParams2.width = a2;
         layoutParams2.height = a3;
-        if (TextUtils.equals("top-left", this.i)) {
+        if (StringUtils.equals("top-left", this.i)) {
             this.z.x = (int) Math.max(b * this.j, a4);
             this.z.y = (int) Math.max(c * this.k, a5);
-        } else if (TextUtils.equals("top-right", this.i)) {
+        } else if (StringUtils.equals("top-right", this.i)) {
             WindowManager.LayoutParams layoutParams3 = this.z;
             layoutParams3.x = (b - layoutParams3.width) - ((int) Math.max(b * this.j, a4));
             this.z.y = (int) Math.max(c * this.k, a5);
-        } else if (TextUtils.equals("bottom-left", this.i)) {
+        } else if (StringUtils.equals("bottom-left", this.i)) {
             this.z.x = (int) Math.max(b * this.j, a4);
             WindowManager.LayoutParams layoutParams4 = this.z;
             layoutParams4.y = (c - layoutParams4.height) - ((int) Math.max(c * this.k, a5));
-        } else if (TextUtils.equals("bottom-right", this.i)) {
+        } else if (StringUtils.equals("bottom-right", this.i)) {
             WindowManager.LayoutParams layoutParams5 = this.z;
             layoutParams5.x = (b - layoutParams5.width) - ((int) Math.max(b * this.j, a4));
             WindowManager.LayoutParams layoutParams6 = this.z;
@@ -686,7 +686,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
                         this.F.a();
                     }
                     hue.a(f14380a, "addMiniView");
-                    if (!TextUtils.equals(this.c, "liveroom") && com.taobao.taolive.sdk.ui.media.mute.b.a(null)) {
+                    if (!StringUtils.equals(this.c, "liveroom") && com.taobao.taolive.sdk.ui.media.mute.b.a(null)) {
                         this.s = new VolumeChangeHelper();
                         this.s.a(this);
                     }
@@ -727,7 +727,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
                 if (this.D > 0) {
                     hashMap.put("exposureTime", String.valueOf(((float) (SystemClock.uptimeMillis() - this.D)) / 1000.0f));
                     hashMap.put("type", this.c);
-                    if (!TextUtils.isEmpty(this.d)) {
+                    if (!StringUtils.isEmpty(this.d)) {
                         hashMap.put("algParams", this.d);
                     }
                     huf.a(this.c, "FloatWindowExposure", hashMap);
@@ -782,7 +782,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
             if (this.D > 0) {
                 hashMap.put("exposureTime", String.valueOf(((float) (SystemClock.uptimeMillis() - this.D)) / 1000.0f));
                 hashMap.put("type", str);
-                if (!TextUtils.isEmpty(this.d)) {
+                if (!StringUtils.isEmpty(this.d)) {
                     hashMap.put("algParams", this.d);
                 }
                 huf.a(this.c, "FloatWindowExposure", hashMap);
@@ -794,21 +794,21 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
             volumeChangeHelper.c();
             this.s = null;
         }
-        if (TextUtils.equals("halfGoodDetail", str)) {
+        if (StringUtils.equals("halfGoodDetail", str)) {
             o();
             return;
         }
         if (this.B != null) {
-            if (TextUtils.equals(this.c, "zoom")) {
+            if (StringUtils.equals(this.c, "zoom")) {
                 this.B.o();
                 this.B.c();
                 this.B = null;
                 com.taobao.android.miniLive.services.e.a().g();
-            } else if (TextUtils.equals(this.c, "liveroom")) {
-                if (!TextUtils.equals(str, "liveroom") || hud.B()) {
+            } else if (StringUtils.equals(this.c, "liveroom")) {
+                if (!StringUtils.equals(str, "liveroom") || hud.B()) {
                     this.B.i();
                 }
-            } else if (TextUtils.equals(str, "liveroom")) {
+            } else if (StringUtils.equals(str, "liveroom")) {
                 if (!this.n) {
                     this.B.i();
                     new Handler(this.b.getMainLooper()).postDelayed(new Runnable() { // from class: com.taobao.android.miniLive.ui.TBMiniLiveFloatController.8
@@ -1107,7 +1107,7 @@ public class TBMiniLiveFloatController implements TBMiniLiveFloatingVideoView.a,
         if (this.B == null) {
             return;
         }
-        if (TextUtils.equals(this.c, "liveroom") || TextUtils.equals(str, "liveroom")) {
+        if (StringUtils.equals(this.c, "liveroom") || StringUtils.equals(str, "liveroom")) {
             HashMap hashMap = new HashMap();
             hashMap.put("switchScene", "liveRoom");
             this.B.a((Map<String, String>) hashMap);

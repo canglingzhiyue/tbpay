@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DinamicXEngine;
@@ -93,7 +93,7 @@ public class fwl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (this.b) {
                 if (this.b.containsKey(str)) {

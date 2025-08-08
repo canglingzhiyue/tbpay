@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.NetworkInfo;
 import android.net.Proxy;
 import android.net.http.AndroidHttpClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.logging.api.http.BaseHttpClient;
 import com.alipay.mobile.common.logging.util.NetUtil;
@@ -188,7 +188,7 @@ public class HttpClient extends BaseHttpClient {
         if (ipChange instanceof IpChange) {
             return (URL) ipChange.ipc$dispatch("b391bad", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             return null;
         }
         try {
@@ -208,11 +208,11 @@ public class HttpClient extends BaseHttpClient {
             return null;
         }
         String host = a2.getHost();
-        if (TextUtils.isEmpty(host)) {
+        if (StringUtils.isEmpty(host)) {
             return null;
         }
         String protocol = a2.getProtocol();
-        if (TextUtils.isEmpty(protocol)) {
+        if (StringUtils.isEmpty(protocol)) {
             return null;
         }
         int port = a2.getPort();
@@ -237,7 +237,7 @@ public class HttpClient extends BaseHttpClient {
         }
         try {
             String defaultHost = Proxy.getDefaultHost();
-            if (TextUtils.isEmpty(defaultHost)) {
+            if (StringUtils.isEmpty(defaultHost)) {
                 return null;
             }
             return new HttpHost(defaultHost, Proxy.getDefaultPort());
@@ -292,7 +292,7 @@ public class HttpClient extends BaseHttpClient {
         closeStreamForNextExecute();
         try {
             String formatParamStringForGET = NetUtil.formatParamStringForGET(map);
-            if (TextUtils.isEmpty(formatParamStringForGET)) {
+            if (StringUtils.isEmpty(formatParamStringForGET)) {
                 str = this.e;
             } else {
                 str = this.e + riy.CONDITION_IF + formatParamStringForGET;

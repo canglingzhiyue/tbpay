@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collections;
 import java.util.HashMap;
@@ -51,7 +51,7 @@ public class aoc {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String str2 = b.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "0";
         }
         return str2;
@@ -63,7 +63,7 @@ public class aoc {
             return ((Number) ipChange.ipc$dispatch("3dd7e567", new Object[]{this, str})).longValue();
         }
         String str2 = b.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return 0L;
         }
         return Long.valueOf(str2).longValue();

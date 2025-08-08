@@ -2,7 +2,7 @@ package com.taobao.android.tracker;
 
 import android.app.Activity;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -38,7 +38,7 @@ public class b {
             try {
                 com.taobao.android.tracker.util.a.a();
                 String b = com.taobao.android.tracker.util.a.b(i.d(view));
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     return;
                 }
                 com.taobao.android.tracker.util.a.a(com.taobao.android.tracker.util.a.a());
@@ -117,7 +117,7 @@ public class b {
         }
         try {
             b(activity);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             Message obtain = Message.obtain();

@@ -2,7 +2,7 @@ package com.taobao.android.shop.features.calendar;
 
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -134,17 +134,17 @@ public class ShopWXCalendarManager extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d08fa1b5", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(Login.getUserId())) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(Login.getUserId())) {
         } else {
             String str3 = null;
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString = jSONObject.optString("businessId");
                 int optInt = jSONObject.optInt(SOURCE_ID);
-                if (!TextUtils.isEmpty(Login.getUserId()) && !TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(Login.getUserId()) && !StringUtils.isEmpty(optString)) {
                     str3 = Login.getUserId() + "_" + optString;
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     return;
                 }
                 init();
@@ -161,7 +161,7 @@ public class ShopWXCalendarManager extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("79983f4e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(Login.getUserId())) {
+        } else if (StringUtils.isEmpty(Login.getUserId())) {
             Login.login(true);
         } else {
             try {
@@ -170,23 +170,23 @@ public class ShopWXCalendarManager extends WXModule {
                 String optString = jSONObject.optString("businessId");
                 scheduleDTO.setSourceId(jSONObject.optInt(SOURCE_ID));
                 String optString2 = jSONObject.optString("link");
-                if (!TextUtils.isEmpty(optString2)) {
+                if (!StringUtils.isEmpty(optString2)) {
                     scheduleDTO.setLink(optString2);
                 }
                 String optString3 = jSONObject.optString("startTime");
-                if (!TextUtils.isEmpty(optString3)) {
+                if (!StringUtils.isEmpty(optString3)) {
                     scheduleDTO.setStartTime(optString3);
                 }
                 String optString4 = jSONObject.optString(END_TIME);
-                if (!TextUtils.isEmpty(optString4)) {
+                if (!StringUtils.isEmpty(optString4)) {
                     scheduleDTO.setEndTime(optString4);
                 }
                 String optString5 = jSONObject.optString("title");
-                if (!TextUtils.isEmpty(optString5)) {
+                if (!StringUtils.isEmpty(optString5)) {
                     scheduleDTO.setTitle(optString5);
                 }
                 scheduleDTO.setRemind(jSONObject.optInt(REMIND));
-                if (TextUtils.isEmpty(Login.getUserId()) || TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(Login.getUserId()) || StringUtils.isEmpty(optString)) {
                     return;
                 }
                 String str3 = Login.getUserId() + "_" + optString;
@@ -205,14 +205,14 @@ public class ShopWXCalendarManager extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3d967f27", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(Login.getUserId())) {
+        } else if (StringUtils.isEmpty(Login.getUserId())) {
             Login.login(true);
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString = jSONObject.optString("businessId");
                 int optInt = jSONObject.optInt(SOURCE_ID);
-                if (TextUtils.isEmpty(Login.getUserId()) || TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(Login.getUserId()) || StringUtils.isEmpty(optString)) {
                     return;
                 }
                 String str3 = Login.getUserId() + "_" + optString;

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
 import com.taobao.orange.OrangeConfig;
@@ -139,14 +139,14 @@ public class a {
                         ipChange2.ipc$dispatch("4f2fc4ea", new Object[]{this, str, map});
                     } else if (Boolean.parseBoolean(map.get("fromCache"))) {
                         TLog.loge("TBAutoSize.ConfigManager", "onConfigUpdate: update from cache");
-                    } else if (TextUtils.equals(str, "easy_go_config")) {
+                    } else if (StringUtils.equals(str, "easy_go_config")) {
                         if (a.a(a.this) == null) {
                             return;
                         }
                         String config = OrangeConfig.getInstance().getConfig(str, "dynamicEasyGoEnable", "false");
                         a.a(a.this).getSharedPreferences("easy_go_config", 0).edit().putString("dynamicEasyGoEnable", config).apply();
                         TLog.loge("TBAutoSize.ConfigManager", "onConfigUpdate: update for easy go, easy go enable is " + config);
-                    } else if (!TextUtils.equals(str, "auto_size_device_config") || (configs = OrangeConfig.getInstance().getConfigs(str)) == null) {
+                    } else if (!StringUtils.equals(str, "auto_size_device_config") || (configs = OrangeConfig.getInstance().getConfigs(str)) == null) {
                     } else {
                         a.b(a.this, configs);
                         a.a(a.this, configs);
@@ -236,14 +236,14 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("696f900f", new Object[]{map, str, str2});
         }
-        if (TextUtils.isEmpty(str) || (obj = map.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (obj = map.get(str)) == null) {
             return str2;
         }
         if (obj instanceof String) {
             return (String) obj;
         }
         String obj2 = obj.toString();
-        return TextUtils.isEmpty(obj2) ? str2 : obj2;
+        return StringUtils.isEmpty(obj2) ? str2 : obj2;
     }
 
     private static void a(String str, List<String> list) {
@@ -251,9 +251,9 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1aa3523", new Object[]{str, list});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             for (String str2 : str.split(";")) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     list.add(str2);
                 }
             }

@@ -1,6 +1,6 @@
 package com.alipay.android.app.pay;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.utils.JsonUtil;
 import com.alipay.android.msp.utils.LogUtil;
@@ -21,7 +21,7 @@ public class MspResult {
         int indexOf;
         String str2 = null;
         try {
-            if (!TextUtils.isEmpty(str) && str.contains("{\"biz_type\":\"share_pp\"}") && str.contains("extendInfo={")) {
+            if (!StringUtils.isEmpty(str) && str.contains("{\"biz_type\":\"share_pp\"}") && str.contains("extendInfo={")) {
                 String gatValue = gatValue(str.substring(str.indexOf("extendInfo={")), MspGlobalDefine.EXTENDINFO);
                 if (JsonUtil.isJsonObjectString(gatValue)) {
                     str2 = gatValue;
@@ -29,7 +29,7 @@ public class MspResult {
             }
             this.extendInfo = str2;
             String str3 = this.extendInfo;
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str3) && (indexOf = str.indexOf("extendInfo={".concat(String.valueOf(str3)))) > 0) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str3) && (indexOf = str.indexOf("extendInfo={".concat(String.valueOf(str3)))) > 0) {
                 str = str.substring(0, indexOf);
             }
             for (String str4 : str.split(";")) {

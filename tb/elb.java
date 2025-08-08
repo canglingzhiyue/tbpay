@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -158,7 +158,7 @@ public final class elb implements ekl {
             picGalleryProgressBar.setFrameTagColor(e);
             picGalleryProgressBar.showFrameProgress();
             a(picGalleryProgressBar, b);
-            if (TextUtils.equals(a3.p(), "init")) {
+            if (StringUtils.equals(a3.p(), "init")) {
                 picGalleryProgressBar.setFrameProgress(e);
             } else {
                 picGalleryProgressBar.setFrameProgress(e + a3.q());

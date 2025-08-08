@@ -1,6 +1,6 @@
 package com.taobao.android.sku.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliConfigInterface;
@@ -30,7 +30,7 @@ public class SkuRequestParams implements a, Serializable {
     }
 
     public SkuRequestParams(String str, Map<String, String> map) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mItemId = str;
         }
         if (map != null) {

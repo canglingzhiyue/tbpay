@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
 import com.etao.feimagesearch.mnn.j;
@@ -47,7 +47,7 @@ public class cof {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
         String a2 = a(str);
-        return TextUtils.isEmpty(a2) ? str2 : a2;
+        return StringUtils.isEmpty(a2) ? str2 : a2;
     }
 
     public static String a() {
@@ -61,10 +61,10 @@ public class cof {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
         String b = j.Companion.a().b();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return b;
         }
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return str;
         }
         return str + "," + b;

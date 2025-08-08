@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.request.preload;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -64,7 +64,7 @@ public class d {
         }
         ArrayList arrayList = new ArrayList();
         String stringExtra = intent.getStringExtra(PreloadTaskBroadcastReceiver.START_PRELOAD_TASKS);
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             arrayList.addAll(a(stringExtra));
         } else {
             arrayList.add(b(intent));
@@ -105,7 +105,7 @@ public class d {
             return arrayList;
         }
         String string = parseObject.getString("sourceFrom");
-        if (TextUtils.isEmpty(string) || !f10791a.contains(string)) {
+        if (StringUtils.isEmpty(string) || !f10791a.contains(string)) {
             return arrayList;
         }
         String string2 = parseObject.getString("bizName");
@@ -119,17 +119,17 @@ public class d {
                 JSONObject jSONObject = (JSONObject) next;
                 c a2 = c.a(jSONObject);
                 JSONObject jSONObject2 = a2.f10790a;
-                if (TextUtils.isEmpty(jSONObject2.getString("from"))) {
-                    jSONObject2.put("from", (Object) (TextUtils.isEmpty(string) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : string));
+                if (StringUtils.isEmpty(jSONObject2.getString("from"))) {
+                    jSONObject2.put("from", (Object) (StringUtils.isEmpty(string) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : string));
                 }
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     jSONObject2.put("bizName", (Object) string2);
                 }
                 jSONObject2.put(nfc.PHA_MONITOR_DIMENSION_PRELOAD_TYPE, (Object) "batch");
                 a2.c = jSONObject2.getString(nfc.PHA_MONITOR_DIMENSION_PRELOAD_TYPE);
                 a2.d = jSONObject2.getString("from");
                 String string3 = jSONObject.getString("itemId");
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     a2.b = string3;
                 }
                 com.taobao.android.detail.ttdetail.utils.i.a("PreloadItemManager", "批量预加载itemId=" + a2.b);
@@ -148,6 +148,6 @@ public class d {
             return com.taobao.android.detail.ttdetail.constant.a.UN_KNOW;
         }
         String queryParameter = uri.getQueryParameter("from");
-        return TextUtils.isEmpty(queryParameter) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : queryParameter;
     }
 }

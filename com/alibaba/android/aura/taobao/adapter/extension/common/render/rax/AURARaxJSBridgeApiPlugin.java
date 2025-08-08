@@ -1,7 +1,7 @@
 package com.alibaba.android.aura.taobao.adapter.extension.common.render.rax;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
@@ -77,7 +77,7 @@ public class AURARaxJSBridgeApiPlugin extends RaxJSBridgeApiPlugin {
                 event.setFields(fields);
             }
             String string = fields.getString("option");
-            if ("confirm".equals(string) || TextUtils.isEmpty(string)) {
+            if ("confirm".equals(string) || StringUtils.isEmpty(string)) {
                 fields.put("isConfirm", (Object) true);
             }
             dVar.a(fields);

@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import tb.czp;
@@ -15,7 +15,7 @@ public class O0000Oo0 {
             if (!O000000o) {
                 return;
             }
-            TextUtils.isEmpty(str);
+            StringUtils.isEmpty(str);
         } catch (Throwable th) {
             try {
                 ExceptionProcessor.processException(th);
@@ -71,7 +71,7 @@ public class O0000Oo0 {
             if (!O000000o) {
                 return;
             }
-            TextUtils.isEmpty(str);
+            StringUtils.isEmpty(str);
         } catch (Throwable th) {
             try {
                 ExceptionProcessor.processException(th);
@@ -112,7 +112,7 @@ public class O0000Oo0 {
             if (!O000000o) {
                 return;
             }
-            TextUtils.isEmpty(str);
+            StringUtils.isEmpty(str);
         } catch (Throwable th) {
             try {
                 ExceptionProcessor.processException(th);
@@ -124,7 +124,7 @@ public class O0000Oo0 {
 
     public static void O00000o0(String str) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             Log.e("AuthSDK", str);

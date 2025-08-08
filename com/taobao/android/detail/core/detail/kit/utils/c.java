@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.utils;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import java.io.BufferedReader;
@@ -70,7 +70,7 @@ public class c {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("/proc/meminfo"), 8192);
             String readLine = bufferedReader.readLine();
-            if (!TextUtils.isEmpty(readLine)) {
+            if (!StringUtils.isEmpty(readLine)) {
                 j = Integer.valueOf(readLine.split("\\s+")[1]).intValue();
             }
             bufferedReader.close();

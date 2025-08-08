@@ -3,7 +3,7 @@ package com.taobao.taolive.sdk.controller;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -52,16 +52,16 @@ public class k {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("eb6f75eb", new Object[]{str, uri});
         }
-        if (TextUtils.isEmpty(str)) {
-            if (uri != null && "tpp_88".equals(uri.getQueryParameter("livesource")) && !TextUtils.isEmpty(uri.getQueryParameter(aw.PARAM_UT_PARAMS)) && (b2 = pqj.b(Uri.decode(uri.getQueryParameter(aw.PARAM_UT_PARAMS)))) != null && b2.getString(aw.PARAMS_LIVE_TRACKINFO) != null) {
+        if (StringUtils.isEmpty(str)) {
+            if (uri != null && "tpp_88".equals(uri.getQueryParameter("livesource")) && !StringUtils.isEmpty(uri.getQueryParameter(aw.PARAM_UT_PARAMS)) && (b2 = pqj.b(Uri.decode(uri.getQueryParameter(aw.PARAM_UT_PARAMS)))) != null && b2.getString(aw.PARAMS_LIVE_TRACKINFO) != null) {
                 str = b2.getString(aw.PARAMS_LIVE_TRACKINFO);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
         }
         String decode = Uri.decode(str);
-        return (TextUtils.isEmpty(decode) || (split = decode.split("_")) == null || split.length <= 0 || split[0] == null || split[0].length() >= 128) ? "" : split[0];
+        return (StringUtils.isEmpty(decode) || (split = decode.split("_")) == null || split.length <= 0 || split[0] == null || split[0].length() >= 128) ? "" : split[0];
     }
 
     public static View a(Context context, int i) {
@@ -82,7 +82,7 @@ public class k {
             return ((Boolean) ipChange.ipc$dispatch("a821939f", new Object[]{new Integer(i)})).booleanValue();
         }
         String V = u.V();
-        if (TextUtils.isEmpty(V) || (c = pqj.c(V)) == null) {
+        if (StringUtils.isEmpty(V) || (c = pqj.c(V)) == null) {
             return false;
         }
         return c.contains(Integer.valueOf(i));

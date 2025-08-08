@@ -1,6 +1,6 @@
 package com.taobao.message.sp.framework.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.Map;
@@ -34,10 +34,10 @@ public class SimpleMsgCode implements Serializable {
     public SimpleMsgCode(String str, String str2) {
         this.messageId = str;
         this.clientId = str2;
-        if (TextUtils.isEmpty(this.messageId) && !TextUtils.isEmpty(this.clientId)) {
+        if (StringUtils.isEmpty(this.messageId) && !StringUtils.isEmpty(this.clientId)) {
             onlyClientIdMap.put(str2, 1);
         }
-        if (!TextUtils.isEmpty(this.messageId) && !TextUtils.isEmpty(this.clientId) && onlyClientIdMap.containsKey(str2) && !linkIdMap.containsKey(str)) {
+        if (!StringUtils.isEmpty(this.messageId) && !StringUtils.isEmpty(this.clientId) && onlyClientIdMap.containsKey(str2) && !linkIdMap.containsKey(str)) {
             linkIdMap.put(str, 0);
         }
         this.cacheHashCode = calcHashCode();
@@ -64,7 +64,7 @@ public class SimpleMsgCode implements Serializable {
 
     public boolean isNull() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f04d5dc", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.messageId) && TextUtils.isEmpty(this.clientId);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f04d5dc", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.messageId) && StringUtils.isEmpty(this.clientId);
     }
 
     public boolean equals(Object obj) {
@@ -77,15 +77,15 @@ public class SimpleMsgCode implements Serializable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             SimpleMsgCode simpleMsgCode = (SimpleMsgCode) obj;
-            if (TextUtils.isEmpty(this.messageId) || TextUtils.isEmpty(simpleMsgCode.messageId)) {
-                if (TextUtils.isEmpty(this.clientId) && TextUtils.isEmpty(simpleMsgCode.clientId)) {
+            if (StringUtils.isEmpty(this.messageId) || StringUtils.isEmpty(simpleMsgCode.messageId)) {
+                if (StringUtils.isEmpty(this.clientId) && StringUtils.isEmpty(simpleMsgCode.clientId)) {
                     return true;
                 }
-                if (!TextUtils.isEmpty(this.clientId) && !TextUtils.isEmpty(simpleMsgCode.clientId) && this.clientId.equals(simpleMsgCode.clientId)) {
+                if (!StringUtils.isEmpty(this.clientId) && !StringUtils.isEmpty(simpleMsgCode.clientId) && this.clientId.equals(simpleMsgCode.clientId)) {
                     return true;
                 }
             }
-            if (!TextUtils.isEmpty(this.messageId) && !TextUtils.isEmpty(simpleMsgCode.messageId) && this.messageId.equals(simpleMsgCode.messageId)) {
+            if (!StringUtils.isEmpty(this.messageId) && !StringUtils.isEmpty(simpleMsgCode.messageId) && this.messageId.equals(simpleMsgCode.messageId)) {
                 return true;
             }
         }
@@ -97,13 +97,13 @@ public class SimpleMsgCode implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("2b3da20a", new Object[]{this})).intValue();
         }
-        if (TextUtils.isEmpty(this.messageId)) {
-            if (!TextUtils.isEmpty(this.clientId)) {
+        if (StringUtils.isEmpty(this.messageId)) {
+            if (!StringUtils.isEmpty(this.clientId)) {
                 return this.clientId.hashCode();
             }
             return 0;
         } else if (linkIdMap.containsKey(this.messageId)) {
-            if (TextUtils.isEmpty(this.clientId)) {
+            if (StringUtils.isEmpty(this.clientId)) {
                 return linkIdMap.get(this.messageId).intValue();
             }
             int hashCode = this.clientId.hashCode();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -100,10 +100,10 @@ public class sky implements sla {
         }
         String str2 = sorVar.b;
         if (b.a(map, sorVar.i)) {
-            if (TextUtils.equals(str, str2)) {
+            if (StringUtils.equals(str, str2)) {
                 spz.c("CacheInterceptor", "preloadVideoMatched, 相同的内容Id:" + str);
                 return true;
-            } else if (!sorVar.s && !sorVar.k && TextUtils.equals(str, skw.FAKE_CONTENT_ID)) {
+            } else if (!sorVar.s && !sorVar.k && StringUtils.equals(str, skw.FAKE_CONTENT_ID)) {
                 spz.c("CacheInterceptor", "preloadVideoMatched, 预加载视频非缓存内容，请求推荐内容匹配");
                 return true;
             }

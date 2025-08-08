@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Build;
 import android.os.StatFs;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.android.cachecleaner.monitor.config.RuleConfig;
@@ -58,7 +58,7 @@ public class dvq {
         RuleConfig b2 = a.a().b();
         if (f27021a == -1) {
             List<String> softLinkExcludeBrand = b2.getSoftLinkExcludeBrand();
-            if (softLinkExcludeBrand == null || !c(a.a().d()) || (!TextUtils.isEmpty(Build.BRAND) && softLinkExcludeBrand.contains(Build.BRAND.toUpperCase()))) {
+            if (softLinkExcludeBrand == null || !c(a.a().d()) || (!StringUtils.isEmpty(Build.BRAND) && softLinkExcludeBrand.contains(Build.BRAND.toUpperCase()))) {
                 f27021a = 1;
             } else {
                 f27021a = 0;
@@ -76,7 +76,7 @@ public class dvq {
             return ((Boolean) ipChange.ipc$dispatch("ec608ed4", new Object[]{file, list})).booleanValue();
         }
         String absolutePath = file.getAbsolutePath();
-        if (absolutePath != null && !TextUtils.isEmpty(absolutePath) && list != null) {
+        if (absolutePath != null && !StringUtils.isEmpty(absolutePath) && list != null) {
             for (String str : list) {
                 if (absolutePath.contains(str)) {
                     return true;
@@ -117,7 +117,7 @@ public class dvq {
             return ((Boolean) ipChange.ipc$dispatch("9f76bba2", new Object[]{context})).booleanValue();
         }
         for (String str : context.getCacheDir().getAbsolutePath().split("/")) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (Pattern.matches("(([a-zA-Z0-9]{1,})\\.)+[a-zA-Z0-9]+", str) && !str.contains(context.getPackageName())) {
                     return false;
                 }
@@ -136,18 +136,18 @@ public class dvq {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("90186323", new Object[]{context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.split("/", 4).length < 4) {
             return null;
         }
         String str2 = File.separator + split[1] + File.separator + split[2];
-        if (TextUtils.equals(str2, a())) {
+        if (StringUtils.equals(str2, a())) {
             externalFilesDir = context.getCacheDir().getParentFile();
-        } else if (TextUtils.equals(str2, EXTERNAL_CACHE_DIR)) {
+        } else if (StringUtils.equals(str2, EXTERNAL_CACHE_DIR)) {
             externalFilesDir = context.getExternalCacheDir();
-        } else if (!TextUtils.equals(str2, EXTERNAL_FILES_DIR)) {
+        } else if (!StringUtils.equals(str2, EXTERNAL_FILES_DIR)) {
             return null;
         } else {
             externalFilesDir = context.getExternalFilesDir(null);

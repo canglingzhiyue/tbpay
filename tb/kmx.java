@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -46,7 +46,7 @@ public class kmx {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6c928795", new Object[]{kmoVar});
         }
-        if (!TextUtils.isEmpty(kmoVar.d)) {
+        if (!StringUtils.isEmpty(kmoVar.d)) {
             return kmoVar.d;
         }
         try {
@@ -62,7 +62,7 @@ public class kmx {
             return (String) ipChange.ipc$dispatch("855d1f0b", new Object[]{str, kmoVar});
         }
         String a2 = a(kmoVar);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "";
         }
         File file = new File(str, a2);

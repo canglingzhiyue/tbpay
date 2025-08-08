@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
 import com.alibaba.triver.triver_shop.container.shopLoft.b;
 import com.huawei.hms.aaid.constant.ErrorEnum;
@@ -29,7 +29,7 @@ public class PluginUtil {
     }
 
     private static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -81,8 +81,8 @@ public class PluginUtil {
     }
 
     private static boolean a(Context context, String[] strArr) {
-        if (TextUtils.equals(strArr[1], "0")) {
-            return a(context) || TextUtils.equals(strArr[2], "1");
+        if (StringUtils.equals(strArr[1], "0")) {
+            return a(context) || StringUtils.equals(strArr[2], "1");
         }
         return false;
     }
@@ -94,7 +94,7 @@ public class PluginUtil {
 
     public static boolean onDataMessage(Context context, String str, String str2, boolean z) {
         HMSLog.i("PluginUtil", "onDataMessage");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             HMSLog.i("PluginUtil", "Empty message received");
             return true;
         }
@@ -146,7 +146,7 @@ public class PluginUtil {
         bundle.putInt("error", errorEnum.getInternalCode());
         bundle.putString("message_type", "new_token");
         bundle.putString(RemoteMessageConst.DEVICE_TOKEN, str);
-        if (TextUtils.equals(str2, context.getPackageName())) {
+        if (StringUtils.equals(str2, context.getPackageName())) {
             bundle.putString("subjectId", null);
         } else {
             bundle.putString("subjectId", str2);

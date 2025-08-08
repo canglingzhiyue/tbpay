@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.search;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -96,10 +96,10 @@ public class b {
             return (HashMap) ipChange.ipc$dispatch("b0fddba4", new Object[]{str, str2});
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("feed_id", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("account_id", str2);
         }
         return hashMap;

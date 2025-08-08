@@ -1,6 +1,6 @@
 package com.loc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.Thread;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.Executors;
@@ -67,7 +67,7 @@ public final class cq implements ThreadFactory {
         if (this.h >= this.g) {
             this.j = aVar.h;
             this.i = aVar.i == null ? new LinkedBlockingQueue<>(256) : aVar.i;
-            this.d = TextUtils.isEmpty(aVar.c) ? "amap-threadpool" : aVar.c;
+            this.d = StringUtils.isEmpty(aVar.c) ? "amap-threadpool" : aVar.c;
             this.e = aVar.d;
             this.f = aVar.e;
             this.c = aVar.b;

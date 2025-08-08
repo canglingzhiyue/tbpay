@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.artc.api.AConstants;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.GlobalSettings;
@@ -51,7 +51,7 @@ public abstract class a implements j {
 
     private void j() {
         String stringValue = GlobalSettings.getStringValue(this.b.h);
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             com.uc.webview.base.io.d.a(this.f23898a, this.b.i, true, (ArrayList<File>) null);
         } else {
             com.uc.webview.base.io.d.a(this.f23898a, this.b.i, true, (ArrayList<File>) new ArrayList(Arrays.asList(new File(stringValue))));
@@ -63,9 +63,9 @@ public abstract class a implements j {
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(int i) {
         String str = GlobalSettings.get(this.b.h, "");
-        this.d.a((TextUtils.isEmpty(str) || x.a(str)) ? 0 : a(new File(str)) ? 1 : 2);
+        this.d.a((StringUtils.isEmpty(str) || x.a(str)) ? 0 : a(new File(str)) ? 1 : 2);
         String a2 = a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.e = new i(this.b, a2);
             if (b()) {
                 this.d.b(-101);
@@ -88,7 +88,7 @@ public abstract class a implements j {
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean b() {
         i iVar;
-        if (f || ((iVar = this.e) != null && !TextUtils.isEmpty(iVar.c))) {
+        if (f || ((iVar = this.e) != null && !StringUtils.isEmpty(iVar.c))) {
             return a(this.e.f23911a);
         }
         throw new AssertionError();

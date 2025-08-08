@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -73,14 +73,14 @@ public class fpn {
         String str = (String) map.get("dWidth");
         String str2 = (String) map.get("dHeight");
         int i = -1;
-        if (TextUtils.equals(str, "match_content")) {
+        if (StringUtils.equals(str, "match_content")) {
             a2 = -2;
         } else {
-            a2 = TextUtils.equals(str, "match_parent") ? -1 : fpr.a(context, str, 0);
+            a2 = StringUtils.equals(str, "match_parent") ? -1 : fpr.a(context, str, 0);
         }
-        if (TextUtils.equals(str2, "match_content")) {
+        if (StringUtils.equals(str2, "match_content")) {
             i = -2;
-        } else if (!TextUtils.equals(str2, "match_parent")) {
+        } else if (!StringUtils.equals(str2, "match_parent")) {
             i = fpr.a(context, str2, 0);
         }
         return new int[]{a2, i, fpr.a(context, map.get("dMarginLeft"), 0), fpr.a(context, map.get("dMarginTop"), 0), fpr.a(context, map.get("dMarginRight"), 0), fpr.a(context, map.get("dMarginBottom"), 0)};
@@ -123,7 +123,7 @@ public class fpn {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {

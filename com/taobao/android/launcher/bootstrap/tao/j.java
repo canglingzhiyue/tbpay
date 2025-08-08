@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.bootstrap.tao.LoginBroadcastRegister;
@@ -67,7 +67,7 @@ public class j implements gtv {
         }
         f.b();
         com.taobao.android.launcher.biz.task.k.a(xjp.a("QoScheduleTask"));
-        if (!TextUtils.equals(this.e.f28453a, this.e.b)) {
+        if (!StringUtils.equals(this.e.f28453a, this.e.b)) {
             Process.setThreadPriority(5);
         }
         Application application = this.d;

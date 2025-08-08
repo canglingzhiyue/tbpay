@@ -2,7 +2,7 @@ package com.taobao.search.sf.widgets.list.listcell.weex;
 
 import android.app.Activity;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -275,7 +275,7 @@ public class e extends jzf implements GestureDetector.OnGestureListener {
         } else if (jSONObject != null && (a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "keys")) != null) {
             for (int i = 0; i < a2.size(); i++) {
                 String string = a2.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     a().clearParam(string);
                 }
             }

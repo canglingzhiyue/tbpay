@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.xsl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -158,7 +158,7 @@ public final class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f15029a)) {
+        } else if (StringUtils.isEmpty(this.f15029a)) {
         } else {
             AppMonitor.register("tbsearch", "xslStats", MeasureSet.create().addMeasure(i.b.MEASURE_ONCREATE).addMeasure("init").addMeasure("downloadPage").addMeasure("render").addMeasure("dataCost").addMeasure("downloadTemplate").addMeasure("total"), DimensionSet.create().addDimension("pageName").addDimension("preload").addDimension(ICallService.KEY_NEED_INIT));
             AppMonitor.Stat.commit("tbsearch", "xslStats", DimensionValueSet.create().setValue("pageName", this.f15029a).setValue("preload", String.valueOf(this.l)).setValue(ICallService.KEY_NEED_INIT, String.valueOf(this.m)), MeasureValueSet.create().setValue(i.b.MEASURE_ONCREATE, this.e - this.b).setValue("init", this.c - this.d).setValue("downloadPage", this.i).setValue("render", this.f).setValue("dataCost", this.k - this.g).setValue("downloadTemplate", this.j).setValue("total", this.k - this.b));

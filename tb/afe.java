@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,7 +57,7 @@ public class afe implements afd, afd.a {
         }
         Log.e("MessageChannel", "onReceiveMessage event = getInitData");
         arc.a().b("onReceiveMessage event = getInitData", arc.a.a().b("MessageChannel").a("LightBuy/event").a("receive", "getInitData").b());
-        if (jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("failTest")) && affVar2 != null) {
+        if (jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("failTest")) && affVar2 != null) {
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("code", (Object) "code");
             jSONObject2.put("message", (Object) "message");
@@ -148,7 +148,7 @@ public class afe implements afd, afd.a {
                 return;
             }
             String string = jSONObject2.getString("type");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 arc.a().a("invokeAuraEvent eventType is null");
                 return;
             }

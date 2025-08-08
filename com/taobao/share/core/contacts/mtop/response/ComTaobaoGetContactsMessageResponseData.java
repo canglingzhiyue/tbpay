@@ -1,6 +1,6 @@
 package com.taobao.share.core.contacts.mtop.response;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.ui.engine.structure.BubbleTipsBean;
 import java.io.Serializable;
@@ -170,7 +170,7 @@ public class ComTaobaoGetContactsMessageResponseData implements Serializable, IM
 
             public boolean isFromRecommend() {
                 IpChange ipChange = $ipChange;
-                return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("36e01fb3", new Object[]{this})).booleanValue() : TextUtils.equals("2", this.sourceType);
+                return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("36e01fb3", new Object[]{this})).booleanValue() : StringUtils.equals("2", this.sourceType);
             }
 
             public void setSourceType(String str) {

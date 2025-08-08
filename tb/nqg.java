@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -180,7 +180,7 @@ public final class nqg extends iut {
         }
         q.c(event, "event");
         this.d = true;
-        if (TextUtils.isEmpty(event.f31684a) && !event.b) {
+        if (StringUtils.isEmpty(event.f31684a) && !event.b) {
             if (!this.f) {
                 return;
             }

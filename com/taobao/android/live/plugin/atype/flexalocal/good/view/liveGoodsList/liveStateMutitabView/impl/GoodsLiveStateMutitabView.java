@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -271,7 +271,7 @@ public class GoodsLiveStateMutitabView extends GoodsBaseView<hjg> implements ddv
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("184d6f33", new Object[]{this, new Integer(i)});
-                } else if (TextUtils.equals(((SingleTabBaseView) GoodsLiveStateMutitabView.access$100(GoodsLiveStateMutitabView.this).get(i)).categoryId, GoodsLiveStateMutitabView.access$300(GoodsLiveStateMutitabView.this))) {
+                } else if (StringUtils.equals(((SingleTabBaseView) GoodsLiveStateMutitabView.access$100(GoodsLiveStateMutitabView.this).get(i)).categoryId, GoodsLiveStateMutitabView.access$300(GoodsLiveStateMutitabView.this))) {
                     GoodsLiveStateMutitabView.access$202(GoodsLiveStateMutitabView.this, i);
                 } else {
                     GoodsLiveStateMutitabView.access$400(GoodsLiveStateMutitabView.this, i, true);
@@ -379,7 +379,7 @@ public class GoodsLiveStateMutitabView extends GoodsBaseView<hjg> implements ddv
                         break;
                     }
                     SingleTabBaseView next = it.next();
-                    if (!TextUtils.isEmpty(next.categoryId) && next.categoryId.equals(itemCategory.categoryId)) {
+                    if (!StringUtils.isEmpty(next.categoryId) && next.categoryId.equals(itemCategory.categoryId)) {
                         next.setItemCategory(itemCategory);
                         arrayList2.add(next);
                         z = true;
@@ -391,16 +391,16 @@ public class GoodsLiveStateMutitabView extends GoodsBaseView<hjg> implements ddv
                     arrayList2.add(constructTabView);
                 }
                 arrayList3.add(itemCategory.categoryId);
-                arrayList.add(TextUtils.isEmpty(itemCategory.bizType) ? "null" : itemCategory.bizType);
+                arrayList.add(StringUtils.isEmpty(itemCategory.bizType) ? "null" : itemCategory.bizType);
             }
         }
         int i = -1;
         int i2 = -1;
         for (SingleTabBaseView singleTabBaseView : arrayList2) {
-            if (!TextUtils.isEmpty(this.currentTabCategory) && this.currentTabCategory.equals(singleTabBaseView.categoryId)) {
+            if (!StringUtils.isEmpty(this.currentTabCategory) && this.currentTabCategory.equals(singleTabBaseView.categoryId)) {
                 i = arrayList2.indexOf(singleTabBaseView);
             }
-            if (!TextUtils.isEmpty(str) && TextUtils.equals(singleTabBaseView.categoryId, str)) {
+            if (!StringUtils.isEmpty(str) && StringUtils.equals(singleTabBaseView.categoryId, str)) {
                 i2 = arrayList2.indexOf(singleTabBaseView);
             }
         }
@@ -556,7 +556,7 @@ public class GoodsLiveStateMutitabView extends GoodsBaseView<hjg> implements ddv
         if (i >= size || (itemCategory = this.liveStateViewList.get(i).getItemCategory()) == null) {
             return false;
         }
-        return TextUtils.equals(str, itemCategory.categoryId);
+        return StringUtils.equals(str, itemCategory.categoryId);
     }
 
     public boolean switchToTab(String str) {
@@ -564,10 +564,10 @@ public class GoodsLiveStateMutitabView extends GoodsBaseView<hjg> implements ddv
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3cfc3e5b", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !this.liveStateViewList.isEmpty()) {
+        if (!StringUtils.isEmpty(str) && !this.liveStateViewList.isEmpty()) {
             for (int i = 0; i < this.liveStateViewList.size(); i++) {
                 ItemCategory itemCategory = this.liveStateViewList.get(i).getItemCategory();
-                if (TextUtils.equals(itemCategory.categoryId, str)) {
+                if (StringUtils.equals(itemCategory.categoryId, str)) {
                     this.mGoodLiveContext.a(itemCategory);
                     this.currentTabCategory = itemCategory.categoryId;
                     this.mViewPager.setCurrentItem(i);

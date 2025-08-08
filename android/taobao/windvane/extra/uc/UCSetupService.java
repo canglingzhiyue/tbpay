@@ -15,7 +15,7 @@ import android.taobao.windvane.thread.WVThreadPool;
 import android.taobao.windvane.util.a;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.c;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uc.webview.base.UCKnownException;
 import com.uc.webview.export.extension.GlobalSettings;
@@ -62,9 +62,9 @@ public final class UCSetupService {
         }
         String c = a.c(context);
         String packageName = context.getPackageName();
-        if (!TextUtils.equals(c, packageName + ":sandboxed_privilege_process0")) {
-            if (!TextUtils.equals(c, packageName + ":sandboxed_process0")) {
-                if (!TextUtils.equals(c, packageName + ":gpu_process")) {
+        if (!StringUtils.equals(c, packageName + ":sandboxed_privilege_process0")) {
+            if (!StringUtils.equals(c, packageName + ":sandboxed_process0")) {
+                if (!StringUtils.equals(c, packageName + ":gpu_process")) {
                     return false;
                 }
             }
@@ -147,7 +147,7 @@ public final class UCSetupService {
         try {
             m.c(TAG, "set audio output use aaudio: " + kVar.dh);
             String str = android.taobao.windvane.config.m.a().f1566a;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             m.c(TAG, "set cookie black list = " + str + " to uc");
@@ -193,11 +193,11 @@ public final class UCSetupService {
         m.e(TAG, "initU4 specifiedDir: " + str + ", lib:" + str2 + ", url:" + str3);
         try {
             U4Engine.Initializer authKey = U4Engine.createInitializer().setContext(context.getApplicationContext()).setAuthKey(strArr);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 authKey.setDecompressedDir(new File(str));
-            } else if (!TextUtils.isEmpty(str2)) {
+            } else if (!StringUtils.isEmpty(str2)) {
                 authKey.setCompressedFile(new File(str2));
-            } else if (!TextUtils.isEmpty(str3)) {
+            } else if (!StringUtils.isEmpty(str3)) {
                 authKey.setUrl(str3);
             }
             authKey.setClient(new U4Engine.InitializerClient() { // from class: android.taobao.windvane.extra.uc.UCSetupService.2
@@ -581,7 +581,7 @@ public final class UCSetupService {
             return "";
         }
         String substring = a.c(android.taobao.windvane.config.a.f).substring(android.taobao.windvane.config.a.f.getPackageName().length() + 1);
-        if (TextUtils.isEmpty(substring)) {
+        if (StringUtils.isEmpty(substring)) {
             throw new RuntimeException(String.format("%s getMultiProcessPrivateDataDirectorySuffix failure! Subprocess name: %s illegal.", TAG, a.c(android.taobao.windvane.config.a.f)));
         }
         return substring;

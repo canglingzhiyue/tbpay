@@ -3,7 +3,7 @@ package com.taobao.android.preview;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -247,10 +247,10 @@ public class d extends RecyclerView.Adapter<f> {
         if (dXTemplateItem.d() == 20000) {
             return false;
         }
-        if (!TextUtils.isEmpty(dXTemplateItem.c) && (dXTemplateItem.c.endsWith(".zip") || dXTemplateItem.c.endsWith("._dxv4") || dXTemplateItem.c.contains("._dxv4") || dXTemplateItem.c.contains(".zip"))) {
+        if (!StringUtils.isEmpty(dXTemplateItem.c) && (dXTemplateItem.c.endsWith(".zip") || dXTemplateItem.c.endsWith("._dxv4") || dXTemplateItem.c.contains("._dxv4") || dXTemplateItem.c.contains(".zip"))) {
             return true;
         }
-        return TextUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.b >= 0;
+        return StringUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.b >= 0;
     }
 
     private void a(final DXRootView dXRootView) {
@@ -327,7 +327,7 @@ public class d extends RecyclerView.Adapter<f> {
             }
             StaggeredGridLayoutManager.LayoutParams layoutParams = (StaggeredGridLayoutManager.LayoutParams) fVar.itemView.getLayoutParams();
             String string = this.d.getJSONObject(i).getJSONObject("template").getString("columnType");
-            if (!TextUtils.equals(string, "one") && !TextUtils.isEmpty(string)) {
+            if (!StringUtils.equals(string, "one") && !StringUtils.isEmpty(string)) {
                 z = false;
             }
             layoutParams.setFullSpan(z);

@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -48,10 +48,10 @@ public class a {
             return (AlertDialog.Builder) ipChange.ipc$dispatch("a60551ae", new Object[]{context, str, str2, onClickListener, str3, onClickListener2});
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        if (!TextUtils.isEmpty(str3) && onClickListener2 != null) {
+        if (!StringUtils.isEmpty(str3) && onClickListener2 != null) {
             builder.setPositiveButton(str3, onClickListener2);
         }
-        if (!TextUtils.isEmpty(str2) && onClickListener != null) {
+        if (!StringUtils.isEmpty(str2) && onClickListener != null) {
             builder.setNegativeButton(str2, onClickListener);
         }
         return builder;

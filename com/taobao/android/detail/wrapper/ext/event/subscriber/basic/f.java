@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.basic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.event.basic.k;
@@ -71,19 +71,19 @@ public class f implements j<k> {
             return (String) ipChange.ipc$dispatch("bfa4f210", new Object[]{this, str, str2, str3, str4});
         }
         StringBuilder sb = new StringBuilder("");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb = new StringBuilder(str);
             if (str.contains("?")) {
                 String str5 = str.split("\\?")[1];
-                if (!TextUtils.isEmpty(str2) && !str5.contains("sellerId")) {
+                if (!StringUtils.isEmpty(str2) && !str5.contains("sellerId")) {
                     sb.append("&sellerId=");
                     sb.append(str2);
                 }
-                if (!TextUtils.isEmpty(str3) && !str5.contains("shopId")) {
+                if (!StringUtils.isEmpty(str3) && !str5.contains("shopId")) {
                     sb.append("&shopId=");
                     sb.append(str3);
                 }
-                if (!TextUtils.isEmpty(str4) && !str5.contains("itemId")) {
+                if (!StringUtils.isEmpty(str4) && !str5.contains("itemId")) {
                     sb.append("&itemId=");
                     sb.append(str4);
                 }
@@ -92,12 +92,12 @@ public class f implements j<k> {
                     sb.append(com.taobao.android.detail.core.request.b.b);
                 }
             } else {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     sb.append("?sellerId=");
                     sb.append(str2);
                     z = true;
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     if (!z) {
                         sb.append("?shopId=");
                     } else {
@@ -106,7 +106,7 @@ public class f implements j<k> {
                     sb.append(str3);
                     z = true;
                 }
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     if (!z) {
                         sb.append("?itemId=");
                     } else {

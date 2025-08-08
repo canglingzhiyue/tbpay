@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
@@ -122,7 +122,7 @@ public class eji {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5a42ec43", new Object[]{this, aURAGlobalData, qVar, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (z && b(qVar, str)) {
                 return;

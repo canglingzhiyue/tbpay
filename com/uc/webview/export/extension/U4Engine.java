@@ -1,7 +1,7 @@
 package com.uc.webview.export.extension;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.uc.webview.base.Log;
 import com.uc.webview.base.UCKnownException;
@@ -191,7 +191,7 @@ public final class U4Engine {
     public static File getExtractDirByUrl(Context context, String str) {
         l b = l.b();
         File e = PathUtils.e(context);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return e;
         }
         j e2 = b.e();

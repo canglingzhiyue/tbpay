@@ -1,6 +1,6 @@
 package com.taobao.taobaoavsdk.dlna;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.AVSDKLog;
 import java.util.HashMap;
@@ -94,7 +94,7 @@ public class DLNAManager {
         }
         log("init");
         String a2 = ozr.e().a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             log("get so path fail.");
             return;
         }
@@ -196,19 +196,19 @@ public class DLNAManager {
             this.mStartCallback = bVar;
             String str = hashMap.get("projectScreenPlayUrl");
             String str2 = hashMap.get("projectScreenPlayUrlBackup");
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
-                if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
                     return;
                 }
                 i = 1;
             }
             String[] strArr = new String[i];
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 strArr[0] = str;
                 strArr[1] = str2;
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 strArr[0] = str;
-            } else if (!TextUtils.isEmpty(str2)) {
+            } else if (!StringUtils.isEmpty(str2)) {
                 strArr[1] = str2;
             }
             long _startInNative = _startInNative(dLNADeviceInfo.deviceId, strArr);

@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.datamodel.protocol.ultron;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -42,7 +42,7 @@ public class UltronDeltaProtocol implements Serializable {
             }
             this.data = new HashMap();
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     JSONObject jSONObject2 = jSONObject.getJSONObject(str);
                     if (jSONObject2 instanceof JSONObject) {
                         this.data.put(str, new Component(jSONObject2));

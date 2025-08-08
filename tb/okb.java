@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -38,17 +38,17 @@ public class okb {
         } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("mainPicContainer")) == null) {
         } else {
             String string = jSONObject2.getString("autoScrollGap");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.f32134a = Integer.parseInt(string);
             }
             this.c = !"false".equals(jSONObject2.getString("enableAutoScroll"));
             String string2 = jSONObject2.getString("autoScrollDuration");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 this.b = Integer.parseInt(string2);
             }
             this.d = "true".equals(jSONObject2.getString("enableImagePullLeftTips"));
             String string3 = jSONObject2.getString("imagePullLeftDistance");
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 this.e = Integer.parseInt(string3);
                 this.e = fjl.a(this.j, this.e) / 2;
             }
@@ -57,11 +57,11 @@ public class okb {
             this.g = jSONObject2.getString("imagePullLeftReleaseText");
             this.g = a(this.g);
             String string4 = jSONObject2.getString("enableBlurImage");
-            if (!TextUtils.isEmpty(string4)) {
+            if (!StringUtils.isEmpty(string4)) {
                 this.h = !"false".equals(string4);
             }
             String string5 = jSONObject2.getString("bottomAreaBasic");
-            if (TextUtils.isEmpty(string5)) {
+            if (StringUtils.isEmpty(string5)) {
                 return;
             }
             this.i = Integer.parseInt(string5);

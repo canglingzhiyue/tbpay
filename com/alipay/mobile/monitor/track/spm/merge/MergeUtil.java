@@ -1,6 +1,6 @@
 package com.alipay.mobile.monitor.track.spm.merge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.alipay.mobile.monitor.track.spm.SpmLogCator;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class MergeUtil {
         if (i != -1) {
             return i;
         }
-        if (TextUtils.isEmpty(MERGE_CONFIG)) {
+        if (StringUtils.isEmpty(MERGE_CONFIG)) {
             return 14336;
         }
         try {
@@ -60,7 +60,7 @@ public class MergeUtil {
         if (i != -1) {
             return i;
         }
-        if (TextUtils.isEmpty(MERGE_CONFIG)) {
+        if (StringUtils.isEmpty(MERGE_CONFIG)) {
             return 50;
         }
         try {
@@ -92,7 +92,7 @@ public class MergeUtil {
         if (!"-1".equals(c)) {
             return c;
         }
-        if (TextUtils.isEmpty(MERGE_CONFIG)) {
+        if (StringUtils.isEmpty(MERGE_CONFIG)) {
             return "1";
         }
         try {

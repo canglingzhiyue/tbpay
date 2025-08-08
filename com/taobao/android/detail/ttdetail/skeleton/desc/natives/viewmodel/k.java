@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -97,7 +97,7 @@ public class k extends e {
         this.v = jSONObject.getString("panoramaUrl");
         this.w = jSONObject.getString("videoTagUrl");
         this.y = jSONObject.getString(com.taobao.taolive.room.ui.fanslevel.a.ICON_RENDER);
-        if (!TextUtils.isEmpty(this.y)) {
+        if (!StringUtils.isEmpty(this.y)) {
             String[] split = this.y.split(",");
             if (this.x == null) {
                 this.x = new ArrayList<>();
@@ -132,7 +132,7 @@ public class k extends e {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("2f938578", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new a(str, 0, 0);
         }
         return null;

@@ -18,7 +18,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -474,7 +474,7 @@ public final class h {
         q.d(shpoNavi, "shpoNavi");
         q.d(tabBarViewModelArray, "tabBarViewModelArray");
         Pair<Integer, Integer> pair = new Pair<>(0, 0);
-        if (!TextUtils.isEmpty(shpoNavi) && tabBarViewModelArray.size() > 0 && (size = tabBarViewModelArray.size() - 1) >= 0) {
+        if (!StringUtils.isEmpty(shpoNavi) && tabBarViewModelArray.size() > 0 && (size = tabBarViewModelArray.size() - 1) >= 0) {
             while (true) {
                 int i = size - 1;
                 Object obj = tabBarViewModelArray.get(size);
@@ -669,7 +669,7 @@ public final class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4dbad4d8", new Object[]{str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 q.a((Object) str2);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.e;
 import com.taobao.android.dinamic.expressionv2.h;
@@ -53,7 +53,7 @@ public class fnk {
                     }
                 } else if ('}' == c && z2) {
                     String stringBuffer4 = stringBuffer2.toString();
-                    if (TextUtils.isEmpty(stringBuffer4)) {
+                    if (StringUtils.isEmpty(stringBuffer4)) {
                         obj = fpdVar.e();
                     } else {
                         fnp a2 = fnq.a(str4);
@@ -73,7 +73,7 @@ public class fnk {
                         }
                         b.a(str3, str2);
                     }
-                    if (obj != null && (!(obj instanceof String) || !TextUtils.isEmpty(obj.toString()))) {
+                    if (obj != null && (!(obj instanceof String) || !StringUtils.isEmpty(obj.toString()))) {
                         return obj;
                     }
                     z = false;

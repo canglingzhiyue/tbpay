@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import java.util.ArrayList;
@@ -44,7 +44,7 @@ public class fem {
         b(context, intent);
         this.b.a(this.f27862a);
         String a2 = this.b.a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.c.a(a2);
         }
         for (fel felVar : this.e) {

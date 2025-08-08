@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 
@@ -56,7 +56,7 @@ public class oan {
             return "(￥|¥)(.+?)(￥|¥)";
         }
         String b2 = oapVar.b();
-        return TextUtils.isEmpty(b2) ? "(￥|¥)(.+?)(￥|¥)" : b2;
+        return StringUtils.isEmpty(b2) ? "(￥|¥)(.+?)(￥|¥)" : b2;
     }
 
     public static String c() {

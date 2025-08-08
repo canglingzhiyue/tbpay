@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.q;
@@ -138,7 +138,7 @@ public class idw implements dug {
                 return;
             }
             String string = jSONObject.getString("overrideUrl");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a(string, jSONObject);
                 return;
             }
@@ -279,20 +279,20 @@ public class idw implements dug {
         }
         Bundle bundle = new Bundle();
         for (String str2 : jSONObject.keySet()) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 String string = jSONObject.getString(str2);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     bundle.putString(str2, string);
                 }
             }
         }
         String a2 = a(str);
         AliNavInterface a3 = t.a().a(this.f28951a).a(bundle);
-        if (!TextUtils.isEmpty(a2) && a2.contains("needbackpop=1")) {
+        if (!StringUtils.isEmpty(a2) && a2.contains("needbackpop=1")) {
             a3.b(RESULT_CODE_CUSTOM_PAYMENT);
         }
         a3.a(str);
-        if (TextUtils.isEmpty(a2) || !a2.contains("needpop=1")) {
+        if (StringUtils.isEmpty(a2) || !a2.contains("needpop=1")) {
             return;
         }
         a();
@@ -326,19 +326,19 @@ public class idw implements dug {
         hashMap.put("from", com.taobao.android.purchase.core.a.UT_PAGE_NAME);
         hashMap.put("result", "1");
         hashMap.put("agednessVersion", com.taobao.android.tbelder.b.c() ? "true" : "false");
-        if (!TextUtils.isEmpty(jSONObject.getString(CoreConstants.IN_PARAM_BIZ_ORDER_ID))) {
+        if (!StringUtils.isEmpty(jSONObject.getString(CoreConstants.IN_PARAM_BIZ_ORDER_ID))) {
             hashMap.put("orderids", jSONObject.getString(CoreConstants.IN_PARAM_BIZ_ORDER_ID));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("signStr"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("signStr"))) {
             hashMap.put("signStr", jSONObject.getString("signStr"));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("simplePay"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("simplePay"))) {
             hashMap.put("simplepay", jSONObject.getString("simplePay"));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString(FullPage.PARAM_BACK2Tab2URL))) {
+        if (!StringUtils.isEmpty(jSONObject.getString(FullPage.PARAM_BACK2Tab2URL))) {
             hashMap.put("backURL", jSONObject.getString(FullPage.PARAM_BACK2Tab2URL));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("unSuccessUrl"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("unSuccessUrl"))) {
             hashMap.put("unSuccessUrl", jSONObject.getString("unSuccessUrl"));
         }
         b(hashMap);
@@ -373,7 +373,7 @@ public class idw implements dug {
         if (jSONObject == null) {
             jSONObject = new JSONObject();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("paymentType", (Object) str);
         }
         if (jSONObject.isEmpty()) {
@@ -401,19 +401,19 @@ public class idw implements dug {
             return (iff) ipChange.ipc$dispatch("4d104923", new Object[]{this, str, str2, str3, str4, str5});
         }
         iff iffVar = new iff(this.f28951a);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             iffVar.a(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             iffVar.b(str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             iffVar.e(str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             iffVar.g(str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             iffVar.f(str5);
         }
         return iffVar;
@@ -447,7 +447,7 @@ public class idw implements dug {
             } else if (g2.isApiLockedResult()) {
                 retMsg = j;
             }
-            String valueOf = TextUtils.isEmpty(g2.getMappingCode()) ? String.valueOf(g2.getResponseCode()) : g2.getMappingCode();
+            String valueOf = StringUtils.isEmpty(g2.getMappingCode()) ? String.valueOf(g2.getResponseCode()) : g2.getMappingCode();
             jSONObject.put("errorMsg", (Object) retMsg);
             jSONObject.put(ZimMessageChannel.K_RPC_RES_CODE, (Object) valueOf);
         }
@@ -473,7 +473,7 @@ public class idw implements dug {
     private boolean b(String str, JSONObject jSONObject) {
         JSONObject jSONObject2;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("676c0fe1", new Object[]{this, str, jSONObject})).booleanValue() : "F-10008-11-16-006".equals(str) && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("data")) != null && !TextUtils.isEmpty(jSONObject2.getString("errorTipUrl"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("676c0fe1", new Object[]{this, str, jSONObject})).booleanValue() : "F-10008-11-16-006".equals(str) && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("data")) != null && !StringUtils.isEmpty(jSONObject2.getString("errorTipUrl"));
     }
 
     private void a(final Context context, com.alibaba.android.aura.b bVar, final JSONObject jSONObject) {

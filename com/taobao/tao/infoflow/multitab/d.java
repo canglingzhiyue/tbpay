@@ -3,7 +3,7 @@ package com.taobao.tao.infoflow.multitab;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -801,8 +801,8 @@ public class d extends j {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("7201fa60", new Object[]{this, str, str2});
         }
-        if (TextUtils.equals(str, com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE)) {
-            if (!TextUtils.isEmpty(str2) && (fVar = this.f20636a) != null) {
+        if (StringUtils.equals(str, com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE)) {
+            if (!StringUtils.isEmpty(str2) && (fVar = this.f20636a) != null) {
                 return fVar.a(str2);
             }
             return null;

@@ -1,6 +1,6 @@
 package com.taobao.mrt.thread;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.task.MRTJobRefuseReason;
 import java.util.HashSet;
@@ -146,7 +146,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("403eafeb", new Object[]{this, aVar});
-        } else if (aVar == null || TextUtils.isEmpty(aVar.b)) {
+        } else if (aVar == null || StringUtils.isEmpty(aVar.b)) {
         } else {
             this.e.add(aVar);
         }
@@ -156,7 +156,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c86eefca", new Object[]{this, aVar});
-        } else if (aVar == null || TextUtils.isEmpty(aVar.b)) {
+        } else if (aVar == null || StringUtils.isEmpty(aVar.b)) {
         } else {
             this.e.remove(aVar);
         }
@@ -170,7 +170,7 @@ public class c {
         if (this.d >= 4) {
             return MRTJobRefuseReason.MRTJobRefuseThreadExceed;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return MRTJobRefuseReason.MRTJobRefuseReasonNone;
         }
         if (com.taobao.mrt.c.c()) {

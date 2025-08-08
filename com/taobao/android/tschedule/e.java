@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
 import com.taobao.android.tschedule.trigger.nav.a;
@@ -260,7 +260,7 @@ public class e {
             return;
         }
         String g = g();
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             return;
         }
         OrangeConfig.getInstance().registerListener(new String[]{g}, new com.taobao.orange.d() { // from class: com.taobao.android.tschedule.e.1
@@ -288,7 +288,7 @@ public class e {
         } else {
             String a2 = jmh.a(jmg.CONFIG_KEY_RENDER_VERSION, "");
             String str = map.get(jmg.CONFIG_KEY_RENDER_VERSION);
-            if (!TextUtils.isEmpty(a2) && !a2.equals(str)) {
+            if (!StringUtils.isEmpty(a2) && !a2.equals(str)) {
                 z = true;
             }
             jkq.a("TS.Initialize", "Orange config update: " + map.toString());

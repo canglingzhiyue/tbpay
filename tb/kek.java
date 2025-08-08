@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.taobao.windvane.config.a;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.BootImageDataMgr;
@@ -37,7 +37,7 @@ public class kek {
         if (bootImageInfo == null) {
             kej.a(kem.TAG, "support show type no info");
             return false;
-        } else if (TextUtils.isEmpty(bootImageInfo.bizType)) {
+        } else if (StringUtils.isEmpty(bootImageInfo.bizType)) {
             kej.a(kem.TAG, "support show type bizType is empty");
             return false;
         } else if (BootImageInfo.BIZ_TYPE_VIDEO_ICON.equals(bootImageInfo.bizType) || BootImageInfo.BIZ_TYPE_VIDEO.equals(bootImageInfo.bizType) || "image".equals(bootImageInfo.bizType) || "poplayer".equals(bootImageInfo.bizType) || BootImageInfo.BIZ_TYPE_COLD_START_AD.equals(bootImageInfo.bizType) || "commercialAdNormal".equals(bootImageInfo.bizType) || "commercialAdVideo".equals(bootImageInfo.bizType)) {
@@ -58,19 +58,19 @@ public class kek {
             return null;
         }
         kej.a("BootImageBizTypeExtend", "BootImageInfo bizType " + bootImageInfo.bizType);
-        if (TextUtils.equals("commercialAdVideo", bootImageInfo.bizType)) {
+        if (StringUtils.equals("commercialAdVideo", bootImageInfo.bizType)) {
             return new f(context, bootImageInfo, viewGroup);
         }
-        if (TextUtils.equals("commercialAdNormal", bootImageInfo.bizType)) {
+        if (StringUtils.equals("commercialAdNormal", bootImageInfo.bizType)) {
             return new e(context, bootImageInfo, viewGroup);
         }
-        if (TextUtils.equals("image", bootImageInfo.bizType)) {
+        if (StringUtils.equals("image", bootImageInfo.bizType)) {
             return new g(context, bootImageInfo, viewGroup);
         }
-        if (TextUtils.equals(BootImageInfo.BIZ_TYPE_VIDEO, bootImageInfo.bizType)) {
+        if (StringUtils.equals(BootImageInfo.BIZ_TYPE_VIDEO, bootImageInfo.bizType)) {
             return new h(context, bootImageInfo, viewGroup, false);
         }
-        if (!TextUtils.equals(BootImageInfo.BIZ_TYPE_VIDEO_ICON, bootImageInfo.bizType)) {
+        if (!StringUtils.equals(BootImageInfo.BIZ_TYPE_VIDEO_ICON, bootImageInfo.bizType)) {
             return null;
         }
         return new h(context, bootImageInfo, viewGroup, true);
@@ -87,12 +87,12 @@ public class kek {
             return null;
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(bootImageInfo.videoUrl)) {
-            if (TextUtils.isEmpty(keo.c(bootImageInfo.videoUrl))) {
+        if (!StringUtils.isEmpty(bootImageInfo.videoUrl)) {
+            if (StringUtils.isEmpty(keo.c(bootImageInfo.videoUrl))) {
                 kej.a(kem.TAG, "no download resource, name isEmpty. itemId:" + bootImageInfo.itemId);
             } else {
                 kmo kmoVar = new kmo();
-                if (!TextUtils.isEmpty(bootImageInfo.videoMd5)) {
+                if (!StringUtils.isEmpty(bootImageInfo.videoMd5)) {
                     kmoVar.c = bootImageInfo.videoMd5;
                 }
                 kmoVar.f30167a = bootImageInfo.videoUrl;
@@ -102,16 +102,16 @@ public class kek {
         } else {
             kej.a(kem.TAG, "no download resource, videoUrl isEmpty. itemId:" + bootImageInfo.itemId);
         }
-        if (!TextUtils.isEmpty(bootImageInfo.actionResponse)) {
+        if (!StringUtils.isEmpty(bootImageInfo.actionResponse)) {
             a(arrayList, DEFAULT_SLIDE_URL);
         }
-        if (!TextUtils.isEmpty(bootImageInfo.animationType) && "1".equals(bootImageInfo.animationType) && !TextUtils.isEmpty(bootImageInfo.animationLottie)) {
+        if (!StringUtils.isEmpty(bootImageInfo.animationType) && "1".equals(bootImageInfo.animationType) && !StringUtils.isEmpty(bootImageInfo.animationLottie)) {
             a(arrayList, bootImageInfo.animationLottie);
         }
-        if (!bootImageInfo.isGestureViewHide() && !TextUtils.isEmpty(bootImageInfo.gestureImage)) {
+        if (!bootImageInfo.isGestureViewHide() && !StringUtils.isEmpty(bootImageInfo.gestureImage)) {
             a(arrayList, bootImageInfo.gestureImage);
         }
-        if (!TextUtils.isEmpty(bootImageInfo.interactImage)) {
+        if (!StringUtils.isEmpty(bootImageInfo.interactImage)) {
             a(arrayList, bootImageInfo.interactImage);
         }
         if (kel.c) {
@@ -138,11 +138,11 @@ public class kek {
         } else if (list == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 String c = keo.c(str);
-                if (TextUtils.isEmpty(c)) {
+                if (StringUtils.isEmpty(c)) {
                     kej.a(kem.TAG, "addDownloadItem no download resource, name isEmpty. url:" + str);
                     return;
                 }
@@ -163,23 +163,23 @@ public class kek {
             return (List) ipChange.ipc$dispatch("ca5217fb", new Object[]{bootImageInfo});
         }
         long b = keo.b();
-        if (bootImageInfo == null || !a(bootImageInfo) || TextUtils.isEmpty(bootImageInfo.imgUrl) || bootImageInfo.gmtEndMs < b) {
+        if (bootImageInfo == null || !a(bootImageInfo) || StringUtils.isEmpty(bootImageInfo.imgUrl) || bootImageInfo.gmtEndMs < b) {
             kej.a(kem.TAG, "no download image");
             return null;
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(bootImageInfo.imgUrl);
-        if (!TextUtils.isEmpty(bootImageInfo.firstFrameImageUrl)) {
+        if (!StringUtils.isEmpty(bootImageInfo.firstFrameImageUrl)) {
             arrayList.add(bootImageInfo.firstFrameImageUrl);
         }
         if ("1".equals(bootImageInfo.actionResponse)) {
-            if (!TextUtils.isEmpty(bootImageInfo.cardImageUrl)) {
+            if (!StringUtils.isEmpty(bootImageInfo.cardImageUrl)) {
                 arrayList.add(bootImageInfo.cardImageUrl);
             }
             arrayList.add(BootImageInteractBaseView.BOOTIMAGE_INTERACT_ITEM_DEFAULT_IMAGE);
         }
         if ("2".equals(bootImageInfo.actionResponse)) {
-            if (!TextUtils.isEmpty(bootImageInfo.benefitImageUrl)) {
+            if (!StringUtils.isEmpty(bootImageInfo.benefitImageUrl)) {
                 arrayList.add(bootImageInfo.benefitImageUrl);
             }
             arrayList.add(BootImageInteractBaseView.BOOTIAMGE_INTERACT_COUPON_RECEIVED_IMAGE);
@@ -217,17 +217,17 @@ public class kek {
         L24:
             java.lang.String r0 = r4.bizType
             java.lang.String r1 = "poplayer"
-            boolean r0 = android.text.TextUtils.equals(r1, r0)
+            boolean r0 = android.text.StringUtils.equals(r1, r0)
             if (r0 == 0) goto L36
             java.lang.String r4 = r4.imgUrl
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
         L34:
             r4 = r4 ^ r3
             goto L83
         L36:
             java.lang.String r0 = r4.bizType
             java.lang.String r1 = "image"
-            boolean r0 = android.text.TextUtils.equals(r1, r0)
+            boolean r0 = android.text.StringUtils.equals(r1, r0)
             if (r0 == 0) goto L42
         L40:
             r4 = 1
@@ -235,32 +235,32 @@ public class kek {
         L42:
             java.lang.String r0 = r4.bizType
             java.lang.String r1 = "videoNoIcon"
-            boolean r0 = android.text.TextUtils.equals(r1, r0)
+            boolean r0 = android.text.StringUtils.equals(r1, r0)
             if (r0 == 0) goto L54
             java.lang.String r4 = r4.imgUrl
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             goto L34
         L54:
             java.lang.String r0 = r4.bizType
             java.lang.String r1 = "videoHaveIcon"
-            boolean r0 = android.text.TextUtils.equals(r1, r0)
+            boolean r0 = android.text.StringUtils.equals(r1, r0)
             if (r0 == 0) goto L66
             java.lang.String r4 = r4.imgUrl
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             goto L34
         L66:
             java.lang.String r0 = r4.bizType
             java.lang.String r1 = "commercialAdNormal"
-            boolean r0 = android.text.TextUtils.equals(r1, r0)
+            boolean r0 = android.text.StringUtils.equals(r1, r0)
             if (r0 == 0) goto L71
             goto L40
         L71:
             java.lang.String r0 = r4.bizType
             java.lang.String r1 = "commercialAdVideo"
-            boolean r0 = android.text.TextUtils.equals(r1, r0)
+            boolean r0 = android.text.StringUtils.equals(r1, r0)
             if (r0 == 0) goto L82
             java.lang.String r4 = r4.imgUrl
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             goto L34
         L82:
             r4 = 0
@@ -296,7 +296,7 @@ public class kek {
             kej.a(kem.TAG, "ImageInfo un enalbed , info unsupport hotstart");
             return false;
         } else {
-            if (!z && !TextUtils.isEmpty(str)) {
+            if (!z && !StringUtils.isEmpty(str)) {
                 Set<String> a2 = keo.a(bootImageInfo.whiteList);
                 if (a2 == null || a2.size() == 0) {
                     Set<String> a3 = keo.a(bootImageInfo.blackList);
@@ -326,11 +326,11 @@ public class kek {
             return false;
         }
         long b = keo.b();
-        if (b < bootImageInfo.gmtStartMs || b > bootImageInfo.gmtEndMs || !a(bootImageInfo) || TextUtils.isEmpty(bootImageInfo.itemId)) {
+        if (b < bootImageInfo.gmtStartMs || b > bootImageInfo.gmtEndMs || !a(bootImageInfo) || StringUtils.isEmpty(bootImageInfo.itemId)) {
             kej.a(kem.TAG, "ImageInfo unenalbed 111");
             return false;
         } else if ("poplayer".equals(bootImageInfo.bizType)) {
-            if (TextUtils.isEmpty(bootImageInfo.targetUrl)) {
+            if (StringUtils.isEmpty(bootImageInfo.targetUrl)) {
                 kej.a(kem.TAG, "poplayer ImageInfo must have info.targetUrl");
                 return false;
             }
@@ -338,7 +338,7 @@ public class kek {
                 a.f = com.taobao.bootimage.f.b();
             }
             if (bootImageInfo.needPackageApp) {
-                if (TextUtils.isEmpty(android.taobao.windvane.packageapp.zipapp.utils.c.getLocPathByUrl(bootImageInfo.targetUrl, true))) {
+                if (StringUtils.isEmpty(android.taobao.windvane.packageapp.zipapp.utils.c.getLocPathByUrl(bootImageInfo.targetUrl, true))) {
                     kej.a(kem.TAG, "poplayer ImageInfo loc must cache");
                     return false;
                 }
@@ -347,14 +347,14 @@ public class kek {
             }
             return true;
         } else if (BootImageInfo.BIZ_TYPE_VIDEO.equals(bootImageInfo.bizType) || BootImageInfo.BIZ_TYPE_VIDEO_ICON.equals(bootImageInfo.bizType) || "commercialAdVideo".equals(bootImageInfo.bizType)) {
-            if (TextUtils.isEmpty(bootImageInfo.imgUrl)) {
+            if (StringUtils.isEmpty(bootImageInfo.imgUrl)) {
                 kej.a(kem.TAG, "video ImageInfo must have imageURl and videoUrl");
                 return false;
             } else if ("1".equals(bootImageInfo.animationType) && "commercialAdVideo".equals(bootImageInfo.bizType)) {
                 return e(bootImageInfo);
             } else {
                 String c = keo.c(bootImageInfo.videoUrl);
-                if (!TextUtils.isEmpty(c)) {
+                if (!StringUtils.isEmpty(c)) {
                     File file = new File(keo.d(bootImageInfo.sceneType), c);
                     if (file.exists()) {
                         bootImageInfo.videoLocalPath = file.getAbsolutePath();
@@ -364,7 +364,7 @@ public class kek {
                 } else {
                     kej.a(kem.TAG, "check boot info,fileName no exist.");
                 }
-                if (!TextUtils.isEmpty(bootImageInfo.imgUrl)) {
+                if (!StringUtils.isEmpty(bootImageInfo.imgUrl)) {
                     kej.a(kem.TAG, "check boot info,fileName no exist, but has imageURL.");
                     return true;
                 }
@@ -386,7 +386,7 @@ public class kek {
         if (bootImageInfo == null) {
             return false;
         }
-        if (TextUtils.isEmpty(bootImageInfo.animationLottie)) {
+        if (StringUtils.isEmpty(bootImageInfo.animationLottie)) {
             kej.a("BootImageBizTypeExtend", "check boot info,lottieUrl is empty.");
             return false;
         }

@@ -1,7 +1,7 @@
 package com.alibaba.ut.abtest.internal.bucketing;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.evo.internal.database.ExperimentDO;
 import com.alibaba.ut.abtest.UTABTest;
@@ -504,7 +504,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9c4e002e", new Object[]{this, str, str2, dVar});
-        } else if (TextUtils.equals(str, UTABTest.COMPONENT_URI)) {
+        } else if (StringUtils.equals(str, UTABTest.COMPONENT_URI)) {
         } else {
             String a2 = com.alibaba.ut.abtest.internal.util.a.a(str, str2);
             Set<com.alibaba.ut.abtest.d> set = this.f.get(a2);
@@ -522,7 +522,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("67d884d", new Object[]{this, str, str2, dVar});
-        } else if (TextUtils.equals(str, UTABTest.COMPONENT_URI)) {
+        } else if (StringUtils.equals(str, UTABTest.COMPONENT_URI)) {
         } else {
             String a2 = com.alibaba.ut.abtest.internal.util.a.a(str, str2);
             if (dVar == null) {

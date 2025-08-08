@@ -1,6 +1,6 @@
 package com.vivo.push.restructure.a.a;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.u;
 
 /* loaded from: classes9.dex */
@@ -18,7 +18,7 @@ final class m {
     }
 
     public final com.vivo.push.b.h a() {
-        if (TextUtils.isEmpty(this.f24225a) || TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.f24225a) || StringUtils.isEmpty(this.b)) {
             u.a("convertOffLineMsg() error, mMessageID = " + this.f24225a + ", mNodeArrayInfo = " + this.b);
             return null;
         }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.b;
 import com.taobao.flowcustoms.afc.utils.c;
@@ -36,12 +36,12 @@ public class kop {
         c.a("linkx", "AfcTkManager === registerTkFlag === 开始注册广告相关逻辑");
         if (!b(context)) {
             c.a("linkx", "AfcTkManager === registerTkFlag === 广告SDK不存在，不发起相关逻辑");
-        } else if (TextUtils.equals("false", b.a().a("isAlimamaRequestAvailable", "true"))) {
+        } else if (StringUtils.equals("false", b.a().a("isAlimamaRequestAvailable", "true"))) {
             c.a("linkx", "AfcTkManager === registerTkFlag === 开关关闭，不发起广告SDK的相关逻辑");
         } else if (kog.a().f == null) {
             c.a("linkx", "AfcTkManager === registerTkFlag === 当前未注册，不发起广告SDK的相关逻辑");
         } else {
-            if (TextUtils.equals(mpa.COLD, kog.a().c(mpa.COLD))) {
+            if (StringUtils.equals(mpa.COLD, kog.a().c(mpa.COLD))) {
                 c.a("linkx", "AfcTkManager === registerTkFlag === APP冷启动，发起广告SDK的相关逻辑");
                 f(context);
             }
@@ -61,7 +61,7 @@ public class kop {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("57a83e9", new Object[]{this});
-                    } else if (!TextUtils.equals(mpa.HOT, kog.a().c(mpa.COLD))) {
+                    } else if (!StringUtils.equals(mpa.HOT, kog.a().c(mpa.COLD))) {
                     } else {
                         c.a("linkx", "AfcTkManager === registerTkFlag === 热启动切到前台，发起广告SDK的相关逻辑");
                         kop.e(context);
@@ -81,10 +81,10 @@ public class kop {
         try {
             Map<String, String> c = c(context);
             if (c != null && c.size() != 0) {
-                if (TextUtils.equals("0", c.get("enable_cross_e"))) {
+                if (StringUtils.equals("0", c.get("enable_cross_e"))) {
                     return;
                 }
-                if (!TextUtils.isEmpty(c.get("flux_disperse_config"))) {
+                if (!StringUtils.isEmpty(c.get("flux_disperse_config"))) {
                     i = Integer.parseInt(c.get("flux_disperse_config"));
                 }
                 c.a("linkx", "AfcTkManager === dealTkLogic === 打散请求时间：" + i);

@@ -2,7 +2,7 @@ package com.taobao.android.buy.toggle;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -166,7 +166,7 @@ public class AliBuyPerfSwitcher {
             return (Map) ipChange.ipc$dispatch("4597facb", new Object[0]);
         }
         final String realBucket = getRealBucket();
-        if (TextUtils.isEmpty(realBucket)) {
+        if (StringUtils.isEmpty(realBucket)) {
             return null;
         }
         JSONObject jSONObject = new JSONObject();

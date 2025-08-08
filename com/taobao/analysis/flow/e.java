@@ -1,6 +1,6 @@
 package com.taobao.analysis.flow;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.stat.PageFlowStatistic;
@@ -47,7 +47,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             d dVar = this.f8551a.get(str);
             if (dVar == null) {
@@ -62,7 +62,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             d dVar = this.f8551a.get(str);
             if (dVar != null) {
@@ -83,7 +83,7 @@ public class e {
             ipChange.ipc$dispatch("a352e032", new Object[]{this, str, new Long(j), new Long(j2)});
             return;
         }
-        if (!TextUtils.isEmpty(str) && (j != 0 || j2 != 0)) {
+        if (!StringUtils.isEmpty(str) && (j != 0 || j2 != 0)) {
             d dVar = this.f8551a.get(str);
             if (dVar == null) {
                 dVar = new d();

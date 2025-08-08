@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.impl.common.e;
@@ -102,7 +102,7 @@ public class BatteryInfoReceiver extends BroadcastReceiver implements Runnable {
         Handler d = e.a().d();
         d.removeCallbacks(this);
         d.postDelayed(this, orq.FRAME_CHECK_TIMEOUT);
-        if (TextUtils.isEmpty(intent.getAction())) {
+        if (StringUtils.isEmpty(intent.getAction())) {
             return;
         }
         String action = intent.getAction();

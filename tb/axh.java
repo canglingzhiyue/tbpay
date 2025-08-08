@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.f;
 import com.alibaba.android.aura.q;
@@ -88,7 +88,7 @@ public final class axh extends arv {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("398d9b15", new Object[]{this, str, dkxVar});
-                } else if (TextUtils.isEmpty(str) || axh.a(axh.this) == null) {
+                } else if (StringUtils.isEmpty(str) || axh.a(axh.this) == null) {
                 } else {
                     axh.a(axh.this);
                 }

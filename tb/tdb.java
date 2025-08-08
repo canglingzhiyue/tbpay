@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -52,7 +52,7 @@ public final class tdb extends ayt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("63b99827", new Object[]{this, jSONObject});
-        } else if (!TextUtils.isEmpty(jSONObject.getString("queryParams"))) {
+        } else if (!StringUtils.isEmpty(jSONObject.getString("queryParams"))) {
             arc.a().a("stream", "queryParams is not null");
         } else {
             tcy d = d();
@@ -61,7 +61,7 @@ public final class tdb extends ayt {
                 return;
             }
             String a2 = d.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 arc.a().a("stream", "queryParams is null !!");
             } else {
                 jSONObject.put("queryParams", (Object) a2);

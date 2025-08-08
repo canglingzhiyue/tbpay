@@ -1,7 +1,7 @@
 package com.taobao.android.tbabilitykit;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -70,7 +70,7 @@ public class q implements dld {
             }
             String str = c2;
             JSONObject a3 = dlhVar.a("params");
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 c = "H5";
             }
             if (str == null) {

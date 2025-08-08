@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.component;
 import android.app.Application;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -47,7 +47,7 @@ public class p extends Component<TNodeView, a> implements TNodeView.b, TNodeView
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("a6607e73", new Object[]{this, aaVar, aVar, str, obj});
-            } else if (!TextUtils.equals(str, "error-page")) {
+            } else if (!StringUtils.equals(str, "error-page")) {
             } else {
                 aVar.c = oec.a(obj, "");
             }
@@ -186,7 +186,7 @@ public class p extends Component<TNodeView, a> implements TNodeView.b, TNodeView
         if (ipChange instanceof IpChange) {
             return (com.taobao.tao.flexbox.layoutmanager.core.c) ipChange.ipc$dispatch("1e262aca", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, "error-page")) {
+        if (StringUtils.equals(str, "error-page")) {
             return this.e;
         }
         return super.getAttributeHandler(str);

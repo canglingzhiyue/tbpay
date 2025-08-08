@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.q;
 import com.alibaba.fastjson.JSONArray;
@@ -114,7 +114,7 @@ public class jtp implements dug {
                 return;
             }
             String string = jSONObject.getString("overrideUrl");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a(string, jSONObject);
                 return;
             }
@@ -194,19 +194,19 @@ public class jtp implements dug {
         hashMap.put("result", "1");
         hashMap.put("agednessVersion", com.taobao.android.tbelder.b.c() ? "true" : "false");
         String c = c(jSONObject);
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             hashMap.put("orderids", c);
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("signStr"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("signStr"))) {
             hashMap.put("signStr", jSONObject.getString("signStr"));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("simplePay"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("simplePay"))) {
             hashMap.put("simplepay", jSONObject.getString("simplePay"));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString(FullPage.PARAM_BACK2Tab2URL))) {
+        if (!StringUtils.isEmpty(jSONObject.getString(FullPage.PARAM_BACK2Tab2URL))) {
             hashMap.put("backURL", jSONObject.getString(FullPage.PARAM_BACK2Tab2URL));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("unSuccessUrl"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("unSuccessUrl"))) {
             hashMap.put("unSuccessUrl", jSONObject.getString("unSuccessUrl"));
         }
         b(hashMap);
@@ -262,20 +262,20 @@ public class jtp implements dug {
         }
         Bundle bundle = new Bundle();
         for (String str2 : jSONObject.keySet()) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 String string = jSONObject.getString(str2);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     bundle.putString(str2, string);
                 }
             }
         }
         String a2 = a(str);
         AliNavInterface a3 = t.a().a(this.f29759a).a(bundle);
-        if (!TextUtils.isEmpty(a2) && a2.contains("needbackpop=1")) {
+        if (!StringUtils.isEmpty(a2) && a2.contains("needbackpop=1")) {
             a3.b(idw.RESULT_CODE_CUSTOM_PAYMENT);
         }
         a3.a(str);
-        if (TextUtils.isEmpty(a2) || !a2.contains("needpop=1")) {
+        if (StringUtils.isEmpty(a2) || !a2.contains("needpop=1")) {
             return;
         }
         a();
@@ -326,19 +326,19 @@ public class jtp implements dug {
             return (iff) ipChange.ipc$dispatch("4d104923", new Object[]{this, str, str2, str3, str4, str5});
         }
         iff iffVar = new iff(this.f29759a);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             iffVar.a(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             iffVar.b(str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             iffVar.e(str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             iffVar.g(str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             iffVar.f(str5);
         }
         return iffVar;
@@ -376,7 +376,7 @@ public class jtp implements dug {
             } else if (g.isApiLockedResult()) {
                 retMsg = qrh.g;
             }
-            String valueOf = TextUtils.isEmpty(g.getMappingCode()) ? String.valueOf(g.getResponseCode()) : g.getMappingCode();
+            String valueOf = StringUtils.isEmpty(g.getMappingCode()) ? String.valueOf(g.getResponseCode()) : g.getMappingCode();
             jSONObject.put("errorMsg", (Object) retMsg);
             jSONObject.put(ZimMessageChannel.K_RPC_RES_CODE, (Object) valueOf);
         }

@@ -1,6 +1,6 @@
 package com.tmall.android.dai;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import com.taobao.alivfssdk.cache.h;
@@ -60,7 +60,7 @@ public class DAIKVStoreage {
             } else if (a(str, str2)) {
                 return null;
             } else {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     Map<String, String> map = b.get(str);
                     if (map == null) {
                         return null;
@@ -110,7 +110,7 @@ public class DAIKVStoreage {
             } else if (a(str, str2, str3)) {
                 return false;
             } else {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     if (str3 != null) {
                         if (f23673a >= c) {
                             return false;

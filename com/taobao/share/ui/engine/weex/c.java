@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +62,7 @@ public class c {
         String str3 = "";
         String a3 = com.taobao.orange.util.c.a(str);
         if ("true".equals(obh.h())) {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = ShareBizAdapter.getInstance().getAppEnv().b().getApplicationContext().getFilesDir().getAbsolutePath() + File.separator + a3 + obf.KEY_SHARE_PANEL_JS;
             }
             if ("true".equals(obc.b(activity, a3 + obf.KEY_SHARE_PANEL))) {
@@ -173,7 +173,7 @@ public class c {
         Activity activity = (Activity) context;
         OrangeConfig orangeConfig = OrangeConfig.getInstance();
         String config = orangeConfig.getConfig("android_share", "shareScreenHeightFix_" + Build.MODEL, "");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             int parseInt = Integer.parseInt(config);
             return a(activity) ? parseInt - c(context) : parseInt;
         }

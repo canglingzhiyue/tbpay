@@ -14,7 +14,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.SparseArray;
 import android.view.Display;
@@ -468,7 +468,7 @@ public class FBTools {
             }
             while (i4 < strArr.length) {
                 String str = strArr[i4];
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     GradientDrawable gradientDrawable2 = new GradientDrawable();
                     if (i3 != i5) {
                         gradientDrawable2.setStroke((int) f, i3);
@@ -483,7 +483,7 @@ public class FBTools {
                         gradientDrawable2.setAlpha((int) (f3 * f4));
                     }
                     if (i4 == 0) {
-                        stateListDrawable.addState(!TextUtils.isEmpty(strArr[1]) ? new int[]{16842910, -16842919} : new int[]{16842910}, gradientDrawable2);
+                        stateListDrawable.addState(!StringUtils.isEmpty(strArr[1]) ? new int[]{16842910, -16842919} : new int[]{16842910}, gradientDrawable2);
                     } else if (i4 == 1) {
                         stateListDrawable.addState(new int[]{16842910, 16842919}, gradientDrawable2);
                     } else if (i4 == 2) {
@@ -872,7 +872,7 @@ public class FBTools {
             r2 = 0
         L32:
             r7 = -7829368(0xffffffffff888888, float:NaN)
-            boolean r0 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Exception -> L63
+            boolean r0 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Exception -> L63
             if (r0 != 0) goto L59
             java.lang.String r0 = "#"
             boolean r0 = r4.startsWith(r0)     // Catch: java.lang.Exception -> L63

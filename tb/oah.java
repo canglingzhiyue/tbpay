@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Patterns;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.taopassword.busniess.model.TemplateId;
@@ -84,9 +84,9 @@ public class oah {
         if (aVar == null) {
             return false;
         }
-        if (aVar.h != null && !TextUtils.isEmpty(aVar.h.f19663a)) {
+        if (aVar.h != null && !StringUtils.isEmpty(aVar.h.f19663a)) {
             String str = aVar.h.b;
-            if (TextUtils.isEmpty(str) || !str.contains(aVar.h.f19663a)) {
+            if (StringUtils.isEmpty(str) || !str.contains(aVar.h.f19663a)) {
                 return false;
             }
         }
@@ -100,19 +100,19 @@ public class oah {
         }
         com.taobao.share.taopassword.genpassword.model.a aVar2 = new com.taobao.share.taopassword.genpassword.model.a();
         aVar2.f19662a = aVar.f19662a;
-        if (TextUtils.isEmpty(aVar2.f19662a)) {
+        if (StringUtils.isEmpty(aVar2.f19662a)) {
             throw new Exception("bizId is null");
         }
-        if (TextUtils.isEmpty(aVar.c)) {
+        if (StringUtils.isEmpty(aVar.c)) {
             throw new Exception("text is null");
         }
-        if (TextUtils.isEmpty(aVar.d)) {
+        if (StringUtils.isEmpty(aVar.d)) {
             throw new Exception("url is null");
         }
         aVar2.c = oag.a(aVar.c);
         aVar2.b = aVar.b;
         if (tPAction == null) {
-            if (!TextUtils.isEmpty(aVar.g)) {
+            if (!StringUtils.isEmpty(aVar.g)) {
                 aVar2.g = aVar.g;
             } else {
                 aVar2.g = TPAction.OTHER.toString();
@@ -134,11 +134,11 @@ public class oah {
         }
         aVar2.d = aVar.d;
         aVar2.f = aVar.f;
-        if (TextUtils.isEmpty(aVar.f)) {
+        if (StringUtils.isEmpty(aVar.f)) {
             aVar2.f = "other";
         }
         aVar2.o = aVar.o;
-        if (TextUtils.isEmpty(aVar2.o)) {
+        if (StringUtils.isEmpty(aVar2.o)) {
             if (aVar2.f.equals("item")) {
                 aVar2.o = TemplateId.ITEM.toString();
             } else if (aVar2.f.equals("shop")) {
@@ -165,8 +165,8 @@ public class oah {
         if (oalVar == null) {
             throw new Exception("listener can not be null!");
         }
-        if (TextUtils.isEmpty(str)) {
-            if (TextUtils.isEmpty(nzt.b())) {
+        if (StringUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(nzt.b())) {
                 throw new Exception("ttid is null.");
             }
         } else {
@@ -210,7 +210,7 @@ public class oah {
             return;
         }
         String str2 = "saveTaoPassword text=" + str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Matcher matcher = Patterns.WEB_URL.matcher(str);
@@ -266,14 +266,14 @@ public class oah {
                 oah.a(oah.this, (nzw) null);
                 oah.c();
                 String str2 = "generateTP resultData.passwordUrl=" + eVar.d + "  resultData.passwordKey=" + eVar.c;
-                if (TextUtils.isEmpty(eVar.e)) {
+                if (StringUtils.isEmpty(eVar.e)) {
                     oah.c();
                     String str3 = "generateTP getIsCachePassword=" + oai.a();
                     if (oai.a()) {
-                        if (!TextUtils.isEmpty(eVar.d)) {
+                        if (!StringUtils.isEmpty(eVar.d)) {
                             context2 = context;
                             str = eVar.d;
-                        } else if (!TextUtils.isEmpty(eVar.c)) {
+                        } else if (!StringUtils.isEmpty(eVar.c)) {
                             context2 = context;
                             str = eVar.c;
                         }

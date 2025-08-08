@@ -2,7 +2,7 @@ package com.ut.share.executor;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
@@ -55,7 +55,7 @@ public class DingTalkExecutor implements IShareExecutor {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2a500273", new Object[]{this, context})).booleanValue();
         }
-        if (TextUtils.isEmpty(APP_ID) || !(context instanceof Activity)) {
+        if (StringUtils.isEmpty(APP_ID) || !(context instanceof Activity)) {
             return false;
         }
         if (this.dingTalk == null) {
@@ -75,7 +75,7 @@ public class DingTalkExecutor implements IShareExecutor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("532a854a", new Object[]{this, context, shareData, shareListener});
-        } else if (!TextUtils.isEmpty(APP_ID)) {
+        } else if (!StringUtils.isEmpty(APP_ID)) {
             if (this.dingTalk == null) {
                 this.dingTalk = new ShareDingTalkController(context, APP_ID);
             }

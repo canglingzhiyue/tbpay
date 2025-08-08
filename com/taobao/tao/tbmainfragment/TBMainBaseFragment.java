@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -160,7 +160,7 @@ public abstract class TBMainBaseFragment extends SupportFragment implements ITBP
         if (tBPublicMenu != null) {
             tBPublicMenu.onPause();
         }
-        if (getActivity() == null || TextUtils.isEmpty(getUTPageName())) {
+        if (getActivity() == null || StringUtils.isEmpty(getUTPageName())) {
             return;
         }
         UTAnalytics.getInstance().getDefaultTracker().pageDisAppear(getActivity());
@@ -185,7 +185,7 @@ public abstract class TBMainBaseFragment extends SupportFragment implements ITBP
             return;
         }
         super.onSupportVisible();
-        if (getActivity() != null && !TextUtils.isEmpty(getUTPageName())) {
+        if (getActivity() != null && !StringUtils.isEmpty(getUTPageName())) {
             UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(getActivity(), getUTPageName());
         }
         if (TBMainHost.a(getActivity()) == null || getClass().getName().equals(com.taobao.tao.navigation.e.b(0).k()) || getClass().getName().equals("com.taobao.tao.tbmainfragment.TBMainFragment")) {
@@ -193,7 +193,7 @@ public abstract class TBMainBaseFragment extends SupportFragment implements ITBP
         }
         Intent intent = new Intent(PopLayer.ACTION_FRAGMENT_SWITCH);
         String popLayerConfigName = getPopLayerConfigName();
-        if (!TextUtils.isEmpty(popLayerConfigName)) {
+        if (!StringUtils.isEmpty(popLayerConfigName)) {
             intent.putExtra(PopLayer.EXTRA_KEY_FRAGMENT_NAME, popLayerConfigName);
         }
         if (getActivity() != null && getActivity().getIntent() != null && getActivity().getIntent().getData() != null) {

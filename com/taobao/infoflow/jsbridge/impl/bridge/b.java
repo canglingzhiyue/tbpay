@@ -1,6 +1,6 @@
 package com.taobao.infoflow.jsbridge.impl.bridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.jsbridge.impl.bridge.a;
 import com.taobao.infoflow.jsbridge.impl.bridge.model.JsActionModel;
@@ -64,7 +64,7 @@ public class b {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             a.a(this.b);
         }
         this.f17405a.clear();

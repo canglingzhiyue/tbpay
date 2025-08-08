@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
@@ -89,7 +89,7 @@ public class FalcoLocalTool extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5a22a56e", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("params null.");
         } else {
             try {

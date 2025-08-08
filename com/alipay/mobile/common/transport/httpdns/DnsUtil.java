@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.httpdns;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dns.DnsValue;
 import com.alipay.android.msp.framework.dns.storage.DnsPreference;
 import com.alipay.mobile.common.netsdkextdependapi.appinfo.AppInfoUtil;
@@ -63,7 +63,7 @@ public class DnsUtil {
         try {
             Context context = TransportEnvUtil.getContext();
             String string = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getString("amdc.dg");
-            return !TextUtils.isEmpty(string) ? string : DOMAIN_GROUP;
+            return !StringUtils.isEmpty(string) ? string : DOMAIN_GROUP;
         } catch (Throwable th) {
             LogCatUtil.error(TAG, "getDomainGroup ex:" + th.toString());
             return DOMAIN_GROUP;
@@ -78,7 +78,7 @@ public class DnsUtil {
         try {
             Context context = TransportEnvUtil.getContext();
             String string = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getString("amdc.host");
-            return !TextUtils.isEmpty(string) ? string : AMDC_DOMAIN;
+            return !StringUtils.isEmpty(string) ? string : AMDC_DOMAIN;
         } catch (Throwable th) {
             LogCatUtil.error(TAG, "getAmdcHost ex: " + th.toString());
             return AMDC_DOMAIN;
@@ -105,7 +105,7 @@ public class DnsUtil {
             return ((Boolean) ipChange.ipc$dispatch("56774890", new Object[]{str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Pattern.compile("^([\\dA-F]{1,4}:|((?=.*(::))(?!.*\\3.+\\3))\\3?)([\\dA-F]{1,4}(\\3|:\\b)|\\2){5}(([\\dA-F]{1,4}(\\3|:\\b|$)|\\2){2}|(((2[0-4]|1\\d|[1-9])?\\d|25[0-5])\\.?\\b){4})\\z").matcher(str).matches();
             }
             return false;
@@ -124,7 +124,7 @@ public class DnsUtil {
             return ((Boolean) ipChange.ipc$dispatch("29c2eaf8", new Object[]{str})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             char[] charArray = str.toCharArray();
@@ -184,7 +184,7 @@ public class DnsUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5a75b9b1", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         char[] charArray = str.toCharArray();
@@ -205,11 +205,11 @@ public class DnsUtil {
             return ((Boolean) ipChange.ipc$dispatch("bf510012", new Object[]{str})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
-            if (!TextUtils.equals(str, getAmdcHost())) {
-                if (!TextUtils.equals(str, getAmdcBackupHost())) {
+            if (!StringUtils.equals(str, getAmdcHost())) {
+                if (!StringUtils.equals(str, getAmdcBackupHost())) {
                     return false;
                 }
             }
@@ -278,7 +278,7 @@ public class DnsUtil {
             }
             str = ReadSettingServerUrl.getInstance().getHttpdnsServerUrl(context);
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return "";
                 }
                 LogCatUtil.debug(TAG, "get httpdns url from setting,dnsUrl=[" + str + riy.ARRAY_END_STR);
@@ -365,7 +365,7 @@ public class DnsUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ace8ae5", new Object[0])).booleanValue();
         }
-        if (TextUtils.isEmpty(DeviceInfoUtil.getDeviceId())) {
+        if (StringUtils.isEmpty(DeviceInfoUtil.getDeviceId())) {
             return false;
         }
         return MiscUtils.grayscaleUtdid(DeviceInfoUtil.getDeviceId(), TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DNS_USE_SIGN));
@@ -419,7 +419,7 @@ public class DnsUtil {
         if (!MiscUtils.isDebugger(TransportEnvUtil.getContext())) {
             return true;
         }
-        return !TextUtils.isEmpty(str) && str.contains(".com");
+        return !StringUtils.isEmpty(str) && str.contains(".com");
     }
 
     public static String getAppId() {

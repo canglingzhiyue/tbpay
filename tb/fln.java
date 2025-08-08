@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class fln {
         } else if (fhiVar == null || fhiVar.ae == null || fhiVar.ae.f32210a == null || fhiVar.ae.f32210a.isEmpty() || (ovaVar = fhiVar.ae.f32210a.get(0)) == null || !qnk.f.equals(ovaVar.a()) || !(ovaVar instanceof okd)) {
         } else {
             String a2 = a(context, ((okd) ovaVar).f32136a);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             com.taobao.phenix.intf.b.h().a(a2).addLoaderExtra(esr.BUNDLE_BIZ_CODE, PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).succListener(new a("image")).fetch();
@@ -87,7 +87,7 @@ public class fln {
             if (jSONObject != null) {
                 String string = jSONObject.getString("url");
                 String a3 = a(context, string);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     com.taobao.phenix.intf.b.h().a(a3).addLoaderExtra(esr.BUNDLE_BIZ_CODE, PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).succListener(new a("image")).fetch();
                     fjt.a(fjt.TAG_RENDER, "发起图片预加载: " + a3);
                     z2 = true;
@@ -97,7 +97,7 @@ public class fln {
                 } else {
                     a2 = a(context, string, imageBlur, z);
                 }
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     com.taobao.phenix.intf.b.h().a(a2).addLoaderExtra(esr.BUNDLE_BIZ_CODE, PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).succListener(new a("imageGaussian")).fetch();
                 }
             }
@@ -127,7 +127,7 @@ public class fln {
             if (jSONObject != null) {
                 String string = jSONObject.getString("videoThumbnailURL");
                 String a3 = a(context, string);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     com.taobao.phenix.intf.b.h().a(a3).addLoaderExtra(esr.BUNDLE_BIZ_CODE, PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).succListener(new a("video")).fetch();
                     fjt.a(fjt.TAG_RENDER, "发起视频封面预加载图片成功: " + a3);
                     z3 = true;
@@ -139,11 +139,11 @@ public class fln {
                 } else {
                     a2 = a(context, string, imageBlur, z2);
                 }
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     com.taobao.phenix.intf.b.h().a(a2).addLoaderExtra(esr.BUNDLE_BIZ_CODE, PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).succListener(new a("videoGaussian")).fetch();
                 }
                 String string2 = jSONObject.getString("videoId");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     if (floVar != null) {
                         floVar.a(context, string2, z);
                     } else {
@@ -262,7 +262,7 @@ public class fln {
             return;
         }
         String a2 = a(context, W.data.videoThumbnailURL);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             com.taobao.phenix.intf.b.h().a(a2).addLoaderExtra(esr.BUNDLE_BIZ_CODE, PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).succListener(new a("video下沉")).fetch();
             fjt.a(fjt.TAG_RENDER, "视频下沉发起视频封面预加载图片成功: " + a2);
         }

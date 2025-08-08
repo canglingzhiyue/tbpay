@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.bussiness.highlight.commonIssueInteract;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.movehighlight.bundle.timeshift.model.LiveTimemovingModel;
 import com.taobao.taolive.movehighlight.bussiness.highlight.commonIssueInteract.LiveCommonIssueInteractRequest;
@@ -38,7 +38,7 @@ public class a extends b {
             extendParams.benefitCode = liveTimemovingModel.rightInfo.benefitCode;
             extendParams.asac = liveTimemovingModel.rightInfo.asac;
             liveCommonIssueInteractRequest.extendParams = extendParams;
-            if (extendParams.asac != null && !TextUtils.isEmpty(extendParams.asac)) {
+            if (extendParams.asac != null && !StringUtils.isEmpty(extendParams.asac)) {
                 HashMap<String, String> hashMap = new HashMap<>();
                 hashMap.put("asac", extendParams.asac);
                 a(hashMap);

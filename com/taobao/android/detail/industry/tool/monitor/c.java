@@ -1,6 +1,6 @@
 package com.taobao.android.detail.industry.tool.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.q;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -142,7 +142,7 @@ public class c {
             hashMap.put("subBizCode", this.h.bizCode);
             hashMap.put("componentKey", this.h.componentKey);
         }
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             hashMap.put("itemId", this.j);
         }
         DIMonitorUtil.a(hashMap.toString(), a2, b);

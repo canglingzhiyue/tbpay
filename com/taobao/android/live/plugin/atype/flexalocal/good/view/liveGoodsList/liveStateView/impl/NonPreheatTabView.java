@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.ItemCategory;
@@ -145,11 +145,11 @@ public class NonPreheatTabView extends SingleTabBaseView<com.taobao.android.live
             return;
         }
         List<com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.e> a2 = this.mGoodsLiveStateListAdapter.a();
-        if (TextUtils.isEmpty(str) || a2 == null || a2.isEmpty()) {
+        if (StringUtils.isEmpty(str) || a2 == null || a2.isEmpty()) {
             return;
         }
         for (com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.e eVar : a2) {
-            if (eVar != null && TextUtils.equals(str, eVar.f)) {
+            if (eVar != null && StringUtils.equals(str, eVar.f)) {
                 if (i2 > 2) {
                     int i3 = i2 + 1;
                     if (a2.size() <= i3) {

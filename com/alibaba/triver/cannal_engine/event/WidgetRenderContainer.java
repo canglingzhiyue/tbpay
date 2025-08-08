@@ -1,7 +1,7 @@
 package com.alibaba.triver.cannal_engine.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import com.alibaba.ariver.app.api.App;
@@ -83,7 +83,7 @@ public class WidgetRenderContainer extends FrameLayout {
         }
         WeakReference<App> weakReference = this.mAppRef;
         if (weakReference != null && weakReference.get() != null && this.mGestureMode == GestureMode.DEFAULT) {
-            this.gestureModeInner = TextUtils.equals(this.mAppRef.get().getStringValue("gestureMode"), "inner");
+            this.gestureModeInner = StringUtils.equals(this.mAppRef.get().getStringValue("gestureMode"), "inner");
         }
         b bVar = this.mWidgetTouchEventBridge;
         if (bVar != null) {

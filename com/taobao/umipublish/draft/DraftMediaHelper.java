@@ -2,7 +2,7 @@ package com.taobao.umipublish.draft;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.k;
 import com.taobao.android.litecreator.util.u;
@@ -128,21 +128,21 @@ public class DraftMediaHelper {
                     if (video != null) {
                         String str = video.coverLocalUrl;
                         String str2 = draftModel.localPathToCdnUrl.get(str);
-                        if (TextUtils.isEmpty(video.coverOriginFile)) {
+                        if (StringUtils.isEmpty(video.coverOriginFile)) {
                             video.coverOriginFile = video.coverLocalUrl;
                         }
                         video.coverLocalUrl = a(DraftType.PRODUCT, video.coverLocalUrl, draftModel);
-                        if (str2 != null && !TextUtils.equals(video.coverLocalUrl, str)) {
+                        if (str2 != null && !StringUtils.equals(video.coverLocalUrl, str)) {
                             draftModel.localPathToCdnUrl.put(video.coverLocalUrl, str2);
                             draftModel.localPathToCdnUrl.remove(str);
                         }
                         String str3 = video.videoLocalUrl;
-                        if (TextUtils.isEmpty(video.videoOriginFile)) {
+                        if (StringUtils.isEmpty(video.videoOriginFile)) {
                             video.videoOriginFile = video.videoLocalUrl;
                         }
                         String str4 = draftModel.localPathToCdnUrl.get(str3);
                         video.videoLocalUrl = a(DraftType.PRODUCT, video.videoLocalUrl, draftModel);
-                        if (str4 != null && !TextUtils.equals(video.videoLocalUrl, str3)) {
+                        if (str4 != null && !StringUtils.equals(video.videoLocalUrl, str3)) {
                             draftModel.localPathToCdnUrl.put(video.videoLocalUrl, str4);
                             draftModel.localPathToCdnUrl.remove(str3);
                         }
@@ -160,11 +160,11 @@ public class DraftMediaHelper {
                 if (photo != null) {
                     String str5 = photo.localUrl;
                     String str6 = draftModel.localPathToCdnUrl.get(photo.localUrl);
-                    if (TextUtils.isEmpty(photo.originFilePath)) {
+                    if (StringUtils.isEmpty(photo.originFilePath)) {
                         photo.originFilePath = photo.localUrl;
                     }
                     photo.localUrl = a(DraftType.PRODUCT, photo.localUrl, draftModel);
-                    if (str6 != null && !TextUtils.equals(photo.localUrl, str5)) {
+                    if (str6 != null && !StringUtils.equals(photo.localUrl, str5)) {
                         draftModel.localPathToCdnUrl.put(photo.localUrl, str6);
                         draftModel.localPathToCdnUrl.remove(str5);
                     }
@@ -248,7 +248,7 @@ public class DraftMediaHelper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c44b8e9", new Object[]{this, str, str2, draftModel});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str2;
         }
         File d = d(draftModel);
@@ -306,10 +306,10 @@ public class DraftMediaHelper {
                 for (DraftModel.Video video : draftModel.meta.videos) {
                     if (video != null && (!k.e(video.coverLocalUrl) || !k.e(video.videoLocalUrl))) {
                         arrayList.add(video);
-                        if (!TextUtils.isEmpty(video.coverLocalUrl)) {
+                        if (!StringUtils.isEmpty(video.coverLocalUrl)) {
                             k.a(new File(video.coverLocalUrl));
                         }
-                        if (!TextUtils.isEmpty(video.videoLocalUrl)) {
+                        if (!StringUtils.isEmpty(video.videoLocalUrl)) {
                             k.a(new File(video.videoLocalUrl));
                         }
                     }
@@ -331,6 +331,6 @@ public class DraftMediaHelper {
 
     public static boolean c(DraftModel draftModel) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fc52489", new Object[]{draftModel})).booleanValue() : draftModel != null && TextUtils.equals(draftModel.version, "3");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fc52489", new Object[]{draftModel})).booleanValue() : draftModel != null && StringUtils.equals(draftModel.version, "3");
     }
 }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -63,14 +63,14 @@ public class kip extends f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f9db7b67", new Object[]{this, dXEvent, objArr, dXRuntimeContext});
-        } else if (objArr == null || objArr.length == 0 || TextUtils.isEmpty(objArr[0].toString())) {
+        } else if (objArr == null || objArr.length == 0 || StringUtils.isEmpty(objArr[0].toString())) {
         } else {
             if (objArr.length == 1 || objArr[1] == null) {
                 super.handleEvent(dXEvent, objArr, dXRuntimeContext);
                 return;
             }
             String obj = objArr[1].toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 super.handleEvent(dXEvent, objArr, dXRuntimeContext);
                 return;
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.JvmUncaughtCrashListener;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class dsd implements JvmUncaughtCrashListener {
             g = dro.g();
         } catch (Throwable unused) {
         }
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             return hashMap;
         }
         hashMap.put("bhx", g);

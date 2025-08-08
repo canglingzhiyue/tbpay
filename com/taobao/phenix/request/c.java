@@ -1,6 +1,6 @@
 package com.taobao.phenix.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dynfun.TplMsg;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -125,7 +125,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.k == null) {
                 this.k = str;
@@ -236,7 +236,7 @@ public class c {
 
     public boolean o() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("631b57a", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.k) || (!TextUtils.isEmpty(this.d) && (this.d.indexOf("#") > 0 || this.d.indexOf("?") > 0));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("631b57a", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.k) || (!StringUtils.isEmpty(this.d) && (this.d.indexOf("#") > 0 || this.d.indexOf("?") > 0));
     }
 
     public com.taobao.phenix.cache.a e() {

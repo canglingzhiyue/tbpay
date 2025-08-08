@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.StyleSpan;
 import android.util.Pair;
@@ -106,7 +106,7 @@ public class a extends b<com.taobao.android.detail.core.model.viewmodel.desc.a> 
                         ipChange2.ipc$dispatch("4c98ef35", new Object[]{this, mtopResponse});
                     } else if (mtopResponse != null && mtopResponse.isSessionInvalid()) {
                         epo.g().a(true);
-                    } else if (mtopResponse != null && !TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+                    } else if (mtopResponse != null && !StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                         epo.a(mtopResponse.getRetMsg());
                     } else {
                         epo.a("领取失败！");
@@ -162,17 +162,17 @@ public class a extends b<com.taobao.android.detail.core.model.viewmodel.desc.a> 
         String str2 = aVar.b;
         this.p = aVar.c;
         this.o = aVar.d;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             SpannableString spannableString = new SpannableString("¥" + str);
             spannableString.setSpan(new AbsoluteSizeSpan(epo.l), 0, 1, 33);
             spannableString.setSpan(new AbsoluteSizeSpan(epo.b(34)), 1, str.length() + 1, 33);
             spannableString.setSpan(new StyleSpan(1), 1, str.length() + 1, 33);
             this.m.setText(spannableString);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.l.setText(str2);
         }
-        if (!TextUtils.isEmpty(this.o) || !TextUtils.isEmpty(this.p)) {
+        if (!StringUtils.isEmpty(this.o) || !StringUtils.isEmpty(this.p)) {
             this.n.setTextSize(1, 10.0f);
             this.n.setText(this.p);
         }

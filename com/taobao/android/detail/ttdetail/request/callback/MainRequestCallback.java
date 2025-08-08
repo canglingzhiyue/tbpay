@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.request.callback;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.request.MtopInfo;
@@ -124,7 +124,7 @@ public class MainRequestCallback implements IStreamCallBackAdapter {
             } else {
                 handleExceptionDowngrade(i, obj);
             }
-            ab.a(!TextUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
+            ab.a(!StringUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
         }
     }
 
@@ -157,14 +157,14 @@ public class MainRequestCallback implements IStreamCallBackAdapter {
             if (originFastJsonObject == null) {
                 this.mMtopInfo.a(3);
                 handleExceptionDowngrade(i, obj);
-                ab.b(!TextUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
+                ab.b(!StringUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
                 return;
             }
             JSONObject jSONObject = originFastJsonObject.getJSONObject("data");
             if (jSONObject == null || jSONObject.isEmpty()) {
                 this.mMtopInfo.a(3);
                 handleExceptionDowngrade(i, obj);
-                ab.b(!TextUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
+                ab.b(!StringUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
             } else if (handleRequestDowngrade(originFastJsonObject, b)) {
             } else {
                 this.mMtopInfo.a(2);

@@ -1,6 +1,6 @@
 package com.taobao.mrt.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.task.desc.MRTTaskDescription;
 import java.util.Collections;
@@ -96,7 +96,7 @@ public class g {
             com.taobao.mrt.utils.a.g("TaskManager", "任务触发:" + str);
             if (!com.taobao.mrt.c.a()) {
                 a(str, iVar, 1, "mrt is not available", null);
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str3)) {
                 a(str, iVar, 201, "Invalid Param", null);
             } else if (com.taobao.mrt.thread.c.a().b(str) == MRTJobRefuseReason.MRTJobRefuseReasonBug) {
                 com.taobao.mrt.utils.a.c("TaskManager", "Skip Buggy Model:" + str);
@@ -150,7 +150,7 @@ public class g {
         } else if (mRTTaskDescription == null) {
         } else {
             com.taobao.mrt.d dVar = this.e;
-            if ((dVar != null && dVar.b) || TextUtils.isEmpty(mRTTaskDescription.name)) {
+            if ((dVar != null && dVar.b) || StringUtils.isEmpty(mRTTaskDescription.name)) {
                 return;
             }
             this.b.put(mRTTaskDescription.name, mRTTaskDescription);
@@ -161,7 +161,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b.remove(str);
         }
@@ -176,7 +176,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9d025a92", new Object[]{this, new Integer(i), new Integer(i2), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.c.put(str, new com.taobao.mrt.thread.d(i, i2, str));
         }

@@ -1,6 +1,6 @@
 package com.taobao.cainiao.logistic.ui.view;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import java.io.ByteArrayOutputStream;
@@ -27,7 +27,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             try {

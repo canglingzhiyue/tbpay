@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.core.IObserver;
 import com.taobao.message.message_open_api.api.data.topicsubscribe.rpc.SubScribeCenterResultDTO;
@@ -25,7 +25,7 @@ public class pan implements poa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("262f90ee", new Object[]{this, str, str2, str3, context, pobVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             SubscribeUtils.INSTANCE.doSubscribe(str, str3, null, str2, new IObserver<SubScribeCenterResultDTO>() { // from class: tb.pan.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -75,7 +75,7 @@ public class pan implements poa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2556204d", new Object[]{this, str, str2, str3, context, pobVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             SubscribeUtils.INSTANCE.cancelSubscribe(str, str3, null, str2, new IObserver<SubScribeCenterResultDTO>() { // from class: tb.pan.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -131,26 +131,26 @@ public class pan implements poa {
             for (int i = 0; i < subScribeTopicList.size(); i++) {
                 SubScribeTopicList subScribeTopicList2 = subScribeTopicList.get(i);
                 pod podVar = new pod();
-                if (!TextUtils.isEmpty(subScribeTopicList2.getErrCode())) {
+                if (!StringUtils.isEmpty(subScribeTopicList2.getErrCode())) {
                     podVar.a(subScribeTopicList2.getErrCode());
                 }
-                if (!TextUtils.isEmpty(subScribeTopicList2.getStatus())) {
+                if (!StringUtils.isEmpty(subScribeTopicList2.getStatus())) {
                     podVar.b(subScribeTopicList2.getStatus());
                 }
-                if (!TextUtils.isEmpty(subScribeTopicList2.getTopicId())) {
+                if (!StringUtils.isEmpty(subScribeTopicList2.getTopicId())) {
                     podVar.c(subScribeTopicList2.getTopicId());
                 }
                 arrayList.add(podVar);
             }
             pocVar.b(arrayList);
         }
-        if (!TextUtils.isEmpty(subScribeCenterResultDTO.getRetCode())) {
+        if (!StringUtils.isEmpty(subScribeCenterResultDTO.getRetCode())) {
             pocVar.a(subScribeCenterResultDTO.getRetCode());
         }
-        if (!TextUtils.isEmpty(subScribeCenterResultDTO.getRetMsg())) {
+        if (!StringUtils.isEmpty(subScribeCenterResultDTO.getRetMsg())) {
             pocVar.b(subScribeCenterResultDTO.getRetMsg());
         }
-        if (!TextUtils.isEmpty(subScribeCenterResultDTO.getToastText())) {
+        if (!StringUtils.isEmpty(subScribeCenterResultDTO.getToastText())) {
             pocVar.c(subScribeCenterResultDTO.getToastText());
         }
         Map<String, Object> subscribeConfirmResponse = subScribeCenterResultDTO.getSubscribeConfirmResponse();

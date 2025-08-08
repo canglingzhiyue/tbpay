@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.highPerformance.storage;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -24,7 +24,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (UltronTradeHybridStorage) ipChange.ipc$dispatch("b8054f5f", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronTradeHybridStoragePool.getStorage", "key is empty");
             return null;
         }
@@ -44,7 +44,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("60825986", new Object[]{this, str, jSONObject, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronTradeHybridStoragePool.setStorage", "key is empty");
         } else {
             UltronTradeHybridStorage c = c(str);
@@ -60,7 +60,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronTradeHybridStoragePool.setStorage", "key is empty");
         } else {
             UltronTradeHybridStorage c = c(str);
@@ -78,7 +78,7 @@ public class a {
             return (UltronTradeHybridStorage) ipChange.ipc$dispatch("7a1dc461", new Object[]{this, str});
         }
         for (UltronTradeHybridStorage ultronTradeHybridStorage : this.f2804a) {
-            if (ultronTradeHybridStorage != null && TextUtils.equals(ultronTradeHybridStorage.getKey(), str)) {
+            if (ultronTradeHybridStorage != null && StringUtils.equals(ultronTradeHybridStorage.getKey(), str)) {
                 return ultronTradeHybridStorage;
             }
         }

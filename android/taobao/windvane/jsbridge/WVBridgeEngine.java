@@ -3,7 +3,7 @@ package android.taobao.windvane.jsbridge;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.JavascriptInterface;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
@@ -114,7 +114,7 @@ public class WVBridgeEngine implements Serializable, adm {
             hVar.f1664a = this.mWebview;
             hVar.g = str3;
             hVar.f = str2;
-            if (TextUtils.isEmpty(hVar.f)) {
+            if (StringUtils.isEmpty(hVar.f)) {
                 hVar.f = "{}";
             }
             final adj adjVar = new adj();
@@ -165,7 +165,7 @@ public class WVBridgeEngine implements Serializable, adm {
                         ipChange2.ipc$dispatch("8123ece2", new Object[]{this, str5, new Boolean(z)});
                         return;
                     }
-                    if (TextUtils.isEmpty(str5)) {
+                    if (StringUtils.isEmpty(str5)) {
                         str5 = "{}";
                     }
                     String access$000 = WVBridgeEngine.access$000(WVBridgeEngine.this, str5);
@@ -208,7 +208,7 @@ public class WVBridgeEngine implements Serializable, adm {
                         ipChange2.ipc$dispatch("8123ece2", new Object[]{this, str5, new Boolean(z)});
                         return;
                     }
-                    if (TextUtils.isEmpty(str5)) {
+                    if (StringUtils.isEmpty(str5)) {
                         str5 = "{}";
                     }
                     String access$000 = WVBridgeEngine.access$000(WVBridgeEngine.this, str5);

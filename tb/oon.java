@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -47,7 +47,7 @@ public class oon extends a {
         } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("clickParam")) == null) {
         } else {
             String string = jSONObject2.getString("page");
-            if (TextUtils.isEmpty(string) || !string.equals("Page_Home")) {
+            if (StringUtils.isEmpty(string) || !string.equals("Page_Home")) {
                 return;
             }
             gmq.a("Page_Home", "track_center_action", "rec_list_item_click_count");
@@ -77,7 +77,7 @@ public class oon extends a {
             return;
         }
         String string = jSONObject.getString("targetUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         e.a(jSONObject2, jSONObject);
@@ -111,7 +111,7 @@ public class oon extends a {
         Bundle bundle = new Bundle();
         if (jSONObject2 != null) {
             String string = jSONObject2.getString("targetParams");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 bundle.putSerializable("targetParams", string);
             }
             c.a("targetParams", string);
@@ -161,7 +161,7 @@ public class oon extends a {
             } else {
                 String string = jSONObject4.getString("utLogMap");
                 try {
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         jSONObject3.put(kox.X_OBJECT_ID, (Object) JSONObject.parseObject(URLDecoder.decode(string, "utf-8")).getString(kox.X_OBJECT_ID));
                     }
                 } catch (UnsupportedEncodingException | NullPointerException unused) {

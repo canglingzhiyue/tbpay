@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Outline;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
@@ -387,7 +387,7 @@ public class TopBarFrame3 extends BaseFrame implements d, ddv {
             return;
         }
         VideoInfo videoInfo = this.mLiveDataModel.mVideoInfo;
-        if (videoInfo != null && videoInfo.broadCaster != null && videoInfo.broadCaster.atmosphere != null && !TextUtils.isEmpty(videoInfo.broadCaster.atmosphere.headIcon)) {
+        if (videoInfo != null && videoInfo.broadCaster != null && videoInfo.broadCaster.atmosphere != null && !StringUtils.isEmpty(videoInfo.broadCaster.atmosphere.headIcon)) {
             this.mAvatarViewBoard.setVisibility(0);
             this.mAvatarViewBoard.setImageUrl(videoInfo.broadCaster.atmosphere.headIcon);
             return;

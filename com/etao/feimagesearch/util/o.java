@@ -2,7 +2,7 @@ package com.etao.feimagesearch.util;
 
 import android.app.Application;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -156,10 +156,10 @@ public final class o {
         }
         JSONObject jSONObject = (JSONObject) obj;
         for (String str : jSONObject.keySet()) {
-            if (str != null && !TextUtils.isEmpty(str) && (b = com.taobao.android.searchbaseframe.util.a.b(jSONObject, str)) != null) {
+            if (str != null && !StringUtils.isEmpty(str) && (b = com.taobao.android.searchbaseframe.util.a.b(jSONObject, str)) != null) {
                 kotlin.jvm.internal.q.a((Object) b, "FastJsonParseUtil.optJSO… templateKey) ?: continue");
                 String templateUrl = com.taobao.android.searchbaseframe.util.a.a(b, "url", "");
-                if (!TextUtils.isEmpty(templateUrl)) {
+                if (!StringUtils.isEmpty(templateUrl)) {
                     kotlin.jvm.internal.q.a((Object) templateUrl, "templateUrl");
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put((JSONObject) str, (String) b);
@@ -271,7 +271,7 @@ public final class o {
         final LinkedHashMap linkedHashMap = new LinkedHashMap();
         com.taobao.android.searchbaseframe.ace.b.a(imo.b(), map, "wxrcmd");
         linkedHashMap.put("params", JSONObject.toJSONString(map));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (map == null || (str4 = map.get("pssource")) == null) {
                 str4 = "";
             }
@@ -528,20 +528,20 @@ public final class o {
             }
             map.put("base91", "false");
             String b = com.taobao.search.common.util.f.b();
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 map.put("LBS", b);
             }
-            if (TextUtils.isEmpty(map.get(noa.KEY_GLOBAL_LBS))) {
+            if (StringUtils.isEmpty(map.get(noa.KEY_GLOBAL_LBS))) {
                 com.taobao.search.common.util.o oVar = com.taobao.search.common.util.o.INSTANCE;
                 Application b2 = com.b();
                 kotlin.jvm.internal.q.a((Object) b2, "GlobalAdapter.getCtx()");
                 map.put(noa.KEY_GLOBAL_LBS, oVar.c(b2));
             }
-            if (TextUtils.isEmpty(map.get(noa.KEY_EDITION_CODE))) {
+            if (StringUtils.isEmpty(map.get(noa.KEY_EDITION_CODE))) {
                 map.put(noa.KEY_EDITION_CODE, com.taobao.search.mmd.util.g.d());
             }
             String a2 = INSTANCE.a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 map.put("clientIrpUserParams", a2);
             }
             if (!map.containsKey(noa.KEY_GOOD_PRICE)) {
@@ -571,22 +571,22 @@ public final class o {
         INSTANCE.b(sb, "backflow_id", params.get("backflow_id"));
         if (kotlin.jvm.internal.q.a((Object) str, (Object) "store") || kotlin.jvm.internal.q.a((Object) str, (Object) "detailsku")) {
             String str2 = params.get("sellerId");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = params.get("sellerid");
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = params.get("seller_id");
             }
             INSTANCE.b(sb, "sellid", str2);
         }
         String str3 = params.get("shopId");
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = params.get(WXConstantsOut.SHOPID);
         }
         INSTANCE.b(sb, WXConstantsOut.SHOPID, str3);
         params.put("extraParams", sb.toString());
         String l = com.etao.feimagesearch.config.b.l(str);
-        if (TextUtils.isEmpty(l)) {
+        if (StringUtils.isEmpty(l)) {
             return;
         }
         params.put("component", l);
@@ -599,7 +599,7 @@ public final class o {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String clientIrpUserParams = com.etao.feimagesearch.k.b(com.b(), IrpMuiseModule.KEY_IRP_USER_DATA);
-        if (TextUtils.isEmpty(clientIrpUserParams)) {
+        if (StringUtils.isEmpty(clientIrpUserParams)) {
             return "";
         }
         if (!com.etao.feimagesearch.config.b.dq()) {
@@ -641,7 +641,7 @@ public final class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("53aac876", new Object[]{this, sb, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             sb.append(str);
             sb.append(":");

@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.intelli.realtime.mtop;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -115,7 +115,7 @@ public final class a {
             q.a((Object) str, "if (imageInfoArray.size …g(imageInfoArray) else \"\"");
             hashMap4.put("imageInfos", str);
             hashMap4.put("mssid", mssid);
-            if (!TextUtils.isEmpty(extraInfo) && extraInfo.length() < b.aP()) {
+            if (!StringUtils.isEmpty(extraInfo) && extraInfo.length() < b.aP()) {
                 hashMap4.put("plt_search_extraInfo", extraInfo);
             }
             hashMap4.put("source", "realtime_search_card");

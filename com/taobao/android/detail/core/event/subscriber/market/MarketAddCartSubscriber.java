@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.event.subscriber.market;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -64,7 +64,7 @@ public class MarketAddCartSubscriber extends AddCartSubscriber {
             return;
         }
         super.onAddCartFailed(mtopResponse, addBagRequestParams);
-        if ((mtopResponse != null && (mtopResponse.isSessionInvalid() || "ANDROID_SYS_LOGIN_CANCEL".equals(mtopResponse.getRetCode()))) || addBagRequestParams == null || TextUtils.isEmpty(addBagRequestParams.itemId)) {
+        if ((mtopResponse != null && (mtopResponse.isSessionInvalid() || "ANDROID_SYS_LOGIN_CANCEL".equals(mtopResponse.getRetCode()))) || addBagRequestParams == null || StringUtils.isEmpty(addBagRequestParams.itemId)) {
             return;
         }
         epq.a(this.mActivity, String.format(ITEM_URL, addBagRequestParams.itemId));

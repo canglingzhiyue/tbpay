@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.event;
 
 import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import com.alibaba.android.icart.core.groupcharge.ui.a;
@@ -62,7 +62,7 @@ public class o extends bca {
             for (IDMComponent iDMComponent : list) {
                 if (iDMComponent.getFields() != null) {
                     String string = iDMComponent.getFields().getString("bizCode");
-                    if (!TextUtils.isEmpty(string) && !arrayList.contains(string)) {
+                    if (!StringUtils.isEmpty(string) && !arrayList.contains(string)) {
                         arrayList.add(string);
                         sb.append(string);
                         sb.append(",");

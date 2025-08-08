@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.d;
 import com.taobao.android.litecreator.util.au;
@@ -54,7 +54,7 @@ public class UmiDraftInterceptor implements d {
             return (String) ipChange.ipc$dispatch("10c6f18d", new Object[]{this, uri, str, str2});
         }
         String queryParameter = uri.getQueryParameter(ior.f29193a);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             return ios.a(queryParameter).a(str, str2);
         }
         return uri.getQueryParameter(str);
@@ -86,16 +86,16 @@ public class UmiDraftInterceptor implements d {
             }
             String a2 = a(data, "biz_scene", "guangguang");
             String a3 = a(data, ios.KEY_IS_USE_NEW_PUBLISHER, "0");
-            if (!"guangguang".equals(a2) || TextUtils.isEmpty(b.a(context).a("guangguang"))) {
+            if (!"guangguang".equals(a2) || StringUtils.isEmpty(b.a(context).a("guangguang"))) {
                 return false;
             }
             final DraftModel d = b.a(context).d("guangguang");
             String a4 = a(d);
-            if (TextUtils.isEmpty(a4)) {
+            if (StringUtils.isEmpty(a4)) {
                 a4 = "https://img.alicdn.com/imgextra/i4/O1CN01guxPeP1frz78rRGU6_!!6000000004061-2-tps-420-420.png";
             }
-            if (d != null && !TextUtils.isEmpty(d.draftId)) {
-                if (d.urlParams != null && d.urlParams.containsKey(ios.KEY_IS_USE_NEW_PUBLISHER) && !TextUtils.equals(d.urlParams.get(ios.KEY_IS_USE_NEW_PUBLISHER), a3)) {
+            if (d != null && !StringUtils.isEmpty(d.draftId)) {
+                if (d.urlParams != null && d.urlParams.containsKey(ios.KEY_IS_USE_NEW_PUBLISHER) && !StringUtils.equals(d.urlParams.get(ios.KEY_IS_USE_NEW_PUBLISHER), a3)) {
                     u.d(b.TAG, "user = " + a3 + ", last draft = " + d.urlParams.get(ios.KEY_IS_USE_NEW_PUBLISHER));
                     return false;
                 }
@@ -147,7 +147,7 @@ public class UmiDraftInterceptor implements d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("972eeb7d", new Object[]{this, draftModel});
         }
-        if (draftModel != null && draftModel.meta != null && !TextUtils.isEmpty(draftModel.meta.type)) {
+        if (draftModel != null && draftModel.meta != null && !StringUtils.isEmpty(draftModel.meta.type)) {
             if (i.SOURCE_TYPE_PHOTO.equals(draftModel.meta.type) && draftModel.meta.photos != null && draftModel.meta.photos.size() > 0) {
                 DraftModel.Photo photo = draftModel.meta.photos.get(0);
                 if (photo != null) {

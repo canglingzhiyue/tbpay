@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.b;
 import com.taobao.android.ab.api.c;
@@ -152,7 +152,7 @@ public class dkb implements d, Runnable, dkf {
         String b = djy.b(context);
         djy.a("OrangeConfigImpl", "checkEnvironment, runtime version=" + b);
         this.i = b;
-        return TextUtils.isEmpty(b) || TextUtils.equals(string, b);
+        return StringUtils.isEmpty(b) || StringUtils.equals(string, b);
     }
 
     @Override // com.taobao.orange.d
@@ -241,7 +241,7 @@ public class dkb implements d, Runnable, dkf {
             return;
         }
         String a3 = dko.a(a2);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             a3 = "{}";
         }
         this.b.edit().putBoolean("status", aVar.f26806a).putString("ab_config_cdn", aVar.b).putString("ab_condition_ver", this.i).putString("ab_config_json", a3).commit();

@@ -5,7 +5,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ah;
 import com.xiaomi.push.es;
 import com.xiaomi.push.eu;
@@ -35,7 +35,7 @@ public class o {
             a2 = es.a(context.getApplicationContext());
             euVar = eu.ACTIVITY;
         } else if (!(context instanceof Service) || intent == null) {
-            if (uri == null || TextUtils.isEmpty(uri.toString())) {
+            if (uri == null || StringUtils.isEmpty(uri.toString())) {
                 return;
             }
             es.a(context.getApplicationContext()).a(eu.PROVIDER, context, (Intent) null, uri.toString());

@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.perf;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,7 +97,7 @@ public class PerfTimelineFragment extends Fragment {
         if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(value) && isNumeric(value)) {
+                if (!StringUtils.isEmpty(value) && isNumeric(value)) {
                     hashMap.put(entry.getKey(), Integer.valueOf(value));
                 }
             }

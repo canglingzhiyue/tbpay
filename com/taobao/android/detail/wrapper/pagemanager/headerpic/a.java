@@ -5,7 +5,7 @@ import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleOwner;
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -227,13 +227,13 @@ public class a implements lpa {
         }
         long j5 = j2 - j4;
         long H = j2 - y.H();
-        if (TextUtils.equals(str, "aura_preload_visible")) {
+        if (StringUtils.equals(str, "aura_preload_visible")) {
             h.b(detailActivity, j3, j5, H);
-        } else if (TextUtils.equals(str, "aura_visible")) {
+        } else if (StringUtils.equals(str, "aura_visible")) {
             h.a(detailActivity, j3, j5, H);
-        } else if (TextUtils.equals(str, "preload_visible")) {
+        } else if (StringUtils.equals(str, "preload_visible")) {
             h.d(detailActivity, j3, j5);
-        } else if (!TextUtils.equals(str, "visible")) {
+        } else if (!StringUtils.equals(str, "visible")) {
         } else {
             h.c(detailActivity, j3, j5);
         }
@@ -726,7 +726,7 @@ public class a implements lpa {
                         return hashMap;
                     }
                     String i = C.i();
-                    if (TextUtils.isEmpty(i)) {
+                    if (StringUtils.isEmpty(i)) {
                         return hashMap;
                     }
                     hashMap.put("token", detailActivity.h);

@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downgrade.rule.AvailableBizRule;
 import com.taobao.downgrade.rule.BusinessRule;
@@ -237,7 +237,7 @@ public class Downgrade implements Handler.Callback {
         if (f.degrade) {
             return i.b();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i.a(f, NULL_BIZ);
         }
         BusinessRule e = this.mStorage.e(str);

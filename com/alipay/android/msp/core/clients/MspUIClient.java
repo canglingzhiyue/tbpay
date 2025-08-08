@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core.clients;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.birdnest.api.MspWindowLoadListener;
@@ -148,7 +148,7 @@ public abstract class MspUIClient {
             jSONObject.put("success", (Object) Boolean.valueOf(a()));
             String a2 = a(mspContainerContext);
             String str = "";
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 LogUtil.record(1, "MspUIClient:onFirstReq", "opType empty");
                 MspContainerClient mspContainerClient = mspContainerContext.getMspContainerClient();
                 if (mspContainerClient != null && mspContainerClient.getMspContainerResult() != null) {
@@ -166,7 +166,7 @@ public abstract class MspUIClient {
             String cachedManufacturerAndModel = PreloadManager.getPreloadCache().getCachedManufacturerAndModel(false, null, false, apdidToken);
             String clientKey = MspConfig.getInstance().getClientKey();
             String vimeiAndVimsi = MspConfig.getInstance().getVimeiAndVimsi();
-            if (!TextUtils.isEmpty(cachedUserAgentByTypeV2)) {
+            if (!StringUtils.isEmpty(cachedUserAgentByTypeV2)) {
                 cachedUserAgentByTypeV2 = cachedUserAgentByTypeV2.replace("(a)", clientKey).replace("(b)", vimeiAndVimsi).replace("(c)", cachedManufacturerAndModel);
             }
             RpcJsonReq rpcJsonReq = new RpcJsonReq();
@@ -190,7 +190,7 @@ public abstract class MspUIClient {
             sb.append(executeRpc.toJSONString());
             LogUtil.record(1, "MspUIClient:queryRendData", sb.toString());
             String jSONString = executeRpc.toJSONString();
-            if (TextUtils.isEmpty(jSONString)) {
+            if (StringUtils.isEmpty(jSONString)) {
                 PrefUtils.putInt(PrefUtils.BIZ_OP_TYPE, PrefUtils.BIZ_ERROR_TIMES_KEY, Integer.valueOf(PrefUtils.getInt(PrefUtils.BIZ_OP_TYPE, PrefUtils.BIZ_ERROR_TIMES_KEY, 0).intValue() + 1));
                 LogUtil.record(1, "MspUIClient:onFirstReq", "rendData empty");
                 MspContainerClient mspContainerClient2 = mspContainerContext.getMspContainerClient();
@@ -250,7 +250,7 @@ public abstract class MspUIClient {
             String str = "";
             String str2 = (String) data.get(UIAction.DataKeys.action, str);
             String str3 = (String) data.get(UIAction.DataKeys.data, str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = JSON.parseObject(str2).getString("name");
             }
             ActionsCreator.get(mspTradeContext).createSubmitEventAction(str, str3, EventAction.SubmitType.CommonRequestWithoutUI, 0);
@@ -328,7 +328,7 @@ public abstract class MspUIClient {
             JSONObject parseObject = JSON.parseObject(PrefUtils.getString(PrefUtils.BIZ_OP_TYPE, PrefUtils.BIZ_OP_TYPE_KEY, ""));
             if (parseObject != null && parseObject.getJSONObject("bizOpMap") != null) {
                 str = parseObject.getJSONObject("bizOpMap").getString(mspContainerContext.getBizType());
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     LogUtil.record(2, "MspUIClient:checkOpType", "local opType=".concat(String.valueOf(str)));
                     return str;
                 }
@@ -340,7 +340,7 @@ public abstract class MspUIClient {
                     str = jSONObject.getString(mspContainerContext.getBizType());
                     PrefUtils.putString(PrefUtils.BIZ_OP_TYPE, PrefUtils.BIZ_OP_TYPE_KEY, executeRpc.toJSONString());
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     LogUtil.record(1, "MspUIClient:checkOpType", "rpc opType=".concat(String.valueOf(str)));
                     return str;
                 }

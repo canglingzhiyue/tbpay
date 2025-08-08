@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.data.meta.Feature;
 import com.taobao.android.detail.ttdetail.handler.bizhandlers.w;
@@ -58,7 +58,7 @@ public class ctt {
             } else {
                 str = b(feature) ? "ADDCART_AND_BUYNOW" : "";
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             eyxVar.c().a(w.a(str, (String) null), new RuntimeAbilityParam[0]);

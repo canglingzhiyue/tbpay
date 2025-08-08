@@ -1,7 +1,7 @@
 package com.taobao.avplayer.core.protocol;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.DWContext;
@@ -203,7 +203,7 @@ public class DWInteractiveObject implements IDWObject {
             ipChange.ipc$dispatch("77dcfe5", new Object[]{dWContext, layoutParams, dWVideoScreenType, new Float(f), new Float(f2), str, new Boolean(z)});
         } else if (dWContext == null || layoutParams == null) {
         } else {
-            String str2 = TextUtils.isEmpty(str) ? "RB" : str;
+            String str2 = StringUtils.isEmpty(str) ? "RB" : str;
             if (dWVideoScreenType == DWVideoScreenType.LANDSCAPE_FULL_SCREEN) {
                 i = kcl.a(dWContext);
                 i2 = kcl.b(dWContext);

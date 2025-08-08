@@ -1,7 +1,7 @@
 package com.taobao.android.tbuprofen.common;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.h;
 import java.io.File;
@@ -30,7 +30,7 @@ public class c {
             d(context);
             if (h.b().a()) {
                 String b = h.b().b("tbuprofen-agent-v1");
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     File file = new File(b);
                     if (!file.equals(c(context)) && file.exists() && file.length() > 0) {
                         com.taobao.android.tbuprofen.log.c.d("TBPFileManager", "Get agent from remote", new Object[0]);
@@ -78,7 +78,7 @@ public class c {
         } catch (InvocationTargetException e3) {
             e3.printStackTrace();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         File file = new File(str);

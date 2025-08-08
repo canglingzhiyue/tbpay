@@ -3,7 +3,7 @@ package com.taobao.android.dinamicx;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes5.dex */
@@ -34,7 +34,7 @@ public class af implements com.taobao.android.nav.e {
         if (intent != null && intent.getData() != null) {
             try {
                 Uri data = intent.getData();
-                if (data.isHierarchical() && !TextUtils.isEmpty(data.getQueryParameter("dx_debugger"))) {
+                if (data.isHierarchical() && !StringUtils.isEmpty(data.getQueryParameter("dx_debugger"))) {
                     a(data.toString());
                 }
             } catch (Throwable unused) {

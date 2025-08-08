@@ -1,7 +1,7 @@
 package com.taobao.atools;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.q;
 import com.alipay.android.msp.framework.dynfun.TplMsg;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -272,7 +272,7 @@ public class StaticHook {
         if (ipChange instanceof IpChange) {
             return (Field) ipChange.ipc$dispatch("6df7bae5", new Object[]{cls, str, isqVar});
         }
-        if (b() && !TextUtils.isEmpty(str)) {
+        if (b() && !StringUtils.isEmpty(str)) {
             Unsafe unsafe = (Unsafe) d;
             long j2 = unsafe.getLong(cls, isqVar.get().longValue());
             int i2 = unsafe.getInt(j2);
@@ -315,7 +315,7 @@ public class StaticHook {
         if (ipChange instanceof IpChange) {
             return (Member) ipChange.ipc$dispatch("3ba73c8d", new Object[]{obj, str, clsArr});
         }
-        if (b() && !TextUtils.isEmpty(str)) {
+        if (b() && !StringUtils.isEmpty(str)) {
             Unsafe unsafe = (Unsafe) d;
             long j2 = unsafe.getLong(obj, e);
             int i2 = unsafe.getInt(j2);

@@ -3,7 +3,7 @@ package com.taobao.tao.recommend4.recyclerview;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -93,7 +93,7 @@ public class e implements RecyclerView.OnChildAttachStateChangeListener {
             }
             JSONObject jSONObject = a2.getJSONObject(com.taobao.android.home.component.utils.h.TRACK_EXPOSURE_PARAM);
             String str2 = "";
-            if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("arg1"))) {
+            if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("arg1"))) {
                 str = str2;
             } else {
                 str2 = jSONObject.getString("arg1");

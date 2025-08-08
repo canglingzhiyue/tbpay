@@ -2,7 +2,7 @@ package com.taobao.android.interactive_common.video;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -58,12 +58,12 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
             String config = OrangeConfig.getInstance().getConfig("ShortVideo", "degradeToOldTypeList", "[\"taobaoerlou\",\"taolive\",\"taobaolive\",\"shop2018_double11\",\"gohi_home\",\"default\",\"preview\",\"shop_collect\",\"contentPlat\"]");
-            if (TextUtils.isEmpty(config) || (parseArray = JSONArray.parseArray(config)) == null || (size = parseArray.size()) <= 0) {
+            if (StringUtils.isEmpty(config) || (parseArray = JSONArray.parseArray(config)) == null || (size = parseArray.size()) <= 0) {
                 return false;
             }
             for (int i = 0; i < size; i++) {
@@ -85,10 +85,10 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (TextUtils.isEmpty(str2) || (parseArray = JSONArray.parseArray(str2)) == null || (size = parseArray.size()) <= 0) {
+        if (StringUtils.isEmpty(str2) || (parseArray = JSONArray.parseArray(str2)) == null || (size = parseArray.size()) <= 0) {
             return false;
         }
         for (int i = 0; i < size; i++) {
@@ -115,7 +115,7 @@ public class b {
             return false;
         }
         String queryParameter = data.getQueryParameter("type");
-        return !TextUtils.isEmpty(queryParameter) && b(queryParameter);
+        return !StringUtils.isEmpty(queryParameter) && b(queryParameter);
     }
 
     public static boolean b() {

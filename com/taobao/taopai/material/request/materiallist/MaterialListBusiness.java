@@ -1,6 +1,6 @@
 package com.taobao.taopai.material.request.materiallist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -82,7 +82,7 @@ public class MaterialListBusiness extends BaseMaterialBusiness<MaterialListBean>
         sb.append("_");
         sb.append(this.mParams.i());
         sb.append("_");
-        sb.append(TextUtils.isEmpty(this.mParams.g()) ? "" : Integer.valueOf(this.mParams.g().hashCode()));
+        sb.append(StringUtils.isEmpty(this.mParams.g()) ? "" : Integer.valueOf(this.mParams.g().hashCode()));
         sb.append("_");
         sb.append(izj.a() ? "1" : "0");
         return qbs.b() + "material_list_" + sb.toString();

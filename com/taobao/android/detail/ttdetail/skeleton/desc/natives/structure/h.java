@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -36,7 +36,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (g) ipChange.ipc$dispatch("f5da2c6a", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
+        if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
             return null;
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("weexData");
@@ -91,7 +91,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (g) ipChange.ipc$dispatch("f500bbc9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return this.f10864a;
         }
         JSONObject parseObject = JSON.parseObject(str);

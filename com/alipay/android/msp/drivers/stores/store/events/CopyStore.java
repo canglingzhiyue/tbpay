@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.actions.InvokeActionPlugin;
@@ -38,13 +38,13 @@ public class CopyStore extends LocalEventStore {
         final Activity activity = currentPresenter.getActivity();
         try {
             JSONObject actionParamsJson = mspEvent.getActionParamsJson();
-            final boolean z2 = actionParamsJson.containsKey(LoginConstants.SHOW_TOAST) ? !TextUtils.equals(actionParamsJson.getString(LoginConstants.SHOW_TOAST), "false") : true;
+            final boolean z2 = actionParamsJson.containsKey(LoginConstants.SHOW_TOAST) ? !StringUtils.equals(actionParamsJson.getString(LoginConstants.SHOW_TOAST), "false") : true;
             if (actionParamsJson.containsKey("type")) {
-                z = true ^ TextUtils.equals(actionParamsJson.getString("type"), "read");
+                z = true ^ StringUtils.equals(actionParamsJson.getString("type"), "read");
             }
             final String string = actionParamsJson.containsKey("text") ? actionParamsJson.getString("text") : "";
             if (z) {
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     TaskHelper.runOnUIThread(new Runnable() { // from class: com.alipay.android.msp.drivers.stores.store.events.CopyStore.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 

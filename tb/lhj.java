@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.action.IUiRefreshActionModel;
 import com.taobao.infoflow.protocol.model.datamodel.action.a;
@@ -41,7 +41,7 @@ public class lhj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f5ef13b3", new Object[]{this, iContainerDataModel, iUiRefreshActionModel, iMainFeedsViewService});
-        } else if (TextUtils.isEmpty(iUiRefreshActionModel.getDataChangeType())) {
+        } else if (StringUtils.isEmpty(iUiRefreshActionModel.getDataChangeType())) {
             iMainFeedsViewService.resetErrorView();
         } else if (!a(iUiRefreshActionModel, iContainerDataModel, iMainFeedsViewService)) {
         } else {
@@ -56,12 +56,12 @@ public class lhj {
 
     private boolean a(IUiRefreshActionModel iUiRefreshActionModel) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4935db34", new Object[]{this, iUiRefreshActionModel})).booleanValue() : TextUtils.equals(iUiRefreshActionModel.getDataSourceType(), "local");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4935db34", new Object[]{this, iUiRefreshActionModel})).booleanValue() : StringUtils.equals(iUiRefreshActionModel.getDataSourceType(), "local");
     }
 
     private boolean b(IUiRefreshActionModel iUiRefreshActionModel) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("27294113", new Object[]{this, iUiRefreshActionModel})).booleanValue() : TextUtils.equals(iUiRefreshActionModel.getDataSourceType(), "download");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("27294113", new Object[]{this, iUiRefreshActionModel})).booleanValue() : StringUtils.equals(iUiRefreshActionModel.getDataSourceType(), "download");
     }
 
     private boolean c(IContainerDataModel iContainerDataModel, IUiRefreshActionModel iUiRefreshActionModel) {
@@ -70,7 +70,7 @@ public class lhj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a306b06b", new Object[]{this, iContainerDataModel, iUiRefreshActionModel})).booleanValue();
         }
-        boolean equals = TextUtils.equals(iUiRefreshActionModel.getDataChangeType(), "base");
+        boolean equals = StringUtils.equals(iUiRefreshActionModel.getDataChangeType(), "base");
         return (!equals || (mo1280getPageParams = iContainerDataModel.getBase().mo1280getPageParams()) == null) ? equals : mo1280getPageParams.getPageNum() == 0 && !iUiRefreshActionModel.isSecondReturn();
     }
 

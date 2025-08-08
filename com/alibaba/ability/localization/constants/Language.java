@@ -1,6 +1,6 @@
 package com.alibaba.ability.localization.constants;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Locale;
 import kotlin.jvm.JvmStatic;
@@ -30,7 +30,7 @@ public enum Language {
     }
 
     public final boolean compare$Localization_release(Locale locale) {
-        return locale != null && TextUtils.equals(this.language, locale.getLanguage()) && TextUtils.equals(this.country, locale.getCountry());
+        return locale != null && StringUtils.equals(this.language, locale.getLanguage()) && StringUtils.equals(this.country, locale.getCountry());
     }
 
     public final String getCountry() {

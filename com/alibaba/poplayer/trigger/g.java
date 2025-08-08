@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.trigger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.trigger.g;
 import com.alibaba.poplayer.utils.f;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -108,7 +108,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.b) || !this.b.startsWith(cag.PAGE_SCHEME)) {
+        } else if (StringUtils.isEmpty(this.b) || !this.b.startsWith(cag.PAGE_SCHEME)) {
             if (this.d == null) {
                 return;
             }

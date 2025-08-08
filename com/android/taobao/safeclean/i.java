@@ -1,6 +1,6 @@
 package com.android.taobao.safeclean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -78,11 +78,11 @@ public class i {
             config = OrangeConfig.getInstance().getConfig("safe_clean_android", "addition_model", "");
         }
         Log.e("OrangeSource", "receive mode orange config data:" + config);
-        if (TextUtils.isEmpty(config) || "{}".equals(config)) {
+        if (StringUtils.isEmpty(config) || "{}".equals(config)) {
             return;
         }
         final String str2 = map.get("configVersion");
-        if (!TextUtils.isEmpty(str2) && str2.equalsIgnoreCase(g.a().b())) {
+        if (!StringUtils.isEmpty(str2) && str2.equalsIgnoreCase(g.a().b())) {
             return;
         }
         cjb.a(new Runnable() { // from class: com.android.taobao.safeclean.-$$Lambda$i$tVZTn_OroUl4oLrzbqs8qsoA0X8

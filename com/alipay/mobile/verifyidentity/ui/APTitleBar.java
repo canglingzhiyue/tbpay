@@ -6,7 +6,7 @@ import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.TouchDelegate;
@@ -306,7 +306,7 @@ public class APTitleBar extends APRelativeLayout {
             return;
         }
         int i = 8;
-        if (z && !TextUtils.isEmpty(this.g.getText().toString())) {
+        if (z && !StringUtils.isEmpty(this.g.getText().toString())) {
             this.f.setVisibility(0);
         } else {
             this.f.setVisibility(8);
@@ -324,22 +324,22 @@ public class APTitleBar extends APRelativeLayout {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
             return;
         }
-        if (this.l.getVisibility() == 0 && !TextUtils.isEmpty(this.l.getText())) {
+        if (this.l.getVisibility() == 0 && !StringUtils.isEmpty(this.l.getText())) {
             this.k.setVisibility(0);
         } else {
             this.k.setVisibility(8);
         }
-        if (this.g.getVisibility() == 0 && !TextUtils.isEmpty(this.g.getText())) {
+        if (this.g.getVisibility() == 0 && !StringUtils.isEmpty(this.g.getText())) {
             this.f.setVisibility(0);
         } else {
             this.f.setVisibility(8);
         }
-        if (this.o.getVisibility() == 0 && !TextUtils.isEmpty(this.o.getText())) {
+        if (this.o.getVisibility() == 0 && !StringUtils.isEmpty(this.o.getText())) {
             this.n.setVisibility(0);
         } else {
             this.n.setVisibility(8);
         }
-        if (this.B.getVisibility() == 0 && !TextUtils.isEmpty(this.B.getText())) {
+        if (this.B.getVisibility() == 0 && !StringUtils.isEmpty(this.B.getText())) {
             this.C.setVisibility(0);
         } else {
             this.C.setVisibility(8);
@@ -361,7 +361,7 @@ public class APTitleBar extends APRelativeLayout {
             ipChange.ipc$dispatch("5947fc05", new Object[]{this, str});
             return;
         }
-        if (this.g != null && !TextUtils.isEmpty(str)) {
+        if (this.g != null && !StringUtils.isEmpty(str)) {
             try {
                 RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.g.getLayoutParams();
                 layoutParams.width = -2;

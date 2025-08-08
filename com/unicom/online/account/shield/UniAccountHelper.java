@@ -1,7 +1,7 @@
 package com.unicom.online.account.shield;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.OO0O0o0;
 import com.mobile.auth.OO0OOo0;
 import com.mobile.auth.OOO;
@@ -160,7 +160,7 @@ public class UniAccountHelper {
     public UniAccountHelper init(Context context, String str, boolean z) {
         if (context != null) {
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str)) {
                     if (this.mContext != null) {
                         OO0O0o0.O000000o("重复初始化");
                         return null;
@@ -175,8 +175,8 @@ public class UniAccountHelper {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str)) {
-                            if (!TextUtils.isEmpty(OOO.O00000o0())) {
+                        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(OOO.O00000o0())) {
                                 OOO0o0.O00000oO("不可重复初始化");
                             } else {
                                 OOO0O0O.O000000o = false;

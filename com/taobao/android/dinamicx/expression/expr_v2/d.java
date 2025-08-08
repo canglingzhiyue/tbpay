@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.expression.expr_v2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.q;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class d {
 
     public boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && this.b.containsKey(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && this.b.containsKey(str);
     }
 
     public a a(String str, byte[] bArr, int i) {

@@ -1,6 +1,6 @@
 package com.ali.user.mobile.login.tasks;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.login.LoginDataRepository;
 import com.ali.user.mobile.model.LoginBaseParam;
@@ -39,7 +39,7 @@ public class TokenLoginTask extends BaseLoginTask {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e149d18c", new Object[]{this});
         }
-        if (this.loginParam != null && !TextUtils.isEmpty(this.loginParam.nativeLoginType)) {
+        if (this.loginParam != null && !StringUtils.isEmpty(this.loginParam.nativeLoginType)) {
             return this.loginParam.nativeLoginType;
         }
         return LoginType.ServerLoginType.TokenLogin.getType();

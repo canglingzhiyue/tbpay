@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.handler.e.j;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 
 /* loaded from: classes4.dex */
@@ -51,10 +51,10 @@ public class d {
 
     public d(a aVar) {
         String str = "";
-        this.f7989a = !TextUtils.isEmpty(aVar.f7990a) ? aVar.f7990a : str;
-        this.b = !TextUtils.isEmpty(aVar.b) ? aVar.b : str;
-        this.c = !TextUtils.isEmpty(aVar.c) ? aVar.c : str;
-        this.d = !TextUtils.isEmpty(aVar.d) ? aVar.d : str;
+        this.f7989a = !StringUtils.isEmpty(aVar.f7990a) ? aVar.f7990a : str;
+        this.b = !StringUtils.isEmpty(aVar.b) ? aVar.b : str;
+        this.c = !StringUtils.isEmpty(aVar.c) ? aVar.c : str;
+        this.d = !StringUtils.isEmpty(aVar.d) ? aVar.d : str;
     }
 
     public static a a() {

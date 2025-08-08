@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,7 +85,7 @@ public class h extends b<com.taobao.android.detail.core.model.viewmodel.desc.d> 
             return;
         }
         int i2 = epo.b;
-        if (!TextUtils.isEmpty(dVar.h)) {
+        if (!StringUtils.isEmpty(dVar.h)) {
             try {
                 float parseFloat = 1.0f / Float.parseFloat(dVar.h);
                 i = (i2 - ((int) ((parseFloat - 1.0f) * dzc.ITEM_PADDING_RIGHT))) / Math.round(parseFloat);
@@ -138,7 +138,7 @@ public class h extends b<com.taobao.android.detail.core.model.viewmodel.desc.d> 
         this.q = dVar.e;
         this.p = dVar.f;
         this.r = dVar.g;
-        if (!TextUtils.isEmpty(this.q) || !TextUtils.isEmpty(this.p)) {
+        if (!StringUtils.isEmpty(this.q) || !StringUtils.isEmpty(this.p)) {
             this.k.setClickable(true);
         } else {
             this.k.setClickable(false);
@@ -147,13 +147,13 @@ public class h extends b<com.taobao.android.detail.core.model.viewmodel.desc.d> 
         DetailImageView detailImageView = this.l;
         int i = this.s;
         a(detailImageView, str, new epm(i, i), null, a2);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             String str4 = "¥ " + str2;
             int indexOf = str4.indexOf(".");
             if (indexOf > 0) {
                 String substring = str4.substring(indexOf + 1);
                 try {
-                    if (!TextUtils.isEmpty(substring) && Integer.parseInt(substring) <= 0) {
+                    if (!StringUtils.isEmpty(substring) && Integer.parseInt(substring) <= 0) {
                         str4 = str4.substring(0, indexOf);
                         indexOf = -1;
                     }
@@ -170,7 +170,7 @@ public class h extends b<com.taobao.android.detail.core.model.viewmodel.desc.d> 
             }
             this.n.setText(spannableString);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.m.setText(str3);
         }
         this.k.setDescendantFocusability(393216);

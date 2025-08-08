@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.ui.goods.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.ui.h5.H5TabFrame;
@@ -42,10 +42,10 @@ public class c implements i {
         if (extraGoodsTabItem == null) {
             ab.a("GoodsH5TabFrameAdapter", "[initH5TabFrame] tab item = null");
             return null;
-        } else if (!TextUtils.equals("h5", extraGoodsTabItem.type)) {
+        } else if (!StringUtils.equals("h5", extraGoodsTabItem.type)) {
             ab.a("GoodsH5TabFrameAdapter", "[initH5TabFrame] tab != h5, key = " + com.taobao.taolive.sdk.goodlist.c.a(extraGoodsTabItem));
             return null;
-        } else if (TextUtils.isEmpty(extraGoodsTabItem.url)) {
+        } else if (StringUtils.isEmpty(extraGoodsTabItem.url)) {
             ab.a("GoodsH5TabFrameAdapter", "[initH5TabFrame] tab url = null");
             return null;
         } else {

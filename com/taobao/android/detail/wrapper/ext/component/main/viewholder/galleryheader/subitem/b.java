@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -268,10 +268,10 @@ public class b implements com.taobao.android.detail.wrapper.ext.component.main.v
                 a2.J(true);
                 a2.K(false);
             }
-            if (!TextUtils.isEmpty(this.e.parentModel.sellerId) && TextUtils.isDigitsOnly(this.e.parentModel.sellerId)) {
+            if (!StringUtils.isEmpty(this.e.parentModel.sellerId) && StringUtils.isDigitsOnly(this.e.parentModel.sellerId)) {
                 a2.b(Long.parseLong(this.e.parentModel.sellerId));
             }
-            if (!TextUtils.isEmpty(this.e.getCoverUrl())) {
+            if (!StringUtils.isEmpty(this.e.getCoverUrl())) {
                 a2.i(true);
                 com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
                 aVar.a(new DWFrontCoverBean(0L, null, this.e.getCoverUrl()));
@@ -506,7 +506,7 @@ public class b implements com.taobao.android.detail.wrapper.ext.component.main.v
             return;
         }
         GalleryVideoModel galleryVideoModel = this.e;
-        if (galleryVideoModel == null || TextUtils.isEmpty(galleryVideoModel.getCoverUrl())) {
+        if (galleryVideoModel == null || StringUtils.isEmpty(galleryVideoModel.getCoverUrl())) {
             return;
         }
         epj.b().a(this.e.getCoverUrl(), this.p, new epl.a().a(R.drawable.detail_img_load_fail).a(), (com.taobao.android.detail.datasdk.protocol.image.b) null);
@@ -737,7 +737,7 @@ public class b implements com.taobao.android.detail.wrapper.ext.component.main.v
         int i = Build.VERSION.SDK_INT;
         long a2 = com.taobao.android.detail.core.detail.kit.utils.c.a();
         String d = NetworkUtils.d(this.f11225a);
-        if (i >= 17 && a2 >= 1000000 && !d.equals("2g") && !TextUtils.isEmpty(this.e.getVideoUrl()) && !TextUtils.isEmpty(this.e.getCoverUrl())) {
+        if (i >= 17 && a2 >= 1000000 && !d.equals("2g") && !StringUtils.isEmpty(this.e.getVideoUrl()) && !StringUtils.isEmpty(this.e.getCoverUrl())) {
             return;
         }
         this.i.a(this.e);
@@ -752,7 +752,7 @@ public class b implements com.taobao.android.detail.wrapper.ext.component.main.v
             return false;
         }
         GalleryVideoModel galleryVideoModel = (GalleryVideoModel) subItemModel;
-        if (!TextUtils.isEmpty(galleryVideoModel.getVideoUrl()) && !TextUtils.isEmpty(galleryVideoModel.getCoverUrl())) {
+        if (!StringUtils.isEmpty(galleryVideoModel.getVideoUrl()) && !StringUtils.isEmpty(galleryVideoModel.getCoverUrl())) {
             int i = Build.VERSION.SDK_INT;
             long a2 = com.taobao.android.detail.core.detail.kit.utils.c.a();
             String d = NetworkUtils.d(context);

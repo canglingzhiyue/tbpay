@@ -5,7 +5,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -29,7 +29,7 @@ public class TBAutoSizeDeviceBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.equals(str, IS_FOLDER_DEVICE_ACTION)) {
+        if (!StringUtils.equals(str, IS_FOLDER_DEVICE_ACTION)) {
             return false;
         }
         isFolderDevice(str2, wVCallBackContext);

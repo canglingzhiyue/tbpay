@@ -1,7 +1,7 @@
 package com.taobao.bootimage.interact.pop;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.linked.LinkedSplashData;
@@ -41,7 +41,7 @@ public class d {
             if (!kel.m) {
                 return "ORANGE_CLOSE";
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "PARAM_INVALID";
             }
             qnq.a a2 = new qnq().a(str);
@@ -186,7 +186,7 @@ public class d {
             return (String) ipChange.ipc$dispatch("666b162a", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "PARAM_INVALID";
             }
             if (Looper.myLooper() != Looper.getMainLooper()) {
@@ -201,7 +201,7 @@ public class d {
             }
             qnq.a a2 = qnqVar.a(str);
             kej.a("PopLayer.BootImagePopNaitveApi", "BootImagePopMamaCommercialView.doIsMamaCommercialHasOtherLevelRequestingPop.popInfo= " + a2);
-            if (a2 != null && !TextUtils.isEmpty(a2.c) && !TextUtils.isEmpty(a2.b)) {
+            if (a2 != null && !StringUtils.isEmpty(a2.c) && !StringUtils.isEmpty(a2.b)) {
                 return qnqVar.b(a2.b) ? "" : "NO_OTHER_LAYER_POP";
             }
             return "NO_REQUESTING_POP";
@@ -217,7 +217,7 @@ public class d {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "PARAM_INVALID";
             }
             f16702a = true;
@@ -249,7 +249,7 @@ public class d {
             return (String) ipChange.ipc$dispatch("14a6f7e8", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "PARAM_INVALID";
             }
             qnq.a a2 = new qnq().a(str);
@@ -279,7 +279,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1b1030fa", new Object[]{str, linkedSplashData});
-        } else if (TextUtils.isEmpty(str) || (a2 = new qnq().a(str)) == null || !BootImagePopMamaCommercialView.VIEW_TYPE.equals(a2.f32964a)) {
+        } else if (StringUtils.isEmpty(str) || (a2 = new qnq().a(str)) == null || !BootImagePopMamaCommercialView.VIEW_TYPE.equals(a2.f32964a)) {
         } else {
             View view = a2.f;
             if ((view == null && !"true".equals(Boolean.valueOf(a2.d))) || !(view instanceof BootImagePopMamaCommercialView)) {

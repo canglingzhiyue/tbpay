@@ -1,7 +1,7 @@
 package com.taobao.android.adam.common;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -50,7 +50,7 @@ public class Util {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("8dd80343", new Object[]{str, dXRuntimeContext});
         }
-        if (!TextUtils.isEmpty(str) && dXRuntimeContext != null && dXRuntimeContext.a() != null) {
+        if (!StringUtils.isEmpty(str) && dXRuntimeContext != null && dXRuntimeContext.a() != null) {
             return a(str, a(dXRuntimeContext));
         }
         return null;
@@ -87,7 +87,7 @@ public class Util {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("437edde7", new Object[]{str, bVar});
         }
-        if (!TextUtils.isEmpty(str) && bVar != null && bVar.o() != null) {
+        if (!StringUtils.isEmpty(str) && bVar != null && bVar.o() != null) {
             return bVar.o().getJSONObject(str);
         }
         return null;
@@ -98,7 +98,7 @@ public class Util {
         if (ipChange instanceof IpChange) {
             return (com.taobao.android.ultron.common.model.a) ipChange.ipc$dispatch("21288f60", new Object[]{str, bVar});
         }
-        if (!TextUtils.isEmpty(str) && bVar != null && bVar.d() != null && !bVar.d().isEmpty()) {
+        if (!StringUtils.isEmpty(str) && bVar != null && bVar.d() != null && !bVar.d().isEmpty()) {
             for (com.taobao.android.ultron.common.model.a aVar : bVar.d()) {
                 if (aVar.f15730a != null && aVar.f15730a.contains(str)) {
                     return aVar;

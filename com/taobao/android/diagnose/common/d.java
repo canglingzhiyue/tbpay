@@ -2,7 +2,7 @@ package com.taobao.android.diagnose.common;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.service.RVEnvironmentService;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.v;
@@ -27,7 +27,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return false;
         }
         try {

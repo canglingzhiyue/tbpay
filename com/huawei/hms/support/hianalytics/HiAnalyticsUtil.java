@@ -1,7 +1,7 @@
 package com.huawei.hms.support.hianalytics;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.android.SystemUtils;
 import com.huawei.hms.common.internal.RequestHeader;
 import com.huawei.hms.common.internal.ResponseHeader;
@@ -64,7 +64,7 @@ public class HiAnalyticsUtil {
         hashMap.put("appid", responseHeader.getActualAppID());
         hashMap.put("service", responseHeader.getSrvName());
         String apiName = responseHeader.getApiName();
-        if (!TextUtils.isEmpty(apiName)) {
+        if (!StringUtils.isEmpty(apiName)) {
             String[] split = apiName.split("\\.");
             if (split.length >= 2) {
                 hashMap.put("apiName", split[1]);
@@ -126,7 +126,7 @@ public class HiAnalyticsUtil {
         hashMap.put("appid", requestHeader.getActualAppID());
         hashMap.put("service", requestHeader.getSrvName());
         String apiName = requestHeader.getApiName();
-        if (!TextUtils.isEmpty(apiName)) {
+        if (!StringUtils.isEmpty(apiName)) {
             String[] split = apiName.split("\\.");
             if (split.length >= 2) {
                 hashMap.put("apiName", split[1]);

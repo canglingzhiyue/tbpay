@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.module.faceid.proxy;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
@@ -99,7 +99,7 @@ public class AuthenticatorManagerProxy implements ASProxy {
         jSONObject.put("authenticatorType", (Object) sb3.toString());
         try {
             String data = authenticatorMessage.getData();
-            if (!TextUtils.isEmpty(data)) {
+            if (!StringUtils.isEmpty(data)) {
                 JSONObject parseObject = JSON.parseObject(data);
                 if (parseObject.containsKey("signedData")) {
                     parseObject.remove("signedData");
@@ -125,7 +125,7 @@ public class AuthenticatorManagerProxy implements ASProxy {
             jSONObject.put("resultCode", (Object) Integer.valueOf(authenticatorResponse.getResult()));
             jSONObject.put("resultMessage", (Object) authenticatorResponse.getResultMessage());
             String data = authenticatorResponse.getData();
-            if (!TextUtils.isEmpty(data)) {
+            if (!StringUtils.isEmpty(data)) {
                 JSONObject parseObject = JSON.parseObject(data);
                 if (parseObject.containsKey("signedData")) {
                     parseObject.remove("signedData");

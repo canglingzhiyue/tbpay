@@ -20,7 +20,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -748,7 +748,7 @@ public class NavigationTabHelper {
                                             a2.setDisplayedChild(0);
                                             sendEmptyMessageDelayed(131072, NavigationTabHelper.a(this.h.loopDuration));
                                             break;
-                                        } else if (NavigationTabHelper.g() && this.h.textList != null && this.h.textList.size() > 0 && !TextUtils.isEmpty(this.h.text) && !TextUtils.equals(this.h.animation, n.TRANSITION_TYPE_FADE)) {
+                                        } else if (NavigationTabHelper.g() && this.h.textList != null && this.h.textList.size() > 0 && !StringUtils.isEmpty(this.h.text) && !StringUtils.equals(this.h.animation, n.TRANSITION_TYPE_FADE)) {
                                             try {
                                                 Animation[] b = NavigationTabHelper.b(true);
                                                 a2.setInAnimation(b[0]);
@@ -814,16 +814,16 @@ public class NavigationTabHelper {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
             }
-            if (TextUtils.isEmpty(this.f.text) || (this.t & 1) == 0) {
+            if (StringUtils.isEmpty(this.f.text) || (this.t & 1) == 0) {
                 return false;
             }
-            if (!TextUtils.isEmpty(this.f.bgImage) && (this.t & 256) == 0) {
+            if (!StringUtils.isEmpty(this.f.bgImage) && (this.t & 256) == 0) {
                 return false;
             }
-            if (!TextUtils.isEmpty(this.p) && (this.t & 512) == 0) {
+            if (!StringUtils.isEmpty(this.p) && (this.t & 512) == 0) {
                 return false;
             }
-            return TextUtils.isEmpty(this.f.image) || (this.t & 1024) != 0;
+            return StringUtils.isEmpty(this.f.image) || (this.t & 1024) != 0;
         }
 
         private void a(View view, int i, int i2) {
@@ -895,7 +895,7 @@ public class NavigationTabHelper {
                 ((ViewAnimator) this.d).showNext();
                 postDelayed(this.u, 280L);
                 sendEmptyMessageDelayed(262144, NavigationTabHelper.b(a2));
-            } else if (TextUtils.isEmpty(this.p)) {
+            } else if (StringUtils.isEmpty(this.p)) {
             } else {
                 a(this, "show", 0, 0);
             }
@@ -916,7 +916,7 @@ public class NavigationTabHelper {
                     return;
                 }
                 a(this, "finish", ((ViewAnimator) this.d).getDisplayedChild(), this.s);
-            } else if (TextUtils.isEmpty(this.p)) {
+            } else if (StringUtils.isEmpty(this.p)) {
             } else {
                 a(this, "finish", 0, 0);
             }
@@ -1153,7 +1153,7 @@ public class NavigationTabHelper {
                 Object obj = a9.get(i4);
                 if (obj instanceof Map) {
                     String a10 = oec.a(((Map) obj).get(eby.KEY_PIC_URL), str5);
-                    if (!TextUtils.isEmpty(a10)) {
+                    if (!StringUtils.isEmpty(a10)) {
                         boolean z = i4 == 0;
                         i3 = i4;
                         String str6 = a4;
@@ -1186,7 +1186,7 @@ public class NavigationTabHelper {
             viewAnimator = viewAnimator3;
             str = a4;
             str2 = a3;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 viewAnimator.addView(a(context, str2, a5, str, bVar, true, equals));
             }
         }
@@ -1351,7 +1351,7 @@ public class NavigationTabHelper {
             }
             TextView textView = (TextView) view;
             CharSequence text = textView.getText();
-            if (!TextUtils.equals("逛逛", text) && (text == null || !text.toString().contains("视频"))) {
+            if (!StringUtils.equals("逛逛", text) && (text == null || !text.toString().contains("视频"))) {
                 return null;
             }
             if (z) {
@@ -1420,7 +1420,7 @@ public class NavigationTabHelper {
             viewGroup.addView(frameLayout2, a(-2, -2, 81, 0, 0, 0, aVar.c - ohd.b(context, 4)));
             if ("newtext".equals(iconParams.topType)) {
                 a(bVar, context, iconParams, frameLayout2);
-            } else if (!TextUtils.isEmpty(iconParams.image) && iconParams.imageWidth > 0 && iconParams.imageHeight > 0) {
+            } else if (!StringUtils.isEmpty(iconParams.image) && iconParams.imageWidth > 0 && iconParams.imageHeight > 0) {
                 int[] a3 = a(ohd.a(a2, context, 280.0f), ohd.a(a2, context, 80.0f), iconParams.imageWidth, iconParams.imageHeight, false, 0);
                 TNodeImageView tNodeImageView = new TNodeImageView(context);
                 tNodeImageView.setScaleType(oec.a((Object) iconParams.contentMode, "contain").equals("contain") ? ImageView.ScaleType.FIT_CENTER : ImageView.ScaleType.CENTER_CROP);
@@ -1428,7 +1428,7 @@ public class NavigationTabHelper {
                 a(tNodeImageView, bVar, iconParams.image, b.PHASE_TOPIMAGE, a3[0], a3[1], 4, 8);
                 tNodeImageView.setImageUrl(iconParams.image);
                 frameLayout.addView(tNodeImageView, new FrameLayout.LayoutParams(a3[0], a3[1]));
-            } else if (!TextUtils.isEmpty(iconParams.text) && !TextUtils.isEmpty(iconParams.bgImage) && iconParams.bgImageWidth > 0 && iconParams.bgImageHeight > 0) {
+            } else if (!StringUtils.isEmpty(iconParams.text) && !StringUtils.isEmpty(iconParams.bgImage) && iconParams.bgImageWidth > 0 && iconParams.bgImageHeight > 0) {
                 TNodeImageView tNodeImageView2 = new TNodeImageView(context);
                 float f2 = 0.0f;
                 if (iconParams.text.length() > 3) {
@@ -1437,7 +1437,7 @@ public class NavigationTabHelper {
                     f2 = textPaint.measureText(iconParams.text.substring(0, iconParams.text.length() - 3));
                 }
                 int[] a4 = a(ohd.a(a2, context, oec.a((Object) Integer.valueOf(iconParams.bgImageDisplayMaxWidth), aVar.h)), ohd.a(a2, context, oec.a((Object) Integer.valueOf(iconParams.bgImageDisplayMaxHeight), aVar.i)), iconParams.bgImageWidth, iconParams.bgImageHeight, false, (int) f2);
-                if (!TextUtils.isEmpty(iconParams.bgImageSlice)) {
+                if (!StringUtils.isEmpty(iconParams.bgImageSlice)) {
                     rect = ogl.b(b.b(bVar).A(), context, iconParams.bgImageSlice);
                     tNodeImageView2.setNinePatchRect(rect);
                 }
@@ -1474,8 +1474,8 @@ public class NavigationTabHelper {
         aa a2 = a(bVar);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(a(-2, -2, 1, 0, 0, 0, ohd.a(a2, context, 8.0f)));
-        boolean z = !TextUtils.isEmpty(iconParams.leftImage);
-        boolean z2 = !TextUtils.isEmpty(iconParams.rightImage);
+        boolean z = !StringUtils.isEmpty(iconParams.leftImage);
+        boolean z2 = !StringUtils.isEmpty(iconParams.rightImage);
         float f2 = 15.0f;
         if (z) {
             TNodeImageView tNodeImageView = new TNodeImageView(context);
@@ -1486,7 +1486,7 @@ public class NavigationTabHelper {
             linearLayout.addView(tNodeImageView, 0, layoutParams);
             i = 1;
         }
-        if (!TextUtils.isEmpty(iconParams.text)) {
+        if (!StringUtils.isEmpty(iconParams.text)) {
             TextView a3 = a(context, iconParams.text, Color.parseColor(iconParams.textColor), ohd.a(a2, context, 22.0f), true);
             LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
             layoutParams2.bottomMargin = ohd.a(a2, context, 8.0f);
@@ -1501,7 +1501,7 @@ public class NavigationTabHelper {
             if (z2) {
                 i2 = 31;
             }
-            a3.setEllipsize(TextUtils.TruncateAt.END);
+            a3.setEllipsize(StringUtils.TruncateAt.END);
             a3.setMaxWidth(ohd.a(a2, context, (320 - i3) - i2));
             a3.setSingleLine(true);
             linearLayout.addView(a3, i, layoutParams2);
@@ -1551,7 +1551,7 @@ public class NavigationTabHelper {
         }
         TextView a2 = a(context, str, -1, ohd.a(a(bVar), context, 16.0f), true);
         a2.setGravity(17);
-        a2.setEllipsize(TextUtils.TruncateAt.END);
+        a2.setEllipsize(StringUtils.TruncateAt.END);
         return a2;
     }
 
@@ -1584,7 +1584,7 @@ public class NavigationTabHelper {
             viewGroup.addView(frameLayout2, layoutParams);
             boolean b3 = ogv.b(iconParams.textList);
             boolean v = v();
-            boolean isEmpty = TextUtils.isEmpty(iconParams.text);
+            boolean isEmpty = StringUtils.isEmpty(iconParams.text);
             String str = b.PHASE_TOP_RIGHT_IMAGE;
             if (!isEmpty || b3) {
                 boolean equals = n.TRANSITION_TYPE_FADE.equals(iconParams.animation);
@@ -1629,9 +1629,9 @@ public class NavigationTabHelper {
                 boolean z3 = b3;
                 int i6 = b2;
                 int i7 = a4;
-                if (!TextUtils.isEmpty(iconParams.text)) {
+                if (!StringUtils.isEmpty(iconParams.text)) {
                     TextView a8 = a(context, bVar, iconParams.text);
-                    if (!TextUtils.isEmpty(iconParams.leftImage)) {
+                    if (!StringUtils.isEmpty(iconParams.leftImage)) {
                         LinearLayout linearLayout = new LinearLayout(context);
                         linearLayout.setOrientation(0);
                         linearLayout.setGravity(16);
@@ -1674,7 +1674,7 @@ public class NavigationTabHelper {
                 FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(-2, i2);
                 frameLayout = frameLayout2;
                 frameLayout.addView(viewAnimator, layoutParams3);
-            } else if (TextUtils.isEmpty(iconParams.image) || iconParams.imageWidth <= 0 || iconParams.imageHeight <= 0) {
+            } else if (StringUtils.isEmpty(iconParams.image) || iconParams.imageWidth <= 0 || iconParams.imageHeight <= 0) {
                 frameLayout = frameLayout2;
             } else {
                 TNodeImageView tNodeImageView2 = new TNodeImageView(context);

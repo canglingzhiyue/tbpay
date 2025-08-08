@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -195,7 +195,7 @@ public class CustomBaseActivity extends BaseActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("34b6390a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mPageName)) {
+        if (StringUtils.isEmpty(this.mPageName)) {
             String simpleName = getClass().getSimpleName();
             int indexOf = simpleName.indexOf(Dispatchers.TYPE_ACTIVITY);
             return indexOf != -1 ? simpleName.substring(0, indexOf) : simpleName;
@@ -274,7 +274,7 @@ public class CustomBaseActivity extends BaseActivity {
             return;
         }
         this.mIsLoginCancel = false;
-        if (!TextUtils.isEmpty(Login.getSid())) {
+        if (!StringUtils.isEmpty(Login.getSid())) {
             this.mUserNick = Login.getNick();
         }
         if (!this.mNeedRefresh) {
@@ -359,7 +359,7 @@ public class CustomBaseActivity extends BaseActivity {
                 this.mUserNick = nick;
             }
             String str = this.mUserNick;
-            if (str == null || !TextUtils.equals(nick, str)) {
+            if (str == null || !StringUtils.equals(nick, str)) {
                 if (isTopActivity()) {
                     Nav.from(this).withFlags(67108864).toUri("http://m.taobao.com/index.htm");
                 } else {

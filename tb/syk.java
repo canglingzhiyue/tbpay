@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.UtilityImpl;
 
@@ -188,7 +188,7 @@ public class syk {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !UtilityImpl.isAppKeepAlive()) {
+        if (StringUtils.isEmpty(str) || !UtilityImpl.isAppKeepAlive()) {
             return false;
         }
         try {

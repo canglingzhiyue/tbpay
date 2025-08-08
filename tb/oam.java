@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.multiapp.ShareBizAdapter;
@@ -50,7 +50,7 @@ public class oam {
             return;
         }
         String a2 = ShareBizAdapter.getInstance().getAppEnv().a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             throw new Exception("miss ttid");
         }
         oaz oazVar = new oaz();
@@ -66,14 +66,14 @@ public class oam {
         } else if (oasVar == null) {
             throw new Exception("listener can not be null!");
         } else {
-            if (TextUtils.isEmpty(str)) {
-                if (TextUtils.isEmpty(nzt.b())) {
+            if (StringUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(nzt.b())) {
                     throw new Exception("ttid is null.");
                 }
             } else {
                 nzt.a(str);
             }
-            if (TextUtils.isEmpty(oazVar.f31882a)) {
+            if (StringUtils.isEmpty(oazVar.f31882a)) {
                 return;
             }
             a(context, oazVar, oasVar);

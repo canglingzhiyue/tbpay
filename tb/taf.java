@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.weex_framework.util.a;
@@ -27,7 +27,7 @@ public class taf extends fuf {
         if (objArr != null && objArr.length > 0) {
             String str = objArr[0] instanceof String ? (String) objArr[0] : "";
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     int i = 0;
                     for (int i2 = 0; i2 < str.length(); i2++) {
                         i = String.valueOf(str.charAt(i2)).getBytes().length == 1 ? i + 1 : i + 2;

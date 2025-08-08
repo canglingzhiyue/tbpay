@@ -3,7 +3,7 @@ package com.taobao.search.musie;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -470,7 +470,7 @@ public class k extends r implements MuiseHolderContainer.a {
             Map<String, String> X = X();
             for (String str : Y) {
                 String str2 = X.get(str);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     map.put(str, str2);
                 }
             }

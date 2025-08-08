@@ -8,7 +8,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -100,7 +100,7 @@ public class BootImageBigPopView extends FrameLayout implements Animator.Animato
         if (ipChange instanceof IpChange) {
             return (BootImageBigPopView) ipChange.ipc$dispatch("e2040ca5", new Object[]{context, bootImageInfo, linkedSplashData, str, jSONObject});
         }
-        if (bootImageInfo != null && context != null && ((linkedSplashData == null || "popView".equals(linkedSplashData.getLinkedDataType()) || TextUtils.equals(str, "popView")) && "1".equals(bootImageInfo.animationType) && !TextUtils.isEmpty(bootImageInfo.animationLottie))) {
+        if (bootImageInfo != null && context != null && ((linkedSplashData == null || "popView".equals(linkedSplashData.getLinkedDataType()) || StringUtils.equals(str, "popView")) && "1".equals(bootImageInfo.animationType) && !StringUtils.isEmpty(bootImageInfo.animationLottie))) {
             File a2 = keo.a(tiq.BIZ_CODE, bootImageInfo.animationLottie);
             if (a2 == null || !a2.exists()) {
                 recordLoadFail(linkedSplashData, bootImageInfo, "lottie_file_not_exists", 12, jSONObject);

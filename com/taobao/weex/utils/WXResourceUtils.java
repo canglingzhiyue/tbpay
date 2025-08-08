@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.support.v4.view.InputDeviceCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
@@ -295,7 +295,7 @@ public class WXResourceUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("9cb5a238", new Object[]{str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         String trim = str.trim();
@@ -338,7 +338,7 @@ public class WXResourceUtils {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         str.trim();
@@ -372,7 +372,7 @@ public class WXResourceUtils {
             return (float[]) ipChange.ipc$dispatch("c6cef76f", new Object[]{str, new Float(f), new Float(f2)});
         }
         float[] fArr = {0.0f, 0.0f, 0.0f, 0.0f};
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = str.replaceAll("\\s*", "").toLowerCase(Locale.ROOT);
         }
         char c2 = 65535;

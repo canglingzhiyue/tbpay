@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.taobao.windvane.util.c;
 import android.taobao.windvane.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -108,7 +108,7 @@ public class a implements com.taobao.umipublish.extension.preview.a {
         frameLayout.addView(l, b2);
         if (tek.c()) {
             TUrlImageView tUrlImageView = null;
-            if (!TextUtils.isEmpty(media.coverUrl)) {
+            if (!StringUtils.isEmpty(media.coverUrl)) {
                 tUrlImageView = new TUrlImageView(context);
                 tUrlImageView.setImageUrl(media.coverUrl.startsWith("http") ? media.coverUrl : d.a(media.coverUrl));
                 tUrlImageView.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.umipublish.extension.preview.video.a.1

@@ -1,7 +1,7 @@
 package com.taobao.tao.homepage.windvane;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -106,7 +106,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("66657a4b", new Object[]{str, str2});
         }
-        if (!TextUtils.equals(str, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
+        if (!StringUtils.equals(str, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
             return new String[]{str, str2};
         }
         try {

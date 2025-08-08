@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -78,7 +78,7 @@ public class fjs {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123a1be", new Object[]{str, new Float(f)})).floatValue();
         }
-        if (str != null && !TextUtils.isEmpty(str)) {
+        if (str != null && !StringUtils.isEmpty(str)) {
             try {
                 return Float.parseFloat(str);
             } catch (NumberFormatException unused) {
@@ -95,7 +95,7 @@ public class fjs {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("81239a3a", new Object[]{str, new Double(d)})).doubleValue();
         }
-        if (str != null && !TextUtils.isEmpty(str)) {
+        if (str != null && !StringUtils.isEmpty(str)) {
             try {
                 return Double.parseDouble(str);
             } catch (NumberFormatException unused) {

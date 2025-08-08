@@ -2,7 +2,7 @@ package com.alipay.mobile.intelligentdecision.manager;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.intelligentdecision.DecisionContext;
@@ -225,7 +225,7 @@ public class AIManager {
         }
         DecisionLogcat.b(f5735a, "getMobileAixData");
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(bundle.getString("mcSalesProd"))) {
+        if (StringUtils.isEmpty(bundle.getString("mcSalesProd"))) {
             hashMap.put("viScene", "");
         } else {
             hashMap.put("viScene", bundle.getString("mcSalesProd"));
@@ -299,7 +299,7 @@ public class AIManager {
         jSONObject.put("app_name", (Object) IDeviceInfoUtil.e());
         jSONObject.put("app_version", (Object) IDeviceInfoUtil.f());
         jSONObject.put("device_model", (Object) IDeviceInfoUtil.b());
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             jSONObject.put("exception", (Object) str5);
         } else if (i2 > 0) {
             jSONObject.put("timeout", (Object) Integer.valueOf(i2));

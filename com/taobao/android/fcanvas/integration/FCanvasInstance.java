@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -290,7 +290,7 @@ public class FCanvasInstance implements d.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9d162128", new Object[]{this, new Integer(i), new Integer(i2), new Integer(i3), new Integer(i4)});
-        } else if (TextUtils.isEmpty(this.g)) {
+        } else if (StringUtils.isEmpty(this.g)) {
         } else {
             this.f.resizeCanvas(this.g, i, i2, i3, i4);
         }
@@ -301,7 +301,7 @@ public class FCanvasInstance implements d.a {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("3863b0c9", new Object[]{this});
         }
-        if (this.f12317a != null && !TextUtils.isEmpty(this.g)) {
+        if (this.f12317a != null && !StringUtils.isEmpty(this.g)) {
             return this.f12317a.makeSnapshot(this.g);
         }
         return null;

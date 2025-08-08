@@ -1,7 +1,7 @@
 package com.alipay.mobile.framework.service.common;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transport.utils.MiscUtils;
 import com.alipay.mobile.common.transport.utils.TransportEnvUtil;
@@ -39,7 +39,7 @@ public class MpaasRpcServiceFactory {
                 throw new RuntimeException("Context parameter is null.");
             } else {
                 String stringFromMetaData = MiscUtils.getStringFromMetaData(context, "mpaas_rpc_service_class");
-                if (!TextUtils.isEmpty(stringFromMetaData)) {
+                if (!StringUtils.isEmpty(stringFromMetaData)) {
                     f5709a = (MpaasRpcService) Class.forName(stringFromMetaData, true, context.getClassLoader()).getConstructor(Context.class).newInstance(context);
                     LogCatUtil.info("MpaasRpcServiceFactory", "Loaded mpaas rpc service: " + stringFromMetaData + ", object hashcode: " + f5709a.hashCode());
                     return f5709a;

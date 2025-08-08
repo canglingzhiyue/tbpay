@@ -3,7 +3,7 @@ package com.taobao.munion.taosdk;
 import android.app.Application;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -80,12 +80,12 @@ public class CpmEventCommitter extends MunionRemoteBusiness implements MunionEve
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4d786b9c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(this.eadt)) {
+        if (StringUtils.isEmpty(this.eadt)) {
             str2 = "";
         } else {
             str2 = this.eadt + "_";
         }
-        if (!TextUtils.isEmpty(str) && str.contains("click.mz.simba.taobao.com/brand")) {
+        if (!StringUtils.isEmpty(str) && str.contains("click.mz.simba.taobao.com/brand")) {
             return "A42_" + str2 + b.a(this.mApplication);
         }
         return "A17_" + str2 + b.a(this.mApplication);

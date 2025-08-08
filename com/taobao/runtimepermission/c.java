@@ -1,7 +1,7 @@
 package com.taobao.runtimepermission;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.aliprivacy.AuthStatus;
 import com.alibaba.wireless.aliprivacy.PrivacyAuthGetParam;
 import com.alibaba.wireless.aliprivacy.PrivacyAuthResult;
@@ -38,7 +38,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (boolean[]) ipChange.ipc$dispatch("7510dce0", new Object[]{context, str, strArr});
         }
-        if (TextUtils.isEmpty(str) || strArr.length <= 0) {
+        if (StringUtils.isEmpty(str) || strArr.length <= 0) {
             tfr.b("BizPermissionWrapper", "checkSelfBizPermissions: permission request with empty scene, permission length: " + strArr.length + " bizName:" + str);
             return new boolean[0];
         }
@@ -84,7 +84,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2d213083", new Object[]{context, str, strArr, iArr});
-        } else if (TextUtils.isEmpty(str) || strArr.length <= 0 || iArr.length <= 0) {
+        } else if (StringUtils.isEmpty(str) || strArr.length <= 0 || iArr.length <= 0) {
             tfr.b("BizPermissionWrapper", "checkSelfBizPermissions: permission request with empty scene, permission length: " + strArr.length + " bizName:" + str);
         } else {
             try {

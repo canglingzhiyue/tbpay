@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.highPerformance.management;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridStage;
 import com.alibaba.fastjson.JSONObject;
@@ -227,10 +227,10 @@ public class d implements k {
             if (dVar != null) {
                 if (!a(str, dVar.f2791a)) {
                     jqg.b("UltronTradeHybridPreRequestManager.sendPreRequestByScene", String.format("%s switcher is off", str));
-                } else if (!TextUtils.equals(dVar.d, str2)) {
+                } else if (!StringUtils.equals(dVar.d, str2)) {
                     UnifyLog.a("UltronTradeHybridPreRequestManager.sendPreRequestByScene", "no match stage");
                 } else {
-                    if (!TextUtils.isEmpty(dVar.e) && adh.a(dVar.e)) {
+                    if (!StringUtils.isEmpty(dVar.e) && adh.a(dVar.e)) {
                         Object a2 = adh.a(dVar.e, jSONObject);
                         if (a2 instanceof String) {
                             booleanValue = Boolean.valueOf((String) a2).booleanValue();

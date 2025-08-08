@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -141,7 +141,7 @@ public class OrderListFragment extends BaseFragment {
         }
         Bundle arguments = getArguments();
         if (arguments != null) {
-            if (!TextUtils.isEmpty(arguments.getString("url"))) {
+            if (!StringUtils.isEmpty(arguments.getString("url"))) {
                 Uri parse = Uri.parse(arguments.getString("url"));
                 try {
                     this.condition = parse.getQueryParameter("condition");
@@ -295,8 +295,8 @@ public class OrderListFragment extends BaseFragment {
             return hVar;
         }
         HashMap hashMap = new HashMap();
-        hashMap.put("condition", TextUtils.isEmpty(this.condition) ? generateCondition().toJSONString() : hyo.a(this.condition));
-        if (!TextUtils.isEmpty(this.tabCode)) {
+        hashMap.put("condition", StringUtils.isEmpty(this.condition) ? generateCondition().toJSONString() : hyo.a(this.condition));
+        if (!StringUtils.isEmpty(this.tabCode)) {
             hashMap.put("tabCode", this.tabCode);
         }
         hashMap.put("OrderType", "OrderList");

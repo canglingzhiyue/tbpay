@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.module.utils.DataHelper;
 import com.xiaomi.push.em;
 import com.xiaomi.push.service.bf;
@@ -11,17 +11,17 @@ class ge {
     public static void a(bf.b bVar, String str, gq gqVar) {
         String a2;
         em.c cVar = new em.c();
-        if (!TextUtils.isEmpty(bVar.c)) {
+        if (!StringUtils.isEmpty(bVar.c)) {
             cVar.a(bVar.c);
         }
-        if (!TextUtils.isEmpty(bVar.e)) {
+        if (!StringUtils.isEmpty(bVar.e)) {
             cVar.d(bVar.e);
         }
-        if (!TextUtils.isEmpty(bVar.f)) {
+        if (!StringUtils.isEmpty(bVar.f)) {
             cVar.e(bVar.f);
         }
         cVar.b(bVar.f959a ? "1" : "0");
-        if (!TextUtils.isEmpty(bVar.d)) {
+        if (!StringUtils.isEmpty(bVar.d)) {
             cVar.c(bVar.d);
         } else {
             cVar.c("XIAOMI-SASL");
@@ -45,12 +45,12 @@ class ge {
         } else {
             hashMap.put("kick", "0");
         }
-        if (!TextUtils.isEmpty(bVar.e)) {
+        if (!StringUtils.isEmpty(bVar.e)) {
             hashMap.put("client_attrs", bVar.e);
         } else {
             hashMap.put("client_attrs", "");
         }
-        if (!TextUtils.isEmpty(bVar.f)) {
+        if (!StringUtils.isEmpty(bVar.f)) {
             hashMap.put("cloud_attrs", bVar.f);
         } else {
             hashMap.put("cloud_attrs", "");

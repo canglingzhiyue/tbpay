@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -35,7 +35,7 @@ public class l {
                     i.a("GrayUtils", "isGrayVersion:" + Log.getStackTraceString(e));
                     str = "";
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return false;
                 }
                 if (str.split("\\.").length == 4) {

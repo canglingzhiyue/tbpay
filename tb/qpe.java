@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.navigation.e;
 import com.taobao.tao.navigation.g;
@@ -20,7 +20,7 @@ public class qpe implements omn.a {
         ArrayList<g> e = e.e();
         for (int i = 0; i < e.size(); i++) {
             g gVar = e.get(i);
-            if (gVar != null && TextUtils.equals(gVar.y(), str)) {
+            if (gVar != null && StringUtils.equals(gVar.y(), str)) {
                 return i;
             }
         }

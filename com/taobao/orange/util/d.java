@@ -1,6 +1,6 @@
 package com.taobao.orange.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -185,7 +185,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("81239a4c", new Object[]{str, new Double(d2)});
-        } else if (!f18601a || TextUtils.isEmpty(str)) {
+        } else if (!f18601a || StringUtils.isEmpty(str)) {
         } else {
             DimensionValueSet create = DimensionValueSet.create();
             try {
@@ -253,7 +253,7 @@ public class d {
             ipChange.ipc$dispatch("436a1d98", new Object[]{str, str2, str3, new Boolean(z), str4});
         } else if (!f18601a) {
         } else {
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                 OLog.e(TAG, "commit error because data empty!", new Object[0]);
                 return;
             }
@@ -335,7 +335,7 @@ public class d {
             ipChange.ipc$dispatch("99d7fadb", new Object[]{str, str2, str3, bool, str4, str5});
         } else if (!f18601a) {
         } else {
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                 OLog.e(TAG, "commit error because data empty!", new Object[0]);
                 return;
             }
@@ -425,7 +425,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c0bfab7d", new Object[]{str, str2, str3, new Integer(i)});
-        } else if (!f18601a || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (!f18601a || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             DimensionValueSet create = DimensionValueSet.create();
             create.setValue(OConstant.DIMEN_CONFIG_NAME, str2);
@@ -445,7 +445,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (!f18601a || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!f18601a || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             DimensionValueSet create = DimensionValueSet.create();
             create.setValue(OConstant.DIMEN_CONFIG_NAME, str2);

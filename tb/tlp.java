@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.kernel.adapter.IEnvironmentService;
@@ -76,7 +76,7 @@ public final class tlp {
         }
         String str2 = "";
         String b = j.b(applicationContext, "tbSecStorageSP", key, str2);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             try {
                 IDynamicDataEncryptComponent a2 = a(applicationContext);
                 if (a2 != null) {

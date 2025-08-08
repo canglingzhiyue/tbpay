@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -123,7 +123,7 @@ public class d implements ezm {
                     JSONObject jSONObject = JSONObject.parseObject(new String(mtopResponse.getBytedata())).getJSONObject("data");
                     d.a(d.this, b, jSONObject.getBooleanValue("btnDisable"), runtimeAbilityParamArr);
                     String string = jSONObject.getString("errorMessage");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
                     Toast.makeText(d.a(d.this), string, 0).show();

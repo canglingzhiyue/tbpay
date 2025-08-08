@@ -2,7 +2,7 @@ package com.etao.feimagesearch;
 
 import android.net.Uri;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.zoloz.toyger.blob.BlobManager;
@@ -223,7 +223,7 @@ public class ImagePopTask implements b.InterfaceC0224b {
                             } else {
                                 aVar2.a("", true, null);
                             }
-                        } else if (TextUtils.isEmpty(a2.f26508a)) {
+                        } else if (StringUtils.isEmpty(a2.f26508a)) {
                         } else {
                             k.a(com.b(), ImagePopTask.KEY_LAST_VISIT_TIME, String.valueOf(System.currentTimeMillis()));
                             k.a(com.b(), ImagePopTask.KEY_LAST_VISIT_ITEM_ID, a2.c);

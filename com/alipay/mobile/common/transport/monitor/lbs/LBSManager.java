@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.monitor.lbs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.lbs.LbsInfoUtil;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -73,7 +73,7 @@ public class LBSManager {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this});
         }
         String d2 = d();
-        if (TextUtils.equals("-", d2)) {
+        if (StringUtils.equals("-", d2)) {
             return "-";
         }
         return ((System.currentTimeMillis() - Long.parseLong(d2)) / 1000) + "";
@@ -86,7 +86,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getLocationtime", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getLocationtime,ex:" + th.toString());
             return "-";
@@ -100,7 +100,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getLatitude", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getLatitude,ex:" + th.toString());
             return "-";
@@ -114,7 +114,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getLongitude", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getLongitude,ex:" + th.toString());
             return "-";
@@ -128,7 +128,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getCityCode", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getCityCode,ex:" + th.toString());
             return "-";
@@ -142,7 +142,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getAdCode", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getAdCode,ex:" + th.toString());
             return "-";
@@ -156,7 +156,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getAccuracy", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getAccuracy,ex:" + th.toString());
             return "-";
@@ -170,7 +170,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getCountry", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getCountry,ex:" + th.toString());
             return "-";
@@ -184,7 +184,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getProvince", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getProvince,ex:" + th.toString());
             return "-";
@@ -198,7 +198,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getCity", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getCity,ex:" + th.toString());
             return "-";
@@ -212,7 +212,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getDistrict", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? valueOf : "-";
+            return !StringUtils.isEmpty(valueOf) ? valueOf : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getDistrict,ex:" + th.toString());
             return "-";
@@ -226,7 +226,7 @@ public class LBSManager {
                 return "-";
             }
             String valueOf = String.valueOf(a2.getClass().getMethod("getAoiname", new Class[0]).invoke(a2, new Object[0]));
-            return !TextUtils.isEmpty(valueOf) ? !"null".equalsIgnoreCase(valueOf) ? valueOf : "-" : "-";
+            return !StringUtils.isEmpty(valueOf) ? !"null".equalsIgnoreCase(valueOf) ? valueOf : "-" : "-";
         } catch (Throwable th) {
             LogCatUtil.error("LBSManager", "getAoiname,ex:" + th.toString());
             return "-";
@@ -271,13 +271,13 @@ public class LBSManager {
             return "";
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.LBS_LEVEL);
-        if (TextUtils.equals(stringValue, "1")) {
+        if (StringUtils.equals(stringValue, "1")) {
             if (q()) {
                 return LbsInfoUtil.getKeyLBSInfo();
             }
             return o();
         }
-        if (TextUtils.equals(stringValue, "2")) {
+        if (StringUtils.equals(stringValue, "2")) {
             if (q()) {
                 return LbsInfoUtil.getKeyLBSInfo() + LbsInfoUtil.getExtLbsInfo();
             }

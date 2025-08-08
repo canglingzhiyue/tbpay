@@ -5,7 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.d;
@@ -70,7 +70,7 @@ public class hun {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.c.addAll(Arrays.asList(str.split(";")));
         }
@@ -80,7 +80,7 @@ public class hun {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             for (String str2 : str.split(";")) {
                 this.c.remove(str2);
             }
@@ -154,12 +154,12 @@ public class hun {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             for (String str2 : str.split(";")) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     Uri parse = Uri.parse(str2);
                     String host = parse.getHost();
-                    if (!TextUtils.isEmpty(host)) {
+                    if (!StringUtils.isEmpty(host)) {
                         a a2 = a.a(this.b, 1, null, host);
                         if (a2 == null) {
                             a2 = new a(1, null, host);
@@ -172,7 +172,7 @@ public class hun {
                             a2.a(a3);
                         }
                         for (String str3 : parse.getQueryParameterNames()) {
-                            if (!TextUtils.isEmpty(str3)) {
+                            if (!StringUtils.isEmpty(str3)) {
                                 String queryParameter = parse.getQueryParameter(str3);
                                 a a4 = a.a(a.b(a3), 3, str3, queryParameter);
                                 if (a4 == null) {
@@ -244,7 +244,7 @@ public class hun {
             int i = this.f28794a;
             if (1 == i) {
                 if (!"*".equals(this.c)) {
-                    return TextUtils.equals(this.c, uri.getHost());
+                    return StringUtils.equals(this.c, uri.getHost());
                 }
                 return true;
             } else if (2 != i) {
@@ -253,14 +253,14 @@ public class hun {
                 }
                 String queryParameter = uri.getQueryParameter(this.b);
                 if (!"*".equals(this.c)) {
-                    return TextUtils.equals(queryParameter, this.c);
+                    return StringUtils.equals(queryParameter, this.c);
                 }
                 return true;
             } else if ("/*".equals(this.c)) {
                 return true;
             } else {
-                if ((!TextUtils.isEmpty(this.c) && !TextUtils.equals(this.c, "/")) || (!TextUtils.isEmpty(uri.getPath()) && !TextUtils.equals(uri.getPath(), "/"))) {
-                    return TextUtils.equals(this.c, uri.getPath());
+                if ((!StringUtils.isEmpty(this.c) && !StringUtils.equals(this.c, "/")) || (!StringUtils.isEmpty(uri.getPath()) && !StringUtils.equals(uri.getPath(), "/"))) {
+                    return StringUtils.equals(this.c, uri.getPath());
                 }
                 return true;
             }
@@ -290,14 +290,14 @@ public class hun {
             if (list == null) {
                 return null;
             }
-            if (1 == i && TextUtils.isEmpty(str2)) {
+            if (1 == i && StringUtils.isEmpty(str2)) {
                 return null;
             }
-            if (3 == i && (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2))) {
+            if (3 == i && (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2))) {
                 return null;
             }
             for (a aVar : list) {
-                if (i == aVar.f28794a && TextUtils.equals(str, aVar.b) && TextUtils.equals(str2, aVar.c)) {
+                if (i == aVar.f28794a && StringUtils.equals(str, aVar.b) && StringUtils.equals(str2, aVar.c)) {
                     return aVar;
                 }
             }

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import android.view.View;
@@ -171,19 +171,19 @@ public class MarketingInnerNotificationAdapter extends InnerNotificationAdapter 
         String string = innerPushVO.mParam.getString(AgooConstants.MESSAGE_BODY);
         this.extData = new HashMap();
         this.msgTypeId = innerPushVO.mParam.getString("msg_type_id");
-        if (TextUtils.isEmpty(this.mVO.title)) {
+        if (StringUtils.isEmpty(this.mVO.title)) {
             this.mVO.title = innerPushVO.mParam.getString("title");
         }
-        if (TextUtils.isEmpty(this.mVO.content)) {
+        if (StringUtils.isEmpty(this.mVO.content)) {
             this.mVO.content = innerPushVO.mParam.getString("text");
         }
-        if (TextUtils.isEmpty(this.mVO.iconUrl)) {
+        if (StringUtils.isEmpty(this.mVO.iconUrl)) {
             this.mVO.iconUrl = innerPushVO.mParam.getString("m-icon");
-            if (TextUtils.isEmpty(this.mVO.iconUrl)) {
+            if (StringUtils.isEmpty(this.mVO.iconUrl)) {
                 this.mVO.iconUrl = innerPushVO.mParam.getString("avatar");
             }
         }
-        if (TextUtils.isEmpty(this.mVO.img)) {
+        if (StringUtils.isEmpty(this.mVO.img)) {
             this.mVO.img = innerPushVO.mParam.getString("img");
         }
         this.mMsgId = innerPushVO.mParam.getString("messageId");
@@ -282,7 +282,7 @@ public class MarketingInnerNotificationAdapter extends InnerNotificationAdapter 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dc2d0a36", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             mClickMap.put(str, Long.valueOf(SystemClock.elapsedRealtime()));
         }
@@ -342,7 +342,7 @@ public class MarketingInnerNotificationAdapter extends InnerNotificationAdapter 
                     } catch (Throwable unused) {
                     }
                     HashMap hashMap = map == null ? new HashMap() : map;
-                    if (objArr.length > 1 && (objArr[1] instanceof String) && !TextUtils.isEmpty((String) objArr[1])) {
+                    if (objArr.length > 1 && (objArr[1] instanceof String) && !StringUtils.isEmpty((String) objArr[1])) {
                         Activity topActivity = EnvUtil.getTopActivity();
                         TLog.loge(DynamicSimpleComponent.TAG, "handleEvent nav with url: " + ((String) objArr[1]));
                         MarketingInnerNotificationAdapter.access$100(str);
@@ -522,7 +522,7 @@ public class MarketingInnerNotificationAdapter extends InnerNotificationAdapter 
         if (obj instanceof String) {
             str5 = (String) obj;
         }
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = map2.get(KEY_PUSHUTARGS);
         }
         if (str5 != null) {
@@ -550,7 +550,7 @@ public class MarketingInnerNotificationAdapter extends InnerNotificationAdapter 
 
     private static String getAgooId(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ba8b588e", new Object[]{str, str2}) : (TextUtils.isEmpty(str) || !"1".equals(OrangeConfig.getInstance().getConfig("mpm_business_switch", "useNewClickId", "1"))) ? str2 : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ba8b588e", new Object[]{str, str2}) : (StringUtils.isEmpty(str) || !"1".equals(OrangeConfig.getInstance().getConfig("mpm_business_switch", "useNewClickId", "1"))) ? str2 : str;
     }
 
     private static String getImbaBizTypeVal(String str) {
@@ -558,16 +558,16 @@ public class MarketingInnerNotificationAdapter extends InnerNotificationAdapter 
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a1445ee2", new Object[]{str});
         }
-        if (TextUtils.equals(str, AccountMessageTypeIdValue.MESSAGE_TYPE_ID_WULIU)) {
+        if (StringUtils.equals(str, AccountMessageTypeIdValue.MESSAGE_TYPE_ID_WULIU)) {
             return RelationBizTypeValue.ACCOUNT_WULIU;
         }
-        if (TextUtils.equals(str, "1002")) {
+        if (StringUtils.equals(str, "1002")) {
             return RelationBizTypeValue.ACCOUNT_TONGZHI;
         }
-        if (TextUtils.equals(str, AccountMessageTypeIdValue.MESSAGE_TYPE_ID_HUDONG)) {
+        if (StringUtils.equals(str, AccountMessageTypeIdValue.MESSAGE_TYPE_ID_HUDONG)) {
             return RelationBizTypeValue.ACCOUNT_HUDONG;
         }
-        if (!TextUtils.equals(str, AccountMessageTypeIdValue.MESSAGE_TYPE_ID_YOUHUI)) {
+        if (!StringUtils.equals(str, AccountMessageTypeIdValue.MESSAGE_TYPE_ID_YOUHUI)) {
             return null;
         }
         return RelationBizTypeValue.ACCOUNT_YOUHUI;

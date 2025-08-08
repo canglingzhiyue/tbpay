@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.aa;
 import com.taobao.mediaplay.d;
@@ -46,7 +46,7 @@ public class flo {
             return;
         }
         for (String str : this.b) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 aa.a(context, str, a(), 512000, new a(str));
                 fjt.a(fjt.TAG_RENDER, "triggerVideoPreload, videoId: " + str);
             }

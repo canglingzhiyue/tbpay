@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URLEncoder;
 import tb.kge;
@@ -20,19 +20,19 @@ public class m {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String trim = str.trim();
-        if (TextUtils.isEmpty(trim)) {
+        if (StringUtils.isEmpty(trim)) {
             return null;
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return trim;
         }
         String trim2 = str2.trim();
         String trim3 = str3.trim();
-        if (TextUtils.isEmpty(trim2) || TextUtils.isEmpty(trim3)) {
+        if (StringUtils.isEmpty(trim2) || StringUtils.isEmpty(trim3)) {
             return trim;
         }
         StringBuilder sb = new StringBuilder(trim);

@@ -1,7 +1,7 @@
 package qmtopsdk.mtop.global.init;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import mtopsdk.common.util.TBSdkLog;
 import mtopsdk.mtop.deviceid.DeviceIDManager;
@@ -55,7 +55,7 @@ public class QMtopInitTask implements IMtopInitTask {
             a.a(mtopConfig.context);
             a.a(str, "ttid", mtopConfig.ttid);
             mtopConfig.entrance = EntranceEnum.GW_INNER;
-            if (TextUtils.isEmpty(mtopConfig.appKey)) {
+            if (StringUtils.isEmpty(mtopConfig.appKey)) {
                 TBSdkLog.e(TAG, str + " [executeInitCoreTask]appkey is null, please call MtopSetting.setAppKey()");
             }
             mtopConfig.processId = Process.myPid();

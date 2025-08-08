@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.mmd.util.j;
 import kotlin.jvm.internal.q;
@@ -42,7 +42,7 @@ public final class nto {
             return false;
         }
         String stringExtra = intent.getStringExtra(noa.KEY_SHOP_SEARCH_ELDER);
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             return q.a((Object) IN_SHOP_ELDER_HIT_VALUE, (Object) stringExtra);
         }
         Uri data = intent.getData();

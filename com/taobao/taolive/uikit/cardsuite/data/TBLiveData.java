@@ -1,6 +1,6 @@
 package com.taobao.taolive.uikit.cardsuite.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.taolive.uikit.mtop.LiveItem;
 import com.taobao.taolive.uikit.mtop.QualitySelectItem;
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class TBLiveData implements IMTOPDataObject {
         int defalutQualityIndex = getDefalutQualityIndex();
         if (defalutQualityIndex != -1) {
             String str = this.liveUrlList.get(defalutQualityIndex).h265Url;
-            return (TextUtils.isEmpty(str) || !prr.a()) ? this.liveUrlList.get(defalutQualityIndex).flvUrl : str;
+            return (StringUtils.isEmpty(str) || !prr.a()) ? this.liveUrlList.get(defalutQualityIndex).flvUrl : str;
         }
         return this.liveUrl;
     }

@@ -1,6 +1,6 @@
 package com.taobao.search.sf.widgets.topbar;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.a;
 import com.taobao.search.common.util.q;
@@ -31,7 +31,7 @@ public class c {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (TextUtils.isEmpty(key)) {
+                if (StringUtils.isEmpty(key)) {
                     q.b("SFTopBarParamsUtil", "isParamsSelected:参数key为空");
                     return false;
                 } else if (noa.KEY_FILTER_TAG.equals(key)) {

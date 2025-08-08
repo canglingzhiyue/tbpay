@@ -1,6 +1,6 @@
 package com.taobao.update.apk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -32,7 +32,7 @@ public class MainUpdateData implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c9b30508", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.httpsUrl)) {
+        if (!StringUtils.isEmpty(this.httpsUrl)) {
             return this.httpsUrl;
         }
         return this.packageUrl;

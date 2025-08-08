@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseItemModel;
@@ -108,7 +108,7 @@ public class lsv implements IContainerDataService.c {
             BaseSectionModel<?> baseSectionModel = list.get(i);
             if (baseSectionModel != null && !baseSectionModel.getBooleanValue(j.IS_USER_ACTION_TRACKED)) {
                 String a2 = a(baseSectionModel);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     sb.append(a2);
                     sb.append(",");
                 }

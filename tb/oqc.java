@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.l;
@@ -289,7 +289,7 @@ public class oqc {
                 jSONObject2.put("containers", (Object) strArr);
                 jSONObject2.put(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE, (Object) str2);
                 jSONObject2.put("dataSourceType", "remote");
-                if (TextUtils.equals(str3, "success")) {
+                if (StringUtils.equals(str3, "success")) {
                     oqc.a(oqc.this).a(jSONObject2, new gkc() { // from class: tb.oqc.1.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -317,7 +317,7 @@ public class oqc {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9d5d0b6a", new Object[]{this, str, str2, str3, jSONObject});
-        } else if (TextUtils.equals("fail", str3)) {
+        } else if (StringUtils.equals("fail", str3)) {
             this.s.a(jSONObject, null);
         } else {
             ArrayList arrayList = new ArrayList();
@@ -548,7 +548,7 @@ public class oqc {
 
     public boolean a(String str, oqa oqaVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("384ec987", new Object[]{this, str, oqaVar})).booleanValue() : (TextUtils.isEmpty(str) || oqaVar == null || this.o.put(str, oqaVar) == null) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("384ec987", new Object[]{this, str, oqaVar})).booleanValue() : (StringUtils.isEmpty(str) || oqaVar == null || this.o.put(str, oqaVar) == null) ? false : true;
     }
 
     public oqa a(String str) {
@@ -556,7 +556,7 @@ public class oqc {
         if (ipChange instanceof IpChange) {
             return (oqa) ipChange.ipc$dispatch("7c737735", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.o.get(str);
         }
         return null;

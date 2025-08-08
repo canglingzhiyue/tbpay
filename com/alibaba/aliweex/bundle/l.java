@@ -1,6 +1,6 @@
 package com.alibaba.aliweex.bundle;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -153,7 +153,7 @@ public class l implements com.taobao.weex.d {
             return;
         }
         WXLogUtils.d("WXRenderListener", "into--[onException] errCode:" + str + " msg:" + str2);
-        if (TextUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_BUNDLE_DOWNLOAD_FAILED.getErrorCode())) {
+        if (StringUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_BUNDLE_DOWNLOAD_FAILED.getErrorCode())) {
             this.b.a(wXSDKInstance.O(), this.f2021a);
             this.b.a(true, "网络错误，点击刷新重试！");
             a(wXSDKInstance, str2);
@@ -184,7 +184,7 @@ public class l implements com.taobao.weex.d {
             return;
         }
         HashMap hashMap = new HashMap(1);
-        if (!TextUtils.isEmpty(str) && str.contains("networkMsg==") && str.contains("networkErrorCode") && (indexOf = str.indexOf("|mWXResponse")) > 0) {
+        if (!StringUtils.isEmpty(str) && str.contains("networkMsg==") && str.contains("networkErrorCode") && (indexOf = str.indexOf("|mWXResponse")) > 0) {
             String substring = str.substring(0, indexOf);
             hashMap.put("wxErrorMsgDetail", str);
             str = substring;

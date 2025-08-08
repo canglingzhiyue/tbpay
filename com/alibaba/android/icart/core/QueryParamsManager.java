@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -196,7 +196,7 @@ public class QueryParamsManager {
         if ("recmd".equals(c) || CartFeedFlowType.search.equals(c) || "none".equals(c)) {
             this.u = c;
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             try {
                 this.k = JSONObject.parseObject(this.d).getBooleanValue("preheat");
             } catch (Exception unused) {
@@ -206,7 +206,7 @@ public class QueryParamsManager {
         this.p = c("onceCustomExParams");
         this.r = d("disableFirstPageCache");
         p();
-        if (!TextUtils.isEmpty(this.q) || TBMainHost.a().getContext() != this.s) {
+        if (!StringUtils.isEmpty(this.q) || TBMainHost.a().getContext() != this.s) {
             return;
         }
         this.q = CheckHoldManager.a().b();
@@ -217,7 +217,7 @@ public class QueryParamsManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("63fccf7", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.n)) {
+        } else if (!StringUtils.isEmpty(this.n)) {
             this.f = this.n;
         } else if (j()) {
             this.f = "Page_MarketCart";
@@ -236,7 +236,7 @@ public class QueryParamsManager {
             Intent v = v();
             Uri data = v.getData();
             str = c("newCartDefaultTab");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Set<String> queryParameterNames = data.getQueryParameterNames();
                 Uri.Builder clearQuery = data.buildUpon().clearQuery();
                 for (String str2 : queryParameterNames) {
@@ -257,7 +257,7 @@ public class QueryParamsManager {
             return (JSONObject) ipChange.ipc$dispatch("9d2c0493", new Object[]{this, str});
         }
         String c = c(str);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return null;
         }
         try {
@@ -346,7 +346,7 @@ public class QueryParamsManager {
         L45:
             java.lang.String r5 = "cartFromBiz"
             java.lang.String r2 = r2.getQueryParameter(r5)
-            boolean r5 = android.text.TextUtils.isEmpty(r2)
+            boolean r5 = android.text.StringUtils.isEmpty(r2)
             if (r5 != 0) goto L52
             goto L55
         L52:
@@ -355,7 +355,7 @@ public class QueryParamsManager {
         L54:
             r2 = r1
         L55:
-            boolean r4 = android.text.TextUtils.isEmpty(r2)
+            boolean r4 = android.text.StringUtils.isEmpty(r2)
             if (r4 == 0) goto L6b
             android.os.Bundle r0 = r0.getExtras()     // Catch: java.lang.Exception -> L6b
             if (r0 == 0) goto L6b
@@ -363,7 +363,7 @@ public class QueryParamsManager {
             if (r4 == 0) goto L6b
             java.lang.String r2 = r0.getString(r3)     // Catch: java.lang.Exception -> L6b
         L6b:
-            boolean r0 = android.text.TextUtils.isEmpty(r2)
+            boolean r0 = android.text.StringUtils.isEmpty(r2)
             if (r0 == 0) goto L72
             goto L73
         L72:
@@ -384,10 +384,10 @@ public class QueryParamsManager {
             JSONObject parseObject = JSON.parseObject(c("customParams"));
             String string = parseObject.getString("headerStartBg");
             String string2 = parseObject.getString("headerEndBg");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 arrayList.add(string);
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 arrayList.add(string2);
             }
         } catch (Exception unused) {

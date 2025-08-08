@@ -2,7 +2,7 @@ package com.huawei.hms.utils;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes.dex */
 public final class Checker {
@@ -21,14 +21,14 @@ public final class Checker {
     }
 
     public static void assertNonEmpty(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return;
         }
         throw new IllegalStateException("Given String is empty or null");
     }
 
     public static void assertNonEmpty(String str, String str2) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return;
         }
         throw new IllegalStateException(String.valueOf(str2));
@@ -63,14 +63,14 @@ public final class Checker {
     }
 
     public static String checkNonEmpty(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         throw new IllegalArgumentException("Given String is empty or null");
     }
 
     public static String checkNonEmpty(String str, String str2) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         throw new IllegalArgumentException(String.valueOf(str2));

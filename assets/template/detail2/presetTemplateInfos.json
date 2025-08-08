@@ -1,0 +1,10 @@
+{
+  "tb_detail_toolbar_for_tgc": {
+    "version": 1,
+    "main.dx": "template/detail2/tb_detail_toolbar_for_tgc/1/main.dx"
+  },
+  "tb_detail_toolbar": {
+    "version": 1,
+    "main.dx": "template/detail2/tb_detail_toolbar/1/main.dx"
+  }
+}

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.aura.AURAFlowData;
@@ -95,7 +95,7 @@ public final class baa implements ate {
             ard a3 = arc.a();
             a3.a("AURAUserMotionComponentLifeCycleExtension", "onAppear", "componentKey:" + aURARenderComponent.key + ",appearFrom:" + a2);
         }
-        if (!TextUtils.isEmpty(aURARenderComponent.key)) {
+        if (!StringUtils.isEmpty(aURARenderComponent.key)) {
             a aVar = new a();
             aVar.f25723a = a2;
             this.f.put(aURARenderComponent.key, aVar);
@@ -118,7 +118,7 @@ public final class baa implements ate {
         if (jqm.a()) {
             arc.a().a("AURAUserMotionComponentLifeCycleExtension", "onDisappear", "componentKey:" + aURARenderComponent.key + ",disappearTo:" + b);
         }
-        if (TextUtils.isEmpty(aURARenderComponent.key) || (aVar = this.f.get(aURARenderComponent.key)) == null) {
+        if (StringUtils.isEmpty(aURARenderComponent.key) || (aVar = this.f.get(aURARenderComponent.key)) == null) {
             j = 0;
             i2 = 0;
         } else {

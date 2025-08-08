@@ -3,7 +3,7 @@ package tb;
 import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.text.Html;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
@@ -43,7 +43,7 @@ public class rmi extends rmj {
         } else if (!(obj instanceof TextView) || (textView = (TextView) obj) == null) {
         } else {
             String str4 = rlz.a().g(str3).get(str2);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str2 = str4;
             }
             HashMap<String, Object> hashMap = rlz.a().d(str, str3).get(str2);
@@ -221,7 +221,7 @@ public class rmi extends rmj {
             ipChange.ipc$dispatch("f7a235ed", new Object[]{this, textView, fontVO});
         } else if (fontVO == null) {
         } else {
-            if (!TextUtils.isEmpty(fontVO.fontSize)) {
+            if (!StringUtils.isEmpty(fontVO.fontSize)) {
                 textView.setTextSize(0, rmm.e(fontVO.fontSize));
             }
             a(textView, fontVO.familyName);
@@ -237,7 +237,7 @@ public class rmi extends rmj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1ccae9a6", new Object[]{this, textView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if ("monospace".equalsIgnoreCase(str)) {
                 textView.setTypeface(Typeface.MONOSPACE);
@@ -268,13 +268,13 @@ public class rmi extends rmj {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56958b85", new Object[]{this, textView, str});
         } else if ("start".equals(str)) {
-            textView.setEllipsize(TextUtils.TruncateAt.START);
+            textView.setEllipsize(StringUtils.TruncateAt.START);
         } else if ("middle".equals(str)) {
-            textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+            textView.setEllipsize(StringUtils.TruncateAt.MIDDLE);
         } else if ("marquee".equals(str)) {
-            textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            textView.setEllipsize(StringUtils.TruncateAt.MARQUEE);
         } else {
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
         }
     }
 
@@ -284,16 +284,16 @@ public class rmi extends rmj {
             ipChange.ipc$dispatch("a5069eaf", new Object[]{this, textView, fontColorSelectorVO});
             return;
         }
-        if (TextUtils.isEmpty(fontColorSelectorVO.titleNormalColor)) {
+        if (StringUtils.isEmpty(fontColorSelectorVO.titleNormalColor)) {
             fontColorSelectorVO.titleNormalColor = "#000000";
         }
-        if (TextUtils.isEmpty(fontColorSelectorVO.titleDisabledColor)) {
+        if (StringUtils.isEmpty(fontColorSelectorVO.titleDisabledColor)) {
             fontColorSelectorVO.titleDisabledColor = fontColorSelectorVO.titleNormalColor;
         }
-        if (TextUtils.isEmpty(fontColorSelectorVO.titleHighlightedColor)) {
+        if (StringUtils.isEmpty(fontColorSelectorVO.titleHighlightedColor)) {
             fontColorSelectorVO.titleHighlightedColor = fontColorSelectorVO.titleNormalColor;
         }
-        if (TextUtils.isEmpty(fontColorSelectorVO.titleSelectedColor)) {
+        if (StringUtils.isEmpty(fontColorSelectorVO.titleSelectedColor)) {
             fontColorSelectorVO.titleSelectedColor = fontColorSelectorVO.titleNormalColor;
         }
         textView.setTextColor(new ColorStateList(new int[][]{rmp.d, rmp.f33236a, rmp.b, rmp.c}, new int[]{rmm.a(fontColorSelectorVO.titleDisabledColor), rmm.a(fontColorSelectorVO.titleHighlightedColor), rmm.a(fontColorSelectorVO.titleSelectedColor), rmm.a(fontColorSelectorVO.titleNormalColor)}));

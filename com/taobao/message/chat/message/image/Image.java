@@ -1,6 +1,6 @@
 package com.taobao.message.chat.message.image;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -35,10 +35,10 @@ public class Image {
         this.originalUrl = str3;
         this.height = i2;
         this.width = i;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.previewUrl = this.bigUrl;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.previewUrl = str3;
         }
         this.previewUrl = rectifyImageUrl(str);
@@ -51,7 +51,7 @@ public class Image {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b9220fe3", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         if (!str.startsWith("https://interface.im.taobao.com") && !str.startsWith("https://interfacepre.im.taobao.com")) {

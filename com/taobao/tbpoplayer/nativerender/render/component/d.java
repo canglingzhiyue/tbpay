@@ -6,7 +6,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
@@ -122,7 +122,7 @@ public class d extends c<CounterModel> {
         textView.setLines(1);
         try {
             textView.setTextSize(0, l.a(context, Float.parseFloat(counterStyleModel.fontSize)));
-            if (!TextUtils.isEmpty(counterStyleModel.color)) {
+            if (!StringUtils.isEmpty(counterStyleModel.color)) {
                 try {
                     textView.setTextColor(Color.parseColor(counterStyleModel.color));
                 } catch (Throwable th) {
@@ -132,7 +132,7 @@ public class d extends c<CounterModel> {
                     return textView;
                 }
             }
-            float parseFloat = !TextUtils.isEmpty(counterStyleModel.lineHeight) ? Float.parseFloat(counterStyleModel.lineHeight) : 0.0f;
+            float parseFloat = !StringUtils.isEmpty(counterStyleModel.lineHeight) ? Float.parseFloat(counterStyleModel.lineHeight) : 0.0f;
             if (parseFloat > 0.0f && Build.VERSION.SDK_INT >= 28) {
                 textView.setLineHeight((int) l.a(context, parseFloat));
             }
@@ -167,7 +167,7 @@ public class d extends c<CounterModel> {
         }
         try {
             String str = ((CounterModel) this.b).format;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = ((CounterModel) this.b).showMilliseconds ? "{0H}:{0m}:{0s}.{n}" : "{0H}:{0m}:{0s}";
             }
             Matcher matcher = Pattern.compile("\\{[0]*[d,h,H,m,s,n]\\}").matcher(str);
@@ -386,7 +386,7 @@ public class d extends c<CounterModel> {
             return;
         }
         this.e.measure(0, 0);
-        if (!TextUtils.isEmpty(((CounterModel) this.b).style.appendWidth)) {
+        if (!StringUtils.isEmpty(((CounterModel) this.b).style.appendWidth)) {
             a2 = this.f22246a.l().a(this.f22246a.a().a(), Float.parseFloat(((CounterModel) this.b).style.appendWidth));
         } else {
             a2 = this.f22246a.l().a(this.f22246a.a().a(), 3.0f);

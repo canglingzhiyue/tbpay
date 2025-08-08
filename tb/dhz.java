@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class dhz {
             e.a("tanx_click_invoke_success", c());
             for (final String str : this.d) {
                 String host = Uri.parse(str).getHost();
-                if (TextUtils.isEmpty(host)) {
+                if (StringUtils.isEmpty(host)) {
                     e.a("tanx_click_invalid_url", "msg=domain_not_right", c());
                 } else {
                     final String a2 = a(host);
@@ -144,7 +144,7 @@ public class dhz {
             this.f26771a = new HashMap();
         }
         String a2 = h.a(this.c, this.d, this.f26771a);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             e.a("tanx_click_parse_error", c(), "error_msg=" + a2, "tracking_json=" + Uri.encode(this.c));
             UserTrackLogs.trackAdLog("tanx_click_parse_error", c(), "error_msg=" + a2, "tracking_json=" + Uri.encode(this.c));
         }
@@ -169,7 +169,7 @@ public class dhz {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         StringBuilder sb = new StringBuilder(c());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(",host=");
             sb.append(str);
         }

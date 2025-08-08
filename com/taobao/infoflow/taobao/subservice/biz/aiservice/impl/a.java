@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.aiservice.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.m;
 import com.taobao.android.information.ai.api.IInformationFlowAiApi;
@@ -145,7 +145,7 @@ public class a {
             return;
         }
         Boolean bool = (Boolean) m.a().a("homeNetLowOptimization", Boolean.class);
-        if (bool != null && bool.booleanValue() && TextUtils.equals(ldc.a(), "l")) {
+        if (bool != null && bool.booleanValue() && StringUtils.equals(ldc.a(), "l")) {
             return;
         }
         this.c = c();
@@ -185,7 +185,7 @@ public class a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("f302f74f", new Object[]{this, lliVar});
-                } else if (lliVar != null && lliVar.b() != null && TextUtils.equals(lliVar.b().getString(i.CDN_REQUEST_TYPE), "coldStart")) {
+                } else if (lliVar != null && lliVar.b() != null && StringUtils.equals(lliVar.b().getString(i.CDN_REQUEST_TYPE), "coldStart")) {
                 } else {
                     if (a.a(a.this) != null) {
                         a.a(a.this).a();
@@ -200,7 +200,7 @@ public class a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("ce5cd68c", new Object[]{this, lliVar, iContainerDataModel});
-                } else if (lliVar != null && lliVar.b() != null && TextUtils.equals(lliVar.b().getString(i.CDN_REQUEST_TYPE), "coldStart")) {
+                } else if (lliVar != null && lliVar.b() != null && StringUtils.equals(lliVar.b().getString(i.CDN_REQUEST_TYPE), "coldStart")) {
                 } else {
                     if (a.a(a.this) != null) {
                         a.a(a.this).a(iContainerDataModel);
@@ -215,7 +215,7 @@ public class a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("30b7ed6b", new Object[]{this, lliVar, iContainerDataModel});
-                } else if ((lliVar != null && lliVar.b() != null && TextUtils.equals(lliVar.b().getString(i.CDN_REQUEST_TYPE), "coldStart")) || a.a(a.this) == null) {
+                } else if ((lliVar != null && lliVar.b() != null && StringUtils.equals(lliVar.b().getString(i.CDN_REQUEST_TYPE), "coldStart")) || a.a(a.this) == null) {
                 } else {
                     a.a(a.this).b();
                 }
@@ -237,7 +237,7 @@ public class a {
                 if (lliVar != null && lliVar.b() != null) {
                     lliVar.b().put(i.CDN_REQUEST_TYPE, (Object) str);
                 }
-                if (TextUtils.equals(str, "coldStart")) {
+                if (StringUtils.equals(str, "coldStart")) {
                     return null;
                 }
                 HashMap hashMap = new HashMap(8);
@@ -270,7 +270,7 @@ public class a {
             map.put("apiVersion", b.getVersion());
         }
         String a2 = this.e.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         ldf.d("AiProviderAdapter", "使用自定义的 moduleVersion:" + a2);

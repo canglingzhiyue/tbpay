@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -92,7 +92,7 @@ public class hxx extends b implements View.OnClickListener {
                     TUrlImageView tUrlImageView = (TUrlImageView) childAt;
                     tUrlImageView.setStrategyConfig(hyb.a(false));
                     tUrlImageView.setPlaceHoldImageResId(R.drawable.babel_order_tb_icon_detail_shop);
-                    if (!TextUtils.isEmpty(recommendShop.pictUrl)) {
+                    if (!StringUtils.isEmpty(recommendShop.pictUrl)) {
                         tUrlImageView.setImageUrl(recommendShop.pictUrl);
                     } else {
                         tUrlImageView.setImageDrawable(this.f14568a.getResources().getDrawable(R.drawable.babel_order_tb_icon_detail_shop));

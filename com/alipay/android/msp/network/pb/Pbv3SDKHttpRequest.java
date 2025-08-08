@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.pb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -53,15 +53,15 @@ public class Pbv3SDKHttpRequest {
             String str = resData.mData.get("trade_no");
             MspTradeContext tradeContextByBizId = MspContextManager.getInstance().getTradeContextByBizId(i);
             if (tradeContextByBizId != null) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     tradeContextByBizId.getStatisticInfo().updateAttr(Vector.Trade, "tradeNo", str);
                 } else {
                     String tradeNo = OrderInfoUtil.getTradeNo(tradeContextByBizId);
-                    if (!TextUtils.isEmpty(tradeNo)) {
+                    if (!StringUtils.isEmpty(tradeNo)) {
                         tradeContextByBizId.getStatisticInfo().updateAttr(Vector.Trade, "tradeNo", tradeNo);
                     }
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     tradeContextByBizId.updateTradeNo(str);
                 }
             }
@@ -75,12 +75,12 @@ public class Pbv3SDKHttpRequest {
         resData.mStatusCode = requestData.mStatusCode;
         resData.mHeaders = requestData.mHeaders;
         resData.mReqData = requestData.mReqData;
-        if (!TextUtils.isEmpty(header)) {
+        if (!StringUtils.isEmpty(header)) {
             try {
                 for (String str2 : header.split(";")) {
                     if (str2.startsWith("user_id=")) {
                         String substring = str2.substring(8);
-                        if (TextUtils.isEmpty(substring)) {
+                        if (StringUtils.isEmpty(substring)) {
                             break;
                         }
                         MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i);
@@ -169,13 +169,13 @@ public class Pbv3SDKHttpRequest {
             hashMap.put(MspFlybirdDefine.EXTINFO, mspResV3.extinfo);
             JsonUtil.addExtInfo(mspResV3.extinfo, hashMap);
             String str2 = mspResV3.tplid;
-            if (TextUtils.equals(str2, "0")) {
+            if (StringUtils.equals(str2, "0")) {
                 str2 = "QUICKPAY@cashier-pre-confirm-flex";
-            } else if (TextUtils.equals(str2, "1")) {
+            } else if (StringUtils.equals(str2, "1")) {
                 str2 = MspFlybirdDefine.CASHIER_CHANNEL_LOGO_TPL;
-            } else if (TextUtils.equals(str2, "2")) {
+            } else if (StringUtils.equals(str2, "2")) {
                 str2 = "QUICKPAY@frontpay-channel-logo-flex";
-            } else if (TextUtils.equals(str2, "3")) {
+            } else if (StringUtils.equals(str2, "3")) {
                 str2 = MspFlybirdDefine.FLYBIRD_RESULT_TPL;
             }
             hashMap.put(MspFlybirdDefine.FLYBIRD_TEMPLATE_ID, str2);
@@ -238,24 +238,24 @@ public class Pbv3SDKHttpRequest {
         mspReqV3.session = map.get(MspGlobalDefine.SESSION);
         mspReqV3.trid = map.get(MspGlobalDefine.TRID);
         try {
-            if (!TextUtils.isEmpty(map.get(MspFlybirdDefine.TRDFROM))) {
+            if (!StringUtils.isEmpty(map.get(MspFlybirdDefine.TRDFROM))) {
                 mspReqV3.trdfrom = Integer.valueOf(Integer.parseInt(map.get(MspFlybirdDefine.TRDFROM)));
             }
         } catch (NumberFormatException e) {
             LogUtil.printExceptionStackTrace(e);
         }
         try {
-            if (!TextUtils.isEmpty(map.get(MspFlybirdDefine.FLYBIRD_LOGIN))) {
+            if (!StringUtils.isEmpty(map.get(MspFlybirdDefine.FLYBIRD_LOGIN))) {
                 mspReqV3.locLoginOnce = Integer.valueOf(Integer.parseInt(map.get(MspFlybirdDefine.FLYBIRD_LOGIN)));
             }
         } catch (NumberFormatException e2) {
             LogUtil.printExceptionStackTrace(e2);
         }
         try {
-            if (!TextUtils.isEmpty(map.get("hasAlipay"))) {
+            if (!StringUtils.isEmpty(map.get("hasAlipay"))) {
                 mspReqV3.hasAlipay = Integer.valueOf(Integer.parseInt(map.get("hasAlipay")));
             }
-            if (!TextUtils.isEmpty(map.get(MspGlobalDefine.CERTPAY))) {
+            if (!StringUtils.isEmpty(map.get(MspGlobalDefine.CERTPAY))) {
                 mspReqV3.certpay = Integer.valueOf(Integer.parseInt(map.get(MspGlobalDefine.CERTPAY)));
             }
         } catch (NumberFormatException e3) {

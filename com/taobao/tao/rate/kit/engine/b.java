@@ -1,7 +1,7 @@
 package com.taobao.tao.rate.kit.engine;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -18,7 +18,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{context, str});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             Toast.makeText(context.getApplicationContext(), str, 0).show();
         }

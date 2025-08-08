@@ -2,7 +2,7 @@ package com.taobao.android.weex_framework;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex.WeexFactoryImpl;
@@ -150,7 +150,7 @@ public class q {
         } else if (context == null) {
         } else {
             String string = jSONObject.getString("bizName");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 com.taobao.android.weex_framework.util.g.d("preLoadWeexInstance failed, bizName is null");
                 return;
             }
@@ -163,7 +163,7 @@ public class q {
             JSONObject jSONObject3 = jSONObject.getJSONObject("options");
             boolean z = jSONObject.containsKey(tbt.PRE_RENDER) && jSONObject.getBoolean(tbt.PRE_RENDER).booleanValue();
             boolean z2 = jSONObject.containsKey("onlyInit") && jSONObject.getBoolean("onlyInit").booleanValue();
-            if (!TextUtils.isEmpty(string2) && (parse = Uri.parse(string2)) != null && parse.isHierarchical()) {
+            if (!StringUtils.isEmpty(string2) && (parse = Uri.parse(string2)) != null && parse.isHierarchical()) {
                 string2 = parse.buildUpon().appendQueryParameter("isPreload", "true").build().toString();
             }
             ConcurrentLinkedQueue<MUSDKInstance> concurrentLinkedQueue = this.f16071a.get(string);
@@ -177,7 +177,7 @@ public class q {
             if (mUSInstanceConfig == null) {
                 mUSInstanceConfig = new MUSInstanceConfig();
             }
-            if (TextUtils.isEmpty(mUSInstanceConfig.c())) {
+            if (StringUtils.isEmpty(mUSInstanceConfig.c())) {
                 mUSInstanceConfig.c(string2);
             }
             mUSInstanceConfig.a(true);
@@ -206,7 +206,7 @@ public class q {
         if (ipChange instanceof IpChange) {
             return (MUSDKInstance) ipChange.ipc$dispatch("f81e36a4", new Object[]{this, str, jSONObject});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.weex_framework.util.g.d("getReadyInstance failed, bizName is null");
             return null;
         }

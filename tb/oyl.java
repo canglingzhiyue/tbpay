@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.scancode.v2.result.MaType;
 import com.taobao.taobao.scancode.v2.result.a;
@@ -38,7 +38,7 @@ public class oyl {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return (str.startsWith("8") && str.length() == 20) || ((str.startsWith("10") || str.startsWith("11")) && str.length() == 16);
@@ -66,7 +66,7 @@ public class oyl {
             boolean r4 = r4.booleanValue()
             return r4
         L19:
-            boolean r0 = android.text.TextUtils.isEmpty(r4)
+            boolean r0 = android.text.StringUtils.isEmpty(r4)
             if (r0 == 0) goto L20
             return r3
         L20:
@@ -90,21 +90,21 @@ public class oyl {
             int r1 = r0.groupCount()     // Catch: java.lang.Throwable -> L80
             if (r1 <= 0) goto L7f
             java.lang.String r0 = r0.group(r2)     // Catch: java.lang.Throwable -> L80
-            boolean r1 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L80
+            boolean r1 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L80
             if (r1 == 0) goto L5b
             goto L7f
         L5b:
             java.lang.String r1 = "2"
-            boolean r1 = android.text.TextUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
+            boolean r1 = android.text.StringUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
             if (r1 != 0) goto L7d
             java.lang.String r1 = "3"
-            boolean r1 = android.text.TextUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
+            boolean r1 = android.text.StringUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
             if (r1 != 0) goto L7d
             java.lang.String r1 = "4"
-            boolean r1 = android.text.TextUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
+            boolean r1 = android.text.StringUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
             if (r1 != 0) goto L7d
             java.lang.String r1 = "5"
-            boolean r0 = android.text.TextUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
+            boolean r0 = android.text.StringUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> L80
             if (r0 == 0) goto L7c
             goto L7d
         L7c:
@@ -117,7 +117,7 @@ public class oyl {
             java.lang.String r4 = r4.getHost()
             java.lang.String r4 = r4.toLowerCase()
             java.lang.String r0 = "s.tb.cn"
-            boolean r4 = android.text.TextUtils.equals(r0, r4)
+            boolean r4 = android.text.StringUtils.equals(r0, r4)
             return r4
         */
         throw new UnsupportedOperationException("Method not decompiled: tb.oyl.b(java.lang.String):boolean");

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.business.videocollection.poplayer.a;
@@ -96,7 +96,7 @@ public class sjt {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        boolean equals = TextUtils.equals("true", oeb.b("android_fullscreenvideo.optInteract.enable" + str, "false")) | oeb.h("enableOptInteract");
+        boolean equals = StringUtils.equals("true", oeb.b("android_fullscreenvideo.optInteract.enable" + str, "false")) | oeb.h("enableOptInteract");
         spz.c("InteractionServiceConfig", "enableInteractOpt, type:" + str + " enable: " + equals);
         return equals;
     }

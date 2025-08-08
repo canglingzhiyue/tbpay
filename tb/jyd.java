@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -76,7 +76,7 @@ public class jyd extends jyf {
         } else if (!a(jxsVar).b()) {
         } else {
             String a2 = b.a(jxxVar.f29858a, jxsVar.getCore());
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             h.b(jxsVar.e(), "itemExpose", a2, (View) null, new String[0]);
@@ -91,7 +91,7 @@ public class jyd extends jyf {
             return;
         }
         String a2 = b.a(baseTypedBean, jxsVar.getCore());
-        if (TextUtils.isEmpty(a2) || (b = b.b(baseTypedBean, jxsVar.getCore())) == null) {
+        if (StringUtils.isEmpty(a2) || (b = b.b(baseTypedBean, jxsVar.getCore())) == null) {
             return;
         }
         if (map != null) {

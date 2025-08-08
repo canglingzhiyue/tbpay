@@ -1,7 +1,7 @@
 package com.tencent.mm.opensdk.modelmsg;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.utils.Log;
 import tb.kge;
@@ -32,7 +32,7 @@ public class WXDesignerSharedObject implements WXMediaMessage.IMediaObject {
 
     @Override // com.tencent.mm.opensdk.modelmsg.WXMediaMessage.IMediaObject
     public boolean checkArgs() {
-        if (this.designerUIN == 0 || TextUtils.isEmpty(this.thumburl) || TextUtils.isEmpty(this.url)) {
+        if (this.designerUIN == 0 || StringUtils.isEmpty(this.thumburl) || StringUtils.isEmpty(this.url)) {
             Log.e(TAG, "checkArgs fail, packageid or thumburl is invalid");
             return false;
         }

@@ -2,7 +2,7 @@ package com.taobao.mytaobao.ultron.fatigue;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -57,7 +57,7 @@ public class b {
                 return true;
             }
             if (obj != null && getClass() == obj.getClass()) {
-                return TextUtils.equals(this.f18521a, ((a) obj).f18521a);
+                return StringUtils.equals(this.f18521a, ((a) obj).f18521a);
             }
             return false;
         }
@@ -73,10 +73,10 @@ public class b {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{this, str, new Integer(i)});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             a aVar = null;
             for (a aVar2 : this.b) {
-                if (TextUtils.equals(str, aVar2.f18521a)) {
+                if (StringUtils.equals(str, aVar2.f18521a)) {
                     aVar2.c++;
                     aVar2.b = i;
                     if (aVar2.c >= aVar2.b) {
@@ -124,12 +124,12 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f18520a.add(str);
             Iterator<a> it = this.b.iterator();
             while (it.hasNext()) {
-                if (TextUtils.equals(it.next().f18521a, str)) {
+                if (StringUtils.equals(it.next().f18521a, str)) {
                     it.remove();
                 }
             }
@@ -166,7 +166,7 @@ public class b {
         if (!this.c) {
             SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(Globals.getApplication());
             String string = defaultSharedPreferences.getString("arriveFatigue", "");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 try {
                     JSONArray parseArray = JSON.parseArray(string);
                     if (parseArray != null && parseArray.size() > 0) {
@@ -179,7 +179,7 @@ public class b {
                 }
             }
             String string2 = defaultSharedPreferences.getString("processFatigue", "");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 try {
                     JSONArray parseArray2 = JSON.parseArray(string2);
                     if (parseArray2 != null && parseArray2.size() > 0) {

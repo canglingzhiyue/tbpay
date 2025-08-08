@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.ProgressBar;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -279,13 +279,13 @@ public class FMModuleLoadActivity extends BaseFeatureDownloadActivity {
             int i2 = 0;
             while (i2 < parseArray.size()) {
                 String str2 = (String) parseArray.get(i2);
-                if (!TextUtils.isEmpty(str2) && str2.contains(">")) {
+                if (!StringUtils.isEmpty(str2) && str2.contains(">")) {
                     String[] split = str2.split(">");
                     if (split.length == i) {
                         String str3 = split[0];
                         String str4 = split[1];
                         if (data.toString().contains(str3)) {
-                            if (!str4.contains("?") && !TextUtils.isEmpty(data.getEncodedQuery())) {
+                            if (!str4.contains("?") && !StringUtils.isEmpty(data.getEncodedQuery())) {
                                 str = str4 + "?" + data.getEncodedQuery();
                             } else {
                                 str = str4 + "&" + data.getEncodedQuery();

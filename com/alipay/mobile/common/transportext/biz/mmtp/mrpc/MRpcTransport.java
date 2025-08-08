@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.mmtp.mrpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.context.TransportContext;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -146,7 +146,7 @@ public class MRpcTransport {
             return ((Number) ipChange.ipc$dispatch("2657bcda", new Object[]{this, mRpcRequest, new Integer(i)})).intValue();
         }
         Map<String, String> headers = mRpcRequest.getHeaders();
-        if (headers == null || headers.isEmpty() || !TextUtils.equals(headers.get(HeaderConstant.HEADER_KEY_OPERATION_TYPE), "alipay.mobilechat.sendMsg")) {
+        if (headers == null || headers.isEmpty() || !StringUtils.equals(headers.get(HeaderConstant.HEADER_KEY_OPERATION_TYPE), "alipay.mobilechat.sendMsg")) {
             return i;
         }
         LogCatUtil.info("MRpcTransport", "setStreamTimeout,sendMsg timeout: 180000");
@@ -182,7 +182,7 @@ public class MRpcTransport {
         }
         MRpcConnection mRpcConneciton = getMRpcConneciton();
         String currentTargetHost = mRpcConneciton.getCurrentTargetHost();
-        if (TextUtils.isEmpty(currentTargetHost)) {
+        if (StringUtils.isEmpty(currentTargetHost)) {
             return "";
         }
         return currentTargetHost + ":" + mRpcConneciton.getCurrentTargetPort();
@@ -196,7 +196,7 @@ public class MRpcTransport {
         }
         try {
             String str = mRpcRequest.getHeaders().get(HeaderConstant.HEADER_KEY_PARAM_TRACEID);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             String str2 = str + "_" + mRpcRequest.reqSeqId;

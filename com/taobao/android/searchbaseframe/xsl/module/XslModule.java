@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.xsl.module;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -844,7 +844,7 @@ public class XslModule implements ium {
         if (this.i != null) {
             throw new IllegalStateException("XslModule can't create twice");
         }
-        if (!TextUtils.isEmpty(this.E)) {
+        if (!StringUtils.isEmpty(this.E)) {
             this.A = com.taobao.android.searchbaseframe.xsl.f.a().a(this.E, this.B, this.C, this.af, this.ag);
         }
         if (this.A == null) {
@@ -1470,11 +1470,11 @@ public class XslModule implements ium {
             ipChange.ipc$dispatch("1bd6163a", new Object[]{this, xslSearchResult});
         } else if (this.i == null) {
         } else {
-            if (TextUtils.isEmpty(this.F)) {
+            if (StringUtils.isEmpty(this.F)) {
                 this.i.a(xslSearchResult.getAtmosphereType(), xslSearchResult.getAtmosphereUrl());
                 this.i.b(xslSearchResult.isAtmosphereAnim());
             }
-            if (!TextUtils.isEmpty(this.G)) {
+            if (!StringUtils.isEmpty(this.G)) {
                 return;
             }
             this.i.a(xslSearchResult.getAtmosphereListBgColor());

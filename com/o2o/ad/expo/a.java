@@ -1,6 +1,6 @@
 package com.o2o.ad.expo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +27,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("45e45284", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f8107a.put("namespace", str);
         }
         return this;

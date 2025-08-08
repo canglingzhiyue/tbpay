@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import com.ali.user.mobile.model.LoginType;
@@ -82,7 +82,7 @@ public class TBLoginReceiver extends BroadcastReceiver {
                 if (i != 2) {
                     return;
                 }
-                if (!TextUtils.equals(intent.getStringExtra(LoginConstants.LOGIN_TYPE), LoginType.ServerLoginType.AutoLogin.getType()) || !TextUtils.isEmpty(intent.getStringExtra(LoginConstants.LOGIN_FROM))) {
+                if (!StringUtils.equals(intent.getStringExtra(LoginConstants.LOGIN_TYPE), LoginType.ServerLoginType.AutoLogin.getType()) || !StringUtils.isEmpty(intent.getStringExtra(LoginConstants.LOGIN_FROM))) {
                     b.a(context, "", "", "login");
                 }
                 jumpToTargetUrl(context);
@@ -98,7 +98,7 @@ public class TBLoginReceiver extends BroadcastReceiver {
                         }
                     }) {
                         String cookie = CookieManager.getInstance().getCookie(str);
-                        if (!TextUtils.isEmpty(cookie) && (split = cookie.split(";")) != null && split.length > 0) {
+                        if (!StringUtils.isEmpty(cookie) && (split = cookie.split(";")) != null && split.length > 0) {
                             for (String str2 : split) {
                                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, dd-MMM-yyyy HH:mm:ss 'GMT'", Locale.ENGLISH);
                                 simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT+8"));
@@ -128,19 +128,19 @@ public class TBLoginReceiver extends BroadcastReceiver {
             return;
         }
         String extJson = Login.getExtJson();
-        if (!TextUtils.isEmpty(extJson)) {
+        if (!StringUtils.isEmpty(extJson)) {
             try {
                 string = new JSONObject(extJson).getString("afterLoginH5Url");
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            if (TextUtils.isEmpty(string) || !LoginSwitch.getSwitch("afterLoginH5Url", "true")) {
+            if (StringUtils.isEmpty(string) || !LoginSwitch.getSwitch("afterLoginH5Url", "true")) {
             }
             Nav.from(context).toUri(string);
             return;
         }
         string = "";
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
         }
     }
 }

@@ -2,7 +2,7 @@ package com.taobao.mytaobao.dataservice.datasource;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -202,7 +202,7 @@ public final class b {
         }
         jSONObject2.put("new2021UIEnable", (Object) Boolean.valueOf(z));
         String jSONString = JSON.toJSONString(com.taobao.mytaobao.ultron.fatigue.a.a(Login.getUserId()).b());
-        if (!TextUtils.isEmpty(jSONString)) {
+        if (!StringUtils.isEmpty(jSONString)) {
             jSONObject2.put("orderFatigue", (Object) jSONString);
         }
         if (com.taobao.android.tbelder.b.c()) {

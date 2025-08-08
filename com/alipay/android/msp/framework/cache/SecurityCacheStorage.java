@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.cache;
 import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
 import com.alipay.android.msp.framework.storage.PrefUtils;
 import com.alipay.android.msp.utils.LogUtil;
@@ -19,7 +19,7 @@ public class SecurityCacheStorage {
             return (String) ipChange.ipc$dispatch("33696d7d", new Object[]{str, str2, new Boolean(z)});
         }
         String string = PrefUtils.getString(str, str2, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return "";
         }
         if (a() != null) {

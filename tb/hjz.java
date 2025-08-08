@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.recommendpop.CalendarConfig;
 import com.taobao.desktop.channel.calendar.CalendarInsertData;
@@ -80,7 +80,7 @@ public abstract class hjz {
                                 calendarInsertData.setKeepTime(3600000L);
                                 calendarInsertData.setTargetUrl(str3);
                                 calendarInsertData.setPreviousMinutes(j2);
-                                if (!TextUtils.isEmpty(b.a(context, calendarInsertData))) {
+                                if (!StringUtils.isEmpty(b.a(context, calendarInsertData))) {
                                 }
                             }
                             z = true;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.BootImageDataMgr;
 import com.taobao.bootimage.linked.d;
@@ -218,7 +218,7 @@ public class kem {
             configs = this.b;
         }
         String str3 = configs.get(str);
-        return TextUtils.isEmpty(str3) ? str2 : str3;
+        return StringUtils.isEmpty(str3) ? str2 : str3;
     }
 
     public boolean h() {

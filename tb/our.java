@@ -1,7 +1,7 @@
 package tb;
 
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.e;
@@ -37,7 +37,7 @@ public class our implements ouq {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("com.taobao.tao.shop.ruleversion.cache.key");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append("-");
             sb.append(str);
         }
@@ -61,7 +61,7 @@ public class our implements ouq {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
         TBBundleUrlRuleInfo a2 = b.a(str);
-        if (a2 != null && !TextUtils.isEmpty(a2.mRuleFileName)) {
+        if (a2 != null && !StringUtils.isEmpty(a2.mRuleFileName)) {
             return c.a(str2, a2.mRuleFileName);
         }
         return false;
@@ -74,7 +74,7 @@ public class our implements ouq {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         TBBundleUrlRuleInfo a2 = b.a(str);
-        if (a2 == null || TextUtils.isEmpty(a2.mRuleFileName)) {
+        if (a2 == null || StringUtils.isEmpty(a2.mRuleFileName)) {
             return null;
         }
         Log.e("TBSR", "getRuleFromFile=" + a2.mRuleFileName);

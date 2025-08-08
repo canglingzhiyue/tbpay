@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -173,7 +173,7 @@ public final class cqu extends cqt {
         q.c(activity, "activity");
         String bW = com.etao.feimagesearch.config.b.bW();
         TLogTracker.b("MuisePageLoad", "LoadTemplate", "templates:" + bW);
-        if (TextUtils.isEmpty(bW)) {
+        if (StringUtils.isEmpty(bW)) {
             cqt.a i = i();
             if (i == null) {
                 return;
@@ -309,7 +309,7 @@ public final class cqu extends cqt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("84162689", new Object[]{this, str, str2, map});
-        } else if (this.f26452a == null || str == null || TextUtils.isEmpty(str) || str2 == null || TextUtils.isEmpty(str2)) {
+        } else if (this.f26452a == null || str == null || StringUtils.isEmpty(str) || str2 == null || StringUtils.isEmpty(str2)) {
         } else {
             if (map == null) {
                 p pVar = this.f26452a;
@@ -507,7 +507,7 @@ public final class cqu extends cqt {
             q.a((Object) a2, "UrlUtil.appendQueryParam…om/search?\", innerParams)");
             JSONObject jSONObject = new JSONObject();
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                     jSONObject.put((JSONObject) entry.getKey(), entry.getValue());
                 }
             }

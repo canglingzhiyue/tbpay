@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.Constant;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.mobile.auth.gatewayauth.ResultCode;
@@ -49,7 +49,7 @@ public class O0o000 extends com.mobile.auth.gatewayauth.manager.O000000o {
                 public void onResult(String str2) {
                     try {
                         try {
-                            TextUtils.isEmpty("");
+                            StringUtils.isEmpty("");
                             JSONObject jSONObject = new JSONObject(str2);
                             int optInt = jSONObject.optInt("resultCode");
                             String optString = jSONObject.optString("resultMsg");
@@ -65,7 +65,7 @@ public class O0o000 extends com.mobile.auth.gatewayauth.manager.O000000o {
                                 String optString2 = optJSONObject.optString("fakeMobile");
                                 String optString3 = optJSONObject.optString("accessCode");
                                 long optLong = optJSONObject.optLong("exp");
-                                if (TextUtils.isEmpty(optString2) || TextUtils.isEmpty(optString3)) {
+                                if (StringUtils.isEmpty(optString2) || StringUtils.isEmpty(optString3)) {
                                     if ("1202".equals(Integer.valueOf(optInt))) {
                                         O0o000.O000000o(O0o000.this, requestCallback, String.valueOf(optInt), ResultCode.MSG_ERROR_ANALYZE_SDK_BLACKLIST_INFO, str2, Constant.VENDOR_CUCC, monitorStruct, str);
                                         return;
@@ -170,7 +170,7 @@ public class O0o000 extends com.mobile.auth.gatewayauth.manager.O000000o {
     @Override // com.mobile.auth.gatewayauth.manager.O000000o
     protected String O00000Oo(String str, String str2) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             char c = 65535;

@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -480,7 +480,7 @@ public class TBMiniLiveFloatingVideoView extends FrameLayout {
                                 IpChange ipChange3 = $ipChange;
                                 if (ipChange3 instanceof IpChange) {
                                     ipChange3.ipc$dispatch("5c510192", new Object[]{this});
-                                } else if (!TBMiniLiveFloatingVideoView.access$200(TBMiniLiveFloatingVideoView.this) && !TextUtils.equals(TBMiniLiveFloatingVideoView.access$400(TBMiniLiveFloatingVideoView.this), "zoom") && !hud.c(context) && !TBMiniLiveFloatingVideoView.access$000(TBMiniLiveFloatingVideoView.this)) {
+                                } else if (!TBMiniLiveFloatingVideoView.access$200(TBMiniLiveFloatingVideoView.this) && !StringUtils.equals(TBMiniLiveFloatingVideoView.access$400(TBMiniLiveFloatingVideoView.this), "zoom") && !hud.c(context) && !TBMiniLiveFloatingVideoView.access$000(TBMiniLiveFloatingVideoView.this)) {
                                     if (iMediaPlayer == null) {
                                         return;
                                     }
@@ -507,7 +507,7 @@ public class TBMiniLiveFloatingVideoView extends FrameLayout {
                 if (simpleLiveInfo != null) {
                     if (p && simpleLiveInfo.benefits != null && simpleLiveInfo.benefits.get(0) != null) {
                         com.taobao.android.miniLive.model.b bVar2 = simpleLiveInfo.benefits.get(0);
-                        if (!TextUtils.isEmpty(bVar2.f14331a) && bVar2.b > 0) {
+                        if (!StringUtils.isEmpty(bVar2.f14331a) && bVar2.b > 0) {
                             this.benefitImageView.setImageUrl(bVar2.f14331a);
                             if (this.mHandler == null) {
                                 this.mHandler = new Handler(Looper.getMainLooper());
@@ -530,9 +530,9 @@ public class TBMiniLiveFloatingVideoView extends FrameLayout {
                                 }
                             }, bVar2.b * 1000);
                         }
-                    } else if (!TextUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
+                    } else if (!StringUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
                         this.benefitImageView.setImageUrl(simpleLiveInfo.defaultImageUrl);
-                    } else if (TextUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
+                    } else if (StringUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
                         this.benefitImageView.setImageUrl("https://gw.alicdn.com/tfs/TB10l6bbz39YK4jSZPcXXXrUFXa-324-96.png");
                     }
                     this.benefitImageView.setVisibility(0);

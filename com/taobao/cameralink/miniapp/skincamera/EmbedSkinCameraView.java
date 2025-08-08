@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.ariver.app.api.AppContext;
@@ -363,7 +363,7 @@ public class EmbedSkinCameraView extends AbsCLBaseEmbedView implements c, kfr {
             }
             Activity activity = ((PageContext) Objects.requireNonNull(this.mOuterPage.getPageContext())).getActivity();
             String string2 = this.currentParam.getString("loadUrl");
-            if (!TextUtils.equals(string2, this.mLoadUrl) && !TextUtils.isEmpty(string2) && string2.toLowerCase().startsWith("http")) {
+            if (!StringUtils.equals(string2, this.mLoadUrl) && !StringUtils.isEmpty(string2) && string2.toLowerCase().startsWith("http")) {
                 z = true;
             }
             com.taobao.cameralink.miniapp.skincamera.biz.b bVar = null;
@@ -381,10 +381,10 @@ public class EmbedSkinCameraView extends AbsCLBaseEmbedView implements c, kfr {
                 }
                 bVar.a(this.mLoadUrl);
             }
-            if (TextUtils.equals(string, "front")) {
+            if (StringUtils.equals(string, "front")) {
                 TB3DSpace.initSkinDetect(new AnonymousClass2(activity, bVar));
             } else {
-                TextUtils.equals(string, "back");
+                StringUtils.equals(string, "back");
             }
             if (this.currentBiz == null) {
                 return;

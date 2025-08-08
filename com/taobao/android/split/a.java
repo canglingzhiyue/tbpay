@@ -1,6 +1,6 @@
 package com.taobao.android.split;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.j;
 import com.alibaba.android.split.k;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class a implements xin {
         long currentTimeMillis = System.currentTimeMillis();
         if (this.b) {
             String fileMd5 = FlexaNative.getFileMd5(str);
-            if (!TextUtils.isEmpty(fileMd5)) {
+            if (!StringUtils.isEmpty(fileMd5)) {
                 this.c.a("md5_native", true, "md5", System.currentTimeMillis() - currentTimeMillis, 0, "", this.d);
                 return fileMd5;
             }

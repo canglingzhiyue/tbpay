@@ -2,7 +2,7 @@ package com.mobile.auth.gatewayauth.utils;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.BuildConfig;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.mobile.auth.gatewayauth.model.RStruct;
@@ -108,9 +108,9 @@ public class EncryptUtils {
     public static String encryptToken(Context context, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, boolean z, String str9) {
         try {
             String O000000o = O00000o.O000000o(context, str, str2, str4, str6, str7, str8, z);
-            if (czu.b() && !TextUtils.isEmpty(str9)) {
+            if (czu.b() && !StringUtils.isEmpty(str9)) {
                 String a2 = czu.a().a(context, O00000Oo.O00000Oo(str7), str9);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     try {
                         JSONObject jSONObject = new JSONObject(a2);
                         jSONObject.put("vendor", O00000Oo.O00000Oo(str7));

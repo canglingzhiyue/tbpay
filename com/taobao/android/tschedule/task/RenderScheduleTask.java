@@ -1,7 +1,7 @@
 package com.taobao.android.tschedule.task;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
@@ -104,7 +104,7 @@ public class RenderScheduleTask extends ScheduleTask<RenderTaskContext> {
         String a3 = jmi.a(str);
         try {
             String e2 = g.e(this.taskKey);
-            if (TextUtils.equals(e2, str)) {
+            if (StringUtils.equals(e2, str)) {
                 jkq.a(TAG, "execute RenderTask discard, cache exist");
                 return;
             }
@@ -153,11 +153,11 @@ public class RenderScheduleTask extends ScheduleTask<RenderTaskContext> {
             return "TS_NO_PROTOCOL";
         }
         final String str4 = ((RenderTaskContext) this.taskContext).bizCode;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             a2.removePreloadedInstance(str2);
             g.c(this.taskKey);
             jkq.a(TAG, "TS_RENDER_URL_CHANGE, remove old webview");
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             a2.clearPreloadedInstances();
             g.c(this.taskKey);
             jkq.a(TAG, "empty url, clearPreloadedInstances");
@@ -228,7 +228,7 @@ public class RenderScheduleTask extends ScheduleTask<RenderTaskContext> {
         };
         HashMap hashMap = new HashMap(3);
         String a3 = jmh.a("injectJs", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             hashMap.put("injectJs", a3);
         }
         if (((RenderTaskContext) this.taskContext).params.timeout > 0) {
@@ -313,7 +313,7 @@ public class RenderScheduleTask extends ScheduleTask<RenderTaskContext> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("84b274e", new Object[]{this, renderTaskContext})).booleanValue();
         }
-        if (!TextUtils.isEmpty(renderTaskContext.params.editions)) {
+        if (!StringUtils.isEmpty(renderTaskContext.params.editions)) {
             return Arrays.asList(renderTaskContext.params.editions.split(",")).contains(com.taobao.android.editionswitcher.b.b(e.b()).editionCode);
         }
         return true;
@@ -321,7 +321,7 @@ public class RenderScheduleTask extends ScheduleTask<RenderTaskContext> {
 
     private boolean isValidContext(RenderTaskContext renderTaskContext) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("89525f3f", new Object[]{this, renderTaskContext})).booleanValue() : (renderTaskContext == null || renderTaskContext.params == null || TextUtils.isEmpty(renderTaskContext.params.url)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("89525f3f", new Object[]{this, renderTaskContext})).booleanValue() : (renderTaskContext == null || renderTaskContext.params == null || StringUtils.isEmpty(renderTaskContext.params.url)) ? false : true;
     }
 
     @Override // com.taobao.android.tschedule.task.ScheduleTask

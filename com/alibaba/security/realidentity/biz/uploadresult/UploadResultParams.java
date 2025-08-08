@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity.biz.uploadresult;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.model.HttpRequest;
 import com.alibaba.security.common.http.model.HttpResponse;
 import com.alibaba.security.realidentity.RPResult;
@@ -65,13 +65,13 @@ public class UploadResultParams extends o1 {
         UploadResultRequest.Elements elements = new UploadResultRequest.Elements();
         elements.name = "RISK_ACTION";
         UploadResultRequest.Data data = new UploadResultRequest.Data();
-        if (!TextUtils.isEmpty(this.h.collectedData)) {
+        if (!StringUtils.isEmpty(this.h.collectedData)) {
             data.sensorActionLog = this.h.collectedData;
         }
-        if (!TextUtils.isEmpty(this.h.bh)) {
+        if (!StringUtils.isEmpty(this.h.bh)) {
             data.flActionLog = this.h.bh;
         }
-        if (!TextUtils.isEmpty(this.h.wukongData)) {
+        if (!StringUtils.isEmpty(this.h.wukongData)) {
             data.wukong = this.h.wukongData;
         }
         elements.value = data;
@@ -121,7 +121,7 @@ public class UploadResultParams extends o1 {
         if (uploadResultHttpResponse.isSuccessful()) {
             return new BucketParams.ErrorCode(RPResult.AUDIT_PASS, String.valueOf(0), "upload result success", 0);
         }
-        if (!TextUtils.isEmpty(this.g.retCode)) {
+        if (!StringUtils.isEmpty(this.g.retCode)) {
             return new BucketParams.ErrorCode(RPResult.AUDIT_NOT, String.valueOf((int) e2.D), this.g.retMsg, e2.D);
         }
         return new BucketParams.ErrorCode(RPResult.AUDIT_NOT, String.valueOf((int) e2.D), b.a(this.g), e2.D);
@@ -181,7 +181,7 @@ public class UploadResultParams extends o1 {
         UploadResultRequest uploadResultRequest = new UploadResultRequest(this.b, b.a(clientInfo));
         elements.value = data;
         arrayList.add(elements);
-        if (!TextUtils.isEmpty(this.h.dazzleVideoPath)) {
+        if (!StringUtils.isEmpty(this.h.dazzleVideoPath)) {
             UploadResultRequest.Elements elements2 = new UploadResultRequest.Elements();
             elements2.name = "BIOMETRIC_COLORFUL";
             UploadResultRequest.Data data2 = new UploadResultRequest.Data();
@@ -193,7 +193,7 @@ public class UploadResultParams extends o1 {
             bVar.f3372a = this.h.dazzleDataConfigs;
             aVar.b = bVar;
             String a4 = b.a(aVar);
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 data2.data = c.a(r.a().a(a4.getBytes(), String.valueOf(System.currentTimeMillis()), this.d.getBasicsConfig().umidToken));
             }
             elements2.value = data2;
@@ -214,7 +214,7 @@ public class UploadResultParams extends o1 {
             return "";
         }
         for (c2 c2Var : list) {
-            if (TextUtils.equals(str, c2Var.b())) {
+            if (StringUtils.equals(str, c2Var.b())) {
                 return c2Var.c();
             }
         }

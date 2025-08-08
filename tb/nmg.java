@@ -1,7 +1,7 @@
 package tb;
 
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.tao.Globals;
@@ -56,6 +56,6 @@ public class nmg {
 
     public static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("weitao_switch", "follow_query_degree", ""), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("weitao_switch", "follow_query_degree", ""), "true");
     }
 }

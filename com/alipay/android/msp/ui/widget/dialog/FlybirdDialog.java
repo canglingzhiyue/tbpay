@@ -135,7 +135,7 @@ public abstract class FlybirdDialog {
             java.lang.String r3 = "FlybirdDialog:showDialogV2"
             com.alipay.android.msp.utils.LogUtil.record(r2, r3, r12)
             android.app.Dialog r11 = com.alipay.android.msp.ui.widget.dialog.FlybirdDialogImpl.showDialogV1(r10, r11, r1, r13)
-            boolean r12 = android.text.TextUtils.isEmpty(r0)
+            boolean r12 = android.text.StringUtils.isEmpty(r0)
             if (r12 != 0) goto Le5
             android.widget.TextView r8 = new android.widget.TextView
             r8.<init>(r10)

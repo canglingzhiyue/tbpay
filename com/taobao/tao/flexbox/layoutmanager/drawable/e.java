@@ -9,7 +9,7 @@ import android.text.StaticLayout;
 import android.text.TextDirectionHeuristic;
 import android.text.TextDirectionHeuristics;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ReplacementSpan;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.facebook.yoga.YogaMeasureMode;
@@ -40,7 +40,7 @@ public class e {
     private Layout k;
     private CharSequence l;
     private float n;
-    private TextUtils.TruncateAt o;
+    private StringUtils.TruncateAt o;
     private int p;
     private int q;
     private YogaMeasureMode r;
@@ -126,10 +126,10 @@ public class e {
         this.d = textComponent;
     }
 
-    public static StaticLayout a(CharSequence charSequence, TextPaint textPaint, int i, Layout.Alignment alignment, float f, float f2, boolean z2, TextUtils.TruncateAt truncateAt, int i2, int i3) {
+    public static StaticLayout a(CharSequence charSequence, TextPaint textPaint, int i, Layout.Alignment alignment, float f, float f2, boolean z2, StringUtils.TruncateAt truncateAt, int i2, int i3) {
         try {
             if (z == null) {
-                Constructor constructor = StaticLayout.class.getConstructor(CharSequence.class, Integer.TYPE, Integer.TYPE, TextPaint.class, Integer.TYPE, Layout.Alignment.class, TextDirectionHeuristic.class, Float.TYPE, Float.TYPE, Boolean.TYPE, TextUtils.TruncateAt.class, Integer.TYPE, Integer.TYPE);
+                Constructor constructor = StaticLayout.class.getConstructor(CharSequence.class, Integer.TYPE, Integer.TYPE, TextPaint.class, Integer.TYPE, Layout.Alignment.class, TextDirectionHeuristic.class, Float.TYPE, Float.TYPE, Boolean.TYPE, StringUtils.TruncateAt.class, Integer.TYPE, Integer.TYPE);
                 z = constructor;
                 constructor.setAccessible(true);
             }
@@ -161,9 +161,9 @@ public class e {
         }
     }
 
-    public TextUtils.TruncateAt b() {
+    public StringUtils.TruncateAt b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (TextUtils.TruncateAt) ipChange.ipc$dispatch("306cea1f", new Object[]{this}) : this.o;
+        return ipChange instanceof IpChange ? (StringUtils.TruncateAt) ipChange.ipc$dispatch("306cea1f", new Object[]{this}) : this.o;
     }
 
     public void a(YogaMeasureMode yogaMeasureMode, float f) {
@@ -219,7 +219,7 @@ public class e {
         }
     }
 
-    public void a(TextUtils.TruncateAt truncateAt) {
+    public void a(StringUtils.TruncateAt truncateAt) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a334989e", new Object[]{this, truncateAt});
@@ -566,7 +566,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123967e", new Object[]{str, new Character(c)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         int length = str.length();

@@ -3,7 +3,7 @@ package com.mobile.auth.gatewayauth.manager;
 import android.content.Context;
 import android.os.Debug;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.O0Oo000;
 import com.mobile.auth.O0o0;
 import com.mobile.auth.OO000o0;
@@ -193,13 +193,13 @@ public class SystemManager {
 
     public void O000000o(String str) {
         try {
-            if ((FeatureManager.getInstance().get("whiteFileCheck") != null && "false".equals(FeatureManager.getInstance().get("whiteFileCheck").toString())) || TextUtils.isEmpty(str)) {
+            if ((FeatureManager.getInstance().get("whiteFileCheck") != null && "false".equals(FeatureManager.getInstance().get("whiteFileCheck").toString())) || StringUtils.isEmpty(str)) {
                 return;
             }
             InputStream inputStream = null;
             try {
                 String a2 = czn.a(str);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     this.O00000oO = true;
                     return;
                 }
@@ -469,7 +469,7 @@ public class SystemManager {
             try {
                 boolean z = this.O00000oO;
                 String isDeviceRooted = CheckRoot.isDeviceRooted();
-                if (!TextUtils.isEmpty(isDeviceRooted)) {
+                if (!StringUtils.isEmpty(isDeviceRooted)) {
                     return resultCodeProcessor.convertErrorInfo(Constant.CODE_ERROR_PHONE_UNSAFE_FAIL, "手机终端不安全:the phone is root, " + isDeviceRooted, str);
                 } else if (Thread.currentThread() == Looper.getMainLooper().getThread() && EmulatorDetector.isEmulator(this.O000000o)) {
                     return resultCodeProcessor.convertErrorInfo(Constant.CODE_ERROR_PHONE_UNSAFE_FAIL, "手机终端不安全:Emulator is detected, please use real phone!", str);
@@ -499,7 +499,7 @@ public class SystemManager {
     /* JADX INFO: Access modifiers changed from: protected */
     public synchronized String decryptContent(String str) {
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str = czn.b(str, O000000o() + O00000Oo());
             }
         } catch (Exception e) {
@@ -511,7 +511,7 @@ public class SystemManager {
     /* JADX INFO: Access modifiers changed from: protected */
     public synchronized String encryptContent(String str) {
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str = czn.a(str, O000000o() + O00000Oo());
             }
         } catch (Exception e) {
@@ -525,7 +525,7 @@ public class SystemManager {
             try {
                 if (FeatureManager.getInstance().get(FeatureManager.FEATURE_KEY_CACHE_LEVEL_VENDOR) == null) {
                     String O000000o = com.mobile.auth.gatewayauth.utils.O00000o.O000000o(this.O000000o);
-                    if (!TextUtils.isEmpty(O000000o)) {
+                    if (!StringUtils.isEmpty(O000000o)) {
                         return CacheKey.newSimKey().O000000o(O000000o).O000000o(false).O000000o();
                     }
                     String O000000o2 = com.mobile.auth.gatewayauth.utils.O00000Oo.O000000o(this.O000000o, false);

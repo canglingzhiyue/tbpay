@@ -105,7 +105,7 @@ public final class jtk extends jte {
             goto Lba
         La6:
             java.lang.String r3 = com.taobao.android.purchase.core.b.CREATE_ORDER_WARNING_TITLE
-            boolean r14 = android.text.TextUtils.isEmpty(r1)
+            boolean r14 = android.text.StringUtils.isEmpty(r1)
             if (r14 != 0) goto Lb0
             r8 = r1
             goto Lb1
@@ -119,7 +119,7 @@ public final class jtk extends jte {
             r9 = r12
             r4.a(r5, r6, r7, r8, r9, r10, r11)
         Lba:
-            boolean r14 = android.text.TextUtils.isEmpty(r1)
+            boolean r14 = android.text.StringUtils.isEmpty(r1)
             if (r14 != 0) goto Lc1
             goto Lc2
         Lc1:

@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.helper.rec;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -196,11 +196,11 @@ public class b extends a {
                     return;
                 } else {
                     String a2 = a(JSONObject.parseArray(jSONArray.toJSONString(), String.class));
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         this.g.put("itemIds", a2);
                     }
                     String a3 = a(JSONObject.parseArray(jSONArray2.toJSONString(), String.class));
-                    if (!TextUtils.isEmpty(a3)) {
+                    if (!StringUtils.isEmpty(a3)) {
                         this.g.put("catIds", a3);
                     }
                     if (!equals) {
@@ -221,7 +221,7 @@ public class b extends a {
                 }
             } else {
                 jSONObject.put("appid", (Object) 2497);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     jSONObject.put(TBSearchChiTuJSBridge.ABTEST, (Object) str);
                 }
                 jSONObject.remove("fromPageType");
@@ -415,7 +415,7 @@ public class b extends a {
         if (list != null && !list.isEmpty()) {
             StringBuilder sb = new StringBuilder();
             for (String str : list) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     sb.append(str);
                     sb.append(",");
                 }

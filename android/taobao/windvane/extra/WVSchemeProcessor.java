@@ -2,7 +2,7 @@ package android.taobao.windvane.extra;
 
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.StrategyCenter;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.ado;
@@ -25,10 +25,10 @@ public class WVSchemeProcessor implements k {
             return (String) ipChange.ipc$dispatch("849ca447", new Object[]{this, str});
         }
         try {
-            if (!TextUtils.isEmpty(str) && !str.startsWith("javascript:") && !str.equals("about:blank")) {
+            if (!StringUtils.isEmpty(str) && !str.startsWith("javascript:") && !str.equals("about:blank")) {
                 String formalizeUrl = StrategyCenter.getInstance().getFormalizeUrl(str);
                 m.e("Processor", "WVSchemeProcesor deal url, origin_url=[" + str + "], new_url=[" + formalizeUrl + riy.ARRAY_END_STR);
-                return TextUtils.isEmpty(formalizeUrl) ? str : formalizeUrl;
+                return StringUtils.isEmpty(formalizeUrl) ? str : formalizeUrl;
             }
             return str;
         } catch (Throwable unused) {

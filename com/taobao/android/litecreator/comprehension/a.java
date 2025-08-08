@@ -6,7 +6,7 @@ import android.graphics.Matrix;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -148,7 +148,7 @@ public class a extends Observable {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String str = h.INSTANCE.d().get(this.h);
-        return !TextUtils.isEmpty(str) ? gxe.a(str) : "";
+        return !StringUtils.isEmpty(str) ? gxe.a(str) : "";
     }
 
     public void b(Runnable runnable) {
@@ -183,7 +183,7 @@ public class a extends Observable {
             return;
         }
         this.h = str;
-        if (!TextUtils.isEmpty(h.INSTANCE.d().get(str))) {
+        if (!StringUtils.isEmpty(h.INSTANCE.d().get(str))) {
             return;
         }
         if (this.o == null) {
@@ -284,7 +284,7 @@ public class a extends Observable {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : this.f13314a.size() > 0 || this.e.size() > 0 || !TextUtils.isEmpty(this.f) || !TextUtils.isEmpty(this.g);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : this.f13314a.size() > 0 || this.e.size() > 0 || !StringUtils.isEmpty(this.f) || !StringUtils.isEmpty(this.g);
     }
 
     public JSONObject a(JSONArray jSONArray, JSONObject jSONObject) {
@@ -318,7 +318,7 @@ public class a extends Observable {
         jSONObject2.put("selectItems", b(this.e));
         jSONObject2.put("images", (Object) jSONArray2);
         jSONObject2.put("recommendKeys", (Object) jSONArray);
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             JSONArray jSONArray3 = new JSONArray();
             JSONObject jSONObject4 = new JSONObject();
             jSONObject4.put("title", (Object) this.g);
@@ -335,7 +335,7 @@ public class a extends Observable {
             if (jSONArray4 != null) {
                 jSONObject2.put("labels", jSONArray4);
             }
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jSONObject2.put("materialVersion", Integer.valueOf(string));
             }
         }
@@ -551,7 +551,7 @@ public class a extends Observable {
                     return;
                 }
                 String str2 = h.INSTANCE.c().get(str);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     a(str2);
                     countDownLatch.countDown();
                     u.b("LCCOM.Data", "setImages.processImageEach. image has already uploaded.");
@@ -635,7 +635,7 @@ public class a extends Observable {
                     }
                     k.c(d);
                     String b2 = eVar != null ? eVar.b() : "";
-                    if (TextUtils.isEmpty(b2)) {
+                    if (StringUtils.isEmpty(b2)) {
                         countDownLatch.countDown();
                         return;
                     }

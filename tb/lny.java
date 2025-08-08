@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -112,7 +112,7 @@ public class lny implements lns {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c6cddef", new Object[]{this, str, intent});
-        } else if (!k() || TextUtils.isEmpty(str) || this.f30759a == null) {
+        } else if (!k() || StringUtils.isEmpty(str) || this.f30759a == null) {
         } else {
             try {
                 this.f30759a.a(JSON.parseObject(str));
@@ -176,7 +176,7 @@ public class lny implements lns {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("552c8b59", new Object[]{this, lliVar, str});
-                } else if (lliVar == null || !TextUtils.equals(str, Constant.KEY_PAGEBACK)) {
+                } else if (lliVar == null || !StringUtils.equals(str, Constant.KEY_PAGEBACK)) {
                 } else {
                     if (lny.a(lny.this) != null && lny.b(lny.this) != null) {
                         lny.b(lny.this).b();
@@ -190,7 +190,7 @@ public class lny implements lns {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("74bec7ed", new Object[]{this, lliVar, str, str2, str3});
-                } else if (lliVar == null || !TextUtils.equals(str3, Constant.KEY_PAGEBACK) || !TextUtils.equals(lny.a(lny.this), lliVar.a())) {
+                } else if (lliVar == null || !StringUtils.equals(str3, Constant.KEY_PAGEBACK) || !StringUtils.equals(lny.a(lny.this), lliVar.a())) {
                 } else {
                     lny.a(lny.this, true);
                     lny.a(lny.this, (String) null);
@@ -230,7 +230,7 @@ public class lny implements lns {
                 if (iContainerDataModel != null && lny.a(lny.this, iContainerDataModel.getBase())) {
                     lny.a(lny.this, true);
                 }
-                if (lliVar == null || !TextUtils.equals(lny.a(lny.this), lliVar.a())) {
+                if (lliVar == null || !StringUtils.equals(lny.a(lny.this), lliVar.a())) {
                     return;
                 }
                 lny.a(lny.this, false);

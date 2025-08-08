@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,7 +14,7 @@ public final class JSONUtil {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("f8b4d0b9", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

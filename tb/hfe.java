@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.utils.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -40,7 +40,7 @@ public class hfe {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ad15", new Object[]{str, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return Build.VERSION.SDK_INT < i;
         }
         try {
@@ -48,7 +48,7 @@ public class hfe {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (TextUtils.equals(jSONObject.optString("disable"), "true") || Build.VERSION.SDK_INT < jSONObject.optInt("min_os_ver", i) || a(String.valueOf(Build.VERSION.SDK_INT), jSONObject.optJSONArray("blk_os_ver")) || a(Build.MODEL, jSONObject.optJSONArray("blk_model")) || a(Build.BRAND, jSONObject.optJSONArray("blk_brand"))) {
+        if (StringUtils.equals(jSONObject.optString("disable"), "true") || Build.VERSION.SDK_INT < jSONObject.optInt("min_os_ver", i) || a(String.valueOf(Build.VERSION.SDK_INT), jSONObject.optJSONArray("blk_os_ver")) || a(Build.MODEL, jSONObject.optJSONArray("blk_model")) || a(Build.BRAND, jSONObject.optJSONArray("blk_brand"))) {
             return true;
         }
         return a(Build.HARDWARE, jSONObject.optJSONArray("blk_hardware"));
@@ -59,12 +59,12 @@ public class hfe {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6d300fd0", new Object[]{str, jSONArray})).booleanValue();
         }
-        if (jSONArray != null && jSONArray.length() != 0 && !TextUtils.isEmpty(str)) {
+        if (jSONArray != null && jSONArray.length() != 0 && !StringUtils.isEmpty(str)) {
             String trim = str.trim();
             int length = jSONArray.length();
             for (int i = 0; i < length; i++) {
                 String optString = jSONArray.optString(i);
-                if (TextUtils.equals(trim, optString) || b(trim, optString)) {
+                if (StringUtils.equals(trim, optString) || b(trim, optString)) {
                     return true;
                 }
             }

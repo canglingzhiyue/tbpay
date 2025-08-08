@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.security.SecurityUtil;
 import com.alipay.mobile.common.netsdkextdependapi.security.SignRequest;
 import com.alipay.mobile.common.netsdkextdependapi.security.SignResult;
@@ -34,7 +34,7 @@ public class RpcSignUtil {
 
     private static boolean a(Context context, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("258fda78", new Object[]{context, new Boolean(z)})).booleanValue() : MiscUtils.isInAlipayClient(context) && !MiscUtils.isAlipayLocalPackage(context) && z && TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.SIGN_ATLAS_OPEN), "T");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("258fda78", new Object[]{context, new Boolean(z)})).booleanValue() : MiscUtils.isInAlipayClient(context) && !MiscUtils.isAlipayLocalPackage(context) && z && StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.SIGN_ATLAS_OPEN), "T");
     }
 
     /* loaded from: classes3.dex */

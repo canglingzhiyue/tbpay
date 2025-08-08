@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -197,7 +197,7 @@ public final class b extends ius<a, FrameLayout, com.taobao.search.sf.a> impleme
             pVar.destroy();
         }
         String b = y.b(aVar.a(), "_mus_tpl");
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             b = aVar.a();
         }
         String str = b;

@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -370,7 +370,7 @@ public class b {
                         int size = list.size();
                         for (int i = 0; i < size; i++) {
                             s.a aVar = list.get(i);
-                            if (aVar != null && !TextUtils.isEmpty(aVar.b)) {
+                            if (aVar != null && !StringUtils.isEmpty(aVar.b)) {
                                 if (aVar.f == null) {
                                     aVar.f = new HashMap();
                                 }
@@ -450,25 +450,25 @@ public class b {
         }
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("bizName", (Object) "DinamicX");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put(TBPlayerConst.TBPlayerMethodSwitchPlayerScene_SceneName, (Object) str);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             jSONObject.put("serviceId", (Object) str3);
         } else {
             jSONObject.put("serviceId", (Object) DXMonitorConstant.DX_DEFAULT_SERVICE_ID);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             jSONObject.put("featureType", (Object) str2);
         }
         jSONObject.put("version", (Object) c());
         jSONObject.put("samplingRate", (Object) "1.0");
         if (dXTemplateItem != null) {
-            if (!TextUtils.isEmpty(dXTemplateItem.f11925a)) {
+            if (!StringUtils.isEmpty(dXTemplateItem.f11925a)) {
                 jSONObject.put("templateName", (Object) dXTemplateItem.f11925a);
             }
             jSONObject.put("templateVersion", (Object) (dXTemplateItem.b + ""));
-            if (!TextUtils.isEmpty(dXTemplateItem.c)) {
+            if (!StringUtils.isEmpty(dXTemplateItem.c)) {
                 jSONObject.put(WVMicorPublishPlugin.TEMPLATE_URL, (Object) dXTemplateItem.c);
             }
             jSONObject.put("templateType", (Object) Integer.valueOf(dXTemplateItem.e()));

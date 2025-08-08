@@ -2,7 +2,7 @@ package com.alipay.mobile.common.rpc.util;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.rpc.RpcException;
 import com.alipay.mobile.common.rpc.RpcInterceptor;
 import com.alipay.mobile.common.rpc.transport.InnerRpcInvokeContext;
@@ -39,12 +39,12 @@ public final class RpcInvokerUtil {
 
     public static final boolean isSimpleRpcAnnotation(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fe3c456d", new Object[]{str})).booleanValue() : TextUtils.equals(str, "alipay.client.executerpc");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fe3c456d", new Object[]{str})).booleanValue() : StringUtils.equals(str, "alipay.client.executerpc");
     }
 
     public static final boolean isSimpleRpcBytesAnnotation(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("504bcdc6", new Object[]{str})).booleanValue() : TextUtils.equals(str, "alipay.client.executerpc.bytes");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("504bcdc6", new Object[]{str})).booleanValue() : StringUtils.equals(str, "alipay.client.executerpc.bytes");
     }
 
     public static final String getOperationTypeValue(Method method, Object[] objArr) {
@@ -80,18 +80,18 @@ public final class RpcInvokerUtil {
         }
         RpcException rpcException = new RpcException(Integer.valueOf(intValue), a(intValue, head));
         String head2 = httpUrlResponse.getHeader().getHead("alert");
-        if (!TextUtils.isEmpty(head2)) {
-            if (TextUtils.equals(head2, String.valueOf(0))) {
+        if (!StringUtils.isEmpty(head2)) {
+            if (StringUtils.equals(head2, String.valueOf(0))) {
                 LogCatUtil.debug("RpcInvokerUtil", "set alertValue NO_ALERT");
                 rpcException.setAlert(0);
-            } else if (TextUtils.equals(head2, String.valueOf(1))) {
+            } else if (StringUtils.equals(head2, String.valueOf(1))) {
                 LogCatUtil.debug("RpcInvokerUtil", "set alertValue TOAST_ALERT");
                 rpcException.setAlert(1);
             }
         }
         if (intValue == 1002) {
             String head3 = header.getHead(HeaderConstant.HEADER_KEY_CONTROL);
-            if (!TextUtils.isEmpty(head3)) {
+            if (!StringUtils.isEmpty(head3)) {
                 rpcException.setControl(a(head3));
             }
         }
@@ -117,7 +117,7 @@ public final class RpcInvokerUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cd4d069b", new Object[]{new Integer(i), str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -140,7 +140,7 @@ public final class RpcInvokerUtil {
                 return null;
             }
             String string = applicationInfo.metaData.getString("mobilegw.rpcVersion");
-            return !TextUtils.isEmpty(string) ? string : RPC_V2;
+            return !StringUtils.isEmpty(string) ? string : RPC_V2;
         } catch (Exception e) {
             LogCatUtil.warn("RpcInvokerUtil", e);
             return null;
@@ -196,7 +196,7 @@ public final class RpcInvokerUtil {
             return;
         }
         try {
-            if (!MiscUtils.isDebugger(TransportEnvUtil.getContext()) || !MiscUtils.isInAlipayClient(TransportEnvUtil.getContext()) || !TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPC_PACKAGE_SIZE_INTERCEPT), "T")) {
+            if (!MiscUtils.isDebugger(TransportEnvUtil.getContext()) || !MiscUtils.isInAlipayClient(TransportEnvUtil.getContext()) || !StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPC_PACKAGE_SIZE_INTERCEPT), "T")) {
                 return;
             }
             Map<String, String> map = innerRpcInvokeContext.responseHeader;

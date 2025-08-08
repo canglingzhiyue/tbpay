@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -212,7 +212,7 @@ public class PageFragment extends AbstractPageFragment implements c, d {
             return rootView;
         }
         PageModel pageModel2 = this.mPageModel;
-        if (pageModel2 != null && pageModel2.getPageHeader() != null && TextUtils.equals(this.mPageModel.getPageHeader().position, "static")) {
+        if (pageModel2 != null && pageModel2.getPageHeader() != null && StringUtils.equals(this.mPageModel.getPageHeader().position, "static")) {
             LinearLayout linearLayout = new LinearLayout(getContext());
             this.mPageView = linearLayout;
             linearLayout.setOrientation(1);
@@ -259,7 +259,7 @@ public class PageFragment extends AbstractPageFragment implements c, d {
         if (nfzVar != null) {
             View j = nfzVar.j();
             PageModel pageModel3 = this.mPageModel;
-            if (pageModel3 != null && !TextUtils.isEmpty(pageModel3.backgroundColor)) {
+            if (pageModel3 != null && !StringUtils.isEmpty(pageModel3.backgroundColor)) {
                 this.mPageView.setBackgroundColor(ngn.f(this.mPageModel.backgroundColor));
                 j.setBackgroundColor(ngn.f(this.mPageModel.backgroundColor));
             }
@@ -316,7 +316,7 @@ public class PageFragment extends AbstractPageFragment implements c, d {
         }
         TabHeaderModel pageHeader = this.mPageModel.getPageHeader();
         pageHeader.setSubPage(this.mPageModel.isSubPage());
-        if (TextUtils.isEmpty(pageHeader.html) && TextUtils.isEmpty(pageHeader.getUrl())) {
+        if (StringUtils.isEmpty(pageHeader.html) && StringUtils.isEmpty(pageHeader.getUrl())) {
             return;
         }
         Fragment findFragmentByTag = getChildFragmentManager().findFragmentByTag(PageHeaderFragment.TAG_FRAGMENT);
@@ -441,7 +441,7 @@ public class PageFragment extends AbstractPageFragment implements c, d {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("pageUrl", (Object) this.mPageModel.getUrl());
         String str = this.mPageModel.key;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.mPageIndex + "";
         }
         jSONObject.put("pageId", (Object) str);
@@ -475,10 +475,10 @@ public class PageFragment extends AbstractPageFragment implements c, d {
             ipChange.ipc$dispatch("e747200c", new Object[]{this, pageModel});
         } else if (this.mPageModel == null || pageModel == null) {
         } else {
-            if (!TextUtils.isEmpty(pageModel.getUrl())) {
+            if (!StringUtils.isEmpty(pageModel.getUrl())) {
                 this.mPageModel.setUrl(pageModel.getUrl());
             }
-            if (!TextUtils.isEmpty(pageModel.backgroundColor)) {
+            if (!StringUtils.isEmpty(pageModel.backgroundColor)) {
                 this.mPageModel.backgroundColor = pageModel.backgroundColor;
             }
             this.mRefreshLayout.setEnabled(this.mPullRefreshDelegate.e());
@@ -633,7 +633,7 @@ public class PageFragment extends AbstractPageFragment implements c, d {
             this.mPageModel = (PageModel) arguments.getSerializable("key_page_model");
         }
         PageModel pageModel = this.mPageModel;
-        if (pageModel != null && !TextUtils.isEmpty(pageModel.title) && getActivity() != null) {
+        if (pageModel != null && !StringUtils.isEmpty(pageModel.title) && getActivity() != null) {
             getActivity().setTitle(this.mPageModel.title);
         }
         PageModel pageModel2 = this.mPageModel;

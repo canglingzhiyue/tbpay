@@ -10,7 +10,7 @@ import android.os.HandlerThread;
 import android.support.v4.app.Fragment;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.adapt.api.AtlasServiceFinder;
 import com.alibaba.android.aura.service.event.AURAEventKey;
 import com.alibaba.android.icart.core.QueryParamsManager;
@@ -126,7 +126,7 @@ public class bbx extends bbz {
         this.f25788a = new bff(this);
         this.p = new bdo(this);
         this.q = new e(this);
-        if (!TextUtils.isEmpty(this.o.e())) {
+        if (!StringUtils.isEmpty(this.o.e())) {
             this.c.c(this.o.e());
         }
         this.r = new HandlerThread("CartPresenter");
@@ -723,7 +723,7 @@ public class bbx extends bbz {
                 return false;
             }
             String string = extras.getString(com.taobao.android.purchase.core.address.c.K_DELIVERY_ID);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return false;
             }
             bcd.a().b(string);
@@ -732,9 +732,9 @@ public class bbx extends bbz {
         } else {
             if (50102 == i && i2 == -1) {
                 String stringExtra = intent.getStringExtra("data");
-                if (!TextUtils.isEmpty(stringExtra) && (parseObject = JSONObject.parseObject(stringExtra)) != null && parseObject.containsKey(com.taobao.android.address.wrapper.c.K_DELIVERY_ID)) {
+                if (!StringUtils.isEmpty(stringExtra) && (parseObject = JSONObject.parseObject(stringExtra)) != null && parseObject.containsKey(com.taobao.android.address.wrapper.c.K_DELIVERY_ID)) {
                     String string2 = parseObject.getString(com.taobao.android.address.wrapper.c.K_DELIVERY_ID);
-                    if (TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string2)) {
                         return false;
                     }
                     bcd.a().b(string2);

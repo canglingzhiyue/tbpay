@@ -10,7 +10,7 @@ import com.huawei.hms.support.api.entity.core.JosStatusCodes;
 import com.taobao.artc.utils.ArtcDeviceInfo;
 import java.util.Timer;
 import java.util.TimerTask;
-import org.webrtc.ContextUtils;
+import org.webrtc.ConStringUtils;
 import org.webrtc.Logging;
 import tb.kge;
 import tb.riy;
@@ -202,7 +202,7 @@ public class WebRtcAudioManager {
     public WebRtcAudioManager(long j) {
         Logging.d(TAG, "ctor" + WebRtcAudioUtils.getThreadInfo());
         this.nativeAudioManager = j;
-        this.audioManager = (AudioManager) ContextUtils.getApplicationContext().getSystemService("audio");
+        this.audioManager = (AudioManager) ConStringUtils.getApplicationContext().getSystemService("audio");
         if (!ArtcDeviceInfo.is_tmall_cc()) {
             this.volumeLogger = new VolumeLogger(this.audioManager);
         } else {
@@ -303,12 +303,12 @@ public class WebRtcAudioManager {
 
     private boolean hasEarpiece() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("87fc119d", new Object[]{this})).booleanValue() : ContextUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.telephony");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("87fc119d", new Object[]{this})).booleanValue() : ConStringUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.telephony");
     }
 
     private boolean isLowLatencyOutputSupported() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7d292a44", new Object[]{this})).booleanValue() : ContextUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.audio.low_latency");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7d292a44", new Object[]{this})).booleanValue() : ConStringUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.audio.low_latency");
     }
 
     public boolean isLowLatencyInputSupported() {
@@ -318,7 +318,7 @@ public class WebRtcAudioManager {
 
     private boolean isProAudioSupported() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e00a5086", new Object[]{this})).booleanValue() : WebRtcAudioUtils.runningOnMarshmallowOrHigher() && ContextUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.audio.pro");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e00a5086", new Object[]{this})).booleanValue() : WebRtcAudioUtils.runningOnMarshmallowOrHigher() && ConStringUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.audio.pro");
     }
 
     private boolean isAAudioSupported() {

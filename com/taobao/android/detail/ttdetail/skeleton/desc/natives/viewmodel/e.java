@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -145,7 +145,7 @@ public abstract class e {
             return null;
         }
         JSONObject jSONObject = this.s.mapping.getJSONObject("componentTitle");
-        if (TextUtils.isEmpty(jSONObject.getString("text"))) {
+        if (StringUtils.isEmpty(jSONObject.getString("text"))) {
             return null;
         }
         g gVar = new g(this.s);

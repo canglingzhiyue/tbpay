@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -151,7 +151,7 @@ public class lqx implements lad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4519965c", new Object[]{this, str, str2, obj})).booleanValue();
         }
-        if (this.b == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (positionBySectionBizCode = this.b.getPositionBySectionBizCode(str)) < 0 || (findItemDataByPosition = this.b.findItemDataByPosition(positionBySectionBizCode)) == null) {
+        if (this.b == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (positionBySectionBizCode = this.b.getPositionBySectionBizCode(str)) < 0 || (findItemDataByPosition = this.b.findItemDataByPosition(positionBySectionBizCode)) == null) {
             return false;
         }
         if (obj == null) {

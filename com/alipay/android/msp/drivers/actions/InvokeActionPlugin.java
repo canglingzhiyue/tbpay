@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.actions;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.template.JSPlugin;
 import com.alipay.android.app.template.JSPluginManager;
 import com.alipay.android.app.template.JsPluginFactory;
@@ -444,13 +444,13 @@ public class InvokeActionPlugin extends JSPlugin {
                             return (JSPlugin) ipChange2.ipc$dispatch("8798f317", new Object[]{this, context2, fromCall, str});
                         }
                         LogUtil.record(2, "InvokeActionPlugin:createJsPlugin", "context=" + context2 + " , actionName=" + str);
-                        if (TextUtils.equals(str, "feedback")) {
+                        if (StringUtils.equals(str, "feedback")) {
                             return new FeedbackApi();
                         }
-                        if (TextUtils.equals(str, MspEventTypes.ACTION_STRING_DATABASE)) {
+                        if (StringUtils.equals(str, MspEventTypes.ACTION_STRING_DATABASE)) {
                             return new DatabaseApi();
                         }
-                        if (!TextUtils.equals(str, MspEventTypes.ACTION_TPL_MSG)) {
+                        if (!StringUtils.equals(str, MspEventTypes.ACTION_TPL_MSG)) {
                             return null;
                         }
                         return new TplMsgApi();
@@ -498,16 +498,16 @@ public class InvokeActionPlugin extends JSPlugin {
         } else {
             LogUtil.w("InvokeActionPlugin", e.RECORD_EXECUTE, "missing doc");
         }
-        if (TextUtils.equals(str, "feedback")) {
+        if (StringUtils.equals(str, "feedback")) {
             return new FeedbackApi().execute(fromCall, str, str2, fBDocument, j, context);
         }
-        if (TextUtils.equals(str, MspEventTypes.ACTION_STRING_DATABASE)) {
+        if (StringUtils.equals(str, MspEventTypes.ACTION_STRING_DATABASE)) {
             return new DatabaseApi().execute(fromCall, str, str2, fBDocument, j, context);
         }
-        if (TextUtils.equals(str, MspEventTypes.ACTION_TPL_MSG)) {
+        if (StringUtils.equals(str, MspEventTypes.ACTION_TPL_MSG)) {
             return new TplMsgApi().execute(fromCall, str, str2, fBDocument, j, context);
         }
-        if (TextUtils.equals(str, "rpc")) {
+        if (StringUtils.equals(str, "rpc")) {
             return new RpcApi().execute(fromCall, str, str2, fBDocument, j, context);
         }
         return a(this.c, this.b, str, str2, fBDocument, j);
@@ -789,7 +789,7 @@ public class InvokeActionPlugin extends JSPlugin {
 
     private static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.equals(str, "rpc");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.equals(str, "rpc");
     }
 
     public static boolean isJsPluginRegisterAsync() {

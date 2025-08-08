@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.framework.deprecated.message.module.notify.a;
@@ -98,7 +98,7 @@ public class NotifyImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String[] split = str.split("_");
             if (split.length > 1) {
                 return split[0];
@@ -111,7 +111,7 @@ public class NotifyImpl {
         Class<? extends a> cls;
         String a2 = a(str);
         try {
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 cls = f12542a.get(a2);
             } else {
                 cls = f12542a.get("");

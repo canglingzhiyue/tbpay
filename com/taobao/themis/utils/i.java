@@ -2,7 +2,7 @@ package com.taobao.themis.utils;
 
 import android.os.Bundle;
 import android.os.Parcel;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -27,7 +27,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

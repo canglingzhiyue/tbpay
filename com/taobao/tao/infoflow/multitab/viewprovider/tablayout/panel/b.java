@@ -1,7 +1,7 @@
 package com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -122,7 +122,7 @@ public class b {
             return (JSONObject) ipChange.ipc$dispatch("709f7788", new Object[0]);
         }
         for (SectionModel sectionModel : oqc.a().b().e(oqc.a().l())) {
-            if (TextUtils.equals(TAB_SECTION_CODE, sectionModel.getSectionBizCode())) {
+            if (StringUtils.equals(TAB_SECTION_CODE, sectionModel.getSectionBizCode())) {
                 return sectionModel;
             }
         }
@@ -152,7 +152,7 @@ public class b {
                 for (Map.Entry<String, List<JSONObject>> entry : map.entrySet()) {
                     String key = entry.getKey();
                     List<JSONObject> value = entry.getValue();
-                    if (TextUtils.equals(key, MY_CHANNEL)) {
+                    if (StringUtils.equals(key, MY_CHANNEL)) {
                         a(mo1098getSubSection, value);
                     } else {
                         a(a2, key, value);
@@ -196,7 +196,7 @@ public class b {
         }
         SectionModel sectionModel = null;
         for (SectionModel sectionModel2 : list) {
-            if (TextUtils.equals(TAB_SECTION_CODE, sectionModel2.getSectionBizCode())) {
+            if (StringUtils.equals(TAB_SECTION_CODE, sectionModel2.getSectionBizCode())) {
                 sectionModel = sectionModel2;
             }
         }
@@ -238,7 +238,7 @@ public class b {
         }
         for (int i = 0; i < jSONObject.size() && (jSONObject2 = jSONObject.getJSONObject(String.valueOf(i))) != null && (jSONObject3 = jSONObject2.getJSONObject("ext")) != null; i++) {
             JSONObject jSONObject4 = new JSONObject();
-            if (TextUtils.equals(str, jSONObject3.getString(MENU_CODE))) {
+            if (StringUtils.equals(str, jSONObject3.getString(MENU_CODE))) {
                 for (int i2 = 0; i2 < list.size(); i2++) {
                     jSONObject4.put(String.valueOf(i2), (Object) list.get(i2));
                 }
@@ -261,7 +261,7 @@ public class b {
             }
             for (int i = 0; i < a2.size(); i++) {
                 String c = c(a2.getJSONObject(String.valueOf(i)));
-                if (!TextUtils.isEmpty(c)) {
+                if (!StringUtils.isEmpty(c)) {
                     arrayList.add(c);
                 }
             }
@@ -325,7 +325,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d9378d6f", new Object[]{str, str2})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return Color.parseColor(str2);
         }
         try {
@@ -383,8 +383,8 @@ public class b {
             if (jSONObject4 != null && (jSONObject2 = jSONObject4.getJSONObject("content")) != null) {
                 String string = jSONObject2.getString(MENU_CODE);
                 String string2 = jSONObject2.getString(CURRENT_MENU_CODE);
-                jSONObject2.put(IS_CATEGORY_SELECT, (Object) Boolean.valueOf(i == i2 && TextUtils.equals(string2, MY_CHANNEL)));
-                if (!TextUtils.isEmpty(string2)) {
+                jSONObject2.put(IS_CATEGORY_SELECT, (Object) Boolean.valueOf(i == i2 && StringUtils.equals(string2, MY_CHANNEL)));
+                if (!StringUtils.isEmpty(string2)) {
                     string = string2;
                 }
                 jSONObject2.put(CURRENT_MENU_CODE, (Object) string);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.sdk.utils.ocr;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.request.MtopRequestListener;
@@ -132,11 +132,11 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "无文字或无法识别";
         }
         String str3 = this.c.get(str);
-        return TextUtils.isEmpty(str3) ? !TextUtils.isEmpty(str2) ? str2 : "无文字或无法识别" : str3;
+        return StringUtils.isEmpty(str3) ? !StringUtils.isEmpty(str2) ? str2 : "无文字或无法识别" : str3;
     }
 
     /* loaded from: classes4.dex */

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.utils.EncryptUtils;
 import com.taobao.login4android.api.Login;
@@ -44,7 +44,7 @@ public class rip {
             return str2;
         }
         String userId = Login.getUserId();
-        if (!TextUtils.isEmpty(userId)) {
+        if (!StringUtils.isEmpty(userId)) {
             String hexString = Long.toHexString(Long.parseLong(userId));
             return str2.substring(0, 16 - hexString.length()) + hexString;
         }

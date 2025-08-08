@@ -1,6 +1,6 @@
 package anet.channel.entity;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.strategy.ConnProtocol;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -92,7 +92,7 @@ public class ConnType {
             if (connType.spdyProtocol == 0) {
                 return null;
             }
-            if (!TextUtils.isEmpty(connProtocol.publicKey)) {
+            if (!StringUtils.isEmpty(connProtocol.publicKey)) {
                 connType.spdyProtocol |= 128;
                 if (RTT_1.equalsIgnoreCase(connProtocol.rtt)) {
                     connType.spdyProtocol |= 8192;

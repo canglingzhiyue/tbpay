@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,10 +52,10 @@ public class hhv {
             if (objArr.length > 5 && (objArr[5] instanceof String)) {
                 hashMap.put("bizType", (String) objArr[5]);
             }
-            if (TextUtils.equals("intimacyNav", str)) {
+            if (StringUtils.equals("intimacyNav", str)) {
                 a.a().j().a("pocket-bean-click", hashMap);
                 return;
-            } else if (!TextUtils.equals("rightCdp", str)) {
+            } else if (!StringUtils.equals("rightCdp", str)) {
                 return;
             } else {
                 a.a().j().a("rightCdp-click", hashMap);

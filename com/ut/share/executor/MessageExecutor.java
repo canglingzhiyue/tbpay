@@ -3,7 +3,7 @@ package com.ut.share.executor;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.share.SharePlatform;
 import com.ut.share.ShareResponse;
@@ -77,16 +77,16 @@ public class MessageExecutor implements IShareExecutor {
             ipChange.ipc$dispatch("532a854a", new Object[]{this, context, shareData, shareListener});
             return;
         }
-        if ((context == null || shareData == null || (TextUtils.isEmpty(shareData.getText()) && TextUtils.isEmpty(shareData.getLink()))) && shareListener != null) {
+        if ((context == null || shareData == null || (StringUtils.isEmpty(shareData.getText()) && StringUtils.isEmpty(shareData.getLink()))) && shareListener != null) {
             ShareResponse shareResponse = new ShareResponse();
             shareResponse.platform = SharePlatform.SMS;
             shareResponse.errorCode = ShareResponse.ErrorCode.ERR_FAIL;
             shareListener.onResponse(shareResponse);
         }
         String str = "";
-        String text = !TextUtils.isEmpty(shareData.getText()) ? shareData.getText() : str;
-        if (!TextUtils.isEmpty(shareData.getLink())) {
-            if (TextUtils.isEmpty(text)) {
+        String text = !StringUtils.isEmpty(shareData.getText()) ? shareData.getText() : str;
+        if (!StringUtils.isEmpty(shareData.getLink())) {
+            if (StringUtils.isEmpty(text)) {
                 text = shareData.getLink();
             } else {
                 text = text.concat(" ").concat(shareData.getLink());

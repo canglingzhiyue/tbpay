@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.ItemActionQueryResponse;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.i;
@@ -55,7 +55,7 @@ public class sql {
                     } else {
                         ItemActionQueryResponse itemActionQueryResponse = (ItemActionQueryResponse) netBaseOutDo;
                         if (sql.a(sql.this, itemActionQueryResponse)) {
-                            if (netBaseOutDo != null && netBaseOutDo.mo1437getData() != null && !TextUtils.isEmpty(itemActionQueryResponse.mo1437getData().msgInfo)) {
+                            if (netBaseOutDo != null && netBaseOutDo.mo1437getData() != null && !StringUtils.isEmpty(itemActionQueryResponse.mo1437getData().msgInfo)) {
                                 hix.a(cVar.f(), itemActionQueryResponse.mo1437getData().msgInfo);
                             }
                             poxVar.onResult(true);
@@ -97,7 +97,7 @@ public class sql {
 
     private String a(ItemActionQueryResponse itemActionQueryResponse) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8071139e", new Object[]{this, itemActionQueryResponse}) : (itemActionQueryResponse == null || itemActionQueryResponse.mo1437getData() == null || TextUtils.isEmpty(itemActionQueryResponse.mo1437getData().msgInfo)) ? dae.MSG_TOAST_DEFAULT : itemActionQueryResponse.mo1437getData().msgInfo;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8071139e", new Object[]{this, itemActionQueryResponse}) : (itemActionQueryResponse == null || itemActionQueryResponse.mo1437getData() == null || StringUtils.isEmpty(itemActionQueryResponse.mo1437getData().msgInfo)) ? dae.MSG_TOAST_DEFAULT : itemActionQueryResponse.mo1437getData().msgInfo;
     }
 
     private boolean b(ItemActionQueryResponse itemActionQueryResponse) {
@@ -105,7 +105,7 @@ public class sql {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("269f5ca5", new Object[]{this, itemActionQueryResponse})).booleanValue();
         }
-        if (itemActionQueryResponse != null && itemActionQueryResponse.mo1437getData() != null && TextUtils.equals(itemActionQueryResponse.mo1437getData().type, a.ATOM_boolean)) {
+        if (itemActionQueryResponse != null && itemActionQueryResponse.mo1437getData() != null && StringUtils.equals(itemActionQueryResponse.mo1437getData().type, a.ATOM_boolean)) {
             return itemActionQueryResponse.mo1437getData().success;
         }
         return true;

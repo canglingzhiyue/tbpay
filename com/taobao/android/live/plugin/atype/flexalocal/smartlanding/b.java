@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.g4;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -129,7 +129,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
         this.n = str3;
         this.o = str4;
         this.F = jSONObject;
-        if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null || parse.isOpaque()) {
+        if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null || parse.isOpaque()) {
             return;
         }
         this.e = parse.getQueryParameter("spm");
@@ -147,7 +147,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
         a("smartlanding_action_enter_room", (String) null, (SmartLandingTask) null, (HashMap<String, String>) null, 0L);
         this.p = new c(this.c);
         this.p.a();
-        if (!"liveRoomPage".equals(this.c) || (!this.u && !TextUtils.isEmpty(this.n))) {
+        if (!"liveRoomPage".equals(this.c) || (!this.u && !StringUtils.isEmpty(this.n))) {
             z = true;
         }
         this.v = z;
@@ -170,7 +170,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
             this.h = new com.taobao.android.live.plugin.atype.flexalocal.smartlanding.business.a(this);
         }
         String a2 = com.taobao.taolive.sdk.utils.b.a(this.b);
-        if (!TextUtils.isEmpty(this.t)) {
+        if (!StringUtils.isEmpty(this.t)) {
             a2 = this.t;
         }
         String str4 = a2;
@@ -178,7 +178,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
         if (f() && "liveRoomPage".equals(this.c)) {
             JSONObject jSONObject = new JSONObject();
             String str5 = null;
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 Uri parse = Uri.parse(this.f);
                 if (parse == null || parse.isOpaque()) {
                     str3 = null;
@@ -191,7 +191,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
                     a(jSONObject, aw.PARAM_PRODUCT_TYPE, parse);
                     a(jSONObject, "itemIds", parse);
                     a(jSONObject, aw.PARAM_SHAQRE_ITEM_ID, parse);
-                    if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null && !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.dispatchItemID)) {
+                    if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null && !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.dispatchItemID)) {
                         jSONObject.put("dispatchItemID", (Object) tBLiveDataModel.mVideoInfo.dispatchItemID);
                     }
                     JSONObject a3 = hka.a(parse);
@@ -203,15 +203,15 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
                 if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null) {
                     this.n = tBLiveDataModel.mVideoInfo.liveId;
                     str5 = tBLiveDataModel.mVideoInfo.displayExtParams;
-                    if (!TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.dispatchItemID)) {
+                    if (!StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.dispatchItemID)) {
                         jSONObject.put("dispatchItemID", (Object) tBLiveDataModel.mVideoInfo.dispatchItemID);
                     }
-                    if (!TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.itemHoldType)) {
+                    if (!StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.itemHoldType)) {
                         String str6 = tBLiveDataModel.mVideoInfo.itemHoldType;
                         this.w = str6;
                         jSONObject.put(aw.PARAM_ITEM_HOLD_TYPE, (Object) str6);
                     }
-                    if (!TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.holdItemIds)) {
+                    if (!StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.holdItemIds)) {
                         String str7 = tBLiveDataModel.mVideoInfo.holdItemIds;
                         this.x = str7;
                         jSONObject.put(aw.PARAM_ITEM_IDS, (Object) str7);
@@ -220,7 +220,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
                         this.o = tBLiveDataModel.mVideoInfo.broadCaster.accountId;
                     }
                 }
-                if (!TextUtils.isEmpty(this.y) && TextUtils.isEmpty(this.w) && TextUtils.isEmpty(this.x)) {
+                if (!StringUtils.isEmpty(this.y) && StringUtils.isEmpty(this.w) && StringUtils.isEmpty(this.x)) {
                     this.w = com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD;
                     jSONObject.put(aw.PARAM_ITEM_HOLD_TYPE, com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD);
                     String str8 = this.y;
@@ -245,7 +245,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
             return (String) ipChange.ipc$dispatch("afe6b50b", new Object[]{this, jSONObject, str, uri});
         }
         String queryParameter = uri.getQueryParameter(str);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             jSONObject.put(str, (Object) queryParameter);
         }
         return queryParameter;
@@ -269,7 +269,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
             return ((Boolean) ipChange.ipc$dispatch("78cae15d", new Object[]{this, str, aVar})).booleanValue();
         }
         if (!this.k || (list = this.i) == null || list.isEmpty()) {
-            if (!TextUtils.equals(str, "leave") && !TextUtils.equals(str, "stay")) {
+            if (!StringUtils.equals(str, "leave") && !StringUtils.equals(str, "stay")) {
                 this.l.add(str);
             }
             return false;
@@ -585,7 +585,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
         }
         SmartLandingTask smartLandingTask = this.B;
         String str2 = null;
-        if (smartLandingTask == null || smartLandingTask.popAction == null || !TextUtils.equals(str, this.B.popAction.actionType)) {
+        if (smartLandingTask == null || smartLandingTask.popAction == null || !StringUtils.equals(str, this.B.popAction.actionType)) {
             jSONObject = null;
         } else {
             String str3 = this.B.popId;
@@ -905,7 +905,7 @@ public class b implements ISmartLandingProxy.b, com.taobao.taolive.sdk.adapter.n
             return null;
         }
         for (SmartLandingTask smartLandingTask : this.i) {
-            if (smartLandingTask != null && TextUtils.equals(str, smartLandingTask.popId)) {
+            if (smartLandingTask != null && StringUtils.equals(str, smartLandingTask.popId)) {
                 return smartLandingTask;
             }
         }

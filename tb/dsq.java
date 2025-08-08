@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -107,8 +107,8 @@ public class dsq extends a {
             if (hVar.getContext() == null || (b = b(hVar.getContext())) == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(b.d) && TextUtils.equals(b.d, hVar.getPageName())) {
-                if (TextUtils.isEmpty(hVar.getPageName()) || TextUtils.equals(b.d, hVar.getPageName())) {
+            if (!StringUtils.isEmpty(b.d) && StringUtils.equals(b.d, hVar.getPageName())) {
+                if (StringUtils.isEmpty(hVar.getPageName()) || StringUtils.equals(b.d, hVar.getPageName())) {
                     return;
                 }
                 LogUtils.a(LogUtils.BX_BIZ_NAME, "updateEventPageName_not_equal", hVar.getPageName());
@@ -153,7 +153,7 @@ public class dsq extends a {
                 }
                 drv drvVar = new drv();
                 drvVar.b = context.hashCode() + "";
-                if (!TextUtils.isEmpty(hVar.getPageName())) {
+                if (!StringUtils.isEmpty(hVar.getPageName())) {
                     com.taobao.android.behavix.h.a(hVar.getPageName(), hVar.getBizId(), context, a3);
                     drvVar.d = hVar.getPageName();
                 }
@@ -167,7 +167,7 @@ public class dsq extends a {
             } else if (!a(hVar.getEventId(), "scroll")) {
             } else {
                 String arg2 = hVar.getArg2();
-                if (TextUtils.isEmpty(arg2)) {
+                if (StringUtils.isEmpty(arg2)) {
                     return;
                 }
                 String[] split = arg2.split(",");
@@ -208,7 +208,7 @@ public class dsq extends a {
         }
         try {
             if (drh.a(a(hVar.getPageName(), hVar.getEventId(), hVar.getArg1(), hVar.getArg2(), hVar.getArg3(), hVar.getProperties()))) {
-                if (hVar.getEventId() != 2001 || hVar.getContext() == null || TextUtils.isEmpty(hVar.getPageName())) {
+                if (hVar.getEventId() != 2001 || hVar.getContext() == null || StringUtils.isEmpty(hVar.getPageName())) {
                     return;
                 }
                 Map<String, String> properties = hVar.getProperties();
@@ -220,7 +220,7 @@ public class dsq extends a {
                     return;
                 }
                 com.taobao.android.behavix.h.a(hVar.getPageName(), hVar.getContext(), hashMap);
-            } else if (!a(hVar.getEventId(), "pv") || hVar.getContext() == null || TextUtils.isEmpty(hVar.getPageName())) {
+            } else if (!a(hVar.getEventId(), "pv") || hVar.getContext() == null || StringUtils.isEmpty(hVar.getPageName())) {
             } else {
                 com.taobao.android.behavix.h.a(hVar.getPageName(), hVar.getContext(), hVar.getProperties());
             }
@@ -263,7 +263,7 @@ public class dsq extends a {
             } else if (!a(hVar.getEventId(), "scroll")) {
             } else {
                 String arg2 = hVar.getArg2();
-                if (TextUtils.isEmpty(arg2)) {
+                if (StringUtils.isEmpty(arg2)) {
                     return;
                 }
                 String[] split = arg2.split(",");
@@ -436,7 +436,7 @@ public class dsq extends a {
         }
         JSONObject c = com.taobao.android.behavix.behavixswitch.b.a().c();
         if (c != null && c.size() != 0) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return true;
             }
             JSONArray jSONArray = c.getJSONArray(i + "|" + str);
@@ -447,7 +447,7 @@ public class dsq extends a {
                 return true;
             }
             for (int i2 = 0; i2 < jSONArray.size(); i2++) {
-                if (TextUtils.equals(str2, (String) jSONArray.get(i2))) {
+                if (StringUtils.equals(str2, (String) jSONArray.get(i2))) {
                     return true;
                 }
             }

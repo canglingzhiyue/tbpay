@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ public class kue {
         }
         String queryParameter = data.getQueryParameter(FILTER_KEY);
         ldf.d("DebugScanChannel", "requestParams: " + queryParameter);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return;
         }
         JSONObject jSONObject = new JSONObject();

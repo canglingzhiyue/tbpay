@@ -3,7 +3,7 @@ package com.taobao.android.tschedule.parser;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.expr.edition.EditionInfo;
@@ -145,7 +145,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("86dff54d", new Object[]{str, bVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || bVar == null) {
+        if (StringUtils.isEmpty(str) || bVar == null) {
             return false;
         }
         f15665a.put(str, bVar);

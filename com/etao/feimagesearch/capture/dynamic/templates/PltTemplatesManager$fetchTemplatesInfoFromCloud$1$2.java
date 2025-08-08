@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.capture.dynamic.templates;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.capture.dynamic.templates.b;
@@ -39,7 +39,7 @@ public final class PltTemplatesManager$fetchTemplatesInfoFromCloud$1$2 extends L
         }
         TLogTracker.b("PltTemplateManager", "fetch failure", "errCode:" + num + ", errMsg: " + str);
         for (String str2 : this.this$0.f6574a) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 b.a(b.INSTANCE, c.a().a(str2, com.h()), (JSONObject) null);
             }
         }

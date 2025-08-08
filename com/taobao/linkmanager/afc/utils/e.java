@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
@@ -49,7 +49,7 @@ public class e {
         if (uri == null) {
             return false;
         }
-        return b.contains(uri.getScheme()) && TextUtils.equals(uri.getHost(), "m.taobao.com") && TextUtils.equals(uri.getPath(), "/tbopen/index.html");
+        return b.contains(uri.getScheme()) && StringUtils.equals(uri.getHost(), "m.taobao.com") && StringUtils.equals(uri.getPath(), "/tbopen/index.html");
     }
 
     public static void a(final Activity activity, final Intent intent) {

@@ -6,7 +6,7 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -440,7 +440,7 @@ public class i implements com.taobao.taolive.sdk.adapter.network.d {
                 i = viewHolder.getLayoutPosition();
             }
             hashMap.put("position", String.valueOf(i));
-            hashMap.put("type", TextUtils.isEmpty(recommendCardInfo.dxData.getString("bizType")) ? "1" : recommendCardInfo.dxData.getString("bizType"));
+            hashMap.put("type", StringUtils.isEmpty(recommendCardInfo.dxData.getString("bizType")) ? "1" : recommendCardInfo.dxData.getString("bizType"));
             hashMap.put("spm-cnt", ai.d(com.taobao.taolive.room.utils.n.a()));
             hashMap.put("spm-url", poy.K(com.taobao.taolive.room.utils.n.a()));
         }
@@ -562,7 +562,7 @@ public class i implements com.taobao.taolive.sdk.adapter.network.d {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("32861656", new Object[]{this, jSONObject2});
-                    } else if (i.c(i.this) == null || i.c(i.this).reserveItemCardInfo == null || i.c(i.this).reserveItemCardInfo.cardInfo == null || i.c(i.this).reserveItemCardInfo.cardInfo.dxData == null || TextUtils.isEmpty(i.c(i.this).reserveItemCardInfo.cardInfo.dxTemplateName)) {
+                    } else if (i.c(i.this) == null || i.c(i.this).reserveItemCardInfo == null || i.c(i.this).reserveItemCardInfo.cardInfo == null || i.c(i.this).reserveItemCardInfo.cardInfo.dxData == null || StringUtils.isEmpty(i.c(i.this).reserveItemCardInfo.cardInfo.dxTemplateName)) {
                     } else {
                         try {
                             JSONObject jSONObject3 = i.c(i.this).reserveItemCardInfo.cardInfo.dxData;
@@ -577,7 +577,7 @@ public class i implements com.taobao.taolive.sdk.adapter.network.d {
                                             String string2 = jSONObject2.getString("activityDetailId");
                                             String string3 = jSONObject2.getString("hasSubsidy");
                                             String string4 = jSONObject2.getString("amount");
-                                            if (string != null && string2 != null && string2.equals(string) && "true".equals(string3) && !TextUtils.isEmpty(string4)) {
+                                            if (string != null && string2 != null && string2.equals(string) && "true".equals(string3) && !StringUtils.isEmpty(string4)) {
                                                 ((JSONObject) next).put("customizedItemRights", (Object) String.format("下单立减%s元", i.a(i.this, jSONObject2.getString("amount"))));
                                                 ((JSONObject) next).put("subscribeStatus", (Object) "1");
                                                 ((JSONObject) next).put("subscribeLabel", (Object) "已预约");
@@ -617,7 +617,7 @@ public class i implements com.taobao.taolive.sdk.adapter.network.d {
 
     private String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : TextUtils.isEmpty(str) ? "0" : BigDecimal.valueOf(Integer.parseInt(str)).divide(BigDecimal.valueOf(100.0d)).stripTrailingZeros().toPlainString();
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : StringUtils.isEmpty(str) ? "0" : BigDecimal.valueOf(Integer.parseInt(str)).divide(BigDecimal.valueOf(100.0d)).stripTrailingZeros().toPlainString();
     }
 
     @Override // com.taobao.taolive.sdk.adapter.network.d
@@ -708,7 +708,7 @@ public class i implements com.taobao.taolive.sdk.adapter.network.d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1cb6e290", new Object[]{this, context, jSONObject});
-        } else if (jSONObject == null || jSONObject.getJSONObject("displayInfo") == null || TextUtils.isEmpty(jSONObject.getJSONObject("displayInfo").getString("dxName"))) {
+        } else if (jSONObject == null || jSONObject.getJSONObject("displayInfo") == null || StringUtils.isEmpty(jSONObject.getJSONObject("displayInfo").getString("dxName"))) {
         } else {
             DXRootView a2 = com.taobao.taolive.room.dx.b.c().a(context, jSONObject.getJSONObject("displayInfo").getString("dxName"));
             if (a2 != null) {
@@ -776,7 +776,7 @@ public class i implements com.taobao.taolive.sdk.adapter.network.d {
         }
         HashMap hashMap = new HashMap();
         if (recommendCardInfo != null && recommendCardInfo.dxData != null) {
-            hashMap.put("item_type", TextUtils.isEmpty(recommendCardInfo.dxData.getString("bizType")) ? "default" : recommendCardInfo.dxData.getString("bizType"));
+            hashMap.put("item_type", StringUtils.isEmpty(recommendCardInfo.dxData.getString("bizType")) ? "default" : recommendCardInfo.dxData.getString("bizType"));
             hashMap.put("spm-cnt", ai.d(com.taobao.taolive.room.utils.n.a()));
             hashMap.put("spm-url", poy.K(com.taobao.taolive.room.utils.n.a()));
         }
@@ -794,7 +794,7 @@ public class i implements com.taobao.taolive.sdk.adapter.network.d {
                 if (obj instanceof JSONObject) {
                     JSONObject jSONObject = (JSONObject) obj;
                     String string = jSONObject.getString("itemId");
-                    String string2 = TextUtils.isEmpty(recommendCardInfo.dxData.getString("bizType")) ? "default" : recommendCardInfo.dxData.getString("bizType");
+                    String string2 = StringUtils.isEmpty(recommendCardInfo.dxData.getString("bizType")) ? "default" : recommendCardInfo.dxData.getString("bizType");
                     String string3 = jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
                     String string4 = jSONObject.getString("anchorId");
                     String string5 = jSONObject.getString("subscribeStatus");

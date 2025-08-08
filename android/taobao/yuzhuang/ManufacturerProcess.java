@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.mobile.common.logging.api.DeviceProperty;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -95,7 +95,7 @@ public class ManufacturerProcess implements Serializable {
             if (!ManufacturerProcess.isHuaweiPhone() && !HONOR.isManufacturerMatched(str)) {
                 if ((OPPO.isManufacturerMatched(str) || ONEPLUS.isManufacturerMatched(str) || REALME.isManufacturerMatched(str)) && Build.VERSION.SDK_INT >= 30) {
                     String access$100 = ManufacturerProcess.access$100(OPPO_CHANNEL_KEY_2);
-                    if (!TextUtils.isEmpty(access$100)) {
+                    if (!StringUtils.isEmpty(access$100)) {
                         return new File(access$100, "sjtbconfig.xml").getAbsolutePath();
                     }
                 }
@@ -205,7 +205,7 @@ public class ManufacturerProcess implements Serializable {
                 return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
             }
             boolean z = this.d.getBoolean(oyw.PRE_LOAD, false);
-            boolean z2 = !TextUtils.isEmpty(this.d.getString("preLoad_Channel1", "")) || !TextUtils.isEmpty(this.d.getString("preLoad_Channel2", ""));
+            boolean z2 = !StringUtils.isEmpty(this.d.getString("preLoad_Channel1", "")) || !StringUtils.isEmpty(this.d.getString("preLoad_Channel2", ""));
             Log.e(ManufacturerProcess.TAG, "preLoadCommitted = " + z + " ,  anyChannelNotEmpty = " + z2);
             return z && z2;
         }
@@ -214,7 +214,7 @@ public class ManufacturerProcess implements Serializable {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 String str2 = "configs[0]: = " + str;
                 File c2 = c(str);
                 String str3 = "apkFile = " + c2;
@@ -239,7 +239,7 @@ public class ManufacturerProcess implements Serializable {
                 return;
             }
             String str2 = f1731a + " channel romChannelConfig = " + str;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 File file = new File(str);
                 File file2 = new File(str.replace("xml", "ini"));
                 String str3 = f1731a + " configFile.abs_path = " + file.getAbsolutePath();
@@ -257,7 +257,7 @@ public class ManufacturerProcess implements Serializable {
                     return;
                 }
             }
-            Log.e(ManufacturerProcess.TAG, "TextUtils.isEmpty(romChannelConfig)");
+            Log.e(ManufacturerProcess.TAG, "StringUtils.isEmpty(romChannelConfig)");
         }
 
         private File c(String str) {
@@ -303,7 +303,7 @@ public class ManufacturerProcess implements Serializable {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("8a979fdf", new Object[]{this, file});
-            } else if (this.d.getBoolean(oyw.PRE_LOAD, false) && !TextUtils.isEmpty(this.d.getString("preLoad_Channel1", ""))) {
+            } else if (this.d.getBoolean(oyw.PRE_LOAD, false) && !StringUtils.isEmpty(this.d.getString("preLoad_Channel1", ""))) {
                 Log.e(ManufacturerProcess.TAG, "skipped");
             } else {
                 ZipFile zipFile = new ZipFile(file);
@@ -328,7 +328,7 @@ public class ManufacturerProcess implements Serializable {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("584201a0", new Object[]{this, file});
-            } else if (this.d.getBoolean(oyw.PRE_LOAD, false) && !TextUtils.isEmpty(this.d.getString("preLoad_Channel2", ""))) {
+            } else if (this.d.getBoolean(oyw.PRE_LOAD, false) && !StringUtils.isEmpty(this.d.getString("preLoad_Channel2", ""))) {
                 Log.e(ManufacturerProcess.TAG, "skipped");
             } else {
                 try {
@@ -606,6 +606,6 @@ public class ManufacturerProcess implements Serializable {
         if (Build.VERSION.SDK_INT >= 19) {
             str = getProp(HARMONYOS_PROPERTY);
         }
-        return !TextUtils.isEmpty(prop) || !TextUtils.isEmpty(str);
+        return !StringUtils.isEmpty(prop) || !StringUtils.isEmpty(str);
     }
 }

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.service.Services;
@@ -114,7 +114,7 @@ public class b {
         HashMap hashMap = new HashMap();
         hashMap.put(ShareBusiness.SHARE_INTENT_EXTAR_BUSINESS_ID, shareContent.businessId);
         hashMap.put(ShareBusiness.SHARE_INTENT_EXTAR_BUSINESS_ID, shareContent.businessId);
-        if (TextUtils.isEmpty(shareContent.contentType)) {
+        if (StringUtils.isEmpty(shareContent.contentType)) {
             shareContent.contentType = shareContent.shareScene;
         }
         hashMap.put(ShareBusiness.SHARE_INTENT_EXTAR_CONTENTTYPE, shareContent.contentType);
@@ -160,10 +160,10 @@ public class b {
         if (shareContent.businessInfo != null) {
             hashMap.put(ShareBusiness.SHARE_INTENT_EXTRA_BUSINESS_INFO, JSON.toJSONString(shareContent.businessInfo));
         }
-        if (!TextUtils.isEmpty(shareContent.maskAlpha)) {
+        if (!StringUtils.isEmpty(shareContent.maskAlpha)) {
             hashMap.put(ShareBusiness.SHARE_INTENT_EXTRA_MASK_ALPHA, shareContent.maskAlpha);
         }
-        if (shareContent.popType != ShareContent.TaoPasswordPopType.NONE && !TextUtils.isEmpty(shareContent.popUrl)) {
+        if (shareContent.popType != ShareContent.TaoPasswordPopType.NONE && !StringUtils.isEmpty(shareContent.popUrl)) {
             hashMap.put(ShareBusiness.SHARE_INTENT_EXTAR_POPTYPE, shareContent.popType.getName());
             hashMap.put(ShareBusiness.SHARE_INTENT_EXTAR_POPURL, shareContent.popUrl);
         }
@@ -173,10 +173,10 @@ public class b {
         if (shareContent.markMap != null) {
             hashMap.put(ShareBusiness.SHARE_INTENT_EXTAR_MARK_MAP, JSON.toJSONString(shareContent.markMap));
         }
-        if (!TextUtils.isEmpty(shareContent.smsTemplate)) {
+        if (!StringUtils.isEmpty(shareContent.smsTemplate)) {
             hashMap.put(ShareBusiness.SHARE_INTENT_EXTRA_SMS_TEMPLATE, shareContent.smsTemplate);
         }
-        if (!TextUtils.isEmpty(shareContent.qrTipsText)) {
+        if (!StringUtils.isEmpty(shareContent.qrTipsText)) {
             hashMap.put(ShareBusiness.SHARE_INTENT_EXTRA_QR_TIPS_TXT, shareContent.qrTipsText);
         }
         if (shareContent.mediaInfo != null) {

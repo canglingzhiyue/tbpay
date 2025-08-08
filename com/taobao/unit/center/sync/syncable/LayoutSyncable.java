@@ -1,6 +1,6 @@
 package com.taobao.unit.center.sync.syncable;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -331,7 +331,7 @@ public final class LayoutSyncable implements ISyncable<LayoutRequest, LayoutResp
             }
             String jSONString = jSONObject.toJSONString();
             q.a((Object) jSONString, "jsonObject.toJSONString()");
-            if (TextUtils.isEmpty(jSONString)) {
+            if (StringUtils.isEmpty(jSONString)) {
                 return;
             }
             TLog.loge(SyncConstant.TAG, "request groupString is " + jSONString);

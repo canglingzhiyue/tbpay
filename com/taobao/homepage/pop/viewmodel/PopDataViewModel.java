@@ -1,6 +1,6 @@
 package com.taobao.homepage.pop.viewmodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.homepage.pop.model.section.PopSectionModel;
 import com.taobao.homepage.pop.protocol.model.pop.IPopConfig;
@@ -69,7 +69,7 @@ public class PopDataViewModel implements Serializable, IMTOPDataObject {
                     }
                 } else {
                     boolean processNewData = processNewData(kyuVar, a2);
-                    if (!TextUtils.equals("coldStart", str) && str != null) {
+                    if (!StringUtils.equals("coldStart", str) && str != null) {
                         z3 = false;
                     }
                     if (z3 && !a2.isAllowShow()) {

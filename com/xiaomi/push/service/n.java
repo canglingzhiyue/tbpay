@@ -1,7 +1,7 @@
 package com.xiaomi.push.service;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,9 +27,9 @@ public class n {
 
     public static boolean a(byte[] bArr, String str) {
         boolean z = false;
-        if (bArr != null && bArr.length > 0 && !TextUtils.isEmpty(str)) {
+        if (bArr != null && bArr.length > 0 && !StringUtils.isEmpty(str)) {
             String a2 = com.xiaomi.push.bm.a(bArr);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 synchronized (f24714a) {
                     Map<String, Long> map = f24714a;
                     if (map.get(a2 + str) != null) {

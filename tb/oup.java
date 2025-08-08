@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.biz.substitute.SubstituteConstants;
@@ -51,7 +51,7 @@ public class oup {
         }
         JSONObject jSONObject = new JSONObject();
         String e = obi.b.e();
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             e = com.taobao.tao.config.a.a().getString(R.string.share_guide_tips);
         }
         jSONObject.put("url", (Object) e);
@@ -76,7 +76,7 @@ public class oup {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c169bf7b", new Object[]{str, tBShareContent});
-        } else if (TextUtils.isEmpty(str) || tBShareContent == null) {
+        } else if (StringUtils.isEmpty(str) || tBShareContent == null) {
         } else {
             JSONObject jSONObject = new JSONObject();
             HashMap hashMap = new HashMap();
@@ -182,7 +182,7 @@ public class oup {
             ipChange.ipc$dispatch("e7ff89a8", new Object[]{tBShareContent, str, str2, str3, new Integer(i), new Boolean(z), str4, str5});
             return;
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "2";
         }
         try {
@@ -223,7 +223,7 @@ public class oup {
         }
         JSONObject jSONObject = new JSONObject();
         jSONObject.put(com.taobao.share.ui.engine.friend.a.CONTACTS_INFO_KEY, (Object) str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             jSONObject.put(com.taobao.share.ui.engine.friend.a.CONTACTS_INFO_STATUS_KEY, (Object) "exception");
         } else {
             jSONObject.put(com.taobao.share.ui.engine.friend.a.CONTACTS_INFO_STATUS_KEY, (Object) com.taobao.share.ui.engine.friend.a.CONTACTS_INFO_NOT_EMPTY_STATUS);

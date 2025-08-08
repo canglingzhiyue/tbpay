@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,23 +66,23 @@ public class s extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("30aec853", new Object[]{this, sVar});
         }
-        if (!TextUtils.isEmpty(sVar.f10892a)) {
+        if (!StringUtils.isEmpty(sVar.f10892a)) {
             com.taobao.android.detail.ttdetail.utils.q.a(this.h, sVar.f10892a);
         }
-        if (!TextUtils.isEmpty(sVar.b)) {
+        if (!StringUtils.isEmpty(sVar.b)) {
             this.i.setText(sVar.b);
         } else {
             this.i.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(sVar.c)) {
+        if (!StringUtils.isEmpty(sVar.c)) {
             this.j.setText(sVar.c);
         } else {
             this.j.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(sVar.d)) {
+        if (!StringUtils.isEmpty(sVar.d)) {
             this.k.setText(sVar.d);
         }
-        if (!TextUtils.isEmpty(sVar.e)) {
+        if (!StringUtils.isEmpty(sVar.e)) {
             final String str = sVar.e;
             this.g.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder.s.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

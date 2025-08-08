@@ -1,7 +1,7 @@
 package com.taobao.android.dinamic.constructor;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -81,7 +81,7 @@ public class DLoopLinearLayoutConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aef70056", new Object[]{this, dLoopLinearLayout, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             int intValue = Integer.valueOf(str).intValue();
             if (intValue == 0) {
                 dLoopLinearLayout.setOrientation(1);

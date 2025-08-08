@@ -3,7 +3,7 @@ package com.unionpay.utils;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import java.io.ByteArrayInputStream;
 
@@ -22,7 +22,7 @@ public final class g {
     }
 
     private static Drawable a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

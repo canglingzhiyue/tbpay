@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +87,7 @@ public class sxt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c6e0ee3", new Object[]{list, str});
-        } else if (!TextUtils.equals(str, "9999") || list == null || list.isEmpty() || !list.contains("9999")) {
+        } else if (!StringUtils.equals(str, "9999") || list == null || list.isEmpty() || !list.contains("9999")) {
         } else {
             a("clientDefaultCategoryIds", hiq.a());
         }

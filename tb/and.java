@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -78,7 +78,7 @@ public class and implements c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.i) {
+        } else if (StringUtils.isEmpty(str) || this.i) {
         } else {
             this.f25450a = str;
             this.c = mpy.b().a();
@@ -118,8 +118,8 @@ public class and implements c {
             mqcVar.a(str, j);
         }
         HashMap hashMap = new HashMap();
-        hashMap.put("weexInstanceId", TextUtils.isEmpty(this.f25450a) ? "nullId" : this.f25450a);
-        if (!TextUtils.isEmpty(this.h)) {
+        hashMap.put("weexInstanceId", StringUtils.isEmpty(this.f25450a) ? "nullId" : this.f25450a);
+        if (!StringUtils.isEmpty(this.h)) {
             hashMap.put("mPageName", this.h);
         }
         d.a().a(str, hashMap);
@@ -204,7 +204,7 @@ public class and implements c {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         String realNameFromNameOrUrl = WXExceptionAdapter.getRealNameFromNameOrUrl(str, false);
-        return TextUtils.isEmpty(realNameFromNameOrUrl) ? "emptyParseUrl" : realNameFromNameOrUrl;
+        return StringUtils.isEmpty(realNameFromNameOrUrl) ? "emptyParseUrl" : realNameFromNameOrUrl;
     }
 
     private void d() {

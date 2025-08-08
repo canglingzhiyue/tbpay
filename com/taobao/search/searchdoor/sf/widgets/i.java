@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.content.res.ResourcesCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -180,7 +180,7 @@ public final class i extends ius<SearchBarHintBean, View, SearchDoorContext> imp
             return false;
         }
         String d = FestivalMgr.a().d("global", "actionBarBackgroundColor");
-        return !TextUtils.isEmpty(d) && (a2 = com.taobao.android.searchbaseframe.util.g.a(d, 0)) != 0 && ((((double) Color.red(a2)) * 0.299d) + (((double) Color.green(a2)) * 0.587d)) + (((double) Color.blue(a2)) * 0.114d) < ((double) crd.DETECT_WIDTH);
+        return !StringUtils.isEmpty(d) && (a2 = com.taobao.android.searchbaseframe.util.g.a(d, 0)) != 0 && ((((double) Color.red(a2)) * 0.299d) + (((double) Color.green(a2)) * 0.587d)) + (((double) Color.blue(a2)) * 0.114d) < ((double) crd.DETECT_WIDTH);
     }
 
     private final void b(SearchBarHintBean searchBarHintBean) {

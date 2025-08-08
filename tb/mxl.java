@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes7.dex */
@@ -27,7 +27,7 @@ public class mxl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str});
         }
-        if (TextUtils.isEmpty(str) || !"LBS".equals(str) || context == null) {
+        if (StringUtils.isEmpty(str) || !"LBS".equals(str) || context == null) {
             return null;
         }
         if (f31311a == null) {

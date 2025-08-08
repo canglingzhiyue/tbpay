@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.slide;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -187,7 +187,7 @@ public class d extends PagerAdapter {
         }
         a2.setUiNodeTree(d);
         Object tag = this.c.getTag("enableSlidePreciseExpose");
-        if (tag == null || !TextUtils.equals(tag.toString(), "true")) {
+        if (tag == null || !StringUtils.equals(tag.toString(), "true")) {
             a2.setScrollObserverEnabled(false);
         }
         viewGroup.addView(a2);

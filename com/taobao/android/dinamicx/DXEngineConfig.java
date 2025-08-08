@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.videoc.DXVideoControlConfig;
 import com.taobao.android.fluid.framework.adapter.image.ImageAdapter;
@@ -142,7 +142,7 @@ public class DXEngineConfig {
         this.h = a.f(aVar);
         this.f = aVar.f11776a;
         this.i = Math.max(a.g(aVar), 100L);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.f11775a = DX_DEFAULT_BIZTYPE;
         }
         this.k = a.h(aVar);
@@ -154,7 +154,7 @@ public class DXEngineConfig {
         if (a.n(aVar) != null) {
             this.p = new q(a.n(aVar));
         } else {
-            this.p = p.b;
+            this.p = (com.taobao.android.dinamicx.q) p.b;
         }
         this.o = a.o(aVar);
         this.q = a.p(aVar);
@@ -177,7 +177,7 @@ public class DXEngineConfig {
         this.E = a.C(aVar);
         if (!this.E) {
             this.E = au.a(str);
-        } else if (!TextUtils.isEmpty(aVar.H)) {
+        } else if (!StringUtils.isEmpty(aVar.H)) {
             this.H = aVar.H;
             au.b(str, aVar.H);
         }
@@ -374,7 +374,7 @@ public class DXEngineConfig {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c5faa981", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.y)) {
+        if (StringUtils.isEmpty(this.y)) {
             this.y = DX_DEFAULT_SUB_BIZTYPE;
         }
         return this.y;
@@ -582,7 +582,7 @@ public class DXEngineConfig {
         public a(String str) {
             this.x = 0;
             this.b = str;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b = str;
             } else {
                 this.b = DXEngineConfig.DX_DEFAULT_BIZTYPE;

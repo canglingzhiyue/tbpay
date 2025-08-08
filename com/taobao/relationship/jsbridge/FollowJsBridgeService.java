@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.taobao.windvane.jsbridge.c;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.ir.runtime.ApplicationInvoker;
@@ -60,13 +60,13 @@ public class FollowJsBridgeService extends Service implements c {
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("fa8f40b7", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
-        if (TextUtils.equals(AllSparkFollowJsBridge.PAGE, str)) {
+        if (StringUtils.equals(AllSparkFollowJsBridge.PAGE, str)) {
             return AllSparkFollowJsBridge.class;
         }
-        if (!TextUtils.equals(AllSparkFollowJsBridgeV3.PAGE, str)) {
+        if (!StringUtils.equals(AllSparkFollowJsBridgeV3.PAGE, str)) {
             return null;
         }
         return AllSparkFollowJsBridgeV3.class;

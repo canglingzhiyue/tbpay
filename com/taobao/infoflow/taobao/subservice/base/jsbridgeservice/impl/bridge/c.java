@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.base.jsbridgeservice.impl.bridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.exception.InfoFlowRuntimeException;
 import com.taobao.infoflow.protocol.subservice.base.IJsBridgeService;
@@ -66,7 +66,7 @@ public class c {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             b.a(this.b);
         }
         this.f17438a.clear();

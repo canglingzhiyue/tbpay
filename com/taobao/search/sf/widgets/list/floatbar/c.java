@@ -1,6 +1,6 @@
 package com.taobao.search.sf.widgets.list.floatbar;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,7 +80,7 @@ public class c {
         }
         reviewBean.h5Url = jSONObject.getString("h5Url");
         reviewBean.iconUrl = jSONObject.getString("iconUrl");
-        if (reviewBean.totalPage > 0 && !TextUtils.isEmpty(reviewBean.h5Url)) {
+        if (reviewBean.totalPage > 0 && !StringUtils.isEmpty(reviewBean.h5Url)) {
             return reviewBean;
         }
         return null;
@@ -113,7 +113,7 @@ public class c {
         aVar.j = d.a(jSONObject.getString("hintEndColor"), -761329);
         aVar.k = jSONObject.getString("strategy");
         aVar.l = jSONObject.getString("mode");
-        if (TextUtils.isEmpty(aVar.l)) {
+        if (StringUtils.isEmpty(aVar.l)) {
             aVar.l = "normal";
         }
         aVar.m = jSONObject.getIntValue("appearPage");

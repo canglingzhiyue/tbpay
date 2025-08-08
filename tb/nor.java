@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -111,12 +111,12 @@ public class nor {
             return ((Boolean) ipChange.ipc$dispatch("30c0bda0", new Object[]{iconBean, searchDomBean})).booleanValue();
         }
         if (searchDomBean != null && iconBean != null) {
-            if (TextUtils.equals("text", iconBean.type)) {
+            if (StringUtils.equals("text", iconBean.type)) {
                 return true;
             }
             if (searchDomBean.width <= 0 || searchDomBean.height <= 0) {
                 Log.e(f31611a, "icon size is invalid");
-            } else if (!TextUtils.isEmpty(searchDomBean.image)) {
+            } else if (!StringUtils.isEmpty(searchDomBean.image)) {
                 return true;
             } else {
                 Log.e(f31611a, "icon url is empty");
@@ -155,7 +155,7 @@ public class nor {
         } else if (searchDomBean == null) {
             Log.e(f31611a, "dom is null");
             textView.setVisibility(4);
-        } else if (TextUtils.equals(iconBean.type, "text")) {
+        } else if (StringUtils.equals(iconBean.type, "text")) {
             nos nosVar = new nos(iconBean, searchDomBean);
             nosVar.setBounds(0, 0, nosVar.getIntrinsicWidth(), nosVar.getIntrinsicHeight());
             b(textView, auctionBaseBean, nosVar, listStyle, z);
@@ -193,7 +193,7 @@ public class nor {
         } else if (auctionBaseBean == null) {
             Log.e(f31611a, "auction is null");
             textView.setVisibility(4);
-        } else if (TextUtils.isEmpty(auctionBaseBean.title)) {
+        } else if (StringUtils.isEmpty(auctionBaseBean.title)) {
             Log.e(f31611a, "title is empty");
             textView.setVisibility(4);
         } else {
@@ -203,7 +203,7 @@ public class nor {
             if (a2 == null) {
                 Log.e(f31611a, "span is null");
                 String str = auctionBaseBean.title;
-                if (listStyle == ListStyle.WATERFALL && !TextUtils.isEmpty(auctionBaseBean.wfTitle)) {
+                if (listStyle == ListStyle.WATERFALL && !StringUtils.isEmpty(auctionBaseBean.wfTitle)) {
                     str = auctionBaseBean.wfTitle;
                 }
                 textView.setText(str);
@@ -235,10 +235,10 @@ public class nor {
             return (SpannableStringBuilder) ipChange.ipc$dispatch("6a74a35c", new Object[]{auctionBaseBean, listStyle});
         }
         String str = auctionBaseBean.title;
-        if (listStyle == ListStyle.WATERFALL && !TextUtils.isEmpty(auctionBaseBean.wfTitle)) {
+        if (listStyle == ListStyle.WATERFALL && !StringUtils.isEmpty(auctionBaseBean.wfTitle)) {
             str = auctionBaseBean.wfTitle;
         }
-        if (TextUtils.isEmpty(auctionBaseBean.preTitleText) || TextUtils.isEmpty(auctionBaseBean.preTitleColor)) {
+        if (StringUtils.isEmpty(auctionBaseBean.preTitleText) || StringUtils.isEmpty(auctionBaseBean.preTitleColor)) {
             return new SpannableStringBuilder(str);
         }
         return aa.a(str, auctionBaseBean.preTitleText, auctionBaseBean.preTitleColor);

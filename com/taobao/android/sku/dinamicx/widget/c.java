@@ -3,7 +3,7 @@ package com.taobao.android.sku.dinamicx.widget;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
@@ -189,10 +189,10 @@ public class c extends af {
             view.setTag(ID_KEY_BOARD, Integer.valueOf(this.k));
             f.b(editText, this.l);
             view.setTag(ID_MAX_LENGTH, Integer.valueOf(this.l));
-            if (!TextUtils.isEmpty(this.i)) {
+            if (!StringUtils.isEmpty(this.i)) {
                 f.a(editText, this.i);
                 view.setTag(ID_PLACE_HOLDER, this.i);
-            } else if (TextUtils.isEmpty(this.m)) {
+            } else if (StringUtils.isEmpty(this.m)) {
             } else {
                 a(editText, "input".equalsIgnoreCase(this.m));
             }

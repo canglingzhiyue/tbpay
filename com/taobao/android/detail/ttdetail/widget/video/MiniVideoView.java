@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.widget.video;
 import android.content.Context;
 import android.graphics.Rect;
 import android.support.constraint.ConstraintLayout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -415,14 +415,14 @@ public class MiniVideoView extends AbsMiniVideoView<ezc> {
                     String string3 = d.getString("videoType");
                     String string4 = d.getString(KEY_THUMBNAIL_URL);
                     String b = ezcVar.b();
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                         this.mVideoDataList.add(new a(string, string2, string3, string4, b));
                     }
                     str = ezcVar.k();
                     this.mRealDimensionRatio = str;
                 }
             }
-            if (emh.sDefaultDimension.equalsIgnoreCase(this.mRealDimensionRatio) || TextUtils.isEmpty(this.mRealDimensionRatio)) {
+            if (emh.sDefaultDimension.equalsIgnoreCase(this.mRealDimensionRatio) || StringUtils.isEmpty(this.mRealDimensionRatio)) {
                 str = com.taobao.android.detail2.core.framework.base.media.frame.b.VALUE_THREE_FOUR_RATIO;
             }
             this.mLayout.setWHRatio(str);
@@ -436,9 +436,9 @@ public class MiniVideoView extends AbsMiniVideoView<ezc> {
             ipChange.ipc$dispatch("c9551e71", new Object[]{this, str});
             return;
         }
-        this.mTvVideoType.setText(TextUtils.isEmpty(str) ? "" : str);
+        this.mTvVideoType.setText(StringUtils.isEmpty(str) ? "" : str);
         View view = this.mGradientView;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i = 4;
         }
         view.setVisibility(i);
@@ -481,10 +481,10 @@ public class MiniVideoView extends AbsMiniVideoView<ezc> {
             return false;
         }
         closeGlobalLiveVideoView();
-        if (!TextUtils.isEmpty(str) || !this.mVideoView.isVideoPlaying()) {
-            if (TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str) || !this.mVideoView.isVideoPlaying()) {
+            if (StringUtils.isEmpty(str)) {
                 setMiniVideoData(this.mVideoDataList.get(0));
-            } else if (!TextUtils.equals(str, this.mVideoView.getVideoUrl())) {
+            } else if (!StringUtils.equals(str, this.mVideoView.getVideoUrl())) {
                 Iterator<a> it = this.mVideoDataList.iterator();
                 while (true) {
                     if (!it.hasNext()) {
@@ -492,7 +492,7 @@ public class MiniVideoView extends AbsMiniVideoView<ezc> {
                         break;
                     }
                     a next = it.next();
-                    if (TextUtils.equals(str, next.b)) {
+                    if (StringUtils.equals(str, next.b)) {
                         setMiniVideoData(next);
                         z = true;
                         break;
@@ -601,11 +601,11 @@ public class MiniVideoView extends AbsMiniVideoView<ezc> {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("f0d9654a", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || this.mVideoDataList.isEmpty()) {
+        if (StringUtils.isEmpty(str) || this.mVideoDataList.isEmpty()) {
             return null;
         }
         for (a aVar : this.mVideoDataList) {
-            if (TextUtils.equals(aVar.b, str)) {
+            if (StringUtils.equals(aVar.b, str)) {
                 return aVar;
             }
         }
@@ -617,12 +617,12 @@ public class MiniVideoView extends AbsMiniVideoView<ezc> {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("3da3d664", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || this.mVideoDataList.isEmpty()) {
+        if (StringUtils.isEmpty(str) || this.mVideoDataList.isEmpty()) {
             return null;
         }
         int size = this.mVideoDataList.size();
         for (int i = 0; i < size; i++) {
-            if (TextUtils.equals(this.mVideoDataList.get(i).b, str)) {
+            if (StringUtils.equals(this.mVideoDataList.get(i).b, str)) {
                 int i2 = i + 1;
                 if (i2 < size) {
                     return this.mVideoDataList.get(i2);

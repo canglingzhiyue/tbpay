@@ -1,6 +1,6 @@
 package com.taobao.analysis.abtest;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -50,7 +50,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);

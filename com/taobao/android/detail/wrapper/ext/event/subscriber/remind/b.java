@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.event.subscriber.remind;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.event.params.f;
 import com.taobao.android.trade.event.ThreadMode;
@@ -63,7 +63,7 @@ public class b implements j<eef> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8f01ee82", new Object[]{this, fVar});
-        } else if (fVar == null || TextUtils.isEmpty(fVar.f9719a)) {
+        } else if (fVar == null || StringUtils.isEmpty(fVar.f9719a)) {
         } else {
             com.taobao.android.detail.core.utils.i.a("setReminder", "receive SetRemindEvent");
             ScheduleDTO scheduleDTO = new ScheduleDTO();
@@ -84,7 +84,7 @@ public class b implements j<eef> {
             scheduleDTO.setRemind(180);
             scheduleDTO.setIsallday(0);
             try {
-                if (!TextUtils.isEmpty(fVar.g)) {
+                if (!StringUtils.isEmpty(fVar.g)) {
                     uri = Uri.parse(fVar.g).buildUpon().appendQueryParameter("reminded", "1").appendQueryParameter("fromCalendar", "1").appendQueryParameter("backurl", "index").build().toString();
                 } else {
                     uri = Uri.parse(egn.NAV_URL_DETAIL[2] + "?id=" + fVar.f9719a).buildUpon().appendQueryParameter("reminded", "1").appendQueryParameter("fromCalendar", "1").appendQueryParameter("backurl", "index").build().toString();

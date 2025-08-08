@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.network.NetworkUtil;
 import com.alibaba.analytics.core.selfmonitor.exception.AppMonitorException;
 import com.alibaba.analytics.core.selfmonitor.exception.ExceptionEventBuilder;
@@ -253,7 +253,7 @@ public final class bsw {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     if (!bsw.b || !aob.H() || !EventType.ALARM.isOpen() || (!bsw.a() && !bti.a().a(str, str2, (Boolean) true, (Map<String, String>) null))) {
                         apr.a("log discard !", "module", str, "monitorPoint", str2, IWXUserTrackAdapter.MONITOR_ARG, str3);
                         return;
@@ -289,7 +289,7 @@ public final class bsw {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     HashMap hashMap = new HashMap();
                     hashMap.put("_status", "0");
                     if (!bsw.b || !aob.H() || !EventType.ALARM.isOpen() || (!bsw.a() && !bti.a().a(str, str2, (Boolean) false, (Map<String, String>) hashMap))) {
@@ -361,7 +361,7 @@ public final class bsw {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     if (!bsw.b || !aob.H() || !EventType.COUNTER.isOpen() || (!bsw.a() && !bti.a().a(EventType.COUNTER, str, str2))) {
                         apr.a("log discard !", "module", str, "monitorPoint", str2, "args", str3, "value", Double.valueOf(d));
                         return;
@@ -422,7 +422,7 @@ public final class bsw {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     if (!bsw.b || !aob.H() || !EventType.COUNTER.isOpen() || (!bsw.a() && !bti.a().a(EventType.COUNTER, str, str2))) {
                         apr.a("log discard !", "module", str, "monitorPoint", str2);
                         return;

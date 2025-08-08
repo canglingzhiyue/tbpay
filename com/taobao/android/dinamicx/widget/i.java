@@ -6,7 +6,7 @@ import android.os.Build;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class i extends DXWidgetNode {
     public static final CharSequence ELLIPSIS_TEXT;
     public Layout.Alignment alignment;
     public int beforeEllipsizeLineCount;
-    public TextUtils.TruncateAt ellipsize;
+    public StringUtils.TruncateAt ellipsize;
     private boolean enableEllipsizeEndFix_Android;
     public int fontWeight;
     private boolean isItalic;
@@ -206,7 +206,7 @@ public class i extends DXWidgetNode {
         int size = View.MeasureSpec.getSize(i2);
         if (mode == 1073741824) {
             i3 = size;
-        } else if (!TextUtils.isEmpty(this.text) || this.layoutHeight != -2) {
+        } else if (!StringUtils.isEmpty(this.text) || this.layoutHeight != -2) {
             int height = this.staticLayout.getHeight() + this.realPaddingBottom + this.realPaddingTop;
             int i5 = this.maxLine;
             if (i5 > 0 && i5 < this.staticLayout.getLineCount()) {
@@ -234,7 +234,7 @@ public class i extends DXWidgetNode {
             if (this.ellipsize != null && this.text.length() != 1) {
                 float width = this.staticLayout.getWidth() - this.textPaint.measureText(ELLIPSIS_TEXT, 0, ELLIPSIS_TEXT.length());
                 int lineStart = this.staticLayout.getLineStart(this.maxLine - 1);
-                if (this.ellipsize == TextUtils.TruncateAt.END) {
+                if (this.ellipsize == StringUtils.TruncateAt.END) {
                     int i2 = lineEnd - 1;
                     if (isEnableEllipsizeEndFix()) {
                         i2++;
@@ -252,7 +252,7 @@ public class i extends DXWidgetNode {
                     }
                     this.showText = this.text.subSequence(0, i2).toString() + ((Object) ELLIPSIS_TEXT);
                     return;
-                } else if (this.ellipsize == TextUtils.TruncateAt.START && this.maxLine == 1) {
+                } else if (this.ellipsize == StringUtils.TruncateAt.START && this.maxLine == 1) {
                     int length = this.text.length();
                     int i3 = length - 1;
                     while (true) {
@@ -268,7 +268,7 @@ public class i extends DXWidgetNode {
                     }
                     this.showText = ((Object) ELLIPSIS_TEXT) + this.text.subSequence(i, length).toString();
                     return;
-                } else if (this.ellipsize != TextUtils.TruncateAt.MIDDLE || this.maxLine != 1) {
+                } else if (this.ellipsize != StringUtils.TruncateAt.MIDDLE || this.maxLine != 1) {
                     return;
                 } else {
                     int length2 = this.text.length();
@@ -310,7 +310,7 @@ public class i extends DXWidgetNode {
             this.showText = this.text.subSequence(0, lineEnd);
         } catch (Exception e) {
             this.showText = this.text.subSequence(0, lineEnd);
-            if (getDXRuntimeContext() != null && !TextUtils.isEmpty(getDXRuntimeContext().A())) {
+            if (getDXRuntimeContext() != null && !StringUtils.isEmpty(getDXRuntimeContext().A())) {
                 com.taobao.android.dinamicx.s n = getDXRuntimeContext().n();
                 n.b = getDXRuntimeContext().c();
                 n.c.add(new s.a(DXMonitorConstant.DX_MONITOR_PIPELINE_DETAIL, DXMonitorConstant.DX_MONITOR_SERVICE_ID_PERFORM_MEASURE, 80005));
@@ -596,22 +596,22 @@ public class i extends DXWidgetNode {
         return 0.0f;
     }
 
-    public TextUtils.TruncateAt getEllipsize(int i) {
+    public StringUtils.TruncateAt getEllipsize(int i) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
-            return (TextUtils.TruncateAt) ipChange.ipc$dispatch("692e091b", new Object[]{this, new Integer(i)});
+            return (StringUtils.TruncateAt) ipChange.ipc$dispatch("692e091b", new Object[]{this, new Integer(i)});
         }
         if (i == 0) {
             return null;
         }
         if (i == 1) {
-            return TextUtils.TruncateAt.START;
+            return StringUtils.TruncateAt.START;
         }
         if (i == 2) {
-            return TextUtils.TruncateAt.MIDDLE;
+            return StringUtils.TruncateAt.MIDDLE;
         }
         if (i == 3) {
-            return TextUtils.TruncateAt.END;
+            return StringUtils.TruncateAt.END;
         }
         return null;
     }

@@ -1,7 +1,7 @@
 package com.taobao.runtimepermission;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilityidl.ability.AbsPermissionAbility;
@@ -138,7 +138,7 @@ public class MegaPermissionAbility extends AbsPermissionAbility {
             if (dsVar.f8824a != null) {
                 strArr = (String[]) dsVar.f8824a.toArray(new String[0]);
             }
-            if (f == null || TextUtils.isEmpty(dsVar.b) || strArr == null || strArr.length == 0) {
+            if (f == null || StringUtils.isEmpty(dsVar.b) || strArr == null || strArr.length == 0) {
                 ciVar.a(new ErrorResult("UNKNOWN_BIZ_ERROR", "invalid parameter"));
                 return;
             }

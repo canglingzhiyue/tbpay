@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
@@ -42,7 +42,7 @@ public class LongPwdInputWidget implements View.OnTouchListener, VISafeInputInte
     private View.OnFocusChangeListener f = null;
     private OnConfirmListener g = null;
     private boolean i = false;
-    private EditTextUtil j = EditTextManager.getEditTextUtils();
+    private EditTextUtil j = EditTextManager.getEditStringUtils();
     private String l = "";
     private EncryptRandomType m = EncryptRandomType.randomafter;
 
@@ -124,7 +124,7 @@ public class LongPwdInputWidget implements View.OnTouchListener, VISafeInputInte
                 }
                 LongPwdInputWidget.access$600(LongPwdInputWidget.this).OnTextChanged(LongPwdInputWidget.access$200(LongPwdInputWidget.this), charSequence.toString(), i, i2, i3);
                 if (LongPwdInputWidget.access$700(LongPwdInputWidget.this) != null) {
-                    if (TextUtils.isEmpty(charSequence)) {
+                    if (StringUtils.isEmpty(charSequence)) {
                         LongPwdInputWidget.access$700(LongPwdInputWidget.this).setEnabled(false);
                     } else {
                         LongPwdInputWidget.access$700(LongPwdInputWidget.this).setEnabled(true);
@@ -322,7 +322,7 @@ public class LongPwdInputWidget implements View.OnTouchListener, VISafeInputInte
             ipChange.ipc$dispatch("4500100e", new Object[]{longPwdInputWidget});
         } else if (!longPwdInputWidget.d.isEnabled()) {
         } else {
-            if (!TextUtils.isEmpty(longPwdInputWidget.d.getText()) && longPwdInputWidget.h != null && longPwdInputWidget.d.isFocused()) {
+            if (!StringUtils.isEmpty(longPwdInputWidget.d.getText()) && longPwdInputWidget.h != null && longPwdInputWidget.d.isFocused()) {
                 longPwdInputWidget.i = true;
                 longPwdInputWidget.d.setOnTouchListener(longPwdInputWidget);
                 longPwdInputWidget.d.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, longPwdInputWidget.h, (Drawable) null);

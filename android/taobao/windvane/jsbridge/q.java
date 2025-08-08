@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.List;
@@ -65,7 +65,7 @@ public class q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fc13657c", new Object[]{str, cls, new Boolean(z), map});
-        } else if (TextUtils.isEmpty(str) || cls == null) {
+        } else if (StringUtils.isEmpty(str) || cls == null) {
         } else {
             ClassLoader classLoader = null;
             if (z) {
@@ -133,7 +133,7 @@ public class q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d42056e", new Object[]{str, str2, classLoader});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             c.put(str, new a(str2, classLoader));
             if (android.taobao.windvane.monitor.o.getJsBridgeMonitor() == null) {
@@ -174,9 +174,9 @@ public class q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ee2b490", new Object[]{str, str2, str3, str4});
-        } else if (!c.containsKey(str3) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!c.containsKey(str3) || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             android.taobao.windvane.util.m.d("WVPluginManager", "registerAlias quit, this is no original plugin or alias is invalid.");
-        } else if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
+        } else if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4)) {
         } else {
             e.put(str + "::" + str2, str3 + "::" + str4);
         }
@@ -188,13 +188,13 @@ public class q {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("ebcaabf2", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             android.taobao.windvane.util.m.d("WVPluginManager", "getOriginalPlugin failed, alias is empty.");
             return null;
         }
         Map<String, String> map = e;
         String str3 = map.get(str + "::" + str2);
-        if (TextUtils.isEmpty(str3) || (indexOf = str3.indexOf("::")) <= 0) {
+        if (StringUtils.isEmpty(str3) || (indexOf = str3.indexOf("::")) <= 0) {
             return null;
         }
         String substring = str3.substring(0, indexOf);
@@ -228,7 +228,7 @@ public class q {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:36:0x0099, code lost:
-        if (android.text.TextUtils.isEmpty(r4) != false) goto L33;
+        if (android.text.StringUtils.isEmpty(r4) != false) goto L33;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -253,7 +253,7 @@ public class q {
                 @Override // android.taobao.windvane.jsbridge.c
                 public Class<? extends e> getBridgeClass(String str) {
                     ServiceInfo serviceInfo;
-                    if (android.taobao.windvane.config.a.f != null && !TextUtils.isEmpty(str)) {
+                    if (android.taobao.windvane.config.a.f != null && !StringUtils.isEmpty(str)) {
                         Intent intent = new Intent(str.contains(q.a().f1672a) ? q.a().f1672a : str);
                         intent.setPackage(android.taobao.windvane.config.a.f.getPackageName());
                         List<ResolveInfo> queryIntentServices = android.taobao.windvane.config.a.f.getPackageManager().queryIntentServices(intent, 4);

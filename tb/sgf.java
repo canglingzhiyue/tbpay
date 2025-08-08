@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.external.UCPManager;
@@ -51,7 +51,7 @@ public class sgf implements IContainerDataService.b {
             }
             UCPManager.b(jSONObject);
             c.a("PopUcpController", "register ltv pop plans: " + jSONObject.toJSONString());
-            if (!TextUtils.equals(str, "coldStart")) {
+            if (!StringUtils.equals(str, "coldStart")) {
                 return;
             }
             a();
@@ -63,7 +63,7 @@ public class sgf implements IContainerDataService.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("74bec7ed", new Object[]{this, lliVar, str, str2, str3});
-        } else if (!TextUtils.equals(str3, "coldStart")) {
+        } else if (!StringUtils.equals(str3, "coldStart")) {
         } else {
             a();
         }
@@ -76,7 +76,7 @@ public class sgf implements IContainerDataService.b {
             return;
         }
         Boolean bool = (Boolean) m.a().a("homeNetLowOptimization", Boolean.class);
-        if (bool != null && bool.booleanValue() && TextUtils.equals(ldc.a(), "l")) {
+        if (bool != null && bool.booleanValue() && StringUtils.equals(ldc.a(), "l")) {
             return;
         }
         UCPManager.a(JSONObject.parseObject("{\"Page_Home_Cold_Start_Ready\": {\"data\": \"true\"}}"), "Page_Home_Cold_Start");

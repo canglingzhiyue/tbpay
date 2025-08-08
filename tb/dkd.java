@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -46,7 +46,7 @@ public class dkd {
                 return null;
             }
             String str2 = new String(bytedata);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return null;
             }
             return b(str2);
@@ -136,7 +136,7 @@ public class dkd {
             Iterator<String> keys = jSONObject2.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                if (!TextUtils.isEmpty(next)) {
+                if (!StringUtils.isEmpty(next)) {
                     try {
                         j = Integer.parseInt(next);
                     } catch (NumberFormatException unused) {
@@ -191,7 +191,7 @@ public class dkd {
                 return dkl.EMPTY;
             }
             String optString = jSONObject2.optString("exp_hash_factor");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 return dkl.EMPTY;
             }
             long a2 = djy.a(this.b.a(jSONObject2.optString("exp_hash_key")), optString, optInt);
@@ -224,7 +224,7 @@ public class dkd {
             }
             long optLong = jSONObject2.optLong("exp_id", -1L);
             String optString = jSONObject2.optString("group_id");
-            if (optLong == -1 || TextUtils.isEmpty(optString)) {
+            if (optLong == -1 || StringUtils.isEmpty(optString)) {
                 return dkl.EMPTY;
             }
             String valueOf = String.valueOf(optLong);
@@ -250,7 +250,7 @@ public class dkd {
             }
             for (int i = 0; i < jSONArray.length(); i++) {
                 String optString = jSONArray.optString(i);
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     return false;
                 }
                 String[] split = optString.split(",");
@@ -303,7 +303,7 @@ public class dkd {
                 if (jSONArray.length() > 0) {
                     for (int i = 0; i < jSONArray.length(); i++) {
                         String string = jSONArray.getString(i);
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             try {
                                 z = Pattern.compile(string).matcher(this.c).matches();
                             } catch (PatternSyntaxException e) {

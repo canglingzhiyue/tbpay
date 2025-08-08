@@ -1,6 +1,6 @@
 package com.ali.user.open.history;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.config.ConfigManager;
 import com.ali.user.open.core.service.StorageService;
@@ -58,7 +58,7 @@ public class AccountHistoryManager {
                 } catch (Exception unused) {
                 }
                 try {
-                    if (TextUtils.isEmpty(dDpExValue)) {
+                    if (StringUtils.isEmpty(dDpExValue)) {
                         arrayList = new ArrayList();
                     } else {
                         arrayList = parseObject(dDpExValue);
@@ -103,7 +103,7 @@ public class AccountHistoryManager {
                 for (HistoryAccount historyAccount2 : historyAccounts) {
                     if (arrayList.size() >= ConfigManager.getInstance().getMaxHistoryAccount()) {
                         break;
-                    } else if (TextUtils.isEmpty(historyAccount2.userId) || !historyAccount2.userId.equals(historyAccount.userId)) {
+                    } else if (StringUtils.isEmpty(historyAccount2.userId) || !historyAccount2.userId.equals(historyAccount.userId)) {
                         arrayList.add(historyAccount2);
                     }
                 }
@@ -166,13 +166,13 @@ public class AccountHistoryManager {
             java.lang.Object r1 = r0.next()
             com.ali.user.open.history.HistoryAccount r1 = (com.ali.user.open.history.HistoryAccount) r1
             java.lang.String r2 = r1.nick
-            boolean r2 = android.text.TextUtils.equals(r4, r2)
+            boolean r2 = android.text.StringUtils.equals(r4, r2)
             if (r2 != 0) goto L46
             java.lang.String r2 = r1.email
-            boolean r2 = android.text.TextUtils.equals(r4, r2)
+            boolean r2 = android.text.StringUtils.equals(r4, r2)
             if (r2 != 0) goto L46
             java.lang.String r2 = r1.mobile
-            boolean r2 = android.text.TextUtils.equals(r4, r2)
+            boolean r2 = android.text.StringUtils.equals(r4, r2)
             if (r2 == 0) goto L22
         L46:
             return r1
@@ -189,7 +189,7 @@ public class AccountHistoryManager {
             return (List) ipChange.ipc$dispatch("17c249fc", new Object[]{this});
         }
         String dDpExValue = ((StorageService) AliMemberSDK.getService(StorageService.class)).getDDpExValue(HISTORY_LOGIN_ACCOUNTS);
-        if (TextUtils.isEmpty(dDpExValue)) {
+        if (StringUtils.isEmpty(dDpExValue)) {
             return new ArrayList();
         }
         try {
@@ -207,7 +207,7 @@ public class AccountHistoryManager {
             return (List) ipChange.ipc$dispatch("ab74704", new Object[]{this, str});
         }
         ArrayList arrayList = new ArrayList();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         JSONArray jSONArray = new JSONArray(str);

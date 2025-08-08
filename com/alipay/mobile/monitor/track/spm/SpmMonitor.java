@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alipay.android.msp.framework.statisticsv2.model.StEvent;
@@ -129,17 +129,17 @@ public enum SpmMonitor implements ISpmMonitor {
         hashMap.put(Constant.KEY_REFER_SPM, TrackerHelper.instance.getReferSpm(obj));
         TrackerHelper.TrackerParams trackerParams = TrackerHelper.instance.getTrackerParams(obj);
         if (trackerParams != null) {
-            if (!TextUtils.isEmpty(trackerParams.chInfo)) {
+            if (!StringUtils.isEmpty(trackerParams.chInfo)) {
                 hashMap.put("chInfo", trackerParams.chInfo);
             }
-            if (!TextUtils.isEmpty(trackerParams.lanInfo)) {
+            if (!StringUtils.isEmpty(trackerParams.lanInfo)) {
                 hashMap.put(Constant.KEY_LANINFO, trackerParams.lanInfo);
             }
-            if (!TextUtils.isEmpty(trackerParams.pageBack)) {
+            if (!StringUtils.isEmpty(trackerParams.pageBack)) {
                 hashMap.put(Constant.KEY_PAGEBACK, trackerParams.pageBack);
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("chInfo", str);
         }
         return hashMap;
@@ -175,7 +175,7 @@ public enum SpmMonitor implements ISpmMonitor {
 
     @Override // com.alipay.android.phone.wallet.spmtracker.ISpmMonitor
     public final void behaviorClick(Object obj, String str, String str2, int i, String str3, Map<String, String> map) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (!SpmTrackIntegrator.getInstance().isWithAutoTracker()) {
@@ -186,7 +186,7 @@ public enum SpmMonitor implements ISpmMonitor {
 
     @Override // com.alipay.android.phone.wallet.spmtracker.ISpmMonitor
     public final void behaviorExpose(Object obj, String str, String str2, int i, String str3, Map<String, String> map) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.e.commitTracker(new ExposeTracker(a(obj, str, str2, str3, i, map, new String[0])));
@@ -194,7 +194,7 @@ public enum SpmMonitor implements ISpmMonitor {
 
     @Override // com.alipay.android.phone.wallet.spmtracker.ISpmMonitor
     public final void behaviorSlide(Object obj, String str, String str2, int i, String str3, Map<String, String> map) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.e.commitTracker(new SlideTracker(a(obj, str, str2, i, map, new String[0])));
@@ -265,7 +265,7 @@ public enum SpmMonitor implements ISpmMonitor {
     @Override // com.alipay.android.phone.wallet.spmtracker.ISpmMonitor
     public final void mergeExpose(Object obj, String str, String str2, int i, String str3, Map<String, String> map, String str4, int i2) {
         SpmLogCator.debug(this.f5761a, "mergeExpose spmId:".concat(String.valueOf(str)));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         HashMap hashMap = map == null ? new HashMap() : map;
@@ -286,7 +286,7 @@ public enum SpmMonitor implements ISpmMonitor {
     public final void pageOnCreate(Object obj, String str) {
         SpmLogCator.debug(this.f5761a, "pageOnCreate spmId:".concat(String.valueOf(str)));
         this.f = new WeakReference<>(obj);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             SpmTrackIntegrator.getInstance().logPageStartWithSpmId(str, obj);
             TrackerHelper.instance.onPageCreate(obj);
         }
@@ -307,7 +307,7 @@ public enum SpmMonitor implements ISpmMonitor {
     public final void pageOnPause(Object obj, String str, String str2, Map<String, String> map, String str3) {
         String str4 = this.f5761a;
         SpmLogCator.debug(str4, "pageOnPause spmId:" + str + ";chInfo:" + str3);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             SpmTrackIntegrator.getInstance().logPageEndWithSpmId(str, obj, str2, a(obj, map, str3));
             MergeCenter.INSTANCE.commitImmediately(getPageId(obj));
         }
@@ -318,7 +318,7 @@ public enum SpmMonitor implements ISpmMonitor {
     @Override // com.alipay.android.phone.wallet.spmtracker.ISpmMonitor
     public final void pageOnResume(Object obj, String str) {
         SpmLogCator.debug(this.f5761a, "pageOnResume spmId:".concat(String.valueOf(str)));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             TrackerHelper.instance.checkIsPageBack(obj);
             SpmTrackIntegrator.getInstance().logPageStartWithSpmId(str, obj);
             TrackerHelper.instance.onPageResume(obj);

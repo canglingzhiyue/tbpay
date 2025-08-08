@@ -8,7 +8,7 @@ import android.taobao.windvane.file.a;
 import android.taobao.windvane.file.b;
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.g;
@@ -136,16 +136,16 @@ public class TBConfigManager {
             ipChange.ipc$dispatch("d7f2ec6a", new Object[]{this});
             return;
         }
-        c.a().b().e(TextUtils.equals("true", OrangeConfig.getInstance().getConfig("WindVane", "onlyBkpg", "true")));
-        c.a().b().f(TextUtils.equals("true", OrangeConfig.getInstance().getConfig("WindVane", "closeUCHA", "false")));
+        c.a().b().e(StringUtils.equals("true", OrangeConfig.getInstance().getConfig("WindVane", "onlyBkpg", "true")));
+        c.a().b().f(StringUtils.equals("true", OrangeConfig.getInstance().getConfig("WindVane", "closeUCHA", "false")));
         c.a().b().b(OrangeConfig.getInstance().getConfig("WindVane", "JSErrorRatio", sjn.DEFAULT_PLAY_RATE));
-        c.a().b().a(TextUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenAIT", "true"), "true"));
-        c.a().b().c(TextUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenH5PP", "true"), "true"));
-        c.a().b().d(TextUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenUserPP", "true"), "true"));
+        c.a().b().a(StringUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenAIT", "true"), "true"));
+        c.a().b().c(StringUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenH5PP", "true"), "true"));
+        c.a().b().d(StringUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenUserPP", "true"), "true"));
         c.a().b().a(OrangeConfig.getInstance().getConfig("WindVane", "fSPFilterAnimation", "true"));
-        c.a().b().b(TextUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenH5_2", "true"), "true"));
-        android.taobao.windvane.config.a.e = TextUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "newFireEvent", "true"), "true");
-        c.a().b().g(TextUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "filterIllegalUrl", "true"), "true"));
+        c.a().b().b(StringUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "isOpenH5_2", "true"), "true"));
+        android.taobao.windvane.config.a.e = StringUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "newFireEvent", "true"), "true");
+        c.a().b().g(StringUtils.equals(OrangeConfig.getInstance().getConfig("WindVane", "filterIllegalUrl", "true"), "true"));
         m.c("WVConfig", "Performance.Config = [" + c.a().b().toString() + riy.ARRAY_END_STR);
     }
 
@@ -166,7 +166,7 @@ public class TBConfigManager {
             return;
         }
         str = new String(b, "utf-8");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         m.c("WVConfig", "get windvane local config=[" + str + riy.ARRAY_END_STR);
@@ -174,14 +174,14 @@ public class TBConfigManager {
         if (split.length != 3) {
             return;
         }
-        if (TextUtils.isEmpty(split[0]) || !TextUtils.equals(android.taobao.windvane.config.a.a().i(), split[0])) {
+        if (StringUtils.isEmpty(split[0]) || !StringUtils.equals(android.taobao.windvane.config.a.a().i(), split[0])) {
             m.c("WVConfig", "skip local config for dispatching appVersion. require=[" + android.taobao.windvane.config.a.a().i() + "], real=[" + split[0] + riy.ARRAY_END_STR);
             return;
         }
-        if (!TextUtils.isEmpty(split[1])) {
+        if (!StringUtils.isEmpty(split[1])) {
             this.useOrange = split[1];
         }
-        if (TextUtils.isEmpty(split[2])) {
+        if (StringUtils.isEmpty(split[2])) {
             return;
         }
         try {

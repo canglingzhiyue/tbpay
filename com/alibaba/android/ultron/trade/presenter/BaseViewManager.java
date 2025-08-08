@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -227,7 +227,7 @@ public class BaseViewManager {
                 com.taobao.android.ultron.common.model.b bVar = list.get(i);
                 if (bVar != null) {
                     String type = bVar.getType();
-                    if (!TextUtils.isEmpty(type)) {
+                    if (!StringUtils.isEmpty(type)) {
                         bnaVar.a(a(bnaVar, iDMComponent, bVar, type));
                     }
                 }

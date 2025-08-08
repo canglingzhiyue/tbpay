@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class aqi {
                     byteArrayOutputStream.write(a(2, str.getBytes().length));
                     byteArrayOutputStream.write(str.getBytes());
                 }
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 byteArrayOutputStream.write(a(3, 0));
             } else {
                 byteArrayOutputStream.write(a(3, str.getBytes().length));
@@ -83,7 +83,7 @@ public class aqi {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("7d257bc5", new Object[]{str, new Boolean(z)})).booleanValue();
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 return false;
             } else {
                 if (z) {

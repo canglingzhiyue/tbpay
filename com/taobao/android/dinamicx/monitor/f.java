@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,7 +80,7 @@ public class f {
             jSONObject.put("perfName", (Object) this.f11903a);
             jSONObject.put("name", (Object) this.f11903a);
             jSONObject.put("platform", (Object) "Android");
-            if (!TextUtils.isEmpty(f.a())) {
+            if (!StringUtils.isEmpty(f.a())) {
                 jSONObject.put("sdkVersion", (Object) f.a());
             } else {
                 jSONObject.put("sdkVersion", (Object) "4.1.27.18");

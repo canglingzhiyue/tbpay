@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -368,13 +368,13 @@ public class fch extends a implements DESCErrorView.a {
             r1 = r2
             r5 = r1
         L6e:
-            boolean r8 = android.text.TextUtils.isEmpty(r1)
+            boolean r8 = android.text.StringUtils.isEmpty(r1)
             java.lang.String r0 = ", channel : "
             java.lang.String r4 = ", version : "
             if (r8 != 0) goto L84
-            boolean r8 = android.text.TextUtils.isEmpty(r2)
+            boolean r8 = android.text.StringUtils.isEmpty(r2)
             if (r8 != 0) goto L84
-            boolean r8 = android.text.TextUtils.isEmpty(r5)
+            boolean r8 = android.text.StringUtils.isEmpty(r5)
             if (r8 == 0) goto Laa
         L84:
             java.lang.String r1 = "mtop.taobao.wireless.home.awesome.itemdetail.recommend"
@@ -431,13 +431,13 @@ public class fch extends a implements DESCErrorView.a {
             return;
         }
         egx egxVar = this.g;
-        if (egxVar == null || TextUtils.isEmpty(egxVar.f27301a)) {
+        if (egxVar == null || StringUtils.isEmpty(egxVar.f27301a)) {
             return;
         }
         HashMap hashMap = new HashMap(2);
         hashMap.put("itemId", this.g.f27301a);
         hashMap.put("sellerId", this.g.b);
-        hashMap.put("from", TextUtils.isEmpty(this.g.d) ? kwk.REC_CUBE : this.g.d);
+        hashMap.put("from", StringUtils.isEmpty(this.g.d) ? kwk.REC_CUBE : this.g.d);
         JSONObject jSONObject = this.n;
         if (jSONObject != null) {
             hashMap.putAll(jSONObject);

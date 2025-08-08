@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -178,7 +178,7 @@ public class BaseWebViewActivity extends AppCompatActivity implements IWebViewCl
         super.onNewIntent(intent);
         try {
             String stringExtra = intent.getStringExtra("url");
-            if (TextUtils.isEmpty(stringExtra) && (data = getIntent().getData()) != null) {
+            if (StringUtils.isEmpty(stringExtra) && (data = getIntent().getData()) != null) {
                 stringExtra = data.getQueryParameter("url");
                 this.forceUcWebView = true;
                 SDKLogger.e(TAG, "read url fomr uri:");
@@ -230,13 +230,13 @@ public class BaseWebViewActivity extends AppCompatActivity implements IWebViewCl
         if (iWebViewProxy != null && iWebViewProxy.getWebView() != null) {
             frameLayout.addView(this.memberWebView.getWebView(), layoutParams);
             String stringExtra = getIntent().getStringExtra("url");
-            if (TextUtils.isEmpty(stringExtra) && (data = getIntent().getData()) != null) {
+            if (StringUtils.isEmpty(stringExtra) && (data = getIntent().getData()) != null) {
                 stringExtra = data.getQueryParameter("url");
                 SDKLogger.e(TAG, "read url fomr uri:");
             }
             String str = TAG;
             SDKLogger.d(str, "onCreate url=" + stringExtra);
-            if (KernelContext.checkServiceValid() && !TextUtils.isEmpty(stringExtra)) {
+            if (KernelContext.checkServiceValid() && !StringUtils.isEmpty(stringExtra)) {
                 if (!CommonUtils.isNetworkAvailable()) {
                     CommonUtils.toast("member_sdk_network_not_available_message");
                     return;
@@ -290,7 +290,7 @@ public class BaseWebViewActivity extends AppCompatActivity implements IWebViewCl
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("89757c7a", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (iWebViewProxy = this.memberWebView) == null) {
+        } else if (StringUtils.isEmpty(str) || (iWebViewProxy = this.memberWebView) == null) {
         } else {
             iWebViewProxy.loadUrl(str);
         }

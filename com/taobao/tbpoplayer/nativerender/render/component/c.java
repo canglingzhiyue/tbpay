@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.nativerender.render.component;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -101,7 +101,7 @@ public abstract class c<T extends ComponentBaseModel> {
             view.setPadding((int) l.a(a2, (float) styleModel.paddingLeft), (int) l.a(a2, (float) styleModel.paddingTop), (int) l.a(a2, (float) styleModel.paddingRight), (int) l.a(a2, (float) styleModel.paddingBottom));
             r.a(this.f22246a, view, this.b, styleModel);
             String a3 = p.a(this.f22246a, this.b.alt, false);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             view.setContentDescription(a3);
@@ -143,36 +143,36 @@ public abstract class c<T extends ComponentBaseModel> {
         }
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(b, b2);
         String str = styleModel.layout;
-        if (TextUtils.isEmpty(str) || "leftTop".equals(str)) {
+        if (StringUtils.isEmpty(str) || "leftTop".equals(str)) {
             layoutParams2.gravity = 51;
-            if (!TextUtils.isEmpty(styleModel.left)) {
+            if (!StringUtils.isEmpty(styleModel.left)) {
                 layoutParams2.leftMargin = a(styleModel.left);
             }
-            if (!TextUtils.isEmpty(styleModel.top)) {
+            if (!StringUtils.isEmpty(styleModel.top)) {
                 layoutParams2.topMargin = a(styleModel.top);
             }
         } else if ("leftBottom".equals(str)) {
             layoutParams2.gravity = 83;
-            if (!TextUtils.isEmpty(styleModel.left)) {
+            if (!StringUtils.isEmpty(styleModel.left)) {
                 layoutParams2.leftMargin = a(styleModel.left);
             }
-            if (!TextUtils.isEmpty(styleModel.bottom)) {
+            if (!StringUtils.isEmpty(styleModel.bottom)) {
                 layoutParams2.bottomMargin = a(styleModel.bottom);
             }
         } else if ("rightTop".equals(str)) {
             layoutParams2.gravity = 53;
-            if (!TextUtils.isEmpty(styleModel.right)) {
+            if (!StringUtils.isEmpty(styleModel.right)) {
                 layoutParams2.rightMargin = a(styleModel.right);
             }
-            if (!TextUtils.isEmpty(styleModel.top)) {
+            if (!StringUtils.isEmpty(styleModel.top)) {
                 layoutParams2.topMargin = a(styleModel.top);
             }
         } else if ("rightBottom".equals(str)) {
             layoutParams2.gravity = 85;
-            if (!TextUtils.isEmpty(styleModel.right)) {
+            if (!StringUtils.isEmpty(styleModel.right)) {
                 layoutParams2.rightMargin = a(styleModel.right);
             }
-            if (!TextUtils.isEmpty(styleModel.bottom)) {
+            if (!StringUtils.isEmpty(styleModel.bottom)) {
                 layoutParams2.bottomMargin = a(styleModel.bottom);
             }
         }
@@ -299,7 +299,7 @@ public abstract class c<T extends ComponentBaseModel> {
 
     public boolean a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(str) && str.equals(this.b.id);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(str) && str.equals(this.b.id);
     }
 
     private void i() {
@@ -310,7 +310,7 @@ public abstract class c<T extends ComponentBaseModel> {
         }
         this.f22246a.e().a(this.f22246a, "expose", this.b.animation, this.c, this.b, (l.b) null);
         String str = this.f22246a.a().k().focusComponent;
-        if (TextUtils.isEmpty(str) || !str.equals(this.b.id)) {
+        if (StringUtils.isEmpty(str) || !str.equals(this.b.id)) {
             return;
         }
         this.f22246a.a(new Runnable() { // from class: com.taobao.tbpoplayer.nativerender.render.component.-$$Lambda$c$PDBItpmNLRc6bxeafy2EEkrCcIw

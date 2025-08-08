@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.AttributionReporter;
@@ -43,13 +43,13 @@ public class TBRunTimePermission extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, REQUEST_PERMISSION_API_NAME)) {
+        if (StringUtils.equals(str, REQUEST_PERMISSION_API_NAME)) {
             requestPermission(str2, wVCallBackContext);
             return true;
-        } else if (TextUtils.equals(str, REQUEST_BIZ_PERMISSION_API_NAME)) {
+        } else if (StringUtils.equals(str, REQUEST_BIZ_PERMISSION_API_NAME)) {
             requestBizPermission(str2, wVCallBackContext);
             return true;
-        } else if (!TextUtils.equals(str, CHECK_PERMISSION_API_NAME)) {
+        } else if (!StringUtils.equals(str, CHECK_PERMISSION_API_NAME)) {
             return false;
         } else {
             checkPermission(str2, wVCallBackContext);

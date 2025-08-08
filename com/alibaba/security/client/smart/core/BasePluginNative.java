@@ -1,7 +1,7 @@
 package com.alibaba.security.client.smart.core;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.client.smart.core.model.BaseNativeInitModel;
 import com.alibaba.security.client.smart.core.model.BaseNativePredictModel;
@@ -27,7 +27,7 @@ public abstract class BasePluginNative<N extends BaseNativeInitModel, P extends 
         this.mPid = str2;
         if (isTestMode) {
             this.mIsSoLoadSuccess = true;
-        } else if (TextUtils.isEmpty(libName())) {
+        } else if (StringUtils.isEmpty(libName())) {
             this.mIsSoLoadSuccess = true;
         } else {
             try {

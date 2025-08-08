@@ -6,7 +6,7 @@ import android.taobao.windvane.config.j;
 import android.taobao.windvane.export.network.e;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.Request;
 import anetwork.channel.entity.RequestImpl;
@@ -93,20 +93,20 @@ public class WVPrefetchTrigger {
         map.put("X-Requested-With", "com.taobao.taobao");
         StringBuilder sb = new StringBuilder();
         j.a();
-        if (!TextUtils.isEmpty(j.commonConfig.aJ)) {
+        if (!StringUtils.isEmpty(j.commonConfig.aJ)) {
             j.a();
             sb.append(j.commonConfig.aJ);
         }
         String h = android.taobao.windvane.config.a.a().h();
         String i = android.taobao.windvane.config.a.a().i();
-        if (!TextUtils.isEmpty(h) && !TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(h) && !StringUtils.isEmpty(i)) {
             sb.append(" AliApp(");
             sb.append(h);
             sb.append("/");
             sb.append(i);
             sb.append(riy.BRACKET_END_STR);
         }
-        if (!TextUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
+        if (!StringUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
             sb.append(" TTID/");
             sb.append(android.taobao.windvane.config.a.a().b());
         }

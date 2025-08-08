@@ -1,6 +1,6 @@
 package com.taobao.pha.core.controller;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.jsbridge.c;
@@ -117,6 +117,6 @@ public class b {
 
     private boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && !"AppWorker".equals(str) && !"TabBar".equals(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && !"AppWorker".equals(str) && !"TabBar".equals(str);
     }
 }

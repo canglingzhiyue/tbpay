@@ -3,7 +3,7 @@ package com.alipay.mobile.common.transport.httpdns;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.android.phone.mobilesdk.socketcraft.monitor.MonitorItemConstants;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
@@ -215,7 +215,7 @@ public class HttpDns {
             return (String) ipChange.ipc$dispatch("9064aa65", new Object[]{this, new Integer(i)});
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = b(i);
         }
         if (DnsUtil.isUseSign()) {
@@ -240,11 +240,11 @@ public class HttpDns {
             if (queryLocalIPByHost != null) {
                 return a(i, queryLocalIPByHost);
             }
-            if (!TextUtils.isEmpty(MpaasPropertiesUtil.getWorkspaceId(TransportEnvUtil.getContext()))) {
+            if (!StringUtils.isEmpty(MpaasPropertiesUtil.getWorkspaceId(TransportEnvUtil.getContext()))) {
                 return this.httpServerUrl;
             }
             String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.HTTP_DNS_AMDC_IP);
-            if (TextUtils.isEmpty(stringValue)) {
+            if (StringUtils.isEmpty(stringValue)) {
                 return this.httpServerUrl;
             }
             String str = k.HTTP_PREFIX + stringValue + ":" + String.valueOf(this.httpdns_port) + this.path;
@@ -300,7 +300,7 @@ public class HttpDns {
                 return "";
             }
             String httpdnsServerUrl = DnsUtil.getHttpdnsServerUrl(this.f);
-            if (TextUtils.isEmpty(httpdnsServerUrl)) {
+            if (StringUtils.isEmpty(httpdnsServerUrl)) {
                 return null;
             }
             String host = new URL(httpdnsServerUrl).getHost();
@@ -411,7 +411,7 @@ public class HttpDns {
             strategyRequest.setS(configSelector.ordinal());
             LogCatUtil.debug(TAG, "Request Opt:" + configSelector);
         }
-        if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.HTTP_DNS_V2), "T")) {
+        if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.HTTP_DNS_V2), "T")) {
             strategyRequest.setDg(DnsUtil.getDomainGroup());
         } else {
             List<String> domains = getDomains();
@@ -422,14 +422,14 @@ public class HttpDns {
             }
         }
         String lastUserId = UserInfoUtil.getLastUserId();
-        if (TextUtils.isEmpty(lastUserId)) {
+        if (StringUtils.isEmpty(lastUserId)) {
             lastUserId = DnsEnv.getInstance().getAmdcUid();
         }
-        if (!TextUtils.isEmpty(lastUserId)) {
+        if (!StringUtils.isEmpty(lastUserId)) {
             strategyRequest.setUid(lastUserId);
         }
         String tradeNo = DnsEnv.getInstance().getTradeNo();
-        if (!TextUtils.isEmpty(tradeNo)) {
+        if (!StringUtils.isEmpty(tradeNo)) {
             strategyRequest.setTradeNo(tradeNo);
         }
         strategyRequest.setClientVersion(a(this.f));
@@ -439,11 +439,11 @@ public class HttpDns {
             LogCatUtil.error(TAG, e);
         }
         String wsid = DnsUtil.getWsid();
-        if (!TextUtils.isEmpty(wsid)) {
+        if (!StringUtils.isEmpty(wsid)) {
             strategyRequest.setWsid(wsid);
         }
         String configVersion = DnsUtil.getConfigVersion();
-        if (!TextUtils.isEmpty(configVersion)) {
+        if (!StringUtils.isEmpty(configVersion)) {
             strategyRequest.setConfigVersion(configVersion);
         }
         strategyRequest.setNetType(NetworkUtils.getNetworkType(this.f));
@@ -532,7 +532,7 @@ public class HttpDns {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("834e111b", new Object[]{this, str, configSelector});
-        } else if (TextUtils.isEmpty(str) || configSelector == ConfigSelector.GET_IPLIST_ONLY) {
+        } else if (StringUtils.isEmpty(str) || configSelector == ConfigSelector.GET_IPLIST_ONLY) {
         } else {
             NetworkAsyncTaskExecutor.executeLowPri(new Runnable() { // from class: com.alipay.mobile.common.transport.httpdns.HttpDns.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -584,7 +584,7 @@ public class HttpDns {
                 monitorLoggerModel.getExtPramas().put("APP_SYS_ID", context.getPackageName());
                 monitorLoggerModel.getExtPramas().put("x-appid", DnsUtil.getAppId());
             }
-            if (!TextUtils.isEmpty(DnsUtil.getConfigVersion())) {
+            if (!StringUtils.isEmpty(DnsUtil.getConfigVersion())) {
                 monitorLoggerModel.getExtPramas().put("CONFIGVER", DnsUtil.getConfigVersion());
             }
             if (MiscUtils.isAtFrontDesk(TransportEnvUtil.getContext())) {
@@ -592,11 +592,11 @@ public class HttpDns {
             } else {
                 monitorLoggerModel.getExtPramas().put(RPCDataItems.GROUND, Constrant.ChangeType.BG);
             }
-            if (!TextUtils.isEmpty(this.b)) {
+            if (!StringUtils.isEmpty(this.b)) {
                 monitorLoggerModel.getExtPramas().put("ERROR", this.b);
             }
             String localIPv6Address = NetworkUtils.getLocalIPv6Address();
-            if (!TextUtils.isEmpty(localIPv6Address)) {
+            if (!StringUtils.isEmpty(localIPv6Address)) {
                 monitorLoggerModel.getExtPramas().put("IPv6", localIPv6Address);
             }
             this.fail = false;
@@ -833,7 +833,7 @@ public class HttpDns {
                 return (String) ipChange.ipc$dispatch("d02517fc", new Object[]{this});
             }
             try {
-                if (!TextUtils.isEmpty(this.cname)) {
+                if (!StringUtils.isEmpty(this.cname)) {
                     return getIps()[0];
                 }
                 return this.f5583a;
@@ -935,7 +935,7 @@ public class HttpDns {
             } catch (Throwable th) {
                 LogCatUtil.error(HttpDns.TAG, "getHttpdnsIpEntrys ex:" + th.toString());
             }
-            if (!TextUtils.isEmpty(this.cname)) {
+            if (!StringUtils.isEmpty(this.cname)) {
                 InetAddress[] allByName = DnsUtil.getAllByName(this.cname);
                 HttpdnsIPEntry[] httpdnsIPEntryArr = new HttpdnsIPEntry[allByName.length];
                 for (int i = 0; i < allByName.length; i++) {
@@ -1138,7 +1138,7 @@ public class HttpDns {
             if (ipChange instanceof IpChange) {
                 return (InetAddress[]) ipChange.ipc$dispatch("a258dab1", new Object[]{this, str});
             }
-            if (TextUtils.equals("T", TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.IPRANK_MODEL_SWITCH))) {
+            if (StringUtils.equals("T", TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.IPRANK_MODEL_SWITCH))) {
                 return DnsUtil.getAllByName(str);
             }
             return a(str);
@@ -1150,10 +1150,10 @@ public class HttpDns {
                 return (InetAddress[]) ipChange.ipc$dispatch("b1904efc", new Object[]{this, str, transportContext});
             }
             String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.IPRANK_H5_SWITCH);
-            if (transportContext != null && transportContext.bizType == 2 && !TextUtils.equals("T", stringValue)) {
+            if (transportContext != null && transportContext.bizType == 2 && !StringUtils.equals("T", stringValue)) {
                 LogCatUtil.debug(HttpDns.TAG, "H5 don't use ip rank");
                 return a(str);
-            } else if (TextUtils.equals("T", TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.IPRANK_MODEL_SWITCH))) {
+            } else if (StringUtils.equals("T", TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.IPRANK_MODEL_SWITCH))) {
                 return DnsUtil.getAllByName(str);
             } else {
                 return a(str);

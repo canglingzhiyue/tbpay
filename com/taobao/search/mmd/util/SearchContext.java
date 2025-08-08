@@ -2,7 +2,7 @@ package com.taobao.search.mmd.util;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -36,13 +36,13 @@ public class SearchContext implements Parcelable {
         this.inShopCompassDisplayQuery = "";
         this.lastCompassTitle = "";
         String d = g.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             map.put(noa.KEY_EDITION_CODE, d);
         }
         initBlackList();
         handleParams(map);
         String str = map.get("q");
-        this.inShopCompassDisplayQuery = TextUtils.isEmpty(str) ? "" : str;
+        this.inShopCompassDisplayQuery = StringUtils.isEmpty(str) ? "" : str;
     }
 
     private SearchContext() {
@@ -65,14 +65,14 @@ public class SearchContext implements Parcelable {
         while (it.hasNext()) {
             String next = it.next();
             String remove = map.remove(next);
-            if (!TextUtils.isEmpty(remove)) {
+            if (!StringUtils.isEmpty(remove)) {
                 this.mLocalParams.put(next, remove);
             }
         }
         this.mWsearchParams.putAll(map);
         rewriteKeywordValue();
         String wsearchParam = getWsearchParam("catId");
-        if (!TextUtils.isEmpty(wsearchParam)) {
+        if (!StringUtils.isEmpty(wsearchParam)) {
             this.mWsearchParams.put(noa.KEY_CATMAP, wsearchParam);
         }
         this.mLocalParams.putAll(c.a(this.mLocalParams.get(KEY_BIZARGS)));
@@ -96,11 +96,11 @@ public class SearchContext implements Parcelable {
     private void rewriteKeywordValue() {
         String wsearchParam = getWsearchParam("q");
         String remove = this.mWsearchParams.remove("query");
-        if (!TextUtils.isEmpty(remove)) {
+        if (!StringUtils.isEmpty(remove)) {
             wsearchParam = remove;
         }
         String remove2 = this.mWsearchParams.remove("search");
-        if (!TextUtils.isEmpty(remove2)) {
+        if (!StringUtils.isEmpty(remove2)) {
             wsearchParam = remove2;
         }
         HashMap<String, String> hashMap = this.mWsearchParams;

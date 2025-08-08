@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -286,15 +286,15 @@ public class UserLoginActivity extends BaseActivity {
         this.startTime = System.currentTimeMillis();
         if (intent != null) {
             try {
-                this.isOpenMobileLoginPage = TextUtils.equals(intent.getStringExtra(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.PAGE_SMS_LOGIN);
-                this.isOpenUserLoginPage = TextUtils.equals(intent.getStringExtra(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.PAGE_PWD_LOGIN);
+                this.isOpenMobileLoginPage = StringUtils.equals(intent.getStringExtra(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.PAGE_SMS_LOGIN);
+                this.isOpenUserLoginPage = StringUtils.equals(intent.getStringExtra(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.PAGE_PWD_LOGIN);
                 this.isFromAddAccount = intent.getBooleanExtra(LoginConstant.FORM_ADD_ACCOUNT, false);
                 String stringExtra = intent.getStringExtra(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
-                if (!TextUtils.isEmpty(stringExtra) && (loginParam = (LoginParam) JSON.parseObject(stringExtra, LoginParam.class)) != null) {
+                if (!StringUtils.isEmpty(stringExtra) && (loginParam = (LoginParam) JSON.parseObject(stringExtra, LoginParam.class)) != null) {
                     this.mSource = loginParam.source;
                 }
                 String stringExtra2 = intent.getStringExtra(LoginConstant.APPLAUNCH_INFO);
-                if (!TextUtils.isEmpty(stringExtra2)) {
+                if (!StringUtils.isEmpty(stringExtra2)) {
                     this.fireAppLaunchRes = (AppLaunchInfoResponseData) JSON.parseObject(stringExtra2, AppLaunchInfoResponseData.class);
                 }
             } catch (Throwable unused) {
@@ -362,7 +362,7 @@ public class UserLoginActivity extends BaseActivity {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 loginParam = (LoginParam) JSON.parseObject(stringExtra, LoginParam.class);
                 loginHistory = SecurityGuardManagerWraper.getLoginHistory();
                 this.hadReadHistory = true;
@@ -380,7 +380,7 @@ public class UserLoginActivity extends BaseActivity {
                     this.mHistoryAccount = null;
                 }
                 historyAccount = this.mHistoryAccount;
-                if (historyAccount != null && !TextUtils.isEmpty(historyAccount.biometricId)) {
+                if (historyAccount != null && !StringUtils.isEmpty(historyAccount.biometricId)) {
                     this.mBiometricToken = SecurityGuardManagerWraper.getFingerValue(this.mHistoryAccount.biometricId);
                 }
                 return loginHistory;
@@ -433,7 +433,7 @@ public class UserLoginActivity extends BaseActivity {
         HistoryAccount historyAccount = this.mHistoryAccount;
         if (historyAccount != null) {
             if (this.isOpenMobileLoginPage) {
-                if (TextUtils.isEmpty(historyAccount.loginPhone)) {
+                if (StringUtils.isEmpty(historyAccount.loginPhone)) {
                     intent.putExtra(LoginConstant.FORCE_NORMAL_MODE, true);
                 }
                 gotoHistorySmsLoginPage(intent);
@@ -447,16 +447,16 @@ public class UserLoginActivity extends BaseActivity {
             } else if (DataProviderFactory.getDataProvider().alwaysSMSLoginPriority()) {
                 gotoMobileLoginFragment(intent);
                 return;
-            } else if (TextUtils.equals(this.mHistoryAccount.loginType, LoginType.ServerLoginType.SMSLogin.getType())) {
+            } else if (StringUtils.equals(this.mHistoryAccount.loginType, LoginType.ServerLoginType.SMSLogin.getType())) {
                 gotoHistorySmsLoginPage(intent);
                 return;
-            } else if (TextUtils.equals(this.mHistoryAccount.loginType, LoginType.ServerLoginType.PasswordLogin.getType())) {
+            } else if (StringUtils.equals(this.mHistoryAccount.loginType, LoginType.ServerLoginType.PasswordLogin.getType())) {
                 if (this.mHistoryAccount.hasPwd != 1) {
                     intent.putExtra(LoginConstant.FORCE_NORMAL_MODE, true);
                 }
                 gotoPwdLoginFragment(intent);
                 return;
-            } else if (DataProviderFactory.getDataProvider().isSmsLoginPriority() && !TextUtils.isEmpty(this.mHistoryAccount.loginPhone)) {
+            } else if (DataProviderFactory.getDataProvider().isSmsLoginPriority() && !StringUtils.isEmpty(this.mHistoryAccount.loginPhone)) {
                 gotoHistorySmsLoginPage(intent);
                 return;
             } else if (this.mHistoryAccount.hasPwd == 0) {
@@ -482,9 +482,9 @@ public class UserLoginActivity extends BaseActivity {
         try {
             if (LoginSwitch.isInABTestRegion(LoginSwitch.ONEKEY_LOGIN_HISTORY_PERCENT, 10000) && ServiceFactory.getService(NumberAuthService.class) != null) {
                 String mobileFromHistory = getMobileFromHistory();
-                if (!TextUtils.isEmpty(mobileFromHistory)) {
+                if (!StringUtils.isEmpty(mobileFromHistory)) {
                     String maskMobile = getMaskMobile();
-                    if (!TextUtils.isEmpty(maskMobile) && maskMobile.length() > 7 && isCompareSuccess(mobileFromHistory, maskMobile)) {
+                    if (!StringUtils.isEmpty(maskMobile) && maskMobile.length() > 7 && isCompareSuccess(mobileFromHistory, maskMobile)) {
                         gotoOneKeyHistoryLoginFragment(intent);
                         return;
                     }
@@ -524,7 +524,7 @@ public class UserLoginActivity extends BaseActivity {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e6fec147", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && str2.length() > 7) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && str2.length() > 7) {
             return str.endsWith(str2.substring(str2.lastIndexOf("*") + 1));
         }
         return false;
@@ -667,13 +667,13 @@ public class UserLoginActivity extends BaseActivity {
             if (r13 != 0) goto L71
             com.ali.user.mobile.rpc.HistoryAccount r13 = r14.mHistoryAccount     // Catch: java.lang.Exception -> L46
             java.lang.String r13 = r13.loginPhone     // Catch: java.lang.Exception -> L46
-            boolean r13 = android.text.TextUtils.isEmpty(r13)     // Catch: java.lang.Exception -> L46
+            boolean r13 = android.text.StringUtils.isEmpty(r13)     // Catch: java.lang.Exception -> L46
             if (r13 == 0) goto L71
             goto L7d
         L71:
             com.ali.user.mobile.rpc.HistoryAccount r13 = r14.mHistoryAccount     // Catch: java.lang.Exception -> L46
             java.lang.String r13 = r13.mobile     // Catch: java.lang.Exception -> L46
-            boolean r13 = android.text.TextUtils.isEmpty(r13)     // Catch: java.lang.Exception -> L46
+            boolean r13 = android.text.StringUtils.isEmpty(r13)     // Catch: java.lang.Exception -> L46
             if (r13 == 0) goto L7c
             goto L7d
         L7c:
@@ -691,7 +691,7 @@ public class UserLoginActivity extends BaseActivity {
             r13.putBoolean(r5, r9)     // Catch: java.lang.Exception -> L46
             r13.putString(r4, r8)     // Catch: java.lang.Exception -> L46
             r13.putBoolean(r1, r12)     // Catch: java.lang.Exception -> L46
-            boolean r0 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L46
+            boolean r0 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L46
             if (r0 != 0) goto Lb0
             r13.putBoolean(r2, r11)     // Catch: java.lang.Exception -> L46
             java.lang.String r0 = "startTime"
@@ -820,7 +820,7 @@ public class UserLoginActivity extends BaseActivity {
             r11.putBoolean(r8, r10)     // Catch: java.lang.Exception -> L4a
             r11.putInt(r4, r15)     // Catch: java.lang.Exception -> L4a
             r11.putString(r7, r13)     // Catch: java.lang.Exception -> L4a
-            boolean r3 = android.text.TextUtils.isEmpty(r9)     // Catch: java.lang.Exception -> L4a
+            boolean r3 = android.text.StringUtils.isEmpty(r9)     // Catch: java.lang.Exception -> L4a
             if (r3 != 0) goto L9a
             r11.putBoolean(r5, r14)     // Catch: java.lang.Exception -> L4a
             java.lang.String r3 = "startTime"
@@ -866,7 +866,7 @@ public class UserLoginActivity extends BaseActivity {
             if (CountryUtil.supportOverseaSimLogin(this.fireAppLaunchRes)) {
                 LoginTLogAdapter.e(TAG, "fromOversea priority pwd");
                 intent.putExtra("supportOverseaSimLogin", true);
-                if (TextUtils.isEmpty(stringExtra)) {
+                if (StringUtils.isEmpty(stringExtra)) {
                     intent.putExtra(LoginConstant.CURRENT_LOGIN_MODE_STATE, LoginModeState.SMS_LOGIN.name());
                 }
             }
@@ -942,7 +942,7 @@ public class UserLoginActivity extends BaseActivity {
             this.mTopRectangle.setBackgroundColor(getResources().getColor(R.color.aliuser_oversea_color));
             String country = LanguageUtil.getCountry();
             String regBgImage = getRegBgImage(this.fireAppLaunchRes);
-            if (!TextUtils.isEmpty(regBgImage) && LoginSwitch.getSwitch("use_server_image", "true")) {
+            if (!StringUtils.isEmpty(regBgImage) && LoginSwitch.getSwitch("use_server_image", "true")) {
                 ImageUtil.updateBackground(this.mTopRectangle, regBgImage);
                 return;
             }
@@ -1032,7 +1032,7 @@ public class UserLoginActivity extends BaseActivity {
         FragmentManager fragmentManager = this.mFragmentManager;
         if (fragmentManager != null && !fragmentManager.isDestroyed()) {
             LoginApprearanceExtensions appreanceExtentions = AliUserLogin.getAppreanceExtentions();
-            if (appreanceExtentions != null && appreanceExtentions.getFullyCustomizeGuideFragment() != null && this.supportTaobaoOrAlipay && !TextUtils.equals(this.mCurrentFragmentTag, FragmentConstant.GUIDE_FRAGMENT_TAG) && this.mOpenGuide) {
+            if (appreanceExtentions != null && appreanceExtentions.getFullyCustomizeGuideFragment() != null && this.supportTaobaoOrAlipay && !StringUtils.equals(this.mCurrentFragmentTag, FragmentConstant.GUIDE_FRAGMENT_TAG) && this.mOpenGuide) {
                 gotoGuideFragment(null, AliUserLogin.getAppreanceExtentions());
                 return;
             }
@@ -1428,7 +1428,7 @@ public class UserLoginActivity extends BaseActivity {
         }
         String stringExtra = intent.getStringExtra(LoginConstant.TARGET_HID);
         HistoryAccount historyAccount = this.mHistoryAccount;
-        if (!TextUtils.isEmpty(stringExtra) && (loginHistory = this.mLoginHistory) != null) {
+        if (!StringUtils.isEmpty(stringExtra) && (loginHistory = this.mLoginHistory) != null) {
             historyAccount = SecurityGuardManagerWraper.getTargetAccount(loginHistory, stringExtra);
             this.mHistoryAccount = historyAccount;
         }
@@ -1468,13 +1468,13 @@ public class UserLoginActivity extends BaseActivity {
             return;
         }
         RegionInfo currentRegion = DataProviderFactory.getDataProvider().getCurrentRegion();
-        if (!TextUtils.isEmpty(appLaunchInfo.countryCode)) {
+        if (!StringUtils.isEmpty(appLaunchInfo.countryCode)) {
             currentRegion.domain = appLaunchInfo.countryCode;
         }
-        if (!TextUtils.isEmpty(appLaunchInfo.phoneCode)) {
+        if (!StringUtils.isEmpty(appLaunchInfo.phoneCode)) {
             currentRegion.code = appLaunchInfo.phoneCode;
         }
-        if (TextUtils.isEmpty(appLaunchInfo.checkPattern)) {
+        if (StringUtils.isEmpty(appLaunchInfo.checkPattern)) {
             return;
         }
         currentRegion.checkPattern = appLaunchInfo.checkPattern;
@@ -1514,7 +1514,7 @@ public class UserLoginActivity extends BaseActivity {
             java.lang.String r2 = ""
             java.lang.String r2 = r0.getString(r1, r2)
             r3 = 0
-            boolean r4 = android.text.TextUtils.isEmpty(r2)
+            boolean r4 = android.text.StringUtils.isEmpty(r2)
             if (r4 != 0) goto L40
             java.lang.Class<com.ali.user.mobile.login.model.AppLaunchList> r4 = com.ali.user.mobile.login.model.AppLaunchList.class
             java.lang.Object r2 = com.alibaba.fastjson.JSON.parseObject(r2, r4)     // Catch: java.lang.Throwable -> L3c
@@ -1570,20 +1570,20 @@ public class UserLoginActivity extends BaseActivity {
             return null;
         }
         String string = DataProviderFactory.getApplicationContext().getSharedPreferences(LoginConstant.FILE_NAME, 0).getString("preinfo", "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             LoginTLogAdapter.e(TAG, "prelogininfo: key=" + str + ",list = " + string);
             try {
                 AppLaunchList appLaunchList = (AppLaunchList) JSON.parseObject(string, AppLaunchList.class);
                 if (appLaunchList != null && appLaunchList.launchData != null && appLaunchList.launchData.size() > 0) {
                     for (String str2 : appLaunchList.launchData.keySet()) {
-                        if (TextUtils.equals(str2, str)) {
+                        if (StringUtils.equals(str2, str)) {
                             LoginTLogAdapter.e(TAG, "prelogininfo: hit key " + str);
                             AppLaunchInfoResponseData appLaunchInfoResponseData = appLaunchList.launchData.get(str);
                             if (appLaunchInfoResponseData.returnValue == 0) {
                                 return null;
                             }
                             String appVersion = AppInfo.getInstance().getAppVersion();
-                            if (!TextUtils.equals(appVersion, appLaunchInfoResponseData.appVersion)) {
+                            if (!StringUtils.equals(appVersion, appLaunchInfoResponseData.appVersion)) {
                                 LoginTLogAdapter.e(TAG, "prelogininfo:  expired!" + str + ",old appVersion= " + appLaunchInfoResponseData.appVersion + ", new AppVersion =" + appVersion);
                                 return null;
                             } else if (System.currentTimeMillis() / 1000 < appLaunchInfoResponseData.calTime) {
@@ -1631,7 +1631,7 @@ public class UserLoginActivity extends BaseActivity {
             return (Properties) ipChange.ipc$dispatch("6e56c23", new Object[]{this, intent});
         }
         Properties properties = new Properties();
-        if (intent != null && !TextUtils.isEmpty(intent.getStringExtra("scene"))) {
+        if (intent != null && !StringUtils.isEmpty(intent.getStringExtra("scene"))) {
             properties.put("pn_scene", intent.getStringExtra("scene"));
         }
         return properties;
@@ -1719,7 +1719,7 @@ public class UserLoginActivity extends BaseActivity {
                 th.printStackTrace();
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UserTrackAdapter.sendUT(UTConstans.CustomEvent.UT_SIM_NOT_INTENT_EMPTY);
             return false;
         } else if (ServiceFactory.getService(NumberAuthService.class) != null) {
@@ -1754,7 +1754,7 @@ public class UserLoginActivity extends BaseActivity {
                 th.printStackTrace();
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -1766,12 +1766,12 @@ public class UserLoginActivity extends BaseActivity {
             return false;
         }
         String str2 = authInfoMap.get("number");
-        if (!TextUtils.isEmpty(str2) && str2.length() > 7) {
+        if (!StringUtils.isEmpty(str2) && str2.length() > 7) {
             String substring = str2.substring(str2.lastIndexOf("*") + 1);
-            if (!TextUtils.isEmpty(this.mHistoryAccount.loginPhone) && this.mHistoryAccount.loginPhone.endsWith(substring)) {
+            if (!StringUtils.isEmpty(this.mHistoryAccount.loginPhone) && this.mHistoryAccount.loginPhone.endsWith(substring)) {
                 return true;
             }
-            if (!TextUtils.isEmpty(this.mHistoryAccount.mobile)) {
+            if (!StringUtils.isEmpty(this.mHistoryAccount.mobile)) {
                 if (this.mHistoryAccount.mobile.endsWith(substring)) {
                     return true;
                 }
@@ -1923,6 +1923,6 @@ public class UserLoginActivity extends BaseActivity {
     public boolean shouldShowLoginBenefit() {
         AppLaunchInfoResponseData appLaunchInfoResponseData;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f4f839e9", new Object[]{this})).booleanValue() : (DataProviderFactory.getDataProvider().isForigenLocation() || (appLaunchInfoResponseData = this.fireAppLaunchRes) == null || appLaunchInfoResponseData.returnValue == 0 || ((AppLaunchInfo) this.fireAppLaunchRes.returnValue).loginPageInfo == null || TextUtils.isEmpty(((AppLaunchInfo) this.fireAppLaunchRes.returnValue).loginPageInfo.benefitTitle)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f4f839e9", new Object[]{this})).booleanValue() : (DataProviderFactory.getDataProvider().isForigenLocation() || (appLaunchInfoResponseData = this.fireAppLaunchRes) == null || appLaunchInfoResponseData.returnValue == 0 || ((AppLaunchInfo) this.fireAppLaunchRes.returnValue).loginPageInfo == null || StringUtils.isEmpty(((AppLaunchInfo) this.fireAppLaunchRes.returnValue).loginPageInfo.benefitTitle)) ? false : true;
     }
 }

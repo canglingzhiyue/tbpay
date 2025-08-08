@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -24,7 +24,7 @@ public class opy {
         }
         JSONObject jSONObject = new JSONObject();
         for (opz opzVar : this.f32272a) {
-            if (!TextUtils.isEmpty(opzVar.b())) {
+            if (!StringUtils.isEmpty(opzVar.b())) {
                 jSONObject.put(opzVar.a(), (Object) opzVar.b());
             }
         }

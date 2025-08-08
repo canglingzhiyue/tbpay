@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -78,7 +78,7 @@ public class qmt extends af {
         }
         final TextView textView = (TextView) view;
         textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        textView.setEllipsize(StringUtils.TruncateAt.MARQUEE);
         textView.setHorizontallyScrolling(true);
         textView.setMarqueeRepeatLimit(-1);
         textView.post(new Runnable() { // from class: tb.qmt.1

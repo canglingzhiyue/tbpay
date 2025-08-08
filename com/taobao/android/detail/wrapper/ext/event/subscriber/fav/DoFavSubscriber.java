@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.fav;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -119,7 +119,7 @@ public class DoFavSubscriber implements j<fcx>, Serializable {
                                     ipChange3.ipc$dispatch("93e51c7a", new Object[]{this, map2});
                                     return;
                                 }
-                                if (map2 != null && map2.containsKey(aw.PARAM_ACTIVITY_URL) && !TextUtils.isEmpty((String) map2.get(aw.PARAM_ACTIVITY_URL))) {
+                                if (map2 != null && map2.containsKey(aw.PARAM_ACTIVITY_URL) && !StringUtils.isEmpty((String) map2.get(aw.PARAM_ACTIVITY_URL))) {
                                     String str = (String) map2.get(aw.PARAM_ACTIVITY_URL);
                                     if (DoFavSubscriber.this.mActivity.hasWindowFocus()) {
                                         epj.f().navigateTo(DoFavSubscriber.this.mActivity, str, null);
@@ -170,7 +170,7 @@ public class DoFavSubscriber implements j<fcx>, Serializable {
                 hashMap2.put(InputFrame3.TYPE_RESPONSE, map);
                 ecg.c(DoFavSubscriber.this.mActivity, "add_favorite", str, str2, hashMap2);
                 ecg.j(DoFavSubscriber.this.mActivity, bVar.b, str, str2);
-                if (!TextUtils.isEmpty(str2) && z) {
+                if (!StringUtils.isEmpty(str2) && z) {
                     if (ErrorConstant.isSessionInvalid(str) || "ANDROID_SYS_LOGIN_CANCEL".equals(str)) {
                         epo.a(b.a(R.string.x_detail_app_not_login));
                         com.taobao.android.detail.core.utils.i.a(DoFavSubscriber.TAG, "收藏失败，没有登陆");
@@ -232,7 +232,7 @@ public class DoFavSubscriber implements j<fcx>, Serializable {
                 ecg.c(DoFavSubscriber.this.mActivity, "cancel_favorite", str, str2, hashMap2);
                 ecg.k(DoFavSubscriber.this.mActivity, bVar.b, str, str2);
                 n.a("DelCollectItem", "80004", str2);
-                if (!TextUtils.isEmpty(str2) && z) {
+                if (!StringUtils.isEmpty(str2) && z) {
                     if (ErrorConstant.isSessionInvalid(str) || "ANDROID_SYS_LOGIN_CANCEL".equals(str)) {
                         epo.a(b.a(R.string.x_detail_app_not_login));
                         com.taobao.android.detail.core.utils.i.a(DoFavSubscriber.TAG, "取消收藏失败,没有登录");

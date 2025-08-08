@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.transformer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.chat.message.image.Image;
 import com.taobao.message.chat.message.image.ImageConvertHelper;
@@ -40,16 +40,16 @@ public class SimpleImageMessageVOTransform implements IteratorTransformer<Result
             NewImageMsgBody newImageMsgBody = new NewImageMsgBody(resultData.getMainData().getOriginalData(), resultData.getMainData().getLocalExt());
             Image image = new Image(ImageUrlUtil.getThumbnailPath(newImageMsgBody.getUrl()), newImageMsgBody.getUrl(), newImageMsgBody.getUrl(), newImageMsgBody.getWidth(), newImageMsgBody.getHeight());
             map.put("imageUrl", newImageMsgBody.getUrl());
-            if (!TextUtils.isEmpty(image.previewUrl)) {
+            if (!StringUtils.isEmpty(image.previewUrl)) {
                 map.put("previewUrl", image.previewUrl);
             } else {
                 map.put("previewUrl", newImageMsgBody.getLocalThumbnailPath());
             }
             image.type = newImageMsgBody.getSuffix();
-            if (TextUtils.equals(kin.GIF_MODE, image.type) && TextUtils.isEmpty(newImageMsgBody.getUrl())) {
+            if (StringUtils.equals(kin.GIF_MODE, image.type) && StringUtils.isEmpty(newImageMsgBody.getUrl())) {
                 map.put("imageUrl", newImageMsgBody.getLocalUrl());
             }
-            if (newImageMsgBody.isHideMessageBubble() || TextUtils.equals(kin.GIF_MODE, image.type)) {
+            if (newImageMsgBody.isHideMessageBubble() || StringUtils.equals(kin.GIF_MODE, image.type)) {
                 map.put("showRadius", false);
                 this.mHelper.adjustImageSize(image);
             } else {

@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.MessageQueue;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.impl.common.d;
 import com.taobao.monitor.impl.common.e;
@@ -314,7 +314,7 @@ public class a {
         SharedPreferences sharedPreferences = application.getSharedPreferences("apm_record", 0);
         String string = sharedPreferences.getString("LAST_TOP_ACTIVITY", "");
         mnd.g = string;
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         sharedPreferences.edit().putString("LAST_TOP_ACTIVITY", "").apply();

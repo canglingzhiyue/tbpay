@@ -3,7 +3,7 @@ package com.taobao.zcache.api;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.zcache.core.IZCacheCore;
@@ -33,7 +33,7 @@ public class ZCacheAPI extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.equals(str, "prefetch")) {
+        if (!StringUtils.equals(str, "prefetch")) {
             return false;
         }
         final IZCacheCore b = g.b();

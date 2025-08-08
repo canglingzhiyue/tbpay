@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.clientreport.data.EventClientReport;
 import com.xiaomi.clientreport.data.PerfClientReport;
 import com.xiaomi.clientreport.manager.ClientReportClient;
@@ -65,7 +65,7 @@ public class fd {
     }
 
     public void a(String str, String str2, String str3, int i, long j, String str4) {
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return;
         }
         EventClientReport a2 = fc.a(this.f341a, str2, str3, i, j, str4);

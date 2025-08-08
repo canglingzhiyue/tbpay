@@ -2,7 +2,7 @@ package tb;
 
 import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -52,10 +52,10 @@ public class ops {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{str});
         }
-        if (TextUtils.equals(ksk.REC_ORDER_LIST_CATAPULT.f30287a, str)) {
+        if (StringUtils.equals(ksk.REC_ORDER_LIST_CATAPULT.f30287a, str)) {
             return a(1);
         }
-        if (!TextUtils.equals(ksk.REC_ORDER_LIST.f30287a, str)) {
+        if (!StringUtils.equals(ksk.REC_ORDER_LIST.f30287a, str)) {
             return null;
         }
         return a(0);
@@ -80,7 +80,7 @@ public class ops {
         }
         try {
             String string = PreferenceManager.getDefaultSharedPreferences(Global.getApplication()).getString("MyTaobaoOrderNumberCache", null);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return JSONObject.parseObject(string);
             }
             return null;
@@ -106,7 +106,7 @@ public class ops {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f32267a.get(str);
         }
         return null;

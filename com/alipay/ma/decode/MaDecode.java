@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.ma.MaBuryRecord;
 import com.alipay.ma.MaLogger;
@@ -223,17 +223,17 @@ public class MaDecode {
                 byte[] bArr = new byte[length];
                 System.arraycopy(decodeResult.bytes, 0, bArr, 0, length);
                 String stringEncode = StringEncodeUtils.getStringEncode(bArr, false);
-                if (TextUtils.isEmpty(stringEncode)) {
+                if (StringUtils.isEmpty(stringEncode)) {
                     decodeResult.strCode = new String(bArr, "utf-8");
                     decodeResult.encodeCharset = "utf-8";
                 } else {
                     decodeResult.strCode = new String(bArr, stringEncode);
                     decodeResult.encodeCharset = stringEncode;
-                    if (decodeResult.strCode != null && TextUtils.equals(stringEncode, "UTF8") && decodeResult.strCode.charAt(0) == 65279) {
+                    if (decodeResult.strCode != null && StringUtils.equals(stringEncode, "UTF8") && decodeResult.strCode.charAt(0) == 65279) {
                         decodeResult.strCode = decodeResult.strCode.substring(1);
                     }
                 }
-                if (TextUtils.isEmpty(decodeResult.strCode)) {
+                if (StringUtils.isEmpty(decodeResult.strCode)) {
                     decodeResult = null;
                 }
             } else if (decodeResult.strLen == 0) {
@@ -257,7 +257,7 @@ public class MaDecode {
             }
             try {
                 MaLogger.w(TAG, "codeDecodePictureWithQr called, path= " + str);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     a(-1, str, i, 0, 0);
                     return null;
                 }
@@ -310,7 +310,7 @@ public class MaDecode {
                 return (DecodeResult[]) ipChange.ipc$dispatch("7b541473", new Object[]{str, context, new Integer(i), new Integer(i2), new Boolean(z)});
             }
             ParcelFileDescriptor parcelFileDescriptor2 = null;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 a(-1, str, i, 0, 0);
                 return null;
             }

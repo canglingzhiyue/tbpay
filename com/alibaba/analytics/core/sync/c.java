@@ -1,7 +1,7 @@
 package com.alibaba.analytics.core.sync;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.aob;
@@ -64,7 +64,7 @@ public class c implements f.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b = com.taobao.search.common.util.k.HTTPS_PREFIX + str + "/upload";
         }

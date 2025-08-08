@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.biz.thirdpay.ThirdPayManager;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -56,7 +56,7 @@ public class CUPThirdPayImpl implements ThirdPayManager.ThirdPayImpl {
             thirdPayFinishCallback.finish(ThirdPayManager.ThirdPayInvokeResult.makeErr("failed"));
         } else {
             final String string = jSONObject != null ? jSONObject.getString("order") : "";
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 LogUtil.record(8, LOG_TAG, "do: error - missing args ".concat(String.valueOf(string)));
                 thirdPayFinishCallback.finish(ThirdPayManager.ThirdPayInvokeResult.makeErr("failed"));
                 return;
@@ -71,7 +71,7 @@ public class CUPThirdPayImpl implements ThirdPayManager.ThirdPayImpl {
                         ipChange2.ipc$dispatch("4207835b", new Object[]{this, activity2, new Integer(i2), new Integer(i3), intent});
                     } else if (intent == null) {
                         LogUtil.record(2, CUPThirdPayImpl.LOG_TAG, "ignoring empty result" + activity2 + ", " + i2 + ", " + i3);
-                    } else if (TextUtils.isEmpty(intent.getStringExtra(MspGlobalDefine.SCHEME_PAY_RESULT))) {
+                    } else if (StringUtils.isEmpty(intent.getStringExtra(MspGlobalDefine.SCHEME_PAY_RESULT))) {
                         LogUtil.record(2, CUPThirdPayImpl.LOG_TAG, "ignoring malformed result" + activity2 + ", " + i2 + ", " + i3 + ", " + JsonUtil.bundle2Json(intent.getExtras()));
                     } else {
                         LogUtil.record(2, CUPThirdPayImpl.LOG_TAG, "got result " + activity2 + ", " + i2 + ", " + i3 + ", " + JsonUtil.bundle2Json(intent.getExtras()));

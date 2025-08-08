@@ -2,7 +2,7 @@ package com.taobao.android.layoutmanager.module;
 
 import android.graphics.drawable.Drawable;
 import android.taobao.windvane.packageapp.zipapp.utils.c;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.airbnb.lottie.h;
 import com.airbnb.lottie.j;
 import com.airbnb.lottie.o;
@@ -163,7 +163,7 @@ public class PreloadModule {
                 @Override // com.taobao.tao.flexbox.layoutmanager.core.aa.c
                 public boolean a(Object obj) {
                     IpChange ipChange2 = $ipChange;
-                    return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("a6251248", new Object[]{this, obj})).booleanValue() : !(obj instanceof String) || TextUtils.isEmpty((String) obj);
+                    return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("a6251248", new Object[]{this, obj})).booleanValue() : !(obj instanceof String) || StringUtils.isEmpty((String) obj);
                 }
             });
             int size = list2.size();
@@ -196,7 +196,7 @@ public class PreloadModule {
                 @Override // com.taobao.tao.flexbox.layoutmanager.core.aa.c
                 public boolean a(Object obj) {
                     IpChange ipChange2 = $ipChange;
-                    return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("a6251248", new Object[]{this, obj})).booleanValue() : !(obj instanceof String) || TextUtils.isEmpty((String) obj);
+                    return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("a6251248", new Object[]{this, obj})).booleanValue() : !(obj instanceof String) || StringUtils.isEmpty((String) obj);
                 }
             });
             final int size = list2.size();
@@ -272,7 +272,7 @@ public class PreloadModule {
                 @Override // com.taobao.tao.flexbox.layoutmanager.core.aa.c
                 public boolean a(Object obj) {
                     IpChange ipChange2 = $ipChange;
-                    return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("a6251248", new Object[]{this, obj})).booleanValue() : !(obj instanceof String) || TextUtils.isEmpty((String) obj);
+                    return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("a6251248", new Object[]{this, obj})).booleanValue() : !(obj instanceof String) || StringUtils.isEmpty((String) obj);
                 }
             });
             final int size = list2.size();

@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,7 @@ public class dbg {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split2 = str.split("\\?");
@@ -30,7 +30,7 @@ public class dbg {
         String str2 = split2[1];
         HashMap hashMap = new HashMap();
         for (String str3 : str2.split("&")) {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 String[] split3 = str3.split("=", 2);
                 if (split3.length > 1) {
                     hashMap.put(split3[0], split3[1]);
@@ -45,7 +45,7 @@ public class dbg {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         Uri parse = Uri.parse(str);
@@ -53,7 +53,7 @@ public class dbg {
             return str;
         }
         String queryParameter = parse.getQueryParameter(str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Uri.Builder buildUpon = parse.buildUpon();
             String path = parse.getPath();
             if (path == null || path.length() == 0) {

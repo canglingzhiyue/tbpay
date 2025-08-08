@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -38,7 +38,7 @@ public class jmi {
             return ((Boolean) ipChange.ipc$dispatch("9e1d6464", new Object[]{context})).booleanValue();
         }
         a();
-        return TextUtils.isEmpty(f29630a) || TextUtils.equals(e.f(), f29630a);
+        return StringUtils.isEmpty(f29630a) || StringUtils.equals(e.f(), f29630a);
     }
 
     public static String a() {
@@ -47,7 +47,7 @@ public class jmi {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
         try {
-            if (TextUtils.isEmpty(f29630a)) {
+            if (StringUtils.isEmpty(f29630a)) {
                 int myPid = Process.myPid();
                 List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) e.b().getSystemService("activity")).getRunningAppProcesses();
                 if (runningAppProcesses != null && !runningAppProcesses.isEmpty()) {
@@ -152,7 +152,7 @@ public class jmi {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int indexOf = str.indexOf(":") + 1;
@@ -173,7 +173,7 @@ public class jmi {
             return a2;
         }
         String str3 = map.get("fullUrl");
-        return !TextUtils.isEmpty(str3) ? a(str3, str2) : a2;
+        return !StringUtils.isEmpty(str3) ? a(str3, str2) : a2;
     }
 
     public static boolean a(String str, String str2) {
@@ -183,11 +183,11 @@ public class jmi {
         }
         try {
             String queryParameter = Uri.parse(str).getQueryParameter("spm");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 String[] split = queryParameter.split("\\.");
                 if (split.length >= 2) {
                     String str3 = split[1];
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         String[] split2 = str2.trim().split(",");
                         if ((split2.length == 1 && "*".equals(split2[0])) || Arrays.asList(split2).contains(str3)) {
                             return true;
@@ -210,7 +210,7 @@ public class jmi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return Pattern.matches(str, str2);
         }
         return false;

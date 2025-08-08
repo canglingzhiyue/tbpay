@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -164,7 +164,7 @@ public class c extends com.taobao.android.detail.datasdk.model.viewmodel.main.b 
             if (jSONObject != null) {
                 this.f9766a = epw.a(jSONObject.getString("name"));
                 this.b = epw.a(jSONObject.getString("url"));
-                if (TextUtils.isEmpty(this.b)) {
+                if (StringUtils.isEmpty(this.b)) {
                     this.b = epw.a(jSONObject.getString("android"));
                 }
                 this.d = epw.a(jSONObject.getString("version"));

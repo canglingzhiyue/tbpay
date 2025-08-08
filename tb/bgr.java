@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.split.k;
 import com.alibaba.android.split.manager.a;
@@ -34,7 +34,7 @@ public class bgr implements bgo<View> {
     public View a() {
         View view;
         try {
-            if (this.f25884a.b() != null && this.f25884a.b().get() != null && !TextUtils.isEmpty(this.f25884a.d())) {
+            if (this.f25884a.b() != null && this.f25884a.b().get() != null && !StringUtils.isEmpty(this.f25884a.d())) {
                 ((a) k.a()).c().a(this.f25884a.b().get(), this.f25884a.d());
             }
             Class<?> cls = Class.forName(this.f25884a.a());

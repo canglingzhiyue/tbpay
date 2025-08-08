@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -90,6 +90,6 @@ public class a extends MainViewModel {
     @Override // com.taobao.android.detail.sdk.vmodel.main.MainViewModel
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.d > 0 || !TextUtils.isEmpty(this.f10403a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.d > 0 || !StringUtils.isEmpty(this.f10403a);
     }
 }

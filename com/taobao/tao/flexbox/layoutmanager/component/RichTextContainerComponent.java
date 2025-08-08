@@ -9,7 +9,7 @@ import android.text.Layout;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.AlignmentSpan;
 import android.text.style.ClickableSpan;
@@ -270,7 +270,7 @@ public class RichTextContainerComponent extends TextComponent implements r, com.
             spannableString.setSpan(new ForegroundColorSpan(oglVar.aF), i, i2, 33);
         }
         final String str = (String) aaVar.e("onclick");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.hasClickEventHandler = true;
@@ -395,7 +395,7 @@ public class RichTextContainerComponent extends TextComponent implements r, com.
         }
         final String str2 = (String) aaVar.e("onclick");
         synchronized (spannableString) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.hasClickEventHandler = true;
                 spannableString.setSpan(new ClickableSpan() { // from class: com.taobao.tao.flexbox.layoutmanager.component.RichTextContainerComponent.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -461,7 +461,7 @@ public class RichTextContainerComponent extends TextComponent implements r, com.
             }
         }
         final String str = (String) aaVar.e("onclick");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.hasClickEventHandler = true;
@@ -863,7 +863,7 @@ public class RichTextContainerComponent extends TextComponent implements r, com.
 
         public boolean a() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !TextUtils.isEmpty((String) RichTextContainerComponent.access$500(RichTextContainerComponent.this).e("onclick"));
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !StringUtils.isEmpty((String) RichTextContainerComponent.access$500(RichTextContainerComponent.this).e("onclick"));
         }
     }
 

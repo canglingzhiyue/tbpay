@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.adam.common.a;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -21,7 +21,7 @@ public class bkk implements bkl<IDMComponent> {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("f8431510", new Object[]{this, str, iDMComponent});
         }
-        if (TextUtils.isEmpty(str) || (a2 = a.a(str, iDMComponent)) == null) {
+        if (StringUtils.isEmpty(str) || (a2 = a.a(str, iDMComponent)) == null) {
             return null;
         }
         return a2.getKey();

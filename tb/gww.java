@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.workflow.e;
@@ -57,10 +57,10 @@ public class gww {
             return;
         }
         String d = d(str);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             u.d("LCRouter", "cann't read router. bizId:" + str);
             d = d(e.b);
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 u.d("LCRouter", "cann't read router, default bizId is invalid, cur bizId:" + str);
                 return;
             }
@@ -120,7 +120,7 @@ public class gww {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (jSONObject = this.c) != null) {
+        if (!StringUtils.isEmpty(str) && (jSONObject = this.c) != null) {
             return jSONObject.getString(str);
         }
         return null;

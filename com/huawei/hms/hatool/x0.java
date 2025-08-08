@@ -2,7 +2,7 @@ package com.huawei.hms.hatool;
 
 import android.content.Context;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidRuntimeException;
 import android.util.Pair;
 import java.lang.reflect.InvocationTargetException;
@@ -65,7 +65,7 @@ public class x0 extends o {
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
         if (telephonyManager != null && telephonyManager.getSimState() == 5) {
             String networkOperator = telephonyManager.getNetworkOperator();
-            return (TextUtils.isEmpty(networkOperator) || TextUtils.equals(networkOperator, "null")) ? new Pair<>("", "") : networkOperator.length() > 3 ? new Pair<>(networkOperator.substring(0, 3), networkOperator.substring(3)) : new Pair<>("", "");
+            return (StringUtils.isEmpty(networkOperator) || StringUtils.equals(networkOperator, "null")) ? new Pair<>("", "") : networkOperator.length() > 3 ? new Pair<>(networkOperator.substring(0, 3), networkOperator.substring(3)) : new Pair<>("", "");
         }
         return new Pair<>("", "");
     }

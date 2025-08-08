@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.adapt.api.AliAdaptServiceManager;
 import com.alibaba.ability.impl.performance.PerformanceAbility;
@@ -197,7 +197,7 @@ public class TaobaoEvnInitializer {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("b6e7fbd6", new Object[]{this, str, context});
-                    } else if (TextUtils.isEmpty(str) || context == null) {
+                    } else if (StringUtils.isEmpty(str) || context == null) {
                     } else {
                         UTABTest.activateServer(str, context);
                     }
@@ -224,7 +224,7 @@ public class TaobaoEvnInitializer {
                         i.a(TaobaoEvnInitializer.TAG, "setRemind error with sourceId", th);
                         i = 0;
                     }
-                    if (TextUtils.isEmpty(b)) {
+                    if (StringUtils.isEmpty(b)) {
                         return false;
                     }
                     i.a(TaobaoEvnInitializer.TAG, "setReminder");
@@ -245,7 +245,7 @@ public class TaobaoEvnInitializer {
                     scheduleDTO.setRemind(180);
                     scheduleDTO.setIsallday(0);
                     try {
-                        if (!TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string2)) {
                             parse = Uri.parse(string2);
                         } else {
                             parse = Uri.parse("https://h5.m.taobao.com/awp/core/detail.htm?id=" + b);
@@ -288,7 +288,7 @@ public class TaobaoEvnInitializer {
                     }
                     String string = jSONObject.getString("sourceId");
                     String a2 = com.taobao.android.detail.ttdetail.utils.d.a((Item) eyxVar.a().a(Item.class));
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(a2)) {
                         CalendarAidlAdapter calendarAidlAdapter = CalendarAidlAdapter.getInstance();
                         calendarAidlAdapter.registerListener(new CalendarListener.Stub() { // from class: com.taobao.android.detail.alittdetail.TaobaoEvnInitializer.11.2
                             @Override // com.taobao.calendar.aidl.listener.CalendarListener
@@ -309,9 +309,9 @@ public class TaobaoEvnInitializer {
                                 StringBuilder sb = new StringBuilder();
                                 sb.append("checkCalendarRemind return error: errorCode: ");
                                 String str3 = "";
-                                sb.append(TextUtils.isEmpty(str) ? str3 : str);
+                                sb.append(StringUtils.isEmpty(str) ? str3 : str);
                                 sb.append(", eventId: ");
-                                if (!TextUtils.isEmpty(str2)) {
+                                if (!StringUtils.isEmpty(str2)) {
                                     str3 = str2;
                                 }
                                 sb.append(str3);
@@ -413,7 +413,7 @@ public class TaobaoEvnInitializer {
                     } else {
                         String key = simpleEntry.getKey();
                         String value = simpleEntry.getValue();
-                        if (TextUtils.isEmpty(key) || TextUtils.isEmpty(value)) {
+                        if (StringUtils.isEmpty(key) || StringUtils.isEmpty(value)) {
                             return;
                         }
                         n.a(Arrays.asList(key, value));

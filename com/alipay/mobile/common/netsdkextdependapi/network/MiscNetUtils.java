@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.netsdkextdependapi.network;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -23,7 +23,7 @@ public class MiscNetUtils {
             return bool.booleanValue();
         }
         String packageName = context.getPackageName();
-        if (TextUtils.isEmpty(packageName)) {
+        if (StringUtils.isEmpty(packageName)) {
             return false;
         }
         if (packageName.startsWith("com.taobao.taobao")) {

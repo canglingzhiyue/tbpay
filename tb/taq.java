@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -194,7 +194,7 @@ public class taq extends as {
             return null;
         }
         String string = jSONObject.getString("openUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         return new b(string, i);
@@ -237,7 +237,7 @@ public class taq extends as {
                 return;
             }
             try {
-                if (TextUtils.isEmpty(this.f33995a)) {
+                if (StringUtils.isEmpty(this.f33995a)) {
                     return;
                 }
                 if (this.f33995a.contains("detailOpenFullFloat=true")) {

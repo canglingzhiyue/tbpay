@@ -2,7 +2,7 @@ package com.taobao.android.litecreator.uikit.album.datasource;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.u;
@@ -135,7 +135,7 @@ public class a extends hsc {
             return ((Boolean) ipChange.ipc$dispatch("ccd14f81", new Object[]{this, media})).booleanValue();
         }
         ImageMedia imageMedia = (ImageMedia) media;
-        return a(imageMedia.width, 0, this.d) || a(imageMedia.height, 0, this.d) || TextUtils.isEmpty(imageMedia.mimeType) || !b(this.f).contains(imageMedia.mimeType.toLowerCase());
+        return a(imageMedia.width, 0, this.d) || a(imageMedia.height, 0, this.d) || StringUtils.isEmpty(imageMedia.mimeType) || !b(this.f).contains(imageMedia.mimeType.toLowerCase());
     }
 
     public HashSet<String> b(String str) {

@@ -1,6 +1,6 @@
 package com.taobao.weex.adapter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -36,7 +36,7 @@ public interface IWXJSEngineManager {
         }
 
         public boolean hasPage(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             return this.urlList.contains(str);

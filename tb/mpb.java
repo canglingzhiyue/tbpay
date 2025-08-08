@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.impl.common.d;
 import com.taobao.monitor.impl.common.e;
@@ -30,7 +30,7 @@ public class mpb {
         }
         b();
         a();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (!d.m) {
                 return null;
             }

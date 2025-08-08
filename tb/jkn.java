@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes6.dex */
 public class jkn {
@@ -19,7 +19,7 @@ public class jkn {
             if (str2 == null) {
                 throw new IllegalArgumentException("defaultTemplateId is null.");
             }
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 throw new IllegalArgumentException("defaultTemplateAssetsName is null or empty.");
             }
             this.f29607a = str;

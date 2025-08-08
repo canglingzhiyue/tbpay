@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -326,13 +326,13 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
                 if (mICRpcResponse.verifySuccess) {
                     PasswordPluginWithoutUI.access$100(PasswordPluginWithoutUI.this, mICRpcResponse);
                     PasswordPluginWithoutUI.access$200(PasswordPluginWithoutUI.this).doNextStep(mICRpcResponse, str4);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         ProductDataHelper.getInstance().write("verify", "Y", true);
                     }
                     PasswordPluginWithoutUI.this.writeBehavorWithPlus("UC-MobileIC-20191030-2", "SUCCESS", "wallet_cn", "pluginNew");
                     return;
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     ProductDataHelper.getInstance().write("verify", "N");
                 }
                 PasswordPluginWithoutUI.this.updateVerifyStatusNew(BaseFBPlugin.VERIFY_STATUS.awaitUser);
@@ -345,7 +345,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
                     ProductDataHelper.getInstance().write("init", "Y");
                     PasswordPluginWithoutUI.access$600(PasswordPluginWithoutUI.this, mICRpcResponse);
                 } else {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         ProductDataHelper.getInstance().write(ProductDataHelper.KEY_LOCKED, "Y", true);
                     }
                     PasswordPluginWithoutUI.this.writePwdBehaviorLog("UC-MobileIC-20210326-3", "LOCK", "pay", "pluginNew");
@@ -368,7 +368,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             hashMap.put("code", str2);
             hashMap.put("source", str3);
             hashMap.put("ui_type", str4);
-            if (!TextUtils.isEmpty(this.i)) {
+            if (!StringUtils.isEmpty(this.i)) {
                 hashMap.put("plusPwdType", "pwd");
             } else {
                 hashMap.put("plusPwdType", "plus_pwd");
@@ -389,16 +389,16 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             HashMap hashMap = new HashMap();
             hashMap.put("code", str2);
             hashMap.put("source", str3);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 hashMap.put("from", str4);
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 hashMap.put("sourceToPwd", str5);
             }
             if (z) {
                 hashMap.put("isNewMUI", "true");
             }
-            if (this.f != null && !TextUtils.isEmpty(this.f.decisionToPwd)) {
+            if (this.f != null && !StringUtils.isEmpty(this.f.decisionToPwd)) {
                 hashMap.put("plusPwdType", "pwd");
             } else {
                 hashMap.put("plusPwdType", "plus_pwd");
@@ -456,7 +456,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.equals(str, "src")) {
+        if (StringUtils.equals(str, "src")) {
             JSONObject jSONObject = null;
             try {
                 jSONObject = JSON.parseObject(str2);
@@ -558,7 +558,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mStateSecretPubKey = PubKeyHelper.getPubKey(this.b);
             } else {
                 this.mStateSecretPubKey = str;
@@ -575,14 +575,14 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             return;
         }
         VerifyLogCat.i("PasswordPluginWithoutUI", "initOtherProduct product: " + str);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.isIntelliDecision = false;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("actionText", (Object) str);
             jSONObject.put("callBackType", "1");
             jSONObject.put("hideIfClick", (Object) true);
             doCommonAction(BaseFBPlugin.PLUGIN_ACTION.viShowNavRightView, jSONObject);
-        } else if (TextUtils.isEmpty(this.top_to_product)) {
+        } else if (StringUtils.isEmpty(this.top_to_product)) {
         } else {
             this.isIntelliDecision = true;
             JSONObject jSONObject2 = new JSONObject();
@@ -723,7 +723,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             return;
         }
         String str = this.f.keyHeadline;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.b.getResources().getString(R.string.pwd_input_alert_please);
         }
         sendUpdatePwdTipsEvent("normal", str);
@@ -745,7 +745,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cba25bdf", new Object[]{this, mICRpcResponse, hashMap})).booleanValue();
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return false;
         }
         JSONObject jSONObject = null;
@@ -762,7 +762,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             hashMap.put(PayPwdModule.FIND_PWD_TXT, jSONObject.getString(PayPwdModule.FIND_PWD_TXT));
         }
         VerifyLogCat.i("PasswordPluginWithoutUI", "showFindPwd: " + string);
-        return TextUtils.isEmpty(string) || "Y".equalsIgnoreCase(string);
+        return StringUtils.isEmpty(string) || "Y".equalsIgnoreCase(string);
     }
 
     public String getOtherPayContent() {
@@ -770,7 +770,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a421102e", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.otherText)) {
+        if (StringUtils.isEmpty(this.otherText)) {
             return this.k.getResources().getString(R.string.other_way_to_pwd);
         }
         return this.otherText;
@@ -781,7 +781,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("28030f29", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.goOtherVerifyProduct)) {
+        if (StringUtils.isEmpty(this.goOtherVerifyProduct)) {
             this.goOtherVerifyProduct = "N";
         }
         return this.goOtherVerifyProduct;
@@ -792,7 +792,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("97df53ab", new Object[]{this, mICRpcResponse});
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return getOtherPayContent();
         }
         JSONObject jSONObject = null;
@@ -805,7 +805,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             return getOtherPayContent();
         }
         this.otherProductForDialog = jSONObject.getString("otherVerifyPayText");
-        if (!TextUtils.isEmpty(this.otherProductForDialog)) {
+        if (!StringUtils.isEmpty(this.otherProductForDialog)) {
             return this.otherProductForDialog;
         }
         return getOtherPayContent();
@@ -839,7 +839,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             HashMap<String, String> hashMap = new HashMap<>();
             if (showFindPwdByResponse(mICRpcResponse, hashMap)) {
                 String str = hashMap.get(PayPwdModule.FIND_PWD_TXT);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = this.b.getString(R.string.pwd_forget_in_layout);
                 }
                 sendShowForgetPwdEvent(str);
@@ -905,7 +905,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("58b6ac91", new Object[]{passwordPluginWithoutUI, mICRpcResponse});
-        } else if (TextUtils.isEmpty(mICRpcResponse.data) || !mICRpcResponse.data.contains("bicAsyncData")) {
+        } else if (StringUtils.isEmpty(mICRpcResponse.data) || !mICRpcResponse.data.contains("bicAsyncData")) {
         } else {
             try {
                 JSONObject parseObject = JSON.parseObject(mICRpcResponse.data);
@@ -926,7 +926,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             return;
         }
         VerifyLogCat.i("PasswordPluginWithoutUI", "updatePubKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i("PasswordPluginWithoutUI", "服务端没有提供新的公钥，不更新");
             return;
         }
@@ -946,7 +946,7 @@ public class PasswordPluginWithoutUI extends BaseFBPlugin {
             return;
         }
         VerifyLogCat.i("PasswordPluginWithoutUI", "updateStateSecretPubKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i("PasswordPluginWithoutUI", "updateStateSecretPubKey 服务端没有提供新的公钥，不更新");
         }
         passwordPluginWithoutUI.generateStateSecretPubKey(str);

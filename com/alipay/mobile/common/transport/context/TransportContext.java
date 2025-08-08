@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.context;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.http.HttpUrlRequest;
 import com.alipay.mobile.common.transport.http.PerformanceDataCallback;
 import com.alipay.mobile.common.transport.monitor.DataContainer;
@@ -178,7 +178,7 @@ public class TransportContext {
             return ((Boolean) ipChange.ipc$dispatch("33c1b01f", new Object[]{this})).booleanValue();
         }
         SingleRPCReqConfig singleRPCReqConfig = this.currentReqInfo;
-        return singleRPCReqConfig != null && TextUtils.equals(singleRPCReqConfig.protocol, ExtTransportStrategy.EXT_PROTO_MRPC);
+        return singleRPCReqConfig != null && StringUtils.equals(singleRPCReqConfig.protocol, ExtTransportStrategy.EXT_PROTO_MRPC);
     }
 
     public boolean isRpcBizType() {

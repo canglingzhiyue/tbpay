@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("33cc4f8e", new Object[]{this, processEntity});
-        } else if (processEntity == null || TextUtils.isEmpty(processEntity.bizName)) {
+        } else if (processEntity == null || StringUtils.isEmpty(processEntity.bizName)) {
         } else {
             if (this.f2833a.containsKey(processEntity.bizName)) {
                 this.f2833a.remove(processEntity);
@@ -46,7 +46,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ee41f00f", new Object[]{this, processEntity});
-        } else if (processEntity == null || TextUtils.isEmpty(processEntity.bizName) || !this.f2833a.containsKey(processEntity.bizName)) {
+        } else if (processEntity == null || StringUtils.isEmpty(processEntity.bizName) || !this.f2833a.containsKey(processEntity.bizName)) {
         } else {
             this.f2833a.remove(processEntity.bizName);
         }
@@ -58,7 +58,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (ProcessEntity) ipChange.ipc$dispatch("271e4e4a", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (hashMap = this.f2833a) != null && hashMap.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && (hashMap = this.f2833a) != null && hashMap.containsKey(str)) {
             return this.f2833a.get(str);
         }
         return null;
@@ -72,6 +72,6 @@ public class c {
     public boolean b(String str) {
         HashMap<String, ProcessEntity> hashMap;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && (hashMap = this.f2833a) != null && hashMap.containsKey(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && (hashMap = this.f2833a) != null && hashMap.containsKey(str);
     }
 }

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
@@ -1037,7 +1037,7 @@ public class TBLiveMediaCardView extends RelativeLayout implements b, pry.a {
             if (jSONObject == null || (spfPlayVideo = (SpfPlayVideo) JSONObject.toJavaObject(jSONObject, SpfPlayVideo.class)) == null) {
                 return false;
             }
-            if (TextUtils.isEmpty(spfPlayVideo.playInfo)) {
+            if (StringUtils.isEmpty(spfPlayVideo.playInfo)) {
                 str = null;
                 str2 = null;
             } else if (f.FILE_TYPE_VIDEO_MP4.equals(spfPlayVideo.videoType)) {

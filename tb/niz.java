@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import com.taobao.alivfssdk.cache.b;
@@ -18,7 +18,7 @@ public class niz implements c {
     private nja d;
 
     public niz(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.c = "phximgs_KV";
             return;
         }
@@ -95,7 +95,7 @@ public class niz implements c {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
         try {
-            if (this.d != null && !TextUtils.isEmpty(str)) {
+            if (this.d != null && !StringUtils.isEmpty(str)) {
                 return this.d.a(str);
             }
             return false;

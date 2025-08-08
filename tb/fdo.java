@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.event.ThreadMode;
 import com.taobao.android.trade.event.i;
@@ -41,7 +41,7 @@ public class fdo implements j<ens> {
             return (i) ipChange.ipc$dispatch("97ae541", new Object[]{this, ensVar});
         }
         String str = ensVar.f27476a;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i.FAILURE;
         }
         if (Uri.parse(str).getScheme() == null) {

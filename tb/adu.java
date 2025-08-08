@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -106,7 +106,7 @@ public final class adu extends RecyclerView.ViewHolder implements g, ads {
         this.f = true;
         p a2 = com.taobao.android.weex_framework.q.a().a(this.g);
         String a3 = ScreenType.a(f());
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             a2.addInstanceEnv(com.etao.feimagesearch.p.KEY_SCREEN_STYLE, a3);
         }
         a2.registerRenderListener(this);

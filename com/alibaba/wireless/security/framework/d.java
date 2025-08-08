@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.SecExceptionCode;
 import com.alibaba.wireless.security.framework.utils.FLOG;
 import com.alibaba.wireless.security.framework.utils.UserTrackMethodJniBridge;
@@ -1467,7 +1467,7 @@ public class d implements ISGPluginManager {
                 e = e3;
                 str = null;
             }
-            if (str == null && TextUtils.equals(str, str2)) {
+            if (str == null && StringUtils.equals(str, str2)) {
                 return true;
             }
         }

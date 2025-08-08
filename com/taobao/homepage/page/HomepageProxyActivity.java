@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSONArray;
@@ -70,7 +70,7 @@ public class HomepageProxyActivity extends Activity {
                 return;
             }
             String queryParameter = data.getQueryParameter("proxyParams");
-            if (TextUtils.isEmpty(queryParameter) || (parseObject = JSONObject.parseObject(queryParameter)) == null) {
+            if (StringUtils.isEmpty(queryParameter) || (parseObject = JSONObject.parseObject(queryParameter)) == null) {
                 return;
             }
             if (parseObject.getBooleanValue("showSpeedStatus")) {
@@ -119,10 +119,10 @@ public class HomepageProxyActivity extends Activity {
                 arrayList.add((String) next);
             }
         }
-        if (TextUtils.equals(string, KeepModel.STRATEGY_WHITE_LIST)) {
+        if (StringUtils.equals(string, KeepModel.STRATEGY_WHITE_LIST)) {
             TBSpeed.updateSpeedConfigStatus(this, arrayList, null);
             Toast.makeText(this, "白名单开关配置设置完成，重启生效", 1).show();
-        } else if (TextUtils.equals(string, KeepModel.STRATEGY_BLACK_LIST)) {
+        } else if (StringUtils.equals(string, KeepModel.STRATEGY_BLACK_LIST)) {
             TBSpeed.updateSpeedConfigStatus(this, null, arrayList);
             Toast.makeText(this, "黑名单开关配置设置完成，重启生效", 1).show();
         } else {

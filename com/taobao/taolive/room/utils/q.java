@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -49,7 +49,7 @@ public class q {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -66,7 +66,7 @@ public class q {
             return (Map) ipChange.ipc$dispatch("e68dc5e9", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject.keySet().size() > 0) {

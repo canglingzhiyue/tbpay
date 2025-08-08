@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.SplitFileInfo;
 import com.alibaba.android.split.a;
@@ -183,13 +183,13 @@ public final class SplitApkChecker {
     private boolean isMd5Right(File file) {
         SplitFileInfo a2;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ccf8964a", new Object[]{this, file})).booleanValue() : file != null && file.exists() && (a2 = ((s) com.alibaba.android.split.a.a((Class<? extends Object>) s.class, new Object[0])).a(bgy.j(file.getName()))) != null && !TextUtils.isEmpty(a2.md5) && a2.md5.equals(this.optService.a(file.getAbsolutePath()));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ccf8964a", new Object[]{this, file})).booleanValue() : file != null && file.exists() && (a2 = ((s) com.alibaba.android.split.a.a((Class<? extends Object>) s.class, new Object[0])).a(bgy.j(file.getName()))) != null && !StringUtils.isEmpty(a2.md5) && a2.md5.equals(this.optService.a(file.getAbsolutePath()));
     }
 
     private boolean isRightFile(File file) {
         SplitFileInfo a2;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d92545f0", new Object[]{this, file})).booleanValue() : file != null && file.exists() && (a2 = ((s) com.alibaba.android.split.a.a((Class<? extends Object>) s.class, new Object[0])).a(bgy.j(file.getName()))) != null && !TextUtils.isEmpty(a2.md5) && a2.md5.equals(this.optService.a(file.getAbsolutePath()));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d92545f0", new Object[]{this, file})).booleanValue() : file != null && file.exists() && (a2 = ((s) com.alibaba.android.split.a.a((Class<? extends Object>) s.class, new Object[0])).a(bgy.j(file.getName()))) != null && !StringUtils.isEmpty(a2.md5) && a2.md5.equals(this.optService.a(file.getAbsolutePath()));
     }
 
     /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor

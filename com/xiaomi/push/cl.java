@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.text.SimpleDateFormat;
 
 /* loaded from: classes9.dex */
@@ -20,7 +20,7 @@ public class cl {
     }
 
     public static ig a(Context context, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         ig igVar = new ig();

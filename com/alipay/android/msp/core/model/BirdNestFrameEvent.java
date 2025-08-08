@@ -1,6 +1,6 @@
 package com.alipay.android.msp.core.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.birdnest.api.MspConstants;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -52,12 +52,12 @@ public class BirdNestFrameEvent {
 
     public boolean isOnEvent() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("abebf37c", new Object[]{this})).booleanValue() : TextUtils.equals(MspFlybirdDefine.FLYBIRD_FRAME_EVENT_TYPE.ON_EVENT, this.f4550a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("abebf37c", new Object[]{this})).booleanValue() : StringUtils.equals(MspFlybirdDefine.FLYBIRD_FRAME_EVENT_TYPE.ON_EVENT, this.f4550a);
     }
 
     public boolean isOnEventResult() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2338879", new Object[]{this})).booleanValue() : TextUtils.equals(MspFlybirdDefine.FLYBIRD_FRAME_EVENT_TYPE.ON_EVENT_RESULT, this.f4550a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2338879", new Object[]{this})).booleanValue() : StringUtils.equals(MspFlybirdDefine.FLYBIRD_FRAME_EVENT_TYPE.ON_EVENT_RESULT, this.f4550a);
     }
 
     public String toString() {

@@ -1,7 +1,7 @@
 package android.taobao.windvane.monitor;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import java.util.List;
@@ -50,7 +50,7 @@ public class r {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c4df30f", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -62,7 +62,7 @@ public class r {
             return false;
         }
         for (String str2 : b) {
-            if (TextUtils.equals(str2, parse.getHost())) {
+            if (StringUtils.equals(str2, parse.getHost())) {
                 return true;
             }
         }
@@ -78,7 +78,7 @@ public class r {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ec49cec7", new Object[]{str, str2, new Integer(i)});
-        } else if (!needSampleWebp() || isImageSpaceUrl(str) || TextUtils.isEmpty(str2)) {
+        } else if (!needSampleWebp() || isImageSpaceUrl(str) || StringUtils.isEmpty(str2)) {
         } else {
             JSONObject jSONObject = new JSONObject();
             try {

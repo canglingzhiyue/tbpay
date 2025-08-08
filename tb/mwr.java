@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mytaobao.ultron.b;
@@ -24,7 +24,7 @@ public class mwr {
         if (ipChange instanceof IpChange) {
             return (jnw) ipChange.ipc$dispatch("709ba270", new Object[]{context, str, str2, map, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         Map<String, String> a2 = a("mtop.taobao.reborn.mclaren");
@@ -32,7 +32,7 @@ public class mwr {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     a2.put(key, value);
                 }
             }
@@ -52,10 +52,10 @@ public class mwr {
         }
         HashMap hashMap = new HashMap();
         String a2 = mxl.a(Globals.getApplication().getApplicationContext());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("shopInfo", a2);
         }
-        if (TextUtils.equals(str, "mtop.taobao.volvo.mytaobao")) {
+        if (StringUtils.equals(str, "mtop.taobao.volvo.mytaobao")) {
             l = b.a().c();
         } else {
             l = b.a().l();

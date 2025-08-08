@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +46,7 @@ public abstract class AbstractC1200ca {
         if (map != null) {
             hashMap.putAll(map);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("message", str);
         }
         if (interfaceC1203da == null) {

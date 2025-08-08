@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.security.AccessController;
@@ -54,7 +54,7 @@ public class ReflectionUtils {
 
     public static Field getField(Object obj, String str) {
         String str2;
-        if (obj != null && !TextUtils.isEmpty(str)) {
+        if (obj != null && !StringUtils.isEmpty(str)) {
             try {
                 final Field declaredField = obj.getClass().getDeclaredField(str);
                 AccessController.doPrivileged(new PrivilegedAction() { // from class: com.huawei.hms.framework.common.ReflectionUtils.2
@@ -87,7 +87,7 @@ public class ReflectionUtils {
 
     public static Object getFieldObj(Object obj, String str) {
         String str2;
-        if (obj == null || TextUtils.isEmpty(str)) {
+        if (obj == null || StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -147,7 +147,7 @@ public class ReflectionUtils {
     public static Object getStaticFieldObj(String str, String str2) {
         Class<?> cls;
         String str3;
-        if (str == null || (cls = getClass(str)) == null || TextUtils.isEmpty(str2)) {
+        if (str == null || (cls = getClass(str)) == null || StringUtils.isEmpty(str2)) {
             return null;
         }
         try {

@@ -1,6 +1,6 @@
 package com.alibaba.evo.internal.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.internal.util.h;
 import com.alibaba.ut.abtest.internal.util.n;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -33,7 +33,7 @@ public class a implements com.alibaba.ut.abtest.event.b<b> {
         b b = aVar.b();
         synchronized (this) {
             String str = n.a(cex.a().r()) + b.c;
-            if (TextUtils.equals(str, cex.a().i().g())) {
+            if (StringUtils.equals(str, cex.a().i().g())) {
                 h.f("ExperimentBetaDataV5EventListener", "【Beta实验数据V5】未发现新数据。本地数据签名：" + str);
                 return;
             }

@@ -1,7 +1,7 @@
 package com.alibaba.android.split.scene;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
 import java.io.InputStream;
@@ -28,7 +28,7 @@ public class c implements i<InputStream> {
         if (ipChange instanceof IpChange) {
             return (InputStream) ipChange.ipc$dispatch("1634b82d", new Object[]{this, context, str});
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return null;
         }
         try {

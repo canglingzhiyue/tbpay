@@ -1,7 +1,7 @@
 package com.taobao.android.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -137,7 +137,7 @@ public class WeexFactoryImpl extends a implements Serializable {
         if (ipChange instanceof IpChange) {
             return (e.a) ipChange.ipc$dispatch("9f5e8868", new Object[]{this, context, str, jSONObject, jSONObject2, bVar, hVar});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.weex_framework.util.g.d("preCreateInstance failed, url is null");
             return new e.a(false, "preCreateInstance failed, url is null");
         }
@@ -177,7 +177,7 @@ public class WeexFactoryImpl extends a implements Serializable {
         if (ipChange instanceof IpChange) {
             return (WeexInstance) ipChange.ipc$dispatch("a7f90fcb", new Object[]{this, context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.weex_framework.util.g.d("getPreInstance failed, bundleUrl is null");
             return null;
         }
@@ -205,7 +205,7 @@ public class WeexFactoryImpl extends a implements Serializable {
             ipChange.ipc$dispatch("8926453c", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.weex_framework.util.g.d("clearPreInstanceWithUrl failed, bundleUrl is null");
         }
         LinkedList<WeexInstance> linkedList = this.mWeexInstanceQueuesMap.get(str);

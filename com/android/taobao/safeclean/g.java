@@ -2,7 +2,7 @@ package com.android.taobao.safeclean;
 
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseBooleanArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
@@ -45,7 +45,7 @@ public class g {
         this.b = new SparseBooleanArray();
         this.f6400a = m.f6406a.getSharedPreferences(String.format("simple_clean_%s", f()), 0);
         String c = c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             for (String str : Arrays.asList(c.split(","))) {
                 this.b.put(Integer.parseInt(str), true);
             }
@@ -152,7 +152,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("50938a53", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             return this.c;
         }
         try {

@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.model.message;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.INetDataObject;
 import tb.kge;
@@ -95,11 +95,11 @@ public class TopAtmosphereMessage implements INetDataObject {
                 return (String) ipChange.ipc$dispatch("1b3e32c3", new Object[]{this});
             }
             String str = this.countShow;
-            if (TextUtils.isEmpty(str) && this.count > 0) {
+            if (StringUtils.isEmpty(str) && this.count > 0) {
                 str = this.count + "";
             }
             int i = this.maxCount;
-            return (i <= 0 || this.count < i || TextUtils.isEmpty(this.maxCountShow)) ? str : this.maxCountShow;
+            return (i <= 0 || this.count < i || StringUtils.isEmpty(this.maxCountShow)) ? str : this.maxCountShow;
         }
     }
 

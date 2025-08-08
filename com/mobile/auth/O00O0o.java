@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.cmic.sso.sdk.a;
@@ -23,7 +23,7 @@ public class O00O0o {
     public O00OoOO0 O000000o(O00OoOO0 o00OoOO0, O00o00 o00o00, a aVar) {
         List<String> list;
         Map<String, List<String>> O00000Oo = o00o00.O00000Oo();
-        if (TextUtils.isEmpty(this.O000000o) && (list = O00000Oo.get("pplocation")) != null && list.size() > 0) {
+        if (StringUtils.isEmpty(this.O000000o) && (list = O00000Oo.get("pplocation")) != null && list.size() > 0) {
             this.O000000o = list.get(0);
         }
         O0OO0Oo.O00000Oo(aVar, String.valueOf(o00o00.O000000o()));
@@ -33,7 +33,7 @@ public class O00O0o {
         }
         if (list2 != null && list2.size() > 0) {
             this.O00000Oo = list2.get(0);
-            if (!TextUtils.isEmpty(this.O00000Oo)) {
+            if (!StringUtils.isEmpty(this.O00000Oo)) {
                 String b = aVar.b("operatortype", "0");
                 O0OO0Oo.O000000o(aVar, "2".equals(b) ? "getUnicomMobile" : "3".equals(b) ? "getTelecomMobile" : "NONE");
             }

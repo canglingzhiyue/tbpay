@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -170,7 +170,7 @@ public class c implements r {
         if (ipChange instanceof IpChange) {
             return (com.taobao.taolive.sdk.goodlist.a) ipChange.ipc$dispatch("fd62676d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (hashMap = this.f13841a) == null || !hashMap.containsKey(str)) {
+        if (StringUtils.isEmpty(str) || (hashMap = this.f13841a) == null || !hashMap.containsKey(str)) {
             return null;
         }
         return this.f13841a.get(str);
@@ -526,7 +526,7 @@ public class c implements r {
             return null;
         }
         b bVar = (b) gVar.a("gl_global_cache", (Class<Object>) b.class);
-        if (bVar == null || !TextUtils.equals(bVar.a(), str)) {
+        if (bVar == null || !StringUtils.equals(bVar.a(), str)) {
             return null;
         }
         return bVar;

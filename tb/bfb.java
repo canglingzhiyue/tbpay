@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
@@ -145,7 +145,7 @@ public class bfb {
         this.e = i;
         this.f = i2;
         String b = b(this.e, i2);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             ((TextView) this.d.findViewById(R.id.tv_content)).setText(b);
         }
         if (!this.c.isShowing()) {

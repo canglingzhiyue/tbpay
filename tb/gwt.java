@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -54,7 +54,7 @@ public class gwt {
             if (ipChange instanceof IpChange) {
                 return (gwt) ipChange.ipc$dispatch("7c6fed10", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 u.d("LCABTestDeciderManager", "LCABTestDeciderManager.get: empty session id, please check!");
                 str = "single_session";
             }
@@ -72,7 +72,7 @@ public class gwt {
                 ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
                 return;
             }
-            if (!TextUtils.isEmpty(str) && b.containsKey(str)) {
+            if (!StringUtils.isEmpty(str) && b.containsKey(str)) {
                 b.remove(str);
             }
         }
@@ -121,7 +121,7 @@ public class gwt {
             return;
         }
         String a2 = at.a(Globals.getApplication(), str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         JSONObject jSONObject = null;

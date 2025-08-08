@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.highPerformance.pre.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.e;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.d;
 import com.alibaba.fastjson.JSONObject;
@@ -138,7 +138,7 @@ public class c implements a {
             jqg.b("UltronTradeHybridPreRequestCallback.sendBackgroundMessageToWeex2", "orange is off");
         } else {
             String str = this.b.g;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 jqg.b("UltronTradeHybridPreRequestCallback.sendBackgroundMessageToWeex2", "relatedPreRenderUrl is EMPTY");
                 return;
             }

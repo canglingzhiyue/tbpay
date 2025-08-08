@@ -2,7 +2,7 @@ package com.taobao.android.fluid.business.usertrack;
 
 import android.app.Activity;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
@@ -905,7 +905,7 @@ public class TrackService implements ITrackService {
             hashMap.put(b.PROPERTY_IS_FINISH, ((ILifecycleService) this.mFluidContext.getService(ILifecycleService.class)).isFinish() ? "1" : "0");
             String str = ((IUsePreloadService) this.mFluidContext.getService(IUsePreloadService.class)).getmPrePlayerVideoId();
             boolean isLocalOrCacheVideo = ((IUsePreloadService) this.mFluidContext.getService(IUsePreloadService.class)).isLocalOrCacheVideo(snvVar);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = null;
             }
             HashMap<String, String> a2 = com.taobao.android.fluid.framework.preload.dwinstance.a.a(str, ((ISceneConfigService) this.fluidInstance.getService(ISceneConfigService.class)).getSessionExtParams().b(), isLocalOrCacheVideo);

@@ -3,7 +3,7 @@ package com.taobao.android.detail2.core.framework;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -88,7 +88,7 @@ public class f {
             return false;
         }
         DetailPreloadBucket e = com.taobao.android.preload.i.a("new_detail").e("InfoFlow");
-        if (e == null || TextUtils.isEmpty(e.bucketId)) {
+        if (e == null || StringUtils.isEmpty(e.bucketId)) {
             return b(context);
         }
         return a(e, context);

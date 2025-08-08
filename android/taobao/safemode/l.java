@@ -4,7 +4,7 @@ import android.os.Build;
 import android.os.Looper;
 import android.os.Message;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Field;
 
@@ -68,7 +68,7 @@ public abstract class l {
         if (ipChange instanceof IpChange) {
             return (Field) ipChange.ipc$dispatch("4bb5245c", new Object[]{cls, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -94,7 +94,7 @@ public abstract class l {
     public static Field b(Class<?> cls, String str) {
         Field field = null;
         if (cls != null) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 field = Build.VERSION.SDK_INT >= 28 ? (Field) Class.class.getDeclaredMethod("getDeclaredField", String.class).invoke(cls, str) : cls.getDeclaredField(str);
                 if (field != null) {
                     field.setAccessible(true);

@@ -1,7 +1,7 @@
 package com.taobao.tbliveinteractive.jsbridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public class TaoLiveTradeTrack extends android.taobao.windvane.jsbridge.e {
             if (hashMap != null && qne.p()) {
                 String str3 = (String) hashMap.get(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
                 String str4 = (String) hashMap.get("itemId");
-                if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str4)) {
                     new com.taobao.tbliveinteractive.business.tradetrack.a(new com.taobao.taolive.sdk.adapter.network.d() { // from class: com.taobao.tbliveinteractive.jsbridge.TaoLiveTradeTrack.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 

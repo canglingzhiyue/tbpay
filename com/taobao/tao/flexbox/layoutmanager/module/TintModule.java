@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.ac.g;
 import com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.t;
@@ -26,7 +26,7 @@ public class TintModule {
         }
         t W = cVar.f19938a.W();
         String a2 = cVar.a("bizName", (String) null);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             W.a(a2);
         } else {
             ogg.c(TAG, "setBizName is empty ");
@@ -41,7 +41,7 @@ public class TintModule {
         }
         t W = cVar.f19938a.W();
         String a2 = cVar.a("configs", (String) null);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             W.a(a2.split(","));
         } else {
             ogg.c(TAG, "setOrangeConfig is empty ");
@@ -101,7 +101,7 @@ public class TintModule {
         String a2 = cVar.a("module", (String) null);
         String a3 = cVar.a("name", (String) null);
         Map a4 = cVar.a("args", (Map) null);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         W.a(a2, a3, a4);
@@ -118,7 +118,7 @@ public class TintModule {
         String a3 = cVar.a("name", (String) null);
         String a4 = cVar.a("errorCode", (String) null);
         Map a5 = cVar.a("args", (Map) null);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         W.a(a2, a3, a4, a5);
@@ -135,7 +135,7 @@ public class TintModule {
         String a3 = cVar.a("name", (String) null);
         Map<String, Object> a4 = cVar.a("dimensions", (Map) null);
         Map<String, Object> a5 = cVar.a("measurements", (Map) null);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         W.a(a2, a3, a4, a5);

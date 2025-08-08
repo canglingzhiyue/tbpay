@@ -1,6 +1,6 @@
 package com.taobao.tao.log.statistics;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.f;
@@ -58,7 +58,7 @@ public class TLogEventHelper {
             return;
         }
         b s = f.a().s();
-        if (s == null || TextUtils.isEmpty(str)) {
+        if (s == null || StringUtils.isEmpty(str)) {
             return;
         }
         try {
@@ -84,7 +84,7 @@ public class TLogEventHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             HashMap hashMap = new HashMap();
             hashMap.put(str2, str3);
             a(str, hashMap);
@@ -144,10 +144,10 @@ public class TLogEventHelper {
         HashMap hashMap = new HashMap();
         hashMap.put(d.PARAM_UPLOAD_FILE_TYPE, uploadFileType.getValue());
         hashMap.put("reason", uploadReason.getValue());
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("bizType", str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("bizCode", str3);
         }
         hashMap.put(d.PARAM_UPLOAD_ID, str4);
@@ -177,10 +177,10 @@ public class TLogEventHelper {
         hashMap.put("stage", uploadStage.getValue());
         hashMap.put(d.PARAM_UPLOAD_FILE_TYPE, uploadFileType.getValue());
         hashMap.put("reason", uploadReason.getValue());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("bizType", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("bizCode", str2);
         }
         hashMap.put("errCode", str3);
@@ -399,7 +399,7 @@ public class TLogEventHelper {
                     olk olkVar = null;
                     if (map.containsKey(d.PARAM_TASK_ID)) {
                         str2 = map.get(d.PARAM_TASK_ID);
-                        if (!TextUtils.isEmpty(str2) && f20698a.containsKey(str2)) {
+                        if (!StringUtils.isEmpty(str2) && f20698a.containsKey(str2)) {
                             olkVar = f20698a.get(str2);
                         }
                     }

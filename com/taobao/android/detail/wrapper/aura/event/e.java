@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.aura.event;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -88,7 +88,7 @@ public final class e extends arv {
             JSONObject jSONObject3 = jSONArray.getJSONObject(i);
             if (jSONObject3 != null) {
                 String string = jSONObject3.getString("type");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     JSONObject jSONObject4 = jSONObject3.getJSONObject("fields");
                     if (string.equals("adjustState") && jSONObject4 != null) {
                         JSONObject jSONObject5 = new JSONObject();

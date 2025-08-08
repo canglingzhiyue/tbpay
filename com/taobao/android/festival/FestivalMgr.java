@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.support.v7.taobao.TBActionBar;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
@@ -320,7 +320,7 @@ public class FestivalMgr {
             return "true".equals(this.b.a("global", "isTabbarTitleSeparated"));
         }
         String c = this.c.c("global", "isTabbarTitleSeparated");
-        return !TextUtils.isEmpty(c) && "true".equals(c);
+        return !StringUtils.isEmpty(c) && "true".equals(c);
     }
 
     public Map<String, String> j() {
@@ -333,7 +333,7 @@ public class FestivalMgr {
         String str2 = (f() || ((bVar = this.c) != null && bVar.b())) ? "1" : str;
         String a2 = a("global", nom.KEY_NAVI_STYLE);
         String str3 = "getFestivalStyle: " + a2;
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = "-1";
         }
         try {

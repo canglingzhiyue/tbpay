@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.u;
@@ -66,7 +66,7 @@ public class ios {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b9ef355", new Object[]{str, uri});
-        } else if (TextUtils.isEmpty(str) || f29194a.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || f29194a.containsKey(str)) {
         } else {
             a aVar = new a(uri);
             a.a(aVar).put(ior.f29193a, str);
@@ -79,7 +79,7 @@ public class ios {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("23211f8a", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return b;
         }
         a aVar = f29194a.get(str);
@@ -91,7 +91,7 @@ public class ios {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("ab515f69", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f29194a.remove(str);
         }
         return null;
@@ -102,7 +102,7 @@ public class ios {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("13661224", new Object[]{str, aVar});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f29194a.put(str, aVar);
         }
         return null;
@@ -185,7 +185,7 @@ public class ios {
                 Iterator<String> keys = jSONObject.keys();
                 while (keys.hasNext()) {
                     String next = keys.next();
-                    if (!TextUtils.isEmpty(next)) {
+                    if (!StringUtils.isEmpty(next)) {
                         this.f29195a.put(next, jSONObject.get(next).toString());
                     }
                 }
@@ -205,7 +205,7 @@ public class ios {
                 return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
             }
             String str3 = this.f29195a.get(str);
-            return TextUtils.isEmpty(str3) ? str2 : str3;
+            return StringUtils.isEmpty(str3) ? str2 : str3;
         }
 
         public String a(String str) {
@@ -219,7 +219,7 @@ public class ios {
                 return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{this, str, new Boolean(z)})).booleanValue();
             }
             String str2 = this.f29195a.get(str);
-            return TextUtils.isEmpty(str2) ? z : str2.equalsIgnoreCase("true") || str2.equalsIgnoreCase("1");
+            return StringUtils.isEmpty(str2) ? z : str2.equalsIgnoreCase("true") || str2.equalsIgnoreCase("1");
         }
 
         public void b(String str, String str2) {
@@ -237,7 +237,7 @@ public class ios {
                 return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{this, str, new Integer(i)})).intValue();
             }
             String str2 = this.f29195a.get(str);
-            return TextUtils.isEmpty(str2) ? i : b(str2, i);
+            return StringUtils.isEmpty(str2) ? i : b(str2, i);
         }
 
         public long a(String str, long j) {
@@ -246,7 +246,7 @@ public class ios {
                 return ((Number) ipChange.ipc$dispatch("8123b0c6", new Object[]{this, str, new Long(j)})).longValue();
             }
             String str2 = this.f29195a.get(str);
-            return TextUtils.isEmpty(str2) ? j : b(str2, j);
+            return StringUtils.isEmpty(str2) ? j : b(str2, j);
         }
 
         private int b(String str, int i) {
@@ -281,7 +281,7 @@ public class ios {
                 return (int[]) ipChange.ipc$dispatch("c7f84224", new Object[]{this, str, iArr});
             }
             String str2 = this.f29195a.get(str);
-            if (!TextUtils.isEmpty(str2) && str2.contains("x")) {
+            if (!StringUtils.isEmpty(str2) && str2.contains("x")) {
                 int indexOf = str2.indexOf("x");
                 int[] iArr2 = new int[2];
                 try {
@@ -322,7 +322,7 @@ public class ios {
                 return (String) ipChange.ipc$dispatch("d71944f2", new Object[]{this});
             }
             String a2 = a(ios.URL_KEY_PHOTO_UPLOAD_CODE);
-            return TextUtils.isEmpty(a2) ? ios.BIZ_CODE_UPLOAD_IMAGE : a2;
+            return StringUtils.isEmpty(a2) ? ios.BIZ_CODE_UPLOAD_IMAGE : a2;
         }
 
         public String h() {
@@ -331,7 +331,7 @@ public class ios {
                 return (String) ipChange.ipc$dispatch("5d9eff91", new Object[]{this});
             }
             String a2 = a(ios.URL_KEY_ALGO_PHOTO_UPLOAD_CODE);
-            return TextUtils.isEmpty(a2) ? ios.BIZ_CODE_UPLOAD_IMAGE : a2;
+            return StringUtils.isEmpty(a2) ? ios.BIZ_CODE_UPLOAD_IMAGE : a2;
         }
 
         public String i() {
@@ -340,7 +340,7 @@ public class ios {
                 return (String) ipChange.ipc$dispatch("e424ba30", new Object[]{this});
             }
             String a2 = a(ios.URL_KEY_ALGO_VIDEO_UPLOAD_CODE);
-            return TextUtils.isEmpty(a2) ? ios.ALGO_BIZ_CODE_UPLOAD_VIDEO : a2;
+            return StringUtils.isEmpty(a2) ? ios.ALGO_BIZ_CODE_UPLOAD_VIDEO : a2;
         }
     }
 }

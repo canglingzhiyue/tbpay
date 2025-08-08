@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -22,7 +22,7 @@ public class ehj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8bb6538e", new Object[]{str, obj});
-        } else if (TextUtils.isEmpty(str) || obj == null) {
+        } else if (StringUtils.isEmpty(str) || obj == null) {
         } else {
             f27311a.put(str, obj);
         }
@@ -33,7 +33,7 @@ public class ehj {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("17307540", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return f27311a.get(str);

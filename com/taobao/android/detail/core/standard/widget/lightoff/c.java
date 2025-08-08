@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.standard.widget.lightoff;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -38,7 +38,7 @@ public class c extends ba implements a {
         sb.append("show:");
         sb.append(aVar != null ? aVar.toString() : "entryModel is null");
         com.taobao.android.detail.core.utils.i.a(a2, sb.toString());
-        if (aVar == null || aVar.f9909a == null || TextUtils.isEmpty(aVar.b) || aVar.e == null || aVar.e.isEmpty()) {
+        if (aVar == null || aVar.f9909a == null || StringUtils.isEmpty(aVar.b) || aVar.e == null || aVar.e.isEmpty()) {
             return false;
         }
         this.f9907a = aVar;

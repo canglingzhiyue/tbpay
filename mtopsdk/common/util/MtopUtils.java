@@ -2,7 +2,7 @@ package mtopsdk.common.util;
 
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.image.d;
@@ -403,7 +403,7 @@ public final class MtopUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("652ec3f3", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str.startsWith(ado.URL_SEPARATOR)) {
                 str = "http:" + str;
             }

@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.log.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.mobile.verifyidentity.log.VerifyLogCat;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -20,7 +20,7 @@ public class EncryptUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d7a3f211", new Object[]{context});
         }
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             String str2 = "";
             try {
                 str2 = context.getApplicationContext().getPackageName();
@@ -29,7 +29,7 @@ public class EncryptUtil {
                 VerifyLogCat.e(f5880a, th);
                 str = str2;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "unknow";
             }
             b = (str + "0000000000000000000000000000").substring(0, 24);

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.request.callback;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.request.MtopInfo;
@@ -68,7 +68,7 @@ public class PreloadRequestCallback implements IRemoteBaseListener {
             Map<String, List<String>> headerFields = mtopResponse.getHeaderFields();
             if (headerFields != null && headerFields.containsKey("s-rt")) {
                 String str = headerFields.get("s-rt").get(0);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     av.a(detailToken, "preSRT", Long.valueOf(str).longValue());
                 }
             }

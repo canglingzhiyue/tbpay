@@ -2,7 +2,7 @@ package com.taobao.pha.core;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
@@ -143,7 +143,7 @@ public interface h {
                 return (String) ipChange.ipc$dispatch("b4719ea", new Object[]{this});
             }
             String a2 = a("manifest_prefetches");
-            return TextUtils.isEmpty(a2) ? MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264 : a2;
+            return StringUtils.isEmpty(a2) ? MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264 : a2;
         }
 
         @Override // com.taobao.pha.core.h
@@ -153,7 +153,7 @@ public interface h {
                 return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{this, str, new Boolean(z)})).booleanValue();
             }
             String a2 = a(str);
-            return TextUtils.isEmpty(a2) ? z : "true".equals(a2);
+            return StringUtils.isEmpty(a2) ? z : "true".equals(a2);
         }
 
         @Override // com.taobao.pha.core.h
@@ -173,7 +173,7 @@ public interface h {
             }
             String uri2 = uri.toString();
             String a2 = a("disable_entrance_manifest_black_list");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 for (String str : a2.split(",")) {
                     if (uri2.contains(str)) {
                         return true;
@@ -262,9 +262,9 @@ public interface h {
                 return true;
             }
             String a2 = a("disable_manifest_cache_urls");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 for (String str : a2.split(",")) {
-                    if (!TextUtils.isEmpty(str) && ngn.a(Uri.parse(str), uri)) {
+                    if (!StringUtils.isEmpty(str) && ngn.a(Uri.parse(str), uri)) {
                         return true;
                     }
                 }
@@ -279,7 +279,7 @@ public interface h {
                 return ((Number) ipChange.ipc$dispatch("64de46b", new Object[]{this})).intValue();
             }
             String a2 = a("manifest_cache_default_max_age");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = String.valueOf(300);
             }
             try {
@@ -296,7 +296,7 @@ public interface h {
                 return ((Number) ipChange.ipc$dispatch("65bfbec", new Object[]{this})).intValue();
             }
             String a2 = a("downgrade_timeout");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return 5000;
             }
             try {
@@ -314,7 +314,7 @@ public interface h {
                 return ((Number) ipChange.ipc$dispatch("66a136d", new Object[]{this})).intValue();
             }
             String a2 = a("manifest_request_timeout");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return 10;
             }
             try {
@@ -339,7 +339,7 @@ public interface h {
             }
             if (uri != null) {
                 String a2 = a("disable_native_statistic_urls");
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     String builder = uri.buildUpon().clearQuery().scheme("").toString();
                     for (String str : a2.split(",")) {
                         if (builder.contains(str)) {

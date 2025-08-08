@@ -2,7 +2,7 @@ package com.taobao.android.diagnose.scene;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.common.c;
 import com.taobao.android.diagnose.scene.b;
@@ -83,7 +83,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (com.taobao.android.diagnose.config.a.b() && !TextUtils.isEmpty(str) && (k = com.taobao.android.diagnose.config.a.k()) != null && !k.isEmpty()) {
+        if (com.taobao.android.diagnose.config.a.b() && !StringUtils.isEmpty(str) && (k = com.taobao.android.diagnose.config.a.k()) != null && !k.isEmpty()) {
             return k.contains(str);
         }
         return false;
@@ -188,7 +188,7 @@ public class a {
                 ipChange.ipc$dispatch("8bb6538e", new Object[]{str, t});
                 return;
             }
-            if (com.taobao.android.diagnose.config.a.b() && !TextUtils.isEmpty(str)) {
+            if (com.taobao.android.diagnose.config.a.b() && !StringUtils.isEmpty(str)) {
                 f.a(str, t);
             }
         }

@@ -3,7 +3,7 @@ package com.taobao.android.detail.industry.scene.weex2;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -274,7 +274,7 @@ public class TTDetailARWeex2Component extends etm {
         JSONObject jSONObject2 = d.getJSONObject("params");
         if (jSONObject2 != null && (jSONObject = jSONObject2.getJSONObject("bridgeData")) != null) {
             String string = jSONObject.getString(KEY_FIELDS_PARAMS_BRIDGE_DATA_WEEX_URL);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return string;
             }
         }

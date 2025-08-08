@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -218,7 +218,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements j {
         if (this.mMultiMediaModel == null) {
             return i.SUCCESS;
         }
-        if ((this.mMultiMediaModel.childModels.get(0) instanceof NormalImageModel) && TextUtils.isEmpty(((NormalImageModel) this.mMultiMediaModel.childModels.get(0)).imageUrl)) {
+        if ((this.mMultiMediaModel.childModels.get(0) instanceof NormalImageModel) && StringUtils.isEmpty(((NormalImageModel) this.mMultiMediaModel.childModels.get(0)).imageUrl)) {
             return i.SUCCESS;
         }
         if (eno.a(DetailEvent.class) == event.getEventId()) {
@@ -521,7 +521,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements j {
 
     private boolean needShowTimeTunnel() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83942733", new Object[]{this})).booleanValue() : this.mMultiMediaModel.currentIndex == 0 && this.mMultiMediaModel.timeTunnel != null && !TextUtils.isEmpty(this.mMultiMediaModel.timeTunnel.f10001a) && !TextUtils.isEmpty(this.mMultiMediaModel.timeTunnel.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83942733", new Object[]{this})).booleanValue() : this.mMultiMediaModel.currentIndex == 0 && this.mMultiMediaModel.timeTunnel != null && !StringUtils.isEmpty(this.mMultiMediaModel.timeTunnel.f10001a) && !StringUtils.isEmpty(this.mMultiMediaModel.timeTunnel.c);
     }
 
     public void trackShowTimeTunnel() {
@@ -533,7 +533,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements j {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("trackPage", "Page_Detail_Show_Detail");
         hashMap.put("spm", this.mMultiMediaModel.timeTunnel.e != null ? this.mMultiMediaModel.timeTunnel.e : "a2141.7631564.1999020712");
-        if (!TextUtils.isEmpty(this.mMultiMediaModel.timeTunnel.f)) {
+        if (!StringUtils.isEmpty(this.mMultiMediaModel.timeTunnel.f)) {
             hashMap.put("scm", this.mMultiMediaModel.timeTunnel.f);
         }
         hashMap.put("trackId", "2201");

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.rpc.protocol.json;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -92,7 +92,7 @@ public class JsonSerializer extends AbstractSerializer {
             list.add(new BasicNameValuePair("extParam", JSON.toJSONString(obj)));
         }
         list.add(new BasicNameValuePair("operationType", this.mOperationType));
-        if (!TextUtils.isEmpty(this.scene)) {
+        if (!StringUtils.isEmpty(this.scene)) {
             list.add(new BasicNameValuePair("scene", this.scene));
         }
         LogCatUtil.printInfo("JsonSerializer", "mParams = " + this.mParams + " scene = " + this.scene);
@@ -128,7 +128,7 @@ public class JsonSerializer extends AbstractSerializer {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e8af12ae", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mRequestDataJson)) {
+        if (!StringUtils.isEmpty(this.mRequestDataJson)) {
             return this.mRequestDataJson;
         }
         this.mRequestDataJson = this.mParams == null ? MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264 : JSON.toJSONString(this.mParams, SerializerFeature.DisableCircularReferenceDetect);

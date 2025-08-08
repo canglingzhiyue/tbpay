@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.container.m;
@@ -31,13 +31,13 @@ public class ogq {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("e0bdaee4", new Object[]{context, str, str2, str3, str4, aVar});
         }
-        if (!TextUtils.isEmpty(str4) && oeb.cg()) {
+        if (!StringUtils.isEmpty(str4) && oeb.cg()) {
             try {
                 Uri.Builder buildUpon = Uri.parse(str4).buildUpon();
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     buildUpon.appendQueryParameter("code", str2);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     buildUpon.appendQueryParameter("msg", str3);
                 }
                 return TNodeView.create(context, null, null, buildUpon.build().toString(), null, null, new TNodeView.c() { // from class: tb.ogq.1

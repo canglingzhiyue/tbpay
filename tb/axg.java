@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.service.event.AURAEventIO;
 import com.alibaba.fastjson.JSONObject;
@@ -34,7 +34,7 @@ public final class axg extends arv {
             return;
         }
         String string = c.getString("message");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             arc.a().c("AURAToastEvent", "innerHandleEvent", "message 为空");
         } else {
             bat.a(b().e(), string);

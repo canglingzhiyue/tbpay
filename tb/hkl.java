@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.proxy.ir.room.IRRoomProxy;
 
@@ -59,7 +59,7 @@ public class hkl {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && a().b() != null && a().b().getRoomRIdMap() != null && (num = a().b().getRoomRIdMap().get(str)) != null) {
+        if (!StringUtils.isEmpty(str) && a().b() != null && a().b().getRoomRIdMap() != null && (num = a().b().getRoomRIdMap().get(str)) != null) {
             return num.intValue();
         }
         return -233;

@@ -3,7 +3,7 @@ package com.taobao.message.lab.comfrm.inner;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import anet.channel.Constants;
 import com.alibaba.fastjson.JSON;
@@ -119,7 +119,7 @@ public class Schedules {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9f8ee27", new Object[]{runnable});
-        } else if (TextUtils.equals(VExecutors.currentThread().getName(), LOGIC_THREAD_NAME)) {
+        } else if (StringUtils.equals(VExecutors.currentThread().getName(), LOGIC_THREAD_NAME)) {
             new MyRunnable(runnable).run();
         } else {
             sLogic.execute(new MyRunnable(runnable));
@@ -271,7 +271,7 @@ public class Schedules {
                 Logger.e("Schedules", th);
                 th.printStackTrace();
                 String value = ConfigUtil.getValue(Constants.OrangeNS.CONTAINER, "catchExceptionList", "");
-                if (!TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(value)) {
                     List<String> list = null;
                     try {
                         list = JSON.parseArray(value, String.class);

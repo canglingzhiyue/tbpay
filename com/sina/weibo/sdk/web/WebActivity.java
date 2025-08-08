@@ -2,7 +2,7 @@ package com.sina.weibo.sdk.web;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.widget.LinearLayout;
@@ -43,7 +43,7 @@ public class WebActivity extends Activity implements a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean j(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.startsWith("https://service.weibo.com/share/mobilesdk.php") || str.startsWith("https://open.weibo.cn/oauth2/authorize?");
         }
         return false;

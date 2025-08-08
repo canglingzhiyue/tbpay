@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.business;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.NetBaseOutDo;
@@ -41,7 +41,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("297c178f", new Object[]{str, str2, str3, new Integer(i), str4, strArr, bVar, pnsVar});
-        } else if (u.A() && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && u.B().contains(Integer.valueOf(i))) {
+        } else if (u.A() && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && u.B().contains(Integer.valueOf(i))) {
             new com.taobao.taolive.sdk.business.sendmsg.a(new com.taobao.taolive.sdk.adapter.network.d() { // from class: com.taobao.taolive.sdk.business.g.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

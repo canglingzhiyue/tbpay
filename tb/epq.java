@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.protocol.adapter.core.INavAdapter;
 
@@ -20,7 +20,7 @@ public class epq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{context, str});
-        } else if (context == null || TextUtils.isEmpty(str) || (f = epj.f()) == null) {
+        } else if (context == null || StringUtils.isEmpty(str) || (f = epj.f()) == null) {
         } else {
             f.navigateTo(context, str, null);
         }
@@ -31,7 +31,7 @@ public class epq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d5110219", new Object[]{context, str, new Integer(i)});
-        } else if (context == null || TextUtils.isEmpty(str) || (f = epj.f()) == null) {
+        } else if (context == null || StringUtils.isEmpty(str) || (f = epj.f()) == null) {
         } else {
             f.navigateTo(context, str, null, i);
         }
@@ -42,7 +42,7 @@ public class epq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a729a6a", new Object[]{context, str, bundle});
-        } else if (context == null || TextUtils.isEmpty(str) || (f = epj.f()) == null) {
+        } else if (context == null || StringUtils.isEmpty(str) || (f = epj.f()) == null) {
         } else {
             f.navigateTo(context, str, bundle);
         }

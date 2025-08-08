@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.internal.util.h;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.a;
@@ -45,7 +45,7 @@ public class bwq {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8ebd3369", new Object[]{this, str, str2, str3, str4, kmlVar})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str3)) {
             return b.a().a(a(str, str2, str3, str4), kmlVar);
         }
         return -1;
@@ -78,7 +78,7 @@ public class bwq {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("4dba98bb", new Object[]{this, str, str2, new Long(j)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         h.f("DownloadManager", "【实验数据】数据文件开始下载，文件地址：" + str + "，文件MD5：" + str2);
@@ -90,7 +90,7 @@ public class bwq {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("551fcdda", new Object[]{this, str, str2, new Long(j)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         h.f("DownloadManager", "【Beta实验数据】数据文件开始下载，文件地址：" + str + "，文件MD5：" + str2);

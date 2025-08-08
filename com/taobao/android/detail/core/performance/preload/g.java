@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.performance.preload;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.l;
 import tb.ecg;
@@ -40,7 +40,7 @@ public class g {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.c = str;
@@ -52,7 +52,7 @@ public class g {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.b = str;
@@ -64,7 +64,7 @@ public class g {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.d = str;
@@ -76,7 +76,7 @@ public class g {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.e = str;
@@ -130,7 +130,7 @@ public class g {
         }
         String a2 = l.a("PreloadDetailDataMarker");
         com.taobao.android.detail.core.utils.i.c(a2, " 预加载协议：" + this.b + "主接口协议:" + this.c);
-        if (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c)) {
             com.taobao.android.detail.core.utils.i.c(l.a("PreloadDetailDataMarker"), "不上报协议不一致");
         } else if (this.b.equals(this.c)) {
             com.taobao.android.detail.core.utils.i.c(l.a("PreloadDetailDataMarker"), "不上报协议不一致");
@@ -165,7 +165,7 @@ public class g {
         }
         String a2 = l.a("PreloadDetailDataMarker");
         com.taobao.android.detail.core.utils.i.c(a2, " 预加载头图url：" + this.d + "主接口头图url:" + this.e);
-        if (TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e) || this.d.equals(this.e)) {
+        if (StringUtils.isEmpty(this.d) || StringUtils.isEmpty(this.e) || this.d.equals(this.e)) {
             com.taobao.android.detail.core.utils.i.c(l.a("PreloadDetailDataMarker"), "不上报预加载和主接口头图不一致");
             return;
         }

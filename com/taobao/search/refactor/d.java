@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -667,7 +667,7 @@ public final class d extends htj {
             return;
         }
         ((com.taobao.android.meta.structure.childpage.c) J()).a(header);
-        if (!TextUtils.equals(type, "list") || (view = widget.getView()) == 0) {
+        if (!StringUtils.equals(type, "list") || (view = widget.getView()) == 0) {
             return;
         }
         view.setBackgroundColor(com.taobao.search.sf.b.a(getActivity()));

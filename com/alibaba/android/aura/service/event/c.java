@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.service.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
 import com.alibaba.fastjson.JSONArray;
@@ -22,7 +22,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4b2e70de", new Object[]{sVar, str, dVar});
-        } else if (sVar == null || TextUtils.isEmpty(str)) {
+        } else if (sVar == null || StringUtils.isEmpty(str)) {
             ard a2 = arc.a();
             a2.c("AURAEventDispatcher", "dispatch", "dispatch error, eventType=" + str);
         } else {

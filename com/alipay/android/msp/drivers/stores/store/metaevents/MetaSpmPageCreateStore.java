@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.metaevents;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.frame.MspWindowFrame;
 import com.alipay.android.msp.core.frame.MspWindowFrameStack;
@@ -33,7 +33,7 @@ public class MetaSpmPageCreateStore extends LocalEventStore {
             return "";
         }
         String string = actionParamsJson.getString("spmId");
-        if (TextUtils.isEmpty(string) || this.c == null) {
+        if (StringUtils.isEmpty(string) || this.c == null) {
             return null;
         }
         MspWindowFrameStack frameStack = this.c.getFrameStack();

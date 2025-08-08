@@ -1,6 +1,6 @@
 package com.alibaba.android.bindingx.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -61,7 +61,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             Log.e(APM_POINT, "invalid pluginType");
         } else if (!b()) {
             Log.e(APM_POINT, "disallow apm report! abort...");
@@ -110,7 +110,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "unknown_url";
         }
         try {

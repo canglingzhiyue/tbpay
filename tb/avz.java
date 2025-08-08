@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.c;
 import com.alibaba.android.aura.datamodel.nextrpc.AURANextRPCEndpoint;
@@ -56,7 +56,7 @@ public class avz extends awa {
         if (ipChange instanceof IpChange) {
             return (AURANextRPCEndpoint) ipChange.ipc$dispatch("700c2850", new Object[]{this, mTopConfigModel});
         }
-        if (mTopConfigModel == null || TextUtils.isEmpty(mTopConfigModel.apiMethod) || TextUtils.isEmpty(mTopConfigModel.apiVersion)) {
+        if (mTopConfigModel == null || StringUtils.isEmpty(mTopConfigModel.apiMethod) || StringUtils.isEmpty(mTopConfigModel.apiVersion)) {
             return null;
         }
         AURANextRPCEndpoint.a aVar = new AURANextRPCEndpoint.a();
@@ -65,7 +65,7 @@ public class avz extends awa {
         if (mTopConfigModel.requestData != null) {
             HashMap hashMap = new HashMap();
             for (String str : mTopConfigModel.requestData.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put(str, mTopConfigModel.requestData.getString(str));
                 }
             }

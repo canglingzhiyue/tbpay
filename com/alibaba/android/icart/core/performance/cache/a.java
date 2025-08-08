@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.performance.cache;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -56,7 +56,7 @@ public final class a {
             return ((Boolean) ipChange.ipc$dispatch("6664ae91", new Object[]{sb, jSONObject})).booleanValue();
         }
         String string = jSONObject.getString("pic");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         sb.append(string);

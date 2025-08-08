@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.wireless.security.open.securityguardaccsadapter.OrangeAdapter;
 import com.alipay.mobile.common.transport.utils.SwitchMonitorLogUtil;
@@ -88,7 +88,7 @@ public class mzv {
             } else if (size <= 500) {
                 str = "400_500";
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 d.a(OConstant.MONITOR_PRIVATE_MODULE, OConstant.POINT_INDEX_NAMESPACE_SIZE_COUNTS, str, 1.0d);
             }
             if (!((Boolean) h.b(a.g, OConstant.SYSKEY_INDEX_CHECK_ENABLE, (Object) true)).booleanValue() || indexDO.totalCnt <= 0 || size >= indexDO.totalCnt || !a.f18576a) {
@@ -132,7 +132,7 @@ public class mzv {
             return (List) ipChange.ipc$dispatch("99076cf7", new Object[]{this, indexDO});
         }
         if (a.y > 0) {
-            if (!TextUtils.isEmpty(indexDO.baseVersion) && !"0".equals(indexDO.baseVersion)) {
+            if (!StringUtils.isEmpty(indexDO.baseVersion) && !"0".equals(indexDO.baseVersion)) {
                 return c(indexDO);
             }
             OLog.e("IndexCache", "cache", "baseVersion is empty");
@@ -479,7 +479,7 @@ public class mzv {
             return (NameSpaceDO) ipChange.ipc$dispatch("166ef211", new Object[]{this, str});
         }
         long nanoTime = System.nanoTime();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (NameSpaceDO nameSpaceDO : this.c.mergedNamespaces) {
@@ -497,7 +497,7 @@ public class mzv {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5d9eff91", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.c.cdn)) {
+        if (StringUtils.isEmpty(this.c.cdn)) {
             return null;
         }
         return a.p + HttpConstant.SCHEME_SPLIT + this.c.cdn;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.internal.BindingXConstants;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -64,13 +64,13 @@ public class srk implements srl {
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject2 = jSONArray.getJSONObject(i);
             String c = c(jSONObject2);
-            if (TextUtils.equals(c, tiq.BIZ_CODE) && jSONObject2 != null) {
+            if (StringUtils.equals(c, tiq.BIZ_CODE) && jSONObject2 != null) {
                 a(jSONObject, jSONObject2);
                 jSONObject2.put(BindingXConstants.KEY_SCENE_TYPE, tiq.BIZ_CODE);
                 this.f33861a.add(jSONObject2);
                 ssh.a(true);
             }
-            if (TextUtils.equals(c, "TopView") && jSONObject2 != null) {
+            if (StringUtils.equals(c, "TopView") && jSONObject2 != null) {
                 jSONObject2.put(BindingXConstants.KEY_SCENE_TYPE, "TopView");
                 this.b.add(jSONObject2);
                 ssh.a(ssh.TOP_VIEW_CACHE, true);
@@ -127,11 +127,11 @@ public class srk implements srl {
             if (jSONObject4 != null) {
                 jSONObject4.put(BindingXConstants.KEY_SCENE_TYPE, (Object) c);
             }
-            if (TextUtils.equals(c, tiq.BIZ_CODE) && booleanValue) {
+            if (StringUtils.equals(c, tiq.BIZ_CODE) && booleanValue) {
                 this.f33861a.add(jSONObject4);
                 ssh.a(true);
             }
-            if (TextUtils.equals(c, "Market") && booleanValue2) {
+            if (StringUtils.equals(c, "Market") && booleanValue2) {
                 this.c.add(jSONObject4);
                 ssh.a(ssh.MARKET_CACHE, true);
             }
@@ -248,7 +248,7 @@ public class srk implements srl {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str2});
-                    } else if (TextUtils.isEmpty(str2)) {
+                    } else if (StringUtils.isEmpty(str2)) {
                     } else {
                         kej.a("2ARCH_BizDataFlow", "loadFromCache key " + str);
                         try {
@@ -281,7 +281,7 @@ public class srk implements srl {
             return d(jSONObject);
         }
         String string = jSONObject2.getString("businessCode");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return d(jSONObject);
         }
         kej.a("2ARCH_BizDataFlow", "getBizType businessCode " + string);
@@ -361,10 +361,10 @@ public class srk implements srl {
         if (jSONObject4 == null) {
             jSONObject4 = new JSONObject();
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             jSONObject4.put("advLimitSeconds", (Object) string);
         }
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return;
         }
         jSONObject4.put("advLimitInSingleDay", (Object) string2);

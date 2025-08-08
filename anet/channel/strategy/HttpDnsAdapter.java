@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.strategy.dispatch.HttpDispatcher;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -111,7 +111,7 @@ public class HttpDnsAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a9e3c23d", new Object[]{str, httpDnsOrigin, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || httpDnsOrigin == null || !AwcnConfig.isAllowHttpDnsNotify(str)) {
+        } else if (StringUtils.isEmpty(str) || httpDnsOrigin == null || !AwcnConfig.isAllowHttpDnsNotify(str)) {
         } else {
             ConnEvent connEvent = new ConnEvent();
             connEvent.isSuccess = z;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.detail.widget.container.a;
@@ -59,7 +59,7 @@ public class fae implements ehw {
         } else {
             str = epeVar.dmComponent.getType();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         char c = 65535;

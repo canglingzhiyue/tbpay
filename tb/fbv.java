@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -204,7 +204,7 @@ public class fbv extends c<fcf> {
         if (ipChange instanceof IpChange) {
             return (SpannableString) ipChange.ipc$dispatch("e4e1c4a6", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new SpannableString("");
         }
         int i = 42;

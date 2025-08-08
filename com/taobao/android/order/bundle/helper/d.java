@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -67,7 +67,7 @@ public final class d {
         } else {
             Bundle bundle = new Bundle();
             bundle.putString("searchKey", str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 bundle.putString("downgradeType", str2);
             }
             bundle.putString("from", activity.getClass().getSimpleName());
@@ -114,7 +114,7 @@ public final class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{context, str});
-        } else if (TextUtils.isEmpty(str) || context == null) {
+        } else if (StringUtils.isEmpty(str) || context == null) {
         } else {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("shop_id", (Object) str);

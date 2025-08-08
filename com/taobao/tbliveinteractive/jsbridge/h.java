@@ -1,6 +1,6 @@
 package com.taobao.tbliveinteractive.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.ui.media.IMediaPlayer;
 import org.json.JSONException;
@@ -103,7 +103,7 @@ public class h implements ppr {
             if (obj != null) {
                 str2 = (String) obj;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (pmd.a().m() != null) {
                     pnj m2 = pmd.a().m();
                     String str3 = f22156a;
@@ -124,7 +124,7 @@ public class h implements ppr {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (this.f.equals(str)) {
                     return false;
                 }
@@ -140,7 +140,7 @@ public class h implements ppr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         JSONObject jSONObject = new JSONObject();
@@ -190,7 +190,7 @@ public class h implements ppr {
         }
         JSONObject jSONObject = new JSONObject();
         String f = f();
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             try {
                 jSONObject.put("url", f);
             } catch (JSONException e) {

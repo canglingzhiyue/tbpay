@@ -1,6 +1,6 @@
 package com.taobao.android.sku.weex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
 import java.util.LinkedHashMap;
@@ -22,7 +22,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c0eab794", new Object[]{str, dVar});
-        } else if (TextUtils.isEmpty(str) || dVar == null) {
+        } else if (StringUtils.isEmpty(str) || dVar == null) {
         } else {
             f15234a.put(str, new WeakReference<>(dVar));
         }
@@ -32,7 +32,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (f15234a.isEmpty() || TextUtils.isEmpty(str)) {
+        } else if (f15234a.isEmpty() || StringUtils.isEmpty(str)) {
         } else {
             f15234a.remove(str);
         }
@@ -44,7 +44,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("e84b6d29", new Object[]{str});
         }
-        if (!f15234a.isEmpty() && !TextUtils.isEmpty(str) && (weakReference = f15234a.get(str)) != null) {
+        if (!f15234a.isEmpty() && !StringUtils.isEmpty(str) && (weakReference = f15234a.get(str)) != null) {
             return weakReference.get();
         }
         return null;

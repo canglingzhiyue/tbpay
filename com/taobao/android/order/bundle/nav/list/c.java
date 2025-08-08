@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.nav.list;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.hxd;
@@ -35,7 +35,7 @@ public class c {
         hashMap.put("url", str2);
         hashMap.put("tabType", g);
         String str3 = "OL-FT-" + i;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hyq.a(null, "downgradeProcess", "orderListUrlResolver", "1", str3, str, hashMap);

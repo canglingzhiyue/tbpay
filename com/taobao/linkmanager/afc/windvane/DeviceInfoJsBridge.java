@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.utils.AfcUtils;
 import com.taobao.flowcustoms.afc.utils.b;
@@ -27,7 +27,7 @@ public class DeviceInfoJsBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, ACTION)) {
+        if (StringUtils.equals(str, ACTION)) {
             b.a("device_info_count", "", "", null);
             if (wVCallBackContext != null) {
                 JSONObject jSONObject = new JSONObject();

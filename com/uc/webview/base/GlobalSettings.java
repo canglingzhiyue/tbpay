@@ -1,6 +1,6 @@
 package com.uc.webview.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -33,7 +33,7 @@ public class GlobalSettings extends d {
             return str;
         }
         String str2 = sImpl.get().get(i);
-        return TextUtils.isEmpty(str2) ? str : str2;
+        return StringUtils.isEmpty(str2) ? str : str2;
     }
 
     public static boolean get(int i, boolean z) {

@@ -9,7 +9,7 @@ import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.f;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -207,7 +207,7 @@ public class WVFalco extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b29db3b7", new Object[]{this, str, adjVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             adjVar.b();
         } else {
             adjVar.a();
@@ -291,7 +291,7 @@ public class WVFalco extends e {
             AppMonitor.Alarm.commitFail("WindVane", "WVFalco", iPerformance != null ? iPerformance.getCachedUrl() : "unknown", "2", "findSpan");
         }
         String optString = jSONObject.optString("phaseID");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             adj adjVar3 = this.phaseMap.get(optString);
             if (adjVar3 == null) {
                 wVCallBackContext.error(FAIL_REASON, "no such phase");
@@ -300,7 +300,7 @@ public class WVFalco extends e {
             adjVar.a(adjVar3);
         }
         String optString2 = jSONObject.optString("stageID");
-        if (!TextUtils.isEmpty(optString2)) {
+        if (!StringUtils.isEmpty(optString2)) {
             adj adjVar4 = this.stageMap.get(optString2);
             if (adjVar4 == null) {
                 wVCallBackContext.error(FAIL_REASON, "no such stage");
@@ -319,10 +319,10 @@ public class WVFalco extends e {
             return;
         }
         j.a();
-        if (!j.commonConfig.bo || TextUtils.isEmpty(str)) {
+        if (!j.commonConfig.bo || StringUtils.isEmpty(str)) {
             return;
         }
-        if (TextUtils.equals("h5_" + str, this.pageName)) {
+        if (StringUtils.equals("h5_" + str, this.pageName)) {
             return;
         }
         String str2 = "h5_" + str;

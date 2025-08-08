@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -86,7 +86,7 @@ public class NetUtil {
         if ("WIFI".equalsIgnoreCase(networkInfo.getTypeName())) {
             return "WIFI";
         }
-        if (!TextUtils.isEmpty(networkInfo.getSubtypeName())) {
+        if (!StringUtils.isEmpty(networkInfo.getSubtypeName())) {
             str = networkInfo.getSubtypeName();
         } else if (networkInfo.getSubtype() == 16) {
             str = TYPE_GSM;
@@ -97,7 +97,7 @@ public class NetUtil {
         } else if (networkInfo.getSubtype() == 19) {
             str = TYPE_TDS_HSUPA;
         }
-        if (str == null || TextUtils.isEmpty(networkInfo.getExtraInfo())) {
+        if (str == null || StringUtils.isEmpty(networkInfo.getExtraInfo())) {
             return str;
         }
         return str + "|" + networkInfo.getExtraInfo();

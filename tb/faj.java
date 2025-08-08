@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.text.Html;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -77,11 +77,11 @@ public class faj extends b<fba> {
             String str = fbaVar.f27731a;
             String str2 = fbaVar.b;
             String str3 = fbaVar.c;
-            if (!TextUtils.isEmpty(str) && (textView2 = this.l) != null) {
+            if (!StringUtils.isEmpty(str) && (textView2 = this.l) != null) {
                 textView2.setText(str);
                 this.l.setVisibility(0);
             }
-            if (!TextUtils.isEmpty(str2) && (textView = this.m) != null) {
+            if (!StringUtils.isEmpty(str2) && (textView = this.m) != null) {
                 textView.setText(Html.fromHtml(str2));
                 this.m.setVisibility(0);
             }

@@ -2,7 +2,7 @@ package com.taobao.android.fluid.framework.preload.task;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -124,7 +124,7 @@ public class d extends a {
             hashMap.put("extraParams", Uri.encode(this.f12642a.toJSONString()));
         }
         spz.c("PickPreloadController_IconStreamPreloadTask_PreloadVideoModule", "[preloadvideo]IconStreamPreloadTask execute. videoId=" + this.e + " requestPlayControl=" + this.f);
-        if (!TextUtils.isEmpty(this.e) && this.f) {
+        if (!StringUtils.isEmpty(this.e) && this.f) {
             spz.c("PickPreloadController_IconStreamPreloadTask_PreloadVideoModule", "request PlayControl");
             pil.a(this.b, null, "gg_pickpreload_request_videoinfo");
             com.taobao.android.fluid.framework.data.remote.d.a(this.e, "videoFullScreen", "ggpick_preload", false, new IRemoteBaseListener() { // from class: com.taobao.android.fluid.framework.preload.task.IconStreamPreloadTask$1

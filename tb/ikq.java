@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.remoteso.api.RSoException;
 import com.taobao.android.remoteso.log.a;
@@ -124,7 +124,7 @@ public final class ikq {
         }
         try {
             String th2 = th.toString();
-            return TextUtils.isEmpty(th2) ? "empty detail error msg" : th2.substring(0, Math.min(th2.length(), 400));
+            return StringUtils.isEmpty(th2) ? "empty detail error msg" : th2.substring(0, Math.min(th2.length(), 400));
         } catch (Throwable th3) {
             return "parseErrorMsg, error," + th3.getClass();
         }

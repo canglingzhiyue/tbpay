@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
@@ -40,7 +40,7 @@ public final class d {
             return (a) ipChange.ipc$dispatch("b3e7bcb0", new Object[]{this, str});
         }
         a aVar = new a();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return aVar;
         }
         try {

@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.widget.listview.feature.features;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -58,7 +58,7 @@ public class FeatureList<T extends View> extends ArrayList<a<? super T>> impleme
         Iterator<a<? super T>> it = iterator();
         while (it.hasNext()) {
             a aVar2 = (a) it.next();
-            if (TextUtils.equals(aVar2.getClass().getName(), aVar.getClass().getName())) {
+            if (StringUtils.equals(aVar2.getClass().getName(), aVar.getClass().getName())) {
                 throw new RuntimeException(aVar2.getClass().getName() + " already add to this view");
             }
         }

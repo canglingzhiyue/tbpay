@@ -2,7 +2,7 @@ package com.taobao.android.fluid.framework.card.cards.base.layer.interactive.eve
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -1062,7 +1062,7 @@ public class b extends ptk {
                 boolean a25 = oec.a(spyVar.i.get("isWeexFollowMove"), false);
                 boolean a26 = oec.a(spyVar.i.get("isReset"), false);
                 int a27 = ohd.a((Context) null, a23);
-                sia a28 = new sia.a().a(this.m).c(a22).a(a26 ? -a27 : 0).a(a24).b(a25).b(a27).d(a26).c(TextUtils.equals(spyVar.c, "VSMSG_screenMoveV2")).a(oec.a(spyVar.i.get("interpolatorType"), "linear")).b(oec.a(spyVar.i.get(e.KEY_BG_COLOR), (String) null)).a();
+                sia a28 = new sia.a().a(this.m).c(a22).a(a26 ? -a27 : 0).a(a24).b(a25).b(a27).d(a26).c(StringUtils.equals(spyVar.c, "VSMSG_screenMoveV2")).a(oec.a(spyVar.i.get("interpolatorType"), "linear")).b(oec.a(spyVar.i.get(e.KEY_BG_COLOR), (String) null)).a();
                 if (iqw.j()) {
                     this.l.F().a(a28);
                 }
@@ -1140,7 +1140,7 @@ public class b extends ptk {
                     }
                     jqu detailVideoPositiveFeedbackIdsModel = ((IDataService) this.k.getService(IDataService.class)).getDetailVideoPositiveFeedbackIdsModel();
                     String I = a4.I();
-                    if (TextUtils.isEmpty(I)) {
+                    if (StringUtils.isEmpty(I)) {
                         I = a4.g();
                     }
                     boolean z5 = detailVideoPositiveFeedbackIdsModel != null && detailVideoPositiveFeedbackIdsModel.b(I);

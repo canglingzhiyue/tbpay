@@ -1,6 +1,6 @@
 package com.taobao.message.kit.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import tb.kge;
@@ -166,11 +166,11 @@ public class AmpUtil {
 
     private static String getMinStr(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6e633410", new Object[]{str, str2}) : (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || str.compareTo(str2) < 0) ? str : str2;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6e633410", new Object[]{str, str2}) : (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || str.compareTo(str2) < 0) ? str : str2;
     }
 
     private static String getMaxStr(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1507fc22", new Object[]{str, str2}) : (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || str.compareTo(str2) > 0) ? str : str2;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1507fc22", new Object[]{str, str2}) : (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || str.compareTo(str2) > 0) ? str : str2;
     }
 }

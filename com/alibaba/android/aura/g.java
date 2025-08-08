@@ -1,7 +1,7 @@
 package com.alibaba.android.aura;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.l;
 import com.alibaba.android.aura.nodemodel.workflow.AURAExecuteNodeModel;
 import com.alibaba.android.umf.constants.UMFConstants;
@@ -169,7 +169,7 @@ public final class g {
             ipChange.ipc$dispatch("bca76fb3", new Object[]{this, str, data, aqqVar, aVar});
         } else if (this.g == null) {
             aVar.a("-1000", "配置文件初始化错误", str, aqqVar);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             aVar.a(UMFConstants.ErrorCode.WORKFLOW_NOT_FOUND, "FlowCode为空", str, aqqVar);
         } else if (data == null) {
             aVar.a("-6000", "input不能为空", str, aqqVar);
@@ -181,7 +181,7 @@ public final class g {
             }
             h hVar = new h(a2, aqqVar, this.d, this.h, this.f, this.c.e());
             String str2 = a2.b;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 aVar.a("-2002", "FlowCode不为空，但是配置中flowType为空", str, hVar);
                 return;
             }

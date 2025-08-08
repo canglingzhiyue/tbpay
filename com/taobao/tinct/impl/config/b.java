@@ -2,7 +2,7 @@ package com.taobao.tinct.impl.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -47,27 +47,27 @@ public class b {
                         String str4 = configs.get(a.CONFIG_TICNT_JSON);
                         String str5 = configs.get(a.CONFIG_ORANGE_BIZ_MAP);
                         String str6 = configs.get(a.CONFIG_IS_TINCT_LAUNCH_ENABLE);
-                        if (TextUtils.isEmpty(str3)) {
+                        if (StringUtils.isEmpty(str3)) {
                             edit.remove(a.CONFIG_IS_TINCT_ENABLE);
                         } else if ("true".equals(str3)) {
                             edit.putBoolean(a.CONFIG_IS_TINCT_ENABLE, true);
                         } else {
                             edit.putBoolean(a.CONFIG_IS_TINCT_ENABLE, false);
                         }
-                        if (!TextUtils.equals(a2.getString(a.CONFIG_TICNT_JSON, null), str4)) {
-                            if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.equals(a2.getString(a.CONFIG_TICNT_JSON, null), str4)) {
+                            if (!StringUtils.isEmpty(str4)) {
                                 edit.putString(a.CONFIG_TICNT_JSON, str4);
                             } else {
                                 edit.remove(a.CONFIG_TICNT_JSON);
                             }
                             a.a(str4);
                         }
-                        if (!TextUtils.isEmpty(str5)) {
+                        if (!StringUtils.isEmpty(str5)) {
                             edit.putString(a.CONFIG_ORANGE_BIZ_MAP, str5);
                         } else {
                             edit.remove(a.CONFIG_ORANGE_BIZ_MAP);
                         }
-                        if (!TextUtils.isEmpty(str6)) {
+                        if (!StringUtils.isEmpty(str6)) {
                             edit.putBoolean(a.CONFIG_IS_TINCT_LAUNCH_ENABLE, "true".equals(str6));
                         } else {
                             edit.remove(a.CONFIG_IS_TINCT_LAUNCH_ENABLE);

@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.PowerManager;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -167,7 +167,7 @@ public class apg {
         try {
             String str = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).applicationInfo.processName;
             String f = f(context);
-            Boolean valueOf = Boolean.valueOf((TextUtils.isEmpty(str) || TextUtils.isEmpty(f)) ? true : f.equalsIgnoreCase(str));
+            Boolean valueOf = Boolean.valueOf((StringUtils.isEmpty(str) || StringUtils.isEmpty(f)) ? true : f.equalsIgnoreCase(str));
             b = valueOf;
             return valueOf.booleanValue();
         } catch (Throwable unused) {

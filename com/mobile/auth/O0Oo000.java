@@ -2,7 +2,7 @@ package com.mobile.auth;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import tb.dbc;
 
@@ -19,7 +19,7 @@ public class O0Oo000 implements dbc<OO000o0> {
     private void O000000o(Context context, OO000o0 oO000o0) {
         try {
             String O00000Oo = com.mobile.auth.gatewayauth.utils.O00000Oo.O00000Oo();
-            if (TextUtils.isEmpty(O00000Oo)) {
+            if (StringUtils.isEmpty(O00000Oo)) {
                 oO000o0.O000000o(false);
                 return;
             }

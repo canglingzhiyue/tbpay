@@ -1,6 +1,6 @@
 package com.taobao.infoflow.jsbridge.impl.bridge.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.adapter.e;
@@ -20,10 +20,10 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (JsActionModel) ipChange.ipc$dispatch("716a1339", new Object[]{str, str2});
         }
-        if (!TextUtils.equals(e.RECORD_EXECUTE, str)) {
+        if (!StringUtils.equals(e.RECORD_EXECUTE, str)) {
             ldf.d("JsActionModelCreator", "error action : " + str);
             return null;
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             ldf.d("JsActionModelCreator", "params is empty");
             return null;
         } else {

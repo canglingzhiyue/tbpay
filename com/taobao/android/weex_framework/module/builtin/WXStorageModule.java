@@ -1,6 +1,6 @@
 package com.taobao.android.weex_framework.module.builtin;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex.WeexInstanceImpl;
@@ -107,7 +107,7 @@ public final class WXStorageModule extends WeexInnerModule {
         String stringValueOrNull = getArg(weexValueArr, 0).toStringValueOrNull();
         String stringValueOrNull2 = getArg(weexValueArr, 1).toStringValueOrNull();
         final com.taobao.android.weex.b callback = getCallback(weexValueArr, 2);
-        if (TextUtils.isEmpty(stringValueOrNull)) {
+        if (StringUtils.isEmpty(stringValueOrNull)) {
             e.a(callback);
         } else {
             this.mStorageAdapter.a(stringValueOrNull, stringValueOrNull2, new b.a() { // from class: com.taobao.android.weex_framework.module.builtin.WXStorageModule.1
@@ -139,7 +139,7 @@ public final class WXStorageModule extends WeexInnerModule {
         argCount(weexValueArr, 2);
         String stringValueOrNull = getArg(weexValueArr, 0).toStringValueOrNull();
         final com.taobao.android.weex.b callback = getCallback(weexValueArr, 1);
-        if (TextUtils.isEmpty(stringValueOrNull)) {
+        if (StringUtils.isEmpty(stringValueOrNull)) {
             e.a(callback);
         } else {
             this.mStorageAdapter.c(stringValueOrNull, new b.a() { // from class: com.taobao.android.weex_framework.module.builtin.WXStorageModule.2
@@ -171,7 +171,7 @@ public final class WXStorageModule extends WeexInnerModule {
         argCount(weexValueArr, 2);
         String stringValueOrNull = getArg(weexValueArr, 0).toStringValueOrNull();
         final com.taobao.android.weex.b callback = getCallback(weexValueArr, 1);
-        if (TextUtils.isEmpty(stringValueOrNull)) {
+        if (StringUtils.isEmpty(stringValueOrNull)) {
             e.a(callback);
         } else {
             this.mStorageAdapter.a(stringValueOrNull, new b.a() { // from class: com.taobao.android.weex_framework.module.builtin.WXStorageModule.3
@@ -258,7 +258,7 @@ public final class WXStorageModule extends WeexInnerModule {
         String stringValueOrNull = getArg(weexValueArr, 0).toStringValueOrNull();
         String stringValueOrNull2 = getArg(weexValueArr, 1).toStringValueOrNull();
         final com.taobao.android.weex.b callback = getCallback(weexValueArr, 2);
-        if (TextUtils.isEmpty(stringValueOrNull) || stringValueOrNull2 == null) {
+        if (StringUtils.isEmpty(stringValueOrNull) || stringValueOrNull2 == null) {
             e.a(callback);
         } else {
             this.mStorageAdapter.b(stringValueOrNull, stringValueOrNull2, new b.a() { // from class: com.taobao.android.weex_framework.module.builtin.WXStorageModule.6

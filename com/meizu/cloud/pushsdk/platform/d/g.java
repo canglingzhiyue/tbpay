@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.platform.d;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.platform.PlatformMessageSender;
@@ -28,12 +28,12 @@ public class g extends c<UnRegisterStatus> {
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     /* renamed from: a */
     public void b(UnRegisterStatus unRegisterStatus) {
-        PlatformMessageSender.a(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), unRegisterStatus);
+        PlatformMessageSender.a(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), unRegisterStatus);
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     protected boolean d() {
-        return !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d);
+        return !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d);
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
@@ -58,8 +58,8 @@ public class g extends c<UnRegisterStatus> {
         String str;
         UnRegisterStatus unRegisterStatus = new UnRegisterStatus();
         unRegisterStatus.setCode("20001");
-        if (!TextUtils.isEmpty(this.c)) {
-            if (TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.d)) {
                 str = "appKey not empty";
             }
             return unRegisterStatus;
@@ -81,7 +81,7 @@ public class g extends c<UnRegisterStatus> {
     /* renamed from: o */
     public UnRegisterStatus e() {
         UnRegisterStatus unRegisterStatus = new UnRegisterStatus();
-        if (TextUtils.isEmpty(com.meizu.cloud.pushsdk.util.b.h(this.b, this.e))) {
+        if (StringUtils.isEmpty(com.meizu.cloud.pushsdk.util.b.h(this.b, this.e))) {
             unRegisterStatus.setCode("200");
             unRegisterStatus.setMessage("already unRegister PushId,don't unRegister frequently");
             unRegisterStatus.setIsUnRegisterSuccess(true);
@@ -89,7 +89,7 @@ public class g extends c<UnRegisterStatus> {
         }
         String b = com.meizu.cloud.pushsdk.d.c.b(this.b);
         String a2 = com.meizu.cloud.pushsdk.d.c.a(this.b);
-        if (TextUtils.isEmpty(b) && TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(b) && StringUtils.isEmpty(a2)) {
             unRegisterStatus.setCode("20000");
             unRegisterStatus.setMessage("deviceId is empty");
             return unRegisterStatus;

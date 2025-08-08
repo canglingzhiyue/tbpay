@@ -1,6 +1,6 @@
 package android.taobao.windvane.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.musie.weex.MusWeex;
 import tb.aej;
@@ -59,7 +59,7 @@ public class k {
                 try {
                     double d = k.getInstance().config.perfCheckSampleRate;
                     String str = k.getInstance().config.perfCheckURL;
-                    if (TextUtils.isEmpty(MusWeex.ATTR_SCRIPT_URL) || d <= Math.random()) {
+                    if (StringUtils.isEmpty(MusWeex.ATTR_SCRIPT_URL) || d <= Math.random()) {
                         return null;
                     }
                     aejVar.f25289a.evaluateJavascript(String.format("(function(d){var s = d.createElement('script');s.src='%s';d.head.appendChild(s);})(document)", str));

@@ -44,9 +44,9 @@ final class o implements z {
             java.lang.String r10 = "Parameter error"
             java.lang.String r11 = "2"
             if (r7 == 0) goto L84
-            boolean r4 = android.text.TextUtils.isEmpty(r13)     // Catch: java.lang.Exception -> Lce
+            boolean r4 = android.text.StringUtils.isEmpty(r13)     // Catch: java.lang.Exception -> Lce
             if (r4 != 0) goto L7a
-            boolean r4 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Exception -> Lce
+            boolean r4 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Exception -> Lce
             if (r4 != 0) goto L7a
             android.content.Intent r4 = new android.content.Intent     // Catch: java.lang.Exception -> Lce
             r4.<init>()     // Catch: java.lang.Exception -> Lce
@@ -76,7 +76,7 @@ final class o implements z {
         L84:
             boolean r4 = r11.equals(r4)     // Catch: java.lang.Exception -> Lce
             if (r4 == 0) goto Lc4
-            boolean r4 = android.text.TextUtils.isEmpty(r5)     // Catch: java.lang.Exception -> Lce
+            boolean r4 = android.text.StringUtils.isEmpty(r5)     // Catch: java.lang.Exception -> Lce
             if (r4 != 0) goto Lba
             android.content.Intent r4 = new android.content.Intent     // Catch: java.lang.Exception -> Lce
             java.lang.String r6 = "android.intent.action.VIEW"
@@ -84,7 +84,7 @@ final class o implements z {
             android.net.Uri r5 = android.net.Uri.parse(r5)     // Catch: java.lang.Exception -> Lce
             r4.setData(r5)     // Catch: java.lang.Exception -> Lce
             r4.putExtra(r0, r3)     // Catch: java.lang.Exception -> Lce
-            boolean r0 = android.text.TextUtils.isEmpty(r13)     // Catch: java.lang.Exception -> Lce
+            boolean r0 = android.text.StringUtils.isEmpty(r13)     // Catch: java.lang.Exception -> Lce
             if (r0 != 0) goto Laa
             r4.setPackage(r13)     // Catch: java.lang.Exception -> Lce
         Laa:

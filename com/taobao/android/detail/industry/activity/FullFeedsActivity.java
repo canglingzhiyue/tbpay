@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -280,7 +280,7 @@ public class FullFeedsActivity extends AppCompatActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (getIntent() != null && (data = getIntent().getData()) != null && !TextUtils.isEmpty(data.getQuery())) {
+        } else if (getIntent() != null && (data = getIntent().getData()) != null && !StringUtils.isEmpty(data.getQuery())) {
             this.j = data.getQueryParameter("bizCode");
             Set<String> queryParameterNames = data.getQueryParameterNames();
             if (queryParameterNames == null || queryParameterNames.isEmpty()) {

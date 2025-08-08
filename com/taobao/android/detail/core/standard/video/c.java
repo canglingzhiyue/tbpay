@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.standard.video;
 
 import android.app.Activity;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -147,7 +147,7 @@ public class c extends AbsPicGalleryVideoPlayer {
             com.taobao.android.detail.core.utils.i.b("DWPicGalleryVideoPlayer", "play failed:video is destroy");
             return;
         }
-        if (TextUtils.equals(this.c, "init")) {
+        if (StringUtils.equals(this.c, "init")) {
             this.f.start();
         } else {
             this.f.playVideo();
@@ -203,7 +203,7 @@ public class c extends AbsPicGalleryVideoPlayer {
         } else if (f > 1.0f) {
             f = 1.0f;
         }
-        if (TextUtils.equals(this.c, "init")) {
+        if (StringUtils.equals(this.c, "init")) {
             this.o = f;
         } else {
             this.f.seekTo((int) (((float) r()) * f));
@@ -542,7 +542,7 @@ public class c extends AbsPicGalleryVideoPlayer {
         aVar.c(this.p);
         this.q = (int) (bay.b() / this.b.d());
         aVar.d(this.q);
-        if (!TextUtils.isEmpty(this.b.c())) {
+        if (!StringUtils.isEmpty(this.b.c())) {
             DWFrontCoverBean dWFrontCoverBean = new DWFrontCoverBean(0L, null, this.b.c());
             dWFrontCoverBean.setScaleType(AliSDetailScaleType.centerCrop.equalsIgnoreCase(this.b.f()) ? ImageView.ScaleType.CENTER_CROP : ImageView.ScaleType.FIT_CENTER);
             com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar2 = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
@@ -760,7 +760,7 @@ public class c extends AbsPicGalleryVideoPlayer {
         this.l.setStrategyConfig(new ImageStrategyConfig.a("detail", 1503).a());
         this.m = (ImageButton) this.i.findViewById(R.id.picGalleryVideoPlayerPlayBtn);
         this.n = (ImageButton) this.i.findViewById(R.id.picGalleryVideoPlayerMuteBtn);
-        if (!TextUtils.isEmpty(this.b.c())) {
+        if (!StringUtils.isEmpty(this.b.c())) {
             this.l.setImageUrl(this.b.c());
             this.l.setVisibility(0);
         } else {
@@ -858,7 +858,7 @@ public class c extends AbsPicGalleryVideoPlayer {
 
     private boolean D() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3d3c2cf", new Object[]{this})).booleanValue() : TextUtils.equals(this.c, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_DESTROYED);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3d3c2cf", new Object[]{this})).booleanValue() : StringUtils.equals(this.c, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_DESTROYED);
     }
 
     private void E() {
@@ -883,11 +883,11 @@ public class c extends AbsPicGalleryVideoPlayer {
             return hashMap;
         }
         String i = C.i();
-        if (!TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(i)) {
             hashMap.put("item_id", i);
         }
         String h = C.h();
-        if (!TextUtils.isEmpty(h)) {
+        if (!StringUtils.isEmpty(h)) {
             hashMap.put("seller_id", h);
         }
         return hashMap;

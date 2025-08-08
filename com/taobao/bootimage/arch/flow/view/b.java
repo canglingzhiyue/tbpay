@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Looper;
 import android.os.Message;
 import android.taobao.util.i;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -248,7 +248,7 @@ public class b {
             this.h = 202;
             a(keq.EXPOSE_ERROR, "baseView null");
             return new c();
-        } else if (TextUtils.isEmpty(this.f16665a.bizType)) {
+        } else if (StringUtils.isEmpty(this.f16665a.bizType)) {
             a(keq.EXPOSE_ERROR, "bizType null");
             this.h = 202;
             return new c();
@@ -289,7 +289,7 @@ public class b {
                     return new c();
                 }
                 a(bVar);
-                if (TextUtils.isEmpty(this.f16665a.videoUrl)) {
+                if (StringUtils.isEmpty(this.f16665a.videoUrl)) {
                     kej.a("2ARCH_Presenter", "createView: videoUrl null loadFirstFrame");
                     return a2;
                 } else if (!this.b.a(this.f16665a.videoUrl, this.f16665a.haveVoice, this.j)) {

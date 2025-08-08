@@ -1,7 +1,7 @@
 package com.taobao.detail.rate.vivid.dinamicX.view.error;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -280,7 +280,7 @@ public final class DisplayErrorView extends FrameLayout {
                 i = Integer.parseInt(str2);
             }
             tBErrorView.setError(Error.Factory.fromMtopResponse(str, i, this.mappingCode, this.retCode, this.errorMsg));
-            if (!TextUtils.isEmpty(this.buttonTitle)) {
+            if (!StringUtils.isEmpty(this.buttonTitle)) {
                 tBErrorView.setButton(TBErrorView.ButtonType.BUTTON_LEFT, this.buttonTitle, new b());
             }
         }

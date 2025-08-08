@@ -2,7 +2,7 @@ package com.taobao.tao.content.business;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -72,33 +72,33 @@ public class WVBusinessSDKBridge extends e {
                 }
                 if (jSONObject.has("sourceType")) {
                     String string = jSONObject.getString("sourceType");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         contentBusinessModel.sourceType = string;
                     }
                 }
                 if (odt.c()) {
                     if (jSONObject.has("actionSource")) {
                         String string2 = jSONObject.getString("actionSource");
-                        if (!TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string2)) {
                             contentBusinessModel.actionSource = string2;
                         }
                     }
                     if (jSONObject.has("trackSource")) {
                         String string3 = jSONObject.getString("trackSource");
-                        if (!TextUtils.isEmpty(string3)) {
+                        if (!StringUtils.isEmpty(string3)) {
                             contentBusinessModel.trackSource = string3;
                         }
                     }
                     if (jSONObject.has("trackSubSource")) {
                         String string4 = jSONObject.getString("trackSubSource");
-                        if (!TextUtils.isEmpty(string4)) {
+                        if (!StringUtils.isEmpty(string4)) {
                             contentBusinessModel.trackSubSource = string4;
                         }
                     }
                 }
                 if (jSONObject.has("context")) {
                     String string5 = jSONObject.getString("context");
-                    if (!TextUtils.isEmpty(string5)) {
+                    if (!StringUtils.isEmpty(string5)) {
                         contentBusinessModel.context = new JSONObject(string5);
                     }
                 }

@@ -8,7 +8,7 @@ import android.taobao.util.k;
 import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -223,7 +223,7 @@ public class b extends qmr {
                         Context d = b.d(b.this);
                         qng.a(d, "WebView " + b.getCurrentViewCoreType());
                     }
-                    if (!TextUtils.isEmpty(b.this.h) && !qnc.a(b.getUrl(), b.this.h)) {
+                    if (!StringUtils.isEmpty(b.this.h) && !qnc.a(b.getUrl(), b.this.h)) {
                         b bVar = b.this;
                         bVar.c(bVar.h);
                     }
@@ -262,7 +262,7 @@ public class b extends qmr {
                         Context d = b.d(b.this);
                         qng.a(d, "WebView " + b.getCurrentViewCoreType());
                     }
-                    if (!TextUtils.isEmpty(b.this.h) && !qnc.a(b.getUrl(), b.this.h)) {
+                    if (!StringUtils.isEmpty(b.this.h) && !qnc.a(b.getUrl(), b.this.h)) {
                         b bVar = b.this;
                         bVar.c(bVar.h);
                     }
@@ -585,7 +585,7 @@ public class b extends qmr {
         if (r == null) {
             return;
         }
-        if (!TextUtils.isEmpty(str) && str.contains("TBLiveWeex")) {
+        if (!StringUtils.isEmpty(str) && str.contains("TBLiveWeex")) {
             str = str.replace("TBLiveWeex", "TBLiveWVPlugin");
         }
         WVStandardEventCenter.postNotificationToJS(r, str, str2);
@@ -603,7 +603,7 @@ public class b extends qmr {
         if (r == null) {
             return;
         }
-        if (!TextUtils.isEmpty(str) && str.contains("TBLiveWeex")) {
+        if (!StringUtils.isEmpty(str) && str.contains("TBLiveWeex")) {
             str = str.replace("TBLiveWeex", "TBLiveWVPlugin");
         }
         String a2 = pqj.a(map);
@@ -747,7 +747,7 @@ public class b extends qmr {
                 this.p.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 this.f32942a.addView(this.p);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.p.setImageDrawable(this.f.getResources().getDrawable(R.drawable.taolive_interactive_close));
             } else {
                 this.p.setImageUrl(str);

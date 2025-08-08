@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.eventchain;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.FinishResult;
 import com.alibaba.fastjson.JSON;
@@ -134,7 +134,7 @@ public class a {
             return;
         }
         this.i = str;
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             this.j = JSON.parseObject(this.i);
         }
         if (this.w != MEGA.byteValue()) {
@@ -232,7 +232,7 @@ public class a {
         this.o = jSONObject3;
         DXTraceUtil.a(2);
         if (!a3) {
-            if (dVar.n() != null && dVar.o() != null && (dXAtomicFTData = this.q) != null && !TextUtils.isEmpty(dXAtomicFTData.c())) {
+            if (dVar.n() != null && dVar.o() != null && (dXAtomicFTData = this.q) != null && !StringUtils.isEmpty(dXAtomicFTData.c())) {
                 fuz.b(dVar.u());
                 com.taobao.analysis.v3.p a4 = fuz.a(dVar.o(), this.q.d());
                 fuz.a(a4);
@@ -251,7 +251,7 @@ public class a {
                 }
             }
             DXAtomicFTData dXAtomicFTData4 = this.q;
-            if (dXAtomicFTData4 != null && !TextUtils.isEmpty(dXAtomicFTData4.a()) && !"none".equals(this.q.a()) && fqi.i() && (a2 = dVar.a()) != null && a2.C().a() != null && a2.C().a().s()) {
+            if (dXAtomicFTData4 != null && !StringUtils.isEmpty(dXAtomicFTData4.a()) && !"none".equals(this.q.a()) && fqi.i() && (a2 = dVar.a()) != null && a2.C().a() != null && a2.C().a().s()) {
                 fVar = b(dVar);
             }
             fuw.a("DXFullTrace", "atomic ", this.f, this.p);
@@ -305,7 +305,7 @@ public class a {
                                 fuz.c(this.f11846a);
                             }
                         }
-                        if (dVar.n() != null && dVar.o() != null && TextUtils.isEmpty(str) && dVar.p() <= 0) {
+                        if (dVar.n() != null && dVar.o() != null && StringUtils.isEmpty(str) && dVar.p() <= 0) {
                             fuw.d("DXFullTrace", "EvnetChian finish callback ", " ", a.a(a.this));
                             a.a(a.this, dVar);
                         }
@@ -360,7 +360,7 @@ public class a {
                     fuz.c(fVar2);
                 }
             }
-            if (TextUtils.isEmpty(this.h) && dVar.p() <= 0 && dVar.n() != null && dVar.o() != null) {
+            if (StringUtils.isEmpty(this.h) && dVar.p() <= 0 && dVar.n() != null && dVar.o() != null) {
                 fuw.d("DXFullTrace", "EvnetChian finish  ", this.f);
                 a(dVar);
             }
@@ -374,7 +374,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5b2e1ed", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.i)) {
+        } else if (StringUtils.isEmpty(this.i)) {
             fuw.d("DXAtomicEventNode", "eventchain parse event info : atom event content is null");
         } else {
             JSONObject jSONObject2 = new JSONObject();
@@ -446,7 +446,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("82706840", new Object[]{this, str, dVar});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@") || !str.endsWith(riy.BLOCK_END_STR)) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@") || !str.endsWith(riy.BLOCK_END_STR)) {
             return str;
         }
         if (dVar != null && dVar.g() != null && dVar.g().b(str) != null) {
@@ -517,7 +517,7 @@ public class a {
             dVar.a(a4);
             dVar.a().a(a4);
             fuz.b(a4);
-            if (TextUtils.isEmpty(this.q.c())) {
+            if (StringUtils.isEmpty(this.q.c())) {
                 a2 = fuz.e(a4);
             } else {
                 a2 = fuz.a(a4, this.q.d());
@@ -585,7 +585,7 @@ public class a {
                         f = executeResult.f();
                     }
                     String str = (String) b.get(f);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         fuw.h("eventChianName is null ", executeResult.f());
                         return;
                     }

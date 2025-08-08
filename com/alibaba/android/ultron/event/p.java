@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.event;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.android.ultron.event.model.OpenUrlEventModel;
@@ -84,13 +84,13 @@ public class p extends q {
             url = c(url, queryParams);
             UnifyLog.a(this.f.h(), "OpenUrlSubscriber", "add queryParams after: " + url, new String[0]);
         }
-        if (!TextUtils.isEmpty(url)) {
+        if (!StringUtils.isEmpty(url)) {
             Uri.Builder buildUpon = Uri.parse(url).buildUpon();
             buildUpon.appendQueryParameter(CoreConstants.IN_PARAMS_DETAILCLICK, String.valueOf(System.currentTimeMillis()));
             url = buildUpon.build().toString();
         }
         JSONObject params = openUrlEventModel.getParams();
-        if (TextUtils.isEmpty(pageType)) {
+        if (StringUtils.isEmpty(pageType)) {
             pageType = "H5";
         }
         if (url == null) {
@@ -141,7 +141,7 @@ public class p extends q {
         if (jSONObject != null) {
             str3 = jSONObject.getString("__oldComponent");
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "post";
         }
         if (str3 == null || jSONObject == null) {
@@ -175,12 +175,12 @@ public class p extends q {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2c89e164", new Object[]{this, str, jSONObject});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (entry != null && !TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+            if (entry != null && !StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                 buildUpon.appendQueryParameter(entry.getKey(), String.valueOf(entry.getValue()));
             }
         }
@@ -196,7 +196,7 @@ public class p extends q {
         Bundle bundle = new Bundle();
         if (jSONObject != null) {
             for (String str2 : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     Object obj = jSONObject.get(str2);
                     if (obj instanceof Boolean) {
                         bundle.putBoolean(str2, ((Boolean) obj).booleanValue());
@@ -227,7 +227,7 @@ public class p extends q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("676c0fdd", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (Uri.parse(str).getScheme() == null) {
                 str = com.taobao.search.common.util.k.HTTPS_PREFIX + parse.getSchemeSpecificPart();

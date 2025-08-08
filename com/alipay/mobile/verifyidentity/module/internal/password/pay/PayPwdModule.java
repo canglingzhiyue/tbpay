@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.internal.password.pay;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alipay.mobile.verifyidentity.common.ModuleConstants;
@@ -103,7 +103,7 @@ public class PayPwdModule extends MicroModule {
             VerifyLogCat.d("PayPwdModule", "page style not recognized");
             this.f5903a = PayPwdHalfActivity.class;
         }
-        if (TextUtils.isEmpty(initDataModel.pubKey)) {
+        if (StringUtils.isEmpty(initDataModel.pubKey)) {
             VerifyLogCat.d("PayPwdModule", "支付密码初始化，服务端没有下发公钥");
         } else {
             VerifyLogCat.d("PayPwdModule", "支付密码初始化，服务端下发了公钥");

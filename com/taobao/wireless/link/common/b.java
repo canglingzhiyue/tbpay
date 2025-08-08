@@ -2,7 +2,7 @@ package com.taobao.wireless.link.common;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -144,11 +144,11 @@ public class b {
                     }
                     String config = OrangeConfig.getInstance().getConfig(str, "isShowNotification", "false");
                     String config2 = OrangeConfig.getInstance().getConfig(str, "isShowAssistant", "false");
-                    if (TextUtils.equals("false", config)) {
+                    if (StringUtils.equals("false", config)) {
                         b.a(b.this).a("isShowNotifi", "false");
                         com.taobao.wireless.link.controller.a.a().j = config;
                     }
-                    if (TextUtils.equals("false", config2)) {
+                    if (StringUtils.equals("false", config2)) {
                         rju.a().a((Context) application, false);
                     }
                     com.taobao.wireless.link.notification.b.b(application, true);
@@ -171,6 +171,6 @@ public class b {
             return str2;
         }
         String str3 = h.get(str);
-        return TextUtils.isEmpty(str3) ? str2 : str3;
+        return StringUtils.isEmpty(str3) ? str2 : str3;
     }
 }

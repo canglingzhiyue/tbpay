@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.handler;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import java.util.HashMap;
@@ -97,48 +97,48 @@ public class d {
         DebugLogger.i("MessageSerialize", "message serialize messageV3ToString start, messageV3=" + messageV3);
         try {
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(messageV3.getTaskId())) {
+            if (!StringUtils.isEmpty(messageV3.getTaskId())) {
                 jSONObject.put("task_id", messageV3.getTaskId());
             }
-            if (!TextUtils.isEmpty(messageV3.getSeqId())) {
+            if (!StringUtils.isEmpty(messageV3.getSeqId())) {
                 jSONObject.put(PushConstants.SEQ_ID, messageV3.getSeqId());
             }
-            if (!TextUtils.isEmpty(messageV3.getDeviceId())) {
+            if (!StringUtils.isEmpty(messageV3.getDeviceId())) {
                 jSONObject.put(PushConstants.DEVICE_ID, messageV3.getDeviceId());
             }
-            if (!TextUtils.isEmpty(messageV3.getTitle())) {
+            if (!StringUtils.isEmpty(messageV3.getTitle())) {
                 jSONObject.put("title", messageV3.getTitle());
             }
-            if (!TextUtils.isEmpty(messageV3.getContent())) {
+            if (!StringUtils.isEmpty(messageV3.getContent())) {
                 jSONObject.put("content", messageV3.getContent());
             }
-            if (!TextUtils.isEmpty(messageV3.getPackageName())) {
+            if (!StringUtils.isEmpty(messageV3.getPackageName())) {
                 jSONObject.put("package_name", messageV3.getPackageName());
             }
             jSONObject.put(PushConstants.CLICK_TYPE, messageV3.getClickType());
             jSONObject.put(PushConstants.IS_DISCARD, messageV3.isDiscard());
-            if (!TextUtils.isEmpty(messageV3.getActivity())) {
+            if (!StringUtils.isEmpty(messageV3.getActivity())) {
                 jSONObject.put("activity", messageV3.getActivity());
             }
-            if (!TextUtils.isEmpty(messageV3.getWebUrl())) {
+            if (!StringUtils.isEmpty(messageV3.getWebUrl())) {
                 jSONObject.put("url", messageV3.getWebUrl());
             }
-            if (!TextUtils.isEmpty(messageV3.getUriPackageName())) {
+            if (!StringUtils.isEmpty(messageV3.getUriPackageName())) {
                 jSONObject.put(PushConstants.URI_PACKAGE_NAME, messageV3.getUriPackageName());
             }
-            if (!TextUtils.isEmpty(messageV3.getPushTimestamp())) {
+            if (!StringUtils.isEmpty(messageV3.getPushTimestamp())) {
                 jSONObject.put(PushConstants.PUSH_TIMESTAMP, messageV3.getPushTimestamp());
             }
-            if (!TextUtils.isEmpty(messageV3.getUploadDataPackageName())) {
+            if (!StringUtils.isEmpty(messageV3.getUploadDataPackageName())) {
                 jSONObject.put(PushConstants.UPLOAD_DATA_PACKAGE_NAME, messageV3.getUploadDataPackageName());
             }
             if (messageV3.getParamsMap() != null && messageV3.getParamsMap().size() > 0) {
                 jSONObject.put(PushConstants.PARAMS, new JSONObject(messageV3.getParamsMap()));
             }
-            if (!TextUtils.isEmpty(messageV3.getThroughMessage())) {
+            if (!StringUtils.isEmpty(messageV3.getThroughMessage())) {
                 jSONObject.put(PushConstants.THROUGH_MESSAGE, messageV3.getThroughMessage());
             }
-            if (!TextUtils.isEmpty(messageV3.getNotificationMessage())) {
+            if (!StringUtils.isEmpty(messageV3.getNotificationMessage())) {
                 jSONObject.put(PushConstants.NOTIFICATION_MESSAGE, messageV3.getNotificationMessage());
             }
             String jSONObject2 = jSONObject.toString();

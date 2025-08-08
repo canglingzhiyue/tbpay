@@ -1,6 +1,6 @@
 package com.ali.user.open.ucc.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.device.DeviceInfo;
 import com.ali.user.open.core.model.RpcResponse;
 import com.alibaba.fastjson.JSON;
@@ -20,7 +20,7 @@ public class Utils {
 
     public static String buidErrorMessage(RpcResponse rpcResponse, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("66b141a3", new Object[]{rpcResponse, str}) : rpcResponse == null ? str : TextUtils.isEmpty(rpcResponse.message) ? "亲，您的手机网络不太顺畅喔~" : rpcResponse.message;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("66b141a3", new Object[]{rpcResponse, str}) : rpcResponse == null ? str : StringUtils.isEmpty(rpcResponse.message) ? "亲，您的手机网络不太顺畅喔~" : rpcResponse.message;
     }
 
     public static int buidErrorCode(RpcResponse rpcResponse, int i) {
@@ -33,7 +33,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("da7905c4", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         return str + DeviceInfo.deviceId + (System.currentTimeMillis() / 1000);

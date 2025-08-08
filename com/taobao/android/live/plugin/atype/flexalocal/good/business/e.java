@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.business;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.ItemCategory;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView.c;
@@ -127,7 +127,7 @@ public class e extends com.taobao.taolive.sdk.business.b {
                 list = null;
             }
             itemlistV2Request2.sortItemList = list;
-            if (TextUtils.equals(itemlistV2Request2.categoryId, cVar.L.f13852a)) {
+            if (StringUtils.equals(itemlistV2Request2.categoryId, cVar.L.f13852a)) {
                 itemlistV2Request2.bizTopItemId = cVar.L.b;
             }
         }

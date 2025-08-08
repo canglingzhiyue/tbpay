@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.roman;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,7 +50,7 @@ public class c {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
         String b = b(str, str2);
-        return TextUtils.isEmpty(b) ? a(str) : b;
+        return StringUtils.isEmpty(b) ? a(str) : b;
     }
 
     public void a(JSONObject jSONObject) {

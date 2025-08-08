@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -19,7 +19,7 @@ public class fnr extends fnl {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, obj});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return obj;
         }
         StringTokenizer stringTokenizer = new StringTokenizer(str, dmp.DELIMITER, false);

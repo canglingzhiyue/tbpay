@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.adapter.b;
@@ -23,7 +23,7 @@ public class gtz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7d07c9c5", new Object[]{this, context, gtxVar});
-        } else if (this.b.get() || !TextUtils.equals(gtxVar.b, gtxVar.f28453a) || !guc.a(context, "boostrap_adjust_heap_size_v3") || !this.b.compareAndSet(false, true)) {
+        } else if (this.b.get() || !StringUtils.equals(gtxVar.b, gtxVar.f28453a) || !guc.a(context, "boostrap_adjust_heap_size_v3") || !this.b.compareAndSet(false, true)) {
         } else {
             h.a(new b());
             RuntimeMockUtils.a(context);

@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.bhxbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -125,7 +125,7 @@ public class BHXCXXInnerBridge extends BHXCXXBaseBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a954dc58", new Object[]{drpVar, str});
-        } else if (!isNativeLibraryLoaded || drpVar == null || TextUtils.isEmpty(str)) {
+        } else if (!isNativeLibraryLoaded || drpVar == null || StringUtils.isEmpty(str)) {
         } else {
             Map<String, Object> a2 = drpVar.a();
             if (a2.isEmpty()) {
@@ -136,7 +136,7 @@ public class BHXCXXInnerBridge extends BHXCXXBaseBridge {
                 return;
             }
             String jSONString = jSONObject.toJSONString();
-            if (TextUtils.isEmpty(jSONString)) {
+            if (StringUtils.isEmpty(jSONString)) {
                 return;
             }
             nativeTransferBaseNodeToBUFS(jSONString, str);
@@ -147,7 +147,7 @@ public class BHXCXXInnerBridge extends BHXCXXBaseBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7a3a004d", new Object[]{jSONObject, str});
-        } else if (!isNativeLibraryLoaded || jSONObject.isEmpty() || TextUtils.isEmpty(str)) {
+        } else if (!isNativeLibraryLoaded || jSONObject.isEmpty() || StringUtils.isEmpty(str)) {
         } else {
             nativeTransferFeatureToBUFS(jSONObject.toJSONString(), str);
         }
@@ -157,7 +157,7 @@ public class BHXCXXInnerBridge extends BHXCXXBaseBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("997b4fee", new Object[]{new Boolean(z), str});
-        } else if (!isNativeLibraryLoaded || TextUtils.isEmpty(str) || !JsBridgeBehaviXConfig.isEnableRealTimeMTopDebug()) {
+        } else if (!isNativeLibraryLoaded || StringUtils.isEmpty(str) || !JsBridgeBehaviXConfig.isEnableRealTimeMTopDebug()) {
         } else {
             nativeUpdateCXXCttpUploadState(z, str);
         }
@@ -167,7 +167,7 @@ public class BHXCXXInnerBridge extends BHXCXXBaseBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("303dc4fc", new Object[]{str});
-        } else if (!isNativeLibraryLoaded || TextUtils.isEmpty(str)) {
+        } else if (!isNativeLibraryLoaded || StringUtils.isEmpty(str)) {
         } else {
             nativeDirectlySaveFeaturesToBUFS(str);
         }
@@ -177,7 +177,7 @@ public class BHXCXXInnerBridge extends BHXCXXBaseBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("99e33db", new Object[]{str, str2});
-        } else if (!isNativeLibraryLoaded || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!isNativeLibraryLoaded || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             nativeUpdataFeatureByBUFSProtocol(str, str2);
         }
@@ -187,7 +187,7 @@ public class BHXCXXInnerBridge extends BHXCXXBaseBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8d9751cf", new Object[]{str});
-        } else if (!isNativeLibraryLoaded || TextUtils.isEmpty(str)) {
+        } else if (!isNativeLibraryLoaded || StringUtils.isEmpty(str)) {
         } else {
             dsc.a(new Runnable() { // from class: com.taobao.android.behavix.bhxbridge.BHXCXXInnerBridge.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;

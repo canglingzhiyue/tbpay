@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.a;
 import com.taobao.flowcustoms.afc.model.AfcXbsData;
@@ -96,7 +96,7 @@ public class mbe implements kod {
         if (aVar != null) {
             str = a.b;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         Uri parse = Uri.parse(TFCCommonUtils.a(str2, com.taobao.linkmanager.flowout.c.FL_OUT_ID, com.taobao.linkmanager.flowout.c.XBS_VISA));
@@ -104,7 +104,7 @@ public class mbe implements kod {
         intent.setData(parse);
         intent.setFlags(268435456);
         intent.setFlags(131072);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent.setPackage(str);
         }
         return intent;

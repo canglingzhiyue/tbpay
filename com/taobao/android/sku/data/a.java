@@ -2,7 +2,7 @@ package com.taobao.android.sku.data;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -124,7 +124,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -270,7 +270,7 @@ public class a {
                 Map<String, ixw> a2 = ixvVar.a();
                 if (a2 != null) {
                     for (Map.Entry<String, ixw> entry : a2.entrySet()) {
-                        if (!TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+                        if (!StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                             jSONObject2.put(entry.getKey(), entry.getValue().a(this.e.getOriginalData(), this.e.getStoredData(), this.e.getOperationData()));
                         }
                     }

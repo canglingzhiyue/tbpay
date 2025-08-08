@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ErrorConstant;
 import com.taobao.artc.api.AConstants;
 import com.taobao.message.datasdk.facade.message.MessageType;
@@ -138,11 +138,11 @@ public class m extends com.uc.webview.internal.setup.component.a implements n.a 
         try {
             this.d.a(-453, this.b.g);
             n.i a2 = n.a(this.f23898a, this.b.f, this.b.g);
-            if (a2 == null || TextUtils.isEmpty(a2.f23927a)) {
+            if (a2 == null || StringUtils.isEmpty(a2.f23927a)) {
                 return false;
             }
             File file = new File(a2.f23927a);
-            return a(file, !TextUtils.isEmpty(a2.b) ? a2.b : file.getName());
+            return a(file, !StringUtils.isEmpty(a2.b) ? a2.b : file.getName());
         } catch (Throwable th) {
             this.d.a(ErrorConstant.ERROR_SOCKET_TIME_OUT, th);
             return false;
@@ -207,7 +207,7 @@ public class m extends com.uc.webview.internal.setup.component.a implements n.a 
             while (true) {
                 if (it.hasNext()) {
                     n.d next = it.next();
-                    if (next != null && !TextUtils.isEmpty(next.b()) && a(next, true, true)) {
+                    if (next != null && !StringUtils.isEmpty(next.b()) && a(next, true, true)) {
                         z = true;
                         break;
                     }
@@ -264,7 +264,7 @@ public class m extends com.uc.webview.internal.setup.component.a implements n.a 
             Map<String, n.d> a2 = n.a();
             if (a2 != null) {
                 Iterator<String> it = a2.keySet().iterator();
-                while (it.hasNext() && ((dVar = a2.get(it.next())) == null || TextUtils.isEmpty(dVar.b()) || !a(dVar, false, false))) {
+                while (it.hasNext() && ((dVar = a2.get(it.next())) == null || StringUtils.isEmpty(dVar.b()) || !a(dVar, false, false))) {
                 }
             }
             bVar.a(str2, this);

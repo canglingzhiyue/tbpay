@@ -3,7 +3,7 @@ package com.alibaba.android.umbrella.trace;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.trace.UmbrellaInfo;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -59,7 +59,7 @@ public class UmbrellaTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("befc8537", new Object[]{umbrellaInfo});
-        } else if (b.a() || umbrellaInfo == null || TextUtils.isEmpty(umbrellaInfo.mainBizName) || !b.a(umbrellaInfo)) {
+        } else if (b.a() || umbrellaInfo == null || StringUtils.isEmpty(umbrellaInfo.mainBizName) || !b.a(umbrellaInfo)) {
         } else {
             AppMonitor.Alarm.commitSuccess("Page_Trade_Govern", PURCHASE_POINT_PRE + umbrellaInfo.mainBizName + PURCHASE_POINT_POST, umbrellaInfo.toJsonString());
         }
@@ -81,7 +81,7 @@ public class UmbrellaTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b05c292", new Object[]{umbrellaInfo, str, str2});
-        } else if (b.b() || c.a(str) || TextUtils.isEmpty(str) || umbrellaInfo == null || !b.a(umbrellaInfo, str)) {
+        } else if (b.b() || c.a(str) || StringUtils.isEmpty(str) || umbrellaInfo == null || !b.a(umbrellaInfo, str)) {
         } else {
             AppMonitor.Alarm.commitFail("Page_Trade_Govern", PURCHASE_POINT_PRE + umbrellaInfo.mainBizName + PURCHASE_POINT_POST, umbrellaInfo.toJsonString(), str, str2);
         }

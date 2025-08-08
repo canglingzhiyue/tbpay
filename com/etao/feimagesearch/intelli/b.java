@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -846,7 +846,7 @@ public final class b extends com.etao.feimagesearch.intelli.d {
                     String type = ClientModelType.MNN.getType();
                     q.a((Object) type, "ClientModelType.MNN.type");
                     hashMap2.put(ClientModelType.KEY_CLIENT_MODEL_TYPE, type);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         hashMap2.put(com.etao.feimagesearch.mnn.b.EXTRA_INFO_KEY, str);
                     }
                     String ch = com.etao.feimagesearch.config.b.ch();

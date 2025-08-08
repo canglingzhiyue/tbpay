@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.internal.BindingXConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public class keq {
             return;
         }
         boolean c = kel.c();
-        if (TextUtils.equals(str3, EXPOSE_SUCCESS) || TextUtils.equals(str3, EXPOSE_ERROR)) {
+        if (StringUtils.equals(str3, EXPOSE_SUCCESS) || StringUtils.equals(str3, EXPOSE_ERROR)) {
             kel.a(str, str2);
         }
         if (c) {

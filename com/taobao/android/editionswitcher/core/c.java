@@ -1,7 +1,7 @@
 package com.taobao.android.editionswitcher.core;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -183,7 +183,7 @@ public class c {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             String str = (String) entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(str) && hashMap.containsKey(key)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(str) && hashMap.containsKey(key)) {
                 sb.append(str);
                 sb.append("_");
             }
@@ -292,7 +292,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (this.f12289a.containsKey(str)) {
@@ -321,7 +321,7 @@ public class c {
         }
         String b = com.taobao.android.editionswitcher.homepage.c.b("GlobalRevision_edition_switcher");
         TLog.loge("edition_switch", "com.taobao.android.editionswitcher.core.GlobalRevisionupdateVersionFromDisk; disk info:" + b);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         try {
@@ -331,7 +331,7 @@ public class c {
                 this.f12289a.clear();
                 for (int i = 0; i < size; i++) {
                     ghp c = ghp.a().c(parseArray.getJSONObject(i));
-                    if (!TextUtils.isEmpty(c.c)) {
+                    if (!StringUtils.isEmpty(c.c)) {
                         this.f12289a.put(c.c, c);
                     }
                 }

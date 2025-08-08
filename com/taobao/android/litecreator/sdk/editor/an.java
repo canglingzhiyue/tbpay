@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.marvel.Const;
 import com.alibaba.marvel.MeEditor;
 import com.alibaba.marvel.java.ResourceInspector;
@@ -141,7 +141,7 @@ public abstract class an extends a.b {
                 return;
             }
             String clipParentId = this.f13404a.E().getClipParentId((String) paster.extra);
-            if (TextUtils.isEmpty(clipParentId)) {
+            if (StringUtils.isEmpty(clipParentId)) {
                 return;
             }
             this.f13404a.E().setTrackIndex(clipParentId, com.taobao.android.litecreator.util.s.j());
@@ -307,7 +307,7 @@ public abstract class an extends a.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("99626649", new Object[]{this, str, paster});
-        } else if (paster.type != 1 || TextUtils.isEmpty(paster.textFontPath)) {
+        } else if (paster.type != 1 || StringUtils.isEmpty(paster.textFontPath)) {
         } else {
             this.f13404a.E().setTextFont(str, paster.textFontPath);
         }
@@ -373,7 +373,7 @@ public abstract class an extends a.b {
             for (String str2 : arrayList) {
                 this.f13404a.E().removeTextWidget(str, str2);
             }
-            if (TextUtils.isEmpty(paster.resPath)) {
+            if (StringUtils.isEmpty(paster.resPath)) {
                 return;
             }
             this.f13404a.E().setTextPropertiesByJson(str, TextType.kTextUnknown, paster.resPath, (ResourceInspector) null);
@@ -384,7 +384,7 @@ public abstract class an extends a.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1668fe64", new Object[]{this, str, paster});
-        } else if (TextUtils.isEmpty(str) || this.f13404a.E() == null) {
+        } else if (StringUtils.isEmpty(str) || this.f13404a.E() == null) {
         } else {
             Transform transform = paster.transform;
             this.f13404a.E().setScale(str, transform.scale);
@@ -397,12 +397,12 @@ public abstract class an extends a.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2f6a5003", new Object[]{this, str, paster});
-        } else if (TextUtils.isEmpty(str) || this.f13404a.E() == null) {
+        } else if (StringUtils.isEmpty(str) || this.f13404a.E() == null) {
         } else {
             MeEditor E = this.f13404a.E();
             String clipExtra = E.getClipExtra(str, "targetClipId");
             String clipExtra2 = E.getClipExtra(str, "resType");
-            if (clipExtra != null && TextUtils.equals(clipExtra2, "resImage")) {
+            if (clipExtra != null && StringUtils.equals(clipExtra2, "resImage")) {
                 float a2 = at.a(E.getClipExtra(str, "postionX"), 0.0f);
                 float a3 = at.a(E.getClipExtra(str, "postionY"), 0.0f);
                 float a4 = at.a(E.getClipExtra(str, "scale"), 0.0f);
@@ -447,7 +447,7 @@ public abstract class an extends a.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("486ba1a2", new Object[]{this, str, paster});
-        } else if (TextUtils.isEmpty(str) || this.f13404a.E() == null) {
+        } else if (StringUtils.isEmpty(str) || this.f13404a.E() == null) {
         } else {
             if (paster.resType == 3 && this.b) {
                 this.f13404a.E().setClipStartTimeUs(str, paster.startTimeUs);

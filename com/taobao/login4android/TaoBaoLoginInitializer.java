@@ -10,7 +10,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.mulitenv.EnvironmentSwitcher;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.callback.DataCallback;
@@ -131,7 +131,7 @@ public class TaoBaoLoginInitializer {
                 LoginTLogAdapter.trace(TAG, "init() called with: context = [" + context + "],isInited=" + isInited + ",thread=" + Thread.currentThread().getName() + ",process=" + curProcessName);
                 if (isInited) {
                     LoginTLogAdapter.trace(TAG, "init() already inited,return");
-                } else if (!TextUtils.equals("com.taobao.taobao", curProcessName)) {
+                } else if (!StringUtils.equals("com.taobao.taobao", curProcessName)) {
                 } else {
                     if (LOCK.compareAndSet(false, true)) {
                         LoginTLogAdapter.trace(TAG, "init() LOCK=false, enter flow 0");

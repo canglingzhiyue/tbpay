@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.core.interfaces.ISmallWindowStrategy;
@@ -67,10 +67,10 @@ public class y {
                     ipChange2.ipc$dispatch("6b9b1c8", new Object[]{this, view, str, str2, str3});
                     return;
                 }
-                if (!TextUtils.isEmpty(str) && aa.i()) {
+                if (!StringUtils.isEmpty(str) && aa.i()) {
                     str = str.replace(y.TAOLIVE_ONLINE_LIVE_ID, "id=" + aa.C());
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = c.a(str2);
                 }
                 s.a(view.getContext(), str, null, 67108864, false);

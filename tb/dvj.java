@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.android.cachecleaner.monitor.info.CacheOverviewInfo;
@@ -108,13 +108,13 @@ public class dvj extends dvf {
             this.e.a(aVar);
         }
         a parent = aVar.parent();
-        if (parent != null && TextUtils.equals(parent.getName(), "shared_prefs")) {
+        if (parent != null && StringUtils.equals(parent.getName(), "shared_prefs")) {
             this.b++;
             if (aVar.getSize() > com.taobao.android.cachecleaner.monitor.config.a.a().b().getSpFileSizeThreshold()) {
                 this.f.a(aVar);
             }
         }
-        if (parent != null && TextUtils.equals(parent.getName(), "databases")) {
+        if (parent != null && StringUtils.equals(parent.getName(), "databases")) {
             this.c++;
             if (aVar.getSize() > com.taobao.android.cachecleaner.monitor.config.a.a().b().getDataBaseSizeThreshold()) {
                 this.g.a(aVar);

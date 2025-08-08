@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.AURAInputData;
@@ -174,7 +174,7 @@ public final class azq extends aso implements arp {
             return;
         }
         for (String str : this.e.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 RenderComponent remove = a() ? this.e.remove(str) : this.e.get(str);
                 if (remove != null) {
                     a(str, remove);

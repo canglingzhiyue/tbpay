@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +32,7 @@ public class ljc {
             return (Map) ipChange.ipc$dispatch("a96db1aa", new Object[]{ljbVar});
         }
         String e = ljbVar.e();
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             return null;
         }
         HashMap hashMap = new HashMap(1);

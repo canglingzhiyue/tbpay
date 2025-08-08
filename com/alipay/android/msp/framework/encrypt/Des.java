@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.encrypt;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class Des {
             return (String) ipChange.ipc$dispatch("9b97fa87", new Object[]{new Integer(i), str, str2, str3});
         }
         try {
-            if (TextUtils.equals(str3, "AES")) {
+            if (StringUtils.equals(str3, "AES")) {
                 secretKeySpec = new SecretKeySpec(str2.getBytes(), "AES/CBC/PKCS5PADDING");
                 cipher = Cipher.getInstance("AES");
             } else {

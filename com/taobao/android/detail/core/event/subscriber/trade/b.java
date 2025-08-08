@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.event.subscriber.trade;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class b implements j<efu> {
         if (cVar.b) {
             f.a(this.f9736a, new edu(new JoinJhsParams(str, "toBuy", new efu(), aVar)));
             return com.taobao.android.detail.core.event.a.SUCCESS;
-        } else if (TextUtils.isEmpty(aVar.b)) {
+        } else if (StringUtils.isEmpty(aVar.b)) {
             return com.taobao.android.detail.core.event.a.FAILURE;
         } else {
             HashMap<String, String> a2 = a(cVar, aVar, str);
@@ -84,7 +84,7 @@ public class b implements j<efu> {
             Bundle bundle = new Bundle();
             bundle.putInt("purchase_from", 2);
             bundle.putSerializable("buildOrderParams", a2);
-            if (!TextUtils.isEmpty(a(a2, efuVar))) {
+            if (!StringUtils.isEmpty(a(a2, efuVar))) {
                 ecg.a((Context) this.f9736a, a(a2, efuVar), (Map<String, Object>) null);
                 epq.a(this.f9736a, a(a2, efuVar));
             } else {
@@ -197,12 +197,12 @@ public class b implements j<efu> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("35c56a7", new Object[]{this, map, efuVar});
         }
-        if (!TextUtils.isEmpty(efuVar.f27286a)) {
+        if (!StringUtils.isEmpty(efuVar.f27286a)) {
             str = efuVar.f27286a;
         } else {
             str = (this.f9736a.y() == null || this.f9736a.y().h == null || this.f9736a.y().h.f27459a == null || this.f9736a.y().h.f27459a.f10055a == null || eqb.e(this.f9736a.y().h.f27459a.f10055a) == null) ? "" : eqb.e(this.f9736a.y().h.f27459a.f10055a).buyNowUrl;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (map.isEmpty()) {

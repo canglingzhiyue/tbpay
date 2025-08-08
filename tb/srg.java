@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -51,7 +51,7 @@ public class srg {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("75806d92", new Object[]{this, bootImageInfo})).booleanValue();
         }
-        if (TextUtils.isEmpty(bootImageInfo.itemId)) {
+        if (StringUtils.isEmpty(bootImageInfo.itemId)) {
             return false;
         }
         Integer num2 = this.f33852a.get(bootImageInfo.itemId);
@@ -78,7 +78,7 @@ public class srg {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                     kej.a("BusinessFatigueRecord", srg.a(srg.this) + ",fatigueRecordMap cache null");
                 } else {
                     try {
@@ -105,7 +105,7 @@ public class srg {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                     kej.a("BusinessFatigueRecord", srg.a(srg.this) + ",remoteFatigueMap cache null");
                 } else {
                     try {
@@ -129,7 +129,7 @@ public class srg {
         int i = 1;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2ef7fb2d", new Object[]{this, bootImageInfo});
-        } else if (TextUtils.isEmpty(bootImageInfo.itemId)) {
+        } else if (StringUtils.isEmpty(bootImageInfo.itemId)) {
         } else {
             Integer num = this.f33852a.get(bootImageInfo.itemId);
             if (num != null) {
@@ -154,7 +154,7 @@ public class srg {
         }
         this.b.clear();
         for (BootImageInfo bootImageInfo : list) {
-            if (!TextUtils.isEmpty(bootImageInfo.itemId)) {
+            if (!StringUtils.isEmpty(bootImageInfo.itemId)) {
                 kej.a("BusinessFatigueRecord", this.c + ",updateRemoteFatigue,itemId:" + bootImageInfo.itemId + ",times:" + bootImageInfo.times);
                 this.b.put(bootImageInfo.itemId, Integer.valueOf(bootImageInfo.times));
             }

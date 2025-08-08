@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.os.Vibrator;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -227,13 +227,13 @@ public class d extends RecyclerView.Adapter<gzr> {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("19a074bd", new Object[]{this, list, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(this.o)) {
+        if (StringUtils.isEmpty(this.o)) {
             return 0;
         }
         ArrayList arrayList = new ArrayList();
         for (int i2 = 0; i2 < list.size(); i2++) {
             ThumbnailItem thumbnailItem = list.get(i2);
-            if (i2 != i && thumbnailItem != null && TextUtils.equals(this.o, thumbnailItem.typeTag)) {
+            if (i2 != i && thumbnailItem != null && StringUtils.equals(this.o, thumbnailItem.typeTag)) {
                 arrayList.add(Integer.valueOf(i2));
             }
         }
@@ -422,7 +422,7 @@ public class d extends RecyclerView.Adapter<gzr> {
             ipChange.ipc$dispatch("d39e1eda", new Object[]{this, list});
         } else if (list == null || list.isEmpty()) {
         } else {
-            if (!TextUtils.isEmpty(this.o)) {
+            if (!StringUtils.isEmpty(this.o)) {
                 int size = list.size();
                 int size2 = this.r.size() + this.j;
                 this.r.addAll(list);
@@ -596,7 +596,7 @@ public class d extends RecyclerView.Adapter<gzr> {
 
     private boolean a(ThumbnailItem thumbnailItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3b5451b0", new Object[]{this, thumbnailItem})).booleanValue() : TextUtils.equals(thumbnailItem.typeTag, this.n);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3b5451b0", new Object[]{this, thumbnailItem})).booleanValue() : StringUtils.equals(thumbnailItem.typeTag, this.n);
     }
 
     private void a(final gzr gzrVar) {

@@ -1,6 +1,6 @@
 package com.taobao.live.home.dinamic.business;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.live.home.dinamic.model.TemplateObject;
@@ -198,7 +198,7 @@ public abstract class TemplateCardListOwner {
         if (ipChange instanceof IpChange) {
             return (TemplateObject) ipChange.ipc$dispatch("c10161a6", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         TemplateObject a2 = a(f17736a, str);
@@ -310,7 +310,7 @@ public abstract class TemplateCardListOwner {
                 }
                 if (mtopResponse != null && mtopResponse.getBytedata() != null) {
                     String str = new String(mtopResponse.getBytedata());
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         List<TemplateObject> list = null;
                         try {
                             list = TemplateCardListOwner.this.a(str);

@@ -1,6 +1,6 @@
 package com.alibaba.ariver.kernel.api.extension.bridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.RVLogger;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -43,9 +43,9 @@ public class BridgeDSL {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d39b47a5", new Object[]{this});
         }
-        if (TextUtils.equals("invoke", this.type)) {
+        if (StringUtils.equals("invoke", this.type)) {
             return "{'namespace':'" + this.namespace + "','name':'" + this.name + "','cmd':'" + this.cmd + "','type':'" + this.type + "'}";
-        } else if (TextUtils.equals("event", this.type)) {
+        } else if (StringUtils.equals("event", this.type)) {
             return "{'namespace':'" + this.namespace + "','name':'" + this.name + "','type':'" + this.type + "'}";
         } else {
             RVLogger.e("Register DSL error: Invalid type [" + this.type + riy.ARRAY_END_STR);

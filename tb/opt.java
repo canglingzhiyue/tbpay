@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -78,7 +78,7 @@ public class opt {
         }
         String b = osk.b("after_buy_optimization_config".concat(str), "");
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             lap.a("recmdPrefetch", "PrefetchRequestConfig", "从磁盘中读出来的数为空");
             return jSONObject;
         }

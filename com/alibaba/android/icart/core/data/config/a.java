@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.data.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.android.ultron.trade.data.request.c;
 import com.alibaba.android.ultron.trade.utils.NetType;
@@ -58,7 +58,7 @@ public class a {
         if (b != null) {
             hashMap.put("netType", String.valueOf(b.getCode()));
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = QueryParamsManager.DEFAULT_CART_FROM;
         }
         hashMap.put("cartFrom", str);

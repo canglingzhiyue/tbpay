@@ -10,7 +10,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -793,14 +793,14 @@ public class LiveAvatarNewView extends BasePopupView {
                 });
             }
         }
-        if (liveAvatarInfoCardResponseData.shopWindow != null && liveAvatarInfoCardResponseData.shopWindow.utParams != null && liveAvatarInfoCardResponseData.shopWindow.utParams.showParams != null && !TextUtils.isEmpty(liveAvatarInfoCardResponseData.shopWindow.utParams.showParams.controlName)) {
+        if (liveAvatarInfoCardResponseData.shopWindow != null && liveAvatarInfoCardResponseData.shopWindow.utParams != null && liveAvatarInfoCardResponseData.shopWindow.utParams.showParams != null && !StringUtils.isEmpty(liveAvatarInfoCardResponseData.shopWindow.utParams.showParams.controlName)) {
             c.a(this.mFrameContext, liveAvatarInfoCardResponseData.follow, this.mSourceType, liveAvatarInfoCardResponseData.shopWindow.utParams.showParams.params, liveAvatarInfoCardResponseData.shopWindow.utParams.showParams.controlName);
         }
-        if (liveAvatarInfoCardResponseData.preLiveInfo != null && !TextUtils.isEmpty(liveAvatarInfoCardResponseData.preLiveInfo.title)) {
+        if (liveAvatarInfoCardResponseData.preLiveInfo != null && !StringUtils.isEmpty(liveAvatarInfoCardResponseData.preLiveInfo.title)) {
             c.a(this.mFrameContext, this.mSourceType, "preview");
-        } else if (liveAvatarInfoCardResponseData.playbackInfo != null && !TextUtils.isEmpty(liveAvatarInfoCardResponseData.playbackInfo.content)) {
+        } else if (liveAvatarInfoCardResponseData.playbackInfo != null && !StringUtils.isEmpty(liveAvatarInfoCardResponseData.playbackInfo.content)) {
             c.a(this.mFrameContext, this.mSourceType, "playback");
-        } else if (liveAvatarInfoCardResponseData.anchorSubscribeInfo != null && !TextUtils.isEmpty(liveAvatarInfoCardResponseData.anchorSubscribeInfo.title)) {
+        } else if (liveAvatarInfoCardResponseData.anchorSubscribeInfo != null && !StringUtils.isEmpty(liveAvatarInfoCardResponseData.anchorSubscribeInfo.title)) {
             c.a(this.mFrameContext, this.mSourceType, "subscribe");
         }
     }
@@ -810,7 +810,7 @@ public class LiveAvatarNewView extends BasePopupView {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2b74ef8c", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return str;
         }
         Uri parse = Uri.parse(str);
@@ -854,7 +854,7 @@ public class LiveAvatarNewView extends BasePopupView {
         this.mAvatarViewBig.setScaleType(ImageView.ScaleType.CENTER_CROP);
         this.mAvatarViewBig.asyncSetImageUrl(liveAvatarInfoCardResponseData.broadCasterPic);
         TBLiveDataModel tBLiveDataModel = this.mLiveDataModel;
-        if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null && this.mLiveDataModel.mVideoInfo.broadCaster != null && this.mLiveDataModel.mVideoInfo.broadCaster.atmosphere != null && !TextUtils.isEmpty(this.mLiveDataModel.mVideoInfo.broadCaster.atmosphere.headIcon)) {
+        if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null && this.mLiveDataModel.mVideoInfo.broadCaster != null && this.mLiveDataModel.mVideoInfo.broadCaster.atmosphere != null && !StringUtils.isEmpty(this.mLiveDataModel.mVideoInfo.broadCaster.atmosphere.headIcon)) {
             this.mAvatarViewBigBorder.setVisibility(0);
             this.mAvatarViewBigBorder.setImageUrl(this.mLiveDataModel.mVideoInfo.broadCaster.atmosphere.headIcon);
         } else {
@@ -869,7 +869,7 @@ public class LiveAvatarNewView extends BasePopupView {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                } else if (TextUtils.isEmpty(liveAvatarInfoCardResponseData.headJumpUrl)) {
+                } else if (StringUtils.isEmpty(liveAvatarInfoCardResponseData.headJumpUrl)) {
                 } else {
                     pmd.a().r().a(LiveAvatarNewView.this.mContext, liveAvatarInfoCardResponseData.headJumpUrl, null);
                     LiveAvatarNewView.this.hide();
@@ -895,13 +895,13 @@ public class LiveAvatarNewView extends BasePopupView {
             }
             f.m().renderDX(createDX, parseObject, nlq.a(this.mContext));
         }
-        if (!TextUtils.isEmpty(liveAvatarInfoCardResponseData.shopJumpUrl) && z) {
+        if (!StringUtils.isEmpty(liveAvatarInfoCardResponseData.shopJumpUrl) && z) {
             c.a(this.mFrameContext, "shop", this.mSourceType, liveAvatarInfoCardResponseData.follow);
         }
         if (!z || liveAvatarInfoCardResponseData.chatGroupInfo == null) {
             return;
         }
-        if (!TextUtils.equals(liveAvatarInfoCardResponseData.chatGroupInfo.canJoinChatGroup, "true") && !TextUtils.equals(liveAvatarInfoCardResponseData.chatGroupInfo.isInChatGroup, "true")) {
+        if (!StringUtils.equals(liveAvatarInfoCardResponseData.chatGroupInfo.canJoinChatGroup, "true") && !StringUtils.equals(liveAvatarInfoCardResponseData.chatGroupInfo.isInChatGroup, "true")) {
             return;
         }
         c.a(this.mFrameContext, "chatGroup", this.mSourceType, liveAvatarInfoCardResponseData.follow);

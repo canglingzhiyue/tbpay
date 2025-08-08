@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -69,7 +69,7 @@ public class g extends epi {
             this.c = jSONObject.getBooleanValue("enabled");
         }
         String string = this.component.mapping.getString("widthRatio");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.f = Double.parseDouble(string);
@@ -87,7 +87,7 @@ public class g extends epi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.f9770a) && TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.f9770a) && StringUtils.isEmpty(this.b)) {
             return false;
         }
         return super.isValid();
@@ -114,7 +114,7 @@ public class g extends epi {
             this.c = fields.getBooleanValue("enabled");
         }
         String string = iDMComponent.getFields().getString("widthRatio");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.f = Double.parseDouble(string);

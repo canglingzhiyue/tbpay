@@ -14,7 +14,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
 import com.alipay.android.msp.utils.UserLocation;
@@ -728,7 +728,7 @@ public final class h {
                 this.g = bundle.getInt("I_MAX_GEO_DIS");
                 this.h = bundle.getInt("I_MIN_GEO_DIS");
                 AMapLocation aMapLocation = (AMapLocation) bundle.getParcelable(MspEventTypes.ACTION_INVOKE_LOC);
-                if (TextUtils.isEmpty(aMapLocation.getAdCode())) {
+                if (StringUtils.isEmpty(aMapLocation.getAdCode())) {
                     return;
                 }
                 synchronized (this.o) {

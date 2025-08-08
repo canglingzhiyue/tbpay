@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.content;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -144,7 +144,7 @@ public class TTDContentController {
         }
         String a2 = this.d.a();
         String str = (String) this.b.e().a("requestItemId");
-        if (!TextUtils.equals(a2, str)) {
+        if (!StringUtils.equals(a2, str)) {
             if (z) {
                 c(str);
             } else {
@@ -173,7 +173,7 @@ public class TTDContentController {
             this.i = true;
             this.e.b(this.d.f(), this.d.g());
             a("all", this.f);
-        } else if (!TextUtils.isEmpty(this.d.p())) {
+        } else if (!StringUtils.isEmpty(this.d.p())) {
             this.d.e();
             this.e.a(this.d.i(), this.d.g());
         }
@@ -242,7 +242,7 @@ public class TTDContentController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.equals(this.d.j(), str)) {
+        } else if (StringUtils.equals(this.d.j(), str)) {
         } else {
             this.d.a(str);
             this.e.a(this.d.i(), this.d.g());

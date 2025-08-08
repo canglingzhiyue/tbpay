@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -57,7 +57,7 @@ public class AskImageView extends TImageView {
             return;
         }
         setImageDrawable(new ColorDrawable(i));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         e.a(getContext(), str, -1, -1, new e.a() { // from class: com.taobao.ask.view.AskImageView.1

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.biz.ITbLiveCardService;
@@ -181,7 +181,7 @@ public class loe implements e {
             ipChange.ipc$dispatch("9a1a14b3", new Object[]{this, mediaLiveInfo, str});
         } else if (mediaLiveInfo != null) {
             this.f30767a.updateLiveMediaInfoData(mediaLiveInfo);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f30767a.updateLiveMediaInfoData(null);
             this.f30767a.setMediaUrl(str);

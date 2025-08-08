@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import java.util.Arrays;
@@ -82,7 +82,7 @@ public class p {
         String str4 = i.get(str3);
         if (str4 == null && (t = pmd.a().t()) != null) {
             str4 = t.a(str, str2, str3, "");
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 i.put(str3, str4);
             }
         }

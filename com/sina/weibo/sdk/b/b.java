@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.zoloz.toyger.blob.BlobManager;
 import com.taobao.android.litecreator.comprehension.f;
 import java.io.File;
@@ -153,7 +153,7 @@ public final class b {
     }
 
     public static long e(String str) {
-        if (!TextUtils.isEmpty(str) && new File(str).exists()) {
+        if (!StringUtils.isEmpty(str) && new File(str).exists()) {
             MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
             mediaMetadataRetriever.setDataSource(str);
             return Long.parseLong(mediaMetadataRetriever.extractMetadata(9));

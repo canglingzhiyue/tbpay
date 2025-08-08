@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.AURADismissFloatEvent_InputField_floatView;
 import com.alibaba.android.aura.AURARaxComponentExtension_InputField_floatView;
@@ -68,7 +68,7 @@ public class bso implements bsm {
             return false;
         }
         String a2 = a(map, "startPointWorkflow", (String) null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             bsnVar.a(new b(0, "NUTFloatView", "render-exception", "param: startPointWorkflow is empty"));
             return false;
         }

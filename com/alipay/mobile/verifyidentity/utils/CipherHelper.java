@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -16,7 +16,7 @@ public class CipherHelper {
         }
         byte[] bytes = str.getBytes();
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "SHA-256";
             }
             MessageDigest messageDigest = MessageDigest.getInstance(str2);

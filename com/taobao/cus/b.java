@@ -3,7 +3,7 @@ package com.taobao.cus;
 import android.app.Application;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -53,7 +53,7 @@ public class b {
         } else {
             String h = a.a().h();
             com.alibaba.poplayer.utils.c.b("ApkUpdater", "", "ApkUpdater.interrupt.isMTLPopForOfficialErrorCode=" + h);
-            return TextUtils.isEmpty(h);
+            return StringUtils.isEmpty(h);
         }
     }
 }

@@ -3,7 +3,7 @@ package com.taobao.tbliveinteractive;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -523,7 +523,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5ebb34b8", new Object[]{this, viewGroup, str, map})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (this.n == null || (this.A && this.B)) {
@@ -541,7 +541,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.C = str;
         }
@@ -567,15 +567,15 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f2f9a457", new Object[]{this, viewGroup, str, map})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         qmr qmrVar = this.f22129a;
-        if (qmrVar != null && TextUtils.equals(qmrVar.b(), str)) {
+        if (qmrVar != null && StringUtils.equals(qmrVar.b(), str)) {
             return false;
         }
         String str2 = map.get(aw.PARAM_ACTIVITY_POSITION);
-        if (!TextUtils.isEmpty(str2) && (split = str2.split("-")) != null && split.length == 4) {
+        if (!StringUtils.isEmpty(str2) && (split = str2.split("-")) != null && split.length == 4) {
             map.put("x", split[0]);
             map.put("y", split[1]);
             map.put("width", split[2]);
@@ -614,7 +614,7 @@ public class e {
         });
         this.f22129a.c(str);
         String str3 = map.get("bizData");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.f22129a.a(str3);
         }
         ((com.taobao.tbliveinteractive.container.h5.b) this.f22129a).n();

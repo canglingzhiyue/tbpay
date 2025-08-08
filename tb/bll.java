@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.ext.vlayout.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -116,7 +116,7 @@ public class bll {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("11208f1b", new Object[]{iDMComponent, list});
         } else if (iDMComponent != null) {
-            if (TextUtils.isEmpty(iDMComponent.getLayoutType())) {
+            if (StringUtils.isEmpty(iDMComponent.getLayoutType())) {
                 List<IDMComponent> children = iDMComponent.getChildren();
                 if (children == null || children.isEmpty()) {
                     return;
@@ -126,7 +126,7 @@ public class bll {
                 }
                 for (int i = 0; i < children.size(); i++) {
                     IDMComponent iDMComponent2 = children.get(i);
-                    if (!TextUtils.isEmpty(iDMComponent2.getLayoutType())) {
+                    if (!StringUtils.isEmpty(iDMComponent2.getLayoutType())) {
                         list.add(iDMComponent2);
                     } else {
                         c(iDMComponent2, list);

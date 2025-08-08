@@ -2,7 +2,7 @@ package com.taobao.browser.jsbridge.ui;
 
 import android.content.Context;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -165,7 +165,7 @@ public class ImageListView extends ListView {
                     if (ipChange2 instanceof IpChange) {
                         return ((Boolean) ipChange2.ipc$dispatch("7edba102", new Object[]{this, view2})).booleanValue();
                     }
-                    if (TextUtils.isEmpty(str) || ImageAdapter.access$100(ImageAdapter.this) == null) {
+                    if (StringUtils.isEmpty(str) || ImageAdapter.access$100(ImageAdapter.this) == null) {
                         m.e("ImageListView", "save image param error");
                         return false;
                     }

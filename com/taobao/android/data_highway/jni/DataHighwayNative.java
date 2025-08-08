@@ -1,6 +1,6 @@
 package com.taobao.android.data_highway.jni;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
@@ -73,7 +73,7 @@ public class DataHighwayNative {
             return ((Number) ipChange.ipc$dispatch("d9378d70", new Object[]{str, str2})).longValue();
         }
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "";
             }
             nativeSendScene(str, str2);

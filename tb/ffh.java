@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -136,7 +136,7 @@ public class ffh implements f {
         }
         HashMap hashMap = new HashMap();
         String appID = MiniAppEntranceView.getAppID(this.f27893a.getIntent());
-        if (!TextUtils.isEmpty(appID)) {
+        if (!StringUtils.isEmpty(appID)) {
             hashMap.put("contain_miniapp", "1");
             hashMap.put("miniappid", appID);
             HashMap hashMap2 = new HashMap();
@@ -173,7 +173,7 @@ public class ffh implements f {
                     Uri data = detailCoreActivity.getIntent().getData();
                     boolean z = 2 == cVar.p();
                     String h = cVar.h();
-                    if (TextUtils.isEmpty(h)) {
+                    if (StringUtils.isEmpty(h)) {
                         return;
                     }
                     fgm.a(detailCoreActivity, data, cVar.o(), h, cVar.i(), z, detailCoreActivity, ffh.a(cVar));

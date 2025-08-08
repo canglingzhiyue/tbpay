@@ -2,7 +2,7 @@ package com.taobao.cameralink.miniapp.skincamera.biz;
 
 import android.app.Activity;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.embedview.IEmbedCallback;
 import com.alibaba.ariver.engine.api.embedview.IEmbedView;
 import com.alibaba.fastjson.JSON;
@@ -131,7 +131,7 @@ public class b implements IEmbedCallback, com.taobao.android.artry.dycontainer.b
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
             return;
         }
-        TextUtils.equals(this.d.getString("devicePosition"), "front");
+        StringUtils.equals(this.d.getString("devicePosition"), "front");
         if (!this.g) {
             return;
         }

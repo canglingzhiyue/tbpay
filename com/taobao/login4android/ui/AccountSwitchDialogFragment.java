@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -104,7 +104,7 @@ public class AccountSwitchDialogFragment extends DialogFragment {
         View inflate = layoutInflater.inflate(getLayoutContent(), viewGroup);
         this.mTitleTV = (TextView) inflate.findViewById(R.id.aliuser_account_switch_tip);
         this.mTitleTV.setMovementMethod(ScrollingMovementMethod.getInstance());
-        if (!TextUtils.isEmpty(this.mTitleText)) {
+        if (!StringUtils.isEmpty(this.mTitleText)) {
             this.mTitleTV.setText(this.mTitleText);
         }
         Button button = (Button) inflate.findViewById(R.id.aliuser_account_switch_agree);

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
@@ -31,6 +31,6 @@ public class QueryAccountsStore extends LocalEventStore {
             arrayList.add((String) listIterator.next());
         }
         String queryExistingAccounts = PhoneCashierMspEngine.getMspWallet().queryExistingAccounts(arrayList);
-        return TextUtils.isEmpty(queryExistingAccounts) ? "{}" : queryExistingAccounts;
+        return StringUtils.isEmpty(queryExistingAccounts) ? "{}" : queryExistingAccounts;
     }
 }

@@ -20,7 +20,7 @@ import android.taobao.windvane.monitor.o;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
 import android.taobao.windvane.webview.h;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -349,7 +349,7 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
         String str = TAG;
         m.e(str, "mUrl=" + dataString);
         android.taobao.windvane.monitor.a.commitFail("BrowserFragment", 1, ept.SUB_CREATE_VIEW, dataString);
-        if (TextUtils.isEmpty(dataString)) {
+        if (StringUtils.isEmpty(dataString)) {
             super.onCreate(bundle);
             m.e(TAG, "originalurl is null, finishSelf");
             finishSelf();
@@ -684,12 +684,12 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
             ipChange.ipc$dispatch("5514b59e", new Object[]{this});
             return;
         }
-        this.enableUCVisibility = TextUtils.equals("true", OrangeConfig.getInstance().getConfig("group_common_browser", com.taobao.browser.utils.i.KEY_ORANGE_CONFIG_ENABLE_UC_VISIBILITY, "false"));
+        this.enableUCVisibility = StringUtils.equals("true", OrangeConfig.getInstance().getConfig("group_common_browser", com.taobao.browser.utils.i.KEY_ORANGE_CONFIG_ENABLE_UC_VISIBILITY, "false"));
         long currentTimeMillis = System.currentTimeMillis();
         super.onResume();
         m.b(TAG, "onResume.");
         BrowserHybridWebView browserHybridWebView = this.browserWebView;
-        if (browserHybridWebView != null && !TextUtils.isEmpty(browserHybridWebView.getCurrentUrl())) {
+        if (browserHybridWebView != null && !StringUtils.isEmpty(browserHybridWebView.getCurrentUrl())) {
             Properties properties = new Properties();
             properties.put("url", this.browserWebView.getCurrentUrl());
             TBS.EasyTrace.updateEasyTraceActivityProperties(getActivity(), properties);
@@ -1028,7 +1028,7 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
                 }
                 BrowserUtil.a(getActivityOrContext(), this.browserWebView);
                 this.noMetaPageList = getNoMetaPageList();
-                if (!TextUtils.isEmpty(this.noMetaPageList) && (browserHybridWebView = this.browserWebView) != null && k.a(this.noMetaPageList, browserHybridWebView.getCurrentUrl())) {
+                if (!StringUtils.isEmpty(this.noMetaPageList) && (browserHybridWebView = this.browserWebView) != null && k.a(this.noMetaPageList, browserHybridWebView.getCurrentUrl())) {
                     this.browserWebView.loadUrl(com.taobao.browser.utils.i.b);
                     break;
                 }
@@ -1257,11 +1257,11 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
             return (String) ipChange.ipc$dispatch("34b6390a", new Object[]{this});
         }
         BrowserHybridWebView browserHybridWebView = this.browserWebView;
-        if (browserHybridWebView != null && !TextUtils.isEmpty(browserHybridWebView.getUTPageName())) {
+        if (browserHybridWebView != null && !StringUtils.isEmpty(browserHybridWebView.getUTPageName())) {
             return this.browserWebView.getUTPageName();
         }
         String pageNameUrl = getPageNameUrl();
-        return !TextUtils.isEmpty(pageNameUrl) ? pageNameUrl : mUTPageName;
+        return !StringUtils.isEmpty(pageNameUrl) ? pageNameUrl : mUTPageName;
     }
 
     private String preBrowserFilter(String str) {
@@ -1269,7 +1269,7 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6595bcb2", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             m.e(TAG, "originalurl is null, and finish activity.");
             i iVar = this.mHandle;
             if (iVar != null) {
@@ -1311,7 +1311,7 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
         String str2 = null;
         try {
             str2 = intent.getStringExtra("myBrowserUrl");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = intent.getDataString();
             }
             String urlReferer = getUrlReferer(str2, intent);
@@ -1363,7 +1363,7 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
                         ipChange2.ipc$dispatch("138ac29e", new Object[]{this, str});
                     } else if (BrowserFragment.access$000(BrowserFragment.this) == null) {
                     } else {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             z = !"false".equals(str.replace("\"", "").replace("'", ""));
                         }
                         if (z) {
@@ -1392,13 +1392,13 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
         }
         String url = this.browserWebView.getUrl();
         this.quitWebViewDirectlyUrls = getQuitWebViewDirectlyList();
-        if (!TextUtils.isEmpty(url)) {
+        if (!StringUtils.isEmpty(url)) {
             try {
                 Uri parse = Uri.parse(url);
                 if (parse != null && "true".equals(parse.getQueryParameter("disallowback"))) {
                     this.alloweWebViewHistoryBack = false;
                 }
-                if (!TextUtils.isEmpty(this.quitWebViewDirectlyUrls) && k.a(this.quitWebViewDirectlyUrls, url)) {
+                if (!StringUtils.isEmpty(this.quitWebViewDirectlyUrls) && k.a(this.quitWebViewDirectlyUrls, url)) {
                     this.alloweWebViewHistoryBack = false;
                 }
             } catch (Exception unused) {
@@ -1417,12 +1417,12 @@ public class BrowserFragment extends SupportSecondaryBaseFragment implements Han
             return (String) ipChange.ipc$dispatch("c813b83a", new Object[]{this});
         }
         String dataString = getOriginIntent().getDataString();
-        if (!TextUtils.isEmpty(dataString)) {
+        if (!StringUtils.isEmpty(dataString)) {
             int indexOf = dataString.indexOf("?");
             if (indexOf != -1) {
                 dataString = dataString.substring(0, indexOf);
             }
-            if (!TextUtils.isEmpty(dataString)) {
+            if (!StringUtils.isEmpty(dataString)) {
                 return dataString;
             }
         }

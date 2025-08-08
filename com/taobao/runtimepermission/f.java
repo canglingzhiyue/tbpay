@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.runtimepermission.api.TBRunTimePermission;
 import com.taobao.runtimepermission.config.RPConfig;
@@ -68,7 +68,7 @@ public final class f {
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("57ef4a67", new Object[]{context, str, strArr});
         }
-        if (context == null || TextUtils.isEmpty(str) || strArr == null || strArr.length == 0) {
+        if (context == null || StringUtils.isEmpty(str) || strArr == null || strArr.length == 0) {
             return null;
         }
         String c = com.taobao.runtimepermission.config.a.a().c(str);
@@ -158,7 +158,7 @@ public final class f {
             return;
         }
         RPConfig b2 = com.taobao.runtimepermission.config.a.a().b();
-        if (!a.a(aVar) || TextUtils.isEmpty(a.d(aVar))) {
+        if (!a.a(aVar) || StringUtils.isEmpty(a.d(aVar))) {
             return;
         }
         if (b2.callbackBizBlackList != null && b2.callbackBizBlackList.contains(a.d(aVar))) {
@@ -397,7 +397,7 @@ public final class f {
                     f.a(this.r, 1096, this.b, iArr);
                     return;
                 }
-                if (!b.enable || ((b.sameScreenPopBizBlackList != null && b.sameScreenPopBizBlackList.contains(this.g)) || TextUtils.isEmpty(this.g) || TextUtils.isEmpty(this.h))) {
+                if (!b.enable || ((b.sameScreenPopBizBlackList != null && b.sameScreenPopBizBlackList.contains(this.g)) || StringUtils.isEmpty(this.g) || StringUtils.isEmpty(this.h))) {
                     this.i = false;
                 }
                 for (String str : this.b) {

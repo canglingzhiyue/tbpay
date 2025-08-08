@@ -3,7 +3,7 @@ package com.taobao.search.m3.image;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -65,7 +65,7 @@ public final class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.equals(this.c, str)) {
+        } else if (StringUtils.equals(this.c, str)) {
         } else {
             this.e = 0.0f;
             this.d = 0;
@@ -78,7 +78,7 @@ public final class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-        } else if (this.e > 0 || TextUtils.isEmpty(this.c)) {
+        } else if (this.e > 0 || StringUtils.isEmpty(this.c)) {
         } else {
             i.a aVar = com.taobao.search.m3.i.Companion;
             String str = this.c;
@@ -98,7 +98,7 @@ public final class h {
             return;
         }
         q.c(canvas, "canvas");
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             return;
         }
         this.b.a(canvas);
@@ -115,7 +115,7 @@ public final class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (this.d == 0 || TextUtils.isEmpty(this.c)) {
+        } else if (this.d == 0 || StringUtils.isEmpty(this.c)) {
         } else {
             this.b.a("https://gw.alicdn.com/imgextra/i2/O1CN01buNxLW1lRmNeEPWmb_!!6000000004816-2-tps-228-68.png", this.d, i);
         }

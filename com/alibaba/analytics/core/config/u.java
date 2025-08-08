@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.utdid2.android.utils.StringUtils;
@@ -54,7 +54,7 @@ public class u implements f.a {
             return;
         }
         this.b = -1;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         try {
@@ -68,7 +68,7 @@ public class u implements f.a {
                 }
                 String next = keys.next();
                 String optString = jSONObject.optString(next);
-                if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(optString)) {
                     String[] split = optString.split("_");
                     if (split.length == 2) {
                         int a2 = a(split[0], -1);

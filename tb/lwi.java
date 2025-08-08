@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -46,6 +46,6 @@ public class lwi {
 
     public static boolean a(lwz lwzVar, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("742f85b7", new Object[]{lwzVar, str})).booleanValue() : TextUtils.equals(lwzVar.h(), str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("742f85b7", new Object[]{lwzVar, str})).booleanValue() : StringUtils.equals(lwzVar.h(), str);
     }
 }

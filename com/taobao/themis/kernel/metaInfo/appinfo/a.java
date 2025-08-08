@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.metaInfo.appinfo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.AppInfoRequestModel;
 import com.alibaba.ariver.resource.api.models.AppInfoScene;
 import com.alibaba.ariver.resource.api.models.AppModel;
@@ -148,7 +148,7 @@ public class a {
             return (AppInfoStrategy) ipChange.ipc$dispatch("d806464b", new Object[]{this, appInfoScene, str, str2, str3});
         }
         AppInfoDao a2 = com.taobao.themis.kernel.metaInfo.appinfo.storage.a.a().a(str, str2, str3);
-        if (a2 == null || (!TextUtils.isEmpty(a2.type) && !TextUtils.equals(a2.type, appInfoScene.name()))) {
+        if (a2 == null || (!StringUtils.isEmpty(a2.type) && !StringUtils.equals(a2.type, appInfoScene.name()))) {
             return AppInfoStrategy.SYNC_LOAD;
         }
         return a(a2);
@@ -174,7 +174,7 @@ public class a {
         AppInfoCacheConfig.CacheTime a2 = com.taobao.themis.kernel.metaInfo.appinfo.cacheConfig.a.a().a(str, b.a(appInfoDao.appInfo), b.b(appInfoDao.appInfo));
         AppInfoCacheConfig.ExpireConfig a3 = com.taobao.themis.kernel.metaInfo.appinfo.cacheConfig.a.a().a(str);
         if (a3 != null && a3.expired) {
-            if (TextUtils.equals(a3.strategy, AppInfoStrategy.SYNC_LOAD.getName())) {
+            if (StringUtils.equals(a3.strategy, AppInfoStrategy.SYNC_LOAD.getName())) {
                 TMSLogger.b(TAG, str + " important app local cache expired, strategy syncLoad!");
                 return AppInfoStrategy.SYNC_LOAD;
             }
@@ -263,7 +263,7 @@ public class a {
             return new sfv(false).a(requestAppInfo.b).b(requestAppInfo.c).a(requestAppInfo.e);
         }
         AppInfoRequestModel appInfoRequestModel = requestAppInfo.d.get(0);
-        if (!TextUtils.isEmpty(appInfoRequestModel.errorCode)) {
+        if (!StringUtils.isEmpty(appInfoRequestModel.errorCode)) {
             return new sfv(false).a(appInfoRequestModel.errorCode).b(appInfoRequestModel.errorMsg).a(a(appInfoRequestModel));
         }
         if (bVar.b) {
@@ -318,7 +318,7 @@ public class a {
         jSONObject.put("errorLogo", (Object) appInfoRequestModel.errorLogo);
         jSONObject.put("errorSubInfo", (Object) appInfoRequestModel.errorSubInfo);
         String str = appInfoRequestModel.downgradeUrl;
-        if (appInfoRequestModel.getExtendInfos() != null && !TextUtils.isEmpty(appInfoRequestModel.getExtendInfos().getString("downgradeUrl"))) {
+        if (appInfoRequestModel.getExtendInfos() != null && !StringUtils.isEmpty(appInfoRequestModel.getExtendInfos().getString("downgradeUrl"))) {
             str = appInfoRequestModel.getExtendInfos().getString("downgradeUrl");
         }
         jSONObject.put("downgradeUrl", (Object) str);
@@ -361,7 +361,7 @@ public class a {
         }
         ArrayList arrayList = new ArrayList();
         for (AppInfoRequestModel appInfoRequestModel : requestAppInfo.d) {
-            if (TextUtils.isEmpty(appInfoRequestModel.errorCode)) {
+            if (StringUtils.isEmpty(appInfoRequestModel.errorCode)) {
                 arrayList.add(appInfoRequestModel);
             }
         }

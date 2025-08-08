@@ -4,7 +4,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.DataCallback;
 import com.ali.user.mobile.common.api.AliUserLogin;
@@ -67,7 +67,7 @@ public class AppInfo {
         }
         LoginTLogAdapter.trace("init.login-tag", "AppInfo init: start");
         try {
-            if (TextUtils.isEmpty(this.mUtdid)) {
+            if (StringUtils.isEmpty(this.mUtdid)) {
                 this.mUtdid = UTDevice.getUtdid(DataProviderFactory.getApplicationContext());
             }
             this.isRoot = NetworkUtil.isSuEnable();
@@ -100,11 +100,11 @@ public class AppInfo {
             return (String) ipChange.ipc$dispatch("7a69c45", new Object[]{this});
         }
         String str = "6.4.3";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String[] split = str.split("-");
             if (split != null && split.length > 0) {
                 str = split[0];
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String[] split2 = str.split("_");
                     if (split2 != null && split2.length > 0) {
                         str = split2[0];
@@ -113,7 +113,7 @@ public class AppInfo {
             }
             str = "";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "5.3.15";
         }
         return "android_" + str;
@@ -129,7 +129,7 @@ public class AppInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3fdfad6f", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(DataProviderFactory.getDataProvider().getUtdid())) {
+        if (!StringUtils.isEmpty(DataProviderFactory.getDataProvider().getUtdid())) {
             return DataProviderFactory.getDataProvider().getUtdid();
         }
         if (this.mUtdid == null) {
@@ -144,7 +144,7 @@ public class AppInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("db4aa3a9", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mUmidToken)) {
+        if (StringUtils.isEmpty(this.mUmidToken)) {
             generateUmidToken(null);
         }
         return this.mUmidToken;
@@ -168,7 +168,7 @@ public class AppInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("62664119", new Object[]{this, dataCallback});
-        } else if (TextUtils.isEmpty(this.mUmidToken)) {
+        } else if (StringUtils.isEmpty(this.mUmidToken)) {
             generateUmidToken(dataCallback);
             UserTrackAdapter.sendUT("Event_InitApdidToken");
         } else {

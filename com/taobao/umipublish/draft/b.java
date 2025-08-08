@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.data.IUGCMedia;
@@ -127,7 +127,7 @@ public final class b {
 
     private boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(b());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(b());
     }
 
     private String b() {
@@ -141,7 +141,7 @@ public final class b {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String f = f(str);
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             return an.b(this.b, f, (String) null);
         }
         return null;
@@ -155,7 +155,7 @@ public final class b {
         }
         synchronized (this) {
             String f = f(str);
-            if (TextUtils.isEmpty(f)) {
+            if (StringUtils.isEmpty(f)) {
                 return;
             }
             an.a(this.b, f, "");
@@ -168,7 +168,7 @@ public final class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{this, str});
         }
-        if (a() && !TextUtils.isEmpty(str)) {
+        if (a() && !StringUtils.isEmpty(str)) {
             return String.format(Locale.getDefault(), "umi_local_draft_%s_%s", str, b());
         }
         return null;
@@ -234,7 +234,7 @@ public final class b {
             if (a2.f23241a.autoSave) {
                 an.a(this.b, f(a2.f23241a.biz), a2.f23241a.draftId);
                 u.a(TAG, "put auto save marker: " + a2.f23241a.draftId);
-            } else if (TextUtils.equals(a2.f23241a.draftId, a(a2.f23241a.biz))) {
+            } else if (StringUtils.equals(a2.f23241a.draftId, a(a2.f23241a.biz))) {
                 b(a2.f23241a.biz);
             }
             a(a2.f23241a);
@@ -301,7 +301,7 @@ public final class b {
         if (ipChange instanceof IpChange) {
             return (DraftModel) ipChange.ipc$dispatch("2691185c", new Object[]{this, str});
         }
-        if (a() && !TextUtils.isEmpty(str)) {
+        if (a() && !StringUtils.isEmpty(str)) {
             return this.c.c(str, b());
         }
         return null;

@@ -1,7 +1,7 @@
 package com.taobao.trtc.utils;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.trtc.api.TrtcException;
 import tb.kge;
@@ -20,14 +20,14 @@ public class b {
             ipChange.ipc$dispatch("82c81dbf", new Object[]{str, objArr});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "references is null";
         }
         for (Object obj : objArr) {
             if (obj == null) {
                 throw new TrtcException(str);
             }
-            if ((obj instanceof String) && TextUtils.isEmpty((String) obj)) {
+            if ((obj instanceof String) && StringUtils.isEmpty((String) obj)) {
                 throw new TrtcException(str);
             }
         }

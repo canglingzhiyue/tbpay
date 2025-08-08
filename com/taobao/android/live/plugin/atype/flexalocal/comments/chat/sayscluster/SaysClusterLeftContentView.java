@@ -7,7 +7,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -160,7 +160,7 @@ public class SaysClusterLeftContentView extends FrameLayout implements View.OnCl
         } else {
             com.taobao.android.live.plugin.atype.flexalocal.comments.chat.b.a(TAG, "[add one click]");
             ChatMessage chatMessage = this.mUpdateMsg;
-            if (chatMessage == null || TextUtils.isEmpty(chatMessage.mContent)) {
+            if (chatMessage == null || StringUtils.isEmpty(chatMessage.mContent)) {
                 return;
             }
             HashMap hashMap = new HashMap();

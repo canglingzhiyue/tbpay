@@ -2,7 +2,7 @@ package com.taobao.wireless.link.assistant.jsbridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -27,7 +27,7 @@ public class AssistantCloseJsBridge extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.equals(str, ACTION_ASSISTANT_CLOSE)) {
+            if (StringUtils.equals(str, ACTION_ASSISTANT_CLOSE)) {
                 String str3 = null;
                 try {
                     JSONObject jSONObject = new JSONObject(str2);

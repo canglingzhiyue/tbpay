@@ -1,6 +1,6 @@
 package com.taobao.monitor.procedure;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.ProcedureGlobal;
@@ -86,7 +86,7 @@ public class ProcedureImpl implements i, k {
         if (gVar != null) {
             this.e.a("parentSession", gVar.a());
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             long j = b;
             b = 1 + j;
             this.c = String.valueOf(j);
@@ -249,7 +249,7 @@ public class ProcedureImpl implements i, k {
         if (ipChange instanceof IpChange) {
             return (g) ipChange.ipc$dispatch("a975f772", new Object[]{this, str, new Long(j)});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.j.put(str, Long.valueOf(j));
         }
         return this;
@@ -263,7 +263,7 @@ public class ProcedureImpl implements i, k {
         if (ipChange instanceof IpChange) {
             return (g) ipChange.ipc$dispatch("b2799d2f", new Object[]{this, str, new Long(j), map});
         }
-        if (!TextUtils.isEmpty(str) && (l = this.j.get(str)) != null && this.g != null && c()) {
+        if (!StringUtils.isEmpty(str) && (l = this.j.get(str)) != null && this.g != null && c()) {
             HashMap hashMap = new HashMap();
             hashMap.put("name", str);
             hashMap.put("start", l);
@@ -303,7 +303,7 @@ public class ProcedureImpl implements i, k {
         if (map == null) {
             map = new HashMap<>();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "UNKNOWN";
         }
         map.put("errorType", str2);

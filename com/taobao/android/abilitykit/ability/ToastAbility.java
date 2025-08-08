@@ -3,7 +3,7 @@ package com.taobao.android.abilitykit.ability;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -116,7 +116,7 @@ public class ToastAbility extends AbsToastAbility {
             return;
         }
         String str = params.f8841a;
-        if (!(!TextUtils.isEmpty(str))) {
+        if (!(!StringUtils.isEmpty(str))) {
             str = null;
         }
         if (str == null) {

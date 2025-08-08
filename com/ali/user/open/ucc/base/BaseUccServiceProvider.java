@@ -3,7 +3,7 @@ package com.ali.user.open.ucc.base;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.Site;
@@ -74,13 +74,13 @@ public abstract class BaseUccServiceProvider implements UccServiceProvider {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bf24a06d", new Object[]{this, activity, uccParams, appCredential, hashMap, uccCallback});
-        } else if ((uccParams == null || TextUtils.isEmpty(uccParams.userToken)) && (hashMap == null || TextUtils.isEmpty(hashMap.get("requestToken")))) {
+        } else if ((uccParams == null || StringUtils.isEmpty(uccParams.userToken)) && (hashMap == null || StringUtils.isEmpty(hashMap.get("requestToken")))) {
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_InvalidParams", uccParams, null);
             if (uccCallback == null) {
                 return;
             }
             uccCallback.onFail(uccParams.bindSite, 102, "参数错误");
-        } else if (hashMap != null && !TextUtils.isEmpty(hashMap.get("authCode"))) {
+        } else if (hashMap != null && !StringUtils.isEmpty(hashMap.get("authCode"))) {
             HashMap hashMap2 = new HashMap();
             String str = hashMap.get("authCode");
             hashMap2.put("authCode", str);
@@ -92,32 +92,32 @@ public abstract class BaseUccServiceProvider implements UccServiceProvider {
             hashMap.put("traceId", uccParams.traceId);
             hashMap.put("userToken", uccParams.userToken);
             UccBindPresenter.getInstance().bindByNativeAuth(activity, uccParams, str, "oauthcode", hashMap, uccCallback);
-        } else if (hashMap != null && !TextUtils.isEmpty(hashMap.get(ParamsConstants.Key.PARAM_BIND_TOKEN))) {
+        } else if (hashMap != null && !StringUtils.isEmpty(hashMap.get(ParamsConstants.Key.PARAM_BIND_TOKEN))) {
             hashMap.put("traceId", uccParams.traceId);
             hashMap.put("userToken", uccParams.userToken);
             String str2 = hashMap.get(ParamsConstants.Key.PARAM_BIND_TOKEN_TYPE);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "oauthcode";
             }
             UccBindPresenter.getInstance().bindByNativeAuth(activity, uccParams, hashMap.get(ParamsConstants.Key.PARAM_BIND_TOKEN), str2, map, uccCallback);
         } else {
             boolean isH5OnlyBindSites = ConfigManager.getInstance().isH5OnlyBindSites(uccParams.bindSite);
-            if (hashMap != null && !TextUtils.isEmpty(hashMap.get(ParamsConstants.Key.PARAM_H5ONLY))) {
-                if (TextUtils.equals(hashMap.get(ParamsConstants.Key.PARAM_H5ONLY), "1")) {
+            if (hashMap != null && !StringUtils.isEmpty(hashMap.get(ParamsConstants.Key.PARAM_H5ONLY))) {
+                if (StringUtils.equals(hashMap.get(ParamsConstants.Key.PARAM_H5ONLY), "1")) {
                     isH5OnlyBindSites = true;
-                } else if (TextUtils.equals(hashMap.get(ParamsConstants.Key.PARAM_H5ONLY), "0")) {
+                } else if (StringUtils.equals(hashMap.get(ParamsConstants.Key.PARAM_H5ONLY), "0")) {
                     isH5OnlyBindSites = false;
                 }
             }
             if (!isH5OnlyBindSites && isAuthByNative(activity, uccParams.bindSite, hashMap)) {
                 z = false;
             }
-            if (!z && (hashMap == null || !TextUtils.equals(hashMap.get(ParamsConstants.Key.PARAM_ENABLE_RECOMMEND_BIND), "true"))) {
+            if (!z && (hashMap == null || !StringUtils.equals(hashMap.get(ParamsConstants.Key.PARAM_ENABLE_RECOMMEND_BIND), "true"))) {
                 HashMap hashMap3 = new HashMap();
                 hashMap3.put("from", a.ATOM_EXT_bind);
                 if (hashMap != null) {
                     hashMap3.put("scene", hashMap.get("scene"));
-                    hashMap3.put("needSession", TextUtils.equals(hashMap.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
+                    hashMap3.put("needSession", StringUtils.equals(hashMap.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
                 }
                 UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_GoOauthBindAction", uccParams, hashMap3);
                 authByNatvie(activity, uccParams, appCredential, map, uccCallback);
@@ -154,7 +154,7 @@ public abstract class BaseUccServiceProvider implements UccServiceProvider {
                 resultHit("3000");
                 String str2 = (String) map3.get("authCode");
                 String str3 = (String) map3.get("accessToken");
-                UccBindPresenter.getInstance().bindByNativeAuth(activity, uccParams, TextUtils.isEmpty(str3) ? str2 : str3, TextUtils.isEmpty(str3) ? "oauthcode" : HttpHeaderConstant.KEY_EXTDATA_ACCESSTOKEN, map2, uccCallback);
+                UccBindPresenter.getInstance().bindByNativeAuth(activity, uccParams, StringUtils.isEmpty(str3) ? str2 : str3, StringUtils.isEmpty(str3) ? "oauthcode" : HttpHeaderConstant.KEY_EXTDATA_ACCESSTOKEN, map2, uccCallback);
             }
 
             @Override // com.ali.user.open.oauth.OauthCallback
@@ -268,7 +268,7 @@ public abstract class BaseUccServiceProvider implements UccServiceProvider {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4cb3ad", new Object[]{this, activity, uccParams, str, map, uccCallback});
-        } else if (uccParams == null || TextUtils.isEmpty(str)) {
+        } else if (uccParams == null || StringUtils.isEmpty(str)) {
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBindWithIbb_InvalidParams", uccParams, null);
             if (uccCallback == null) {
                 return;
@@ -279,7 +279,7 @@ public abstract class BaseUccServiceProvider implements UccServiceProvider {
             hashMap.put("from", a.ATOM_EXT_bind);
             if (map != null) {
                 hashMap.put("scene", map.get("scene"));
-                hashMap.put("needSession", TextUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
+                hashMap.put("needSession", StringUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
             }
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBindWithIbb_GoOauthBindAction", uccParams, hashMap);
             if (map == null) {

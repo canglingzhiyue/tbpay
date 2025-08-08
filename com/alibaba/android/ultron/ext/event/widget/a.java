@@ -3,7 +3,7 @@ package com.alibaba.android.ultron.ext.event.widget;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,7 +74,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("3a51e290", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && this.b != null && (textView = this.g) != null) {
+        if (!StringUtils.isEmpty(str) && this.b != null && (textView = this.g) != null) {
             textView.setText(str);
             this.g.setVisibility(0);
         } else {
@@ -100,7 +100,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("bb88ecab", new Object[]{this, charSequence});
         }
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             this.j.setText(charSequence);
             this.j.setVisibility(0);
         } else {
@@ -114,7 +114,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("ef37176c", new Object[]{this, charSequence});
         }
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             this.k.setText(charSequence);
             this.k.setVisibility(0);
         } else {

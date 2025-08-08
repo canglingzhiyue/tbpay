@@ -1,6 +1,6 @@
 package com.uc.webview.internal.stats;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.mobilesdk.socketcraft.api.WSContextConstant;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.GlobalSettings;
@@ -41,7 +41,7 @@ public final class k {
         }
 
         public final a a(String str, String str2) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 StringBuilder sb = this.f24010a;
                 sb.append(str);
                 sb.append("=");
@@ -104,7 +104,7 @@ public final class k {
             String valueOf = String.valueOf(System.currentTimeMillis());
             a.b a2 = a.b.a();
             a2.f23771a = (a() + str + valueOf + "AppChk#2014").getBytes(Charset.forName("UTF-8"));
-            if (TextUtils.isEmpty(a2.c())) {
+            if (StringUtils.isEmpty(a2.c())) {
                 return null;
             }
             return b() + "?uc_param_str=&chk=" + c.substring(c.length() - 8, c.length()) + "&vno=" + valueOf + "&uuid=" + str + "&app=" + a() + "&zip=gzip&enc=aes";
@@ -198,7 +198,7 @@ public final class k {
         } catch (Throwable th) {
             Log.e(f24009a, "upload failed", th);
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             Log.e(f24009a, "generateServerUrl falied");
             return false;
         }

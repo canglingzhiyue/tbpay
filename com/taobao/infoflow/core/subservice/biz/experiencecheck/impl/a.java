@@ -1,6 +1,6 @@
 package com.taobao.infoflow.core.subservice.biz.experiencecheck.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,7 +25,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bc98adb0", new Object[]{baseSectionModel});
-        } else if (baseSectionModel == null || (ext = baseSectionModel.getExt()) == null || TextUtils.equals("true", ext.getString("isCardSaved"))) {
+        } else if (baseSectionModel == null || (ext = baseSectionModel.getExt()) == null || StringUtils.equals("true", ext.getString("isCardSaved"))) {
         } else {
             ext.put("isCardSaved", (Object) "true");
             String str = (String) lja.a("item.0.smartContent.price.v", baseSectionModel);

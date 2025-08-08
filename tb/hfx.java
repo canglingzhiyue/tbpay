@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
@@ -65,7 +65,7 @@ public class hfx extends hgg implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("content", (Object) str);

@@ -3,7 +3,7 @@ package com.loc;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin;
 import java.util.Arrays;
 
@@ -16,7 +16,7 @@ public final class bd {
     private String c;
 
     public bd(String str) {
-        this.c = s.a(TextUtils.isDigitsOnly(str) ? "SPUtil" : str);
+        this.c = s.a(StringUtils.isDigitsOnly(str) ? "SPUtil" : str);
     }
 
     public static int a(Context context, String str, String str2, int i) {
@@ -40,7 +40,7 @@ public final class bd {
     public static SharedPreferences.Editor a(Context context, String str) {
         if (context != null) {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return context.getSharedPreferences(str, 0).edit();
                 }
             } catch (Throwable th) {
@@ -62,7 +62,7 @@ public final class bd {
     }
 
     public static void a(Context context, String str, String str2, String str3) {
-        if (context == null || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (context == null || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return;
         }
         try {
@@ -87,7 +87,7 @@ public final class bd {
     public static void a(SharedPreferences.Editor editor, String str) {
         if (editor != null) {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 editor.remove(str);
@@ -106,7 +106,7 @@ public final class bd {
     }
 
     public static void a(SharedPreferences.Editor editor, String str, long j) {
-        if (editor == null || TextUtils.isEmpty(str)) {
+        if (editor == null || StringUtils.isEmpty(str)) {
             return;
         }
         try {
@@ -119,7 +119,7 @@ public final class bd {
     public static void a(SharedPreferences.Editor editor, String str, String str2) {
         if (editor != null) {
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     editor.putString(str, str2);
                 }
             } catch (Throwable th) {

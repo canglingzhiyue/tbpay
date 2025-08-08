@@ -16,7 +16,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -92,7 +92,7 @@ public class AddressKinshipBridge extends e {
                     return;
                 }
                 r rVar = new r();
-                if (!TextUtils.equals(intent.getAction(), ACTION_AUS_UPLOAD_RESULT)) {
+                if (!StringUtils.equals(intent.getAction(), ACTION_AUS_UPLOAD_RESULT)) {
                     return;
                 }
                 String stringExtra = intent.getStringExtra("ossBucketName");
@@ -102,7 +102,7 @@ public class AddressKinshipBridge extends e {
                 rVar.a("ossBucketName", stringExtra);
                 rVar.a(KEY_AUS_OSSENDPOINT, stringExtra2);
                 rVar.a("ossObjectKey", stringExtra3);
-                if (TextUtils.isEmpty(stringExtra3)) {
+                if (StringUtils.isEmpty(stringExtra3)) {
                     this.f8989a.error(rVar);
                 } else {
                     this.f8989a.success(rVar);
@@ -312,7 +312,7 @@ public class AddressKinshipBridge extends e {
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
-            b.a(this.mContext, jSONObject.optString("bizIdentity"), jSONObject.optString("channel"), "frontInvoke", TextUtils.equals(jSONObject.optString(aw.PARAM_FORCE_REFRESH), "true"), jSONObject.optString("bizName"), new a() { // from class: com.taobao.android.address.wrapper.weex.AddressKinshipBridge.1
+            b.a(this.mContext, jSONObject.optString("bizIdentity"), jSONObject.optString("channel"), "frontInvoke", StringUtils.equals(jSONObject.optString(aw.PARAM_FORCE_REFRESH), "true"), jSONObject.optString("bizName"), new a() { // from class: com.taobao.android.address.wrapper.weex.AddressKinshipBridge.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 @Override // com.taobao.android.address.a
@@ -397,9 +397,9 @@ public class AddressKinshipBridge extends e {
                     if (extras != null) {
                         for (String str : extras.keySet()) {
                             String valueOf = String.valueOf(extras.get(str));
-                            if (!TextUtils.isEmpty(valueOf)) {
+                            if (!StringUtils.isEmpty(valueOf)) {
                                 rVar2.a(str, valueOf);
-                                if (TextUtils.equals(str, c.K_DELIVERY_ID)) {
+                                if (StringUtils.equals(str, c.K_DELIVERY_ID)) {
                                     rVar2.a(com.taobao.android.address.wrapper.c.K_DELIVERY_ID, valueOf);
                                 }
                             }
@@ -662,7 +662,7 @@ public class AddressKinshipBridge extends e {
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
-            b.a(this.mContext, jSONObject.optString("bizIdentity"), jSONObject.optString("type"), TextUtils.equals(jSONObject.optString("writeClient"), "true"), jSONObject.optString("data"));
+            b.a(this.mContext, jSONObject.optString("bizIdentity"), jSONObject.optString("type"), StringUtils.equals(jSONObject.optString("writeClient"), "true"), jSONObject.optString("data"));
             if (wVCallBackContext == null) {
                 return;
             }

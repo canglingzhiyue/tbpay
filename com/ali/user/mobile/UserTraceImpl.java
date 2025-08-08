@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -93,7 +93,7 @@ public class UserTraceImpl implements UserTrackService {
                 return;
             }
             UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder(str2);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 uTCustomHitBuilder.setEventPage(str);
             } else {
                 uTCustomHitBuilder.setEventPage(UTConstant.PageName.UT_PAGE_EXTEND);
@@ -193,22 +193,22 @@ public class UserTraceImpl implements UserTrackService {
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                         } else {
-                            UserTraceImpl.this.sendUT(TextUtils.isEmpty(str) ? UTConstant.PageName.UT_PAGE_EXTEND : str, str2, str3, str4, properties3, false);
+                            UserTraceImpl.this.sendUT(StringUtils.isEmpty(str) ? UTConstant.PageName.UT_PAGE_EXTEND : str, str2, str3, str4, properties3, false);
                         }
                     }
                 }, 2000L);
                 return;
             }
             UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder(str2);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 uTCustomHitBuilder.setEventPage(str);
             } else {
                 uTCustomHitBuilder.setEventPage(UTConstant.PageName.UT_PAGE_EXTEND);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_ARG2, str3);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_ARG3, str4);
             }
             if (properties2 == null) {
@@ -235,7 +235,7 @@ public class UserTraceImpl implements UserTrackService {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e59f820f", new Object[]{this, str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         if (!str.endsWith("_commit") && !str.endsWith("_success")) {
@@ -244,10 +244,10 @@ public class UserTraceImpl implements UserTrackService {
         int lastIndexOf = str.lastIndexOf("_");
         String substring = str.substring(0, lastIndexOf);
         String substring2 = str.substring(lastIndexOf + 1);
-        if (TextUtils.equals(substring2, "commit")) {
+        if (StringUtils.equals(substring2, "commit")) {
             this.durationMap.put(substring, Long.valueOf(System.currentTimeMillis()));
             return 0L;
-        } else if (!TextUtils.equals(substring2, "success") || (l = this.durationMap.get(substring)) == null || l.longValue() <= 0) {
+        } else if (!StringUtils.equals(substring2, "success") || (l = this.durationMap.get(substring)) == null || l.longValue() <= 0) {
             return 0L;
         } else {
             long currentTimeMillis = System.currentTimeMillis() - l.longValue();
@@ -325,10 +325,10 @@ public class UserTraceImpl implements UserTrackService {
             return;
         }
         UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = new UTHitBuilders.UTControlHitBuilder(str, str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             uTControlHitBuilder.setProperty(UTHitBuilders.a.FIELD_ARG2, str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             uTControlHitBuilder.setProperty(UTHitBuilders.a.FIELD_ARG3, str4);
         }
         if (map == null) {
@@ -344,7 +344,7 @@ public class UserTraceImpl implements UserTrackService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b9467f8", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 HashMap hashMap = new HashMap();
@@ -368,15 +368,15 @@ public class UserTraceImpl implements UserTrackService {
             map.put("utdid_hash", String.valueOf(Math.abs(AppInfo.getInstance().getUtdid().hashCode()) % 10000));
             map.put(ApLinkTokenUtils.KEY_TRACE_ID, LoginContext.getTraceId());
             map.put("launch_times", String.valueOf(LoginContext.getLaunchTimes()));
-            if (!TextUtils.isEmpty(LoginContext.loginUIType)) {
+            if (!StringUtils.isEmpty(LoginContext.loginUIType)) {
                 map.put("loginUIType", LoginContext.loginUIType);
             }
-            if (!TextUtils.isEmpty(LoginContext.mFrom)) {
+            if (!StringUtils.isEmpty(LoginContext.mFrom)) {
                 map.put("source", LoginContext.mFrom);
             }
             map.put("isMainThread", String.valueOf(LoginThreadHelper.isMainThread()));
             map.put("userId", SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId());
-            if (!TextUtils.isEmpty(LoginStatus.loginTrackInfo)) {
+            if (!StringUtils.isEmpty(LoginStatus.loginTrackInfo)) {
                 map.put("loginTrackInfo", LoginStatus.loginTrackInfo);
             }
             map.put("sdk_lang", LanguageUtil.getLanguage());

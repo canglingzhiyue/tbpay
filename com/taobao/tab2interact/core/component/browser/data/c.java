@@ -1,7 +1,7 @@
 package com.taobao.tab2interact.core.component.browser.data;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -280,7 +280,7 @@ public class c {
         if (bVar == null) {
             bVar = new BrowserBadgeModel.BrowserBadgeViewModel.b();
         }
-        if (jSONObject != null && TextUtils.equals("ACCOUNT_AMOUNT_MULTIPLE", jSONObject.getString(suq.REFRESH_BROWSER_BADGE_DATA_ARGS_TRIGGER_TYPE))) {
+        if (jSONObject != null && StringUtils.equals("ACCOUNT_AMOUNT_MULTIPLE", jSONObject.getString(suq.REFRESH_BROWSER_BADGE_DATA_ARGS_TRIGGER_TYPE))) {
             if (jSONObject.get("pic") != null) {
                 a(jSONObject.getJSONObject("pic"), (BrowserBadgeModel.BrowserBadgeViewModel.PicModel) bVar);
             }
@@ -332,7 +332,7 @@ public class c {
         if (jSONObject != null) {
             iVar.f19733a = oec.a((Object) jSONObject.getString("remainingDuration"), 0L);
             iVar.b = jSONObject.getString("color");
-            if (TextUtils.equals("FETCH_VIEW", jSONObject.getString(oxt.KEY_DIMENSION))) {
+            if (StringUtils.equals("FETCH_VIEW", jSONObject.getString(oxt.KEY_DIMENSION))) {
                 iVar.c = BrowserBadgeModel.TaskType.BROWSE_IN_TASK_PANEL;
             }
         }
@@ -359,7 +359,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (BrowserBadgeModel.UserType) ipChange.ipc$dispatch("c53b71f1", new Object[]{str});
         }
-        if (!TextUtils.equals("true", str)) {
+        if (!StringUtils.equals("true", str)) {
             return null;
         }
         return BrowserBadgeModel.UserType.REWARD_ENHANCED;
@@ -370,7 +370,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (BrowserBadgeModel.UserStage) ipChange.ipc$dispatch("5963dacb", new Object[]{str});
         }
-        if (!TextUtils.equals("fresh", str)) {
+        if (!StringUtils.equals("fresh", str)) {
             return null;
         }
         return BrowserBadgeModel.UserStage.SIMPLE_FOR_NEW_USER;
@@ -511,7 +511,7 @@ public class c {
             return false;
         }
         BrowserBadgeModel.BrowserBadgeViewModel browserBadgeViewModel = browserBadgeModel.e;
-        if (browserBadgeViewModel == null || browserBadgeViewModel.b == null || browserBadgeViewModel.b.f19730a == null || TextUtils.isEmpty(browserBadgeViewModel.b.f19730a.c)) {
+        if (browserBadgeViewModel == null || browserBadgeViewModel.b == null || browserBadgeViewModel.b.f19730a == null || StringUtils.isEmpty(browserBadgeViewModel.b.f19730a.c)) {
             com.taobao.tab2interact.core.utils.a.b(null, "BrowserBadgeResponseDataProcessor", "验证浏览挂角数据有效性，browserBadgeViewModel.mMiddleAreaModel.mCenterPicModel.mUrl获取不到或为空");
             return false;
         } else if (browserBadgeModel.c || ((browserTaskModel = browserBadgeModel.d) != null && browserTaskModel.f19735a > 0 && browserTaskModel.b >= 0)) {
@@ -539,18 +539,18 @@ public class c {
                 BrowserBadgeModel.BrowserBadgeViewModel.g gVar = browserBadgeViewModel.f19725a;
                 if (gVar != null) {
                     BrowserBadgeModel.BrowserBadgeViewModel.f fVar = gVar.f19732a;
-                    if (fVar != null && !TextUtils.isEmpty(fVar.f19731a) && TextUtils.isEmpty(fVar.b)) {
+                    if (fVar != null && !StringUtils.isEmpty(fVar.f19731a) && StringUtils.isEmpty(fVar.b)) {
                         fVar.b = "#f9b20a";
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.PicModel picModel = gVar.b;
-                    if (picModel != null && !TextUtils.isEmpty(picModel.c)) {
+                    if (picModel != null && !StringUtils.isEmpty(picModel.c)) {
                         if (picModel.b == null) {
                             picModel.b = BrowserBadgeModel.BrowserBadgeViewModel.PicModel.Type.PNG;
                         }
-                        if (TextUtils.isEmpty(picModel.d)) {
+                        if (StringUtils.isEmpty(picModel.d)) {
                             picModel.d = ils.ARCH_BIT32;
                         }
-                        if (TextUtils.isEmpty(picModel.e)) {
+                        if (StringUtils.isEmpty(picModel.e)) {
                             picModel.e = ils.ARCH_BIT32;
                         }
                     }
@@ -558,42 +558,42 @@ public class c {
                 BrowserBadgeModel.BrowserBadgeViewModel.c cVar = browserBadgeViewModel.c;
                 if (cVar != null) {
                     BrowserBadgeModel.BrowserBadgeViewModel.f fVar2 = cVar.f19728a;
-                    if (fVar2 != null && !TextUtils.isEmpty(fVar2.f19731a) && TextUtils.isEmpty(fVar2.b)) {
+                    if (fVar2 != null && !StringUtils.isEmpty(fVar2.f19731a) && StringUtils.isEmpty(fVar2.b)) {
                         fVar2.b = "#f9ef9f";
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.PicModel picModel2 = cVar.b;
-                    if (picModel2 != null && !TextUtils.isEmpty(picModel2.c)) {
+                    if (picModel2 != null && !StringUtils.isEmpty(picModel2.c)) {
                         if (picModel2.b == null) {
                             picModel2.b = BrowserBadgeModel.BrowserBadgeViewModel.PicModel.Type.PNG;
                         }
-                        if (TextUtils.isEmpty(picModel2.d)) {
+                        if (StringUtils.isEmpty(picModel2.d)) {
                             picModel2.d = "9";
                         }
-                        if (TextUtils.isEmpty(picModel2.e)) {
+                        if (StringUtils.isEmpty(picModel2.e)) {
                             picModel2.e = AgooConstants.ACK_PACK_NOBIND;
                         }
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.PicModel picModel3 = cVar.c;
-                    if (picModel3 != null && !TextUtils.isEmpty(picModel3.c)) {
+                    if (picModel3 != null && !StringUtils.isEmpty(picModel3.c)) {
                         if (picModel3.b == null) {
                             picModel3.b = BrowserBadgeModel.BrowserBadgeViewModel.PicModel.Type.PNG;
                         }
-                        if (TextUtils.isEmpty(picModel3.d)) {
+                        if (StringUtils.isEmpty(picModel3.d)) {
                             picModel3.d = "85";
                         }
-                        if (TextUtils.isEmpty(picModel3.e)) {
+                        if (StringUtils.isEmpty(picModel3.e)) {
                             picModel3.e = "34";
                         }
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.PicModel picModel4 = cVar.d;
-                    if (picModel4 != null && !TextUtils.isEmpty(picModel4.c)) {
+                    if (picModel4 != null && !StringUtils.isEmpty(picModel4.c)) {
                         if (picModel4.b == null) {
                             picModel4.b = BrowserBadgeModel.BrowserBadgeViewModel.PicModel.Type.PNG;
                         }
-                        if (TextUtils.isEmpty(picModel4.d)) {
+                        if (StringUtils.isEmpty(picModel4.d)) {
                             picModel4.d = "86";
                         }
-                        if (TextUtils.isEmpty(picModel4.e)) {
+                        if (StringUtils.isEmpty(picModel4.e)) {
                             picModel4.e = "34";
                         }
                     }
@@ -601,20 +601,20 @@ public class c {
                 BrowserBadgeModel.BrowserBadgeViewModel.e eVar = browserBadgeViewModel.b;
                 if (eVar != null) {
                     BrowserBadgeModel.BrowserBadgeViewModel.f fVar3 = eVar.e;
-                    if (fVar3 != null && !TextUtils.isEmpty(fVar3.f19731a) && TextUtils.isEmpty(fVar3.b)) {
+                    if (fVar3 != null && !StringUtils.isEmpty(fVar3.f19731a) && StringUtils.isEmpty(fVar3.b)) {
                         fVar3.b = "#ff0000";
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.f fVar4 = eVar.f;
-                    if (fVar4 != null && !TextUtils.isEmpty(fVar4.f19731a) && TextUtils.isEmpty(fVar4.b)) {
+                    if (fVar4 != null && !StringUtils.isEmpty(fVar4.f19731a) && StringUtils.isEmpty(fVar4.b)) {
                         fVar4.b = "#ff0000";
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.f fVar5 = eVar.g;
-                    if (fVar5 != null && !TextUtils.isEmpty(fVar5.f19731a) && TextUtils.isEmpty(fVar5.b)) {
+                    if (fVar5 != null && !StringUtils.isEmpty(fVar5.f19731a) && StringUtils.isEmpty(fVar5.b)) {
                         fVar5.b = "#FFD666";
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.j jVar = eVar.h;
                     if (jVar != null) {
-                        if (TextUtils.isEmpty(jVar.b)) {
+                        if (StringUtils.isEmpty(jVar.b)) {
                             jVar.b = "#FFD666";
                         }
                         if (jVar.c == null) {
@@ -622,14 +622,14 @@ public class c {
                         }
                     }
                     BrowserBadgeModel.BrowserBadgeViewModel.PicModel picModel5 = eVar.f19730a;
-                    if (picModel5 != null && !TextUtils.isEmpty(picModel5.c)) {
+                    if (picModel5 != null && !StringUtils.isEmpty(picModel5.c)) {
                         if (picModel5.b == null) {
                             picModel5.b = BrowserBadgeModel.BrowserBadgeViewModel.PicModel.Type.PNG;
                         }
-                        if (TextUtils.isEmpty(picModel5.d)) {
+                        if (StringUtils.isEmpty(picModel5.d)) {
                             picModel5.d = "90";
                         }
-                        if (TextUtils.isEmpty(picModel5.e)) {
+                        if (StringUtils.isEmpty(picModel5.e)) {
                             picModel5.e = "90";
                         }
                     }
@@ -637,7 +637,7 @@ public class c {
                     if (dVar == null) {
                         dVar = new BrowserBadgeModel.BrowserBadgeViewModel.d();
                     }
-                    if (TextUtils.isEmpty(dVar.f19729a)) {
+                    if (StringUtils.isEmpty(dVar.f19729a)) {
                         dVar.f19729a = "#ffb600";
                     }
                 }

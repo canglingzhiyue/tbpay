@@ -1,6 +1,6 @@
 package com.taobao.search.sf.datasource;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,7 +57,7 @@ public class e {
             return a.a();
         }
         String remove = map.remove("apiInfo");
-        if (TextUtils.isEmpty(remove)) {
+        if (StringUtils.isEmpty(remove)) {
             return a.a();
         }
         try {

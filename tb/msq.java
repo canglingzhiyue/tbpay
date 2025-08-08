@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -172,7 +172,7 @@ public abstract class msq implements IOldAgooNotification {
             notificationChannel2.setDescription(NOTIFICATION_CHANNEL_OTHER_DESC);
             String string = mContext.getSharedPreferences(Config.PREFERENCES, 4).getString("app_notification_custom_sound", null);
             AudioAttributes build = new AudioAttributes.Builder().setUsage(5).build();
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 notificationChannel2.setSound(Uri.parse(string), build);
             } else if (PreferenceManager.getDefaultSharedPreferences(Globals.getApplication()).getBoolean(VibratorAndMediaManager.RINGON, true) && EnvUtil.isAppBackGround(this.TAG)) {
                 if (BizSoundType.HONGBAO.getType().equals(this.mMsgData.sound)) {
@@ -221,7 +221,7 @@ public abstract class msq implements IOldAgooNotification {
             TaobaoRegister.exposureMessage(mContext, string, "");
             String string2 = this.mExtras.getString("show_type");
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 hashMap.put("show_type", string2);
             }
             HashMap<String, String> createUTData = EnvUtil.createUTData("agoo^0^" + string, string, null, "0", null, null, hashMap);
@@ -236,7 +236,7 @@ public abstract class msq implements IOldAgooNotification {
                 JSONObject jSONObject = JSON.parseObject(this.mExtras.getString(AgooConstants.MESSAGE_BODY)).getJSONObject(Constants.KEY_EXTS);
                 if (jSONObject != null) {
                     String string3 = jSONObject.getString(MarketingInnerNotificationAdapter.KEY_PUSHUTARGS);
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         try {
                             for (Map.Entry<String, Object> entry : JSON.parseObject(string3).entrySet()) {
                                 if (entry.getValue() instanceof String) {
@@ -280,7 +280,7 @@ public abstract class msq implements IOldAgooNotification {
             }
             String stringExtra = intent.getStringExtra("notifySound");
             String stringExtra2 = intent.getStringExtra("notifyVibrate");
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 builder.setSound(Uri.parse(stringExtra));
             } else if (defaultSharedPreferences.getBoolean(VibratorAndMediaManager.RINGON, true) && EnvUtil.isAppBackGround(this.TAG)) {
                 if (BizSoundType.HONGBAO.getType().equals(this.mMsgData.sound)) {
@@ -289,7 +289,7 @@ public abstract class msq implements IOldAgooNotification {
                     builder.setSound(Uri.parse("android.resource://" + Globals.getApplication().getPackageName() + "/" + R.raw.sound_push));
                 }
             }
-            if (!TextUtils.isEmpty(stringExtra2)) {
+            if (!StringUtils.isEmpty(stringExtra2)) {
                 builder.setDefaults(Integer.parseInt(stringExtra2));
             } else if (!isVibrate() || !defaultSharedPreferences.getBoolean(VibratorAndMediaManager.ISVIBRATIONON, false)) {
             } else {
@@ -352,7 +352,7 @@ public abstract class msq implements IOldAgooNotification {
 
     public static boolean getChannelSwitch() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f9823a6c", new Object[0])).booleanValue() : TextUtils.equals("1", OrangeConfig.getInstance().getConfig("mpm_data_switch", "message_push_channel_switch", "1"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f9823a6c", new Object[0])).booleanValue() : StringUtils.equals("1", OrangeConfig.getInstance().getConfig("mpm_data_switch", "message_push_channel_switch", "1"));
     }
 
     @Override // com.taobao.message.notification.system.base.IOldAgooNotification

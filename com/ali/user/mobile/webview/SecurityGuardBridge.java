@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.utils.NetworkUtil;
 import com.alibaba.fastjson.JSON;
@@ -75,7 +75,7 @@ public class SecurityGuardBridge extends e {
         } catch (JSONException unused) {
             str2 = "";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             wVCallBackContext.error(r.RET_PARAM_ERR);
             return;
         }

@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.comments.notify;
 
 import android.content.SharedPreferences;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -35,7 +35,7 @@ public class a {
             }
             String a2 = ad.a("important_fatigue_key");
             try {
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 JSONArray jSONArray = (JSONArray) JSONObject.parse(a2);
@@ -43,7 +43,7 @@ public class a {
                     Object obj = jSONArray.get(i);
                     if (obj instanceof String) {
                         String str = (String) obj;
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             ImportantEventItem.FatigueInfo fatigueInfo = (ImportantEventItem.FatigueInfo) JSONObject.parseObject(ad.a(str), ImportantEventItem.FatigueInfo.class);
                             if (SystemClock.elapsedRealtime() - fatigueInfo.startTime > fatigueInfo.timeoutTime) {
                                 a.a(a.this, fatigueInfo);
@@ -92,7 +92,7 @@ public class a {
         }
         try {
             String a2 = ad.a(str);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return (ImportantEventItem.FatigueInfo) JSONObject.parseObject(a2, ImportantEventItem.FatigueInfo.class);
             }
             return null;
@@ -137,7 +137,7 @@ public class a {
             return;
         }
         String a2 = ad.a("important_fatigue_key");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             Iterator<Object> it = ((JSONArray) JSONObject.parse(a2)).iterator();
             while (it.hasNext()) {
                 Object next = it.next();

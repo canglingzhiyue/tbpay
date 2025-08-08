@@ -1,6 +1,6 @@
 package com.vivo.push.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 import com.vivo.push.model.UPSNotificationMessage;
 import org.json.JSONArray;
@@ -15,7 +15,7 @@ public final class v {
         } catch (JSONException e) {
             u.a("MessageConvertUtil", "notify msg pack to obj error", e);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             u.a("MessageConvertUtil", "notify msg pack to obj is null");
             return null;
         }

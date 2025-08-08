@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.metaevents;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -31,7 +31,7 @@ public class MetaMspLogPertStore extends LocalEventStore {
         String string2 = actionParamsJson.getString("name");
         long longValue = actionParamsJson.getLongValue("time");
         actionParamsJson.getString("reserved");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || this.f4584a == null) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || this.f4584a == null) {
             return "";
         }
         this.f4584a.getStatisticInfo().addPerf(string, string2, String.valueOf(longValue));

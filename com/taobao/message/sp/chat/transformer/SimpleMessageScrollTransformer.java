@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.transformer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.chat.aura.messageflow.input.ChatInputConstant;
@@ -47,12 +47,12 @@ public class SimpleMessageScrollTransformer implements DiffTransfomer {
             SimpleMessageListData simpleMessageListData = (SimpleMessageListData) sharedState.getOriginData(SimpleMessageListData.SOURCE_NAME_MESSAGE, SimpleMessageListData.class, null);
             if (intValue == 0 && simpleMessageListData != null && simpleMessageListData.list != null) {
                 boolean z = !"0".equals(sharedState.getProp("oldToNew", String.class, null));
-                if (!TextUtils.isEmpty(str) && z) {
+                if (!StringUtils.isEmpty(str) && z) {
                     jSONArray.add(ListOperator.scrollBottom(str));
                 }
                 intValue = 1;
             }
-            if (simpleMessageListData != null && !TextUtils.isEmpty(simpleMessageListData.reason) && (TextUtils.equals(simpleMessageListData.reason, SimpleMessageListData.REASON_SEND) || (TextUtils.equals(simpleMessageListData.reason, SimpleMessageListData.REASON_ARRIVE) && intValue2 > 0))) {
+            if (simpleMessageListData != null && !StringUtils.isEmpty(simpleMessageListData.reason) && (StringUtils.equals(simpleMessageListData.reason, SimpleMessageListData.REASON_SEND) || (StringUtils.equals(simpleMessageListData.reason, SimpleMessageListData.REASON_ARRIVE) && intValue2 > 0))) {
                 jSONArray.add(ListOperator.scrollBottom(str));
             }
             if (!jSONArray.isEmpty()) {
@@ -76,7 +76,7 @@ public class SimpleMessageScrollTransformer implements DiffTransfomer {
         SimpleMessageListDataStatusTransformer.SimpleListInfo copyWithState = SimpleMessageListDataStatusTransformer.SimpleListInfo.copyWithState(sharedState);
         JSONArray jSONArray2 = new JSONArray();
         String str3 = (String) sharedState.getProp("mainList", String.class, "");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             jSONArray2.add(ListOperator.scrollBottom(str3));
             copyWithState.cmd.addAll(jSONArray2);
         }

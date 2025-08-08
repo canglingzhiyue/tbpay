@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -206,7 +206,7 @@ public class irj implements qmo {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("8b9126f5", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (baseFrame = this.c) != null) {
+        if (!StringUtils.isEmpty(str) && (baseFrame = this.c) != null) {
             return baseFrame.getViewByName(str);
         }
         return null;

@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.engine.logic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("24753347", new Object[]{this, str, str2, bVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || bVar == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || bVar == null) {
         } else {
             Map<String, b> map = this.f2555a.get(str);
             if (map == null) {
@@ -38,7 +38,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("57b3e96f", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (map = this.f2555a.get(str)) != null) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (map = this.f2555a.get(str)) != null) {
             return map.get(str2);
         }
         return null;

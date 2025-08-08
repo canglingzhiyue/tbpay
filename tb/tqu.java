@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.component.m;
@@ -66,10 +66,10 @@ public class tqu extends c.a<TNodeRecyclerView, m.b> {
         }
         HashMap hashMap = new HashMap();
         String a2 = oec.a(aaVar.e(sjx.KEY_RECORD_EXTRA), (String) null);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             for (String str : a2.split(";")) {
                 String[] split = str.split(":");
-                if (split.length == 2 && !TextUtils.isEmpty(split[0]) && !TextUtils.isEmpty(split[1])) {
+                if (split.length == 2 && !StringUtils.isEmpty(split[0]) && !StringUtils.isEmpty(split[1])) {
                     hashMap.put(split[0], split[1]);
                 }
             }

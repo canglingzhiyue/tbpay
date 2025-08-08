@@ -3,7 +3,7 @@ package com.taobao.family.globalbubble.affection;
 import android.content.Context;
 import android.taobao.util.i;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.family.FamilyManager;
@@ -111,7 +111,7 @@ public class a extends h {
                             while (it.hasNext()) {
                                 FamilyMember familyMember = (FamilyMember) it.next();
                                 String str = (String) a.b(a.this).get(familyMember.userId);
-                                if (TextUtils.isEmpty(str)) {
+                                if (StringUtils.isEmpty(str)) {
                                     hashMap.put(familyMember.userId, "0");
                                 } else {
                                     hashMap.put(familyMember.userId, str);
@@ -188,7 +188,7 @@ public class a extends h {
         } else {
             String str = (String) map.get("userId");
             String str2 = (String) map.get("msgCount");
-            if (!TextUtils.isEmpty(str) && this.i.containsKey(str)) {
+            if (!StringUtils.isEmpty(str) && this.i.containsKey(str)) {
                 this.i.put(str, str2);
             }
             HashMap<String, Object> hashMap = new HashMap<>();

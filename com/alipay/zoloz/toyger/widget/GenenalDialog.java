@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -192,14 +192,14 @@ public class GenenalDialog extends Dialog {
                 }
             });
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             button.setVisibility(8);
             a(view);
             a(imageView);
         } else {
             button.setVisibility(0);
         }
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             button2.setVisibility(8);
             a(view);
             a(imageView);

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -247,7 +247,7 @@ public final class xmo<P extends com.taobao.android.abilitykit.ability.pop.model
             a2 = null;
         }
         Activity activity = (Activity) a2;
-        if (TextUtils.isEmpty(params.c) || activity == null) {
+        if (StringUtils.isEmpty(params.c) || activity == null) {
             callback.a(new dkv(10015, "url can't be empty"), new PopErrorView(abilityRtCtx.a(), this.f8938a));
             return;
         }
@@ -255,7 +255,7 @@ public final class xmo<P extends com.taobao.android.abilitykit.ability.pop.model
         if (this.d) {
             try {
                 Uri parse = Uri.parse(params.c);
-                if (TextUtils.isEmpty(parse.getQueryParameter("renderMode"))) {
+                if (StringUtils.isEmpty(parse.getQueryParameter("renderMode"))) {
                     params.c = parse.buildUpon().appendQueryParameter("renderMode", UltronTradeHybridInstanceRenderMode.TEXTURE).toString();
                 }
             } catch (Throwable th) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
@@ -34,7 +34,7 @@ public abstract class ozg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("50de8242", new Object[]{this, str, aVar});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             for (String str2 : this.f32508a.snapshot().keySet()) {
                 if (str.equals(str2)) {
                     ozn oznVar = this.f32508a.get(str2);
@@ -55,7 +55,7 @@ public abstract class ozg {
         if (ipChange instanceof IpChange) {
             return (ozn) ipChange.ipc$dispatch("7c739a91", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (this.c != null) {
@@ -79,7 +79,7 @@ public abstract class ozg {
         if (ipChange instanceof IpChange) {
             return (ozn) ipChange.ipc$dispatch("aca414e", new Object[]{this, oznVar});
         }
-        if (oznVar == null || TextUtils.isEmpty(oznVar.f32509a)) {
+        if (oznVar == null || StringUtils.isEmpty(oznVar.f32509a)) {
             return oznVar;
         }
         if (this.f32508a == null) {
@@ -142,7 +142,7 @@ public abstract class ozg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b64a6fe3", new Object[]{this, new Boolean(z), str, oznVar});
-        } else if (TextUtils.isEmpty(str) || oznVar == null || oznVar.h == null || this.g) {
+        } else if (StringUtils.isEmpty(str) || oznVar == null || oznVar.h == null || this.g) {
         } else {
             ozn.a aVar2 = this.b;
             if (aVar2 != null) {
@@ -178,7 +178,7 @@ public abstract class ozg {
         if (ipChange instanceof IpChange) {
             return (ozn) ipChange.ipc$dispatch("a4e36360", new Object[]{this, str, aVar});
         }
-        if (TextUtils.isEmpty(str) || aVar == null) {
+        if (StringUtils.isEmpty(str) || aVar == null) {
             return null;
         }
         f();
@@ -207,7 +207,7 @@ public abstract class ozg {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         for (String str2 : this.f32508a.snapshot().keySet()) {

@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.pyschedule;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -122,7 +122,7 @@ public class PyScheduleManager {
         }
         HashMap<String, Object> hashMap = new HashMap<>();
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject parseObject = JSONObject.parseObject(str);
                 for (String str2 : parseObject.keySet()) {
                     Object obj = parseObject.get(str2);

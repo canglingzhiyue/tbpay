@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
@@ -35,7 +35,7 @@ public class pkx {
         }
         String optString = jSONObject.optString("messageCode");
         String optString2 = jSONObject.optString("messageInfo");
-        if (!TextUtils.isEmpty(optString2) && !TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString2) && !StringUtils.isEmpty(optString)) {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("forbidden_reason", optString);
             phg.a().a(this.b, "Forbiddenspeech", hashMap);
@@ -69,7 +69,7 @@ public class pkx {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         String c = ply.c();
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return false;
         }
         for (String str2 : c.split(",")) {

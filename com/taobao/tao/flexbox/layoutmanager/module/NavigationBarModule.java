@@ -9,7 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.TextView;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alibaba.fastjson.JSONArray;
@@ -117,7 +117,7 @@ public class NavigationBarModule {
             }
             String str2 = str;
             if (cVar.f19938a.g() instanceof f) {
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 ((f) cVar.f19938a.g()).setTitle(string);
@@ -126,7 +126,7 @@ public class NavigationBarModule {
                 if (supportActionBar == null) {
                     return;
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     com.taobao.tao.flexbox.layoutmanager.adapter.a.a().i().a(cVar.a(), str2, -1, -1, new ImageLoader.c() { // from class: com.taobao.tao.flexbox.layoutmanager.module.NavigationBarModule.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -150,17 +150,17 @@ public class NavigationBarModule {
                     });
                     return;
                 }
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     supportActionBar.c(12);
                     supportActionBar.a(string);
                 }
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     return;
                 }
                 supportActionBar.b(string2);
             } else if (!(cVar.a() instanceof Activity) || (actionBar = ((Activity) cVar.a()).getActionBar()) == null) {
             } else {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     com.taobao.tao.flexbox.layoutmanager.adapter.a.a().i().a(cVar.a(), str2, -1, -1, new ImageLoader.c() { // from class: com.taobao.tao.flexbox.layoutmanager.module.NavigationBarModule.2
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -184,10 +184,10 @@ public class NavigationBarModule {
                     });
                     return;
                 }
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     actionBar.setTitle(string);
                 }
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     return;
                 }
                 actionBar.setSubtitle(string2);
@@ -209,13 +209,13 @@ public class NavigationBarModule {
             ((JSONObject) cVar.b).getString("borderBottomColor");
             if (cVar.a() instanceof AppCompatActivity) {
                 android.support.v7.app.ActionBar supportActionBar = ((AppCompatActivity) cVar.a()).getSupportActionBar();
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     supportActionBar.b(new ColorDrawable(Color.parseColor(string2)));
                 }
-            } else if ((cVar.a() instanceof Activity) && !TextUtils.isEmpty(string2)) {
+            } else if ((cVar.a() instanceof Activity) && !StringUtils.isEmpty(string2)) {
                 ((Activity) cVar.a()).getActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor(string2)));
             }
-            if (TextUtils.isEmpty(string) || (identifier = Resources.getSystem().getIdentifier("action_bar_title", "id", "android")) <= 0 || (textView = (TextView) ((AppCompatActivity) cVar.a()).findViewById(identifier)) == null) {
+            if (StringUtils.isEmpty(string) || (identifier = Resources.getSystem().getIdentifier("action_bar_title", "id", "android")) <= 0 || (textView = (TextView) ((AppCompatActivity) cVar.a()).findViewById(identifier)) == null) {
                 return;
             }
             textView.setTextColor(Color.parseColor(string));
@@ -335,7 +335,7 @@ public class NavigationBarModule {
                     break;
                 }
                 b bVar = arrayList.get(i);
-                if (bVar != null && ((!TextUtils.isEmpty(bVar.f20442a) && bVar.f20442a.equals(str)) || (!TextUtils.isEmpty(bVar.b) && bVar.b.equals(string)))) {
+                if (bVar != null && ((!StringUtils.isEmpty(bVar.f20442a) && bVar.f20442a.equals(str)) || (!StringUtils.isEmpty(bVar.b) && bVar.b.equals(string)))) {
                     break;
                 }
                 i++;
@@ -358,9 +358,9 @@ public class NavigationBarModule {
             if (!(a2 instanceof Activity)) {
                 return;
             }
-            if (TextUtils.equals("lightContent", string)) {
+            if (StringUtils.equals("lightContent", string)) {
                 ohd.a((Activity) a2, 0, false);
-            } else if (!TextUtils.equals("default", string)) {
+            } else if (!StringUtils.equals("default", string)) {
             } else {
                 ohd.a((Activity) a2, 0, true);
             }

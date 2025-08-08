@@ -1,6 +1,6 @@
 package com.taobao.umipublish.extension.windvane.innercall;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.workflow.e;
@@ -53,10 +53,10 @@ public abstract class InnerCallBaseAbility extends BaseAbility {
         this.b = ios.a(this.f23354a);
         HashMap hashMap = new HashMap(this.b.a());
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey())) {
-                if (TextUtils.equals("publishParams", entry.getKey()) || TextUtils.equals("data", entry.getKey())) {
+            if (!StringUtils.isEmpty(entry.getKey())) {
+                if (StringUtils.equals("publishParams", entry.getKey()) || StringUtils.equals("data", entry.getKey())) {
                     for (Map.Entry<String, Object> entry2 : jSONObject.getJSONObject(entry.getKey()).entrySet()) {
-                        if (!TextUtils.isEmpty(entry2.getKey())) {
+                        if (!StringUtils.isEmpty(entry2.getKey())) {
                             hashMap.put(entry2.getKey(), entry2.getValue().toString());
                         }
                     }

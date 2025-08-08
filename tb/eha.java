@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.b;
@@ -73,7 +73,7 @@ public class eha extends epe {
                 try {
                     if (this.mNodeBundle != null && this.mNodeBundle.b) {
                         epeVar = a(m, iDMComponent);
-                    } else if (!TextUtils.isEmpty(iDMComponent.getTag()) && iDMComponent.getChildren() != null && iDMComponent.getChildren().size() > 0) {
+                    } else if (!StringUtils.isEmpty(iDMComponent.getTag()) && iDMComponent.getChildren() != null && iDMComponent.getChildren().size() > 0) {
                         epeVar = m.d(iDMComponent.getChildren().get(0), this.mNodeBundle);
                     } else {
                         epeVar = m.d(iDMComponent, this.mNodeBundle);

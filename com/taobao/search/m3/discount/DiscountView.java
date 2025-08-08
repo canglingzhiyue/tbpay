@@ -3,7 +3,7 @@ package com.taobao.search.m3.discount;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -112,9 +112,9 @@ public final class DiscountView extends BaseItemView {
             return;
         }
         String i2 = aVar2.i();
-        if (TextUtils.isEmpty(i2)) {
+        if (StringUtils.isEmpty(i2)) {
             i2 = aVar2.d();
-            if (TextUtils.isEmpty(i2)) {
+            if (StringUtils.isEmpty(i2)) {
                 return;
             }
         }
@@ -250,7 +250,7 @@ public final class DiscountView extends BaseItemView {
         if (this.discountInfo == null) {
             q.a();
         }
-        this.hasIcon = !TextUtils.isEmpty(aVar.c());
+        this.hasIcon = !StringUtils.isEmpty(aVar.c());
         d dVar = this.icon;
         com.taobao.search.m3.discount.a aVar5 = this.discountInfo;
         if (aVar5 == null) {

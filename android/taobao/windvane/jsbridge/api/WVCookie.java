@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -51,7 +51,7 @@ public class WVCookie extends e {
         }
         r rVar = new r();
         String str2 = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str = URLDecoder.decode(str, "utf-8");
             } catch (Exception unused) {
@@ -87,7 +87,7 @@ public class WVCookie extends e {
         }
         r rVar = new r();
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str = URLDecoder.decode(str, "utf-8");
             } catch (Exception unused) {
@@ -111,17 +111,17 @@ public class WVCookie extends e {
                 sb.append("; ");
                 sb.append("Domain=");
                 sb.append(string);
-                if (!TextUtils.isEmpty(optString2)) {
+                if (!StringUtils.isEmpty(optString2)) {
                     sb.append("; ");
                     sb.append("Path=");
                     sb.append(optString2);
                 }
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     sb.append("; ");
                     sb.append("Expires=");
                     sb.append(optString);
                 }
-                if (!TextUtils.isEmpty(optString3)) {
+                if (!StringUtils.isEmpty(optString3)) {
                     sb.append("; ");
                     sb.append("Secure");
                 }
@@ -135,7 +135,7 @@ public class WVCookie extends e {
             string = null;
         }
         String sb2 = sb.toString();
-        if (TextUtils.isEmpty(sb2) || TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(sb2) || StringUtils.isEmpty(string)) {
             if (m.a()) {
                 m.d(TAG, "writeCookies: Illegal param: cookieStr=" + sb2 + ";domain=" + string);
             }
@@ -154,7 +154,7 @@ public class WVCookie extends e {
         }
         r rVar = new r();
         String str2 = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str = URLDecoder.decode(str, "utf-8");
             } catch (Exception unused) {
@@ -208,7 +208,7 @@ public class WVCookie extends e {
         r rVar = new r();
         StringBuilder sb = new StringBuilder();
         String str2 = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str = URLDecoder.decode(str, "utf-8");
             } catch (Exception unused) {
@@ -236,7 +236,7 @@ public class WVCookie extends e {
             }
         }
         String sb2 = sb.toString();
-        if (TextUtils.isEmpty(sb2) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(sb2) || StringUtils.isEmpty(str2)) {
             if (m.a()) {
                 m.d(TAG, "writeCookies: Illegal param: cookieStr=" + sb2 + ";domain=" + str2);
             }

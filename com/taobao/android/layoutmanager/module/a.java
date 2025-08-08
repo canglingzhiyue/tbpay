@@ -2,7 +2,7 @@ package com.taobao.android.layoutmanager.module;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.ag;
@@ -39,15 +39,15 @@ public class a {
             if (!ogv.a(pageAllProperties)) {
                 String encode = Uri.encode(pageAllProperties.get(ag.KEY_UTPARAM_URL));
                 String encode2 = Uri.encode(pageAllProperties.get("utparam-pre"));
-                if (!TextUtils.isEmpty(encode) || !TextUtils.isEmpty(encode2)) {
+                if (!StringUtils.isEmpty(encode) || !StringUtils.isEmpty(encode2)) {
                     c0513a = new C0513a(encode, encode2);
                     f13268a.put(obj, c0513a);
                     if (z) {
                         HashMap hashMap = new HashMap();
-                        if (!TextUtils.isEmpty(encode)) {
+                        if (!StringUtils.isEmpty(encode)) {
                             hashMap.put("entryUtparam", encode);
                         }
-                        if (!TextUtils.isEmpty(encode2)) {
+                        if (!StringUtils.isEmpty(encode2)) {
                             hashMap.put("entryUtparamPre", encode2);
                         }
                         UTAnalytics.getInstance().getDefaultTracker().updatePageProperties(obj, hashMap);

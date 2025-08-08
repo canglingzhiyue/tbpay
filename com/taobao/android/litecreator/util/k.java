@@ -5,7 +5,7 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -54,7 +54,7 @@ public final class k {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         File file = new File(str);
@@ -66,7 +66,7 @@ public final class k {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new File(str).exists();
         }
         return false;
@@ -77,7 +77,7 @@ public final class k {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e567", new Object[]{str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         File file = new File(str);

@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -107,7 +107,7 @@ public class UTABTestUtil {
 
         public boolean checkEmpty() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("18f5ff30", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.experimentId) || TextUtils.isEmpty(this.experimentReleaseId) || TextUtils.isEmpty(this.experimentBucketId);
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("18f5ff30", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.experimentId) || StringUtils.isEmpty(this.experimentReleaseId) || StringUtils.isEmpty(this.experimentBucketId);
         }
 
         public int hashCode() {
@@ -125,7 +125,7 @@ public class UTABTestUtil {
             }
             if (obj != null && (obj instanceof ExperimentInfo)) {
                 ExperimentInfo experimentInfo = (ExperimentInfo) obj;
-                if (TextUtils.equals(this.experimentId, experimentInfo.getExperimentId()) && TextUtils.equals(this.experimentReleaseId, experimentInfo.getExperimentReleaseId()) && TextUtils.equals(this.experimentBucketId, experimentInfo.getExperimentBucketId())) {
+                if (StringUtils.equals(this.experimentId, experimentInfo.getExperimentId()) && StringUtils.equals(this.experimentReleaseId, experimentInfo.getExperimentReleaseId()) && StringUtils.equals(this.experimentBucketId, experimentInfo.getExperimentBucketId())) {
                     return true;
                 }
             }

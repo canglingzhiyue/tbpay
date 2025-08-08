@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -206,7 +206,7 @@ public class TbShadow extends Div {
         }
 
         public a(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             String[] split = str.split(" +");
@@ -218,7 +218,7 @@ public class TbShadow extends Div {
             this.b = (int) i.a(split[1]);
             this.c = (int) i.a(split[2]);
             String str2 = split[3];
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             if (str2.startsWith("rgba")) {

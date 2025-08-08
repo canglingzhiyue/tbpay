@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.ext.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -62,7 +62,7 @@ public class c extends j {
             return split[1].equals(c(split[0]));
         }
         com.alibaba.android.ultron.ext.event.util.h.a(str, this.g.getFields(), "");
-        return !TextUtils.isEmpty(c(str));
+        return !StringUtils.isEmpty(c(str));
     }
 
     private String c(String str) {
@@ -70,7 +70,7 @@ public class c extends j {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         JSONArray jSONArray = new JSONArray();

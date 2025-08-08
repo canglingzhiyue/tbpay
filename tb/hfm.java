@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import com.taobao.taolive.sdk.model.TBLiveDataModel;
@@ -24,6 +24,6 @@ public class hfm {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4c2a5588", new Object[]{tBLiveDataModel, aVar})).booleanValue();
         }
-        return hfl.a() && (TextUtils.equals(tBLiveDataModel.mVideoInfo.roomStatus, "1") && tBLiveDataModel.mVideoInfo.status != 1 && !tBLiveDataModel.mIsDiantaoTimeShift) && (tBLiveDataModel.mVideoInfo.admireInfo != null && tBLiveDataModel.mVideoInfo.admireInfo.contributionEnabled) && !aVar.b;
+        return hfl.a() && (StringUtils.equals(tBLiveDataModel.mVideoInfo.roomStatus, "1") && tBLiveDataModel.mVideoInfo.status != 1 && !tBLiveDataModel.mIsDiantaoTimeShift) && (tBLiveDataModel.mVideoInfo.admireInfo != null && tBLiveDataModel.mVideoInfo.admireInfo.contributionEnabled) && !aVar.b;
     }
 }

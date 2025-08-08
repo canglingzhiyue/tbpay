@@ -7,7 +7,7 @@ import android.graphics.drawable.shapes.RectShape;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -512,7 +512,7 @@ public class TBLiveCountDownView extends FrameLayout implements pqt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d32a65d0", new Object[]{this});
-        } else if (!this.mNeedExpireText || TextUtils.isEmpty(this.mExpireTextStr)) {
+        } else if (!this.mNeedExpireText || StringUtils.isEmpty(this.mExpireTextStr)) {
         } else {
             TextView textView = this.mExpireText;
             if (textView != null) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
@@ -327,7 +327,7 @@ public class mut {
         UTTracker defaultTracker = UTAnalytics.getInstance().getDefaultTracker();
         defaultTracker.updatePageName(context, str);
         defaultTracker.updatePageProperties(context, jSONObject2);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             defaultTracker.updatePageUrl(context, Uri.parse(str2));
         }
         interfaceC1153a.b("更新页面埋点成功");

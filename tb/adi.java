@@ -3,7 +3,7 @@ package tb;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
 import android.taobao.windvane.webview.o;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -31,7 +31,7 @@ public class adi extends aen {
         if (m.a()) {
             m.b("WVSecurityFilter", "WVSecurityFilter shouldInterceptRequest url =" + str);
         }
-        if (!TextUtils.isEmpty(str) && str.length() > 6 && str.substring(0, 7).toLowerCase().startsWith("file://")) {
+        if (!StringUtils.isEmpty(str) && str.length() > 6 && str.substring(0, 7).toLowerCase().startsWith("file://")) {
             return new o("", "utf-8", null, null);
         }
         return super.b(iWVWebView, str);

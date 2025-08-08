@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -126,9 +126,9 @@ public class c {
         sor sorVar = new sor((snv) a4.first, (String) a4.second);
         sorVar.d = detailCacheData.getTimeStamp();
         sorVar.j = videoResourceStr;
-        sorVar.k = !TextUtils.isEmpty(localVideoCachePath);
+        sorVar.k = !StringUtils.isEmpty(localVideoCachePath);
         sorVar.l = null;
-        sorVar.p = TextUtils.equals(detailCacheData.getSceneName(), IDetailCache.SCENE_NAME_SHORT_VIDEO_INTERNAL_EXPOSED);
+        sorVar.p = StringUtils.equals(detailCacheData.getSceneName(), IDetailCache.SCENE_NAME_SHORT_VIDEO_INTERNAL_EXPOSED);
         sorVar.t = b(uri);
         sorVar.q = false;
         sorVar.r = z;
@@ -139,7 +139,7 @@ public class c {
         if (sop.a().b().m) {
             sorVar.m = detailCacheData.getFirstFrameUrl();
         }
-        if (TextUtils.isEmpty(sorVar.b) && !TextUtils.isEmpty(detailCacheData.contentId)) {
+        if (StringUtils.isEmpty(sorVar.b) && !StringUtils.isEmpty(detailCacheData.contentId)) {
             sorVar.b = detailCacheData.contentId;
             spz.c("PickPreloadController_PreloadVideoUtils", "播控为null，preloadedVideo.videoId为null，取cache里面的contentId");
         }
@@ -164,7 +164,7 @@ public class c {
         }
         String a2 = a(context, z);
         JSONObject a3 = sov.a(uri);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         spz.c("PickPreloadController_PreloadVideoUtils", "PickPreloadControllerNew,创建本地文件播放器");
@@ -191,10 +191,10 @@ public class c {
             IStorage q = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().q();
             Object b2 = ohh.b("Tab2localVideoConfig");
             String str = b2 instanceof String ? (String) b2 : null;
-            if (!TextUtils.isEmpty(str) && (split = str.split(",")) != null && split.length == 2) {
+            if (!StringUtils.isEmpty(str) && (split = str.split(",")) != null && split.length == 2) {
                 String str2 = split[0];
                 String str3 = split[1];
-                if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3) && (a2 = q.a(str3)) != null && a2.exists()) {
+                if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3) && (a2 = q.a(str3)) != null && a2.exists()) {
                     spz.c("PickPreloadController_PreloadVideoUtils", "获取远程配置的视频文件, videoId:" + str2);
                     b = str2;
                     return a2.getAbsolutePath();
@@ -262,7 +262,7 @@ public class c {
             return false;
         }
         String queryParameter = uri.getQueryParameter("spm");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return false;
         }
         return queryParameter.startsWith("huitui.huitui");

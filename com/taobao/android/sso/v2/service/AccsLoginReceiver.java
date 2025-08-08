@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.ui.WebConstant;
 import com.ali.user.mobile.webview.WebViewActivity;
@@ -44,7 +44,7 @@ public class AccsLoginReceiver extends BroadcastReceiver {
         } else if (intent == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(intent.getStringExtra(WebConstant.WEBURL))) {
+                if (StringUtils.isEmpty(intent.getStringExtra(WebConstant.WEBURL))) {
                     return;
                 }
                 deleteAccsLoginInfo();
@@ -73,7 +73,7 @@ public class AccsLoginReceiver extends BroadcastReceiver {
                         if (ipChange2 instanceof IpChange) {
                             return (Void) ipChange2.ipc$dispatch("54f0ab29", new Object[]{this, voidArr});
                         }
-                        if (Login.checkSessionValid() || TextUtils.isEmpty(Login.getLoginToken()) || TextUtils.isEmpty(Login.getUserId())) {
+                        if (Login.checkSessionValid() || StringUtils.isEmpty(Login.getLoginToken()) || StringUtils.isEmpty(Login.getUserId())) {
                             return null;
                         }
                         LoginTLogAdapter.e(LoginAsyncTask.TAG, "checkSessionValid, do autoLogin");

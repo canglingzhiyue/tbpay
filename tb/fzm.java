@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class fzm implements fvc.b {
             ipChange.ipc$dispatch("a2fbf367", new Object[]{this, fzoVar, str});
         } else if (fqi.aV()) {
             b(fzoVar, str);
-        } else if (TextUtils.isEmpty(str) || fzoVar == null) {
+        } else if (StringUtils.isEmpty(str) || fzoVar == null) {
         } else {
             List<fzo> list = this.f28240a.get(str);
             if (list == null) {
@@ -60,7 +60,7 @@ public class fzm implements fvc.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b7e4bba8", new Object[]{this, fzoVar, str});
-        } else if (TextUtils.isEmpty(str) || fzoVar == null) {
+        } else if (StringUtils.isEmpty(str) || fzoVar == null) {
         } else {
             List<WeakReference<fzo>> list = this.d.get(str);
             if (list == null) {
@@ -85,7 +85,7 @@ public class fzm implements fvc.b {
             ipChange.ipc$dispatch("e98c89c0", new Object[]{this, fzlVar});
         } else if (fqi.aV()) {
             c(fzlVar);
-        } else if (fzlVar != null && !TextUtils.isEmpty(fzlVar.b) && (list = this.f28240a.get(fzlVar.b)) != null) {
+        } else if (fzlVar != null && !StringUtils.isEmpty(fzlVar.b) && (list = this.f28240a.get(fzlVar.b)) != null) {
             if (fqi.af()) {
                 Iterator<fzo> it = list.iterator();
                 if (it == null) {
@@ -110,7 +110,7 @@ public class fzm implements fvc.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c69296c2", new Object[]{this, fzlVar});
-        } else if (fzlVar != null && !TextUtils.isEmpty(fzlVar.b) && (list = this.d.get(fzlVar.b)) != null) {
+        } else if (fzlVar != null && !StringUtils.isEmpty(fzlVar.b) && (list = this.d.get(fzlVar.b)) != null) {
             if (fqi.af()) {
                 Iterator<WeakReference<fzo>> it = list.iterator();
                 if (it == null) {

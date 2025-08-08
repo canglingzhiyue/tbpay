@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.mobile.security.bio.api.BioDetector;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -227,7 +227,7 @@ public class ssq extends lql {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("56c6c5c", new Object[]{this})).longValue();
             }
-            if (!TextUtils.equals(this.m, "error")) {
+            if (!StringUtils.equals(this.m, "error")) {
                 long j = this.i;
                 if (j > 0) {
                     return this.c - j;
@@ -241,7 +241,7 @@ public class ssq extends lql {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("5a4ca60", new Object[]{this})).longValue();
             }
-            if (!TextUtils.equals(this.m, "error")) {
+            if (!StringUtils.equals(this.m, "error")) {
                 return this.j - this.h;
             }
             return 0L;
@@ -327,8 +327,8 @@ public class ssq extends lql {
             ipChange.ipc$dispatch("4935db30", new Object[]{this, iUiRefreshActionModel});
             return;
         }
-        if (TextUtils.equals(iUiRefreshActionModel.getRequestType(), "scrollNextPage") && this.f33889a != null) {
-            if (TextUtils.isEmpty(iUiRefreshActionModel.getDataChangeType())) {
+        if (StringUtils.equals(iUiRefreshActionModel.getRequestType(), "scrollNextPage") && this.f33889a != null) {
+            if (StringUtils.isEmpty(iUiRefreshActionModel.getDataChangeType())) {
                 z = false;
             }
             this.b = z;
@@ -381,7 +381,7 @@ public class ssq extends lql {
             ipChange.ipc$dispatch("f5dbd2f9", new Object[]{this, new Integer(i), new Integer(i2), new Integer(i3)});
         } else if (this.f33889a != null) {
         } else {
-            if (c() && TextUtils.equals(a.g(this.f33889a), "error")) {
+            if (c() && StringUtils.equals(a.g(this.f33889a), "error")) {
                 return;
             }
             a d = this.f33889a.d();

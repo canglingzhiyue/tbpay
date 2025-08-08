@@ -3,7 +3,7 @@ package com.taobao.trtc.rtcroom;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.RelativeLayout;
 import anet.channel.util.ErrorConstant;
@@ -441,7 +441,7 @@ public class c implements ITrtcObserver.a, ITrtcObserver.c, ITrtcObserver.e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             new Handler(this.d.getMainLooper()).post(new Runnable() { // from class: com.taobao.trtc.rtcroom.c.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -478,7 +478,7 @@ public class c implements ITrtcObserver.a, ITrtcObserver.c, ITrtcObserver.e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f180e7f", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             com.taobao.trtc.api.e eVar = this.f23163a;
             if (eVar != null && eVar.f() != null) {
@@ -515,7 +515,7 @@ public class c implements ITrtcObserver.a, ITrtcObserver.c, ITrtcObserver.e {
         } else if (this.f23163a == null) {
             this.e.sendError(BSError.BSDIFF_OLD_FILE_DEC_FAILED, "rtc engine not initialized");
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.h.c;
             }
             String str3 = c;

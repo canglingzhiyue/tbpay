@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class ble {
         if (ipChange instanceof IpChange) {
             return (blg) ipChange.ipc$dispatch("7c6d7c57", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "linear";
         }
         blg blgVar = this.f25961a.get(str);

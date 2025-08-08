@@ -1,6 +1,6 @@
 package com.taobao.taopai2.material.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -75,7 +75,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("89cdf874", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f22095a.get(str);
         }
         return null;

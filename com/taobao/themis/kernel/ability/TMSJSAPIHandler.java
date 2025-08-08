@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -89,11 +89,11 @@ public class TMSJSAPIHandler implements Serializable {
         }
         try {
             if (this.mActive && this.mPage != null) {
-                if (TextUtils.equals("internalAPI", str)) {
+                if (StringUtils.equals("internalAPI", str)) {
                     str = jSONObject.getString("method");
                     jSONObject = jSONObject.getJSONObject("param");
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     TMSLogger.d(TAG, "invalid param, api name is null");
                     return;
                 }
@@ -103,7 +103,7 @@ public class TMSJSAPIHandler implements Serializable {
                 com.taobao.themis.kernel.ability.a a3 = com.taobao.themis.kernel.ability.a.a();
                 ITMSPage iTMSPage = this.mPage;
                 ApiContext.a a4 = new ApiContext.a().a(a2);
-                if (TextUtils.equals("internalAPI", str)) {
+                if (StringUtils.equals("internalAPI", str)) {
                     z = false;
                 }
                 final String str2 = str;
@@ -125,7 +125,7 @@ public class TMSJSAPIHandler implements Serializable {
                         TMSJSAPIHandler.access$200(TMSJSAPIHandler.this, a2, str2, qoyVar);
                         JSONObject a5 = qoyVar.a();
                         String string = jSONObject2.getString("action");
-                        if (a5 == null || string == null || !TMSJSAPIHandler.access$300().contains(string) || !a5.containsKey("dataType") || !a5.containsKey("data") || !TextUtils.equals("ArrayBuffer".toLowerCase(), a5.getString("dataType").toLowerCase()) || !o.l(access$000.b())) {
+                        if (a5 == null || string == null || !TMSJSAPIHandler.access$300().contains(string) || !a5.containsKey("dataType") || !a5.containsKey("data") || !StringUtils.equals("ArrayBuffer".toLowerCase(), a5.getString("dataType").toLowerCase()) || !o.l(access$000.b())) {
                             aVar.a(a5);
                             return;
                         }
@@ -164,13 +164,13 @@ public class TMSJSAPIHandler implements Serializable {
         }
         JSONObject jSONObject2 = new JSONObject();
         if (this.mActive && this.mPage != null) {
-            if (TextUtils.equals("internalAPI", str)) {
+            if (StringUtils.equals("internalAPI", str)) {
                 str = jSONObject.getString("method");
                 jSONObject = jSONObject.getJSONObject("param");
             }
             JSONObject jSONObject3 = jSONObject;
             String a2 = com.taobao.themis.kernel.logger.a.a(b.a(this.mPage));
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 TMSLogger.d(TAG, "invalid param, api name is null");
                 return jSONObject2;
             }

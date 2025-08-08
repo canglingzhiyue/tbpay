@@ -1,7 +1,7 @@
 package com.taobao.android.cachecleaner.monitor.info.node;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.tao.log.TLog;
@@ -85,7 +85,7 @@ public class FileNode implements a, Serializable, Comparable<FileNode> {
         this.mChildren = new ArrayList();
         this.mParent = aVar;
         boolean z = false;
-        if (TextUtils.isEmpty(str2) || str2.length() < 2) {
+        if (StringUtils.isEmpty(str2) || str2.length() < 2) {
             TLog.logd(CacheCleaner.MODULE, TAG, "FileNode: serialStr is wrong, input string is " + str2);
             this.mName = null;
             this.mType = 2;
@@ -207,7 +207,7 @@ public class FileNode implements a, Serializable, Comparable<FileNode> {
         }
         if (obj != null && getClass() == obj.getClass()) {
             FileNode fileNode = (FileNode) obj;
-            if (this.mIsDir == fileNode.mIsDir && this.mSize == fileNode.mSize && this.mLastModifiedTime == fileNode.mLastModifiedTime && TextUtils.equals(this.mName, fileNode.mName)) {
+            if (this.mIsDir == fileNode.mIsDir && this.mSize == fileNode.mSize && this.mLastModifiedTime == fileNode.mLastModifiedTime && StringUtils.equals(this.mName, fileNode.mName)) {
                 return true;
             }
         }

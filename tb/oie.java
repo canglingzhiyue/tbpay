@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.share.globalmodel.TBShareContent;
@@ -22,7 +22,7 @@ public class oie {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("af46d575", new Object[]{aVar, aVar2});
-        } else if (TextUtils.equals("false", nyl.b())) {
+        } else if (StringUtils.equals("false", nyl.b())) {
             oup.a();
         } else {
             try {

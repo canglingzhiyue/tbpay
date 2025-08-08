@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.pop.utils.c;
@@ -46,7 +46,7 @@ public class kyv {
         if (ipChange instanceof IpChange) {
             return (LruCache) ipChange.ipc$dispatch("d04c4963", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             c.a("PopStaticCache ", "cid is empty, set to default");
             str = "default";
         }

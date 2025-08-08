@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.plugin;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -70,7 +70,7 @@ public class b implements koj {
         if (!Boolean.parseBoolean(kog.a().a("useAutoLoginPlugin", "true"))) {
             return 0;
         }
-        if (TextUtils.isEmpty(aVar.t)) {
+        if (StringUtils.isEmpty(aVar.t)) {
             String b = b(aVar);
             if ("sync".equals(b)) {
                 return 1;
@@ -97,7 +97,7 @@ public class b implements koj {
                     knxVar.a(true, str);
                 }
                 com.taobao.flowcustoms.afc.utils.c.a("linkx", "TfcAutoLoginPlugin === executePluginWithContext === useAutoLogin开关关闭");
-            } else if (TextUtils.isEmpty(aVar.t)) {
+            } else if (StringUtils.isEmpty(aVar.t)) {
                 String b = b(aVar);
                 if (!"sync".equals(b) && !"async".equals(b)) {
                     if (knxVar != null) {
@@ -133,7 +133,7 @@ public class b implements koj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5e23d13a", new Object[]{this, aVar, knxVar, str});
-        } else if (!Login.checkSessionValid() && !TextUtils.isEmpty(Login.getLoginToken())) {
+        } else if (!Login.checkSessionValid() && !StringUtils.isEmpty(Login.getLoginToken())) {
             aVar.J.put("autoLoginExecuteStatus", (Object) "true");
             Login.login(false);
             a(knxVar, str);
@@ -204,7 +204,7 @@ public class b implements koj {
         }
         String a2 = kog.a().a("autoLoginEmptyParamStrategy", "none");
         String a3 = kog.a().a("autoLoginEmptyParamStrategyABModule", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             VariationSet activate = UTABTest.activate("AFC", a3);
             aVar.J.put("autoLoginAbBucketId", (Object) Long.valueOf(activate.getExperimentBucketId()));
             Variation variation = activate.getVariation("autoLoginEmptyParamStrategy");

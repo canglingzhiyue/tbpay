@@ -1,7 +1,7 @@
 package com.taobao.themis.kernel.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.open.ability.calendar.TMSCalendarBridge;
@@ -47,7 +47,7 @@ public final class e {
         kotlin.jvm.internal.q.d(context, "context");
         kotlin.jvm.internal.q.d(subDir, "subDir");
         String a2 = a(context);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         return a2 + fxb.DIR + subDir;

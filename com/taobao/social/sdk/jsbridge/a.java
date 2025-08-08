@@ -3,7 +3,7 @@ package com.taobao.social.sdk.jsbridge;
 import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public final class a {
         if (ipChange instanceof IpChange) {
             return (Pair) ipChange.ipc$dispatch("858cb857", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new Pair<>(String.valueOf(System.currentTimeMillis()), null);
         }
         return sureSessionId(Uri.parse(str));
@@ -55,7 +55,7 @@ public final class a {
             return new Pair<>(String.valueOf(System.currentTimeMillis()), null);
         }
         String str = j.a(uri).get("sessionId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = String.valueOf(System.currentTimeMillis());
             uri = uri.buildUpon().appendQueryParameter("sessionId", str).build();
         }
@@ -67,7 +67,7 @@ public final class a {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("9bb199f1", new Object[]{str, new Boolean(z), new Boolean(z2), new Boolean(z3), jSONObject});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 WVCallBackContext wVCallBackContext = f19700a.get(str);
                 if (wVCallBackContext == null) {
@@ -86,7 +86,7 @@ public final class a {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("1695bf9e", new Object[]{str, new Boolean(z), new Boolean(z2), jSONObject})).booleanValue();
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 return false;
             } else {
                 WVCallBackContext wVCallBackContext = f19700a.get(str);

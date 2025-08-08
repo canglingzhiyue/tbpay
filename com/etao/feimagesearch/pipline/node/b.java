@@ -2,7 +2,7 @@ package com.etao.feimagesearch.pipline.node;
 
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -94,7 +94,7 @@ public final class b extends crj {
                 } else {
                     linkedHashMap.put("face", a4 > 0 ? String.valueOf(1) : String.valueOf(0));
                 }
-                if (!TextUtils.isEmpty(a3.b())) {
+                if (!StringUtils.isEmpty(a3.b())) {
                     linkedHashMap.put(coo.KEY_CRO_SAMPLE_ID, a3.b());
                 }
             } else {
@@ -243,7 +243,7 @@ public final class b extends crj {
         String str = linkedHashMap.get("faceCount");
         int i = -1;
         if (str != null) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 num = -1;
             } else {
                 try {

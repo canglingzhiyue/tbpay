@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity.ui.webview.miniapp;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.app.api.Page;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
@@ -65,7 +65,7 @@ public class RpMiniAppBridgeExtension implements BridgeExtension {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 bridgeCallback.sendBridgeResponse(new BridgeResponse.Error(102, "invalid verifyToken"));
             } else if (page != null && page.getApp() != null && page.getApp().getAppContext() != null) {
                 Context context = page.getApp().getAppContext().getContext();
@@ -84,8 +84,8 @@ public class RpMiniAppBridgeExtension implements BridgeExtension {
                             }
                             JSONObject jSONObject = new JSONObject();
                             jSONObject.put("state", (Object) Integer.valueOf(rPResult.code));
-                            jSONObject.put("errorCode", (Object) (TextUtils.isEmpty(rPDetail.getCode()) ? "invalidParams" : rPDetail.getCode()));
-                            jSONObject.put("subErrorCode", (Object) (TextUtils.isEmpty(rPDetail.getSubCode()) ? null : rPDetail.getSubCode()));
+                            jSONObject.put("errorCode", (Object) (StringUtils.isEmpty(rPDetail.getCode()) ? "invalidParams" : rPDetail.getCode()));
+                            jSONObject.put("subErrorCode", (Object) (StringUtils.isEmpty(rPDetail.getSubCode()) ? null : rPDetail.getSubCode()));
                             jSONObject.put("message", (Object) rPDetail.getMsg());
                             bridgeCallback.sendJSONResponse(jSONObject);
                         }

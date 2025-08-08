@@ -1,6 +1,6 @@
 package com.taobao.search.jarvis.rcmd;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -38,11 +38,11 @@ public class d implements a.InterfaceC0616a {
             return (a.b) ipChange.ipc$dispatch("42053fdf", new Object[]{this, str, jSONObject});
         }
         final a.b bVar = null;
-        if (!TextUtils.isEmpty(str) && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("data")) != null && jSONObject2.containsKey("appId")) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("data")) != null && jSONObject2.containsKey("appId")) {
             HashMap hashMap = new HashMap();
             hashMap.put("appId", jSONObject2.getString("appId"));
             String string = jSONObject2.getString("params");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             JSONObject parseObject = JSONObject.parseObject(string);

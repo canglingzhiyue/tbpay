@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.business.usertrack.ITrackService;
@@ -287,7 +287,7 @@ public class ljq {
             return;
         }
         lzc.a e = e(pswVar);
-        if (e == null || TextUtils.isEmpty(str)) {
+        if (e == null || StringUtils.isEmpty(str)) {
             return;
         }
         Object f = e.f("playerTokens");
@@ -307,7 +307,7 @@ public class ljq {
             return;
         }
         lzc.a e = e(pswVar);
-        if (e == null || TextUtils.isEmpty(str)) {
+        if (e == null || StringUtils.isEmpty(str)) {
             return;
         }
         e.a("lastErrorCode", str);
@@ -348,7 +348,7 @@ public class ljq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20ed529a", new Object[]{pswVar, str, str2});
-        } else if (TextUtils.isEmpty(str2) || (e = e(pswVar)) == null || (mTopAdapter = FluidSDK.getMTopAdapter()) == null) {
+        } else if (StringUtils.isEmpty(str2) || (e = e(pswVar)) == null || (mTopAdapter = FluidSDK.getMTopAdapter()) == null) {
         } else {
             long serverTimeMillis = mTopAdapter.getServerTimeMillis();
             Object f = e.f(str);
@@ -424,7 +424,7 @@ public class ljq {
         }
         if (aVar != null && str != null && (b = aVar.b()) != null && b.size() != 0) {
             for (lzc.a aVar2 : b) {
-                if (TextUtils.equals(aVar2.f31001a, str)) {
+                if (StringUtils.equals(aVar2.f31001a, str)) {
                     return aVar2;
                 }
             }

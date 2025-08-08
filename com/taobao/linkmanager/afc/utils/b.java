@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.utils;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -82,7 +82,7 @@ public class b {
             return false;
         }
         String string = defaultSharedPreferences.getString("appGuide", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         try {

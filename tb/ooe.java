@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class ooe extends acj.a {
         }
         JSONObject a2 = a(this.b, i);
         JSONObject a3 = a(this.f32224a, i2);
-        return a2 == a3 || !(a2 == null || a3 == null || !TextUtils.equals(a2.getString("sectionBizCode"), a3.getString("sectionBizCode")));
+        return a2 == a3 || !(a2 == null || a3 == null || !StringUtils.equals(a2.getString("sectionBizCode"), a3.getString("sectionBizCode")));
     }
 
     @Override // tb.acj.a

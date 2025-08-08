@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 
@@ -20,10 +20,10 @@ public class paq {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("insideDetailType", str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("code", str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             if (str4.length() > 100) {
                 str4 = str4.substring(0, 99);
             }

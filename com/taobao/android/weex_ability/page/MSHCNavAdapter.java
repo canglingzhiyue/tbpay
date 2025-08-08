@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -135,14 +135,14 @@ public abstract class MSHCNavAdapter extends d {
         String string = jSONObject.getString("title");
         String string2 = jSONObject.getString("icon");
         this.f = new c();
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             if (!c(string2)) {
                 return new a(a.RESULT_ERROR, "schemeerror");
             }
             this.f.e = string2;
             f().invalidateOptionsMenu();
             return null;
-        } else if (!TextUtils.isEmpty(string)) {
+        } else if (!StringUtils.isEmpty(string)) {
             this.f.d = string;
             f().invalidateOptionsMenu();
             return null;
@@ -171,7 +171,7 @@ public abstract class MSHCNavAdapter extends d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7257e157", new Object[]{this, str, aVar})).booleanValue();
         }
-        if (a(NavigatorType.MORE_ITEM) && !TextUtils.isEmpty(str)) {
+        if (a(NavigatorType.MORE_ITEM) && !StringUtils.isEmpty(str)) {
             try {
                 if (this.g == null) {
                     this.g = new ArrayList();
@@ -194,10 +194,10 @@ public abstract class MSHCNavAdapter extends d {
                             cVar.h = aVar;
                             cVar.f = new Intent();
                             cVar.f.putExtra("index", i);
-                            if (!TextUtils.isEmpty(string2)) {
+                            if (!StringUtils.isEmpty(string2)) {
                                 cVar.e = string2;
                             }
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 cVar.b(string);
                             }
                             if (!c(cVar.e)) {
@@ -213,13 +213,13 @@ public abstract class MSHCNavAdapter extends d {
                     String string3 = parseObject.getString("icon");
                     String string4 = parseObject.getString("title");
                     String string5 = parseObject.getString("iconFontName");
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         cVar2.e = string3;
                     }
-                    if (!TextUtils.isEmpty(string5)) {
+                    if (!StringUtils.isEmpty(string5)) {
                         cVar2.a(f(), string5);
                     }
-                    if (!TextUtils.isEmpty(string4)) {
+                    if (!StringUtils.isEmpty(string4)) {
                         cVar2.b(string4);
                     }
                     cVar2.f = new Intent();
@@ -239,7 +239,7 @@ public abstract class MSHCNavAdapter extends d {
                         JSONObject jSONObject2 = jSONArray2.getJSONObject(i2);
                         c cVar3 = new c();
                         String string6 = jSONObject2.getString("text");
-                        if (!TextUtils.isEmpty(string6)) {
+                        if (!StringUtils.isEmpty(string6)) {
                             cVar3.d = string6;
                             boolean booleanValue = jSONObject2.getBooleanValue("fromNative");
                             boolean booleanValue2 = jSONObject2.getBooleanValue("iconFont");
@@ -351,10 +351,10 @@ public abstract class MSHCNavAdapter extends d {
         }
         try {
             String a2 = j.a().c().a("group_weex_hc", "weex_main_hc_domain", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 for (String str : a2.split(",")) {
                     String originalUrl = d().getOriginalUrl();
-                    if (!TextUtils.isEmpty(originalUrl) && originalUrl.contains(str)) {
+                    if (!StringUtils.isEmpty(originalUrl) && originalUrl.contains(str)) {
                         return false;
                     }
                 }
@@ -371,7 +371,7 @@ public abstract class MSHCNavAdapter extends d {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
         String scheme = Uri.parse(str).getScheme();
-        if (!TextUtils.isEmpty(scheme)) {
+        if (!StringUtils.isEmpty(scheme)) {
             String lowerCase = scheme.toLowerCase();
             if (lowerCase.equals("http") || lowerCase.equals("https") || lowerCase.equals("data") || lowerCase.equals("local")) {
                 return true;

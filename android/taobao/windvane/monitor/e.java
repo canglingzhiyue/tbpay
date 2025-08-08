@@ -3,7 +3,7 @@ package android.taobao.windvane.monitor;
 import android.taobao.windvane.extra.performance2.WVWPData;
 import android.taobao.windvane.extra.performance2.WVWPManager;
 import android.taobao.windvane.monitor.f;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -95,7 +95,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("85c1bea6", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 WVWPData findDataByUrl = WVWPManager.getInstance().findDataByUrl(str);
@@ -137,7 +137,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2ba1258", new Object[]{this, str, str2, str3, str4});
-        } else if (TextUtils.isEmpty(str) || !h.get() || android.taobao.windvane.config.j.commonConfig.aV < Math.random()) {
+        } else if (StringUtils.isEmpty(str) || !h.get() || android.taobao.windvane.config.j.commonConfig.aV < Math.random()) {
         } else {
             try {
                 DimensionValueSet create = DimensionValueSet.create();
@@ -159,7 +159,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9f32c4de", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || !h.get() || android.taobao.windvane.config.j.commonConfig.aU < Math.random()) {
+        } else if (StringUtils.isEmpty(str) || !h.get() || android.taobao.windvane.config.j.commonConfig.aU < Math.random()) {
         } else {
             try {
                 DimensionValueSet create = DimensionValueSet.create();
@@ -183,7 +183,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         boolean z2 = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("33aefb39", new Object[]{this, str, str2, new Integer(i), new Boolean(z), map});
-        } else if (TextUtils.isEmpty(str) || !h.get()) {
+        } else if (StringUtils.isEmpty(str) || !h.get()) {
         } else {
             if (android.taobao.windvane.config.j.commonConfig.bD && i == -202) {
                 if (URL_FILTER_PATTERN == null) {
@@ -195,10 +195,10 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
                     return;
                 }
             }
-            if (android.taobao.windvane.config.j.commonConfig.bD && i == 404 && !TextUtils.isEmpty(str) && (split = str.split("\\?")) != null && split.length > 0 && !TextUtils.isEmpty(split[0]) && split[0].contains("hybird.miniapp.taobao.com")) {
+            if (android.taobao.windvane.config.j.commonConfig.bD && i == 404 && !StringUtils.isEmpty(str) && (split = str.split("\\?")) != null && split.length > 0 && !StringUtils.isEmpty(split[0]) && split[0].contains("hybird.miniapp.taobao.com")) {
                 return;
             }
-            if (!(android.taobao.windvane.config.j.commonConfig.df && i == 302 && map != null && (list = map.get("x-wormhole-error")) != null && !list.isEmpty() && TextUtils.equals(list.get(0), "404"))) {
+            if (!(android.taobao.windvane.config.j.commonConfig.df && i == 302 && map != null && (list = map.get("x-wormhole-error")) != null && !list.isEmpty() && StringUtils.equals(list.get(0), "404"))) {
                 if (android.taobao.windvane.config.j.commonConfig.bl != null) {
                     Map<String, String> map2 = android.taobao.windvane.config.j.commonConfig.bl;
                     String valueOf = String.valueOf(i);
@@ -225,7 +225,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
                 com.taobao.application.common.d a2 = c.a();
                 if (a2 != null) {
                     String a3 = a2.a("lastJumpPageSchemaUrl", "unknown");
-                    if (!TextUtils.isEmpty(a3)) {
+                    if (!StringUtils.isEmpty(a3)) {
                         create.setValue("lastJumpPageUrl", a3);
                     }
                 }
@@ -239,7 +239,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
                         List list2 = (List) treeMap.get(str3);
                         if (list2 != null && !list2.isEmpty()) {
                             String str4 = (String) list2.get(0);
-                            if (!TextUtils.isEmpty(str4)) {
+                            if (!StringUtils.isEmpty(str4)) {
                                 create.setValue(str3, str4);
                             }
                         }
@@ -261,7 +261,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8b80495b", new Object[]{this, str, str2, new Boolean(z), str3});
-        } else if (TextUtils.isEmpty(str) || !h.get() || android.taobao.windvane.config.j.commonConfig.aW < Math.random()) {
+        } else if (StringUtils.isEmpty(str) || !h.get() || android.taobao.windvane.config.j.commonConfig.aW < Math.random()) {
         } else {
             try {
                 DimensionValueSet create = DimensionValueSet.create();
@@ -283,7 +283,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8ea48f7b", new Object[]{this, str, new Long(j)});
-        } else if (TextUtils.isEmpty(str) || !h.get()) {
+        } else if (StringUtils.isEmpty(str) || !h.get()) {
         } else {
             String str2 = g;
             android.taobao.windvane.util.m.b(str2, "recordTTI url:" + str + " useTime=" + j);
@@ -310,7 +310,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d49c9ee1", new Object[]{this, str, new Long(j)});
-        } else if (TextUtils.isEmpty(str) || !h.get()) {
+        } else if (StringUtils.isEmpty(str) || !h.get()) {
         } else {
             String str2 = g;
             android.taobao.windvane.util.m.b(str2, "recordFSP url:" + str + " useTime=" + j);
@@ -337,7 +337,7 @@ public class e implements f.a, f.b, f.c, f.d, f.e, f.InterfaceC0020f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cce85503", new Object[]{this, str, new Long(j)});
-        } else if (TextUtils.isEmpty(str) || !h.get()) {
+        } else if (StringUtils.isEmpty(str) || !h.get()) {
         } else {
             String str2 = g;
             android.taobao.windvane.util.m.b(str2, "recordDeviceCreateTime url:" + str + " useTime=" + j);

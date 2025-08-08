@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.amnet.api.configs;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -17,7 +17,7 @@ public class AmnetRpcGlobalParamConfigHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7b7c7165", new Object[]{str, rpcGlobalParamConfigModel});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 a().put(str, rpcGlobalParamConfigModel);
@@ -70,7 +70,7 @@ public class AmnetRpcGlobalParamConfigHelper {
         if (map == null || map.isEmpty()) {
             return false;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             LogCatUtil.info("amnet_AmnetRpcGlobalParamConfigHelper", "[isIndependentChannel] operationType is empty.");
             return false;
         }

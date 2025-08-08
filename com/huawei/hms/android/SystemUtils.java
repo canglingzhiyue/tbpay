@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.support.log.HMSLog;
 import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
@@ -63,15 +63,15 @@ public class SystemUtils {
 
     public static boolean isChinaROM() {
         String b = b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return AdvanceSetting.CLEAR_NOTIFICATION.equalsIgnoreCase(b);
         }
         String a2 = a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2.toLowerCase(Locale.US).contains(AdvanceSetting.CLEAR_NOTIFICATION);
         }
         String localCountry = getLocalCountry();
-        if (TextUtils.isEmpty(localCountry)) {
+        if (StringUtils.isEmpty(localCountry)) {
             return false;
         }
         return AdvanceSetting.CLEAR_NOTIFICATION.equalsIgnoreCase(localCountry);

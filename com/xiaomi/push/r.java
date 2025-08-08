@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class r {
@@ -59,11 +59,11 @@ public class r {
             String str2 = Build.VERSION.INCREMENTAL;
             if (a() <= 0) {
                 str = b();
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = c();
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = d();
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             str2 = String.valueOf(q.a("ro.product.brand", "Android") + "_" + str2);
                         }
                     }
@@ -83,7 +83,7 @@ public class r {
 
     /* renamed from: a  reason: collision with other method in class */
     public static boolean m2214a() {
-        return TextUtils.equals((String) bh.a("android.os.SystemProperties", "get", "sys.boot_completed"), "1");
+        return StringUtils.equals((String) bh.a("android.os.SystemProperties", "get", "sys.boot_completed"), "1");
     }
 
     /* renamed from: a  reason: collision with other method in class */
@@ -117,7 +117,7 @@ public class r {
 
     private static String c() {
         String a2 = q.a(com.alibaba.security.realidentity.m.y, "");
-        if (!TextUtils.isEmpty(a2) && !a2.startsWith("ColorOS_")) {
+        if (!StringUtils.isEmpty(a2) && !a2.startsWith("ColorOS_")) {
             f857a = "ColorOS_" + a2;
         }
         return f857a;
@@ -125,7 +125,7 @@ public class r {
 
     private static String d() {
         String a2 = q.a("ro.vivo.os.version", "");
-        if (!TextUtils.isEmpty(a2) && !a2.startsWith("FuntouchOS_")) {
+        if (!StringUtils.isEmpty(a2) && !a2.startsWith("FuntouchOS_")) {
             f857a = "FuntouchOS_" + a2;
         }
         return f857a;

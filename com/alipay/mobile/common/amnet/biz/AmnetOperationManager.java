@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.biz;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.bifrost.StnLogicICallBackImpl;
@@ -275,13 +275,13 @@ public class AmnetOperationManager {
         }
         Map<String, String> walletProcState = MiscUtils.getWalletProcState(AmnetEnvHelper.getAppContext());
         try {
-            if (TextUtils.equals(walletProcState.get("top"), "true")) {
+            if (StringUtils.equals(walletProcState.get("top"), "true")) {
                 activating.ground = true;
             }
         } catch (Throwable unused) {
         }
         try {
-            if (TextUtils.equals(walletProcState.get(MiscUtils.KEY_RUNNING), "true")) {
+            if (StringUtils.equals(walletProcState.get(MiscUtils.KEY_RUNNING), "true")) {
                 activating.master = true;
             }
         } catch (Throwable unused2) {
@@ -411,7 +411,7 @@ public class AmnetOperationManager {
         }
         try {
             String str = amnetPost.header.get(HeaderConstant.HEADER_KEY_PARAM_TRACEID);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             LogCatUtil.debug("AmnetOperationManager", "TRACEID:" + str);
@@ -433,7 +433,7 @@ public class AmnetOperationManager {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.info("AmnetOperationManager", "[setBindHost] domain si null.");
                 return;
             }
@@ -483,7 +483,7 @@ public class AmnetOperationManager {
                 return;
             }
             String str = amnetPost.header.get(HeaderConstant.HEADER_KEY_OPERATION_TYPE);
-            if (TextUtils.isEmpty(str) || amnetPost.channel != 1 || !TransportStrategy.isSupportZstd(str)) {
+            if (StringUtils.isEmpty(str) || amnetPost.channel != 1 || !TransportStrategy.isSupportZstd(str)) {
                 return;
             }
             int intValue = TransportConfigureManager.getInstance().getIntValue(TransportConfigureItem.ZSTD_TOPLIMIT);
@@ -505,10 +505,10 @@ public class AmnetOperationManager {
         }
         try {
             String str = amnetPost.header.get(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
-            if (TextUtils.equals(str, "1")) {
+            if (StringUtils.equals(str, "1")) {
                 posting.multiplex = true;
             }
             amnetPost.header.remove(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK);
@@ -693,7 +693,7 @@ public class AmnetOperationManager {
             return (String) ipChange.ipc$dispatch("a7365582", new Object[]{this});
         }
         String amnetServerAddressFromMetaData = MiscUtils.getAmnetServerAddressFromMetaData();
-        return !TextUtils.isEmpty(amnetServerAddressFromMetaData) ? amnetServerAddressFromMetaData : "mygw.alipaydev.com:8000";
+        return !StringUtils.isEmpty(amnetServerAddressFromMetaData) ? amnetServerAddressFromMetaData : "mygw.alipaydev.com:8000";
     }
 
     public String getAmnetDnsInfos() {
@@ -743,7 +743,7 @@ public class AmnetOperationManager {
                     return "myh2.alipay.com:443";
                 }
                 str2 = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.BIFROST_H2_URL);
-                boolean isEmpty = TextUtils.isEmpty(str2);
+                boolean isEmpty = StringUtils.isEmpty(str2);
                 str = isEmpty;
                 if (isEmpty != 0) {
                     return "myh2.alipay.com:443";
@@ -755,7 +755,7 @@ public class AmnetOperationManager {
                         return a2;
                     }
                     str2 = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.BIFROST_H2_URL);
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         return a2;
                     }
                     LogCatUtil.info(str, "[getH2Address] From transport configure url = " + str2);
@@ -869,7 +869,7 @@ public class AmnetOperationManager {
         }
         try {
             String gwfurl = ReadSettingServerUrl.getInstance().getGWFURL(AmnetEnvHelper.getAppContext());
-            if (TextUtils.isEmpty(gwfurl)) {
+            if (StringUtils.isEmpty(gwfurl)) {
                 return "";
             }
             URL url = new URL(gwfurl);
@@ -885,7 +885,7 @@ public class AmnetOperationManager {
                     z = false;
                 }
             }
-            if (TextUtils.equals(protocol, "http")) {
+            if (StringUtils.equals(protocol, "http")) {
                 TransportConfigureManager.getInstance().setValue(TransportConfigureItem.AMNET_HS, UTConstant.Args.UT_SUCCESS_F);
             }
             if (!z) {
@@ -970,7 +970,7 @@ public class AmnetOperationManager {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         LogCatUtil.info("AmnetOperationManager", "getAmnetDnsInfos host=" + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         AlipayHttpDnsClient dnsClient = AlipayHttpDnsClient.getDnsClient();
@@ -989,7 +989,7 @@ public class AmnetOperationManager {
                 b();
             }
             return "";
-        } else if (!TextUtils.isEmpty(queryLocalIPByHost.getCname())) {
+        } else if (!StringUtils.isEmpty(queryLocalIPByHost.getCname())) {
             StringBuilder sb = new StringBuilder();
             InetAddress[] allByName = DnsUtil.getAllByName(queryLocalIPByHost.getCname());
             while (i < allByName.length) {
@@ -1111,7 +1111,7 @@ public class AmnetOperationManager {
             return;
         }
         try {
-            if (!TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.BIFROST_URGENT_CONNECT), "T") || !this.f5363a || amnetPost.channel != 1 || !AmnetTunnelManager.getInstance().isNowUseBifrost()) {
+            if (!StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.BIFROST_URGENT_CONNECT), "T") || !this.f5363a || amnetPost.channel != 1 || !AmnetTunnelManager.getInstance().isNowUseBifrost()) {
                 return;
             }
             if (!amnetPost.isUrgent && !MiscUtils.isAtFrontDesk(AmnetEnvHelper.getAppContext())) {
@@ -1143,7 +1143,7 @@ public class AmnetOperationManager {
         } else if (amnetPost == null || posting == null || amnetPost.params == null) {
         } else {
             String str = amnetPost.params.get("url");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             posting.multiplex = true;
@@ -1156,7 +1156,7 @@ public class AmnetOperationManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b42135da", new Object[]{this, str, new Integer(i), new Boolean(z), new Integer(i2)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn("AmnetOperationManager", "preConnect host is null");
         } else {
             getAmnetTransport().preConnect(1L, str, i, z, i2, new Transport.Result() { // from class: com.alipay.mobile.common.amnet.biz.AmnetOperationManager.15

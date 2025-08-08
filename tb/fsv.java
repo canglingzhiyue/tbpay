@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 
@@ -31,11 +31,11 @@ public class fsv extends fuf {
         }
         fqj fqjVar = new fqj();
         String str2 = (String) objArr[0];
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         String str3 = (String) objArr[1];
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return null;
         }
         Object obj = objArr.length >= 3 ? objArr[2] : null;

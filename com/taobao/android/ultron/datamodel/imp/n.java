@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.viewholder.BundleLineComponent;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -152,7 +152,7 @@ public final class n {
         if (1 != i3) {
             i = 16;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         a(iDMComponent, i);

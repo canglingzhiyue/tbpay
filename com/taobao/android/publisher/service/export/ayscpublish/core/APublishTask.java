@@ -1,7 +1,7 @@
 package com.taobao.android.publisher.service.export.ayscpublish.core;
 
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -154,7 +154,7 @@ public abstract class APublishTask<T extends Serializable> implements b<T> {
         if (ipChange instanceof IpChange) {
             return (PublishError) ipChange.ipc$dispatch("794f959", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.h.errorCode) && TextUtils.isEmpty(this.h.errorMsg)) {
+        if (StringUtils.isEmpty(this.h.errorCode) && StringUtils.isEmpty(this.h.errorMsg)) {
             return null;
         }
         return this.h;

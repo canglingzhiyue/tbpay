@@ -3,7 +3,7 @@ package com.taobao.cameralink.miniapp.skincamera.biz;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class a {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.f;
             }
             this.f = str;

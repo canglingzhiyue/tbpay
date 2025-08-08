@@ -56,7 +56,7 @@ public final class d extends b {
             r1 = this;
             android.net.Uri r2 = r3.getUrl()
             java.lang.String r2 = r2.toString()
-            boolean r3 = android.text.TextUtils.isEmpty(r2)
+            boolean r3 = android.text.StringUtils.isEmpty(r2)
             if (r3 != 0) goto L50
             java.lang.String r3 = "sinaweibo://browser/close"
             boolean r3 = r2.startsWith(r3)
@@ -67,7 +67,7 @@ public final class d extends b {
             java.lang.String r3 = r2.getString(r3)
             java.lang.String r0 = "msg"
             java.lang.String r2 = r2.getString(r0)
-            boolean r0 = android.text.TextUtils.isEmpty(r3)
+            boolean r0 = android.text.StringUtils.isEmpty(r3)
             if (r0 == 0) goto L34
             java.lang.String r2 = "code is null!!!"
             r1.o(r2)
@@ -107,7 +107,7 @@ public final class d extends b {
     public final boolean shouldOverrideUrlLoading(android.webkit.WebView r2, java.lang.String r3) {
         /*
             r1 = this;
-            boolean r2 = android.text.TextUtils.isEmpty(r3)
+            boolean r2 = android.text.StringUtils.isEmpty(r3)
             if (r2 != 0) goto L3c
             java.lang.String r2 = "sinaweibo://browser/close"
             boolean r2 = r3.startsWith(r2)

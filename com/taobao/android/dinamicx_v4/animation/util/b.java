@@ -73,7 +73,7 @@ public class b {
             r0 = 0
             java.lang.String r1 = "type"
             java.lang.String r1 = tb.fxr.a(r1, r7, r0)
-            boolean r4 = android.text.TextUtils.isEmpty(r1)
+            boolean r4 = android.text.StringUtils.isEmpty(r1)
             if (r4 == 0) goto L2b
             tb.gbq r7 = a(r8)
             return r7

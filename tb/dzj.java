@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.kit.model.theme.ThemeType;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class dzj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.f27132a.a(str) == null) {
+        } else if (StringUtils.isEmpty(str) || this.f27132a.a(str) == null) {
             this.c = false;
         } else {
             String[] a2 = this.f27132a.a(str);

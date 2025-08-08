@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.httpdns.downloader;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.transport.httpdns.DnsUtil;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -60,7 +60,7 @@ public class HttpClient {
             httpURLConnection.setRequestProperty(HttpConstant.HOST, DnsUtil.getAmdcHost());
         }
         String appId = DnsUtil.getAppId();
-        if (TextUtils.equals(appId, "UnknowProductId")) {
+        if (StringUtils.equals(appId, "UnknowProductId")) {
             appId = MiscUtils.getPackageName();
         }
         httpURLConnection.setRequestProperty("x-amdc-appid", appId);
@@ -75,7 +75,7 @@ public class HttpClient {
             return;
         }
         String generateStrategyReq = StrategyItemParser.generateStrategyReq(strategyRequest);
-        if (TextUtils.isEmpty(generateStrategyReq)) {
+        if (StringUtils.isEmpty(generateStrategyReq)) {
             return;
         }
         a(generateStrategyReq);
@@ -97,7 +97,7 @@ public class HttpClient {
             if (this.conn != null) {
                 a(strategyRequest);
                 String a2 = a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     throw new Exception("response is null");
                 }
                 StrategyResponse parseStrategyContent = StrategyItemParser.parseStrategyContent(a2);
@@ -239,16 +239,16 @@ public class HttpClient {
             String headerField = this.conn.getHeaderField("x-amdc-sign");
             String headerField2 = this.conn.getHeaderField("x-amdc-ts");
             String headerField3 = this.conn.getHeaderField("x-amdc-code");
-            if (TextUtils.equals(headerField3, "7000") || TextUtils.equals(headerField3, "7001") || TextUtils.equals(headerField3, "7002")) {
+            if (StringUtils.equals(headerField3, "7000") || StringUtils.equals(headerField3, "7001") || StringUtils.equals(headerField3, "7002")) {
                 a(headerFields);
                 throw new Exception("x-amdc-code:" + headerField3 + ",server signature verify fail");
             }
             String signData = DnsUtil.getSignData(this.conn.getURL().toString(), str, headerField2, DnsUtil.getAppId());
             LogCatUtil.debug("HDNS_HClient", "amdcRespSign:" + headerField + ",localSign:" + signData);
-            if (TextUtils.isEmpty(headerField) || TextUtils.isEmpty(headerField2)) {
+            if (StringUtils.isEmpty(headerField) || StringUtils.isEmpty(headerField2)) {
                 a(headerFields);
                 throw new Exception("8001,client signature verify fail");
-            } else if (TextUtils.equals(headerField, signData)) {
+            } else if (StringUtils.equals(headerField, signData)) {
             } else {
                 a(headerFields);
                 throw new Exception("8002,client signature verify fail");

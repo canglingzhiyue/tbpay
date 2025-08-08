@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -185,7 +185,7 @@ public class fao extends b<e> implements av {
         }
         int i2 = epo.b;
         DetailImageView detailImageView = this.m;
-        if (!TextUtils.isEmpty(eVar.h)) {
+        if (!StringUtils.isEmpty(eVar.h)) {
             try {
                 float parseFloat = Float.parseFloat(eVar.h);
                 i = ((int) (i2 * parseFloat)) - ((int) (((1.0f / parseFloat) - 1.0f) * dzc.ITEM_PADDING_RIGHT));
@@ -237,7 +237,7 @@ public class fao extends b<e> implements av {
             return;
         }
         String str = eVar.j;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             detailImageView.setVisibility(8);
             return;
         }
@@ -257,7 +257,7 @@ public class fao extends b<e> implements av {
             if (a2 != null) {
                 this.q.addView(a2);
             }
-        } else if (!TextUtils.isEmpty(this.r)) {
+        } else if (!StringUtils.isEmpty(this.r)) {
             String[] split = this.r.split(",");
             if (arrayList == null) {
                 arrayList = new ArrayList<>();
@@ -288,7 +288,7 @@ public class fao extends b<e> implements av {
         if (ipChange instanceof IpChange) {
             return (e.a) ipChange.ipc$dispatch("b4bc1109", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new e.a(str, 0, 0);
         }
         return null;
@@ -299,7 +299,7 @@ public class fao extends b<e> implements av {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("10ad7701", new Object[]{this, aVar});
         }
-        if (aVar == null || TextUtils.isEmpty(aVar.f9748a)) {
+        if (aVar == null || StringUtils.isEmpty(aVar.f9748a)) {
             return null;
         }
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, epo.b(12));
@@ -331,7 +331,7 @@ public class fao extends b<e> implements av {
         this.t = eVar.e;
         this.s = eVar.f;
         this.r = eVar.l;
-        if (!TextUtils.isEmpty(this.t) || !TextUtils.isEmpty(this.s)) {
+        if (!StringUtils.isEmpty(this.t) || !StringUtils.isEmpty(this.s)) {
             this.l.setClickable(true);
         } else {
             this.l.setClickable(false);
@@ -360,13 +360,13 @@ public class fao extends b<e> implements av {
         layoutParams2.addRule(5, detailImageView.getId());
         layoutParams2.addRule(3, this.n.getId());
         this.q.setLayoutParams(layoutParams2);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             String str6 = "¥ " + str2;
             int indexOf = str6.indexOf(".");
             if (indexOf > 0) {
                 String substring = str6.substring(indexOf + 1);
                 try {
-                    if (!TextUtils.isEmpty(substring) && Integer.parseInt(substring) <= 0) {
+                    if (!StringUtils.isEmpty(substring) && Integer.parseInt(substring) <= 0) {
                         str6 = str6.substring(0, indexOf);
                         indexOf = -1;
                     }
@@ -383,10 +383,10 @@ public class fao extends b<e> implements av {
             }
             this.o.setText(spannableString);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.n.setText(str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             this.p.setText(str4);
         }
         a(eVar.k);
@@ -430,7 +430,7 @@ public class fao extends b<e> implements av {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a670fcdc", new Object[]{this, eVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(eVar.n)) {
+        if (StringUtils.isEmpty(eVar.n)) {
             return false;
         }
         eVar.a(new e.b() { // from class: tb.fao.1

@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.perf;
 
 import android.app.Activity;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.utils.i;
 import com.taobao.monitor.procedure.s;
@@ -28,7 +28,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c8bb1504", new Object[]{activity, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f9781a.put(str, Long.valueOf(SystemClock.uptimeMillis()));
             b.a(activity, "ProductDetail_FirstScreen", str);
@@ -39,7 +39,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("635bd785", new Object[]{activity, str});
-        } else if (TextUtils.isEmpty(str) || f9781a.get(str) == null) {
+        } else if (StringUtils.isEmpty(str) || f9781a.get(str) == null) {
         } else {
             long uptimeMillis = SystemClock.uptimeMillis();
             if (f9781a.containsKey(str)) {
@@ -55,7 +55,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e36e85ce", new Object[]{activity, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f9781a.put(str, Long.valueOf(SystemClock.uptimeMillis()));
             b.a(activity, str2, str);
@@ -66,7 +66,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d6fe0a0f", new Object[]{activity, str, str2});
-        } else if (TextUtils.isEmpty(str) || f9781a.get(str) == null) {
+        } else if (StringUtils.isEmpty(str) || f9781a.get(str) == null) {
         } else {
             long uptimeMillis = SystemClock.uptimeMillis();
             if (f9781a.containsKey(str)) {

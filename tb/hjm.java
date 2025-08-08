@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.ItemCategory;
@@ -127,7 +127,7 @@ public class hjm {
                 if (!it2.hasNext()) {
                     z2 = false;
                     break;
-                } else if (TextUtils.equals(next.itemId, it2.next().itemId)) {
+                } else if (StringUtils.equals(next.itemId, it2.next().itemId)) {
                     z2 = true;
                     break;
                 }
@@ -218,7 +218,7 @@ public class hjm {
             Iterator<SortRule> it = list.iterator();
             while (it.hasNext()) {
                 SortRule next = it.next();
-                if (a(list2, next.itemId) >= 0 && (TextUtils.equals(next.type, "2") || TextUtils.equals(next.type, "3"))) {
+                if (a(list2, next.itemId) >= 0 && (StringUtils.equals(next.type, "2") || StringUtils.equals(next.type, "3"))) {
                     it.remove();
                 }
             }
@@ -244,7 +244,7 @@ public class hjm {
             } else {
                 if (list != null && !list.isEmpty()) {
                     for (e eVar : list) {
-                        if (eVar != null && eVar.b == itemIdentifier.goodsIndex && TextUtils.equals(eVar.f, itemIdentifier.itemId)) {
+                        if (eVar != null && eVar.b == itemIdentifier.goodsIndex && StringUtils.equals(eVar.f, itemIdentifier.itemId)) {
                             z = true;
                             break;
                         }
@@ -296,7 +296,7 @@ public class hjm {
                     break;
                 }
                 e next = it.next();
-                if (next != null && next.b == itemIdentifier.goodsIndex && TextUtils.equals(next.f, itemIdentifier.itemId)) {
+                if (next != null && next.b == itemIdentifier.goodsIndex && StringUtils.equals(next.f, itemIdentifier.itemId)) {
                     z = true;
                     break;
                 }
@@ -420,7 +420,7 @@ public class hjm {
         }
         for (int i2 = 0; i2 < a2.size(); i2++) {
             e eVar = a2.get(i2);
-            if (eVar != null && aVar.c == eVar.b && TextUtils.equals(aVar.e, eVar.f)) {
+            if (eVar != null && aVar.c == eVar.b && StringUtils.equals(aVar.e, eVar.f)) {
                 if (z3) {
                     a(this.e.a(itemCategory, eVar), aVar);
                 }
@@ -514,7 +514,7 @@ public class hjm {
         if (list != null && !list.isEmpty()) {
             for (int i = 0; i < list.size(); i++) {
                 ItemIdentifier itemIdentifier = list.get(i);
-                if (itemIdentifier != null && TextUtils.equals(itemIdentifier.itemId, str)) {
+                if (itemIdentifier != null && StringUtils.equals(itemIdentifier.itemId, str)) {
                     return i;
                 }
             }

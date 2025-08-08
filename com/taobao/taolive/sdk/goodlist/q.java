@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.goodlist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -22,13 +22,13 @@ public class q {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.equals(BottomMode.ADDCART.getValue(), str)) {
+        if (StringUtils.equals(BottomMode.ADDCART.getValue(), str)) {
             return "5";
         }
-        if (TextUtils.equals(BottomMode.BUYNOW.getValue(), str)) {
+        if (StringUtils.equals(BottomMode.BUYNOW.getValue(), str)) {
             return "2";
         }
-        if (TextUtils.equals(BottomMode.ADDCART_AND_BUYNOW.getValue(), str)) {
+        if (StringUtils.equals(BottomMode.ADDCART_AND_BUYNOW.getValue(), str)) {
         }
         return "4";
     }

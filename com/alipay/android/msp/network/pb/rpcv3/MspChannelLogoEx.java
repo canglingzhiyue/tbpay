@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.pb.rpcv3;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
@@ -143,12 +143,12 @@ public final class MspChannelLogoEx extends Message {
         if (this.exit != null) {
             StringBuilder sb = new StringBuilder();
             sb.append(this.exit);
-            jSONObject.put("exit", (Object) Boolean.valueOf(TextUtils.equals("1", sb.toString())));
+            jSONObject.put("exit", (Object) Boolean.valueOf(StringUtils.equals("1", sb.toString())));
         }
         if (this.setting != null) {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(this.setting);
-            jSONObject.put(BizContext.KEY_SETTING_FILTER, (Object) Boolean.valueOf(TextUtils.equals("1", sb2.toString())));
+            jSONObject.put(BizContext.KEY_SETTING_FILTER, (Object) Boolean.valueOf(StringUtils.equals("1", sb2.toString())));
         }
         jSONObject.put(b.ACTIVITY_KEY_BIZ_TYPE, (Object) this.biztype);
         jSONObject.put("newCardChannel", (Object) JSON.parseObject(this.newCardChannel));

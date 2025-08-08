@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.status.NetworkStatusHelper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -139,7 +139,7 @@ public class TrtcCallImpl extends b implements NetworkStatusHelper.INetworkStatu
             return;
         }
         NetworkStatusHelper.removeStatusChangeListener(this);
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             this.f23070a.a(this.d, "Dispose");
         }
         b("Dispose");
@@ -152,14 +152,14 @@ public class TrtcCallImpl extends b implements NetworkStatusHelper.INetworkStatu
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a5cae068", new Object[]{this, cVar})).booleanValue();
         }
-        if (cVar == null || this.f23070a == null || TextUtils.isEmpty(cVar.f23067a) || cVar.c > 1 || cVar.c < 0) {
+        if (cVar == null || this.f23070a == null || StringUtils.isEmpty(cVar.f23067a) || cVar.c > 1 || cVar.c < 0) {
             TrtcLog.a("CallEngine", "params invalid");
             return false;
-        } else if (!TextUtils.isEmpty(this.d) || this.i.get(cVar.f23067a) != null) {
+        } else if (!StringUtils.isEmpty(this.d) || this.i.get(cVar.f23067a) != null) {
             TrtcLog.a("CallEngine", "already joined or call node exist, remote id: " + cVar.f23067a);
             return false;
         } else {
-            if (TextUtils.isEmpty(cVar.b)) {
+            if (StringUtils.isEmpty(cVar.b)) {
                 cVar.b = this.f23070a.d("trtc-channel-call");
                 TrtcLog.d("CallEngine", "create channel: " + cVar.b);
             }
@@ -216,7 +216,7 @@ public class TrtcCallImpl extends b implements NetworkStatusHelper.INetworkStatu
             ipChange.ipc$dispatch("7d253bf0", new Object[]{this, str, new Integer(i)});
             return;
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             this.f23070a.a(this.d, str, i);
         }
         b("HangUpAll");
@@ -446,7 +446,7 @@ public class TrtcCallImpl extends b implements NetworkStatusHelper.INetworkStatu
         } else if (eVar.b != 0) {
             b("JoinError");
             this.b.a(-102);
-        } else if (TextUtils.isEmpty(this.e)) {
+        } else if (StringUtils.isEmpty(this.e)) {
             TrtcLog.a("CallEngine", "join success, but no remote to notify");
             this.b.a(-104);
         } else {
@@ -458,7 +458,7 @@ public class TrtcCallImpl extends b implements NetworkStatusHelper.INetworkStatu
             lVar.f23044a = eVar.f23037a;
             lVar.b = this.e;
             lVar.c = true;
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 lVar.e = this.f;
             }
             this.f = null;
@@ -625,7 +625,7 @@ public class TrtcCallImpl extends b implements NetworkStatusHelper.INetworkStatu
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("275e4bf9", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.i.get(str);
         }
         TrtcLog.a("CallEngine", "can not find call node by id: " + str);
@@ -683,7 +683,7 @@ public class TrtcCallImpl extends b implements NetworkStatusHelper.INetworkStatu
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (concurrentHashMap = this.i) == null || !concurrentHashMap.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || (concurrentHashMap = this.i) == null || !concurrentHashMap.containsKey(str)) {
         } else {
             a(this.i.get(str));
             this.i.remove(str);

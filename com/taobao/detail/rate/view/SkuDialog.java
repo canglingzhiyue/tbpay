@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -199,7 +199,7 @@ public class SkuDialog extends DialogFragment {
         JSONObject jSONObject = this.itemInfo;
         if (jSONObject != null) {
             this.defaultItemUrl = jSONObject.getString("image");
-            if (!TextUtils.isEmpty(this.defaultItemUrl)) {
+            if (!StringUtils.isEmpty(this.defaultItemUrl)) {
                 this.itemPicView.succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.detail.rate.view.SkuDialog.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -225,7 +225,7 @@ public class SkuDialog extends DialogFragment {
                 });
                 this.itemPicView.setImageUrl(this.defaultItemUrl);
             }
-            if (!TextUtils.isEmpty(this.itemInfo.getString("title"))) {
+            if (!StringUtils.isEmpty(this.itemInfo.getString("title"))) {
                 this.itemTitleView.setText(this.itemInfo.getString("title"));
             }
         }
@@ -310,7 +310,7 @@ public class SkuDialog extends DialogFragment {
                                 if (!z) {
                                     SkuDialog skuDialog = SkuDialog.this;
                                     SkuDialog.access$500(skuDialog, SkuDialog.access$600(skuDialog));
-                                } else if (!TextUtils.isEmpty(string)) {
+                                } else if (!StringUtils.isEmpty(string)) {
                                     SkuDialog.access$500(SkuDialog.this, string);
                                 }
                             }

@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.utils;
 import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.kge;
@@ -23,7 +23,7 @@ public class c {
             return;
         }
         String a2 = com.taobao.flowcustoms.afc.b.a().a("is_get_device_imei", "false");
-        if (TextUtils.equals("false", a2)) {
+        if (StringUtils.equals("false", a2)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "DeviceIdentificationUtils === getDeviceIdentification === 是否获取imei：" + a2);
             return;
         }

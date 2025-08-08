@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.monitor.DXMonitorConstant;
 import com.taobao.android.dinamicx.s;
@@ -66,7 +66,7 @@ public class DXDataBaseHelper {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b6cda3", new Object[]{this, str, list});
-        } else if (!TextUtils.isEmpty(str) && list != null && !list.isEmpty()) {
+        } else if (!StringUtils.isEmpty(str) && list != null && !list.isEmpty()) {
             SQLiteDatabase a2 = this.mDbHelper.a();
             if (a2 == null || !a2.isOpen()) {
                 trackError(str, DXMonitorConstant.DX_MONITOR_DB_STORE, (DXTemplateItem) null, s.DX_DB_STORE_ERROR, "SQLiteDatabase = null");
@@ -76,7 +76,7 @@ public class DXDataBaseHelper {
                 SQLiteStatement compileStatement = a2.compileStatement(INSERT_SQL);
                 a2.beginTransaction();
                 for (DXTemplateItem dXTemplateItem : list) {
-                    if (dXTemplateItem.g != null && !TextUtils.isEmpty(dXTemplateItem.g.f11934a) && insertOrReplaceItem(compileStatement, str, dXTemplateItem)) {
+                    if (dXTemplateItem.g != null && !StringUtils.isEmpty(dXTemplateItem.g.f11934a) && insertOrReplaceItem(compileStatement, str, dXTemplateItem)) {
                     }
                     z = false;
                 }
@@ -94,7 +94,7 @@ public class DXDataBaseHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5bc5d8db", new Object[]{this, str, dXTemplateItem});
-        } else if (TextUtils.isEmpty(str) || dXTemplateItem == null || dXTemplateItem.g == null || TextUtils.isEmpty(dXTemplateItem.g.f11934a)) {
+        } else if (StringUtils.isEmpty(str) || dXTemplateItem == null || dXTemplateItem.g == null || StringUtils.isEmpty(dXTemplateItem.g.f11934a)) {
         } else {
             SQLiteDatabase a2 = this.mDbHelper.a();
             if (a2 == null || !a2.isOpen()) {
@@ -213,7 +213,7 @@ public class DXDataBaseHelper {
                     dXTemplateItem2.b = query.getLong(2);
                     dXTemplateItem2.g.f11934a = query.getString(3);
                     String string = query.getString(4);
-                    if (!TextUtils.isEmpty(string) && (length = (split = string.split(",")).length) > 1 && length % 2 == 0) {
+                    if (!StringUtils.isEmpty(string) && (length = (split = string.split(",")).length) > 1 && length % 2 == 0) {
                         dXTemplateItem2.g.b();
                         for (int i = 0; i < length; i += 2) {
                             dXTemplateItem2.g.b.put(split[i], split[i + 1]);
@@ -277,7 +277,7 @@ public class DXDataBaseHelper {
                     dXTemplateItem2.b = query.getLong(2);
                     dXTemplateItem2.g.f11934a = query.getString(3);
                     String string = query.getString(4);
-                    if (!TextUtils.isEmpty(string) && (length = (split = string.split(",")).length) > 1 && length % 2 == 0) {
+                    if (!StringUtils.isEmpty(string) && (length = (split = string.split(",")).length) > 1 && length % 2 == 0) {
                         dXTemplateItem2.g.b();
                         for (int i = 0; i < length; i += 2) {
                             dXTemplateItem2.g.b.put(split[i], split[i + 1]);
@@ -315,7 +315,7 @@ public class DXDataBaseHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9e91cca5", new Object[]{this, str, dXTemplateItem});
-        } else if (TextUtils.isEmpty(str) || !fxb.a(dXTemplateItem)) {
+        } else if (StringUtils.isEmpty(str) || !fxb.a(dXTemplateItem)) {
         } else {
             try {
                 String[] strArr = {str, dXTemplateItem.f11925a, String.valueOf(dXTemplateItem.b)};
@@ -346,7 +346,7 @@ public class DXDataBaseHelper {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ae5c53df", new Object[]{this, str, list, str2, str3, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || list == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || list == null || list.isEmpty()) {
             return false;
         }
         SQLiteDatabase a2 = this.mDbHelper.a();

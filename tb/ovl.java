@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,7 +27,7 @@ public class ovl {
             return (JSONObject) ipChange.ipc$dispatch("dbebad99", new Object[]{this, iHomeSubTabController});
         }
         String d = d(iHomeSubTabController);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return null;
         }
         return c.a(d);
@@ -41,7 +41,7 @@ public class ovl {
             return (JSONObject) ipChange.ipc$dispatch("bc6d7578", new Object[]{this, iHomeSubTabController});
         }
         String d2 = d(iHomeSubTabController);
-        if (!TextUtils.isEmpty(d2) && (d = HomePageUtility.d()) != null && (jSONObject = d.getJSONObject("subSection")) != null) {
+        if (!StringUtils.isEmpty(d2) && (d = HomePageUtility.d()) != null && (jSONObject = d.getJSONObject("subSection")) != null) {
             return jSONObject.getJSONObject(d2);
         }
         return null;

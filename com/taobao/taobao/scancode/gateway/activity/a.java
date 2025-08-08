@@ -3,7 +3,7 @@ package com.taobao.taobao.scancode.gateway.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.scancode.common.object.ScancodeType;
 import com.taobao.orange.OrangeConfig;
@@ -105,22 +105,22 @@ public class a {
         }
         try {
             this.q = data.getQueryParameter("scanType");
-            if (TextUtils.isEmpty(this.q)) {
+            if (StringUtils.isEmpty(this.q)) {
                 this.p = oyf.f32480a;
                 this.r = OrangeConfig.getInstance().getConfig("android_scancode_client", "dm_target_url", "");
-                if (!TextUtils.isEmpty(this.r) && !"false".equals(this.r)) {
+                if (!StringUtils.isEmpty(this.r) && !"false".equals(this.r)) {
                     this.p.b(ScancodeType.DM);
                 }
                 String config = OrangeConfig.getInstance().getConfig("android_scancode_client", "ma_4g_switch", "");
-                if (!TextUtils.isEmpty(config) && TextUtils.equals("false", config)) {
+                if (!StringUtils.isEmpty(config) && StringUtils.equals("false", config)) {
                     this.p.a(ScancodeType.TB_4G);
                 }
                 String config2 = OrangeConfig.getInstance().getConfig("android_scancode_client", "enable_gen3", "");
-                if (!TextUtils.isEmpty(config2) && TextUtils.equals("false", config2)) {
+                if (!StringUtils.isEmpty(config2) && StringUtils.equals("false", config2)) {
                     this.p.a(ScancodeType.GEN3);
                 }
                 String config3 = OrangeConfig.getInstance().getConfig("android_scancode_client", "enable_dm_goodsbarcode", "true");
-                if (!TextUtils.isEmpty(config3) && "true".equals(config3)) {
+                if (!StringUtils.isEmpty(config3) && "true".equals(config3)) {
                     this.p.b(ScancodeType.DM);
                     l = true;
                 }

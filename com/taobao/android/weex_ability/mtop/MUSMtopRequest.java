@@ -3,7 +3,7 @@ package com.taobao.android.weex_ability.mtop;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import anetwork.channel.statist.StatisticData;
 import com.alibaba.fastjson.JSON;
@@ -227,7 +227,7 @@ public class MUSMtopRequest {
                     }
                     MtopRequest a3 = MUSMtopRequest.a(MUSMtopRequest.this, a2);
                     String optString = jSONObject.optString("userAgent");
-                    if (TextUtils.isEmpty(optString)) {
+                    if (StringUtils.isEmpty(optString)) {
                         optString = m.a("system", "userAgent");
                     }
                     RemoteBusiness a4 = MUSMtopRequest.a(MUSMtopRequest.this, a3, a2, optString);
@@ -294,7 +294,7 @@ public class MUSMtopRequest {
         mtopRequest.setVersion(cVar.b);
         mtopRequest.setNeedEcode(cVar.c);
         mtopRequest.setNeedSession(true);
-        if (!TextUtils.isEmpty(cVar.j)) {
+        if (!StringUtils.isEmpty(cVar.j)) {
             mtopRequest.setData(cVar.j);
         }
         mtopRequest.dataParams = cVar.a();
@@ -313,7 +313,7 @@ public class MUSMtopRequest {
         } else {
             build.mo1303protocol(ProtocolEnum.HTTP);
         }
-        if (!TextUtils.isEmpty(cVar.k)) {
+        if (!StringUtils.isEmpty(cVar.k)) {
             build.mo1313setCustomDomain(cVar.k);
         }
         if (cVar.d > 0) {
@@ -331,7 +331,7 @@ public class MUSMtopRequest {
         if (!StringUtils.isBlank(cVar.g) && ("json".equals(cVar.g) || "originaljson".equals(cVar.g))) {
             build.mo1315setJsonType(JsonTypeEnum.valueOf(cVar.g.toUpperCase()));
         }
-        if (!TextUtils.isEmpty(cVar.o)) {
+        if (!StringUtils.isEmpty(cVar.o)) {
             build.mo1310setBizTopic(cVar.o);
         }
         return build;

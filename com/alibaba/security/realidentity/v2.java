@@ -2,7 +2,7 @@ package com.alibaba.security.realidentity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.biz.config.RPBizConfig;
 import com.alibaba.security.realidentity.biz.dynamic.model.PureWirelessConfHttpResponse;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -136,7 +136,7 @@ public class v2 {
             return null;
         }
         String string = sharedPreferences.getString(i, null);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return (PureWirelessConfHttpResponse.ModelInfo) b.b(string, PureWirelessConfHttpResponse.ModelInfo.class);
         }
         return null;
@@ -173,7 +173,7 @@ public class v2 {
             kmmVar.b.h = str;
             kmmVar.b.j = false;
             PureWirelessConfHttpResponse.ModelInfo modelInfo = rPBizConfig.getBasicsConfig().modelInfo;
-            if (modelInfo != null && !TextUtils.isEmpty(modelInfo.modelUrl) && !TextUtils.isEmpty(modelInfo.md5)) {
+            if (modelInfo != null && !StringUtils.isEmpty(modelInfo.modelUrl) && !StringUtils.isEmpty(modelInfo.md5)) {
                 kmo kmoVar = new kmo();
                 kmoVar.f30167a = modelInfo.modelUrl;
                 kmoVar.d = modelInfo.modelName;

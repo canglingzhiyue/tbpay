@@ -3,7 +3,7 @@ package com.taobao.avplayer.playercontrol;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -380,7 +380,7 @@ public class i implements aw {
         this.i.setGravity(17);
         this.i.setPadding(kcl.a(this.c.getActivity(), 4.0f), kcl.a(this.c.getActivity(), 2.0f), kcl.a(this.c.getActivity(), 4.0f), kcl.a(this.c.getActivity(), 2.0f));
         this.s = new TextView(this.c.getActivity());
-        this.s.setEllipsize(TextUtils.TruncateAt.END);
+        this.s.setEllipsize(StringUtils.TruncateAt.END);
         this.s.setMaxLines(1);
         this.s.setMaxEms(12);
         this.s.setText(this.l);
@@ -424,7 +424,7 @@ public class i implements aw {
         int i = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("79529c5f", new Object[]{this, dWInteractiveVideoObject});
-        } else if (dWInteractiveVideoObject == null || !"shop".equals(dWInteractiveVideoObject.getShowType()) || TextUtils.isEmpty(dWInteractiveVideoObject.getEnterShopUrl())) {
+        } else if (dWInteractiveVideoObject == null || !"shop".equals(dWInteractiveVideoObject.getShowType()) || StringUtils.isEmpty(dWInteractiveVideoObject.getEnterShopUrl())) {
         } else {
             this.l = dWInteractiveVideoObject.getUserName();
             g();
@@ -511,7 +511,7 @@ public class i implements aw {
             return;
         }
         this.m = z;
-        if (z && this.m && this.n && (!TextUtils.isEmpty(this.k) || !TextUtils.isEmpty(this.l))) {
+        if (z && this.m && this.n && (!StringUtils.isEmpty(this.k) || !StringUtils.isEmpty(this.l))) {
             this.j.setVisibility(0);
         } else {
             this.j.setVisibility(8);

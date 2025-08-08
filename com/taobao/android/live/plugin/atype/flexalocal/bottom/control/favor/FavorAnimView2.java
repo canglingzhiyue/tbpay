@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -452,7 +452,7 @@ public class FavorAnimView2 extends FavorLayout2 implements ddv {
         }
         String str2 = TAG;
         plx.a(str2, "checkFavorPicByUrl = " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         b.a().a(str, new a(this));
@@ -545,7 +545,7 @@ public class FavorAnimView2 extends FavorLayout2 implements ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4295126", new Object[]{this, hashMap});
-        } else if (hashMap != null && !TextUtils.isEmpty(hashMap.get("likeZip"))) {
+        } else if (hashMap != null && !StringUtils.isEmpty(hashMap.get("likeZip"))) {
             checkFavorPicByUrl(hashMap.get("likeZip"));
         } else {
             setDefaultDrawables();

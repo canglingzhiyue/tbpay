@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -449,7 +449,7 @@ public class g1 implements f4, u4 {
             builder.setNeedSound(biometricsConfig.isNeedSound());
             rPBizConfig.setRpConfig(builder.build());
         }
-        if (TextUtils.isEmpty(rPBusinessHeadParams.fromSource)) {
+        if (StringUtils.isEmpty(rPBusinessHeadParams.fromSource)) {
             rPBizConfig.getBasicsConfig().verifyStartType = StatisticRecord.ET_THIRD;
             a(rPBizConfig, rPBizConfig.getBasicsConfig().verifyToken);
             a(context, rPBizConfig, new g(context, rPBizConfig, rPBusinessHeadParams, rPEventListener));
@@ -711,7 +711,7 @@ public class g1 implements f4, u4 {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -117,7 +117,7 @@ public class hgc extends hfz {
                         str = str3;
                         str2 = str;
                     }
-                    if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
                         return;
                     }
                     pmt pmtVar = new pmt();
@@ -151,7 +151,7 @@ public class hgc extends hfz {
                                 return;
                             }
                             String string = hgc.this.d.getResources().getString(R.string.taolive_comments_user_follow_fail_flexalocal);
-                            if (!TextUtils.isEmpty(str6)) {
+                            if (!StringUtils.isEmpty(str6)) {
                                 string = str6;
                             }
                             aj.a(hgc.this.d, string);

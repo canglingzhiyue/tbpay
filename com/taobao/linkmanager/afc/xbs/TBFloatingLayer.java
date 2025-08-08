@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -248,7 +248,7 @@ public class TBFloatingLayer {
             return f17694a;
         }
         String str = afcXbsData.type;
-        if (TextUtils.equals(str, "1") && !TextUtils.isEmpty(afcXbsData.tipsIcon)) {
+        if (StringUtils.equals(str, "1") && !StringUtils.isEmpty(afcXbsData.tipsIcon)) {
             if (!this.i) {
                 this.x.getLayoutParams().width = (int) TFCCommonUtils.a(71.0f);
             }
@@ -257,7 +257,7 @@ public class TBFloatingLayer {
             this.z.setVisibility(8);
             this.B.setVisibility(0);
             return f17694a;
-        } else if (TextUtils.equals(str, "2") && !TextUtils.isEmpty(afcXbsData.appName)) {
+        } else if (StringUtils.equals(str, "2") && !StringUtils.isEmpty(afcXbsData.appName)) {
             if (!this.i) {
                 this.x.getLayoutParams().width = (int) TFCCommonUtils.a(78.0f);
             }
@@ -266,7 +266,7 @@ public class TBFloatingLayer {
             this.y.setVisibility(8);
             this.B.setVisibility(8);
             return f17694a;
-        } else if (TextUtils.equals(str, "3") && !TextUtils.isEmpty(afcXbsData.tipsIcon)) {
+        } else if (StringUtils.equals(str, "3") && !StringUtils.isEmpty(afcXbsData.tipsIcon)) {
             this.y.setVisibility(0);
             this.w.setImageUrl(afcXbsData.tipsIcon);
             this.z.setVisibility(0);
@@ -289,7 +289,7 @@ public class TBFloatingLayer {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.length() <= 4) {
+        if (StringUtils.isEmpty(str) || str.length() <= 4) {
             return str;
         }
         return str.substring(0, 4) + "...";

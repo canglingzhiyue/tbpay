@@ -3,7 +3,7 @@ package com.alibaba.security.realidentity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.algo.wrapper.entity.ABJniDetectState;
 import com.alibaba.security.realidentity.algo.wrapper.entity.ABJniDetectType;
 import com.alibaba.security.realidentity.algo.wrapper.entity.ABJniFailReason;
@@ -185,7 +185,7 @@ public class y extends b0 {
         if (b(context)) {
             f.b(this.e);
             String a2 = a(context);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 a(e2.K, a2);
                 return false;
             }

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -289,7 +289,7 @@ public abstract class bsg implements bsh {
         } else if (!(bVar instanceof View)) {
         } else {
             int i = -1;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     i = Color.parseColor(str);
                 } catch (IllegalArgumentException e) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.ext.p;
 import com.alibaba.android.ultron.vfw.instance.b;
@@ -105,10 +105,10 @@ public class iam extends p {
             if (jSONObject != null && dataJsonObject != null) {
                 try {
                     hzy.a("newAddress", "notifyDataSetChanged", dataJsonObject.toString());
-                    if (jSONObject.containsKey("desc") && !TextUtils.isEmpty(dataJsonObject.getString("description"))) {
+                    if (jSONObject.containsKey("desc") && !StringUtils.isEmpty(dataJsonObject.getString("description"))) {
                         jSONObject.put("desc", (Object) dataJsonObject.getString("description"));
                     }
-                    if (jSONObject.containsKey("title") && !TextUtils.isEmpty(dataJsonObject.getString("title"))) {
+                    if (jSONObject.containsKey("title") && !StringUtils.isEmpty(dataJsonObject.getString("title"))) {
                         jSONObject.put("title", (Object) dataJsonObject.getString("title"));
                     }
                 } catch (Throwable unused) {
@@ -130,7 +130,7 @@ public class iam extends p {
         if (!SUBSCRIBER_ID.equals(str)) {
             return false;
         }
-        if (!TextUtils.isEmpty(this.f28876a)) {
+        if (!StringUtils.isEmpty(this.f28876a)) {
             "true".equals(this.b);
             try {
                 HashMap hashMap = new HashMap();

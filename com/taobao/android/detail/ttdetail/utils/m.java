@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliUserTrackerInterface;
@@ -76,7 +76,7 @@ public class m {
             return null;
         }
         final String queryParameter = data.getQueryParameter("fromtorelation");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return null;
         }
         return new JSONObject() { // from class: com.taobao.android.detail.ttdetail.utils.UtUtils$1

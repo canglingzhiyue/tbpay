@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login.presenter;
 
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.callback.LoginTasksCallback;
 import com.ali.user.mobile.exception.LoginException;
 import com.ali.user.mobile.log.ApiReferer;
@@ -138,7 +138,7 @@ public class BioPresenter extends BaseLoginPresenter {
                 str = rpcResponse.returnValue.extMap.get("dialogTitle");
                 str4 = str5;
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = ResourceUtil.getNetworkError();
             }
             if (!z) {

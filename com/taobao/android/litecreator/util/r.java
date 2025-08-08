@@ -1,7 +1,7 @@
 package com.taobao.android.litecreator.util;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -69,7 +69,7 @@ public class r {
                 return true;
             }
             if (obj instanceof a) {
-                return TextUtils.equals(this.f13510a, ((a) obj).f13510a);
+                return StringUtils.equals(this.f13510a, ((a) obj).f13510a);
             }
             return false;
         }

@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.FragmentConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.helper.BroadCastHelper;
@@ -112,7 +112,7 @@ public class AliUserRegisterActivity extends BaseActivity {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("28b929a", new Object[]{this})).intValue();
         }
-        if (TextUtils.isEmpty(UserLoginActivity.getRegBgImage(this.mFireAppLaunchRes))) {
+        if (StringUtils.isEmpty(UserLoginActivity.getRegBgImage(this.mFireAppLaunchRes))) {
             return super.getLayout();
         }
         this.needAdjustToolbar = true;
@@ -164,7 +164,7 @@ public class AliUserRegisterActivity extends BaseActivity {
         }
         String dataString = intent.getDataString();
         try {
-            if (!TextUtils.isEmpty(dataString)) {
+            if (!StringUtils.isEmpty(dataString)) {
                 this.token = Uri.parse(dataString).getQueryParameter(BaseJsExecutor.NAME_VERIFY_TOKEN);
             }
             this.mRegistParam = (RegistParam) intent.getParcelableExtra(RegistConstants.REGISTPARAM);
@@ -179,7 +179,7 @@ public class AliUserRegisterActivity extends BaseActivity {
                 return;
             }
             String str = this.mRegistParam.externParams.get(LoginConstant.APPLAUNCH_INFO);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.mFireAppLaunchRes = (AppLaunchInfoResponseData) JSON.parseObject(str, AppLaunchInfoResponseData.class);
@@ -239,7 +239,7 @@ public class AliUserRegisterActivity extends BaseActivity {
                     if (extras == null) {
                         extras = new Bundle();
                     }
-                    if (!TextUtils.isEmpty(this.token)) {
+                    if (!StringUtils.isEmpty(this.token)) {
                         extras.putString("token", this.token);
                     }
                     if (this.mRegistParam != null) {
@@ -260,28 +260,28 @@ public class AliUserRegisterActivity extends BaseActivity {
         if (ipChange instanceof IpChange) {
             return (Fragment) ipChange.ipc$dispatch("8f81e6e4", new Object[]{this, intent, loginApprearanceExtensions});
         }
-        if (intent != null && TextUtils.equals(RegPageType.TWO_STEP_MOBILE_REG, intent.getStringExtra(RegistConstants.REG_PAGE_TYPE))) {
+        if (intent != null && StringUtils.equals(RegPageType.TWO_STEP_MOBILE_REG, intent.getStringExtra(RegistConstants.REG_PAGE_TYPE))) {
             return getTwoStepRegFragment();
         }
         Properties properties = new Properties();
         RegistParam registParam = this.mRegistParam;
-        if (registParam != null && !TextUtils.isEmpty(registParam.source)) {
+        if (registParam != null && !StringUtils.isEmpty(registParam.source)) {
             properties.put("source", this.mRegistParam.source);
         }
-        properties.put("newUser", Boolean.valueOf(TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId())));
+        properties.put("newUser", Boolean.valueOf(StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId())));
         UserTrackAdapter.sendUT("toRegisterPage", properties);
         if ((DataProviderFactory.getDataProvider().supportOneKeyRegister() || LoginStatus.enableOnekeyLoginV2) && !UserLoginActivity.displayOversea(this.mFireAppLaunchRes)) {
             String str = "";
             try {
                 str = intent.getStringExtra("number");
                 String stringExtra = intent.getStringExtra("scene");
-                if (!TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra)) {
                     properties.setProperty("scene", stringExtra);
                 }
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 TaobaoOneKeyRegFragment taobaoOneKeyRegFragment = new TaobaoOneKeyRegFragment();
                 UserTrackAdapter.sendUT("toSimRegisterPage", properties);
                 return taobaoOneKeyRegFragment;

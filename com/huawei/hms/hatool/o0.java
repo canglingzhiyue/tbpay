@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.cyf;
 import tb.cyh;
 
@@ -31,14 +31,14 @@ public class o0 {
         Ld:
             java.lang.String r0 = ""
         Lf:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L4f
             java.lang.String r0 = "hmsSdk"
             java.lang.String r1 = "deCrypt work key first"
             com.huawei.hms.hatool.v.c(r0, r1)
             java.lang.String r0 = r2.e()
             java.lang.String r0 = com.huawei.hms.hatool.n.a(r3, r0)
-            boolean r3 = android.text.TextUtils.isEmpty(r0)
+            boolean r3 = android.text.StringUtils.isEmpty(r0)
             if (r3 == 0) goto L41
             r3 = 16
             java.lang.String r0 = tb.cyh.b(r3)
@@ -67,7 +67,7 @@ public class o0 {
 
     private String c() {
         String a2 = d.a(q0.i(), "Privacy_MY", "PrivacyData", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             String b = cyh.b(16);
             c(b(b));
             return b;
@@ -77,7 +77,7 @@ public class o0 {
 
     private boolean c(String str) {
         v.c("hmsSdk", "refresh sp aes key");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             v.c("hmsSdk", "refreshLocalKey(): encrypted key is empty");
             return false;
         }
@@ -94,7 +94,7 @@ public class o0 {
     }
 
     private String e() {
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = new x().a();
         }
         return this.b;
@@ -113,7 +113,7 @@ public class o0 {
     }
 
     public String a() {
-        if (TextUtils.isEmpty(this.f7478a)) {
+        if (StringUtils.isEmpty(this.f7478a)) {
             this.f7478a = c();
         }
         return this.f7478a;

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.protocol.image.DetailImageView;
 import java.util.Map;
@@ -128,7 +128,7 @@ public class f {
                 ipChange.ipc$dispatch("56c6c68", new Object[]{this});
             } else if (!this.f9548a.isEmpty()) {
                 for (Map.Entry<DetailImageView, String> entry : this.f9548a.entrySet()) {
-                    if (entry.getKey() != null && !TextUtils.isEmpty(entry.getValue())) {
+                    if (entry.getKey() != null && !StringUtils.isEmpty(entry.getValue())) {
                         epj.b().a(entry.getValue(), entry.getKey());
                         com.taobao.android.detail.core.utils.i.d(f.TAG, "load image url :" + entry.getValue());
                     }

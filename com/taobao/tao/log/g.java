@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
 import java.io.File;
@@ -131,7 +131,7 @@ public class g {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = null;
-        if (TextUtils.isEmpty(str) || str.equalsIgnoreCase("off")) {
+        if (StringUtils.isEmpty(str) || str.equalsIgnoreCase("off")) {
             return null;
         }
         String[] split = str.split(",");
@@ -279,7 +279,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("19823339", new Object[]{file, str, zipOutputStream, writableByteChannel});
         } else if (file != null) {
-            String name = TextUtils.isEmpty(str) ? file.getName() : str + file.getName();
+            String name = StringUtils.isEmpty(str) ? file.getName() : str + file.getName();
             try {
                 if (file.isDirectory()) {
                     String str2 = name + "/";

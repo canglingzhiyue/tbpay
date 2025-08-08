@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.widget.ScrollView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -128,7 +128,7 @@ public class g extends oir implements com.taobao.share.ui.engine.weex.a {
             this.f = jSONObject.optString("scrollerRefName");
             this.m = jSONObject.optBoolean("prepareLastFrame");
             this.o = jSONObject.optString("imgBgColor");
-            this.n = !TextUtils.isEmpty(this.f);
+            this.n = !StringUtils.isEmpty(this.f);
             if (this.c == null && (shareWeexSdk = ShareBizAdapter.getInstance().getShareWeexSdk("")) != null) {
                 this.d = shareWeexSdk.f();
             }

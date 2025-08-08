@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -80,7 +80,7 @@ public class ak extends WidgetViewModel {
             this.c = jSONObject.getBooleanValue("enabled");
         }
         String string = this.component.mapping.getString("widthRatio");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.d = Double.parseDouble(string);
@@ -92,7 +92,7 @@ public class ak extends WidgetViewModel {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.f10417a) && TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.f10417a) && StringUtils.isEmpty(this.b)) {
             return false;
         }
         return super.isValid();

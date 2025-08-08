@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class a extends hxc {
             return;
         }
         Intent intent = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent = new Intent();
             intent.putExtra(CoreConstants.QUERY_PARAM_KEY_CONDITION, new HashMap<String, Object>() { // from class: com.taobao.android.order.bundle.helper.orderplugin.impl.OrderPluginRebuyPopAction$1
                 {

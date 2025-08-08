@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -76,7 +76,7 @@ public class jmh {
             a2 = jmg.a("tschedule", str, String.valueOf(j));
             switchCache.put(str, a2);
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 return Long.parseLong(switchCache.get(str));
             } catch (Throwable unused) {
@@ -97,7 +97,7 @@ public class jmh {
             a2 = jmg.a("tschedule", str, String.valueOf(d));
             switchCache.put(str, a2);
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 return Double.parseDouble(switchCache.get(str));
             } catch (Throwable unused) {
@@ -132,7 +132,7 @@ public class jmh {
         } else {
             a2 = jmg.a("tschedule", str, null);
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 return JSON.parseArray(a2, String.class);
             } catch (Exception e) {

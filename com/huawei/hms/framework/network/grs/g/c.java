@@ -2,7 +2,7 @@ package com.huawei.hms.framework.network.grs.g;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.Constants;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.huawei.hms.framework.common.Logger;
@@ -95,7 +95,7 @@ public class c {
             r13 = r18
             java.lang.Object r0 = r13.get(r11)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             r14 = 1
             if (r1 != 0) goto L8f
             com.huawei.hms.framework.network.grs.g.a r15 = new com.huawei.hms.framework.network.grs.g.a
@@ -195,7 +195,7 @@ public class c {
         sb.append(str2);
         sb.append(str);
         String grsReqParamJoint = this.f7426a.getGrsReqParamJoint(false, false, e(), this.b);
-        if (!TextUtils.isEmpty(grsReqParamJoint)) {
+        if (!StringUtils.isEmpty(grsReqParamJoint)) {
             sb.append("?");
             sb.append(grsReqParamJoint);
         }
@@ -240,7 +240,7 @@ public class c {
         int b = a2 == null ? 0 : a2.b();
         Logger.v(n, "use 2.0 interface return http's code is：{%s}", Integer.valueOf(b));
         if (b == 404 || b == 401) {
-            if (TextUtils.isEmpty(e()) && TextUtils.isEmpty(this.f7426a.getAppName())) {
+            if (StringUtils.isEmpty(e()) && StringUtils.isEmpty(this.f7426a.getAppName())) {
                 Logger.i(n, "request grs server use 1.0 API must set appName,please check.");
                 return null;
             }
@@ -254,15 +254,15 @@ public class c {
     }
 
     private void b(String str, String str2) {
-        if (!TextUtils.isEmpty(this.f7426a.getAppName()) || !TextUtils.isEmpty(e())) {
+        if (!StringUtils.isEmpty(this.f7426a.getAppName()) || !StringUtils.isEmpty(e())) {
             StringBuilder sb = new StringBuilder();
             sb.append(str2);
             Locale locale = Locale.ROOT;
             Object[] objArr = new Object[1];
-            objArr[0] = TextUtils.isEmpty(e()) ? this.f7426a.getAppName() : e();
+            objArr[0] = StringUtils.isEmpty(e()) ? this.f7426a.getAppName() : e();
             sb.append(String.format(locale, str, objArr));
             String grsReqParamJoint = this.f7426a.getGrsReqParamJoint(false, false, "1.0", this.b);
-            if (!TextUtils.isEmpty(grsReqParamJoint)) {
+            if (!StringUtils.isEmpty(grsReqParamJoint)) {
                 sb.append("?");
                 sb.append(grsReqParamJoint);
             }

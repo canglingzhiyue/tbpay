@@ -2,7 +2,7 @@ package com.taobao.android.editionswitcher;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import tb.kge;
@@ -72,7 +72,7 @@ public class l {
 
     public static boolean e(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a0d012e0", new Object[]{context})).booleanValue() : TextUtils.equals("OLD", a(context));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a0d012e0", new Object[]{context})).booleanValue() : StringUtils.equals("OLD", a(context));
     }
 
     public static boolean f(Context context) {
@@ -82,12 +82,12 @@ public class l {
 
     public static boolean g(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a2296a1e", new Object[]{context})).booleanValue() : TextUtils.equals("CUN", a(context));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a2296a1e", new Object[]{context})).booleanValue() : StringUtils.equals("CUN", a(context));
     }
 
     public static boolean i(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a382c15c", new Object[]{context})).booleanValue() : TextUtils.equals("OLD", c(context).editionCode);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a382c15c", new Object[]{context})).booleanValue() : StringUtils.equals("OLD", c(context).editionCode);
     }
 
     public static boolean j(Context context) {
@@ -97,12 +97,12 @@ public class l {
 
     private static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.equals("CN", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.equals("CN", str);
     }
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.equals("CN", str) && !TextUtils.equals("CUN", str) && !TextUtils.equals("OLD", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.equals("CN", str) && !StringUtils.equals("CUN", str) && !StringUtils.equals("OLD", str);
     }
 
     public static void m(Context context) {

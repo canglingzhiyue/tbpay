@@ -3,7 +3,7 @@ package tb;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
@@ -55,14 +55,14 @@ public class msy {
             th = th;
             bundle = null;
         }
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return null;
         }
         bundle = new Bundle();
         try {
             Pair<String, Integer> d = d(intent);
             if (d != null) {
-                if (!TextUtils.isEmpty(d.first)) {
+                if (!StringUtils.isEmpty(d.first)) {
                     bundle.putString("category", d.first);
                 }
                 if (d.second != null) {
@@ -72,7 +72,7 @@ public class msy {
             bundle.putString("id", stringExtra);
             stringExtra2 = intent.getStringExtra(AgooConstants.MESSAGE_BODY);
             String stringExtra3 = intent.getStringExtra("task_id");
-            if (!TextUtils.isEmpty(stringExtra3)) {
+            if (!StringUtils.isEmpty(stringExtra3)) {
                 bundle.putString("task_id", stringExtra3);
             }
         } catch (Throwable th2) {
@@ -80,19 +80,19 @@ public class msy {
             TLog.loge("agoo_push", Log.getStackTraceString(th));
             return bundle;
         }
-        if (TextUtils.isEmpty(stringExtra2)) {
+        if (StringUtils.isEmpty(stringExtra2)) {
             return null;
         }
         bundle.putString(AgooConstants.MESSAGE_BODY, stringExtra2);
         JSONObject jSONObject = new JSONObject(stringExtra2);
         String string = jSONObject.getString("url");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             bundle.putString(TaobaoConstants.MESSAGE_URL, string);
         }
         JSONObject optJSONObject = jSONObject.optJSONObject(Constants.KEY_EXTS);
         if (optJSONObject != null) {
             String string2 = optJSONObject.getString("messageId");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 bundle.putString("messageId", string2);
             }
         }
@@ -147,7 +147,7 @@ public class msy {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("78142dda", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         switch (str.hashCode()) {

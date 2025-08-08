@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.config.model.keep;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.poplayer.config.model.base.IModel;
 import com.alibaba.poplayer.config.model.trigger.UriModel;
@@ -31,6 +31,6 @@ public class KeepModel implements IModel {
     public boolean isValid() {
         List<UriModel> list;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.mode) && !TextUtils.isEmpty(this.strategy) && (list = this.pages) != null && !list.isEmpty() && (MODE_PAGE_LIVE.equals(this.mode) || MODE_KEEP_LIVE.equals(this.mode)) && (STRATEGY_WHITE_LIST.equals(this.strategy) || STRATEGY_BLACK_LIST.equals(this.strategy));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.mode) && !StringUtils.isEmpty(this.strategy) && (list = this.pages) != null && !list.isEmpty() && (MODE_PAGE_LIVE.equals(this.mode) || MODE_KEEP_LIVE.equals(this.mode)) && (STRATEGY_WHITE_LIST.equals(this.strategy) || STRATEGY_BLACK_LIST.equals(this.strategy));
     }
 }

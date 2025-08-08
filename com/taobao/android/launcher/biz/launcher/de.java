@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -64,8 +64,8 @@ public class de extends com.taobao.android.launcher.biz.task.j {
             return false;
         }
         String queryParameter = data.getQueryParameter("h5Url");
-        if (!TextUtils.isEmpty(queryParameter) && com.taobao.android.launcher.bootstrap.tao.ability.h.c(queryParameter) != null && (parse = Uri.parse(queryParameter)) != null) {
-            return TextUtils.equals(parse.getPath(), "/taolive/video.html");
+        if (!StringUtils.isEmpty(queryParameter) && com.taobao.android.launcher.bootstrap.tao.ability.h.c(queryParameter) != null && (parse = Uri.parse(queryParameter)) != null) {
+            return StringUtils.equals(parse.getPath(), "/taolive/video.html");
         }
         return false;
     }

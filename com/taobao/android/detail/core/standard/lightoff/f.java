@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.DialogFragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -454,7 +454,7 @@ public class f {
                         } else if (f.m(f.this) == null || f.n(f.this) == null) {
                         } else {
                             String k = f.m(f.this).k();
-                            if (TextUtils.isEmpty(k)) {
+                            if (StringUtils.isEmpty(k)) {
                                 return;
                             }
                             if (eir.c(f.n(f.this))) {
@@ -708,7 +708,7 @@ public class f {
             return (TouchImageView) ipChange.ipc$dispatch("4a6a8e48", new Object[]{this});
         }
         String k = this.f.k();
-        if (TextUtils.isEmpty(k) || (touchImageView = PicGalleryLightOffPicComponent.getTouchImageView(k)) == null) {
+        if (StringUtils.isEmpty(k) || (touchImageView = PicGalleryLightOffPicComponent.getTouchImageView(k)) == null) {
             return null;
         }
         touchImageView.setOnSinglePointLongClickListener(new View.OnLongClickListener() { // from class: com.taobao.android.detail.core.standard.lightoff.f.7

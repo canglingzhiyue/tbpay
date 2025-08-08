@@ -1,7 +1,7 @@
 package com.taobao.tao.sharepanel.weex;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.PopupWindow;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -126,7 +126,7 @@ public class a extends oub implements nzi.a {
         a2.a(com.taobao.android.share.resource.a.KEY_SHAREPANELINITSHAREPANELDATASTART);
         String b = nys.b(CACHE_SHOW_CHANNEL_TYPE_KEY, "2");
         String str7 = "";
-        if (TextUtils.equals("2", b)) {
+        if (StringUtils.equals("2", b)) {
             nyh.b("2");
             com.taobao.tao.channel.b.a().a(com.taobao.tao.channel.b.a().a((List<com.taobao.share.globalmodel.a>) aVar.a(), this.mShareContext, false));
             Map<String, List<ChannelInfo>> b2 = com.taobao.tao.channel.b.a().b(aVar.a(), this.mShareContext);
@@ -149,7 +149,7 @@ public class a extends oub implements nzi.a {
         a(tBShareContent, str4);
         if (!z) {
             oup.a();
-        } else if (TextUtils.equals("2", str2)) {
+        } else if (StringUtils.equals("2", str2)) {
             nyh.a("2");
             oie.a(null, null);
         } else {
@@ -163,7 +163,7 @@ public class a extends oub implements nzi.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a226d18f", new Object[]{this, tBShareContent, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             nzo shareWeexSdk = ShareBizAdapter.getInstance().getShareWeexSdk(tBShareContent != null ? tBShareContent.businessId : "");
             if (shareWeexSdk != null) {
@@ -198,7 +198,7 @@ public class a extends oub implements nzi.a {
         }
         this.f21064a.c(list);
         boolean z2 = i > 0 && list.size() - 1 > i;
-        if (!SpUtils.getGuide(com.taobao.tao.config.a.a(), SpUtils.START_GUIDE_NEW) && !TextUtils.equals("common", j.templateId)) {
+        if (!SpUtils.getGuide(com.taobao.tao.config.a.a(), SpUtils.START_GUIDE_NEW) && !StringUtils.equals("common", j.templateId)) {
             z = true;
         }
         if (z2 && z) {

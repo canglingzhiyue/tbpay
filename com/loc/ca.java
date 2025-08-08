@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.f3;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -85,7 +85,7 @@ public class ca {
                         a2.g = new cc(new cg(this.d, new cd(new ch(new cj()))));
                     }
                     a2.h = 3600000;
-                    if (TextUtils.isEmpty(a2.i)) {
+                    if (StringUtils.isEmpty(a2.i)) {
                         a2.i = "cKey";
                     }
                     if (a2.f == null) {

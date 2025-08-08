@@ -3,7 +3,7 @@ package com.taobao.android.tbabilitykit.windvane.pop.render;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -74,7 +74,7 @@ public class TAKAbilityHubPlugin extends e {
         dlrVar.a(dms.a(view.getContext()));
         dlrVar.a(view);
         dlrVar.a(dktVar);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 jSONObject = JSONObject.parseObject(str2);
             } catch (Exception unused) {

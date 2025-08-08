@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -75,12 +75,12 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
                     MainRateLoadingActivity.this.finish();
                     return;
                 }
-                if (TextUtils.equals(action, MainRateLoadingActivity.ACTION)) {
+                if (StringUtils.equals(action, MainRateLoadingActivity.ACTION)) {
                     if (b.d().booleanValue()) {
                         String c = b.c();
                         String stringExtra = intent.getStringExtra("suc_url_params");
                         String stringExtra2 = intent.getStringExtra("next_page_url");
-                        if (!TextUtils.isEmpty(stringExtra)) {
+                        if (!StringUtils.isEmpty(stringExtra)) {
                             jSONObject = JSON.parseObject(stringExtra);
                         }
                         if (stringExtra2 != null && !stringExtra2.isEmpty()) {
@@ -91,14 +91,14 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
                         sb = new StringBuilder();
                     } else {
                         StringBuilder sb2 = new StringBuilder();
-                        if (!TextUtils.isEmpty(MainRateLoadingActivity.a(MainRateLoadingActivity.this))) {
+                        if (!StringUtils.isEmpty(MainRateLoadingActivity.a(MainRateLoadingActivity.this))) {
                             sb2.append("&sellerId=");
                             sb2.append(MainRateLoadingActivity.a(MainRateLoadingActivity.this));
                         }
                         String a2 = MainRateLoadingActivity.this.f20893a ? b.a() : b.b();
                         String stringExtra3 = intent.getStringExtra("suc_url_params");
                         String stringExtra4 = intent.getStringExtra("data");
-                        if (!TextUtils.isEmpty(stringExtra3)) {
+                        if (!StringUtils.isEmpty(stringExtra3)) {
                             jSONObject = JSON.parseObject(stringExtra3);
                             b.a(sb2, jSONObject);
                         } else {
@@ -230,7 +230,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ed6b8fcd", new Object[]{this, sb, str});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
         } else {
             Map map = (Map) JSON.parseObject(String.valueOf(jSONObject.getJSONObject("orderToFeedIdMap")), Map.class);
             if (map != null) {
@@ -260,7 +260,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
             return;
         }
         String string = jSONObject.getString(str);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         sb.append("&");
@@ -282,7 +282,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
         setContentView(R.layout.rate_ugc_activity_loading);
         qoj.a();
         String config = OrangeConfig.getInstance().getConfig("tb_ratedisplay_Android", "rateSucessPage", "false");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             this.f20893a = Boolean.valueOf(config).booleanValue();
         }
         this.b = (TBCircularProgress) findViewById(R.id.rate_progress);
@@ -293,7 +293,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
             finish();
             return;
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             c();
             new tko().a(this.c, this.e, b(), this);
         }
@@ -364,12 +364,12 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
         this.c = null;
         try {
             this.c = intent.getStringExtra("orderID");
-            if (TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.c)) {
                 this.c = intent.getStringExtra("orderId");
             }
         } catch (Exception unused) {
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             Uri data = intent.getData();
             if (data == null) {
                 HashMap hashMap2 = new HashMap();
@@ -379,11 +379,11 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
                 return false;
             }
             this.c = data.getQueryParameter("orderID");
-            if (TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.c)) {
                 this.c = data.getQueryParameter("orderId");
             }
         }
-        return !TextUtils.isEmpty(this.c);
+        return !StringUtils.isEmpty(this.c);
     }
 
     @Override // tb.tkz
@@ -411,10 +411,10 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
             this.d = mo2429getData.getSellerId();
             c();
             HashMap hashMap3 = new HashMap();
-            hashMap3.put(Constants.WEIBO_REDIRECTURL_KEY, !TextUtils.isEmpty(redirectUrl) ? redirectUrl : "");
+            hashMap3.put(Constants.WEIBO_REDIRECTURL_KEY, !StringUtils.isEmpty(redirectUrl) ? redirectUrl : "");
             onu.a("Page_Rate", "Entry-Redirect-Request", hashMap3);
             a("process_rate_publish_order_request", System.currentTimeMillis() - this.h, (Map<String, String>) null);
-            if (!TextUtils.isEmpty(redirectUrl)) {
+            if (!StringUtils.isEmpty(redirectUrl)) {
                 w.a(new w.b() { // from class: com.taobao.tao.rate.ui.commit.MainRateLoadingActivity.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -429,7 +429,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
                         String str = redirectUrl;
                         Nav forResult = Nav.from(MainRateLoadingActivity.this).forResult(10001);
                         Nav.setTransition(17432576, 17432577);
-                        if (!TextUtils.isEmpty(MainRateLoadingActivity.d(MainRateLoadingActivity.this))) {
+                        if (!StringUtils.isEmpty(MainRateLoadingActivity.d(MainRateLoadingActivity.this))) {
                             HashMap hashMap4 = new HashMap();
                             hashMap4.put("channel", MainRateLoadingActivity.d(MainRateLoadingActivity.this));
                             str = q.a(str, hashMap4);
@@ -456,7 +456,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
                             return;
                         }
                         String a2 = z.a();
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             Nav.from(MainRateLoadingActivity.this).toUri(ax.a(a2, q.a(MainRateLoadingActivity.this.getIntent().getData())));
                             MainRateLoadingActivity.this.finish();
                             return;
@@ -476,7 +476,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3f002c73", new Object[]{str, new Long(j), map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             HashMap hashMap = new HashMap();
             if (map != null) {
@@ -533,7 +533,7 @@ public class MainRateLoadingActivity extends FragmentActivity implements tkz {
             ipChange.ipc$dispatch("bad030c1", new Object[]{this, mtopResponse, str, str2});
             return;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             com.taobao.tao.rate.kit.engine.b.a(getApplicationContext(), str2);
         } else {
             com.taobao.tao.rate.kit.engine.b.a(getApplicationContext(), com.taobao.android.litecreator.localization.a.a(R.string.rate_data_retrieval_failed_retry));

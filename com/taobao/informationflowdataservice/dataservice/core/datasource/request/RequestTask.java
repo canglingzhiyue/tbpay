@@ -1,6 +1,6 @@
 package com.taobao.informationflowdataservice.dataservice.core.datasource.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.model.request.AwesomeGetContainerParams;
@@ -218,7 +218,7 @@ public class RequestTask {
                 }
             } else {
                 if (mtopResponse != null) {
-                    if (!TextUtils.isEmpty(mtopResponse.getMtopStat().fullTraceId)) {
+                    if (!StringUtils.isEmpty(mtopResponse.getMtopStat().fullTraceId)) {
                         lxv.a(mtopResponse.getApi(), mtopResponse.getV(), mtopResponse.getRetCode(), mtopResponse.getRetMsg(), "fullTraceID", mtopResponse.getMtopStat().fullTraceId);
                     } else {
                         lxv.a(mtopResponse.getApi(), mtopResponse.getV(), mtopResponse.getRetCode(), mtopResponse.getRetMsg(), null, null);

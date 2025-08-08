@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.resourceguardian.data.model.RGTypeInfo;
 import com.taobao.android.resourceguardian.data.model.b;
@@ -102,7 +102,7 @@ public class ilg {
                 str = String.valueOf(b2);
                 str2 = "main";
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 return new b.a().a("critical").a(1).b(101).c(str2).b(str).a();
             }
             if (!z) {

@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.business.weex.multiplelist;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -187,7 +187,7 @@ public class XslMUSComponent extends UINode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f16beeb8", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             setAttribute(KEY_STICKY_TRANSPARENT, true);
         } else {
             try {
@@ -203,7 +203,7 @@ public class XslMUSComponent extends UINode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4ba02e30", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             setAttribute(KEY_CELL_COLOR, null);
         } else {
             try {
@@ -695,7 +695,7 @@ public class XslMUSComponent extends UINode {
         if (bool == null || !bool.booleanValue()) {
             z = false;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "0";
         }
         try {

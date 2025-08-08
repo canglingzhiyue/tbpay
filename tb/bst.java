@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentContainer;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
@@ -80,7 +80,7 @@ public class bst {
             return null;
         }
         String type = component.getType();
-        if (!TextUtils.isEmpty(type) && (componentView = renderComponent.getComponentView()) != null && TextUtils.isEmpty(componentView.getContainerType()) && type.startsWith("native$")) {
+        if (!StringUtils.isEmpty(type) && (componentView = renderComponent.getComponentView()) != null && StringUtils.isEmpty(componentView.getContainerType()) && type.startsWith("native$")) {
             String[] split = type.split("\\$");
             if (split == null || split.length < 2) {
                 ard a2 = arc.a();
@@ -121,7 +121,7 @@ public class bst {
             return null;
         }
         String name = componentView.getName();
-        if (TextUtils.isEmpty(name) || !a.b.f.equals(componentView.getContainerType())) {
+        if (StringUtils.isEmpty(name) || !a.b.f.equals(componentView.getContainerType())) {
             return null;
         }
         AURARenderComponentLayout aURARenderComponentLayout = new AURARenderComponentLayout();
@@ -149,7 +149,7 @@ public class bst {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("a5543672", new Object[]{jSONObject, str});
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return null;
         }
         ?? jSONObject2 = new JSONObject();
@@ -205,7 +205,7 @@ public class bst {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("7af4d51", new Object[]{jSONObject, str});
         }
-        if (jSONObject != null && !TextUtils.isEmpty(str)) {
+        if (jSONObject != null && !StringUtils.isEmpty(str)) {
             Iterator<Object> it = jSONObject.getJSONArray("data").iterator();
             while (it.hasNext()) {
                 Object next = it.next();
@@ -236,7 +236,7 @@ public class bst {
             return (List) ipChange.ipc$dispatch("3eca4a78", new Object[]{jSONObject, str});
         }
         ArrayList arrayList = new ArrayList();
-        if (jSONObject != null && !TextUtils.isEmpty(str)) {
+        if (jSONObject != null && !StringUtils.isEmpty(str)) {
             a(jSONObject, str, arrayList);
         }
         return arrayList;
@@ -267,7 +267,7 @@ public class bst {
         if (ipChange instanceof IpChange) {
             return (TreeNode) ipChange.ipc$dispatch("dba18377", new Object[]{multiTreeNode, str});
         }
-        if (!TextUtils.isEmpty(str) && multiTreeNode != null) {
+        if (!StringUtils.isEmpty(str) && multiTreeNode != null) {
             for (TreeNode<RenderComponent> treeNode : multiTreeNode.preOrdered()) {
                 if (str.equals(treeNode.data().getKey())) {
                     return treeNode;

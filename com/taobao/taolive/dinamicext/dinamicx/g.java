@@ -1,7 +1,7 @@
 package com.taobao.taolive.dinamicext.dinamicx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -155,10 +155,10 @@ public class g extends DXWidgetNode {
                     } else {
                         String string = ((JSONObject) g.a(g.this)).getString("accountId");
                         String string2 = ((JSONObject) g.a(g.this)).getString("type");
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             return;
                         }
-                        ((TBLiveFollowComponent) view2).addFollow(string, TextUtils.equals("daren", string2) ? "2" : "1");
+                        ((TBLiveFollowComponent) view2).addFollow(string, StringUtils.equals("daren", string2) ? "2" : "1");
                         try {
                             g.a(g.this, 1);
                             g.this.getDXRuntimeContext().e().getJSONObject("liveSearchAnchorBaseInfo").put("follow", (Object) "true");

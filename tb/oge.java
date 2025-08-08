@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.core.Component;
 import com.taobao.tao.flexbox.layoutmanager.core.aa;
@@ -29,7 +29,7 @@ public class oge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("395885ac", new Object[]{this, component, str, bVar, t});
-        } else if (!this.f32024a.isEmpty() && !TextUtils.isEmpty(str) && bVar != null && t != null && (map = this.f32024a.get(str)) != null && !map.isEmpty() && (list = map.get(bVar)) != null && !list.isEmpty()) {
+        } else if (!this.f32024a.isEmpty() && !StringUtils.isEmpty(str) && bVar != null && t != null && (map = this.f32024a.get(str)) != null && !map.isEmpty() && (list = map.get(bVar)) != null && !list.isEmpty()) {
             for (b.a aVar : list) {
                 aVar.a(component, t);
             }
@@ -43,7 +43,7 @@ public class oge {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("85cc6a1c", new Object[]{this, component, str, bVar, observer});
         }
-        if (component == null || TextUtils.isEmpty(str) || bVar == null || observer == null) {
+        if (component == null || StringUtils.isEmpty(str) || bVar == null || observer == null) {
             return null;
         }
         Map<b, List<b.a>> map = this.f32024a.get(str);
@@ -79,7 +79,7 @@ public class oge {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("14e83975", new Object[]{this, component, str, bVar, aVar});
         } else if (component != null && aVar != null) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 a(this.f32024a.get(str), bVar, aVar);
             } else {
                 for (Map.Entry<String, Map<b, List<b.a>>> entry : this.f32024a.entrySet()) {

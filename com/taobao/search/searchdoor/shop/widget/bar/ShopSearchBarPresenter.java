@@ -3,7 +3,7 @@ package com.taobao.search.searchdoor.shop.widget.bar;
 import android.content.Intent;
 import android.support.v4.util.ArrayMap;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -168,7 +168,7 @@ public class ShopSearchBarPresenter extends iue<c, d> implements TextWatcher, Vi
         if (whiteListParams != null) {
             for (String str : whiteListParams) {
                 String str2 = b.get(str);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     hashMap.put(str, str2);
                 }
             }
@@ -282,12 +282,12 @@ public class ShopSearchBarPresenter extends iue<c, d> implements TextWatcher, Vi
             return;
         }
         String g = getIView().g();
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             g = this.searchHint;
         } else {
             z = false;
         }
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             return;
         }
         onSearchTriggered(g, z, noa.VALUE_SEARCH_ACTION_ZD);
@@ -351,7 +351,7 @@ public class ShopSearchBarPresenter extends iue<c, d> implements TextWatcher, Vi
             arrayMap.put("shop_id", b);
             e.a(noa.VALUE_SEARCH_ACTION_ZD, (ArrayMap<String, String>) arrayMap);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayMap2.put("from", str2);
         }
         jumpToSearchResultPage(str, arrayMap2);

@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.data;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.callback.VIListenerByVerifyId;
 import com.alipay.mobile.verifyidentity.callback.VerifyIdentityListener;
 import com.alipay.mobile.verifyidentity.common.VerifyType;
@@ -159,7 +159,7 @@ public class VerifyIdentityTask {
             return;
         }
         String string = bundle2.getString("gwUrl");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             String str = this.f5861a;
             VerifyLogCat.i(str, "外部注入了网关: " + string);
             this.gwUrl = string;
@@ -173,7 +173,7 @@ public class VerifyIdentityTask {
             this.isLoginRPC = true;
         }
         String string2 = this.h.getString("VIE_envType");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             MicroModuleContext.getInstance().setEnvType(string2);
         }
         if ("Y".equalsIgnoreCase(this.h.getString("VIE_useBird"))) {

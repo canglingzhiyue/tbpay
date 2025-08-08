@@ -1,6 +1,6 @@
 package com.taobao.homepage.pop.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.statist.AlarmObject;
 import com.alibaba.fastjson.JSONObject;
@@ -26,7 +26,7 @@ public class d {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5713a94e", new Object[]{str, iPopData});
-        } else if (TextUtils.isEmpty(str) || iPopData == null || iPopData.isResetShowCount()) {
+        } else if (StringUtils.isEmpty(str) || iPopData == null || iPopData.isResetShowCount()) {
         } else {
             String businessID = iPopData.getBusinessID();
             AlarmObject alarmObject = new AlarmObject();
@@ -47,7 +47,7 @@ public class d {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a1b8cf62", new Object[]{str, iPopData, str2, str3});
-        } else if (TextUtils.isEmpty(str) || iPopData == null || iPopData.isResetShowCount()) {
+        } else if (StringUtils.isEmpty(str) || iPopData == null || iPopData.isResetShowCount()) {
         } else {
             String businessID = iPopData.getBusinessID();
             AlarmObject alarmObject = new AlarmObject();

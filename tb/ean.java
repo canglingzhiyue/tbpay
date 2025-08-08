@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
 import android.text.style.StyleSpan;
@@ -148,9 +148,9 @@ public class ean extends c<i> {
             this.j.setVisibility(0);
             this.k.setVisibility(0);
             a(this.l, iVar.g.c);
-            if (!TextUtils.isEmpty(iVar.g.f)) {
+            if (!StringUtils.isEmpty(iVar.g.f)) {
                 this.m.setText(iVar.g.f);
-                if (!TextUtils.isEmpty(iVar.g.g)) {
+                if (!StringUtils.isEmpty(iVar.g.g)) {
                     this.m.setTextColor(com.taobao.android.detail.core.utils.c.a(iVar.g.g));
                 }
                 this.m.setVisibility(0);
@@ -161,7 +161,7 @@ public class ean extends c<i> {
                 this.m.setVisibility(8);
                 ((LinearLayout.LayoutParams) this.l.getLayoutParams()).height = epo.b(42);
             }
-            if (!TextUtils.isEmpty(iVar.g.f10000a)) {
+            if (!StringUtils.isEmpty(iVar.g.f10000a)) {
                 this.o = com.taobao.android.detail.core.utils.c.a(iVar.g.f10000a);
             }
             d.a(this.f9568a, this.c, this.k, ((i) this.c).events);
@@ -177,7 +177,7 @@ public class ean extends c<i> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("28799cb3", new Object[]{this, detailImageView, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             epj.b().a(str, detailImageView);
             detailImageView.setVisibility(0);
         } else {
@@ -209,7 +209,7 @@ public class ean extends c<i> {
             autoWrapLineLayout.setItemSpacing(epo.e);
             TextView b2 = b(iVar.f9772a, 1);
             if (b2 != null) {
-                b2.setPadding(0, (iVar.g == null || TextUtils.isEmpty(iVar.g.c)) ? epo.b(10) : 0, 0, -epo.e);
+                b2.setPadding(0, (iVar.g == null || StringUtils.isEmpty(iVar.g.c)) ? epo.b(10) : 0, 0, -epo.e);
                 autoWrapLineLayout.addView(b2);
             }
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
@@ -303,21 +303,21 @@ public class ean extends c<i> {
         if (priceData == null) {
             return null;
         }
-        if (TextUtils.isEmpty(priceData.priceText) && TextUtils.isEmpty(priceData.priceDesc) && TextUtils.isEmpty(priceData.priceTitle)) {
+        if (StringUtils.isEmpty(priceData.priceText) && StringUtils.isEmpty(priceData.priceDesc) && StringUtils.isEmpty(priceData.priceTitle)) {
             return null;
         }
         StringBuilder sb = new StringBuilder();
         ArrayList<b> arrayList = new ArrayList<>();
         int length = sb.length();
-        if ((i != 1 || ecu.i) && !TextUtils.isEmpty(priceData.priceTitle)) {
+        if ((i != 1 || ecu.i) && !StringUtils.isEmpty(priceData.priceTitle)) {
             String str2 = priceData.priceTitle + " ";
             String str3 = priceData.priceTitleColor;
             sb.append(str2);
             int length2 = str2.length() + 0;
             if (i == 1) {
-                arrayList.add(new b(ForegroundColorSpan.class, length, length + length2, TextUtils.isEmpty(str3) ? a(3) : com.taobao.android.detail.core.utils.c.a(str3), 0));
+                arrayList.add(new b(ForegroundColorSpan.class, length, length + length2, StringUtils.isEmpty(str3) ? a(3) : com.taobao.android.detail.core.utils.c.a(str3), 0));
             } else {
-                arrayList.add(new b(ForegroundColorSpan.class, length, length + length2, TextUtils.isEmpty(str3) ? a(i) : com.taobao.android.detail.core.utils.c.a(str3), 0));
+                arrayList.add(new b(ForegroundColorSpan.class, length, length + length2, StringUtils.isEmpty(str3) ? a(i) : com.taobao.android.detail.core.utils.c.a(str3), 0));
             }
             str = " ";
             a(arrayList, length, length + length2, i, 1, priceData.priceTextSize);
@@ -325,8 +325,8 @@ public class ean extends c<i> {
             str = " ";
         }
         int length3 = sb.length();
-        if (!TextUtils.isEmpty(priceData.priceText)) {
-            if (!TextUtils.isEmpty(priceData.priceChar)) {
+        if (!StringUtils.isEmpty(priceData.priceText)) {
+            if (!StringUtils.isEmpty(priceData.priceChar)) {
                 int length4 = sb.length();
                 if (!priceData.priceChar.contains(str)) {
                     priceData.priceChar += str;
@@ -342,7 +342,7 @@ public class ean extends c<i> {
                 arrayList.add(new b(StrikethroughSpan.class, length3, length3 + i2 + priceData.priceText.length(), 0, 0));
             }
         }
-        if (!TextUtils.isEmpty(priceData.priceDesc)) {
+        if (!StringUtils.isEmpty(priceData.priceDesc)) {
             if (sb.length() > 0) {
                 sb.append(str);
             }
@@ -478,7 +478,7 @@ public class ean extends c<i> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cee54f9c", new Object[]{this, sb, arrayList, str, new Integer(i), str2});
-        } else if (sb != null && arrayList != null && !TextUtils.isEmpty(str)) {
+        } else if (sb != null && arrayList != null && !StringUtils.isEmpty(str)) {
             String[] split = str.split("-");
             if (split.length <= 0) {
                 return;
@@ -493,7 +493,7 @@ public class ean extends c<i> {
                         arrayList.add(new b(StyleSpan.class, length, i3, 0, 0));
                     }
                 }
-                if (!TextUtils.isEmpty(split[i2])) {
+                if (!StringUtils.isEmpty(split[i2])) {
                     int length2 = sb.length();
                     sb.append(split[i2]);
                     a(arrayList, length2, length2 + split[i2].length(), i, 2, str2);
@@ -601,13 +601,13 @@ public class ean extends c<i> {
             return null;
         }
         SpannableString a3 = a(priceData, i);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return null;
         }
         TextView textView = new TextView(this.f9568a);
         textView.setText(a3);
         textView.setSingleLine();
-        if (TextUtils.isEmpty(priceData.priceColor)) {
+        if (StringUtils.isEmpty(priceData.priceColor)) {
             a2 = a(i);
         } else {
             a2 = com.taobao.android.detail.core.utils.c.a(priceData.priceColor);
@@ -646,11 +646,11 @@ public class ean extends c<i> {
         if (bVar == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(bVar.f9987a)) {
+        if (!StringUtils.isEmpty(bVar.f9987a)) {
             TextView textView = new TextView(this.f9568a);
             textView.setText(bVar.f9987a);
             textView.setTextSize(1, 9.0f);
-            if (TextUtils.isEmpty(bVar.b)) {
+            if (StringUtils.isEmpty(bVar.b)) {
                 a2 = this.o;
                 if (a2 == -2) {
                     a2 = this.r;
@@ -659,7 +659,7 @@ public class ean extends c<i> {
                 a2 = com.taobao.android.detail.core.utils.c.a(bVar.b);
             }
             textView.setTextColor(a2);
-            int parseColor = TextUtils.isEmpty(bVar.c) ? Color.parseColor("#FFF1EB") : com.taobao.android.detail.core.utils.c.a(bVar.c);
+            int parseColor = StringUtils.isEmpty(bVar.c) ? Color.parseColor("#FFF1EB") : com.taobao.android.detail.core.utils.c.a(bVar.c);
             textView.setBackgroundColor(parseColor);
             textView.setPadding(epo.d + 2, 2, epo.d + 2, 2);
             textView.setIncludeFontPadding(false);
@@ -672,7 +672,7 @@ public class ean extends c<i> {
                 textView.setBackground(gradientDrawable);
             }
             return textView;
-        } else if (TextUtils.isEmpty(bVar.d)) {
+        } else if (StringUtils.isEmpty(bVar.d)) {
             return null;
         } else {
             WidthVariableImageView widthVariableImageView = new WidthVariableImageView(this.f9568a);

@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -494,7 +494,7 @@ public class hzp implements bwv, hzc {
                             com.taobao.android.ultron.common.model.b bVar = list.get(i);
                             if (bVar != null) {
                                 String type = bVar.getType();
-                                if (!TextUtils.isEmpty(type)) {
+                                if (!StringUtils.isEmpty(type)) {
                                     com.alibaba.android.ultron.event.base.e a2 = dVar.d().a().a(type);
                                     a2.a(iDMComponent);
                                     if (map != null) {
@@ -831,7 +831,7 @@ public class hzp implements bwv, hzc {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (dVar = this.f) == null || dVar.x() == null) {
+        } else if (StringUtils.isEmpty(str) || (dVar = this.f) == null || dVar.x() == null) {
         } else {
             IDMComponent b2 = this.f.x().b(str);
             if (this.f.k() == null || this.f.k().f() == null || b2 == null) {
@@ -1131,7 +1131,7 @@ public class hzp implements bwv, hzc {
 
     private boolean a(MtopResponse mtopResponse) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab3bce31", new Object[]{this, mtopResponse})).booleanValue() : mtopResponse.getDataJsonObject() != null && hzb.CODE_REDIRECT_302.equals(mtopResponse.getDataJsonObject().optString("code")) && !TextUtils.isEmpty(mtopResponse.getDataJsonObject().optString(Constants.WEIBO_REDIRECTURL_KEY));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab3bce31", new Object[]{this, mtopResponse})).booleanValue() : mtopResponse.getDataJsonObject() != null && hzb.CODE_REDIRECT_302.equals(mtopResponse.getDataJsonObject().optString("code")) && !StringUtils.isEmpty(mtopResponse.getDataJsonObject().optString(Constants.WEIBO_REDIRECTURL_KEY));
     }
 
     public void a(com.alibaba.android.ultron.event.base.e eVar) {
@@ -1404,7 +1404,7 @@ public class hzp implements bwv, hzc {
             UnifyLog.d("UltronProxy.setupRefundUrl", "pair is invalid");
         } else {
             try {
-                if (!TextUtils.isEmpty(this.b.i())) {
+                if (!StringUtils.isEmpty(this.b.i())) {
                     str = this.b.i();
                 } else {
                     str = EnvironmentSwitcher.a() == 0 ? "https://meta.m.taobao.com/app/mtb/refund-list/home?wh_weex=true&weex_mode=dom" : "https://meta.wapa.taobao.com/app/mtb/refund-list/home?wh_weex=true&weex_mode=dom";
@@ -1430,7 +1430,7 @@ public class hzp implements bwv, hzc {
             try {
                 JSONObject jSONObject = ((JSONObject) pair.first).getJSONObject("container").getJSONArray("data").getJSONObject(2);
                 String string = jSONObject.getString("url");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     UnifyLog.d("UltronProxy.appendIsFromRefund", "url isEmpty");
                     return;
                 }

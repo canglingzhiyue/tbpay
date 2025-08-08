@@ -3,7 +3,7 @@ package com.taobao.android.tschedule.task;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -159,7 +159,7 @@ public class CustomizeScheduleTask extends ScheduleTask<CustomTaskContext> {
                     String valueOf = String.valueOf(SystemClock.uptimeMillis() - uptimeMillis);
                     hashMap2.put(HiAnalyticsConstant.BI_KEY_COST_TIME, valueOf);
                     String str3 = (hashMap == null || hashMap.isEmpty()) ? null : hashMap.get(ScheduleProtocolCallback.MERGE_TIME);
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         try {
                             long longValue = Long.valueOf(str3).longValue();
                             if (longValue >= uptimeMillis) {

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.core.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 
@@ -46,7 +46,7 @@ public class MQPBehaviorActionSeqModel implements Serializable {
             ipChange.ipc$dispatch("b443d89f", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.uid = str;
@@ -63,7 +63,7 @@ public class MQPBehaviorActionSeqModel implements Serializable {
             ipChange.ipc$dispatch("2b184af1", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.scene_name = str;
@@ -108,7 +108,7 @@ public class MQPBehaviorActionSeqModel implements Serializable {
             ipChange.ipc$dispatch("17dc98a6", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.act_params = str;

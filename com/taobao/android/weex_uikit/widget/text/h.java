@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.v4.text.TextDirectionHeuristicCompat;
 import android.text.Layout;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.LineHeightSpan;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -42,7 +42,7 @@ public class h {
         }
         Integer num = (Integer) this.f16218a.getAttribute("lines");
         int intValue = num == null ? Integer.MAX_VALUE : num.intValue();
-        if (intValue != Integer.MAX_VALUE || !TextUtils.equals((String) this.f16218a.getAttribute("whiteSpace"), "nowrap")) {
+        if (intValue != Integer.MAX_VALUE || !StringUtils.equals((String) this.f16218a.getAttribute("whiteSpace"), "nowrap")) {
             return intValue;
         }
         return 1;
@@ -62,7 +62,7 @@ public class h {
             uINode.setAttribute("breakValue", charSequence);
         }
         CharSequence charSequence2 = charSequence;
-        if (TextUtils.isEmpty(charSequence2)) {
+        if (StringUtils.isEmpty(charSequence2)) {
             if (i3 != 1073741824) {
                 i6 = 0;
             }
@@ -119,13 +119,13 @@ public class h {
             return;
         }
         this.d = (CharSequence) uINode.getAttribute("value");
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             uINode.setExtra("textLayout", null);
             return;
         }
         if (!z && i5 == 2) {
             CharSequence charSequence = (CharSequence) uINode.getAttribute("breakValue");
-            if (TextUtils.isEmpty(charSequence)) {
+            if (StringUtils.isEmpty(charSequence)) {
                 CharSequence charSequence2 = this.d;
                 if (charSequence2 != null) {
                     this.d = a(charSequence2);
@@ -151,13 +151,13 @@ public class h {
         }
         float f = ((((i3 - i) - v.left) - v.right) - i8) - i7;
         float f2 = ((((i4 - i2) - v.top) - v.bottom) - i9) - i6;
-        TextUtils.TruncateAt a4 = a();
+        StringUtils.TruncateAt a4 = a();
         String str = a4 == null ? "" : "...";
         if (layout == null || this.b != f || this.c != f2) {
             layout = a(View.MeasureSpec.makeMeasureSpec((int) f, 1073741824), a4, false, f(), 0.0f, 0.0f, 0.0f, -7829368, false, this.d, b(), f.c, -16776961, c(), 0.0f, 1.0f, 0.0f, f.d, (Typeface) uINode.getExtra("fontFace"), d(), false, b.a(), -1, Integer.MIN_VALUE, 0, Integer.MAX_VALUE, uINode.getInstance().getContext().a().getResources().getDisplayMetrics().density, 0, 0, 0, f.f, e());
             uINode.setExtra("textLayout", layout);
         }
-        if (a4 != null && (TextUtils.isEmpty(str) || TextUtils.equals("...", str))) {
+        if (a4 != null && (StringUtils.isEmpty(str) || StringUtils.equals("...", str))) {
             z2 = false;
         }
         if (!z2 || (a2 = a(layout)) == -1) {
@@ -173,7 +173,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (CharSequence) ipChange.ipc$dispatch("88cbde58", new Object[]{charSequence, charSequence2, layout, new Integer(i), new Float(f)});
         }
-        if (TextUtils.isEmpty(charSequence2)) {
+        if (StringUtils.isEmpty(charSequence2)) {
             int ellipsisStart = layout.getEllipsisStart(i);
             if (ellipsisStart < charSequence.length()) {
                 ellipsisStart++;
@@ -192,7 +192,7 @@ public class h {
         if (layout.getEllipsisCount(i) <= 0 || i3 <= (i2 = layout.getEllipsisStart(i) + layout.getLineStart(i))) {
             i2 = i3;
         }
-        return TextUtils.concat(charSequence.subSequence(0, i2), charSequence2);
+        return StringUtils.concat(charSequence.subSequence(0, i2), charSequence2);
     }
 
     private static int a(Layout layout) {
@@ -208,7 +208,7 @@ public class h {
         return -1;
     }
 
-    private static Layout a(int i, TextUtils.TruncateAt truncateAt, boolean z, int i2, float f, float f2, float f3, int i3, boolean z2, CharSequence charSequence, int i4, ColorStateList colorStateList, int i5, int i6, float f4, float f5, float f6, int i7, Typeface typeface, Layout.Alignment alignment, boolean z3, int i8, int i9, int i10, int i11, int i12, float f7, int i13, int i14, int i15, TextDirectionHeuristicCompat textDirectionHeuristicCompat, float f8) {
+    private static Layout a(int i, StringUtils.TruncateAt truncateAt, boolean z, int i2, float f, float f2, float f3, int i3, boolean z2, CharSequence charSequence, int i4, ColorStateList colorStateList, int i5, int i6, float f4, float f5, float f6, int i7, Typeface typeface, Layout.Alignment alignment, boolean z3, int i8, int i9, int i10, int i11, int i12, float f7, int i13, int i14, int i15, TextDirectionHeuristicCompat textDirectionHeuristicCompat, float f8) {
         int i16;
         CharSequence charSequence2 = charSequence;
         IpChange ipChange = $ipChange;
@@ -228,7 +228,7 @@ public class h {
         } else {
             i16 = 1;
         }
-        TextUtils.TruncateAt truncateAt2 = (truncateAt != null || i2 == Integer.MAX_VALUE) ? truncateAt : TextUtils.TruncateAt.END;
+        StringUtils.TruncateAt truncateAt2 = (truncateAt != null || i2 == Integer.MAX_VALUE) ? truncateAt : StringUtils.TruncateAt.END;
         if (f9 != Float.MAX_VALUE && !(charSequence2 instanceof SpannableString)) {
             SpannableString spannableString = new SpannableString(charSequence2);
             spannableString.setSpan(new LineHeightSpan() { // from class: com.taobao.android.weex_uikit.widget.text.h.1
@@ -250,7 +250,7 @@ public class h {
             }, 0, spannableString.length(), 33);
             charSequence2 = spannableString;
         }
-        if (truncateAt == TextUtils.TruncateAt.MIDDLE && i2 == 1) {
+        if (truncateAt == StringUtils.TruncateAt.MIDDLE && i2 == 1) {
             charSequence2 = a(charSequence2, i6, View.MeasureSpec.getSize(i));
         }
         textLayoutBuilder.d(f7).a(truncateAt2).e(i2).a(f, f2, f3, i3).b(z2).a(charSequence2).a(i6).a(View.MeasureSpec.getSize(i), i16).a(z).a(f4).b(f5).a(alignment).c(i5).f(i13).g(i14);
@@ -323,10 +323,10 @@ public class h {
         return a2;
     }
 
-    public TextUtils.TruncateAt a() {
+    public StringUtils.TruncateAt a() {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
-            return (TextUtils.TruncateAt) ipChange.ipc$dispatch("676bf2de", new Object[]{this});
+            return (StringUtils.TruncateAt) ipChange.ipc$dispatch("676bf2de", new Object[]{this});
         }
         String str = (String) this.f16218a.getAttribute("textOverflow");
         char c = 65535;
@@ -344,13 +344,13 @@ public class h {
         return null;
     }
 
-    private TextUtils.TruncateAt a(String str) {
+    private StringUtils.TruncateAt a(String str) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
-            return (TextUtils.TruncateAt) ipChange.ipc$dispatch("7d756028", new Object[]{this, str});
+            return (StringUtils.TruncateAt) ipChange.ipc$dispatch("7d756028", new Object[]{this, str});
         }
         if (str == null) {
-            return TextUtils.TruncateAt.END;
+            return StringUtils.TruncateAt.END;
         }
         char c = 65535;
         int hashCode = str.hashCode();
@@ -366,12 +366,12 @@ public class h {
             c = 2;
         }
         if (c == 0) {
-            return TextUtils.TruncateAt.START;
+            return StringUtils.TruncateAt.START;
         }
         if (c == 1) {
-            return TextUtils.TruncateAt.END;
+            return StringUtils.TruncateAt.END;
         }
-        return TextUtils.TruncateAt.MIDDLE;
+        return StringUtils.TruncateAt.MIDDLE;
     }
 
     public int b() {

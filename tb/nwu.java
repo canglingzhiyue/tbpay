@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.taopassword.busniess.model.g;
@@ -83,7 +83,7 @@ public class nwu {
                 } else if (jSONObject == null || jSONObject.isEmpty()) {
                     interfaceC1153a.a("bridge params is empty");
                 } else {
-                    if (TextUtils.equals(NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET, jSONObject.getString("status"))) {
+                    if (StringUtils.equals(NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET, jSONObject.getString("status"))) {
                         nwu.b(nwu.this).a(nwu.a(nwu.this), NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET);
                         nwu.a(nwu.this, NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET);
                         ldf.d("TabBarButtonService", "前端通知变更小火箭状态为ROCKET");

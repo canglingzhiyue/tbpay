@@ -3,7 +3,7 @@ package com.taobao.update.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -257,7 +257,7 @@ public class a extends Dialog {
                     }
                 });
             }
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 ((TextView) inflate.findViewById(R.id.text_content)).setText(this.c);
             }
             aVar.setContentView(inflate);

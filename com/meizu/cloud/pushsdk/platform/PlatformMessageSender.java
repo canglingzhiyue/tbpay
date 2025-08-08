@@ -3,7 +3,7 @@ package com.meizu.cloud.pushsdk.platform;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
@@ -194,7 +194,7 @@ public class PlatformMessageSender {
     public static void a(Context context, int i, boolean z, String str) {
         String appVersionName = MzSystemUtils.getAppVersionName(context, PushConstants.PUSH_PACKAGE_NAME);
         DebugLogger.i("PlatformMessageSender", context.getPackageName() + " switchPushMessageSetting cloudVersion_name " + appVersionName);
-        if (TextUtils.isEmpty(appVersionName) || Integer.parseInt(appVersionName.substring(0, 1)) < 6) {
+        if (StringUtils.isEmpty(appVersionName) || Integer.parseInt(appVersionName.substring(0, 1)) < 6) {
             return;
         }
         Intent intent = new Intent(PushConstants.MZ_PUSH_ON_MESSAGE_SWITCH_SETTING);
@@ -251,7 +251,7 @@ public class PlatformMessageSender {
         intent.putExtra(PushConstants.MZ_PUSH_PRIVATE_MESSAGE, parse);
         intent.putExtra("method", "private");
         intent.setAction(PushConstants.MZ_PUSH_ON_MESSAGE_ACTION);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent.setPackage(str);
             intent.setClassName(str, "com.meizu.cloud.pushsdk.NotificationService");
         }

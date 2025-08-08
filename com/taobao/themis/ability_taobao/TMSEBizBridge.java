@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONObject;
@@ -394,7 +394,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         q.d(apiContext, "apiContext");
         q.d(id, "id");
         q.d(bridgeCallback, "bridgeCallback");
-        if (TextUtils.isEmpty(id)) {
+        if (StringUtils.isEmpty(id)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             new AlertDialog.Builder(apiContext.a()).setMessage("是否收藏该商品? ").setPositiveButton("同意", new d(id, apiContext, bridgeCallback)).setNegativeButton("拒绝", new e(bridgeCallback)).create().show();
@@ -412,7 +412,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         q.d(apiContext, "apiContext");
         q.d(id, "id");
         q.d(bridgeCallback, "bridgeCallback");
-        if (TextUtils.isEmpty(id)) {
+        if (StringUtils.isEmpty(id)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             a(false, id, apiContext, bridgeCallback);
@@ -463,7 +463,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         q.d(apiContext, "apiContext");
         q.d(id, "id");
         q.d(bridgeCallback, "bridgeCallback");
-        if (TextUtils.isEmpty(id)) {
+        if (StringUtils.isEmpty(id)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
             return;
         }
@@ -499,7 +499,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         }
         q.d(apiContext, "apiContext");
         q.d(id, "id");
-        if (TextUtils.isEmpty(id)) {
+        if (StringUtils.isEmpty(id)) {
             BridgeResponse bridgeResponse = BridgeResponse.INVALID_PARAM;
             q.b(bridgeResponse, "BridgeResponse.INVALID_PARAM");
             return bridgeResponse;
@@ -569,7 +569,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         }
         q.d(apiContext, "apiContext");
         q.d(sellerNick, "sellerNick");
-        if (TextUtils.isEmpty(sellerNick)) {
+        if (StringUtils.isEmpty(sellerNick)) {
             BridgeResponse bridgeResponse = BridgeResponse.INVALID_PARAM;
             q.b(bridgeResponse, "BridgeResponse.INVALID_PARAM");
             return bridgeResponse;
@@ -623,7 +623,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         q.d(itemIds, "itemIds");
         q.d(exts, "exts");
         q.d(bridgeCallback, "bridgeCallback");
-        if (TextUtils.isEmpty(itemIds)) {
+        if (StringUtils.isEmpty(itemIds)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             new AlertDialog.Builder(apiContext.a()).setMessage("是否确认加入到购物车？").setPositiveButton("同意", new b(itemIds, exts, bridgeCallback, apiContext)).setNegativeButton("拒绝", new c(bridgeCallback)).create().show();
@@ -692,7 +692,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
                 str = k.x(c2);
             }
             String str2 = str;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
                 return;
             }
@@ -736,7 +736,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
                 str = k.x(c2);
             }
             String str2 = str;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
                 return;
             }
@@ -776,7 +776,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
                 str = k.x(c2);
             }
             String str2 = str;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
                 return;
             }
@@ -870,7 +870,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         q.d(skuId, "skuId");
         q.d(transparent_key, "transparent_key");
         q.d(bridgeCallback, "bridgeCallback");
-        if (TextUtils.isEmpty(itemId)) {
+        if (StringUtils.isEmpty(itemId)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
             return;
         }
@@ -929,7 +929,7 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2f258757", new Object[]{this, str, str2, str3, str4, str5, str6, str7, map});
-        } else if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
+        } else if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4)) {
         } else {
             HashMap hashMap = new HashMap();
             HashMap hashMap2 = hashMap;
@@ -941,10 +941,10 @@ public final class TMSEBizBridge implements com.taobao.themis.kernel.ability.bas
             if (str7 != null) {
                 hashMap2.put("shopId", str7);
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 hashMap2.put("spm_ori", str5);
             }
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 hashMap2.put("logkey", str6);
             }
             JSONObject jSONObject = new JSONObject();

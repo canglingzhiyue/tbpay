@@ -2,7 +2,7 @@ package com.taobao.android.msoa.util;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
@@ -104,18 +104,18 @@ public class b {
         JSONObject jSONObject2 = (JSONObject) obj2;
         a(jSONObject, (Map<String, Object>) jSONObject2);
         String string = jSONObject2.getString("bizName");
-        if (TextUtils.isEmpty(string) && (obj = map.get("bizName")) != null) {
+        if (StringUtils.isEmpty(string) && (obj = map.get("bizName")) != null) {
             string = obj.toString();
         }
         if (jSONObject != null) {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = jSONObject.getString("bizName");
             }
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = jSONObject.getString(TBPlayerConst.TBPlayerMethodSwitchPlayerScene_SceneName);
             }
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "null";
         }
         jSONObject2.put("bizName", (Object) string);
@@ -233,7 +233,7 @@ public class b {
         } else {
             str = "";
         }
-        return TextUtils.isEmpty(str) ? "Weex_NULL" : str;
+        return StringUtils.isEmpty(str) ? "Weex_NULL" : str;
     }
 
     private static String b(WXSDKInstance wXSDKInstance) {
@@ -242,7 +242,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("a147725b", new Object[]{wXSDKInstance});
         }
         String ak = wXSDKInstance != null ? wXSDKInstance.ak() : "";
-        return TextUtils.isEmpty(ak) ? "NULL" : ak;
+        return StringUtils.isEmpty(ak) ? "NULL" : ak;
     }
 
     private static String a() {
@@ -276,12 +276,12 @@ public class b {
                 b = str;
                 jSONArray.add(activity.getIntent() != null ? str + " : " + activity.getIntent().getDataString() : str + " : NULL");
             }
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b = "Native_NULL";
             }
             return jSONArray.toJSONString();
         } catch (Throwable unused) {
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b = "Native_Exception_NULL";
             }
             return jSONArray.toJSONString();

@@ -2,7 +2,7 @@ package android.taobao.windvane.extra.crash;
 
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.JvmUncaughtCrashListener;
 import com.uc.webview.export.Build;
@@ -118,7 +118,7 @@ public class WVUTCrashCaughtListener implements JvmUncaughtCrashListener {
             boolean z = false;
             for (int i = 3; i < size; i++) {
                 String str = (String) this.mUrlList.get(i);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.mUrlList.set(i, p.d(str));
                     adk b = a2.b(str);
                     if (!z && b != null) {

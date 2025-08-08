@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.officialLive;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
@@ -135,7 +135,7 @@ public class OfficialLiveEntryFrame extends BaseFrame implements d, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("417a740", new Object[]{this});
-        } else if (this.mVideoInfo == null || !b.a().b(this.mVideoInfo) || this.mVideoInfo.officialLiveInfo == null || TextUtils.isEmpty(this.mVideoInfo.liveId)) {
+        } else if (this.mVideoInfo == null || !b.a().b(this.mVideoInfo) || this.mVideoInfo.officialLiveInfo == null || StringUtils.isEmpty(this.mVideoInfo.liveId)) {
         } else {
             c cVar = new c(this);
             String str = this.mVideoInfo.officialLiveInfo.officialLiveId;
@@ -493,7 +493,7 @@ public class OfficialLiveEntryFrame extends BaseFrame implements d, ddv {
                 } else {
                     str3 = str2;
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = str2;
                 }
             } else {
@@ -554,7 +554,7 @@ public class OfficialLiveEntryFrame extends BaseFrame implements d, ddv {
                         return;
                     }
                     String string = OfficialLiveEntryFrame.this.mContext.getResources().getString(R.string.taolive_comments_user_follow_fail_flexalocal);
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         string = str2;
                     }
                     aj.a(OfficialLiveEntryFrame.this.mContext, string);
@@ -634,7 +634,7 @@ public class OfficialLiveEntryFrame extends BaseFrame implements d, ddv {
                 return;
             }
             String string2 = jSONObject2.getString("officialLiveId");
-            if (TextUtils.isEmpty(string2) || TextUtils.isEmpty(string) || (videoInfo = this.mVideoInfo) == null || videoInfo.officialLiveInfo == null || string.equals(this.mVideoInfo.liveId)) {
+            if (StringUtils.isEmpty(string2) || StringUtils.isEmpty(string) || (videoInfo = this.mVideoInfo) == null || videoInfo.officialLiveInfo == null || string.equals(this.mVideoInfo.liveId)) {
                 return;
             }
             OfficialLiveSwitchNextMessage officialLiveSwitchNextMessage = new OfficialLiveSwitchNextMessage();

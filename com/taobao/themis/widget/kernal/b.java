@@ -2,7 +2,7 @@ package com.taobao.themis.widget.kernal;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.ariver.kernel.RVConstants;
@@ -840,7 +840,7 @@ public final class b implements com.taobao.android.weex.h {
                         c.d(c.this).k().a("widgetFirstScreen", str == null ? "" : str);
                         c.d(c.this).k().a("widgetOnDestroy");
                         String it = c.d(c.this).k().c("instanceCreate");
-                        if (it != null && !TextUtils.isEmpty(str)) {
+                        if (it != null && !StringUtils.isEmpty(str)) {
                             qpu k = c.d(c.this).k();
                             q.a((Object) str);
                             long parseLong = Long.parseLong(str);

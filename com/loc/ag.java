@@ -1,6 +1,6 @@
 package com.loc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: classes4.dex */
@@ -44,7 +44,7 @@ public final class ag {
 
     public static void a(String str, String str2) {
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 synchronized (l) {
                     if (l == null) {
                         l = new ConcurrentHashMap<>(8);

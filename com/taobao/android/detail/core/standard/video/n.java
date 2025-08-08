@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.standard.video;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.fastjson.JSONObject;
@@ -41,7 +41,7 @@ public class n {
         if (ipChange instanceof IpChange) {
             return (m) ipChange.ipc$dispatch("1afd986b", new Object[]{str, str2, str3, new Float(f), new Float(f2)});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         m.a aVar = new m.a();
@@ -73,7 +73,7 @@ public class n {
         Object obj2 = map.get("videoUrl");
         if (!(obj2 instanceof String)) {
             ema.a("video#urlIsNotString", "video url is not string", aqsVar);
-        } else if (TextUtils.isEmpty((String) obj2)) {
+        } else if (StringUtils.isEmpty((String) obj2)) {
             ema.a("video#urlIsEmpty", "video url is empty", aqsVar);
         }
         aVar.a(String.valueOf(obj)).b(String.valueOf(obj2)).c(String.valueOf(map.get("thumbnailUrl")));
@@ -106,7 +106,7 @@ public class n {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("76c0c6b4", new Object[]{view, str});
-        } else if (view == null || TextUtils.isEmpty(str)) {
+        } else if (view == null || StringUtils.isEmpty(str)) {
         } else {
             Object tag = view.getTag();
             if (!(tag instanceof JSONObject)) {

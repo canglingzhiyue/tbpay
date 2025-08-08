@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.TraficConsumeModel;
 import com.alipay.mobile.common.transport.context.TransportContext;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -19,7 +19,7 @@ public final class MonitorLogRecordUtil {
             return;
         }
         try {
-            if (!MiscUtils.isInAlipayClient(context) || TextUtils.isEmpty(DataItemsUtil.getDataItem2DataContainer(transportContext.getCurrentDataContainer(), "ERROR")) || transportContext.bizType != 1 || !MiscUtils.isExistMultiMainProcess(context)) {
+            if (!MiscUtils.isInAlipayClient(context) || StringUtils.isEmpty(DataItemsUtil.getDataItem2DataContainer(transportContext.getCurrentDataContainer(), "ERROR")) || transportContext.bizType != 1 || !MiscUtils.isExistMultiMainProcess(context)) {
                 return;
             }
             DataItemsUtil.putDataItem2DataContainer(transportContext.getCurrentDataContainer(), RPCDataItems.MULTI_MAIN, "T");

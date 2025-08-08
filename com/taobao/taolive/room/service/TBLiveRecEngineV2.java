@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import anet.channel.util.HttpConstant;
 import com.alibaba.fastjson.JSON;
@@ -620,7 +620,7 @@ public class TBLiveRecEngineV2 implements Handler.Callback, com.taobao.taolive.s
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (!as.l() && (arrayList = this.g) != null && arrayList.size() > 0 && !TextUtils.isEmpty(str)) {
+        if (!as.l() && (arrayList = this.g) != null && arrayList.size() > 0 && !StringUtils.isEmpty(str)) {
             for (int i = 0; i < this.g.size(); i++) {
                 RecModel recModel = (RecModel) this.g.get(i);
                 if (recModel != null && str.equals(recModel.liveId)) {
@@ -1274,9 +1274,9 @@ public class TBLiveRecEngineV2 implements Handler.Callback, com.taobao.taolive.s
                 if (((Map) netBaseOutDo.mo1437getData()).get(recModel.liveId) != null) {
                     CheckForeGroundResponseData checkForeGroundResponseData = (CheckForeGroundResponseData) ((Map) netBaseOutDo.mo1437getData()).get(recModel.liveId);
                     if (i4 == this.l) {
-                        z2 = TextUtils.equals(checkForeGroundResponseData.roomStatus, "1");
+                        z2 = StringUtils.equals(checkForeGroundResponseData.roomStatus, "1");
                     }
-                    if (!TextUtils.equals(checkForeGroundResponseData.roomStatus, "1")) {
+                    if (!StringUtils.equals(checkForeGroundResponseData.roomStatus, "1")) {
                         i3++;
                     } else if (i4 > this.l) {
                         z = true;
@@ -1291,7 +1291,7 @@ public class TBLiveRecEngineV2 implements Handler.Callback, com.taobao.taolive.s
                 int i5 = this.p;
                 while (i5 <= Math.min(i, this.g.size() - 1)) {
                     RecModel recModel2 = (RecModel) this.g.get(i5);
-                    if (((Map) netBaseOutDo.mo1437getData()).get(recModel2.liveId) != null && !TextUtils.equals(((CheckForeGroundResponseData) ((Map) netBaseOutDo.mo1437getData()).get(recModel2.liveId)).roomStatus, "1")) {
+                    if (((Map) netBaseOutDo.mo1437getData()).get(recModel2.liveId) != null && !StringUtils.equals(((CheckForeGroundResponseData) ((Map) netBaseOutDo.mo1437getData()).get(recModel2.liveId)).roomStatus, "1")) {
                         a(i5);
                         i5--;
                     }
@@ -1522,17 +1522,17 @@ public class TBLiveRecEngineV2 implements Handler.Callback, com.taobao.taolive.s
                 this.imageUrl = u.coverImg;
                 this.actionUrl = com.taobao.taolive.room.utils.c.d(u.nativeFeedDetailUrl, ag.SOURCE_UPDOWNSWITCH);
                 String c = poz.c(eVar);
-                if (!TextUtils.isEmpty(c)) {
+                if (!StringUtils.isEmpty(c)) {
                     Uri parse = Uri.parse(c);
-                    if (!TextUtils.isEmpty(parse.getQueryParameter("liveAdParams"))) {
+                    if (!StringUtils.isEmpty(parse.getQueryParameter("liveAdParams"))) {
                         this.actionUrl += "&liveAdParams=" + Uri.encode(queryParameter);
                     }
                     String queryParameter2 = parse.getQueryParameter(aw.PARAM_SJSD_ITEM_ID);
-                    if (!TextUtils.isEmpty(queryParameter2)) {
+                    if (!StringUtils.isEmpty(queryParameter2)) {
                         this.actionUrl += "&sjsdItemId=" + queryParameter2;
                     }
                     String queryParameter3 = parse.getQueryParameter(aw.PARAM_TIMEMOVING_ITEM_ID);
-                    if (!TextUtils.isEmpty(queryParameter3)) {
+                    if (!StringUtils.isEmpty(queryParameter3)) {
                         this.actionUrl += "&timeMovingItemId=" + queryParameter3;
                     }
                 }

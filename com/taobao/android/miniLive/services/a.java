@@ -1,7 +1,7 @@
 package com.taobao.android.miniLive.services;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -54,11 +54,11 @@ public class a {
             return;
         }
         String m = hud.m();
-        if (TextUtils.isEmpty(m)) {
+        if (StringUtils.isEmpty(m)) {
             return;
         }
         String str3 = "";
-        final String str4 = m + str + (TextUtils.equals("detail", str2) ? "?bizCode=TAOBAO_DETAIL" : TextUtils.equals("shop", str2) ? "?bizCode=SHOP" : str3);
+        final String str4 = m + str + (StringUtils.equals("detail", str2) ? "?bizCode=TAOBAO_DETAIL" : StringUtils.equals("shop", str2) ? "?bizCode=SHOP" : str3);
         b bVar = new b();
         bVar.a(new InterfaceC0554a() { // from class: com.taobao.android.miniLive.services.a.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -281,7 +281,7 @@ public class a {
             String a2 = null;
             inputStream = null;
             try {
-                if (TextUtils.equals(url.getProtocol(), "https")) {
+                if (StringUtils.equals(url.getProtocol(), "https")) {
                     httpURLConnection = (HttpsURLConnection) url.openConnection();
                 } else {
                     httpURLConnection = (HttpURLConnection) url.openConnection();

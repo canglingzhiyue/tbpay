@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -318,7 +318,7 @@ public class a implements bsh {
             ipChange.ipc$dispatch("615882cf", new Object[]{this, view, str, new Integer(i)});
         } else if (view == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     i = Color.parseColor(str);
                 } catch (IllegalArgumentException e) {

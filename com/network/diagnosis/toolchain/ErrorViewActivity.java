@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -88,7 +88,7 @@ public class ErrorViewActivity extends BaseActivity {
             return;
         }
         String queryParameter = data.getQueryParameter("data");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return;
         }
         try {
@@ -112,7 +112,7 @@ public class ErrorViewActivity extends BaseActivity {
             }
             tBErrorView.setNotShowNetworkDiagnosisView(z);
             String optString = jSONObject.optString("buttonText", b.a(R.string.taobao_app_1012_1_14015));
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 this.f8070a.setButton(TBErrorView.ButtonType.BUTTON_LEFT, optString, new View.OnClickListener() { // from class: com.network.diagnosis.toolchain.ErrorViewActivity.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -134,7 +134,7 @@ public class ErrorViewActivity extends BaseActivity {
                 return;
             }
             String optString2 = jSONObject.optString("status", null);
-            if (!TextUtils.isEmpty(optString2)) {
+            if (!StringUtils.isEmpty(optString2)) {
                 TBErrorViewWidget.Status status = TBErrorViewWidget.Status.STATUS_SYSTEM_ERROR;
                 try {
                     valueOf = TBErrorViewWidget.Status.valueOf(optString2.toUpperCase());

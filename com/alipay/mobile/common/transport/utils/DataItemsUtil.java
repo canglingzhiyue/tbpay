@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.monitor.DataContainer;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -12,7 +12,7 @@ public class DataItemsUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2dd8d18d", new Object[]{dataContainer, str, str2});
-        } else if (dataContainer == null || !TextUtils.isEmpty(dataContainer.getDataItem(str))) {
+        } else if (dataContainer == null || !StringUtils.isEmpty(dataContainer.getDataItem(str))) {
         } else {
             dataContainer.putDataItem(str, str2);
         }

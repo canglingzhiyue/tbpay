@@ -4,7 +4,7 @@ import android.taobao.util.k;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class SaveScancodeHistory extends e {
             return;
         }
         cot.c(oxy.TAG, "save Barcode History begin! " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         try {
@@ -88,7 +88,7 @@ public class SaveScancodeHistory extends e {
         product.setType(i);
         product.setPic(str3);
         product.setTitle(str2);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             product.setPrice("￥" + str4);
         }
         scanDo.setProduct(product);

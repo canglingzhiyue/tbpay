@@ -1,6 +1,6 @@
 package com.huawei.hms.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.value.CountValue;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.huawei.hms.support.log.HMSLog;
@@ -90,7 +90,7 @@ public class m {
         if (jSONObject.has("ap")) {
             String string = jSONObject.getString("ap");
             StringBuilder sb = new StringBuilder();
-            if (TextUtils.isEmpty(string) || string.length() >= 48) {
+            if (StringUtils.isEmpty(string) || string.length() >= 48) {
                 this.d = string.substring(0, 48);
                 return;
             }
@@ -379,7 +379,7 @@ public class m {
     public boolean z() {
         String exc;
         try {
-            if (TextUtils.isEmpty(this.r)) {
+            if (StringUtils.isEmpty(this.r)) {
                 HMSLog.d("PushSelfShowLog", "msg is null");
                 return false;
             }

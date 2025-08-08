@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -48,7 +48,7 @@ public class kvc extends h {
                 return;
             }
             for (SectionModel sectionModel : b.g(ksk.NEW_FACE_PARENT.f30287a)) {
-                if (TextUtils.equals(str, sectionModel.getString("sectionBizCode"))) {
+                if (StringUtils.equals(str, sectionModel.getString("sectionBizCode"))) {
                     sectionModel.put(str2, objArr[2]);
                 }
             }

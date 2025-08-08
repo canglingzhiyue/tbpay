@@ -3,7 +3,7 @@ package com.taobao.android.layoutmanager.message;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.core.IObserver;
@@ -59,7 +59,7 @@ public class WVSubscribePlugin extends e {
             String optString = jSONObject.optString("activityType");
             String optString2 = jSONObject.optString("subFrom");
             String optString3 = jSONObject.optString("contentId");
-            if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2) || TextUtils.isEmpty(optString3)) {
+            if (StringUtils.isEmpty(optString) || StringUtils.isEmpty(optString2) || StringUtils.isEmpty(optString3)) {
                 wVCallBackContext.error();
                 return false;
             }

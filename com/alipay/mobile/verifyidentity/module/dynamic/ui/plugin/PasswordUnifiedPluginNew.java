@@ -11,7 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -440,10 +440,10 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         });
         String actConf = getActConf(BaseFBPlugin.ACT_CONF.pwdInputBtn);
         String actConf2 = getActConf(BaseFBPlugin.ACT_CONF.pwdPlaceHolder);
-        if (!TextUtils.isEmpty(actConf)) {
+        if (!StringUtils.isEmpty(actConf)) {
             this.mSafeInputContext.setOkButtonText(actConf);
         }
-        if (TextUtils.isEmpty(actConf2)) {
+        if (StringUtils.isEmpty(actConf2)) {
             return;
         }
         this.m.setHint(actConf2);
@@ -503,7 +503,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
             hashMap.put("code", str2);
             hashMap.put("source", str3);
             hashMap.put("ui_type", str4);
-            if (!TextUtils.isEmpty(this.i)) {
+            if (!StringUtils.isEmpty(this.i)) {
                 hashMap.put("plusPwdType", "pwd");
             } else {
                 hashMap.put("plusPwdType", "plus_pwd");
@@ -525,16 +525,16 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
             HashMap hashMap = new HashMap();
             hashMap.put("code", str2);
             hashMap.put("source", str3);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 hashMap.put("from", str4);
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 hashMap.put("sourceToPwd", str5);
             }
             if (z) {
                 hashMap.put("isNewMUI", "true");
             }
-            if (this.f != null && !TextUtils.isEmpty(this.f.decisionToPwd)) {
+            if (this.f != null && !StringUtils.isEmpty(this.f.decisionToPwd)) {
                 hashMap.put("plusPwdType", "pwd");
             } else {
                 hashMap.put("plusPwdType", "plus_pwd");
@@ -605,7 +605,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.equals(str, "src")) {
+        if (StringUtils.equals(str, "src")) {
             JSONObject jSONObject = null;
             try {
                 jSONObject = JSON.parseObject(str2);
@@ -614,7 +614,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
             }
             if (jSONObject != null && "pageEvent".equalsIgnoreCase(jSONObject.getString("action"))) {
                 VerifyLogCat.i(b, "receive pageEvent");
-                if (!TextUtils.isEmpty(this.top_to_product)) {
+                if (!StringUtils.isEmpty(this.top_to_product)) {
                     updateVerifyStatusNew("end");
                     this.g.changeToBack();
                     clear();
@@ -653,7 +653,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b23670e3", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.n)) {
+        if (StringUtils.isEmpty(this.n)) {
             this.m.setSingleLine();
             this.m.setHorizontallyScrolling(true);
             setSafeKeyboardSoftInput(this.m);
@@ -669,7 +669,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         Editable editableText = this.m.getEditableText();
         if (editableText != null) {
             String obj = editableText.toString();
-            if (!TextUtils.isEmpty(obj)) {
+            if (!StringUtils.isEmpty(obj)) {
                 this.m.setSelection(obj.length());
             }
         }
@@ -860,7 +860,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
                 }
             }
         });
-        if (TextUtils.isEmpty(this.mTimestamp)) {
+        if (StringUtils.isEmpty(this.mTimestamp)) {
             this.mTimestamp = "";
         }
         this.predata = this.f.predata;
@@ -870,9 +870,9 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         this.goOtherVerifyProduct = this.f.forgot2Verify;
         this.otherText = this.f.forgot2VerifyText;
         String actConf = getActConf(BaseFBPlugin.ACT_CONF.pwdTip);
-        if (TextUtils.isEmpty(actConf)) {
+        if (StringUtils.isEmpty(actConf)) {
             actConf = getActConf(BaseFBPlugin.ACT_CONF.costTip);
-            if (TextUtils.isEmpty(actConf)) {
+            if (StringUtils.isEmpty(actConf)) {
                 actConf = "";
             }
         }
@@ -896,17 +896,17 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         initPwdInput();
         String str6 = this.f.keyHeadline;
         this.content_title = (TextView) this.k.findViewById(R.id.pwd_title);
-        if (TextUtils.isEmpty(str6)) {
+        if (StringUtils.isEmpty(str6)) {
             str6 = this.c.getResources().getString(R.string.pwd_input_alert_please);
         }
         this.content_title.setText(str6);
         this.content_desc = (TextView) this.k.findViewById(R.id.pwd_desc);
-        if (!TextUtils.isEmpty(this.pwdTopTip)) {
+        if (!StringUtils.isEmpty(this.pwdTopTip)) {
             this.content_desc.setTextColor(-65536);
             this.content_desc.setText(this.pwdTopTip);
             this.content_desc.setVisibility(0);
             this.content_title.setVisibility(8);
-        } else if (!TextUtils.isEmpty(this.i) && !"Y".equalsIgnoreCase(this.f.hideDecisionTip) && !this.f.decisionToPwdFromUsePwd) {
+        } else if (!StringUtils.isEmpty(this.i) && !"Y".equalsIgnoreCase(this.f.hideDecisionTip) && !this.f.decisionToPwdFromUsePwd) {
             this.content_desc.setText(this.i);
             this.content_desc.setVisibility(0);
             this.content_desc.setTextColor(Color.parseColor("#999999"));
@@ -945,9 +945,9 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         } else if ("Y".equalsIgnoreCase(this.hind_other)) {
             this.goBackPwd.setVisibility(4);
         } else {
-            if (TextUtils.isEmpty(this.showFindPwd) || "Y".equalsIgnoreCase(this.showFindPwd)) {
+            if (StringUtils.isEmpty(this.showFindPwd) || "Y".equalsIgnoreCase(this.showFindPwd)) {
                 this.goBackPwd.setVisibility(0);
-                if (!TextUtils.isEmpty(this.findPwdTxt)) {
+                if (!StringUtils.isEmpty(this.findPwdTxt)) {
                     this.goBackPwd.setText(this.findPwdTxt);
                 } else {
                     this.goBackPwd.setText(R.string.pwd_forget_in_layout);
@@ -973,13 +973,13 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
             });
         }
         if (this.hasOthers) {
-            if (!TextUtils.isEmpty(this.top_to_product)) {
+            if (!StringUtils.isEmpty(this.top_to_product)) {
                 a("");
             } else {
                 String str7 = this.f.switchOther;
-                if (TextUtils.isEmpty(str7)) {
+                if (StringUtils.isEmpty(str7)) {
                     String str8 = this.f.other;
-                    if (TextUtils.isEmpty(str8)) {
+                    if (StringUtils.isEmpty(str8)) {
                         str8 = this.c.getResources().getString(R.string.pwd_other_way);
                     }
                     a(str8);
@@ -1003,11 +1003,11 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         String str9 = this.f.pwdTopTip;
         String actConf2 = getActConf(BaseFBPlugin.ACT_CONF.pwdInputTip);
         String actConf3 = getActConf(BaseFBPlugin.ACT_CONF.costTip);
-        if (TextUtils.isEmpty(str9)) {
-            if (!TextUtils.isEmpty(actConf2)) {
+        if (StringUtils.isEmpty(str9)) {
+            if (!StringUtils.isEmpty(actConf2)) {
                 str9 = actConf2;
             } else {
-                str9 = !TextUtils.isEmpty(actConf3) ? actConf3 : "";
+                str9 = !StringUtils.isEmpty(actConf3) ? actConf3 : "";
             }
         }
         jSONObject.put("tip", (Object) str9);
@@ -1049,14 +1049,14 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         }
         String str2 = b;
         VerifyLogCat.i(str2, "initOtherProduct product: " + str);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.isIntellDecison = false;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("actionText", (Object) str);
             jSONObject.put("callBackType", "1");
             jSONObject.put("hideIfClick", (Object) true);
             doCommonAction(BaseFBPlugin.PLUGIN_ACTION.viShowNavRightView, jSONObject);
-        } else if (TextUtils.isEmpty(this.top_to_product)) {
+        } else if (StringUtils.isEmpty(this.top_to_product)) {
         } else {
             this.isIntellDecison = true;
             JSONObject jSONObject2 = new JSONObject();
@@ -1162,7 +1162,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         } else if (this.d == null || this.c == null || getBodyViewOpacity() <= 0.1d || !this.d.isOnloadFinish()) {
         } else {
             if (z && view.isEnabled()) {
-                if (TextUtils.equals(this.n, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
+                if (StringUtils.equals(this.n, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
                     EditText editText = this.m;
                     editText.setSelection(editText.getEditableText().length());
                 }
@@ -1307,7 +1307,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cba25bdf", new Object[]{this, mICRpcResponse, hashMap})).booleanValue();
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return false;
         }
         JSONObject jSONObject = null;
@@ -1326,7 +1326,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         }
         String str2 = b;
         VerifyLogCat.i(str2, "showFindPwd: " + string);
-        return TextUtils.isEmpty(string) || "Y".equalsIgnoreCase(string);
+        return StringUtils.isEmpty(string) || "Y".equalsIgnoreCase(string);
     }
 
     public String getOtherPayContent() {
@@ -1334,7 +1334,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a421102e", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.otherText)) {
+        if (StringUtils.isEmpty(this.otherText)) {
             return this.k.getResources().getString(R.string.other_way_to_pwd);
         }
         return this.otherText;
@@ -1345,7 +1345,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("28030f29", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.goOtherVerifyProduct)) {
+        if (StringUtils.isEmpty(this.goOtherVerifyProduct)) {
             this.goOtherVerifyProduct = "N";
         }
         return this.goOtherVerifyProduct;
@@ -1356,7 +1356,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("97df53ab", new Object[]{this, mICRpcResponse});
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return getOtherPayContent();
         }
         JSONObject jSONObject = null;
@@ -1370,7 +1370,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
             return getOtherPayContent();
         }
         this.otherProductForDialog = jSONObject.getString("otherVerifyPayText");
-        if (!TextUtils.isEmpty(this.otherProductForDialog)) {
+        if (!StringUtils.isEmpty(this.otherProductForDialog)) {
             return this.otherProductForDialog;
         }
         return getOtherPayContent();
@@ -1402,7 +1402,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5306147b", new Object[]{passwordUnifiedPluginNew, mICRpcResponse});
-        } else if (TextUtils.isEmpty(mICRpcResponse.data) || !mICRpcResponse.data.contains("bicAsyncData")) {
+        } else if (StringUtils.isEmpty(mICRpcResponse.data) || !mICRpcResponse.data.contains("bicAsyncData")) {
         } else {
             try {
                 JSONObject parseObject = JSON.parseObject(mICRpcResponse.data);
@@ -1425,7 +1425,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
         }
         String str2 = b;
         VerifyLogCat.i(str2, "updatePubKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i(b, "服务端没有提供新的公钥，不更新");
             return;
         }
@@ -1478,7 +1478,7 @@ public class PasswordUnifiedPluginNew extends BaseFBPlugin implements View.OnCli
             if (passwordUnifiedPluginNew.showFindPwdByResponse(mICRpcResponse, hashMap)) {
                 String str = hashMap.get(PayPwdModule.FIND_PWD_TXT);
                 passwordUnifiedPluginNew.goBackPwd.setVisibility(0);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     passwordUnifiedPluginNew.goBackPwd.setText(str);
                 } else {
                     passwordUnifiedPluginNew.goBackPwd.setText(R.string.pwd_forget_in_layout);

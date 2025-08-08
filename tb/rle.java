@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.c;
 import com.taobao.mrt.task.desc.MRTPythonLibDescription;
@@ -48,9 +48,9 @@ public class rle implements d {
         LogUtil.d(TAG, "DAI onTask params: " + map);
         HashMap hashMap = new HashMap();
         String str = map.get("__action__");
-        if (TextUtils.equals("on_walle_config_update", str)) {
+        if (StringUtils.equals("on_walle_config_update", str)) {
             a.a().b();
-        } else if (TextUtils.equals("register_python_lib", str)) {
+        } else if (StringUtils.equals("register_python_lib", str)) {
             String str2 = map.get("name");
             MRTPythonLibDescription mRTPythonLibDescription = new MRTPythonLibDescription(str2, map.get("mmd5"), map.get("furl"), map.get("fmd5"), null);
             if (c.a()) {

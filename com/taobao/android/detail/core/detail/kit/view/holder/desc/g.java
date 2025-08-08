@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -79,7 +79,7 @@ public class g extends b<com.taobao.android.detail.core.model.viewmodel.desc.h> 
         }
         String str = hVar.f9753a;
         final String str2 = hVar.b;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.l.setText(str);
             this.l.setVisibility(0);
         }

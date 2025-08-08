@@ -1,6 +1,6 @@
 package com.vivo.push.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.riy;
 
 /* loaded from: classes9.dex */
@@ -15,7 +15,7 @@ public final class b {
     private boolean f = false;
 
     public b(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f24212a = str;
             return;
         }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.context.MetricContext;
@@ -120,7 +120,7 @@ public class mle extends b {
         HashMap hashMap2 = new HashMap();
         hashMap.put(c.SWITCH_UPLOAD, a("upload_sample", map));
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+            if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                 if ("on".equals(entry.getValue())) {
                     hashMap.put(entry.getKey(), true);
                     TLog.loge("ConfigEventSource", entry.getKey() + "=true");

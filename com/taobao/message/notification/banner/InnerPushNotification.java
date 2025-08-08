@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.PopupWindow;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -276,13 +276,13 @@ public class InnerPushNotification {
         sb3.append(str);
         String sb4 = sb3.toString();
         String config = OrangeConfig.getInstance().getConfig("mpm_business_switch", sb2, obj);
-        if (!TextUtils.isEmpty(config) && activity != null && config.contains(activity.getClass().getName())) {
+        if (!StringUtils.isEmpty(config) && activity != null && config.contains(activity.getClass().getName())) {
             TLog.loge(TAG, sb2 + " orange activity exclude is return ");
             this.mAdapter.onError(-2);
             return true;
         }
         String config2 = OrangeConfig.getInstance().getConfig("mpm_business_switch", sb4, "");
-        if (TextUtils.isEmpty(config2) || fragment == null || !config2.contains(fragment.getClass().getName())) {
+        if (StringUtils.isEmpty(config2) || fragment == null || !config2.contains(fragment.getClass().getName())) {
             return false;
         }
         TLog.loge(TAG, sb4 + " orange fragment exclude is return ");

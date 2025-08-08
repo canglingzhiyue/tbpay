@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
@@ -217,7 +217,7 @@ public final class h {
         TUrlImageView tUrlImageView = (TUrlImageView) inflate.findViewById(R.id.tip_gif);
         if (tUrlImageView != null) {
             tUrlImageView.setSkipAutoSize(true);
-            if (!TextUtils.isEmpty(pubRevisitGuideModelNew.getGuideImg())) {
+            if (!StringUtils.isEmpty(pubRevisitGuideModelNew.getGuideImg())) {
                 d2 = pubRevisitGuideModelNew.getGuideImg();
             } else {
                 d2 = n.d();
@@ -228,12 +228,12 @@ public final class h {
         q.b(tIconFontTextView, "this");
         tIconFontTextView.setVisibility(8);
         TextView textView = (TextView) inflate.findViewById(R.id.favor_tip);
-        if (!TextUtils.isEmpty(pubRevisitGuideModelNew.getMainText())) {
+        if (!StringUtils.isEmpty(pubRevisitGuideModelNew.getMainText())) {
             q.b(textView, "this");
             textView.setText(pubRevisitGuideModelNew.getMainText());
         }
         TextView textView2 = (TextView) inflate.findViewById(R.id.favor_tip_subtitle);
-        if (!TextUtils.isEmpty(pubRevisitGuideModelNew.getSubText())) {
+        if (!StringUtils.isEmpty(pubRevisitGuideModelNew.getSubText())) {
             q.b(textView2, "this");
             textView2.setText(pubRevisitGuideModelNew.getSubText());
             textView2.setVisibility(0);
@@ -242,7 +242,7 @@ public final class h {
             textView2.setVisibility(8);
         }
         TextView textView3 = (TextView) inflate.findViewById(R.id.guide_button);
-        if (!TextUtils.isEmpty(pubRevisitGuideModelNew.getActionText())) {
+        if (!StringUtils.isEmpty(pubRevisitGuideModelNew.getActionText())) {
             textView3.setVisibility(0);
             textView3.setText(pubRevisitGuideModelNew.getActionText());
             textView3.setOnClickListener(new c(pubRevisitGuideModelNew, aVar));

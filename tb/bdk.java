@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.trade.presenter.b;
 import com.alibaba.android.ultron.vfw.viewholder.d;
 import com.alibaba.fastjson.JSONObject;
@@ -37,7 +37,7 @@ public class bdk extends fuf {
                 str = otherParams.getString("calculatorTips");
             }
             Long l = (Long) bei.a((IDMComponent) dMComponent, (Class<Object>) Long.class, "quantity");
-            if ((!TextUtils.isEmpty(str) || !TextUtils.isEmpty(string)) && l.longValue() > 0 && !z) {
+            if ((!StringUtils.isEmpty(str) || !StringUtils.isEmpty(string)) && l.longValue() > 0 && !z) {
                 return true;
             }
         } catch (Exception unused) {

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidException;
 import com.huawei.hms.support.log.HMSLog;
 import com.huawei.hms.utils.Checker;
@@ -23,7 +23,7 @@ public class NotInstalledHmsDialogHelper {
                 str2 = "In getAppName, Failed to get 'PackageManager' instance.";
             } else {
                 try {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = context.getPackageName();
                     }
                     CharSequence applicationLabel = packageManager.getApplicationLabel(packageManager.getApplicationInfo(str, 128));

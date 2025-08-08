@@ -1,7 +1,7 @@
 package com.taobao.taolive.sdk.business;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -108,10 +108,10 @@ public class c {
                     if (dVar2 != null) {
                         dVar2.onSuccess(i, netResponse, netBaseOutDo, c.a(c.this));
                     }
-                    if (fetchCommentResponseData != null && !TextUtils.isEmpty(fetchCommentResponseData.paginationContext)) {
+                    if (fetchCommentResponseData != null && !StringUtils.isEmpty(fetchCommentResponseData.paginationContext)) {
                         c.a(c.this, fetchCommentResponseData.paginationContext);
                     }
-                    if (!TextUtils.isEmpty(c.b(c.this)) || fetchCommentResponseData == null || fetchCommentResponseData.comments == null || fetchCommentResponseData.comments.isEmpty()) {
+                    if (!StringUtils.isEmpty(c.b(c.this)) || fetchCommentResponseData == null || fetchCommentResponseData.comments == null || fetchCommentResponseData.comments.isEmpty()) {
                         return;
                     }
                     c.b(c.this, fetchCommentResponseData.comments.get(0).paginationContext);
@@ -184,7 +184,7 @@ public class c {
                     } else if (!(obj instanceof b.a)) {
                     } else {
                         try {
-                            if (!TextUtils.isEmpty(((b.a) obj).f21797a)) {
+                            if (!StringUtils.isEmpty(((b.a) obj).f21797a)) {
                                 FetchCommentResponse fetchCommentResponse = new FetchCommentResponse();
                                 fetchCommentResponse.setData((FetchCommentResponseData) JSON.parseObject(String.valueOf(((b.a) obj).f21797a), FetchCommentResponseData.class));
                                 dVar.onSuccess(1, null, fetchCommentResponse, null);
@@ -293,7 +293,7 @@ public class c {
             if (this.b == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(aVar.f21797a)) {
+            if (!StringUtils.isEmpty(aVar.f21797a)) {
                 this.b.a(aVar);
             } else {
                 this.b.b(aVar);
@@ -335,7 +335,7 @@ public class c {
                     httpsURLConnection.setReadTimeout(3000);
                     httpsURLConnection.setConnectTimeout(3000);
                     httpsURLConnection.setRequestMethod("GET");
-                    if (!TextUtils.isEmpty(this.d)) {
+                    if (!StringUtils.isEmpty(this.d)) {
                         httpsURLConnection.setRequestProperty("anchorSideKey", this.d);
                     }
                     httpsURLConnection.setDoInput(true);

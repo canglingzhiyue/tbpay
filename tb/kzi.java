@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.expression.event.DXEvent;
@@ -31,7 +31,7 @@ public class kzi extends h {
             String str = null;
             String obj = objArr[0] == null ? null : objArr[0].toString();
             String obj2 = objArr[1] == null ? null : objArr[1].toString();
-            if (TextUtils.isEmpty(obj) || TextUtils.isEmpty(obj2)) {
+            if (StringUtils.isEmpty(obj) || StringUtils.isEmpty(obj2)) {
                 c.a("SetCardModelExt ", "args key or sectionBizCode is null");
                 return;
             }

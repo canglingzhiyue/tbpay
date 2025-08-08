@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.HmsInstanceId;
 import com.huawei.hms.aaid.entity.DeleteTokenReq;
 import com.huawei.hms.aaid.entity.TokenReq;
@@ -32,13 +32,13 @@ public class b {
         deleteTokenReq.setProjectId(str2);
         deleteTokenReq.setPkgName(context.getPackageName());
         deleteTokenReq.setSubjectId(str3);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             deleteTokenReq.setAppId(Util.getAppId(context));
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             deleteTokenReq.setScope(HmsMessaging.DEFAULT_TOKEN_SCOPE);
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             deleteTokenReq.setProjectId(d(context));
         }
         return deleteTokenReq;
@@ -72,13 +72,13 @@ public class b {
         tokenReq.setProjectId(str2);
         tokenReq.setSubjectId(str3);
         tokenReq.setMultiSender(false);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             tokenReq.setAppId(Util.getAppId(context));
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             tokenReq.setProjectId(d(context));
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             tokenReq.setScope(HmsMessaging.DEFAULT_TOKEN_SCOPE);
         }
         i a2 = i.a(context);
@@ -115,7 +115,7 @@ public class b {
         try {
             ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128);
             if (applicationInfo != null && (bundle = applicationInfo.metaData) != null) {
-                if (!TextUtils.isEmpty(bundle.getString("com.huawei.hms.client.service.name:base"))) {
+                if (!StringUtils.isEmpty(bundle.getString("com.huawei.hms.client.service.name:base"))) {
                     return true;
                 }
             }

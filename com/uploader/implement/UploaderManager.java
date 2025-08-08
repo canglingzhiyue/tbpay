@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.SparseArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -871,7 +871,7 @@ public class UploaderManager implements g, rnx {
             return false;
         }
         String str = ((com.uploader.export.a) iVar).f24056a.g;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         for (int i = 0; i < this.f.size(); i++) {

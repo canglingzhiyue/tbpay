@@ -1,7 +1,7 @@
 package com.alipay.mobile.security.zim.biz;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.mobile.security.bio.common.record.MetaRecord;
 import com.alipay.mobile.security.bio.log.BehaviourIdEnum;
@@ -109,7 +109,7 @@ public class RecordProcessor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3076073f", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.l = str;
         }
@@ -134,7 +134,7 @@ public class RecordProcessor {
         this.i.put("zimId", str);
         ApSecurityService apSecurityService = (ApSecurityService) currentInstance.getBioService(ApSecurityService.class);
         String apDidToken = apSecurityService != null ? apSecurityService.getApDidToken() : "";
-        if (TextUtils.isEmpty(apDidToken)) {
+        if (StringUtils.isEmpty(apDidToken)) {
             apDidToken = ApSecurityService.getStaticApDidToken();
         }
         this.i.put(rrv.APDIDTOKEN, apDidToken);

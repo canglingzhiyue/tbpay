@@ -1,7 +1,7 @@
 package com.taobao.aranger.utils;
 
 import android.content.ComponentName;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.aranger.annotation.type.ServiceName;
 import com.taobao.aranger.core.ipc.provider.ARangerProvider;
@@ -142,11 +142,11 @@ public final class TypeUtils {
         if (!cls.isInterface()) {
             throw new IPCException(20, "only interfaces can be passed as the parameters.");
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         ServiceName serviceName = (ServiceName) cls.getAnnotation(ServiceName.class);
-        if (serviceName == null || TextUtils.isEmpty(serviceName.value())) {
+        if (serviceName == null || StringUtils.isEmpty(serviceName.value())) {
             throw new IPCException(20, "the interfaces must have ServiceName annotation.");
         }
         return serviceName.value();
@@ -156,7 +156,7 @@ public final class TypeUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("26bfdd07", new Object[]{componentName});
-        } else if (TextUtils.isEmpty(componentName.getClassName()) || TextUtils.isEmpty(componentName.getPackageName())) {
+        } else if (StringUtils.isEmpty(componentName.getClassName()) || StringUtils.isEmpty(componentName.getPackageName())) {
             throw new IPCException(28, "the package name or provider class name in component is null!");
         } else {
             if (!jzv.a().getPackageName().equals(componentName.getPackageName())) {

@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -21,7 +21,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b8e38da6", new Object[]{jSONObject, str, new Long(j)})).longValue();
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return j;
         }
         try {
@@ -36,7 +36,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b8e389e4", new Object[]{jSONObject, str, new Integer(i)})).intValue();
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return i;
         }
         try {
@@ -51,7 +51,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b8e37e9e", new Object[]{jSONObject, str, new Float(f)})).floatValue();
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return f;
         }
         try {
@@ -66,7 +66,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b8e3c9c6", new Object[]{jSONObject, str, new Boolean(z)})).booleanValue();
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return z;
         }
         try {
@@ -81,7 +81,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (Boolean) ipChange.ipc$dispatch("a6d93f78", new Object[]{jSONObject, str, bool});
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return bool;
         }
         try {
@@ -96,12 +96,12 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7f883384", new Object[]{jSONObject, str, str2});
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return str2;
         }
         try {
             String string = jSONObject.getString(str);
-            return TextUtils.isEmpty(string) ? str2 : string;
+            return StringUtils.isEmpty(string) ? str2 : string;
         } catch (Exception unused) {
             return str2;
         }
@@ -112,7 +112,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (JSONArray) ipChange.ipc$dispatch("9bc1dcac", new Object[]{jSONObject, str});
         }
-        if (jSONObject != null && !TextUtils.isEmpty(str)) {
+        if (jSONObject != null && !StringUtils.isEmpty(str)) {
             Object obj = jSONObject.get(str);
             if (obj instanceof JSONArray) {
                 return (JSONArray) obj;
@@ -126,7 +126,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("7af4d51", new Object[]{jSONObject, str});
         }
-        if (jSONObject != null && !TextUtils.isEmpty(str)) {
+        if (jSONObject != null && !StringUtils.isEmpty(str)) {
             Object obj = jSONObject.get(str);
             if (obj instanceof JSONObject) {
                 return (JSONObject) obj;
@@ -145,7 +145,7 @@ public class a {
             for (Map.Entry<String, Object> entry : jSONObject.getInnerMap().entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     hashMap.put(key, value.toString());
                 }
             }
@@ -163,7 +163,7 @@ public class a {
             for (Map.Entry<String, Object> entry : jSONObject.getInnerMap().entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     hashMap.put(key, value);
                 }
             }

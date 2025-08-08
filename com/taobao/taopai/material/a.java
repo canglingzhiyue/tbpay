@@ -2,7 +2,7 @@ package com.taobao.taopai.material;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
@@ -232,14 +232,14 @@ public class a {
             return;
         }
         qbs.a(context);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             f22061a = str;
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             f22061a = str2;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             b = str2;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             b = str;
         }
@@ -899,7 +899,7 @@ public class a {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(ResourceJniInteract.getResourceFromCacheWithIdOrTag(str));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(ResourceJniInteract.getResourceFromCacheWithIdOrTag(str));
     }
 
     public static void a(String str, qbt<String> qbtVar) {

@@ -12,7 +12,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.View;
 import android.webkit.ValueCallback;
@@ -438,7 +438,7 @@ public class TriverRtcRoomView extends BaseEmbedView implements b, Serializable 
         }
         String str2 = TAG;
         TrtcLog.b(str2, "RecvMsg <<< " + str + " | data: " + jSONObject.toJSONString());
-        if (!this.mRtcRoomRunning.get() || TextUtils.isEmpty(str)) {
+        if (!this.mRtcRoomRunning.get() || StringUtils.isEmpty(str)) {
             TrtcLog.a(TAG, "ignore this msg");
             return;
         }
@@ -690,7 +690,7 @@ public class TriverRtcRoomView extends BaseEmbedView implements b, Serializable 
             this.mRoomParams.j.g = com.taobao.trtc.utils.a.a(jSONObject2, "borderWidth", 0);
             this.mRoomParams.j.i = com.taobao.trtc.utils.a.a(jSONObject2, "closeDiameter", dip2px(this.mContextRef.get(), 18.0f));
             this.mRoomParams.j.j = com.taobao.trtc.utils.a.a(jSONObject2, "closeMargin", dip2px(this.mContextRef.get(), 6.0f));
-            if (TextUtils.isEmpty(this.mRoomParams.d)) {
+            if (StringUtils.isEmpty(this.mRoomParams.d)) {
                 this.mRoomParams.d = ((RVAccountService) RVProxy.get(RVAccountService.class)).getUserId(null);
                 String str2 = TAG;
                 TrtcLog.d(str2, "get user id by RVProxy: " + this.mRoomParams.d);
@@ -705,7 +705,7 @@ public class TriverRtcRoomView extends BaseEmbedView implements b, Serializable 
 
     private boolean checkRtcRoomParams(d dVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("19faa322", new Object[]{this, dVar})).booleanValue() : !TextUtils.isEmpty(dVar.f23167a) && !TextUtils.isEmpty(dVar.d) && !TextUtils.isEmpty(dVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("19faa322", new Object[]{this, dVar})).booleanValue() : !StringUtils.isEmpty(dVar.f23167a) && !StringUtils.isEmpty(dVar.d) && !StringUtils.isEmpty(dVar.b);
     }
 
     private boolean checkPermission() {

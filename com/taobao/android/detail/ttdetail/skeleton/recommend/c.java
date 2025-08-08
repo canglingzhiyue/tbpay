@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.recommend;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -47,7 +47,7 @@ public class c {
                 for (int i2 = 0; i2 < size2; i2++) {
                     final String string = jSONObject2.getString("name");
                     final String string2 = jSONObject2.getString("containerType");
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                         jSONObject.put(jSONArray2.getString(i2), (Object) new JSONObject() { // from class: com.taobao.android.detail.ttdetail.skeleton.recommend.RecommendDataEngine$1
                             {
                                 put("name", (Object) string);
@@ -87,7 +87,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (O) ipChange.ipc$dispatch("abaf35f4", new Object[]{this, str, jSONObject});
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null && (ezaVar = this.c.get(str)) != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null && (ezaVar = this.c.get(str)) != null) {
             return (O) ezaVar.a(jSONObject);
         }
         return null;

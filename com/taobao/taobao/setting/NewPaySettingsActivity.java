@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.TextView;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -226,7 +226,7 @@ public class NewPaySettingsActivity extends BaseActivity {
         this.f21290a = (TRecyclerView) findViewById(R.id.recycle_pay_setting_page_main_items);
         this.d = (TextView) findViewById(R.id.tv_pay_setting_desc);
         this.f21290a.setLayoutManager(new LinearLayoutManager(this, 1, false));
-        if (TextUtils.isEmpty("") || (textView = this.d) == null) {
+        if (StringUtils.isEmpty("") || (textView = this.d) == null) {
             return;
         }
         textView.setText("");
@@ -345,7 +345,7 @@ public class NewPaySettingsActivity extends BaseActivity {
             }
         } catch (Exception unused) {
         }
-        if (!TextUtils.isEmpty(a2) && !z) {
+        if (!StringUtils.isEmpty(a2) && !z) {
             Nav.from(this).toUri(a2);
         } else {
             a();

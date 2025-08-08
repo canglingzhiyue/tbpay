@@ -1,7 +1,7 @@
 package com.alipay.android.msp.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.cctemplate.utils.MD5;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -92,7 +92,7 @@ public class ApLinkTokenUtils {
         if (mspPaySession != null && mspPaySession.getLocalInvokeInfo() != null) {
             hashMap.putAll(mspPaySession.getLocalInvokeInfo());
         }
-        if (mspPaySession != null && !TextUtils.isEmpty(mspPaySession.getApLinkToken())) {
+        if (mspPaySession != null && !StringUtils.isEmpty(mspPaySession.getApLinkToken())) {
             hashMap.put("ap_link_token", mspPaySession.getApLinkToken());
         }
         return hashMap;
@@ -150,7 +150,7 @@ public class ApLinkTokenUtils {
         }
         map.put("orderStr", mspTradeContext.getEncodeOrderInfo());
         String apLinkToken = mspTradeContext.getApLinkToken();
-        if (!TextUtils.isEmpty(apLinkToken)) {
+        if (!StringUtils.isEmpty(apLinkToken)) {
             map.put("ap_link_token", apLinkToken);
         }
         MspExtSceneManager mspExtSceneManager = MspExtSceneManager.getInstance(context);
@@ -183,10 +183,10 @@ public class ApLinkTokenUtils {
         }
         HashMap hashMap = new HashMap();
         String encodeOrderInfo = mspTradeContext.getEncodeOrderInfo();
-        if (!TextUtils.isEmpty(encodeOrderInfo)) {
+        if (!StringUtils.isEmpty(encodeOrderInfo)) {
             hashMap.put("orderStr", encodeOrderInfo);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("clientBizType", str);
         }
         hashMap.put("extInfo", URLEncoder.encode(((JSONObject) JSONObject.toJSON(mspTradeContext.getExtInfoModel())).toJSONString(), "utf8"));
@@ -231,7 +231,7 @@ public class ApLinkTokenUtils {
         String str = "";
         try {
             String apLinkToken = mspTradeContext.getApLinkToken();
-            if (TextUtils.isEmpty(apLinkToken)) {
+            if (StringUtils.isEmpty(apLinkToken)) {
                 return str;
             }
             try {
@@ -289,7 +289,7 @@ public class ApLinkTokenUtils {
         if (map != null) {
             hashMap.putAll(map);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("ap_link_token", str);
         }
         SpmTracker.expose(context, AP_LINK_OPEN_AUTH_INVOKE, "pay", 1, hashMap);
@@ -311,13 +311,13 @@ public class ApLinkTokenUtils {
             }
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("ap_link_token", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("orderStr", str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("method", str3);
         }
         SpmTracker.expose(context, AP_LINK_SPM_BEFORE_NET_REQUEST, "pay", 1, hashMap);
@@ -333,7 +333,7 @@ public class ApLinkTokenUtils {
         } else {
             String string = jSONObject.getString("ap_link_token");
             String apLinkToken = tradeContextByBizId.getApLinkToken();
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(apLinkToken) || TextUtils.equals(string, apLinkToken)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(apLinkToken) || StringUtils.equals(string, apLinkToken)) {
                 return;
             }
             jSONObject.put("ap_link_token", (Object) apLinkToken);

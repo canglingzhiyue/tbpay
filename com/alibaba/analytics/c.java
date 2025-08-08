@@ -3,7 +3,7 @@ package com.alibaba.analytics;
 import android.content.Intent;
 import android.net.Uri;
 import android.taobao.windvane.runtimepermission.a;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -40,16 +40,16 @@ public class c implements com.taobao.android.nav.e {
             Uri data = intent.getData();
             if (data != null) {
                 String uri = data.toString();
-                if (!TextUtils.isEmpty(uri) && (variation = UTABTest.activate(UTABTest.COMPONENT_NAV, uri).getVariation("bucket")) != null) {
+                if (!StringUtils.isEmpty(uri) && (variation = UTABTest.activate(UTABTest.COMPONENT_NAV, uri).getVariation("bucket")) != null) {
                     String valueAsString = variation.getValueAsString(null);
-                    if (!TextUtils.isEmpty(valueAsString) && !TextUtils.equals(uri, valueAsString) && (parse = Uri.parse(valueAsString)) != null) {
+                    if (!StringUtils.isEmpty(valueAsString) && !StringUtils.equals(uri, valueAsString) && (parse = Uri.parse(valueAsString)) != null) {
                         intent.setData(parse);
                         String queryParameter = parse.getQueryParameter("UTABTEST-LOOPBACK");
-                        if (TextUtils.isEmpty(queryParameter)) {
+                        if (StringUtils.isEmpty(queryParameter)) {
                             dVar.c(false);
-                        } else if (TextUtils.equals(a.PERMISSION_ALLOW, queryParameter)) {
+                        } else if (StringUtils.equals(a.PERMISSION_ALLOW, queryParameter)) {
                             dVar.c(false);
-                        } else if (TextUtils.equals("disallow", queryParameter)) {
+                        } else if (StringUtils.equals("disallow", queryParameter)) {
                             dVar.c(true);
                         }
                     }

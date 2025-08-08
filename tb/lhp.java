@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -149,7 +149,7 @@ public class lhp implements lkz.a {
         } else {
             String a2 = a(baseSectionModel);
             String b = b(baseSectionModel);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b = "expose_guess_list_0";
             }
             a(new liv(view, view.getTag(R.id.tag_guess_item_id), a2, b));
@@ -167,7 +167,7 @@ public class lhp implements lkz.a {
         }
         BaseUtModel mo1096getExposureParam = baseSectionModel.mo1096getExposureParam();
         String page = mo1096getExposureParam != null ? mo1096getExposureParam.getPage() : null;
-        return !TextUtils.isEmpty(page) ? page : c;
+        return !StringUtils.isEmpty(page) ? page : c;
     }
 
     private String b(BaseSectionModel baseSectionModel) {
@@ -179,7 +179,7 @@ public class lhp implements lkz.a {
             return "";
         }
         JSONObject jSONObject = baseSectionModel.getJSONObject(h.TRACK_EXPOSURE_PARAM);
-        return (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("arg1"))) ? "expose_guess_list_0" : jSONObject.getString("arg1");
+        return (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("arg1"))) ? "expose_guess_list_0" : jSONObject.getString("arg1");
     }
 
     private void a(Runnable runnable) {

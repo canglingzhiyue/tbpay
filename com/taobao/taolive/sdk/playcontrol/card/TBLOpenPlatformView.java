@@ -2,7 +2,7 @@ package com.taobao.taolive.sdk.playcontrol.card;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -199,11 +199,11 @@ public class TBLOpenPlatformView extends RelativeLayout implements d.a, com.taob
                 this.mTBLiveOpenCardView.setPlayerData(jSONObject2);
                 this.mTBLiveOpenCardView.setPlayVideo(true);
                 String string = jSONObject.getString("forceAutoPlay");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.mTBLiveOpenCardView.closeSkipPlaySwitch = v.a(string, false);
                 }
                 String string2 = jSONObject.getString(MusLiveVideo.ATTR_MUTE);
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     this.mTBLiveOpenCardView.setMuted(v.a(string2, true));
                 }
             }
@@ -965,7 +965,7 @@ public class TBLOpenPlatformView extends RelativeLayout implements d.a, com.taob
             return;
         }
         String string = jSONObject2.getString(MusLiveVideo.ATTR_POSTER);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.mTBLiveOpenCardView.setImageUrl(string);
@@ -991,7 +991,7 @@ public class TBLOpenPlatformView extends RelativeLayout implements d.a, com.taob
             return (Map) ipChange.ipc$dispatch("bf456ef4", new Object[]{this, str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject.keySet().size() > 0) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -326,7 +326,7 @@ public class kol {
         }
         boolean z = !kog.a().j;
         c.a("linkx", "AfcCustomSdk === routerUrl === 是否服务端分流：" + z);
-        if (TextUtils.isEmpty(aVar.g)) {
+        if (StringUtils.isEmpty(aVar.g)) {
             return false;
         }
         if (!z) {
@@ -343,7 +343,7 @@ public class kol {
                     List<String> bcFlsrc = a2.getRouterRules().getBcFlsrc();
                     if (bcFlsrc != null && bcFlsrc.size() != 0) {
                         for (String str2 : bcFlsrc) {
-                            if (!TextUtils.isEmpty(str2) && aVar.s.startsWith(str2)) {
+                            if (!StringUtils.isEmpty(str2) && aVar.s.startsWith(str2)) {
                                 return true;
                             }
                         }
@@ -367,7 +367,7 @@ public class kol {
             c.b("linkx", "AfcCustomSdk === 本地分流异常：" + e.getMessage());
             com.taobao.flowcustoms.afc.utils.b.a(com.taobao.flowcustoms.afc.utils.b.AFC_LINK_CRASH_MESSAGE, com.taobao.flowcustoms.afc.utils.b.AFC_LINK_CRASH_ROUTER_LOCAL, e.getMessage(), null);
         }
-        if ((TextUtils.isEmpty(aVar.f) || "h5".equals(aVar.f)) && this.f30194a != null && !b() && !a(this.f30194a.getQuery())) {
+        if ((StringUtils.isEmpty(aVar.f) || "h5".equals(aVar.f)) && this.f30194a != null && !b() && !a(this.f30194a.getQuery())) {
             if (!c()) {
                 return false;
             }
@@ -381,7 +381,7 @@ public class kol {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         List<String> bizCode = this.f30194a.getBizCode();
-        if (!TextUtils.isEmpty(this.b.s) && bizCode != null && bizCode.size() != 0) {
+        if (!StringUtils.isEmpty(this.b.s) && bizCode != null && bizCode.size() != 0) {
             for (String str : bizCode) {
                 if (this.b.s.startsWith(str)) {
                     return true;
@@ -396,13 +396,13 @@ public class kol {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c705295d", new Object[]{this, list})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.b.g) && list != null && list.size() != 0) {
+        if (!StringUtils.isEmpty(this.b.g) && list != null && list.size() != 0) {
             Uri parse = Uri.parse(this.b.g);
             boolean z = false;
             for (Object obj : list) {
                 for (Map.Entry entry : ((Map) JSON.parseObject(obj.toString(), new TypeReference<Map<String, String>>() { // from class: tb.kol.3
                 }, new Feature[0])).entrySet()) {
-                    if (TextUtils.isEmpty(parse.getQueryParameter((String) entry.getKey())) || (!((String) entry.getValue()).equals("*") && !((String) entry.getValue()).equals(parse.getQueryParameter((String) entry.getKey())))) {
+                    if (StringUtils.isEmpty(parse.getQueryParameter((String) entry.getKey())) || (!((String) entry.getValue()).equals("*") && !((String) entry.getValue()).equals(parse.getQueryParameter((String) entry.getKey())))) {
                         z = false;
                         continue;
                         break;
@@ -423,13 +423,13 @@ public class kol {
             return ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue();
         }
         List<RouterStrategyOrangeData.H5urlBean> h5url = this.f30194a.getH5url();
-        if (!TextUtils.isEmpty(this.b.g) && h5url != null && h5url.size() != 0) {
+        if (!StringUtils.isEmpty(this.b.g) && h5url != null && h5url.size() != 0) {
             Uri parse = Uri.parse(this.b.g);
             String host = parse.getHost();
             String path = parse.getPath();
             for (RouterStrategyOrangeData.H5urlBean h5urlBean : h5url) {
-                boolean z = !TextUtils.isEmpty(h5urlBean.getHost()) && h5urlBean.getHost().equals(host);
-                boolean z2 = TextUtils.isEmpty(h5urlBean.getPath()) || (!TextUtils.isEmpty(h5urlBean.getPath()) && h5urlBean.getPath().equals(path));
+                boolean z = !StringUtils.isEmpty(h5urlBean.getHost()) && h5urlBean.getHost().equals(host);
+                boolean z2 = StringUtils.isEmpty(h5urlBean.getPath()) || (!StringUtils.isEmpty(h5urlBean.getPath()) && h5urlBean.getPath().equals(path));
                 boolean z3 = h5urlBean.getQuery() == null || (h5urlBean.getQuery() != null && a(h5urlBean.getQuery()));
                 if (z && z2 && z3) {
                     return true;
@@ -448,7 +448,7 @@ public class kol {
         } catch (Throwable th) {
             c.b("linkx", "AfcCustomSdk === isAsyncMTOPRouter === error：" + th);
         }
-        if (!Boolean.parseBoolean(kog.a().a("useAsyncRouter", "true")) || TextUtils.isEmpty(aVar.g)) {
+        if (!Boolean.parseBoolean(kog.a().a("useAsyncRouter", "true")) || StringUtils.isEmpty(aVar.g)) {
             return false;
         }
         Uri parse = Uri.parse(aVar.g);

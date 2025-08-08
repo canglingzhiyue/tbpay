@@ -1,6 +1,6 @@
 package com.taobao.android.detail.mainpic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.List;
@@ -53,7 +53,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (this.i != null && !TextUtils.isEmpty(str)) {
+        if (this.i != null && !StringUtils.isEmpty(str)) {
             return this.i.contains(str);
         }
         return false;
@@ -156,7 +156,7 @@ public class h {
 
     public String i() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("e424ba30", new Object[]{this}) : TextUtils.isEmpty(this.h) ? "" : this.h;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("e424ba30", new Object[]{this}) : StringUtils.isEmpty(this.h) ? "" : this.h;
     }
 
     public void b(String str) {

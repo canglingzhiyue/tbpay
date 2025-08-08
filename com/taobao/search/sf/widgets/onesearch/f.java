@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.munion.taosdk.MunionUrlBuilder;
@@ -123,7 +123,7 @@ public class f implements com.taobao.search.mmd.onesearch.e {
         if (ipChange instanceof IpChange) {
             return (Bundle) ipChange.ipc$dispatch("d0751678", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !"true".equals(y.b(str, "closeNavAnimation")) || Build.VERSION.SDK_INT < 23) {
+        if (StringUtils.isEmpty(str) || !"true".equals(y.b(str, "closeNavAnimation")) || Build.VERSION.SDK_INT < 23) {
             return null;
         }
         return ActivityOptions.makeCustomAnimation(this.f19559a, 0, 0).toBundle();

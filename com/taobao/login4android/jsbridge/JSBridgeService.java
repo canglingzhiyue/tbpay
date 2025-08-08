@@ -14,7 +14,7 @@ import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.ui.BaseActivity;
@@ -396,7 +396,7 @@ public class JSBridgeService extends e {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("eventName");
             String optString2 = jSONObject.optString("eventData");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 wVCallBackContext.error(r.RET_PARAM_ERR);
                 return;
             }
@@ -417,7 +417,7 @@ public class JSBridgeService extends e {
         try {
             JSONObject jSONObject = new JSONObject(str);
             String string = jSONObject.getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error(r.RET_PARAM_ERR);
                 return;
             }
@@ -460,7 +460,7 @@ public class JSBridgeService extends e {
             ipChange.ipc$dispatch("526a8cb8", new Object[]{this, wVCallBackContext, str});
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 new JSONObject(str);
                 if (ServiceFactory.getService(NumberAuthService.class) != null) {
@@ -507,7 +507,7 @@ public class JSBridgeService extends e {
             ipChange.ipc$dispatch("f9c56dbd", new Object[]{this, wVCallBackContext, str});
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 Login.getLoginMaskPhone(new JSONObject(str).optInt("timeout", 5000), new CommonDataCallback() { // from class: com.taobao.login4android.jsbridge.JSBridgeService.5
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -547,10 +547,10 @@ public class JSBridgeService extends e {
             ipChange.ipc$dispatch("2a16f425", new Object[]{this, wVCallBackContext, str});
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 String str2 = (String) new JSONObject(str).get("maskHid");
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     wVCallBackContext.error();
                     return;
                 }
@@ -597,7 +597,7 @@ public class JSBridgeService extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("52f06b10", new Object[]{this, wVCallBackContext});
-        } else if (TextUtils.isEmpty(Login.getOldUserId())) {
+        } else if (StringUtils.isEmpty(Login.getOldUserId())) {
             wVCallBackContext.error();
         } else {
             wVCallBackContext.success();
@@ -687,7 +687,7 @@ public class JSBridgeService extends e {
         } else {
             r rVar = new r();
             rVar.a("HY_SUCCESS");
-            if (LoginStatus.isLogining() || Login.checkSessionValid() || !TextUtils.isEmpty(Login.getLoginToken())) {
+            if (LoginStatus.isLogining() || Login.checkSessionValid() || !StringUtils.isEmpty(Login.getLoginToken())) {
                 z = true;
             }
             rVar.a("need", Boolean.valueOf(!z));
@@ -705,7 +705,7 @@ public class JSBridgeService extends e {
         try {
             Bundle jsonStringToBundle = BundleUtil.jsonStringToBundle(str);
             jsonStringToBundle.putString(LoginConstants.BROWSER_REF_URL, "jsbridge.sdkLogin");
-            if (wVCallBackContext.getWebview() != null && !TextUtils.isEmpty(wVCallBackContext.getWebview().getUrl())) {
+            if (wVCallBackContext.getWebview() != null && !StringUtils.isEmpty(wVCallBackContext.getWebview().getUrl())) {
                 jsonStringToBundle.putString(LoginConstants.JSBRIDGE_REF_URL, wVCallBackContext.getWebview().getUrl());
                 LoginStatus.jsbridgeRefUrl = wVCallBackContext.getWebview().getUrl();
             }
@@ -771,7 +771,7 @@ public class JSBridgeService extends e {
             ipChange.ipc$dispatch("60897cfb", new Object[]{this, wVCallBackContext, str});
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 LoginController.getInstance().navByScheme(jSONObject.getString(SSOSlaveParam.KEY_APPKEY), jSONObject.getString("packageName"), jSONObject.getString("jumpPage"), null, new CommonCallback() { // from class: com.taobao.login4android.jsbridge.JSBridgeService.7
@@ -852,7 +852,7 @@ public class JSBridgeService extends e {
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     String str2 = (String) new JSONObject(str).get("hidden");
                     if ("1".equals(str2)) {
@@ -952,7 +952,7 @@ public class JSBridgeService extends e {
         if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 UrlParam urlParam = new UrlParam();
                 urlParam.scene = "";
@@ -985,7 +985,7 @@ public class JSBridgeService extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1b7ae9d7", new Object[]{this, wVCallBackContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 r rVar = new r();
@@ -1004,7 +1004,7 @@ public class JSBridgeService extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8cb85582", new Object[]{this, wVCallBackContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 r rVar = new r();
@@ -1042,13 +1042,13 @@ public class JSBridgeService extends e {
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     String string = new JSONObject(str).getString("data");
-                    if (!TextUtils.isEmpty(string) && string.length() < 64) {
+                    if (!StringUtils.isEmpty(string) && string.length() < 64) {
                         SSOSecurityService.getInstace(DataProviderFactory.getApplicationContext());
                         String sign = SSOSecurityService.sign(DataProviderFactory.getDataProvider().getAppkey(), string);
-                        if (!TextUtils.isEmpty(sign)) {
+                        if (!StringUtils.isEmpty(sign)) {
                             r rVar = new r();
                             rVar.a("HY_SUCCESS");
                             rVar.a("signedData", sign);
@@ -1074,14 +1074,14 @@ public class JSBridgeService extends e {
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     String string = new JSONObject(str).getString("data");
                     String userId = Login.getUserId();
-                    if (!TextUtils.isEmpty(userId) && !TextUtils.isEmpty(string) && string.length() < 128) {
+                    if (!StringUtils.isEmpty(userId) && !StringUtils.isEmpty(string) && string.length() < 128) {
                         HistoryAccount findHistoryAccount = SecurityGuardManagerWraper.findHistoryAccount(Long.parseLong(userId));
                         String sign = AlibabaSecurityTokenService.sign(findHistoryAccount.tokenKey, string);
-                        if (!TextUtils.isEmpty(sign)) {
+                        if (!StringUtils.isEmpty(sign)) {
                             r rVar = new r();
                             rVar.a("HY_SUCCESS");
                             rVar.a("signedData", sign);
@@ -1115,7 +1115,7 @@ public class JSBridgeService extends e {
             ipChange.ipc$dispatch("59286668", new Object[]{this, str, wVCallBackContext, str2});
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "callback is null");
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             setErrorCallback(wVCallBackContext);
         } else {
             try {
@@ -1240,8 +1240,8 @@ public class JSBridgeService extends e {
                 rVar.a("HY_SUCCESS");
                 rVar.a("loginEntrance", loginFrom);
                 rVar.a(UserAbility.API_IS_LOGIN, Boolean.valueOf(Login.checkSessionValid()));
-                rVar.a("hasLoginToken", Boolean.valueOf(!TextUtils.isEmpty(Login.getLoginToken())));
-                if (!Login.checkSessionValid() && TextUtils.isEmpty(Login.getLoginToken())) {
+                rVar.a("hasLoginToken", Boolean.valueOf(!StringUtils.isEmpty(Login.getLoginToken())));
+                if (!Login.checkSessionValid() && StringUtils.isEmpty(Login.getLoginToken())) {
                     rVar.a("isNew", (Object) true);
                 } else {
                     rVar.a("isNew", (Object) false);
@@ -1259,7 +1259,7 @@ public class JSBridgeService extends e {
             ipChange.ipc$dispatch("5cc2497d", new Object[]{this, wVCallBackContext, str});
         } else if (wVCallBackContext == null) {
             LoginTLogAdapter.e(TAG, "Callback is null");
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             if ("1".equals((String) new JSONObject(str).get("action"))) {
                 FingerprintLoginServiceImpl.getInstance().openFingerprintLoginSet();
             } else {

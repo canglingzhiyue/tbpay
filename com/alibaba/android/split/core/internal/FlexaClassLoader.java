@@ -1,6 +1,6 @@
 package com.alibaba.android.split.core.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitcompat.Reflector;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -125,7 +125,7 @@ public class FlexaClassLoader extends DexClassLoader {
         if (j.h().e().getApplicationInfo().targetSdkVersion <= 28 || !str.equals(WXEnvironment.CORE_JSB_SO_NAME)) {
             z = false;
         }
-        if ((z || TextUtils.isEmpty(findLibrary)) && this.delegate != null) {
+        if ((z || StringUtils.isEmpty(findLibrary)) && this.delegate != null) {
             try {
                 return invokeFindLibrary(str);
             } catch (IllegalAccessException e) {

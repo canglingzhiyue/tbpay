@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -66,7 +66,7 @@ public class u extends bca {
                     break;
                 }
                 IDMComponent iDMComponent2 = f.get(i);
-                if (TextUtils.equals(iDMComponent2.getTag(), "checkedItemList")) {
+                if (StringUtils.equals(iDMComponent2.getTag(), "checkedItemList")) {
                     iDMComponent = iDMComponent2;
                     break;
                 }

@@ -2,7 +2,7 @@ package android.taobao.windvane.extra.uc.prefetch;
 
 import android.os.Build;
 import android.taobao.windvane.config.a;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uc.webview.export.Build;
 import com.uc.webview.export.extension.ICoreVersion;
@@ -39,7 +39,7 @@ public class UCDefaultUserAgent {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("898ff9b6", new Object[0]);
         }
-        if (!TextUtils.isEmpty(sUcImplVersion)) {
+        if (!StringUtils.isEmpty(sUcImplVersion)) {
             return sUcImplVersion;
         }
         ICoreVersion iCoreVersion = ICoreVersion.Instance.get();
@@ -84,11 +84,11 @@ public class UCDefaultUserAgent {
         try {
             String h = a.a().h();
             String i = a.a().i();
-            if (!TextUtils.isEmpty(h) && !TextUtils.isEmpty(i)) {
+            if (!StringUtils.isEmpty(h) && !StringUtils.isEmpty(i)) {
                 format = format + " AliApp(" + h + "/" + i + riy.BRACKET_END_STR;
             }
             String str5 = format + " UCBS/2.11.1.1";
-            if (str5.contains("TTID/") || TextUtils.isEmpty(a.a().b())) {
+            if (str5.contains("TTID/") || StringUtils.isEmpty(a.a().b())) {
                 return str5;
             }
             return str5 + " TTID/" + a.a().b();

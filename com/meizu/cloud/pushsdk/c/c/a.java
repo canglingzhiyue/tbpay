@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.c.c;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
@@ -134,7 +134,7 @@ public class a {
                 if (inputStream != null) {
                     String a2 = a(inputStream);
                     a("body = " + a2);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         try {
                             JSONObject jSONObject = new JSONObject(a2);
                             if (jSONObject.getInt("code") == 200) {
@@ -178,7 +178,7 @@ public class a {
     private PublicKey b(Context context) {
         a("load publicKey from preference");
         String string = this.j.getString("publicKey", "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 return KeyFactory.getInstance(jhy.KEY_ALGORITHM).generatePublic(new X509EncodedKeySpec(Base64.decode(string, 2)));
             } catch (NoSuchAlgorithmException e) {
@@ -258,19 +258,19 @@ public class a {
         a("loadKeys");
         String string = this.i.getString("sKey64", "");
         a("saved sKey64: " + string);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.g = string.getBytes();
         }
         String string2 = this.i.getString("aKey64", "");
         a("saved aKey64: " + string2);
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             byte[] bytes = string2.getBytes();
             this.f = bytes;
             this.d = Base64.decode(bytes, 2);
         }
         String string3 = this.i.getString("rKey64", "");
         a("saved rKey64: " + string3);
-        if (!TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string3)) {
             byte[] bytes2 = string3.getBytes();
             this.e = bytes2;
             this.c = Base64.decode(bytes2, 2);

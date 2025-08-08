@@ -7,7 +7,7 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PersistableBundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Size;
 import android.util.SizeF;
 import android.util.SparseArray;
@@ -148,7 +148,7 @@ public final class e {
             parcel.writeInt(((Boolean) obj).booleanValue() ? 1 : 0);
         } else if (obj instanceof CharSequence) {
             parcel.writeInt(10);
-            TextUtils.writeToParcel((CharSequence) obj, parcel, 0);
+            StringUtils.writeToParcel((CharSequence) obj, parcel, 0);
         } else if (obj instanceof List) {
             parcel.writeInt(11);
             parcel.writeList((List) obj);
@@ -255,7 +255,7 @@ public final class e {
                 }
                 return Boolean.valueOf(z);
             case 10:
-                return TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+                return StringUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             case 11:
                 return parcel.readArrayList(jzv.class.getClassLoader());
             case 12:
@@ -340,7 +340,7 @@ public final class e {
                 if (readInt3 >= 0) {
                     charSequenceArr = new CharSequence[readInt3];
                     while (i < readInt3) {
-                        charSequenceArr[i] = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+                        charSequenceArr[i] = (CharSequence) StringUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
                         i++;
                     }
                 }

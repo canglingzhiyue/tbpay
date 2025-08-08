@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -45,7 +45,7 @@ public class e extends bca {
                 return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("e66567f0", new Object[]{this, iDMComponent})).booleanValue() : iDMComponent.getFields().getBooleanValue("_addItemIsChecked");
             }
         });
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             com.alibaba.android.icart.core.widget.d.a(this.e, com.alibaba.ability.localization.b.a(R.string.taobao_app_1028_1_21678));
             return;
         }

@@ -1,6 +1,6 @@
 package com.ut.mini.behavior.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dynfun.TplMsg;
 
 /* loaded from: classes9.dex */
@@ -16,7 +16,7 @@ public enum DataType {
 
     public static DataType getDataType(String str) {
         DataType[] values;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return Event;
         }
         for (DataType dataType : values()) {

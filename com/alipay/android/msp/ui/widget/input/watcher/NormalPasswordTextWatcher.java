@@ -1,7 +1,7 @@
 package com.alipay.android.msp.ui.widget.input.watcher;
 
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import com.alipay.android.msp.ui.widget.input.PasswordInputPlugin;
@@ -63,7 +63,7 @@ public class NormalPasswordTextWatcher implements TextWatcher {
         try {
             if (this.b != null && this.c != null) {
                 String a2 = a(editable);
-                if (this.c != null && !TextUtils.equals(a2, editable.toString())) {
+                if (this.c != null && !StringUtils.equals(a2, editable.toString())) {
                     this.c.setText(a2);
                     return;
                 }
@@ -88,9 +88,9 @@ public class NormalPasswordTextWatcher implements TextWatcher {
             return;
         }
         String a2 = a(charSequence);
-        if (!TextUtils.equals(a2, charSequence.toString())) {
+        if (!StringUtils.equals(a2, charSequence.toString())) {
             this.c.setText(a2);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return;
             }
             this.b.getPasswordService().clear(this.d);

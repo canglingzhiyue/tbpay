@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.liveend;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -238,7 +238,7 @@ public class LiveEndRecommendFrame extends BaseFrame implements d {
         jSONObject.put("height", (Object) String.valueOf(gbg.c(this.mContext, com.taobao.taolive.room.utils.d.a(this.mContext, f))));
         jSONObject.put(nmf.MTOP_ISFOLLOW, (Object) String.valueOf(pmd.a().B().a(buildFollowParams())));
         String string = jSONObject.getString("preLiveId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             renderDXView(str, jSONObject);
         } else if (phg.d().a()) {
             com.taobao.android.live.plugin.atype.flexalocal.subscribe.a.a(string, "taoLiveStartNotify", null, "tblive_inline", new IObserverX() { // from class: com.taobao.android.live.plugin.atype.flexalocal.liveend.LiveEndRecommendFrame.4
@@ -335,12 +335,12 @@ public class LiveEndRecommendFrame extends BaseFrame implements d {
         }
         String string = jSONObject.getString(nmf.MTOP_ISFOLLOW);
         HashMap<String, String> hashMap = new HashMap<>();
-        if (TextUtils.equals(string, "true")) {
+        if (StringUtils.equals(string, "true")) {
             hashMap.put("follow_type", "follow");
         } else {
             hashMap.put("follow_type", com.alibaba.triver.triver_shop.newShop.event.broadcast.c.MSG_UNFOLLOWED);
         }
-        if (TextUtils.equals(jSONObject.getString("isPreview"), "true")) {
+        if (StringUtils.equals(jSONObject.getString("isPreview"), "true")) {
             hashMap.put("order_type", "order");
         } else {
             hashMap.put("order_type", "unorder");
@@ -418,7 +418,7 @@ public class LiveEndRecommendFrame extends BaseFrame implements d {
             str = str3;
             str2 = str;
         }
-        if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
             return new pmt();
         }
         pmt pmtVar = new pmt();

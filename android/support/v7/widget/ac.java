@@ -1,7 +1,7 @@
 package android.support.v7.widget;
 
 import android.support.v4.view.ViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -64,7 +64,7 @@ class ac implements View.OnAttachStateChangeListener, View.OnHoverListener, View
         if (acVar != null && acVar.f1472a == view) {
             b(null);
         }
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             new ac(view, charSequence);
             return;
         }

@@ -12,7 +12,7 @@ import android.os.SystemClock;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -176,7 +176,7 @@ public class PopupDialog extends DialogFragment {
                     PopupDialog.access$000(PopupDialog.this).setVisibility(0);
                     boolean[] zArr = {false, false};
                     PopupDialog.access$800(PopupDialog.this).a(false, a3, a3, zArr, 0);
-                    if (TextUtils.equals(a2, "1")) {
+                    if (StringUtils.equals(a2, "1")) {
                         PopupDialog.access$800(PopupDialog.this).a(false, a3 + 4, a3, zArr, 1);
                     } else {
                         PopupDialog.access$800(PopupDialog.this).a(true, a3, a3, zArr, 1);
@@ -1259,7 +1259,7 @@ public class PopupDialog extends DialogFragment {
         while (true) {
             if (i2 >= this.mCollectionCells.size()) {
                 break;
-            } else if (TextUtils.equals(this.mCollectionCells.get(i2).b(), aVar.a().g())) {
+            } else if (StringUtils.equals(this.mCollectionCells.get(i2).b(), aVar.a().g())) {
                 spz.c("PopupDialog", "updateCurrentCell:" + this.mCollectionCells.get(i2).a());
                 ((com.taobao.android.fluid.remote.collectionpoplayer.nativecollection.collectionRecycler.a) this.mRecyclerView.getAdapter()).b(this.mCollectionCells.get(i2).b());
                 i = this.mCollectionCells.get(i2).a();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.network.diagnosis.c;
 import com.taobao.artc.api.ArtcStats;
@@ -127,20 +127,20 @@ public class rnt {
                             hashMap2.put("arupversion", rnt.this.v);
                             hashMap2.put("tasktype", String.valueOf(rnt.this.u ? 1 : 0));
                             hashMap2.put("eventtime", String.valueOf(currentTimeMillis));
-                            if (!TextUtils.isEmpty(rnt.this.y)) {
+                            if (!StringUtils.isEmpty(rnt.this.y)) {
                                 hashMap2.put("md5", rnt.this.y);
                             }
-                            if (!TextUtils.isEmpty(rnt.this.x)) {
+                            if (!StringUtils.isEmpty(rnt.this.x)) {
                                 hashMap2.put("mimetype", rnt.this.x);
                             }
-                            if (!TextUtils.isEmpty(rnt.this.z)) {
+                            if (!StringUtils.isEmpty(rnt.this.z)) {
                                 hashMap2.put("trackid", rnt.this.z);
                             }
                             hashMap2.put(c.IP, rnt.this.e);
                             hashMap2.put("port", String.valueOf(rnt.this.f));
                             hashMap2.put("pageback", rnt.this.E ? "1" : "0");
                             hashMap2.put("concurrenttasks", String.valueOf(rnt.this.C));
-                            if (!TextUtils.isEmpty(rnt.this.F)) {
+                            if (!StringUtils.isEmpty(rnt.this.F)) {
                                 hashMap2.put("protocol", rnt.this.F);
                             }
                             if (rnt.this.k > 0) {
@@ -350,7 +350,7 @@ public class rnt {
         if (ipChange instanceof IpChange) {
             return (rnt) ipChange.ipc$dispatch("7c74cb5c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

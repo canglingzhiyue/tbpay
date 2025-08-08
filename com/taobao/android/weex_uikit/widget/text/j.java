@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.text.Layout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ClickableSpan;
 import android.text.style.ImageSpan;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class j {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("3bfaae90", new Object[]{this, fontDO});
-                } else if (!TextUtils.equals((String) UINode.this.getAttribute("fontFamily"), fontDO.e()) || fontDO.c() == null) {
+                } else if (!StringUtils.equals((String) UINode.this.getAttribute("fontFamily"), fontDO.e()) || fontDO.c() == null) {
                 } else {
                     UINode.this.notifyEngineRelayout();
                 }
@@ -106,7 +106,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("450e8d8f", new Object[]{uINode, gVar, str, obj});
-        } else if (gVar == null || !TextUtils.equals(str, "textLayout")) {
+        } else if (gVar == null || !StringUtils.equals(str, "textLayout")) {
         } else {
             a(uINode);
             gVar.a((Layout) obj);
@@ -129,7 +129,7 @@ public class j {
             ipChange.ipc$dispatch("f49ec9", new Object[]{uINode, str});
             return;
         }
-        if (TextUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_break_all)) {
+        if (StringUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_break_all)) {
             i = 2;
         }
         uINode.setAttribute("wordBreak", Integer.valueOf(i));
@@ -142,10 +142,10 @@ public class j {
             return;
         }
         String str2 = (String) uINode.getAttribute("fontFamily");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             com.taobao.android.weex_framework.widget.a.a().b(str2, bVar);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             com.taobao.android.weex_framework.widget.a.a().a(str, bVar);
         }
         uINode.setAttribute("fontFamily", str);
@@ -164,7 +164,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fdb6a687", new Object[]{uINode, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             uINode.setAttribute("color", -16777216);
         } else {
             uINode.setAttribute("color", Integer.valueOf(com.taobao.android.weex_uikit.util.b.a(str)));
@@ -175,7 +175,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7c17aa66", new Object[]{uINode, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             uINode.setAttribute("fontSize", Float.valueOf(32.0f));
         } else {
             uINode.setAttribute("fontSize", Integer.valueOf(Math.round(com.taobao.android.weex_framework.util.i.a(com.taobao.android.weex_framework.util.i.b(str, uINode.getInstance().getRpxPerRem())))));
@@ -212,7 +212,7 @@ public class j {
             ipChange.ipc$dispatch("f73ab603", new Object[]{uINode, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "end";
         }
         uINode.setAttribute(MUSConstants.ELLIPSIS_POSITION, str);
@@ -224,7 +224,7 @@ public class j {
             ipChange.ipc$dispatch("759bb9e2", new Object[]{uINode, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "normal";
         }
         uINode.setAttribute("whiteSpace", str);

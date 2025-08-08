@@ -2,7 +2,7 @@ package com.mobile.auth;
 
 import android.content.Context;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 
 /* loaded from: classes4.dex */
@@ -122,7 +122,7 @@ public class O0O0OOO {
     }
 
     public String O000000o(String str, boolean z) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = O000000o(z);
         }
         return O000000o(str);

@@ -1,7 +1,7 @@
 package com.taobao.monitor.adapter.init;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.ProcedureGlobal;
 import com.taobao.monitor.impl.common.d;
@@ -136,7 +136,7 @@ public class a {
         } else if (!map.containsKey(FIX_LEAK)) {
         } else {
             String str = map.get(FIX_LEAK);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             editor.putBoolean(FIX_LEAK, Boolean.parseBoolean(str));
@@ -150,7 +150,7 @@ public class a {
         } else if (!map.containsKey(USE_NEW_STANDARD)) {
         } else {
             String str = map.get(USE_NEW_STANDARD);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             editor.putBoolean(USE_NEW_STANDARD, Boolean.parseBoolean(str));
@@ -192,7 +192,7 @@ public class a {
             return z;
         }
         String str2 = map.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return z;
         }
         boolean equals = "true".equals(str2);
@@ -373,7 +373,7 @@ public class a {
             String str = map.get(SPECIAL_PAGE_SAMPLE);
             try {
                 mna.a();
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String[] split = str.split(",");
                     if (split.length > 0) {
                         for (String str2 : split) {
@@ -403,7 +403,7 @@ public class a {
             return;
         }
         String str = map.get("isApm");
-        boolean z2 = TextUtils.isEmpty(str) || !str.equalsIgnoreCase("close");
+        boolean z2 = StringUtils.isEmpty(str) || !str.equalsIgnoreCase("close");
         boolean z3 = sharedPreferences.getBoolean("isApm", true);
         if (z2 != z3) {
             editor.putBoolean("isApm", z2);

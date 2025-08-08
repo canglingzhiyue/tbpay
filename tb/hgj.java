@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -254,7 +254,7 @@ public class hgj implements a, hgk {
             this.f28617a.addView(createDX);
             com.taobao.android.live.plugin.proxy.f.m().renderDX(createDX, chatItemCommonData.data);
         }
-        if (TextUtils.equals(str2, com.taobao.android.live.plugin.atype.flexalocal.comments.chat.view.d.BIZ_TYPE_AI_COPILOT_RESPONSE)) {
+        if (StringUtils.equals(str2, com.taobao.android.live.plugin.atype.flexalocal.comments.chat.view.d.BIZ_TYPE_AI_COPILOT_RESPONSE)) {
             HashMap hashMap = new HashMap();
             JSONObject jSONObject2 = chatItemCommonData.data;
             if (jSONObject2 != null && (jSONObject = jSONObject2.getJSONObject("extMap")) != null) {

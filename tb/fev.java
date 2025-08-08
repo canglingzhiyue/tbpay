@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -289,12 +289,12 @@ public class fev extends c<few> implements dyq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.i.b)) {
+        } else if (StringUtils.isEmpty(this.i.b)) {
         } else {
             DetailImageView detailImageView = new DetailImageView(this.f9568a);
             detailImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             this.g.addView(detailImageView, new RelativeLayout.LayoutParams(-1, -1));
-            if (!TextUtils.isEmpty(this.i.f27874a)) {
+            if (!StringUtils.isEmpty(this.i.f27874a)) {
                 a(detailImageView, this.i.f27874a, new epm(this.n, this.o), null, null);
             } else {
                 detailImageView.setBackgroundColor(com.taobao.android.detail.core.utils.c.a("#000000"));
@@ -330,7 +330,7 @@ public class fev extends c<few> implements dyq {
             return;
         }
         few fewVar = this.i;
-        if (fewVar == null || TextUtils.isEmpty(fewVar.b)) {
+        if (fewVar == null || StringUtils.isEmpty(fewVar.b)) {
             return;
         }
         if (this.j == null) {
@@ -470,7 +470,7 @@ public class fev extends c<few> implements dyq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9ecdd69e", new Object[]{this, detailImageView, str, epmVar, bVar, eplVar});
-        } else if (detailImageView == null || TextUtils.isEmpty(str)) {
+        } else if (detailImageView == null || StringUtils.isEmpty(str)) {
         } else {
             epl eplVar2 = null;
             if (eplVar != null) {

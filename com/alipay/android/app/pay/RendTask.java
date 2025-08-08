@@ -2,7 +2,7 @@ package com.alipay.android.app.pay;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.container.MspContainerResult;
 import com.alipay.android.msp.core.MspEngine;
 import com.alipay.android.msp.framework.taskscheduler.MspAsyncTask;
@@ -80,7 +80,7 @@ public class RendTask extends MspAsyncTask<Object, Void, MspContainerResult> {
         if (objArr.length >= 2 && objArr[1] != null) {
             str = objArr[1].toString();
         }
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             mspContainerResult.setErrorCode("101");
             return mspContainerResult;
         }
@@ -96,7 +96,7 @@ public class RendTask extends MspAsyncTask<Object, Void, MspContainerResult> {
             return;
         }
         super.onPostExecute(mspContainerResult);
-        if (this.b == null || mspContainerResult == null || TextUtils.equals("400", mspContainerResult.getErrorCode())) {
+        if (this.b == null || mspContainerResult == null || StringUtils.equals("400", mspContainerResult.getErrorCode())) {
             return;
         }
         this.b.onContainerFinish(this.f4354a, mspContainerResult.getErrorCode(), mspContainerResult.getBizResult());

@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.dynamic.ui.plugin;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,16 +105,16 @@ public class VIFBUnitedView extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return (FBPlugin) ipChange.ipc$dispatch("639cf81d", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.equals(ModuleConstants.VI_MODULE_NAME_PAYMENT_PASSWORD_PLUS, str)) {
+        if (StringUtils.equals(ModuleConstants.VI_MODULE_NAME_PAYMENT_PASSWORD_PLUS, str)) {
             return a(VIFBPluginFactory.FingerprintPluginClassName);
         }
-        if (!TextUtils.equals(ModuleConstants.VI_MODULE_NAME_PAY_PWD, str)) {
+        if (!StringUtils.equals(ModuleConstants.VI_MODULE_NAME_PAY_PWD, str)) {
             return null;
         }
-        if (TextUtils.equals(str3, "Y")) {
+        if (StringUtils.equals(str3, "Y")) {
             VerifyLogCat.i(f5896a, "supportNoPwdUI Y");
             return a(VIFBPluginFactory.PasswordPluginWithoutUIClassName);
-        } else if (TextUtils.equals(str2, "Y")) {
+        } else if (StringUtils.equals(str2, "Y")) {
             VerifyLogCat.i(f5896a, "supportEmbedVi Y");
             return a(VIFBPluginFactory.PasswordUnifiedPluginNewClassName);
         } else {
@@ -182,9 +182,9 @@ public class VIFBUnitedView extends BaseFBPlugin {
         JSONObject jSONObject = parseObject.getJSONObject("predata");
         if (jSONObject != null) {
             String string = jSONObject.getString("type");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 String string2 = jSONObject.getString("bioTypes");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     JSONArray parseArray = JSON.parseArray(string2);
                     if ((parseArray != null) & (parseArray.size() > 0)) {
                         string = parseArray.getString(0);
@@ -211,7 +211,7 @@ public class VIFBUnitedView extends BaseFBPlugin {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             this.i = "N";
         }
         return this.i;

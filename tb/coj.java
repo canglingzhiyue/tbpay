@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class coj {
             if (ipChange instanceof IpChange) {
                 return (RectF) ipChange.ipc$dispatch("4e2d74f5", new Object[]{this, str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             String[] split = str.split(",");
@@ -69,7 +69,7 @@ public class coj {
             if (ipChange instanceof IpChange) {
                 return (List) ipChange.ipc$dispatch("89cdf874", new Object[]{this, str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             String[] split = str.split(";");
@@ -107,7 +107,7 @@ public class coj {
             cow cowVar = new cow();
             String string = jSONObject.getString("bboxes_str");
             String string2 = jSONObject.getString("region");
-            if (!TextUtils.isEmpty(string) && (b = b(string)) != null && b.size() > 0) {
+            if (!StringUtils.isEmpty(string) && (b = b(string)) != null && b.size() > 0) {
                 cowVar.a(b);
                 return cowVar;
             }

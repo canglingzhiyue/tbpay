@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.substitute.api.Constants;
@@ -32,7 +32,7 @@ public class SharePayProxyStore extends LocalEventStore {
             return null;
         }
         JSONObject actionParamsJson = mspEvent.getActionParamsJson();
-        if (TextUtils.equals(actionParamsJson.getString("type"), "getList")) {
+        if (StringUtils.equals(actionParamsJson.getString("type"), "getList")) {
             final String string = actionParamsJson.getString("notifyName");
             IExternalSocialPlugin socialPlugin = ExternalSocialPluginManager.getInstance().getSocialPlugin();
             if (socialPlugin == null) {
@@ -71,7 +71,7 @@ public class SharePayProxyStore extends LocalEventStore {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (String str2 : str.split("&")) {

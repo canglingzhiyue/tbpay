@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.bucketing.expression;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVOExperimentCondition;
 import com.alibaba.ut.abtest.bucketing.feature.FeatureType;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -92,7 +92,7 @@ public class d {
         if (expression == null || expression.criterions == null || expression.criterions.isEmpty()) {
             return true;
         }
-        if (TextUtils.isEmpty(expression.operator)) {
+        if (StringUtils.isEmpty(expression.operator)) {
             expression.operator = "$and";
         }
         try {
@@ -118,7 +118,7 @@ public class d {
 
     private String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : TextUtils.equals(str, KEY_CROWD) ? "人群" : TextUtils.equals(str, "mtop.appVersion") ? "应用版本" : TextUtils.equals(str, "device.channel") ? "渠道" : TextUtils.equals(str, "mtop.platform") ? "系统平台" : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : StringUtils.equals(str, KEY_CROWD) ? "人群" : StringUtils.equals(str, "mtop.appVersion") ? "应用版本" : StringUtils.equals(str, "device.channel") ? "渠道" : StringUtils.equals(str, "mtop.platform") ? "系统平台" : str;
     }
 
     private boolean a(ExpressionCriterion expressionCriterion, Map<String, Object> map) {
@@ -126,8 +126,8 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("515597e8", new Object[]{this, expressionCriterion, map})).booleanValue();
         }
-        if (!TextUtils.isEmpty(expressionCriterion.name) && !TextUtils.isEmpty(expressionCriterion.operator)) {
-            if (TextUtils.equals(expressionCriterion.name, "mtop.appName")) {
+        if (!StringUtils.isEmpty(expressionCriterion.name) && !StringUtils.isEmpty(expressionCriterion.operator)) {
+            if (StringUtils.equals(expressionCriterion.name, "mtop.appName")) {
                 return true;
             }
             Object obj = null;
@@ -164,7 +164,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("c56c56fe", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if ("mtop.platform".equals(str)) {

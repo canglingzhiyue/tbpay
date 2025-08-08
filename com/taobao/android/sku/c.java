@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.android.ultron.engine.a;
@@ -214,7 +214,7 @@ public class c {
         }
         this.w = System.currentTimeMillis();
         f15144a.allowCoreThreadTimeOut(true);
-        this.d = TextUtils.isEmpty(str) ? "sku" : str;
+        this.d = StringUtils.isEmpty(str) ? "sku" : str;
         this.e = context;
         this.p = str2;
         UltronInstanceConfig ultronInstanceConfig = new UltronInstanceConfig();
@@ -316,7 +316,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("669e4a77", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.u = str;
             e(new JSONObject() { // from class: com.taobao.android.sku.AliXSkuCore$4
@@ -410,7 +410,7 @@ public class c {
             return "0";
         }
         String string = jSONObject.getString("skuId");
-        return TextUtils.isEmpty(string) ? "0" : string;
+        return StringUtils.isEmpty(string) ? "0" : string;
     }
 
     private void f(JSONObject jSONObject) {
@@ -585,7 +585,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4284fd1", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.p)) {
+        } else if (StringUtils.isEmpty(this.p)) {
         } else {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("uniqueId", (Object) this.p);
@@ -1052,7 +1052,7 @@ public class c {
                 if (c.this.M()) {
                     c.f(c.this).b();
                 } else {
-                    if (!TextUtils.isEmpty(str2) && !c.g(c.this).a(str2)) {
+                    if (!StringUtils.isEmpty(str2) && !c.g(c.this).a(str2)) {
                         c.f(c.this).b();
                     }
                     c.this.x();
@@ -1067,7 +1067,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4529658", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.n) || !n.a("enable_weex_silent_action") || !this.h.v()) {
+        if (StringUtils.isEmpty(this.n) || !n.a("enable_weex_silent_action") || !this.h.v()) {
             return false;
         }
         String v = v();
@@ -1113,7 +1113,7 @@ public class c {
                 bVar3.a();
             }
         };
-        if (!TextUtils.isEmpty(this.h.i())) {
+        if (!StringUtils.isEmpty(this.h.i())) {
             this.f.a(str, str2, cVar, bVar2);
         } else {
             a(jSONObject, str2, cVar, bVar2);

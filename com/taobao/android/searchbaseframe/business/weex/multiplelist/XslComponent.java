@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.business.weex.multiplelist;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONArray;
@@ -210,7 +210,7 @@ public class XslComponent extends WXVContainer<ViewGroup> implements XslModule.c
             return i;
         }
         String string = jSONObject.getString(str);
-        return TextUtils.isEmpty(string) ? i : (int) iuc.a(string);
+        return StringUtils.isEmpty(string) ? i : (int) iuc.a(string);
     }
 
     private void setRequestParams(JSONObject jSONObject, XslModule xslModule) {
@@ -346,7 +346,7 @@ public class XslComponent extends WXVContainer<ViewGroup> implements XslModule.c
         if (xslDatasource == null) {
             return;
         }
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             xslDatasource.setApi(string, string2);
         } else {
             xslDatasource.setApi(string, string2, string3);

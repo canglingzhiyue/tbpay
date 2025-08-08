@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.preload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dns.DnsValue;
 import com.alipay.android.msp.network.http.http.PhoneCashierHttpClient;
 import com.alipay.android.msp.utils.LogUtil;
@@ -47,13 +47,13 @@ public class PreloadConnection {
         if (ipChange instanceof IpChange) {
             return (Header) ipChange.ipc$dispatch("aaa9f833", new Object[]{str, headerArr});
         }
-        if (headerArr == null || headerArr.length <= 0 || TextUtils.isEmpty(str)) {
+        if (headerArr == null || headerArr.length <= 0 || StringUtils.isEmpty(str)) {
             return null;
         }
         String lowerCase = str.toLowerCase();
         for (Header header : headerArr) {
             String name = header.getName();
-            if (!TextUtils.isEmpty(name) && TextUtils.equals(name.toLowerCase(), lowerCase)) {
+            if (!StringUtils.isEmpty(name) && StringUtils.equals(name.toLowerCase(), lowerCase)) {
                 return header;
             }
         }

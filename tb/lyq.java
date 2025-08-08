@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.AnalyticsMgr;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.utils.c;
@@ -141,7 +141,7 @@ public class lyq {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
+        if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
             return false;
         }
         return "1".equals(parse.getQueryParameter("afc_link_ut"));

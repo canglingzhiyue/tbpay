@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,7 +112,7 @@ public final class h extends ekq<FrameLayout> {
                 return;
             }
             AURARenderComponent a3 = h.a(h.this, mVar);
-            if (a3 == null || !TextUtils.equals(absPicGalleryVideoPlayer.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+            if (a3 == null || !StringUtils.equals(absPicGalleryVideoPlayer.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
                 return;
             }
             if (h.a(h.this, a3)) {
@@ -255,12 +255,12 @@ public final class h extends ekq<FrameLayout> {
         frameLayout2.removeAllViews();
         if (this.h == null) {
             ema.a("video#videoManagerIsNull", "播放器管理器为空", this.d);
-        } else if (n.b(aURARenderComponent) && !TextUtils.equals(n.c(aURARenderComponent), "success")) {
+        } else if (n.b(aURARenderComponent) && !StringUtils.equals(n.c(aURARenderComponent), "success")) {
             arc.a().b(TAG, "innerRenderView", "asyncModuleVideo is not ready yet");
         } else {
             m a2 = n.a(eme.a(this.b), aURARenderComponent, this.d);
             String a3 = emk.a(aURARenderComponent);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 a2.a(emk.KEY_STATE_SYNC_TOKEN, a3);
                 c();
             }
@@ -359,7 +359,7 @@ public final class h extends ekq<FrameLayout> {
             return null;
         }
         for (AURARenderComponent aURARenderComponent : list) {
-            if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && (aURARenderComponent.data.fields.get("videoId") instanceof String) && TextUtils.equals((String) aURARenderComponent.data.fields.get("videoId"), mVar.a())) {
+            if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && (aURARenderComponent.data.fields.get("videoId") instanceof String) && StringUtils.equals((String) aURARenderComponent.data.fields.get("videoId"), mVar.a())) {
                 return aURARenderComponent;
             }
         }
@@ -385,7 +385,7 @@ public final class h extends ekq<FrameLayout> {
             return false;
         }
         for (Event event : list) {
-            if (event != null && TextUtils.equals("openLightOff", event.type)) {
+            if (event != null && StringUtils.equals("openLightOff", event.type)) {
                 return true;
             }
         }

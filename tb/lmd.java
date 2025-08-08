@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.eventchain.l;
@@ -31,7 +31,7 @@ public class lmd extends dlg<l> {
             return null;
         }
         String c = dlhVar.c("key");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             ldf.d("HSetExtAbility", "key is empty");
             return null;
         }

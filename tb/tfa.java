@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.request.AttachedResponse;
 import com.alibaba.android.nextrpc.stream.internal.response.StreamOtherResponse;
 import com.alibaba.android.nextrpc.stream.internal.response.StreamRemoteMainResponse;
@@ -247,7 +247,7 @@ public final class tfa {
         String remove = f34064a.remove(a2);
         String str = b.get(a2);
         jqg.b(TAG, "interceptRealRequest#start");
-        if (a2 == null || TextUtils.isEmpty(remove) || TextUtils.isEmpty(str)) {
+        if (a2 == null || StringUtils.isEmpty(remove) || StringUtils.isEmpty(str)) {
             return d();
         }
         jns<Boolean, StreamNextRpcRequest> jnsVar = c.get(a2);

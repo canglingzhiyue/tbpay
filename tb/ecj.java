@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.engine.template.d;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -138,13 +138,13 @@ public class ecj extends AsyncTask<Void, Void, Void> {
         if (ipChange instanceof IpChange) {
             return (DinamicTemplate) ipChange.ipc$dispatch("7489d6a1", new Object[]{this, ruleModel});
         }
-        if (TextUtils.isEmpty(ruleModel.mapping) || (parseObject = JSONObject.parseObject(ruleModel.mapping)) == null || (jSONObject = parseObject.getJSONObject("template")) == null) {
+        if (StringUtils.isEmpty(ruleModel.mapping) || (parseObject = JSONObject.parseObject(ruleModel.mapping)) == null || (jSONObject = parseObject.getJSONObject("template")) == null) {
             return null;
         }
         String a2 = epw.a(jSONObject.getString("name"));
         String a3 = epw.a(jSONObject.getString("android"));
         String a4 = epw.a(jSONObject.getString("version"));
-        if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(a4) || TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(a4) || StringUtils.isEmpty(a3)) {
             return null;
         }
         DinamicTemplate dinamicTemplate = new DinamicTemplate();

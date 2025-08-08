@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -545,7 +545,7 @@ public class z implements bi {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("8fea1d51", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.equals(v())) {
@@ -571,7 +571,7 @@ public class z implements bi {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("7315d092", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.equals(v())) {

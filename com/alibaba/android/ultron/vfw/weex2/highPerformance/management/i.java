@@ -3,7 +3,7 @@ package com.alibaba.android.ultron.vfw.weex2.highPerformance.management;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridStage;
 import com.alibaba.fastjson.JSON;
@@ -124,7 +124,7 @@ public class i implements k {
         }
         for (com.alibaba.android.ultron.vfw.weex2.highPerformance.model.h hVar : b) {
             if (hVar != null) {
-                if (!TextUtils.equals(hVar.b, str2)) {
+                if (!StringUtils.equals(hVar.b, str2)) {
                     jqg.a("UltronTradeHybridPreRequestImageManager", "prefetchImgByScene:", str + " no match stage, stage is " + str2);
                 } else if (!a(str, jSONObject, hVar.d)) {
                     a(hVar.a(), hVar.d);
@@ -142,7 +142,7 @@ public class i implements k {
             return false;
         }
         Object obj = jSONObject.get("useCustomDataSource");
-        if (!(obj instanceof String) || !TextUtils.equals((String) obj, "true")) {
+        if (!(obj instanceof String) || !StringUtils.equals((String) obj, "true")) {
             return false;
         }
         char c = 65535;
@@ -181,13 +181,13 @@ public class i implements k {
                         List<String> a3 = ifn.Companion.a();
                         jqd a4 = jqd.a("order_list");
                         String userId = Login.getUserId();
-                        if (TextUtils.isEmpty(userId)) {
+                        if (StringUtils.isEmpty(userId)) {
                             jqg.a("UltronTradeHybridPreRequestImageManager", "asyncProcessOListData:", "userId is empty");
                             return;
                         }
                         for (String str : a3) {
                             String e = a4.e(userId + str + "_img");
-                            if (!TextUtils.isEmpty(e)) {
+                            if (!StringUtils.isEmpty(e)) {
                                 a2 = JSON.parseArray(e, String.class);
                                 jqg.a("UltronTradeHybridPreRequestImageManager", "asyncProcessOListData:", str + " get imgList from imgMMKV");
                             } else {
@@ -222,14 +222,14 @@ public class i implements k {
         }
         try {
             e = jqdVar.e(str + str2);
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 j f = a.a().f();
                 e = f.a(str + str2, cts.a.BIZ_ORDER_LIST);
                 jqg.a("UltronTradeHybridPreRequestImageManager", "getImgListFromOListCache:", "load prequest olist data");
             }
         } catch (Throwable unused) {
         }
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             jqg.a("UltronTradeHybridPreRequestImageManager", "getImgListFromOListCache:", "olistJsonStr is empty");
             return null;
         }
@@ -246,9 +246,9 @@ public class i implements k {
                     break;
                 } else if (entry != null) {
                     String key = entry.getKey();
-                    if (!TextUtils.isEmpty(key) && key.startsWith("item_") && (entry.getValue() instanceof JSONObject) && (jSONObject = ((JSONObject) entry.getValue()).getJSONObject("fields")) != null && (jSONObject2 = jSONObject.getJSONObject("item")) != null) {
+                    if (!StringUtils.isEmpty(key) && key.startsWith("item_") && (entry.getValue() instanceof JSONObject) && (jSONObject = ((JSONObject) entry.getValue()).getJSONObject("fields")) != null && (jSONObject2 = jSONObject.getJSONObject("item")) != null) {
                         String string = jSONObject2.getString("pic");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             arrayList.add(string);
                         }
                     }
@@ -310,11 +310,11 @@ public class i implements k {
                     Iterator it = new HashSet(list).iterator();
                     while (it.hasNext()) {
                         String str = (String) it.next();
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             jqg.a("UltronTradeHybridPreRequestImageManager", "asyncPrefetchImg:", "load loop continue: imgUrl is empty");
                         } else {
                             String a2 = i.a(i.this, str);
-                            if (TextUtils.isEmpty(a2)) {
+                            if (StringUtils.isEmpty(a2)) {
                                 jqg.a("UltronTradeHybridPreRequestImageManager", "asyncPrefetchImg:", "load loop continue: formatImgUrl is empty, oriUrl: " + str);
                             } else if (i.a(i.this).get(a2) != null) {
                                 jqg.a("UltronTradeHybridPreRequestImageManager", "asyncPrefetchImg:", "load loop continue: cache drawable is existed(success), formatImgUrl: " + a2);
@@ -333,12 +333,12 @@ public class i implements k {
                                         if (ipChange3 instanceof IpChange) {
                                             return ((Boolean) ipChange3.ipc$dispatch("3b4dd374", new Object[]{this, succPhenixEvent})).booleanValue();
                                         }
-                                        if (TextUtils.isEmpty(succPhenixEvent.getUrl())) {
+                                        if (StringUtils.isEmpty(succPhenixEvent.getUrl())) {
                                             jqg.a("UltronTradeHybridPreRequestImageManager", "asyncPrefetchImg:", "onHappen: url is empty");
                                             return false;
                                         }
                                         String a3 = i.a(i.this, succPhenixEvent.getUrl());
-                                        if (TextUtils.isEmpty(a3)) {
+                                        if (StringUtils.isEmpty(a3)) {
                                             jqg.a("UltronTradeHybridPreRequestImageManager", "asyncPrefetchImg:", "onHappen: formatImgUrl is empty, oriUrl: " + succPhenixEvent.getUrl());
                                             return false;
                                         }
@@ -412,12 +412,12 @@ public class i implements k {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
             Uri parse = Uri.parse(str);
-            return TextUtils.isEmpty(parse.getPath()) ? "" : parse.getPath();
+            return StringUtils.isEmpty(parse.getPath()) ? "" : parse.getPath();
         } catch (Throwable unused) {
             return "";
         }
@@ -433,7 +433,7 @@ public class i implements k {
             return null;
         }
         String c = c(str2);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             jqg.a("UltronTradeHybridPreRequestImageManager", "getCachedImg:", str + " formatImgUrl is empty, oriUrl: " + str2);
             return null;
         }

@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.base.Versions;
@@ -85,7 +85,7 @@ public class mwx {
                         return;
                     }
                     String userId = Login.getUserId();
-                    if (TextUtils.isEmpty(userId)) {
+                    if (StringUtils.isEmpty(userId)) {
                         return;
                     }
                     a.a(userId);
@@ -140,10 +140,10 @@ public class mwx {
             return false;
         }
         try {
-            if (!TextUtils.equals("true", o.getString("newBasementContainer"))) {
+            if (!StringUtils.equals("true", o.getString("newBasementContainer"))) {
                 return false;
             }
-            return TextUtils.equals("weex", o.getString("pageType"));
+            return StringUtils.equals("weex", o.getString("pageType"));
         } catch (Throwable unused) {
             return false;
         }

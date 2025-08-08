@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.hardwarepay.old;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.core.context.MspContext;
@@ -228,7 +228,7 @@ public class MspHardwarePayUtil {
             return;
         }
         GlobalConstant.loadProperties(context);
-        if (!TextUtils.isEmpty(GlobalConstant.HARDWARE_PAY_TYPES)) {
+        if (!StringUtils.isEmpty(GlobalConstant.HARDWARE_PAY_TYPES)) {
             LogUtil.record(2, AlipaySDKJSBridge.LOG_TAG, "MspHardwarePayUtil.init", "fp startPay msms");
             if (z) {
                 MspFingerprintCashierManager.getInstance().initFingerprint(context, jSONObject);

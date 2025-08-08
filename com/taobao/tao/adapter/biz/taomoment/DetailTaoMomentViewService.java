@@ -2,7 +2,7 @@ package com.taobao.tao.adapter.biz.taomoment;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -134,7 +134,7 @@ public class DetailTaoMomentViewService {
         }
         String b2 = b(activity);
         TaoMomentData a2 = a(jSONObject);
-        if (a2 == null || TextUtils.isEmpty(a2.redPointIcon)) {
+        if (a2 == null || StringUtils.isEmpty(a2.redPointIcon)) {
             f19828a.put(b2, false);
         } else {
             View view = b.get(b2);

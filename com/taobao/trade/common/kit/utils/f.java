@@ -1,6 +1,6 @@
 package com.taobao.trade.common.kit.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import java.util.Map;
@@ -128,7 +128,7 @@ public class f {
                         RVLLevel rVLLevel = RVLLevel.Error;
                         StringBuilder sb = new StringBuilder();
                         sb.append("Ultron/");
-                        sb.append(TextUtils.isEmpty(str) ? "common" : str);
+                        sb.append(StringUtils.isEmpty(str) ? "common" : str);
                         com.taobao.android.riverlogger.b a3 = com.taobao.android.riverlogger.e.a(rVLLevel, sb.toString()).a(RVLLevel.Error);
                         a3.a(j <= 0 ? System.currentTimeMillis() : j);
                         a3.a("message", (Object) str2);

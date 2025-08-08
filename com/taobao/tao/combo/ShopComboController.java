@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -554,7 +554,7 @@ public class ShopComboController implements IRemoteBaseListener {
             String queryParameter = uri.getQueryParameter("seller_id");
             String queryParameter2 = uri.getQueryParameter("meal_id");
             String queryParameter3 = uri.getQueryParameter("item_id");
-            if (!TextUtils.isEmpty(queryParameter) && !TextUtils.isEmpty(queryParameter2) && !TextUtils.isEmpty(queryParameter3)) {
+            if (!StringUtils.isEmpty(queryParameter) && !StringUtils.isEmpty(queryParameter2) && !StringUtils.isEmpty(queryParameter3)) {
                 try {
                     this.mSellerId = Long.parseLong(queryParameter);
                     this.mComboId = Integer.parseInt(queryParameter2);
@@ -650,7 +650,7 @@ public class ShopComboController implements IRemoteBaseListener {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                } else if (!TextUtils.isEmpty(Login.getSid())) {
+                } else if (!StringUtils.isEmpty(Login.getSid())) {
                     if (ShopComboController.access$1600(ShopComboController.this).itemList.get(ShopComboController.access$1500(ShopComboController.this)).isFavor) {
                         ShopComboController.access$1700(ShopComboController.this).a(3, ShopComboController.access$1300(ShopComboController.this));
                     } else {
@@ -698,7 +698,7 @@ public class ShopComboController implements IRemoteBaseListener {
                 bundle.putString("itemId", Long.toString(ShopComboController.access$1300(ShopComboController.this)));
                 bundle.putString(com.taobao.android.detail.sdk.request.combo.a.K_COMBO_ID, Long.toString(ShopComboController.access$700(ShopComboController.this)));
                 bundle.putString("sellerId", Long.toString(ShopComboController.access$1900(ShopComboController.this)));
-                if (ShopComboController.access$1600(ShopComboController.this) != null && !TextUtils.isEmpty(ShopComboController.access$1600(ShopComboController.this).type)) {
+                if (ShopComboController.access$1600(ShopComboController.this) != null && !StringUtils.isEmpty(ShopComboController.access$1600(ShopComboController.this).type)) {
                     bundle.putString("type", ShopComboController.access$1600(ShopComboController.this).type);
                 }
                 Nav.from(Globals.getApplication()).withExtras(bundle).toUri("http://h5.m.taobao.com/detailplugin/mix.html?itemId=" + Long.toString(ShopComboController.access$1300(ShopComboController.this)) + "&" + com.taobao.android.detail.sdk.request.combo.a.K_COMBO_ID + "=" + Long.toString(ShopComboController.access$700(ShopComboController.this)) + "&sellerId=" + Long.toString(ShopComboController.access$1900(ShopComboController.this)) + "&type=" + ShopComboController.access$1600(ShopComboController.this).type);
@@ -932,7 +932,7 @@ public class ShopComboController implements IRemoteBaseListener {
         layoutParams.width = ((com.taobao.android.shop.utils.f.b() - ((RelativeLayout) this.mContext.findViewById(R.id.shop_combo_main_top_view)).getPaddingLeft()) - g.a(this.mContext.findViewById(R.id.shop_combo_main_top_item_right_layout))) - 5;
         this.mItemName.setLayoutParams(layoutParams);
         this.mItemName.setSingleLine(true);
-        this.mItemName.setEllipsize(TextUtils.TruncateAt.END);
+        this.mItemName.setEllipsize(StringUtils.TruncateAt.END);
         this.mItemName.setText(comboItemData.itemName);
         this.mItemPrice.setTextColor(this.mContext.getResources().getColor(R.color.SC_A_C));
         this.mItemPrice.setPrice((float) (comboItemData.itemPrice / 100.0d));

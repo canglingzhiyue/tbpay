@@ -1,7 +1,7 @@
 package com.taobao.message.lab.comfrm.support.list;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -78,7 +78,7 @@ public class ListItemInstance extends WidgetInstance<JSONObject> {
                     return;
                 }
                 String string = jSONObject.getString("menu");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 final List parseArray = JSON.parseArray(string, MenuItem.class);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class otn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject parseObject = JSON.parseObject(str);
             this.f32408a = ksk.b(parseObject.getString("channel"));
@@ -64,7 +64,7 @@ public class otn {
             this.e = HomePageUtility.a(parseObject.getString("showLoading"));
             String string = parseObject.getString("queryParams");
             try {
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 this.d = (Map) JSON.parseObject(string, Map.class);

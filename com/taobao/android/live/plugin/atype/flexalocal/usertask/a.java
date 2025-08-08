@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.usertask;
 
 import android.animation.ValueAnimator;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -425,7 +425,7 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
             ipChange.ipc$dispatch("5d8223ba", new Object[]{this, str, str2, str3, str4, str5, new Boolean(z)});
             return;
         }
-        boolean z2 = !this.z || !TextUtils.equals(this.r, str2) || z;
+        boolean z2 = !this.z || !StringUtils.equals(this.r, str2) || z;
         if (pmd.a().m() != null) {
             pnj m = pmd.a().m();
             m.c("UserTaskController", "isNeedEntryRequest:" + z2);
@@ -569,14 +569,14 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
                 return;
             }
             MtopIliadUsertaskTasksEntryResponseData mtopIliadUsertaskTasksEntryResponseData2 = this.c;
-            if (mtopIliadUsertaskTasksEntryResponseData2 != null && !TextUtils.isEmpty(mtopIliadUsertaskTasksEntryResponseData2.jumpType)) {
+            if (mtopIliadUsertaskTasksEntryResponseData2 != null && !StringUtils.isEmpty(mtopIliadUsertaskTasksEntryResponseData2.jumpType)) {
                 if (DMComponent.RESET.equals(this.c.jumpType)) {
                     this.J.reset(this.c.entryConfig.text);
                     this.c.jumpType = "openUrl";
                 } else if ("openUrl".equals(this.c.jumpType)) {
                     b(this.c.jumpData, str, str2);
                 } else if ("openAliveComponent".equals(this.c.jumpType)) {
-                    if (!TextUtils.isEmpty(this.c.jumpData)) {
+                    if (!StringUtils.isEmpty(this.c.jumpData)) {
                         JSONObject b2 = pqj.b(this.c.jumpData);
                         String string = b2.getString("aliveComponentMsgEvent");
                         JSONObject jSONObject = b2.getJSONObject("aliveComponentMsg");
@@ -615,7 +615,7 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3509d07", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.contains("?")) {
                 str4 = str + "&creatorId=" + str2 + "&liveId=" + str3 + "&taskSource=liveroom&spm=" + this.v;
@@ -885,7 +885,7 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
             c = 0;
         }
         if (c == 0) {
-            if (!(obj instanceof InteractiveComponent) || !TextUtils.equals(((InteractiveComponent) obj).fedName, o.d()) || this.J == null) {
+            if (!(obj instanceof InteractiveComponent) || !StringUtils.equals(((InteractiveComponent) obj).fedName, o.d()) || this.J == null) {
                 return;
             }
             this.p = true;
@@ -1023,7 +1023,7 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
                     this.h = mtopIliadUsertaskTasksDotaskResponseData.countdownTime * 1000;
                 }
                 this.g = mtopIliadUsertaskTasksDotaskResponseData.deliveryId;
-                if (mtopIliadUsertaskTasksDotaskResponseData.deltaPoint != null && !TextUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.deltaPoint.getString("text"))) {
+                if (mtopIliadUsertaskTasksDotaskResponseData.deltaPoint != null && !StringUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.deltaPoint.getString("text"))) {
                     this.F = mtopIliadUsertaskTasksDotaskResponseData.deltaPoint.getString("text");
                 }
                 if (mtopIliadUsertaskTasksDotaskResponseData.newAtmosphere != null && (fVar = this.J) != null) {
@@ -1042,7 +1042,7 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
                     this.c.jumpType = mtopIliadUsertaskTasksDotaskResponseData.jumpType;
                     this.c.jumpData = mtopIliadUsertaskTasksDotaskResponseData.jumpData;
                     this.c.rewards = mtopIliadUsertaskTasksDotaskResponseData.rewards;
-                    if (mtopIliadUsertaskTasksDotaskResponseData.entryConfig != null && !TextUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.text)) {
+                    if (mtopIliadUsertaskTasksDotaskResponseData.entryConfig != null && !StringUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.text)) {
                         MtopIliadUsertaskTasksEntryResponseData.EntryConfig entryConfig = this.c.entryConfig;
                         String str = mtopIliadUsertaskTasksDotaskResponseData.entryConfig.text;
                         entryConfig.text = str;
@@ -1054,10 +1054,10 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
                     this.J.changeGoldUI(mtopIliadUsertaskTasksDotaskResponseData);
                 }
                 if (mtopIliadUsertaskTasksDotaskResponseData.entryConfig != null) {
-                    if (!TextUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.normalIcon)) {
+                    if (!StringUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.normalIcon)) {
                         this.j = mtopIliadUsertaskTasksDotaskResponseData.entryConfig.normalIcon;
                     }
-                    if (!TextUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.successIcon)) {
+                    if (!StringUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.successIcon)) {
                         this.k = mtopIliadUsertaskTasksDotaskResponseData.entryConfig.successIcon;
                     }
                     if (mtopIliadUsertaskTasksDotaskResponseData.entryConfig.animationDuration > 0) {
@@ -1066,10 +1066,10 @@ public class a implements g, com.taobao.taolive.sdk.adapter.network.d, ddv {
                             this.i = 0;
                         }
                     }
-                    if (!TextUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.pauseIcon)) {
+                    if (!StringUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.pauseIcon)) {
                         this.l = mtopIliadUsertaskTasksDotaskResponseData.entryConfig.pauseIcon;
                     }
-                    if (!TextUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.pauseText)) {
+                    if (!StringUtils.isEmpty(mtopIliadUsertaskTasksDotaskResponseData.entryConfig.pauseText)) {
                         this.m = mtopIliadUsertaskTasksDotaskResponseData.entryConfig.pauseText;
                     }
                 }

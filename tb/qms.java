@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class qms<CD extends eyy> {
         this.f32944a = jSONObject;
         this.c = jSONObject.getString("component");
         this.d = jSONObject.getString("type");
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             this.d = "normal";
         }
         this.e = jSONObject.getString("if");
@@ -75,7 +75,7 @@ public class qms<CD extends eyy> {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
         eyy componentData = this.i.getComponentData();
-        return componentData != null && TextUtils.equals(str, componentData.r());
+        return componentData != null && StringUtils.equals(str, componentData.r());
     }
 
     public <C extends d> C a(String str, a aVar) {
@@ -107,7 +107,7 @@ public class qms<CD extends eyy> {
             return (C) ipChange.ipc$dispatch("dfbaff7d", new Object[]{this, str});
         }
         d dVar = this.i;
-        if (dVar == null || !TextUtils.equals(str, dVar.getComponentData().b())) {
+        if (dVar == null || !StringUtils.equals(str, dVar.getComponentData().b())) {
             return null;
         }
         return (C) this.i;
@@ -154,7 +154,7 @@ public class qms<CD extends eyy> {
             i.a("Node", "parsePrototypeProps() split return null, the prototypeProps：" + str + " does not container . symbol");
         } else if (split.length < 2) {
             i.a("Node", "parsePrototypeProps() split result < 2, the prototypeProps：" + str);
-        } else if (!TextUtils.equals($_MODEL, split[0])) {
+        } else if (!StringUtils.equals($_MODEL, split[0])) {
             i.a("Node", "parsePrototypeProps() failure, the prototypeProps：" + str + " does not container $model");
         } else {
             z = true;

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.collector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.core.context.MspTradeContext;
 import com.alipay.android.msp.framework.statisticsv2.Grammar;
@@ -47,7 +47,7 @@ public class TimeCollector {
                 return trId;
             }
             String apLinkToken = tradeContextByBizId.getApLinkToken();
-            return !TextUtils.isEmpty(apLinkToken) ? apLinkToken : trId;
+            return !StringUtils.isEmpty(apLinkToken) ? apLinkToken : trId;
         } catch (Throwable th) {
             LogUtil.printExceptionStackTrace(th);
             return trId;

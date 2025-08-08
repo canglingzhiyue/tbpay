@@ -3,7 +3,7 @@ package com.taobao.analysis.abtest;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.util.ALog;
 import anet.channel.util.AppLifecycle;
@@ -108,7 +108,7 @@ public class ABTestCenter {
     public static boolean isTBSpeedEdition(String str) {
         Context context;
         if (isTbSpeedSdkValid) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     context = GlobalAppRuntimeInfo.getContext();
                     if (context == null || isSpeedEditionMethod == null) {
@@ -196,7 +196,7 @@ public class ABTestCenter {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cf26fbc2", new Object[]{str});
         }
-        if (!isUTABTestValid || TextUtils.isEmpty(str)) {
+        if (!isUTABTestValid || StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (ABTestCenter.class) {
@@ -219,7 +219,7 @@ public class ABTestCenter {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("de9f6bc", new Object[]{str, str2});
         }
-        if (!isUTABTestValid || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (!isUTABTestValid || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         synchronized (ABTestCenter.class) {
@@ -259,7 +259,7 @@ public class ABTestCenter {
                         }
                         String str = (String) getValueMethod.invoke(invoke2, "");
                         aVar.b.put(key2, str);
-                        if (!TextUtils.isEmpty(str) && !str.equals(entry2.getValue())) {
+                        if (!StringUtils.isEmpty(str) && !str.equals(entry2.getValue())) {
                             z2 = true;
                         }
                     }
@@ -284,7 +284,7 @@ public class ABTestCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cb567a1b", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || (context = GlobalAppRuntimeInfo.getContext()) == null) {
+        } else if (StringUtils.isEmpty(str) || (context = GlobalAppRuntimeInfo.getContext()) == null) {
         } else {
             SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();
             edit.putString(str, str2);
@@ -298,7 +298,7 @@ public class ABTestCenter {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ba42c148", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (context = GlobalAppRuntimeInfo.getContext()) == null) {
+        if (StringUtils.isEmpty(str) || (context = GlobalAppRuntimeInfo.getContext()) == null) {
             return null;
         }
         return PreferenceManager.getDefaultSharedPreferences(context).getString(str, null);

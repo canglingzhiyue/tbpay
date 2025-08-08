@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -222,7 +222,7 @@ public class e extends DXWidgetNode {
             dVar.a((DXImageWidgetNode.a) null);
         }
         a(imageView, this.c);
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             imageView.setImageDrawable(null);
         }
         an a2 = com.taobao.android.dinamicx.u.a(getDXRuntimeContext());

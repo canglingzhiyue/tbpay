@@ -1,6 +1,6 @@
 package com.uc.webview.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -97,7 +97,7 @@ public final class a {
         }
 
         public final String c() {
-            if (TextUtils.isEmpty(this.e)) {
+            if (StringUtils.isEmpty(this.e)) {
                 this.e = this.b != null ? e() : d();
             }
             return this.e;

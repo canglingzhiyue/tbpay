@@ -3,7 +3,7 @@ package com.alipay.android.phone.seauthenticator.iotauth.fingerprint;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -133,7 +133,7 @@ public class FpAuthDialog extends IBiometricValidateNewDialog {
             this.mTitle.setText(clientText);
         }
         String clientText2 = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_SWITCH);
-        if (TextUtils.isEmpty(clientText2)) {
+        if (StringUtils.isEmpty(clientText2)) {
             this.mSwitchBtn.setVisibility(4);
         } else {
             this.mSwitchBtn.setVisibility(0);
@@ -157,7 +157,7 @@ public class FpAuthDialog extends IBiometricValidateNewDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.mTitle == null || TextUtils.isEmpty(str)) {
+        } else if (this.mTitle == null || StringUtils.isEmpty(str)) {
         } else {
             this.mTitle.postDelayed(new Runnable() { // from class: com.alipay.android.phone.seauthenticator.iotauth.fingerprint.FpAuthDialog.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;

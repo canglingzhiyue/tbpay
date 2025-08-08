@@ -1,6 +1,6 @@
 package com.taobao.weex.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXEnvironment;
 import com.taobao.weex.WXSDKInstance;
@@ -42,13 +42,13 @@ public class WXExceptionUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c4b35d84", new Object[]{str, wXErrorCode, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return true;
         }
         if (wXErrorCode != null && wXErrorCode.getErrorGroup() != WXErrorCode.ErrorGroup.JS) {
             return true;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "instanceIdNull";
         }
         if (str2.length() > 200) {
@@ -101,7 +101,7 @@ public class WXExceptionUtils {
             return;
         }
         IWXJSExceptionAdapter iWXJSExceptionAdapter = WXSDKManager.getInstance().getIWXJSExceptionAdapter();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "BundleUrlDefault";
         }
         if (map == null) {
@@ -112,15 +112,15 @@ public class WXExceptionUtils {
         map2.put("wxSDKInitCostTime", String.valueOf(WXEnvironment.sSDKInitTime));
         map2.put("wxSDKCurExceptionTime", String.valueOf(System.currentTimeMillis()));
         map2.put("wxUseRuntimeApi", String.valueOf(WXEnvironment.sUseRunTimeApi));
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             WXSDKInstance wXSDKInstance = WXSDKManager.getInstance().getAllInstanceMap().get(str2);
             if (wXSDKInstance != null) {
                 str = wXSDKInstance.ar().e;
                 Object obj = wXSDKInstance.ar().b.get(f.VALUE_BUNDLE_LOAD_LENGTH);
                 map2.put(f.VALUE_BUNDLE_LOAD_LENGTH, obj instanceof Integer ? String.valueOf(obj) : "unknownLength");
                 map2.put(bao.CACHE_KEY_TEMPLATE_INFO, wXSDKInstance.av());
-                if (TextUtils.isEmpty(str) || str.equals("default")) {
-                    if (!TextUtils.equals(degradeUrl, "BundleUrlDefaultDegradeUrl")) {
+                if (StringUtils.isEmpty(str) || str.equals("default")) {
+                    if (!StringUtils.equals(degradeUrl, "BundleUrlDefaultDegradeUrl")) {
                         str = degradeUrl;
                     } else {
                         str = wXSDKInstance.ak();
@@ -144,7 +144,7 @@ public class WXExceptionUtils {
             str6 = str2;
         } else {
             if (map2.size() > 0) {
-                str = TextUtils.isEmpty(map2.get("weexUrl")) ? map2.get("weexUrl") : map2.get("bundleUrl");
+                str = StringUtils.isEmpty(map2.get("weexUrl")) ? map2.get("weexUrl") : map2.get("bundleUrl");
             }
             str5 = str;
             str6 = "InstanceIdDefalut";

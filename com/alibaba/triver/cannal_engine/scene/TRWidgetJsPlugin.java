@@ -3,7 +3,7 @@ package com.alibaba.triver.cannal_engine.scene;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.triver.base.api.ITriverRemoteProxy;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.utils.RVLogger;
@@ -33,7 +33,7 @@ public class TRWidgetJsPlugin extends e {
         if (wVCallBackContext == null || wVCallBackContext.getWebview() == null) {
             RVLogger.e(TAG, "execute: wvCallBackContext is null");
             return false;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("invalid action");
             RVLogger.e(TAG, "execute: action is null");
             return false;

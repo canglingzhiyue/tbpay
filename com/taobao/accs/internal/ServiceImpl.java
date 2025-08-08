@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Process;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -165,7 +165,7 @@ public class ServiceImpl extends d {
             } finally {
             }
         }
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             tryConnect();
             pingOnAllConns(false, false);
             return 1;
@@ -222,7 +222,7 @@ public class ServiceImpl extends d {
             } else {
                 tryConnect();
             }
-            if (TextUtils.equals(str, "android.net.conn.CONNECTIVITY_CHANGE")) {
+            if (StringUtils.equals(str, "android.net.conn.CONNECTIVITY_CHANGE")) {
                 String networkTypeExt = UtilityImpl.getNetworkTypeExt(this.mContext);
                 boolean isNetworkConnected = UtilityImpl.isNetworkConnected(this.mContext);
                 String str2 = "network change:" + this.mLastNetWorkType + " to " + networkTypeExt;
@@ -237,7 +237,7 @@ public class ServiceImpl extends d {
                 }
                 notifyNetChangeOnAllConns(str2);
                 this.mLastNetWorkType = networkTypeExt;
-            } else if (TextUtils.equals(str, "android.intent.action.USER_PRESENT")) {
+            } else if (StringUtils.equals(str, "android.intent.action.USER_PRESENT")) {
                 ALog.d(TAG, "action android.intent.action.USER_PRESENT", new Object[0]);
                 pingOnAllConns(true, false);
             } else if (str.equals(Constants.ACTION_COMMAND)) {
@@ -266,7 +266,7 @@ public class ServiceImpl extends d {
         String stringExtra2 = intent.getStringExtra("serviceId");
         String stringExtra3 = intent.getStringExtra("userInfo");
         String stringExtra4 = intent.getStringExtra(Constants.KEY_CONFIG_TAG);
-        if (intExtra <= 0 || TextUtils.isEmpty(stringExtra)) {
+        if (intExtra <= 0 || StringUtils.isEmpty(stringExtra)) {
             return;
         }
         com.taobao.accs.net.c connection = getConnection(this.mContext, stringExtra4, true, intExtra);
@@ -335,7 +335,7 @@ public class ServiceImpl extends d {
         }
         String action = intent.getAction();
         ALog.d(TAG, "accs probeTaoBao begin......action=" + action, new Object[0]);
-        if (TextUtils.isEmpty(action) || !TextUtils.equals(action, "org.agoo.android.intent.action.PING_V4")) {
+        if (StringUtils.isEmpty(action) || !StringUtils.equals(action, "org.agoo.android.intent.action.PING_V4")) {
             return null;
         }
         intent.getStringExtra("source");
@@ -389,7 +389,7 @@ public class ServiceImpl extends d {
                     return;
                 }
                 ALog.i(TAG, "tryConnect", "appkey", value.k(), Constants.KEY_CONFIG_TAG, entry.getKey());
-                if (value.n() && TextUtils.isEmpty(value.j.getAppSecret())) {
+                if (value.n() && StringUtils.isEmpty(value.j.getAppSecret())) {
                     ALog.e(TAG, "tryConnect secret is null", new Object[0]);
                 } else {
                     value.c();
@@ -441,7 +441,7 @@ public class ServiceImpl extends d {
             return (String) ipChange.ipc$dispatch("6a58234d", new Object[]{this, str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "null";
             }
             String str2 = this.mContext.getPackageManager().getPackageInfo(str, 0).versionName;

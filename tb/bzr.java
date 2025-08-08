@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.config.fetch.a;
@@ -68,7 +68,7 @@ public class bzr implements INewConfigAdapter {
             return;
         }
         for (String str : this.b.getString("poplayer_config").split(",")) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.d.add(str);
                 for (UriModel uriModel : c.a(this.b.getString(str), str, "mock").triggerConfigs.pages) {
                     for (String str2 : uriModel.uris) {

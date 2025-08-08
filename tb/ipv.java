@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.zoloz.hardware.camera.preview.utils.SPManager;
@@ -271,7 +271,7 @@ public class ipv extends mos {
         } else if (map != null) {
             try {
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey()) && y.contains(entry.getKey()) && entry.getValue() != null) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && y.contains(entry.getKey()) && entry.getValue() != null) {
                         this.b.a(entry.getKey(), entry.getValue());
                     }
                 }

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.f2;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -49,7 +49,7 @@ public class fvf extends fuf {
         if (context == null) {
             return 0;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
             } catch (Exception unused) {
                 return 0;

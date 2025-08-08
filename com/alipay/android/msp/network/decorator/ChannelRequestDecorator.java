@@ -1,7 +1,7 @@
 package com.alipay.android.msp.network.decorator;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -46,7 +46,7 @@ public class ChannelRequestDecorator extends BaseDecorator {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put(MspGlobalDefine.PA, (Object) MspConfig.getInstance().getPa(this.d));
         String apdidToken = PhoneCashierMspEngine.getMspBase().getApdidToken(this.d);
-        if (TextUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
+        if (StringUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
             jSONObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 2));
         } else {
             jSONObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 1));

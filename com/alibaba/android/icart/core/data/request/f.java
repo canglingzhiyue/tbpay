@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.data.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -129,15 +129,15 @@ public class f extends a {
             String string = fields.getString("fromBundleId");
             String string2 = fields.getString("toBundleId");
             String string3 = fields.getString("from");
-            if ("addItemToGroup".equals(fields.getString("type")) && !TextUtils.isEmpty(string3)) {
+            if ("addItemToGroup".equals(fields.getString("type")) && !StringUtils.isEmpty(string3)) {
                 a(string3, list);
             }
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 for (IDMComponent iDMComponent : bei.i(bei.a(this.f2310a.w(), string))) {
                     list.add(iDMComponent.getKey());
                 }
             }
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return;
             }
             IDMComponent b = bei.b(this.f2310a.w(), string2);

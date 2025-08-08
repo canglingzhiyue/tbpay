@@ -1,6 +1,6 @@
 package com.alipay.mobile.intelligentdecision.rpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.intelligentdecision.DecisionContext;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -14,6 +14,6 @@ public class FrameworkUtils {
             return (String) ipChange.ipc$dispatch("58ad3b3d", new Object[0]);
         }
         String currentUid = DecisionContext.getInstance().getCurrentUid();
-        return TextUtils.isEmpty(currentUid) ? "" : currentUid;
+        return StringUtils.isEmpty(currentUid) ? "" : currentUid;
     }
 }

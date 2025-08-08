@@ -1,7 +1,7 @@
 package com.taobao.linkmanager.afc.xbs;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -189,7 +189,7 @@ public class c extends e {
         } else if (!this.f17200a || TBFloatingLayer.f17694a == null || !this.i) {
         } else {
             String b = AfcUtils.b(activity);
-            if (TextUtils.isEmpty(b) || TextUtils.isEmpty(this.k) || b.equals(this.k)) {
+            if (StringUtils.isEmpty(b) || StringUtils.isEmpty(this.k) || b.equals(this.k)) {
                 return;
             }
             com.taobao.flowcustoms.afc.utils.c.a("linkx", String.format("TbXbsPluginAdapter.switchPage.切换页面，小把手销毁.activityKeyCode=%s.mShowActivityCode=%s.", b, this.k));
@@ -283,11 +283,11 @@ public class c extends e {
         }
         HashMap<String, String> g = super.g();
         String str = "";
-        g.put("sourceAppkey", !TextUtils.isEmpty(this.h.f17179a) ? this.h.f17179a : str);
-        g.put("source", !TextUtils.isEmpty(this.h.i) ? this.h.i : str);
-        g.put(koh.SOURCE_PACKAGE_NAME, !TextUtils.isEmpty(com.taobao.flowcustoms.afc.a.b) ? com.taobao.flowcustoms.afc.a.b : str);
-        g.put(FullPage.PARAM_BACK2Tab2URL, !TextUtils.isEmpty(this.h.h) ? this.h.h : str);
-        if (!TextUtils.isEmpty(this.h.o)) {
+        g.put("sourceAppkey", !StringUtils.isEmpty(this.h.f17179a) ? this.h.f17179a : str);
+        g.put("source", !StringUtils.isEmpty(this.h.i) ? this.h.i : str);
+        g.put(koh.SOURCE_PACKAGE_NAME, !StringUtils.isEmpty(com.taobao.flowcustoms.afc.a.b) ? com.taobao.flowcustoms.afc.a.b : str);
+        g.put(FullPage.PARAM_BACK2Tab2URL, !StringUtils.isEmpty(this.h.h) ? this.h.h : str);
+        if (!StringUtils.isEmpty(this.h.o)) {
             str = this.h.o;
         }
         g.put("url", str);

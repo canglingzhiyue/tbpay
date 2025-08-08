@@ -1,6 +1,6 @@
 package com.taobao.search.common.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.nx3.bean.TemplateBean;
 import com.taobao.tinct.ITinctOperater;
@@ -26,8 +26,8 @@ public class ab implements itw {
         } else if (map != null && r.bd()) {
             for (Map.Entry<String, TemplateBean> entry : map.entrySet()) {
                 TemplateBean value = entry.getValue();
-                if (value != null && !TextUtils.isEmpty(value.isGray)) {
-                    boolean equals = TextUtils.equals(value.isGray, "true");
+                if (value != null && !StringUtils.isEmpty(value.isGray)) {
+                    boolean equals = StringUtils.equals(value.isGray, "true");
                     ITinctOperater.getInstance().markUsed("magellan", value.templateName, value.version, "Page_Search", equals);
                     com.taobao.android.searchbaseframe.util.k.d(dpl.LOG_TAG, "无线运维灰度模板染色，isGray=" + equals + ", templateName=" + value.templateName, new Object[0]);
                 }

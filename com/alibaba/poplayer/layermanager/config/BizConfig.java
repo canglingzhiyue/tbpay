@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.layermanager.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.Map;
@@ -23,7 +23,7 @@ public final class BizConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (ConfigItem) ipChange.ipc$dispatch("6324300", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.mConfigs.get(str);
         }
         return null;
@@ -36,7 +36,7 @@ public final class BizConfig implements Serializable {
         }
         StringBuilder sb = new StringBuilder(riy.BLOCK_START_STR);
         for (String str : this.mConfigs.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 sb.append(riy.BLOCK_START_STR);
                 sb.append(str);
                 sb.append(":");

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.aura.widget;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.aura.service.event.d;
 import com.alibaba.fastjson.JSONArray;
@@ -65,7 +65,7 @@ public class a extends axe {
             if (next instanceof JSONObject) {
                 JSONObject jSONObject = (JSONObject) next;
                 String str = "type";
-                if (TextUtils.isEmpty(jSONObject.getString(str))) {
+                if (StringUtils.isEmpty(jSONObject.getString(str))) {
                     str = "key";
                 }
                 String string = jSONObject.getString(str);
@@ -74,7 +74,7 @@ public class a extends axe {
                     str2 = "params";
                 }
                 JSONObject jSONObject2 = jSONObject.getJSONObject(str2);
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     arc.a().c("AliDetailHandleDinamicXEventHandler", "详情DX事件分发错误", "type为空");
                 } else {
                     d dVar2 = new d(dVar);

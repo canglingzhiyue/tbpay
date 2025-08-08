@@ -11,7 +11,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -190,7 +190,7 @@ public class TrtcWvPlugin extends android.taobao.windvane.jsbridge.e {
         this.mCallBack = wVCallBackContext;
         try {
             a aVar = null;
-            JSONObject parseObject = !TextUtils.isEmpty(str2) ? JSON.parseObject(str2) : null;
+            JSONObject parseObject = !StringUtils.isEmpty(str2) ? JSON.parseObject(str2) : null;
             switch (str.hashCode()) {
                 case -1696811668:
                     if (str.equals("floatWindow")) {
@@ -415,7 +415,7 @@ public class TrtcWvPlugin extends android.taobao.windvane.jsbridge.e {
         }
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("code", (Object) Integer.valueOf(i));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         jSONObject.put("msg", (Object) str);
@@ -490,7 +490,7 @@ public class TrtcWvPlugin extends android.taobao.windvane.jsbridge.e {
         org.json.JSONObject jSONObject = new org.json.JSONObject();
         try {
             jSONObject.put("code", i);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = i != -103 ? i != 200 ? "none" : "success" : "invalid params";
             }
             jSONObject.put("msg", str);

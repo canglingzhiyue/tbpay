@@ -171,7 +171,7 @@ public class Snapshot {
                     java.lang.String r0 = "snapshot"
                     java.lang.Object r6 = r6.get(r0)
                     java.lang.String r6 = (java.lang.String) r6
-                    boolean r0 = android.text.TextUtils.isEmpty(r6)
+                    boolean r0 = android.text.StringUtils.isEmpty(r6)
                     if (r0 != 0) goto L7c
                     r0 = 0
                     com.alibaba.fastjson.JSONObject r6 = com.alibaba.fastjson.JSONObject.parseObject(r6)     // Catch: java.lang.Exception -> L5b

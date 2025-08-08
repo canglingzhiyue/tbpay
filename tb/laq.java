@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.m;
 import com.taobao.gateway.dispatch.a;
@@ -65,7 +65,7 @@ public class laq {
         if (ipChange instanceof IpChange) {
             return (laq) ipChange.ipc$dispatch("7dcb3736", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             StringBuffer stringBuffer = this.d;
             stringBuffer.append(str);
             stringBuffer.append(" ");

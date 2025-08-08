@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.widget.g;
@@ -27,7 +27,7 @@ public class hyt {
             return (Bundle) ipChange.ipc$dispatch("5fc8d3", new Object[]{aVar, str});
         }
         Bundle bundle = new Bundle();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (aVar == null) {
                 return bundle;
             }

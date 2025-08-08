@@ -92,7 +92,7 @@ public class PeerConnectionFactory {
             ipChange.ipc$dispatch("ede8f199", new Object[]{initializationOptions});
             return;
         }
-        ContextUtils.initialize(initializationOptions.applicationContext);
+        ConStringUtils.initialize(initializationOptions.applicationContext);
         NativeLibrary.initialize(initializationOptions.nativeLibraryLoader, initializationOptions.nativeLibraryName);
         if (!NativeLibrary.isLoaded()) {
             return;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -196,7 +196,7 @@ public class srp implements srq {
             return null;
         }
         String str = "topview_trace_" + SystemClock.uptimeMillis() + "_" + UTDevice.getUtdid(f.b());
-        if (!TextUtils.isEmpty(bootImageInfo.itemId)) {
+        if (!StringUtils.isEmpty(bootImageInfo.itemId)) {
             str = str + "_" + bootImageInfo.itemId;
         }
         ArrayList arrayList = new ArrayList();

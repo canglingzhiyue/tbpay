@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.webkit.ValueCallback;
@@ -130,10 +130,10 @@ public class LVWebView extends WebView implements Handler.Callback, a {
         String str2 = gwi.h;
         String userAgentString = settings.getUserAgentString();
         if (userAgentString != null) {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 userAgentString = userAgentString + " AliApp(" + str + "/" + str2 + riy.BRACKET_END_STR;
             }
-            if (!userAgentString.contains("TTID/") && !TextUtils.isEmpty(gwi.f28538a)) {
+            if (!userAgentString.contains("TTID/") && !StringUtils.isEmpty(gwi.f28538a)) {
                 userAgentString = userAgentString + " TTID/" + gwi.f28538a;
             }
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.k;
 import com.taobao.android.detail.core.request.MtopRequestListener;
@@ -132,7 +132,7 @@ public class fef {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("1d6fc1ef", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i.a(k.a("PrefetchDataManager"), "requestID为空");
             return null;
         }
@@ -198,10 +198,10 @@ public class fef {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             if (list == null || !list.contains(key)) {
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     String value = entry.getValue();
                     String str = map2.get(key);
-                    if (!TextUtils.equals(value, str)) {
+                    if (!StringUtils.equals(value, str)) {
                         arrayList.add(key);
                         arrayList.add(value);
                         arrayList.add(str);

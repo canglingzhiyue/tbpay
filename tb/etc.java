@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.artry.common.c;
 import com.taobao.android.artry.constants.ResultCode;
@@ -117,7 +117,7 @@ public class etc {
         } else if (a(map)) {
             c.a(true, ResultCode.SUCCESS, null, aVar);
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 c.a(false, ResultCode.FAILED_TO_UPLOAD_PICTURE, aVar);
             }
             try {
@@ -127,7 +127,7 @@ public class etc {
                 final File a3 = a2.a(System.currentTimeMillis() + "");
                 for (Map.Entry<String, Bitmap> entry : map.entrySet()) {
                     String key = entry.getKey();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         e.a aVar2 = new e.a(str, key);
                         Bitmap value = entry.getValue();
                         if (a3 != null && a3.isDirectory() && a3.exists() && value != null && !value.isRecycled()) {

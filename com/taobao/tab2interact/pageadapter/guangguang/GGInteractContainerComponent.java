@@ -1,7 +1,7 @@
 package com.taobao.tab2interact.pageadapter.guangguang;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -263,20 +263,20 @@ public class GGInteractContainerComponent extends Component<View, ogl> implement
         com.taobao.tab2interact.core.utils.a.b(this, TAG, "处理Tab创建的消息，args=" + map);
         final String argsId = getArgsId(map);
         String argsType = getArgsType(map);
-        if (this.interactContainer == null || this.interactTabAdapterManager == null || TextUtils.isEmpty(argsId) || TextUtils.isEmpty(argsType) || aaVar == null) {
+        if (this.interactContainer == null || this.interactTabAdapterManager == null || StringUtils.isEmpty(argsId) || StringUtils.isEmpty(argsType) || aaVar == null) {
             com.taobao.tab2interact.core.utils.a.b(this, TAG, "处理Tab创建的消息，不满足条件");
             return;
         }
-        if (TextUtils.equals(argsType, "video")) {
+        if (StringUtils.equals(argsType, "video")) {
             String str = "ggtab3_" + argsId;
             if (oeb.ai()) {
                 str = FluidInstanceConfig.appendBizName("ggtab3", argsId, getEngineId());
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.interactTabAdapterManager.a(argsId, str);
             }
         }
-        if (TextUtils.equals(argsType, "live") && (a2 = getNode().ak().a(com.taobao.android.tab2liveroom.liveroom.a.class, (aa.c) new aa.c<aa>() { // from class: com.taobao.tab2interact.pageadapter.guangguang.GGInteractContainerComponent.1
+        if (StringUtils.equals(argsType, "live") && (a2 = getNode().ak().a(com.taobao.android.tab2liveroom.liveroom.a.class, (aa.c) new aa.c<aa>() { // from class: com.taobao.tab2interact.pageadapter.guangguang.GGInteractContainerComponent.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // com.taobao.tao.flexbox.layoutmanager.core.aa.c
@@ -312,14 +312,14 @@ public class GGInteractContainerComponent extends Component<View, ogl> implement
         }
         String argsId = getArgsId(map);
         String argsTriggerType = getArgsTriggerType(map);
-        if (this.interactContainer == null || TextUtils.isEmpty(argsId) || TextUtils.isEmpty(argsTriggerType)) {
+        if (this.interactContainer == null || StringUtils.isEmpty(argsId) || StringUtils.isEmpty(argsTriggerType)) {
             com.taobao.tab2interact.core.utils.a.b(this, TAG, "处理Tab可见的消息，不满足条件");
-        } else if (TextUtils.equals(argsTriggerType, "tab")) {
+        } else if (StringUtils.equals(argsTriggerType, "tab")) {
             this.interactContainer.b(argsId, "tab");
-        } else if (TextUtils.equals(argsTriggerType, "navigation")) {
+        } else if (StringUtils.equals(argsTriggerType, "navigation")) {
             this.interactContainer.a("navigation");
             this.interactContainer.b(argsId, "navigation");
-        } else if (!TextUtils.equals(argsTriggerType, "other")) {
+        } else if (!StringUtils.equals(argsTriggerType, "other")) {
         } else {
             this.interactContainer.a("other");
             this.interactContainer.b(argsId, "other");
@@ -339,14 +339,14 @@ public class GGInteractContainerComponent extends Component<View, ogl> implement
         }
         String argsId = getArgsId(map);
         String argsTriggerType = getArgsTriggerType(map);
-        if (this.interactContainer == null || TextUtils.isEmpty(argsId) || TextUtils.isEmpty(argsTriggerType)) {
+        if (this.interactContainer == null || StringUtils.isEmpty(argsId) || StringUtils.isEmpty(argsTriggerType)) {
             com.taobao.tab2interact.core.utils.a.b(this, TAG, "处理Tab不可见的消息，不满足条件");
-        } else if (TextUtils.equals(argsTriggerType, "tab")) {
+        } else if (StringUtils.equals(argsTriggerType, "tab")) {
             this.interactContainer.c(argsId, "tab");
-        } else if (TextUtils.equals(argsTriggerType, "navigation")) {
+        } else if (StringUtils.equals(argsTriggerType, "navigation")) {
             this.interactContainer.c(argsId, "navigation");
             this.interactContainer.b("navigation");
-        } else if (!TextUtils.equals(argsTriggerType, "other")) {
+        } else if (!StringUtils.equals(argsTriggerType, "other")) {
         } else {
             this.interactContainer.c(argsId, "other");
             this.interactContainer.b("other");
@@ -361,7 +361,7 @@ public class GGInteractContainerComponent extends Component<View, ogl> implement
         }
         com.taobao.tab2interact.core.utils.a.b(this, TAG, "处理Tab销毁的消息，args=" + map);
         String argsId = getArgsId(map);
-        if (this.interactContainer == null || this.interactTabAdapterManager == null || TextUtils.isEmpty(argsId)) {
+        if (this.interactContainer == null || this.interactTabAdapterManager == null || StringUtils.isEmpty(argsId)) {
             com.taobao.tab2interact.core.utils.a.b(this, TAG, "处理Tab销毁的消息，不满足条件");
             return;
         }
@@ -390,7 +390,7 @@ public class GGInteractContainerComponent extends Component<View, ogl> implement
         for (Map.Entry entry : entrySet) {
             Object key = entry.getKey();
             Object value = entry.getValue();
-            if (key != null && !TextUtils.isEmpty(key.toString())) {
+            if (key != null && !StringUtils.isEmpty(key.toString())) {
                 hashMap.put(key.toString(), value != null ? value.toString() : "");
             }
         }

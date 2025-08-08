@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,7 +42,7 @@ public class u0 {
     public static h1 b(String str, String str2) {
         v.c("hmsSdk", "generate UploadData EventModelHandlerBase");
         m1.d().a(str, str2);
-        if (TextUtils.isEmpty(m1.d().a())) {
+        if (StringUtils.isEmpty(m1.d().a())) {
             v.f("hmsSdk", "event chifer is empty");
             return null;
         }

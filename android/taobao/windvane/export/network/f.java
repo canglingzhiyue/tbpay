@@ -3,7 +3,7 @@ package android.taobao.windvane.export.network;
 import android.os.Handler;
 import android.taobao.windvane.export.network.Request;
 import android.taobao.windvane.startup.UCInitializerInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
@@ -227,11 +227,11 @@ public class f {
                     try {
                         String byteArrayOutputStream3 = byteArrayOutputStream2.toString(StandardCharsets.UTF_8.name());
                         byteArrayOutputStream.close();
-                        if (!TextUtils.isEmpty(byteArrayOutputStream3)) {
+                        if (!StringUtils.isEmpty(byteArrayOutputStream3)) {
                             Matcher matcher = Pattern.compile(i == 0 ? "<img[^>]*\\bdata-enable-preload\\b[^>]*\\bsrc\\s*=\\s*\"([^\"]*)\"[^>]*>" : "<img\\b(?![^>]*\\bdata-disable-preload\\b)[^>]*\\bsrc=[\"']([^\"']+)[\"'][^>]*>").matcher(byteArrayOutputStream3);
                             while (matcher.find()) {
                                 String group = matcher.group(1);
-                                if (!TextUtils.isEmpty(group)) {
+                                if (!StringUtils.isEmpty(group)) {
                                     if (group.startsWith(ado.URL_SEPARATOR)) {
                                         if (a2.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX)) {
                                             group = com.taobao.vessel.utils.b.HTTPS_SCHEMA + group;

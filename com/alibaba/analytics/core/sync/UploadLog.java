@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.network.NetworkUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -90,7 +90,7 @@ public class UploadLog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             apr.c(null, "Config Is Empty");
         } else {
             try {
@@ -105,7 +105,7 @@ public class UploadLog {
                 }
                 while (keys2.hasNext()) {
                     String next = keys2.next();
-                    if (!TextUtils.isEmpty(next)) {
+                    if (!StringUtils.isEmpty(next)) {
                         HashMap hashMap = new HashMap();
                         JSONObject jSONObject2 = jSONObject.getJSONObject(next);
                         if (jSONObject2 != null && (keys = jSONObject2.keys()) != null) {

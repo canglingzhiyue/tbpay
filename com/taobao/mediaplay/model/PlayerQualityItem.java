@@ -1,6 +1,6 @@
 package com.taobao.mediaplay.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -22,7 +22,7 @@ public class PlayerQualityItem implements Serializable {
 
     public boolean equals(PlayerQualityItem playerQualityItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9cc0a758", new Object[]{this, playerQualityItem})).booleanValue() : playerQualityItem != null && !TextUtils.isEmpty(playerQualityItem.name) && !TextUtils.isEmpty(playerQualityItem.newName) && !TextUtils.isEmpty(playerQualityItem.definition) && !TextUtils.isEmpty(playerQualityItem.newDefinition) && playerQualityItem.name.equals(this.name) && playerQualityItem.newName.equals(this.newName) && playerQualityItem.newDefinition.equals(this.definition) && playerQualityItem.newDefinition.equals(this.newDefinition);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9cc0a758", new Object[]{this, playerQualityItem})).booleanValue() : playerQualityItem != null && !StringUtils.isEmpty(playerQualityItem.name) && !StringUtils.isEmpty(playerQualityItem.newName) && !StringUtils.isEmpty(playerQualityItem.definition) && !StringUtils.isEmpty(playerQualityItem.newDefinition) && playerQualityItem.name.equals(this.name) && playerQualityItem.newName.equals(this.newName) && playerQualityItem.newDefinition.equals(this.definition) && playerQualityItem.newDefinition.equals(this.newDefinition);
     }
 
     public static PlayerQualityItem create(String str, String str2, String str3, String str4, int i) {

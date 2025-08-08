@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -118,7 +118,7 @@ public class AccsMainService extends Service {
                         String str = "";
                         if (intent != null) {
                             str = intent.getAction();
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 ALog.e("AccsMainService", "onStartCommand", "action", str);
                                 if (AccsMainService.ACTION_CHANNEL_STARTUP.equals(str)) {
                                     com.taobao.accs.connection.state.a.a().b((StateMachine.Event) intent.getSerializableExtra("event"));
@@ -149,7 +149,7 @@ public class AccsMainService extends Service {
         String stringExtra = intent.getStringExtra("serviceId");
         String stringExtra2 = intent.getStringExtra(Constants.KEY_STREAM_ID);
         int intExtra = intent.getIntExtra(Constants.KEY_STREAM_SEQ, 0);
-        if (TextUtils.isEmpty(stringExtra2) || intExtra <= 0) {
+        if (StringUtils.isEmpty(stringExtra2) || intExtra <= 0) {
             ALog.e("AccsMainService", "inputSyncMessage drop", "serviceId", stringExtra, "streamId", stringExtra2, dck.COL_SEQ, Integer.valueOf(intExtra));
             return;
         }

@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
@@ -204,7 +204,7 @@ public class BioOpenActivity extends BaseVerifyActivity {
         Bundle bundle4 = this.c;
         if (bundle4 != null && "startByVIData".equalsIgnoreCase(bundle4.getString("source"))) {
             String string2 = this.b.getString(Constants.VI_ENGINE_FAST_MODULENAME);
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 b("1005", "", "", "", "");
                 return;
             }
@@ -361,7 +361,7 @@ public class BioOpenActivity extends BaseVerifyActivity {
         if ("not_install_ifaa".equalsIgnoreCase(this.l)) {
             VerifyLogCat.i(f6024a, "无UI 未安装服务");
             Bundle bundle5 = new Bundle();
-            if (TextUtils.isEmpty(this.i)) {
+            if (StringUtils.isEmpty(this.i)) {
                 if ("1".equalsIgnoreCase(this.e)) {
                     this.i = MicroModuleContext.getInstance().getContext().getResources().getString(R.string.finger_guide_not_install);
                 } else if ("4".equalsIgnoreCase(this.e)) {

@@ -1,7 +1,7 @@
 package com.vivo.push.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.cache.ClientConfigManagerImpl;
 import com.vivo.push.model.InsideNotificationItem;
 import java.util.HashMap;
@@ -34,7 +34,7 @@ public final class u extends aa {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("messageID", String.valueOf(qVar.f()));
             String a2 = com.vivo.push.restructure.a.a().e().a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 hashMap.put("remoteAppId", a2);
             }
             xVar.a(hashMap);
@@ -48,7 +48,7 @@ public final class u extends aa {
             HashMap<String, String> hashMap2 = new HashMap<>();
             hashMap2.put("messageID", String.valueOf(qVar.f()));
             String a3 = com.vivo.push.restructure.a.a().e().a();
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 hashMap2.put("remoteAppId", a3);
             }
             xVar2.a(hashMap2);
@@ -58,7 +58,7 @@ public final class u extends aa {
             HashMap<String, String> hashMap3 = new HashMap<>();
             hashMap3.put("messageID", String.valueOf(qVar.f()));
             String a4 = com.vivo.push.restructure.a.a().e().a();
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 hashMap3.put("remoteAppId", a4);
             }
             xVar3.a(hashMap3);

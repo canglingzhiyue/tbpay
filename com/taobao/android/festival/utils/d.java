@@ -2,7 +2,7 @@ package com.taobao.android.festival.utils;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class d {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.startsWith(com.taobao.phenix.request.d.a(""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.startsWith(com.taobao.phenix.request.d.a(""));
     }
 
     public static List<String> a(Map<String, Map<String, String>> map) {
@@ -48,7 +48,7 @@ public class d {
 
     public static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && (str.endsWith(".png") || str.endsWith(".gif") || str.endsWith(".jpg"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && (str.endsWith(".png") || str.endsWith(".gif") || str.endsWith(".jpg"));
     }
 
     public static void a(Runnable runnable) {

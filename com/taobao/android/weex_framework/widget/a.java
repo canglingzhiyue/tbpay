@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.adapter.c;
 import com.taobao.android.weex_framework.l;
@@ -247,7 +247,7 @@ public class a {
                     com.taobao.android.weex_framework.widget.a r0 = com.taobao.android.weex_framework.widget.a.this
                     monitor-enter(r0)
                     java.lang.String r1 = r6.f15987a     // Catch: java.lang.Throwable -> L86
-                    boolean r1 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L86
+                    boolean r1 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L86
                     if (r1 != 0) goto L3d
                     java.lang.String r1 = r6.f15987a     // Catch: java.lang.NumberFormatException -> L27 java.lang.Throwable -> L86
                     int r1 = java.lang.Integer.parseInt(r1)     // Catch: java.lang.NumberFormatException -> L27 java.lang.Throwable -> L86
@@ -313,7 +313,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4dbad4dc", new Object[]{this, str, str2, new Boolean(z)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 if (!new File(str).exists()) {
                     return false;

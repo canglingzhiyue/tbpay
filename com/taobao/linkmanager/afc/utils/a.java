@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.utils;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.detail.activity.DetailActivity;
 import tb.kge;
@@ -70,7 +70,7 @@ public class a implements Application.ActivityLifecycleCallbacks {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.equals(DetailActivity.TAG) || str.equals("PurchaseActivity");

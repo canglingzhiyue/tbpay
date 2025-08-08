@@ -9,7 +9,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -149,10 +149,10 @@ public class kid {
                 kif.a("isVivoOriginWidgetSupport not support version: " + a2);
                 a.a().a(MonitorType.WIDGET_STATE, new a.C0652a().d("widget_vivo_add"));
                 return false;
-            } else if (TextUtils.equals(a3, "PD2178") && a2 > 110500027) {
+            } else if (StringUtils.equals(a3, "PD2178") && a2 > 110500027) {
                 return true;
             } else {
-                return !TextUtils.isEmpty(str) ? a2 > Integer.parseInt(str) : a2 > 110000134;
+                return !StringUtils.isEmpty(str) ? a2 > Integer.parseInt(str) : a2 > 110000134;
             }
         } catch (Throwable th) {
             kif.a("isVivoOriginWidgetSupport error" + th.getMessage());
@@ -206,7 +206,7 @@ public class kid {
         }
         try {
             String str2 = "";
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str2 = JSON.parseObject(str).getString("vivo_desktop_version");
             }
             return c(context, str2);
@@ -268,7 +268,7 @@ public class kid {
         }
         String a2 = a("hw_sc.build.platform.version", "");
         kif.b("isHmOS2Above osVersion: " + a2);
-        return !TextUtils.isEmpty(a2) && a2.compareTo("2.0.0") > 0;
+        return !StringUtils.isEmpty(a2) && a2.compareTo("2.0.0") > 0;
     }
 
     public static boolean i(Context context) {

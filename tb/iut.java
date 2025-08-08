@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -277,7 +277,7 @@ public abstract class iut implements iul, ium {
             return (iul) ipChange.ipc$dispatch("be9435dc", new Object[]{this, str});
         }
         iut iutVar = this;
-        while (!TextUtils.equals(iutVar.getScopeTag(), str)) {
+        while (!StringUtils.equals(iutVar.getScopeTag(), str)) {
             ium parent = iutVar.getParent();
             if (parent instanceof iul) {
                 iutVar = (iul) parent;

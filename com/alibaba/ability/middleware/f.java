@@ -1,6 +1,6 @@
 package com.alibaba.ability.middleware;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.fastjson.JSONObject;
@@ -150,8 +150,8 @@ public final class f implements d {
                 obj = str5;
             }
             alt f = this.e.f();
-            String e2 = TextUtils.isEmpty(f.e()) ? str5 : f.e();
-            if (!TextUtils.isEmpty(f.d())) {
+            String e2 = StringUtils.isEmpty(f.e()) ? str5 : f.e();
+            if (!StringUtils.isEmpty(f.d())) {
                 str5 = f.d();
             }
             String str6 = str5;

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -236,7 +236,7 @@ public class AliUserLoginFragment extends BaseLoginFragment implements UserLogin
             this.mPreviousChecked = arguments.getBoolean("check");
             String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
             arguments.putString(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.loginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
                 LoginParam loginParam = this.loginParam;
                 if (loginParam != null) {
@@ -419,7 +419,7 @@ public class AliUserLoginFragment extends BaseLoginFragment implements UserLogin
         }
         String charSequence = this.mAccountTV.getText().toString();
         String obj = this.mPasswordET.getText().toString();
-        if (!TextUtils.isEmpty(charSequence) && !TextUtils.isEmpty(obj)) {
+        if (!StringUtils.isEmpty(charSequence) && !StringUtils.isEmpty(obj)) {
             z = true;
         }
         this.mLoginBtn.setEnabled(z);
@@ -585,9 +585,9 @@ public class AliUserLoginFragment extends BaseLoginFragment implements UserLogin
         this.mActiveLogin = true;
         this.mCurrentAccount = getAccountName();
         this.mCurrentPassword = this.mPasswordET.getText().toString().trim();
-        if (TextUtils.isEmpty(this.mCurrentAccount)) {
+        if (StringUtils.isEmpty(this.mCurrentAccount)) {
             showErrorMessage(R.string.aliuser_sign_in_account_hint);
-        } else if (TextUtils.isEmpty(this.mCurrentPassword)) {
+        } else if (StringUtils.isEmpty(this.mCurrentPassword)) {
             showErrorMessage(R.string.aliuser_sign_in_please_enter_password);
         } else {
             if (this.mDialogHelper != null) {
@@ -676,7 +676,7 @@ public class AliUserLoginFragment extends BaseLoginFragment implements UserLogin
                     }
                 }, null, null);
                 return;
-            } else if (TextUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.tokenKey) || getLoginSite() != 0) {
+            } else if (StringUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.tokenKey) || getLoginSite() != 0) {
                 this.mUserLoginPresenter.fetchUrlAndToWebView(this.mAttachedActivity, accountName, LoginType.LocalLoginType.RETRIVE_PWD_LOGIN, str);
                 return;
             } else {
@@ -726,7 +726,7 @@ public class AliUserLoginFragment extends BaseLoginFragment implements UserLogin
         } else {
             this.mCurrentSelectedAccount = historyAccount.userInputName;
             String dataMasking = StringUtil.dataMasking(this.mCurrentSelectedAccount, true);
-            if (TextUtils.isEmpty(dataMasking)) {
+            if (StringUtils.isEmpty(dataMasking)) {
                 return;
             }
             this.mAccountTV.setText(dataMasking);

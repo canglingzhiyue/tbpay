@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -199,7 +199,7 @@ public final class ShopInfoView extends BaseItemView implements View.OnClickList
                 break;
             }
             c cVar = bVar.c().get(i8);
-            if (!TextUtils.isEmpty(cVar.f()) && cVar.d() > 0 && cVar.e() > 0) {
+            if (!StringUtils.isEmpty(cVar.f()) && cVar.d() > 0 && cVar.e() > 0) {
                 int d2 = (int) ((cVar.d() / cVar.e()) * (z2 ? com.taobao.search.mmd.uikit.shopinfo.b.l : rwf.d(com.taobao.search.mmd.uikit.shopinfo.b.g, getMeasuredHeight())));
                 if (d2 <= i7) {
                     e eVar = new e(this.iconPaint, z3);
@@ -222,7 +222,7 @@ public final class ShopInfoView extends BaseItemView implements View.OnClickList
                 fArr = fArr2;
                 i6 = i;
             } else {
-                if (!TextUtils.isEmpty(cVar.b())) {
+                if (!StringUtils.isEmpty(cVar.b())) {
                     float measureText = this.shopInfoPaint.measureText(cVar.b());
                     float f = i7;
                     if (measureText <= f) {
@@ -251,7 +251,7 @@ public final class ShopInfoView extends BaseItemView implements View.OnClickList
                         i = i6;
                         i2 = size;
                         fArr = fArr2;
-                        if (TextUtils.equals(Constants.Name.SUFFIX, cVar.c())) {
+                        if (StringUtils.equals(Constants.Name.SUFFIX, cVar.c())) {
                             float measureText2 = this.shopInfoPaint.measureText("...");
                             int breakText = this.shopInfoPaint.breakText(cVar.b(), true, f - measureText2, fArr);
                             if (breakText >= 2) {

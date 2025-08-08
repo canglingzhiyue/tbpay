@@ -1,6 +1,6 @@
 package com.taobao.share.copy.process;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -53,7 +53,7 @@ public class a {
             return new f();
         }
         String str = map.get("templateId");
-        if (TextUtils.isEmpty(str) || TemplateId.COMMON.equals(str)) {
+        if (StringUtils.isEmpty(str) || TemplateId.COMMON.equals(str)) {
             String str2 = map.get("sourceType");
             if ("shop".equals(str2)) {
                 str = TemplateId.SHOP.toString();
@@ -63,7 +63,7 @@ public class a {
             map.put("templateId", str);
         }
         String str3 = map.get("popType");
-        if (!TextUtils.isEmpty(str3) && str3.equalsIgnoreCase(TemplateId.WEEX.name()) && !TextUtils.isEmpty(map.get("popUrl"))) {
+        if (!StringUtils.isEmpty(str3) && str3.equalsIgnoreCase(TemplateId.WEEX.name()) && !StringUtils.isEmpty(map.get("popUrl"))) {
             oay oayVar = new oay();
             a((oau) oayVar, map, dVar);
             oayVar.y = TemplateId.WEEX.toString();
@@ -74,7 +74,7 @@ public class a {
             a((oau) oawVar, map, dVar);
             String remove = oawVar.H.remove("price");
             try {
-                if (TextUtils.isEmpty(remove)) {
+                if (StringUtils.isEmpty(remove)) {
                     remove = (String) ((Map) JSONObject.parse(oawVar.H.get(MspGlobalDefine.EXTENDINFO))).remove("price");
                 }
             } catch (Exception unused) {
@@ -106,7 +106,7 @@ public class a {
             a(oauVar, map, dVar);
             return oauVar;
         } else {
-            if (!TextUtils.isEmpty(str) && nzt.a() != null && nzt.a().containsKey(str)) {
+            if (!StringUtils.isEmpty(str) && nzt.a() != null && nzt.a().containsKey(str)) {
                 try {
                     Class<?> cls = nzt.a().get(str);
                     if (cls.isAssignableFrom(f.class)) {
@@ -156,7 +156,7 @@ public class a {
         fVar.D = fVar.H.remove("taoFriendIcon");
         try {
             String remove = fVar.H.remove("bizData");
-            if (TextUtils.isEmpty(remove)) {
+            if (StringUtils.isEmpty(remove)) {
                 return;
             }
             fVar.I = (Map) JSON.parseObject(remove, Map.class);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class kvh extends h {
             return;
         }
         String string = e.getString("sectionBizCode");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             lap.a("DxEventHandler", "DXInsertCardsEventHandler#handleEvent", "sectionBizCode为空");
             return;
         }
@@ -93,7 +93,7 @@ public class kvh extends h {
                 return;
             }
             String string = jSONObject2.getString("upBizParam");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 lap.a("DxEventHandler", "DXInsertCardsEventHandler#handleEvent", "item.upBizParam 为空 : " + str);
             }
             String a2 = a(jSONObject);
@@ -127,7 +127,7 @@ public class kvh extends h {
             } else {
                 String string = jSONObject4.getString("utLogMap");
                 try {
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         jSONObject3.put(kox.X_OBJECT_ID, (Object) JSONObject.parseObject(URLDecoder.decode(string, "utf-8")).getString(kox.X_OBJECT_ID));
                     }
                 } catch (UnsupportedEncodingException e) {

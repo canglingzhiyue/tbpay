@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.datastructure.b;
@@ -82,7 +82,7 @@ public class gjv {
                     arrayList.add(bVar.b());
                 }
             }
-            TLog.logd("gateway2-gateway.triggerEvents", TextUtils.join(",", arrayList));
+            TLog.logd("gateway2-gateway.triggerEvents", StringUtils.join(",", arrayList));
         }
         gjy.a(list, this.c);
     }
@@ -107,7 +107,7 @@ public class gjv {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("1be9bf67", new Object[]{this, message});
-                    } else if (!TextUtils.equals(message.getChannelId(), a()) || (params = message.getParams()) == null) {
+                    } else if (!StringUtils.equals(message.getChannelId(), a()) || (params = message.getParams()) == null) {
                     } else {
                         try {
                             List<b> list = (List) params.get("events");

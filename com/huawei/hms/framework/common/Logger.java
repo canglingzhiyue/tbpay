@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import java.io.IOException;
 import java.util.Arrays;
@@ -86,7 +86,7 @@ public class Logger {
     }
 
     private static String complexMsg(String str, int i) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return getCallMethodInfo(i) + "|" + str;
         }
         return getCallMethodInfo(i);

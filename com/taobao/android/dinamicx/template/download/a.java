@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.template.download;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXResult;
 import com.taobao.android.dinamicx.DinamicXEngine;
@@ -153,7 +153,7 @@ public class a {
                                 if (fvaVar != null && z) {
                                     fvaVar.a(bVar);
                                 }
-                                if (dXResult != null && dXResult.f11780a != null && !TextUtils.isEmpty(dXResult.f11780a.c)) {
+                                if (dXResult != null && dXResult.f11780a != null && !StringUtils.isEmpty(dXResult.f11780a.c)) {
                                     s sVar = new s(str);
                                     sVar.c = new ArrayList();
                                     s.a aVar = new s.a(DXMonitorConstant.DX_MONITOR_DOWNLOADER, DXMonitorConstant.DX_MONITOR_DOWNLOADER_DOWNLOAD_COUNT, 60004);
@@ -190,7 +190,7 @@ public class a {
         s sVar = new s(str);
         byte[] bArr = null;
         String a2 = a(dXTemplateItem.c);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             h hVar = this.f11926a;
             if (hVar instanceof g) {
                 bArr = ((g) hVar).a(a2, str, dXTemplateItem);
@@ -202,7 +202,7 @@ public class a {
             fux.b(str + "传入的url是空 " + b);
         }
         if (bArr == null) {
-            s.a aVar = new s.a(DXMonitorConstant.DX_MONITOR_DOWNLOADER, DXMonitorConstant.DX_MONITOR_DOWNLOADER_DOWNLOAD, TextUtils.isEmpty(a2) ? s.DX_DB_OPEN_ERROR_38 : 60000);
+            s.a aVar = new s.a(DXMonitorConstant.DX_MONITOR_DOWNLOADER, DXMonitorConstant.DX_MONITOR_DOWNLOADER_DOWNLOAD, StringUtils.isEmpty(a2) ? s.DX_DB_OPEN_ERROR_38 : 60000);
             dXResult.f11780a = dXTemplateItem;
             sVar.b = dXTemplateItem;
             sVar.c.add(aVar);
@@ -224,7 +224,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.indexOf("._dxv4") < 0) {
+        if (StringUtils.isEmpty(str) || str.indexOf("._dxv4") < 0) {
             return str;
         }
         String str2 = str.split("._dxv4")[0];

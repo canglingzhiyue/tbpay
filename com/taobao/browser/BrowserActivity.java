@@ -28,7 +28,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.monitor.o;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -528,7 +528,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("9458c0f9", new Object[]{this, str, new Boolean(z)});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 TLog.logd(BrowserActivity.TAG, "the groupName is empty!");
             } else if (!str.equalsIgnoreCase("WindVane") || (browserActivity = (BrowserActivity) this.f16745a.get()) == null) {
             } else {
@@ -545,7 +545,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         }
         HashMap hashMap = new HashMap();
         String a2 = BrowserUtil.a(Thread.currentThread().getStackTrace());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("call_stack", a2);
         }
         BrowserUtil.a(TAG, "getHandler", null, this.url, hashMap);
@@ -614,7 +614,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         }
         String str = BrowserUtil.b;
         this.originalurl = intent.getDataString();
-        if (TextUtils.isEmpty(this.originalurl)) {
+        if (StringUtils.isEmpty(this.originalurl)) {
             BrowserUtil.a(TAG, str, "intent_url_empty", null, null);
             try {
                 this.originalurl = getIntent().getStringExtra("myBrowserUrl");
@@ -630,7 +630,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        if (TextUtils.isEmpty(this.originalurl)) {
+        if (StringUtils.isEmpty(this.originalurl)) {
             super.onCreate(bundle);
             m.d(TAG, "originalurl is null, and finish activity.");
             finish();
@@ -665,7 +665,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                 BrowserUtil.a(TAG, str, "bundle_isRefundOrderUrl", this.originalurl, null);
             }
             this.orderId = bundle2.getString(CoreConstants.IN_PARAM_BIZ_ORDER_ID);
-            if (!TextUtils.isEmpty(this.orderId)) {
+            if (!StringUtils.isEmpty(this.orderId)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("orderId", this.orderId);
                 BrowserUtil.a(TAG, str, "bundle_has_orderId", this.originalurl, hashMap);
@@ -941,11 +941,11 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             ipChange.ipc$dispatch("a5d6cd73", new Object[]{this});
             return;
         }
-        this.enableUCVisibility = TextUtils.equals("true", OrangeConfig.getInstance().getConfig("group_common_browser", com.taobao.browser.utils.i.KEY_ORANGE_CONFIG_ENABLE_UC_VISIBILITY, "false"));
+        this.enableUCVisibility = StringUtils.equals("true", OrangeConfig.getInstance().getConfig("group_common_browser", com.taobao.browser.utils.i.KEY_ORANGE_CONFIG_ENABLE_UC_VISIBILITY, "false"));
         long currentTimeMillis = System.currentTimeMillis();
         TBS.Page.enter(this.className);
         BrowserHybridWebView browserHybridWebView = this.browserWebView;
-        if (browserHybridWebView != null && !TextUtils.isEmpty(browserHybridWebView.getCurrentUrl())) {
+        if (browserHybridWebView != null && !StringUtils.isEmpty(browserHybridWebView.getCurrentUrl())) {
             Properties properties = new Properties();
             properties.put("url", this.browserWebView.getCurrentUrl());
             TBS.EasyTrace.updateEasyTraceActivityProperties(this, properties);
@@ -983,10 +983,10 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             ipChange.ipc$dispatch("4c630bb7", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(TrackBuried.list_Type)) {
+        if (!StringUtils.isEmpty(TrackBuried.list_Type)) {
             HashMap hashMap = new HashMap();
             hashMap.put("action", "kpv");
-            if (!TextUtils.isEmpty(this.mYyzUrl)) {
+            if (!StringUtils.isEmpty(this.mYyzUrl)) {
                 hashMap.put("url", this.mYyzUrl);
             }
             TrackBuried.effectupdatePageProperties(this.className, hashMap);
@@ -1120,7 +1120,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         TBS.Page.leave(this.className);
         if (this.browserWebView != null) {
             kfb.a().a(this.mActivityHashCode, this.browserWebView.getOriginalUrl(), isFinishing());
-            if (!TextUtils.isEmpty(this.browserWebView.getCurrentUrl())) {
+            if (!StringUtils.isEmpty(this.browserWebView.getCurrentUrl())) {
                 Properties properties = new Properties();
                 properties.put("url", this.browserWebView.getCurrentUrl());
                 TBS.EasyTrace.updateEasyTraceActivityProperties(this, properties);
@@ -1284,7 +1284,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                             }
                             BrowserUtil.a(this, this.browserWebView);
                             this.noMetaPageList = getNoMetaPageList();
-                            if (!TextUtils.isEmpty(this.noMetaPageList) && (browserHybridWebView = this.browserWebView) != null && k.a(this.noMetaPageList, browserHybridWebView.getCurrentUrl())) {
+                            if (!StringUtils.isEmpty(this.noMetaPageList) && (browserHybridWebView = this.browserWebView) != null && k.a(this.noMetaPageList, browserHybridWebView.getCurrentUrl())) {
                                 this.browserWebView.loadUrl(com.taobao.browser.utils.i.b);
                                 break;
                             }
@@ -1308,7 +1308,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                             if (!this.readTitle && message.arg1 != 111) {
                                 str = " ";
                             }
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 actionBarMenuItem.setTitle(str);
                                 this.menuItemTitle = actionBarMenuItem;
                                 supportInvalidateOptionsMenu();
@@ -1321,7 +1321,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                                 Boolean bool = false;
                                 String string = bundle2.getString("icon");
                                 String string2 = bundle2.getString("iconType");
-                                if (!TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string)) {
+                                if (!StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string)) {
                                     actionBarMenuItem.stretch = bundle2.getBoolean("stretch");
                                     if (string2.equals("IconFont")) {
                                         if (actionBarMenuItem.setIconFontId(string) >= 0) {
@@ -1374,7 +1374,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                                     Bundle bundle3 = (Bundle) message.obj;
                                     this.mlinkhref = bundle3.getString("linkhref");
                                     this.mlinkonclick = bundle3.getString("linkonclick");
-                                    if (!TextUtils.isEmpty(this.mlinkhref) || !TextUtils.isEmpty(this.mlinkonclick)) {
+                                    if (!StringUtils.isEmpty(this.mlinkhref) || !StringUtils.isEmpty(this.mlinkonclick)) {
                                         try {
                                             com.taobao.phenix.intf.b.h().a(this.mlinkhref).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.browser.BrowserActivity.11
                                                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -1419,7 +1419,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                                         break;
                                     } else {
                                         String string4 = bundle4.getString("title");
-                                        if (!TextUtils.isEmpty(string4)) {
+                                        if (!StringUtils.isEmpty(string4)) {
                                             actionBarMenuItem2.setTitle(string4);
                                             this.menuItemRight = actionBarMenuItem2;
                                             supportInvalidateOptionsMenu();
@@ -1458,7 +1458,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                                                     org.json.JSONObject optJSONObject = optJSONArray.optJSONObject(i2);
                                                     ActionBarMenuItem actionBarMenuItem3 = new ActionBarMenuItem();
                                                     String optString = optJSONObject.optString("text");
-                                                    if (!TextUtils.isEmpty(optString)) {
+                                                    if (!StringUtils.isEmpty(optString)) {
                                                         actionBarMenuItem3.title = optString;
                                                         boolean optBoolean = optJSONObject.optBoolean("fromNative", false);
                                                         boolean optBoolean2 = optJSONObject.optBoolean("iconFont", false);
@@ -1591,7 +1591,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                                                         break;
                                                     } else {
                                                         String string7 = bundle7.getString("title");
-                                                        if (!TextUtils.isEmpty(string7)) {
+                                                        if (!StringUtils.isEmpty(string7)) {
                                                             actionBarMenuItem4.setTitle(string7);
                                                             this.menuItemSecondRight = actionBarMenuItem4;
                                                             supportInvalidateOptionsMenu();
@@ -1684,7 +1684,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6595bcb2", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             m.d(TAG, "originalurl is null, and finish activity.");
             android.taobao.util.i iVar = this.mHandle;
             if (iVar != null) {
@@ -1725,7 +1725,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             String str2 = null;
             try {
                 str2 = intent.getStringExtra("myBrowserUrl");
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = intent.getDataString();
                 }
                 String urlReferer = getUrlReferer(str2, intent);
@@ -1769,7 +1769,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         boolean booleanExtra3 = intent.getBooleanExtra("afc_nav_native", false);
         if (booleanExtra && booleanExtra2) {
             String finalUrlFromAfc = getFinalUrlFromAfc(intent);
-            if (TextUtils.equals(finalUrlFromAfc, this.navAfcMergeUrl)) {
+            if (StringUtils.equals(finalUrlFromAfc, this.navAfcMergeUrl)) {
                 finalUrlFromAfc = null;
             }
             String str2 = finalUrlFromAfc;
@@ -1780,7 +1780,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             return str;
         } else {
             String h5UrlFromAfc = getH5UrlFromAfc(intent);
-            if (!TextUtils.isEmpty(h5UrlFromAfc)) {
+            if (!StringUtils.isEmpty(h5UrlFromAfc)) {
                 if (Nav.from(this).withExtras(intent.getExtras()).toUri(h5UrlFromAfc)) {
                     NotifyApm.a().a(this);
                     com.taobao.browser.config.a.a();
@@ -1836,7 +1836,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         try {
             String queryParameter = Uri.parse(intent.getDataString()).getQueryParameter("h5Url");
             String queryParameter2 = Uri.parse(queryParameter).getQueryParameter(RVStartParams.KEY_URL_SHORT);
-            if (!TextUtils.isEmpty(queryParameter2) && Uri.parse(queryParameter2).isHierarchical()) {
+            if (!StringUtils.isEmpty(queryParameter2) && Uri.parse(queryParameter2).isHierarchical()) {
                 queryParameter = queryParameter2;
             }
             return Uri.parse(queryParameter);
@@ -1854,10 +1854,10 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         try {
             String queryParameter = Uri.parse(intent.getDataString()).getQueryParameter("h5Url");
             String queryParameter2 = Uri.parse(queryParameter).getQueryParameter(RVStartParams.KEY_URL_SHORT);
-            if (!TextUtils.isEmpty(queryParameter2) && Uri.parse(queryParameter2).isHierarchical()) {
+            if (!StringUtils.isEmpty(queryParameter2) && Uri.parse(queryParameter2).isHierarchical()) {
                 queryParameter = queryParameter2;
             }
-            return !TextUtils.isEmpty(queryParameter);
+            return !StringUtils.isEmpty(queryParameter);
         } catch (Throwable th) {
             th.printStackTrace();
             return false;
@@ -1877,7 +1877,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             str = Uri.parse(intent.getDataString()).getQueryParameter("h5Url");
             m.e(TAG, "afc_nav_merge url=" + str);
             String queryParameter = Uri.parse(str).getQueryParameter(RVStartParams.KEY_URL_SHORT);
-            if (!TextUtils.isEmpty(queryParameter) && Uri.parse(queryParameter).isHierarchical()) {
+            if (!StringUtils.isEmpty(queryParameter) && Uri.parse(queryParameter).isHierarchical()) {
                 try {
                     m.e(TAG, "afc_nav_merge parsedU=" + queryParameter);
                     str = queryParameter;
@@ -1929,7 +1929,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                             ipChange2.ipc$dispatch("138ac29e", new Object[]{this, str});
                         } else if (BrowserActivity.access$400(BrowserActivity.this) == null) {
                         } else {
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 z = !"false".equals(str.replace("\"", "").replace("'", ""));
                             }
                             if (z) {
@@ -1960,13 +1960,13 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             }
             String url = this.browserWebView.getUrl();
             this.quitWebViewDirectlyUrls = getQuitWebViewDirectlyList();
-            if (!TextUtils.isEmpty(url)) {
+            if (!StringUtils.isEmpty(url)) {
                 try {
                     Uri parse = Uri.parse(url);
                     if (parse != null && "true".equals(parse.getQueryParameter("disallowback"))) {
                         this.alloweWebViewHistoryBack = false;
                     }
-                    if (!TextUtils.isEmpty(this.quitWebViewDirectlyUrls) && k.a(this.quitWebViewDirectlyUrls, url)) {
+                    if (!StringUtils.isEmpty(this.quitWebViewDirectlyUrls) && k.a(this.quitWebViewDirectlyUrls, url)) {
                         this.alloweWebViewHistoryBack = false;
                     }
                 } catch (Exception unused) {
@@ -2038,7 +2038,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         }
         long currentTimeMillis = System.currentTimeMillis();
         boolean a2 = FestivalMgr.a().a("global");
-        if (!TextUtils.isEmpty(this.useDounble11Style) && a2) {
+        if (!StringUtils.isEmpty(this.useDounble11Style) && a2) {
             setDounble11Style(this.useDounble11Style);
         } else {
             resetStyle();
@@ -2052,7 +2052,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             int i = R.id.browser_menu_order_detail;
             MenuItemCompat.setShowAsAction(menu.add(0, i, 0, getString(R.string.uik_icon_form_light) + ":订单详情"), 0);
         }
-        if (!TextUtils.isEmpty(this.mlinkhref) && this.bitmap != null) {
+        if (!StringUtils.isEmpty(this.mlinkhref) && this.bitmap != null) {
             getMenuInflater().inflate(R.menu.browser_custom_menu, menu);
             BitmapDrawable bitmapDrawable = new BitmapDrawable(getResources(), this.bitmap);
             MenuItem item = menu.getItem(R.id.browser_menu_custom);
@@ -2067,7 +2067,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         if (this.menuItemSecondRight != null) {
             MenuItem add = menu.add(0, R.id.browser_menu_second_right_item, 0, "");
             MenuItemCompat.setShowAsAction(add, 2);
-            if (!TextUtils.isEmpty(this.menuItemSecondRight.title)) {
+            if (!StringUtils.isEmpty(this.menuItemSecondRight.title)) {
                 add.setTitle(this.menuItemSecondRight.title);
             } else if (this.menuItemSecondRight.iconResId > 0) {
                 add.setIcon(this.menuItemSecondRight.iconResId);
@@ -2080,7 +2080,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         if (this.menuItemRight != null) {
             MenuItem add2 = menu.add(0, R.id.browser_menu_right_item, 0, "");
             MenuItemCompat.setShowAsAction(add2, 2);
-            if (!TextUtils.isEmpty(this.menuItemRight.title)) {
+            if (!StringUtils.isEmpty(this.menuItemRight.title)) {
                 add2.setTitle(this.menuItemRight.title);
             } else if (this.menuItemRight.iconResId > 0) {
                 add2.setIcon(this.menuItemRight.iconResId);
@@ -2095,7 +2095,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         }
         if (this.menuItemTitle != null) {
             final ActionBar supportActionBar = getSupportActionBar();
-            if (TextUtils.isEmpty(this.menuItemTitle.title)) {
+            if (StringUtils.isEmpty(this.menuItemTitle.title)) {
                 if (supportActionBar != null) {
                     supportActionBar.d(false);
                 }
@@ -2106,7 +2106,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                     imageView.setImageDrawable(getIconFontDrawable(this.menuItemTitle.iconFontId));
                 } else if (this.menuItemTitle.iconBitemap != null && !this.menuItemTitle.iconBitemap.isRecycled()) {
                     imageView.setImageDrawable(new BitmapDrawable(getResources(), this.menuItemTitle.iconBitemap));
-                } else if (!TextUtils.isEmpty(this.menuItemTitle.href)) {
+                } else if (!StringUtils.isEmpty(this.menuItemTitle.href)) {
                     com.taobao.phenix.intf.b.h().a(this.menuItemTitle.href).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.browser.BrowserActivity.15
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -2220,13 +2220,13 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             findViewById.setVisibility(8);
         }
         if (this.isaddDesktop) {
-            if (TextUtils.isEmpty(this.shortcut_buttonText)) {
+            if (StringUtils.isEmpty(this.shortcut_buttonText)) {
                 this.shortcut_buttonText = "添加到桌面";
             }
             int i3 = R.id.browser_menu_desktop;
             MenuItemCompat.setShowAsAction(menu.add(0, i3, 0, getString(R.string.uik_icon_down_light) + ":" + this.shortcut_buttonText), 0);
         }
-        if (b != null && b.has("WV.Meta.Favorite.Image") && !TextUtils.isEmpty(this.mFavorIcon)) {
+        if (b != null && b.has("WV.Meta.Favorite.Image") && !StringUtils.isEmpty(this.mFavorIcon)) {
             int i4 = R.id.browser_menu_favor;
             MenuItemCompat.setShowAsAction(menu.add(0, i4, 0, getString(R.string.uik_icon_favor_light) + ":" + this.mFavorText), 0);
         }
@@ -2263,7 +2263,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             finish();
             return true;
         } else if (itemId == R.id.browser_menu_custom) {
-            if (!TextUtils.isEmpty(this.mlinkonclick) && (browserHybridWebView = this.browserWebView) != null) {
+            if (!StringUtils.isEmpty(this.mlinkonclick) && (browserHybridWebView = this.browserWebView) != null) {
                 browserHybridWebView.loadUrl("javascript:" + this.mlinkonclick);
                 return true;
             }
@@ -2287,7 +2287,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             return true;
         } else if (itemId == R.id.browser_menu_favor) {
             org.json.JSONObject b = android.taobao.windvane.webview.h.a().b();
-            if (TextUtils.equals(tfu.FAVOR, this.mFavorIcon)) {
+            if (StringUtils.equals(tfu.FAVOR, this.mFavorIcon)) {
                 int optInt = b.optInt("WV.Meta.Favorite.BizId", 11);
                 String optString = b.optString("WV.Meta.Favorite.Url", this.mYyzUrl);
                 String optString2 = b.optString("WV.Meta.Favorite.Title", this.browserWebView.getTitle());
@@ -2300,7 +2300,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else if (TextUtils.equals("favor_fill", this.mFavorIcon)) {
+            } else if (StringUtils.equals("favor_fill", this.mFavorIcon)) {
                 int optInt2 = b.optInt("WV.Meta.Favorite.BizId", 11);
                 String optString5 = b.optString("WV.Meta.Favorite.Url", this.mYyzUrl);
                 m.b("Favorite", "bizId:" + optInt2 + " feedId:0 contentUrl:" + optString5 + " showToast:true");
@@ -2401,7 +2401,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         tIconFontTextView.setText(i);
         tIconFontTextView.setTextSize(24.0f);
         tIconFontTextView.getPaint().setFakeBoldText(true);
-        if (!TextUtils.isEmpty(this.useDounble11Style) && (this.useDounble11Style.equals("festivalWithRainbowLine") || this.useDounble11Style.equals("festival"))) {
+        if (!StringUtils.isEmpty(this.useDounble11Style) && (this.useDounble11Style.equals("festivalWithRainbowLine") || this.useDounble11Style.equals("festival"))) {
             tIconFontTextView.setTextColor(FestivalMgr.a().a("actionbarTextColor", getResources().getColor(R.color.abc_title_color)));
         } else {
             tIconFontTextView.setTextColor(getResources().getColor(R.color.abc_title_color));
@@ -2461,7 +2461,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             java.lang.String r0 = "URL_REFERER_ORIGIN"
             java.lang.Object r8 = r8.get(r0)     // Catch: java.lang.Exception -> L59
             java.lang.String r8 = (java.lang.String) r8     // Catch: java.lang.Exception -> L59
-            boolean r0 = android.text.TextUtils.isEmpty(r8)     // Catch: java.lang.Exception -> L5a
+            boolean r0 = android.text.StringUtils.isEmpty(r8)     // Catch: java.lang.Exception -> L5a
             if (r0 == 0) goto L5f
             java.lang.String r0 = "bundle_has_referer_origin_url"
             com.taobao.browser.utils.BrowserUtil.a(r1, r2, r0, r8, r3)     // Catch: java.lang.Exception -> L5a
@@ -2537,7 +2537,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         BrowserUtil.a(TAG, "pageUserInfo", "pageUserInfo", null, null);
         String data2H5 = this.browserWebView.getData2H5();
         Bundle bundle = new Bundle();
-        if (TextUtils.isEmpty(data2H5)) {
+        if (StringUtils.isEmpty(data2H5)) {
             Bundle bundle2 = new Bundle();
             bundle2.putString("pageName", this.browserWebView.getUrl());
             bundle.putParcelable(hyt.ZZB_BUNDLE_KEY, bundle2);
@@ -2552,7 +2552,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a0d57bad", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (!str.equals("festivalWithRainbowLine")) {
                 if (!str.equals("festival")) {
@@ -2606,13 +2606,13 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                     return;
                 }
                 try {
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         return;
                     }
                     if (str2.startsWith("\"") && str2.endsWith("\"")) {
                         str2 = str2.substring(1, str2.length() - 1);
                     }
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         return;
                     }
                     com.taobao.browser.utils.e.b(str2, weakReference);
@@ -2726,7 +2726,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             String optString2 = b.optString("WV.Meta.Share.Image", str4);
             url = b.optString("WV.Meta.Share.Url", this.browserWebView.getUrl());
             ActionBarMenuItem actionBarMenuItem = this.menuItemTitle;
-            if (actionBarMenuItem != null && TextUtils.isEmpty(actionBarMenuItem.title)) {
+            if (actionBarMenuItem != null && StringUtils.isEmpty(actionBarMenuItem.title)) {
                 str = b.optString("WV.Meta.Share.Text", this.menuItemTitle.title);
             } else {
                 str = b.optString("WV.Meta.Share.Text", this.browserWebView.getTitle());
@@ -2738,7 +2738,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         } else {
             url = this.browserWebView.getUrl();
             ActionBarMenuItem actionBarMenuItem2 = this.menuItemTitle;
-            if (actionBarMenuItem2 != null && TextUtils.isEmpty(actionBarMenuItem2.title)) {
+            if (actionBarMenuItem2 != null && StringUtils.isEmpty(actionBarMenuItem2.title)) {
                 title = this.menuItemTitle.title;
             } else {
                 title = this.browserWebView.getTitle();
@@ -2746,7 +2746,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
             str = title;
             str2 = str4;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "我分享给你了一个淘宝页面，快来看看吧";
         }
         shareContent.title = str4;
@@ -2824,12 +2824,12 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
         @Override // com.taobao.tao.favorite.aidl.IFavContentCallBack
         public void onResult(Map map) throws RemoteException {
             m.e("Favorite", "into--[onResult] map:" + map.toString());
-            if (TextUtils.equals((String) map.get("com.taobao.tao.mytaobao.favContent.contentUrl"), this.b)) {
+            if (StringUtils.equals((String) map.get("com.taobao.tao.mytaobao.favContent.contentUrl"), this.b)) {
                 int i = AnonymousClass13.f16736a[this.c.ordinal()];
                 String str = "取消收藏";
                 String str2 = "favor_fill_light";
                 if (i == 1) {
-                    boolean equals = TextUtils.equals((CharSequence) map.get("com.taobao.tao.mytaobao.favContent.result"), "success");
+                    boolean equals = StringUtils.equals((CharSequence) map.get("com.taobao.tao.mytaobao.favContent.result"), "success");
                     BrowserActivity browserActivity = BrowserActivity.this;
                     if (!equals) {
                         str2 = "favor_light";
@@ -2841,7 +2841,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                     }
                     BrowserActivity.access$1202(browserActivity2, str);
                 } else if (i == 2) {
-                    boolean equals2 = TextUtils.equals((CharSequence) map.get("com.taobao.tao.mytaobao.favContent.result"), "success");
+                    boolean equals2 = StringUtils.equals((CharSequence) map.get("com.taobao.tao.mytaobao.favContent.result"), "success");
                     BrowserActivity browserActivity3 = BrowserActivity.this;
                     if (equals2) {
                         str2 = "favor_light";
@@ -2854,7 +2854,7 @@ public class BrowserActivity extends BaseActivity implements Handler.Callback {
                     BrowserActivity.access$1202(browserActivity4, str);
                 } else if (i == 3) {
                     boolean z = false;
-                    if (TextUtils.equals((CharSequence) map.get("com.taobao.tao.mytaobao.favContent.result"), "success") && ((String) map.get("com.taobao.tao.mytaobao.favContent.data")).equals("true")) {
+                    if (StringUtils.equals((CharSequence) map.get("com.taobao.tao.mytaobao.favContent.result"), "success") && ((String) map.get("com.taobao.tao.mytaobao.favContent.data")).equals("true")) {
                         z = true;
                     }
                     BrowserActivity browserActivity5 = BrowserActivity.this;

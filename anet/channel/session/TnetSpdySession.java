@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.Config;
 import anet.channel.CustomDataFrameCb;
@@ -1376,7 +1376,7 @@ public class TnetSpdySession extends Session implements SessionCb, SessionExtraC
             }
             ALog.e(TAG, "[lazyLoadTnetSec] secondRefreshOpt=1, getSSLMeta return null", this.mSeq, "host", this.mRealHost);
             return null;
-        } else if (TextUtils.isEmpty(domain)) {
+        } else if (StringUtils.isEmpty(domain)) {
             ALog.i(TAG, "get sslticket host is null", null, new Object[0]);
             return null;
         } else {
@@ -1415,7 +1415,7 @@ public class TnetSpdySession extends Session implements SessionCb, SessionExtraC
             }
             ALog.e(TAG, "[lazyLoadTnetSec] secondRefreshOpt=1, putSSLMeta return -1", this.mSeq, "host", this.mRealHost);
             return -1;
-        } else if (TextUtils.isEmpty(domain)) {
+        } else if (StringUtils.isEmpty(domain)) {
             return -1;
         } else {
             try {

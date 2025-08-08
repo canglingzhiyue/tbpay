@@ -2,7 +2,7 @@ package anet.channel.quic;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.Session;
@@ -486,7 +486,7 @@ public class Http3ConnectionDetector {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                        } else if (TextUtils.isEmpty(Http3ConnectionDetector.access$200())) {
+                        } else if (StringUtils.isEmpty(Http3ConnectionDetector.access$200())) {
                             ALog.e(Http3ConnectionDetector.TAG, "startDetect", null, "host is null");
                         } else {
                             Http3ConnectionDetector.access$600(NetworkStatusHelper.NetworkStatus.this, uniqueId, Http3ConnectionDetector.access$200(), null, -1);

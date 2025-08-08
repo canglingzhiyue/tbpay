@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.trade.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.trade.event.model.OpenPopupWindowEventModel;
 import com.alibaba.android.ultron.trade.event.model.SimplePopupModel;
 import com.alibaba.android.ultron.vfw.popupwindow.b;
@@ -90,7 +90,7 @@ public class m extends d {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("fields", (Object) jSONObject);
         jSONObject2.put("type", (Object) str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             a2 = b(jSONObject2, (com.taobao.android.ultron.datamodel.imp.b) this.g, this.b);
         } else {
             a2 = a(jSONObject2, (com.taobao.android.ultron.datamodel.imp.b) this.g, str);
@@ -148,10 +148,10 @@ public class m extends d {
                 jSONObject3.put("fields", next);
                 String string2 = jSONObject2.containsKey("type") ? jSONObject2.getString("type") : str;
                 jSONObject3.put("type", (Object) string2);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     jSONObject3.put("id", (Object) string);
                 }
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     a2 = b(jSONObject3, (com.taobao.android.ultron.datamodel.imp.b) this.g, this.c);
                 } else {
                     a2 = a(jSONObject3, (com.taobao.android.ultron.datamodel.imp.b) this.g, string2);
@@ -187,7 +187,7 @@ public class m extends d {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("fields", (Object) jSONObject);
         jSONObject2.put("type", (Object) str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             a2 = b(jSONObject2, (com.taobao.android.ultron.datamodel.imp.b) this.g, this.f2667a);
         } else {
             a2 = a(jSONObject2, (com.taobao.android.ultron.datamodel.imp.b) this.g, str);
@@ -226,7 +226,7 @@ public class m extends d {
         if (ipChange instanceof IpChange) {
             return (DMComponent) ipChange.ipc$dispatch("af0a6d95", new Object[]{this, jSONObject, bVar, str});
         }
-        if (bVar == null || TextUtils.isEmpty(str)) {
+        if (bVar == null || StringUtils.isEmpty(str)) {
             return null;
         }
         Iterator<JSONObject> it = bVar.j().values().iterator();

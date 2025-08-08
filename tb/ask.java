@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.aura.datamodel.nextrpc.AURANextRPCEndpoint;
 import com.alibaba.android.aura.datamodel.nextrpc.d;
@@ -217,7 +217,7 @@ public class ask implements asm {
         hashMap.put(IAURANextRPCPrefetchExtension.DATA_HIT_TIME, String.valueOf(aslVar.h()));
         hashMap.put(IAURANextRPCPrefetchExtension.DATA_RESPONSE_TIME, String.valueOf(aslVar.e()));
         String b2 = bba.b(map);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             hashMap.put(IAURANextRPCPrefetchExtension.DATA_PARAM, b2);
         }
         return hashMap;

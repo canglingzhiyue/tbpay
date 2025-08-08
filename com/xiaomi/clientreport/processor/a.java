@@ -2,7 +2,7 @@ package com.xiaomi.clientreport.processor;
 
 import android.content.Context;
 import android.taobao.windvane.jsbridge.api.WVFile;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.format.Formatter;
 import android.util.Base64;
 import com.xiaomi.clientreport.data.EventClientReport;
@@ -104,7 +104,7 @@ public class a implements IEventProcessor {
             goto L38
         L52:
             java.lang.String r9 = r8.bytesToString(r4)     // Catch: java.lang.Throwable -> L67 java.lang.Exception -> L69
-            boolean r4 = android.text.TextUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> L67 java.lang.Exception -> L69
+            boolean r4 = android.text.StringUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> L67 java.lang.Exception -> L69
             if (r4 != 0) goto L15
             r0.add(r9)     // Catch: java.lang.Throwable -> L67 java.lang.Exception -> L69
             goto L15
@@ -168,7 +168,7 @@ public class a implements IEventProcessor {
         RandomAccessFile randomAccessFile;
         BufferedOutputStream bufferedOutputStream;
         String b = b(aVarArr[0]);
-        FileLock isEmpty = TextUtils.isEmpty(b);
+        FileLock isEmpty = StringUtils.isEmpty(b);
         try {
             if (isEmpty != 0) {
                 return null;
@@ -440,7 +440,7 @@ public class a implements IEventProcessor {
                 return bm.b(bArr);
             }
             String a3 = bq.a(this.f24287a);
-            if (!TextUtils.isEmpty(a3) && (a2 = bq.a(a3)) != null && a2.length > 0) {
+            if (!StringUtils.isEmpty(a3) && (a2 = bq.a(a3)) != null && a2.length > 0) {
                 try {
                     return bm.b(Base64.decode(h.a(a2, bArr), 2));
                 } catch (InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e) {
@@ -459,7 +459,7 @@ public class a implements IEventProcessor {
     @Override // com.xiaomi.clientreport.processor.IEventProcessor
     public byte[] stringToBytes(String str) {
         byte[] a2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (!com.xiaomi.clientreport.manager.a.a(this.f24287a).m1626a().isEventEncrypted()) {
@@ -467,7 +467,7 @@ public class a implements IEventProcessor {
         }
         String a3 = bq.a(this.f24287a);
         byte[] m1743a = bm.m1743a(str);
-        if (!TextUtils.isEmpty(a3) && m1743a != null && m1743a.length > 1 && (a2 = bq.a(a3)) != null) {
+        if (!StringUtils.isEmpty(a3) && m1743a != null && m1743a.length > 1 && (a2 = bq.a(a3)) != null) {
             try {
                 if (a2.length > 1) {
                     return h.b(a2, Base64.encode(m1743a, 2));

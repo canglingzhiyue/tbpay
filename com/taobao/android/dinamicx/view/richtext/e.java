@@ -12,7 +12,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.LeadingMarginSpan;
 import android.view.View;
@@ -58,7 +58,7 @@ public class e {
     private CharSequence f;
     private TextPaint g;
     private Paint h;
-    private TextUtils.TruncateAt i;
+    private StringUtils.TruncateAt i;
     private Layout.Alignment j;
     private int k;
     private int l;
@@ -119,9 +119,9 @@ public class e {
                 size = Math.min(Math.min(((int) Math.ceil(Layout.getDesiredWidth(charSequence, 0, charSequence.length(), this.g))) + c() + d() + (this.A << 1), size), this.K);
             }
         }
-        if (size != 0 && this.N == 4 && !TextUtils.isEmpty(charSequence)) {
+        if (size != 0 && this.N == 4 && !StringUtils.isEmpty(charSequence)) {
             a(size, charSequence);
-        } else if (size != 0 && !TextUtils.isEmpty(charSequence)) {
+        } else if (size != 0 && !StringUtils.isEmpty(charSequence)) {
             int c = ((size - c()) - d()) - (this.A << 1);
             boolean z = this.f != null && !this.b.renderText().equals(charSequence);
             Layout layout = this.c;
@@ -172,7 +172,7 @@ public class e {
         int size2 = View.MeasureSpec.getSize(i2);
         if (mode == 1073741824) {
             i3 = size2;
-        } else if (!TextUtils.isEmpty(charSequence)) {
+        } else if (!StringUtils.isEmpty(charSequence)) {
             i3 = Math.min(Math.min(this.c.getHeight() + this.p + this.o + (this.A << 1), size2), this.L);
         }
         this.e = b(i3, mode);
@@ -207,10 +207,10 @@ public class e {
             int i6 = i3 + 1;
             iArr[0] = 0;
             final CharSequence subSequence = charSequence.subSequence(i5, charSequence.length());
-            Spanned spanned = (Spanned) TextUtils.ellipsize(subSequence, this.g, f2, TextUtils.TruncateAt.END, false, new TextUtils.EllipsizeCallback() { // from class: com.taobao.android.dinamicx.view.richtext.e.1
+            Spanned spanned = (Spanned) StringUtils.ellipsize(subSequence, this.g, f2, StringUtils.TruncateAt.END, false, new StringUtils.EllipsizeCallback() { // from class: com.taobao.android.dinamicx.view.richtext.e.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
-                @Override // android.text.TextUtils.EllipsizeCallback
+                @Override // android.text.StringUtils.EllipsizeCallback
                 public void ellipsized(int i7, int i8) {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
@@ -261,7 +261,7 @@ public class e {
         }
         int lineEnd = this.c.getLineEnd(this.M - 1);
         try {
-            if (this.i != null && this.i == TextUtils.TruncateAt.END && charSequence.length() != 1) {
+            if (this.i != null && this.i == StringUtils.TruncateAt.END && charSequence.length() != 1) {
                 if (this.U instanceof Spannable) {
                     measureText = Layout.getDesiredWidth(this.U, 0, this.U.length(), this.g);
                 } else {
@@ -365,7 +365,7 @@ public class e {
                     spannableString.setSpan(new ForegroundColorSpan(cVar.c().intValue()), 0, charSequence2.length(), 33);
                     charSequence2 = spannableString;
                 }
-                return TextUtils.concat(charSequence.subSequence(0, i3), charSequence2);
+                return StringUtils.concat(charSequence.subSequence(0, i3), charSequence2);
             }
             i = 0;
             try {
@@ -558,19 +558,19 @@ public class e {
         return Typeface.defaultFromStyle(0);
     }
 
-    private TextUtils.TruncateAt w(int i) {
+    private StringUtils.TruncateAt w(int i) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
-            return (TextUtils.TruncateAt) ipChange.ipc$dispatch("1bd8407b", new Object[]{this, new Integer(i)});
+            return (StringUtils.TruncateAt) ipChange.ipc$dispatch("1bd8407b", new Object[]{this, new Integer(i)});
         }
         if (i == 1) {
-            return TextUtils.TruncateAt.START;
+            return StringUtils.TruncateAt.START;
         }
         if (i == 2) {
-            return TextUtils.TruncateAt.MIDDLE;
+            return StringUtils.TruncateAt.MIDDLE;
         }
         if (i == 3) {
-            return TextUtils.TruncateAt.END;
+            return StringUtils.TruncateAt.END;
         }
         return null;
     }
@@ -651,7 +651,7 @@ public class e {
         }
         boolean z = this.Q == 0;
         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(charSequence);
-        boolean z2 = valueOf.length() < this.s.length() && this.i == TextUtils.TruncateAt.END;
+        boolean z2 = valueOf.length() < this.s.length() && this.i == StringUtils.TruncateAt.END;
         int length = valueOf.length() - (z2 ? this.U.length() : 0);
         int i6 = 0;
         int i7 = 0;

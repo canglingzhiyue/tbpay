@@ -2,7 +2,7 @@ package com.taobao.homepage.page.weexv2;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -148,7 +148,7 @@ public class WeexSecondFloorFragment extends WeexFragment {
             this.mBackgroundColor = i;
         }
         String string = arguments.getString(DEFAULT_BG_IMG);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.mDefaultBgImgUrl = string;

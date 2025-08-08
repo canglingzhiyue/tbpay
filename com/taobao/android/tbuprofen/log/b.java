@@ -1,6 +1,6 @@
 package com.taobao.android.tbuprofen.log;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.d;
@@ -106,7 +106,7 @@ public class b implements d {
 
     private static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.isEmpty(str) ? "TBUPROF" : String.format("%s_%s", "TBUPROF", str);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.isEmpty(str) ? "TBUPROF" : String.format("%s_%s", "TBUPROF", str);
     }
 
     private static String a(String str, Throwable th) {

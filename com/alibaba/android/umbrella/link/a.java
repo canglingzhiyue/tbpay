@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.link;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.umbrella.link.export.UmTypeKey;
 import com.alibaba.android.umbrella.trace.UmbrellaInfo;
@@ -47,7 +47,7 @@ public final class a {
         if (map == null) {
             map = new HashMap<>();
         }
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             map.put("errorMsg", str7);
         }
         if (!map.containsKey(PARAM_TINCT_TAG)) {

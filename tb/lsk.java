@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -173,7 +173,7 @@ public class lsk implements lss {
                     return (Map) ipChange2.ipc$dispatch("add74dce", new Object[]{this, lliVar, str});
                 }
                 String a2 = luu.a(Globals.getApplication());
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     ldf.d("SplashBusinessController", "oaid is null");
                     return null;
                 }

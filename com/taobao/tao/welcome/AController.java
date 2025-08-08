@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -190,7 +190,7 @@ public class AController extends HostController {
         Uri data = getIntent().getData();
         Uri data2 = intent.getData();
         super.onNewIntent(intent);
-        if (!com.taobao.linkmanager.afc.utils.e.a(data) || com.taobao.linkmanager.afc.utils.e.a(data2) || TextUtils.equals(intent2.getDataString(), intent.getDataString())) {
+        if (!com.taobao.linkmanager.afc.utils.e.a(data) || com.taobao.linkmanager.afc.utils.e.a(data2) || StringUtils.equals(intent2.getDataString(), intent.getDataString())) {
             return;
         }
         TLog.loge("welcome", "AController", "oldIntent: " + intent2 + ", newIntent:" + intent);
@@ -465,11 +465,11 @@ public class AController extends HostController {
             android.os.Bundle r10 = new android.os.Bundle
             r11 = 5
             r10.<init>(r11)
-            boolean r11 = android.text.TextUtils.isEmpty(r4)
+            boolean r11 = android.text.StringUtils.isEmpty(r4)
             if (r11 != 0) goto L5c
             r10.putString(r3, r4)
         L5c:
-            boolean r3 = android.text.TextUtils.isEmpty(r5)
+            boolean r3 = android.text.StringUtils.isEmpty(r5)
             if (r3 != 0) goto L65
             r10.putString(r2, r5)
         L65:

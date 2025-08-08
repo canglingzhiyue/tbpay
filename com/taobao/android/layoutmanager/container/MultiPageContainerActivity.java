@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.transition.Transition;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.poplayer.PopLayer;
@@ -222,7 +222,7 @@ public class MultiPageContainerActivity extends BaseActivity implements com.taob
         gwf.a((Activity) this);
         this.c = new com.taobao.android.layoutmanager.container.containerlifecycle.c(this);
         a a2 = a(false);
-        if (!TextUtils.isEmpty(a2.f13174a)) {
+        if (!StringUtils.isEmpty(a2.f13174a)) {
             this.c.a(a2.f13174a, null, getIntent().getExtras());
             if (!a2.b) {
                 this.j.sendEmptyMessageDelayed(1, f13169a);
@@ -360,7 +360,7 @@ public class MultiPageContainerActivity extends BaseActivity implements com.taob
             ogg.a("MultiPageActivity", "冷启拉端重复onNewIntent, 过滤该次url");
         } else {
             a a2 = a(true);
-            if (TextUtils.isEmpty(a2.f13174a)) {
+            if (StringUtils.isEmpty(a2.f13174a)) {
                 return;
             }
             if (hasMessages) {

@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.info;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
 import com.alipay.mobile.common.logging.util.perf.Constants;
@@ -158,7 +158,7 @@ public class a {
         String d = bzo.d(SP_KEY_LM_CONFIG_ORANGE_VERSION);
         com.alibaba.poplayer.utils.c.c("sdkLifeCycle", "", "PopConfigLocalManager.updateLocalConfigs.orangeVersion=" + str4 + ".localOrangeVersion=" + d);
         try {
-            if (!TextUtils.isEmpty(d) && !TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(d) && !StringUtils.isEmpty(str4)) {
                 boolean equals = str4.equals(d);
                 com.alibaba.poplayer.utils.c.c("sdkLifeCycle", "", "PopConfigLocalManager.updateLocalConfigs.orangeVersionSame=" + equals);
                 if (equals) {

@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -199,7 +199,7 @@ public class a extends FragmentManager.FragmentLifecycleCallbacks implements App
                     return;
                 }
                 String stringExtra = intent.getStringExtra(PopLayer.EXTRA_KEY_FRAGMENT_NAME);
-                if (TextUtils.isEmpty(stringExtra)) {
+                if (StringUtils.isEmpty(stringExtra)) {
                     return;
                 }
                 if (a.g().contains(stringExtra)) {
@@ -239,7 +239,7 @@ public class a extends FragmentManager.FragmentLifecycleCallbacks implements App
                     return (List) ipChange2.ipc$dispatch("287b5bd5", new Object[]{this, str});
                 }
                 Pair h2 = a.h();
-                if (h2 != null && !TextUtils.isEmpty(str) && !TextUtils.isEmpty((CharSequence) h2.first) && ((String) h2.first).endsWith(str)) {
+                if (h2 != null && !StringUtils.isEmpty(str) && !StringUtils.isEmpty((CharSequence) h2.first) && ((String) h2.first).endsWith(str)) {
                     return (List) h2.second;
                 }
                 return null;
@@ -283,7 +283,7 @@ public class a extends FragmentManager.FragmentLifecycleCallbacks implements App
                         return;
                     }
                     Pair h2 = a.h();
-                    if (h2 == null || !TextUtils.equals(a.e().f9152a, (CharSequence) h2.first)) {
+                    if (h2 == null || !StringUtils.equals(a.e().f9152a, (CharSequence) h2.first)) {
                         runnable.run();
                         return;
                     }
@@ -333,7 +333,7 @@ public class a extends FragmentManager.FragmentLifecycleCallbacks implements App
         if (b(str2)) {
             return;
         }
-        if (TextUtils.equals(b.f9152a, str2) && TextUtils.equals(b.b, str3)) {
+        if (StringUtils.equals(b.f9152a, str2) && StringUtils.equals(b.b, str3)) {
             return;
         }
         if (com.taobao.android.behavix.utils.d.b()) {
@@ -510,7 +510,7 @@ public class a extends FragmentManager.FragmentLifecycleCallbacks implements App
             return jSONArray;
         }
         String a2 = com.taobao.android.behavix.behavixswitch.a.a("ucpPageSwitchBalckList", "[\"com.taobao.tao.TBMainActivity\"]");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return JSON.parseArray(a2);
         }
         return new JSONArray();

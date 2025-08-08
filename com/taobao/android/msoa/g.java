@@ -1,6 +1,6 @@
 package com.taobao.android.msoa;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.msoa.annotation.MSOAServiceDefinition;
 import com.taobao.android.msoa.annotation.MSOAServiceInvoke;
 import com.taobao.android.msoa.callback.MSOAServiceListener;
@@ -40,7 +40,7 @@ public class g {
         this.f = map;
         this.g = MSOAServiceDefinition.Platform.NATIVE.value();
         this.k = this.b + "@" + this.c;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.l = this.d;
             return;
         }
@@ -59,11 +59,11 @@ public class g {
         this.e = str4;
         this.f = map;
         this.g = i;
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = "1.0";
         }
         this.k = this.b + "@" + this.c;
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             this.l = this.d;
             return;
         }

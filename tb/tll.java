@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.reflect.Field;
 
 /* loaded from: classes9.dex */
@@ -110,31 +110,31 @@ public final class tll {
                     Field[] fieldArr = fields;
                     String name = field.getName();
                     int i2 = length;
-                    if (TextUtils.equals(name, "st_dev")) {
+                    if (StringUtils.equals(name, "st_dev")) {
                         l11 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_ino")) {
+                    } else if (StringUtils.equals(name, "st_ino")) {
                         l = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_mode")) {
+                    } else if (StringUtils.equals(name, "st_mode")) {
                         num = (Integer) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_nlink")) {
+                    } else if (StringUtils.equals(name, "st_nlink")) {
                         l2 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_uid")) {
+                    } else if (StringUtils.equals(name, "st_uid")) {
                         num2 = (Integer) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_gid")) {
+                    } else if (StringUtils.equals(name, "st_gid")) {
                         num3 = (Integer) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_rdev")) {
+                    } else if (StringUtils.equals(name, "st_rdev")) {
                         l3 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_size")) {
+                    } else if (StringUtils.equals(name, "st_size")) {
                         l4 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_atime")) {
+                    } else if (StringUtils.equals(name, "st_atime")) {
                         l5 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_mtime")) {
+                    } else if (StringUtils.equals(name, "st_mtime")) {
                         l6 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_ctime")) {
+                    } else if (StringUtils.equals(name, "st_ctime")) {
                         l7 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_blksize")) {
+                    } else if (StringUtils.equals(name, "st_blksize")) {
                         l8 = (Long) field.get(obj);
-                    } else if (TextUtils.equals(name, "st_blocks")) {
+                    } else if (StringUtils.equals(name, "st_blocks")) {
                         l9 = (Long) field.get(obj);
                     }
                     i++;

@@ -1,6 +1,6 @@
 package com.vivo.push.d.a;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.restructure.request.a.a.b;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public final class b implements com.vivo.push.restructure.request.a.a.b {
         ArrayList arrayList = new ArrayList();
         for (com.vivo.push.d.b bVar : this.c) {
             String b = bVar.b();
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 arrayList.add(b);
             }
         }

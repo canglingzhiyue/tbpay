@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.View;
@@ -249,10 +249,10 @@ public class n implements aw, com.taobao.avplayer.common.q {
         this.f16536a.mPlayContext.mTBVideoSourceAdapter = new ag(this.f16536a);
         this.f16536a.mPlayContext.mConfigGroup = "DWInteractive";
         this.f16536a.mPlayContext.setVideoUrl(cVar.d);
-        if (!TextUtils.isEmpty(cVar.ak)) {
+        if (!StringUtils.isEmpty(cVar.ak)) {
             this.f16536a.mPlayContext.setCacheKey(cVar.ak);
         }
-        if (!TextUtils.isEmpty(cVar.al)) {
+        if (!StringUtils.isEmpty(cVar.al)) {
             try {
                 this.f16536a.mPlayContext.setVideoLength(Integer.parseInt(cVar.al));
             } catch (NumberFormatException unused) {
@@ -629,7 +629,7 @@ public class n implements aw, com.taobao.avplayer.common.q {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
         } else if (this.i) {
-            if ((!this.f16536a.mAudioOnly || !this.f16536a.mBackgroundAudio) && (i = this.q) != 0 && ((i != 1 || TextUtils.isEmpty(str)) && ((this.q != 2 || !this.f16536a.mAudioOnly) && (this.q != 3 || !this.f16536a.mAudioOnly || TextUtils.isEmpty(str))))) {
+            if ((!this.f16536a.mAudioOnly || !this.f16536a.mBackgroundAudio) && (i = this.q) != 0 && ((i != 1 || StringUtils.isEmpty(str)) && ((this.q != 2 || !this.f16536a.mAudioOnly) && (this.q != 3 || !this.f16536a.mAudioOnly || StringUtils.isEmpty(str))))) {
                 z = false;
             }
             if (!z) {
@@ -883,10 +883,10 @@ public class n implements aw, com.taobao.avplayer.common.q {
         if (this.f16536a.mUserId != -1) {
             hashMap.put("userId", String.valueOf(this.f16536a.mUserId));
         }
-        if (!TextUtils.isEmpty(this.f16536a.mFrom)) {
+        if (!StringUtils.isEmpty(this.f16536a.mFrom)) {
             hashMap.put("page", this.f16536a.mFrom.toLowerCase());
         }
-        if (!TextUtils.isEmpty(this.f16536a.mContentId)) {
+        if (!StringUtils.isEmpty(this.f16536a.mContentId)) {
             hashMap.put("contentId", this.f16536a.mContentId);
         }
         hashMap.put(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID, this.f16536a.mVideoId + "");
@@ -1701,18 +1701,18 @@ public class n implements aw, com.taobao.avplayer.common.q {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3c5ab4e", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.f16536a.mFrom) || TextUtils.isEmpty(this.f16536a.mVideoSource) || TextUtils.isEmpty(this.f16536a.mVideoId)) {
+        if (StringUtils.isEmpty(this.f16536a.mFrom) || StringUtils.isEmpty(this.f16536a.mVideoSource) || StringUtils.isEmpty(this.f16536a.mVideoId)) {
             com.taobao.taobaoavsdk.util.c.b("TBDWInstance", "缺少必填参数 bizCode、videoSource、videoId！！");
         }
-        if (TextUtils.isEmpty(this.f16536a.mFrom)) {
+        if (StringUtils.isEmpty(this.f16536a.mFrom)) {
             this.f16536a.mFrom = "default";
         }
-        if (TextUtils.isEmpty(this.f16536a.mVideoSource)) {
+        if (StringUtils.isEmpty(this.f16536a.mVideoSource)) {
             DWContext dWContext = this.f16536a;
             dWContext.mPlayContext.mVideoSource = "TBVideo";
             dWContext.mVideoSource = "TBVideo";
         }
-        if (!TextUtils.isEmpty(this.f16536a.mPlayContext.getVideoUrl()) && TextUtils.isEmpty(this.f16536a.getVideoId()) && "TBVideo".equals(this.f16536a.getVideoSource())) {
+        if (!StringUtils.isEmpty(this.f16536a.mPlayContext.getVideoUrl()) && StringUtils.isEmpty(this.f16536a.getVideoId()) && "TBVideo".equals(this.f16536a.getVideoSource())) {
             try {
                 String rawPath = new URI(this.f16536a.mPlayContext.getVideoUrl()).getRawPath();
                 int lastIndexOf = rawPath.lastIndexOf(47);
@@ -1727,7 +1727,7 @@ public class n implements aw, com.taobao.avplayer.common.q {
             } catch (Exception unused) {
             }
         }
-        return !TextUtils.isEmpty(this.f16536a.mVideoId);
+        return !StringUtils.isEmpty(this.f16536a.mVideoId);
     }
 
     public String o() {
@@ -2333,7 +2333,7 @@ public class n implements aw, com.taobao.avplayer.common.q {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-            } else if (TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.b)) {
             } else {
                 c cVar = this.f16539a;
                 cVar.ae = this.b + "." + this.f16539a.ae;
@@ -2521,7 +2521,7 @@ public class n implements aw, com.taobao.avplayer.common.q {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (obw.KEY_VIDEO_UPDATE_PARAMS.equals(key) && !TextUtils.isEmpty(value)) {
+            if (obw.KEY_VIDEO_UPDATE_PARAMS.equals(key) && !StringUtils.isEmpty(value)) {
                 this.f16536a.mDynamicPlayEx = value;
             } else if ("enterFloating".equals(key)) {
                 this.f16536a.mIsFloat = "1".equals(value);

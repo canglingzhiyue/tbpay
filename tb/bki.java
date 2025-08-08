@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -73,7 +73,7 @@ public final class bki {
 
     public static String a(IDMComponent iDMComponent, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b2d988aa", new Object[]{iDMComponent, str}) : (iDMComponent == null || iDMComponent.getFields() == null || iDMComponent.getFields().getJSONObject(EVENT_CODE_CANCEL_ORDER_DOWNGRADE) == null || !TextUtils.equals(iDMComponent.getFields().getJSONObject(EVENT_CODE_CANCEL_ORDER_DOWNGRADE).getString(com.taobao.tao.log.statistics.d.PARAM_OP_CODE), str)) ? str : "true".equals(iDMComponent.getFields().getJSONObject(EVENT_CODE_CANCEL_ORDER_DOWNGRADE).get("downgradeOn")) ? EVENT_CODE_CANCEL_ORDER_DOWNGRADE : EVENT_CODE_CANCEL_ORDER;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b2d988aa", new Object[]{iDMComponent, str}) : (iDMComponent == null || iDMComponent.getFields() == null || iDMComponent.getFields().getJSONObject(EVENT_CODE_CANCEL_ORDER_DOWNGRADE) == null || !StringUtils.equals(iDMComponent.getFields().getJSONObject(EVENT_CODE_CANCEL_ORDER_DOWNGRADE).getString(com.taobao.tao.log.statistics.d.PARAM_OP_CODE), str)) ? str : "true".equals(iDMComponent.getFields().getJSONObject(EVENT_CODE_CANCEL_ORDER_DOWNGRADE).get("downgradeOn")) ? EVENT_CODE_CANCEL_ORDER_DOWNGRADE : EVENT_CODE_CANCEL_ORDER;
     }
 
     public static List<String> a() {

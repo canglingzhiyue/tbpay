@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.perf.Constants;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class eaw extends fnl {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, obj});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split2 = str.split(",");

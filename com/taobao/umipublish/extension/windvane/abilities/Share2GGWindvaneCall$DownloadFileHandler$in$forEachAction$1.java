@@ -1,6 +1,6 @@
 package com.taobao.umipublish.extension.windvane.abilities;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,8 +41,8 @@ public final class Share2GGWindvaneCall$DownloadFileHandler$in$forEachAction$1 e
         } else if (obj != null) {
             JSONObject jSONObject = (JSONObject) obj;
             String a2 = m.a(jSONObject, "type", "");
-            String str = TextUtils.equals("video", a2) ? "video" : "image";
-            String str2 = TextUtils.equals("video", a2) ? keu.SUFFIX_MP4 : ".jpg";
+            String str = StringUtils.equals("video", a2) ? "video" : "image";
+            String str2 = StringUtils.equals("video", a2) ? keu.SUFFIX_MP4 : ".jpg";
             String a3 = m.a(jSONObject, "tag", "");
             JSONObject jSONObject2 = new JSONObject();
             JSONObject jSONObject3 = jSONObject2;
@@ -50,7 +50,7 @@ public final class Share2GGWindvaneCall$DownloadFileHandler$in$forEachAction$1 e
             jSONObject3.put((JSONObject) "type", str);
             jSONObject3.put((JSONObject) Constants.Name.SUFFIX, str2);
             jSONObject3.put((JSONObject) "optional", m.a(jSONObject, "optional", "true"));
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 jSONObject3.put((JSONObject) "tag", a3);
             }
             this.$downloadList.add(jSONObject2);

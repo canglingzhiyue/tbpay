@@ -5,7 +5,7 @@ import android.taobao.windvane.c;
 import android.taobao.windvane.config.f;
 import android.taobao.windvane.config.j;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.webkit.ValueCallback;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -120,17 +120,17 @@ public class UCHAManager implements ValueCallback<Pair<Message, Message>> {
         String str2 = (String) map.get("log_data");
         String str3 = (String) map.get("link_key");
         String str4 = (String) map.get("link_id");
-        if (TextUtils.isEmpty(str) || TextUtils.equals("pvuv", str)) {
+        if (StringUtils.isEmpty(str) || StringUtils.equals("pvuv", str)) {
             return;
         }
         int i = -1;
-        if (TextUtils.equals("bkpg", str3)) {
+        if (StringUtils.equals("bkpg", str3)) {
             z = true;
             i = 0;
-        } else if (TextUtils.equals("harLog", str)) {
+        } else if (StringUtils.equals("harLog", str)) {
             z = true;
             i = 1;
-        } else if (TextUtils.equals("jssdkidx", str)) {
+        } else if (StringUtils.equals("jssdkidx", str)) {
             z = true;
             i = 2;
         } else if (this.mMemoryLogType.contains(str)) {

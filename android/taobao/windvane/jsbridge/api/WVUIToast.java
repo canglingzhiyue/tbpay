@@ -70,7 +70,7 @@ public class WVUIToast extends e {
             return
         L3f:
             java.lang.String r0 = ""
-            boolean r1 = android.text.TextUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> L89
+            boolean r1 = android.text.StringUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> L89
             r5 = 17
             if (r1 != 0) goto L6e
             java.lang.String r1 = "utf-8"
@@ -90,7 +90,7 @@ public class WVUIToast extends e {
         L6e:
             r9 = 0
         L6f:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L89
+            boolean r1 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L89
             if (r1 != 0) goto L84
             if (r9 <= r2) goto L78
             r9 = 1

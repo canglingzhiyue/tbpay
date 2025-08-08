@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ public final class slu {
         } else if (z) {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("action", (Object) 2);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.put("type", (Object) str2.toLowerCase());
             }
             this.f33708a.put(str, jSONObject);

@@ -3,7 +3,7 @@ package com.taobao.interact.core.h5;
 import android.os.RemoteException;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collections;
@@ -54,7 +54,7 @@ public class WVInteractsdkAudio extends e {
             e2.printStackTrace();
             wVCallBackContext.error(e2.getMessage());
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             this.mCallback.error("identifier is null");
             return false;
         }

@@ -1,7 +1,7 @@
 package com.taobao.tao.homepage;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import tb.kge;
@@ -43,7 +43,7 @@ public class a {
         }
         boolean z = false;
         for (int i = 0; i < dVar.f18987a.length; i++) {
-            if (TextUtils.equals(dVar.f18987a[i], ACCESS_FINE_LOCATION)) {
+            if (StringUtils.equals(dVar.f18987a[i], ACCESS_FINE_LOCATION)) {
                 z = dVar.b[i] == 0;
             }
         }

@@ -1,6 +1,6 @@
 package com.taobao.taopai.business.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -89,7 +89,7 @@ public class y {
                 return;
             }
             String str3 = f22060a.get(KEY_STICKER_URLS);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str2 = "";
             } else {
                 str2 = str3 + ",";
@@ -107,7 +107,7 @@ public class y {
                 return;
             }
             String str2 = f22060a.get(KEY_STICKER_URLS);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             String str3 = "," + str;

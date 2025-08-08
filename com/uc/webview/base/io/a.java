@@ -1,6 +1,6 @@
 package com.uc.webview.base.io;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.Log;
 import com.uc.webview.base.a;
 import java.io.BufferedReader;
@@ -86,7 +86,7 @@ public final class a {
         }
 
         public final boolean a(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             try {

@@ -2,7 +2,7 @@ package tb;
 
 import android.text.SpannableString;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ClickableSpan;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -116,7 +116,7 @@ public class jxa extends a {
             ipChange.ipc$dispatch("1ba1e299", new Object[]{this, spannableString, new Integer(i)});
             return;
         }
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             ClickableSpan clickableSpan = new ClickableSpan() { // from class: tb.jxa.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

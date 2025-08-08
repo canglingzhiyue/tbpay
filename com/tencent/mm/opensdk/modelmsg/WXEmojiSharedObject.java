@@ -1,7 +1,7 @@
 package com.tencent.mm.opensdk.modelmsg;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.utils.Log;
 import tb.kge;
@@ -31,7 +31,7 @@ public class WXEmojiSharedObject implements WXMediaMessage.IMediaObject {
 
     @Override // com.tencent.mm.opensdk.modelmsg.WXMediaMessage.IMediaObject
     public boolean checkArgs() {
-        if (TextUtils.isEmpty(this.packageid) || TextUtils.isEmpty(this.thumburl) || TextUtils.isEmpty(this.url) || this.packageflag == -1) {
+        if (StringUtils.isEmpty(this.packageid) || StringUtils.isEmpty(this.thumburl) || StringUtils.isEmpty(this.url) || this.packageflag == -1) {
             Log.e(TAG, "checkArgs fail, packageid or thumburl is invalid");
             return false;
         }

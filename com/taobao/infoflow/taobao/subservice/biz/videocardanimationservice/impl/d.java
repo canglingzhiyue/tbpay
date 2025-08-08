@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.videocardanimationservice.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -138,7 +138,7 @@ public class d {
             return null;
         }
         String string = ext.getString(VIDEO_ANIMATION);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {
@@ -183,7 +183,7 @@ public class d {
                         return;
                     }
                     String a2 = d.a(d.this);
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         return;
                     }
                     File file = new File(a2);
@@ -194,7 +194,7 @@ public class d {
                     File[] listFiles = file.listFiles();
                     String a4 = d.this.a(str);
                     for (File file2 : listFiles) {
-                        if (z || (a3 && d.a(file2.getAbsolutePath(), keu.SUFFIX_MP4) && !TextUtils.equals(a4, file2.getAbsolutePath())) || (!a3 && !d.a(file2.getAbsolutePath(), keu.SUFFIX_MP4) && !TextUtils.equals(a4, file2.getAbsolutePath()))) {
+                        if (z || (a3 && d.a(file2.getAbsolutePath(), keu.SUFFIX_MP4) && !StringUtils.equals(a4, file2.getAbsolutePath())) || (!a3 && !d.a(file2.getAbsolutePath(), keu.SUFFIX_MP4) && !StringUtils.equals(a4, file2.getAbsolutePath()))) {
                             ldf.d("VideoAnimationCardHelper", "delete file:" + file2.getAbsolutePath() + ",delete:" + file2.delete());
                         }
                     }
@@ -208,11 +208,11 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         String substring = str.substring(str.lastIndexOf("/") + 1);
@@ -241,7 +241,7 @@ public class d {
         if (currentTimeMillis < longValue || currentTimeMillis > longValue2) {
             ldf.d("VideoAnimationCardHelper", "isInAvailablePeriod:not in period");
             return false;
-        } else if (TextUtils.isEmpty(a2)) {
+        } else if (StringUtils.isEmpty(a2)) {
             return false;
         } else {
             try {
@@ -265,7 +265,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 int parseInt = Integer.parseInt(c.a.a("homepage_switch", str, "0"));
@@ -283,7 +283,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return str.split("\\?")[0].endsWith(str2);
         }
         return false;
@@ -296,14 +296,14 @@ public class d {
             return;
         }
         String a2 = c.a.a("homepage_switch", "localRecord", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             ldf.d("VideoAnimationCardHelper", "checkAndResetLocalFatigue 本地无疲劳度:");
             b(j, j2, str, str2);
             return;
         }
         try {
             JSONObject parseObject = JSON.parseObject(a2);
-            if (parseObject.getLongValue("startTime") == j && parseObject.getLongValue("endTime") == j2 && TextUtils.equals(parseObject.getString("videoUrl"), str)) {
+            if (parseObject.getLongValue("startTime") == j && parseObject.getLongValue("endTime") == j2 && StringUtils.equals(parseObject.getString("videoUrl"), str)) {
                 return;
             }
             ldf.d("VideoAnimationCardHelper", "checkAndResetLocalFatigue 数据更新:");
@@ -336,7 +336,7 @@ public class d {
         }
         String a2 = a(str);
         a(str, false);
-        if (!TextUtils.isEmpty(str) && TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(str) && StringUtils.isEmpty(a2)) {
             if (!z || a(str, keu.SUFFIX_MP4)) {
                 return true;
             }

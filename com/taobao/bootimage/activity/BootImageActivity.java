@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -254,8 +254,8 @@ public class BootImageActivity extends AppCompatActivity {
             this.o = new Handler();
             this.l = kek.a(bootImageInfo, this.f16652a.getContext(), this.b);
             String str = "";
-            final String str2 = (bootImageInfo == null || TextUtils.isEmpty(bootImageInfo.bizType)) ? str : bootImageInfo.bizType;
-            if (bootImageInfo != null && !TextUtils.isEmpty(bootImageInfo.sceneType)) {
+            final String str2 = (bootImageInfo == null || StringUtils.isEmpty(bootImageInfo.bizType)) ? str : bootImageInfo.bizType;
+            if (bootImageInfo != null && !StringUtils.isEmpty(bootImageInfo.sceneType)) {
                 str = bootImageInfo.sceneType;
             }
             final String str3 = str;
@@ -665,7 +665,7 @@ public class BootImageActivity extends AppCompatActivity {
         boolean z2 = bootImageInfo != null && bootImageInfo.animation;
         boolean z3 = this.c != null;
         String b2 = b(str);
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             kej.a("BootImageActivity", "startLinkedSplashAnimator, return, convertFromAction failed, closeType = " + str);
             return false;
         }
@@ -805,7 +805,7 @@ public class BootImageActivity extends AppCompatActivity {
             j2 = bootImageInfo.scaleAnimationDuration;
             j = bootImageInfo.alphaAnimationDuration;
         }
-        if (linkedSplashData == null || !TextUtils.equals(linkedSplashData.getLinkedDataType(), "feeds")) {
+        if (linkedSplashData == null || !StringUtils.equals(linkedSplashData.getLinkedDataType(), "feeds")) {
             i = i5;
             i2 = height;
         } else {

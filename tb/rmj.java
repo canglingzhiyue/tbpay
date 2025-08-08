@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -118,7 +118,7 @@ public class rmj extends rmg {
         } else {
             View view = (View) obj;
             String str4 = rlz.a().g(str3).get(str2);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str2 = str4;
             }
             HashMap<String, Object> hashMap = rlz.a().d(str, str3).get(str2);
@@ -163,7 +163,7 @@ public class rmj extends rmg {
             while (it2.hasNext()) {
                 Map.Entry<String, Object> next = it2.next();
                 String valueOf = String.valueOf(next.getKey());
-                if (!TextUtils.isEmpty(valueOf)) {
+                if (!StringUtils.isEmpty(valueOf)) {
                     Object value = next.getValue();
                     try {
                         int a2 = rlp.a(valueOf);

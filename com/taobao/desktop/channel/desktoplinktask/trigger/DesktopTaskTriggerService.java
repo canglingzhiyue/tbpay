@@ -1,6 +1,6 @@
 package com.taobao.desktop.channel.desktoplinktask.trigger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -77,7 +77,7 @@ public class DesktopTaskTriggerService extends TaoBaseService {
         } else if (bArr == null) {
         } else {
             String str4 = new String(bArr);
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 return;
             }
             try {

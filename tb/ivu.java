@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tab2liveroom.liveroom.preload.LivePreloadData;
 import com.taobao.android.tab2liveroom.liveroom.preload.a;
@@ -140,7 +140,7 @@ public class ivu implements ivt {
                     }
                     ivu.this.a(preloadResponseData, false);
                     ivu.a(ivu.this, preloadResponseData.id);
-                    ogg.a("LiveNormalPreloadTask", "2.startRequestRecommend onSuccess,liveId: " + preloadResponseData.id + ",customPlayCtrlParams isEmpty: " + TextUtils.isEmpty(preloadResponseData.customPlayCtrlParams));
+                    ogg.a("LiveNormalPreloadTask", "2.startRequestRecommend onSuccess,liveId: " + preloadResponseData.id + ",customPlayCtrlParams isEmpty: " + StringUtils.isEmpty(preloadResponseData.customPlayCtrlParams));
                 }
             });
         }
@@ -256,7 +256,7 @@ public class ivu implements ivt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ArrayList arrayList = new ArrayList();
             arrayList.add(str);
@@ -292,10 +292,10 @@ public class ivu implements ivt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ce1020ba", new Object[]{this, str, netBaseOutDo});
-        } else if (TextUtils.isEmpty(str) || netBaseOutDo == null || netBaseOutDo.mo1437getData() == null || (a2 = oec.a(netBaseOutDo.mo1437getData(), (Map) null)) == null) {
+        } else if (StringUtils.isEmpty(str) || netBaseOutDo == null || netBaseOutDo.mo1437getData() == null || (a2 = oec.a(netBaseOutDo.mo1437getData(), (Map) null)) == null) {
         } else {
             CheckForeGroundResponseData checkForeGroundResponseData = (CheckForeGroundResponseData) a2.get(str);
-            if (checkForeGroundResponseData != null && !TextUtils.equals(checkForeGroundResponseData.roomStatus, "1")) {
+            if (checkForeGroundResponseData != null && !StringUtils.equals(checkForeGroundResponseData.roomStatus, "1")) {
                 ogg.a("LiveNormalPreloadTask", "6.removeFinishedLiveRoom，直播已结束，请求推荐接口");
                 a((LivePreloadData) null, true);
                 d();

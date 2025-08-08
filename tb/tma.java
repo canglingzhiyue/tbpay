@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONArray;
@@ -173,7 +173,7 @@ public final class tma implements c {
             dXTemplateItem2.f11925a = "uniapp_act_tabbar";
             dXTemplateItem2.b = j();
             String k = k();
-            if (!TextUtils.isEmpty(k)) {
+            if (!StringUtils.isEmpty(k)) {
                 dXTemplateItem2.c = k;
             }
             t tVar2 = t.INSTANCE;

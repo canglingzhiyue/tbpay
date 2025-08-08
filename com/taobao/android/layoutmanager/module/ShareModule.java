@@ -3,7 +3,7 @@ package com.taobao.android.layoutmanager.module;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -111,14 +111,14 @@ public class ShareModule {
                             str = map.get(com.taobao.mtop.wvplugin.a.RESULT_KEY);
                         }
                         String str2 = "close";
-                        if (TextUtils.equals(str, "success")) {
+                        if (StringUtils.equals(str, "success")) {
                             str2 = "target_success";
-                        } else if (TextUtils.equals(str, "fail")) {
+                        } else if (StringUtils.equals(str, "fail")) {
                             hashMap.put("msg", map != null ? map.get("errorMessage") : "");
                             str2 = "target_failed";
-                        } else if (TextUtils.equals(str, "cancel")) {
+                        } else if (StringUtils.equals(str, "cancel")) {
                             str2 = "target_canceled";
-                        } else if (!TextUtils.equals(str, str2)) {
+                        } else if (!StringUtils.equals(str, str2)) {
                             str2 = "unknown";
                         }
                         hashMap.put("type", str2);
@@ -371,10 +371,10 @@ public class ShareModule {
         String string2 = jSONObject.getString("businessId");
         String string3 = jSONObject.getString("contentType");
         String string4 = jSONObject.getString("desc");
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             string4 = jSONObject.getString("description");
         }
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             string4 = jSONObject.getString("text");
         }
         String string5 = jSONObject.getString("url");

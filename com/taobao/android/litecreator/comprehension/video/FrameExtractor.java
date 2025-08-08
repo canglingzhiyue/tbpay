@@ -3,7 +3,7 @@ package com.taobao.android.litecreator.comprehension.video;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.perf.Constants;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.comprehension.d;
@@ -484,7 +484,7 @@ public class FrameExtractor {
         List<FrameConfig> list = b;
         if (list != null) {
             for (FrameConfig frameConfig : list) {
-                if (frameConfig != null && TextUtils.equals(frameConfig.type, str)) {
+                if (frameConfig != null && StringUtils.equals(frameConfig.type, str)) {
                     return frameConfig;
                 }
             }

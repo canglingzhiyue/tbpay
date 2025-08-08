@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.miniLive.model.SimpleLiveInfo;
 import com.taobao.android.miniLive.services.c;
@@ -23,7 +23,7 @@ public class huf {
             ipChange.ipc$dispatch("84162689", new Object[]{str, str2, map});
         } else if (pmd.a().e() == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str3 = "Page_TBMiniLive_" + str;
             } else {
                 str3 = htz.UT_PAGE_NAME;
@@ -45,7 +45,7 @@ public class huf {
         if (pmd.a().e() == null) {
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str3 = "Page_TBMiniLive_" + str;
         } else {
             str3 = htz.UT_PAGE_NAME;
@@ -80,10 +80,10 @@ public class huf {
         if (pmd.a().q() != null) {
             hashMap.put("userId", pmd.a().q().a());
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("algParams", str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put("spm-cnt", str4);
         }
         b(str2, str, hashMap);
@@ -107,10 +107,10 @@ public class huf {
         if (pmd.a().q() != null) {
             hashMap.put("userId", pmd.a().q().a());
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("algParams", str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put("spm-cnt", str4);
         }
         b(str2, str, hashMap);
@@ -128,7 +128,7 @@ public class huf {
             if (videoInfo.broadCaster != null) {
                 hashMap.put("accountId", videoInfo.broadCaster.accountId);
             }
-        } else if (!TextUtils.isEmpty(c.a().c())) {
+        } else if (!StringUtils.isEmpty(c.a().c())) {
             hashMap.put("feedId", c.a().c());
         }
         hashMap.put("mute", "false");
@@ -136,10 +136,10 @@ public class huf {
         if (pmd.a().q() != null) {
             hashMap.put("userId", pmd.a().q().a());
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("algParams", str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put("spm-cnt", str4);
         }
         a(str2, str, hashMap);
@@ -169,7 +169,7 @@ public class huf {
             if (simpleLiveInfo.item != null) {
                 hashMap.put("itemId", simpleLiveInfo.item.itemId);
             }
-        } else if (!TextUtils.isEmpty(c.a().c())) {
+        } else if (!StringUtils.isEmpty(c.a().c())) {
             hashMap.put("feedId", c.a().c());
         }
         hashMap.put("mute", "true");
@@ -177,10 +177,10 @@ public class huf {
         if (pmd.a().q() != null) {
             hashMap.put("userId", pmd.a().q().a());
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("algParams", str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put("spm-cnt", str4);
         }
         a(str2, str, hashMap);

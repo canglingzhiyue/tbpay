@@ -10,7 +10,7 @@ import android.os.ConditionVariable;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -357,7 +357,7 @@ public class MspWindowClient extends MspUIClient {
                         this.j = true;
                     }
                 }
-                if (TextUtils.equals("Y", PhoneCashierMspEngine.getMspWallet().getWalletConfig(DrmKey.GRAY_START_ACTIVITY_ON_UI_THREAD))) {
+                if (StringUtils.equals("Y", PhoneCashierMspEngine.getMspWallet().getWalletConfig(DrmKey.GRAY_START_ACTIVITY_ON_UI_THREAD))) {
                     TaskHelper.runOnUIThread(new Runnable() { // from class: com.alipay.android.msp.core.clients.MspWindowClient.3
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -381,7 +381,7 @@ public class MspWindowClient extends MspUIClient {
             if (!this.mMspContext.isFromEntranceActivity()) {
                 LogUtil.i("MspWindowClient", RVStartParams.START_SCENE_START_PAGE, "remoteCallback!=null bizId=" + this.mBizId);
                 a(elapsedRealtime);
-                if ((Build.VERSION.SDK_INT == 26 || Build.VERSION.SDK_INT == 27) && TextUtils.equals(str, MspContainerActivity.class.getCanonicalName())) {
+                if ((Build.VERSION.SDK_INT == 26 || Build.VERSION.SDK_INT == 27) && StringUtils.equals(str, MspContainerActivity.class.getCanonicalName())) {
                     this.k = true;
                     remoteCallback.startActivity(this.f4509a, "com.alipay.android.msp.ui.views.FullScreenBgActivity", this.mBizId, null);
                 } else {
@@ -394,7 +394,7 @@ public class MspWindowClient extends MspUIClient {
             LogUtil.i("MspWindowClient", RVStartParams.START_SCENE_START_PAGE, "alipayCallback!=null, bizId=" + this.mBizId);
             a(elapsedRealtime);
             alipayCallback.startActivity(this.f4509a, str, this.mBizId, null);
-        } else if (TextUtils.equals("Y", PhoneCashierMspEngine.getMspWallet().getWalletConfig(DrmKey.GRAY_START_ACTIVITY_ON_UI_THREAD))) {
+        } else if (StringUtils.equals("Y", PhoneCashierMspEngine.getMspWallet().getWalletConfig(DrmKey.GRAY_START_ACTIVITY_ON_UI_THREAD))) {
             LogUtil.i("MspWindowClient", RVStartParams.START_SCENE_START_PAGE, "runOnUI defaultStart bizId=" + this.mBizId);
             TaskHelper.runOnUIThread(new Runnable() { // from class: com.alipay.android.msp.core.clients.MspWindowClient.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -833,7 +833,7 @@ public class MspWindowClient extends MspUIClient {
                                 }
                                 z2 = z;
                             }
-                            if (z2 && !TextUtils.isEmpty(string)) {
+                            if (z2 && !StringUtils.isEmpty(string)) {
                                 mo545getIView.showToastView(string, string2, i);
                             }
                             if (!mspWindowFrame.isAjax()) {
@@ -934,7 +934,7 @@ public class MspWindowClient extends MspUIClient {
             statisticEvent.onStatistic(StEvent.PARSE_TIME, "");
             statisticEvent.onStatistic(StEvent.FILL_DATE_TIME, "");
             statisticEvent.onStatistic(StEvent.SHOW_TIME, "");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 statisticEvent.onStatistic(StEvent.SHOW_WIN, "tst|" + Utils.truncateString(string, 30));
             } else {
                 statisticEvent.onStatistic(StEvent.SHOW_WIN, "tst|" + Utils.truncateString(string, 30) + "|" + Utils.truncateString(str, 30));
@@ -996,7 +996,7 @@ public class MspWindowClient extends MspUIClient {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("723bb972", new Object[]{str, mspContext, str2});
-        } else if (mspContext == null || TextUtils.isEmpty(str2)) {
+        } else if (mspContext == null || StringUtils.isEmpty(str2)) {
         } else {
             if (str2.contains("@")) {
                 str = str + "_" + str2.split("@")[0];
@@ -1153,7 +1153,7 @@ public class MspWindowClient extends MspUIClient {
                                     }
                                     MspContext mspContext2 = mspContext;
                                     String endCode = mspContext2 instanceof MspTradeContext ? ((MspTradeContext) mspContext2).getMspPayResult().getEndCode() : "";
-                                    FlybirdDialogImpl.showDialog(MspWindowClient.access$800(MspWindowClient.this), null, ("6001".equals(endCode) || "6002".equals(endCode) || TextUtils.isEmpty(endCode)) ? LanguageHelper.localizedStringForKey("mini_net_error_weak", MspWindowClient.access$800(MspWindowClient.this).getString(R.string.mini_net_error_weak), new Object[0]) : LanguageHelper.localizedStringForKey("mini_net_error", MspWindowClient.access$800(MspWindowClient.this).getString(R.string.mini_net_error), new Object[0]), arrayList);
+                                    FlybirdDialogImpl.showDialog(MspWindowClient.access$800(MspWindowClient.this), null, ("6001".equals(endCode) || "6002".equals(endCode) || StringUtils.isEmpty(endCode)) ? LanguageHelper.localizedStringForKey("mini_net_error_weak", MspWindowClient.access$800(MspWindowClient.this).getString(R.string.mini_net_error_weak), new Object[0]) : LanguageHelper.localizedStringForKey("mini_net_error", MspWindowClient.access$800(MspWindowClient.this).getString(R.string.mini_net_error), new Object[0]), arrayList);
                                 }
                             });
                             conditionVariable.block();
@@ -1379,7 +1379,7 @@ public class MspWindowClient extends MspUIClient {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(this.i);
-        return TextUtils.equals(sb.toString(), "1");
+        return StringUtils.equals(sb.toString(), "1");
     }
 
     public void setVidExitFlag(int i) {
@@ -1601,7 +1601,7 @@ public class MspWindowClient extends MspUIClient {
 
     public boolean isCurrentPageResultPage() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b39d295", new Object[]{this})).booleanValue() : TextUtils.equals(this.e.getTplId(), MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || TextUtils.equals(this.e.getTplId(), MspFlybirdDefine.FLYBIRD_RESULT_TPL) || TextUtils.equals(this.e.getTplId(), MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b39d295", new Object[]{this})).booleanValue() : StringUtils.equals(this.e.getTplId(), MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || StringUtils.equals(this.e.getTplId(), MspFlybirdDefine.FLYBIRD_RESULT_TPL) || StringUtils.equals(this.e.getTplId(), MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL);
     }
 
     public MspWindowFrame getCurrentWindowFrame() {

@@ -1,6 +1,6 @@
 package com.alipay.bifrost;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.alipay.mars.stn.StnLogic;
@@ -240,7 +240,7 @@ public class Target {
             }
             if (z2) {
                 String[] b = b(str2);
-                if (TextUtils.isEmpty(b[0]) || !z) {
+                if (StringUtils.isEmpty(b[0]) || !z) {
                     b[0] = "";
                 }
                 AppLogicICallBackImpl.getInstance().setUserId(b[0]);
@@ -382,7 +382,7 @@ public class Target {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("c7f1e4eb", new Object[]{this, str, new Boolean(z), new Boolean(z2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new byte[0];
         }
         if (z2) {
@@ -1150,7 +1150,7 @@ public class Target {
             return;
         }
         String str = map2.get("userId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             AppLogicICallBackImpl.getInstance().setUserId("");
         } else {
             AppLogicICallBackImpl.getInstance().setUserId(str);
@@ -1561,7 +1561,7 @@ public class Target {
             if (key != null) {
                 StrStrItem strStrItem = new StrStrItem();
                 strStrItem.key = key;
-                if (!TextUtils.equals(Baggage.Amnet.CFG_CA, key)) {
+                if (!StringUtils.equals(Baggage.Amnet.CFG_CA, key)) {
                     strStrItem.val = a(entry.getValue());
                 } else {
                     strStrItem.val = entry.getValue();
@@ -1593,7 +1593,7 @@ public class Target {
             return (String[]) ipChange.ipc$dispatch("39a26282", new Object[]{str});
         }
         String[] strArr = new String[2];
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             int indexOf = str.indexOf(44);
             if (indexOf == -1) {
                 strArr[0] = str.trim();
@@ -1628,7 +1628,7 @@ public class Target {
                 }
                 StringBuilder sb = new StringBuilder();
                 for (Map.Entry entry : ((Map) remove).entrySet()) {
-                    if (!TextUtils.isEmpty((CharSequence) entry.getKey()) && (pair = (Pair) entry.getValue()) != null && !TextUtils.isEmpty((CharSequence) pair.first)) {
+                    if (!StringUtils.isEmpty((CharSequence) entry.getKey()) && (pair = (Pair) entry.getValue()) != null && !StringUtils.isEmpty((CharSequence) pair.first)) {
                         String str = ((String) pair.first) + ":" + pair.second;
                         StnLogic.setDebugIP((String) entry.getKey(), str);
                         sb.append((String) entry.getKey());

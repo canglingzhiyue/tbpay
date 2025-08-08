@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.desktop.widget.monitor.MonitorType;
@@ -305,7 +305,7 @@ public abstract class b implements com.taobao.desktop.widget.action.b {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.taobao.desktop.widget.monitor.a.a().a(MonitorType.WIDGET_STATE, new a.C0652a().a("empty").b(str2).d("widget_state_add"));
                 return;
             }
@@ -391,7 +391,7 @@ public abstract class b implements com.taobao.desktop.widget.action.b {
                     return;
                 } else {
                     if (e.l(this.f16975a).booleanValue()) {
-                        if (TextUtils.isEmpty(a2) && WidgetStandardReceiver.class.getName().equals(componentName.getClassName())) {
+                        if (StringUtils.isEmpty(a2) && WidgetStandardReceiver.class.getName().equals(componentName.getClassName())) {
                             a2 = "editableWidget";
                         }
                         if ("131".equals(a2) && WidgetCombineReceiver.class.getName().equals(componentName.getClassName())) {
@@ -606,7 +606,7 @@ public abstract class b implements com.taobao.desktop.widget.action.b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return "";
         }
         JSONObject jSONObject = new JSONObject();
@@ -623,7 +623,7 @@ public abstract class b implements com.taobao.desktop.widget.action.b {
         CopyOnWriteArrayList<JSONObject> c = g.a(this.f16975a).c();
         for (String str : list) {
             for (JSONObject jSONObject2 : c) {
-                if (str.equals(jSONObject2.getString("widget_type_id")) && !TextUtils.isEmpty(jSONObject2.getString("widget_channel"))) {
+                if (str.equals(jSONObject2.getString("widget_type_id")) && !StringUtils.isEmpty(jSONObject2.getString("widget_channel"))) {
                     jSONObject.put(str, (Object) jSONObject2.getString("widget_channel"));
                 }
             }
@@ -650,7 +650,7 @@ public abstract class b implements com.taobao.desktop.widget.action.b {
                 }
                 Class<?> cls = getClass();
                 kif.a(cls, "widgetDataDispatch receiverName：" + str);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     a(str, arrayList, entry.getValue());
                 }
             }
@@ -673,7 +673,7 @@ public abstract class b implements com.taobao.desktop.widget.action.b {
                 String string2 = jSONObject.getString("widget_receiver");
                 String string3 = jSONObject.getString("widget_type_id");
                 String g = g.a(this.f16975a).g(string3);
-                if (!TextUtils.isEmpty(g)) {
+                if (!StringUtils.isEmpty(g)) {
                     if (hashMap.containsKey(g)) {
                         a(string2, Integer.valueOf(string), new com.taobao.desktop.widget.action.e().a(hashMap.get(g)));
                     }
@@ -702,10 +702,10 @@ public abstract class b implements com.taobao.desktop.widget.action.b {
         }
         String d = g.a(this.f16975a).d(str3);
         String g = g.a(this.f16975a).g(str3);
-        if (!TextUtils.isEmpty(g)) {
+        if (!StringUtils.isEmpty(g)) {
             d = new com.taobao.desktop.widget.action.e().a(g.a(this.f16975a).d(g));
         }
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return;
         }
         a(str2, Integer.valueOf(str), d);

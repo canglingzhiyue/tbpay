@@ -1,6 +1,6 @@
 package com.taobao.search.m3.icons;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.dynamic.bean.SearchDomBean;
 import kotlin.jvm.internal.q;
@@ -105,6 +105,6 @@ public final class c {
 
     public final boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : (!q.a((Object) this.b, (Object) "text") && !q.a((Object) this.b, (Object) "richText")) || !TextUtils.isEmpty(this.c) || !TextUtils.isEmpty(this.d);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : (!q.a((Object) this.b, (Object) "text") && !q.a((Object) this.b, (Object) "richText")) || !StringUtils.isEmpty(this.c) || !StringUtils.isEmpty(this.d);
     }
 }

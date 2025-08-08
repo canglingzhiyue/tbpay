@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.mechanism;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.framework.helper.MspConfig;
@@ -206,7 +206,7 @@ public class PersistStorage {
                             return;
                         }
                         String decryptRead = FileUtils.decryptRead(file);
-                        if (!TextUtils.isEmpty(decryptRead)) {
+                        if (!StringUtils.isEmpty(decryptRead)) {
                             String str = decryptRead.substring(0, decryptRead.length() - 1) + ",(" + DateUtil.format() + ")]";
                             LogUtil.record(4, "phonecashiermsp#log", "PersistStorage.uploadLocalRecords", Utils.truncateString(str, 256));
                             LoggerFactory.getBehavorLogger().customContent(LogCategory.CATEGORY_ALIPAYSDK, str);

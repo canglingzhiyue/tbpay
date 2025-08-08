@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.common.page.provider.impl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.common.page.provider.a;
 import com.alibaba.android.ultron.engine.template.TemplateInfo;
 import com.alibaba.android.ultron.vfw.dataloader.d;
@@ -157,7 +157,7 @@ public class b extends a {
         L70:
             r5.printStackTrace()
         L73:
-            boolean r5 = android.text.TextUtils.isEmpty(r6)
+            boolean r5 = android.text.StringUtils.isEmpty(r6)
             if (r5 != 0) goto La2
             com.alibaba.android.ultron.engine.template.TemplateInfo r5 = new com.alibaba.android.ultron.engine.template.TemplateInfo
             r5.<init>()
@@ -362,7 +362,7 @@ public class b extends a {
             return ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue();
         }
         if (jSONObject != null) {
-            return TextUtils.isEmpty(jSONObject.getString("errorCode"));
+            return StringUtils.isEmpty(jSONObject.getString("errorCode"));
         }
         return false;
     }

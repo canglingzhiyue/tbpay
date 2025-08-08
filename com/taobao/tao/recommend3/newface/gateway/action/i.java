@@ -1,7 +1,7 @@
 package com.taobao.tao.recommend3.newface.gateway.action;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -77,7 +77,7 @@ public class i implements gke {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE);
-            if (TextUtils.equals(string, "loadCache")) {
+            if (StringUtils.equals(string, "loadCache")) {
                 b(jSONObject, gkcVar);
                 return;
             }
@@ -113,12 +113,12 @@ public class i implements gke {
         String str = "NewFaceUIRefreshAction_" + string + "_" + string3;
         com.taobao.tao.recommend3.tracelog.b.a().a(str, 1);
         b(string3, this.f20943a, jSONObject);
-        if (TextUtils.equals(string2, "local") && TextUtils.equals(string, "loadCache") && this.f20943a.h().get()) {
+        if (StringUtils.equals(string2, "local") && StringUtils.equals(string, "loadCache") && this.f20943a.h().get()) {
             ksr.c("UIRefresh", "loadCache_coldstart_ready");
         }
         a(jSONObject);
         oqd.a(string, SystemClock.uptimeMillis() - uptimeMillis, string3, string2);
-        if (jSONObject != null && TextUtils.equals(jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE), "coldStart")) {
+        if (jSONObject != null && StringUtils.equals(jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE), "coldStart")) {
             krv.a(krv.STAGE_DRAW_COLD_START_DATA);
         }
         lar.f("NewFaceUIRefreshAction_" + string);
@@ -143,11 +143,11 @@ public class i implements gke {
         a2.b();
         oog.b();
         boolean booleanValue = jSONObject.getBooleanValue("isSecondReturn");
-        if (!TextUtils.isEmpty(string2) && obj != null) {
+        if (!StringUtils.isEmpty(string2) && obj != null) {
             if (booleanValue && oqc.a().d(string2)) {
                 return;
             }
-            if (TextUtils.equals(string, "coldStart") && oqc.a().d(string2) && com.taobao.homepage.utils.i.a()) {
+            if (StringUtils.equals(string, "coldStart") && oqc.a().d(string2) && com.taobao.homepage.utils.i.a()) {
                 com.taobao.gateway.dispatch.a.b().a(new Runnable() { // from class: com.taobao.tao.recommend3.newface.gateway.action.i.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -198,7 +198,7 @@ public class i implements gke {
             return;
         }
         String string = jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE);
-        q.a(string, jSONObject.getString("dataChangeType"), TextUtils.equals(string, "loadCache") || ((b = opeVar.b(str)) != null && b.getPageNum() == 0));
+        q.a(string, jSONObject.getString("dataChangeType"), StringUtils.equals(string, "loadCache") || ((b = opeVar.b(str)) != null && b.getPageNum() == 0));
         lar.e("uiRefresh_" + str);
         long uptimeMillis = SystemClock.uptimeMillis();
         a2.d(opeVar, jSONObject);

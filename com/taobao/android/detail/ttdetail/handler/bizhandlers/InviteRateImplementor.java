@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -55,7 +55,7 @@ public class InviteRateImplementor implements ezm {
             return false;
         }
         String string = b.getString("itemId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         a(this.f10666a, this.b, string);

@@ -1,6 +1,6 @@
 package com.alibaba.ability.builder;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Set;
 import kotlin.collections.ao;
@@ -77,7 +77,7 @@ public final class d {
         if (ipChange instanceof IpChange) {
             return (c) ipChange.ipc$dispatch("13b85e3a", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return this.f1818a;
         }
         if (!this.b.isEmpty() && !p.a(this.b, str)) {

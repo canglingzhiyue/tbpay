@@ -1,6 +1,6 @@
 package com.taobao.taolive.adapterimpl.nav;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
@@ -41,10 +41,10 @@ public class a {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f2bf4cf4", new Object[]{str, str2, jSONObject});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             hashMap.put("itemId", str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put("sourceType", str2);
             } else {
                 hashMap.put("sourceType", "4");
@@ -85,7 +85,7 @@ public class a {
                             String a2 = a.a(map, "resultCode");
                             if ("1".equals(a2)) {
                                 String a3 = a.a(map, "itemId");
-                                if (TextUtils.isEmpty(a3)) {
+                                if (StringUtils.isEmpty(a3)) {
                                     return;
                                 }
                                 com.taobao.alilive.aliliveframework.frame.a a4 = n.a();

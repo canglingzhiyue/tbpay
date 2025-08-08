@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.rule.b;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
@@ -103,7 +103,7 @@ public class avg extends avc {
         if (ipChange instanceof IpChange) {
             return (Event) ipChange.ipc$dispatch("17916590", new Object[]{this, list, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (Event event : list) {

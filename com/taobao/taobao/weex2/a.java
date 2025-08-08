@@ -2,7 +2,7 @@ package com.taobao.taobao.weex2;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class a implements f {
             shareContent.disableTextInfo = jSONObject.has("disableTextInfo") ? jSONObject.getBoolean("disableTextInfo") : false;
             shareContent.title = jSONObject.has("title") ? jSONObject.getString("title") : str2;
             String string = jSONObject.has("text") ? jSONObject.getString("text") : str2;
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "我分享给你了一个淘宝页面，快来看看吧";
             }
             shareContent.description = string;
@@ -70,8 +70,8 @@ public class a implements f {
             }
             shareContent.templateParams = map;
             ArrayList arrayList = new ArrayList();
-            if (!TextUtils.equals("all", str3)) {
-                if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.equals("all", str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     for (String str4 : str3.split(",")) {
                         arrayList.add(str4);
                     }
@@ -114,7 +114,7 @@ public class a implements f {
                     if (map2 == null || !map2.containsKey("result")) {
                         return;
                     }
-                    if (TextUtils.equals("no target", map2.get("result"))) {
+                    if (StringUtils.equals("no target", map2.get("result"))) {
                         com.alibaba.fastjson.JSONObject jSONObject2 = new com.alibaba.fastjson.JSONObject();
                         jSONObject2.put("result", (Object) "failure");
                         bVar.a(jSONObject2);

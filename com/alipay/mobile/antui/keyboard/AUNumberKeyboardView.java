@@ -5,7 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Vibrator;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -300,7 +300,7 @@ public class AUNumberKeyboardView extends LinearLayout implements View.OnClickLi
         int i3 = 1200;
         try {
             String config = AntuiServiceAdapter.getAntuiSwitch().getConfig("AUNumberKeyboardView_small_keyboard_height");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 i3 = Integer.parseInt(config);
             }
         } catch (Throwable th) {

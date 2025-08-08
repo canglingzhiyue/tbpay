@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentGroupV5;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -56,7 +56,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("88097ea2", new Object[]{str})).doubleValue();
         }
-        if (!TextUtils.isEmpty(str) && str.contains("_")) {
+        if (!StringUtils.isEmpty(str) && str.contains("_")) {
             String[] split = str.split("_");
             try {
                 return Double.parseDouble(split[split.length - 1]);

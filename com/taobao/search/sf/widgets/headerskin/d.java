@@ -6,7 +6,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -143,7 +143,7 @@ public final class d {
         if (tUrlImageView == null) {
             return;
         }
-        if (TextUtils.isEmpty(url)) {
+        if (StringUtils.isEmpty(url)) {
             tUrlImageView.setVisibility(8);
             tUrlImageView.setImageUrl("");
             return;

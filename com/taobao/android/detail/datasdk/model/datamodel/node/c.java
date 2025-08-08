@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.datamodel.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.RateNode;
 import java.util.ArrayList;
@@ -103,7 +103,7 @@ public class c {
             return "";
         }
         ItemNode c = eqb.c(bVar);
-        return !TextUtils.isEmpty(c.itemId) ? c.itemId : "";
+        return !StringUtils.isEmpty(c.itemId) ? c.itemId : "";
     }
 
     public String j() {
@@ -253,7 +253,7 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("6a27182", new Object[]{this})).booleanValue();
         }
         b bVar = this.f10055a;
-        return (bVar == null || (g = eqb.g(bVar)) == null || g.isvCustomNode == null || g.isvCustomNode.tradeBefor == null || TextUtils.isEmpty(g.isvCustomNode.tradeBefor.f9968a)) ? false : true;
+        return (bVar == null || (g = eqb.g(bVar)) == null || g.isvCustomNode == null || g.isvCustomNode.tradeBefor == null || StringUtils.isEmpty(g.isvCustomNode.tradeBefor.f9968a)) ? false : true;
     }
 
     public String x() {

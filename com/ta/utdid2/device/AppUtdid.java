@@ -1,7 +1,7 @@
 package com.ta.utdid2.device;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.Constants;
 import com.ta.audid.Variables;
@@ -43,7 +43,7 @@ public class AppUtdid {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("74e25c21", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mUtdid)) {
+        } else if (StringUtils.isEmpty(this.mUtdid)) {
             return Constants.UTDID_INVALID;
         } else {
             return this.mUtdid;
@@ -54,15 +54,15 @@ public class AppUtdid {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8f7eefe9", new Object[]{this, context});
-        } else if (!TextUtils.isEmpty(this.mUtdid)) {
+        } else if (!StringUtils.isEmpty(this.mUtdid)) {
             return this.mUtdid;
         } else {
             MutiProcessLock.lockUtdidFile();
             String v5Utdid = getV5Utdid();
-            if (TextUtils.isEmpty(v5Utdid)) {
+            if (StringUtils.isEmpty(v5Utdid)) {
                 v5Utdid = UTUtdid.instance(context).getValue();
             }
-            if (TextUtils.isEmpty(v5Utdid)) {
+            if (StringUtils.isEmpty(v5Utdid)) {
                 MutiProcessLock.releaseUtdidFile();
                 return Constants.UTDID_INVALID;
             }
@@ -116,7 +116,7 @@ public class AppUtdid {
                         com.ta.audid.device.UtdidObj r0 = com.ta.audid.device.AppUtdidDecoder.decode(r0)
                         android.content.Context r1 = r3
                         java.lang.String r1 = com.ta.audid.upload.UtdidKeyFile.getUtdidFromSettings(r1)
-                        boolean r2 = android.text.TextUtils.isEmpty(r1)
+                        boolean r2 = android.text.StringUtils.isEmpty(r1)
                         if (r2 != 0) goto L3a
                         com.ta.audid.device.UtdidObj r1 = com.ta.audid.device.AppUtdidDecoder.decode(r1)
                         boolean r2 = r1.isValid()
@@ -131,7 +131,7 @@ public class AppUtdid {
                         com.ta.audid.upload.UtdidKeyFile.writeUtdidToSettings(r1, r2)
                     L41:
                         java.lang.String r1 = com.ta.audid.upload.UtdidKeyFile.readSdcardUtdidFile()
-                        boolean r2 = android.text.TextUtils.isEmpty(r1)
+                        boolean r2 = android.text.StringUtils.isEmpty(r1)
                         if (r2 != 0) goto L67
                         com.ta.audid.device.UtdidObj r1 = com.ta.audid.device.AppUtdidDecoder.decode(r1)
                         boolean r2 = r1.isValid()
@@ -171,7 +171,7 @@ public class AppUtdid {
                     }
                     UtdidKeyFile.writeAppUtdidFile(utdidFromSettings);
                     String readSdcardUtdidFile = UtdidKeyFile.readSdcardUtdidFile();
-                    if (TextUtils.isEmpty(readSdcardUtdidFile)) {
+                    if (StringUtils.isEmpty(readSdcardUtdidFile)) {
                         UtdidKeyFile.writeSdcardUtdidFile(utdidFromSettings);
                         return;
                     }
@@ -215,7 +215,7 @@ public class AppUtdid {
             return;
         }
         UtdidLogger.d();
-        if (TextUtils.isEmpty(this.mUtdid)) {
+        if (StringUtils.isEmpty(this.mUtdid)) {
             return;
         }
         try {

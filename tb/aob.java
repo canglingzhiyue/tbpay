@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.a;
 import com.alibaba.analytics.core.config.b;
 import com.alibaba.analytics.core.config.c;
@@ -271,7 +271,7 @@ public class aob {
                     }
                     try {
                         String a2 = bzj.a(aob.a(aob.this));
-                        if (!TextUtils.isEmpty(a2) && TextUtils.isEmpty(aob.b(aob.this))) {
+                        if (!StringUtils.isEmpty(a2) && StringUtils.isEmpty(aob.b(aob.this))) {
                             aob.a(aob.this, a2);
                         }
                         apr.b("Variables", "getOAID", aob.b(aob.this));
@@ -291,7 +291,7 @@ public class aob {
                     }
                     try {
                         String b = bzj.b(aob.a(aob.this));
-                        if (!TextUtils.isEmpty(b) && TextUtils.isEmpty(aob.c(aob.this))) {
+                        if (!StringUtils.isEmpty(b) && StringUtils.isEmpty(aob.c(aob.this))) {
                             aob.b(aob.this, b);
                         }
                         apr.b("Variables", "getOAID2", aob.c(aob.this));
@@ -469,7 +469,7 @@ public class aob {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fe3ba4ac", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.g) && (b = aqf.b(k())) != null) {
+        if (StringUtils.isEmpty(this.g) && (b = aqf.b(k())) != null) {
             this.g = b.get(LogField.APPVERSION);
         }
         return this.g;
@@ -532,9 +532,9 @@ public class aob {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("255e0466", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f)) {
+        if (StringUtils.isEmpty(this.f)) {
             String a2 = aqb.a(k(), "channel");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return a2;
             }
         }
@@ -590,10 +590,10 @@ public class aob {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             g(null);
             k(null);
-        } else if (TextUtils.isEmpty(str2) && str.equals(this.j)) {
+        } else if (StringUtils.isEmpty(str2) && str.equals(this.j)) {
         } else {
             g(str);
             k(str2);
@@ -924,7 +924,7 @@ public class aob {
         }
         try {
             SharedPreferences.Editor edit = context.getSharedPreferences("UTCommon", 0).edit();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 edit.putString("_usersite", null);
             } else {
                 edit.putString("_usersite", new String(aph.c(str.getBytes("UTF-8"), 2)));
@@ -956,7 +956,7 @@ public class aob {
         }
         try {
             SharedPreferences.Editor edit = context.getSharedPreferences("UTCommon", 0).edit();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 edit.putString("_openid", null);
             } else {
                 edit.putString("_openid", new String(aph.c(str.getBytes("UTF-8"), 2)));

@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.behavixswitch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class d {
         }
         HashMap hashMap = new HashMap();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey()) && (jSONArray = (JSONArray) entry.getValue()) != null && jSONArray.size() > 0 && (a2 = a(jSONArray)) != null && a2.size() > 0) {
+            if (!StringUtils.isEmpty(entry.getKey()) && (jSONArray = (JSONArray) entry.getValue()) != null && jSONArray.size() > 0 && (a2 = a(jSONArray)) != null && a2.size() > 0) {
                 hashMap.put(entry.getKey(), a2);
             }
         }

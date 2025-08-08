@@ -1,6 +1,6 @@
 package anet.channel.detect;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
@@ -237,7 +237,7 @@ public class ExceptionDetector {
                         if (requestStatistic == null) {
                             return;
                         }
-                        if (!TextUtils.isEmpty(requestStatistic.ip) && requestStatistic.ret == 0) {
+                        if (!StringUtils.isEmpty(requestStatistic.ip) && requestStatistic.ret == 0) {
                             if ("guide-acs.m.taobao.com".equalsIgnoreCase(requestStatistic.host)) {
                                 ExceptionDetector.access$302(ExceptionDetector.this, requestStatistic.ip);
                             } else if (ExceptionDetector.ACCS_HOST.equalsIgnoreCase(requestStatistic.host)) {
@@ -246,7 +246,7 @@ public class ExceptionDetector {
                                 ExceptionDetector.access$502(ExceptionDetector.this, requestStatistic.ip);
                             }
                         }
-                        if (!TextUtils.isEmpty(requestStatistic.url)) {
+                        if (!StringUtils.isEmpty(requestStatistic.url)) {
                             ExceptionDetector.access$000(ExceptionDetector.this).add(Pair.create(requestStatistic.url, Integer.valueOf(requestStatistic.statusCode)));
                         }
                         if (!ExceptionDetector.access$600(ExceptionDetector.this)) {
@@ -295,7 +295,7 @@ public class ExceptionDetector {
         }
         String defaultGateway = networkStatus.isWifi() ? NetUtils.getDefaultGateway("114.114.114.114") : NetUtils.getPreferNextHop("114.114.114.114", 2);
         Future<PingResponse> future = null;
-        if (!TextUtils.isEmpty(defaultGateway)) {
+        if (!StringUtils.isEmpty(defaultGateway)) {
             future = new PingTask(defaultGateway, 1000, 3, 0, 0).launch();
         }
         JSONObject jSONObject = new JSONObject();
@@ -390,7 +390,7 @@ public class ExceptionDetector {
             return (ArrayList) ipChange.ipc$dispatch("4d52c2e8", new Object[]{this, str, new Integer(i)});
         }
         ArrayList<String> arrayList = new ArrayList<>();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return arrayList;
         }
         int i2 = 0;
@@ -406,7 +406,7 @@ public class ExceptionDetector {
                 String b = pingResponse.b();
                 double d = pingResponse.d()[0].f25063a;
                 int c = pingResponse.c();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     b = "*";
                 }
                 sb.append("hop=");
@@ -434,7 +434,7 @@ public class ExceptionDetector {
             detectInfo.dnsTime = System.currentTimeMillis() - currentTimeMillis;
         } catch (UnknownHostException unused) {
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             detectInfo.currentIp = str2;
         } else {
             List<IConnStrategy> connStrategyListByHost = StrategyCenter.getInstance().getConnStrategyListByHost(str);
@@ -442,8 +442,8 @@ public class ExceptionDetector {
                 detectInfo.currentIp = connStrategyListByHost.get(0).getIp();
             }
         }
-        String str3 = !TextUtils.isEmpty(detectInfo.currentIp) ? detectInfo.currentIp : detectInfo.localIp;
-        if (!TextUtils.isEmpty(str3)) {
+        String str3 = !StringUtils.isEmpty(detectInfo.currentIp) ? detectInfo.currentIp : detectInfo.localIp;
+        if (!StringUtils.isEmpty(str3)) {
             String str4 = str3;
             detectInfo.defaultFuture = new PingTask(str4, 1000, 3, 0, 0).launch();
             detectInfo.mtu1000Future = new PingTask(str4, 1000, 3, 972, 0).launch();
@@ -470,7 +470,7 @@ public class ExceptionDetector {
             jSONObject.put("MTU1200", (Object) getPingResponse(3, detectInfo.mtu1200Future));
             jSONObject.put("MTU1460", (Object) getPingResponse(4, detectInfo.mtu1460Future));
             if ("guide-acs.m.taobao.com".equals(detectInfo.host)) {
-                ArrayList<String> traceRoute = traceRoute(!TextUtils.isEmpty(detectInfo.currentIp) ? detectInfo.currentIp : detectInfo.localIp, 5);
+                ArrayList<String> traceRoute = traceRoute(!StringUtils.isEmpty(detectInfo.currentIp) ? detectInfo.currentIp : detectInfo.localIp, 5);
                 JSONObject jSONObject2 = new JSONObject();
                 while (i < traceRoute.size()) {
                     int i2 = i + 1;

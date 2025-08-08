@@ -1,6 +1,6 @@
 package com.taobao.alimama.tkcps;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,24 +80,24 @@ public class TaokeBaseUtil {
             String a6 = com.taobao.utils.a.a(str, kuh.ALI_TRACK_ID);
             String a7 = c.a().a(z);
             String b = e.a().b();
-            if (TextUtils.isEmpty(a2) || !"2".equals(a3)) {
+            if (StringUtils.isEmpty(a2) || !"2".equals(a3)) {
                 str2 = a6;
             } else {
                 str2 = a6;
                 c.a("new_v2_get_page_e", new Object[0]);
                 hashMap.put("pageE", a2);
             }
-            if (!TextUtils.isEmpty(a7)) {
+            if (!StringUtils.isEmpty(a7)) {
                 c.a("new_v2_get_global_e", new Object[0]);
                 hashMap.put("globalE", a7);
             }
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 c.a("new_v2_get_channel_e", new Object[0]);
                 hashMap.put("channelE", b);
             }
             Map<String, String> hashMap2 = map == null ? new HashMap<>(2) : map;
             hashMap2.put("eclickid", a4);
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 hashMap2.put("packageName", a5);
             }
             if (!hashMap.isEmpty()) {
@@ -140,15 +140,15 @@ public class TaokeBaseUtil {
             String a3 = com.taobao.utils.a.a(str, "type");
             String c2 = f.a().c();
             String b = e.a().b();
-            if (!TextUtils.isEmpty(a2) && "2".equals(a3)) {
+            if (!StringUtils.isEmpty(a2) && "2".equals(a3)) {
                 c.a("new_get_page_e", new Object[0]);
                 hashMap2.put("pageE", a2);
             }
-            if (!TextUtils.isEmpty(c2)) {
+            if (!StringUtils.isEmpty(c2)) {
                 c.a("new_get_global_e", new Object[0]);
                 hashMap2.put("globalE", c2);
             }
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 c.a("new_get_channel_e", new Object[0]);
                 hashMap2.put("channelE", b);
             }
@@ -197,14 +197,14 @@ public class TaokeBaseUtil {
             return;
         }
         TaoLog.Logi("AlimamaSdk", "new taoke cps filter url = " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String a2 = com.taobao.utils.a.a(str, "e");
         String a3 = com.taobao.utils.a.a(str, "tkFlag");
         String a4 = com.taobao.utils.a.a(str, "type");
         String a5 = com.taobao.utils.a.a(str, "tk_cps_ut");
-        if (TextUtils.isEmpty(a2) || !"2".equals(a4) || TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a2) || !"2".equals(a4) || StringUtils.isEmpty(a3)) {
             return;
         }
         if ("1".equals(a3)) {
@@ -222,13 +222,13 @@ public class TaokeBaseUtil {
             return;
         }
         TaoLog.Logi("AlimamaSdk", "taoke cps filter url = " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String a2 = com.taobao.utils.a.a(str, "e");
         String a3 = com.taobao.utils.a.a(str, "tkFlag");
         String a4 = com.taobao.utils.a.a(str, "type");
-        if (TextUtils.isEmpty(a2) || !"2".equals(a4) || TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a2) || !"2".equals(a4) || StringUtils.isEmpty(a3)) {
             return;
         }
         if ("1".equals(a3)) {
@@ -299,7 +299,7 @@ public class TaokeBaseUtil {
             return;
         }
         final String str4 = "object_id=" + str + ",object_type=" + str2 + ",action_type=" + str3;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             com.taobao.alimama.utils.e.a("commit_cps_initiative_action_param_invalid", str4);
             UserTrackLogs.trackAdLog("commit_cps_initiative_action_param_invalid", str4);
             return;
@@ -367,14 +367,14 @@ public class TaokeBaseUtil {
             }
         });
         String string = SharedPreferencesUtils.getString("tk_cps_cross_e_config", "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             JSONObject parseObject = JSONObject.parseObject(string);
             String string2 = parseObject.getString("enable_cross_e");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 str = string2;
             }
             String string3 = parseObject.getString("flux_disperse_config");
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 hashMap.put("flux_disperse_config", string3);
             }
         }

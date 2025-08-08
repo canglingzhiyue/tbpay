@@ -6,7 +6,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.uikit.util.ApplicationUtil;
 import com.taobao.search.sf.util.tlog.TLogTracker;
@@ -55,7 +55,7 @@ public final class ApplicationBuildInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("eafcf261", new Object[0]);
         }
-        if (!TextUtils.isEmpty(sVersionName)) {
+        if (!StringUtils.isEmpty(sVersionName)) {
             return sVersionName;
         }
         String str = getPackageInfo().versionName;
@@ -82,7 +82,7 @@ public final class ApplicationBuildInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("92150ca3", new Object[0]);
         }
-        if (!TextUtils.isEmpty(sAppName)) {
+        if (!StringUtils.isEmpty(sAppName)) {
             return sAppName;
         }
         String str = "AppName";
@@ -127,7 +127,7 @@ public final class ApplicationBuildInfo {
             return ((Boolean) ipChange.ipc$dispatch("97b74977", new Object[0])).booleanValue();
         }
         String curProcessName = getCurProcessName();
-        return TextUtils.isEmpty(curProcessName) || !curProcessName.contains(":");
+        return StringUtils.isEmpty(curProcessName) || !curProcessName.contains(":");
     }
 
     public static String getCurProcessName() {
@@ -135,7 +135,7 @@ public final class ApplicationBuildInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("58e7e4c9", new Object[0]);
         }
-        if (!TextUtils.isEmpty(currentProcessName)) {
+        if (!StringUtils.isEmpty(currentProcessName)) {
             return currentProcessName;
         }
         int myPid = Process.myPid();

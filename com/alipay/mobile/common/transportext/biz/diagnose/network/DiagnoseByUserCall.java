@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.diagnose.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetNetworkDiagnoseListener;
 import com.alipay.mobile.common.amnet.api.AmnetStorageListener;
 import com.alipay.mobile.common.transport.ext.diagnose.eastereggs.DiagnoseResult;
@@ -77,7 +77,7 @@ public class DiagnoseByUserCall implements AmnetNetworkDiagnoseListener {
         }
         sb.append(str2);
         LogCatUtil.info("DIAGNOSE-USR", sb.toString());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.d.add(str);
             a(a(str, z2));
         }
@@ -116,7 +116,7 @@ public class DiagnoseByUserCall implements AmnetNetworkDiagnoseListener {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d7b527fe", new Object[]{this, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int indexOf = str.indexOf("traceroute:");

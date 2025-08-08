@@ -1,7 +1,7 @@
 package com.taobao.android.home.component.view.video;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.i;
 import com.taobao.android.home.component.utils.j;
@@ -36,11 +36,11 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String str2 = a() + i.a(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             com.taobao.android.home.component.utils.e.e(f12765a, "getVideoFilePath empty");
         }
         return str2;

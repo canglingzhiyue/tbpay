@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -502,7 +502,7 @@ public class d {
         for (f fVar : list) {
             int a2 = fVar.a();
             g gVar = e.get(a2);
-            if (!TextUtils.equals(fVar.i(), gVar.t())) {
+            if (!StringUtils.equals(fVar.i(), gVar.t())) {
                 gVar.e("0");
             }
             gVar.a(fVar.b());
@@ -520,7 +520,7 @@ public class d {
             gVar.b(hashMap2);
             gVar.h(fVar.p());
             e.set(a2, gVar);
-            if ((TextUtils.isEmpty(FestivalMgr.a().a("global", "tabbarImagesURL_we")) || "true".equals(gjb.g(gjb.SP_KEY_DEFAULT_CUSTOMER_AREA_SKIN)) || "ing".equals(gjb.g(gjb.SP_KEY_DEFAULT_CUSTOMER_AREA_SKIN))) && !z) {
+            if ((StringUtils.isEmpty(FestivalMgr.a().a("global", "tabbarImagesURL_we")) || "true".equals(gjb.g(gjb.SP_KEY_DEFAULT_CUSTOMER_AREA_SKIN)) || "ing".equals(gjb.g(gjb.SP_KEY_DEFAULT_CUSTOMER_AREA_SKIN))) && !z) {
                 a(fVar, gVar);
             } else if (z && !e.c()) {
                 a(fVar, gVar);
@@ -559,7 +559,7 @@ public class d {
             Integer num = f.NONE_CHANGED_TAB_BAR_TITLE_CONFIG.get(gVar.y());
             if (num != null) {
                 String a2 = b.a(num.intValue());
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     gVar.a(a2);
                     com.taobao.tao.navigation.e.b(i, gVar);
                 }

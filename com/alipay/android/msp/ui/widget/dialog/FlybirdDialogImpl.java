@@ -2,7 +2,7 @@ package com.alipay.android.msp.ui.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -43,13 +43,13 @@ public class FlybirdDialogImpl extends FlybirdDialog {
             MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(MspContextManager.getInstance().getLatestBizId());
             if (mspContextByBizId != null) {
                 String str4 = null;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     str4 = str;
                 }
-                if (TextUtils.isEmpty(str4) && !TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str4) && !StringUtils.isEmpty(str2)) {
                     str4 = str2;
                 }
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     str4 = "null";
                 }
                 AlertIntelligenceEngine.startAction(mspContextByBizId, "dialog", str4, "", "");

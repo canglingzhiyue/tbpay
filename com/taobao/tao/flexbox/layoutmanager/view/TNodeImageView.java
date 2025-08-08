@@ -9,7 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.AccelerateInterpolator;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -480,7 +480,7 @@ public class TNodeImageView extends TImageView implements ImageLoader.d, tds {
             } else {
                 onImageLoadFailed(-1);
             }
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             if (this.imageLoader == null) {
                 this.imageLoader = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().i();
             }
@@ -496,7 +496,7 @@ public class TNodeImageView extends TImageView implements ImageLoader.d, tds {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("72686e27", new Object[]{this, str, bitmapDrawable});
-        } else if (this.inCachePool || !TextUtils.equals(str, this.currentUrl)) {
+        } else if (this.inCachePool || !StringUtils.equals(str, this.currentUrl)) {
         } else {
             NinePatchDrawable ninePatchDrawable = bitmapDrawable;
             if (!str.startsWith(ogw.BASE64_TAG)) {

@@ -2,7 +2,7 @@ package com.taobao.taolive.movehighlight.bundle.timeshiftContent;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONArray;
@@ -448,7 +448,7 @@ public class TimeShiftContentFrame extends BaseFrame {
                                 IpChange ipChange3 = $ipChange;
                                 if (ipChange3 instanceof IpChange) {
                                     ipChange3.ipc$dispatch("59a5515c", new Object[]{this, liveCommonIssueInteractResponseData});
-                                } else if (TimeShiftContentFrame.this.mContext == null || liveCommonIssueInteractResponseData.benefitVO == null || TextUtils.isEmpty(liveCommonIssueInteractResponseData.benefitVO.toastTips)) {
+                                } else if (TimeShiftContentFrame.this.mContext == null || liveCommonIssueInteractResponseData.benefitVO == null || StringUtils.isEmpty(liveCommonIssueInteractResponseData.benefitVO.toastTips)) {
                                 } else {
                                     m.a(TimeShiftContentFrame.this.mContext, liveCommonIssueInteractResponseData.benefitVO.toastTips);
                                     com.taobao.taolive.movehighlight.utils.a.a(liveTimemovingModel, TimeShiftContentFrame.this.mContext, TimeShiftContentFrame.this.mFrameContext);

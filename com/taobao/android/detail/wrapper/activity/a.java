@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.activity;
 
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.fragment.weex.CouponInfoFragment;
 import com.taobao.android.detail.core.utils.i;
@@ -49,7 +49,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("831e55bf", new Object[]{this, fragmentActivity})).booleanValue();
         }
         String queryParameter = fragmentActivity.getIntent().getData().getQueryParameter(com.taobao.android.detail.wrapper.ext.uikit.b.e);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             i.a(f11102a, "target Url is empty");
             return false;
         }
@@ -71,17 +71,17 @@ public class a {
         }
         Uri data = fragmentActivity.getIntent().getData();
         String queryParameter = data.getQueryParameter(com.taobao.android.detail.wrapper.ext.uikit.b.f);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             i.a(f11102a, "itemId is null");
             return false;
         }
         String queryParameter2 = data.getQueryParameter(com.taobao.android.detail.wrapper.ext.uikit.b.g);
-        if (TextUtils.isEmpty(queryParameter2)) {
+        if (StringUtils.isEmpty(queryParameter2)) {
             i.a(f11102a, "sellerId is null");
             return false;
         }
         String queryParameter3 = data.getQueryParameter(com.taobao.android.detail.wrapper.ext.uikit.b.h);
-        if (TextUtils.isEmpty(queryParameter3)) {
+        if (StringUtils.isEmpty(queryParameter3)) {
             i.a(f11102a, "sellerType is null");
             return false;
         }

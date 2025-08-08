@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.mnn;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,7 +98,7 @@ public final class j {
         }
         try {
             String b2 = cuj.b(com.b(), "plt_mnn_bucket_id_v2", "");
-            if (TextUtils.isEmpty(b2) || (parseObject = JSON.parseObject(b2)) == null) {
+            if (StringUtils.isEmpty(b2) || (parseObject = JSON.parseObject(b2)) == null) {
                 return;
             }
             for (Map.Entry<String, Object> entry : parseObject.entrySet()) {

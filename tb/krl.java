@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -63,7 +63,7 @@ public class krl extends aec<Intent> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return Boolean.TRUE.toString().equalsIgnoreCase(((JSONObject) JSON.parse(str)).getString("refreshImmediately"));
             } catch (Exception unused) {

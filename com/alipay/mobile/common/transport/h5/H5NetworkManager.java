@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.h5;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.http.AndroidHttpClient;
 import com.alipay.mobile.common.transport.http.HttpManager;
 import com.alipay.mobile.common.transport.http.HttpUrlRequest;
@@ -28,7 +28,7 @@ public class H5NetworkManager extends HttpManager {
         if (h5HttpUrlRequest == null) {
             throw new IllegalArgumentException("h5HttpUrlRequest is null");
         }
-        if (TextUtils.isEmpty(h5HttpUrlRequest.getUrl())) {
+        if (StringUtils.isEmpty(h5HttpUrlRequest.getUrl())) {
             throw new IllegalArgumentException("h5HttpUrlRequest#url is null");
         }
         if (h5HttpUrlRequest.getHeaders() == null) {

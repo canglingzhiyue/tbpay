@@ -136,7 +136,7 @@ public final class TextDirectionHeuristicsCompat {
 
         @Override // android.support.v4.text.TextDirectionHeuristicsCompat.TextDirectionHeuristicImpl
         protected boolean defaultIsRtl() {
-            return TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == 1;
+            return StringUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == 1;
         }
     }
 

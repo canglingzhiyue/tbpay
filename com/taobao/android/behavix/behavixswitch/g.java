@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.behavixswitch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.riy;
@@ -21,7 +21,7 @@ public class g implements f {
 
     public g(String str) {
         this.c = str;
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.f9176a = false;
             this.b = false;
             return;

@@ -1,6 +1,6 @@
 package com.taobao.android.taopai.charge.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -240,7 +240,7 @@ public class TpChargeBean implements Serializable {
             if (ipChange instanceof IpChange) {
                 return (TpChargeBean) ipChange.ipc$dispatch("6f30f02d", new Object[]{this});
             }
-            if (TextUtils.isEmpty(this.f15319a)) {
+            if (StringUtils.isEmpty(this.f15319a)) {
                 throw new IllegalArgumentException("funId is null");
             }
             return new TpChargeBean(this);

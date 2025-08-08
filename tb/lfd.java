@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.infoflow.protocol.subservice.biz.ICacheReqBizParamsService;
@@ -26,7 +26,7 @@ public class lfd extends fuf {
                 String str2 = objArr.length >= 2 ? (String) objArr[1] : null;
                 String str3 = objArr.length >= 3 ? (String) objArr[2] : null;
                 ldf.d("DXDataParserHGetReqBizParam", "handleEvent containerId : " + str + ",key : " + str2 + ",mode : " + str3);
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     ldf.d("DXDataParserHGetReqBizParam", "参数异常！");
                     return null;
                 }

@@ -2,7 +2,7 @@ package com.alipay.sdk.m.e;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.Signature;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes3.dex */
@@ -31,7 +31,7 @@ public final class b {
         }
         for (Signature signature : signatureArr) {
             String a2 = e.a(aVar, signature.toByteArray());
-            if (a2 != null && !TextUtils.equals(a2, this.c)) {
+            if (a2 != null && !StringUtils.equals(a2, this.c)) {
                 return true;
             }
         }

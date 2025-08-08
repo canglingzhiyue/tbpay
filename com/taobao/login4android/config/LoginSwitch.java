@@ -1,6 +1,6 @@
 package com.taobao.login4android.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.info.AppInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.log.LoginTLogAdapter;
@@ -76,7 +76,7 @@ public class LoginSwitch {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3d7f2a49", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -94,7 +94,7 @@ public class LoginSwitch {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8c25e11b", new Object[]{str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {
@@ -118,7 +118,7 @@ public class LoginSwitch {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1086f4ad", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         try {

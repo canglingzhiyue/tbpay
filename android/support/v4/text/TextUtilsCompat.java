@@ -1,16 +1,16 @@
 package android.support.v4.text;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Locale;
 
 /* loaded from: classes2.dex */
-public final class TextUtilsCompat {
+public final class StringUtilsCompat {
     private static final String ARAB_SCRIPT_SUBTAG = "Arab";
     private static final String HEBR_SCRIPT_SUBTAG = "Hebr";
     private static final Locale ROOT = new Locale("", "");
 
-    private TextUtilsCompat() {
+    private StringUtilsCompat() {
     }
 
     private static int getLayoutDirectionFromFirstChar(Locale locale) {
@@ -20,7 +20,7 @@ public final class TextUtilsCompat {
 
     public static int getLayoutDirectionFromLocale(Locale locale) {
         if (Build.VERSION.SDK_INT >= 17) {
-            return TextUtils.getLayoutDirectionFromLocale(locale);
+            return StringUtils.getLayoutDirectionFromLocale(locale);
         }
         if (locale == null || locale.equals(ROOT)) {
             return 0;
@@ -32,7 +32,7 @@ public final class TextUtilsCompat {
     public static String htmlEncode(String str) {
         String str2;
         if (Build.VERSION.SDK_INT >= 17) {
-            return TextUtils.htmlEncode(str);
+            return StringUtils.htmlEncode(str);
         }
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {

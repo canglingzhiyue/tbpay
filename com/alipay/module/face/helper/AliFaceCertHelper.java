@@ -146,7 +146,7 @@ public class AliFaceCertHelper {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0020, code lost:
-        if (android.text.TextUtils.isEmpty(r0) != false) goto L12;
+        if (android.text.StringUtils.isEmpty(r0) != false) goto L12;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -172,7 +172,7 @@ public class AliFaceCertHelper {
         L18:
             if (r9 == 0) goto L25
             java.lang.String r0 = r9.verifyMessage
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L23
             goto L35
         L23:

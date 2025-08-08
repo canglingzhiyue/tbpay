@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
@@ -203,7 +203,7 @@ public class dtg extends af {
             ipChange.ipc$dispatch("ede516ab", new Object[]{this, context, view});
             return;
         }
-        if (!TextUtils.isEmpty(this.l)) {
+        if (!StringUtils.isEmpty(this.l)) {
             setText(this.i + this.l);
         }
         super.onRenderView(context, view);
@@ -238,11 +238,11 @@ public class dtg extends af {
             view.setTag(ID_KEY_BOARD, Integer.valueOf(this.n));
             dte.c(editText, this.o);
             view.setTag(ID_MAX_LENGTH, Integer.valueOf(this.o));
-            if (!TextUtils.isEmpty(this.j)) {
+            if (!StringUtils.isEmpty(this.j)) {
                 dte.a(editText, this.j);
                 view.setTag(ID_PLACE_HOLDER, this.j);
             }
-            if (TextUtils.isEmpty(this.k)) {
+            if (StringUtils.isEmpty(this.k)) {
                 return;
             }
             a(editText, "input".equalsIgnoreCase(this.k));

@@ -1,6 +1,6 @@
 package com.heytap.msp.push.mode;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONObject;
 import tb.cvy;
 import tb.kge;
@@ -167,19 +167,19 @@ public class MessageStat {
             jSONObject.putOpt("eventID", this.mEventId);
             jSONObject.putOpt(APP_PACKAGE, this.mAppPackage);
             jSONObject.putOpt("eventTime", Long.valueOf(this.mEventTime));
-            if (!TextUtils.isEmpty(this.mGlobalId)) {
+            if (!StringUtils.isEmpty(this.mGlobalId)) {
                 jSONObject.putOpt(GLOBAL_ID, this.mGlobalId);
             }
-            if (!TextUtils.isEmpty(this.mTaskID)) {
+            if (!StringUtils.isEmpty(this.mTaskID)) {
                 jSONObject.putOpt("taskID", this.mTaskID);
             }
-            if (!TextUtils.isEmpty(this.mProperty)) {
+            if (!StringUtils.isEmpty(this.mProperty)) {
                 jSONObject.putOpt("property", this.mProperty);
             }
-            if (!TextUtils.isEmpty(this.mStatisticsExtra)) {
+            if (!StringUtils.isEmpty(this.mStatisticsExtra)) {
                 jSONObject.putOpt(STATISTICS_EXTRA, this.mStatisticsExtra);
             }
-            if (!TextUtils.isEmpty(this.mDataExtra)) {
+            if (!StringUtils.isEmpty(this.mDataExtra)) {
                 jSONObject.putOpt(DATA_EXTRA, this.mDataExtra);
             }
         } catch (Exception e) {

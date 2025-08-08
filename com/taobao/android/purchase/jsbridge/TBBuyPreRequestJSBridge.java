@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,7 +85,7 @@ public class TBBuyPreRequestJSBridge extends e {
             return;
         }
         String string = a2.getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             arc.a().b("TBBuyPreRequestJSBridge doPreRequestHandler url is null");
             wVCallBackContext.error();
             return;

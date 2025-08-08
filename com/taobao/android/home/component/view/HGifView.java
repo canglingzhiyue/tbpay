@@ -2,7 +2,7 @@ package com.taobao.android.home.component.view;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -131,7 +131,7 @@ public class HGifView extends FrameLayout {
             ipChange.ipc$dispatch("aa3850de", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.bottomImageView.setVisibility(0);
         }
         this.gifImageView.setSkipAutoSize(true);
@@ -172,13 +172,13 @@ public class HGifView extends FrameLayout {
             ipChange.ipc$dispatch("df88dacd", new Object[]{this, hImageView, str, str2, str3});
             return;
         }
-        boolean z = !TextUtils.equals(str, "match_content") && TextUtils.equals(str2, "match_content");
-        if (!z && (!TextUtils.equals(str, "match_content") || TextUtils.equals(str2, "match_content"))) {
+        boolean z = !StringUtils.equals(str, "match_content") && StringUtils.equals(str2, "match_content");
+        if (!z && (!StringUtils.equals(str, "match_content") || StringUtils.equals(str2, "match_content"))) {
             return;
         }
         double d = -1.0d;
         try {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 d = Double.valueOf(str3).doubleValue();
             }
         } catch (Throwable unused) {

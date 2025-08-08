@@ -2,7 +2,7 @@ package com.taobao.homepage.pop.ucp;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.external.UCPManager;
@@ -84,7 +84,7 @@ public final class a implements com.taobao.android.external.a, com.taobao.androi
         this.f = b.a(jSONObject, jSONObject2, this);
         c.a(this.f, b.KEY_BIZ_CHECK, 0, b.KEY_BIZ_CHECK);
         final String a2 = this.f.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             com.taobao.homepage.pop.utils.c.a(TAG, "openReachView doTrigger: empty businessId");
             d.b("UcpOpenReachView", "", String.valueOf(2), b.KEY_TERMINAL);
             return UCPReachViewOpenState.TERMINATION;
@@ -160,7 +160,7 @@ public final class a implements com.taobao.android.external.a, com.taobao.androi
         }
         aVar.a(uCPReachViewState);
         this.g.removeCallbacksAndMessages(null);
-        if (!TextUtils.equals(uCPReachViewState.key, "Error") && !TextUtils.equals(uCPReachViewState.key, b.KEY_TERMINAL)) {
+        if (!StringUtils.equals(uCPReachViewState.key, "Error") && !StringUtils.equals(uCPReachViewState.key, b.KEY_TERMINAL)) {
             return;
         }
         this.f = null;

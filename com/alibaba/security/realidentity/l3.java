@@ -6,7 +6,7 @@ import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.media.MediaCrypto;
 import android.media.MediaFormat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import com.alibaba.security.realidentity.service.track.RPTrack;
 import com.alibaba.security.realidentity.service.track.model.TrackLog;
@@ -261,7 +261,7 @@ public class l3 extends j3 {
         try {
             String b = this.w.b();
             this.A = this.w.a();
-            if (TextUtils.isEmpty(b) || this.A == -1) {
+            if (StringUtils.isEmpty(b) || this.A == -1) {
                 MediaCodecInfo a2 = a(j3.m);
                 if (a2 == null) {
                     return false;

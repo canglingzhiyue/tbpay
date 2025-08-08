@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.NetworkEvent;
 import anetwork.channel.aidl.ParcelableInputStream;
 import anetwork.channel.entity.RequestImpl;
@@ -58,7 +58,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5e4ab9fb", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             new HttpNetwork(com.taobao.tao.flexbox.layoutmanager.actionservice.core.a.a()).asyncSend(new RequestImpl(str), null, null, new AnonymousClass1(str, aVar));
         }

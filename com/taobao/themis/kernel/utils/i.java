@@ -1,7 +1,7 @@
 package com.taobao.themis.kernel.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.smartlanding.business.SmartLandingTask;
@@ -240,7 +240,7 @@ public final class i {
         }
         Uri uri = Uri.parse(url);
         a aVar2 = new a();
-        if (!TextUtils.isEmpty(uri.getQueryParameter("uniapp_id"))) {
+        if (!StringUtils.isEmpty(uri.getQueryParameter("uniapp_id"))) {
             aVar2.a(url);
             aVar2.b(uri.getQueryParameter("uniapp_id"));
             String queryParameter = uri.getQueryParameter("uniapp_page");
@@ -573,7 +573,7 @@ public final class i {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Uri bundleUri = Uri.parse(str);
@@ -585,6 +585,6 @@ public final class i {
         if ((!kotlin.jvm.internal.q.a((Object) "dom", (Object) queryParameter)) && (!kotlin.jvm.internal.q.a((Object) com.taobao.homepage.page.weexv2.a.KEY_MUS, (Object) queryParameter))) {
             return false;
         }
-        return kotlin.jvm.internal.q.a((Object) "true", (Object) bundleUri.getQueryParameter("wh_weex")) || !TextUtils.isEmpty(bundleUri.getQueryParameter(com.taobao.vessel.utils.b.WX_TPL)) || !TextUtils.isEmpty(bundleUri.getQueryParameter("_mus_tpl"));
+        return kotlin.jvm.internal.q.a((Object) "true", (Object) bundleUri.getQueryParameter("wh_weex")) || !StringUtils.isEmpty(bundleUri.getQueryParameter(com.taobao.vessel.utils.b.WX_TPL)) || !StringUtils.isEmpty(bundleUri.getQueryParameter("_mus_tpl"));
     }
 }

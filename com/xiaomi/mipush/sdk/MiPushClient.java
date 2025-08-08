@@ -6,7 +6,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.ServiceInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.xiaomi.clientreport.data.Config;
@@ -149,7 +149,7 @@ public abstract class MiPushClient {
 
     private static boolean acceptTimeSet(Context context, String str, String str2) {
         String acceptTime = getAcceptTime(context);
-        return TextUtils.equals(acceptTime, str + "," + str2);
+        return StringUtils.equals(acceptTime, str + "," + str2);
     }
 
     public static long accountSetTime(Context context, String str) {
@@ -215,7 +215,7 @@ public abstract class MiPushClient {
                 PackageInfo packageInfo;
                 try {
                     for (String str : strArr) {
-                        if (!TextUtils.isEmpty(str) && (packageInfo = context.getPackageManager().getPackageInfo(str, 4)) != null) {
+                        if (!StringUtils.isEmpty(str) && (packageInfo = context.getPackageManager().getPackageInfo(str, 4)) != null) {
                             MiPushClient.awakePushServiceByPackageInfo(context, packageInfo);
                         }
                     }
@@ -448,12 +448,12 @@ public abstract class MiPushClient {
                 jcVar.h(BuildConfig.VERSION_NAME);
                 jcVar.a(BuildConfig.VERSION_CODE);
                 jcVar.a(iq.Init);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     jcVar.g(str3);
                 }
                 if (!com.xiaomi.push.j.m2123d()) {
                     String d = com.xiaomi.push.i.d(sContext);
-                    if (!TextUtils.isEmpty(d)) {
+                    if (!StringUtils.isEmpty(d)) {
                         jcVar.i(bm.a(d) + "," + com.xiaomi.push.i.f(sContext));
                     }
                 }
@@ -488,7 +488,7 @@ public abstract class MiPushClient {
                     jbVar.f678a.put("push_sdk_vn", BuildConfig.VERSION_NAME);
                     jbVar.f678a.put("push_sdk_vc", Integer.toString(BuildConfig.VERSION_CODE));
                     String e = b.m1665a(sContext).e();
-                    if (!TextUtils.isEmpty(e)) {
+                    if (!StringUtils.isEmpty(e)) {
                         jbVar.f678a.put("deviceid", e);
                     }
                     ao.a(sContext).a((ao) jbVar, ic.Notification, false, (ip) null);
@@ -715,7 +715,7 @@ public abstract class MiPushClient {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void reportIgnoreRegMessageClicked(Context context, String str, ip ipVar, String str2, String str3) {
         jb jbVar = new jb();
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             com.xiaomi.channel.commonutils.logger.b.d("do not report clicked message");
             return;
         }
@@ -747,7 +747,7 @@ public abstract class MiPushClient {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void reportMessageClicked(Context context, String str, ip ipVar, String str2) {
         jb jbVar = new jb();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             if (!b.m1665a(context).m1672b()) {
                 com.xiaomi.channel.commonutils.logger.b.d("do not report clicked message");
                 return;
@@ -804,14 +804,14 @@ public abstract class MiPushClient {
     }
 
     public static void setAlias(Context context, String str, String str2) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             setCommand(context, fn.COMMAND_SET_ALIAS.f362a, str, str2);
         }
     }
 
     protected static void setCommand(Context context, String str, String str2, String str3) {
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayList.add(str2);
         }
         if (fn.COMMAND_SET_ALIAS.f362a.equalsIgnoreCase(str) && Math.abs(System.currentTimeMillis() - aliasSetTime(context, str2)) < 86400000) {
@@ -836,7 +836,7 @@ public abstract class MiPushClient {
     }
 
     protected static void setCommand(Context context, String str, ArrayList<String> arrayList, String str2) {
-        if (TextUtils.isEmpty(b.m1665a(context).m1666a())) {
+        if (StringUtils.isEmpty(b.m1665a(context).m1666a())) {
             return;
         }
         iw iwVar = new iw();
@@ -859,7 +859,7 @@ public abstract class MiPushClient {
     }
 
     public static void setUserAccount(Context context, String str, String str2) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             setCommand(context, fn.COMMAND_SET_ACCOUNT.f362a, str, str2);
         }
     }
@@ -877,7 +877,7 @@ public abstract class MiPushClient {
     }
 
     public static void subscribe(Context context, String str, String str2) {
-        if (TextUtils.isEmpty(b.m1665a(context).m1666a()) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(b.m1665a(context).m1666a()) || StringUtils.isEmpty(str)) {
             return;
         }
         if (Math.abs(System.currentTimeMillis() - topicSubscribedTime(context, str)) <= 86400000) {
@@ -1017,14 +1017,14 @@ public abstract class MiPushClient {
                     jbVar.a(bc.a());
                     jbVar.a(new HashMap());
                     String str = "";
-                    if (!TextUtils.isEmpty(com.xiaomi.push.i.c(MiPushClient.sContext))) {
+                    if (!StringUtils.isEmpty(com.xiaomi.push.i.c(MiPushClient.sContext))) {
                         str = str + bm.a(c);
                     }
                     String e = com.xiaomi.push.i.e(MiPushClient.sContext);
-                    if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(e)) {
+                    if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(e)) {
                         str = str + "," + e;
                     }
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         jbVar.m2129a().put(Constants.EXTRA_KEY_IMEI_MD5, str);
                     }
                     ax.a(MiPushClient.sContext).a(jbVar.m2129a());

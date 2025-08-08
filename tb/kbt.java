@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.DWContext;
 import com.taobao.avplayer.DWVideoScreenType;
@@ -59,7 +59,7 @@ public class kbt extends a {
             DWTimelineObject dWTimelineObject = this.e[i2];
             if (dWTimelineObject != null) {
                 if (whiteWeexCmpList.size() > 0) {
-                    if (!TextUtils.isEmpty(dWTimelineObject.getSource())) {
+                    if (!StringUtils.isEmpty(dWTimelineObject.getSource())) {
                         Boolean bool = whiteWeexCmpList.get(dWTimelineObject.getSource());
                         if (bool != null) {
                             if (!bool.booleanValue()) {

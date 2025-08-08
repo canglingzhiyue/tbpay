@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.preload;
 import android.content.Context;
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.drm.DrmKey;
 import com.alipay.android.msp.framework.drm.DrmManager;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
@@ -70,7 +70,7 @@ public class PreloadCache {
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 16; i++) {
                 String str3 = hashMap.get(strArr[i]);
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = str2;
                 }
                 sb.append(str3);
@@ -96,7 +96,7 @@ public class PreloadCache {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ebb891bf", new Object[]{this, hashMap, new Boolean(z), str});
         }
-        if (!TextUtils.isEmpty(str) && str.length() > 15) {
+        if (!StringUtils.isEmpty(str) && str.length() > 15) {
             c = 1;
         }
         Context context = GlobalHelper.getInstance().getContext();
@@ -116,7 +116,7 @@ public class PreloadCache {
         sb.append("(b);");
         String str3 = this.c.get("NET_TYPE");
         String str4 = "0";
-        if (TextUtils.isEmpty(str3) || a()) {
+        if (StringUtils.isEmpty(str3) || a()) {
             name = DeviceInfo.getNetConnectionType().getName();
             str2 = str4;
         } else {
@@ -131,7 +131,7 @@ public class PreloadCache {
         sb.append(z ? "" : deviceInfo.getMacAddress(context));
         sb.append(";");
         String str5 = this.f4840a.get("ROOT");
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = b();
         } else {
             str4 = "1";
@@ -165,7 +165,7 @@ public class PreloadCache {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("242d1b63", new Object[]{this, new Boolean(z), hashMap, new Boolean(z2), str});
         }
-        if (TextUtils.isEmpty(str) || str.length() <= 15) {
+        if (StringUtils.isEmpty(str) || str.length() <= 15) {
             c = 2;
         }
         Context context = GlobalHelper.getInstance().getContext();
@@ -179,7 +179,7 @@ public class PreloadCache {
             sb.append(riy.BRACKET_START_STR);
             String str7 = this.f4840a.get("LOCALE");
             String str8 = "0";
-            if (TextUtils.isEmpty(str7)) {
+            if (StringUtils.isEmpty(str7)) {
                 str2 = Utils.getDefaultLocale(context);
                 str3 = str8;
             } else {
@@ -195,7 +195,7 @@ public class PreloadCache {
                 str4 = "-1;-1";
             } else {
                 String str9 = this.c.get("LAC");
-                if (TextUtils.isEmpty(str9) || a()) {
+                if (StringUtils.isEmpty(str9) || a()) {
                     str4 = Utils.getCellInfo(context);
                     str6 = str8;
                 } else {
@@ -215,7 +215,7 @@ public class PreloadCache {
                 a2 = str10;
             } else {
                 String str11 = this.c.get("WIFI_SSID");
-                if (TextUtils.isEmpty(str11) || a()) {
+                if (StringUtils.isEmpty(str11) || a()) {
                     wifiSSID = DeviceInfo.getWifiSSID(context);
                     str5 = str8;
                 } else {
@@ -225,7 +225,7 @@ public class PreloadCache {
                 if (hashMap != null) {
                     hashMap.put("WIFI_SSID", str5);
                 }
-                if (!TextUtils.isEmpty(wifiSSID)) {
+                if (!StringUtils.isEmpty(wifiSSID)) {
                     wifiSSID = wifiSSID.replaceAll(";", str10);
                 }
                 a2 = a(wifiSSID);
@@ -234,9 +234,9 @@ public class PreloadCache {
             sb.append(";");
             if (!z2) {
                 String str12 = this.c.get("WIFI_BSSID");
-                if (TextUtils.isEmpty(str12) || a()) {
+                if (StringUtils.isEmpty(str12) || a()) {
                     String wifiSSID2 = DeviceInfo.getWifiSSID(context);
-                    str12 = !TextUtils.isEmpty(wifiSSID2) ? wifiSSID2.replaceAll(";", str10) : "-1";
+                    str12 = !StringUtils.isEmpty(wifiSSID2) ? wifiSSID2.replaceAll(";", str10) : "-1";
                 } else {
                     str8 = "1";
                 }
@@ -257,7 +257,7 @@ public class PreloadCache {
             return (String) ipChange.ipc$dispatch("fce93c9c", new Object[]{this, hashMap});
         }
         String str2 = this.f4840a.get("UTDID");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = GlobalHelper.getInstance().getUtdid(GlobalHelper.getInstance().getContext());
             str = "0";
         } else {
@@ -276,7 +276,7 @@ public class PreloadCache {
             return (String) ipChange.ipc$dispatch("8587119b", new Object[]{this, hashMap, context});
         }
         String str2 = this.f4840a.get("PA");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = MspConfig.getInstance().getPa(context);
             str = "0";
         } else {
@@ -290,7 +290,7 @@ public class PreloadCache {
 
     private static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace(";", "；");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace(";", "；");
     }
 
     private boolean a() {
@@ -315,7 +315,7 @@ public class PreloadCache {
             return (String) ipChange.ipc$dispatch("74c95011", new Object[]{this, context, hashMap});
         }
         String str2 = this.c.get("HAS_ALIPAY");
-        if (TextUtils.isEmpty(str2) || a()) {
+        if (StringUtils.isEmpty(str2) || a()) {
             str2 = a(context);
             str = "0";
         } else {
@@ -352,7 +352,7 @@ public class PreloadCache {
         }
         String str3 = this.c.get("VIDATA");
         this.c.get("CHECK_USERID");
-        if (TextUtils.isEmpty(str3) || a()) {
+        if (StringUtils.isEmpty(str3) || a()) {
             str3 = b(str);
             str2 = "0";
         } else {
@@ -371,7 +371,7 @@ public class PreloadCache {
             return (String) ipChange.ipc$dispatch("1fc6357b", new Object[]{this, context, hashMap});
         }
         String str2 = this.c.get("HAS_CERTPAY");
-        if (TextUtils.isEmpty(str2) || a()) {
+        if (StringUtils.isEmpty(str2) || a()) {
             str2 = b(context);
             str = "0";
         } else {

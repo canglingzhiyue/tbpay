@@ -4,7 +4,7 @@ import android.app.Application;
 import android.app.Instrumentation;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import dalvik.system.PathClassLoader;
@@ -59,7 +59,7 @@ public class jgk {
         String[] split = str.split("/");
         Pattern compile = Pattern.compile("(([a-zA-Z0-9]{2,})\\.)+.*");
         for (String str2 : split) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (compile.matcher(str2).matches() && !str2.contains(context.getPackageName())) {
                     jfj.b("EnvUtils", str);
                     return false;
@@ -77,7 +77,7 @@ public class jgk {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         String a2 = jgq.a();
-        if (TextUtils.isEmpty(a2) || str.contains(a2)) {
+        if (StringUtils.isEmpty(a2) || str.contains(a2)) {
             return true;
         }
         jfj.b("EnvUtils", a2);

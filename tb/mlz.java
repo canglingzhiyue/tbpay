@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collections;
 import java.util.Date;
@@ -284,7 +284,7 @@ public class mlz implements mly {
         }
         HashSet hashSet = new HashSet();
         for (String str : all.keySet()) {
-            if (!TextUtils.isEmpty(str) && str.startsWith(this.f31102a)) {
+            if (!StringUtils.isEmpty(str) && str.startsWith(this.f31102a)) {
                 String[] split = str.substring(this.f31102a.length()).split(mly.UNESCAPED_SEPARATOR);
                 if (split.length > 0) {
                     hashSet.add(split[0]);

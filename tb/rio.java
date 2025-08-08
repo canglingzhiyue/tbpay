@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.provider.FontsContractCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.vpm.publish.contentDO.ContentMetaInfo;
 import com.taobao.vpm.publish.contentDO.a;
@@ -125,10 +125,10 @@ public class rio extends rim {
                 jSONObject.put("content_id", "");
             }
             JSONObject jSONObject2 = jSONObject.getJSONObject("video");
-            if (jSONObject2 != null && !TextUtils.isEmpty(contentMetaInfo.g)) {
+            if (jSONObject2 != null && !StringUtils.isEmpty(contentMetaInfo.g)) {
                 jSONObject2.put(FontsContractCompat.Columns.FILE_ID, contentMetaInfo.g);
             }
-            if (jSONObject2 != null && !TextUtils.isEmpty(contentMetaInfo.h)) {
+            if (jSONObject2 != null && !StringUtils.isEmpty(contentMetaInfo.h)) {
                 jSONObject2.put("video_info", contentMetaInfo.h);
             }
             jSONObject.put("video", jSONObject2);

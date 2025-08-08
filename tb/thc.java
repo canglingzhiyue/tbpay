@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -214,7 +214,7 @@ public class thc extends DXWidgetNode {
             ipChange.ipc$dispatch("6fdba6cf", new Object[]{this, hMultiSelectView});
             return;
         }
-        hMultiSelectView.setIsBold(TextUtils.equals("true", this.c));
+        hMultiSelectView.setIsBold(StringUtils.equals("true", this.c));
         hMultiSelectView.setMultiTextSize(this.d);
         hMultiSelectView.setUnSelectTextColor(this.h);
         hMultiSelectView.setSelectTextColor(this.f);

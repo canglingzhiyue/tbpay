@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -117,7 +117,7 @@ public class RpcStore extends LocalEventStore {
                 string = (String) obj;
             }
             MqpBehavior.getInstance().onGeneralRpcStart(this.f4584a, string2, str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.f.onStatistic("action", "rpc|".concat(String.valueOf(string2)));
             } else {
                 this.f.onStatistic("action", "rpc|" + string2 + "|" + str);

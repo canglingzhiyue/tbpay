@@ -1,6 +1,6 @@
 package com.huawei.hms.hatool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 import org.json.JSONArray;
@@ -28,7 +28,7 @@ public class l0 {
     private String a(String str, String str2) {
         String str3;
         String f = a1.f(str, str2);
-        if (TextUtils.isEmpty(f)) {
+        if (StringUtils.isEmpty(f)) {
             v.a("hmsSdk", "No report address,TAG : %s,TYPE: %s ", str, str2);
             return "";
         }
@@ -93,7 +93,7 @@ public class l0 {
 
     public void a() {
         String a2 = a(this.f7470a, this.b);
-        if (TextUtils.isEmpty(a2) && !"preins".equals(this.b)) {
+        if (StringUtils.isEmpty(a2) && !"preins".equals(this.b)) {
             v.e("hmsSdk", "collectUrl is empty");
             return;
         }

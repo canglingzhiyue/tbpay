@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
 import org.json.JSONObject;
@@ -25,7 +25,7 @@ public class AfcIdJsBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.equals(str, ACTION) || wVCallBackContext == null) {
+        if (!StringUtils.equals(str, ACTION) || wVCallBackContext == null) {
             return false;
         }
         JSONObject jSONObject = new JSONObject();

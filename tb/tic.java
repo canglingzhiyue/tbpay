@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -119,7 +119,7 @@ public class tic extends RecyclerView.ViewHolder {
             ipChange.ipc$dispatch("36688613", new Object[]{this, jSONObject, panelStyleModel});
             return;
         }
-        boolean equals = TextUtils.equals(b.MY_CHANNEL, jSONObject.getString(b.CURRENT_MENU_CODE));
+        boolean equals = StringUtils.equals(b.MY_CHANNEL, jSONObject.getString(b.CURRENT_MENU_CODE));
         boolean c = this.d.c();
         boolean booleanValue = jSONObject.getBooleanValue(b.IS_EDITABLE);
         if (!equals) {
@@ -147,7 +147,7 @@ public class tic extends RecyclerView.ViewHolder {
         if (jSONObject2 == null) {
             return;
         }
-        final boolean equals = TextUtils.equals(b.MY_CHANNEL, jSONObject2.getString(b.CURRENT_MENU_CODE));
+        final boolean equals = StringUtils.equals(b.MY_CHANNEL, jSONObject2.getString(b.CURRENT_MENU_CODE));
         final boolean c = this.d.c();
         final boolean booleanValue = jSONObject2.getBooleanValue(b.IS_EDITABLE);
         this.itemView.setOnClickListener(new View.OnClickListener() { // from class: tb.tic.1

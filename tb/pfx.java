@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -140,7 +140,7 @@ public class pfx implements d {
             return (String) ipChange.ipc$dispatch("31400281", new Object[]{this, context});
         }
         String c2 = c(context);
-        if (!TextUtils.isEmpty(c2) || context == null || context.getResources() == null) {
+        if (!StringUtils.isEmpty(c2) || context == null || context.getResources() == null) {
             return c2;
         }
         try {
@@ -181,7 +181,7 @@ public class pfx implements d {
         JSONObject jSONObject2 = (JSONObject) pqj.a(jSONObject);
         if (jSONObject2 == null || jSONObject2.getJSONArray("result") == null || jSONObject2.getJSONArray("result").isEmpty()) {
             String b2 = b(this.d);
-            if (TextUtils.isEmpty(b2)) {
+            if (StringUtils.isEmpty(b2)) {
                 return;
             }
             a(b2);
@@ -189,7 +189,7 @@ public class pfx implements d {
         }
         this.f = jSONObject;
         a(this.f);
-        if (TextUtils.isEmpty(this.f) || this.f.equals(b(this.d))) {
+        if (StringUtils.isEmpty(this.f) || this.f.equals(b(this.d))) {
             Log.e(b, "mTemplateString is null OR same cache");
         } else {
             b(this.d, this.f);
@@ -243,15 +243,15 @@ public class pfx implements d {
         if (ipChange instanceof IpChange) {
             return (DXRootView) ipChange.ipc$dispatch("fb6cf46d", new Object[]{this, context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap hashMap = new HashMap();
         hashMap.put("name", str);
-        if (TextUtils.isEmpty(this.f)) {
+        if (StringUtils.isEmpty(this.f)) {
             this.f = b(context);
         }
-        if (TextUtils.isEmpty(this.f)) {
+        if (StringUtils.isEmpty(this.f)) {
             pqi.a().a("Highlight_DXManager_Create_Point", pqj.a(hashMap), "mTemplateString", "mTemplateString");
             return null;
         }

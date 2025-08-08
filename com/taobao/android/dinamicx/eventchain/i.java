@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.eventchain;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -179,7 +179,7 @@ public class i extends com.taobao.android.dinamicx.m {
         if (ipChange instanceof IpChange) {
             return (j) ipChange.ipc$dispatch("d33e0114", new Object[]{this, str, str2, dVar});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || dVar == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || dVar == null) {
             return j.a(e.EVENT_CHAIN_ERROR_EXECUTE_CONTEXT_IS_NULL);
         }
         dVar.b();
@@ -200,7 +200,7 @@ public class i extends com.taobao.android.dinamicx.m {
         if (ipChange instanceof IpChange) {
             return (j) ipChange.ipc$dispatch("bda79a9e", new Object[]{this, str, dVar});
         }
-        if (TextUtils.isEmpty(str) || dVar == null) {
+        if (StringUtils.isEmpty(str) || dVar == null) {
             return j.a(e.EVENT_CHAIN_ERROR_EXECUTE_EVENTCHIAN_CONTEXT_IS_NULL);
         }
         dVar.b(str);
@@ -212,7 +212,7 @@ public class i extends com.taobao.android.dinamicx.m {
         if (ipChange instanceof IpChange) {
             return (j) ipChange.ipc$dispatch("ef775473", new Object[]{this, str, str2, dVar});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || dVar == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || dVar == null) {
             if (DinamicXEngine.j()) {
                 int i = -1;
                 if (dVar != null) {
@@ -290,7 +290,7 @@ public class i extends com.taobao.android.dinamicx.m {
         if (DinamicXEngine.j()) {
             dVar.a(new i.c(j, "next", a3));
         }
-        return !TextUtils.isEmpty(a2.c()) ? a(a2.c(), str, dVar) : a3;
+        return !StringUtils.isEmpty(a2.c()) ? a(a2.c(), str, dVar) : a3;
     }
 
     public static i.b a(int i, a aVar, d dVar) {

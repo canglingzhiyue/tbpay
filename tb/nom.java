@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,24 +85,24 @@ public class nom extends isi<SFOnesearchBean, CommonSearchResult> {
             return;
         }
         sFOnesearchBean.url = jSONObject.getString("url");
-        if (TextUtils.isEmpty(sFOnesearchBean.url) && (b = a.b(jSONObject, "info")) != null) {
+        if (StringUtils.isEmpty(sFOnesearchBean.url) && (b = a.b(jSONObject, "info")) != null) {
             sFOnesearchBean.url = b.getString("url");
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("style");
         if (jSONObject2 != null) {
             sFOnesearchBean.width = jSONObject2.getIntValue("width");
             sFOnesearchBean.height = jSONObject2.getIntValue("height");
-            sFOnesearchBean.hideNavibar = TextUtils.equals(VALUE_YES, jSONObject2.getString(KEY_HIDE_NAVIBAR));
+            sFOnesearchBean.hideNavibar = StringUtils.equals(VALUE_YES, jSONObject2.getString(KEY_HIDE_NAVIBAR));
             sFOnesearchBean.bizType = jSONObject2.getString("bizType");
             sFOnesearchBean.backgroundColor = jSONObject2.getString("backgroundColor");
-            if (!TextUtils.equals(sFOnesearchBean.bizType, noa.VALUE_BIZ_TYPE_QD) && !TextUtils.equals(sFOnesearchBean.bizType, noa.VALUE_BIZ_TYPE_NEW_SEARCH)) {
+            if (!StringUtils.equals(sFOnesearchBean.bizType, noa.VALUE_BIZ_TYPE_QD) && !StringUtils.equals(sFOnesearchBean.bizType, noa.VALUE_BIZ_TYPE_NEW_SEARCH)) {
                 z = false;
             }
             sFOnesearchBean.isFull = z;
-            sFOnesearchBean.isNewSearch = TextUtils.equals(sFOnesearchBean.bizType, noa.VALUE_BIZ_TYPE_NEW_SEARCH);
-            sFOnesearchBean.disableHeaderScroll = TextUtils.equals("true", jSONObject2.getString(KEY_DISABLE_HEADER_SCROLL));
+            sFOnesearchBean.isNewSearch = StringUtils.equals(sFOnesearchBean.bizType, noa.VALUE_BIZ_TYPE_NEW_SEARCH);
+            sFOnesearchBean.disableHeaderScroll = StringUtils.equals("true", jSONObject2.getString(KEY_DISABLE_HEADER_SCROLL));
             sFOnesearchBean.sizeRation = jSONObject2.getString(KEY_SIZE_RATION);
-            sFOnesearchBean.redirect = TextUtils.equals(VALUE_YES, jSONObject2.getString("redirect"));
+            sFOnesearchBean.redirect = StringUtils.equals(VALUE_YES, jSONObject2.getString("redirect"));
         }
         sFOnesearchBean.nextPageTraceMap = a(jSONObject);
         JSONObject b2 = a.b(jSONObject, "trace");

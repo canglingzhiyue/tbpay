@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -105,7 +105,7 @@ public class oim implements oiq {
         } else {
             str2 = null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         a(j, taoPasswordShareType, str2);
@@ -119,7 +119,7 @@ public class oim implements oiq {
         }
         String str2 = tBShareContent.description;
         f g = e.b().g();
-        if (g != null && !TextUtils.isEmpty(g.f19632a)) {
+        if (g != null && !StringUtils.isEmpty(g.f19632a)) {
             str2 = g.f19632a + " " + str2;
         }
         a aVar = new a();
@@ -130,7 +130,7 @@ public class oim implements oiq {
         aVar.f = tBShareContent.shareScene;
         aVar.j = tBShareContent.extraParams;
         aVar.b = tBShareContent.title;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             aVar.m = str.toLowerCase();
         } else {
             aVar.m = "other";
@@ -169,9 +169,9 @@ public class oim implements oiq {
                     } else if (eVar == null) {
                     } else {
                         String str = eVar.b;
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             String str2 = aVar.c;
-                            str = com.taobao.share.taopassword.b.c(TextUtils.isEmpty(str2) ? aVar.d : str2.concat(" ").concat(aVar.d));
+                            str = com.taobao.share.taopassword.b.c(StringUtils.isEmpty(str2) ? aVar.d : str2.concat(" ").concat(aVar.d));
                             oah.a(nym.a().getApplicationContext(), aVar.d);
                         }
                         obdVar.a(nym.a().getApplicationContext(), TPTargetType.COPY, str, oim.a(oim.this));
@@ -192,7 +192,7 @@ public class oim implements oiq {
         }
         oai.a(false);
         try {
-            if (!TextUtils.isEmpty(tBShareContent.smsTemplate)) {
+            if (!StringUtils.isEmpty(tBShareContent.smsTemplate)) {
                 new AsyncTask<Void, Void, String>() { // from class: tb.oim.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -239,8 +239,8 @@ public class oim implements oiq {
                         } else if (eVar == null) {
                         } else {
                             String str = eVar.b;
-                            if (TextUtils.isEmpty(str)) {
-                                str = TextUtils.isEmpty(aVar.c) ? aVar.d : aVar.c;
+                            if (StringUtils.isEmpty(str)) {
+                                str = StringUtils.isEmpty(aVar.c) ? aVar.d : aVar.c;
                             }
                             oim.a(oim.this, str, tBShareContent);
                         }

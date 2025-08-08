@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.procedure.IPage;
 import com.taobao.monitor.procedure.s;
@@ -323,7 +323,7 @@ public final class nnh {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("45199658", new Object[]{this, str, str2, obj});
-            } else if (str == null || str2 == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            } else if (str == null || str2 == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             } else {
                 s.f18233a.a(str).a(str2, obj);
             }
@@ -334,7 +334,7 @@ public final class nnh {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("6f854dbb", new Object[]{this, str, str2, l});
-            } else if (str == null || str2 == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            } else if (str == null || str2 == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             } else {
                 s.f18233a.a(str).a(str2, l != null ? l.longValue() : -1L);
             }
@@ -408,7 +408,7 @@ public final class nnh {
             }
             q.c(startNode, "startNode");
             q.c(endNode, "endNode");
-            if (TextUtils.isEmpty(str) || startNode.b() < 0 || endNode.b() < 0) {
+            if (StringUtils.isEmpty(str) || startNode.b() < 0 || endNode.b() < 0) {
                 return;
             }
             a aVar = this;

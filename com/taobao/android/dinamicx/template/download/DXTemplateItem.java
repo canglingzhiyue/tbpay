@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.template.download;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.au;
 import java.lang.annotation.Retention;
@@ -79,7 +79,7 @@ public class DXTemplateItem {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.h)) {
+        if (StringUtils.isEmpty(this.h)) {
             this.h = this.f11925a + " : " + this.b;
         }
         return this.h;
@@ -95,7 +95,7 @@ public class DXTemplateItem {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f11925a) && this.b > -1;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f11925a) && this.b > -1;
     }
 
     public int d() {

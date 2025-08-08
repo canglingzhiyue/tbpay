@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.SparseIntArray;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -71,7 +71,7 @@ public class g {
             return false;
         }
         String queryParameter = parse.getQueryParameter("h5Url");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return false;
         }
         Uri parse2 = Uri.parse(queryParameter);
@@ -79,7 +79,7 @@ public class g {
             return false;
         }
         String queryParameter2 = parse2.getQueryParameter(RVStartParams.KEY_URL_SHORT);
-        if (TextUtils.isEmpty(queryParameter2)) {
+        if (StringUtils.isEmpty(queryParameter2)) {
             return false;
         }
         return a(queryParameter2, gvw.CONFIG_LAUNCH, "1") || a.a().matcher(queryParameter2).matches();
@@ -104,7 +104,7 @@ public class g {
         }
         Uri parse = Uri.parse(str);
         if (!parse.isOpaque()) {
-            return TextUtils.equals(str3, parse.getQueryParameter(str2));
+            return StringUtils.equals(str3, parse.getQueryParameter(str2));
         }
         return false;
     }
@@ -119,7 +119,7 @@ public class g {
             return false;
         }
         String queryParameter = parse.getQueryParameter("bc_fl_src");
-        if (TextUtils.isEmpty(queryParameter) || !queryParameter.startsWith("tanx_df_")) {
+        if (StringUtils.isEmpty(queryParameter) || !queryParameter.startsWith("tanx_df_")) {
             return false;
         }
         String[] split = queryParameter.split("_");
@@ -184,13 +184,13 @@ public class g {
         }
         String queryParameter = parse.getQueryParameter("h5Url");
         String queryParameter2 = parse.getQueryParameter("bc_fl_src");
-        if (!TextUtils.isEmpty(queryParameter) && !TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter) && !StringUtils.isEmpty(queryParameter2)) {
             if (queryParameter2.split("_", 3).length >= 2) {
                 str2 = split[0] + "_" + split[1];
             } else {
                 str2 = null;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (guc.a(application, "link_opt_src_" + str2)) {
                     return Pair.create(queryParameter, str2);
                 }
@@ -209,7 +209,7 @@ public class g {
             return false;
         }
         String str2 = (String) a2.first;
-        if (TextUtils.isEmpty(str2) || a(str, gvw.CONFIG_LAUNCH, "0") || a(str, "module", "native")) {
+        if (StringUtils.isEmpty(str2) || a(str, gvw.CONFIG_LAUNCH, "0") || a(str, "module", "native")) {
             return false;
         }
         if (a(str2, gvw.CONFIG_LAUNCH, "0") && (!a(str2, "sKeep") || a(str2, "sKeep", "0"))) {
@@ -271,7 +271,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("642c0e6e", new Object[]{application, gtxVar, gtkVar});
-        } else if (!TextUtils.equals(gtxVar.f28453a, gtxVar.b)) {
+        } else if (!StringUtils.equals(gtxVar.f28453a, gtxVar.b)) {
             InstrumentationDelegate.a(gtxVar, gtkVar);
         } else {
             i iVar = new i();
@@ -282,7 +282,7 @@ public class g {
                 iVar.a(application, gtxVar, gtkVar, "");
             } else {
                 String dataString = d.e.getDataString();
-                if (TextUtils.isEmpty(dataString)) {
+                if (StringUtils.isEmpty(dataString)) {
                     iVar.a(application, gtxVar, gtkVar, "");
                 } else if (!BootstrapMode.a()) {
                     iVar.a(application, gtxVar, gtkVar, "");

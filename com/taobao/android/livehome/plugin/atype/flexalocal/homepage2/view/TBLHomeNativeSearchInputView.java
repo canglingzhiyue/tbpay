@@ -9,7 +9,7 @@ import android.taobao.windvane.embed.BaseEmbedView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -124,7 +124,7 @@ public class TBLHomeNativeSearchInputView extends BaseEmbedView {
                     return;
                 }
                 String charSequence2 = charSequence.toString();
-                if (!TextUtils.isEmpty(charSequence2)) {
+                if (!StringUtils.isEmpty(charSequence2)) {
                     if (charSequence2.length() > 30) {
                         Toast.makeText(context, "只能最多输入30个字哦", 0).show();
                         if (TBLHomeNativeSearchInputView.access$000(TBLHomeNativeSearchInputView.this) != null) {
@@ -213,7 +213,7 @@ public class TBLHomeNativeSearchInputView extends BaseEmbedView {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         if ("getH5Params".equals(str)) {
-            if (!TextUtils.isEmpty(str2) && this.searchEditText != null) {
+            if (!StringUtils.isEmpty(str2) && this.searchEditText != null) {
                 JSONObject parseObject = JSON.parseObject(str2);
                 if (parseObject != null && !parseObject.isEmpty()) {
                     this.searchEditText.setHint(parseObject.getString(TaoliveSearchHotWords.TYPE_HINT));

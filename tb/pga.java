@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,7 +36,7 @@ public class pga extends sig {
         try {
             String valueOf = String.valueOf(objArr[0]);
             String valueOf2 = String.valueOf(objArr[1]);
-            if (objArr[2] != null && !TextUtils.isEmpty(String.valueOf(objArr[2]))) {
+            if (objArr[2] != null && !StringUtils.isEmpty(String.valueOf(objArr[2]))) {
                 hashMap = (HashMap) JSON.parseObject(String.valueOf(objArr[2]), HashMap.class);
             }
             if ("trackBtnWithExtras".equals(valueOf)) {

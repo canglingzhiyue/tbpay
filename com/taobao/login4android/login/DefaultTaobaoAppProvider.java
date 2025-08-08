@@ -1,6 +1,6 @@
 package com.taobao.login4android.login;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProvider;
 import com.ali.user.mobile.service.RpcService;
 import com.ali.user.mobile.service.ServiceFactory;
@@ -18,7 +18,7 @@ public class DefaultTaobaoAppProvider extends DataProvider {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c9396be5", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.appKey)) {
+        if (StringUtils.isEmpty(this.appKey)) {
             int envType = getEnvType();
             if (envType == 0 || envType == 1) {
                 this.appKey = ((StorageService) ServiceFactory.getService(StorageService.class)).getAppKey(2);

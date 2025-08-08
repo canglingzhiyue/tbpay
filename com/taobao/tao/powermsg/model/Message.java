@@ -1,6 +1,6 @@
 package com.taobao.tao.powermsg.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -104,7 +104,7 @@ public class Message extends BaseMessage {
             hashMap.put("sendAll", Boolean.valueOf(this.body.d));
             JSONArray jSONArray = new JSONArray();
             for (String str : this.body.e) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     jSONArray.add(str);
                 }
             }

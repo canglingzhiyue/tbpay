@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -61,15 +61,15 @@ public final class dxk implements axy {
             return hashMap;
         }
         String i = C.i();
-        if (!TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(i)) {
             hashMap.put("item_id", i);
         }
         String o = C.o();
-        if (!TextUtils.isEmpty(o)) {
+        if (!StringUtils.isEmpty(o)) {
             hashMap.put("shop_id", o);
         }
         String h = C.h();
-        if (!TextUtils.isEmpty(h)) {
+        if (!StringUtils.isEmpty(h)) {
             hashMap.put("seller_id", h);
         }
         String str = null;
@@ -78,7 +78,7 @@ public final class dxk implements axy {
         } catch (Exception e) {
             arc.a().c("AliDetailUserTrackArgsExtension", "getUserTrackArgs", e.toString());
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("user_id", str);
         }
         Map<String, String> g = C.g();

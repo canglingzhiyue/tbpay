@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alibaba.poplayer.utils.i;
@@ -63,7 +63,7 @@ public class g extends c<TextModel> {
         textView.setIncludeFontPadding(false);
         try {
             textView.setTextSize(0, l.a(this.f22246a.a().a(), Float.parseFloat(textStyleModel.fontSize)));
-            if (!TextUtils.isEmpty(textStyleModel.color)) {
+            if (!StringUtils.isEmpty(textStyleModel.color)) {
                 try {
                     textView.setTextColor(Color.parseColor(p.a(this.f22246a, textStyleModel.color, false)));
                 } catch (Throwable th) {
@@ -73,22 +73,22 @@ public class g extends c<TextModel> {
                     return textView;
                 }
             }
-            int parseInt = !TextUtils.isEmpty(textStyleModel.maxLines) ? Integer.parseInt(textStyleModel.maxLines) : 1;
+            int parseInt = !StringUtils.isEmpty(textStyleModel.maxLines) ? Integer.parseInt(textStyleModel.maxLines) : 1;
             if (parseInt > 1) {
                 textView.setMaxLines(parseInt);
             } else {
                 textView.setSingleLine();
             }
-            float parseFloat = !TextUtils.isEmpty(textStyleModel.lineSpace) ? Float.parseFloat(textStyleModel.lineSpace) : 0.0f;
+            float parseFloat = !StringUtils.isEmpty(textStyleModel.lineSpace) ? Float.parseFloat(textStyleModel.lineSpace) : 0.0f;
             if (parseFloat > 0.0f) {
                 textView.setLineSpacing(l.a(context, parseFloat), 1.0f);
             } else {
-                float parseFloat2 = !TextUtils.isEmpty(textStyleModel.lineHeight) ? Float.parseFloat(textStyleModel.lineHeight) : 0.0f;
+                float parseFloat2 = !StringUtils.isEmpty(textStyleModel.lineHeight) ? Float.parseFloat(textStyleModel.lineHeight) : 0.0f;
                 if (parseFloat2 > 0.0f && Build.VERSION.SDK_INT >= 28) {
                     textView.setLineHeight((int) l.a(context, parseFloat2));
                 }
             }
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
             if ("bold".equals(textStyleModel.fontWeight) || "bolder".equals(textStyleModel.fontWeight)) {
                 textView.setTypeface(Typeface.defaultFromStyle(1));
             }

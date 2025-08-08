@@ -16,7 +16,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -109,7 +109,7 @@ public class AppModule {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("16356e4a", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ogg.b("generateUrlKey url is empty");
             return "";
         }
@@ -129,7 +129,7 @@ public class AppModule {
                 return;
             }
             String str = (String) ((Map) cVar.b).get("path");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 File file = new File(str);
                 if (file.exists()) {
                     if (file.isDirectory()) {
@@ -166,7 +166,7 @@ public class AppModule {
                 return;
             }
             String str = (String) ((Map) cVar.b).get("path");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 z = new File(str).exists();
             }
             JSONObject jSONObject = new JSONObject();
@@ -214,19 +214,19 @@ public class AppModule {
                 String string3 = jSONObject3.getString("imageId");
                 String string4 = jSONObject3.getString("listId");
                 JSONObject jSONObject4 = null;
-                aa a3 = !TextUtils.isEmpty(string2) ? cVar.f19938a.a(Integer.valueOf(string2).intValue()) : null;
-                if (a3 != null && !TextUtils.isEmpty(string)) {
+                aa a3 = !StringUtils.isEmpty(string2) ? cVar.f19938a.a(Integer.valueOf(string2).intValue()) : null;
+                if (a3 != null && !StringUtils.isEmpty(string)) {
                     a2 = a3.a(string, true);
                 } else {
-                    a2 = !TextUtils.isEmpty(string) ? cVar.f19938a.a(Integer.valueOf(string).intValue()) : null;
+                    a2 = !StringUtils.isEmpty(string) ? cVar.f19938a.a(Integer.valueOf(string).intValue()) : null;
                 }
                 if (a2 != null) {
                     JSONArray jSONArray = new JSONArray();
                     ArrayList arrayList = new ArrayList();
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         a2.a(string3, (List<aa>) arrayList);
                     }
-                    if (!TextUtils.isEmpty(string4)) {
+                    if (!StringUtils.isEmpty(string4)) {
                         jSONObject4 = getListViewProperty(a2, string4);
                     }
                     for (int i = 0; i < arrayList.size(); i++) {
@@ -270,7 +270,7 @@ public class AppModule {
             int intValue = jSONObject.getIntValue("flag");
             String string2 = jSONObject.getString("value");
             String string3 = jSONObject.getString("target");
-            if (TextUtils.isEmpty(string3) || (a2 = cVar.f19938a.a(Integer.valueOf(string3).intValue())) == null) {
+            if (StringUtils.isEmpty(string3) || (a2 = cVar.f19938a.a(Integer.valueOf(string3).intValue())) == null) {
                 return;
             }
             cVar.f19938a.b(intValue, a2, string, string2, hashMap, null);
@@ -415,7 +415,7 @@ public class AppModule {
         }
         final String string = ((JSONObject) cVar.b).getString("target");
         final String string2 = ((JSONObject) cVar.b).getString("keypath");
-        if (TextUtils.isEmpty(string) || !TextUtils.isDigitsOnly(string)) {
+        if (StringUtils.isEmpty(string) || !StringUtils.isDigitsOnly(string)) {
             return;
         }
         cVar.f19938a.a(new Runnable() { // from class: com.taobao.tao.flexbox.layoutmanager.module.AppModule.6
@@ -426,7 +426,7 @@ public class AppModule {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                } else if (TextUtils.isEmpty(string2)) {
+                } else if (StringUtils.isEmpty(string2)) {
                     aa a2 = cVar.f19938a.a(Integer.valueOf(string).intValue());
                     if (a2 == null) {
                         return;
@@ -464,7 +464,7 @@ public class AppModule {
         } else {
             JSONObject jSONObject = (JSONObject) cVar.b;
             String string = jSONObject.getString("target");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if (jSONObject.containsKey("force")) {
@@ -624,17 +624,17 @@ public class AppModule {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             builder.setTitle(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             builder.setMessage(str2);
         }
         builder.setCancelable(z);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             builder.setPositiveButton(str3, onClickListener);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             builder.setNegativeButton(str4, onClickListener2);
         }
         builder.setOnCancelListener(onCancelListener);
@@ -655,7 +655,7 @@ public class AppModule {
         String string2 = ((JSONObject) cVar.b).getString("message");
         String string3 = ((JSONObject) cVar.b).getString("confirmTitle");
         String string4 = ((JSONObject) cVar.b).getString("cancelTitle");
-        alert(cVar.a(), string, string2, string3, string4, ((JSONObject) cVar.b).containsKey(com.taobao.android.weex_framework.util.a.ATOM_EXT_cancelable) ? ((JSONObject) cVar.b).getBooleanValue(com.taobao.android.weex_framework.util.a.ATOM_EXT_cancelable) : true, !TextUtils.isEmpty(string3) ? new DialogInterface.OnClickListener() { // from class: com.taobao.tao.flexbox.layoutmanager.module.AppModule.10
+        alert(cVar.a(), string, string2, string3, string4, ((JSONObject) cVar.b).containsKey(com.taobao.android.weex_framework.util.a.ATOM_EXT_cancelable) ? ((JSONObject) cVar.b).getBooleanValue(com.taobao.android.weex_framework.util.a.ATOM_EXT_cancelable) : true, !StringUtils.isEmpty(string3) ? new DialogInterface.OnClickListener() { // from class: com.taobao.tao.flexbox.layoutmanager.module.AppModule.10
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // android.content.DialogInterface.OnClickListener
@@ -669,7 +669,7 @@ public class AppModule {
                 hashMap.put(com.taobao.mtop.wvplugin.a.RESULT_KEY, "confirm");
                 g.d.this.a(cVar, hashMap);
             }
-        } : null, !TextUtils.isEmpty(string4) ? new DialogInterface.OnClickListener() { // from class: com.taobao.tao.flexbox.layoutmanager.module.AppModule.11
+        } : null, !StringUtils.isEmpty(string4) ? new DialogInterface.OnClickListener() { // from class: com.taobao.tao.flexbox.layoutmanager.module.AppModule.11
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // android.content.DialogInterface.OnClickListener
@@ -750,12 +750,12 @@ public class AppModule {
         L5e:
             r0 = r7
         L5f:
-            boolean r7 = android.text.TextUtils.isEmpty(r6)
+            boolean r7 = android.text.StringUtils.isEmpty(r6)
             if (r7 != 0) goto Lf5
             r7 = 1500(0x5dc, float:2.102E-42)
-            boolean r8 = android.text.TextUtils.isEmpty(r1)
+            boolean r8 = android.text.StringUtils.isEmpty(r1)
             if (r8 != 0) goto L81
-            boolean r8 = android.text.TextUtils.isDigitsOnly(r1)
+            boolean r8 = android.text.StringUtils.isDigitsOnly(r1)
             if (r8 == 0) goto L81
             java.lang.Integer r1 = java.lang.Integer.valueOf(r1)
             int r1 = r1.intValue()
@@ -843,11 +843,11 @@ public class AppModule {
             }
             View findViewWithTag = viewGroup.findViewWithTag("TNode_TIP_TOAST");
             long j = 2500;
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 j = Long.valueOf(string2).longValue();
             }
             if (findViewWithTag != null) {
-                if (!(findViewWithTag instanceof FeedToastView) || TextUtils.isEmpty(string)) {
+                if (!(findViewWithTag instanceof FeedToastView) || StringUtils.isEmpty(string)) {
                     return;
                 }
                 ((FeedToastView) findViewWithTag).show(string, j);
@@ -860,7 +860,7 @@ public class AppModule {
             layoutParams.setMargins(0, ohd.b(viewGroup.getContext(), 132), 0, 0);
             viewGroup.addView(inflate, layoutParams);
             inflate.setVisibility(0);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             ((FeedToastView) inflate).show(string, j);
@@ -942,7 +942,7 @@ public class AppModule {
             if (r5 == 0) goto La2
             boolean r7 = r5 instanceof com.taobao.tao.flexbox.layoutmanager.uikit.view.TNodeCircularProgress
             if (r7 == 0) goto L99
-            boolean r7 = android.text.TextUtils.isEmpty(r0)
+            boolean r7 = android.text.StringUtils.isEmpty(r0)
             if (r7 != 0) goto L99
             r7 = r5
             com.taobao.tao.flexbox.layoutmanager.uikit.view.TNodeCircularProgress r7 = (com.taobao.tao.flexbox.layoutmanager.uikit.view.TNodeCircularProgress) r7
@@ -971,7 +971,7 @@ public class AppModule {
             com.taobao.tao.flexbox.layoutmanager.uikit.view.TNodeCircularProgress r1 = new com.taobao.tao.flexbox.layoutmanager.uikit.view.TNodeCircularProgress
             android.content.Context r7 = r7.a()
             r1.<init>(r7)
-            boolean r7 = android.text.TextUtils.isEmpty(r0)
+            boolean r7 = android.text.StringUtils.isEmpty(r0)
             if (r7 != 0) goto Ld6
             r1.setProgressText(r0)
         Ld6:
@@ -992,14 +992,14 @@ public class AppModule {
         } else {
             if (((JSONObject) cVar.b).containsKey("type")) {
                 String string = ((JSONObject) cVar.b).getString("type");
-                if (TextUtils.isEmpty(string) || !TextUtils.isDigitsOnly(string)) {
+                if (StringUtils.isEmpty(string) || !StringUtils.isDigitsOnly(string)) {
                     return;
                 }
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().s().a(Integer.valueOf(string).intValue());
             } else if (!((JSONObject) cVar.b).containsKey("url")) {
             } else {
                 String string2 = ((JSONObject) cVar.b).getString("url");
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     return;
                 }
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().s().a(string2);
@@ -1298,7 +1298,7 @@ public class AppModule {
             java.lang.String r4 = "vibrator"
             java.lang.Object r9 = r9.getSystemService(r4)
             android.os.Vibrator r9 = (android.os.Vibrator) r9
-            boolean r4 = android.text.TextUtils.isEmpty(r0)
+            boolean r4 = android.text.StringUtils.isEmpty(r0)
             if (r4 == 0) goto L3e
             r0 = r1
         L3e:
@@ -1453,7 +1453,7 @@ public class AppModule {
                         final HashMap hashMap = new HashMap();
                         for (int i = 0; i < JSONArray.this.size(); i++) {
                             final String string = JSONArray.this.getString(i);
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 h.a(cVar.f19938a, string, null, null, new h.a() { // from class: com.taobao.tao.flexbox.layoutmanager.module.AppModule.5.1
                                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1574,7 +1574,7 @@ public class AppModule {
                 } else {
                     ScancodeResult scancodeResult = (ScancodeResult) intent.getSerializableExtra("callback_result");
                     JSONObject jSONObject = new JSONObject();
-                    if (scancodeResult == null || TextUtils.isEmpty(scancodeResult.code)) {
+                    if (scancodeResult == null || StringUtils.isEmpty(scancodeResult.code)) {
                         jSONObject.put("succeed", (Object) false);
                         jSONObject.put("url", (Object) "");
                         g.d.this.a(cVar, new g.a("AC_ERR_FAILED", "get url failed", jSONObject));

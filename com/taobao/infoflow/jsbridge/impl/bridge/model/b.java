@@ -2,7 +2,7 @@ package com.taobao.infoflow.jsbridge.impl.bridge.model;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ public class b implements lji.a.InterfaceC1153a {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("errorMsg", (Object) str);
             str = jSONObject.toJSONString();

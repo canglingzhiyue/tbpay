@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -193,7 +193,7 @@ public class fbw extends c<fcg> {
         if (this.l == null) {
             this.l = new VesselView(this.j);
         }
-        if (!TextUtils.isEmpty(((fcg) this.c).f27791a)) {
+        if (!StringUtils.isEmpty(((fcg) this.c).f27791a)) {
             this.l.setLayoutParams(new FrameLayout.LayoutParams(-1, this.n));
         }
         this.l.setDowngradeEnable(false);
@@ -277,7 +277,7 @@ public class fbw extends c<fcg> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         StringBuilder sb = new StringBuilder(str);

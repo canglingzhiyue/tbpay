@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -89,7 +89,7 @@ public class cfx {
                 return;
             }
             String optString = optJSONObject.optString("versionProp");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 b(optJSONObject);
             } else {
                 a(optJSONObject, optString);
@@ -115,7 +115,7 @@ public class cfx {
         }
         try {
             String a2 = cge.a().a(str);
-            if (TextUtils.isEmpty(a2) || a(jSONObject.optJSONArray(a2)) != null) {
+            if (StringUtils.isEmpty(a2) || a(jSONObject.optJSONArray(a2)) != null) {
                 return;
             }
             b(jSONObject);
@@ -162,19 +162,19 @@ public class cfx {
             intent.addFlags(268435456);
         }
         String optString = jSONObject.optString("packageName");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             intent.setPackage(optString);
         }
         String optString2 = jSONObject.optString("className");
-        if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString2)) {
+        if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString2)) {
             intent.setClassName(optString, optString2);
         }
         String optString3 = jSONObject.optString("action");
-        if (!TextUtils.isEmpty(optString3)) {
+        if (!StringUtils.isEmpty(optString3)) {
             intent.setAction(optString3);
         }
         String optString4 = jSONObject.optString("data");
-        if (!TextUtils.isEmpty(optString4)) {
+        if (!StringUtils.isEmpty(optString4)) {
             intent.setData(Uri.parse(optString4));
         }
         try {
@@ -196,7 +196,7 @@ public class cfx {
                     JSONObject jSONObject2 = (JSONObject) optJSONArray3.get(i3);
                     if (jSONObject2 != null) {
                         String optString5 = jSONObject2.optString("key");
-                        if (!TextUtils.isEmpty(optString5)) {
+                        if (!StringUtils.isEmpty(optString5)) {
                             intent.putExtra(optString5, jSONObject2.optString("value"));
                         }
                     }
@@ -206,33 +206,33 @@ public class cfx {
             e.printStackTrace();
         }
         String optString6 = jSONObject.optString("extraPkgKey");
-        if (!TextUtils.isEmpty(optString6)) {
+        if (!StringUtils.isEmpty(optString6)) {
             intent.putExtra(optString6, cfw.e());
         } else {
             intent.putExtra("packageName", cfw.e());
         }
         String optString7 = jSONObject.optString("uidKey");
-        if (!TextUtils.isEmpty(optString7)) {
+        if (!StringUtils.isEmpty(optString7)) {
             intent.putExtra(optString7, cfw.f());
         }
         String optString8 = jSONObject.optString("nameForUidKey");
-        if (!TextUtils.isEmpty(optString8)) {
+        if (!StringUtils.isEmpty(optString8)) {
             intent.putExtra(optString8, cfw.g());
         }
         String optString9 = jSONObject.optString("appLabelKey");
-        if (!TextUtils.isEmpty(optString9)) {
+        if (!StringUtils.isEmpty(optString9)) {
             intent.putExtra(optString9, cfw.c());
         }
         String optString10 = jSONObject.optString("appIconKey");
-        if (!TextUtils.isEmpty(optString10)) {
+        if (!StringUtils.isEmpty(optString10)) {
             intent.putExtra(optString10, cfw.d());
         }
         String optString11 = jSONObject.optString("versionCodeKey");
-        if (!TextUtils.isEmpty(optString11)) {
+        if (!StringUtils.isEmpty(optString11)) {
             intent.putExtra(optString11, cfw.h());
         }
         String optString12 = jSONObject.optString("versionNameKey");
-        if (!TextUtils.isEmpty(optString12)) {
+        if (!StringUtils.isEmpty(optString12)) {
             intent.putExtra(optString12, cfw.i());
         }
         return intent;

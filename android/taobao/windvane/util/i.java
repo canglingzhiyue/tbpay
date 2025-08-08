@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Proxy;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.apache.http.HttpHost;
 import tb.kge;
@@ -74,7 +74,7 @@ public class i {
         }
         String property = System.getProperty("https.proxyHost");
         String property2 = System.getProperty("https.proxyPort");
-        if (TextUtils.isEmpty(property)) {
+        if (StringUtils.isEmpty(property)) {
             return null;
         }
         return new HttpHost(property, Integer.parseInt(property2));

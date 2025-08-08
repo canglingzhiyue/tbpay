@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.NinePatchDrawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.animation.AccelerateInterpolator;
@@ -243,7 +243,7 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
         } else {
             this.mHostReference = new WeakReference<>(imageView);
             this.mContext = imageView.getContext().getApplicationContext();
-            if (TextUtils.isEmpty(this.mUrl)) {
+            if (StringUtils.isEmpty(this.mUrl)) {
                 return;
             }
             loadImageIfNecessary(false);
@@ -397,10 +397,10 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
             return;
         }
         this.mUserCalledSetImageUrl = true;
-        if (!z2 && this.mLoadState != 0 && this.mLoadState != 3 && this.mLoadState != 5 && TextUtils.equals(this.mUrl, str) && TextUtils.equals(this.mCacheKey4PlaceHolder, str2) && PhenixOptions.isSame(this.mNextPhenixOptions, phenixOptions)) {
+        if (!z2 && this.mLoadState != 0 && this.mLoadState != 3 && this.mLoadState != 5 && StringUtils.equals(this.mUrl, str) && StringUtils.equals(this.mCacheKey4PlaceHolder, str2) && PhenixOptions.isSame(this.mNextPhenixOptions, phenixOptions)) {
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             StringBuilder sb = new StringBuilder();
             sb.append("TUrlImageView setImageUrl | url= ");
             sb.append(str);
@@ -416,7 +416,7 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
             hashMap.put("log", sb.toString());
             f.a().d("IMAGE", "setImageUrl", hashMap);
         }
-        if (isViewTokenValid && !TextUtils.isEmpty(str)) {
+        if (isViewTokenValid && !StringUtils.isEmpty(str)) {
             markHostView(v.APM_VIEW_TOKEN, v.APM_VIEW_INVALID);
         }
         this.mUrl = str;
@@ -478,7 +478,7 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
             return (njf) ipChange.ipc$dispatch("4cd4e4cc", new Object[]{this});
         }
         String str = this.mLoadingUrl;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return b.h().a(getPriorityModuleName(), str, 0, false);
         }
         return null;
@@ -586,7 +586,7 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
         }
         final boolean z2 = TUrlImageView.sIsSpeed;
         if (z2) {
-            if (TextUtils.isEmpty(this.mUrl)) {
+            if (StringUtils.isEmpty(this.mUrl)) {
                 if (this.mTicket != null) {
                     this.mTicket.b();
                 }
@@ -681,7 +681,7 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
             return r3
         L68:
             java.lang.String r4 = r7.mUrl
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             if (r4 == 0) goto L80
             com.taobao.phenix.intf.c r8 = r7.mTicket
             if (r8 == 0) goto L79
@@ -802,7 +802,7 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
             if (loaderExtras != null) {
                 for (Map.Entry<String, String> entry : loaderExtras.entrySet()) {
                     String value = entry.getValue();
-                    if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(value)) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(value)) {
                         failListener.addLoaderExtra(entry.getKey(), entry.getValue());
                     }
                 }
@@ -827,11 +827,11 @@ public class ImageLoadFeature extends AbsFeature<ImageView> implements LayoutCal
         ImageStrategyConfig imageStrategyConfig2 = this.mStrategyConfig;
         if (imageStrategyConfig2 != null) {
             String h = imageStrategyConfig2.h();
-            if (TextUtils.isEmpty(h)) {
+            if (StringUtils.isEmpty(h)) {
                 h = String.valueOf(this.mStrategyConfig.e());
             }
             failListener.addLoaderExtra(esr.BUNDLE_BIZ_CODE, h);
-            if (!TextUtils.isEmpty(this.mStrategyConfig.f())) {
+            if (!StringUtils.isEmpty(this.mStrategyConfig.f())) {
                 failListener.addLoaderExtra("p_trace_id", this.mStrategyConfig.f());
             }
             if (this.mStrategyConfig.g() != null && this.mStrategyConfig.g().size() > 0) {

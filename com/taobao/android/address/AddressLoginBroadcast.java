@@ -3,7 +3,7 @@ package com.taobao.android.address;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.broadcast.LoginAction;
 import com.taobao.tlog.adapter.AdapterForTLog;
@@ -18,7 +18,7 @@ public class AddressLoginBroadcast extends BroadcastReceiver {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-        } else if (!TextUtils.equals(intent.getAction(), LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
+        } else if (!StringUtils.equals(intent.getAction(), LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
         } else {
             AdapterForTLog.loge(f.TAG, "login suc, address prefetch");
             efe.c();

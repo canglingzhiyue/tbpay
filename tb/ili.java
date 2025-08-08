@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.resourceguardian.data.model.RGCategoryInfo;
@@ -30,7 +30,7 @@ public class ili {
             return (b) ipChange.ipc$dispatch("196c1881", new Object[]{this, aVar, new Boolean(z)});
         }
         String str = aVar.c.get("battery_level");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -58,7 +58,7 @@ public class ili {
             return (b) ipChange.ipc$dispatch("1cf3bb82", new Object[]{this, aVar, new Boolean(z)});
         }
         String str = aVar.c.get("battery_temperature");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -87,7 +87,7 @@ public class ili {
             return (b) ipChange.ipc$dispatch("207b5e83", new Object[]{this, aVar, new Boolean(z)});
         }
         String str2 = aVar.c.get("javaUsedRate");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 long parseInt = Integer.parseInt(str2);
                 if (parseInt > a(201, "critical", 95L)) {
@@ -118,7 +118,7 @@ public class ili {
             return (b) ipChange.ipc$dispatch("24030184", new Object[]{this, aVar, new Boolean(z)});
         }
         String str2 = aVar.c.get("nativeHeapAllocatedSize");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 long parseInt = Integer.parseInt(str2);
                 if (parseInt >= a(202, "critical", 1073741824L)) {

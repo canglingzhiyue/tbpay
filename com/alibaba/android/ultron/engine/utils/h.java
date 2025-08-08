@@ -3,7 +3,7 @@ package com.alibaba.android.ultron.engine.utils;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.engine.model.TemplateComponent;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -40,7 +40,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f1ad3369", new Object[]{bjiVar});
         }
-        if (TextUtils.isEmpty(bjiVar.f25940a) || "null".equals(bjiVar.f25940a)) {
+        if (StringUtils.isEmpty(bjiVar.f25940a) || "null".equals(bjiVar.f25940a)) {
             bjiVar.f25940a = String.valueOf(f.a());
         }
         return bjiVar.b + "_" + bjiVar.f25940a;
@@ -62,7 +62,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ee3c37a9", new Object[]{context, str, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         Object a2 = jpe.a(obj, str);

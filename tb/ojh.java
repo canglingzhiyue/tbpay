@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.JSONLexer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -21,7 +21,7 @@ public class ojh {
             return ((Boolean) ipChange.ipc$dispatch("6635bd02", new Object[]{str, jSONObject})).booleanValue();
         }
         ldf.d("TriggerAdapter", "triggerEvent event: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         char c = 65535;

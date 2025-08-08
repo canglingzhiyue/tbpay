@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -253,13 +253,13 @@ public final class n {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONArray jSONArray = null;
         try {
             String b = b(com.taobao.themis.kernel.i.GROUP_ARIVER_COMMON_CONFIG, "enableLandScapeAppIdList", "");
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 jSONArray = JSON.parseArray(b);
             }
             if (jSONArray != null) {
@@ -330,13 +330,13 @@ public final class n {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONArray jSONArray = null;
         try {
             String b = b(com.taobao.themis.kernel.i.GROUP_ARIVER_COMMON_CONFIG, "disableBackHomeAppIdList", "");
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 jSONArray = JSON.parseArray(b);
             }
             if (jSONArray != null) {
@@ -375,7 +375,7 @@ public final class n {
         JSONArray jSONArray = null;
         try {
             String b = b(com.taobao.themis.kernel.i.GROUP_THEMIS_COMMON_CONFIG, "tinyAppPermissionCheckList", "");
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 jSONArray = JSON.parseArray(b);
             }
             if (jSONArray != null) {
@@ -602,7 +602,7 @@ public final class n {
         JSONArray jSONArray = null;
         try {
             String b = b(com.taobao.themis.kernel.i.ORANGE_GROUP_TRIVER_WHITE_LIST_CONFIG, "closeWindowAccessList", "");
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 jSONArray = JSON.parseArray(b);
                 jSONArray.add("3000000083541514");
                 jSONArray.add("22129413");

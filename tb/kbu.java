@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
@@ -112,7 +112,7 @@ public class kbu implements q, y {
         } else if (obj == null || !(obj instanceof DWFrontCoverBean)) {
         } else {
             this.b = (DWFrontCoverBean) obj;
-            if (!TextUtils.isEmpty(this.b.getCoverPicUrl()) && this.e != null) {
+            if (!StringUtils.isEmpty(this.b.getCoverPicUrl()) && this.e != null) {
                 this.c.mDWImageAdapter.a(this.b.getCoverPicUrl(), this.e);
                 if (this.b.getScaleType() != null) {
                     this.e.setScaleType(this.b.getScaleType());
@@ -125,7 +125,7 @@ public class kbu implements q, y {
                 this.j.setVisibility(0);
                 this.g.setText(a2);
             }
-            if (TextUtils.isEmpty(this.b.getVideoDuration())) {
+            if (StringUtils.isEmpty(this.b.getVideoDuration())) {
                 return;
             }
             this.f.setText(this.b.getVideoDuration());

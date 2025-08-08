@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -127,10 +127,10 @@ public class ebx {
         this.F = ecp.a(intent, "transImgType", 1);
         this.f27180a = a(intent);
         String dataString = intent.getDataString();
-        if (TextUtils.isEmpty(this.f27180a)) {
+        if (StringUtils.isEmpty(this.f27180a)) {
             ecg.a(context, true, dataString);
         }
-        if (!TextUtils.isEmpty(dataString)) {
+        if (!StringUtils.isEmpty(dataString)) {
             if (dataString.contains(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) {
                 this.s = g(dataString);
             }
@@ -143,7 +143,7 @@ public class ebx {
         }
         this.z = data.getQueryParameter("forceMainInterface");
         this.g = data.getQueryParameter("clickid");
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             this.g = ecp.a(intent, "clickid");
         }
         this.b = data.getQueryParameter("skuId");
@@ -157,7 +157,7 @@ public class ebx {
         }
         this.u = data.getQueryParameter("fromtorelation");
         this.q = eih.b(data.getQueryParameter("from"));
-        if (!TextUtils.isEmpty(this.D)) {
+        if (!StringUtils.isEmpty(this.D)) {
             i.c("QueryParams", "fromSource:" + this.q + " transImgUrl:" + this.D + " transImgRatio:" + this.E + " transImgType:" + this.F);
         }
         try {
@@ -180,7 +180,7 @@ public class ebx {
             i.a("QueryParams", "bundle.keySet error.", th);
             ecg.b(context, th);
         }
-        if (!TextUtils.isEmpty(data.getQuery()) && (queryParameterNames = data.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
+        if (!StringUtils.isEmpty(data.getQuery()) && (queryParameterNames = data.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
             for (String str4 : queryParameterNames) {
                 if (!"referrer".equals(str4)) {
                     this.B.put(str4, data.getQueryParameter(str4));
@@ -190,7 +190,7 @@ public class ebx {
         try {
             this.B.put("utdid", UTDevice.getUtdid(context));
             String d = epo.g().d();
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 this.B.put("nick", d);
             }
         } catch (Exception e) {
@@ -259,7 +259,7 @@ public class ebx {
             return ((Boolean) ipChange.ipc$dispatch("15320aa", new Object[]{this, intent})).booleanValue();
         }
         if (intent != null && (data = intent.getData()) != null) {
-            return TextUtils.isEmpty(data.getQueryParameter("id"));
+            return StringUtils.isEmpty(data.getQueryParameter("id"));
         }
         return false;
     }
@@ -268,7 +268,7 @@ public class ebx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("289186af", new Object[]{this, intent, str});
-        } else if (intent == null || TextUtils.isEmpty(intent.getDataString()) || TextUtils.isEmpty(str)) {
+        } else if (intent == null || StringUtils.isEmpty(intent.getDataString()) || StringUtils.isEmpty(str)) {
         } else {
             Uri.Builder buildUpon = Uri.parse(intent.getDataString()).buildUpon();
             buildUpon.appendQueryParameter("id", str);
@@ -283,11 +283,11 @@ public class ebx {
             return (String) ipChange.ipc$dispatch("b1abe71b", new Object[]{this, intent});
         }
         String a2 = ecp.a(intent, "id");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         String a3 = ecp.a(intent, "item_id");
-        return TextUtils.isEmpty(a3) ? c(intent) : a3;
+        return StringUtils.isEmpty(a3) ? c(intent) : a3;
     }
 
     public void a() {
@@ -322,7 +322,7 @@ public class ebx {
             this.C.put("item_id", epw.a(cVar.b() ? cVar.j() : cVar.i()));
             this.C.put("shop_id", epw.a(cVar.o()));
             this.C.put("seller_id", epw.a(cVar.h()));
-            if (TextUtils.isEmpty(this.r)) {
+            if (StringUtils.isEmpty(this.r)) {
                 return;
             }
             this.C.put("appGuide", this.r);
@@ -337,9 +337,9 @@ public class ebx {
         }
         HashMap hashMap = new HashMap(this.B);
         String a2 = epj.h().a("android_detail", "trade_detail_request_params_black_list", "list_param,%22list_param,search_keyword,eurl");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             for (String str : a2.split(",")) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.remove(str);
                 }
             }
@@ -361,7 +361,7 @@ public class ebx {
                 }
             }
             String str3 = this.B.get("track_params");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 JSONObject jSONObject = null;
                 try {
                     jSONObject = JSON.parseObject(str3);
@@ -406,7 +406,7 @@ public class ebx {
         }
         String str2 = "";
         String str3 = null;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str = ecp.a(intent, FavoriteConstants.DetailConstants_DETAIL_URL);
             } catch (Exception unused) {
@@ -416,7 +416,7 @@ public class ebx {
                 str2 = a(str);
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str3 = intent.getDataString();
             } catch (Exception unused2) {
@@ -425,11 +425,11 @@ public class ebx {
                 str2 = a(str3);
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str2;
         }
         try {
-            if (TextUtils.equals(ecp.a(intent, com.taobao.android.detail.wrapper.nav.a.DETAIL_NAV_PREFETCH), "true")) {
+            if (StringUtils.equals(ecp.a(intent, com.taobao.android.detail.wrapper.nav.a.DETAIL_NAV_PREFETCH), "true")) {
                 this.B.put("item_id", str2);
             } else {
                 intent.putExtra("item_id", str2);
@@ -489,7 +489,7 @@ public class ebx {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("14a6f7e8", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (String str2 : new String[]{"[?|&]liveId=(\\d+)"}) {
@@ -514,7 +514,7 @@ public class ebx {
         this.f27180a = str;
         map.put("item_id", str);
         i.c("QueryParams", "QueryParams#updateItemId, queryParams.kvs: " + this.B);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return;
         }
         ecg.a((Context) null, false, a(new Throwable()));
@@ -535,7 +535,7 @@ public class ebx {
 
     public boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.f27180a) || TextUtils.equals(this.f27180a, "0");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.f27180a) || StringUtils.equals(this.f27180a, "0");
     }
 
     public void e() {
@@ -549,10 +549,10 @@ public class ebx {
             return;
         }
         String str = map.get("insideDetail");
-        if (!TextUtils.isEmpty(str) && "true".equals(str)) {
+        if (!StringUtils.isEmpty(str) && "true".equals(str)) {
             return;
         }
         this.B.put("insideDetail", "true");
-        ecg.k(null, TextUtils.isEmpty(this.f27180a) ? "" : this.f27180a);
+        ecg.k(null, StringUtils.isEmpty(this.f27180a) ? "" : this.f27180a);
     }
 }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.homepage.launcher.g;
@@ -162,7 +162,7 @@ public class opv {
             }
             JSONObject jSONObject2 = jSONObject;
             String c = opj.c();
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 jSONObject2.put("experimentType", (Object) c);
             }
             jSONObject2.put("optimizeType", (Object) str2);

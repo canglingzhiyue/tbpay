@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.handler.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.RelativeLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -47,7 +47,7 @@ public class SizingChartFloatFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6b8cd8fe", new Object[]{fragmentActivity, str, str2});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             startFragment(fragmentActivity, newInstance(str, str2));
         }

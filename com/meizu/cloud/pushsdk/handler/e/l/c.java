@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e.l;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.message.RegisterStatus;
@@ -32,11 +32,11 @@ public class c extends com.meizu.cloud.pushsdk.handler.e.a<RegisterStatus> {
         String mzPushServicePackageName = MzSystemUtils.getMzPushServicePackageName(c());
         if (com.meizu.cloud.pushsdk.util.b.d(c(), mzPushServicePackageName)) {
             com.meizu.cloud.pushsdk.util.b.a(c(), mzPushServicePackageName, false);
-            if (!TextUtils.isEmpty(com.meizu.cloud.pushsdk.util.b.g(c(), mzPushServicePackageName))) {
+            if (!StringUtils.isEmpty(com.meizu.cloud.pushsdk.util.b.g(c(), mzPushServicePackageName))) {
                 return;
             }
             String e = e();
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 return;
             }
             com.meizu.cloud.pushsdk.util.b.f(c(), mzPushServicePackageName, e);
@@ -75,8 +75,8 @@ public class c extends com.meizu.cloud.pushsdk.handler.e.a<RegisterStatus> {
     /* renamed from: l */
     public RegisterStatus f(Intent intent) {
         String stringExtra = intent.getStringExtra(PushConstants.MZ_MESSAGE_VALUE);
-        RegisterStatus b = !TextUtils.isEmpty(stringExtra) ? com.meizu.cloud.pushsdk.platform.message.a.b(stringExtra) : (RegisterStatus) intent.getSerializableExtra(PushConstants.EXTRA_APP_PUSH_REGISTER_STATUS);
-        if (!TextUtils.isEmpty(b.getPushId())) {
+        RegisterStatus b = !StringUtils.isEmpty(stringExtra) ? com.meizu.cloud.pushsdk.platform.message.a.b(stringExtra) : (RegisterStatus) intent.getSerializableExtra(PushConstants.EXTRA_APP_PUSH_REGISTER_STATUS);
+        if (!StringUtils.isEmpty(b.getPushId())) {
             com.meizu.cloud.pushsdk.util.b.g(c(), b.getPushId(), c().getPackageName());
             com.meizu.cloud.pushsdk.util.b.a(c(), (int) ((System.currentTimeMillis() / 1000) + b.getExpireTime()), c().getPackageName());
         }

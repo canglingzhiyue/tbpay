@@ -3,7 +3,7 @@ package com.ali.user.mobile.utils;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.view.View;
 import android.widget.ImageView;
@@ -36,7 +36,7 @@ public class ImageUtil {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("1b5c8901", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (mMemoryCache == null) {
@@ -112,7 +112,7 @@ public class ImageUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("52395b86", new Object[]{imageView, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             imageView.setVisibility(0);
             Bitmap bitmapFromMemoryCache = getBitmapFromMemoryCache(MD5Util.getMD5(str));

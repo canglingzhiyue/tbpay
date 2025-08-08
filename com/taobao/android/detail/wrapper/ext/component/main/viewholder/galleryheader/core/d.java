@@ -9,7 +9,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -312,7 +312,7 @@ public class d implements Handler.Callback, g {
             return;
         }
         String str = this.f.imageUrl;
-        if (TextUtils.isEmpty(this.f.imageUrl)) {
+        if (StringUtils.isEmpty(this.f.imageUrl)) {
             Handler handler = this.m;
             if (handler == null) {
                 return;
@@ -442,7 +442,7 @@ public class d implements Handler.Callback, g {
             layoutParams.setMargins(d, 0, 0, 0);
         }
         this.i.addView(this.j, layoutParams);
-        if (TextUtils.isEmpty(this.f.skuBottomText)) {
+        if (StringUtils.isEmpty(this.f.skuBottomText)) {
             return;
         }
         TextView textView = new TextView(this.h);
@@ -466,7 +466,7 @@ public class d implements Handler.Callback, g {
             return;
         }
         this.n.a(0);
-        if (TextUtils.isEmpty(this.f.parentModel.itemId)) {
+        if (StringUtils.isEmpty(this.f.parentModel.itemId)) {
             return;
         }
         dzh.b(this.h, this.f.getIndex(), this.f.parentModel);
@@ -595,7 +595,7 @@ public class d implements Handler.Callback, g {
                 detailImageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             }
         };
-        if (z && !TextUtils.isEmpty(this.g.b)) {
+        if (z && !StringUtils.isEmpty(this.g.b)) {
             str = this.g.b;
         } else if (this.b) {
             MultiMediaViewModel.a aVar3 = this.n;
@@ -604,7 +604,7 @@ public class d implements Handler.Callback, g {
             } else {
                 a2 = com.taobao.android.detail.core.detail.kit.utils.g.a(this.h, this.g.f27129a, h());
             }
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 str = a2.replace("END_IMAGE_URL", "");
             } else {
                 str = this.g.f27129a;
@@ -612,7 +612,7 @@ public class d implements Handler.Callback, g {
         } else {
             str = this.g.f27129a;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             epj.b().a(str.replaceAll("END_IMAGE_URL", ""), detailImageView, new epl.a().a(R.drawable.detail_img_load_fail).a(), this.k);
         }
         return true;

@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transportext.biz.diagnose.network;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transport.utils.MiscUtils;
 import com.alipay.mobile.common.transport.utils.NetworkAsyncTaskExecutor;
@@ -214,7 +214,7 @@ public class NetworkCheck {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!this.h || TextUtils.isEmpty(str)) {
+        } else if (!this.h || StringUtils.isEmpty(str)) {
         } else {
             ArrayList arrayList = new ArrayList(1);
             arrayList.add("out_diago:" + str);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class jlb extends jku {
         if (ipChange instanceof IpChange) {
             return (jlb) ipChange.ipc$dispatch("e2617e88", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@kvExt")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@kvExt")) {
             return null;
         }
         return new jlb(str);
@@ -48,7 +48,7 @@ public class jlb extends jku {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("72c78bb0", new Object[]{this, aVar});
         }
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return null;
         }
         Intent d = aVar.d();

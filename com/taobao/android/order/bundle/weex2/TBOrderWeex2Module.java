@@ -7,7 +7,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.helper.j;
@@ -98,7 +98,7 @@ public class TBOrderWeex2Module extends MUSModule {
             return;
         }
         String b = j.a().b();
-        if (TextUtils.isEmpty(b) || !j.PAGE_NAME_ORDER_DETAIL3.equals(b) || (a2 = j.a().a(uIContext)) == null) {
+        if (StringUtils.isEmpty(b) || !j.PAGE_NAME_ORDER_DETAIL3.equals(b) || (a2 = j.a().a(uIContext)) == null) {
             return;
         }
         uIContext.getContentResolver().unregisterContentObserver(a2);

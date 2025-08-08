@@ -2,7 +2,7 @@ package tb;
 
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.behavixswitch.a;
@@ -371,7 +371,7 @@ public class drq {
                             return decode;
                         }
                         contains = decode.contains(riy.MOD);
-                        if (!contains && TextUtils.equals(decode, str2)) {
+                        if (!contains && StringUtils.equals(decode, str2)) {
                             return decode;
                         }
                         int i2 = i + 1;

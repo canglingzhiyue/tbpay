@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -52,7 +52,7 @@ public class emh {
             return a(aURARenderComponent.parent, str);
         }
         String str2 = (String) bbc.a(map, "dimension", String.class, "");
-        return TextUtils.isEmpty(str2) ? a(aURARenderComponent.parent, str) : str2;
+        return StringUtils.isEmpty(str2) ? a(aURARenderComponent.parent, str) : str2;
     }
 
     public static float b(AURARenderComponent aURARenderComponent, String str) {
@@ -62,7 +62,7 @@ public class emh {
             return ((Number) ipChange.ipc$dispatch("5ff1616c", new Object[]{aURARenderComponent, str})).floatValue();
         }
         String a2 = a(aURARenderComponent, str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return 1.0f;
         }
         String[] split = a2.split(":", 2);

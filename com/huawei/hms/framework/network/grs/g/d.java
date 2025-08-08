@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.network.grs.g;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.huawei.hms.framework.common.Logger;
@@ -66,7 +66,7 @@ public class d {
             return;
         }
         String str = map.get(HeaderConstant.HEADER_KEY_ETAG);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Logger.i(o, "The Response Heads Etag is Empty");
             return;
         }
@@ -82,7 +82,7 @@ public class d {
         long time;
         if (map.containsKey(HttpConstant.CACHE_CONTROL)) {
             String str = map.get(HttpConstant.CACHE_CONTROL);
-            if (!TextUtils.isEmpty(str) && str.contains("max-age=")) {
+            if (!StringUtils.isEmpty(str) && str.contains("max-age=")) {
                 try {
                     time = Long.parseLong(str.substring(str.indexOf("max-age=") + 8));
                 } catch (NumberFormatException e) {
@@ -113,7 +113,7 @@ public class d {
                     str3 = map.get("Date");
                 }
                 try {
-                    time = (simpleDateFormat.parse(str2).getTime() - (TextUtils.isEmpty(str3) ? new Date() : simpleDateFormat.parse(str3)).getTime()) / 1000;
+                    time = (simpleDateFormat.parse(str2).getTime() - (StringUtils.isEmpty(str3) ? new Date() : simpleDateFormat.parse(str3)).getTime()) / 1000;
                 } catch (ParseException e3) {
                     Logger.w(o, "getExpireTime ParseException.", e3);
                 }
@@ -146,7 +146,7 @@ public class d {
         long j;
         if (map.containsKey("Retry-After")) {
             String str = map.get("Retry-After");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     j = Long.parseLong(str);
                 } catch (NumberFormatException e) {

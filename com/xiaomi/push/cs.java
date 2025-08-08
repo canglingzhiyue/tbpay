@@ -6,7 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.media.ExifInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import java.io.BufferedOutputStream;
@@ -177,7 +177,7 @@ public class cs {
         try {
             String str2 = bg.e(f24406a) ? "wifi" : "wap";
             String a2 = a(arrayList, str2, this.f187a, true);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 JSONObject jSONObject3 = new JSONObject(a2);
                 com.xiaomi.channel.commonutils.logger.b.b(a2);
                 if (icf.a.CONTROL_NAME_OK.equalsIgnoreCase(jSONObject3.getString(ExifInterface.LATITUDE_SOUTH))) {
@@ -201,7 +201,7 @@ public class cs {
                             int i3 = 0;
                             while (i3 < optJSONArray.length()) {
                                 String string6 = optJSONArray.getString(i3);
-                                if (!TextUtils.isEmpty(string6)) {
+                                if (!StringUtils.isEmpty(string6)) {
                                     jSONObject2 = jSONObject5;
                                     coVar2.a(new cx(string6, optJSONArray.length() - i3));
                                 } else {
@@ -248,7 +248,7 @@ public class cs {
                                 coVar3.a(j);
                                 for (int i4 = 0; i4 < optJSONArray2.length(); i4++) {
                                     String string7 = optJSONArray2.getString(i4);
-                                    if (!TextUtils.isEmpty(string7)) {
+                                    if (!StringUtils.isEmpty(string7)) {
                                         coVar3.a(new cx(string7, optJSONArray2.length() - i4));
                                     }
                                 }
@@ -333,7 +333,7 @@ public class cs {
 
     /* renamed from: a  reason: collision with other method in class */
     public co m1791a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a(new URL(str).getHost(), true);
         }
         throw new IllegalArgumentException("the url is empty");
@@ -342,7 +342,7 @@ public class cs {
     public co a(String str, boolean z) {
         co e;
         com.xiaomi.channel.commonutils.logger.b.b("HostManager", "-->getFallbacksByHost(): host=", str, ", fetchRemoteIfNeed=", Boolean.valueOf(z));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (!this.f185a.a(str)) {
                 return null;
             }
@@ -437,7 +437,7 @@ public class cs {
     }
 
     public void a(String str, co coVar) {
-        if (TextUtils.isEmpty(str) || coVar == null) {
+        if (StringUtils.isEmpty(str) || coVar == null) {
             throw new IllegalArgumentException("the argument is invalid " + str + ", " + coVar);
         } else if (!this.f185a.a(str)) {
         } else {
@@ -461,7 +461,7 @@ public class cs {
                 f183a = true;
                 this.f188a.clear();
                 String d2 = d();
-                if (TextUtils.isEmpty(d2)) {
+                if (StringUtils.isEmpty(d2)) {
                     return false;
                 }
                 m1797b(d2);
@@ -521,7 +521,7 @@ public class cs {
                 for (int i2 = 0; i2 < optJSONArray2.length(); i2++) {
                     JSONObject jSONObject2 = optJSONArray2.getJSONObject(i2);
                     String optString = jSONObject2.optString("host");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         try {
                             co a3 = new co(optString).a(jSONObject2);
                             b.put(a3.f178b, a3);
@@ -570,7 +570,7 @@ public class cs {
                 try {
                     String jSONObject = m1792a().toString();
                     com.xiaomi.channel.commonutils.logger.b.b("persist host fallbacks = " + jSONObject);
-                    if (!TextUtils.isEmpty(jSONObject)) {
+                    if (!StringUtils.isEmpty(jSONObject)) {
                         fileOutputStream = f24406a.openFileOutput(f(), 0);
                         try {
                             BufferedOutputStream bufferedOutputStream2 = new BufferedOutputStream(fileOutputStream);

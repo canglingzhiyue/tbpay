@@ -3,7 +3,7 @@ package com.alibaba.android.aura.taobao.adapter.extension.event.locator;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -111,7 +111,7 @@ public final class a implements atg {
             String string = jSONObject.getString("duration");
             String string2 = jSONObject.getString(e.KEY_BG_COLOR);
             String string3 = jSONObject.getString("originColor");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return;
             }
             a(this.b.b(), c0069a.f2198a, string, string3, string2);
@@ -130,7 +130,7 @@ public final class a implements atg {
             return;
         }
         a(sVar, aURARenderComponent, str3);
-        long parseLong = TextUtils.isEmpty(str) ? 1000L : Long.parseLong(str);
+        long parseLong = StringUtils.isEmpty(str) ? 1000L : Long.parseLong(str);
         this.d = new Runnable() { // from class: com.alibaba.android.aura.taobao.adapter.extension.event.locator.a.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -142,7 +142,7 @@ public final class a implements atg {
                     return;
                 }
                 try {
-                    a.a(a.this, sVar, aURARenderComponent, TextUtils.isEmpty(str2) ? "#ffffff" : str2);
+                    a.a(a.this, sVar, aURARenderComponent, StringUtils.isEmpty(str2) ? "#ffffff" : str2);
                 } catch (Throwable unused) {
                 }
             }

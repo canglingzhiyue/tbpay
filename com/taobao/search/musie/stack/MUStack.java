@@ -2,7 +2,7 @@ package com.taobao.search.musie.stack;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.View;
@@ -341,7 +341,7 @@ public class MUStack extends UINodeGroup {
             return;
         }
         super.onUpdateExtra(uINode, obj, str, obj2);
-        if (!TextUtils.equals(str, "items")) {
+        if (!StringUtils.equals(str, "items")) {
             return;
         }
         notifyItemsAppear((JSONArray) obj2);
@@ -367,10 +367,10 @@ public class MUStack extends UINodeGroup {
             return;
         }
         super.fireEvent(str, jSONObject);
-        if (TextUtils.equals(str, "appear")) {
+        if (StringUtils.equals(str, "appear")) {
             this.appear = true;
             notifyItemsAppear((JSONArray) getExtra("items"));
-        } else if (!TextUtils.equals(str, "disappear")) {
+        } else if (!StringUtils.equals(str, "disappear")) {
         } else {
             this.appear = false;
         }

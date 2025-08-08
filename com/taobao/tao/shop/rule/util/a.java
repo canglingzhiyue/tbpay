@@ -1,6 +1,6 @@
 package com.taobao.tao.shop.rule.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import tb.kge;
@@ -19,7 +19,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("4dbad4dc", new Object[]{str, str2, new Boolean(z)})).booleanValue();
         }
         String a2 = a(str, str2, (String) null);
-        return !TextUtils.isEmpty(a2) ? Boolean.valueOf(a2).booleanValue() : z;
+        return !StringUtils.isEmpty(a2) ? Boolean.valueOf(a2).booleanValue() : z;
     }
 
     public static String a(String str, String str2, String str3) {
@@ -28,7 +28,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (orangeConfig = OrangeConfig.getInstance()) != null) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (orangeConfig = OrangeConfig.getInstance()) != null) {
             return orangeConfig.getConfig(str, str2, null);
         }
         return null;

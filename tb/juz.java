@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex.WeexInstance;
@@ -59,7 +59,7 @@ public class juz<T extends WeexModule> implements juv<T> {
                 if (annotation != null && (annotation instanceof WeexMethod)) {
                     WeexMethod weexMethod = (WeexMethod) annotation;
                     String alias = weexMethod.alias();
-                    if (TextUtils.equals(weexMethod.alias(), "_")) {
+                    if (StringUtils.equals(weexMethod.alias(), "_")) {
                         alias = method.getName();
                     }
                     map.put(alias, new juu(method, weexMethod.uiThread() ? MUSThreadStrategy.UI : MUSThreadStrategy.JS));

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umf.datamodel.protocol.ultron.UltronDeltaProtocol;
 import com.alibaba.android.umf.node.service.parse.state.RenderComponent;
 import com.alibaba.android.umf.node.service.parse.state.a;
@@ -49,7 +49,7 @@ public abstract class bqs {
         }
         UltronDeltaProtocol b = bquVar.b();
         RenderComponent data = treeNode.data();
-        if (b == null || data == null || TextUtils.isEmpty(data.key)) {
+        if (b == null || data == null || StringUtils.isEmpty(data.key)) {
             return;
         }
         aVar.a(bquVar.c(), data.key);

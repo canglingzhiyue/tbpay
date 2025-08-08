@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.trade.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.bmz;
@@ -25,7 +25,7 @@ public class i extends d {
         }
         CharSequence charSequence = (CharSequence) a(0);
         CharSequence charSequence2 = (CharSequence) a(1);
-        if (TextUtils.isEmpty(charSequence) || charSequence2 == null) {
+        if (StringUtils.isEmpty(charSequence) || charSequence2 == null) {
             return;
         }
         HashMap hashMap = new HashMap();

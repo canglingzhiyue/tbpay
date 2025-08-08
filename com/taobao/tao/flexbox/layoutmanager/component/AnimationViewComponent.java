@@ -5,7 +5,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.util.Pools;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -369,7 +369,7 @@ public class AnimationViewComponent extends Component<TNodeLottieView, a> implem
             return ((Boolean) ipChange.ipc$dispatch("956925f3", new Object[]{this, eVar})).booleanValue();
         }
         if (oeb.a("fixLottieAppear", true)) {
-            return TextUtils.equals(eVar.c, "onwillappear");
+            return StringUtils.equals(eVar.c, "onwillappear");
         }
         return ad.a(eVar);
     }
@@ -380,7 +380,7 @@ public class AnimationViewComponent extends Component<TNodeLottieView, a> implem
             return ((Boolean) ipChange.ipc$dispatch("22a3d774", new Object[]{this, eVar})).booleanValue();
         }
         if (oeb.a("fixLottieAppear", true)) {
-            return TextUtils.equals(eVar.c, "onwilldisappear");
+            return StringUtils.equals(eVar.c, "onwilldisappear");
         }
         return ad.b(eVar);
     }
@@ -627,7 +627,7 @@ public class AnimationViewComponent extends Component<TNodeLottieView, a> implem
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("3dbfab37", new Object[]{this, str})).booleanValue();
             }
-            if (TextUtils.isEmpty(str) || str.equals(this.mSrc)) {
+            if (StringUtils.isEmpty(str) || str.equals(this.mSrc)) {
                 return false;
             }
             AnimationViewComponent animationViewComponent = this.component;

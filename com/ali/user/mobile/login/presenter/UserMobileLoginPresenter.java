@@ -2,7 +2,7 @@ package com.ali.user.mobile.login.presenter;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.ability.excutor.ExecutorCenter;
 import com.ali.user.mobile.ability.excutor.ExecutorContext;
 import com.ali.user.mobile.ability.excutor.ExecutorResult;
@@ -151,7 +151,7 @@ public class UserMobileLoginPresenter extends BaseLoginPresenter {
                 str = rpcResponse.returnValue.extMap.get("dialogTitle");
                 str2 = rpcResponse.returnValue.extMap.get("dialogContent");
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = ResourceUtil.getNetworkError();
             }
             this.mViewer.alert(str, str2, this.mViewer.getBaseActivity().getResources().getString(R.string.aliuser_common_ok), new DialogInterface.OnClickListener() { // from class: com.ali.user.mobile.login.presenter.UserMobileLoginPresenter.2
@@ -328,10 +328,10 @@ public class UserMobileLoginPresenter extends BaseLoginPresenter {
                     }
                     UserMobileLoginPresenter.this.mLoginParam.smsSid = loginReturnData.extMap.get("smsSid");
                     UserMobileLoginPresenter.this.mLoginParam.codeLength = loginReturnData.extMap.get(RegistConstants.REGISTER_CODE_LENGTH);
-                    if (!TextUtils.isEmpty(loginReturnData.extMap.get("helpVideoUrl"))) {
+                    if (!StringUtils.isEmpty(loginReturnData.extMap.get("helpVideoUrl"))) {
                         UserMobileLoginPresenter.this.mLoginParam.helpUrl = loginReturnData.extMap.get("helpVideoUrl");
                     }
-                    if (!TextUtils.equals(rpcResponse.actionType, "SUCCESS")) {
+                    if (!StringUtils.equals(rpcResponse.actionType, "SUCCESS")) {
                         return;
                     }
                     if (rpcResponse.code == 14050) {
@@ -414,12 +414,12 @@ public class UserMobileLoginPresenter extends BaseLoginPresenter {
                         if (UserMobileLoginPresenter.this.mViewer == null) {
                             return;
                         }
-                        if (loginException.getOrinResponse().code == 14100 && UserMobileLoginPresenter.this.mLoginParam != null && !TextUtils.isEmpty(UserMobileLoginPresenter.this.mLoginParam.smsSid) && !TextUtils.isEmpty(UserMobileLoginPresenter.this.mLoginParam.codeLength)) {
+                        if (loginException.getOrinResponse().code == 14100 && UserMobileLoginPresenter.this.mLoginParam != null && !StringUtils.isEmpty(UserMobileLoginPresenter.this.mLoginParam.smsSid) && !StringUtils.isEmpty(UserMobileLoginPresenter.this.mLoginParam.codeLength)) {
                             ((UserMobileLoginView) UserMobileLoginPresenter.this.mViewer).onSMSOverLimit(loginException.getOrinResponse());
                             return;
                         }
                         String str2 = loginException.getOrinResponse().message;
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = ResourceUtil.getNetworkError();
                         }
                         UserMobileLoginPresenter.this.mViewer.alert(str2, "", UserMobileLoginPresenter.this.mViewer.getBaseActivity().getResources().getString(R.string.aliuser_common_ok), new DialogInterface.OnClickListener() { // from class: com.ali.user.mobile.login.presenter.UserMobileLoginPresenter.4.4
@@ -439,7 +439,7 @@ public class UserMobileLoginPresenter extends BaseLoginPresenter {
                         return;
                     }
                     String msg = loginException.getMsg();
-                    if (TextUtils.isEmpty(msg)) {
+                    if (StringUtils.isEmpty(msg)) {
                         msg = ResourceUtil.getNetworkError();
                     }
                     UserMobileLoginPresenter.this.mViewer.toast(msg, 0);
@@ -462,7 +462,7 @@ public class UserMobileLoginPresenter extends BaseLoginPresenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7707c420", new Object[]{this, loginParam, str, loginTasksCallback});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LoginApi.smsSend(loginParam, buildTrackingModel(), this.mViewer, loginTasksCallback);
         } else {
             loginParam.loginId = str;
@@ -495,10 +495,10 @@ public class UserMobileLoginPresenter extends BaseLoginPresenter {
                     }
                     UserMobileLoginPresenter.this.mLoginParam.smsSid = loginReturnData.extMap.get("smsSid");
                     UserMobileLoginPresenter.this.mLoginParam.codeLength = loginReturnData.extMap.get(RegistConstants.REGISTER_CODE_LENGTH);
-                    if (!TextUtils.isEmpty(loginReturnData.extMap.get("helpVideoUrl"))) {
+                    if (!StringUtils.isEmpty(loginReturnData.extMap.get("helpVideoUrl"))) {
                         UserMobileLoginPresenter.this.mLoginParam.helpUrl = loginReturnData.extMap.get("helpVideoUrl");
                     }
-                    if (!TextUtils.equals(rpcResponse.actionType, "SUCCESS")) {
+                    if (!StringUtils.equals(rpcResponse.actionType, "SUCCESS")) {
                         return;
                     }
                     if (rpcResponse.code == 14050) {

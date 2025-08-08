@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -246,11 +246,11 @@ public final class ekr extends atl implements a, atf, ekl {
                 Map<String, Object> map = aURARenderComponentData.fields;
                 if (!bau.a(map)) {
                     String str = (String) bbc.a(map, "text", String.class, null);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         arc.a().c("AliSDetailLocatorBarComponentExtension", "assembleAnchorModels", "title is empty");
                     } else {
                         String str2 = (String) bbc.a(map, "locator", String.class, null);
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             arc.a().c("AliSDetailLocatorBarComponentExtension", "assembleAnchorModels", "locatorId is empty");
                         } else {
                             Boolean bool = (Boolean) bbc.a(map, "fixed", Boolean.class, false);
@@ -283,7 +283,7 @@ public final class ekr extends atl implements a, atf, ekl {
             return (String) ipChange.ipc$dispatch("e2c2912d", new Object[]{this, aURARenderComponent});
         }
         String str = aURARenderComponent.key;
-        return TextUtils.isEmpty(str) ? a() : str;
+        return StringUtils.isEmpty(str) ? a() : str;
     }
 
     @Override // tb.eki
@@ -334,7 +334,7 @@ public final class ekr extends atl implements a, atf, ekl {
             return;
         }
         String b = bVar.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             ema.a("locatorbar#locatorIdIsEmpty", "locatorId is empty", this.n);
             return;
         }

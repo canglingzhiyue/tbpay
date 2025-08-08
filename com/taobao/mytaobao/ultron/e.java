@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.LinearLayout;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
@@ -549,7 +549,7 @@ public class e implements mwo {
                             e.a(e.this, dMComponent);
                         }
                         e.c(e.this, jSONObject2);
-                        if (TextUtils.equals("action_pull_refresh", "action_cache_invalid") && e.this.f18498a != null) {
+                        if (StringUtils.equals("action_pull_refresh", "action_cache_invalid") && e.this.f18498a != null) {
                             e.this.f18498a.d();
                         }
                         mxf.b("processQueryData");
@@ -607,7 +607,7 @@ public class e implements mwo {
             ipChange.ipc$dispatch("669e4a77", new Object[]{this, str});
             return;
         }
-        if (TextUtils.equals(str, "stark_s_mytaobao_24")) {
+        if (StringUtils.equals(str, "stark_s_mytaobao_24")) {
             str = "v24";
         }
         MtbBizProxy mtbBizProxy = this.A;
@@ -711,7 +711,7 @@ public class e implements mwo {
             return;
         }
         IDMComponent b = b(str);
-        if (b == null && !TextUtils.isEmpty(str2)) {
+        if (b == null && !StringUtils.isEmpty(str2)) {
             b = e(str2);
         }
         this.c.a(b);
@@ -723,7 +723,7 @@ public class e implements mwo {
         if (ipChange instanceof IpChange) {
             return (IDMComponent) ipChange.ipc$dispatch("e5087df7", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (dVar = this.c) != null && dVar.b() != null) {
+        if (!StringUtils.isEmpty(str) && (dVar = this.c) != null && dVar.b() != null) {
             return this.c.b().b(str);
         }
         return null;
@@ -762,7 +762,7 @@ public class e implements mwo {
             return;
         }
         String str = hashMap.get(PushConstants.PARAMS);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         JSONObject jSONObject = null;
@@ -818,7 +818,7 @@ public class e implements mwo {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
             return;
         }
-        if (TextUtils.equals(str, "action_cache_invalid")) {
+        if (StringUtils.equals(str, "action_cache_invalid")) {
             mtx.d(this.v).a("MainInterface");
         }
         mxf.a(mxf.beforeMainApi);
@@ -907,7 +907,7 @@ public class e implements mwo {
             ipChange.ipc$dispatch("cbb57fdf", new Object[]{this, str, new Integer(i), mtopResponse, jnyVar, jSONObject});
         } else if (this.z) {
         } else {
-            if (TextUtils.equals(str, "action_cache_invalid")) {
+            if (StringUtils.equals(str, "action_cache_invalid")) {
                 mtx.d(this.v).a("MainInterface", null);
             }
             mxf.b("queryAndRender");
@@ -966,7 +966,7 @@ public class e implements mwo {
             }
             BehaviR.getInstance().commitRequest("Page_MyTaobao", str, null, "success=true");
             t();
-            if (TextUtils.equals("action_pull_refresh", str) && (iVar = this.f18498a) != null) {
+            if (StringUtils.equals("action_pull_refresh", str) && (iVar = this.f18498a) != null) {
                 iVar.d();
             }
             mxf.b("processQueryData");
@@ -981,7 +981,7 @@ public class e implements mwo {
         } else {
             y();
             TLog.loge("mtbMainLink", "主接口onError retCode=" + mtopResponse.getRetCode() + " retMsg=" + mtopResponse.getRetMsg());
-            if (TextUtils.equals(str, "action_cache_invalid")) {
+            if (StringUtils.equals(str, "action_cache_invalid")) {
                 mtx.d(this.v).a("MainInterface", mtx.b());
             }
             if (mtopResponse != null) {
@@ -1159,7 +1159,7 @@ public class e implements mwo {
             jSONObject.put(mtp.USE_SEC_SCREEN_API, (Object) secScreenBean.apiName);
         }
         String jSONString = JSON.toJSONString(com.taobao.mytaobao.ultron.fatigue.a.a(Login.getUserId()).b());
-        if (!TextUtils.isEmpty(jSONString)) {
+        if (!StringUtils.isEmpty(jSONString)) {
             jSONObject.put("orderFatigue", (Object) jSONString);
         }
         if (com.taobao.android.tbelder.b.c()) {
@@ -1257,11 +1257,11 @@ public class e implements mwo {
         if (ipChange instanceof IpChange) {
             return (IDMComponent) ipChange.ipc$dispatch("88e05f9b", new Object[]{dVar, str});
         }
-        if (dVar == null || TextUtils.isEmpty(str) || dVar.b() == null || (b = dVar.b().b()) == null || b.size() <= 0) {
+        if (dVar == null || StringUtils.isEmpty(str) || dVar.b() == null || (b = dVar.b().b()) == null || b.size() <= 0) {
             return null;
         }
         for (IDMComponent iDMComponent : b) {
-            if (iDMComponent != null && TextUtils.equals(str, iDMComponent.getTag())) {
+            if (iDMComponent != null && StringUtils.equals(str, iDMComponent.getTag())) {
                 return iDMComponent;
             }
         }
@@ -1308,7 +1308,7 @@ public class e implements mwo {
             TLog.loge("mtbMainLink", "收到广播，滚动， actionName=" + str);
             String stringExtra = intent.getStringExtra("cardId");
             String stringExtra2 = intent.getStringExtra("cardTag");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 stringExtra = intent.getStringExtra("arg1");
             }
             a(stringExtra, stringExtra2);

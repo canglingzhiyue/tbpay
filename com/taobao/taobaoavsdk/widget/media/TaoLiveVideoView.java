@@ -14,7 +14,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.View;
@@ -966,7 +966,7 @@ public class TaoLiveVideoView extends FrameLayout implements a.InterfaceC0698a, 
             return;
         }
         this.mConfig = cVar;
-        if (TextUtils.isEmpty(this.mUsingInterface)) {
+        if (StringUtils.isEmpty(this.mUsingInterface)) {
             this.mConfig.as = COMPONENT_NAME;
         } else {
             com.taobao.taobaoavsdk.widget.media.c cVar2 = this.mConfig;
@@ -979,13 +979,13 @@ public class TaoLiveVideoView extends FrameLayout implements a.InterfaceC0698a, 
         setBusinessId(this.mConfig.x);
         _setRenderType(this.mConfig.c, this.mConfig.j, this.mConfig.k, this.mConfig.l);
         setCoverImg(this.mConfig.i);
-        if (TextUtils.isEmpty(this.mConfig.q)) {
+        if (StringUtils.isEmpty(this.mConfig.q)) {
             this.mConfig.q = "tblive";
         }
-        if (TextUtils.isEmpty(this.mConfig.p)) {
+        if (StringUtils.isEmpty(this.mConfig.p)) {
             this.mConfig.p = com.taobao.taobaoavsdk.util.b.c();
         }
-        if (TextUtils.isEmpty(this.mConfig.t) && ("TBLive".equals(this.mConfig.x) || (this.mSetDefaultPlayToken && "HomePage".equals(this.mConfig.x)))) {
+        if (StringUtils.isEmpty(this.mConfig.t) && ("TBLive".equals(this.mConfig.x) || (this.mSetDefaultPlayToken && "HomePage".equals(this.mConfig.x)))) {
             this.mConfig.t = com.taobao.taobaoavsdk.util.b.c();
         }
         if ("TBLive".equals(this.mConfig.x)) {
@@ -1060,7 +1060,7 @@ public class TaoLiveVideoView extends FrameLayout implements a.InterfaceC0698a, 
         }
         cVar.y = str;
         String config = OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_LIVE_ROOM_BIZ_CODE, "LiveRoom");
-        if (!TextUtils.isEmpty(config) && config.equals(str)) {
+        if (!StringUtils.isEmpty(config) && config.equals(str)) {
             this.mConfig.aK = true;
         } else {
             this.mConfig.aK = false;
@@ -1743,7 +1743,7 @@ public class TaoLiveVideoView extends FrameLayout implements a.InterfaceC0698a, 
                 if (this.mConfig != null) {
                     str = this.mConfig.y;
                 }
-                if ((!TextUtils.isEmpty(config) && !TextUtils.isEmpty(str) && com.taobao.taobaoavsdk.util.b.b(str, config)) || this.mUseShortAudioFocus) {
+                if ((!StringUtils.isEmpty(config) && !StringUtils.isEmpty(str) && com.taobao.taobaoavsdk.util.b.b(str, config)) || this.mUseShortAudioFocus) {
                     AVSDKLog.e("AVSDK", "TaoLiveVideoView " + this + ",requestAudioFocus sbt=" + str + " only request short AudioFocus with mVolume: " + this.mMediaPlayerRecycler.i);
                     ipw.a(this.mContext).a((AudioManager.OnAudioFocusChangeListener) null, 2);
                 } else {
@@ -2708,14 +2708,14 @@ public class TaoLiveVideoView extends FrameLayout implements a.InterfaceC0698a, 
         }
         ddc ddcVar = this.mConfigAdapter;
         String config = ddcVar != null ? ddcVar.getConfig(this.mConfig.q, "SensorFusionCalibrate", "") : null;
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = config.split(";");
         if (split.length > 0) {
             for (String str2 : split) {
-                if (TextUtils.equals(str, str2)) {
+                if (StringUtils.equals(str, str2)) {
                     return true;
                 }
             }
@@ -2848,7 +2848,7 @@ public class TaoLiveVideoView extends FrameLayout implements a.InterfaceC0698a, 
             return;
         }
         com.taobao.taobaoavsdk.widget.media.c cVar = this.mConfig;
-        if (cVar == null || TextUtils.isEmpty(cVar.as)) {
+        if (cVar == null || StringUtils.isEmpty(cVar.as)) {
             this.mUsingInterface = str;
             return;
         }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.vessel.utils.c;
@@ -29,7 +29,7 @@ public class hvx extends dlg {
             return new dkw(new dkv(2, "params is null"));
         }
         String string = c.getString("key");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return new dkw(new dkv(3, "key is empty"));
         }
         Context a2 = dleVar.a();

@@ -1,7 +1,7 @@
 package com.sina.weibo.sdk.auth;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.sina.weibo.sdk.b.c;
 import org.json.JSONObject;
 import tb.kge;
@@ -46,7 +46,7 @@ public class Oauth2AccessToken {
     }
 
     public static Oauth2AccessToken parseAccessToken(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 Oauth2AccessToken oauth2AccessToken = new Oauth2AccessToken();
@@ -89,7 +89,7 @@ public class Oauth2AccessToken {
     }
 
     public boolean isSessionValid() {
-        return !TextUtils.isEmpty(this.mAccessToken) && this.mExpiresTime > 0;
+        return !StringUtils.isEmpty(this.mAccessToken) && this.mExpiresTime > 0;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

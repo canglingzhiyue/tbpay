@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -47,7 +47,7 @@ public class fgl extends fgj {
         }
         try {
             JSONObject fields = bVar.getFields();
-            if (TextUtils.isEmpty(fields.getString("url"))) {
+            if (StringUtils.isEmpty(fields.getString("url"))) {
                 return;
             }
             a(fields);

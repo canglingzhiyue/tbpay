@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.floatview;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +69,7 @@ public class b implements g {
                 }
             });
             b.a(b.this).c().a(new com.taobao.android.detail.ttdetail.handler.event.a(jSONObject), new RuntimeAbilityParam[0]);
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 return;
             }
             b.a(b.this).c().a(new com.taobao.android.detail.ttdetail.handler.event.a(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.floatview.TTDHintBannerController$1$2
@@ -118,39 +118,39 @@ public class b implements g {
         }
         String a2 = aVar.a();
         String b = aVar.b();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = "";
         }
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             a2 = a2 + b;
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             this.b.setVisibility(8);
             return;
         }
         this.b.setVisibility(0);
         this.c.setText(a2);
-        if (!TextUtils.isEmpty(aVar.g())) {
+        if (!StringUtils.isEmpty(aVar.g())) {
             try {
                 this.c.setTextColor(w.a(aVar.g()));
             } catch (Exception e) {
                 i.a("hintBanner", "setupHintBanner " + e.toString());
             }
         }
-        if (!TextUtils.isEmpty(aVar.c())) {
+        if (!StringUtils.isEmpty(aVar.c())) {
             try {
                 this.b.setBackgroundColor(w.a(aVar.c()));
             } catch (Exception e2) {
                 i.a("hintBanner", "setupHintBanner " + e2.toString());
             }
         }
-        if (TextUtils.isEmpty(aVar.d())) {
+        if (StringUtils.isEmpty(aVar.d())) {
             return;
         }
         this.c.setGravity(16);
         ((LinearLayout.LayoutParams) this.c.getLayoutParams()).setMargins(com.taobao.android.detail.ttdetail.utils.f.a(12.0f), 0, com.taobao.android.detail.ttdetail.utils.f.a(10.0f), 0);
         this.d.setText(aVar.d());
-        if (!TextUtils.isEmpty(aVar.h())) {
+        if (!StringUtils.isEmpty(aVar.h())) {
             try {
                 this.d.setTextColor(w.a(aVar.h()));
             } catch (Exception e3) {

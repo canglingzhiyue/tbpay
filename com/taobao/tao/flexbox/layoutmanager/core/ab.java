@@ -12,7 +12,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.MessageQueue;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -1104,7 +1104,7 @@ public class ab {
         if (ipChange instanceof IpChange) {
             return (ab) ipChange.ipc$dispatch("7082eb4a", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         final String c2 = ohk.c(str);
@@ -1930,7 +1930,7 @@ public class ab {
                 }
                 if (map != null) {
                     aaVar = ab.this.a(hVar, map, gVar);
-                    if (aaVar == null && !TextUtils.equals(str, "local") && !TextUtils.isEmpty(hVar.c)) {
+                    if (aaVar == null && !StringUtils.equals(str, "local") && !StringUtils.isEmpty(hVar.c)) {
                         aaVar = ab.this.a(hVar, com.taobao.tao.flexbox.layoutmanager.core.h.d(hVar), gVar);
                     }
                 } else {
@@ -2422,14 +2422,14 @@ public class ab {
             String a2 = oec.a(aaVar.e(Component.KEY_PAGE_NAME), (String) null);
             String a3 = oec.a(aaVar.e("spm"), (String) null);
             String a4 = oec.a(aaVar.e("spm-url"), (String) null);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().b(aaVar, a2);
             }
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 hashMap.put("spm-cnt", a3);
             }
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 hashMap.put("spm-url", a4);
             }
             com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().a(aaVar, hashMap);
@@ -2557,7 +2557,7 @@ public class ab {
         Map map = null;
         if (h.d(hVar) != null) {
             map = h.d(hVar);
-        } else if (!TextUtils.isEmpty(hVar.d)) {
+        } else if (!StringUtils.isEmpty(hVar.d)) {
             Object c2 = ohh.c(hVar.d);
             if (c2 instanceof JSONObject) {
                 map = (JSONObject) c2;
@@ -2869,7 +2869,7 @@ public class ab {
             return ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue();
         }
         String d2 = PreloadDelegate.d(str);
-        if (TextUtils.isEmpty(d2)) {
+        if (StringUtils.isEmpty(d2)) {
             return false;
         }
         synchronized (this.N) {
@@ -2922,7 +2922,7 @@ public class ab {
             return;
         }
         String d2 = PreloadDelegate.d(str);
-        if (TextUtils.isEmpty(d2)) {
+        if (StringUtils.isEmpty(d2)) {
             return;
         }
         synchronized (this.N) {
@@ -2949,7 +2949,7 @@ public class ab {
             return;
         }
         String d2 = PreloadDelegate.d(str);
-        if (TextUtils.isEmpty(d2)) {
+        if (StringUtils.isEmpty(d2)) {
             return;
         }
         synchronized (this.N) {
@@ -2963,7 +2963,7 @@ public class ab {
             return ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{this, str})).booleanValue();
         }
         String d2 = PreloadDelegate.d(str);
-        if (TextUtils.isEmpty(d2)) {
+        if (StringUtils.isEmpty(d2)) {
             return false;
         }
         synchronized (this.N) {

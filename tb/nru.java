@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -110,14 +110,14 @@ public class nru extends nrq implements View.OnClickListener {
             } catch (Throwable unused2) {
                 q.b("SuggestItemCellWidget", "renderSuggestGrey error");
             }
-        } else if (!TextUtils.isEmpty(suggestCellBean.showText)) {
+        } else if (!StringUtils.isEmpty(suggestCellBean.showText)) {
             this.g.setText(suggestCellBean.showText);
         }
         this.g.setTextColor(this.e);
         this.g.getPaint().setFakeBoldText(false);
         this.g.setMaxWidth(((this.f31701a - this.itemView.getPaddingLeft()) - this.itemView.getPaddingRight()) - DensityUtil.dip2px(this.g.getContext(), 53.0f));
         this.h.removeAllViews();
-        if (!TextUtils.isEmpty(suggestCellBean.icon)) {
+        if (!StringUtils.isEmpty(suggestCellBean.icon)) {
             this.j.setVisibility(0);
             this.j.setText(suggestCellBean.icon);
             return;
@@ -129,7 +129,7 @@ public class nru extends nrq implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1aa3523", new Object[]{this, str, list});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.g.setText("");
             q.a("SuggestItemCellWidget", "renderSuggestGrey keyword is empty");
         } else {
@@ -156,7 +156,7 @@ public class nru extends nrq implements View.OnClickListener {
             return null;
         }
         String b = a2.b();
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(b)) {
             if (str.length() <= 50) {
                 arrayList = new ArrayList();
                 int i = 0;

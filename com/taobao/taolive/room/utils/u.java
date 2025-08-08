@@ -2,7 +2,7 @@ package com.taobao.taolive.room.utils;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.sp.framework.model.SimpleProfile;
@@ -46,7 +46,7 @@ public class u {
         a(preSimpleRequestParams, uri);
         preSimpleRequestParams.entryLiveSource = uri.getQueryParameter("livesource");
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(preSimpleRequestParams.transParams)) {
+        if (!StringUtils.isEmpty(preSimpleRequestParams.transParams)) {
             jSONObject = pqj.b(preSimpleRequestParams.transParams);
         }
         for (String str : uri.getQueryParameterNames()) {
@@ -66,7 +66,7 @@ public class u {
         if (liveDetailPreRequestParams.extJson == null) {
             liveDetailPreRequestParams.extJson = new JSONObject();
         }
-        liveDetailPreRequestParams.extJson.put("adLive", (Object) (TextUtils.isEmpty(liveDetailPreRequestParams.adImpId) ? "false" : "true"));
+        liveDetailPreRequestParams.extJson.put("adLive", (Object) (StringUtils.isEmpty(liveDetailPreRequestParams.adImpId) ? "false" : "true"));
         if ("/app/mtb/content/pages/live".equals(uri.getPath())) {
             queryParameter = uri.getQueryParameter("bizFrom");
         } else {
@@ -106,11 +106,11 @@ public class u {
         String str = "";
         String queryParameter2 = queryParameterNames.contains(aw.PARAM_SHARER_ID) ? uri.getQueryParameter(aw.PARAM_SHARER_ID) : str;
         JSONObject c = c(uri);
-        if (c != null && !TextUtils.isEmpty(queryParameter2)) {
+        if (c != null && !StringUtils.isEmpty(queryParameter2)) {
             c.put(aw.PARAM_SHARER_ID, (Object) queryParameter2);
         }
         JSONObject jSONObject2 = new JSONObject();
-        if (!TextUtils.isEmpty(liveDetailPreRequestParams.itemId)) {
+        if (!StringUtils.isEmpty(liveDetailPreRequestParams.itemId)) {
             jSONObject2.put("itemid", (Object) liveDetailPreRequestParams.itemId);
         }
         jSONObject2.put("version", (Object) "202003");
@@ -123,7 +123,7 @@ public class u {
             liveDetailPreRequestParams.extJson = jSONObject2;
         }
         String queryParameter3 = uri.getQueryParameterNames().contains(aw.PARAM_PRODUCT_TYPE) ? uri.getQueryParameter(aw.PARAM_PRODUCT_TYPE) : str;
-        if (TextUtils.isEmpty(queryParameter3)) {
+        if (StringUtils.isEmpty(queryParameter3)) {
             queryParameter3 = "live";
         }
         liveDetailPreRequestParams.productType = queryParameter3;
@@ -156,13 +156,13 @@ public class u {
         String queryParameter2 = uri.getQueryParameter("timestamp");
         String queryParameter3 = uri.getQueryParameter(SimpleProfile.KEY_SIGNATURE);
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             jSONObject.put("anchorGuard", (Object) queryParameter);
         }
-        if (!TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter2)) {
             jSONObject.put("timestamp", (Object) queryParameter2);
         }
-        if (!TextUtils.isEmpty(queryParameter3)) {
+        if (!StringUtils.isEmpty(queryParameter3)) {
             jSONObject.put(SimpleProfile.KEY_SIGNATURE, (Object) queryParameter3);
         }
         return jSONObject;

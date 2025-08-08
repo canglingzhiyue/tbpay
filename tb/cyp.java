@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.huawei.hms.common.PackageConstants;
 import com.huawei.secure.android.common.ssl.g;
@@ -29,7 +29,7 @@ public class cyp {
     private static final String[] b = {"B92825C2BD5D6D6D1E7F39EECD17843B7D9016F611136B75441BC6F4D3F00F05", "E49D5C2C0E11B3B1B96CA56C6DE2A14EC7DAB5CCC3B5F300D03E5B4DBA44F539"};
 
     private static int a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         File file = new File(str);
@@ -242,7 +242,7 @@ public class cyp {
 
     private static boolean b(String str) {
         int parseInt;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         cyu.a("BksUtil", "hms version code is : " + str);
@@ -309,7 +309,7 @@ public class cyp {
         StringBuilder sb;
         String message;
         PackageInfo packageInfo;
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             Log.e("BksUtil", "packageName is null or context is null");
             return new byte[0];
         }

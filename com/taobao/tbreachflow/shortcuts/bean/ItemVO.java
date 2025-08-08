@@ -1,6 +1,6 @@
 package com.taobao.tbreachflow.shortcuts.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 
@@ -115,7 +115,7 @@ public class ItemVO implements Serializable {
 
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.id) && !TextUtils.isEmpty(this.iconUrl) && !TextUtils.isEmpty(this.iconName) && !TextUtils.isEmpty(this.title) && !TextUtils.isEmpty(this.linkUrl) && !TextUtils.isEmpty(this.disableToast);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.id) && !StringUtils.isEmpty(this.iconUrl) && !StringUtils.isEmpty(this.iconName) && !StringUtils.isEmpty(this.title) && !StringUtils.isEmpty(this.linkUrl) && !StringUtils.isEmpty(this.disableToast);
     }
 
     public String toString() {

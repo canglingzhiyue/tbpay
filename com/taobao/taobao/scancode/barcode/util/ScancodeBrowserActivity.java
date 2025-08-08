@@ -2,7 +2,7 @@ package com.taobao.taobao.scancode.barcode.util;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.widget.ImageView;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -94,7 +94,7 @@ public class ScancodeBrowserActivity extends ScancodeBaseBrowserActivity {
                 if (data.getQueryParameter("type") != null) {
                     String str = data.getQueryParameter("linkUrl") + "&token=" + data.getQueryParameter("token");
                     try {
-                        if (TextUtils.isEmpty(data.getQueryParameter("setActionBarHide"))) {
+                        if (StringUtils.isEmpty(data.getQueryParameter("setActionBarHide"))) {
                             return str;
                         }
                         return str + "&setActionBarHide=true";
@@ -126,7 +126,7 @@ public class ScancodeBrowserActivity extends ScancodeBaseBrowserActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         StringBuilder sb = new StringBuilder();

@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.videoplaycontrollerservice.impl.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.utils.lang3.ObjectUtils;
 import com.taobao.infoflow.taobao.subservice.biz.videoplaycontrollerservice.impl.strategy.protocol.PlayControlStrategy;
@@ -33,7 +33,7 @@ public class PlayControllerConfig implements Serializable {
 
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.playControlFocusAreaType);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.playControlFocusAreaType);
     }
 
     public boolean isPlayControlEnable() {

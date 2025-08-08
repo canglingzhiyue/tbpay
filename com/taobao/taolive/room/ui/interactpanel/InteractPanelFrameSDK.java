@@ -2,7 +2,7 @@ package com.taobao.taolive.room.ui.interactpanel;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -440,7 +440,7 @@ public class InteractPanelFrameSDK extends BaseFrame implements b, ppz {
         } else if ("pip".equals(str)) {
             this.mFrameContext.e().a("com.taobao.taolive.room.show_global_miniLive", null, G);
             ai.a(this.mFrameContext, "ZoomToMiniPlay", new String[0]);
-            if (this.mLiveDataModel == null || this.mLiveDataModel.mVideoInfo == null || TextUtils.isEmpty(this.mLiveDataModel.mVideoInfo.liveId)) {
+            if (this.mLiveDataModel == null || this.mLiveDataModel.mVideoInfo == null || StringUtils.isEmpty(this.mLiveDataModel.mVideoInfo.liveId)) {
                 return;
             }
             ae.b("taolive_timemove_back", this.mLiveDataModel.mVideoInfo.liveId);
@@ -466,9 +466,9 @@ public class InteractPanelFrameSDK extends BaseFrame implements b, ppz {
             }
             j.a(this.mContext, z);
             updatePcgGiftItemIconUrl(z);
-        } else if (TextUtils.equals("refund", str)) {
+        } else if (StringUtils.equals("refund", str)) {
             Nav.from(this.mContext).toUri(qne.a("refund_url", phg.d().b() == 1 ? "https://web.wapa.taobao.com/app/mtb/teenager-refund/home" : "https://web.m.taobao.com/app/mtb/teenager-refund/home"));
-        } else if (TextUtils.equals("share", str)) {
+        } else if (StringUtils.equals("share", str)) {
             ddw.a().a("com.taobao.taolive.room.more.share.click", null, G);
         } else if (KEY_PROJECT_SCREEN.equals(str)) {
             ddw.a().a(xkw.EVENT_PROJECT_SCREEN_SHOW, null, G);

@@ -1,6 +1,6 @@
 package com.taobao.tao.shop.rule.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.data.TBUrlRuleResponse;
@@ -20,12 +20,12 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (TBUrlRuleResponse) ipChange.ipc$dispatch("6d49beba", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         try {
             TBUrlRuleResponse tBUrlRuleResponse = (TBUrlRuleResponse) JSONObject.parseObject(str2, TBUrlRuleResponse.class);
-            if (!TextUtils.isEmpty(tBUrlRuleResponse.version)) {
+            if (!StringUtils.isEmpty(tBUrlRuleResponse.version)) {
                 if (d.a(str, tBUrlRuleResponse.version)) {
                     return tBUrlRuleResponse;
                 }

@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -561,7 +561,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (IHomeSubTabController) ipChange.ipc$dispatch("92a9bfc5", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.c.get(str);
         }
         return null;
@@ -569,12 +569,12 @@ public class c {
 
     public boolean a(String str, IHomeSubTabController iHomeSubTabController) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7e1a6073", new Object[]{this, str, iHomeSubTabController})).booleanValue() : (TextUtils.isEmpty(str) || iHomeSubTabController == null || this.c.put(str, iHomeSubTabController) == null) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7e1a6073", new Object[]{this, str, iHomeSubTabController})).booleanValue() : (StringUtils.isEmpty(str) || iHomeSubTabController == null || this.c.put(str, iHomeSubTabController) == null) ? false : true;
     }
 
     public boolean d(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && this.c.remove(str) != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && this.c.remove(str) != null;
     }
 
     public void j() {
@@ -947,7 +947,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("669e4a6a", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str) || (b2 = b(str)) == null) {
+        if (StringUtils.isEmpty(str) || (b2 = b(str)) == null) {
             return 0;
         }
         lap.a("TopTabBar", "getTabLayoutType", "获取指定的tab布局类型为：" + b2.getTabLayoutType());
@@ -1327,7 +1327,7 @@ public class c {
                     ipChange2.ipc$dispatch("c6974d2f", new Object[]{this, iHomeSubTabController});
                 } else if (!c.a(c.this)) {
                     c.d(c.this).c(iHomeSubTabController);
-                } else if (TextUtils.equals(iHomeSubTabController.getCurrentSubContainerType(), "subscribe")) {
+                } else if (StringUtils.equals(iHomeSubTabController.getCurrentSubContainerType(), "subscribe")) {
                 } else {
                     c.d(c.this).c(iHomeSubTabController);
                 }
@@ -1528,7 +1528,7 @@ public class c {
                 }
                 ldf.d("TopMultiTabManager", "getSelfTabInformation,self: " + iHomeSubTabController);
                 String a2 = c.a().a(iHomeSubTabController);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     ldf.d("TopMultiTabManager", "subType == null");
                     return null;
                 }
@@ -1543,7 +1543,7 @@ public class c {
                     return (View) ipChange2.ipc$dispatch("fef0fbf4", new Object[]{this, str});
                 }
                 lbo c = c.c(c.this);
-                if (c != null && (e = c.e()) != null && TextUtils.equals(str, sqg.b())) {
+                if (c != null && (e = c.e()) != null && StringUtils.equals(str, sqg.b())) {
                     return e.a();
                 }
                 return null;
@@ -1574,7 +1574,7 @@ public class c {
                 if (ipChange2 instanceof IpChange) {
                     return (List) ipChange2.ipc$dispatch("89cdf874", new Object[]{this, str});
                 }
-                if (!TextUtils.equals(str, "getSelectPopWebUrl")) {
+                if (!StringUtils.equals(str, "getSelectPopWebUrl")) {
                     return null;
                 }
                 return sqg.f();
@@ -1755,7 +1755,7 @@ public class c {
         lbo T = T();
         if (T == null) {
             lap.a("BottomTabBar", "setTabBarActionButtonState", "homePageManager == null");
-        } else if (TextUtils.equals(NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET, str)) {
+        } else if (StringUtils.equals(NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET, str)) {
             T.g().b();
         } else {
             T.g().c();
@@ -1933,7 +1933,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8114572f", new Object[]{this, new Integer(i), str, str2});
-        } else if (TextUtils.equals("home", str) || TextUtils.isEmpty(str)) {
+        } else if (StringUtils.equals("home", str) || StringUtils.isEmpty(str)) {
         } else {
             this.n.a(i);
             HashMap hashMap = new HashMap();
@@ -2053,7 +2053,7 @@ public class c {
         JSONObject a2 = a(c, str2);
         if (a2 != null) {
             try {
-                if (a2.getJSONObject("clickParam") != null && !TextUtils.isEmpty(a2.getJSONObject("clickParam").getString("page")) && a2.getJSONObject("clickParam").getInteger("eventId") != null) {
+                if (a2.getJSONObject("clickParam") != null && !StringUtils.isEmpty(a2.getJSONObject("clickParam").getString("page")) && a2.getJSONObject("clickParam").getInteger("eventId") != null) {
                     String string = a2.getJSONObject("clickParam").getString("page");
                     try {
                         int intValue = a2.getJSONObject("clickParam").getInteger("eventId").intValue();
@@ -2097,7 +2097,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("a5543672", new Object[]{this, jSONObject, str});
         }
-        if (jSONObject != null && !TextUtils.isEmpty(str)) {
+        if (jSONObject != null && !StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject3 = jSONObject.getJSONObject("subSection").getJSONObject("tabBar").getJSONObject("item");
                 if (jSONObject3 != null && jSONObject3.size() > 0) {
@@ -2130,7 +2130,7 @@ public class c {
         ksp.b("TopMultiTabManager", "utWrite");
         las.a((Object) b2.getCurActivity());
         String updatePageName = iHomeSubTabController.getUpdatePageName();
-        if (!TextUtils.isEmpty(updatePageName)) {
+        if (!StringUtils.isEmpty(updatePageName)) {
             ksp.b("TopMultiTabManager", "utWrite pageName : " + updatePageName);
             las.a(b2.getCurActivity(), updatePageName);
         } else {
@@ -2444,7 +2444,7 @@ public class c {
         }
         HashMap hashMap = new HashMap();
         String a2 = a(z);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("selectTab", a2);
             TLog.loge("TopMultiTabManager", "获取当前的上行参数，currentTab：" + a2);
         }

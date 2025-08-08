@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.C1238p;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -216,7 +216,7 @@ public class MessageService {
         }
         SQLiteDatabase sQLiteDatabase = null;
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 SQLiteDatabase writableDatabase = this.sqliteOpenHelper.getWritableDatabase();
                 if (writableDatabase == null) {
                     if (writableDatabase == null) {
@@ -225,7 +225,7 @@ public class MessageService {
                     writableDatabase.close();
                     return;
                 }
-                if (TextUtils.equals(str2, "1")) {
+                if (StringUtils.equals(str2, "1")) {
                     writableDatabase.execSQL("UPDATE accs_message set state = ? where id = ? and state = ?", new Object[]{str2, str, "0"});
                 } else {
                     writableDatabase.execSQL("UPDATE accs_message set state = ? where id = ?", new Object[]{str2, str});
@@ -301,14 +301,14 @@ public class MessageService {
         ALog.d(TAG, "add sqlite3--->[" + str + riy.ARRAY_END_STR, new Object[0]);
         try {
             String str5 = "";
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 hashCode = -1;
                 str4 = str5;
             } else {
                 hashCode = str2.hashCode();
                 str4 = str2;
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 str5 = str3;
             }
             if (!messageStores.containsKey(str)) {

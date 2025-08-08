@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -39,11 +39,11 @@ public class b {
                 return;
             }
             String action = intent.getAction();
-            if (TextUtils.equals(action, b.ACTION_VIDEO_COMPLETION)) {
+            if (StringUtils.equals(action, b.ACTION_VIDEO_COMPLETION)) {
                 b.a(b.this).c(intent.getStringExtra("video"));
                 b.a(b.this).a(intent.getStringExtra(b.EXTRA_VIDEO_THUMBNAIL));
                 b.a(b.this).a(intent.getIntExtra("duration", 0));
-            } else if (TextUtils.equals(action, b.ACTION_UPLOAD_SUCCESS)) {
+            } else if (StringUtils.equals(action, b.ACTION_UPLOAD_SUCCESS)) {
                 b.a(b.this).d(intent.getStringExtra("videoUrl"));
                 b.a(b.this).b(intent.getStringExtra("coverUrl"));
             }

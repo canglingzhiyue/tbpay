@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.statisticsv2.model.StWindow;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,7 +27,7 @@ public class drf {
         }
         if (jSONObject != null && !jSONObject.isEmpty()) {
             String string = jSONObject.getString("actionType");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return drpVar;
             }
             drpVar.f26928a = jSONObject.getLongValue("seqId");

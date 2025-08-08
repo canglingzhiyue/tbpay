@@ -1,7 +1,7 @@
 package anet.channel.security;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HMacUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -81,7 +81,7 @@ public class NoSecurityGuardImpl implements ISecurity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5a1d97e", new Object[]{this, context, str, str2, str3});
         }
-        if (TextUtils.isEmpty(this.appSecret) || !ISecurity.SIGN_ALGORITHM_HMAC_SHA1.equalsIgnoreCase(str)) {
+        if (StringUtils.isEmpty(this.appSecret) || !ISecurity.SIGN_ALGORITHM_HMAC_SHA1.equalsIgnoreCase(str)) {
             return null;
         }
         return HMacUtil.hmacSha1Hex(this.appSecret.getBytes(), str3.getBytes());

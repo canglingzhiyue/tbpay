@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.protocol.a;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.protocol.b;
@@ -83,7 +83,7 @@ public class lwz {
         if (ipChange instanceof IpChange) {
             return (lxg) ipChange.ipc$dispatch("7c723519", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.e.get(str);
         }
         return null;
@@ -94,7 +94,7 @@ public class lwz {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("646e43bf", new Object[]{this, lwcVar, bVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(lwcVar.f30931a) || bVar == null || this.f.containsKey(lwcVar.f30931a)) {
+        if (StringUtils.isEmpty(lwcVar.f30931a) || bVar == null || this.f.containsKey(lwcVar.f30931a)) {
             return false;
         }
         this.f.put(lwcVar.f30931a, bVar);
@@ -106,7 +106,7 @@ public class lwz {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("ae223e1e", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f.get(str);
         }
         return null;
@@ -117,7 +117,7 @@ public class lwz {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("66aefe5e", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.g.get(str);
         }
         return null;
@@ -177,7 +177,7 @@ public class lwz {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b6e8395a", new Object[]{this, lwcVar, lxgVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(lwcVar.f30931a) || lxgVar == null) {
+        if (StringUtils.isEmpty(lwcVar.f30931a) || lxgVar == null) {
             return false;
         }
         if (this.e.containsKey(lwcVar.f30931a)) {

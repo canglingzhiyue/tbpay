@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.aura.utils;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
@@ -210,7 +210,7 @@ public class c {
             return false;
         }
         for (String str2 : list) {
-            if (TextUtils.equals(str, str2)) {
+            if (StringUtils.equals(str, str2)) {
                 return true;
             }
         }
@@ -226,7 +226,7 @@ public class c {
             com.taobao.android.detail.datasdk.model.datamodel.node.b bVar = enhVar.c.f27459a.f10055a;
             FeatureNode f = eqb.f(bVar);
             ItemNode c = eqb.c(bVar);
-            if (f != null && f.oneProductMMDegrade && c != null && !TextUtils.isEmpty(c.itemId)) {
+            if (f != null && f.oneProductMMDegrade && c != null && !StringUtils.isEmpty(c.itemId)) {
                 return true;
             }
         }

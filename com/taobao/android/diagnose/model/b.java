@@ -143,7 +143,7 @@ public class b {
             java.lang.String r5 = (java.lang.String) r5
             return r5
         L1d:
-            boolean r0 = android.text.TextUtils.isEmpty(r5)
+            boolean r0 = android.text.StringUtils.isEmpty(r5)
             if (r0 == 0) goto L26
             java.lang.String r5 = ""
             return r5

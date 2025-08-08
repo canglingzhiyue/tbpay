@@ -1,6 +1,6 @@
 package org.android.spdy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -148,7 +148,7 @@ public class SoInstallMgrSdk {
                             return;
                         }
                         SoInstallMgrSdk.access$002(System.currentTimeMillis() - SoInstallMgrSdk.fetchLocalSOStartTime);
-                        if (!TextUtils.isEmpty(ihwVar.b())) {
+                        if (!StringUtils.isEmpty(ihwVar.b())) {
                             SoInstallMgrSdk.access$102(ihwVar.b());
                             boolean pluginLoadQuicSo = SpdyAgent.pluginLoadQuicSo(SoInstallMgrSdk.access$100());
                             SoInstallMgrSdk.loadQuicSucc = pluginLoadQuicSo;
@@ -194,7 +194,7 @@ public class SoInstallMgrSdk {
                             return;
                         }
                         SoInstallMgrSdk.access$302(System.currentTimeMillis() - SoInstallMgrSdk.fetchRemoteSOStartTime);
-                        if (TextUtils.isEmpty(ihwVar.b())) {
+                        if (StringUtils.isEmpty(ihwVar.b())) {
                             SoInstallMgrSdk.loadZstdStat = ihwVar.f().getErrorCode();
                             spduLog.Tloge(SoInstallMgrSdk.TAG, null, "[RemoteZstd] path null", "errCode", Integer.valueOf(SoInstallMgrSdk.loadZstdStat));
                             return;

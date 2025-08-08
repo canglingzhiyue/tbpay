@@ -1,7 +1,7 @@
 package android.taobao.windvane.cache;
 
 import android.taobao.windvane.util.MimeTypeEnum;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.List;
 import java.util.Map;
 import tb.kge;
@@ -34,7 +34,7 @@ public class f {
         this.f1554a = map;
         if (map != null && map.containsKey("Content-Type") && (list = map.get("Content-Type")) != null && list.size() > 0) {
             String str2 = list.get(0);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.g = str2.split(";")[0];
             }
         }

@@ -2,7 +2,7 @@ package com.taobao.search.common.jsbridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import com.taobao.search.mmd.util.f;
@@ -28,7 +28,7 @@ public class SearchAddBagBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (tfu.ADD_CART.equals(str) && !TextUtils.isEmpty(str2)) {
+        if (tfu.ADD_CART.equals(str) && !StringUtils.isEmpty(str2)) {
             q.i(LOG_TAG, "params str is ok");
             try {
                 jSONObject = new JSONObject(str2);

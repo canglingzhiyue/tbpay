@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.log.behavior;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.mobile.verifyidentity.engine.MicroModuleContext;
 import com.alipay.mobile.verifyidentity.info.AppInfo;
@@ -210,7 +210,7 @@ public class VerifyLogger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("da1a9722", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             startLogger();
             VerifyLogTask verifyLogTask = new VerifyLogTask(SENTRY_TYPE, "", "", "", "", null);
@@ -279,7 +279,7 @@ public class VerifyLogger {
                                 if (verifyLogTask.type.equalsIgnoreCase("event")) {
                                     VerifyLogger.access$400(VerifyLogger.this, VerifyLogger.access$300(VerifyLogger.this, verifyLogTask.type, verifyLogTask.verifyId, verifyLogTask.userCaseID, "-", "-", verifyLogTask.param3, verifyLogTask.extParams));
                                     String reportFlag = ReportHelper.getReportFlag(ReportHelper.maxLogNum);
-                                    if (!TextUtils.isEmpty(reportFlag) && (parseInt = Integer.parseInt(reportFlag)) > 0) {
+                                    if (!StringUtils.isEmpty(reportFlag) && (parseInt = Integer.parseInt(reportFlag)) > 0) {
                                         VerifyLogger.access$502(VerifyLogger.this, parseInt);
                                     }
                                     if (VerifyLogger.access$600(VerifyLogger.this).size() >= VerifyLogger.access$500(VerifyLogger.this)) {
@@ -320,7 +320,7 @@ public class VerifyLogger {
                                             }
                                         }
                                     }
-                                } else if (verifyLogTask.type.equalsIgnoreCase(VerifyLogger.SENTRY_TYPE) && !TextUtils.isEmpty(verifyLogTask.sentryLog)) {
+                                } else if (verifyLogTask.type.equalsIgnoreCase(VerifyLogger.SENTRY_TYPE) && !StringUtils.isEmpty(verifyLogTask.sentryLog)) {
                                     LogReportHelper.getInstance().reportSentryLog(VerifyLogger.access$1600(VerifyLogger.this, verifyLogTask.sentryLog));
                                 }
                             }
@@ -337,7 +337,7 @@ public class VerifyLogger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e861b407", new Object[]{this, str});
-        } else if (str == null || TextUtils.isEmpty(str)) {
+        } else if (str == null || StringUtils.isEmpty(str)) {
         } else {
             if (this.f.length() > 0) {
                 this.f.setLength(0);
@@ -361,7 +361,7 @@ public class VerifyLogger {
 
     private static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.isEmpty(str) ? "-" : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.isEmpty(str) ? "-" : str;
     }
 
     private synchronized StringBuffer b(String str) {
@@ -437,7 +437,7 @@ public class VerifyLogger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             return false;
         } else {
             this.c.add(str2);
@@ -504,7 +504,7 @@ public class VerifyLogger {
         sb.append(";");
         sb.append(f(EnvInfoUtil.getBirdNestInfo()));
         sb.append(";");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "NULL_VID_TOBE_REPLACED";
         }
         sb.append(str);
@@ -555,11 +555,11 @@ public class VerifyLogger {
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
             String str = (String) arrayList.get(i2);
             String str2 = map.get(str);
-            if (i2 == arrayList.size() - 1 && !TextUtils.isEmpty(str2)) {
+            if (i2 == arrayList.size() - 1 && !StringUtils.isEmpty(str2)) {
                 sb2.append(str);
                 sb2.append("=");
                 sb2.append(handleValue(str2));
-            } else if (!TextUtils.isEmpty(str2)) {
+            } else if (!StringUtils.isEmpty(str2)) {
                 sb2.append(str);
                 sb2.append("=");
                 sb2.append(handleValue(str2));
@@ -581,7 +581,7 @@ public class VerifyLogger {
 
     public static String handleValue(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1c3b55e6", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.replaceAll("&", "^") : "-";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1c3b55e6", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.replaceAll("&", "^") : "-";
     }
 
     private synchronized void g(String str) {
@@ -590,7 +590,7 @@ public class VerifyLogger {
             ipChange.ipc$dispatch("b0cfe3b8", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.d.add(str);
         }
     }
@@ -646,7 +646,7 @@ public class VerifyLogger {
             VerifyLogCat.w(f5878a, "fail to build encodedExceptionMsg：", th);
             eventBehavior(str, "", "", str2, null);
         }
-        if (SystemClock.elapsedRealtime() - j < 10000 && TextUtils.equals(k, bytes2Hex)) {
+        if (SystemClock.elapsedRealtime() - j < 10000 && StringUtils.equals(k, bytes2Hex)) {
             VerifyLogCat.i(f5878a, "短时间内相同ExceptionMsg，忽略");
             return;
         }

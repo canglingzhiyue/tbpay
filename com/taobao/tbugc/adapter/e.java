@@ -1,6 +1,6 @@
 package com.taobao.tbugc.adapter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.TBS;
 import com.ut.mini.UTAnalytics;
@@ -68,7 +68,7 @@ public class e implements jmw {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f22284a)) {
+        if (StringUtils.isEmpty(this.f22284a)) {
             this.f22284a = l.getInstance().getCurrentPageName();
         }
         return this.f22284a;

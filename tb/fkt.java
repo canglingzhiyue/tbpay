@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.ucc.UccResultCode;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -126,12 +126,12 @@ public class fkt {
             this.g = b("newdetail_specifyLiveId", "");
         }
         String b = b("newdetail_openImmediately_channel", "a2141.1.guessitemtab");
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             Collections.addAll(this.i, b.split(","));
         }
         this.e = fjs.a(d("new_detail_nav_margin_right_ignore_more", "12"));
         String d = d("stable_pass_params_white_list", "entryBuckets,ndBuckets,newDetailChannel,newType,mtype,appVersion,ndOpenType");
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             Collections.addAll(this.z, d.split(","));
         }
         this.E = c("enable_newdetail_realTimeRequest", "true");
@@ -415,7 +415,7 @@ public class fkt {
             return (List) ipChange.ipc$dispatch("1914f631", new Object[0]);
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(C)) {
+        if (!StringUtils.isEmpty(C)) {
             Collections.addAll(arrayList, C.split(","));
         }
         return arrayList;
@@ -498,7 +498,7 @@ public class fkt {
             return (String) ipChange.ipc$dispatch("351da0c9", new Object[0]);
         }
         String d = d("newdetail_slow_anim_weex_bg_time", "1800");
-        return TextUtils.isEmpty(d) ? "1800" : d;
+        return StringUtils.isEmpty(d) ? "1800" : d;
     }
 
     public static int aC() {
@@ -767,7 +767,7 @@ public class fkt {
         }
         ArrayList<String> arrayList = new ArrayList<>();
         String d = d("enable_newdetail_prefetchZcacheList", "newdetail-super-pref,newdetail-newguide");
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             Collections.addAll(arrayList, d.split(","));
         }
         return arrayList;

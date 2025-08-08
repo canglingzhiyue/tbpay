@@ -1,7 +1,7 @@
 package com.taobao.android.editionswitcher;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import tb.kge;
@@ -26,7 +26,7 @@ public class k {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str2) || (application = Globals.getApplication()) == null) {
+        if (StringUtils.isEmpty(str2) || (application = Globals.getApplication()) == null) {
             return null;
         }
         return application.getSharedPreferences(str, 0).getString(str2, str3);

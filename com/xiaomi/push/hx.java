@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.service.XMPushService;
 import java.io.File;
 
@@ -41,7 +41,7 @@ public class hx implements XMPushService.n {
     }
 
     private boolean a(ib ibVar) {
-        if (bg.b(this.f493a) && ibVar != null && !TextUtils.isEmpty(a(this.f493a.getPackageName())) && new File(this.f493a.getFilesDir(), "tiny_data.data").exists() && !f24537a) {
+        if (bg.b(this.f493a) && ibVar != null && !StringUtils.isEmpty(a(this.f493a.getPackageName())) && new File(this.f493a.getFilesDir(), "tiny_data.data").exists() && !f24537a) {
             return !com.xiaomi.push.service.az.a(this.f493a).a(ih.ScreenOnOrChargingTinyDataUploadSwitch.a(), false) || i.m2027a(this.f493a) || i.m2030b(this.f493a);
         }
         return false;

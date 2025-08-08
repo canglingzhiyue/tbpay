@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +82,7 @@ public class f extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         } else if (i2 == 101) {
             this.j.setVisibility(0);
             this.i.setVisibility(8);
-            if (!TextUtils.isEmpty(fVar.d)) {
+            if (!StringUtils.isEmpty(fVar.d)) {
                 this.j.setText(fVar.d);
             }
         }

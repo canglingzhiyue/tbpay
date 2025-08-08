@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.MtopBusiness;
 import java.util.HashMap;
@@ -35,11 +35,11 @@ public class rld {
         build.mo1312setConnectionTimeoutMilliSecond(i);
         build.mo1326setSocketTimeoutMilliSecond(i);
         String a3 = a(map, "__customDomain__");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             build.mo1313setCustomDomain(a3);
         }
         String a4 = a(map, "__requestMethod__");
-        if (!TextUtils.isEmpty(a4) && (a2 = a(a4)) != null) {
+        if (!StringUtils.isEmpty(a4) && (a2 = a(a4)) != null) {
             build.mo1305reqMethod(a2);
         }
         if (i2 == 1) {

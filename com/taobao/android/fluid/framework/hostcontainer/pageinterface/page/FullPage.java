@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
@@ -463,7 +463,7 @@ public class FullPage extends f implements ogb {
             return;
         }
         final String a2 = oeb.a("ShortVideo.videoBackUrl", DEFAULT_URL);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         ((MultiPageContainerActivity) this.mContext).a(new Runnable() { // from class: com.taobao.android.fluid.framework.hostcontainer.pageinterface.page.FullPage.1
@@ -489,7 +489,7 @@ public class FullPage extends f implements ogb {
         Uri uri = this.mUri;
         if (uri != null) {
             final String queryParameter = uri.getQueryParameter("backUrl");
-            if (enableBackToUrl() && !TextUtils.isEmpty(queryParameter)) {
+            if (enableBackToUrl() && !StringUtils.isEmpty(queryParameter)) {
                 Context context = this.mContext;
                 if (context instanceof MultiPageContainerActivity) {
                     ((MultiPageContainerActivity) context).a(new Runnable() { // from class: com.taobao.android.fluid.framework.hostcontainer.pageinterface.page.FullPage.2

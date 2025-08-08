@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.search;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.GoodListSearchResponse;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.c;
@@ -51,7 +51,7 @@ public class d<T extends hjb> extends com.taobao.android.live.plugin.atype.flexa
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7acce0c3", new Object[]{this, cVar, str, str2, new Integer(i), new Integer(i2)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.c = true;
             this.b.a(cVar, str, str2, i, i2);
@@ -63,7 +63,7 @@ public class d<T extends hjb> extends com.taobao.android.live.plugin.atype.flexa
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5bd91b44", new Object[]{this, cVar, str, str2, new Integer(i), new Integer(i2)});
-        } else if (TextUtils.isEmpty(str) || this.c) {
+        } else if (StringUtils.isEmpty(str) || this.c) {
         } else {
             this.c = true;
             this.b.a(cVar, str, str2, i, i2);

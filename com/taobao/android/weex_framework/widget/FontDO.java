@@ -2,7 +2,7 @@ package com.taobao.android.weex_framework.widget;
 
 import android.graphics.Typeface;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -120,9 +120,9 @@ public class FontDO {
                         String[] split = trim.split(",");
                         if (split != null && split.length == 2) {
                             String str2 = split[0];
-                            if (!TextUtils.isEmpty(str2) && str2.endsWith("base64")) {
+                            if (!StringUtils.isEmpty(str2) && str2.endsWith("base64")) {
                                 String str3 = split[1];
-                                if (!TextUtils.isEmpty(str3)) {
+                                if (!StringUtils.isEmpty(str3)) {
                                     String b = e.b(str3);
                                     File file = new File(m.b().getCacheDir(), com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_font_family);
                                     if (!file.exists()) {

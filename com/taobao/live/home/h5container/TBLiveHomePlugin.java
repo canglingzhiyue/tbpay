@@ -4,7 +4,7 @@ import android.content.Context;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DinamicXEngine;
@@ -130,7 +130,7 @@ public class TBLiveHomePlugin extends e {
         }
         JSONArray jSONArray = new JSONArray();
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i])) {
+            if (!StringUtils.isEmpty(split[i])) {
                 jSONArray.add(split[i]);
             }
         }

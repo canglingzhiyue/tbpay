@@ -182,7 +182,7 @@ public class OptionApi extends BaseJsExecutor {
             r1.<init>(r11)     // Catch: java.lang.Exception -> L40
             java.lang.String r11 = "verifyToken"
             java.lang.String r11 = r1.optString(r11)     // Catch: java.lang.Exception -> L40
-            boolean r1 = android.text.TextUtils.isEmpty(r11)     // Catch: java.lang.Exception -> L3e
+            boolean r1 = android.text.StringUtils.isEmpty(r11)     // Catch: java.lang.Exception -> L3e
             if (r1 != 0) goto L48
             r10.setVerifyToken(r11)     // Catch: java.lang.Exception -> L3e
             goto L48

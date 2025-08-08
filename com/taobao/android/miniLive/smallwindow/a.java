@@ -1,7 +1,7 @@
 package com.taobao.android.miniLive.smallwindow;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aw;
@@ -156,7 +156,7 @@ public class a implements d.a, pnn {
             } else {
                 str = videoInfo.isOfficialType() ? videoInfo.officialLiveInfo.officialLiveId : videoInfo.liveId;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             StringBuilder sb = new StringBuilder(hub.a(str));

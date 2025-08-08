@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.ext;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.squareup.wire.Message;
@@ -39,7 +39,7 @@ public class WireProtobufCodecImpl implements ProtobufCodec {
             sb.append("deserialize fail. type is ");
             sb.append(type.toString());
             sb.append(", ");
-            if (!TextUtils.isEmpty(exportBase64RawResp)) {
+            if (!StringUtils.isEmpty(exportBase64RawResp)) {
                 str = "pb data:[" + exportBase64RawResp + riy.ARRAY_END_STR;
             } else {
                 str = "";

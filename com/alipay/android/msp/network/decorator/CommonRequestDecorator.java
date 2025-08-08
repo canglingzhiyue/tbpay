@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.decorator;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -61,7 +61,7 @@ public class CommonRequestDecorator extends BaseDecorator {
             parseObject.put(MspGlobalDefine.UAC, (Object) MspConfig.getInstance().getUserAgentC());
         }
         parseObject.put("gzip", (Object) Boolean.valueOf(this.c.isSupportGzip()));
-        if (!TextUtils.isEmpty(this.c.getSessionId())) {
+        if (!StringUtils.isEmpty(this.c.getSessionId())) {
             parseObject.put(MspGlobalDefine.SESSION, (Object) this.c.getSessionId());
         }
         parseObject.put("tid", (Object) TidStorage.getInstance().getTid());

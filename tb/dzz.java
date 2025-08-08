@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -120,7 +120,7 @@ public class dzz extends eac<egr> implements View.OnTouchListener, j<efx> {
         this.g.setContentDescription(egrVar.c);
         this.h.setText(egrVar.c);
         this.h.setContentDescription(egrVar.c);
-        if (egrVar.component != null && egrVar.component.mapping != null && !TextUtils.isEmpty(egrVar.component.mapping.getString("wangPromptMsg"))) {
+        if (egrVar.component != null && egrVar.component.mapping != null && !StringUtils.isEmpty(egrVar.component.mapping.getString("wangPromptMsg"))) {
             this.i = egrVar.component.mapping.getString("wangPromptMsg");
             f.a(this.f9568a).a(eno.a(efx.class), this);
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: tb.dzz.1

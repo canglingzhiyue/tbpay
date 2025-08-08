@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.g;
 import com.taobao.android.searchbaseframe.util.j;
@@ -19,7 +19,7 @@ public class iuc {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c22", new Object[]{str})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.0f;
         }
         try {
@@ -38,7 +38,7 @@ public class iuc {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         try {
@@ -57,7 +57,7 @@ public class iuc {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123a1be", new Object[]{str, new Float(f)})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return f;
         }
         if (str.endsWith("wx") || str.endsWith("dp")) {
@@ -74,7 +74,7 @@ public class iuc {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("88097ea7", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             k.a("WeexSizeUtil", "wxSize字符串为空");
             return 0;
         }
@@ -96,7 +96,7 @@ public class iuc {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d23b17e8", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             k.a("WeexSizeUtil", "remSize字符串为空");
             return 0;
         }
@@ -113,7 +113,7 @@ public class iuc {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1c6cb129", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             k.a("WeexSizeUtil", "remSize字符串为空");
             return 0;
         }

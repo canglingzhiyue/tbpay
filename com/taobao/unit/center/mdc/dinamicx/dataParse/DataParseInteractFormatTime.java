@@ -1,6 +1,6 @@
 package com.taobao.unit.center.mdc.dinamicx.dataParse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.message.launcher.server_time.AmpTimeStampManager;
@@ -50,7 +50,7 @@ public class DataParseInteractFormatTime implements fut {
                 TLog.loge("DataParserMpFormatTime", th.toString());
             }
             if (j > 0) {
-                return formatTime(j, TextUtils.equals(str, "newFormatRule"));
+                return formatTime(j, StringUtils.equals(str, "newFormatRule"));
             }
         }
         return null;

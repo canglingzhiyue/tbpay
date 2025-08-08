@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
 import java.util.List;
@@ -31,7 +31,7 @@ public class bdt extends bdr {
         }
         IDMComponent iDMComponent = null;
         for (IDMComponent iDMComponent2 : list) {
-            if (TextUtils.equals("groupExtendBody", iDMComponent2.getTag())) {
+            if (StringUtils.equals("groupExtendBody", iDMComponent2.getTag())) {
                 iDMComponent = iDMComponent2;
             }
         }

@@ -2,7 +2,7 @@ package com.taobao.tao.flexbox.layoutmanager.player;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -209,14 +209,14 @@ public class a extends IPlayBack implements TaoLiveVideoView.a, TaoLiveVideoView
         aVar.e(true);
         aVar.f(viewParams.D);
         aVar.c(viewParams.f);
-        if (!TextUtils.isEmpty(viewParams.E)) {
+        if (!StringUtils.isEmpty(viewParams.E)) {
             try {
                 aVar.a(new JSONObject(viewParams.E));
             } catch (Exception e) {
                 ogg.a("LivePlayBack", e + "");
             }
         }
-        if (!TextUtils.isEmpty(viewParams.r)) {
+        if (!StringUtils.isEmpty(viewParams.r)) {
             if ("center_crop".equals(viewParams.r)) {
                 aVar.a(DWAspectRatio.DW_CENTER_CROP);
             } else if ("fit_center".equals(viewParams.r)) {

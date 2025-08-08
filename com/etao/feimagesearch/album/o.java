@@ -4,7 +4,7 @@ import android.content.ContentUris;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.ui.coordinatorcard.FactoryType;
 import com.taobao.tao.shop.common.ShopConstants;
@@ -108,7 +108,7 @@ public class o {
 
     public String n() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("84c15f4b", new Object[]{this}) : TextUtils.isEmpty(this.b) ? FactoryType.TYPE_INVALID : !this.k ? "unknown" : this.b.contains("com.ss.android.ugc.aweme") ? "douyin" : this.b.contains("com.xunmeng.pinduoduo") ? "pinduoduo" : this.b.contains("com.xingin.xhs") ? "xiaohongshu" : this.b.contains("com.taobao.taobao") ? "taobao" : this.b.contains("com.smile.gifmaker") ? "kuaishou" : this.b.contains("com.jingdong.app.mall") ? "jingdong" : this.b.contains("com.shizhuang.duapp") ? "dewu" : this.b.contains("com.achievo.vipshop") ? "weipinhui" : this.b.contains("com.dangdang.buy2") ? "dangdang" : this.b.contains("com.taobao.idlefish") ? "xianyu" : this.b.contains("com.") ? "other" : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("84c15f4b", new Object[]{this}) : StringUtils.isEmpty(this.b) ? FactoryType.TYPE_INVALID : !this.k ? "unknown" : this.b.contains("com.ss.android.ugc.aweme") ? "douyin" : this.b.contains("com.xunmeng.pinduoduo") ? "pinduoduo" : this.b.contains("com.xingin.xhs") ? "xiaohongshu" : this.b.contains("com.taobao.taobao") ? "taobao" : this.b.contains("com.smile.gifmaker") ? "kuaishou" : this.b.contains("com.jingdong.app.mall") ? "jingdong" : this.b.contains("com.shizhuang.duapp") ? "dewu" : this.b.contains("com.achievo.vipshop") ? "weipinhui" : this.b.contains("com.dangdang.buy2") ? "dangdang" : this.b.contains("com.taobao.idlefish") ? "xianyu" : this.b.contains("com.") ? "other" : "";
     }
 
     public Uri j() {

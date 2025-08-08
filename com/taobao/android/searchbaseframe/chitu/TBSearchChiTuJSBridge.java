@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.chitu.lib.RequestInfoBean;
@@ -157,9 +157,9 @@ public class TBSearchChiTuJSBridge extends android.taobao.windvane.jsbridge.e {
                 if (jSONArray != null) {
                     for (int i = 0; i < jSONArray.length(); i++) {
                         String optString = jSONArray.optString(i, "");
-                        if (!TextUtils.isEmpty(optString)) {
+                        if (!StringUtils.isEmpty(optString)) {
                             String string = a2.getString(optString, "");
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 JSONObject jSONObject = null;
                                 try {
                                     jSONObject = new JSONObject(string);

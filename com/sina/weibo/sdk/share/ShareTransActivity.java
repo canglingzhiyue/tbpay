@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +62,7 @@ public class ShareTransActivity extends BaseActivity {
             intent.putExtra("_weibo_flag", 538116905);
             intent.putExtra("_weibo_sign", com.sina.weibo.sdk.b.d.f(com.sina.weibo.sdk.b.e.b(this, getPackageName())));
             String stringExtra = this.t.getStringExtra("start_web_activity");
-            if (!TextUtils.isEmpty(stringExtra) && "com.sina.weibo.sdk.web.WebActivity".equals(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra) && "com.sina.weibo.sdk.web.WebActivity".equals(stringExtra)) {
                 intent.setClassName(this, stringExtra);
                 startActivityForResult(intent, 10001);
             } else if (!com.sina.weibo.sdk.a.a(this)) {
@@ -80,8 +80,8 @@ public class ShareTransActivity extends BaseActivity {
     }
 
     private boolean a(Intent intent) {
-        if (!TextUtils.isEmpty(this.w) && intent != null && intent.getExtras().containsKey("share_back_flag")) {
-            return TextUtils.equals(this.w, intent.getStringExtra("share_back_flag"));
+        if (!StringUtils.isEmpty(this.w) && intent != null && intent.getExtras().containsKey("share_back_flag")) {
+            return StringUtils.equals(this.w, intent.getStringExtra("share_back_flag"));
         }
         return false;
     }
@@ -237,7 +237,7 @@ public class ShareTransActivity extends BaseActivity {
                         ShareTransActivity.this.c("Trans result is null.");
                     } else if (cVar.z) {
                         ShareTransActivity.this.a(cVar.A);
-                    } else if (TextUtils.isEmpty(cVar.errorMessage)) {
+                    } else if (StringUtils.isEmpty(cVar.errorMessage)) {
                         ShareTransActivity.this.c("Trans resource fail.");
                     } else {
                         ShareTransActivity.this.c(cVar.errorMessage);

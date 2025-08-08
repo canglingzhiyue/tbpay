@@ -2,7 +2,7 @@ package com.taobao.share.ui.engine.friend;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.nyy;
@@ -74,7 +74,7 @@ public class a {
         }
         r rVar = new r();
         rVar.a(CONTACTS_INFO_KEY, str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             rVar.a(CONTACTS_INFO_STATUS_KEY, "exception");
         } else {
             rVar.a(CONTACTS_INFO_STATUS_KEY, CONTACTS_INFO_NOT_EMPTY_STATUS);

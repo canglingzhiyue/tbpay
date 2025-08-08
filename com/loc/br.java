@@ -2,7 +2,7 @@ package com.loc;
 
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
 import com.loc.bo;
 import com.loc.bt;
@@ -111,7 +111,7 @@ public final class br {
             StringBuilder sb4;
             try {
                 String str = this.f + "#";
-                if (!TextUtils.isEmpty(this.e)) {
+                if (!StringUtils.isEmpty(this.e)) {
                     sb = new StringBuilder();
                     sb.append(str);
                     sb.append(this.e);
@@ -122,7 +122,7 @@ public final class br {
                     sb.append("-#");
                 }
                 String str2 = (sb.toString() + this.h + "#") + this.j + "#";
-                if (!TextUtils.isEmpty(this.b)) {
+                if (!StringUtils.isEmpty(this.b)) {
                     sb2 = new StringBuilder();
                     sb2.append(str2);
                     sb2.append(this.b);
@@ -218,12 +218,12 @@ public final class br {
         protected final String b() {
             String str;
             String str2;
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 str = this.c + "#";
             } else {
                 str = "-#";
             }
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 str2 = str + this.d + "#";
             } else {
                 str2 = str + "-#";
@@ -261,7 +261,7 @@ public final class br {
         }
 
         public final e a(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return this.b;
             }
             for (int i = 0; i < this.f7700a.size(); i++) {
@@ -298,7 +298,7 @@ public final class br {
 
         public final void a(String str) {
             String[] split;
-            if (TextUtils.isEmpty(this.f7701a) || !str.contains(":") || (split = str.split(":")) == null || split.length <= 0) {
+            if (StringUtils.isEmpty(this.f7701a) || !str.contains(":") || (split = str.split(":")) == null || split.length <= 0) {
                 this.f7701a = str;
             } else {
                 this.f7701a = split[0];
@@ -312,7 +312,7 @@ public final class br {
         @Override // javax.net.ssl.HostnameVerifier
         public final boolean verify(String str, SSLSession sSLSession) {
             HostnameVerifier defaultHostnameVerifier = HttpsURLConnection.getDefaultHostnameVerifier();
-            return !TextUtils.isEmpty(this.f7701a) ? this.f7701a.equals(str) : !TextUtils.isEmpty(this.b) ? defaultHostnameVerifier.verify(this.b, sSLSession) : defaultHostnameVerifier.verify(str, sSLSession);
+            return !StringUtils.isEmpty(this.f7701a) ? this.f7701a.equals(str) : !StringUtils.isEmpty(this.b) ? defaultHostnameVerifier.verify(this.b, sSLSession) : defaultHostnameVerifier.verify(str, sSLSession);
         }
     }
 
@@ -347,7 +347,7 @@ public final class br {
                 }
                 boolean a2 = br.this.a(this.c.e);
                 if (a2) {
-                    if (br.this.p && !TextUtils.isEmpty(br.this.n) && this.c.b.b()) {
+                    if (br.this.p && !StringUtils.isEmpty(br.this.n) && this.c.b.b()) {
                         m.d();
                     }
                     if (this.c.b.c()) {
@@ -373,7 +373,7 @@ public final class br {
             this.g = url;
             this.c.d = url.getPath();
             this.c.e = url.getHost();
-            if (!TextUtils.isEmpty(br.this.n) && btVar.u().b()) {
+            if (!StringUtils.isEmpty(br.this.n) && btVar.u().b()) {
                 c cVar = this.c;
                 cVar.c = cVar.e.replace(riy.ARRAY_START_STR, "").replace(riy.ARRAY_END_STR, "");
                 this.c.e = br.this.n;
@@ -544,7 +544,7 @@ public final class br {
             }
         }
         String str3 = "";
-        if (!this.m.contains("/v3/iasdkauth") && !TextUtils.isEmpty(this.j) && m.d(this.j)) {
+        if (!this.m.contains("/v3/iasdkauth") && !StringUtils.isEmpty(this.j) && m.d(this.j)) {
             this.o = true;
             m.g f2 = m.f(this.j);
             httpURLConnection.addRequestProperty("lct", String.valueOf(f2.f7833a));
@@ -555,14 +555,14 @@ public final class br {
         httpURLConnection.addRequestProperty("csid", this.g);
         if (a(this.u.c.e)) {
             f fVar = this.u;
-            if (!TextUtils.isEmpty(fVar.c.c)) {
+            if (!StringUtils.isEmpty(fVar.c.c)) {
                 str3 = p.b(bk.a(fVar.c.c.getBytes(), "YXBtX25ldHdvcmtf".getBytes()));
                 StringBuilder sb = new StringBuilder("上报本次请求serverIp:");
                 sb.append(fVar.c.c);
                 sb.append("加密后：");
                 sb.append(str3);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 httpURLConnection.addRequestProperty("sip", str3);
             }
             if (m.j && (g = m.g()) != null) {
@@ -581,7 +581,7 @@ public final class br {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean a(String str) {
         if (!this.l) {
-            return (!TextUtils.isEmpty(this.n) && (this.n.contains("rest") || this.n.contains("apilocate"))) || b(str);
+            return (!StringUtils.isEmpty(this.n) && (this.n.contains("rest") || this.n.contains("apilocate"))) || b(str);
         }
         return true;
     }
@@ -607,7 +607,7 @@ public final class br {
             if (r5 <= 0) goto L3c
             java.lang.Object r4 = r4.get(r3)     // Catch: java.lang.Throwable -> L65
             java.lang.String r4 = (java.lang.String) r4     // Catch: java.lang.Throwable -> L65
-            boolean r5 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L65
+            boolean r5 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L65
             if (r5 != 0) goto L3c
             boolean r5 = r4.contains(r0)     // Catch: java.lang.Throwable -> L65
             if (r5 != 0) goto L2a
@@ -674,7 +674,7 @@ public final class br {
                 return "";
             }
             String str = list.get(0);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             if (str.contains("#")) {
@@ -704,17 +704,17 @@ public final class br {
         if (MspEventTypes.ACTION_INVOKE_LOC.equals(this.j)) {
             String l = btVar.l();
             String m = btVar.m();
-            if (!TextUtils.isEmpty(l)) {
+            if (!StringUtils.isEmpty(l)) {
                 try {
                     this.r = new URL(l).getHost();
                 } catch (Exception unused) {
                 }
             }
-            if (TextUtils.isEmpty(m)) {
+            if (StringUtils.isEmpty(m)) {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(this.n)) {
+                if (!StringUtils.isEmpty(this.n)) {
                     this.q = this.n;
                 } else {
                     this.q = new URL(m).getHost();
@@ -783,7 +783,7 @@ public final class br {
                             }
                         }
                         String a2 = a(e2);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             d2 = x.a(a2);
                         }
                     }

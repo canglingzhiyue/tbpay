@@ -1,7 +1,7 @@
 package com.taobao.android.dxv4common.logic.dex;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -406,7 +406,7 @@ public class DXModuleManager {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("80821ec4", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.dxDownloader.a(str);
         }
         return null;

@@ -1,6 +1,6 @@
 package com.taobao.mrt.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.task.desc.MRTCodeDescription;
 import com.taobao.mrt.task.desc.MRTResourceDescription;
@@ -112,10 +112,10 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c4d2b3bc", new Object[]{str, mRTResourceDescription})).intValue();
         }
-        if (mRTResourceDescription == null || TextUtils.isEmpty(mRTResourceDescription.uniqueKey)) {
+        if (mRTResourceDescription == null || StringUtils.isEmpty(mRTResourceDescription.uniqueKey)) {
             return 2;
         }
-        if (TextUtils.isEmpty(mRTResourceDescription.resourceRootDirectory)) {
+        if (StringUtils.isEmpty(mRTResourceDescription.resourceRootDirectory)) {
             return 3;
         }
         File file = new File(mRTResourceDescription.resourceRootDirectory, str);
@@ -131,7 +131,7 @@ public class e {
             return 2;
         }
         String optString = b2.optString("mrtuk");
-        if (TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString)) {
             return 2;
         }
         if (!optString.equalsIgnoreCase(mRTResourceDescription.uniqueKey)) {
@@ -154,7 +154,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.equalsIgnoreCase(a(new File(str2)));
@@ -231,7 +231,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a9c1162d", new Object[]{str, file})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -303,7 +303,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("98751cf2", new Object[]{mRTResourceDescription});
-        } else if (mRTResourceDescription == null || TextUtils.isEmpty(mRTResourceDescription.uniqueKey)) {
+        } else if (mRTResourceDescription == null || StringUtils.isEmpty(mRTResourceDescription.uniqueKey)) {
         } else {
             File file = new File(mRTResourceDescription.resourceRootDirectory, mRTResourceDescription.resourceName);
             if (!file.isDirectory() || !file.exists()) {

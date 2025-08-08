@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -62,7 +62,7 @@ public class oro extends orn {
         JSONObject jSONObject2 = null;
         if (fVar != null && fVar.d != null) {
             String string = fVar.d.getString("config");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 a(bVar, e.FUNNEL_STEP_LAUNCH_WIDGET, "paramContentEmpty", "");
                 return null;
             }
@@ -92,7 +92,7 @@ public class oro extends orn {
                 JSONObject parseObject2 = JSON.parseObject(jSONObject.getString("context"));
                 a(fVar.e, 1, null);
                 String string2 = fVar.d.getString("localRecord");
-                if (!TextUtils.isEmpty(string2) && (parseObject = JSONObject.parseObject(string2)) != null) {
+                if (!StringUtils.isEmpty(string2) && (parseObject = JSONObject.parseObject(string2)) != null) {
                     jSONObject2 = parseObject.getJSONObject("displayFatigue");
                 }
                 Application b = khm.a().b();
@@ -172,7 +172,7 @@ public class oro extends orn {
             }
         });
         String string4 = jSONObject.getString("triggerConfig");
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             return;
         }
         Bundle bundle = new Bundle();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
 import java.util.Iterator;
@@ -40,7 +40,7 @@ public class opc implements gkl {
             Object next = it.next();
             if (!(next instanceof gln)) {
                 String obj = next == null ? null : next.toString();
-                if (!TextUtils.isEmpty(obj)) {
+                if (!StringUtils.isEmpty(obj)) {
                     if (stringBuffer.length() > 0) {
                         stringBuffer.append(",");
                     }

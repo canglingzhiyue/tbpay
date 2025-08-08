@@ -1,6 +1,6 @@
 package com.taobao.avplayer.interactivelifecycle.display;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -46,7 +46,7 @@ public class d {
         }
         String str = (String) view.getTag(R.id.weex_view_source);
         String str2 = (String) view.getTag(R.id.target_screen_type);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             str = "";
             str2 = str;
         }

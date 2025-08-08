@@ -5,7 +5,7 @@ import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -105,7 +105,7 @@ public class UIImageDrawable extends jwy implements Drawable.Callback, d.a {
             return;
         }
         this.o = uINode;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             k();
             this.g.a(this.f29841a);
             this.g.a(mUSDKInstance, str2, str3, 0, i, i2, mUSImageQuality);
@@ -120,7 +120,7 @@ public class UIImageDrawable extends jwy implements Drawable.Callback, d.a {
             return;
         }
         this.o = uINode;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             k();
             this.g.a(this.f29841a);
             this.g.a(mUSDKInstance, str2, str3, i, i2, i3, mUSImageQuality);
@@ -136,7 +136,7 @@ public class UIImageDrawable extends jwy implements Drawable.Callback, d.a {
         } else {
             b(mUSDKInstance);
             this.f = str;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 mUSDKInstance.getImageAdapter().a(mUSDKInstance.getContext().a(), str, this, mUSImageQuality);
             }
             invalidateSelf();
@@ -198,7 +198,7 @@ public class UIImageDrawable extends jwy implements Drawable.Callback, d.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("663b5d2d", new Object[]{this, mUSDKInstance});
-        } else if (TextUtils.isEmpty(this.f)) {
+        } else if (StringUtils.isEmpty(this.f)) {
         } else {
             mUSDKInstance.getImageAdapter().a(this.f, this);
             if (this.b != null) {
@@ -388,7 +388,7 @@ public class UIImageDrawable extends jwy implements Drawable.Callback, d.a {
         this.n = i3;
         if (mUSDKInstance.getImageAdapter() == null) {
             g.d("UIImageDrawable", "image Adapter is null");
-        } else if (TextUtils.isEmpty(this.f)) {
+        } else if (StringUtils.isEmpty(this.f)) {
         } else {
             mUSDKInstance.getImageAdapter().a(mUSDKInstance.getContext().a(), this.f, this, mUSImageQuality);
         }
@@ -398,7 +398,7 @@ public class UIImageDrawable extends jwy implements Drawable.Callback, d.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8056dbcc", new Object[]{this, mUSDKInstance});
-        } else if (TextUtils.isEmpty(this.f) || mUSDKInstance.getImageAdapter() == null) {
+        } else if (StringUtils.isEmpty(this.f) || mUSDKInstance.getImageAdapter() == null) {
         } else {
             mUSDKInstance.getImageAdapter().a(this.f, this);
         }
@@ -522,7 +522,7 @@ public class UIImageDrawable extends jwy implements Drawable.Callback, d.a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 3;
         }
         char c = 65535;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -189,7 +189,7 @@ public class oto {
             return false;
         }
         String b = kskVar.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             e.e("CompleteVisibleStatus", "当前页面名称为空");
             return false;
         }
@@ -203,7 +203,7 @@ public class oto {
         }
         ArrayList arrayList = new ArrayList();
         String m = j.m();
-        if (!TextUtils.isEmpty(m)) {
+        if (!StringUtils.isEmpty(m)) {
             arrayList.addAll(Arrays.asList(m.split(",")));
         }
         return arrayList;

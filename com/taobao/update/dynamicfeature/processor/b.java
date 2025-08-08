@@ -1,6 +1,6 @@
 package com.taobao.update.dynamicfeature.processor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.update.dynamicfeature.FeatureUpdateData;
 import com.taobao.update.dynamicfeature.utils.Constants;
@@ -70,7 +70,7 @@ public class b implements com.taobao.update.framework.b<com.taobao.update.dynami
                     Enumeration<? extends ZipEntry> entries = zipFile.entries();
                     while (entries.hasMoreElements()) {
                         ZipEntry nextElement = entries.nextElement();
-                        if (nextElement.getName().endsWith(bgy.SO_EXTENSION) && !new File(file2, TextUtils.replace(nextElement.getName(), new String[]{bgy.SO_EXTENSION}, new String[]{bgy.APK_EXTENSION}).toString()).exists()) {
+                        if (nextElement.getName().endsWith(bgy.SO_EXTENSION) && !new File(file2, StringUtils.replace(nextElement.getName(), new String[]{bgy.SO_EXTENSION}, new String[]{bgy.APK_EXTENSION}).toString()).exists()) {
                             a(zipFile.getInputStream(nextElement), nextElement.getName().substring(0, nextElement.getName().length() - 3), file2);
                         }
                     }

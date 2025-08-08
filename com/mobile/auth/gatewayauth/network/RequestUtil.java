@@ -1,7 +1,7 @@
 package com.mobile.auth.gatewayauth.network;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.util.ParamsConstants;
 import com.mobile.auth.OO00OOO;
 import com.mobile.auth.OO00Oo0;
@@ -139,7 +139,7 @@ public class RequestUtil {
             sDKConfigRequest.setRequestMethod("POST");
             OO00Oo0 O00000Oo = OO00OOO.O000000o().O000000o(sDKConfigRequest).O00000Oo();
             ConfigRB configRB = new ConfigRB();
-            if (!O00000Oo.O00000Oo() || TextUtils.isEmpty(O00000Oo.O000000o())) {
+            if (!O00000Oo.O00000Oo() || StringUtils.isEmpty(O00000Oo.O000000o())) {
                 TopErrorResponse topErrorResponse = new TopErrorResponse();
                 topErrorResponse.setCode(-1);
                 topErrorResponse.setMsg("result is ermpty");
@@ -242,7 +242,7 @@ public class RequestUtil {
             vendorListRequest.setRequestMethod("POST");
             OO00Oo0 O00000Oo = OO00OOO.O000000o().O000000o(vendorListRequest).O00000Oo();
             AllRBInfo allRBInfo = new AllRBInfo();
-            if (!O00000Oo.O00000Oo() || TextUtils.isEmpty(O00000Oo.O000000o())) {
+            if (!O00000Oo.O00000Oo() || StringUtils.isEmpty(O00000Oo.O000000o())) {
                 TopErrorResponse topErrorResponse = new TopErrorResponse();
                 topErrorResponse.setCode(-1);
                 topErrorResponse.setMsg("result is ermpty");
@@ -317,7 +317,7 @@ public class RequestUtil {
             uploadRequest.setRequestMethod("POST");
             OO00Oo0 O00000Oo = OO00OOO.O000000o().O000000o(uploadRequest).O00000Oo();
             UploadRB uploadRB = new UploadRB();
-            if (O00000Oo.O00000Oo() && !TextUtils.isEmpty(O00000Oo.O000000o())) {
+            if (O00000Oo.O00000Oo() && !StringUtils.isEmpty(O00000Oo.O000000o())) {
                 try {
                     jSONObject = new JSONObject(O00000Oo.O000000o());
                 } catch (JSONException e) {

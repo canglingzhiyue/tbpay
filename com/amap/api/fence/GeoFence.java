@@ -3,7 +3,7 @@ package com.amap.api.fence;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.DPoint;
 import com.loc.fy;
@@ -143,8 +143,8 @@ public class GeoFence implements Parcelable {
             return false;
         }
         GeoFence geoFence = (GeoFence) obj;
-        if (TextUtils.isEmpty(this.b)) {
-            if (!TextUtils.isEmpty(geoFence.b)) {
+        if (StringUtils.isEmpty(this.b)) {
+            if (!StringUtils.isEmpty(geoFence.b)) {
                 return false;
             }
         } else if (!this.b.equals(geoFence.b)) {

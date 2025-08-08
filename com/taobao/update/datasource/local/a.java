@@ -3,7 +3,7 @@ package com.taobao.update.datasource.local;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -133,7 +133,7 @@ public class a {
         }
         if (this.d == null) {
             String a2 = a(this.c);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 try {
                     this.d = (UpdateInfo) JSON.parseObject(a2, UpdateInfo.class);
                 } catch (Throwable unused) {

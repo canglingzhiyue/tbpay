@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.callback.MemberCallback;
@@ -133,7 +133,7 @@ public class UccServiceImpl implements UccService {
         if (map != null) {
             uccParams.miniAppId = map.get("miniAppId");
             hashMap.put("scene", map.get("scene"));
-            hashMap.put("needSession", TextUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
+            hashMap.put("needSession", StringUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
             uccParams.sdkVersion = map.get("sdkVersion");
         }
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_Invoke", uccParams, hashMap);
@@ -203,7 +203,7 @@ public class UccServiceImpl implements UccService {
             return (UccDataProvider) ipChange.ipc$dispatch("1395de69", new Object[]{this});
         }
         String uccDataProviderClass = ConfigManager.getInstance().getUccDataProviderClass();
-        if (TextUtils.isEmpty(uccDataProviderClass)) {
+        if (StringUtils.isEmpty(uccDataProviderClass)) {
             return null;
         }
         try {
@@ -263,7 +263,7 @@ public class UccServiceImpl implements UccService {
                         return;
                     }
                     String str3 = str;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "userToken为空";
                     }
                     uccCallback2.onFail(str3, 1004, str2);
@@ -282,14 +282,14 @@ public class UccServiceImpl implements UccService {
         final UccParams uccParams = new UccParams();
         uccParams.traceId = Utils.generateTraceId(a.ATOM_EXT_bind);
         uccParams.bindSite = str;
-        if (map != null && !TextUtils.isEmpty(map.get("scene"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("scene"))) {
             uccParams.scene = map.get("scene");
         }
         HashMap hashMap = new HashMap();
         if (map != null) {
             uccParams.miniAppId = map.get("miniAppId");
             hashMap.put("scene", map.get("scene"));
-            hashMap.put("needSession", TextUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
+            hashMap.put("needSession", StringUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
             uccParams.sdkVersion = map.get("sdkVersion");
         }
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_Invoke", uccParams, hashMap);
@@ -328,7 +328,7 @@ public class UccServiceImpl implements UccService {
                         return;
                     }
                     String str3 = str;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "userToken为空";
                     }
                     uccCallback2.onFail(str3, 1004, str2);
@@ -377,7 +377,7 @@ public class UccServiceImpl implements UccService {
                         return;
                     }
                     String str3 = str;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "userToken为空";
                     }
                     uccCallback2.onFail(str3, 1004, str2);
@@ -445,7 +445,7 @@ public class UccServiceImpl implements UccService {
             ipChange.ipc$dispatch("6e01c2be", new Object[]{this, activity, uccParams, new Integer(i), str, str2, map, uccCallback});
         } else if (uccCallback == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 uccCallback.onFail(uccParams.bindSite, 1002, "参数错误");
             } else {
                 UccBindPresenter.getInstance().doChangeBind(activity, uccParams, i, str, str2, map, uccCallback);
@@ -518,7 +518,7 @@ public class UccServiceImpl implements UccService {
         if (uccCallback == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccUnbind_InvalidParams", uccParams, null);
             uccCallback.onFail(str, 1009, "参数错误");
             return;
@@ -558,7 +558,7 @@ public class UccServiceImpl implements UccService {
                     UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccUnBind_UserTokenNIL", null, hashMap);
                     UccCallback uccCallback2 = uccCallback;
                     String str3 = str;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "userToken为空";
                     }
                     uccCallback2.onFail(str3, 1004, str2);
@@ -668,7 +668,7 @@ public class UccServiceImpl implements UccService {
         }
         SDKLogger.d("UccServiceImpl", "trustLogin goUccActivity");
         UccActivity.mUccCallback = uccCallback;
-        if (map != null && TextUtils.equals(map.get(ParamsConstants.Key.PARAM_NEED_UI), "0")) {
+        if (map != null && StringUtils.equals(map.get(ParamsConstants.Key.PARAM_NEED_UI), "0")) {
             trustLogin(null, str, map, uccCallback);
             return;
         }
@@ -746,10 +746,10 @@ public class UccServiceImpl implements UccService {
         if (uccCallback == null) {
             return;
         }
-        if (map != null && TextUtils.equals(map.get(ParamsConstants.Key.PARAM_NEED_UI), "0")) {
+        if (map != null && StringUtils.equals(map.get(ParamsConstants.Key.PARAM_NEED_UI), "0")) {
             z = false;
         }
-        if ((activity == null && z) || TextUtils.isEmpty(str)) {
+        if ((activity == null && z) || StringUtils.isEmpty(str)) {
             UTHitUtils.send(UTHitConstants.PageUccLogin, "UccLogin_InvalidParams", uccParams, null);
             uccCallback.onFail(str, 1002, "参数错误");
             return;
@@ -771,7 +771,7 @@ public class UccServiceImpl implements UccService {
                     SDKLogger.e("UccServiceImpl", "trustlogin get usertoken success");
                     uccParams.userToken = str2;
                     Map map2 = map;
-                    if (map2 != null && !TextUtils.isEmpty((CharSequence) map2.get("site"))) {
+                    if (map2 != null && !StringUtils.isEmpty((CharSequence) map2.get("site"))) {
                         uccParams.site = (String) map.get("site");
                     } else {
                         uccParams.site = AliMemberSDK.getMasterSite();
@@ -780,11 +780,11 @@ public class UccServiceImpl implements UccService {
                     uccParams2.bindSite = str;
                     uccParams2.userToken = str2;
                     Map map3 = map;
-                    if (map3 != null && !TextUtils.isEmpty((CharSequence) map3.get("scene"))) {
+                    if (map3 != null && !StringUtils.isEmpty((CharSequence) map3.get("scene"))) {
                         uccParams.scene = (String) map.get("scene");
                     }
                     Map map4 = map;
-                    if (map4 != null && TextUtils.equals((CharSequence) map4.get("silentLogin"), "true")) {
+                    if (map4 != null && StringUtils.equals((CharSequence) map4.get("silentLogin"), "true")) {
                         map.put(ParamsConstants.Key.PARAM_NEED_UI, "0");
                     }
                     UccTrustLoginPresenter.getInstance().doTrustLogin(activity, uccParams, str, map, uccCallback);
@@ -821,7 +821,7 @@ public class UccServiceImpl implements UccService {
         if (uccCallback == null) {
             return;
         }
-        if (activity == null || TextUtils.isEmpty(str)) {
+        if (activity == null || StringUtils.isEmpty(str)) {
             UTHitUtils.send(UTHitConstants.PageUccOAuthLogin, "UccOAuthLogin_InvalidParams", uccParams, null);
             uccCallback.onFail(str, 1002, "参数错误");
             return;
@@ -841,7 +841,7 @@ public class UccServiceImpl implements UccService {
                 if (map2 != null && map2.get("site") != null) {
                     str3 = (String) map2.get("site");
                 }
-                if (map2 != null && !TextUtils.isEmpty(str3)) {
+                if (map2 != null && !StringUtils.isEmpty(str3)) {
                     uccParams.bindSite = str3;
                 } else {
                     uccParams.bindSite = AliMemberSDK.getMasterSite();
@@ -877,7 +877,7 @@ public class UccServiceImpl implements UccService {
         UccParams uccParams = new UccParams();
         uccParams.traceId = Utils.generateTraceId(Baggage.Amnet.USER_O);
         uccParams.bindSite = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UTHitUtils.send(UTHitConstants.PageUccLogout, "UccLogout_InvalidParams", uccParams, null);
             return;
         }
@@ -980,7 +980,7 @@ public class UccServiceImpl implements UccService {
         if (map != null) {
             uccParams.miniAppId = map.get("miniAppId");
             hashMap.put("scene", map.get("scene"));
-            hashMap.put("needSession", TextUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
+            hashMap.put("needSession", StringUtils.equals(map.get("needSession"), "1") ? "T" : UTConstant.Args.UT_SUCCESS_F);
         }
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBindWithIbb_Invoke", uccParams, hashMap);
         if (map == null) {
@@ -1010,7 +1010,7 @@ public class UccServiceImpl implements UccService {
         if (uccCallback == null) {
             return;
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccUnbind_InvalidParams", uccParams, null);
             uccCallback.onFail(str, 1009, "参数错误");
             return;
@@ -1038,7 +1038,7 @@ public class UccServiceImpl implements UccService {
         if (uccCallback == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccUnbind_InvalidParams", uccParams, null);
             uccCallback.onFail(str, 1009, "参数错误");
             return;
@@ -1078,7 +1078,7 @@ public class UccServiceImpl implements UccService {
                     UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccUnBind_UserTokenNIL", null, hashMap);
                     UccCallback uccCallback2 = uccCallback;
                     String str3 = str;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "userToken为空";
                     }
                     uccCallback2.onFail(str3, 1004, str2);
@@ -1104,7 +1104,7 @@ public class UccServiceImpl implements UccService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bedf9557", new Object[]{this, context, str, uccCallback});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             uccCallback.onFail("taobao", 1603, "invalid source");
         } else {
             HashMap hashMap = new HashMap();
@@ -1117,7 +1117,7 @@ public class UccServiceImpl implements UccService {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("b5e17230", new Object[]{this, str2, map});
-                    } else if (map != null && !TextUtils.isEmpty((String) map.get("token"))) {
+                    } else if (map != null && !StringUtils.isEmpty((String) map.get("token"))) {
                         UccServiceImpl.this.launchAppWithAuthCode(context, str, (String) map.get("token"), uccCallback);
                     } else {
                         uccCallback.onFail("taobao", 1604, "empty token");
@@ -1151,7 +1151,7 @@ public class UccServiceImpl implements UccService {
         if (uccCallback == null) {
             return;
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str3)) {
             UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccGrantAuth_InvalidParams", uccParams, null);
             uccCallback.onFail(str, 1009, "参数错误");
             return;
@@ -1190,7 +1190,7 @@ public class UccServiceImpl implements UccService {
         if (uccCallback == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccGrantAuth_InvalidParams", uccParams, null);
             uccCallback.onFail(str, 1009, "参数错误");
             return;
@@ -1231,7 +1231,7 @@ public class UccServiceImpl implements UccService {
                     UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccGrantAuth_UserTokenNIL", null, hashMap);
                     UccCallback uccCallback2 = uccCallback;
                     String str4 = str;
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "userToken为空";
                     }
                     uccCallback2.onFail(str4, 1004, str3);
@@ -1385,7 +1385,7 @@ public class UccServiceImpl implements UccService {
             final UccParams uccParams = new UccParams();
             uccParams.site = AliMemberSDK.getMasterSite();
             uccParams.bindSite = str;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccGrantAuth_InvalidParams", uccParams, null);
                 uccCallback.onFail(str, 1900, "参数错误");
             } else if (map == null || map.get("activityId") == null) {
@@ -1394,7 +1394,7 @@ public class UccServiceImpl implements UccService {
             } else if (map.get("scene") == null) {
                 UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccGrantAuth_InvalidParams", uccParams, null);
                 uccCallback.onFail(str, 1900, "参数错误,scene必传");
-            } else if (TextUtils.equals("1", map.get(ParamsConstants.Key.PARAM_NO_LOGIN))) {
+            } else if (StringUtils.equals("1", map.get(ParamsConstants.Key.PARAM_NO_LOGIN))) {
                 uccParams.activityId = map.get("activityId");
                 if (AliMemberSDK.getService(OneKeyLoginService.class) != null) {
                     ((OneKeyLoginService) AliMemberSDK.getService(OneKeyLoginService.class)).getLoginMaskPhone(new MemberCallback<String>() { // from class: com.ali.user.open.ucc.UccServiceImpl.14
@@ -1445,7 +1445,7 @@ public class UccServiceImpl implements UccService {
                             UTHitUtils.send(UTHitConstants.PageUccUnBind, "UccGrantAuth_UserTokenNIL", null, hashMap);
                             UccCallback uccCallback2 = uccCallback;
                             String str3 = str;
-                            if (TextUtils.isEmpty(str2)) {
+                            if (StringUtils.isEmpty(str2)) {
                                 str2 = "userToken为空";
                             }
                             uccCallback2.onFail(str3, 1004, str2);
@@ -1474,7 +1474,7 @@ public class UccServiceImpl implements UccService {
         if (ipChange instanceof IpChange) {
             return (UccDataProvider) ipChange.ipc$dispatch("18c2c0f4", new Object[]{this, map, str});
         }
-        UccDataProvider uccDataProvider = (map == null || TextUtils.isEmpty(map.get("site"))) ? null : this.mUccDataProviderContainer.get(map.get("site"));
+        UccDataProvider uccDataProvider = (map == null || StringUtils.isEmpty(map.get("site"))) ? null : this.mUccDataProviderContainer.get(map.get("site"));
         if (uccDataProvider != null || this.mUccDataProvider != null) {
             return uccDataProvider == null ? this.mUccDataProvider : uccDataProvider;
         }

@@ -3,7 +3,7 @@ package com.taobao.browser.jsbridge;
 import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,19 +67,19 @@ public class TBUserTrackHelper extends e {
             Uri parse = Uri.parse(str2);
             if (parse != null && parse.isHierarchical()) {
                 String queryParameter = parse.getQueryParameter("locate");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     this.mYyzLocate = queryParameter;
                 }
                 String queryParameter2 = parse.getQueryParameter("actparam");
-                if (!TextUtils.isEmpty(queryParameter2)) {
+                if (!StringUtils.isEmpty(queryParameter2)) {
                     this.mYyzActParam = queryParameter2;
                 }
                 String queryParameter3 = parse.getQueryParameter("list_param");
-                if (!TextUtils.isEmpty(queryParameter3)) {
+                if (!StringUtils.isEmpty(queryParameter3)) {
                     this.mYyzListParam = queryParameter3;
                 }
                 String queryParameter4 = parse.getQueryParameter("carrier_id");
-                if (!TextUtils.isEmpty(queryParameter4)) {
+                if (!StringUtils.isEmpty(queryParameter4)) {
                     this.mCarrier_Id = queryParameter4;
                 }
             }
@@ -93,7 +93,7 @@ public class TBUserTrackHelper extends e {
         } else if (this.mWebView == null) {
         } else {
             String url = this.mWebView.getUrl();
-            if (!TextUtils.isEmpty(url)) {
+            if (!StringUtils.isEmpty(url)) {
                 parseUrl(url);
             }
             String str2 = null;
@@ -104,7 +104,7 @@ public class TBUserTrackHelper extends e {
                 }
             } catch (Exception unused) {
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 updatePageProperties(str2);
                 wVCallBackContext.success();
                 return;
@@ -117,42 +117,42 @@ public class TBUserTrackHelper extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e7fb369c", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             String[] split = str.split(",");
-            if (split.length >= 2 && !TextUtils.isEmpty(split[split.length - 2])) {
+            if (split.length >= 2 && !StringUtils.isEmpty(split[split.length - 2])) {
                 TrackBuried.list_Type = split[split.length - 2];
             } else {
                 TrackBuried.list_Type = TrackBuried.list_TypeArr[0];
             }
             TrackBuried.list_Param = split[split.length - 1];
             Properties properties = new Properties();
-            if (!TextUtils.isEmpty(this.mYyzLocate)) {
+            if (!StringUtils.isEmpty(this.mYyzLocate)) {
                 TrackBuried.list_Param += "_" + this.mYyzLocate;
             }
-            if (!TextUtils.isEmpty(this.mYyzUrl)) {
+            if (!StringUtils.isEmpty(this.mYyzUrl)) {
                 properties.put("url", this.mYyzUrl);
             }
-            if (!TextUtils.isEmpty(this.mSellerId)) {
+            if (!StringUtils.isEmpty(this.mSellerId)) {
                 properties.put("seller_id", this.mSellerId);
             }
-            if (!TextUtils.isEmpty(this.mCarrier_Id)) {
+            if (!StringUtils.isEmpty(this.mCarrier_Id)) {
                 properties.put("carrier_id", this.mCarrier_Id);
             }
             TBS.Page.updatePageProperties("com.taobao.browser.BrowserActivity", properties);
             HashMap hashMap = new HashMap();
             hashMap.put("action", "kpv");
             TrackBuried.effectupdatePageProperties("com.taobao.browser.BrowserActivity", hashMap);
-        } else if (!TextUtils.isEmpty(this.mYyzActParam)) {
+        } else if (!StringUtils.isEmpty(this.mYyzActParam)) {
             TrackBuried.list_Type = TrackBuried.list_TypeArr[0];
             TrackBuried.list_Param = this.mYyzActParam;
             Properties properties2 = new Properties();
-            if (!TextUtils.isEmpty(this.mYyzLocate)) {
+            if (!StringUtils.isEmpty(this.mYyzLocate)) {
                 TrackBuried.list_Param += "_" + this.mYyzLocate;
             }
-            if (!TextUtils.isEmpty(this.mYyzUrl)) {
+            if (!StringUtils.isEmpty(this.mYyzUrl)) {
                 properties2.put("url", this.mYyzUrl);
             }
-            if (!TextUtils.isEmpty(this.mCarrier_Id)) {
+            if (!StringUtils.isEmpty(this.mCarrier_Id)) {
                 properties2.put("carrier_id", this.mCarrier_Id);
                 TrackBuried.carrier = this.mCarrier_Id;
             }
@@ -160,15 +160,15 @@ public class TBUserTrackHelper extends e {
             HashMap hashMap2 = new HashMap();
             hashMap2.put("action", "kpv");
             TrackBuried.effectupdatePageProperties("com.taobao.browser.BrowserActivity", hashMap2);
-        } else if (TextUtils.isEmpty(this.mYyzListParam)) {
+        } else if (StringUtils.isEmpty(this.mYyzListParam)) {
         } else {
             TrackBuried.list_Type = TrackBuried.list_TypeArr[0];
             TrackBuried.list_Param = this.mYyzListParam;
             Properties properties3 = new Properties();
-            if (!TextUtils.isEmpty(this.mYyzUrl)) {
+            if (!StringUtils.isEmpty(this.mYyzUrl)) {
                 properties3.put("url", this.mYyzUrl);
             }
-            if (!TextUtils.isEmpty(this.mCarrier_Id)) {
+            if (!StringUtils.isEmpty(this.mCarrier_Id)) {
                 properties3.put("carrier_id", this.mCarrier_Id);
                 TrackBuried.carrier = this.mCarrier_Id;
             }

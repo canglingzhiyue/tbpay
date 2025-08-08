@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.config.BHRTaskConfigBase;
@@ -82,7 +82,7 @@ public abstract class dqu extends dqz implements dqw {
             return;
         }
         String string = taskInfo.getString(noa.KEY_MODEL_NAME);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = taskInfo.getString("pythonName");
         }
         boolean booleanValue = taskInfo.getBooleanValue("isAlias");

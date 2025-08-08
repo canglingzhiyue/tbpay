@@ -1,7 +1,7 @@
 package com.alibaba.poplayer.factory;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.exception.PoplayerException;
 import com.alibaba.poplayer.factory.view.base.PopLayerBaseView;
@@ -70,7 +70,7 @@ public class a {
         } else if (list == null || list.isEmpty()) {
             throw new PoplayerException("viewTypes is empty;");
         } else {
-            if (TextUtils.isEmpty(str) || !list.contains(str)) {
+            if (StringUtils.isEmpty(str) || !list.contains(str)) {
                 throw new PoplayerException("defaultType is empty or viewTypes don't contains defaultType.");
             }
             this.f3178a = 1;
@@ -83,7 +83,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             throw new PoplayerException("viewType is empty;");
         } else {
             this.d.add(str);
@@ -101,13 +101,13 @@ public class a {
                 c.a("%s.getPopLayerViewFactoryAdapter == null.", TAG);
                 return null;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.e;
             }
             return PopLayer.getReference().getPopLayerViewFactoryAdapter().generatePopLayerViewByType(context, str, dVar);
         }
         Class<? extends PopLayerBaseView> cls2 = this.b.get(str);
-        if (cls2 != null || !TextUtils.isEmpty(str) || (cls = this.c) == null) {
+        if (cls2 != null || !StringUtils.isEmpty(str) || (cls = this.c) == null) {
             cls = cls2;
         } else {
             c.a("%s.create:use baseItem.", TAG);

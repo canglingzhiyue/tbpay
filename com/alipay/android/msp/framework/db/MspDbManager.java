@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.model.MQPBehaviorActionSeqModel;
 import com.alipay.android.msp.core.model.MQPBehaviorExperienceModel;
 import com.alipay.android.msp.core.model.MQPBehaviorRecordModel;
@@ -233,7 +233,7 @@ public class MspDbManager {
                 String[] strArr = new String[1];
                 StringBuilder sb = new StringBuilder();
                 String str2 = map.get("trace");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str2 = str2.split("_")[0];
                 }
                 sb.append(str2);

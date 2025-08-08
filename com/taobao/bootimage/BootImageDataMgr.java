@@ -2,7 +2,7 @@ package com.taobao.bootimage;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -302,7 +302,7 @@ public class BootImageDataMgr {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("75806d92", new Object[]{this, bootImageInfo})).booleanValue();
         }
-        if (bootImageInfo == null || TextUtils.isEmpty(bootImageInfo.itemId)) {
+        if (bootImageInfo == null || StringUtils.isEmpty(bootImageInfo.itemId)) {
             return false;
         }
         FatigueInfo a2 = a().a(bootImageInfo.itemId);
@@ -319,7 +319,7 @@ public class BootImageDataMgr {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ec822121", new Object[]{this, str, new Boolean(z), l});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             FatigueInfo a2 = a(str);
             if (a2 == null) {
@@ -465,13 +465,13 @@ public class BootImageDataMgr {
         double d2 = mto.a.GEO_NOT_SUPPORT;
         if (b2 != null) {
             try {
-                d = !TextUtils.isEmpty(b2.getLatitude()) ? Double.parseDouble(b2.getLatitude()) : 0.0d;
+                d = !StringUtils.isEmpty(b2.getLatitude()) ? Double.parseDouble(b2.getLatitude()) : 0.0d;
             } catch (NumberFormatException e) {
                 e = e;
                 d = 0.0d;
             }
             try {
-                if (!TextUtils.isEmpty(b2.getLongitude())) {
+                if (!StringUtils.isEmpty(b2.getLongitude())) {
                     d2 = Double.parseDouble(b2.getLongitude());
                 }
             } catch (NumberFormatException e2) {
@@ -520,7 +520,7 @@ public class BootImageDataMgr {
             com.taobao.alivfssdk.cache.h l = l();
             if (l != null) {
                 String str = (String) l.b("total_fatigue_info");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.g = (com.taobao.bootimage.data.a) JSONObject.parseObject(str, com.taobao.bootimage.data.a.class);
                 }
             }

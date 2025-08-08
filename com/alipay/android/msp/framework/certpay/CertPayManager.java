@@ -2,7 +2,7 @@ package com.alipay.android.msp.framework.certpay;
 
 import android.content.Context;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -74,7 +74,7 @@ public class CertPayManager {
         }
         for (Map.Entry<String, String> entry : this.c.entrySet()) {
             String key = entry.getKey();
-            if (TextUtils.equals(str, entry.getValue())) {
+            if (StringUtils.equals(str, entry.getValue())) {
                 return key;
             }
         }

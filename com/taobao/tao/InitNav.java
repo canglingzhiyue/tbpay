@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ha.bizerrorreporter.module.AggregationType;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class InitNav implements Serializable {
                                 ipChange3.ipc$dispatch("5c510192", new Object[]{this});
                                 return;
                             }
-                            for (String str2 : TextUtils.split(str, "##")) {
+                            for (String str2 : StringUtils.split(str, "##")) {
                                 AnonymousClass2.a(AnonymousClass2.this, "NavDuration", str2);
                             }
                         }
@@ -417,7 +417,7 @@ public class InitNav implements Serializable {
                 }
                 String access$100 = InitNav.access$100(str);
                 com.alibaba.ha.bizerrorreporter.module.a aVar = new com.alibaba.ha.bizerrorreporter.module.a();
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     aVar.b = AggregationType.CONTENT;
                     aVar.d = access$100;
                     aVar.j = str;
@@ -434,6 +434,6 @@ public class InitNav implements Serializable {
     private static String simpleUrl(String str) {
         int indexOf;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("4e146932", new Object[]{str}) : (TextUtils.isEmpty(str) || (indexOf = str.indexOf(63)) == -1) ? str : str.substring(0, indexOf);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("4e146932", new Object[]{str}) : (StringUtils.isEmpty(str) || (indexOf = str.indexOf(63)) == -1) ? str : str.substring(0, indexOf);
     }
 }

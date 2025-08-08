@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.FileProvider;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.taobao.android.nav.Nav;
@@ -111,7 +111,7 @@ public class c {
             return (NotificationCompat.Builder) ipChange.ipc$dispatch("4181fc0d", new Object[]{this, linkDownloadItem, aVar});
         }
         Intent intent = null;
-        if (!TextUtils.isEmpty(linkDownloadItem.notificationUrl)) {
+        if (!StringUtils.isEmpty(linkDownloadItem.notificationUrl)) {
             try {
                 intent = Nav.from(this.b).intentForUri(Uri.parse(linkDownloadItem.notificationUrl));
             } catch (Exception e) {
@@ -120,7 +120,7 @@ public class c {
         }
         NotificationCompat.Builder ongoing = new NotificationCompat.Builder(this.b.getApplicationContext(), "taobao_linkdownloader_active").setWhen(aVar.b).setOnlyAlertOnce(true).setOngoing(true);
         StringBuilder sb = new StringBuilder();
-        sb.append(TextUtils.isEmpty(linkDownloadItem.title) ? "未知应用" : linkDownloadItem.title);
+        sb.append(StringUtils.isEmpty(linkDownloadItem.title) ? "未知应用" : linkDownloadItem.title);
         sb.append(" ");
         sb.append("正在下载...");
         NotificationCompat.Builder autoCancel = ongoing.setContentTitle(sb.toString()).setSmallIcon(17301633).setDefaults(5).setVibrate(new long[]{0}).setPriority(2).setAutoCancel(false);
@@ -150,7 +150,7 @@ public class c {
         }
         NotificationCompat.Builder ongoing = new NotificationCompat.Builder(this.b.getApplicationContext(), "taobao_linkdownloader_active").setWhen(System.currentTimeMillis()).setOnlyAlertOnce(true).setOngoing(false);
         StringBuilder sb = new StringBuilder();
-        sb.append(TextUtils.isEmpty(linkDownloadItem.title) ? "未知应用" : linkDownloadItem.title);
+        sb.append(StringUtils.isEmpty(linkDownloadItem.title) ? "未知应用" : linkDownloadItem.title);
         sb.append(" ");
         sb.append("下载完成");
         NotificationCompat.Builder contentText = ongoing.setContentTitle(sb.toString()).setSmallIcon(17301634).setDefaults(5).setVibrate(new long[]{0}).setPriority(2).setAutoCancel(false).setContentText("点击开始安装");

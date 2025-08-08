@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -31,7 +31,7 @@ public class PreloadStore extends LocalEventStore {
             String string = actionParamsJson.getString("page");
             actionParamsJson.getString("action");
             str = "";
-            if (!TextUtils.isEmpty(string) && string.contains("bizapp-collect-money")) {
+            if (!StringUtils.isEmpty(string) && string.contains("bizapp-collect-money")) {
                 try {
                     LogUtil.record(1, "PreloadStore.onMspAction", str);
                     PreloadManager.startPreLoad(this.d.getApplicationContext());

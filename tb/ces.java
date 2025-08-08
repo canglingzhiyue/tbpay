@@ -2,7 +2,7 @@ package tb;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVOExperiment;
 import com.alibaba.evo.internal.bucketing.model.ExperimentGroupV5;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
@@ -346,7 +346,7 @@ public class ces implements cer {
         } else {
             bwt bwtVar = (bwt) a3.getData();
             String str2 = n.a(cex.a().r()) + bwtVar.d;
-            if (TextUtils.equals(str2, this.d)) {
+            if (StringUtils.equals(str2, this.d)) {
                 h.f("DecisionServiceImpl", "【实验数据】检查更新完成，数据未发生变化。");
                 return;
             }
@@ -451,7 +451,7 @@ public class ces implements cer {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             c.a().d(str);
         } else {
             c a2 = c.a();
@@ -689,7 +689,7 @@ public class ces implements cer {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("69c2437c", new Object[]{this, str, str2, map, ceqVar});
         }
-        if (TextUtils.equals(UTABTest.COMPONENT_URI, str)) {
+        if (StringUtils.equals(UTABTest.COMPONENT_URI, str)) {
             return b(str, str2, map, ceqVar);
         }
         return c(str, str2, map, ceqVar);
@@ -748,9 +748,9 @@ public class ces implements cer {
                 ExperimentGroupV5 experimentGroupV5 = experimentV5.getGroups().get(0);
                 if (experimentGroupV5.getVariations() != null) {
                     String str3 = experimentGroupV5.getVariations().get("bucket");
-                    if (!TextUtils.isEmpty(str3) && (b = f.b(str3)) != null) {
-                        if (TextUtils.indexOf(str3, "UTABTEST-ANY") >= 0) {
-                            if (!TextUtils.equals(s.a(experimentV5.getUri()), s.a(b))) {
+                    if (!StringUtils.isEmpty(str3) && (b = f.b(str3)) != null) {
+                        if (StringUtils.indexOf(str3, "UTABTEST-ANY") >= 0) {
+                            if (!StringUtils.equals(s.a(experimentV5.getUri()), s.a(b))) {
                                 if (uri4 != null) {
                                     h.d("DecisionServiceImpl", "【运行实验】URL只允许重定向一次，忽略处理实验分组：" + experimentGroupV5.getId());
                                 } else {
@@ -766,7 +766,7 @@ public class ces implements cer {
                             aVar.a(experimentV5);
                             a3 = a6;
                         } else {
-                            if (!TextUtils.equals(a2, s.a(b))) {
+                            if (!StringUtils.equals(a2, s.a(b))) {
                                 if (uri4 == null) {
                                     uri4 = b;
                                 } else {
@@ -786,13 +786,13 @@ public class ces implements cer {
         }
         Iterator<Map.Entry<String, String>> it = a3.entrySet().iterator();
         while (it.hasNext()) {
-            if (TextUtils.equals(it.next().getValue(), "UTABTEST-DELETE")) {
+            if (StringUtils.equals(it.next().getValue(), "UTABTEST-DELETE")) {
                 it.remove();
             }
         }
         Iterator<Map.Entry<String, String>> it2 = a4.entrySet().iterator();
         while (it2.hasNext()) {
-            if (TextUtils.equals(it2.next().getValue(), "UTABTEST-DELETE")) {
+            if (StringUtils.equals(it2.next().getValue(), "UTABTEST-DELETE")) {
                 it2.remove();
             }
         }
@@ -801,15 +801,15 @@ public class ces implements cer {
         } else {
             str2 = a3.get(cew.a.URI_PARAMNAME_ABTEST);
         }
-        if (!TextUtils.isEmpty(str2) && (split = TextUtils.split(str2, "\\.")) != null) {
+        if (!StringUtils.isEmpty(str2) && (split = StringUtils.split(str2, "\\.")) != null) {
             for (String str4 : split) {
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     aVar.a(str4);
                 }
             }
         }
         String a7 = aVar.b() != null ? s.a(aVar.b(), ".") : null;
-        if (!TextUtils.isEmpty(a7)) {
+        if (!StringUtils.isEmpty(a7)) {
             a3.put(cew.a.URI_PARAMNAME_ABTEST, a7);
             a4.put(cew.a.URI_PARAMNAME_ABTEST, a7);
         }
@@ -832,7 +832,7 @@ public class ces implements cer {
             }
             String str5 = uri2;
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 hashMap.put("bucket", str5);
             }
             aVar.a(hashMap);
@@ -989,7 +989,7 @@ public class ces implements cer {
             }
             z2 = z;
         }
-        if (cex.a().j().r() && arrayList.isEmpty() && !TextUtils.equals(UTABTest.COMPONENT_URI, str)) {
+        if (cex.a().j().r() && arrayList.isEmpty() && !StringUtils.equals(UTABTest.COMPONENT_URI, str)) {
             if (list.size() > 0) {
                 for (ExperimentV5 experimentV5 : list) {
                     List<Long> allLayerIds = experimentV5.getAllLayerIds();
@@ -1045,7 +1045,7 @@ public class ces implements cer {
         } else if (cex.a().j().t()) {
             try {
                 for (Map.Entry<String, String> entry : map2.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue()) && !TextUtils.isEmpty(map.get(entry.getKey())) && !entry.getValue().equals(map.get(entry.getKey()))) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue()) && !StringUtils.isEmpty(map.get(entry.getKey())) && !entry.getValue().equals(map.get(entry.getKey()))) {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("sourceUrl", (Object) str);
                         jSONObject.put("targetUrl", (Object) str2);
@@ -1121,22 +1121,22 @@ public class ces implements cer {
         String routingAlg = experimentCognation.getRoutingAlg();
         int bucketNum = experimentCognation.getBucketNum();
         String a2 = com.alibaba.ut.abtest.internal.util.a.a(routingType, experimentCognation.getRoutingFactor(), routingAlg);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return -1;
         }
         if ("motu_md5".equals(routingAlg)) {
             String a3 = com.alibaba.ut.abtest.internal.util.d.a(a2);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 b.a(b.SERVICE_ALARM, "DecisionService.routingMd5", a3, "");
                 return -1;
             }
             abs = Math.abs(a3.hashCode() % experimentCognation.getBucketNum());
-        } else if ("murmur32".equals(routingAlg) || TextUtils.isEmpty(routingAlg)) {
+        } else if ("murmur32".equals(routingAlg) || StringUtils.isEmpty(routingAlg)) {
             abs = Math.abs(e.a().hashString(a2, cew.a.DEFAULT_CHARSET).asInt()) % experimentCognation.getBucketNum();
-        } else if (!TextUtils.isEmpty(routingAlg) && routingAlg.startsWith("trade_md5")) {
+        } else if (!StringUtils.isEmpty(routingAlg) && routingAlg.startsWith("trade_md5")) {
             String b = com.alibaba.ut.abtest.internal.util.d.b(a2);
             double c = com.alibaba.ut.abtest.internal.util.d.c(routingAlg);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b.a(b.SERVICE_ALARM, "DecisionService.routingMd5", b, "");
                 return -1;
             } else if (c <= mto.a.GEO_NOT_SUPPORT) {
@@ -1157,7 +1157,7 @@ public class ces implements cer {
         sb.append("【运行实验】实验分组流量计算。实验ID：");
         sb.append(j);
         sb.append("，分流算法：");
-        if (TextUtils.isEmpty(routingAlg)) {
+        if (StringUtils.isEmpty(routingAlg)) {
             routingAlg = "默认";
         }
         sb.append(routingAlg);

@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.ext.event.util.a;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -111,7 +111,7 @@ public class a {
         }
         if (jSONObject != null && context != null) {
             String string = jSONObject.getString("overrideUrl");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 Bundle bundle = new Bundle();
                 for (String str : jSONObject.keySet()) {
                     bundle.putString(str, jSONObject.getString(str));
@@ -142,7 +142,7 @@ public class a {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 buildUpon = buildUpon.appendQueryParameter(key, value);
             }
         }

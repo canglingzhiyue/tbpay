@@ -1,7 +1,7 @@
 package com.taobao.message.sp.framework.model;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -133,7 +133,7 @@ public class SimpleProfile extends SimpleBaseProfile implements Cloneable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b3f47236", new Object[]{context, str});
         }
-        if (TextUtils.isEmpty(str) || (securityGuardManager = SecurityGuardManager.getInstance(context)) == null || (staticDataEncryptComp = securityGuardManager.getStaticDataEncryptComp()) == null) {
+        if (StringUtils.isEmpty(str) || (securityGuardManager = SecurityGuardManager.getInstance(context)) == null || (staticDataEncryptComp = securityGuardManager.getStaticDataEncryptComp()) == null) {
             return str;
         }
         String staticSafeDecrypt = staticDataEncryptComp.staticSafeDecrypt(16, "tbwangwang_security1", str);

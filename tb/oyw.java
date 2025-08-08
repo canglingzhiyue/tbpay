@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.cache.library.StorageUtils;
 import com.taobao.taobaoavsdk.cache.library.i;
@@ -65,13 +65,13 @@ public class oyw {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str});
         }
         try {
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b = StorageUtils.getIndividualCacheDirectory(context).getAbsolutePath();
             }
             a2 = new ozd().a(str);
         } catch (Throwable unused) {
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         File file = new File(b, a2);
@@ -87,8 +87,8 @@ public class oyw {
             return (String) ipChange.ipc$dispatch("1da50fb7", new Object[]{context, str});
         }
         try {
-            if (!TextUtils.isEmpty(str) && context != null) {
-                if (TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(str) && context != null) {
+                if (StringUtils.isEmpty(b)) {
                     b = StorageUtils.getIndividualCacheDirectory(context).getAbsolutePath();
                 }
                 File file = new File(b, str);

@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 
 /* loaded from: classes9.dex */
@@ -26,7 +26,7 @@ public class eo {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void c(Context context, String str, int i, String str2) {
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return;
         }
         try {

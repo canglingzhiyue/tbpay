@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.adapter;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.Map;
@@ -119,7 +119,7 @@ public class b implements com.alibaba.poplayer.layermanager.c {
             if (r1 == 0) goto L3c
             java.lang.Object r8 = r8.get(r0)     // Catch: java.lang.Throwable -> L73
             java.lang.String r8 = (java.lang.String) r8     // Catch: java.lang.Throwable -> L73
-            boolean r0 = android.text.TextUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> L73
+            boolean r0 = android.text.StringUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> L73
             if (r0 != 0) goto L3c
             goto L3d
         L3c:
@@ -181,7 +181,7 @@ public class b implements com.alibaba.poplayer.layermanager.c {
         }
         try {
             String b = b(str);
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 z = Boolean.parseBoolean(b);
             }
             if (editor != null) {
@@ -202,7 +202,7 @@ public class b implements com.alibaba.poplayer.layermanager.c {
         }
         try {
             String b = b(str);
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 j = Long.parseLong(b);
             }
             if (editor != null) {
@@ -223,7 +223,7 @@ public class b implements com.alibaba.poplayer.layermanager.c {
         }
         try {
             String b = b(str);
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 str3 = b;
             }
             if (editor != null) {

@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.interact.upload.service.IUploadService;
 import java.util.ArrayList;
@@ -73,7 +73,7 @@ public class UploadService extends Service {
 
         @Override // com.taobao.interact.upload.service.IUploadService
         public void uploadFile(String str, MtopInfo mtopInfo, final FileUploadBaseListener fileUploadBaseListener) throws RemoteException {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             FileUploadListenerAdapter fileUploadListenerAdapter = new FileUploadListenerAdapter(new com.taobao.interact.upload.service.a() { // from class: com.taobao.interact.upload.service.UploadService.1.1

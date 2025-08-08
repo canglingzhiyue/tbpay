@@ -3,7 +3,7 @@ package com.taobao.android.megaadaptivekit.gesture;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import com.alibaba.ability.e;
@@ -613,7 +613,7 @@ public class a {
             }
             try {
                 String string = context.getApplicationContext().getSharedPreferences("mega_scale_gesture", 0).getString("cloConfig", null);
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 String[] split = string.split(":");

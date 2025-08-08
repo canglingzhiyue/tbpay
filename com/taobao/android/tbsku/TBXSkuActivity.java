@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -295,7 +295,7 @@ public class TBXSkuActivity extends AppCompatActivity {
             } else if (TBXSkuActivity.e(TBXSkuActivity.this) == null) {
             } else {
                 String a2 = TBXSkuActivity.e(TBXSkuActivity.this).a();
-                if (TextUtils.isEmpty(a2) || !TBXSkuActivity.c(TBXSkuActivity.this).equals(intent.getStringExtra("skuToken")) || !a2.equals(intent.getStringExtra(fgl.ORIGINALITEMID))) {
+                if (StringUtils.isEmpty(a2) || !TBXSkuActivity.c(TBXSkuActivity.this).equals(intent.getStringExtra("skuToken")) || !a2.equals(intent.getStringExtra(fgl.ORIGINALITEMID))) {
                     return;
                 }
                 String stringExtra = intent.getStringExtra(fgl.TARGETITEMID);
@@ -304,13 +304,13 @@ public class TBXSkuActivity extends AppCompatActivity {
                 String stringExtra4 = intent.getStringExtra("params");
                 String stringExtra5 = intent.getStringExtra("forbidLoading");
                 HashMap hashMap = new HashMap(TBXSkuActivity.d(TBXSkuActivity.this).f);
-                if (!TextUtils.isEmpty(stringExtra2)) {
+                if (!StringUtils.isEmpty(stringExtra2)) {
                     hashMap.put(mrm.KEY_AREA_ID, stringExtra2);
                 }
-                if (!TextUtils.isEmpty(stringExtra3)) {
+                if (!StringUtils.isEmpty(stringExtra3)) {
                     hashMap.put("addressId", stringExtra3);
                 }
-                if (!TextUtils.isEmpty(stringExtra4)) {
+                if (!StringUtils.isEmpty(stringExtra4)) {
                     hashMap.put("params", stringExtra4);
                 }
                 if (!TBXSkuActivity.a(TBXSkuActivity.this, stringExtra, (Map) hashMap, false) || "true".equalsIgnoreCase(stringExtra5)) {
@@ -462,7 +462,7 @@ public class TBXSkuActivity extends AppCompatActivity {
             a(this.b.m, (Intent) null);
             return;
         }
-        if (!TextUtils.isEmpty(this.b.c)) {
+        if (!StringUtils.isEmpty(this.b.c)) {
             this.f = this.b.c;
         }
         setContentView(R.layout.xsku_activity_tbxsku);
@@ -502,7 +502,7 @@ public class TBXSkuActivity extends AppCompatActivity {
             return;
         }
         iyf.a().a(this.b.k, "FirstScreenPaint");
-        if (!TextUtils.isEmpty(this.b.t) && (b = k.b(this.b.t)) != null) {
+        if (!StringUtils.isEmpty(this.b.t) && (b = k.b(this.b.t)) != null) {
             long longValue = b.getLongValue("JSBRIDGE_START_UPTIME");
             long longValue2 = b.getLongValue("MSOA_START_UPTIME");
             long longValue3 = b.getLongValue("MSOA_END_UPTIME");
@@ -716,7 +716,7 @@ public class TBXSkuActivity extends AppCompatActivity {
         map.put("skuOutSdk", "true");
         map.put("container_type", "sku");
         com.taobao.android.tbsku.model.a aVar = this.b;
-        if (aVar != null && !TextUtils.isEmpty(aVar.d)) {
+        if (aVar != null && !StringUtils.isEmpty(aVar.d)) {
             map.put("skuType", this.b.d.toLowerCase());
         }
         mainRequestParams.getExParams().remove("openFrom");
@@ -822,7 +822,7 @@ public class TBXSkuActivity extends AppCompatActivity {
             return;
         }
         String d = d(jSONObject);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return;
         }
         o.b(o.DEFAULT_BIZ_NAME, o.UM_URL_DOWNGRADE_REDIRECT_URL_E, "商品出现降级 redirectUrl: " + d, this.b.f15432a, this.b.e);
@@ -885,7 +885,7 @@ public class TBXSkuActivity extends AppCompatActivity {
             return;
         }
         com.taobao.android.tbsku.model.a aVar = this.b;
-        if (aVar != null && aVar.v && !TextUtils.isEmpty(d(jSONObject))) {
+        if (aVar != null && aVar.v && !StringUtils.isEmpty(d(jSONObject))) {
             r.a(this, this.b.w, 1);
             a(15, (Intent) null);
         } else if (!jdj.a(jSONObject, this.b.k)) {
@@ -942,7 +942,7 @@ public class TBXSkuActivity extends AppCompatActivity {
             return null;
         }
         String str = new String(mtopResponse.getBytedata());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return g.a(str);
         }
         return null;
@@ -983,7 +983,7 @@ public class TBXSkuActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction("cartRefreshData");
         intent.putExtra("result", "success");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         intent.putExtra("stringifyAddCartResult", str);
@@ -1003,7 +1003,7 @@ public class TBXSkuActivity extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction("cartRefreshData");
         intent.putExtra("result", "fail");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         intent.putExtra("stringifyAddCartResult", str);
@@ -1127,7 +1127,7 @@ public class TBXSkuActivity extends AppCompatActivity {
                 return;
             }
             String retMsg = mtopResponse.getRetMsg();
-            if (TextUtils.isEmpty(retMsg)) {
+            if (StringUtils.isEmpty(retMsg)) {
                 retMsg = qqy.SKU_MSG_QUERYDATA_FAILED;
             }
             r.a(tBXSkuActivity, qqy.SKU_MSG_QUERYDATA_FAILED, 1);

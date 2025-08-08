@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.fragment.weex.wxcomponent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.bizhandlers.s;
 import com.taobao.android.trade.event.f;
@@ -28,7 +28,7 @@ public class WXAliDetailModel extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("15a718f", new Object[]{this, str, map});
-        } else if (!TextUtils.equals(str, s.EVENT_TYPE_ALTERNATIVE)) {
+        } else if (!StringUtils.equals(str, s.EVENT_TYPE_ALTERNATIVE)) {
         } else {
             f.a(this.mWXSDKInstance.O()).a(new enz());
         }

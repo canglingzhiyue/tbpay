@@ -3,7 +3,7 @@ package com.taobao.login4android.init;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.compat.ApplicationCompat;
@@ -92,7 +92,7 @@ public class LoginLifeCycleInitializer implements Serializable {
             String str = "onActivityCreated() called with: activity = [" + activity.getComponentName().getClassName() + "], savedInstanceState = [" + bundle + riy.ARRAY_END_STR;
             a(activity);
             try {
-                if (TBMainHost.fromActivity(activity) != null && TextUtils.equals(activity.getComponentName().getClassName(), TBMainHost.fromActivity(activity).getName())) {
+                if (TBMainHost.fromActivity(activity) != null && StringUtils.equals(activity.getComponentName().getClassName(), TBMainHost.fromActivity(activity).getName())) {
                     LoginBarController.cacheMainActivity(activity);
                     if (LoginLifeCycleInitializer.access$100() == null) {
                         LoginLifeCycleInitializer.access$102(new LoginObserver());
@@ -125,7 +125,7 @@ public class LoginLifeCycleInitializer implements Serializable {
                 return;
             }
             WeakReference<Activity> weakReference = this.f17856a;
-            if (weakReference != null && (activity2 = weakReference.get()) != null && ((activity2.getLocalClassName().equals("com.taobao.browser.BrowserActivity") || activity2.getLocalClassName().equals("com.taobao.android.auth.AuthEntranceActivity") || activity2.getLocalClassName().equals("com.taobao.android.auth.AuthActivity")) && activity.getLocalClassName().contains("UserLoginActivity") && ((!TextUtils.isEmpty(LoginStatus.browserRefUrl) && LoginStatus.browserRefUrl.contains("http://oauth.m.taobao.com/")) || (activity2.getTaskId() > 0 && activity2.getTaskId() != activity.getTaskId())))) {
+            if (weakReference != null && (activity2 = weakReference.get()) != null && ((activity2.getLocalClassName().equals("com.taobao.browser.BrowserActivity") || activity2.getLocalClassName().equals("com.taobao.android.auth.AuthEntranceActivity") || activity2.getLocalClassName().equals("com.taobao.android.auth.AuthActivity")) && activity.getLocalClassName().contains("UserLoginActivity") && ((!StringUtils.isEmpty(LoginStatus.browserRefUrl) && LoginStatus.browserRefUrl.contains("http://oauth.m.taobao.com/")) || (activity2.getTaskId() > 0 && activity2.getTaskId() != activity.getTaskId())))) {
                 this.b = true;
             }
             if ("com.ali.user.mobile.webview.WebViewActivity".equals(activity.getLocalClassName()) || "com.ali.user.mobile.ui.AliUserVerificationActivity".equals(activity.getLocalClassName()) || "com.alibaba.security.biometrics.face.auth.FaceLivenessActivity2".equals(activity.getLocalClassName())) {
@@ -151,7 +151,7 @@ public class LoginLifeCycleInitializer implements Serializable {
                 }
             }
             try {
-                if (TBMainHost.fromActivity(activity) == null || !TextUtils.equals(activity.getComponentName().getClassName(), TBMainHost.fromActivity(activity).getName()) || LoginLifeCycleInitializer.access$100() == null) {
+                if (TBMainHost.fromActivity(activity) == null || !StringUtils.equals(activity.getComponentName().getClassName(), TBMainHost.fromActivity(activity).getName()) || LoginLifeCycleInitializer.access$100() == null) {
                     return;
                 }
                 e.b(LoginLifeCycleInitializer.access$100());

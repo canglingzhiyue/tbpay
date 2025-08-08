@@ -101,7 +101,7 @@ public class Launcher_Login implements Serializable {
                     java.lang.Object[] r6 = new java.lang.Object[r4]     // Catch: java.lang.Throwable -> Lab
                     com.taobao.accs.utl.ALog.e(r0, r5, r2, r6)     // Catch: java.lang.Throwable -> Lab
                 L64:
-                    boolean r2 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Lab
+                    boolean r2 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Lab
                     if (r2 == 0) goto L74
                     java.lang.String r1 = "login get appkey null"
                     java.lang.Object[] r2 = new java.lang.Object[r4]     // Catch: java.lang.Throwable -> Lab

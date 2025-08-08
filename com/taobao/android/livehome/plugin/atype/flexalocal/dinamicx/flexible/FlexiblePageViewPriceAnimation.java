@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -260,7 +260,7 @@ public class FlexiblePageViewPriceAnimation extends FlexiblePageViewNormal {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("29f5f0b7", new Object[]{this, new Integer(i)});
-        } else if (!TextUtils.isEmpty(this.mPageViewEntity.itemPrice) && !TextUtils.isEmpty(this.mPageViewEntity.promotionPrice)) {
+        } else if (!StringUtils.isEmpty(this.mPageViewEntity.itemPrice) && !StringUtils.isEmpty(this.mPageViewEntity.promotionPrice)) {
             this.mButtonLayoutExpend.setVisibility(0);
             RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) this.mButtonLayoutExpend.getLayoutParams();
             if (layoutParams == null) {

@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e.h;
 
 import android.content.Context;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.d.i;
@@ -118,10 +118,10 @@ public class a {
         if (bVar != null && bVar.a() != null) {
             String a2 = i.a("ro.product.model");
             String a3 = i.a("ro.build.display.id");
-            if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(a3)) {
                 for (int i = 0; i < bVar.a().size(); i++) {
                     b.a aVar = bVar.a().get(i);
-                    if (aVar != null && !TextUtils.isEmpty(aVar.a()) && !TextUtils.isEmpty(aVar.b()) && a(aVar.a(), a2) && a(aVar.b(), a3)) {
+                    if (aVar != null && !StringUtils.isEmpty(aVar.a()) && !StringUtils.isEmpty(aVar.b()) && a(aVar.a(), a2) && a(aVar.b(), a3)) {
                         return true;
                     }
                 }
@@ -131,10 +131,10 @@ public class a {
     }
 
     private boolean a(com.meizu.cloud.pushsdk.handler.e.h.b bVar, String str) {
-        if (!TextUtils.isEmpty(str) && bVar != null && bVar.b() != null) {
+        if (!StringUtils.isEmpty(str) && bVar != null && bVar.b() != null) {
             for (int i = 0; i < bVar.b().size(); i++) {
                 String str2 = bVar.b().get(i);
-                if (!TextUtils.isEmpty(str2) && a(str2, str)) {
+                if (!StringUtils.isEmpty(str2) && a(str2, str)) {
                     return true;
                 }
             }
@@ -143,7 +143,7 @@ public class a {
     }
 
     private boolean a(String str, String str2) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         String lowerCase = str.toLowerCase();
@@ -182,10 +182,10 @@ public class a {
     }
 
     private boolean b(com.meizu.cloud.pushsdk.handler.e.h.b bVar, String str) {
-        if (!TextUtils.isEmpty(str) && bVar != null && bVar.c() != null) {
+        if (!StringUtils.isEmpty(str) && bVar != null && bVar.c() != null) {
             for (int i = 0; i < bVar.c().size(); i++) {
                 String str2 = bVar.c().get(i);
-                if (!TextUtils.isEmpty(str2) && a(str2, str)) {
+                if (!StringUtils.isEmpty(str2) && a(str2, str)) {
                     return true;
                 }
             }
@@ -230,7 +230,7 @@ public class a {
         }
         try {
             String c = com.meizu.cloud.pushsdk.notification.g.a.c(externalFilesDir.getPath() + "/push_config");
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 return new JSONObject(c);
             }
         } catch (Exception e) {

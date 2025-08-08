@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class sya extends h {
         if (super.f() || !this.h) {
             return true;
         }
-        return !(this.c != null && (this.c.equals("com.taobao.tao.detail.activity.DetailActivity") || this.c.equals("com.taobao.android.detail.wrapper.activity.DetailActivity"))) || c.a().a(GlobalWindowFactory.WINDOW_AFFECTION) || (jSONObject = c.a().d) == null || !jSONObject.getBooleanValue("isShowPop") || TextUtils.isEmpty(b()) || jSONObject.getJSONObject("popData") == null;
+        return !(this.c != null && (this.c.equals("com.taobao.tao.detail.activity.DetailActivity") || this.c.equals("com.taobao.android.detail.wrapper.activity.DetailActivity"))) || c.a().a(GlobalWindowFactory.WINDOW_AFFECTION) || (jSONObject = c.a().d) == null || !jSONObject.getBooleanValue("isShowPop") || StringUtils.isEmpty(b()) || jSONObject.getJSONObject("popData") == null;
     }
 
     @Override // com.taobao.family.globalbubble.h, com.taobao.family.globalbubble.e

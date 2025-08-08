@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.ability.localization.b;
@@ -322,7 +322,7 @@ public final class g implements IMediaPickClient {
                 }
                 d().clear();
             } else if (d().size() >= h()) {
-                this.l.a(e(), String.format(TextUtils.isEmpty(this.i.g) ? b.a(R.string.gg_pub_max_selection_limit) : this.i.g, Integer.valueOf(h())));
+                this.l.a(e(), String.format(StringUtils.isEmpty(this.i.g) ? b.a(R.string.gg_pub_max_selection_limit) : this.i.g, Integer.valueOf(h())));
                 return false;
             }
             d().add(t);

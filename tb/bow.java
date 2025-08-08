@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.android.aura.service.event.AURAEventKey;
 import com.alibaba.android.ultron.event.base.e;
@@ -78,7 +78,7 @@ public class bow {
                     b bVar = list.get(i);
                     if (bVar != null) {
                         String type = bVar.getType();
-                        if (!TextUtils.isEmpty(type)) {
+                        if (!StringUtils.isEmpty(type)) {
                             if ("userTrack".equals(type)) {
                                 JSONObject fields = iDMComponent.getFields();
                                 if (fields != null && fields.containsKey("asyncStatus") && !"success".equals(fields.getString("asyncStatus"))) {

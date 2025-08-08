@@ -1,6 +1,6 @@
 package com.taobao.adaemon;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.aranger.exception.IPCException;
@@ -129,7 +129,7 @@ public class i {
         }
         try {
             String mainProcCpuCost = iRemoteProcessHandler.getMainProcCpuCost();
-            if (TextUtils.isEmpty(mainProcCpuCost)) {
+            if (StringUtils.isEmpty(mainProcCpuCost)) {
                 return null;
             }
             String[] split = mainProcCpuCost.split(",");

@@ -8,7 +8,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.MatrixCursor;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.alibaba.ip.utils.PreferencesUtils;
@@ -135,7 +135,7 @@ public abstract class PreferencesProvider extends ContentProvider {
         int match = this.mUriMatcher.match(uri);
         if (match == 106) {
             delete(getContext(), model);
-        } else if (match == 108 && !TextUtils.isEmpty(Model.access$000(model))) {
+        } else if (match == 108 && !StringUtils.isEmpty(Model.access$000(model))) {
             clear(getContext(), model);
         }
         return 0;
@@ -229,7 +229,7 @@ public abstract class PreferencesProvider extends ContentProvider {
                     string = Integer.valueOf(PreferencesUtils.getInt(context, model.getSpName(), model.getKey()));
                     break;
                 } else {
-                    if (!TextUtils.isDigitsOnly(defValue + "")) {
+                    if (!StringUtils.isDigitsOnly(defValue + "")) {
                         defValue = -1;
                     }
                     string = Integer.valueOf(PreferencesUtils.getInt(context, model.getSpName(), model.getKey(), Integer.parseInt(defValue + "")));
@@ -240,7 +240,7 @@ public abstract class PreferencesProvider extends ContentProvider {
                     string = Long.valueOf(PreferencesUtils.getLong(context, model.getSpName(), model.getKey()));
                     break;
                 } else {
-                    if (!TextUtils.isDigitsOnly(defValue + "")) {
+                    if (!StringUtils.isDigitsOnly(defValue + "")) {
                         defValue = -1;
                     }
                     string = Long.valueOf(PreferencesUtils.getLong(context, model.getSpName(), model.getKey(), Long.parseLong(defValue + "")));

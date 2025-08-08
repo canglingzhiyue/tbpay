@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -68,7 +68,7 @@ public class apq {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("d9378d6f", new Object[]{this, str, str2})).intValue();
             }
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 return str.compareTo(str2) * (-1);
             }
             return 0;
@@ -98,7 +98,7 @@ public class apq {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("d9378d6f", new Object[]{this, str, str2})).intValue();
             }
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 return str.compareTo(str2);
             }
             return 0;

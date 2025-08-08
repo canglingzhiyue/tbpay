@@ -1,6 +1,6 @@
 package com.taobao.themis.open.permission.check;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.PermissionModel;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -139,7 +139,7 @@ public final class b {
             return PermissionResult.IGNORE;
         }
         String str2 = checkKey;
-        if (TextUtils.equals(str2, a.VALID_SUB_RES_MIME_LIST) || n.b(checkKey, a.JS_API_SP_CONFIG, false, 2, (Object) null) || TextUtils.equals(str2, a.EVENT_LIST) || TextUtils.equals(str2, a.HTTP_LINK_SUB_RES_MIME_LIST) || n.b(checkKey, a.WEB_VIEW_CONFIG, false, 2, (Object) null) || TextUtils.equals(str2, a.VALID_DOMAIN)) {
+        if (StringUtils.equals(str2, a.VALID_SUB_RES_MIME_LIST) || n.b(checkKey, a.JS_API_SP_CONFIG, false, 2, (Object) null) || StringUtils.equals(str2, a.EVENT_LIST) || StringUtils.equals(str2, a.HTTP_LINK_SUB_RES_MIME_LIST) || n.b(checkKey, a.WEB_VIEW_CONFIG, false, 2, (Object) null) || StringUtils.equals(str2, a.VALID_DOMAIN)) {
             List<String> list = apiPermissionInfo.a().get(checkKey);
             if (list != null) {
                 for (String str3 : list) {
@@ -165,22 +165,22 @@ public final class b {
                 }
             }
             TMSLogger.b(TAG, checkKey + " not have permssion ,not match regex");
-            if (TextUtils.equals(str2, a.VALID_SUB_RES_MIME_LIST)) {
+            if (StringUtils.equals(str2, a.VALID_SUB_RES_MIME_LIST)) {
                 return PermissionResult.DENY_N22105;
             }
             if (n.b(checkKey, a.JS_API_SP_CONFIG, false, 2, (Object) null)) {
                 return PermissionResult.DENY_N22106;
             }
-            if (TextUtils.equals(str2, a.EVENT_LIST)) {
+            if (StringUtils.equals(str2, a.EVENT_LIST)) {
                 return PermissionResult.DENY_N22107;
             }
-            if (TextUtils.equals(str2, a.HTTP_LINK_SUB_RES_MIME_LIST)) {
+            if (StringUtils.equals(str2, a.HTTP_LINK_SUB_RES_MIME_LIST)) {
                 return PermissionResult.DENY_N22108;
             }
             if (n.b(checkKey, a.WEB_VIEW_CONFIG, false, 2, (Object) null)) {
                 return PermissionResult.DENY_N22109;
             }
-            if (TextUtils.equals(str2, a.VALID_DOMAIN)) {
+            if (StringUtils.equals(str2, a.VALID_DOMAIN)) {
                 return PermissionResult.DENY_N22110;
             }
             return PermissionResult.DENY;

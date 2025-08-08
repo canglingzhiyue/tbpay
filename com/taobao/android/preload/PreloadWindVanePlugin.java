@@ -2,7 +2,7 @@ package com.taobao.android.preload;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class PreloadWindVanePlugin extends android.taobao.windvane.jsbridge.e {
             return false;
         }
         String string = parseObject.getString("bizName");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             handleCallbackFail("10002", ERROR_MSG_BIZ_NAME_EMPTY, wVCallBackContext);
             return false;
         } else if (parseObject.getJSONArray("items") == null) {

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -267,11 +267,11 @@ public final class PubAddIconGuide {
             q.b(textView2, "this");
             textView2.setText(str5);
             TUrlImageView tUrlImageView = (TUrlImageView) inflate.findViewById(R.id.tvImage);
-            if (!TextUtils.isEmpty(str7)) {
+            if (!StringUtils.isEmpty(str7)) {
                 com.taobao.phenix.intf.b.h().a("common", str7).into(tUrlImageView);
             }
             TUrlImageView tUrlImageView2 = (TUrlImageView) inflate.findViewById(R.id.tvLogoImage);
-            if (!TextUtils.isEmpty(dosaLogo)) {
+            if (!StringUtils.isEmpty(dosaLogo)) {
                 com.taobao.phenix.intf.b.h().a("common", dosaLogo).into(tUrlImageView2);
             }
             inflate.findViewById(R.id.btnClose).setOnClickListener(new c(str4, str5, str7, dosaLogo, str));

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.mmtp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.amnet.api.AmnetListenerAdpter;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
@@ -61,11 +61,11 @@ public class MMTPGeneralListenerImpl extends AmnetListenerAdpter {
         hashMap.put("longitude", String.valueOf(LbsInfoUtil.getLongitude()));
         hashMap.put("locTime", String.valueOf(LbsInfoUtil.getLocationtime()));
         String apDid = SecurityUtil.getApDid();
-        if (!TextUtils.isEmpty(apDid)) {
+        if (!StringUtils.isEmpty(apDid)) {
             hashMap.put("apdid", apDid);
         }
         String a2 = a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("sourceId", a2);
         }
         Map<String, String> map2 = map.get((byte) 0);

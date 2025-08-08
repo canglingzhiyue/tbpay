@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.util;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.android.icart.core.QueryParamsManager;
@@ -98,7 +98,7 @@ public class k {
             return;
         }
         this.b = str;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return;
         }
         this.b = "SET_YOUR_TAG_IN_CONFIG.";

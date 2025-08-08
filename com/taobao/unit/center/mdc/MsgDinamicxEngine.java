@@ -2,7 +2,7 @@ package com.taobao.unit.center.mdc;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -212,13 +212,13 @@ public class MsgDinamicxEngine {
                 }
             });
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 aVar.b(str);
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-        } else if (bizTag != null && !TextUtils.isEmpty(bizTag.dxSubBizType())) {
+        } else if (bizTag != null && !StringUtils.isEmpty(bizTag.dxSubBizType())) {
             try {
                 aVar.b(str);
             } catch (Throwable th2) {

@@ -1,6 +1,6 @@
 package com.ali.user.open.cookies;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieSyncManager;
 import com.ali.user.open.core.Site;
 import com.ali.user.open.core.context.KernelContext;
@@ -48,7 +48,7 @@ public class CookieManagerWrapper {
             android.content.Context r1 = com.ali.user.open.core.context.KernelContext.getApplicationContext()     // Catch: java.lang.Throwable -> L47
             java.lang.String r2 = r5.getCoookieFileNameBySite(r6)     // Catch: java.lang.Throwable -> L47
             java.lang.String r1 = com.ali.user.open.core.util.FileUtils.readFileData(r1, r2)     // Catch: java.lang.Throwable -> L47
-            boolean r2 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L47
+            boolean r2 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L47
             if (r2 != 0) goto L47
             java.lang.String r2 = com.ali.user.open.cookies.CookieManagerWrapper.TAG     // Catch: java.lang.Throwable -> L47
             java.lang.StringBuilder r3 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> L47
@@ -59,7 +59,7 @@ public class CookieManagerWrapper {
             java.lang.String r3 = r3.toString()     // Catch: java.lang.Throwable -> L47
             com.ali.user.open.core.trace.SDKLogger.d(r2, r3)     // Catch: java.lang.Throwable -> L47
             java.lang.String r2 = "\u0005"
-            java.lang.String[] r1 = android.text.TextUtils.split(r1, r2)     // Catch: java.lang.Throwable -> L47
+            java.lang.String[] r1 = android.text.StringUtils.split(r1, r2)     // Catch: java.lang.Throwable -> L47
             goto L48
         L47:
             r1 = r0
@@ -105,13 +105,13 @@ public class CookieManagerWrapper {
                 ArrayList<LoginCookie> arrayList = new ArrayList();
                 String domainBySite = getDomainBySite(str);
                 for (String str2 : strArr) {
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         LoginCookie parseCookie = LoginCookieUtils.parseCookie(str2);
                         String httpDomin = LoginCookieUtils.getHttpDomin(parseCookie);
                         String loginCookie = parseCookie.toString();
                         SDKLogger.d(TAG, "add cookie: " + loginCookie);
                         CookieManagerService.getWebViewProxy().setCookie(httpDomin, loginCookie);
-                        if (TextUtils.equals(parseCookie.domain, domainBySite)) {
+                        if (StringUtils.equals(parseCookie.domain, domainBySite)) {
                             arrayList.add(parseCookie);
                         }
                     }
@@ -131,8 +131,8 @@ public class CookieManagerWrapper {
                 }
                 CookieManagerService.getWebViewProxy().flush();
                 if (strArr.length > 0) {
-                    FileUtils.writeFileData(KernelContext.getApplicationContext(), getCoookieFileNameBySite(str), TextUtils.join(Constants.COOKIE_SPLIT, strArr));
-                    FileUtils.writeFileData(KernelContext.getApplicationContext(), getCoookieBackupFileNameBySite(str), TextUtils.join(Constants.COOKIE_SPLIT, strArr));
+                    FileUtils.writeFileData(KernelContext.getApplicationContext(), getCoookieFileNameBySite(str), StringUtils.join(Constants.COOKIE_SPLIT, strArr));
+                    FileUtils.writeFileData(KernelContext.getApplicationContext(), getCoookieBackupFileNameBySite(str), StringUtils.join(Constants.COOKIE_SPLIT, strArr));
                 }
                 return;
             }
@@ -160,13 +160,13 @@ public class CookieManagerWrapper {
         SDKLogger.e("clearCookies", "into clearCookies ");
         CookieSyncManager.createInstance(KernelContext.getApplicationContext());
         SDKLogger.e("clearCookies", "into clearCookies removeSessionCookie finish");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = FileUtils.readFileData(KernelContext.getApplicationContext(), getCoookieFileNameBySite(str));
         }
         String[] strArr2 = null;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             SDKLogger.d(TAG, "get cookie from storage:" + str2);
-            strArr = TextUtils.split(str2, Constants.COOKIE_SPLIT);
+            strArr = StringUtils.split(str2, Constants.COOKIE_SPLIT);
         } else {
             strArr = null;
         }
@@ -175,14 +175,14 @@ public class CookieManagerWrapper {
             ArrayList<LoginCookie> arrayList = new ArrayList();
             String domainBySite = getDomainBySite(str);
             for (String str3 : strArr) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     try {
                         LoginCookie parseCookie = LoginCookieUtils.parseCookie(str3);
                         if (!"munb".equals(parseCookie.name)) {
                             String httpDomin = LoginCookieUtils.getHttpDomin(parseCookie);
                             LoginCookieUtils.expiresCookies(parseCookie);
                             CookieManagerService.getWebViewProxy().setCookie(httpDomin, parseCookie.toString());
-                            if (TextUtils.equals(parseCookie.domain, domainBySite)) {
+                            if (StringUtils.equals(parseCookie.domain, domainBySite)) {
                                 arrayList.add(parseCookie);
                             }
                         }
@@ -222,6 +222,6 @@ public class CookieManagerWrapper {
 
     private String getDomainBySite(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("c79f8697", new Object[]{this, str}) : TextUtils.equals(str, "taobao") ? ".taobao.com" : TextUtils.equals(str, "alipay") ? ".alipay.com" : TextUtils.equals(str, Site.DAMAI) ? ".damai.cn" : TextUtils.equals(str, "eleme") ? ".ele.me" : TextUtils.equals(str, Site.ICBU) ? ".alibaba.com" : TextUtils.equals(str, "xianyu") ? ".goofish.com" : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("c79f8697", new Object[]{this, str}) : StringUtils.equals(str, "taobao") ? ".taobao.com" : StringUtils.equals(str, "alipay") ? ".alipay.com" : StringUtils.equals(str, Site.DAMAI) ? ".damai.cn" : StringUtils.equals(str, "eleme") ? ".ele.me" : StringUtils.equals(str, Site.ICBU) ? ".alibaba.com" : StringUtils.equals(str, "xianyu") ? ".goofish.com" : "";
     }
 }

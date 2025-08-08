@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.model.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -256,7 +256,7 @@ public class ItemNode extends DetailNode {
                     return (VideoItem) ipChange2.ipc$dispatch("ab97a16f", new Object[]{this, obj});
                 }
                 VideoItem videoItem = new VideoItem((JSONObject) obj);
-                if (TextUtils.isEmpty(videoItem.url)) {
+                if (StringUtils.isEmpty(videoItem.url)) {
                     return null;
                 }
                 return videoItem;

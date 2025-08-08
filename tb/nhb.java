@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.l;
 import com.ut.mini.UTAnalytics;
@@ -26,7 +26,7 @@ public class nhb implements l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2b903f76", new Object[]{this, str, new Integer(i), str2, str3, str4, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ngr.d("DefaultUserTrack", "Param pageName shouldn't be empty.");
         } else if (i <= 0) {
             ngr.d("DefaultUserTrack", "Param eventId should > 0.");
@@ -55,7 +55,7 @@ public class nhb implements l {
             ipChange.ipc$dispatch("84162689", new Object[]{this, str, str2, map});
             return;
         }
-        UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = TextUtils.isEmpty(str) ? new UTHitBuilders.UTControlHitBuilder(str2) : new UTHitBuilders.UTControlHitBuilder(str, str2);
+        UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = StringUtils.isEmpty(str) ? new UTHitBuilders.UTControlHitBuilder(str2) : new UTHitBuilders.UTControlHitBuilder(str, str2);
         uTControlHitBuilder.setProperties(map);
         a().send(uTControlHitBuilder.build());
     }

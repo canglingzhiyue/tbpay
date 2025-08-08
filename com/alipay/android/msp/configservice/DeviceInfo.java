@@ -1,7 +1,7 @@
 package com.alipay.android.msp.configservice;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.m;
 import com.alipay.android.msp.utils.LogUtil;
 import com.alipay.mobile.common.logging.api.DeviceProperty;
@@ -44,7 +44,7 @@ public class DeviceInfo {
             } catch (Throwable th) {
                 LogUtil.printExceptionStackTrace(th);
             }
-            if (TextUtils.isEmpty(this.p)) {
+            if (StringUtils.isEmpty(this.p)) {
                 this.p = "unknown";
             }
         }
@@ -61,7 +61,7 @@ public class DeviceInfo {
                 this.o = Build.BRAND.toLowerCase();
             } catch (Throwable unused) {
             }
-            if (TextUtils.isEmpty(this.o)) {
+            if (StringUtils.isEmpty(this.o)) {
                 this.o = "unknown";
             }
         }
@@ -251,7 +251,7 @@ public class DeviceInfo {
     }
 
     public String getSystemProperty(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         try {
@@ -272,7 +272,7 @@ public class DeviceInfo {
                 this.r = Build.DISPLAY.toLowerCase();
             } catch (Throwable unused) {
             }
-            if (TextUtils.isEmpty(this.r)) {
+            if (StringUtils.isEmpty(this.r)) {
                 this.r = "unknown";
             }
         }
@@ -306,9 +306,9 @@ public class DeviceInfo {
             } else if (!j() && !k() && !l()) {
                 m();
             }
-            if (TextUtils.isEmpty(this.q)) {
+            if (StringUtils.isEmpty(this.q)) {
                 this.q = getDisplayID();
-                if (TextUtils.isEmpty(this.q)) {
+                if (StringUtils.isEmpty(this.q)) {
                     this.q = "unknown";
                 }
             }

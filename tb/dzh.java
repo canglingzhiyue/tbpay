@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.FeatureNode;
@@ -347,10 +347,10 @@ public class dzh {
             return (Pair[]) ipChange.ipc$dispatch("f4b321ff", new Object[]{str, str2});
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             arrayList.add(new Pair("spm", str));
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayList.add(new Pair("scm", str2));
         }
         if (arrayList.size() == 0) {
@@ -446,13 +446,13 @@ public class dzh {
             return (Pair[]) ipChange.ipc$dispatch("167c6f5", new Object[]{str, str2, str3});
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             arrayList.add(new Pair("spm", str));
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayList.add(new Pair("scm", str2));
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             arrayList.add(new Pair(b.PROPERTY_VIDEO_ID, str3));
         }
         if (arrayList.size() == 0) {
@@ -581,7 +581,7 @@ public class dzh {
         VideoModel videoModel = (VideoModel) a2;
         HashMap hashMap = new HashMap();
         String str = videoModel.spatialVideoDimension;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "0:0";
         }
         hashMap.put("scaletype", str);

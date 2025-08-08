@@ -163,7 +163,7 @@ public final class BroadcastAbility extends AbsBroadcastAbility {
             java.lang.String r0 = r12.b
             r1 = r0
             java.lang.CharSequence r1 = (java.lang.CharSequence) r1
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             r1 = r1 ^ r2
             r3 = 0
             if (r1 == 0) goto L38
@@ -232,7 +232,7 @@ public final class BroadcastAbility extends AbsBroadcastAbility {
             if (r11 == 0) goto Lc5
             r13 = r11
             java.lang.CharSequence r13 = (java.lang.CharSequence) r13
-            boolean r13 = android.text.TextUtils.isEmpty(r13)
+            boolean r13 = android.text.StringUtils.isEmpty(r13)
             r13 = r13 ^ r2
             if (r13 == 0) goto Lc2
             goto Lc3

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -270,9 +270,9 @@ public class VesselWebView extends VesselBaseView {
         if (this.mWebView == null) {
             return false;
         }
-        if (!TextUtils.isEmpty(this.mUrl)) {
+        if (!StringUtils.isEmpty(this.mUrl)) {
             this.mWebView.loadUrl(this.mUrl);
-        } else if (!TextUtils.isEmpty(this.mOriginJsData)) {
+        } else if (!StringUtils.isEmpty(this.mOriginJsData)) {
             this.mWebView.loadData(this.mOriginJsData, "text/html", "utf-8");
         }
         return true;

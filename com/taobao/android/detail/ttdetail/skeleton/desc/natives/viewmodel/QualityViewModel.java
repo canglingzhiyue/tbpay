@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure.ComponentModel;
@@ -60,17 +60,17 @@ public class QualityViewModel extends e {
                 this.c = jSONObject2.getString("text");
             }
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = "品质组件";
         }
         this.d = jSONObject.getString("titleColor");
         this.e = jSONObject.getString("iconType");
         String string = jSONObject.getString("imageTags");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.f10866a = JSONObject.parseArray(string, String.class);
         }
         String string2 = jSONObject.getString("content");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return;
         }
         this.b = JSONObject.parseArray(string2, QualityContentModel.class);

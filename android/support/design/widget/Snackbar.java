@@ -3,7 +3,7 @@ package android.support.design.widget;
 import android.content.Context;
 import android.support.design.internal.SnackbarContentLayout;
 import android.support.design.widget.BaseTransientBottomBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -101,7 +101,7 @@ public final class Snackbar extends BaseTransientBottomBar<Snackbar> {
     public Snackbar a(CharSequence charSequence, final View.OnClickListener onClickListener) {
         View.OnClickListener onClickListener2;
         Button actionView = ((SnackbarContentLayout) this.b.getChildAt(0)).getActionView();
-        if (TextUtils.isEmpty(charSequence) || onClickListener == null) {
+        if (StringUtils.isEmpty(charSequence) || onClickListener == null) {
             actionView.setVisibility(8);
             onClickListener2 = null;
         } else {

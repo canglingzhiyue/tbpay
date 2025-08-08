@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.rule.AURALocalAdjustIO;
 import com.alibaba.android.aura.datamodel.rule.a;
@@ -46,7 +46,7 @@ public final class hvq extends ava {
             return null;
         }
         String string = c.getString("shareContextPath");
-        if (TextUtils.isEmpty(string) || (a2 = a()) == null) {
+        if (StringUtils.isEmpty(string) || (a2 = a()) == null) {
             return null;
         }
         JSONObject jSONObject2 = a2.getJSONObject(string);
@@ -83,7 +83,7 @@ public final class hvq extends ava {
             return ipChange.ipc$dispatch("1a438b6b", new Object[]{this, map, str});
         }
         String a2 = a(str);
-        return (TextUtils.isEmpty(a2) || TextUtils.equals(a2, "*")) ? map : bbd.b.a(a2.split("\\."), map);
+        return (StringUtils.isEmpty(a2) || StringUtils.equals(a2, "*")) ? map : bbd.b.a(a2.split("\\."), map);
     }
 
     private String a(String str) {

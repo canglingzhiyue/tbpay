@@ -2,7 +2,7 @@ package com.taobao.tao.favorite.category;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -92,10 +92,10 @@ public class FavoriteCategoryData implements Parcelable, IMTOPDataObject {
         if (favoriteCategoryData2 == null) {
             favoriteCategoryData2 = new FavoriteCategoryData();
         }
-        if (!TextUtils.isEmpty(favoriteCategoryData.categoryId)) {
+        if (!StringUtils.isEmpty(favoriteCategoryData.categoryId)) {
             favoriteCategoryData2.categoryId = favoriteCategoryData.categoryId;
         }
-        if (!TextUtils.isEmpty(favoriteCategoryData.categoryName)) {
+        if (!StringUtils.isEmpty(favoriteCategoryData.categoryName)) {
             favoriteCategoryData2.categoryName = favoriteCategoryData.categoryName;
         }
         int i = favoriteCategoryData.source;
@@ -114,13 +114,13 @@ public class FavoriteCategoryData implements Parcelable, IMTOPDataObject {
         if (i4 >= 0) {
             favoriteCategoryData2.totalCount = i4;
         }
-        if (!TextUtils.isEmpty(favoriteCategoryData.nextPage)) {
+        if (!StringUtils.isEmpty(favoriteCategoryData.nextPage)) {
             favoriteCategoryData2.nextPage = favoriteCategoryData.nextPage;
         }
-        if (!TextUtils.isEmpty(favoriteCategoryData.userId)) {
+        if (!StringUtils.isEmpty(favoriteCategoryData.userId)) {
             favoriteCategoryData2.userId = favoriteCategoryData.userId;
         }
-        if (!TextUtils.isEmpty(favoriteCategoryData.userNick)) {
+        if (!StringUtils.isEmpty(favoriteCategoryData.userNick)) {
             favoriteCategoryData2.userNick = favoriteCategoryData.userNick;
         }
         List<FavoriteCategoryItemData> list = favoriteCategoryData.resultList;

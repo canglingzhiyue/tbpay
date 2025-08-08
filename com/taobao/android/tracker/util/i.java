@@ -1,6 +1,6 @@
 package com.taobao.android.tracker.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewParent;
 import com.alibaba.fastjson.JSONObject;
@@ -45,18 +45,18 @@ public class i {
             return (String) ipChange.ipc$dispatch("753e6136", new Object[]{view, new Boolean(z)});
         }
         String a2 = a(view, ATTR_KEY_DATA_TRACKER);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         if (!z) {
             return null;
         }
         String a3 = a(view, "id");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             return a3;
         }
         String a4 = a(view, "class");
-        if (TextUtils.isEmpty(a4)) {
+        if (StringUtils.isEmpty(a4)) {
             return null;
         }
         return a4;
@@ -135,7 +135,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2b6ac600", new Object[]{view, str, new Boolean(z)});
         }
-        if (view == null || TextUtils.isEmpty(str)) {
+        if (view == null || StringUtils.isEmpty(str)) {
             return null;
         }
         if (z) {
@@ -143,7 +143,7 @@ public class i {
                 WXAttr a2 = a(b);
                 String a3 = a(a2, ATTR_KEY_DATA_SPM);
                 String a4 = a(a2, str);
-                if (!TextUtils.isEmpty(a3) || !TextUtils.isEmpty(a4)) {
+                if (!StringUtils.isEmpty(a3) || !StringUtils.isEmpty(a4)) {
                     return a4;
                 }
             }
@@ -167,7 +167,7 @@ public class i {
 
     public static boolean a(String str, View view, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d1815378", new Object[]{str, view, new Boolean(z)})).booleanValue() : !TextUtils.isEmpty(a(view, z));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d1815378", new Object[]{str, view, new Boolean(z)})).booleanValue() : !StringUtils.isEmpty(a(view, z));
     }
 
     public static String b(View view, String str) {
@@ -186,7 +186,7 @@ public class i {
             if (a2 != null) {
                 str2 = a(a2, str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 break;
             }
             b = b.getParent();

@@ -2,7 +2,7 @@ package com.flybird;
 
 import android.content.Context;
 import android.graphics.Point;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alipay.birdnest.api.BirdNestEngine;
@@ -263,7 +263,7 @@ public class FBVideo extends FBView implements BirdNestEngine.UiVideoProvider.Vi
         if (c == 0) {
             this.A.loadUri(innerView, this.B);
             this.mDoc.getClass();
-            if (!TextUtils.equals(this.B.get("autoplay"), "true")) {
+            if (!StringUtils.equals(this.B.get("autoplay"), "true")) {
                 this.A.prepare(innerView);
             } else {
                 this.A.play(innerView);

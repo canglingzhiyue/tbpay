@@ -2,7 +2,7 @@ package android.taobao.windvane.extra.uc;
 
 import android.os.Handler;
 import android.taobao.windvane.config.j;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -121,7 +121,7 @@ public class WVUCPrecacheManager implements aek {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3d9b66b", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || !str.equals(sLastPrecachePackageName)) {
+        } else if (StringUtils.isEmpty(str) || !str.equals(sLastPrecachePackageName)) {
         } else {
             sCanClearByZcacheUpdate = true;
             sCanPrecacheByZcacheUpdate = true;
@@ -170,7 +170,7 @@ public class WVUCPrecacheManager implements aek {
             boolean r3 = r3.equals(r1)
             if (r3 != 0) goto L42
             android.taobao.windvane.extra.uc.WVUCPrecacheManager.sCanClearByCommonConfig = r4
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             if (r2 != 0) goto L41
             android.taobao.windvane.extra.uc.WVUCPrecacheManager.sCanPrecacheByCommonConfig = r4
         L41:
@@ -193,7 +193,7 @@ public class WVUCPrecacheManager implements aek {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("42f06a72", new Object[0]);
-        } else if (!j.commonConfig.O || TextUtils.isEmpty(sLastPrecachePackageName)) {
+        } else if (!j.commonConfig.O || StringUtils.isEmpty(sLastPrecachePackageName)) {
             sPreMemCacheUrlSet = new HashSet<>();
         } else {
             ael a2 = aem.a().a(6011, sLastPrecachePackageName);
@@ -224,7 +224,7 @@ public class WVUCPrecacheManager implements aek {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c673d3ba", new Object[0])).booleanValue();
         }
-        if (j.commonConfig.O && !TextUtils.isEmpty(sLastPrecachePackageName)) {
+        if (j.commonConfig.O && !StringUtils.isEmpty(sLastPrecachePackageName)) {
             if (!sHasInitUrlSet) {
                 sHasInitUrlSet = true;
                 updatePreMemCacheUrls();
@@ -261,7 +261,7 @@ public class WVUCPrecacheManager implements aek {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("611139de", new Object[]{this, str})).booleanValue();
         }
-        if (!j.commonConfig.Q || TextUtils.isEmpty(str)) {
+        if (!j.commonConfig.Q || StringUtils.isEmpty(str)) {
             return false;
         }
         if (sPreMemCacheUrlSet.isEmpty()) {
@@ -291,7 +291,7 @@ public class WVUCPrecacheManager implements aek {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("49df5f29", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.indexOf("#") > 0) {
                 str = str.substring(0, str.indexOf("#"));

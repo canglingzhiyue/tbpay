@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.preload.b;
 import com.taobao.android.preload.core.task.PreloadTaskEntity;
@@ -26,7 +26,7 @@ public class ick {
         }
         f.b(e.a("PreloadTaskDataSource"), "更新数据源列表");
         PreloadTaskEntity parser = PreloadTaskEntity.parser(str, bVar);
-        if (TextUtils.isEmpty(parser.sourceFrom)) {
+        if (StringUtils.isEmpty(parser.sourceFrom)) {
             f.a(e.a("PreloadTaskDataSource"), "sourceFrom is null");
             return;
         }
@@ -36,7 +36,7 @@ public class ick {
             return;
         }
         String str2 = parser.pageIndex;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             f.a(e.a("PreloadTaskDataSource"), "preloadTaskEntity pageIndex is null");
             return;
         }
@@ -62,9 +62,9 @@ public class ick {
         }
         f.b(e.a("PreloadTaskDataSource"), "清理数据源列表");
         PreloadTaskEntity parser = PreloadTaskEntity.parser(str, bVar);
-        if (TextUtils.isEmpty(parser.sourceFrom)) {
+        if (StringUtils.isEmpty(parser.sourceFrom)) {
             f.a(e.a("PreloadTaskDataSource"), "sourceFrom is null");
-        } else if (TextUtils.isEmpty(parser.pageToken)) {
+        } else if (StringUtils.isEmpty(parser.pageToken)) {
             f.a(e.a("PreloadTaskDataSource"), "pageToken  is null");
         } else {
             b(a(parser));

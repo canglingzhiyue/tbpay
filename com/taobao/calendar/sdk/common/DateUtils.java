@@ -1,6 +1,6 @@
 package com.taobao.calendar.sdk.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,7 +37,7 @@ public class DateUtils {
     }
 
     public static String formatCompat(String str, String str2, String str3) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return str;
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str2);
@@ -71,7 +71,7 @@ public class DateUtils {
     }
 
     public static String formatDate(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(str2);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.address.c;
 import com.taobao.location.client.TBLocationClient;
@@ -30,7 +30,7 @@ public class dod {
                 String str2 = f26879a;
                 AdapterForTLog.loge(str2, "address checkBizPermissionUtil:  old=" + c2);
                 return c2;
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 return false;
             } else {
                 d a2 = f.a(context, str, new String[]{a.ACCESS_FINE_LOCATION});

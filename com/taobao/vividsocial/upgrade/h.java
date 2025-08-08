@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sso.v2.model.SSOIPCConstants;
@@ -256,7 +256,7 @@ public class h {
         Uri data = intent.getData();
         if (data != null) {
             String encodedQuery = data.getEncodedQuery();
-            if (!TextUtils.isEmpty(encodedQuery)) {
+            if (!StringUtils.isEmpty(encodedQuery)) {
                 str = str + "?" + encodedQuery;
             }
         }
@@ -267,11 +267,11 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9e0bacf0", new Object[]{intent, str});
-        } else if (intent != null && intent.getData() != null && !TextUtils.isEmpty(str)) {
+        } else if (intent != null && intent.getData() != null && !StringUtils.isEmpty(str)) {
             Uri.Builder buildUpon = intent.getData().buildUpon();
             buildUpon.appendQueryParameter(ASK_CONST.KEY_TNODE_TIME, String.valueOf(System.nanoTime()));
             String valueOf = String.valueOf(ohh.b("comment_reUseEngine"));
-            if (rij.a() && TextUtils.equals(valueOf, "true")) {
+            if (rij.a() && StringUtils.equals(valueOf, "true")) {
                 buildUpon.appendQueryParameter("reUseEngine", "true");
             }
             Map<String, String> a2 = com.taobao.vividsocial.utils.j.a(intent.getData());

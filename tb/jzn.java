@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.profile.LiveAvatarNewFrame;
 import com.taobao.runtimepermission.api.TBRunTimePermission;
@@ -163,7 +163,7 @@ public class jzn {
             hashMap.put("itemId", String.valueOf(segment.explainItemId));
             hashMap.put("explainTopicId", segment.explainTopicId);
             hashMap.put("explainStartTime", segment.explainStartTime);
-            if (TextUtils.equals(str2, "endExplainGoods")) {
+            if (StringUtils.equals(str2, "endExplainGoods")) {
                 hashMap.put("explainEndTime", segment.explainEndTime);
                 hashMap.put("watchExplainTime", String.valueOf(l.b(segment.explainEndTime) - l.b(segment.explainStartTime)));
                 hashMap.put("isLeaveRoom", z ? "1" : "0");

@@ -3,7 +3,7 @@ package com.taobao.mediaplay;
 import android.app.Activity;
 import android.content.Context;
 import android.media.AudioManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.Window;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -112,7 +112,7 @@ public class MediaContext implements Serializable {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(this.mPlayToken) && !z) {
+            if (!StringUtils.isEmpty(this.mPlayToken) && !z) {
                 return;
             }
             this.mPlayToken = com.taobao.taobaoavsdk.util.b.c() + new Random().nextInt(100000);

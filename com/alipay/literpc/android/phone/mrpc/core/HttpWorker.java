@@ -1,7 +1,7 @@
 package com.alipay.literpc.android.phone.mrpc.core;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
@@ -108,7 +108,7 @@ public class HttpWorker implements Callable<Response> {
         byte[] reqData = this.c.getReqData();
         String tag = this.c.getTag("gzip");
         if (reqData != null) {
-            if (TextUtils.equals(tag, "true")) {
+            if (StringUtils.equals(tag, "true")) {
                 this.j = AndroidHttpClient.getCompressedEntity(reqData, null);
             } else {
                 this.j = new ByteArrayEntity(reqData);
@@ -191,7 +191,7 @@ public class HttpWorker implements Callable<Response> {
                     }
                 }
                 String url = this.c.getUrl();
-                if (url != null && !TextUtils.isEmpty(i())) {
+                if (url != null && !StringUtils.isEmpty(i())) {
                     String str = url + "#" + i();
                 }
                 return processResponse;
@@ -336,7 +336,7 @@ public class HttpWorker implements Callable<Response> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e424ba30", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.q)) {
+        if (!StringUtils.isEmpty(this.q)) {
             return this.q;
         }
         this.q = this.c.getTag("operationType");
@@ -408,7 +408,7 @@ public class HttpWorker implements Callable<Response> {
             return (HttpHost) ipChange.ipc$dispatch("4a81310e", new Object[]{this});
         }
         HttpHost proxy = NetworkUtils.getProxy(this.b);
-        if (proxy != null && TextUtils.equals(proxy.getHostName(), "127.0.0.1") && proxy.getPort() == 8087) {
+        if (proxy != null && StringUtils.equals(proxy.getHostName(), "127.0.0.1") && proxy.getPort() == 8087) {
             return null;
         }
         return proxy;

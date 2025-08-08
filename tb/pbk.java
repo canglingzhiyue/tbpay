@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public class pbk extends h {
                 return;
             }
             String string = jSONObject2.getString("jumpUrl");
-            if (!TextUtils.isEmpty(string) && dXRuntimeContext != null) {
+            if (!StringUtils.isEmpty(string) && dXRuntimeContext != null) {
                 Nav.from(dXRuntimeContext.m()).toUri(string);
             }
             Map<String, String> a2 = a(jSONObject);

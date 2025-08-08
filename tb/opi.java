@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class opi {
             return;
         }
         String c = opj.c();
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             lap.a("recmdPrefetch", "MyTaoBaoPreRequest", "实验类型为空，不发预请求");
         } else if (b(i, i2, i3)) {
             lap.a("recmdPrefetch", "MyTaoBaoPreRequest", "000情况不处理");

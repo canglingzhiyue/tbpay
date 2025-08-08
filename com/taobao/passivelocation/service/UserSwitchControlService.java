@@ -2,7 +2,7 @@ package com.taobao.passivelocation.service;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class UserSwitchControlService extends IntentService {
             return;
         }
         super.onStart(intent, i);
-        if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+        if (intent == null || StringUtils.isEmpty(intent.getAction())) {
         }
     }
 
@@ -82,7 +82,7 @@ public class UserSwitchControlService extends IntentService {
         } else if (intent == null) {
         } else {
             try {
-                if (!TextUtils.isEmpty(intent.getAction()) && intent.getAction().equals(ACTION_UPDATE_CONFIG)) {
+                if (!StringUtils.isEmpty(intent.getAction()) && intent.getAction().equals(ACTION_UPDATE_CONFIG)) {
                     if ("off".equalsIgnoreCase(OrangeConfig.getInstance().getConfig("gps", "passivelocationoption", "off"))) {
                         return;
                     }

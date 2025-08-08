@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -91,7 +91,7 @@ public class faw extends b<fbm> implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d6bdd088", new Object[]{this, fbmVar});
-        } else if (TextUtils.isEmpty(fbmVar.f27749a)) {
+        } else if (StringUtils.isEmpty(fbmVar.f27749a)) {
         } else {
             this.k.c("WeexViewHolder", fbmVar.f27749a, null, JSONObject.toJSONString(fbmVar.b), WXRenderStrategy.APPEND_ASYNC);
         }

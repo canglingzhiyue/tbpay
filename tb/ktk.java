@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Date;
 import java.util.concurrent.ExecutorService;
@@ -71,7 +71,7 @@ public class ktk {
                 return;
             }
             String str2 = "sdkInitialize ttid: " + str;
-            if (!f.booleanValue() && context != null && !TextUtils.isEmpty(str)) {
+            if (!f.booleanValue() && context != null && !StringUtils.isEmpty(str)) {
                 if (rkq.d().e() == null) {
                     rkq.d().a(context);
                 }

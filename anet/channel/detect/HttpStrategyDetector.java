@@ -2,7 +2,7 @@ package anet.channel.detect;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.Session;
@@ -182,7 +182,7 @@ public class HttpStrategyDetector {
             ALog.e(TAG, "isHttpDetectEnable is false!", null, new Object[0]);
         } else if (!NetworkStatusHelper.isConnected()) {
             ALog.e(TAG, "network is not connected!", null, new Object[0]);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ALog.e(TAG, "host is null !", null, new Object[0]);
         } else if (AwcnConfig.isAmdcReduceFrequencyEnable() && (GlobalAppRuntimeInfo.isLightMainProcess() || GlobalAppRuntimeInfo.isChannelProcess())) {
             ALog.e(TAG, "not need startHttpDetect!!", null, new Object[0]);

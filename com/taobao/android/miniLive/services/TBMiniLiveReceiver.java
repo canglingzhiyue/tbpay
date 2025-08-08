@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
         } else if (intent != null) {
             String action = intent.getAction();
             hue.a("TBMiniLiveReceiver", "onReceive action = " + action);
-            if (TextUtils.equals(action, com.taobao.android.miniLive.sdk.d.TAOLIVE_SHOW_MINILIVE_ACTION)) {
+            if (StringUtils.equals(action, com.taobao.android.miniLive.sdk.d.TAOLIVE_SHOW_MINILIVE_ACTION)) {
                 if (!hud.h()) {
                     hue.a("TBMiniLiveReceiver", "hideMiniLive openShopMiniLiveReceiver = false");
                     return;
@@ -48,38 +48,38 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
                 }
                 String string = extras.getString("actionType");
                 String string2 = extras.getString("actionDatas");
-                if (TextUtils.equals(string, "startMiniLive")) {
-                    if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.equals(string, "startMiniLive")) {
+                    if (StringUtils.isEmpty(string2)) {
                         return;
                     }
                     HashMap hashMap = (HashMap) JSON.parseObject(string2, HashMap.class);
                     com.taobao.android.miniLive.a.a().a(context, huc.a(hashMap, LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID), hashMap);
                     hue.a("TBMiniLiveReceiver", action + " startMiniLive ");
-                } else if (TextUtils.equals(string, "hideMiniLive")) {
+                } else if (StringUtils.equals(string, "hideMiniLive")) {
                     com.taobao.android.miniLive.a.a().i();
                     hue.a("TBMiniLiveReceiver", action + " hideMiniLive ");
-                } else if (TextUtils.equals(string, "updateLivePosition")) {
-                    if (TextUtils.isEmpty(string2)) {
+                } else if (StringUtils.equals(string, "updateLivePosition")) {
+                    if (StringUtils.isEmpty(string2)) {
                         return;
                     }
                     HashMap hashMap2 = (HashMap) JSON.parseObject(string2, HashMap.class);
                     if (hashMap2 != null) {
                         String str = (String) hashMap2.get("x");
                         String str2 = (String) hashMap2.get("y");
-                        if ((!TextUtils.isEmpty(str) && TextUtils.isDigitsOnly(str)) || (!TextUtils.isEmpty(str2) && TextUtils.isDigitsOnly(str2))) {
+                        if ((!StringUtils.isEmpty(str) && StringUtils.isDigitsOnly(str)) || (!StringUtils.isEmpty(str2) && StringUtils.isDigitsOnly(str2))) {
                             com.taobao.android.miniLive.a.a().a(str, str2);
                         }
                     }
                     hue.a("TBMiniLiveReceiver", action + " updateMiniLivePosition ");
-                } else if (TextUtils.equals(string, "hideAllMiniLive")) {
+                } else if (StringUtils.equals(string, "hideAllMiniLive")) {
                     com.taobao.android.miniLive.a.a().n();
                     hue.a("TBMiniLiveReceiver", action + " hideAllMiniLive ");
                 }
-            } else if (!TextUtils.equals(action, com.taobao.android.miniLive.sdk.d.PAGE_RESUME_ACTION) && !TextUtils.equals(intent.getAction(), com.taobao.android.miniLive.sdk.d.PAGE_SHOP_RESUME_ACTION)) {
-                if (TextUtils.equals(action, com.taobao.android.miniLive.sdk.d.PAGE_PAUSE_ACTION) || TextUtils.equals(intent.getAction(), com.taobao.android.miniLive.sdk.d.PAGE_SHOP_PAUSE_ACTION)) {
+            } else if (!StringUtils.equals(action, com.taobao.android.miniLive.sdk.d.PAGE_RESUME_ACTION) && !StringUtils.equals(intent.getAction(), com.taobao.android.miniLive.sdk.d.PAGE_SHOP_RESUME_ACTION)) {
+                if (StringUtils.equals(action, com.taobao.android.miniLive.sdk.d.PAGE_PAUSE_ACTION) || StringUtils.equals(intent.getAction(), com.taobao.android.miniLive.sdk.d.PAGE_SHOP_PAUSE_ACTION)) {
                     com.taobao.android.miniLive.a.a().h();
                     hue.a("TBMiniLiveReceiver", action + " destroyMiniLive ");
-                } else if (TextUtils.equals(action, com.taobao.android.miniLive.sdk.d.ACTION_NOTIFY_DETAIL_SLIDE_INTO_INFO)) {
+                } else if (StringUtils.equals(action, com.taobao.android.miniLive.sdk.d.ACTION_NOTIFY_DETAIL_SLIDE_INTO_INFO)) {
                     Bundle extras2 = intent.getExtras();
                     if (extras2 != null) {
                         if (extras2.get("transparentBroadcast") instanceof JSONObject) {
@@ -97,7 +97,7 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
                         hue.a("TBMiniLiveReceiver", action + " scrollHideMiniLive 3");
                     }
                     hue.a("TBMiniLiveReceiver", action);
-                } else if (TextUtils.equals(action, com.taobao.android.miniLive.sdk.d.ACTION_NOTIFY_DETAIL_SHOW)) {
+                } else if (StringUtils.equals(action, com.taobao.android.miniLive.sdk.d.ACTION_NOTIFY_DETAIL_SHOW)) {
                     if (!hud.g()) {
                         hue.a("TBMiniLiveReceiver", action + " openDetailMiniLive = false");
                         return;
@@ -118,7 +118,7 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
                         return;
                     }
                     HashMap hashMap3 = new HashMap();
-                    if (TextUtils.isEmpty(string4)) {
+                    if (StringUtils.isEmpty(string4)) {
                         string4 = "detail";
                     }
                     hashMap3.put("bizCode", string4);
@@ -127,7 +127,7 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
                     }
                     com.taobao.android.miniLive.a.a().a(context, string3, hashMap3);
                     hue.a("TBMiniLiveReceiver", action + " startMiniLive");
-                } else if (TextUtils.equals(action, com.taobao.android.miniLive.sdk.d.ACTION_NOTIFY_DETAIL_SLIDE_OUT_INFO)) {
+                } else if (StringUtils.equals(action, com.taobao.android.miniLive.sdk.d.ACTION_NOTIFY_DETAIL_SLIDE_OUT_INFO)) {
                     if (!hud.g()) {
                         hue.a("TBMiniLiveReceiver", action + " openDetailMiniLive = false");
                         return;
@@ -143,11 +143,11 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
                     }
                     String string5 = jSONObject2.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
                     String string6 = jSONObject2.getString("source");
-                    if (TextUtils.isEmpty(string5)) {
+                    if (StringUtils.isEmpty(string5)) {
                         return;
                     }
                     HashMap hashMap4 = new HashMap();
-                    if (TextUtils.isEmpty(string6)) {
+                    if (StringUtils.isEmpty(string6)) {
                         string6 = "detail";
                     }
                     hashMap4.put("bizCode", string6);
@@ -156,11 +156,11 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
                     }
                     com.taobao.android.miniLive.a.a().a(context, string5, hashMap4);
                     hue.a("TBMiniLiveReceiver", action + " startMiniLive ");
-                } else if (TextUtils.equals(action, "action.com.taobao.taolive.room.start")) {
+                } else if (StringUtils.equals(action, "action.com.taobao.taolive.room.start")) {
                     com.taobao.android.miniLive.a.a().j();
                     com.taobao.android.miniLive.a.a().h();
                     hue.a("TBMiniLiveReceiver", action + " destroyMiniLive ");
-                } else if (TextUtils.equals(action, com.taobao.android.miniLive.sdk.d.PAGE_DETAIL_UPP_SHOWFLOATVIEWNOTIFICATION)) {
+                } else if (StringUtils.equals(action, com.taobao.android.miniLive.sdk.d.PAGE_DETAIL_UPP_SHOWFLOATVIEWNOTIFICATION)) {
                     if (!hud.g()) {
                         hue.a("TBMiniLiveReceiver", action + " openDetailMiniLive = false");
                         return;
@@ -176,11 +176,11 @@ public class TBMiniLiveReceiver extends BroadcastReceiver {
                         String string7 = jSONObject.getString("algParams");
                         String string8 = jSONObject5.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
                         String string9 = jSONObject5.getString("source");
-                        if (TextUtils.isEmpty(string8)) {
+                        if (StringUtils.isEmpty(string8)) {
                             return;
                         }
                         HashMap hashMap5 = new HashMap();
-                        if (TextUtils.isEmpty(string9)) {
+                        if (StringUtils.isEmpty(string9)) {
                             string9 = "detail";
                         }
                         hashMap5.put("bizCode", string9);

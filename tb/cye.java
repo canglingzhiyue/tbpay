@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -20,7 +20,7 @@ public final class cye {
         String str3;
         String str4;
         byte[] bArr;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             str3 = f26596a;
             str4 = "content or algorithm is null.";
         } else if (b(str2)) {
@@ -42,7 +42,7 @@ public final class cye {
     public static byte[] a(byte[] bArr, String str) {
         String str2;
         String str3;
-        if (bArr == null || TextUtils.isEmpty(str)) {
+        if (bArr == null || StringUtils.isEmpty(str)) {
             str2 = f26596a;
             str3 = "content or algorithm is null.";
         } else if (!b(str)) {

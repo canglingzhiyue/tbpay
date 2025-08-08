@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.common.ActivityMgr;
 import com.huawei.hms.support.log.HMSLog;
 import com.uc.webview.base.cyclone.BSError;
@@ -79,7 +79,7 @@ public class UIUtil {
                 break;
             }
             ActivityManager.RunningAppProcessInfo next = it.next();
-            if (TextUtils.equals(next.processName, processName)) {
+            if (StringUtils.equals(next.processName, processName)) {
                 HMSLog.i("UIUtil", "appProcess.importance is " + next.importance);
                 boolean z = next.importance == 100;
                 boolean isKeyguardLocked = keyguardManager.isKeyguardLocked();

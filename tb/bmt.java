@@ -104,7 +104,7 @@ public class bmt extends fuf {
             if (r8 == 0) goto L6c
             return r8
         L6c:
-            boolean r8 = android.text.TextUtils.isEmpty(r7)
+            boolean r8 = android.text.StringUtils.isEmpty(r7)
             if (r8 != 0) goto Lde
             java.lang.String r8 = "\\|"
             java.lang.String[] r7 = r7.split(r8)
@@ -152,7 +152,7 @@ public class bmt extends fuf {
             r0 = r8
             java.lang.String r0 = (java.lang.String) r0
         Ld5:
-            boolean r8 = android.text.TextUtils.isEmpty(r0)
+            boolean r8 = android.text.StringUtils.isEmpty(r0)
             if (r8 == 0) goto Ldc
             goto Ldd
         Ldc:

@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.model.ManifestModel;
 import com.taobao.pha.core.model.SplashViewIconModel;
@@ -149,6 +149,6 @@ public class n {
 
     private boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : (!TextUtils.isEmpty(this.c) && this.b.size() > 0) || !TextUtils.isEmpty(this.f) || !TextUtils.isEmpty(this.e);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : (!StringUtils.isEmpty(this.c) && this.b.size() > 0) || !StringUtils.isEmpty(this.f) || !StringUtils.isEmpty(this.e);
     }
 }

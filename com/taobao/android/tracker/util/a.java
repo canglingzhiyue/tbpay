@@ -1,7 +1,7 @@
 package com.taobao.android.tracker.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -37,7 +37,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("21de4147", new Object[]{str, cls});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return (T) JSON.parseObject(str, cls);
             } catch (Exception e) {
@@ -54,7 +54,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return (Map) JSON.parseObject(str, new TypeReference<Map<String, String>>() { // from class: com.taobao.android.tracker.util.a.1
                 }, new Feature[0]);
@@ -89,15 +89,15 @@ public class a {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
         String str2 = "";
-        if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
+        if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
             return str2;
         }
         String authority = parse.getAuthority();
         String path = parse.getPath();
-        if (!TextUtils.isEmpty(authority)) {
+        if (!StringUtils.isEmpty(authority)) {
             str2 = authority;
         }
-        if (TextUtils.isEmpty(path)) {
+        if (StringUtils.isEmpty(path)) {
             return str2;
         }
         return str2 + path;
@@ -110,7 +110,7 @@ public class a {
             return (C0602a) ipChange.ipc$dispatch("850488f2", new Object[]{str, str2});
         }
         C0602a c0602a = new C0602a();
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (indexOf = str.indexOf(str2)) != -1) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (indexOf = str.indexOf(str2)) != -1) {
             c0602a.b = str.substring(0, indexOf);
             c0602a.c = str.substring(indexOf + 1, str.length());
             c0602a.f15583a = true;
@@ -137,7 +137,7 @@ public class a {
                 String str = map.get(key);
                 String str2 = map2.get(key);
                 StringBuilder sb = new StringBuilder();
-                sb.append(TextUtils.isEmpty(str) ? "" : str + "&");
+                sb.append(StringUtils.isEmpty(str) ? "" : str + "&");
                 sb.append(str2);
                 hashMap.put(key, sb.toString());
             } else {

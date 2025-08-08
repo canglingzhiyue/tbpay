@@ -1,6 +1,6 @@
 package com.taobao.taolive.adapterimpl.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.MtopBusiness;
@@ -33,7 +33,7 @@ public class a implements c {
             return null;
         }
         String jSONString = JSON.toJSONString(baseOutDo);
-        if (TextUtils.isEmpty(jSONString)) {
+        if (StringUtils.isEmpty(jSONString)) {
             return null;
         }
         return (NetBaseOutDo) JSON.parseObject(jSONString, NetBaseOutDo.class);
@@ -66,15 +66,15 @@ public class a implements c {
         if (netRequest.isPost()) {
             mtopBusiness.mo1305reqMethod(MethodEnum.POST);
         }
-        if (!TextUtils.equals("-1", netRequest.getBizId())) {
+        if (!StringUtils.equals("-1", netRequest.getBizId())) {
             String bizId = netRequest.getBizId();
-            if (!TextUtils.isEmpty(bizId) && TextUtils.isDigitsOnly(bizId)) {
+            if (!StringUtils.isEmpty(bizId) && StringUtils.isDigitsOnly(bizId)) {
                 mtopBusiness.mo1309setBizId(bizId);
             }
         } else {
             mtopBusiness.mo1309setBizId("59");
         }
-        if (TextUtils.isEmpty(netRequest.getTtid())) {
+        if (StringUtils.isEmpty(netRequest.getTtid())) {
             mtopBusiness.mo1332ttid(netRequest.getTtid());
         }
         if (netRequest.getRequestHeaders() != null) {

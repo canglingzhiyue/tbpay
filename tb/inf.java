@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.ace.b;
@@ -21,7 +21,7 @@ public class inf extends ink {
             return ipChange.ipc$dispatch("c269392b", new Object[]{this, jsonRpcRequest});
         }
         String string = ((JSONObject) jsonRpcRequest.getParams()).getString("requestAlias");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         b.a(string);

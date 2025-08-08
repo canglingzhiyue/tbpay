@@ -3,7 +3,7 @@ package com.taobao.android.preview;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -20,14 +20,14 @@ public class b {
     }
 
     public static void a(Context context, String str) {
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return;
         }
         try {
             Log.e(DXTemplatePreviewActivity.PREVIEW_TAG, "url--->" + str);
-            String decode = !TextUtils.isEmpty(str) ? URLDecoder.decode(str, "UTF-8") : "";
+            String decode = !StringUtils.isEmpty(str) ? URLDecoder.decode(str, "UTF-8") : "";
             Log.e(DXTemplatePreviewActivity.PREVIEW_TAG, "result--->" + decode);
-            if (!TextUtils.isEmpty(decode) && decode.contains("DinamicXTemplateDebug=")) {
+            if (!StringUtils.isEmpty(decode) && decode.contains("DinamicXTemplateDebug=")) {
                 try {
                     Class<?> cls = Class.forName("com.taobao.android.dinamicx.dinamicx_debug_plugin.DXDebugController");
                     if (cls == null) {
@@ -39,7 +39,7 @@ public class b {
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
                 }
-            } else if (TextUtils.isEmpty(decode) || !decode.contains("templateMock=")) {
+            } else if (StringUtils.isEmpty(decode) || !decode.contains("templateMock=")) {
             } else {
                 String queryParameter = Uri.parse(decode).getQueryParameter(oqn.KEY_PREVIEW_PARAM);
                 String substring = queryParameter.substring(queryParameter.indexOf("=") + 1);

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.mipush.sdk.MessageHandleService;
 import com.xiaomi.mipush.sdk.MiPushClient;
 import com.xiaomi.push.fd;
@@ -187,7 +187,7 @@ public class PushMessageHandler extends BaseService {
     }
 
     protected static boolean a(String str, String str2) {
-        return (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) || TextUtils.equals(str, str2);
+        return (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) || StringUtils.equals(str, str2);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

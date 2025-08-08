@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -46,7 +46,7 @@ public class reu {
             Log.e("UpdateAdapter", "mtop is not found");
             return null;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "600000";
         }
         MtopBuilder build = Mtop.instance(z ? "OPEN" : Mtop.Id.INNER, context).build(serializable, str);
@@ -55,7 +55,7 @@ public class reu {
         if (syncRequest.isApiSuccess()) {
             try {
                 String str2 = new String(syncRequest.getBytedata());
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     JSONObject parseObject = JSON.parseObject(str2);
                     if (parseObject.containsKey("data")) {
                         return parseObject.getJSONObject("data");
@@ -64,7 +64,7 @@ public class reu {
             } catch (Exception e) {
                 Log.e("UpdateAdapter", "get mtop data exception", e);
             }
-        } else if (!TextUtils.isEmpty(syncRequest.getRetCode()) && !TextUtils.isEmpty(syncRequest.getRetMsg()) && syncRequest.getRetCode().equals("USE_ALTER_SYSTEM_DATA") && syncRequest.getRetMsg().equals("走变更sdk")) {
+        } else if (!StringUtils.isEmpty(syncRequest.getRetCode()) && !StringUtils.isEmpty(syncRequest.getRetMsg()) && syncRequest.getRetCode().equals("USE_ALTER_SYSTEM_DATA") && syncRequest.getRetMsg().equals("走变更sdk")) {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("degrade", (Object) true);
             return jSONObject;

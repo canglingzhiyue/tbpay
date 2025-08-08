@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.Constant;
 import com.taobao.android.litecreator.util.u;
@@ -40,7 +40,7 @@ public final class thr {
 
     public final boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : a() && TextUtils.equals(DX_RECYCLER_LAYOUT_SCROLL_STATE_END, f34098a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : a() && StringUtils.equals(DX_RECYCLER_LAYOUT_SCROLL_STATE_END, f34098a);
     }
 
     public final void a(DisplayVideoViewV2 video) {

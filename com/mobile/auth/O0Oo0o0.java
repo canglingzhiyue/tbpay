@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -23,7 +23,7 @@ public class O0Oo0o0 {
                         InetAddress nextElement2 = inetAddresses.nextElement();
                         if (!nextElement2.isLoopbackAddress() && !nextElement2.isLinkLocalAddress()) {
                             String hostAddress = nextElement2.getHostAddress();
-                            if (!TextUtils.isEmpty(hostAddress)) {
+                            if (!StringUtils.isEmpty(hostAddress)) {
                                 if (nextElement2 instanceof Inet6Address) {
                                     sb.append(hostAddress);
                                     sb.append(",");
@@ -36,10 +36,10 @@ public class O0Oo0o0 {
                     }
                 }
             }
-            if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb = sb.delete(sb.length() - 1, sb.length());
             }
-            if (!TextUtils.isEmpty(sb2)) {
+            if (!StringUtils.isEmpty(sb2)) {
                 sb2 = sb2.delete(sb2.length() - 1, sb2.length());
             }
             strArr[0] = sb2.toString();

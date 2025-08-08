@@ -2,7 +2,7 @@ package anetwork.channel.unified;
 
 import android.content.Context;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.bytes.ByteArray;
 import anet.channel.bytes.ByteArrayPool;
 import anet.channel.util.ALog;
@@ -104,7 +104,7 @@ public abstract class UnifiedNetworkDelegate extends RemoteNetwork.Stub {
         } catch (RemoteException e) {
             networkResponse.setStatusCode(-103);
             String message = e.getMessage();
-            if (!TextUtils.isEmpty(message)) {
+            if (!StringUtils.isEmpty(message)) {
                 networkResponse.setDesc(StringUtils.concatString(networkResponse.getDesc(), "|", message));
             }
             return networkResponse;

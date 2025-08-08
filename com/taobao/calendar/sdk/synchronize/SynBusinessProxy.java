@@ -1,7 +1,7 @@
 package com.taobao.calendar.sdk.synchronize;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.taobao.calendar.sdk.Preferences;
 import com.taobao.calendar.sdk.TBCalendar;
@@ -66,7 +66,7 @@ public class SynBusinessProxy implements Serializable {
     }
 
     public void getScheduleByScanCode(MtopListener mtopListener, String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             MtopGetScheduleByScanCodeRequest mtopGetScheduleByScanCodeRequest = new MtopGetScheduleByScanCodeRequest();
             mtopGetScheduleByScanCodeRequest.setCode(str);
             RemoteBusiness registeListener = RemoteBusiness.build((IMTOPDataObject) mtopGetScheduleByScanCodeRequest, this.mTtid).registeListener(mtopListener);
@@ -77,7 +77,7 @@ public class SynBusinessProxy implements Serializable {
 
     public void submitAndUpdate() {
         String config = OrangeConfig.getInstance().getConfig(groupName, key, "true");
-        if (this.mContext == null || TextUtils.isEmpty(config) || !config.equalsIgnoreCase("true") || !validateUserId(this.mUserId)) {
+        if (this.mContext == null || StringUtils.isEmpty(config) || !config.equalsIgnoreCase("true") || !validateUserId(this.mUserId)) {
             Log.e(TAG, "xcommand has closed all mtop request!");
             return;
         }
@@ -97,7 +97,7 @@ public class SynBusinessProxy implements Serializable {
 
     public void update(MtopListener mtopListener) {
         String config = OrangeConfig.getInstance().getConfig(groupName, key, "true");
-        if (this.mContext == null || TextUtils.isEmpty(config) || !config.equalsIgnoreCase("true") || !validateUserId(this.mUserId)) {
+        if (this.mContext == null || StringUtils.isEmpty(config) || !config.equalsIgnoreCase("true") || !validateUserId(this.mUserId)) {
             Log.e(TAG, "xcommand has closed all mtop request!");
             return;
         }
@@ -112,6 +112,6 @@ public class SynBusinessProxy implements Serializable {
     }
 
     public boolean validateUserId(String str) {
-        return !TextUtils.isEmpty(str) && !"0".equals(str) && !"1".equals(str);
+        return !StringUtils.isEmpty(str) && !"0".equals(str) && !"1".equals(str);
     }
 }

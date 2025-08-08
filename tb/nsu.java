@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public abstract class nsu<BEAN extends BaseTypedBean> extends isi<BEAN, CommonSe
         }
         super.a(jSONObject, (JSONObject) bean, (BEAN) commonSearchResult);
         String jSONString = jSONObject.toJSONString();
-        if (TextUtils.isEmpty(jSONString)) {
+        if (StringUtils.isEmpty(jSONString)) {
             k.a("ModAdapterParser", "beanStr is empty");
             return;
         }

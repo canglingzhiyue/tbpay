@@ -2,7 +2,7 @@ package tb;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -168,7 +168,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         }
         for (int i = 0; i < this.c.size(); i++) {
             JSONObject jSONObject2 = this.c.get(i);
-            if (jSONObject2 != null && (jSONObject = jSONObject2.getJSONObject("content")) != null && TextUtils.equals(str, jSONObject.getString(e.KEY_TAB_ID))) {
+            if (jSONObject2 != null && (jSONObject = jSONObject2.getJSONObject("content")) != null && StringUtils.equals(str, jSONObject.getString(e.KEY_TAB_ID))) {
                 return i;
             }
         }
@@ -256,7 +256,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         }
         String string = jSONObject.getString(b.CURRENT_MENU_CODE);
         String string2 = jSONObject2.getString(b.CURRENT_MENU_CODE);
-        if (!TextUtils.equals(string, b.MY_CHANNEL) || !TextUtils.equals(string2, b.MY_CHANNEL)) {
+        if (!StringUtils.equals(string, b.MY_CHANNEL) || !StringUtils.equals(string2, b.MY_CHANNEL)) {
             return;
         }
         this.c.remove(i);
@@ -301,10 +301,10 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("content")) == null) {
         } else {
             String string = jSONObject2.getString(b.MENU_CODE);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
-            boolean equals = TextUtils.equals(b.MY_CHANNEL, str);
+            boolean equals = StringUtils.equals(b.MY_CHANNEL, str);
             if (!equals) {
                 string = b.MY_CHANNEL;
             }
@@ -316,7 +316,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
                     if (i2 >= this.c.size()) {
                         i = -1;
                         break;
-                    } else if (TextUtils.equals(string, this.c.get(i2).getString(b.MENU_CODE))) {
+                    } else if (StringUtils.equals(string, this.c.get(i2).getString(b.MENU_CODE))) {
                         i = i2 + 1;
                         break;
                     } else {
@@ -339,14 +339,14 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("493da635", new Object[]{this, jSONObject, str})).booleanValue();
         }
-        if (!TextUtils.equals(str, b.MY_CHANNEL)) {
+        if (!StringUtils.equals(str, b.MY_CHANNEL)) {
             return true;
         }
         JSONObject a2 = a(str);
         int i = 7;
         String str2 = "频道不能再少了哦~";
         if (a2 != null) {
-            if (!TextUtils.isEmpty(a2.getString(b.MIN_NUMS_WARNING))) {
+            if (!StringUtils.isEmpty(a2.getString(b.MIN_NUMS_WARNING))) {
                 str2 = a2.getString(b.MIN_NUMS_WARNING);
             }
             if (a2.getIntValue(b.MY_CHANNEL_MIN_NUMS) != 0) {
@@ -367,7 +367,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         }
         JSONObject jSONObject = null;
         for (JSONObject jSONObject2 : this.c) {
-            if (jSONObject2.getIntValue(b.VIEW_TYPE) == 1 && TextUtils.equals(jSONObject2.getString(b.MENU_CODE), str)) {
+            if (jSONObject2.getIntValue(b.VIEW_TYPE) == 1 && StringUtils.equals(jSONObject2.getString(b.MENU_CODE), str)) {
                 jSONObject = jSONObject2;
             }
         }
@@ -378,7 +378,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{this, str, new Integer(i)});
-        } else if (!TextUtils.equals(str, b.MY_CHANNEL) && !TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.equals(str, b.MY_CHANNEL) && !StringUtils.isEmpty(str)) {
             Pair<Integer, Integer> b = b(str);
             if (((Integer) b.first).intValue() == -1 && ((Integer) b.second).intValue() == -1) {
                 int i2 = i + 1;
@@ -451,7 +451,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         }
         String string = a2.getString(b.ALL_ADDED_TEXT);
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "已全部添加到“我的频道”";
         }
         jSONObject.put(b.ALL_ADDED_TEXT, (Object) string);
@@ -499,7 +499,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
             JSONObject jSONObject = this.c.get(i);
             String d = b.d(this.c.get(i));
             for (Map.Entry<String, List<JSONObject>> entry : entrySet) {
-                if (TextUtils.equals(d, entry.getKey())) {
+                if (StringUtils.equals(d, entry.getKey())) {
                     entry.getValue().add(jSONObject);
                 }
             }
@@ -515,7 +515,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         int i = -1;
         int i2 = -1;
         for (int i3 = 0; i3 < this.c.size(); i3++) {
-            if (TextUtils.equals(b.d(this.c.get(i3)), str)) {
+            if (StringUtils.equals(b.d(this.c.get(i3)), str)) {
                 if (i == -1) {
                     i = i3;
                 }
@@ -547,7 +547,7 @@ public class thx extends RecyclerView.Adapter<RecyclerView.ViewHolder> implement
         } else if (jSONObject == null) {
         } else {
             String str = this.d.panelExposureArg1;
-            if (TextUtils.isEmpty(str) || (jSONObject2 = jSONObject.getJSONObject(h.TRACK_EXPOSURE_PARAM)) == null) {
+            if (StringUtils.isEmpty(str) || (jSONObject2 = jSONObject.getJSONObject(h.TRACK_EXPOSURE_PARAM)) == null) {
                 return;
             }
             jSONObject2.put("arg1", (Object) str);

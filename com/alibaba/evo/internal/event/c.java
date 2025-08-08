@@ -1,6 +1,6 @@
 package com.alibaba.evo.internal.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABMethod;
 import com.alibaba.ut.abtest.internal.util.h;
 import com.alibaba.ut.abtest.internal.util.p;
@@ -52,7 +52,7 @@ public class c implements com.alibaba.ut.abtest.event.b<d> {
         com.alibaba.ut.abtest.internal.util.b.b(com.alibaba.ut.abtest.internal.util.b.EXPERIMENT_DATA_REACH_TYPE, sb.toString());
         try {
             if (cex.a().f() != null && cex.a().f() == UTABMethod.Push) {
-                if (TextUtils.equals("accs_sync_grey", "" + aVar.c())) {
+                if (StringUtils.equals("accs_sync_grey", "" + aVar.c())) {
                     a(b);
                     return;
                 }

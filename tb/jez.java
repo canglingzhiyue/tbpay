@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.ServiceConnection;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidRuntimeException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.JvmUncaughtCrashListener;
@@ -38,7 +38,7 @@ public class jez implements JvmUncaughtCrashListener {
         }
         try {
             String a3 = a();
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return null;
             }
             HashMap hashMap = new HashMap();

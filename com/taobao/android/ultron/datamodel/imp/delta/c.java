@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp.delta;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("47fd2639", new Object[]{this, str, bVar, jSONObject, list});
-        } else if (TextUtils.isEmpty(str) || this.f15776a.size() <= 0 || (aVar = this.f15776a.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || this.f15776a.size() <= 0 || (aVar = this.f15776a.get(str)) == null) {
         } else {
             aVar.a(bVar, jSONObject, list);
         }

@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import java.util.HashMap;
 import org.json.JSONException;
@@ -42,7 +42,7 @@ public class en {
             hashMap2.put("event_type", hashMap.get("event_type") + "");
             hashMap2.put("description", hashMap.get("description") + "");
             String str = hashMap.get("awake_info");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     JSONObject jSONObject = new JSONObject(str);
                     hashMap2.put("__planId__", String.valueOf(jSONObject.opt("__planId__")));

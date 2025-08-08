@@ -1,7 +1,7 @@
 package com.alibaba.ut.abtest.internal.bucketing;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVOExperiment;
 import com.alibaba.evo.EVOExperimentCondition;
 import com.alibaba.evo.EVOExperimentConditions;
@@ -59,20 +59,20 @@ public final class a {
         }
         ArrayList arrayList = new ArrayList();
         for (ExperimentServerTrackPO experimentServerTrackPO : list) {
-            if (experimentServerTrackPO == null || experimentServerTrackPO.releaseId <= 0 || experimentServerTrackPO.bucketId <= 0 || TextUtils.isEmpty(experimentServerTrackPO.component) || TextUtils.isEmpty(experimentServerTrackPO.module)) {
+            if (experimentServerTrackPO == null || experimentServerTrackPO.releaseId <= 0 || experimentServerTrackPO.bucketId <= 0 || StringUtils.isEmpty(experimentServerTrackPO.component) || StringUtils.isEmpty(experimentServerTrackPO.module)) {
                 h.c("ExperimentBuilder", "服务端实验埋点规则内容不合法！埋点规则=" + str);
             } else {
                 ExperimentGroup experimentGroup = new ExperimentGroup();
                 experimentGroup.setId(experimentServerTrackPO.bucketId);
                 experimentGroup.setReleaseId(experimentServerTrackPO.releaseId);
                 experimentGroup.setExperimentId(experimentServerTrackPO.experimentId);
-                if (TextUtils.equals("expt", experimentServerTrackPO.type)) {
-                    if (TextUtils.equals(experimentServerTrackPO.component, UTABTest.COMPONENT_URI)) {
+                if (StringUtils.equals("expt", experimentServerTrackPO.type)) {
+                    if (StringUtils.equals(experimentServerTrackPO.component, UTABTest.COMPONENT_URI)) {
                         experimentGroup.setType(ExperimentType.AbUri);
                     } else {
                         experimentGroup.setType(ExperimentType.AbComponent);
                     }
-                } else if (TextUtils.equals("dy", experimentServerTrackPO.type)) {
+                } else if (StringUtils.equals("dy", experimentServerTrackPO.type)) {
                     experimentGroup.setType(ExperimentType.Redirect);
                 } else {
                     experimentGroup.setType(ExperimentType.AbComponent);
@@ -88,7 +88,7 @@ public final class a {
                 } else {
                     experimentGroup.setKey(com.alibaba.ut.abtest.internal.util.a.a(experimentServerTrackPO.component, experimentServerTrackPO.module));
                 }
-                if (!TextUtils.isEmpty(experimentServerTrackPO.trackConfigs) && (list2 = (List) g.a(experimentServerTrackPO.trackConfigs, new TypeReference<List<ExperimentTrackPO>>() { // from class: com.alibaba.ut.abtest.internal.bucketing.a.1
+                if (!StringUtils.isEmpty(experimentServerTrackPO.trackConfigs) && (list2 = (List) g.a(experimentServerTrackPO.trackConfigs, new TypeReference<List<ExperimentTrackPO>>() { // from class: com.alibaba.ut.abtest.internal.bucketing.a.1
                 }.getType())) != null && !list2.isEmpty()) {
                     experimentGroup.setTracks(a(list2, (ExperimentGroup) null));
                 }
@@ -245,7 +245,7 @@ public final class a {
             return r9
         L15:
             java.lang.String r0 = r9.condition
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             r1 = 0
             if (r0 != 0) goto L4b
             java.lang.String r0 = r9.condition     // Catch: java.lang.Throwable -> L45
@@ -404,7 +404,7 @@ public final class a {
         for (ExperimentBetaDevice experimentBetaDevice : list) {
             if (experimentBetaDevice.data != null && !experimentBetaDevice.data.isEmpty() && experimentBetaDevice.type == 1) {
                 for (String str : strArr) {
-                    if (!TextUtils.isEmpty(str) && experimentBetaDevice.data.contains(str)) {
+                    if (!StringUtils.isEmpty(str) && experimentBetaDevice.data.contains(str)) {
                         return true;
                     }
                 }
@@ -501,7 +501,7 @@ public final class a {
             return (ExperimentV5) ipChange.ipc$dispatch("5372c053", new Object[]{experimentDO});
         }
         boolean H = cex.a().j().H();
-        if (TextUtils.isEmpty(experimentDO.getCognation()) || TextUtils.isEmpty(experimentDO.getKey())) {
+        if (StringUtils.isEmpty(experimentDO.getCognation()) || StringUtils.isEmpty(experimentDO.getKey())) {
             h.e("ExperimentBuilder", "实验数据读取错误，丢失关键信息。实验ID=" + experimentDO.getId());
             return null;
         }
@@ -523,24 +523,24 @@ public final class a {
         experimentV5.setPriorityLevel(experimentDO.getPriorityLevel());
         experimentV5.setExpIndexType(experimentDO.getExpIndexType());
         experimentV5.setExpPublishType(experimentDO.getExpPublishType());
-        if (!H && !TextUtils.isEmpty(experimentDO.getTracks()) && (list = (List) g.a(experimentDO.getTracks(), new TypeReference<List<ExperimentTrack>>() { // from class: com.alibaba.ut.abtest.internal.bucketing.a.3
+        if (!H && !StringUtils.isEmpty(experimentDO.getTracks()) && (list = (List) g.a(experimentDO.getTracks(), new TypeReference<List<ExperimentTrack>>() { // from class: com.alibaba.ut.abtest.internal.bucketing.a.3
         }.getType())) != null && !list.isEmpty()) {
             experimentV5.setTracks(list);
         }
-        if (!H && !TextUtils.isEmpty(experimentDO.getCondition())) {
+        if (!H && !StringUtils.isEmpty(experimentDO.getCondition())) {
             experimentV5.setConditionExpression((Expression) g.a(experimentDO.getCondition(), (Class<Object>) Expression.class));
         }
-        if (!H && !TextUtils.isEmpty(experimentDO.getVariations())) {
+        if (!H && !StringUtils.isEmpty(experimentDO.getVariations())) {
             experimentV5.setVariations((Map) g.a(experimentDO.getVariations(), new TypeReference<Map<String, String>>() { // from class: com.alibaba.ut.abtest.internal.bucketing.a.4
             }.getType()));
         }
         experimentV5.setRetain(experimentDO.isRetain());
-        if (!H && !TextUtils.isEmpty(experimentDO.getGroups())) {
+        if (!H && !StringUtils.isEmpty(experimentDO.getGroups())) {
             List<ExperimentGroupV5> list2 = (List) g.a(experimentDO.getGroups(), new TypeReference<List<ExperimentGroupV5>>() { // from class: com.alibaba.ut.abtest.internal.bucketing.a.5
             }.getType());
             if (list2 != null && !list2.isEmpty()) {
                 for (ExperimentGroupV5 experimentGroupV5 : list2) {
-                    if (!TextUtils.isEmpty(experimentGroupV5.getCondition())) {
+                    if (!StringUtils.isEmpty(experimentGroupV5.getCondition())) {
                         experimentGroupV5.setConditionExpression((Expression) g.a(experimentGroupV5.getCondition(), (Class<Object>) Expression.class));
                         experimentGroupV5.setCondition(null);
                     }
@@ -561,7 +561,7 @@ public final class a {
             }
             experimentV5.setGroups(list2);
         }
-        if (!H && !TextUtils.isEmpty(experimentDO.getVariationConfigs())) {
+        if (!H && !StringUtils.isEmpty(experimentDO.getVariationConfigs())) {
             experimentV5.setVariationConfigs((Map) g.a(experimentDO.getVariationConfigs(), new TypeReference<Map<String, ExperimentVariationConfigV5>>() { // from class: com.alibaba.ut.abtest.internal.bucketing.a.6
             }.getType()));
         }
@@ -573,7 +573,7 @@ public final class a {
         if (ipChange instanceof IpChange) {
             return (ExperimentCognation) ipChange.ipc$dispatch("8c39fcc6", new Object[]{experimentDO});
         }
-        if (!TextUtils.isEmpty(experimentDO.getCognation())) {
+        if (!StringUtils.isEmpty(experimentDO.getCognation())) {
             return (ExperimentCognation) g.a(experimentDO.getCognation(), (Class<Object>) ExperimentCognation.class);
         }
         return null;

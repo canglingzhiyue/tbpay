@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.component.main.view.size;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -83,7 +83,7 @@ public class RoleSizeChartView extends LinearLayout {
             textView.setVisibility(8);
             try {
                 String a2 = epj.h().a("android_detail", "use_camera_measure", "false");
-                if (TextUtils.isEmpty(a2) || !Boolean.parseBoolean(a2)) {
+                if (StringUtils.isEmpty(a2) || !Boolean.parseBoolean(a2)) {
                     return;
                 }
                 textView.setVisibility(0);
@@ -110,13 +110,13 @@ public class RoleSizeChartView extends LinearLayout {
         } else if (roleSize == null || roleSize.data == null || roleSize.data.isEmpty()) {
         } else {
             this.mTvTitle.setText(roleSize.title == null ? "" : roleSize.title);
-            if (TextUtils.isEmpty(roleSize.tip)) {
+            if (StringUtils.isEmpty(roleSize.tip)) {
                 this.mTvTip.setVisibility(8);
             } else {
                 this.mTvTip.setText(roleSize.tip);
                 this.mTvTip.setVisibility(0);
             }
-            if (TextUtils.isEmpty(roleSize.arTitle)) {
+            if (StringUtils.isEmpty(roleSize.arTitle)) {
                 this.mTvMeasureButton.setVisibility(8);
             } else {
                 this.mTvMeasureButton.setVisibility(0);

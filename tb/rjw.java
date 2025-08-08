@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.wireless.link.controller.a;
 import com.taobao.wireless.link.model.ActivityIdTime;
@@ -32,7 +32,7 @@ public class rjw {
         }
         String b = rkj.b();
         String a2 = rkj.a(context);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             a2 = b;
         }
         rkg.a("link_tag", "AssistantUtils === getTag === tag=" + a2);
@@ -57,11 +57,11 @@ public class rjw {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9f76bba2", new Object[]{context})).booleanValue();
         }
-        if (TextUtils.isEmpty(rjt.a().c.b)) {
+        if (StringUtils.isEmpty(rjt.a().c.b)) {
             rjt.a().c.b = rkk.a(context).a("link_in_common_local").get("tbVersion");
         }
         String str = rjt.a().b;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(rjt.a().c.b)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(rjt.a().c.b)) {
             rkg.a("link_tag", "AssistantUtils === isSupportAssistant === 不支持小助手能力,versionName=" + str + " double11Version=" + rjt.a().c.b);
             return false;
         } else if (rkj.a(str, rjt.a().c.b) == 1 && i(context)) {
@@ -110,7 +110,7 @@ public class rjw {
             Set<String> keySet = map.keySet();
             for (ActivityOutTime activityOutTime : list) {
                 for (String str : keySet) {
-                    if (TextUtils.equals(str, activityOutTime.id) && a(activityOutTime.outTime)) {
+                    if (StringUtils.equals(str, activityOutTime.id) && a(activityOutTime.outTime)) {
                         rkg.a("link_tag", "AssistantUtils === isOutDate === activity.id=" + activityOutTime.id + " activity.outTime=" + activityOutTime.outTime);
                         return true;
                     }
@@ -145,9 +145,9 @@ public class rjw {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9be5d265", new Object[]{context, messageData});
         }
-        String str = (messageData == null || TextUtils.isEmpty(messageData.assistant_logo_url)) ? "https://gw.alicdn.com/tfs/TB1L9v4qlv0gK0jSZKbXXbK2FXa-160-160.png" : messageData.assistant_logo_url;
+        String str = (messageData == null || StringUtils.isEmpty(messageData.assistant_logo_url)) ? "https://gw.alicdn.com/tfs/TB1L9v4qlv0gK0jSZKbXXbK2FXa-160-160.png" : messageData.assistant_logo_url;
         rjv a2 = a(context, rkk.a(context), a(context), messageData.activity_id);
-        if (a2 != null && !TextUtils.isEmpty(a2.c)) {
+        if (a2 != null && !StringUtils.isEmpty(a2.c)) {
             str = a2.c;
         }
         rkg.a("link_tag", "DisplayCenter === getDefaultUrl === 获取到的默认URL=" + str);
@@ -174,7 +174,7 @@ public class rjw {
             List<ActivityOutTime> list = d(context).activities;
             if (list != null) {
                 for (ActivityOutTime activityOutTime : list) {
-                    if (TextUtils.equals(activityOutTime.id, messageData.activity_id) && rkj.a() < activityOutTime.outTime.longValue()) {
+                    if (StringUtils.equals(activityOutTime.id, messageData.activity_id) && rkj.a() < activityOutTime.outTime.longValue()) {
                         return false;
                     }
                 }
@@ -300,14 +300,14 @@ public class rjw {
             return (rjv) ipChange.ipc$dispatch("38841a76", new Object[]{context, rkkVar, str, str2});
         }
         rjv rjvVar = new rjv();
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             rkg.a("link_tag", "AssistantUtils === getAssistantData === tag或者id为空,返回默认对象");
             return rjvVar;
         }
         if (rju.a().b != null || rju.a().b.size() > 0) {
             rjvVar = rju.a().b.get(str2);
         }
-        if (rjvVar != null && !TextUtils.isEmpty(rjvVar.b)) {
+        if (rjvVar != null && !StringUtils.isEmpty(rjvVar.b)) {
             return rjvVar;
         }
         return (rjv) rkkVar.b(str2 + "_" + str, new rjv());
@@ -418,7 +418,7 @@ public class rjw {
         }
         try {
             str = a.a().l;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 String a2 = a(context);
                 rkk a3 = rkk.a(context);
                 str = (String) a3.b("growth_assistant_switch_show_" + a2, "false");
@@ -427,7 +427,7 @@ public class rjw {
         } catch (Exception e) {
             rkg.a("link_tag", "AssistantUtils === isShowSwitch === isShowSwitch解析异常=" + e);
         }
-        return TextUtils.equals("true", str);
+        return StringUtils.equals("true", str);
     }
 
     public static boolean h(Context context) {
@@ -438,7 +438,7 @@ public class rjw {
         }
         try {
             str = a.a().m;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 String a2 = a(context);
                 rkk a3 = rkk.a(context);
                 str = (String) a3.b("growth_assistant_switch_open_" + a2, "false");
@@ -447,6 +447,6 @@ public class rjw {
         } catch (Exception e) {
             rkg.a("link_tag", "AssistantUtils === isShowSwitch === isSwitchOpen解析异常=" + e);
         }
-        return TextUtils.equals("true", str);
+        return StringUtils.equals("true", str);
     }
 }

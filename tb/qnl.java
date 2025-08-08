@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.m;
@@ -118,7 +118,7 @@ public class qnl {
 
     private static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : TextUtils.equals("l", ldc.a());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : StringUtils.equals("l", ldc.a());
     }
 
     private static boolean c(String str, String str2) {
@@ -177,7 +177,7 @@ public class qnl {
                 ldf.a("InfoFlowGlobalABUtils", "调用HomeClientABTestTool.getAbTestValue 出错。", th);
                 str = "";
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "f_async_nd|f_high_async_nd|f_async_parse|f_server_weex|f_close_img_load|f_idle_event|f_simple_video|f_delay_right_menu|f_base_opt|f_high_base_opt|f_second_holder|f_cloud_blur|f_home_skip_tran|f_wx_container_size|f_time_cre_sl_wx|f_skip_ab_check|f_time_pg_idle";
             }
             d = str;

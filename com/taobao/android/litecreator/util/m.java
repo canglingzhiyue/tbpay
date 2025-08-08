@@ -2,7 +2,7 @@ package com.taobao.android.litecreator.util;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -48,7 +48,7 @@ public class m {
             return str2;
         }
         String string = jSONObject.getString(str);
-        return TextUtils.isEmpty(string) ? str2 : string;
+        return StringUtils.isEmpty(string) ? str2 : string;
     }
 
     public static int b(JSONObject jSONObject, String str, int i) {

@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.ref.WeakReference;
 
 /* loaded from: classes4.dex */
@@ -60,7 +60,7 @@ public class by {
                     if (a3.g == null) {
                         a3.g = new cf(new ce(this.b, new cj(), new bg(new bi(new bj())), new String(ag.a()), l.f(this.b), o.k(), o.h(), o.f(this.b), o.a(), Build.MANUFACTURER, Build.DEVICE, o.n(), l.c(this.b), Build.MODEL, l.d(this.b), l.b(this.b), o.e(this.b), o.a(this.b), String.valueOf(Build.VERSION.SDK_INT), ac.a(this.b).a()));
                     }
-                    if (TextUtils.isEmpty(a3.i)) {
+                    if (StringUtils.isEmpty(a3.i)) {
                         a3.i = "fKey";
                     }
                     a3.f = new cn(this.b, a3.h, a3.i, new cl(this.b, by.b, by.f << 10, by.c << 10, "offLocKey", by.d << 10));

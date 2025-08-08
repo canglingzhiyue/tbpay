@@ -1,6 +1,6 @@
 package com.taobao.android.detail.industry.tool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
@@ -94,7 +94,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("4dba94fa", new Object[]{str, str2, new Integer(i)})).intValue();
         }
         String a2 = a(str, str2, String.valueOf(i));
-        return !TextUtils.isEmpty(a2) ? Integer.parseInt(a2) : i;
+        return !StringUtils.isEmpty(a2) ? Integer.parseInt(a2) : i;
     }
 
     private static boolean a(String str, String str2, boolean z) {

@@ -1,6 +1,6 @@
 package com.taobao.appbundle.runtime;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.bundleInfo.b;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public class ModuleDependencyUtils {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("78a11b57", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new ArrayList();
         }
         if (b.a().c(str) == null) {

@@ -1,7 +1,7 @@
 package com.alipay.android.msp.configservice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.plugin.engine.IBizEngine;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
@@ -26,7 +26,7 @@ public class ConfigFetcher {
             return (JSONObject) ipChange.ipc$dispatch("e06e8c45", new Object[]{this, str});
         }
         JSONObject rpcParams = RPCParams.getRpcParams(this.f4476a);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             rpcParams.put("lastResponseTime", (Object) str);
         } else {
             try {

@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.context.KernelContext;
 import com.ali.user.open.core.model.RpcRequestCallbackWithCode;
 import com.ali.user.open.core.model.RpcResponse;
@@ -105,7 +105,7 @@ public class LaxinService extends Service {
             LaxinService.access$002(LaxinService.this, KernelContext.getApplicationContext().getPackageManager().getNameForUid(Binder.getCallingUid()));
             final String str = (String) map.get(SessionConstants.LOGIN_SITE);
             String str2 = "loginAppKey";
-            if (TextUtils.isEmpty((String) map.get(str2))) {
+            if (StringUtils.isEmpty((String) map.get(str2))) {
                 str2 = "loginAppkey";
             }
             final String str3 = (String) map.get(str2);

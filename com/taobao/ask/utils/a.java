@@ -1,6 +1,6 @@
 package com.taobao.ask.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -43,7 +43,7 @@ public class a {
                         }
                     }
                     valueAsString = jSONObject.toJSONString();
-                } else if (variation != null && !TextUtils.isEmpty(variation.getValueAsString(""))) {
+                } else if (variation != null && !StringUtils.isEmpty(variation.getValueAsString(""))) {
                     valueAsString = variation.getValueAsString("");
                 }
                 str5 = valueAsString;

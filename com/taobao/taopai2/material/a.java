@@ -1,7 +1,7 @@
 package com.taobao.taopai2.material;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taopai2.material.base.MaterialBaseRequestParams;
 import com.taobao.taopai2.material.base.MaterialRequestPolicy;
@@ -37,7 +37,7 @@ public class a {
             return (a) ipChange.ipc$dispatch("19708c66", new Object[]{context, str, str2});
         }
         a aVar = new a();
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             if (!izj.a()) {
                 throw new IllegalArgumentException("bizLine or bizScene is empty");
             }
@@ -83,7 +83,7 @@ public class a {
             return (ad) ipChange.ipc$dispatch("c8b2bcc1", new Object[]{this, new Long(j), str, new Integer(i), new Integer(i2), new Integer(i3), str2, materialRequestPolicy, new Long(j2)});
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(riy.ARRAY_START_STR);
             sb.append(str2);
             sb.append(riy.ARRAY_END_STR);
@@ -107,10 +107,10 @@ public class a {
             ipChange.ipc$dispatch("db543416", new Object[]{this, materialBaseRequestParams});
             return;
         }
-        if (TextUtils.isEmpty(materialBaseRequestParams.bizLine)) {
+        if (StringUtils.isEmpty(materialBaseRequestParams.bizLine)) {
             materialBaseRequestParams.bizLine = this.f22081a;
         }
-        if (!TextUtils.isEmpty(materialBaseRequestParams.bizScene)) {
+        if (!StringUtils.isEmpty(materialBaseRequestParams.bizScene)) {
             return;
         }
         materialBaseRequestParams.bizScene = this.b;

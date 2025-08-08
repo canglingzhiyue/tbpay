@@ -1,6 +1,6 @@
 package com.taobao.detail.rate.vivid.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.fastjson.JSONArray;
@@ -70,7 +70,7 @@ public final class a implements com.alibaba.ability.b {
                     Object next = it.next();
                     if (next instanceof JSONObject) {
                         JSONObject jSONObject = (JSONObject) next;
-                        if (!TextUtils.isEmpty(jSONObject.getString(com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.VIEW_TYPE))) {
+                        if (!StringUtils.isEmpty(jSONObject.getString(com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.VIEW_TYPE))) {
                             Boolean bool = jSONObject.getBoolean("isSplit");
                             if (bool == null) {
                                 bool = true;

@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.zoloz.toyger.blob.BlobManager;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
@@ -155,7 +155,7 @@ public class x {
                 if (file.isDirectory()) {
                     File[] listFiles = fileFilter != null ? file.listFiles(fileFilter) : file.listFiles();
                     zipOutputStream.putNextEntry(new ZipEntry(str + File.separator));
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         str2 = str + File.separator;
                     }
                     for (int i = 0; i < listFiles.length; i++) {
@@ -169,7 +169,7 @@ public class x {
                     }
                     fileInputStream = null;
                 } else {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         zipEntry = new ZipEntry(str);
                     } else {
                         Date date = new Date();

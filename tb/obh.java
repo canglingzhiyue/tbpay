@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alibaba.fastjson.JSON;
@@ -73,9 +73,9 @@ public class obh {
             return config;
         }
         String config2 = OrangeConfig.getInstance().getConfig("android_share_bizconfig", "weexUrlMap", str);
-        if (!TextUtils.isEmpty(config2) && j.extraParams != null && j.extraParams.size() > 0) {
+        if (!StringUtils.isEmpty(config2) && j.extraParams != null && j.extraParams.size() > 0) {
             String str2 = j.extraParams.get("specificWeexUrlKey");
-            if (!TextUtils.isEmpty(str2) && (parseObject = JSON.parseObject(config2)) != null && !TextUtils.isEmpty(parseObject.getString(str2))) {
+            if (!StringUtils.isEmpty(str2) && (parseObject = JSON.parseObject(config2)) != null && !StringUtils.isEmpty(parseObject.getString(str2))) {
                 return parseObject.getString(str2);
             }
         }
@@ -148,7 +148,7 @@ public class obh {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
         String config = OrangeConfig.getInstance().getConfig("android_share_bizconfig", "configShareData", "");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return null;
         }
         try {
@@ -168,9 +168,9 @@ public class obh {
             return false;
         }
         if ("true".equals(OrangeConfig.getInstance().getConfig("android_share_bizconfig", "UseWeexBackFlow", "false"))) {
-            return TextUtils.isEmpty(str) || !Arrays.asList(OrangeConfig.getInstance().getConfig("android_share_bizconfig", "UseWeexBackFlowBlackBizIds", "").split("&")).contains(str);
+            return StringUtils.isEmpty(str) || !Arrays.asList(OrangeConfig.getInstance().getConfig("android_share_bizconfig", "UseWeexBackFlowBlackBizIds", "").split("&")).contains(str);
         }
-        return !TextUtils.isEmpty(str) && Arrays.asList(OrangeConfig.getInstance().getConfig("android_share_bizconfig", "UseWeexBackFlowWhiteBizIds", "").split("&")).contains(str);
+        return !StringUtils.isEmpty(str) && Arrays.asList(OrangeConfig.getInstance().getConfig("android_share_bizconfig", "UseWeexBackFlowWhiteBizIds", "").split("&")).contains(str);
     }
 
     public static boolean f(String str) {
@@ -190,7 +190,7 @@ public class obh {
             return true;
         }
         String config = OrangeConfig.getInstance().getConfig("android_share_bizconfig", "notUseWeex2BizIds", "NewMiniapp&1115_miniapp&nativesharecart2");
-        return TextUtils.isEmpty(config) || !Arrays.asList(config.split("&")).contains(str);
+        return StringUtils.isEmpty(config) || !Arrays.asList(config.split("&")).contains(str);
     }
 
     public static String j() {
@@ -218,7 +218,7 @@ public class obh {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6158678", new Object[0])).booleanValue();
         }
-        return OrangeConfig.getInstance().getConfig("android_share", "isTaoFriendsOnly", TextUtils.equals(ShareBizAdapter.getInstance().getShareChannel().f(), "II3LRXNUqMUjigOY") ? "false" : "true").equals("true");
+        return OrangeConfig.getInstance().getConfig("android_share", "isTaoFriendsOnly", StringUtils.equals(ShareBizAdapter.getInstance().getShareChannel().f(), "II3LRXNUqMUjigOY") ? "false" : "true").equals("true");
     }
 
     public static List<String> n() {

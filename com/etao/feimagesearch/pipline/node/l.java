@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.pipline.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.pipline.NodeType;
 import com.etao.feimagesearch.util.am;
@@ -55,7 +55,7 @@ public final class l extends crj {
         if (!o.d()) {
             a(-10, ErrorConstant.ERRMSG_NO_NETWORK);
             return a(-10, ErrorConstant.ERRMSG_NO_NETWORK, this.f);
-        } else if (TextUtils.isEmpty(this.f6949a) || TextUtils.isEmpty(this.b)) {
+        } else if (StringUtils.isEmpty(this.f6949a) || StringUtils.isEmpty(this.b)) {
             a(-18, "无效请求");
             return a(-18, "无效请求", this.f);
         } else {

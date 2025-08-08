@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.pop.lifecycle;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class b extends lku {
         for (int i3 = 0; i3 < i2; i3++) {
             int i4 = i + i3;
             String b = b(i4);
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 this.f17501a.c().a(i4, a(i4), b);
             }
         }

@@ -5,7 +5,7 @@ import android.text.Layout;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ClickableSpan;
 import android.util.Pair;
 import android.view.MotionEvent;
@@ -259,7 +259,7 @@ public final class ConnectionUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3518ef71", new Object[]{textView, str, spannableStringBuilder, fBLabelSpanUtil$ClickMoreListener});
-        } else if (TextUtils.isEmpty(textView.getText())) {
+        } else if (StringUtils.isEmpty(textView.getText())) {
             cun.a("FBLabelSpanUtil", "textView:" + ((Object) textView.getText()));
         } else {
             cun.b("FBLabelSpanUtil", "toggleEllipsize textView:" + textView);

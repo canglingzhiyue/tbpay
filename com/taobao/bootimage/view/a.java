@@ -1,6 +1,6 @@
 package com.taobao.bootimage.view;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -73,7 +73,7 @@ public class a implements j {
         HashMap hashMap = new HashMap(2);
         hashMap.put("ItemId", this.b.b.itemId);
         hashMap.put(dvr.ACTION_CLOSE_TYPE_PARAM, str);
-        if (view == null || !a2.b || TextUtils.equals(str, com.taobao.bootimage.d.CLOSE_TYPE_SKIP)) {
+        if (view == null || !a2.b || StringUtils.equals(str, com.taobao.bootimage.d.CLOSE_TYPE_SKIP)) {
             kej.a("AdViewState", " onClose exitAdView should not Animate ");
             this.f.f();
             com.taobao.bootimage.linked.h.b(this.f16712a).g();
@@ -81,7 +81,7 @@ public class a implements j {
         }
         this.d.a(this.b.b.itemId);
         this.d.a(this.b.b.itemId, this.b.b.periodSeconds);
-        if (TextUtils.equals(str, com.taobao.bootimage.d.CLOSE_TYPE_SKIP)) {
+        if (StringUtils.equals(str, com.taobao.bootimage.d.CLOSE_TYPE_SKIP)) {
             kej.a("AdViewState", " onClose exitAdView CLOSE_TYPE_SKIP");
             this.f.f();
             com.taobao.bootimage.linked.h.b(this.f16712a).g();
@@ -140,7 +140,7 @@ public class a implements j {
             j = this.b.b.alphaAnimationDuration;
         }
         LinkedSplashData b = com.taobao.bootimage.linked.h.b(this.f16712a).b();
-        if (b == null || !TextUtils.equals(b.getLinkedDataType(), "feeds")) {
+        if (b == null || !StringUtils.equals(b.getLinkedDataType(), "feeds")) {
             j3 = j2;
         } else {
             j = 100;

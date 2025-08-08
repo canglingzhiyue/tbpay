@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.taobao.windvane.connect.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSClient;
 import com.taobao.accs.ACCSManager;
@@ -522,7 +522,7 @@ public class Message implements Serializable {
                 for (Integer num : this.extHeader.keySet()) {
                     int intValue = num.intValue();
                     String str4 = this.extHeader.get(Integer.valueOf(intValue));
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         jVar.a((short) ((((short) intValue) << 10) | ((short) (str4.getBytes("utf-8").length & 1023))));
                         jVar.write(str4.getBytes("utf-8"));
                         if (ALog.isPrintLog(ALog.Level.D)) {
@@ -562,7 +562,7 @@ public class Message implements Serializable {
             try {
                 for (Integer num : map.keySet()) {
                     String str = map.get(Integer.valueOf(num.intValue()));
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         s = (short) (s + ((short) (str.getBytes("utf-8").length & 1023)) + 2);
                     }
                 }
@@ -851,7 +851,7 @@ public class Message implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("14b0b412", new Object[]{context, str, str2, str3, str4, str5, str6});
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return null;
         }
         AccsClientConfig configByTag = AccsClientConfig.getConfigByTag(str);
@@ -922,7 +922,7 @@ public class Message implements Serializable {
             e = e;
             messageV2 = null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         messageV2 = new MessageV2();
@@ -979,7 +979,7 @@ public class Message implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("51abff94", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         MessageV2 messageV2 = new MessageV2();
@@ -1031,7 +1031,7 @@ public class Message implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("ff5f08ad", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         MessageV2 messageV2 = new MessageV2();
@@ -1084,7 +1084,7 @@ public class Message implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("59ebc148", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         MessageV2 messageV2 = new MessageV2();
@@ -1136,7 +1136,7 @@ public class Message implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("ebb8ec59", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         MessageV2 messageV2 = new MessageV2();
@@ -1172,7 +1172,7 @@ public class Message implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("8963510f", new Object[]{str, str2, str3, context, str4, accsRequest, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return null;
         }
         Message message = new Message();
@@ -1183,14 +1183,14 @@ public class Message implements Serializable {
         message.serviceId = accsRequest.serviceId;
         message.userinfo = accsRequest.userId;
         message.data = accsRequest.data;
-        String str5 = TextUtils.isEmpty(accsRequest.targetServiceName) ? accsRequest.serviceId : accsRequest.targetServiceName;
+        String str5 = StringUtils.isEmpty(accsRequest.targetServiceName) ? accsRequest.serviceId : accsRequest.targetServiceName;
         StringBuilder sb = new StringBuilder();
         sb.append(Constants.TARGET_SERVICE_PRE);
         sb.append(str5);
         sb.append("|");
         sb.append(accsRequest.target == null ? "" : accsRequest.target);
         message.target = sb.toString();
-        if (TextUtils.isEmpty(accsRequest.dataId)) {
+        if (StringUtils.isEmpty(accsRequest.dataId)) {
             accsRequest.dataId = message.getMsgId().getDataId();
         }
         message.cunstomDataId = accsRequest.dataId;
@@ -1242,7 +1242,7 @@ public class Message implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Message) ipChange.ipc$dispatch("6675a86a", new Object[]{context, str, str2, str3, str4, str5, accsRequest, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return null;
         }
         Message message = new Message();
@@ -1253,14 +1253,14 @@ public class Message implements Serializable {
         message.serviceId = accsRequest.serviceId;
         message.userinfo = accsRequest.userId;
         message.data = accsRequest.data;
-        String str6 = TextUtils.isEmpty(accsRequest.targetServiceName) ? accsRequest.serviceId : accsRequest.targetServiceName;
+        String str6 = StringUtils.isEmpty(accsRequest.targetServiceName) ? accsRequest.serviceId : accsRequest.targetServiceName;
         StringBuilder sb = new StringBuilder();
         sb.append(str5);
         sb.append(str6);
         sb.append("|");
         sb.append(accsRequest.target == null ? "" : accsRequest.target);
         message.target = sb.toString();
-        if (TextUtils.isEmpty(accsRequest.dataId)) {
+        if (StringUtils.isEmpty(accsRequest.dataId)) {
             accsRequest.dataId = message.getMsgId().getDataId();
         }
         message.cunstomDataId = accsRequest.dataId;
@@ -1338,7 +1338,7 @@ public class Message implements Serializable {
         message.isAck = true;
         message.extHeader = map;
         try {
-            if (TextUtils.isEmpty(str6)) {
+            if (StringUtils.isEmpty(str6)) {
                 message.host = new URL(str);
             } else {
                 message.host = new URL(str6);
@@ -1371,7 +1371,7 @@ public class Message implements Serializable {
             ipChange.ipc$dispatch("f61bbf96", new Object[]{context, message, str, str2, str3, str4, accsRequest});
             return;
         }
-        if (!TextUtils.isEmpty(accsRequest.businessId) || !TextUtils.isEmpty(str) || !TextUtils.isEmpty(str2) || !TextUtils.isEmpty(accsRequest.tag) || str4 != null) {
+        if (!StringUtils.isEmpty(accsRequest.businessId) || !StringUtils.isEmpty(str) || !StringUtils.isEmpty(str2) || !StringUtils.isEmpty(accsRequest.tag) || str4 != null) {
             message.extHeader = new HashMap();
             if (accsRequest.businessId != null && UtilityImpl.getByteLen(accsRequest.businessId) <= 1023) {
                 message.extHeader.put(Integer.valueOf(TaoBaseService.ExtHeaderType.TYPE_BUSINESS.ordinal()), accsRequest.businessId);

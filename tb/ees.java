@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.detail.widget.toast.b;
@@ -40,7 +40,7 @@ public class ees implements j<enw> {
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("581a3345", new Object[]{this, enwVar});
         }
-        if (this.f27249a.isFinishing() || TextUtils.isEmpty(enwVar.b)) {
+        if (this.f27249a.isFinishing() || StringUtils.isEmpty(enwVar.b)) {
             return a.SUCCESS;
         }
         if ("2".equals(enwVar.c)) {

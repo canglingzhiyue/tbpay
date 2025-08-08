@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.platform;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class a {
 
     public static String a(String str) {
         String str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {

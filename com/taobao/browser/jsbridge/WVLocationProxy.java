@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.api.WVLocation;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.runtimepermission.b;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.utils.UserLocation;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -220,7 +220,7 @@ public class WVLocationProxy extends WVLocation {
             ipChange.ipc$dispatch("23e85742", new Object[]{this, new Integer(i), strArr, iArr});
         } else if (this.mGetLocationAfterResult && i == 0 && strArr != null && iArr != null) {
             for (int i2 = 0; i2 < strArr.length; i2++) {
-                if (TextUtils.equals(strArr[i2], a.ACCESS_FINE_LOCATION)) {
+                if (StringUtils.equals(strArr[i2], a.ACCESS_FINE_LOCATION)) {
                     if (iArr[i2] == 0) {
                         getLocation(this.prevCallback, this.mParams);
                     } else {

@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.widget.calander;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -227,7 +227,7 @@ public final class Calendar implements Serializable, Comparable<Calendar> {
             return ((Boolean) ipChange.ipc$dispatch("b7e629c1", new Object[]{this})).booleanValue();
         }
         a aVar = this.calendarInfo;
-        return aVar != null && !TextUtils.isEmpty(aVar.f12088a);
+        return aVar != null && !StringUtils.isEmpty(aVar.f12088a);
     }
 
     public boolean isSameMonth(Calendar calendar) {

@@ -5,7 +5,7 @@ import android.os.Looper;
 import android.os.MessageQueue;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +76,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("ee1978d6", new Object[]{this, aaVar, bVar, str, obj});
-            } else if (bVar == null || !TextUtils.equals(str, "scroll")) {
+            } else if (bVar == null || !StringUtils.equals(str, "scroll")) {
             } else {
                 bVar.f19998a = oec.a(obj, true);
             }
@@ -109,7 +109,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("ee1978d6", new Object[]{this, aaVar, bVar, str, obj});
-            } else if (bVar == null || !TextUtils.equals(str, "edgepan")) {
+            } else if (bVar == null || !StringUtils.equals(str, "edgepan")) {
             } else {
                 b.a(bVar, obj);
             }
@@ -555,7 +555,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
                 f = 1.0f - f;
             }
             a(f);
-            if (this.d || TextUtils.equals(((b) this.viewParams).c, "none") || this.b == null || this.view == 0 || i2 <= 1) {
+            if (this.d || StringUtils.equals(((b) this.viewParams).c, "none") || this.b == null || this.view == 0 || i2 <= 1) {
                 return;
             }
             int currentItem = ((ViewPager) this.view).getCurrentItem();
@@ -906,7 +906,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             return null;
         }
         String a2 = oec.a(aaVar.e(Component.KEY_PAGE_NAME), (String) null);
-        return TextUtils.isEmpty(a2) ? (String) aaVar.a(1) : a2;
+        return StringUtils.isEmpty(a2) ? (String) aaVar.a(1) : a2;
     }
 
     private String e(com.taobao.tao.flexbox.layoutmanager.core.aa aaVar) {
@@ -916,12 +916,12 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             return (String) ipChange.ipc$dispatch("d7715fcc", new Object[]{this, aaVar});
         }
         String d = d(aaVar);
-        return (!TextUtils.isEmpty(d) || (b2 = b(aaVar)) == null) ? d : b2.e();
+        return (!StringUtils.isEmpty(d) || (b2 = b(aaVar)) == null) ? d : b2.e();
     }
 
     private boolean c(Map map) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2985bedf", new Object[]{this, map})).booleanValue() : TextUtils.equals(oec.a(map.get("type"), (String) null), "tab");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2985bedf", new Object[]{this, map})).booleanValue() : StringUtils.equals(oec.a(map.get("type"), (String) null), "tab");
     }
 
     private com.taobao.tao.flexbox.layoutmanager.core.aa f() {
@@ -972,10 +972,10 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             return;
         }
         String e = e(aaVar);
-        if (c(map) && TextUtils.isEmpty(e)) {
+        if (c(map) && StringUtils.isEmpty(e)) {
             return;
         }
-        if (TextUtils.isEmpty(e) && aaVar != this.p && (f = f()) != null) {
+        if (StringUtils.isEmpty(e) && aaVar != this.p && (f = f()) != null) {
             z = oeb.a("recoverPageProperty", true);
             aaVar = f;
         }
@@ -992,16 +992,16 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
         }
         String e = e(aaVar);
         com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().d(aaVar, e);
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().b(this.node, e);
         }
         String a2 = oec.a(aaVar.e("spm"), (String) null);
         String a3 = oec.a(aaVar.e("spm-url"), (String) null);
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("spm-cnt", a2);
         }
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             hashMap.put("spm-url", a3);
         }
         if (oeb.d()) {
@@ -1030,7 +1030,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             return;
         }
         String e = e(aaVar);
-        if (c(map) && TextUtils.isEmpty(e)) {
+        if (c(map) && StringUtils.isEmpty(e)) {
             return;
         }
         com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().a(aaVar);
@@ -1050,7 +1050,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
         } else {
             a(aaVar, map, false);
             String a2 = oec.a(map.get("type"), (String) null);
-            if (!TextUtils.equals(a2, "tab") && !TextUtils.equals(a2, "page")) {
+            if (!StringUtils.equals(a2, "tab") && !StringUtils.equals(a2, "page")) {
                 z = false;
             }
             if (!z) {
@@ -1174,10 +1174,10 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             return (com.taobao.tao.flexbox.layoutmanager.core.c) ipChange.ipc$dispatch("1e262aca", new Object[]{this, str});
         }
         if (oeb.a("optDrawerAttr", true)) {
-            if (TextUtils.equals(str, "scroll")) {
+            if (StringUtils.equals(str, "scroll")) {
                 return this.g;
             }
-            if (TextUtils.equals(str, "edgepan")) {
+            if (StringUtils.equals(str, "edgepan")) {
                 return this.o;
             }
         }
@@ -1324,7 +1324,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             HashMap hashMap = new HashMap();
             hashMap.put("sourcePage", map.get("sourcePage") != null ? map.get("sourcePage") : "page");
             String a3 = oec.a(map.get("type"), (String) null);
-            if (!TextUtils.equals(a3, "tab") && !TextUtils.equals(a3, "page")) {
+            if (!StringUtils.equals(a3, "tab") && !StringUtils.equals(a3, "page")) {
                 z = false;
             }
             if (!z) {
@@ -1677,7 +1677,7 @@ public class DrawerComponent extends Component<ViewPager, b> implements ViewPage
             return ((Number) ipChange.ipc$dispatch("63b9981a", new Object[]{this, jSONObject})).intValue();
         }
         if (jSONObject != null && (string = jSONObject.getString("position")) != null) {
-            return TextUtils.equals(string, "right") ? 1 : 0;
+            return StringUtils.equals(string, "right") ? 1 : 0;
         }
         return 0;
     }

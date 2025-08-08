@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
@@ -191,7 +191,7 @@ public final class dwt extends arv {
                     JSONObject jSONObject3 = (JSONObject) next;
                     String string = jSONObject3.getString("sourcePath");
                     String string2 = jSONObject3.getString("targetPath");
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                         String a2 = a(string2, jSONObject2);
                         JSONObject jSONObject4 = new JSONObject();
                         jSONObject4.put("source", (Object) string);

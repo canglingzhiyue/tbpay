@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.trace;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.umbrella.performance.PerformanceEntity;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -14,7 +14,7 @@ public class c {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || str.equals(its.TRAFFIC_LIMIT_STATUS) || str.equals(ErrorConstant.ERRCODE_API_41X_ANTI_ATTACK) || str.equals("FAIL_SYS_USER_VALIDATE") || str.equals("FAIL_LOCAL_ERROR_FANG_XUE_FENG");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || str.equals(its.TRAFFIC_LIMIT_STATUS) || str.equals(ErrorConstant.ERRCODE_API_41X_ANTI_ATTACK) || str.equals("FAIL_SYS_USER_VALIDATE") || str.equals("FAIL_LOCAL_ERROR_FANG_XUE_FENG");
     }
 
     public static PerformanceEntity a(String str, String str2, Map<String, Long> map, Map<String, String> map2) {
@@ -22,7 +22,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (PerformanceEntity) ipChange.ipc$dispatch("ebaa30ff", new Object[]{str, str2, map, map2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || map == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || map == null) {
             return null;
         }
         PerformanceEntity performanceEntity = new PerformanceEntity(str, str2, null);
@@ -37,6 +37,6 @@ public class c {
 
     public static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : b.f() || TextUtils.isEmpty(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : b.f() || StringUtils.isEmpty(str);
     }
 }

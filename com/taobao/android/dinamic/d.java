@@ -1,7 +1,7 @@
 package com.taobao.android.dinamic;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,7 +57,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("c5827002", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return e.a("default").f11752a;
         }
         return e.a(str).f11752a;

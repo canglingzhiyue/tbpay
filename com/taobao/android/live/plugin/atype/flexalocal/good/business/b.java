@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.business;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.format.DateUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.ad;
@@ -79,14 +79,14 @@ public class b extends com.taobao.taolive.sdk.business.b {
             if (z) {
                 enterLiveItemRequest.itemHoldType = cVar.s().mVideoInfo.itemHoldType;
                 enterLiveItemRequest.holdItemIds = cVar.s().mVideoInfo.holdItemIds;
-                if (!TextUtils.isEmpty(cVar.Q) && TextUtils.isEmpty(enterLiveItemRequest.itemHoldType) && TextUtils.isEmpty(enterLiveItemRequest.holdItemIds)) {
+                if (!StringUtils.isEmpty(cVar.Q) && StringUtils.isEmpty(enterLiveItemRequest.itemHoldType) && StringUtils.isEmpty(enterLiveItemRequest.holdItemIds)) {
                     enterLiveItemRequest.holdItemIds = cVar.Q;
                     enterLiveItemRequest.itemHoldType = com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD;
                 }
             } else {
                 enterLiveItemRequest.itemHoldType = str;
                 enterLiveItemRequest.holdItemIds = str2;
-                if (!TextUtils.isEmpty(str3) && TextUtils.isEmpty(enterLiveItemRequest.itemHoldType) && TextUtils.isEmpty(enterLiveItemRequest.holdItemIds)) {
+                if (!StringUtils.isEmpty(str3) && StringUtils.isEmpty(enterLiveItemRequest.itemHoldType) && StringUtils.isEmpty(enterLiveItemRequest.holdItemIds)) {
                     enterLiveItemRequest.holdItemIds = str3;
                     enterLiveItemRequest.itemHoldType = com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD;
                 }

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -48,27 +48,27 @@ public class HandleResponseDataUtil {
         RequestConfig requestConfig = null;
         TradeLogicData tradeLogicData = mspTradeContext.getTradeLogicData();
         if (tradeLogicData != null && (requestConfig = tradeLogicData.getRequestConfig()) != null) {
-            if (!TextUtils.isEmpty(jSONObject.getString(MspGlobalDefine.SESSION))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(MspGlobalDefine.SESSION))) {
                 requestConfig.setSessionId(jSONObject.getString(MspGlobalDefine.SESSION));
             }
-            if (!TextUtils.isEmpty(jSONObject.getString(MspGlobalDefine.UAC))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(MspGlobalDefine.UAC))) {
                 requestConfig.setmUac(Integer.parseInt(jSONObject.getString(MspGlobalDefine.UAC)));
                 tradeLogicData.setUac(Integer.parseInt(jSONObject.getString(MspGlobalDefine.UAC)));
             } else {
                 requestConfig.setmUac(0);
                 tradeLogicData.setUac(0);
             }
-            if (!TextUtils.isEmpty(jSONObject.getString(MspFlybirdDefine.FLYBIRD_PKEY))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(MspFlybirdDefine.FLYBIRD_PKEY))) {
                 b(jSONObject);
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("trade_no"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("trade_no"))) {
                 tradeLogicData.setTradeNo(jSONObject.getString("trade_no"));
                 LogUtil.record(4, AlipaySDKJSBridge.LOG_TAG, "LogicMessageHandlerAdapter.parseResponseRpcData", "params tradeno");
             }
-            if (!TextUtils.isEmpty(jSONObject.getString(MspGlobalDefine.UNAME))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(MspGlobalDefine.UNAME))) {
                 tradeLogicData.setUserName(jSONObject.getString(MspGlobalDefine.UNAME));
             }
-            if (!TextUtils.isEmpty(jSONObject.getString(MspGlobalDefine.UURL))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(MspGlobalDefine.UURL))) {
                 tradeLogicData.setUserLogoUrl(jSONObject.getString(MspGlobalDefine.UURL));
             }
         }
@@ -76,7 +76,7 @@ public class HandleResponseDataUtil {
             mspTradeContext.setServerFoundUserId(jSONObject.getString("user_id"));
         }
         String string = jSONObject.getString("mspParam");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             MspConfig.getInstance().updateLastMspParams(string);
             mspTradeContext.setSpmDpToken(string);
         }
@@ -86,7 +86,7 @@ public class HandleResponseDataUtil {
             }
             return false;
         } else if (i == 1000) {
-            if (!TextUtils.isEmpty(jSONObject.getString(MspFlybirdDefine.FLYBIRD_PKEY))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(MspFlybirdDefine.FLYBIRD_PKEY))) {
                 b(jSONObject);
                 a(mspTradeContext);
                 return false;
@@ -114,7 +114,7 @@ public class HandleResponseDataUtil {
         int parseInt = Integer.parseInt(jSONObject.getString("code"));
         String string = jSONObject.getString("params");
         LogUtil.record(4, "HandleResponseDataUtil.parsePbV1DataToRendData", "ResData ".concat(String.valueOf(string)));
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return "";
         }
         JSONObject parseObject = JSON.parseObject(string);
@@ -140,7 +140,7 @@ public class HandleResponseDataUtil {
             }
         }
         String string2 = jSONObject.getString("mspParam");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             MspConfig.getInstance().updateLastMspParams(string2);
             mspTradeContext.setSpmDpToken(string2);
         }
@@ -193,7 +193,7 @@ public class HandleResponseDataUtil {
             } else {
                 string = jSONObject.getString(MspFlybirdDefine.FLYBIRD_PKEY);
             }
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 MspConfig.getInstance().setRsaPublicKey(string);
                 return;
             }
@@ -208,7 +208,7 @@ public class HandleResponseDataUtil {
         } else if (jSONObject == null || !jSONObject.containsKey(MspFlybirdDefine.FLYBIRD_PKEY)) {
         } else {
             String string = jSONObject.getString(MspFlybirdDefine.FLYBIRD_PKEY);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 MspConfig.getInstance().setRsaPublicKey(string);
                 return;
             }

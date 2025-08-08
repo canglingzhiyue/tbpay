@@ -1,6 +1,6 @@
 package com.taobao.desktop.widget.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -41,7 +41,7 @@ public class d extends f {
         try {
             String string = jSONObject.getString("step");
             String d = g.a(this.c).d(this.e);
-            if ((!TextUtils.isEmpty(d) || !TextUtils.isEmpty(string)) && (dataFrames = (widgetContentData = (WidgetContentData) JSON.parseObject(d, WidgetContentData.class)).getDataFrames()) != null && !dataFrames.isEmpty()) {
+            if ((!StringUtils.isEmpty(d) || !StringUtils.isEmpty(string)) && (dataFrames = (widgetContentData = (WidgetContentData) JSON.parseObject(d, WidgetContentData.class)).getDataFrames()) != null && !dataFrames.isEmpty()) {
                 widgetContentData.setDataContent(dataFrames.get(a(dataFrames.size(), string)));
                 if (this.d != null) {
                     this.d.a(this.g, this.f, JSONObject.toJSONString(widgetContentData));

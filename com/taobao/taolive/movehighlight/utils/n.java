@@ -1,7 +1,7 @@
 package com.taobao.taolive.movehighlight.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.live.timemove.base.data.RecModel;
 import com.taobao.taolive.room.service.TBLiveRecEngineV2;
@@ -81,21 +81,21 @@ public class n {
         arrayList.add("feed_id=" + str3);
         arrayList.add("account_id=" + str4);
         arrayList.add("deviceLevel=" + String.valueOf(com.taobao.taolive.room.service.c.M()));
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.aw)) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.aw)) {
             arrayList.add("pkid=" + com.taobao.taolive.room.service.c.aw);
         }
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
             arrayList.add("spm-url=" + com.taobao.taolive.room.service.c.y());
         }
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
             arrayList.add("spm=" + com.taobao.taolive.room.service.c.y());
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayList.add("trackInfo=" + str2);
-        } else if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
+        } else if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
             arrayList.add("trackInfo=" + com.taobao.taolive.room.service.c.B());
         }
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.A())) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.A())) {
             arrayList.add("liveoprt_id=" + com.taobao.taolive.room.service.c.A());
         }
         StringBuilder sb = new StringBuilder();
@@ -164,7 +164,7 @@ public class n {
         arrayList.add("queryKey=" + com.taobao.taolive.room.service.c.au);
         arrayList.add("clickid=" + com.taobao.taolive.room.service.c.av);
         arrayList.add("room_type=live");
-        if (!TextUtils.isEmpty(s.tvChannelId)) {
+        if (!StringUtils.isEmpty(s.tvChannelId)) {
             arrayList.add("officialchannel_id=" + s.tvChannelId);
         }
         if (strArr != null && strArr.length > 0) {
@@ -179,7 +179,7 @@ public class n {
         }
         sb6.append(str5);
         arrayList.add(sb6.toString());
-        if (u.aj() && !TextUtils.isEmpty(com.taobao.taolive.room.service.c.z())) {
+        if (u.aj() && !StringUtils.isEmpty(com.taobao.taolive.room.service.c.z())) {
             arrayList.add("utparam-url=" + com.taobao.taolive.room.service.c.z());
         }
         if (pmd.a().e() == null) {
@@ -236,12 +236,12 @@ public class n {
                     map.put(ag.KEY_LIVE_STATUS, String.valueOf(s.status));
                     String str2 = s.liveId;
                     String str3 = s.broadCaster.accountId;
-                    if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
+                    if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
                         map.put("spm-url", com.taobao.taolive.room.service.c.y());
                     }
                     map.put("feed_id", str2);
                     map.put("account_id", str3);
-                    if (!TextUtils.isEmpty(s.tvChannelId)) {
+                    if (!StringUtils.isEmpty(s.tvChannelId)) {
                         map.put(ag.KEY_OFFICIAL_CHANNEL_ID, s.tvChannelId);
                     }
                 }
@@ -267,7 +267,7 @@ public class n {
         String str4 = s.broadCaster.accountId;
         hashMap.put("liveAdParams", Uri.encode(com.taobao.taolive.room.service.c.Q));
         hashMap.put("accounttype", com.taobao.taolive.room.service.c.s(s.broadCaster.type) + "");
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
             hashMap.put("spm-url", com.taobao.taolive.room.service.c.y());
         }
         hashMap.put("feed_id", str3);
@@ -298,15 +298,15 @@ public class n {
         hashMap.put("isUp", String.valueOf(com.taobao.taolive.room.service.c.F));
         hashMap.put("queryKey", com.taobao.taolive.room.service.c.au);
         hashMap.put("clickid", com.taobao.taolive.room.service.c.av);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("trackInfo", str2);
-        } else if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
+        } else if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
             hashMap.put("trackInfo", com.taobao.taolive.room.service.c.B());
         }
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.A())) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.A())) {
             hashMap.put(aw.PARAM_TRACK_LIVEOPRT_ID, com.taobao.taolive.room.service.c.A());
         }
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.y())) {
             hashMap.put("spm", com.taobao.taolive.room.service.c.y());
         }
         if (u.ai() && (com.taobao.taolive.room.service.c.g() || com.taobao.taolive.room.service.c.f())) {
@@ -315,7 +315,7 @@ public class n {
             hashMap.put("spm-cnt", "a2141.8001249.1.1");
         }
         hashMap.put("timestampT", System.currentTimeMillis() + "");
-        if (!TextUtils.isEmpty(s.tvChannelId)) {
+        if (!StringUtils.isEmpty(s.tvChannelId)) {
             hashMap.put(ag.KEY_OFFICIAL_CHANNEL_ID, s.tvChannelId);
         }
         hashMap.put("product_type", RecModel.MEDIA_TYPE_TIMEMOVE);
@@ -379,10 +379,10 @@ public class n {
             if (u.am()) {
                 hashMap.put("clickid", com.taobao.taolive.room.service.c.av);
             }
-            if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
+            if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
                 hashMap.put("trackInfo", com.taobao.taolive.room.service.c.B());
             }
-            if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.A())) {
+            if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.A())) {
                 hashMap.put(aw.PARAM_TRACK_LIVEOPRT_ID, com.taobao.taolive.room.service.c.A());
             }
             if (pmd.a().e() == null) {
@@ -412,7 +412,7 @@ public class n {
             arrayList.add("accountId=" + str);
             arrayList.add("roomStatus=" + s.roomStatus);
         }
-        if (!TextUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
+        if (!StringUtils.isEmpty(com.taobao.taolive.room.service.c.B())) {
             arrayList.add("trackInfo=" + com.taobao.taolive.room.service.c.B());
         }
         arrayList.add("serverParams=" + com.taobao.taolive.room.service.c.n());

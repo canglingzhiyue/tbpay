@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.au;
 import com.taobao.taopai.media.m;
@@ -25,7 +25,7 @@ public class hen {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.equals(str, this.f28575a)) {
+        } else if (StringUtils.equals(str, this.f28575a)) {
         } else {
             b(str);
         }
@@ -37,7 +37,7 @@ public class hen {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
         } else if (this.b == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b.a(str);
                 this.b.e(true);
                 this.b.a(true);

@@ -1,7 +1,7 @@
 package com.taobao.search.searchdoor.sf.widgets;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -107,7 +107,7 @@ public class SearchDoorContext {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         String a2 = a(str);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         return a(noa.GLOBAL_PARAM_PREFIX + str);
@@ -133,7 +133,7 @@ public class SearchDoorContext {
             return (String) ipChange.ipc$dispatch("b8ef3443", new Object[]{this});
         }
         String b = b("query", "");
-        return !TextUtils.isEmpty(b) ? b : b("q", "");
+        return !StringUtils.isEmpty(b) ? b : b("q", "");
     }
 
     public String b() {
@@ -171,7 +171,7 @@ public class SearchDoorContext {
 
     public boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : TextUtils.equals("true", w());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : StringUtils.equals("true", w());
     }
 
     public String f() {
@@ -180,7 +180,7 @@ public class SearchDoorContext {
             return (String) ipChange.ipc$dispatch("50938a53", new Object[]{this});
         }
         String b = b(nde.G_CHANNELSRP, "");
-        return TextUtils.isEmpty(b) ? b("channelSrp", "") : b;
+        return StringUtils.isEmpty(b) ? b("channelSrp", "") : b;
     }
 
     public String g() {
@@ -189,7 +189,7 @@ public class SearchDoorContext {
             return (String) ipChange.ipc$dispatch("d71944f2", new Object[]{this});
         }
         String b = b("g_channelHistoryKey", "");
-        return TextUtils.isEmpty(b) ? b(noa.KEY_CHANNEL_HISTORY_KEY, "") : b;
+        return StringUtils.isEmpty(b) ? b(noa.KEY_CHANNEL_HISTORY_KEY, "") : b;
     }
 
     private String w() {
@@ -198,7 +198,7 @@ public class SearchDoorContext {
             return (String) ipChange.ipc$dispatch("3f74eee2", new Object[]{this});
         }
         String b = b("g_historyOn", "");
-        return TextUtils.isEmpty(b) ? a("historyOn") : b;
+        return StringUtils.isEmpty(b) ? a("historyOn") : b;
     }
 
     public String h() {
@@ -213,7 +213,7 @@ public class SearchDoorContext {
 
     public String e(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("666b162a", new Object[]{this, str}) : TextUtils.isEmpty(this.g) ? str : this.g;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("666b162a", new Object[]{this, str}) : StringUtils.isEmpty(this.g) ? str : this.g;
     }
 
     public void a(String str, SearchBarHintBean searchBarHintBean) {
@@ -302,7 +302,7 @@ public class SearchDoorContext {
             return (String) ipChange.ipc$dispatch("c5faa981", new Object[]{this});
         }
         String a2 = a("g_csearchdoor_spm");
-        return TextUtils.isEmpty(a2) ? a("csearchdoor_spm") : a2;
+        return StringUtils.isEmpty(a2) ? a("csearchdoor_spm") : a2;
     }
 
     public Map<String, String> m() {
@@ -312,7 +312,7 @@ public class SearchDoorContext {
             return (Map) ipChange.ipc$dispatch("44113da9", new Object[]{this});
         }
         String b = b("SearchTraceParams", "");
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return null;
         }
         try {
@@ -326,7 +326,7 @@ public class SearchDoorContext {
         HashMap hashMap = new HashMap();
         for (String str : jSONObject.keySet()) {
             String string = jSONObject.getString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 hashMap.put(str, string);
             }
         }
@@ -341,12 +341,12 @@ public class SearchDoorContext {
         String str = null;
         Map<String, String> m = m();
         String x = x();
-        if (!TextUtils.isEmpty(x)) {
+        if (!StringUtils.isEmpty(x)) {
             str = x;
         } else if (m != null && !m.isEmpty()) {
             str = m.get("spm-cnt");
         }
-        return TextUtils.isEmpty(str) ? "true".equals(b(noa.KEY_SEARCH_ELDER_HOME_OPEN, "false")) ? k.SEARCH_DOOR_SPM_ELDER_HOME : k.SEARCH_DOOR_SPM : str;
+        return StringUtils.isEmpty(str) ? "true".equals(b(noa.KEY_SEARCH_ELDER_HOME_OPEN, "false")) ? k.SEARCH_DOOR_SPM_ELDER_HOME : k.SEARCH_DOOR_SPM : str;
     }
 
     public Map<String, String> o() {
@@ -358,7 +358,7 @@ public class SearchDoorContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.b.put(str, str2);
         }
@@ -402,10 +402,10 @@ public class SearchDoorContext {
         float c = j.c(imk.c);
         String r = r();
         hashMap.put("pageName", r);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("suggestRN", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("tab", str2);
         }
         hashMap.put("spm", n());
@@ -471,7 +471,7 @@ public class SearchDoorContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c8bb1504", new Object[]{this, activity, str});
-        } else if (TextUtils.equals(this.p, str)) {
+        } else if (StringUtils.equals(this.p, str)) {
         } else {
             com.taobao.android.searchbaseframe.util.k.d("SearchDoorStatus", str, new Object[0]);
             this.p = str;
@@ -499,7 +499,7 @@ public class SearchDoorContext {
             return ((Boolean) ipChange.ipc$dispatch("6782aff", new Object[]{this})).booleanValue();
         }
         String a2 = a(noa.KEY_POP_UP);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = a(noa.KEY_G_POP_UP);
         }
         return "true".equals(a2);

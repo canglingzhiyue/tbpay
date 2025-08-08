@@ -1,6 +1,6 @@
 package com.taobao.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
 import com.taobao.android.fluid.business.usertrack.track.ut.videotracker.RenderTrackUtils;
@@ -74,7 +74,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (this.f18679a == null || !TextUtils.isEmpty(this.d)) {
+        } else if (this.f18679a == null || !StringUtils.isEmpty(this.d)) {
         } else {
             this.d = str;
             shc shcVar = this.f18679a;
@@ -86,7 +86,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (this.f18679a == null || !TextUtils.isEmpty(this.e)) {
+        } else if (this.f18679a == null || !StringUtils.isEmpty(this.e)) {
         } else {
             this.e = str;
             this.f18679a.h_(str);
@@ -300,7 +300,7 @@ public class l {
             long longValue2 = ((Long) a("pageCreateS", 0L)).longValue();
             long longValue3 = ((Long) a("pageCreateE", 0L)).longValue();
             com.taobao.tao.infoflow.multitab.g.a("MultiTabPerformance", "ApmPerfMonitor " + this.f18679a.a() + ",checkInvalid pageName：" + str + ",fcp:" + longValue + ",pageCreateS:" + longValue2 + ",pageCreateE:" + longValue3);
-            if (!TextUtils.isEmpty(str) && longValue > 0) {
+            if (!StringUtils.isEmpty(str) && longValue > 0) {
                 if (this.b > 0 && longValue2 != 0 && longValue3 != 0) {
                     return true;
                 }

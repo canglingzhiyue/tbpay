@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.b;
 import com.alibaba.fastjson.JSON;
@@ -76,7 +76,7 @@ public final class idh extends idd {
                 return;
             }
             String str = (String) map.get("exParams");
-            if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || !parseObject.containsKey("umfVersions")) {
+            if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || !parseObject.containsKey("umfVersions")) {
                 return;
             }
             parseObject.remove("umfVersions");

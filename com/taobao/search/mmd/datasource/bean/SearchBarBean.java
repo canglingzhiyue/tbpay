@@ -1,6 +1,6 @@
 package com.taobao.search.mmd.datasource.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.g;
@@ -45,7 +45,7 @@ public class SearchBarBean implements Serializable {
         searchBarBean.icon = jSONObject.getString("icon");
         searchBarBean.info = jSONObject.getString("info");
         searchBarBean.suffixIcon = jSONObject.getString("suffixIcon");
-        if (!TextUtils.isEmpty(searchBarBean.suffixIcon)) {
+        if (!StringUtils.isEmpty(searchBarBean.suffixIcon)) {
             int b = g.b(jSONObject.getString("width"), 0);
             int b2 = g.b(jSONObject.getString("height"), 0);
             if (b != 0 && b2 != 0) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -35,11 +35,11 @@ public class khy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String u = e.u(context);
-        if (TextUtils.isEmpty(u)) {
+        if (StringUtils.isEmpty(u)) {
             return false;
         }
         JSONObject parseObject = JSONObject.parseObject(u);
@@ -106,12 +106,12 @@ public class khy {
             return ((Boolean) ipChange.ipc$dispatch("9b80d80d", new Object[]{context, str})).booleanValue();
         }
         String v = e.v(context);
-        if (!TextUtils.isEmpty(v)) {
+        if (!StringUtils.isEmpty(v)) {
             JSONObject parseObject = JSONObject.parseObject(v);
             if (parseObject.getJSONObject(str) != null) {
                 String string = parseObject.getJSONObject(str).getString("app_version");
                 String h = kid.h(context);
-                if (!TextUtils.isEmpty(h) && !TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(h) && !StringUtils.isEmpty(string)) {
                     if (!(kid.b(h, string) >= 0)) {
                         return false;
                     }

@@ -1,6 +1,6 @@
 package com.taobao.share.taopassword;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class TBShareContentStoreService implements IRemoteBaseListener {
             return;
         }
         TBShareContent j = e.b().j();
-        if (j == null || TextUtils.isEmpty(j.url) || TextUtils.isEmpty(j.businessId) || TextUtils.isEmpty(j.description)) {
+        if (j == null || StringUtils.isEmpty(j.url) || StringUtils.isEmpty(j.businessId) || StringUtils.isEmpty(j.description)) {
             return;
         }
         MtopTaobaoSharepasswordStoresharecontentRequest mtopTaobaoSharepasswordStoresharecontentRequest = new MtopTaobaoSharepasswordStoresharecontentRequest();
@@ -59,16 +59,16 @@ public class TBShareContentStoreService implements IRemoteBaseListener {
         }
         if (j.activityParams != null && !j.activityParams.isEmpty()) {
             String remove = j.activityParams.remove("contacts_sendName");
-            if (!TextUtils.isEmpty(remove)) {
+            if (!StringUtils.isEmpty(remove)) {
                 mtopTaobaoSharepasswordStoresharecontentRequest.setShareSendName(remove);
             }
             String remove2 = j.activityParams.remove("contacts_remark");
-            if (!TextUtils.isEmpty(remove2)) {
+            if (!StringUtils.isEmpty(remove2)) {
                 mtopTaobaoSharepasswordStoresharecontentRequest.setShareRemark(remove2);
             }
             hashMap.putAll(j.activityParams);
         }
-        if (!TextUtils.isEmpty(j.title)) {
+        if (!StringUtils.isEmpty(j.title)) {
             hashMap.put("title", j.title);
         }
         if (hashMap.size() > 0) {

@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -27,9 +27,9 @@ public class ai extends bca {
         }
         JSONObject jSONObject = this.h.getFields().getJSONObject("coupon");
         for (com.taobao.android.ultron.common.model.b bVar : (List) bmzVar.b("events")) {
-            if (TextUtils.equals(bVar.getType(), "openPopupWindow")) {
+            if (StringUtils.equals(bVar.getType(), "openPopupWindow")) {
                 for (IDMComponent iDMComponent : bei.a(this.b, bVar)) {
-                    if (TextUtils.equals("cartShopCouponPopWindow", iDMComponent.getTag())) {
+                    if (StringUtils.equals("cartShopCouponPopWindow", iDMComponent.getTag())) {
                         JSONObject fields = iDMComponent.getFields();
                         if (jSONObject != null) {
                             fields.putAll(jSONObject.getInnerMap());

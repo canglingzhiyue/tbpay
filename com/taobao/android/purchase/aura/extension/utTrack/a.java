@@ -1,6 +1,6 @@
 package com.taobao.android.purchase.aura.extension.utTrack;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -232,7 +232,7 @@ public final class a extends aso implements asg {
             return;
         }
         String containerType = renderComponent.componentView.getContainerType();
-        if (!TextUtils.isEmpty(containerType) && containerType.contains("layout")) {
+        if (!StringUtils.isEmpty(containerType) && containerType.contains("layout")) {
             return;
         }
         Map<String, Object> fields = renderComponent.component.getFields();
@@ -241,7 +241,7 @@ public final class a extends aso implements asg {
         }
         String str = (String) bbc.a(fields, "state", String.class, "");
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("state", str);
         }
         this.f.put(renderComponent.key, hashMap);
@@ -256,7 +256,7 @@ public final class a extends aso implements asg {
         HashMap hashMap = new HashMap();
         hashMap.put("components", JSONObject.toJSONString(map));
         String b = b(ultronProtocol);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             hashMap.put("aura.userMark.dyeingInfo", b);
         }
         c.a("Page_NewConfirmOrder_OrderBuildResponseInfo", hashMap);
@@ -270,7 +270,7 @@ public final class a extends aso implements asg {
         }
         if (ultronProtocol.getHierarchy() != null && ultronProtocol.getData() != null) {
             String root = ultronProtocol.getHierarchy().getRoot();
-            if (!TextUtils.isEmpty(root) && (component = ultronProtocol.getData().get(root)) != null && (component.getFeatures() instanceof JSONObject)) {
+            if (!StringUtils.isEmpty(root) && (component = ultronProtocol.getData().get(root)) != null && (component.getFeatures() instanceof JSONObject)) {
                 return ((JSONObject) component.getFeatures()).getString("dyeingInfo");
             }
         }

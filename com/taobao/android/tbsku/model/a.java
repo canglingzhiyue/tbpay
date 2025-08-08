@@ -3,7 +3,7 @@ package com.taobao.android.tbsku.model;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -84,11 +84,11 @@ public class a {
         HashSet hashSet = new HashSet();
         try {
             String queryParameter = data.getQueryParameter(noa.KEY_MSOA_TRANS_KEY);
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 String[] split = queryParameter.split(",");
                 if (split != null) {
                     for (String str3 : split) {
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             hashSet.add(str3);
                         }
                     }
@@ -140,40 +140,40 @@ public class a {
             if ("sku_forbidH5".equalsIgnoreCase(str4)) {
                 this.q = Boolean.parseBoolean(str);
             }
-            if ("sku_forbidH5_toast".equalsIgnoreCase(str4) && !TextUtils.isEmpty(str)) {
+            if ("sku_forbidH5_toast".equalsIgnoreCase(str4) && !StringUtils.isEmpty(str)) {
                 this.r = str;
             }
             if ("sku_forbid_redirect".equalsIgnoreCase(str4)) {
                 this.v = Boolean.parseBoolean(str);
             }
-            if ("sku_forbid_redirect_toast".equalsIgnoreCase(str4) && !TextUtils.isEmpty(str)) {
+            if ("sku_forbid_redirect_toast".equalsIgnoreCase(str4) && !StringUtils.isEmpty(str)) {
                 this.w = str;
             }
-            if ("lazyLoadSku2".equalsIgnoreCase(str4) && !TextUtils.isEmpty(str)) {
+            if ("lazyLoadSku2".equalsIgnoreCase(str4) && !StringUtils.isEmpty(str)) {
                 this.u = str;
             }
-            if (hashSet.contains(str4) && !TextUtils.isEmpty(str)) {
+            if (hashSet.contains(str4) && !StringUtils.isEmpty(str)) {
                 this.f.put(str4, str);
                 this.g.put(str4, str);
             }
-            if (a2.contains(str4) && !TextUtils.isEmpty(str)) {
+            if (a2.contains(str4) && !StringUtils.isEmpty(str)) {
                 this.f.put(str4, str);
                 this.h.put(str4, str);
             }
         }
-        if (TextUtils.isEmpty(this.f15432a)) {
+        if (StringUtils.isEmpty(this.f15432a)) {
             this.f15432a = intent.getStringExtra("itemId");
         }
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = intent.getStringExtra("skuId");
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             this.d = intent.getStringExtra("bottomMode");
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = intent.getStringExtra("uniqueId");
         }
-        if (!TextUtils.isEmpty(this.f15432a)) {
+        if (!StringUtils.isEmpty(this.f15432a)) {
             return;
         }
         this.l = true;
@@ -190,9 +190,9 @@ public class a {
         HashSet hashSet = new HashSet();
         try {
             String queryParameter = uri.getQueryParameter(str);
-            if (!TextUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
+            if (!StringUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
                 for (String str2 : split) {
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         hashSet.add(str2);
                     }
                 }
@@ -273,9 +273,9 @@ public class a {
         if (jSONObject == null) {
             jSONObject = new JSONObject();
         }
-        if (!TextUtils.isEmpty(this.i) && (parseObject = JSONObject.parseObject(this.i)) != null && !parseObject.isEmpty()) {
+        if (!StringUtils.isEmpty(this.i) && (parseObject = JSONObject.parseObject(this.i)) != null && !parseObject.isEmpty()) {
             for (Map.Entry<String, Object> entry : parseObject.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey())) {
+                if (!StringUtils.isEmpty(entry.getKey())) {
                     jSONObject.put(entry.getKey(), entry.getValue());
                 }
             }

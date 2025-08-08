@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.status.NetworkStatusHelper;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -81,37 +81,37 @@ public class NotifyRegister {
                 String string4 = jSONObject.getString("config");
                 String string5 = jSONObject.getString("eventType");
                 String string6 = jSONObject.getString("indexId");
-                if (!TextUtils.isEmpty(string5)) {
+                if (!StringUtils.isEmpty(string5)) {
                     jSONObject2.put("eventType", (Object) string5);
                 }
                 JSONObject jSONObject4 = new JSONObject();
                 if (jSONObject3 != null) {
-                    if (!TextUtils.isEmpty(string4)) {
+                    if (!StringUtils.isEmpty(string4)) {
                         jSONObject4.put("config", (Object) string4);
                     }
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         jSONObject4.put("event", (Object) string);
                     }
-                    if (!TextUtils.isEmpty(string6)) {
+                    if (!StringUtils.isEmpty(string6)) {
                         jSONObject4.put("indexId", (Object) string6);
                     }
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         jSONObject4.put("nativeUrl", (Object) string3);
                     }
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         jSONObject4.put("nativeUri", (Object) string2);
                     }
                     jSONObject2.put("pop", (Object) jSONObject4);
-                    if (!TextUtils.isEmpty(jSONObject3.getString("type"))) {
+                    if (!StringUtils.isEmpty(jSONObject3.getString("type"))) {
                         jSONObject2.put("type", (Object) jSONObject3.getString("type"));
                     }
-                    if (!TextUtils.isEmpty(jSONObject3.getString("url"))) {
+                    if (!StringUtils.isEmpty(jSONObject3.getString("url"))) {
                         jSONObject2.put("url", (Object) jSONObject3.getString("url"));
                     }
-                    if (!TextUtils.isEmpty(jSONObject3.getString("uri"))) {
+                    if (!StringUtils.isEmpty(jSONObject3.getString("uri"))) {
                         jSONObject2.put("uri", (Object) jSONObject3.getString("uri"));
                     }
-                    if (!TextUtils.isEmpty(jSONObject3.getString("layerType"))) {
+                    if (!StringUtils.isEmpty(jSONObject3.getString("layerType"))) {
                         jSONObject2.put("layerType", (Object) jSONObject3.getString("layerType"));
                     }
                 }
@@ -131,7 +131,7 @@ public class NotifyRegister {
                     jSONObject = new JSONObject();
                 }
                 JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("livetab", (Object) Boolean.valueOf(TextUtils.equals(jSONObject.getString("selectStatus"), "onPageSelected")));
+                jSONObject2.put("livetab", (Object) Boolean.valueOf(StringUtils.equals(jSONObject.getString("selectStatus"), "onPageSelected")));
                 return jSONObject2;
             }
         };

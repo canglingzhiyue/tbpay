@@ -3,7 +3,7 @@ package com.taobao.tlog.adapter;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -49,7 +49,7 @@ public class e {
 
     private static boolean a(String str) {
         olo oloVar;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

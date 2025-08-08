@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -31,7 +31,7 @@ public class au {
             if (ipChange instanceof IpChange) {
                 return (List) ipChange.ipc$dispatch("332400c0", new Object[]{map, str});
             }
-            if (map != null && !map.isEmpty() && !TextUtils.isEmpty(str)) {
+            if (map != null && !map.isEmpty() && !StringUtils.isEmpty(str)) {
                 Object obj = map.get(str);
                 if (obj instanceof List) {
                     return (List) obj;
@@ -45,7 +45,7 @@ public class au {
             if (ipChange instanceof IpChange) {
                 return (Map) ipChange.ipc$dispatch("b3a04afb", new Object[]{map, str});
             }
-            if (map == null || map.isEmpty() || TextUtils.isEmpty(str)) {
+            if (map == null || map.isEmpty() || StringUtils.isEmpty(str)) {
                 return null;
             }
             Object obj = map.get(str);
@@ -61,17 +61,17 @@ public class au {
 
         public static boolean a(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^fields.*");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^fields.*");
         }
 
         public static boolean b(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^events\\..+\\[.+\\]\\.fields.*");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^events\\..+\\[.+\\]\\.fields.*");
         }
 
         private static boolean d(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^.+\\[.+\\]$");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^.+\\[.+\\]$");
         }
 
         private static String e(String str) {
@@ -98,9 +98,9 @@ public class au {
             if (ipChange instanceof IpChange) {
                 return ipChange.ipc$dispatch("121a1a7f", new Object[]{str, map});
             }
-            if (!TextUtils.isEmpty(str) && map != null) {
+            if (!StringUtils.isEmpty(str) && map != null) {
                 String e = e(str);
-                if (!TextUtils.isEmpty(e) && (a2 = a(map, e)) != null && (f = f(str)) >= 0 && f <= a2.size()) {
+                if (!StringUtils.isEmpty(e) && (a2 = a(map, e)) != null && (f = f(str)) >= 0 && f <= a2.size()) {
                     return a2.get(f);
                 }
             }
@@ -200,7 +200,7 @@ public class au {
             if (ipChange instanceof IpChange) {
                 return (Map) ipChange.ipc$dispatch("1de25bb2", new Object[]{str, eyyVar});
             }
-            if (!TextUtils.isEmpty(str) && eyyVar != null) {
+            if (!StringUtils.isEmpty(str) && eyyVar != null) {
                 if (a(str)) {
                     return eyyVar.d();
                 }
@@ -222,7 +222,7 @@ public class au {
             if (ipChange instanceof IpChange) {
                 return (String[]) ipChange.ipc$dispatch("c6428d83", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             if (a(str)) {
@@ -251,12 +251,12 @@ public class au {
 
         private static boolean a(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^\\$\\{.+\\}$");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^\\$\\{.+\\}$");
         }
 
         private static boolean b(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.matches("^.*\\$\\{.+\\}.*$");
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.matches("^.*\\$\\{.+\\}.*$");
         }
 
         private static String[] c(String str) {
@@ -264,7 +264,7 @@ public class au {
             if (ipChange instanceof IpChange) {
                 return (String[]) ipChange.ipc$dispatch("c6428d83", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             String[] strArr = new String[3];
@@ -295,7 +295,7 @@ public class au {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str.substring(2, str.length() - 1);
             }
             return null;
@@ -319,12 +319,12 @@ public class au {
                             String str4 = c[0];
                             String str5 = c[2];
                             String d = d(c[1]);
-                            if (TextUtils.isEmpty(d)) {
+                            if (StringUtils.isEmpty(d)) {
                                 i.a("PathUtils$ExpressionMethods", "emptyMapExpressionPath for: " + value + " with key: " + str2);
                                 return;
                             }
                             Object a2 = b.a(b.c(d), map);
-                            if (!TextUtils.isEmpty(str4) || !TextUtils.isEmpty(str5)) {
+                            if (!StringUtils.isEmpty(str4) || !StringUtils.isEmpty(str5)) {
                                 if (a2 != null) {
                                     str = a2.toString();
                                 }
@@ -360,11 +360,11 @@ public class au {
                                 String str7 = c2[0];
                                 String str8 = c2[2];
                                 String d2 = d(c2[1]);
-                                if (TextUtils.isEmpty(d2)) {
+                                if (StringUtils.isEmpty(d2)) {
                                     i.a("PathUtils$ExpressionMethods", "emptyArrayExpressionPath for: " + obj3);
                                 } else {
                                     Object a3 = b.a(b.c(d2), map);
-                                    if (!TextUtils.isEmpty(str7) || !TextUtils.isEmpty(str8)) {
+                                    if (!StringUtils.isEmpty(str7) || !StringUtils.isEmpty(str8)) {
                                         String obj4 = a3 == null ? str : a3.toString();
                                         list.remove(i);
                                         if (i < list.size()) {

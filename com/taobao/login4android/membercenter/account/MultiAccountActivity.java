@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.base.BaseLogonFragment;
 import com.ali.user.mobile.base.ui.BaseActivity;
 import com.ali.user.mobile.common.api.AliUserLogin;
@@ -77,7 +77,7 @@ public class MultiAccountActivity extends BaseActivity {
         this.mFragmentManager = getSupportFragmentManager();
         super.onCreate(bundle);
         UserTrackAdapter.skipPage(this);
-        if (LoginSwitch.getSwitch(LoginSwitch.EXTRA_PREFECT, "false") && ServiceFactory.getService(NumberAuthService.class) != null && ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() && TextUtils.isEmpty(Login.getLoginToken())) {
+        if (LoginSwitch.getSwitch(LoginSwitch.EXTRA_PREFECT, "false") && ServiceFactory.getService(NumberAuthService.class) != null && ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() && StringUtils.isEmpty(Login.getLoginToken())) {
             ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).preFecth(LoginConstants.LOGIN_FROM_MULTI_ACCOUNT);
         }
         if (this.mToolbar != null) {

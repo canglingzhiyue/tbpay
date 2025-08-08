@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import com.taobao.zcache.Environment;
@@ -86,7 +86,7 @@ public class g {
             if (context != null && !b) {
                 String b2 = b(context);
                 String packageName = context.getPackageName();
-                boolean equals = TextUtils.equals(b2, packageName);
+                boolean equals = StringUtils.equals(b2, packageName);
                 c = equals;
                 if (!equals) {
                     com.taobao.android.riverlogger.e.a(RVLLevel.Warn, "ZCache/Setup").a("setContext").a(-1, "Current process name \"%s\" is not equal to packageName \"%s\"", b2, packageName).a();

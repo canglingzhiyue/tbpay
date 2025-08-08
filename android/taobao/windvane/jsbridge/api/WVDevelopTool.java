@@ -11,7 +11,7 @@ import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.monitor.WVLocPerformanceMonitor;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.WVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -488,7 +488,7 @@ public class WVDevelopTool extends e {
         if (configs != null && configs.size() != 0) {
             for (Map.Entry<String, String> entry : configs.entrySet()) {
                 String value = entry.getValue();
-                if (TextUtils.equals("aliDomain", entry.getKey()) || TextUtils.equals("thirdPartyDomain", entry.getKey())) {
+                if (StringUtils.equals("aliDomain", entry.getKey()) || StringUtils.equals("thirdPartyDomain", entry.getKey())) {
                     value = oan.DEFAULT_PLAN_B_PASSWORD_REGEX;
                 }
                 jSONObject.put(entry.getKey(), value);

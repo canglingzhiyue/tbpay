@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.offline;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
 import com.alipay.android.msp.framework.taskscheduler.TaskHelper;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
@@ -51,7 +51,7 @@ public class CashierOperationReceiver extends BroadcastReceiver {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         try {

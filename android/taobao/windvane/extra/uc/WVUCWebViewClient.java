@@ -24,7 +24,7 @@ import android.taobao.windvane.util.p;
 import android.taobao.windvane.webview.IWVWebView;
 import android.taobao.windvane.webview.e;
 import android.taobao.windvane.webview.g;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.URLUtil;
 import android.webkit.ValueCallback;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -177,7 +177,7 @@ public class WVUCWebViewClient extends WebViewClient {
             return (JSONObject) ipChange.ipc$dispatch("e0441e19", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             if (str.startsWith("\"") && str.endsWith("\"")) {
@@ -196,7 +196,7 @@ public class WVUCWebViewClient extends WebViewClient {
             return;
         }
         String metaDataScript = getMetaDataScript(new String[]{"WV.Meta.Falco.PageName"});
-        if (TextUtils.isEmpty(metaDataScript) || wVUCWebView == null) {
+        if (StringUtils.isEmpty(metaDataScript) || wVUCWebView == null) {
             return;
         }
         wVUCWebView.evaluateJavascript(metaDataScript, new ValueCallback<String>() { // from class: android.taobao.windvane.extra.uc.WVUCWebViewClient.1
@@ -213,7 +213,7 @@ public class WVUCWebViewClient extends WebViewClient {
                     JSONObject metaObject = WVUCWebViewClient.getMetaObject(str);
                     if (metaObject != null && wVUCWebView != null) {
                         String optString = metaObject.optString("WV.Meta.Falco.PageName");
-                        if (TextUtils.isEmpty(optString)) {
+                        if (StringUtils.isEmpty(optString)) {
                             return;
                         }
                         wVUCWebView.setFalcoPageName(optString);
@@ -250,7 +250,7 @@ public class WVUCWebViewClient extends WebViewClient {
                     if (metaObject != null && wVUCWebView != null) {
                         oxv oxvVar = (oxv) qgm.a().a(oxv.class);
                         if (oxvVar != null && metaObject.has("WV.Meta.Performance.JSFSP")) {
-                            if (!TextUtils.isEmpty(metaObject.optString("WV.Meta.Performance.JSFSP"))) {
+                            if (!StringUtils.isEmpty(metaObject.optString("WV.Meta.Performance.JSFSP"))) {
                                 if (wVUCWebView.isReportedFSP()) {
                                     return;
                                 }
@@ -459,7 +459,7 @@ public class WVUCWebViewClient extends WebViewClient {
             }
             try {
                 String queryParameter = Uri.parse(str).getQueryParameter("_wvPgName");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     ((WVUCWebView) webView).setFalcoPageName(queryParameter);
                 }
             } catch (Throwable th2) {
@@ -468,7 +468,7 @@ public class WVUCWebViewClient extends WebViewClient {
         }
         if (p.b(str) && android.taobao.windvane.config.p.c(str, (g) webView)) {
             String b = android.taobao.windvane.config.n.a().b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 HashMap hashMap = new HashMap(2);
                 hashMap.put("cause", "ACCESS_FORBIDDEN");
                 hashMap.put("url", str);

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -163,7 +163,7 @@ public class GalleryActivity extends Activity {
         a(i, this.c.getCount());
         this.f.setText(galleryModel.title);
         this.g.setText(galleryModel.desc);
-        if (TextUtils.isEmpty(galleryModel.headDescPicPath)) {
+        if (StringUtils.isEmpty(galleryModel.headDescPicPath)) {
             this.h.setVisibility(8);
         } else {
             com.taobao.android.detail.core.detail.kit.utils.f.a(this).a(this.h, galleryModel.headDescPicPath, null, new com.taobao.android.detail.datasdk.protocol.image.b() { // from class: com.taobao.android.detail.core.detail.kit.gallery.GalleryActivity.3

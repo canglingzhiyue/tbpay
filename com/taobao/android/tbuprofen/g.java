@@ -3,7 +3,7 @@ package com.taobao.android.tbuprofen;
 import android.content.Context;
 import android.os.Build;
 import android.os.Debug;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.common.TBPEvent;
@@ -175,7 +175,7 @@ public class g {
             String a2 = this.f.a();
             this.e.a(a2);
             String b = h.b().b(a2);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 String format = String.format("Can't find plugin %s. RemoteSo:%b", a2, Boolean.valueOf(h.b().a()));
                 this.e.a(a2, f.ERR_LOAD_PLUGIN_EXCEPTION, format);
                 com.taobao.android.tbuprofen.log.c.a("TBPManager", "loadPlugin %s error. %s", a2, format);
@@ -185,7 +185,7 @@ public class g {
             if (loadPluginNative == 0) {
                 try {
                     String a3 = h.b().a(a2);
-                    if (!TextUtils.isEmpty(a3)) {
+                    if (!StringUtils.isEmpty(a3)) {
                         this.e.a(f.ERR_LOAD_PLUGIN_EXCEPTION, a3);
                         com.taobao.android.tbuprofen.log.c.a("TBPManager", "loadPlugin % error. %s", a2, a3);
                         return false;
@@ -305,7 +305,7 @@ public class g {
         com.taobao.android.tbuprofen.log.c.c("TBPManager", "mockNoneDebuggable", new Object[0]);
         try {
             String a2 = h.b().a("tbuprofen-util");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.e.a(f.ERR_SYS_LOAD_MOCK_EXCEPTION, a2);
                 com.taobao.android.tbuprofen.log.c.a("TBPManager", "Failed to load tbuprofen-util. %s", a2);
                 return false;

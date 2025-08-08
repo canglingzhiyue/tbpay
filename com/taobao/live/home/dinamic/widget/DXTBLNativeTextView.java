@@ -7,7 +7,7 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.os.Build;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class DXTBLNativeTextView extends DXNativeTextView implements pqt {
                     ipChange.ipc$dispatch("5c510192", new Object[]{this});
                     return;
                 }
-                DXTBLNativeTextView.this.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                DXTBLNativeTextView.this.setEllipsize(StringUtils.TruncateAt.MARQUEE);
                 DXTBLNativeTextView.this.setSelected(true);
                 DXTBLNativeTextView.this.setSingleLine(true);
                 DXTBLNativeTextView.this.setHorizontallyScrolling(true);
@@ -104,7 +104,7 @@ public class DXTBLNativeTextView extends DXNativeTextView implements pqt {
                     ipChange.ipc$dispatch("5c510192", new Object[]{this});
                     return;
                 }
-                DXTBLNativeTextView.this.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                DXTBLNativeTextView.this.setEllipsize(StringUtils.TruncateAt.MARQUEE);
                 DXTBLNativeTextView.this.setSelected(true);
                 DXTBLNativeTextView.this.setSingleLine(true);
                 DXTBLNativeTextView.this.setHorizontallyScrolling(true);
@@ -139,7 +139,7 @@ public class DXTBLNativeTextView extends DXNativeTextView implements pqt {
                     ipChange.ipc$dispatch("5c510192", new Object[]{this});
                     return;
                 }
-                DXTBLNativeTextView.this.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                DXTBLNativeTextView.this.setEllipsize(StringUtils.TruncateAt.MARQUEE);
                 DXTBLNativeTextView.this.setSelected(true);
                 DXTBLNativeTextView.this.setSingleLine(true);
                 DXTBLNativeTextView.this.setHorizontallyScrolling(true);
@@ -264,7 +264,7 @@ public class DXTBLNativeTextView extends DXNativeTextView implements pqt {
         } else {
             removeCallbacks(runnable);
             removeCallbacks(this.marqueeRunnable);
-            setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            setEllipsize(StringUtils.TruncateAt.MARQUEE);
             setSelected(true);
             setSingleLine(true);
             setHorizontallyScrolling(true);

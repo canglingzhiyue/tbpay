@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.service;
 
 import android.app.Service;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,7 +45,7 @@ public class AmnetServiceWrapper extends AmnetService {
         attachBaseContext(this.f5375a.getBaseContext());
         Method method = null;
         for (Method method2 : super.getClass().getDeclaredMethods()) {
-            if (TextUtils.equals(method2.getName(), Constants.Event.SLOT_LIFECYCLE.ATTACH)) {
+            if (StringUtils.equals(method2.getName(), Constants.Event.SLOT_LIFECYCLE.ATTACH)) {
                 method = method2;
             }
         }

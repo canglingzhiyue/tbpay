@@ -2,7 +2,7 @@ package com.taobao.android.artry;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -242,17 +242,17 @@ public class EmbedARTryView extends BaseEmbedView {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("45f5ca7d", new Object[]{this, str, jSONObject, bridgeCallback})).booleanValue();
         }
-        if (!TextUtils.equals(str, "applyEffect") && this.mARTryFlowForMiniApp == null) {
+        if (!StringUtils.equals(str, "applyEffect") && this.mARTryFlowForMiniApp == null) {
             if (str.equals("setupAREngineEnv") && jSONObject.getString("graphType") != null && jSONObject.getString("graphType").equals("MAKEUP_ONLY")) {
                 this.mARTryFlowForMiniApp = createARTryJSFlow();
             }
             return false;
         }
-        if (TextUtils.equals(str, "applyEffect")) {
+        if (StringUtils.equals(str, "applyEffect")) {
             if (this.mARTryFlowForMiniApp == null) {
                 this.mARTryFlowForMiniApp = createARTryJSFlow();
                 return false;
-            } else if (jSONObject != null && jSONObject.containsKey("apiName") && TextUtils.equals(jSONObject.getString("apiName"), "switchFlow")) {
+            } else if (jSONObject != null && jSONObject.containsKey("apiName") && StringUtils.equals(jSONObject.getString("apiName"), "switchFlow")) {
                 if (bridgeCallback != null) {
                     bridgeCallback.sendJSONResponse(null, false);
                 }

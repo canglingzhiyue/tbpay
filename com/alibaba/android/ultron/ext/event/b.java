@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.ext.event;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.verifyidentity.callback.VIListenerByVerifyId;
 import com.alipay.mobile.verifyidentity.common.Constants;
@@ -80,7 +80,7 @@ public class b extends j {
         }
         String string = jSONObject.getString("errorMsg");
         JSONObject jSONObject2 = new JSONObject();
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "服务异常";
         }
         jSONObject2.put("message", (Object) string);
@@ -117,7 +117,7 @@ public class b extends j {
                 } else if (verifyIdentityResult == null) {
                 } else {
                     String code = verifyIdentityResult.getCode();
-                    if (TextUtils.isEmpty(code)) {
+                    if (StringUtils.isEmpty(code)) {
                         return;
                     }
                     char c = 65535;
@@ -158,7 +158,7 @@ public class b extends j {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("url", (Object) str);
         jSONObject.put("pageType", (Object) "H5");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             jSONObject.put("pageType", (Object) str2);
         }
         return jSONObject;

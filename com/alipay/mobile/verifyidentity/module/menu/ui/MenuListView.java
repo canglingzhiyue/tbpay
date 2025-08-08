@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.module.menu.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +60,7 @@ public class MenuListView extends LinearLayout {
         this.mMenuListView = (APListView) this.f.findViewById(R.id.menuList);
         this.d = (TextView) this.f.findViewById(R.id.titleText);
         APListView aPListView = this.mMenuListView;
-        if (!TextUtils.isEmpty(this.b.title)) {
+        if (!StringUtils.isEmpty(this.b.title)) {
             this.d.setText(this.b.title);
         }
         this.e = new MenuListAdapter(this.c, this.b.menu);
@@ -168,7 +168,7 @@ public class MenuListView extends LinearLayout {
             } else {
                 MenuListView.this.writePwdBehavorLog("UC-MobileIC-20190606-7", "CLICK_ITEM", String.valueOf(i + 1));
                 MenuItem menuItem = MenuListView.access$200(MenuListView.this).menu.get((int) j);
-                if (menuItem == null || TextUtils.isEmpty(menuItem.token)) {
+                if (menuItem == null || StringUtils.isEmpty(menuItem.token)) {
                     VerifyLogCat.e(MenuListView.access$300(), "the chosen token is empty");
                 } else {
                     AsyncTaskExecutor.getInstance().execute(MenuListView.access$400(MenuListView.this).getMenuClickRpc(menuItem.token, menuItem.code), "MenuClick");

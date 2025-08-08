@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import java.net.URL;
 import java.util.ArrayList;
@@ -111,7 +111,7 @@ public final class bq {
             try {
                 try {
                     System.currentTimeMillis();
-                    if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
                         Context context = m.c;
                         try {
                             if (b == null) {
@@ -120,7 +120,7 @@ public final class bq {
                             if (context != null && !b.contains(str2)) {
                                 b.add(str2);
                                 String a2 = bd.a(context, "Yb3Blbl9odHRwX2NvbnRyb2w", str2);
-                                if (!TextUtils.isEmpty(a2)) {
+                                if (!StringUtils.isEmpty(a2)) {
                                     a(str2, new JSONObject(a2));
                                 }
                             }
@@ -174,7 +174,7 @@ public final class bq {
                 JSONObject optJSONObject = optJSONArray.optJSONObject(i);
                 if (optJSONObject != null) {
                     String optString = optJSONObject.optString("api");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         if (!optString.startsWith("/")) {
                             optString = "/".concat(String.valueOf(optString));
                         }
@@ -212,7 +212,7 @@ public final class bq {
             }
             try {
                 String a2 = wVar.a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 if (jSONObject == null) {
@@ -259,7 +259,7 @@ public final class bq {
     private static void a(String str, String str2, String str3) {
         try {
             Context context = m.c;
-            if (context != null && !TextUtils.isEmpty(str)) {
+            if (context != null && !StringUtils.isEmpty(str)) {
                 if (e == null) {
                     e = new ConcurrentHashMap<>(8);
                 }
@@ -275,7 +275,7 @@ public final class bq {
                     jSONObject.put("version", ag.a(str));
                     jSONObject.put("hostname", str2 + "#" + str3);
                     String jSONObject2 = jSONObject.toString();
-                    if (TextUtils.isEmpty(jSONObject2)) {
+                    if (StringUtils.isEmpty(jSONObject2)) {
                         return;
                     }
                     bz bzVar = new bz(context, "core", "2.0", "O005");
@@ -334,7 +334,7 @@ public final class bq {
     public static void a(boolean z, String str) {
         try {
             Context context = m.c;
-            if (context != null && !TextUtils.isEmpty(str)) {
+            if (context != null && !StringUtils.isEmpty(str)) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("timestamp", Long.valueOf(System.currentTimeMillis()));
                 jSONObject.put("type", z ? ag.g : ag.f);
@@ -354,7 +354,7 @@ public final class bq {
         Integer num;
         try {
             Context context = m.c;
-            if (context != null && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (context != null && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("timestamp", System.currentTimeMillis());
                 String a2 = ag.a(str);
@@ -371,7 +371,7 @@ public final class bq {
                 jSONObject.put("uri", Uri.parse(str2).getPath());
                 jSONObject.put("blockLevel", i);
                 String jSONObject2 = jSONObject.toString();
-                if (TextUtils.isEmpty(jSONObject2)) {
+                if (StringUtils.isEmpty(jSONObject2)) {
                     return;
                 }
                 bz bzVar = new bz(context, "core", "2.0", "O005");
@@ -395,7 +395,7 @@ public final class bq {
             return false;
         }
         long currentTimeMillis = System.currentTimeMillis();
-        if (!TextUtils.isEmpty(aVar.f7693a) && aVar.b > 0) {
+        if (!StringUtils.isEmpty(aVar.f7693a) && aVar.b > 0) {
             long timeInMillis = currentTimeMillis - x.a(aVar.f7693a, "HH:mm:ss").getTimeInMillis();
             if (timeInMillis > 0 && timeInMillis < aVar.b * 1000) {
                 if (aVar.c == mto.a.GEO_NOT_SUPPORT) {
@@ -458,7 +458,7 @@ public final class bq {
             return null;
         }
         if (!c.containsKey(str3)) {
-            if (!TextUtils.isEmpty(str) && (parse = Uri.parse(str)) != null) {
+            if (!StringUtils.isEmpty(str) && (parse = Uri.parse(str)) != null) {
                 str3 = parse.getPath();
                 if (c.containsKey(str3)) {
                     b bVar = c.get(str3);

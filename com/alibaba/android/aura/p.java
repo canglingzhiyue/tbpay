@@ -1,6 +1,6 @@
 package com.alibaba.android.aura;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.nodemodel.workflow.AURAExecuteNodeModel;
 import com.alibaba.android.aura.service.aspect.AURAAspectServiceInput;
 import com.alibaba.android.aura.u;
@@ -170,7 +170,7 @@ public class p implements IAURAFlowDispatcher {
         this.h = new HashMap();
         this.i = new HashMap();
         for (AURAExecuteNodeModel aURAExecuteNodeModel : a2) {
-            if (!TextUtils.isEmpty(aURAExecuteNodeModel.code)) {
+            if (!StringUtils.isEmpty(aURAExecuteNodeModel.code)) {
                 n nVar = null;
                 try {
                     nVar = this.m.a(aURAExecuteNodeModel, this.l.a(), new aqs() { // from class: com.alibaba.android.aura.p.1

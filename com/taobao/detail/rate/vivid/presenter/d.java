@@ -1,6 +1,6 @@
 package com.taobao.detail.rate.vivid.presenter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,7 +63,7 @@ public final class d {
         for (int i = 0; i < d; i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
             String headPicUrl = fxr.a("headPicUrl", jSONObject, "");
-            if (!TextUtils.isEmpty(headPicUrl)) {
+            if (!StringUtils.isEmpty(headPicUrl)) {
                 q.b(headPicUrl, "headPicUrl");
                 a(headPicUrl);
             }
@@ -77,7 +77,7 @@ public final class d {
                         throw new NullPointerException("null cannot be cast to non-null type com.alibaba.fastjson.JSONObject");
                     }
                     String thumbnail = fxr.a("thumbnail", (JSONObject) obj, "");
-                    if (!TextUtils.isEmpty(thumbnail)) {
+                    if (!StringUtils.isEmpty(thumbnail)) {
                         int a2 = a(i2, size);
                         q.b(thumbnail, "thumbnail");
                         a(thumbnail, a2, a2);

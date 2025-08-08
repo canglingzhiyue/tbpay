@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.event.EventCenter;
 import com.taobao.metrickit.event.d;
@@ -35,7 +35,7 @@ public class mmd implements d {
             Iterator<Map.Entry<String, mmc<?, ?>>> it = this.b.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry<String, mmc<?, ?>> next = it.next();
-                if (TextUtils.equals(String.valueOf(map.get(next.getKey())), "off")) {
+                if (StringUtils.equals(String.valueOf(map.get(next.getKey())), "off")) {
                     next.getValue().g();
                     it.remove();
                 }

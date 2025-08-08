@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import java.util.Locale;
 
@@ -38,8 +38,8 @@ public class GrsBaseInfo implements Cloneable {
 
     private StringBuffer getStringBuffer(StringBuffer stringBuffer, boolean z, Context context) {
         String androidVersion = getAndroidVersion();
-        if (!TextUtils.isEmpty(androidVersion)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(androidVersion)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("android_version");
@@ -47,8 +47,8 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(androidVersion);
         }
         String romVersion = getRomVersion();
-        if (!TextUtils.isEmpty(romVersion)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(romVersion)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("rom_version");
@@ -56,8 +56,8 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(romVersion);
         }
         String deviceModel = getDeviceModel();
-        if (!TextUtils.isEmpty(deviceModel)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(deviceModel)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("device_model");
@@ -65,15 +65,15 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(deviceModel);
         }
         String countrySource = getCountrySource();
-        if (!TextUtils.isEmpty(countrySource)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(countrySource)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("country_source");
             stringBuffer.append("=");
             stringBuffer.append(countrySource);
         }
-        if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(stringBuffer.toString())) {
             stringBuffer.append("&");
         }
         stringBuffer.append("package_name");
@@ -146,8 +146,8 @@ public class GrsBaseInfo implements Cloneable {
         com.huawei.hms.framework.network.grs.f.b a2 = com.huawei.hms.framework.network.grs.f.b.a(context.getPackageName(), this);
         com.huawei.hms.framework.network.grs.local.model.a a3 = a2 != null ? a2.a() : null;
         String grsReqParamJoint = getGrsReqParamJoint(z, z2, a3 != null ? a3.b() : "", context);
-        if (!TextUtils.isEmpty(grsReqParamJoint)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(grsReqParamJoint)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append(grsReqParamJoint);
@@ -161,10 +161,10 @@ public class GrsBaseInfo implements Cloneable {
         if ("1.0".equals(str)) {
             Logger.v(TAG, "1.0 interface has no query param appname");
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 stringBuffer.append("app_name");
                 stringBuffer.append("=");
-            } else if (!TextUtils.isEmpty(getAppName())) {
+            } else if (!StringUtils.isEmpty(getAppName())) {
                 stringBuffer.append("app_name");
                 stringBuffer.append("=");
                 str = getAppName();
@@ -172,8 +172,8 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(str);
         }
         String versionName = getVersionName();
-        if (!TextUtils.isEmpty(versionName)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(versionName)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("app_version");
@@ -181,8 +181,8 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(versionName);
         }
         String uid = getUid();
-        if (!TextUtils.isEmpty(uid)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(uid)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("uid");
@@ -197,8 +197,8 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(a2);
         }
         String regCountry = getRegCountry();
-        if (!TextUtils.isEmpty(regCountry) && !"UNKNOWN".equals(regCountry)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(regCountry) && !"UNKNOWN".equals(regCountry)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("reg_country");
@@ -206,8 +206,8 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(regCountry);
         }
         String serCountry = getSerCountry();
-        if (!TextUtils.isEmpty(serCountry) && !"UNKNOWN".equals(serCountry)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(serCountry) && !"UNKNOWN".equals(serCountry)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("ser_country");
@@ -215,8 +215,8 @@ public class GrsBaseInfo implements Cloneable {
             stringBuffer.append(serCountry);
         }
         String issueCountry = getIssueCountry();
-        if (!TextUtils.isEmpty(issueCountry) && !"UNKNOWN".equals(issueCountry)) {
-            if (!TextUtils.isEmpty(stringBuffer.toString())) {
+        if (!StringUtils.isEmpty(issueCountry) && !"UNKNOWN".equals(issueCountry)) {
+            if (!StringUtils.isEmpty(stringBuffer.toString())) {
                 stringBuffer.append("&");
             }
             stringBuffer.append("issue_country");

@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import com.alibaba.security.realidentity.a;
@@ -63,7 +63,7 @@ public abstract class BaseAlBioActivity extends Activity {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
                 return;
             }
-            if (intent == null || !TextUtils.equals(intent.getAction(), f2.l)) {
+            if (intent == null || !StringUtils.equals(intent.getAction(), f2.l)) {
                 z = false;
             }
             if (!z) {

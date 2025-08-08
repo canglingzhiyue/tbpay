@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAInputData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.a;
@@ -63,7 +63,7 @@ public final class dwu extends arn {
             return;
         }
         super.beforeServiceExecute(aURAInputData, aVar);
-        if (!TextUtils.equals(aVar.c(), e.CODE)) {
+        if (!StringUtils.equals(aVar.c(), e.CODE)) {
             arc.a().b("AliDetailMAGAEventRedirectExtension.beforeServiceExecute:not target service");
         } else if (!(aURAInputData.getData() instanceof AURAEventIO)) {
             arc.a().b("AliDetailMAGAEventRedirectExtension.beforeServiceExecute:inputData invalid");

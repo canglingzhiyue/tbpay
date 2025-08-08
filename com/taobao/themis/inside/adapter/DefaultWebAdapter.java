@@ -3,7 +3,7 @@ package com.taobao.themis.inside.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -164,7 +164,7 @@ public class DefaultWebAdapter implements IWebAdapter {
             q.d(context, "context");
             q.d(url, "url");
             TMSLogger.a("GlobalUrlInterceptor", "shouldOverrideUrlLoadingImpl " + url);
-            if (TextUtils.isEmpty(url)) {
+            if (StringUtils.isEmpty(url)) {
                 return false;
             }
             try {

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.encrypt;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorCode;
@@ -25,7 +25,7 @@ public class TriDesCBC {
             return (String) ipChange.ipc$dispatch("327cf920", new Object[]{str, str2});
         }
         LogUtil.record(4, "", "TriDesCBC::encrypt_String", "startPay");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             LogUtil.record(4, "", "TriDesCBC::encrypt_String", "content == null");
             return str2;
         }
@@ -42,7 +42,7 @@ public class TriDesCBC {
             return (String) ipChange.ipc$dispatch("24104ef8", new Object[]{str, str2});
         }
         LogUtil.record(4, "", "TriDesCBC::decrypt_String", "startPay");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             LogUtil.record(4, "", "TriDesCBC::decrypt_String", "content == null");
             return str2;
         }

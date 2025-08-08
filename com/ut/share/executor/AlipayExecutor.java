@@ -1,7 +1,7 @@
 package com.ut.share.executor;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
@@ -65,7 +65,7 @@ public class AlipayExecutor implements IShareExecutor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("532a854a", new Object[]{this, context, shareData, shareListener});
-        } else if (!TextUtils.isEmpty(APP_ID)) {
+        } else if (!StringUtils.isEmpty(APP_ID)) {
             this.alipay.share(context, APP_ID, shareData, shareListener);
         } else if (shareListener == null) {
         } else {

@@ -1,7 +1,7 @@
 package com.taobao.taobaoavsdk.cache.library;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -153,7 +153,7 @@ public class h extends o {
         }
         long currentTimeMillis = System.currentTimeMillis();
         String queryParameter = Uri.parse(fVar.f21319a).getQueryParameter(oyw.VIDEO_CACHE_ID);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             queryParameter = p.e(fVar.f21319a);
         }
         String str = queryParameter;
@@ -231,7 +231,7 @@ public class h extends o {
         }
         boolean z2 = com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", "disableHeadReq", "true")) && !z;
         String m = z2 ? this.f21320a.m() : this.f21320a.f();
-        boolean z3 = !TextUtils.isEmpty(m);
+        boolean z3 = !StringUtils.isEmpty(m);
         long b = z2 ? this.f21320a.b() : this.f21320a.a();
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "source.rawLength() :" + this.f21320a.b() + " + length :" + this.f21320a.a());
         if (b < 0 && z2) {

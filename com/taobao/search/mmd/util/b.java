@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,7 +54,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b51bd053", new Object[]{activity, new Integer(i), defaultShopCellBean, cVar});
-        } else if (defaultShopCellBean == null || TextUtils.isEmpty(defaultShopCellBean.getSellerId())) {
+        } else if (defaultShopCellBean == null || StringUtils.isEmpty(defaultShopCellBean.getSellerId())) {
         } else {
             String format = String.format(NavUrls.nav_urls_shop[0], defaultShopCellBean.getSellerId());
             HashMap hashMap = new HashMap();
@@ -77,7 +77,7 @@ public class b {
             CommonSearchResult commonSearchResult = (CommonSearchResult) cVar.getTotalSearchResult();
             boolean z = commonSearchResult != null && commonSearchResult.isUpdateUtparam;
             String optString = jSONObject.optString("nid");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 return;
             }
             String format = String.format(NavUrls.nav_urls_detail[1], optString);
@@ -88,9 +88,9 @@ public class b {
                 Iterator<String> keys = optJSONObject.keys();
                 while (keys.hasNext()) {
                     String next = keys.next();
-                    if (!TextUtils.isEmpty(next)) {
+                    if (!StringUtils.isEmpty(next)) {
                         String optString2 = optJSONObject.optString(next);
-                        if (!TextUtils.isEmpty(optString2)) {
+                        if (!StringUtils.isEmpty(optString2)) {
                             hashMap.put(next, optString2);
                         }
                     }
@@ -145,7 +145,7 @@ public class b {
         }
         Bundle bundle = new Bundle();
         String string = jSONObject.getString("item_id");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = jSONObject.getString("nid");
         }
         bundle.putString("item_id", string);
@@ -153,7 +153,7 @@ public class b {
         boolean z2 = commonSearchResult != null && commonSearchResult.isUpdateUtparam;
         String format = String.format(NavUrls.nav_urls_detail[1], string);
         String string2 = jSONObject.getString("h5Url");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             format = string2;
         }
         if (format == null || format.length() == 0) {
@@ -171,7 +171,7 @@ public class b {
         hashMap.put("from", "shopsearch");
         String str5 = format + "&from=shopsearch";
         String keyword = cVar.getKeyword();
-        if (!TextUtils.isEmpty(keyword)) {
+        if (!StringUtils.isEmpty(keyword)) {
             try {
                 str5 = str5 + "&shopsearchq=" + URLEncoder.encode(keyword, "UTF-8");
                 hashMap.put("shopsearchq", keyword);
@@ -180,11 +180,11 @@ public class b {
         }
         if (map != null) {
             String str6 = map.get(aw.PARAM_SEARCH_KEYWORD_RN);
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 hashMap.put(aw.PARAM_SEARCH_KEYWORD_RN, str6);
             }
             str2 = map.get(TBSearchChiTuJSBridge.ABTEST);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put(djy.SERIALIZE_EXP_BUCKET_ID, str2);
             }
         } else {
@@ -204,7 +204,7 @@ public class b {
             str4 = str8;
         }
         hashMap.put("inshops", str8);
-        if (!TextUtils.isEmpty(SearchContext.compassTitleForUT)) {
+        if (!StringUtils.isEmpty(SearchContext.compassTitleForUT)) {
             obj = "inshops";
             hashMap.put("reckey", SearchContext.compassTitleForUT);
         } else {
@@ -212,14 +212,14 @@ public class b {
         }
         com.alibaba.fastjson.JSONObject jSONObject2 = new com.alibaba.fastjson.JSONObject(hashMap);
         String str9 = str5 + "&track_params=" + jSONObject2.toString();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str9 = str9 + "&spm=" + str;
         }
         ArrayMap arrayMap = new ArrayMap();
         ArrayMap arrayMap2 = new ArrayMap();
         if (listStyle != null) {
             String string3 = jSONObject.getString(nog.PRD_PICURL);
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 str7 = com.taobao.search.common.uikit.a.a(android.taobao.util.j.a(string3));
             }
             z = z3;
@@ -227,7 +227,7 @@ public class b {
             if (listStyle == ListStyle.WATERFALL) {
                 String string4 = jSONObject.getString(nog.PRD_WF_PICURL);
                 String string5 = jSONObject.getString("videoUrl");
-                if (!TextUtils.isEmpty(string4) && TextUtils.isEmpty(string5)) {
+                if (!StringUtils.isEmpty(string4) && StringUtils.isEmpty(string5)) {
                     str7 = android.taobao.util.j.a(string4);
                 }
             } else {
@@ -284,16 +284,16 @@ public class b {
         }
         HashMap hashMap2 = new HashMap();
         String string7 = jSONObject.getString("prefetchImgRatio");
-        if (!TextUtils.isEmpty(string7)) {
+        if (!StringUtils.isEmpty(string7)) {
             hashMap2.put("prefetchImgRatio", string7);
-            if (TextUtils.equals(emh.sDefaultDimension, string7)) {
+            if (StringUtils.equals(emh.sDefaultDimension, string7)) {
                 String string8 = jSONObject.getString(nog.PRD_PICURL);
-                if (!TextUtils.isEmpty(string8)) {
+                if (!StringUtils.isEmpty(string8)) {
                     hashMap2.put("prefetchImg", com.taobao.search.common.uikit.a.a(android.taobao.util.j.a(string8)));
                 }
             } else {
                 String string9 = jSONObject.getString(nog.PRD_WF_PICURL);
-                if (!TextUtils.isEmpty(string9)) {
+                if (!StringUtils.isEmpty(string9)) {
                     hashMap2.put("prefetchImg", android.taobao.util.j.a(string9));
                 }
             }
@@ -306,7 +306,7 @@ public class b {
         }
         String a3 = y.a(str9, hashMap2);
         String paramValue = cVar.getParamValue(noa.KEY_MINI_APP_DETAIL_URL);
-        boolean z4 = "true".equals(cVar.getParamValue(noa.KEY_MINI_APP)) && !TextUtils.isEmpty(paramValue);
+        boolean z4 = "true".equals(cVar.getParamValue(noa.KEY_MINI_APP)) && !StringUtils.isEmpty(paramValue);
         q.a("searchminiapp", "url: " + paramValue + " isMiniApp:" + z4);
         arrayMap2.put("item_id", string);
         String paramValue2 = cVar.getParamValue("sellerId");
@@ -341,13 +341,13 @@ public class b {
             return (String) ipChange.ipc$dispatch("b0b2c183", new Object[]{activity, cVar, new Integer(i)});
         }
         if (!(activity instanceof InshopResultActivity)) {
-            if (TextUtils.equals(OrangeConfig.getInstance().getConfig(r.SEARCH_BIZ_NAME, "enableNewAllItemSpm", "true"), "true")) {
+            if (StringUtils.equals(OrangeConfig.getInstance().getConfig(r.SEARCH_BIZ_NAME, "enableNewAllItemSpm", "true"), "true")) {
                 str = cVar.getParamValue("shopAuctionSpmCnt");
                 String str2 = "Trigger Spm: " + str;
             } else {
                 str = "";
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "a2141.7631671";
             }
             return str + ".itemlist." + i;
@@ -375,7 +375,7 @@ public class b {
             return;
         }
         String paramValue = cVar.getParamValue(noa.KEY_MINI_APP_DETAIL_URL);
-        if (!"true".equals(cVar.getParamValue(noa.KEY_MINI_APP)) || TextUtils.isEmpty(paramValue)) {
+        if (!"true".equals(cVar.getParamValue(noa.KEY_MINI_APP)) || StringUtils.isEmpty(paramValue)) {
             z = false;
         }
         q.a("searchminiapp", "url: " + paramValue + " isMiniApp:" + z);
@@ -402,7 +402,7 @@ public class b {
             return "";
         }
         String str = auctionBaseBean.h5Url;
-        return TextUtils.isEmpty(str) ? String.format(NavUrls.nav_urls_detail[1], auctionBaseBean.itemId) : str;
+        return StringUtils.isEmpty(str) ? String.format(NavUrls.nav_urls_detail[1], auctionBaseBean.itemId) : str;
     }
 
     public static String a(String str, AuctionBaseBean auctionBaseBean, Activity activity, com.taobao.search.sf.datasource.c cVar, String str2) {
@@ -415,7 +415,7 @@ public class b {
         a2.put("sid", Login.getSid());
         a2.put("from", "shopsearch");
         String keyword = cVar.getKeyword();
-        if (!TextUtils.isEmpty(keyword)) {
+        if (!StringUtils.isEmpty(keyword)) {
             try {
                 a2.put("shopsearchq", URLEncoder.encode(keyword, "UTF-8"));
             } catch (UnsupportedEncodingException e) {
@@ -425,16 +425,16 @@ public class b {
         a2.put("spm", str2);
         com.alibaba.fastjson.JSONObject jSONObject = new com.alibaba.fastjson.JSONObject();
         jSONObject.put("from", (Object) "shopsearch");
-        if (!TextUtils.isEmpty(keyword)) {
+        if (!StringUtils.isEmpty(keyword)) {
             jSONObject.put("shopsearchq", (Object) keyword);
         }
-        if (!TextUtils.isEmpty(auctionBaseBean.rn)) {
+        if (!StringUtils.isEmpty(auctionBaseBean.rn)) {
             jSONObject.put(aw.PARAM_SEARCH_KEYWORD_RN, (Object) auctionBaseBean.rn);
         }
         jSONObject.put(djy.SERIALIZE_EXP_BUCKET_ID, (Object) auctionBaseBean.abtest);
         jSONObject.put("sort_tag", (Object) cVar.getParamValue("sort"));
         jSONObject.put("inshops", (Object) (activity instanceof InshopResultActivity ? "search" : "allauc"));
-        if (!TextUtils.isEmpty(SearchContext.compassTitleForUT)) {
+        if (!StringUtils.isEmpty(SearchContext.compassTitleForUT)) {
             jSONObject.put("reckey", (Object) SearchContext.compassTitleForUT);
         }
         a2.put("track_params", jSONObject.toString());
@@ -446,9 +446,9 @@ public class b {
                 }
             }
         }
-        if (!TextUtils.isEmpty(auctionBaseBean.prefetchImgRatio)) {
+        if (!StringUtils.isEmpty(auctionBaseBean.prefetchImgRatio)) {
             a2.put("prefetchImgRatio", auctionBaseBean.prefetchImgRatio);
-            if (TextUtils.equals(emh.sDefaultDimension, auctionBaseBean.prefetchImgRatio)) {
+            if (StringUtils.equals(emh.sDefaultDimension, auctionBaseBean.prefetchImgRatio)) {
                 a2.put("prefetchImg", auctionBaseBean.picUrl);
             } else {
                 a2.put("prefetchImg", auctionBaseBean.wfPicUrl);
@@ -468,7 +468,7 @@ public class b {
         for (Map.Entry<String, String> entry2 : a2.entrySet()) {
             String key2 = entry2.getKey();
             String value = entry2.getValue();
-            if (!TextUtils.isEmpty(key2) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key2) && !StringUtils.isEmpty(value)) {
                 buildUpon.appendQueryParameter(key2, value);
             }
         }
@@ -488,17 +488,17 @@ public class b {
             str2 = auctionBaseBean.picUrl;
             if (listStyle != ListStyle.WATERFALL) {
                 str3 = "list";
-            } else if (!TextUtils.isEmpty(auctionBaseBean.wfPicUrl) && TextUtils.isEmpty(auctionBaseBean.videoUrl)) {
+            } else if (!StringUtils.isEmpty(auctionBaseBean.wfPicUrl) && StringUtils.isEmpty(auctionBaseBean.videoUrl)) {
                 str2 = auctionBaseBean.wfPicUrl;
             }
         } else {
             str3 = str2;
         }
         ArrayMap arrayMap = new ArrayMap();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             arrayMap.put("style", str3);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayMap.put(nog.PRD_PICURL, str2);
         }
         arrayMap.put("itemId", auctionBaseBean.itemId);
@@ -507,14 +507,14 @@ public class b {
         }
         a(cVar, auctionBaseBean, arrayMap, activity);
         ArrayMap arrayMap2 = new ArrayMap();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             arrayMap2.put("style", str3);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayMap2.put(nog.PRD_PICURL, str2);
         }
         String paramValue = cVar.getParamValue(noa.KEY_MINI_APP_DETAIL_URL);
-        if (!"true".equals(cVar.getParamValue(noa.KEY_MINI_APP)) || TextUtils.isEmpty(paramValue)) {
+        if (!"true".equals(cVar.getParamValue(noa.KEY_MINI_APP)) || StringUtils.isEmpty(paramValue)) {
             z = false;
         }
         arrayMap2.put("item_id", auctionBaseBean.itemId);

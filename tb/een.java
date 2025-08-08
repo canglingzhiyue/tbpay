@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -50,7 +50,7 @@ public class een implements e.c, j<i> {
             return (com.taobao.android.trade.event.i) ipChange.ipc$dispatch("7ea6cd26", new Object[]{this, iVar});
         }
         this.b = this.f27238a.y();
-        if (TextUtils.isEmpty(iVar.b) && !TextUtils.isEmpty(iVar.f9704a)) {
+        if (StringUtils.isEmpty(iVar.b) && !StringUtils.isEmpty(iVar.f9704a)) {
             this.c = iVar.f9704a;
             a(this.b, iVar.f9704a);
         }

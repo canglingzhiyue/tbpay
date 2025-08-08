@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.aura.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
@@ -89,7 +89,7 @@ public final class f extends arv {
             return;
         }
         String string = jSONObject.getString("quantity");
-        if (TextUtils.isEmpty(string) || !(b().e() instanceof DetailActivity) || (aVar = ((DetailActivity) b().e()).v) == null) {
+        if (StringUtils.isEmpty(string) || !(b().e() instanceof DetailActivity) || (aVar = ((DetailActivity) b().e()).v) == null) {
             return;
         }
         aVar.e(string);

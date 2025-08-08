@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alipay.android.app.pay.AuthTask;
@@ -168,13 +168,13 @@ public class MiniLaucherActivity extends Activity {
             GlobalHelper.getInstance().init(getApplicationContext());
             String stringExtra = intent.getStringExtra(CashdeskConstants.ALIPAY_SIGN_STR);
             String stringExtra2 = intent.getStringExtra("extend_params");
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 this.f = false;
                 a(stringExtra, stringExtra2);
                 return;
             }
             String stringExtra3 = intent.getStringExtra("auth_info");
-            if (!TextUtils.isEmpty(stringExtra3)) {
+            if (!StringUtils.isEmpty(stringExtra3)) {
                 this.f = false;
                 a(stringExtra3);
                 return;
@@ -182,7 +182,7 @@ public class MiniLaucherActivity extends Activity {
             String stringExtra4 = intent.getStringExtra("bizType");
             String stringExtra5 = intent.getStringExtra("data");
             int intExtra = intent.getIntExtra("sourceId", -1);
-            if (TextUtils.isEmpty(stringExtra4)) {
+            if (StringUtils.isEmpty(stringExtra4)) {
                 return;
             }
             this.f = true;
@@ -326,11 +326,11 @@ public class MiniLaucherActivity extends Activity {
                                     str4 = null;
                                     str5 = null;
                                     for (String str7 : payV2.keySet()) {
-                                        if (TextUtils.equals(str7, "resultStatus")) {
+                                        if (StringUtils.equals(str7, "resultStatus")) {
                                             str6 = payV2.get(str7);
-                                        } else if (TextUtils.equals(str7, "result")) {
+                                        } else if (StringUtils.equals(str7, "result")) {
                                             str5 = payV2.get(str7);
-                                        } else if (TextUtils.equals(str7, "memo")) {
+                                        } else if (StringUtils.equals(str7, "memo")) {
                                             str4 = payV2.get(str7);
                                         }
                                     }
@@ -338,7 +338,7 @@ public class MiniLaucherActivity extends Activity {
                                     str4 = null;
                                     str5 = null;
                                 }
-                                if (!TextUtils.equals(str6, "9000") && !TextUtils.equals(str6, "10000")) {
+                                if (!StringUtils.equals(str6, "9000") && !StringUtils.equals(str6, "10000")) {
                                     Intent intent = new Intent("com.alipay.android.app.pay.ACTION_PAY_FAILED");
                                     intent.putExtra("resultStatus", str6);
                                     intent.putExtra("memo", str4);
@@ -399,10 +399,10 @@ public class MiniLaucherActivity extends Activity {
                     intent.putExtra("memo", str5);
                     intent.putExtra("result", str6);
                     intent.putExtra(MspGlobalDefine.EXTENDINFO, str9);
-                    if (!TextUtils.isEmpty(str7)) {
+                    if (!StringUtils.isEmpty(str7)) {
                         intent.putExtra(MspGlobalDefine.OPEN_TIME, str7);
                     }
-                    if (!TextUtils.isEmpty(str8)) {
+                    if (!StringUtils.isEmpty(str8)) {
                         intent.putExtra("netError", str8);
                     }
                     MiniLaucherActivity.this.setResult(-1, intent);
@@ -423,10 +423,10 @@ public class MiniLaucherActivity extends Activity {
                     intent.putExtra("memo", str5);
                     intent.putExtra("result", str6);
                     intent.putExtra(MspGlobalDefine.EXTENDINFO, str9);
-                    if (!TextUtils.isEmpty(str7)) {
+                    if (!StringUtils.isEmpty(str7)) {
                         intent.putExtra(MspGlobalDefine.OPEN_TIME, str7);
                     }
-                    if (!TextUtils.isEmpty(str8)) {
+                    if (!StringUtils.isEmpty(str8)) {
                         intent.putExtra("netError", str8);
                     }
                     MiniLaucherActivity.this.setResult(0, intent);

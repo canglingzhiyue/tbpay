@@ -6,7 +6,7 @@ import android.taobao.windvane.extra.uc.WVPrefetchTrigger;
 import android.taobao.windvane.thread.WVThreadPool;
 import android.taobao.windvane.util.a;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -47,9 +47,9 @@ public class PrefetchInitTask {
                     try {
                         String str2 = str;
                         Thread.currentThread().setPriority(10);
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             String queryParameter = Uri.parse(str).getQueryParameter(RVStartParams.KEY_URL_SHORT);
-                            if (!TextUtils.isEmpty(queryParameter) && Uri.parse(queryParameter).isHierarchical()) {
+                            if (!StringUtils.isEmpty(queryParameter) && Uri.parse(queryParameter).isHierarchical()) {
                                 str2 = queryParameter;
                             }
                         }

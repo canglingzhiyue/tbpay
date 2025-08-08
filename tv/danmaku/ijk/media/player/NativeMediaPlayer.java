@@ -3,7 +3,7 @@ package tv.danmaku.ijk.media.player;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import anet.channel.util.HttpConstant;
@@ -326,7 +326,7 @@ public class NativeMediaPlayer extends MonitorMediaPlayer implements MediaPlayer
     public void setDataSource(String str) throws IOException, IllegalArgumentException, SecurityException, IllegalStateException {
         Context context = this.mContextRef == null ? null : this.mContextRef.get();
         String monitorDataSource = monitorDataSource(str);
-        if (this.mMediaPlayer == null || TextUtils.isEmpty(monitorDataSource)) {
+        if (this.mMediaPlayer == null || StringUtils.isEmpty(monitorDataSource)) {
             return;
         }
         if (!monitorDataSource.startsWith("http")) {
@@ -341,11 +341,11 @@ public class NativeMediaPlayer extends MonitorMediaPlayer implements MediaPlayer
         Uri parse = Uri.parse(monitorDataSource);
         HashMap hashMap = new HashMap();
         String b = b.b(context);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             hashMap.put(HttpConstant.USER_AGENT, b);
         }
         try {
-            if (!TextUtils.isEmpty(this.mCdnIp) && !isUseVideoCache()) {
+            if (!StringUtils.isEmpty(this.mCdnIp) && !isUseVideoCache()) {
                 String host = parse.getHost();
                 parse = Uri.parse(monitorDataSource.replaceFirst(host, this.mCdnIp));
                 hashMap.put(HttpConstant.HOST, host);

@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.net;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.uikit.extend.component.error.Error;
 import java.io.Serializable;
@@ -144,7 +144,7 @@ public class ResultError implements Serializable {
             return netError.toString();
         }
         String str = this.mErrorMsg;
-        if (TextUtils.isEmpty(str) && getException() != null) {
+        if (StringUtils.isEmpty(str) && getException() != null) {
             str = getException().getMessage();
         }
         return "ResultError(" + this.mErrorCode + "): " + str;

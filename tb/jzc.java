@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -189,7 +189,7 @@ public class jzc<MODEL extends iru<? extends a<? extends BaseSearchResult, ?>>> 
         if (weexCellBean.extraStatus != null && weexCellBean.extraStatus.containsKey("layoutStyle")) {
             try {
                 String valueOf = String.valueOf(weexCellBean.extraStatus.get("layoutStyle"));
-                if (!TextUtils.equals(valueOf, this.m)) {
+                if (!StringUtils.equals(valueOf, this.m)) {
                     this.l = 0;
                     a(this.itemView, ListStyle.fromNumString(valueOf));
                 }

@@ -2,7 +2,7 @@ package com.taobao.android.home.component.constructor;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -57,7 +57,7 @@ public class HGifViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fefaec1d", new Object[]{this, hGifView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             hGifView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         } else {
             int intValue = Integer.valueOf(str).intValue();

@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -162,7 +162,7 @@ public class Kb {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(f3254a, d, this.y != null ? (String) this.y.a(d, "") : null);
-            if (!TextUtils.isEmpty(config) && (parseArray = JSON.parseArray(config, Float.class)) != null) {
+            if (!StringUtils.isEmpty(config) && (parseArray = JSON.parseArray(config, Float.class)) != null) {
                 if (parseArray.size() == 4) {
                     return parseArray;
                 }

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.monitor.Monitor;
 import anetwork.channel.monitor.speed.NetworkSpeed;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -436,7 +436,7 @@ public class PhenixInitializer implements Serializable {
                 if (mABValid) {
                     String uTABTestValue = ABTestCenter.getUTABTestValue("PHENIX", "DISK");
                     String uTABTestValue2 = ABTestCenter.getUTABTestValue("PHENIX", "OSVER");
-                    if (Build.VERSION.SDK_INT >= (!TextUtils.isEmpty(uTABTestValue2) ? Integer.valueOf(uTABTestValue2).intValue() : 23) && !TextUtils.isEmpty(uTABTestValue)) {
+                    if (Build.VERSION.SDK_INT >= (!StringUtils.isEmpty(uTABTestValue2) ? Integer.valueOf(uTABTestValue2).intValue() : 23) && !StringUtils.isEmpty(uTABTestValue)) {
                         b.h().b().a(17, Integer.valueOf(uTABTestValue).intValue() * 1048576);
                     }
                     niw.d("TBCompat4Phenix", "DiskCache=%s", uTABTestValue);
@@ -562,7 +562,7 @@ public class PhenixInitializer implements Serializable {
             @Override // tb.nja
             public boolean a(String str) {
                 IpChange ipChange2 = $ipChange;
-                return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : PhenixInitializer.access$300() && !TextUtils.isEmpty(str) && str.contains(e.f18893a);
+                return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : PhenixInitializer.access$300() && !StringUtils.isEmpty(str) && str.contains(e.f18893a);
             }
 
             @Override // tb.nja
@@ -587,10 +587,10 @@ public class PhenixInitializer implements Serializable {
                     ipChange2.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                     return;
                 }
-                if (!TextUtils.isEmpty(str) && !str.equals(e.f18893a)) {
+                if (!StringUtils.isEmpty(str) && !str.equals(e.f18893a)) {
                     e.f18893a = str;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 e.b = Long.valueOf(str2).longValue();
@@ -777,7 +777,7 @@ public class PhenixInitializer implements Serializable {
             }
             String a2 = eVar.a(50, e.CLOUD_KEY_LIMIT_RECURSIVE_DEPTH_WHITELIST);
             niw.d("TBCompat4Phenix", "bizCodeList " + a2, new Object[0]);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 nmr.a(new ArrayList(Arrays.asList(a2.contains(",") ? a2.split(",") : new String[]{a2})));
             }
             checkHeifAlpha(eVar);
@@ -907,6 +907,6 @@ public class PhenixInitializer implements Serializable {
         if (Build.VERSION.SDK_INT >= 23 && !Process.is64Bit()) {
             return true;
         }
-        return (TextUtils.equals(Build.BRAND, "HUAWEI") || TextUtils.equals(Build.BRAND, "HONOR")) && Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 28;
+        return (StringUtils.equals(Build.BRAND, "HUAWEI") || StringUtils.equals(Build.BRAND, "HONOR")) && Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 28;
     }
 }

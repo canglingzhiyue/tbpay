@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -34,7 +34,7 @@ public class fsi extends fuf {
         for (int i = 0; i < objArr.length; i += 2) {
             if (objArr[i] != null) {
                 String obj = objArr[i].toString();
-                if (!TextUtils.isEmpty(obj)) {
+                if (!StringUtils.isEmpty(obj)) {
                     jSONObject.put(obj, objArr[i + 1]);
                 }
             }

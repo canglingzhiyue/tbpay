@@ -1,0 +1,478 @@
+{
+  "protocol": {
+    "api": "mtop.detail.mainpic",
+    "data": {
+      "data": {
+        "mainpicRoot_1": {
+          "tag": "mainpicRoot",
+          "type": "mainpicRoot",
+          "fields": {
+            "aspectRatio": "%s"
+          }
+        }
+      },
+      "endpoint": {
+        "protocolVersion": "3.0",
+        "ultronage": "true",
+        "mode": "wireless_default"
+      },
+      "hierarchy": {
+        "root": "mainpicRoot_1",
+        "structure": {
+          "mainpicRoot_1": [
+          ],
+          "lightoffRoot_1": [
+          ],
+          "mainpicBottomBar": [
+          ]
+        }
+      },
+      "container": {
+        "data": []
+      },
+      "reload": "true"
+    },
+    "v": "1.0",
+    "ret": [
+      "SUCCESS::调用成功"
+    ]
+  },
+  "mainpicMirrorImg_shell": {
+    "mainpicMirrorImg": {
+      "tag": "mainpicMirrorImg",
+      "type": "mainpicMirrorImg",
+      "fields": {
+        "height": "${height}",
+        "imgUrl": "{imgUrl}"
+      }
+    }
+  },
+  "mainpicBottomBar_shell": {
+    "mainpicBottomBar": {
+      "tag": "mainpicBottomBar",
+      "type": "mainpicBottomBar",
+      "fields": {
+
+      },
+      "position": "bottom"
+    }
+  },
+  "mainpicLocators_shell": {
+    "mainpicLocators": {
+      "tag": "mainpicLocators",
+      "type": "mainpicLocators",
+      "fields": {
+      },
+      "events": {
+      }
+    }
+  },
+  "frame_shell": {
+    "mainpicFrame_%s": {
+      "tag": "mainpicFrame",
+      "type": "mainpicFrame",
+      "fields": {
+        "alias": "frame_%s",
+        "locator": "${locator}"
+      }
+    }
+  },
+  "mainpicDinamicX_shell": {
+    "mainpicDinamicX_${id}": {
+      "tag": "dinamicx",
+      "type": "${type}",
+      "fields": {
+      },
+      "events": {}
+    }
+  },
+  "mainpicImg_shell": {
+    "mainpicImg_${id}": {
+      "tag": "mainpicImg",
+      "type": "mainpicImg",
+      "fields": {
+        "url": "${url}",
+        "imageType": "${imageType}",
+        "contentMode": "${contentMode}"
+      },
+      "events": {
+        "exposureFrameItem": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2201",
+              "arg1": "Page_Detail_${exposureArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "image_id": "${url}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          }
+        ],
+        "itemClick": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2101",
+              "arg1": "Page_Detail_${clickArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "image_id": "${url}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          },
+          {
+            "type": "openLightOff",
+            "fields": {
+
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mainpicVideo_shell": {
+    "mainpicVideo_${id}": {
+      "tag": "mainpicVideo",
+      "type": "mainpicVideo",
+      "fields": {
+        "url": "${url}",
+        "videoThumbnailURL": "${videoThumbnailURL}",
+        "spatialVideoDimension": "${spatialVideoDimension}",
+        "videoModel": "${videoModel}",
+        "videoId": "${videoId}",
+        "sellerId": "${sellerId}",
+        "itemId": "${itemId}",
+        "userId": "${userId}"
+      },
+      "events": {
+        "exposureFrameItem": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2201",
+              "arg1": "Page_Detail_${exposureArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "video_id": "${videoId}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          }
+        ],
+        "itemClick": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2101",
+              "arg1": "Page_Detail_${clickArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "video_id": "${videoId}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          },
+          {
+            "type": "openLightOff",
+            "fields": {
+
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mainpicVideoNoLightoff_shell": {
+    "mainpicVideo_${id}": {
+      "tag": "mainpicVideo",
+      "type": "mainpicVideo",
+      "fields": {
+        "url": "${url}",
+        "videoThumbnailURL": "${videoThumbnailURL}",
+        "spatialVideoDimension": "${spatialVideoDimension}",
+        "videoModel": "${videoModel}",
+        "videoId": "${videoId}",
+        "sellerId": "${sellerId}",
+        "noUseMinVideo": "true"
+      },
+      "events": {
+        "exposureFrameItem": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2201",
+              "arg1": "Page_Detail_${exposureArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "video_id": "${videoId}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          }
+        ],
+        "itemClick": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2101",
+              "arg1": "Page_Detail_${clickArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "video_id": "${videoId}",
+                "edition": "new",
+                "contentType": "${contentType}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "lightoff_root_shell": {
+    "lightoffRoot_1": {
+      "tag": "lightoffMainpicRoot",
+      "type": "lightoffMainpicRoot",
+      "fields": {
+      },
+      "position": "lightoff"
+    }
+  },
+  "lightoff_frame_shell": {
+    "lightoffMainpicFrame_%s": {
+      "tag": "lightoffMainpicFrame",
+      "type": "lightoffMainpicFrame",
+      "fields": {
+        "alias": "frame_%s"
+      }
+    }
+  },
+  "lightoff_mainpicImg_shell": {
+    "lightoffMainpicImg_${id}": {
+      "tag": "lightoffMainpicImg",
+      "type": "lightoffMainpicImg",
+      "fields": {
+        "url": "${url}",
+        "imageType": "${imageType}"
+      },
+      "events": {
+        "exposureFrameItem": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2201",
+              "arg1": "Page_Detail_${exposureArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "image_id": "${url}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          }
+        ],
+        "itemClick": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2101",
+              "arg1": "Page_Detail_${clickArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "image_id": "${url}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          },
+          {
+            "type": "closeLightOff",
+            "fields": {}
+          }
+        ],
+        "itemLongClick": [
+          {
+            "type": "openShareFloat",
+            "fields": {
+              "toolsFirst" : "true",
+              "businessId": "blacklight",
+              "title" : "${itemTitle}",
+              "text" : "${itemTitle}",
+              "image" : "${url}",
+              "url" : "${itemUrl}",
+              "itemId": "${itemId}",
+              "detailData" : {
+                "sellerId": "${sellerId}",
+                "category": "${category}",
+                "price" : "${price}",
+                "picurl" : "${url}",
+                "itemId": "${itemId}"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "lightoff_mainpicVideo_shell": {
+    "lightoffMainpicVideo_${id}": {
+      "tag": "lightoffMainpicVideo",
+      "type": "lightoffMainpicVideo",
+      "fields": {
+        "url": "${url}",
+        "videoThumbnailURL": "${videoThumbnailURL}",
+        "spatialVideoDimension": "${spatialVideoDimension}",
+        "videoModel": "${videoModel}",
+        "videoId": "${videoId}",
+        "sellerId": "${sellerId}",
+        "itemId": "${itemId}"
+      },
+      "events": {
+        "exposureFrameItem": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2201",
+              "arg1": "Page_Detail_${exposureArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "video_id": "${videoId}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          }
+        ],
+        "itemClick": [
+          {
+            "type": "userTrack",
+            "fields": {
+              "page": "Page_Detail",
+              "eventId": "2101",
+              "arg1": "Page_Detail_${clickArg1}",
+              "args":{
+                "spm":"${spm}",
+                "item_id": "${itemId}",
+                "seller_id": "${sellerId}",
+                "user_id": "${userId}",
+                "video_id": "${videoId}",
+                "edition": "new",
+                "index": "${index}",
+                "contentType": "${contentType}"
+              }
+            }
+          },
+          {
+            "type": "closeLightOff",
+            "fields": {}
+          }
+        ]
+      }
+    }
+  },
+  "frameFloatData_shell": {
+    "frameFloat_${id}": {
+      "tag": "frameFloat",
+      "type": "${frameFloatType}",
+      "fields": {
+      },
+      "events": {
+      },
+      "position": "float"
+    }
+  },
+  "weexContainer_data": {
+    "containerType": "${frameFloatContainerType}",
+    "type": [
+      "${frameFloatType}"
+    ],
+    "url": "${frameFloatWeexUrl}"
+  },
+  "dxContainer_data": {
+    "containerType": "dinamicx",
+    "type": [
+      "${frameFloatType}"
+    ],
+    "url": "${dxUrl}",
+    "name": "${dxName}",
+    "version": "${dxVersion}"
+  },
+  "openRateEvent": {
+    "rateItemClick" : [
+      {
+        "type" : "openRate",
+        "fields" : {
+          "feedId" : "${feedId}",
+          "skuVids": "${skuVids}",
+          "invokeSource": "3"
+        }
+      },
+      {
+        "type" : "userTrack",
+        "fields" : {
+          "arg1" : "Page_Detail_Button-Comments",
+          "args" : {
+            "spm" : "a2141.7631564.comments",
+            "feedId" : "${feedId}",
+            "edition": "new",
+            "contentType": "${contentType}"
+          },
+          "eventId" : "2101",
+          "page" : "Page_Detail"
+        }
+      }
+    ]
+  }
+}
+

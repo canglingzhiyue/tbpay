@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import java.text.SimpleDateFormat;
@@ -38,7 +38,7 @@ public final class b {
         if (l == null || l.longValue() <= 0) {
             return null;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "yyyy-MM-dd HH:mm";
         }
         return new SimpleDateFormat(str, Locale.getDefault()).format(new Date(l.longValue() * 1000));

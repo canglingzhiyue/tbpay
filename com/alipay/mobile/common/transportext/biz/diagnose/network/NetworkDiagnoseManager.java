@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.diagnose.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetNetworkDiagnoseListener;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transport.utils.NetworkAsyncTaskExecutor;
@@ -168,7 +168,7 @@ public class NetworkDiagnoseManager {
             }
             if (1 == NetworkDiagnoseManager.access$300(NetworkDiagnoseManager.this)) {
                 String str2 = (String) NetworkDiagnoseManager.access$400().get(String.valueOf(NetworkDiagnoseManager.access$300(NetworkDiagnoseManager.this)));
-                if (TextUtils.isEmpty(str2) || !str2.equals(String.valueOf(NetworkDiagnoseManager.access$500(NetworkDiagnoseManager.this)))) {
+                if (StringUtils.isEmpty(str2) || !str2.equals(String.valueOf(NetworkDiagnoseManager.access$500(NetworkDiagnoseManager.this)))) {
                     LogCatUtil.warn("DIAGNOSE-MANAGER", "not the same diagnose, ignose result.");
                     return;
                 }

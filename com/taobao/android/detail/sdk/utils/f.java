@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tlog.adapter.AdapterForTLog;
@@ -20,7 +20,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c430ebf9", new Object[]{str, str2, th});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             AdapterForTLog.loge("detail." + str, str2 + ":" + Log.getStackTraceString(th));
             i.a(str, str2, th);
@@ -31,7 +31,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             AdapterForTLog.loge("detail." + str, str2);
         }
@@ -41,7 +41,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             AdapterForTLog.logi("detail." + str, str2);
         }
@@ -51,7 +51,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             AdapterForTLog.logd("detail." + str, str2);
         }

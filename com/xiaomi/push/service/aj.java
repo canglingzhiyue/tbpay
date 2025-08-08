@@ -1,6 +1,6 @@
 package com.xiaomi.push.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ic;
 import com.xiaomi.push.im;
 import com.xiaomi.push.jb;
@@ -31,7 +31,7 @@ public class aj extends by.a {
         com.xiaomi.push.ax a2 = com.xiaomi.push.ax.a(this.f24636a);
         String a3 = byVar.a("MSAID", "msaid");
         String mo1730a = a2.mo1730a();
-        if (TextUtils.isEmpty(mo1730a) || TextUtils.equals(a3, mo1730a)) {
+        if (StringUtils.isEmpty(mo1730a) || StringUtils.equals(a3, mo1730a)) {
             return;
         }
         byVar.a("MSAID", "msaid", mo1730a);

@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.apr;
@@ -133,9 +133,9 @@ public class a {
             }
             if (telephonyManager.getSimState() == 5) {
                 String simOperator = telephonyManager.getSimOperator();
-                if (TextUtils.isEmpty(simOperator)) {
+                if (StringUtils.isEmpty(simOperator)) {
                     String simOperatorName = telephonyManager.getSimOperatorName();
-                    if (TextUtils.isEmpty(simOperatorName)) {
+                    if (StringUtils.isEmpty(simOperatorName)) {
                         f2092a = "Unknown";
                         return;
                     } else {
@@ -147,7 +147,7 @@ public class a {
                     if (!simOperator.equals("46001") && !simOperator.equals("46006") && !simOperator.equals("46009")) {
                         if (!simOperator.equals("46003") && !simOperator.equals("46005") && !simOperator.equals("46011")) {
                             String simOperatorName2 = telephonyManager.getSimOperatorName();
-                            if (TextUtils.isEmpty(simOperatorName2)) {
+                            if (StringUtils.isEmpty(simOperatorName2)) {
                                 f2092a = "Unknown";
                                 return;
                             } else {

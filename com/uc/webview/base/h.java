@@ -2,7 +2,7 @@ package com.uc.webview.base;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,7 +40,7 @@ public final class h {
 
             @Override // com.uc.webview.base.h.a
             public final a a(String str, long j) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.f23783a.put(str, Long.valueOf(j));
                 }
                 return this;
@@ -48,7 +48,7 @@ public final class h {
 
             @Override // com.uc.webview.base.h.a
             public final a a(String str, String str2) {
-                if (!TextUtils.isEmpty(str) && str2 != null) {
+                if (!StringUtils.isEmpty(str) && str2 != null) {
                     this.f23783a.put(str, str2);
                 }
                 return this;
@@ -56,7 +56,7 @@ public final class h {
 
             @Override // com.uc.webview.base.h.a
             public final a a(String str, boolean z) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.f23783a.put(str, Boolean.valueOf(z));
                 }
                 return this;

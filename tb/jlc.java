@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.e;
 import com.taobao.android.tschedule.parser.a;
@@ -42,7 +42,7 @@ public class jlc extends jku {
         if (ipChange instanceof IpChange) {
             return (jlc) ipChange.ipc$dispatch("e2617ea7", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@file.")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@file.")) {
             return null;
         }
         return new jlc(str);
@@ -55,7 +55,7 @@ public class jlc extends jku {
             return (String) ipChange.ipc$dispatch("72c78bb0", new Object[]{this, aVar});
         }
         try {
-            if (!TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(this.c) && (sharedPreferences = e.b().getSharedPreferences(this.b, 0)) != null) {
+            if (!StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(this.c) && (sharedPreferences = e.b().getSharedPreferences(this.b, 0)) != null) {
                 return sharedPreferences.getString(this.c, null);
             }
         } catch (Throwable th) {

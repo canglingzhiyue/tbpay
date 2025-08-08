@@ -1,6 +1,6 @@
 package com.taobao.weex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.adapter.IWXImgLoaderAdapter;
 import com.taobao.weex.bridge.ModuleFactory;
@@ -211,7 +211,7 @@ public class WXSDKEngine implements a<b>, Serializable {
             return false;
         }
         String str = (String) map.get("type");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return registerComponent(str, new SimpleComponentHolder(cls), map);
         }
         return false;

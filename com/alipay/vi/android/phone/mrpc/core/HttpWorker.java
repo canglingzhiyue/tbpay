@@ -1,7 +1,7 @@
 package com.alipay.vi.android.phone.mrpc.core;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import anet.channel.util.HttpConstant;
@@ -107,7 +107,7 @@ public class HttpWorker implements Callable<Response> {
         byte[] reqData = this.mRequest.getReqData();
         String tag = this.mRequest.getTag("gzip");
         if (reqData != null) {
-            if (TextUtils.equals(tag, "true")) {
+            if (StringUtils.equals(tag, "true")) {
                 this.f = AndroidHttpClient.getCompressedEntity(reqData, null);
             } else {
                 this.f = new ByteArrayEntity(reqData);
@@ -178,7 +178,7 @@ public class HttpWorker implements Callable<Response> {
                 sb.append(this.b.getURI().toString());
                 HttpParams params = this.mHttpManager.getHttpClient().getParams();
                 HttpHost proxy = NetworkUtils.getProxy(this.mContext);
-                if (proxy != null && TextUtils.equals(proxy.getHostName(), "127.0.0.1") && proxy.getPort() == 8087) {
+                if (proxy != null && StringUtils.equals(proxy.getHostName(), "127.0.0.1") && proxy.getPort() == 8087) {
                     proxy = null;
                 }
                 params.setParameter("http.route.default-proxy", proxy);
@@ -221,7 +221,7 @@ public class HttpWorker implements Callable<Response> {
                     }
                 }
                 String url = this.mRequest.getUrl();
-                if (url != null && !TextUtils.isEmpty(c())) {
+                if (url != null && !StringUtils.isEmpty(c())) {
                     StringBuilder sb3 = new StringBuilder();
                     sb3.append(url);
                     sb3.append("#");
@@ -343,7 +343,7 @@ public class HttpWorker implements Callable<Response> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.m)) {
+        if (!StringUtils.isEmpty(this.m)) {
             return this.m;
         }
         this.m = this.mRequest.getTag("operationType");

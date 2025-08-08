@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.alipay.mobile.common.logging.util.perf.Constants;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -28,12 +28,12 @@ public class hxf implements iac {
         }
         String currentPageName = l.getInstance().getCurrentPageName();
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = currentPageName;
         }
         hashMap.put(LogField.PAGE.toString(), str);
         hashMap.put(LogField.EVENTID.toString(), "2101");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (str2.startsWith(str)) {

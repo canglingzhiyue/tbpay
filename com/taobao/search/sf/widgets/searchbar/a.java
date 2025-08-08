@@ -3,7 +3,7 @@ package com.taobao.search.sf.widgets.searchbar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -166,7 +166,7 @@ public class a extends ius<Void, FrameLayout, iru<c>> implements View.OnClickLis
         } else {
             String str = "ssk";
             String paramValueIncludingGlobal = getModel().d().getParamValueIncludingGlobal("channelSrp");
-            if (!TextUtils.isEmpty(paramValueIncludingGlobal)) {
+            if (!StringUtils.isEmpty(paramValueIncludingGlobal)) {
                 str = str + "-" + paramValueIncludingGlobal;
             }
             Nav.from(getActivity()).toUri("http://h5.m.taobao.com/tusou/index.html?pssource=" + str);

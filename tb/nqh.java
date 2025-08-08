@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.i;
@@ -106,7 +106,7 @@ public class nqh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Coordinator.execute(new i() { // from class: tb.nqh.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -209,7 +209,7 @@ public class nqh {
         }
         try {
             String a2 = npt.a(f());
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return null;
             }
             return JSON.parseArray(a2, ActivateBean.class);
@@ -226,10 +226,10 @@ public class nqh {
         }
         String g = g();
         String str = CACHE_KEY;
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             str = str + "_" + this.e;
         }
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             return str;
         }
         return str + "_" + b.a(g);
@@ -250,7 +250,7 @@ public class nqh {
         int i = 1;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             ArrayList arrayList = new ArrayList();
             if (this.b == null) {
                 list = e();
@@ -291,7 +291,7 @@ public class nqh {
             this.b.remove(activateBean);
             h();
         }
-        if (!TextUtils.isEmpty(activateBean.keyword)) {
+        if (!StringUtils.isEmpty(activateBean.keyword)) {
             d(activateBean.keyword);
         }
         this.d.onHistoryDeleted(b());
@@ -324,7 +324,7 @@ public class nqh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             new npr.b().a(new npl(str)).a().a().a(new iud<nno>() { // from class: tb.nqh.6
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -346,14 +346,14 @@ public class nqh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.b != null) {
                 int size = this.b.size() - 1;
                 while (true) {
                     if (size < 0) {
                         break;
-                    } else if (TextUtils.equals(this.b.get(size).keyword, str)) {
+                    } else if (StringUtils.equals(this.b.get(size).keyword, str)) {
                         this.b.remove(size);
                         break;
                     } else {

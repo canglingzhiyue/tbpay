@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -149,7 +149,7 @@ public final class fn extends bp {
     }
 
     public final void e(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.q = str;
         } else {
             this.q = "";

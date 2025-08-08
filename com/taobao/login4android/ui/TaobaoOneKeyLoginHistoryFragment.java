@@ -1,7 +1,7 @@
 package com.taobao.login4android.ui;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -202,12 +202,12 @@ public class TaobaoOneKeyLoginHistoryFragment extends TaobaoOneKeyLoginFragment 
         this.oneKeyLoginPresenter = new OneKeyLoginPresenter(this, this.loginParam.m102clone());
         this.mMobileLoginPresenter = new UserMobileLoginPresenter(this, this.loginParam.m102clone());
         super.initViews(view);
-        if (this.mShowIdTextView != null && this.mUserLoginActivity.mHistoryAccount != null && !TextUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.mobile)) {
+        if (this.mShowIdTextView != null && this.mUserLoginActivity.mHistoryAccount != null && !StringUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.mobile)) {
             this.mShowIdTextView.setText(StringUtil.dataMasking(this.mUserLoginActivity.mHistoryAccount.mobile));
             this.historyHid = this.mUserLoginActivity.mHistoryAccount.userId;
         }
         this.mAvatarIV = (CircleImageView) view.findViewById(R.id.aliuser_login_avatar);
-        if (this.mUserLoginActivity.mHistoryAccount != null && !TextUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.headImg)) {
+        if (this.mUserLoginActivity.mHistoryAccount != null && !StringUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.headImg)) {
             updateAvatar(this.mUserLoginActivity.mHistoryAccount.headImg);
         }
         this.fingerLoginEnable = isFingerEnable(this.mUserLoginActivity.mHistoryAccount);
@@ -527,7 +527,7 @@ public class TaobaoOneKeyLoginHistoryFragment extends TaobaoOneKeyLoginFragment 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bade6443", new Object[]{this});
-        } else if (this.mUserLoginActivity.mHistoryAccount != null && !TextUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.mobile)) {
+        } else if (this.mUserLoginActivity.mHistoryAccount != null && !StringUtils.isEmpty(this.mUserLoginActivity.mHistoryAccount.mobile)) {
             onNeedVerifyMobile("", this.mUserLoginActivity.mHistoryAccount.mobile);
         } else {
             switchToSmsLogin(false);

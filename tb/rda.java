@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.ax;
@@ -30,7 +30,7 @@ public class rda {
         }
         String a2 = m.a(b, jSONObject, "redirect");
         String a3 = m.a("", jSONObject, "redirect_url");
-        if (!TextUtils.equals(f33083a, a2) || TextUtils.isEmpty(a3)) {
+        if (!StringUtils.equals(f33083a, a2) || StringUtils.isEmpty(a3)) {
             return;
         }
         JSONObject jSONObject2 = new JSONObject();

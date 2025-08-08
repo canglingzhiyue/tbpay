@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -490,19 +490,19 @@ public class pcx {
             this.q.put(aw.PARAM_PLAYER_TOKEN, this.d);
             this.q.put("viewMode", this.f);
             this.q.put("enableMultiBatchRender", String.valueOf(this.l));
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 this.q.put("urlPlayMode", this.e);
             }
-            if (!TextUtils.isEmpty(this.u)) {
+            if (!StringUtils.isEmpty(this.u)) {
                 this.q.put(aw.PARAM_PLAY_MODE, this.u);
             }
-            if (!TextUtils.isEmpty(this.m)) {
+            if (!StringUtils.isEmpty(this.m)) {
                 this.q.put("h5RenderVersion", this.m);
             }
-            if (!TextUtils.isEmpty(this.n)) {
+            if (!StringUtils.isEmpty(this.n)) {
                 this.q.put(sku.KEY_VIDEO_TYPE, this.n);
             }
-            if (!TextUtils.isEmpty(this.g)) {
+            if (!StringUtils.isEmpty(this.g)) {
                 this.q.put("videoFormat", this.g);
             }
             pmd.a().e().a("Page_TaobaoLiveWatch", "kLifeCycle", this.q);
@@ -525,19 +525,19 @@ public class pcx {
         this.q.put("firstFrameTime", String.valueOf(this.t));
         this.q.put("uiRenderFinish", String.valueOf(this.r));
         this.q.put("playerReceivePlayData", String.valueOf(this.k));
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             this.q.put("urlPlayMode", this.e);
         }
-        if (!TextUtils.isEmpty(this.u)) {
+        if (!StringUtils.isEmpty(this.u)) {
             this.q.put(aw.PARAM_PLAY_MODE, this.u);
         }
-        if (!TextUtils.isEmpty(this.m)) {
+        if (!StringUtils.isEmpty(this.m)) {
             this.q.put("h5RenderVersion", this.m);
         }
-        if (!TextUtils.isEmpty(this.n)) {
+        if (!StringUtils.isEmpty(this.n)) {
             this.q.put(sku.KEY_VIDEO_TYPE, this.n);
         }
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             this.q.put("videoFormat", this.g);
         }
         pmd.a().e().a("Page_TaobaoLiveWatch", "kLifeCycle", this.q);

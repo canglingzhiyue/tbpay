@@ -10,7 +10,7 @@ import android.os.Looper;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -113,7 +113,7 @@ public class TMGCashierActivity extends AppCompatActivity implements a {
         super.onCreate(bundle);
         Uri data = getIntent().getData();
         String queryParameter = data != null ? data.getQueryParameter("height") : "";
-        if (!TextUtils.isEmpty(queryParameter) && queryParameter.equals("0")) {
+        if (!StringUtils.isEmpty(queryParameter) && queryParameter.equals("0")) {
             setContentView(R.layout.tmg_cashier_activity_main_no_cornor);
         } else {
             setContentView(R.layout.tmg_cashier_activity_main);
@@ -178,7 +178,7 @@ public class TMGCashierActivity extends AppCompatActivity implements a {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 this.b = Integer.parseInt(queryParameter);
             } else {
                 this.b = 880;
@@ -235,7 +235,7 @@ public class TMGCashierActivity extends AppCompatActivity implements a {
                 } else {
                     bundleUrl = fragment2 instanceof TMGCashierWebView ? ((TMGCashierWebView) fragment2).getBundleUrl() : "";
                 }
-                if (!TextUtils.isEmpty(str) && !str.equalsIgnoreCase(bundleUrl)) {
+                if (!StringUtils.isEmpty(str) && !str.equalsIgnoreCase(bundleUrl)) {
                     TLog.logd("tmgcashier", "TMGCashierActivity", "当前URL和老的不一致，终止刷新！");
                     return;
                 } else if (!z) {

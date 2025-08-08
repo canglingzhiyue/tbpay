@@ -2,7 +2,7 @@ package com.taobao.android.purchase.aura;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.aura.datamodel.parse.AURAParseIO;
@@ -199,7 +199,7 @@ public class e {
                 return;
             }
             String stringExtra = b.getStringExtra("PRELOAD");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 arc.a().a("identifier is empty");
                 return;
             }
@@ -225,7 +225,7 @@ public class e {
                 return;
             }
             String stringExtra = b.getStringExtra("PRELOAD");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 arc.a().a("identifier is empty");
                 return;
             }
@@ -338,7 +338,7 @@ public class e {
         if (!"weex".equals(string)) {
             return null;
         }
-        return TextUtils.isEmpty(string2) ? LightBuyWeexPrefetch.a() : string2;
+        return StringUtils.isEmpty(string2) ? LightBuyWeexPrefetch.a() : string2;
     }
 
     public void a() {
@@ -420,7 +420,7 @@ public class e {
                     List<com.alibaba.android.aura.datamodel.parse.a> data = aURAParseIO.getData();
                     e.a(e.this, data.get(0).a());
                     String f = e.this.f();
-                    if (!TextUtils.isEmpty(f)) {
+                    if (!StringUtils.isEmpty(f)) {
                         gVar.a(f, data, null);
                     } else {
                         arc.a().b("lightBuyUrl is null");

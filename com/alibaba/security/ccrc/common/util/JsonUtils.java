@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.common.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -23,7 +23,7 @@ public class JsonUtils {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("7e42d1b8", new Object[]{str, cls});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -54,7 +54,7 @@ public class JsonUtils {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("5064a320", new Object[]{str, type});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return (T) JSON.parseObject(str, type, new Feature[0]);
         }
         return null;

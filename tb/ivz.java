@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -130,7 +130,7 @@ public final class ivz {
         String str = "current keySection = " + keySection;
         this.f29350a.put(keySection, stagBean);
         String str2 = keySection;
-        if (TextUtils.equals(str2, "endDataHandle")) {
+        if (StringUtils.equals(str2, "endDataHandle")) {
             JSONObject b = stagBean.b();
             if (b == null) {
                 return;
@@ -138,7 +138,7 @@ public final class ivz {
             a(b);
             d();
             a(b.getJSONArray("rateList"));
-        } else if (!TextUtils.equals(str2, "endImageLoaded")) {
+        } else if (!StringUtils.equals(str2, "endImageLoaded")) {
         } else {
             b(stagBean);
         }
@@ -281,7 +281,7 @@ public final class ivz {
             return;
         }
         long a2 = ivwVar2.a() - ivwVar.a();
-        if (TextUtils.equals(str, "firstFrame")) {
+        if (StringUtils.equals(str, "firstFrame")) {
             str2 = "first_frame_rate_list";
         } else {
             str2 = "process_rate_list_" + str;

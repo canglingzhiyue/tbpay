@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.model.card.SectionModel;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.model.response.AwesomeGetContainerData;
@@ -53,22 +53,22 @@ public class lwe {
             List<SectionModel> deltaData = awesomeGetContainerData.getDeltaData();
             List<SectionModel> deltaData2 = awesomeGetContainerData2.getDeltaData();
             ArrayList arrayList = new ArrayList();
-            if (TextUtils.equals(a2, "deltaRefresh")) {
+            if (StringUtils.equals(a2, "deltaRefresh")) {
                 arrayList.add("baseRefresh");
                 arrayList.add("pageExit");
                 arrayList.add("appExit");
                 arrayList.add("never");
-            } else if (TextUtils.equals(a2, "baseRefresh")) {
+            } else if (StringUtils.equals(a2, "baseRefresh")) {
                 arrayList.add("pageExit");
                 arrayList.add("appExit");
                 arrayList.add("never");
-            } else if (TextUtils.equals(a2, "pageExit")) {
+            } else if (StringUtils.equals(a2, "pageExit")) {
                 arrayList.add("appExit");
                 arrayList.add("never");
-            } else if (TextUtils.equals(a2, "appExit")) {
+            } else if (StringUtils.equals(a2, "appExit")) {
                 arrayList.add("never");
             } else {
-                TextUtils.equals(a2, "never");
+                StringUtils.equals(a2, "never");
             }
             ArrayList arrayList2 = new ArrayList();
             if (!arrayList.isEmpty() && deltaData != null) {
@@ -137,7 +137,7 @@ public class lwe {
         }
         AwesomeGetContainerInnerData m1103clone = awesomeGetContainerData.getDelta().m1103clone();
         for (SectionModel sectionModel : awesomeGetContainerData.getDeltaData()) {
-            if (!TextUtils.equals(sectionModel.getString("invalidType"), "never")) {
+            if (!StringUtils.equals(sectionModel.getString("invalidType"), "never")) {
                 m1103clone.getSections().remove(sectionModel);
             }
         }

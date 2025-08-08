@@ -2,7 +2,7 @@ package com.alibaba.ariver.resource.api.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class TemplateConfigModel implements Parcelable, Serializable {
 
     @JSONField(deserialize = false, serialize = false)
     public boolean isTemplateValid() {
-        return !TextUtils.isEmpty(this.templateId);
+        return !StringUtils.isEmpty(this.templateId);
     }
 
     protected TemplateConfigModel(Parcel parcel) {

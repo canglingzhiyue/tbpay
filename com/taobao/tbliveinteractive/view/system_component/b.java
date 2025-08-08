@@ -1,7 +1,7 @@
 package com.taobao.tbliveinteractive.view.system_component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.FrameLayout;
@@ -393,7 +393,7 @@ public class b implements d, ddv {
                 break;
         }
         if (c == 0 || c == 1) {
-            if (!(obj instanceof String) || !TextUtils.equals(this.l, (String) obj)) {
+            if (!(obj instanceof String) || !StringUtils.equals(this.l, (String) obj)) {
                 return;
             }
             a(true);
@@ -473,7 +473,7 @@ public class b implements d, ddv {
         }
         this.e = pqj.b(str);
         String string = this.e.getString("currentLevel");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.h.o().a(string);
         }
         JSONObject jSONObject2 = this.e.getJSONObject("intimacyCoin");

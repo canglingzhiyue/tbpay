@@ -1,7 +1,7 @@
 package com.taobao.update.dynamicfeature.processor;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.k;
 import com.alipay.android.msp.framework.statisticsv2.value.CountValue;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class d implements com.taobao.update.framework.b<com.taobao.update.dynami
                 return;
             }
             for (File file : listFiles) {
-                if (TextUtils.equals(str, file.getName())) {
+                if (StringUtils.equals(str, file.getName())) {
                     a(file);
                 }
             }

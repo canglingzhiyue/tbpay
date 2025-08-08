@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.taobao.TBActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -142,10 +142,10 @@ public class GloblaNavUIConfig {
         String str = "global";
         String a3 = a2.a(str, "tabbarImagesURL_home_second_selected");
         String a4 = a2.a(str, "tabbarImagesURL_community_selected");
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             a3 = "//gw.alicdn.com/mt/TB1WyjhPpXXXXb9XpXXXXXXXXXX-156-156.png";
         }
-        if (TextUtils.isEmpty(a4)) {
+        if (StringUtils.isEmpty(a4)) {
             a4 = "//gw.alicdn.com/mt/TB1abm0PpXXXXcfaXXXXXXXXXXX-156-156.png";
         }
         final int a5 = a2.a(str, "tabbarTextColorSel", Color.parseColor("#ff5000"));
@@ -236,7 +236,7 @@ public class GloblaNavUIConfig {
                     for (int i4 = 0; i4 < e.size(); i4++) {
                         e.get(i4).a(NavigationTabIconSourceType.URL);
                     }
-                    if (TextUtils.isEmpty(a7)) {
+                    if (StringUtils.isEmpty(a7)) {
                         e.a(e, new ColorDrawable(-1), parseColor, i2);
                     } else {
                         e.a(e, a7, 0, i2);

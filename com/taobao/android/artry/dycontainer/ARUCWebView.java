@@ -6,7 +6,7 @@ import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.FrameLayout;
@@ -201,7 +201,7 @@ public class ARUCWebView extends WVUCWebView implements aew {
                 uri = Uri.parse(str);
             } catch (Throwable unused) {
             }
-            if (uri != null && this.mCurrentUri != null && TextUtils.equals(uri.getHost(), this.mCurrentUri.getHost()) && TextUtils.equals(uri.getPath(), this.mCurrentUri.getPath())) {
+            if (uri != null && this.mCurrentUri != null && StringUtils.equals(uri.getHost(), this.mCurrentUri.getHost()) && StringUtils.equals(uri.getPath(), this.mCurrentUri.getPath())) {
                 reload();
             } else {
                 try {

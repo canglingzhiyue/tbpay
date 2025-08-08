@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.datamodel.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -55,7 +55,7 @@ public class PropsNode extends DetailNode {
                         JSONObject jSONObject = (JSONObject) it3.next();
                         for (String str : jSONObject.keySet()) {
                             String string = jSONObject.getString(str);
-                            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(string)) {
                                 arrayList.add(new Pair<>(str, string));
                             }
                         }

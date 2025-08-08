@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,7 +41,7 @@ public class dui {
             return "异常";
         }
         String str = d(intent).get("openFrom");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         int b = b(intent);
@@ -73,17 +73,17 @@ public class dui {
         String stringExtra2 = intent.getStringExtra("pageType");
         Uri data = intent.getData();
         if (data != null) {
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 stringExtra = data.getQueryParameter("openFrom");
             }
-            if (TextUtils.isEmpty(stringExtra2)) {
+            if (StringUtils.isEmpty(stringExtra2)) {
                 stringExtra2 = data.getQueryParameter("pageType");
             }
         }
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             hashMap.put("openFrom", stringExtra);
         }
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             hashMap.put("pageType", stringExtra2);
         }
         return hashMap;
@@ -153,10 +153,10 @@ public class dui {
         String str = map.get("buyParam");
         String str2 = map.get("cartIds");
         map.put("itemNum", "1");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = str2;
         }
-        if (TextUtils.isEmpty(str) || (split = str.split(",")) == null) {
+        if (StringUtils.isEmpty(str) || (split = str.split(",")) == null) {
             return;
         }
         map.put("itemNum", split.length + "");
@@ -188,7 +188,7 @@ public class dui {
             UnifyLog.d("ParamsMaker", "addExtraParams", "获取locale 参数报错");
             str = "";
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("websiteLanguage", (Object) str);
         }
         Map<String, Object> aBTestParams = AliBuyPerfSwitcher.getABTestParams();
@@ -201,7 +201,7 @@ public class dui {
         jSONObject.put("umfVersions", (Object) a());
         jSONObject.putAll(map2);
         String b2 = b(context);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             jSONObject.put("needNativeContainer", (Object) b2);
         }
         a(map, "exParams", jSONObject.toJSONString());
@@ -238,7 +238,7 @@ public class dui {
         }
         HashMap hashMap = new HashMap();
         String utdid = UTDevice.getUtdid(context);
-        if (!TextUtils.isEmpty(utdid)) {
+        if (!StringUtils.isEmpty(utdid)) {
             hashMap.put("orderMarker", "v:utdid=" + utdid);
         }
         return hashMap;

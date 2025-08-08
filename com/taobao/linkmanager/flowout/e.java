@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.flowcustoms.afc.utils.AfcUtils;
@@ -39,19 +39,19 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9adff8a4", new Object[]{str, str2, flowOutConfigData})).booleanValue();
         }
-        if (flowOutConfigData == null || TextUtils.isEmpty(str2)) {
+        if (flowOutConfigData == null || StringUtils.isEmpty(str2)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === isPackageNameInFlowIdList === 外跳配置或者floutId为空");
             return false;
         }
         List<FloutIdListBean> list = flowOutConfigData.floutIdList;
         if (list != null && list.size() != 0) {
             for (FloutIdListBean floutIdListBean : list) {
-                if (TextUtils.equals(floutIdListBean.floutId, str2)) {
+                if (StringUtils.equals(floutIdListBean.floutId, str2)) {
                     if (floutIdListBean.packageNames == null) {
                         return false;
                     }
                     for (String str3 : floutIdListBean.packageNames) {
-                        if (TextUtils.equals(str3, str) && a(floutIdListBean)) {
+                        if (StringUtils.equals(str3, str) && a(floutIdListBean)) {
                             return true;
                         }
                     }
@@ -78,7 +78,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2d4a0b62", new Object[]{flowOutConfigData, str});
         }
-        if (flowOutConfigData != null && !TextUtils.isEmpty(str)) {
+        if (flowOutConfigData != null && !StringUtils.isEmpty(str)) {
             return b(flowOutConfigData, str) ? f17709a.get(str) : "";
         }
         com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === getAppPackageName === 外跳配置或者mScheme为空");
@@ -90,10 +90,10 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bc9016a1", new Object[]{flowOutConfigData, str})).booleanValue();
         }
-        if (flowOutConfigData == null || TextUtils.isEmpty(str)) {
+        if (flowOutConfigData == null || StringUtils.isEmpty(str)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === isInWhiteList === 外跳配置或者mScheme为空");
             return false;
-        } else if (!TextUtils.isEmpty(f17709a.get(str))) {
+        } else if (!StringUtils.isEmpty(f17709a.get(str))) {
             return true;
         } else {
             List<FloutWhiteListBean> list = flowOutConfigData.floutWhiteList;
@@ -101,7 +101,7 @@ public class e {
                 for (FloutWhiteListBean floutWhiteListBean : list) {
                     if (floutWhiteListBean.schemes != null && floutWhiteListBean.schemes.length > 0) {
                         for (String str2 : floutWhiteListBean.schemes) {
-                            if (TextUtils.equals(str2, str)) {
+                            if (StringUtils.equals(str2, str)) {
                                 f17709a.put(str, floutWhiteListBean.packageName);
                                 return true;
                             }
@@ -127,16 +127,16 @@ public class e {
         String action = intent.getAction();
         String[] strArr = flowOutConfigData.systemActions;
         String[] strArr2 = flowOutConfigData.androidActions;
-        if (!TextUtils.isEmpty(action) && strArr2 != null && strArr2.length > 0) {
+        if (!StringUtils.isEmpty(action) && strArr2 != null && strArr2.length > 0) {
             for (String str : strArr2) {
-                if (TextUtils.equals(action, str)) {
+                if (StringUtils.equals(action, str)) {
                     return true;
                 }
             }
         }
-        if (!TextUtils.isEmpty(scheme) && strArr != null && strArr.length > 0) {
+        if (!StringUtils.isEmpty(scheme) && strArr != null && strArr.length > 0) {
             for (String str2 : strArr) {
-                if (TextUtils.equals(scheme, str2)) {
+                if (StringUtils.equals(scheme, str2)) {
                     return true;
                 }
             }
@@ -149,14 +149,14 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cacd48b6", new Object[]{str, flowOutConfigData});
         }
-        if (flowOutConfigData == null || TextUtils.isEmpty(str)) {
+        if (flowOutConfigData == null || StringUtils.isEmpty(str)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === getAppLink === 外跳配置或者packageName为空");
             return "";
         }
         List<FloutWhiteListBean> list = flowOutConfigData.floutWhiteList;
         if (list != null && list.size() != 0) {
             for (FloutWhiteListBean floutWhiteListBean : list) {
-                if (TextUtils.equals(str, floutWhiteListBean.packageName)) {
+                if (StringUtils.equals(str, floutWhiteListBean.packageName)) {
                     com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === getAppLink === 获取到的AppLink:" + floutWhiteListBean.link);
                     return floutWhiteListBean.link;
                 }
@@ -171,7 +171,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === formateUrl === linkUrl或者URL为空");
             return "";
         }
@@ -180,23 +180,23 @@ public class e {
         while (matcher.find()) {
             String group = matcher.group(0);
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === formateUrl === originalKey：" + group);
-            if (TextUtils.equals("${url}", group)) {
-                if (!TextUtils.isEmpty(str)) {
+            if (StringUtils.equals("${url}", group)) {
+                if (!StringUtils.isEmpty(str)) {
                     str = str.replace(group, a(str2));
                 } else {
                     str = str.replace(group, "");
                 }
-            } else if (TextUtils.equals("${backUrl}", group)) {
+            } else if (StringUtils.equals("${backUrl}", group)) {
                 str = str.replace("${backUrl}", a("tbopen://"));
             } else if (group.length() >= 3) {
                 String substring = group.substring(2, group.length() - 1);
-                if (TextUtils.isEmpty(substring)) {
+                if (StringUtils.isEmpty(substring)) {
                     str = str.replace(group, "");
                 } else {
                     if (substring.contains("#")) {
                         substring = substring.substring(1, substring.length() - 1);
                     }
-                    if (TextUtils.isEmpty(substring)) {
+                    if (StringUtils.isEmpty(substring)) {
                         str = str.replace(group, "");
                     }
                 }
@@ -223,7 +223,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Nav.from(Globals.getApplication()).toUri(str);
         }
@@ -234,7 +234,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || context == null) {
+        if (StringUtils.isEmpty(str) || context == null) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === startApp === Url或者context为空");
             return false;
         }
@@ -276,18 +276,18 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7b61c083", new Object[]{str, str2, flowOutConfigData})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || flowOutConfigData == null) {
+        if (StringUtils.isEmpty(str) || flowOutConfigData == null) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === startBrowser === Url或者flowOutConfig为空,返回false");
             return false;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = a(flowOutConfigData, Uri.parse(str).getScheme());
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         for (FloutWhiteListBean floutWhiteListBean : flowOutConfigData.floutWhiteList) {
-            if (TextUtils.equals(floutWhiteListBean.packageName, str2)) {
+            if (StringUtils.equals(floutWhiteListBean.packageName, str2)) {
                 z = floutWhiteListBean.supportAfcLink;
             }
         }
@@ -300,13 +300,13 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("23d3b6cd", new Object[]{str, flowOutConfigData})).booleanValue();
         }
-        if (flowOutConfigData == null || TextUtils.isEmpty(str)) {
+        if (flowOutConfigData == null || StringUtils.isEmpty(str)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === chekFlowOutWhiteList === flowOutConfig或者floutId为空,返回false");
             return false;
         }
         if (flowOutConfigData.floutIdWhiteList != null) {
             for (String str2 : flowOutConfigData.floutIdWhiteList) {
-                if (TextUtils.equals(str2, str)) {
+                if (StringUtils.equals(str2, str)) {
                     com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === chekFlowOutWhiteList === 在flowOutId白名单，放过");
                     return true;
                 }
@@ -352,7 +352,7 @@ public class e {
             return (Map) ipChange.ipc$dispatch("131ebaa4", new Object[]{intent, str});
         }
         Uri data = intent.getData();
-        if (TextUtils.isEmpty(str) && data != null) {
+        if (StringUtils.isEmpty(str) && data != null) {
             str = a(b.a(), data.getScheme());
         }
         HashMap hashMap = new HashMap(16);
@@ -378,31 +378,31 @@ public class e {
         String queryParameter5 = uri.getQueryParameter("spm");
         String queryParameter6 = uri.getQueryParameter(c.LINK_KEY);
         String queryParameter7 = uri.getQueryParameter("failMode");
-        if (TextUtils.isEmpty(queryParameter7) || !TextUtils.isDigitsOnly(queryParameter7)) {
+        if (StringUtils.isEmpty(queryParameter7) || !StringUtils.isDigitsOnly(queryParameter7)) {
             queryParameter7 = "0";
         }
         String queryParameter8 = uri.getQueryParameter(c.FL_OUT_ID);
-        if (TextUtils.isEmpty(queryParameter8)) {
+        if (StringUtils.isEmpty(queryParameter8)) {
             queryParameter8 = uri.getQueryParameter(c.VISA);
         }
-        if (!TextUtils.isEmpty(queryParameter5) && !TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter5) && !StringUtils.isEmpty(queryParameter2)) {
             queryParameter2 = b(queryParameter5, queryParameter2);
         }
-        if (TextUtils.isEmpty(queryParameter3) && !TextUtils.isEmpty(queryParameter4)) {
+        if (StringUtils.isEmpty(queryParameter3) && !StringUtils.isEmpty(queryParameter4)) {
             queryParameter3 = queryParameter;
         }
-        if (TextUtils.equals(c.TMALL, queryParameter6)) {
+        if (StringUtils.equals(c.TMALL, queryParameter6)) {
             str = c.TMALL_PREFIX + a(queryParameter);
         } else {
-            if (!TextUtils.isEmpty(queryParameter3)) {
+            if (!StringUtils.isEmpty(queryParameter3)) {
                 String a2 = a(queryParameter4, b.a());
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     str = a(a2, queryParameter3);
                 }
             }
             str = queryParameter;
         }
-        if (!TextUtils.isEmpty(queryParameter8)) {
+        if (!StringUtils.isEmpty(queryParameter8)) {
             str = TFCCommonUtils.a(str, c.FL_OUT_ID, queryParameter8);
         }
         com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === tboutJump === 跳转url=" + queryParameter);
@@ -432,7 +432,7 @@ public class e {
         }
         com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutUtils === startOut === 打开APP: " + str);
         boolean a2 = a(context, str);
-        if (!a2 && !z && (TextUtils.equals(str3, "1") || TextUtils.equals(str3, "2"))) {
+        if (!a2 && !z && (StringUtils.equals(str3, "1") || StringUtils.equals(str3, "2"))) {
             b(str2);
         }
         return a2;
@@ -444,7 +444,7 @@ public class e {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
         Uri parse = Uri.parse(str2);
-        if (TextUtils.isEmpty(parse.getQueryParameter("spm"))) {
+        if (StringUtils.isEmpty(parse.getQueryParameter("spm"))) {
             Uri.Builder buildUpon = parse.buildUpon();
             buildUpon.appendQueryParameter("spm", str);
             return buildUpon.toString();

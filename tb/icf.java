@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes6.dex */
@@ -103,7 +103,7 @@ public class icf {
                 sb.append("&sticker");
             }
             String sb2 = sb.toString();
-            return !TextUtils.isEmpty(sb2) ? sb2.substring(1) : sb2;
+            return !StringUtils.isEmpty(sb2) ? sb2.substring(1) : sb2;
         }
     }
 }

@@ -1,6 +1,6 @@
 package android.taobao.windvane.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -38,7 +38,7 @@ public class i implements Runnable {
         }
         r rVar = new r();
         rVar.a("msg", this.b);
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             rVar.a("state", this.c);
         }
         this.f1665a.error(rVar);

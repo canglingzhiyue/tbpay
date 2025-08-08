@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.player;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.av;
@@ -285,7 +285,7 @@ public abstract class IPlayBack implements av {
 
     public boolean a(TBVideoComponent.c cVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c70ba33", new Object[]{this, cVar})).booleanValue() : (cVar.C == null || ((cVar.C instanceof String) && TextUtils.isEmpty((String) cVar.C))) && (cVar.B == null || ((cVar.B instanceof String) && TextUtils.isEmpty((String) cVar.B)));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c70ba33", new Object[]{this, cVar})).booleanValue() : (cVar.C == null || ((cVar.C instanceof String) && StringUtils.isEmpty((String) cVar.C))) && (cVar.B == null || ((cVar.B instanceof String) && StringUtils.isEmpty((String) cVar.B)));
     }
 
     public boolean b(TBVideoComponent.c cVar) {
@@ -299,8 +299,8 @@ public abstract class IPlayBack implements av {
             z = false;
             z2 = false;
         } else {
-            z2 = cVar.C instanceof String ? !TextUtils.isEmpty((String) cVar.C) : true;
-            z = cVar.B instanceof String ? !TextUtils.isEmpty((String) cVar.B) : true;
+            z2 = cVar.C instanceof String ? !StringUtils.isEmpty((String) cVar.C) : true;
+            z = cVar.B instanceof String ? !StringUtils.isEmpty((String) cVar.B) : true;
         }
         return z2 && z;
     }

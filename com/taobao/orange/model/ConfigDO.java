@@ -1,6 +1,6 @@
 package com.taobao.orange.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.util.OLog;
 import java.io.Serializable;
@@ -58,7 +58,7 @@ public class ConfigDO implements a, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2b6d1a5f", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.appKey) || TextUtils.isEmpty(this.appVersion) || TextUtils.isEmpty(this.id) || TextUtils.isEmpty(this.name) || TextUtils.isEmpty(this.resourceId) || TextUtils.isEmpty(this.type) || TextUtils.isEmpty(this.loadLevel) || TextUtils.isEmpty(this.version) || (map = this.content) == null || map.isEmpty()) {
+        if (StringUtils.isEmpty(this.appKey) || StringUtils.isEmpty(this.appVersion) || StringUtils.isEmpty(this.id) || StringUtils.isEmpty(this.name) || StringUtils.isEmpty(this.resourceId) || StringUtils.isEmpty(this.type) || StringUtils.isEmpty(this.loadLevel) || StringUtils.isEmpty(this.version) || (map = this.content) == null || map.isEmpty()) {
             OLog.w(TAG, "lack param", new Object[0]);
             return false;
         }

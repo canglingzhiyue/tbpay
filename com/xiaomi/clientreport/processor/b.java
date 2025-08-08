@@ -1,7 +1,7 @@
 package com.xiaomi.clientreport.processor;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.trtc.utils.h;
 import com.xiaomi.clientreport.data.PerfClientReport;
 import com.xiaomi.push.bq;
@@ -30,7 +30,7 @@ public class b implements IPerfProcessor {
         String str;
         int i = aVar.production;
         String str2 = aVar.clientInterfaceId;
-        if (i <= 0 || TextUtils.isEmpty(str2)) {
+        if (i <= 0 || StringUtils.isEmpty(str2)) {
             str = "";
         } else {
             str = String.valueOf(i) + "#" + str2;
@@ -48,7 +48,7 @@ public class b implements IPerfProcessor {
 
     private String c(com.xiaomi.clientreport.data.a aVar) {
         String b = b(aVar);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return null;
         }
         for (int i = 0; i < 20; i++) {
@@ -103,7 +103,7 @@ public class b implements IPerfProcessor {
 
     public void a(com.xiaomi.clientreport.data.a[] aVarArr) {
         String c = c(aVarArr[0]);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return;
         }
         e.a(c, aVarArr);

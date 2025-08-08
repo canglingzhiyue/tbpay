@@ -2,7 +2,7 @@ package com.taobao.android.detail.provider;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,7 +57,7 @@ public class TBTrackProvider implements ITrackAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8e187d40", new Object[]{this, activity, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             UTAnalytics.getInstance().getDefaultTracker().pageAppear(activity, str2);
         }
@@ -68,7 +68,7 @@ public class TBTrackProvider implements ITrackAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("497aa095", new Object[]{this, activity, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             UTAnalytics.getInstance().getDefaultTracker().pageDisAppear(activity);
         }
@@ -120,7 +120,7 @@ public class TBTrackProvider implements ITrackAdapter {
             ipChange.ipc$dispatch("7c061b5b", new Object[]{this, str, trackType, str2, strArr});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             TBS.Adv.ctrlClicked(CT.Button, str2, strArr);
         } else {
             TBS.Adv.ctrlClickedOnPage(str, CT.Button, str2, strArr);
@@ -135,7 +135,7 @@ public class TBTrackProvider implements ITrackAdapter {
             ipChange.ipc$dispatch("7b610b5c", new Object[]{this, str, new Integer(i), obj, obj2, obj3, strArr});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             TBS.Ext.commitEvent(i, obj, obj2, obj3, strArr);
         } else {
             TBS.Ext.commitEvent(str, i, obj, obj2, obj3, strArr);
@@ -180,7 +180,7 @@ public class TBTrackProvider implements ITrackAdapter {
                     } else if (!cVar.a()) {
                     } else {
                         String[] access$000 = TBTrackProvider.access$000(TBTrackProvider.this, cVar.f10221a, pairArr);
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             TBS.Adv.ctrlClicked("Page_Detail", CT.Button, str2, access$000);
                         } else {
                             TBS.Adv.ctrlClickedOnPage(str, CT.Button, str2, access$000);

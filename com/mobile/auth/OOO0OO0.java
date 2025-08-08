@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkRequest;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.util.ArrayList;
 import java.util.List;
@@ -129,7 +129,7 @@ public class OOO0OO0 {
                         OOO0OO0.O000000o(OOO0OO0.this, true, network);
                         try {
                             String extraInfo = OOO0OO0.O00000Oo(OOO0OO0.this).getNetworkInfo(OOO0OO0.O000000o(OOO0OO0.this)).getExtraInfo();
-                            if (TextUtils.isEmpty(extraInfo)) {
+                            if (StringUtils.isEmpty(extraInfo)) {
                                 return;
                             }
                             OOO.O00000oO(extraInfo);

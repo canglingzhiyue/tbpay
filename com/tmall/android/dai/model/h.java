@@ -92,7 +92,7 @@ public class h extends g {
             java.lang.String r0 = "pg"
             java.lang.Object r0 = r5.get(r0)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L6f
             com.tmall.android.dai.model.g$a r1 = new com.tmall.android.dai.model.g$a
             r1.<init>(r0)
@@ -101,7 +101,7 @@ public class h extends g {
             java.lang.String r0 = "arg1"
             java.lang.Object r0 = r5.get(r0)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L84
             com.tmall.android.dai.model.g$a r1 = new com.tmall.android.dai.model.g$a
             r1.<init>(r0)
@@ -110,7 +110,7 @@ public class h extends g {
             java.lang.String r0 = "arg2"
             java.lang.Object r0 = r5.get(r0)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L99
             com.tmall.android.dai.model.g$a r1 = new com.tmall.android.dai.model.g$a
             r1.<init>(r0)
@@ -119,7 +119,7 @@ public class h extends g {
             java.lang.String r0 = "arg3"
             java.lang.Object r0 = r5.get(r0)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto Lae
             com.tmall.android.dai.model.g$a r1 = new com.tmall.android.dai.model.g$a
             r1.<init>(r0)
@@ -143,7 +143,7 @@ public class h extends g {
             java.util.Map$Entry r0 = (java.util.Map.Entry) r0
             java.lang.Object r1 = r0.getValue()
             java.lang.CharSequence r1 = (java.lang.CharSequence) r1
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 != 0) goto Lcd
             java.util.Map<java.lang.String, com.tmall.android.dai.model.g$a> r1 = r4.j
             java.lang.Object r2 = r0.getKey()

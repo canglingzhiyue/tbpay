@@ -98,7 +98,7 @@ public class f implements IConfigAdapter {
             if (r2 == 0) goto L39
             java.lang.Object r9 = r9.get(r0)     // Catch: java.lang.Throwable -> L99
             java.lang.String r9 = (java.lang.String) r9     // Catch: java.lang.Throwable -> L99
-            boolean r0 = android.text.TextUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> L99
+            boolean r0 = android.text.StringUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> L99
             if (r0 != 0) goto L39
             goto L3a
         L39:

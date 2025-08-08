@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.impl.log.LogAbility;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -131,35 +131,35 @@ public final class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("76502b6f", new Object[]{str, str2, str3, th});
-        } else if (TextUtils.equals(str, "V")) {
+        } else if (StringUtils.equals(str, "V")) {
             if (b()) {
                 a(str2);
             } else if (!AdapterForTLog.isValid() || !f4197a) {
             } else {
                 AdapterForTLog.logv(a(str2), str3);
             }
-        } else if (TextUtils.equals(str, TLogTracker.LEVEL_DEBUG)) {
+        } else if (StringUtils.equals(str, TLogTracker.LEVEL_DEBUG)) {
             if (b()) {
                 a(str2);
             } else if (!AdapterForTLog.isValid() || !f4197a) {
             } else {
                 AdapterForTLog.logd(a(str2), str3);
             }
-        } else if (TextUtils.equals(str, TLogTracker.LEVEL_INFO)) {
+        } else if (StringUtils.equals(str, TLogTracker.LEVEL_INFO)) {
             if (b()) {
                 a(str2);
             } else if (!AdapterForTLog.isValid() || !f4197a) {
             } else {
                 AdapterForTLog.logi(a(str2), str3);
             }
-        } else if (TextUtils.equals(str, "W")) {
+        } else if (StringUtils.equals(str, "W")) {
             if (b()) {
                 a(str2);
             } else if (!AdapterForTLog.isValid() || !f4197a) {
             } else {
                 AdapterForTLog.logw(a(str2), str3, th);
             }
-        } else if (!TextUtils.equals(str, "E")) {
+        } else if (!StringUtils.equals(str, "E")) {
         } else {
             if (b()) {
                 Log.e(a(str2), str3, th);
@@ -204,7 +204,7 @@ public final class h {
             return true;
         }
         String logLevel = AdapterForTLog.getLogLevel("EVO");
-        return !TextUtils.equals("L", logLevel) && !TextUtils.equals("V", logLevel);
+        return !StringUtils.equals("L", logLevel) && !StringUtils.equals("V", logLevel);
     }
 
     public static void a(boolean z) {

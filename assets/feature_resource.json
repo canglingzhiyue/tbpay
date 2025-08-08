@@ -1,0 +1,136 @@
+[
+    {
+        "scene": "home",
+        "tabName": "首页",
+        "activities":
+        [
+            "com.taobao.tao.TBMainActivity"
+        ],
+        "dependsOn":
+        [
+            "taobao_shake_sdk",
+            "TBSubscribe",
+            "taobao_favorite_aar",
+            "voice_assistant",
+            "left_sdk",
+            "elemeadapter_android"
+        ]
+    },
+    {
+        "scene": "guangguang",
+        "tabName": "逛逛",
+        "activities":
+        [
+            "com.taobao.tao.TBMainActivity"
+        ],
+        "dependsOn":
+        [
+            "ratefeature",
+            "tbvsvideofeature",
+            "tbsocialsdk",
+            "layoutmanager_feature",
+            "taopai_business",
+            "umipublish",
+            "litecreator",
+            "taopai_sdk",
+            "rxandroid",
+            "fluid_remote"
+        ]
+    },
+
+    {
+        "scene": "message",
+        "tabName": "消息",
+        "activities":
+        [
+            "com.taobao.tao.TBMainActivity"
+        ],
+        "dependsOn":
+        [
+            "taopai_sdk",
+            "rxandroid",
+            "taobao_wangxin",
+            "messagesdkwrapper"
+        ]
+    },
+    {
+        "scene": "detail",
+        "activities":
+        [
+            "com.taobao.android.detail2.core.framework.NewDetailActivity",
+            "com.taobao.android.detail.wrapper.activity.DetailActivity"
+        ],
+        "dependsOn":
+        [
+            "taobao_favorite_aar",
+            "ratefeature",
+            "fliggy_vacation_detail"
+        ]
+    },
+    {
+        "scene": "taolive",
+        "activities":
+        [
+            "com.taobao.taolivehome.TaoLiveHomepageActivity",
+            "com.taobao.taolive.room.TaoLiveVideoActivity"
+        ],
+        "dependsOn":
+        [
+            "tblive_gift_android",
+            "LivehomeAtype",
+            "liveroom_android_plugin_AType",
+            "liveroom_android_plugin_BType",
+            "taolivesearch"
+        ]
+    },
+    {
+        "scene": "orderlist",
+        "activities":
+        [
+            "com.taobao.android.order.bundle.TBOrderListActivity"
+        ],
+        "dependsOn":
+        [
+            "order_map"
+        ]
+    },
+    {
+        "scene": "triver",
+        "activities":
+        [
+            "com.alibaba.triver.container.TriverMainActivity"
+        ],
+        "launchURLs":
+        [],
+        "dependsOn":
+        [
+            "triver_taobao"
+        ]
+    },
+    {
+        "scene": "mytaobao",
+        "activities":
+        [
+            "mytaobao-tab"
+        ],
+        "dependsOn":
+        [
+            "order_map",
+            "taobao_favorite_aar"
+        ]
+    },
+    {
+        "scene": "search",
+        "activities":
+        [
+            "com.taobao.search.searchdoor.SearchDoorActivity",
+            "com.taobao.search.sf.MainSearchResultActivity"
+        ],
+        "dependsOn":
+        [
+            "taowise_android_aar",
+            "tbsearch_remote",
+            "voice_assistant"
+        ]
+    }
+]

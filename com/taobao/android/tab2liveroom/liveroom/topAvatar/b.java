@@ -9,7 +9,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -232,7 +232,7 @@ public class b implements d.a {
         try {
             String queryParameter = Uri.parse(str).getQueryParameter("hideLiveTopbar");
             ogg.a(TAG, "isOpenLiveAvatar source:" + str2 + " hideLiveTopbar:" + queryParameter + " isLastTab:" + z);
-            if (!TextUtils.equals(str2, "outside")) {
+            if (!StringUtils.equals(str2, "outside")) {
                 return !oec.a((Object) queryParameter, false);
             }
             jSONObject.put("reason", (Object) "waitou");
@@ -370,7 +370,7 @@ public class b implements d.a {
                         b.e(b.this).b("onMoreLiveClick", (Map) null);
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("index", (Object) Integer.valueOf(i));
-                        if (!TextUtils.isEmpty(((LiveAvatarResult.LiveAccount) b.d(b.this).get(i)).topParams)) {
+                        if (!StringUtils.isEmpty(((LiveAvatarResult.LiveAccount) b.d(b.this).get(i)).topParams)) {
                             str = "1";
                         }
                         jSONObject.put("is_reddot", (Object) str);
@@ -378,7 +378,7 @@ public class b implements d.a {
                         return;
                     }
                     String str2 = ((LiveAvatarResult.LiveAccount) b.d(b.this).get(i)).status.redirectUrl;
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         Object callWatchPlatform = b.f(b.this).callWatchPlatform(WatchPlatformListenerEnum.getGlobalContext, new Object[0]);
                         if (callWatchPlatform instanceof e) {
                             z = ((e) callWatchPlatform).r();
@@ -389,7 +389,7 @@ public class b implements d.a {
                     Nav.from(b.g(b.this)).withExtras(null).toUri(str2);
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("index", (Object) Integer.valueOf(i));
-                    if (!TextUtils.isEmpty(((LiveAvatarResult.LiveAccount) b.d(b.this).get(i)).topParams)) {
+                    if (!StringUtils.isEmpty(((LiveAvatarResult.LiveAccount) b.d(b.this).get(i)).topParams)) {
                         str = "1";
                     }
                     jSONObject2.put("is_reddot", (Object) str);
@@ -667,7 +667,7 @@ public class b implements d.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8bb6538e", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             char c = 65535;
             if (str.hashCode() == 107944136 && str.equals("query")) {
@@ -687,7 +687,7 @@ public class b implements d.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (oeb.as() && TextUtils.equals(str, "appear") && TextUtils.equals(this.s, "init")) {
+        } else if (oeb.as() && StringUtils.equals(str, "appear") && StringUtils.equals(this.s, "init")) {
             this.s = str;
         } else {
             this.s = str;
@@ -807,9 +807,9 @@ public class b implements d.a {
         if (!ogv.a(this.n)) {
             String a2 = oec.a(this.n.get("id"), "");
             String a3 = oec.a(this.n.get("userId"), "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 jSONObject.put("topLiveId", (Object) a2);
-            } else if (!TextUtils.isEmpty(a3)) {
+            } else if (!StringUtils.isEmpty(a3)) {
                 jSONObject.put("topAccountId", (Object) a3);
             }
             jSONObject.put("topParams", (Object) JSONObject.toJSONString(this.n));
@@ -871,7 +871,7 @@ public class b implements d.a {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ogg.a(TAG, "filterRepeatIds0 = " + str);
         } else {
             char c = 65535;
@@ -913,7 +913,7 @@ public class b implements d.a {
             return;
         }
         for (int size = this.q.result.size() - 1; size >= 0; size--) {
-            if (TextUtils.equals(str, this.q.result.get(size).accountId)) {
+            if (StringUtils.equals(str, this.q.result.get(size).accountId)) {
                 ogg.a(TAG, "filterRepeatIds2 = " + str + ",index= " + size);
                 this.q.result.remove(size);
             }
@@ -935,7 +935,7 @@ public class b implements d.a {
         while (true) {
             if (size < 0) {
                 break;
-            } else if (TextUtils.equals(str, this.r.a().get(size).accountId)) {
+            } else if (StringUtils.equals(str, this.r.a().get(size).accountId)) {
                 ogg.a(TAG, "filterRepeatIds1 = " + str + ",index= " + size);
                 this.r.a(size);
                 break;

@@ -1,6 +1,6 @@
 package com.taobao.android.sku.bizevent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class f implements iyd {
             for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     hashMap.put(key, value == null ? "null" : String.valueOf(value));
                 }
             }

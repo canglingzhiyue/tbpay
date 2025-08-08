@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.view.Menu;
@@ -182,7 +182,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
         if (arguments != null) {
             String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
             arguments.putString(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.loginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
                 LoginParam loginParam = this.loginParam;
                 if (loginParam != null) {
@@ -197,7 +197,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
             this.preCheckVerify = arguments.getString("preCheckVerify");
             this.verify = arguments.getString("verify");
             this.havanaId = arguments.getLong("havanaId");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 try {
                     this.mAvailableLoginModes = (ArrayList) JSON.parseObject(string, ArrayList.class);
                     if (this.mAvailableLoginModes != null && !this.mAvailableLoginModes.contains(LoginModeState.SCAN_FACE.name()) && ("true".equals(this.preCheckVerify) || "true".equals(this.verify))) {
@@ -243,9 +243,9 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
             textView.setText(getString(R.string.aliuser_sms_code_secondary_title_14050));
         } else {
             LoginParam loginParam2 = this.loginParam;
-            if (loginParam2 != null && !TextUtils.isEmpty(loginParam2.loginId)) {
+            if (loginParam2 != null && !StringUtils.isEmpty(loginParam2.loginId)) {
                 String str = this.mMaskMobile;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     if ("86".equals(this.loginParam.phoneCode)) {
                         String str2 = this.loginParam.loginId;
                         if (this.loginParam.loginId.length() == 11) {
@@ -270,7 +270,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
             }
         }
         this.mSmsCodeView = (AliUserSmsCodeView) view.findViewById(R.id.aliuser_login_sms_code_view);
-        if (this.mSmsCodeView != null && (loginParam = this.loginParam) != null && !TextUtils.isEmpty(loginParam.codeLength)) {
+        if (this.mSmsCodeView != null && (loginParam = this.loginParam) != null && !StringUtils.isEmpty(loginParam.codeLength)) {
             this.mSmsCodeView.setTextCount(Integer.parseInt(this.loginParam.codeLength));
         }
         this.mSmsCodeView.setOnCompletedListener(new AliUserSmsCodeView.OnCompletedListener() { // from class: com.ali.user.mobile.login.ui.AliUserSMSLoginVerificationFragment.1
@@ -339,7 +339,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("652b6bb2", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.mMobileLoginPresenter.getLoginParam().helpUrl)) {
+        } else if (!StringUtils.isEmpty(this.mMobileLoginPresenter.getLoginParam().helpUrl)) {
             NavigatorManager.getInstance().navToTransparentWeb(getActivity(), this.mMobileLoginPresenter.getLoginParam().helpUrl);
         } else {
             super.openHelp();
@@ -377,7 +377,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
         Iterator<String> it = this.mAvailableLoginModes.iterator();
         while (it.hasNext()) {
             final String next = it.next();
-            if (!TextUtils.equals(loginModeState.name(), next)) {
+            if (!StringUtils.equals(loginModeState.name(), next)) {
                 MenuItem menuItem = new MenuItem();
                 final LoginModeState valueOf = LoginModeState.valueOf(next);
                 if (valueOf.loginModeName > 0) {
@@ -492,7 +492,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("704a1b2f", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.mMaskMobile)) {
+        } else if (!StringUtils.isEmpty(this.mMaskMobile)) {
             SMSNickLoginPresenter sMSNickLoginPresenter = this.mNickLoginPresenter;
             if (sMSNickLoginPresenter == null || sMSNickLoginPresenter.getLoginParam() == null) {
                 return;
@@ -537,7 +537,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
             ipChange.ipc$dispatch("6e52409c", new Object[]{this});
             return;
         }
-        String str = !TextUtils.isEmpty(this.mMaskMobile) ? LoginType.LocalLoginType.NICK_SMS_LOGIN : LoginType.LocalLoginType.SMS_LOGIN;
+        String str = !StringUtils.isEmpty(this.mMaskMobile) ? LoginType.LocalLoginType.NICK_SMS_LOGIN : LoginType.LocalLoginType.SMS_LOGIN;
         HashMap hashMap = new HashMap();
         hashMap.put("sdkTraceId", this.loginParam.sdkTraceId + "");
         UserTrackAdapter.control(getPageName(), UTConstant.CustomEvent.UT_LOGIN_ACTION, "", str, hashMap);
@@ -548,7 +548,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        if (!TextUtils.isEmpty(this.mMaskMobile)) {
+        if (!StringUtils.isEmpty(this.mMaskMobile)) {
             this.mNickLoginPresenter.buildSMSLoginParam(this.loginParam.loginId, this.mSmsCodeView.getText(), false);
             this.mNickLoginPresenter.getLoginParam().utPageName = getPageName();
             this.mNickLoginPresenter.login();
@@ -579,7 +579,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
             return;
         }
         super.onActivityResult(i, i2, intent);
-        if (!TextUtils.isEmpty(this.mMaskMobile)) {
+        if (!StringUtils.isEmpty(this.mMaskMobile)) {
             this.mNickLoginPresenter.onActivityResult(i, i2, intent);
         } else {
             this.mMobileLoginPresenter.onActivityResult(i, i2, intent);
@@ -592,7 +592,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("707fddc9", new Object[]{this});
         }
-        if (this.loginParam == null || TextUtils.isEmpty(this.mOutterSourcePage)) {
+        if (this.loginParam == null || StringUtils.isEmpty(this.mOutterSourcePage)) {
             return UTConstans.PageName.UT_PAGE_LOGIN_SMS_CODE;
         }
         return this.mOutterSourcePage + "_inputcode";
@@ -755,7 +755,7 @@ public class AliUserSMSLoginVerificationFragment extends BaseLoginFragment imple
         } else {
             try {
                 this.mUserLoginActivity.mFragmentManager.popBackStack();
-                this.mUserLoginActivity.mCurrentFragmentTag = TextUtils.isEmpty(this.fromPageTag) ? FragmentConstant.RECOMMEND_LOGIN_FRAGMENT_TAG : this.fromPageTag;
+                this.mUserLoginActivity.mCurrentFragmentTag = StringUtils.isEmpty(this.fromPageTag) ? FragmentConstant.RECOMMEND_LOGIN_FRAGMENT_TAG : this.fromPageTag;
             } catch (Throwable th) {
                 th.printStackTrace();
             }

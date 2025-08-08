@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.navigationextern.model.IconIntroductoryDatasource;
@@ -284,7 +284,7 @@ public class esm implements IconIntroductoryDatasource.b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7f6c587", new Object[]{this, navigationTabMsgMode, str})).booleanValue();
         }
-        if (navigationTabMsgMode == NavigationTabMsgMode.GUARDIAN_TEXT && (TextUtils.isEmpty(str) || str.length() > 5)) {
+        if (navigationTabMsgMode == NavigationTabMsgMode.GUARDIAN_TEXT && (StringUtils.isEmpty(str) || str.length() > 5)) {
             return true;
         }
         return navigationTabMsgMode == NavigationTabMsgMode.GUARDIAN_NUM && !esu.a(str);
@@ -302,7 +302,7 @@ public class esm implements IconIntroductoryDatasource.b {
             return;
         }
         String string = aVar.d.getString(aVar.c);
-        NavigationTabMsgMode navigationTabMsgMode = TextUtils.equals(aVar.c, "text") ? NavigationTabMsgMode.GUARDIAN_TEXT : NavigationTabMsgMode.GUARDIAN_NUM;
+        NavigationTabMsgMode navigationTabMsgMode = StringUtils.equals(aVar.c, "text") ? NavigationTabMsgMode.GUARDIAN_TEXT : NavigationTabMsgMode.GUARDIAN_NUM;
         if (a(navigationTabMsgMode, string)) {
             hut.b("NavigationGuardianController", "addCommonMark indicatorView failed. " + aVar);
             return;

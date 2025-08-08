@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -117,7 +117,7 @@ public class b {
             Uri uri = this.b;
             if (uri != null && uri.isHierarchical()) {
                 boolean z = !this.b.toString().startsWith(ShopConstants.SHOP_URI);
-                if (TextUtils.isEmpty(this.b.getQueryParameter("ut_sk"))) {
+                if (StringUtils.isEmpty(this.b.getQueryParameter("ut_sk"))) {
                     z = false;
                 }
                 boolean equals = "true".equals(OrangeConfig.getInstance().getConfig("android_share", "fixUtTrack", "true"));
@@ -155,14 +155,14 @@ public class b {
             return false;
         }
         String queryParameter = this.b.getQueryParameter("ut_sk");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return false;
         }
         String uri = this.b.toString();
         if (uri.contains("h5.waptest.taobao.com/scan/transit-sms.html") || uri.contains("h5.wapa.taobao.com/scan/transit-sms.html") || uri.contains("h5.m.taobao.com/scan/transit-sms.html")) {
             uri = this.b.getQueryParameter("url");
         }
-        if (TextUtils.isEmpty(uri)) {
+        if (StringUtils.isEmpty(uri)) {
             uri = this.b.toString();
         }
         String[] split = queryParameter.split("\\.");
@@ -174,7 +174,7 @@ public class b {
             String queryParameter2 = this.b.getQueryParameter("app");
             HashMap hashMap = new HashMap();
             hashMap.put("passwordKey", com.taobao.share.copy.a.a().c);
-            if (TextUtils.isEmpty(queryParameter2)) {
+            if (StringUtils.isEmpty(queryParameter2)) {
                 String str2 = split[2];
                 TBS.Ext.commitEvent(5004, str, str2, uri, hashMap.toString() + "," + e.b().m());
                 a(uri);
@@ -206,18 +206,18 @@ public class b {
         } else if (this.g == null || "true".equals(OrangeConfig.getInstance().getConfig("android_share", "storeRedirectUrlOff", "false"))) {
         } else {
             String uri2 = uri.toString();
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 nyy.b(TAG, "startRedirect init: " + uri2);
                 this.d = uri2;
             }
-            if (TextUtils.equals(uri2, this.e)) {
+            if (StringUtils.equals(uri2, this.e)) {
                 return;
             }
             this.e = uri2;
             this.f.add(uri2);
             nyy.b(TAG, "startRedirect add: " + uri2.length() + " = " + uri2);
             try {
-                if (this.b.isHierarchical() && !TextUtils.isEmpty(this.b.getQueryParameter("targetUrl"))) {
+                if (this.b.isHierarchical() && !StringUtils.isEmpty(this.b.getQueryParameter("targetUrl"))) {
                     String decode = URLDecoder.decode(this.b.getQueryParameter("targetUrl"), "utf-8");
                     this.f.add(decode);
                     nyy.b(TAG, "startRedirect targetUrl add: = " + decode);

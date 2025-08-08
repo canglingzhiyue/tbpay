@@ -1,6 +1,6 @@
 package com.taobao.desktop.channel.calendar.api;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.e;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
@@ -86,7 +86,7 @@ public class a implements com.alibaba.ability.b {
                 ipChange.ipc$dispatch("36a0d520", new Object[]{alnVar, str});
             } else if (alnVar == null) {
             } else {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     alnVar.a(new FinishResult());
                 } else if (com.taobao.desktop.channel.calendar.a.f16939a.containsKey(str)) {
                     alnVar.a(new ErrorResult(com.taobao.desktop.channel.calendar.a.f16939a.get(str), str));

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -127,7 +127,7 @@ public class lge extends af {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a92d3edc", new Object[]{this, textView});
-        } else if (this.c <= mto.a.GEO_NOT_SUPPORT || TextUtils.isEmpty(this.b)) {
+        } else if (this.c <= mto.a.GEO_NOT_SUPPORT || StringUtils.isEmpty(this.b)) {
         } else {
             float max = Math.max(textView.getPaint().getTextSize(), 1.0f);
             ShapeDrawable shapeDrawable = new ShapeDrawable();
@@ -190,7 +190,7 @@ public class lge extends af {
         } else if (rRichTextView == null) {
         } else {
             rRichTextView.setText(str2);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             lfw.a(str, rRichTextView.getContext(), new lfw.a() { // from class: tb.lge.1
@@ -201,7 +201,7 @@ public class lge extends af {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("dd037b8c", new Object[]{this, drawable});
-                    } else if (!TextUtils.equals(str2, lge.this.getText())) {
+                    } else if (!StringUtils.equals(str2, lge.this.getText())) {
                     } else {
                         rRichTextView.setIconToText(drawable);
                     }

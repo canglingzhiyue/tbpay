@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.nn.NetConfig;
 import com.taobao.accs.data.AccsStreamConfig;
@@ -47,7 +47,7 @@ public class dcg implements a {
         }
         String d = dchVar.d();
         String e = dchVar.e();
-        if (TextUtils.isEmpty(d) || TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(d) || StringUtils.isEmpty(e)) {
             return;
         }
         c<dch> cVar = null;
@@ -113,7 +113,7 @@ public class dcg implements a {
                         dch dchVar2 = (dch) ((PriorityBlockingQueue) dcg.a(dcg.this).get(d)).poll();
                         if (dchVar2 != null) {
                             String a2 = dchVar2.a();
-                            if (dchVar2.b() == null && !TextUtils.isEmpty(a2)) {
+                            if (dchVar2.b() == null && !StringUtils.isEmpty(a2)) {
                                 dchVar2.a(dceVar2.a(a2));
                             }
                             dcl.a("SyncManagerImpl", NetConfig.OUPUT_KEY, dchVar2);
@@ -130,7 +130,7 @@ public class dcg implements a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("124295a", new Object[]{this, str, str2, new Integer(i), new Integer(i2), new Long(j), new Boolean(z), dceVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || dceVar == null) {
+        if (StringUtils.isEmpty(str) || dceVar == null) {
             dcl.a("SyncManagerImpl", "SyncManager.subscribeStream(), serviceId or callback = NULL!", new Object[0]);
             return false;
         }
@@ -150,7 +150,7 @@ public class dcg implements a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (!TextUtils.isEmpty(str) && b(str)) {
+        } else if (!StringUtils.isEmpty(str) && b(str)) {
             dcl.a("SyncManagerImpl", "unSubscribeStream", "serviceId", str);
             Map<String, c<dch>> remove = this.c.remove(str);
             if (remove != null) {

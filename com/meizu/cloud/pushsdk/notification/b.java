@@ -4,7 +4,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
 import com.meizu.cloud.pushsdk.notification.model.styleenum.InnerStyleLayout;
@@ -40,7 +40,7 @@ public class b extends com.meizu.cloud.pushsdk.notification.f.c {
             remoteViews2.setViewVisibility(com.meizu.cloud.pushsdk.notification.g.c.j(this.f8000a), 0);
             remoteViews2.setViewVisibility(com.meizu.cloud.pushsdk.notification.g.c.i(this.f8000a), 8);
             notification.bigContentView = remoteViews2;
-            if (messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdInstallPackage())) {
+            if (messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdInstallPackage())) {
                 return;
             }
             remoteViews2.setViewVisibility(com.meizu.cloud.pushsdk.notification.g.c.k(this.f8000a), 0);

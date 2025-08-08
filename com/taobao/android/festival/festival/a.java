@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -196,7 +196,7 @@ public class a {
                             Map<String, Map<String, FestivalValueData[]>> map = (Map) JSON.parseObject(new String(d, Charset.forName("UTF-8")), new TypeReference<Map<String, Map<String, FestivalValueData[]>>>() { // from class: com.taobao.android.festival.festival.a.3.1
                             }, Feature.AllowComment);
                             String g2 = gjb.g("festival_config_version");
-                            if (map != null && !TextUtils.isEmpty(g2)) {
+                            if (map != null && !StringUtils.isEmpty(g2)) {
                                 if (a.this.b(map)) {
                                     gjb.f("festival_config");
                                     gjb.a("festival_config_version", "");
@@ -237,7 +237,7 @@ public class a {
                         a.a(SDKUtils.getCorrectionTime());
                         try {
                             FestivalInfoData c = a.c(a.this);
-                            if (c == null || a.this.b(c.content) || TextUtils.equals(c.version, a.this.f12349a)) {
+                            if (c == null || a.this.b(c.content) || StringUtils.equals(c.version, a.this.f12349a)) {
                                 return;
                             }
                             a.this.f12349a = c.version;
@@ -334,7 +334,7 @@ public class a {
                         return;
                     }
                     String str = a2.mo2429getData().modified;
-                    if (TextUtils.isEmpty(str) || !str.equals("y")) {
+                    if (StringUtils.isEmpty(str) || !str.equals("y")) {
                         return;
                     }
                     FestivalResponseData mo2429getData = a2.mo2429getData();
@@ -396,7 +396,7 @@ public class a {
         }
         if ("true".equals(d.c(d.SP_KEY_ENABLE_MTOP))) {
             FestivalInfoData a2 = giz.a();
-            if (a2 == null || a2.content == null || TextUtils.isEmpty(a2.version)) {
+            if (a2 == null || a2.content == null || StringUtils.isEmpty(a2.version)) {
                 return null;
             }
             if (a2.enable) {
@@ -407,7 +407,7 @@ public class a {
         FestivalInfoData festivalInfoData = new FestivalInfoData();
         String config = orangeConfig.getConfig("festival_data", "content", "");
         String config2 = orangeConfig.getConfig("festival_data", "version", "");
-        if (TextUtils.isEmpty(config) || TextUtils.isEmpty(config2)) {
+        if (StringUtils.isEmpty(config) || StringUtils.isEmpty(config2)) {
             return null;
         }
         festivalInfoData.content = (Map) JSON.parseObject(config, new TypeReference<Map<String, Map<String, FestivalValueData[]>>>() { // from class: com.taobao.android.festival.festival.a.2
@@ -620,7 +620,7 @@ public class a {
                         for (FestivalValueData[] festivalValueDataArr : map.values()) {
                             if (festivalValueDataArr != null && festivalValueDataArr.length != 0) {
                                 for (FestivalValueData festivalValueData : festivalValueDataArr) {
-                                    if (festivalValueData != null && !TextUtils.isEmpty(festivalValueData.content) && a(festivalValueData.content)) {
+                                    if (festivalValueData != null && !StringUtils.isEmpty(festivalValueData.content) && a(festivalValueData.content)) {
                                         arrayList.add(festivalValueData.content);
                                     }
                                 }
@@ -643,7 +643,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.endsWith(".png") || str.endsWith(".gif") || str.endsWith(".jpg");

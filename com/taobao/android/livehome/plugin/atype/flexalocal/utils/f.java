@@ -2,7 +2,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.utils;
 
 import android.content.Context;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.io.FileInputStream;
@@ -35,7 +35,7 @@ public class f {
             a a3 = a.a();
             if (a3.a((Object) "ro.build.display.id")) {
                 String a4 = a3.a("ro.build.display.id");
-                if (!TextUtils.isEmpty(a4) && a4.contains("Flyme")) {
+                if (!StringUtils.isEmpty(a4) && a4.contains("Flyme")) {
                     p.a(context, "taobao_live_home_isFLYME", "true");
                     return true;
                 }

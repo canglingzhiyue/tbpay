@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -86,7 +86,7 @@ public class WVPreviewPlugin extends e {
             return;
         }
         u.b("RatePreview", "openPreviewActivity.start");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         JSONObject parseObject = JSON.parseObject(str);
@@ -96,7 +96,7 @@ public class WVPreviewPlugin extends e {
             if (jSONObject != null) {
                 String string2 = jSONObject.getString("bizType");
                 RateDisplayApplication.clear();
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     Bundle bundle = new Bundle();
                     if (RateNode.TAG.equals(string2)) {
                         bundle.putBoolean("isNewRate", true);

@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.iifaa.did.model.VerificationMethod;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.IOException;
@@ -46,8 +46,8 @@ public class MpaasNetConfigUtil {
         }
         try {
             String str = getMpaasNetConfigProperties(context).get("Crypt");
-            if (!TextUtils.equals(str, "TRUE")) {
-                if (!TextUtils.equals(str, "true")) {
+            if (!StringUtils.equals(str, "TRUE")) {
+                if (!StringUtils.equals(str, "true")) {
                     return false;
                 }
             }
@@ -64,7 +64,7 @@ public class MpaasNetConfigUtil {
             return ((Boolean) ipChange.ipc$dispatch("93051451", new Object[]{context})).booleanValue();
         }
         try {
-            return !TextUtils.equals(getMpaasNetConfigProperties(context).get("DefaultGlobalCrypt"), "false");
+            return !StringUtils.equals(getMpaasNetConfigProperties(context).get("DefaultGlobalCrypt"), "false");
         } catch (Throwable th) {
             LogCatUtil.error("MpaasNetConfigUtil", "isDefaultGlobalCrypt ex: " + th.toString());
             return true;
@@ -82,13 +82,13 @@ public class MpaasNetConfigUtil {
         } catch (Throwable th) {
             LogCatUtil.error("MpaasNetConfigUtil", "getAsymmetricEncryptMethod. ex: " + th.toString());
         }
-        if (TextUtils.equals(str, jhy.KEY_ALGORITHM)) {
+        if (StringUtils.equals(str, jhy.KEY_ALGORITHM)) {
             return (byte) 1;
         }
-        if (TextUtils.equals(str, "ECC")) {
+        if (StringUtils.equals(str, "ECC")) {
             return (byte) 2;
         }
-        return TextUtils.equals(str, VerificationMethod.VM_SM2) ? (byte) 3 : (byte) 1;
+        return StringUtils.equals(str, VerificationMethod.VM_SM2) ? (byte) 3 : (byte) 1;
     }
 
     public static String getPublicKey(Context context) {
@@ -134,7 +134,7 @@ public class MpaasNetConfigUtil {
         try {
             String str = getMpaasNetConfigProperties(context).get("GWWhiteList");
             LogCatUtil.printInfo("MpaasNetConfigUtil", "GWWhiteList: " + str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return arrayList;
             }
             for (String str2 : str.split(",")) {

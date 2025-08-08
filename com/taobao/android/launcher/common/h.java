@@ -1,6 +1,6 @@
 package com.taobao.android.launcher.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class h {
         }
         try {
             String a2 = a(str, "");
-            return TextUtils.isEmpty(a2) ? j : Long.parseLong(a2);
+            return StringUtils.isEmpty(a2) ? j : Long.parseLong(a2);
         } catch (NumberFormatException e) {
             e.printStackTrace();
             return j;

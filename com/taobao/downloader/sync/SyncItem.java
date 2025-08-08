@@ -1,6 +1,6 @@
 package com.taobao.downloader.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class SyncItem implements Serializable {
         kmqVar.t = "sync:";
         Integer num = this.callbackCondition;
         kmqVar.e = num != null ? num.intValue() : 2;
-        kmqVar.h = !TextUtils.isEmpty(this.path) ? this.path : kmx.a(com.taobao.downloader.a.c, "sync");
+        kmqVar.h = !StringUtils.isEmpty(this.path) ? this.path : kmx.a(com.taobao.downloader.a.c, "sync");
         kmmVar.b = kmqVar;
         return kmmVar;
     }

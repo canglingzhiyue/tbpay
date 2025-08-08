@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.StatisticInfo;
 import com.alipay.sdk.app.statistic.StatisticManager;
 import com.alipay.sdk.app.statistic.StatisticRecord;
@@ -101,7 +101,7 @@ public class BizContext {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("a6f98647", new Object[]{bizContext, str});
-            } else if (bizContext == null || TextUtils.isEmpty(str)) {
+            } else if (bizContext == null || StringUtils.isEmpty(str)) {
             } else {
                 b.put(str, bizContext);
             }
@@ -112,7 +112,7 @@ public class BizContext {
             if (ipChange instanceof IpChange) {
                 return (BizContext) ipChange.ipc$dispatch("e81b2444", new Object[]{str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return b.remove(str);
             }
             return null;
@@ -130,7 +130,7 @@ public class BizContext {
         this.c = null;
         this.d = false;
         this.e = false;
-        boolean isEmpty = TextUtils.isEmpty(str2);
+        boolean isEmpty = StringUtils.isEmpty(str2);
         this.g = statisticInfo;
         this.apLinkToken = b(str, this.b);
         this.apInvokeTimestamp = SystemClock.elapsedRealtime();
@@ -171,7 +171,7 @@ public class BizContext {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("27a69e58", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.startsWith("new_external_info==")) {
+        if (StringUtils.isEmpty(str) || str.startsWith("new_external_info==")) {
             return str;
         }
         if (!str.contains("\"&")) {
@@ -192,7 +192,7 @@ public class BizContext {
         }
         try {
             String a2 = a(str, "&", "bizcontext=");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 str = str + "&" + a("bizcontext=", "");
             } else {
                 int indexOf = str.indexOf(a2);
@@ -210,7 +210,7 @@ public class BizContext {
         }
         try {
             String a2 = a(str, "\"&", "bizcontext=\"");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return str + "&" + a("bizcontext=\"", "\"");
             }
             if (!a2.endsWith("\"")) {
@@ -228,12 +228,12 @@ public class BizContext {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(str2);
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i]) && split[i].startsWith(str3)) {
+            if (!StringUtils.isEmpty(split[i]) && split[i].startsWith(str3)) {
                 return split[i];
             }
         }
@@ -272,7 +272,7 @@ public class BizContext {
                 str3 = "null";
             }
             jSONObject.put(KEY_ACT_INFO, str3);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put(str, str2);
             }
             return jSONObject.toString();

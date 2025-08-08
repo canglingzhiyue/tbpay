@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.change.app.icon.core.Constrant;
 import com.xiaomi.push.em;
 import com.xiaomi.push.gq;
@@ -156,7 +156,7 @@ public class gm extends gx {
     @Override // com.xiaomi.push.gx, com.xiaomi.push.gq
     /* renamed from: a */
     public synchronized byte[] mo1998a() {
-        if (this.f426a == null && !TextUtils.isEmpty(this.f440a)) {
+        if (this.f426a == null && !StringUtils.isEmpty(this.f440a)) {
             String m2320a = com.xiaomi.push.service.bw.m2320a();
             this.f426a = com.xiaomi.push.service.bo.a(this.f440a.getBytes(), (this.f440a.substring(this.f440a.length() / 2) + m2320a.substring(m2320a.length() / 2)).getBytes());
         }
@@ -171,7 +171,7 @@ public class gm extends gx {
                 int a2 = giVar.a(gfVar);
                 this.d = SystemClock.elapsedRealtime();
                 String f = gfVar.f();
-                if (!TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(f)) {
                     hv.a(this.f439a, f, a2, false, true, System.currentTimeMillis());
                 }
                 for (gq.a aVar : this.f446b.values()) {

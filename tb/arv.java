@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.f;
@@ -66,7 +66,7 @@ public abstract class arv implements arw {
             return;
         }
         String eventType = aURAEventIO.getEventType();
-        if (TextUtils.isEmpty(eventType)) {
+        if (StringUtils.isEmpty(eventType)) {
             arc.a().c(getClass().getSimpleName(), "handleEvent", "eventType is empty");
         } else if (aURAEventIO.getEventModel() == null) {
             arc.a().c(getClass().getSimpleName(), "handleEvent", "AURAEventModel is null");

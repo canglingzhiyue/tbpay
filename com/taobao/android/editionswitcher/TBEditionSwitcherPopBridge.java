@@ -2,7 +2,7 @@ package com.taobao.android.editionswitcher;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,13 +53,13 @@ public class TBEditionSwitcherPopBridge extends android.taobao.windvane.jsbridge
             return ((Boolean) ipChange.ipc$dispatch("adf6251b", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         String str2 = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str2 = JSONObject.parseObject(str).getString("switcherVersion");
             } catch (Exception unused) {
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TLog.loge("Page_Home", TAG, "switchToVersionValue is null");
             return true;
         } else if (k.a("switcherVersion", "standard_version").equals(str2)) {

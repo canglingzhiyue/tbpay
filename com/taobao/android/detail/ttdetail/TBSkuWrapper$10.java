@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import tb.xiz;
 
@@ -20,7 +20,7 @@ public class TBSkuWrapper$10 extends JSONObject {
         String str3 = this.val$bottomMode;
         boolean z2 = this.val$isDonate;
         putAll(c.$ipChange);
-        if (!TextUtils.isEmpty(this.val$skuId)) {
+        if (!StringUtils.isEmpty(this.val$skuId)) {
             put("id_biz_property", new JSONObject() { // from class: com.taobao.android.detail.ttdetail.TBSkuWrapper$10.1
                 {
                     put("skuId", (Object) TBSkuWrapper$10.this.val$skuId);
@@ -39,7 +39,7 @@ public class TBSkuWrapper$10 extends JSONObject {
         });
         c cVar3 = this.this$0;
         String str4 = c.$ipChange;
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             put("quantity", (Object) str4);
         }
         put(xiz.NAME, new JSONObject() { // from class: com.taobao.android.detail.ttdetail.TBSkuWrapper$10.3

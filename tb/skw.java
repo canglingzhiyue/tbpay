@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
@@ -249,7 +249,7 @@ public class skw implements skx {
         }
         this.n++;
         int i3 = this.n;
-        String rawId = TextUtils.isEmpty(this.c.getRawId()) ? sessionParams.d : this.c.getRawId();
+        String rawId = StringUtils.isEmpty(this.c.getRawId()) ? sessionParams.d : this.c.getRawId();
         if (!this.l) {
             rawId = sov.a(this.f33668a);
         }
@@ -279,7 +279,7 @@ public class skw implements skx {
                 c.a a4 = slq.a(sessionParams, tab3ComponentSource, false, false, str5);
                 str = "IRecommendRequestManager";
                 z4 = true;
-                a4.a(true).d(!TextUtils.isEmpty(i.j));
+                a4.a(true).d(!StringUtils.isEmpty(i.j));
                 c0494a2.c(JSON.toJSONString(a4.a())).b(a3);
                 str3 = str6;
             } else {
@@ -293,7 +293,7 @@ public class skw implements skx {
             if (!ogv.a(a2) || !i.s || z5) {
                 z4 = false;
             }
-            if (!z4 || TextUtils.isEmpty(i.b)) {
+            if (!z4 || StringUtils.isEmpty(i.b)) {
                 c0494a = c0494a2;
                 str2 = str4;
             } else {
@@ -317,12 +317,12 @@ public class skw implements skx {
         } else if (z) {
             a7.f(com.taobao.android.fluid.framework.data.remote.a.MTOP_BIZ_TOPIC_ICONSTREAM);
         } else {
-            a7.f(TextUtils.equals("normal", str5) ? com.taobao.android.fluid.framework.data.remote.a.MTOP_BIZ_TOPIC_NORMAL : com.taobao.android.fluid.framework.data.remote.a.MTOP_BIZ_TOPIC_REFRESH);
+            a7.f(StringUtils.equals("normal", str5) ? com.taobao.android.fluid.framework.data.remote.a.MTOP_BIZ_TOPIC_NORMAL : com.taobao.android.fluid.framework.data.remote.a.MTOP_BIZ_TOPIC_REFRESH);
         }
         a(i, z);
         StringBuilder sb2 = new StringBuilder();
         sb2.append("PickPreloadControllerNew,fetchContentDetail方法调用，needCacheRequest：");
-        sb2.append(TextUtils.isEmpty(str3) ? "false" : "true");
+        sb2.append(StringUtils.isEmpty(str3) ? "false" : "true");
         sb2.append(",contentId:");
         sb2.append(str2);
         spz.c(str, sb2.toString());
@@ -422,7 +422,7 @@ public class skw implements skx {
 
     private boolean a(sor sorVar, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d27fced0", new Object[]{this, sorVar, str})).booleanValue() : sorVar != null && !sorVar.p && !sorVar.q && TextUtils.equals(str, sorVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d27fced0", new Object[]{this, sorVar, str})).booleanValue() : sorVar != null && !sorVar.p && !sorVar.q && StringUtils.equals(str, sorVar.b);
     }
 
     public void a(d<Pair<com.taobao.android.fluid.framework.data.datamodel.a, MediaMixContentDetail>> dVar) {
@@ -458,9 +458,9 @@ public class skw implements skx {
             str = "1";
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("tab3_use_cache_from", TextUtils.isEmpty(str) ? null : str);
+        hashMap.put("tab3_use_cache_from", StringUtils.isEmpty(str) ? null : str);
         String str2 = "0";
-        hashMap.put("tab3_use_cache_data", TextUtils.equals("-1", str) ? str2 : "1");
+        hashMap.put("tab3_use_cache_data", StringUtils.equals("-1", str) ? str2 : "1");
         if (z) {
             str2 = "1";
         }
@@ -900,7 +900,7 @@ public class skw implements skx {
             }
             ((IContainerService) this.f33668a.getService(IContainerService.class)).getConfig().a((String) null);
         }
-        ((IContainerService) this.f33668a.getService(IContainerService.class)).setFirstCardFromRefresh(!TextUtils.equals(str, "normal"));
+        ((IContainerService) this.f33668a.getService(IContainerService.class)).setFirstCardFromRefresh(!StringUtils.equals(str, "normal"));
         this.t = str;
         com.taobao.android.fluid.business.usertrack.track.b.d(this.f33668a, str);
         IPreCacheService iPreCacheService = (IPreCacheService) this.f33668a.getService(IPreCacheService.class);

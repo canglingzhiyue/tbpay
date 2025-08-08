@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.business.videocollection.poplayer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.oeb;
@@ -49,7 +49,7 @@ public class b {
 
     public static boolean g() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[0])).booleanValue() : oec.a((Object) Boolean.valueOf(TextUtils.equals(oeb.b("AB_fullscreenpage_android.collection_native.version", "1"), "2")), false);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[0])).booleanValue() : oec.a((Object) Boolean.valueOf(StringUtils.equals(oeb.b("AB_fullscreenpage_android.collection_native.version", "1"), "2")), false);
     }
 
     public static boolean h() {

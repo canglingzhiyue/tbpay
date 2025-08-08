@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.engine.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -78,14 +78,14 @@ public class b {
                         } catch (Exception e) {
                             UnifyLog.d("DataUtils", "get jsonArray exception: " + e.getMessage());
                         }
-                    } else if (!TextUtils.isEmpty(str4)) {
+                    } else if (!StringUtils.isEmpty(str4)) {
                         obj = ((JSONObject) obj).get(str4);
                     }
                 }
                 map = obj;
             } else {
                 map = jSONObject;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     map = jSONObject.get(str2);
                 }
             }
@@ -134,7 +134,7 @@ public class b {
         if (split2.length > 0) {
             jSONObject2.put(split2[split2.length - 1], (Object) map);
             UnifyLog.c("DataUtils", "merge data: " + split2[split2.length - 1] + "->" + map);
-        } else if (!TextUtils.isEmpty(str3)) {
+        } else if (!StringUtils.isEmpty(str3)) {
             jSONObject2.put(str3, (Object) map);
             UnifyLog.c("DataUtils", "merge data: " + str3 + "->" + map);
         } else if (map instanceof Map) {

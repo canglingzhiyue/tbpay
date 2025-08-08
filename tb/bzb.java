@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.ta.utdid2.device.UTDevice;
 import java.util.Locale;
@@ -238,7 +238,7 @@ public class bzb {
         }
         String d2 = d();
         d = d2;
-        return TextUtils.isEmpty(d2) ? "unknown" : d;
+        return StringUtils.isEmpty(d2) ? "unknown" : d;
     }
 
     public static String f(Context context) {

@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import com.alipay.android.app.template.EventHandler;
@@ -528,7 +528,7 @@ public class BirdNestEngine {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2e18a168", new Object[]{this, params, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.d == null) {
                 this.d = new ConcurrentHashMap();
@@ -1035,7 +1035,7 @@ public class BirdNestEngine {
                 return (String) ipChange.ipc$dispatch("f1ec9696", new Object[]{this});
             }
             String str = this.tplHtml;
-            return (TextUtils.isEmpty(str) || TextUtils.equals("{}", str)) ? this.tplJson : str;
+            return (StringUtils.isEmpty(str) || StringUtils.equals("{}", str)) ? this.tplJson : str;
         }
 
         public BirdNestEngine getEngine() {
@@ -1096,7 +1096,7 @@ public class BirdNestEngine {
             return (FBContext) ipChange.ipc$dispatch("6833a20f", new Object[]{this, params});
         }
         String str = params.tplHtml;
-        if (TextUtils.isEmpty(str) || TextUtils.equals("{}", str)) {
+        if (StringUtils.isEmpty(str) || StringUtils.equals("{}", str)) {
             str = params.tplJson;
         } else {
             i = 0;

@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.network.grs.local.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.taobao.android.launcher.bootstrap.tao.ability.dispatch.Dispatchers;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class c {
     private List<b> c = new ArrayList(16);
 
     public d a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Logger.w(Dispatchers.TYPE_SERVICE, "In servings.getServing(String groupId), the groupId is Empty or null");
             return null;
         }
@@ -29,7 +29,7 @@ public class c {
     }
 
     public void a(String str, d dVar) {
-        if (TextUtils.isEmpty(str) || dVar == null) {
+        if (StringUtils.isEmpty(str) || dVar == null) {
             return;
         }
         this.b.put(str, dVar);

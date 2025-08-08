@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.b;
@@ -75,7 +75,7 @@ public class fdy implements eon {
             return (Event) ipChange.ipc$dispatch("96c09beb", new Object[]{this, actionModel, bVar});
         }
         JSONObject jSONObject = actionModel.params;
-        if (jSONObject.containsKey("iconType") && !TextUtils.isEmpty(jSONObject.getString("iconType"))) {
+        if (jSONObject.containsKey("iconType") && !StringUtils.isEmpty(jSONObject.getString("iconType"))) {
             int parseInt = Integer.parseInt(jSONObject.getString("iconType"));
             if (parseInt == 1) {
                 return new eoi(TitleViewModel.ShareType.SHARE_TYPE_DEFAULT, actionModel.params);

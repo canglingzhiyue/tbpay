@@ -2,7 +2,7 @@ package com.taobao.umipublish.extension.windvane.abilities;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.photo.b;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -133,7 +133,7 @@ public class InsertContentListTopAbility extends BaseAbility {
             return (JSONObject) ipChange.ipc$dispatch("a5543672", new Object[]{this, jSONObject, str});
         }
         JSONObject jSONObject2 = new JSONObject();
-        jSONObject2.put("contentId", (Object) (TextUtils.equals("success", str) ? b(jSONObject) : null));
+        jSONObject2.put("contentId", (Object) (StringUtils.equals("success", str) ? b(jSONObject) : null));
         jSONObject2.put("failedDraftInfo", (Object) new JSONObject());
         jSONObject2.put("type", (Object) "video");
         jSONObject2.put("publishInfo", (Object) a(jSONObject));

@@ -3,7 +3,7 @@ package com.taobao.android.tbuprofen.adapter;
 import android.content.Context;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ha.bizerrorreporter.module.AggregationType;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -168,7 +168,7 @@ public class e extends com.taobao.android.tbuprofen.log.a {
             HashMap hashMap = new HashMap();
             hashMap.put("BlockType", str);
             hashMap.put("BlockTime", Integer.valueOf(i));
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put("HeldThread", str2);
             }
             a("HA_MAIN_LONG_WAIT", hashMap, mainThreadWaitTimeoutException, Looper.getMainLooper().getThread());
@@ -205,7 +205,7 @@ public class e extends com.taobao.android.tbuprofen.log.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         try {

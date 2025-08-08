@@ -3,7 +3,7 @@ package com.alibaba.triver.triver_shop.tbsubscribe;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.ariver.app.api.App;
@@ -237,13 +237,13 @@ public class EmbedSubscribeView extends BaseEmbedView implements AppDestroyPoint
                             return;
                         }
                         JSONObject parseObject = JSON.parseObject(obj.toString());
-                        if (!TextUtils.equals(c.MSG_SHOP_FOLLOW_SETSTATUS, parseObject.getString("_msg_name"))) {
+                        if (!StringUtils.equals(c.MSG_SHOP_FOLLOW_SETSTATUS, parseObject.getString("_msg_name"))) {
                             return;
                         }
                         String string = parseObject.getString("status");
-                        if (TextUtils.equals("followed", string)) {
+                        if (StringUtils.equals("followed", string)) {
                             EmbedSubscribeView.access$000(EmbedSubscribeView.this).a((Object) null);
-                        } else if (!TextUtils.equals(c.MSG_UNFOLLOWED, string)) {
+                        } else if (!StringUtils.equals(c.MSG_UNFOLLOWED, string)) {
                         } else {
                             EmbedSubscribeView.access$000(EmbedSubscribeView.this).a((Object) null);
                         }
@@ -537,6 +537,6 @@ public class EmbedSubscribeView extends BaseEmbedView implements AppDestroyPoint
 
     private String e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this}) : TextUtils.isEmpty(this.d) ? "Page_DingYueShopIndexAll" : this.d;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this}) : StringUtils.isEmpty(this.d) ? "Page_DingYueShopIndexAll" : this.d;
     }
 }

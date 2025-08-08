@@ -1,6 +1,6 @@
 package com.taobao.android.purchase.core.address;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.iff;
 import tb.kge;
@@ -21,34 +21,34 @@ public class b {
         if (iffVar == null || newErrorDialogStructure == null) {
             return false;
         }
-        if (!TextUtils.isEmpty(newErrorDialogStructure.title)) {
+        if (!StringUtils.isEmpty(newErrorDialogStructure.title)) {
             iffVar.a(newErrorDialogStructure.title);
         }
-        if (!TextUtils.isEmpty(newErrorDialogStructure.subTitle)) {
+        if (!StringUtils.isEmpty(newErrorDialogStructure.subTitle)) {
             iffVar.b(newErrorDialogStructure.subTitle);
         }
-        if (!TextUtils.isEmpty(newErrorDialogStructure.msg)) {
+        if (!StringUtils.isEmpty(newErrorDialogStructure.msg)) {
             iffVar.c(newErrorDialogStructure.msg);
         }
-        if (!TextUtils.isEmpty(newErrorDialogStructure.image)) {
+        if (!StringUtils.isEmpty(newErrorDialogStructure.image)) {
             iffVar.d(newErrorDialogStructure.image);
         }
-        if (!TextUtils.isEmpty(newErrorDialogStructure.titleBgColor)) {
+        if (!StringUtils.isEmpty(newErrorDialogStructure.titleBgColor)) {
             iffVar.h(newErrorDialogStructure.titleBgColor);
         }
         if (newErrorDialogStructure.left != null) {
-            if (!TextUtils.isEmpty(newErrorDialogStructure.left.text)) {
+            if (!StringUtils.isEmpty(newErrorDialogStructure.left.text)) {
                 iffVar.f(newErrorDialogStructure.left.text);
             }
-            if (!TextUtils.isEmpty(newErrorDialogStructure.left.bgColor)) {
+            if (!StringUtils.isEmpty(newErrorDialogStructure.left.bgColor)) {
                 iffVar.i(newErrorDialogStructure.left.bgColor);
             }
         }
         if (newErrorDialogStructure.right != null) {
-            if (!TextUtils.isEmpty(newErrorDialogStructure.right.text)) {
+            if (!StringUtils.isEmpty(newErrorDialogStructure.right.text)) {
                 iffVar.g(newErrorDialogStructure.right.text);
             }
-            if (!TextUtils.isEmpty(newErrorDialogStructure.right.bgColor)) {
+            if (!StringUtils.isEmpty(newErrorDialogStructure.right.bgColor)) {
                 iffVar.j(newErrorDialogStructure.right.bgColor);
             }
         }

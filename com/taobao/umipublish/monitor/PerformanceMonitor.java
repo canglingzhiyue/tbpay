@@ -1,6 +1,6 @@
 package com.taobao.umipublish.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.zoloz.hardware.camera.preview.utils.SPManager;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -144,7 +144,7 @@ public class PerformanceMonitor {
             return;
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str4)) {
             jSONObject.put(str3, (Object) str4);
         }
         a(str, str2, RateNode.TAG, String.valueOf(z ? 1 : 0), jSONObject);
@@ -185,7 +185,7 @@ public class PerformanceMonitor {
             return;
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             jSONObject.put("extra", (Object) str3);
         }
         a(str, str2, j, z, jSONObject);

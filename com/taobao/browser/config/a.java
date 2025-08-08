@@ -1,7 +1,7 @@
 package com.taobao.browser.config;
 
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.utils.f;
 import java.util.Map;
@@ -58,7 +58,7 @@ public class a implements android.taobao.windvane.config.b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         JSONObject jSONObject = null;

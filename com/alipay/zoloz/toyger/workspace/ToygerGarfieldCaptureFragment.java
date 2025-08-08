@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -201,7 +201,7 @@ public class ToygerGarfieldCaptureFragment extends ToygerCaptureFragment {
         this.garfieldFace = (ImageView) this.mContentView.findViewById(R.id.garfield_face);
         this.mUploadProgressBar = (GarfieldUploadProgressBar) this.mContentView.findViewById(R.id.zoloz_back_progress);
         this.garfield_phone_updown = (GarfieldPhoneUpDown) this.mContentView.findViewById(R.id.toyger_phone_updown);
-        if (!TextUtils.isEmpty(this.sceneText)) {
+        if (!StringUtils.isEmpty(this.sceneText)) {
             this.garfieldSceneText.setText(this.sceneText);
         } else {
             this.sceneText = this.garfieldSceneText.getText().toString();

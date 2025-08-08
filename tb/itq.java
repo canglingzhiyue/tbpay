@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -93,7 +93,7 @@ public class itq implements FoldPosture.a, IApmEventListener, huo {
             create.addDimension("isInMagicWindowMode");
             AppMonitor.register("auto_size", "auto_size_device_fold_use_stat", MeasureSet.create(), create);
             for (Map.Entry<String, Object> entry : e.f.entrySet()) {
-                if (!"isInMagicWindowMode".equals(entry.getKey()) && !TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+                if (!"isInMagicWindowMode".equals(entry.getKey()) && !StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                     DimensionValueSet create2 = DimensionValueSet.create();
                     create2.setValue("ues_type", entry.getKey());
                     create2.setValue("cost", String.valueOf(entry.getValue()));

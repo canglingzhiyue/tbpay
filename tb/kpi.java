@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.fansClub.FansClubResponse;
@@ -79,7 +79,7 @@ public class kpi extends a implements d {
             this.e = new com.taobao.android.live.plugin.atype.flexalocal.good.business.fansClub.a(this);
         }
         String str = videoInfo.broadCaster.encodeAccountId;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.e.a(str);

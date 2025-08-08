@@ -2,7 +2,7 @@ package com.taobao.search.musie;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -112,7 +112,7 @@ public final class MUSObservableValueModule extends MUSModule {
         }
         kotlin.jvm.internal.q.c(params, "params");
         String namespace = params.getString("namespace");
-        if (TextUtils.isEmpty(namespace)) {
+        if (StringUtils.isEmpty(namespace)) {
             return;
         }
         int intValue = params.getIntValue("maxSize");

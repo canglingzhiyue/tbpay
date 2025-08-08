@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Iterator;
 import java.util.List;
@@ -25,7 +25,7 @@ public final class alh {
             return false;
         }
         String b = b();
-        return !TextUtils.isEmpty(b) && b.equals(alf.f25418a.getPackageName());
+        return !StringUtils.isEmpty(b) && b.equals(alf.f25418a.getPackageName());
     }
 
     public static String b() {
@@ -34,9 +34,9 @@ public final class alh {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
         Application application = alf.f25418a;
-        if (TextUtils.isEmpty(f25420a)) {
+        if (StringUtils.isEmpty(f25420a)) {
             String c = c();
-            if (TextUtils.isEmpty(c) && application != null) {
+            if (StringUtils.isEmpty(c) && application != null) {
                 c = a(application);
             }
             f25420a = c;

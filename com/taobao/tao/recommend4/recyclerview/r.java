@@ -1,7 +1,7 @@
 package com.taobao.tao.recommend4.recyclerview;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -110,9 +110,9 @@ public class r extends RecyclerView.OnScrollListener {
             JSONObject a3 = hVar.a(i2);
             if ((a3 instanceof SectionModel) && (mo1097getItem = (sectionModel = (SectionModel) a3).mo1097getItem()) != null && (jSONObject = mo1097getItem.getJSONObject("0")) != null && (jSONObject2 = jSONObject.getJSONObject("ext")) != null) {
                 String string = jSONObject2.getString(DinamicxNativeConfig.TARGETTYPE);
-                if (TextUtils.equals(string, "newDetail")) {
+                if (StringUtils.equals(string, "newDetail")) {
                     list.add(sectionModel);
-                } else if (TextUtils.equals(string, com.taobao.infoflow.taobao.subservice.biz.nextpageoptimizeservice.impl.preload.model.a.TARGET_TYPE_LITE_DETAIL)) {
+                } else if (StringUtils.equals(string, com.taobao.infoflow.taobao.subservice.biz.nextpageoptimizeservice.impl.preload.model.a.TARGET_TYPE_LITE_DETAIL)) {
                     list2.add(sectionModel);
                 }
             }

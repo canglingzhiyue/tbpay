@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public class b {
         ContentBusinessModel contentBusinessModel = this.b;
         contentBusinessModel.source = "1";
         contentBusinessModel.tcpBid = a2.get(TCP_BID);
-        if (!TextUtils.isEmpty(this.b.tcpBid)) {
+        if (!StringUtils.isEmpty(this.b.tcpBid)) {
             this.b.ct = a2.get(CT);
             if (this.b.ct.equals("1")) {
                 this.b.itemId = a2.get("itemId");
@@ -77,7 +77,7 @@ public class b {
         }
         String format = String.format(NavUrls.nav_urls_detail[3], this.b.itemId);
         Nav.from(context).toUri(format + "?" + c.a(a2));
-        if (!TextUtils.isDigitsOnly(this.b.itemId)) {
+        if (!StringUtils.isDigitsOnly(this.b.itemId)) {
             return;
         }
         new a().a(this.b, null);

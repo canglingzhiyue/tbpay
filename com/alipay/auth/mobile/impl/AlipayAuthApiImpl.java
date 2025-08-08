@@ -7,7 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.auth.mobile.api.IAlipayAuthAPI;
 import com.alipay.auth.mobile.api.IAlipayAuthEventHandler;
 import com.alipay.auth.mobile.api.IAlipayAuthMonitor;
@@ -114,7 +114,7 @@ public class AlipayAuthApiImpl implements IAlipayAuthAPI {
                 boolean z = extras.getBoolean("success");
                 int i = extras.getInt(AlipayAuthConstant.AuthState.AUTH_STATE_KEY);
                 MonitorAlipayAuth.getInstance().monitorAlipayAuth(this.b, "AliPayAuth_CanHandleCallback");
-                if (z && !TextUtils.isEmpty(string3)) {
+                if (z && !StringUtils.isEmpty(string3)) {
                     iAlipayAuthEventHandler.alipayAuthSuccess(string3);
                     LoggerUtils.d("AlipayAuthApiImpl", "get authToken success");
                     new Properties().put("authToken", string3);
@@ -127,7 +127,7 @@ public class AlipayAuthApiImpl implements IAlipayAuthAPI {
                     iAlipayAuthEventHandler.alipayAuthDidCancel();
                     LoggerUtils.d("AlipayAuthApiImpl", "user change account");
                     MonitorAlipayAuth.getInstance().monitorAlipayAuth(this.b, "AliPayAuth_CallbackCancel");
-                } else if (TextUtils.isEmpty(string3)) {
+                } else if (StringUtils.isEmpty(string3)) {
                     iAlipayAuthEventHandler.alipayAuthFailure();
                     LoggerUtils.d("AlipayAuthApiImpl", "token is empty");
                     MonitorAlipayAuth.getInstance().monitorAlipayAuth(this.b, "AliPayAuth_CallbackError");
@@ -156,7 +156,7 @@ public class AlipayAuthApiImpl implements IAlipayAuthAPI {
             if (!isAlipayAppSurpportAPI()) {
                 throw new PreAlipayAuthException("alipay auth api not support");
             }
-            if (activity == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
+            if (activity == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4)) {
                 throw new AlipayAuthIllegalArgumentException("one or some must need param is null");
             }
             Properties properties = new Properties();

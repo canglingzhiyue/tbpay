@@ -7,7 +7,7 @@ import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.StatusBarNotification;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ih;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -85,7 +85,7 @@ public class at {
         Notification notification2;
         String str;
         String c = ax.c(notification);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             str = "group auto not extract pkg from notification:" + i;
         } else {
             List<StatusBarNotification> a2 = a(aw.a(context, c));
@@ -99,7 +99,7 @@ public class at {
                 }
                 for (Map.Entry<String, a> entry : hashMap.entrySet()) {
                     String key = entry.getKey();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         a value = entry.getValue();
                         if (z && key.equals(b2) && !m2286b(notification)) {
                             (m2285a(notification) ? value.b : value.f931a).add(new b(i, notification));
@@ -133,7 +133,7 @@ public class at {
     private void a(Context context, String str, String str2, Notification notification) {
         Notification.Builder defaults;
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("group show summary group is null");
                 return;
             }
@@ -210,7 +210,7 @@ public class at {
     private void b(Context context, int i, Notification notification) {
         String str;
         String c = ax.c(notification);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             str = "group restore not extract pkg from notification:" + i;
         } else {
             aw a2 = aw.a(context, c);

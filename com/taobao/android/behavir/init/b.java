@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.decision.BHRDecisionEngine;
@@ -212,7 +212,7 @@ public class b {
                 String stringExtra = intent.getStringExtra("schemeId");
                 String stringExtra2 = intent.getStringExtra("bizId");
                 JSONObject jSONObject = (JSONObject) intent.getSerializableExtra("ext");
-                if (TextUtils.isEmpty(stringExtra) || TextUtils.isEmpty(stringExtra2)) {
+                if (StringUtils.isEmpty(stringExtra) || StringUtils.isEmpty(stringExtra2)) {
                     return;
                 }
                 BHREvent buildInternalEvent = BHREvent.buildInternalEvent(stringExtra, stringExtra2, String.valueOf(com.taobao.android.ucp.util.b.a()), true);

@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.preload.dwinstance;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -445,7 +445,7 @@ public class PreRenderDWInstance {
         };
         this.mTNodeView.addUpperView(f, layoutParams, 50, aVar);
         spz.c(TAG, "[preloadvideo] videoview surface addUpperView... ");
-        if (this.mPreloadVideoData.n != null || (!TextUtils.isEmpty(this.mPreloadVideoData.m) && z)) {
+        if (this.mPreloadVideoData.n != null || (!StringUtils.isEmpty(this.mPreloadVideoData.m) && z)) {
             TUrlImageView tUrlImageView = new TUrlImageView(context);
             if (this.mPreloadVideoData.n != null) {
                 tUrlImageView.setImageDrawable(this.mPreloadVideoData.n);

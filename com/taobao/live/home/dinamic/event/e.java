@@ -1,7 +1,7 @@
 package com.taobao.live.home.dinamic.event;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class e extends h {
                 Object obj = objArr.length >= 3 ? objArr[2] : null;
                 if (objArr.length >= 4) {
                     String str5 = (String) objArr[3];
-                    if (!TextUtils.isEmpty(str5)) {
+                    if (!StringUtils.isEmpty(str5)) {
                         str2 = str5;
                     }
                 }
@@ -82,7 +82,7 @@ public class e extends h {
                     str3 = (String) objArr[5];
                 }
                 if (jSONObject != null) {
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         a(str2, jSONObject.getString("name"), jSONObject.getString("params"));
                     } else {
                         a(str2, jSONObject.getString("name"), jSONObject.getString("params") + ",trackInfo=" + str3);
@@ -94,7 +94,7 @@ public class e extends h {
             String str6 = objArr.length >= 2 ? (String) objArr[1] : str3;
             if (objArr.length >= 3) {
                 String str7 = (String) objArr[2];
-                if (!TextUtils.isEmpty(str7)) {
+                if (!StringUtils.isEmpty(str7)) {
                     str2 = str7;
                 }
             }
@@ -114,7 +114,7 @@ public class e extends h {
                         string = "singleLiveTabSessionId=" + str3;
                     }
                 }
-                if (TextUtils.isEmpty(str8)) {
+                if (StringUtils.isEmpty(str8)) {
                     a(str2, jSONObject.getString("name"), string);
                 } else {
                     a(str2, jSONObject.getString("name"), string + ",trackInfo=" + str8);
@@ -148,7 +148,7 @@ public class e extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             a(str, str2, tip.a(str3));
         }
@@ -158,7 +158,7 @@ public class e extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("84162689", new Object[]{str, str2, map});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = new UTHitBuilders.UTControlHitBuilder(str, "Button-" + str2);
             if (map != null && !map.isEmpty()) {

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class HttpUrlHeader implements Serializable {
         Header[] allHeaders = this.headergroup.getAllHeaders();
         HeaderMap headerMap = new HeaderMap(allHeaders.length);
         for (Header header : allHeaders) {
-            if (TextUtils.isEmpty((String) headerMap.get(header.getName()))) {
+            if (StringUtils.isEmpty((String) headerMap.get(header.getName()))) {
                 headerMap.put((HeaderMap) header.getName(), header.getValue());
             }
         }
@@ -107,7 +107,7 @@ public class HttpUrlHeader implements Serializable {
         while (it.hasNext()) {
             Header nextHeader = it.nextHeader();
             String name = nextHeader.getName();
-            if (TextUtils.isEmpty(name)) {
+            if (StringUtils.isEmpty(name)) {
                 name = "";
             }
             List list = (List) headerMap.get(name);

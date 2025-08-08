@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -367,7 +367,7 @@ public abstract class BaseFrame implements IComponent {
         if (ipChange instanceof IpChange) {
             return (IComponent) ipChange.ipc$dispatch("58361172", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.equals(getComponentName())) {
@@ -388,10 +388,10 @@ public abstract class BaseFrame implements IComponent {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("6b6e3610", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
-        if (TextUtils.equals(str, getComponentName())) {
+        if (StringUtils.equals(str, getComponentName())) {
             return getComponentView();
         }
         for (IComponent iComponent : this.mComponents) {

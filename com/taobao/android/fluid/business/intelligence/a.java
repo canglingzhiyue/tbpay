@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.business.intelligence;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -160,7 +160,7 @@ public final class a extends ptk implements SceneContext.a, snd, svn.c {
         }
         try {
             this.m_ = ((ISceneConfigService) this.e.getService(ISceneConfigService.class)).getSessionParams().c;
-            if (TextUtils.isEmpty(this.m_)) {
+            if (StringUtils.isEmpty(this.m_)) {
                 this.m_ = "fluid";
             }
             d();

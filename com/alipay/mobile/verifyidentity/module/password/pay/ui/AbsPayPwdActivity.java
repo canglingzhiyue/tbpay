@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -192,7 +192,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         Bundle extras = intent.getExtras();
         if (extras.getBoolean(PayPwdModule.PWD_FROM_MSP, false)) {
             this.mTimestamp = extras.getString("timestamp");
-            if (TextUtils.isEmpty(this.mTimestamp)) {
+            if (StringUtils.isEmpty(this.mTimestamp)) {
                 this.mTimestamp = "";
             }
             this.predata = extras.getString("predata");
@@ -203,7 +203,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             return;
         }
         this.pwdTopTip = extras.getString("pwdTopTip");
-        if (!TextUtils.isEmpty(this.pwdTopTip)) {
+        if (!StringUtils.isEmpty(this.pwdTopTip)) {
             if (this.isNewPwdUi) {
                 showNewToast(this, this.pwdTopTip, 0);
             } else {
@@ -211,13 +211,13 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             }
         }
         String string = getIntent().getExtras().getString("pwd_PASS");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.passTip = string;
         } else {
             this.passTip = getResources().getString(R.string.pwd_verify_success);
         }
         String string2 = getIntent().getExtras().getString("loadingTip");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             this.verifyingTip = string2;
         }
         if ("MYBANK".equalsIgnoreCase(extras.getString("VI_PWD_SCENE"))) {
@@ -233,11 +233,11 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             this.mIsLogicInterrupted = true;
             final String string3 = extras.getString("addPpwUrl");
             String string4 = extras.getString("addPPWText");
-            if (TextUtils.isEmpty(string4) || PlatformUtils.isAlipay(this)) {
+            if (StringUtils.isEmpty(string4) || PlatformUtils.isAlipay(this)) {
                 string4 = getResources().getString(R.string.no_pwd);
             }
             String str2 = string4;
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 alert("", str2, getResources().getString(R.string.verifyidentity_confirm), new DialogInterface.OnClickListener() { // from class: com.alipay.mobile.verifyidentity.module.password.pay.ui.AbsPayPwdActivity.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -292,7 +292,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             }
         }
         this.mTimestamp = extras.getString("timestamp");
-        if (TextUtils.isEmpty(this.mTimestamp)) {
+        if (StringUtils.isEmpty(this.mTimestamp)) {
             this.mTimestamp = "";
         }
         this.predata = extras.getString("predata");
@@ -307,7 +307,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mPubKey = PubKeyHelper.getPubKey(this);
             } else {
                 this.mPubKey = str;
@@ -491,7 +491,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         } else {
             String str = f5929a;
             VerifyLogCat.d(str, "unhandled error " + this.b.verifyCode);
-            toast(TextUtils.isEmpty(this.b.verifyMessage) ? getResources().getString(R.string.verifyidentity_wrong_data) : this.b.verifyMessage, 0);
+            toast(StringUtils.isEmpty(this.b.verifyMessage) ? getResources().getString(R.string.verifyidentity_wrong_data) : this.b.verifyMessage, 0);
             doNextStep();
         }
     }
@@ -562,7 +562,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         } else {
             String str = f5929a;
             VerifyLogCat.d(str, "unhandled error " + mICRpcResponse.verifyCode);
-            toast(TextUtils.isEmpty(mICRpcResponse.verifyMessage) ? getResources().getString(R.string.verifyidentity_wrong_data) : mICRpcResponse.verifyMessage, 0);
+            toast(StringUtils.isEmpty(mICRpcResponse.verifyMessage) ? getResources().getString(R.string.verifyidentity_wrong_data) : mICRpcResponse.verifyMessage, 0);
             doNextStep();
         }
     }
@@ -595,7 +595,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         String str2 = f5929a;
         VerifyLogCat.i(str2, "cancel [subcode]: " + str);
         DefaultModuleResult defaultModuleResult = new DefaultModuleResult("1003");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (defaultModuleResult.getExtInfo() == null) {
                 defaultModuleResult.setExtInfo(new HashMap<>());
             }
@@ -613,7 +613,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             this.isMultiModeActionTriggered = true;
             try {
                 enableMultiTask(f);
-                if (!TextUtils.isEmpty(this.sceneId)) {
+                if (!StringUtils.isEmpty(this.sceneId)) {
                     this.uriToGetBackPwd += "^" + this.sceneId;
                 }
                 VerifyLogCat.i(f5929a, "[uriToGetBackPwd]: " + this.uriToGetBackPwd);
@@ -621,7 +621,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
                 Context context = this.mMicroModuleContext.getContext();
                 if (context != null) {
                     String packageName = context.getPackageName();
-                    if (!TextUtils.isEmpty(packageName) && packageName.startsWith(MspGlobalDefine.PACKAGE_AFWEALTH)) {
+                    if (!StringUtils.isEmpty(packageName) && packageName.startsWith(MspGlobalDefine.PACKAGE_AFWEALTH)) {
                         parse = Uri.parse("afwealth://platformapi/startapp?appId=20000013&preAuth=YES");
                     }
                 }
@@ -656,7 +656,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fcbf817a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.sourceToPwd)) {
+        if (StringUtils.isEmpty(this.sourceToPwd)) {
             return this.mModule.getModuleName();
         }
         return this.sourceToPwd;
@@ -823,13 +823,13 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         hashMap.put("module", getLogicModuleName());
         hashMap.put("code", str2);
         hashMap.put("source", str3);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put("from", str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             hashMap.put("sourceToPwd", str5);
         }
-        if (!TextUtils.isEmpty(getIntent().getExtras().getString("decisionToPwd"))) {
+        if (!StringUtils.isEmpty(getIntent().getExtras().getString("decisionToPwd"))) {
             hashMap.put("plusPwdType", "pwd");
         } else {
             hashMap.put("plusPwdType", "plus_pwd");

@@ -2,7 +2,7 @@ package com.taobao.tao.shop.fetcher.adapter;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.accessibility.AccessibilityManager;
 import com.alibaba.fastjson.JSONArray;
@@ -139,7 +139,7 @@ public class b {
             return (List) ipChange.ipc$dispatch("abd71b8d", new Object[]{this});
         }
         String a2 = a("private_window_whitelist", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         String[] split = a2.split(",");
@@ -200,7 +200,7 @@ public class b {
         }
         JSONArray jSONArray = new JSONArray();
         String a2 = a(str, (String) null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return jSONArray;
         }
         try {

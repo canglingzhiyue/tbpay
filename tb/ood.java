@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.homepage.launcher.g;
@@ -33,7 +33,7 @@ public class ood {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.f32223a)) {
+        if (!StringUtils.isEmpty(this.f32223a)) {
             return this.f32223a;
         }
         return g.a().getSharedPreferences("home_buckets_key", 0).getString(HOME_BUCKETS, "");

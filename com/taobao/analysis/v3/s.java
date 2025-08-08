@@ -1,6 +1,6 @@
 package com.taobao.analysis.v3;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.alibaba.ut.abtest.internal.bucketing.model.ExperimentCognationPO;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class s {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String str2 = this.e.get(str);
-        return TextUtils.isEmpty(str2) ? str : str2;
+        return StringUtils.isEmpty(str2) ? str : str2;
     }
 
     private void b() {
@@ -150,7 +150,7 @@ public class s {
             return;
         }
         String b = oVar.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         String trim = b.trim();
@@ -174,7 +174,7 @@ public class s {
             return;
         }
         String b = oVar.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         String str = b.trim() + c;

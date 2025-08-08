@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -419,7 +419,7 @@ public class f {
                             JSONObject jSONObject3 = (JSONObject) a3;
                             if (jSONObject3.containsKey("filter")) {
                                 String string = jSONObject3.getString("filter");
-                                if (!TextUtils.isEmpty(string) && com.alibaba.android.ultron.engine.utils.h.a(f.d(f.this), string, jSONObject2)) {
+                                if (!StringUtils.isEmpty(string) && com.alibaba.android.ultron.engine.utils.h.a(f.d(f.this), string, jSONObject2)) {
                                     UnifyLog.d(f.TAG, "filter过滤掉了VO: " + key);
                                     arrayList.add(key);
                                 }
@@ -713,14 +713,14 @@ public class f {
         this.h.clear();
         a(bVar2, bVar);
         for (IDMComponent iDMComponent : list) {
-            if (TextUtils.equals("bottomBar", a(iDMComponent))) {
+            if (StringUtils.equals("bottomBar", a(iDMComponent))) {
                 arrayList2.add(iDMComponent);
                 this.n = iDMComponent;
             } else if (a(iDMComponent, "detailInfoUltron")) {
                 arrayList3.add(iDMComponent);
                 if (iDMComponent.getFields() != null) {
                     String string = iDMComponent.getFields().getString("locatorId");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         this.h.add(string);
                     }
                 }

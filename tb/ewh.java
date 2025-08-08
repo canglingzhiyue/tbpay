@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.node.NodeBundle;
 
@@ -24,7 +24,7 @@ public class ewh implements evu {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("54cea568", new Object[]{this, str, nodeBundle})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && nodeBundle != null) {
+        if (!StringUtils.isEmpty(str) && nodeBundle != null) {
             int a2 = ewy.a(str);
             if (a2 != 30004) {
                 if (a2 == 30008) {
@@ -32,7 +32,7 @@ public class ewh implements evu {
                 } else if (a2 == 30011) {
                     return !(nodeBundle.resourceNode == null || nodeBundle.resourceNode.shopPromotions == null || nodeBundle.resourceNode.shopPromotions.isEmpty()) || !(nodeBundle.priceNode == null || nodeBundle.priceNode.shopPromotions == null || nodeBundle.priceNode.shopPromotions.isEmpty()) || (nodeBundle.itemNode != null && nodeBundle.itemNode.itemPoint > 0);
                 } else if (a2 == 30012) {
-                    return nodeBundle.itemNode != null && !TextUtils.isEmpty(nodeBundle.itemNode.skuText);
+                    return nodeBundle.itemNode != null && !StringUtils.isEmpty(nodeBundle.itemNode.skuText);
                 } else if (a2 == 30014) {
                     return (nodeBundle.rateNode == null || nodeBundle.rateNode.keywords == null || nodeBundle.rateNode.keywords.isEmpty()) ? false : true;
                 } else if (a2 != 30015) {

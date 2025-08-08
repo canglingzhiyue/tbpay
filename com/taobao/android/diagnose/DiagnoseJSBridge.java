@@ -2,7 +2,7 @@ package com.taobao.android.diagnose;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.x;
@@ -59,7 +59,7 @@ public class DiagnoseJSBridge extends android.taobao.windvane.jsbridge.e {
         try {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("bizName", "");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 wVCallBackContext.error();
                 return;
             }

@@ -9,7 +9,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidException;
 import com.alipay.mobile.common.logging.util.perf.Constants;
 import com.huawei.hms.android.SystemUtils;
@@ -27,10 +27,10 @@ public class Util {
     private static String d;
 
     public static int compareHmsVersion(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return 1;
         }
         if (StringUtil.checkVersion(str) && StringUtil.checkVersion(str2)) {
@@ -78,7 +78,7 @@ public class Util {
                 str2 = "In getAppName, Failed to get 'PackageManager' instance.";
             } else {
                 try {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = context.getPackageName();
                     }
                     CharSequence applicationLabel = packageManager.getApplicationLabel(packageManager.getApplicationInfo(str, 128));
@@ -108,7 +108,7 @@ public class Util {
             ApplicationInfo applicationInfo = packageManager.getPackageInfo(context.getPackageName(), 128).applicationInfo;
             if (applicationInfo != null && (bundle = applicationInfo.metaData) != null && (obj = bundle.get("com.huawei.hms.version")) != null) {
                 String valueOf = String.valueOf(obj);
-                if (!TextUtils.isEmpty(valueOf)) {
+                if (!StringUtils.isEmpty(valueOf)) {
                     return StringUtil.convertVersion2Integer(valueOf);
                 }
             }
@@ -135,15 +135,15 @@ public class Util {
     public static String getProductCountry() {
         int lastIndexOf;
         String systemProperties = getSystemProperties("ro.product.locale.region", "");
-        if (!TextUtils.isEmpty(systemProperties)) {
+        if (!StringUtils.isEmpty(systemProperties)) {
             return systemProperties;
         }
         String systemProperties2 = getSystemProperties("ro.product.locale", "");
-        if (!TextUtils.isEmpty(systemProperties2) && (lastIndexOf = systemProperties2.lastIndexOf("-")) != -1) {
+        if (!StringUtils.isEmpty(systemProperties2) && (lastIndexOf = systemProperties2.lastIndexOf("-")) != -1) {
             return systemProperties2.substring(lastIndexOf + 1);
         }
         String localCountry = SystemUtils.getLocalCountry();
-        return TextUtils.isEmpty(localCountry) ? "" : localCountry;
+        return StringUtils.isEmpty(localCountry) ? "" : localCountry;
     }
 
     public static String getServiceActionMetadata(Context context) {

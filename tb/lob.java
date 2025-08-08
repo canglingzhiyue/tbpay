@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,7 +36,7 @@ public class lob extends fuf {
             String valueOf2 = String.valueOf(objArr[1]);
             String valueOf3 = objArr.length >= 3 ? String.valueOf(objArr[2]) : null;
             BaseSectionModel<?> b = lfq.b(dXRuntimeContext);
-            if (b == null || !TextUtils.equals(valueOf, b.getSectionBizCode())) {
+            if (b == null || !StringUtils.equals(valueOf, b.getSectionBizCode())) {
                 ldf.d("DXDataParserHIconOverlayGetData", "not current widget!");
             } else {
                 JSONObject jSONObject = b.getExt().getJSONObject("clientCache");
@@ -50,7 +50,7 @@ public class lob extends fuf {
                 if (a2 != null) {
                     jSONObject.put(valueOf2, (Object) a2);
                 }
-                if (TextUtils.equals(valueOf3, "finish")) {
+                if (StringUtils.equals(valueOf3, "finish")) {
                     jSONObject.put("currentIndex", (Object) Integer.valueOf(i + 1));
                     a(a2, b.getArgs());
                 }
@@ -103,7 +103,7 @@ public class lob extends fuf {
             JSONObject jSONObject2 = a2.getJSONObject("item");
             if (jSONObject2 != null && jSONObject2.size() >= i) {
                 JSONObject jSONObject3 = jSONObject2.getJSONObject(String.valueOf(i));
-                return (jSONObject3 == null || TextUtils.equals(str, jSONObject3.getString("itemBizCode"))) ? a(i, jSONObject, jSONObject2, a2.getJSONObject("ext").getInteger("itemCount").intValue()) : jSONObject3;
+                return (jSONObject3 == null || StringUtils.equals(str, jSONObject3.getString("itemBizCode"))) ? a(i, jSONObject, jSONObject2, a2.getJSONObject("ext").getInteger("itemCount").intValue()) : jSONObject3;
             }
             ldf.d("DXDataParserHIconOverlayGetData", "no enough item!");
             return null;

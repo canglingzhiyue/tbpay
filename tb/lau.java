@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.l;
@@ -101,7 +101,7 @@ public class lau {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("switcherVersion");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "standard_version";
             }
             if (string.equals(this.f30437a)) {

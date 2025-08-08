@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.monitor.BandWidthSampler;
 import anet.channel.strategy.HttpDnsAdapter;
 import anetwork.channel.monitor.NetworkQualityMonitor;
@@ -51,7 +51,7 @@ public class f {
             host = Uri.parse(str).getHost();
         } catch (Throwable unused) {
         }
-        if (TextUtils.isEmpty(host)) {
+        if (StringUtils.isEmpty(host)) {
             return false;
         }
         if (!b.containsKey(host)) {
@@ -78,7 +78,7 @@ public class f {
         }
         try {
             String host = Uri.parse(str).getHost();
-            if (!TextUtils.isEmpty(host) && b.containsKey(host)) {
+            if (!StringUtils.isEmpty(host) && b.containsKey(host)) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TBAVNetworkUtils has got cached IP , host is :" + host + " IP is " + b.get(host));
                 return b.get(host);
             }
@@ -95,7 +95,7 @@ public class f {
         }
         try {
             String host = Uri.parse(str).getHost();
-            if (TextUtils.isEmpty(host)) {
+            if (StringUtils.isEmpty(host)) {
                 return;
             }
             b.put(host, str2);
@@ -113,7 +113,7 @@ public class f {
         }
         try {
             String host = Uri.parse(str).getHost();
-            if (TextUtils.isEmpty(host)) {
+            if (StringUtils.isEmpty(host)) {
                 return;
             }
             c.put(host, str2);
@@ -129,7 +129,7 @@ public class f {
         }
         try {
             String host = Uri.parse(str).getHost();
-            if (!TextUtils.isEmpty(host) && c.containsKey(host)) {
+            if (!StringUtils.isEmpty(host) && c.containsKey(host)) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TBAVNetworkUtils has got cached IP List , host is :" + host + " IPlist is " + c.get(host));
                 return c.get(host);
             }
@@ -208,7 +208,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cb0dec8a", new Object[]{ddfVar, context});
         }
-        if (ddfVar != null && !TextUtils.isEmpty(ddfVar.getNetworkStutas())) {
+        if (ddfVar != null && !StringUtils.isEmpty(ddfVar.getNetworkStutas())) {
             return ddfVar.getNetworkStutas();
         }
         if (context == null || context.getApplicationContext() == null || (activeNetworkInfo = ((ConnectivityManager) context.getApplicationContext().getSystemService("connectivity")).getActiveNetworkInfo()) == null || !activeNetworkInfo.isConnected()) {
@@ -255,7 +255,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fe76b79", new Object[]{ddfVar, context})).booleanValue();
         }
-        if (ddfVar != null && !TextUtils.isEmpty(ddfVar.getNetworkStutas())) {
+        if (ddfVar != null && !StringUtils.isEmpty(ddfVar.getNetworkStutas())) {
             return ddfVar.isConnected();
         }
         Context applicationContext = context.getApplicationContext();
@@ -274,7 +274,7 @@ public class f {
         Iterator<HttpDnsAdapter.HttpDnsOrigin> it = c(parse).iterator();
         while (it.hasNext()) {
             HttpDnsAdapter.HttpDnsOrigin next = it.next();
-            if (next != null && !TextUtils.isEmpty(next.getOriginIP()) && (!startsWith || TextUtils.isEmpty(parse.getScheme()) || parse.getScheme().equals(next.getOriginProtocol()))) {
+            if (next != null && !StringUtils.isEmpty(next.getOriginIP()) && (!startsWith || StringUtils.isEmpty(parse.getScheme()) || parse.getScheme().equals(next.getOriginProtocol()))) {
                 String originIP = next.getOriginIP();
                 if (z || !originIP.contains(":")) {
                     if (hashSet.add(originIP)) {
@@ -297,13 +297,13 @@ public class f {
             return a(parse);
         }
         ArrayList<HttpDnsAdapter.HttpDnsOrigin> c2 = c(parse);
-        if (c2 == null || c2.isEmpty() || c2.get(0) == null || TextUtils.isEmpty(c2.get(0).getOriginIP())) {
+        if (c2 == null || c2.isEmpty() || c2.get(0) == null || StringUtils.isEmpty(c2.get(0).getOriginIP())) {
             return null;
         }
         int size = c2.size();
         for (int i = 0; i < size; i++) {
             HttpDnsAdapter.HttpDnsOrigin httpDnsOrigin = c2.get(i);
-            if (httpDnsOrigin != null && !TextUtils.isEmpty(httpDnsOrigin.getOriginIP()) && ((!startsWith || parse.getScheme().equals(httpDnsOrigin.getOriginProtocol())) && !httpDnsOrigin.getOriginIP().contains(":"))) {
+            if (httpDnsOrigin != null && !StringUtils.isEmpty(httpDnsOrigin.getOriginIP()) && ((!startsWith || parse.getScheme().equals(httpDnsOrigin.getOriginProtocol())) && !httpDnsOrigin.getOriginIP().contains(":"))) {
                 return httpDnsOrigin;
             }
         }
@@ -321,12 +321,12 @@ public class f {
             return b(parse);
         }
         ArrayList<HttpDnsAdapter.HttpDnsOrigin> c2 = c(parse);
-        if (c2 == null || c2.isEmpty() || c2.get(0) == null || TextUtils.isEmpty(c2.get(0).getOriginIP())) {
+        if (c2 == null || c2.isEmpty() || c2.get(0) == null || StringUtils.isEmpty(c2.get(0).getOriginIP())) {
             return null;
         }
         int size = c2.size();
         for (int i = 0; i < size; i++) {
-            if (c2.get(i) != null && !TextUtils.isEmpty(c2.get(i).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(i).getOriginProtocol()))) {
+            if (c2.get(i) != null && !StringUtils.isEmpty(c2.get(i).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(i).getOriginProtocol()))) {
                 String originIP = c2.get(i).getOriginIP();
                 if (!originIP.contains(":")) {
                     return originIP;
@@ -347,22 +347,22 @@ public class f {
         ArrayList<HttpDnsAdapter.HttpDnsOrigin> c2 = c(parse);
         String str2 = null;
         if (z) {
-            if (c2 != null && !c2.isEmpty() && c2.get(0) != null && !TextUtils.isEmpty(c2.get(0).getOriginIP())) {
+            if (c2 != null && !c2.isEmpty() && c2.get(0) != null && !StringUtils.isEmpty(c2.get(0).getOriginIP())) {
                 for (int size = c2.size() - 1; size > 0; size--) {
-                    if (c2.get(size) != null && !TextUtils.isEmpty(c2.get(size).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(size).getOriginProtocol()))) {
+                    if (c2.get(size) != null && !StringUtils.isEmpty(c2.get(size).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(size).getOriginProtocol()))) {
                         sb.append(c2.get(size).getOriginIP());
                         break;
                     }
                 }
                 return c2.get(0).getOriginIP();
             }
-        } else if (c2 != null && !c2.isEmpty() && c2.get(0) != null && !TextUtils.isEmpty(c2.get(0).getOriginIP())) {
+        } else if (c2 != null && !c2.isEmpty() && c2.get(0) != null && !StringUtils.isEmpty(c2.get(0).getOriginIP())) {
             int size2 = c2.size();
             while (true) {
                 if (i >= size2) {
                     break;
                 }
-                if (c2.get(i) != null && !TextUtils.isEmpty(c2.get(i).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(i).getOriginProtocol()))) {
+                if (c2.get(i) != null && !StringUtils.isEmpty(c2.get(i).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(i).getOriginProtocol()))) {
                     String originIP = c2.get(i).getOriginIP();
                     if (!originIP.contains(":")) {
                         str2 = originIP;
@@ -376,9 +376,9 @@ public class f {
                 if (i2 <= 0) {
                     break;
                 }
-                if (c2.get(i2) != null && !TextUtils.isEmpty(c2.get(i2).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(i2).getOriginProtocol()))) {
+                if (c2.get(i2) != null && !StringUtils.isEmpty(c2.get(i2).getOriginIP()) && (!startsWith || parse.getScheme().equals(c2.get(i2).getOriginProtocol()))) {
                     String originIP2 = c2.get(i2).getOriginIP();
-                    if (!originIP2.contains(":") && !TextUtils.isEmpty(str2) && !str2.equals(originIP2)) {
+                    if (!originIP2.contains(":") && !StringUtils.isEmpty(str2) && !str2.equals(originIP2)) {
                         sb.append(originIP2);
                         break;
                     }

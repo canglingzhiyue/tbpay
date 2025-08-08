@@ -15,7 +15,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
@@ -368,7 +368,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
             }
             this.P = bundle2.getString("intgetitle");
             this.Q = bundle2.getString("intgedesc");
-            if (TextUtils.isEmpty(this.F)) {
+            if (StringUtils.isEmpty(this.F)) {
                 if ("1".equalsIgnoreCase(this.G)) {
                     this.F = CommonConstant.FINGERPRINT_PAY;
                 } else if ("4".equalsIgnoreCase(this.G)) {
@@ -416,7 +416,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                     }
                 };
             }
-            if (!TextUtils.isEmpty(bundle2.getString("tplId")) && !e.equalsIgnoreCase(bundle2.getString("tplId"))) {
+            if (!StringUtils.isEmpty(bundle2.getString("tplId")) && !e.equalsIgnoreCase(bundle2.getString("tplId"))) {
                 VerifyLogCat.i(f5977a, "inter tplId");
                 this.u.setVisibility(8);
                 this.s.setVisibility(0);
@@ -428,13 +428,13 @@ public class BioDetailActivity extends BaseVerifyActivity {
                 layoutParams.height = (i * 432) / 375;
                 this.s.setLayoutParams(layoutParams);
                 this.s.setBackgroundColor(Color.parseColor("#ffffff"));
-                if (!TextUtils.isEmpty(this.C.getString(e.KEY_BG_IMG))) {
+                if (!StringUtils.isEmpty(this.C.getString(e.KEY_BG_IMG))) {
                     a(this.C.getString(e.KEY_BG_IMG), "REG_PICTURE");
                 }
                 if (b.equalsIgnoreCase(bundle2.getString("tplId")) || c.equalsIgnoreCase(bundle2.getString("tplId"))) {
                     this.f.setBackgroundColor(Color.parseColor("#F5F5F9"));
                     this.q.setVisibility(0);
-                    if (!TextUtils.isEmpty(bundle2.getString("btnNormalColor")) && !TextUtils.isEmpty(bundle2.getString("btnPressedColor"))) {
+                    if (!StringUtils.isEmpty(bundle2.getString("btnNormalColor")) && !StringUtils.isEmpty(bundle2.getString("btnPressedColor"))) {
                         this.q.setBackgroundColor(Color.parseColor(bundle2.getString("btnNormalColor")));
                         final String string2 = bundle2.getString("btnNormalColor");
                         final String string3 = bundle2.getString("btnPressedColor");
@@ -461,7 +461,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                     } else {
                         this.q.setBackgroundResource(R.drawable.au_button_open);
                     }
-                    if (!TextUtils.isEmpty(bundle2.getString("bottomContent"))) {
+                    if (!StringUtils.isEmpty(bundle2.getString("bottomContent"))) {
                         this.q.setText(bundle2.getString("bottomContent"));
                     } else {
                         this.q.setText(getResources().getString(R.string.bio_open));
@@ -487,7 +487,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                             this.v.setClickable(false);
                         } else {
                             this.A.setVisibility(0);
-                            if (!TextUtils.isEmpty(string4) && !TextUtils.isEmpty(string5) && string4.contains(string5)) {
+                            if (!StringUtils.isEmpty(string4) && !StringUtils.isEmpty(string5) && string4.contains(string5)) {
                                 int indexOf = string4.indexOf(string5);
                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string4);
                                 spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.parseColor("#1677ff")), indexOf, string5.length() + indexOf, 33);
@@ -520,7 +520,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                     }
                     this.q.setVisibility(0);
                     this.m.setVisibility(0);
-                    if (TextUtils.isEmpty(bundle2.getString("bottomContent"))) {
+                    if (StringUtils.isEmpty(bundle2.getString("bottomContent"))) {
                         this.m.setText(getResources().getString(R.string.face_bottomContent));
                     } else {
                         this.m.setText(bundle2.getString("bottomContent"));
@@ -528,7 +528,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                     this.q.setText(getResources().getString(R.string.face_login_open));
                 }
                 this.B = false;
-            } else if (!TextUtils.isEmpty(bundle2.getString("code")) && !bundle2.getBoolean("isViewable")) {
+            } else if (!StringUtils.isEmpty(bundle2.getString("code")) && !bundle2.getBoolean("isViewable")) {
                 VerifyLogCat.i(f5977a, "inter code and not viewable");
                 this.f.setBackgroundColor(Color.parseColor("#F5F5F9"));
                 if ("1".equalsIgnoreCase(this.G)) {
@@ -552,7 +552,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                         LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) this.q.getLayoutParams();
                         layoutParams3.setMargins(42, 90, 42, 0);
                         this.q.setLayoutParams(layoutParams3);
-                        if (!TextUtils.isEmpty(this.J)) {
+                        if (!StringUtils.isEmpty(this.J)) {
                             this.q.setText(this.J);
                         } else if (CommonConstant.FINGERPRINT_PAY.equalsIgnoreCase(this.F)) {
                             this.q.setText(getResources().getString(R.string.finger_close));
@@ -566,7 +566,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                     VerifyLogCat.i(f5977a, "setOpenPage");
                     c();
                     this.q.setBackgroundResource(R.drawable.au_button_open);
-                    if (!TextUtils.isEmpty(this.J)) {
+                    if (!StringUtils.isEmpty(this.J)) {
                         this.q.setText(this.J);
                     } else {
                         this.q.setText(getResources().getString(R.string.bio_open));
@@ -576,8 +576,8 @@ public class BioDetailActivity extends BaseVerifyActivity {
                     this.B = false;
                     this.Y = "close";
                 }
-                if (!TextUtils.isEmpty(this.M) && !TextUtils.isEmpty(this.O)) {
-                    if (TextUtils.isEmpty(this.N)) {
+                if (!StringUtils.isEmpty(this.M) && !StringUtils.isEmpty(this.O)) {
+                    if (StringUtils.isEmpty(this.N)) {
                         this.N = "";
                     }
                     String str2 = this.N + this.O;
@@ -594,7 +594,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                             IpChange ipChange2 = $ipChange;
                             if (ipChange2 instanceof IpChange) {
                                 ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                            } else if (TextUtils.isEmpty(BioDetailActivity.e(BioDetailActivity.this)) || BioDetailActivity.this.isDoubleClick()) {
+                            } else if (StringUtils.isEmpty(BioDetailActivity.e(BioDetailActivity.this)) || BioDetailActivity.this.isDoubleClick()) {
                             } else {
                                 Bundle bundle3 = new Bundle();
                                 bundle3.putString("bicListUrl", BioDetailActivity.e(BioDetailActivity.this));
@@ -682,7 +682,7 @@ public class BioDetailActivity extends BaseVerifyActivity {
                 L8b:
                     java.lang.String r0 = "userId"
                     java.lang.String r1 = r10.getString(r0)
-                    boolean r1 = android.text.TextUtils.isEmpty(r1)
+                    boolean r1 = android.text.StringUtils.isEmpty(r1)
                     if (r1 != 0) goto Lac
                     com.alipay.mobile.verifyidentity.prodmanger.biopen.ui.BioDetailActivity r1 = com.alipay.mobile.verifyidentity.prodmanger.biopen.ui.BioDetailActivity.this
                     com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager r1 = com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager.getInstance(r1)
@@ -757,14 +757,14 @@ public class BioDetailActivity extends BaseVerifyActivity {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
         } else if ("Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.closeShowIntelligent)) || !this.S || "close".equalsIgnoreCase(this.Y)) {
         } else {
-            if (TextUtils.isEmpty(this.P)) {
+            if (StringUtils.isEmpty(this.P)) {
                 if (this.R) {
                     this.P = getResources().getString(R.string.intelligent_title_open);
                 } else {
                     this.P = getResources().getString(R.string.intelligent_title_close);
                 }
             }
-            if (TextUtils.isEmpty(this.Q)) {
+            if (StringUtils.isEmpty(this.Q)) {
                 if (this.R) {
                     this.Q = getResources().getString(R.string.intelligent_desc_open);
                 } else {
@@ -1184,10 +1184,10 @@ public class BioDetailActivity extends BaseVerifyActivity {
             bioDetailActivity.P = map.get("intelligentTitle");
             bioDetailActivity.Q = map.get("intelligentDesc");
         }
-        if (TextUtils.isEmpty(bioDetailActivity.P)) {
+        if (StringUtils.isEmpty(bioDetailActivity.P)) {
             bioDetailActivity.P = "";
         }
-        if (TextUtils.isEmpty(bioDetailActivity.Q)) {
+        if (StringUtils.isEmpty(bioDetailActivity.Q)) {
             bioDetailActivity.Q = "";
         }
         if (z) {

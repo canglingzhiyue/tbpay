@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -130,7 +130,7 @@ public class RemoteLoadingView extends FrameLayout {
             TextView textView = new TextView(getContext());
             textView.setTextColor(Color.parseColor("#111111"));
             textView.setTextSize(21.0f);
-            textView.setText((taopaiLoadConfig == null || TextUtils.isEmpty(taopaiLoadConfig.getTitle())) ? getContext().getString(R.string.pissarro_taopai) : taopaiLoadConfig.getTitle());
+            textView.setText((taopaiLoadConfig == null || StringUtils.isEmpty(taopaiLoadConfig.getTitle())) ? getContext().getString(R.string.pissarro_taopai) : taopaiLoadConfig.getTitle());
             textView.getPaint().setFakeBoldText(true);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
             layoutParams.gravity = 1;

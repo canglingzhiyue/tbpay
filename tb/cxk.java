@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -36,7 +36,7 @@ class cxk implements cxe {
     public String a(String str, String str2) {
         int identifier;
         String a2 = a(str);
-        if (!TextUtils.isEmpty(a2) && (identifier = this.f26585a.getResources().getIdentifier(a2, "string", this.b)) != 0) {
+        if (!StringUtils.isEmpty(a2) && (identifier = this.f26585a.getResources().getIdentifier(a2, "string", this.b)) != 0) {
             try {
                 return this.f26585a.getResources().getString(identifier);
             } catch (Resources.NotFoundException unused) {

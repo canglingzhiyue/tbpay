@@ -14,7 +14,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.mulitenv.EnvironmentSwitcher;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -74,11 +74,11 @@ public class a implements d.c {
                 String action = intent.getAction();
                 if (a.BROADCAST_ACTION.equalsIgnoreCase(action)) {
                     String stringExtra = intent.getStringExtra("result");
-                    if (TextUtils.isEmpty(stringExtra) || (parseObject = JSON.parseObject(stringExtra)) == null) {
+                    if (StringUtils.isEmpty(stringExtra) || (parseObject = JSON.parseObject(stringExtra)) == null) {
                         return;
                     }
                     String string = parseObject.getString("seqId");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
                     String string2 = parseObject.getString("data");
@@ -87,7 +87,7 @@ public class a implements d.c {
                         return;
                     }
                     a.this.g.remove(string);
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         dVar2.b.a(dVar2.f19949a, JSON.parse(string2));
                         return;
                     } else {
@@ -105,7 +105,7 @@ public class a implements d.c {
                 }
                 a aVar3 = a.this;
                 String str = (String) a.$ipChange.get(action);
-                if (TextUtils.isEmpty(str) || (dVar = a.this.g.get(str)) == null) {
+                if (StringUtils.isEmpty(str) || (dVar = a.this.g.get(str)) == null) {
                     return;
                 }
                 a.this.g.remove(str);
@@ -482,7 +482,7 @@ public class a implements d.c {
             return;
         }
         d.b d2 = this.l.d(str);
-        if (!TextUtils.isEmpty(d2.d)) {
+        if (!StringUtils.isEmpty(d2.d)) {
             a(d2.d, str2, getClass().getClassLoader(), bVar, json, interfaceC0830a, fVar);
         } else if (d2.e != null) {
             a(d2.e.getName(), str2, d2.e.getClassLoader(), bVar, json, interfaceC0830a, fVar);
@@ -617,7 +617,7 @@ public class a implements d.c {
         if (this.o == null) {
             this.o = new HashMap<>();
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.o.put(str, str2);
         }
         if (this.f) {
@@ -737,10 +737,10 @@ public class a implements d.c {
             c cVar = new c("AC_ERR_FAILED", "module execute failed", obj);
             if (obj instanceof JSONObject) {
                 JSONObject jSONObject2 = (JSONObject) obj;
-                if (!TextUtils.isEmpty(jSONObject2.getString("errorCode"))) {
+                if (!StringUtils.isEmpty(jSONObject2.getString("errorCode"))) {
                     cVar.f19948a = jSONObject2.getString("errorCode");
                 }
-                if (!TextUtils.isEmpty(jSONObject2.getString("errorMsg"))) {
+                if (!StringUtils.isEmpty(jSONObject2.getString("errorMsg"))) {
                     cVar.b = jSONObject2.getString("errorMsg");
                 }
                 if (jSONObject2.containsKey("result")) {

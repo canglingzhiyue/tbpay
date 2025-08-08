@@ -6,7 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -148,7 +148,7 @@ public class FpFullViewDialog extends IBiometricValidateDialog {
             });
             this.d = (TextView) linearLayout.findViewById(R.id.fp_fullview_dialog_cancel);
             final String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_SWITCH);
-            if (!TextUtils.isEmpty(clientText)) {
+            if (!StringUtils.isEmpty(clientText)) {
                 this.d.setText(clientText);
             }
             this.d.setOnClickListener(new View.OnClickListener() { // from class: com.alipay.android.phone.seauthenticator.iotauth.fingerprint.FpFullViewDialog.2
@@ -162,7 +162,7 @@ public class FpFullViewDialog extends IBiometricValidateDialog {
                         return;
                     }
                     if (FpFullViewDialog.a(FpFullViewDialog.this) != null && !FpFullViewDialog.c(FpFullViewDialog.this)) {
-                        if (TextUtils.isEmpty(clientText)) {
+                        if (StringUtils.isEmpty(clientText)) {
                             FpFullViewDialog.a(FpFullViewDialog.this).onAction(1);
                         } else {
                             FpFullViewDialog.a(FpFullViewDialog.this).onAction(3);
@@ -201,7 +201,7 @@ public class FpFullViewDialog extends IBiometricValidateDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.b == null || TextUtils.isEmpty(str)) {
+        } else if (this.b == null || StringUtils.isEmpty(str)) {
         } else {
             this.b.postDelayed(new Runnable() { // from class: com.alipay.android.phone.seauthenticator.iotauth.fingerprint.FpFullViewDialog.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;

@@ -2,7 +2,7 @@ package com.taobao.wireless.link.assistant.jsbridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import org.json.JSONObject;
@@ -29,7 +29,7 @@ public class AssistantOpenJsBridge extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.equals(str, ACTION_ASSISTANT_OPEN)) {
+            if (StringUtils.equals(str, ACTION_ASSISTANT_OPEN)) {
                 String str3 = null;
                 HashMap hashMap = new HashMap();
                 try {

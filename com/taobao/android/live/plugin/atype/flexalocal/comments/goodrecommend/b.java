@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.comments.goodrecommend;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.profile.LiveAvatarNewFrame;
 import com.taobao.taolive.sdk.adapter.network.NetBaseOutDo;
@@ -95,7 +95,7 @@ public class b implements d, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bd977ce1", new Object[]{this, tBLiveDataModel});
-        } else if (!hkk.p() || tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.liveId) || !hkk.a(tBLiveDataModel.mVideoInfo)) {
+        } else if (!hkk.p() || tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.liveId) || !hkk.a(tBLiveDataModel.mVideoInfo)) {
         } else {
             this.k = tBLiveDataModel.mVideoInfo.liveId;
             this.f13675a = hkk.q();
@@ -231,7 +231,7 @@ public class b implements d, ddv {
                 a();
             } else {
                 this.d = null;
-                if (hkk.x() && importantEventItem.dataMessage != null && !TextUtils.isEmpty(this.k)) {
+                if (hkk.x() && importantEventItem.dataMessage != null && !StringUtils.isEmpty(this.k)) {
                     importantEventItem.dataMessage.put(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID, (Object) this.k);
                 }
                 ddw.a().a("com.taobao.taolive.room.important_event_goods_recommend", importantEventItem);

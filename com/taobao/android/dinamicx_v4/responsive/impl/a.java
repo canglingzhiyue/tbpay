@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx_v4.responsive.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.widget.DXWidgetNode;
 import com.taobao.android.dinamicx.widget.DXWidgetRefreshOption;
@@ -150,7 +150,7 @@ public class a implements gfp {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ea28e968", new Object[]{this, gfoVar});
-        } else if (TextUtils.isEmpty(this.c) || !this.d || gfoVar == null) {
+        } else if (StringUtils.isEmpty(this.c) || !this.d || gfoVar == null) {
         } else {
             this.g = new WeakReference<>(gfoVar);
         }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -245,7 +245,7 @@ public class xkn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4dba98c8", new Object[]{this, str, str2, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.f34352a) {
                 this.b.put(str, new a(str, str2, j));
@@ -259,7 +259,7 @@ public class xkn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5811bc8e", new Object[]{this, str, new Boolean(z), str2, str3, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a aVar = null;
             if (this.b.containsKey(str)) {

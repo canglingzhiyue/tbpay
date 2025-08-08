@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.request.client.newmtop;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.BTags;
@@ -42,7 +42,7 @@ public class e {
         final String c = c.c(mainRequestParams);
         final d dVar = new d(context, mainRequestParams, str, mtopRequestListener);
         String a2 = t.a(context);
-        final JSONObject remove = !TextUtils.isEmpty(a2) ? TTDetailPageManager.sDowngradeData.remove(a2) : null;
+        final JSONObject remove = !StringUtils.isEmpty(a2) ? TTDetailPageManager.sDowngradeData.remove(a2) : null;
         if (remove != null) {
             fgq.a().c().post(new Runnable() { // from class: com.taobao.android.detail.wrapper.ext.request.client.newmtop.e.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;

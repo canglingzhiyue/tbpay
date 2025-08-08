@@ -1,7 +1,7 @@
 package com.taobao.android.tbuprofen.util;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.h;
 import java.lang.reflect.Field;
@@ -26,7 +26,7 @@ public class ReflectUtils {
         f15498a = false;
         if (Build.VERSION.SDK_INT >= 30) {
             try {
-                if (!TextUtils.isEmpty(h.b().a("tbuprofen-util"))) {
+                if (!StringUtils.isEmpty(h.b().a("tbuprofen-util"))) {
                     return;
                 }
                 f15498a = true;
@@ -62,7 +62,7 @@ public class ReflectUtils {
     public static java.lang.reflect.Method a(boolean r7, java.lang.Class<?> r8, java.lang.String r9, java.lang.Class<?>... r10) {
         /*
             if (r8 == 0) goto L53
-            boolean r0 = android.text.TextUtils.isEmpty(r9)
+            boolean r0 = android.text.StringUtils.isEmpty(r9)
             if (r0 != 0) goto L53
             r0 = 0
             r1 = 1
@@ -132,7 +132,7 @@ public class ReflectUtils {
         if (ipChange instanceof IpChange) {
             return (Field) ipChange.ipc$dispatch("b080cd7d", new Object[]{new Boolean(z), str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             throw new IllegalArgumentException("argument is null");
         }
         try {
@@ -151,7 +151,7 @@ public class ReflectUtils {
     private static java.lang.reflect.Field a(boolean r6, java.lang.Class<?> r7, java.lang.String r8) {
         /*
             if (r7 == 0) goto L4c
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 != 0) goto L4c
             r0 = 0
             r1 = 1

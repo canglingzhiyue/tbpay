@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.mnn;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -254,7 +254,7 @@ public final class a extends BaseMnnRunUnit<com.etao.feimagesearch.nn.optimize.a
             return;
         }
         q.c(args, "args");
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             return;
         }
         args.put(com.etao.feimagesearch.mnn.utils.a.KEY_CONFIG_STRING, this.d);

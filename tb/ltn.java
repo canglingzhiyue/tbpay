@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.response.IContainerDataModel;
@@ -176,7 +176,7 @@ public class ltn {
             Iterator<?> it = sections.iterator();
             while (it.hasNext()) {
                 String string = ((JSONObject) it.next()).getString("sectionBizCode");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     arrayList.add(string);
                 }
             }

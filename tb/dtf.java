@@ -4,7 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -179,7 +179,7 @@ public class dtf extends AlertDialog {
             dte.b(this.f26953a, tag5.toString());
         }
         Editable text = this.f26953a.getText();
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return;
         }
         this.f26953a.setSelection(text.length());

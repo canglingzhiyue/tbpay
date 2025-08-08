@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.taobao.adapter.extension.monitor.extension.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.taobao.adapter.extension.monitor.model.AURABlockDataModel;
 import com.alibaba.security.realidentity.f3;
@@ -59,7 +59,7 @@ public final class b extends aze {
             return (AURABlockDataModel) ipChange.ipc$dispatch("6cc00312", new Object[]{this, map});
         }
         String b = bba.b(map);
-        int length = TextUtils.isEmpty(b) ? 0 : b.length();
+        int length = StringUtils.isEmpty(b) ? 0 : b.length();
         if (length <= 153600) {
             return null;
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import com.taobao.android.riverlogger.b;
@@ -47,7 +47,7 @@ public final class ada {
             RVLLevel rVLLevel = RVLLevel.Error;
             StringBuilder sb = new StringBuilder();
             sb.append("NextRPC/");
-            if (TextUtils.isEmpty(code)) {
+            if (StringUtils.isEmpty(code)) {
                 code = "common";
             }
             sb.append(code);

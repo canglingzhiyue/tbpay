@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.drm;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -48,7 +48,7 @@ public abstract class ChangeMonitor {
                         if (ChangeMonitor.this.e != null) {
                             str2 = ChangeMonitor.this.e.getString("content", "{}");
                         }
-                        if (TextUtils.isEmpty(str2) || ChangeMonitor.this.b.get() == 0) {
+                        if (StringUtils.isEmpty(str2) || ChangeMonitor.this.b.get() == 0) {
                             return;
                         }
                         ChangeMonitor.this.f4694a = JSON.parseObject(str2);
@@ -72,7 +72,7 @@ public abstract class ChangeMonitor {
                 obj2 = String.valueOf(obj2.hashCode());
             }
             if (this.f4694a.containsKey(str)) {
-                if (!TextUtils.equals(obj2, this.f4694a.getString(str))) {
+                if (!StringUtils.equals(obj2, this.f4694a.getString(str))) {
                     a(str, obj2, true);
                 }
             } else if (obj == null) {
@@ -98,7 +98,7 @@ public abstract class ChangeMonitor {
             ipChange.ipc$dispatch("4dbad4d8", new Object[]{this, str, str2, new Boolean(z)});
             return;
         }
-        if (!TextUtils.isEmpty(str) && this.f4694a != null) {
+        if (!StringUtils.isEmpty(str) && this.f4694a != null) {
             this.f4694a.put(str, (Object) str2);
             if (z) {
                 this.c.add(new Pair<>(str, str2));

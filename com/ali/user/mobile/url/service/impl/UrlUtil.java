@@ -1,7 +1,7 @@
 package com.ali.user.mobile.url.service.impl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.callback.CommonDataCallback;
 import com.ali.user.mobile.common.api.AliUserLogin;
 import com.ali.user.mobile.helper.IUccInterface;
@@ -20,7 +20,7 @@ public class UrlUtil {
     }
 
     public static void OpenUCC(Context context, UrlParam urlParam, CommonDataCallback commonDataCallback) {
-        if (urlParam == null || TextUtils.isEmpty(urlParam.url)) {
+        if (urlParam == null || StringUtils.isEmpty(urlParam.url)) {
             return;
         }
         if (AliUserLogin.mAppreanceExtentions != null && AliUserLogin.mAppreanceExtentions.getUccHelper() != null) {

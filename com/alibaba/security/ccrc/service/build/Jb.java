@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service.build;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class Jb implements com.taobao.orange.d {
             return;
         }
         Kb kb = this.f3251a;
-        if (TextUtils.equals(str2, (String) Kb.$ipChange.a("configVersion", "")) || (configs = OrangeConfig.getInstance().getConfigs(Kb.f3254a)) == null || configs.isEmpty()) {
+        if (StringUtils.equals(str2, (String) Kb.$ipChange.a("configVersion", "")) || (configs = OrangeConfig.getInstance().getConfigs(Kb.f3254a)) == null || configs.isEmpty()) {
             return;
         }
         for (Map.Entry<String, String> entry : configs.entrySet()) {

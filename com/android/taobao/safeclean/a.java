@@ -2,7 +2,7 @@ package com.android.taobao.safeclean;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.AccsAbstractDataListener;
@@ -125,7 +125,7 @@ public class a extends AccsAbstractDataListener {
             } catch (UnsupportedEncodingException unused) {
                 str4 = null;
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 return;
             }
             Log.e("AccsSource", str4);

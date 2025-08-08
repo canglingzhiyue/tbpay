@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -23,15 +23,15 @@ public class dsa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f0bf55dd", new Object[]{drsVar, str, new Long(j), new Long(j2), new Long(j3), new Long(j4), new Long(j5), new Long(j6)});
-        } else if (drsVar == null || !a.b.e() || TextUtils.equals("exposeEnd", drsVar.g)) {
+        } else if (drsVar == null || !a.b.e() || StringUtils.equals("exposeEnd", drsVar.g)) {
         } else {
             b(drsVar, str, j);
-            if (TextUtils.equals("exposeStart", str)) {
+            if (StringUtils.equals("exposeStart", str)) {
                 return;
             }
-            if (TextUtils.equals("scrollEnd", str)) {
+            if (StringUtils.equals("scrollEnd", str)) {
                 a(drsVar, str, j2, j3, j4, j5, j6);
-            } else if (TextUtils.equals("exposeEnd", str)) {
+            } else if (StringUtils.equals("exposeEnd", str)) {
                 b(drsVar);
             } else {
                 a(drsVar);
@@ -65,7 +65,7 @@ public class dsa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e0d284c1", new Object[]{drsVar, str, new Double(d), new Double(d2), new Double(d3), new Double(d4), new Double(d5)});
-        } else if (!TextUtils.equals("scrollEnd", str)) {
+        } else if (!StringUtils.equals("scrollEnd", str)) {
         } else {
             drsVar.f = drsVar.i;
             double d6 = d * d2;
@@ -101,7 +101,7 @@ public class dsa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c2bb5815", new Object[]{drsVar});
-        } else if (TextUtils.equals("leave", drsVar.d) || TextUtils.isEmpty(drsVar.d)) {
+        } else if (StringUtils.equals("leave", drsVar.d) || StringUtils.isEmpty(drsVar.d)) {
         } else {
             if (drsVar.e == 0 || drsVar.h == 0) {
                 TLog.logd("BehaviX", "computeExposeFocusDur", "TriggerTime == 0");
@@ -109,17 +109,17 @@ public class dsa {
             }
             double d = ((drsVar.h - drsVar.e) * (drsVar.f + drsVar.i)) / 2.0d;
             drsVar.j += d;
-            if (TextUtils.equals("exposeEnd", drsVar.g) && drsVar.j == mto.a.GEO_NOT_SUPPORT) {
+            if (StringUtils.equals("exposeEnd", drsVar.g) && drsVar.j == mto.a.GEO_NOT_SUPPORT) {
                 drsVar.j = 1.0d;
             }
             if (drsVar.f26931a == null) {
                 drsVar.f26931a = new JSONObject();
             }
             drsVar.f26931a.put("exposeFocusDur", (Object) Long.valueOf((long) Math.ceil(drsVar.j)));
-            if (!TextUtils.equals("exposeEnd", drsVar.g) && d <= mto.a.GEO_NOT_SUPPORT) {
+            if (!StringUtils.equals("exposeEnd", drsVar.g) && d <= mto.a.GEO_NOT_SUPPORT) {
                 return;
             }
-            if ((TextUtils.equals("scrollStart", drsVar.g) || TextUtils.equals("scrollEnd", drsVar.g)) && !a.b.d()) {
+            if ((StringUtils.equals("scrollStart", drsVar.g) || StringUtils.equals("scrollEnd", drsVar.g)) && !a.b.d()) {
                 return;
             }
             dsc.a(new b("ExposeCompute") { // from class: tb.dsa.1
@@ -130,7 +130,7 @@ public class dsa {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("56c6c68", new Object[]{this});
-                    } else if (TextUtils.equals(drsVar.d, "exposeEnd") || TextUtils.equals(drsVar.g, "exposeEnd")) {
+                    } else if (StringUtils.equals(drsVar.d, "exposeEnd") || StringUtils.equals(drsVar.g, "exposeEnd")) {
                     } else {
                         JSONObject jSONObject = drsVar.f26931a;
                         if (!a.a("enableExpSeries", false) && jSONObject != null) {

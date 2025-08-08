@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.framework.sys.DeviceInfo;
 import com.alipay.android.msp.framework.taskscheduler.TaskHelper;
@@ -139,7 +139,7 @@ public class MspConfig {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8ab3d2e9", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || TextUtils.equals(str, GlobalConstant.RSA_PUBLIC)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.equals(str, GlobalConstant.RSA_PUBLIC)) {
         } else {
             PreferenceManager.getDefaultSharedPreferences(GlobalHelper.getInstance().getContext()).edit().putString(GlobalConstant.KEY_RSA, str).apply();
             GlobalConstant.RSA_PUBLIC = str;
@@ -264,12 +264,12 @@ public class MspConfig {
 
     private static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace(";", "；").replace("&", "");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace(";", "；").replace("&", "");
     }
 
     private static String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.replaceAll(";", "").replaceAll(riy.MOD, "") : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.replaceAll(";", "").replaceAll(riy.MOD, "") : str;
     }
 
     public String getMemoUserCancel() {

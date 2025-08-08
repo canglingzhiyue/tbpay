@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.scancode.encode.aidlservice.BitmapHolder;
 import java.io.ByteArrayOutputStream;
@@ -25,7 +25,7 @@ public class oxz {
                 return (Bitmap) ipChange.ipc$dispatch("30dda510", new Object[]{str});
             }
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return null;
                 }
                 File file = new File(str);

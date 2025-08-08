@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -35,7 +35,7 @@ public class oqp {
         String string = jSONObject.getString(i.CDN_REQUEST_TYPE);
         String string2 = jSONObject.getString("dataSourceType");
         String string3 = jSONObject.getString("dataChangeType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             AwesomeGetContainerInnerData c = opeVar.c(this.f32306a);
             string = (c == null || c.isCacheData) ? "loadCache" : "coldStart";
         }
@@ -43,17 +43,17 @@ public class oqp {
         a.a(str, string, this.f32306a);
         com.taobao.android.home.component.utils.i.c(this.f32306a);
         OnDataSourceUpdatedListener.DataSourceType dataSourceType = OnDataSourceUpdatedListener.DataSourceType.DS_TYPE_REFRESH_CONTENT;
-        if (TextUtils.equals(string2, "remote") && TextUtils.equals(string3, "base")) {
+        if (StringUtils.equals(string2, "remote") && StringUtils.equals(string3, "base")) {
             dataSourceType = OnDataSourceUpdatedListener.DataSourceType.DS_TYPE_REMOTE_CONTENT;
-        } else if (TextUtils.equals(string2, "local") && TextUtils.equals(string3, "base")) {
+        } else if (StringUtils.equals(string2, "local") && StringUtils.equals(string3, "base")) {
             dataSourceType = OnDataSourceUpdatedListener.DataSourceType.DS_TYPE_CACHED_CONTENT;
-        } else if (TextUtils.equals(string2, "download")) {
+        } else if (StringUtils.equals(string2, "download")) {
             dataSourceType = OnDataSourceUpdatedListener.DataSourceType.DS_TYPE_TEMPLATE_UPDATE;
         }
         kwy kwyVar = new kwy(dataSourceType, true, com.taobao.android.home.component.utils.i.a());
         kwyVar.h = opeVar;
         kwyVar.c = 0;
-        if (TextUtils.equals("delta", string3)) {
+        if (StringUtils.equals("delta", string3)) {
             kwyVar.c = 1;
         }
         ThreadMode threadMode = n.o() ? ThreadMode.CurrentThread : ThreadMode.MainThread;

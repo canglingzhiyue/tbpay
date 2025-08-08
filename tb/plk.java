@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -31,7 +31,7 @@ public class plk {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95562904", new Object[]{context, charSequence});
-        } else if (context == null || TextUtils.isEmpty(charSequence)) {
+        } else if (context == null || StringUtils.isEmpty(charSequence)) {
         } else {
             Toast toast = f32753a;
             if (toast == null) {

@@ -1,0 +1,211 @@
+{
+    "api": "mtop.mediaplatform.live.videolist.template.list",
+    "data": {
+        "result": [
+             {
+                "description": "手淘直播更多直播入口引导202303版本",
+                "name": "taolive_morelive_entry_202303",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_morelive_entry_202303/1726123266112/taolive_morelive_entry_202303.zip",
+                "version4Android": "16"
+             },
+            {
+                "name": "tbl_search_recomment_anchor",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/tbl_search_recomment_anchor/1672886887425/tbl_search_recomment_anchor.zip",
+                "version4Android": "18"
+            },
+            {
+                "name": "taolive_search_live_card",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_live_card/1678352180630/taolive_search_live_card.zip",
+                "version4Android": "12"
+            },
+            {
+                "name": "taolive_search_anchor_V2",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_anchor_V2/1675246563547/taolive_search_anchor_V2.zip",
+                "version4Android": "30"
+            },
+            {
+                "name": "taolive_search_more_anchor",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_more_anchor/1672889239680/taolive_search_more_anchor.zip",
+                "version4Android": "14"
+            },
+            {
+                "name": "taolive_channel_follow_common_title_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_common_title_card/1727160537036/taolive_channel_follow_common_title_card.zip",
+                "version4Android": "15"
+            },
+            {
+                "name": "taolive_channel_follow_live",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_live/1686628639551/taolive_channel_follow_live.zip",
+                "version4Android": "1"
+            },
+            {
+                "name": "taolive_channel_follow_live_card",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_live_card/1727246889281/taolive_channel_follow_live_card.zip",
+                "version4Android": "102"
+            },
+            {
+                "name": "taolive_channel_follow_recentwatch",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_recentwatch/1727247656120/taolive_channel_follow_recentwatch.zip",
+                "version4Android": "106"
+            },
+            {
+                "name": "taolive_channel_follow_recommend_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_recommend_card/1725614832991/taolive_channel_follow_recommend_card.zip",
+                "version4Android": "19"
+            },
+            {
+                "name": "taolive_channel_follow_secondtab",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_homepage_channel_follow_header/1686031074397/taolive_homepage_channel_follow_header.zip",
+                "version4Android": "1"
+            },
+            {
+                "name": "taolive_channel_follow_subtab_all_empty_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_subtab_all_card/1696068511949/taolive_channel_follow_subtab_all_card.zip",
+                "version4Android": "5"
+            },
+            {
+                "name": "taolive_channel_follow_subtab_other_empty_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_subtab_other_empty_card/1700717002371/taolive_channel_follow_subtab_other_empty_card.zip",
+                "version4Android": "16"
+            },
+            {
+                "name": "taolive_list_topcard_background_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_list_topcard_background_card/1675239923426/taolive_list_topcard_background_card.zip",
+                "version4Android": "7"
+            },
+            {
+                "name": "taolive_search_20221223_recommend_live_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_20221223_recommend_live_card/1678352058263/taolive_search_20221223_recommend_live_card.zip",
+                "version4Android": "11"
+            },
+            {
+                "name": "taolive_search_20221223_recomment_anchor_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_20221223_recomment_anchor_card/1677831103371/taolive_search_20221223_recomment_anchor_card.zip",
+                "version4Android": "16"
+            },
+            {
+                "name": "taolive_search_good_card",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_good_card/1689644980776/taolive_search_good_card.zip",
+                "version4Android": "32"
+            },
+            {
+                "name": "taolive_search_title_base_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_title_base_card/1672232631797/taolive_search_title_base_card.zip",
+                "version4Android": "2"
+            },
+            {
+                "name": "taolive_search_top_video_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_top_video_card/1678351944638/taolive_search_top_video_card.zip",
+                "version4Android": "22"
+            },
+            {
+                "name": "tao_live_search_hot_rank",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/tao_live_search_hot_rank/1709640691617/tao_live_search_hot_rank.zip",
+                "version4Android": "63"
+            },
+            {
+                "name": "taolive_search_theme",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_theme/1709040857594/taolive_search_theme.zip",
+                "version4Android": "14"
+            },
+            {
+                "name": "taolive_channel_faxian_live_banner",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_faxian_live_banner/1701672209988/taolive_channel_faxian_live_banner.zip",
+                "version4Android": "11"
+            },
+            {
+                "name": "taolive_channel_follow_toolentry_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_channel_follow_toolentry_card/1706856115114/taolive_channel_follow_toolentry_card.zip",
+                "version4Android": "14"
+            },
+            {
+                "name": "taolive_search_20240117_live_card",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_search_20240117_live_card/1706769507802/taolive_search_20240117_live_card.zip",
+                "version4Android": "18"
+            },
+             {
+                "description": "频道升级发现模版",
+                "name": "taolive_discover_tab_container_2024",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_discover_tab_container_2024/1727078713919/taolive_discover_tab_container_2024.zip",
+                "version4Android": "294"
+              },
+              {
+                "description": "频道升级关注模版",
+                "name": "taolive_follow_tab_container_2024",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_follow_tab_container_2024/1727233005847/taolive_follow_tab_container_2024.zip",
+                "version4Android": "49"
+              },
+            {
+                "name": "taolive_discovery_head_card_2024",
+                "span": "2",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_discovery_head_card_2024/1724052136131/taolive_discovery_head_card_2024.zip",
+                "version4Android": "75"
+            },
+            {
+                "description": "新版频道营销资源位",
+                "name": "taolive_discovery_live_banner_v2",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_discovery_live_banner_v2/1724227862651/taolive_discovery_live_banner_v2.zip",
+                "version4Android": "60"
+            },
+            {
+                "description": "新版频道改版发现商品卡",
+                "name": "taolive_discovery_feed_goods_card_v2",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_discovery_feed_goods_card_v2/1724659077530/taolive_discovery_feed_goods_card_v2.zip",
+                "version4Android": "80"
+            },
+            {
+                "description": "新版直播频道所见所得商品卡",
+                "name": "taolive_discovery_livemove_good_v2",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_discovery_livemove_good_v2/1724056977814/taolive_discovery_livemove_good_v2.zip",
+                "version4Android": "37"
+            },
+            {
+                "description": "新版频道资源小banner",
+                "name": "taolive_discovery_flow_banner_v2",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_discovery_flow_banner_v2/1724056593670/taolive_discovery_flow_banner_v2.zip",
+                "version4Android": "5"
+            },
+            {
+                "description": "新版频道发现直播卡",
+                "name": "taolive_discovery_feed_live_v2",
+                "span": "1",
+                "url4Android": "https://dinamicx.alibabausercontent.com/pub/taolive_discovery_feed_live_v2/1725941977930/taolive_discovery_feed_live_v2.zip",
+                "version4Android": "124"
+            }
+        ]
+    },
+    "ret": [
+        "SUCCESS::调用成功"
+    ],
+    "v": "1.0"
+}

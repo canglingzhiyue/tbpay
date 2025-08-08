@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -803,7 +803,7 @@ public class IndicatorBar extends RelativeLayout implements DetailIndicator.a {
             DetailImageView detailImageView = (DetailImageView) this.mGalleryLeftContainer.findViewById(R.id.iv_open_url_icon);
             TextView textView = (TextView) this.mGalleryLeftContainer.findViewById(R.id.tv_open_url_text);
             c b2 = epj.b();
-            if (b2 != null && !TextUtils.isEmpty(imageIndicatorData.icon)) {
+            if (b2 != null && !StringUtils.isEmpty(imageIndicatorData.icon)) {
                 detailImageView.setVisibility(0);
                 b2.a(imageIndicatorData.icon, detailImageView);
             } else {
@@ -821,7 +821,7 @@ public class IndicatorBar extends RelativeLayout implements DetailIndicator.a {
                         return;
                     }
                     INavAdapter f = epj.f();
-                    if (f == null || TextUtils.isEmpty(openUrlContentData.url)) {
+                    if (f == null || StringUtils.isEmpty(openUrlContentData.url)) {
                         return;
                     }
                     f.navigateTo(view.getContext(), openUrlContentData.url, null);
@@ -843,7 +843,7 @@ public class IndicatorBar extends RelativeLayout implements DetailIndicator.a {
             DetailImageView detailImageView = (DetailImageView) this.mGalleryRightContainer.findViewById(R.id.iv_right_video_icon);
             TextView textView = (TextView) this.mGalleryRightContainer.findViewById(R.id.tv_right_video_text);
             c b2 = epj.b();
-            if (b2 != null && !TextUtils.isEmpty(imageIndicatorData.icon)) {
+            if (b2 != null && !StringUtils.isEmpty(imageIndicatorData.icon)) {
                 detailImageView.setVisibility(0);
                 b2.a(imageIndicatorData.icon, detailImageView);
             } else {

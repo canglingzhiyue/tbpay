@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -371,7 +371,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
                 }
                 PasswordInputUnifiedPlugin.this.writePWDSwitchLog("UC-MobileIC-220722-01", "1", "");
                 PasswordInputUnifiedPlugin passwordInputUnifiedPlugin = PasswordInputUnifiedPlugin.this;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     i = str2.length();
                 }
                 passwordInputUnifiedPlugin.writePWDSwitchLog("UC-MobileIC-220722-02", "1", String.valueOf(i));
@@ -446,10 +446,10 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         });
         String actConf = getActConf(BaseFBPlugin.ACT_CONF.pwdInputBtn);
         String actConf2 = getActConf(BaseFBPlugin.ACT_CONF.pwdPlaceHolder);
-        if (!TextUtils.isEmpty(actConf)) {
+        if (!StringUtils.isEmpty(actConf)) {
             this.mSafeInputContext.setOkButtonText(actConf);
         }
-        if (TextUtils.isEmpty(actConf2)) {
+        if (StringUtils.isEmpty(actConf2)) {
             return;
         }
         this.k.setHint(actConf2);
@@ -491,7 +491,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
                         verifyRequestModel.setIsSimplePPW(PasswordInputUnifiedPlugin.access$700(PasswordInputUnifiedPlugin.this).getVerifyId(), PasswordInputUnifiedPlugin.this.isSimplePwd);
                         verifyRequestModel.encryptPwd = str;
                         verifyRequestModel.needOtherVerifyPay = str2;
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             verifyRequestModel.from = str3;
                         }
                         if (ModuleConstants.VI_MODULE_NAME_PAYMENT_PASSWORD_PLUS.equalsIgnoreCase(PasswordInputUnifiedPlugin.access$800(PasswordInputUnifiedPlugin.this).sourceToPwd)) {
@@ -536,16 +536,16 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
             HashMap hashMap = new HashMap();
             hashMap.put("code", str2);
             hashMap.put("source", str3);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 hashMap.put("from", str4);
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 hashMap.put("sourceToPwd", str5);
             }
             if (z) {
                 hashMap.put("isNewMUI", "true");
             }
-            if (this.e != null && !TextUtils.isEmpty(this.e.decisionToPwd)) {
+            if (this.e != null && !StringUtils.isEmpty(this.e.decisionToPwd)) {
                 hashMap.put("plusPwdType", "pwd");
             } else {
                 hashMap.put("plusPwdType", "plus_pwd");
@@ -589,7 +589,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         }
         String str2 = f5894a;
         VerifyLogCat.i(str2, "updatePubKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i(f5894a, "服务端没有提供新的公钥，不更新");
             return;
         }
@@ -685,7 +685,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         } else if (super.updateAttr(str, str2) || a(str, str2)) {
             return true;
         } else {
-            if (this.h && str.equals("value") && TextUtils.isEmpty(str2)) {
+            if (this.h && str.equals("value") && StringUtils.isEmpty(str2)) {
                 clearInputContent();
             }
             return false;
@@ -706,7 +706,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         localBroadcastManager.sendBroadcast(intent);
         String str3 = f5894a;
         VerifyLogCat.i(str3, "[onPwdBNAction] key: " + str + ", data: " + str2);
-        if (TextUtils.isEmpty(str2) || str2.startsWith(UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
+        if (StringUtils.isEmpty(str2) || str2.startsWith(UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
             this.isSimplePwd = true;
             this.l = UiUtil.INPUT_TYPE_VALUE_PAYSPWD;
             initPwdInput();
@@ -757,7 +757,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b23670e3", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.l)) {
+        if (StringUtils.isEmpty(this.l)) {
             this.k.setSingleLine();
             this.k.setHorizontallyScrolling(true);
             setSafeKeyboardSoftInput(this.k);
@@ -773,7 +773,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         Editable editableText = this.k.getEditableText();
         if (editableText != null) {
             String obj = editableText.toString();
-            if (!TextUtils.isEmpty(obj)) {
+            if (!StringUtils.isEmpty(obj)) {
                 this.k.setSelection(obj.length());
             }
         }
@@ -947,7 +947,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
             }
         });
         String actConf = getActConf(BaseFBPlugin.ACT_CONF.supportVersion);
-        if (!TextUtils.isEmpty(actConf) && "2.0".equalsIgnoreCase(actConf)) {
+        if (!StringUtils.isEmpty(actConf) && "2.0".equalsIgnoreCase(actConf)) {
             if (!this.g.get()) {
                 return;
             }
@@ -1013,7 +1013,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
             return;
         }
         String str4 = "";
-        if (TextUtils.isEmpty(this.mTimestamp)) {
+        if (StringUtils.isEmpty(this.mTimestamp)) {
             this.mTimestamp = str4;
         }
         this.isShowGetBackPwd = this.e.isFindPPW;
@@ -1032,11 +1032,11 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         String str6 = this.e.pwdTopTip;
         String actConf2 = getActConf(BaseFBPlugin.ACT_CONF.pwdInputTip);
         String actConf3 = getActConf(BaseFBPlugin.ACT_CONF.costTip);
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             str4 = str6;
-        } else if (!TextUtils.isEmpty(actConf2)) {
+        } else if (!StringUtils.isEmpty(actConf2)) {
             str4 = actConf2;
-        } else if (!TextUtils.isEmpty(actConf3)) {
+        } else if (!StringUtils.isEmpty(actConf3)) {
             str4 = actConf3;
         }
         jSONObject2.put("tip", (Object) str4);
@@ -1071,11 +1071,11 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String actConf = getActConf(BaseFBPlugin.ACT_CONF.pwdTip);
-        if (!TextUtils.isEmpty(actConf)) {
+        if (!StringUtils.isEmpty(actConf)) {
             return actConf;
         }
         String actConf2 = getActConf(BaseFBPlugin.ACT_CONF.costTip);
-        return !TextUtils.isEmpty(actConf2) ? actConf2 : "";
+        return !StringUtils.isEmpty(actConf2) ? actConf2 : "";
     }
 
     @Override // com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin
@@ -1154,7 +1154,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         } else if (this.c == null || this.b == null || getBodyViewOpacity() <= 0.1d || !this.c.isOnloadFinish()) {
         } else {
             if (z && view.isEnabled()) {
-                if (TextUtils.equals(this.l, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
+                if (StringUtils.equals(this.l, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
                     EditText editText = this.k;
                     editText.setSelection(editText.getEditableText().length());
                 }
@@ -1298,7 +1298,7 @@ public class PasswordInputUnifiedPlugin extends BaseFBPlugin implements View.OnC
         HashMap hashMap = new HashMap();
         hashMap.put("pwdType", str2);
         hashMap.put("pwdSwitch", str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("rsaResult", str3);
         }
         VerifyBehavorLogger.logBehavor(BehaviourIdEnum.EVENT, str, com.alipay.mobile.verifyidentity.common.Constants.VI_ENGINE_APPID, "aavca", "", "", null, hashMap);

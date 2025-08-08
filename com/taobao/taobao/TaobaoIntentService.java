@@ -3,7 +3,7 @@ package com.taobao.taobao;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -104,7 +104,7 @@ public class TaobaoIntentService extends TaobaoBaseIntentService {
                 JSONObject parseObject = JSONObject.parseObject(intent.getStringExtra(AgooConstants.MESSAGE_EXT));
                 String string = parseObject.getString(Constants.KEY_CMD_TYPE);
                 String string2 = parseObject.getString("cmdValue");
-                if (TextUtils.equals(string, "1") && !TextUtils.isEmpty(string)) {
+                if (StringUtils.equals(string, "1") && !StringUtils.isEmpty(string)) {
                     TBS.Ext.commitEvent(UTMini.PAGE_AGOO, 19999, "agoo_recall_onmessage_id", Boolean.valueOf(g.a().a(string2)), null, null, "messageId=" + string2);
                     return;
                 }
@@ -161,7 +161,7 @@ public class TaobaoIntentService extends TaobaoBaseIntentService {
         if (d(jSONObject)) {
             return true;
         }
-        if (TextUtils.isEmpty(jSONObject.getString("title"))) {
+        if (StringUtils.isEmpty(jSONObject.getString("title"))) {
             return false;
         }
         if (a(jSONObject) > 0) {
@@ -285,7 +285,7 @@ public class TaobaoIntentService extends TaobaoBaseIntentService {
                 JSONObject parseObject = JSONObject.parseObject(intent.getStringExtra(AgooConstants.MESSAGE_EXT));
                 String string = parseObject.getString(Constants.KEY_CMD_TYPE);
                 String string2 = parseObject.getString("cmdValue");
-                if (TextUtils.equals(string, "1") && !TextUtils.isEmpty(string)) {
+                if (StringUtils.equals(string, "1") && !StringUtils.isEmpty(string)) {
                     boolean a2 = g.a().a(string2);
                     Boolean valueOf = Boolean.valueOf(a2);
                     TBS.Ext.commitEvent(UTMini.PAGE_AGOO, 19999, "agoo_recall_onmessage_id", valueOf, null, null, "messageId=" + string2);

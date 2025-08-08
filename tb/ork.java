@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Choreographer;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.gateway.dispatch.a;
@@ -69,12 +69,12 @@ public class ork extends org {
         }
         String name = traceModel.getName();
         if (!z) {
-            if (TextUtils.equals(name, "homeVisible")) {
+            if (StringUtils.equals(name, "homeVisible")) {
                 e = true;
-            } else if (TextUtils.equals(name, "homeNetDataRefresh")) {
+            } else if (StringUtils.equals(name, "homeNetDataRefresh")) {
                 d = true;
             }
-        } else if (TextUtils.equals(name, "homeFragmentOnPause")) {
+        } else if (StringUtils.equals(name, "homeFragmentOnPause")) {
             orq orqVar = this.b;
             if (orqVar != null) {
                 orqVar.a();

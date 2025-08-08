@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.analytics.AnalyticsMgr;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -148,7 +148,7 @@ public final class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c9869b58", new Object[]{str, str2, new Long(j), new Long(j2), new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a(DOWNLOAD_STAT, DimensionValueSet.create().setValue("type", str).setValue("url", str2).setValue("sizeRange", a(j)).setValue("net", s.b(cex.a().c())).setValue("success", String.valueOf(z)).setValue("background", String.valueOf(com.taobao.application.common.c.a().a("isInBackground", true))), MeasureValueSet.create().setValue(jyx.c.POINT_NAME, j2));
         }
@@ -205,7 +205,7 @@ public final class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a35a2622", new Object[]{str, new Boolean(z), new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a(EXPERIMENT_ACTIVATE_STAT, DimensionValueSet.create().setValue("type", str).setValue("result", String.valueOf(z)), MeasureValueSet.create().setValue("time", j));
         }

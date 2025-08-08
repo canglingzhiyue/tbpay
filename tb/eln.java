@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -77,7 +77,7 @@ public final class eln extends ekq {
             return (String) ipChange.ipc$dispatch("e2c2912d", new Object[]{this, aURARenderComponent});
         }
         String str = aURARenderComponent.key;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         return a() + System.currentTimeMillis();
@@ -145,7 +145,7 @@ public final class eln extends ekq {
                 break;
             }
         }
-        if (TextUtils.isEmpty(str) || "null".equals(str) || (a2 = eje.a(this.e)) == null || a2.size() == 0) {
+        if (StringUtils.isEmpty(str) || "null".equals(str) || (a2 = eje.a(this.e)) == null || a2.size() == 0) {
             return a3;
         }
         Iterator<AURARenderComponent> it = a2.iterator();
@@ -364,7 +364,7 @@ public final class eln extends ekq {
                 dXTemplateItem.f11925a = jSONObject2.getString("name");
                 dXTemplateItem.c = jSONObject2.getString("url");
             }
-            if (TextUtils.isEmpty(dXTemplateItem.c) || TextUtils.isEmpty(dXTemplateItem.f11925a)) {
+            if (StringUtils.isEmpty(dXTemplateItem.c) || StringUtils.isEmpty(dXTemplateItem.f11925a)) {
                 i.a("AliSDetailMainBarrage", "invalid data. no template");
                 return;
             }
@@ -449,7 +449,7 @@ public final class eln extends ekq {
                 return;
             }
             try {
-                if (this.j == null || this.j.f25540a == null || this.j.f25540a.e() == null || TextUtils.isEmpty(this.m)) {
+                if (this.j == null || this.j.f25540a == null || this.j.f25540a.e() == null || StringUtils.isEmpty(this.m)) {
                     return;
                 }
                 b(this.j.f25540a.e(), this.m, this.l);

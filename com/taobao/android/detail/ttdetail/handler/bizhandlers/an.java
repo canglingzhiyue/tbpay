@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -37,7 +37,7 @@ public class an implements ezm {
             return false;
         }
         String string = b.getString("locatorId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         com.taobao.android.detail.ttdetail.communication.c.a(this.f10689a, new soc(string));

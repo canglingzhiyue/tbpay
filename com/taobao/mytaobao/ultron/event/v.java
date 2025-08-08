@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.fastjson.JSON;
@@ -62,7 +62,7 @@ public final class v extends com.alibaba.android.ultron.event.b {
                 }
                 jSONObject.put("data", (Object) jSONObject2);
                 String string = jSONObject2.getString(PushConstants.PARAMS);
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     parseObject = new JSONObject();
                 } else {
                     parseObject = JSON.parseObject(string);

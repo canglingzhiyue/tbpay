@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -189,10 +189,10 @@ public class PageHeaderFragment extends AbstractPageFragment implements c {
         if (tabHeaderModel == null || appController == null) {
             return;
         }
-        if (TextUtils.isEmpty(tabHeaderModel.html) && TextUtils.isEmpty(this.mPageHeaderModel.getUrl())) {
+        if (StringUtils.isEmpty(tabHeaderModel.html) && StringUtils.isEmpty(this.mPageHeaderModel.getUrl())) {
             return;
         }
-        if (TextUtils.isEmpty(this.mPageHeaderModel.getUrl())) {
+        if (StringUtils.isEmpty(this.mPageHeaderModel.getUrl())) {
             TabHeaderModel tabHeaderModel2 = this.mPageHeaderModel;
             tabHeaderModel2.setUrl("https://pha_pageheader_" + this.mPageIndex);
         }
@@ -256,7 +256,7 @@ public class PageHeaderFragment extends AbstractPageFragment implements c {
         View renderView = getRenderView();
         if (this.mPageHeaderModel != null && renderView != null) {
             renderView.setBackgroundColor(0);
-            if (!TextUtils.isEmpty(this.mPageHeaderModel.backgroundColor)) {
+            if (!StringUtils.isEmpty(this.mPageHeaderModel.backgroundColor)) {
                 renderView.setBackgroundColor(ngn.f(this.mPageHeaderModel.backgroundColor));
             }
             TabHeaderModel tabHeaderModel = this.mPageHeaderModel;
@@ -529,7 +529,7 @@ public class PageHeaderFragment extends AbstractPageFragment implements c {
             return ((Boolean) ipChange.ipc$dispatch("7d717a0d", new Object[]{this, new Integer(i), new Integer(i2), str, new Boolean(z), num})).booleanValue();
         }
         View renderView = getRenderView();
-        if ("rpx".equals(str) || TextUtils.isEmpty(str)) {
+        if ("rpx".equals(str) || StringUtils.isEmpty(str)) {
             i2 = ngn.a(getContext(), i2);
         }
         if (!z && getAppController() != null) {

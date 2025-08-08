@@ -1,7 +1,7 @@
 package com.taobao.munion.taosdk;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.net.pojo.request.AlimamaZzAdGetRequest;
@@ -78,7 +78,7 @@ public class MunionRequestHelper {
             return (AlimamaZzAdGetRequest) ipChange.ipc$dispatch("d95afa4b", new Object[]{context, str, strArr, map});
         }
         AlimamaZzAdGetRequest alimamaZzAdGetRequest = new AlimamaZzAdGetRequest();
-        alimamaZzAdGetRequest.pid = TextUtils.join(",", Arrays.asList(strArr));
+        alimamaZzAdGetRequest.pid = StringUtils.join(",", Arrays.asList(strArr));
         alimamaZzAdGetRequest.pvid = UUID.randomUUID().toString().replaceAll("-", "");
         alimamaZzAdGetRequest.st = "android_native";
         if (str == null) {
@@ -98,7 +98,7 @@ public class MunionRequestHelper {
                 for (Field field : iMTOPDataObject.getClass().getFields()) {
                     String name = field.getName();
                     JSONField jSONField = (JSONField) field.getAnnotation(JSONField.class);
-                    if (jSONField != null && !TextUtils.isEmpty(jSONField.name())) {
+                    if (jSONField != null && !StringUtils.isEmpty(jSONField.name())) {
                         name = jSONField.name();
                     }
                     String str = map.get(name);

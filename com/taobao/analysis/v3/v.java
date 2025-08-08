@@ -1,7 +1,7 @@
 package com.taobao.analysis.v3;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -284,10 +284,10 @@ public class v extends mzo implements r {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || (sharedPreferences = this.o) == null) {
+        } else if (StringUtils.isEmpty(str) || (sharedPreferences = this.o) == null) {
         } else {
             SharedPreferences.Editor edit = sharedPreferences.edit();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 edit.putString(str, str2).apply();
             } else {
                 edit.remove(str).apply();
@@ -483,7 +483,7 @@ public class v extends mzo implements r {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && this.d.size() > 0) {
+        if (!StringUtils.isEmpty(str) && this.d.size() > 0) {
             return this.d.contains(str);
         }
         return false;
@@ -494,7 +494,7 @@ public class v extends mzo implements r {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && this.c.size() > 0) {
+        if (!StringUtils.isEmpty(str) && this.c.size() > 0) {
             return this.c.contains(str);
         }
         return false;
@@ -506,7 +506,7 @@ public class v extends mzo implements r {
             return (CopyOnWriteArrayList) ipChange.ipc$dispatch("4bd960e5", new Object[]{this, str});
         }
         CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return copyOnWriteArrayList;
         }
         try {
@@ -667,7 +667,7 @@ public class v extends mzo implements r {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.p.contains(str);
         }
         return false;
@@ -678,7 +678,7 @@ public class v extends mzo implements r {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.e.contains(str);
         }
         return false;

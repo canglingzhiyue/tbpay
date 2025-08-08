@@ -1,7 +1,7 @@
 package com.alibaba.android.bindingx.plugin.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -38,7 +38,7 @@ public class f extends com.alibaba.android.bindingx.core.internal.e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        WXComponent b = i.b(TextUtils.isEmpty(this.f) ? this.e : this.f, str);
+        WXComponent b = i.b(StringUtils.isEmpty(this.f) ? this.e : this.f, str);
         if (b == null) {
             return super.a(str, str2);
         }

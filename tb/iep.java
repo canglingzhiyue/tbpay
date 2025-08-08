@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class iep extends h {
                 JSONObject jSONObject3 = (JSONObject) objArr[1];
                 if (jSONObject3 != null && (jSONObject2 = jSONObject3.getJSONObject(d.CLICK_MAIDIAN)) != null && jSONObject2.get("params") != null) {
                     String string = jSONObject3.getString("trackInfo");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         String string2 = jSONObject2.getString("name");
                         g.a(string2, jSONObject2.getString("params") + ",trackInfo=" + string);
                     } else {

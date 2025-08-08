@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -21,7 +21,7 @@ public class bm {
     }
 
     public static String a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 MessageDigest messageDigest = MessageDigest.getInstance("MD5");
                 messageDigest.update(m1743a(str));
@@ -34,7 +34,7 @@ public class bm {
     }
 
     public static String a(String str, int i) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         StringBuilder sb = new StringBuilder();

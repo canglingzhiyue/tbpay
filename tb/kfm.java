@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import com.taobao.alivfssdk.cache.c;
 import com.taobao.alivfssdk.cache.h;
@@ -86,7 +86,7 @@ public class kfm {
             serializable = null;
         } else {
             for (ScheduleDTOModule scheduleDTOModule : list) {
-                if (scheduleDTOModule != null && !TextUtils.isEmpty(scheduleDTOModule.getOutId()) && !TextUtils.isEmpty(scheduleDTOModule.getBizId())) {
+                if (scheduleDTOModule != null && !StringUtils.isEmpty(scheduleDTOModule.getOutId()) && !StringUtils.isEmpty(scheduleDTOModule.getBizId())) {
                     Map<String, ScheduleDTOModule> map = this.c;
                     map.put(kfp.a(scheduleDTOModule.getBizId() + scheduleDTOModule.getBizId()), scheduleDTOModule);
                 }
@@ -150,7 +150,7 @@ public class kfm {
     }
 
     public void b(String str, String str2) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         Map<String, ScheduleDTOModule> map = this.c;

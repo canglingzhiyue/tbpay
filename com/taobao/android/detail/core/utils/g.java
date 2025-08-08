@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -261,7 +261,7 @@ public class g {
             return ((Boolean) ipChange.ipc$dispatch("6158678", new Object[0])).booleanValue();
         }
         String e = epo.e();
-        return !TextUtils.isEmpty(e) && e.split("\\.").length == 4;
+        return !StringUtils.isEmpty(e) && e.split("\\.").length == 4;
     }
 
     private static boolean n() {

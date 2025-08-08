@@ -1,6 +1,6 @@
 package com.taobao.tao.infoflow.multitab.viewprovider.tablayout;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
@@ -103,7 +103,7 @@ public class c {
             ipChange.ipc$dispatch("3bdb3bdf", new Object[]{this, jSONObject, list, multiTabLayout, view, tailFadeFrameLayout, tUrlImageView});
         } else if (jSONObject == null) {
         } else {
-            if (TextUtils.isEmpty(this.f20651a.q)) {
+            if (StringUtils.isEmpty(this.f20651a.q)) {
                 view.setVisibility(8);
                 tailFadeFrameLayout.showFade(false);
                 return;
@@ -141,7 +141,7 @@ public class c {
                         c.a(cVar2, jSONObject, c.a(cVar2));
                     }
                     String b = c.b(c.this).b(e);
-                    if (!TextUtils.isEmpty(b)) {
+                    if (!StringUtils.isEmpty(b)) {
                         onq.a(tUrlImageView, b, "homepage-ads", h.IMAGE_STRATEGY_CONFIG);
                         tUrlImageView.setImageUrl(b);
                         tUrlImageView.setContentDescription("收起,按钮");
@@ -264,20 +264,20 @@ public class c {
                         return;
                     }
                     IPopData<PopSectionModel> a3 = com.taobao.homepage.pop.utils.e.a(obj);
-                    if (a3 == null || !TextUtils.equals(a3.getBusinessID(), businessID)) {
+                    if (a3 == null || !StringUtils.equals(a3.getBusinessID(), businessID)) {
                         return;
                     }
                     com.taobao.android.home.component.utils.e.e("TabDownPanelViewBuilder", "receive messageType: " + str);
-                    if (TextUtils.equals("selectMultiTab", str) && jSONObject2 != null) {
+                    if (StringUtils.equals("selectMultiTab", str) && jSONObject2 != null) {
                         String string = jSONObject2.getString(com.taobao.tao.infoflow.multitab.e.KEY_TAB_ID);
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             return;
                         }
                         c.a(c.this, string);
                     } else if (!com.taobao.homepage.pop.utils.g.a(str)) {
                     } else {
                         String b = c.b(c.this).b(true);
-                        if (!TextUtils.isEmpty(b)) {
+                        if (!StringUtils.isEmpty(b)) {
                             onq.a(c.d(c.this), b, "homepage-ads", h.IMAGE_STRATEGY_CONFIG);
                             c.d(c.this).setImageUrl(b);
                             c.d(c.this).setContentDescription("展开,按钮");
@@ -301,7 +301,7 @@ public class c {
         while (true) {
             if (i < this.e.size()) {
                 JSONObject jSONObject = this.e.get(i).getJSONObject("content");
-                if (jSONObject != null && TextUtils.equals(str, jSONObject.getString(com.taobao.tao.infoflow.multitab.e.KEY_TAB_ID))) {
+                if (jSONObject != null && StringUtils.equals(str, jSONObject.getString(com.taobao.tao.infoflow.multitab.e.KEY_TAB_ID))) {
                     i2 = i;
                     break;
                 }

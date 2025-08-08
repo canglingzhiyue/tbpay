@@ -66,7 +66,7 @@ public class TBAutoSizeGuideBridge extends e {
         L22:
             android.taobao.windvane.jsbridge.r r0 = new android.taobao.windvane.jsbridge.r
             r0.<init>()
-            boolean r1 = android.text.TextUtils.isEmpty(r10)
+            boolean r1 = android.text.StringUtils.isEmpty(r10)
             java.lang.String r7 = "TBAutoSize.PopLayerBridge"
             java.lang.String r8 = "msg"
             if (r1 == 0) goto L3d

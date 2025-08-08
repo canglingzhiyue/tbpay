@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pexode.d;
@@ -269,7 +269,7 @@ public class nhz extends nmx<njb, njb, b> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9f0fc966", new Object[]{this, nmvVar});
-        } else if (com.taobao.phenix.intf.b.h().m() == null || (b = nmvVar.e().b()) == null || !TextUtils.isEmpty(b.f18937a)) {
+        } else if (com.taobao.phenix.intf.b.h().m() == null || (b = nmvVar.e().b()) == null || !StringUtils.isEmpty(b.f18937a)) {
         } else {
             b.Q = true;
             niw.a("Phenix", "BitMapProcessor createFullTrack." + nmvVar.e().p(), nmvVar.e(), true);

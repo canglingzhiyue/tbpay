@@ -1,6 +1,6 @@
 package com.ali.user.open.core.webview;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.service.UserTrackerService;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,10 +34,10 @@ public class UserTrackBridge {
             String optString3 = jSONObject.optString("arg2");
             String optString4 = jSONObject.optString("args");
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(optString3)) {
+            if (!StringUtils.isEmpty(optString3)) {
                 hashMap.put(UTHitBuilders.a.FIELD_ARG2, optString3);
             }
-            if (!TextUtils.isEmpty(optString4)) {
+            if (!StringUtils.isEmpty(optString4)) {
                 try {
                     JSONObject jSONObject2 = new JSONObject(optString4);
                     Iterator<String> keys = jSONObject2.keys();

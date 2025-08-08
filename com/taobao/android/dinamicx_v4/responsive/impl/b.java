@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx_v4.responsive.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.widget.DXWidgetNode;
 import java.lang.ref.WeakReference;
@@ -56,7 +56,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (Long) ipChange.ipc$dispatch("8fbb82a3", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return e.get(str);
         }
         return null;

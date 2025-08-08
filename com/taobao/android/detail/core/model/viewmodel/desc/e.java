@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.model.viewmodel.desc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -104,7 +104,7 @@ public class e extends epf {
         this.i = jSONObject.getString("panoramaUrl");
         this.j = jSONObject.getString("videoTagUrl");
         this.l = jSONObject.getString(com.taobao.taolive.room.ui.fanslevel.a.ICON_RENDER);
-        if (!TextUtils.isEmpty(this.l)) {
+        if (!StringUtils.isEmpty(this.l)) {
             String[] split = this.l.split(",");
             if (this.k == null) {
                 this.k = new ArrayList<>();
@@ -139,7 +139,7 @@ public class e extends epf {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("b4bc1109", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new a(str, 0, 0);
         }
         return null;

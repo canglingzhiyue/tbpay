@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -87,21 +87,21 @@ public class h {
         try {
             String stringExtra = intent.getStringExtra("command");
             k.a("AgooNotifyReporter", "AgooNotifyReporter,onUserCommand,command=" + stringExtra + ",intent=" + intent.toString());
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 return;
             }
             intent.getStringExtra(AgooConstants.MESSAGE_SOURCE);
-            if (TextUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
+            if (StringUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
                 b(intent);
                 a(this.f18278a, intent.getExtras(), "dismiss");
-            } else if (TextUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED)) {
+            } else if (StringUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED)) {
                 AppMonitor.Counter.commit("accs", BaseMonitor.COUNT_AGOO_CLICK, "click", mto.a.GEO_NOT_SUPPORT);
                 String stringExtra2 = intent.getStringExtra("id");
                 AppMonitor.Counter.commit("accs", "agoo_click_id", stringExtra2, mto.a.GEO_NOT_SUPPORT);
                 TLog.loge("agoo_push", "agoo_click_id, messageId=" + stringExtra2);
                 String stringExtra3 = intent.getStringExtra("show_type");
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(stringExtra3)) {
+                if (!StringUtils.isEmpty(stringExtra3)) {
                     hashMap.put("show_type", stringExtra3);
                 }
                 if (mtb.a()) {
@@ -109,7 +109,7 @@ public class h {
                     JSONObject jSONObject = JSON.parseObject(intent.getStringExtra(AgooConstants.MESSAGE_BODY)).getJSONObject(Constants.KEY_EXTS);
                     if (jSONObject != null) {
                         String string = jSONObject.getString(MarketingInnerNotificationAdapter.KEY_PUSHUTARGS);
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             try {
                                 for (Map.Entry<String, Object> entry : JSON.parseObject(string).entrySet()) {
                                     if (entry.getValue() instanceof String) {
@@ -176,7 +176,7 @@ public class h {
             if (intent != null) {
                 bundle2 = bundle == null ? new Bundle() : bundle;
                 String stringExtra = intent.getStringExtra("notifyContentTargetUrl");
-                if (!TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra)) {
                     bundle2.putString("notifyContentTargetUrl", stringExtra);
                 }
                 Bundle bundleExtra = intent.getBundleExtra("notifyContentParamBundleKey");
@@ -249,13 +249,13 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (PendingIntent) ipChange.ipc$dispatch("e4d351bb", new Object[]{context, bundle, new Integer(i)});
         }
-        if (TextUtils.equals("1", OrangeConfig.getInstance().getConfig("mpm_business_switch", "AgooPushClickChangeSwitch", "0"))) {
+        if (StringUtils.equals("1", OrangeConfig.getInstance().getConfig("mpm_business_switch", "AgooPushClickChangeSwitch", "0"))) {
             TLog.loge("agoo_push", "AgooPushClickChangeSwitch open");
             return null;
         }
         String string = bundle.getString(AgooConstants.MESSAGE_BODY);
         TLog.loge("AgooNotifyReporter", " agooBody :" + string);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         Intent intent = new Intent();

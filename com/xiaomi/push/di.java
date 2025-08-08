@@ -57,7 +57,7 @@ public class di {
             if (r0 == 0) goto L35
             com.xiaomi.push.ix r2 = (com.xiaomi.push.ix) r2     // Catch: java.lang.Exception -> L4c
             java.lang.String r2 = r2.b()     // Catch: java.lang.Exception -> L4c
-            boolean r0 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L4c
+            boolean r0 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L4c
             if (r0 != 0) goto L51
             int r0 = com.xiaomi.push.fn.a(r2)     // Catch: java.lang.Exception -> L4c
             if (r0 == r1) goto L51
@@ -71,7 +71,7 @@ public class di {
             if (r0 == 0) goto L51
             com.xiaomi.push.iw r2 = (com.xiaomi.push.iw) r2     // Catch: java.lang.Exception -> L4c
             java.lang.String r2 = r2.a()     // Catch: java.lang.Exception -> L4c
-            boolean r0 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L4c
+            boolean r0 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L4c
             if (r0 != 0) goto L51
             int r0 = com.xiaomi.push.fn.a(r2)     // Catch: java.lang.Exception -> L4c
             if (r0 == r1) goto L51
@@ -90,7 +90,7 @@ public class di {
             if (r0 == 0) goto L7e
             com.xiaomi.push.it r2 = (com.xiaomi.push.it) r2     // Catch: java.lang.Exception -> Lab
             java.lang.String r2 = r2.f623d     // Catch: java.lang.Exception -> Lab
-            boolean r0 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Lab
+            boolean r0 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Lab
             if (r0 != 0) goto L51
             com.xiaomi.push.im r0 = com.xiaomi.push.fc.m1918a(r2)     // Catch: java.lang.Exception -> Lab
             int r0 = com.xiaomi.push.fc.a(r0)     // Catch: java.lang.Exception -> Lab
@@ -103,7 +103,7 @@ public class di {
             if (r0 == 0) goto L51
             com.xiaomi.push.jb r2 = (com.xiaomi.push.jb) r2     // Catch: java.lang.Exception -> Lab
             java.lang.String r2 = r2.f683d     // Catch: java.lang.Exception -> Lab
-            boolean r0 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Lab
+            boolean r0 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Lab
             if (r0 != 0) goto L51
             com.xiaomi.push.im r0 = com.xiaomi.push.fc.m1918a(r2)     // Catch: java.lang.Exception -> Lab
             int r0 = com.xiaomi.push.fc.a(r0)     // Catch: java.lang.Exception -> Lab

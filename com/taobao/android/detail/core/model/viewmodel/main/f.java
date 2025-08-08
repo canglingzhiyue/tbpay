@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -75,7 +75,7 @@ public class f extends epi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.f9769a) && !TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.f9769a) && !StringUtils.isEmpty(this.b)) {
             return super.isValid();
         }
         return false;

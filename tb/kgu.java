@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -114,7 +114,7 @@ public class kgu extends f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.c)) {
+        } else if (StringUtils.isEmpty(this.c)) {
         } else {
             try {
                 this.f.a().f().put("initServerParam", (Object) JSON.parseObject(this.c));
@@ -132,7 +132,7 @@ public class kgu extends f {
             return;
         }
         kgz.a("DSLFetcher.fetchDSL.dsl=%s", this.b);
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.f.a("DSL_EMPTY", "");
             return;
         }
@@ -300,7 +300,7 @@ public class kgu extends f {
             return;
         }
         JSONObject f = this.f.a().f();
-        if (!TextUtils.isEmpty(str) && str.equals(kgt.EVENT_HIT_WALL)) {
+        if (!StringUtils.isEmpty(str) && str.equals(kgt.EVENT_HIT_WALL)) {
             f.put("lastHitWall", (Object) jSONObject);
             return;
         }

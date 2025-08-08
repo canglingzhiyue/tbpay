@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -236,7 +236,7 @@ public class c {
         jSONObject.put("skuId", (Object) addBagModel.getSkuId());
         jSONObject.put("quantity", (Object) Long.valueOf(addBagModel.getQuantity()));
         jSONObject.put("cartFrom", (Object) addBagModel.getCartFrom());
-        if (!TextUtils.isEmpty(addBagModel.getExParams())) {
+        if (!StringUtils.isEmpty(addBagModel.getExParams())) {
             try {
                 jSONObject.put("exParams", (Object) addBagModel.getExParams());
             } catch (Exception unused) {
@@ -409,13 +409,13 @@ public class c {
             return;
         }
         String str = ADD_CART_FAILED;
-        if (mtopResponse != null && !TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+        if (mtopResponse != null && !StringUtils.isEmpty(mtopResponse.getRetMsg())) {
             str = mtopResponse.getRetMsg();
         }
         if (mtopResponse != null) {
             try {
                 String string = mtopResponse.getDataJsonObject().getString("addFailedPopUrl");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     hvk.a(this.f14485a, string);
                     return;
                 }
@@ -433,7 +433,7 @@ public class c {
         }
         Intent intent = new Intent();
         intent.setAction("cartRefreshData");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         intent.putExtra("stringifyAddCartResult", str);

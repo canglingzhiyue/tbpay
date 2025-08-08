@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.share.ShareResponse;
@@ -171,7 +171,7 @@ public class ShareApi {
                         } else if (ShareApi.access$400(ShareApi.this) == null) {
                         } else {
                             ShareApi.access$600(ShareApi.this);
-                            if ((sharePlatform == SharePlatform.Messenger || sharePlatform == SharePlatform.Facebook || sharePlatform == SharePlatform.Instagram || sharePlatform == SharePlatform.Line || sharePlatform == SharePlatform.Telegram || sharePlatform == SharePlatform.WeChat || sharePlatform == SharePlatform.WhatsApp || sharePlatform == SharePlatform.SinaWeibo || sharePlatform == SharePlatform.Copy || sharePlatform == SharePlatform.SMS || sharePlatform == SharePlatform.Weixin || sharePlatform == SharePlatform.WeixinPengyouquan || sharePlatform == SharePlatform.DingTalk) && !TextUtils.isEmpty(shareData.getLink())) {
+                            if ((sharePlatform == SharePlatform.Messenger || sharePlatform == SharePlatform.Facebook || sharePlatform == SharePlatform.Instagram || sharePlatform == SharePlatform.Line || sharePlatform == SharePlatform.Telegram || sharePlatform == SharePlatform.WeChat || sharePlatform == SharePlatform.WhatsApp || sharePlatform == SharePlatform.SinaWeibo || sharePlatform == SharePlatform.Copy || sharePlatform == SharePlatform.SMS || sharePlatform == SharePlatform.Weixin || sharePlatform == SharePlatform.WeixinPengyouquan || sharePlatform == SharePlatform.DingTalk) && !StringUtils.isEmpty(shareData.getLink())) {
                                 ShareApi.access$700(ShareApi.this);
                                 return;
                             }
@@ -197,7 +197,7 @@ public class ShareApi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("edca6357", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mShareData.getLink())) {
+        } else if (StringUtils.isEmpty(this.mShareData.getLink())) {
         } else {
             this.mShareData.setLink(ShareLinkWrapper.wrapShareLink(this.mShareData.getBusinessId(), this.mPlatform.name(), this.mShareData.getLink()));
         }
@@ -219,7 +219,7 @@ public class ShareApi {
                         return;
                     }
                     String shortenURL = ShareApi.access$800(ShareApi.this) != null ? ShareApi.access$800(ShareApi.this).shortenURL(ShareApi.access$400(ShareApi.this).getLink()) : ShareLinkWrapper.shortenURL(ShareApi.access$400(ShareApi.this).getLink());
-                    if (!TextUtils.isEmpty(shortenURL)) {
+                    if (!StringUtils.isEmpty(shortenURL)) {
                         ShareApi.access$400(ShareApi.this).setLink(shortenURL);
                     }
                     Message message = new Message();

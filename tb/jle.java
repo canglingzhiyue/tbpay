@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
@@ -31,7 +31,7 @@ public class jle extends jku {
         if (ipChange instanceof IpChange) {
             return (jle) ipChange.ipc$dispatch("e2617ee5", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@foreachIntent")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@foreachIntent")) {
             return null;
         }
         return new jle(str);

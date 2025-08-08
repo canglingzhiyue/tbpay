@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -36,7 +36,7 @@ public class ntw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a4e97b7d", new Object[]{cVar, reviewBean, context});
-        } else if (reviewBean == null || TextUtils.isEmpty(reviewBean.h5Url)) {
+        } else if (reviewBean == null || StringUtils.isEmpty(reviewBean.h5Url)) {
             Log.e(f31761a, "review bean is null");
         } else if (cVar == null) {
             Log.e(f31761a, "datasource is null");
@@ -49,7 +49,7 @@ public class ntw {
             }
             a2.put("q", cVar.getKeyword());
             String valueOf = String.valueOf(cVar.hashCode());
-            if (!TextUtils.isEmpty(valueOf)) {
+            if (!StringUtils.isEmpty(valueOf)) {
                 a2.put("srpKey", valueOf);
             }
             CommonSearchResult commonSearchResult = (CommonSearchResult) cVar.getLastSearchResult();
@@ -96,7 +96,7 @@ public class ntw {
                 break;
             }
             String b = b(baseCellBean);
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 if (sb.length() > 0) {
                     sb.append(",");
                 }
@@ -111,11 +111,11 @@ public class ntw {
             }
         }
         String sb3 = sb.toString();
-        if (!TextUtils.isEmpty(sb3)) {
+        if (!StringUtils.isEmpty(sb3)) {
             arrayMap.put("ids", sb3);
         }
         String sb4 = sb2.toString();
-        if (!TextUtils.isEmpty(sb4)) {
+        if (!StringUtils.isEmpty(sb4)) {
             arrayMap.put(noa.KEY_P4P_IDS, sb4);
         }
         return arrayMap;
@@ -124,7 +124,7 @@ public class ntw {
     private static boolean a(BaseCellBean baseCellBean) {
         AuctionBaseBean auctionBaseBean;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fd0c273e", new Object[]{baseCellBean})).booleanValue() : (baseCellBean instanceof SFAuctionBaseCellBean) && (auctionBaseBean = ((SFAuctionBaseCellBean) baseCellBean).auctionBaseBean) != null && !TextUtils.isEmpty(auctionBaseBean.p4pUrl);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fd0c273e", new Object[]{baseCellBean})).booleanValue() : (baseCellBean instanceof SFAuctionBaseCellBean) && (auctionBaseBean = ((SFAuctionBaseCellBean) baseCellBean).auctionBaseBean) != null && !StringUtils.isEmpty(auctionBaseBean.p4pUrl);
     }
 
     private static String b(BaseCellBean baseCellBean) {

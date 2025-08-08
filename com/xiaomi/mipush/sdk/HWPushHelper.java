@@ -2,7 +2,7 @@ package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.security.mobile.cache.AuthenticatorCache;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -24,7 +24,7 @@ public class HWPushHelper {
     public static boolean isHmsTokenSynced(Context context) {
         String a2 = i.a(context, e.ASSEMBLE_PUSH_HUAWEI, false);
         String a3 = af.a(context).a(au.UPLOAD_HUAWEI_TOKEN);
-        return !TextUtils.isEmpty(a2) && !TextUtils.isEmpty(a3) && "synced".equals(a3);
+        return !StringUtils.isEmpty(a2) && !StringUtils.isEmpty(a3) && "synced".equals(a3);
     }
 
     public static boolean isUserOpenHmsPush(Context context) {
@@ -37,7 +37,7 @@ public class HWPushHelper {
 
     public static void notifyHmsNotificationMessageClicked(Context context, String str) {
         String string;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONArray jSONArray = new JSONArray(str);
                 if (jSONArray.length() > 0) {
@@ -67,7 +67,7 @@ public class HWPushHelper {
     public static void notifyHmsPassThoughMessageArrived(Context context, String str) {
         String str2 = "";
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject jSONObject = new JSONObject(str);
                 if (jSONObject.has("content")) {
                     str2 = jSONObject.getString("content");

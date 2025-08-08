@@ -2,7 +2,7 @@ package com.taobao.detail.rate.widget.delegate.tag;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -91,7 +91,7 @@ public class AssociationTagItemView extends LinearLayout implements kqf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6f40e405", new Object[]{this, textView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             textView.setVisibility(8);
         } else {
             textView.setText(str);

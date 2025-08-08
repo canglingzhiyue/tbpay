@@ -2,7 +2,7 @@ package com.taobao.android.tschedule;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -183,14 +183,14 @@ public class f implements d.a {
                 if (scheduleTask != null) {
                     try {
                         if (scheduleTask.taskContext != 0) {
-                            if (!TextUtils.equals(str4, scheduleTask.taskContext.trigger)) {
+                            if (!StringUtils.equals(str4, scheduleTask.taskContext.trigger)) {
                                 jkq.a("TS.TMgr", "miss match trigger, taskTrigger=" + scheduleTask.taskContext.trigger + ", currentTrigger=" + str4);
                             } else {
                                 if (scheduleTask.taskContext instanceof RenderTaskContext) {
                                     RenderTaskContext renderTaskContext = (RenderTaskContext) scheduleTask.taskContext;
                                     str3 = jmi.a(renderTaskContext.params.url, renderTaskContext.params.timeContent).content;
                                     jkq.a("TS.TMgr", "解析renderUrl。解析前：" + ((RenderTaskContext) scheduleTask.taskContext).params.url + ";解析后：" + str3);
-                                    if (TextUtils.isEmpty(str3)) {
+                                    if (StringUtils.isEmpty(str3)) {
                                         String str5 = ((RenderTaskContext) scheduleTask.taskContext).params.url;
                                         HashMap hashMap2 = new HashMap();
                                         hashMap2.put("pageUrls", g.b());
@@ -203,14 +203,14 @@ public class f implements d.a {
                                 } else {
                                     str3 = str2;
                                 }
-                                if (TextUtils.isEmpty(str3)) {
+                                if (StringUtils.isEmpty(str3)) {
                                     return false;
                                 }
                                 jkq.a("TS.TMgr", "start execute, targetUrl=" + str3 + ", currentTrigger=" + str4);
                                 if (scheduleTask.taskContext.multiProcess) {
                                     String a3 = a(scheduleTask, str3);
-                                    if (!TextUtils.isEmpty(a3)) {
-                                        if (TextUtils.equals(jmi.a(), a3)) {
+                                    if (!StringUtils.isEmpty(a3)) {
+                                        if (StringUtils.equals(jmi.a(), a3)) {
                                             scheduleTask.execute(str3, objArr);
                                         } else {
                                             ArrayList arrayList2 = (ArrayList) hashMap.get(a3);
@@ -248,7 +248,7 @@ public class f implements d.a {
             return (String) ipChange.ipc$dispatch("64b010ce", new Object[]{this, scheduleTask, str});
         }
         String str2 = scheduleTask.taskContext.targetProcess;
-        return (!TextUtils.isEmpty(str2) || (b = com.taobao.android.tschedule.protocol.b.a().b(scheduleTask.taskContext.bizCode)) == null) ? str2 : b.getTargetProcessNameByUrl(e.b(), str);
+        return (!StringUtils.isEmpty(str2) || (b = com.taobao.android.tschedule.protocol.b.a().b(scheduleTask.taskContext.bizCode)) == null) ? str2 : b.getTargetProcessNameByUrl(e.b(), str);
     }
 
     private List<ScheduleTask> a(String str) {
@@ -256,7 +256,7 @@ public class f implements d.a {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return c.a(str);
         }
         return null;

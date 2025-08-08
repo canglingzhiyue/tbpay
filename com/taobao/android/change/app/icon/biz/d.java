@@ -1,7 +1,7 @@
 package com.taobao.android.change.app.icon.biz;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tlog.adapter.AdapterForTLog;
 import java.util.HashMap;
@@ -25,7 +25,7 @@ public class d {
         }
         if (hashMap != null) {
             try {
-                z = TextUtils.equals((String) hashMap.get("process"), "com.taobao.taobao");
+                z = StringUtils.equals((String) hashMap.get("process"), "com.taobao.taobao");
             } catch (Throwable th) {
                 th.printStackTrace();
                 AdapterForTLog.loge(igc.TAG, "ChangeAppIconLauncher error", th);

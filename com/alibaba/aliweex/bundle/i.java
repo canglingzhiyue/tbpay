@@ -1,7 +1,7 @@
 package com.alibaba.aliweex.bundle;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.TextView;
@@ -81,7 +81,7 @@ public class i {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
         } else if (this.b == null || this.f2019a == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = a(R.string.weex_common_error_data);
             }
             b(str);

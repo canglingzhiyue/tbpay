@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.mmtp.mrpc.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetListenerAdpter;
 import com.alipay.mobile.common.amnet.api.model.AcceptedData;
 import com.alipay.mobile.common.amnet.api.model.AmnetPost;
@@ -210,7 +210,7 @@ public class MRpcConnection {
             }
         }
         amnetPost.addParam(AmnetConstant.KEY_DATA_TIMEOUT, String.valueOf(mRpcRequest.taskTimeout));
-        if (TextUtils.equals(amnetPost.header.get(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK), "1") && mRpcRequest.isCustGwUrl) {
+        if (StringUtils.equals(amnetPost.header.get(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK), "1") && mRpcRequest.isCustGwUrl) {
             amnetPost.addParam("url", mRpcRequest.getUrl());
             LogCatUtil.debug("MRpcConnection", "add param KEY_BIFROST_POST_URL");
         }
@@ -342,7 +342,7 @@ public class MRpcConnection {
         }
         LogCatUtil.info("MRpcConnection", "handleSuccess");
         String str = mRpcResponse.headers.get(HeaderConstant.HEADER_KEY_RPCID);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("stream no exist,  streamId=[" + str + riy.ARRAY_END_STR);
         }
         MRpcStream stream = getStream(Integer.parseInt(str));
@@ -422,14 +422,14 @@ public class MRpcConnection {
             a(j, mRpcResponse, map);
             String access$200 = MRpcConnection.access$200(MRpcConnection.this, str);
             int access$300 = MRpcConnection.access$300(MRpcConnection.this, str);
-            if (!TextUtils.isEmpty(access$200)) {
+            if (!StringUtils.isEmpty(access$200)) {
                 mRpcResponse.mtag = access$200;
             }
             if (access$300 >= 0) {
                 mRpcResponse.ipStack = access$300;
                 MRpcConnection.access$400(MRpcConnection.this).put(RPCDataItems.IP_STACK, String.valueOf(access$300));
             }
-            if (!TextUtils.isEmpty(MRpcConnection.access$500(MRpcConnection.this)) && !TextUtils.isEmpty(MRpcConnection.access$600(MRpcConnection.this))) {
+            if (!StringUtils.isEmpty(MRpcConnection.access$500(MRpcConnection.this)) && !StringUtils.isEmpty(MRpcConnection.access$600(MRpcConnection.this))) {
                 mRpcResponse.targetHost = String.format("%s:%s", MRpcConnection.access$500(MRpcConnection.this), MRpcConnection.access$600(MRpcConnection.this));
             }
             MRpcConnection.access$700(MRpcConnection.this, mRpcResponse);
@@ -443,14 +443,14 @@ public class MRpcConnection {
             } else {
                 String str = map.get(AmnetConstant.KEY_AMNET_LIB_VERSION);
                 LogCatUtil.debug("MRpcConnection", "onFinalErrorEvent, receiptId:" + j + ", LIBV:" + str);
-                if (TextUtils.equals(AmnetConstant.VAL_AMNET_LIB_VERSION_BIFROST, str)) {
+                if (StringUtils.equals(AmnetConstant.VAL_AMNET_LIB_VERSION_BIFROST, str)) {
                     mRpcResponse.isUseBifrost = true;
                     MRpcConnection.access$400(MRpcConnection.this).put(MonitorLoggerUtils.LIB_VERSION, MonitorLoggerUtils.LIB_VERSION_BIFROST);
-                } else if (TextUtils.equals(AmnetConstant.VAL_AMNET_LIB_VERSION_BIFROST_HTTP2, str)) {
+                } else if (StringUtils.equals(AmnetConstant.VAL_AMNET_LIB_VERSION_BIFROST_HTTP2, str)) {
                     mRpcResponse.isUseBifrost = true;
                     mRpcResponse.isUseHttp2 = true;
                     MRpcConnection.access$400(MRpcConnection.this).put(MonitorLoggerUtils.LIB_VERSION, MonitorLoggerUtils.LIB_VERSION_BIFROST_HTTP2);
-                } else if (!TextUtils.equals(AmnetConstant.VAL_AMNET_LIB_VERSION_OLD, str)) {
+                } else if (!StringUtils.equals(AmnetConstant.VAL_AMNET_LIB_VERSION_OLD, str)) {
                 } else {
                     mRpcResponse.isUseBifrost = false;
                     mRpcResponse.isUseHttp2 = false;
@@ -612,7 +612,7 @@ public class MRpcConnection {
         mRpcResponse.resultCode = i;
         mRpcResponse.resultMsg = str;
         mRpcResponse.streamId = -1;
-        if (!TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.e)) {
             mRpcResponse.targetHost = String.format("%s:%s", this.d, this.e);
         }
         a(mRpcResponse);
@@ -639,7 +639,7 @@ public class MRpcConnection {
             return (String) ipChange.ipc$dispatch("5b9b36d0", new Object[]{this});
         }
         if (isServerLimiting()) {
-            return TextUtils.isEmpty(this.h) ? "" : this.h;
+            return StringUtils.isEmpty(this.h) ? "" : this.h;
         }
         this.h = "";
         return "";
@@ -671,7 +671,7 @@ public class MRpcConnection {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         try {
-            return (TextUtils.isEmpty(str) || !str.contains("_")) ? "" : str.substring(str.indexOf("_") + 1);
+            return (StringUtils.isEmpty(str) || !str.contains("_")) ? "" : str.substring(str.indexOf("_") + 1);
         } catch (Throwable th) {
             LogCatUtil.error("MRpcConnection", th);
             return "";
@@ -685,7 +685,7 @@ public class MRpcConnection {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
         try {
-            if (TextUtils.isEmpty(str) || (indexOf = str.indexOf(":")) < 0) {
+            if (StringUtils.isEmpty(str) || (indexOf = str.indexOf(":")) < 0) {
                 return -2;
             }
             return Integer.valueOf(str.substring(indexOf + 1)).intValue();

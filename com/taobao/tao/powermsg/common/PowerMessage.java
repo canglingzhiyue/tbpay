@@ -1,6 +1,6 @@
 package com.taobao.tao.powermsg.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.model.BaseMessage;
 import com.taobao.tao.powermsg.model.MessageFrame;
@@ -100,7 +100,7 @@ public class PowerMessage {
         }
         try {
             njx.a aVar = bVar.f20780a.header;
-            if (aVar == null || TextUtils.isEmpty(aVar.p)) {
+            if (aVar == null || StringUtils.isEmpty(aVar.p)) {
                 return;
             }
             this.streamId = aVar.p;
@@ -128,7 +128,7 @@ public class PowerMessage {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6c2a9726", new Object[]{this, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.streamId) || !(obj instanceof PowerMessage)) {
+        if (StringUtils.isEmpty(this.streamId) || !(obj instanceof PowerMessage)) {
             return super.equals(obj);
         }
         PowerMessage powerMessage = (PowerMessage) obj;

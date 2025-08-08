@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.event.base;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.ultron.event.q;
 import com.alibaba.android.ultron.vfw.dataloader.d;
@@ -202,7 +202,7 @@ public class f implements bok, bol {
             com.taobao.android.ultron.common.model.b bVar = list.get(i);
             if (bVar != null) {
                 String type = bVar.getType();
-                if (!TextUtils.isEmpty(type)) {
+                if (!StringUtils.isEmpty(type)) {
                     e a2 = a().a(type);
                     a2.a(bVar);
                     a(a2);

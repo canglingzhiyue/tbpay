@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.datasource.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -181,7 +181,7 @@ public abstract class a<RESULT extends BaseSearchResult, LOCAL extends LocalData
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     if (value == null) {
                         value = "";
                     }
@@ -251,7 +251,7 @@ public abstract class a<RESULT extends BaseSearchResult, LOCAL extends LocalData
             return (String) ipChange.ipc$dispatch("1d5d6741", new Object[]{this, str});
         }
         String paramValue = getCurrentParam().getParamValue(str);
-        if (!TextUtils.isEmpty(paramValue)) {
+        if (!StringUtils.isEmpty(paramValue)) {
             return paramValue;
         }
         return getCurrentParam().getParamValue(noa.GLOBAL_PARAM_PREFIX + str);
@@ -316,7 +316,7 @@ public abstract class a<RESULT extends BaseSearchResult, LOCAL extends LocalData
             return (String) ipChange.ipc$dispatch("155dfd4", new Object[]{this, result});
         }
         ResultMainInfoBean mainInfo = result.getMainInfo();
-        if (TextUtils.isEmpty(mainInfo.pageName)) {
+        if (StringUtils.isEmpty(mainInfo.pageName)) {
             return super.extractPageNameFrom((a<RESULT, LOCAL>) result);
         }
         return mainInfo.pageName;
@@ -391,10 +391,10 @@ public abstract class a<RESULT extends BaseSearchResult, LOCAL extends LocalData
             return (String) ipChange.ipc$dispatch("394f992a", new Object[]{this, str, baseTypedBean, templateBean});
         }
         String str2 = this.mFallbackTypeMap.get(str);
-        if (TextUtils.isEmpty(str2) && templateBean != null) {
+        if (StringUtils.isEmpty(str2) && templateBean != null) {
             str2 = templateBean.dItemType;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
         if (baseTypedBean instanceof WeexBean) {

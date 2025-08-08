@@ -1,7 +1,7 @@
 package com.taobao.android.weex.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,7 +50,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         Uri parse = Uri.parse(str);
@@ -78,7 +78,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             Uri parse = Uri.parse(str);

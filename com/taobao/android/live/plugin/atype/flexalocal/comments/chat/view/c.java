@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.comments.chat.view;
 
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.comments.chat.ChatTopMessage;
@@ -87,7 +87,7 @@ public class c implements a.InterfaceC0528a, com.taobao.taolive.sdk.model.a, ddv
                         Object next = it.next();
                         if (next instanceof ChatMessage) {
                             ChatMessage chatMessage = (ChatMessage) next;
-                            chatMessage.mType = (TextUtils.isEmpty(chatMessage.mContent) || !chatMessage.mContent.startsWith(com.taobao.taolive.sdk.utils.j.SYS_PREFIX)) ? ChatMessage.MessageType.TXT : ChatMessage.MessageType.FOLLOW;
+                            chatMessage.mType = (StringUtils.isEmpty(chatMessage.mContent) || !chatMessage.mContent.startsWith(com.taobao.taolive.sdk.utils.j.SYS_PREFIX)) ? ChatMessage.MessageType.TXT : ChatMessage.MessageType.FOLLOW;
                             arrayList.add(chatMessage);
                         }
                     }
@@ -446,7 +446,7 @@ public class c implements a.InterfaceC0528a, com.taobao.taolive.sdk.model.a, ddv
             Iterator<ChatMessage> it = messagesFromPool.iterator();
             while (it.hasNext()) {
                 ChatMessage next = it.next();
-                if (!TextUtils.isEmpty(next.mContent) && next.mContent.startsWith(com.taobao.taolive.sdk.utils.j.SYS_PREFIX)) {
+                if (!StringUtils.isEmpty(next.mContent) && next.mContent.startsWith(com.taobao.taolive.sdk.utils.j.SYS_PREFIX)) {
                     next.mType = ChatMessage.MessageType.FOLLOW;
                 } else {
                     next.mType = ChatMessage.MessageType.TXT;
@@ -550,7 +550,7 @@ public class c implements a.InterfaceC0528a, com.taobao.taolive.sdk.model.a, ddv
             return false;
         }
         String string2 = jSONObject.getString("templateName");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             chatTopMessage.mDxTemplateName = string2;
         }
         int a2 = com.taobao.taolive.sdk.utils.g.a(jSONObject, "showDuration", -1);
@@ -565,7 +565,7 @@ public class c implements a.InterfaceC0528a, com.taobao.taolive.sdk.model.a, ddv
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (l == null) {

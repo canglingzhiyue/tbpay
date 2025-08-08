@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -25,7 +25,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("da8b27ba", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new a("url_empty", "url empty");
         }
         try {

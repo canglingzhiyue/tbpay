@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.component;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
@@ -63,7 +63,7 @@ public class ae extends Component<WeexFrameLayout, a> implements com.taobao.tao.
                 }
                 ae.a(ae.this, aVar.e);
                 ogg.b("WeexComponent", "hideDefaultErrorView: " + ae.d(ae.this));
-                if (!TextUtils.isEmpty(aVar.f20105a)) {
+                if (!StringUtils.isEmpty(aVar.f20105a)) {
                     ae.e(ae.this);
                     ae.this.a(aVar);
                     ae aeVar = ae.this;
@@ -314,7 +314,7 @@ public class ae extends Component<WeexFrameLayout, a> implements com.taobao.tao.
             if (2 == i) {
                 a(str, JSON.parseObject(JSON.toJSONString(eVar.d)));
                 c();
-            } else if (3 == i && this.h != null && !TextUtils.isEmpty(this.f)) {
+            } else if (3 == i && this.h != null && !StringUtils.isEmpty(this.f)) {
                 ogg.a("WeexComponent", "onHandleMessage  try reload");
                 this.h.initWithURL(Uri.parse(this.f));
             }
@@ -650,7 +650,7 @@ public class ae extends Component<WeexFrameLayout, a> implements com.taobao.tao.
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("56c6c68", new Object[]{this});
-                    } else if (ae.n(ae.this) == null || TextUtils.isEmpty(ae.g(ae.this))) {
+                    } else if (ae.n(ae.this) == null || StringUtils.isEmpty(ae.g(ae.this))) {
                     } else {
                         ae.e(ae.this);
                         ae.n(ae.this).refresh(ae.o(ae.this), ae.p(ae.this));

@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.LocalDataManager;
@@ -403,7 +403,7 @@ public abstract class a<RESULT extends SearchResult, PARAM extends SearchParam, 
         if (ipChange instanceof IpChange) {
             return (jvm.c) ipChange.ipc$dispatch("15514229", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.mTemplateFiles.get(str);
         }
         return null;

@@ -1,6 +1,6 @@
 package com.taobao.login4android.uninstall;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.callback.CommonDataCallback;
@@ -147,12 +147,12 @@ public class DefaultUninstallServiceImpl implements UninstallService {
                             numberAuthService.removePrefetchResultObserver(this);
                             DefaultUninstallServiceImpl.access$400(DefaultUninstallServiceImpl.this, "restore_get_phone_by_notify_default", null);
                             LoginTLogAdapter.trace(DefaultUninstallServiceImpl.TAG, "restore_get_phone_by_notify_default");
-                            if (!TextUtils.equals(map.get("scene"), "networkConnected")) {
+                            if (!StringUtils.equals(map.get("scene"), "networkConnected")) {
                                 DefaultUninstallServiceImpl.access$300(DefaultUninstallServiceImpl.this, commonDataCallback, -4, "not networkConnected scene");
                                 return;
                             }
                             String str2 = map.get("number");
-                            if (TextUtils.isEmpty(str2)) {
+                            if (StringUtils.isEmpty(str2)) {
                                 DefaultUninstallServiceImpl.access$300(DefaultUninstallServiceImpl.this, commonDataCallback, -5, "number is null");
                                 return;
                             }
@@ -324,9 +324,9 @@ public class DefaultUninstallServiceImpl implements UninstallService {
             }
             DefaultUninstallServiceImpl.access$200(DefaultUninstallServiceImpl.this, str, str2, "doRelogin_gap7");
             LoginTLogAdapter.trace(DefaultUninstallServiceImpl.TAG, "doRelogin_gap7");
-            if (TextUtils.equals("14145", str)) {
+            if (StringUtils.equals("14145", str)) {
                 z = LoginSwitch.getSwitch("uninstallTagCaseNoHistory", "true");
-            } else if (TextUtils.equals("14148", str)) {
+            } else if (StringUtils.equals("14148", str)) {
                 z = LoginSwitch.getSwitch("uninstallTagCaseBlockList", "false");
             } else {
                 z = LoginSwitch.getSwitch("uninstallTagCaseGenTokenFail", "true");

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.taobao.windvane.jsbridge.c;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.kge;
 
 /* loaded from: classes6.dex */
@@ -17,7 +17,7 @@ public class DynamicJsbridgeService extends Service implements c {
 
     @Override // android.taobao.windvane.jsbridge.c
     public Class<? extends e> getBridgeClass(String str) {
-        if (!TextUtils.isEmpty(str) && str.equals("TBCalendar")) {
+        if (!StringUtils.isEmpty(str) && str.equals("TBCalendar")) {
             return CalendarJsBridge.class;
         }
         return null;

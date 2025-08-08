@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.em;
 import java.io.BufferedInputStream;
 import java.io.EOFException;
@@ -121,7 +121,7 @@ public class gh {
                             com.xiaomi.channel.commonutils.logger.b.m1616a(str);
                         }
                     }
-                } else if ("SECMSG".equals(m1973a2.m1962a()) && ((m1973a2.a() == 2 || m1973a2.a() == 3) && TextUtils.isEmpty(m1973a2.m1969b()))) {
+                } else if ("SECMSG".equals(m1973a2.m1962a()) && ((m1973a2.a() == 2 || m1973a2.a() == 3) && StringUtils.isEmpty(m1973a2.m1969b()))) {
                     try {
                         hh a3 = this.f24498a.a(m1973a2.m1967a(com.xiaomi.push.service.bf.a().a(Integer.valueOf(m1973a2.a()).toString(), m1973a2.g()).h), this.f408a);
                         a3.f469a = currentTimeMillis;

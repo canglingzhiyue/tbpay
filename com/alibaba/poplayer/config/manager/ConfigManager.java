@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.config.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.config.fetch.ConfigFetcher;
 import com.alibaba.poplayer.config.fetch.ConfigFetcherNew;
@@ -171,7 +171,7 @@ public class ConfigManager implements Serializable {
         HashMap hashMap = new HashMap();
         if (list != null && !list.isEmpty() && bzl.a().b() != null && bzl.a().b().isFatigueFilterEnable()) {
             for (String str : list) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     BaseConfigItem syncAndGetConfigById = syncAndGetConfigById(str);
                     if (syncAndGetConfigById == null) {
                         hashMap.put(str, "");
@@ -218,7 +218,7 @@ public class ConfigManager implements Serializable {
             ArrayList arrayList3 = new ArrayList();
             if (indexMap != null) {
                 for (String str : indexMap.keySet()) {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         com.alibaba.poplayer.utils.c.c("configCheck", "", "findValidConfigsFromPreDeal.noIndexId.");
                     } else {
                         BaseConfigItem syncAndGetConfigById = syncAndGetConfigById(str);
@@ -333,7 +333,7 @@ public class ConfigManager implements Serializable {
             while (true) {
                 if (it.hasNext()) {
                     BaseConfigItem next = it.next();
-                    if (!TextUtils.isEmpty(next.indexID)) {
+                    if (!StringUtils.isEmpty(next.indexID)) {
                         if (next.indexID.equals(baseConfigItem.indexID)) {
                             arrayList.remove(baseConfigItem);
                             break;
@@ -383,7 +383,7 @@ public class ConfigManager implements Serializable {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("a201ae18", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (bzl.a().b().isConfigFetchOptEnable()) {
@@ -417,7 +417,7 @@ public class ConfigManager implements Serializable {
         if (ipChange instanceof IpChange) {
             return (BaseConfigItem) ipChange.ipc$dispatch("d06e6be5", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (bzl.a().b().isConfigFetchOptEnable()) {

@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.netsdkextdependapi.network;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
@@ -281,7 +281,7 @@ public class NetworkStartupListener implements APNetworkStartupListener {
         }
         Object obj = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.get("net_authCode");
         String obj2 = obj != null ? obj.toString() : null;
-        if (!TextUtils.isEmpty(obj2)) {
+        if (!StringUtils.isEmpty(obj2)) {
             LogCatUtil.info("mynet_NetworkStartup", "getAuthCode. authCode=[" + obj2 + riy.ARRAY_END_STR);
             return obj2;
         }
@@ -444,7 +444,7 @@ public class NetworkStartupListener implements APNetworkStartupListener {
                 String appId = MiscNetUtils.getAppId();
                 NetworkStartupListener networkStartupListener = NetworkStartupListener.this;
                 NetworkStartupListener.access$100(networkStartupListener, "mynet_NetworkStartup", "getAppIdForMPaaS,appid= " + appId);
-                if (!TextUtils.isEmpty(appId) || !MiscNetUtils.isInTaobaoApp(TransportEnvUtil.getContext())) {
+                if (!StringUtils.isEmpty(appId) || !MiscNetUtils.isInTaobaoApp(TransportEnvUtil.getContext())) {
                     return appId;
                 }
                 NetworkStartupListener networkStartupListener2 = NetworkStartupListener.this;
@@ -467,7 +467,7 @@ public class NetworkStartupListener implements APNetworkStartupListener {
                 String appKey = MiscNetUtils.getAppKey();
                 NetworkStartupListener networkStartupListener = NetworkStartupListener.this;
                 NetworkStartupListener.access$100(networkStartupListener, "mynet_NetworkStartup", "getAppKeyForMPaaS,appKey= " + appKey);
-                if (!TextUtils.isEmpty(appKey) || !MiscNetUtils.isInTaobaoApp(TransportEnvUtil.getContext())) {
+                if (!StringUtils.isEmpty(appKey) || !MiscNetUtils.isInTaobaoApp(TransportEnvUtil.getContext())) {
                     return appKey;
                 }
                 NetworkStartupListener networkStartupListener2 = NetworkStartupListener.this;

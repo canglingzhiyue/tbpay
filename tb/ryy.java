@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -31,7 +31,7 @@ public class ryy {
             if (optJSONArray != null) {
                 for (int i = 0; i < optJSONArray.length(); i++) {
                     String string = optJSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         ryyVar.b.add(string);
                     }
                 }

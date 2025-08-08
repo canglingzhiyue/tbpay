@@ -1,7 +1,7 @@
 package com.hihonor.push.sdk;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.ByteArrayOutputStream;
 import java.util.concurrent.Callable;
 import java.util.zip.DataFormatException;
@@ -57,7 +57,7 @@ public class f implements Callable<d> {
                 return null;
             }
             String optString = new JSONObject(str).optString("data");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 return null;
             }
             d dVar = new d();

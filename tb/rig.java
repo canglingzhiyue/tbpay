@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class rig extends fuf {
             if ((obj3 instanceof JSONObject) && (obj instanceof String) && (obj2 instanceof String)) {
                 JSONObject jSONObject = (JSONObject) obj3;
                 String str = (String) obj;
-                if (jSONObject.containsKey(str) && TextUtils.equals((String) obj2, jSONObject.getString(str))) {
+                if (jSONObject.containsKey(str) && StringUtils.equals((String) obj2, jSONObject.getString(str))) {
                     return i;
                 }
             }

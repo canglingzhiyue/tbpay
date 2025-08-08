@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
@@ -205,7 +205,7 @@ public class BioOpenHandler {
         HashMap hashMap = new HashMap();
         this.f = bundle.getString(aw.PARAM_PRODUCT_TYPE);
         String string7 = bundle.getString(Constants.VI_ENGINE_FAST_MODULENAME);
-        if (!TextUtils.isEmpty(string7)) {
+        if (!StringUtils.isEmpty(string7)) {
             try {
                 JSONObject parseObject = JSON.parseObject(string7);
                 if (parseObject != null) {
@@ -262,7 +262,7 @@ public class BioOpenHandler {
             VerifyLogCat.i(f5956a, "未安装服务");
             String string2 = bundle.getString("alertText");
             Bundle bundle2 = new Bundle();
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 if ("1".equalsIgnoreCase(this.f)) {
                     string2 = MicroModuleContext.getInstance().getContext().getResources().getString(R.string.finger_guide_not_install);
                 } else if ("4".equalsIgnoreCase(this.f)) {
@@ -354,7 +354,7 @@ public class BioOpenHandler {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                    } else if (BioOpenHandler.d(BioOpenHandler.this) == null || TextUtils.isEmpty(BioOpenHandler.b(BioOpenHandler.this))) {
+                    } else if (BioOpenHandler.d(BioOpenHandler.this) == null || StringUtils.isEmpty(BioOpenHandler.b(BioOpenHandler.this))) {
                         BioOpenHandler.a(BioOpenHandler.this, "1003", true);
                     } else {
                         BioCheckManager d = BioOpenHandler.d(BioOpenHandler.this);
@@ -387,7 +387,7 @@ public class BioOpenHandler {
         } else if (CommonConstant.FACEID_PAY.equalsIgnoreCase(this.d)) {
             final String str4 = map.get("module");
             final String str5 = map.get("action");
-            if (!TextUtils.isEmpty(map.get(Constants.VI_ENGINE_VERIFYID))) {
+            if (!StringUtils.isEmpty(map.get(Constants.VI_ENGINE_VERIFYID))) {
                 final String str6 = map.get(Constants.VI_ENGINE_VERIFYID);
                 String str7 = map.get("moduleData");
                 VerifyLogCat.i(f5956a, "调起核身做密码校验");
@@ -407,7 +407,7 @@ public class BioOpenHandler {
                         }
                         if (verifyIdentityResult != null) {
                             if ("1000".equalsIgnoreCase(verifyIdentityResult.getCode())) {
-                                if (TextUtils.isEmpty(BioOpenHandler.b(BioOpenHandler.this))) {
+                                if (StringUtils.isEmpty(BioOpenHandler.b(BioOpenHandler.this))) {
                                     BioOpenHandler.a(BioOpenHandler.this, "1003", true);
                                     return;
                                 }
@@ -420,7 +420,7 @@ public class BioOpenHandler {
                         BioOpenHandler.a(BioOpenHandler.this, "1003", true);
                     }
                 });
-            } else if (!TextUtils.isEmpty(this.f)) {
+            } else if (!StringUtils.isEmpty(this.f)) {
                 a(Integer.valueOf(this.f).intValue(), str3, str, str4, str5, bundle);
             } else {
                 a("1003", true);
@@ -439,7 +439,7 @@ public class BioOpenHandler {
         }
         final String str2 = map.get("module");
         final String str3 = map.get("action");
-        if (TextUtils.isEmpty(map.get(Constants.VI_ENGINE_VERIFYID))) {
+        if (StringUtils.isEmpty(map.get(Constants.VI_ENGINE_VERIFYID))) {
             return;
         }
         String str4 = map.get(Constants.VI_ENGINE_VERIFYID);
@@ -603,7 +603,7 @@ public class BioOpenHandler {
         }
         final String str2 = (String) map.get("module");
         final String str3 = (String) map.get("action");
-        if (!TextUtils.isEmpty((CharSequence) map.get(Constants.VI_ENGINE_VERIFYID))) {
+        if (!StringUtils.isEmpty((CharSequence) map.get(Constants.VI_ENGINE_VERIFYID))) {
             String str4 = (String) map.get(Constants.VI_ENGINE_VERIFYID);
             String str5 = (String) map.get("moduleData");
             VerifyLogCat.i(f5956a, "调起核身做密码校验");

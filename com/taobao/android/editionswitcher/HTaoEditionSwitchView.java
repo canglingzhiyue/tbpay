@@ -2,7 +2,7 @@ package com.taobao.android.editionswitcher;
 
 import android.content.Context;
 import android.os.CountDownTimer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -86,7 +86,7 @@ public class HTaoEditionSwitchView extends EditionSwitchView {
         this.countryNameTextView.setText(c.countryName);
         this.countryNameTextView.setTag(c.countryCode);
         HImageView hImageView = (HImageView) findViewById(R.id.iv_change_country_reason);
-        if (!TextUtils.isEmpty(c.ext.hTaoContentImg)) {
+        if (!StringUtils.isEmpty(c.ext.hTaoContentImg)) {
             if ("KR".equals(c.countryCode) || "GLOBAL".equals(c.countryCode)) {
                 hImageView.setPlaceHoldForeground(getResources().getDrawable(R.drawable.homepage_area_switch_service_kr_global));
             } else {
@@ -155,14 +155,14 @@ public class HTaoEditionSwitchView extends EditionSwitchView {
         LinkedHashMap<String, PositionInfo> a2 = d.a();
         ArrayList arrayList = new ArrayList();
         for (String str : a2.keySet()) {
-            if (!TextUtils.equals(str, "CUN") && !TextUtils.equals(str, "OLD")) {
+            if (!StringUtils.equals(str, "CUN") && !StringUtils.equals(str, "OLD")) {
                 arrayList.add(str);
             }
         }
         ArrayList arrayList2 = new ArrayList();
         PositionInfo b = l.b(context);
         String obj = this.countryNameTextView.getTag() == null ? "" : this.countryNameTextView.getTag().toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             obj = b == null ? "CN" : b.countryCode;
         }
         PositionInfo c = l.c(context);
@@ -173,13 +173,13 @@ public class HTaoEditionSwitchView extends EditionSwitchView {
             a aVar = new a();
             aVar.f12260a = ((String) arrayList.get(a3[i2])).trim();
             aVar.b = a2.get(aVar.f12260a).countryName.trim();
-            if (TextUtils.equals(aVar.f12260a, obj)) {
+            if (StringUtils.equals(aVar.f12260a, obj)) {
                 aVar.c = true;
                 z = true;
             } else {
                 aVar.c = false;
             }
-            if (TextUtils.equals(aVar.f12260a, "CN")) {
+            if (StringUtils.equals(aVar.f12260a, "CN")) {
                 i = i2;
             }
             arrayList2.add(aVar);

@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.api;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.http.RequestMethodConstants;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -175,7 +175,7 @@ public class LogEvent implements Serializable {
 
     public boolean isIllegal() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("49a28977", new Object[]{this})).booleanValue() : TextUtils.isEmpty(getCategory()) || getLevel() == null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("49a28977", new Object[]{this})).booleanValue() : StringUtils.isEmpty(getCategory()) || getLevel() == null;
     }
 
     @MpaasClassInfo(BundleName = "android-phone-mobilesdk-logging", ExportJarName = "unknown", Level = "lib", Product = ":android-phone-mobilesdk-logging")

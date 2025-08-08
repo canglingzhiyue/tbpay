@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.utils;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -239,7 +239,7 @@ public class DataHelper {
             notifyResult(null);
             return;
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             this.isPluginMode = true;
             this.moduleDataJson.put(VIFBPluginManager.KEY_SOURCE_PLUGIN_NAME, (Object) this.b);
         }
@@ -294,7 +294,7 @@ public class DataHelper {
         BaseFBPlugin baseFBPlugin = this.mPlugin;
         if (baseFBPlugin != null) {
             String actConf = baseFBPlugin.getActConf(BaseFBPlugin.ACT_CONF.supportVersion);
-            if (TextUtils.isEmpty(actConf) || !"2.0".equalsIgnoreCase(actConf)) {
+            if (StringUtils.isEmpty(actConf) || !"2.0".equalsIgnoreCase(actConf)) {
                 this.supporNewVerison = false;
             }
             if ("Y".equalsIgnoreCase(this.mPlugin.getActConf(BaseFBPlugin.ACT_CONF.disableSmartSort))) {
@@ -307,7 +307,7 @@ public class DataHelper {
         this.alertText = this.moduleDataJson.getString(FP_ALERT_TEXT);
         this.nextproduct = this.moduleDataJson.getString("switchOther");
         this.moduleDataJson.remove("predata");
-        if (!TextUtils.isEmpty(this.predata_type)) {
+        if (!StringUtils.isEmpty(this.predata_type)) {
             this.sourceToPwd = this.predata_type;
         }
         String str2 = f5937a;
@@ -332,7 +332,7 @@ public class DataHelper {
             this.needChangeFp = this.preDataJson.getBooleanValue(MIC_FP_ADAPTER);
             this.needUseNewFpInterface = this.preDataJson.getBooleanValue(MIC_FP_INTERFACE);
         }
-        if (TextUtils.isEmpty(this.predata_type)) {
+        if (StringUtils.isEmpty(this.predata_type)) {
             return;
         }
         this.sourceToPwd = this.predata_type;
@@ -406,9 +406,9 @@ public class DataHelper {
             return (String) ipChange.ipc$dispatch("ac3e9ef3", new Object[]{this, str, context});
         }
         String str2 = "";
-        if (!TextUtils.isEmpty(str) && context != null) {
+        if (!StringUtils.isEmpty(str) && context != null) {
             try {
-                if (!TextUtils.isEmpty(this.mIdTip)) {
+                if (!StringUtils.isEmpty(this.mIdTip)) {
                     if (FP_TYPE_VALUE.equalsIgnoreCase(str)) {
                         str2 = this.mIdTip.replace("#product#", context.getResources().getString(R.string.vi_product_fp));
                     } else if (ZFACE_TYPE_VALUE.equalsIgnoreCase(str)) {
@@ -423,7 +423,7 @@ public class DataHelper {
                 VerifyLogCat.i(f5937a, "替换文案异常");
             }
             try {
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     if (FP_TYPE_VALUE.equalsIgnoreCase(str)) {
                         str2 = context.getResources().getString(R.string.vi_to_fp_intelligent);
                     } else if (ZFACE_TYPE_VALUE.equalsIgnoreCase(str)) {
@@ -609,7 +609,7 @@ public class DataHelper {
             }
             task.getExtParams().putString(CommonConstant.PRO_VERIFY_TYPE, "pwd");
             task.getExtParams().putString(CommonConstant.PRO_VERIFY_RESULT, this.proVerifyResult);
-            if (!TextUtils.isEmpty(this.mulitiSourceTo)) {
+            if (!StringUtils.isEmpty(this.mulitiSourceTo)) {
                 task.getExtParams().putString(CommonConstant.BIO_CHANGE_TYPE, this.mulitiSourceTo.toLowerCase());
             }
         }
@@ -653,24 +653,24 @@ public class DataHelper {
                     task.setExtParams(new Bundle());
                 }
                 if (z) {
-                    if (!TextUtils.isEmpty(this.sourceToPwd)) {
+                    if (!StringUtils.isEmpty(this.sourceToPwd)) {
                         if ("pwd".equalsIgnoreCase(this.sourceToPwd)) {
                             task.getExtParams().putString(CommonConstant.PRO_VERIFY_TYPE, "pwd");
                         } else {
                             task.getExtParams().putString(CommonConstant.PRO_VERIFY_TYPE, this.sourceToPwd.toLowerCase() + "2pwd");
                         }
                     }
-                    if (!TextUtils.isEmpty(this.mulitiSourceTo)) {
+                    if (!StringUtils.isEmpty(this.mulitiSourceTo)) {
                         task.getExtParams().putString(CommonConstant.BIO_CHANGE_TYPE, this.mulitiSourceTo.toLowerCase());
                     }
-                    if (!TextUtils.isEmpty(this.toPwdFormMsp)) {
+                    if (!StringUtils.isEmpty(this.toPwdFormMsp)) {
                         task.getExtParams().putString("usePwd", this.toPwdFormMsp);
                     }
                 } else {
-                    if (!TextUtils.isEmpty(this.predata_type)) {
+                    if (!StringUtils.isEmpty(this.predata_type)) {
                         task.getExtParams().putString(CommonConstant.PRO_VERIFY_TYPE, this.predata_type.toLowerCase());
                     }
-                    if (!TextUtils.isEmpty(this.mulitiSourceTo)) {
+                    if (!StringUtils.isEmpty(this.mulitiSourceTo)) {
                         task.getExtParams().putString(CommonConstant.BIO_CHANGE_TYPE, this.mulitiSourceTo.toLowerCase());
                     }
                 }
@@ -766,7 +766,7 @@ public class DataHelper {
         mICRpcResponse.token = this.mModule.getToken();
         mICRpcResponse.finish = false;
         mICRpcResponse.nextStep = ModuleConstants.VI_MODULE_NAME_PAY_PWD;
-        if (!TextUtils.isEmpty(this.mModule.getVerifyId()) && this.mModule.getVerifyId().endsWith("_site")) {
+        if (!StringUtils.isEmpty(this.mModule.getVerifyId()) && this.mModule.getVerifyId().endsWith("_site")) {
             mICRpcResponse.nextStep = ModuleConstants.VI_MODULE_NAME_PAYMENT_PASSWORD;
         }
         JSONObject jSONObject = this.moduleDataJson;
@@ -802,7 +802,7 @@ public class DataHelper {
         mICRpcResponse.token = this.mModule.getToken();
         mICRpcResponse.finish = false;
         mICRpcResponse.nextStep = ModuleConstants.VI_MODULE_NAME_PAY_PWD;
-        if (!TextUtils.isEmpty(this.mModule.getVerifyId()) && this.mModule.getVerifyId().endsWith("_site")) {
+        if (!StringUtils.isEmpty(this.mModule.getVerifyId()) && this.mModule.getVerifyId().endsWith("_site")) {
             mICRpcResponse.nextStep = ModuleConstants.VI_MODULE_NAME_PAYMENT_PASSWORD;
         }
         JSONObject jSONObject = this.moduleDataJson;
@@ -873,7 +873,7 @@ public class DataHelper {
             this.proVerifyResult = str;
         }
         hashMap.put("code", this.proVerifyResult);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("source", str2);
         }
         hashMap.put("module", this.mModule.getModuleName());
@@ -909,7 +909,7 @@ public class DataHelper {
             this.proVerifyResult = str;
         }
         hashMap.put("code", this.proVerifyResult);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("source", str2);
         }
         hashMap.put("subCode", str4);
@@ -984,7 +984,7 @@ public class DataHelper {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("d9a05895", new Object[]{this, new Boolean(z), str2, bundle3});
-                } else if (!z || TextUtils.isEmpty(str2) || !"false".equalsIgnoreCase(str2)) {
+                } else if (!z || StringUtils.isEmpty(str2) || !"false".equalsIgnoreCase(str2)) {
                     DecisionCallback decisionCallback2 = decisionCallback;
                     if (decisionCallback2 == null) {
                         return;
@@ -1035,7 +1035,7 @@ public class DataHelper {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("d9a05895", new Object[]{this, new Boolean(z), str2, bundle3});
-                } else if (!z || TextUtils.isEmpty(str2) || !"false".equalsIgnoreCase(str2)) {
+                } else if (!z || StringUtils.isEmpty(str2) || !"false".equalsIgnoreCase(str2)) {
                     DecisionCallback decisionCallback2 = decisionCallback;
                     if (decisionCallback2 == null) {
                         return;

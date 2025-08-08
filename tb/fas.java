@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -137,7 +137,7 @@ public class fas extends b<fbg> {
         if (arrayList == null || arrayList.size() == 0) {
             return new View(this.g);
         }
-        if (!TextUtils.isEmpty(fbgVar.b)) {
+        if (!StringUtils.isEmpty(fbgVar.b)) {
             this.o.setText(fbgVar.b);
             this.o.setVisibility(0);
         }

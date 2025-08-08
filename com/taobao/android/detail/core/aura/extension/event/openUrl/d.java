@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.aura.extension.event.openUrl;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
@@ -56,7 +56,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1d3a4492", new Object[]{bundle, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (obj instanceof Boolean) {
                 bundle.putBoolean(str, ((Boolean) obj).booleanValue());
@@ -97,7 +97,7 @@ public class d {
         hashMap.putAll(map);
         Uri.Builder clearQuery = parse.buildUpon().clearQuery();
         for (Map.Entry entry : hashMap.entrySet()) {
-            if (entry != null && !TextUtils.isEmpty((CharSequence) entry.getKey()) && entry.getValue() != null) {
+            if (entry != null && !StringUtils.isEmpty((CharSequence) entry.getKey()) && entry.getValue() != null) {
                 clearQuery.appendQueryParameter((String) entry.getKey(), String.valueOf(entry.getValue()));
             }
         }

@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -39,7 +39,7 @@ public class co {
 
     public co(String str) {
         this.f176a = "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f175a = System.currentTimeMillis();
             this.f177a.add(new cx(str, -1));
             this.f176a = cs.m1789a();
@@ -52,7 +52,7 @@ public class co {
     private synchronized void c(String str) {
         Iterator<cx> it = this.f177a.iterator();
         while (it.hasNext()) {
-            if (TextUtils.equals(it.next().f194a, str)) {
+            if (StringUtils.equals(it.next().f194a, str)) {
                 it.remove();
             }
         }
@@ -78,9 +78,9 @@ public class co {
     }
 
     public synchronized String a() {
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             return this.i;
-        } else if (TextUtils.isEmpty(this.e)) {
+        } else if (StringUtils.isEmpty(this.e)) {
             return "hardcode_isp";
         } else {
             this.i = bm.a(new String[]{this.e, this.c, this.d, this.g, this.f}, "_");
@@ -94,9 +94,9 @@ public class co {
     }
 
     public ArrayList<String> a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             URL url = new URL(str);
-            if (!TextUtils.equals(url.getHost(), this.f178b)) {
+            if (!StringUtils.equals(url.getHost(), this.f178b)) {
                 throw new IllegalArgumentException("the url is not supported by the fallback");
             }
             ArrayList<String> arrayList = new ArrayList<>();
@@ -198,7 +198,7 @@ public class co {
         Iterator<cx> it = this.f177a.iterator();
         while (it.hasNext()) {
             cx next = it.next();
-            if (TextUtils.equals(str, next.f194a)) {
+            if (StringUtils.equals(str, next.f194a)) {
                 next.a(cnVar);
                 return;
             }
@@ -216,7 +216,7 @@ public class co {
             int length = strArr.length;
             while (true) {
                 if (i < length) {
-                    if (TextUtils.equals(this.f177a.get(size).f194a, strArr[i])) {
+                    if (StringUtils.equals(this.f177a.get(size).f194a, strArr[i])) {
                         this.f177a.remove(size);
                         break;
                     }
@@ -241,11 +241,11 @@ public class co {
 
     /* renamed from: a  reason: collision with other method in class */
     public boolean m1783a() {
-        return TextUtils.equals(this.f176a, cs.m1789a());
+        return StringUtils.equals(this.f176a, cs.m1789a());
     }
 
     public boolean a(co coVar) {
-        return TextUtils.equals(this.f176a, coVar.f176a);
+        return StringUtils.equals(this.f176a, coVar.f176a);
     }
 
     public void b(String str) {

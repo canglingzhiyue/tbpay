@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -165,7 +165,7 @@ public final class htm {
             if (a2 != null) {
                 a2.add(iukVar);
             }
-            if (TextUtils.isEmpty(mod.b().type)) {
+            if (StringUtils.isEmpty(mod.b().type)) {
                 this.d.add(iukVar);
             } else {
                 List<iuk<?, ?>> a3 = a(this.b, mod.b().type);

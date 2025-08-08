@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Rect;
 import android.os.Build;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
@@ -90,7 +90,7 @@ public class fnj extends fpo {
                         ((InputMethodManager) view.getContext().getSystemService("input_method")).showSoftInput(view, 0);
                         if (map.containsKey("onBegin")) {
                             String str = (String) map.get("onBegin");
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 ArrayList arrayList = new ArrayList(5);
                                 arrayList.add(((EditText) view).getText());
                                 view.setTag(j.VIEW_PARAMS, arrayList);
@@ -202,7 +202,7 @@ public class fnj extends fpo {
                 ipChange.ipc$dispatch("56c6c68", new Object[]{this});
                 return;
             }
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 ArrayList arrayList = new ArrayList(5);
                 arrayList.add(((EditText) this.e).getText());
                 this.e.setTag(j.VIEW_PARAMS, arrayList);
@@ -273,7 +273,7 @@ public class fnj extends fpo {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("67397830", new Object[]{this, charSequence, new Integer(i), new Integer(i2), new Integer(i3)});
-            } else if (TextUtils.isEmpty(this.d)) {
+            } else if (StringUtils.isEmpty(this.d)) {
             } else {
                 ArrayList arrayList = new ArrayList(5);
                 arrayList.add(((EditText) this.f).getText());

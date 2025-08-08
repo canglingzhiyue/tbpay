@@ -6,7 +6,7 @@ import android.graphics.Point;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.v4.app.NotificationManagerCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -131,7 +131,7 @@ public class TBToast {
         if (ipChange instanceof IpChange) {
             return (TBToast) ipChange.ipc$dispatch("a0f2bea1", new Object[]{this, charSequence});
         }
-        if (this.mMessage2TextView != null && !TextUtils.isEmpty(charSequence)) {
+        if (this.mMessage2TextView != null && !StringUtils.isEmpty(charSequence)) {
             this.mMessage2TextView.setText(charSequence);
             this.mMessage2TextView.setVisibility(0);
         }
@@ -155,7 +155,7 @@ public class TBToast {
         if (ipChange instanceof IpChange) {
             return (TBToast) ipChange.ipc$dispatch("28d8e5e2", new Object[]{this, str});
         }
-        if (this.mIconView != null && this.mContext != null && !TextUtils.isEmpty(str)) {
+        if (this.mIconView != null && this.mContext != null && !StringUtils.isEmpty(str)) {
             this.mIconView.setText(str);
             this.mIconView.setVisibility(0);
         }

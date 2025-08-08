@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.api.ConnectionResult;
 import com.taobao.alimama.services.a;
@@ -24,7 +24,7 @@ public class dbh {
 
     private static String a(String... strArr) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("a51c09c9", new Object[]{strArr}) : (strArr == null || strArr.length <= 0) ? "" : TextUtils.join(",", strArr);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("a51c09c9", new Object[]{strArr}) : (strArr == null || strArr.length <= 0) ? "" : StringUtils.join(",", strArr);
     }
 
     private static void a(int i, String str, String str2, String str3, String str4) {

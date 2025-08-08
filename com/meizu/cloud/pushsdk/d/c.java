@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.d;
 
 import android.content.Context;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.meizu.cloud.pushinternal.DebugLogger;
 
@@ -14,12 +14,12 @@ public class c {
     private static String b;
 
     public static String a(Context context) {
-        if (!TextUtils.isEmpty(f7875a)) {
+        if (!StringUtils.isEmpty(f7875a)) {
             return f7875a;
         }
         String c = c(context);
         f7875a = c;
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             return f7875a;
         }
         try {
@@ -35,7 +35,7 @@ public class c {
     }
 
     public static String b(Context context) {
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return b;
         }
         try {
@@ -58,7 +58,7 @@ public class c {
         } catch (Exception e) {
             DebugLogger.e("DeviceUtils", "getDeviceId error " + e.getMessage());
         }
-        if (!a2.f7888a || TextUtils.isEmpty((CharSequence) a2.b)) {
+        if (!a2.f7888a || StringUtils.isEmpty((CharSequence) a2.b)) {
             TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
             if (telephonyManager != null) {
                 return ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY.proxy_getDeviceId(telephonyManager);

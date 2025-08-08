@@ -13,7 +13,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -449,7 +449,7 @@ public abstract class DetailCoreActivity extends TaobaoBaseActivity implements c
         rly.a().a(this);
         this.f9411a = new ebx().a(this, this.q);
         this.A.put("itemId", this.f9411a.f27180a);
-        if (TextUtils.isEmpty(t.a(this))) {
+        if (StringUtils.isEmpty(t.a(this))) {
             if (e.b(this.f9411a.q)) {
                 overridePendingTransition(R.anim.detail_nav_enter_anim, R.anim.detail_nav_exit_anim);
             } else if (e.a(this.f9411a.q, this.f9411a.f27180a, true)) {
@@ -504,7 +504,7 @@ public abstract class DetailCoreActivity extends TaobaoBaseActivity implements c
         if (this.f9411a.d()) {
             ecb.a(this);
         }
-        if (TextUtils.isEmpty(this.f9411a.f27180a)) {
+        if (StringUtils.isEmpty(this.f9411a.f27180a)) {
             return;
         }
         eps.a((Activity) this, (String) null, this.f9411a.c());
@@ -577,7 +577,7 @@ public abstract class DetailCoreActivity extends TaobaoBaseActivity implements c
             return;
         }
         TUrlImageView tUrlImageView = this.v;
-        if (tUrlImageView != null && !TextUtils.isEmpty(tUrlImageView.getImageUrl())) {
+        if (tUrlImageView != null && !StringUtils.isEmpty(tUrlImageView.getImageUrl())) {
             this.l.post(new Runnable() { // from class: com.taobao.android.detail.core.detail.activity.DetailCoreActivity.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -679,7 +679,7 @@ public abstract class DetailCoreActivity extends TaobaoBaseActivity implements c
                 }
             }
             ((LinearLayout.LayoutParams) this.v.getLayoutParams()).height = (int) (this.t.getResources().getDisplayMetrics().widthPixels * f);
-            if (!TextUtils.isEmpty(str) && !s.a()) {
+            if (!StringUtils.isEmpty(str) && !s.a()) {
                 TLog.logw("DetailCoreActivity", "load mask img = " + str);
                 this.v.setStrategyConfig(ImageStrategyConfig.a("detail", 15));
                 PhenixOptions phenixOptions = new PhenixOptions();
@@ -804,7 +804,7 @@ public abstract class DetailCoreActivity extends TaobaoBaseActivity implements c
                 return;
             }
             String a2 = t.a(this);
-            Drawable remove = !TextUtils.isEmpty(a2) ? TTDetailPageManager.sDowngradeSnapshotData.remove(a2) : null;
+            Drawable remove = !StringUtils.isEmpty(a2) ? TTDetailPageManager.sDowngradeSnapshotData.remove(a2) : null;
             if (remove == null) {
                 return;
             }
@@ -1369,17 +1369,17 @@ public abstract class DetailCoreActivity extends TaobaoBaseActivity implements c
 
     public String aT() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f7f77cc6", new Object[]{this}) : TextUtils.isEmpty(this.O) ? com.taobao.android.detail.core.aura.presenter.c.AURA_CONFIG : this.O;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f7f77cc6", new Object[]{this}) : StringUtils.isEmpty(this.O) ? com.taobao.android.detail.core.aura.presenter.c.AURA_CONFIG : this.O;
     }
 
     public boolean aU() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa49669f", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.O);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa49669f", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.O);
     }
 
     public String aV() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("502f204", new Object[]{this}) : TextUtils.isEmpty(this.P) ? elq.AURA_CONFIG : this.P;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("502f204", new Object[]{this}) : StringUtils.isEmpty(this.P) ? elq.AURA_CONFIG : this.P;
     }
 
     public boolean H() {

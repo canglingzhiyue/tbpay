@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.support.v4.util.LruCache;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.uikit.media.expression.Expression;
@@ -78,7 +78,7 @@ public final class ogf {
         int a2 = ohd.a(b, i);
         StringBuilder sb = new StringBuilder();
         for (int i2 = 0; i2 < split.length; i2++) {
-            if (!TextUtils.isEmpty(split[i2])) {
+            if (!StringUtils.isEmpty(split[i2])) {
                 int e = e(split[i2]);
                 String str2 = null;
                 if (e != -1) {
@@ -144,7 +144,7 @@ public final class ogf {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         a c2 = c(str);
@@ -172,7 +172,7 @@ public final class ogf {
             return (a) ipChange.ipc$dispatch("3d480e27", new Object[]{str});
         }
         a aVar = new a();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return aVar;
         }
         String[] split = str.split(PREFIX);

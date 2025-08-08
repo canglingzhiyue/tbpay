@@ -4,7 +4,7 @@ import android.net.http.SslError;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -204,7 +204,7 @@ public class qqd extends ptk {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("edb78e1d", new Object[]{this, spyVar});
-        } else if (TextUtils.isEmpty(this.e)) {
+        } else if (StringUtils.isEmpty(this.e)) {
             this.i = 3;
         } else {
             if (this.e.contains("?")) {

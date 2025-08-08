@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.util.RequestConstant;
@@ -919,9 +919,9 @@ public class klu implements kln {
                         return true;
                     } else {
                         String str = a.r;
-                        if (!TextUtils.isEmpty(str) && (split = str.split(",")) != null && split.length > 0) {
+                        if (!StringUtils.isEmpty(str) && (split = str.split(",")) != null && split.length > 0) {
                             for (String str2 : split) {
-                                if (TextUtils.equals(str2, this.d.b.f.f30169a)) {
+                                if (StringUtils.equals(str2, this.d.b.f.f30169a)) {
                                     return true;
                                 }
                             }
@@ -957,7 +957,7 @@ public class klu implements kln {
             this.e.f.q = a2;
             String a3 = kmy.a(this.d, this.d.b.e.f30167a);
             long j = this.d.b.e.b;
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 this.e.f.d = false;
             } else {
                 this.f.b(HttpConstant.RANGE, a3);
@@ -1099,18 +1099,18 @@ public class klu implements kln {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("75f5ebaf", new Object[]{this, str, new Integer(i)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "mid";
         }
         if (i == 41) {
             return "high";
         }
         String str2 = a.s;
-        if (TextUtils.isEmpty(str2) || (split = str2.split(",")) == null || split.length <= 0) {
+        if (StringUtils.isEmpty(str2) || (split = str2.split(",")) == null || split.length <= 0) {
             return "mid";
         }
         for (String str3 : split) {
-            if (TextUtils.equals(str3, str)) {
+            if (StringUtils.equals(str3, str)) {
                 return "low";
             }
         }

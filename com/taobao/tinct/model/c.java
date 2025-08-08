@@ -1,6 +1,6 @@
 package com.taobao.tinct.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -43,7 +43,7 @@ public class c extends BaseChangeInfo {
         }
         if (obj != null && getClass() == obj.getClass()) {
             c cVar = (c) obj;
-            if (!TextUtils.isEmpty(this.f22959a) && getTinctTag().equals(cVar.getTinctTag())) {
+            if (!StringUtils.isEmpty(this.f22959a) && getTinctTag().equals(cVar.getTinctTag())) {
                 return true;
             }
         }

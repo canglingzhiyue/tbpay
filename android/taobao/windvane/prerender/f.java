@@ -4,7 +4,7 @@ import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.extra.storage.FirstChunkStorage;
 import android.taobao.windvane.extra.storage.ResponseContext;
 import android.taobao.windvane.thread.WVThreadPool;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import kotlin.Metadata;
@@ -61,7 +61,7 @@ public final class f {
         }
         q.d(params, "params");
         q.d(callback, "callback");
-        if (TextUtils.isEmpty(params.a()) || params.b() != 2) {
+        if (StringUtils.isEmpty(params.a()) || params.b() != 2) {
             callback.mo2421invoke(null);
             return;
         }

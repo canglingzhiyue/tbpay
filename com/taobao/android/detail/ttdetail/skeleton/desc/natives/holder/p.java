@@ -74,7 +74,7 @@ public class p extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             android.content.Context r0 = r5.f10821a
             int r0 = com.taobao.android.detail.ttdetail.utils.f.a(r0)
             java.lang.String r1 = r6.d
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 != 0) goto L3f
             java.lang.String r1 = r6.d     // Catch: java.lang.Exception -> L3f
             float r1 = java.lang.Float.parseFloat(r1)     // Catch: java.lang.Exception -> L3f
@@ -95,7 +95,7 @@ public class p extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             r1 = 0
         L40:
             java.lang.String r3 = r6.c
-            boolean r3 = android.text.TextUtils.isEmpty(r3)
+            boolean r3 = android.text.StringUtils.isEmpty(r3)
             if (r3 != 0) goto L52
             java.lang.String r6 = r6.c     // Catch: java.lang.Exception -> L52
             float r6 = java.lang.Float.parseFloat(r6)     // Catch: java.lang.Exception -> L52

@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.itemgroup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,13 +80,13 @@ public class ItemGroupPopupView extends BasePopupView implements ddv {
             return;
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(pageInfo.id)) {
+        if (!StringUtils.isEmpty(pageInfo.id)) {
             hashMap.put("aggregation_id", pageInfo.id);
         }
-        if (!TextUtils.isEmpty(pageInfo.type)) {
+        if (!StringUtils.isEmpty(pageInfo.type)) {
             hashMap.put("aggregation_type", pageInfo.type);
         }
-        if (!TextUtils.isEmpty(pageInfo.source)) {
+        if (!StringUtils.isEmpty(pageInfo.source)) {
             hashMap.put("aggregation_source", pageInfo.source);
         }
         com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j().b("LiveDiscountItemList", hashMap);

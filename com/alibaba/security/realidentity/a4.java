@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.security.realidentity.service.track.model.TrackLog;
 import com.alibaba.wireless.security.open.SecException;
@@ -192,7 +192,7 @@ public abstract class a4 {
         if (!a()) {
             return null;
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             return this.c;
         }
         CountDownLatch countDownLatch = new CountDownLatch(1);

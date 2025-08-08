@@ -1,7 +1,7 @@
 package org.android.spdy;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.birdnest.util.UiUtil;
 import com.alipay.mobile.common.amnet.biz.inner.AmnetMonitorLoggerListener;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -1210,7 +1210,7 @@ public final class SpdyAgent {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d2e988c2", new Object[]{this, str, str2, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         try {

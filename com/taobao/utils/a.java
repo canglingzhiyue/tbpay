@@ -1,6 +1,6 @@
 package com.taobao.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +20,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String str3 = null;
@@ -47,11 +47,11 @@ public class a {
             return (JSONObject) ipChange.ipc$dispatch("2f58b020", new Object[]{str});
         }
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return jSONObject;
         }
         for (String str2 : str.split("&")) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 String[] split2 = str2.split("=", 2);
                 if (split2.length > 1) {
                     try {

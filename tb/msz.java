@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public final class msz {
             ipChange.ipc$dispatch("68c3e163", new Object[]{context, msgNotficationDTO, new Integer(i), builder, str, aVar});
         } else if (aVar == null) {
             k.a("ImageTools", "getBitmapByUrl listener is null");
-        } else if (TextUtils.isEmpty(msgNotficationDTO.personalImgUrl) || i <= 0) {
+        } else if (StringUtils.isEmpty(msgNotficationDTO.personalImgUrl) || i <= 0) {
             aVar.onFailed(builder);
         } else {
             float f = i;
@@ -116,7 +116,7 @@ public final class msz {
             ipChange.ipc$dispatch("d088305d", new Object[]{context, str, new Integer(i), new Integer(i2), builder, str2, aVar});
         } else if (aVar == null) {
             k.a("ImageTools", "getBitmapByUrl listener is null");
-        } else if (TextUtils.isEmpty(str) || i <= 0 || i2 <= 0) {
+        } else if (StringUtils.isEmpty(str) || i <= 0 || i2 <= 0) {
             aVar.onFailed(builder);
         } else {
             final String decideUrl = ImageStrategyDecider.decideUrl(str, Integer.valueOf(i), Integer.valueOf(i2), f31233a);
@@ -177,7 +177,7 @@ public final class msz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4fdcc0be", new Object[]{context, str, new Integer(i), new Integer(i2), new Integer(i3), new Integer(i4), notification, bVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             RemoteViews remoteViews = notification.contentView;
             remoteViews.setImageViewResource(i, i2);
             notification.contentView = remoteViews;

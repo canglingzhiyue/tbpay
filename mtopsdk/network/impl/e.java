@@ -1,6 +1,6 @@
 package mtopsdk.network.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anetwork.channel.NetworkCallBack;
 import anetwork.channel.NetworkEvent;
@@ -319,7 +319,7 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.Progre
             if (StringUtils.isNotBlank(singleHeaderFieldByKey)) {
                 this.f25017a = Integer.parseInt(singleHeaderFieldByKey);
             }
-            this.j = TextUtils.equals("1", HeaderHandlerUtil.getSingleHeaderFieldByKey(this.C, "x-used-stream"));
+            this.j = StringUtils.equals("1", HeaderHandlerUtil.getSingleHeaderFieldByKey(this.C, "x-used-stream"));
         } catch (Exception unused) {
             TBSdkLog.e("mtopsdk.StreamNetworkListenerAdapter", this.h, "[onResponseCode]parse Response HeaderField ContentLength error ");
         }
@@ -437,7 +437,7 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.Progre
                                 e.this.a(e.h(e.this), i + 2);
                                 e.l(e.this).a();
                             }
-                            if (!e.m(e.this) || e.l(e.this).b == null || !TextUtils.equals(e.l(e.this).b.f33426a, ResponseProtocolType.DATA)) {
+                            if (!e.m(e.this) || e.l(e.this).b == null || !StringUtils.equals(e.l(e.this).b.f33426a, ResponseProtocolType.DATA)) {
                                 return;
                             }
                             if (e.n(e.this) != null) {
@@ -580,12 +580,12 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.Progre
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("16a53959", new Object[]{this, bArr, str, new Integer(i), new Integer(i2)});
-        } else if (TextUtils.equals(str, ResponseProtocolType.ID)) {
+        } else if (StringUtils.equals(str, ResponseProtocolType.ID)) {
             this.F = new String(bArr, i, i2);
             String str2 = this.h;
             TBSdkLog.e("mtopsdk.StreamNetworkListenerAdapter", str2, "[parseSseProtocol] id: " + this.F);
             this.d.incrementAndGet();
-        } else if (TextUtils.equals(str, ResponseProtocolType.EVENT)) {
+        } else if (StringUtils.equals(str, ResponseProtocolType.EVENT)) {
             if (ryt.a(ResponseEventType.EVENT_TRAILER.getBytes(), bArr, i, i2)) {
                 String str3 = this.h;
                 TBSdkLog.e("mtopsdk.StreamNetworkListenerAdapter", str3, "[parseSseProtocol] event trailer: id: " + this.F);
@@ -602,7 +602,7 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.Progre
                 this.m = true;
                 this.e.incrementAndGet();
             }
-        } else if (!TextUtils.equals(str, ResponseProtocolType.DATA)) {
+        } else if (!StringUtils.equals(str, ResponseProtocolType.DATA)) {
         } else {
             if ((!this.m && !this.l) || i2 <= 0) {
                 return;
@@ -806,7 +806,7 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.Progre
             if (this.C == null) {
                 this.C = new HashMap();
             }
-            if (TextUtils.isEmpty(HeaderHandlerUtil.getSingleHeaderFieldByKey(this.C, HttpHeaderConstant.X_RETCODE))) {
+            if (StringUtils.isEmpty(HeaderHandlerUtil.getSingleHeaderFieldByKey(this.C, HttpHeaderConstant.X_RETCODE))) {
                 this.C.put(HttpHeaderConstant.X_RETCODE, new ArrayList(Collections.singleton(ErrorConstant.ERRCODE_SYS_STREAM_UNKNOWN_ERROR)));
             }
             NetworkStats a2 = ryr.a(finishEvent.getStatisticData());
@@ -832,10 +832,10 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.Progre
             if (this.C == null) {
                 this.C = new HashMap();
             }
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 this.C.put(HttpHeaderConstant.X_RETCODE, new ArrayList(Collections.singleton(a3)));
             }
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             this.C.put(HttpHeaderConstant.X_BIN_LENGTH, new ArrayList(Collections.singleton(b)));

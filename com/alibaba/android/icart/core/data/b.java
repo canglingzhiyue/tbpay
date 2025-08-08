@@ -2,7 +2,7 @@ package com.alibaba.android.icart.core.data;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.alibaba.android.icart.core.data.model.CartGlobal;
@@ -581,7 +581,7 @@ public class b extends bcb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             DataBizContext dataBizContext = this.q;
             dataBizContext.c(dataBizContext.h());
             this.q.c(false);
@@ -594,7 +594,7 @@ public class b extends bcb {
     @Override // tb.bcb
     public boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.q.g());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.q.g());
     }
 
     @Override // tb.bcb
@@ -1003,7 +1003,7 @@ public class b extends bcb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("59e84a0d", new Object[]{this, jnyVar, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.l.put(str, Boolean.valueOf(bei.a((com.taobao.android.ultron.datamodel.imp.b) jnyVar, str)));
         }

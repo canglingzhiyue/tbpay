@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ErrorConstant;
 import com.uc.webview.base.GlobalSettings;
 import com.uc.webview.base.cyclone.BSError;
@@ -85,11 +85,11 @@ public class o {
     public final boolean a() {
         if (c || this.b.b == null) {
             n.i a2 = n.a(this.f23929a.f23933a, this.f23929a.f, this.f23929a.g);
-            if (a2 == null || TextUtils.isEmpty(a2.f23927a)) {
+            if (a2 == null || StringUtils.isEmpty(a2.f23927a)) {
                 return false;
             }
             File file = new File(a2.f23927a);
-            String name = !TextUtils.isEmpty(a2.b) ? a2.b : file.getName();
+            String name = !StringUtils.isEmpty(a2.b) ? a2.b : file.getName();
             if (!this.b.a().equals(new i(this.f23929a, name).a())) {
                 this.f.b(-251);
                 return false;

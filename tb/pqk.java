@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +62,7 @@ public class pqk extends Dialog {
         if (ipChange instanceof IpChange) {
             return (pqk) ipChange.ipc$dispatch("7d209869", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.b.setVisibility(0);
             this.b.setText(str);
         } else {

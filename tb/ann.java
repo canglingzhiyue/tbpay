@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -35,7 +35,7 @@ public class ann implements amt {
             return;
         }
         this.c = wXSDKInstance;
-        this.b = new alr(!TextUtils.isEmpty(this.c.ak()) ? Uri.parse(this.c.ak()).buildUpon().clearQuery().build().toString() : "default", "Weex1");
+        this.b = new alr(!StringUtils.isEmpty(this.c.ak()) ? Uri.parse(this.c.ak()).buildUpon().clearQuery().build().toString() : "default", "Weex1");
         this.f25455a = new alu(this.b);
         this.b.a(new WeakReference<>(this.c.O()));
     }

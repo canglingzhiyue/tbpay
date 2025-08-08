@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -106,7 +106,7 @@ public class b implements cgu {
             return;
         }
         try {
-            if (!v.e(pmd.a().d().a("tblive", "enableAddLiveTokenTcp", "true")) || aVar == null || jSONObject == null || jSONObject2 == null || TextUtils.isEmpty(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) || !jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID).equals(aVar.d)) {
+            if (!v.e(pmd.a().d().a("tblive", "enableAddLiveTokenTcp", "true")) || aVar == null || jSONObject == null || jSONObject2 == null || StringUtils.isEmpty(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) || !jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID).equals(aVar.d)) {
                 return;
             }
             jSONObject2.put("liveToken", aVar.j());
@@ -173,7 +173,7 @@ public class b implements cgu {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bc30e1e7", new Object[]{this, aVar, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.startsWith(ado.URL_SEPARATOR)) {
                 str = com.taobao.vessel.utils.b.HTTPS_SCHEMA + str;
@@ -183,7 +183,7 @@ public class b implements cgu {
                 return;
             }
             String queryParameter = parse.getQueryParameter("insideDetail");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 queryParameter = String.valueOf(false);
             }
             if (aVar != null) {
@@ -233,7 +233,7 @@ public class b implements cgu {
             ipChange.ipc$dispatch("327d0e03", new Object[]{this, contentBusinessModel, jSONObject, map});
             return;
         }
-        if (n.a() != null && !TextUtils.isEmpty(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) && n.b(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID))) {
+        if (n.a() != null && !StringUtils.isEmpty(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) && n.b(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID))) {
             map.put("liveToken", n.a().j());
         }
         if (contentBusinessModel.sourceType == null) {
@@ -246,7 +246,7 @@ public class b implements cgu {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f53ab67f", new Object[]{this, jSONObject, contentBusinessModel, videoInfo});
-        } else if (videoInfo != null && videoInfo.tcpContext != null && videoInfo.tcpContext.size() > 0 && !TextUtils.isEmpty(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) && jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID).equals(videoInfo.liveId)) {
+        } else if (videoInfo != null && videoInfo.tcpContext != null && videoInfo.tcpContext.size() > 0 && !StringUtils.isEmpty(jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) && jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID).equals(videoInfo.liveId)) {
             for (String str : videoInfo.tcpContext.keySet()) {
                 String valueOf = String.valueOf(str);
                 contentBusinessModel.context.put(valueOf, videoInfo.tcpContext.get(valueOf));
@@ -302,7 +302,7 @@ public class b implements cgu {
                     if (jSONObject2 != null) {
                         for (String str2 : jSONObject2.keySet()) {
                             if (asList.contains(str2)) {
-                                if (TextUtils.equals(str2, "isStressShow") && aVar != null) {
+                                if (StringUtils.equals(str2, "isStressShow") && aVar != null) {
                                     jSONObject2.put(str2, (Object) (aVar.F ? "N" : "Y"));
                                 }
                                 contentBusinessModel.dataAttributes.put(str2, jSONObject2.get(str2));
@@ -321,7 +321,7 @@ public class b implements cgu {
                         contentBusinessModel.dataAttributes.put("is_bogo", str);
                     }
                 }
-                if (liveItem.extendVal != null && !TextUtils.isEmpty(liveItem.extendVal.secKillInfo) && (b = pqj.b(liveItem.extendVal.secKillInfo)) != null) {
+                if (liveItem.extendVal != null && !StringUtils.isEmpty(liveItem.extendVal.secKillInfo) && (b = pqj.b(liveItem.extendVal.secKillInfo)) != null) {
                     contentBusinessModel.dataAttributes.put("activityType", b.getString("activityType"));
                 }
                 if (liveItem.liveItemStatusData != null) {
@@ -363,7 +363,7 @@ public class b implements cgu {
         for (int i = 0; i < split2.length; i++) {
             if (split2[i].startsWith(ag.ARG_PG1_STEKC)) {
                 String str2 = split2[i];
-                if (!TextUtils.isEmpty(str2) && (split = str2.split("=")) != null && split.length == 2) {
+                if (!StringUtils.isEmpty(str2) && (split = str2.split("=")) != null && split.length == 2) {
                     return split[1];
                 }
                 return null;
@@ -377,7 +377,7 @@ public class b implements cgu {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return str;
         }
         int indexOf = str.indexOf(str2 + "=");
@@ -546,7 +546,7 @@ public class b implements cgu {
                 m.e("GoodListEnableInside", th.toString());
             }
         }
-        if (TextUtils.isEmpty(str) || liveItem == null || liveItem.itemConfigInfo == null) {
+        if (StringUtils.isEmpty(str) || liveItem == null || liveItem.itemConfigInfo == null) {
             return str;
         }
         String b = b(liveItem);
@@ -607,7 +607,7 @@ public class b implements cgu {
             ipChange.ipc$dispatch("97ebc71c", new Object[]{this, liveItem, contentBusinessModel, map});
         } else if (liveItem == null || contentBusinessModel == null) {
         } else {
-            if (!TextUtils.isEmpty(liveItem.cpsClickPos)) {
+            if (!StringUtils.isEmpty(liveItem.cpsClickPos)) {
                 try {
                     if (contentBusinessModel.context == null) {
                         contentBusinessModel.context = new JSONObject();
@@ -616,7 +616,7 @@ public class b implements cgu {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            } else if (!TextUtils.isEmpty(map.get("highlight_card_clickPos")) && psm.n()) {
+            } else if (!StringUtils.isEmpty(map.get("highlight_card_clickPos")) && psm.n()) {
                 try {
                     if (contentBusinessModel.context == null) {
                         contentBusinessModel.context = new JSONObject();
@@ -648,7 +648,7 @@ public class b implements cgu {
             m.e("TaoLiveActionUtils", "mEnableModifyNewtonsParams  is false.");
         } else {
             String string = jSONObject.getString("newtonParams");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 tby.a("", tfu.ADD_CART, liveItem);
                 m.e("TaoLiveActionUtils", "appendSignNewtonParams tradeParams newtonParams is null.");
                 return;
@@ -669,11 +669,11 @@ public class b implements cgu {
         if (!this.d) {
             m.e("TaoLiveActionUtils", "mEnableModifyNewtonsParams  is false.");
             return str;
-        } else if (TextUtils.isEmpty(str) || liveItem == null) {
+        } else if (StringUtils.isEmpty(str) || liveItem == null) {
             return str;
         } else {
             String b = tby.b(str);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 tby.a(str, "detail", liveItem);
                 m.e("TaoLiveActionUtils", "appendSignNewtonParams url newtonParams is null.");
                 return str;
@@ -682,7 +682,7 @@ public class b implements cgu {
             String decode = Uri.decode(b);
             StringBuilder sb2 = new StringBuilder(a(decode, liveItem));
             a(videoInfo, sb2);
-            if (TextUtils.equals(decode, sb2.toString())) {
+            if (StringUtils.equals(decode, sb2.toString())) {
                 m.e("TaoLiveActionUtils", "uSignNewtonParamsStr  is unchanging.");
                 return str;
             }
@@ -714,7 +714,7 @@ public class b implements cgu {
                 String sb2 = sb.toString();
                 if (!sb2.contains(str2) && !sb2.startsWith(str3)) {
                     String str4 = videoInfo.newtonParamsMap.get(str);
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         sb.append(str2);
                         sb.append(str4);
                     }

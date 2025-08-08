@@ -2,7 +2,7 @@ package com.taobao.taolive.room.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import com.taobao.taolive.sdk.model.common.FandomInfo;
@@ -41,7 +41,7 @@ public class c {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
         String str3 = "https://huodong.m.taobao.com/act/talent/live.html?id=" + str + "&type=508&screenOrientation=landscape";
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str3;
         }
         return str3 + "&wh_cid=" + str2;
@@ -61,7 +61,7 @@ public class c {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
         String str3 = "https://huodong.m.taobao.com/act/talent/live.html?id=" + str + "&type=508";
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str3;
         }
         return str3 + "&wh_cid=" + str2;
@@ -89,7 +89,7 @@ public class c {
         }
         cgl.k().a(n.b(), activity, liveItem, str, hashMap);
         jzn.a(n.a(), tfu.GOTO_DETAIL, liveItem != null ? liveItem.itemId : 0L);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             ai.a(n.a(), str, liveItem.itemId, liveItem.clickSource, v.e(liveItem.extendVal.isBulk), liveItem.extendVal != null ? liveItem.extendVal.tradeParams : "", hashMap);
         }
         if (!poy.s(n.b())) {
@@ -162,10 +162,10 @@ public class c {
         String str3 = u.broadCaster != null ? u.broadCaster.accountName : str2;
         String str4 = null;
         String str5 = map != null ? map.get("desc") : null;
-        if (TextUtils.isEmpty(str5)) {
-            str = TextUtils.isEmpty(aa.ae()) ? activity.getString(R.string.taolive_share_live, new Object[]{str3, u.title}) : String.format(aa.ae(), str3, u.title);
+        if (StringUtils.isEmpty(str5)) {
+            str = StringUtils.isEmpty(aa.ae()) ? activity.getString(R.string.taolive_share_live, new Object[]{str3, u.title}) : String.format(aa.ae(), str3, u.title);
             String str6 = map != null ? map.get("invite_code") : null;
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 str = str + "\n\n" + str6;
             }
         } else {
@@ -194,7 +194,7 @@ public class c {
         }
         FandomInfo H = poy.H(n.a());
         String str2 = (H == null || H.broadCaster == null) ? "" : H.broadCaster.accountName;
-        return TextUtils.isEmpty(aa.af()) ? context.getString(R.string.taolive_share_live, str2, str) : String.format(aa.af(), str2);
+        return StringUtils.isEmpty(aa.af()) ? context.getString(R.string.taolive_share_live, str2, str) : String.format(aa.af(), str2);
     }
 
     public static void a(Activity activity, String str, String str2, String str3, String str4, Map<String, String> map) {
@@ -226,7 +226,7 @@ public class c {
             return;
         }
         String str = u.topic;
-        if (aa.J() && !TextUtils.isEmpty(str)) {
+        if (aa.J() && !StringUtils.isEmpty(str)) {
             com.taobao.taolive.sdk.business.g.a(u.liveId, u.broadCaster.accountId, str, 10010, null, null, null, com.taobao.taolive.sdk.core.j.e(null));
         }
         ai.c(n.a());
@@ -244,7 +244,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         if (str.startsWith(ado.URL_SEPARATOR)) {

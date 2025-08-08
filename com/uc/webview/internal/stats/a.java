@@ -1,6 +1,6 @@
 package com.uc.webview.internal.stats;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.Log;
 import com.uc.webview.export.extension.IStatsHandler;
@@ -46,7 +46,7 @@ public final class a {
             jSONObject.put("items", jSONArray);
             jSONObject.put("stat_size", String.valueOf(jSONObject.toString().length()));
             String jSONObject3 = jSONObject.toString();
-            if (!TextUtils.isEmpty(jSONObject3)) {
+            if (!StringUtils.isEmpty(jSONObject3)) {
                 z |= !iStatsHandler.stat(jSONObject3);
                 StringBuilder sb = new StringBuilder("upload shouldContinue:");
                 sb.append(z);

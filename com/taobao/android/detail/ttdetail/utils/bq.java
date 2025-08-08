@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
 import com.taobao.android.detail.ttdetail.runtime.RuntimeParam;
@@ -72,13 +72,13 @@ public class bq {
             return null;
         }
         String b = componentData.b();
-        if ((dVar.getParentComponent() instanceof com.taobao.android.detail.ttdetail.component.module.i) && !TextUtils.isEmpty(b)) {
+        if ((dVar.getParentComponent() instanceof com.taobao.android.detail.ttdetail.component.module.i) && !StringUtils.isEmpty(b)) {
             str = "GalleryLightoff_" + b;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = componentData.r();
         }
-        return TextUtils.isEmpty(str) ? componentData.b() : str;
+        return StringUtils.isEmpty(str) ? componentData.b() : str;
     }
 
     public static String b(com.taobao.android.detail.ttdetail.component.module.d dVar) {
@@ -91,6 +91,6 @@ public class bq {
             return null;
         }
         String r = componentData.r();
-        return TextUtils.isEmpty(r) ? componentData.b() : r;
+        return StringUtils.isEmpty(r) ? componentData.b() : r;
     }
 }

@@ -2,7 +2,7 @@ package com.alipay.mobile.security.bio.runtime;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alipay.mobile.security.bio.runtime.FrameworkDesc;
@@ -66,11 +66,11 @@ public class ModuleDesc {
             return (ModuleDesc) ipChange.ipc$dispatch("3bace670", new Object[]{context, new Boolean(z), configDesc});
         }
         ModuleDesc moduleDesc = null;
-        String str = (TextUtils.isEmpty(configDesc.bundleName) || !configDesc.dynamic || !z || (resourcesByBundleName = Runtime.getResourcesByBundleName(configDesc.bundleName)) == null || (assetsData2 = FileUtil.getAssetsData(resourcesByBundleName, configDesc.configFileName)) == null || assetsData2.length <= 0) ? null : new String(assetsData2);
-        if (TextUtils.isEmpty(str) && (assetsData = FileUtil.getAssetsData(context.getResources(), configDesc.configFileName)) != null && assetsData.length > 0) {
+        String str = (StringUtils.isEmpty(configDesc.bundleName) || !configDesc.dynamic || !z || (resourcesByBundleName = Runtime.getResourcesByBundleName(configDesc.bundleName)) == null || (assetsData2 = FileUtil.getAssetsData(resourcesByBundleName, configDesc.configFileName)) == null || assetsData2.length <= 0) ? null : new String(assetsData2);
+        if (StringUtils.isEmpty(str) && (assetsData = FileUtil.getAssetsData(context.getResources(), configDesc.configFileName)) != null && assetsData.length > 0) {
             str = new String(assetsData);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             moduleDesc = (ModuleDesc) JSON.parseObject(str, ModuleDesc.class);
             moduleDesc.mBundleName = configDesc.bundleName;
             List<String> list = moduleDesc.metaInfoList;
@@ -88,9 +88,9 @@ public class ModuleDesc {
                 moduleDesc.mBioServiceDescription = new ArrayList(moduleDesc.localServiceDescs.size());
                 for (LocalServiceDesc localServiceDesc : moduleDesc.localServiceDescs) {
                     if (localServiceDesc.isEssential) {
-                        TextUtils.isEmpty(localServiceDesc.className);
+                        StringUtils.isEmpty(localServiceDesc.className);
                     }
-                    if (TextUtils.isEmpty(localServiceDesc.className) || TextUtils.isEmpty(localServiceDesc.interfaceName)) {
+                    if (StringUtils.isEmpty(localServiceDesc.className) || StringUtils.isEmpty(localServiceDesc.interfaceName)) {
                         throw new RuntimeException("Invalid LocalServiceDesc: " + localServiceDesc);
                     }
                     BioServiceDescription a3 = a(context, z, localServiceDesc, configDesc.bundleName);

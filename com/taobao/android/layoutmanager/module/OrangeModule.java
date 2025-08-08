@@ -1,6 +1,6 @@
 package com.taobao.android.layoutmanager.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,11 +27,11 @@ public class OrangeModule {
             String string = jSONObject.getString("groupName");
             String string2 = jSONObject.getString("key");
             String string3 = jSONObject.getString("defaultConfig");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             ohg a2 = ohg.a();
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 string3 = "";
             }
             String a3 = a2.a(string, string2, string3);
@@ -61,11 +61,11 @@ public class OrangeModule {
                 String string = jSONObject.getString("groupName");
                 String string2 = jSONObject.getString("key");
                 String string3 = jSONObject.getString("defaultConfig");
-                if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                     str = null;
                 } else {
                     ohg a2 = ohg.a();
-                    if (TextUtils.isEmpty(string3)) {
+                    if (StringUtils.isEmpty(string3)) {
                         string3 = "";
                     }
                     str = a2.a(string, string2, string3);

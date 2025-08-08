@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.comments.chat.sayscluste
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -116,7 +116,7 @@ public class a implements b, d.a, ddv {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d4873583", new Object[]{this, chatMessage})).booleanValue();
         }
-        if (chatMessage == null || !this.c || this.d == null || !TextUtils.equals(chatMessage.mContent, this.d.mContent)) {
+        if (chatMessage == null || !this.c || this.d == null || !StringUtils.equals(chatMessage.mContent, this.d.mContent)) {
             return false;
         }
         a(this.d, chatMessage);
@@ -127,7 +127,7 @@ public class a implements b, d.a, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("eb65d417", new Object[]{this, commentCountMessage});
-        } else if (commentCountMessage.data == null || TextUtils.isEmpty(commentCountMessage.data.content)) {
+        } else if (commentCountMessage.data == null || StringUtils.isEmpty(commentCountMessage.data.content)) {
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("[pm received]:");
@@ -139,7 +139,7 @@ public class a implements b, d.a, ddv {
             sb.append(chatMessage == null ? "" : chatMessage.mContent);
             com.taobao.android.live.plugin.atype.flexalocal.comments.chat.b.a("BottomSaysClusterController", sb.toString());
             ChatMessage chatMessage2 = this.d;
-            if (chatMessage2 != null && TextUtils.equals(chatMessage2.mContent, commentCountMessage.data.content)) {
+            if (chatMessage2 != null && StringUtils.equals(chatMessage2.mContent, commentCountMessage.data.content)) {
                 return;
             }
             this.b = -1;
@@ -282,7 +282,7 @@ public class a implements b, d.a, ddv {
                 return;
             }
             CommentCountMessage commentCountMessage = (CommentCountMessage) obj;
-            if (!TextUtils.equals(commentCountMessage.type, "commentCount")) {
+            if (!StringUtils.equals(commentCountMessage.type, "commentCount")) {
                 return;
             }
             a(commentCountMessage);
@@ -333,7 +333,7 @@ public class a implements b, d.a, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3897928", new Object[]{this, str, obj});
-        } else if (!com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_ANCHOR_RESPONSE_VIEW.equals(str) || !(obj instanceof String) || !TextUtils.equals((String) obj, "true")) {
+        } else if (!com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_ANCHOR_RESPONSE_VIEW.equals(str) || !(obj instanceof String) || !StringUtils.equals((String) obj, "true")) {
         } else {
             c();
         }

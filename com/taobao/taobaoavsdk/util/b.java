@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -47,7 +47,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -62,7 +62,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         try {
@@ -127,7 +127,7 @@ public class b {
         try {
             Uri parse = Uri.parse(str);
             String encodedQuery = parse.getEncodedQuery();
-            if (TextUtils.isEmpty(encodedQuery)) {
+            if (StringUtils.isEmpty(encodedQuery)) {
                 str2 = sb.toString();
             } else {
                 str2 = ((Object) sb) + "&" + encodedQuery;
@@ -167,14 +167,14 @@ public class b {
             if (parseArray.size() > 0) {
                 arrayList = new ArrayList();
                 for (int i = 0; i < parseArray.size(); i++) {
-                    if (!TextUtils.isEmpty(parseArray.getString(i))) {
+                    if (!StringUtils.isEmpty(parseArray.getString(i))) {
                         arrayList.add(parseArray.getString(i));
                     }
                 }
             }
-            if (!TextUtils.isEmpty(str) && arrayList != null) {
+            if (!StringUtils.isEmpty(str) && arrayList != null) {
                 for (String str4 : arrayList) {
-                    if (!TextUtils.isEmpty(str4) && (str4.equalsIgnoreCase(str) || str4.equals(str3))) {
+                    if (!StringUtils.isEmpty(str4) && (str4.equalsIgnoreCase(str) || str4.equals(str3))) {
                         return true;
                     }
                 }
@@ -197,7 +197,7 @@ public class b {
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < parseArray.size(); i++) {
                 try {
-                    if (!TextUtils.isEmpty(parseArray.getString(i))) {
+                    if (!StringUtils.isEmpty(parseArray.getString(i))) {
                         String string = parseArray.getString(i);
                         if (boolArr != null && "*".equals(string)) {
                             boolArr[0] = true;
@@ -219,7 +219,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
             if ("*".equals(str2)) {
                 return true;
             }
@@ -228,9 +228,9 @@ public class b {
             if (boolArr[0].booleanValue()) {
                 return true;
             }
-            if (!TextUtils.isEmpty(str) && a2 != null) {
+            if (!StringUtils.isEmpty(str) && a2 != null) {
                 for (String str3 : a2) {
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         if (str3.equalsIgnoreCase(str)) {
                             return true;
                         }
@@ -252,7 +252,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
             if ("*".equals(str2)) {
                 return true;
             }
@@ -261,9 +261,9 @@ public class b {
             if (boolArr[0].booleanValue()) {
                 return true;
             }
-            if (!TextUtils.isEmpty(str) && a2 != null) {
+            if (!StringUtils.isEmpty(str) && a2 != null) {
                 for (String str3 : a2) {
-                    if (!TextUtils.isEmpty(str3) && Pattern.matches(str3, str)) {
+                    if (!StringUtils.isEmpty(str3) && Pattern.matches(str3, str)) {
                         return true;
                     }
                 }
@@ -278,9 +278,9 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("7f180e83", new Object[]{str, str2})).booleanValue();
         }
         List<String> a2 = a(str2, (Boolean[]) null);
-        if (!TextUtils.isEmpty(str) && a2 != null) {
+        if (!StringUtils.isEmpty(str) && a2 != null) {
             for (String str3 : a2) {
-                if (!TextUtils.isEmpty(str3) && str.startsWith(str3)) {
+                if (!StringUtils.isEmpty(str3) && str.startsWith(str3)) {
                     return true;
                 }
             }
@@ -303,7 +303,7 @@ public class b {
                 ArrayList arrayList2 = new ArrayList();
                 for (int i2 = 0; i2 < parseArray.size(); i2++) {
                     try {
-                        if (!TextUtils.isEmpty(parseArray.getString(i2))) {
+                        if (!StringUtils.isEmpty(parseArray.getString(i2))) {
                             arrayList2.add(parseArray.getInteger(i2));
                         }
                     } catch (Throwable unused) {
@@ -332,15 +332,15 @@ public class b {
         try {
             JSONObject parseObject = JSON.parseObject(ddcVar.getConfig(str, "PlayerCoreType1", null));
             str4 = parseObject.getString(str3.toUpperCase());
-            if (TextUtils.isEmpty(str4) && !TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str4) && !StringUtils.isEmpty(str2)) {
                 str4 = parseObject.getString((str2 + "-*").toUpperCase());
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = parseObject.getString("ALL_BIZCODE");
             }
         } catch (Throwable unused) {
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             if ("mediaplayer".equals(str4)) {
                 return 2;
             }
@@ -363,12 +363,12 @@ public class b {
         try {
             JSONObject parseObject = JSON.parseObject(ddcVar.getConfig(str, "PlayerCoreType1", null));
             str3 = parseObject.getString(str2.toUpperCase());
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = parseObject.getString("ALL_BIZCODE");
             }
         } catch (Throwable unused) {
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             if ("mediaplayer".equals(str3)) {
                 return 2;
             }
@@ -387,7 +387,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e8cbeb20", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 return Uri.parse(str).getQueryParameter(str2);
             } catch (Throwable unused) {
@@ -403,8 +403,8 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("71637c27", new Object[]{ddcVar, str, str2, str3})).longValue();
         }
-        if (ddcVar != null && !TextUtils.isEmpty(str2)) {
-            if (!TextUtils.isEmpty(str3)) {
+        if (ddcVar != null && !StringUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str3)) {
                 str4 = str2 + "-" + str3;
             } else {
                 str4 = str2;
@@ -414,18 +414,18 @@ public class b {
                 config = ddcVar.getConfig(str, "GrtnInitialDelayWithBusinessIds", null);
             } catch (Throwable unused) {
             }
-            if (TextUtils.isEmpty(config)) {
+            if (StringUtils.isEmpty(config)) {
                 return 0L;
             }
             JSONObject parseObject = JSON.parseObject(config);
             str5 = parseObject.getString(str4.toUpperCase());
-            if (TextUtils.isEmpty(str5) && !TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str5) && !StringUtils.isEmpty(str2)) {
                 str5 = parseObject.getString((str2 + "-*").toUpperCase());
             }
-            if (TextUtils.isEmpty(str5)) {
+            if (StringUtils.isEmpty(str5)) {
                 str5 = parseObject.getString("ALL_BIZCODE");
             }
-            if (TextUtils.isEmpty(str5)) {
+            if (StringUtils.isEmpty(str5)) {
                 return 0L;
             }
             long c2 = c(str5);
@@ -578,7 +578,7 @@ public class b {
             return (HashMap) ipChange.ipc$dispatch("da873eaa", new Object[]{str, str2, str3});
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
             for (String str4 : str.split(str2)) {
                 int indexOf = str4.indexOf(str3);
                 int length = str4.length();

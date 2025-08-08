@@ -8,7 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -129,7 +129,7 @@ public class a extends oir implements com.taobao.share.ui.engine.weex.a {
             this.d = jSONObject.optString("scrollerRefName");
             this.k = jSONObject.optBoolean("prepareLastFrame");
             this.m = jSONObject.optString("imgBgColor");
-            this.l = !TextUtils.isEmpty(this.d);
+            this.l = !StringUtils.isEmpty(this.d);
             if (this.l) {
                 WXSDKInstance wXSDKInstance = null;
                 this.c = null;
@@ -173,7 +173,7 @@ public class a extends oir implements com.taobao.share.ui.engine.weex.a {
         } else if (this.c == null) {
             for (int childCount = wXVContainer.getChildCount() - 1; childCount >= 0; childCount--) {
                 WXComponent child = wXVContainer.getChild(childCount);
-                if (TextUtils.equals(child.getBasicComponentData().getAttrs().optString("screenshot"), this.d)) {
+                if (StringUtils.equals(child.getBasicComponentData().getAttrs().optString("screenshot"), this.d)) {
                     this.c = (WXScrollView) child.mo1286getHostView().getInnerView();
                     return;
                 }
@@ -248,7 +248,7 @@ public class a extends oir implements com.taobao.share.ui.engine.weex.a {
             }
             Bitmap createBitmap = Bitmap.createBitmap(i, i2, config);
             Canvas canvas = new Canvas(createBitmap);
-            if (!TextUtils.isEmpty(this.m)) {
+            if (!StringUtils.isEmpty(this.m)) {
                 canvas.drawColor(Color.parseColor(this.m));
             }
             if (view == null) {

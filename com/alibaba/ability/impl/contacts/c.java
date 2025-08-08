@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilityidl.ability.ContactsResult;
@@ -81,7 +81,7 @@ public final class c extends com.alibaba.ability.impl.c {
                         str = "";
                     }
                     q.b(str, "contact?.lastPathSegment ?: \"\"");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         List<com.alibaba.ability.impl.contacts.a> a2 = b.a(activity, str, null, null, this.b);
                         if (a2 != null) {
                             if (a2.isEmpty()) {

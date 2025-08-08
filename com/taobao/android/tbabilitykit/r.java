@@ -2,7 +2,7 @@ package com.taobao.android.tbabilitykit;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -34,7 +34,7 @@ public class r extends dlg {
         }
         if (dlhVar != null) {
             String a2 = dmo.a(dlhVar.c(), "action", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 Intent intent = new Intent(a2);
                 JSONObject a3 = dmo.a(dlhVar.c(), "content", (JSONObject) null);
                 if (a3 != null) {

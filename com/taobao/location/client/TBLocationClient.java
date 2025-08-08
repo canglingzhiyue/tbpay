@@ -13,7 +13,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -257,7 +257,7 @@ public class TBLocationClient {
         }
         AppMonitor.Counter.commit("TBLocation", "getCacheLocation", 1.0d);
         String e = e();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             try {
                 TBLocationDTO tBLocationDTO = (TBLocationDTO) JSON.parseObject(e, TBLocationDTO.class);
                 AppMonitor.Counter.commit("TBLocation", "getCacheLocation_success", 1.0d);
@@ -297,7 +297,7 @@ public class TBLocationClient {
                     TLog.loge(LOG, "getCacheLocation error = " + e2);
                     AppMonitor.Counter.commit("TBLocation", "getCacheLocation-ERROR", 1.0d);
                 }
-                if (!TextUtils.isEmpty(e)) {
+                if (!StringUtils.isEmpty(e)) {
                     TBLocationDTO tBLocationDTO = (TBLocationDTO) JSON.parseObject(e, TBLocationDTO.class);
                     if (tBLocationOption.getTimeLimit().matchTimeLimit(tBLocationDTO.timeStamp.longValue(), currentTimeMillis) && tBLocationOption.getAccuracy().matchAccuray(tBLocationDTO.accuracy.intValue()) && tBLocationOption.getDataModel().matchAddressModel(tBLocationDTO) && tBLocationOption.getDataModel().matchPoiModel(tBLocationDTO)) {
                         AppMonitor.Counter.commit("TBLocation", "getCacheLocation-option_matched", 1.0d);

@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.biz;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.amnetcore.AmnetSwitchManager;
@@ -123,14 +123,14 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
             return (T) ipChange.ipc$dispatch("721ebeec", new Object[]{this, str, t});
         }
         try {
-            if (!TextUtils.isEmpty(str) && b != null) {
+            if (!StringUtils.isEmpty(str) && b != null) {
                 AmnetConfigureItem amnetConfigureItem = b.get(str);
                 if (amnetConfigureItem == null) {
                     LogCatUtil.warn("AMNET-SW", "pullSwitch item is null.");
                     return t;
                 }
                 ?? r2 = (T) TransportConfigureManager.getInstance().getStringValue(amnetConfigureItem);
-                if (TextUtils.isEmpty(r2)) {
+                if (StringUtils.isEmpty(r2)) {
                     LogCatUtil.warn("AMNET-SW", "pullSwitch value is null.");
                     return t;
                 }
@@ -139,7 +139,7 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
                     Boolean.valueOf(false);
                     return (T) Boolean.valueOf(a(amnetConfigureItem.getType(), r2));
                 } else if (t instanceof String[]) {
-                    return !TextUtils.isEmpty(r2) ? (T) r2.split(",") : t;
+                    return !StringUtils.isEmpty(r2) ? (T) r2.split(",") : t;
                 } else {
                     if (t instanceof Integer) {
                         Object valueOf = Integer.valueOf(Integer.parseInt(r2));
@@ -266,7 +266,7 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
         try {
             String stringValue = TransportConfigureManager.getInstance().getStringValue(AmnetConfigureItem.BIFROST_LISTEN_SIGNAL_STRENGTH);
             LogCatUtil.info("AMNET-SW", "enableNetworkSignalStrengthListen b_lss=" + stringValue);
-            if (!TextUtils.isEmpty(stringValue)) {
+            if (!StringUtils.isEmpty(stringValue)) {
                 if ("T".equals(stringValue)) {
                     return true;
                 }
@@ -285,7 +285,7 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
         }
         try {
             String stringValue = TransportConfigureManager.getInstance().getStringValue(AmnetConfigureItem.BIFROST_WAKELOCK_SWITCH);
-            if (!TextUtils.isEmpty(stringValue)) {
+            if (!StringUtils.isEmpty(stringValue)) {
                 if ("1".equals(stringValue)) {
                     return true;
                 }
@@ -315,7 +315,7 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
     @Override // com.alipay.mobile.common.amnetcore.AmnetSwitchManager
     public boolean forceTlsVerify() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("38f002b4", new Object[]{this})).booleanValue() : TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(AmnetConfigureItem.AMNET_FORCE_TLS_VERIFY), "T");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("38f002b4", new Object[]{this})).booleanValue() : StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(AmnetConfigureItem.AMNET_FORCE_TLS_VERIFY), "T");
     }
 
     public boolean enableBifrostDowngrade() {
@@ -324,7 +324,7 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
             return ((Boolean) ipChange.ipc$dispatch("7c8c84c6", new Object[]{this})).booleanValue();
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(AmnetConfigureItem.BIFROST_DOWNGRADE_ENABLE);
-        return TextUtils.isEmpty(stringValue) || !"0".equals(stringValue);
+        return StringUtils.isEmpty(stringValue) || !"0".equals(stringValue);
     }
 
     public boolean enableBifrostLocalDowngrade() {
@@ -378,15 +378,15 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && str.startsWith("T")) {
+        if (!StringUtils.isEmpty(str) && str.startsWith("T")) {
             if (!MiscUtils.grayscaleUtdid(DeviceInfoUtil.getDeviceId(), str2)) {
                 return false;
             }
-        } else if (!TextUtils.isEmpty(str) && str.startsWith("B")) {
-            if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) && str.startsWith("B")) {
+            if (!StringUtils.isEmpty(str2)) {
                 return StrategyUtil.isUse4Model(str2.trim().toLowerCase().replaceAll("\\s+", "_"));
             }
-        } else if (TextUtils.isEmpty(str2) || !str2.startsWith("T")) {
+        } else if (StringUtils.isEmpty(str2) || !str2.startsWith("T")) {
             return false;
         }
         return true;
@@ -409,7 +409,7 @@ public class AmnetSwitchManagerImpl implements AmnetSwitchManager {
                 StringBuilder sb = new StringBuilder();
                 AmnetOperationManager amnetOperationManager = (AmnetOperationManager) NetBeanFactory.getBean(AmnetOperationManager.class);
                 for (Map.Entry<String, Pair<String, Integer>> entry : allBindHostPairs.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey()) && (value = entry.getValue()) != null) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && (value = entry.getValue()) != null) {
                         if (value == UserNetworkPreferencesManager.EMPTY_PAIR) {
                             amnetOperationManager.setBindHost(entry.getKey(), "");
                         } else {

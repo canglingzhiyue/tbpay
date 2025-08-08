@@ -1,6 +1,6 @@
 package com.ali.user.open.device;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.config.ConfigManager;
 import com.ali.user.open.core.service.StorageService;
@@ -85,7 +85,7 @@ public class DeviceTokenManager {
             return (DeviceTokenAccount) ipChange.ipc$dispatch("67183751", new Object[]{this, str});
         }
         DeviceTokenAccount deviceTokenAccount = new DeviceTokenAccount();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             JSONObject jSONObject = new JSONObject(str);
             deviceTokenAccount.openId = jSONObject.optString("openId");
             deviceTokenAccount.tokenKey = jSONObject.optString("tokenKey");

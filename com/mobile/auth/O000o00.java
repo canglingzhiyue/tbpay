@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import com.mobile.auth.O000o000;
 
@@ -31,10 +31,10 @@ public class O000o00 implements O000o000.O000000o {
 
     private void O00000Oo() {
         String O00000Oo = O0O0o00.O00000Oo("sdk_config_version", "");
-        if (TextUtils.isEmpty(O00000Oo) || !BuildConfig.CMCC_SDK_VERSION.equals(O00000Oo)) {
+        if (StringUtils.isEmpty(O00000Oo) || !BuildConfig.CMCC_SDK_VERSION.equals(O00000Oo)) {
             this.O00000o = O000o000.O000000o(true);
             this.O00000Oo = this.O00000o.O000000o();
-            if (!TextUtils.isEmpty(O00000Oo)) {
+            if (!StringUtils.isEmpty(O00000Oo)) {
                 O00000o0();
             }
         } else {

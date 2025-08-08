@@ -1,7 +1,7 @@
 package com.taobao.tao.recommend3.util;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -197,7 +197,7 @@ public class c {
             }
             String c2 = c(str);
             boolean a2 = new nlk(new nll(str, "windvane_request", c2, e(str), f(str), arrayList, 0, 0)).a();
-            if (TextUtils.equals(oqc.j().f30287a, str)) {
+            if (StringUtils.equals(oqc.j().f30287a, str)) {
                 a2 = a2 && w;
             }
             if (t) {
@@ -241,7 +241,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9d5d0b6a", new Object[]{str, str2, str3, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Map<String, String> map = c;
             if (str2 == null) {
@@ -295,7 +295,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f2bf4cf4", new Object[]{str, str2, jSONObject});
-        } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("ext")) == null || !TextUtils.equals(jSONObject2.getString("sectionType"), "windvaneCard") || (f2 = f(str)) == null) {
+        } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("ext")) == null || !StringUtils.equals(jSONObject2.getString("sectionType"), "windvaneCard") || (f2 = f(str)) == null) {
         } else {
             h = System.currentTimeMillis();
             f2.add(str2);
@@ -311,7 +311,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str2) || !TextUtils.equals(c.get(str), str2)) {
+        } else if (StringUtils.isEmpty(str2) || !StringUtils.equals(c.get(str), str2)) {
         } else {
             c.remove(str);
             d.remove(str);
@@ -323,7 +323,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             List<String> list = f20956a.get(str);
             if (list == null) {
@@ -345,7 +345,7 @@ public class c {
             if (i == null) {
                 i = Integer.valueOf(j.j());
             }
-            if (!TextUtils.isEmpty(str2) && i.intValue() > 0) {
+            if (!StringUtils.isEmpty(str2) && i.intValue() > 0) {
                 FixedSizeList<String> fixedSizeList = b.get(str);
                 if (fixedSizeList == null) {
                     fixedSizeList = new FixedSizeList<>(i.intValue());
@@ -410,13 +410,13 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6bc4e8c7", new Object[]{str});
         }
-        if (TextUtils.equals(str, j)) {
+        if (StringUtils.equals(str, j)) {
             return k;
         }
-        if (TextUtils.equals(str, l)) {
+        if (StringUtils.equals(str, l)) {
             return m;
         }
-        if (TextUtils.equals(str, n)) {
+        if (StringUtils.equals(str, n)) {
             return o;
         }
         return q;

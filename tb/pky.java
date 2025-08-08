@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aw;
 import com.taobao.taolive.sdk.model.message.ChatMessage;
@@ -27,7 +27,7 @@ public class pky {
                     return;
                 }
                 String str = (String) jSONObject.get(aw.PARAM_CHAT_RENDERS_ENHANCE);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 if (chatMessage.renders == null) {

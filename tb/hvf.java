@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliLogInterface;
@@ -144,7 +144,7 @@ public class hvf {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < strArr.length; i++) {
             if (i == 0) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     sb.append(str);
                     sb.append(".");
                 }

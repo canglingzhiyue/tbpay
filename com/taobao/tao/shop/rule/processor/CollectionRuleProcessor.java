@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.rule.processor;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.data.Result;
 import com.taobao.tao.shop.rule.data.TBUrlRule;
@@ -34,7 +34,7 @@ public class CollectionRuleProcessor implements IRuleProcessor {
                 break;
             }
         }
-        if (result.isMatch && !TextUtils.isEmpty(result.target)) {
+        if (result.isMatch && !StringUtils.isEmpty(result.target)) {
             result.target = tBUrlRule.target;
         }
         return result;

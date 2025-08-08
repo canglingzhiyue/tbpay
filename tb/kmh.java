@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.manager.NetworkManager;
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class kmh {
         for (kmr kmrVar : this.g.a()) {
             if (this.f.contains(kmrVar)) {
                 kmv.a("TaskRanker", "rank", "task is hold , not need to run", kmrVar.e);
-            } else if (kmrVar.f30170a && !TextUtils.isEmpty(kmrVar.d)) {
+            } else if (kmrVar.f30170a && !StringUtils.isEmpty(kmrVar.d)) {
                 this.b.add(kmrVar);
             } else if (!kmrVar.f30170a && kmrVar.b < 0) {
                 this.c.add(kmrVar);

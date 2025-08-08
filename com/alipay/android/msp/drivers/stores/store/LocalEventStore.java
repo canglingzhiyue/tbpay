@@ -2,7 +2,7 @@ package com.alipay.android.msp.drivers.stores.store;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.template.ITemplateClickCallback;
@@ -180,7 +180,7 @@ public abstract class LocalEventStore {
                     mspWindowFrame = null;
                 }
                 String actionName = mspEvent.getActionName();
-                if (eventAction.getStartDispatchTime() != 0 && !TextUtils.equals(actionName, "submit")) {
+                if (eventAction.getStartDispatchTime() != 0 && !StringUtils.equals(actionName, "submit")) {
                     this.f.onStatistic(StEvent.CONVERT_TIME, String.valueOf(SystemClock.elapsedRealtime() - eventAction.getStartDispatchTime()));
                 }
                 eventAction.setStartExecuteTime(SystemClock.elapsedRealtime());
@@ -200,13 +200,13 @@ public abstract class LocalEventStore {
         if (mspEvent != null && this.f4584a != null) {
             try {
                 String actionName2 = mspEvent.getActionName();
-                if (eventAction.getStartExecuteTime() != 0 && !TextUtils.equals(actionName2, "submit")) {
+                if (eventAction.getStartExecuteTime() != 0 && !StringUtils.equals(actionName2, "submit")) {
                     this.f.onStatistic(StEvent.PARSE_TIME, String.valueOf(SystemClock.elapsedRealtime() - eventAction.getStartExecuteTime()));
                 }
-                if (!TextUtils.equals(actionName2, "continue") && !TextUtils.equals(actionName2, "log") && !TextUtils.equals(actionName2, "feedback") && !TextUtils.equals(actionName2, MspEventTypes.ACTION_INVOKE_QR_GEN) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_STRING_DATABASE) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_ERROR) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_PERF) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_COUNT) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_EVENT) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_TPL_MSG) && !a(actionName2, mspEvent)) {
+                if (!StringUtils.equals(actionName2, "continue") && !StringUtils.equals(actionName2, "log") && !StringUtils.equals(actionName2, "feedback") && !StringUtils.equals(actionName2, MspEventTypes.ACTION_INVOKE_QR_GEN) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_STRING_DATABASE) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_ERROR) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_PERF) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_COUNT) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_META_MSP_LOG_EVENT) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_TPL_MSG) && !a(actionName2, mspEvent)) {
                     this.f4584a.getStatisticInfo().addEvent(this.f);
                 }
-                if (!TextUtils.equals(actionName2, MspEventTypes.ACTION_STRING_BNCB) && !TextUtils.equals(actionName2, "continue") && !TextUtils.equals(actionName2, "log") && !TextUtils.equals(actionName2, MspEventTypes.ACTION_INVOKE_QR_GEN) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_STRING_DATABASE) && !TextUtils.equals(actionName2, MspEventTypes.ACTION_TPL_MSG)) {
+                if (!StringUtils.equals(actionName2, MspEventTypes.ACTION_STRING_BNCB) && !StringUtils.equals(actionName2, "continue") && !StringUtils.equals(actionName2, "log") && !StringUtils.equals(actionName2, MspEventTypes.ACTION_INVOKE_QR_GEN) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_STRING_DATABASE) && !StringUtils.equals(actionName2, MspEventTypes.ACTION_TPL_MSG)) {
                     UserFeedBackUtil.getInstance().setUserFeedBackTag(null);
                 }
             } catch (Exception e2) {

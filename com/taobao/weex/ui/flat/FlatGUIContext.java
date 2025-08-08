@@ -1,7 +1,7 @@
 package com.taobao.weex.ui.flat;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.common.Constants;
@@ -74,7 +74,7 @@ public class FlatGUIContext implements Destroyable {
 
     public boolean promoteToView(WXComponent wXComponent, boolean z, Class<? extends WXComponent<?>> cls) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("52ec7839", new Object[]{this, wXComponent, new Boolean(z), cls})).booleanValue() : !isFlatUIEnabled(wXComponent) || !cls.equals(wXComponent.getClass()) || TextUtils.equals(wXComponent.getRef(), WXComponent.ROOT) || (z && getFlatComponentAncestor(wXComponent) == null) || checkComponent(wXComponent);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("52ec7839", new Object[]{this, wXComponent, new Boolean(z), cls})).booleanValue() : !isFlatUIEnabled(wXComponent) || !cls.equals(wXComponent.getClass()) || StringUtils.equals(wXComponent.getRef(), WXComponent.ROOT) || (z && getFlatComponentAncestor(wXComponent) == null) || checkComponent(wXComponent);
     }
 
     /* JADX WARN: Type inference failed for: r0v2, types: [android.view.View] */

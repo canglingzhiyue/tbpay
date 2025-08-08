@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -300,7 +300,7 @@ public class DDShareApiV2 implements IDDShareApi {
         if (!this.mNeedSignatureCheck) {
             return true;
         }
-        boolean equals = TextUtils.equals(SignatureCheck.getMD5Signature(context, str), ShareConstant.DD_APP_SIGNATURE);
+        boolean equals = StringUtils.equals(SignatureCheck.getMD5Signature(context, str), ShareConstant.DD_APP_SIGNATURE);
         Log.e(TAG, "checkSumConsistent: result = " + equals + ",packageName = " + str);
         return equals;
     }

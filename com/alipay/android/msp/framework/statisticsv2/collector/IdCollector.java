@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.statisticsv2.collector;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
@@ -64,7 +64,7 @@ public class IdCollector {
             }
             if (c == 3) {
                 MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i);
-                return (mspContextByBizId == null || TextUtils.isEmpty(mspContextByBizId.getGlobalSession())) ? str2 : mspContextByBizId.getGlobalSession();
+                return (mspContextByBizId == null || StringUtils.isEmpty(mspContextByBizId.getGlobalSession())) ? str2 : mspContextByBizId.getGlobalSession();
             } else if (c != 4) {
                 return str2;
             } else {

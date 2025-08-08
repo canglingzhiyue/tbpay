@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.openarchitecture.entity.ATaoliveOpenLiveRoomEntity;
 import com.taobao.taolive.room.openarchitecture.opencompontent.ability.OpenAbilityCompontentTypeEnum;
@@ -38,7 +38,7 @@ public class as {
         if (!com.taobao.taolive.sdk.utils.u.aU()) {
             return null;
         }
-        if (!TextUtils.isEmpty(f21762a)) {
+        if (!StringUtils.isEmpty(f21762a)) {
             return f21762a;
         }
         if (pmd.a().d() == null) {

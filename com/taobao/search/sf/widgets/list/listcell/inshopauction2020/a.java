@@ -1,6 +1,6 @@
 package com.taobao.search.sf.widgets.list.listcell.inshopauction2020;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseSearchResult;
@@ -94,7 +94,7 @@ public class a extends com.taobao.search.sf.widgets.list.listcell.baseauction.b<
         int min = Math.min(optJSONArray.length(), 5);
         for (int i = 0; i < min; i++) {
             String optString = optJSONArray.optString(i);
-            if (!TextUtils.isEmpty(optString) && (skuPics = inshopAuction2020CellBean.getSkuPics()) != null) {
+            if (!StringUtils.isEmpty(optString) && (skuPics = inshopAuction2020CellBean.getSkuPics()) != null) {
                 skuPics.add(optString);
             }
         }

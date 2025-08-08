@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.basemvplib.impl.b;
@@ -90,10 +90,10 @@ public class hja<T extends hjc> extends b<T, hjr> implements hjb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String trim = str.trim();
-            if (TextUtils.isEmpty(trim)) {
+            if (StringUtils.isEmpty(trim)) {
                 return;
             }
             this.g = 0;
@@ -111,7 +111,7 @@ public class hja<T extends hjc> extends b<T, hjr> implements hjb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || !this.h) {
+        } else if (StringUtils.isEmpty(str) || !this.h) {
         } else {
             ((hjr) this.b).b(this.d, str, str2, 10, this.g);
         }
@@ -175,7 +175,7 @@ public class hja<T extends hjc> extends b<T, hjr> implements hjb {
         if (list != null && list.size() > 0) {
             for (ItemlistV2ResponseData.ItemListv1 itemListv1 : list) {
                 itemListv1.liveItemDO.goodsIndex = l.a(itemListv1.goodsIndex, 0);
-                if (!TextUtils.equals(str, itemListv1.goodsIndex)) {
+                if (!StringUtils.equals(str, itemListv1.goodsIndex)) {
                     int i = this.g;
                     if (i == 0) {
                         this.g = itemListv1.liveItemDO.goodsIndex;

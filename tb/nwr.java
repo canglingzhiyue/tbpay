@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.view.ViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -363,7 +363,7 @@ public final class nwr implements ium, nus, nwl {
         }
         mVar2.subscribeEvent(this);
         a2.subscribePreSearch(this, -10);
-        if (TextUtils.equals(commonSearchContext.getParam("isNewStyle"), "true")) {
+        if (StringUtils.equals(commonSearchContext.getParam("isNewStyle"), "true")) {
             c(true);
         }
         this.c = a2;
@@ -469,7 +469,7 @@ public final class nwr implements ium, nus, nwl {
             return (j) ipChange.ipc$dispatch("ede6f3d1", new Object[]{this, commonSearchContext});
         }
         String removeParam = commonSearchContext.removeParam("inshop_preload_token");
-        if (!TextUtils.isEmpty(removeParam)) {
+        if (!StringUtils.isEmpty(removeParam)) {
             com.taobao.search.sf.datasource.c a2 = nnz.a().a(removeParam);
             if (!(a2 instanceof j)) {
                 a2 = null;
@@ -521,7 +521,7 @@ public final class nwr implements ium, nus, nwl {
             String key = entry.getKey();
             String value = entry.getValue();
             String str = key;
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(value)) {
                 CommonSearchContext commonSearchContext = this.d;
                 if (commonSearchContext == null) {
                     q.b("searchContext");
@@ -531,7 +531,7 @@ public final class nwr implements ium, nus, nwl {
                 if (jVar != null) {
                     jVar.setParam(key, value);
                 }
-            } else if (!TextUtils.isEmpty(str) && TextUtils.isEmpty(value)) {
+            } else if (!StringUtils.isEmpty(str) && StringUtils.isEmpty(value)) {
                 CommonSearchContext commonSearchContext2 = this.d;
                 if (commonSearchContext2 == null) {
                     q.b("searchContext");
@@ -543,7 +543,7 @@ public final class nwr implements ium, nus, nwl {
                 }
             }
         }
-        this.r = TextUtils.equals(params.get(noa.VALUE_MODULE_DYNAMIC_CARD), "true");
+        this.r = StringUtils.equals(params.get(noa.VALUE_MODULE_DYNAMIC_CARD), "true");
         boolean a2 = com.taobao.search.mmd.util.j.INSTANCE.a(q.a((Object) nto.IN_SHOP_ELDER_HIT_VALUE, (Object) params.get(noa.KEY_SHOP_SEARCH_ELDER)));
         CommonSearchContext commonSearchContext3 = this.d;
         if (commonSearchContext3 == null) {
@@ -569,7 +569,7 @@ public final class nwr implements ium, nus, nwl {
             return;
         }
         String str = map.get("nextCategoryGuidText");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.p.a((String) null);
             this.s = false;
         } else {
@@ -577,7 +577,7 @@ public final class nwr implements ium, nus, nwl {
             this.s = true;
         }
         String str2 = map.get("bottomPadding");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         this.p.R().a((com.taobao.android.meta.data.d<Integer>) Integer.valueOf(g.b(str2, 0)));
@@ -873,19 +873,19 @@ public final class nwr implements ium, nus, nwl {
         }
         HashMap hashMap = new HashMap();
         String paramValue = jVar.getParamValue("shopId");
-        if (TextUtils.isEmpty(paramValue)) {
+        if (StringUtils.isEmpty(paramValue)) {
             paramValue = "";
         }
         hashMap.put("shop_id", paramValue);
         String paramValue2 = jVar.getParamValue("sellerId");
-        if (TextUtils.isEmpty(paramValue2)) {
+        if (StringUtils.isEmpty(paramValue2)) {
             paramValue2 = "";
         }
         hashMap.put("seller_id", paramValue2);
         hashMap.put(djy.SERIALIZE_EXP_BUCKET_ID, str);
         hashMap.put("inshops", "search");
         String paramValue3 = jVar.getParamValue("sort");
-        if (TextUtils.isEmpty(paramValue3)) {
+        if (StringUtils.isEmpty(paramValue3)) {
             paramValue3 = "_coefp";
         }
         hashMap.put("sort_tag", paramValue3);
@@ -895,7 +895,7 @@ public final class nwr implements ium, nus, nwl {
         }
         if (!q.a((Object) "category", (Object) commonSearchContext.getParam("from", ""))) {
             String paramValue4 = jVar.getParamValue(noa.KEY_KEYWORD_PATH);
-            if (TextUtils.isEmpty(paramValue4)) {
+            if (StringUtils.isEmpty(paramValue4)) {
                 paramValue4 = "";
             }
             hashMap.put("shopsearchq", paramValue4);
@@ -951,7 +951,7 @@ public final class nwr implements ium, nus, nwl {
             }
             this.h = K;
             String itemId = K.a();
-            if (TextUtils.isEmpty(itemId)) {
+            if (StringUtils.isEmpty(itemId)) {
                 return;
             }
             HashMap hashMap2 = new HashMap();
@@ -962,7 +962,7 @@ public final class nwr implements ium, nus, nwl {
             K.b(hashMap3);
             HashMap hashMap4 = new HashMap();
             hashMap4.put("rainbow", com.taobao.search.rainbow.a.c());
-            if (commonSearchResult != null && !TextUtils.isEmpty(commonSearchResult.sessionId)) {
+            if (commonSearchResult != null && !StringUtils.isEmpty(commonSearchResult.sessionId)) {
                 hashMap4.put("sessionId", commonSearchResult.sessionId);
             }
             K.a(hashMap4);

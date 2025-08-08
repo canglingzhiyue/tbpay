@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -115,7 +115,7 @@ public class ftj extends fum {
             DXWidgetNode parentWidget = queryRootWidgetNode.getParentWidget();
             if (parentWidget instanceof ac) {
                 ac acVar = (ac) parentWidget;
-                if (!acVar.p() && TextUtils.isEmpty(acVar.q())) {
+                if (!acVar.p() && StringUtils.isEmpty(acVar.q())) {
                     return queryRootWidgetNode.getCodeMap();
                 }
             } else {

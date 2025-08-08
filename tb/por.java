@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.ui.coordinatorcard.FactoryType;
@@ -44,10 +44,10 @@ public class por implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("77d86ebd", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "getMiniAppRelation")) {
+        if (StringUtils.equals(str, "getMiniAppRelation")) {
             return a(wVCallBackContext);
         }
-        if (TextUtils.equals(str, "getHomeLocalValue")) {
+        if (StringUtils.equals(str, "getHomeLocalValue")) {
             return a(str2, wVCallBackContext);
         }
         return b(str, str2, wVCallBackContext);
@@ -73,12 +73,12 @@ public class por implements b {
             return ((Boolean) ipChange.ipc$dispatch("cebe5e73", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str) || (application = Globals.getApplication()) == null || (sharedPreferences = application.getSharedPreferences("home_dx_data", 0)) == null) {
+            if (StringUtils.isEmpty(str) || (application = Globals.getApplication()) == null || (sharedPreferences = application.getSharedPreferences("home_dx_data", 0)) == null) {
                 return false;
             }
             String string = JSONObject.parseObject(str).getString("key");
             r rVar = new r();
-            rVar.a("homeLocalValue", TextUtils.isEmpty(string) ? sharedPreferences.getAll() : sharedPreferences.getString(string, null));
+            rVar.a("homeLocalValue", StringUtils.isEmpty(string) ? sharedPreferences.getAll() : sharedPreferences.getString(string, null));
             wVCallBackContext.success(rVar);
             lap.a("Bridge", "getHomeLocalValue", "success; homeLocalValue:" + rVar.b("homeLocalValue", FactoryType.TYPE_INVALID));
             return true;
@@ -128,11 +128,11 @@ public class por implements b {
                 break;
         }
         if (c == 0 || c == 1) {
-            rVar.a("result", TextUtils.equals(str, "setNativeStorage") ? d.a(this.b, this.c, this.f, this.e) : d.b(this.b, this.c, this.f, this.e) ? "存储成功" : "存储失败");
+            rVar.a("result", StringUtils.equals(str, "setNativeStorage") ? d.a(this.b, this.c, this.f, this.e) : d.b(this.b, this.c, this.f, this.e) ? "存储成功" : "存储失败");
             wVCallBackContext.success(rVar);
             return true;
         } else if (c == 2 || c == 3) {
-            String a2 = TextUtils.equals(str, "getNativeStorage") ? d.a(this.b, this.c, this.f) : d.b(this.b, this.c, this.f);
+            String a2 = StringUtils.equals(str, "getNativeStorage") ? d.a(this.b, this.c, this.f) : d.b(this.b, this.c, this.f);
             rVar.a("bizName", this.b);
             rVar.a("key", this.c);
             rVar.a("withUser", this.d);
@@ -151,7 +151,7 @@ public class por implements b {
             return ((Boolean) ipChange.ipc$dispatch("26c8934", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         a();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             b(wVCallBackContext);
             return false;
         }
@@ -166,7 +166,7 @@ public class por implements b {
             return false;
         }
         a(jSONObject);
-        return !TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(this.c);
+        return !StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(this.c);
     }
 
     private void b(WVCallBackContext wVCallBackContext) {
@@ -190,7 +190,7 @@ public class por implements b {
         this.c = jSONObject.getString("key");
         this.d = jSONObject.getString("withUser");
         this.e = jSONObject.getString("value");
-        this.f = !TextUtils.equals(this.d, "NO");
+        this.f = !StringUtils.equals(this.d, "NO");
     }
 
     private void a() {

@@ -1,7 +1,7 @@
 package com.alibaba.wireless.aliprivacyext.recommendation;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.aliprivacyext.d;
 import com.alibaba.wireless.aliprivacyext.f;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class a {
             return false;
         }
         String f = cgf.f(context);
-        if (TextUtils.isEmpty(f) || !a(context, f.b(f, String.class))) {
+        if (StringUtils.isEmpty(f) || !a(context, f.b(f, String.class))) {
             return false;
         }
         return d(context);

@@ -2,7 +2,7 @@ package com.taobao.tao.recommend3.newface.gateway.action;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
@@ -59,7 +59,7 @@ public class h implements gke {
                     return;
                 }
                 String a2 = com.taobao.android.home.component.utils.j.a("promotionFailedTipContent", h.a(h.this).getResources().getString(R.string.homepage_promote_tab_switch_error_toast));
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 TBToast.makeText(h.a(h.this), a2, 2000L).show();

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.MutableContextWrapper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -98,7 +98,7 @@ public final class g implements IFaceAdapter {
             return (PopLayerBaseView) ipChange.ipc$dispatch("b791cbae", new Object[]{context, str, dVar});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             Context mutableContextWrapper = com.taobao.tbpoplayer.info.a.a().A() ? new MutableContextWrapper(context) : context;
@@ -238,7 +238,7 @@ public final class g implements IFaceAdapter {
             }
             try {
                 String dataString = intent.getDataString();
-                if (!TextUtils.isEmpty(dataString) && dataString.startsWith("poplayer")) {
+                if (!StringUtils.isEmpty(dataString) && dataString.startsWith("poplayer")) {
                     com.alibaba.poplayer.utils.c.b("triggerEvent", "", "MatchSchema.BroadcastTrigger.PopLayerHooker.url=" + dataString);
                     Intent intent2 = new Intent("com.alibaba.poplayer.PopLayer.action.POP");
                     intent2.putExtra("event", dataString);

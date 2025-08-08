@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -78,7 +78,7 @@ public class h implements com.taobao.android.weex_framework.adapter.d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6314fb9c", new Object[]{this, context, str, aVar, mUSImageQuality});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String mUSImageQuality2 = mUSImageQuality == null ? "auto" : mUSImageQuality.toString();
             if (aVar != null) {

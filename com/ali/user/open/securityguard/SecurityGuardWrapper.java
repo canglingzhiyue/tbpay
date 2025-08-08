@@ -1,6 +1,6 @@
 package com.ali.user.open.securityguard;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.callback.MemberCallback;
 import com.ali.user.open.core.config.ConfigManager;
 import com.ali.user.open.core.config.Environment;
@@ -162,7 +162,7 @@ public class SecurityGuardWrapper implements StorageService {
             }
             IUMIDComponent uMIDComp = getSecurityGuardManager().getUMIDComp();
             String securityToken = uMIDComp.getSecurityToken(i);
-            if (!TextUtils.isEmpty(securityToken) && securityToken.length() != 24) {
+            if (!StringUtils.isEmpty(securityToken) && securityToken.length() != 24) {
                 if (memberCallback == null) {
                     return;
                 }
@@ -244,7 +244,7 @@ public class SecurityGuardWrapper implements StorageService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9b5c8e", new Object[]{this, str, str2})).booleanValue();
-        } else if (TextUtils.isEmpty(str) || getSecurityGuardManager() == null) {
+        } else if (StringUtils.isEmpty(str) || getSecurityGuardManager() == null) {
             return false;
         } else {
             try {
@@ -287,7 +287,7 @@ public class SecurityGuardWrapper implements StorageService {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e5c8a66d", new Object[]{this, str, treeMap});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         StringBuilder sb = new StringBuilder();
@@ -325,7 +325,7 @@ public class SecurityGuardWrapper implements StorageService {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("72c54002", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -334,7 +334,7 @@ public class SecurityGuardWrapper implements StorageService {
                 return "";
             }
             String dynamicDecryptDDp = dynamicDataEncryptComp.dynamicDecryptDDp(str);
-            return TextUtils.isEmpty(dynamicDecryptDDp) ? str : dynamicDecryptDDp;
+            return StringUtils.isEmpty(dynamicDecryptDDp) ? str : dynamicDecryptDDp;
         } catch (Exception e) {
             e.printStackTrace();
             return "";
@@ -347,12 +347,12 @@ public class SecurityGuardWrapper implements StorageService {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f52dc359", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 IDynamicDataEncryptComponent dynamicDataEncryptComp = getSecurityGuardManager().getDynamicDataEncryptComp();
                 if (dynamicDataEncryptComp != null) {
                     String dynamicEncryptDDp = dynamicDataEncryptComp.dynamicEncryptDDp(str);
-                    return TextUtils.isEmpty(dynamicEncryptDDp) ? str : dynamicEncryptDDp;
+                    return StringUtils.isEmpty(dynamicEncryptDDp) ? str : dynamicEncryptDDp;
                 }
             } catch (Exception e) {
                 e.printStackTrace();

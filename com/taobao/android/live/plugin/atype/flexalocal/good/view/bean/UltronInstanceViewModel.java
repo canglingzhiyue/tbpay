@@ -6,7 +6,7 @@ import android.arch.lifecycle.ViewModel;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.instance.UltronInstanceConfig;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.alibaba.fastjson.JSONObject;
@@ -214,7 +214,7 @@ public class UltronInstanceViewModel extends ViewModel {
                             return;
                         }
                         his.b("UltronInstanceViewModel", "onConfigFetched | source=" + configSource + " ultronConfigSource=" + UltronInstanceViewModel.this.b);
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             return;
                         }
                         if (UltronInstanceViewModel.this.b != null && configSource.getIntValue() < UltronInstanceViewModel.this.b.getIntValue()) {
@@ -222,7 +222,7 @@ public class UltronInstanceViewModel extends ViewModel {
                         }
                         UltronInstanceViewModel.this.b = configSource;
                         UltronInstanceViewModel.this.f13834a = str;
-                        if (!TextUtils.isEmpty(UltronInstanceViewModel.this.f13834a)) {
+                        if (!StringUtils.isEmpty(UltronInstanceViewModel.this.f13834a)) {
                             UltronInstanceViewModel.this.f13834a = UltronInstanceViewModel.this.f13834a.replace("#{", "${");
                         }
                         UltronInstanceViewModel.b(UltronInstanceViewModel.this).setValue(Boolean.TRUE);
@@ -304,7 +304,7 @@ public class UltronInstanceViewModel extends ViewModel {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f13834a) || this.d == null || this.k.compareAndSet(true, true)) {
+        } else if (StringUtils.isEmpty(this.f13834a) || this.d == null || this.k.compareAndSet(true, true)) {
         } else {
             Coordinator.execute(new Runnable() { // from class: com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.UltronInstanceViewModel.4
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -341,10 +341,10 @@ public class UltronInstanceViewModel extends ViewModel {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{this, str});
         }
-        if (this.l && !TextUtils.equals(str, "normal2")) {
+        if (this.l && !StringUtils.equals(str, "normal2")) {
             return null;
         }
-        if (!this.l && !TextUtils.equals(str, "normal")) {
+        if (!this.l && !StringUtils.equals(str, "normal")) {
             return null;
         }
         if (this.j.size() < 5) {

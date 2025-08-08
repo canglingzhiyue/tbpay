@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launch.turbo.profile.a;
 import com.taobao.android.launch.turbo.profile.j;
@@ -32,9 +32,9 @@ public class gtd implements gsx {
         String a2 = d.a();
         int i = aVar.c().b;
         int b = d.b();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             aVar.a(new gsy(this, new IllegalArgumentException("parameters invalid"))).f();
-        } else if (TextUtils.equals(str, a2) && i == b) {
+        } else if (StringUtils.equals(str, a2) && i == b) {
             aVar.a(new gtc()).f();
         } else {
             aVar.a(new gtb()).f();

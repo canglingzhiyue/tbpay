@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ut.monitor.DataReceiveMonitor;
@@ -91,7 +91,7 @@ public final class TMSImageImpl implements IImageAdapter {
             ((com.taobao.phenix.intf.c) tag).b();
         }
         Application application = null;
-        if (TextUtils.isEmpty(url)) {
+        if (StringUtils.isEmpty(url)) {
             imgView.setImageDrawable(null);
             return;
         }
@@ -300,7 +300,7 @@ public final class TMSImageImpl implements IImageAdapter {
 
     private final String a(ImageView imageView, String str, IImageAdapter.b bVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b20b2904", new Object[]{this, imageView, str, bVar}) : TextUtils.isEmpty(str) ? str : b(imageView, str, bVar);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b20b2904", new Object[]{this, imageView, str, bVar}) : StringUtils.isEmpty(str) ? str : b(imageView, str, bVar);
     }
 
     private final String b(ImageView imageView, String str, IImageAdapter.b bVar) {
@@ -334,7 +334,7 @@ public final class TMSImageImpl implements IImageAdapter {
         }
         ImageStrategyConfig.a a2 = ImageStrategyConfig.a(bVar.c() ? ImageStrategyConfig.WEAPPSHARPEN : ImageStrategyConfig.WEAPP, 70);
         q.b(a2, "ImageStrategyConfig.newB…         70\n            )");
-        if (!TextUtils.isEmpty(bVar.b())) {
+        if (!StringUtils.isEmpty(bVar.b())) {
             String b2 = bVar.b();
             q.a((Object) b2);
             a2.a(ImageStrategyConfig.SizeLimitType.valueOf(b2));

@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.engine;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.engine.logic.UltronWebViewJsEngine;
 import com.alibaba.android.ultron.engine.logic.e;
 import com.alibaba.android.ultron.engine.template.TemplateInfo;
@@ -109,7 +109,7 @@ public class a {
         }
         String e = this.d.e();
         String f = this.d.f();
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             return;
         }
         a(e, f);

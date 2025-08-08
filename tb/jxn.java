@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,7 +25,7 @@ public class jxn extends jxm {
             return;
         }
         String string = jSONObject.getString("action");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             k.a("BaseJarvisKitCallback", "action is not specified");
             return;
         }

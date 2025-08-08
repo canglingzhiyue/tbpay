@@ -2,7 +2,7 @@ package com.taobao.taolive.sdk.business;
 
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
@@ -211,10 +211,10 @@ public class j {
             try {
                 if (j.a(j.this) != null && j.b(j.this) != null) {
                     HashMap hashMap = new HashMap();
-                    if (!TextUtils.isEmpty(j.c(j.this))) {
+                    if (!StringUtils.isEmpty(j.c(j.this))) {
                         hashMap.put("x-m-biz-live-bizcode", j.c(j.this));
                     }
-                    if (!TextUtils.isEmpty(j.d(j.this))) {
+                    if (!StringUtils.isEmpty(j.d(j.this))) {
                         hashMap.put("x-m-biz-live-biztoken", j.d(j.this));
                     }
                     if (j.e(j.this) != null) {

@@ -6,7 +6,7 @@ import android.taobao.windvane.export.network.f;
 import android.taobao.windvane.export.network.g;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.URLUtil;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -73,7 +73,7 @@ public class c extends WVUCWebViewClient {
             return null;
         }
         String uri = url.toString();
-        if (TextUtils.isEmpty(uri)) {
+        if (StringUtils.isEmpty(uri)) {
             return null;
         }
         if (webView.getCurrentViewCoreType() == 3) {

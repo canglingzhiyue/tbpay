@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.impl.common.PageVisibleAlgorithm;
@@ -17,7 +17,7 @@ public class mnk implements mnn {
             return (mnm) ipChange.ipc$dispatch("c14bf768", new Object[]{this, str, view, view2});
         }
         mnl mnlVar = null;
-        if (!TextUtils.isEmpty(str) && mpe.i(str)) {
+        if (!StringUtils.isEmpty(str) && mpe.i(str)) {
             mnlVar = new mnl(view, view2);
         }
         if (mnlVar != null) {

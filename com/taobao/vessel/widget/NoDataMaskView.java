@@ -1,7 +1,7 @@
 package com.taobao.vessel.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -114,7 +114,7 @@ public class NoDataMaskView extends RelativeLayout {
             setVisibility(0);
         }
         if (z) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = getResources().getString(R.string.error_network_retry);
             }
             this.mTextViewErrorTips.setText(str);

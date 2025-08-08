@@ -1,6 +1,6 @@
 package com.taobao.tab2interact.core.component.browser.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,7 +36,7 @@ public class BrowserTaskManager {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "browse_task_normal";
         }
         this.c = str;
@@ -80,7 +80,7 @@ public class BrowserTaskManager {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "browse_task_normal";
         }
         String str2 = this.f19742a.get(str);
@@ -92,7 +92,7 @@ public class BrowserTaskManager {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("fa35996a", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "browse_task_normal";
         }
         return this.b.get(str);
@@ -116,7 +116,7 @@ public class BrowserTaskManager {
             return ((Boolean) ipChange.ipc$dispatch("5a421221", new Object[]{this, map})).booleanValue();
         }
         String b = b(map);
-        if (TextUtils.isEmpty(b) || "finish".equals(this.f19742a.get(b))) {
+        if (StringUtils.isEmpty(b) || "finish".equals(this.f19742a.get(b))) {
             return false;
         }
         this.b.put(b, map);
@@ -134,7 +134,7 @@ public class BrowserTaskManager {
         }
         try {
             String string = JSONObject.parseObject(map.get("extParams")).getString("browserTaskType");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             if (!skq.p().contains(string)) {

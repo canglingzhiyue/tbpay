@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umf.datamodel.UMFBaseIO;
 import com.alibaba.android.umf.datamodel.b;
 import com.alibaba.android.umf.node.service.IUMFService;
@@ -53,7 +53,7 @@ public abstract class bqo<INPUT extends UMFBaseIO, OUTPUT extends UMFBaseIO> imp
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d06b8759", new Object[]{this, str, str2, new Integer(i), bqgVar, cls});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a(str, cls);
             a(str, i, bqgVar);

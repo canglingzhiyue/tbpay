@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.c;
 
@@ -32,7 +32,7 @@ public final class sqc {
             return bool.booleanValue();
         }
         String e2 = e();
-        if (TextUtils.isEmpty(e2)) {
+        if (StringUtils.isEmpty(e2)) {
             d = false;
         } else if (e2.split("\\.").length == 4) {
             d = true;

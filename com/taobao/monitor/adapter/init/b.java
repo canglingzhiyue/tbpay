@@ -2,7 +2,7 @@ package com.taobao.monitor.adapter.init;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.speed.TBSpeed;
 import com.taobao.application.common.impl.d;
@@ -93,7 +93,7 @@ public class b {
         }
         String string = sharedPreferences.getString(a.SPECIAL_PAGE_SAMPLE, "");
         try {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             float nextFloat = new Random(System.currentTimeMillis()).nextFloat();
@@ -131,11 +131,11 @@ public class b {
             edit.remove(H5ProcedureGetterBridge.SP_KEY_REALTIME_TRACE_VALID_TIME);
             edit.apply();
         }
-        if (TextUtils.isEmpty(mms.n) && new File("/data/local/tmp/.apm/.traceId").exists()) {
+        if (StringUtils.isEmpty(mms.n) && new File("/data/local/tmp/.apm/.traceId").exists()) {
             mms.n = a("/data/local/tmp/.apm/.traceId");
             mms.o = "file";
         }
-        if (TextUtils.isEmpty(mms.n)) {
+        if (StringUtils.isEmpty(mms.n)) {
             return;
         }
         mms.h = false;

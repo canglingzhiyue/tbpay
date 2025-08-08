@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.h;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.IoUtils;
 import com.huawei.hms.framework.common.Logger;
 import java.io.ByteArrayOutputStream;
@@ -17,7 +17,7 @@ public class c {
     private static final String f7438a = "c";
 
     public static String a(String str, Context context) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         InputStream inputStream = null;

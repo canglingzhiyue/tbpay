@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.adapter.image;
 
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
@@ -82,7 +82,7 @@ public class ImageAdapter implements IImageAdapter {
         } else {
             str2 = null;
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.equals(str2, "0")) {
+        if (StringUtils.isEmpty(str2) || StringUtils.equals(str2, "0")) {
             z = false;
         }
         PhenixCreator a2 = b.h().a(str);
@@ -133,7 +133,7 @@ public class ImageAdapter implements IImageAdapter {
         } else {
             str2 = null;
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.equals(str2, "0")) {
+        if (StringUtils.isEmpty(str2) || StringUtils.equals(str2, "0")) {
             z = false;
         }
         PhenixCreator a2 = b.h().a(str);
@@ -208,7 +208,7 @@ public class ImageAdapter implements IImageAdapter {
         } else {
             str2 = null;
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.equals(str2, "0")) {
+        if (StringUtils.isEmpty(str2) || StringUtils.equals(str2, "0")) {
             z = false;
         }
         PhenixCreator a2 = b.h().a(str);
@@ -282,7 +282,7 @@ public class ImageAdapter implements IImageAdapter {
         ImageStrategyConfig.a a2 = ImageStrategyConfig.a(IMAGE_ORIGIN_MODE_BIZ, String.valueOf((int) IMAGE_ORIGIN_MODE_NORMAL_BIZID));
         if (imageConfigInfo != null) {
             a2 = ImageStrategyConfig.a(imageConfigInfo.e, String.valueOf(imageConfigInfo.f));
-            if (TextUtils.equals(imageConfigInfo.b, IMAGE_QUALITY_Q90)) {
+            if (StringUtils.equals(imageConfigInfo.b, IMAGE_QUALITY_Q90)) {
                 a2.a(TaobaoImageUrlStrategy.ImageQuality.q90);
                 builderImgWidthAndHeight(a2, sjqVar);
             }

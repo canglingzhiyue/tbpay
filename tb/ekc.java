@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.aura.AURAFlowData;
@@ -137,7 +137,7 @@ public final class ekc implements ate {
                 aURARenderComponent2 = aURARenderComponent2.parent;
             } else {
                 Object obj = aURARenderComponent2.data.fields.get("locatorId");
-                if ((obj instanceof String) && TextUtils.equals((CharSequence) obj, "mainPic4ARTrial")) {
+                if ((obj instanceof String) && StringUtils.equals((CharSequence) obj, "mainPic4ARTrial")) {
                     return true;
                 }
                 aURARenderComponent2 = aURARenderComponent2.parent;

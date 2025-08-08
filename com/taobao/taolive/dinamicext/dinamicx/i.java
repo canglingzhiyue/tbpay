@@ -2,7 +2,7 @@ package com.taobao.taolive.dinamicext.dinamicx;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -330,13 +330,13 @@ public class i extends DXWidgetNode {
         if (obj2 != null) {
             tBLiveOpenCardView.setTag(obj2);
         }
-        if (!TextUtils.isEmpty(this.f) && -1 != (a4 = pbh.a(this.f))) {
+        if (!StringUtils.isEmpty(this.f) && -1 != (a4 = pbh.a(this.f))) {
             tBLiveOpenCardView.setBackgroundResource(a4);
         }
-        if (!TextUtils.isEmpty(this.r) && -1 != (a3 = pbh.a(this.r))) {
+        if (!StringUtils.isEmpty(this.r) && -1 != (a3 = pbh.a(this.r))) {
             tBLiveOpenCardView.setPlaceHoldImageResId(a3);
         }
-        if (TextUtils.isEmpty(this.q) || -1 == (a2 = pbh.a(this.q))) {
+        if (StringUtils.isEmpty(this.q) || -1 == (a2 = pbh.a(this.q))) {
             return;
         }
         tBLiveOpenCardView.setColorFilter(a2);
@@ -346,7 +346,7 @@ public class i extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fe9598a", new Object[]{this, tBLiveOpenCardView});
-        } else if (TextUtils.isEmpty(this.y) || tBLiveOpenCardView == null) {
+        } else if (StringUtils.isEmpty(this.y) || tBLiveOpenCardView == null) {
         } else {
             int a2 = pbh.a(this.y);
             if (a2 != -1) {
@@ -368,7 +368,7 @@ public class i extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a04d829", new Object[]{this, tBLiveOpenCardView});
-        } else if (TextUtils.isEmpty(this.A) || TextUtils.isEmpty(this.g)) {
+        } else if (StringUtils.isEmpty(this.A) || StringUtils.isEmpty(this.g)) {
         } else {
             if (this.A.equals(this.g)) {
                 tBLiveOpenCardView.setVisibility(0);

@@ -2,7 +2,7 @@ package com.taobao.wireless.link.login;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import org.json.JSONObject;
@@ -26,14 +26,14 @@ public class LoginFreeJsbridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, ACTION_LOGIN)) {
+        if (StringUtils.equals(str, ACTION_LOGIN)) {
             rkg.a("link_tag", "LoginFreeJsbridge === execute === 写入到手淘的信息：" + str2);
             try {
                 JSONObject jSONObject = new JSONObject(str2);
                 String str3 = (String) jSONObject.get("schemaUrl");
                 String str4 = (String) jSONObject.get("packageName");
                 a.a().f23600a = str3;
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     a.a().b.put(str4, false);
                 }
                 rkg.a("link_tag", "LoginFreeJsbridge === execute === 写免登信息：schemaUrl=" + str3);

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.request.preload;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.l;
@@ -51,6 +51,6 @@ public class c {
             return "";
         }
         String string = jSONObject.getString("id");
-        return TextUtils.isEmpty(string) ? jSONObject.getString("itemId") : string;
+        return StringUtils.isEmpty(string) ? jSONObject.getString("itemId") : string;
     }
 }

@@ -3,7 +3,7 @@ package com.taobao.cameralink.manager;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.Dimension;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -92,7 +92,7 @@ public class Utils {
             return;
         }
         String name = zipEntry.getName();
-        if (!TextUtils.isEmpty(name) && name.contains("../")) {
+        if (!StringUtils.isEmpty(name) && name.contains("../")) {
             throw new IOException("the name of zip entry contain \"../\", it has potential safety hazards...");
         }
         if (zipEntry.isDirectory()) {
@@ -140,7 +140,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a5125ee4", new Object[]{zipFile, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             File file = new File(str);
             if (file.exists() && file.isDirectory() && zipFile != null) {
                 Enumeration<? extends ZipEntry> entries = zipFile.entries();
@@ -199,7 +199,7 @@ public class Utils {
         }
         try {
             String userId = Login.getUserId();
-            if (TextUtils.isEmpty(userId)) {
+            if (StringUtils.isEmpty(userId)) {
                 userId = UTDevice.getUtdid(getApplication());
             }
             str = kna.b(userId);

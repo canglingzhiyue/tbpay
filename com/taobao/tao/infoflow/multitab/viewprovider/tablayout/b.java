@@ -7,7 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -56,7 +56,7 @@ public class b {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
         int a3 = f.a(context, this.f20650a.n);
         int a4 = f.a(context, this.f20650a.E);
-        if (!this.f20650a.a(aVar) || TextUtils.isEmpty(a2)) {
+        if (!this.f20650a.a(aVar) || StringUtils.isEmpty(a2)) {
             textView = new TextView(context);
             TextView textView2 = (TextView) textView;
             textView2.setTextColor(this.f20650a.a(z));
@@ -98,7 +98,7 @@ public class b {
                 layoutParams.rightMargin = f.a(context, i2);
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             StringBuilder sb = new StringBuilder();
             sb.append(str);
             sb.append(",");
@@ -114,7 +114,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e5b281df", new Object[]{this, context, layoutParams, str});
-        } else if (!this.b || TextUtils.isEmpty(str) || this.f20650a.h == 0) {
+        } else if (!this.b || StringUtils.isEmpty(str) || this.f20650a.h == 0) {
         } else {
             TextPaint textPaint = new TextPaint();
             float a2 = f.a(context, this.f20650a.h);

@@ -9,7 +9,7 @@ import android.content.pm.ResolveInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.heytap.mcssdk.constant.MessageConstant;
 import com.heytap.msp.push.callback.ICallBackResultService;
 import com.heytap.msp.push.callback.IGetAppNotificationCallBackService;
@@ -180,7 +180,7 @@ public class cvf {
     private String e(Context context) {
         boolean z;
         boolean z2;
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             c = new String(cvg.a("Y29tLm1jcy5hY3Rpb24uUkVDRUlWRV9TREtfTUVTU0FHRQ=="));
         }
         List<ResolveInfo> queryIntentServices = context.getPackageManager().queryIntentServices(new Intent(c), 8192);
@@ -503,7 +503,7 @@ public class cvf {
             e(context);
         }
         if (f) {
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 c = new String(cvg.a("Y29tLm1jcy5hY3Rpb24uUkVDRUlWRV9TREtfTUVTU0FHRQ=="));
             }
             return c;

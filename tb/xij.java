@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.android.nextrpc.internal.utils.UnifyLog;
 import com.alibaba.android.nextrpc.internal.utils.c;
@@ -299,7 +299,7 @@ public final class xij {
             return a(strArr);
         }
         if (this.e.length() == 0) {
-            if (!TextUtils.isEmpty(this.b.f21113a) && !TextUtils.isEmpty(this.b.b)) {
+            if (!StringUtils.isEmpty(this.b.f21113a) && !StringUtils.isEmpty(this.b.b)) {
                 return new Pair<>(this.b.f21113a, this.b.b);
             }
             return new Pair<>(ErrorConstant.ERRCODE_JSONDATA_BLANK, ErrorConstant.ERRMSG_JSONDATA_BLANK);

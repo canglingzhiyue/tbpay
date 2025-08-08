@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Patterns;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -96,9 +96,9 @@ public class nzq {
                     return;
                 }
                 if (oai.a()) {
-                    if (!TextUtils.isEmpty(bVar.f)) {
+                    if (!StringUtils.isEmpty(bVar.f)) {
                         nzq.a(context, bVar.f);
-                    } else if (!TextUtils.isEmpty(bVar.b)) {
+                    } else if (!StringUtils.isEmpty(bVar.b)) {
                         nzq.a(context, bVar.b);
                     }
                 }
@@ -133,7 +133,7 @@ public class nzq {
             return;
         }
         String str2 = "saveTaoPassword text=" + str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Matcher matcher = Patterns.WEB_URL.matcher(str);

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -136,7 +136,7 @@ public class faz extends dzk {
         } else if (viewHolder instanceof b) {
             b bVar = (b) viewHolder;
             bVar.a().setText(d(i));
-            if (!TextUtils.isEmpty(this.g.tip)) {
+            if (!StringUtils.isEmpty(this.g.tip)) {
                 TextView b2 = bVar.b();
                 b2.setText(this.g.tip);
                 b2.setVisibility(0);

@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.core;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import com.alibaba.fastjson.JSON;
@@ -114,7 +114,7 @@ public class x implements s {
                 boolean z2 = childAt instanceof PopLayerComponent.PopLayerContainerView;
                 if (z2) {
                     PopLayerComponent.PopLayerContainerView popLayerContainerView = (PopLayerComponent.PopLayerContainerView) childAt;
-                    if (TextUtils.equals(str, popLayerContainerView.getSrc())) {
+                    if (StringUtils.equals(str, popLayerContainerView.getSrc())) {
                         if (!z) {
                             flatViewGroup.removeView(childAt);
                         } else {
@@ -246,7 +246,7 @@ public class x implements s {
             return;
         }
         String a2 = oec.a(map.get("url"), "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             ab.h.a aVar = new ab.h.a(aaVar2.N());
             m.b a3 = com.taobao.tao.flexbox.layoutmanager.container.m.a(a2);
             if (a3 == null || !a3.g) {
@@ -260,7 +260,7 @@ public class x implements s {
             } else {
                 String queryParameter = uri.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_LOCAL_PATH);
                 aVar.c(uri2);
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     aVar.d(queryParameter);
                 }
             }

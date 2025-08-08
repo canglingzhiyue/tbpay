@@ -8,7 +8,7 @@ import android.net.Proxy;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.mobile.auth.OoO0o;
 import com.mobile.auth.gatewayauth.Constant;
@@ -599,7 +599,7 @@ public class O00000Oo {
             } else if (!"MOBILE".equalsIgnoreCase(typeName)) {
                 return "NoInternet";
             } else {
-                O0000Ooo = TextUtils.isEmpty(Proxy.getDefaultHost()) ? O0000Ooo(context) : "wap";
+                O0000Ooo = StringUtils.isEmpty(Proxy.getDefaultHost()) ? O0000Ooo(context) : "wap";
             }
             return O0000Ooo;
         } catch (Throwable th) {

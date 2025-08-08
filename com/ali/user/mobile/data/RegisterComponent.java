@@ -1,6 +1,6 @@
 package com.ali.user.mobile.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.info.AlipayInfo;
 import com.ali.user.mobile.info.AppInfo;
@@ -71,7 +71,7 @@ public class RegisterComponent {
         rpcRequest.addParam(ApiConstants.ApiField.RISK_INFO, JSON.toJSONString(wSecurityData));
         if (memberRequestBase.ext == null) {
             memberRequestBase.ext = new HashMap();
-            if (!TextUtils.isEmpty(baseRegistRequest.regFrom)) {
+            if (!StringUtils.isEmpty(baseRegistRequest.regFrom)) {
                 memberRequestBase.ext.put("regFrom", baseRegistRequest.regFrom);
             }
         }

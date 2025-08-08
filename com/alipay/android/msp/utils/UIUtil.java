@@ -16,7 +16,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
@@ -98,7 +98,7 @@ public class UIUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f7275eaa", new Object[]{str, str2})).booleanValue();
         }
-        return (!TextUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_PAYPWD) && !TextUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_PAYSPWD) && !TextUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_MONEY)) && !TextUtils.equals(str2, a.ATOM_EXT_safe);
+        return (!StringUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_PAYPWD) && !StringUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_PAYSPWD) && !StringUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_MONEY)) && !StringUtils.equals(str2, a.ATOM_EXT_safe);
     }
 
     public static KeyboardType getKeyboardType(String str) {
@@ -107,10 +107,10 @@ public class UIUtil {
             return (KeyboardType) ipChange.ipc$dispatch("a43b290c", new Object[]{str});
         }
         KeyboardType keyboardType = KeyboardType.text;
-        if (TextUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_MONEY)) {
+        if (StringUtils.equals(str, UiUtil.INPUT_TYPE_VALUE_MONEY)) {
             return KeyboardType.money;
         }
-        return (TextUtils.equals(UiUtil.INPUT_TYPE_VALUE_NUM, str) || TextUtils.equals("number", str) || TextUtils.equals(UiUtil.INPUT_TYPE_VALUE_PAYSPWD, str)) ? KeyboardType.num : keyboardType;
+        return (StringUtils.equals(UiUtil.INPUT_TYPE_VALUE_NUM, str) || StringUtils.equals("number", str) || StringUtils.equals(UiUtil.INPUT_TYPE_VALUE_PAYSPWD, str)) ? KeyboardType.num : keyboardType;
     }
 
     public static void setSafeKeyboardSoftInput(EditText editText) {
@@ -140,7 +140,7 @@ public class UIUtil {
             return ((Number) ipChange.ipc$dispatch("170122f4", new Object[]{str})).intValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (str.startsWith("#")) {
                     return Color.parseColor(parseStandarColor(str));
                 }
@@ -408,7 +408,7 @@ public class UIUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6b3208c0", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.startsWith("QUICKPAY@");
         }
         return false;
@@ -453,7 +453,7 @@ public class UIUtil {
                             if (contentDescription != null) {
                                 str = contentDescription.toString();
                             }
-                            if (TextUtils.isEmpty(str) && (childAt instanceof TextView)) {
+                            if (StringUtils.isEmpty(str) && (childAt instanceof TextView)) {
                                 str = ((TextView) childAt).getText().toString();
                             }
                             Bundle bundle = new Bundle();
@@ -462,7 +462,7 @@ public class UIUtil {
                             return bundle;
                         } else if (childAt instanceof TextView) {
                             String charSequence = ((TextView) childAt).getText().toString();
-                            if (!TextUtils.isEmpty(charSequence) && TextUtils.isEmpty(strArr[0])) {
+                            if (!StringUtils.isEmpty(charSequence) && StringUtils.isEmpty(strArr[0])) {
                                 strArr[0] = charSequence;
                             }
                         }
@@ -473,8 +473,8 @@ public class UIUtil {
                     if (contentDescription2 != null) {
                         str = contentDescription2.toString();
                     }
-                    if (TextUtils.isEmpty(str)) {
-                        if (TextUtils.isEmpty(strArr[0])) {
+                    if (StringUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(strArr[0])) {
                             str = findFirstTextViewText(viewGroup, i - 1);
                         } else {
                             str = strArr[0];
@@ -500,12 +500,12 @@ public class UIUtil {
                 View childAt = viewGroup.getChildAt(i2);
                 if (childAt instanceof TextView) {
                     TextView textView = (TextView) childAt;
-                    if (textView.getVisibility() == 0 && !TextUtils.isEmpty(textView.getText())) {
+                    if (textView.getVisibility() == 0 && !StringUtils.isEmpty(textView.getText())) {
                         return textView.getText().toString();
                     }
                 } else if (childAt instanceof ViewGroup) {
                     String findFirstTextViewText = findFirstTextViewText((ViewGroup) childAt, i - 1);
-                    if (!TextUtils.isEmpty(findFirstTextViewText)) {
+                    if (!StringUtils.isEmpty(findFirstTextViewText)) {
                         return findFirstTextViewText;
                     }
                 } else {

@@ -1,7 +1,7 @@
 package com.taobao.bootimage.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -138,7 +138,7 @@ public class e extends b {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         kej.a("BootImageCommercialVideoController", "show image: start");
-        if (this.h == null || TextUtils.isEmpty(this.h.imgUrl) || this.i.get() == null || this.g == null) {
+        if (this.h == null || StringUtils.isEmpty(this.h.imgUrl) || this.i.get() == null || this.g == null) {
             kej.a("BootImageCommercialVideoController", "show image failed: data error.");
             return false;
         } else if (!super.b()) {
@@ -225,7 +225,7 @@ public class e extends b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("692fed9a", new Object[]{this, textView, bootImageInfo});
-        } else if (textView == null || bootImageInfo == null || TextUtils.isEmpty(bootImageInfo.closeTxt)) {
+        } else if (textView == null || bootImageInfo == null || StringUtils.isEmpty(bootImageInfo.closeTxt)) {
         } else {
             textView.setText(bootImageInfo.closeTxt);
         }

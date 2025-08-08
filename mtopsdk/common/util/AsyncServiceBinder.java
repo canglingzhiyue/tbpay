@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.IInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import mtopsdk.common.util.TBSdkLog;
 import tb.kge;
@@ -36,7 +36,7 @@ public abstract class AsyncServiceBinder<T extends IInterface> {
             synchronized (AsyncServiceBinder.this.lock) {
                 try {
                     if (TBSdkLog.isLogEnable(TBSdkLog.LogEnable.WarnEnable)) {
-                        if (TextUtils.isEmpty(AsyncServiceBinder.this.interfaceName)) {
+                        if (StringUtils.isEmpty(AsyncServiceBinder.this.interfaceName)) {
                             AsyncServiceBinder.this.interfaceName = AsyncServiceBinder.this.interfaceCls.getSimpleName();
                         }
                         TBSdkLog.w(AsyncServiceBinder.TAG, "[onServiceDisconnected] Service disconnected called,interfaceName=" + AsyncServiceBinder.this.interfaceName);
@@ -53,7 +53,7 @@ public abstract class AsyncServiceBinder<T extends IInterface> {
             Class<?>[] declaredClasses;
             synchronized (AsyncServiceBinder.this.lock) {
                 try {
-                    if (TextUtils.isEmpty(AsyncServiceBinder.this.interfaceName)) {
+                    if (StringUtils.isEmpty(AsyncServiceBinder.this.interfaceName)) {
                         AsyncServiceBinder.this.interfaceName = AsyncServiceBinder.this.interfaceCls.getSimpleName();
                     }
                     if (TBSdkLog.isLogEnable(TBSdkLog.LogEnable.InfoEnable)) {
@@ -101,7 +101,7 @@ public abstract class AsyncServiceBinder<T extends IInterface> {
             }
             this.mBinding = true;
             try {
-                if (TextUtils.isEmpty(this.interfaceName)) {
+                if (StringUtils.isEmpty(this.interfaceName)) {
                     this.interfaceName = this.interfaceCls.getSimpleName();
                 }
                 if (TBSdkLog.isLogEnable(TBSdkLog.LogEnable.InfoEnable)) {

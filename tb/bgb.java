@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.link.a;
@@ -23,14 +23,14 @@ public class bgb {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str4)) {
-                String str6 = TextUtils.isEmpty(str3) ? "" : str3;
-                String str7 = TextUtils.isEmpty(str5) ? "" : str5;
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str4)) {
+                String str6 = StringUtils.isEmpty(str3) ? "" : str3;
+                String str7 = StringUtils.isEmpty(str5) ? "" : str5;
                 HashMap hashMap = new HashMap();
                 hashMap.put("catalog", str2);
                 hashMap.put("extraInfo", str6);
                 String tinctInfo = ITinctOperater.getInstance().getTinctInfo(str);
-                if (TextUtils.isEmpty(tinctInfo)) {
+                if (StringUtils.isEmpty(tinctInfo)) {
                     tinctInfo = "empty";
                 }
                 String str8 = tinctInfo;
@@ -53,26 +53,26 @@ public class bgb {
         hashMap.put(LogField.EVENTID.toString(), "19999");
         hashMap.put(LogField.PAGE.toString(), str);
         String logField = LogField.ARG1.toString();
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         hashMap.put(logField, str4);
         hashMap.put(LogField.ARG2.toString(), str5);
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("tinctTag=");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         stringBuffer.append(str2);
         stringBuffer.append(",");
         stringBuffer.append("catalog=");
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         stringBuffer.append(str3);
         stringBuffer.append(",");
         stringBuffer.append("errorMsg=");
-        if (TextUtils.isEmpty(str6)) {
+        if (StringUtils.isEmpty(str6)) {
             str6 = "";
         }
         stringBuffer.append(str6);

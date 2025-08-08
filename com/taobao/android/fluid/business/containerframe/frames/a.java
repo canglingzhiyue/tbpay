@@ -2,7 +2,7 @@ package com.taobao.android.fluid.business.containerframe.frames;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -330,7 +330,7 @@ public class a extends c {
             ipChange.ipc$dispatch("ad5eda45", new Object[]{this, cVar});
         } else if (cVar == null) {
         } else {
-            if (this.e != null && TextUtils.equals(this.e.c, cVar.c)) {
+            if (this.e != null && StringUtils.equals(this.e.c, cVar.c)) {
                 return;
             }
             sma messageCenter = ((IMessageService) this.f12380a.getService(IMessageService.class)).getMessageCenter();

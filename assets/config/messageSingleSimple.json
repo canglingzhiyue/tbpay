@@ -1,0 +1,183 @@
+{
+  "props": {
+    "mainList": "messageFlow",
+    "biz": "msgChat"
+  },
+  "source": {
+    "initTimeout": 3000,
+    "sourceList": [
+      {
+        "name": "messageSource",
+        "type": "source.message.data.simpleMessageList",
+        "defaultLoad": 0
+      },
+      {
+        "name": "conversation",
+        "type": "source.message.data.simpleConversation",
+        "defaultLoad": 0
+      }
+    ]
+  },
+  "transformer": {
+    "immediateTransformerList": [
+      {
+        "name": "input",
+        "type": "transformer.message.chat.input"
+      }
+    ],
+    "nativeTransformerList": [
+      {
+        "name": "messageSenderView",
+        "type": "transformer.message.messageFlow.simpleMessageSenderView"
+      },
+      {
+        "name": "messageFlowViewData",
+        "type": "iterator",
+        "iterator": {
+          "split": {
+            "name": "msgTypeSplit",
+            "type": "splitTransformer.message.messageFlow.simplePart4msgType"
+          },
+          "merge": {
+            "name": "viewDataMerge",
+            "type": "mergeTransformer.message.messageFlow.simpleViewData"
+          },
+          "pool": {
+            "default": [
+              {
+                "name": "imageMessageView",
+                "type": "itemTransformer.message.messageFlow.simpleImageMessageView"
+              },
+              {
+                "name": "videoMessageView",
+                "type": "itemTransformer.message.messageFlow.simpleVideoMessageView"
+              },
+              {
+                "name": "systemMessageView",
+                "type": "itemTransformer.message.messageFlow.simpleSystemMessageView"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "messageFlowListStatus",
+        "type": "transformer.message.messageFlow.simpleListStatus"
+      },
+      {
+        "name": "conversationBaseInfo",
+        "type": "transformer.message.conversation.simpleBaseInfo"
+      },
+      {
+        "name": "messageScroll",
+        "type": "transformer.message.messageFlow.simpleScroll"
+      },
+      {
+        "name": "messageTime",
+        "type": "transformer.message.messageFlow.simpleWrapperTimeView"
+      }
+    ],
+    "finalTransformerList": [
+      {
+        "name": "messageCompose",
+        "type": "transformer.message.messageFlow.simpleMessageCompose"
+      }
+    ]
+  },
+  "layout": {
+    "renderTemplate": {
+      "name": "alimp_page_chat",
+      "renderType": "dinamicX",
+      "renderData": {
+        "name": "alimp_page_chat",
+        "version": "350",
+        "url": "https://dinamicx.alibabausercontent.com/l_pub/alimp_page_chat/1695136574244/alimp_page_chat.zip",
+        "heightMode": "fullScreen",
+        "resizeFrame": "1",
+        "convertJSON": "1",
+        "usePartRefresh": "1",
+        "uiData": "1",
+        "recyclerLayoutRefresh": [{
+          "widgetId": "messageFlow",
+          "refreshType": "dxPartRefreshHanlder.message.messageflow.simpleCommon"
+        }]
+      }
+    },
+    "data": {
+      "props": "${props}",
+      "bizType": "${props.bizType}",
+      "targetId": "${props.targetId}",
+      "targetType": "${props.targetType}",
+      "title": "${runtimeData.customTitle}",
+      "ccode": "${props.ccode}",
+      "oldHasMore": "${originalData.messageSource.oldHasMore}",
+      "messageViewObjects": "${runtimeData.messageViewObjects}",
+      "jsMessageViewDataMap": "${jsRuntimeData.messageViewDataMap}",
+      "messageViewDataMap": "${runtimeData.messageViewDataMap}",
+      "messageSenderViewDataMap":"${runtimeData.messageSenderViewDataMap}",
+      "messageNeedTimeMap":"${runtimeData.messageNeedTimeMap}",
+      "messageDownElevator": "${runtimeData.messageDownElevator}",
+      "messageUpElevator": "${runtimeData.messageUpElevator}",
+      "inputViewObjects": "${runtimeData.inputViewObjects}",
+      "recordViewObjects": "${jsRuntimeData.recordViewObjects}",
+      "initText": "${runtimeData.inputViewObjects.initText}",
+      "initTextNotExpandKeyboard": "1",
+      "placeHolder": "${runtimeData.inputViewObjects.placeHolder}",
+      "__DXCMD": "${runtimeData.__InstantOperation}",
+      "associateEmojiData":"${originalData.gifSearch}",
+      "displayName": "${originalData.conversation.subData.profile.displayName}",
+      "avatarUrl": "${originalData.conversation.subData.profile.avatarURL}",
+      "isSelectMode": "${jsRuntimeData.isSelectMode}",
+      "isGridMode": "${jsRuntimeData.isGridMode}",
+      "selectedGoodsList": "${jsRuntimeData.selectedGoodsList}",
+      "currentGoodsTabIndex": "${jsRuntimeData.currentGoodsTabIndex}",
+      "tabList": "${jsRuntimeData.tabList}",
+      "tabSelectedIndexs": "${jsRuntimeData.tabSelectedIndexs}",
+      "operationArea": "${originalData.operationArea}",
+      "miniBar": "${jsRuntimeData.miniBar}",
+      "topAreaStatus": "${jsRuntimeData.topAreaStatus}",
+      "topAreaHeight": "${jsRuntimeData.topAreaHeight}",
+      "recentFloatObject": "${jsRuntimeData.recentFloatObject}",
+      "inputExtPanelList": "${runtimeData.inputExtPanelList}",
+      "inputExtPanelEntryNewTips": "${runtimeData.inputExtPanelEntryNewTips}",
+      "inputDisableClearTxtAfterSend": "0",
+      "replyInfo": "${runtimeData.replyInfo}",
+      "replyViewData": "${runtimeData.replyViewData}",
+      "overViewData": "${runtimeData.overViewData}",
+      "replyGifSource": "${originalData.replyGifSource}",
+      "showGifReply": "${runtimeData.showGifReply}"
+    },
+    "userTrack": {
+      "pageName": "${props.registry.pageName}",
+      "spmB": "${props.registry.spmb}",
+      "actions": {
+        "onAppear": {
+          "name": "Page_Chat",
+          "eventId": "2001",
+          "spmC": "0",
+          "spmD": "0",
+          "args": {
+            "GroupID": "${props.ccode}",
+            "ChatID": "${props.ccode}",
+            "conversationId":"${props.ccode}",
+            "bizType":"${props.bizType}",
+            "biztype":"${props.bizType}",
+            "targetId":"${props.targetId}",
+            "source":"${props.source}"
+          }
+        },
+        "onDisappear": {
+          "name": "Page_Chat",
+          "eventId": "2001",
+          "spmC": "0",
+          "spmD": "0",
+          "args": {
+            "folderId": "${props.nodeId}"
+          }
+        }
+      }
+    },
+    "children": {
+    }
+  }
+}

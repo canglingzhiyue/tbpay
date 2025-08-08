@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.abtest.ABTestCenter;
 import com.taobao.tao.remotebusiness.MtopBusiness;
@@ -190,7 +190,7 @@ public class ryg implements rxm, rxn {
             return ((Boolean) ipChange.ipc$dispatch("5a421221", new Object[]{this, map})).booleanValue();
         }
         if (map != null && !map.isEmpty() && SwitchConfig.getInstance().isEnablePrefetchIgnore()) {
-            return TextUtils.equals(map.get(MtopJSBridge.MtopJSParam.IGNORE_PREFETCH), "true");
+            return StringUtils.equals(map.get(MtopJSBridge.MtopJSParam.IGNORE_PREFETCH), "true");
         }
         return false;
     }

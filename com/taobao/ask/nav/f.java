@@ -2,7 +2,7 @@ package com.taobao.ask.nav;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.ask.ASK_CONST;
@@ -25,13 +25,13 @@ public class f {
             return;
         }
         String str = map.get("sessionId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = String.valueOf(System.currentTimeMillis());
             map.put("sessionId", str);
         }
         String str2 = map.get("scene");
         boolean a2 = com.taobao.ask.utils.d.a((Object) map.get(ASK_CONST.KEY_CALL_FROM_WINDVANE), false);
-        if (TextUtils.isEmpty(map.get("itemId"))) {
+        if (StringUtils.isEmpty(map.get("itemId"))) {
             com.taobao.social.sdk.jsbridge.a.callback(str, false, false, ASK_CONST.ERROR.INVALID_PARAMS.toJSONObject());
             com.taobao.vividsocial.utils.a.a("TBAskEveryonePublisherOpenFailed", ASK_CONST.ERROR.INVALID_PARAMS.toJSONObject());
             TLog.loge(ASK_CONST.LOG_TAG, "answer publish open failed , item id is null");

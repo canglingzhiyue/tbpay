@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -80,7 +80,7 @@ public class WVCusPlugin extends e {
             return true;
         } else if ("isPreAPKReady".equals(str)) {
             String d = a.a().d();
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 rVar.a("filePath", d);
                 rVar.a("isReady", (Object) true);
             } else {
@@ -120,7 +120,7 @@ public class WVCusPlugin extends e {
             return true;
         } else if ("getUpdateData".equals(str)) {
             String b = mrh.b(mrh.SP_KEY_UPDATE_MODEL, "");
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 rVar.a(new org.json.JSONObject(b));
             } else {
                 rVar.a(new org.json.JSONObject());

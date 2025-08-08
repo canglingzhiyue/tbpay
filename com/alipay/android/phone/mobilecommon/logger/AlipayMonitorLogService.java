@@ -1,7 +1,7 @@
 package com.alipay.android.phone.mobilecommon.logger;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.behavor.Behavor;
@@ -63,7 +63,7 @@ public class AlipayMonitorLogService extends MonitorLogService {
             behavor.setBehaviourPro(verifyBehavior.getBizType());
             behavor.setLoggerLevel(verifyBehavior.getLoggerLevel());
             behavor.setUserCaseID(verifyBehavior.getUserCaseID());
-            if (!TextUtils.isEmpty(verifyBehavior.getAppID())) {
+            if (!StringUtils.isEmpty(verifyBehavior.getAppID())) {
                 behavor.setAppID(verifyBehavior.getAppID());
             }
             behavor.setSeedID(verifyBehavior.getSeedID());

@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.aura.service.event.c;
 import com.alibaba.android.aura.service.event.d;
@@ -95,7 +95,7 @@ public class TBBuyBroadcastReceiver extends BroadcastReceiver {
             return;
         }
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         ard a2 = arc.a();

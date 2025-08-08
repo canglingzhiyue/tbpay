@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.b;
 import com.taobao.tao.util.AnalyticsUtil;
@@ -22,7 +22,7 @@ public class oiu extends oio {
     @Override // tb.oio
     public boolean b(Context context, b bVar, int i, com.taobao.share.ui.engine.render.b bVar2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3095705c", new Object[]{this, context, bVar, new Integer(i), bVar2})).booleanValue() : bVar != null && (TextUtils.equals(ShareTargetType.Share2QRCode.getValue(), bVar.b()) || TextUtils.equals(ShareTargetType.Share2ScanCode.getValue(), bVar.b()));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3095705c", new Object[]{this, context, bVar, new Integer(i), bVar2})).booleanValue() : bVar != null && (StringUtils.equals(ShareTargetType.Share2QRCode.getValue(), bVar.b()) || StringUtils.equals(ShareTargetType.Share2ScanCode.getValue(), bVar.b()));
     }
 
     @Override // tb.oio

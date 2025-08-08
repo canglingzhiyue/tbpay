@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import java.util.HashMap;
@@ -67,7 +67,7 @@ public class j {
         if (a2 != null) {
             Uri.Builder buildUpon = Uri.parse(str).buildUpon();
             String str2 = a2.get("spm");
-            if (!TextUtils.isEmpty(str2) && Uri.parse(str).getQueryParameter("spm") == null) {
+            if (!StringUtils.isEmpty(str2) && Uri.parse(str).getQueryParameter("spm") == null) {
                 buildUpon.appendQueryParameter("spm", str2);
             }
             Uri build = buildUpon.build();

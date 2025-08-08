@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -422,7 +422,7 @@ public class ous extends SQLiteOpenHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b480a23", new Object[]{this, str, str2, mtopTaobaoWirelessShopRouteProcessResponseData});
-        } else if (TextUtils.isEmpty(str) || !b(str2, mtopTaobaoWirelessShopRouteProcessResponseData.getShopTargetUrl())) {
+        } else if (StringUtils.isEmpty(str) || !b(str2, mtopTaobaoWirelessShopRouteProcessResponseData.getShopTargetUrl())) {
         } else {
             g.put(b(str), new c(mtopTaobaoWirelessShopRouteProcessResponseData, System.currentTimeMillis()));
         }
@@ -445,7 +445,7 @@ public class ous extends SQLiteOpenHelper {
             return null;
         }
         String shopTargetUrl = mtopTaobaoWirelessShopRouteProcessResponseData.getShopTargetUrl();
-        if (TextUtils.isEmpty(shopTargetUrl)) {
+        if (StringUtils.isEmpty(shopTargetUrl)) {
             return null;
         }
         mtopTaobaoWirelessShopRouteProcessResponseData.setShopTargetUrl(com.taobao.tao.shop.rule.util.c.a(str, b(shopTargetUrl), false, (String) null));
@@ -514,7 +514,7 @@ public class ous extends SQLiteOpenHelper {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         if (!ShopConstants.V_SHOP_RULESET_SHOP.equals(str) && !ShopConstants.V_SHOP_RULESET_PERSONAL.equals(str)) {
@@ -553,7 +553,7 @@ public class ous extends SQLiteOpenHelper {
             for (Map.Entry<String, String> entry : a2.entrySet()) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(str2);
-                sb.append(TextUtils.isEmpty(str2) ? "" : "&");
+                sb.append(StringUtils.isEmpty(str2) ? "" : "&");
                 sb.append(entry.getKey());
                 sb.append("=");
                 sb.append(entry.getValue());

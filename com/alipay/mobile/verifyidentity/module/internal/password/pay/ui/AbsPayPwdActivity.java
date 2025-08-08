@@ -12,7 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.NetworkServiceTracer;
@@ -183,20 +183,20 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         this.pwdTopTip = extras.getString("pwdTopTip");
         this.languge = extras.getString(PayPwdModule.VI_LANGUAGE);
         this.h = extras.getString(PayPwdModule.VI_FORBID_JUMP);
-        if (!TextUtils.isEmpty(this.pwdTopTip)) {
+        if (!StringUtils.isEmpty(this.pwdTopTip)) {
             toast(this.pwdTopTip, 0);
         }
         if (getIntent() != null && getIntent().getExtras() != null) {
             setIsIPay(getIntent().getExtras().getBoolean(PayPwdModule.IS_IPAY, false));
         }
         String string = getIntent().getExtras().getString("pwd_PASS");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.passTip = string;
         } else {
             this.passTip = getLocaleStringResource(R.string.sg_pwd_verify_success);
         }
         String string2 = getIntent().getExtras().getString("loadingTip");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             this.verifyingTip = string2;
         } else {
             this.verifyingTip = getLocaleStringResource(R.string.pwd_verify_ing);
@@ -221,7 +221,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             return;
         }
         this.mTimestamp = extras.getString("timestamp");
-        if (TextUtils.isEmpty(this.mTimestamp)) {
+        if (StringUtils.isEmpty(this.mTimestamp)) {
             this.mTimestamp = "";
         }
         this.predata = extras.getString("predata");
@@ -237,11 +237,11 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         this.mIsLogicInterrupted = true;
         final String string = bundle.getString("addPpwUrl");
         String string2 = bundle.getString("addPPWText");
-        if (TextUtils.isEmpty(string2) || PlatformUtils.isAlipay(this)) {
+        if (StringUtils.isEmpty(string2) || PlatformUtils.isAlipay(this)) {
             string2 = getLocaleStringResource(R.string.sg_no_pwd);
         }
         String str = string2;
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             alert("", str, getLocaleStringResource(R.string.sg_pwd_page_confirm), new DialogInterface.OnClickListener() { // from class: com.alipay.mobile.verifyidentity.module.internal.password.pay.ui.AbsPayPwdActivity.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -301,7 +301,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mPubKey = PubKeyHelper.getPubKey(this);
             } else {
                 this.mPubKey = str;
@@ -440,7 +440,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             return;
         }
         boolean z = this.b.finish;
-        if ((!this.b.finish && !TextUtils.isEmpty(this.b.nextStep) && !this.b.nextStep.equals(this.mModule.getModuleName())) || z) {
+        if ((!this.b.finish && !StringUtils.isEmpty(this.b.nextStep) && !this.b.nextStep.equals(this.mModule.getModuleName())) || z) {
             VerifyLogCat.d(f5909a, "lock findable");
             alert("", this.b.verifyMessage, getLocaleStringResource(R.string.pwd_find_later), new DialogInterface.OnClickListener() { // from class: com.alipay.mobile.verifyidentity.module.internal.password.pay.ui.AbsPayPwdActivity.6
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -478,7 +478,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         }
         String str = f5909a;
         VerifyLogCat.d(str, "unhandled error " + this.b.verifyCode);
-        toast(TextUtils.isEmpty(this.b.verifyMessage) ? getLocaleStringResource(R.string.verifyidentity_wrong_data) : this.b.verifyMessage, 0);
+        toast(StringUtils.isEmpty(this.b.verifyMessage) ? getLocaleStringResource(R.string.verifyidentity_wrong_data) : this.b.verifyMessage, 0);
         doNextStep();
     }
 
@@ -487,7 +487,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5351b433", new Object[]{this, new Integer(i)});
         }
-        if (!TextUtils.isEmpty(this.languge) && "en".equalsIgnoreCase(this.languge)) {
+        if (!StringUtils.isEmpty(this.languge) && "en".equalsIgnoreCase(this.languge)) {
             if (Build.VERSION.SDK_INT >= 17) {
                 Configuration configuration = new Configuration(getResources().getConfiguration());
                 configuration.setLocale(new Locale("en", "US"));
@@ -534,7 +534,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         String str2 = f5909a;
         VerifyLogCat.i(str2, "cancel [subcode]: " + str);
         DefaultModuleResult defaultModuleResult = new DefaultModuleResult("1003");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (defaultModuleResult.getExtInfo() == null) {
                 defaultModuleResult.setExtInfo(new HashMap<>());
             }
@@ -552,7 +552,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
             this.isMultiModeActionTriggered = true;
             try {
                 enableMultiTask(e);
-                if (!TextUtils.isEmpty(getIntent().getExtras().getString(PayPwdModule.FORM_TIP_URL))) {
+                if (!StringUtils.isEmpty(getIntent().getExtras().getString(PayPwdModule.FORM_TIP_URL))) {
                     this.uriToGetBackPwd = getIntent().getExtras().getString(PayPwdModule.FORM_TIP_URL);
                     if (VIUtils.isInExport()) {
                         this.uriToGetBackPwd = "alipays://platformapi/startapp?appId=20000013&url=" + this.uriToGetBackPwd;
@@ -595,7 +595,7 @@ public abstract class AbsPayPwdActivity extends BaseVerifyActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fcbf817a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.sourceToPwd)) {
+        if (StringUtils.isEmpty(this.sourceToPwd)) {
             return this.mModule.getModuleName();
         }
         return this.sourceToPwd;

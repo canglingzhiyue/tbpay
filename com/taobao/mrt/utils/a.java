@@ -1,6 +1,6 @@
 package com.taobao.mrt.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.service.LogService;
@@ -320,19 +320,19 @@ public class a {
         sb.append(" ");
         sb.append(str3);
         sb.append(" ");
-        if (TextUtils.equals(str2, "WARN")) {
+        if (StringUtils.equals(str2, "WARN")) {
             sb.append(" W");
-        } else if (TextUtils.equals(str2, "ERROR")) {
+        } else if (StringUtils.equals(str2, "ERROR")) {
             sb.append(" E");
-        } else if (TextUtils.equals(str2, "INFO")) {
+        } else if (StringUtils.equals(str2, "INFO")) {
             sb.append(" I");
         } else {
             sb.append(" D");
         }
         sb.append("/EC_");
-        if (TextUtils.equals(str, "java")) {
+        if (StringUtils.equals(str, "java")) {
             sb.append("J");
-        } else if (TextUtils.equals(str, dqy.TYPE)) {
+        } else if (StringUtils.equals(str, dqy.TYPE)) {
             sb.append("P");
         } else {
             sb.append("C");

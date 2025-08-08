@@ -1,6 +1,6 @@
 package com.taobao.android.trade.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
 import tb.kge;
@@ -27,7 +27,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("bf6273a5", new Object[]{str, eVar});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (f15622a.containsKey(str)) {
@@ -53,7 +53,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || !f15622a.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !f15622a.containsKey(str)) {
         } else {
             f15622a.get(str).c();
             f15622a.remove(str);

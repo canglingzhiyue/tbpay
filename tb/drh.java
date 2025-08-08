@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.behavixswitch.d;
 import com.taobao.android.behavix.behavixswitch.f;
@@ -33,7 +33,7 @@ public class drh {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("375fd970", new Object[]{dspVar, driVar})).booleanValue();
         }
-        if (!TextUtils.equals(dspVar.e(), driVar.h())) {
+        if (!StringUtils.equals(dspVar.e(), driVar.h())) {
             return false;
         }
         if (!d.a(driVar.b()) && d.a(driVar.b(), dspVar.a())) {

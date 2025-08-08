@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.ability.localization.b;
@@ -100,7 +100,7 @@ public class odk implements View.OnClickListener, nyz {
             return;
         }
         String p = com.taobao.share.copy.a.a().p();
-        if (TextUtils.isEmpty(p)) {
+        if (StringUtils.isEmpty(p)) {
             com.taobao.share.copy.a.a().k();
             nyy.a("ClipUrlWatcherControl", b.a(R.string.taobao_app_1010_1_17880));
             return;
@@ -231,8 +231,8 @@ public class odk implements View.OnClickListener, nyz {
             return;
         }
         String str = com.taobao.share.copy.a.a().f().F;
-        if (!TextUtils.isEmpty(str) && !TextUtils.equals("PASSWORD_INVALID", str)) {
-            if (TextUtils.equals("PASSWORD_NOT_EXIST", str)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.equals("PASSWORD_INVALID", str)) {
+            if (StringUtils.equals("PASSWORD_NOT_EXIST", str)) {
                 TBS.Ext.commitEvent("Page_Extend_ShowCopy_notExist", (Properties) null);
             } else {
                 TBS.Ext.commitEvent("Page_Extend_ShowCopy_others", (Properties) null);
@@ -371,15 +371,15 @@ public class odk implements View.OnClickListener, nyz {
             } else {
                 com.taobao.share.copy.a.a().k();
                 f f3 = com.taobao.share.copy.a.a().f();
-                if (f3 == null || TextUtils.isEmpty(f3.z) || !TextUtils.isEmpty(f3.F)) {
+                if (f3 == null || StringUtils.isEmpty(f3.z) || !StringUtils.isEmpty(f3.F)) {
                     return;
                 }
-                if (!TextUtils.isEmpty(f3.J)) {
+                if (!StringUtils.isEmpty(f3.J)) {
                     String str3 = f3.J;
                     if (!obh.s()) {
                         try {
                             String queryParameter = Uri.parse(f3.z).getQueryParameter("ut_sk");
-                            if (!TextUtils.isEmpty(queryParameter)) {
+                            if (!StringUtils.isEmpty(queryParameter)) {
                                 Uri parse = Uri.parse(f3.J);
                                 if (!"/n/im/dynamic/quickchat.html".equals(parse.getPath()) && !"/n/im/dynamic/middleContainer.html".equals(parse.getPath())) {
                                     Uri.Builder buildUpon = parse.buildUpon();
@@ -438,7 +438,7 @@ public class odk implements View.OnClickListener, nyz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5e507c2c", new Object[]{this, new Integer(i), str, fVar});
-        } else if (fVar == null || TextUtils.isEmpty(fVar.y) || a(i, fVar)) {
+        } else if (fVar == null || StringUtils.isEmpty(fVar.y) || a(i, fVar)) {
         } else {
             if (fVar.B) {
                 str2 = "uncheck";
@@ -493,7 +493,7 @@ public class odk implements View.OnClickListener, nyz {
         } else {
             properties.put("returnType", com.taobao.share.copy.a.a().f().F);
         }
-        if (!TextUtils.isEmpty(com.taobao.share.copy.a.a().f().x)) {
+        if (!StringUtils.isEmpty(com.taobao.share.copy.a.a().f().x)) {
             properties.put("BID", com.taobao.share.copy.a.a().f().x);
         } else {
             properties.put("BID", "");
@@ -502,24 +502,24 @@ public class odk implements View.OnClickListener, nyz {
             return;
         }
         properties.put("shareType", str4);
-        if (!TextUtils.isEmpty(com.taobao.share.copy.a.a().f().z)) {
+        if (!StringUtils.isEmpty(com.taobao.share.copy.a.a().f().z)) {
             properties.put("url", com.taobao.share.copy.a.a().f().z);
         }
         properties.put("showType", "taobao");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             properties.put("pageType", str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             properties.put("alertType", str3);
         }
-        if (!TextUtils.isEmpty(com.taobao.share.copy.a.a().f().E)) {
+        if (!StringUtils.isEmpty(com.taobao.share.copy.a.a().f().E)) {
             properties.put("passwordType", com.taobao.share.copy.a.a().f().E);
         } else {
             properties.put("passwordType", "");
         }
         f f = com.taobao.share.copy.a.a().f();
         if (f instanceof oaw) {
-            if (!TextUtils.isEmpty(((oaw) f).S)) {
+            if (!StringUtils.isEmpty(((oaw) f).S)) {
                 properties.put("ShowUserName", "1");
             } else {
                 properties.put("ShowUserName", "0");
@@ -527,7 +527,7 @@ public class odk implements View.OnClickListener, nyz {
         }
         if (com.taobao.share.copy.a.a().f().H != null) {
             String str6 = com.taobao.share.copy.a.a().f().H.get("createAppkey");
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 properties.put("appKey", str6);
             }
         }

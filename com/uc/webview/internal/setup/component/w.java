@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.artc.api.AConstants;
 import com.taobao.message.datasdk.facade.message.MessageType;
 import com.uc.webview.base.GlobalSettings;
@@ -116,7 +116,7 @@ public class w {
             r0 = 0
             if (r11 == 0) goto L71
             java.lang.String r1 = r11.b()
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 == 0) goto Le
             goto L71
         Le:
@@ -307,7 +307,7 @@ public class w {
         boolean z2 = false;
         for (String str : map.keySet()) {
             n.d dVar = map.get(str);
-            if (dVar != null && !TextUtils.isEmpty(dVar.b()) && a(dVar)) {
+            if (dVar != null && !StringUtils.isEmpty(dVar.b()) && a(dVar)) {
                 z2 = true;
             }
         }

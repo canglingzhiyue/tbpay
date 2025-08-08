@@ -2,7 +2,7 @@ package com.taobao.android.icart.event;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -46,15 +46,15 @@ public class b extends bca {
             return;
         }
         String string = c.getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             bga.a.b("iCart", "CartAddress", "CART_ADDRESS_02", "url为空");
             return;
         }
         String A = bem.A(this.b);
-        if (TextUtils.isEmpty(A)) {
+        if (StringUtils.isEmpty(A)) {
             A = c.getString("data");
         }
-        if (TextUtils.isEmpty(A)) {
+        if (StringUtils.isEmpty(A)) {
             bga.a.b("iCart", "CartAddress", "CART_ADDRESS_03", "data为空");
             return;
         }

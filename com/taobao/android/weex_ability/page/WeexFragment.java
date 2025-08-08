@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -192,7 +192,7 @@ public class WeexFragment extends Fragment implements com.taobao.android.weex_fr
             return (String) ipChange.ipc$dispatch("89ca9934", new Object[]{str});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Uri.parse(str).getPath();
             }
             return null;
@@ -439,7 +439,7 @@ public class WeexFragment extends Fragment implements com.taobao.android.weex_fr
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ad500757", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             String[] split = str.split(",");
             Uri parse = Uri.parse(str2);
             String str3 = parse.getHost() + parse.getPath();

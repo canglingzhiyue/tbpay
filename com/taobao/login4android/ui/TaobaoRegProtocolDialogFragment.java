@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -266,13 +266,13 @@ public class TaobaoRegProtocolDialogFragment extends DialogFragment {
         TextView textView = this.mTitleTV;
         if (textView != null) {
             textView.setMovementMethod(ScrollingMovementMethod.getInstance());
-            if (!TextUtils.isEmpty(this.mTitleText)) {
+            if (!StringUtils.isEmpty(this.mTitleText)) {
                 this.mTitleTV.setText(this.mTitleText);
             }
         }
         this.mContentTV = (TextView) inflate.findViewById(R.id.aliuser_operation_sencondary_tip);
         if (this.contentVisible) {
-            if (!TextUtils.isEmpty(this.mContextText)) {
+            if (!StringUtils.isEmpty(this.mContextText)) {
                 this.mContentTV.setText(this.mContextText);
             } else {
                 generateContent(inflate);
@@ -300,7 +300,7 @@ public class TaobaoRegProtocolDialogFragment extends DialogFragment {
                     TaobaoRegProtocolDialogFragment.this.mPositiveListener.onClick(view2);
                 }
             });
-            if (!TextUtils.isEmpty(this.mPostiveBtnText)) {
+            if (!StringUtils.isEmpty(this.mPostiveBtnText)) {
                 button.setText(this.mPostiveBtnText);
             }
         }
@@ -328,7 +328,7 @@ public class TaobaoRegProtocolDialogFragment extends DialogFragment {
             } else {
                 button2.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(this.mNegativeBtnText)) {
+            if (!StringUtils.isEmpty(this.mNegativeBtnText)) {
                 button2.setText(this.mNegativeBtnText);
             }
         }
@@ -376,7 +376,7 @@ public class TaobaoRegProtocolDialogFragment extends DialogFragment {
             }
             string = str2 + getString(R.string.aliuser_alipay_protocal);
         }
-        if (!TextUtils.isEmpty(this.mOneKeyProtocol) && !TextUtils.isEmpty(this.mOneKeyProtocolUrl)) {
+        if (!StringUtils.isEmpty(this.mOneKeyProtocol) && !StringUtils.isEmpty(this.mOneKeyProtocolUrl)) {
             string = string + "《" + this.mOneKeyProtocol + "》";
             hashMap.put(this.mOneKeyProtocol, this.mOneKeyProtocolUrl);
         }

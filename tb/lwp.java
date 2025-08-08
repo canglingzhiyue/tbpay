@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -37,7 +37,7 @@ public class lwp implements gke {
             a.a("umbrella.component.render", "gateway2.uiRefresh", "start action");
             String string = jSONObject.getString("containerId");
             Object obj = jSONObject.get("containerModel");
-            if (!TextUtils.isEmpty(string) && obj != null) {
+            if (!StringUtils.isEmpty(string) && obj != null) {
                 a(string, this.f30951a, jSONObject);
             } else {
                 a(jSONObject);

@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.module.dynamic.ui.plugin;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.template.FBPlugin;
 import com.alipay.android.app.template.FBPluginCtx;
 import com.alipay.android.app.template.FBPluginFactory;
@@ -28,13 +28,13 @@ public class VIFBPluginFactory implements FBPluginFactory {
             return (FBPlugin) ipChange.ipc$dispatch("aeba1b1d", new Object[]{this, context, fBPluginCtx, map});
         }
         String str = map.get("type");
-        if (TextUtils.equals("VIPayPwdView", str)) {
+        if (StringUtils.equals("VIPayPwdView", str)) {
             return getFBPluginByClassName(PasswordInputUnifiedPluginClassName, context, fBPluginCtx, 1);
         }
-        if (TextUtils.equals("VIFpView", str)) {
+        if (StringUtils.equals("VIFpView", str)) {
             return getFBPluginByClassName(FingerprintPluginClassName, context, fBPluginCtx, 2);
         }
-        if (!TextUtils.equals("VIPayPluginView", str)) {
+        if (!StringUtils.equals("VIPayPluginView", str)) {
             return null;
         }
         return getFBPluginByClassName("com.alipay.mobile.verifyidentity.module.dynamic.ui.plugin.VIFBUnitedView", context, fBPluginCtx, 3);

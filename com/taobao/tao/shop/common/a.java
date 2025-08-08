@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.common;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.tao.shop.e;
@@ -23,10 +23,10 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b6e7fbda", new Object[]{this, str, context})).booleanValue();
         }
-        if (com.taobao.tao.shop.rule.a.a() && !TextUtils.isEmpty(str)) {
+        if (com.taobao.tao.shop.rule.a.a() && !StringUtils.isEmpty(str)) {
             String config = OrangeConfig.getInstance().getConfig(com.taobao.tao.shop.rule.b.b, "startTimeMSec1", null);
             String config2 = OrangeConfig.getInstance().getConfig(com.taobao.tao.shop.rule.b.b, "endTimeMSec1", null);
-            if (!TextUtils.isEmpty(config) && !TextUtils.isEmpty(config2)) {
+            if (!StringUtils.isEmpty(config) && !StringUtils.isEmpty(config2)) {
                 long j2 = -1;
                 try {
                     j = Long.parseLong(config);

@@ -9,7 +9,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.taobao.windvane.util.b;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.activity.BridgeActivity;
 import com.huawei.hms.api.BindingFailedResolution;
 import com.huawei.hms.support.log.HMSLog;
@@ -51,7 +51,7 @@ public class BinderAdapter implements ServiceConnection {
     }
 
     private void a() {
-        if (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c)) {
             e();
         }
         Intent intent = new Intent(this.b);

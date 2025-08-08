@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.sku;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -74,7 +74,7 @@ public class d extends eei<OpenSkuEvent> {
         dya y = this.f11296a.y();
         com.taobao.android.detail.datasdk.model.datamodel.node.c cVar = y.t;
         String a2 = ecs.a(cVar);
-        if (!TextUtils.isEmpty(a2) && openSkuEvent != null && openSkuEvent.f9953a == SkuBottomBarStyleDTO.CONFIRM_BUY) {
+        if (!StringUtils.isEmpty(a2) && openSkuEvent != null && openSkuEvent.f9953a == SkuBottomBarStyleDTO.CONFIRM_BUY) {
             DetailCoreActivity detailCoreActivity = this.f11296a;
             com.taobao.android.sku.weex.c.a(detailCoreActivity, "onSKUEntryClick", a2, detailCoreActivity.h);
         }
@@ -87,7 +87,7 @@ public class d extends eei<OpenSkuEvent> {
             return com.taobao.android.detail.core.event.a.SUCCESS;
         }
         DetailCoreActivity detailCoreActivity2 = this.f11296a;
-        String str = (detailCoreActivity2 == null || detailCoreActivity2.f9411a == null || TextUtils.isEmpty(this.f11296a.f9411a.b)) ? "" : this.f11296a.f9411a.b;
+        String str = (detailCoreActivity2 == null || detailCoreActivity2.f9411a == null || StringUtils.isEmpty(this.f11296a.f9411a.b)) ? "" : this.f11296a.f9411a.b;
         JSONObject jSONObject = new JSONObject();
         if (h.isChildrecBundleItem()) {
             if (h.extras instanceof NewSkuModel) {
@@ -158,7 +158,7 @@ public class d extends eei<OpenSkuEvent> {
                     } else if (jSONObject2 == null) {
                     } else {
                         String string = jSONObject2.getString("actionFrom");
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             string = "NULL";
                         }
                         char c = 65535;
@@ -183,7 +183,7 @@ public class d extends eei<OpenSkuEvent> {
                             return;
                         }
                         String string2 = jSONObject3.getString("skuId");
-                        if (TextUtils.isEmpty(string2) || !(h.extras instanceof NewSkuModel)) {
+                        if (StringUtils.isEmpty(string2) || !(h.extras instanceof NewSkuModel)) {
                             return;
                         }
                         ((NewSkuModel) h.extras).checkSkuId(string2);

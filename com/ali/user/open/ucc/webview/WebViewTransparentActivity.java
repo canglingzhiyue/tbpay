@@ -3,7 +3,7 @@ package com.ali.user.open.ucc.webview;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.callback.CallbackManager;
@@ -78,7 +78,7 @@ public class WebViewTransparentActivity extends UccWebViewActivity {
             if (getSupportActionBar() == null) {
                 return;
             }
-            if (TextUtils.equals(queryParameter, "true")) {
+            if (StringUtils.equals(queryParameter, "true")) {
                 getSupportActionBar().e();
                 setWebviewColor(0);
                 return;
@@ -100,7 +100,7 @@ public class WebViewTransparentActivity extends UccWebViewActivity {
             if (getSupportActionBar() == null) {
                 return;
             }
-            if (TextUtils.equals(queryParameter, "true")) {
+            if (StringUtils.equals(queryParameter, "true")) {
                 getSupportActionBar().e();
                 setWebviewColor(0);
                 return;
@@ -125,12 +125,12 @@ public class WebViewTransparentActivity extends UccWebViewActivity {
             getSupportActionBar().e();
         }
         String stringExtra = getIntent().getStringExtra("url");
-        if (TextUtils.isEmpty(stringExtra) && (data = getIntent().getData()) != null) {
+        if (StringUtils.isEmpty(stringExtra) && (data = getIntent().getData()) != null) {
             stringExtra = data.getQueryParameter("url");
             this.forceUcWebView = true;
             SDKLogger.e("ucc.webdialog", "read url fomr uri:");
         }
-        if (getIntent() != null && TextUtils.equals(WebViewOption.UC.name(), getIntent().getStringExtra("webviewOption"))) {
+        if (getIntent() != null && StringUtils.equals(WebViewOption.UC.name(), getIntent().getStringExtra("webviewOption"))) {
             this.forceUcWebView = true;
         }
         this.memberWebView = createWebView();
@@ -138,7 +138,7 @@ public class WebViewTransparentActivity extends UccWebViewActivity {
         ((FrameLayout) findViewById(R.id.ali_user_webview_container)).addView(this.memberWebView.getWebView(), new FrameLayout.LayoutParams(-1, -1));
         setWebviewColor(0);
         SDKLogger.d("ucc.webdialog", "onCreate url=" + stringExtra);
-        if (KernelContext.checkServiceValid() && !TextUtils.isEmpty(stringExtra)) {
+        if (KernelContext.checkServiceValid() && !StringUtils.isEmpty(stringExtra)) {
             if (!CommonUtils.isNetworkAvailable()) {
                 CommonUtils.toast("member_sdk_network_not_available_message");
                 return;

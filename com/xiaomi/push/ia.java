@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -69,7 +69,7 @@ public class ia {
     public void a(ib ibVar, String str) {
         if (ibVar == null) {
             com.xiaomi.channel.commonutils.logger.b.d("[TinyDataManager]: please do not add null mUploader to TinyDataManager.");
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             com.xiaomi.channel.commonutils.logger.b.d("[TinyDataManager]: can not add a provider from unkown resource.");
         } else {
             m2032a().put(str, ibVar);
@@ -77,13 +77,13 @@ public class ia {
     }
 
     public boolean a(ig igVar, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("pkgName is null or empty, upload ClientUploadDataItem failed.");
             return false;
         } else if (com.xiaomi.push.service.ca.a(igVar, false)) {
             return false;
         } else {
-            if (TextUtils.isEmpty(igVar.d())) {
+            if (StringUtils.isEmpty(igVar.d())) {
                 igVar.f(com.xiaomi.push.service.ca.a());
             }
             igVar.g(str);

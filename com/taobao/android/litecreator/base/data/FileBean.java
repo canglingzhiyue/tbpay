@@ -2,7 +2,7 @@ package com.taobao.android.litecreator.base.data;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.an;
 import com.taobao.android.litecreator.util.k;
@@ -35,7 +35,7 @@ public class FileBean implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("183306f6", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mimeType)) {
+        if (StringUtils.isEmpty(this.mimeType)) {
             return com.taobao.tao.log.utils.a.LOG_SUFFIX_DATA;
         }
         try {
@@ -50,7 +50,7 @@ public class FileBean implements Serializable {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("758372a", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.uri)) {
+        if (!StringUtils.isEmpty(this.uri)) {
             return Uri.parse(this.uri);
         }
         return null;

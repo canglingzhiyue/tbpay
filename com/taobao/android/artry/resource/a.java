@@ -1,6 +1,6 @@
 package com.taobao.android.artry.resource;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -127,7 +127,7 @@ public class a {
         }
         LinkedList linkedList = new LinkedList();
         for (final kmo kmoVar : d) {
-            if (TextUtils.isEmpty(kmoVar.d) || !com.taobao.android.artry.utils.d.a(kmoVar.f30167a)) {
+            if (StringUtils.isEmpty(kmoVar.d) || !com.taobao.android.artry.utils.d.a(kmoVar.f30167a)) {
                 dqd.a().a(new Runnable() { // from class: com.taobao.android.artry.resource.a.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

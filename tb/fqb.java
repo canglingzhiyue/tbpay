@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -105,7 +105,7 @@ public class fqb extends m {
         } else {
             string = jSONObject2.getString("resetOnStop");
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             fqeVar.e = !string.equalsIgnoreCase("false");
         }
         if (map != null && map.containsKey("resetOnFinish")) {
@@ -113,7 +113,7 @@ public class fqb extends m {
         } else {
             string2 = jSONObject2.getString("resetOnFinish");
         }
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             fqeVar.d = !string2.equalsIgnoreCase("false");
         }
         if (!fqeVar.e) {
@@ -122,7 +122,7 @@ public class fqb extends m {
             } else {
                 string5 = jSONObject2.getString("updateFlattenOnlyOnStop");
             }
-            if (!TextUtils.isEmpty(string5)) {
+            if (!StringUtils.isEmpty(string5)) {
                 fqeVar.f = "true".equalsIgnoreCase(string5);
             }
         }
@@ -132,7 +132,7 @@ public class fqb extends m {
             } else {
                 string4 = jSONObject2.getString("updateFlattenOnlyOnFinish");
             }
-            if (!TextUtils.isEmpty(string4)) {
+            if (!StringUtils.isEmpty(string4)) {
                 fqeVar.g = "true".equalsIgnoreCase(string4);
             }
         }
@@ -141,7 +141,7 @@ public class fqb extends m {
         } else {
             string3 = jSONObject2.getString(a.ATOM_EXT_repeat);
         }
-        if (!TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string3)) {
             fqeVar.i = string3.equals("true");
         }
         fqeVar.j = jSONObject2.getJSONArray("props");
@@ -174,7 +174,7 @@ public class fqb extends m {
         for (int i2 = 0; i2 < jSONArray.size(); i2++) {
             JSONObject jSONObject3 = jSONArray.getJSONObject(i2);
             String string = jSONObject3.getString(BindingXConstants.KEY_ELEMENT);
-            if (!TextUtils.isEmpty(string) && string.startsWith("$")) {
+            if (!StringUtils.isEmpty(string) && string.startsWith("$")) {
                 jSONObject3.put(BindingXConstants.KEY_ELEMENT, (Object) a(map, string));
             }
         }
@@ -216,7 +216,7 @@ public class fqb extends m {
             return;
         }
         String string = jSONObject.getString("property");
-        if (jSONObject == null || TextUtils.isEmpty(string)) {
+        if (jSONObject == null || StringUtils.isEmpty(string)) {
             return;
         }
         DXWidgetNode dXWidgetNode2 = null;
@@ -613,12 +613,12 @@ public class fqb extends m {
     private String a(Map<String, Object> map, String str) {
         Object obj;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d0668d9", new Object[]{this, map, str}) : (TextUtils.isEmpty(str) || map == null || (obj = map.get(str.substring(1))) == null) ? "" : obj.toString();
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d0668d9", new Object[]{this, map, str}) : (StringUtils.isEmpty(str) || map == null || (obj = map.get(str.substring(1))) == null) ? "" : obj.toString();
     }
 
     public static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (TextUtils.isEmpty(str) || !str.startsWith("@")) ? str : str.substring(1);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (StringUtils.isEmpty(str) || !str.startsWith("@")) ? str : str.substring(1);
     }
 
     public void a(DXRootView dXRootView, DXWidgetNode dXWidgetNode, JSONArray jSONArray, Map<String, Object> map) {
@@ -656,11 +656,11 @@ public class fqb extends m {
             fuw.b("启动" + str + "动画失败 原因为animationWidget == null");
         } else {
             DXWidgetNode queryRootWidgetNode = dXWidgetNode.queryRootWidgetNode();
-            if (dXRootView == null || dXWidgetNode == null || this.c == null || TextUtils.isEmpty(queryRootWidgetNode.getAnimation()) || queryRootWidgetNode.getDXRuntimeContext() == null || TextUtils.isEmpty(str)) {
+            if (dXRootView == null || dXWidgetNode == null || this.c == null || StringUtils.isEmpty(queryRootWidgetNode.getAnimation()) || queryRootWidgetNode.getDXRuntimeContext() == null || StringUtils.isEmpty(str)) {
                 if (!DinamicXEngine.j()) {
                     return;
                 }
-                fuw.b("启动" + str + "动画失败 原因为rootView == null || animationWidget == null || bindingX == null\n                || TextUtils.isEmpty(rootWidget.getAnimation())\n                || rootWidget.getDXRuntimeContext() == null\n                || TextUtils.isEmpty(specName)");
+                fuw.b("启动" + str + "动画失败 原因为rootView == null || animationWidget == null || bindingX == null\n                || StringUtils.isEmpty(rootWidget.getAnimation())\n                || rootWidget.getDXRuntimeContext() == null\n                || StringUtils.isEmpty(specName)");
             } else if (dXWidgetNode.containsExecutingAnimationSpec(str)) {
                 if (!DinamicXEngine.j()) {
                     return;
@@ -805,7 +805,7 @@ public class fqb extends m {
                         if (dXWidgetNode3 != null && dXWidgetNode3.getDXRuntimeContext() != null) {
                             str2 = dXWidgetNode.getDXRuntimeContext().A();
                         }
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = "dinamicx";
                         }
                         b.a(str2, null, DXMonitorConstant.DX_MONITOR_BINDINGX, DXMonitorConstant.DX_BINDINGX_CRASH, s.BINDINGX_BINDINGX_CALL_BACK_CRASH, com.taobao.android.dinamicx.exception.a.a(th));

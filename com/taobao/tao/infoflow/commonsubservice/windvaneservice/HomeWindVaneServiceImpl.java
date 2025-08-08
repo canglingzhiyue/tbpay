@@ -1,7 +1,7 @@
 package com.taobao.tao.infoflow.commonsubservice.windvaneservice;
 
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -267,8 +267,8 @@ public class HomeWindVaneServiceImpl implements IWindVaneService {
         int intValue = args.getInteger("realExposeIndex").intValue();
         boolean isWholeCardExpose = isWholeCardExpose(intValue);
         boolean isExistWindVaneCardInNearByLimit = !z ? isExistWindVaneCardInNearByLimit(intValue, getNearbyItemLimitedCount(iContainerDataModel)) : false;
-        String sectionBizCode = TextUtils.isEmpty(baseSectionModel.getSectionBizCode()) ? "" : baseSectionModel.getSectionBizCode();
-        boolean z4 = z2 && (TextUtils.isEmpty(sectionBizCode) || this.hasOverLay.contains(sectionBizCode));
+        String sectionBizCode = StringUtils.isEmpty(baseSectionModel.getSectionBizCode()) ? "" : baseSectionModel.getSectionBizCode();
+        boolean z4 = z2 && (StringUtils.isEmpty(sectionBizCode) || this.hasOverLay.contains(sectionBizCode));
         boolean z5 = !isExistWindVaneCardInNearByLimit && isWholeCardExpose && !z4 && !z3;
         String str = TAG;
         ldf.d(str, "shouldRequestWindVane:" + z5 + "|exitWindVanceCardInNearByLimit:" + isExistWindVaneCardInNearByLimit + "|wholeCardExpose:" + isWholeCardExpose + "|hasOverLay:" + z4 + "|noExpose:" + z3);
@@ -312,7 +312,7 @@ public class HomeWindVaneServiceImpl implements IWindVaneService {
             return false;
         }
         JSONObject ext = baseSectionModel.getExt();
-        return (ext != null && TextUtils.equals(ext.getString(KEY_SECTION_TYPE), TYPE_WIND_VANE_CARD)) || (baseSectionModel.mo1098getSubSection() != null && baseSectionModel.mo1098getSubSection().getWindvaneOverlay() != null);
+        return (ext != null && StringUtils.equals(ext.getString(KEY_SECTION_TYPE), TYPE_WIND_VANE_CARD)) || (baseSectionModel.mo1098getSubSection() != null && baseSectionModel.mo1098getSubSection().getWindvaneOverlay() != null);
     }
 
     private JSONObject getWindParams(BaseSectionModel<?> baseSectionModel) {

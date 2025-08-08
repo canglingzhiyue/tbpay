@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -290,7 +290,7 @@ public class faq extends b<fbf> implements dyq {
         if (fbfVar == null || !ecu.d) {
             return null;
         }
-        if (!TextUtils.isEmpty(fbfVar.b)) {
+        if (!StringUtils.isEmpty(fbfVar.b)) {
             float f = fbfVar.c / ((fbf) this.c).d;
             int i = epo.b;
             int i2 = (int) (f * epo.b);
@@ -299,7 +299,7 @@ public class faq extends b<fbf> implements dyq {
             DetailImageView detailImageView = new DetailImageView(this.g);
             detailImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             this.k.addView(detailImageView, new RelativeLayout.LayoutParams(-1, -1));
-            if (!TextUtils.isEmpty(fbfVar.f27741a)) {
+            if (!StringUtils.isEmpty(fbfVar.f27741a)) {
                 a(detailImageView, fbfVar.f27741a, new epm(i, i2), null, null);
             } else {
                 detailImageView.setBackgroundColor(c.a("#000000"));
@@ -359,7 +359,7 @@ public class faq extends b<fbf> implements dyq {
         this.q = LayoutInflater.from(this.g).inflate(R.layout.x_detail_desc_video_text_info, (ViewGroup) null);
         TextView textView = (TextView) this.q.findViewById(R.id.desc_video_text_info_title);
         TextView textView2 = (TextView) this.q.findViewById(R.id.desc_video_text_info_desc);
-        if (!TextUtils.isEmpty(fbfVar.f) && !TextUtils.isEmpty(fbfVar.g)) {
+        if (!StringUtils.isEmpty(fbfVar.f) && !StringUtils.isEmpty(fbfVar.g)) {
             textView.setText(fbfVar.f);
             textView2.setText(fbfVar.g);
         }
@@ -374,7 +374,7 @@ public class faq extends b<fbf> implements dyq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7e78517f", new Object[]{this});
-        } else if (this.c == 0 || TextUtils.isEmpty(((fbf) this.c).b)) {
+        } else if (this.c == 0 || StringUtils.isEmpty(((fbf) this.c).b)) {
         } else {
             if (this.o == null) {
                 m mVar = new m(this.m.r, this.m.b, this.m.f27741a, this.k, this.m.d, this.m.c);

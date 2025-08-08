@@ -1,6 +1,6 @@
 package com.taobao.live.timemove.base.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -158,7 +158,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("26e3a2ef", new Object[]{this})).intValue();
         }
-        if (TextUtils.isEmpty(this.mediaType) || "live".equals(this.mediaType)) {
+        if (StringUtils.isEmpty(this.mediaType) || "live".equals(this.mediaType)) {
             return ContentType.SimpleLive.ordinal();
         }
         if (MEDIA_TYPE_TIMEMOVE.equals(this.mediaType.toLowerCase())) {
@@ -213,7 +213,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("b1f9e865", new Object[]{this, itemInfo})).intValue();
             }
-            if (!TextUtils.isEmpty(this.goodIndex) && !TextUtils.isEmpty(itemInfo.goodIndex)) {
+            if (!StringUtils.isEmpty(this.goodIndex) && !StringUtils.isEmpty(itemInfo.goodIndex)) {
                 return Integer.parseInt(this.goodIndex) - Integer.parseInt(itemInfo.goodIndex);
             }
             return 0;
@@ -316,7 +316,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
             if (ipChange instanceof IpChange) {
                 return (JSONObject) ipChange.ipc$dispatch("6ceea372", new Object[]{this});
             }
-            if (this.trackInfoJSON == null && !TextUtils.isEmpty(this.trackInfo)) {
+            if (this.trackInfoJSON == null && !StringUtils.isEmpty(this.trackInfo)) {
                 try {
                     this.trackInfoJSON = JSON.parseObject(this.trackInfo);
                 } catch (Exception e) {
@@ -331,7 +331,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
             if (ipChange instanceof IpChange) {
                 return (JSONObject) ipChange.ipc$dispatch("6d0f0363", new Object[]{this});
             }
-            if (this.tradeParamsJSON == null && !TextUtils.isEmpty(this.tradeParams)) {
+            if (this.tradeParamsJSON == null && !StringUtils.isEmpty(this.tradeParams)) {
                 try {
                     this.tradeParamsJSON = JSON.parseObject(this.tradeParams);
                 } catch (Exception unused) {
@@ -354,7 +354,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
             if (ipChange instanceof IpChange) {
                 return (LiveItem.GroupInfo) ipChange.ipc$dispatch("ed19b35b", new Object[]{this});
             }
-            if (this.groupInfoObj == null && !TextUtils.isEmpty(this.groupInfo)) {
+            if (this.groupInfoObj == null && !StringUtils.isEmpty(this.groupInfo)) {
                 try {
                     this.groupInfoObj = (LiveItem.GroupInfo) JSON.parseObject(this.groupInfo, LiveItem.GroupInfo.class);
                 } catch (Exception unused) {
@@ -377,7 +377,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
             if (ipChange instanceof IpChange) {
                 return (JSONArray) ipChange.ipc$dispatch("7b015794", new Object[]{this});
             }
-            if (this.itemTypeJSONArray == null && !TextUtils.isEmpty(this.itemType)) {
+            if (this.itemTypeJSONArray == null && !StringUtils.isEmpty(this.itemType)) {
                 this.itemTypeJSONArray = JSONObject.parseArray(this.itemType);
             }
             return this.itemTypeJSONArray;
@@ -388,7 +388,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
             if (ipChange instanceof IpChange) {
                 return (JSONObject) ipChange.ipc$dispatch("b367f3c5", new Object[]{this});
             }
-            if (this.businessJSON == null && !TextUtils.isEmpty(this.business)) {
+            if (this.businessJSON == null && !StringUtils.isEmpty(this.business)) {
                 this.businessJSON = JSONObject.parseObject(this.business);
             }
             return this.businessJSON;
@@ -400,7 +400,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
                 return (ArrayList) ipChange.ipc$dispatch("20105823", new Object[]{this});
             }
             this.itemTagList = new ArrayList<>();
-            if (!TextUtils.isEmpty(this.itemTags)) {
+            if (!StringUtils.isEmpty(this.itemTags)) {
                 this.itemTagList = (ArrayList) JSON.parseObject(this.itemTags, ArrayList.class);
             }
             return this.itemTagList;
@@ -411,7 +411,7 @@ public class RecModel implements INetDataObject, IRecyclerModel {
             if (ipChange instanceof IpChange) {
                 return (JSONObject) ipChange.ipc$dispatch("f81d090", new Object[]{this});
             }
-            if (this.commissionJSON == null && !TextUtils.isEmpty(this.commission)) {
+            if (this.commissionJSON == null && !StringUtils.isEmpty(this.commission)) {
                 this.commissionJSON = JSONObject.parseObject(this.commission);
             }
             return this.commissionJSON;

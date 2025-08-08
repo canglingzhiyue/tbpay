@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.model.psc_info_upload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.mobile.auth.gatewayauth.model.TopErrorResponse;
 import com.nirvana.tools.jsoner.a;
@@ -21,7 +21,7 @@ public class AllRBInfo implements e {
     public static AllRBInfo fromJson(String str) {
         try {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return (AllRBInfo) a.a(new JSONObject(str), (d<Object>) new d<AllRBInfo>() { // from class: com.mobile.auth.gatewayauth.model.psc_info_upload.AllRBInfo.1
                     }, (List<Field>) null);
                 }

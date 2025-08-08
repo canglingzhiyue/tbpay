@@ -1,6 +1,6 @@
 package com.taobao.android.sku.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.link.export.TraceLogEventType;
@@ -162,13 +162,13 @@ public class o {
             return (String) ipChange.ipc$dispatch("9b0684b", new Object[]{str, str2, str3, str4, map});
         }
         String str5 = "";
-        String str6 = TextUtils.isEmpty(str3) ? str5 : ",skuUT=" + str3;
-        String str7 = TextUtils.isEmpty(str4) ? str5 : ",skuParams=" + str4;
+        String str6 = StringUtils.isEmpty(str3) ? str5 : ",skuUT=" + str3;
+        String str7 = StringUtils.isEmpty(str4) ? str5 : ",skuParams=" + str4;
         if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     str5 = str5 + "," + key + "=" + value;
                 }
             }
@@ -218,7 +218,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{str, map});
-        } else if (TextUtils.isEmpty(str) || (a2 = u.a()) == null) {
+        } else if (StringUtils.isEmpty(str) || (a2 = u.a()) == null) {
         } else {
             JSONObject jSONObject = new JSONObject();
             if (map != null) {
@@ -364,7 +364,7 @@ public class o {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f15207a.contains(str);
         }
         return false;
@@ -393,7 +393,7 @@ public class o {
         if (c(str2) || (a2 = bpp.a()) == null) {
             return;
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         a2.commitFailure("Main", str4, "", "New_Sku", str, new HashMap<String, String>() { // from class: com.taobao.android.sku.utils.SkuLogUtils$3

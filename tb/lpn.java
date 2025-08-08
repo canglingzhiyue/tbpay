@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -79,7 +79,7 @@ public class lpn implements lpm {
         while (true) {
             if (i >= viewGroup.getChildCount()) {
                 break;
-            } else if (TextUtils.equals(String.valueOf(viewGroup.getChildAt(i).getTag(R.id.overlay_overlay_view_tag)), str)) {
+            } else if (StringUtils.equals(String.valueOf(viewGroup.getChildAt(i).getTag(R.id.overlay_overlay_view_tag)), str)) {
                 view2 = viewGroup.getChildAt(i);
                 break;
             } else {

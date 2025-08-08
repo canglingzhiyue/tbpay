@@ -1,0 +1,995 @@
+{
+  "plugin": {
+    "name": "待付款详情浮层",
+    "bizCode": "tbWaitPayFloat",
+    "branches": [
+      {
+        "code": "aura.branch.debuggable",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_framework",
+              "key": "enable_debug_logger",
+              "default": "true"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.monitor.sampling",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_purchase",
+              "key": "enable_alarm_monitor",
+              "default": "true"
+            }
+          }
+        ]
+      },
+      {
+        "code": "alibuy.branch.enableProtocolCropper",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_purchase",
+              "key": "enableProtocolCropper",
+              "default": "true"
+            }
+          }
+        ]
+      }
+    ],
+    "flows": [
+      {
+        "code": "aura.workflow.adjustRules",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.rule",
+            "type": "service",
+            "extensions": {
+              "aura.extension.rule.localAdjust": [
+                {
+                  "code": "aura.impl.rule.localAdjust.writeShareContext",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "aura.impl.parse.stateTree.linkage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.component.groupSelected",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.autoTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "adam.impl.parser.redirect.eventChain",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.shareContext",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.scroll": [
+                {
+                  "code": "alibuy.impl.render.scroll",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.component.creator.dx.autoSize": [
+                      {
+                        "code": "tbbuy.impl.render.component.creator.dx.float.autoSize",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.render.component.creator.rax",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "aura.impl.component.lifeCycle.autoTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.createItem",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "operator": "NOT",
+                "default": "false"
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.alarm.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "default": "true"
+              },
+              "extensions": {
+                "aura.extension.aspect.error.alarm.monitor.slice": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.slice",
+                    "type": "extension"
+                  }
+                ],
+                "aura.extension.aspect.error.alarm.monitor.sampling": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.sampling",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ],
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "tbwaitpay.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.lifeCycle.createItem",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.float",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "alibuy.impl.parse.protocol.verify",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.linkage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.component.groupSelected",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.dataRef",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.autoTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "adam.impl.parser.redirect.eventChain",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.shareContext",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.scroll": [
+                {
+                  "code": "alibuy.impl.render.scroll",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.component.creator.dx.autoSize": [
+                      {
+                        "code": "tbbuy.impl.render.component.creator.dx.float.autoSize",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.render.component.creator.rax",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "aura.impl.component.lifeCycle.autoTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.createItem",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "tbwaitpay.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  },
+                  {
+                    "code": "adam.impl.dxConfig.redirect.eventChain",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.lifeCycle.createItem",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.lifeCycle.linkage",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.eventTrigger.afterRender",
+              "type": "extension"
+            },
+            {
+              "code": "alibuy.impl.aspect.lifecycle.fullScreen.loading",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "operator": "NOT",
+                "default": "false"
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.alarm.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "default": "true"
+              },
+              "extensions": {
+                "aura.extension.aspect.error.alarm.monitor.slice": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.slice",
+                    "type": "extension"
+                  }
+                ],
+                "aura.extension.aspect.error.alarm.monitor.sampling": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.sampling",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.adjust",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.linkage.adjust",
+            "type": "service",
+            "extensions": {
+              "aura.extension.linkage.adjust": [
+                {
+                  "code": "tbwaitpay.impl.linkage.adjust.config",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.linkage.adjust.data": [
+                {
+                  "code": "aura.impl.protocolCropper.ultron.adjust",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alibuy.branch.enableProtocolCropper"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.nextrpc",
+            "type": "service",
+            "extensions": {
+              "aura.extension.nextrpc": [
+                {
+                  "code": "alibuy.impl.aspect.lifecycle.fullScreen.loading",
+                  "type": "extension"
+                },
+                {
+                  "code": "alibuy.impl.nextrpc.passParams",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "alibuy.impl.parse.protocol.verify",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.decrypt",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.linkage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.aspect.lifecycle.popupWindow",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.component.groupSelected",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.dataRef",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.autoTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "adam.impl.parser.redirect.eventChain",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.shareContext",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.scroll": [
+                {
+                  "code": "alibuy.impl.render.scroll",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.component.creator.dx.autoSize": [
+                      {
+                        "code": "tbbuy.impl.render.component.creator.dx.float.autoSize",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "aura.impl.component.lifeCycle.autoTrack",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.createItem",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "tbwaitpay.impl.aspect.error.adjust.popupWindow",
+              "type": "extension"
+            },
+            {
+              "code": "alibuy.impl.aspect.lifecycle.fullScreen.loading",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.popupWindow",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "tbwaitpay.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  },
+                  {
+                    "code": "adam.impl.dxConfig.redirect.eventChain",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.lifeCycle.createItem",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.eventTrigger.afterRender",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "operator": "NOT",
+                "default": "false"
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.alarm.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "default": "true"
+              },
+              "extensions": {
+                "aura.extension.aspect.error.alarm.monitor.slice": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.slice",
+                    "type": "extension"
+                  }
+                ],
+                "aura.extension.aspect.error.alarm.monitor.sampling": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.sampling",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "tbwaitpay.impl.aspect.error.adjust.popupWindow",
+              "type": "extension"
+            },
+            {
+              "code": "tbwaitpay.impl.aspect.error.downgrade",
+              "type": "extension"
+            },
+            {
+              "code": "tbwaitpay.impl.aspect.error.adjust",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.adjustConfirm",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.linkage.adjust",
+            "type": "service",
+            "extensions": {
+              "aura.extension.linkage.adjust": [
+                {
+                  "code": "tbwaitpay.impl.linkage.adjust.config",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.linkage.adjust.data": [
+                {
+                  "code": "aura.impl.protocolCropper.ultron.adjust",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alibuy.branch.enableProtocolCropper"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.nextrpc",
+            "type": "service",
+            "extensions": {
+              "aura.extension.nextrpc": [
+                {
+                  "code": "alibuy.impl.aspect.lifecycle.fullScreen.loading",
+                  "type": "extension"
+                },
+                {
+                  "code": "alibuy.impl.nextrpc.passParams",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.nextrpc.handle": [
+                {
+                  "code": "aura.impl.event.adjust",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "alibuy.impl.aspect.lifecycle.fullScreen.loading",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.popupWindow",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "tbwaitpay.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "operator": "NOT",
+                "default": "false"
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.alarm.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "default": "true"
+              },
+              "extensions": {
+                "aura.extension.aspect.error.alarm.monitor.slice": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.slice",
+                    "type": "extension"
+                  }
+                ],
+                "aura.extension.aspect.error.alarm.monitor.sampling": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.sampling",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "tbwaitpay.impl.aspect.error.downgrade",
+              "type": "extension"
+            },
+            {
+              "code": "tbwaitpay.impl.aspect.error.adjust",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.syncState",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.rule",
+            "type": "service"
+          },
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "aura.impl.parse.stateTree.linkage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.component.groupSelected",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "operator": "NOT",
+                "default": "false"
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.alarm.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "default": "true"
+              },
+              "extensions": {
+                "aura.extension.aspect.error.alarm.monitor.slice": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.slice",
+                    "type": "extension"
+                  }
+                ],
+                "aura.extension.aspect.error.alarm.monitor.sampling": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.sampling",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.event",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.event",
+            "type": "service",
+            "extensions": {
+              "aura.extension.event": [
+                {
+                  "code": "aura.impl.event.toast",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.pop",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.dismissFloat",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.adjustRules",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.userTrack",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.event.userTrack.args": [
+                      {
+                        "code": "alibuy.impl.event.userTrack.pageInfo",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.event.adjust",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.event.adjust.trigger": [
+                      {
+                        "code": "aura.impl.event.adjust.trigger",
+                        "type": "extension"
+                      }
+                    ],
+                    "aura.extension.event.adjust.judge": [
+                      {
+                        "code": "aura.impl.event.adjust.judge.dataChange",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.event.openUrl",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.event.openUrl.native.params": [
+                      {
+                        "code": "alibuy.impl.event.openurl.native.params.changeAddress",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alibuy.impl.event.openurl.native.params.addAddress",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "tbwaitpay.impl.event.refresh",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "operator": "NOT",
+                "default": "false"
+              }
+            },
+            {
+              "code": "adam.impl.aspect.error.eventChain",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.alarm.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "default": "true"
+              },
+              "extensions": {
+                "aura.extension.aspect.error.alarm.monitor.slice": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.slice",
+                    "type": "extension"
+                  }
+                ],
+                "aura.extension.aspect.error.alarm.monitor.sampling": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.sampling",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.parse",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "alibuy.impl.parse.protocol.verify",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.linkage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.component.groupSelected",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.autoTrack",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "operator": "NOT",
+                "default": "false"
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.alarm.monitor",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.monitor.sampling",
+                "default": "true"
+              },
+              "extensions": {
+                "aura.extension.aspect.error.alarm.monitor.slice": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.slice",
+                    "type": "extension"
+                  }
+                ],
+                "aura.extension.aspect.error.alarm.monitor.sampling": [
+                  {
+                    "code": "aura.impl.aspect.error.alarm.monitor.sampling",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension",
+              "branch": {
+                "code": "aura.branch.debuggable"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

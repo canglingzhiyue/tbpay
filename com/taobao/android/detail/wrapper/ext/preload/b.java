@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.preload;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.l;
@@ -99,7 +99,7 @@ public class b implements f<MtopResponse> {
             }
             if (jSONObject == null) {
                 String a3 = a.a(mtopResponse);
-                if (TextUtils.isEmpty(a3)) {
+                if (StringUtils.isEmpty(a3)) {
                     i.c(l.a("PreloadTaskCallback"), "预请求结果为空");
                     return;
                 }

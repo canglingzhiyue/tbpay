@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -73,7 +73,7 @@ public class kzo extends fuf {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("cf82d1f5", new Object[]{this, ladVar, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             c.a("PopFetchViewFrame ", "sectionBizCode is empty");
             return null;
         }

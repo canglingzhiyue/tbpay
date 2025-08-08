@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.node.NodeBundle;
@@ -71,7 +71,7 @@ public abstract class MainViewModel {
             return;
         }
         ComponentModel componentModel = this.component;
-        if (componentModel == null || TextUtils.isEmpty(componentModel.style)) {
+        if (componentModel == null || StringUtils.isEmpty(componentModel.style)) {
             return;
         }
         this.component.style = jjv.a((Object) this.mNodeBundle.root, this.component.style).toString();

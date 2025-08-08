@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -82,7 +82,7 @@ public class AndroidH2Watchdog {
             return;
         }
         TransportConfigureManager transportConfigureManager = TransportConfigureManager.getInstance();
-        if (!TextUtils.equals(transportConfigureManager.getStringValue(TransportConfigureItem.H2_DOWNGRADE_SWITCH), "T")) {
+        if (!StringUtils.equals(transportConfigureManager.getStringValue(TransportConfigureItem.H2_DOWNGRADE_SWITCH), "T")) {
             LogCatUtil.debug("AndroidH2Watchdog", "h2DownSwitch off");
         } else if (b == 1) {
             b(str, transportConfigureManager, z);
@@ -190,7 +190,7 @@ public class AndroidH2Watchdog {
             return false;
         }
         String th3 = rootCause.toString();
-        if (TextUtils.isEmpty(th3)) {
+        if (StringUtils.isEmpty(th3)) {
             return false;
         }
         return th3.contains("stream was reset");

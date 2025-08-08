@@ -2,7 +2,7 @@ package com.taobao.android.artry.resource;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class ResourceManager {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("c26a5a1b", new Object[]{this, str});
         }
-        if (!b() || TextUtils.isEmpty(str)) {
+        if (!b() || StringUtils.isEmpty(str)) {
             return null;
         }
         File file = new File(this.f9055a, str);
@@ -173,7 +173,7 @@ public class ResourceManager {
         if (ipChange instanceof IpChange) {
             return (com.taobao.android.artry.resource.a) ipChange.ipc$dispatch("fa44b170", new Object[]{this, list, str, list2, bVar});
         }
-        if (b() && !TextUtils.isEmpty(str) && !com.taobao.android.artry.utils.d.a(list2)) {
+        if (b() && !StringUtils.isEmpty(str) && !com.taobao.android.artry.utils.d.a(list2)) {
             try {
                 a.C0350a c0350a = new a.C0350a(str, this.f9055a.getAbsolutePath());
                 for (String str2 : list2) {
@@ -232,7 +232,7 @@ public class ResourceManager {
             return null;
         }
         String a2 = com.taobao.android.artry.utils.c.a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         return "artry_" + a2;

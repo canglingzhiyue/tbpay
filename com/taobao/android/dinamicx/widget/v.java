@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -366,7 +366,7 @@ public class v extends o implements fyl, fym, fyu, fyx {
                 if (this.videoControlManager == null || !(this.videoControlConfig instanceof DXVideoControlConfig) || !this.videoControlManager.b()) {
                     return;
                 }
-                String str = (TextUtils.isEmpty(dXRuntimeContext.A()) ? "" : dXRuntimeContext.A()) + "_" + (TextUtils.isEmpty(this.userId) ? "DXScrollLayoutBase" : this.userId);
+                String str = (StringUtils.isEmpty(dXRuntimeContext.A()) ? "" : dXRuntimeContext.A()) + "_" + (StringUtils.isEmpty(this.userId) ? "DXScrollLayoutBase" : this.userId);
                 this.videoControlManager.e(recyclerView);
                 this.videoControlManager.a(recyclerView, (DXVideoControlConfig) this.videoControlConfig, str);
                 this.videoControlManager.a(recyclerView);

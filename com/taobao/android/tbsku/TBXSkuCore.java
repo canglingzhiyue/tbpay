@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -895,7 +895,7 @@ public class TBXSkuCore {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d99648bc", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (jSONObject = this.f.get(str)) == null || jSONObject.isEmpty()) {
+        } else if (StringUtils.isEmpty(str) || (jSONObject = this.f.get(str)) == null || jSONObject.isEmpty()) {
         } else {
             com.taobao.android.sku.data.a g2 = this.f15385a.g();
             final JSONObject jSONObject2 = (g2 == null || (g = g2.g()) == null) ? null : g.getJSONObject("id_biz_relatedAuctions");
@@ -930,7 +930,7 @@ public class TBXSkuCore {
             return;
         }
         final String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         com.taobao.android.sku.data.a g2 = this.f15385a.g();
@@ -961,7 +961,7 @@ public class TBXSkuCore {
             Object next = it.next();
             if (next instanceof JSONObject) {
                 String string = ((JSONObject) next).getString("itemId");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     arrayList.add(string);
                 }
             }
@@ -998,7 +998,7 @@ public class TBXSkuCore {
                 } else if (mtopResponse == null) {
                 } else {
                     String str = new String(mtopResponse.getBytedata());
-                    if (TextUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || parseObject.getJSONObject("data") == null) {
+                    if (StringUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || parseObject.getJSONObject("data") == null) {
                         return;
                     }
                     TBXSkuCore.f(TBXSkuCore.this).put(a2, parseObject.getJSONObject("data"));
@@ -1037,7 +1037,7 @@ public class TBXSkuCore {
                 return;
             }
             String a2 = TBXSkuCore.this.a();
-            if (TextUtils.isEmpty(a2) || !TBXSkuCore.b(TBXSkuCore.this).p().equals(intent.getStringExtra("skuToken")) || !a2.equals(intent.getStringExtra(fgl.ORIGINALITEMID))) {
+            if (StringUtils.isEmpty(a2) || !TBXSkuCore.b(TBXSkuCore.this).p().equals(intent.getStringExtra("skuToken")) || !a2.equals(intent.getStringExtra(fgl.ORIGINALITEMID))) {
                 return;
             }
             intent.getStringExtra(fgl.TARGETITEMID);

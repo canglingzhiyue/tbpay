@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -83,7 +83,7 @@ public class qvc {
             return;
         }
         String jSONString = JSON.toJSONString(map);
-        if (TextUtils.isEmpty(jSONString)) {
+        if (StringUtils.isEmpty(jSONString)) {
             return;
         }
         try {

@@ -3,7 +3,7 @@ package com.taobao.android.dinamicx.widget;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -87,7 +87,7 @@ public class b implements an {
             if (dVar.e()) {
                 aliUrlImageView.setStrokeColor(dVar.b);
             }
-            if (!TextUtils.isEmpty(dVar.e) && dVar.f >= 0) {
+            if (!StringUtils.isEmpty(dVar.e) && dVar.f >= 0) {
                 a2 = ImageStrategyConfig.a(dVar.e, dVar.f);
             } else {
                 a2 = ImageStrategyConfig.a(dVar.e);

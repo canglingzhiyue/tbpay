@@ -1,7 +1,7 @@
 package com.taobao.search.mmd.util;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.r;
 import com.taobao.statistic.CT;
@@ -73,7 +73,7 @@ public class e {
         if (arrayMap == null) {
             arrayMap = new ArrayMap<>();
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             arrayMap.put("spm", str3);
         }
         String c = com.taobao.search.rainbow.a.c();
@@ -89,7 +89,7 @@ public class e {
             sb.append("=");
             sb.append(arrayMap.valueAt(i));
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             TBS.Adv.ctrlClicked(CT.Button, str2, sb.toString());
         } else {
             TBS.Adv.ctrlClicked(str, CT.Button, str2, sb.toString());

@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.newresult.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -96,7 +96,7 @@ public final class c {
                     cVar.d(d.getJSONObject("pltInfo"));
                     JSONObject e = cVar.e();
                     if (e != null) {
-                        if (TextUtils.isEmpty(cVar.f())) {
+                        if (StringUtils.isEmpty(cVar.f())) {
                             cVar.b(e.getString("tfskey"));
                         }
                         cVar.g(e.getString("oss"));
@@ -175,7 +175,7 @@ public final class c {
                     }
                     for (int i2 = 0; i2 < i; i2++) {
                         Object obj2 = a3.get(i2);
-                        if ((obj2 instanceof JSONObject) && (b = com.taobao.android.searchbaseframe.util.a.b((JSONObject) obj2, "itemPic")) != null && (a2 = com.taobao.android.searchbaseframe.util.a.a(b, "src", "")) != null && !TextUtils.isEmpty(a2)) {
+                        if ((obj2 instanceof JSONObject) && (b = com.taobao.android.searchbaseframe.util.a.b((JSONObject) obj2, "itemPic")) != null && (a2 = com.taobao.android.searchbaseframe.util.a.a(b, "src", "")) != null && !StringUtils.isEmpty(a2)) {
                             cVar.p().add(a2);
                         }
                     }
@@ -533,7 +533,7 @@ public final class c {
         q.a((Object) b, "FastJsonParseUtil.optJSO…eryPicItem\") ?: return \"\"");
         String a2 = com.taobao.android.searchbaseframe.util.a.a(b, eby.KEY_PIC_URL, "");
         q.a((Object) a2, "FastJsonParseUtil.parseS…eryPicItem, \"picUrl\", \"\")");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "";
         }
         return com.etao.feimagesearch.config.b.bK() + a2;

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.standard.video;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -104,7 +104,7 @@ public final class f extends a {
             return;
         }
         Object a3 = g.a(n.EXT_KEY_IS_USER_PAUSE_STRUCT_VIDEO);
-        if (((a3 instanceof Boolean) && ((Boolean) a3).booleanValue()) || TextUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING) || TextUtils.equals(g.p(), "init") || !this.b.h()) {
+        if (((a3 instanceof Boolean) && ((Boolean) a3).booleanValue()) || StringUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING) || StringUtils.equals(g.p(), "init") || !this.b.h()) {
             return;
         }
         g.a();
@@ -126,7 +126,7 @@ public final class f extends a {
             return;
         }
         Object a2 = g.a(n.EXT_KEY_IS_STRUCT_VIDEO);
-        if (!(a2 instanceof Boolean) || !((Boolean) a2).booleanValue() || !TextUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+        if (!(a2 instanceof Boolean) || !((Boolean) a2).booleanValue() || !StringUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
             return;
         }
         g.b();

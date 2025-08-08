@@ -3,7 +3,7 @@ package com.taobao.trtc.accs;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.TaoBaseService;
 import com.taobao.accs.common.Constants;
@@ -34,7 +34,7 @@ public class TrtcAccsConnectionBroadcastReceiver extends BroadcastReceiver {
         }
         intent.getAction();
         TaoBaseService.ConnectInfo connectInfo = (TaoBaseService.ConnectInfo) intent.getSerializableExtra(Constants.KEY_CONNECT_INFO);
-        if (connectInfo == null || TextUtils.isEmpty(connectInfo.host)) {
+        if (connectInfo == null || StringUtils.isEmpty(connectInfo.host)) {
             return;
         }
         TrtcLog.b("AccsConnectionBroadcastReceiver", "onReceive: " + connectInfo.host);

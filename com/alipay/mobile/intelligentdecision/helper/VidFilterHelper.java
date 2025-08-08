@@ -1,6 +1,6 @@
 package com.alipay.mobile.intelligentdecision.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.intelligentdecision.log.DecisionLogcat;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
@@ -42,7 +42,7 @@ public class VidFilterHelper {
         } catch (Throwable th) {
             DecisionLogcat.a("VidFilterHelper", "haveCollect error:" + th.getMessage());
         }
-        if (!TextUtils.isEmpty(str) && str2.equalsIgnoreCase("pay_enter")) {
+        if (!StringUtils.isEmpty(str) && str2.equalsIgnoreCase("pay_enter")) {
             DecisionLogcat.b("VidFilterHelper", "collect size:" + this.b.size());
             if (this.b.containsKey(str)) {
                 if (this.b.size() >= 10) {
@@ -70,7 +70,7 @@ public class VidFilterHelper {
         } catch (Throwable th) {
             DecisionLogcat.a("VidFilterHelper", "havePredit error:" + th.getMessage());
         }
-        if (!TextUtils.isEmpty(str) && str2.equalsIgnoreCase("pay_enter")) {
+        if (!StringUtils.isEmpty(str) && str2.equalsIgnoreCase("pay_enter")) {
             DecisionLogcat.b("VidFilterHelper", "pre size:" + this.c.size());
             if (this.c.containsKey(str)) {
                 if (this.c.size() >= 10) {

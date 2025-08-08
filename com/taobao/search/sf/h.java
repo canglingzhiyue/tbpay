@@ -1,6 +1,6 @@
 package com.taobao.search.sf;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.MeasureSet;
@@ -132,13 +132,13 @@ public final class h {
         }
         a.a(Companion);
         String str = (String) pVar.getTag(SFMuiseSDK.MUISE_BUNDLE_TYPE);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (pVar == null) {
                 throw new TypeCastException("null cannot be cast to non-null type com.taobao.android.weex_framework.MUSDKInstance");
             }
             str = ((MUSDKInstance) pVar).getInstanceEnv("bundleUrl");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         AppMonitor.Counter.commit("TBSearchLeak", "MusLeak", str, 1.0d);

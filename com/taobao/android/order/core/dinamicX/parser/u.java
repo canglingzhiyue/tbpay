@@ -2,7 +2,7 @@ package com.taobao.android.order.core.dinamicX.parser;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import java.net.URLDecoder;
@@ -28,7 +28,7 @@ public class u extends fuf {
         if (objArr != null && objArr.length != 0 && dXRuntimeContext != null && (dXRuntimeContext.m() instanceof Activity) && (intent = ((Activity) dXRuntimeContext.m()).getIntent()) != null && intent.getData() != null) {
             try {
                 String queryParameter = intent.getData().getQueryParameter((String) objArr[0]);
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     return URLDecoder.decode(queryParameter, "UTF-8");
                 }
             } catch (Throwable unused) {

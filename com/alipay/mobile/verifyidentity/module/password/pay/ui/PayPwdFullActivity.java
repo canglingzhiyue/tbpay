@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.module.password.pay.ui;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -74,7 +74,7 @@ public class PayPwdFullActivity extends PayPwdCommonActivity {
         ((APRelativeLayout) findViewById(R.id.pwd_titlebar)).setVisibility(8);
         if (getIntent() != null && getIntent().getExtras() != null) {
             String string = getIntent().getExtras().getString("title");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.b.setTitleText("");
                 TextView textView = (TextView) findViewById(R.id.full_title);
                 if (textView != null) {

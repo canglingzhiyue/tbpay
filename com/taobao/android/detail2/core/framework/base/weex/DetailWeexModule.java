@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.base.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -195,7 +195,7 @@ public class DetailWeexModule extends WXModule implements d {
                 JSONObject jSONObject2 = jSONObject.getJSONObject("params");
                 if (jSONObject2 != null) {
                     String string = jSONObject2.getString("nid");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         jSONObject.put("uniqueId", (Object) string);
                     } else {
                         jSONObject.put("uniqueId", (Object) jSONObject2.getString("itemId"));

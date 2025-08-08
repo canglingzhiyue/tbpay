@@ -3,7 +3,7 @@ package com.alipay.sdk.app;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.framework.statisticsv2.StatisticInfo;
 import com.alipay.android.msp.framework.taskscheduler.TaskHelper;
@@ -97,7 +97,7 @@ public class PayTaskCompat {
             return ((Boolean) ipChange.ipc$dispatch("e19a3b04", new Object[]{this, str, new Boolean(z), h5PayCallback})).booleanValue();
         }
         final String fetchOrderInfoFromH5PayUrl = fetchOrderInfoFromH5PayUrl(str);
-        if (!TextUtils.isEmpty(fetchOrderInfoFromH5PayUrl)) {
+        if (!StringUtils.isEmpty(fetchOrderInfoFromH5PayUrl)) {
             LogUtils.i("mspl", "intercepted: ".concat(String.valueOf(fetchOrderInfoFromH5PayUrl)));
             TaskHelper.execute(new Runnable() { // from class: com.alipay.sdk.app.PayTaskCompat.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -115,7 +115,7 @@ public class PayTaskCompat {
                 }
             });
         }
-        return !TextUtils.isEmpty(fetchOrderInfoFromH5PayUrl);
+        return !StringUtils.isEmpty(fetchOrderInfoFromH5PayUrl);
     }
 
     public synchronized String fetchOrderInfoFromH5PayUrl(String str) {
@@ -123,11 +123,11 @@ public class PayTaskCompat {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7891d8ef", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String trim = str.trim();
             if (trim.startsWith("https://wappaygw.alipay.com/service/rest.htm") || trim.startsWith("http://wappaygw.alipay.com/service/rest.htm")) {
                 String trim2 = trim.replaceFirst("(http|https)://wappaygw.alipay.com/service/rest.htm\\?", "").trim();
-                if (!TextUtils.isEmpty(trim2)) {
+                if (!StringUtils.isEmpty(trim2)) {
                     String subString = Utils.subString("<request_token>", "</request_token>", Utils.convertArgs(trim2).get("req_data"));
                     BizContext bizContext = new BizContext(this.f6135a, "", "");
                     return "_input_charset=\"utf-8\"&ordertoken=\"" + subString + "\"&pay_channel_id=\"alipay_sdk\"&bizcontext=\"" + bizContext.buildSimpleBizContext("sc", MspGlobalDefine.H5_TO_NATIVE) + "\"";
@@ -135,13 +135,13 @@ public class PayTaskCompat {
             }
             if (trim.startsWith("https://mclient.alipay.com/service/rest.htm") || trim.startsWith("http://mclient.alipay.com/service/rest.htm")) {
                 String trim3 = trim.replaceFirst("(http|https)://mclient.alipay.com/service/rest.htm\\?", "").trim();
-                if (!TextUtils.isEmpty(trim3)) {
+                if (!StringUtils.isEmpty(trim3)) {
                     String subString2 = Utils.subString("<request_token>", "</request_token>", Utils.convertArgs(trim3).get("req_data"));
                     BizContext bizContext2 = new BizContext(this.f6135a, "", "");
                     return "_input_charset=\"utf-8\"&ordertoken=\"" + subString2 + "\"&pay_channel_id=\"alipay_sdk\"&bizcontext=\"" + bizContext2.buildSimpleBizContext("sc", MspGlobalDefine.H5_TO_NATIVE) + "\"";
                 }
             }
-            if ((trim.startsWith("https://mclient.alipay.com/home/exterfaceAssign.htm") || trim.startsWith("http://mclient.alipay.com/home/exterfaceAssign.htm")) && ((trim.contains("alipay.wap.create.direct.pay.by.user") || trim.contains("create_forex_trade_wap")) && !TextUtils.isEmpty(trim.replaceFirst("(http|https)://mclient.alipay.com/home/exterfaceAssign.htm\\?", "").trim()))) {
+            if ((trim.startsWith("https://mclient.alipay.com/home/exterfaceAssign.htm") || trim.startsWith("http://mclient.alipay.com/home/exterfaceAssign.htm")) && ((trim.contains("alipay.wap.create.direct.pay.by.user") || trim.contains("create_forex_trade_wap")) && !StringUtils.isEmpty(trim.replaceFirst("(http|https)://mclient.alipay.com/home/exterfaceAssign.htm\\?", "").trim()))) {
                 BizContext bizContext3 = new BizContext(this.f6135a, "", "");
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("url", str);
@@ -150,7 +150,7 @@ public class PayTaskCompat {
             }
             if (Pattern.compile("^(http|https)://(maliprod\\.alipay\\.com/w/trade_pay\\.do.?|mali\\.alipay\\.com/w/trade_pay\\.do.?|mclient\\.alipay\\.com/w/trade_pay\\.do.?)").matcher(str).find()) {
                 String subString3 = Utils.subString("?", "", str);
-                if (!TextUtils.isEmpty(subString3)) {
+                if (!StringUtils.isEmpty(subString3)) {
                     Map<String, String> convertArgs = Utils.convertArgs(subString3);
                     StringBuilder sb = new StringBuilder();
                     if (a(false, true, "trade_no", sb, convertArgs, "trade_no", "alipay_trade_no")) {
@@ -158,9 +158,9 @@ public class PayTaskCompat {
                         sb.append("&biz_sub_type=\"TRADE\"");
                         sb.append("&biz_type=\"trade\"");
                         String str2 = convertArgs.get("app_name");
-                        if (TextUtils.isEmpty(str2) && !TextUtils.isEmpty(convertArgs.get("cid"))) {
+                        if (StringUtils.isEmpty(str2) && !StringUtils.isEmpty(convertArgs.get("cid"))) {
                             str2 = "ali1688";
-                        } else if (TextUtils.isEmpty(str2) && (!TextUtils.isEmpty(convertArgs.get("sid")) || !TextUtils.isEmpty(convertArgs.get("s_id")))) {
+                        } else if (StringUtils.isEmpty(str2) && (!StringUtils.isEmpty(convertArgs.get("sid")) || !StringUtils.isEmpty(convertArgs.get("s_id")))) {
                             str2 = "tb";
                         }
                         sb.append("&app_name=\"" + str2 + "\"");
@@ -190,13 +190,13 @@ public class PayTaskCompat {
                     String a3 = a(parse.getQueryParameter("payPhaseId"), parse.getQueryParameter("pay_phase_id"), parse.getQueryParameter("out_relation_id"));
                     String[] strArr = new String[4];
                     strArr[0] = parse.getQueryParameter("app_name");
-                    strArr[1] = !TextUtils.isEmpty(parse.getQueryParameter("cid")) ? "ali1688" : "";
-                    strArr[2] = !TextUtils.isEmpty(parse.getQueryParameter("sid")) ? "tb" : "";
-                    strArr[3] = !TextUtils.isEmpty(parse.getQueryParameter("s_id")) ? "tb" : "";
+                    strArr[1] = !StringUtils.isEmpty(parse.getQueryParameter("cid")) ? "ali1688" : "";
+                    strArr[2] = !StringUtils.isEmpty(parse.getQueryParameter("sid")) ? "tb" : "";
+                    strArr[3] = !StringUtils.isEmpty(parse.getQueryParameter("s_id")) ? "tb" : "";
                     String a4 = a(strArr);
                     String a5 = a(parse.getQueryParameter(AlipayCallServiceActivity.ALIPAY_EXTERN_TOKEN), parse.getQueryParameter("cid"), parse.getQueryParameter("sid"), parse.getQueryParameter("s_id"));
                     String a6 = a(parse.getQueryParameter("appenv"));
-                    if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(a4) && !TextUtils.isEmpty(a5)) {
+                    if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(a4) && !StringUtils.isEmpty(a5)) {
                         String format = String.format("trade_no=\"%s\"&pay_phase_id=\"%s\"&biz_type=\"trade\"&biz_sub_type=\"TRADE\"&app_name=\"%s\"&extern_token=\"%s\"&appenv=\"%s\"&pay_channel_id=\"alipay_sdk\"&bizcontext=\"%s\"", a2, a3, a4, a5, a6, new BizContext(this.f6135a, "", "").buildSimpleBizContext("sc", MspGlobalDefine.H5_TO_NATIVE));
                         TaobaoModel taobaoModel2 = new TaobaoModel();
                         taobaoModel2.setReturnUrl(queryParameter);
@@ -226,7 +226,7 @@ public class PayTaskCompat {
             return "";
         }
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         }
@@ -321,13 +321,13 @@ public class PayTaskCompat {
                 break;
             }
             String str3 = strArr[i];
-            if (!TextUtils.isEmpty(map.get(str3))) {
+            if (!StringUtils.isEmpty(map.get(str3))) {
                 str2 = map.get(str3);
                 break;
             }
             i++;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             if (z2) {
                 return false;
             }
@@ -378,19 +378,19 @@ public class PayTaskCompat {
         } else {
             if (str5.length() > 15) {
                 String a2 = a(Utils.subString("&callBackUrl=\"", "\"", str5), Utils.subString("&call_back_url=\"", "\"", str5), Utils.subString("&return_url=\"", "\"", str5), URLDecoder.decode(Utils.subString("&return_url=", "&", str5), "utf-8"), URLDecoder.decode(Utils.subString("&callBackUrl=", "&", str5), "utf-8"), Utils.subString("call_back_url=\"", "\"", str5));
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     str2 = a2;
                 }
             }
             if (remove != null) {
                 str2 = equals ? remove.getReturnUrl() : remove.getShowUrl();
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                 }
             }
             str2 = remove != null ? H5PayUtil.TAOBAO_BACK_URL : "";
         }
         h5PayResultModel.setReturnUrl(str2);
-        if (TextUtils.isEmpty(h5PayResultModel.getReturnUrl())) {
+        if (StringUtils.isEmpty(h5PayResultModel.getReturnUrl())) {
             LogUtils.i("mspl", "biz", StatisticRecord.EC_ACQUIRE_CALLBACK_URL_EMPTY);
         }
         return h5PayResultModel;
@@ -433,7 +433,7 @@ public class PayTaskCompat {
         String str5 = "";
         String str6 = str5;
         for (String str7 : str.split("&")) {
-            if (!TextUtils.isEmpty(str7)) {
+            if (!StringUtils.isEmpty(str7)) {
                 if (str7.startsWith("biz_type=")) {
                     str5 = str7.substring(9);
                 } else if (str7.startsWith("trade_no=")) {
@@ -514,8 +514,8 @@ public class PayTaskCompat {
             String pay4Client = payHelper.pay4Client(format);
             LogUtils.i("mspl", "pay inner raw result: ".concat(String.valueOf(pay4Client)));
             payHelper.clearContext();
-            if (!TextUtils.equals(pay4Client, "failed") && !TextUtils.equals(pay4Client, PayHelper.SCHEME_FAILED)) {
-                if (!TextUtils.isEmpty(pay4Client)) {
+            if (!StringUtils.equals(pay4Client, "failed") && !StringUtils.equals(pay4Client, PayHelper.SCHEME_FAILED)) {
+                if (!StringUtils.isEmpty(pay4Client)) {
                     Map<String, String> format2 = ResultUtil.format(bizContext, pay4Client);
                     String str3 = "";
                     if (format2 != null && format2.get("resultStatus") != null) {

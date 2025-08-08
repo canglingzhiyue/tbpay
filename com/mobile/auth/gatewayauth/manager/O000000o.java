@@ -1,7 +1,7 @@
 package com.mobile.auth.gatewayauth.manager;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.O0OOO0;
 import com.mobile.auth.OO0oO;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
@@ -493,7 +493,7 @@ public abstract class O000000o {
 
     public final synchronized void O000000o(final RequestCallback<C0294O000000o, com.mobile.auth.gatewayauth.manager.base.O00000Oo> requestCallback, final O00000Oo o00000Oo) {
         try {
-            if (!TextUtils.isEmpty(this.O000000o) && !TextUtils.isEmpty(this.O00000Oo)) {
+            if (!StringUtils.isEmpty(this.O000000o) && !StringUtils.isEmpty(this.O00000Oo)) {
                 O00000o(new RequestCallback<C0294O000000o, com.mobile.auth.gatewayauth.manager.base.O00000Oo>() { // from class: com.mobile.auth.gatewayauth.manager.O000000o.1
                     public void O000000o(C0294O000000o c0294O000000o) {
                         try {
@@ -647,7 +647,7 @@ public abstract class O000000o {
 
     public final synchronized void O00000Oo(final RequestCallback<C0294O000000o, com.mobile.auth.gatewayauth.manager.base.O00000Oo> requestCallback, final O00000Oo o00000Oo) {
         try {
-            if (!TextUtils.isEmpty(this.O000000o) && !TextUtils.isEmpty(this.O00000Oo)) {
+            if (!StringUtils.isEmpty(this.O000000o) && !StringUtils.isEmpty(this.O00000Oo)) {
                 O00000oO(new RequestCallback<C0294O000000o, com.mobile.auth.gatewayauth.manager.base.O00000Oo>() { // from class: com.mobile.auth.gatewayauth.manager.O000000o.2
                     public void O000000o(C0294O000000o c0294O000000o) {
                         try {
@@ -717,7 +717,7 @@ public abstract class O000000o {
 
     public final synchronized void O00000o0(final RequestCallback<C0294O000000o, com.mobile.auth.gatewayauth.manager.base.O00000Oo> requestCallback, final O00000Oo o00000Oo) {
         try {
-            if (!TextUtils.isEmpty(this.O000000o) && !TextUtils.isEmpty(this.O00000Oo)) {
+            if (!StringUtils.isEmpty(this.O000000o) && !StringUtils.isEmpty(this.O00000Oo)) {
                 O00000oo(new RequestCallback<C0294O000000o, com.mobile.auth.gatewayauth.manager.base.O00000Oo>() { // from class: com.mobile.auth.gatewayauth.manager.O000000o.3
                     public void O000000o(C0294O000000o c0294O000000o) {
                         try {

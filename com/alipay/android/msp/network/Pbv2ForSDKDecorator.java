@@ -2,7 +2,7 @@ package com.alipay.android.msp.network;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -123,7 +123,7 @@ public class Pbv2ForSDKDecorator {
                 timingMsMap.put(TimingUtil.PreposeTimingEnum.UtdidTiming, Long.valueOf(SystemClock.elapsedRealtime() - elapsedRealtime));
             }
             String cachedVIData = z ? str2 : PreloadManager.getPreloadCache().getCachedVIData(str2, hashMap);
-            if (TextUtils.equals(rpcRequestDataV2.action, "/cashier/main")) {
+            if (StringUtils.equals(rpcRequestDataV2.action, "/cashier/main")) {
                 if (!DrmManager.getInstance(context).isGray(DrmKey.GRAY_EXTINFO_MODEL, false, context)) {
                     jSONObject = a(jSONObject, tradeContextByBizId, cachedVIData, i, cachedUtdid);
                 }
@@ -139,13 +139,13 @@ public class Pbv2ForSDKDecorator {
             rpcRequestDataV2.trdfrom = null;
             rpcRequestDataV2.locLoginOnce = null;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            if (TextUtils.equals(PreloadManager.getPreloadCache().getCachedHasCertPayString(context, hashMap), "1")) {
+            if (StringUtils.equals(PreloadManager.getPreloadCache().getCachedHasCertPayString(context, hashMap), "1")) {
                 a2.put(MspGlobalDefine.CERTPAY, (Object) Boolean.TRUE);
                 z3 = true;
             } else {
                 z3 = false;
             }
-            if (z3 || TextUtils.equals(PreloadManager.getPreloadCache().getCachedHasAlipayString(GlobalHelper.getInstance().getContext(), hashMap), "1")) {
+            if (z3 || StringUtils.equals(PreloadManager.getPreloadCache().getCachedHasAlipayString(GlobalHelper.getInstance().getContext(), hashMap), "1")) {
                 rpcRequestDataV2.hasAlipay = "1";
                 rpcRequestDataV2.certpay = "1";
             }
@@ -215,7 +215,7 @@ public class Pbv2ForSDKDecorator {
                 if (userAgentC != null) {
                     rpcRequestDataV2.mqp_uac = Base64.encodeToString(userAgentC.getBytes(), 2);
                 }
-                if (TextUtils.isEmpty(rpcRequestDataV2.mqp_uac) && tradeContextByBizId != null) {
+                if (StringUtils.isEmpty(rpcRequestDataV2.mqp_uac) && tradeContextByBizId != null) {
                     tradeContextByBizId.getStatisticInfo().addError(ErrorType.DATA, ErrorCode.COMMON_REQUEST_MISS_MQP_UAC, str2);
                 }
             }
@@ -228,7 +228,7 @@ public class Pbv2ForSDKDecorator {
             if (timingMsMap != null) {
                 timingMsMap.put(TimingUtil.PreposeTimingEnum.TidTiming, Long.valueOf(SystemClock.elapsedRealtime() - elapsedRealtime6));
             }
-            JSONObject jSONObject2 = TextUtils.isEmpty(rpcRequestDataV2.extinfo) ? new JSONObject() : JSON.parseObject(rpcRequestDataV2.extinfo);
+            JSONObject jSONObject2 = StringUtils.isEmpty(rpcRequestDataV2.extinfo) ? new JSONObject() : JSON.parseObject(rpcRequestDataV2.extinfo);
             if (jSONObject2.size() > 0) {
                 str2 = jSONObject2.toString();
             }
@@ -249,25 +249,25 @@ public class Pbv2ForSDKDecorator {
         jSONObject.put(MspGlobalDefine.MSP_SWITCH_VERSION, (Object) DrmManager.getInstance(GlobalHelper.getInstance().getContext()).getVersion());
         LogUtil.record(2, "RpcRequestDecoratorForSdk:getVidataTime", "assembleOldExtInfo");
         String certsn = PhoneCashierMspEngine.getMspViSec().getCertsn();
-        if (!TextUtils.isEmpty(certsn)) {
+        if (!StringUtils.isEmpty(certsn)) {
             jSONObject.put(MspGlobalDefine.CERTSN, (Object) certsn);
         }
         jSONObject.put("utdid", (Object) str2);
         jSONObject.put("agednessVersion", (Object) Boolean.valueOf(PhoneCashierMspEngine.getMspWallet().isUserAgednessVersion(i)));
         jSONObject.put("isLowDevice", (Object) Boolean.valueOf(MspLowDeviceManager.getInstance().isLowDevice()));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("VIData", (Object) str);
         }
         jSONObject.put(MspGlobalDefine.LANG, (Object) Utils.getLocaleDesByFlag(PhoneCashierMspEngine.getMspBase().getMspLocale(PhoneCashierMspEngine.getMspWallet().getAlipayLocaleDes())));
         if (mspTradeContext != null) {
             String str3 = mspTradeContext.getAllExtendParamsMap().get(MspGlobalDefine.EXT_INSIDE_ENV);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 jSONObject.put(MspGlobalDefine.INSIDE_ENV, (Object) str3);
             }
             LogUtil.record(2, "RpcRequestDecoratorV2:getVidataTime", "extend map = " + mspTradeContext.getAllExtendParamsMap());
         }
-        String join = TextUtils.join("|", FwUtils.concatList(FwUtils.concatList(ThirdPayManager.getAvailableThirdPayTypes(GlobalHelper.getInstance().getContext()), ThirdPayManager.getExternalProvidedThirdPayTypes(mspTradeContext)), ThirdPayManager.getListCupDirectApps()));
-        if (!TextUtils.isEmpty(join)) {
+        String join = StringUtils.join("|", FwUtils.concatList(FwUtils.concatList(ThirdPayManager.getAvailableThirdPayTypes(GlobalHelper.getInstance().getContext()), ThirdPayManager.getExternalProvidedThirdPayTypes(mspTradeContext)), ThirdPayManager.getListCupDirectApps()));
+        if (!StringUtils.isEmpty(join)) {
             jSONObject.put("supported_3rd_pay", (Object) join);
         }
         LogUtil.record(2, "RpcRequestDecoratorV2:getVidataTime", "checkpoint before getBizInfo");
@@ -282,9 +282,9 @@ public class Pbv2ForSDKDecorator {
         LogUtil.record(2, "RpcRequestDecoratorV2:getVidataTime", "extendInfo map = ".concat(String.valueOf(map)));
         if (map != null && map.size() > 0) {
             for (String str4 : map.keySet()) {
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     String str5 = map.get(str4);
-                    if (!TextUtils.isEmpty(str5)) {
+                    if (!StringUtils.isEmpty(str5)) {
                         jSONObject.put(str4, (Object) str5);
                     }
                 }
@@ -293,13 +293,13 @@ public class Pbv2ForSDKDecorator {
         }
         if (mspTradeContext != null) {
             try {
-                if (!TextUtils.isEmpty(mspTradeContext.getAllExtendParamsMap().get("user_token")) && !jSONObject.containsKey("user_token")) {
+                if (!StringUtils.isEmpty(mspTradeContext.getAllExtendParamsMap().get("user_token")) && !jSONObject.containsKey("user_token")) {
                     jSONObject.put("user_token", (Object) mspTradeContext.getAllExtendParamsMap().get("user_token"));
                 }
-                if (!TextUtils.isEmpty(mspTradeContext.getAllExtendParamsMap().get("user_token_type")) && !jSONObject.containsKey("user_token_type")) {
+                if (!StringUtils.isEmpty(mspTradeContext.getAllExtendParamsMap().get("user_token_type")) && !jSONObject.containsKey("user_token_type")) {
                     jSONObject.put("user_token_type", (Object) mspTradeContext.getAllExtendParamsMap().get("user_token_type"));
                 }
-                if (!TextUtils.isEmpty(mspTradeContext.getAllExtendParamsMap().get(MspGlobalDefine.EXT_INSIDE_ENV)) && !jSONObject.containsKey(MspGlobalDefine.EXT_INSIDE_ENV)) {
+                if (!StringUtils.isEmpty(mspTradeContext.getAllExtendParamsMap().get(MspGlobalDefine.EXT_INSIDE_ENV)) && !jSONObject.containsKey(MspGlobalDefine.EXT_INSIDE_ENV)) {
                     jSONObject.put(MspGlobalDefine.EXT_INSIDE_ENV, (Object) mspTradeContext.getAllExtendParamsMap().get(MspGlobalDefine.EXT_INSIDE_ENV));
                 }
             } catch (Throwable th2) {

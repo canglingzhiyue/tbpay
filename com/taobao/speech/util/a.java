@@ -2,7 +2,7 @@ package com.taobao.speech.util;
 
 import android.content.Context;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -68,7 +68,7 @@ public abstract class a implements b {
         HashMap hashMap = new HashMap();
         hashMap.put("status", String.valueOf(i));
         hashMap.put("result", str != null ? str : "");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 hashMap.put("asr", JSON.parseObject(str).getString("result"));
             } catch (Throwable unused) {

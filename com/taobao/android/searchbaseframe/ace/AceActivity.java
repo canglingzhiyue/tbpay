@@ -8,7 +8,7 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alipay.android.msp.framework.statisticsv2.model.StEvent;
@@ -134,7 +134,7 @@ public class AceActivity extends Activity {
         }
         Uri data = getIntent().getData();
         String path = data.getPath();
-        if (TextUtils.isEmpty(path)) {
+        if (StringUtils.isEmpty(path)) {
             return;
         }
         if (path.contains("connect")) {
@@ -164,7 +164,7 @@ public class AceActivity extends Activity {
         aceStrategy.setParams(a2);
         aceStrategy.setId(-2);
         b.a(aceStrategy);
-        if (TextUtils.isEmpty(remove)) {
+        if (StringUtils.isEmpty(remove)) {
             return;
         }
         n.a(this, "https://s.m.taobao.com/h5?q=" + remove);
@@ -177,7 +177,7 @@ public class AceActivity extends Activity {
             return;
         }
         String queryParameter = uri.getQueryParameter("content");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return;
         }
         a.b(this);
@@ -196,7 +196,7 @@ public class AceActivity extends Activity {
         String queryParameter3 = uri.getQueryParameter("scriptParams");
         String queryParameter4 = uri.getQueryParameter("mockUrl");
         String queryParameter5 = uri.getQueryParameter("requestAlias");
-        if (TextUtils.isEmpty(queryParameter2) || TextUtils.isEmpty(queryParameter5)) {
+        if (StringUtils.isEmpty(queryParameter2) || StringUtils.isEmpty(queryParameter5)) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -207,7 +207,7 @@ public class AceActivity extends Activity {
         aceSubStrategy.setId(queryParameter2);
         aceSubStrategy.setRequestParams(hashMap);
         b.a(queryParameter5, aceSubStrategy);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return;
         }
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.taobao.android.searchbaseframe.ace.AceActivity.2
@@ -256,7 +256,7 @@ public class AceActivity extends Activity {
         final String queryParameter = uri.getQueryParameter("uuid");
         final String queryParameter2 = uri.getQueryParameter("host");
         final String d = d();
-        if (TextUtils.isEmpty(queryParameter) || TextUtils.isEmpty(queryParameter2) || TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(queryParameter) || StringUtils.isEmpty(queryParameter2) || StringUtils.isEmpty(d)) {
             return;
         }
         imp.a().f().a(new Runnable() { // from class: com.taobao.android.searchbaseframe.ace.AceActivity.4

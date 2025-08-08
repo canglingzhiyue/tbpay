@@ -4,7 +4,7 @@ import android.taobao.windvane.c;
 import android.taobao.windvane.config.j;
 import android.taobao.windvane.ha.b;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.adl;
 import tb.kge;
@@ -24,7 +24,7 @@ public class WVErrorManager {
             ipChange.ipc$dispatch("37294e5a", new Object[]{this, str, str2, str3, str4, new Boolean(z)});
             return;
         }
-        if (!TextUtils.isEmpty(str) && adl.a().b(str) != null) {
+        if (!StringUtils.isEmpty(str) && adl.a().b(str) != null) {
             m.b(TAG, "found grey page: " + str);
         }
         String h = c.a().b().h();
@@ -34,7 +34,7 @@ public class WVErrorManager {
         if (!j.commonConfig.aN) {
             b.a("WINDVANE_JS_ERROR", str, str3, str2, str4, str);
         } else if (z) {
-            if (TextUtils.isEmpty(str2) && TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str2) && StringUtils.isEmpty(str3)) {
                 return;
             }
             b.a("WINDVANE_JS_ERROR", str, str3, str2, str4, str);

@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -364,9 +364,9 @@ public class StrategyEntity implements Serializable {
                         StrategyResultParser.ChannelAttribute[] channelAttributeArr = channel.attributes;
                         if (channelAttributeArr != null && channelAttributeArr.length != 0 && strArr != null && strArr.length != 0) {
                             for (StrategyResultParser.ChannelAttribute channelAttribute : channelAttributeArr) {
-                                if (channelAttribute != null && !TextUtils.isEmpty(channelAttribute.protocol)) {
+                                if (channelAttribute != null && !StringUtils.isEmpty(channelAttribute.protocol)) {
                                     for (String str : strArr) {
-                                        if (!TextUtils.isEmpty(str)) {
+                                        if (!StringUtils.isEmpty(str)) {
                                             arrayList.add(ProxyStrategy.create(str, channelAttribute.port, channelAttribute.protocol));
                                         }
                                     }

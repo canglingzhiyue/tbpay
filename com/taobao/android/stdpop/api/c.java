@@ -5,7 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridInstanceRenderMode;
 import com.alibaba.fastjson.JSONObject;
@@ -365,7 +365,7 @@ public final class c {
         if (b2) {
             String L = dmr.L();
             String str = url;
-            if (!TextUtils.isEmpty(str) && n.b((CharSequence) L, (CharSequence) n.b((CharSequence) str, new String[]{"?"}, false, 0, 6, (Object) null).get(0), false, 2, (Object) null)) {
+            if (!StringUtils.isEmpty(str) && n.b((CharSequence) L, (CharSequence) n.b((CharSequence) str, new String[]{"?"}, false, 0, 6, (Object) null).get(0), false, 2, (Object) null)) {
                 Pair[] pairArr = new Pair[1];
                 String str2 = this.k;
                 String str3 = UltronTradeHybridInstanceRenderMode.SURFACE;
@@ -395,7 +395,7 @@ public final class c {
         q.d(fragment, "fragment");
         FragmentContainer fragmentContainer = new FragmentContainer();
         fragmentContainer.setChildFragment(fragment);
-        if (!TextUtils.isEmpty(this.f15272a)) {
+        if (!StringUtils.isEmpty(this.f15272a)) {
             fragmentContainer.setTitle(this.f15272a);
         }
         Activity activity = act;

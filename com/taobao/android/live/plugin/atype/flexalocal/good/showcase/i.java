@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.showcase;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.EnterGoodsData;
@@ -147,23 +147,23 @@ public class i implements d, ddv {
             String str3 = (String) hashMap.get("eventType");
             String str4 = (String) hashMap.get("notifyId");
             VideoInfo videoInfo = this.b;
-            if (videoInfo == null || TextUtils.equals(videoInfo.liveId, str2)) {
+            if (videoInfo == null || StringUtils.equals(videoInfo.liveId, str2)) {
                 his.b("ShowcaseControllerCommon", "onEvent | liveid check failed. liveId=" + str2);
                 return;
             }
             his.a("ShowcaseControllerCommon", "onEvent | eventType=" + str3);
-            if (TextUtils.equals(tqa.AUCTION_CARD_SHOW, str3)) {
+            if (StringUtils.equals(tqa.AUCTION_CARD_SHOW, str3)) {
                 this.e = new a(str3, str4);
                 a(false);
-            } else if (!TextUtils.equals(tqa.AUCTION_CARD_HIDE, str3)) {
+            } else if (!StringUtils.equals(tqa.AUCTION_CARD_HIDE, str3)) {
             } else {
                 a(true);
                 a(false, new a(str3, str4));
                 this.e = null;
             }
-        } else if (TextUtils.equals("com.taobao.taolive.goods.showcase.close", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.goods.showcase.close", str)) {
             a();
-        } else if (TextUtils.equals("com.taobao.taolive.goods.showcase.update", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.goods.showcase.update", str)) {
             if (!(obj instanceof LiveItem)) {
                 return;
             }

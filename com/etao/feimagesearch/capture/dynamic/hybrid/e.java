@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.capture.dynamic.hybrid;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -253,7 +253,7 @@ public abstract class e extends ctc<a, com.etao.feimagesearch.model.b, CaptureMa
             return;
         }
         q.c(target, "target");
-        if (bVar == null || TextUtils.isEmpty(bVar.e()) || (pVar = this.f) == null) {
+        if (bVar == null || StringUtils.isEmpty(bVar.e()) || (pVar = this.f) == null) {
             return;
         }
         pVar.sendInstanceMessage(target, bVar.e(), bVar.f());

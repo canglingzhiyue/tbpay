@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.AlimamaAdvertising;
@@ -127,7 +127,7 @@ public class fie extends fic {
         hashMap.put(b.AFC_ID, "");
         try {
             String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-            if (!TextUtils.isEmpty(globalProperty)) {
+            if (!StringUtils.isEmpty(globalProperty)) {
                 hashMap.put(b.AFC_ID, globalProperty);
             }
             AlimamaAdvertising.instance().commitTaokeInfo(str, fhiVar.e(), fhiVar.k, fhiVar.f(), hashMap);
@@ -150,11 +150,11 @@ public class fie extends fic {
             return null;
         }
         String string = jSONObject2.getString("adUrlType");
-        if (TextUtils.isEmpty(string) || (jSONObject3 = fhiVar.q.getJSONObject("adArgs")) == null) {
+        if (StringUtils.isEmpty(string) || (jSONObject3 = fhiVar.q.getJSONObject("adArgs")) == null) {
             return null;
         }
         String string2 = jSONObject3.getString(string);
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return null;
         }
         JSONObject jSONObject4 = jSONObject2.getJSONObject(DxContainerActivity.PARAMS_URL_BUSINESS_PARAMS);
@@ -178,7 +178,7 @@ public class fie extends fic {
             return null;
         }
         String handleAdUrlForClickid = AlimamaAdvertising.instance().handleAdUrlForClickid(string2);
-        if (TextUtils.isEmpty(handleAdUrlForClickid)) {
+        if (StringUtils.isEmpty(handleAdUrlForClickid)) {
             return null;
         }
         HashMap hashMap = new HashMap();

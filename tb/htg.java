@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.meta.data.a;
@@ -109,7 +109,7 @@ public class htg extends a {
             return ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue();
         }
         boolean e = super.e();
-        return TextUtils.equals(this.f28775a.pageName, nne.PAGE_NAME_INSHOP) ? e : e || g() <= 0 || this.f28775a.page >= g();
+        return StringUtils.equals(this.f28775a.pageName, nne.PAGE_NAME_INSHOP) ? e : e || g() <= 0 || this.f28775a.page >= g();
     }
 
     @Override // com.taobao.android.meta.data.a

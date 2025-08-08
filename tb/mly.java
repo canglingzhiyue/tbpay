@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Map;
@@ -30,22 +30,22 @@ public interface mly {
         }
 
         public static void $default$c(mly mlyVar, String str) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return;
             }
             throw new RuntimeException("The key is empty.");
         }
 
         public static String d(String str) {
-            return TextUtils.isEmpty(str) ? str : str.replace("^", "&mksep").replace("=", "&mkequal");
+            return StringUtils.isEmpty(str) ? str : str.replace("^", "&mksep").replace("=", "&mkequal");
         }
 
         public static String e(String str) {
-            return TextUtils.isEmpty(str) ? str : str.replace("=", "&mkequal");
+            return StringUtils.isEmpty(str) ? str : str.replace("=", "&mkequal");
         }
 
         public static String f(String str) {
-            return TextUtils.isEmpty(str) ? str : str.replace("&mksep", "^").replace("&mkequal", "=");
+            return StringUtils.isEmpty(str) ? str : str.replace("&mksep", "^").replace("&mkequal", "=");
         }
     }
 
@@ -60,7 +60,7 @@ public interface mly {
             }
 
             public static a $default$b(a aVar, String str, String str2) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     aVar.a(str, str2);
                 }
                 return aVar;

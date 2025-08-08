@@ -10,7 +10,7 @@ import android.graphics.Typeface;
 import android.location.LocationManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.configservice.ConfigManger;
 import com.alipay.android.msp.configservice.UpdatePolicyEvaluator;
@@ -495,7 +495,7 @@ public class MspWalletImpl implements IWalletEngine {
             if (clipboardManager != null) {
                 clipboardManager.setPrimaryClip(newPlainText);
                 if (clipboardManager.getPrimaryClip() != null) {
-                    return TextUtils.equals(clipboardManager.getPrimaryClip().getItemAt(0).getText().toString(), str);
+                    return StringUtils.equals(clipboardManager.getPrimaryClip().getItemAt(0).getText().toString(), str);
                 }
             }
         } catch (Throwable unused) {
@@ -513,7 +513,7 @@ public class MspWalletImpl implements IWalletEngine {
         if (tradeContextByBizId != null) {
             Map<String, String> extendParamsMap = tradeContextByBizId.getExtendParamsMap();
             if (extendParamsMap.containsKey("agednessVersion")) {
-                return TextUtils.equals(extendParamsMap.get("agednessVersion"), "true");
+                return StringUtils.equals(extendParamsMap.get("agednessVersion"), "true");
             }
         }
         return false;

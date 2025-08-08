@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.g;
 import com.taobao.tao.log.statistics.ErrorCode;
@@ -128,7 +128,7 @@ public class oln implements olo {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("42cb42dd", new Object[]{context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         File parentFile = context.getFilesDir().getParentFile();

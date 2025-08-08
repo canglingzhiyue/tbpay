@@ -3,7 +3,7 @@ package com.ta.utdid2.device;
 import android.content.Context;
 import android.os.Environment;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.Variables;
@@ -167,7 +167,7 @@ public class UTUtdid {
         }
         String readUtdid = readUtdid();
         if (isValidUtdid(readUtdid)) {
-            if (!TextUtils.isEmpty(readUtdid) && readUtdid.endsWith("\n")) {
+            if (!StringUtils.isEmpty(readUtdid) && readUtdid.endsWith("\n")) {
                 this.mUtdid = readUtdid.substring(0, readUtdid.length() - 1);
             } else {
                 this.mUtdid = readUtdid;
@@ -505,7 +505,7 @@ public class UTUtdid {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("52942b00", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         File file = new File(str);
@@ -584,7 +584,7 @@ public class UTUtdid {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("42bf3bc3", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (str.endsWith("\n")) {

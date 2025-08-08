@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -34,14 +34,14 @@ public class nzp implements ShareShortenAdapter {
             return (String) ipChange.ipc$dispatch("aaf7dde5", new Object[]{this, str});
         }
         String str3 = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         TBShareContent j = e.b().j();
         if (j != null) {
             str3 = j.businessId;
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "tbshare";
         }
         MtopRequest mtopRequest = new MtopRequest();
@@ -69,7 +69,7 @@ public class nzp implements ShareShortenAdapter {
             }
             try {
                 String string = syncRequest.getDataJsonObject().getString("shortUrl");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     str = string;
                 }
                 AppMonitor.Alarm.commitSuccess("share", "generateShortUrl", str2);

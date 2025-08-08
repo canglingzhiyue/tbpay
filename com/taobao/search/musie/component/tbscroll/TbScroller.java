@@ -2,7 +2,7 @@ package com.taobao.search.musie.component.tbscroll;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -157,7 +157,7 @@ public class TbScroller extends UINode implements c, BounceScrollView.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c0ca003a", new Object[]{this, str});
-        } else if (TextUtils.equals(str, this.lastSyncKey)) {
+        } else if (StringUtils.equals(str, this.lastSyncKey)) {
         } else {
             BounceScrollView bounceScrollView = (BounceScrollView) getMountContent();
             unregisterSyncKey(this.lastSyncKey, bounceScrollView);
@@ -306,7 +306,7 @@ public class TbScroller extends UINode implements c, BounceScrollView.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("59d8c14f", new Object[]{this, str, bounceScrollView});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.lastSyncKey = str;
             this.scrollOffsetManager.a(str, bounceScrollView);
@@ -317,7 +317,7 @@ public class TbScroller extends UINode implements c, BounceScrollView.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e630a1a8", new Object[]{this, str, bounceScrollView});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.lastSyncKey = null;
             this.scrollOffsetManager.b(str, bounceScrollView);
@@ -575,7 +575,7 @@ public class TbScroller extends UINode implements c, BounceScrollView.a {
             return;
         }
         String str = (String) getAttribute(PROP_SYNC_KEY);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.scrollOffsetManager.a(str, (BounceScrollView) view, i);

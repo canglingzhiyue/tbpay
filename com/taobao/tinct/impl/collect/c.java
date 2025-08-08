@@ -1,7 +1,7 @@
 package com.taobao.tinct.impl.collect;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tinct.model.InstantPatchChangeInfo;
@@ -67,7 +67,7 @@ public class c {
             r4 = 2
             if (r1 == 0) goto L7c
             java.lang.String r1 = r14.d()
-            boolean r5 = android.text.TextUtils.isEmpty(r1)
+            boolean r5 = android.text.StringUtils.isEmpty(r1)
             if (r5 != 0) goto L7c
             java.lang.Class<com.taobao.tinct.impl.collect.ChangeRecord> r5 = com.taobao.tinct.impl.collect.ChangeRecord.class
             java.lang.Object r1 = com.alibaba.fastjson.JSON.parseObject(r1, r5)     // Catch: java.lang.Exception -> L74
@@ -153,7 +153,7 @@ public class c {
         }
         String patchVersion = InstantPatchChangeInfo.getPatchVersion(this.b);
         String patchType = InstantPatchChangeInfo.getPatchType(this.b);
-        if (TextUtils.isEmpty(patchVersion)) {
+        if (StringUtils.isEmpty(patchVersion)) {
             return null;
         }
         return new InstantPatchChangeInfo(patchVersion, patchType);
@@ -166,7 +166,7 @@ public class c {
         }
         String a2 = com.taobao.tinct.model.b.a(this.b);
         String b = com.taobao.tinct.model.b.b(this.b);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         return new com.taobao.tinct.model.b(a2, b);
@@ -212,7 +212,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(this.f22950a);

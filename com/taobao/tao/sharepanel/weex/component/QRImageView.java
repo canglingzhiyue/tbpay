@@ -2,7 +2,7 @@ package com.taobao.tao.sharepanel.weex.component;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -52,7 +52,7 @@ public class QRImageView extends WXComponent<ImageView> implements obj.c {
         c cVar = new c(null);
         String optString = basicComponentData.getAttrs().optString("platform");
         String optString2 = basicComponentData.getAttrs().optString("qrType");
-        boolean equals = TextUtils.equals("true", basicComponentData.getAttrs().optString("qr4ScanOnly"));
+        boolean equals = StringUtils.equals("true", basicComponentData.getAttrs().optString("qr4ScanOnly"));
         if (equals) {
             this.mDataBinder = new obj();
         } else {

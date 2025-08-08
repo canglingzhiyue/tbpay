@@ -1,6 +1,6 @@
 package com.vivo.push.restructure.c;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.b.x;
 import com.vivo.push.m;
 import com.vivo.push.util.u;
@@ -19,7 +19,7 @@ public final class b implements a {
     @Override // com.vivo.push.restructure.c.a
     public final void a(int i, String str) {
         u.d("ReportImpl", "reportIntercepted() , msgID = " + str + ", code = " + i);
-        if (i <= 0 || TextUtils.isEmpty(str)) {
+        if (i <= 0 || StringUtils.isEmpty(str)) {
             return;
         }
         x xVar = new x(i);
@@ -28,7 +28,7 @@ public final class b implements a {
         com.vivo.push.restructure.b.a aVar = this.f24231a;
         if (aVar != null) {
             String a2 = aVar.a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 hashMap.put("remoteAppId", a2);
             }
         }

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -473,7 +473,7 @@ public class MspWebActivity extends AbsActivity implements MspWebContract.IView 
                 int i = 0;
                 while (i < jSONArray.size()) {
                     JSONObject jSONObject3 = jSONArray.getJSONObject(i);
-                    if (jSONObject3 == null || TextUtils.isEmpty(jSONObject3.getString(str2))) {
+                    if (jSONObject3 == null || StringUtils.isEmpty(jSONObject3.getString(str2))) {
                         str = str2;
                     } else {
                         final JSONObject jSONObject4 = jSONObject3.getJSONObject("act");

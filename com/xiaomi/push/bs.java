@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.File;
 import java.io.FilenameFilter;
 
@@ -8,6 +8,6 @@ import java.io.FilenameFilter;
 class bs implements FilenameFilter {
     @Override // java.io.FilenameFilter
     public boolean accept(File file, String str) {
-        return !TextUtils.isEmpty(str) && !str.toLowerCase().endsWith(".lock");
+        return !StringUtils.isEmpty(str) && !str.toLowerCase().endsWith(".lock");
     }
 }

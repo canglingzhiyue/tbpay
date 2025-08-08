@@ -7,7 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -448,13 +448,13 @@ public class PriceView extends View implements a.InterfaceC0770a {
         sb.append(this.mDecimalPriceText);
         sb.append(com.alibaba.ability.localization.b.a(R.string.app_yuan));
         String str2 = "";
-        if (TextUtils.isEmpty(this.mSalesText)) {
+        if (StringUtils.isEmpty(this.mSalesText)) {
             str = str2;
         } else {
             str = " " + this.mSalesText;
         }
         sb.append(str);
-        if (!TextUtils.isEmpty(this.mAreaText)) {
+        if (!StringUtils.isEmpty(this.mAreaText)) {
             str2 = " " + this.mAreaText;
         }
         sb.append(str2);
@@ -700,7 +700,7 @@ public class PriceView extends View implements a.InterfaceC0770a {
             ipChange.ipc$dispatch("5ddb25ac", new Object[]{this, str, new Integer(i), new Integer(i2)});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.mIconUrl = "";
             this.mIconWidth = 0;
             this.mIconHeight = 0;

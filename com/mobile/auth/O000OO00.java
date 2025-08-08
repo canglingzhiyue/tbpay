@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.security.MessageDigest;
 import java.util.UUID;
@@ -15,7 +15,7 @@ public class O000OO00 {
         try {
             String uuid = UUID.randomUUID().toString();
             String uuid2 = UUID.nameUUIDFromBytes((uuid + System.currentTimeMillis() + Math.random()).getBytes("utf8")).toString();
-            return !TextUtils.isEmpty(uuid2) ? uuid2.replace("-", "") : uuid2;
+            return !StringUtils.isEmpty(uuid2) ? uuid2.replace("-", "") : uuid2;
         } catch (Throwable th) {
             try {
                 ExceptionProcessor.processException(th);
@@ -29,10 +29,10 @@ public class O000OO00 {
 
     public static String O000000o(Context context) {
         try {
-            if (TextUtils.isEmpty(O00000Oo)) {
+            if (StringUtils.isEmpty(O00000Oo)) {
                 String O00000Oo2 = O00000Oo(context);
                 O00000Oo = O00000Oo2;
-                if (TextUtils.isEmpty(O00000Oo2)) {
+                if (StringUtils.isEmpty(O00000Oo2)) {
                     O00000Oo = O00000o0(context);
                     O000000o(context, O00000Oo);
                 }
@@ -82,7 +82,7 @@ public class O000OO00 {
 
     private static void O000000o(Context context, String str) {
         try {
-            if (!TextUtils.isEmpty(str) && context != null) {
+            if (!StringUtils.isEmpty(str) && context != null) {
                 O000O0o.O000000o(context, "key_d_i_u", str);
             }
         } catch (Throwable th) {
@@ -111,7 +111,7 @@ public class O000OO00 {
     private static String O00000o0(Context context) {
         try {
             String uuid = UUID.randomUUID().toString();
-            return TextUtils.isEmpty(uuid) ? "default" : O000000o(uuid + "default");
+            return StringUtils.isEmpty(uuid) ? "default" : O000000o(uuid + "default");
         } catch (Throwable th) {
             try {
                 th.printStackTrace();

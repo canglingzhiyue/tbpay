@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,7 +41,7 @@ public class iye {
             return;
         }
         b bVar = (b) eVar.i();
-        if (bVar == null || TextUtils.isEmpty(bVar.getType())) {
+        if (bVar == null || StringUtils.isEmpty(bVar.getType())) {
             return;
         }
         IDMComponent d = eVar.d();

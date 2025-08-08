@@ -1,7 +1,7 @@
 package com.taobao.pha.core.rescache;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.model.ResourcePrefetchModel;
@@ -72,7 +72,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9395bb52", new Object[]{this, resourcePrefetchModel});
-        } else if (resourcePrefetchModel != null && !TextUtils.isEmpty(resourcePrefetchModel.src)) {
+        } else if (resourcePrefetchModel != null && !StringUtils.isEmpty(resourcePrefetchModel.src)) {
             final Uri parse = Uri.parse(resourcePrefetchModel.src);
             if (resourcePrefetchModel.queryParams != null && !resourcePrefetchModel.queryParams.isEmpty()) {
                 Set<String> queryParameterNames = parse.getQueryParameterNames();
@@ -182,15 +182,15 @@ public class h {
             android.net.Uri r6 = android.net.Uri.parse(r6)
             java.lang.String r7 = r6.getScheme()
             java.lang.String r8 = r11.getScheme()
-            boolean r7 = android.text.TextUtils.equals(r7, r8)
+            boolean r7 = android.text.StringUtils.equals(r7, r8)
             if (r7 == 0) goto L2a
             java.lang.String r7 = r6.getHost()
             java.lang.String r8 = r11.getHost()
-            boolean r7 = android.text.TextUtils.equals(r7, r8)
+            boolean r7 = android.text.StringUtils.equals(r7, r8)
             if (r7 == 0) goto L2a
             java.lang.String r7 = r6.getPath()
             java.lang.String r8 = r11.getPath()
-            boolean r7 = android.text.TextUtils.equals(r7, r8)
+            boolean r7 = android.text.StringUtils.equals(r7, r8)
             if (r7 == 0) goto L2a
             java.util.List<java.lang.String> r7 = r5.queryParams
             if (r7 == 0) goto La9
@@ -213,7 +213,7 @@ public class h {
         L9a:
             java.lang.String r9 = r6.getQueryParameter(r8)
             java.lang.String r8 = r11.getQueryParameter(r8)
-            boolean r8 = android.text.TextUtils.equals(r9, r8)
+            boolean r8 = android.text.StringUtils.equals(r9, r8)
             if (r8 != 0) goto L86
             goto L98
         La9:

@@ -1,7 +1,7 @@
 package com.taobao.accs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
@@ -687,7 +687,7 @@ public class AccsClientConfig implements Serializable {
             if (ipChange instanceof IpChange) {
                 return (AccsClientConfig) ipChange.ipc$dispatch("89319e87", new Object[]{this});
             }
-            if (TextUtils.isEmpty(this.mAppKey)) {
+            if (StringUtils.isEmpty(this.mAppKey)) {
                 throw new AccsException("appkey null");
             }
             AccsClientConfig accsClientConfig = new AccsClientConfig();
@@ -712,15 +712,15 @@ public class AccsClientConfig implements Serializable {
             if (AccsClientConfig.access$900(accsClientConfig) < 0) {
                 AccsClientConfig.access$902(accsClientConfig, AccsClientConfig.mEnv);
             }
-            if (TextUtils.isEmpty(AccsClientConfig.access$100(accsClientConfig))) {
+            if (StringUtils.isEmpty(AccsClientConfig.access$100(accsClientConfig))) {
                 AccsClientConfig.access$1702(accsClientConfig, 0);
             } else {
                 AccsClientConfig.access$1702(accsClientConfig, 2);
             }
-            if (TextUtils.isEmpty(AccsClientConfig.access$600(accsClientConfig))) {
+            if (StringUtils.isEmpty(AccsClientConfig.access$600(accsClientConfig))) {
                 AccsClientConfig.access$602(accsClientConfig, AccsClientConfig.DEFAULT_CENTER_HOSTS[AccsClientConfig.access$900(accsClientConfig)]);
             }
-            if (TextUtils.isEmpty(AccsClientConfig.access$700(accsClientConfig))) {
+            if (StringUtils.isEmpty(AccsClientConfig.access$700(accsClientConfig))) {
                 AccsClientConfig.access$702(accsClientConfig, "default");
             }
             int access$900 = AccsClientConfig.access$900(accsClientConfig);

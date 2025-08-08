@@ -3,7 +3,7 @@ package com.taobao.android.meta.structure.childpage;
 import android.app.Activity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
@@ -992,7 +992,7 @@ public class g extends htn<FrameLayout, com.taobao.android.meta.structure.childp
         q.c(widget, "widget");
         q.c(header, "header");
         q.c(type, "type");
-        if (TextUtils.equals(type, "list")) {
+        if (StringUtils.equals(type, "list")) {
             h hVar = this.b;
             if (hVar == null) {
                 q.b("listWidget");

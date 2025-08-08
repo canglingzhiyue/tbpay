@@ -1,6 +1,6 @@
 package com.huawei.hms.hatool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -57,7 +57,7 @@ public class u {
         ArrayList arrayList4 = new ArrayList();
         for (b1 b1Var : this.f7489a) {
             String c = b1Var.c();
-            if (TextUtils.isEmpty(c) || "oper".equals(c)) {
+            if (StringUtils.isEmpty(c) || "oper".equals(c)) {
                 arrayList4.add(b1Var);
             } else if ("maint".equals(c)) {
                 arrayList.add(b1Var);

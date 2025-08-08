@@ -3,7 +3,7 @@ package com.taobao.phenix.intf;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -355,7 +355,7 @@ public class PhenixCreator extends a {
         if (ipChange instanceof IpChange) {
             return (PhenixCreator) ipChange.ipc$dispatch("865e0370", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mImageRequest.b(str);
         }
         return this;
@@ -386,14 +386,14 @@ public class PhenixCreator extends a {
             return (PhenixCreator) ipChange.ipc$dispatch("7d2e513e", new Object[]{this, str, str2});
         }
         this.mImageRequest.a(str, str2);
-        if (b.h().L() && esr.BUNDLE_BIZ_CODE.equals(str) && !TextUtils.isEmpty(str2)) {
+        if (b.h().L() && esr.BUNDLE_BIZ_CODE.equals(str) && !StringUtils.isEmpty(str2)) {
             String[] strArr = esr.INDEPENDENT_STORAGE_BIZS;
             int length = strArr.length;
             int i = 0;
             while (true) {
                 if (i >= length) {
                     break;
-                } else if (TextUtils.equals(strArr[i], str2)) {
+                } else if (StringUtils.equals(strArr[i], str2)) {
                     niw.d(TAG, "image independent Cache bizId=%s", str2);
                     this.mImageRequest.e(102);
                     break;
@@ -644,7 +644,7 @@ public class PhenixCreator extends a {
             return (c) ipChange.ipc$dispatch("3e75300d", new Object[]{this});
         }
         c m = this.mImageRequest.m();
-        if (TextUtils.isEmpty(this.mImageRequest.p())) {
+        if (StringUtils.isEmpty(this.mImageRequest.p())) {
             com.taobao.phenix.intf.event.a<FailPhenixEvent> aVar = this.mFailListener;
             if (aVar != null) {
                 aVar.onHappen(new FailPhenixEvent(m));

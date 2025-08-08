@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
 import com.alipay.android.msp.framework.db.MspDBHelper;
@@ -151,7 +151,7 @@ public final class jpr {
             hashMap.put("sampling", String.valueOf((int) (1.0f / f)));
             hashMap.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, sdbVar.b());
             hashMap.put("type", "pv");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("uniqId", str);
             }
             hashMap.put("message", "__PV");
@@ -212,11 +212,11 @@ public final class jpr {
             hashMap.put("sampling", String.valueOf((int) (1.0f / f)));
             hashMap.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, jpuVar.b());
             hashMap.put("type", "error");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("uniqId", str);
             }
             String h = jpuVar.h();
-            if (TextUtils.isEmpty(h)) {
+            if (StringUtils.isEmpty(h)) {
                 hashMap.put("message", Uri.encode(jpuVar.d()));
             } else {
                 hashMap.put("message", Uri.encode(h));
@@ -276,7 +276,7 @@ public final class jpr {
             hashMap.put("sampling", String.valueOf((int) (1.0f / f)));
             hashMap.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, jptVar.b());
             hashMap.put("type", BizTaskData.MANUAL_TIME);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("uniqId", str);
             }
             hashMap.put("code", Uri.encode(jptVar.f()));
@@ -359,7 +359,7 @@ public final class jpr {
             hashMap.put("sampling", String.valueOf((int) (1.0f / f)));
             hashMap.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, sdaVar.b());
             hashMap.put("type", "mtop_perf");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("uniqId", str);
             }
             hashMap.put("api", Uri.encode(sdaVar.g()));
@@ -390,7 +390,7 @@ public final class jpr {
         fgf.a f = fgfVar.f();
         if (f == null) {
             jqg.a(fgfVar.c(), "UltronJSTracker#reportPerfException", "PerfModel.Msg is null");
-        } else if (TextUtils.isEmpty(f.a())) {
+        } else if (StringUtils.isEmpty(f.a())) {
             jqg.a("UltronJSTracker", "reportPerf#name不能为空");
         } else if (f.b() == null || f.b().isEmpty()) {
             jqg.a("UltronJSTracker", "reportPerf#必须添加stage");
@@ -442,7 +442,7 @@ public final class jpr {
             hashMap.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, fgfVar.b());
             hashMap.put("collection_url", fgfVar.e());
             hashMap.put("type", h.MTP_PERF);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("uniqId", str);
             }
             HashMap hashMap2 = new HashMap();

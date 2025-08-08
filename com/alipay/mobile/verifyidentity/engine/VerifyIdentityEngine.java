@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.engine;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.triver.triver_shop.newShop.ext.g;
 import com.alipay.mobile.verifyidentity.callback.VIListenerByVerifyId;
 import com.alipay.mobile.verifyidentity.callback.VerifyIdentityListener;
@@ -93,7 +93,7 @@ public class VerifyIdentityEngine {
         }
         String str3 = f5869a;
         VerifyLogCat.d(str3, str2 + " add token: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (verifyIdentityListener != null) {
                 verifyIdentityListener.onVerifyResult(str, str2, new VerifyIdentityResult("2000"));
             }
@@ -143,7 +143,7 @@ public class VerifyIdentityEngine {
         }
         String str4 = f5869a;
         VerifyLogCat.d(str4, str3 + " add verifyId: " + str + " token: " + str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (vIListenerByVerifyId != null) {
                 vIListenerByVerifyId.onVerifyResult(str, str2, str3, new VerifyIdentityResult("2000"));
             }
@@ -169,7 +169,7 @@ public class VerifyIdentityEngine {
         bundle.putString("logonId", str);
         String str6 = f5869a;
         VerifyLogCat.d(str6, "sceneId: " + str2 + ", bizId: " + str3 + ", bizRequestData: " + str4);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             if (vIListenerByVerifyId != null) {
                 vIListenerByVerifyId.onVerifyResult("", "", str5, new VerifyIdentityResult("2000"));
             }
@@ -223,7 +223,7 @@ public class VerifyIdentityEngine {
         }
         String str7 = f5869a;
         VerifyLogCat.d(str7, " add verifyId: " + str + " token: " + str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (vIListenerByVerifyId != null) {
                 vIListenerByVerifyId.onVerifyResult(str, str2, str6, new VerifyIdentityResult("2000"));
             }
@@ -263,7 +263,7 @@ public class VerifyIdentityEngine {
         }
         String str4 = f5869a;
         VerifyLogCat.i(str4, "unifiedStartByVerifyId | verifyId: " + str + ", verifyData:" + str2);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             VerifyLogCat.i(f5869a, "verifyData，切到标准VerifyId模式");
             startVerifyByVerifyId(str, null, "", bundle, vIListenerByVerifyId, vIMessageChannel);
             return;

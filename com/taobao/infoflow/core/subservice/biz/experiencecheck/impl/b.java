@@ -1,6 +1,6 @@
 package com.taobao.infoflow.core.subservice.biz.experiencecheck.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -37,9 +37,9 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("266fb88", new Object[]{this, jSONObject});
-        } else if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("enableExperienceCheck"))) {
+        } else if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("enableExperienceCheck"))) {
         } else {
-            this.f17377a = TextUtils.equals(jSONObject.getString("enableExperienceCheck"), "true");
+            this.f17377a = StringUtils.equals(jSONObject.getString("enableExperienceCheck"), "true");
             this.b = jSONObject.getString("checkOpportunity");
             this.c = jSONObject.getString("checkKeyword");
         }

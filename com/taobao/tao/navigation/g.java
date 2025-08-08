@@ -3,7 +3,7 @@ package com.taobao.tao.navigation;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -627,7 +627,7 @@ public class g {
         }
         if (obj != null && getClass() == obj.getClass()) {
             g gVar = (g) obj;
-            if (this.t != gVar.t || !TextUtils.equals(this.b, gVar.b) || !TextUtils.equals(this.h, gVar.h) || !TextUtils.equals(this.i, gVar.i)) {
+            if (this.t != gVar.t || !StringUtils.equals(this.b, gVar.b) || !StringUtils.equals(this.h, gVar.h) || !StringUtils.equals(this.i, gVar.i)) {
                 return false;
             }
             String str = this.j;

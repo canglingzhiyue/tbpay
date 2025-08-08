@@ -1,7 +1,7 @@
 package com.ali.user.open.oauth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.Site;
 import com.ali.user.open.oauth.alipay3.AlipayOauthServiceProviderImpl;
@@ -81,7 +81,7 @@ public class OauthServiceProviderFactory {
         ArrayList arrayList = new ArrayList();
         Set<String> allSessionSites = SessionManager.INSTANCE.getAllSessionSites();
         for (String str : this.mServiceProviderMap.keySet()) {
-            if (this.mServiceProviderMap.get(str) != null && !TextUtils.equals(str, AliMemberSDK.getMasterSite())) {
+            if (this.mServiceProviderMap.get(str) != null && !StringUtils.equals(str, AliMemberSDK.getMasterSite())) {
                 if (allSessionSites != null) {
                     allSessionSites.remove(str);
                 }
@@ -92,7 +92,7 @@ public class OauthServiceProviderFactory {
         if (allSessionSites != null) {
             for (String str2 : allSessionSites) {
                 try {
-                    if (!TextUtils.equals(str2, AliMemberSDK.getMasterSite())) {
+                    if (!StringUtils.equals(str2, AliMemberSDK.getMasterSite())) {
                         arrayList.add(str2);
                         ((SessionService) AliMemberSDK.getService(SessionService.class)).logout(str2);
                     }

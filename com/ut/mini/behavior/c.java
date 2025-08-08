@@ -1,6 +1,6 @@
 package com.ut.mini.behavior;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.behavior.trigger.Scene;
 import com.ut.mini.h;
@@ -91,7 +91,7 @@ public class c {
             ipChange.ipc$dispatch("8282d078", new Object[]{this, str, dVar});
             return;
         }
-        if (!TextUtils.isEmpty(str) && dVar != null) {
+        if (!StringUtils.isEmpty(str) && dVar != null) {
             List<d> list = this.b.get(str);
             if (list == null) {
                 list = new ArrayList<>();
@@ -109,7 +109,7 @@ public class c {
             ipChange.ipc$dispatch("373a285f", new Object[]{this, str, dVar});
             return;
         }
-        if (!TextUtils.isEmpty(str) && dVar != null) {
+        if (!StringUtils.isEmpty(str) && dVar != null) {
             List<d> list = this.b.get(str);
             if (list == null) {
                 return;

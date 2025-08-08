@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.alibaba.fastjson.JSON;
@@ -92,7 +92,7 @@ public class e extends b {
         this.e = new ImageView(this.f13180a);
         this.e.setScaleType(ImageView.ScaleType.FIT_XY);
         String queryParameter = this.b.b.getQueryParameter("extraData");
-        if (TextUtils.isEmpty(queryParameter) || (parseArray = JSON.parseArray(queryParameter, a.class)) == null || parseArray.isEmpty()) {
+        if (StringUtils.isEmpty(queryParameter) || (parseArray = JSON.parseArray(queryParameter, a.class)) == null || parseArray.isEmpty()) {
             return;
         }
         final a aVar = (a) parseArray.get(0);

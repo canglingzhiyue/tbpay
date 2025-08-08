@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.Arrays;
@@ -488,7 +488,7 @@ public class o {
             return i;
         }
         String a2 = a("taolive", "SurfaceViewSDKVersion", "surfaceViewSDKVersion", "" + i);
-        return !TextUtils.isEmpty(a2) ? com.taobao.taolive.room.utils.v.a(a2, i) : i;
+        return !StringUtils.isEmpty(a2) ? com.taobao.taolive.room.utils.v.a(a2, i) : i;
     }
 
     public static boolean a(String str, boolean z2) {

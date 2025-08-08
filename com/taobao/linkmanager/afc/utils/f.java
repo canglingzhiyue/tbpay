@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.linkmanager.afc.reduction.LoginResultBean;
 import com.taobao.linkmanager.afc.utils.f;
@@ -66,7 +66,7 @@ public class f {
                         return;
                     }
                     com.taobao.flowcustoms.afc.utils.c.a("linkx", "LinkLoginUtils === LinkLoginFree === 获取到的免登信息：" + str);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         com.taobao.linkmanager.afc.reduction.a aVar2 = com.taobao.linkmanager.afc.reduction.a.this;
                         if (aVar2 == null) {
                             return;
@@ -75,7 +75,7 @@ public class f {
                         return;
                     }
                     LoginResultBean a2 = com.taobao.linkmanager.afc.reduction.c.a().a(str);
-                    if (TextUtils.isEmpty(a2.loginToken)) {
+                    if (StringUtils.isEmpty(a2.loginToken)) {
                         com.taobao.linkmanager.afc.reduction.a aVar3 = com.taobao.linkmanager.afc.reduction.a.this;
                         if (aVar3 == null) {
                             return;

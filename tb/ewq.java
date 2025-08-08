@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.template.ActionModel;
 import com.taobao.android.detail.sdk.model.template.b;
@@ -40,7 +40,7 @@ public class ewq extends c<e> {
         Iterator<b> it = arrayList.iterator();
         while (it.hasNext()) {
             b next = it.next();
-            if (!TextUtils.isEmpty(next.f10307a)) {
+            if (!StringUtils.isEmpty(next.f10307a)) {
                 this.b.put(next.f10307a, next);
             }
         }

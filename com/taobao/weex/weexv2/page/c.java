@@ -1,7 +1,7 @@
 package com.taobao.weex.weexv2.page;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,9 +32,9 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && UnicornAdapterJNI.instance().libraryLoaded()) {
+        if (!StringUtils.isEmpty(str) && UnicornAdapterJNI.instance().libraryLoaded()) {
             String config = OrangeConfig.getInstance().getConfig("weex_v2_config", "url_map", "{\"market.m.taobao.com/app/newdetail/newdetail/pages/Home\":\"meta.m.taobao.com/app/detail-project/newdetail2/home201111\",\"market.m.taobao.com/app/newdetail/newdetail/pages/SuperItem\":\"meta.m.taobao.com/app/newdetail/super/home\"}");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 try {
                     Uri parse = Uri.parse(str);
                     String uri = parse.buildUpon().clearQuery().build().toString();
@@ -61,7 +61,7 @@ public class c {
                                     replaceFirst2 = str3;
                                 }
                                 String config2 = OrangeConfig.getInstance().getConfig("weex_v2_config", "transparent_url_list", "");
-                                if (!TextUtils.isEmpty(config2) && (split = config2.split(",")) != null) {
+                                if (!StringUtils.isEmpty(config2) && (split = config2.split(",")) != null) {
                                     for (String str5 : split) {
                                         if (uri.contains(str5)) {
                                             if (parse.isHierarchical() && parse.getQueryParameterNames().contains("wx_opaque")) {

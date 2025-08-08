@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.Constants;
@@ -70,7 +70,7 @@ public class t implements f.a {
             return;
         }
         apr.b("TnetSipHostPortMgr", "key", str, "value", str2);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         if ("zstd".equalsIgnoreCase(str)) {

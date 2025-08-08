@@ -3,7 +3,7 @@ package com.taobao.wireless.link.assistant.jsbridge;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -28,7 +28,7 @@ public class AssistantSupportJsBridge extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.equals(str, ACTION_ASSISTANT_SUPPORT)) {
+            if (StringUtils.equals(str, ACTION_ASSISTANT_SUPPORT)) {
                 boolean c = rjw.c(rjt.a().f33186a);
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("supportAssistant", c);

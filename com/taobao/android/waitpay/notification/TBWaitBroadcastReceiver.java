@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.aura.service.event.c;
 import com.alibaba.android.aura.service.event.d;
@@ -92,7 +92,7 @@ public class TBWaitBroadcastReceiver extends BroadcastReceiver {
             return;
         }
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         char c = 65535;

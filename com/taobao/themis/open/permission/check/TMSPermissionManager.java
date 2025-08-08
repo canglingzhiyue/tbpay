@@ -1,7 +1,7 @@
 package com.taobao.themis.open.permission.check;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.PermissionModel;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -75,7 +75,7 @@ public final class TMSPermissionManager {
             return (PermissionResult) ipChange.ipc$dispatch("6bdea786", new Object[]{this, str, jSONObject, apiContext});
         }
         f c = apiContext != null ? apiContext.c() : null;
-        if (TextUtils.isEmpty(str) || c == null) {
+        if (StringUtils.isEmpty(str) || c == null) {
             TMSLogger.d(TAG, "checkPermission,instance is null");
             return PermissionResult.DENY_N22101;
         }

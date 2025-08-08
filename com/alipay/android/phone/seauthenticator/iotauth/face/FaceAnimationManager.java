@@ -1,7 +1,7 @@
 package com.alipay.android.phone.seauthenticator.iotauth.face;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.PreDataHelper;
 import com.alipay.android.phone.seauthenticator.iotauth.face.view.FaceView;
@@ -413,7 +413,7 @@ public class FaceAnimationManager {
                         FaceAnimationManager.a(FaceAnimationManager.this, 2);
                         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_FAILURE);
                         FaceView e = FaceAnimationManager.e(FaceAnimationManager.this);
-                        if (TextUtils.isEmpty(clientText)) {
+                        if (StringUtils.isEmpty(clientText)) {
                             clientText = FaceAnimationManager.f(FaceAnimationManager.this).getString(R.string.face_auth_fail);
                         }
                         e.setFaceViewTip(clientText);

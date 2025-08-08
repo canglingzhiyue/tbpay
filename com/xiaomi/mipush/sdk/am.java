@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.login4android.qrcode.data.QrCodeData;
 import com.xiaomi.mipush.sdk.PushMessageHandler;
 import com.xiaomi.push.bm;
@@ -157,15 +157,15 @@ public class am {
                             }
                         }
                         if (!z) {
-                            if (!TextUtils.isEmpty(jfVar.d()) && MiPushClient.aliasSetTime(this.f47a, jfVar.d()) < 0) {
+                            if (!StringUtils.isEmpty(jfVar.d()) && MiPushClient.aliasSetTime(this.f47a, jfVar.d()) < 0) {
                                 MiPushClient.addAlias(this.f47a, jfVar.d());
-                            } else if (!TextUtils.isEmpty(jfVar.c()) && MiPushClient.topicSubscribedTime(this.f47a, jfVar.c()) < 0) {
+                            } else if (!StringUtils.isEmpty(jfVar.c()) && MiPushClient.topicSubscribedTime(this.f47a, jfVar.c()) < 0) {
                                 MiPushClient.addTopic(this.f47a, jfVar.c());
                             }
                         }
                         String str3 = (iyVar.f659a == null || iyVar.f659a.m2069a() == null) ? null : iyVar.f659a.f573a.get("jobkey");
                         String str4 = str3;
-                        if (TextUtils.isEmpty(str3)) {
+                        if (StringUtils.isEmpty(str3)) {
                             str3 = a5.m2060a();
                         }
                         if (z || !m1644a(this.f47a, str3)) {
@@ -176,7 +176,7 @@ public class am {
                             }
                             String a6 = com.xiaomi.push.service.al.a(generateMessage.getExtra(), intExtra);
                             com.xiaomi.channel.commonutils.logger.b.m1618a("receive a message, msgid=", a5.m2060a(), ", jobkey=", str3, ", btn=", Integer.valueOf(intExtra), ", typeId=", a6, ", hasNotified=", Boolean.valueOf(z));
-                            if (z && generateMessage.getExtra() != null && !TextUtils.isEmpty(a6)) {
+                            if (z && generateMessage.getExtra() != null && !StringUtils.isEmpty(a6)) {
                                 Map<String, String> extra = generateMessage.getExtra();
                                 if (intExtra != 0 && iyVar.m2102a() != null) {
                                     ao.a(this.f47a).a(iyVar.m2102a().c(), intExtra);
@@ -192,7 +192,7 @@ public class am {
                                         return null;
                                     }
                                     String c = a5.c();
-                                    if (!TextUtils.isEmpty(c)) {
+                                    if (!StringUtils.isEmpty(c)) {
                                         a7.putExtra("payload", c);
                                     }
                                     this.f47a.startActivity(a7);
@@ -240,7 +240,7 @@ public class am {
                 case 2:
                     jd jdVar = (jd) a3;
                     String str5 = b.m1665a(this.f47a).f65a;
-                    if (TextUtils.isEmpty(str5) || !TextUtils.equals(str5, jdVar.m2142a())) {
+                    if (StringUtils.isEmpty(str5) || !StringUtils.equals(str5, jdVar.m2142a())) {
                         com.xiaomi.channel.commonutils.logger.b.m1616a("bad Registration result:");
                         fd.a(this.f47a).b(this.f47a.getPackageName(), fc.m1919a(i), str, AgooConstants.REPORT_MESSAGE_NULL);
                         return null;
@@ -268,7 +268,7 @@ public class am {
                         str2 = "2";
                     }
                     a2.a(packageName, m1919a, str, i2, str2);
-                    if (!TextUtils.isEmpty(jdVar.f734e)) {
+                    if (!StringUtils.isEmpty(jdVar.f734e)) {
                         arrayList3 = new ArrayList();
                         arrayList3.add(jdVar.f734e);
                     }
@@ -291,7 +291,7 @@ public class am {
                     if (jhVar.f775a == 0) {
                         MiPushClient.addTopic(this.f47a, jhVar.b());
                     }
-                    if (!TextUtils.isEmpty(jhVar.b())) {
+                    if (!StringUtils.isEmpty(jhVar.b())) {
                         arrayList2 = new ArrayList();
                         arrayList2.add(jhVar.b());
                     }
@@ -302,7 +302,7 @@ public class am {
                     if (jlVar.f820a == 0) {
                         MiPushClient.removeTopic(this.f47a, jlVar.b());
                     }
-                    if (!TextUtils.isEmpty(jlVar.b())) {
+                    if (!StringUtils.isEmpty(jlVar.b())) {
                         arrayList = new ArrayList();
                         arrayList.add(jlVar.b());
                     }
@@ -314,7 +314,7 @@ public class am {
                     String b = ixVar.b();
                     List<String> m2096a = ixVar.m2096a();
                     if (ixVar.f646a == 0) {
-                        if (TextUtils.equals(b, fn.COMMAND_SET_ACCEPT_TIME.f362a) && m2096a != null && m2096a.size() > 1) {
+                        if (StringUtils.equals(b, fn.COMMAND_SET_ACCEPT_TIME.f362a) && m2096a != null && m2096a.size() > 1) {
                             MiPushClient.addAcceptTime(this.f47a, m2096a.get(0), m2096a.get(1));
                             if (!"00:00".equals(m2096a.get(0)) || !"00:00".equals(m2096a.get(1))) {
                                 b.m1665a(this.f47a).a(false);
@@ -322,15 +322,15 @@ public class am {
                                 b.m1665a(this.f47a).a(true);
                             }
                             m2096a = a(TimeZone.getTimeZone("GMT+08"), TimeZone.getDefault(), m2096a);
-                        } else if (TextUtils.equals(b, fn.COMMAND_SET_ALIAS.f362a) && m2096a != null && m2096a.size() > 0) {
+                        } else if (StringUtils.equals(b, fn.COMMAND_SET_ALIAS.f362a) && m2096a != null && m2096a.size() > 0) {
                             MiPushClient.addAlias(this.f47a, m2096a.get(0));
-                        } else if (TextUtils.equals(b, fn.COMMAND_UNSET_ALIAS.f362a) && m2096a != null && m2096a.size() > 0) {
+                        } else if (StringUtils.equals(b, fn.COMMAND_UNSET_ALIAS.f362a) && m2096a != null && m2096a.size() > 0) {
                             MiPushClient.removeAlias(this.f47a, m2096a.get(0));
-                        } else if (TextUtils.equals(b, fn.COMMAND_SET_ACCOUNT.f362a) && m2096a != null && m2096a.size() > 0) {
+                        } else if (StringUtils.equals(b, fn.COMMAND_SET_ACCOUNT.f362a) && m2096a != null && m2096a.size() > 0) {
                             MiPushClient.addAccount(this.f47a, m2096a.get(0));
-                        } else if (TextUtils.equals(b, fn.COMMAND_UNSET_ACCOUNT.f362a) && m2096a != null && m2096a.size() > 0) {
+                        } else if (StringUtils.equals(b, fn.COMMAND_UNSET_ACCOUNT.f362a) && m2096a != null && m2096a.size() > 0) {
                             MiPushClient.removeAccount(this.f47a, m2096a.get(0));
-                        } else if (TextUtils.equals(b, fn.COMMAND_CHK_VDEVID.f362a)) {
+                        } else if (StringUtils.equals(b, fn.COMMAND_CHK_VDEVID.f362a)) {
                             return null;
                         }
                     }
@@ -465,7 +465,7 @@ public class am {
                                         int i3 = -2;
                                         if (jbVar.m2129a().containsKey(bj.P)) {
                                             String str9 = jbVar.m2129a().get(bj.P);
-                                            if (!TextUtils.isEmpty(str9)) {
+                                            if (!StringUtils.isEmpty(str9)) {
                                                 try {
                                                     i3 = Integer.parseInt(str9);
                                                 } catch (NumberFormatException e) {
@@ -607,7 +607,7 @@ public class am {
         Map<String, String> m2083a = itVar.m2083a();
         if (m2083a != null) {
             String str = m2083a.get("real_source");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             com.xiaomi.channel.commonutils.logger.b.b("receive ack : messageId = " + a2 + "  realSource = " + str);
@@ -647,10 +647,10 @@ public class am {
         isVar.b(jfVar.b());
         isVar.a(jfVar.m2151a());
         isVar.a(jfVar.a().a());
-        if (!TextUtils.isEmpty(jfVar.c())) {
+        if (!StringUtils.isEmpty(jfVar.c())) {
             isVar.c(jfVar.c());
         }
-        if (!TextUtils.isEmpty(jfVar.d())) {
+        if (!StringUtils.isEmpty(jfVar.d())) {
             isVar.d(jfVar.d());
         }
         isVar.a(jm.m2179a(this.f47a, iyVar));
@@ -721,7 +721,7 @@ public class am {
             return false;
         }
         String str = m2069a.get(Constants.EXTRA_KEY_PUSH_SERVER_ACTION);
-        return TextUtils.equals(str, Constants.EXTRA_VALUE_HYBRID_MESSAGE) || TextUtils.equals(str, Constants.EXTRA_VALUE_PLATFORM_MESSAGE);
+        return StringUtils.equals(str, Constants.EXTRA_VALUE_HYBRID_MESSAGE) || StringUtils.equals(str, Constants.EXTRA_VALUE_PLATFORM_MESSAGE);
     }
 
     private void b(it itVar) {
@@ -732,7 +732,7 @@ public class am {
         Map<String, String> m2083a = itVar.m2083a();
         if (m2083a != null) {
             String str = m2083a.get(Constants.ASSEMBLE_PUSH_REG_INFO);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (str.contains("brand:" + ag.FCM.name())) {
@@ -780,7 +780,7 @@ public class am {
         isVar.b(iyVar.m2103a());
         isVar.a(m2102a.m2068a());
         isVar.a(m2102a.m2066a());
-        if (!TextUtils.isEmpty(m2102a.m2073b())) {
+        if (!StringUtils.isEmpty(m2102a.m2073b())) {
             isVar.c(m2102a.m2073b());
         }
         isVar.a(jm.m2179a(this.f47a, iyVar));
@@ -794,7 +794,7 @@ public class am {
             return;
         }
         String str = (String) ax.a(m2129a, "pkgList", (Object) null);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("detect failed because empty");
             return;
         }
@@ -805,7 +805,7 @@ public class am {
         }
         String str2 = m1947a.get("alive");
         String str3 = m1947a.get("notAlive");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             com.xiaomi.channel.commonutils.logger.b.b("detect failed because no alive process");
             return;
         }
@@ -816,7 +816,7 @@ public class am {
         jbVar2.c(im.DetectAppAliveResult.f538a);
         jbVar2.f678a = new HashMap();
         jbVar2.f678a.put("alive", str2);
-        if (Boolean.parseBoolean((String) ax.a(m2129a, "reportNotAliveApp", "false")) && !TextUtils.isEmpty(str3)) {
+        if (Boolean.parseBoolean((String) ax.a(m2129a, "reportNotAliveApp", "false")) && !StringUtils.isEmpty(str3)) {
             jbVar2.f678a.put("notAlive", str3);
         }
         ao.a(this.f47a).a((ao) jbVar2, ic.Notification, false, (ip) null);

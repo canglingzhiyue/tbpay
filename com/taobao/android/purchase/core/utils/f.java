@@ -2,7 +2,7 @@ package com.taobao.android.purchase.core.utils;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,8 +38,8 @@ public class f {
         if (b == 1) {
             String str2 = a2.get("buyParam");
             String str3 = a2.get("cartIds");
-            if (TextUtils.isEmpty(str2) || "null".equalsIgnoreCase(str2)) {
-                if (!TextUtils.isEmpty(str3) && !"null".equalsIgnoreCase(str3)) {
+            if (StringUtils.isEmpty(str2) || "null".equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str3) && !"null".equalsIgnoreCase(str3)) {
                     String[] split = str3.split(",");
                     StringBuilder sb2 = new StringBuilder("");
                     if (split != null && split.length > 0) {
@@ -75,7 +75,7 @@ public class f {
             str = "settlement";
         } else if (b != 2) {
             sb = intent.getDataString();
-            if (TextUtils.isEmpty(sb)) {
+            if (StringUtils.isEmpty(sb)) {
                 sb = "null";
             }
             hashMap.put("type", "4");
@@ -83,10 +83,10 @@ public class f {
         } else {
             String str4 = a2.get("itemId");
             String str5 = a2.get("skuId");
-            if (TextUtils.isEmpty(str4) || "null".equalsIgnoreCase(str4)) {
+            if (StringUtils.isEmpty(str4) || "null".equalsIgnoreCase(str4)) {
                 str4 = "0";
             }
-            if (TextUtils.isEmpty(str5) || "null".equalsIgnoreCase(str5)) {
+            if (StringUtils.isEmpty(str5) || "null".equalsIgnoreCase(str5)) {
                 str5 = "0";
             }
             hashMap.put("type", "1");

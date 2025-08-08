@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.standard.mainscreen.interaction;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.q;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,7 +43,7 @@ public class b {
             }
             super.a(absPicGalleryVideoPlayer, mVar, f);
             String a2 = a(mVar);
-            if (TextUtils.isEmpty(a2) || (d = b.this.d(a2)) == null) {
+            if (StringUtils.isEmpty(a2) || (d = b.this.d(a2)) == null) {
                 return;
             }
             d.a("progress_sync", new HashMap<String, Object>() { // from class: com.taobao.android.detail.core.standard.mainscreen.interaction.VideoToWeexStateSyncManager$1$1

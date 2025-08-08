@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.scene.a;
 import com.taobao.android.diagnose.v;
@@ -35,7 +35,7 @@ public class fnc implements fna {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3aae88a2", new Object[]{this, fmzVar, fmxVar, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             v.c("CommonRulesEngine", "The scene code is null");
             return 0;
         } else if (fmzVar.a()) {

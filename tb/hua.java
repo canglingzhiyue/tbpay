@@ -3,7 +3,7 @@ package tb;
 import android.content.Intent;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.security.mobile.alipayauthenticatorservice.message.Result;
@@ -475,7 +475,7 @@ public class hua implements com.taobao.taolive.sdk.model.a {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 if ("expTask".equals(parseObject.getString("type"))) {
@@ -594,7 +594,7 @@ public class hua implements com.taobao.taolive.sdk.model.a {
             if (this.n == null) {
                 this.n = new h();
             }
-            if (TextUtils.isEmpty(this.g)) {
+            if (StringUtils.isEmpty(this.g)) {
                 return;
             }
             this.n.a(this.f, this.g, new h.a() { // from class: tb.hua.1
@@ -651,11 +651,11 @@ public class hua implements com.taobao.taolive.sdk.model.a {
                                     Comment next = it.next();
                                     pnk q = pmd.a().q();
                                     String b = q != null ? q.b() : "";
-                                    boolean equals = obj instanceof String ? TextUtils.equals(String.valueOf(obj), "") : true;
-                                    if (TextUtils.isEmpty(b) || !b.equals(next.publisherNick) || equals) {
+                                    boolean equals = obj instanceof String ? StringUtils.equals(String.valueOf(obj), "") : true;
+                                    if (StringUtils.isEmpty(b) || !b.equals(next.publisherNick) || equals) {
                                         ChatMessage chatMessage = new ChatMessage();
                                         chatMessage.mMessageId = next.timestamp;
-                                        if (!TextUtils.isEmpty(next.tbNick)) {
+                                        if (!StringUtils.isEmpty(next.tbNick)) {
                                             chatMessage.mUserNick = next.tbNick;
                                         } else {
                                             chatMessage.mUserNick = next.publisherNick;
@@ -718,7 +718,7 @@ public class hua implements com.taobao.taolive.sdk.model.a {
         }
         pnk q = pmd.a().q();
         String a2 = q != null ? q.a() : "";
-        return !TextUtils.isEmpty(a2) && a2.equals(String.valueOf(chatMessage.mUserId));
+        return !StringUtils.isEmpty(a2) && a2.equals(String.valueOf(chatMessage.mUserId));
     }
 
     public void f() {
@@ -791,10 +791,10 @@ public class hua implements com.taobao.taolive.sdk.model.a {
                 Map<String, String> map = shareGoodMessageArr[0].extendVal;
                 if (map != null) {
                     String str2 = map.get(d.TYPE_MSG_UUID);
-                    if (!TextUtils.isEmpty(str2) && this.p.contains(str2)) {
+                    if (!StringUtils.isEmpty(str2) && this.p.contains(str2)) {
                         return;
                     }
-                    if (!TextUtils.isEmpty(str2) && !this.p.contains(str2)) {
+                    if (!StringUtils.isEmpty(str2) && !this.p.contains(str2)) {
                         b(str2);
                         if (!z) {
                             HashMap hashMap2 = new HashMap();
@@ -824,7 +824,7 @@ public class hua implements com.taobao.taolive.sdk.model.a {
             if (this.p == null) {
                 this.p = new HashSet<>();
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.p.add(str);

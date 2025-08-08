@@ -18,7 +18,7 @@ import android.text.Editable;
 import android.text.InputFilter;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -297,12 +297,12 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         }
         String h = this.mSearchDoorContext.h();
         SearchBarHintBean searchBarHintBean = null;
-        if (TextUtils.isEmpty(this.mSearchDoorContext.f())) {
+        if (StringUtils.isEmpty(this.mSearchDoorContext.f())) {
             searchBarHintBean = npw.a(AppPreference.getString(k.HOMEPAGE_PREFERENCE_KEY, ""));
             if (searchBarHintBean != null) {
                 searchBarHintBean.handleMultiHint();
             }
-        } else if (!TextUtils.isEmpty(h)) {
+        } else if (!StringUtils.isEmpty(h)) {
             searchBarHintBean = new SearchBarHintBean();
             searchBarHintBean.displayText = h;
             searchBarHintBean.searchText = h;
@@ -313,7 +313,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         if (searchBarHintBean == null) {
             return;
         }
-        if (!TextUtils.isEmpty(searchBarHintBean.aac)) {
+        if (!StringUtils.isEmpty(searchBarHintBean.aac)) {
             this.mSearchDoorContext.c("aac", searchBarHintBean.aac);
         }
         this.mSearchDoorContext.a("all", searchBarHintBean);
@@ -394,7 +394,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
             this.editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(512)});
         }
         String f = getModel().f();
-        if (TextUtils.equals(f, "localSearch")) {
+        if (StringUtils.equals(f, "localSearch")) {
             this.mSearchButton.setText(b.a(R.string.taobao_app_1005_1_16702));
             this.mSearchButton.setBackgroundResource(R.drawable.tbsearch_search_btn_local_search);
             this.mSearchButton.getLayoutParams().width = l.a(72);
@@ -463,10 +463,10 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d7b9eb94", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.mSearchDoorContext.f())) {
+        } else if (!StringUtils.isEmpty(this.mSearchDoorContext.f())) {
         } else {
             String ca = r.ca();
-            if (TextUtils.isEmpty(ca)) {
+            if (StringUtils.isEmpty(ca)) {
                 clearSearchButtonGifShowedCount();
                 return;
             }
@@ -654,17 +654,17 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
             if (this.clipboardContent == null) {
                 this.clipboardContent = getClipboardContent();
             }
-            if (TextUtils.isEmpty(this.clipboardContent) || TextUtils.isEmpty(subSequence) || !TextUtils.equals(subSequence, this.clipboardContent)) {
+            if (StringUtils.isEmpty(this.clipboardContent) || StringUtils.isEmpty(subSequence) || !StringUtils.equals(subSequence, this.clipboardContent)) {
                 return;
             }
             String f = getModel().f();
             HashMap hashMap = new HashMap();
             hashMap.put("content", y.b(this.clipboardContent.toString()));
             hashMap.put("contentType", "string");
-            if (!TextUtils.isEmpty(f)) {
+            if (!StringUtils.isEmpty(f)) {
                 hashMap.put("channelSrp", f);
             }
-            UTAnalytics.getInstance().getDefaultTracker().send(new UTOriginalCustomHitBuilder("Page_Paste", 19997, "OnDeviceAI_Paste", TextUtils.isEmpty(f) ? "search" : "search_pingdao", "", hashMap).build());
+            UTAnalytics.getInstance().getDefaultTracker().send(new UTOriginalCustomHitBuilder("Page_Paste", 19997, "OnDeviceAI_Paste", StringUtils.isEmpty(f) ? "search" : "search_pingdao", "", hashMap).build());
         }
     }
 
@@ -685,12 +685,12 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
             return;
         }
         String atmosImg = searchBarHintBean.getAtmosImg(isDarkMode());
-        if (!TextUtils.isEmpty(atmosImg) && !poq.a(getActivity()) && (searchUrlImageView = (SearchUrlImageView) findView(R.id.view_promotion)) != null) {
+        if (!StringUtils.isEmpty(atmosImg) && !poq.a(getActivity()) && (searchUrlImageView = (SearchUrlImageView) findView(R.id.view_promotion)) != null) {
             searchUrlImageView.setImageUrl(atmosImg);
         }
         if (searchBarHintBean.isStructuredHint() && !this.mIsElderHomeEdition && (structuredHint = getStructuredHint(searchBarHintBean.structuredInfo)) != null) {
             this.editText.setHint(structuredHint);
-        } else if (TextUtils.isEmpty(searchBarHintBean.displayText)) {
+        } else if (StringUtils.isEmpty(searchBarHintBean.displayText)) {
             this.editText.setHint(DEFAULT_HINT);
         } else {
             this.editText.setHint(getHintContent(searchBarHintBean));
@@ -722,7 +722,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         if (ipChange instanceof IpChange) {
             return (CharSequence) ipChange.ipc$dispatch("f017bc62", new Object[]{this, searchBarHintBean});
         }
-        if (TextUtils.isEmpty(searchBarHintBean.iconUrl) || searchBarHintBean.iconWidth == 0 || searchBarHintBean.iconHeight == 0 || r.S()) {
+        if (StringUtils.isEmpty(searchBarHintBean.iconUrl) || searchBarHintBean.iconWidth == 0 || searchBarHintBean.iconHeight == 0 || r.S()) {
             return searchBarHintBean.displayText;
         }
         final int a2 = l.a(m.a(14, true));
@@ -809,12 +809,12 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         }
         String h = this.mSearchDoorContext.h();
         SearchBarHintBean searchBarHintBean = null;
-        if (TextUtils.isEmpty(this.mSearchDoorContext.f())) {
+        if (StringUtils.isEmpty(this.mSearchDoorContext.f())) {
             searchBarHintBean = npw.a(AppPreference.getString(k.HOMEPAGE_PREFERENCE_KEY, ""));
             if (searchBarHintBean != null) {
                 searchBarHintBean.handleMultiHint();
             }
-        } else if (!TextUtils.isEmpty(h)) {
+        } else if (!StringUtils.isEmpty(h)) {
             searchBarHintBean = new SearchBarHintBean();
             searchBarHintBean.displayText = h;
             searchBarHintBean.searchText = h;
@@ -825,7 +825,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         if (searchBarHintBean == null) {
             return;
         }
-        if (!TextUtils.isEmpty(searchBarHintBean.aac)) {
+        if (!StringUtils.isEmpty(searchBarHintBean.aac)) {
             this.mSearchDoorContext.c("aac", searchBarHintBean.aac);
             postEvent(new nrj.f());
         }
@@ -864,7 +864,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
                 nrn.a().a(Integer.valueOf(this.mSearchDoorContext.hashCode()), new JSONObject(JSON.toJSONString(searchBarHintBean)));
             } catch (JSONException unused) {
             }
-            if (TextUtils.equals(this.mSearchDoorContext.i(), "all")) {
+            if (StringUtils.equals(this.mSearchDoorContext.i(), "all")) {
                 updateSearchBarHintUI(searchBarHintBean);
             } else {
                 updateSearchBarHintUI(null);
@@ -879,7 +879,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
             return;
         }
         String b = getModel().b(k.a.PARAM_COMBO_BIZ_NAME, "");
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             this.mSearchBarLeftContainer.setVisibility(8);
             return;
         }
@@ -926,7 +926,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         ntg a2 = nuu.INSTANCE.a(this.mSearchDoorContext.f());
         boolean z2 = a2 != null && a2.f == 10002;
         if (FestivalMgr.a().a("global") || z2) {
-            if (!TextUtils.equals(FestivalMgr.a().d("global", nom.KEY_NAVI_STYLE), "0") && !z2) {
+            if (!StringUtils.equals(FestivalMgr.a().d("global", nom.KEY_NAVI_STYLE), "0") && !z2) {
                 z = false;
             }
             renderSearchBar(z);
@@ -1008,7 +1008,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
             this.mSearchButton.setBackgroundResource(R.drawable.tbsearch_search_btn_uone);
             this.mSearchButton.getLayoutParams().width = l.a(57.5f);
             this.mSearchButton.setTextSize(1, 14.4f);
-        } else if (TextUtils.equals(f, "localSearch")) {
+        } else if (StringUtils.equals(f, "localSearch")) {
             this.mSearchButton.setBackgroundResource(R.drawable.tbsearch_search_btn_local_search);
         } else if (this.mTb2024Enabled) {
             this.mSearchButton.setBackgroundResource(R.drawable.tbsearch_search_btn_new);
@@ -1061,7 +1061,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
         if (f != null) {
             str2 = f.searchText;
         }
-        if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
             shakeHint();
         } else {
             postEvent(nrj.c.a(str, f));
@@ -1075,7 +1075,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
             return;
         }
         String searchEditContent = getSearchEditContent();
-        if (!TextUtils.isEmpty(searchEditContent)) {
+        if (!StringUtils.isEmpty(searchEditContent)) {
             this.delButton.setVisibility(0);
             if (!this.mTb2024Enabled) {
                 this.mPhotoSearchButtonFont.setVisibility(8);
@@ -1113,11 +1113,11 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
             ArrayMap arrayMap = new ArrayMap();
             String str = "ssk";
             String f = getModel().f();
-            if (!TextUtils.isEmpty(f)) {
+            if (!StringUtils.isEmpty(f)) {
                 str = str + "-" + f;
             }
             arrayMap.put("pssource", str);
-            if (!TextUtils.isEmpty(nrf.f31681a)) {
+            if (!StringUtils.isEmpty(nrf.f31681a)) {
                 arrayMap.put("image_id", nrf.f31681a);
             }
             Nav.from(this.mActivity).toUri(y.a(k.PAILITAO_URL, (ArrayMap<String, String>) arrayMap));
@@ -1198,7 +1198,7 @@ public class SearchBarWidget extends ius<Void, View, SearchDoorContext> implemen
                 return;
             }
             SearchBarHintBean f = this.mSearchDoorContext.f("all");
-            if ((f != null && TextUtils.equals(f.aac, "true")) || !this.mSearchDoorContext.k()) {
+            if ((f != null && StringUtils.equals(f.aac, "true")) || !this.mSearchDoorContext.k()) {
                 return;
             }
             this.mHandler.postDelayed(this.mShowKeyboardRunnable, r.v());

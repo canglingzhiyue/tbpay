@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.lang.reflect.Method;
@@ -167,7 +167,7 @@ public class O000OOOo {
     public static String O0000O0o(Context context) {
         try {
             String O00000oo = O00000oo(context);
-            if (!TextUtils.isEmpty(O00000oo) && !O00000oo.equals("null")) {
+            if (!StringUtils.isEmpty(O00000oo) && !O00000oo.equals("null")) {
                 if (O00000oo.equals("2G")) {
                     return "10";
                 }

@@ -1,6 +1,6 @@
 package com.taobao.android.buy.extension.passparams;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.nextrpc.AURANextRPCEndpoint;
@@ -50,7 +50,7 @@ public final class a extends asf {
             return;
         }
         String str = dataParams.get("feature");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         JSONObject a2 = bba.a(str);
@@ -73,7 +73,7 @@ public final class a extends asf {
             return null;
         }
         final String string = jSONObject2.getString("itemCount");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return new JSONObject() { // from class: com.taobao.android.buy.extension.passparams.AliBuyPassParamsNextRPCExtension$1
                 {
                     Map<String, Object> b;

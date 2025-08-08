@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
@@ -220,7 +220,7 @@ public final class azn implements azl {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
         } else if (this.f25715a == null || this.c == null) {
         } else {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 a(str, str2);
                 return;
             }
@@ -250,7 +250,7 @@ public final class azn implements azl {
             ipChange.ipc$dispatch("9e27bbad", new Object[]{this, str, str2, new Boolean(z), map});
         } else if (this.c == null) {
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 a(str, z, map);
                 return;
             }
@@ -282,7 +282,7 @@ public final class azn implements azl {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c26", new Object[]{this, str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         try {

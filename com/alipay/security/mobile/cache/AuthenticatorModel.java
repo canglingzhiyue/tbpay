@@ -1,7 +1,7 @@
 package com.alipay.security.mobile.cache;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes3.dex */
@@ -15,7 +15,7 @@ public class AuthenticatorModel {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dacbaf3b", new Object[]{context, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             saveUserIdTemp(context, str2);
             CacheUtils cacheUtils = CacheUtils.getInstance(context, FILE_NAME);
@@ -31,12 +31,12 @@ public class AuthenticatorModel {
             return (String) ipChange.ipc$dispatch("f388b272", new Object[]{context});
         }
         String tempUserId = getTempUserId(context);
-        if (TextUtils.isEmpty(tempUserId)) {
+        if (StringUtils.isEmpty(tempUserId)) {
             return "2";
         }
         CacheUtils cacheUtils = CacheUtils.getInstance(context, FILE_NAME);
         String localData = cacheUtils.getLocalData(KEY_FP_CLIENT_STATUS + tempUserId);
-        return TextUtils.isEmpty(localData) ? "2" : localData;
+        return StringUtils.isEmpty(localData) ? "2" : localData;
     }
 
     public static void saveUserIdTemp(Context context, String str) {

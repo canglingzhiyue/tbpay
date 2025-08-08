@@ -3,7 +3,7 @@ package tb;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.d;
 import com.taobao.android.nav.e;
@@ -103,7 +103,7 @@ public class sxw {
             return (Intent) ipChange.ipc$dispatch("5e3f426d", new Object[]{this, uri, intent, dVar});
         }
         String uri2 = uri.toString();
-        if (TextUtils.isEmpty(uri2) || (a2 = a(uri2)) == -1) {
+        if (StringUtils.isEmpty(uri2) || (a2 = a(uri2)) == -1) {
             return null;
         }
         TLog.loge(TAG, "runWithNavContext addr:" + a2);

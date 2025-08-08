@@ -2,7 +2,7 @@ package com.ut.mini;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.UTClientConfigMgr;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.dynfun.TplMsg;
@@ -191,7 +191,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !str.startsWith("http")) {
+        if (!StringUtils.isEmpty(str) && !str.startsWith("http")) {
             try {
                 if (this.b != null && this.b.contains(str)) {
                     return true;

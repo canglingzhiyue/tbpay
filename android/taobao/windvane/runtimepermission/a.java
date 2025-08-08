@@ -3,7 +3,7 @@ package android.taobao.windvane.runtimepermission;
 import android.content.Context;
 import android.support.v4.app.ActivityCompat;
 import android.taobao.windvane.jsbridge.d;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.AttributionReporter;
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public final class a {
         }
         HashMap hashMap = new HashMap();
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put(str, str.contains(AttributionReporter.SYSTEM_PERMISSION) ? str : "android.permission." + str);
             }
         }

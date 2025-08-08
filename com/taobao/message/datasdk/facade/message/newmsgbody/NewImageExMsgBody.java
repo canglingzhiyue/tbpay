@@ -1,6 +1,6 @@
 package com.taobao.message.datasdk.facade.message.newmsgbody;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.util.ValueUtil;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ public class NewImageExMsgBody extends BaseMsgBody {
             return (String) ipChange.ipc$dispatch("31e38f98", new Object[]{this});
         }
         String string = ValueUtil.getString(this.originData, "gifUrl");
-        return TextUtils.isEmpty(string) ? getUrl() : string;
+        return StringUtils.isEmpty(string) ? getUrl() : string;
     }
 
     public void setGifUrl(String str) {
@@ -154,7 +154,7 @@ public class NewImageExMsgBody extends BaseMsgBody {
             return (String) ipChange.ipc$dispatch("72995d9", new Object[]{this});
         }
         String string = ValueUtil.getString(this.localData, LOCAL_DATA_GIF_LOCAL_PATH);
-        return TextUtils.isEmpty(string) ? getLocalUrl() : string;
+        return StringUtils.isEmpty(string) ? getLocalUrl() : string;
     }
 
     public void setLocalUrl(String str) {

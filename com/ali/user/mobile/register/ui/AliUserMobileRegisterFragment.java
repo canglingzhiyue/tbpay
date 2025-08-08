@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.text.Editable;
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -274,7 +274,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
                 }
                 if (this.mRegistParam != null && this.mRegistParam.externParams != null) {
                     String str = this.mRegistParam.externParams.get(LoginConstant.APPLAUNCH_INFO);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         this.mFireAppLaunchRes = (AppLaunchInfoResponseData) JSON.parseObject(str, AppLaunchInfoResponseData.class);
                     }
                 }
@@ -338,16 +338,16 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
             return;
         }
         AppLaunchInfoResponseData appLaunchInfoResponseData = this.mFireAppLaunchRes;
-        if (appLaunchInfoResponseData != null && appLaunchInfoResponseData.returnValue != 0 && !TextUtils.isEmpty(((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regPhoneCode) && !TextUtils.isEmpty(((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regCountryCode) && !TextUtils.isEmpty(((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regCheckPattern)) {
+        if (appLaunchInfoResponseData != null && appLaunchInfoResponseData.returnValue != 0 && !StringUtils.isEmpty(((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regPhoneCode) && !StringUtils.isEmpty(((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regCountryCode) && !StringUtils.isEmpty(((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regCheckPattern)) {
             this.mRegionInfo = new RegionInfo();
             this.mRegionInfo.code = ((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regPhoneCode;
             this.mRegionInfo.domain = ((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regCountryCode;
             this.mRegionInfo.checkPattern = ((AppLaunchInfo) this.mFireAppLaunchRes.returnValue).regCheckPattern;
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        if (regionInfo == null || TextUtils.isEmpty(regionInfo.code) || TextUtils.isEmpty(this.mRegionInfo.domain)) {
+        if (regionInfo == null || StringUtils.isEmpty(regionInfo.code) || StringUtils.isEmpty(this.mRegionInfo.domain)) {
             RegionInfo currentRegion = DataProviderFactory.getDataProvider().getCurrentRegion();
-            if (currentRegion == null || TextUtils.isEmpty(currentRegion.domain) || TextUtils.isEmpty(currentRegion.name) || TextUtils.isEmpty(currentRegion.code)) {
+            if (currentRegion == null || StringUtils.isEmpty(currentRegion.domain) || StringUtils.isEmpty(currentRegion.name) || StringUtils.isEmpty(currentRegion.code)) {
                 currentRegion = CountryUtil.matchRegionFromLocal(getContext(), currentRegion == null ? "" : currentRegion.domain);
             }
             this.mRegionInfo = currentRegion;
@@ -357,7 +357,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
             this.mRegionTV.setVisibility(8);
         } else {
             RegionInfo regionInfo2 = this.mRegionInfo;
-            if (regionInfo2 != null && !TextUtils.isEmpty(regionInfo2.code)) {
+            if (regionInfo2 != null && !StringUtils.isEmpty(regionInfo2.code)) {
                 this.mRegionTV.setVisibility(0);
                 this.mRegionTV.setText(this.mRegionInfo.code);
                 resizeMobileETPadding();
@@ -611,7 +611,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
                         smsApplyResult = (SmsApplyResult) map.get("result");
                         if (smsApplyResult != null) {
                             try {
-                                if (!TextUtils.isEmpty(smsApplyResult.smsSid)) {
+                                if (!StringUtils.isEmpty(smsApplyResult.smsSid)) {
                                     AliUserMobileRegisterFragment.this.mSessionId = smsApplyResult.smsSid;
                                 }
                             } catch (Throwable th2) {
@@ -635,11 +635,11 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2ae9a785", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        if (regionInfo == null || TextUtils.isEmpty(regionInfo.checkPattern)) {
+        if (regionInfo == null || StringUtils.isEmpty(regionInfo.checkPattern)) {
             return str.length() >= 6 && str.length() <= 20;
         }
         String replaceAll = str.replaceAll(" ", "");
@@ -654,7 +654,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
             return (String) ipChange.ipc$dispatch("7094bfac", new Object[]{this});
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        return (regionInfo == null || TextUtils.isEmpty(regionInfo.domain)) ? "CN" : this.mRegionInfo.domain;
+        return (regionInfo == null || StringUtils.isEmpty(regionInfo.domain)) ? "CN" : this.mRegionInfo.domain;
     }
 
     @Override // com.ali.user.mobile.login.ui.UserMobileLoginView
@@ -664,7 +664,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
             return (String) ipChange.ipc$dispatch("3daf0254", new Object[]{this});
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        return (regionInfo == null || TextUtils.isEmpty(regionInfo.code)) ? "86" : this.mRegionInfo.code.replace(riy.PLUS, "");
+        return (regionInfo == null || StringUtils.isEmpty(regionInfo.code)) ? "86" : this.mRegionInfo.code.replace(riy.PLUS, "");
     }
 
     public String getMobile() {
@@ -681,12 +681,12 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
         } else {
             Intent intent = new Intent();
             intent.putExtra(RegistConstants.REGISTER_MOBILE_NUM, getMobile());
-            intent.putExtra("session_id", TextUtils.isEmpty(smsApplyResult.smsSid) ? this.mSessionId : smsApplyResult.smsSid);
-            intent.putExtra(RegistConstants.REGISTER_CODE_LENGTH, TextUtils.isEmpty(smsApplyResult.codeLength) ? this.mCodeLength : smsApplyResult.codeLength);
+            intent.putExtra("session_id", StringUtils.isEmpty(smsApplyResult.smsSid) ? this.mSessionId : smsApplyResult.smsSid);
+            intent.putExtra(RegistConstants.REGISTER_CODE_LENGTH, StringUtils.isEmpty(smsApplyResult.codeLength) ? this.mCodeLength : smsApplyResult.codeLength);
             intent.putExtra(RegistConstants.REGISTER_TRACE_PARAM, JSON.toJSONString(this.mTraceParam));
             RegionInfo regionInfo = this.mRegionInfo;
             intent.putExtra("region", regionInfo == null ? "" : JSON.toJSONString(regionInfo));
-            if (smsApplyResult != null && !TextUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
+            if (smsApplyResult != null && !StringUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
                 intent.putExtra("url", smsApplyResult.helpVideoUrl);
             }
             ((AliUserRegisterActivity) getActivity()).gotoSmsCodeFragment(intent);
@@ -723,7 +723,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
                 return;
             }
             super.onTextChanged(charSequence, i, i2, i3);
-            if (AliUserMobileRegisterFragment.access$200(AliUserMobileRegisterFragment.this) && !TextUtils.isEmpty(charSequence)) {
+            if (AliUserMobileRegisterFragment.access$200(AliUserMobileRegisterFragment.this) && !StringUtils.isEmpty(charSequence)) {
                 AliUserMobileRegisterFragment.access$202(AliUserMobileRegisterFragment.this, false);
                 UserTrackAdapter.sendUT(AliUserMobileRegisterFragment.this.getPageName(), "InputPhone");
             }
@@ -794,7 +794,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1c2b5472", new Object[]{this, editText});
-        } else if (TextUtils.isEmpty(this.mMobileET.getText().toString())) {
+        } else if (StringUtils.isEmpty(this.mMobileET.getText().toString())) {
             this.mRegBtn.setEnabled(false);
             this.mRegBtnLL.setBackgroundDrawable(null);
         } else {
@@ -905,7 +905,7 @@ public abstract class AliUserMobileRegisterFragment extends BaseFragment impleme
             return;
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        if (regionInfo != null && TextUtils.equals("CN", regionInfo.domain)) {
+        if (regionInfo != null && StringUtils.equals("CN", regionInfo.domain)) {
             this.mMobileET.setFilters(new InputFilter[]{new InputFilter.LengthFilter(20)});
             if (Build.VERSION.SDK_INT >= 21) {
                 TextWatcher textWatcher = this.mMobileTextWatcher;

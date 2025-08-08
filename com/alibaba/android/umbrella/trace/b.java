@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.trace;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.g;
@@ -164,7 +164,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ed534d97", new Object[]{umbrellaInfo})).booleanValue();
         }
-        if (umbrellaInfo != null && !TextUtils.isEmpty(umbrellaInfo.mainBizName) && !TextUtils.isEmpty(umbrellaInfo.tagId)) {
+        if (umbrellaInfo != null && !StringUtils.isEmpty(umbrellaInfo.mainBizName) && !StringUtils.isEmpty(umbrellaInfo.tagId)) {
             if (b(umbrellaInfo.mainBizName + '_' + umbrellaInfo.tagId) > Math.random()) {
                 return true;
             }
@@ -177,7 +177,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("399558a1", new Object[]{umbrellaInfo, str})).booleanValue();
         }
-        if (umbrellaInfo != null && !TextUtils.isEmpty(umbrellaInfo.mainBizName) && !TextUtils.isEmpty(str)) {
+        if (umbrellaInfo != null && !StringUtils.isEmpty(umbrellaInfo.mainBizName) && !StringUtils.isEmpty(str)) {
             if (c(umbrellaInfo.mainBizName + '_' + str) > Math.random()) {
                 return true;
             }
@@ -190,7 +190,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             if (d("Performance_" + str + "_" + str2) > Math.random()) {
                 return true;
             }
@@ -203,7 +203,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         StringBuilder sb = new StringBuilder();
@@ -249,12 +249,12 @@ public class b {
 
     private static boolean f(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && "true".equals(OrangeConfig.getInstance().getConfig(ORANGE_GROUP_NAME, str, "false"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && "true".equals(OrangeConfig.getInstance().getConfig(ORANGE_GROUP_NAME, str, "false"));
     }
 
     private static boolean c(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{str, str2})).booleanValue() : !TextUtils.isEmpty(str) && "true".equals(OrangeConfig.getInstance().getConfig(ORANGE_GROUP_NAME, str, str2));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{str, str2})).booleanValue() : !StringUtils.isEmpty(str) && "true".equals(OrangeConfig.getInstance().getConfig(ORANGE_GROUP_NAME, str, str2));
     }
 
     private static boolean n() {
@@ -272,7 +272,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e561", new Object[]{str})).doubleValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 5.0E-5d;
         }
         Double d2 = b.get(str);
@@ -294,7 +294,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("88097ea2", new Object[]{str})).doubleValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 1.0d;
         }
         Double d2 = c.get(str);
@@ -316,7 +316,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d23b17e3", new Object[]{str})).doubleValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.001d;
         }
         Double d2 = d.get(str);

@@ -1,6 +1,6 @@
 package com.taobao.phenix.compat.stat;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -164,7 +164,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
             if (!this.d) {
                 h();
             }
-            if (imageStatistics.l() == null || TextUtils.isEmpty(imageStatistics.l().get("max-age"))) {
+            if (imageStatistics.l() == null || StringUtils.isEmpty(imageStatistics.l().get("max-age"))) {
                 return;
             }
             String b = b(imageStatistics.p().g());
@@ -255,9 +255,9 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
         }
         String b = b(a(imageStatistics.l()));
         String b2 = b(imageStatistics.p().g());
-        if (TextUtils.isEmpty(b) && TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b) && StringUtils.isEmpty(b2)) {
             i = 0;
-        } else if (TextUtils.isEmpty(b) || !b.equals(b2)) {
+        } else if (StringUtils.isEmpty(b) || !b.equals(b2)) {
             i = -1;
         }
         if (i == -1) {
@@ -392,7 +392,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.startsWith(ado.URL_SEPARATOR)) {
@@ -466,7 +466,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("28f46725", new Object[]{this, map});
         }
-        if (map == null || (str = map.get("pageURL")) == null || TextUtils.isEmpty(str)) {
+        if (map == null || (str = map.get("pageURL")) == null || StringUtils.isEmpty(str)) {
             return "";
         }
         int indexOf = str.indexOf(63, 0);
@@ -533,7 +533,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
                     if (i >= length) {
                         z2 = false;
                         break;
-                    } else if (TextUtils.equals(strArr[i], a2)) {
+                    } else if (StringUtils.equals(strArr[i], a2)) {
                         break;
                     } else {
                         i++;
@@ -584,7 +584,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
 
     private String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : TextUtils.isEmpty(str) ? "" : str.length() > 256 ? str.substring(0, 256) : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : StringUtils.isEmpty(str) ? "" : str.length() > 256 ? str.substring(0, 256) : str;
     }
 
     private void a(String str, int i, int i2, String str2) {
@@ -647,9 +647,9 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
         } else if (!com.taobao.phenix.compat.d.f18891a) {
         } else {
             try {
-                if (TextUtils.equals(str, nhx.f31473a)) {
+                if (StringUtils.equals(str, nhx.f31473a)) {
                     tms.a("picture", imageStatistics.p().g(), 0);
-                } else if (TextUtils.equals(str, nhx.g)) {
+                } else if (StringUtils.equals(str, nhx.g)) {
                     tms.b("picture", imageStatistics.p().g(), 0);
                 }
                 Object obj = imageStatistics.x;
@@ -849,7 +849,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
             ipChange.ipc$dispatch("292df306", new Object[]{this, imageStatistics});
         } else if (!com.taobao.phenix.compat.d.f18891a) {
         } else {
-            if (TextUtils.isEmpty(imageStatistics.f18937a)) {
+            if (StringUtils.isEmpty(imageStatistics.f18937a)) {
                 imageStatistics.f18937a = FullTraceAnalysis.getInstance().createRequest("picture");
             }
             if (imageStatistics.Q || (rVar = FalcoGlobalTracer.get()) == null) {
@@ -902,7 +902,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8be6b98a", new Object[]{this, imageStatistics, new Integer(i), str})).booleanValue();
         }
-        if (!com.taobao.phenix.compat.d.f18891a || imageStatistics == null || TextUtils.isEmpty(imageStatistics.f18937a)) {
+        if (!com.taobao.phenix.compat.d.f18891a || imageStatistics == null || StringUtils.isEmpty(imageStatistics.f18937a)) {
             return false;
         }
         boolean z = imageStatistics.k;
@@ -1036,7 +1036,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
                 String str = imageStatistics.l().get("DXImageViewOnCreateTimestampKey");
                 String str2 = imageStatistics.l().get("DXImageViewOnRenderTimestampKey");
                 String str3 = imageStatistics.l().get("DXImageViewIsReuseKey");
-                if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                     return;
                 }
                 boolean booleanValue = Boolean.valueOf(str3).booleanValue();
@@ -1079,7 +1079,7 @@ public class TBImageFlowMonitor extends e implements d.a, AvifDecoder.a, com.tao
             return 0L;
         }
         String str = imageStatistics.l().get(this.h.g());
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         try {

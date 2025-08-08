@@ -1,7 +1,7 @@
 package com.taobao.wireless.link.notification;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.wireless.link.model.MessageData;
 import tb.kge;
@@ -54,7 +54,7 @@ public class a extends com.taobao.wireless.link.controller.b {
             rki.a(rki.ARG1_NOTIFICATION_NOT_IN_WHITELIST, "", "", null);
         } else {
             rkk a2 = rkk.a(context);
-            if (TextUtils.equals(com.taobao.wireless.link.controller.a.a().f23587a.noti_type, "other")) {
+            if (StringUtils.equals(com.taobao.wireless.link.controller.a.a().f23587a.noti_type, "other")) {
                 com.taobao.wireless.link.controller.a.a().j = (String) a2.b("isShowNotifi", "false");
                 com.taobao.wireless.link.controller.a.a().k = (String) a2.b("isShowNotifiSwitch", "false");
             } else {

@@ -6,7 +6,7 @@ import android.taobao.windvane.config.t;
 import android.taobao.windvane.util.a;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alipay.android.phone.mobilesdk.socketcraft.monitor.MonitorItemConstants;
@@ -405,7 +405,7 @@ public class WVPageTracker {
                         ipChange2.ipc$dispatch("138ac29e", new Object[]{this, str});
                         return;
                     }
-                    String str2 = TextUtils.isEmpty(str) ? "{}" : str;
+                    String str2 = StringUtils.isEmpty(str) ? "{}" : str;
                     if (str2.startsWith("\"") && str2.endsWith("\"")) {
                         str2 = str2.substring(1, str2.length() - 1);
                     }

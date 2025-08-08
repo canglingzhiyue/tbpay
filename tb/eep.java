@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -49,15 +49,15 @@ public class eep extends eei<enu> {
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("30ca8c43", new Object[]{this, enuVar});
         }
-        if (TextUtils.isEmpty(enuVar.f27479a)) {
+        if (StringUtils.isEmpty(enuVar.f27479a)) {
             return a.FAILURE;
         }
-        if (!TextUtils.isEmpty(enuVar.d)) {
+        if (!StringUtils.isEmpty(enuVar.d)) {
             eps.a((Context) this.f27241a, enuVar.d, enuVar.c);
         }
         Application a2 = epo.a();
         String str = this.f27241a.f9411a.f27180a;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(enuVar.f27479a)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(enuVar.f27479a)) {
             enuVar.f27479a = p.a(enuVar.f27479a, "pre_item_id", str);
         }
         if (enuVar.f27479a.contains("currentClickTime=")) {

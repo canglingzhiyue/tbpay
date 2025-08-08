@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.core.TradeHybrid.ZCache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.constants.OrderBizCode;
@@ -213,7 +213,7 @@ public class a {
             ipChange.ipc$dispatch("d39e1eda", new Object[]{list});
         } else if (list == null || list.isEmpty()) {
         } else {
-            if (TextUtils.equals("true", OrangeConfig.getInstance().getConfig(OrangeNameSpace, "enable_zcache_setup", "false")) && n.a() == null) {
+            if (StringUtils.equals("true", OrangeConfig.getInstance().getConfig(OrangeNameSpace, "enable_zcache_setup", "false")) && n.a() == null) {
                 r.a();
                 jqg.b("Trade_ZCache", "上下文为空，执行ZCache初始化操作！" + list.toString());
             }

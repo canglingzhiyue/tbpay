@@ -2,7 +2,7 @@ package com.taobao.tao.infoflow.commonsubservice.dataservice;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -350,7 +350,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
                 }
             }
             long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
-            if (TextUtils.equals(string, "coldStart")) {
+            if (StringUtils.equals(string, "coldStart")) {
                 s.f18233a.d().a("SubCommonBizParams", Long.valueOf(elapsedRealtime2));
             }
         }
@@ -376,7 +376,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
             bVar.a(a2, string);
         }
         long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        if (TextUtils.equals(string, "coldStart")) {
+        if (StringUtils.equals(string, "coldStart")) {
             s.f18233a.d().a("RequestStart", Long.valueOf(elapsedRealtime2));
         }
         lar.f("dataService_notifyRequestStart");
@@ -409,7 +409,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
             i = 1;
         }
         long elapsedRealtime3 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        if (TextUtils.equals(string, "coldStart")) {
+        if (StringUtils.equals(string, "coldStart")) {
             s.f18233a.d().a("RequestSuccess", Long.valueOf(elapsedRealtime3));
         }
         ldf.e(TAG, "notifyRequestSuccess 总耗时：" + elapsedRealtime3 + " ms");
@@ -472,7 +472,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
         final AwesomeGetContainerData b = opeVar.b(this.infoFlowContext.a().a());
         uiRefreshActionModel.containerModel = b;
         final String str = "HomeInfoFlow_uiRefresh_" + jSONObject.getString("requestType");
-        if (!TextUtils.equals("scrollToTop", uiRefreshActionModel.getUiOperationType())) {
+        if (!StringUtils.equals("scrollToTop", uiRefreshActionModel.getUiOperationType())) {
             ljd.a().b(new Runnable() { // from class: com.taobao.tao.infoflow.commonsubservice.dataservice.HomeInfoFlowDataService.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -607,7 +607,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
             i = 1;
         }
         long elapsedRealtime3 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        if (TextUtils.equals(str, "coldStart")) {
+        if (StringUtils.equals(str, "coldStart")) {
             s.f18233a.d().a("DataProcessStart", Long.valueOf(elapsedRealtime3));
         }
         ldf.d(TAG, "notifyDataProcessStart 总耗时：" + elapsedRealtime3 + " ms");
@@ -636,7 +636,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
             i = 1;
         }
         long elapsedRealtime3 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        if (TextUtils.equals(str, "coldStart")) {
+        if (StringUtils.equals(str, "coldStart")) {
             s.f18233a.d().a("DataOnProcess", Long.valueOf(elapsedRealtime3));
         }
         ldf.d(TAG, "notifyDataOnProcess 总耗时：" + elapsedRealtime3 + " ms");
@@ -665,7 +665,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
             i = 1;
         }
         long elapsedRealtime3 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        if (TextUtils.equals(str, "coldStart")) {
+        if (StringUtils.equals(str, "coldStart")) {
             s.f18233a.d().a("DataProcessFinish", Long.valueOf(elapsedRealtime3));
         }
         ldf.d(TAG, "notifyDataProcessFinish 总耗时：" + elapsedRealtime3 + " ms");
@@ -698,7 +698,7 @@ public class HomeInfoFlowDataService implements IContainerDataService<AwesomeGet
             i = 1;
         }
         long elapsedRealtime3 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        if (TextUtils.equals(str, "coldStart")) {
+        if (StringUtils.equals(str, "coldStart")) {
             s.f18233a.d().a("SubBizParams", Long.valueOf(elapsedRealtime3));
         }
         ldf.d(TAG, "createBizParams 总耗时：" + elapsedRealtime3 + " ms");

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
@@ -74,7 +74,7 @@ public class hvg {
         }
         ArrayList<String> arrayList = new ArrayList();
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str) && str.contains("=")) {
+            if (!StringUtils.isEmpty(str) && str.contains("=")) {
                 if (str.contains(",")) {
                     arrayList.add(str);
                 } else {

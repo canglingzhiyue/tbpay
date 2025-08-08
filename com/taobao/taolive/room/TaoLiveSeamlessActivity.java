@@ -12,7 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -75,12 +75,12 @@ public class TaoLiveSeamlessActivity extends SwipeBackActivity implements ShareC
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+            } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
             } else {
                 String action = intent.getAction();
-                if (TextUtils.equals(action, LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
+                if (StringUtils.equals(action, LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
                     TaoLiveSeamlessActivity.a(TaoLiveSeamlessActivity.this);
-                } else if (!TextUtils.equals(action, LoginAction.NOTIFY_LOGIN_CANCEL.name())) {
+                } else if (!StringUtils.equals(action, LoginAction.NOTIFY_LOGIN_CANCEL.name())) {
                 } else {
                     TaoLiveSeamlessActivity.this.finish();
                 }
@@ -304,10 +304,10 @@ public class TaoLiveSeamlessActivity extends SwipeBackActivity implements ShareC
                     ipChange2.ipc$dispatch("6b9b1c8", new Object[]{this, view, str, str2, str3});
                     return;
                 }
-                if (!TextUtils.isEmpty(str) && aa.i()) {
+                if (!StringUtils.isEmpty(str) && aa.i()) {
                     str = str.replace(y.TAOLIVE_ONLINE_LIVE_ID, "id=" + aa.C());
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = com.taobao.taolive.room.utils.c.a(str2);
                 }
                 s.a(view.getContext(), str.replace("/taolive/video.html", "/taolive/seamless.html").replace("forceRefresh=true", "forceRefresh=false"), null, 67108864, false);

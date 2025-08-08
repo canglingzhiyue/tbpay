@@ -1,7 +1,7 @@
 package com.taobao.search.sf.realtimetag;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.cell.BaseCellBean;
 import com.taobao.android.searchbaseframe.util.k;
@@ -126,7 +126,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f.add(str);
         }
@@ -287,7 +287,7 @@ public class b {
             if (b != null) {
                 String optString = b.optString("item_id");
                 String optString2 = b.optString(noa.KEY_JARVIS_FEATURE);
-                if (TextUtils.equals(optString, this.b) && !TextUtils.isEmpty(optString2)) {
+                if (StringUtils.equals(optString, this.b) && !StringUtils.isEmpty(optString2)) {
                     this.i.d(optString2);
                 }
             }
@@ -322,7 +322,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("149a1ee1", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -431,12 +431,12 @@ public class b {
             if (npnVar != null && !npnVar.b()) {
                 this.k.a();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.l.b(str);
                 JSONObject b = b(str2);
                 if (b != null) {
                     String optString = b.optString(noa.KEY_JARVIS_FEATURE);
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         this.l.d(optString);
                     }
                 }

@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.core;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.ac.a;
@@ -97,7 +97,7 @@ public class h {
             }
             str = b2.d;
         }
-        boolean z = (str == null || (parse = Uri.parse(str)) == null || !TextUtils.equals("localFirst", parse.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_POLICY))) ? false : true;
+        boolean z = (str == null || (parse = Uri.parse(str)) == null || !StringUtils.equals("localFirst", parse.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_POLICY))) ? false : true;
         String d = oec.d(str);
         ab.h.a aVar2 = new ab.h.a(abVar != null ? abVar.l() : ab.a());
         aVar2.c(d);
@@ -121,7 +121,7 @@ public class h {
         boolean a3 = a(e);
         byte[] a4 = a(e, a3);
         if (a4 == null || a4.length == 0) {
-            if (a3 && !TextUtils.isEmpty(e.c)) {
+            if (a3 && !StringUtils.isEmpty(e.c)) {
                 Map d2 = d(e);
                 if (aVar == null) {
                     return;
@@ -200,7 +200,7 @@ public class h {
         } else {
             IStorage q = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().q();
             String e = e(hVar);
-            if (!TextUtils.isEmpty(e)) {
+            if (!StringUtils.isEmpty(e)) {
                 q.a(IStorage.TYPE_DSL, DSL_PREFIX + e, hVar.b);
             }
             q.a(IStorage.TYPE_DSL, DSL_PREFIX + hVar.b, bArr);
@@ -215,9 +215,9 @@ public class h {
         }
         IStorage q = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().q();
         String e = e(hVar);
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             Object a2 = q.a(IStorage.TYPE_DSL, DSL_PREFIX + e);
-            if ((a2 instanceof String) && TextUtils.equals((CharSequence) a2, hVar.b)) {
+            if ((a2 instanceof String) && StringUtils.equals((CharSequence) a2, hVar.b)) {
                 q.b(IStorage.TYPE_DSL, DSL_PREFIX + e);
             }
         }
@@ -229,9 +229,9 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4f86d1", new Object[]{hVar});
         }
-        if (!TextUtils.isEmpty(hVar.c)) {
+        if (!StringUtils.isEmpty(hVar.c)) {
             return hVar.c + hVar.m;
-        } else if (hVar.n != null && !TextUtils.isEmpty(hVar.n.i) && oeb.bq()) {
+        } else if (hVar.n != null && !StringUtils.isEmpty(hVar.n.i) && oeb.bq()) {
             return hVar.n.i;
         } else {
             return null;
@@ -244,7 +244,7 @@ public class h {
             return (byte[]) ipChange.ipc$dispatch("810317d0", new Object[]{hVar});
         }
         String e = e(hVar);
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             return null;
         }
         ogh.a("loadLatestDSLFromCache");
@@ -295,7 +295,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("4cccc574", new Object[]{hVar, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(hVar.b)) {
+        if (StringUtils.isEmpty(hVar.b)) {
             return null;
         }
         ogh.a("loadDSLFromCache");
@@ -362,7 +362,7 @@ public class h {
                 boolean a3 = h.a(ab.h.this);
                 byte[] a4 = h.a(ab.h.this, a3);
                 if (a4 == null || a4.length == 0) {
-                    if (!a3 || TextUtils.isEmpty(ab.h.this.c)) {
+                    if (!a3 || StringUtils.isEmpty(ab.h.this.c)) {
                         h.b(abVar, ab.h.this, aVar);
                         return;
                     } else {
@@ -371,7 +371,7 @@ public class h {
                     }
                 }
                 Map a5 = h.a(a4, ab.h.this.b, ab.h.this.f);
-                if (a5 == null && !TextUtils.isEmpty(ab.h.this.c)) {
+                if (a5 == null && !StringUtils.isEmpty(ab.h.this.c)) {
                     a5 = h.d(ab.h.this);
                 }
                 if (a5 != null || !oeb.a("recoverDamagedDSL", true)) {
@@ -409,7 +409,7 @@ public class h {
                         h.a(ab.h.this, bArr);
                     }
                     if (bArr == null || bArr.length == 0) {
-                        if (!TextUtils.isEmpty(ab.h.this.c)) {
+                        if (!StringUtils.isEmpty(ab.h.this.c)) {
                             h.a(ab.h.this, h.d(ab.h.this), aVar);
                             return;
                         } else {
@@ -420,7 +420,7 @@ public class h {
                     Map a2 = h.a(bArr, ab.h.this.b, ab.h.this.f);
                     if (a2 != null) {
                         ab.h.this.j = "network";
-                    } else if (!TextUtils.isEmpty(ab.h.this.c)) {
+                    } else if (!StringUtils.isEmpty(ab.h.this.c)) {
                         a2 = h.d(ab.h.this);
                     }
                     h.a(ab.h.this, a2, aVar);
@@ -537,7 +537,7 @@ public class h {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
         String a2 = ohg.a().a("weitao_switch", BAD_DSL, "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             for (String str2 : a2.split(",")) {
                 if (str2.equals(str)) {
                     return true;

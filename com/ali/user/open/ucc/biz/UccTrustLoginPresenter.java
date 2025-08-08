@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.Site;
 import com.ali.user.open.core.callback.CallbackManager;
@@ -93,12 +93,12 @@ public class UccTrustLoginPresenter {
                     String str2 = "";
                     sb.append(str2);
                     rpcResultHit(sb.toString(), rpcResponse.actionType, str2);
-                    if (rpcResponse.code == 3000 || TextUtils.equals("SUCCESS", rpcResponse.actionType)) {
+                    if (rpcResponse.code == 3000 || StringUtils.equals("SUCCESS", rpcResponse.actionType)) {
                         UccBizContants.mBusyControlMap.put(str, Long.valueOf(System.currentTimeMillis()));
                         boolean isCookieOnly = UccOauthLoginPresenter.isCookieOnly(map);
                         String str3 = (String) rpcResponse.returnValue;
                         String string = JSON.parseObject(str3).getString("authorizationResponse");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             UccServiceProviderFactory.getInstance().getUccServiceProvider(str).refreshWhenLogin(str, string, isCookieOnly);
                         } else {
                             UccServiceProviderFactory.getInstance().getUccServiceProvider(str).refreshWhenLogin(str, str3, isCookieOnly);
@@ -117,7 +117,7 @@ public class UccTrustLoginPresenter {
                             return;
                         }
                         HashMap hashMap = new HashMap();
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             hashMap.put(UccConstants.PARAM_LOGIN_DATA, string);
                         } else {
                             hashMap.put(UccConstants.PARAM_LOGIN_DATA, str3);
@@ -165,11 +165,11 @@ public class UccTrustLoginPresenter {
                     return;
                 }
                 Map map2 = map;
-                boolean z2 = map2 == null || !TextUtils.equals((CharSequence) map2.get(ParamsConstants.Key.PARAM_NEED_UI), "0");
+                boolean z2 = map2 == null || !StringUtils.equals((CharSequence) map2.get(ParamsConstants.Key.PARAM_NEED_UI), "0");
                 int buidErrorCode = Utils.buidErrorCode(rpcResponse, 1005);
                 String str4 = "1";
                 String str5 = "";
-                if (z2 && TextUtils.equals("NEED_BIND", rpcResponse.actionType)) {
+                if (z2 && StringUtils.equals("NEED_BIND", rpcResponse.actionType)) {
                     rpcResultHit(buidErrorCode + str5, rpcResponse.actionType, str5);
                     String str6 = (String) rpcResponse.returnValue;
                     Map map3 = map;
@@ -195,7 +195,7 @@ public class UccTrustLoginPresenter {
                     if (map4 == null) {
                         map4 = new HashMap<>();
                     }
-                    if (!TextUtils.isEmpty(str5)) {
+                    if (!StringUtils.isEmpty(str5)) {
                         map4.put(UccConstants.PARAM_BIND_URL, str5);
                     }
                     map4.put("needSession", str4);
@@ -206,7 +206,7 @@ public class UccTrustLoginPresenter {
                     map4.put("needToast", "0");
                     map4.put(ParamsConstants.Key.PARAM_H5_TYPE, str3);
                     UccServiceImpl.getInstance().bind(activity, uccParams.userToken, str, map4, uccCallback);
-                } else if (z2 && TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                } else if (z2 && StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                     JSONObject parseObject2 = JSON.parseObject((String) rpcResponse.returnValue);
                     if (parseObject2 != null) {
                         String string = parseObject2.getString("h5Url");
@@ -291,14 +291,14 @@ public class UccTrustLoginPresenter {
                 } else if (rpcResponse == null) {
                 } else {
                     rpcResultHit(rpcResponse.code + "", rpcResponse.actionType, "");
-                    if (rpcResponse.code == 3000 || TextUtils.equals("SUCCESS", rpcResponse.actionType)) {
+                    if (rpcResponse.code == 3000 || StringUtils.equals("SUCCESS", rpcResponse.actionType)) {
                         UccBizContants.mBusyControlMap.put(str, Long.valueOf(System.currentTimeMillis()));
                         String str5 = (String) rpcResponse.returnValue;
                         Map map2 = map;
-                        if (map2 != null && TextUtils.equals((CharSequence) map2.get(ParamsConstants.Key.PARAM_NEED_LOCAL_SESSION), "0")) {
+                        if (map2 != null && StringUtils.equals((CharSequence) map2.get(ParamsConstants.Key.PARAM_NEED_LOCAL_SESSION), "0")) {
                             z = false;
                         }
-                        if (!TextUtils.isEmpty(str5) && z) {
+                        if (!StringUtils.isEmpty(str5) && z) {
                             UccServiceProviderFactory.getInstance().getUccServiceProvider(str).refreshWhenLogin(str, str5, UccOauthLoginPresenter.isCookieOnly(map));
                         }
                         UccTrustLoginPresenter.access$000(UccTrustLoginPresenter.this, activity);
@@ -307,13 +307,13 @@ public class UccTrustLoginPresenter {
                         }
                         Map<String, String> buildSessionInfo = UccBindPresenter.buildSessionInfo(str, str5);
                         String string = JSON.parseObject(str5).getString("authorizationResponse");
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             buildSessionInfo.put(UccConstants.PARAM_LOGIN_DATA, str5);
                         } else {
                             buildSessionInfo.put(UccConstants.PARAM_LOGIN_DATA, string);
                         }
                         uccCallback.onSuccess(str, buildSessionInfo);
-                    } else if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                    } else if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                         JSONObject parseObject = JSON.parseObject((String) rpcResponse.returnValue);
                         if (parseObject != null) {
                             String string2 = parseObject.getString("h5Url");
@@ -372,7 +372,7 @@ public class UccTrustLoginPresenter {
                 String str6 = "";
                 sb.append(str6);
                 rpcResultHit(sb.toString(), str6, str6);
-                if (TextUtils.equals(str4, "h5")) {
+                if (StringUtils.equals(str4, "h5")) {
                     if (rpcResponse != null) {
                         str6 = rpcResponse.message;
                     }
@@ -486,10 +486,10 @@ public class UccTrustLoginPresenter {
                     return;
                 }
                 rpcResultHit(str4 + "");
-                if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                     LoginReturnData loginReturnData = (LoginReturnData) rpcResponse.returnValue;
                     String str5 = loginReturnData.h5Url;
-                    if (!TextUtils.isEmpty(str5) && activity != null) {
+                    if (!StringUtils.isEmpty(str5) && activity != null) {
                         Bundle bundle = new Bundle();
                         bundle.putString("url", str5);
                         bundle.putString(UccConstants.PARAM_UCC_PARAMS, JSON.toJSONString(uccParams));
@@ -543,13 +543,13 @@ public class UccTrustLoginPresenter {
                     } else if (rpcResponse == null) {
                     } else {
                         rpcResultHit(rpcResponse.code + "", rpcResponse.actionType, "");
-                        if (rpcResponse.code == 3000 || TextUtils.equals("SUCCESS", rpcResponse.actionType)) {
+                        if (rpcResponse.code == 3000 || StringUtils.equals("SUCCESS", rpcResponse.actionType)) {
                             UccBizContants.mBusyControlMap.put(str, Long.valueOf(System.currentTimeMillis()));
                             boolean isCookieOnly = UccOauthLoginPresenter.isCookieOnly(map);
                             String str2 = (String) rpcResponse.returnValue;
                             JSONObject parseObject = JSON.parseObject(str2);
                             String string = parseObject.getString("authorizationResponse");
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 UccServiceProviderFactory.getInstance().getUccServiceProvider(str).refreshWhenLogin(str, string, isCookieOnly);
                             } else {
                                 UccServiceProviderFactory.getInstance().getUccServiceProvider(str).refreshWhenLogin(str, str2, isCookieOnly);
@@ -558,7 +558,7 @@ public class UccTrustLoginPresenter {
                                 return;
                             }
                             HashMap hashMap = new HashMap();
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 hashMap.put(UccConstants.PARAM_LOGIN_DATA, string);
                             } else {
                                 hashMap.put(UccConstants.PARAM_LOGIN_DATA, str2);
@@ -605,12 +605,12 @@ public class UccTrustLoginPresenter {
                         return;
                     }
                     int buidErrorCode = Utils.buidErrorCode(rpcResponse, 1005);
-                    if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                    if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                         String str3 = (String) rpcResponse.returnValue;
                         JSONObject parseObject = JSON.parseObject(str3);
                         if (parseObject != null) {
                             String string = parseObject.getString("h5Url");
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 String string2 = parseObject.getString("token");
                                 String string3 = parseObject.getString("scene");
                                 String string4 = parseObject.getString(ParamsConstants.Key.PARAM_H5_TYPE);
@@ -625,7 +625,7 @@ public class UccTrustLoginPresenter {
                                 UccH5Presenter.openUrl(activity, bundle, uccCallback);
                                 rpcResultHit(buidErrorCode + "", rpcResponse.actionType, string4);
                                 return;
-                            } else if (!TextUtils.isEmpty(parseObject.getString("returnUrl"))) {
+                            } else if (!StringUtils.isEmpty(parseObject.getString("returnUrl"))) {
                                 UccCallback uccCallback2 = uccCallback;
                                 if (uccCallback2 == null) {
                                     return;

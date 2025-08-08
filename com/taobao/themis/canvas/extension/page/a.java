@@ -2,7 +2,7 @@ package com.taobao.themis.canvas.extension.page;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -148,7 +148,7 @@ public abstract class a implements com.taobao.themis.open.extension.b {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("d4b1a18d", new Object[]{this, new Double(d), new Double(d2), new Double(d3), latency, frequency, map});
-            } else if (!TextUtils.isEmpty(this.f22339a) && !TextUtils.isEmpty(this.b)) {
+            } else if (!StringUtils.isEmpty(this.f22339a) && !StringUtils.isEmpty(this.b)) {
                 String appId = this.f22339a;
                 q.b(appId, "appId");
                 String str = this.b;
@@ -156,7 +156,7 @@ public abstract class a implements com.taobao.themis.open.extension.b {
                 q.b(frequency, "frequency");
                 qpv.a(appId, TLogAdapterImpl.TLOG_MODULE, str, d, d2, d3, latency, frequency);
                 for (Map.Entry<String, Double> entry : map.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey())) {
+                    if (!StringUtils.isEmpty(entry.getKey())) {
                         String appId2 = this.f22339a;
                         q.b(appId2, "appId");
                         String str2 = this.b;
@@ -457,7 +457,7 @@ public abstract class a implements com.taobao.themis.open.extension.b {
             if (h != null && h.length() != 0) {
                 z = false;
             }
-            if (z || TextUtils.isEmpty(this.b)) {
+            if (z || StringUtils.isEmpty(this.b)) {
                 return;
             }
             String appId = this.c;
@@ -473,7 +473,7 @@ public abstract class a implements com.taobao.themis.open.extension.b {
                 return;
             }
             q.d(stack, "stack");
-            if (TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.b)) {
                 return;
             }
             String appId = this.c;
@@ -486,7 +486,7 @@ public abstract class a implements com.taobao.themis.open.extension.b {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("9d162128", new Object[]{this, new Integer(i), new Integer(i2), new Integer(i3), new Integer(i4)});
-            } else if (TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.b)) {
             } else {
                 String appId = this.c;
                 q.b(appId, "appId");
@@ -517,7 +517,7 @@ public abstract class a implements com.taobao.themis.open.extension.b {
                 return;
             }
             q.d(backtrace, "backtrace");
-            if (TextUtils.isEmpty(this.f22338a) || TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.f22338a) || StringUtils.isEmpty(this.b)) {
                 return;
             }
             String appId = this.f22338a;
@@ -530,7 +530,7 @@ public abstract class a implements com.taobao.themis.open.extension.b {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5c114003", new Object[]{this, new Integer(i), new Double(d)});
-            } else if (TextUtils.isEmpty(this.f22338a) || TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.f22338a) || StringUtils.isEmpty(this.b)) {
             } else {
                 String appId = this.f22338a;
                 q.b(appId, "appId");

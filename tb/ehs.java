@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -32,7 +32,7 @@ public class ehs {
         if (ipChange instanceof IpChange) {
             return (eht) ipChange.ipc$dispatch("7c6ecc03", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (f27313a.containsKey(str)) {
@@ -58,7 +58,7 @@ public class ehs {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || !f27313a.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !f27313a.containsKey(str)) {
         } else {
             f27313a.get(str).a();
             f27313a.remove(str);

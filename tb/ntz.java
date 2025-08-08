@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.s;
 import java.util.List;
@@ -54,16 +54,16 @@ public final class ntz {
         }
         q.c(forBts, "forBts");
         String str = forBts;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         for (String str2 : n.b((CharSequence) str, new String[]{";"}, false, 0, 6, (Object) null)) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 List b = n.b((CharSequence) str2, new String[]{":"}, false, 0, 6, (Object) null);
                 if (b.size() >= 2) {
                     String str3 = (String) b.get(0);
                     String str4 = (String) b.get(1);
-                    if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str4)) {
                         f31764a.put(str3, str4);
                     }
                 }

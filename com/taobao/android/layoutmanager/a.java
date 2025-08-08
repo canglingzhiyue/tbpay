@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -68,7 +68,7 @@ public class a {
 
     public static boolean a(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1a285e3", new Object[]{uri})).booleanValue() : uri != null && !TextUtils.isEmpty(uri.getQueryParameter("tnode"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1a285e3", new Object[]{uri})).booleanValue() : uri != null && !StringUtils.isEmpty(uri.getQueryParameter("tnode"));
     }
 
     public static boolean b(Uri uri) {
@@ -97,7 +97,7 @@ public class a {
         }
         if (intent != null && (data = intent.getData()) != null) {
             String queryParameter = data.getQueryParameter("tnodepush");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 ogg.c("TNodeNavProcessor", "handleTNodePush:" + queryParameter);
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().l().a(context, queryParameter, null);
                 intent.setData(oec.a(data, (List<String>) Arrays.asList("tnodepush")));
@@ -121,7 +121,7 @@ public class a {
             }
             ogg.c("TNodeNavProcessor", "handleTNodeH5Path :" + uri);
             String queryParameter = data.getQueryParameter("tnode");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return;
             }
             Uri parse = Uri.parse(queryParameter);
@@ -305,11 +305,11 @@ public class a {
             java.lang.String r8 = "source"
             java.lang.String r8 = r9.getQueryParameter(r8)
             java.lang.String r0 = "taolive"
-            boolean r8 = android.text.TextUtils.equals(r8, r0)
+            boolean r8 = android.text.StringUtils.equals(r8, r0)
             if (r8 != 0) goto Lbd
             java.lang.String r8 = "livesource"
             java.lang.String r8 = r9.getQueryParameter(r8)
-            boolean r8 = android.text.TextUtils.equals(r8, r0)
+            boolean r8 = android.text.StringUtils.equals(r8, r0)
             if (r8 == 0) goto Lbc
             goto Lbd
         Lbc:
@@ -387,19 +387,19 @@ public class a {
             return uri;
         }
         String a2 = ohk.a(uri);
-        if (TextUtils.isEmpty(a2) || !d.contains(a2)) {
+        if (StringUtils.isEmpty(a2) || !d.contains(a2)) {
             return uri;
         }
         PreloadDelegate preloadDelegate = new PreloadDelegate(Globals.getApplication(), null, uri.toString(), String.valueOf(System.currentTimeMillis()), null, false, 1, null);
         preloadDelegate.b();
         String a3 = preloadDelegate.a();
-        Uri parse = !TextUtils.isEmpty(a3) ? Uri.parse(a3) : null;
+        Uri parse = !StringUtils.isEmpty(a3) ? Uri.parse(a3) : null;
         return parse != null ? parse : uri;
     }
 
     private static Uri e(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (Uri) ipChange.ipc$dispatch("ed7d2392", new Object[]{uri}) : (!c(uri) || !TextUtils.isEmpty(uri.getQueryParameter(ASK_CONST.KEY_TNODE_TIME)) || TextUtils.isEmpty(uri.getQueryParameter("tnode"))) ? uri : oec.b(uri, ASK_CONST.KEY_TNODE_TIME, String.valueOf(System.nanoTime()));
+        return ipChange instanceof IpChange ? (Uri) ipChange.ipc$dispatch("ed7d2392", new Object[]{uri}) : (!c(uri) || !StringUtils.isEmpty(uri.getQueryParameter(ASK_CONST.KEY_TNODE_TIME)) || StringUtils.isEmpty(uri.getQueryParameter("tnode"))) ? uri : oec.b(uri, ASK_CONST.KEY_TNODE_TIME, String.valueOf(System.nanoTime()));
     }
 
     private static Uri f(Uri uri) {
@@ -420,15 +420,15 @@ public class a {
         String queryParameter = uri.getQueryParameter("tnode");
         String queryParameter2 = uri.getQueryParameter("transition");
         String path = uri.getPath();
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return uri;
         }
         Uri parse = Uri.parse(queryParameter);
         boolean z4 = z2 && oeb.a(h(), uri, null);
         if (z && d()) {
-            boolean equals = TextUtils.equals(parse.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_PAN_GESTURE), com.taobao.tao.flexbox.layoutmanager.container.a.GESTURE_PULLRIGHTEXIT);
+            boolean equals = StringUtils.equals(parse.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_PAN_GESTURE), com.taobao.tao.flexbox.layoutmanager.container.a.GESTURE_PULLRIGHTEXIT);
             boolean a2 = oec.a((Object) parse.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_FULLTRANSPARENT), false);
-            if (equals || a2 || (z4 && !TextUtils.isEmpty(queryParameter2))) {
+            if (equals || a2 || (z4 && !StringUtils.isEmpty(queryParameter2))) {
                 StringBuilder sb = new StringBuilder(k.HTTPS_PREFIX);
                 sb.append("h5.m.taobao.com");
                 sb.append(z4 ? a(true) : "/tnode/transparency/index.htm");
@@ -505,7 +505,7 @@ public class a {
         }
         HashSet hashSet = new HashSet();
         for (String str2 : OrangeConfig.getInstance().getConfig("ShortVideo", "enableTransparentVideoSource", "guangguang,guangguang_follow").split(",")) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashSet.add(str2);
             }
         }
@@ -568,17 +568,17 @@ public class a {
         } catch (Throwable unused) {
         }
         String string = jSONObject.getString("target_page");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         Object b = ohh.b(UGC_URL_REDIRECT);
         String str2 = b instanceof String ? (String) b : "";
-        String customConfig = OrangeConfig.getInstance().getCustomConfig(UGC_URL_REDIRECT, TextUtils.isEmpty(str2) ? c : str2);
-        if (!TextUtils.equals(str2, customConfig)) {
+        String customConfig = OrangeConfig.getInstance().getCustomConfig(UGC_URL_REDIRECT, StringUtils.isEmpty(str2) ? c : str2);
+        if (!StringUtils.equals(str2, customConfig)) {
             ohh.b(UGC_URL_REDIRECT, customConfig);
         }
         JSONObject jSONObject2 = JSON.parseObject(customConfig).getJSONObject(string);
-        if (jSONObject2 == null || TextUtils.isEmpty(jSONObject2.getString("url"))) {
+        if (jSONObject2 == null || StringUtils.isEmpty(jSONObject2.getString("url"))) {
             return;
         }
         JSONObject jSONObject3 = jSONObject2.getJSONObject("conditions");
@@ -586,7 +586,7 @@ public class a {
             String string2 = jSONObject3.getString("minAppVersion");
             try {
                 String str3 = context.getPackageManager().getPackageInfo(Globals.getApplication().getPackageName(), 16384).versionName;
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     if (!oec.a(str3, string2)) {
                         return;
                     }
@@ -634,7 +634,7 @@ public class a {
 
     private static boolean g(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d8c4e59d", new Object[]{uri})).booleanValue() : gvw.d(uri) || gvw.i(uri) || com.taobao.tao.flexbox.layoutmanager.adapter.a.a().B().b(uri) || TextUtils.equals(uri.getQueryParameter("tnodefullpage"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d8c4e59d", new Object[]{uri})).booleanValue() : gvw.d(uri) || gvw.i(uri) || com.taobao.tao.flexbox.layoutmanager.adapter.a.a().B().b(uri) || StringUtils.equals(uri.getQueryParameter("tnodefullpage"), "true");
     }
 
     public static boolean b(String str) {
@@ -650,6 +650,6 @@ public class a {
 
     public static boolean c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : TextUtils.equals(str, "/tnode/index.htm") || TextUtils.equals(str, "/tnode/index.html") || TextUtils.equals(str, "/tnode/multipage/index.htm");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : StringUtils.equals(str, "/tnode/index.htm") || StringUtils.equals(str, "/tnode/index.html") || StringUtils.equals(str, "/tnode/multipage/index.htm");
     }
 }

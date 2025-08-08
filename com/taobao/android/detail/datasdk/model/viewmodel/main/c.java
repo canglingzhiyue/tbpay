@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.PriceNode;
 import com.taobao.android.detail.datasdk.model.datamodel.template.ComponentModel;
@@ -54,7 +54,7 @@ public class c extends b {
         String str2;
         String str3;
         String trim = epw.a(epbVar.c).trim();
-        if (TextUtils.isEmpty(trim)) {
+        if (StringUtils.isEmpty(trim)) {
             str = "";
             str3 = str;
             str2 = str3;

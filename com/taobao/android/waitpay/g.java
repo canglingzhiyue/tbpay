@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.ali.adapt.api.AtlasServiceFinder;
@@ -172,14 +172,14 @@ public class g implements c {
         String stringExtra2 = intent.getStringExtra("pageType");
         Uri data = intent.getData();
         if (data != null) {
-            stringExtra = TextUtils.isEmpty(stringExtra) ? data.getQueryParameter("openFrom") : null;
-            stringExtra2 = TextUtils.isEmpty(stringExtra2) ? data.getQueryParameter("pageType") : null;
+            stringExtra = StringUtils.isEmpty(stringExtra) ? data.getQueryParameter("openFrom") : null;
+            stringExtra2 = StringUtils.isEmpty(stringExtra2) ? data.getQueryParameter("pageType") : null;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             hashMap.put("openFrom", stringExtra);
         }
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             hashMap.put("pageType", stringExtra2);
         }
         return hashMap;

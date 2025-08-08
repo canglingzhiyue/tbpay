@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.model.Ack;
 import com.taobao.tao.messagekit.core.model.BaseMessage;
@@ -35,7 +35,7 @@ public class onc implements olv {
         if (ipChange instanceof IpChange) {
             return (Ack) ipChange.ipc$dispatch("3702b6b0", new Object[]{this, command});
         }
-        if (TextUtils.isEmpty(command.header.f31524a) && !command.header.h.equals(omg.f())) {
+        if (StringUtils.isEmpty(command.header.f31524a) && !command.header.h.equals(omg.f())) {
             return null;
         }
         int i = command.header.g;

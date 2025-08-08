@@ -1,7 +1,7 @@
 package com.alibaba.poplayer.config.fetch;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.info.misc.PopMiscInfoFileHelper;
 import com.alibaba.poplayer.norm.IConfigAdapter;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
@@ -121,7 +121,7 @@ public class ConfigFetcher implements IConfigFetcher {
         }
         try {
             String configItemById = this.mConfigAdapter.getConfigItemById(str);
-            if (!TextUtils.isEmpty(configItemById)) {
+            if (!StringUtils.isEmpty(configItemById)) {
                 return com.alibaba.poplayer.config.manager.c.a(configItemById, str, str2);
             }
             return null;

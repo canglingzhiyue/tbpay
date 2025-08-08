@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -608,7 +608,7 @@ public class fpt {
             if (ipChange instanceof IpChange) {
                 return (fpt) ipChange.ipc$dispatch("f04b574", new Object[]{this});
             }
-            if (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c)) {
                 throw new IllegalArgumentException();
             }
             return new fpt(this);

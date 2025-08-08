@@ -1,7 +1,7 @@
 package tb;
 
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import com.taobao.update.apk.ApkUpdateContext;
@@ -32,7 +32,7 @@ public class rfk implements b<ApkUpdateContext> {
             return;
         }
         MainUpdateData mainUpdateData = apkUpdateContext.mainUpdate;
-        if (mainUpdateData == null || TextUtils.isEmpty(mainUpdateData.getDownloadUrl())) {
+        if (mainUpdateData == null || StringUtils.isEmpty(mainUpdateData.getDownloadUrl())) {
             apkUpdateContext.success = false;
             apkUpdateContext.errorCode = 31;
             return;
@@ -42,7 +42,7 @@ public class rfk implements b<ApkUpdateContext> {
         kmoVar.b = mainUpdateData.size;
         kmoVar.c = mainUpdateData.md5;
         String a2 = com.taobao.downloader.b.a().a(rgq.getStorePath(apkUpdateContext.context) + "/apkupdate/" + mainUpdateData.version, kmoVar);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             apkUpdateContext.apkPath = a2;
         } else if (!a(apkUpdateContext)) {
         } else {

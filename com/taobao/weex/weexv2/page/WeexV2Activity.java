@@ -15,7 +15,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
 import android.support.v7.app.ActionBar;
 import android.taobao.windvane.webview.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -264,12 +264,12 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
             return;
         }
         String queryParameter = data.getQueryParameter("weex_original_url");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return;
         }
         String a2 = c.a().a(queryParameter);
         this.m = true;
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             Uri.Builder buildUpon = Uri.parse(queryParameter).buildUpon();
             buildUpon.appendQueryParameter("downgradeV1", "true");
             Nav.from(this).toUri(buildUpon.toString());
@@ -328,7 +328,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         try {
             String queryParameter = Uri.parse(this.k).getQueryParameter(WX_VIEW_TRANSPARENT);
             View findViewById = findViewById(R.id.wa_plus_root_layout);
-            if (findViewById == null || !TextUtils.equals(queryParameter, Boolean.toString(true))) {
+            if (findViewById == null || !StringUtils.equals(queryParameter, Boolean.toString(true))) {
                 return;
             }
             findViewById.setBackgroundColor(0);
@@ -354,10 +354,10 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         String queryParameter = data.isHierarchical() ? data.getQueryParameter(KEY_MUS_TPL) : "";
         if (data.isHierarchical() && "true".equals(data.getQueryParameter("wh_weex"))) {
             String stringExtra2 = intent.getStringExtra(ifg.d);
-            if (TextUtils.isEmpty(stringExtra2)) {
-                if (!TextUtils.isEmpty(intent.getStringExtra(EXTRA_BUNDLE_URL))) {
+            if (StringUtils.isEmpty(stringExtra2)) {
+                if (!StringUtils.isEmpty(intent.getStringExtra(EXTRA_BUNDLE_URL))) {
                     String str = stringExtra.replace(WH_QUERY_FALSE, "wh_weex=true") + "&wx_mute_loading_indicator=true";
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         intent.putExtra(ifg.c, str);
                         intent.putExtra(ifg.e, str);
                         stringExtra2 = str;
@@ -365,11 +365,11 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
                 }
             }
             this.f = stringExtra2;
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 Uri parse = Uri.parse(this.f);
                 if (parse.isHierarchical()) {
                     String queryParameter2 = parse.getQueryParameter(KEY_MUS_TPL);
-                    if (!TextUtils.isEmpty(queryParameter2)) {
+                    if (!StringUtils.isEmpty(queryParameter2)) {
                         this.g = queryParameter2;
                         this.f = this.f.replaceFirst("wh_weex=true", WH_QUERY_FALSE);
                     } else {
@@ -385,7 +385,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
             } else if (serializableExtra instanceof Map) {
                 this.b = new JSONObject((Map) serializableExtra);
             }
-        } else if (!TextUtils.isEmpty(queryParameter)) {
+        } else if (!StringUtils.isEmpty(queryParameter)) {
             this.g = queryParameter;
         }
         String path = data.getPath();
@@ -533,17 +533,17 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         Uri data = intent.getData();
         this.j = intent.getStringExtra(ifg.c);
         this.k = intent.getStringExtra(ifg.e);
-        if (TextUtils.isEmpty(this.j) || TextUtils.isEmpty(this.k)) {
+        if (StringUtils.isEmpty(this.j) || StringUtils.isEmpty(this.k)) {
             return false;
         }
         String queryParameter = data.getQueryParameter(FROM);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             com.taobao.android.weex_framework.util.g.a(TAG, "weex url from:" + queryParameter);
             try {
                 HashMap hashMap = new HashMap();
-                hashMap.put("weexUrl", TextUtils.isEmpty(this.k) ? getIntent().getStringExtra(ifg.e) : this.k);
-                hashMap.put("bundleUrl", TextUtils.isEmpty(this.j) ? getIntent().getStringExtra(ifg.c) : this.j);
-                hashMap.put("pageName", TextUtils.isEmpty(this.l) ? a(getIntent().getStringExtra(ifg.c)) : this.l);
+                hashMap.put("weexUrl", StringUtils.isEmpty(this.k) ? getIntent().getStringExtra(ifg.e) : this.k);
+                hashMap.put("bundleUrl", StringUtils.isEmpty(this.j) ? getIntent().getStringExtra(ifg.c) : this.j);
+                hashMap.put("pageName", StringUtils.isEmpty(this.l) ? a(getIntent().getStringExtra(ifg.c)) : this.l);
                 AppMonitor.Alarm.commitFail("weex", "from_not_nav", JSON.toJSONString(hashMap), "99402", "degradeToWindVane");
             } catch (Throwable unused) {
             }
@@ -667,7 +667,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         try {
             String queryParameter = Uri.parse(this.k).getQueryParameter("wx_navbar_hidden");
             ActionBar supportActionBar = getSupportActionBar();
-            if (supportActionBar == null || !TextUtils.equals(queryParameter, Boolean.toString(true))) {
+            if (supportActionBar == null || !StringUtils.equals(queryParameter, Boolean.toString(true))) {
                 return;
             }
             supportActionBar.e();
@@ -680,7 +680,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("686427c", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.k)) {
+        } else if (StringUtils.isEmpty(this.k)) {
         } else {
             try {
                 if ("true".equalsIgnoreCase(Uri.parse(this.k).getQueryParameter(WX_SECURE))) {
@@ -703,7 +703,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         } catch (Exception e) {
             com.taobao.android.weex_framework.util.g.c(TAG, e);
         }
-        return TextUtils.equals(Uri.parse(this.k).getQueryParameter("wx_main_hc"), Boolean.toString(true));
+        return StringUtils.equals(Uri.parse(this.k).getQueryParameter("wx_main_hc"), Boolean.toString(true));
     }
 
     private boolean v() {
@@ -715,7 +715,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         } catch (Exception e) {
             com.taobao.android.weex_framework.util.g.c(TAG, e);
         }
-        return TextUtils.equals(Uri.parse(this.k).getQueryParameter("wx_navbar_transparent"), Boolean.toString(true));
+        return StringUtils.equals(Uri.parse(this.k).getQueryParameter("wx_navbar_transparent"), Boolean.toString(true));
     }
 
     private boolean w() {
@@ -727,7 +727,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         } catch (Exception e) {
             com.taobao.android.weex_framework.util.g.c(TAG, e);
         }
-        return TextUtils.equals(Uri.parse(this.k).getQueryParameter(WX_APPBAR), Boolean.toString(true));
+        return StringUtils.equals(Uri.parse(this.k).getQueryParameter(WX_APPBAR), Boolean.toString(true));
     }
 
     private Pair<Boolean, StatusBarTextColor> x() {
@@ -740,13 +740,13 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
                 Uri parse = Uri.parse(this.k);
                 String queryParameter = parse.getQueryParameter(WX_STATUSBAR_HIDDEN);
                 String queryParameter2 = parse.getQueryParameter(WX_STATUSBAR_HIDDEN2);
-                if (!TextUtils.equals(queryParameter, Boolean.toString(true)) && !"true".equals(queryParameter2)) {
-                    if (TextUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_DARK_TEXT)) {
+                if (!StringUtils.equals(queryParameter, Boolean.toString(true)) && !"true".equals(queryParameter2)) {
+                    if (StringUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_DARK_TEXT)) {
                         if (Build.VERSION.SDK_INT >= 23) {
                             return new Pair<>(true, StatusBarTextColor.Dark);
                         }
                         return new Pair<>(false, StatusBarTextColor.Dark);
-                    } else if (TextUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_LIGHT_TEXT)) {
+                    } else if (StringUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_LIGHT_TEXT)) {
                         if (Build.VERSION.SDK_INT >= 23) {
                             return new Pair<>(true, StatusBarTextColor.Light);
                         }
@@ -767,7 +767,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         try {
-            return !TextUtils.isEmpty(str) ? Uri.parse(str).buildUpon().clearQuery().build().toString() : str;
+            return !StringUtils.isEmpty(str) ? Uri.parse(str).buildUpon().clearQuery().build().toString() : str;
         } catch (Exception unused) {
             return str;
         }
@@ -1015,7 +1015,7 @@ public class WeexV2Activity extends CustomBaseActivity implements WeexFragment.a
         }
         String str = this.c;
         Bundle bundle = new Bundle();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Bundle bundle2 = new Bundle();
             bundle2.putString("pageName", this.j);
             bundle.putParcelable(hyt.ZZB_BUNDLE_KEY, bundle2);

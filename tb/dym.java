@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.status.NetworkStatusHelper;
 import com.ali.adapt.api.AliAdaptServiceManager;
@@ -163,7 +163,7 @@ public class dym implements e.b {
 
     private String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : (!this.c || TextUtils.isEmpty(this.d) || !this.d.contains("hybrid=true")) ? str : this.d;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : (!this.c || StringUtils.isEmpty(this.d) || !this.d.contains("hybrid=true")) ? str : this.d;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:107:0x0405  */
@@ -213,10 +213,10 @@ public class dym implements e.b {
         } else if (detailCoreActivity == null || cVar == null || cVar.f10055a == null || cVar.f10055a.a() == null || cVar.f10055a.a().isEmpty()) {
         } else {
             String a2 = ecs.a(cVar);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 i.d("StartupMainRequestDataHandler", "preloadWeexInstance, weex url is empty");
                 dyo.a b = dyo.b(dyo.b(detailCoreActivity));
-                if (b != null && !TextUtils.isEmpty(b.d)) {
+                if (b != null && !StringUtils.isEmpty(b.d)) {
                     i.d("StartupMainRequestDataHandler", "preloadWeexInstance, stream data is ready");
                     a(detailCoreActivity, b);
                     return;
@@ -232,7 +232,7 @@ public class dym implements e.b {
                             return;
                         }
                         i.d("StartupMainRequestDataHandler", "preloadWeexInstance, stream data is added");
-                        if (TextUtils.isEmpty(aVar.d)) {
+                        if (StringUtils.isEmpty(aVar.d)) {
                             return;
                         }
                         dyo.b(this);
@@ -276,7 +276,7 @@ public class dym implements e.b {
         }
         JSONObject a2 = g.a(aVar.d);
         String a3 = ecs.a(a2);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         ecs.a(detailCoreActivity, a3, a2);
@@ -341,9 +341,9 @@ public class dym implements e.b {
         dyaVar.c.setVisibility(8);
         dyaVar.e.setVisibility(0);
         String str2 = dyaVar.f.f27180a != null ? dyaVar.f.f27180a : "";
-        if (!TextUtils.isEmpty(this.f27110a)) {
+        if (!StringUtils.isEmpty(this.f27110a)) {
             dyaVar.a(str2, this.f27110a, "onFailure tcloud常态化降级");
-        } else if (!TextUtils.isEmpty(dyaVar.f.f27180a)) {
+        } else if (!StringUtils.isEmpty(dyaVar.f.f27180a)) {
             String str3 = dyaVar.f.f27180a;
             if (god.t) {
                 sb = new StringBuilder();

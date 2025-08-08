@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -210,7 +210,7 @@ public class NavigationWatchDog extends BroadcastReceiver implements Application
             return;
         }
         TLog.loge("Welcome", "NavigationWatchDog", "broadcast received, action=" + intent.getAction() + ", counter=" + this.d.get());
-        if (!TextUtils.equals("action_welcome_need_finish", intent.getAction())) {
+        if (!StringUtils.equals("action_welcome_need_finish", intent.getAction())) {
             return;
         }
         e();

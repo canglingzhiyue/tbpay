@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.regex.Pattern;
 
@@ -17,6 +17,6 @@ public class jfc implements jeo {
         }
         Pattern compile = Pattern.compile("Thread-\\d+");
         String name = thread.getName();
-        return TextUtils.isEmpty(name) || compile.matcher(name).find() || thread.isDaemon();
+        return StringUtils.isEmpty(name) || compile.matcher(name).find() || thread.isDaemon();
     }
 }

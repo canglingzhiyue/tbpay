@@ -1,6 +1,6 @@
 package com.ali.user.mobile.url.service.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.info.AlipayInfo;
@@ -70,7 +70,7 @@ public class UrlFetchServiceImpl {
         buildBaseRequest.addParam(ApiConstants.ApiField.FROM_SITE, Integer.valueOf(acBaseParam.fromSite));
         buildBaseRequest.addParam("version", "android:new");
         buildBaseRequest.addParam(ApiConstants.ApiField.TRUST_LOGIN, "true");
-        if (!TextUtils.isEmpty(acBaseParam.userInputName)) {
+        if (!StringUtils.isEmpty(acBaseParam.userInputName)) {
             buildBaseRequest.addParam(ApiConstants.ApiField.USER_INPUT_NAME, acBaseParam.userInputName);
         }
         if (acBaseParam.havanaId != 0) {
@@ -97,14 +97,14 @@ public class UrlFetchServiceImpl {
         hashMap.put("taobao", SecurityGuardManagerWraper.getWUA());
         buildBaseRequest.addParam(ApiConstants.ApiField.WIRELESS_ENVM, JSON.toJSONString(hashMap));
         DeviceTokenSignParam deviceTokenSignParam = new DeviceTokenSignParam();
-        if (!TextUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
+        if (!StringUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
             deviceTokenSignParam.addAppKey(DataProviderFactory.getDataProvider().getAppkey());
         }
         deviceTokenSignParam.addAppVersion(AppInfo.getInstance().getAndroidAppVersion());
         deviceTokenSignParam.addHavanaId(valueOf);
         deviceTokenSignParam.addTimestamp(valueOf2);
         deviceTokenSignParam.addSDKVersion(AppInfo.getInstance().getSdkVersion());
-        if (!TextUtils.isEmpty(acBaseParam.deviceTokenKey)) {
+        if (!StringUtils.isEmpty(acBaseParam.deviceTokenKey)) {
             buildBaseRequest.addParam(ApiConstants.ApiField.LOGIN_SIGN, AlibabaSecurityTokenService.sign(acBaseParam.deviceTokenKey, deviceTokenSignParam.build()));
         }
         return (MtopFoundPasswordResponseData) ((RpcService) ServiceFactory.getService(RpcService.class)).post(buildBaseRequest, MtopFoundPasswordResponseData.class, String.valueOf(acBaseParam.havanaId));

@@ -1,6 +1,6 @@
 package com.loc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
@@ -43,7 +43,7 @@ public final class ew extends AMapLocation {
     }
 
     private void j(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String[] split = str.split("\\*");
@@ -54,7 +54,7 @@ public final class ew extends AMapLocation {
                 break;
             }
             String str2 = split[i];
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 String[] split2 = str2.split(",");
                 setLongitude(fy.c(split2[0]));
                 setLatitude(fy.c(split2[1]));
@@ -136,7 +136,7 @@ public final class ew extends AMapLocation {
     public final void c(java.lang.String r2) {
         /*
             r1 = this;
-            boolean r0 = android.text.TextUtils.isEmpty(r2)
+            boolean r0 = android.text.StringUtils.isEmpty(r2)
             if (r0 != 0) goto L1a
             java.lang.String r0 = "0"
             boolean r0 = r2.equals(r0)
@@ -200,7 +200,7 @@ public final class ew extends AMapLocation {
 
     public final ew h() {
         String g = g();
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             return null;
         }
         String[] split = g.split(",");

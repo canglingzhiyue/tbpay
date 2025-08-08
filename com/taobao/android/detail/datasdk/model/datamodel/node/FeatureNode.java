@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.datamodel.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.aqd;
@@ -197,6 +197,6 @@ public class FeatureNode extends DetailNode {
         if (!jqm.a()) {
             return this.enabledDetail3Tab;
         }
-        return this.enabledDetail3Tab || TextUtils.equals(aqd.a("debug.tb.detail.newnav"), "1");
+        return this.enabledDetail3Tab || StringUtils.equals(aqd.a("debug.tb.detail.newnav"), "1");
     }
 }

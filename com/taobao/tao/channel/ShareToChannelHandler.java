@@ -1,6 +1,6 @@
 package com.taobao.tao.channel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.d;
@@ -37,9 +37,9 @@ public class ShareToChannelHandler implements obg.a {
         }
         channelView.c = jSONObject;
         if (channelView.d().j()) {
-            com.taobao.share.taopassword.constants.a.c = TextUtils.equals("true", string2);
+            com.taobao.share.taopassword.constants.a.c = StringUtils.equals("true", string2);
         } else {
-            com.taobao.share.taopassword.constants.a.b = TextUtils.equals("true", string2);
+            com.taobao.share.taopassword.constants.a.b = StringUtils.equals("true", string2);
         }
         ((com.taobao.tao.sharepanel.weex.a) ShareBizAdapter.getInstance().getShareEngine().mo1241getCurSharePanel()).getShareActionDispatcher().a(new d(channelView.c().desc, channelView), ShareBizAdapter.getInstance().getAppEnv().b(), 0);
     }
@@ -56,7 +56,7 @@ public class ShareToChannelHandler implements obg.a {
         Iterator<com.taobao.share.globalmodel.b> it = b.iterator();
         while (it.hasNext()) {
             com.taobao.share.ui.engine.structure.a aVar = (com.taobao.share.ui.engine.structure.a) it.next();
-            if (TextUtils.equals(aVar.d().c(), str)) {
+            if (StringUtils.equals(aVar.d().c(), str)) {
                 return aVar;
             }
         }

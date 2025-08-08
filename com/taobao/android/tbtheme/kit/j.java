@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
@@ -94,7 +94,7 @@ public class j {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-                    } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+                    } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
                     } else {
                         j.a(j.this, (String) null);
                         LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent(j.ACTION_THEME_CHANGE));
@@ -109,7 +109,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c9b1c9ae", new Object[]{this, str, themeData});
-        } else if (TextUtils.isEmpty(str) || themeData == null) {
+        } else if (StringUtils.isEmpty(str) || themeData == null) {
         } else {
             this.d.a(str, themeData);
             c(str);
@@ -121,7 +121,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6635bcfe", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null || (a2 = l.a(jSONObject)) == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null || (a2 = l.a(jSONObject)) == null) {
         } else {
             a(str, a2);
         }
@@ -131,7 +131,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.d.b(str);
             c(str);

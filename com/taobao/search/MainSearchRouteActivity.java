@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,20 +68,20 @@ public final class MainSearchRouteActivity extends Activity {
         }
         String queryParameter = data.getQueryParameter("q");
         String queryParameter2 = data.getQueryParameter(noa.KEY_POP_UP);
-        Uri.Builder buildUpon = Uri.parse(TextUtils.isEmpty(queryParameter) ? NavUrls.NAV_URL_SEARCH_HOME : "https://s.m.taobao.com/h5").buildUpon();
+        Uri.Builder buildUpon = Uri.parse(StringUtils.isEmpty(queryParameter) ? NavUrls.NAV_URL_SEARCH_HOME : "https://s.m.taobao.com/h5").buildUpon();
         Set<String> queryKeys = data.getQueryParameterNames();
         q.a((Object) queryKeys, "queryKeys");
         if (true ^ queryKeys.isEmpty()) {
             for (String str : queryKeys) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String queryParameter3 = data.getQueryParameter(str);
-                    if (!TextUtils.isEmpty(queryParameter3)) {
+                    if (!StringUtils.isEmpty(queryParameter3)) {
                         buildUpon.appendQueryParameter(str, queryParameter3);
                     }
                 }
             }
         }
-        if (TextUtils.equals(queryParameter2, "true") && r.bI()) {
+        if (StringUtils.equals(queryParameter2, "true") && r.bI()) {
             buildUpon.appendQueryParameter(noa.KEY_G_POP_UP, "true");
             Nav withAction = Nav.from(this).withAction(AgooConstants.MESSAGE_POPUP);
             Intent intent2 = getIntent();

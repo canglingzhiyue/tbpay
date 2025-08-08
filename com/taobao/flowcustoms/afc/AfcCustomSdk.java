@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.model.SmallHandleData;
@@ -81,7 +81,7 @@ public class AfcCustomSdk {
             c.a("linkx", "AfcCustomSdk === handleUrl === 分流前插件执行完毕" + str);
             HashMap hashMap = new HashMap();
             hashMap.put(koh.LINK_MANAGER_SDK_VERSION, AfcCustomSdk.SDK_VERSION);
-            hashMap.put("userId", TextUtils.isEmpty(AfcCustomSdk.this.h.B) ? "unknown" : AfcCustomSdk.this.h.B);
+            hashMap.put("userId", StringUtils.isEmpty(AfcCustomSdk.this.h.B) ? "unknown" : AfcCustomSdk.this.h.B);
             com.taobao.flowcustoms.afc.utils.b.a(com.taobao.flowcustoms.afc.utils.b.AFC_FLOW_ROUTER_BEFORE, "", "", hashMap);
             long a2 = AfcUtils.a();
             c.b(AfcCustomSdk.LOG_TIME, "海关分流前节点耗时：" + (a2 - this.f17168a) + "");
@@ -109,7 +109,7 @@ public class AfcCustomSdk {
                     com.taobao.flowcustoms.afc.utils.b.a(com.taobao.flowcustoms.afc.utils.b.AFC_LINK_ROUTER_TIME, sb2.toString(), "", null);
                     String str2 = AfcCustomSdk.this.h.E;
                     c.b("linkx", "AfcCustomSdk === handleUrl === 分流逻辑返回的URL：" + str2);
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = AfcCustomSdk.this.h.g;
                     }
                     final HashMap hashMap2 = new HashMap();
@@ -118,10 +118,10 @@ public class AfcCustomSdk {
                     hashMap2.put("hot_startup_h5", Boolean.valueOf(AnonymousClass1.this.c));
                     HashMap hashMap3 = new HashMap();
                     hashMap3.put(koh.LINK_MANAGER_SDK_VERSION, AfcCustomSdk.SDK_VERSION);
-                    hashMap3.put("userId", TextUtils.isEmpty(AfcCustomSdk.this.h.B) ? "unknown" : AfcCustomSdk.this.h.B);
+                    hashMap3.put("userId", StringUtils.isEmpty(AfcCustomSdk.this.h.B) ? "unknown" : AfcCustomSdk.this.h.B);
                     hashMap3.put("url", str2);
                     String string = AfcCustomSdk.this.h.J.getString("asyncReqBucketId");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         string = "";
                     }
                     hashMap3.put("asyncReqBucketId", string);
@@ -148,7 +148,7 @@ public class AfcCustomSdk {
                             com.taobao.flowcustoms.afc.utils.b.a(com.taobao.flowcustoms.afc.utils.b.AFC_AFTER_LINK_ROUTER_TIME, sb3.toString(), "", null);
                             c.b("linkx", "AfcCustomSdk === handleUrl === 分流后插件执行完毕" + str3);
                             kog.a().a(AfcCustomSdk.this.h, com.taobao.flowcustoms.afc.utils.b.AFC_LINK_END, new HashMap<>());
-                            if (TextUtils.isEmpty(AfcCustomSdk.this.h.F)) {
+                            if (StringUtils.isEmpty(AfcCustomSdk.this.h.F)) {
                                 kol.a().b(AfcCustomSdk.this.h);
                             }
                             AfcCustomSdk.a(AfcCustomSdk.this, AfcCustomSdk.this.h, str3, hashMap2);
@@ -347,14 +347,14 @@ public class AfcCustomSdk {
             HashMap hashMap2 = new HashMap();
             hashMap2.put(koh.LINK_MANAGER_SDK_VERSION, SDK_VERSION);
             hashMap2.put("url", this.h.g);
-            if (!TextUtils.isEmpty(this.h.B)) {
+            if (!StringUtils.isEmpty(this.h.B)) {
                 str = this.h.B;
             }
             hashMap2.put("userId", str);
             com.taobao.flowcustoms.afc.utils.b.a(com.taobao.flowcustoms.afc.utils.b.AFC_FLOW_LOCAL_ROUTER, "", "", hashMap2);
             try {
                 Uri parse = Uri.parse(this.h.g);
-                if (parse != null && TextUtils.isEmpty(parse.getQueryParameter("isNeedHome"))) {
+                if (parse != null && StringUtils.isEmpty(parse.getQueryParameter("isNeedHome"))) {
                     Uri.Builder buildUpon = parse.buildUpon();
                     buildUpon.appendQueryParameter("isNeedHome", "0");
                     this.h.E = buildUpon.build().toString();
@@ -374,12 +374,12 @@ public class AfcCustomSdk {
             c.a("linkx", "AfcCustomSdk === routerUrl === 走本地分流");
             HashMap hashMap3 = new HashMap();
             hashMap3.put(koh.LINK_MANAGER_SDK_VERSION, SDK_VERSION);
-            if (!TextUtils.isEmpty(this.h.B)) {
+            if (!StringUtils.isEmpty(this.h.B)) {
                 str = this.h.B;
             }
             hashMap3.put("userId", str);
             String string = aVar.J.getString("asyncReqBucketId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "";
             }
             hashMap3.put("asyncReqBucketId", string);
@@ -400,7 +400,7 @@ public class AfcCustomSdk {
                     Object obj = map.get("afcBackUrl");
                     if (obj instanceof String) {
                         String str4 = (String) obj;
-                        if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.isEmpty(str4)) {
                             aVar.F = str4;
                             kog.a().b(str4);
                         }
@@ -413,12 +413,12 @@ public class AfcCustomSdk {
             c.a("linkx", "AfcCustomSdk === routerUrl === 走服务端分流");
             HashMap hashMap4 = new HashMap();
             hashMap4.put(koh.LINK_MANAGER_SDK_VERSION, SDK_VERSION);
-            if (!TextUtils.isEmpty(this.h.B)) {
+            if (!StringUtils.isEmpty(this.h.B)) {
                 str = this.h.B;
             }
             hashMap4.put("userId", str);
             String string2 = aVar.J.getString("asyncReqBucketId");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 string2 = "";
             }
             hashMap4.put("asyncReqBucketId", string2);
@@ -444,7 +444,7 @@ public class AfcCustomSdk {
                     Object obj2 = map.get("jumpUrl");
                     if (obj2 instanceof String) {
                         String str4 = (String) obj2;
-                        if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.isEmpty(str4)) {
                             aVar.E = str4;
                         }
                     }
@@ -503,12 +503,12 @@ public class AfcCustomSdk {
             f a2 = f.a(a().f17167a);
             String str2 = (String) a2.b("local_appKeys" + this.h.f17179a, "");
             StringBuilder sb = new StringBuilder();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 com.taobao.flowcustoms.afc.xbs.a.a(this.h, (SmallHandleData.BackAppInfos) JSON.parseObject(str2, SmallHandleData.BackAppInfos.class));
-            } else if (!TextUtils.isEmpty(this.h.f17179a)) {
+            } else if (!StringUtils.isEmpty(this.h.f17179a)) {
                 sb.append(this.h.f17179a);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.alibaba.fastjson.JSONObject parseObject = JSON.parseObject(str);
                 if (!parseObject.isEmpty()) {
                     for (String str3 : parseObject.keySet()) {
@@ -597,7 +597,7 @@ public class AfcCustomSdk {
         try {
             HashMap hashMap2 = new HashMap();
             hashMap2.put(koh.LINK_MANAGER_SDK_VERSION, SDK_VERSION);
-            hashMap2.put("userId", TextUtils.isEmpty(aVar.B) ? "unknown" : aVar.B);
+            hashMap2.put("userId", StringUtils.isEmpty(aVar.B) ? "unknown" : aVar.B);
             hashMap2.put("url", str);
             hashMap2.put("afcBackUrl", aVar.F);
             com.taobao.flowcustoms.afc.utils.b.a(com.taobao.flowcustoms.afc.utils.b.AFC_NAV_URL, "", "", hashMap2);

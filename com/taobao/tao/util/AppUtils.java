@@ -4,7 +4,7 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -76,7 +76,7 @@ public class AppUtils {
                 if (nextElement.getName().contains("../")) {
                     break;
                 } else if (nextElement.getName().startsWith(str3)) {
-                    File file = new File(str2, TextUtils.substring(nextElement.getName(), nextElement.getName().lastIndexOf("/") + 1, nextElement.getName().length()));
+                    File file = new File(str2, StringUtils.substring(nextElement.getName(), nextElement.getName().lastIndexOf("/") + 1, nextElement.getName().length()));
                     if (!file.exists()) {
                         file.getParentFile().mkdirs();
                         file.createNewFile();
@@ -219,16 +219,16 @@ public class AppUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("36a90fad", new Object[]{intent, str});
-        } else if (TextUtils.isEmpty(str) || intent == null) {
+        } else if (StringUtils.isEmpty(str) || intent == null) {
         } else {
             try {
-                if (intent.getData() == null && TextUtils.isEmpty(intent.getStringExtra("myBrowserUrl"))) {
+                if (intent.getData() == null && StringUtils.isEmpty(intent.getStringExtra("myBrowserUrl"))) {
                     return;
                 }
                 Uri data = intent.getData();
                 if (data == null) {
                     String stringExtra = intent.getStringExtra("myBrowserUrl");
-                    if (!TextUtils.isEmpty(stringExtra)) {
+                    if (!StringUtils.isEmpty(stringExtra)) {
                         data = Uri.parse(stringExtra);
                     }
                 }
@@ -239,10 +239,10 @@ public class AppUtils {
                 String queryParameter2 = data.getQueryParameter("nav_source_id");
                 String str2 = "frompoint:name" + queryParameter;
                 String queryParameter3 = data.getQueryParameter(DispatchConstants.CARRIER);
-                if (!TextUtils.isEmpty(queryParameter3)) {
+                if (!StringUtils.isEmpty(queryParameter3)) {
                     TrackBuried.carrier = queryParameter3;
                 }
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     HashMap hashMap = new HashMap();
                     hashMap.put("_sb", queryParameter);
                     UTAnalytics.getInstance().updateSessionProperties(hashMap);
@@ -251,11 +251,11 @@ public class AppUtils {
                     if (map != null && map.containsKey("ttid")) {
                         TrackBuried.bdid = (String) map.get("ttid");
                     }
-                    if (TextUtils.isEmpty(TrackBuried.bdid)) {
+                    if (StringUtils.isEmpty(TrackBuried.bdid)) {
                         TrackBuried.bdid = data.getQueryParameter("ttid");
                     }
                 }
-                if (TextUtils.isEmpty(queryParameter2)) {
+                if (StringUtils.isEmpty(queryParameter2)) {
                     return;
                 }
                 HashMap hashMap2 = new HashMap();

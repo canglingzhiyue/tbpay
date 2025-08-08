@@ -1,7 +1,7 @@
 package com.vivo.push.b;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.aa;
 
 /* loaded from: classes9.dex */
@@ -28,17 +28,17 @@ public class c extends com.vivo.push.v {
     public final int a(Context context) {
         if (this.d == -1) {
             String str = this.b;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.vivo.push.util.u.a("BaseAppCommand", "pkg name is null");
                 String a2 = a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     com.vivo.push.util.u.a("BaseAppCommand", "src is null");
                     return -1;
                 }
                 str = a2;
             }
             this.d = aa.b(context, str);
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 this.d = 2;
             }
         }
@@ -60,7 +60,7 @@ public class c extends com.vivo.push.v {
         dVar.a("package_name", this.b);
         dVar.a("sdk_version", 341L);
         dVar.a("PUSH_APP_STATUS", this.d);
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             dVar.a("BaseAppCommand.EXTRA__HYBRIDVERSION", this.f);
         }
         dVar.a("BaseAppCommand.EXTRA_APPID", this.h);

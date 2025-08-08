@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -26,7 +26,7 @@ public class ifv {
         new HashMap();
         HashMap hashMap = new HashMap();
         for (String str : jSONObject.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Object obj = jSONObject.get(str);
                 if (obj instanceof JSONArray) {
                     hashMap.put(str, a((JSONArray) obj));

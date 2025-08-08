@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender.dsl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -29,6 +29,6 @@ public class StateModel extends StateBaseModel {
     public boolean isValid() {
         List<StateVersionModel> list;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.layout) && !TextUtils.isEmpty(this.id) && ((this.children != null && !this.children.isEmpty()) || ((list = this.versions) != null && !list.isEmpty()));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.layout) && !StringUtils.isEmpty(this.id) && ((this.children != null && !this.children.isEmpty()) || ((list = this.versions) != null && !list.isEmpty()));
     }
 }

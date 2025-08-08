@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.engine;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.intelligentdecision.log.DecisionLogcat;
 import com.alipay.mobile.verifyidentity.common.Constants;
@@ -356,9 +356,9 @@ public class TaskManager {
         if (currentTask == null) {
             z = false;
         } else if (AnonymousClass4.$SwitchMap$com$alipay$mobile$verifyidentity$common$VerifyType[verifyType.ordinal()] == 1) {
-            z = TextUtils.equals(str, currentTask.getToken());
+            z = StringUtils.equals(str, currentTask.getToken());
         } else {
-            z = TextUtils.equals(str, currentTask.getVerifyId());
+            z = StringUtils.equals(str, currentTask.getVerifyId());
         }
         if (z) {
             String str2 = f5868a;
@@ -438,9 +438,9 @@ public class TaskManager {
             VerifyLogCat.i(f5868a, "notifyListenerResult");
             if (VerifyType.FAST_INIT.equals(verifyIdentityTask.getVerifyType()) || VerifyType.FAST_DIRECT.equals(verifyIdentityTask.getVerifyType())) {
                 verifyIdentityTask.getVidListener().onVerifyResult(str, str2, verifyIdentityTask.getBizName(), verifyIdentityResult);
-            } else if (TextUtils.isEmpty(str) && verifyIdentityTask.getListener() != null) {
+            } else if (StringUtils.isEmpty(str) && verifyIdentityTask.getListener() != null) {
                 verifyIdentityTask.getListener().onVerifyResult(str2, verifyIdentityTask.getBizName(), verifyIdentityResult);
-            } else if (TextUtils.isEmpty(str) || verifyIdentityTask.getVidListener() == null) {
+            } else if (StringUtils.isEmpty(str) || verifyIdentityTask.getVidListener() == null) {
             } else {
                 verifyIdentityTask.getVidListener().onVerifyResult(str, str2, verifyIdentityTask.getBizName(), verifyIdentityResult);
             }

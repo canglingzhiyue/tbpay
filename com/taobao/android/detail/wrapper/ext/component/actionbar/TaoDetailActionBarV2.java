@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.util.TypedValue;
@@ -348,7 +348,7 @@ public class TaoDetailActionBarV2 extends LinearLayout implements ehv {
         this.mMiniAppContainer.addView(this.mNavHeadBar, layoutParams);
         this.showWwRunnable = new a(this);
         String config = OrangeConfig.getInstance().getConfig("android_detail", "ww_guide_remain_time", "3000");
-        this.remainTime = TextUtils.isEmpty(config) ? 3000L : Long.valueOf(config).longValue();
+        this.remainTime = StringUtils.isEmpty(config) ? 3000L : Long.valueOf(config).longValue();
     }
 
     public void initialize() {
@@ -436,7 +436,7 @@ public class TaoDetailActionBarV2 extends LinearLayout implements ehv {
             return;
         }
         String appID = MiniAppEntranceView.getAppID(c.getIntent());
-        if (TextUtils.isEmpty(appID)) {
+        if (StringUtils.isEmpty(appID)) {
             return;
         }
         this.miniAppEntranceView = new MiniAppEntranceView(getContext());
@@ -883,7 +883,7 @@ public class TaoDetailActionBarV2 extends LinearLayout implements ehv {
                     Object param = event.getParam();
                     if (param instanceof HashMap) {
                         String valueOf = String.valueOf(((HashMap) param).get("locatorId"));
-                        if (!TextUtils.isEmpty(valueOf)) {
+                        if (!StringUtils.isEmpty(valueOf)) {
                             this.locatorToTabIndexMap.put(valueOf, Integer.valueOf(size));
                             this.clickableTabRefs.add(new Pair<>(textView, view));
                         }

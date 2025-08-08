@@ -3,7 +3,7 @@ package com.taobao.android.detail2.core.framework.view.manager;
 import android.os.Looper;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
@@ -1046,7 +1046,7 @@ public class ListViewManager {
             return (b) ipChange.ipc$dispatch("9272e42f", new Object[]{this, str, new Boolean(z), scrollSpeed});
         }
         b bVar = new b();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             bVar.f11606a = false;
             bVar.b = "10002";
             bVar.c = b.ERROR_MSG_NID_NOT_EXIST;
@@ -1097,7 +1097,7 @@ public class ListViewManager {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("47f7a149", new Object[]{this, str, str2, scrollSpeed});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return a(str2, false, scrollSpeed);
         }
         char c2 = 65535;

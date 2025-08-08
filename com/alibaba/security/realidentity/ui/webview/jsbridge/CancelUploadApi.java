@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity.ui.webview.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.u4;
 import com.alibaba.security.realidentity.ui.webview.jsbridge.annotation.JSTopic;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -28,7 +28,7 @@ public class CancelUploadApi extends BaseJsExecutor {
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
-            if (!TextUtils.isEmpty(jSONObject.has(BaseJsExecutor.NAME_PHOTO_ID) ? jSONObject.getString(BaseJsExecutor.NAME_PHOTO_ID) : null)) {
+            if (!StringUtils.isEmpty(jSONObject.has(BaseJsExecutor.NAME_PHOTO_ID) ? jSONObject.getString(BaseJsExecutor.NAME_PHOTO_ID) : null)) {
                 return true;
             }
             callbackUnknowError(jsCallbackAdapter);

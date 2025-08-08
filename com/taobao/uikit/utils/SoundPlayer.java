@@ -4,7 +4,7 @@ import android.content.Context;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
@@ -171,7 +171,7 @@ public class SoundPlayer {
         if (this.mScenesMap.containsKey(Integer.valueOf(i))) {
             String str2 = "sound has been registered for id=" + i + ", will replace it";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             switch (i) {
                 case 0:
                     register(i, R.raw.sound_push);

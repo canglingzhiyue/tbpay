@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.preload.launcher;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -66,7 +66,7 @@ public class FullPageWakeChainLauncher {
                 return;
             }
             String str = (String) hashMap.get("startIntent");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             pio.a(pio.TRACE_VIDEOTAB_VIDEO_LAUNCHER_INIT);
@@ -96,9 +96,9 @@ public class FullPageWakeChainLauncher {
             }
             pio.a(pio.GG_VIDEOTAB_VIDEO_PRELOAD);
             c.a(parse);
-            if (!(!TextUtils.isEmpty(c.a(context, true)))) {
+            if (!(!StringUtils.isEmpty(c.a(context, true)))) {
                 Pair<String, String> b = sov.b(parse);
-                if (b != null && (!TextUtils.isEmpty((CharSequence) b.first) || !TextUtils.isEmpty((CharSequence) b.second))) {
+                if (b != null && (!StringUtils.isEmpty((CharSequence) b.first) || !StringUtils.isEmpty((CharSequence) b.second))) {
                     TLog.logi(TAG, "PickPreloadController, requestVideoInfo, videoId:" + ((String) b.first) + " itemId:" + ((String) b.second));
                     pio.a(pio.GG_VIDEOTAB_VIDEO_PREFETCH_MTOP);
                     d.a((String) b.first, (String) b.second, true, null);

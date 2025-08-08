@@ -2,7 +2,7 @@ package com.taobao.pha.core.phacontainer;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,11 +75,11 @@ public abstract class AbstractPageFragment extends PHABaseFragment implements c,
             jSONObject.put("key", (Object) pageModel.key);
             jSONObject.put("type", (Object) (pageModel._type == null ? "web" : pageModel._type));
             if (z) {
-                if (!TextUtils.isEmpty(this.mSubPageAppearNavigationType)) {
+                if (!StringUtils.isEmpty(this.mSubPageAppearNavigationType)) {
                     jSONObject.put("navigationType", (Object) this.mSubPageAppearNavigationType);
                     this.mSubPageAppearNavigationType = null;
                 }
-            } else if (!TextUtils.isEmpty(this.mSubPageDisappearNavigationType)) {
+            } else if (!StringUtils.isEmpty(this.mSubPageDisappearNavigationType)) {
                 jSONObject.put("navigationType", (Object) this.mSubPageDisappearNavigationType);
                 this.mSubPageDisappearNavigationType = null;
             }
@@ -113,7 +113,7 @@ public abstract class AbstractPageFragment extends PHABaseFragment implements c,
         }
         try {
             String a2 = ngn.a(str, obj, str2);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             evaluateSourceCodeToPage(a2);

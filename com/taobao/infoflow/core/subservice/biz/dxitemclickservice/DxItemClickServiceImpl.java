@@ -1,7 +1,7 @@
 package com.taobao.infoflow.core.subservice.biz.dxitemclickservice;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -242,7 +242,7 @@ public class DxItemClickServiceImpl implements IDxItemClickService {
         Map<String, String> parseExistingParams = parseExistingParams(uri.getQuery());
         parseExistingParams.putAll(map);
         String mapToQueryString = mapToQueryString(parseExistingParams);
-        if (TextUtils.isEmpty(mapToQueryString)) {
+        if (StringUtils.isEmpty(mapToQueryString)) {
             ldf.d(TAG, "assembleParams == null");
             return str;
         }

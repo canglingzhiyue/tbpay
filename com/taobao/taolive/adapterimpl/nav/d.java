@@ -1,6 +1,6 @@
 package com.taobao.taolive.adapterimpl.nav;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.proxy.f;
@@ -33,15 +33,15 @@ public class d {
             if (com.taobao.taolive.sdk.goodlist.d.a() && f.m().isMultiStateSecKill(liveItem)) {
                 str = jSONObject.getString("itemJumpUrl2");
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = jSONObject.getString("itemJumpUrl");
             }
             String string = jSONObject.getString("itemJumpUrlForPcg");
-            if (!TextUtils.isEmpty(string) && videoInfo != null && com.taobao.taolive.sdk.goodlist.d.a(videoInfo.itemTransferInfo)) {
+            if (!StringUtils.isEmpty(string) && videoInfo != null && com.taobao.taolive.sdk.goodlist.d.a(videoInfo.itemTransferInfo)) {
                 str = string;
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         return "http://a.m.taobao.com/sku" + liveItem.itemId + ".htm";

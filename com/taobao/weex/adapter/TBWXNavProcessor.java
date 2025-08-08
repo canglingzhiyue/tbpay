@@ -5,7 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
@@ -114,7 +114,7 @@ public class TBWXNavProcessor implements e {
         }
         Uri addScheme = UriUtil.addScheme(data);
         String uri = addScheme.toString();
-        if (TBWXConfigManger.getInstance().isUseShopNavProcessor() && !TextUtils.isEmpty(addScheme.getHost()) && (("shop.m.taobao.com".equals(addScheme.getHost()) || addScheme.getHost().contains(".m.tmall.com") || (addScheme.getHost().contains("shop") && addScheme.getHost().contains(".taobao.com"))) && (a2 = com.taobao.tao.shop.d.a(addScheme)) != null && a2.contains("wh_weex=true"))) {
+        if (TBWXConfigManger.getInstance().isUseShopNavProcessor() && !StringUtils.isEmpty(addScheme.getHost()) && (("shop.m.taobao.com".equals(addScheme.getHost()) || addScheme.getHost().contains(".m.tmall.com") || (addScheme.getHost().contains("shop") && addScheme.getHost().contains(".taobao.com"))) && (a2 = com.taobao.tao.shop.d.a(addScheme)) != null && a2.contains("wh_weex=true"))) {
             WXLogUtils.d(TAG, "WEEX after TBSREngine.matchedUrl and Put BundleUrl:" + a2);
             intent.putExtra(riu.c, a2);
             intent.putExtra(riu.e, a2);
@@ -143,7 +143,7 @@ public class TBWXNavProcessor implements e {
             if (addScheme.isHierarchical()) {
                 String queryParameter = addScheme.getQueryParameter(FROM);
                 Uri.Builder buildUpon = addScheme.buildUpon();
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     buildUpon.appendQueryParameter(FROM, "1");
                 }
                 addScheme = buildUpon.build();
@@ -152,13 +152,13 @@ public class TBWXNavProcessor implements e {
             } else {
                 str = null;
             }
-            if (!TextUtils.isEmpty(str4)) {
-                z2 = TextUtils.equals(str4, "2");
+            if (!StringUtils.isEmpty(str4)) {
+                z2 = StringUtils.equals(str4, "2");
             }
             if (z2) {
                 try {
                     if (addScheme.isHierarchical()) {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             Set<String> queryParameterNames = addScheme.getQueryParameterNames();
                             Uri.Builder buildUpon2 = Uri.parse(str).buildUpon();
                             for (String str5 : queryParameterNames) {
@@ -203,7 +203,7 @@ public class TBWXNavProcessor implements e {
             if (bundleUri != null && bundleUri.isHierarchical() && "true".equals(bundleUri.getQueryParameter(WEEX_FORCE_THEMIS))) {
                 booleanValue = true;
             }
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 String[] split = config.split(",");
                 StringBuilder sb2 = new StringBuilder();
                 z = booleanValue;
@@ -274,13 +274,13 @@ public class TBWXNavProcessor implements e {
                     WXLogUtils.e("TBNav:" + e.toString());
                 }
                 String str7 = str6;
-                if (!TextUtils.isEmpty(str7) && !z4) {
+                if (!StringUtils.isEmpty(str7) && !z4) {
                     uri2 = str7;
                 }
                 intent.putExtra(riu.d, uri2);
                 str6 = str7;
             }
-            if (isWeexV2Enable && (("dom".equals(addScheme.getQueryParameter("weex_mode")) || "xr".equals(addScheme.getQueryParameter("weex_mode")) || a.KEY_MUS.equals(addScheme.getQueryParameter("weex_mode")) || !TextUtils.isEmpty(str6)) && !z4)) {
+            if (isWeexV2Enable && (("dom".equals(addScheme.getQueryParameter("weex_mode")) || "xr".equals(addScheme.getQueryParameter("weex_mode")) || a.KEY_MUS.equals(addScheme.getQueryParameter("weex_mode")) || !StringUtils.isEmpty(str6)) && !z4)) {
                 intent.setData(addScheme.buildUpon().authority("h5.m.taobao.com").path("/weexpro/pro.htm").appendQueryParameter(str2, addScheme.toString()).build());
             } else {
                 return tryNavToWeex1(dVar.a(), addScheme, intent);
@@ -414,7 +414,7 @@ public class TBWXNavProcessor implements e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1c0a9c81", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || str.indexOf("h5.m.taobao.com/weex/viewpage.htm") == -1) {
+        } else if (StringUtils.isEmpty(str) || str.indexOf("h5.m.taobao.com/weex/viewpage.htm") == -1) {
         } else {
             try {
                 WXLogUtils.d(TAG, "degrade:" + TBWXConfigManger.getInstance().isDegrade());

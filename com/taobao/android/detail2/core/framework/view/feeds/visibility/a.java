@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework.view.feeds.visibility;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.b;
@@ -132,12 +132,12 @@ public class a {
             if (linearLayoutManager == null) {
                 return;
             }
-            if (TextUtils.equals(this.d.b(), "none")) {
+            if (StringUtils.equals(this.d.b(), "none")) {
                 String str = i > 0 ? "up" : "down";
                 this.d.a(str);
                 int findFirstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
                 int findLastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
-                int i2 = TextUtils.equals(str, "up") ? findFirstVisibleItemPosition : findLastVisibleItemPosition;
+                int i2 = StringUtils.equals(str, "up") ? findFirstVisibleItemPosition : findLastVisibleItemPosition;
                 this.d.a(i2);
                 fjt.a("VisibilityHandler", "生命周期，mCurrentPosition初始化:" + i2 + "，lastVisibleItemPosition：" + findLastVisibleItemPosition + "，firstVisibleItemPosition：" + findFirstVisibleItemPosition + ",mStartUp:" + str);
             }

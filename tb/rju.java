@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.wireless.link.assistant.display.AssistantCheckService;
 import com.taobao.wireless.link.assistant.jsbridge.AssistantCloseJsBridge;
@@ -126,7 +126,7 @@ public class rju {
         rkg.a("link_tag", "AssistantCenter === openAssistant === 小助手开通参数：id=" + str + " needEquity=" + z + " extraInfo=" + map);
         if (!rjw.c(context)) {
             rkg.a("link_tag", "AssistantCenter === openAssistant === 当前设备不支持小助手，开启失败");
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
             rkg.a("link_tag", "AssistantCenter === openAssistant === 活动id为空，开启失败");
         } else {
             rkk a2 = rkk.a(context);
@@ -258,7 +258,7 @@ public class rju {
             return;
         }
         rkg.a("link_tag", "AssistantCenter === closeAssistant === 关闭小助手");
-        if (TextUtils.isEmpty(str) || (e = rjw.e(context)) == null) {
+        if (StringUtils.isEmpty(str) || (e = rjw.e(context)) == null) {
             return;
         }
         e.remove(str);

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.request.preload;
 
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -60,7 +60,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (b = b(str)) == null) {
+        if (StringUtils.isEmpty(str) || (b = b(str)) == null) {
             return null;
         }
         return b.a();
@@ -71,7 +71,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("826c90e9", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f10797a.get(str);
         }
         return null;
@@ -82,7 +82,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.b.get(str);
         }
         return null;
@@ -112,7 +112,7 @@ public class h {
                 Object value = entry.getValue();
                 if (value instanceof JSONObject) {
                     String key = entry.getKey();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         JSONObject jSONObject2 = (JSONObject) value;
                         if (com.taobao.android.detail.ttdetail.utils.d.b(jSONObject2)) {
                             JSONObject c = com.taobao.android.detail.ttdetail.utils.g.c(jSONObject2);
@@ -125,7 +125,7 @@ public class h {
                                 }
                                 if (com.taobao.android.detail.ttdetail.utils.j.v()) {
                                     String a2 = bn.Companion.a(c2);
-                                    if (!TextUtils.isEmpty(a2)) {
+                                    if (!StringUtils.isEmpty(a2)) {
                                         this.b.put(key, a2);
                                     }
                                 }
@@ -137,13 +137,13 @@ public class h {
                                         break;
                                     }
                                     c next = it.next();
-                                    if (TextUtils.equals(key, next.b)) {
+                                    if (StringUtils.equals(key, next.b)) {
                                         str = next.d;
                                         str2 = next.c;
                                         break;
                                     }
                                 }
-                                if (TextUtils.equals("nav", str2)) {
+                                if (StringUtils.equals("nav", str2)) {
                                     a(jSONObject2);
                                     com.taobao.android.detail.ttdetail.utils.d.l(jSONObject2);
                                 }
@@ -177,7 +177,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f10797a.remove(str);
             this.b.remove(str);

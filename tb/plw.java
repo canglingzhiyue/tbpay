@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import com.taobao.taolive.room.utils.aw;
@@ -28,7 +28,7 @@ public class plw {
         } else if (tBLiveDataModel == null || (videoInfo = tBLiveDataModel.mVideoInfo) == null) {
         } else {
             String str2 = videoInfo.topic;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             boolean z = videoInfo.publishCommentsUseMtop;

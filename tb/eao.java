@@ -5,7 +5,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.graphics.drawable.shapes.RectShape;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -236,7 +236,7 @@ public class eao extends c<j> implements com.taobao.android.trade.event.j<eog> {
         layoutParams.setMargins(a3, 0, 0, 0);
         textView.setLayoutParams(layoutParams);
         RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.i.getLayoutParams();
-        if (TextUtils.isEmpty(((j) this.c).h)) {
+        if (StringUtils.isEmpty(((j) this.c).h)) {
             a3 = a6;
         }
         layoutParams2.setMargins(a3, 0, a8, 0);
@@ -252,10 +252,10 @@ public class eao extends c<j> implements com.taobao.android.trade.event.j<eog> {
             ipChange.ipc$dispatch("270e470f", new Object[]{this, jVar});
             return;
         }
-        if (TextUtils.isEmpty(this.h.getText())) {
+        if (StringUtils.isEmpty(this.h.getText())) {
             this.h.setText(((j) this.c).f9773a);
         }
-        if (!TextUtils.isEmpty(((j) this.c).h)) {
+        if (!StringUtils.isEmpty(((j) this.c).h)) {
             this.i.setText(((j) this.c).h);
         }
         c();
@@ -266,7 +266,7 @@ public class eao extends c<j> implements com.taobao.android.trade.event.j<eog> {
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("7eef97d4", new Object[]{this, eogVar});
         }
-        if (eogVar != null && !TextUtils.isEmpty(eogVar.b) && eogVar.b.startsWith("%new_sku%")) {
+        if (eogVar != null && !StringUtils.isEmpty(eogVar.b) && eogVar.b.startsWith("%new_sku%")) {
             this.h.setText(eogVar.b.replace("%new_sku%", ""));
             return a.SUCCESS;
         }
@@ -284,7 +284,7 @@ public class eao extends c<j> implements com.taobao.android.trade.event.j<eog> {
         String str = eogVar.b;
         SkuPageModel.SkuChoiceVO skuChoiceVO = eogVar.f27498a;
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (sb.length() > 0) {
                 sb.append(",");
             }
@@ -293,7 +293,7 @@ public class eao extends c<j> implements com.taobao.android.trade.event.j<eog> {
         } else {
             sb.append(skuChoiceVO.getSkuInfoDesc());
         }
-        if (TextUtils.isEmpty(sb.toString()) && this.c != 0) {
+        if (StringUtils.isEmpty(sb.toString()) && this.c != 0) {
             sb = new StringBuilder(((j) this.c).f9773a);
         }
         this.h.setText(sb);

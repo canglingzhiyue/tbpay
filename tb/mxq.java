@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.request.d;
@@ -27,7 +27,7 @@ public class mxq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("af386b6c", new Object[]{imageView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             int a2 = a(str);
             if (a2 != 0) {
@@ -124,13 +124,13 @@ public class mxq {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         Uri parse = Uri.parse(str);
         String scheme = parse.getScheme();
         Uri.Builder buildUpon = parse.buildUpon();
-        if (!TextUtils.equals(scheme, "https")) {
+        if (!StringUtils.equals(scheme, "https")) {
             buildUpon.scheme("https");
         }
         return buildUpon.toString();

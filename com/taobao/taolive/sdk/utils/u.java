@@ -2,7 +2,7 @@ package com.taobao.taolive.sdk.utils;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -251,14 +251,14 @@ public class u {
             return ((Boolean) ipChange.ipc$dispatch("3c5ab4e", new Object[0])).booleanValue();
         }
         String a2 = pmd.a().d().a("tblive", "ARTPDeviceBlackist", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = a2.split(";");
-        if (split != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+        if (split != null && split.length > 0 && !StringUtils.isEmpty(str)) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                     return true;
                 }
             }
@@ -283,7 +283,7 @@ public class u {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3e1da50", new Object[0])).booleanValue();
         }
-        if (b.d(pmd.a().u().c()) && !TextUtils.isEmpty(b.a("enableBfrtc"))) {
+        if (b.d(pmd.a().u().c()) && !StringUtils.isEmpty(b.a("enableBfrtc"))) {
             return true;
         }
         boolean d2 = l.d(pmd.a().d().a("tblive", "TBLIVE_ORANGE_BFRTC_Enable_V1", "false"));
@@ -299,14 +299,14 @@ public class u {
             return ((Boolean) ipChange.ipc$dispatch("aa2d379d", new Object[0])).booleanValue();
         }
         String a2 = pmd.a().d().a("tblive", "BFRTCDeviceBlackist", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = a2.split(";");
-        if (split != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+        if (split != null && split.length > 0 && !StringUtils.isEmpty(str)) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                     return true;
                 }
             }
@@ -319,7 +319,7 @@ public class u {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3eff1d1", new Object[0])).booleanValue();
         }
-        if (b.d(pmd.a().u().c()) && !TextUtils.isEmpty(b.a("enableRtcLive"))) {
+        if (b.d(pmd.a().u().c()) && !StringUtils.isEmpty(b.a("enableRtcLive"))) {
             return true;
         }
         boolean e2 = com.taobao.taolive.room.utils.v.e(pmd.a().d().a("tblive", "TBLIVE_ORANGE_RTCLIVE_Enable_V3", "true"));
@@ -335,14 +335,14 @@ public class u {
             return ((Boolean) ipChange.ipc$dispatch("aa3b4f1e", new Object[0])).booleanValue();
         }
         String a2 = pmd.a().d().a("tblive", "RTCLIVEDeviceBlackist", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = a2.split(";");
-        if (split != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+        if (split != null && split.length > 0 && !StringUtils.isEmpty(str)) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                     return true;
                 }
             }
@@ -405,7 +405,7 @@ public class u {
 
     public static boolean a(LiveItem liveItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f1232887", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.extendVal == null || TextUtils.isEmpty(liveItem.extendVal.timeMovingPlayInfo) || ((LiveItem.TimeMovingPlayInfo) JSONObject.parseObject(liveItem.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class)) == null) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f1232887", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.extendVal == null || StringUtils.isEmpty(liveItem.extendVal.timeMovingPlayInfo) || ((LiveItem.TimeMovingPlayInfo) JSONObject.parseObject(liveItem.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class)) == null) ? false : true;
     }
 
     public static long L() {
@@ -837,7 +837,7 @@ public class u {
             return null;
         }
         String a2 = pmd.a().d().a("tblive", "eventCenterWhitelist", "TaoLiveController2,TaoLiveDXHomePage");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         return Arrays.asList(a2.split(","));

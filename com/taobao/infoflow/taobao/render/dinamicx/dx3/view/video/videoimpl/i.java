@@ -1,7 +1,7 @@
 package com.taobao.infoflow.taobao.render.dinamicx.dx3.view.video.videoimpl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.n;
 import com.taobao.tao.Globals;
@@ -39,11 +39,11 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String str2 = a() + b(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             ldf.d(f17434a, "getVideoFilePath empty");
         }
         return str2;
@@ -64,7 +64,7 @@ public class i {
 
     public static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : !TextUtils.equals("l", ldc.a());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : !StringUtils.equals("l", ldc.a());
     }
 
     public static String b(String str) {

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.request.callback;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -143,13 +143,13 @@ public class PrefetchRequestCallback extends MainRequestCallback {
         String b = az.b(mtopResponse);
         if (originFastJsonObject == null) {
             mtopInfo.a(3);
-            ab.b(!TextUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
+            ab.b(!StringUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
             return mtopInfo;
         }
         JSONObject jSONObject = originFastJsonObject.getJSONObject("data");
         if (jSONObject == null || jSONObject.isEmpty()) {
             mtopInfo.a(3);
-            ab.b(!TextUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
+            ab.b(!StringUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), b);
             return mtopInfo;
         }
         JSONObject c = g.c(originFastJsonObject);
@@ -169,7 +169,7 @@ public class PrefetchRequestCallback extends MainRequestCallback {
         MtopInfo mtopInfo = new MtopInfo();
         mtopInfo.a(mtopResponse);
         mtopInfo.a(3);
-        ab.a(!TextUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), az.b(mtopResponse));
+        ab.a(!StringUtils.equals(smx.API_NAME, mtopResponse.getApi()), this.mParams.getItemId(), az.b(mtopResponse));
         return mtopInfo;
     }
 

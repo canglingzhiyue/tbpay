@@ -104,7 +104,7 @@ public class RsaUtils {
             r5.append(r1)     // Catch: java.lang.Exception -> Lbf
             java.lang.String r5 = r5.toString()     // Catch: java.lang.Exception -> Lbf
             com.alipay.mobile.verifyidentity.log.VerifyLogCat.i(r3, r5)     // Catch: java.lang.Exception -> Lbf
-            boolean r3 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Exception -> Lbf
+            boolean r3 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Exception -> Lbf
             if (r3 != 0) goto L96
             java.lang.String r3 = "ONLINE"
             boolean r1 = r3.equalsIgnoreCase(r1)     // Catch: java.lang.Exception -> Lbf

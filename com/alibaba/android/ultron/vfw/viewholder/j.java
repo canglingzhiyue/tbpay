@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.vfw.viewholder;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -198,7 +198,7 @@ public class j {
             ipChange.ipc$dispatch("c7052959", new Object[]{this, list});
         } else if (list != null && !list.isEmpty()) {
             for (IDMComponent iDMComponent : list) {
-                if (iDMComponent != null && !TextUtils.isEmpty(iDMComponent.getType()) && !TextUtils.isEmpty(iDMComponent.getContainerType())) {
+                if (iDMComponent != null && !StringUtils.isEmpty(iDMComponent.getType()) && !StringUtils.isEmpty(iDMComponent.getContainerType())) {
                     f fVar = this.f2743a.get(iDMComponent.getContainerType());
                     if (fVar instanceof a) {
                         ((a) fVar).a(iDMComponent);
@@ -214,7 +214,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e66567df", new Object[]{this, iDMComponent})).intValue();
         }
-        if (iDMComponent == null || TextUtils.isEmpty(iDMComponent.getType()) || TextUtils.isEmpty(iDMComponent.getContainerType()) || (fVar = this.f2743a.get(iDMComponent.getContainerType())) == null) {
+        if (iDMComponent == null || StringUtils.isEmpty(iDMComponent.getType()) || StringUtils.isEmpty(iDMComponent.getContainerType()) || (fVar = this.f2743a.get(iDMComponent.getContainerType())) == null) {
             return -1;
         }
         int b = fVar.b(iDMComponent) + this.c.get(fVar).intValue();

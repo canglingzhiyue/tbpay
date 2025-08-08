@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.p;
@@ -143,7 +143,7 @@ public class slo extends o implements shc {
         FalcoEnvironment a2 = FalcoEnvironment.a();
         if (a2 != null) {
             String b2 = a2.b();
-            if (!TextUtils.isEmpty(b2)) {
+            if (!StringUtils.isEmpty(b2)) {
                 sgw l2 = a2.l();
                 iwb d = a2.d();
                 shb e = a2.e();
@@ -620,7 +620,7 @@ public class slo extends o implements shc {
 
     public boolean r() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65bfbfd", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.aE);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65bfbfd", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.aE);
     }
 
     @Override // com.taobao.analysis.v3.o, tb.mzm, tb.myr

@@ -5,7 +5,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.KeyCharacterMap;
@@ -115,7 +115,7 @@ public class knk {
             return ((Boolean) ipChange.ipc$dispatch("9e1d6464", new Object[]{context})).booleanValue();
         }
         String str = Build.BRAND;
-        if (!TextUtils.isEmpty(str) && "huawei".equals(str.toLowerCase())) {
+        if (!StringUtils.isEmpty(str) && "huawei".equals(str.toLowerCase())) {
             return b(context);
         }
         return c(context);

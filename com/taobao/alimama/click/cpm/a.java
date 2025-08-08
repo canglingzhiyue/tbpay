@@ -2,7 +2,7 @@ package com.taobao.alimama.click.cpm;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -92,12 +92,12 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str3 = "";
         } else {
             str3 = str2 + "_";
         }
-        if (!TextUtils.isEmpty(str) && str.contains("click.mz.simba.taobao.com/brand")) {
+        if (!StringUtils.isEmpty(str) && str.contains("click.mz.simba.taobao.com/brand")) {
             return "A42_" + str3 + b.a();
         }
         return "A17_" + str3 + b.a();
@@ -109,7 +109,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String str = "";
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return str;
         }
         Pair<Long, Long> a2 = e.a(this.b);

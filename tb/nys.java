@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.share.business.ShareConstants;
 
@@ -40,7 +40,7 @@ public class nys {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
         String a2 = a(str);
-        return TextUtils.isEmpty(a2) ? str2 : a2;
+        return StringUtils.isEmpty(a2) ? str2 : a2;
     }
 
     public static String a(String str) {

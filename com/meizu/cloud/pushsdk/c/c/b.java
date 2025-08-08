@@ -1,7 +1,7 @@
 package com.meizu.cloud.pushsdk.c.c;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -150,7 +150,7 @@ public class b {
             String headerField = uRLConnection.getHeaderField("X-S-Key");
             String str = f7869a;
             DebugLogger.d(str, "get x_s_key = " + headerField);
-            if (TextUtils.isEmpty(headerField)) {
+            if (StringUtils.isEmpty(headerField)) {
                 return;
             }
             a.e().c(headerField);

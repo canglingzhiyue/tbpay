@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.msoa.callback.MSOAServiceListener;
@@ -47,7 +47,7 @@ public class ntt {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6a861981", new Object[]{this, str, cVar, new Boolean(z), auctionBaseBean, activity})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (z) {
@@ -55,11 +55,11 @@ public class ntt {
             ArrayMap<String, String> c = c();
             if (activity != null && (pageProperties = UTAnalytics.getInstance().getDefaultTracker().getPageProperties(activity)) != null && !pageProperties.isEmpty()) {
                 String str3 = pageProperties.get("spm-url");
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     c.put("spm-url", str3);
                 }
                 String str4 = pageProperties.get("spm-cnt");
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     c.put("spm-cnt", str4);
                 }
             }
@@ -73,7 +73,7 @@ public class ntt {
         hashMap.put("actionType", "0");
         hashMap.put("bizName", "taobao_main_search");
         String str5 = r.aD() ? "2.0" : "1.0";
-        if (auctionBaseBean == null || TextUtils.isEmpty(auctionBaseBean.locType)) {
+        if (auctionBaseBean == null || StringUtils.isEmpty(auctionBaseBean.locType)) {
             str2 = str5;
         } else {
             JSONObject jSONObject = new JSONObject();

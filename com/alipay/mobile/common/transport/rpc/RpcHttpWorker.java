@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.rpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.http.HttpManager;
 import com.alipay.mobile.common.transport.http.HttpUrlRequest;
 import com.alipay.mobile.common.transport.http.HttpWorker;
@@ -52,7 +52,7 @@ public class RpcHttpWorker extends HttpWorker {
                 if (firstHeader != null) {
                     str = firstHeader.getValue();
                 }
-                if (TextUtils.isEmpty(str) || str.equals("1000")) {
+                if (StringUtils.isEmpty(str) || str.equals("1000")) {
                     return;
                 }
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.MOBILEGW_RESULT_STATUS, str);

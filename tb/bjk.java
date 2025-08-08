@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.engine.protocol.Component;
 import com.alibaba.android.ultron.engine.protocol.Data;
 import com.alibaba.android.ultron.engine.protocol.Event;
@@ -79,7 +79,7 @@ public class bjk {
         for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (TextUtils.isEmpty(key) || !(value instanceof JSONArray)) {
+            if (StringUtils.isEmpty(key) || !(value instanceof JSONArray)) {
                 String[] strArr = new String[1];
                 strArr[0] = !(value instanceof JSONArray) ? "value is not array: " + value : "";
                 UnifyLog.d(TAG, strArr);
@@ -90,7 +90,7 @@ public class bjk {
                     JSONObject jSONObject4 = (JSONObject) jSONArray.get(i);
                     Event event = new Event();
                     String string = jSONObject4.getString("key");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         event.type = string;
                         event.fields = jSONObject4.getJSONObject("params");
                     } else {

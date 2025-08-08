@@ -2,7 +2,7 @@ package com.taobao.bootimage.view;
 
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -180,7 +180,7 @@ public class h extends b {
             if (this.n != null && bootImageInfo != null && bootImageInfo.hideTBLogo) {
                 this.n.setVisibility(8);
             }
-            if (TextUtils.isEmpty(bootImageInfo.videoLocalPath)) {
+            if (StringUtils.isEmpty(bootImageInfo.videoLocalPath)) {
                 return;
             }
             a(context);
@@ -248,7 +248,7 @@ public class h extends b {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         kej.a("BootImageVideoController", "show video: start");
-        if (this.h == null || TextUtils.isEmpty(this.h.imgUrl) || this.i.get() == null) {
+        if (this.h == null || StringUtils.isEmpty(this.h.imgUrl) || this.i.get() == null) {
             kej.a("BootImageVideoController", "show video failed: data error.");
             return false;
         }
@@ -280,7 +280,7 @@ public class h extends b {
                         if (h.b(h.this) != null) {
                             h.b(h.this).setImageDrawable(succPhenixEvent.getDrawable());
                         }
-                        if (!TextUtils.isEmpty(h.this.h.videoLocalPath) && h.c(h.this) != null && h.d(h.this) != null) {
+                        if (!StringUtils.isEmpty(h.this.h.videoLocalPath) && h.c(h.this) != null && h.d(h.this) != null) {
                             try {
                                 h.d(h.this).start();
                                 h.this.f.sendEmptyMessageDelayed(105, kem.a().e());
@@ -384,7 +384,7 @@ public class h extends b {
                 if (this.m != null && this.e) {
                     this.m.setVisibility(8);
                 }
-                if (this.e && TextUtils.isEmpty(this.h.imgUrl) && this.d != null) {
+                if (this.e && StringUtils.isEmpty(this.h.imgUrl) && this.d != null) {
                     kej.a("BootImageVideoController", "show video on success");
                     this.d.a();
                     break;

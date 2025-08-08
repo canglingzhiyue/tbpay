@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -254,7 +254,7 @@ public class e extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         com.taobao.android.detail.ttdetail.component.module.d a2;
         JSONObject d;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("65c98627", new Object[]{this, new Integer(i)})).intValue() : (!this.c.isEmpty() && (a2 = a(i)) != null && (d = a2.getComponentData().d()) != null && !d.isEmpty() && TextUtils.equals(com.taobao.android.detail.ttdetail.constant.a.STYLE_DOUBLE_COLUMN, d.getString("style"))) ? 2 : 1;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("65c98627", new Object[]{this, new Integer(i)})).intValue() : (!this.c.isEmpty() && (a2 = a(i)) != null && (d = a2.getComponentData().d()) != null && !d.isEmpty() && StringUtils.equals(com.taobao.android.detail.ttdetail.constant.a.STYLE_DOUBLE_COLUMN, d.getString("style"))) ? 2 : 1;
     }
 
     @Override // android.support.v7.widget.RecyclerView.Adapter

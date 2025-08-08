@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.usertrack.ITrackService;
@@ -91,7 +91,7 @@ public class sjj {
             aVar.c(this.b.af().m());
         } else if (!c()) {
             String i = this.b.af().i();
-            if (!TextUtils.isEmpty(i)) {
+            if (!StringUtils.isEmpty(i)) {
                 spz.c("DWInstanceCreateManager", "PickPreloadController创建播放器使用播控");
                 try {
                     HashMap hashMap2 = new HashMap();
@@ -127,7 +127,7 @@ public class sjj {
             return ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue();
         }
         sii siiVar = this.b;
-        return (siiVar == null || siiVar.af() == null || !TextUtils.equals(this.b.af().p(), "url")) ? false : true;
+        return (siiVar == null || siiVar.af() == null || !StringUtils.equals(this.b.af().p(), "url")) ? false : true;
     }
 
     private String d() {

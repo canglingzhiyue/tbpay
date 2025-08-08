@@ -1,6 +1,6 @@
 package com.taobao.android.testutils.log;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public final class LogUtils {
         } else if (objArr == null || objArr.length == 0) {
         } else {
             if (objArr.length > 1) {
-                valueOf = TextUtils.join(" ", objArr);
+                valueOf = StringUtils.join(" ", objArr);
             } else {
                 valueOf = String.valueOf(objArr[0]);
             }

@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.instance.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -32,7 +32,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8bb6538e", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b.put(str, obj);
         }

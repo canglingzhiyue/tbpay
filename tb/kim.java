@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -19,7 +19,7 @@ public class kim {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("95562904", new Object[]{context, charSequence});
-            } else if (TextUtils.isEmpty(charSequence)) {
+            } else if (StringUtils.isEmpty(charSequence)) {
             } else {
                 if (f30100a == null) {
                     f30100a = Toast.makeText(context, charSequence, 0);

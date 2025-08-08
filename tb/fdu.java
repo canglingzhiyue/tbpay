@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.event.a;
 import com.taobao.android.trade.event.ThreadMode;
@@ -39,7 +39,7 @@ public class fdu implements j<fcr> {
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("90474e2c", new Object[]{this, fcrVar});
         }
-        if (TextUtils.isEmpty(fcrVar.f27810a)) {
+        if (StringUtils.isEmpty(fcrVar.f27810a)) {
             return a.FAILURE;
         }
         try {

@@ -2,7 +2,7 @@ package android.taobao.windvane.monitor;
 
 import android.net.Uri;
 import android.taobao.windvane.extra.performance2.WVWPData;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -285,7 +285,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3afee25", new Object[]{dimensionValueSet, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             dimensionValueSet.setValue(str, str2);
         }
@@ -421,7 +421,7 @@ public class a {
         } else {
             try {
                 DimensionValueSet create = DimensionValueSet.create();
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     create.setValue("url", android.taobao.windvane.util.p.d(str));
                 }
                 MeasureValueSet create2 = MeasureValueSet.create();
@@ -443,7 +443,7 @@ public class a {
             try {
                 DimensionValueSet create = DimensionValueSet.create();
                 create.setValue("type", str2);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     create.setValue("url", android.taobao.windvane.util.p.d(str));
                 }
                 MeasureValueSet create2 = MeasureValueSet.create();
@@ -571,7 +571,7 @@ public class a {
                 create2.setValue(ept.PAGELOAD, lVar.stat.onLoad);
                 JSONObject jSONObject = null;
                 try {
-                    if (!TextUtils.isEmpty(lVar.performanceInfo)) {
+                    if (!StringUtils.isEmpty(lVar.performanceInfo)) {
                         String str2 = lVar.performanceInfo;
                         if (str2.startsWith("\"") && str2.endsWith("\"")) {
                             str2 = lVar.performanceInfo.substring(1, str2.length() - 1);

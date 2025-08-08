@@ -6,7 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Field;
@@ -216,7 +216,7 @@ public final class s {
             return (String) ipChange.ipc$dispatch("d56608a1", new Object[]{uri});
         }
         String scheme = uri.getScheme();
-        if (TextUtils.isEmpty(scheme) || scheme.startsWith("http")) {
+        if (StringUtils.isEmpty(scheme) || scheme.startsWith("http")) {
             scheme = "http";
         }
         return scheme + ":" + uri.getAuthority() + ":" + uri.getPath();
@@ -231,7 +231,7 @@ public final class s {
         }
         try {
             String path = uri.getPath();
-            if (TextUtils.equals(path, "/UTABTEST-ANY")) {
+            if (StringUtils.equals(path, "/UTABTEST-ANY")) {
                 replace = uri2.toString().replace("/UTABTEST-ANY", uri3.getPath());
             } else {
                 String path2 = uri3.getPath();
@@ -239,10 +239,10 @@ public final class s {
                 String substring = indexOf > 1 ? path.substring(0, indexOf - 1) : null;
                 int i = indexOf + 12;
                 String substring2 = i < path.length() ? path.substring(i) : null;
-                if (!TextUtils.isEmpty(substring)) {
+                if (!StringUtils.isEmpty(substring)) {
                     path2 = path2.replace(substring, "");
                 }
-                if (!TextUtils.isEmpty(substring2) && (lastIndexOf = path2.lastIndexOf(substring2)) != -1) {
+                if (!StringUtils.isEmpty(substring2) && (lastIndexOf = path2.lastIndexOf(substring2)) != -1) {
                     path2 = path2.substring(0, lastIndexOf);
                 }
                 replace = uri2.toString().replace("/UTABTEST-ANY", path2);

@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.interact.pop.BootImagePopMamaCommercialView;
 import java.lang.reflect.Constructor;
@@ -39,7 +39,7 @@ public class b {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 f22265a.put(str, Class.forName(str2));
                 com.alibaba.poplayer.factory.a.a().a(str);
             }
@@ -57,7 +57,7 @@ public class b {
             return null;
         }
         Class<? extends PopCustomNativeBaseView> cls = f22265a.get(str);
-        if (cls == null || TextUtils.isEmpty(str)) {
+        if (cls == null || StringUtils.isEmpty(str)) {
             com.alibaba.poplayer.utils.c.a("%s.create:use baseItem.", new Object[0]);
             return null;
         }

@@ -1,6 +1,6 @@
 package com.alibaba.android.split.scene;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -73,7 +73,7 @@ public class e implements f<InputStream, Map<String, Map<String, List<String>>>>
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("8c4a1d4b", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new ArrayList();
         }
         if (this.f2498a.containsKey(str)) {
@@ -88,7 +88,7 @@ public class e implements f<InputStream, Map<String, Map<String, List<String>>>>
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new ArrayList();
         }
         if (this.f2498a.containsKey(str)) {
@@ -103,10 +103,10 @@ public class e implements f<InputStream, Map<String, Map<String, List<String>>>>
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("434e6e27", new Object[]{this, str, str2, strArr})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "default";
         }
         if (this.f2498a.containsKey(str) && this.f2498a.get(str).containsKey(str2)) {

@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.rank;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.goodlist.l;
@@ -60,16 +60,16 @@ public class c {
         String string3 = jSONObject.getString("jumpUrl");
         String string4 = jSONObject.getString("activityType");
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(string4)) {
+        if (!StringUtils.isEmpty(string4)) {
             hashMap.put("type", string4);
         }
-        if (TextUtils.isEmpty(string4) && !TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string4) && !StringUtils.isEmpty(string)) {
             hashMap.put("type", string);
         }
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             hashMap.put("typeid", string2);
         }
-        if (("event".equals(string) || "others".equals(string)) && !TextUtils.isEmpty(string3)) {
+        if (("event".equals(string) || "others".equals(string)) && !StringUtils.isEmpty(string3)) {
             hashMap.put("typeid", string3);
         }
         return hashMap;

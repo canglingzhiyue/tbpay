@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +68,7 @@ public final class sxo {
             if (parse != null && (host = parse.getHost()) != null) {
                 q.b(host, "uri.host ?: return PermissionInfo(false)");
                 String aa = com.taobao.themis.kernel.utils.n.aa();
-                if (TextUtils.isEmpty(aa)) {
+                if (StringUtils.isEmpty(aa)) {
                     return new sxn(a(host, f33929a));
                 }
                 return new sxn(a(host, n.b((CharSequence) aa, new String[]{","}, false, 0, 6, (Object) null)));

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.model.template;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class RuleModel implements Serializable {
         this.root = jSONObject;
         this.filter = jSONObject.getString("filter");
         this.mapping = jSONObject.getString("payload");
-        if (TextUtils.isEmpty(this.mapping)) {
+        if (StringUtils.isEmpty(this.mapping)) {
             this.mapping = jSONObject.getString("model");
         }
         this.locatorId = jSONObject.getString("locatorId");

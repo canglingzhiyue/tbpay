@@ -1,7 +1,7 @@
 package com.flybird.deploy;
 
 import android.content.pm.PackageInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Pair;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -321,7 +321,7 @@ public class FBTemplateDecider {
             returnCallRpcResult(j, j2, null, null, "callRpc on main thread");
         } else {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     cun.a("missing op_type");
                 }
                 String str4 = Platform.f5257a;
@@ -375,7 +375,7 @@ public class FBTemplateDecider {
             returnDeleteTemplatesResult(j, 1);
             return;
         }
-        String[] split = TextUtils.split(str, ",");
+        String[] split = StringUtils.split(str, ",");
         ArrayList arrayList = new ArrayList();
         for (String str2 : split) {
             arrayList.add(com.flybird.deploy.model.d.a(str2));
@@ -666,7 +666,7 @@ public class FBTemplateDecider {
             String readAssetsFile = FBTools.readAssetsFile(a3, a2.a());
             cun.c("C -> getBundleTpl tplContent length " + readAssetsFile.length() + " chars");
             try {
-                if (!TextUtils.isEmpty(readAssetsFile)) {
+                if (!StringUtils.isEmpty(readAssetsFile)) {
                     FBTemplateContent fromJsonString = FBTemplateContent.fromJsonString(readAssetsFile);
                     objArr[0] = fromJsonString;
                     objArr[1] = com.flybird.deploy.model.a.b(FBTemplateContent.toBasicTplInfo(fromJsonString));
@@ -1145,7 +1145,7 @@ public class FBTemplateDecider {
         Pair a2 = drm.a("App:PackageInfo");
         if (((Boolean) a2.first).booleanValue()) {
             String str = ((PackageInfo) a2.second).versionName;
-            boolean equals = TextUtils.equals(fBTemplateContent.getNoBundledCheckedPkgVer(), str);
+            boolean equals = StringUtils.equals(fBTemplateContent.getNoBundledCheckedPkgVer(), str);
             cun.c("C -> _updateValidVersion local version " + str + ", returning " + equals);
             return equals;
         }
@@ -1206,7 +1206,7 @@ public class FBTemplateDecider {
             hashMap.put("bizCode", this.h);
             String str7 = "";
             if (fBTemplateContent != null) {
-                if (!TextUtils.isEmpty(fBTemplateContent.getExpId())) {
+                if (!StringUtils.isEmpty(fBTemplateContent.getExpId())) {
                     str = fBTemplateContent.getTplId() + "_" + fBTemplateContent.getExpId();
                 } else {
                     str = fBTemplateContent.getTplId();
@@ -1233,7 +1233,7 @@ public class FBTemplateDecider {
                 str2 = fBFullTplInfo.getTime();
             }
             String str8 = "NULL";
-            if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
                 str4 = TLogTracker.LEVEL_DEBUG;
                 str5 = str8;
             } else {
@@ -1246,7 +1246,7 @@ public class FBTemplateDecider {
             }
             hashMap.put("local_version", str5);
             hashMap.put(HiAnalyticsConstant.BI_KEY_UPDATE_TYPE, str4);
-            if (fBTemplateContent != null && !TextUtils.isEmpty(fBTemplateContent.getTplVersion())) {
+            if (fBTemplateContent != null && !StringUtils.isEmpty(fBTemplateContent.getTplVersion())) {
                 str8 = fBTemplateContent.getTplVersion().replaceAll("\\.", str7) + fBTemplateContent.getTime();
             }
             hashMap.put("version", str8);
@@ -1296,11 +1296,11 @@ public class FBTemplateDecider {
             str = "";
         }
         if (fBTemplateContent != null) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = fBTemplateContent.getTplId();
             }
             String expId = fBTemplateContent.getExpId();
-            if (!TextUtils.isEmpty(expId)) {
+            if (!StringUtils.isEmpty(expId)) {
                 str = str + "_" + expId;
             }
             hashMap.put("tpl_hash", fBTemplateContent.getTplHash());
@@ -1316,7 +1316,7 @@ public class FBTemplateDecider {
         }
         if (fBTemplateContent != null) {
             String optFromLocalMap = fBTemplateContent.optFromLocalMap("fb::deploy::log_time_cost_deploy_ms");
-            if (!TextUtils.isEmpty(optFromLocalMap)) {
+            if (!StringUtils.isEmpty(optFromLocalMap)) {
                 hashMap.put("bd_tplDownloadTime", optFromLocalMap);
             }
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import java.util.Vector;
@@ -35,7 +35,7 @@ public class rqf {
             return (String) ipChange.ipc$dispatch("4e5198dd", new Object[]{this, new Integer(i), str});
         }
         StringBuffer stringBuffer = new StringBuffer(500);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = ",";
         }
         if (i <= 0) {
@@ -54,7 +54,7 @@ public class rqf {
             int i2 = size;
             while (size < this.f33318a.size()) {
                 String str3 = this.f33318a.get(i2);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     if (!z) {
                         stringBuffer.append(str);
                     }
@@ -71,7 +71,7 @@ public class rqf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ad69cd88", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.f33318a.size() >= this.b) {
                 this.f33318a.remove(0);

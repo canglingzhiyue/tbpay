@@ -3,7 +3,7 @@ package com.taobao.wireless.link.notification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.uikit.util.ActivityJumpUtil;
 import com.taobao.wireless.link.model.MessageData;
@@ -37,11 +37,11 @@ public class NotificationBroadcastReceiver extends BroadcastReceiver {
                 String action = intent.getAction();
                 String stringExtra = intent.getStringExtra(ActivityJumpUtil.LANDING_URL);
                 MessageData b = b.b(context);
-                if (TextUtils.equals(action, "com.taobao.taobao.notification_left")) {
+                if (StringUtils.equals(action, "com.taobao.taobao.notification_left")) {
                     b.a(context, stringExtra, rki.ARG1_NOTIFICATION_A_CLICK, "tbopen://m.taobao.com/tbopen/index.html?source=auto&action=ali.open.nav&module=h5&bc_fl_src=noti_hc&h5Url=" + stringExtra, "noti_hc", b.message_id);
-                } else if (TextUtils.equals(action, "com.taobao.taobao.notification_right")) {
+                } else if (StringUtils.equals(action, "com.taobao.taobao.notification_right")) {
                     b.a(context, stringExtra, rki.ARG1_NOTIFICATION_B_CLICK, "tbopen://m.taobao.com/tbopen/index.html?source=auto&action=ali.open.nav&module=h5&bc_fl_src=noti_hd&h5Url=" + stringExtra, "noti_hd", b.message_id);
-                } else if (!TextUtils.equals(action, "com.taobao.taobao.notification_set")) {
+                } else if (!StringUtils.equals(action, "com.taobao.taobao.notification_set")) {
                 } else {
                     b.a(context, stringExtra, rki.ARG1_NOTIFICATION_DELETE_CLICK, "tbopen://m.taobao.com/tbopen/index.html?source=auto&action=ali.open.nav&module=h5&bc_fl_src=noti_set&h5Url=" + stringExtra, "noti_set", b.message_id);
                 }

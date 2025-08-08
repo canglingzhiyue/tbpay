@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.proxy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.k;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.proxy.c;
@@ -197,7 +197,7 @@ public abstract class g<IProxyType> {
     }
 
     public <ProxyType extends IProxyType> ProxyType createLocal() {
-        if (TextUtils.isEmpty(getLocalClassName())) {
+        if (StringUtils.isEmpty(getLocalClassName())) {
             return null;
         }
         try {

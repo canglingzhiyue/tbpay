@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -371,7 +371,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
         } else if (this.r == null || itemInfo.item == null) {
         } else {
             String string = itemInfo.item.getString("id");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             JSONObject jSONObject = new JSONObject();
@@ -399,7 +399,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
                 hashMap.put(aw.PARAM_CATEGORY_ID, jSONObject.getString("pocketAnchorTab"));
                 str = jSONObject.getString("glopenfrom");
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "newUserBottomCard";
             }
             hashMap.put("glopenfrom", str);
@@ -448,10 +448,10 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
         this.o = str3;
         this.x = str7;
         TBLiveDataModel tBLiveDataModel = this.l;
-        if (tBLiveDataModel != null && tBLiveDataModel.mInitParams != null && !TextUtils.isEmpty(this.l.mInitParams.get(aw.PARAM_INTENT_URL))) {
+        if (tBLiveDataModel != null && tBLiveDataModel.mInitParams != null && !StringUtils.isEmpty(this.l.mInitParams.get(aw.PARAM_INTENT_URL))) {
             this.x = this.l.mInitParams.get(aw.PARAM_INTENT_URL);
         }
-        if (TextUtils.isEmpty(this.x)) {
+        if (StringUtils.isEmpty(this.x)) {
             return;
         }
         Uri parse = Uri.parse(this.x);
@@ -492,7 +492,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
             return (String) ipChange.ipc$dispatch("f7e1cdd7", new Object[]{uri, str});
         }
         String queryParameter = uri.getQueryParameter("itemIds");
-        return !TextUtils.isEmpty(str) ? str : TextUtils.isEmpty(queryParameter) ? uri.getQueryParameter(aw.PARAM_SHAQRE_ITEM_ID) : queryParameter;
+        return !StringUtils.isEmpty(str) ? str : StringUtils.isEmpty(queryParameter) ? uri.getQueryParameter(aw.PARAM_SHAQRE_ITEM_ID) : queryParameter;
     }
 
     public static JSONObject a(Uri uri) {
@@ -503,9 +503,9 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
         }
         JSONObject jSONObject = new JSONObject();
         String queryParameter = uri.getQueryParameter("huanduanParams");
-        if (!TextUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
+        if (!StringUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
             for (String str : split) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     jSONObject.put(str, (Object) uri.getQueryParameter(str));
                 }
             }
@@ -599,7 +599,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
             }
             a(businessInfo, this.x);
             businessInfo.tcp.context.put("outerAdUserParam", this.h);
-            if (!TextUtils.isEmpty(this.i)) {
+            if (!StringUtils.isEmpty(this.i)) {
                 businessInfo.tcp.context.put(MergeUtil.KEY_RID, this.i);
             }
             businessInfo.tcp.context.put("livesource", this.f);
@@ -638,7 +638,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("384df4d9", new Object[]{this, businessInfo, str});
-        } else if (businessInfo == null || businessInfo.tcp == null || TextUtils.isEmpty(str)) {
+        } else if (businessInfo == null || businessInfo.tcp == null || StringUtils.isEmpty(str)) {
         } else {
             businessInfo.tcp.dataAttributes = com.alilive.adapter.business.a.a(this.k, businessInfo.tcp.dataAttributes, str);
         }
@@ -1002,7 +1002,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
             return;
         }
         c(str, this.r);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             qng.a(this.c, str2);
         }
         i();
@@ -1047,7 +1047,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b07d9c20", new Object[]{this, str, itemInfo});
-        } else if (this.M == null || TextUtils.isEmpty(str)) {
+        } else if (this.M == null || StringUtils.isEmpty(str)) {
         } else {
             HashMap<String, String> hashMap = new HashMap<>();
             nlf nlfVar = this.p;
@@ -1067,7 +1067,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
                 if (itemInfo.item != null) {
                     hashMap.put("itemPrice", itemInfo.item.getString("itemPrice"));
                     hashMap.put("promotionPrice", itemInfo.item.getString("promotionPrice"));
-                    hashMap.put("restore_flag", String.valueOf(TextUtils.equals(this.s, itemInfo.item.getString("id")) ? 1 : 0));
+                    hashMap.put("restore_flag", String.valueOf(StringUtils.equals(this.s, itemInfo.item.getString("id")) ? 1 : 0));
                 }
                 if (itemInfo.logParams != null) {
                     hashMap.putAll(qnb.a(itemInfo.logParams));
@@ -1110,7 +1110,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61d7d4da", new Object[]{this, str, arrayList, itemInfo});
-        } else if (this.M != null && !TextUtils.isEmpty(str)) {
+        } else if (this.M != null && !StringUtils.isEmpty(str)) {
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add("time=" + String.valueOf(System.currentTimeMillis()));
             arrayList2.add("panelTechType=dx");
@@ -1119,7 +1119,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
             } else {
                 arrayList2.add("itemPrice=" + itemInfo.item.getString("itemPrice"));
                 arrayList2.add("promotionPrice=" + itemInfo.item.getString("promotionPrice"));
-                arrayList2.add("restore_flag=" + (TextUtils.equals(this.s, itemInfo.item.getString("id")) ? 1 : 0));
+                arrayList2.add("restore_flag=" + (StringUtils.equals(this.s, itemInfo.item.getString("id")) ? 1 : 0));
             }
             if (this.p != null) {
                 arrayList2.add("popCode=" + this.p.f);
@@ -1164,7 +1164,7 @@ public class hka implements IRecommendPopProxy.a, d, ddv {
         jSONObject.put("name", (Object) "dx");
         ISmartLandingProxy.b bVar = b.F;
         String str = this.y;
-        bVar.a(z, str, true ^ TextUtils.isEmpty(str), jSONObject);
+        bVar.a(z, str, true ^ StringUtils.isEmpty(str), jSONObject);
     }
 
     private HashMap<String, String> j() {

@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.mobile.verifyidentity.callback.ModuleListener;
 import com.alipay.mobile.verifyidentity.common.Constants;
@@ -181,7 +181,7 @@ public abstract class MicroModule {
         } else if (this.c != null) {
             String str = f5883a;
             VerifyLogCat.d(str, getModuleName() + " notifyResult");
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 String str2 = f5883a;
                 VerifyLogCat.d(str2, "notifyResult [logicModuleName] :" + this.e);
                 moduleExecuteResult.setLogicModuleName(this.e);

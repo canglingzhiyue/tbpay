@@ -3,7 +3,7 @@ package com.taobao.android.behavir.util.bridge;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -26,9 +26,9 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("98282fca", new Object[]{uCPJSBridge, iWVWebView, str, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && wVCallBackContext != null) {
+        if (!StringUtils.isEmpty(str) && wVCallBackContext != null) {
             TryDecisionPassParam tryDecisionPassParam = (TryDecisionPassParam) JSON.parseObject(str, TryDecisionPassParam.class);
-            if (tryDecisionPassParam == null || TextUtils.isEmpty(tryDecisionPassParam.schemeId) || TextUtils.isEmpty(tryDecisionPassParam.bizId)) {
+            if (tryDecisionPassParam == null || StringUtils.isEmpty(tryDecisionPassParam.schemeId) || StringUtils.isEmpty(tryDecisionPassParam.bizId)) {
                 wVCallBackContext.error("入参异常");
             } else {
                 String str2 = tryDecisionPassParam.schemeId;
@@ -55,8 +55,8 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("8e8d2ec9", new Object[]{jSONObject, wVCallBackContext})).booleanValue();
         }
         String string = jSONObject.getString("id");
-        if (!TextUtils.isEmpty(string)) {
-            String[] split = TextUtils.split(string, "\\.");
+        if (!StringUtils.isEmpty(string)) {
+            String[] split = StringUtils.split(string, "\\.");
             if (split.length >= 5) {
                 Utils.a(split[1], split[2], split[3], split[4], new Utils.a() { // from class: com.taobao.android.behavir.util.bridge.b.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;

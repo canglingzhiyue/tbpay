@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.rule.processor;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -29,7 +29,7 @@ public class JsonParameterRuleProcessor implements IRuleProcessor {
         }
         Result result = new Result();
         String host = uri.getHost();
-        if (TextUtils.isEmpty(host) || (jSONArray = (parseObject = JSONObject.parseObject(tBUrlRule.content)).getJSONArray("host")) == null) {
+        if (StringUtils.isEmpty(host) || (jSONArray = (parseObject = JSONObject.parseObject(tBUrlRule.content)).getJSONArray("host")) == null) {
             return result;
         }
         Iterator<Object> it = jSONArray.iterator();
@@ -50,7 +50,7 @@ public class JsonParameterRuleProcessor implements IRuleProcessor {
             return result;
         }
         String path = uri.getPath();
-        if (TextUtils.isEmpty(path)) {
+        if (StringUtils.isEmpty(path)) {
             path = "";
         }
         Iterator<Object> it2 = jSONArray2.iterator();

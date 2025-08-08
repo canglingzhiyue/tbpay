@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +79,7 @@ public class ipj {
         } else if (Build.VERSION.SDK_INT < 26 || !r.e("reloadTab")) {
         } else {
             DowngradeStrategy downgradeStrategy = Downgrade.getInstance().getDowngradeStrategy("search");
-            if (downgradeStrategy == null || !TextUtils.equals("degrade", downgradeStrategy.getTacticsPerformance())) {
+            if (downgradeStrategy == null || !StringUtils.equals("degrade", downgradeStrategy.getTacticsPerformance())) {
                 z = false;
             }
             final Handler handler = new Handler(Looper.getMainLooper());

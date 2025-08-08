@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.data.remote;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class b implements MtopModule.b {
         } else if (b != null) {
         } else {
             String a2 = oeb.a("ShortVideo.IgnoreDetailParamsKeys", (String) null);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 b = new String[]{c.KEY_DATA_SOURCE, c.KEY_CLOSE_WANNA_SEE, c.KEY_SWITCH_MODE};
             } else {
                 b = a2.split(",");
@@ -48,7 +48,7 @@ public class b implements MtopModule.b {
         } else if (f12535a != null) {
         } else {
             String a2 = oeb.a("ShortVideo.IgnoreExtendParametersKey", (String) null);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 f12535a = new String[]{"bxFeature", c.KEY_LBS_DATA, c.KEY_REFRESH_TYPE, "page", c.KEY_FROMLAUNCHER, c.KEY_ISSIMPLEPAGE, c.KEY_ISGGPICKPRELOAD, c.KEY_TAB3COMPONENTSOURCE, c.KEY_ENABLE_SERVER_ABR, c.KEY_IS_PRELOAD_FILL, c.KEY_NETWORK_SPEED, c.KEY_DATA_SOURCE, c.KEY_CLOSE_WANNA_SEE, c.KEY_SWITCH_MODE, "spm-url", c.KEY_ISAUTOSLIDE, c.KEY_VERTICAL_LAYOUT, FluidSDK.FLUID_SDK_FLAG, f.FLUID_SDK_REMOTE_VERSION};
             } else {
                 f12535a = a2.split(",");
@@ -66,10 +66,10 @@ public class b implements MtopModule.b {
             JSONObject a2 = com.taobao.android.fluid.framework.data.remote.newmodel.b.a(obj);
             JSONObject a3 = com.taobao.android.fluid.framework.data.remote.newmodel.b.a(obj2);
             if (a2 != null && a3 != null) {
-                return b(a.KEY_EXTEND_PARAMETERS, com.taobao.android.fluid.framework.data.remote.newmodel.b.b(a2), com.taobao.android.fluid.framework.data.remote.newmodel.b.b(a3)) && b(a.KEY_DETAIL_PARAMETERS, com.taobao.android.fluid.framework.data.remote.newmodel.b.a(a2), com.taobao.android.fluid.framework.data.remote.newmodel.b.a(a3)) && TextUtils.equals(com.taobao.android.fluid.framework.data.remote.newmodel.b.c(a2), com.taobao.android.fluid.framework.data.remote.newmodel.b.c(a3));
+                return b(a.KEY_EXTEND_PARAMETERS, com.taobao.android.fluid.framework.data.remote.newmodel.b.b(a2), com.taobao.android.fluid.framework.data.remote.newmodel.b.b(a3)) && b(a.KEY_DETAIL_PARAMETERS, com.taobao.android.fluid.framework.data.remote.newmodel.b.a(a2), com.taobao.android.fluid.framework.data.remote.newmodel.b.a(a3)) && StringUtils.equals(com.taobao.android.fluid.framework.data.remote.newmodel.b.c(a2), com.taobao.android.fluid.framework.data.remote.newmodel.b.c(a3));
             }
         }
-        if (TextUtils.equals("asac", str)) {
+        if (StringUtils.equals("asac", str)) {
             return true;
         }
         if (a.KEY_EXTEND_PARAMETERS.equals(str)) {

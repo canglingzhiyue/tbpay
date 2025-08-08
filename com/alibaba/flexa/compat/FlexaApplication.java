@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ComponentInfo;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.SplitFileInfo;
 import com.alibaba.android.split.core.internal.InternalHacker;
@@ -400,9 +400,9 @@ public abstract class FlexaApplication extends Application {
                 ipChange.ipc$dispatch("b0b66e33", new Object[]{this, activity, bundle});
                 return;
             }
-            if (!TextUtils.isEmpty(FlexaApplication.this.getTheme(activity.getClass().getName())) && FlexaApplication.this.pluginInstalled) {
+            if (!StringUtils.isEmpty(FlexaApplication.this.getTheme(activity.getClass().getName())) && FlexaApplication.this.pluginInstalled) {
                 String theme = FlexaApplication.this.getTheme(activity.getClass().getName());
-                if (!TextUtils.isEmpty(theme)) {
+                if (!StringUtils.isEmpty(theme)) {
                     activity.setTheme(a(theme));
                 }
             }

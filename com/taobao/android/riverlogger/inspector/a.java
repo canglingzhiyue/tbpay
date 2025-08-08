@@ -1,6 +1,6 @@
 package com.taobao.android.riverlogger.inspector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Iterator;
 import java.util.Set;
@@ -23,7 +23,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             InspectorNativeAgent.registerInfo(str, str2);
         }
@@ -113,7 +113,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5ba64f70", new Object[]{fVar, set});
         } else {
-            a(fVar, TextUtils.join(",", set));
+            a(fVar, StringUtils.join(",", set));
         }
     }
 }

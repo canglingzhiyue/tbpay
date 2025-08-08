@@ -1,6 +1,6 @@
 package com.taobao.taobao.scancode.gateway.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class q {
         if (configs != null) {
             for (String str : configs.keySet()) {
                 String str2 = configs.get(str);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     arrayList.add(str2);
                 }
             }

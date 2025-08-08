@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.v;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -87,7 +87,7 @@ public class b {
         v.a("SceneObserver", "onScreenShot");
         String stringExtra = intent.getStringExtra("filePath");
         Uri uri = (Uri) intent.getParcelableExtra("uri");
-        if (uri == null || TextUtils.isEmpty(stringExtra)) {
+        if (uri == null || StringUtils.isEmpty(stringExtra)) {
             return;
         }
         this.c.onScreenShot(uri, stringExtra);

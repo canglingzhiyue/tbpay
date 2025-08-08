@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -140,7 +140,7 @@ public final class syb {
             if (!tbt.a(TMSEmbedSolutionType.WEB_SINGLE_PAGE.name(), tbt.H5_PRELOAD_FIRST_CHUNK)) {
                 ldf.d(syb.TAG, "uc降级场景不预加载");
                 callback.a("uc降级场景不预加载");
-            } else if (TextUtils.equals("topMutliTab", syb.a(syb.this).g())) {
+            } else if (StringUtils.equals("topMutliTab", syb.a(syb.this).g())) {
                 List<String> b = syb.a(syb.this).b("getSelectPopWebUrl");
                 syb.a(syb.this, b);
                 ldf.d(syb.TAG, "下拉框预加载，链接条数有：" + b.size());

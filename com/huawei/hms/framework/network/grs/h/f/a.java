@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.h.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.huawei.hms.framework.common.IoUtils;
 import com.huawei.hms.framework.common.Logger;
@@ -13,7 +13,7 @@ import javax.net.ssl.HttpsURLConnection;
 /* loaded from: classes4.dex */
 public class a {
     public static HttpsURLConnection a(String str, Context context, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         URLConnection openConnection = new URL(str).openConnection();

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.open;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.open.DetailBusinessDetector;
@@ -60,7 +60,7 @@ public class c implements DetailBusinessDetector {
         }
         Uri parse = Uri.parse(str);
         String scheme = parse.getScheme();
-        if (scheme != null && TextUtils.equals("taobao", scheme.toLowerCase())) {
+        if (scheme != null && StringUtils.equals("taobao", scheme.toLowerCase())) {
             return DetailBusinessDetector.DetectResult.no;
         }
         Iterator<DetailBusinessDetector> it = this.f9775a.iterator();
@@ -76,9 +76,9 @@ public class c implements DetailBusinessDetector {
             if (detect == DetailBusinessDetector.DetectResult.yes_native) {
                 this.b = next;
                 String queryParameter = parse.getQueryParameter("id");
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     queryParameter = parse.getQueryParameter("item_id");
-                    if (TextUtils.isEmpty(queryParameter)) {
+                    if (StringUtils.isEmpty(queryParameter)) {
                         queryParameter = "";
                     }
                 }

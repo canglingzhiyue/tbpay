@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -138,7 +138,7 @@ public class a extends Dialog {
             this.d = (FrameLayout) this.b.findViewById(R.id.weex_float_window_container);
             this.f = (ImageView) this.b.findViewById(R.id.weex_floating_window_close_button);
         }
-        if (this.e != null && !TextUtils.isEmpty(this.g)) {
+        if (this.e != null && !StringUtils.isEmpty(this.g)) {
             this.e.setText(this.g);
         }
         if (this.d != null && this.h != null) {

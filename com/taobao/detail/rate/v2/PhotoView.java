@@ -9,7 +9,7 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -829,7 +829,7 @@ public class PhotoView extends TUrlImageView {
                     com.alibaba.fastjson.JSONObject r7 = r7.getJSONObject(r0)
                     java.lang.String r0 = "detailUrl"
                     java.lang.String r1 = r7.getString(r0)
-                    boolean r1 = android.text.TextUtils.isEmpty(r1)
+                    boolean r1 = android.text.StringUtils.isEmpty(r1)
                     if (r1 != 0) goto L8d
                     com.taobao.detail.rate.v2.PhotoView r1 = com.taobao.detail.rate.v2.PhotoView.this
                     android.content.Context r1 = r1.getContext()
@@ -1189,7 +1189,7 @@ public class PhotoView extends TUrlImageView {
                     com.alibaba.fastjson.JSONObject r7 = r7.getJSONObject(r0)
                     java.lang.String r0 = "detailUrl"
                     java.lang.String r1 = r7.getString(r0)
-                    boolean r1 = android.text.TextUtils.isEmpty(r1)
+                    boolean r1 = android.text.StringUtils.isEmpty(r1)
                     if (r1 != 0) goto L8d
                     com.taobao.detail.rate.v2.PhotoView r1 = com.taobao.detail.rate.v2.PhotoView.this
                     android.content.Context r1 = r1.getContext()
@@ -1549,7 +1549,7 @@ public class PhotoView extends TUrlImageView {
                     com.alibaba.fastjson.JSONObject r7 = r7.getJSONObject(r0)
                     java.lang.String r0 = "detailUrl"
                     java.lang.String r1 = r7.getString(r0)
-                    boolean r1 = android.text.TextUtils.isEmpty(r1)
+                    boolean r1 = android.text.StringUtils.isEmpty(r1)
                     if (r1 != 0) goto L8d
                     com.taobao.detail.rate.v2.PhotoView r1 = com.taobao.detail.rate.v2.PhotoView.this
                     android.content.Context r1 = r1.getContext()
@@ -1703,7 +1703,7 @@ public class PhotoView extends TUrlImageView {
             JSONObject jSONObject = this.tagData.getJSONObject(i);
             String string = jSONObject.getString("name");
             String string2 = jSONObject.getString("position");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 String[] split = string2.split(",");
                 if (split.length == 2) {
                     int floatValue = (int) (((Float.valueOf(split[0]).floatValue() * this.mBaseRect.width()) + this.mBaseRect.left) * 1.0f);

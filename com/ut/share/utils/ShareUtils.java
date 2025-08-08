@@ -6,7 +6,7 @@ import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayInputStream;
@@ -365,7 +365,7 @@ public class ShareUtils {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("7db7ca59", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || !Environment.getExternalStorageState().equals("mounted") || !new File(str).exists()) {
+        if (StringUtils.isEmpty(str) || !Environment.getExternalStorageState().equals("mounted") || !new File(str).exists()) {
             return null;
         }
         return BitmapFactory.decodeFile(str);
@@ -376,7 +376,7 @@ public class ShareUtils {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("69fd5dcd", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || !Environment.getExternalStorageState().equals("mounted") || !new File(str).exists()) {
+        if (StringUtils.isEmpty(str) || !Environment.getExternalStorageState().equals("mounted") || !new File(str).exists()) {
             return null;
         }
         BitmapFactory.Options options = new BitmapFactory.Options();
@@ -427,7 +427,7 @@ public class ShareUtils {
             return (Bitmap) ipChange.ipc$dispatch("eaa2ae2", new Object[]{str});
         }
         Bitmap bitmap = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -436,7 +436,7 @@ public class ShareUtils {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setDoInput(true);
                 String host = url.getHost();
-                if (!TextUtils.isEmpty(host)) {
+                if (!StringUtils.isEmpty(host)) {
                     int port = url.getPort();
                     if (port != -1) {
                         host = host + ":" + port;
@@ -572,7 +572,7 @@ public class ShareUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5ee7df8e", new Object[]{str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {

@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.filter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import tb.kge;
@@ -27,7 +27,7 @@ public class MathUtils {
         }
         if (obj instanceof String) {
             CharSequence charSequence = (CharSequence) obj;
-            if (!TextUtils.isEmpty(charSequence) && TextUtils.isDigitsOnly(charSequence)) {
+            if (!StringUtils.isEmpty(charSequence) && StringUtils.isDigitsOnly(charSequence)) {
                 return true;
             }
         }

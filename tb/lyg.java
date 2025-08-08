@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -123,7 +123,7 @@ public class lyg {
                 str2 = strArr2[i];
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         if (str2.startsWith(riy.ARRAY_START_STR) && str2.endsWith(riy.ARRAY_END_STR)) {

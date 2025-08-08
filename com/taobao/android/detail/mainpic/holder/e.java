@@ -14,7 +14,7 @@ import android.os.Environment;
 import android.os.Looper;
 import android.provider.MediaStore;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -464,7 +464,7 @@ public class e extends com.alibaba.android.ultron.vfw.viewholder.b implements c 
             return;
         }
         Context k = this.f2738a.k();
-        if (TextUtils.isEmpty(this.c.getFields().getString("url"))) {
+        if (StringUtils.isEmpty(this.c.getFields().getString("url"))) {
             a("存储失败，无法获取图片");
             return;
         }

@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.track;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.internal.util.q;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
@@ -69,7 +69,7 @@ public class d extends com.ut.mini.module.plugin.a implements l.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c4c99138", new Object[]{this, obj});
-        } else if (TextUtils.isEmpty(this.f4222a) || !TextUtils.equals(q.a(obj), this.f4222a)) {
+        } else if (StringUtils.isEmpty(this.f4222a) || !StringUtils.equals(q.a(obj), this.f4222a)) {
         } else {
             this.f4222a = null;
         }

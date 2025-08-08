@@ -2,7 +2,7 @@ package io.unicorn.plugin.image;
 
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import io.unicorn.plugin.image.ExternalAdapterImageProvider;
 import java.util.HashMap;
 import java.util.Map;
@@ -119,7 +119,7 @@ public class ExternalAdapterImageBridge {
             e.printStackTrace();
         }
         String str5 = hashMap2.get("instance_id");
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = "0";
         }
         a aVar = new a(str, Long.parseLong(str5));

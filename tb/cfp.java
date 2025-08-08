@@ -2,7 +2,7 @@ package tb;
 
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.aliprivacy.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
@@ -49,7 +49,7 @@ public class cfp {
                     return;
                 }
                 String optString = optJSONObject2.optString("versionProp");
-                if (!TextUtils.isEmpty(optString) && (optJSONObject = optJSONObject2.optJSONObject(cge.a().a(optString))) != null) {
+                if (!StringUtils.isEmpty(optString) && (optJSONObject = optJSONObject2.optJSONObject(cge.a().a(optString))) != null) {
                     this.f26268a = optJSONObject.optInt(SP_API_CODE_KEY);
                     return;
                 }

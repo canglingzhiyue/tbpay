@@ -3,7 +3,7 @@ package com.taobao.mytaobao.basement;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -78,7 +78,7 @@ public final class MTBBasementContainerView extends FrameLayout {
                 str = jSONObject2.getString("placeHolderType");
             }
             String str2 = str;
-            com.taobao.phenix.intf.b.h().a(d.a((TextUtils.equals("2", str2) || TextUtils.equals("3", str2)) ? R.drawable.mtb_basement_placeholder2 : R.drawable.mtb_basement_placeholder)).into(tUrlImageView);
+            com.taobao.phenix.intf.b.h().a(d.a((StringUtils.equals("2", str2) || StringUtils.equals("3", str2)) ? R.drawable.mtb_basement_placeholder2 : R.drawable.mtb_basement_placeholder)).into(tUrlImageView);
         }
     }
 

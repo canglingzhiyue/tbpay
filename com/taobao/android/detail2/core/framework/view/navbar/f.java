@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.view.navbar;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -47,7 +47,7 @@ public abstract class f extends g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4f2441c2", new Object[]{this, lVar});
-        } else if (TextUtils.isEmpty(lVar.f())) {
+        } else if (StringUtils.isEmpty(lVar.f())) {
             b(lVar);
         } else {
             e(lVar);

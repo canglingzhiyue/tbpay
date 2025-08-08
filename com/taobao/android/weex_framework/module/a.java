@@ -1,6 +1,6 @@
 package com.taobao.android.weex_framework.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex.WeexValue;
@@ -44,7 +44,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c1811f52", new Object[]{str, bVar, new Boolean(z)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && bVar != null) {
+        if (!StringUtils.isEmpty(str) && bVar != null) {
             if (f15997a != null && f15997a.containsKey(str)) {
                 g.c("register module twice,Module name is  " + str);
             }

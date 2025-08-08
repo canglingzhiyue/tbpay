@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.taobao.windvane.jsbridge.c;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.ask.nav.WVSocialAskPlugin;
 import tb.kge;
@@ -34,7 +34,7 @@ public class SocialJsBridgeService extends Service implements c {
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("fa8f40b7", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.equals("WVSocialPlugin")) {

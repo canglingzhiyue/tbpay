@@ -1,6 +1,6 @@
 package com.taobao.tao.shop.rule;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.data.TBBundleUrlRuleInfo;
@@ -29,7 +29,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (TBBundleUrlRuleInfo) ipChange.ipc$dispatch("ecd16685", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return c.get(str);
         }
         return null;
@@ -40,7 +40,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d80309bf", new Object[]{tBBundleUrlRuleInfo})).booleanValue();
         }
-        if (tBBundleUrlRuleInfo == null || TextUtils.isEmpty(tBBundleUrlRuleInfo.mBundleName)) {
+        if (tBBundleUrlRuleInfo == null || StringUtils.isEmpty(tBBundleUrlRuleInfo.mBundleName)) {
             return false;
         }
         c.put(tBBundleUrlRuleInfo.mBundleName, tBBundleUrlRuleInfo);

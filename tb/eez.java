@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -43,7 +43,7 @@ public class eez implements j<edr> {
         }
         String string = edrVar.f27215a.params.getString("target");
         JSONObject jSONObject = edrVar.f27215a.params.getJSONObject("data");
-        if (TextUtils.isEmpty(string) || jSONObject == null) {
+        if (StringUtils.isEmpty(string) || jSONObject == null) {
             return i.FAILURE;
         }
         g a2 = n.a(this.f27257a);

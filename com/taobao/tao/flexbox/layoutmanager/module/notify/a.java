@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.module.notify;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.ac.g;
 import java.util.HashMap;
@@ -84,6 +84,6 @@ public abstract class a {
             return true;
         }
         String a2 = cVar.a("notifyId", "");
-        return !TextUtils.isEmpty(a2) && TextUtils.equals(a2, cVar2.a("notifyId", ""));
+        return !StringUtils.isEmpty(a2) && StringUtils.equals(a2, cVar2.a("notifyId", ""));
     }
 }

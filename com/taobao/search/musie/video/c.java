@@ -2,7 +2,7 @@ package com.taobao.search.musie.video;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
@@ -247,12 +247,12 @@ public final class c implements d {
         aVar.c(i);
         aVar.d(i2);
         aVar.b(str2);
-        aVar.f(TextUtils.isEmpty(str3) ? noa.DEFAULT_VIDEO_BIZ_CODE : str3);
-        aVar.k(TextUtils.isEmpty(property.m()) ? noa.DEFAULE_VIDEO_PLAY_SCENES : property.m());
-        if (!TextUtils.isEmpty(str4)) {
+        aVar.f(StringUtils.isEmpty(str3) ? noa.DEFAULT_VIDEO_BIZ_CODE : str3);
+        aVar.k(StringUtils.isEmpty(property.m()) ? noa.DEFAULE_VIDEO_PLAY_SCENES : property.m());
+        if (!StringUtils.isEmpty(str4)) {
             aVar.h(str4);
         }
-        if (!TextUtils.isEmpty(property.n())) {
+        if (!StringUtils.isEmpty(property.n())) {
             aVar.d(property.n());
         }
         if (jSONObject != null) {
@@ -267,7 +267,7 @@ public final class c implements d {
             aVar.a(hashMap);
         }
         String l = property.l();
-        if (!TextUtils.isEmpty(l)) {
+        if (!StringUtils.isEmpty(l)) {
             aVar.c(l);
             aVar.b(true);
             aVar.a(new a());
@@ -312,7 +312,7 @@ public final class c implements d {
             for (Map.Entry entry : hashMap.entrySet()) {
                 String str = (String) entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(str) && value != null) {
+                if (!StringUtils.isEmpty(str) && value != null) {
                     jSONObject.put((JSONObject) str, value.toString());
                 }
             }

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.exception;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.model.StError;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -114,7 +114,7 @@ public final class NetErrorException extends Exception {
             ipChange.ipc$dispatch("f547bca2", new Object[]{str, th});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             "NetError--".concat(String.valueOf(str));
         }
         if (th == null) {
@@ -141,7 +141,7 @@ public final class NetErrorException extends Exception {
             return (String) ipChange.ipc$dispatch("209247e1", new Object[]{this});
         }
         String netErrorException = toString();
-        if (TextUtils.isEmpty(this.mOperationType)) {
+        if (StringUtils.isEmpty(this.mOperationType)) {
             return netErrorException;
         }
         return netErrorException + "_" + this.mOperationType;
@@ -154,7 +154,7 @@ public final class NetErrorException extends Exception {
         }
         try {
             String shortRpcLog = LogUtil.shortRpcLog(getCause() != null ? getCause().getMessage() : getMessage());
-            if (TextUtils.isEmpty(shortRpcLog)) {
+            if (StringUtils.isEmpty(shortRpcLog)) {
                 shortRpcLog = StError.getStackTraceMessage(this);
             }
             return getBioErrorCode() + "|" + shortRpcLog;

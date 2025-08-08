@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -44,7 +44,7 @@ public class osj {
 
     private static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : n.n().z() && TextUtils.equals(str, ksk.NEW_FACE_CHILD.f30287a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : n.n().z() && StringUtils.equals(str, ksk.NEW_FACE_CHILD.f30287a);
     }
 
     private static SectionModel a(SectionModel sectionModel) {
@@ -82,6 +82,6 @@ public class osj {
 
     private static boolean a(TemplateModel templateModel) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2d49883c", new Object[]{templateModel})).booleanValue() : TextUtils.equals("recommend_m_h_v5_slider_icons_tag_bindingx_d3", templateModel.getName());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2d49883c", new Object[]{templateModel})).booleanValue() : StringUtils.equals("recommend_m_h_v5_slider_icons_tag_bindingx_d3", templateModel.getName());
     }
 }

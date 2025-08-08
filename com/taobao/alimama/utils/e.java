@@ -1,6 +1,6 @@
 package com.taobao.alimama.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.login.LoginManager;
 import com.taobao.muniontaobaosdk.util.TaoLog;
@@ -33,7 +33,7 @@ public final class e {
             str3 = lastLoginUserInfo.nickname;
             str2 = lastLoginUserInfo.userId;
         }
-        TaoLog.Logi("AlimamaSdk", String.format("[step=%s,th=%s,ver=%s,user=%s,uid=%s,bkt=%s] args: %s", str, Thread.currentThread().getName(), "5.15.6", str3, str2, TextUtils.join(";", c.l()), TextUtils.join(",", strArr)));
+        TaoLog.Logi("AlimamaSdk", String.format("[step=%s,th=%s,ver=%s,user=%s,uid=%s,bkt=%s] args: %s", str, Thread.currentThread().getName(), "5.15.6", str3, str2, StringUtils.join(";", c.l()), StringUtils.join(",", strArr)));
         dhe.b().a(str, strArr);
         UserTrackLogs.trackDebugLog(str, strArr);
     }

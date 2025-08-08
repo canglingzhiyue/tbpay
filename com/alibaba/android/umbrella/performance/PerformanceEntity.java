@@ -1,7 +1,7 @@
 package com.alibaba.android.umbrella.performance;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -34,7 +34,7 @@ public class PerformanceEntity implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4d8d5035", new Object[]{this, str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.otherMeasure.put(str, Long.valueOf(j));
         }
@@ -44,7 +44,7 @@ public class PerformanceEntity implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a824d139", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.args.put(str, str2);
         }

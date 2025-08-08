@@ -1,7 +1,7 @@
 package com.alipay.android.msp.ui.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -106,7 +106,7 @@ public class UserInfoWidget extends FrameLayout {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.equals(str, this.mName)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.equals(str, this.mName)) {
                 this.mName = str;
                 this.pE.setVisibility(0);
                 String str4 = "";
@@ -120,10 +120,10 @@ public class UserInfoWidget extends FrameLayout {
                 this.pF.setText(str4);
                 this.pG.setText(str3);
             }
-            if (TextUtils.equals(str2, this.pC)) {
+            if (StringUtils.equals(str2, this.pC)) {
                 return;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 this.pD.setScaleType(ImageView.ScaleType.FIT_XY);
                 this.pD.setImageResource(R.drawable.alipay_msp_logo_large);
                 return;

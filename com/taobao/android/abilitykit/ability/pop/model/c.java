@@ -3,7 +3,7 @@ package com.taobao.android.abilitykit.ability.pop.model;
 import android.app.Activity;
 import android.app.ActivityGroup;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.h;
@@ -52,7 +52,7 @@ public class c {
         this.i = jSONObject;
         this.f8913a = b.a(dmo.a(jSONObject, KEY_POP_CONFIG, (JSONObject) null));
         this.b = dmo.a(jSONObject, "popId", (String) null);
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = String.valueOf(System.currentTimeMillis());
         }
         this.c = dmo.a(jSONObject, "url", "");
@@ -116,13 +116,13 @@ public class c {
                 }
                 bVar2.a(str);
             }
-            if (!TextUtils.isEmpty(this.k.I())) {
+            if (!StringUtils.isEmpty(this.k.I())) {
                 b bVar3 = this.k;
                 bVar3.a(bVar3.I());
             }
             this.k.f(0);
             this.k.c(DEFAULT_LANDSCAPE_DRAWER);
-            if ((!d() || !TextUtils.isEmpty(this.c)) && this.f8913a.e() != 10000) {
+            if ((!d() || !StringUtils.isEmpty(this.c)) && this.f8913a.e() != 10000) {
                 this.k.b(Math.max(10000 - ((dms.c(context) * 10000) / Math.min(h.a().e(context), h.a().a(context))), this.f8913a.e()));
             }
             if (this.k.B() && this.h) {

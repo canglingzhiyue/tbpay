@@ -3,7 +3,7 @@ package com.taobao.themis.inside.adapter;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -202,7 +202,7 @@ public final class MtopAdapterImpl implements IMtopInnerAdapter {
         mtopBusiness.mo1305reqMethod(MethodEnum.valueOf(upperCase));
         mtopBusiness.mo1309setBizId("60");
         mtopBusiness.mo1315setJsonType(JsonTypeEnum.ORIGINALJSON);
-        if (TextUtils.isEmpty(str5) || q.a((Object) "taobao", (Object) str5)) {
+        if (StringUtils.isEmpty(str5) || q.a((Object) "taobao", (Object) str5)) {
             mtopBusiness.mo1314setCustomDomain(MtopUnitStrategy.GUIDE_ONLINE_DOMAIN, MtopUnitStrategy.GUIDE_PRE_DOMAIN, "");
         }
         if (str4 != null) {

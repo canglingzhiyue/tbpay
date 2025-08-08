@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.session.dns.DnsNavConfigTask;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -83,7 +83,7 @@ public class DesktopTaskServiceReceiver extends Service {
                         return;
                     }
                     String string = data.getString("config");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         e.a(fVar.f16953a, fVar.c, fVar.d, e.FUNNEL_STEP_LAUNCH_WIDGET, "paramContentEmpty", "");
                         return;
                     }

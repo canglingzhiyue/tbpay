@@ -2,7 +2,7 @@ package com.alibaba.android.icart.core.data;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.viewholder.BundleLineComponent;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class c {
         JSONObject o = bVar.o();
         Map<String, DMComponent> u = bVar.u();
         for (String str : o.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Object obj = o.get(str);
                 com.taobao.android.ultron.datamodel.imp.c t = bVar.t();
                 if (obj instanceof JSONObject) {

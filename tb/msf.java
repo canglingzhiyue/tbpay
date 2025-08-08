@@ -3,7 +3,7 @@ package tb;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.ProcedureGlobal;
 import java.util.Iterator;
@@ -22,9 +22,9 @@ public final class msf {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
         Context b = ProcedureGlobal.a().b();
-        if (TextUtils.isEmpty(f31220a)) {
+        if (StringUtils.isEmpty(f31220a)) {
             String b2 = b();
-            if (TextUtils.isEmpty(b2) && b != null) {
+            if (StringUtils.isEmpty(b2) && b != null) {
                 b2 = a(b);
             }
             f31220a = b2;

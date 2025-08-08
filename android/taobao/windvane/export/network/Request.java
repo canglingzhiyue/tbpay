@@ -1,7 +1,7 @@
 package android.taobao.windvane.export.network;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -352,7 +352,7 @@ public class Request {
             if (this.b == null) {
                 throw new IllegalStateException("url = null");
             }
-            if (TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.c)) {
                 this.c = "GET";
             }
             if (this.d == null) {

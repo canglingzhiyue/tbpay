@@ -1,6 +1,6 @@
 package com.taobao.interact.core.h5;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -21,10 +21,10 @@ public class d {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put("errorCode", (Object) str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.put("errorMsg", (Object) str2);
             }
             return jSONObject.toJSONString();

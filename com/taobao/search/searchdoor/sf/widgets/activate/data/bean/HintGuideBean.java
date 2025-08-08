@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.sf.widgets.activate.data.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -76,6 +76,6 @@ public class HintGuideBean implements Serializable {
 
     public boolean isLegal() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c32224ba", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.showText) && !TextUtils.isEmpty(this.nameSpace) && this.totalCount > 0 && this.showInterval > 0;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c32224ba", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.showText) && !StringUtils.isEmpty(this.nameSpace) && this.totalCount > 0 && this.showInterval > 0;
     }
 }

@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.mnn;
 
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,11 +88,11 @@ public class c {
     private static boolean a(c cVar) {
         List<Float> list;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c05b4429", new Object[]{cVar})).booleanValue() : cVar.f6759a == null || cVar.b == null || (list = cVar.c) == null || list.size() != cVar.b.size() || TextUtils.isEmpty(cVar.d);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c05b4429", new Object[]{cVar})).booleanValue() : cVar.f6759a == null || cVar.b == null || (list = cVar.c) == null || list.size() != cVar.b.size() || StringUtils.isEmpty(cVar.d);
     }
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.d) && NEW_ALGORITHM_CODE.equalsIgnoreCase(this.d);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.d) && NEW_ALGORITHM_CODE.equalsIgnoreCase(this.d);
     }
 }

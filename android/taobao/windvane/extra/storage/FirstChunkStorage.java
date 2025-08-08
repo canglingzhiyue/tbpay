@@ -3,7 +3,7 @@ package android.taobao.windvane.extra.storage;
 import android.net.Uri;
 import android.taobao.windvane.config.j;
 import android.taobao.windvane.extra.uc.FirstTruckCacheSSRService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
@@ -25,7 +25,7 @@ public class FirstChunkStorage {
         Uri parse = Uri.parse(str);
         if (j.commonConfig.cJ) {
             String queryParameter = parse.getQueryParameter("fcc_match_query");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 this.mStorageKey = parse.buildUpon().clearQuery().appendQueryParameter(queryParameter, parse.getQueryParameter(queryParameter)).toString();
                 return;
             }
@@ -42,7 +42,7 @@ public class FirstChunkStorage {
         } else if (responseContext == null) {
             e.a(RVLLevel.Error, FirstTruckCacheSSRService.TAG, "responseContext = null");
             return false;
-        } else if (TextUtils.isEmpty(responseContext.getHtml())) {
+        } else if (StringUtils.isEmpty(responseContext.getHtml())) {
             e.a(RVLLevel.Error, FirstTruckCacheSSRService.TAG, "responseContext.html is empty");
             return false;
         } else if (responseContext.getHtml().length() != responseContext.getHtmlLength()) {
@@ -52,7 +52,7 @@ public class FirstChunkStorage {
             JSONObject jSONObject = null;
             if (!j.commonConfig.dg) {
                 String read = STORAGE.read(this.mStorageKey);
-                if (!TextUtils.isEmpty(read)) {
+                if (!StringUtils.isEmpty(read)) {
                     try {
                         jSONObject = JSONObject.parseObject(read);
                     } catch (Exception unused) {
@@ -108,7 +108,7 @@ public class FirstChunkStorage {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6ec16aab", new Object[]{this, responseContext})).booleanValue();
         }
-        if (responseContext == null || TextUtils.isEmpty(responseContext.getHtml()) || responseContext.getHtml().length() != responseContext.getHtmlLength()) {
+        if (responseContext == null || StringUtils.isEmpty(responseContext.getHtml()) || responseContext.getHtml().length() != responseContext.getHtmlLength()) {
             return false;
         }
         return responseContext.isEnable();

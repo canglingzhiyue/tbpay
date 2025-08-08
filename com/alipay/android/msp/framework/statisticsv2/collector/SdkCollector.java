@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.collector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.constraints.IChannelInfo;
 import com.alipay.android.msp.framework.statisticsv2.Grammar;
 import com.alipay.android.msp.framework.statisticsv2.mechanism.PersistStorage;
@@ -44,7 +44,7 @@ public class SdkCollector {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             MspInitAssistService sdkInstance = MspInitAssistService.getSdkInstance();
             b = ((sdkInstance == null || (channelInfo = sdkInstance.getChannelInfo()) == null) ? "com.alipay.quickpay" : channelInfo.getApiName()).toLowerCase(Locale.CHINA);
         }
@@ -63,7 +63,7 @@ public class SdkCollector {
             if (num == null) {
                 num = 0;
             }
-            if (num.intValue() + 1 <= 0 || TextUtils.isEmpty(string)) {
+            if (num.intValue() + 1 <= 0 || StringUtils.isEmpty(string)) {
                 string = ThreadSafeDateFormat.format(new Date(), "yyyy-MM-dd HH:mm:ss:SSS");
                 num = 0;
             }

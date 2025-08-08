@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -135,7 +135,7 @@ public class jvf implements jvu {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.e) {
+        } else if (StringUtils.isEmpty(str) || this.e) {
         } else {
             this.f29805a = str;
             String b = f.b("weex_rum_performance_enable");
@@ -387,7 +387,7 @@ public class jvf implements jvu {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         String a2 = jvl.a(str, false);
-        return TextUtils.isEmpty(a2) ? "emptyParseUrl" : a2;
+        return StringUtils.isEmpty(a2) ? "emptyParseUrl" : a2;
     }
 
     @Override // tb.jvu

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.client.GlobalClientInfo;
 import com.taobao.accs.utl.ALog;
@@ -31,7 +31,7 @@ public class ddp extends ddm {
         try {
             i.a aVar = new i.a();
             aVar.a("cmd", this.e).a("appKey", this.f26711a);
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 aVar.a("utdid", this.c);
             } else {
                 aVar.a("deviceId", this.b);

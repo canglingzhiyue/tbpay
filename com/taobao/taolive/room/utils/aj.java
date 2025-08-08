@@ -3,7 +3,7 @@ package com.taobao.taolive.room.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +37,7 @@ public class aj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d5110219", new Object[]{context, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             View inflate = LayoutInflater.from(context).inflate(R.layout.taolive_favor_toast_view, (ViewGroup) null);
             ((TextView) inflate.findViewById(R.id.fellow_favor_tv)).setText(str);
@@ -49,7 +49,7 @@ public class aj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d51141ea", new Object[]{context, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || !(context instanceof Activity)) {
+        } else if (StringUtils.isEmpty(str) || !(context instanceof Activity)) {
         } else {
             Activity activity = (Activity) context;
             if (activity.isFinishing()) {

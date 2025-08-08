@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.handler;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.datasdk.facade.model.ResultData;
 import com.taobao.message.kit.util.ValueUtil;
@@ -26,7 +26,7 @@ public class SimpleDXRecyclerRefreshHandler extends BaseDXRecyclerRefreshHanlder
         }
         if (map2 != null) {
             String string = ValueUtil.getString(map2, "instance", null);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return diff.getRuntimeDiff(string + "_messageViewObjects");
             }
         }

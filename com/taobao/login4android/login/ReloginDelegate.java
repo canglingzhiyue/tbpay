@@ -1,6 +1,6 @@
 package com.taobao.login4android.login;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
@@ -68,7 +68,7 @@ public class ReloginDelegate {
         LoginTLogAdapter.trace(TAG, "relogin: handle relogin: ");
         if (LOCK.compareAndSet(false, true)) {
             LoginTLogAdapter.trace(TAG, "handle: enter flow");
-            if (TextUtils.isEmpty(Login.getOldUserId())) {
+            if (StringUtils.isEmpty(Login.getOldUserId())) {
                 LoginTLogAdapter.trace(TAG, "handle: olduserid is empty");
                 stepUT("relogin_entrance");
                 doRelogin();

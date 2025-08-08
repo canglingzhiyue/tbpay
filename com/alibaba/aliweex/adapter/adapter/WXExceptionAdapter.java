@@ -2,7 +2,7 @@ package com.alibaba.aliweex.adapter.adapter;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.aliweex.d;
 import com.alibaba.fastjson.JSON;
@@ -139,12 +139,12 @@ public class WXExceptionAdapter implements IWXJSExceptionAdapter, Serializable {
                 Map<String, String> extParams = wXJSExceptionInfo.getExtParams();
                 if (extParams != null && extParams.size() > 0) {
                     hashMap.putAll(extParams);
-                    if (!TextUtils.isEmpty(extParams.get("wxGreyBundle"))) {
+                    if (!StringUtils.isEmpty(extParams.get("wxGreyBundle"))) {
                         aVar.c = extParams.get("wxGreyBundle");
                     }
                 }
                 try {
-                    if (!TextUtils.isEmpty(instanceId) && (wXSDKInstance = WXSDKManager.getInstance().getAllInstanceMap().get(instanceId)) != null && (F = wXSDKInstance.F()) != null && F.containsKey(WX_AIR_TAG) && (str = F.get(WX_AIR_TAG)) != null) {
+                    if (!StringUtils.isEmpty(instanceId) && (wXSDKInstance = WXSDKManager.getInstance().getAllInstanceMap().get(instanceId)) != null && (F = wXSDKInstance.F()) != null && F.containsKey(WX_AIR_TAG) && (str = F.get(WX_AIR_TAG)) != null) {
                         hashMap.put(WX_AIR_TAG, str);
                     }
                 } catch (Throwable unused) {
@@ -198,14 +198,14 @@ public class WXExceptionAdapter implements IWXJSExceptionAdapter, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         double d = 100.0d;
         double random = Math.random() * 100.0d;
         if ("weex_native_error".equals(str)) {
             String a2 = a();
-            if (TextUtils.isEmpty(a2) || a2.split(".").length == 3) {
+            if (StringUtils.isEmpty(a2) || a2.split(".").length == 3) {
                 d = 10.0d;
             }
         }
@@ -248,7 +248,7 @@ public class WXExceptionAdapter implements IWXJSExceptionAdapter, Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2eea6700", new Object[]{str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

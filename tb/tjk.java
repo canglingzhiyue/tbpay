@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -134,7 +134,7 @@ public class tjk {
         dXTemplateItem.b = jSONObject.getLongValue("version");
         dXTemplateItem.f11925a = jSONObject.getString("name");
         dXTemplateItem.c = jSONObject.getString("url");
-        if (dXTemplateItem.b <= 0 || TextUtils.isEmpty(dXTemplateItem.f11925a) || TextUtils.isEmpty(dXTemplateItem.c)) {
+        if (dXTemplateItem.b <= 0 || StringUtils.isEmpty(dXTemplateItem.f11925a) || StringUtils.isEmpty(dXTemplateItem.c)) {
             stv.a("DXRenderService", "convertTemplate error, template=" + jSONObject);
             return null;
         }
@@ -205,7 +205,7 @@ public class tjk {
         if (jSONObject2 == null) {
             stv.a("checkDXInfoValid", "template do not exist in splash data.");
             return null;
-        } else if (TextUtils.isEmpty(jSONObject2.getString("name")) || TextUtils.isEmpty(jSONObject2.getString("url")) || jSONObject2.getLongValue("version") <= 0) {
+        } else if (StringUtils.isEmpty(jSONObject2.getString("name")) || StringUtils.isEmpty(jSONObject2.getString("url")) || jSONObject2.getLongValue("version") <= 0) {
             stv.a("checkDXInfoValid", "skip DX download, not valid DX template, template=" + jSONObject2);
             return null;
         } else {

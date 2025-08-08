@@ -1,7 +1,7 @@
 package com.taobao.orange.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
@@ -39,7 +39,7 @@ public class f {
             return ((Number) ipChange.ipc$dispatch("f3a64c26", new Object[]{str})).longValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Long.parseLong(str);
             }
             return 0L;
@@ -59,7 +59,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -74,7 +74,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -90,7 +90,7 @@ public class f {
             return ((Number) ipChange.ipc$dispatch("d23b17e9", new Object[]{str})).longValue();
         }
         long j = 0;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         int length = str.length();

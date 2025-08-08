@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorType;
 import com.xiaomi.push.fd;
 import com.xiaomi.push.gf;
@@ -51,7 +51,7 @@ public class z {
         if (m2102a != null) {
             isVar.a(m2102a.m2068a());
             isVar.a(m2102a.m2066a());
-            if (!TextUtils.isEmpty(m2102a.m2073b())) {
+            if (!StringUtils.isEmpty(m2102a.m2073b())) {
                 isVar.c(m2102a.m2073b());
             }
         }
@@ -91,7 +91,7 @@ public class z {
     public static void a(Context context, iy iyVar, byte[] bArr) {
         try {
             al.c m2271a = al.m2271a(context, iyVar, bArr);
-            if (m2271a.f24641a > 0 && !TextUtils.isEmpty(m2271a.f923a)) {
+            if (m2271a.f24641a > 0 && !StringUtils.isEmpty(m2271a.f923a)) {
                 hv.a(context, m2271a.f923a, m2271a.f24641a, true, false, System.currentTimeMillis());
             }
             if (!com.xiaomi.push.j.m2118a(context) || !ah.a(context, iyVar, m2271a.f924a)) {
@@ -241,7 +241,7 @@ public class z {
             return;
         }
         String a2 = al.a(iyVar);
-        if (TextUtils.isEmpty(a2) || a(context, a2, bArr)) {
+        if (StringUtils.isEmpty(a2) || a(context, a2, bArr)) {
             return;
         }
         fd.a(context).b(a2, al.b(iyVar), iyVar.m2102a().m2068a(), "1");

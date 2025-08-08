@@ -2,7 +2,7 @@ package com.android.tools.ir.runtime;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.alibaba.ip.utils.RefectUtils;
@@ -46,7 +46,7 @@ public class ApplicationInvoker {
     public synchronized void invoke(String str, Context context) {
         if (!this.inited) {
             this.inited = true;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     Class<?> loadClass = ApplicationInvoker.class.getClassLoader().loadClass(str);
                     if (loadClass == null) {
@@ -70,7 +70,7 @@ public class ApplicationInvoker {
     public synchronized void invoke(String str, Context context, a aVar) {
         if (!this.inited) {
             this.inited = true;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     Class<?> loadClass = ApplicationInvoker.class.getClassLoader().loadClass(str);
                     if (loadClass == null) {

@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.nav;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.TTDetailPageManager;
@@ -86,16 +86,16 @@ public class c implements com.taobao.android.nav.e {
             return true;
         }
         String a3 = a(data);
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             String a4 = com.taobao.android.detail.core.performance.d.a("DetailNavProcessor");
             com.taobao.android.detail.core.utils.i.c(a4, "补齐scheme的url:" + a3);
             data = Uri.parse(a3);
         }
-        if (TextUtils.equals("true", data.getQueryParameter("hybrid"))) {
+        if (StringUtils.equals("true", data.getQueryParameter("hybrid"))) {
             ecg.a(dVar.a());
             return true;
         }
-        if (eip.T && (TextUtils.equals("/awp/core/detail/inside.htm", data.getPath()) || "true".equals(data.getQueryParameter("insideDetail")))) {
+        if (eip.T && (StringUtils.equals("/awp/core/detail/inside.htm", data.getPath()) || "true".equals(data.getQueryParameter("insideDetail")))) {
             String queryParameter = data.getQueryParameter("stdPopId");
             JSONObject jSONObject = new JSONObject();
             jSONObject.put(STDPOP_CONFIG_WINDOW_NOTIFY, (Object) true);
@@ -111,7 +111,7 @@ public class c implements com.taobao.android.nav.e {
         }
         intent.putExtra(KEY_DETAIL_NAV, "true");
         intent.putExtra(dyo.STREAM_FLAG, String.valueOf(new Object().hashCode()));
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             intent = a(intent, data);
         }
         a aVar = new a(Globals.getApplication().getApplicationContext(), intent);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.f;
@@ -108,7 +108,7 @@ public class jib implements oli {
         bVar.g.put("arupBizType", str4);
         bVar.g.put("ossObjectKey", str5);
         try {
-            if (!TextUtils.isEmpty(olmVar.p)) {
+            if (!StringUtils.isEmpty(olmVar.p)) {
                 File file3 = new File(olmVar.p);
                 if (!file3.exists()) {
                     file3.mkdirs();

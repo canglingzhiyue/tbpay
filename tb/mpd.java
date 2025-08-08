@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -58,7 +58,7 @@ public class mpd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7d2530ad", new Object[]{str, new Float(f)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("pageName must not null");
         } else {
             if (f <= 1.0f && f >= 0.0f) {

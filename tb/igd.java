@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
 import com.taobao.android.nav.Nav;
@@ -63,7 +63,7 @@ public class igd {
         }
         StringBuilder sb = new StringBuilder();
         for (String str2 : a2.keySet()) {
-            if (!TextUtils.isEmpty(str2) && !str2.equals("hybrid") && (str = a2.get(str2)) != null) {
+            if (!StringUtils.isEmpty(str2) && !str2.equals("hybrid") && (str = a2.get(str2)) != null) {
                 String encode = URLEncoder.encode(str);
                 sb.append("&" + str2 + "=" + encode);
             }

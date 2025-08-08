@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.component.bottombar.viewholder;
 import android.content.Context;
 import android.net.Uri;
 import android.text.Html;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -168,12 +168,12 @@ public class d extends eac<fah> implements com.taobao.android.trade.boost.reques
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("31ed3f0c", new Object[]{this, marketBagPrice});
-        } else if (marketBagPrice == null || marketBagPrice.model == null || TextUtils.isEmpty(marketBagPrice.model.price)) {
+        } else if (marketBagPrice == null || marketBagPrice.model == null || StringUtils.isEmpty(marketBagPrice.model.price)) {
             this.g.setText(this.f9568a.getString(R.string.detail_cart));
         } else {
             i.d("BottomBarSMCartVH", "updateSMCartPriceSuccess");
             this.g.setText(Html.fromHtml(String.format(this.f9568a.getString(R.string.detail_total_price), marketBagPrice.model.price)));
-            if (!this.j || !this.i || marketBagPrice.couDanShow == null || TextUtils.isEmpty(marketBagPrice.couDanShow.URL)) {
+            if (!this.j || !this.i || marketBagPrice.couDanShow == null || StringUtils.isEmpty(marketBagPrice.couDanShow.URL)) {
                 i.d("BottomBarSMCartVH", "wouldn't show coudan");
             } else {
                 com.taobao.android.trade.event.f.a(this.f9568a).a(new edz(new h.a().b(marketBagPrice.couDanShow.buttonMsg).a(marketBagPrice.couDanShow.msg).c(marketBagPrice.couDanShow.URL).a(new View.OnClickListener() { // from class: com.taobao.android.detail.wrapper.ext.component.bottombar.viewholder.d.1
@@ -228,7 +228,7 @@ public class d extends eac<fah> implements com.taobao.android.trade.boost.reques
             return;
         }
         if (mtopResponse.isSessionInvalid()) {
-            if (!TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+            if (!StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                 Toast.makeText(this.f9568a, mtopResponse.getRetMsg(), 0).show();
             } else {
                 Toast.makeText(this.f9568a, this.f9568a.getString(R.string.detail_query_error), 0).show();

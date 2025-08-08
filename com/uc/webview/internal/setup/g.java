@@ -1,7 +1,7 @@
 package com.uc.webview.internal.setup;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.utils.FileUtil;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.ErrorCode;
@@ -43,7 +43,7 @@ public class g extends j {
                 }
             } catch (Throwable unused) {
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str = String.valueOf(str.hashCode());
             }
             Log.i("LastRCI", "CoreInfo getNativeLibDigest result:".concat(String.valueOf(str)));
@@ -52,7 +52,7 @@ public class g extends j {
 
         public static String a(boolean z, String str) {
             String str2 = "";
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str2;
             }
             File file = new File(str);
@@ -74,7 +74,7 @@ public class g extends j {
                 sb.append(fileCoreLib.lastModified());
             }
             str2 = sb.toString();
-            return TextUtils.isEmpty(str2) ? str2 : String.valueOf(str2.hashCode());
+            return StringUtils.isEmpty(str2) ? str2 : String.valueOf(str2.hashCode());
         }
     }
 
@@ -224,7 +224,7 @@ public class g extends j {
             this.p = false;
             this.C = null;
             String a2 = e.a(context);
-            String[] split = TextUtils.isEmpty(a2) ? null : a2.split("`");
+            String[] split = StringUtils.isEmpty(a2) ? null : a2.split("`");
             if (split == null || split.length < n) {
                 this.o = null;
                 return;
@@ -247,10 +247,10 @@ public class g extends j {
                 this.z = Boolean.valueOf(a(l)).booleanValue();
                 this.B = a(k);
                 this.A = a(j);
-                if (TextUtils.isEmpty(this.s) || TextUtils.isEmpty(this.t) || TextUtils.isEmpty(this.u) || TextUtils.isEmpty(this.v)) {
+                if (StringUtils.isEmpty(this.s) || StringUtils.isEmpty(this.t) || StringUtils.isEmpty(this.u) || StringUtils.isEmpty(this.v)) {
                     return false;
                 }
-                if (TextUtils.isEmpty(this.w)) {
+                if (StringUtils.isEmpty(this.w)) {
                     if (!this.z) {
                         return false;
                     }
@@ -285,8 +285,8 @@ public class g extends j {
                         return null;
                     }
                     String c = aVar.c();
-                    String trim = TextUtils.isEmpty(c) ? null : c.trim();
-                    if (!TextUtils.isEmpty(trim)) {
+                    String trim = StringUtils.isEmpty(c) ? null : c.trim();
+                    if (!StringUtils.isEmpty(trim)) {
                         f23963a.set(trim.hashCode());
                         Log.d("LastRCI", "load:".concat(String.valueOf(trim)));
                     }
@@ -305,7 +305,7 @@ public class g extends j {
 
         public static synchronized void a(Context context, String str) {
             synchronized (e.class) {
-                if (!TextUtils.isEmpty(str) && str.hashCode() != f23963a.get()) {
+                if (!StringUtils.isEmpty(str) && str.hashCode() != f23963a.get()) {
                     Log.d("LastRCI", "save:".concat(String.valueOf(str)));
                     com.uc.webview.base.io.a c = c(context);
                     if (c.c == null) {
@@ -377,7 +377,7 @@ public class g extends j {
             return null;
         }
         String a2 = a.a();
-        if (TextUtils.isEmpty(a2) || !a2.equals(dVar.s)) {
+        if (StringUtils.isEmpty(a2) || !a2.equals(dVar.s)) {
             Log.d("LastRCI", "reuse failed: different arch");
             return null;
         }
@@ -385,7 +385,7 @@ public class g extends j {
         boolean z4 = false;
         if (dVar.r) {
             String a3 = a.a(g.class.getClassLoader());
-            if (TextUtils.isEmpty(a3) || !a3.equals(dVar.x)) {
+            if (StringUtils.isEmpty(a3) || !a3.equals(dVar.x)) {
                 Log.d("LastRCI", "reuse failed: incompatible digest");
                 return null;
             }
@@ -397,7 +397,7 @@ public class g extends j {
             z = false;
         }
         String a4 = a.a(dVar.r, dVar.v);
-        if (TextUtils.isEmpty(a4) || !a4.equals(dVar.y)) {
+        if (StringUtils.isEmpty(a4) || !a4.equals(dVar.y)) {
             Log.d("LastRCI", "reuse failed: libs changed");
             try {
                 PathUtils.b(new File(dVar.v)).b();
@@ -475,7 +475,7 @@ public class g extends j {
             try {
                 if (context == null || jVar == null) {
                     Log.d("LastRCI", "save failed: invalid params");
-                } else if (jVar.s() != null || !TextUtils.isEmpty(jVar.t()) || jVar.a()) {
+                } else if (jVar.s() != null || !StringUtils.isEmpty(jVar.t()) || jVar.a()) {
                     e.a(context, new c(jVar).toString());
                 } else {
                     Log.d("LastRCI", "save failed: not support for specificed dir");

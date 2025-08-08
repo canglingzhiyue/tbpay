@@ -1,7 +1,7 @@
 package com.taobao.detail.rate.vivid.ability;
 
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.detail.rate.RateFeedsFragment;
@@ -34,7 +34,7 @@ public class k extends dlg {
         int d = dlhVar.d("index");
         String c2 = dlhVar.c("timeStamp");
         JSONObject a3 = dlhVar.a("exParams");
-        if (!TextUtils.isEmpty(c) && !TextUtils.isEmpty(c2) && (dleVar.a() instanceof FragmentActivity) && (a2 = kqa.INSTANCE.a((FragmentActivity) dleVar.a(), dleVar.e())) != null) {
+        if (!StringUtils.isEmpty(c) && !StringUtils.isEmpty(c2) && (dleVar.a() instanceof FragmentActivity) && (a2 = kqa.INSTANCE.a((FragmentActivity) dleVar.a(), dleVar.e())) != null) {
             ivx ivxVar = new ivx("endImageLoaded", Long.parseLong(c2), a3, c, d);
             if (a2.getLoadingViewTrack() != null) {
                 a2.getLoadingViewTrack().a(ivxVar);

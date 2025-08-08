@@ -3,7 +3,7 @@ package com.loc;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.sdk.sys.BizContext;
 import com.loc.m;
 import java.util.ArrayList;
@@ -320,7 +320,7 @@ public final class fq {
         m.b(context);
         try {
             String a2 = fx.a(context, "pref", "13S_mlpl", (String) null);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 E = a(context, new JSONArray(x.c(a2)));
             }
         } catch (Throwable th11) {
@@ -510,7 +510,7 @@ public final class fq {
             m.a(optString, false);
             L = m.a(optJSONObject.optString("nr"), false);
             String optString2 = optJSONObject.optString("tm");
-            if (TextUtils.isEmpty(optString2) || (parseInt = Integer.parseInt(optString2)) <= 0 || parseInt >= 20) {
+            if (StringUtils.isEmpty(optString2) || (parseInt = Integer.parseInt(optString2)) <= 0 || parseInt >= 20) {
                 return;
             }
             K = parseInt;

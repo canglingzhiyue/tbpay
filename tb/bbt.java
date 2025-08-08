@@ -4,7 +4,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.TextView;
@@ -646,7 +646,7 @@ public final class bbt {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("39066b39", new Object[]{map, str})).intValue();
         }
-        if (map == null || TextUtils.isEmpty(str) || (obj = map.get(str)) == null) {
+        if (map == null || StringUtils.isEmpty(str) || (obj = map.get(str)) == null) {
             return 0;
         }
         if (obj instanceof String) {

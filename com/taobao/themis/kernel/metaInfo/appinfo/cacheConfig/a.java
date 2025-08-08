@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.metaInfo.appinfo.cacheConfig;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -95,13 +95,13 @@ public class a {
             return (AppInfoCacheConfig.CacheTime) ipChange.ipc$dispatch("4a760254", new Object[]{this, str, str2, str3});
         }
         AppInfoCacheConfig.CacheTime cacheTime = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             cacheTime = c("tms_app_" + str);
         }
-        if (cacheTime == null && !TextUtils.isEmpty(str3)) {
+        if (cacheTime == null && !StringUtils.isEmpty(str3)) {
             cacheTime = c("tms_enginetype_" + str3);
         }
-        if (cacheTime == null && !TextUtils.isEmpty(str2)) {
+        if (cacheTime == null && !StringUtils.isEmpty(str2)) {
             cacheTime = c("tms_biztype_" + str2);
         }
         return cacheTime == null ? c : cacheTime;
@@ -115,7 +115,7 @@ public class a {
         }
         try {
             String configByGroupAndName = ((IConfigAdapter) qpt.a(IConfigAdapter.class)).getConfigByGroupAndName(b.GROUP_TMS_APP_INFO_CONFIG, str, e(str));
-            if (!TextUtils.isEmpty(configByGroupAndName) && (parseObject = JSON.parseObject(configByGroupAndName)) != null && !parseObject.isEmpty()) {
+            if (!StringUtils.isEmpty(configByGroupAndName) && (parseObject = JSON.parseObject(configByGroupAndName)) != null && !parseObject.isEmpty()) {
                 long longValue = parseObject.getLongValue("maxSyncTime");
                 long longValue2 = parseObject.getLongValue("maxAsyncTime");
                 if (longValue > 0 && longValue2 > 0) {
@@ -142,7 +142,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (AppInfoCacheConfig.ExpireConfig) ipChange.ipc$dispatch("ec92f75e", new Object[]{this, str});
         }
-        if (b != null && !TextUtils.isEmpty(str)) {
+        if (b != null && !StringUtils.isEmpty(str)) {
             return b.get(str);
         }
         return null;
@@ -196,7 +196,7 @@ public class a {
         }
         try {
             String b2 = j.b(((IEnvironmentService) qpt.a(IEnvironmentService.class)).getApplicationContext(), "tms_appInfo_expire_config", (String) null);
-            if (!TextUtils.isEmpty(b2)) {
+            if (!StringUtils.isEmpty(b2)) {
                 return (Map) JSONObject.parseObject(b2, new TypeReference<Map<String, AppInfoCacheConfig.ExpireConfig>>() { // from class: com.taobao.themis.kernel.metaInfo.appinfo.cacheConfig.a.1
                 }, new Feature[0]);
             }

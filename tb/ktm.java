@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -28,7 +28,7 @@ public class ktm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("881e4e63", new Object[]{str, new Boolean(z), map});
-        } else if (!map.isEmpty() && !TextUtils.isEmpty(str)) {
+        } else if (!map.isEmpty() && !StringUtils.isEmpty(str)) {
             if (!f30304a) {
                 synchronized (ktm.class) {
                     if (!f30304a) {
@@ -59,9 +59,9 @@ public class ktm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "unknown";
             }
             AppMonitor.Alarm.commitFail("Highway", "highwayError", str, str2);

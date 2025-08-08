@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -69,7 +69,7 @@ public class hmh extends hme<b> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this});
         }
-        if (this.d && !TextUtils.isEmpty(((b) this.c).b())) {
+        if (this.d && !StringUtils.isEmpty(((b) this.c).b())) {
             return ((b) this.c).b();
         }
         return ((b) this.c).a();

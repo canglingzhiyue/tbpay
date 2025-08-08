@@ -13,7 +13,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.Process;
 import android.taobao.windvane.config.j;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.webkit.CookieManager;
 import com.alipay.zoloz.toyger.blob.BlobManager;
@@ -38,7 +38,7 @@ public class a {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.toLowerCase().startsWith("image");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.toLowerCase().startsWith("image");
     }
 
     public static boolean a(Context context, String str) {
@@ -46,7 +46,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             try {
                 PackageManager packageManager = context.getPackageManager();
                 if (packageManager != null) {
@@ -65,7 +65,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1da50fb7", new Object[]{context, str});
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             try {
                 PackageManager packageManager = context.getPackageManager();
                 return (packageManager == null || (packageInfo = packageManager.getPackageInfo(str, 0)) == null) ? "" : packageInfo.versionName;
@@ -146,7 +146,7 @@ public class a {
         }
         if (b == null) {
             String c = c(context);
-            if (context != null && TextUtils.equals(c, context.getPackageName())) {
+            if (context != null && StringUtils.equals(c, context.getPackageName())) {
                 z = true;
             }
             b = Boolean.valueOf(z);
@@ -241,7 +241,7 @@ public class a {
             str3 = c(str);
         } catch (Exception unused) {
         }
-        return !TextUtils.isEmpty(str3) ? str3 : "windvane";
+        return !StringUtils.isEmpty(str3) ? str3 : "windvane";
     }
 
     public static alt a(String str, String str2, Context context) {

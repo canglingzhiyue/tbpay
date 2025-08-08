@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilityidl.ability.FavoriteResultData;
@@ -173,10 +173,10 @@ public class krd {
                     if (iVar2 == null) {
                         return;
                     }
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "unknown";
                     }
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "unknown";
                     }
                     iVar2.a(str2, str3);
@@ -230,10 +230,10 @@ public class krd {
                         ipChange2.ipc$dispatch("684c28e9", new Object[]{this, str2, str3, new Boolean(z), map});
                     } else if (odg.g.this == null) {
                     } else {
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = "unknown";
                         }
-                        if (TextUtils.isEmpty(str3) || !z) {
+                        if (StringUtils.isEmpty(str3) || !z) {
                             str3 = krd.a();
                         }
                         odg.g.this.a(str2, str3);
@@ -288,10 +288,10 @@ public class krd {
                         ipChange2.ipc$dispatch("684c28e9", new Object[]{this, str2, str3, new Boolean(z), map});
                     } else if (odg.g.this == null) {
                     } else {
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = "unknown";
                         }
-                        if (TextUtils.isEmpty(str3) || !z) {
+                        if (StringUtils.isEmpty(str3) || !z) {
                             str3 = krd.a();
                         }
                         odg.g.this.a(str2, str3);
@@ -429,10 +429,10 @@ public class krd {
                         gVar2.a(str2, krd.a());
                         return;
                     }
-                    if (!TextUtils.isEmpty(errorResult.a())) {
+                    if (!StringUtils.isEmpty(errorResult.a())) {
                         str2 = errorResult.a();
                     }
-                    odg.g.this.a(str2, TextUtils.isEmpty(errorResult.b()) ? krd.a() : errorResult.b());
+                    odg.g.this.a(str2, StringUtils.isEmpty(errorResult.b()) ? krd.a() : errorResult.b());
                 }
             });
         }
@@ -476,10 +476,10 @@ public class krd {
                         gVar2.a(str2, krd.a());
                         return;
                     }
-                    if (!TextUtils.isEmpty(errorResult.a())) {
+                    if (!StringUtils.isEmpty(errorResult.a())) {
                         str2 = errorResult.a();
                     }
-                    odg.g.this.a(str2, TextUtils.isEmpty(errorResult.b()) ? krd.a() : errorResult.b());
+                    odg.g.this.a(str2, StringUtils.isEmpty(errorResult.b()) ? krd.a() : errorResult.b());
                 }
             });
         }
@@ -523,10 +523,10 @@ public class krd {
                         iVar2.a(str2, krd.a());
                         return;
                     }
-                    if (!TextUtils.isEmpty(errorResult.a())) {
+                    if (!StringUtils.isEmpty(errorResult.a())) {
                         str2 = errorResult.a();
                     }
-                    odg.i.this.a(str2, TextUtils.isEmpty(errorResult.b()) ? krd.a() : errorResult.b());
+                    odg.i.this.a(str2, StringUtils.isEmpty(errorResult.b()) ? krd.a() : errorResult.b());
                 }
             });
         }
@@ -699,7 +699,7 @@ public class krd {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return (Boolean) ipChange.ipc$dispatch("410b752f", new Object[]{str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 return null;
             } else {
                 return f30251a.get(str);
@@ -712,7 +712,7 @@ public class krd {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("8e5f16fa", new Object[]{str, bool});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 f30251a.put(str, bool);
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class jyl implements jyo {
         for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && value != null && (a2 = jyqVar.a(key)) != null) {
+            if (!StringUtils.isEmpty(key) && value != null && (a2 = jyqVar.a(key)) != null) {
                 a(value, a2);
             }
         }

@@ -1,7 +1,7 @@
 package com.taobao.themis.kernel.metaInfo.appinfo.core.requestConfig;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,10 +59,10 @@ public class b extends AbsAppInfoRequestConfig {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject.put("params", (Object) jSONObject2);
         jSONObject2.put("url", (Object) this.f.url);
-        if (!TextUtils.isEmpty(this.f.url)) {
+        if (!StringUtils.isEmpty(this.f.url)) {
             Uri b = o.b(this.f.url);
             for (String str : g) {
-                if (!TextUtils.isEmpty(b.getQueryParameter(str))) {
+                if (!StringUtils.isEmpty(b.getQueryParameter(str))) {
                     jSONObject2.put(str, (Object) b.getQueryParameter(str));
                 }
             }
@@ -75,10 +75,10 @@ public class b extends AbsAppInfoRequestConfig {
             String string = instanceStartParams.getExtraData().getString("sellerId");
             String string2 = this.e.getExtraData().getString("sceneId");
             JSONObject jSONObject3 = new JSONObject();
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jSONObject3.put("sellerId", (Object) string);
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 jSONObject3.put("sceneId", (Object) string2);
             }
             jSONObject.put(gkl.DP_BIZ_CONTEXT, (Object) jSONObject3);

@@ -3,7 +3,7 @@ package com.taobao.share.multiapp;
 import android.app.Activity;
 import android.app.Application;
 import android.content.BroadcastReceiver;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.share.ShareEnv;
 import com.ut.share.business.ShareBusiness;
@@ -83,7 +83,7 @@ public class ShareBizAdapter implements IShareBiz {
             return;
         }
         String str = "";
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = SHARE_BIZ_ADAPTER_CLASS;
         }
         try {

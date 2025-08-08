@@ -60,7 +60,7 @@ public class c {
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 /* JADX WARN: Code restructure failed: missing block: B:22:0x0092, code lost:
-                    if (android.text.TextUtils.equals(r5.get("enableFeatureCenter"), com.tmall.android.dai.DAIKVStoreage.getDiskValue("walle_orange_config_cache_name", r13 + "__enableFeatureCenter")) == false) goto L22;
+                    if (android.text.StringUtils.equals(r5.get("enableFeatureCenter"), com.tmall.android.dai.DAIKVStoreage.getDiskValue("walle_orange_config_cache_name", r13 + "__enableFeatureCenter")) == false) goto L22;
                  */
                 @Override // com.taobao.orange.g
                 /*
@@ -88,7 +88,7 @@ public class c {
                         return
                     L1d:
                         java.lang.String r0 = "walle_feature"
-                        boolean r1 = android.text.TextUtils.equals(r13, r0)
+                        boolean r1 = android.text.StringUtils.equals(r13, r0)
                         java.lang.String r4 = ""
                         r5 = 0
                         if (r1 == 0) goto L32
@@ -103,13 +103,13 @@ public class c {
                         r5 = r11
                     L3d:
                         java.lang.String r7 = "ODCP_walle_config"
-                        boolean r7 = android.text.TextUtils.equals(r13, r7)
+                        boolean r7 = android.text.StringUtils.equals(r13, r7)
                         if (r7 == 0) goto L4c
                         com.tmall.android.dai.internal.config.a r7 = com.tmall.android.dai.internal.config.a.a()
                         r7.b()
                     L4c:
                         java.lang.String r7 = "ODCP_python_base_lib"
-                        boolean r7 = android.text.TextUtils.equals(r7, r13)
+                        boolean r7 = android.text.StringUtils.equals(r7, r13)
                         if (r7 == 0) goto L5b
                         tb.gsc r7 = tb.gsc.a()
                         r7.b()
@@ -117,9 +117,9 @@ public class c {
                         java.lang.String r7 = "__"
                         java.lang.String r8 = "walle_orange_config_cache_name"
                         if (r14 != 0) goto L9d
-                        boolean r14 = android.text.TextUtils.equals(r0, r13)
+                        boolean r14 = android.text.StringUtils.equals(r0, r13)
                         java.lang.String r0 = "jarvis_config_v2"
-                        boolean r0 = android.text.TextUtils.equals(r0, r13)
+                        boolean r0 = android.text.StringUtils.equals(r0, r13)
                         if (r0 == 0) goto L95
                         if (r5 == 0) goto L95
                         java.lang.String r0 = "enableFeatureCenter"
@@ -132,7 +132,7 @@ public class c {
                         r10.append(r0)
                         java.lang.String r0 = r10.toString()
                         java.lang.String r0 = com.tmall.android.dai.DAIKVStoreage.getDiskValue(r8, r0)
-                        boolean r0 = android.text.TextUtils.equals(r9, r0)
+                        boolean r0 = android.text.StringUtils.equals(r9, r0)
                         if (r0 != 0) goto L95
                         goto L96
                     L95:

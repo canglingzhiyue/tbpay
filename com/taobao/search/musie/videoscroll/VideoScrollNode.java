@@ -1,7 +1,7 @@
 package com.taobao.search.musie.videoscroll;
 
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -174,7 +174,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
                 super.registerNativeStateListener(str, this);
                 this.registeredEvents.add(str);
             }
-            if (!TextUtils.equals(str, "videostatus")) {
+            if (!StringUtils.equals(str, "videostatus")) {
                 return;
             }
             this.observingChildren.add(uINode);
@@ -195,7 +195,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
                 return;
             }
             map.remove(uINode);
-            if (!TextUtils.equals(str, "videostatus")) {
+            if (!StringUtils.equals(str, "videostatus")) {
                 return;
             }
             this.observingChildren.remove(uINode);
@@ -211,7 +211,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8dc7cdc8", new Object[]{this, str, str2});
-        } else if (TextUtils.equals(str, "videocallback")) {
+        } else if (StringUtils.equals(str, "videocallback")) {
             onVideoStateChange(str2);
         } else {
             super.fireNativeEvent(str, str2);
@@ -225,7 +225,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
             ipChange.ipc$dispatch("bd87f0f6", new Object[]{this, str});
             return;
         }
-        if (TextUtils.equals(str, "finish")) {
+        if (StringUtils.equals(str, "finish")) {
             UINode uINode = this.lastPlayingVideo;
             this.lastPlayingVideo = null;
             int y = getNodeInfo().y();
@@ -255,7 +255,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3c0b91ed", new Object[]{this, str, uINode});
         }
-        if (TextUtils.equals(str, "videostatus")) {
+        if (StringUtils.equals(str, "videostatus")) {
             if (this.videoStatus == null) {
                 this.videoStatus = super.getNativeState(str);
                 onVideoStatusChanged(this.videoStatus);
@@ -263,7 +263,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
             if (this.lastPlayingVideo != null || !isTotalVisible(this.parentNode.getLastScrollX(), getNodeInfo().y(), uINode.getGlobalVisibleRect())) {
                 return uINode == this.lastPlayingVideo ? this.videoStatus : "stop";
             }
-            if (TextUtils.equals(this.videoStatus, "play")) {
+            if (StringUtils.equals(this.videoStatus, "play")) {
                 this.lastPlayingVideo = uINode;
             }
             return this.videoStatus;
@@ -276,7 +276,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d63f0e06", new Object[]{this, str, str2});
-        } else if (TextUtils.equals(str, "videostatus")) {
+        } else if (StringUtils.equals(str, "videostatus")) {
             this.videoStatus = str2;
             onVideoStatusChanged(str2);
         } else {
@@ -299,7 +299,7 @@ public class VideoScrollNode extends ScrollerRootNode implements p.b, d {
         if (g.a()) {
             g.a(str == null ? "" : str);
         }
-        if (TextUtils.equals(str, "play")) {
+        if (StringUtils.equals(str, "play")) {
             onHorizontalScroll(this.parentNode.getLastScrollX());
             return;
         }

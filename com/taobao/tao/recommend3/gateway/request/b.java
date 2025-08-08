@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend3.gateway.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -101,7 +101,7 @@ public class b {
         }
         final String string = jSONObject.getString("containerId");
         final String string2 = jSONObject.getString(i.CDN_REQUEST_TYPE);
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             com.taobao.tao.linklog.a.b("netRequest", "param_error", "网关2.0网络请求，参数异常", "RecmdRequestController", "containerId or requestType is empty");
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.put("errorMsg", "containerId or requestType is empty");
@@ -252,7 +252,7 @@ public class b {
                             j = !j || (z && i);
                         }
                         JSONObject jSONObject2 = jSONObject.getJSONObject("bizParam");
-                        z = jSONObject2 != null && !TextUtils.isEmpty(jSONObject2.getString("itemId"));
+                        z = jSONObject2 != null && !StringUtils.isEmpty(jSONObject2.getString("itemId"));
                         com.taobao.tao.linklog.a.a("netRequest", "RecmdRequestController", "WindVane param check : " + z);
                         if (!j) {
                         }
@@ -361,7 +361,7 @@ public class b {
             }
         }
         String a2 = orc.a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             awesomeGetRequestParams.globalLbs = a2;
         }
         awesomeGetRequestParams.edition = a();
@@ -377,7 +377,7 @@ public class b {
         }
         String string = jSONObject.getString("containerId");
         String b3 = b(jSONObject, string);
-        if (!TextUtils.isEmpty(b3)) {
+        if (!StringUtils.isEmpty(b3)) {
             awesomeGetRequestParams.commonBizParams = b3;
         }
         awesomeGetRequestParams.containerParams.put(string, a(string, jSONObject));
@@ -414,7 +414,7 @@ public class b {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0066, code lost:
-        if (android.text.TextUtils.equals(r0.requestType, "newInteractive") != false) goto L16;
+        if (android.text.StringUtils.equals(r0.requestType, "newInteractive") != false) goto L16;
      */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0075  */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0077  */
@@ -472,7 +472,7 @@ public class b {
             boolean z = true;
             for (int size = g.size() - 1; size >= 0 && size >= g.size() - c.intValue(); size--) {
                 String b = b(g.get(size));
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     if (!z) {
                         sb.append(",");
                     }
@@ -486,7 +486,7 @@ public class b {
             }
             Integer integer = jSONObject.getInteger("index");
             if (integer != null) {
-                while (TextUtils.isEmpty(str4)) {
+                while (StringUtils.isEmpty(str4)) {
                     int i2 = i + 1;
                     if (i >= 4 || integer.intValue() <= 0 || integer.intValue() >= g.size() - 1) {
                         break;

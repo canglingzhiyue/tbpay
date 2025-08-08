@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.xiaomi.mipush.sdk.Constants;
 import tb.riy;
@@ -23,7 +23,7 @@ public class Grammar {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ee9ccbb7", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         String[] strArr = RECORD_START;

@@ -1,6 +1,6 @@
 package com.uc.webview.base.timing;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.timing.StartupTimingKeys;
 
 /* loaded from: classes9.dex */
@@ -32,7 +32,7 @@ public final class TraceEvent implements AutoCloseable {
     }
 
     private void doTrace(boolean z) {
-        if (TRACE && !TextUtils.isEmpty(this.mName)) {
+        if (TRACE && !StringUtils.isEmpty(this.mName)) {
             if (z) {
                 a.a(this.mName);
             } else {

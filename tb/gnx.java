@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jqi;
 
@@ -93,7 +93,7 @@ public class gnx extends jqi.a {
         }
         if (c2 == 0) {
             String str3 = (String) sxy.a("icart_client", "performance_dxbutter", str, "");
-            return (TextUtils.isEmpty(str3) || str3.equals("{}")) ? mrd.b(str) : str3;
+            return (StringUtils.isEmpty(str3) || str3.equals("{}")) ? mrd.b(str) : str3;
         }
         return goc.a(str, str2);
     }

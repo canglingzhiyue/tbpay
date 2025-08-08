@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transportext.biz.appevent;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.ipcapi.pushproc.OutEventNotifyService;
 import com.alipay.mobile.common.ipc.api.IPCApiFactory;
 import com.alipay.mobile.common.netsdkextdependapi.security.SecurityUtil;
@@ -71,7 +71,7 @@ public class AmnetUserInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(f5658a)) {
+        } else if (StringUtils.isEmpty(f5658a)) {
             a();
         } else {
             try {
@@ -114,7 +114,7 @@ public class AmnetUserInfo {
             String str = f5658a;
             String b2 = b();
             LogCatUtil.debug("ext_AmnetUserInfo", "resendSessionid,userid: " + str + ",sessionid: " + b2);
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(b2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(b2)) {
                 ((OutEventNotifyService) IPCApiFactory.getSingletonIPCContextManager().getIpcCallManager().getIpcProxy(OutEventNotifyService.class)).notifyResendSessionid(str, b2);
             }
         } catch (Throwable th) {
@@ -136,12 +136,12 @@ public class AmnetUserInfo {
         }
         String gwfurl = ReadSettingServerUrl.getInstance().getGWFURL(ExtTransportEnv.getAppContext());
         String a2 = a(GwCookieCacheHelper.getCookie(gwfurl));
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             LogCatUtil.debug("ext_AmnetUserInfo", "sessionidFromCache:" + a2);
             return a2;
         }
         String a3 = a(CookieAccessHelper.getCookie(gwfurl, ExtTransportEnv.getAppContext()));
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             LogCatUtil.debug("ext_AmnetUserInfo", "sessionidFromCookieStore:" + a3);
             return a3;
         }
@@ -159,11 +159,11 @@ public class AmnetUserInfo {
         } catch (Throwable th) {
             LogCatUtil.error("ext_AmnetUserInfo", "getAlipayJsessionidFromCookiestr ex:" + th.toString());
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         for (String str2 : str.split("; ")) {
-            if (!TextUtils.isEmpty(str2) && str2.contains("ALIPAYJSESSIONID")) {
+            if (!StringUtils.isEmpty(str2) && str2.contains("ALIPAYJSESSIONID")) {
                 return str2.substring(str2.indexOf("=") + 1);
             }
         }

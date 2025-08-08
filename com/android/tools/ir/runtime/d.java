@@ -10,7 +10,7 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.alibaba.android.split.p;
@@ -427,7 +427,7 @@ public class d {
             }
             strArr = strArr2;
         }
-        if (strArr != null && !TextUtils.isEmpty(str)) {
+        if (strArr != null && !StringUtils.isEmpty(str)) {
             for (String str2 : strArr) {
                 if (str.equals(str2)) {
                     break;

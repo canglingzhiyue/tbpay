@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -33,7 +33,7 @@ public final class l {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(final Context context, final String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         f = str;
@@ -101,7 +101,7 @@ public final class l {
         if (b(f7823a)) {
             b = true;
             return true;
-        } else if (!TextUtils.isEmpty(f7823a)) {
+        } else if (!StringUtils.isEmpty(f7823a)) {
             b = false;
             f7823a = null;
             return false;
@@ -109,7 +109,7 @@ public final class l {
             b = true;
             return true;
         } else {
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 b = false;
                 d = null;
                 return false;
@@ -133,7 +133,7 @@ public final class l {
 
     private static boolean b(String str) {
         char[] charArray;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str.toCharArray();
             for (char c2 : str.toCharArray()) {
                 if (('A' > c2 || c2 > 'z') && (('0' > c2 || c2 > ':') && c2 != '.')) {
@@ -195,7 +195,7 @@ public final class l {
             if (b(str)) {
                 str = packageInfo.packageName;
             }
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 str = c(context);
             }
             stringBuffer.append(str);

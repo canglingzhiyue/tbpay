@@ -2,7 +2,7 @@ package com.taobao.avplayer.playercontrol;
 
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -162,7 +162,7 @@ public class DWPlayerController implements Handler.Callback, SeekBar.OnSeekBarCh
         this.mDWContext.initVideoOrange();
         initView();
         this.mHandler = new Handler(this);
-        this.mUseHiv = !TextUtils.isEmpty(dWContext.mCid);
+        this.mUseHiv = !StringUtils.isEmpty(dWContext.mCid);
         if (this.mUseHiv) {
             this.mHivTopBarController = new com.taobao.avplayer.playercontrol.hiv.e(this.mDWContext);
             this.mHivVideoExtDataBarController = new com.taobao.avplayer.playercontrol.hiv.f(this.mDWContext);
@@ -693,7 +693,7 @@ public class DWPlayerController implements Handler.Callback, SeekBar.OnSeekBarCh
             ipChange.ipc$dispatch("c2b2d56d", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
+        if (!StringUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
             this.duration = this.mDWContext.getVideo().n();
             this.mControllerHolder.c.setText(kco.a(this.duration));
         }
@@ -713,7 +713,7 @@ public class DWPlayerController implements Handler.Callback, SeekBar.OnSeekBarCh
             ipChange.ipc$dispatch("931007b7", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
+        if (!StringUtils.isEmpty(this.mDWContext.getVideoToken()) && this.duration == 0) {
             this.duration = this.mDWContext.getVideo().n();
             this.mControllerHolder.c.setText(kco.a(this.duration));
         }

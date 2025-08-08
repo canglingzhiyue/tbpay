@@ -1,6 +1,6 @@
 package anetwork.channel.unified;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.RequestCb;
@@ -307,9 +307,9 @@ public class FragmentationTask implements IUnifiedTask {
         Request.Builder newBuilder = request.newBuilder();
         if (this.rc.config.isRequestCookieEnabled()) {
             String cookie = CookieManager.getCookie(this.rc.config.getUrlString());
-            if (!TextUtils.isEmpty(cookie)) {
+            if (!StringUtils.isEmpty(cookie)) {
                 String str2 = request.getHeaders().get("Cookie");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     cookie = StringUtils.concatString(str2, "; ", cookie);
                 }
                 if (AwcnConfig.isHostInCookiePrintLogWhiteList(request.getHost())) {

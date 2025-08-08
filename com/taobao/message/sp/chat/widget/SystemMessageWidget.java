@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.Log;
@@ -65,11 +65,11 @@ public class SystemMessageWidget extends WidgetInstance<JSONObject> {
             ipChange.ipc$dispatch("b185178e", new Object[]{this, jSONObject, eventDispatcher});
         } else if (jSONObject != null) {
             String string = jSONObject.getString("content");
-            String trim = TextUtils.isEmpty(string) ? "" : string.trim();
+            String trim = StringUtils.isEmpty(string) ? "" : string.trim();
             try {
                 SpannableString spannableString = new SpannableString(trim);
                 List<ActivePart> list = null;
-                if (!TextUtils.isEmpty(jSONObject.getString("activeContent"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("activeContent"))) {
                     try {
                         list = JSON.parseArray(jSONObject.getString("activeContent"), ActivePart.class);
                     } catch (Exception unused) {
@@ -136,7 +136,7 @@ public class SystemMessageWidget extends WidgetInstance<JSONObject> {
                     this.tvContent.setText(spannableString);
                     this.tvContent.setMovementMethod(LinkMovementMethod.getInstance());
                 }
-                if (!TextUtils.isEmpty(jSONObject.getString("templateContent"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("templateContent"))) {
                     try {
                         map = (Map) JSON.parseObject(jSONObject.getString("templateContent"), new TypeReference<Map<String, String>>() { // from class: com.taobao.message.sp.chat.widget.SystemMessageWidget.2
                         }, new Feature[0]);

@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.aob;
@@ -46,12 +46,12 @@ public class i implements f.a, e {
             this.b = new h();
             this.b.a("adashx.m.taobao.com");
             String a2 = apg.a(aob.a().k(), TAG_TNET_HOST_PORT);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.c = true;
             }
             a(a2);
             String a3 = aqb.a(aob.a().k(), TAG_TNET_HOST_PORT);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 this.c = true;
             }
             a(a3);
@@ -88,11 +88,11 @@ public class i implements f.a, e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (indexOf = (trim = str.trim()).indexOf(":")) == -1) {
+        } else if (StringUtils.isEmpty(str) || (indexOf = (trim = str.trim()).indexOf(":")) == -1) {
         } else {
             String substring = trim.substring(0, indexOf);
             int parseInt = Integer.parseInt(trim.substring(indexOf + 1, trim.length()));
-            if (TextUtils.isEmpty(substring) || parseInt <= 0) {
+            if (StringUtils.isEmpty(substring) || parseInt <= 0) {
                 return;
             }
             this.b.a(substring);
@@ -137,7 +137,7 @@ public class i implements f.a, e {
         } else if (this.f) {
         } else {
             String a2 = apg.a(aob.a().k(), "utanalytics_tnet_downgrade");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 try {
                     int intValue = Integer.valueOf(a2).intValue();
                     if (intValue > 0 && intValue <= 10) {

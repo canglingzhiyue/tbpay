@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.common.ItemIdentifier;
@@ -78,7 +78,7 @@ public class b {
             return;
         }
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (entry != null && TextUtils.equals(entry.getKey(), "customRulesSortDTOList")) {
+            if (entry != null && StringUtils.equals(entry.getKey(), "customRulesSortDTOList")) {
                 this.e.put(entry.getKey(), entry.getValue());
             }
         }

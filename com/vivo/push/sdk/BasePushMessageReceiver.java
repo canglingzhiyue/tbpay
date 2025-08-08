@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.m;
 import com.vivo.push.model.UnvarnishedMessage;
 import com.vivo.push.util.ContextDelegate;
@@ -23,7 +23,7 @@ public abstract class BasePushMessageReceiver extends BroadcastReceiver implemen
             str = "isAllowNet sContext is null";
         } else {
             String packageName = context.getPackageName();
-            if (!TextUtils.isEmpty(packageName)) {
+            if (!StringUtils.isEmpty(packageName)) {
                 Intent intent = new Intent("com.vivo.pushservice.action.PUSH_SERVICE");
                 intent.setPackage(packageName);
                 List<ResolveInfo> queryIntentServices = context.getPackageManager().queryIntentServices(intent, 576);

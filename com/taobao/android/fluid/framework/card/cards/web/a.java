@@ -10,7 +10,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.util.n;
 import android.taobao.windvane.webview.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -689,7 +689,7 @@ public final class a extends psw {
         this.u.setStrategyConfig(this.x);
         this.u.setImageUrl(this.I.a("cover"));
         String a2 = this.I.a("loadingUrl");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         this.v.setVisibility(0);
@@ -714,7 +714,7 @@ public final class a extends psw {
             spz.c("[webcomponent]", "接收Web发来的消息onHandlerH5Message name: " + spyVar.c + " args: " + spyVar.i);
             if (this.I == null) {
                 spz.c("[webcomponent]", "onWebMessage detail为null");
-            } else if (!TextUtils.equals(spyVar.d, this.I.a())) {
+            } else if (!StringUtils.equals(spyVar.d, this.I.a())) {
                 spz.c("[webcomponent]", "onWebMessage msg id 和contentId 不相等，msg.id：" + spyVar.d + ",detail.contentId():" + this.I.a());
             } else {
                 String str = spyVar.c;
@@ -805,7 +805,7 @@ public final class a extends psw {
                         break;
                     case 3:
                         if (!ogv.a(spyVar.i)) {
-                            this.F = TextUtils.equals(oec.a(spyVar.i.get("back"), (String) null), "custom");
+                            this.F = StringUtils.equals(oec.a(spyVar.i.get("back"), (String) null), "custom");
                         }
                         e(2);
                         R();
@@ -849,10 +849,10 @@ public final class a extends psw {
             ipChange.ipc$dispatch("6076ef3", new Object[]{this});
             return;
         }
-        if (TextUtils.isEmpty(this.E)) {
+        if (StringUtils.isEmpty(this.E)) {
             this.E = m();
         }
-        if (TextUtils.isEmpty(this.E)) {
+        if (StringUtils.isEmpty(this.E)) {
             spz.c("[webcomponent]", "reload url为null return");
             return;
         }
@@ -895,8 +895,8 @@ public final class a extends psw {
         String a2 = eVar.a("url");
         String f = c.f();
         spz.c("[webcomponent]", "buildUrlAndInitWebTrackInfo，游戏卡片数据：\n,serverUrl:" + a2 + "\n orangeUrl:" + f);
-        String str3 = (TextUtils.isEmpty(f) || TextUtils.equals("null", f)) ? a2 : f;
-        if (TextUtils.isEmpty(str3)) {
+        String str3 = (StringUtils.isEmpty(f) || StringUtils.equals("null", f)) ? a2 : f;
+        if (StringUtils.isEmpty(str3)) {
             spz.c("[webcomponent]", "reload url为null return");
             return "";
         }
@@ -928,7 +928,7 @@ public final class a extends psw {
             sb.append("?x-tab2=");
             sb.append(encode);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             sb.append("&spm=");
             sb.append(str4);
         }

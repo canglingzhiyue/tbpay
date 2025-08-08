@@ -1,6 +1,6 @@
 package com.taobao.ju.track.server;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public class JTrackParams extends HashMap<String, String> {
             return (JTrackParams) ipChange.ipc$dispatch("ee66af00", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             return (JTrackParams) JSON.parseObject(str, JTrackParams.class);
@@ -200,7 +200,7 @@ public class JTrackParams extends HashMap<String, String> {
             return null;
         }
         String str2 = jTrackParams.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         return getParams(jTrackParams, str2.split(","));

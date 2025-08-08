@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -182,7 +182,7 @@ public class k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("22d8a334", new Object[]{this, trtcConfig, new Boolean(z)})).booleanValue();
-        } else if (trtcConfig == null || TextUtils.isEmpty(trtcConfig.getServerName())) {
+        } else if (trtcConfig == null || StringUtils.isEmpty(trtcConfig.getServerName())) {
             TrtcLog.a("TrtcServiceManager", "trtc config invalid");
             return false;
         } else {
@@ -286,7 +286,7 @@ public class k {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d84cee78", new Object[]{trtcEngineImpl, str})).booleanValue();
         }
-        if (trtcEngineImpl != null && !TextUtils.isEmpty(str) && trtcEngineImpl.i() != null) {
+        if (trtcEngineImpl != null && !StringUtils.isEmpty(str) && trtcEngineImpl.i() != null) {
             TrtcConfig trtcConfig = trtcEngineImpl.i().config;
             if (!b(str) && trtcConfig != null) {
                 if (trtcConfig.getEngineObserver() != null) {
@@ -313,7 +313,7 @@ public class k {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (aVar = this.f) == null || !aVar.f23144a.getServerName().equals(str)) {
+        if (StringUtils.isEmpty(str) || (aVar = this.f) == null || !aVar.f23144a.getServerName().equals(str)) {
             z = false;
         }
         TrtcLog.d("TrtcServiceManager", "isMainService, service name: " + str + " ret: " + z);
@@ -381,7 +381,7 @@ public class k {
             return false;
         }
         String string = parseObject.getString("notifyType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             TrtcLog.a("TrtcServiceManager", "no need cached message for:notify type is empty");
             return false;
         }
@@ -392,7 +392,7 @@ public class k {
             return false;
         }
         dVar.c = parseObject2.getString("channelId");
-        if (TextUtils.isEmpty(dVar.c)) {
+        if (StringUtils.isEmpty(dVar.c)) {
             TrtcLog.a("TrtcServiceManager", "no need cached message for:no channel id");
             return false;
         }
@@ -402,7 +402,7 @@ public class k {
             return false;
         }
         dVar.b = parseObject3.getString("userId");
-        if (TextUtils.isEmpty(dVar.b)) {
+        if (StringUtils.isEmpty(dVar.b)) {
             TrtcLog.a("TrtcServiceManager", "no need cached message for:no remote user id");
             return false;
         }
@@ -482,7 +482,7 @@ public class k {
         if (bArr != null && bArr.length > 0 && (map = (Map) JSON.parseObject(new String(bArr), new TypeReference<Map<String, String>>() { // from class: com.taobao.trtc.impl.k.2
         }, new Feature[0])) != null && !map.isEmpty() && map.get("api") != null) {
             String str2 = (String) map.get("api");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return false;
             }
             if (k != null && !j.isEmpty() && j.contains(str2)) {

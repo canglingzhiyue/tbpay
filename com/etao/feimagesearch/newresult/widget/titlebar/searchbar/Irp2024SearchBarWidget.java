@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -235,7 +235,7 @@ public final class Irp2024SearchBarWidget implements TextWatcher, View.OnClickLi
         }
         if (str != null) {
             String str2 = str;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.inputView.setHint(str2);
                 this.hintQuery = str;
                 updateSearchBtnState();
@@ -314,7 +314,7 @@ public final class Irp2024SearchBarWidget implements TextWatcher, View.OnClickLi
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bc7bd40d", new Object[]{this});
-        } else if (TextUtils.isEmpty(getValidQuery())) {
+        } else if (StringUtils.isEmpty(getValidQuery())) {
             this.searchBtn.setClickable(false);
             this.searchBtn.setTextColor(Color.parseColor(this.isDarkMode ? "#777777" : "#CACFD7"));
         } else {
@@ -462,7 +462,7 @@ public final class Irp2024SearchBarWidget implements TextWatcher, View.OnClickLi
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c6402d68", new Object[]{this});
-        } else if (TextUtils.isEmpty(getValidQuery())) {
+        } else if (StringUtils.isEmpty(getValidQuery())) {
         } else {
             com.etao.feimagesearch.newresult.widget.titlebar.searchbar.a aVar = this.searchStateListener;
             if (aVar != null) {

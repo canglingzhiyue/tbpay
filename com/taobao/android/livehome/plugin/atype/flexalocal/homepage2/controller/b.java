@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -367,7 +367,7 @@ public class b implements Handler.Callback {
                         }
                         mfg.a().a("com.taobao.taolive.mix.follow.action");
                         String str3 = null;
-                        if (b.a(b.this) != null && !TextUtils.isEmpty(b.a(b.this).g)) {
+                        if (b.a(b.this) != null && !StringUtils.isEmpty(b.a(b.this).g)) {
                             str3 = b.a(b.this).g + ".topbar.followicon";
                         }
                         g.a("FollowIcon", b.a(b.this, str3));
@@ -376,12 +376,12 @@ public class b implements Handler.Callback {
                 if (tabUp.tabMiddle != null) {
                     String string = tabUp.tabMiddle.getString("title");
                     String string2 = tabUp.tabMiddle.getString("iconUrl");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         string = "直播间";
                     }
                     dXTBLNativeTextView.setText(string);
                     dXTBLNativeTextView.setTextGradient(true);
-                    if (TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string2)) {
                         string2 = "https://gw.alicdn.com/imgextra/i1/O1CN01LdOw4E25qJtLv2hbK_!!6000000007577-2-tps-84-84.png";
                     }
                     tUrlImageView.setImageUrl(string2);
@@ -396,7 +396,7 @@ public class b implements Handler.Callback {
                 tUrlImageView.setVisibility(8);
                 textView2.setVisibility(8);
                 dXTBLNativeTextView.setVisibility(8);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     Paint paint = new Paint();
                     paint.setTextSize(c.a(this.g, 18.0f));
                     paint.setTypeface(Typeface.DEFAULT_BOLD);
@@ -492,7 +492,7 @@ public class b implements Handler.Callback {
             } else {
                 TUrlImageView tUrlImageView4 = tUrlImageView;
                 if (!l.a((CharSequence) string2)) {
-                    if (equals && TextUtils.isDigitsOnly(string2)) {
+                    if (equals && StringUtils.isDigitsOnly(string2)) {
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
                         if (layoutParams != null) {
                             layoutParams.rightMargin += c.a(this.g, 11.0f);
@@ -565,7 +565,7 @@ public class b implements Handler.Callback {
                 if (!"followLiveNum".equals(tabUp.sjsdParam.getString("recReason"))) {
                     String a2 = j.a(d.TAO_LIVE_FOLLOW_ICON_SJSD_PARAM);
                     JSONArray jSONArray = null;
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         jSONArray = pqj.c(a2);
                     }
                     if (jSONArray == null) {
@@ -645,7 +645,7 @@ public class b implements Handler.Callback {
             mfg.a().a("com.taobao.taolive.mix.present.avatarpage.action");
             String str = null;
             sqt sqtVar = this.f14191a;
-            if (sqtVar != null && !TextUtils.isEmpty(sqtVar.g)) {
+            if (sqtVar != null && !StringUtils.isEmpty(sqtVar.g)) {
                 str = this.f14191a.g + ".topbar.liveavatar";
             }
             g.a("Liveavatar", c(str));
@@ -782,7 +782,7 @@ public class b implements Handler.Callback {
         }
         String str = null;
         sqt sqtVar = this.f14191a;
-        if (sqtVar != null && !TextUtils.isEmpty(sqtVar.g)) {
+        if (sqtVar != null && !StringUtils.isEmpty(sqtVar.g)) {
             str = this.f14191a.g + ".topbar.liveavatar";
         }
         g.b("Page_TaobaoLive_Show-Liveavatar", c(str));
@@ -796,7 +796,7 @@ public class b implements Handler.Callback {
         }
         String str = null;
         sqt sqtVar = this.f14191a;
-        if (sqtVar != null && !TextUtils.isEmpty(sqtVar.g)) {
+        if (sqtVar != null && !StringUtils.isEmpty(sqtVar.g)) {
             str = this.f14191a.g + ".topbar.followicon";
         }
         g.b("Page_TaobaoLive_Show-FollowIcon", c(str));

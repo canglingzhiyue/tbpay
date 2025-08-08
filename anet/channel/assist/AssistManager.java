@@ -2,7 +2,7 @@ package anet.channel.assist;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.assist.oppo.OppoOperator;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public class AssistManager implements IAssistManager {
         IOperator iOperator;
         String brand = getBrand();
         String str = SUPPORT_OPERATORS.get(brand);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -142,7 +142,7 @@ public class AssistManager implements IAssistManager {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("935139c8", new Object[]{this});
         }
-        String str = TextUtils.isEmpty(Build.BRAND) ? Build.MANUFACTURER : Build.BRAND;
+        String str = StringUtils.isEmpty(Build.BRAND) ? Build.MANUFACTURER : Build.BRAND;
         return str == null ? "" : str.toLowerCase();
     }
 }

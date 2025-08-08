@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.asp.e;
@@ -252,7 +252,7 @@ public class PrefsIPCChannel implements IPrefsChannel {
             }
             String action = intent.getAction();
             String a2 = f.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             if (Constants.ACTION_DISCONNECT.equals(action)) {

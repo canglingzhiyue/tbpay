@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.viewholder;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -42,7 +42,7 @@ public class k implements f {
             return -1;
         }
         String string = iDMComponent.getContainerInfo().getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return -1;
         }
         if (this.c.containsKey(string)) {

@@ -1,0 +1,941 @@
+{
+  "plugin": {
+    "name": "淘宝行业化详情头图",
+    "bizCode": "TaobaoIndustryDetail",
+    "branches": [
+      {
+        "code": "aura.branch.render.layoutDataProcessor.v2",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "useV2LayoutDataProcessor",
+              "default": "true"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.afterParser",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "aura_detail_ac_trigger_afterParser",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.lowdevicePreload",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "aura_detail_lowdevicePreload_enable",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.idle",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enableIdleTriggerAsyncModule",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.deviceEvaluation.low",
+        "conditions": [
+          {
+            "code": "aura.condition.deviceEvaluation",
+            "input": {
+              "diff": "equal",
+              "value": "low"
+            }
+          }
+        ]
+      },
+      {
+        "code": "alidetail.branch.mainHeader.triverWidget.enable",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "operator": "NOT",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "disable_create_triver_widget",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "tbdetail.branch.mainHeader.observeLayoutChange.enable",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "android_detail",
+              "key": "enable_observe_main_header_layout_change",
+              "default": "true"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.event.redirect",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enableEventRedirect",
+              "default": "true"
+            }
+          }
+        ]
+      },
+      {
+        "code": "alidetail.branch.mainHeader.barrage.enable",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enable_barrage_widget",
+              "default": "true"
+            }
+          }
+        ]
+      }
+    ],
+    "flows": [
+      {
+        "code": "tbdetail.workflow.mainpic",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "aura.impl.parse.stateTree.async.component",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension"
+                },
+                {
+                  "code": "tbdetail.impl.render.component.creator.weex",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.mainpic",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.mainpic.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.mainpic.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.barrage",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainHeader.barrage.enable"
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.video",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.video.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.video.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.locatorbar",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.locatorbar.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.locatorbar.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.progressBar",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.progressBar.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.progressBar.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "industryDetail.impl.render.component.creator.triverwidget",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainHeader.triverWidget.enable",
+                    "default": "true"
+                  },
+                  "extensions": {
+                    "industryDetail.extension.render.component.creator.trwidget.lifecycle": [
+                      {
+                        "code": "industryDetail.impl.component.trwidget.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.topmask",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.component.creator.weex2",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.component.creator.weex2.lifecycle": [
+                      {
+                        "code": "aura.impl.performance.monitor.weex2.render",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "industryDetail.impl.component.weex2.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "aura.impl.component.lifeCycle.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.exposureItem.strategy": [
+                      {
+                        "code": "alidetail.impl.exposureItem.strategy",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.maingallery.frame.offsetAndResize",
+                  "type": "extension"
+                },
+                {
+                  "code": "industryDetail.impl.lifecycle.component.trwidget",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainHeader.triverWidget.enable",
+                    "default": "true"
+                  }
+                },
+                {
+                  "code": "industryDetail.impl.lifecycle.component.industry",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.userMotion",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.component.lifeCycle.picGalleryExpand",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.scroll": [
+                {
+                  "code": "alidetail.impl.locator.connector.trigger",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.scroll.main.changesize.imp",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.scroll.userMotion",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render": [
+                {
+                  "code": "alidetail.impl.locator.connector",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.locator.trigger": [
+                      {
+                        "code": "alidetail.impl.locator.connector.trigger",
+                        "type": "extension"
+                      }
+                    ],
+                    "alidetail.extension.locator.receiver": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.locatorbar",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.connector.receiver.progressBar",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.connector.receiver.video",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.render.scroll.main.changesize.imp",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.receiver.lightOff",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.maingallery.usertrack.frame.move",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.receiver.videoAutoPlay",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.locator.connector.trigger",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.locatorbar",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.mainGallery.loadMore.handler",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.mainGallery.recyclerView.provider",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.topmask.data.adapter",
+                  "type": "extension"
+                },
+                {
+                  "code": "tbdetail.impl.performance.mainHeader",
+                  "type": "extension",
+                  "branch": {
+                    "code": "tbdetail.branch.mainHeader.observeLayoutChange.enable",
+                    "default": "true"
+                  }
+                },
+                {
+                  "code": "alidetail.impl.lifecycle.render.end",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.canScroll": [
+                {
+                  "code": "picGallery.impl.render.canScroll",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "alidetail.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.lifeCycle.asyncModuleEntry.build",
+              "type": "extension"
+            },
+            {
+              "code": "aliDetail.impl.aspect.lifecycle.windvaneApiPluginRegister",
+              "type": "extension",
+              "extensions": {
+                "aliDetail.extension.aspect.lifecycle.windvaneApiPluginRegister.config": [
+                  {
+                    "code": "alidetail.impl.aspect.lifecycle.windvaneApiPluginRegister.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "alidetail.impl.lifecycle.component.page",
+              "type": "extension",
+              "extensions": {
+                "alidetail.extension.lifecycle.component.page.ext": [
+                  {
+                    "code": "industryDetail.impl.lifecycle.component.page.ext.trwidget",
+                    "type": "extension",
+                    "branch": {
+                      "code": "alidetail.branch.mainHeader.triverWidget.enable",
+                      "default": "true"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.userMotion",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.userMotion.config": [
+                  {
+                    "code": "alidetail.impl.userMotion.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "alidetail.impl.mainpic.degrade",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension"
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.request",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.nextrpc",
+            "type": "service"
+          }
+        ]
+      },
+      {
+        "code": "aura.workflow.adjustRules",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.rule",
+            "type": "service"
+          },
+          {
+            "code": "aura.service.parse",
+            "type": "service"
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension"
+                },
+                {
+                  "code": "tbdetail.impl.render.component.creator.weex",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.mainpic",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.mainpic.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.mainpic.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.barrage",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainHeader.barrage.enable"
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.video",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.video.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.video.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.locatorbar",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.locatorbar.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.locatorbar.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.progressBar",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.render.component.creator.progressBar.inside": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.progressBar.inside.ext",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "industryDetail.impl.render.component.creator.triverwidget",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainHeader.triverWidget.enable",
+                    "default": "true"
+                  },
+                  "extensions": {
+                    "industryDetail.extension.render.component.creator.trwidget.lifecycle": [
+                      {
+                        "code": "industryDetail.impl.component.trwidget.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.topmask",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.component.creator.weex2",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.component.creator.weex2.lifecycle": [
+                      {
+                        "code": "aura.impl.performance.monitor.weex2.render",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "industryDetail.impl.component.weex2.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "alidetail.impl.maingallery.frame.offsetAndResize",
+                  "type": "extension"
+                },
+                {
+                  "code": "industryDetail.impl.lifecycle.component.trwidget",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainHeader.triverWidget.enable",
+                    "default": "true"
+                  }
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.exposureItem.strategy": [
+                      {
+                        "code": "alidetail.impl.exposureItem.strategy",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "industryDetail.impl.lifecycle.component.industry",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.userMotion",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.component.lifeCycle.picGalleryExpand",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.scroll": [
+                {
+                  "code": "alidetail.impl.locator.connector.trigger",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.scroll.main.changesize.imp",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.scroll.userMotion",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render": [
+                {
+                  "code": "alidetail.impl.locator.connector",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.locator.trigger": [
+                      {
+                        "code": "alidetail.impl.locator.connector.trigger",
+                        "type": "extension"
+                      }
+                    ],
+                    "alidetail.extension.locator.receiver": [
+                      {
+                        "code": "alidetail.impl.render.component.creator.locatorbar",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.connector.receiver.progressBar",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.connector.receiver.video",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.render.scroll.main.changesize.imp",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.receiver.lightOff",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.maingallery.usertrack.frame.move",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.locator.receiver.videoAutoPlay",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.locator.connector.trigger",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.locatorbar",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.mainGallery.loadMore.handler",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.topmask.data.adapter",
+                  "type": "extension"
+                },
+                {
+                  "code": "tbdetail.impl.performance.mainHeader",
+                  "type": "extension",
+                  "branch": {
+                    "code": "tbdetail.branch.mainHeader.observeLayoutChange.enable",
+                    "default": "true"
+                  }
+                },
+                {
+                  "code": "alidetail.impl.lifecycle.render.end",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.canScroll": [
+                {
+                  "code": "picGallery.impl.render.canScroll",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.mainpic.degrade",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "alidetail.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "alidetail.impl.lifecycle.component.page",
+              "type": "extension",
+              "extensions": {
+                "alidetail.extension.lifecycle.component.page.ext": [
+                  {
+                    "code": "industryDetail.impl.lifecycle.component.page.ext.trwidget",
+                    "type": "extension",
+                    "branch": {
+                      "code": "alidetail.branch.mainHeader.triverWidget.enable",
+                      "default": "true"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension"
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.event",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.event",
+            "type": "service",
+            "extensions": {
+              "aura.extension.event": [
+                {
+                  "code": "picGallery.impl.event.switchMainImage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.userTrack",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.event.userTrack.args": [
+                      {
+                        "code": "alidetail.impl.event.userTrack.args",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "alidetail.impl.motion.userTrack.args",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "picGallery.impl.event.openSKU",
+                  "type": "extension"
+                },
+                {
+                  "code": "picGallery.impl.event.updateSKU",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.openUrl",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.event.openUrl.native.params": [
+                      {
+                        "code": "alidetail.impl.event.openurl.native.params",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.event.asyncMR",
+                  "type": "extension"
+                },
+                {
+                  "code": "picGallery.impl.event.openLightOff",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.exposureItem.strategy": [
+                      {
+                        "code": "alidetail.impl.exposureItem.strategy",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "picGallery.impl.event.openPop",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.weex2",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.picGalleryExpand",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.event.picGalleryExpand.onExpand": [
+                      {
+                        "code": "industryDetail.impl.event.picGalleryExpand.onExpand",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.event.picGalleryExitExpand",
+                  "type": "extension",
+                  "extensions": {
+                    "alidetail.extension.event.picGalleryExitExpand.onExitExpand": [
+                      {
+                        "code": "industryDetail.impl.event.picGalleryExitExpand.onExitExpand",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.event.openRate",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.event.redirect": [
+                {
+                  "code": "aura.impl.event.redirect.mega",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.component.userMotion",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.userMotion.config": [
+                  {
+                    "code": "alidetail.impl.userMotion.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aliDetail.impl.aspect.mega.args",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

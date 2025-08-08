@@ -2,7 +2,7 @@ package com.etao.feimagesearch.capture.dynamic.bean;
 
 import android.graphics.RectF;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.pipline.node.b;
@@ -98,7 +98,7 @@ public class DynCaptureImgGotConfig {
             return null;
         }
         String a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "routerUrl", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         DynCaptureImgGotConfig dynCaptureImgGotConfig = new DynCaptureImgGotConfig();
@@ -128,10 +128,10 @@ public class DynCaptureImgGotConfig {
         if (ipChange instanceof IpChange) {
             return (crj) ipChange.ipc$dispatch("26ad9e84", new Object[]{crjVar, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return crjVar;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             boolean z3 = false;
             boolean z4 = false;
             for (String str2 : str.split(",")) {
@@ -185,6 +185,6 @@ public class DynCaptureImgGotConfig {
 
     public static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (!TextUtils.isEmpty(str) && "image".equals(str)) ? "image" : "all";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (!StringUtils.isEmpty(str) && "image".equals(str)) ? "image" : "all";
     }
 }

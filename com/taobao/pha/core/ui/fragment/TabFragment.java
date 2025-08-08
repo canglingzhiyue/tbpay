@@ -3,7 +3,7 @@ package com.taobao.pha.core.ui.fragment;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -333,7 +333,7 @@ public class TabFragment extends PHABaseFragment {
         }
         this.mPageFragmentContainer = new FrameLayout(context);
         this.mPageFragmentContainer.setId(R.id.pha_page_container);
-        if (!TextUtils.isEmpty(u.backgroundColor)) {
+        if (!StringUtils.isEmpty(u.backgroundColor)) {
             frameLayout.setBackgroundColor(ngn.f(u.backgroundColor));
         }
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-1, -1);

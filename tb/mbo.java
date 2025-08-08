@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
@@ -103,11 +103,11 @@ public class mbo {
         String str5 = "";
         String scheme = data != null ? data.getScheme() : str5;
         String host = data != null ? data.getHost() : str5;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str2 = "linkx";
             uri = data;
             int a2 = a(floutNewConfigData, str, intent, data, scheme, host);
-            if (floutNewConfigData == null || floutNewConfigData.floutControl == null || TextUtils.isEmpty(str)) {
+            if (floutNewConfigData == null || floutNewConfigData.floutControl == null || StringUtils.isEmpty(str)) {
                 i = a2;
                 str4 = str;
                 str3 = null;
@@ -124,7 +124,7 @@ public class mbo {
             a a3 = a(floutNewConfigData, intent, uri, scheme, host);
             int i2 = a3.f31024a;
             String str6 = a3.b;
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 c.a(str2, "AppController === rewrite packageName = " + str6);
             }
             str3 = a3.c;
@@ -252,9 +252,9 @@ public class mbo {
                         }
                     }
                 });
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     String string = Globals.getApplication().getResources().getString(R.string.afc_flout_toast);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         ((TextView) inflate.findViewById(R.id.confirm_title)).setText(string + str2);
                     }
                 }
@@ -327,7 +327,7 @@ public class mbo {
                 } else if (floutNewConfigItemData.needNewTask) {
                     intent.setFlags(268435456);
                 }
-                if (uri != null && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+                if (uri != null && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                     Map<String, List<String>> map2 = floutNewConfigItemData.urlBlack;
                     if (map2 != null && uri != null && (list = map2.get(str2)) != null && !list.isEmpty()) {
                         Iterator<String> it = list.iterator();
@@ -359,7 +359,7 @@ public class mbo {
                 if (map4 != null && !map4.isEmpty() && (floutNewBrowserHostBean = map4.get(str3)) != null) {
                     Map<String, Integer> map5 = floutNewBrowserHostBean.pathStrategy;
                     String path = uri != null ? uri.getPath() : "";
-                    if (map5 != null && !TextUtils.isEmpty(path)) {
+                    if (map5 != null && !StringUtils.isEmpty(path)) {
                         for (Map.Entry<String, Integer> entry : map5.entrySet()) {
                             if (path.toLowerCase().startsWith(entry.getKey())) {
                                 Integer value = entry.getValue();
@@ -395,7 +395,7 @@ public class mbo {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("b959097d", new Object[]{this, floutNewConfigData, intent, uri, str, str2});
         }
-        if (floutNewConfigData == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (floutNewConfigData == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return new a(1);
         }
         if ("https".equals(str) || "http".equals(str)) {
@@ -404,7 +404,7 @@ public class mbo {
                 if (map2 != null && !map2.isEmpty() && (floutNewBrowserHostBean = map2.get(str2)) != null) {
                     Map<String, Integer> map3 = floutNewBrowserHostBean.pathStrategy;
                     String path = uri != null ? uri.getPath() : "";
-                    if (map3 != null && !TextUtils.isEmpty(path)) {
+                    if (map3 != null && !StringUtils.isEmpty(path)) {
                         for (Map.Entry<String, Integer> entry : map3.entrySet()) {
                             if (path.toLowerCase().startsWith(entry.getKey())) {
                                 Integer value = entry.getValue();
@@ -501,7 +501,7 @@ public class mbo {
             if (flowOutConfigData.floutWhiteList != null) {
                 for (FloutWhiteListBean floutWhiteListBean : flowOutConfigData.floutWhiteList) {
                     String str2 = floutWhiteListBean.packageName;
-                    if (!TextUtils.isEmpty(str2) && TextUtils.equals(str, str2)) {
+                    if (!StringUtils.isEmpty(str2) && StringUtils.equals(str, str2)) {
                         c.a("linkx", "AppController === jumpProcess === 在包名白名单内，放过不拦截 === packageName：" + str);
                         e.a(d.ARG1_OUTGOING_AUTHORIZED, intent, str, 8);
                         return true;
@@ -510,12 +510,12 @@ public class mbo {
             }
         } else {
             String queryParameter = data.getQueryParameter(com.taobao.linkmanager.flowout.c.FL_OUT_ID);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 queryParameter = data.getQueryParameter(com.taobao.linkmanager.flowout.c.VISA);
             }
             String a2 = e.a(flowOutConfigData, data.getScheme());
             if (flowOutConfigData.floutIdEnable) {
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     c.a("linkx", "AppController === jumpProcess === flowOutId为空，进行拦截");
                     e.a(intent, a2, 3);
                     return false;
@@ -551,20 +551,20 @@ public class mbo {
             return true;
         } else {
             String stringExtra = intent.getStringExtra("source");
-            if (!TextUtils.isEmpty(stringExtra) && stringExtra.equals("sso_auth")) {
+            if (!StringUtils.isEmpty(stringExtra) && stringExtra.equals("sso_auth")) {
                 c.a("linkx", "AppController === jumpProcess === 授权登录，放过不拦截 === source=" + stringExtra);
                 e.a(d.ARG1_OUTGOING_AUTHORIZED, intent, str, 3);
                 return true;
             }
             String stringExtra2 = intent.getStringExtra("jump_source");
-            if (!TextUtils.isEmpty(stringExtra2) && TextUtils.equals("assistant", stringExtra2)) {
+            if (!StringUtils.isEmpty(stringExtra2) && StringUtils.equals("assistant", stringExtra2)) {
                 c.a("linkx", "AppController === jumpProcess === 小助手，放过不拦截 === source=" + stringExtra2);
                 e.a(d.ARG1_OUTGOING_AUTHORIZED, intent, str, 7);
                 return true;
             }
             if (com.taobao.linkmanager.flowout.b.c()) {
                 String stringExtra3 = intent.getStringExtra(com.taobao.linkmanager.flowout.c.FLOW_OUT_SOURCE);
-                if (!TextUtils.isEmpty(stringExtra3) && TextUtils.equals("share", stringExtra3)) {
+                if (!StringUtils.isEmpty(stringExtra3) && StringUtils.equals("share", stringExtra3)) {
                     c.a("linkx", "AppController === jumpProcess === 分享，放过不拦截 === source=" + stringExtra3);
                     e.a(d.ARG1_OUTGOING_AUTHORIZED, intent, str, 9);
                     intent.removeExtra(com.taobao.linkmanager.flowout.c.FLOW_OUT_SOURCE);
@@ -574,10 +574,10 @@ public class mbo {
             Uri data = intent.getData();
             if (data != null) {
                 String queryParameter = data.getQueryParameter(com.taobao.linkmanager.flowout.c.FL_OUT_ID);
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     queryParameter = data.getQueryParameter(com.taobao.linkmanager.flowout.c.VISA);
                 }
-                if (queryParameter != null && TextUtils.equals(com.taobao.linkmanager.flowout.c.LOGIN_VISA, queryParameter)) {
+                if (queryParameter != null && StringUtils.equals(com.taobao.linkmanager.flowout.c.LOGIN_VISA, queryParameter)) {
                     return true;
                 }
                 if (e.b(queryParameter, flowOutConfigData)) {

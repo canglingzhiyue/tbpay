@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.AppInfoScene;
 import com.alibaba.ariver.resource.api.models.AppModel;
 import com.alibaba.fastjson.JSONObject;
@@ -152,7 +152,7 @@ public class tlm extends TMSBaseLaunchStep {
         if (ipChange instanceof IpChange) {
             return (e) ipChange.ipc$dispatch("3a703c80", new Object[]{this, str, str2});
         }
-        if (TextUtils.equals(str, ErrorConstant.ERRCODE_MTOP_APICALL_ASYNC_TIMEOUT)) {
+        if (StringUtils.equals(str, ErrorConstant.ERRCODE_MTOP_APICALL_ASYNC_TIMEOUT)) {
             return new e("TMS_ERR_AI_TIMEOUT", "appInfo请求超时", "");
         }
         return new e(e.TMS_ERR_APPINFO_PREFIX + str, "appInfo mtop请求错误", "", str2, "居然偷偷跑掉了，咱以后不要理它了啦");
@@ -166,7 +166,7 @@ public class tlm extends TMSBaseLaunchStep {
             return;
         }
         this.f22538a.k().a("appInfoStepStart");
-        if (TextUtils.isEmpty(this.f22538a.h())) {
+        if (StringUtils.isEmpty(this.f22538a.h())) {
             TMSLogger.d("TMSAppInfoStep", "Don't need instance appInfo");
             h();
             return;
@@ -226,7 +226,7 @@ public class tlm extends TMSBaseLaunchStep {
         }
         AbsAppInfoRequestConfig.BasicRequestParam basicRequestParam = new AbsAppInfoRequestConfig.BasicRequestParam();
         basicRequestParam.appId = this.f22538a.h();
-        if (!TextUtils.isEmpty(this.f22538a.q().getNBSVersion())) {
+        if (!StringUtils.isEmpty(this.f22538a.q().getNBSVersion())) {
             basicRequestParam.version = this.f22538a.q().getNBSVersion();
         } else {
             basicRequestParam.version = "*";
@@ -282,7 +282,7 @@ public class tlm extends TMSBaseLaunchStep {
             return;
         }
         String a2 = aVar.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             TMSLogger.d("TMSAppInfoStep", "Don't need framework");
             l();
             return;

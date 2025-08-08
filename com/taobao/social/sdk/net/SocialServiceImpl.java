@@ -1,7 +1,7 @@
 package com.taobao.social.sdk.net;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.social.sdk.model.CountAndStatusRequest;
 import com.taobao.social.sdk.model.LikeAddRequest;
@@ -83,15 +83,15 @@ public class SocialServiceImpl implements ISocialService, IRemoteBaseListener {
         if (ocjVar.targetOwnerId > 0) {
             likeAddRequest.setTargetOwnerId(ocjVar.targetOwnerId);
         }
-        if (!TextUtils.isEmpty(ocjVar.origin)) {
+        if (!StringUtils.isEmpty(ocjVar.origin)) {
             likeAddRequest.setOrigin(ocjVar.origin);
-            if (!TextUtils.isEmpty(ocjVar.targetCover)) {
+            if (!StringUtils.isEmpty(ocjVar.targetCover)) {
                 likeAddRequest.setTargetCover(ocjVar.targetCover);
             }
-            if (!TextUtils.isEmpty(ocjVar.targetUrl)) {
+            if (!StringUtils.isEmpty(ocjVar.targetUrl)) {
                 likeAddRequest.setTargetUrl(ocjVar.targetUrl);
             }
-            if (!TextUtils.isEmpty(ocjVar.targetTitle)) {
+            if (!StringUtils.isEmpty(ocjVar.targetTitle)) {
                 likeAddRequest.setTargetTitle(ocjVar.targetTitle);
             }
             RemoteBusiness registeListener = createRemoteBusiness(likeAddRequest, iSocialBusinessListener, null).registeListener((IRemoteListener) this);
@@ -115,18 +115,18 @@ public class SocialServiceImpl implements ISocialService, IRemoteBaseListener {
         LikeAddRequest likeAddRequest = new LikeAddRequest();
         likeAddRequest.setNamespace(ockVar.namespace);
         likeAddRequest.setTargetId(ockVar.targetId);
-        if (!TextUtils.isEmpty(ockVar.targetOwnerId)) {
+        if (!StringUtils.isEmpty(ockVar.targetOwnerId)) {
             likeAddRequest.setTargetOwnerId(ockVar.targetOwnerId);
         }
-        if (!TextUtils.isEmpty(ockVar.origin)) {
+        if (!StringUtils.isEmpty(ockVar.origin)) {
             likeAddRequest.setOrigin(ockVar.origin);
-            if (!TextUtils.isEmpty(ockVar.targetCover)) {
+            if (!StringUtils.isEmpty(ockVar.targetCover)) {
                 likeAddRequest.setTargetCover(ockVar.targetCover);
             }
-            if (!TextUtils.isEmpty(ockVar.targetUrl)) {
+            if (!StringUtils.isEmpty(ockVar.targetUrl)) {
                 likeAddRequest.setTargetUrl(ockVar.targetUrl);
             }
-            if (!TextUtils.isEmpty(ockVar.targetTitle)) {
+            if (!StringUtils.isEmpty(ockVar.targetTitle)) {
                 likeAddRequest.setTargetTitle(ockVar.targetTitle);
             }
             RemoteBusiness registeListener = createRemoteBusiness(likeAddRequest, iSocialBusinessListener, null).registeListener((IRemoteListener) this);
@@ -296,16 +296,16 @@ public class SocialServiceImpl implements ISocialService, IRemoteBaseListener {
         if (oclVar.targetParentId != 0) {
             reportRequest.setTargetParentId(oclVar.targetParentId);
         }
-        if (!TextUtils.isEmpty(oclVar.content)) {
+        if (!StringUtils.isEmpty(oclVar.content)) {
             reportRequest.setContent(oclVar.content);
         }
-        if (!TextUtils.isEmpty(oclVar.videoUrls)) {
+        if (!StringUtils.isEmpty(oclVar.videoUrls)) {
             reportRequest.setPicUrls(oclVar.videoUrls);
         }
-        if (!TextUtils.isEmpty(oclVar.videoUrls)) {
+        if (!StringUtils.isEmpty(oclVar.videoUrls)) {
             reportRequest.setVideoUrls(oclVar.videoUrls);
         }
-        if (!TextUtils.isEmpty(oclVar.expandAttribute)) {
+        if (!StringUtils.isEmpty(oclVar.expandAttribute)) {
             reportRequest.setExpandAttribute(oclVar.expandAttribute);
         }
         RemoteBusiness registeListener = createRemoteBusiness(reportRequest, iSocialBusinessListener, null).registeListener((IRemoteListener) this);
@@ -358,7 +358,7 @@ public class SocialServiceImpl implements ISocialService, IRemoteBaseListener {
         } else {
             if (mtopResponse != null) {
                 String optString = mtopResponse.getDataJsonObject().optString("result");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     j.a(currentActivity.get(), optString);
                 } else {
                     j.a(currentActivity.get(), "举报成功");

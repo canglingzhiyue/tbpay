@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.engine.model.Block;
 import com.alibaba.android.ultron.engine.model.TemplateComponent;
 import com.alibaba.android.ultron.engine.protocol.ComponentView;
@@ -269,7 +269,7 @@ public class bjs {
         if (componentView == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(componentView.containerType) && componentView.containerType.startsWith("dinamic")) {
+        if (!StringUtils.isEmpty(componentView.containerType) && componentView.containerType.startsWith("dinamic")) {
             dXTemplateItem = new DXTemplateItem();
             dXTemplateItem.f11925a = componentView.name;
             try {
@@ -376,7 +376,7 @@ public class bjs {
             return false;
         }
         String string = h.d.getString("filter");
-        if (TextUtils.isEmpty(string) || !h.a(this.f25944a, string, jSONObject)) {
+        if (StringUtils.isEmpty(string) || !h.a(this.f25944a, string, jSONObject)) {
             return false;
         }
         String str = this.g;

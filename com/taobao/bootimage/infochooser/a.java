@@ -1,6 +1,6 @@
 package com.taobao.bootimage.infochooser;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.ResultCode;
 import com.taobao.android.live.plugin.atype.flexalocal.input.InputFrame3;
@@ -111,7 +111,7 @@ public class a implements b {
                             BootImageBrandHubInfo next = it.next();
                             if (next.getCreativeJson() != null) {
                                 String str2 = next.getCreativeJson().feedid;
-                                if (!TextUtils.isEmpty(str2) && (bootImageInfo = a.a(a.this, str2)) != null) {
+                                if (!StringUtils.isEmpty(str2) && (bootImageInfo = a.a(a.this, str2)) != null) {
                                     a.a(a.this, next);
                                     break;
                                 }
@@ -151,13 +151,13 @@ public class a implements b {
         if (ipChange instanceof IpChange) {
             return (BootImageInfo) ipChange.ipc$dispatch("720da3d8", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         BootImageData f = BootImageDataMgr.a().f();
         if (f != null && f.result != null && f.result.size() > 0) {
             for (BootImageInfo bootImageInfo : f.result) {
-                if (bootImageInfo.getFromType() == BootImageInfo.FromType.BRAND && TextUtils.equals(str, bootImageInfo.contentId) && kek.a(bootImageInfo, this.f16686a, this.b)) {
+                if (bootImageInfo.getFromType() == BootImageInfo.FromType.BRAND && StringUtils.equals(str, bootImageInfo.contentId) && kek.a(bootImageInfo, this.f16686a, this.b)) {
                     return bootImageInfo;
                 }
             }
@@ -239,7 +239,7 @@ public class a implements b {
             return;
         }
         BootImageBrandHubInfo bootImageBrandHubInfo = this.c;
-        if (bootImageBrandHubInfo != null && bootImageBrandHubInfo.getCreativeJson() != null && !TextUtils.isEmpty(this.c.getCreativeJson().ifs) && !TextUtils.isEmpty(this.c.bidid)) {
+        if (bootImageBrandHubInfo != null && bootImageBrandHubInfo.getCreativeJson() != null && !StringUtils.isEmpty(this.c.getCreativeJson().ifs) && !StringUtils.isEmpty(this.c.bidid)) {
             kej.a(kem.TAG, "ifs埋点上报成功");
             MunionCommitterFactory.createIfsCommitter(f.b(), CpmIfsCommitter.class).commitEvent(this.c.bidid, this.c.getCreativeJson().ifs);
             return;
@@ -257,11 +257,11 @@ public class a implements b {
             return null;
         }
         Properties properties = new Properties();
-        if (!TextUtils.isEmpty(this.c.bidid)) {
+        if (!StringUtils.isEmpty(this.c.bidid)) {
             properties.setProperty("bidid", this.c.bidid);
         }
         BootImageBrandCreativeJson creativeJson = this.c.getCreativeJson();
-        if (creativeJson != null && !TextUtils.isEmpty(creativeJson.feedid)) {
+        if (creativeJson != null && !StringUtils.isEmpty(creativeJson.feedid)) {
             properties.setProperty("feedid", creativeJson.feedid);
         }
         return properties;

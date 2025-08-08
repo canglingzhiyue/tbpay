@@ -2,7 +2,7 @@ package com.alipay.android.msp.core.context;
 
 import android.content.Context;
 import android.os.Binder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.IRemoteServiceCallback;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
@@ -117,7 +117,7 @@ public class MspContextManager {
             return;
         }
         LogUtil.record(2, "MspContextManager:setPayProgressCallback", "order:" + str + " ，cb=" + payProgressCallback);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.d.put(str, payProgressCallback);
@@ -130,7 +130,7 @@ public class MspContextManager {
             return;
         }
         LogUtil.record(2, "MspContextManager:removePayProgressCallback", "order:".concat(String.valueOf(str)));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.d.remove(str);
@@ -296,7 +296,7 @@ public class MspContextManager {
             MspContext mspContext = this.b.get(Integer.valueOf(num.intValue()));
             if (mspContext instanceof MspTradeContext) {
                 MspTradeContext mspTradeContext = (MspTradeContext) mspContext;
-                if (TextUtils.equals(str, mspTradeContext.getOrderInfo())) {
+                if (StringUtils.equals(str, mspTradeContext.getOrderInfo())) {
                     return mspTradeContext;
                 }
             }
@@ -317,7 +317,7 @@ public class MspContextManager {
                 if (mspContext.getBizId() != mspTradeContext.getBizId() && mspTradeContext.isFingerPay()) {
                     String orderInfo = ((MspTradeContext) mspContext2).getOrderInfo();
                     CashierSceneDictionary.MspSchemePayContext mspSchemePayContext = CashierSceneDictionary.getInstance().getMspSchemePayContext(orderInfo);
-                    if (mspSchemePayContext != null && !TextUtils.equals(str, orderInfo)) {
+                    if (mspSchemePayContext != null && !StringUtils.equals(str, orderInfo)) {
                         mspSchemePayContext.isExitByPay = true;
                     }
                     mspTradeContext.exit(0);

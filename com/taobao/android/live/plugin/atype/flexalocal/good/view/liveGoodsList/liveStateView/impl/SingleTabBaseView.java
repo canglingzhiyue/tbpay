@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.
 
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -227,7 +227,7 @@ public abstract class SingleTabBaseView<T extends g> extends GoodsBaseView<T> im
                     ipChange2.ipc$dispatch("5c194ce8", new Object[]{this, new Boolean(z), new Boolean(z2)});
                     return;
                 }
-                if (SingleTabBaseView.access$100(SingleTabBaseView.this) != null && TextUtils.equals("0", SingleTabBaseView.this.categoryId)) {
+                if (SingleTabBaseView.access$100(SingleTabBaseView.this) != null && StringUtils.equals("0", SingleTabBaseView.this.categoryId)) {
                     int visibility = SingleTabBaseView.access$100(SingleTabBaseView.this).getVisibility();
                     FrameLayout access$100 = SingleTabBaseView.access$100(SingleTabBaseView.this);
                     if (!z) {

@@ -2,7 +2,7 @@ package com.alibaba.ariver.kernel.common.utils;
 
 import android.os.Bundle;
 import android.os.Parcel;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVConstants;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -31,7 +31,7 @@ public class JSONUtils {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("f057a803", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -95,7 +95,7 @@ public class JSONUtils {
         if (ipChange instanceof IpChange) {
             return (JSONArray) ipChange.ipc$dispatch("1c9581e7", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

@@ -1,7 +1,7 @@
 package com.taobao.android.livehome.plugin.atype.flexalocal.dinamicx.flexible;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -234,7 +234,7 @@ public class a extends DXWidgetNode {
                 FlexiblePageViewEntity flexiblePageViewEntity = (FlexiblePageViewEntity) a.c(a.this).get(i3 % a.c(a.this).size());
                 FlexiblePageViewEntity flexiblePageViewEntity2 = (FlexiblePageViewEntity) a.c(a.this).get(i4 % a.c(a.this).size());
                 a.a(a.this, flexiblePageViewEntity.showMaidian, true);
-                if (!TextUtils.isEmpty(flexiblePageViewEntity.channelBackgroudImg)) {
+                if (!StringUtils.isEmpty(flexiblePageViewEntity.channelBackgroudImg)) {
                     a.a(a.this, flexiblePageViewEntity.showMaidianBackground, true);
                 }
                 a.a(a.this, flexiblePageViewEntity2.showMaidian, false);
@@ -255,7 +255,7 @@ public class a extends DXWidgetNode {
             FlexiblePageViewEntity flexiblePageViewEntity = list.get(i3 % list.size());
             a(flexiblePageViewEntity.showMaidian, i3 == 0);
             if (i3 == 0) {
-                if (!TextUtils.isEmpty(flexiblePageViewEntity.channelBackgroudImg)) {
+                if (!StringUtils.isEmpty(flexiblePageViewEntity.channelBackgroudImg)) {
                     a(flexiblePageViewEntity.showMaidianBackground, i3 == 0);
                 }
                 if (i.aa()) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.log.UserTrackAdapter;
@@ -102,7 +102,7 @@ public class iyi extends f {
             if (map.containsKey(UTConstant.PageName.UT_KEY_PAGE_NAME)) {
                 str = map.remove(UTConstant.PageName.UT_KEY_PAGE_NAME);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 UserTrackAdapter.sendControlUT(str, "Btn_Login");
             }
             hashMap.putAll(map);

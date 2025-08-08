@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -61,7 +61,7 @@ public class OpenUrlImplementor implements ezm {
             return false;
         }
         final String string = b.getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         String a2 = com.taobao.android.detail.ttdetail.utils.l.a(string, new HashMap<String, Object>() { // from class: com.taobao.android.detail.ttdetail.handler.bizhandlers.OpenUrlImplementor.1
@@ -87,7 +87,7 @@ public class OpenUrlImplementor implements ezm {
             }
         }, !com.taobao.android.detail.ttdetail.utils.l.a(runtimeAbilityParamArr));
         String string2 = b.getString("pageType");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "NATIVE";
         }
         String upperCase = string2.toUpperCase();
@@ -119,7 +119,7 @@ public class OpenUrlImplementor implements ezm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (Uri.parse(str).getScheme() == null) {
                 str = com.taobao.search.common.util.k.HTTPS_PREFIX + parse.getSchemeSpecificPart();
@@ -151,7 +151,7 @@ public class OpenUrlImplementor implements ezm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1d3a4492", new Object[]{this, bundle, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (obj instanceof Boolean) {
                 bundle.putBoolean(str, ((Boolean) obj).booleanValue());

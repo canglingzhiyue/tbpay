@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.capture.scan.irp.b;
 import com.etao.feimagesearch.intelli.ClientModelType;
@@ -121,15 +121,15 @@ public final class IrpDatasource {
             q.a((Object) parseValue, "PhotoFrom.Values.parseVa…ntentParams[\"photofrom\"])");
             irpDatasource.a(parseValue);
             String str = intentParams.get("memoryCacheKey");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intentParams.get(com.etao.feimagesearch.model.d.KEY_PIC_URL);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 irpDatasource.a(Uri.parse(str));
             }
             String str2 = intentParams.get("imgRect");
             String str3 = str2;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 if (str2 == null) {
                     q.a();
                 }
@@ -248,7 +248,7 @@ public final class IrpDatasource {
             if (map != null) {
                 irpDatasource.d().putAll(map);
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 irpDatasource.d().put(PicParamUtils.Companion.a(), PicParamUtils.CameraMode.unknown.name());
             } else {
                 irpDatasource.d().put(PicParamUtils.Companion.a(), str4);
@@ -271,7 +271,7 @@ public final class IrpDatasource {
             }
             IrpDatasource irpDatasource = new IrpDatasource();
             irpDatasource.a(bitmap);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 irpDatasource.a(Uri.parse(str));
             }
             irpDatasource.a(photoFrom);
@@ -281,7 +281,7 @@ public final class IrpDatasource {
             if (map != null) {
                 irpDatasource.d().putAll(map);
             }
-            if (TextUtils.isEmpty(str5)) {
+            if (StringUtils.isEmpty(str5)) {
                 irpDatasource.d().put(PicParamUtils.Companion.a(), PicParamUtils.CameraMode.unknown.name());
             } else {
                 irpDatasource.d().put(PicParamUtils.Companion.a(), str5);
@@ -557,7 +557,7 @@ public final class IrpDatasource {
         if (cVar == null) {
             return;
         }
-        if (!TextUtils.isEmpty(cVar.h())) {
+        if (!StringUtils.isEmpty(cVar.h())) {
             this.e.put("pltSession", cVar.h());
         }
         if (this.c == null) {
@@ -591,7 +591,7 @@ public final class IrpDatasource {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{this, str});
         }
-        if (str == null || TextUtils.isEmpty(str)) {
+        if (str == null || StringUtils.isEmpty(str)) {
             return null;
         }
         return this.e.get(str);
@@ -633,7 +633,7 @@ public final class IrpDatasource {
             return (String) ipChange.ipc$dispatch("91ccd489", new Object[]{this});
         }
         String str = this.e.get("shopId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.e.get(WXConstantsOut.SHOPID);
         }
         return str == null ? "" : str;
@@ -643,7 +643,7 @@ public final class IrpDatasource {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.e.put("shopId", str);
         }
@@ -655,7 +655,7 @@ public final class IrpDatasource {
             return (String) ipChange.ipc$dispatch("18528f28", new Object[]{this});
         }
         String str = this.e.get("sellerId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.e.get("sellerid");
         }
         return str == null ? "" : str;
@@ -665,7 +665,7 @@ public final class IrpDatasource {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.e.put("sellerId", str);
         }
@@ -680,7 +680,7 @@ public final class IrpDatasource {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.e.put("pssource", str);
         }
@@ -701,7 +701,7 @@ public final class IrpDatasource {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6864280", new Object[]{this})).booleanValue();
         }
-        if (this.c == null || TextUtils.isEmpty(String.valueOf(this.c))) {
+        if (this.c == null || StringUtils.isEmpty(String.valueOf(this.c))) {
             return false;
         }
         try {
@@ -737,7 +737,7 @@ public final class IrpDatasource {
             q.a();
         }
         String scheme = uri.getScheme();
-        return (TextUtils.isEmpty(scheme) || (q.a((Object) "content", (Object) scheme) ^ true) || (a2 = com.etao.feimagesearch.util.i.a(com.b(), this.c)) == null) ? "" : a2;
+        return (StringUtils.isEmpty(scheme) || (q.a((Object) "content", (Object) scheme) ^ true) || (a2 = com.etao.feimagesearch.util.i.a(com.b(), this.c)) == null) ? "" : a2;
     }
 
     public final String w() {
@@ -762,7 +762,7 @@ public final class IrpDatasource {
             str = "";
         }
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         List b = n.b((CharSequence) str2, new String[]{","}, false, 0, 6, (Object) null);
@@ -830,7 +830,7 @@ public final class IrpDatasource {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.h.put(str, str2);
         }
@@ -840,7 +840,7 @@ public final class IrpDatasource {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1c6cb136", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.h.remove(str);
         }
@@ -855,7 +855,7 @@ public final class IrpDatasource {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.g.put(str, str2);
         }
@@ -958,7 +958,7 @@ public final class IrpDatasource {
                     break;
                 }
                 String str2 = bg[i2];
-                if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(this.e.get(str2))) {
+                if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(this.e.get(str2))) {
                     z = true;
                     break;
                 }
@@ -989,7 +989,7 @@ public final class IrpDatasource {
                     break;
                 }
                 String str3 = noPicValidKeys[i4];
-                if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(this.e.get(str3))) {
+                if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(this.e.get(str3))) {
                     i = 1;
                     break;
                 }

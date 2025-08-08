@@ -3,7 +3,7 @@ package tb;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.h;
 import java.io.Closeable;
@@ -155,7 +155,7 @@ public class dcj {
                         sb.append(" and ");
                         sb.append(dck.COL_SEQ);
                         sb.append(" < ?");
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             sb.append(" and ");
                             sb.append(dck.COL_STREAM);
                             sb.append(" = ?");

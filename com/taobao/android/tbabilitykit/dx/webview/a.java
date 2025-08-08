@@ -1,6 +1,6 @@
 package com.taobao.android.tbabilitykit.dx.webview;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public final class a extends dlg<l> {
         if (dlhVar != null) {
             String c = dlhVar.c("targetNodeId");
             final String c2 = dlhVar.c("action");
-            if (TextUtils.isEmpty(c) || TextUtils.isEmpty(c2)) {
+            if (StringUtils.isEmpty(c) || StringUtils.isEmpty(c2)) {
                 return new dkw(new dkv(-1999, "TsWebViewAbilityAbility empty userId or type or akCtx"), false);
             }
             if (lVar == null || (j = lVar.j()) == null) {

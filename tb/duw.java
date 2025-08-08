@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.c;
 import com.alibaba.android.aura.datamodel.linkage.UMFLinkageTrigger;
@@ -81,7 +81,7 @@ public class duw {
         Set<String> keySet = extras.keySet();
         JSONObject jSONObject = new JSONObject();
         for (String str : keySet) {
-            if (!TextUtils.isEmpty(str) && (obj = extras.get(str)) != null) {
+            if (!StringUtils.isEmpty(str) && (obj = extras.get(str)) != null) {
                 jSONObject.put(str, (Object) String.valueOf(obj));
             }
         }

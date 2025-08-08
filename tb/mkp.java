@@ -4,7 +4,7 @@ import android.app.Application;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.context.c;
 import com.taobao.monitor.performance.cpu.b;
@@ -179,13 +179,13 @@ public class mkp extends mkg<mko> {
             while (i4 < subList.size()) {
                 String str = subList.get(i4).d;
                 long j = subList.get(i4).c;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     while (i3 < enumerate) {
                         Thread thread2 = threadArr[i3];
                         if (thread2 != null) {
                             list2 = subList;
                             String name = thread2.getName();
-                            if (!TextUtils.isEmpty(name) && name.startsWith(str)) {
+                            if (!StringUtils.isEmpty(name) && name.startsWith(str)) {
                                 i2 = enumerate;
                                 arrayList.add(new WeakReference(thread2));
                                 if (thread2.isAlive() && (stackTraceElementArr == null || stackTraceElementArr.length == 0)) {

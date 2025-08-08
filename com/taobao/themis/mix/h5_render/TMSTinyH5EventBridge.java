@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.MutableContextWrapper;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,10 +41,10 @@ public class TMSTinyH5EventBridge extends e {
         } catch (Throwable unused) {
             jSONObject = new JSONObject();
         }
-        if (TextUtils.equals("registerEvent", str)) {
+        if (StringUtils.equals("registerEvent", str)) {
             return registerEvent(jSONObject, wVCallBackContext);
         }
-        if (TextUtils.equals("callbackEvent", str)) {
+        if (StringUtils.equals("callbackEvent", str)) {
             return callbackEvent(jSONObject, wVCallBackContext);
         }
         wVCallBackContext.error();
@@ -58,7 +58,7 @@ public class TMSTinyH5EventBridge extends e {
         }
         String string = jSONObject.getString("event");
         f tMSTinyH5EventBridge = getInstance(wVCallBackContext.getWebview().getContext());
-        if (!TextUtils.isEmpty(string) && tMSTinyH5EventBridge != null) {
+        if (!StringUtils.isEmpty(string) && tMSTinyH5EventBridge != null) {
             tMSTinyH5EventBridge.b(string);
             wVCallBackContext.success();
             return true;
@@ -75,7 +75,7 @@ public class TMSTinyH5EventBridge extends e {
         }
         String string = jSONObject.getString("eventId");
         f tMSTinyH5EventBridge = getInstance(wVCallBackContext.getWebview().getContext());
-        if (!TextUtils.isEmpty(string) && tMSTinyH5EventBridge != null) {
+        if (!StringUtils.isEmpty(string) && tMSTinyH5EventBridge != null) {
             ITMSPage c = tMSTinyH5EventBridge.b().c();
             if (c != null) {
                 c.a(string, jSONObject);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.performance.preload;
 
 import android.os.Looper;
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.l;
@@ -193,7 +193,7 @@ public class k {
                         a2 = com.taobao.android.detail.core.performance.preload.a.a(jSONObject2);
                     }
                     if (c.a(a2.f9787a)) {
-                        if (!TextUtils.isEmpty(a2.b)) {
+                        if (!StringUtils.isEmpty(a2.b)) {
                             com.taobao.phenix.intf.b.h().a(a2.b).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.android.detail.core.performance.preload.k.4
                                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

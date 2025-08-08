@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.e;
@@ -19,7 +19,7 @@ public class fvh extends fnl {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, obj});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Context b = e.b();
@@ -38,7 +38,7 @@ public class fvh extends fnl {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("61b6361d", new Object[]{this, context, str})).intValue();
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return 0;
         }
         try {

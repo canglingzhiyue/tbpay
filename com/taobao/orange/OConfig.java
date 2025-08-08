@@ -2,7 +2,7 @@ package com.taobao.orange;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OConstant;
 import tb.kge;
@@ -340,13 +340,13 @@ public final class OConfig implements Parcelable {
             } else {
                 oConfig.probeHosts = strArr;
             }
-            if (TextUtils.isEmpty(this.m)) {
+            if (StringUtils.isEmpty(this.m)) {
                 oConfig.dcHost = this.g == OConstant.SERVER.TAOBAO.ordinal() ? OConstant.DC_TAOBAO_HOSTS[this.f18558a] : OConstant.DC_YOUKU_HOSTS[this.f18558a];
             } else {
                 oConfig.dcHost = this.m;
             }
             oConfig.dcVips = this.n;
-            if (TextUtils.isEmpty(this.o)) {
+            if (StringUtils.isEmpty(this.o)) {
                 oConfig.ackHost = this.g == OConstant.SERVER.TAOBAO.ordinal() ? OConstant.ACK_TAOBAO_HOSTS[this.f18558a] : OConstant.ACK_YOUKU_HOSTS[this.f18558a];
             } else {
                 oConfig.ackHost = this.o;

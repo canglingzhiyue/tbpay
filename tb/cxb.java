@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +29,7 @@ public class cxb extends cws {
 
     public static cws a(Context context, String str) {
         cws cwsVar;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             synchronized (b) {
                 cwsVar = f26579a.get(str);
                 if (cwsVar == null) {

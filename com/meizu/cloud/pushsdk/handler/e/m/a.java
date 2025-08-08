@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
@@ -116,7 +116,7 @@ public class a {
     }
 
     public void a(Intent intent, String str) {
-        if (intent == null || TextUtils.isEmpty(str)) {
+        if (intent == null || StringUtils.isEmpty(str)) {
             return;
         }
         List<Intent> list = this.b;

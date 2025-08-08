@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.mmd.datasource.bean.AuctionListTipBean;
 import org.json.JSONObject;
@@ -24,7 +24,7 @@ public class osh {
         }
         AuctionListTipBean auctionListTipBean = new AuctionListTipBean();
         String optString = jSONObject.optString("title");
-        if (TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString)) {
             return null;
         }
         auctionListTipBean.title = optString;

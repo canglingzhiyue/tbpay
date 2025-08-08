@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
 import com.taobao.android.order.core.OrderConfigs;
@@ -238,7 +238,7 @@ public class j {
 
     private boolean a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : (TextUtils.isEmpty(str) || (!str.toLowerCase().contains("tencent") && !str.toLowerCase().contains("qq") && !str.toLowerCase().contains(nyk.KEY_SHARE_CONFIG_WEIXIN) && !str.toLowerCase().contains("wechat"))) && str != null && str2 != null && (str2.toLowerCase().contains("screenshot") || str.toLowerCase().contains("screenshot") || str2.toLowerCase().contains("截屏") || str.toLowerCase().contains("截屏"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : (StringUtils.isEmpty(str) || (!str.toLowerCase().contains("tencent") && !str.toLowerCase().contains("qq") && !str.toLowerCase().contains(nyk.KEY_SHARE_CONFIG_WEIXIN) && !str.toLowerCase().contains("wechat"))) && str != null && str2 != null && (str2.toLowerCase().contains("screenshot") || str.toLowerCase().contains("screenshot") || str2.toLowerCase().contains("截屏") || str.toLowerCase().contains("截屏"));
     }
 
     private void a(Map<String, String> map) {
@@ -253,7 +253,7 @@ public class j {
         }
         String n = orderConfigs.n();
         String o = this.k.o();
-        if (TextUtils.isEmpty(n) || TextUtils.isEmpty(o)) {
+        if (StringUtils.isEmpty(n) || StringUtils.isEmpty(o)) {
             return;
         }
         map.put("searchKey", n);

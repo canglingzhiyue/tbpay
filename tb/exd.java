@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,6 +63,6 @@ public class exd extends exk {
     @Override // com.taobao.android.detail.sdk.vmodel.main.MainViewModel
     public int getViewModelType() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("7e14bda2", new Object[]{this})).intValue() : (TextUtils.isEmpty(this.e) || TextUtils.isEmpty(this.f)) ? ewy.T_BOTTOM_BAR_ICON : ewy.T_BOTTOM_BAR_GRADIENT;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("7e14bda2", new Object[]{this})).intValue() : (StringUtils.isEmpty(this.e) || StringUtils.isEmpty(this.f)) ? ewy.T_BOTTOM_BAR_ICON : ewy.T_BOTTOM_BAR_GRADIENT;
     }
 }

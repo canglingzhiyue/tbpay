@@ -1,7 +1,7 @@
 package com.taobao.themis.inside.adapter;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.alidatabasees.CallableStatement;
 import com.ali.alidatabasees.DBConfig;
 import com.ali.alidatabasees.Database;
@@ -201,7 +201,7 @@ public class TBDBProxyImpl implements TMSDBAdapter {
             appInfoDao.lastUsedTimeStamp = b2;
             appInfoDao.extra = a8;
             appInfoDao.type = a7;
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 appInfoDao.appInfo = (AppModel) JSONObject.parseObject(a5, AppModel.class);
             }
             arrayList.add(appInfoDao);
@@ -257,7 +257,7 @@ public class TBDBProxyImpl implements TMSDBAdapter {
             appManifestDao.setVersion(a4);
             appManifestDao.setLastRequestTimeStamp(b3);
             appManifestDao.setLastUsedTimeStamp(b2);
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 appManifestDao.setAppManifest((AppManifest) JSONObject.parseObject(a5, AppManifest.class));
             }
             arrayList.add(appManifestDao);
@@ -315,7 +315,7 @@ public class TBDBProxyImpl implements TMSDBAdapter {
             pluginInfoDao.lastUsedTimeStamp = b3;
             pluginInfoDao.extra = a7;
             pluginInfoDao.type = a6;
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 pluginInfoDao.pluginInfo = (PluginModel) JSONObject.parseObject(a5, PluginModel.class);
             }
             arrayList.add(pluginInfoDao);

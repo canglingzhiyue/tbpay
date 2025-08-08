@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -449,7 +449,7 @@ public class u extends Component<CustomTabLayout, a> implements w.a, com.taobao.
         }
         CustomTabLayout customTabLayout = new CustomTabLayout(context);
         customTabLayout.setTabMode(0);
-        if (!TextUtils.isEmpty(((a) this.viewParams).n)) {
+        if (!StringUtils.isEmpty(((a) this.viewParams).n)) {
             customTabLayout.setTabAlign(((a) this.viewParams).n);
         }
         customTabLayout.setOnTabSelectedListener(this.l);
@@ -671,7 +671,7 @@ public class u extends Component<CustomTabLayout, a> implements w.a, com.taobao.
             a2 = i.a(str, this.node.G().f20361a, this.node.G().b, ImageLoader.a.a());
         }
         String str2 = a2;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         i.a(((CustomTabLayout) this.view).getContext(), str2, -1, -1, new ImageLoader.c() { // from class: com.taobao.tao.flexbox.layoutmanager.component.u.4

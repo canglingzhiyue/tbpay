@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.view.View;
@@ -253,10 +253,10 @@ public class ElementModule {
                     if (((u) aaVar.I()) == null) {
                         return false;
                     }
-                    if (TextUtils.isEmpty(string)) {
-                        return TextUtils.isEmpty(oec.a(aaVar.e("id"), (String) null));
+                    if (StringUtils.isEmpty(string)) {
+                        return StringUtils.isEmpty(oec.a(aaVar.e("id"), (String) null));
                     }
-                    return TextUtils.equals(oec.a(aaVar.e("id"), (String) null), string);
+                    return StringUtils.equals(oec.a(aaVar.e("id"), (String) null), string);
                 }
             }, false);
             if (a2 == null) {
@@ -278,7 +278,7 @@ public class ElementModule {
             JSONObject jSONObject = (JSONObject) cVar.b;
             String string = jSONObject.getString("name");
             JSONObject jSONObject2 = jSONObject.getJSONObject("args");
-            if (TextUtils.isEmpty(string) || (a2 = cVar.f19938a.a(jSONObject.getIntValue("target"))) == null || (findTargetNode = findTargetNode(a2, jSONObject.getString("id"))) == null || (I = findTargetNode.I()) == null) {
+            if (StringUtils.isEmpty(string) || (a2 = cVar.f19938a.a(jSONObject.getIntValue("target"))) == null || (findTargetNode = findTargetNode(a2, jSONObject.getString("id"))) == null || (I = findTargetNode.I()) == null) {
                 return;
             }
             try {
@@ -377,7 +377,7 @@ public class ElementModule {
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 String string = jSONObject3.getString("id");
-                aa findTargetNode = !TextUtils.isEmpty(string) ? findTargetNode(a3, string) : a3;
+                aa findTargetNode = !StringUtils.isEmpty(string) ? findTargetNode(a3, string) : a3;
                 JSONObject jSONObject4 = jSONObject3.getJSONObject("attrs");
                 if (findTargetNode != null && (a2 = findTargetNode.a(jSONObject4, dVar, oeb.ct())) != null) {
                     hashSet.add(new Pair(a2, dVar));
@@ -474,7 +474,7 @@ public class ElementModule {
             aa a2 = cVar.f19938a.a(jSONObject.getIntValue("target"));
             String string = jSONObject.getString("key");
             if (a2 != null && (findTargetNode = findTargetNode(a2, jSONObject.getString("id"))) != null) {
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     string = "snapshot_node_" + findTargetNode.E();
                 }
                 final String str = string;
@@ -741,11 +741,11 @@ public class ElementModule {
                     Iterator<Object> it = jSONArray.iterator();
                     while (it.hasNext()) {
                         String a6 = oec.a(it.next(), (String) null);
-                        if (!TextUtils.isEmpty(a6) && (a3 = a4.a(a6, !a5)) != null) {
+                        if (!StringUtils.isEmpty(a6) && (a3 = a4.a(a6, !a5)) != null) {
                             arrayList.add(a3);
                         }
                     }
-                } else if (!TextUtils.isEmpty(string) && (a2 = a4.a(string, !a5)) != null) {
+                } else if (!StringUtils.isEmpty(string) && (a2 = a4.a(string, !a5)) != null) {
                     arrayList.add(a2);
                 }
             }

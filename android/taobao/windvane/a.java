@@ -2,7 +2,7 @@ package android.taobao.windvane;
 
 import android.content.Context;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -30,7 +30,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String cookie = CookieManager.getInstance().getCookie(str);
@@ -42,7 +42,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || str2 == null) {
+        } else if (StringUtils.isEmpty(str) || str2 == null) {
         } else {
             m.e("WVCookieManager", "setCookie url=" + str + ",cookieStr=" + str2);
             if (!CookieManager.getInstance().acceptCookie()) {

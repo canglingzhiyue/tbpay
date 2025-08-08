@@ -3,7 +3,7 @@ package com.taobao.desktop.widget.manager;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -137,7 +137,7 @@ public class g {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             khw.a(this.b).a("widget_share_data", str);
@@ -162,10 +162,10 @@ public class g {
                 kif.a(cls, " mainDataSync hasMerged versioncode: " + intValue);
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = khw.a(this.b, "widget_data");
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) JSONObject.parseObject(str, new TypeReference<CopyOnWriteArrayList<JSONObject>>() { // from class: com.taobao.desktop.widget.manager.g.1
                 }, new Feature[0]);
                 Iterator it = copyOnWriteArrayList.iterator();
@@ -235,7 +235,7 @@ public class g {
         CopyOnWriteArrayList<JSONObject> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
         try {
             String str = (String) khw.a(this.b).b("widget_data", "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 copyOnWriteArrayList = (CopyOnWriteArrayList) JSONObject.parseObject(str, new TypeReference<CopyOnWriteArrayList<JSONObject>>() { // from class: com.taobao.desktop.widget.manager.g.2
                 }, new Feature[0]);
             }
@@ -256,7 +256,7 @@ public class g {
         CopyOnWriteArrayList<JSONObject> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
         try {
             String str = (String) khw.a(this.b).b("widget_share_data", "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 copyOnWriteArrayList = (CopyOnWriteArrayList) JSONObject.parseObject(str, new TypeReference<CopyOnWriteArrayList<JSONObject>>() { // from class: com.taobao.desktop.widget.manager.g.3
                 }, new Feature[0]);
             }
@@ -382,7 +382,7 @@ public class g {
             return ((Boolean) ipChange.ipc$dispatch("a821939f", new Object[]{this, new Integer(i)})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.c)) {
                 copyOnWriteArrayList = a(this.b).c();
             } else {
                 copyOnWriteArrayList = (CopyOnWriteArrayList) JSONObject.parseObject(this.c, new TypeReference<CopyOnWriteArrayList<JSONObject>>() { // from class: com.taobao.desktop.widget.manager.g.4
@@ -481,7 +481,7 @@ public class g {
             khw a2 = khw.a(this.b);
             String str2 = (String) a2.b("widget_type_switch_id_" + str, "");
             kif.a("[widgetSwitch] widgetSwitchIdDataLoad typeId: " + str + ",switchIdListData: " + str2);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return null;
             }
             return JSONObject.parseObject(str2);
@@ -572,7 +572,7 @@ public class g {
 
     public boolean i(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && AppWidgetManager.getInstance(this.b.getApplicationContext()).getAppWidgetIds(new ComponentName(this.b.getPackageName(), str)).length > 0;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && AppWidgetManager.getInstance(this.b.getApplicationContext()).getAppWidgetIds(new ComponentName(this.b.getPackageName(), str)).length > 0;
     }
 
     public boolean e() {
@@ -645,7 +645,7 @@ public class g {
         }
         List<String> arrayList = new ArrayList<>();
         String str = (String) khw.a(this.b).b("widget_del_data", "");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             arrayList = JSONObject.parseArray(str, String.class);
         }
         Class<?> cls = getClass();

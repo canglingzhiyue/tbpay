@@ -3,7 +3,7 @@ package com.taobao.tao.common.ucp;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.logging.api.LogContext;
@@ -56,7 +56,7 @@ public class UcpManager {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("266fb88", new Object[]{this, jSONObject});
-            } else if (jSONObject == null || TextUtils.equals(e.UPP_DOWNGRADE, jSONObject.getString("code"))) {
+            } else if (jSONObject == null || StringUtils.equals(e.UPP_DOWNGRADE, jSONObject.getString("code"))) {
                 UcpManager.b(UcpManager.this).sendEmptyMessage(FinishedType.MODEL_FAILED.value());
             } else {
                 Message obtain = Message.obtain();

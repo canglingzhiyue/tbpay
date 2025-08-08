@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -134,7 +134,7 @@ public class EnvUtil {
             return "foreground";
         }
         d a2 = c.a();
-        return a2 == null ? "" : TextUtils.equals(a2.a("launchType", mpa.HOT), mpa.COLD) ? "notLaunched" : "background";
+        return a2 == null ? "" : StringUtils.equals(a2.a("launchType", mpa.HOT), mpa.COLD) ? "notLaunched" : "background";
     }
 
     public static String getAppStatus() {
@@ -234,13 +234,13 @@ public class EnvUtil {
         hashMap.put(PushConstants.KEY_PUSH_ID, str);
         hashMap.put("messageId", str2);
         hashMap.put("innerPush", str4);
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             hashMap.put("messageType", str5);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("bizType", str3);
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             hashMap.put("source", str6);
         }
         return hashMap;

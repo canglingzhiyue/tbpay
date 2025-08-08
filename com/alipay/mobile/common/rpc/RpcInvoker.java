@@ -2,7 +2,7 @@ package com.alipay.mobile.common.rpc;
 
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
@@ -441,7 +441,7 @@ public class RpcInvoker {
                 return;
             }
             String cookie = CookieAccessHelper.getCookie(innerRpcInvokeContext.gwUrl, getRpcFactory().getContext());
-            if (TextUtils.isEmpty(cookie)) {
+            if (StringUtils.isEmpty(cookie)) {
                 LogCatUtil.warn("RpcInvoker", "CheckLogin_prejudge: cookie is empty  API=[" + operationType.value() + riy.ARRAY_END_STR);
                 throw new RpcException((Integer) 2000, "登录超时，请重新登录:登录超时，请重新登录");
             } else if (cookie.contains("ALIPAYJSESSIONID")) {
@@ -461,7 +461,7 @@ public class RpcInvoker {
         } else {
             HttpCaller httpCaller = (HttpCaller) rpcCaller;
             boolean z = serializer instanceof SignJsonSerializer;
-            if (z || TextUtils.equals(serializer.getClass().getName(), JsonSerializer.class.getName())) {
+            if (z || StringUtils.equals(serializer.getClass().getName(), JsonSerializer.class.getName())) {
                 if (z) {
                     SignJsonSerializer signJsonSerializer = (SignJsonSerializer) serializer;
                     httpCaller.setReqDataDigest(signJsonSerializer.getRequestDataDigest());
@@ -530,7 +530,7 @@ public class RpcInvoker {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4ca53c21", new Object[]{this, innerRpcInvokeContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(innerRpcInvokeContext.gwUrl)) {
+        if (StringUtils.isEmpty(innerRpcInvokeContext.gwUrl)) {
             LogCatUtil.warn("RpcInvoker", "handler.getConfig().getUrl() is null");
             return false;
         }
@@ -556,7 +556,7 @@ public class RpcInvoker {
             return booleanValue;
         }
         SignCheck signCheck = (SignCheck) method.getAnnotation(SignCheck.class);
-        return signCheck == null || !TextUtils.equals(signCheck.value(), "no");
+        return signCheck == null || !StringUtils.equals(signCheck.value(), "no");
     }
 
     public static boolean perfLog(RpcException rpcException, String str) {

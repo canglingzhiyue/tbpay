@@ -1,6 +1,6 @@
 package com.alipay.mobile.intelligentdecision.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.intelligentdecision.log.DecisionLogcat;
 import com.alipay.mobile.intelligentdecision.rpc.IDRpcRequest;
 import com.alipay.mobile.intelligentdecision.rpc.IDRpcResponse;
@@ -39,7 +39,7 @@ public class LogReportManager {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             b(str);
         }
     }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -78,7 +78,7 @@ public class jqi {
             return (a) ipChange.ipc$dispatch("ad1ddb54", new Object[]{str});
         }
         a aVar = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             aVar = f29705a.get(str);
         }
         return aVar == null ? f29705a.get("ultron") : aVar;

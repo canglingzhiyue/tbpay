@@ -1,6 +1,6 @@
 package com.android.alibaba.ip.runtime;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.p;
 import com.android.alibaba.ip.common.PatchClassHolder;
@@ -62,7 +62,7 @@ public abstract class AbstractPatchesLoaderImpl implements PatchesLoader {
 
     private boolean isBaseFeatureClazz(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ad7a2e92", new Object[]{this, str})).booleanValue() : TextUtils.isEmpty(str) || str.equals(BASE_FEATURE);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ad7a2e92", new Object[]{this, str})).booleanValue() : StringUtils.isEmpty(str) || str.equals(BASE_FEATURE);
     }
 
     private boolean fixDynamicFeatureClazz(final String str, final String str2) {
@@ -116,7 +116,7 @@ public abstract class AbstractPatchesLoaderImpl implements PatchesLoader {
             Class<?> loadClass = classLoader.loadClass(str2);
             if (strArr != null) {
                 for (int i = 1; i < strArr.length; i++) {
-                    if (!TextUtils.isEmpty(strArr[i])) {
+                    if (!StringUtils.isEmpty(strArr[i])) {
                         replaceField(loadClass, "$ipChange$" + strArr[i].hashCode(), newInstance);
                     }
                 }

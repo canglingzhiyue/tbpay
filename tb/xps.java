@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.android.netutil.SecurityUtils;
 import org.android.spdy.QuicCacher;
@@ -44,9 +44,9 @@ public class xps implements QuicCacher {
         }
         try {
             a();
-            if (f34462a != null && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (f34462a != null && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 String encrypt = SecurityUtils.encrypt(str, str2);
-                if (TextUtils.isEmpty(encrypt)) {
+                if (StringUtils.isEmpty(encrypt)) {
                     return false;
                 }
                 JSONObject jSONObject = new JSONObject();
@@ -73,15 +73,15 @@ public class xps implements QuicCacher {
         } catch (Throwable th) {
             spduLog.Tloge("tnetsdk.QuicSecureSpCache", null, "load except, key=" + str, th);
         }
-        if (f34462a != null && !TextUtils.isEmpty(str)) {
+        if (f34462a != null && !StringUtils.isEmpty(str)) {
             String string = f34462a.getString(str, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             String optString = new JSONObject(string).optString("cache");
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 String decrypt = SecurityUtils.decrypt(str, optString);
-                if (!TextUtils.isEmpty(decrypt)) {
+                if (!StringUtils.isEmpty(decrypt)) {
                     return decrypt.getBytes();
                 }
                 f34462a.edit().remove(str).apply();
@@ -100,7 +100,7 @@ public class xps implements QuicCacher {
         }
         try {
             a();
-            if (f34462a != null && !TextUtils.isEmpty(str)) {
+            if (f34462a != null && !StringUtils.isEmpty(str)) {
                 f34462a.edit().remove(str).apply();
             }
         } catch (Throwable unused) {

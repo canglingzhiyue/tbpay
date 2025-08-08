@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.support.log.HMSLog;
 
@@ -65,7 +65,7 @@ public class f {
             HMSLog.i("PushSelfShowLog", "enter getSmallIconId, context or msg is null");
             return 0;
         }
-        if (!TextUtils.isEmpty(mVar.m())) {
+        if (!StringUtils.isEmpty(mVar.m())) {
             String[] split = mVar.m().split("/");
             if (split.length == 3) {
                 i = q.a(context, split[1], split[2]);

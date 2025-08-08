@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -28,7 +28,7 @@ public class UltronWeex2TradeHybridManagerModule extends MUSModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fb77c2b6", new Object[]{this, str, str2, jSONObject});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             UnifyLog.d("UltronWeex2TradeHybridManagerModule.onStage", "stage or sceneName is empty");
         } else {
             JSONObject jSONObject2 = new JSONObject();

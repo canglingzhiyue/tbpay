@@ -2,7 +2,7 @@ package org.android.agoo.mezu;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.meizu.cloud.pushsdk.PushManager;
 import com.taobao.accs.utl.ALog;
@@ -20,7 +20,7 @@ public class MeizuRegister {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a0e89372", new Object[]{context, str, str2});
-        } else if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             try {
                 if (!checkDevice(context)) {
@@ -65,7 +65,7 @@ public class MeizuRegister {
         L1a:
             java.lang.String r0 = "ro.meizu.product.model"
             java.lang.String r0 = android.os.SystemProperties.get(r0)     // Catch: java.lang.Throwable -> L4e
-            boolean r0 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L4e
+            boolean r0 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L4e
             if (r0 == 0) goto L3e
             java.lang.String r0 = "meizu"
             java.lang.String r1 = android.os.Build.BRAND     // Catch: java.lang.Throwable -> L4e

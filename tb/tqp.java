@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
@@ -37,7 +37,7 @@ public final class tqp {
             }
             synchronized (tqp.a(tqp.this)) {
                 String b = cuj.b(Globals.getApplication(), tqp.CACHE_DATA_KEY, "");
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     tqp.a(tqp.this, new nqo("").a(JSON.parseObject(b)));
                 }
                 t tVar = t.INSTANCE;

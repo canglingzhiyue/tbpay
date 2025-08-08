@@ -1,6 +1,6 @@
 package com.taobao.android.tbtheme.kit;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -49,7 +49,7 @@ public class ThemeData implements Serializable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             ThemeData themeData = (ThemeData) obj;
-            if (TextUtils.equals(this.actionbarTextColor, themeData.actionbarTextColor) && TextUtils.equals(this.actionBarBackgroundColor, themeData.actionBarBackgroundColor) && TextUtils.equals(this.actionBarBackgroundImage, themeData.actionBarBackgroundImage) && TextUtils.equals(this.skinPic, themeData.skinPic) && TextUtils.equals(this.skinColor, themeData.skinColor) && TextUtils.equals(this.statusBarStyle, themeData.statusBarStyle) && TextUtils.equals(this.naviStyle, themeData.naviStyle) && TextUtils.equals(this.isComplexTexture, themeData.isComplexTexture) && this.ignoreImageColor == themeData.ignoreImageColor && TextUtils.equals(this.themeLevel, themeData.themeLevel)) {
+            if (StringUtils.equals(this.actionbarTextColor, themeData.actionbarTextColor) && StringUtils.equals(this.actionBarBackgroundColor, themeData.actionBarBackgroundColor) && StringUtils.equals(this.actionBarBackgroundImage, themeData.actionBarBackgroundImage) && StringUtils.equals(this.skinPic, themeData.skinPic) && StringUtils.equals(this.skinColor, themeData.skinColor) && StringUtils.equals(this.statusBarStyle, themeData.statusBarStyle) && StringUtils.equals(this.naviStyle, themeData.naviStyle) && StringUtils.equals(this.isComplexTexture, themeData.isComplexTexture) && this.ignoreImageColor == themeData.ignoreImageColor && StringUtils.equals(this.themeLevel, themeData.themeLevel)) {
                 return true;
             }
         }
@@ -135,7 +135,7 @@ public class ThemeData implements Serializable {
         if (themeData == null) {
             return false;
         }
-        if (TextUtils.isEmpty(themeData.themeLevel)) {
+        if (StringUtils.isEmpty(themeData.themeLevel)) {
             return true;
         }
         try {

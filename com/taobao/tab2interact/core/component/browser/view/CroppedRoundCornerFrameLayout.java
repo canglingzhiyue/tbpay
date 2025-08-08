@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.support.v4.view.GravityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -570,7 +570,7 @@ public class CroppedRoundCornerFrameLayout extends FrameLayout {
 
     private boolean isTextSetEqual(c cVar, c cVar2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ac597c34", new Object[]{this, cVar, cVar2})).booleanValue() : (cVar == null || cVar2 == null) ? cVar == null && cVar2 == null : TextUtils.equals(cVar.f19755a, cVar2.f19755a) && TextUtils.equals(cVar.b, cVar2.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ac597c34", new Object[]{this, cVar, cVar2})).booleanValue() : (cVar == null || cVar2 == null) ? cVar == null && cVar2 == null : StringUtils.equals(cVar.f19755a, cVar2.f19755a) && StringUtils.equals(cVar.b, cVar2.b);
     }
 
     private boolean isTextSetEmpty(c cVar) {
@@ -581,7 +581,7 @@ public class CroppedRoundCornerFrameLayout extends FrameLayout {
         if (cVar == null) {
             return true;
         }
-        return TextUtils.isEmpty(cVar.f19755a) && TextUtils.isEmpty(cVar.b);
+        return StringUtils.isEmpty(cVar.f19755a) && StringUtils.isEmpty(cVar.b);
     }
 
     /* loaded from: classes8.dex */

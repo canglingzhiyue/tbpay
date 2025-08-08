@@ -3,7 +3,7 @@ package com.taobao.tao.log.interceptor;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,7 +81,7 @@ public class d {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("d51141dd", new Object[]{context, str, new Boolean(z)})).intValue();
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 Log.e("RealTimeLogManager", "The config is empty!");
                 return 4;
             } else {
@@ -97,7 +97,7 @@ public class d {
                 if (!realTimeLogConfig.enable) {
                     Log.e("RealTimeLogManager", "The config is disable!");
                     return 2;
-                } else if (TextUtils.isEmpty(realTimeLogConfig.token)) {
+                } else if (StringUtils.isEmpty(realTimeLogConfig.token)) {
                     Log.e("RealTimeLogManager", "The config token is empty!");
                     return 5;
                 } else if (z && realTimeLogConfig.expireTime == -1) {

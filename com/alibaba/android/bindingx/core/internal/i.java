@@ -1,6 +1,6 @@
 package com.alibaba.android.bindingx.core.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.mto;
@@ -29,7 +29,7 @@ public class i {
         this.b = d;
         this.c = d2;
         this.d = d3;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "XYZ";
         }
         this.f2239a = str;

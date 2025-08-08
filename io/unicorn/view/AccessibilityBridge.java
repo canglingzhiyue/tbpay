@@ -12,7 +12,7 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.LocaleSpan;
 import android.text.style.TtsSpan;
 import android.view.MotionEvent;
@@ -638,7 +638,7 @@ public class AccessibilityBridge extends AccessibilityNodeProvider {
             CharSequence charSequence = null;
             for (CharSequence charSequence2 : Build.VERSION.SDK_INT < 21 ? new CharSequence[]{this.q, this.o, this.w} : new CharSequence[]{a(this.q, this.r), a(this.o, this.p), a(this.w, this.x)}) {
                 if (charSequence2 != null && charSequence2.length() > 0) {
-                    charSequence = (charSequence == null || charSequence.length() == 0) ? charSequence2 : TextUtils.concat(charSequence, ", ", charSequence2);
+                    charSequence = (charSequence == null || charSequence.length() == 0) ? charSequence2 : StringUtils.concat(charSequence, ", ", charSequence2);
                 }
             }
             return charSequence;

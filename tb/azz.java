@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.AURAInputData;
@@ -94,7 +94,7 @@ public final class azz extends arn {
         }
         super.beforeServiceExecute(aURAInputData, aVar);
         String c = aVar.c();
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return;
         }
         char c2 = 65535;
@@ -120,7 +120,7 @@ public final class azz extends arn {
         AURAEventIO aURAEventIO = (AURAEventIO) data;
         AURARenderComponent d = aURAEventIO.getEventModel().d();
         String eventType = aURAEventIO.getEventType();
-        if (TextUtils.equals(eventType, "user_track") || TextUtils.equals(eventType, "userTrack")) {
+        if (StringUtils.equals(eventType, "user_track") || StringUtils.equals(eventType, "userTrack")) {
             return;
         }
         bad.a(this.f25721a, this.b, d, this.c, eventType);

@@ -1,7 +1,7 @@
 package com.taobao.android.order.core.dinamicX.view;
 
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.RelativeSizeSpan;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -148,7 +148,7 @@ public class b extends af {
         if (ipChange instanceof IpChange) {
             return (CharSequence) ipChange.ipc$dispatch("d6b54652", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             return null;
         }
         SpannableString spannableString = new SpannableString(this.d);

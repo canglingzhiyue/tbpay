@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.ui.coordinatorcard;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.X;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.LinkedHashMap;
@@ -46,7 +46,7 @@ public final class b {
             return;
         }
         String a2 = aVar.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             failureListener.mo2423invoke(-1, "Invalid Params");
             return;
         }

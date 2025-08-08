@@ -1,6 +1,6 @@
 package com.taobao.android.weex_uikit.ui;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_uikit.ui.h;
 import java.util.HashMap;
@@ -82,7 +82,7 @@ public class h<T extends h> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("18567e8f", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (!com.taobao.android.weex_framework.util.g.a()) {
                 return;
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.h;
@@ -69,12 +69,12 @@ public class nlk {
 
     private boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f31561a.b());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f31561a.b());
     }
 
     private boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f31561a.a());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f31561a.a());
     }
 
     private boolean d() {
@@ -84,12 +84,12 @@ public class nlk {
 
     private boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : TextUtils.equals("main", i.a());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : StringUtils.equals("main", i.a());
     }
 
     private boolean f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[]{this})).booleanValue() : TextUtils.equals(h.HOMEPAGE_HTAO, i.a());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[]{this})).booleanValue() : StringUtils.equals(h.HOMEPAGE_HTAO, i.a());
     }
 
     private boolean g() {
@@ -143,7 +143,7 @@ public class nlk {
             return true;
         }
         String g = nllVar.g();
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             a.a("dataProcess", "WindvaneRequestPolicy", "containerId is empty");
             return true;
         } else if (d.f(g) == null) {

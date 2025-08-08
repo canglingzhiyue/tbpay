@@ -3,7 +3,7 @@ package com.alipay.android.app.pay;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.pay.PayTask;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.model.BizContext;
@@ -66,7 +66,7 @@ public class H5PayInterceptor {
         }
         this.d = h5PayCallback;
         String fetchOrderInfoFromH5PayUrl = fetchOrderInfoFromH5PayUrl(str);
-        if (!TextUtils.isEmpty(fetchOrderInfoFromH5PayUrl)) {
+        if (!StringUtils.isEmpty(fetchOrderInfoFromH5PayUrl)) {
             String format = new BizContext(this.c).format(fetchOrderInfoFromH5PayUrl);
             JSONObject jSONObject = new JSONObject();
             if (map != null && map.size() > 0) {
@@ -82,7 +82,7 @@ public class H5PayInterceptor {
             }
             this.b.pay(format, jSONObject.toString(), "");
         }
-        return !TextUtils.isEmpty(fetchOrderInfoFromH5PayUrl);
+        return !StringUtils.isEmpty(fetchOrderInfoFromH5PayUrl);
     }
 
     public synchronized String fetchOrderInfoFromH5PayUrl(String str) {
@@ -90,21 +90,21 @@ public class H5PayInterceptor {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7891d8ef", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String trim = str.trim();
             if (trim.startsWith("https://wappaygw.alipay.com/service/rest.htm") || trim.startsWith("http://wappaygw.alipay.com/service/rest.htm")) {
                 String trim2 = trim.replaceFirst("(http|https)://wappaygw.alipay.com/service/rest.htm\\?", "").trim();
-                if (!TextUtils.isEmpty(trim2)) {
+                if (!StringUtils.isEmpty(trim2)) {
                     return "_input_charset=\"utf-8\"&ordertoken=\"" + H5PayUtil.subString("<request_token>", "</request_token>", H5PayUtil.convertArgs(trim2).get("req_data")) + "\"&pay_channel_id=\"alipay_sdk\"&bizcontext=\"" + H5PayUtil.buildSimpleBizContext("sc", MspGlobalDefine.H5_TO_NATIVE) + "\"";
                 }
             }
             if (trim.startsWith("https://mclient.alipay.com/service/rest.htm") || trim.startsWith("http://mclient.alipay.com/service/rest.htm")) {
                 String trim3 = trim.replaceFirst("(http|https)://mclient.alipay.com/service/rest.htm\\?", "").trim();
-                if (!TextUtils.isEmpty(trim3)) {
+                if (!StringUtils.isEmpty(trim3)) {
                     return "_input_charset=\"utf-8\"&ordertoken=\"" + H5PayUtil.subString("<request_token>", "</request_token>", H5PayUtil.convertArgs(trim3).get("req_data")) + "\"&pay_channel_id=\"alipay_sdk\"&bizcontext=\"" + H5PayUtil.buildSimpleBizContext("sc", MspGlobalDefine.H5_TO_NATIVE) + "\"";
                 }
             }
-            if ((trim.startsWith("https://mclient.alipay.com/home/exterfaceAssign.htm") || trim.startsWith("http://mclient.alipay.com/home/exterfaceAssign.htm")) && ((trim.contains("alipay.wap.create.direct.pay.by.user") || trim.contains("create_forex_trade_wap")) && !TextUtils.isEmpty(trim.replaceFirst("(http|https)://mclient.alipay.com/home/exterfaceAssign.htm\\?", "").trim()))) {
+            if ((trim.startsWith("https://mclient.alipay.com/home/exterfaceAssign.htm") || trim.startsWith("http://mclient.alipay.com/home/exterfaceAssign.htm")) && ((trim.contains("alipay.wap.create.direct.pay.by.user") || trim.contains("create_forex_trade_wap")) && !StringUtils.isEmpty(trim.replaceFirst("(http|https)://mclient.alipay.com/home/exterfaceAssign.htm\\?", "").trim()))) {
                 try {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("url", str);
@@ -116,7 +116,7 @@ public class H5PayInterceptor {
             }
             if (Pattern.compile("^(http|https)://(maliprod\\.alipay\\.com/w/trade_pay\\.do.?|mali\\.alipay\\.com/w/trade_pay\\.do.?|mclient\\.alipay\\.com/w/trade_pay\\.do.?)").matcher(str).find()) {
                 String subString = H5PayUtil.subString("?", "", str);
-                if (!TextUtils.isEmpty(subString)) {
+                if (!StringUtils.isEmpty(subString)) {
                     Map<String, String> convertArgs = H5PayUtil.convertArgs(subString);
                     StringBuilder sb = new StringBuilder();
                     if (H5PayUtil.appendVarialbeValue(false, true, "trade_no", sb, convertArgs, "trade_no", "alipay_trade_no")) {
@@ -124,9 +124,9 @@ public class H5PayInterceptor {
                         sb.append("&biz_sub_type=\"TRADE\"");
                         sb.append("&biz_type=\"trade\"");
                         String str2 = convertArgs.get("app_name");
-                        if (TextUtils.isEmpty(str2) && !TextUtils.isEmpty(convertArgs.get("cid"))) {
+                        if (StringUtils.isEmpty(str2) && !StringUtils.isEmpty(convertArgs.get("cid"))) {
                             str2 = "ali1688";
-                        } else if (TextUtils.isEmpty(str2) && (!TextUtils.isEmpty(convertArgs.get("sid")) || !TextUtils.isEmpty(convertArgs.get("s_id")))) {
+                        } else if (StringUtils.isEmpty(str2) && (!StringUtils.isEmpty(convertArgs.get("sid")) || !StringUtils.isEmpty(convertArgs.get("s_id")))) {
                             str2 = "tb";
                         }
                         sb.append("&app_name=\"");
@@ -162,13 +162,13 @@ public class H5PayInterceptor {
                 String a3 = a(parse.getQueryParameter("payPhaseId"), parse.getQueryParameter("pay_phase_id"), parse.getQueryParameter("out_relation_id"));
                 String[] strArr = new String[4];
                 strArr[0] = parse.getQueryParameter("app_name");
-                strArr[1] = !TextUtils.isEmpty(parse.getQueryParameter("cid")) ? "ali1688" : "";
-                strArr[2] = !TextUtils.isEmpty(parse.getQueryParameter("sid")) ? "tb" : "";
-                strArr[3] = !TextUtils.isEmpty(parse.getQueryParameter("s_id")) ? "tb" : "";
+                strArr[1] = !StringUtils.isEmpty(parse.getQueryParameter("cid")) ? "ali1688" : "";
+                strArr[2] = !StringUtils.isEmpty(parse.getQueryParameter("sid")) ? "tb" : "";
+                strArr[3] = !StringUtils.isEmpty(parse.getQueryParameter("s_id")) ? "tb" : "";
                 String a4 = a(strArr);
                 String a5 = a(parse.getQueryParameter(AlipayCallServiceActivity.ALIPAY_EXTERN_TOKEN), parse.getQueryParameter("cid"), parse.getQueryParameter("sid"), parse.getQueryParameter("s_id"));
                 String a6 = a(parse.getQueryParameter("appenv"));
-                if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(a4) && !TextUtils.isEmpty(a5)) {
+                if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(a4) && !StringUtils.isEmpty(a5)) {
                     String format = String.format("trade_no=\"%s\"&pay_phase_id=\"%s\"&biz_type=\"trade\"&biz_sub_type=\"TRADE\"&app_name=\"%s\"&extern_token=\"%s\"&appenv=\"%s\"&pay_channel_id=\"alipay_sdk\"&bizcontext=\"%s\"", a2, a3, a4, a5, a6, new BizContext(this.c).buildSimpleBizContext("sc", MspGlobalDefine.H5_TO_NATIVE));
                     TaobaoModel taobaoModel2 = new TaobaoModel();
                     taobaoModel2.setReturnUrl(queryParameter);
@@ -192,7 +192,7 @@ public class H5PayInterceptor {
             return "";
         }
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         }
@@ -236,13 +236,13 @@ public class H5PayInterceptor {
             } else {
                 if (str5.length() > 15) {
                     String a2 = a(H5PayUtil.subString("&callBackUrl=\"", "\"", str5), H5PayUtil.subString("&call_back_url=\"", "\"", str5), H5PayUtil.subString("&return_url=\"", "\"", str5), URLDecoder.decode(H5PayUtil.subString("&return_url=", "&", str5), "utf-8"), URLDecoder.decode(H5PayUtil.subString("&callBackUrl=", "&", str5), "utf-8"), H5PayUtil.subString("call_back_url=\"", "\"", str5));
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         str6 = a2;
                     }
                 }
                 if (taobaoModel != null) {
                     String returnUrl = equals ? taobaoModel.getReturnUrl() : taobaoModel.getShowUrl();
-                    if (!TextUtils.isEmpty(returnUrl)) {
+                    if (!StringUtils.isEmpty(returnUrl)) {
                         str6 = returnUrl;
                     }
                 }

@@ -2,7 +2,7 @@ package com.taobao.android.tracker;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -99,7 +99,7 @@ public class DynamicTrackWeexModule extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("26a656f9", new Object[]{this, str});
-        } else if (this.mWXSDKInstance == null || TextUtils.isEmpty(str) || !TYPE_FOR_LITE.equalsIgnoreCase(str)) {
+        } else if (this.mWXSDKInstance == null || StringUtils.isEmpty(str) || !TYPE_FOR_LITE.equalsIgnoreCase(str)) {
         } else {
             Context O = this.mWXSDKInstance.O();
             if (O != null && (O instanceof Activity)) {
@@ -108,7 +108,7 @@ public class DynamicTrackWeexModule extends WXModule {
                     return;
                 }
                 final String ak = this.mWXSDKInstance.ak();
-                if (TextUtils.isEmpty(ak) || (d = a.a().d()) == null) {
+                if (StringUtils.isEmpty(ak) || (d = a.a().d()) == null) {
                     return;
                 }
                 d.b(ak, new b.a() { // from class: com.taobao.android.tracker.DynamicTrackWeexModule.1

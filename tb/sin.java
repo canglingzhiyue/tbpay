@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.framework.data.datamodel.a;
@@ -18,7 +18,7 @@ public class sin {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ad5f4ea4", new Object[]{dVar});
-        } else if (dVar == null || !TextUtils.isEmpty(dVar.e())) {
+        } else if (dVar == null || !StringUtils.isEmpty(dVar.e())) {
         } else {
             String orangeStringConfig = FluidSDK.getRemoteConfigAdapter().getOrangeStringConfig("isFirstFrameUseJpegOnly", "true");
             String str = null;

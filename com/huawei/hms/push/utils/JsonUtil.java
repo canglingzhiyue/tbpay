@@ -1,7 +1,7 @@
 package com.huawei.hms.push.utils;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.log.HMSLog;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class JsonUtil {
             HMSLog.w("JsonUtil", "transfer jsonObject to bundle failed, defaultValue is null.");
         } else if (obj instanceof String) {
             String str2 = (String) obj;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = null;
             }
             bundle.putString(str, getString(jSONObject, str, str2));

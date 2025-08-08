@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.internal.utils.UnifyLog;
 import com.alibaba.android.nextrpc.request.AttachedResponse;
 import com.alibaba.android.nextrpc.request.CachedMainResponse;
@@ -76,7 +76,7 @@ public class bfq implements com.alibaba.android.nextrpc.request.b, d {
             list.add(this);
             b.put(str, list);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f25854a = new a(this.f);
             com.alibaba.android.nextrpc.internal.accs.a.a().a(context, str, this.f25854a);
         }
@@ -111,7 +111,7 @@ public class bfq implements com.alibaba.android.nextrpc.request.b, d {
                 }
             }
         }
-        if (!TextUtils.isEmpty(this.e) && this.f25854a != null) {
+        if (!StringUtils.isEmpty(this.e) && this.f25854a != null) {
             com.alibaba.android.nextrpc.internal.accs.a.a().b(this.c, this.e, this.f25854a);
         }
         for (String str : this.f.keySet()) {
@@ -574,7 +574,7 @@ public class bfq implements com.alibaba.android.nextrpc.request.b, d {
                 for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                     String key = entry.getKey();
                     Object value = entry.getValue();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         List arrayList = new ArrayList();
                         if (value instanceof JSONArray) {
                             arrayList = JSONObject.parseArray(((JSONArray) value).toJSONString(), String.class);

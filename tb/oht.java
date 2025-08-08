@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,14 +48,14 @@ public class oht {
             return;
         }
         las.a((Object) b.getCurActivity());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             ksp.b("SecondFloorUtUtil", "utWrite pageName : " + str);
             las.a(b.getCurActivity(), str);
         } else {
             ksp.b("SecondFloorUtUtil", "utWrite default pageName : " + str);
             las.a((Context) b.getCurActivity());
         }
-        if (TextUtils.equals(TARCK_KEY_PAGE_MINI_APP_HOME, str)) {
+        if (StringUtils.equals(TARCK_KEY_PAGE_MINI_APP_HOME, str)) {
             a(str2, b);
         } else {
             a(b);
@@ -71,7 +71,7 @@ public class oht {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Uri parse = Uri.parse(str);
@@ -83,7 +83,7 @@ public class oht {
                 str2 = "";
             }
             hashMap.put("spm-cnt", "a2141.miniapp");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 hashMap.put("spm-url", queryParameter);
             }
             hashMap.put(ood.HOME_BUCKETS, str2);

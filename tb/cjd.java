@@ -11,7 +11,7 @@ import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Process;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,7 +80,7 @@ public class cjd {
             }
         } catch (Exception unused) {
         }
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             Log.e("TaobaoApplication", "getProcess failed");
             return false;
         } else if (d.endsWith(":fixdoat")) {
@@ -196,7 +196,7 @@ public class cjd {
             long r4 = r1.lastUpdateTime
             tb.cjd.e = r4
             java.lang.String r4 = tb.cjd.f26302a
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             if (r4 == 0) goto L52
             java.lang.String r4 = "TaobaoApplication"
             java.lang.String r5 = "version name is empty "
@@ -227,7 +227,7 @@ public class cjd {
             int r13 = (r11 > r6 ? 1 : (r11 == r6 ? 0 : -1))
             if (r13 != 0) goto Lcc
             java.lang.String r6 = r1.versionName     // Catch: java.lang.Throwable -> Lea
-            boolean r6 = android.text.TextUtils.equals(r6, r0)     // Catch: java.lang.Throwable -> Lea
+            boolean r6 = android.text.StringUtils.equals(r6, r0)     // Catch: java.lang.Throwable -> Lea
             if (r6 == 0) goto Lcc
             long r6 = r1.lastUpdateTime     // Catch: java.lang.Throwable -> Lea
             int r1 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1))
@@ -251,7 +251,7 @@ public class cjd {
         Lcb:
             return r3
         Lcc:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Lea
+            boolean r1 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Lea
             if (r1 != 0) goto Le4
             android.content.SharedPreferences r14 = android.preference.PreferenceManager.getDefaultSharedPreferences(r14)     // Catch: java.lang.Throwable -> Lea
             android.content.SharedPreferences$Editor r14 = r14.edit()     // Catch: java.lang.Throwable -> Lea

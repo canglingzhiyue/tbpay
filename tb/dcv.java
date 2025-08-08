@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.activelocation.location.impl.a;
 import com.taobao.activelocation.location.impl.b;
@@ -129,7 +129,7 @@ public class dcv {
             return null;
         }
         String string = sharedPreferences.getString("location_mock_data", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         String[] split = string.split("_");
@@ -141,7 +141,7 @@ public class dcv {
         String str3 = split[2];
         String str4 = split[3];
         String str5 = split[4];
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             tBLocationDTO = new TBLocationDTO();
             tBLocationDTO.longitude = str;
             tBLocationDTO.latitude = str2;

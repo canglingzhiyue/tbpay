@@ -1,7 +1,7 @@
 package com.taobao.android.weex_ability;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -52,7 +52,7 @@ public class i implements com.taobao.android.weex_framework.adapter.i {
         String str2 = map.get(com.taobao.android.weex_framework.adapter.i.KEY_CRASH_INFO_JS_VERSION);
         String str3 = map.get("using_new_weex");
         UncaughtCrashHeader crashCaughtHeader = TCrashSDK.instance().getCrashCaughtHeader();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             crashCaughtHeader.addHeaderInfo("wx2_current_url", "default");
         } else {
             crashCaughtHeader.addHeaderInfo("wx2_current_url", str);
@@ -70,7 +70,7 @@ public class i implements com.taobao.android.weex_framework.adapter.i {
         }
         try {
             String str5 = str + "_" + str2;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str5 = str2;
             }
             if (!a(i, str, str2)) {
@@ -149,7 +149,7 @@ public class i implements com.taobao.android.weex_framework.adapter.i {
         }
         try {
             String str6 = str + "_" + str3;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str6 = str3;
             }
             if (!a(i, str, str3)) {
@@ -181,7 +181,7 @@ public class i implements com.taobao.android.weex_framework.adapter.i {
         aVar.f3119a = "WEEX2_JS_ERROR";
         aVar.c = String.valueOf(i);
         if (i == 10025 || i == 10026 || i == 10018) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 int indexOf = str.indexOf("\n");
                 aVar.f = indexOf > 0 ? str.substring(0, indexOf) : str;
                 aVar.h = (str + "\nend_weex_stack\n").replace("\n", "_*n*_");
@@ -189,7 +189,7 @@ public class i implements com.taobao.android.weex_framework.adapter.i {
         } else {
             aVar.f = str;
             aVar.h = str2;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 aVar.h = str;
             }
         }
@@ -287,12 +287,12 @@ public class i implements com.taobao.android.weex_framework.adapter.i {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("81145733", new Object[]{this, new Integer(i), str, str2})).booleanValue();
         }
-        String str3 = TextUtils.isEmpty(str) ? i + "_" + str2 : i + "_" + str + "_" + str2;
-        if (TextUtils.isEmpty(str3)) {
+        String str3 = StringUtils.isEmpty(str) ? i + "_" + str2 : i + "_" + str + "_" + str2;
+        if (StringUtils.isEmpty(str3)) {
             return true;
         }
         String f = com.taobao.android.weex_framework.util.f.f();
-        if (TextUtils.isEmpty(f)) {
+        if (StringUtils.isEmpty(f)) {
             return true;
         }
         try {
@@ -315,7 +315,7 @@ public class i implements com.taobao.android.weex_framework.adapter.i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         Uri parse = Uri.parse(str);

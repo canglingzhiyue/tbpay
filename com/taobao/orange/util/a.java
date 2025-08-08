@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -36,15 +36,15 @@ public class a {
             return true;
         }
         try {
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).applicationInfo.processName;
                 OLog.d("AndroidUtil", "isMainProcess", "mainProcessName", b);
             }
-            if (TextUtils.isEmpty(f18598a)) {
+            if (StringUtils.isEmpty(f18598a)) {
                 f18598a = a(context, Process.myPid());
                 OLog.d("AndroidUtil", "isMainProcess", "currentProcessName", f18598a);
             }
-            if (!TextUtils.isEmpty(b) && !TextUtils.isEmpty(f18598a)) {
+            if (!StringUtils.isEmpty(b) && !StringUtils.isEmpty(f18598a)) {
                 return b.equalsIgnoreCase(f18598a);
             }
             return true;
@@ -102,11 +102,11 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("258fda78", new Object[]{context, new Boolean(z)})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(b) || z) {
+            if (StringUtils.isEmpty(b) || z) {
                 b = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).applicationInfo.processName;
                 OLog.e("AndroidUtil", "isMainProcess", "mainProcessName", b);
             }
-            if (TextUtils.isEmpty(f18598a) || z) {
+            if (StringUtils.isEmpty(f18598a) || z) {
                 f18598a = a(context, Process.myPid());
                 OLog.e("AndroidUtil", "currentProcess:" + f18598a, new Object[0]);
             }

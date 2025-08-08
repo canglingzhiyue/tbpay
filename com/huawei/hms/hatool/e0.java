@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public abstract class e0 {
@@ -9,7 +9,7 @@ public abstract class e0 {
         String str;
         if (i != 0) {
             str = f();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return new i(d0.UDID, str);
             }
         } else {
@@ -22,7 +22,7 @@ public abstract class e0 {
         String str;
         if ((i & 4) != 0) {
             str = f();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return new i(d0.UDID, str);
             }
         } else {
@@ -33,15 +33,15 @@ public abstract class e0 {
 
     private boolean e() {
         g1 b = s.c().b();
-        if (TextUtils.isEmpty(b.l())) {
+        if (StringUtils.isEmpty(b.l())) {
             b.h(o.a());
         }
-        return !TextUtils.isEmpty(b.l());
+        return !StringUtils.isEmpty(b.l());
     }
 
     private String f() {
         g1 b = s.c().b();
-        if (TextUtils.isEmpty(b.i())) {
+        if (StringUtils.isEmpty(b.i())) {
             b.e(x0.c());
         }
         return b.i();
@@ -49,16 +49,16 @@ public abstract class e0 {
 
     public i a(Context context) {
         String c = c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             return new i(d0.UDID, c);
         }
         String a2 = a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return new i(d0.IMEI, a2);
         }
         boolean e = e();
         String b = b();
-        return !TextUtils.isEmpty(b) ? e ? new i(d0.SN, b) : new i(d0.UDID, a(b)) : e ? a(d()) : b(d());
+        return !StringUtils.isEmpty(b) ? e ? new i(d0.SN, b) : new i(d0.UDID, a(b)) : e ? a(d()) : b(d());
     }
 
     public abstract String a();

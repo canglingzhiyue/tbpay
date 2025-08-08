@@ -1,6 +1,6 @@
 package com.ali.user.mobile.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.log.LoginTLogAdapter;
 import java.lang.reflect.InvocationTargetException;
@@ -29,7 +29,7 @@ public class ServiceFactory {
                 return true;
             }
             String beanClassName = getBeanClassName(cls.getName());
-            if (TextUtils.isEmpty(beanClassName)) {
+            if (StringUtils.isEmpty(beanClassName)) {
                 return false;
             }
             try {

@@ -1,7 +1,7 @@
 package com.taobao.android.cachecleaner.monitor.info;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
@@ -77,7 +77,7 @@ public class a {
         }
         try {
             String sb = a(context.getDir("cache_info", 0), "basic_info").toString();
-            if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(sb)) {
                 return (CacheOverviewInfo) JSON.parseObject(sb, CacheOverviewInfo.class);
             }
             return null;

@@ -3,7 +3,7 @@ package com.taobao.taolive.room.controller2;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.format.DateUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -112,7 +112,7 @@ public class b {
             return;
         }
         unImportantLiveInfoRequest.trivialReq.creatorId = videoInfo.broadCaster.encodeAccountId;
-        if (!TextUtils.isEmpty(unImportantLiveInfoRequest.trivialReq.creatorId)) {
+        if (!StringUtils.isEmpty(unImportantLiveInfoRequest.trivialReq.creatorId)) {
             return;
         }
         unImportantLiveInfoRequest.trivialReq.creatorId = videoInfo.broadCaster.accountId;
@@ -136,14 +136,14 @@ public class b {
                 itemCardListReq.itemHoldType = videoInfo.itemHoldType;
                 itemCardListReq.holdItemIds = videoInfo.holdItemIds;
                 String str4 = aVar.g().get(aw.PARAM_SJSD_ITEM_ID);
-                if (!TextUtils.isEmpty(str4) && TextUtils.isEmpty(itemCardListReq.itemHoldType) && TextUtils.isEmpty(itemCardListReq.holdItemIds)) {
+                if (!StringUtils.isEmpty(str4) && StringUtils.isEmpty(itemCardListReq.itemHoldType) && StringUtils.isEmpty(itemCardListReq.holdItemIds)) {
                     itemCardListReq.holdItemIds = str4;
                     itemCardListReq.itemHoldType = com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD;
                 }
             } else {
                 itemCardListReq.itemHoldType = str;
                 itemCardListReq.holdItemIds = str2;
-                if (!TextUtils.isEmpty(str3) && TextUtils.isEmpty(itemCardListReq.itemHoldType) && TextUtils.isEmpty(itemCardListReq.holdItemIds)) {
+                if (!StringUtils.isEmpty(str3) && StringUtils.isEmpty(itemCardListReq.itemHoldType) && StringUtils.isEmpty(itemCardListReq.holdItemIds)) {
                     itemCardListReq.holdItemIds = str3;
                     itemCardListReq.itemHoldType = com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD;
                 }
@@ -181,7 +181,7 @@ public class b {
                     str2 = activity.getIntent().getDataString();
                 }
             }
-            if (tBLiveDataModel.mInitParams != null && !TextUtils.isEmpty(tBLiveDataModel.mInitParams.get(aw.PARAM_INTENT_URL))) {
+            if (tBLiveDataModel.mInitParams != null && !StringUtils.isEmpty(tBLiveDataModel.mInitParams.get(aw.PARAM_INTENT_URL))) {
                 str2 = tBLiveDataModel.mInitParams.get(aw.PARAM_INTENT_URL);
             }
             JSONObject jSONObject = new JSONObject();
@@ -189,14 +189,14 @@ public class b {
             String str3 = "";
             if (parse != null) {
                 str3 = parse.getQueryParameter("itemIds");
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = parse.getQueryParameter(aw.PARAM_SHAQRE_ITEM_ID);
                 }
                 str = parse.getQueryParameter("shareType");
                 String queryParameter = parse.getQueryParameter("huanduanParams");
-                if (!TextUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
+                if (!StringUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
                     for (String str4 : split) {
-                        if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.isEmpty(str4)) {
                             jSONObject.put(str4, (Object) parse.getQueryParameter(str4));
                         }
                     }
@@ -206,7 +206,7 @@ public class b {
             }
             jSONObject.put("versionCode", (Object) "20240626");
             String a2 = a(tBLiveDataModel);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = str3;
             }
             popReq.itemIds = a2;

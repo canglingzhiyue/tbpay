@@ -2,7 +2,7 @@ package com.taobao.android.ultron.datamodel.imp;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -190,7 +190,7 @@ public class ParseResponseHelper {
         if (jSONObject != null) {
             str2 = jSONObject.getString("containerType");
         }
-        return TextUtils.isEmpty(str2) ? "native" : str2;
+        return StringUtils.isEmpty(str2) ? "native" : str2;
     }
 
     private Map<String, List<com.taobao.android.ultron.common.model.b>> e(JSONObject jSONObject) {
@@ -206,7 +206,7 @@ public class ParseResponseHelper {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && (value instanceof JSONArray)) {
+            if (!StringUtils.isEmpty(key) && (value instanceof JSONArray)) {
                 JSONArray jSONArray = (JSONArray) value;
                 ArrayList arrayList = new ArrayList(jSONArray.size());
                 Iterator<Object> it = jSONArray.iterator();
@@ -264,7 +264,7 @@ public class ParseResponseHelper {
                 str2 = string;
             }
             final JSONArray jSONArray = jSONObject3.getJSONArray("cacheFields");
-            if (TextUtils.isEmpty(str2) || jSONArray == null) {
+            if (StringUtils.isEmpty(str2) || jSONArray == null) {
                 return;
             }
             Iterator<Object> it = jSONArray.iterator();
@@ -326,7 +326,7 @@ public class ParseResponseHelper {
                         }
                         for (String str4 : new ArrayList(a3)) {
                             String[] split = str4.split("_\\$_");
-                            if (split.length == 2 && TextUtils.equals(split[0], string) && !TextUtils.equals(split[1], string2)) {
+                            if (split.length == 2 && StringUtils.equals(split[0], string) && !StringUtils.equals(split[1], string2)) {
                                 a2.c(str4);
                                 a2.d(str4);
                                 UnifyLog.c("ParseResponseHelper", "processCache deleteTemplateById:" + str4);
@@ -470,7 +470,7 @@ public class ParseResponseHelper {
         } else if (jSONObject == null || !jSONObject.containsKey(AURASubmitEvent.RPC_ENDPOINT) || (jSONObject2 = jSONObject.getJSONObject(AURASubmitEvent.RPC_ENDPOINT)) == null) {
         } else {
             String string = jSONObject2.getString("features");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             this.f15769a.g(string);

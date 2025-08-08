@@ -8,7 +8,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Process;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.utils.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Field;
@@ -75,7 +75,7 @@ public class bzx {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue();
         }
         String str = Build.BRAND;
-        return !TextUtils.isEmpty(str) && str.toLowerCase().contains("vivo");
+        return !StringUtils.isEmpty(str) && str.toLowerCase().contains("vivo");
     }
 
     public static int b(Context context) {

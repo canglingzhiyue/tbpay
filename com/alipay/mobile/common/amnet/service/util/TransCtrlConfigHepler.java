@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.service.util;
 
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
@@ -38,7 +38,7 @@ public class TransCtrlConfigHepler {
             return;
         }
         String optString = jSONObject.optString(NwSharedSwitchUtil.KEY_NET_SWITCH_TWO);
-        if (TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString)) {
             LogCatUtil.printInfo("TransCtrlConfigHepler", "strConf is empty.");
         } else {
             a(optString);
@@ -190,7 +190,7 @@ public class TransCtrlConfigHepler {
             return (File) ipChange.ipc$dispatch("54f7aaca", new Object[0]);
         }
         String externalStorageState = Environment.getExternalStorageState();
-        if (!TextUtils.equals("mounted", externalStorageState) && !TextUtils.equals("mounted_ro", externalStorageState)) {
+        if (!StringUtils.equals("mounted", externalStorageState) && !StringUtils.equals("mounted_ro", externalStorageState)) {
             LogCatUtil.info("TransCtrlConfigHepler", "externalStorageState=[" + externalStorageState + riy.ARRAY_END_STR);
             return null;
         }

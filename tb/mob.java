@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Window;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.application.common.impl.d;
@@ -96,7 +96,7 @@ public class mob implements Application.ActivityLifecycleCallbacks, Observer {
         ProcedureGlobal.PROCEDURE_MANAGER.a(activity, a4);
         a4.d().a(com.taobao.monitor.impl.util.d.b(activity), com.taobao.monitor.impl.util.d.a(activity), a2);
         a4.g().a(mpa.RECOVERY_FROM_SAVED_INSTANCE, string);
-        a2.put(mpa.RECOVERY_FROM_SAVED_INSTANCE, Boolean.valueOf(!TextUtils.isEmpty(string)));
+        a2.put(mpa.RECOVERY_FROM_SAVED_INSTANCE, Boolean.valueOf(!StringUtils.isEmpty(string)));
         if (!f.a(this.i)) {
             this.i.a(activity, a2, h.a());
         }

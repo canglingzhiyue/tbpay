@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core.frame;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.template.FBContext;
 import com.alipay.android.msp.core.clients.MspUIClient;
 import com.alipay.android.msp.core.context.MspContext;
@@ -338,7 +338,7 @@ public class MspWindowFrameStack {
                 this.b.add(mspWindowFrame);
             }
             String tplHashId = mspWindowFrame.getTplHashId();
-            if (TextUtils.isEmpty(tplHashId)) {
+            if (StringUtils.isEmpty(tplHashId)) {
                 return;
             }
             this.e.remove(tplHashId);
@@ -375,7 +375,7 @@ public class MspWindowFrameStack {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("262cd8e", new Object[]{this, str, mspWindowFrame});
-        } else if (TextUtils.isEmpty(str) || mspWindowFrame == null) {
+        } else if (StringUtils.isEmpty(str) || mspWindowFrame == null) {
         } else {
             this.e.put(str, mspWindowFrame);
         }

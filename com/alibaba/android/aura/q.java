@@ -1,7 +1,7 @@
 package com.alibaba.android.aura;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,7 +81,7 @@ public class q {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             arc.a().c("AURAUserContext", "setBizCode", "bizCode为空");
         }
         this.c = str;
@@ -107,7 +107,7 @@ public class q {
 
     public String d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("43881515", new Object[]{this}) : TextUtils.isEmpty(this.c) ? "defaultNone" : this.c;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("43881515", new Object[]{this}) : StringUtils.isEmpty(this.c) ? "defaultNone" : this.c;
     }
 
     public <T> T a(String str, Class<T> cls) {

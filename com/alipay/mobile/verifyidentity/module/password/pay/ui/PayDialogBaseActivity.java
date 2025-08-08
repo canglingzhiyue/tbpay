@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.password.pay.ui;
 
 import android.content.DialogInterface;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.animation.Animation;
 import android.view.animation.CycleInterpolator;
@@ -313,22 +313,22 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
         this.mProgressWheel.start();
         this.content_title.setVisibility(i2);
         if (i2 == 0) {
-            if (!TextUtils.isEmpty(this.content_desc.getText().toString())) {
+            if (!StringUtils.isEmpty(this.content_desc.getText().toString())) {
                 this.content_desc.setVisibility(0);
             } else {
                 this.content_desc.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(this.content_biz_desc.getText().toString())) {
+            if (!StringUtils.isEmpty(this.content_biz_desc.getText().toString())) {
                 this.content_biz_desc.setVisibility(0);
             } else {
                 this.content_biz_desc.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(this.other_txt.getText().toString())) {
+            if (!StringUtils.isEmpty(this.other_txt.getText().toString())) {
                 this.other_txt.setVisibility(0);
             } else {
                 this.other_txt.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(this.goBackPwd.getText().toString())) {
+            if (!StringUtils.isEmpty(this.goBackPwd.getText().toString())) {
                 this.goBackPwd.setVisibility(0);
             } else {
                 this.goBackPwd.setVisibility(8);
@@ -429,7 +429,7 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("28030f29", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.goOtherVerifyProduct)) {
+        if (StringUtils.isEmpty(this.goOtherVerifyProduct)) {
             this.goOtherVerifyProduct = "N";
         }
         return this.goOtherVerifyProduct;
@@ -440,7 +440,7 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a421102e", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.otherText)) {
+        if (StringUtils.isEmpty(this.otherText)) {
             return getResources().getString(R.string.other_way_to_pwd);
         }
         return this.otherText;
@@ -451,7 +451,7 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a9f4487a", new Object[]{this, mICRpcResponse})).booleanValue();
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return false;
         }
         JSONObject jSONObject = null;
@@ -475,7 +475,7 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cba25bdf", new Object[]{this, mICRpcResponse, hashMap})).booleanValue();
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return false;
         }
         JSONObject jSONObject = null;
@@ -494,7 +494,7 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
         }
         String str2 = f5930a;
         VerifyLogCat.i(str2, "showFindPwd: " + string);
-        return TextUtils.isEmpty(string) || "Y".equalsIgnoreCase(string);
+        return StringUtils.isEmpty(string) || "Y".equalsIgnoreCase(string);
     }
 
     public String getOtherVerifyPayText(MICRpcResponse mICRpcResponse) {
@@ -502,7 +502,7 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("97df53ab", new Object[]{this, mICRpcResponse});
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return getOtherPayContent();
         }
         JSONObject jSONObject = null;
@@ -516,7 +516,7 @@ public abstract class PayDialogBaseActivity extends AbsPayPwdActivity {
             return getOtherPayContent();
         }
         this.otherProductForDialog = jSONObject.getString("otherVerifyPayText");
-        if (!TextUtils.isEmpty(this.otherProductForDialog)) {
+        if (!StringUtils.isEmpty(this.otherProductForDialog)) {
             return this.otherProductForDialog;
         }
         return getOtherPayContent();

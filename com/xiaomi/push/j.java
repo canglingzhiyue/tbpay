@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.biz.inner.AmnetMonitorLoggerListener;
 import com.taobao.android.change.app.icon.core.Constrant;
 import com.taobao.weex.common.Constants;
@@ -38,12 +38,12 @@ public class j {
             r0 = 0
             java.lang.String r1 = "ro.miui.ui.version.code"
             java.lang.String r1 = m2115a(r1)     // Catch: java.lang.Throwable -> L2b
-            boolean r1 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L2b
+            boolean r1 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L2b
             r2 = 1
             if (r1 == 0) goto L23
             java.lang.String r1 = "ro.miui.ui.version.name"
             java.lang.String r1 = m2115a(r1)     // Catch: java.lang.Throwable -> L2b
-            boolean r1 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L2b
+            boolean r1 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L2b
             if (r1 != 0) goto L21
             goto L23
         L21:
@@ -82,7 +82,7 @@ public class j {
 
     public static int a(Context context) {
         String m2115a = m2115a("ro.miui.ui.version.code");
-        if (TextUtils.isEmpty(m2115a) || !TextUtils.isDigitsOnly(m2115a)) {
+        if (StringUtils.isEmpty(m2115a) || !StringUtils.isDigitsOnly(m2115a)) {
             return 0;
         }
         return Integer.parseInt(m2115a);
@@ -253,40 +253,40 @@ public class j {
 
     public static String b() {
         String a2 = q.a("ro.miui.region", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("persist.sys.oppo.region", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("ro.oppo.regionmark", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("ro.vendor.oplus.regionmark", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("ro.hw.country", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("ro.csc.countryiso_code", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = m2120b(q.a("ro.product.country.region", ""));
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("gsm.vivo.countrycode", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("persist.sys.oem.region", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("ro.product.locale.region", "");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = q.a("persist.sys.country", "");
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("get region from system, region = " + a2);
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             String country = Locale.getDefault().getCountry();
             com.xiaomi.channel.commonutils.logger.b.m1616a("locale.default.country = " + country);
             return country;
@@ -296,7 +296,7 @@ public class j {
 
     /* renamed from: b  reason: collision with other method in class */
     private static String m2120b(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String[] split = str.split("-");
             return split.length > 0 ? split[0] : str;
         }
@@ -340,6 +340,6 @@ public class j {
             str = q.a("ro.miui.ui.version.code", str);
         } catch (Exception unused) {
         }
-        return !TextUtils.isEmpty(str);
+        return !StringUtils.isEmpty(str);
     }
 }

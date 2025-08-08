@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -67,7 +67,7 @@ public class bzn {
         JSONObject jSONObject = new JSONObject(new ConcurrentHashMap());
         try {
             String a2 = g.a(b());
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 jSONObject.putAll(JSON.parseObject(a2));
             }
             return jSONObject;

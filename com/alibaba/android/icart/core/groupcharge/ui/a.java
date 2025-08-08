@@ -3,7 +3,7 @@ package com.alibaba.android.icart.core.groupcharge.ui;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -332,7 +332,7 @@ public class a {
         b bVar = this.p;
         if (bVar != null) {
             a(bVar.b());
-            if (!TextUtils.isEmpty(this.p.a())) {
+            if (!StringUtils.isEmpty(this.p.a())) {
                 this.k.setText(this.p.a());
             }
         }

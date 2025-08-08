@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
@@ -232,7 +232,7 @@ public class ScreenUtil {
             return true;
         }
         String str = Build.MODEL;
-        return !TextUtils.isEmpty(str) && (str.startsWith("SM-F9") || str.startsWith("SM-W202") || str.startsWith("SM-W90"));
+        return !StringUtils.isEmpty(str) && (str.startsWith("SM-F9") || str.startsWith("SM-W202") || str.startsWith("SM-W90"));
     }
 
     public static boolean isXiaomiFoldScreen() {

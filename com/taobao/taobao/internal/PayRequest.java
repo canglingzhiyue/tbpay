@@ -1,6 +1,6 @@
 package com.taobao.taobao.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.alipay.export.CashdeskConstants;
 import java.io.Serializable;
@@ -121,12 +121,12 @@ public class PayRequest implements Serializable {
 
     public boolean isCallAlipaySDK() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("15ad6053", new Object[]{this})).booleanValue() : TextUtils.equals(this.nextAction, CALL_ALIPAY_SDK);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("15ad6053", new Object[]{this})).booleanValue() : StringUtils.equals(this.nextAction, CALL_ALIPAY_SDK);
     }
 
     public boolean isCallWXSDK() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3f3ff3fc", new Object[]{this})).booleanValue() : TextUtils.equals(this.nextAction, CALL_WEIXIN_SDK);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3f3ff3fc", new Object[]{this})).booleanValue() : StringUtils.equals(this.nextAction, CALL_WEIXIN_SDK);
     }
 
     public boolean isSingleTop() {

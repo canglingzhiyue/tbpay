@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -113,10 +113,10 @@ public class hju extends RecyclerView.Adapter {
         }
         q.a("QuickExpressionAdapter", "quick matchKey:" + stickerConfig.matchKey);
         if (viewHolder instanceof b) {
-            if (!TextUtils.isEmpty(stickerConfig.thumbnail)) {
+            if (!StringUtils.isEmpty(stickerConfig.thumbnail)) {
                 ((b) viewHolder).f28707a.setImageUrl(stickerConfig.thumbnail);
             }
-        } else if ((viewHolder instanceof a) && !TextUtils.isEmpty(stickerConfig.thumbnail)) {
+        } else if ((viewHolder instanceof a) && !StringUtils.isEmpty(stickerConfig.thumbnail)) {
             ((a) viewHolder).f28706a.setImageUrl(stickerConfig.thumbnail);
         }
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: tb.hju.1
@@ -191,7 +191,7 @@ public class hju extends RecyclerView.Adapter {
         }
         for (String str : list) {
             if (hashMap != null && hashMap.containsKey(str) && (stickerConfig = hashMap.get(str)) != null) {
-                if (TextUtils.equals(stickerConfig.type, "1")) {
+                if (StringUtils.equals(stickerConfig.type, "1")) {
                     a2 = com.taobao.taolive.sdk.utils.b.a(this.c, 90.0f);
                 } else {
                     a2 = com.taobao.taolive.sdk.utils.b.a(this.c, 24.0f);
@@ -223,7 +223,7 @@ public class hju extends RecyclerView.Adapter {
         }
         try {
             HashMap<String, String> hashMap = new HashMap<>();
-            hashMap.put("type", TextUtils.equals("1", stickerConfig.type) ? "longword" : ChatInputConstant.PANEL_ID_EMOJI);
+            hashMap.put("type", StringUtils.equals("1", stickerConfig.type) ? "longword" : ChatInputConstant.PANEL_ID_EMOJI);
             hashMap.put("emoticon_id", stickerConfig.id);
             phg.a().a(this.e, "Comment_EmoticonConvenient", hashMap);
         } catch (Exception e) {

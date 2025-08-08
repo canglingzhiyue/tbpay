@@ -1,7 +1,7 @@
 package com.taobao.analysis.monitor;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.util.ALog;
@@ -121,7 +121,7 @@ public class a {
                     return;
                 }
                 try {
-                    a.this.a(new C0338a(new d(str, str2, (TextUtils.isEmpty(str3) || str3.length() <= 128) ? str3 : dir.b(str3), z, j, j2), new URI(str3).getHost(), i));
+                    a.this.a(new C0338a(new d(str, str2, (StringUtils.isEmpty(str3) || str3.length() <= 128) ? str3 : dir.b(str3), z, j, j2), new URI(str3).getHost(), i));
                 } catch (Throwable th) {
                     ALog.e("AbnormalFlowMonitor", "run putData failed", null, th, new Object[0]);
                 }

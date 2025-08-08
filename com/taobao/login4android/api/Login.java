@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.webkit.CookieManager;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -217,7 +217,7 @@ public class Login {
                 LoginStatus.browserRefUrl = "";
                 LoginStatus.mtopApiReferer = "";
             }
-            if (TextUtils.isEmpty(sProcessName)) {
+            if (StringUtils.isEmpty(sProcessName)) {
                 sProcessName = LoginThreadHelper.getCurProcessName(mContext);
             }
             if (bundle == null) {
@@ -582,7 +582,7 @@ public class Login {
             return;
         }
         Properties properties = new Properties();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             properties.setProperty("scene", str);
         }
         sendUT("LoginAPI_NavByScene");
@@ -736,7 +736,7 @@ public class Login {
                     th.printStackTrace();
                 }
             } else {
-                LoginTLogAdapter.e(TAG, "checkSessionValid false: sid=" + getSid() + "  ;userid is empty?=" + TextUtils.isEmpty(getUserId()));
+                LoginTLogAdapter.e(TAG, "checkSessionValid false: sid=" + getSid() + "  ;userid is empty?=" + StringUtils.isEmpty(getUserId()));
             }
             return checkSessionValid;
         }
@@ -1313,10 +1313,10 @@ public class Login {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ca65fbc5", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
-        if (mLoginPatterns == null && !TextUtils.isEmpty(str)) {
+        if (mLoginPatterns == null && !StringUtils.isEmpty(str)) {
             String[] split = str.split("[;]");
             mLoginPatterns = new Pattern[split.length];
             int length = mLoginPatterns.length;
@@ -1361,10 +1361,10 @@ public class Login {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2ec7c1f0", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (mLogoutPatterns == null && !TextUtils.isEmpty(LoginUrlConstants.getLogoutUrls())) {
+        if (mLogoutPatterns == null && !StringUtils.isEmpty(LoginUrlConstants.getLogoutUrls())) {
             String[] split = LoginUrlConstants.getLogoutUrls().split("[;]");
             mLogoutPatterns = new Pattern[split.length];
             int length = mLogoutPatterns.length;
@@ -1397,10 +1397,10 @@ public class Login {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("97b74977", new Object[0])).booleanValue();
         }
-        if (TextUtils.isEmpty(sProcessName)) {
+        if (StringUtils.isEmpty(sProcessName)) {
             sProcessName = LoginThreadHelper.getCurProcessName(mContext);
         }
-        return TextUtils.equals(sProcessName, "com.taobao.taobao");
+        return StringUtils.equals(sProcessName, "com.taobao.taobao");
     }
 
     public static void sendUT(String str) {
@@ -1497,9 +1497,9 @@ public class Login {
                 boolean z = false;
                 boolean z2 = false;
                 for (String str : cookieManager.getCookie("https://.taobao.com").split(";")) {
-                    if (!TextUtils.isEmpty(str) && str.trim().startsWith("unb") && !str.trim().endsWith("=")) {
+                    if (!StringUtils.isEmpty(str) && str.trim().startsWith("unb") && !str.trim().endsWith("=")) {
                         z2 = true;
-                    } else if (!TextUtils.isEmpty(str) && str.trim().startsWith("cookie2") && !str.trim().endsWith("=")) {
+                    } else if (!StringUtils.isEmpty(str) && str.trim().startsWith("cookie2") && !str.trim().endsWith("=")) {
                         z = true;
                     }
                 }

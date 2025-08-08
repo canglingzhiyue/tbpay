@@ -2,7 +2,7 @@ package com.taobao.relationship.weex;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -68,7 +68,7 @@ public class FollowWeexComponent extends WXComponent<FollowWeexButton> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bacff519", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
         } else {
             this.mFollowContext = new a();
             if (parseObject.containsKey("accountId")) {
@@ -106,16 +106,16 @@ public class FollowWeexComponent extends WXComponent<FollowWeexButton> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a1aa39fa", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
         } else {
             this.mViewConfig = new nme();
             String string = parseObject.getString("followSize");
-            if (!TextUtils.isEmpty(string) && (split2 = string.split(",")) != null && split2.length > 0) {
+            if (!StringUtils.isEmpty(string) && (split2 = string.split(",")) != null && split2.length > 0) {
                 this.mViewConfig.c = Integer.parseInt(split2[0]);
                 this.mViewConfig.d = Integer.parseInt(split2[1]);
             }
             String string2 = parseObject.getString("unFollowSize");
-            if (!TextUtils.isEmpty(string2) && (split = string2.split(",")) != null && split.length > 0) {
+            if (!StringUtils.isEmpty(string2) && (split = string2.split(",")) != null && split.length > 0) {
                 this.mViewConfig.f31571a = Integer.parseInt(split[0]);
                 this.mViewConfig.b = Integer.parseInt(split[1]);
             }
@@ -177,7 +177,7 @@ public class FollowWeexComponent extends WXComponent<FollowWeexButton> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f261bc15", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
         } else {
             this.mOperateConfig = new nmd();
             if (parseObject.containsKey("cancelAutoCheckForState")) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
@@ -273,7 +273,7 @@ public class lfy extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a821d36c", new Object[]{this, new Boolean(z)});
-        } else if (!j.a("enableHomePageJumpToNextPageCostOpt", true) || TextUtils.isEmpty(this.b)) {
+        } else if (!j.a("enableHomePageJumpToNextPageCostOpt", true) || StringUtils.isEmpty(this.b)) {
         } else {
             View nativeView = getNativeView();
             if (!(nativeView instanceof HGifView)) {

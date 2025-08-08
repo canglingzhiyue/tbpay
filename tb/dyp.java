@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.detail.activity.base.TaobaoBaseActivity;
@@ -62,10 +62,10 @@ public class dyp {
         if (this.b == null || this.c == null || (egwVar2 = this.d) == null || this.f27117a == null || this.e == null) {
             return;
         }
-        if (!TextUtils.isEmpty(egwVar2.f27300a)) {
+        if (!StringUtils.isEmpty(egwVar2.f27300a)) {
             this.c.setContentText(this.d.f27300a);
         }
-        if (!TextUtils.isEmpty(this.d.c)) {
+        if (!StringUtils.isEmpty(this.d.c)) {
             f.a(this.f27117a).a(this.c.getIconView(), this.d.c);
         }
         a(this.d.d);
@@ -190,7 +190,7 @@ public class dyp {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (this.c == null || (egwVar = this.d) == null || TextUtils.isEmpty(egwVar.b)) {
+        } else if (this.c == null || (egwVar = this.d) == null || StringUtils.isEmpty(egwVar.b)) {
         } else {
             this.c.setVisibility(0);
         }

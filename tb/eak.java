@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,14 +65,14 @@ public class eak extends d<g> {
             String str2 = gVar.d;
             String str3 = gVar.b;
             boolean z = gVar.c;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.g.setText(str3);
             } else {
                 this.g.setText(str);
             }
             this.g.setEnabled(z);
             c();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 a(str2);
             }
             this.g.setTypeface(Typeface.defaultFromStyle(1));
@@ -85,7 +85,7 @@ public class eak extends d<g> {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
         } else if (((g) this.c).dmComponent != null && ((g) this.c).dmComponent.getFields() != null) {
             String string = ((g) this.c).dmComponent.getFields().getString("styleId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "";
             }
             TextView textView = this.g;

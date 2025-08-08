@@ -1,7 +1,7 @@
 package com.taobao.desktop.widget.manager;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -88,7 +88,7 @@ public class h {
                 if (next instanceof JSONObject) {
                     if (c) {
                         String string = ((JSONObject) next).getString("id");
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             return null;
                         }
                         a(string, (JSONObject) next);
@@ -97,7 +97,7 @@ public class h {
                     } else {
                         JSONObject jSONObject3 = ((JSONObject) next).getJSONObject("jsonContent");
                         String string2 = ((JSONObject) next).getString("id");
-                        if (!TextUtils.isEmpty(string2) && jSONObject3 != null && (jSONArray2 = jSONObject3.getJSONArray("data")) != null && jSONArray2.size() != 0) {
+                        if (!StringUtils.isEmpty(string2) && jSONObject3 != null && (jSONArray2 = jSONObject3.getJSONArray("data")) != null && jSONArray2.size() != 0) {
                             JSONObject jSONObject4 = (JSONObject) jSONArray2.get(0);
                             hashMap.put(string2, jSONObject4.toString());
                             g.a(this.b).a(string2, jSONObject4.toString());

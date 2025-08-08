@@ -1,7 +1,7 @@
 package com.taobao.message.lab.comfrm.support.ut;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.util.ValueUtil;
 import com.ut.mini.UTAnalytics;
@@ -46,9 +46,9 @@ public class UserTrackServiceImpl implements UserTrackService {
             for (UserTrack userTrack : list) {
                 if (userTrack.name != null) {
                     String str = "0";
-                    String str2 = !TextUtils.isEmpty(userTrack.spmB) ? userTrack.spmB : str;
-                    String str3 = !TextUtils.isEmpty(userTrack.spmC) ? userTrack.spmC : str;
-                    if (!TextUtils.isEmpty(userTrack.spmD)) {
+                    String str2 = !StringUtils.isEmpty(userTrack.spmB) ? userTrack.spmB : str;
+                    String str3 = !StringUtils.isEmpty(userTrack.spmC) ? userTrack.spmC : str;
+                    if (!StringUtils.isEmpty(userTrack.spmD)) {
                         str = userTrack.spmD;
                     }
                     String str4 = this.mSpmA + '.' + str2 + '.' + str3 + '.' + str;
@@ -83,7 +83,7 @@ public class UserTrackServiceImpl implements UserTrackService {
         if (map == null) {
             map = new HashMap<>();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             map.put("spm-cnt", str);
         }
         return map;
@@ -97,7 +97,7 @@ public class UserTrackServiceImpl implements UserTrackService {
         if (map == null) {
             map = new HashMap<>();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             map.put("spm-url", str);
         }
         return map;

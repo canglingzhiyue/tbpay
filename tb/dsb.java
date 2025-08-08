@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.export.UMDimKey;
 import com.alibaba.android.umbrella.link.export.a;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class dsb {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put(UMDimKey.DIM_1, str2);
         }
         bpp.a().logInfo("BehaviX", str, "eventProcess", null, hashMap, aVar);

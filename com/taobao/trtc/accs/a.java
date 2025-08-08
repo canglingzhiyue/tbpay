@@ -1,7 +1,7 @@
 package com.taobao.trtc.accs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.status.NetworkStatusHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -126,7 +126,7 @@ public class a {
                     return (String) ipChange.ipc$dispatch("46264ad0", new Object[]{this, str});
                 }
                 String str2 = (String) a.c().get(str);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     return str2;
                 }
                 TrtcLog.a("TrtcAccsHandler", "Can not get service by serviceId: " + str);

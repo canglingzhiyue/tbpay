@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.asp.APreferencesManager;
 import com.taobao.accs.base.AccsDataListener;
@@ -119,7 +119,7 @@ public class ddk implements AccsDataListener {
                         return;
                     } else if ("register".equals(a3)) {
                         String a4 = i.a(jSONObject, "deviceId", null);
-                        if (!TextUtils.isEmpty(a4)) {
+                        if (!StringUtils.isEmpty(a4)) {
                             TaobaoRegister.setIsRegisterSuccess(true);
                             f.a().b();
                             Config.setDeviceToken(GlobalClientInfo.getContext(), a4);
@@ -188,7 +188,7 @@ public class ddk implements AccsDataListener {
             return;
         }
         String str3 = NotifManager.tokenReportDataId;
-        if (TextUtils.isEmpty(str3) || !str3.equals(str2)) {
+        if (StringUtils.isEmpty(str3) || !str3.equals(str2)) {
             return;
         }
         Launcher_InitPush.manuMonitor.result = i == 200;
@@ -206,7 +206,7 @@ public class ddk implements AccsDataListener {
             return;
         }
         String a2 = i.a(jSONObject, ddl.JSON_PUSH_USER_TOKEN, null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             if (iCallback == null) {
                 return;
             }

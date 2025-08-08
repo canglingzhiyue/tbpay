@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.seauthenticator.iotauth.AuthViewManager;
 import com.alipay.android.phone.seauthenticator.iotauth.face.FaceAuthManager;
 import com.alipay.android.phone.seauthenticator.iotauth.fingerprint.FpFullViewDialog;
@@ -516,7 +516,7 @@ public class AuthenticatorManager {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("7214bcdb", new Object[]{context, str, czbVar});
-            } else if (czbVar == null || context == null || TextUtils.isEmpty(str)) {
+            } else if (czbVar == null || context == null || StringUtils.isEmpty(str)) {
                 czbVar.authResult(-2, "parameter is null");
             } else {
                 try {

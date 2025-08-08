@@ -1,6 +1,6 @@
 package com.taobao.tao.shop.rule;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -26,7 +26,7 @@ public class h implements com.taobao.orange.f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d0b193b", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str) && (strArr = this.f21100a) != null) {
+        } else if (!StringUtils.isEmpty(str) && (strArr = this.f21100a) != null) {
             for (String str2 : strArr) {
                 if (str.equals(str2)) {
                     f.a().b(str);

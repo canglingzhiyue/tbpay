@@ -2,7 +2,7 @@ package com.taobao.tao.powermsg.managers;
 
 import android.support.v4.util.ArrayMap;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.utils.MsgLog;
 import com.taobao.tao.powermsg.common.h;
@@ -59,7 +59,7 @@ public class e {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             this.c = str;
@@ -175,7 +175,7 @@ public class e {
         ArrayMap<String, String> arrayMap = null;
         if (c != null) {
             arrayMap = c.j;
-            str4 = a.a(i, TextUtils.isEmpty(str3) ? "_default" : str3);
+            str4 = a.a(i, StringUtils.isEmpty(str3) ? "_default" : str3);
             if (arrayMap.get(str4) != null) {
                 return true;
             }
@@ -201,7 +201,7 @@ public class e {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
             }
-            return !TextUtils.isEmpty(str) && f20857a.containsKey(str);
+            return !StringUtils.isEmpty(str) && f20857a.containsKey(str);
         }
     }
 
@@ -225,7 +225,7 @@ public class e {
                 return 0;
             }
             ArrayMap<String, String> arrayMap = c.j;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = "_default";
             }
             arrayMap.remove(a.a(i, str3));
@@ -286,7 +286,7 @@ public class e {
                     if (aVar.g) {
                         return 1000;
                     }
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "_default";
                     }
                     String a2 = a.a(i, str3);

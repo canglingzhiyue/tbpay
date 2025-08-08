@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -203,7 +203,7 @@ public class e extends oir {
                         cacheDir = ShareBizAdapter.getInstance().getAppEnv().b().getCacheDir();
                     }
                     String a2 = oba.a(z, mergeBitmapMerge, cacheDir, context);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         obc.a(context, obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY, str);
                     }
                     if (mergeBitmapMerge != null && !mergeBitmapMerge.isRecycled()) {
@@ -222,7 +222,7 @@ public class e extends oir {
                         return;
                     }
                     String str3 = "onPostExecute：" + Thread.currentThread().getName();
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         a aVar2 = aVar;
                         if (aVar2 != null) {
                             aVar2.a(str2);
@@ -317,7 +317,7 @@ public class e extends oir {
                                     cacheDir = ShareBizAdapter.getInstance().getAppEnv().b().getCacheDir();
                                 }
                                 String a2 = oba.a(z, mergeBitmapMerge, cacheDir, context);
-                                if (!TextUtils.isEmpty(a2)) {
+                                if (!StringUtils.isEmpty(a2)) {
                                     obc.a(context, obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY, str);
                                 }
                                 if (mergeBitmapMerge != null && !mergeBitmapMerge.isRecycled()) {
@@ -336,7 +336,7 @@ public class e extends oir {
                                     return;
                                 }
                                 String str3 = "onPostExecute：" + Thread.currentThread().getName();
-                                if (!TextUtils.isEmpty(str2)) {
+                                if (!StringUtils.isEmpty(str2)) {
                                     if (aVar != null) {
                                         aVar.a(str2);
                                     }

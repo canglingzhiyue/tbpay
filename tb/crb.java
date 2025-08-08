@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
 import com.etao.feimagesearch.datapoints.StatisticalDataPoint;
@@ -55,12 +55,12 @@ public abstract class crb {
         if (crcVar != null && crcVar.a()) {
             try {
                 String a2 = l.a(crcVar.b, crcVar.c);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     z.a().a("DOWNLOAD_MODEL", -1);
                     a2 = l.a(crcVar.b, false, crcVar.c, crcVar.b());
                     h.a(z.a().a("DOWNLOAD_MODEL"), crcVar.b());
                 }
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     h.a("downloadFailed", crcVar.b());
                 }
                 return a2;
@@ -92,7 +92,7 @@ public abstract class crb {
             a2 = a(this.d);
         } catch (Exception unused) {
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a(a2, this.d.d);
         }
         cox.b(StatisticalDataPoint.PageName.PHOTO_SEARCH_RESULT.getPageName(), StatisticalDataPoint.DataPoint.IRP_NETWORK_BUILD_FAILED.getPoint(), "network", this.d.b(), "reason", "emptyPath");

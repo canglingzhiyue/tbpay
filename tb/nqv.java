@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class nqv extends nqr<WeexActivateCellBean, b> {
         super.a(jSONObject, (JSONObject) weexActivateCellBean, (WeexActivateCellBean) bVar);
         WeexBean weexBean = new WeexBean();
         weexBean.type = jSONObject.getString("tItemType");
-        if (TextUtils.isEmpty(weexBean.type)) {
+        if (StringUtils.isEmpty(weexBean.type)) {
             weexBean.type = jSONObject.getString("type");
         }
         weexBean.model = jSONObject;

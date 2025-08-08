@@ -12,7 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -401,7 +401,7 @@ public class dya implements Handler.Callback, TStudioHelper.a {
         if (map != null) {
             hashMap.putAll(map);
         }
-        c(TextUtils.equals((CharSequence) hashMap.get("isInit"), "true"));
+        c(StringUtils.equals((CharSequence) hashMap.get("isInit"), "true"));
         com.taobao.android.detail.core.open.e c2 = ((h) a2).c();
         e eVar = new e(this.f27083a, epo.f(), cVar);
         c2.a(hashMap, eVar);
@@ -1454,7 +1454,7 @@ public class dya implements Handler.Callback, TStudioHelper.a {
                 return;
             }
             for (String str : map.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String str2 = map.get(str);
                     if (str2 == null) {
                         str2 = "";

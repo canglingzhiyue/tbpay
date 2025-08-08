@@ -1,7 +1,7 @@
 package com.taobao.search.m3;
 
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -168,13 +168,13 @@ public final class g extends nss<M3CellBean> {
             auctionBaseBean.wfDelayTime = (int) jSONObject3.getLongValue("delayTime");
             auctionBaseBean.wfHideCountDown = jSONObject3.getBooleanValue("hideCountDown");
         }
-        if (TextUtils.isEmpty(auctionBaseBean.videoCover)) {
+        if (StringUtils.isEmpty(auctionBaseBean.videoCover)) {
             auctionBaseBean.videoCover = m3CellBean.getPicPath();
         }
-        if (!TextUtils.isEmpty(auctionBaseBean.wfVideoCover)) {
+        if (!StringUtils.isEmpty(auctionBaseBean.wfVideoCover)) {
             return;
         }
-        auctionBaseBean.wfVideoCover = !TextUtils.isEmpty(m3CellBean.getUprightImage()) ? m3CellBean.getUprightImage() : m3CellBean.getPicPath();
+        auctionBaseBean.wfVideoCover = !StringUtils.isEmpty(m3CellBean.getUprightImage()) ? m3CellBean.getUprightImage() : m3CellBean.getPicPath();
     }
 
     private final void a(AuctionBaseBean auctionBaseBean, com.alibaba.fastjson.JSONObject jSONObject) {
@@ -190,7 +190,7 @@ public final class g extends nss<M3CellBean> {
         HashMap hashMap = new HashMap();
         for (String key : jSONObject2.keySet()) {
             String string = jSONObject2.getString(key);
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(string)) {
                 q.a((Object) key, "key");
                 hashMap.put(key, string);
             }
@@ -209,7 +209,7 @@ public final class g extends nss<M3CellBean> {
             ipChange.ipc$dispatch("6c06f36c", new Object[]{this, jSONObject, m3CellBean});
         } else if (m3CellBean.getP4pIcon() == null) {
             m3CellBean.setNewDate(jSONObject.getString("newDate"));
-            if (!TextUtils.isEmpty(m3CellBean.getNewDate())) {
+            if (!StringUtils.isEmpty(m3CellBean.getNewDate())) {
                 return;
             }
             JSONArray jSONArray = jSONObject.getJSONArray("leftSuperScriptInfo");
@@ -226,15 +226,15 @@ public final class g extends nss<M3CellBean> {
                         int hashCode = string.hashCode();
                         if (hashCode != 75165) {
                             if (hashCode == 1417350021) {
-                                if (string.equals("liveIcon") && !TextUtils.isEmpty(string2) && intValue3 > 0 && intValue4 > 0) {
+                                if (string.equals("liveIcon") && !StringUtils.isEmpty(string2) && intValue3 > 0 && intValue4 > 0) {
                                     m3CellBean.setLeftScriptInfo(new com.taobao.search.m3.image.c(string3, 1, string2, intValue3, intValue4, jSONObject3.getString("needHiddenLiveNumber"), 0, 0, 0, 0));
                                     return;
                                 }
-                            } else if (hashCode == 1525159562 && string.equals("3DIcon") && !TextUtils.isEmpty(string2) && intValue3 > 0 && intValue4 > 0) {
+                            } else if (hashCode == 1525159562 && string.equals("3DIcon") && !StringUtils.isEmpty(string2) && intValue3 > 0 && intValue4 > 0) {
                                 m3CellBean.setLeftScriptInfo(new com.taobao.search.m3.image.c(null, 2, string2, intValue3, intValue4, null, jSONObject3.getIntValue("listLeft"), jSONObject3.getIntValue("listTop"), jSONObject3.getIntValue("wfLeft"), jSONObject3.getIntValue("wfTop")));
                                 return;
                             }
-                        } else if (string.equals("LBS") && !TextUtils.isEmpty(string3)) {
+                        } else if (string.equals("LBS") && !StringUtils.isEmpty(string3)) {
                             m3CellBean.setLeftScriptInfo(new com.taobao.search.m3.image.c(string3, 3, null, 0, 0, jSONObject3.getString("needHiddenLiveNumber"), 0, 0, 0, 0));
                             return;
                         }
@@ -246,7 +246,7 @@ public final class g extends nss<M3CellBean> {
                 return;
             }
             String string4 = jSONObject2.getString("url");
-            if (TextUtils.isEmpty(string4) || (intValue = jSONObject2.getIntValue("width")) <= 0 || (intValue2 = jSONObject2.getIntValue("height")) <= 0) {
+            if (StringUtils.isEmpty(string4) || (intValue = jSONObject2.getIntValue("width")) <= 0 || (intValue2 = jSONObject2.getIntValue("height")) <= 0) {
                 return;
             }
             m3CellBean.setLeftScriptInfo(new com.taobao.search.m3.image.c(jSONObject2.getString("liveViewNum"), 1, string4, intValue, intValue2, null, 0, 0, 0, 0));
@@ -289,7 +289,7 @@ public final class g extends nss<M3CellBean> {
             if (baseSearchResult != null) {
                 com.alibaba.fastjson.JSONObject jSONObject2 = ((CommonSearchResult) baseSearchResult).pageInfo;
                 String string = jSONObject2 != null ? jSONObject2.getString("pkGroup") : null;
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 com.alibaba.fastjson.JSONObject jSONObject3 = jSONObject.getJSONObject("pkInfo");
@@ -300,7 +300,7 @@ public final class g extends nss<M3CellBean> {
                         int size = jSONObject3.size();
                         for (int i = 0; i < size; i++) {
                             String string2 = jSONArray.getString(i);
-                            if (!TextUtils.isEmpty(string2)) {
+                            if (!StringUtils.isEmpty(string2)) {
                                 arrayList.add(string2);
                             }
                         }
@@ -497,7 +497,7 @@ public final class g extends nss<M3CellBean> {
             return (com.taobao.search.m3.singlerow.c) ipChange.ipc$dispatch("7c22dcac", new Object[]{this, jSONObject});
         }
         String text = jSONObject.getString("text");
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return null;
         }
         String string = jSONObject.getString("url");
@@ -514,7 +514,7 @@ public final class g extends nss<M3CellBean> {
             return (com.taobao.search.m3.composite.c) ipChange.ipc$dispatch("b0cc4dd8", new Object[]{this, jSONObject});
         }
         String text = jSONObject.getString("text");
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return null;
         }
         Integer a2 = a(jSONObject.getString("textColor"));
@@ -529,7 +529,7 @@ public final class g extends nss<M3CellBean> {
             return (com.taobao.search.m3.comment.a) ipChange.ipc$dispatch("3d7c1843", new Object[]{this, jSONObject});
         }
         String text = jSONObject.getString("text");
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return null;
         }
         String string = jSONObject.getString("numComment");
@@ -576,7 +576,7 @@ public final class g extends nss<M3CellBean> {
         String showText = jSONObject.getString("showText");
         String searchText = jSONObject.getString("searchText");
         String string = jSONObject.getString("trace");
-        if (TextUtils.isEmpty(showText) || TextUtils.isEmpty(searchText)) {
+        if (StringUtils.isEmpty(showText) || StringUtils.isEmpty(searchText)) {
             return null;
         }
         Integer a2 = a(jSONObject.getString("tagColor"));
@@ -592,11 +592,11 @@ public final class g extends nss<M3CellBean> {
             return (com.taobao.search.m3.interactive.c) ipChange.ipc$dispatch("7541b79f", new Object[]{this, jSONObject});
         }
         String query = jSONObject.getString("query");
-        if (TextUtils.isEmpty(query)) {
+        if (StringUtils.isEmpty(query)) {
             return null;
         }
         String text = jSONObject.getString("text");
-        if (TextUtils.isEmpty(text)) {
+        if (StringUtils.isEmpty(text)) {
             return null;
         }
         String string = jSONObject.getString("tag_pic");
@@ -621,7 +621,7 @@ public final class g extends nss<M3CellBean> {
             string = "";
         }
         String value = jSONObject.getString("propertyValueName");
-        if (TextUtils.isEmpty(value)) {
+        if (StringUtils.isEmpty(value)) {
             return null;
         }
         q.a((Object) value, "value");
@@ -744,7 +744,7 @@ public final class g extends nss<M3CellBean> {
             int size2 = jSONArray2.size();
             for (int i2 = 0; i2 < size2; i2++) {
                 String text = jSONArray2.getString(i2);
-                if (!TextUtils.isEmpty(text)) {
+                if (!StringUtils.isEmpty(text)) {
                     q.a((Object) text, "text");
                     arrayList5.add(new com.taobao.search.m3.property.b("", text, false, false));
                 }
@@ -761,7 +761,7 @@ public final class g extends nss<M3CellBean> {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("eb7402d9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str == null) {
@@ -799,7 +799,7 @@ public final class g extends nss<M3CellBean> {
                 com.alibaba.fastjson.JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 if (jSONObject3 != null) {
                     String string2 = jSONObject3.getString("text");
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         if (sb.length() > 0) {
                             sb.append(" ");
                         }
@@ -827,14 +827,14 @@ public final class g extends nss<M3CellBean> {
         }
         ArrayList arrayList2 = new ArrayList(jSONArray2.size());
         String string5 = jSONArray2.getString(0);
-        if (TextUtils.isEmpty(string5)) {
+        if (StringUtils.isEmpty(string5)) {
             return;
         }
         Integer a3 = a(jSONObject4.getString("shopInfoColor"));
         arrayList2.add(new com.taobao.search.m3.shoinfo.c(a3, string5, Constants.Name.SUFFIX, 0, 0, null));
         if (jSONArray2.size() > 1) {
             String string6 = jSONArray2.getString(1);
-            if (!TextUtils.isEmpty(string6)) {
+            if (!StringUtils.isEmpty(string6)) {
                 arrayList2.add(new com.taobao.search.m3.shoinfo.c(a3, string6, "all", 0, 0, null));
             }
         }
@@ -870,9 +870,9 @@ public final class g extends nss<M3CellBean> {
         String string2 = jSONObject.getString("location");
         String string3 = jSONObject.getString("commentCount");
         String string4 = jSONObject.getString("daySold");
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             string4 = jSONObject.getString(nog.PRD_REALSALES);
-            if (TextUtils.isEmpty(string4)) {
+            if (StringUtils.isEmpty(string4)) {
                 Integer integer = jSONObject.getInteger(nog.PRD_SELLED);
                 int intValue = integer != null ? integer.intValue() : -1;
                 if (intValue < 0) {
@@ -896,7 +896,7 @@ public final class g extends nss<M3CellBean> {
             int intValue2 = jSONObject3.getIntValue("iconWidth");
             int intValue3 = jSONObject3.getIntValue("iconHeight");
             String iconUrl = jSONObject3.getString("iconUrl");
-            if (intValue2 > 0 && intValue3 > 0 && !TextUtils.isEmpty(iconUrl)) {
+            if (intValue2 > 0 && intValue3 > 0 && !StringUtils.isEmpty(iconUrl)) {
                 q.a((Object) iconUrl, "iconUrl");
                 dVar2 = new com.taobao.search.m3.price.d(intValue2, intValue3, iconUrl);
             }
@@ -906,7 +906,7 @@ public final class g extends nss<M3CellBean> {
             Integer a4 = a(jSONObject3.getString("subTextColor"));
             if (jSONObject3.getBooleanValue("showOriginPrice")) {
                 String string8 = jSONObject3.getString("originPrice");
-                if (!TextUtils.isEmpty(string8)) {
+                if (!StringUtils.isEmpty(string8)) {
                     str7 = string8;
                 }
                 bool = Boolean.valueOf(!jSONObject3.getBooleanValue("hiddenPriceUnderline"));
@@ -1139,17 +1139,17 @@ public final class g extends nss<M3CellBean> {
             m3CellBean.setUprightImage(jSONObject2.getString("uprightImgImage"));
             m3CellBean.setWfRatioOrigin(jSONObject2.getString("uprightImgAspectRatio"));
             m3CellBean.setWfRatio(com.taobao.android.searchbaseframe.util.g.a(m3CellBean.getWfRatioOrigin(), 1.0f));
-            if (TextUtils.isEmpty(m3CellBean.getUprightImage())) {
+            if (StringUtils.isEmpty(m3CellBean.getUprightImage())) {
                 m3CellBean.setUprightImage(m3CellBean.getPicPath());
             }
-            if (!TextUtils.isEmpty(m3CellBean.getUprightImage()) && TextUtils.isEmpty(m3CellBean.getWfRatioOrigin())) {
+            if (!StringUtils.isEmpty(m3CellBean.getUprightImage()) && StringUtils.isEmpty(m3CellBean.getWfRatioOrigin())) {
                 m3CellBean.setWfRatioOrigin(String.valueOf(m3CellBean.getWfRatio()));
             }
         }
-        if (TextUtils.isEmpty(m3CellBean.getPicPath())) {
+        if (StringUtils.isEmpty(m3CellBean.getPicPath())) {
             m3CellBean.setPicPath(jSONObject.getString(nog.PRD_PICURL));
         }
-        if (TextUtils.isEmpty(m3CellBean.getUprightImage())) {
+        if (StringUtils.isEmpty(m3CellBean.getUprightImage())) {
             m3CellBean.setUprightImage(jSONObject.getString(nog.PRD_WF_PICURL));
             String string = jSONObject.getString("uprightImgAspectRatio");
             if (string != null) {
@@ -1157,7 +1157,7 @@ public final class g extends nss<M3CellBean> {
                 m3CellBean.setWfRatio(com.taobao.android.searchbaseframe.util.g.a(string, 1.0f));
             }
         }
-        if (!TextUtils.isEmpty(m3CellBean.getWfRatioOrigin()) || TextUtils.isEmpty(m3CellBean.getUprightImage())) {
+        if (!StringUtils.isEmpty(m3CellBean.getWfRatioOrigin()) || StringUtils.isEmpty(m3CellBean.getUprightImage())) {
             return;
         }
         m3CellBean.setWfRatio(0.6666667f);
@@ -1171,7 +1171,7 @@ public final class g extends nss<M3CellBean> {
             ipChange.ipc$dispatch("325e59ee", new Object[]{this, jSONObject, m3CellBean});
         } else if (jSONObject != null) {
             String string = jSONObject.getString("text");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             int intValue = jSONObject.getIntValue("iconWidth");

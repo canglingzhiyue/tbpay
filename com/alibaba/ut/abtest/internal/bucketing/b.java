@@ -2,7 +2,7 @@ package com.alibaba.ut.abtest.internal.bucketing;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentGroupV5;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.evo.internal.database.ExperimentDO;
@@ -197,7 +197,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("d56608a1", new Object[]{this, uri});
         }
         String scheme = uri.getScheme();
-        if (TextUtils.isEmpty(scheme) || scheme.startsWith("http")) {
+        if (StringUtils.isEmpty(scheme) || scheme.startsWith("http")) {
             scheme = "http";
         }
         return scheme + ":" + uri.getAuthority();
@@ -253,7 +253,7 @@ public class b {
                 }
             }
             for (String str : experimentV5.getSwitchSet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     List<String> list = this.e.get(str);
                     if (list == null) {
                         list = new CopyOnWriteArrayList<>();
@@ -432,7 +432,7 @@ public class b {
                     long uptimeMillis = SystemClock.uptimeMillis();
                     k b = k.b();
                     String a3 = b.a("expKey_" + str, (String) null);
-                    if (!TextUtils.isEmpty(a3)) {
+                    if (!StringUtils.isEmpty(a3)) {
                         ExperimentV5 experimentV5 = (ExperimentV5) JSONObject.parseObject(a3, ExperimentV5.class);
                         b(experimentV5);
                         b(experimentV5.getId());
@@ -472,7 +472,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (com.alibaba.ut.abtest.internal.bucketing.model.b) ipChange.ipc$dispatch("73c8da92", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (com.alibaba.ut.abtest.internal.bucketing.model.b bVar : this.f.values()) {
@@ -494,7 +494,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("eb209513", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         List<String> list = this.e.get(str);
@@ -503,7 +503,7 @@ public class b {
         }
         k b = k.b();
         String a2 = b.a("switchName_" + str, (String) null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList(Arrays.asList(a2.split("###")));

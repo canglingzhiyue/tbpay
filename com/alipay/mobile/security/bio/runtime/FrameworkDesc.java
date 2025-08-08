@@ -2,7 +2,7 @@ package com.alipay.mobile.security.bio.runtime;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alipay.mobile.security.bio.exception.BioIllegalArgumentException;
@@ -54,7 +54,7 @@ public class FrameworkDesc {
         } else {
             str = new String(assetsData);
         }
-        if (TextUtils.isEmpty(str) && Runtime.isRunningOnQuinox(context)) {
+        if (StringUtils.isEmpty(str) && Runtime.isRunningOnQuinox(context)) {
             Resources resourcesByBundleName = Runtime.getResourcesByBundleName(BUNDLE_NAME_BIOMETRIC);
             if (resourcesByBundleName == null) {
                 BioLog.w("Failed to getResourcesByBundleName(android-phone-securitycommon-biometric)");
@@ -67,7 +67,7 @@ public class FrameworkDesc {
                 }
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new BioIllegalArgumentException("Failed to read 'zoloz_bio_framework.json', bio module can't work.");
         }
         FrameworkDesc frameworkDesc = (FrameworkDesc) JSON.parseObject(str, FrameworkDesc.class);

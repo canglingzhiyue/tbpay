@@ -2,7 +2,7 @@ package com.taobao.umipublish.extension.windvane;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,7 +62,7 @@ public class PublishConfigManager {
             return;
         }
         String string = jSONObject.getString(a.CONFIG_POLICY);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "netFirst";
         }
         if ("netFirst".equals(string)) {
@@ -74,7 +74,7 @@ public class PublishConfigManager {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                         PublishConfigManager.a(PublishConfigManager.this, context, jSONObject, rdzVar);
                     } else {
                         rdzVar.a(str);
@@ -104,7 +104,7 @@ public class PublishConfigManager {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                         PublishConfigManager.b(PublishConfigManager.this, context, jSONObject, rdzVar);
                     } else {
                         rdzVar.a(str);
@@ -233,7 +233,7 @@ public class PublishConfigManager {
                 if (rdzVar2 != null) {
                     rdzVar2.a(jSONObject2);
                 }
-                if (TextUtils.isEmpty(jSONObject2)) {
+                if (StringUtils.isEmpty(jSONObject2)) {
                     return;
                 }
                 PublishConfigManager.a(PublishConfigManager.this, context, jSONObject, jSONObject2);

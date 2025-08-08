@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Handler;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -230,7 +230,7 @@ public class TipsView {
         if (ipChange instanceof IpChange) {
             return (TipsView) ipChange.ipc$dispatch("98e19a41", new Object[]{this, str});
         }
-        if (this.p != null && !TextUtils.isEmpty(str)) {
+        if (this.p != null && !StringUtils.isEmpty(str)) {
             this.s = str;
         }
         return f17193a;

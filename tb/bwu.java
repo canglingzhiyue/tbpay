@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.motu.tbrest.d;
 import com.alibaba.ut.abtest.internal.util.b;
 import com.alibaba.ut.abtest.internal.util.h;
@@ -38,11 +38,11 @@ public class bwu extends a {
                 return;
             }
             h.a("UserTrackPageLifeCycleListener", "updatePageName. pageName=" + str + ", pageObject=" + obj);
-            if (obj == null || TextUtils.isEmpty(str) || (a2 = cex.a().k().a(str, 2001, null, null, null, null, null)) == null) {
+            if (obj == null || StringUtils.isEmpty(str) || (a2 = cex.a().k().a(str, 2001, null, null, null, null, null)) == null) {
                 return;
             }
             String a3 = cex.a().k().a(a2, 2001, UTAnalytics.getInstance().getDefaultTracker().getPageProperties(obj));
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             UTAnalytics.getInstance().getDefaultTracker().updatePageUtparam(obj, a3);

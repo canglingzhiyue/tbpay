@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.standard.video;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -205,7 +205,7 @@ public final class g implements ekl {
                     List<AURARenderComponent> a2 = ((atq) recyclerView.getAdapter()).a();
                     for (int i = 0; i < a2.size(); i++) {
                         AURARenderComponent aURARenderComponent2 = a2.get(i);
-                        if (aURARenderComponent2 != null && TextUtils.equals(aURARenderComponent2.key, f.key)) {
+                        if (aURARenderComponent2 != null && StringUtils.equals(aURARenderComponent2.key, f.key)) {
                             int i2 = i + 1;
                             if (i2 >= a2.size() || (aURARenderComponent = a2.get(i2)) == null || !emg.a(aURARenderComponent)) {
                                 return;

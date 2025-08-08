@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.business.containerframe.frames;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.view.View;
 import android.view.ViewGroup;
@@ -168,7 +168,7 @@ public class d extends c {
             final ptk ptkVar = this.f.get(k);
             final IMessageService iMessageService = (IMessageService) this.f12380a.getService(IMessageService.class);
             if (ptkVar == null) {
-                if (!TextUtils.isEmpty(this.g)) {
+                if (!StringUtils.isEmpty(this.g)) {
                     ptkVar = new qqd(this.f12380a, (ViewGroup) this.c, this.g);
                 }
                 this.f.put(k, ptkVar);
@@ -203,6 +203,6 @@ public class d extends c {
 
     private String k() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f1302f6e", new Object[]{this}) : TextUtils.isEmpty(this.g) ? "WeexUrl" : this.g;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f1302f6e", new Object[]{this}) : StringUtils.isEmpty(this.g) ? "WeexUrl" : this.g;
     }
 }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -35,7 +35,7 @@ public class szy extends fuf {
         String str2 = (String) objArr[1];
         stv.a("DXDataParserMmGetLocalUrl", "evalWithArgs: url: " + str + ", downloadType: " + str2);
         String b = stu.b(str);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             stv.a("DXDataParserMmGetLocalUrl", "evalWithArgs: local path: " + b);
             return b;
         }
@@ -53,7 +53,7 @@ public class szy extends fuf {
             return;
         }
         String c = keo.c(str);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             stv.a("DXDataParserMmGetLocalUrl", "downloadUrl: can not parse file name, url: " + str);
             return;
         }

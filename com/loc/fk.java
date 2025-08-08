@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dns.storage.DnsPreference;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.loc.bt;
@@ -139,7 +139,7 @@ public final class fk {
         String[] strArr = new String[length];
         for (int i2 = 0; i2 < length; i2++) {
             String string = jSONArray.getString(i2);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (i == b) {
                     string = riy.ARRAY_START_STR + string + riy.ARRAY_END_STR;
                 }
@@ -183,7 +183,7 @@ public final class fk {
             }
             i2++;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         b(i).a(str);
@@ -207,7 +207,7 @@ public final class fk {
 
     private void g(int i) {
         String a2 = fx.a(this.j, "cbG9jaXA", c(i), (String) null);
-        if (TextUtils.isEmpty(a2) || this.f.contains(a2)) {
+        if (StringUtils.isEmpty(a2) || this.f.contains(a2)) {
             return;
         }
         b(i).a(a2);
@@ -226,7 +226,7 @@ public final class fk {
                         return null;
                     }
                     String e2 = e(i);
-                    if (!TextUtils.isEmpty(e2)) {
+                    if (!StringUtils.isEmpty(e2)) {
                         fnVar.d(b2.replace(host, e2));
                         fnVar.a().put("host", str);
                         fnVar.e(str);
@@ -255,7 +255,7 @@ public final class fk {
         if (z) {
             String c = b(i).c();
             String b2 = b(i).b();
-            if (TextUtils.isEmpty(b2) || b2.equals(c)) {
+            if (StringUtils.isEmpty(b2) || b2.equals(c)) {
                 return;
             }
             SharedPreferences.Editor a2 = fx.a(this.j, "cbG9jaXA");

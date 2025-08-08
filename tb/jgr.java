@@ -3,7 +3,7 @@ package tb;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +60,7 @@ public class jgr {
         }
         try {
             String str = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
-            return !TextUtils.isEmpty(str) ? str : "0.0.1";
+            return !StringUtils.isEmpty(str) ? str : "0.0.1";
         } catch (Exception e) {
             jfj.b(e);
             return "0.0.1";

@@ -1,7 +1,7 @@
 package com.uc.webview.internal.setup;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.ErrorCode;
 import com.uc.webview.base.GlobalSettings;
 import com.uc.webview.base.Log;
@@ -202,7 +202,7 @@ public final class h implements UCPlayer.Updater {
         if (f23964a.getAndSet(true)) {
             ErrorCode.UPDATE_INIT_DUPLICATED.report();
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             ErrorCode.UPDATE_INVALID_URL.report();
         }
         com.uc.webview.base.task.c cVar = new com.uc.webview.base.task.c() { // from class: com.uc.webview.internal.setup.h.4

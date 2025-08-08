@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -2273,7 +2273,7 @@ public abstract class Component<V extends View, P extends ogl> implements com.ta
             return;
         }
         String a2 = oec.a(getNode().e("id"), (String) null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         getNode().k().e().a((Component) this, a2, (com.taobao.tao.flexbox.layoutmanager.databinding.componentbind.componentinfo.b<com.taobao.tao.flexbox.layoutmanager.databinding.componentbind.componentinfo.b<T, ?>, ?>) bVar, (com.taobao.tao.flexbox.layoutmanager.databinding.componentbind.componentinfo.b<T, ?>) t);

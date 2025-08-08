@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -58,7 +58,7 @@ public class af extends Component<ViewGroup, a> implements com.taobao.tao.flexbo
                 ipChange.ipc$dispatch("4e1285b3", new Object[]{this, fVar, viewGroup, aVar, dVar});
             } else if (viewGroup == null || aVar == null) {
             } else {
-                if (!TextUtils.isEmpty(aVar.c) && !TextUtils.equals(af.a(af.this), aVar.c)) {
+                if (!StringUtils.isEmpty(aVar.c) && !StringUtils.equals(af.a(af.this), aVar.c)) {
                     af.a(af.this, aVar.c);
                     JSONObject parseObject = JSONObject.parseObject(aVar.c);
                     DinamicXEngine c = af.b(af.this).c();

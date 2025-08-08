@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.event.popup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class b extends enn {
                 break;
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (com.taobao.android.ultron.common.model.b bVar2 : bVar.dmComponent.getEventMap().get(str)) {

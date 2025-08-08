@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.comments.chat.bottom;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.message.ChatMessage;
@@ -55,7 +55,7 @@ public class a implements c {
             return ((Boolean) ipChange.ipc$dispatch("fddb8ac4", new Object[]{this, chatMessage})).booleanValue();
         }
         if (chatMessage != null && chatMessage.renders != null && !chatMessage.renders.isEmpty()) {
-            return TextUtils.equals(chatMessage.renders.get("showMod"), "BOTTOM");
+            return StringUtils.equals(chatMessage.renders.get("showMod"), "BOTTOM");
         }
         return false;
     }

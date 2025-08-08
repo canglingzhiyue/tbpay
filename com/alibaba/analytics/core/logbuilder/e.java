@@ -1,7 +1,7 @@
 package com.alibaba.analytics.core.logbuilder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.aob;
 import tb.kge;
@@ -27,7 +27,7 @@ public class e {
         }
         if (b || context == null) {
             String Q = aob.a().Q();
-            if (TextUtils.isEmpty(Q)) {
+            if (StringUtils.isEmpty(Q)) {
                 return f2085a + ",oaid=" + aob.a().L();
             }
             return f2085a + ",oaid=" + aob.a().L() + ",oaid2=" + Q;
@@ -65,7 +65,7 @@ public class e {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             String str3 = (String) cls.getDeclaredMethod("get", String.class).invoke(cls, str);
-            return TextUtils.isEmpty(str3) ? str2 : str3;
+            return StringUtils.isEmpty(str3) ? str2 : str3;
         } catch (Throwable unused) {
             return str2;
         }

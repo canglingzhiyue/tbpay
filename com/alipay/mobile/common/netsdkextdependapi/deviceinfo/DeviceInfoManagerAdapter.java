@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.netsdkextdependapi.deviceinfo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.UUID;
 
@@ -153,7 +153,7 @@ public class DeviceInfoManagerAdapter implements DeviceInfoManager {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("79a7d1d2", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mDeviceId)) {
+        if (StringUtils.isEmpty(this.mDeviceId)) {
             this.mDeviceId = UUID.randomUUID().toString().replaceAll("-", "");
         }
         return this.mDeviceId;

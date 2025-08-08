@@ -2,7 +2,7 @@ package com.network.diagnosis.toolchain;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -188,9 +188,9 @@ public class InternalDetectActivity extends BaseActivity {
         }
         String obj = this.f8073a.getEditableText().toString();
         String obj2 = this.b.getEditableText().toString();
-        int intValue = TextUtils.isEmpty(this.c.getEditableText().toString()) ? 80 : Integer.valueOf(this.c.getEditableText().toString()).intValue();
+        int intValue = StringUtils.isEmpty(this.c.getEditableText().toString()) ? 80 : Integer.valueOf(this.c.getEditableText().toString()).intValue();
         String obj3 = this.d.getSelectedItem().toString();
-        if (TextUtils.isEmpty(obj) || HttpUrl.parse(obj) == null) {
+        if (StringUtils.isEmpty(obj) || HttpUrl.parse(obj) == null) {
             a(b.a(R.string.taobao_app_1012_1_14025));
         } else if (!NetworkStatusHelper.isConnected()) {
             a(b.a(R.string.taobao_app_1012_1_14038));
@@ -210,7 +210,7 @@ public class InternalDetectActivity extends BaseActivity {
         HttpUrl parse = HttpUrl.parse(str);
         parse.setScheme(str3);
         Request build = new Request.Builder().setUrl(parse).addHeader("Connection", "close").setRedirectEnable(false).setReadTimeout(5000).setConnectTimeout(5000).setSslSocketFactory(new TlsSniSocketFactory(parse.host())).setSeq("ND").build();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             build.setDnsOptimize(str2, i);
         }
         long currentTimeMillis = System.currentTimeMillis();
@@ -250,7 +250,7 @@ public class InternalDetectActivity extends BaseActivity {
         if (valueOf2 == null || parse == null) {
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str2 = InetAddress.getByName(parse.host()).getHostAddress();
             } catch (UnknownHostException unused) {

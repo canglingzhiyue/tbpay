@@ -7,7 +7,7 @@ import android.taobao.util.g;
 import android.taobao.windvane.config.a;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -108,13 +108,13 @@ public class TBUrlCacheAndDevice extends calendarJsApi {
             return;
         }
         Bundle bundle = new Bundle();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Nav.from(this.mContext).toUri("http://m.taobao.com/index.htm");
             wVCallBackContext.success();
             return;
         }
         JSONObject parseObject = JSONObject.parseObject(str);
-        if (TextUtils.isEmpty(parseObject.getString("data"))) {
+        if (StringUtils.isEmpty(parseObject.getString("data"))) {
             bundle.putString("serviceCardSubMsg", parseObject.getString("serviceMsg"));
         } else {
             bundle.putString("serviceCardId", parseObject.getString("serviceCardId"));
@@ -142,7 +142,7 @@ public class TBUrlCacheAndDevice extends calendarJsApi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b5a6bf37", new Object[]{this, wVCallBackContext, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             Constants.showToast((Context) null, JSONObject.parseObject(str).getString("serviceMsg"));
             wVCallBackContext.success();
         } else {

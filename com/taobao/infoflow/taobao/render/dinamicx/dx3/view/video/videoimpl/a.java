@@ -1,7 +1,7 @@
 package com.taobao.infoflow.taobao.render.dinamicx.dx3.view.video.videoimpl;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -66,7 +66,7 @@ public class a extends AsyncTask<String, Void, Boolean> {
         if (syncSend.getStatusCode() == 200 && syncSend.getBytedata() != null && syncSend.getBytedata().length > 0) {
             try {
                 String a2 = i.a(this.c);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return false;
                 }
                 boolean a3 = lxr.a(a2, syncSend.getBytedata());

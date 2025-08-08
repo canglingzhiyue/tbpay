@@ -1,6 +1,6 @@
 package com.taobao.avplayer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.aq;
@@ -28,7 +28,7 @@ public class r implements aq {
             return;
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWImageLoaderAdapter);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         PhenixCreator a2 = com.taobao.phenix.intf.b.h().a(str);

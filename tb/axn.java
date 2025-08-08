@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -76,7 +76,7 @@ public final class axn extends arv {
         }
         String string = c.getString(fin.EVENT_KEY);
         String string2 = c.getString("target");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             arc.a().b("AURARouterEventExtension", "innerHandleEvent", "eventKey or target is null!");
             return;
         }

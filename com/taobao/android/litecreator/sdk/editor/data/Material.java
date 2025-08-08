@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.u;
@@ -32,12 +32,12 @@ public class Material implements Serializable {
         } else {
             String string = jSONObject.getString(RECOMMENDED_TITLE);
             String string2 = jSONObject.getString(RECOMMENDED_TEXT);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 aVar.addExtraInfoMeta("recommendedTitle_fromTemplate", string);
             } else {
                 aVar.removeExtraInfoMeta("recommendedTitle_fromTemplate");
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 aVar.addExtraInfoMeta("recommendedText_fromTemplate", string2);
             } else {
                 aVar.removeExtraInfoMeta("recommendedText_fromTemplate");
@@ -75,12 +75,12 @@ public class Material implements Serializable {
         } else {
             String string = jSONObject.getString(RECOMMENDED_TITLE);
             String string2 = jSONObject.getString(RECOMMENDED_TEXT);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 aVar.addExtraInfoMeta("recommendedTitle_fromFun", string);
             } else {
                 aVar.removeExtraInfoMeta("recommendedTitle_fromFun");
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 aVar.addExtraInfoMeta("recommendedText_fromFun", string2);
             } else {
                 aVar.removeExtraInfoMeta("recommendedText_fromFun");

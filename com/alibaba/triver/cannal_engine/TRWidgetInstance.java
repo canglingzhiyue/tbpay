@@ -3,7 +3,7 @@ package com.alibaba.triver.cannal_engine;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -171,7 +171,7 @@ public class TRWidgetInstance implements ITRWidgetInstance, Serializable {
         this.mIsDestroy = false;
         this.mDestroyListeners = new CopyOnWriteArrayList();
         this.mActivity = fragmentActivity;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             StringBuilder sb = new StringBuilder();
             sb.append("widget");
             int i2 = index;
@@ -180,7 +180,7 @@ public class TRWidgetInstance implements ITRWidgetInstance, Serializable {
             str2 = sb.toString();
         }
         this.mInstanceId = str2;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mGroupId = str;
         }
         com.alibaba.triver.cannal_engine.manager.h.a().a(this.mGroupId).put(this.mInstanceId, new WeakReference<>(this));

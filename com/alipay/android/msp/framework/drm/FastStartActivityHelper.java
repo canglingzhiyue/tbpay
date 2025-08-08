@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.drm;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
@@ -29,7 +29,7 @@ public class FastStartActivityHelper {
             return ((Boolean) ipChange.ipc$dispatch("b71e41ad", new Object[]{context, str})).booleanValue();
         }
         if (mConfigGetExperiment) {
-            return TextUtils.equals("10000", PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_".concat(String.valueOf(str))));
+            return StringUtils.equals("10000", PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_".concat(String.valueOf(str))));
         }
         return context != null && DrmManager.getInstance(context).isGray(str, false, context);
     }

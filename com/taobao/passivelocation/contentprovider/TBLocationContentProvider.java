@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -91,7 +91,7 @@ public class TBLocationContentProvider extends ContentProvider {
         if (b.match(uri) == 2) {
             sQLiteQueryBuilder.appendWhere("_id=" + uri.getPathSegments().get(1));
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "_id ASC";
         }
         String str3 = str2;
@@ -276,7 +276,7 @@ public class TBLocationContentProvider extends ContentProvider {
                 StringBuilder sb = new StringBuilder();
                 sb.append("_id=");
                 sb.append(uri.getPathSegments().get(1));
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     str2 = " AND (" + str + ')';
                 } else {
                     str2 = "";
@@ -312,7 +312,7 @@ public class TBLocationContentProvider extends ContentProvider {
                 StringBuilder sb = new StringBuilder();
                 sb.append("_id=");
                 sb.append(uri.getPathSegments().get(1));
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     str2 = " AND (" + str + ')';
                 } else {
                     str2 = "";

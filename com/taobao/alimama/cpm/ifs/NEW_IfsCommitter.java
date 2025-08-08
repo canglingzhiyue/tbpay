@@ -1,7 +1,7 @@
 package com.taobao.alimama.cpm.ifs;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class NEW_IfsCommitter {
         }
         UserTrackLogs.trackAdLog("ifs_invoke_success", e());
         e.a("ifs_invoke_success", e(), "ifs=" + Uri.encode(this.c));
-        if (TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.d)) {
             e.a("ifs_invalid_url", "msg=url_is_empty_or_hash_error", e());
             return ResultCode.INVALID_URL.name();
         }
@@ -254,7 +254,7 @@ public class NEW_IfsCommitter {
         objArr[1] = this.d;
         String format = String.format("useCache=%s,ifs_hash=%s", objArr);
         String a2 = b.a(this.e);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return format;
         }
         return format + "," + a2;

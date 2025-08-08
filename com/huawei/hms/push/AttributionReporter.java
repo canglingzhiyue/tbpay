@@ -3,7 +3,7 @@ package com.huawei.hms.push;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.aaid.task.PushClientBuilder;
 import com.huawei.hms.aaid.utils.PushPreferences;
@@ -47,11 +47,11 @@ public class AttributionReporter {
             throw ErrorEnum.ERROR_ARGUMENTS_INVALID.toApiException();
         }
         String string = bundle.getString(RemoteMessageConst.MSGID);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             throw ErrorEnum.ERROR_ARGUMENTS_INVALID.toApiException();
         }
         String string2 = bundle.getString("hsId");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             throw ErrorEnum.ERROR_ARGUMENTS_INVALID.toApiException();
         }
         AttributionReportReq attributionReportReq = new AttributionReportReq();
@@ -62,7 +62,7 @@ public class AttributionReporter {
         attributionReportReq.setPkgName(this.b.getPackageName());
         if (attributionEvent.equals(AttributionEvent.PERMISSION_GRANTED) || attributionEvent.equals(AttributionEvent.PERMISSION_DENIED)) {
             String string3 = safeBundle.getString(SYSTEM_PERMISSION);
-            if (TextUtils.isEmpty(string3) || !string3.startsWith("android.permission")) {
+            if (StringUtils.isEmpty(string3) || !string3.startsWith("android.permission")) {
                 throw ErrorEnum.ERROR_ARGUMENTS_INVALID.toApiException();
             }
             attributionReportReq.setReqPermission(string3);

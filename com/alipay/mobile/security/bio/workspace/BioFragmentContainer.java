@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.security.bio.api.BioResponse;
 import com.alipay.mobile.security.bio.config.Constant;
@@ -121,7 +121,7 @@ public class BioFragmentContainer extends FragmentActivity implements BioFragmen
             sb.append(this.e == null ? "null" : this.e.toString());
             BioLog.d(sb.toString());
             String remoteURL = this.e.getRemoteURL();
-            if (TextUtils.isEmpty(remoteURL)) {
+            if (StringUtils.isEmpty(remoteURL)) {
                 return;
             }
             ((BioRPCService) this.f5828a.getBioService(BioRPCService.class)).setRemoteUrl(remoteURL);
@@ -322,7 +322,7 @@ public class BioFragmentContainer extends FragmentActivity implements BioFragmen
         bioResponse.setSuccess(false);
         bioResponse.setResult(i);
         bioResponse.subCode = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = CodeConstants.getMessage(bioResponse.subCode);
         }
         bioResponse.subMsg = str2;

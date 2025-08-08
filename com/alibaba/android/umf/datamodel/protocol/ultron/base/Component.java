@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.datamodel.protocol.ultron.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.b;
 import com.alibaba.android.umf.datamodel.protocol.ultron.BaseProtocol;
 import com.alibaba.fastjson.JSONObject;
@@ -67,7 +67,7 @@ public class Component extends BaseProtocol {
         kge.a(527163157);
     }
 
-    public static /* synthetic */ Object ipc$super(Component component, String str, Object... objArr) {
+    public static /* synthetic */ Object ipc$super(Component component, String str, Object... objArr) throws InstantReloadException {
         str.hashCode();
         throw new InstantReloadException(String.format("String switch could not find '%s'", str));
     }
@@ -300,7 +300,7 @@ public class Component extends BaseProtocol {
             return ((Boolean) ipChange.ipc$dispatch("7fb439ff", new Object[]{this})).booleanValue();
         }
         getStatus();
-        return !TextUtils.isEmpty(this.status) && "hidden".equals(this.status.toLowerCase());
+        return !StringUtils.isEmpty(this.status) && "hidden".equals(this.status.toLowerCase());
     }
 
     @JSONField(serialize = false)
@@ -310,7 +310,7 @@ public class Component extends BaseProtocol {
             return ((Boolean) ipChange.ipc$dispatch("fc8c8fe9", new Object[]{this})).booleanValue();
         }
         getStatus();
-        return !TextUtils.isEmpty(this.status) && "disable".equals(this.status.toLowerCase());
+        return !StringUtils.isEmpty(this.status) && "disable".equals(this.status.toLowerCase());
     }
 
     public void addCodePopupWindow(String str, Object obj) {
@@ -381,7 +381,7 @@ public class Component extends BaseProtocol {
             return (String) ipChange.ipc$dispatch("216f01ba", new Object[]{this});
         }
         getFields();
-        if (TextUtils.isEmpty(this.position) && (map = this.fields) != null) {
+        if (StringUtils.isEmpty(this.position) && (map = this.fields) != null) {
             Object obj = map.get("position");
             this.position = obj instanceof String ? (String) obj : null;
         }

@@ -3,7 +3,7 @@ package anetwork.channel.config;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
@@ -382,7 +382,7 @@ public class NetworkConfigCenter {
         if (ipChange instanceof IpChange) {
             return (CopyOnWriteArrayList) ipChange.ipc$dispatch("e991e4d3", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -390,7 +390,7 @@ public class NetworkConfigCenter {
             JSONArray jSONArray = new JSONArray(str);
             for (int i = 0; i < jSONArray.length(); i++) {
                 String string = jSONArray.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     copyOnWriteArrayList.add(string);
                 }
             }
@@ -426,7 +426,7 @@ public class NetworkConfigCenter {
         if (ipChange instanceof IpChange) {
             return (ConcurrentHashMap) ipChange.ipc$dispatch("d7dc4abc", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         ConcurrentHashMap<String, List<String>> concurrentHashMap = new ConcurrentHashMap<>();
@@ -600,7 +600,7 @@ public class NetworkConfigCenter {
             ipChange.ipc$dispatch("cebf56e6", new Object[]{str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             monitorRequestList = null;
         }
         try {
@@ -856,7 +856,7 @@ public class NetworkConfigCenter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7c5f8418", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return isMultiPathBizInWhiteListDefault(str) || isMultiPathBizInWhiteListAB(str);
@@ -963,7 +963,7 @@ public class NetworkConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0956bfb", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             multiPathWhiteBizAb = null;
             multiPathWhiteURLAb = null;
             multiPathABConfig = null;
@@ -976,7 +976,7 @@ public class NetworkConfigCenter {
                 for (int i = 0; i < jSONArray.length(); i++) {
                     JSONObject jSONObject = jSONArray.getJSONObject(i);
                     String string = jSONObject.getString("ab");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         Context context = GlobalAppRuntimeInfo.getContext();
                         Boolean isABGlobalFeatureOpened = ABSwitchUtils.isABGlobalFeatureOpened(context, "network_multi_path_" + string);
                         if (isABGlobalFeatureOpened != null && isABGlobalFeatureOpened.booleanValue()) {
@@ -1137,7 +1137,7 @@ public class NetworkConfigCenter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f99bed2e", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return isHostInArrayList(str, falcoIdWhiteList) || isHostInArrayList("*", falcoIdWhiteList);
@@ -1235,7 +1235,7 @@ public class NetworkConfigCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ce77e8a", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             httpCacheConfigs.clear();
         } else {
             CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();

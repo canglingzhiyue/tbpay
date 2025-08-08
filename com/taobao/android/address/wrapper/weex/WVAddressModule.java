@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
@@ -207,7 +207,7 @@ public class WVAddressModule extends e {
             try {
                 com.alibaba.fastjson.JSONObject parseObject = JSON.parseObject(str);
                 Intent intent = new Intent();
-                if (!TextUtils.isEmpty(str) && !parseObject.isEmpty()) {
+                if (!StringUtils.isEmpty(str) && !parseObject.isEmpty()) {
                     intent.putExtra("data", str);
                     activity.setResult(-1, intent);
                     activity.finish();
@@ -273,9 +273,9 @@ public class WVAddressModule extends e {
                     Iterator<String> keys = jSONObject.keys();
                     while (keys.hasNext()) {
                         String next = keys.next();
-                        if (!TextUtils.isEmpty(next) && !TextUtils.equals(c.K_DELIVERY_ID, next) && !TextUtils.equals("addressType", next) && !TextUtils.equals(com.taobao.android.purchase.core.address.c.K_SITE_INFO, next) && !TextUtils.equals("storeId", next) && !TextUtils.equals("shopType", next)) {
+                        if (!StringUtils.isEmpty(next) && !StringUtils.equals(c.K_DELIVERY_ID, next) && !StringUtils.equals("addressType", next) && !StringUtils.equals(com.taobao.android.purchase.core.address.c.K_SITE_INFO, next) && !StringUtils.equals("storeId", next) && !StringUtils.equals("shopType", next)) {
                             String optString = jSONObject.optString(next);
-                            if (!TextUtils.isEmpty(optString)) {
+                            if (!StringUtils.isEmpty(optString)) {
                                 intent.putExtra(next, optString);
                             }
                         }
@@ -296,10 +296,10 @@ public class WVAddressModule extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("99683bb4", new Object[]{this, str, wVCallBackContext});
-        } else if (this.mContext == null || TextUtils.isEmpty(str) || !(this.mContext instanceof Activity)) {
+        } else if (this.mContext == null || StringUtils.isEmpty(str) || !(this.mContext instanceof Activity)) {
         } else {
             String openH5Page = openH5Page((Activity) this.mContext, str);
-            if (TextUtils.isEmpty(openH5Page)) {
+            if (StringUtils.isEmpty(openH5Page)) {
                 return;
             }
             this.currentSelectType = openH5Page;
@@ -312,17 +312,17 @@ public class WVAddressModule extends e {
             return (String) ipChange.ipc$dispatch("ced1feb7", new Object[]{activity, str});
         }
         String str2 = "";
-        if (activity != null && !TextUtils.isEmpty(str)) {
+        if (activity != null && !StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString = jSONObject.optString("url");
                 String optString2 = jSONObject.optString("addressType");
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     return str2;
                 }
-                if (TextUtils.equals(optString2, "1")) {
+                if (StringUtils.equals(optString2, "1")) {
                     Nav.from(activity).forResult(1).toUri(gvl.a(activity, optString));
-                } else if (TextUtils.equals(optString2, "2")) {
+                } else if (StringUtils.equals(optString2, "2")) {
                     if (c.s != null && c.s.sites != null) {
                         int optInt = jSONObject.optInt("siteIndex");
                         JSONArray jSONArray = new JSONArray(c.s.sites);
@@ -331,7 +331,7 @@ public class WVAddressModule extends e {
                         }
                     }
                     Nav.from(activity).forResult(9876).toUri(gvl.a(activity, optString));
-                } else if (TextUtils.equals(optString2, "3")) {
+                } else if (StringUtils.equals(optString2, "3")) {
                     Nav.from(activity).forResult(2).toUri(gvl.a(activity, optString));
                 } else {
                     Nav.from(activity).toUri(gvl.a(activity, optString));
@@ -584,7 +584,7 @@ public class WVAddressModule extends e {
             cancel(activity);
         } else {
             String stringExtra = intent.getStringExtra("data");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 cancel(activity);
                 return;
             }
@@ -604,9 +604,9 @@ public class WVAddressModule extends e {
                     Iterator<String> keys = jSONObject.keys();
                     while (keys.hasNext()) {
                         String next = keys.next();
-                        if (!TextUtils.isEmpty(next) && !TextUtils.equals("deliveryAddressId", next) && !TextUtils.equals(com.taobao.android.purchase.core.address.c.K_LINK_ADDRESS_ID, next)) {
+                        if (!StringUtils.isEmpty(next) && !StringUtils.equals("deliveryAddressId", next) && !StringUtils.equals(com.taobao.android.purchase.core.address.c.K_LINK_ADDRESS_ID, next)) {
                             String optString3 = jSONObject.optString(next);
-                            if (!TextUtils.isEmpty(optString3)) {
+                            if (!StringUtils.isEmpty(optString3)) {
                                 intent2.putExtra(next, optString3);
                             }
                         }
@@ -627,7 +627,7 @@ public class WVAddressModule extends e {
             cancel(activity);
         } else {
             String stringExtra = intent.getStringExtra("data");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 cancel(activity);
                 return;
             }
@@ -681,7 +681,7 @@ public class WVAddressModule extends e {
             String optString2 = jSONObject.optString("addressUrl");
             String optString3 = jSONObject.optString("data");
             String optString4 = jSONObject.optString("bizId");
-            if (TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString4)) {
+            if (StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString4)) {
                 optString = "http://my.m.taobao.com/deliver/common_address.htm?bizId=" + optString4 + "&data=" + optString3;
             }
             Bundle bundle = new Bundle();

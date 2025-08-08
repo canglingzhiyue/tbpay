@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.dingtalk.share.ddsharemodule.DDShareApiV2;
 import com.android.dingtalk.share.ddsharemodule.IDDAPIEventHandler;
@@ -92,12 +92,12 @@ public class ShareDingTalkController {
             dDMediaMessage.setThumbImage(ShareUtils.thumbnailImageFromPath(shareData.getImagePath()));
             dDMediaMessage.mThumbUrl = shareData.getImageUrl();
             dDMediaMessage.mUrl = shareData.getLink();
-            if (!TextUtils.isEmpty(shareData.getLink())) {
+            if (!StringUtils.isEmpty(shareData.getLink())) {
                 DDWebpageMessage dDWebpageMessage = new DDWebpageMessage();
                 dDWebpageMessage.mUrl = shareData.getLink();
                 dDMediaMessage.mMediaObject = dDWebpageMessage;
-            } else if (!TextUtils.isEmpty(shareData.getImageUrl()) || !TextUtils.isEmpty(shareData.getImagePath())) {
-                if (!TextUtils.isEmpty(shareData.getImagePath())) {
+            } else if (!StringUtils.isEmpty(shareData.getImageUrl()) || !StringUtils.isEmpty(shareData.getImagePath())) {
+                if (!StringUtils.isEmpty(shareData.getImagePath())) {
                     Bitmap imageFromPath = ShareUtils.imageFromPath(shareData.getImagePath());
                     if (imageFromPath != null) {
                         imageFromPath = ShareUtils.imageZoom(imageFromPath, 2048.0d);

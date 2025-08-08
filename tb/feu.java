@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import com.alibaba.fastjson.JSONArray;
@@ -272,7 +272,7 @@ public class feu {
             return;
         }
         String string = b.getString("tipUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         JSONObject jSONObject = new JSONObject();

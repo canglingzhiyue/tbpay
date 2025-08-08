@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.desc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -136,7 +136,7 @@ public abstract class e extends MainViewModel {
             return null;
         }
         JSONObject jSONObject = this.component.mapping.getJSONObject("componentTitle");
-        if (TextUtils.isEmpty(jSONObject.getString("text"))) {
+        if (StringUtils.isEmpty(jSONObject.getString("text"))) {
             return null;
         }
         g gVar = new g();

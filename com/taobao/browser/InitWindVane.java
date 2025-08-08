@@ -4,7 +4,7 @@ import android.app.Application;
 import android.taobao.util.k;
 import android.taobao.windvane.WindVaneSDK;
 import android.taobao.windvane.config.EnvEnum;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.service.RVEnvironmentService;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -78,7 +78,7 @@ public class InitWindVane implements Serializable {
                 k.a(TAG, "failed to get onlineAppKey");
                 hVar.e = "21646297";
             }
-            if (TextUtils.isEmpty(hVar.e)) {
+            if (StringUtils.isEmpty(hVar.e)) {
                 hVar.e = "21646297";
             }
             WindVaneSDK.setEnvMode(EnvEnum.ONLINE);
@@ -89,7 +89,7 @@ public class InitWindVane implements Serializable {
                 hVar.e = "21646297";
                 k.a(TAG, "failed to get onlineAppKey");
             }
-            if (TextUtils.isEmpty(hVar.e)) {
+            if (StringUtils.isEmpty(hVar.e)) {
                 hVar.e = "21646297";
             }
             WindVaneSDK.setEnvMode(EnvEnum.PRE);
@@ -100,7 +100,7 @@ public class InitWindVane implements Serializable {
                 hVar.e = "4272";
                 k.a(TAG, "failed to get dailyAppkey");
             }
-            if (TextUtils.isEmpty(hVar.e)) {
+            if (StringUtils.isEmpty(hVar.e)) {
                 hVar.e = "4272";
             }
             WindVaneSDK.setEnvMode(EnvEnum.DAILY);

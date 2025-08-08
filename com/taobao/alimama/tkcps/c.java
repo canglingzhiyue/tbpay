@@ -1,6 +1,6 @@
 package com.taobao.alimama.tkcps;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.muniontaobaosdk.util.TaoLog;
 import com.taobao.orange.OrangeConfig;
@@ -70,9 +70,9 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4dba9507", new Object[]{this, str, str2, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.isEmpty(str2) || "12".equals(str2)) {
+            if (StringUtils.isEmpty(str2) || "12".equals(str2)) {
                 b(str, "e_taobao", i);
                 b(str, "e_tmall", i);
             } else if ("1".equals(str2)) {
@@ -92,7 +92,7 @@ public class c {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str) || "12".equals(str)) {
+        if (StringUtils.isEmpty(str) || "12".equals(str)) {
             this.f8456a.remove("e_taobao");
             this.f8456a.remove("e_tmall");
         } else if ("1".equals(str)) {
@@ -133,7 +133,7 @@ public class c {
         long j = 86400;
         String config = OrangeConfig.getInstance().getConfig("alimama_ad", "taoke_config", "");
         try {
-            JSONObject jSONObject = TextUtils.isEmpty(config) ? null : new JSONObject(config);
+            JSONObject jSONObject = StringUtils.isEmpty(config) ? null : new JSONObject(config);
             if (jSONObject != null) {
                 j = jSONObject.optLong("timeout", 86400L);
             }
@@ -151,7 +151,7 @@ public class c {
             return;
         }
         b bVar = this.f8456a.get(str2);
-        if (bVar == null || bVar.c <= i || !a(bVar) || TextUtils.isEmpty(bVar.f8458a)) {
+        if (bVar == null || bVar.c <= i || !a(bVar) || StringUtils.isEmpty(bVar.f8458a)) {
             z = false;
         }
         if (z) {

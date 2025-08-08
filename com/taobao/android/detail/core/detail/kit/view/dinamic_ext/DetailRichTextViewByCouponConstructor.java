@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.view.dinamic_ext;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,20 +41,20 @@ public class DetailRichTextViewByCouponConstructor extends DTextViewConstructor 
         }
         final XRichTextViewByCoupon xRichTextViewByCoupon = (XRichTextViewByCoupon) view;
         i.a(VIEW_TAG, " xSeparator : " + str + ", xTextBackground : " + str2 + ", iconUrl:" + str3);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             xRichTextViewByCoupon.setSeparator(str);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             xRichTextViewByCoupon.setXIconHeight(Integer.parseInt(str4));
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             xRichTextViewByCoupon.setTextBgPaddingH(Integer.parseInt(str5));
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             xRichTextViewByCoupon.setTextBgPaddingV(Integer.parseInt(str6));
         }
         xRichTextViewByCoupon.setIcon(null);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             dzv.a(str2, xRichTextViewByCoupon.getContext(), new c.a() { // from class: com.taobao.android.detail.core.detail.kit.view.dinamic_ext.DetailRichTextViewByCouponConstructor.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -69,7 +69,7 @@ public class DetailRichTextViewByCouponConstructor extends DTextViewConstructor 
                 }
             }, null);
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return;
         }
         dzv.a(str3, xRichTextViewByCoupon.getContext(), new c.a() { // from class: com.taobao.android.detail.core.detail.kit.view.dinamic_ext.DetailRichTextViewByCouponConstructor.2

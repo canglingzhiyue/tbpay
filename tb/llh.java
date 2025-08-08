@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -32,7 +32,7 @@ public class llh {
         if (ipChange instanceof IpChange) {
             return (llh) ipChange.ipc$dispatch("953c9fa2", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return this;
         }
         this.c.put(str, (Object) str2);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.umf.datamodel.protocol.ultron.UltronProtocol;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
@@ -77,7 +77,7 @@ public final class awh extends aso {
                 if (jSONObject2 != null) {
                     String string = jSONObject2.getString("source");
                     String string2 = jSONObject2.getString("target");
-                    if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                         return;
                     }
                     if (string.startsWith("$.")) {
@@ -120,6 +120,6 @@ public final class awh extends aso {
 
     private Object a(JSONObject jSONObject, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ipChange.ipc$dispatch("805a9220", new Object[]{this, jSONObject, str}) : (TextUtils.isEmpty(str) || TextUtils.equals(str, "*")) ? jSONObject : bbd.b.a(str.split("\\."), jSONObject);
+        return ipChange instanceof IpChange ? ipChange.ipc$dispatch("805a9220", new Object[]{this, jSONObject, str}) : (StringUtils.isEmpty(str) || StringUtils.equals(str, "*")) ? jSONObject : bbd.b.a(str.split("\\."), jSONObject);
     }
 }

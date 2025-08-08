@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
@@ -226,7 +226,7 @@ public class kjo {
             for (int i = 0; i < size; i++) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 q.b(jSONObject3, "requestSkuData.getJSONObject(index)");
-                if (jSONObject3.getIntValue("count") > 0 && !TextUtils.isEmpty(jSONObject3.getString("skuStr"))) {
+                if (jSONObject3.getIntValue("count") > 0 && !StringUtils.isEmpty(jSONObject3.getString("skuStr"))) {
                     Set<String> set = this.c;
                     String string = jSONObject3.getString("skuStr");
                     q.b(string, "item.getString(\"skuStr\")");

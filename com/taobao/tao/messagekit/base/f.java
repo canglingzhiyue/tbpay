@@ -1,6 +1,6 @@
 package com.taobao.tao.messagekit.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.model.Ack;
 import com.taobao.tao.messagekit.core.utils.MsgLog;
@@ -135,7 +135,7 @@ public class f {
             return (a) ipChange.ipc$dispatch("6ab00ba4", new Object[]{this, str, str2});
         }
         MsgLog.a("ResponseManager", "pop:", str, "msgId:", str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             for (HashMap<String, a> hashMap : this.f20754a.values()) {
                 a remove = hashMap.remove(str2);
                 if (remove != null) {

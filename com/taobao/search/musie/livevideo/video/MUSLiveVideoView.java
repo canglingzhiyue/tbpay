@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -117,7 +117,7 @@ public class MUSLiveVideoView extends ViewGroup implements e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c7c374c9", new Object[]{this, mUSDKInstance, str, str2, new Integer(i), new Integer(i2), rect});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             releasePoster(mUSDKInstance);
         } else {
             this.posterDrawable = new UIImageDrawable();
@@ -294,7 +294,7 @@ public class MUSLiveVideoView extends ViewGroup implements e {
         if (ipChange instanceof IpChange) {
             return (MediaAspectRatio) ipChange.ipc$dispatch("441bb214", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return MediaAspectRatio.DW_FIT_CENTER;
         }
         char c = 65535;
@@ -347,8 +347,8 @@ public class MUSLiveVideoView extends ViewGroup implements e {
             this.mMPC.setVideoLoop(z);
             this.mMPC.setMute(z2);
             this.mMPC.setMediaAspectRatio(getResizeMode(bVar.a()));
-            this.mMPC.setBizCode(TextUtils.isEmpty(bVar.b()) ? noa.DEFAULT_VIDEO_BIZ_CODE : bVar.b());
-            this.mMPC.setPlayScenes(TextUtils.isEmpty(bVar.c()) ? noa.DEFAULE_VIDEO_PLAY_SCENES : bVar.c());
+            this.mMPC.setBizCode(StringUtils.isEmpty(bVar.b()) ? noa.DEFAULT_VIDEO_BIZ_CODE : bVar.b());
+            this.mMPC.setPlayScenes(StringUtils.isEmpty(bVar.c()) ? noa.DEFAULE_VIDEO_PLAY_SCENES : bVar.c());
             this.mMPC.setup();
             this.mMPC.setMediaLifecycleListener(this);
         }

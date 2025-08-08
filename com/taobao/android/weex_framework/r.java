@@ -1,7 +1,7 @@
 package com.taobao.android.weex_framework;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.g4;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -221,7 +221,7 @@ public class r {
         String p = p();
         String l = l();
         String m = m();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             jSONObject.put("bundle_url", (Object) e);
         }
         if (f != null) {
@@ -230,13 +230,13 @@ public class r {
         if (h != null) {
             jSONObject.put(MUSAppMonitor.T_ITEM_TYPE, (Object) h);
         }
-        if (!TextUtils.isEmpty(j)) {
+        if (!StringUtils.isEmpty(j)) {
             jSONObject.put(MUSAppMonitor.SCRIPT_URL, (Object) j);
         }
         if (k != null) {
             jSONObject.put(MUSAppMonitor.BYTECODE, (Object) k);
         }
-        if (!TextUtils.isEmpty(p)) {
+        if (!StringUtils.isEmpty(p)) {
             jSONObject.put("sversion", (Object) p);
         }
         if (l != null) {

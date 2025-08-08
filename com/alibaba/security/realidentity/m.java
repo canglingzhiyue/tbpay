@@ -3,7 +3,7 @@ package com.alibaba.security.realidentity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.DeviceProperty;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
@@ -216,7 +216,7 @@ public class m {
         }
         try {
             String str = Build.MANUFACTURER;
-            return !TextUtils.isEmpty(str) ? str.toLowerCase() : "unknown";
+            return !StringUtils.isEmpty(str) ? str.toLowerCase() : "unknown";
         } catch (Throwable unused) {
             return "unknown";
         }
@@ -490,7 +490,7 @@ public class m {
         }
         try {
             String str = Build.BRAND;
-            return !TextUtils.isEmpty(str) ? str.toLowerCase() : "unknown";
+            return !StringUtils.isEmpty(str) ? str.toLowerCase() : "unknown";
         } catch (Throwable unused) {
             return "unknown";
         }
@@ -501,17 +501,17 @@ public class m {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        String b2 = !TextUtils.isEmpty(str) ? b(str) : "";
-        if (TextUtils.isEmpty(b2) || b2.equals("unknown")) {
+        String b2 = !StringUtils.isEmpty(str) ? b(str) : "";
+        if (StringUtils.isEmpty(b2) || b2.equals("unknown")) {
             try {
                 String str2 = Build.DISPLAY;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     b2 = str2.toLowerCase();
                 }
             } catch (Throwable unused) {
             }
         }
-        return TextUtils.isEmpty(b2) ? "unknown" : b2;
+        return StringUtils.isEmpty(b2) ? "unknown" : b2;
     }
 
     public static long a(Context context) {
@@ -555,12 +555,12 @@ public class m {
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("/proc/meminfo"), 2048);
             String readLine = bufferedReader.readLine();
-            if (TextUtils.isEmpty(readLine)) {
+            if (StringUtils.isEmpty(readLine)) {
                 bufferedReader.close();
                 return 0L;
             }
             String substring = readLine.substring(readLine.indexOf("MemTotal:"));
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 bufferedReader.close();
                 return 0L;
             }

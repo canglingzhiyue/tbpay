@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -106,7 +106,7 @@ public class beb {
             return -1;
         }
         String tag = iDMComponent.getTag();
-        if (TextUtils.isEmpty(tag)) {
+        if (StringUtils.isEmpty(tag)) {
             return -1;
         }
         for (IDMComponent iDMComponent2 : b) {

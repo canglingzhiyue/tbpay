@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.utils.ocr;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.emu;
 import tb.epo;
@@ -23,7 +23,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue();
         }
         String a2 = a(mxo.OCR_SWITCH_NAME);
-        return !TextUtils.isEmpty(a2) && a2.trim().toLowerCase().equals("true");
+        return !StringUtils.isEmpty(a2) && a2.trim().toLowerCase().equals("true");
     }
 
     private static String a(String str) {

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -137,11 +137,11 @@ public class WeiboShareActivity extends Activity {
             String link = shareData.getLink();
             String imagePath = shareData.getImagePath();
             String text = shareData.getText();
-            if (!TextUtils.isEmpty(link)) {
+            if (!StringUtils.isEmpty(link)) {
                 shareData.setType(ShareData.MessageType.WEBPAGE);
-            } else if (!TextUtils.isEmpty(imagePath)) {
+            } else if (!StringUtils.isEmpty(imagePath)) {
                 shareData.setType(ShareData.MessageType.IMAGE);
-            } else if (!TextUtils.isEmpty(text)) {
+            } else if (!StringUtils.isEmpty(text)) {
                 shareData.setType(ShareData.MessageType.TEXT);
             }
             weibo.realShare(this, shareData);

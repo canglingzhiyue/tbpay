@@ -1,7 +1,7 @@
 package com.taobao.search.common.util;
 
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -19,7 +19,7 @@ public class aa {
         if (ipChange instanceof IpChange) {
             return (SpannableStringBuilder) ipChange.ipc$dispatch("d32aef69", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         String str4 = str2 + str;

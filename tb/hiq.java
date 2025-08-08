@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelStoreOwner;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alilive.adapter.uikit.AliUrlImageView;
@@ -104,7 +104,7 @@ public class hiq {
 
     public static boolean b(LiveItem liveItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("34ae4648", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.extendVal == null || !TextUtils.equals("liveshop", liveItem.extendVal.itemShopType)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("34ae4648", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.extendVal == null || !StringUtils.equals("liveshop", liveItem.extendVal.itemShopType)) ? false : true;
     }
 
     public static boolean a(VideoInfo videoInfo) {
@@ -124,11 +124,11 @@ public class hiq {
         if ("全部".equals(str)) {
             return true;
         }
-        if (TextUtils.isEmpty(liveItem.extendVal.itemCategoryIdList) || (c = pqj.c(liveItem.extendVal.itemCategoryIdList)) == null) {
+        if (StringUtils.isEmpty(liveItem.extendVal.itemCategoryIdList) || (c = pqj.c(liveItem.extendVal.itemCategoryIdList)) == null) {
             return false;
         }
         for (int i = 0; i < c.size(); i++) {
-            if (TextUtils.equals(c.getString(i), str2)) {
+            if (StringUtils.equals(c.getString(i), str2)) {
                 return true;
             }
         }
@@ -150,7 +150,7 @@ public class hiq {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fd50f6d1", new Object[]{str, liveItem})).booleanValue();
         }
-        if (liveItem == null || TextUtils.isEmpty(liveItem.liveId) || TextUtils.isEmpty(str) || !hir.k() || TextUtils.equals(str, liveItem.liveId)) {
+        if (liveItem == null || StringUtils.isEmpty(liveItem.liveId) || StringUtils.isEmpty(str) || !hir.k() || StringUtils.equals(str, liveItem.liveId)) {
             return true;
         }
         his.b("GoodUtils", "liveIdCheck | currLiveId=" + str + " itemLiveId=" + liveItem.liveId + "    itemId=" + liveItem.itemId);
@@ -192,18 +192,18 @@ public class hiq {
 
     public static boolean d(LiveItem liveItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bbc481ca", new Object[]{liveItem})).booleanValue() : liveItem != null && liveItem.extendVal != null && TextUtils.equals("secKill", liveItem.extendVal.itemBizType) && d.a();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bbc481ca", new Object[]{liveItem})).booleanValue() : liveItem != null && liveItem.extendVal != null && StringUtils.equals("secKill", liveItem.extendVal.itemBizType) && d.a();
     }
 
     public static boolean e(LiveItem liveItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ff4f9f8b", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.extendVal == null || !TextUtils.equals("preHeat", liveItem.extendVal.itemBizType)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ff4f9f8b", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.extendVal == null || !StringUtils.equals("preHeat", liveItem.extendVal.itemBizType)) ? false : true;
     }
 
     public static boolean a(a aVar) {
         JSONObject jSONObject;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dbfce2a7", new Object[]{aVar})).booleanValue() : (aVar == null || aVar.b == null || (jSONObject = aVar.b.getJSONObject("extendVal")) == null || !TextUtils.equals("preHeat", jSONObject.getString("itemBizType"))) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dbfce2a7", new Object[]{aVar})).booleanValue() : (aVar == null || aVar.b == null || (jSONObject = aVar.b.getJSONObject("extendVal")) == null || !StringUtils.equals("preHeat", jSONObject.getString("itemBizType"))) ? false : true;
     }
 
     public static boolean m(LiveItem liveItem) {
@@ -248,10 +248,10 @@ public class hiq {
         if (d(liveItem)) {
             String str = liveItem.itemPrice;
             return (liveItem.extendVal == null || liveItem.extendVal.secKillInfo == null || (b2 = pqj.b(liveItem.extendVal.secKillInfo)) == null) ? str : b2.getString("price");
-        } else if (liveItem.personalityData != null && !TextUtils.isEmpty(liveItem.personalityData.getString("promotionPrice"))) {
+        } else if (liveItem.personalityData != null && !StringUtils.isEmpty(liveItem.personalityData.getString("promotionPrice"))) {
             return liveItem.personalityData.getString("promotionPrice");
         } else {
-            if (liveItem.personalityData != null && !TextUtils.isEmpty(liveItem.personalityData.getString("singlePromotionPrice"))) {
+            if (liveItem.personalityData != null && !StringUtils.isEmpty(liveItem.personalityData.getString("singlePromotionPrice"))) {
                 return liveItem.personalityData.getString("singlePromotionPrice");
             }
             return liveItem.itemPrice;
@@ -260,7 +260,7 @@ public class hiq {
 
     public static String f(LiveItem liveItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d2987058", new Object[]{liveItem}) : (liveItem == null || liveItem.personalityData == null) ? "" : !TextUtils.isEmpty(liveItem.personalityData.getString("promotionPrice")) ? liveItem.personalityData.getString("promotionPriceDesc") : liveItem.personalityData.getString("itemPriceDesc");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d2987058", new Object[]{liveItem}) : (liveItem == null || liveItem.personalityData == null) ? "" : !StringUtils.isEmpty(liveItem.personalityData.getString("promotionPrice")) ? liveItem.personalityData.getString("promotionPriceDesc") : liveItem.personalityData.getString("itemPriceDesc");
     }
 
     public static void a(LiveItem liveItem, c cVar) {
@@ -298,7 +298,7 @@ public class hiq {
         jSONObject.put("search_entry", (Object) (z ? "bag_default" : "bag_more"));
         jSONObject.put("blankMode", (Object) Boolean.valueOf(z));
         jSONObject.put("refer", (Object) "search");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = hir.T();
         }
         jSONObject.put("jumpUrl", (Object) String.format(str2, str));
@@ -375,7 +375,7 @@ public class hiq {
         if (aVar == null || aVar.o() == null) {
             return false;
         }
-        return TextUtils.equals(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_OpenWatch.toString(), aVar.o().bizCode) || TextUtils.equals(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString(), aVar.o().bizCode);
+        return StringUtils.equals(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_OpenWatch.toString(), aVar.o().bizCode) || StringUtils.equals(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString(), aVar.o().bizCode);
     }
 
     public static String a(LiveItem liveItem, boolean z, String str) {
@@ -388,14 +388,14 @@ public class hiq {
         }
         StringBuilder sb = new StringBuilder();
         String string = liveItem.nativeConfigInfos.getString("goodsDisplayStyle");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             sb.append(string);
         }
         if (!z) {
             sb.append("_itm");
             return sb.toString();
         }
-        sb.append(TextUtils.equals(BottomMode.ADDCART.getValue(), str) ? "_cart" : "_buy");
+        sb.append(StringUtils.equals(BottomMode.ADDCART.getValue(), str) ? "_cart" : "_buy");
         return sb.toString();
     }
 
@@ -455,7 +455,7 @@ public class hiq {
 
     public static boolean a(IDMComponent iDMComponent) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e66567f0", new Object[]{iDMComponent})).booleanValue() : TextUtils.equals("dinamicx", iDMComponent.getContainerType());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e66567f0", new Object[]{iDMComponent})).booleanValue() : StringUtils.equals("dinamicx", iDMComponent.getContainerType());
     }
 
     public static int a(JSONObject jSONObject, String str, int i) {
@@ -463,7 +463,7 @@ public class hiq {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b8e389e4", new Object[]{jSONObject, str, new Integer(i)})).intValue();
         }
-        if (jSONObject != null && !TextUtils.isEmpty(str)) {
+        if (jSONObject != null && !StringUtils.isEmpty(str)) {
             Object a2 = fnk.a(str, "", new fpd.a().b(jSONObject).a());
             if (a2 instanceof String) {
                 return fqr.a((String) a2);
@@ -479,9 +479,9 @@ public class hiq {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("7327235d", new Object[]{jSONObject, cVar, str, new Integer(i)})).intValue();
         }
-        if (jSONObject != null && cVar != null && !TextUtils.isEmpty(str) && cVar.B() != null && cVar.B().x() != null && (b2 = cVar.B().x().b(str)) != null && b2.getFields() != null) {
+        if (jSONObject != null && cVar != null && !StringUtils.isEmpty(str) && cVar.B() != null && cVar.B().x() != null && (b2 = cVar.B().x().b(str)) != null && b2.getFields() != null) {
             String string = b2.getFields().getString("height");
-            if (!TextUtils.isEmpty(string) && (a2 = a(jSONObject, string, -1)) > 0) {
+            if (!StringUtils.isEmpty(string) && (a2 = a(jSONObject, string, -1)) > 0) {
                 return a2;
             }
         }
@@ -506,7 +506,7 @@ public class hiq {
         } else if (cVar == null || liveItem == null || liveItem.nativeConfigInfos == null) {
         } else {
             liveItem.nativeConfigInfos.remove("entry_clkPos");
-            if (TextUtils.isEmpty(cVar.L.c)) {
+            if (StringUtils.isEmpty(cVar.L.c)) {
                 return;
             }
             liveItem.nativeConfigInfos.put("entry_clkPos", (Object) cVar.L.c);
@@ -515,7 +515,7 @@ public class hiq {
 
     public static boolean a(VideoInfo.ExtraGoodsTabItem extraGoodsTabItem, VideoInfo.ExtraGoodsTabItem extraGoodsTabItem2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b4bc344c", new Object[]{extraGoodsTabItem, extraGoodsTabItem2})).booleanValue() : extraGoodsTabItem != null && extraGoodsTabItem2 != null && TextUtils.equals(extraGoodsTabItem.bizType, extraGoodsTabItem2.bizType) && TextUtils.equals(extraGoodsTabItem.type, extraGoodsTabItem2.type);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b4bc344c", new Object[]{extraGoodsTabItem, extraGoodsTabItem2})).booleanValue() : extraGoodsTabItem != null && extraGoodsTabItem2 != null && StringUtils.equals(extraGoodsTabItem.bizType, extraGoodsTabItem2.bizType) && StringUtils.equals(extraGoodsTabItem.type, extraGoodsTabItem2.type);
     }
 
     public static boolean b(String str) {

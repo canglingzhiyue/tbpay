@@ -382,7 +382,7 @@ public final class BidiFormatter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean isRtlLocale(Locale locale) {
-        return TextUtilsCompat.getLayoutDirectionFromLocale(locale) == 1;
+        return StringUtilsCompat.getLayoutDirectionFromLocale(locale) == 1;
     }
 
     private String markAfter(CharSequence charSequence, TextDirectionHeuristicCompat textDirectionHeuristicCompat) {

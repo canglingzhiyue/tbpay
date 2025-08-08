@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.heytap.mspsdk.exception.MspSdkException;
 import com.heytap.mspsdk.keychain.impl.OnResultListener;
 import com.heytap.mspsdk.keychain.impl.a;
@@ -48,7 +48,7 @@ public class cwk {
     public static void a(Context context, HashMap<String, String> hashMap, OnResultListener onResultListener) {
         int code;
         String message;
-        if (hashMap == null || hashMap.isEmpty() || TextUtils.isEmpty("key") || TextUtils.isEmpty("data")) {
+        if (hashMap == null || hashMap.isEmpty() || StringUtils.isEmpty("key") || StringUtils.isEmpty("data")) {
             throw new IllegalArgumentException("value of argument 'key' or 'data' should not be empty");
         }
         a aVar = new a(onResultListener);
@@ -72,7 +72,7 @@ public class cwk {
     public static void b(Context context, HashMap<String, String> hashMap, OnResultListener onResultListener) {
         int code;
         String message;
-        if (hashMap == null || hashMap.isEmpty() || TextUtils.isEmpty("key")) {
+        if (hashMap == null || hashMap.isEmpty() || StringUtils.isEmpty("key")) {
             throw new IllegalArgumentException("value of argument 'key' should not be empty");
         }
         a aVar = new a(onResultListener);

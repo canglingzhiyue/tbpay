@@ -2,7 +2,7 @@ package com.alipay.mobile.common.amnet.service;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -114,7 +114,7 @@ public class AmnetInitInfosHelper {
         hashMap.put("isPrisonBreak", String.valueOf(DeviceInfoUtil.isRooted()));
         b(hashMap);
         a(hashMap);
-        if (!TextUtils.isEmpty(AmnetUserInfo.getUserId())) {
+        if (!StringUtils.isEmpty(AmnetUserInfo.getUserId())) {
             hashMap.put("clientPostion", DeviceInfoUtil.getCellInfo());
         } else {
             hashMap.put("clientPostion", "-1;-1");
@@ -143,7 +143,7 @@ public class AmnetInitInfosHelper {
             return;
         }
         String workspaceIdForMPaaS = AppInfoUtil.getWorkspaceIdForMPaaS();
-        if (TextUtils.isEmpty(workspaceIdForMPaaS)) {
+        if (StringUtils.isEmpty(workspaceIdForMPaaS)) {
             return;
         }
         map.put(HeaderConstant.HEADER_KEY_WORKSPACE_ID, workspaceIdForMPaaS);
@@ -155,7 +155,7 @@ public class AmnetInitInfosHelper {
         signRequest.content = workspaceIdForMPaaS + "" + a2 + "" + valueOf;
         signRequest.signType = SignRequest.SIGN_TYPE_MD5;
         SignResult signature = SecurityUtil.signature(signRequest);
-        if (!TextUtils.isEmpty(signature.sign)) {
+        if (!StringUtils.isEmpty(signature.sign)) {
             map.put("sign", signature.sign);
         }
         StringBuilder sb = new StringBuilder();
@@ -175,7 +175,7 @@ public class AmnetInitInfosHelper {
             return;
         }
         String appIdForMPaaS = AppInfoUtil.getAppIdForMPaaS();
-        if (!TextUtils.isEmpty(appIdForMPaaS)) {
+        if (!StringUtils.isEmpty(appIdForMPaaS)) {
             map.put("AppName", appIdForMPaaS);
         } else {
             map.put("AppName", a(AmnetEnvHelper.getAppContext()));
@@ -308,7 +308,7 @@ public class AmnetInitInfosHelper {
         String str = "";
         try {
             str = b(SharedPreUtils.getStringData(AmnetEnvHelper.getAppContext(), "amnet_init_info"));
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return a(map, parseJson2MapAndUpdateMemCache(str));
             }
             return false;
@@ -355,7 +355,7 @@ public class AmnetInitInfosHelper {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("initJson=[");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = " is empty ";
         }
         sb.append(str);
@@ -371,7 +371,7 @@ public class AmnetInitInfosHelper {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("JSON.parseObject exception. initJson=[");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = " is empty ";
         }
         sb.append(str);
@@ -416,7 +416,7 @@ public class AmnetInitInfosHelper {
             return;
         }
         String b2 = b(SharedPreUtils.getStringData(AmnetEnvHelper.getAppContext(), "amnet_init_info"));
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return;
         }
         Map<? extends Byte, ? extends Map<String, String>> map2 = (Map) JSON.parseObject(b2, new HashMapTypeReference(), new Feature[0]);
@@ -468,7 +468,7 @@ public class AmnetInitInfosHelper {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.debug("amnet_AmnetInitInfosHelper", "encrypt,val is null");
                 return "";
             }
@@ -485,7 +485,7 @@ public class AmnetInitInfosHelper {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.debug("amnet_AmnetInitInfosHelper", "decrypt,enVal is null");
                 return "";
             }

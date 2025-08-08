@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
 import com.taobao.android.fluid.framework.data.datamodel.a;
@@ -47,7 +47,7 @@ public class sou {
             return;
         }
         b.a().a(a(aVar));
-        if (son.a(PerfConst.FEATURE_EXPOSEDATA_NOT_DOWNLLOAD, false) || (E = a2.E()) == null || TextUtils.isEmpty(E.i())) {
+        if (son.a(PerfConst.FEATURE_EXPOSEDATA_NOT_DOWNLLOAD, false) || (E = a2.E()) == null || StringUtils.isEmpty(E.i())) {
             return;
         }
         a(fluidContext.getContext(), a2.I(), sessionParams.c, E.i());
@@ -122,17 +122,17 @@ public class sou {
         if (cVar == null || cVar.i() == null || !cVar.w() || !"VIDEO".equalsIgnoreCase(cVar.i().type)) {
             return true;
         }
-        if (z && !ogv.a(cVar.i().contentAdParams) && !ogv.a(cVar.i().utPairs) && TextUtils.equals(String.valueOf(cVar.i().utPairs.get("is_ad")), "1")) {
+        if (z && !ogv.a(cVar.i().contentAdParams) && !ogv.a(cVar.i().utPairs) && StringUtils.equals(String.valueOf(cVar.i().utPairs.get("is_ad")), "1")) {
             spz.c("PickPreloadController_InternalDetailCacheController", "PickPreloadControllerNew，当前视频是广告，跳过，contentid=" + cVar.g());
             return true;
         }
         a.d E = cVar.E();
         if (E != null) {
-            if (TextUtils.equals(E.p(), "url")) {
+            if (StringUtils.equals(E.p(), "url")) {
                 return true;
             }
             String i = E.i();
-            if (TextUtils.isEmpty(i) || TextUtils.equals(i, "null")) {
+            if (StringUtils.isEmpty(i) || StringUtils.equals(i, "null")) {
                 return true;
             }
         }

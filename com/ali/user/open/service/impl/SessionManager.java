@@ -1,7 +1,7 @@
 package com.ali.user.open.service.impl;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.model.DeviceTokenSignParam;
 import com.ali.user.open.cookies.CookieManagerWrapper;
 import com.ali.user.open.core.AliMemberSDK;
@@ -76,15 +76,15 @@ public class SessionManager implements SessionService {
             return;
         }
         String value2 = ((StorageService) AliMemberSDK.getService(StorageService.class)).getValue(this.internalSessionMapKey, true);
-        if (TextUtils.isEmpty(value2)) {
+        if (StringUtils.isEmpty(value2)) {
             value2 = ((StorageService) AliMemberSDK.getService(StorageService.class)).getValue(this.internalSessionMapKey, true);
         }
         String value3 = ((StorageService) AliMemberSDK.getService(StorageService.class)).getValue(this.internalSessionStoreKey, true);
-        if (TextUtils.isEmpty(value3)) {
+        if (StringUtils.isEmpty(value3)) {
             value3 = ((StorageService) AliMemberSDK.getService(StorageService.class)).getValue(this.internalSessionStoreKey, true);
         }
         this.mIntenalSessions = new HashMap();
-        if (!TextUtils.isEmpty(value2)) {
+        if (!StringUtils.isEmpty(value2)) {
             JSONArray jSONArray = null;
             try {
                 jSONArray = new JSONArray(value2);
@@ -92,17 +92,17 @@ public class SessionManager implements SessionService {
                 e.printStackTrace();
             }
             for (int i = 0; i < jSONArray.length(); i++) {
-                if (!TextUtils.isEmpty(jSONArray.optString(i)) && (createInternalSession = createInternalSession(jSONArray.optString(i))) != null && !TextUtils.isEmpty(createInternalSession.site)) {
+                if (!StringUtils.isEmpty(jSONArray.optString(i)) && (createInternalSession = createInternalSession(jSONArray.optString(i))) != null && !StringUtils.isEmpty(createInternalSession.site)) {
                     this.mIntenalSessions.put(createInternalSession.site, createInternalSession);
                 }
             }
         }
-        if (!TextUtils.isEmpty(value3)) {
+        if (!StringUtils.isEmpty(value3)) {
             this.internalSession = createInternalSession(value3);
             if (this.internalSession == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(this.internalSession.site)) {
+            if (!StringUtils.isEmpty(this.internalSession.site)) {
                 this.mIntenalSessions.put(this.internalSession.site, this.internalSession);
                 return;
             } else {
@@ -120,7 +120,7 @@ public class SessionManager implements SessionService {
             return ((Boolean) ipChange.ipc$dispatch("f14699db", new Object[]{this})).booleanValue();
         }
         SDKLogger.d(TAG, "func isSessionValid");
-        if (this.internalSession == null || TextUtils.isEmpty(this.internalSession.sid)) {
+        if (this.internalSession == null || StringUtils.isEmpty(this.internalSession.sid)) {
             SDKLogger.d(TAG, "isSessionValid()  internalSession is null");
             return false;
         } else if (this.internalSession.loginTime == 0 || this.internalSession.expireIn == 0) {
@@ -143,7 +143,7 @@ public class SessionManager implements SessionService {
             return ((Boolean) ipChange.ipc$dispatch("7d0f9be5", new Object[]{this, str})).booleanValue();
         }
         SDKLogger.d(TAG, "func isSessionValid");
-        if (this.mIntenalSessions == null || this.mIntenalSessions.get(str) == null || TextUtils.isEmpty(this.mIntenalSessions.get(str).sid)) {
+        if (this.mIntenalSessions == null || this.mIntenalSessions.get(str) == null || StringUtils.isEmpty(this.mIntenalSessions.get(str).sid)) {
             SDKLogger.d(TAG, "isSessionValid()  internalSession is null");
             return false;
         }
@@ -174,7 +174,7 @@ public class SessionManager implements SessionService {
         try {
             JSONObject jSONObject = new JSONObject(str2);
             internalSession.sid = JSONUtils.optString(jSONObject, "sid");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 internalSession.site = JSONUtils.optString(jSONObject, "site");
             } else {
                 internalSession.site = str;
@@ -187,16 +187,16 @@ public class SessionManager implements SessionService {
             internalSession.openSid = JSONUtils.optString(jSONObject, "openSid");
             internalSession.deviceTokenKey = JSONUtils.optString(jSONObject, "deviceTokenKey");
             internalSession.deviceTokenSalt = JSONUtils.optString(jSONObject, "deviceTokenSalt");
-            if (!TextUtils.isEmpty(internalSession.sid) && !TextUtils.isEmpty(internalSession.userId) && TextUtils.equals(KernelContext.getApplicationContext().getPackageName(), CommonUtils.getProcessName(KernelContext.getApplicationContext()))) {
+            if (!StringUtils.isEmpty(internalSession.sid) && !StringUtils.isEmpty(internalSession.userId) && StringUtils.equals(KernelContext.getApplicationContext().getPackageName(), CommonUtils.getProcessName(KernelContext.getApplicationContext()))) {
                 if (ConfigManager.getInstance().isRegisterSidToMtopDefault()) {
                     CommonUtils.sendUT("ucc_register_to_mtop");
                     ((RpcService) AliMemberSDK.getService(RpcService.class)).registerSessionInfo(null, internalSession.sid, internalSession.userId);
-                } else if (!TextUtils.isEmpty(internalSession.site)) {
+                } else if (!StringUtils.isEmpty(internalSession.site)) {
                     HashMap hashMap = new HashMap();
                     hashMap.put("site", internalSession.site);
                     hashMap.put("sid", internalSession.sid);
                     CommonUtils.sendUT("ucc_register_to_mtop_site", hashMap);
-                    if (!TextUtils.isEmpty(Site.getMtopInstanceTag(internalSession.site))) {
+                    if (!StringUtils.isEmpty(Site.getMtopInstanceTag(internalSession.site))) {
                         ((RpcService) AliMemberSDK.getService(RpcService.class)).registerSessionInfo(Site.getMtopInstanceTag(internalSession.site), internalSession.sid, internalSession.userId);
                     }
                 }
@@ -279,10 +279,10 @@ public class SessionManager implements SessionService {
         try {
             StorageService storageService = (StorageService) getServiceInstance("com.ali.user.open.securityguard.SecurityGuardWrapper", null, null);
             String value = storageService.getValue(this.internalSessionStoreKey, true);
-            if (TextUtils.isEmpty(value)) {
+            if (StringUtils.isEmpty(value)) {
                 value = storageService.getValue(this.internalSessionStoreKey, true);
             }
-            if (TextUtils.isEmpty(value)) {
+            if (StringUtils.isEmpty(value)) {
                 return;
             }
             this.internalSession = createInternalSession("taobao", value);
@@ -290,7 +290,7 @@ public class SessionManager implements SessionService {
             if (this.mIntenalSessions == null) {
                 this.mIntenalSessions = new HashMap();
             }
-            if (!TextUtils.isEmpty(this.internalSession.site)) {
+            if (!StringUtils.isEmpty(this.internalSession.site)) {
                 this.mIntenalSessions.put(this.internalSession.site, this.internalSession);
             } else {
                 this.mIntenalSessions.put("taobao", this.internalSession);
@@ -307,7 +307,7 @@ public class SessionManager implements SessionService {
         }
         try {
             StorageService storageService = (StorageService) getServiceInstance("com.ali.user.open.securityguard.SecurityGuardWrapper", null, null);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             this.internalSession = createInternalSession(str, str2);
@@ -315,7 +315,7 @@ public class SessionManager implements SessionService {
             if (this.mIntenalSessions == null) {
                 this.mIntenalSessions = new HashMap();
             }
-            if (!TextUtils.isEmpty(this.internalSession.site)) {
+            if (!StringUtils.isEmpty(this.internalSession.site)) {
                 this.mIntenalSessions.put(this.internalSession.site, this.internalSession);
             } else {
                 this.mIntenalSessions.put("taobao", this.internalSession);
@@ -330,7 +330,7 @@ public class SessionManager implements SessionService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("103e1ec7", new Object[]{this, str, loginReturnData});
-        } else if (loginReturnData == null || TextUtils.isEmpty(loginReturnData.data)) {
+        } else if (loginReturnData == null || StringUtils.isEmpty(loginReturnData.data)) {
         } else {
             InternalSession internalSession = new InternalSession();
             try {
@@ -353,7 +353,7 @@ public class SessionManager implements SessionService {
                     internalSession.deviceTokenSalt = loginReturnData.deviceToken.salt;
                     internalSession.deviceTokenKey = loginReturnData.deviceToken.key;
                 }
-                if (TextUtils.equals(str, "taobao")) {
+                if (StringUtils.equals(str, "taobao")) {
                     AccountHistoryManager.getInstance().putLoginHistory(new HistoryAccount(loginDataModel.userId, internalSession.deviceTokenKey, loginDataModel.nick, loginDataModel.phone, loginDataModel.email), internalSession.deviceTokenSalt);
                 }
                 internalSession.loginTime = loginDataModel.loginTime;
@@ -373,7 +373,7 @@ public class SessionManager implements SessionService {
                 hashMap.put("site", str);
                 hashMap.put("sid", loginDataModel.sid);
                 CommonUtils.sendUT("ucc_register_to_mtop_site", hashMap);
-                if (!TextUtils.isEmpty(Site.getMtopInstanceTag(str)) && TextUtils.equals(KernelContext.getApplicationContext().getPackageName(), CommonUtils.getProcessName(KernelContext.getApplicationContext()))) {
+                if (!StringUtils.isEmpty(Site.getMtopInstanceTag(str)) && StringUtils.equals(KernelContext.getApplicationContext().getPackageName(), CommonUtils.getProcessName(KernelContext.getApplicationContext()))) {
                     ((RpcService) AliMemberSDK.getService(RpcService.class)).registerSessionInfo(Site.getMtopInstanceTag(str), loginDataModel.sid, loginDataModel.userId);
                 }
                 String[] strArr = null;
@@ -401,7 +401,7 @@ public class SessionManager implements SessionService {
             ipChange.ipc$dispatch("42be76b2", new Object[]{this, str, loginReturnData});
             return;
         }
-        if (loginReturnData != null && !TextUtils.isEmpty(loginReturnData.data)) {
+        if (loginReturnData != null && !StringUtils.isEmpty(loginReturnData.data)) {
             try {
                 LoginDataModel loginDataModel = (LoginDataModel) JSONUtils.toPOJO(new JSONObject(loginReturnData.data), LoginDataModel.class);
                 String[] strArr = null;
@@ -505,7 +505,7 @@ public class SessionManager implements SessionService {
             this.mIntenalSessions.remove(str);
         }
         refreshInternalSession(internalSession);
-        if (!TextUtils.isEmpty(Site.getMtopInstanceTag(str))) {
+        if (!StringUtils.isEmpty(Site.getMtopInstanceTag(str))) {
             ((RpcService) AliMemberSDK.getService(RpcService.class)).logout(Site.getMtopInstanceTag(str));
         }
         return ResultCode.SUCCESS;

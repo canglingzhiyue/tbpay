@@ -2,7 +2,7 @@ package com.taobao.android.dinamic.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -70,25 +70,25 @@ public class DFrameLayout extends FrameLayout {
         }
         if ((a2 & 3) != 0 && a3[0] > 0) {
             String str3 = (String) map.get("dMarginLeft");
-            if (!TextUtils.isEmpty(str3) && !str.toLowerCase().contains("np") && !str3.toLowerCase().contains("np")) {
+            if (!StringUtils.isEmpty(str3) && !str.toLowerCase().contains("np") && !str3.toLowerCase().contains("np")) {
                 layoutParams.width = calculateSize(str, str3, a3[0]);
             }
         }
         if ((a2 & 5) != 0 && a3[0] > 0) {
             String str4 = (String) map.get("dMarginRight");
-            if (!TextUtils.isEmpty(str4) && !str.toLowerCase().contains("np") && !str4.toLowerCase().contains("np")) {
+            if (!StringUtils.isEmpty(str4) && !str.toLowerCase().contains("np") && !str4.toLowerCase().contains("np")) {
                 layoutParams.width = calculateSize(str, str4, a3[0]);
             }
         }
         if ((a2 & 48) != 0 && a3[1] > 0) {
             String str5 = (String) map.get("dMarginTop");
-            if (!TextUtils.isEmpty(str5) && !str2.toLowerCase().contains("np") && !str5.toLowerCase().contains("np")) {
+            if (!StringUtils.isEmpty(str5) && !str2.toLowerCase().contains("np") && !str5.toLowerCase().contains("np")) {
                 layoutParams.height = calculateSize(str2, str5, a3[1]);
             }
         }
         if ((a2 & 80) != 0 && a3[1] > 0) {
             String str6 = (String) map.get("dMarginBottom");
-            if (!TextUtils.isEmpty(str6) && !str2.toLowerCase().contains("np") && !str6.toLowerCase().contains("np")) {
+            if (!StringUtils.isEmpty(str6) && !str2.toLowerCase().contains("np") && !str6.toLowerCase().contains("np")) {
                 layoutParams.height = calculateSize(str2, str6, a3[1]);
             }
         }

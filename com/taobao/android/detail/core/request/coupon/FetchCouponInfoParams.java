@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.request.coupon;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.request.MtopRequestParams;
 import java.util.HashMap;
@@ -121,19 +121,19 @@ public class FetchCouponInfoParams implements MtopRequestParams {
         hashMap.put("uuid", this.uuid);
         hashMap.put("couponType", this.type + "");
         hashMap.put("sellerId", this.sellerId);
-        if (!TextUtils.isEmpty(this.asac)) {
+        if (!StringUtils.isEmpty(this.asac)) {
             hashMap.put("asac", this.asac);
         }
-        if (!TextUtils.isEmpty(this.sellerType)) {
+        if (!StringUtils.isEmpty(this.sellerType)) {
             hashMap.put("sellerType", this.sellerType);
         }
-        if (!TextUtils.isEmpty(this.from)) {
+        if (!StringUtils.isEmpty(this.from)) {
             hashMap.put("from", this.from);
         }
-        if (!TextUtils.isEmpty(this.lotteryId)) {
+        if (!StringUtils.isEmpty(this.lotteryId)) {
             hashMap.put("lotteryId", this.lotteryId);
         }
-        if (!TextUtils.isEmpty(this.displayType)) {
+        if (!StringUtils.isEmpty(this.displayType)) {
             hashMap.put("displayType", this.displayType);
         }
         return hashMap;

@@ -1,7 +1,7 @@
 package com.taobao.themis.open.ability.network;
 
 import android.taobao.windvane.connect.HttpConnector;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONException;
@@ -491,7 +491,7 @@ public final class c {
             return;
         }
         byte[] bArr = null;
-        if (!TextUtils.isEmpty(aVar.d())) {
+        if (!StringUtils.isEmpty(aVar.d())) {
             String d2 = aVar.d();
             q.b(d2, "options.body");
             Charset charset = kotlin.text.d.UTF_8;

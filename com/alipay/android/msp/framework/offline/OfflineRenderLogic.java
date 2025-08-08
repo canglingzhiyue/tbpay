@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.offline;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.pay.GlobalConstant;
@@ -29,7 +29,7 @@ public class OfflineRenderLogic {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0065, code lost:
-        if (android.text.TextUtils.equals(r1, com.alipay.android.msp.pay.GlobalSdkConstant.getMspVersion()) != false) goto L23;
+        if (android.text.StringUtils.equals(r1, com.alipay.android.msp.pay.GlobalSdkConstant.getMspVersion()) != false) goto L23;
      */
     /* JADX WARN: Removed duplicated region for block: B:20:0x006b  */
     /*
@@ -60,13 +60,13 @@ public class OfflineRenderLogic {
             java.lang.String r0 = "tplid"
             java.lang.String r1 = r9.getString(r0)
             java.lang.String r4 = "3"
-            boolean r1 = android.text.TextUtils.equals(r1, r4)
+            boolean r1 = android.text.StringUtils.equals(r1, r4)
             java.lang.String r4 = "QUICKPAY@cashier-result-flex"
             if (r1 == 0) goto L32
             r9.put(r0, r4)
         L32:
             java.lang.String r1 = r9.getString(r0)
-            boolean r1 = android.text.TextUtils.equals(r4, r1)
+            boolean r1 = android.text.StringUtils.equals(r4, r1)
             if (r1 == 0) goto L68
             java.lang.String r1 = "reportVer"
             com.alibaba.fastjson.JSONObject r1 = r9.getJSONObject(r1)
@@ -76,10 +76,10 @@ public class OfflineRenderLogic {
             java.lang.String r5 = "mspVersion"
             java.lang.String r1 = r1.getString(r5)
             java.lang.String r5 = com.alipay.android.msp.pay.GlobalConstant.getTemplateVersion()
-            boolean r4 = android.text.TextUtils.equals(r4, r5)
+            boolean r4 = android.text.StringUtils.equals(r4, r5)
             if (r4 == 0) goto L69
             java.lang.String r4 = com.alipay.android.msp.pay.GlobalSdkConstant.getMspVersion()
-            boolean r1 = android.text.TextUtils.equals(r1, r4)
+            boolean r1 = android.text.StringUtils.equals(r1, r4)
             if (r1 != 0) goto L68
             goto L69
         L68:
@@ -114,7 +114,7 @@ public class OfflineRenderLogic {
         if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("serverSideData")) != null) {
             String string = jSONObject2.getString("tplVersion");
             String string2 = jSONObject2.getString("mspVersion");
-            if (TextUtils.equals(string, GlobalConstant.getTemplateVersion()) && TextUtils.equals(string2, GlobalSdkConstant.getMspVersion())) {
+            if (StringUtils.equals(string, GlobalConstant.getTemplateVersion()) && StringUtils.equals(string2, GlobalSdkConstant.getMspVersion())) {
                 z = false;
             }
         }

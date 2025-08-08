@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework.view.manager;
 
 import android.net.Uri;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -165,10 +165,10 @@ public class a extends ViewPager.SimpleOnPageChangeListener implements ViewPager
             return;
         }
         fjt.a(fjt.TAG_SECOND_PAGE, "处理左滑打开二级页，是否可用" + z + "，二级页类型" + str + "，二级页URL" + str2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.g = this.f.a(f11623a.get(str));
         }
-        if (z && (aVar = this.g) != null && aVar.a() != null && !TextUtils.isEmpty(str2)) {
+        if (z && (aVar = this.g) != null && aVar.a() != null && !StringUtils.isEmpty(str2)) {
             NewDetailViewPager newDetailViewPager = this.d;
             newDetailViewPager.setViewPagerFeature(this.g.a(newDetailViewPager));
             this.d.setIsAvailable(true);

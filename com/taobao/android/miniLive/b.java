@@ -2,7 +2,7 @@ package com.taobao.android.miniLive;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +33,7 @@ public class b {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
         } else if (this.f14330a == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 r rVar = new r();
                 try {
                     rVar.a(new JSONObject(str));

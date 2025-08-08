@@ -2,7 +2,7 @@ package com.taobao.infoflow.taobao.subservice.biz.iconbackanimeservice;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
@@ -174,7 +174,7 @@ public class IconBackGuideAnimeServiceImpl implements IIconBackGuideAnimeService
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7a23a8fd", new Object[]{this, str, intent});
-        } else if (TextUtils.isEmpty(str) || (lnsVar = this.mIconBackGuideAnimeProcess) == null) {
+        } else if (StringUtils.isEmpty(str) || (lnsVar = this.mIconBackGuideAnimeProcess) == null) {
         } else {
             lnsVar.a(str, intent);
         }
@@ -267,7 +267,7 @@ public class IconBackGuideAnimeServiceImpl implements IIconBackGuideAnimeService
             return ((Boolean) ipChange.ipc$dispatch("2e8599cd", new Object[]{this, iContainerDataModel})).booleanValue();
         }
         IContainerInnerDataModel<?> base = iContainerDataModel.getBase();
-        return (base == null || (sections = base.getSections()) == null || TextUtils.equals(getIconVersion(sections), DOUBLE_ROW_ICON)) ? false : true;
+        return (base == null || (sections = base.getSections()) == null || StringUtils.equals(getIconVersion(sections), DOUBLE_ROW_ICON)) ? false : true;
     }
 
     private String getIconVersion(List<?> list) {

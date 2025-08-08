@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.request.params;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -115,7 +115,7 @@ public class MainRequestParams implements MtopRequestParams {
             c.ComponentFatigueContainer.a(true);
             long currentTimeMillis = System.currentTimeMillis();
             String a2 = c.ComponentFatigueContainer.a(getDetailToken());
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.mExParams.put("fatigue", a2);
             }
             av.a(getDetailToken(), c.GENERATE_FATIGUE_PARAMS_COST, System.currentTimeMillis() - currentTimeMillis);
@@ -180,7 +180,7 @@ public class MainRequestParams implements MtopRequestParams {
         map.put("openFrom", odg.s().b());
         map.put("utdid", UTDevice.getUtdid(context));
         String b = ao.b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             map.put("nick", b);
         }
         setCpuInfo(map);

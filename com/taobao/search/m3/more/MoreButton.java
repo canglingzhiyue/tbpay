@@ -1,7 +1,7 @@
 package com.taobao.search.m3.more;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.uikit.extend.feature.view.TUrlImageView;
@@ -66,7 +66,7 @@ public final class MoreButton extends TUrlImageView {
             ipChange.ipc$dispatch("30541df7", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.url;
         }
         setImageUrl(str);

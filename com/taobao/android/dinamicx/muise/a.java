@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx.muise;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class a implements fvl {
         Context m = dXRuntimeContext.m();
         if (m instanceof com.taobao.android.preview.e) {
             com.taobao.android.preview.e eVar = (com.taobao.android.preview.e) m;
-            if (!TextUtils.isEmpty(eVar.a())) {
+            if (!StringUtils.isEmpty(eVar.a())) {
                 str = eVar.a();
                 Uri parse = Uri.parse(str);
                 MUSInstanceConfig mUSInstanceConfig = new MUSInstanceConfig();
@@ -53,7 +53,7 @@ public class a implements fvl {
                 return a2.getInstanceId();
             }
         }
-        if (!TextUtils.isEmpty(dXRuntimeContext.c().c)) {
+        if (!StringUtils.isEmpty(dXRuntimeContext.c().c)) {
             str = dXRuntimeContext.c().c;
         } else {
             str = "dx://" + dXRuntimeContext.c().f11925a;

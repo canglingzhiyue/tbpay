@@ -2,7 +2,7 @@ package com.taobao.live.home.dinamic.widget;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -182,14 +182,14 @@ public class c extends af {
         } else if (i == 0) {
             textView.setEllipsize(null);
         } else if (i == 1) {
-            textView.setEllipsize(TextUtils.TruncateAt.START);
+            textView.setEllipsize(StringUtils.TruncateAt.START);
         } else if (i == 2) {
-            textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+            textView.setEllipsize(StringUtils.TruncateAt.MIDDLE);
         } else if (i == 3) {
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
         } else if (i != 5) {
         } else {
-            textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            textView.setEllipsize(StringUtils.TruncateAt.MARQUEE);
         }
     }
 

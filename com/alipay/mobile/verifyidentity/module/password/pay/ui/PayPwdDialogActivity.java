@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
@@ -317,7 +317,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
                     } else {
                         VerifyLogCat.i(PayPwdDialogActivity.access$000(), "PayDialogActivity receive  on_pwd_plugin_action");
                         String string = intent.getExtras().getString("data");
-                        if (TextUtils.isEmpty(string) || string.startsWith(UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
+                        if (StringUtils.isEmpty(string) || string.startsWith(UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
                             PayPwdDialogActivity payPwdDialogActivity = PayPwdDialogActivity.this;
                             payPwdDialogActivity.isSimplePwd = true;
                             payPwdDialogActivity.initPwdInput();
@@ -369,17 +369,17 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
         });
         String string = getIntent().getExtras().getString("title");
         this.content_title = (TextView) findViewById(R.id.pwd_title);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = getResources().getString(R.string.pwd_input_alert_please);
         }
         this.content_title.setText(string);
         this.content_desc = (TextView) findViewById(R.id.pwd_desc);
         this.content_biz_desc = (TextView) findViewById(R.id.pwd_biz_desc);
         String string2 = getIntent().getExtras().getString("subtitle");
-        if (!TextUtils.isEmpty(string2) || !TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(string2) || !StringUtils.isEmpty(this.e)) {
             this.j = true;
             this.content_biz_desc.setVisibility(0);
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 this.content_biz_desc.setText(this.e);
             } else {
                 this.content_biz_desc.setText(string2);
@@ -389,12 +389,12 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
             this.content_biz_desc.setVisibility(8);
         }
         String string3 = getIntent().getExtras().getString("htip", "");
-        if (!TextUtils.isEmpty(this.pwdTopTip)) {
+        if (!StringUtils.isEmpty(this.pwdTopTip)) {
             this.content_desc.setTextColor(-65536);
             this.content_desc.setText(this.pwdTopTip);
             this.content_desc.setVisibility(0);
             changeLayout(true, this.j);
-        } else if (!TextUtils.isEmpty(this.f) && !"Y".equalsIgnoreCase(string3)) {
+        } else if (!StringUtils.isEmpty(this.f) && !"Y".equalsIgnoreCase(string3)) {
             this.content_desc.setText(this.f);
             this.content_desc.setVisibility(0);
             this.content_desc.setTextColor(Color.parseColor("#333333"));
@@ -407,7 +407,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
         this.mPayingTip = (TextView) findViewById(R.id.paying_txt);
         this.mProgressWheel = (CustomProgressWheel) findViewById(R.id.paypwd_progress_new);
         String string4 = getIntent().getExtras().getString("loadingTip");
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             if (this.d.isPluginMode) {
                 string4 = this.d.mPlugin.getActConf(BaseFBPlugin.ACT_CONF.loadingPayingText);
             } else {
@@ -452,9 +452,9 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
             if ("Y".equalsIgnoreCase(this.hind_other)) {
                 this.goBackPwd.setVisibility(8);
             } else {
-                if (TextUtils.isEmpty(this.showFindPwd) || "Y".equalsIgnoreCase(this.showFindPwd)) {
+                if (StringUtils.isEmpty(this.showFindPwd) || "Y".equalsIgnoreCase(this.showFindPwd)) {
                     this.goBackPwd.setVisibility(0);
-                    if (!TextUtils.isEmpty(this.findPwdTxt)) {
+                    if (!StringUtils.isEmpty(this.findPwdTxt)) {
                         this.goBackPwd.setText(this.findPwdTxt);
                     } else {
                         this.goBackPwd.setText(R.string.pwd_forget_in_layout);
@@ -502,7 +502,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
             }
         } else if (this.isShowGetBackPwd) {
             String string5 = getIntent().getExtras().getString("pwd_action");
-            if (!TextUtils.isEmpty(string5)) {
+            if (!StringUtils.isEmpty(string5)) {
                 this.goBackPwd.setText(string5);
             } else {
                 this.goBackPwd.setText(R.string.pwd_forget_in_layout);
@@ -537,9 +537,9 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
         }
         if (getIntent().getExtras().getBoolean("hasOthers")) {
             String string6 = getIntent().getExtras().getString("switchOther");
-            if (TextUtils.isEmpty(string6)) {
+            if (StringUtils.isEmpty(string6)) {
                 String string7 = getIntent().getExtras().getString("pwd_other");
-                if (TextUtils.isEmpty(string7)) {
+                if (StringUtils.isEmpty(string7)) {
                     string7 = getResources().getString(R.string.pwd_other_way);
                 }
                 a(string7);
@@ -576,7 +576,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             this.isIntellDecison = false;
             this.other_txt.setVisibility(0);
             this.other_txt.setText(str);
@@ -594,7 +594,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
                         HashMap hashMap = new HashMap();
                         hashMap.put("module", PayPwdDialogActivity.this.getLogicModuleName());
                         hashMap.put("ui_type", "alert");
-                        hashMap.put("plusPwdType", !TextUtils.isEmpty(PayPwdDialogActivity.access$300(PayPwdDialogActivity.this)) ? "pwd" : "plus_pwd");
+                        hashMap.put("plusPwdType", !StringUtils.isEmpty(PayPwdDialogActivity.access$300(PayPwdDialogActivity.this)) ? "pwd" : "plus_pwd");
                         VerifyBehavorLogger.logBehavor(BehaviourIdEnum.EVENT, "UC-MobileIC-180927-01", Constants.VI_ENGINE_APPID, "zthlio", PayPwdDialogActivity.access$400(PayPwdDialogActivity.this).getToken(), PayPwdDialogActivity.access$500(PayPwdDialogActivity.this).getVerifyId(), null, hashMap);
                     } catch (Throwable th) {
                         String access$000 = PayPwdDialogActivity.access$000();
@@ -605,7 +605,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
                     VIUtils.goOtherVerifyProduct(access$600, payPwdDialogActivity, PayPwdDialogActivity.access$700(payPwdDialogActivity));
                 }
             });
-        } else if (!TextUtils.isEmpty(this.top_to_product)) {
+        } else if (!StringUtils.isEmpty(this.top_to_product)) {
             this.isIntellDecison = true;
             this.other_txt.setVisibility(0);
             this.other_txt.setText(this.top_to_product);
@@ -653,7 +653,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
                 }
                 PayPwdDialogActivity.access$1600(PayPwdDialogActivity.this, str2);
                 PayPwdDialogActivity payPwdDialogActivity = PayPwdDialogActivity.this;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     i = str2.length();
                 }
                 payPwdDialogActivity.writePWDSwitchBehavorLog("1", String.valueOf(i));
@@ -701,10 +701,10 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
         }
         String actConf = this.d.mPlugin.getActConf(BaseFBPlugin.ACT_CONF.pwdInputBtn);
         String actConf2 = this.d.mPlugin.getActConf(BaseFBPlugin.ACT_CONF.pwdPlaceHolder);
-        if (!TextUtils.isEmpty(actConf)) {
+        if (!StringUtils.isEmpty(actConf)) {
             this.mSafeInputContext.setOkButtonText(actConf);
         }
-        if (TextUtils.isEmpty(actConf2)) {
+        if (StringUtils.isEmpty(actConf2)) {
             return;
         }
         this.mSafeInputContext.getEditText().setHint(actConf2);
@@ -826,7 +826,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
             hashMap.put("code", str2);
             hashMap.put("source", str3);
             hashMap.put("ui_type", str4);
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 hashMap.put("plusPwdType", "pwd");
             } else {
                 hashMap.put("plusPwdType", "plus_pwd");
@@ -920,7 +920,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
         }
         String str2 = f5932a;
         VerifyLogCat.i(str2, "updatePubKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i(f5932a, "服务端没有提供新的公钥，不更新");
             return;
         }
@@ -987,7 +987,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5e790f4f", new Object[]{payPwdDialogActivity, mICRpcResponse});
-        } else if (TextUtils.isEmpty(mICRpcResponse.data) || !mICRpcResponse.data.contains("bicAsyncData")) {
+        } else if (StringUtils.isEmpty(mICRpcResponse.data) || !mICRpcResponse.data.contains("bicAsyncData")) {
         } else {
             try {
                 JSONObject parseObject = JSON.parseObject(mICRpcResponse.data);
@@ -1003,10 +1003,10 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0059, code lost:
-        if (android.text.TextUtils.isEmpty(r0) != false) goto L28;
+        if (android.text.StringUtils.isEmpty(r0) != false) goto L28;
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0073, code lost:
-        if (android.text.TextUtils.isEmpty(r0) == false) goto L23;
+        if (android.text.StringUtils.isEmpty(r0) == false) goto L23;
      */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0076, code lost:
         r0 = r12.getResources().getString(com.taobao.taobao.R.string.pwd_forget_in_layout);
@@ -1060,7 +1060,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
             java.lang.String r3 = "findPwdTxt"
             java.lang.Object r0 = r0.get(r3)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r3 = android.text.TextUtils.isEmpty(r0)
+            boolean r3 = android.text.StringUtils.isEmpty(r0)
             if (r3 == 0) goto L82
             goto L76
         L5c:
@@ -1070,7 +1070,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
             android.os.Bundle r0 = r0.getExtras()
             java.lang.String r3 = "pwd_action"
             java.lang.String r0 = r0.getString(r3)
-            boolean r3 = android.text.TextUtils.isEmpty(r0)
+            boolean r3 = android.text.StringUtils.isEmpty(r0)
             if (r3 != 0) goto L76
             goto L82
         L76:
@@ -1163,7 +1163,7 @@ public class PayPwdDialogActivity extends PayDialogBaseActivity {
             if (payPwdDialogActivity.showFindPwdByResponse(mICRpcResponse, hashMap)) {
                 String str = hashMap.get(PayPwdModule.FIND_PWD_TXT);
                 payPwdDialogActivity.goBackPwd.setVisibility(0);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     payPwdDialogActivity.goBackPwd.setText(str);
                 } else {
                     payPwdDialogActivity.goBackPwd.setText(R.string.pwd_forget_in_layout);

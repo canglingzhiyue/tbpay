@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.statisticsv2;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -119,7 +119,7 @@ public class StatisticInfo {
         }
         try {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            LogUtil.record(2, "StatisticInfo#updateResult", TextUtils.isEmpty(str) ? "null" : str);
+            LogUtil.record(2, "StatisticInfo#updateResult", StringUtils.isEmpty(str) ? "null" : str);
             this.b.updateResult(str, str2, this.f4854a);
             long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
             LogUtil.record(2, "StatisticInfo#updateResult", "passTime:".concat(String.valueOf(elapsedRealtime2)));
@@ -252,6 +252,6 @@ public class StatisticInfo {
             return ((Boolean) ipChange.ipc$dispatch("19979856", new Object[]{this, file})).booleanValue();
         }
         File file2 = this.d;
-        return (file2 == null || file == null || !TextUtils.equals(file2.getAbsolutePath(), file.getAbsolutePath())) ? false : true;
+        return (file2 == null || file == null || !StringUtils.equals(file2.getAbsolutePath(), file.getAbsolutePath())) ? false : true;
     }
 }

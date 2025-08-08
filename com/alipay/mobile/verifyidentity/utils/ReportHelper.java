@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -178,7 +178,7 @@ public class ReportHelper {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("reportOccasion", str);
         }
         reportInfo(z, hashMap);
@@ -245,8 +245,8 @@ public class ReportHelper {
             } else if (!z && "Y".equalsIgnoreCase(getReportFlag(null, stopReport))) {
                 VerifyLogCat.i("ReportHelper", "服务端已下发关闭指令");
                 return false;
-            } else if (!TextUtils.isEmpty(str)) {
-                if (TextUtils.equals(getReportFlag(null, f6101a), CipherHelper.bytes2Hex(CipherHelper.encrypt_SHA(str, "md5")))) {
+            } else if (!StringUtils.isEmpty(str)) {
+                if (StringUtils.equals(getReportFlag(null, f6101a), CipherHelper.bytes2Hex(CipherHelper.encrypt_SHA(str, "md5")))) {
                     VerifyLogCat.i("ReportHelper", "envData没有变化，不上报");
                     return false;
                 }
@@ -255,7 +255,7 @@ public class ReportHelper {
             } else {
                 long j = 0;
                 String reportFlag = getReportFlag(null, KEY_LAST_REPORT_TIME);
-                if (!TextUtils.isEmpty(reportFlag)) {
+                if (!StringUtils.isEmpty(reportFlag)) {
                     j = Long.valueOf(reportFlag).longValue();
                 }
                 if (System.currentTimeMillis() - j >= 60000) {
@@ -482,7 +482,7 @@ public class ReportHelper {
             ipChange.ipc$dispatch("9183d27d", new Object[]{jSONArray, new Integer(i), str});
             return;
         }
-        jSONArray.add(i, !TextUtils.isEmpty(str) ? str : "");
+        jSONArray.add(i, !StringUtils.isEmpty(str) ? str : "");
         VerifyLogCat.i("ReportHelper", String.format("addToJsonarray | index: %s, value: %s ", Integer.valueOf(i), str));
     }
 }

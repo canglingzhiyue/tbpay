@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.b;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -133,7 +133,7 @@ public class djy {
             return ((Number) ipChange.ipc$dispatch("4dba94fb", new Object[]{str, str2, new Integer(i)})).longValue();
         }
         String a2 = a(str2 + str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return -1L;
         }
         return Math.abs(a2.hashCode() % i);

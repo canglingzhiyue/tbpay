@@ -6,7 +6,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -368,7 +368,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
         if (videoFrame2 != null && !videoFrame2.isPlaying()) {
             this.mVideoFrame.enableRenderType();
         }
-        if (TextUtils.isEmpty(this.mDirectPlayUrl) && (fVar = this.mHandler) != null) {
+        if (StringUtils.isEmpty(this.mDirectPlayUrl) && (fVar = this.mHandler) != null) {
             fVar.sendEmptyMessageDelayed(1, 10000L);
         }
         VideoFrame2 videoFrame22 = this.mVideoFrame;
@@ -386,7 +386,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
                         return;
                     }
                     String a2 = cgl.r().a();
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         return;
                     }
                     com.taobao.taolive.room.utils.s.a(TaoLiveNormalRoomController.this.mContext, a2);
@@ -516,7 +516,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
                     }
                     ab.d(TaoLiveNormalRoomController.access$000(), "render finish");
                     TaoLiveNormalRoomController.access$200(TaoLiveNormalRoomController.this).k(TaoLiveNormalRoomController.access$100(TaoLiveNormalRoomController.this));
-                    if (!TextUtils.equals(ag.SOURCE_UPDOWNSWITCH, poz.p(com.taobao.taolive.room.utils.n.b(TaoLiveNormalRoomController.this.mFrameContext)))) {
+                    if (!StringUtils.equals(ag.SOURCE_UPDOWNSWITCH, poz.p(com.taobao.taolive.room.utils.n.b(TaoLiveNormalRoomController.this.mFrameContext)))) {
                         com.taobao.taolive.sdk.monitor.b.b().a("LIVE_CODE_BOOT_STAGE");
                     }
                     ddw.a().b(TaoLiveNormalRoomController.access$300(TaoLiveNormalRoomController.this));
@@ -690,7 +690,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
         }
         initFrameInstaller();
         String p = poz.p(com.taobao.taolive.room.utils.n.b(this.mFrameContext));
-        if (u.aD() && !TextUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
+        if (u.aD() && !StringUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
             com.taobao.taolive.sdk.monitor.b.b().a("LIVE_CODE_BOOT_STAGE", SceneStage.SCENE_STAGE_T2);
             ab.d("LIVE_CODE_BOOT_STAGE", "stage:t2");
         }
@@ -1026,11 +1026,11 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
             this.mAutoShare = tBLiveDataModel.mInitParams.get(aw.PARAM_AUTO_SHARE);
             this.mShareItemId = tBLiveDataModel.mInitParams.get(aw.PARAM_SHAQRE_ITEM_ID);
             String str = tBLiveDataModel.mInitParams.get(aw.PARAM_HIDE_UI);
-            this.mHideUI = !TextUtils.isEmpty(str) && Boolean.parseBoolean(str);
+            this.mHideUI = !StringUtils.isEmpty(str) && Boolean.parseBoolean(str);
             this.mSjsdItemId = tBLiveDataModel.mInitParams.get(aw.PARAM_SJSD_ITEM_ID);
             this.mTimeMovingItemId = tBLiveDataModel.mInitParams.get(aw.PARAM_TIMEMOVING_ITEM_ID);
             String str2 = tBLiveDataModel.mInitParams.get("landScapeVideo");
-            if (TextUtils.isEmpty(str2) || !Boolean.parseBoolean(str2)) {
+            if (StringUtils.isEmpty(str2) || !Boolean.parseBoolean(str2)) {
                 z = false;
             }
             this.mLandscapeVideo = z;
@@ -1043,7 +1043,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
             this.mMediaInfo = null;
             try {
                 String str3 = tBLiveDataModel.mInitParams.get(aw.PARAM_CUSTOM_PLAY_CTRL);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     this.mMediaInfo = com.taobao.taolive.room.utils.q.a(str3);
                 }
                 this.mDirectPlayUrl = x.a(this.mMediaInfo);
@@ -1067,7 +1067,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4215ef15", new Object[]{this});
-        } else if (!aa.ab() || TextUtils.isEmpty(this.mShareItemId) || !aa.ac()) {
+        } else if (!aa.ab() || StringUtils.isEmpty(this.mShareItemId) || !aa.ac()) {
         } else {
             ddw.a().a(xkw.EVENT_SHOW_GOODSPACKAGE, null, this.frameContextUnique);
         }
@@ -1077,7 +1077,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2b9ec222", new Object[]{this, str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             showSwitchTVProgramTransitionView(str, str2, z);
         }
@@ -1105,7 +1105,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
         } else {
             this.mSwitchTVProgramNormalView.setVisibility(8);
             this.mSwitchTVProgramNewView.setVisibility(0);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.mSwitchTVProgramTitle.setVisibility(0);
                 this.mSwitchTVProgramTransitionView.findViewById(R.id.taolive_room_switch_tv_program_secant_line).setVisibility(0);
                 TextView textView = this.mSwitchTVProgramTitle;
@@ -1225,7 +1225,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
                     TaoLiveNormalRoomController.access$900(TaoLiveNormalRoomController.this).cancel();
                 }
                 TaoLiveNormalRoomController.access$700(TaoLiveNormalRoomController.this);
-                if (TaoLiveNormalRoomController.this.mLiveDataModel == null || TextUtils.isEmpty(TaoLiveNormalRoomController.this.mLiveDataModel.mActionUrl)) {
+                if (TaoLiveNormalRoomController.this.mLiveDataModel == null || StringUtils.isEmpty(TaoLiveNormalRoomController.this.mLiveDataModel.mActionUrl)) {
                     return;
                 }
                 String str = TaoLiveNormalRoomController.this.mLiveDataModel.mActionUrl;
@@ -1322,7 +1322,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
             return;
         }
         VideoInfo a2 = com.taobao.taolive.sdk.controller.k.a(this.mLiveDataModel);
-        if (a2 == null || tBLiveSwitchMsg == null || TextUtils.isEmpty(tBLiveSwitchMsg.targetLiveId) || (tBLiveSwitchMsg.newRoomType & 256) != 256 || TextUtils.isEmpty(tBLiveSwitchMsg.targetUrl) || this.mInSwitchTaoLiveRoom || this.mIsPaused || j.c()) {
+        if (a2 == null || tBLiveSwitchMsg == null || StringUtils.isEmpty(tBLiveSwitchMsg.targetLiveId) || (tBLiveSwitchMsg.newRoomType & 256) != 256 || StringUtils.isEmpty(tBLiveSwitchMsg.targetUrl) || this.mInSwitchTaoLiveRoom || this.mIsPaused || j.c()) {
             return;
         }
         if ((!tBLiveSwitchMsg.targetLiveId.equals(this.mId) || poy.b(a2, this.mFrameContext)) && (tBLiveSwitchMsg.targetLiveId.equals(this.mId) || !poy.b(a2, this.mFrameContext))) {
@@ -1352,7 +1352,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
                 return;
             }
             TBTVProgramMessage tBTVProgramMessage = (TBTVProgramMessage) obj;
-            if (tBTVProgramMessage.liveDO == null || TextUtils.isEmpty(tBTVProgramMessage.liveDO.backgroundImageURL) || (phwVar = this.mTaoliveShowByStatus) == null) {
+            if (tBTVProgramMessage.liveDO == null || StringUtils.isEmpty(tBTVProgramMessage.liveDO.backgroundImageURL) || (phwVar = this.mTaoliveShowByStatus) == null) {
                 return;
             }
             phwVar.a(tBTVProgramMessage.liveDO.backgroundImageURL);
@@ -1379,7 +1379,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
             return;
         }
         VideoInfo a2 = com.taobao.taolive.sdk.controller.k.a(this.mLiveDataModel);
-        if (a2 == null || !a2.isOfficialType() || officialLiveEndMessage == null || TextUtils.isEmpty(officialLiveEndMessage.officialLiveId) || !officialLiveEndMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId)) {
+        if (a2 == null || !a2.isOfficialType() || officialLiveEndMessage == null || StringUtils.isEmpty(officialLiveEndMessage.officialLiveId) || !officialLiveEndMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId)) {
             return;
         }
         Toast makeText = Toast.makeText(this.mContext, com.taobao.taolive.sdk.utils.p.g(), 1);
@@ -1413,11 +1413,11 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
             return;
         }
         VideoInfo a2 = com.taobao.taolive.sdk.controller.k.a(this.mLiveDataModel);
-        if (a2 == null || !a2.isOfficialType() || officialLiveSwitchNextMessage == null || TextUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveId) || TextUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveDetailUrl) || officialLiveSwitchNextMessage.targetLiveId.equals(a2.liveId) || !officialLiveSwitchNextMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId) || this.mInSwitchTaoLiveRoom || this.mIsPaused) {
+        if (a2 == null || !a2.isOfficialType() || officialLiveSwitchNextMessage == null || StringUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveId) || StringUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveDetailUrl) || officialLiveSwitchNextMessage.targetLiveId.equals(a2.liveId) || !officialLiveSwitchNextMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId) || this.mInSwitchTaoLiveRoom || this.mIsPaused) {
             return;
         }
         if ("true".equals(officialLiveSwitchNextMessage.gapPeriod)) {
-            e = String.format(com.taobao.taolive.sdk.utils.p.f(), TextUtils.isEmpty(officialLiveSwitchNextMessage.nextPlanStartTime) ? "" : officialLiveSwitchNextMessage.nextPlanStartTime);
+            e = String.format(com.taobao.taolive.sdk.utils.p.f(), StringUtils.isEmpty(officialLiveSwitchNextMessage.nextPlanStartTime) ? "" : officialLiveSwitchNextMessage.nextPlanStartTime);
         } else {
             e = com.taobao.taolive.sdk.utils.p.e();
         }
@@ -1504,7 +1504,7 @@ public class TaoLiveNormalRoomController extends BaseFrame implements com.taobao
             return false;
         }
         String str = videoInfo.degradeInfo.degradeUrl;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = aa.P();
         }
         com.taobao.taolive.room.utils.s.a(this.mContext, str);

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.datamodel.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -92,7 +92,7 @@ public class HKNode extends DetailNode {
                     ArrayList arrayList2 = new ArrayList();
                     for (String str2 : jSONObject2.keySet()) {
                         String string = jSONObject2.getString(str2);
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             arrayList2.add(new Pair(str2, string));
                         }
                     }

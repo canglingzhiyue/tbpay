@@ -1,7 +1,7 @@
 package com.taobao.android;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.jvm.internal.q;
 import tb.alr;
@@ -37,7 +37,7 @@ public final class af implements dlf {
             q.b(lVar, "UTPageHitHelper.getInstance()");
             str = lVar.getCurrentPageName();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = (a2 == null || (f = a2.f()) == null || (cls = f.getClass()) == null || (name = cls.getName()) == null) ? "AbilityKit" : name;
         }
         q.a((Object) str);

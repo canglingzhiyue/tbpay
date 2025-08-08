@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
 
@@ -31,7 +31,7 @@ public class ane {
             return ((Number) ipChange.ipc$dispatch("57a83dc", new Object[]{this})).intValue();
         }
         DXRootView dXRootView = this.f25453a;
-        if (dXRootView != null && dXRootView.getDxTemplateItem() != null && !TextUtils.isEmpty(this.f25453a.getDxTemplateItem().f11925a)) {
+        if (dXRootView != null && dXRootView.getDxTemplateItem() != null && !StringUtils.isEmpty(this.f25453a.getDxTemplateItem().f11925a)) {
             return this.f25453a.getDxTemplateItem().f11925a.hashCode();
         }
         return -1;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.service.BUFS;
 import com.taobao.infoflow.core.exception.InfoFlowRuntimeException;
@@ -19,7 +19,7 @@ public class xnn {
             return (String) ipChange.ipc$dispatch("3e7d5430", new Object[]{new Long(j), str, str2});
         }
         String str3 = null;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 ldf.d(str2, "getBehaviorFeature startTime : " + j);
                 BUFS.QueryArgs queryArgs = new BUFS.QueryArgs();

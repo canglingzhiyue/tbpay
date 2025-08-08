@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.widget;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.widget.DXImageWidgetNode;
 import com.taobao.tao.image.ImageStrategyConfig;
@@ -17,10 +17,10 @@ public class a implements ao {
             return (String) ipChange.ipc$dispatch("d07a8cb4", new Object[]{this, str, new Integer(i), new Integer(i2), dVar});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
-            ImageStrategyConfig.a a2 = (TextUtils.isEmpty(dVar.e) || dVar.f < 0) ? ImageStrategyConfig.a(dVar.e) : ImageStrategyConfig.a(dVar.e, dVar.f);
+            ImageStrategyConfig.a a2 = (StringUtils.isEmpty(dVar.e) || dVar.f < 0) ? ImageStrategyConfig.a(dVar.e) : ImageStrategyConfig.a(dVar.e, dVar.f);
             if (dVar.a() == 2) {
                 a2.d(true);
             }

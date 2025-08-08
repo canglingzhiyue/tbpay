@@ -2,7 +2,7 @@ package com.taobao.taobao.scancode.gateway.util;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -239,7 +239,7 @@ public class UrlModifyAdapter {
             } catch (Throwable th) {
                 th.printStackTrace();
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 aVar.a(str);
             } else if (this.c == null) {
                 aVar.a(str);
@@ -342,7 +342,7 @@ public class UrlModifyAdapter {
                 }
                 try {
                     String string = new JSONObject(new String(mtopResponse.getBytedata())).getJSONObject("data").getString("result");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         throw new NullPointerException();
                     }
                     aVar.a(string);
@@ -377,7 +377,7 @@ public class UrlModifyAdapter {
         if (ipChange instanceof IpChange) {
             return (c) ipChange.ipc$dispatch("78d85c81", new Object[]{this, str});
         }
-        if (this.f21259a.size() != 0 && !TextUtils.isEmpty(str)) {
+        if (this.f21259a.size() != 0 && !StringUtils.isEmpty(str)) {
             for (c cVar : this.f21259a) {
                 if (a(cVar, str)) {
                     return cVar;
@@ -397,14 +397,14 @@ public class UrlModifyAdapter {
             try {
                 if (!StringUtil.isEmpty(str)) {
                     long currentTimeStamp = TimeStampManager.instance().getCurrentTimeStamp();
-                    long parseLong = TextUtils.isEmpty(c.c(cVar)) ? 0L : Long.parseLong(c.c(cVar));
+                    long parseLong = StringUtils.isEmpty(c.c(cVar)) ? 0L : Long.parseLong(c.c(cVar));
                     if (parseLong != 0 && parseLong > currentTimeStamp) {
                         HashMap<String, String> hashMap = new HashMap<>();
                         hashMap.put("reason", "outoftime");
                         a("Page_ScanHome", "UrlMappingOpenFail", hashMap);
                         return false;
                     }
-                    long parseLong2 = TextUtils.isEmpty(c.d(cVar)) ? 0L : Long.parseLong(c.d(cVar));
+                    long parseLong2 = StringUtils.isEmpty(c.d(cVar)) ? 0L : Long.parseLong(c.d(cVar));
                     if (parseLong2 != 0 && parseLong2 < currentTimeStamp) {
                         HashMap<String, String> hashMap2 = new HashMap<>();
                         hashMap2.put("reason", "outoftime");
@@ -426,7 +426,7 @@ public class UrlModifyAdapter {
                         return false;
                     }
                     for (b bVar : e) {
-                        if (bVar != null && b.a(bVar) != null && b.a(bVar).equalsIgnoreCase(parse.getHost()) && (TextUtils.isEmpty(b.b(bVar)) || b.b(bVar).equals(parse.getPath()))) {
+                        if (bVar != null && b.a(bVar) != null && b.a(bVar).equalsIgnoreCase(parse.getHost()) && (StringUtils.isEmpty(b.b(bVar)) || b.b(bVar).equals(parse.getPath()))) {
                             HashMap c2 = b.c(bVar);
                             if (c2 != null) {
                                 for (String str2 : c2.keySet()) {

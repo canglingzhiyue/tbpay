@@ -9,7 +9,7 @@ import android.taobao.windvane.extra.WVPerformanceListenerManager;
 import android.taobao.windvane.extra.uc.preRender.BasePreInitManager;
 import android.taobao.windvane.monitor.o;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import com.taobao.android.riverlogger.e;
@@ -97,8 +97,8 @@ public class a {
         } else if (a(i, str2)) {
         } else {
             this.b.removeCallbacks(l);
-            if (!TextUtils.equals(this.f, str2)) {
-                if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.equals(this.f, str2)) {
+                if (!StringUtils.isEmpty(this.f)) {
                     c();
                 }
                 this.f = str2;
@@ -121,7 +121,7 @@ public class a {
             try {
                 if (j.commonConfig.aq) {
                     String str2 = str != null ? this.e.get(str) : this.g;
-                    if (!TextUtils.isEmpty(str2) && str2.contains(BasePreInitManager.PRE_RENDER_URL_ADDITION_JUDGE)) {
+                    if (!StringUtils.isEmpty(str2) && str2.contains(BasePreInitManager.PRE_RENDER_URL_ADDITION_JUDGE)) {
                         try {
                             m.e(TAG, "IPreRenderWebView skip upload white page");
                             return true;
@@ -178,14 +178,14 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.d) || c.a().b().g()) {
+        } else if (StringUtils.isEmpty(this.d) || c.a().b().g()) {
         } else {
             HashMap hashMap = new HashMap();
             String str2 = this.f;
             String remove = str2 != null ? this.e.remove(str2) : this.g;
             hashMap.put("url", remove);
             hashMap.put("error", this.d.toString());
-            if (this.j == 0 && !TextUtils.isEmpty(remove) && (b = adl.a().b(remove)) != null) {
+            if (this.j == 0 && !StringUtils.isEmpty(remove) && (b = adl.a().b(remove)) != null) {
                 String str3 = TAG;
                 m.a(str3, "found grey page: " + remove);
                 hashMap.put(adk.KEY_AIR_TAG, b.b());
@@ -211,7 +211,7 @@ public class a {
                 }
                 str = "TEMP_H5_ERROR_EVENT";
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 b.a(str, remove, String.valueOf(h), this.i, hashMap);
             }
             StringBuffer stringBuffer = this.d;

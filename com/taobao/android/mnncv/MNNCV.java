@@ -3,7 +3,7 @@ package com.taobao.android.mnncv;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.alinnpython.AliNNPython;
 import com.taobao.android.mnncv.mtop.e;
@@ -186,7 +186,7 @@ public class MNNCV {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("a1cf71c", new Object[]{context, str});
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 com.taobao.android.mnncv.mtop.c cVar = new com.taobao.android.mnncv.mtop.c(str);
                 if (cVar.b != null && cVar.b.size() > 0) {
                     List<String> tppLibs = getTppLibs();
@@ -306,7 +306,7 @@ public class MNNCV {
         ArrayList arrayList = new ArrayList();
         try {
             String config = OrangeConfig.getInstance().getConfig("EdgeComputingIsEnabled", "libName", "");
-            if (!TextUtils.isEmpty(config) && (split = config.trim().split(",")) != null) {
+            if (!StringUtils.isEmpty(config) && (split = config.trim().split(",")) != null) {
                 for (String str : split) {
                     arrayList.add(str.trim());
                 }

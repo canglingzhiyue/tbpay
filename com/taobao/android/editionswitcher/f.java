@@ -1,7 +1,7 @@
 package com.taobao.android.editionswitcher;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.revisionswitch.TBRevisionSwitchManager;
@@ -119,7 +119,7 @@ public class f {
             ipChange.ipc$dispatch("104666d1", new Object[]{this, context, jSONObject});
         } else if (jSONObject != null) {
             String string = jSONObject.getString("elderHome");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             TLog.loge("Page_Home", "EditionPositionSwitcher", "innerUpdateSTDElderHomeInfo 首页请求下发elderHome" + string);

@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.provider.core;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliNavServiceInterface;
 import com.taobao.android.detail.datasdk.protocol.adapter.core.INavAdapter;
@@ -33,7 +33,7 @@ public class TBNavProvider implements INavAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cc7d8b15", new Object[]{this, context, str, bundle});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             if (bundle == null) {
                 this.mAliNavServiceInterface.a(context).a(str);
@@ -48,7 +48,7 @@ public class TBNavProvider implements INavAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3344a8e", new Object[]{this, context, str, bundle, new Integer(i)});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             if (bundle == null) {
                 this.mAliNavServiceInterface.a(context).a(i).a(str);

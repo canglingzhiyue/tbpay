@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
 import com.taobao.android.fluid.framework.data.remote.newmodel.a;
@@ -77,7 +77,7 @@ public class slp {
             return false;
         }
         for (String str3 : str2.split(",")) {
-            if (TextUtils.equals(str, str3)) {
+            if (StringUtils.equals(str, str3)) {
                 return true;
             }
         }

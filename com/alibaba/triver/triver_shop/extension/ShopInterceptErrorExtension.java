@@ -2,7 +2,7 @@ package com.alibaba.triver.triver_shop.extension;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.app.api.App;
 import com.alibaba.ariver.kernel.api.extension.ExtensionPoint;
 import com.alibaba.triver.app.TriverLoadingController;
@@ -46,7 +46,7 @@ public class ShopInterceptErrorExtension implements InterceptShowErrorPoint {
             return false;
         }
         String i = m.i(app);
-        if (!TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(i)) {
             ExtensionPoint.as(TriverLoadingController.DowngradePoint.class).node(app).create().downgradeTo(i);
             new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.alibaba.triver.triver_shop.extension.ShopInterceptErrorExtension.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

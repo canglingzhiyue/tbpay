@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
@@ -107,7 +107,7 @@ public class LoginChecker {
             ipChange.ipc$dispatch("e0269855", new Object[]{context, bVar});
         } else if (bVar == null) {
         } else {
-            if (!TextUtils.isEmpty(epo.g().e()) && epo.g().b()) {
+            if (!StringUtils.isEmpty(epo.g().e()) && epo.g().b()) {
                 bVar.a(true);
                 return;
             }
@@ -167,7 +167,7 @@ public class LoginChecker {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+            } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
             } else {
                 String action = intent.getAction();
                 b bVar = this.f9544a.get();

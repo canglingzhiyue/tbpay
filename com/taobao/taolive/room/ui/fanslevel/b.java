@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.JSONLexer;
@@ -328,7 +328,7 @@ public class b implements com.taobao.tbliveinteractive.jsbridge.a {
                 HashMap hashMap = new HashMap();
                 if (c2.containsKey("data")) {
                     String str3 = c2.get("data");
-                    if (!TextUtils.isEmpty(str3) && (b = pqj.b(str3)) != null) {
+                    if (!StringUtils.isEmpty(str3) && (b = pqj.b(str3)) != null) {
                         hashMap.put("popviewTransParam", b.get("popviewTransParam"));
                     }
                 }
@@ -366,7 +366,7 @@ public class b implements com.taobao.tbliveinteractive.jsbridge.a {
                 } catch (Throwable th) {
                     m.e("openInsideDetailPage", th.getMessage());
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     m.e("openInsideDetailPage", "params is null");
                     return false;
                 }
@@ -403,7 +403,7 @@ public class b implements com.taobao.tbliveinteractive.jsbridge.a {
                 } catch (Throwable th2) {
                     m.e("aliveLayerHeightChange", th2.getMessage());
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     m.e("aliveLayerHeightChange", "params is null");
                     return false;
                 }
@@ -425,7 +425,7 @@ public class b implements com.taobao.tbliveinteractive.jsbridge.a {
                     return false;
                 }
                 String str6 = c3.get("eventType");
-                if (!TextUtils.equals(tqa.AUCTION_CARD_SHOW, str6) && !TextUtils.equals(tqa.AUCTION_CARD_HIDE, str6)) {
+                if (!StringUtils.equals(tqa.AUCTION_CARD_SHOW, str6) && !StringUtils.equals(tqa.AUCTION_CARD_HIDE, str6)) {
                     return false;
                 }
                 ddw.a().a("com.taobao.taolive.showcase.control", c3, this.e);
@@ -593,11 +593,11 @@ public class b implements com.taobao.tbliveinteractive.jsbridge.a {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                         return;
                     }
-                    if (TextUtils.equals(str, IRewardProxy.b.STEP_H5CALL)) {
+                    if (StringUtils.equals(str, IRewardProxy.b.STEP_H5CALL)) {
                         str4 = "参数异常";
-                    } else if (TextUtils.equals(str, IRewardProxy.b.STEP_CREATE_ORDER)) {
-                        str4 = !TextUtils.isEmpty(str3) ? str3 : "创建订单失败";
-                    } else if (TextUtils.equals(str, IRewardProxy.b.STEP_RECHARGE)) {
+                    } else if (StringUtils.equals(str, IRewardProxy.b.STEP_CREATE_ORDER)) {
+                        str4 = !StringUtils.isEmpty(str3) ? str3 : "创建订单失败";
+                    } else if (StringUtils.equals(str, IRewardProxy.b.STEP_RECHARGE)) {
                         str4 = "充值失败（" + str2 + "）";
                     } else {
                         str4 = "";
@@ -624,7 +624,7 @@ public class b implements com.taobao.tbliveinteractive.jsbridge.a {
         Map<String, String> c = q.c(str);
         String str2 = c.get("source");
         pol e = pmd.a().e();
-        if (e == null || TextUtils.isEmpty(str2)) {
+        if (e == null || StringUtils.isEmpty(str2)) {
             return;
         }
         HashMap hashMap = new HashMap(c);

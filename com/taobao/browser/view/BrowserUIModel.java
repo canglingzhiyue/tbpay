@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.util.n;
 import android.taobao.windvane.webview.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -94,7 +94,7 @@ public class BrowserUIModel extends m {
                     ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
                     return;
                 }
-                if (a.commonConfig.n && !TextUtils.isEmpty(currentUrl) && (BrowserUIModel.access$000(BrowserUIModel.this) instanceof Activity)) {
+                if (a.commonConfig.n && !StringUtils.isEmpty(currentUrl) && (BrowserUIModel.access$000(BrowserUIModel.this) instanceof Activity)) {
                     Activity activity = (Activity) BrowserUIModel.access$000(BrowserUIModel.this);
                     if (Nav.from(activity).toUri(Uri.parse(currentUrl))) {
                         activity.finish();

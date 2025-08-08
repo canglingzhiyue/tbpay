@@ -2,7 +2,7 @@ package com.taobao.android.fluid.framework.adapter;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -131,7 +131,7 @@ public class ShareAdapter implements IShareAdapter {
             hashMap.put("origin", "VideoInteract|a310p.13800399.0.0|" + obz.a(hashMap2));
         }
         for (Map.Entry entry : hashMap.entrySet()) {
-            if (!TextUtils.isEmpty((CharSequence) entry.getValue())) {
+            if (!StringUtils.isEmpty((CharSequence) entry.getValue())) {
                 buildUpon.appendQueryParameter((String) entry.getKey(), (String) entry.getValue());
             }
         }

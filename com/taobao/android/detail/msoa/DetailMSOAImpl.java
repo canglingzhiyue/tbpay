@@ -4,7 +4,7 @@ import android.app.Application;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -137,7 +137,7 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
         }
         String str = "&sku_forbidH5=" + jSONObject.getString("sku_forbidH5");
         String string = jSONObject.getString("sku_forbidH5_toast");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return str;
         }
         return str + "&sku_forbidH5_toast=" + string;
@@ -153,7 +153,7 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
         }
         String str = "&sku_forbid_redirect=" + jSONObject.getString("sku_forbid_redirect");
         String string = jSONObject.getString("sku_forbid_redirect_toast");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return str;
         }
         return str + "&sku_forbid_redirect_toast=" + string;
@@ -176,13 +176,13 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
             ipChange.ipc$dispatch("d8556dc8", new Object[]{str, jSONObject});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "null";
         }
         HashMap hashMap = new HashMap();
         if (jSONObject != null) {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-                if (entry != null && !TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+                if (entry != null && !StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                     hashMap.put(entry.getKey(), entry.getValue().toString());
                 }
             }
@@ -202,11 +202,11 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4284ead6", new Object[]{jSONObject, str});
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return "NULL";
         }
         String string = jSONObject.getString(str);
-        return TextUtils.isEmpty(string) ? "NULL" : string;
+        return StringUtils.isEmpty(string) ? "NULL" : string;
     }
 
     private static void umbrellaMSOAsku(final String str, final JSONObject jSONObject) {
@@ -254,7 +254,7 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
             final String str2 = ILocalizationService.CONFIRM;
             if (jSONObject3 != null) {
                 String string = jSONObject3.getString("title");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     str2 = string;
                 }
             }
@@ -368,7 +368,7 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
             return;
         }
         String str15 = "";
-        if (!TextUtils.isEmpty(str9)) {
+        if (!StringUtils.isEmpty(str9)) {
             String jSONString = new JSONObject() { // from class: com.taobao.android.detail.msoa.DetailMSOAImpl.11
                 {
                     put("bizName", (Object) str9);
@@ -392,8 +392,8 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
         sb.append(str4);
         sb.append("&isSourceType11=");
         sb.append(z ? "true" : "false");
-        sb.append(!TextUtils.isEmpty(str5) ? str5 : str15);
-        if (!TextUtils.isEmpty(str6)) {
+        sb.append(!StringUtils.isEmpty(str5) ? str5 : str15);
+        if (!StringUtils.isEmpty(str6)) {
             str15 = str6;
         }
         sb.append(str15);
@@ -440,7 +440,7 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
             if (jSONObject2 != null && jSONObject3 == null) {
                 bundle.putString("bottom_bar_style", "bottombar_style_buyonly");
                 String string = jSONObject2.getString("title");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     string = ILocalizationService.CONFIRM;
                 }
                 bundle.putString("buyText", string);
@@ -448,10 +448,10 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
                 bundle.putString("bottom_bar_style", "bottombar_style_buyaddcart");
                 String string2 = jSONObject2.getString("title");
                 String string3 = jSONObject3.getString("title");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     bundle.putString("buyText", string2);
                 }
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     bundle.putString("cartText", string3);
                 }
             } else if (jSONObject2 == null && jSONObject3 == null) {
@@ -477,7 +477,7 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f2b985aa", new Object[]{this, str, str2, str3, str4});
-        } else if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             c.a().a(str, "msoa_error_invalid_param", "invalid parameter", null);
         } else {
             try {
@@ -610,19 +610,19 @@ public class DetailMSOAImpl implements DetailMSOAInterface, Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("53420fc1", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             com.taobao.android.detail.sdk.utils.f.a(this.TAG, "requestId or type is null");
             c.a().b(str, "0", DetailFloatActivity.ERROR_MSG, null);
         } else {
             Uri.Builder buildUpon = Uri.parse(DetailFloatActivity.URI).buildUpon();
             buildUpon.appendQueryParameter(com.taobao.android.detail.wrapper.ext.uikit.b.b, str2);
             buildUpon.appendQueryParameter(com.taobao.android.detail.wrapper.ext.uikit.b.f11376a, str);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 try {
                     JSONObject parseObject = JSON.parseObject(str3);
                     if (parseObject != null) {
                         for (String str4 : parseObject.keySet()) {
-                            if (!TextUtils.isEmpty(str4) && (obj = parseObject.get(str4)) != null && (obj instanceof String)) {
+                            if (!StringUtils.isEmpty(str4) && (obj = parseObject.get(str4)) != null && (obj instanceof String)) {
                                 buildUpon.appendQueryParameter(str4, (String) obj);
                             }
                         }

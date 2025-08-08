@@ -3,7 +3,7 @@ package com.taobao.mass;
 import android.content.ComponentName;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.AccsIPCProvider;
@@ -119,7 +119,7 @@ public class MassClient {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ba126267", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             ALog.e(TAG, "registerTopic error, topic is null", new Object[0]);
         } else if (!l.b()) {
         } else {
@@ -148,7 +148,7 @@ public class MassClient {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d56dc16e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             ALog.e(TAG, "unregisterTopic error, topic is null", new Object[0]);
         } else if (!l.b()) {
         } else {

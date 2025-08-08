@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.model.CartGlobal;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -133,7 +133,7 @@ public class a extends bca {
                         while (true) {
                             if (it.hasNext()) {
                                 IDMComponent next = it.next();
-                                if (TextUtils.equals(next.getTag(), "checkedItemList")) {
+                                if (StringUtils.equals(next.getTag(), "checkedItemList")) {
                                     JSONObject fields = next.getFields();
                                     if (fields == null) {
                                         fields = new JSONObject();

@@ -2,7 +2,7 @@ package com.taobao.android.miniLive.sdk;
 
 import android.app.Activity;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.miniLive.ui.TBLiveVideoView;
 import com.taobao.taolive.sdk.model.common.QualitySelectItem;
@@ -123,14 +123,14 @@ public class e implements hua.a {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue();
         }
         String a2 = pmd.a().d().a("tblive", "ARTPDeviceBlackist", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = a2.split(";");
-        if (split != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+        if (split != null && split.length > 0 && !StringUtils.isEmpty(str)) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                     return true;
                 }
             }
@@ -220,11 +220,11 @@ public class e implements hua.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4a3a3c26", new Object[]{this, liveSystemMessage})).booleanValue();
         }
-        if (liveSystemMessage == null || TextUtils.isEmpty(liveSystemMessage.low) || TextUtils.isEmpty(liveSystemMessage.high) || !TextUtils.isDigitsOnly(liveSystemMessage.low) || !TextUtils.isDigitsOnly(liveSystemMessage.high) || pmd.a().q() == null) {
+        if (liveSystemMessage == null || StringUtils.isEmpty(liveSystemMessage.low) || StringUtils.isEmpty(liveSystemMessage.high) || !StringUtils.isDigitsOnly(liveSystemMessage.low) || !StringUtils.isDigitsOnly(liveSystemMessage.high) || pmd.a().q() == null) {
             return false;
         }
         String a2 = pmd.a().q().a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         try {
@@ -255,7 +255,7 @@ public class e implements hua.a {
             return;
         }
         String b = b(str);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         this.b.playStreamUrl(b, false, d(), l.a(str), true);
@@ -266,7 +266,7 @@ public class e implements hua.a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int a2 = l.a(str);

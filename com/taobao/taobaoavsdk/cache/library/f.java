@@ -1,7 +1,7 @@
 package com.taobao.taobaoavsdk.cache.library;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.AVSDKLog;
 import java.io.BufferedReader;
@@ -97,7 +97,7 @@ public class f {
         }
         try {
             String queryParameter = Uri.parse(str).getQueryParameter(str2);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return Boolean.valueOf(z);
             }
             if ("1".equals(queryParameter)) {
@@ -168,7 +168,7 @@ public class f {
         StringBuilder sb = new StringBuilder();
         while (true) {
             String readLine = bufferedReader.readLine();
-            if (!TextUtils.isEmpty(readLine)) {
+            if (!StringUtils.isEmpty(readLine)) {
                 sb.append(readLine);
                 sb.append('\n');
             } else {
@@ -196,7 +196,7 @@ public class f {
             return ((Number) ipChange.ipc$dispatch("88097ea8", new Object[]{this, str})).longValue();
         }
         Matcher matcher = s.matcher(str);
-        if (matcher.find() && (group = matcher.group(2)) != null && !TextUtils.isEmpty(group)) {
+        if (matcher.find() && (group = matcher.group(2)) != null && !StringUtils.isEmpty(group)) {
             return Long.parseLong(group);
         }
         return -1L;

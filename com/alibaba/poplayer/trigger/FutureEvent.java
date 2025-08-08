@@ -2,7 +2,7 @@ package com.alibaba.poplayer.trigger;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -60,7 +60,7 @@ public class FutureEvent implements Parcelable, Serializable {
     public boolean equals(Object obj) {
         if (obj instanceof FutureEvent) {
             FutureEvent futureEvent = (FutureEvent) obj;
-            if (!TextUtils.isEmpty(this.uri) && !TextUtils.isEmpty(this.param)) {
+            if (!StringUtils.isEmpty(this.uri) && !StringUtils.isEmpty(this.param)) {
                 return this.uri.equals(futureEvent.uri) && this.param.equals(futureEvent.param);
             }
         }

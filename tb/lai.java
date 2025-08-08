@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -165,7 +165,7 @@ public class lai implements laj {
         if (iPopData != null && iPopData.valid() && (view instanceof DXRootView)) {
             DXRootView dXRootView = (DXRootView) view;
             BasePopTemplateModel mo1077getTemplate = iPopData.mo1070fetchPopSection().mo1077getTemplate();
-            if (mo1077getTemplate != null && dXRootView.getDxTemplateItem() != null && !TextUtils.equals(mo1077getTemplate.getVersion(), String.valueOf(dXRootView.getDxTemplateItem().b))) {
+            if (mo1077getTemplate != null && dXRootView.getDxTemplateItem() != null && !StringUtils.equals(mo1077getTemplate.getVersion(), String.valueOf(dXRootView.getDxTemplateItem().b))) {
                 return true;
             }
         }

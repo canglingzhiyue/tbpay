@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.basic;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -49,12 +49,12 @@ public class d implements j<fcl> {
             return (com.taobao.android.trade.event.i) ipChange.ipc$dispatch("1a585926", new Object[]{this, fclVar});
         }
         this.f11273a = fclVar.f27803a;
-        if (TextUtils.isEmpty(this.f11273a)) {
+        if (StringUtils.isEmpty(this.f11273a)) {
             return com.taobao.android.detail.core.event.a.FAILURE;
         }
         this.b = fclVar.b;
         JSONObject jSONObject = this.b;
-        if (jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("needLogin"))) {
+        if (jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("needLogin"))) {
             try {
                 if (Boolean.parseBoolean(this.b.getString("needLogin").toLowerCase()) && !epj.c().b()) {
                     epj.c().a(true);
@@ -87,7 +87,7 @@ public class d implements j<fcl> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str) || map.isEmpty()) {
+        if (StringUtils.isEmpty(str) || map.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();

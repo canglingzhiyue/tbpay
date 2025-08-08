@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import com.sina.weibo.sdk.auth.AccessTokenHelper;
@@ -28,7 +28,7 @@ public final class a extends b {
     private boolean l(String str) {
         Bundle g;
         AuthInfo a2 = this.aA.u().a();
-        return a2 != null && str.startsWith(a2.getRedirectUrl()) && (g = e.g(str)) != null && !TextUtils.isEmpty(g.getString("access_token"));
+        return a2 != null && str.startsWith(a2.getRedirectUrl()) && (g = e.g(str)) != null && !StringUtils.isEmpty(g.getString("access_token"));
     }
 
     @Override // com.sina.weibo.sdk.web.a.b, android.webkit.WebViewClient
@@ -41,7 +41,7 @@ public final class a extends b {
             return;
         }
         String r = this.aA.u().r();
-        if (!TextUtils.isEmpty(r)) {
+        if (!StringUtils.isEmpty(r)) {
             this.aB = this.ax.a(r);
             if (this.aB != null) {
                 Bundle g = e.g(str);
@@ -49,7 +49,7 @@ public final class a extends b {
                     String string = g.getString("error");
                     String string2 = g.getString("error_code");
                     String string3 = g.getString("error_description");
-                    if (!TextUtils.isEmpty(string) || !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) || !StringUtils.isEmpty(string2)) {
                         wbAuthListener = this.aB;
                         uiError = new UiError(-1, string2, string3);
                     } else {
@@ -81,7 +81,7 @@ public final class a extends b {
     public final void q() {
         super.q();
         String r = this.aA.u().r();
-        if (!TextUtils.isEmpty(r)) {
+        if (!StringUtils.isEmpty(r)) {
             this.aB = this.ax.a(r);
             if (this.aB != null) {
                 this.aB.onCancel();

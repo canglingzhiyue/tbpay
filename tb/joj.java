@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSON;
@@ -108,7 +108,7 @@ public class joj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             try {
                 synchronized (this.e) {
@@ -133,7 +133,7 @@ public class joj {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             synchronized (this.e) {
@@ -173,7 +173,7 @@ public class joj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2fad8dff", new Object[]{this, str, johVar});
-        } else if (TextUtils.isEmpty(str) || johVar == null) {
+        } else if (StringUtils.isEmpty(str) || johVar == null) {
         } else {
             synchronized (this.e) {
                 this.d.put(str, johVar);

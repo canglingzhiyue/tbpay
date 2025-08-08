@@ -3,7 +3,7 @@ package com.taobao.cameralink.miniapp;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -324,7 +324,7 @@ public class a implements IEmbedCallback {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a6366604", new Object[]{this, bArr, new Integer(i), new Integer(i2), new Boolean(z)});
-        } else if (h() || TextUtils.isEmpty(this.i) || TextUtils.isEmpty(this.j) || TextUtils.isEmpty(this.k) || TextUtils.isEmpty(this.l) || this.m == null) {
+        } else if (h() || StringUtils.isEmpty(this.i) || StringUtils.isEmpty(this.j) || StringUtils.isEmpty(this.k) || StringUtils.isEmpty(this.l) || this.m == null) {
         } else {
             this.m.updateImagePreviewSize(i2, i);
             int i3 = (i * i2) << 2;

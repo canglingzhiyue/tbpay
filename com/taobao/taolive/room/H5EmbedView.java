@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.taobao.windvane.embed.BaseEmbedView;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -212,7 +212,7 @@ public class H5EmbedView extends BaseEmbedView {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("5844084e", new Object[]{this, context, str, bundle, new Integer(i), new Integer(i2)})).booleanValue();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (aa.l() && ((str.contains("market.m.taobao.com/app/mtb/app-live-h5-room/home/index.html") || str.contains("h5.m.taobao.com/taolive/video.html") || str.contains("huodong.m.taobao.com/act/talent/live.html")) && H5EmbedView.access$300(H5EmbedView.this) != null)) {
                     Uri parse = Uri.parse(str);
                     if (parse != null) {
@@ -464,17 +464,17 @@ public class H5EmbedView extends BaseEmbedView {
             ipChange.ipc$dispatch("bc1acf53", new Object[]{this});
             return;
         }
-        String a2 = TextUtils.isEmpty(this.mLiveUrl) ? com.taobao.taolive.room.utils.c.a(this.mLiveId) : com.taobao.taolive.room.utils.c.a(this.mLiveUrl, "id", this.mLiveId);
-        if (!TextUtils.isEmpty(this.mLivesource)) {
+        String a2 = StringUtils.isEmpty(this.mLiveUrl) ? com.taobao.taolive.room.utils.c.a(this.mLiveId) : com.taobao.taolive.room.utils.c.a(this.mLiveUrl, "id", this.mLiveId);
+        if (!StringUtils.isEmpty(this.mLivesource)) {
             a2 = com.taobao.taolive.room.utils.c.d(a2, this.mLivesource);
         }
-        if (!TextUtils.isEmpty(this.mRecommendSource)) {
+        if (!StringUtils.isEmpty(this.mRecommendSource)) {
             a2 = com.taobao.taolive.room.utils.c.a(a2, "recommendSource", this.mRecommendSource);
         }
-        if (!TextUtils.isEmpty(this.customPlayCtrlParams)) {
+        if (!StringUtils.isEmpty(this.customPlayCtrlParams)) {
             a2 = com.taobao.taolive.room.utils.c.a(a2, "customPlayCtrlParams", Uri.encode(this.customPlayCtrlParams));
         }
-        if (!TextUtils.isEmpty(this.mSpm)) {
+        if (!StringUtils.isEmpty(this.mSpm)) {
             a2 = com.taobao.taolive.room.utils.c.a(a2, "spm", this.mSpm);
         }
         pla a3 = new pla.a().a(this.topOffSet).c(this.mDisableHorizontalScroll).a(this.mDisableHorizontalScroll).b(this.mDisableHorizontalScroll).d(this.mDisableVerticalScroll).f(this.isHideClose).h(this.isHideFullScreenBtn).b(this.drawDelayed).k(this.isHidePreLiveShareBtn).a(this.mH5PageUrl).g(this.enableH5EmbedViewUT).l(true).a();
@@ -746,7 +746,7 @@ public class H5EmbedView extends BaseEmbedView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("36aa59df", new Object[]{this});
-        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || TextUtils.isEmpty(this.mH5PageUrl)) {
+        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || StringUtils.isEmpty(this.mH5PageUrl)) {
         } else {
             ai.c((a) null, this.mActivity);
             this.mTaoLiveController.h();
@@ -757,7 +757,7 @@ public class H5EmbedView extends BaseEmbedView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d11b3272", new Object[]{this});
-        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || TextUtils.isEmpty(this.mH5PageUrl)) {
+        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || StringUtils.isEmpty(this.mH5PageUrl)) {
         } else {
             ai.b((a) null, this.mActivity);
         }
@@ -767,7 +767,7 @@ public class H5EmbedView extends BaseEmbedView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("146c76d6", new Object[]{this});
-        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || TextUtils.isEmpty(this.mH5PageUrl)) {
+        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || StringUtils.isEmpty(this.mH5PageUrl)) {
         } else {
             pau.a();
             UTAnalytics.getInstance().getDefaultTracker().updatePageStatus(this.mActivity, null);
@@ -787,13 +787,13 @@ public class H5EmbedView extends BaseEmbedView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("415fbe79", new Object[]{this});
-        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || TextUtils.isEmpty(this.mH5PageUrl)) {
+        } else if (!this.enableH5EmbedViewUT || this.enableH5EmbedViewH5UT || StringUtils.isEmpty(this.mH5PageUrl)) {
         } else {
             Map map = null;
             a aVar = null;
             ai.b(aVar, this.mActivity);
             ai.c(aVar, this.mActivity);
-            if (!TextUtils.isEmpty(this.mH5UTParams)) {
+            if (!StringUtils.isEmpty(this.mH5UTParams)) {
                 map = (Map) pqj.a(this.mH5UTParams, Map.class);
             }
             if (map == null) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import java.text.SimpleDateFormat;
@@ -73,7 +73,7 @@ public abstract class kdv {
         String e = e();
         String str = f;
         kej.a(str, "isInDayLimit currentDay: " + e);
-        if (!TextUtils.equals(e, this.c)) {
+        if (!StringUtils.equals(e, this.c)) {
             String str2 = f;
             kej.a(str2, "isInDayLimit date diff lastShowDayValue : " + this.c);
             this.d = 0;

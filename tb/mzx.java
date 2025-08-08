@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.util.f;
 import java.io.ByteArrayOutputStream;
@@ -59,7 +59,7 @@ public class mzx implements naa {
         }
         String a2 = f.a(this.b, "utf-8");
         StringBuilder sb = new StringBuilder(str);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             sb.append(riy.CONDITION_IF);
             sb.append(a2);
         }
@@ -75,7 +75,7 @@ public class mzx implements naa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f31350a.setRequestMethod(str);
             if (!"POST".equalsIgnoreCase(str)) {

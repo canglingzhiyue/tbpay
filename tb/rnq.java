@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.rpc.ProtocolVersions;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uploader.implement.UploaderManager;
@@ -105,7 +105,7 @@ public class rnq implements rny {
                             break;
                         } catch (IOException unused) {
                         }
-                    } else if (!TextUtils.isEmpty(readLine)) {
+                    } else if (!StringUtils.isEmpty(readLine)) {
                         int length = readLine.length();
                         int indexOf = readLine.indexOf(":");
                         if (indexOf > i3) {
@@ -189,7 +189,7 @@ public class rnq implements rny {
             hashMap.put("x-arup-appversion", appVersion);
             hashMap.put("x-arup-file-count", Integer.toString(1));
             String userId = this.i.b.getUserId();
-            if (!TextUtils.isEmpty(userId)) {
+            if (!StringUtils.isEmpty(userId)) {
                 hashMap.put("x-arup-userinfo", userId);
             }
             hashMap.put("x-arup-timestamp", valueOf);
@@ -223,14 +223,14 @@ public class rnq implements rny {
             sb3.append("&");
             sb3.append(valueOf);
             String signature = this.i.b.signature(sb3.toString());
-            if (TextUtils.isEmpty(signature)) {
+            if (StringUtils.isEmpty(signature)) {
                 if (a.a(16)) {
                     a.a(16, "FileUploadActionRequest", this.f + " compute upload sign failed.");
                 }
                 throw new Exception("compute api sign failed.");
             }
             hashMap.put("x-arup-sign", signature);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 hashMap.put("x-arup-network-type", a2);
             }
             hashMap.put("x-arup-conn-seq-no", rnw.a());
@@ -271,7 +271,7 @@ public class rnq implements rny {
                 JSONObject jSONObject = new JSONObject();
                 for (Map.Entry<String, String> entry2 : this.b.i.entrySet()) {
                     String key = entry2.getKey();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         jSONObject.put(key, entry2.getValue());
                     }
                 }
@@ -304,7 +304,7 @@ public class rnq implements rny {
             sb.append("\r\n");
             sb.append("x-arup-mime-type");
             sb.append(str3);
-            sb.append(rnw.b(!TextUtils.isEmpty(this.b.n) ? this.b.n : str2));
+            sb.append(rnw.b(!StringUtils.isEmpty(this.b.n) ? this.b.n : str2));
             sb.append("\r\n");
             sb.append("x-arup-task-type");
             sb.append(str3);

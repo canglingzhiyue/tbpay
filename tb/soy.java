@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
@@ -469,7 +469,7 @@ public class soy extends d implements f<l, Integer>, g, TTDetailScrollerLayout.a
             return;
         }
         e eVar = this.b;
-        if (eVar == null || !(eVar instanceof SearchInfoController.a) || (eyxVar = this.e) == null || eyxVar.a().c() || TextUtils.isEmpty(this.g)) {
+        if (eVar == null || !(eVar instanceof SearchInfoController.a) || (eyxVar = this.e) == null || eyxVar.a().c() || StringUtils.isEmpty(this.g)) {
             return;
         }
         if (this.f == null) {

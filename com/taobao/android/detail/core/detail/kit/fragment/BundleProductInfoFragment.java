@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -99,7 +99,7 @@ public class BundleProductInfoFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0807925", new Object[]{fragmentActivity, str, list});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || list == null || list.size() == 0) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || list == null || list.size() == 0) {
         } else {
             FloatFragment.startFragment(fragmentActivity, newInstance(str, list));
             dzh.j(fragmentActivity);

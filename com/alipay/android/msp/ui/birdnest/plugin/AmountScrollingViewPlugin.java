@@ -10,7 +10,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -180,7 +180,7 @@ public class AmountScrollingViewPlugin extends AbsFBPlugin {
                 this.e = TypedValue.applyDimension(1, floatValue, this.d.getResources().getDisplayMetrics());
                 this.f = TypedValue.applyDimension(1, floatValue2, this.d.getResources().getDisplayMetrics());
             }
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 throw new IllegalArgumentException("Amount is empty");
             }
             if (Build.VERSION.SDK_INT < 24) {
@@ -190,7 +190,7 @@ public class AmountScrollingViewPlugin extends AbsFBPlugin {
                 a(string2, string);
                 return true;
             } else {
-                if (!TextUtils.isEmpty(string3) && !string2.equals(string3)) {
+                if (!StringUtils.isEmpty(string3) && !string2.equals(string3)) {
                     a(string3, string);
                     this.c.setNumberAnimatorDuration(intValue);
                     String[] split = string2.split("\\.");
@@ -216,7 +216,7 @@ public class AmountScrollingViewPlugin extends AbsFBPlugin {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("Amount is empty");
         } else {
             String[] split = str.split("\\.");
@@ -516,8 +516,8 @@ public class AmountScrollingViewPlugin extends AbsFBPlugin {
             }
             setPaintTextSize(AmountScrollingViewPlugin.d(AmountScrollingViewPlugin.this));
             long j2 = this.mv;
-            boolean z = !(j2 == 0 || j == j2) || !((i4 = this.mw) == 0 || i2 == i4) || (!TextUtils.isEmpty(this.my) && !TextUtils.equals(str, this.my));
-            if (!TextUtils.isEmpty(str)) {
+            boolean z = !(j2 == 0 || j == j2) || !((i4 = this.mw) == 0 || i2 == i4) || (!StringUtils.isEmpty(this.my) && !StringUtils.equals(str, this.my));
+            if (!StringUtils.isEmpty(str)) {
                 this.my = str;
                 this.mx = str.length();
             }
@@ -557,7 +557,7 @@ public class AmountScrollingViewPlugin extends AbsFBPlugin {
                 ipChange.ipc$dispatch("b5435e4", new Object[]{this, new Long(j), new Integer(i), str});
                 return;
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.my = str;
                 this.mx = str.length();
                 f(true);

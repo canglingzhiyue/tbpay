@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.ActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.transition.TransitionSet;
@@ -153,7 +153,7 @@ public class CommonContainerActivity extends BaseActivity implements com.taobao.
             bundle.remove("android:support:next_request_index");
         }
         super.onCreate(bundle);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             ogg.a("tnode query is empty, url: " + data.toString());
             finish();
             return;
@@ -178,7 +178,7 @@ public class CommonContainerActivity extends BaseActivity implements com.taobao.
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !TextUtils.equals(Uri.parse(str).getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_PAGE_TRACK), "false")) {
+        } else if (StringUtils.isEmpty(str) || !StringUtils.equals(Uri.parse(str).getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_PAGE_TRACK), "false")) {
         } else {
             UTAnalytics.getInstance().getDefaultTracker().skipPage(this);
         }
@@ -270,9 +270,9 @@ public class CommonContainerActivity extends BaseActivity implements com.taobao.
             return;
         }
         String queryParameter = uri.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_STATUSBAR_COLOR);
-        boolean z = TextUtils.isEmpty(queryParameter) && !"true".equals(this.c.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_FULLTRANSPARENT));
+        boolean z = StringUtils.isEmpty(queryParameter) && !"true".equals(this.c.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_FULLTRANSPARENT));
         boolean booleanQueryParameter = this.c.getBooleanQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_IMMERSIVE, false);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             if (queryParameter.length() >= 2) {
                 char charAt = queryParameter.charAt(0);
                 char charAt2 = queryParameter.charAt(1);
@@ -476,7 +476,7 @@ public class CommonContainerActivity extends BaseActivity implements com.taobao.
             }
             String queryParameter = this.c.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_STATUSBAR_COLOR);
             String queryParameter2 = this.c.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_FULLTRANSPARENT);
-            if (TextUtils.isEmpty(queryParameter) && !"true".equals(queryParameter2)) {
+            if (StringUtils.isEmpty(queryParameter) && !"true".equals(queryParameter2)) {
                 z = true;
             }
             if (!z || (supportActionBar = getSupportActionBar()) == null) {
@@ -779,7 +779,7 @@ public class CommonContainerActivity extends BaseActivity implements com.taobao.
             }
         }
         String queryParameter = this.c.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_PAN_GESTURE);
-        if (!com.taobao.android.layoutmanager.a.d() || !TextUtils.equals(queryParameter, com.taobao.tao.flexbox.layoutmanager.container.a.GESTURE_PULLRIGHTEXIT)) {
+        if (!com.taobao.android.layoutmanager.a.d() || !StringUtils.equals(queryParameter, com.taobao.tao.flexbox.layoutmanager.container.a.GESTURE_PULLRIGHTEXIT)) {
             return;
         }
         new SlidingLayout(this).bindActivity(this);

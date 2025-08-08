@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.cip.camera;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.cip.camera.c;
@@ -296,7 +296,7 @@ public class f implements c.a {
             return;
         }
         String b = l.b(com.b(), bitmap, com.etao.feimagesearch.util.album.b.BIZ_TYPE_DARK_DETECT);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         cot.c("FEISTakePictureTask", "pngFileAbsPath=" + b);
@@ -310,7 +310,7 @@ public class f implements c.a {
             sb.append(" ");
         }
         String a2 = l.a(com.b(), sb.toString().toUpperCase(), com.etao.feimagesearch.util.album.b.BIZ_TYPE_DARK_DETECT);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             i.b(b);
             return;
         }
@@ -318,7 +318,7 @@ public class f implements c.a {
         String a3 = l.a(com.b(), new String[]{b, a2}, com.etao.feimagesearch.util.album.b.BIZ_TYPE_DARK_DETECT);
         i.a(new File(a2));
         i.a(new File(b));
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         HashMap<String, String> hashMap = new HashMap<>(8);

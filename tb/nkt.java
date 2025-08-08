@@ -8,7 +8,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.FileProvider;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.utils.c;
 import com.alibaba.poplayer.utils.h;
 import com.alibaba.security.realidentity.e2;
@@ -65,7 +65,7 @@ public class nkt {
         }
         String packageName = application.getPackageName();
         boolean k = mre.a().k();
-        if (!TextUtils.isEmpty(packageName)) {
+        if (!StringUtils.isEmpty(packageName)) {
             List<ResolveInfo> queryIntentActivities = application.getPackageManager().queryIntentActivities(new Intent("android.intent.action.VIEW", Uri.parse("market://details?id=" + packageName)), 65536);
             if (queryIntentActivities != null) {
                 Iterator<ResolveInfo> it = queryIntentActivities.iterator();
@@ -103,7 +103,7 @@ public class nkt {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (variation = UTABTest.activate("ApkUpdater", str).getVariation(str2)) != null) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (variation = UTABTest.activate("ApkUpdater", str).getVariation(str2)) != null) {
                 return variation.getValueAsString("");
             }
         } catch (Throwable th) {
@@ -118,7 +118,7 @@ public class nkt {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (str.matches("[0-9]+(\\.[0-9]+){2}")) {
                     return true;
                 }

@@ -6,7 +6,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.ability.impl.user.UserAbility;
@@ -201,15 +201,15 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             return false;
         }
         String str = map.get("level");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a.a().b(str);
         }
         String str2 = map.get("scopeId");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             a.a().d(str2);
         }
         String str3 = map.get("subScopeId");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             a.a().e(str3);
         }
         return true;
@@ -225,7 +225,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             return false;
         }
         String str = map.get("url");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         boolean e = v.e(map.get("disableSmallWindow"));
@@ -301,7 +301,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             return false;
         }
         String str = map.get(com.alibaba.triver.triver_shop.newShop.event.broadcast.c.WIDGET_NAME);
-        if (TextUtils.isEmpty(str) || d.get(str) == null) {
+        if (StringUtils.isEmpty(str) || d.get(str) == null) {
             return false;
         }
         ddw.a().a(xkw.EVENT_MEDIAPLATFORM_SHOW_WIDGETS, d.get(str), this.e);
@@ -318,7 +318,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             return false;
         }
         String str = map.get(com.alibaba.triver.triver_shop.newShop.event.broadcast.c.WIDGET_NAME);
-        if (TextUtils.isEmpty(str) || d.get(str) == null) {
+        if (StringUtils.isEmpty(str) || d.get(str) == null) {
             return false;
         }
         ddw.a().a(xkw.EVENT_MEDIAPLATFORM_HIDE_WIDGETS, d.get(str), this.e);
@@ -416,7 +416,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             return ((Boolean) ipChange.ipc$dispatch("9750c519", new Object[]{this, map})).booleanValue();
         }
         if (this.b != null && map != null) {
-            if (TextUtils.isEmpty(map.get("itemID"))) {
+            if (StringUtils.isEmpty(map.get("itemID"))) {
                 map.get("itemId");
             }
             map.get("accountId");
@@ -426,7 +426,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             try {
                 if (this.b instanceof Activity) {
                     HashMap hashMap = new HashMap();
-                    if (liveItem != null && !TextUtils.isEmpty(liveItem.native_channel)) {
+                    if (liveItem != null && !StringUtils.isEmpty(liveItem.native_channel)) {
                         hashMap.put("channel", liveItem.native_channel);
                     }
                     hashMap.put("itemlistType", aa.G() ? "dx" : "weex");
@@ -459,7 +459,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
         map.get("isBulk");
         LiveItem liveItem = (LiveItem) pqj.a(map.get("detail"), LiveItem.class);
         HashMap hashMap = new HashMap();
-        if (liveItem != null && !TextUtils.isEmpty(liveItem.native_channel)) {
+        if (liveItem != null && !StringUtils.isEmpty(liveItem.native_channel)) {
             hashMap.put("channel", liveItem.native_channel);
         }
         com.taobao.taolive.room.utils.c.b((Activity) this.b, liveItem, "detail", hashMap);
@@ -474,7 +474,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
         }
         if (this.b != null && map != null) {
             String str = map.get(com.alibaba.triver.triver_shop.newShop.ext.g.KEY_APM_SHOP_URL);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.taobao.taolive.room.utils.c.a(this.b, str);
                 return true;
             }
@@ -521,7 +521,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
                     ipChange2.ipc$dispatch("d9378d7c", new Object[]{this, str2, str3});
                     return;
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = pmd.a().u().c().getString(R.string.taolive_user_account_follow_fail);
                 }
                 aj.a(pmd.a().u().c(), str3);
@@ -584,7 +584,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             gVar.a();
         } else {
             String str = map.get("accountId");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 gVar.a();
                 return;
             }
@@ -659,9 +659,9 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
         }
         String str = map.get("eventName");
         String str2 = map.get("subType");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             ddw.a().a(str, map.get("data"), this.e);
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             ddw.a().a(str2, map, this.e);
         }
         return true;
@@ -690,10 +690,10 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             return true;
         }
         String str = map.get("position");
-        if (!TextUtils.isEmpty(str) && TextUtils.isDigitsOnly(str)) {
+        if (!StringUtils.isEmpty(str) && StringUtils.isDigitsOnly(str)) {
             ddw.a().a("com.taobao.taolive.room.seekto_replay", Integer.valueOf(Integer.parseInt(str) * 1000), this.e);
             return true;
-        } else if (TextUtils.isEmpty(str) || !str.contains(".")) {
+        } else if (StringUtils.isEmpty(str) || !str.contains(".")) {
             return false;
         } else {
             ddw.a().a("com.taobao.taolive.room.seekto_replay", Integer.valueOf(((int) Float.parseFloat(str)) * 1000), this.e);
@@ -809,7 +809,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
                     String[] split = am.get(i).split("_");
                     if (split.length == 3) {
                         String a2 = p.a(split[0], split[1], split[2]);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             jSONObject.put(am.get(i), (Object) a2);
                         }
                     }
@@ -904,7 +904,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
                 String str2 = map.get("closeBtnImg");
                 float d3 = v.d(map.get("offsetRight"));
                 float d4 = v.d(map.get("offsetTop"));
-                if (!TextUtils.isEmpty(str) && eVar != null && eVar.h() != null) {
+                if (!StringUtils.isEmpty(str) && eVar != null && eVar.h() != null) {
                     pnj m = pmd.a().m();
                     String str3 = f21714a;
                     m.a(str3, "setPenetrateAlpha componentName " + str + " isShowComponent " + e + " " + a2 + " " + str2 + " " + d2 + " " + d3 + " " + d4);
@@ -1144,7 +1144,7 @@ public class c implements com.taobao.tbliveinteractive.jsbridge.c {
             return false;
         }
         String str = map.get(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = map.get("id");
         }
         com.taobao.taolive.room.mediaplatform.a.a(this.b, str, map.get("timePointPlayUrl"), map.get(pqq.KEY_LIVE_SOURCE), map.get("videoGood"), null, true);

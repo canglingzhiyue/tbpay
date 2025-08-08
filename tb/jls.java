@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public abstract class jls {
             return (jls) ipChange.ipc$dispatch("7c7120c3", new Object[]{str});
         }
         jls jlsVar = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.startsWith(jlr.PREFIX)) {
@@ -55,7 +55,7 @@ public abstract class jls {
         }
         try {
             String substring = str.substring(i, str.length() - 1);
-            if (!TextUtils.isEmpty(substring) && (split = substring.split(",")) != null && split.length != 0) {
+            if (!StringUtils.isEmpty(substring) && (split = substring.split(",")) != null && split.length != 0) {
                 ArrayList arrayList = new ArrayList(split.length);
                 for (String str2 : split) {
                     ?? a2 = jku.a(str2, new Object[0]);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -40,7 +40,7 @@ public class hgy extends fuf {
                     obj = objArr[1].toString();
                 } catch (Exception unused) {
                 }
-                if (!TextUtils.isEmpty(obj)) {
+                if (!StringUtils.isEmpty(obj)) {
                     int lastIndexOf = obj.lastIndexOf("-", obj.lastIndexOf("-") - 1) + 1;
                     int lastIndexOf2 = obj.lastIndexOf(".");
                     String[] split = ((lastIndexOf == 0 || lastIndexOf2 == -1) ? "0" : obj.substring(lastIndexOf, lastIndexOf2)).split("-");
@@ -57,7 +57,7 @@ public class hgy extends fuf {
                 if (objArr.length > 2) {
                     str = (String) objArr[2];
                 }
-                return (b <= 0 || TextUtils.isEmpty(str)) ? "" : new SimpleDateFormat(str).format(new Date(b));
+                return (b <= 0 || StringUtils.isEmpty(str)) ? "" : new SimpleDateFormat(str).format(new Date(b));
             } else if ("isDebugTBLive".equals(objArr[0])) {
                 if (dXRuntimeContext == null) {
                     return true;

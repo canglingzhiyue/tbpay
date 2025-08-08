@@ -1,6 +1,6 @@
 package com.taobao.taobao.scancode.gateway.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import tb.kge;
@@ -19,7 +19,7 @@ public class k {
             return ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[0])).booleanValue();
         }
         String config = OrangeConfig.getInstance().getConfig("scan_switcher", "previewDisable4G", "0");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             try {
                 if (Integer.valueOf(config).intValue() == 1) {
                     return true;

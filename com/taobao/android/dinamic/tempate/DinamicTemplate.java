@@ -1,6 +1,6 @@
 package com.taobao.android.dinamic.tempate;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -49,7 +49,7 @@ public class DinamicTemplate implements Serializable {
 
     public boolean checkValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2b6d1a5f", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.name);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2b6d1a5f", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.name);
     }
 
     public String toString() {
@@ -62,7 +62,7 @@ public class DinamicTemplate implements Serializable {
 
     public boolean isPreset() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("da1adcb4", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.version);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("da1adcb4", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.version);
     }
 
     public boolean equals(Object obj) {

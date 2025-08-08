@@ -2,7 +2,7 @@ package com.taobao.ask.nav;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,7 +63,7 @@ public class a {
             return;
         }
         String str = map.get("sessionId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = String.valueOf(System.currentTimeMillis());
             map.put("sessionId", str);
         }
@@ -72,7 +72,7 @@ public class a {
         boolean a2 = com.taobao.ask.utils.d.a((Object) map.get(ASK_CONST.KEY_CALL_FROM_WINDVANE), false);
         final String str4 = map.get(ASK_CONST.KEY_QUESTION_ID);
         boolean a3 = com.taobao.ask.utils.d.a((Object) map.get(ASK_CONST.KEY_DEGRADE_WHEN_ANSWERD), true);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             com.taobao.social.sdk.jsbridge.a.callback(str2, false, false, ASK_CONST.ERROR.INVALID_PARAMS.toJSONObject());
             com.taobao.vividsocial.utils.a.a("TBAskEveryonePublisherOpenFailed", ASK_CONST.ERROR.INVALID_PARAMS.toJSONObject());
             TLog.loge(ASK_CONST.LOG_TAG, "answer publish open failed , questionId is null");
@@ -123,7 +123,7 @@ public class a {
                         if (jSONObject3 != null && !jSONObject3.isEmpty()) {
                             if (jSONObject3.containsKey("answer") && !jSONObject3.getJSONObject("answer").isEmpty()) {
                                 String string = jSONObject3.getJSONObject("answer").getString("id");
-                                if (!TextUtils.isEmpty(string)) {
+                                if (!StringUtils.isEmpty(string)) {
                                     map.put("answerId", string);
                                     map.put("firstAnswerId", string);
                                 }
@@ -161,7 +161,7 @@ public class a {
                     }
                     com.taobao.social.sdk.jsbridge.a.callback(str2, false, false, ASK_CONST.ERROR.INVALID_PARAMS.toJSONObject());
                     com.taobao.vividsocial.utils.a.a("TBAskEveryonePublisherOpenFailed", ASK_CONST.ERROR.INVALID_PARAMS.toJSONObject());
-                    Toast.makeText(context, TextUtils.isEmpty(str6) ? "打开失败,请稍后重试" : str6, 0).show();
+                    Toast.makeText(context, StringUtils.isEmpty(str6) ? "打开失败,请稍后重试" : str6, 0).show();
                     TLog.loge(ASK_CONST.LOG_TAG, "check answered:,mtop error " + str5 + "," + str6);
                 }
             });

@@ -1,7 +1,7 @@
 package com.taobao.message.lab.comfrm.util;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import com.taobao.taolive.room.utils.ag;
@@ -266,10 +266,10 @@ public class Logger {
                 FormatLog.access$202(formatLog, this.point);
                 FormatLog.access$302(formatLog, this.type);
                 FormatLog.access$402(formatLog, this.traceId);
-                if (!TextUtils.isEmpty(this.errorCode)) {
+                if (!StringUtils.isEmpty(this.errorCode)) {
                     this.ext += ag.ARG_ERROR_CODE + this.errorCode + ";";
                 }
-                if (!TextUtils.isEmpty(this.errorMsg)) {
+                if (!StringUtils.isEmpty(this.errorMsg)) {
                     this.ext += "errorMsg=" + this.errorMsg + ";";
                 }
                 FormatLog.access$502(formatLog, this.ext);

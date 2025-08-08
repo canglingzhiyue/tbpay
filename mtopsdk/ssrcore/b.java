@@ -1,7 +1,7 @@
 package mtopsdk.ssrcore;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.fulltrace.FullTraceAnalysis;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
@@ -174,7 +174,7 @@ public class b {
         l.i = new rzq(null, l);
         try {
             if (Mtop.mIsFullTrackValid) {
-                if (!TextUtils.isEmpty(this.b.fullTraceId)) {
+                if (!StringUtils.isEmpty(this.b.fullTraceId)) {
                     createRequest = this.b.fullTraceId;
                 } else {
                     createRequest = FullTraceAnalysis.getInstance().createRequest("mtop_ssr");
@@ -187,7 +187,7 @@ public class b {
                     }
                     l.d.M = a3.d();
                 }
-                if (!TextUtils.isEmpty(createRequest)) {
+                if (!StringUtils.isEmpty(createRequest)) {
                     l.d.N = createRequest;
                     l.d.e();
                     d.a(l.d, l.g.f31244a);
@@ -358,7 +358,7 @@ public class b {
         mtc mtcVar = this.m;
         if (mtcVar != null) {
             if (mtkVar != null) {
-                if (mtkVar.f31246a == 200 && (TextUtils.isEmpty(mtkVar.b) || TextUtils.equals(mtkVar.b, "SUCCESS"))) {
+                if (mtkVar.f31246a == 200 && (StringUtils.isEmpty(mtkVar.b) || StringUtils.equals(mtkVar.b, "SUCCESS"))) {
                     this.m.onFinish(this.j);
                 } else {
                     this.m.onError(this.j, mtkVar);

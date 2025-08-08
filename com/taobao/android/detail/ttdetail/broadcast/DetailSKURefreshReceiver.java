@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.broadcast;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -83,11 +83,11 @@ public final class DetailSKURefreshReceiver extends BroadcastReceiver {
         if (intent != null) {
             str = intent.getStringExtra("selectedTextMap");
         }
-        if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+        if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
             return;
         }
         String a3 = a(parseObject);
-        if (TextUtils.isEmpty(a3) || (a2 = a()) == null) {
+        if (StringUtils.isEmpty(a3) || (a2 = a()) == null) {
             return;
         }
         a(a2, a3);

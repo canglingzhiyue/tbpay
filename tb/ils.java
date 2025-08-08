@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.StatFs;
 import android.os.SystemClock;
 import android.system.OsConstants;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.SparseLongArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class ils {
             return ((Number) ipChange.ipc$dispatch("4dba98bc", new Object[]{str, str2, new Long(j)})).longValue();
         }
         String a2 = ilv.a(str + "_" + str2);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return j;
         }
         try {
@@ -96,7 +96,7 @@ public class ils {
             return "unknown";
         }
         String str = context.getApplicationInfo().nativeLibraryDir;
-        return TextUtils.isEmpty(str) ? "unknown" : a(str);
+        return StringUtils.isEmpty(str) ? "unknown" : a(str);
     }
 
     private static String a(String str) {
@@ -134,7 +134,7 @@ public class ils {
             ilt.a("ProviderUtils", "getCpuName from properties error", e2.toString());
             r6 = 0;
         }
-        ?? isEmpty = TextUtils.isEmpty(r6);
+        ?? isEmpty = StringUtils.isEmpty(r6);
         try {
             if (isEmpty == 0) {
                 return r6;

@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.ProcessInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.util.ReflectUtils;
@@ -131,7 +131,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.contains("android.app.ActivityThread$H");
         }
         return false;

@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -75,10 +75,10 @@ public class n extends RichTextContainerComponent implements com.taobao.tao.flex
         }
         super.onLayout();
         String a2 = oec.a(this.node.e("direction"), "left");
-        if (!TextUtils.equals(a2, "left") && !TextUtils.equals(a2, "right")) {
+        if (!StringUtils.equals(a2, "left") && !StringUtils.equals(a2, "right")) {
             return;
         }
-        ((ogk) this.viewParams).v = TextUtils.TruncateAt.MARQUEE;
+        ((ogk) this.viewParams).v = StringUtils.TruncateAt.MARQUEE;
     }
 
     @Override // com.taobao.tao.flexbox.layoutmanager.component.TextComponent, com.taobao.tao.flexbox.layoutmanager.core.s

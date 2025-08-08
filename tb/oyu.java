@@ -9,7 +9,7 @@ import android.media.MediaCodecList;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -1185,7 +1185,7 @@ public class oyu {
                 VariationSet activate = UTABTest.activate("activeDropFrame_component", "activeDropFrame_module");
                 if (activate != null && activate.size() > 0 && (variation = activate.getVariation("dynamic_drop_pkt_params")) != null) {
                     String valueAsString = variation.getValueAsString("");
-                    if (!TextUtils.isEmpty(valueAsString) && (parseObject = JSON.parseObject(valueAsString)) != null) {
+                    if (!StringUtils.isEmpty(valueAsString) && (parseObject = JSON.parseObject(valueAsString)) != null) {
                         Float f2 = parseObject.getFloat("drop_pkt_count_resume_step");
                         if (f2 != null) {
                             z = f2.floatValue();
@@ -1269,7 +1269,7 @@ public class oyu {
         } else if (!bd || context == null) {
         } else {
             if (MediaSystemUtils.isApkDebuggable()) {
-                if (TextUtils.isEmpty(a(context, "AudioGain_component", "enableAudioGain_module", "enableAudioGain", ""))) {
+                if (StringUtils.isEmpty(a(context, "AudioGain_component", "enableAudioGain_module", "enableAudioGain", ""))) {
                     return;
                 }
                 bx = Boolean.parseBoolean(a(context, "AudioGain_component", "enableAudioGain_module", "enableAudioGain", ""));
@@ -1295,7 +1295,7 @@ public class oyu {
         } else if (bA || context == null) {
         } else {
             if (MediaSystemUtils.isApkDebuggable()) {
-                if (TextUtils.isEmpty(a(context, "PauseFrame_component", "PauseFrame_module", "enablePauseFrame", ""))) {
+                if (StringUtils.isEmpty(a(context, "PauseFrame_component", "PauseFrame_module", "enablePauseFrame", ""))) {
                     return;
                 }
                 bD = Boolean.parseBoolean(a(context, "PauseFrame_component", "PauseFrame_module", "enablePauseFrame", ""));
@@ -1328,7 +1328,7 @@ public class oyu {
         } else {
             try {
                 if (MediaSystemUtils.isApkDebuggable()) {
-                    if (!TextUtils.isEmpty(a(context, "initDecoderEarly_component", "initDecoderEarly_module", "initDecoderEarly", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "initDecoderEarly_component", "initDecoderEarly_module", "initDecoderEarly", ""))) {
                         aQ = Boolean.parseBoolean(a(context, "initDecoderEarly_component", "initDecoderEarly_module", "initDecoderEarly", ""));
                     }
                     AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "initDecoderEarly is " + aQ);
@@ -1367,7 +1367,7 @@ public class oyu {
         } else {
             try {
                 if (MediaSystemUtils.isApkDebuggable()) {
-                    if (TextUtils.isEmpty(a(context, "RtcConnectOnlyAtWarmup_component", "RtcConnectOnlyAtWarmup_module", "enableRtcConnectOnlyAtWarmup", ""))) {
+                    if (StringUtils.isEmpty(a(context, "RtcConnectOnlyAtWarmup_component", "RtcConnectOnlyAtWarmup_module", "enableRtcConnectOnlyAtWarmup", ""))) {
                         return;
                     }
                     bE = Boolean.parseBoolean(a(context, "RtcConnectOnlyAtWarmup_component", "RtcConnectOnlyAtWarmup_module", "enableRtcConnectOnlyAtWarmup", ""));
@@ -1400,7 +1400,7 @@ public class oyu {
         } else {
             try {
                 if (MediaSystemUtils.isApkDebuggable()) {
-                    if (TextUtils.isEmpty(a(context, "WarmupManagerOpt_component", "WarmupManagerOpt_module", MediaConstant.ORANGE_ENABLE_WARMUP_MANAGER_OPT, ""))) {
+                    if (StringUtils.isEmpty(a(context, "WarmupManagerOpt_component", "WarmupManagerOpt_module", MediaConstant.ORANGE_ENABLE_WARMUP_MANAGER_OPT, ""))) {
                         return;
                     }
                     bv = Boolean.parseBoolean(a(context, "WarmupManagerOpt_component", "WarmupManagerOpt_module", MediaConstant.ORANGE_ENABLE_WARMUP_MANAGER_OPT, ""));
@@ -1433,27 +1433,27 @@ public class oyu {
         } else {
             try {
                 if (MediaSystemUtils.isApkDebuggable()) {
-                    if (!TextUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcAutoDegrade", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcAutoDegrade", ""))) {
                         aJ = Boolean.parseBoolean(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcAutoDegrade", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "mEnableRtcAutoDegrade is " + aJ);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "forceDegradeRtc", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "forceDegradeRtc", ""))) {
                         aO = Boolean.parseBoolean(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "forceDegradeRtc", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "FORCE_DEGRADE_RTC is " + aO);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcAutoDegradeWhiteList", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcAutoDegradeWhiteList", ""))) {
                         aM = a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcAutoDegradeWhiteList", "");
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "ENABLE_RTC_DEGRADE_CODE_WHITE_LIST is " + aM);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "disableRtcAutoDegradeBlackList", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "disableRtcAutoDegradeBlackList", ""))) {
                         aN = a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "disableRtcAutoDegradeBlackList", "");
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "DISABLE_RTC_DEGRADE_CODE_BLACK_LIST is " + aN);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "forceDegradeFlv", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "forceDegradeFlv", ""))) {
                         aS = Boolean.parseBoolean(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "forceDegradeFlv", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "FORCE_DEGRADE_FLV is " + aS);
                     }
-                    if (TextUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcDegradeFrom", ""))) {
+                    if (StringUtils.isEmpty(a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcDegradeFrom", ""))) {
                         return;
                     }
                     aR = a(context, "RtcAutoDegrade_component", "RtcAutoDegrade_module", "enableRtcDegradeFrom", "");
@@ -1508,27 +1508,27 @@ public class oyu {
         } else {
             try {
                 if (MediaSystemUtils.isApkDebuggable()) {
-                    if (!TextUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "enableRtcNewBufferStrategy", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "enableRtcNewBufferStrategy", ""))) {
                         aw = Boolean.parseBoolean(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "enableRtcNewBufferStrategy", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "mEnableRtcNewBufferStrategy is " + aw);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "disableAudioSlowPlay", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "disableAudioSlowPlay", ""))) {
                         ax = Boolean.parseBoolean(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "disableAudioSlowPlay", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "mDisableAudioSlowPlay is " + ax);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerVideoPipeStartCount", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerVideoPipeStartCount", ""))) {
                         ay = Integer.parseInt(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerVideoPipeStartCount", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "mSourcerVideoPipeStartCount is " + ay);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerVideoPipeMaxCount", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerVideoPipeMaxCount", ""))) {
                         bb = Integer.parseInt(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerVideoPipeMaxCount", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "mSourcerVideoPipeMaxCount is " + bb);
                     }
-                    if (!TextUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerPipeMaxBufferRatio", ""))) {
+                    if (!StringUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerPipeMaxBufferRatio", ""))) {
                         bc = Integer.parseInt(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "sourcerPipeMaxBufferRatio", ""));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "mSourcerPipeMaxBufferRatio is " + bc);
                     }
-                    if (TextUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "fastFrameTime", ""))) {
+                    if (StringUtils.isEmpty(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "fastFrameTime", ""))) {
                         return;
                     }
                     ah = Integer.parseInt(a(context, "RtcNewBuffer_component", "RtcNewBuffer_module", "fastFrameTime", ""));
@@ -1587,7 +1587,7 @@ public class oyu {
                 if (activate != null && activate.size() > 0 && (variation = activate.getVariation("rtcDelayParams")) != null) {
                     String valueAsString = variation.getValueAsString("");
                     AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "get artp_master_rtc_delay and paramsJsonStr = " + valueAsString);
-                    if (!TextUtils.isEmpty(valueAsString) && (parseObject = JSON.parseObject(valueAsString)) != null) {
+                    if (!StringUtils.isEmpty(valueAsString) && (parseObject = JSON.parseObject(valueAsString)) != null) {
                         for (String str : parseObject.keySet()) {
                             JSONObject jSONObject = parseObject.getJSONObject(str);
                             if (jSONObject != null) {
@@ -1899,10 +1899,10 @@ public class oyu {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d18de968", new Object[]{context, str, str2})).longValue();
         }
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str) && context != null) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str) && context != null) {
             StringBuilder sb = new StringBuilder(128);
-            if (!TextUtils.isEmpty(str)) {
-                if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(sb)) {
                     sb.append("&");
                 }
                 sb.append("videoCacheId=" + str);
@@ -1938,10 +1938,10 @@ public class oyu {
                 sb.append("get SharedPreferences value is ");
                 sb.append(string);
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, sb.toString());
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "jsonBody is empty");
                     return "";
-                } else if (TextUtils.isEmpty(str4)) {
+                } else if (StringUtils.isEmpty(str4)) {
                     return string;
                 } else {
                     JSONObject parseObject = JSON.parseObject(string);

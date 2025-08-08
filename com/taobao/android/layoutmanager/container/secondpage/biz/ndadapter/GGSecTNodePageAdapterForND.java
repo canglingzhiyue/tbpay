@@ -2,7 +2,7 @@ package com.taobao.android.layoutmanager.container.secondpage.biz.ndadapter;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
@@ -96,7 +96,7 @@ public class GGSecTNodePageAdapterForND extends com.taobao.android.detail2.core.
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1b35d093", new Object[]{this, uri, view});
-        } else if (uri == null || TextUtils.isEmpty(uri.toString())) {
+        } else if (uri == null || StringUtils.isEmpty(uri.toString())) {
         } else {
             this.h.a(uri.toString(), (String) null);
         }
@@ -201,7 +201,7 @@ public class GGSecTNodePageAdapterForND extends com.taobao.android.detail2.core.
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                if (TextUtils.isEmpty(str) || jSONObject2 == null || TextUtils.isEmpty(jSONObject2.getString("spm-cnt"))) {
+                if (StringUtils.isEmpty(str) || jSONObject2 == null || StringUtils.isEmpty(jSONObject2.getString("spm-cnt"))) {
                     a(cVar, "pageName or pageProperties is wrong");
                     return;
                 }

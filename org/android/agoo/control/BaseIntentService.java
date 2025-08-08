@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -231,37 +231,37 @@ public abstract class BaseIntentService extends Service {
             return;
         }
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         String agooCommand = IntentUtil.getAgooCommand(this.mContext);
         String thirdPushCommand = IntentUtil.getThirdPushCommand(this.mContext);
         ALog.i(TAG, "onHandleIntent,action=" + action + ",agooCommand=" + agooCommand + ",mipushCommand=" + thirdPushCommand, new Object[0]);
         try {
-            if (TextUtils.equals(action, agooCommand)) {
+            if (StringUtils.equals(action, agooCommand)) {
                 String stringExtra = intent.getStringExtra("command");
                 ALog.d(TAG, "actionCommand --->[" + stringExtra + riy.ARRAY_END_STR, new Object[0]);
-                if (TextUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED) || TextUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
+                if (StringUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED) || StringUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
                     onUserCommand(this.mContext, intent);
                 }
-            } else if (TextUtils.equals(action, thirdPushCommand)) {
+            } else if (StringUtils.equals(action, thirdPushCommand)) {
                 String stringExtra2 = intent.getStringExtra("command");
                 String stringExtra3 = intent.getStringExtra(AgooConstants.THIRD_PUSH_ID);
-                if (TextUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_MIPUSHID_REPORT)) {
+                if (StringUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_MIPUSHID_REPORT)) {
                     this.notifyManager.reportThirdPushToken(stringExtra3, "MI_TOKEN", false);
-                } else if (TextUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_HUAWEIPUSHID_REPORT)) {
+                } else if (StringUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_HUAWEIPUSHID_REPORT)) {
                     ALog.d(TAG, "HW_TOKEN report begin..regid=" + stringExtra3, new Object[0]);
                     this.notifyManager.reportThirdPushToken(stringExtra3, "HW_TOKEN", false);
-                } else if (TextUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_GCMIPUSHID_REPORT)) {
+                } else if (StringUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_GCMIPUSHID_REPORT)) {
                     ALog.i(TAG, "GCM_TOKEN report begin..regid=" + stringExtra3, new Object[0]);
                     this.notifyManager.reportThirdPushToken(stringExtra3, "gcm", false);
-                } else if (TextUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_HONORPUSHID_REPORT)) {
+                } else if (StringUtils.equals(stringExtra2, AgooConstants.AGOO_COMMAND_HONORPUSHID_REPORT)) {
                     ALog.i(TAG, "HONOR_TOKEN report begin..regid=" + stringExtra3, new Object[0]);
                     this.notifyManager.reportThirdPushToken(stringExtra3, HonorRegister.HONOR_TOKEN, false);
                 }
             } else if (action.equals(AgooConstants.INTENT_FROM_AGOO_MESSAGE)) {
                 handleRemoteMessage(this.mContext, intent);
-            } else if (TextUtils.equals(action, AgooConstants.INTENT_FROM_AGOO_REPORT) || TextUtils.equals(action, "android.net.conn.CONNECTIVITY_CHANGE") || TextUtils.equals(action, "android.intent.action.USER_PRESENT") || TextUtils.equals(action, "android.intent.action.ACTION_POWER_CONNECTED") || TextUtils.equals(action, "android.intent.action.ACTION_POWER_DISCONNECTED")) {
+            } else if (StringUtils.equals(action, AgooConstants.INTENT_FROM_AGOO_REPORT) || StringUtils.equals(action, "android.net.conn.CONNECTIVITY_CHANGE") || StringUtils.equals(action, "android.intent.action.USER_PRESENT") || StringUtils.equals(action, "android.intent.action.ACTION_POWER_CONNECTED") || StringUtils.equals(action, "android.intent.action.ACTION_POWER_DISCONNECTED")) {
                 ALog.i(TAG, "is report cache msg,Config.isReportCacheMsg(mContext)=" + Config.isReportCacheMsg(this.mContext), new Object[0]);
                 if (Config.isReportCacheMsg(this.mContext) && c.e(this.mContext)) {
                     Config.clearReportTimes(this.mContext);
@@ -308,8 +308,8 @@ public abstract class BaseIntentService extends Service {
             return (String) ipChange.ipc$dispatch("3c2509ce", new Object[]{this, context, new Long(j)});
         }
         String str = null;
-        String str2 = TextUtils.isEmpty(null) ? "unknow" : null;
-        if (TextUtils.isEmpty(null)) {
+        String str2 = StringUtils.isEmpty(null) ? "unknow" : null;
+        if (StringUtils.isEmpty(null)) {
             str = "unknow";
         }
         StringBuffer stringBuffer = new StringBuffer();

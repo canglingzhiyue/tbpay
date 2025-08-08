@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.platform.d;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.platform.PlatformMessageSender;
@@ -26,13 +26,13 @@ public class b extends c<RegisterStatus> {
     }
 
     private boolean a(String str, String str2, int i) {
-        return TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !str2.startsWith(str) || System.currentTimeMillis() / 1000 > ((long) i);
+        return StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || !str2.startsWith(str) || System.currentTimeMillis() / 1000 > ((long) i);
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     /* renamed from: a */
     public void b(RegisterStatus registerStatus) {
-        PlatformMessageSender.a(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), registerStatus);
+        PlatformMessageSender.a(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), registerStatus);
     }
 
     protected boolean a(String str, int i) {
@@ -44,7 +44,7 @@ public class b extends c<RegisterStatus> {
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     public boolean d() {
         DebugLogger.e("Strategy", "isBrandMeizu " + MzSystemUtils.isBrandMeizu(this.b));
-        return !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d);
+        return !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d);
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
@@ -69,8 +69,8 @@ public class b extends c<RegisterStatus> {
         String str;
         RegisterStatus registerStatus = new RegisterStatus();
         registerStatus.setCode("20001");
-        if (!TextUtils.isEmpty(this.c)) {
-            if (TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.d)) {
                 str = "appKey not empty";
             }
             return registerStatus;
@@ -103,7 +103,7 @@ public class b extends c<RegisterStatus> {
         com.meizu.cloud.pushsdk.util.b.g(this.b, "", this.e);
         String b = com.meizu.cloud.pushsdk.d.c.b(this.b);
         String a2 = com.meizu.cloud.pushsdk.d.c.a(this.b);
-        if (TextUtils.isEmpty(b) && TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(b) && StringUtils.isEmpty(a2)) {
             registerStatus.setCode("20000");
             registerStatus.setMessage("deviceId is empty");
             return registerStatus;
@@ -112,7 +112,7 @@ public class b extends c<RegisterStatus> {
         if (a3.c()) {
             RegisterStatus registerStatus2 = new RegisterStatus((String) a3.b());
             DebugLogger.e("Strategy", "registerStatus " + registerStatus2);
-            if (!TextUtils.isEmpty(registerStatus2.getPushId())) {
+            if (!StringUtils.isEmpty(registerStatus2.getPushId())) {
                 com.meizu.cloud.pushsdk.util.b.g(this.b, registerStatus2.getPushId(), this.e);
                 com.meizu.cloud.pushsdk.util.b.a(this.b, (int) ((System.currentTimeMillis() / 1000) + registerStatus2.getExpireTime()), this.e);
             }

@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 
@@ -41,7 +41,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fe36ffe1", new Object[]{aVar});
-        } else if (i(aVar) || TextUtils.isEmpty(aVar.f) || (a2 = c.a().a(aVar.b)) == null) {
+        } else if (i(aVar) || StringUtils.isEmpty(aVar.f) || (a2 = c.a().a(aVar.b)) == null) {
         } else {
             if (aVar.j != null && aVar.j.size() > 0) {
                 a2.addArgs(aVar.j);
@@ -68,7 +68,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fdc099e2", new Object[]{aVar});
-        } else if (j(aVar) || TextUtils.isEmpty(aVar.f) || (a2 = c.a().a(aVar.b)) == null) {
+        } else if (j(aVar) || StringUtils.isEmpty(aVar.f) || (a2 = c.a().a(aVar.b)) == null) {
         } else {
             a2.addOtherProcess(aVar.f, aVar.i);
         }
@@ -156,11 +156,11 @@ public class b {
 
     public static boolean i(a aVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fb709beb", new Object[]{aVar})).booleanValue() : aVar == null || TextUtils.isEmpty(aVar.b) || aVar.g == null || TextUtils.isEmpty(aVar.g.a()) || !c.a().b(aVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fb709beb", new Object[]{aVar})).booleanValue() : aVar == null || StringUtils.isEmpty(aVar.b) || aVar.g == null || StringUtils.isEmpty(aVar.g.a()) || !c.a().b(aVar.b);
     }
 
     public static boolean j(a aVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fafa35ec", new Object[]{aVar})).booleanValue() : aVar == null || TextUtils.isEmpty(aVar.b) || !c.a().b(aVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fafa35ec", new Object[]{aVar})).booleanValue() : aVar == null || StringUtils.isEmpty(aVar.b) || !c.a().b(aVar.b);
     }
 }

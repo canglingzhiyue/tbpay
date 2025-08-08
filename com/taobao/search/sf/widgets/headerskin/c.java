@@ -2,7 +2,7 @@ package com.taobao.search.sf.widgets.headerskin;
 
 import android.app.Activity;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
@@ -119,7 +119,7 @@ public class c extends iut implements nvj {
         } else {
             int i = 10001;
             if (this.k && !this.l) {
-                if (!TextUtils.equals(FestivalMgr.a().d("global", nom.KEY_NAVI_STYLE), "0") && !isGallerySrp) {
+                if (!StringUtils.equals(FestivalMgr.a().d("global", nom.KEY_NAVI_STYLE), "0") && !isGallerySrp) {
                     z = false;
                 }
                 this.h.f19160a = z ? 10002 : i;
@@ -335,21 +335,21 @@ public class c extends iut implements nvj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f6dc7bdb", new Object[]{this, ntgVar})).booleanValue();
         }
-        if (!TextUtils.isEmpty(ntgVar.d) && this.f.c != (a4 = com.taobao.search.mmd.util.d.a(ntgVar.d, this.f.c))) {
+        if (!StringUtils.isEmpty(ntgVar.d) && this.f.c != (a4 = com.taobao.search.mmd.util.d.a(ntgVar.d, this.f.c))) {
             SFPromotionBean sFPromotionBean = this.f;
             sFPromotionBean.b = null;
             sFPromotionBean.c = a4;
             z = true;
         }
-        if (!TextUtils.equals(this.f.b, ntgVar.c)) {
+        if (!StringUtils.equals(this.f.b, ntgVar.c)) {
             this.f.b = ntgVar.c;
             z = true;
         }
-        if (!TextUtils.isEmpty(ntgVar.f31751a) && this.f.d != (a3 = com.taobao.search.mmd.util.d.a(ntgVar.f31751a, this.f.d))) {
+        if (!StringUtils.isEmpty(ntgVar.f31751a) && this.f.d != (a3 = com.taobao.search.mmd.util.d.a(ntgVar.f31751a, this.f.d))) {
             this.f.d = a3;
             z = true;
         }
-        if (!TextUtils.isEmpty(ntgVar.b) && this.f.e != (a2 = com.taobao.search.mmd.util.d.a(ntgVar.b, this.f.e))) {
+        if (!StringUtils.isEmpty(ntgVar.b) && this.f.e != (a2 = com.taobao.search.mmd.util.d.a(ntgVar.b, this.f.e))) {
             this.f.e = a2;
             z = true;
         }

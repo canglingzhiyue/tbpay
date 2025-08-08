@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -124,9 +124,9 @@ public class bpe {
         if (dXTemplateItem.d() == 20000) {
             return false;
         }
-        if (!TextUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.c.endsWith(".zip")) {
+        if (!StringUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.c.endsWith(".zip")) {
             return true;
         }
-        return TextUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.b >= 0;
+        return StringUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.b >= 0;
     }
 }

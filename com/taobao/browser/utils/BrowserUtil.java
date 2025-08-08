@@ -15,7 +15,7 @@ import android.os.Bundle;
 import android.taobao.windvane.config.j;
 import android.taobao.windvane.webview.IWVWebView;
 import android.taobao.windvane.webview.h;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -179,7 +179,7 @@ public class BrowserUtil {
         }
         try {
             String queryParameter = uri.getQueryParameter("wvUseSysWebView");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 if ("true".equals(queryParameter)) {
                     return true;
                 }
@@ -199,7 +199,7 @@ public class BrowserUtil {
         }
         try {
             String queryParameter = uri.getQueryParameter("useSysWebView");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 if ("true".equals(queryParameter)) {
                     return true;
                 }
@@ -217,7 +217,7 @@ public class BrowserUtil {
         }
         try {
             String queryParameter = uri.getQueryParameter("disableScreenShot");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 if ("true".equals(queryParameter.trim())) {
                     return true;
                 }
@@ -236,7 +236,7 @@ public class BrowserUtil {
         }
         try {
             String queryParameter = uri.getQueryParameter("disableNav");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 if (!"true".equals(queryParameter)) {
                     if (nom.VALUE_YES.equals(queryParameter)) {
                     }
@@ -252,7 +252,7 @@ public class BrowserUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("474dd404", new Object[]{context, iWVWebView});
-        } else if (ABGlobal.a(context, "anrOpt", "WindVane", "optNotifyRefreshCookies") && TextUtils.equals("true", OrangeConfig.getInstance().getConfig("WindVane", i.KEY_ORANGE_CONFIG_NOTIFY_REFRESH_COOKIES, "true"))) {
+        } else if (ABGlobal.a(context, "anrOpt", "WindVane", "optNotifyRefreshCookies") && StringUtils.equals("true", OrangeConfig.getInstance().getConfig("WindVane", i.KEY_ORANGE_CONFIG_NOTIFY_REFRESH_COOKIES, "true"))) {
             com.taobao.browser.a.a().a(new Runnable() { // from class: com.taobao.browser.utils.BrowserUtil.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -455,7 +455,7 @@ public class BrowserUtil {
             if (str3 != null) {
                 map.put("branch", str3);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 map.put("url", str4);
             }
             AppMonitor.Alarm.commitSuccess(i.KEY_MONITOR_MODULE, "WebViewFeature", new com.alibaba.fastjson.JSONObject(map).toString());

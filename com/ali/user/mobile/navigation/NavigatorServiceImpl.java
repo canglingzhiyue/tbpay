@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.UIBaseConstants;
@@ -102,7 +102,7 @@ public class NavigatorServiceImpl implements NavigatorService {
                             }
                         }
                         Bundle bundle2 = bundle;
-                        if (bundle2 != null && (TextUtils.equals(bundle2.getString(LoginType.LocalLoginType.SMS_LOGIN), "true") || bundle.getBoolean(LoginConstant.LAUCNH_MOBILE_LOGIN_FRAGMENT_LABEL, false))) {
+                        if (bundle2 != null && (StringUtils.equals(bundle2.getString(LoginType.LocalLoginType.SMS_LOGIN), "true") || bundle.getBoolean(LoginConstant.LAUCNH_MOBILE_LOGIN_FRAGMENT_LABEL, false))) {
                             bundle.putString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE, UIBaseConstants.LoginPage.PAGE_SMS_LOGIN);
                         }
                         Bundle bundle3 = bundle;
@@ -116,7 +116,7 @@ public class NavigatorServiceImpl implements NavigatorService {
                         Bundle bundle5 = bundle;
                         LoginParam loginParam = null;
                         String string = bundle5 != null ? bundle5.getString(LoginConstant.LOGINPARAM) : null;
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             loginParam = (LoginParam) JSON.parseObject(string, LoginParam.class);
                         }
                         if (loginParam == null) {
@@ -136,7 +136,7 @@ public class NavigatorServiceImpl implements NavigatorService {
                         }
                         LoginContext.mFrom = loginParam.source;
                         LoginContext.loginUIType = str2;
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             loginParam.ext = new HashMap();
                             loginParam.ext.put("apiReferer", str);
                         }
@@ -163,9 +163,9 @@ public class NavigatorServiceImpl implements NavigatorService {
         }
         try {
             String config = LoginSwitch.getConfig("process_whitelist", "com.taobao.taobao;com.taobao.taobao:wml");
-            if (!TextUtils.isEmpty(config) && (split = config.split(";")) != null && split.length > 0) {
+            if (!StringUtils.isEmpty(config) && (split = config.split(";")) != null && split.length > 0) {
                 for (String str2 : split) {
-                    if (TextUtils.equals(str2, str)) {
+                    if (StringUtils.equals(str2, str)) {
                         return true;
                     }
                 }
@@ -235,16 +235,16 @@ public class NavigatorServiceImpl implements NavigatorService {
         } else {
             intent.putExtra(WebConstant.WEB_LOGIN_TOKEN_TYPE, urlParam.tokenType);
         }
-        if (!TextUtils.isEmpty(urlParam.ivScene)) {
+        if (!StringUtils.isEmpty(urlParam.ivScene)) {
             intent.putExtra(WebConstant.WEB_IV_SCENE, urlParam.ivScene);
         }
-        if (!TextUtils.isEmpty(urlParam.scene)) {
+        if (!StringUtils.isEmpty(urlParam.scene)) {
             intent.putExtra("scene", urlParam.scene);
         }
-        if (!TextUtils.isEmpty(urlParam.token)) {
+        if (!StringUtils.isEmpty(urlParam.token)) {
             intent.putExtra("token", urlParam.token);
         }
-        if (!TextUtils.isEmpty(urlParam.userid)) {
+        if (!StringUtils.isEmpty(urlParam.userid)) {
             intent.putExtra(WebConstant.WEB_IV_USERID, urlParam.userid);
         }
         if (urlParam.loginParam != null) {
@@ -264,9 +264,9 @@ public class NavigatorServiceImpl implements NavigatorService {
         if (urlParam.ext != null) {
             intent.putExtra("ext", new JSONObject(urlParam.ext).toJSONString());
         }
-        if (!TextUtils.isEmpty(urlParam.loginId)) {
+        if (!StringUtils.isEmpty(urlParam.loginId)) {
             intent.putExtra(WebConstant.WEB_LOGIN_ID, urlParam.loginId);
-        } else if (urlParam.loginParam != null && !TextUtils.isEmpty(urlParam.loginParam.loginId)) {
+        } else if (urlParam.loginParam != null && !StringUtils.isEmpty(urlParam.loginParam.loginId)) {
             intent.putExtra(WebConstant.WEB_LOGIN_ID, urlParam.loginParam.loginId);
         }
         if (urlParam.needTitle) {
@@ -415,7 +415,7 @@ public class NavigatorServiceImpl implements NavigatorService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("84e49dd5", new Object[]{this, context, str});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 Intent intent = new Intent(context, QrScanActivity.class);

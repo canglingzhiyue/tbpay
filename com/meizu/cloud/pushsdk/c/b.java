@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.f.g.e;
 import com.meizu.cloud.pushsdk.util.MzSystemUtils;
@@ -56,7 +56,7 @@ public class b {
         a("pn", (Object) context.getPackageName());
         a("pv", (Object) MzSystemUtils.getAppVersionName(context));
         a("pvc", Integer.valueOf(MzSystemUtils.getAppVersionCode(context)));
-        a("st", Integer.valueOf(!TextUtils.isEmpty(MzSystemUtils.findReceiver(context, "com.meizu.ups.push.intent.MESSAGE", context.getPackageName())) ? 1 : 0));
+        a("st", Integer.valueOf(!StringUtils.isEmpty(MzSystemUtils.findReceiver(context, "com.meizu.ups.push.intent.MESSAGE", context.getPackageName())) ? 1 : 0));
     }
 
     private void a(String str, int i, int i2) {
@@ -64,7 +64,7 @@ public class b {
     }
 
     private void a(String str, Object obj) {
-        if (TextUtils.isEmpty(str) || obj == null) {
+        if (StringUtils.isEmpty(str) || obj == null) {
             return;
         }
         if ((obj instanceof String) && ((String) obj).isEmpty()) {
@@ -74,7 +74,7 @@ public class b {
     }
 
     private void a(String str, String str2) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         this.b.put(str, str2);
@@ -85,7 +85,7 @@ public class b {
     }
 
     private void b(String str, Object obj) {
-        if (TextUtils.isEmpty(str) || obj == null) {
+        if (StringUtils.isEmpty(str) || obj == null) {
             return;
         }
         if ((obj instanceof String) && ((String) obj).isEmpty()) {

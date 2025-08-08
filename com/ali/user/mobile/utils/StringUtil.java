@@ -1,7 +1,7 @@
 package com.ali.user.mobile.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -45,7 +45,7 @@ public class StringUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("879baf09", new Object[]{str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.contains("@")) {
@@ -74,7 +74,7 @@ public class StringUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("dd49d94b", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -90,7 +90,7 @@ public class StringUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ef08fd10", new Object[]{str, new Integer(i), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int length = str.length();
@@ -110,7 +110,7 @@ public class StringUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ad76ad38", new Object[]{str, new Integer(i), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int length = str.length();
@@ -126,7 +126,7 @@ public class StringUtil {
             return null;
         }
         StringBuilder sb = new StringBuilder();
-        if (TextUtils.isEmpty(str) || AREACODE_86.equals(str)) {
+        if (StringUtils.isEmpty(str) || AREACODE_86.equals(str)) {
             if (str2.length() < 11) {
                 sb.append("***");
                 sb.append(str2.substring(str2.length() - 1));

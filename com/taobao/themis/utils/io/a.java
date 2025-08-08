@@ -1,6 +1,6 @@
 package com.taobao.themis.utils.io;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.common.Constants;
 import java.io.File;
@@ -28,10 +28,10 @@ public final class a {
             return false;
         }
         try {
-            if (TextUtils.equals(deleteSafely.getCanonicalPath(), "/")) {
+            if (StringUtils.equals(deleteSafely.getCanonicalPath(), "/")) {
                 return false;
             }
-            if (!TextUtils.equals(deleteSafely.getAbsolutePath(), "/")) {
+            if (!StringUtils.equals(deleteSafely.getAbsolutePath(), "/")) {
                 return deleteSafely.delete();
             }
             return false;

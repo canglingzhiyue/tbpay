@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -143,7 +143,7 @@ public class mwj extends DXImageWidgetNode {
             } else {
                 tUrlImageView.setScaleType(ImageView.ScaleType.FIT_XY);
             }
-            if (!TextUtils.isEmpty(this.b)) {
+            if (!StringUtils.isEmpty(this.b)) {
                 try {
                     if (this.c) {
                         tUrlImageView.setSkipAutoSize(true);

@@ -1,6 +1,6 @@
 package com.taobao.themis.ability_taobao;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONObject;
@@ -393,7 +393,7 @@ public final class TMSTitleBarBridge implements com.taobao.themis.kernel.ability
             BridgeResponse bridgeResponse4 = BridgeResponse.SUCCESS;
             q.b(bridgeResponse4, "BridgeResponse.SUCCESS");
             return bridgeResponse4;
-        } else if (eVar == null && TextUtils.isEmpty(str)) {
+        } else if (eVar == null && StringUtils.isEmpty(str)) {
             BridgeResponse bridgeResponse5 = BridgeResponse.INVALID_PARAM;
             q.b(bridgeResponse5, "BridgeResponse.INVALID_PARAM");
             return bridgeResponse5;

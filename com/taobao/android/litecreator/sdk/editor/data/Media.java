@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.media.IVisualMedia;
 import java.io.Serializable;
@@ -97,7 +97,7 @@ public class Media implements IVisualMedia, Serializable {
             return false;
         }
         Media media = (Media) obj;
-        return getWidth() == media.getWidth() && getHeight() == media.getHeight() && getRotation() == media.getRotation() && this.originDurationMs == media.originDurationMs && this.durationMs == media.durationMs && this.clipDurationMs == media.clipDurationMs && Float.compare(media.isMute, this.isMute) == 0 && this.sourceStartTimeUs == media.sourceStartTimeUs && this.sourceEndTimeUs == media.sourceEndTimeUs && this.clipStartTimeUs == media.clipStartTimeUs && this.clipEndTimeUs == media.clipEndTimeUs && this.isPlaceHolderClip == media.isPlaceHolderClip && this.mediaId == media.mediaId && Objects.equals(this.path, media.path) && TextUtils.equals(this.mediaType, media.mediaType);
+        return getWidth() == media.getWidth() && getHeight() == media.getHeight() && getRotation() == media.getRotation() && this.originDurationMs == media.originDurationMs && this.durationMs == media.durationMs && this.clipDurationMs == media.clipDurationMs && Float.compare(media.isMute, this.isMute) == 0 && this.sourceStartTimeUs == media.sourceStartTimeUs && this.sourceEndTimeUs == media.sourceEndTimeUs && this.clipStartTimeUs == media.clipStartTimeUs && this.clipEndTimeUs == media.clipEndTimeUs && this.isPlaceHolderClip == media.isPlaceHolderClip && this.mediaId == media.mediaId && Objects.equals(this.path, media.path) && StringUtils.equals(this.mediaType, media.mediaType);
     }
 
     public int hashCode() {

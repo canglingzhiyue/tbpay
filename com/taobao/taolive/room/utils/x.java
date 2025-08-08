@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.utils;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -411,7 +411,7 @@ public class x implements d.a {
         } else if (i == 1026) {
             try {
                 String optString = new org.json.JSONObject((String) obj).optString("url");
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     return;
                 }
                 s.a(this.f, optString);
@@ -441,11 +441,11 @@ public class x implements d.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4a3a3c26", new Object[]{this, liveSystemMessage})).booleanValue();
         }
-        if (liveSystemMessage == null || TextUtils.isEmpty(liveSystemMessage.low) || TextUtils.isEmpty(liveSystemMessage.high) || !TextUtils.isDigitsOnly(liveSystemMessage.low) || !TextUtils.isDigitsOnly(liveSystemMessage.high) || pmd.a().q() == null) {
+        if (liveSystemMessage == null || StringUtils.isEmpty(liveSystemMessage.low) || StringUtils.isEmpty(liveSystemMessage.high) || !StringUtils.isDigitsOnly(liveSystemMessage.low) || !StringUtils.isDigitsOnly(liveSystemMessage.high) || pmd.a().q() == null) {
             return false;
         }
         String a2 = pmd.a().q().a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         try {
@@ -468,7 +468,7 @@ public class x implements d.a {
             return;
         }
         String b = b(str);
-        if (TextUtils.isEmpty(b) || (videoFrame = this.c) == null) {
+        if (StringUtils.isEmpty(b) || (videoFrame = this.c) == null) {
             return;
         }
         videoFrame.playStreamUrl(b, false, false, false, poy.s(this.l), v.b(str), true);
@@ -479,7 +479,7 @@ public class x implements d.a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int b = v.b(str);

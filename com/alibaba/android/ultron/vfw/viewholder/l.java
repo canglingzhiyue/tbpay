@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.template.download.DXTemplateItem;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -78,7 +78,7 @@ public final class l {
                 }
                 String string = extras.getString("bizCode", null);
                 String r = bnyVar.r();
-                if (TextUtils.isEmpty(string) || !string.equals(r)) {
+                if (StringUtils.isEmpty(string) || !string.equals(r)) {
                     return;
                 }
                 l.a(l.this).clear();

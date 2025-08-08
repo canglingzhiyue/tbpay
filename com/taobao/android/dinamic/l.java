@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -38,7 +38,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (Pair) ipChange.ipc$dispatch("c2e055fc", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int indexOf = str.indexOf(riy.BRACKET_START_STR);
@@ -52,7 +52,7 @@ public class l {
         String trim = str.trim();
         String substring = trim.substring(0, indexOf);
         String substring2 = trim.substring(indexOf + 1, indexOf2);
-        if (TextUtils.isEmpty(substring)) {
+        if (StringUtils.isEmpty(substring)) {
             return null;
         }
         return new Pair<>(substring, substring2);

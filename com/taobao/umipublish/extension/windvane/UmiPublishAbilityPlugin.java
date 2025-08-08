@@ -2,7 +2,7 @@ package com.taobao.umipublish.extension.windvane;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -61,7 +61,7 @@ public class UmiPublishAbilityPlugin extends e {
 
     @Override // android.taobao.windvane.jsbridge.e
     public boolean execute(String str, final String str2, final WVCallBackContext wVCallBackContext) {
-        if (!TextUtils.isEmpty(str) && wVCallBackContext != null) {
+        if (!StringUtils.isEmpty(str) && wVCallBackContext != null) {
             HashMap hashMap = new HashMap();
             hashMap.put("className", PLUGIN_NAME);
             hashMap.put("funcName", str);

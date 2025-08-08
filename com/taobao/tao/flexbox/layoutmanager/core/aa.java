@@ -6,7 +6,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.view.View;
@@ -275,7 +275,7 @@ public class aa {
             if (ipChange instanceof IpChange) {
                 return (ValueAnimator) ipChange.ipc$dispatch("7c74b04f", new Object[]{this});
             }
-            if (TextUtils.equals("shareAnimator", this.c)) {
+            if (StringUtils.equals("shareAnimator", this.c)) {
                 if (this.k == null) {
                     this.k = ValueAnimator.ofFloat(0.0f, 1.0f);
                 }
@@ -1768,7 +1768,7 @@ public class aa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("956925ef", new Object[]{this, eVar});
-        } else if (!ag() || !TextUtils.equals(eVar.c, "onpagedisappear")) {
+        } else if (!ag() || !StringUtils.equals(eVar.c, "onpagedisappear")) {
         } else {
             e a2 = e.a(eVar.f20300a, eVar.b, "onwilldisappear", eVar.d, Component.MSG_FLAG_DISAPPEAR, eVar.e);
             c(a2);
@@ -1780,7 +1780,7 @@ public class aa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("22a3d770", new Object[]{this, eVar});
-        } else if (!ag() || !TextUtils.equals(eVar.c, "onpageappear")) {
+        } else if (!ag() || !StringUtils.equals(eVar.c, "onpageappear")) {
         } else {
             e a2 = e.a(eVar.f20300a, eVar.b, "onwillappear", eVar.d, 130, eVar.e);
             c(a2);

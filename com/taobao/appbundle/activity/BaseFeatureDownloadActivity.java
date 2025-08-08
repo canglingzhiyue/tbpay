@@ -3,7 +3,7 @@ package com.taobao.appbundle.activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.a;
 import com.alibaba.android.split.core.splitinstall.g;
@@ -152,7 +152,7 @@ public abstract class BaseFeatureDownloadActivity extends BaseActivity {
         super.onCreate(null);
         Bundle extras = getIntent().getExtras();
         this.b = (String) extras.get("feature_name");
-        if (TextUtils.isEmpty(this.b) && Build.VERSION.SDK_INT < 28) {
+        if (StringUtils.isEmpty(this.b) && Build.VERSION.SDK_INT < 28) {
             this.b = InjectClassLoader.Companion.getFeatureName();
         }
         this.d = ModuleDependencyUtils.getDependencies(this.b);

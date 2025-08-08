@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.taobao.orange.OrangeConfig;
@@ -84,11 +84,11 @@ public class kbc {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(GROUP_NAME, BREAK_UP_TIME, "30");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 return Integer.parseInt(config);
             }
             String b = kax.b(BREAK_UP_TIME, "30");
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b = "30";
             }
             return Integer.parseInt(b);
@@ -137,10 +137,10 @@ public class kbc {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String b = kax.b(AUGE_LOCAL_BIZ_CODE, "");
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 str2 = str;
             } else {
                 str2 = b + "," + str;

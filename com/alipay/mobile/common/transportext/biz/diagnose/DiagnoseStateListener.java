@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.diagnose;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetNetworkDiagnoseListener;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transport.utils.NetworkAsyncTaskExecutor;
@@ -85,7 +85,7 @@ public class DiagnoseStateListener implements AmnetNetworkDiagnoseListener, NetT
         try {
             LogCatUtil.info("NetTest", "fin=[" + z3 + "], ok=[" + z2 + "], done=[" + z + "], summary=[" + str + riy.ARRAY_END_STR);
             if (z) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.logStrList.add(str);
                 }
                 if ((this.oneceSuccess || z2) && !this.logStrList.isEmpty()) {
@@ -112,7 +112,7 @@ public class DiagnoseStateListener implements AmnetNetworkDiagnoseListener, NetT
                         this.oneceSuccess = true;
                     }
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 this.logStrList.add(str);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.expression.expr_v2.DXExprFunctionError;
@@ -30,7 +30,7 @@ public class fua implements k {
         if (fVarArr == null || fVarArr.length != i) {
             throw new DXExprFunctionError("args == null || args.length != argc");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new DXExprFunctionError("function is null");
         }
         char c = 65535;

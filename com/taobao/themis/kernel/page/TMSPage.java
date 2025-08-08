@@ -3,7 +3,7 @@ package com.taobao.themis.kernel.page;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -202,7 +202,7 @@ public final class TMSPage implements ITMSPage {
             }
             TMSPage.a(TMSPage.this).a(RenderStatusEnum.RENDER_ERROR);
             if (qqc.a(TMSPage.this)) {
-                if (TextUtils.equals(str, "TMS_ERR_WEB_WIDGET") && n.cj()) {
+                if (StringUtils.equals(str, "TMS_ERR_WEB_WIDGET") && n.cj()) {
                     qpm f = TMSPage.this.f();
                     if (f != null && (pageContainer2 = f.getPageContainer()) != null) {
                         pageContainer2.b(new e(str, str2, ""));

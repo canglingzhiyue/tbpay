@@ -1,6 +1,6 @@
 package com.taobao.tao.channel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -88,7 +88,7 @@ public class b implements c.a {
         com.taobao.android.share.resource.a.a().a(com.taobao.android.share.resource.a.KEY_SHAREPANELGETSHARECONFIGSTART);
         com.taobao.tao.channel.a aVar2 = new com.taobao.tao.channel.a();
         aVar2.a(true);
-        if (tBShareContent.templateId == null || TextUtils.isEmpty(tBShareContent.templateId)) {
+        if (tBShareContent.templateId == null || StringUtils.isEmpty(tBShareContent.templateId)) {
             tBShareContent.templateId = "common";
         }
         c.a().b();
@@ -104,7 +104,7 @@ public class b implements c.a {
         } else {
             ShareBusiness.sShareUTArgs.put(ShareBusiness.BIZ_CONFIG_START_KEY, (Object) Long.valueOf(System.currentTimeMillis()));
             String b = obh.b(tBShareContent.businessId);
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 c.a().a(tBShareContent, aVar, aVar2, z, z2, true, b);
                 return;
             }
@@ -128,7 +128,7 @@ public class b implements c.a {
                     return;
                 }
                 String cacheDataValidTime = SpUtils.getCacheDataValidTime(tBShareContent.businessId);
-                if (!TextUtils.isEmpty(cacheDataValidTime)) {
+                if (!StringUtils.isEmpty(cacheDataValidTime)) {
                     try {
                         if (System.currentTimeMillis() - Long.parseLong(cacheDataValidTime) <= obh.f()) {
                             c(tBShareContent, aVar, aVar2, z, z2);
@@ -148,7 +148,7 @@ public class b implements c.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String g = obh.g();
@@ -216,7 +216,7 @@ public class b implements c.a {
             return;
         }
         String cacheShareData = SpUtils.getCacheShareData(tBShareContent.businessId);
-        if (!TextUtils.isEmpty(cacheShareData)) {
+        if (!StringUtils.isEmpty(cacheShareData)) {
             c.a().a(tBShareContent, aVar, aVar2, z, z2, true, cacheShareData);
         } else {
             b(tBShareContent, aVar, aVar2, z, z2);
@@ -383,11 +383,11 @@ public class b implements c.a {
         }
         com.taobao.share.globalmodel.a d = aVar.d();
         TBShareContent j = e.b().j();
-        if (TextUtils.equals("video", d.c())) {
+        if (StringUtils.equals("video", d.c())) {
             return false;
         }
-        if (TextUtils.equals("saveVideo", d.c())) {
-            if (j != null && j.extraParams != null && TextUtils.equals("true", j.extraParams.get("isMarvelScheme"))) {
+        if (StringUtils.equals("saveVideo", d.c())) {
+            if (j != null && j.extraParams != null && StringUtils.equals("true", j.extraParams.get("isMarvelScheme"))) {
                 return obk.a().a((com.taobao.share.globalmodel.b) aVar);
             }
             return false;
@@ -406,7 +406,7 @@ public class b implements c.a {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         for (com.taobao.share.globalmodel.a aVar : list) {
-            if (!TextUtils.isEmpty(aVar.b())) {
+            if (!StringUtils.isEmpty(aVar.b())) {
                 ChannelInfo channelInfo = new ChannelInfo();
                 channelInfo.setType(aVar.c());
                 channelInfo.setTitle(aVar.d());

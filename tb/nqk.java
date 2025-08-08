@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -410,7 +410,7 @@ public final class nqk extends nqj<CombineHistoryCellBean, com.taobao.search.sea
 
     private final boolean a(CombineHistoryCellBean combineHistoryCellBean) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56042e17", new Object[]{this, combineHistoryCellBean})).booleanValue() : combineHistoryCellBean != null && combineHistoryCellBean.isShowGuide() && !TextUtils.isEmpty(combineHistoryCellBean.getGuideUrl()) && !s.a().getBoolean(this.t, false);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56042e17", new Object[]{this, combineHistoryCellBean})).booleanValue() : combineHistoryCellBean != null && combineHistoryCellBean.isShowGuide() && !StringUtils.isEmpty(combineHistoryCellBean.getGuideUrl()) && !s.a().getBoolean(this.t, false);
     }
 
     @Override // tb.nqj
@@ -433,7 +433,7 @@ public final class nqk extends nqj<CombineHistoryCellBean, com.taobao.search.sea
         q.a((Object) itemView, "itemView");
         ViewGroup.LayoutParams layoutParams = itemView.getLayoutParams();
         String picModName = combineHistoryCellBean != null ? combineHistoryCellBean.getPicModName() : null;
-        if (!TextUtils.isEmpty(picModName)) {
+        if (!StringUtils.isEmpty(picModName)) {
             TextView textView = this.e;
             if (textView == null) {
                 q.b("imgHistoryBtn");
@@ -444,7 +444,7 @@ public final class nqk extends nqj<CombineHistoryCellBean, com.taobao.search.sea
             str = combineHistoryCellBean.name;
         }
         String str2 = str;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             TextView textView2 = this.f31663a;
             if (textView2 == null) {
                 q.b("textHistoryBtn");
@@ -808,7 +808,7 @@ public final class nqk extends nqj<CombineHistoryCellBean, com.taobao.search.sea
         q.a((Object) model, "model");
         SearchDoorContext a2 = model.a();
         q.a((Object) a2, "model.searchDoorContext");
-        String str2 = TextUtils.equals(a2.a(noa.KEY_GOOD_PRICE), "true") ? "1" : "0";
+        String str2 = StringUtils.equals(a2.a(noa.KEY_GOOD_PRICE), "true") ? "1" : "0";
         Pair[] pairArr = new Pair[4];
         pairArr[0] = j.a("tabname", str);
         pairArr[1] = j.a(k.KEY_SUGGEST_RN, ((CombineHistoryCellBean) this.h).suggestRn);

@@ -2,7 +2,7 @@ package com.taobao.android.miniLive.weex;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.ir.runtime.c;
@@ -63,7 +63,7 @@ public class TBMiniLiveModule extends WXModule {
             return;
         }
         String str = map.get("shopId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         hue.a(TAG, "setMiniLive shopId " + str);
@@ -85,7 +85,7 @@ public class TBMiniLiveModule extends WXModule {
         } else {
             hue.a(TAG, "showMiniLive ");
             String str = map.get("shopId");
-            if (this.cachedMap == null || TextUtils.isEmpty(str) || (map2 = this.cachedMap.get(str)) == null) {
+            if (this.cachedMap == null || StringUtils.isEmpty(str) || (map2 = this.cachedMap.get(str)) == null) {
                 return;
             }
             String str2 = map2.get(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);

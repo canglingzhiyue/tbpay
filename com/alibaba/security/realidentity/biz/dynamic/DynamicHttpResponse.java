@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity.biz.dynamic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.model.HttpResponse;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -12,6 +12,6 @@ public class DynamicHttpResponse extends HttpResponse {
     @Override // com.alibaba.security.common.http.model.HttpResponse
     public boolean isSuccessful() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("349bd9ef", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.result);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("349bd9ef", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.result);
     }
 }

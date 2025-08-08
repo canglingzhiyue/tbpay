@@ -1,7 +1,7 @@
 package com.taobao.share.qrcode;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
@@ -79,7 +79,7 @@ public class b {
         sb.append(ShareServiceApi.urlBackFlow(bVar.f19656a.c, "QRCodeAnti", this.c.url));
         try {
             String queryParameter = Uri.parse(bVar.d).getQueryParameter("un");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 sb.append("&un=");
                 sb.append(queryParameter);
             }
@@ -98,10 +98,10 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.equals(str, "QR")) {
+        if (StringUtils.equals(str, "QR")) {
             return true;
         }
-        if (!TextUtils.equals(str, "Visual")) {
+        if (!StringUtils.equals(str, "Visual")) {
             return nyg.h();
         }
         return false;

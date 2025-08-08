@@ -1,7 +1,7 @@
 package com.taobao.family.globalbubble;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class GlobalBubbleModule extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2118ac70", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             List<RectBean> parseArray = JSON.parseArray(str, RectBean.class);
             ArrayList arrayList = new ArrayList();
             if (parseArray == null || parseArray.size() <= 0) {
@@ -111,7 +111,7 @@ public class GlobalBubbleModule extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f198381a", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Bundle bundle = new Bundle();
             bundle.putString("familyDetailUrl", str);

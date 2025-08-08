@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.c;
@@ -39,10 +39,10 @@ public class nee extends c {
                 str2 = "text/html";
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = ngn.n(str);
         }
-        if (TextUtils.isEmpty(zCacheResourceResponse.encoding)) {
+        if (StringUtils.isEmpty(zCacheResourceResponse.encoding)) {
             str3 = "UTF-8";
         }
         ngm ngmVar = new ngm(str2, str3, zCacheResourceResponse.inputStream);

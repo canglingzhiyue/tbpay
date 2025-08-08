@@ -1,7 +1,7 @@
 package com.taobao.android.detail.sdk.vmodel.desc;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.template.ComponentModel;
@@ -77,6 +77,6 @@ public class a extends e {
     @Override // com.taobao.android.detail.sdk.vmodel.desc.e
     public boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.f10358a) && TextUtils.isEmpty(this.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.f10358a) && StringUtils.isEmpty(this.b);
     }
 }

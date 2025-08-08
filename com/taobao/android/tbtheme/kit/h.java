@@ -1,7 +1,7 @@
 package com.taobao.android.tbtheme.kit;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbtheme.kit.ThemeDarkModeAdapterDevices;
@@ -27,7 +27,7 @@ public class h {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
         String a3 = f.a(f.DARK_MODE_ADAPTER_DEVICES, (String) null);
-        if (TextUtils.isEmpty(a3) || (a2 = a(a3)) == null) {
+        if (StringUtils.isEmpty(a3) || (a2 = a(a3)) == null) {
             return false;
         }
         return a(a2);
@@ -93,10 +93,10 @@ public class h {
         }
         ThemeDarkModeAdapterDevices.Version version = model.androidVersions;
         if (version == null) {
-            return Build.BRAND.equals(brand.brand) && (TextUtils.isEmpty(model.model) || Build.MODEL.equals(model.model));
+            return Build.BRAND.equals(brand.brand) && (StringUtils.isEmpty(model.model) || Build.MODEL.equals(model.model));
         }
         int a2 = a(version.min, Integer.MIN_VALUE);
-        return Build.BRAND.equals(brand.brand) && (TextUtils.isEmpty(model.model) || Build.MODEL.equals(model.model)) && Build.VERSION.SDK_INT >= a2 && Build.VERSION.SDK_INT <= Math.max(a2, a(version.max, Integer.MAX_VALUE));
+        return Build.BRAND.equals(brand.brand) && (StringUtils.isEmpty(model.model) || Build.MODEL.equals(model.model)) && Build.VERSION.SDK_INT >= a2 && Build.VERSION.SDK_INT <= Math.max(a2, a(version.max, Integer.MAX_VALUE));
     }
 
     private int a(String str, int i) {

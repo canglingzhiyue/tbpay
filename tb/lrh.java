@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.exception.InfoFlowRuntimeException;
@@ -89,7 +89,7 @@ public class lrh {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("88ae9f72", new Object[]{this, baseSubItemModel, str, str2});
         }
-        if (baseSubItemModel != null && (smartContent = baseSubItemModel.getSmartContent()) != null && (jSONObject = smartContent.getJSONObject(str)) != null && TextUtils.equals(str2, jSONObject.getString("id"))) {
+        if (baseSubItemModel != null && (smartContent = baseSubItemModel.getSmartContent()) != null && (jSONObject = smartContent.getJSONObject(str)) != null && StringUtils.equals(str2, jSONObject.getString("id"))) {
             return jSONObject;
         }
         return null;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -43,29 +43,29 @@ public class hhw {
                 }
             }
         }
-        if (TextUtils.equals("more", (String) objArr[1])) {
+        if (StringUtils.equals("more", (String) objArr[1])) {
             if (dVar != null) {
                 dVar.a(dXRuntimeContext, cVar, (JSONObject) objArr[2]);
             }
-        } else if (TextUtils.equals("search", (String) objArr[1])) {
+        } else if (StringUtils.equals("search", (String) objArr[1])) {
             if (dVar != null) {
                 dVar.a();
             }
-        } else if (TextUtils.equals("order", (String) objArr[1])) {
+        } else if (StringUtils.equals("order", (String) objArr[1])) {
             if (dVar != null) {
                 dVar.a((JSONObject) objArr[2]);
             }
-        } else if (TextUtils.equals("cart", (String) objArr[1])) {
+        } else if (StringUtils.equals("cart", (String) objArr[1])) {
             if (dVar != null) {
                 dVar.b((JSONObject) objArr[2]);
             }
-        } else if (TextUtils.equals(ENTRY_TYPE_LIVE_CART, (String) objArr[1])) {
+        } else if (StringUtils.equals(ENTRY_TYPE_LIVE_CART, (String) objArr[1])) {
             if (dVar != null) {
                 dVar.c((JSONObject) objArr[2]);
             }
         } else if (objArr.length > 2 && (objArr[2] instanceof JSONObject)) {
             String string = ((JSONObject) objArr[2]).getString("jumpUrl");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a.a().k().a(dXRuntimeContext.m(), string);
             }
         }
@@ -73,11 +73,11 @@ public class hhw {
         if (objArr.length > 3 && (objArr[3] instanceof String)) {
             hashMap.put("gl_scene", (String) objArr[3]);
         }
-        if (dVar != null && (objArr[1] instanceof String) && !TextUtils.equals("more", (String) objArr[1])) {
+        if (dVar != null && (objArr[1] instanceof String) && !StringUtils.equals("more", (String) objArr[1])) {
             dVar.b();
             if (objArr[2] instanceof JSONObject) {
                 String string2 = ((JSONObject) objArr[2]).getString("count");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     hashMap.put(objArr[1] + "_count", string2);
                 }
             }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
@@ -74,7 +74,7 @@ public class bxe {
             return;
         }
         int identityHashCode = System.identityHashCode(context);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "TBBuyHalfScreenFragment" + identityHashCode;
         }
         this.f26155a.put(Integer.valueOf(identityHashCode), new a(str2, str));
@@ -141,7 +141,7 @@ public class bxe {
             return str2;
         }
         String string = jSONObject.getString(str);
-        return TextUtils.isEmpty(string) ? str2 : string;
+        return StringUtils.isEmpty(string) ? str2 : string;
     }
 
     public void b(Context context) {

@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.engine.template;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -211,7 +211,7 @@ public class d implements com.alibaba.android.ultron.engine.template.a {
         }
         String string = d.getString("templateId");
         String string2 = d.getString("version");
-        if (!TextUtils.equals(string, templateInfo.getTemplateId()) || !TextUtils.equals(string2, templateInfo.getVersion())) {
+        if (!StringUtils.equals(string, templateInfo.getTemplateId()) || !StringUtils.equals(string2, templateInfo.getVersion())) {
             return "获取模板id,version不匹配";
         }
         a(templateInfo, d);
@@ -243,7 +243,7 @@ public class d implements com.alibaba.android.ultron.engine.template.a {
             bga.a.a(this.h, "TemplateManager.fetchTemplateByUrl", e);
             jSONObject = null;
         }
-        boolean isEmpty = true ^ TextUtils.isEmpty(str);
+        boolean isEmpty = true ^ StringUtils.isEmpty(str);
         if (statusCode == 200 && isEmpty) {
             return jSONObject;
         }
@@ -360,13 +360,13 @@ public class d implements com.alibaba.android.ultron.engine.template.a {
         }
         String url = templateInfo.getUrl();
         String str = "ultrontemplate_" + this.h + "/" + templateInfo.getTemplateId() + "/" + templateInfo.getVersion() + "/template.json";
-        if (TextUtils.isEmpty(url)) {
+        if (StringUtils.isEmpty(url)) {
             url = str;
         } else if (url.startsWith("file:///android_asset/")) {
             url = url.replace("file:///android_asset/", "");
         }
         String d = bpg.d(this.g, url);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             d = bpg.b(this.g, url);
         }
         try {
@@ -383,7 +383,7 @@ public class d implements com.alibaba.android.ultron.engine.template.a {
         if (templateInfo.getTemplateId() == null || templateInfo.getVersion() == null) {
             return jSONObject;
         }
-        if (TextUtils.equals(templateInfo.getTemplateId(), string2) && TextUtils.equals(templateInfo.getVersion(), string)) {
+        if (StringUtils.equals(templateInfo.getTemplateId(), string2) && StringUtils.equals(templateInfo.getVersion(), string)) {
             return jSONObject;
         }
         bga.a.a(this.h, "TemplateManager.getPresetTemplate", ErrorConstants.TEMPLATE_KEY_NOT_MATCH.errorCode(), ErrorConstants.TEMPLATE_KEY_NOT_MATCH.errorMessage());

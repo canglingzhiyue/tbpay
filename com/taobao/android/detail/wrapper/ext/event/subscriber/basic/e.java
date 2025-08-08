@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.event.subscriber.basic;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.kit.fragment.RightListFragment;
 import com.taobao.android.trade.event.ThreadMode;
@@ -49,7 +49,7 @@ public class e implements j<fcm> {
             return com.taobao.android.detail.core.event.a.FAILURE;
         }
         this.b = currentTimeMillis;
-        if (TextUtils.isEmpty(fcmVar.f)) {
+        if (StringUtils.isEmpty(fcmVar.f)) {
             if (this.f11274a instanceof FragmentActivity) {
                 if (fcmVar.a()) {
                     RightListFragment.startFragment((FragmentActivity) this.f11274a, "服务说明", fcmVar.f27804a);

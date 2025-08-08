@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alibaba.fastjson.JSON;
@@ -233,16 +233,16 @@ public class c {
         }
         boolean a2 = dod.a(context, str4);
         AdapterForTLog.loge("globalAddress", "enter syncGlobalRecommend " + str + "；;locationPermission:" + a2 + ";isUserSwitchAdd:" + this.e);
-        if (TextUtils.equals(str3, "addressInfoChange") || TextUtils.equals(str3, "login")) {
+        if (StringUtils.equals(str3, "addressInfoChange") || StringUtils.equals(str3, "login")) {
             z = a2;
             this.e = false;
             a();
         } else {
             if (c(str)) {
-                if (this.e && !TextUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
+                if (this.e && !StringUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
                     a(str, aVar2);
                     return;
-                } else if (TextUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
+                } else if (StringUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
                     this.e = false;
                 }
             } else if (this.e) {
@@ -252,7 +252,7 @@ public class c {
             if (a2) {
                 if (!a(this.d.timestamp, str, str3) && this.d.locationEnabled) {
                     AdapterForTLog.loge("globalAddress", "isDataExpire = false ");
-                    if (TextUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
+                    if (StringUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
                         b(this.c.getString("clientCache", ""), this.c.getString("ccokiesKey", ""));
                     }
                     a(str, aVar);
@@ -264,7 +264,7 @@ public class c {
                 z = a2;
                 if (!a(this.d.timestamp, str, str3) && !this.d.locationEnabled) {
                     AdapterForTLog.loge("globalAddress", "isDataExpire = false ");
-                    if (TextUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
+                    if (StringUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
                         b(this.c.getString("clientCache", ""), this.c.getString("ccokiesKey", ""));
                     }
                     a(str, aVar2);
@@ -272,18 +272,18 @@ public class c {
                 }
             }
         }
-        if (TextUtils.equals(str3, "login") && !c("requestAddressWhenLogin", "true")) {
+        if (StringUtils.equals(str3, "login") && !c("requestAddressWhenLogin", "true")) {
             a(str, aVar2);
-        } else if (TextUtils.equals(str3, "addressInfoChange") && !c("requestAddressWhenAddressChange", "true")) {
+        } else if (StringUtils.equals(str3, "addressInfoChange") && !c("requestAddressWhenAddressChange", "true")) {
             a(str, aVar2);
-        } else if (TextUtils.isEmpty(Login.getUserId()) && TextUtils.equals("appLaunch", str3) && c("ingoreLBSWhenLaunch", "true")) {
+        } else if (StringUtils.isEmpty(Login.getUserId()) && StringUtils.equals("appLaunch", str3) && c("ingoreLBSWhenLaunch", "true")) {
             a(str, aVar2);
         } else {
-            if (TextUtils.isEmpty(Login.getUserId()) && this.d.isSessionValid) {
+            if (StringUtils.isEmpty(Login.getUserId()) && this.d.isSessionValid) {
                 AdapterForTLog.loge("globalAddress", "clearDeliverAddr");
                 a();
             }
-            if (!Login.checkSessionValid() && !TextUtils.isEmpty(Login.getLoginToken())) {
+            if (!Login.checkSessionValid() && !StringUtils.isEmpty(Login.getLoginToken())) {
                 Login.login(false);
                 a(str, str2, str3, z, aVar);
                 return;
@@ -348,7 +348,7 @@ public class c {
                 }
                 final DeliverRequest deliverRequest = new DeliverRequest();
                 try {
-                    if (!z || (TextUtils.equals("appLaunch", str3) && c.a(c.this, "ingoreLBSWhenLaunch", "true"))) {
+                    if (!z || (StringUtils.equals("appLaunch", str3) && c.a(c.this, "ingoreLBSWhenLaunch", "true"))) {
                         c.a(c.this, context, str, str2, str3, deliverRequest, z2, z, aVar);
                         return;
                     }
@@ -405,7 +405,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b89e9401", new Object[]{this, context, str, str2, str3, deliverRequest, new Boolean(z), new Boolean(z2), aVar});
-        } else if (!z && !Login.checkSessionValid() && TextUtils.isEmpty(deliverRequest.lng) && TextUtils.isEmpty(deliverRequest.lat)) {
+        } else if (!z && !Login.checkSessionValid() && StringUtils.isEmpty(deliverRequest.lng) && StringUtils.isEmpty(deliverRequest.lat)) {
             AdapterForTLog.loge("globalAddress", "AddrFromRemote no lbs");
             if (aVar == null) {
                 return;
@@ -440,16 +440,16 @@ public class c {
                 AdapterForTLog.loge("globalAddress", "updateRecommendAddressFromRemote");
                 String string = this.c.getString("extInfoKey", "");
                 try {
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         jSONObject = new JSONObject();
                     } else {
                         jSONObject = new JSONObject(string);
                     }
                     jSONObject.put("bizIdentity", str);
                     jSONObject.put("channel", str2);
-                    if (TextUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
+                    if (StringUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME)) {
                         jSONObject.put("eventType", "enterSearch");
-                    } else if (!TextUtils.isEmpty(str3)) {
+                    } else if (!StringUtils.isEmpty(str3)) {
                         jSONObject.put("eventType", str3);
                     } else {
                         jSONObject.put("eventType", "nativeInvoke");
@@ -464,10 +464,10 @@ public class c {
                 HashMap hashMap = null;
                 if (c("lbs_pull_flow_control", "true")) {
                     String d = d("lbs_pull_flow_control_info", "group=guide");
-                    if (!TextUtils.isEmpty(d)) {
+                    if (!StringUtils.isEmpty(d)) {
                         hashMap = new HashMap();
                         hashMap.put(MtopModule.KEY_MTOP_HEADER_XBIZTYPE, "mbis");
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             d = d + ";biz_identity=" + str;
                         }
                         hashMap.put(MtopModule.KEY_MTOP_HEADER_XBIZINFO, d);
@@ -586,8 +586,8 @@ public class c {
         if (recommendAddressContainer == null || recommendAddressContainer.recommendAddressMap == null || this.d.recommendAddressMap.isEmpty()) {
             c();
         }
-        a(str, TextUtils.equals(str2, "location"), false, str3, (DeliverRequest) null, (a) null);
-        if (!TextUtils.equals(str2, "deliver")) {
+        a(str, StringUtils.equals(str2, "location"), false, str3, (DeliverRequest) null, (a) null);
+        if (!StringUtils.equals(str2, "deliver")) {
             return;
         }
         this.e = true;
@@ -598,7 +598,7 @@ public class c {
         Map map;
         AdapterForTLog.loge("globalAddress", "updateTmallMarket clientCacheStr = " + str + ";;cookieStr=" + str2);
         try {
-            if (!TextUtils.isEmpty(str) && c("refreshAddressClientCache", "true") && (map = (Map) com.alibaba.fastjson.JSONObject.parseObject(str, new TypeReference<Map<String, String>>() { // from class: com.taobao.android.address.c.2
+            if (!StringUtils.isEmpty(str) && c("refreshAddressClientCache", "true") && (map = (Map) com.alibaba.fastjson.JSONObject.parseObject(str, new TypeReference<Map<String, String>>() { // from class: com.taobao.android.address.c.2
                 {
                     c.this = this;
                 }
@@ -609,7 +609,7 @@ public class c {
                     }
                 }
             }
-            if (TextUtils.isEmpty(str2) || !c("refreshAddressCookies", "true") || (parseArray = JSONArray.parseArray(str2, String.class)) == null || parseArray.size() <= 0) {
+            if (StringUtils.isEmpty(str2) || !c("refreshAddressCookies", "true") || (parseArray = JSONArray.parseArray(str2, String.class)) == null || parseArray.size() <= 0) {
                 return;
             }
             a((String[]) parseArray.toArray(new String[0]));
@@ -624,7 +624,7 @@ public class c {
             ipChange.ipc$dispatch("3b26fb7", new Object[]{this, strArr});
         } else if (strArr != null) {
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     LoginCookie parseCookie = LoginCookieUtils.parseCookie(str);
                     try {
                         CookieManager.getInstance().setCookie(LoginCookieUtils.getHttpDomin(parseCookie), parseCookie.toString());
@@ -643,7 +643,7 @@ public class c {
             return;
         }
         AdapterForTLog.loge("globalAddress", "updateRecommendAddr recommendAddr = " + str3 + ";;;bizId = " + str);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return;
         }
         try {
@@ -667,7 +667,7 @@ public class c {
                     }
                 }
             });
-            if (!TextUtils.equals(str2, "deliver")) {
+            if (!StringUtils.equals(str2, "deliver")) {
                 return;
             }
             this.e = true;
@@ -684,7 +684,7 @@ public class c {
             return;
         }
         AdapterForTLog.loge("globalAddress", "updateRecommendAddr addressId = " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         try {
@@ -701,7 +701,7 @@ public class c {
                     break;
                 }
                 RecommendedAddress next = it.next();
-                if (next != null && next.recommendedAddress != null && TextUtils.equals(next.recommendedAddress.addressId, str)) {
+                if (next != null && next.recommendedAddress != null && StringUtils.equals(next.recommendedAddress.addressId, str)) {
                     this.d.recommendAddressMap.clear();
                     break;
                 }
@@ -724,7 +724,7 @@ public class c {
         }
         try {
             String str3 = "";
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 c();
                 this.d.timestamp = System.currentTimeMillis();
                 this.d.locationEnabled = z;
@@ -742,7 +742,7 @@ public class c {
             }
             JSONObject jSONObject = new JSONObject(str2);
             String optString = jSONObject.optString("data");
-            if (!TextUtils.isEmpty(optString) && (map = (Map) com.alibaba.fastjson.JSONObject.parseObject(optString, new TypeReference<Map<String, RecommendedAddress>>() { // from class: com.taobao.android.address.c.4
+            if (!StringUtils.isEmpty(optString) && (map = (Map) com.alibaba.fastjson.JSONObject.parseObject(optString, new TypeReference<Map<String, RecommendedAddress>>() { // from class: com.taobao.android.address.c.4
                 {
                     c.this = this;
                 }
@@ -769,7 +769,7 @@ public class c {
             }
             edit2.putString(DispatchConstants.LONGTITUDE, str3);
             edit2.apply();
-            if (TextUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME) || z2) {
+            if (StringUtils.equals(str, noa.RUNTIME_PERMISSION_REQUEST_BIZ_NAME) || z2) {
                 b(jSONObject2, jSONArray);
             }
             a(str, aVar);
@@ -784,10 +784,10 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("4a154e74", new Object[]{this, new Long(j), str, str2})).booleanValue();
         }
         long j2 = -1;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             j2 = a(str + "_recommendAddressExpireTimeV2", "-1");
         }
-        if (j2 < 0 && !TextUtils.isEmpty(str2)) {
+        if (j2 < 0 && !StringUtils.isEmpty(str2)) {
             j2 = a(str2 + "_recommendAddressExpireTimeV2", "-1");
         }
         if (j2 < 0) {
@@ -811,7 +811,7 @@ public class c {
             return;
         }
         String string = this.c.getString("globalAddressKey", "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         try {

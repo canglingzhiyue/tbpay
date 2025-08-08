@@ -1,7 +1,7 @@
 package com.taobao.android.tschedule.strategy;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.VariationSet;
@@ -34,7 +34,7 @@ public class ABTest {
             return ((Boolean) ipChange.ipc$dispatch("a821939f", new Object[]{new Integer(i)})).booleanValue();
         }
         String str = (String) com.taobao.android.launcher.common.c.a("deviceId", "");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         int length = str.length();

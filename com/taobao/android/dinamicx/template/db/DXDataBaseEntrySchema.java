@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.template.db;
 
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.template.db.DXDataBaseEntry;
 import java.lang.reflect.Field;
@@ -74,7 +74,7 @@ public final class DXDataBaseEntrySchema {
             return;
         }
         String str = this.mTableName;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             fux.b("DinamicX", "DataBase", "没有用注解定义表名");
             return;
         }
@@ -88,7 +88,7 @@ public final class DXDataBaseEntrySchema {
                 sb2.append(aVar.f11922a);
                 sb2.append(' ');
                 sb2.append(SQLITE_TYPES[aVar.b]);
-                if (!TextUtils.isEmpty(aVar.e)) {
+                if (!StringUtils.isEmpty(aVar.e)) {
                     sb2.append(" DEFAULT ");
                     sb2.append(aVar.e);
                 } else if (aVar.f) {

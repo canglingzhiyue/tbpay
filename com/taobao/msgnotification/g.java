@@ -8,7 +8,7 @@ import android.os.Looper;
 import android.os.PowerManager;
 import android.support.v4.util.LruCache;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.localization.b;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -240,7 +240,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.e.put(str.split("&&")[0], Integer.valueOf(i));
         }

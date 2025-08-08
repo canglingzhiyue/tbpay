@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -47,7 +47,7 @@ public class FeedbackJsBridge extends e {
                 if (sharedPreferences != null) {
                     str3 = sharedPreferences.getString("snapshotid", str3);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     r rVar = new r();
                     rVar.a("snapshotID", str3);
                     wVCallBackContext.success(rVar);

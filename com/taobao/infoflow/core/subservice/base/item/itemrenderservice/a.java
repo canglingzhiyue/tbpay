@@ -1,7 +1,7 @@
 package com.taobao.infoflow.core.subservice.base.item.itemrenderservice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -142,7 +142,7 @@ public class a implements c {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("e4cc40d7", new Object[]{this, baseSectionModel});
         }
-        if (baseSectionModel != null && !TextUtils.isEmpty(baseSectionModel.getSectionBizCode())) {
+        if (baseSectionModel != null && !StringUtils.isEmpty(baseSectionModel.getSectionBizCode())) {
             return (baseSectionModel.getExt() == null || !baseSectionModel.getExt().getBooleanValue("hidden")) ? null : -1;
         }
         return -1;

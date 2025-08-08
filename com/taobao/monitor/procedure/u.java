@@ -1,7 +1,7 @@
 package com.taobao.monitor.procedure;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.LinkedList;
 import java.util.List;
@@ -205,7 +205,7 @@ public class u {
         }
         if (uVar != null) {
             String str = uVar.b;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return this;
             }
             Integer num = this.m.get(str);

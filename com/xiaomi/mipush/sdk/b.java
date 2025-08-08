@@ -2,7 +2,7 @@ package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.weex.common.WXConfig;
 import java.util.HashMap;
 import java.util.Map;
@@ -150,11 +150,11 @@ public class b {
 
         /* renamed from: a  reason: collision with other method in class */
         public boolean m1680a(String str, String str2) {
-            boolean equals = TextUtils.equals(this.f68a, str);
-            boolean equals2 = TextUtils.equals(this.b, str2);
-            boolean z = !TextUtils.isEmpty(this.c);
-            boolean z2 = !TextUtils.isEmpty(this.d);
-            boolean z3 = TextUtils.isEmpty(com.xiaomi.push.i.b(this.f67a)) || TextUtils.equals(this.f, com.xiaomi.push.i.h(this.f67a)) || TextUtils.equals(this.f, com.xiaomi.push.i.g(this.f67a));
+            boolean equals = StringUtils.equals(this.f68a, str);
+            boolean equals2 = StringUtils.equals(this.b, str2);
+            boolean z = !StringUtils.isEmpty(this.c);
+            boolean z2 = !StringUtils.isEmpty(this.d);
+            boolean z3 = StringUtils.isEmpty(com.xiaomi.push.i.b(this.f67a)) || StringUtils.equals(this.f, com.xiaomi.push.i.h(this.f67a)) || StringUtils.equals(this.f, com.xiaomi.push.i.g(this.f67a));
             boolean z4 = equals && equals2 && z && z2 && z3;
             if (!z4) {
                 com.xiaomi.channel.commonutils.logger.b.e(String.format("register invalid, aid=%s;atn=%s;rid=%s;rse=%s;did=%s", Boolean.valueOf(equals), Boolean.valueOf(equals2), Boolean.valueOf(z), Boolean.valueOf(z2), Boolean.valueOf(z3)));
@@ -221,7 +221,7 @@ public class b {
         this.f64a.c = a2.getString("regId", null);
         this.f64a.d = a2.getString("regSec", null);
         this.f64a.f = a2.getString(WXConfig.devId, null);
-        if (!TextUtils.isEmpty(this.f64a.f) && com.xiaomi.push.i.a(this.f64a.f)) {
+        if (!StringUtils.isEmpty(this.f64a.f) && com.xiaomi.push.i.a(this.f64a.f)) {
             this.f64a.f = com.xiaomi.push.i.h(this.f63a);
             a2.edit().putString(WXConfig.devId, this.f64a.f).commit();
         }
@@ -292,7 +292,7 @@ public class b {
     /* renamed from: a  reason: collision with other method in class */
     public boolean m1669a() {
         Context context = this.f63a;
-        return !TextUtils.equals(com.xiaomi.push.g.m1946a(context, context.getPackageName()), this.f64a.e);
+        return !StringUtils.equals(com.xiaomi.push.g.m1946a(context, context.getPackageName()), this.f64a.e);
     }
 
     public boolean a(String str, String str2) {
@@ -302,7 +302,7 @@ public class b {
     /* renamed from: a  reason: collision with other method in class */
     public boolean m1670a(String str, String str2, String str3) {
         a a2 = a(str3);
-        return a2 != null && TextUtils.equals(str, a2.f68a) && TextUtils.equals(str2, a2.b);
+        return a2 != null && StringUtils.equals(str, a2.f68a) && StringUtils.equals(str2, a2.b);
     }
 
     public String b() {
@@ -348,7 +348,7 @@ public class b {
 
     /* renamed from: d  reason: collision with other method in class */
     public boolean m1675d() {
-        return !TextUtils.isEmpty(this.f64a.f68a) && !TextUtils.isEmpty(this.f64a.b) && !TextUtils.isEmpty(this.f64a.c) && !TextUtils.isEmpty(this.f64a.d);
+        return !StringUtils.isEmpty(this.f64a.f68a) && !StringUtils.isEmpty(this.f64a.b) && !StringUtils.isEmpty(this.f64a.c) && !StringUtils.isEmpty(this.f64a.d);
     }
 
     public String e() {

@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -112,7 +112,7 @@ public class l implements Handler.Callback {
         } else {
             hVar.h = iJsApiFailedCallBack;
             hVar.i = iJsApiSucceedCallBack;
-            if (TextUtils.isEmpty(hVar.f)) {
+            if (StringUtils.isEmpty(hVar.f)) {
                 hVar.f = "{}";
             }
             android.taobao.windvane.util.m.c("WVJsBridge", "before call object=[" + hVar.d + "].");
@@ -206,7 +206,7 @@ public class l implements Handler.Callback {
                         if (str3.startsWith("\"")) {
                             str3 = JSONObject.parse(str3).toString();
                         }
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             a2.f = str3;
                         }
                         new AsyncTask<Void, Integer, Void>() { // from class: android.taobao.windvane.jsbridge.WVJsBridge$1.1
@@ -414,7 +414,7 @@ public class l implements Handler.Callback {
                 android.taobao.windvane.util.m.e("WVJsBridge", "call method=[" + hVar.d + "." + hVar.e + "]. class=" + hVar.b);
                 e eVar = (e) obj;
                 String str3 = hVar.e;
-                if (!TextUtils.isEmpty(hVar.f)) {
+                if (!StringUtils.isEmpty(hVar.f)) {
                     str = hVar.f;
                 }
                 if (!eVar.executeSafe(str3, str, wVCallBackContext)) {
@@ -439,7 +439,7 @@ public class l implements Handler.Callback {
                     Method method = hVar.c;
                     Object[] objArr = new Object[2];
                     objArr[0] = wVCallBackContext;
-                    if (!TextUtils.isEmpty(hVar.f)) {
+                    if (!StringUtils.isEmpty(hVar.f)) {
                         str = hVar.f;
                     }
                     objArr[1] = str;

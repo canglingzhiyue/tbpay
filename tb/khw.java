@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
@@ -73,7 +73,7 @@ public class khw {
         }
         HashMap hashMap = new HashMap(16);
         String string = this.f30090a.getString(str, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             khu.a("sp getMapData " + str + "+ isEmpty");
             return hashMap;
         }

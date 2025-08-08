@@ -7,7 +7,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import anet.channel.util.HttpConstant;
 import com.alibaba.ariver.kernel.common.service.RVEnvironmentService;
@@ -158,7 +158,7 @@ public class ngn {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && (parse = Uri.parse(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (parse = Uri.parse(str)) != null) {
             return a(parse);
         }
         return null;
@@ -174,7 +174,7 @@ public class ngn {
         }
         String queryParameter = uri.getQueryParameter("wh_pid");
         Uri.Builder scheme = uri.buildUpon().clearQuery().scheme("");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             scheme.appendPath(queryParameter);
         }
         String builder = scheme.toString();
@@ -186,15 +186,15 @@ public class ngn {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("88097ea7", new Object[]{str})).intValue();
         }
-        if (TextUtils.equals(str, "alpha")) {
+        if (StringUtils.equals(str, "alpha")) {
             return 1;
         }
-        return TextUtils.equals(str, "translate") ? 2 : 0;
+        return StringUtils.equals(str, "translate") ? 2 : 0;
     }
 
     public static int d(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("d23b17e8", new Object[]{str})).intValue() : TextUtils.equals(str, "none") ? 0 : 1;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("d23b17e8", new Object[]{str})).intValue() : StringUtils.equals(str, "none") ? 0 : 1;
     }
 
     public static float a() {
@@ -232,7 +232,7 @@ public class ngn {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("840f424", new Object[]{str, obj, str2, new Boolean(z)});
         }
-        if (obj == null || TextUtils.isEmpty(str)) {
+        if (obj == null || StringUtils.isEmpty(str)) {
             return null;
         }
         if (obj instanceof String) {
@@ -283,7 +283,7 @@ public class ngn {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("669e4a6a", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         try {
@@ -300,7 +300,7 @@ public class ngn {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("373504df", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && str.charAt(0) == '#') {
+        if (!StringUtils.isEmpty(str) && str.charAt(0) == '#') {
             if (str.length() == 7) {
                 str2 = "#ff" + str.substring(1);
             } else if (str.length() == 9) {
@@ -363,7 +363,7 @@ public class ngn {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[0]);
         }
-        if (TextUtils.isEmpty(f31447a)) {
+        if (StringUtils.isEmpty(f31447a)) {
             StringBuilder sb = new StringBuilder();
             Map<String, String> g = g();
             sb.append(g.get("sysModel"));
@@ -372,9 +372,9 @@ public class ngn {
             sb.append(riy.BRACKET_END_STR);
             String str = " ";
             sb.append(str);
-            sb.append(TextUtils.isEmpty(g.get("appGroup")) ? "AliApp" : g.get("appGroup"));
+            sb.append(StringUtils.isEmpty(g.get("appGroup")) ? "AliApp" : g.get("appGroup"));
             sb.append(riy.BRACKET_START_STR);
-            sb.append(TextUtils.isEmpty(g.get("appName")) ? RVEnvironmentService.PLATFORM_TB : g.get("appName"));
+            sb.append(StringUtils.isEmpty(g.get("appName")) ? RVEnvironmentService.PLATFORM_TB : g.get("appName"));
             sb.append("/");
             sb.append(g.get("appVersion"));
             sb.append(riy.BRACKET_END_STR);
@@ -382,8 +382,8 @@ public class ngn {
             sb.append("PHA/");
             sb.append(g.get(o.phaVersion));
             sb.append(str);
-            sb.append(TextUtils.isEmpty(g.get("externalUserAgent")) ? "" : g.get("externalUserAgent"));
-            if (TextUtils.isEmpty(g.get("externalUserAgent"))) {
+            sb.append(StringUtils.isEmpty(g.get("externalUserAgent")) ? "" : g.get("externalUserAgent"));
+            if (StringUtils.isEmpty(g.get("externalUserAgent"))) {
                 str = "";
             }
             sb.append(str);
@@ -476,12 +476,12 @@ public class ngn {
             }
         }
         String sb2 = sb.toString();
-        return TextUtils.isEmpty(sb2) ? th.toString() : sb2;
+        return StringUtils.isEmpty(sb2) ? th.toString() : sb2;
     }
 
     public static boolean a(Uri uri, Uri uri2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d711a94c", new Object[]{uri, uri2})).booleanValue() : uri != null && uri2 != null && TextUtils.equals(uri.getHost(), uri2.getHost()) && TextUtils.equals(uri.getPath(), uri2.getPath());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d711a94c", new Object[]{uri, uri2})).booleanValue() : uri != null && uri2 != null && StringUtils.equals(uri.getHost(), uri2.getHost()) && StringUtils.equals(uri.getPath(), uri2.getPath());
     }
 
     public static boolean b(Uri uri, Uri uri2) {
@@ -500,7 +500,7 @@ public class ngn {
             return false;
         }
         for (String str : queryParameterNames) {
-            if (!TextUtils.isEmpty(str) && !TextUtils.equals(uri.getQueryParameter(str), uri2.getQueryParameter(str))) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.equals(uri.getQueryParameter(str), uri2.getQueryParameter(str))) {
                 return false;
             }
         }

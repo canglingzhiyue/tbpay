@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.base.f;
 import com.alibaba.android.ultron.event.q;
@@ -43,7 +43,7 @@ public class dnp extends q {
         } else if (eVar == null) {
         } else {
             String b = eVar.b();
-            if (TextUtils.isEmpty(b) || TextUtils.isEmpty(b.trim())) {
+            if (StringUtils.isEmpty(b) || StringUtils.isEmpty(b.trim())) {
                 return;
             }
             HashMap hashMap = new HashMap();

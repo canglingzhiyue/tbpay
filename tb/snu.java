@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.usertrack.ITrackService;
@@ -149,13 +149,13 @@ public class snu {
         noi.a(hashMap, hashMap2);
         hashMap.put("spm", obw.f31903a);
         hashMap.put(b.PROPERTY_VIDEO_ID, dVar.l());
-        if (TextUtils.isEmpty(dVar.f12530a.e())) {
+        if (StringUtils.isEmpty(dVar.f12530a.e())) {
             hashMap2.put("taoke_accountId", dVar.f12530a.c());
         } else {
             hashMap2.put("taoke_accountId", dVar.f12530a.d());
             hashMap2.put("keyname", dVar.f12530a.e());
         }
-        if (j != null && !TextUtils.isEmpty(j.w)) {
+        if (j != null && !StringUtils.isEmpty(j.w)) {
             hashMap.put(com.taobao.tao.content.business.b.BIZ_TYPE, j.w);
         }
         Map<String, String> c = sessionParams.c();

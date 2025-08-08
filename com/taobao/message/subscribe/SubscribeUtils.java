@@ -1,6 +1,6 @@
 package com.taobao.message.subscribe;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -46,7 +46,7 @@ public final class SubscribeUtils {
             return;
         }
         q.c(observer, "observer");
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             MtopTaobaoAlimpBentleySubscribeCenterActionBindingRequest mtopTaobaoAlimpBentleySubscribeCenterActionBindingRequest = new MtopTaobaoAlimpBentleySubscribeCenterActionBindingRequest();
             if (str3 == null) {
                 mtopTaobaoAlimpBentleySubscribeCenterActionBindingRequest.setVersion(1L);
@@ -75,7 +75,7 @@ public final class SubscribeUtils {
             return;
         }
         q.c(observer, "observer");
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             MtopTaobaoAlimpBentleySubscribeCenterActionCancelRequest mtopTaobaoAlimpBentleySubscribeCenterActionCancelRequest = new MtopTaobaoAlimpBentleySubscribeCenterActionCancelRequest();
             if (str3 == null) {
                 mtopTaobaoAlimpBentleySubscribeCenterActionCancelRequest.setVersion(1L);
@@ -160,7 +160,7 @@ public final class SubscribeUtils {
                                 q.a((Object) subScribeCenterResultDTO3, "response.data.model");
                                 subScribeCenterResultDTO3.setRetMsg((String) b.get(1));
                             }
-                            if (mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse != null && (mo2429getData2 = mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse.mo2429getData()) != null && (subScribeCenterResultDTO = mo2429getData2.model) != null && (toastText = subScribeCenterResultDTO.getToastText()) != null && !TextUtils.isEmpty(toastText)) {
+                            if (mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse != null && (mo2429getData2 = mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse.mo2429getData()) != null && (subScribeCenterResultDTO = mo2429getData2.model) != null && (toastText = subScribeCenterResultDTO.getToastText()) != null && !StringUtils.isEmpty(toastText)) {
                                 UIHandler.post(new Runnable() { // from class: com.taobao.message.subscribe.SubscribeUtils$cancelSubscribe$1$onSuccess$2$1
                                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -228,7 +228,7 @@ public final class SubscribeUtils {
                                 q.a((Object) subScribeCenterResultDTO5, "response.data.model");
                                 subScribeCenterResultDTO5.setRetMsg((String) b.get(1));
                             }
-                            if (mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse != null && (mo2429getData3 = mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse.mo2429getData()) != null && (subScribeCenterResultDTO2 = mo2429getData3.model) != null && (toastText = subScribeCenterResultDTO2.getToastText()) != null && !TextUtils.isEmpty(toastText)) {
+                            if (mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse != null && (mo2429getData3 = mtopTaobaoAlimpBentleySubscribeCenterActionCancelResponse.mo2429getData()) != null && (subScribeCenterResultDTO2 = mo2429getData3.model) != null && (toastText = subScribeCenterResultDTO2.getToastText()) != null && !StringUtils.isEmpty(toastText)) {
                                 UIHandler.post(new Runnable() { // from class: com.taobao.message.subscribe.SubscribeUtils$cancelSubscribe$1$onError$2$1
                                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -277,7 +277,7 @@ public final class SubscribeUtils {
             return;
         }
         q.c(observer, "observer");
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             MtopTaobaoAlimpBentleySubscribeCenterActionQueryRequest mtopTaobaoAlimpBentleySubscribeCenterActionQueryRequest = new MtopTaobaoAlimpBentleySubscribeCenterActionQueryRequest();
             if (str3 == null) {
                 mtopTaobaoAlimpBentleySubscribeCenterActionQueryRequest.setVersion(1L);
@@ -347,7 +347,7 @@ public final class SubscribeUtils {
                                 q.a((Object) subScribeCenterResultDTO3, "response.data.model");
                                 subScribeCenterResultDTO3.setRetMsg((String) b.get(1));
                             }
-                            if (mtopTaobaoAlimpBentleySubscribeCenterActionQueryResponse != null && (mo2429getData2 = mtopTaobaoAlimpBentleySubscribeCenterActionQueryResponse.mo2429getData()) != null && (subScribeCenterResultDTO = mo2429getData2.model) != null && (toastText = subScribeCenterResultDTO.getToastText()) != null && !TextUtils.isEmpty(toastText)) {
+                            if (mtopTaobaoAlimpBentleySubscribeCenterActionQueryResponse != null && (mo2429getData2 = mtopTaobaoAlimpBentleySubscribeCenterActionQueryResponse.mo2429getData()) != null && (subScribeCenterResultDTO = mo2429getData2.model) != null && (toastText = subScribeCenterResultDTO.getToastText()) != null && !StringUtils.isEmpty(toastText)) {
                                 UIHandler.post(new Runnable() { // from class: com.taobao.message.subscribe.SubscribeUtils$querySubscribe$1$onSuccess$2$1
                                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

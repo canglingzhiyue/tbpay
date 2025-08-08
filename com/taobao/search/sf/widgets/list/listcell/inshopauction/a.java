@@ -3,7 +3,7 @@ package com.taobao.search.sf.widgets.list.listcell.inshopauction;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -198,7 +198,7 @@ public class a extends com.taobao.search.sf.widgets.list.listcell.baseauction.a<
             return;
         }
         View view = c.a(this, getActivity(), dynamicCardBean, i).itemView;
-        if (TextUtils.equals(dynamicCardBean.style, "mask")) {
+        if (StringUtils.equals(dynamicCardBean.style, "mask")) {
             b K = j().d().K();
             K.b();
             this.z.addView(view);
@@ -207,7 +207,7 @@ public class a extends com.taobao.search.sf.widgets.list.listcell.baseauction.a<
         }
         this.o.addView(view);
         if (this.y != null) {
-            if (TextUtils.equals(dynamicCardBean.mOriginData.getString("2in1"), "true")) {
+            if (StringUtils.equals(dynamicCardBean.mOriginData.getString("2in1"), "true")) {
                 this.y.setVisibility(0);
             } else {
                 this.y.setVisibility(8);
@@ -290,11 +290,11 @@ public class a extends com.taobao.search.sf.widgets.list.listcell.baseauction.a<
         if (u() == ListStyle.WATERFALL) {
             layoutParams.width = (ntx.a() - I()) / 2;
         }
-        if (!TextUtils.isEmpty(auctionBaseBean.videoUrl) && u() == ListStyle.WATERFALL) {
+        if (!StringUtils.isEmpty(auctionBaseBean.videoUrl) && u() == ListStyle.WATERFALL) {
             SearchUrlImageView H = H();
             layoutParams.height = (int) ((layoutParams.width / auctionBaseBean.videoWidth) * auctionBaseBean.videoHeight);
-            String str = !TextUtils.isEmpty(auctionBaseBean.videoCover) ? auctionBaseBean.videoCover : auctionBaseBean.picUrl;
-            if (!TextUtils.isEmpty(str)) {
+            String str = !StringUtils.isEmpty(auctionBaseBean.videoCover) ? auctionBaseBean.videoCover : auctionBaseBean.picUrl;
+            if (!StringUtils.isEmpty(str)) {
                 H.setImageUrl(str);
             }
         }
@@ -315,7 +315,7 @@ public class a extends com.taobao.search.sf.widgets.list.listcell.baseauction.a<
         }
         AuctionBaseBean auctionBaseBean = this.q;
         String str = auctionBaseBean instanceof InshopAuctionRadiusBean ? ((InshopAuctionRadiusBean) auctionBaseBean).recommendReason : "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.w.setVisibility(0);
             this.w.setText(str);
         } else if (this.q.summaryTipList == null || this.q.summaryTipList.isEmpty()) {
@@ -334,7 +334,7 @@ public class a extends com.taobao.search.sf.widgets.list.listcell.baseauction.a<
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.p.setVisibility(8);
         } else {
             this.p.setText(str);
@@ -404,7 +404,7 @@ public class a extends com.taobao.search.sf.widgets.list.listcell.baseauction.a<
             return null;
         }
         String param = f.getParam("sellerId");
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             return null;
         }
         HashMap hashMap = new HashMap();

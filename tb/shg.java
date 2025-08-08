@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public class shg {
         String str = intValue == 0 ? "ShortVideo.weexV2CheckMsgPileConfig_h_v2" : intValue == 1 ? "ShortVideo.weexV2CheckMsgPileConfig_m_v2" : "ShortVideo.weexV2CheckMsgPileConfig_l_v2";
         f33578a = new a();
         String a2 = oeb.a(str, (String) null);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             JSONObject parseObject = JSON.parseObject(a2);
             if (parseObject == null) {
                 return;

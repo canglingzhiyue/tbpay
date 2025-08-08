@@ -1,6 +1,6 @@
 package com.taobao.bootimage.linked.ext;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.AlimamaAdvertising;
@@ -42,7 +42,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             kej.a("AdvHelper", "impJsonStr is empty");
             return false;
         }
@@ -56,7 +56,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7d257bc5", new Object[]{str, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             kej.a("AdvHelper", "clickJsonStr is empty");
             return false;
         }
@@ -70,7 +70,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("881e4e67", new Object[]{str, new Boolean(z), map})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             kej.a("AdvHelper", "interactJsonStr is empty");
             return false;
         }

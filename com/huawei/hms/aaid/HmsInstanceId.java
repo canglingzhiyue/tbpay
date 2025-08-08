@@ -3,7 +3,7 @@ package com.huawei.hms.aaid;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.aaid.entity.AAIDResult;
 import com.huawei.hms.aaid.entity.DeleteTokenReq;
@@ -94,7 +94,7 @@ public class HmsInstanceId {
         String a2 = h.a(this.f7312a, "push.deletetoken");
         try {
             String b = i.a(this.f7312a).b(subjectId);
-            if (deleteTokenReq.isMultiSender() && (TextUtils.isEmpty(b) || b.equals(i.a(this.f7312a).b(null)))) {
+            if (deleteTokenReq.isMultiSender() && (StringUtils.isEmpty(b) || b.equals(i.a(this.f7312a).b(null)))) {
                 i.a(this.f7312a).removeKey(subjectId);
                 HMSLog.i(TAG, "The local subject token is null");
                 return;
@@ -118,7 +118,7 @@ public class HmsInstanceId {
     }
 
     private void a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (!d.e(this.f7312a)) {
@@ -126,7 +126,7 @@ public class HmsInstanceId {
             return;
         }
         String string = i.a(this.f7312a).getString("subjectId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             i.a(this.f7312a).saveString("subjectId", str);
         } else if (string.contains(str)) {
         } else {
@@ -179,9 +179,9 @@ public class HmsInstanceId {
     public void deleteToken(String str) throws ApiException {
         b();
         a();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String d = b.d(this.f7312a);
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 throw ErrorEnum.ERROR_MISSING_PROJECT_ID.toApiException();
             }
             if (str.equals(d)) {
@@ -241,9 +241,9 @@ public class HmsInstanceId {
     public String getToken(String str) throws ApiException {
         b();
         a();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String d = b.d(this.f7312a);
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 throw ErrorEnum.ERROR_MISSING_PROJECT_ID.toApiException();
             }
             if (str.equals(d)) {

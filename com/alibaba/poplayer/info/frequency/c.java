@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.info.frequency;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -59,7 +59,7 @@ public class c {
         }
         if (this.f3185a.compareAndSet(false, true) && (c = bzl.a().c()) != null) {
             String sceneFreqConfig = c.getSceneFreqConfig();
-            if (!TextUtils.isEmpty(sceneFreqConfig)) {
+            if (!StringUtils.isEmpty(sceneFreqConfig)) {
                 try {
                     this.b = new CopyOnWriteArrayList((Collection) JSON.parseObject(sceneFreqConfig, new TypeReference<List<SceneFreqConfigModel>>() { // from class: com.alibaba.poplayer.info.frequency.c.1
                     }, new Feature[0]));
@@ -77,7 +77,7 @@ public class c {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             List<SceneFreqConfigModel> b = b();
             com.alibaba.poplayer.utils.c.a("SceneFreqManager.countTireFreq.configs=" + b, new Object[0]);
             if (b == null || b.isEmpty()) {
@@ -112,7 +112,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a3509d0b", new Object[]{this, str, str2, str3})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (b = b()) == null || b.isEmpty() || (a2 = a(str, str2, b)) == null) {
+        if (StringUtils.isEmpty(str) || (b = b()) == null || b.isEmpty() || (a2 = a(str, str2, b)) == null) {
             return true;
         }
         Iterator<SceneFreqConfigModel.FreqConfig> it = a2.freq.iterator();
@@ -122,7 +122,7 @@ public class c {
             }
             SceneFreqConfigModel.FreqConfig next = it.next();
             if (next != null) {
-                if ((TextUtils.isEmpty(next.layer) && TextUtils.isEmpty(str3)) || next.layer.equals(str3)) {
+                if ((StringUtils.isEmpty(next.layer) && StringUtils.isEmpty(str3)) || next.layer.equals(str3)) {
                     if (next.lastRecordTime != null && next.lastRecordTime.longValue() > 0) {
                         long currentTimeMillis = (System.currentTimeMillis() - next.lastRecordTime.longValue()) / 1000;
                         if (currentTimeMillis <= next.interval.intValue()) {

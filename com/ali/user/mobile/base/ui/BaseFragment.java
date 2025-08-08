@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -408,6 +408,6 @@ public class BaseFragment extends Fragment {
 
     public boolean isEmailValid(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e943899f", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && REG_EMAIL.matcher(str).matches();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e943899f", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && REG_EMAIL.matcher(str).matches();
     }
 }

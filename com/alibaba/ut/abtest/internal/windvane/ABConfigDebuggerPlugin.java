@@ -3,7 +3,7 @@ package com.alibaba.ut.abtest.internal.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.internal.util.h;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class ABConfigDebuggerPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.equals("mockDraft", str)) {
+            if (StringUtils.equals("mockDraft", str)) {
                 mockDraft(str2, wVCallBackContext);
                 return true;
             }

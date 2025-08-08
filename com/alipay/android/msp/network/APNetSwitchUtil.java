@@ -1,7 +1,7 @@
 package com.alipay.android.msp.network;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.framework.drm.DrmKey;
 import com.alipay.android.msp.framework.drm.DrmManager;
@@ -23,7 +23,7 @@ public class APNetSwitchUtil {
         }
         Boolean bool = f4916a.get();
         if (bool == null) {
-            boolean equals = TextUtils.equals(context.getPackageName(), "com.taobao.taobao");
+            boolean equals = StringUtils.equals(context.getPackageName(), "com.taobao.taobao");
             f4916a.set(Boolean.valueOf(equals));
             return equals;
         }

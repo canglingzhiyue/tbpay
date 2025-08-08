@@ -3,7 +3,7 @@ package com.taobao.android.order.bundle.helper;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.ui.helper.DialogHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.hyn;
@@ -24,14 +24,14 @@ public class c {
         }
         hyn.a(DialogHelper.TAG, "createAlertDialogBuilder", "title = " + str + " msg = " + str2);
         AlertDialog.Builder builder = new AlertDialog.Builder(context, 3);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             builder.setTitle(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             builder.setMessage(str2);
         }
         builder.setCancelable(true);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             builder.setNegativeButton(str3, onClickListener);
         }
         return builder;

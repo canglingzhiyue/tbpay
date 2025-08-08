@@ -1,6 +1,6 @@
 package com.taobao.orange;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.aidl.OrangeCandidateCompareStub;
 import com.taobao.orange.aidl.ParcelableCandidateCompare;
@@ -21,7 +21,7 @@ public class OCandidate {
     }
 
     public OCandidate(String str, String str2, Class<? extends b> cls) {
-        if (TextUtils.isEmpty(str) || cls == null) {
+        if (StringUtils.isEmpty(str) || cls == null) {
             throw new IllegalArgumentException("key or compare is null");
         }
         this.f18557a = str;
@@ -34,7 +34,7 @@ public class OCandidate {
     }
 
     public OCandidate(String str, String str2, ParcelableCandidateCompare parcelableCandidateCompare) {
-        if (TextUtils.isEmpty(str) || parcelableCandidateCompare == null) {
+        if (StringUtils.isEmpty(str) || parcelableCandidateCompare == null) {
             throw new IllegalArgumentException("key or compare is null");
         }
         this.f18557a = str;

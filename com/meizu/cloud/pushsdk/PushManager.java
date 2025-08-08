@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.util.MzSystemUtils;
@@ -17,7 +17,7 @@ public class PushManager {
     public static void checkNotificationMessage(Context context) {
         String appVersionName = MzSystemUtils.getAppVersionName(context, PushConstants.PUSH_PACKAGE_NAME);
         DebugLogger.i(TAG, context.getPackageName() + " checkNotificationMessage cloudVersion_name " + appVersionName);
-        if (TextUtils.isEmpty(appVersionName) || Integer.parseInt(appVersionName.substring(0, 1)) < 6) {
+        if (StringUtils.isEmpty(appVersionName) || Integer.parseInt(appVersionName.substring(0, 1)) < 6) {
             return;
         }
         Intent intent = new Intent(PushConstants.MZ_PUSH_ON_GET_NOTIFICATION_MESSAGE);
@@ -87,9 +87,9 @@ public class PushManager {
             Intent intent = new Intent(PushConstants.MZ_PUSH_ON_START_PUSH_REGISTER);
             try {
                 if (!str2.equals(MzSystemUtils.getMzPushServicePackageName(context))) {
-                    if (!TextUtils.isEmpty(appVersionName) && MzSystemUtils.compareVersion(appVersionName, PushConstants.PUSH_FLYME_4_CHANGE_VERSION)) {
+                    if (!StringUtils.isEmpty(appVersionName) && MzSystemUtils.compareVersion(appVersionName, PushConstants.PUSH_FLYME_4_CHANGE_VERSION)) {
                         DebugLogger.e(TAG, "flyme 4.x start register cloud versionName " + appVersionName);
-                    } else if (TextUtils.isEmpty(appVersionName) || !appVersionName.startsWith("3")) {
+                    } else if (StringUtils.isEmpty(appVersionName) || !appVersionName.startsWith("3")) {
                         DebugLogger.e(TAG, context.getPackageName() + " start register ");
                         str2 = context.getPackageName();
                     } else {
@@ -165,8 +165,8 @@ public class PushManager {
             Intent intent = new Intent(PushConstants.MZ_PUSH_ON_STOP_PUSH_REGISTER);
             try {
                 if (!str2.equals(MzSystemUtils.getMzPushServicePackageName(context))) {
-                    if (TextUtils.isEmpty(appVersionName) || !MzSystemUtils.compareVersion(appVersionName, PushConstants.PUSH_FLYME_4_CHANGE_VERSION)) {
-                        if (TextUtils.isEmpty(appVersionName) || !appVersionName.startsWith("3")) {
+                    if (StringUtils.isEmpty(appVersionName) || !MzSystemUtils.compareVersion(appVersionName, PushConstants.PUSH_FLYME_4_CHANGE_VERSION)) {
+                        if (StringUtils.isEmpty(appVersionName) || !appVersionName.startsWith("3")) {
                             DebugLogger.e(TAG, context.getPackageName() + " start unRegister ");
                             str2 = context.getPackageName();
                         } else {

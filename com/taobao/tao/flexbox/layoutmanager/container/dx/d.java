@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.container.dx;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -156,7 +156,7 @@ public final class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             q.a((Object) str);
             List<DXTemplateItem> d2 = d(str);
             ogg.a(c.TAG, "startReadFromOrange: 解析出的配置个数：" + d2.size() + "信息如下:" + a(d2));

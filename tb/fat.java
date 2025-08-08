@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -103,8 +103,8 @@ public class fat extends b<fbi> implements View.OnClickListener {
         this.l.setText(fbiVar.b);
         this.m.setText(fbiVar.c);
         this.q.setText(fbiVar.f);
-        this.r.setText(TextUtils.isEmpty(fbiVar.g) ? "0" : fbiVar.g);
-        if (TextUtils.isEmpty(fbiVar.e)) {
+        this.r.setText(StringUtils.isEmpty(fbiVar.g) ? "0" : fbiVar.g);
+        if (StringUtils.isEmpty(fbiVar.e)) {
             this.o.setVisibility(8);
         } else {
             this.o.setVisibility(0);
@@ -118,7 +118,7 @@ public class fat extends b<fbi> implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b3c20c0e", new Object[]{this, fbiVar});
-        } else if (TextUtils.isEmpty(fbiVar.d)) {
+        } else if (StringUtils.isEmpty(fbiVar.d)) {
             this.p.setBackgroundResource(R.drawable.detail_avatar);
         } else {
             a(this.p, fbiVar.d, new epm(this.p.getLayoutParams().width, this.p.getLayoutParams().height), null, new epl.a().b(R.drawable.detail_avatar).a(R.drawable.detail_avatar).a());

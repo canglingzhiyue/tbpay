@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
 import java.util.ArrayList;
@@ -55,7 +55,7 @@ public class osf {
         if (d == null) {
             d = new ArrayList();
             String f = j.f();
-            if (!TextUtils.isEmpty(f)) {
+            if (!StringUtils.isEmpty(f)) {
                 d.addAll(Arrays.asList(f.split(",")));
             }
         }
@@ -71,7 +71,7 @@ public class osf {
         if (c == null) {
             c = new ArrayList();
             String g = j.g();
-            if (!TextUtils.isEmpty(g)) {
+            if (!StringUtils.isEmpty(g)) {
                 c.addAll(Arrays.asList(g.split(",")));
             }
         }

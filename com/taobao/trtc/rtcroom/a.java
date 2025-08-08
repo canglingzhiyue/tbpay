@@ -9,7 +9,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.CardView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
@@ -468,7 +468,7 @@ public class a {
 
     private boolean a(Class cls, String str, boolean z) {
         Field[] declaredFields;
-        if (cls == null || TextUtils.isEmpty(str)) {
+        if (cls == null || StringUtils.isEmpty(str)) {
             return false;
         }
         synchronized (cls) {

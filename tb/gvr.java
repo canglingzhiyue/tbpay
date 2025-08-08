@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import java.util.Locale;
@@ -33,7 +33,7 @@ public class gvr implements Runnable {
         }
         SharedPreferences sharedPreferences = LauncherRuntime.h.getSharedPreferences(this.c, 0);
         String string = sharedPreferences.getString(this.d, null);
-        if (TextUtils.isEmpty(string) || string.split(SymbolExpUtil.SYMBOL_VERTICALBAR).length < 2) {
+        if (StringUtils.isEmpty(string) || string.split(SymbolExpUtil.SYMBOL_VERTICALBAR).length < 2) {
             return;
         }
         sharedPreferences.edit().putString(this.d, string + String.format(Locale.US, "%d:%d<", Integer.valueOf(this.f28522a), Long.valueOf(this.b))).commit();

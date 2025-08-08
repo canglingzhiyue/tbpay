@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.taobao.util.g;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -685,7 +685,7 @@ public class DisplayVideoViewV2 extends FrameLayout implements av {
             return ((Boolean) ipChange.ipc$dispatch("80bd486a", new Object[]{this})).booleanValue();
         }
         String c2 = g.c(Globals.getApplication());
-        return !TextUtils.isEmpty(c2) && q.a((Object) c2, (Object) "wifi");
+        return !StringUtils.isEmpty(c2) && q.a((Object) c2, (Object) "wifi");
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -1,6 +1,6 @@
 package com.taobao.android.adam.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public class b extends f {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("58c29a3a", new Object[]{dXEvent, dXRuntimeContext, objArr})).booleanValue();
         }
-        if (objArr == null || objArr.length <= 0 || TextUtils.isEmpty(String.valueOf(objArr[0])) || a(dXRuntimeContext, String.valueOf(objArr[0])) == null) {
+        if (objArr == null || objArr.length <= 0 || StringUtils.isEmpty(String.valueOf(objArr[0])) || a(dXRuntimeContext, String.valueOf(objArr[0])) == null) {
             return false;
         }
         new b().handleEvent(dXEvent, objArr, dXRuntimeContext);

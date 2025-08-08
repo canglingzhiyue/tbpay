@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.notification.model.ActVideoSetting;
 import org.json.JSONException;
@@ -42,7 +42,7 @@ public class MessageV4 extends MessageV3 {
 
     public static MessageV4 parse(MessageV3 messageV3) {
         MessageV4 messageV4 = new MessageV4();
-        if (!TextUtils.isEmpty(messageV3.getNotificationMessage())) {
+        if (!StringUtils.isEmpty(messageV3.getNotificationMessage())) {
             try {
                 JSONObject jSONObject = new JSONObject(messageV3.getNotificationMessage()).getJSONObject("data");
                 if (!jSONObject.isNull("extra")) {

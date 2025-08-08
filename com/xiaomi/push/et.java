@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,7 +34,7 @@ public class et implements Runnable {
         es esVar;
         eu euVar;
         Context context;
-        if (TextUtils.isEmpty(this.f337a)) {
+        if (StringUtils.isEmpty(this.f337a)) {
             eo.a(this.f24463a, "null", 1008, "A receive a incorrect message with empty info");
             return;
         }
@@ -48,7 +48,7 @@ public class et implements Runnable {
             String optString5 = jSONObject.optString("awake_type");
             int optInt = jSONObject.optInt("awake_foreground", 0);
             if (this.b.equals(optString3) && this.c.equals(optString4)) {
-                if (TextUtils.isEmpty(optString5) || TextUtils.isEmpty(optString3) || TextUtils.isEmpty(optString4) || TextUtils.isEmpty(optString2)) {
+                if (StringUtils.isEmpty(optString5) || StringUtils.isEmpty(optString3) || StringUtils.isEmpty(optString4) || StringUtils.isEmpty(optString2)) {
                     eo.a(this.f24463a, this.f337a, 1008, "A receive a incorrect message with empty type");
                     return;
                 }
@@ -60,7 +60,7 @@ public class et implements Runnable {
                 erVar.a(optInt);
                 erVar.d(this.f337a);
                 if ("service".equals(optString5)) {
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         esVar = this.f336a;
                         euVar = eu.SERVICE_ACTION;
                         context = this.f24463a;

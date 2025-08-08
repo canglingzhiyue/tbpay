@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.MTopManager;
 import com.alibaba.security.common.http.interfaces.IHttpRequest;
 import com.alibaba.security.common.http.interfaces.OnHttpCallBack;
@@ -109,7 +109,7 @@ public class p1 {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         try {
@@ -128,7 +128,7 @@ public class p1 {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         try {
@@ -228,7 +228,7 @@ public class p1 {
             q1Var.onRequestEnd(false);
         } else {
             String a2 = a(dynamicResponse);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 rPBizConfig.setDynamicWebUrl(a2);
             }
             rPBizConfig.setScConfig(dynamicResponse.SC);
@@ -251,20 +251,20 @@ public class p1 {
             ipChange.ipc$dispatch("226d51c0", new Object[]{this, degradeConfig, pureWirelessConfHttpResponse});
             return;
         }
-        degradeConfig.isUseLiteVm = TextUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkUseLiteVM) || "1".equals(pureWirelessConfHttpResponse.rpsdkUseLiteVM);
-        degradeConfig.isUseHwMagicWindow = TextUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkUseHwMagicWindow) || "1".equals(pureWirelessConfHttpResponse.rpsdkUseHwMagicWindow);
-        degradeConfig.isHonorMagicWindowOff = TextUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkHonorMagicWinOff) || "1".equals(pureWirelessConfHttpResponse.rpsdkHonorMagicWinOff);
+        degradeConfig.isUseLiteVm = StringUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkUseLiteVM) || "1".equals(pureWirelessConfHttpResponse.rpsdkUseLiteVM);
+        degradeConfig.isUseHwMagicWindow = StringUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkUseHwMagicWindow) || "1".equals(pureWirelessConfHttpResponse.rpsdkUseHwMagicWindow);
+        degradeConfig.isHonorMagicWindowOff = StringUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkHonorMagicWinOff) || "1".equals(pureWirelessConfHttpResponse.rpsdkHonorMagicWinOff);
         degradeConfig.setUploadTimeOut(pureWirelessConfHttpResponse.rpArupTimeOut);
         String str = pureWirelessConfHttpResponse.rpsdkCollectLocalImage;
         degradeConfig.needCollectLocalImage = str == null || "1".equals(str);
-        degradeConfig.isUseNewCameraSwitchPreview = TextUtils.isEmpty(pureWirelessConfHttpResponse.rpCameraPreview) || "1".equals(pureWirelessConfHttpResponse.rpCameraPreview);
-        degradeConfig.isForceCameraSizeChange = TextUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkCameraSizeChange) || "1".equals(pureWirelessConfHttpResponse.rpsdkCameraSizeChange);
+        degradeConfig.isUseNewCameraSwitchPreview = StringUtils.isEmpty(pureWirelessConfHttpResponse.rpCameraPreview) || "1".equals(pureWirelessConfHttpResponse.rpCameraPreview);
+        degradeConfig.isForceCameraSizeChange = StringUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkCameraSizeChange) || "1".equals(pureWirelessConfHttpResponse.rpsdkCameraSizeChange);
         degradeConfig.isBeautyOpen = b(pureWirelessConfHttpResponse.rpsdkBiometricsBeautyEffect);
         degradeConfig.isDazzleBioOpen = c(pureWirelessConfHttpResponse.rpsdkColorfulBioSwitch);
-        degradeConfig.isWukongEnabled = TextUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkWukongSwitch) || "1".equals(pureWirelessConfHttpResponse.rpsdkWukongSwitch);
+        degradeConfig.isWukongEnabled = StringUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkWukongSwitch) || "1".equals(pureWirelessConfHttpResponse.rpsdkWukongSwitch);
         degradeConfig.setWukongCallbackTimeout(pureWirelessConfHttpResponse.rpsdkWukongCallbackTimeout);
-        degradeConfig.isUseLosslessCertImage = TextUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkUseLosslessCertImage) || "1".equals(pureWirelessConfHttpResponse.rpsdkUseLosslessCertImage);
-        if (!TextUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkCtidRetrySwitch) && !"1".equals(pureWirelessConfHttpResponse.rpsdkCtidRetrySwitch)) {
+        degradeConfig.isUseLosslessCertImage = StringUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkUseLosslessCertImage) || "1".equals(pureWirelessConfHttpResponse.rpsdkUseLosslessCertImage);
+        if (!StringUtils.isEmpty(pureWirelessConfHttpResponse.rpsdkCtidRetrySwitch) && !"1".equals(pureWirelessConfHttpResponse.rpsdkCtidRetrySwitch)) {
             z = false;
         }
         degradeConfig.isCtidRetrySwitchOn = z;
@@ -296,11 +296,11 @@ public class p1 {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (a2 = c.a(str)) == null) {
+        if (StringUtils.isEmpty(str) || (a2 = c.a(str)) == null) {
             return null;
         }
         String a3 = r.a().a(a2);
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             return a3;
         }
         return null;

@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,13 +51,13 @@ public final class npf implements a {
             tBErrorView.setStatus(TBErrorView.Status.STATUS_EMPTY);
             nvr y = ((e) combo).y();
             if (y != null) {
-                if (!TextUtils.isEmpty(y.c)) {
+                if (!StringUtils.isEmpty(y.c)) {
                     tBErrorView.setIconUrl(y.c);
                 }
-                if (!TextUtils.isEmpty(y.f31791a)) {
+                if (!StringUtils.isEmpty(y.f31791a)) {
                     tBErrorView.setTitle(y.f31791a);
                 }
-                if (!TextUtils.isEmpty(y.b)) {
+                if (!StringUtils.isEmpty(y.b)) {
                     tBErrorView.setSubTitle(y.b);
                 }
                 if (y.d) {
@@ -80,15 +80,15 @@ public final class npf implements a {
         q.a((Object) a3, "Localization.localizedSt….taobao_app_1005_1_16676)");
         nvr y2 = ((e) combo).y();
         if (y2 != null) {
-            if (!TextUtils.isEmpty(y2.c)) {
+            if (!StringUtils.isEmpty(y2.c)) {
                 str = y2.c;
                 q.a((Object) str, "it.imageUrl");
             }
-            if (!TextUtils.isEmpty(y2.f31791a)) {
+            if (!StringUtils.isEmpty(y2.f31791a)) {
                 a2 = y2.f31791a;
                 q.a((Object) a2, "it.title");
             }
-            if (!TextUtils.isEmpty(y2.b)) {
+            if (!StringUtils.isEmpty(y2.b)) {
                 a3 = y2.b;
                 q.a((Object) a3, "it.subTitle");
             }

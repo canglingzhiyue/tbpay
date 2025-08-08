@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.biz.IIconService;
 
@@ -25,7 +25,7 @@ public class krs implements tmu {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9c90002f", new Object[]{this, tmvVar, str, str2});
-        } else if (!TextUtils.equals("icon_and_miniapp_nomore_2019_v1", str)) {
+        } else if (!StringUtils.equals("icon_and_miniapp_nomore_2019_v1", str)) {
         } else {
             a(tmvVar, str2);
         }

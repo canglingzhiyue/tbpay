@@ -9,7 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -339,9 +339,9 @@ public class CartThemeManager {
             SystemBarDecorator systemBarDecorator = new SystemBarDecorator((Activity) this.f12856a);
             Map<String, String> j = FestivalMgr.a().j();
             String str = j.get("navStyle");
-            if (TextUtils.equals(j.get("isFestivalOn"), "1")) {
-                if (!TextUtils.equals(str, "0") && !TextUtils.equals(str, "1")) {
-                    if (TextUtils.equals(str, "2")) {
+            if (StringUtils.equals(j.get("isFestivalOn"), "1")) {
+                if (!StringUtils.equals(str, "0") && !StringUtils.equals(str, "1")) {
+                    if (StringUtils.equals(str, "2")) {
                         systemBarDecorator.enableImmersiveStatusBar(true);
                     }
                 }
@@ -851,7 +851,7 @@ public class CartThemeManager {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (!TextUtils.equals(j.ACTION_THEME_CHANGE, intent.getAction()) || (cartThemeManager = this.f12865a.get()) == null || CartThemeManager.n(cartThemeManager).u() == null) {
+            } else if (!StringUtils.equals(j.ACTION_THEME_CHANGE, intent.getAction()) || (cartThemeManager = this.f12865a.get()) == null || CartThemeManager.n(cartThemeManager).u() == null) {
             } else {
                 bew.a().a(context);
                 try {

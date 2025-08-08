@@ -1,7 +1,7 @@
 package com.ut.mini.module.trackerlistener;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.UTClientConfigMgr;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,7 +81,7 @@ public class b {
         }
         if (aVar != null) {
             String trackerListenerName = aVar.trackerListenerName();
-            if (!TextUtils.isEmpty(trackerListenerName) && !this.b.containsKey(trackerListenerName)) {
+            if (!StringUtils.isEmpty(trackerListenerName) && !this.b.containsKey(trackerListenerName)) {
                 this.b.put(trackerListenerName, aVar);
                 if (a(trackerListenerName)) {
                     this.c.put(trackerListenerName, aVar);
@@ -98,7 +98,7 @@ public class b {
         }
         if (aVar != null) {
             String trackerListenerName = aVar.trackerListenerName();
-            if (!TextUtils.isEmpty(trackerListenerName)) {
+            if (!StringUtils.isEmpty(trackerListenerName)) {
                 this.b.remove(trackerListenerName);
                 this.c.remove(trackerListenerName);
             }
@@ -519,7 +519,7 @@ public class b {
             return false;
         }
         String other = this.d.getOther();
-        return TextUtils.isEmpty(other) || !other.equals("close");
+        return StringUtils.isEmpty(other) || !other.equals("close");
     }
 
     private synchronized void b(String str) {

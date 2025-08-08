@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -273,7 +273,7 @@ public class oor {
             if (awesomeGetContainerData != null && awesomeGetContainerData.base != null && awesomeGetContainerData.base.sections != null) {
                 for (SectionModel sectionModel : awesomeGetContainerData.base.sections) {
                     String b = b(sectionModel);
-                    if (!TextUtils.isEmpty(b)) {
+                    if (!StringUtils.isEmpty(b)) {
                         hashMap.put(b, sectionModel);
                     }
                 }

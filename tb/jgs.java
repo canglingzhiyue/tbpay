@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.trtc.api.TrtcConstants;
 import java.io.File;
@@ -131,7 +131,7 @@ public class jgs {
         }
         StringBuilder sb = new StringBuilder();
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 sb.append(str.trim());
             }
         }

@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.os.Environment;
 import android.os.StatFs;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import java.io.File;
 
@@ -10,7 +10,7 @@ import java.io.File;
 public class z {
     public static long a() {
         File externalStorageDirectory;
-        if (!b() && (externalStorageDirectory = Environment.getExternalStorageDirectory()) != null && !TextUtils.isEmpty(externalStorageDirectory.getPath())) {
+        if (!b() && (externalStorageDirectory = Environment.getExternalStorageDirectory()) != null && !StringUtils.isEmpty(externalStorageDirectory.getPath())) {
             try {
                 StatFs statFs = new StatFs(externalStorageDirectory.getPath());
                 return statFs.getBlockSize() * (statFs.getAvailableBlocks() - 4);

@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.module;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.ac.g;
@@ -39,7 +39,7 @@ public class NotifyModule {
             ipChange.ipc$dispatch("362db66f", new Object[]{cVar});
         } else if (cVar.b instanceof JSONObject) {
             String string = ((JSONObject) cVar.b).getString("name");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Intent intent = new Intent(string);
@@ -104,7 +104,7 @@ public class NotifyModule {
         } else if (!(cVar.b instanceof JSONObject)) {
         } else {
             String string = ((JSONObject) cVar.b).getString("name");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             cVar.f19938a.k().a(string, cVar);
@@ -118,7 +118,7 @@ public class NotifyModule {
         } else if (!(cVar.b instanceof JSONObject)) {
         } else {
             String string = ((JSONObject) cVar.b).getString("name");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             cVar.f19938a.k().b(string, cVar);

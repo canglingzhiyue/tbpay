@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.platform.d;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
@@ -39,7 +39,7 @@ public class e extends c<SubTagsStatus> {
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     /* renamed from: a */
     public void b(SubTagsStatus subTagsStatus) {
-        PlatformMessageSender.a(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), subTagsStatus);
+        PlatformMessageSender.a(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), subTagsStatus);
     }
 
     public void b(int i) {
@@ -52,7 +52,7 @@ public class e extends c<SubTagsStatus> {
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     protected boolean d() {
-        return !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.j);
+        return !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.j);
     }
 
     public void e(String str) {
@@ -84,10 +84,10 @@ public class e extends c<SubTagsStatus> {
         String str;
         SubTagsStatus subTagsStatus = new SubTagsStatus();
         subTagsStatus.setCode("20001");
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             str = "appId not empty";
-        } else if (!TextUtils.isEmpty(this.d)) {
-            if (TextUtils.isEmpty(this.j)) {
+        } else if (!StringUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.j)) {
                 str = "pushId not empty";
             }
             return subTagsStatus;

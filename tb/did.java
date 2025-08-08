@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,7 +68,7 @@ public class did {
             e.a("tanx_interact_invoke_success", c());
             for (final String str : this.e) {
                 String host = Uri.parse(str).getHost();
-                if (TextUtils.isEmpty(host)) {
+                if (StringUtils.isEmpty(host)) {
                     e.a("tanx_interact_invalid_url", "msg=domain_not_right", c());
                 } else {
                     final String a2 = a(host);
@@ -150,7 +150,7 @@ public class did {
             this.f26779a = new HashMap();
         }
         String a2 = h.a(this.d, this.e, this.f26779a);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             e.a("tanx_interact_parse_error", c(), "error_msg=" + a2, "tracking_json=" + Uri.encode(this.d));
             UserTrackLogs.trackAdLog("tanx_interact_parse_error", c(), "error_msg=" + a2, "tracking_json=" + Uri.encode(this.d));
         }
@@ -175,7 +175,7 @@ public class did {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         StringBuilder sb = new StringBuilder(c());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(",host=");
             sb.append(str);
         }

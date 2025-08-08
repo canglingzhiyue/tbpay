@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.ui.coordinatorcard.a;
@@ -33,7 +33,7 @@ public final class cto extends ctn {
         q.c(successListener, "successListener");
         q.c(failureListener, "failureListener");
         String a2 = cardBean.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             failureListener.mo2423invoke(-1, "Invalid Card Type");
         } else if (q.a((Object) a2, (Object) "nt_region_digest")) {
             successListener.mo2421invoke(a(context, cardBean));

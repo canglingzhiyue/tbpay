@@ -1,6 +1,6 @@
 package com.taobao.tao.remotebusiness.js;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IInteractingListener;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -203,7 +203,7 @@ public class MtopJSBridge {
                 String optString = jSONObject.optString("v", "*");
                 String optString2 = jSONObject.optString("pageUrl");
                 final String optString3 = jSONObject.optString(MtopJSParam.ACCOUNT_SITE, "");
-                if (TextUtils.isEmpty(optString3) && (iWVRequestInterceptor = MtopSetting.sWVRequestInterceptor) != null && (intercept = iWVRequestInterceptor.intercept(string, optString, optString2)) != null && intercept.size() > 0) {
+                if (StringUtils.isEmpty(optString3) && (iWVRequestInterceptor = MtopSetting.sWVRequestInterceptor) != null && (intercept = iWVRequestInterceptor.intercept(string, optString, optString2)) != null && intercept.size() > 0) {
                     optString3 = intercept.get(MtopJSParam.ACCOUNT_SITE);
                 }
                 if (StringUtils.isNotBlank(optString3) && StringUtils.isBlank(MtopAccountSiteUtils.getInstanceId(optString3))) {
@@ -529,10 +529,10 @@ public class MtopJSBridge {
             if (this.isFinish.get() || !SwitchConfig.getInstance().isOptH5LoginTimeout()) {
                 return;
             }
-            if (TextUtils.equals(str, "login")) {
+            if (StringUtils.equals(str, "login")) {
                 this.ignoreTimeout.set(true);
                 this.loginDuration.set(System.currentTimeMillis());
-            } else if (!TextUtils.equals(str, InteractOption.INTERACT_FINISH)) {
+            } else if (!StringUtils.equals(str, InteractOption.INTERACT_FINISH)) {
             } else {
                 this.loginDuration.set(System.currentTimeMillis() - this.loginDuration.get());
                 if (!this.ignoreTimeout.compareAndSet(true, false)) {

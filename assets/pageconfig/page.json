@@ -1,0 +1,63 @@
+{
+  "taobao_wallet_home": {
+    "bizName": "taobao_wallet",
+    "pageTitle": "我的零钱",
+    "needPullRefresh":"true",
+    "needNextPage": "true",
+    "userTrackParams": {
+      "pageName": "Page_Wallet_Home",
+      "spm": "a2103.20185727"
+    },
+    "dataSource": {
+      "dataSourceType": "mtop",
+      "mtopConfig": {
+        "unitStrategy": "UNIT_TRADE",
+        "apiMethod": "mtop.com.taobao.wireless.grandet.home.render",
+        "apiVersion": "1.0"
+      }
+    }
+  },
+  "taobao_wallet_withdraw": {
+    "bizName": "taobao_wallet",
+    "pageTitle": "零钱提现",
+    "needPullRefresh":"false",
+    "userTrackParams": {
+      "pageName": "Page_Wallet_Withdraw",
+      "spm": "a2013.20185732"
+    },
+    "dataSource": {
+      "dataSourceType": "mtop",
+      "mtopConfig": {
+        "unitStrategy": "UNIT_TRADE",
+        "apiMethod": "mtop.com.taobao.wireless.grandet.withdraw.render",
+        "apiVersion": "1.0"
+      }
+    }
+  },
+  "taobao_wallet_helper": {
+    "bizName": "taobao_wallet_charge_others",
+    "pageTitle": "帮人充零钱",
+    "needPullRefresh":"false",
+    "userTrackParams": {
+      "pageName": "Page_Taobao_Wallet_help_Expo",
+      "spm": "a2103.b66973795"
+    },
+    "dataSource": {
+      "dataSourceType": "clientEngine",
+      "clientEngineConfig": {
+        "templateUrl": "ultrontemplate_ultroncommonpage/9577694038300/1612246792655/helperTemplate.json",
+        "scriptUrl": "file:///android_asset/ultrontemplate_ultroncommonpage/9577694038300/1612246792655/helperCore.js",
+        "scriptMD5": "ff9c2cf9cadca7fca1375369434ea5ce",
+        "userTrackParams": {
+          "pageName": "Taobao_Wallet_error_Expo",
+          "spm": "a2103.b66973795.c1615867817340.d1615867817340"
+        },
+        "mtopConfig": {
+          "unitStrategy": "UNIT_TRADE",
+          "apiMethod": "mtop.com.taobao.wireless.grandet.charge.to.other.render",
+          "apiVersion": "1.0"
+        }
+      }
+    }
+  }
+}

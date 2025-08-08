@@ -1,7 +1,7 @@
 package com.taobao.themis.weex.solution;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -110,7 +110,7 @@ public class TMSLegacyWeexSolution extends TMSBaseSolution {
                     return;
                 }
                 String g = access$000.g();
-                if (TextUtils.isEmpty(g)) {
+                if (StringUtils.isEmpty(g)) {
                     return;
                 }
                 Uri b = o.b(g);
@@ -155,7 +155,7 @@ public class TMSLegacyWeexSolution extends TMSBaseSolution {
         if (ipChange instanceof IpChange) {
             return (com.taobao.themis.kernel.container.a) ipChange.ipc$dispatch("e8d42c4a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mInstance.g())) {
+        if (StringUtils.isEmpty(this.mInstance.g())) {
             return null;
         }
         Uri b = o.b(this.mInstance.g());

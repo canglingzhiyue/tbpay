@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.log.LoginTLogAdapter;
@@ -91,7 +91,7 @@ public class LoginStatus {
                 } else if (intent == null) {
                 } else {
                     try {
-                        if (TextUtils.equals(LoginThreadHelper.getCurProcessName(context2), intent.getStringExtra(LoginStatus.CURRENT_PROCESS))) {
+                        if (StringUtils.equals(LoginThreadHelper.getCurProcessName(context2), intent.getStringExtra(LoginStatus.CURRENT_PROCESS))) {
                             return;
                         }
                         LoginTLogAdapter.e("login.LoginStatus", "NOTIFY_LOGIN_STATUS_CHANGE onReceive");
@@ -129,7 +129,7 @@ public class LoginStatus {
         Context context = mContext;
         if (context != null) {
             try {
-                if (!TextUtils.equals(context.getPackageName(), LoginThreadHelper.getCurProcessName(mContext))) {
+                if (!StringUtils.equals(context.getPackageName(), LoginThreadHelper.getCurProcessName(mContext))) {
                     LoginTLogAdapter.e("login.LoginStatus", LoginThreadHelper.getCurProcessName(mContext));
                     return false;
                 }

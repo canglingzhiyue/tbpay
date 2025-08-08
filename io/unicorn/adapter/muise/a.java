@@ -1,7 +1,7 @@
 package io.unicorn.adapter.muise;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.weex_framework.MUSDKInstance;
 import com.taobao.android.weex_framework.u;
 import io.unicorn.adapter.UnicornAdapterJNI;
@@ -94,7 +94,7 @@ public class a implements u.b {
     @Override // com.taobao.android.weex_framework.u.b
     public void a() {
         io.unicorn.embedding.engine.a a2;
-        if (TextUtils.isEmpty(this.d) || (a2 = a(this.d, (String[]) null)) == null) {
+        if (StringUtils.isEmpty(this.d) || (a2 = a(this.d, (String[]) null)) == null) {
             return;
         }
         a2.a();

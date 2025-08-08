@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -434,7 +434,7 @@ public class ProductInfoViewHolder extends b<com.taobao.android.detail.core.mode
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("daf50b49", new Object[]{this, str, onClickListener});
         }
-        if (TextUtils.isEmpty(str) || onClickListener == null) {
+        if (StringUtils.isEmpty(str) || onClickListener == null) {
             return new View(this.g);
         }
         if (this.r == null) {

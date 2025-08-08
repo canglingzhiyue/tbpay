@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.input.member;
 
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewStub;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -105,7 +105,7 @@ public class MemberGuideFrame2 extends BaseFrame implements d, a {
         if (hkl.a().b() != null && hkl.a().b().liveDetailMessInfoIsLegal()) {
             str = hkl.a().b().liveDetailMessInfoGetSNSNick();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = pmd.a().q().b();
         }
         jSONObject3.put("userNick", (Object) str);

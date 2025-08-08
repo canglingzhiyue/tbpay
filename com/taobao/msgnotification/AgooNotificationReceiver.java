@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.agoo.TaobaoConstants;
@@ -33,12 +33,12 @@ public class AgooNotificationReceiver extends BroadcastReceiver {
             return;
         }
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         String agooCommand = IntentUtil.getAgooCommand(context);
         TLog.loge("AgooNotificationReceiver", "onReceive:" + agooCommand);
-        if (!TextUtils.equals(action, agooCommand)) {
+        if (!StringUtils.equals(action, agooCommand)) {
             return;
         }
         try {
@@ -58,18 +58,18 @@ public class AgooNotificationReceiver extends BroadcastReceiver {
         }
         String stringExtra = intent.getStringExtra("command");
         h hVar = new h(context);
-        if (TextUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED) || TextUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
+        if (StringUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED) || StringUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
             hVar.a(intent);
-            if (!TextUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED)) {
+            if (!StringUtils.equals(stringExtra, AgooConstants.AGOO_COMMAND_MESSAGE_READED)) {
                 return;
             }
             String stringExtra2 = intent.getStringExtra("id");
             String stringExtra3 = intent.getStringExtra("notifyContentTargetUrl");
-            if (TextUtils.isEmpty(stringExtra3)) {
+            if (StringUtils.isEmpty(stringExtra3)) {
                 stringExtra3 = intent.getStringExtra(TaobaoConstants.MESSAGE_URL);
             }
             TLog.loge("AgooNotificationReceiver", " targetUrl " + stringExtra3);
-            if (TextUtils.isEmpty(stringExtra3)) {
+            if (StringUtils.isEmpty(stringExtra3)) {
                 stringExtra3 = "http://tb.cn/n/ww/p";
             }
             Bundle bundleExtra = intent.getBundleExtra("notifyContentParamBundleKey");
@@ -81,11 +81,11 @@ public class AgooNotificationReceiver extends BroadcastReceiver {
                 bundleExtra.putString("AliAgooMsgID", stringExtra2);
             }
             TLog.loge("AgooNotificationReceiver", " agooId " + stringExtra2);
-            if (TextUtils.isEmpty(stringExtra2)) {
+            if (StringUtils.isEmpty(stringExtra2)) {
                 TLog.loge("AgooNotificationReceiver", " COMMAND_SOUND_PROCESS ");
             }
             mtb.a(context, stringExtra3, bundleExtra);
-        } else if (!TextUtils.equals(stringExtra, "commandSoundProcess")) {
+        } else if (!StringUtils.equals(stringExtra, "commandSoundProcess")) {
         } else {
             TaobaoIntentService.a((Intent) intent.getParcelableExtra("intentKey"), context, true);
         }

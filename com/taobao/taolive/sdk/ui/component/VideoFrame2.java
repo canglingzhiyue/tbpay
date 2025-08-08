@@ -2,7 +2,7 @@ package com.taobao.taolive.sdk.ui.component;
 
 import android.content.Context;
 import android.media.AudioManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -578,8 +578,8 @@ public class VideoFrame2 extends VideoFrame implements pqf {
             ipChange.ipc$dispatch("da0cf3b1", new Object[]{this, str, str2, new Integer(i)});
         } else if (this.mTaoVideoView == null) {
         } else {
-            boolean z = !TextUtils.isEmpty(str2) && !str2.equals(this.highlightCurrentPlay);
-            boolean z2 = TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str) && !str.equals(this.highlightCurrentPlay);
+            boolean z = !StringUtils.isEmpty(str2) && !str2.equals(this.highlightCurrentPlay);
+            boolean z2 = StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str) && !str.equals(this.highlightCurrentPlay);
             if (!z && !z2 && (this.mTaoVideoView.l() || this.mHasPreloaded)) {
                 return;
             }
@@ -589,7 +589,7 @@ public class VideoFrame2 extends VideoFrame implements pqf {
             if (o.g() && i > 0) {
                 this.mTaoVideoView.e(i);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 setMediaId(str2);
                 this.highlightCurrentPlay = str2;
             } else {

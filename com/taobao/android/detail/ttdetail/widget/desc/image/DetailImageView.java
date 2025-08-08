@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.widget.desc.image;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -93,7 +93,7 @@ public class DetailImageView extends ImageView {
         L12:
             android.graphics.drawable.Drawable r0 = r4.getDrawable()
             java.lang.String r1 = r4.url
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 != 0) goto L4d
             com.taobao.android.detail.ttdetail.widget.desc.image.d r1 = r4.option
             if (r1 != 0) goto L23
@@ -130,7 +130,7 @@ public class DetailImageView extends ImageView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bad6181b", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.url) || this.option == null || (drawable = super.getDrawable()) == null) {
+        } else if (StringUtils.isEmpty(this.url) || this.option == null || (drawable = super.getDrawable()) == null) {
         } else {
             if ((drawable instanceof BitmapDrawable) && ((BitmapDrawable) drawable).getBitmap() != null) {
                 setImageDrawable(null);

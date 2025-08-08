@@ -5,7 +5,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -184,7 +184,7 @@ public abstract class AbsAPMInitiator implements Serializable {
             return;
         }
         mpm.a().a(new mmy());
-        if (TextUtils.isEmpty(mms.n)) {
+        if (StringUtils.isEmpty(mms.n)) {
             return;
         }
         mpm.a().a(new mmw());
@@ -391,7 +391,7 @@ public abstract class AbsAPMInitiator implements Serializable {
                                     return;
                                 }
                                 a2.a("bizID", str);
-                                if (TextUtils.isEmpty(str2)) {
+                                if (StringUtils.isEmpty(str2)) {
                                     return;
                                 }
                                 a2.a("bizCode", str2);

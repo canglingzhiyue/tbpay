@@ -3,7 +3,7 @@ package com.alibaba.android.split.core.internal;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.ArrayMap;
 import android.util.Log;
 import com.alibaba.android.split.a;
@@ -134,7 +134,7 @@ public final class SplitLoaderInternal implements ab.a, ab.b, p {
         } else {
             SplitLoaderRunnable splitLoaderRunnable = new SplitLoaderRunnable(this, list, cVar);
             Set<String> features = getFeatures(list);
-            if (TextUtils.isEmpty(this.mCurrentActivity) || (fVar = this.iScene) == null || !fVar.b()) {
+            if (StringUtils.isEmpty(this.mCurrentActivity) || (fVar = this.iScene) == null || !fVar.b()) {
                 Log.e("SplitLoaderInternal", features + "mCurrentActivity = null :execute directlly");
                 this.mExecutor.execute(splitLoaderRunnable);
                 return;
@@ -558,10 +558,10 @@ public final class SplitLoaderInternal implements ab.a, ab.b, p {
         }
         this.mCurrentActivity = str;
         this.mCurrentTab = "default";
-        if (!TextUtils.isEmpty(this.mCurrentActivity) && this.mCurrentActivity.startsWith("com.taobao.tao.welcome")) {
+        if (!StringUtils.isEmpty(this.mCurrentActivity) && this.mCurrentActivity.startsWith("com.taobao.tao.welcome")) {
             this.mCurrentActivity = lsk.BIZ_NAME;
         }
-        if (TextUtils.isEmpty(this.mCurrentActivity)) {
+        if (StringUtils.isEmpty(this.mCurrentActivity)) {
             return;
         }
         if (this.mCurrentActivity.equals(lsk.BIZ_NAME)) {

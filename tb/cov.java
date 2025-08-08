@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes3.dex */
@@ -73,7 +73,7 @@ public class cov {
         if (ipChange instanceof IpChange) {
             return (RectF) ipChange.ipc$dispatch("686ffd15", new Object[]{str, new Integer(i), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(",");

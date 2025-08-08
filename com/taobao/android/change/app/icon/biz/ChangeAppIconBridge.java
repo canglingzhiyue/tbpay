@@ -10,7 +10,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.change.app.icon.core.Constrant;
@@ -110,7 +110,7 @@ public class ChangeAppIconBridge extends e {
                 jSONObject.put(KEY_ICONNAME, value.iconName);
                 String a2 = com.taobao.android.change.app.icon.utils.d.a(this.mContext, value);
                 jSONObject.put(KEY_BASE64PNG, a2);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     g.c(g.PAGE_NAME, "listIcons", value.iconName, "base64Str null", null);
                 }
                 jSONArray.put(jSONObject);
@@ -144,14 +144,14 @@ public class ChangeAppIconBridge extends e {
                 wVCallBackContext.onFailure(rVar);
                 return;
             }
-            if (TextUtils.isEmpty(optString2)) {
+            if (StringUtils.isEmpty(optString2)) {
                 optString2 = Constrant.ChangeType.SILENT;
             }
             rVar.a("changeType", optString2);
             hashMap.put("model", appIconComponentName.toString());
             hashMap.put("changeType", optString2);
             g.c(g.PAGE_NAME, "setIcon", "success", null, hashMap);
-            if (TextUtils.equals(optString2, Constrant.ChangeType.SILENT)) {
+            if (StringUtils.equals(optString2, Constrant.ChangeType.SILENT)) {
                 if (this.mChangeAppIconReceiver != null) {
                     LocalBroadcastManager.getInstance(this.mContext).unregisterReceiver(this.mChangeAppIconReceiver);
                     this.mChangeAppIconReceiver = null;
@@ -161,10 +161,10 @@ public class ChangeAppIconBridge extends e {
                 intentFilter.addAction(a.ACTION_CHANGE_APP_ICON_RESULT);
                 LocalBroadcastManager.getInstance(this.mContext).registerReceiver(this.mChangeAppIconReceiver, intentFilter);
                 igc.a(this.mContext, appIconComponentName);
-            } else if (TextUtils.equals(optString2, Constrant.ChangeType.BG)) {
+            } else if (StringUtils.equals(optString2, Constrant.ChangeType.BG)) {
                 wVCallBackContext.onSuccess(rVar);
                 igc.a(appIconComponentName);
-            } else if (TextUtils.equals(optString2, Constrant.ChangeType.NOW)) {
+            } else if (StringUtils.equals(optString2, Constrant.ChangeType.NOW)) {
                 wVCallBackContext.onSuccess(rVar);
                 igc.b(appIconComponentName);
             } else {
@@ -278,7 +278,7 @@ public class ChangeAppIconBridge extends e {
                     return;
                 }
                 r rVar = new r();
-                if (!TextUtils.equals(intent.getAction(), a.ACTION_CHANGE_APP_ICON_RESULT)) {
+                if (!StringUtils.equals(intent.getAction(), a.ACTION_CHANGE_APP_ICON_RESULT)) {
                     return;
                 }
                 boolean booleanExtra = intent.getBooleanExtra("result", false);

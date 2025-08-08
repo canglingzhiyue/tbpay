@@ -3,7 +3,7 @@ package tb;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class suy implements b {
                 jSONObject2.put("bizParam", (Object) jSONObject);
             }
             oqc.a().a("insertCard", jSONObject2);
-            if (z && !TextUtils.isEmpty(str2) && Globals.getApplication() != null) {
+            if (z && !StringUtils.isEmpty(str2) && Globals.getApplication() != null) {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: tb.suy.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

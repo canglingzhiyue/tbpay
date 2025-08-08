@@ -3,7 +3,7 @@ package com.ali.user.mobile.utils;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.coordinator.CoordinatorWrapper;
 import com.ali.user.mobile.model.CommonCallback;
@@ -28,7 +28,7 @@ public class BundleUtil {
             return (Bundle) ipChange.ipc$dispatch("7a0a702b", new Object[]{str});
         }
         Bundle bundle = new Bundle();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return bundle;
         }
         try {
@@ -90,7 +90,7 @@ public class BundleUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9fbcdac", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -108,7 +108,7 @@ public class BundleUtil {
             ipChange.ipc$dispatch("43f169bc", new Object[]{str, commonCallback});
         } else if (commonCallback == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 commonCallback.onFail(-2, "empty package name");
             } else {
                 new CoordinatorWrapper().execute(new AsyncTask<Object, Void, Boolean>() { // from class: com.ali.user.mobile.utils.BundleUtil.1

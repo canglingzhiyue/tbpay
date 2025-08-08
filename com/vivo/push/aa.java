@@ -1,7 +1,7 @@
 package com.vivo.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.ag;
 
 /* loaded from: classes9.dex */
@@ -24,7 +24,7 @@ final class aa implements Runnable {
             return;
         }
         long j = m.a().f() ? 488L : 341L;
-        if (TextUtils.isEmpty(this.f24148a) || !ag.a(b, b.getPackageName(), this.f24148a, j)) {
+        if (StringUtils.isEmpty(this.f24148a) || !ag.a(b, b.getPackageName(), this.f24148a, j)) {
             return;
         }
         com.vivo.push.restructure.a.a().e().e();

@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.capture.scan;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.p;
 import java.util.HashMap;
@@ -38,12 +38,12 @@ public class m {
             return (HashMap) ipChange.ipc$dispatch("5d70dbdf", new Object[]{str, str2});
         }
         HashMap<String, String> hashMap = new HashMap<>(10);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("spm", str);
         }
         hashMap.put("rainbow", cof.a());
         hashMap.put(p.KEY_DEVICE_TYPE, p.a());
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("pssource", str2);
         }
         return hashMap;

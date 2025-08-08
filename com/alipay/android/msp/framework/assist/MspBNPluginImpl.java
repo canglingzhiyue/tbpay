@@ -2,7 +2,7 @@ package com.alipay.android.msp.framework.assist;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.birdnest.api.MessageListener;
@@ -316,7 +316,7 @@ public class MspBNPluginImpl implements MspBNPlugin {
                     if (mspContextByBizId2 != null && (obj instanceof FBDocument) && (mspWindowClient2 = (MspWindowClient) mspContextByBizId2.getMspUIClient()) != null && (currentWindowFrame = mspWindowClient2.getCurrentWindowFrame()) != null && currentWindowFrame.getFBDocument() == null) {
                         currentWindowFrame.setFBDocument((FBDocument) obj);
                     }
-                    if (!TextUtils.equals(mspEvent.getActionName(), MspFlybirdDefine.FLYBIRD_FRAME_EVENT)) {
+                    if (!StringUtils.equals(mspEvent.getActionName(), MspFlybirdDefine.FLYBIRD_FRAME_EVENT)) {
                         return false;
                     }
                     try {
@@ -329,7 +329,7 @@ public class MspBNPluginImpl implements MspBNPlugin {
                     }
                     LogUtil.record(2, "MspBNPluginImpl::onInterceptTplEvent", "mspEvent=" + actionParamsJson.toJSONString());
                     final BirdNestFrameEvent birdNestFrameEvent = new BirdNestFrameEvent(actionParamsJson);
-                    if (!TextUtils.equals(birdNestFrameEvent.getKey(), "MQPBNFRAME_RENDER_SUCCESS")) {
+                    if (!StringUtils.equals(birdNestFrameEvent.getKey(), "MQPBNFRAME_RENDER_SUCCESS")) {
                         if (birdNestFrameEvent.isOnEvent()) {
                             mspViewMessageListener.onReceiveMessage(birdNestFrameEvent.getKey(), birdNestFrameEvent.getArgs(), new MessageListener() { // from class: com.alipay.android.msp.framework.assist.MspBNPluginImpl.4.3
                                 public static volatile transient /* synthetic */ IpChange $ipChange;

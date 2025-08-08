@@ -17,7 +17,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -441,7 +441,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-                } else if (!TextUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
+                } else if (!StringUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
                 } else {
                     String stringExtra = intent.getStringExtra("force");
                     long intExtra = intent.getIntExtra("seqId", -1);
@@ -472,7 +472,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             a(taoliveOpenLiveRoom);
         }
         b(taoliveOpenLiveRoom);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Intent intent = new Intent();
             this.Q = Uri.parse(str);
             intent.setData(this.Q);
@@ -501,7 +501,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent2});
-                } else if (!TextUtils.equals(intent2.getAction(), "com.taobao.live.room.init")) {
+                } else if (!StringUtils.equals(intent2.getAction(), "com.taobao.live.room.init")) {
                 } else {
                     String stringExtra = intent2.getStringExtra("force");
                     long intExtra = intent2.getIntExtra("seqId", -1);
@@ -559,7 +559,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent2});
-                } else if (!TextUtils.equals(intent2.getAction(), "com.taobao.live.room.init")) {
+                } else if (!StringUtils.equals(intent2.getAction(), "com.taobao.live.room.init")) {
                 } else {
                     String stringExtra = intent2.getStringExtra("force");
                     long intExtra = intent2.getIntExtra("seqId", -1);
@@ -796,7 +796,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         } else {
             String queryParameter = data.getQueryParameter(aw.PARAM_ITEM_IDS);
             String queryParameter2 = data.getQueryParameter(aw.PARAM_ITEM_HOLD_TYPE);
-            if (TextUtils.isEmpty(queryParameter) || !"insideDetail".equals(queryParameter2)) {
+            if (StringUtils.isEmpty(queryParameter) || !"insideDetail".equals(queryParameter2)) {
                 return;
             }
             ArrayList arrayList = new ArrayList();
@@ -1057,7 +1057,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             return;
         }
         String a2 = au.a(map.get("type"), (String) null);
-        if (TextUtils.isEmpty(a2) || this.ad || S()) {
+        if (StringUtils.isEmpty(a2) || this.ad || S()) {
             return;
         }
         char c = 65535;
@@ -1124,10 +1124,10 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             String str5 = map.get(aw.PARAM_TIMEMOVING_ITEM_ID);
             Map<String, String> map2 = this.J;
             String str6 = map2 != null ? map2.get(aw.PARAM_TIMEMOVING_ITEM_ID) : null;
-            if (!TextUtils.isEmpty(str2) && str2.equals(this.d) && !z && (TextUtils.isEmpty(str5) || str5.equals(str6))) {
+            if (!StringUtils.isEmpty(str2) && str2.equals(this.d) && !z && (StringUtils.isEmpty(str5) || str5.equals(str6))) {
                 return;
             }
-            if (!TextUtils.isEmpty(str) && str.equals(this.c) && !z && (TextUtils.isEmpty(str5) || str5.equals(str6))) {
+            if (!StringUtils.isEmpty(str) && str.equals(this.c) && !z && (StringUtils.isEmpty(str5) || str5.equals(str6))) {
                 return;
             }
             t tVar = this.ap;
@@ -1206,7 +1206,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             v();
         } else {
             if (this.r == null) {
-                this.r = new TBLiveRecEngineV2("1".equals((map == null || TextUtils.isEmpty(map.get(aw.PARAM_SWITCH_RT_RCMD))) ? "1" : this.J.get(aw.PARAM_SWITCH_RT_RCMD)), (c) this.S);
+                this.r = new TBLiveRecEngineV2("1".equals((map == null || StringUtils.isEmpty(map.get(aw.PARAM_SWITCH_RT_RCMD))) ? "1" : this.J.get(aw.PARAM_SWITCH_RT_RCMD)), (c) this.S);
             }
             this.r.a(this.mRecyclerView);
             if (this.s == null) {
@@ -1214,7 +1214,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             }
             if (map != null) {
                 this.s.put(TBLiveRecEngineV2.PARAM_ENTRY_LIVE_ID, map.get("id"));
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.s.put("entryLiveSource", str);
                 } else {
                     this.s.put("entryLiveSource", map.get("livesource"));
@@ -1286,18 +1286,18 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             poz.I(map.get("queryKey"), this.S);
             poz.H(this.J.get("liveAdParams"), this.S);
             ddw.a().a("com.taobao.taolive.room.querykey.change", poz.k(this.S));
-            if (TextUtils.isEmpty(this.J.get(aw.PARAM_SJSD_ITEM_ID))) {
+            if (StringUtils.isEmpty(this.J.get(aw.PARAM_SJSD_ITEM_ID))) {
                 String str = this.J.get("bubbleGoodInfoJson");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     try {
                         goodItem = (GoodItem) JSONObject.parseObject(str, GoodItem.class);
                     } catch (Exception unused) {
                     }
-                    if (goodItem == null && !TextUtils.isEmpty(goodItem.itemId)) {
+                    if (goodItem == null && !StringUtils.isEmpty(goodItem.itemId)) {
                         this.J.put(aw.PARAM_SJSD_ITEM_ID, goodItem.itemId);
                     } else {
                         hashMap = (HashMap) JSONObject.parseObject(this.J.get("goodInfoWeitao"), HashMap.class);
-                        if (hashMap != null && !TextUtils.isEmpty((CharSequence) hashMap.get("itemId"))) {
+                        if (hashMap != null && !StringUtils.isEmpty((CharSequence) hashMap.get("itemId"))) {
                             this.J.put(aw.PARAM_SJSD_ITEM_ID, hashMap.get("itemId"));
                         }
                     }
@@ -1316,7 +1316,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             this.j = this.J.get("trackInfo");
             this.l = this.J.get(aw.PARAM_TRACK_LIVEOPRT_ID);
             this.k = this.J.get("clickid");
-            if (!TextUtils.isEmpty(this.J.get("livesource"))) {
+            if (!StringUtils.isEmpty(this.J.get("livesource"))) {
                 this.f = this.J.get("livesource");
             }
             if (!z) {
@@ -1324,9 +1324,9 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 this.n = this.J.get(aw.PARAM_SEARCH_KEYWORD_POS);
             }
             String str2 = this.J.get(aw.PARAM_HIDE_DYNAMIC);
-            poz.j(!TextUtils.isEmpty(str2) && Boolean.parseBoolean(str2), this.S);
+            poz.j(!StringUtils.isEmpty(str2) && Boolean.parseBoolean(str2), this.S);
             String str3 = this.J.get(aw.PARAM_HIDE_H5_DYNAMIC);
-            if (TextUtils.isEmpty(str3) || !Boolean.parseBoolean(str3)) {
+            if (StringUtils.isEmpty(str3) || !Boolean.parseBoolean(str3)) {
                 z2 = false;
             }
             poz.k(z2, this.S);
@@ -1334,18 +1334,18 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             this.y = this.J.get("timePointPlayUrl");
             try {
                 String str4 = this.J.get(aw.PARAM_CUSTOM_PLAY_CTRL);
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     this.e = com.taobao.taolive.room.utils.q.a(str4);
                 }
                 if (this.e != null && this.y == null) {
                     String string = this.e.getString("timeMovingUrl");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         this.y = string;
                     }
                 }
                 this.F = (GoodItem) pqj.a(this.J.get("bubbleGoodInfoJson"), GoodItem.class);
                 String str5 = this.J.get(aw.PARAM_BACK_TO_LIVE);
-                if (!pmd.a().a("timeShift") || TextUtils.equals("true", str5)) {
+                if (!pmd.a().a("timeShift") || StringUtils.equals("true", str5)) {
                     this.y = null;
                 }
                 if (this.F != null) {
@@ -1617,7 +1617,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
 
     private void X() {
         String str = pjt.CLASS_MAPPING.get(this.ae);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 Class<?> cls = Class.forName(str);
                 this.an = (r) cls.getMethod("createLiveCustomView", ViewGroup.class).invoke(cls.newInstance(), this.I.findViewById(R.id.taolive_drawer_container));
@@ -1662,7 +1662,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             return uri.getQueryParameter(aw.PARAM_ELEVEN_LIVE_ID);
         }
         String queryParameter = uri.getQueryParameter("id");
-        return TextUtils.isEmpty(queryParameter) ? uri.getQueryParameter(aw.PARAM_ELEVEN_LIVE_ID) : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? uri.getQueryParameter(aw.PARAM_ELEVEN_LIVE_ID) : queryParameter;
     }
 
     private void a(com.taobao.taolive.sdk.controller.e eVar) {
@@ -1861,11 +1861,11 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                                 return;
                             }
                             String str2 = ((ATaoLiveOpenEntity) q.d(q.this).f()).bizCode;
-                            if (TextUtils.equals(str2, TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString())) {
+                            if (StringUtils.equals(str2, TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString())) {
                                 q.m(q.this).a(t.KEY_TAOLIVEOPENBIZCODE, "Tab2");
-                            } else if (TextUtils.equals(str2, TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_OpenWatch.toString())) {
+                            } else if (StringUtils.equals(str2, TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_OpenWatch.toString())) {
                                 q.m(q.this).a(t.KEY_TAOLIVEOPENBIZCODE, "OpenWatch");
-                            } else if (!TextUtils.equals(str2, TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_StandardOpenWatch.toString())) {
+                            } else if (!StringUtils.equals(str2, TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_StandardOpenWatch.toString())) {
                             } else {
                                 q.m(q.this).a(t.KEY_TAOLIVEOPENBIZCODE, "OpenWatchPublic");
                             }
@@ -2101,7 +2101,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             ai.c(this.S, this.H);
         }
         String a2 = ai.a(this.S, this.H);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             poz.c(a2, this.S);
         }
         if (as.a(this.S, this.L)) {
@@ -2359,7 +2359,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 jVar.b();
                 this.U = null;
             }
-            if (TextUtils.equals(b, toString())) {
+            if (StringUtils.equals(b, toString())) {
                 pmd.a().m().b("TBLiveXXX", "onDestroy same instance");
                 com.taobao.taolive.sdk.core.j.a(this.S.e());
                 y yVar = this.q;
@@ -2439,7 +2439,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         Uri data = t().getData();
         String queryParameter = data.getQueryParameter("id");
         String queryParameter2 = data.getQueryParameter("userId");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return;
         }
         this.c = queryParameter;
@@ -2467,7 +2467,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         }
         if (com.taobao.taolive.sdk.utils.p.a("enableReopenShopWindow", true) && (map = this.J) != null && v.a(map.get("needReopenShopWindow"), true) && (str = this.J.get("reopenUrl")) != null) {
             String decode = Uri.decode(str);
-            if (!TextUtils.isEmpty(decode)) {
+            if (!StringUtils.isEmpty(decode)) {
                 Nav.from(this.H).toUri(decode);
             }
         }
@@ -2617,7 +2617,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     str2 = (String) obj;
                 }
                 com.taobao.taolive.sdk.utils.q.b("TaoLiveRealController", "receive enable upDown switch " + str2);
-                if (!TextUtils.isEmpty(str2) && "liveShop".equals(str2)) {
+                if (!StringUtils.isEmpty(str2) && "liveShop".equals(str2)) {
                     this.N = false;
                 }
                 String str3 = "==== EVENT_ENABLE_UPDOWN_SWITCH===== id = " + this.c;
@@ -2641,11 +2641,11 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 }
                 Map map2 = (Map) obj;
                 String str4 = (String) map2.get("url");
-                if (TextUtils.isEmpty(str4) || (b2 = ak.b((parse = Uri.parse(str4)))) == 0) {
+                if (StringUtils.isEmpty(str4) || (b2 = ak.b((parse = Uri.parse(str4)))) == 0) {
                     return;
                 }
                 b2.put("highlightSignByRePlay", map2.get("highlightSignByRePlay"));
-                if (!TextUtils.isEmpty((CharSequence) map2.get(aw.HIGHLIGHT_TRANSPARENT_PARAMS))) {
+                if (!StringUtils.isEmpty((CharSequence) map2.get(aw.HIGHLIGHT_TRANSPARENT_PARAMS))) {
                     b2.put(aw.PARAM_TRANSPARENT_PARAMS, map2.get(aw.HIGHLIGHT_TRANSPARENT_PARAMS));
                 }
                 a(parse, b2);
@@ -2661,7 +2661,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     str2 = (String) obj;
                 }
                 com.taobao.taolive.sdk.utils.q.b("TaoLiveRealController", "receive disable upDown switch " + str2);
-                if (!TextUtils.isEmpty(str2) && aw.TAOLIVE_MORE_LIVE.equals(str2)) {
+                if (!StringUtils.isEmpty(str2) && aw.TAOLIVE_MORE_LIVE.equals(str2)) {
                     this.M = true;
                 } else if ("liveShop".equals(str2)) {
                     this.N = true;
@@ -2677,7 +2677,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     }
                     if (aa.cs() && com.taobao.taolive.movehighlight.utils.c.w() && obj == null) {
                         com.taobao.taolive.sdk.controller.e eVar2 = this.S;
-                        if (eVar2 != null && !TextUtils.isEmpty(eVar2.q)) {
+                        if (eVar2 != null && !StringUtils.isEmpty(eVar2.q)) {
                             str6 = "PlayBackToLive." + this.S.q;
                         }
                         this.J.put("livesource", str6);
@@ -2689,7 +2689,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                         return;
                     }
                     String str7 = (String) obj;
-                    if (this.S != null && com.taobao.taolive.movehighlight.utils.c.w() && !TextUtils.isEmpty(this.S.q)) {
+                    if (this.S != null && com.taobao.taolive.movehighlight.utils.c.w() && !StringUtils.isEmpty(this.S.q)) {
                         str6 = "PlayBackToLive." + this.S.q;
                     }
                     com.taobao.taolive.room.utils.s.a(this.H, com.taobao.taolive.room.utils.c.a(str7) + "&livesource=" + str6 + "&backwardSwitch=true");
@@ -2930,7 +2930,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             return;
         }
         String queryParameter = uri.getQueryParameter("timeMovingSpfPlayVideo");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return;
         }
         map.put("timeMovingSpfPlayVideo", queryParameter);
@@ -3056,7 +3056,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         } else if (com.taobao.taolive.sdk.playcontrol.c.i(com.taobao.taolive.room.utils.n.a()) == VideoStatus.VIDEO_TIMESHIFT_STATUS && aa.v() && (u = poy.u(com.taobao.taolive.room.utils.n.a())) != null && u.status == 0 && poy.B(com.taobao.taolive.room.utils.n.a()) == 0) {
             if (this.J != null) {
                 String str = "timemoveReturn";
-                if (this.S != null && com.taobao.taolive.movehighlight.utils.c.w() && !TextUtils.isEmpty(this.S.q)) {
+                if (this.S != null && com.taobao.taolive.movehighlight.utils.c.w() && !StringUtils.isEmpty(this.S.q)) {
                     str = "timemoveReturn." + this.S.q;
                 }
                 this.J.put("livesource", str);
@@ -3229,7 +3229,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     this.J.put(aw.PARAM_INTENT_URL, data.toString());
                     this.J.put(aw.PARAM_WEB_VIEW_LAYER_URL, data.getQueryParameter(aw.PARAM_WEB_VIEW_LAYER_URL));
                     this.c = data.getQueryParameter("id");
-                    if (TextUtils.isEmpty(this.c)) {
+                    if (StringUtils.isEmpty(this.c)) {
                         this.c = data.getQueryParameter(aw.PARAM_ELEVEN_LIVE_ID);
                     }
                     this.J.put("id", this.c);
@@ -3263,7 +3263,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                         String queryParameter2 = data.getQueryParameter("trackInfo");
                         Bundle extras2 = intent.getExtras();
                         String string = extras2 != null ? extras2.getString("trackInfo") : null;
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             this.j = Uri.decode(string);
                         } else {
                             this.j = queryParameter2;
@@ -3297,35 +3297,35 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     }
                     j.a(data.getQueryParameter(j.PARAM_LIVEHOME_SPM));
                     this.J.put(j.PARAM_LIVEHOMEMIX, j.f21601a);
-                    if (!TextUtils.isEmpty(j.e())) {
+                    if (!StringUtils.isEmpty(j.e())) {
                         this.J.put(j.PARAM_LIVEHOME_SPM, j.e());
                     }
                     String queryParameter3 = data.getQueryParameter(aw.PARAM_RCMD);
-                    if (!TextUtils.isEmpty(queryParameter3)) {
+                    if (!StringUtils.isEmpty(queryParameter3)) {
                         this.J.put(aw.PARAM_RCMD, queryParameter3);
                     }
                     String queryParameter4 = data.getQueryParameter(aw.PARAM_SWITCH_RT_RCMD);
-                    if (!TextUtils.isEmpty(queryParameter4)) {
+                    if (!StringUtils.isEmpty(queryParameter4)) {
                         this.J.put(aw.PARAM_SWITCH_RT_RCMD, queryParameter4);
                     }
                     String queryParameter5 = data.getQueryParameter(aw.PARAM_HIDE_CLOSE);
-                    if (!TextUtils.isEmpty(queryParameter5)) {
+                    if (!StringUtils.isEmpty(queryParameter5)) {
                         poz.o(v.e(queryParameter5), this.S);
                     }
                     String queryParameter6 = data.getQueryParameter(aw.PARAM_DIS_HORISCRL);
-                    if (!TextUtils.isEmpty(queryParameter6)) {
+                    if (!StringUtils.isEmpty(queryParameter6)) {
                         poz.f(v.e(queryParameter6), this.S);
                     }
                     String queryParameter7 = data.getQueryParameter(aw.PARAM_ADD_TOP);
-                    if (!TextUtils.isEmpty(queryParameter7)) {
+                    if (!StringUtils.isEmpty(queryParameter7)) {
                         this.G = v.b(queryParameter7);
                     }
                     String queryParameter8 = data.getQueryParameter(aw.PARAM_SEARCH_KEYWORD_RN);
                     String queryParameter9 = data.getQueryParameter(aw.PARAM_SEARCH_KEYWORD_POS);
-                    if (!TextUtils.isEmpty(queryParameter8)) {
+                    if (!StringUtils.isEmpty(queryParameter8)) {
                         this.J.put(aw.PARAM_SEARCH_KEYWORD_RN, queryParameter8);
                     }
-                    if (!TextUtils.isEmpty(queryParameter9)) {
+                    if (!StringUtils.isEmpty(queryParameter9)) {
                         this.J.put(aw.PARAM_SEARCH_KEYWORD_POS, queryParameter9);
                     }
                     poz.t(data.getQueryParameter("realExposure"), this.S);
@@ -3356,7 +3356,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     this.J.put(aw.PARAM_SHOW_ANIMATED, data.getQueryParameter(aw.PARAM_SHOW_ANIMATED));
                     poz.p(!v.a(data.getQueryParameter(aw.PARAM_ENABLE_FULLSCREEN), true), this.S);
                     String queryParameter13 = data.getQueryParameter(aw.PARAM_ENABLE_NEW_KANDIAN);
-                    if (!TextUtils.isEmpty(queryParameter13)) {
+                    if (!StringUtils.isEmpty(queryParameter13)) {
                         u.b = v.a(queryParameter13, true);
                         u.c = true;
                     }
@@ -3366,7 +3366,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     }
                     if (aa.aT()) {
                         String queryParameter14 = data.getQueryParameter(aw.PARAM_QUICK_LIVE_URL);
-                        if (!TextUtils.isEmpty(queryParameter14) && (b2 = ak.b(queryParameter14)) != null) {
+                        if (!StringUtils.isEmpty(queryParameter14) && (b2 = ak.b(queryParameter14)) != null) {
                             this.J.put(aw.PARAM_QUICK_LIVE_URL, b2);
                         }
                     }
@@ -3396,7 +3396,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     this.J.put(j.PARAM_LIVEHOME_SPM, data.getQueryParameter(j.PARAM_LIVEHOME_SPM));
                     this.y = data.getQueryParameter("timePointPlayUrl");
                     this.K = data.getQueryParameter(aw.PARAM_RECOMMEND_SOURCE);
-                    if (!TextUtils.isEmpty(this.K)) {
+                    if (!StringUtils.isEmpty(this.K)) {
                         this.J.put(aw.PARAM_RECOMMEND_SOURCE, this.K);
                     }
                     this.J.put(aw.PARAM_COVER_GAUSS_SAMPLING, data.getQueryParameter(aw.PARAM_COVER_GAUSS_SAMPLING));
@@ -3406,15 +3406,15 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     }
                     try {
                         extras = intent.getExtras();
-                        if (TextUtils.isEmpty(this.y) && extras != null) {
+                        if (StringUtils.isEmpty(this.y) && extras != null) {
                             this.y = extras.getString("timePointPlayUrl");
                         }
                         queryParameter = data.getQueryParameter(aw.PARAM_CUSTOM_PLAY_CTRL);
                         try {
-                            if (TextUtils.isEmpty(queryParameter) && extras != null) {
+                            if (StringUtils.isEmpty(queryParameter) && extras != null) {
                                 queryParameter = extras.getString("mediaInfo");
                             }
-                            if (TextUtils.isEmpty(queryParameter) && extras != null) {
+                            if (StringUtils.isEmpty(queryParameter) && extras != null) {
                                 queryParameter = extras.getString(aw.PARAM_CUSTOM_PLAY_CTRL);
                             }
                             try {
@@ -3501,7 +3501,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             return;
         }
         String string = bundle.getString("adTransParams");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             JSONObject parseObject = JSON.parseObject(string);
             if (parseObject == null || !parseObject.containsKey("action_list") || !parseObject.containsKey("pay_url")) {
                 return;
@@ -3509,7 +3509,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             String string2 = parseObject.getString("action_list");
             String string3 = parseObject.getString("pay_url");
             String string4 = parseObject.getString("adLiveId");
-            if (TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
                 return;
             }
             List parseArray = JSONArray.parseArray(string2, String.class);
@@ -3537,13 +3537,13 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         String queryParameter2 = uri.getQueryParameter("timestamp");
         String queryParameter3 = uri.getQueryParameter(SimpleProfile.KEY_SIGNATURE);
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             jSONObject.put("anchorGuard", (Object) queryParameter);
         }
-        if (!TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter2)) {
             jSONObject.put("timestamp", (Object) queryParameter2);
         }
-        if (!TextUtils.isEmpty(queryParameter3)) {
+        if (!StringUtils.isEmpty(queryParameter3)) {
             jSONObject.put(SimpleProfile.KEY_SIGNATURE, (Object) queryParameter3);
         }
         return jSONObject;
@@ -3608,25 +3608,25 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 poz.a((LiveDetailMessinfoResponseData.AlimamaInfo2) null, this.S);
             }
             ai.a(this.S, ag.CLICK_SWITCHROOM, this.g);
-            if (!TextUtils.isEmpty(recModel.actionUrl)) {
+            if (!StringUtils.isEmpty(recModel.actionUrl)) {
                 String str5 = "a2141.8001249";
                 if (aa.aI()) {
                     if (!recModel.actionUrl.contains("spm=")) {
                         if (j.f() && recModel.initParams != null) {
                             String str6 = recModel.initParams.get(j.PARAM_LIVEHOME_SPM);
-                            if (TextUtils.isEmpty(str6) && (map = this.J) != null) {
+                            if (StringUtils.isEmpty(str6) && (map = this.J) != null) {
                                 str6 = map.get(j.PARAM_LIVEHOME_SPM);
                             }
                             if (recModel.actionUrl.contains("?")) {
                                 StringBuilder sb = new StringBuilder();
                                 sb.append(recModel.actionUrl);
-                                if (TextUtils.isEmpty(str6)) {
+                                if (StringUtils.isEmpty(str6)) {
                                     str3 = "";
                                 } else {
                                     str3 = "&spm=" + str6;
                                 }
                                 sb.append(str3);
-                                if (TextUtils.isEmpty(str6)) {
+                                if (StringUtils.isEmpty(str6)) {
                                     str4 = "";
                                 } else {
                                     str4 = "&livehomeSpm=" + str6;
@@ -3640,7 +3640,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                                 StringBuilder sb2 = new StringBuilder();
                                 sb2.append(recModel.actionUrl);
                                 sb2.append("&spm=");
-                                if (!TextUtils.isEmpty(str6)) {
+                                if (!StringUtils.isEmpty(str6)) {
                                     str5 = str6;
                                 }
                                 sb2.append(str5);
@@ -3649,7 +3649,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                                 StringBuilder sb3 = new StringBuilder();
                                 sb3.append(recModel.actionUrl);
                                 sb3.append("?spm=");
-                                if (!TextUtils.isEmpty(str6)) {
+                                if (!StringUtils.isEmpty(str6)) {
                                     str5 = str6;
                                 }
                                 sb3.append(str5);
@@ -3658,7 +3658,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                             recModel.initParams.put("spm", str6);
                             StringBuilder sb4 = new StringBuilder();
                             sb4.append(recModel.actionUrl);
-                            if (TextUtils.isEmpty(str6)) {
+                            if (StringUtils.isEmpty(str6)) {
                                 str2 = "";
                             } else {
                                 str2 = "&livehomeSpm=" + str6;
@@ -3667,11 +3667,11 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                             recModel.actionUrl = sb4.toString();
                             recModel.initParams.put(j.PARAM_LIVEHOME_SPM, str6);
                             Map<String, String> map2 = this.J;
-                            if (map2 != null && !TextUtils.isEmpty(map2.get(j.PARAM_LIVEHOMEMIX))) {
+                            if (map2 != null && !StringUtils.isEmpty(map2.get(j.PARAM_LIVEHOMEMIX))) {
                                 recModel.initParams.put(j.PARAM_LIVEHOMEMIX, this.J.get(j.PARAM_LIVEHOMEMIX));
                             }
                         } else {
-                            if (!TextUtils.isEmpty(this.S.n)) {
+                            if (!StringUtils.isEmpty(this.S.n)) {
                                 str5 = this.S.n;
                             }
                             if (recModel.actionUrl.contains("?")) {
@@ -3710,7 +3710,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                     }
                 }
             }
-            if (!TextUtils.isEmpty(recModel.actionUrl)) {
+            if (!StringUtils.isEmpty(recModel.actionUrl)) {
                 if (j.c() && !recModel.actionUrl.contains(j.PARAM_LIVEHOMEMIX)) {
                     if (recModel.actionUrl.contains("?")) {
                         recModel.actionUrl += "&" + j.PARAM_LIVEHOMEMIX + "=true";
@@ -3995,7 +3995,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         com.taobao.taolive.sdk.utils.m.a("TBLiveService", "startZoomWindow triggerMode = " + str);
         HashMap hashMap = new HashMap();
         com.taobao.taolive.sdk.ui.media.d c = com.taobao.taolive.sdk.playcontrol.c.c(this.P);
-        if (c != null && c.d() != null && !TextUtils.isEmpty(c.e())) {
+        if (c != null && c.d() != null && !StringUtils.isEmpty(c.e())) {
             hashMap.put(aw.PARAM_PLAY_URL, c.e());
             hashMap.put(CommandID.seekTo, String.valueOf(c.m()));
             hashMap.put("loop", c.p() ? "true" : "false");
@@ -4033,14 +4033,14 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         e("initMute preMute = " + queryParameter);
         if (!sst.a()) {
             e("initMute isIndependentMuteABOpen false");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return;
             }
             com.taobao.taolive.sdk.ui.media.mute.b.a(this.H, v.a(queryParameter, false));
             return;
         }
         e("initMute isIndependentMuteABOpen true");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             e = sst.d();
         } else {
             e = v.e(queryParameter);
@@ -4095,7 +4095,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         poz.q(str, this.S);
         poz.Z(this.J.get(aw.PARAM_LIVE_IS_AD), this.S);
         String c = poz.c(this.S);
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             Uri uri = this.Q;
             if (uri == null) {
                 uri = Uri.parse(c);
@@ -4110,7 +4110,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
                 if (activity != null && activity.getIntent() != null && (extras = activity.getIntent().getExtras()) != null) {
                     str3 = extras.getString(aw.PARAM_UT_PARAMS);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     queryParameter = str3;
                 }
                 poz.A(Uri.encode(queryParameter), this.S);
@@ -4124,7 +4124,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             poz.o(Uri.encode(uri.getQueryParameter("utparamPre")), this.S);
             poz.p(uri.getQueryParameter("livesourcePre"), this.S);
             poz.N(uri.getQueryParameter("singleLiveTabSessionId"), this.S);
-            if (TextUtils.isEmpty(poz.r(this.S))) {
+            if (StringUtils.isEmpty(poz.r(this.S))) {
                 poz.N(UTDevice.getUtdid(activity) + "_" + System.currentTimeMillis(), this.S);
             }
         }
@@ -4188,7 +4188,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a6fe962d", new Object[]{this});
         }
-        String valueOf = !TextUtils.isEmpty(this.c) ? String.valueOf(this.c.hashCode()) : "";
+        String valueOf = !StringUtils.isEmpty(this.c) ? String.valueOf(this.c.hashCode()) : "";
         Random random = new Random();
         return valueOf + "_" + System.currentTimeMillis() + random.nextInt(1000);
     }
@@ -4205,7 +4205,7 @@ public class q extends com.taobao.taolive.sdk.controller.b implements View.OnCli
             if (obj instanceof Boolean) {
                 this.S.D = ((Boolean) obj).booleanValue();
             }
-            if (TextUtils.isEmpty(this.ae)) {
+            if (StringUtils.isEmpty(this.ae)) {
                 return;
             }
             this.S.D = true;

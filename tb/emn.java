@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.support.v7.widget.AliSMainGalleryRecyclerView;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -86,7 +86,7 @@ public class emn {
             }
             for (AURARenderComponent aURARenderComponent : a2) {
                 if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null) {
-                    if (TextUtils.equals(aURARenderComponent.data.fields.get("code") instanceof String ? (String) aURARenderComponent.data.fields.get("code") : "", str)) {
+                    if (StringUtils.equals(aURARenderComponent.data.fields.get("code") instanceof String ? (String) aURARenderComponent.data.fields.get("code") : "", str)) {
                         a(recyclerView, aURARenderComponent, a2);
                     }
                 }
@@ -98,7 +98,7 @@ public class emn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9f1b1a21", new Object[]{recyclerView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             arc.a().c("AliSMainGalleryRecyclerViewScroller", "scrollToMainGalleryFrame", "recyclerView is null or frameComponentKey is null or globalData is null");
         } else {
             RecyclerView.Adapter adapter = recyclerView.getAdapter();

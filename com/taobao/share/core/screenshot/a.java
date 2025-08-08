@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -274,7 +274,7 @@ public class a {
 
     private boolean a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : (TextUtils.isEmpty(str) || (!str.toLowerCase().contains("tencent") && !str.toLowerCase().contains("qq") && !str.toLowerCase().contains(nyk.KEY_SHARE_CONFIG_WEIXIN) && !str.toLowerCase().contains("wechat"))) && str != null && str2 != null && (str2.toLowerCase().contains("screenshot") || str.toLowerCase().contains("screenshot") || str2.toLowerCase().contains(g) || str.toLowerCase().contains(g));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : (StringUtils.isEmpty(str) || (!str.toLowerCase().contains("tencent") && !str.toLowerCase().contains("qq") && !str.toLowerCase().contains(nyk.KEY_SHARE_CONFIG_WEIXIN) && !str.toLowerCase().contains("wechat"))) && str != null && str2 != null && (str2.toLowerCase().contains("screenshot") || str.toLowerCase().contains("screenshot") || str2.toLowerCase().contains(g) || str.toLowerCase().contains(g));
     }
 
     private boolean a(long j) {
@@ -305,7 +305,7 @@ public class a {
             return (ShareContent) ipChange.ipc$dispatch("3178c39c", new Object[]{this, str});
         }
         String d = d();
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return null;
         }
         ShareContent shareContent = new ShareContent();
@@ -343,7 +343,7 @@ public class a {
         }
         String string = nym.a().getSharedPreferences("TB_Detail", 0).getString(nyo.SP_KEY_AFFECTION_DETAIL, "");
         String str = "getItemDetailShareContent： " + string;
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             nys.a("TB_Detail", string);
             return string;
         }

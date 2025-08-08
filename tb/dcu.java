@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,7 +81,7 @@ public class dcu extends dbz {
         }
         String str = "";
         String str2 = map == null ? str : map.get(dcq.d);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "12";
         }
         hashMap.put("code", str2);

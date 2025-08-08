@@ -1,7 +1,7 @@
 package com.tencent.mm.opensdk.modelbiz;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import tb.kge;
@@ -29,7 +29,7 @@ public class WXLaunchWxaRedirectingPage {
 
         @Override // com.tencent.mm.opensdk.modelbase.BaseReq
         public boolean checkArgs() {
-            return !TextUtils.isEmpty(this.invokeTicket);
+            return !StringUtils.isEmpty(this.invokeTicket);
         }
 
         public void fromArray(String[] strArr) {

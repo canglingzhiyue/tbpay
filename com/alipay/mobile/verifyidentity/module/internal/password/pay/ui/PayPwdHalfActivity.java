@@ -5,7 +5,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -208,7 +208,7 @@ public class PayPwdHalfActivity extends PayPwdCommonActivity {
             return;
         }
         String string = getIntent().getExtras().getString("title");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.mTitle.setText(string);
         } else {
             this.mTitle.setText(getLocaleStringResource(R.string.sg_pwd_default_title));

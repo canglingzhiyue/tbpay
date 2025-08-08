@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.request.ByteArrayEntry;
 import anetwork.channel.NetworkCallBack;
 import anetwork.channel.NetworkEvent;
@@ -64,7 +64,7 @@ public class a {
             r rVar = new r();
             rVar.a("status_code", String.valueOf(data.getInt("status_code", 0)));
             String string = data.getString("status");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 rVar.a("status", string);
             }
             if (message.what == -1) {
@@ -170,7 +170,7 @@ public class a {
                 while (keys.hasNext()) {
                     String next = keys.next();
                     String string3 = optJSONObject.getString(next);
-                    if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(string3)) {
                         requestImpl.addHeader(next, string3);
                     }
                 }

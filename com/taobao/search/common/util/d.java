@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import com.taobao.taobao.R;
@@ -108,25 +108,25 @@ public final class d {
                 return;
             }
             String str5 = str;
-            if (TextUtils.isEmpty(str5) && TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str5) && StringUtils.isEmpty(str2)) {
                 return;
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 builder.setTitle(str5);
             }
             String str6 = str2;
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 builder.setMessage(str6);
             }
             if (onClickListener != null) {
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = com.alibaba.ability.localization.b.a(R.string.app_confirm);
                 }
                 builder.setPositiveButton(str3, onClickListener);
             }
             if (onClickListener2 != null) {
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     str4 = com.alibaba.ability.localization.b.a(R.string.app_cancel);
                 }
                 builder.setNegativeButton(str4, onClickListener2);

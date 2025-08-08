@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -202,14 +202,14 @@ public class dye extends a {
             textView.setText(this.e.c);
             String str = this.e.d;
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     textView.setTextColor(c.a(str));
                 }
             } catch (IllegalArgumentException e) {
                 i.a("DetailDivision", "parse color error", e);
             }
             String str2 = this.e.b;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 epj.b().a(str2, detailImageView, new epl.a().a(true).a());
             } else {
                 detailImageView.setVisibility(8);
@@ -230,7 +230,7 @@ public class dye extends a {
                 findViewById2.setBackgroundColor(a2);
             }
             String str3 = this.e.b;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 epj.b().a(str3, detailImageView2, new epl.a().a(true).a());
             } else {
                 detailImageView2.setVisibility(8);

@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Looper;
 import android.os.Trace;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.Choreographer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -518,7 +518,7 @@ public class ADaemon {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fb5e867d", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (process = ProcessController.getInstance().getProcess(str)) == null) {
+        if (StringUtils.isEmpty(str) || (process = ProcessController.getInstance().getProcess(str)) == null) {
             return false;
         }
         return process.c();
@@ -530,7 +530,7 @@ public class ADaemon {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4e5cef48", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (process = ProcessController.getInstance().getProcess(str)) == null || !process.c()) {
+        if (StringUtils.isEmpty(str) || (process = ProcessController.getInstance().getProcess(str)) == null || !process.c()) {
             return true;
         }
         return process.a();

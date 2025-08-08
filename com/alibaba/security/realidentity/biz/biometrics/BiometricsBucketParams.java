@@ -3,7 +3,7 @@ package com.alibaba.security.realidentity.biz.biometrics;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.MTopManager;
 import com.alibaba.security.common.http.interfaces.OnHttpCallBack;
 import com.alibaba.security.common.http.model.HttpRequest;
@@ -285,7 +285,7 @@ public class BiometricsBucketParams extends BucketParams {
             this.d.getBiometricsConfig().secToken = this.b;
             this.d.getBiometricsConfig().isSessionless = rPBusinessHeadParams.sessionless;
             this.d.getBiometricsConfig().needOriginalImage = rPBusinessHeadParams.needOriginalImage;
-            if (!TextUtils.isEmpty(rPBusinessHeadParams.userName)) {
+            if (!StringUtils.isEmpty(rPBusinessHeadParams.userName)) {
                 this.d.getBiometricsConfig().userName = rPBusinessHeadParams.userName;
             }
             List<Integer> list = rPBusinessHeadParams.bioStepsEx;
@@ -368,7 +368,7 @@ public class BiometricsBucketParams extends BucketParams {
             StepItem biometricsStepItem = startHttpResponse.getBiometricsStepItem();
             this.d.getBiometricsConfig().reachBusinessRetryLimit = startHttpResponse.isLimited();
             this.d.getBiometricsConfig().secToken = this.b;
-            if (extraInfoBean != null && (identityInfo = extraInfoBean.identityInfo) != null && !TextUtils.isEmpty(identityInfo.name)) {
+            if (extraInfoBean != null && (identityInfo = extraInfoBean.identityInfo) != null && !StringUtils.isEmpty(identityInfo.name)) {
                 this.d.getBiometricsConfig().userName = extraInfoBean.identityInfo.name;
             }
             this.d.getBiometricsConfig().bizConf = startHttpResponse.obtainDazzleConfig();
@@ -467,10 +467,10 @@ public class BiometricsBucketParams extends BucketParams {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             arrayList.add("flActionLog");
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             arrayList.add("sensorActionLog");
         }
         TrackLog createRiskStartLog = TrackLog.createRiskStartLog(this.f, arrayList, str3);
@@ -487,7 +487,7 @@ public class BiometricsBucketParams extends BucketParams {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str) && (livenessInnerConfig = (LivenessInnerConfig) com.alibaba.security.realidentity.b.a(str, LivenessInnerConfig.class, true)) != null) {
+        } else if (!StringUtils.isEmpty(str) && (livenessInnerConfig = (LivenessInnerConfig) com.alibaba.security.realidentity.b.a(str, LivenessInnerConfig.class, true)) != null) {
             if (livenessInnerConfig.adjustStep >= 0) {
                 this.d.getBiometricsConfig().stepAdjust = livenessInnerConfig.adjustStep == 1;
             }

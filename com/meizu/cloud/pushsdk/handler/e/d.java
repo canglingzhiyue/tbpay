@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.NotificationService;
 import com.meizu.cloud.pushsdk.b;
@@ -43,7 +43,7 @@ public class d extends a<MessageV3> {
     /* renamed from: f  reason: avoid collision after fix types in other method */
     private String f2(MessageV3 messageV3) {
         String selfDefineContentString = MzPushMessage.fromMessageV3(messageV3).getSelfDefineContentString();
-        if (!TextUtils.isEmpty(selfDefineContentString)) {
+        if (!StringUtils.isEmpty(selfDefineContentString)) {
             try {
                 return new JSONObject(selfDefineContentString).getString("package_name");
             } catch (JSONException unused) {
@@ -77,9 +77,9 @@ public class d extends a<MessageV3> {
         if (PushConstants.MZ_PUSH_ON_MESSAGE_ACTION.equals(intent.getAction()) && PushConstants.MZ_PUSH_MESSAGE_METHOD_ACTION_NOTIFICATION_SHOW_V3.equals(e(intent))) {
             return true;
         }
-        if (TextUtils.isEmpty(e(intent))) {
+        if (StringUtils.isEmpty(e(intent))) {
             String stringExtra = intent.getStringExtra("message");
-            if (!TextUtils.isEmpty(stringExtra) && b(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra) && b(stringExtra)) {
                 DebugLogger.e("AbstractMessageHandler", "old cloud notification message");
                 return true;
             }
@@ -117,7 +117,7 @@ public class d extends a<MessageV3> {
     /* renamed from: e  reason: avoid collision after fix types in other method */
     public boolean b(MessageV3 messageV3) {
         String uriPackageName = messageV3.getUriPackageName();
-        if (!TextUtils.isEmpty(uriPackageName) && !MzSystemUtils.isPackageInstalled(c(), uriPackageName)) {
+        if (!StringUtils.isEmpty(uriPackageName) && !MzSystemUtils.isPackageInstalled(c(), uriPackageName)) {
             DebugLogger.i("AbstractMessageHandler", "canSendMessage isPackageInstalled false");
             return false;
         } else if (Build.VERSION.SDK_INT < 31 || messageV3.getClickType() != 3) {
@@ -172,7 +172,7 @@ public class d extends a<MessageV3> {
         int i2;
         String str;
         if (messageV3.getBrightRemindSetting() == null || !messageV3.getBrightRemindSetting().getIsBrightRemind() || MzSystemUtils.isInteractive(c())) {
-            if (messageV3.getAdvertisementOption() != null && !TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdInstallPackage())) {
+            if (messageV3.getAdvertisementOption() != null && !StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdInstallPackage())) {
                 com.meizu.cloud.pushsdk.util.d.a(c(), messageV3.getAdvertisementOption().getAdInstallPackage(), messageV3.getDeviceId(), messageV3.getTaskId(), messageV3.getSeqId(), messageV3.getPushTimestamp());
                 return 5;
             } else if (messageV3.getTimeDisplaySetting() == null || !messageV3.getTimeDisplaySetting().isTimeDisplay()) {
@@ -224,7 +224,7 @@ public class d extends a<MessageV3> {
         String startShowTime = messageV3.getTimeDisplaySetting().getStartShowTime();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String str = null;
-        if (!TextUtils.isEmpty(startShowTime)) {
+        if (!StringUtils.isEmpty(startShowTime)) {
             str = simpleDateFormat.format(new Date(Long.valueOf(startShowTime).longValue()));
         }
         long longValue = Long.valueOf(startShowTime).longValue() - System.currentTimeMillis();

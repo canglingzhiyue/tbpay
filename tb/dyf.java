@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.os.SystemClock;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.aura.utils.i;
@@ -199,7 +199,7 @@ public class dyf extends dxz {
                     break;
                 }
                 b bVar = this.f.get(i);
-                if (!TextUtils.isEmpty(bVar.mLocatorId) && bVar.mLocatorId.toLowerCase().contains(RateNode.TAG)) {
+                if (!StringUtils.isEmpty(bVar.mLocatorId) && bVar.mLocatorId.toLowerCase().contains(RateNode.TAG)) {
                     this.l = i;
                     break;
                 }
@@ -281,7 +281,7 @@ public class dyf extends dxz {
         if (this.h != null && this.h.a()) {
             return c(str);
         }
-        if (!TextUtils.isEmpty(str) && this.c != null) {
+        if (!StringUtils.isEmpty(str) && this.c != null) {
             for (final int i2 = 0; i2 < this.c.getCount(); i2++) {
                 if (str.equals(((b) this.c.getItem(i2)).mLocatorId)) {
                     edj edjVar = new edj();
@@ -363,7 +363,7 @@ public class dyf extends dxz {
         bnv k = this.h.c().k();
         if (k != null && k.f() != null) {
             final List<IDMComponent> f = k.f();
-            if (!TextUtils.isEmpty(str) && f != null) {
+            if (!StringUtils.isEmpty(str) && f != null) {
                 for (final int i2 = 0; i2 < f.size(); i2++) {
                     IDMComponent iDMComponent = f.get(i2);
                     if (a(iDMComponent) != null && str.contains(a(iDMComponent))) {

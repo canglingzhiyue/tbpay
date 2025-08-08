@@ -3,7 +3,7 @@ package com.taobao.android.sku.utils;
 import android.content.Context;
 import android.os.Build;
 import android.support.v4.app.NotificationManagerCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.ultron.vfw.widget.a;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,7 +25,7 @@ public class p {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("93897a37", new Object[]{context, new Integer(i), str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if ("HUAWEI".equalsIgnoreCase(Build.MANUFACTURER) && Build.VERSION.SDK_INT >= 21 && Build.VERSION.SDK_INT < 29 && !NotificationManagerCompat.from(context).areNotificationsEnabled()) {
                 a.a(context, str);

@@ -1,0 +1,17 @@
+{
+  "clickMaidian": {
+    "name": "click-moreliveEntrance",
+    "params": "newRoomType=0,account_id=1652864050,spm-url=,liveSource=null,livestatus=0,entrySpm=a2141.8001240,entryLiveSource=homepage,spm-cnt=a2141.8001240,roomType=0,feed_id=371981273086,showstatus=0"
+  },
+  "designLocation": "0",
+  "hasAttend": "false",
+  "imageUrl": "https://img.alicdn.com/tfs/TB1DdGbyKL2gK0jSZPhXXahvXXa-72-72.png",
+  "isHead": "false",
+  "showMaidian": {
+    "name": "show-moreliveEntrance",
+    "params": "newRoomType=0,account_id=1652864050,spm-url=,liveSource=null,livestatus=0,entrySpm=a2141.8001240,entryLiveSource=homepage,spm-cnt=a2141.8001240,roomType=0,feed_id=371981273086,showstatus=0"
+  },
+  "showStatus": "0",
+  "templateName": "taolive_live_morelive_entry",
+  "title": "更多直播"
+}

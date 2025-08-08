@@ -2,7 +2,7 @@ package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.bm;
 import com.xiaomi.push.ih;
 import com.xiaomi.push.jb;
@@ -81,7 +81,7 @@ public class av {
     /* JADX INFO: Access modifiers changed from: private */
     public static String c(List<String> list) {
         String a2 = bm.a(d(list));
-        return (TextUtils.isEmpty(a2) || a2.length() <= 4) ? "" : a2.substring(0, 4).toLowerCase();
+        return (StringUtils.isEmpty(a2) || a2.length() <= 4) ? "" : a2.substring(0, 4).toLowerCase();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -93,7 +93,7 @@ public class av {
         ArrayList<String> arrayList = new ArrayList(list);
         Collections.sort(arrayList, Collator.getInstance(Locale.CHINA));
         for (String str2 : arrayList) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str = str + ",";
             }
             str = str + str2;

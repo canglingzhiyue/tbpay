@@ -1,6 +1,6 @@
 package com.taobao.avplayer.core.protocol;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.triver.triver_shop.newShop.ext.g;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.core.IDWObject;
@@ -68,7 +68,7 @@ public class DWInteractiveVideoObject implements IDWObject {
             return "";
         }
         String optString = ((JSONObject) opt).optString("backCoverUrl");
-        return TextUtils.isEmpty(optString) ? "" : optString;
+        return StringUtils.isEmpty(optString) ? "" : optString;
     }
 
     public JSONArray getInteractive(String str) {
@@ -162,7 +162,7 @@ public class DWInteractiveVideoObject implements IDWObject {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e6c81f36", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && str.startsWith("$") && (jsTemplates = getJsTemplates()) != null && jsTemplates.optString(str.substring(1)) != null) {
+        if (!StringUtils.isEmpty(str) && str.startsWith("$") && (jsTemplates = getJsTemplates()) != null && jsTemplates.optString(str.substring(1)) != null) {
             return jsTemplates.optString(str.substring(1));
         }
         return null;
@@ -174,7 +174,7 @@ public class DWInteractiveVideoObject implements IDWObject {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("199af399", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && str.startsWith("$") && (jsTemplateUrls = getJsTemplateUrls()) != null && jsTemplateUrls.optString(str.substring(1)) != null) {
+        if (!StringUtils.isEmpty(str) && str.startsWith("$") && (jsTemplateUrls = getJsTemplateUrls()) != null && jsTemplateUrls.optString(str.substring(1)) != null) {
             return jsTemplateUrls.optString(str.substring(1));
         }
         return null;

@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.richtext;
 
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ClickableSpan;
 import android.text.style.ImageSpan;
 import com.alibaba.fastjson.JSONArray;
@@ -120,7 +120,7 @@ public class RichText extends Text {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7ff29263", new Object[]{this, uINode, str, mUSValue})).booleanValue();
         }
-        if (TextUtils.equals(str, "value")) {
+        if (StringUtils.equals(str, "value")) {
             setValue((JSONArray) mUSValue.getValue());
             return true;
         }
@@ -209,7 +209,7 @@ public class RichText extends Text {
         } else if (mUSDKInstance.getImageAdapter() != null) {
             for (jxe jxeVar : this.imageSpans) {
                 String f = jxeVar.f();
-                if (!TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(f)) {
                     mUSDKInstance.getImageAdapter().a(mUSDKInstance.getUIContext(), f, jxeVar, MUSImageQuality.AUTO);
                 }
             }
@@ -297,7 +297,7 @@ public class RichText extends Text {
             return;
         }
         super.onUpdateExtra(uINode, obj, str, obj2);
-        if (!TextUtils.equals(str, EXTRA_RELEASE_SPAN) || getInstance() == null || (list = (List) obj2) == null) {
+        if (!StringUtils.equals(str, EXTRA_RELEASE_SPAN) || getInstance() == null || (list = (List) obj2) == null) {
             return;
         }
         unmountImageSpans(getInstance(), list);

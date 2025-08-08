@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.template.download.DXTemplateItem;
 
@@ -23,12 +23,12 @@ public class fxb {
 
     public static boolean a(String str, DXTemplateItem dXTemplateItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4df0205f", new Object[]{str, dXTemplateItem})).booleanValue() : a(dXTemplateItem) && !TextUtils.isEmpty(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4df0205f", new Object[]{str, dXTemplateItem})).booleanValue() : a(dXTemplateItem) && !StringUtils.isEmpty(str);
     }
 
     public static boolean a(DXTemplateItem dXTemplateItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3a042615", new Object[]{dXTemplateItem})).booleanValue() : dXTemplateItem != null && !TextUtils.isEmpty(dXTemplateItem.f11925a) && dXTemplateItem.b > -1;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3a042615", new Object[]{dXTemplateItem})).booleanValue() : dXTemplateItem != null && !StringUtils.isEmpty(dXTemplateItem.f11925a) && dXTemplateItem.b > -1;
     }
 
     public static long a(String[] strArr) {

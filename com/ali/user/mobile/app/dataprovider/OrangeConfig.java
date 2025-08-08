@@ -1,6 +1,6 @@
 package com.ali.user.mobile.app.dataprovider;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.utils.LanguageUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.config.LoginSwitch;
@@ -42,11 +42,11 @@ public class OrangeConfig {
         }
         BooleanOrangeResult booleanOrangeResult = new BooleanOrangeResult();
         String config = LoginSwitch.getConfig(str, "none");
-        if (TextUtils.equals(config, "none")) {
+        if (StringUtils.equals(config, "none")) {
             booleanOrangeResult.orangeExist = false;
         } else {
             booleanOrangeResult.orangeExist = true;
-            booleanOrangeResult.value = TextUtils.equals("true", config);
+            booleanOrangeResult.value = StringUtils.equals("true", config);
         }
         return booleanOrangeResult;
     }
@@ -72,7 +72,7 @@ public class OrangeConfig {
         }
         StringOrangeResult stringOrangeResult = new StringOrangeResult();
         String config = LoginSwitch.getConfig(str, "none");
-        if (TextUtils.equals(config, "none")) {
+        if (StringUtils.equals(config, "none")) {
             stringOrangeResult.orangeExist = false;
         } else {
             stringOrangeResult.orangeExist = true;
@@ -103,7 +103,7 @@ public class OrangeConfig {
         }
         IntOrangeResult intOrangeResult = new IntOrangeResult();
         String config = LoginSwitch.getConfig(str, "none");
-        if (TextUtils.equals(config, "none")) {
+        if (StringUtils.equals(config, "none")) {
             intOrangeResult.orangeExist = false;
         } else {
             intOrangeResult.orangeExist = true;

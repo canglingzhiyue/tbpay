@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.content.pm.Signature;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidException;
 import com.huawei.hms.support.log.HMSLog;
 import java.io.IOException;
@@ -77,7 +77,7 @@ public class PackageManagerHelper {
     }
 
     public PackageStates getPackageStates(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return PackageStates.NOT_INSTALLED;
         }
         try {

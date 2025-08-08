@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.image.ImageStrategyConfig;
@@ -58,14 +58,14 @@ public class onq {
         if (!e) {
             return str2;
         }
-        if (!TextUtils.isEmpty(str) && d.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && d.containsKey(str)) {
             return d.get(str);
         }
         String str3 = f32217a;
         if (str3 != null) {
             str2 = str3;
         }
-        if (!TextUtils.isEmpty(str) && TextUtils.equals(str2, "homepage-ads") && d.size() < 200) {
+        if (!StringUtils.isEmpty(str) && StringUtils.equals(str2, "homepage-ads") && d.size() < 200) {
             d.put(str, str2);
         }
         return str2;
@@ -79,14 +79,14 @@ public class onq {
         if (!e) {
             return imageStrategyConfig;
         }
-        if (!TextUtils.isEmpty(str) && c.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && c.containsKey(str)) {
             return c.get(str);
         }
         ImageStrategyConfig imageStrategyConfig2 = b;
         if (imageStrategyConfig2 != null) {
             imageStrategyConfig = imageStrategyConfig2;
         }
-        if (!TextUtils.isEmpty(str) && imageStrategyConfig != null && imageStrategyConfig == IMAGE_STRATEGY_CONFIG && d.size() < 200) {
+        if (!StringUtils.isEmpty(str) && imageStrategyConfig != null && imageStrategyConfig == IMAGE_STRATEGY_CONFIG && d.size() < 200) {
             c.put(str, imageStrategyConfig);
         }
         return imageStrategyConfig;
@@ -100,11 +100,11 @@ public class onq {
         if (!e) {
             return str2;
         }
-        if (!TextUtils.isEmpty(str) && c.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && c.containsKey(str)) {
             return String.valueOf(c.get(str).e());
         }
         ImageStrategyConfig imageStrategyConfig = b;
-        if (!TextUtils.isEmpty(str) && imageStrategyConfig != null && imageStrategyConfig == IMAGE_STRATEGY_CONFIG && c.size() < 200) {
+        if (!StringUtils.isEmpty(str) && imageStrategyConfig != null && imageStrategyConfig == IMAGE_STRATEGY_CONFIG && c.size() < 200) {
             c.put(str, imageStrategyConfig);
         }
         return imageStrategyConfig != null ? String.valueOf(imageStrategyConfig.e()) : str2;

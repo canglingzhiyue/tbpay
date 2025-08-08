@@ -3,7 +3,7 @@ package com.alibaba.android.umbrella.performance;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.performance.a;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -115,7 +115,7 @@ public class UmbrellaProcessTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("99c41ee5", new Object[]{str, dVar, str2, new Long(j)});
-        } else if (com.alibaba.android.umbrella.trace.c.b(str) || dVar == null || TextUtils.isEmpty(str2) || !isContainBiz(str)) {
+        } else if (com.alibaba.android.umbrella.trace.c.b(str) || dVar == null || StringUtils.isEmpty(str2) || !isContainBiz(str)) {
         } else {
             sendProcessEvent(new a.C0107a(str).a(4).a(dVar).a(str2).a(j).a());
         }
@@ -135,7 +135,7 @@ public class UmbrellaProcessTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cea77ec3", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
         } else {
             HashMap hashMap = new HashMap();
             hashMap.put(str2, str3);
@@ -147,7 +147,7 @@ public class UmbrellaProcessTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c18111f", new Object[]{str, str2});
-        } else if (com.alibaba.android.umbrella.trace.c.b(str) || TextUtils.isEmpty(str2) || !isContainBiz(str)) {
+        } else if (com.alibaba.android.umbrella.trace.c.b(str) || StringUtils.isEmpty(str2) || !isContainBiz(str)) {
         } else {
             sendProcessEvent(new a.C0107a(str).a(7).d(str2).a());
         }
@@ -157,7 +157,7 @@ public class UmbrellaProcessTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5436afc7", new Object[]{str, str2, str3});
-        } else if (com.alibaba.android.umbrella.trace.c.b(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || !isContainBiz(str)) {
+        } else if (com.alibaba.android.umbrella.trace.c.b(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || !isContainBiz(str)) {
         } else {
             sendProcessEvent(new a.C0107a(str).a(6).b(str2).c(str3).a());
         }
@@ -177,7 +177,7 @@ public class UmbrellaProcessTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("97bff89", new Object[]{str, str2, new Long(j)});
-        } else if (com.alibaba.android.umbrella.trace.c.b(str) || TextUtils.isEmpty(str2) || !isContainBiz(str)) {
+        } else if (com.alibaba.android.umbrella.trace.c.b(str) || StringUtils.isEmpty(str2) || !isContainBiz(str)) {
         } else {
             sendProcessEvent(new a.C0107a(str).a(8).a(j).a(str2).a());
         }

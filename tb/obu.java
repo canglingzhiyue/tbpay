@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
@@ -157,7 +157,7 @@ public final class obu {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("50938a53", new Object[0]);
         }
-        if (TextUtils.isEmpty(e) && e() != null) {
+        if (StringUtils.isEmpty(e) && e() != null) {
             e = e().getPackageName();
         }
         return e;

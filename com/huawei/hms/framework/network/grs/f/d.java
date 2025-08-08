@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ServiceNode;
@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class d extends a {
     public d(Context context, String str, boolean z) {
         this.e = z;
-        if (a(TextUtils.isEmpty(str) ? "grs_app_global_route_config.json" : str, context) == 0) {
+        if (a(StringUtils.isEmpty(str) ? "grs_app_global_route_config.json" : str, context) == 0) {
             this.d = true;
         }
     }

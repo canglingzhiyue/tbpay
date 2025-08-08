@@ -2,7 +2,7 @@ package com.taobao.message.kit.util;
 
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.WindowManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
@@ -34,7 +34,7 @@ public class ImageUrlUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c6415a54", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Rect generateImageSize = generateImageSize(str);
@@ -56,12 +56,12 @@ public class ImageUrlUtil {
             return (Rect) ipChange.ipc$dispatch("c9e0e0a1", new Object[]{str});
         }
         Rect rect = new Rect(0, 0, -1, -1);
-        if (!TextUtils.isEmpty(str) && (split = str.split("\\?")) != null && split.length == 2 && (str2 = split[1]) != null && (split2 = str2.split("&")) != null && split2.length > 0) {
+        if (!StringUtils.isEmpty(str) && (split = str.split("\\?")) != null && split.length == 2 && (str2 = split[1]) != null && (split2 = str2.split("&")) != null && split2.length > 0) {
             for (String str3 : split2) {
                 if (str3 != null && (split3 = str3.split("=")) != null && split3.length == 2) {
-                    if (split3[0].equals("width") && TextUtils.isDigitsOnly(split3[1])) {
+                    if (split3[0].equals("width") && StringUtils.isDigitsOnly(split3[1])) {
                         rect.right = Integer.parseInt(split3[1]);
-                    } else if (split3[0].equals("height") && TextUtils.isDigitsOnly(split3[1])) {
+                    } else if (split3[0].equals("height") && StringUtils.isDigitsOnly(split3[1])) {
                         rect.bottom = Integer.parseInt(split3[1]);
                     }
                 }
@@ -75,7 +75,7 @@ public class ImageUrlUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("46cef7b0", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         StringBuilder sb = new StringBuilder();
@@ -162,13 +162,13 @@ public class ImageUrlUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("39baf54d", new Object[]{str, new Integer(i), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.indexOf(63) == -1) {
             str = str + "?";
         }
-        if (TextUtils.isEmpty(str) || str.contains(THUMBWIDTH) || str.contains(THUMBHEIGHT)) {
+        if (StringUtils.isEmpty(str) || str.contains(THUMBWIDTH) || str.contains(THUMBHEIGHT)) {
             return str;
         }
         return str + "&" + THUMBWIDTH + "=" + i + "&" + THUMBHEIGHT + "=" + i2;

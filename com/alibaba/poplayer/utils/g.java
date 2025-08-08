@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.qrcode.result.Result;
@@ -47,7 +47,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || str.equals("*") || str.equals("-")) {
+        if (StringUtils.isEmpty(str) || str.equals("*") || str.equals("-")) {
             return true;
         }
         try {
@@ -59,7 +59,7 @@ public class g {
                     String[] split = str.substring(indexOf + 1).split(",");
                     if (split.length > 0) {
                         for (String str3 : split) {
-                            if (!TextUtils.isEmpty(str3)) {
+                            if (!StringUtils.isEmpty(str3)) {
                                 try {
                                     if (new h(str3).equals(hVar)) {
                                         return false;
@@ -79,7 +79,7 @@ public class g {
             } else {
                 c.a("CommonConfigRule.versionCheck.no exclude info.", new Object[0]);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return true;
             }
             if (!str.contains("-")) {
@@ -218,7 +218,7 @@ public class g {
         if (Looper.getMainLooper() == Looper.myLooper()) {
             c.a("Utils.convertStreamToString.InMainThread!!!");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         File file = new File(str);
@@ -257,7 +257,7 @@ public class g {
         if (Looper.getMainLooper() == Looper.myLooper()) {
             c.a("Utils.saveStringToFile.InMainThread!!!");
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         BufferedWriter bufferedWriter2 = null;

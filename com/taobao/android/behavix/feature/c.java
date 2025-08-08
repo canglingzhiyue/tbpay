@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.feature;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.DAIKVStoreage;
 import java.util.ArrayList;
@@ -89,7 +89,7 @@ public class c {
         ArrayList arrayList2 = new ArrayList();
         for (b bVar : arrayList) {
             if (j <= 0 || bVar.b >= j) {
-                if (TextUtils.equals(str, bVar.f9184a) && (TextUtils.isEmpty(str2) || TextUtils.equals(str2, bVar.c))) {
+                if (StringUtils.equals(str, bVar.f9184a) && (StringUtils.isEmpty(str2) || StringUtils.equals(str2, bVar.c))) {
                     arrayList2.add(bVar);
                 }
             }

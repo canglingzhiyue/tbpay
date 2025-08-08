@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.widget.calander;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.expression.event.DXEvent;
 import com.taobao.android.dinamicx.expression.expr_v2.f;
@@ -26,7 +26,7 @@ public class DXOnSelectDateEvent extends DXEvent {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("34725f06", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             if (this.data == null) {
                 this.data = new HashMap();

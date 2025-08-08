@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -27,7 +27,7 @@ public class pov {
             toast.cancel();
             f32789a = null;
         }
-        if (context == null || TextUtils.isEmpty(charSequence)) {
+        if (context == null || StringUtils.isEmpty(charSequence)) {
             return;
         }
         Toast makeText = Toast.makeText(context.getApplicationContext(), charSequence, 0);

@@ -1,7 +1,7 @@
 package com.ali.user.open.laxin.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.trace.SDKLogger;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.service.b;
@@ -180,7 +180,7 @@ public class SecurityUtil {
         }
         String processName = getProcessName(context, i);
         SDKLogger.d(TAG, "getPackageName pid:" + i + ",processName:" + processName);
-        if (TextUtils.isEmpty(processName)) {
+        if (StringUtils.isEmpty(processName)) {
             return null;
         }
         int indexOf = processName.indexOf(58);
@@ -256,7 +256,7 @@ public class SecurityUtil {
             if (r1 == 0) goto L69
             r1.close()     // Catch: java.lang.Exception -> L56
         L69:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L91
             java.lang.String r1 = "activity"
             java.lang.Object r5 = r5.getSystemService(r1)

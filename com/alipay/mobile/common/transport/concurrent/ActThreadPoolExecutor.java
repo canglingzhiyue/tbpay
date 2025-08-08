@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.concurrent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.http.HttpTask;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -106,7 +106,7 @@ public class ActThreadPoolExecutor extends ThreadPoolExecutor {
         } else if (!(runnable instanceof HttpTask)) {
         } else {
             HttpTask httpTask = (HttpTask) runnable;
-            if (!TextUtils.isEmpty(httpTask.getOperationType())) {
+            if (!StringUtils.isEmpty(httpTask.getOperationType())) {
                 LogCatUtil.debug("ActThreadPoolExecutor", "beforeExecute: " + this.f5521a + "," + httpTask.getOperationType());
                 return;
             }
@@ -233,7 +233,7 @@ public class ActThreadPoolExecutor extends ThreadPoolExecutor {
         } else if (!(runnable instanceof HttpTask)) {
         } else {
             HttpTask httpTask = (HttpTask) runnable;
-            if (!TextUtils.isEmpty(httpTask.getOperationType())) {
+            if (!StringUtils.isEmpty(httpTask.getOperationType())) {
                 LogCatUtil.debug("ActThreadPoolExecutor", "beforeExecute.await: " + this.f5521a + "," + httpTask.getOperationType());
                 return;
             }

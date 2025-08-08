@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.provider.option;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -96,7 +96,7 @@ public class e implements epk {
 
     private boolean a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (c(str, str2) || b(str, str2));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (c(str, str2) || b(str, str2));
     }
 
     private boolean b(String str, String str2) {

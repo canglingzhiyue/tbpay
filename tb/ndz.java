@@ -7,7 +7,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.alibaba.wireless.security.open.staticdataencrypt.IStaticDataEncryptComponent;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class ndz {
         }
         String proxy_getDeviceId = ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY.proxy_getDeviceId(telephonyManager);
         b = proxy_getDeviceId;
-        if (TextUtils.isEmpty(proxy_getDeviceId)) {
+        if (StringUtils.isEmpty(proxy_getDeviceId)) {
             b = "";
         }
         return b;

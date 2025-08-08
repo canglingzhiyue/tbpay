@@ -1,6 +1,6 @@
 package com.ali.user.open.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.config.ConfigManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -46,7 +46,7 @@ public class Site {
 
     public static boolean isHavanaSite(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1a82e75d", new Object[]{str})).booleanValue() : TextUtils.equals(str, "taobao") || TextUtils.equals(str, ICBU) || TextUtils.equals(str, DAMAI) || TextUtils.equals(str, YABO) || TextUtils.equals(str, YOUKU) || TextUtils.equals(str, ALIYUN_YUNPAN) || TextUtils.equals(str, CAINIAO) || TextUtils.equals(str, CAINIAO2C);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1a82e75d", new Object[]{str})).booleanValue() : StringUtils.equals(str, "taobao") || StringUtils.equals(str, ICBU) || StringUtils.equals(str, DAMAI) || StringUtils.equals(str, YABO) || StringUtils.equals(str, YOUKU) || StringUtils.equals(str, ALIYUN_YUNPAN) || StringUtils.equals(str, CAINIAO) || StringUtils.equals(str, CAINIAO2C);
     }
 
     public static int getHavanaSite(String str) {
@@ -54,34 +54,34 @@ public class Site {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("510b978", new Object[]{str})).intValue();
         }
-        if (TextUtils.equals(str, "taobao")) {
+        if (StringUtils.equals(str, "taobao")) {
             return 0;
         }
-        if (TextUtils.equals(str, ICBU)) {
+        if (StringUtils.equals(str, ICBU)) {
             return 4;
         }
-        if (TextUtils.equals(str, DAMAI)) {
+        if (StringUtils.equals(str, DAMAI)) {
             return 18;
         }
-        if (TextUtils.equals(str, CAINIAO)) {
+        if (StringUtils.equals(str, CAINIAO)) {
             return 21;
         }
-        if (TextUtils.equals(str, "eleme")) {
+        if (StringUtils.equals(str, "eleme")) {
             return 25;
         }
-        if (TextUtils.equals(str, YABO)) {
+        if (StringUtils.equals(str, YABO)) {
             return 28;
         }
-        if (TextUtils.equals(str, KAOLA)) {
+        if (StringUtils.equals(str, KAOLA)) {
             return 39;
         }
-        if (TextUtils.equals(str, ALIYUN_YUNPAN)) {
+        if (StringUtils.equals(str, ALIYUN_YUNPAN)) {
             return 52;
         }
-        if (TextUtils.equals(str, "xianyu")) {
+        if (StringUtils.equals(str, "xianyu")) {
             return 77;
         }
-        return TextUtils.equals(str, CAINIAO2C) ? 78 : 0;
+        return StringUtils.equals(str, CAINIAO2C) ? 78 : 0;
     }
 
     public static String getMtopInstanceTag(String str) {

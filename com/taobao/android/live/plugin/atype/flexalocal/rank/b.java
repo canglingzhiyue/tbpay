@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.rank;
 
 import android.content.Context;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -98,7 +98,7 @@ public class b extends h {
             return;
         }
         JSONObject jSONObject = jSONArray.getJSONObject(0);
-        if (!"tblive-base-openWebview".equals(jSONObject.getString("componentName")) || !"alive".equals(jSONObject.getString("type")) || TextUtils.isEmpty(jSONObject.getString("jumpUrl"))) {
+        if (!"tblive-base-openWebview".equals(jSONObject.getString("componentName")) || !"alive".equals(jSONObject.getString("type")) || StringUtils.isEmpty(jSONObject.getString("jumpUrl"))) {
             return;
         }
         JSONObject jSONObject2 = new JSONObject();
@@ -170,7 +170,7 @@ public class b extends h {
         } else {
             HashMap hashMap = new HashMap();
             hashMap.put("data", jSONObject);
-            if (!TextUtils.isEmpty(string3) && phg.b() != null) {
+            if (!StringUtils.isEmpty(string3) && phg.b() != null) {
                 phg.b().a(string3, hashMap);
             }
             q.b("RankEntranceFrame", "handleEvent: alive, componentName=" + string3);
@@ -181,7 +181,7 @@ public class b extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("564cf206", new Object[]{this, context, str, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.b("RankEntranceFrame", "handleEvent: showRankEntranceH5: h5Url is empty!");
         } else {
             HashMap hashMap = new HashMap();

@@ -1,7 +1,7 @@
 package com.xiaomi.push.service;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.el;
 import com.xiaomi.push.gb;
 import java.io.BufferedReader;
@@ -74,12 +74,12 @@ public class ao {
 
     public static void b() {
         String a2 = a("/proc/self/net/tcp");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("dump tcp for uid = " + Process.myUid());
             com.xiaomi.channel.commonutils.logger.b.m1616a(a2);
         }
         String a3 = a("/proc/self/net/tcp6");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("dump tcp6 for uid = " + Process.myUid());
             com.xiaomi.channel.commonutils.logger.b.m1616a(a3);
         }

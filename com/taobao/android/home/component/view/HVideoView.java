@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -360,7 +360,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("fb8582ac", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     HVideoView.access$1002(HVideoView.this, System.currentTimeMillis());
                     HVideoView hVideoView = HVideoView.this;
@@ -377,7 +377,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, HVideoView.access$900(HVideoView.this), null, null, HVideoView.access$1400(HVideoView.this));
                 }
@@ -465,7 +465,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("fb8582ac", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     HVideoView.access$1002(HVideoView.this, System.currentTimeMillis());
                     HVideoView hVideoView = HVideoView.this;
@@ -482,7 +482,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, HVideoView.access$900(HVideoView.this), null, null, HVideoView.access$1400(HVideoView.this));
                 }
@@ -570,7 +570,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("fb8582ac", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     HVideoView.access$1002(HVideoView.this, System.currentTimeMillis());
                     HVideoView hVideoView = HVideoView.this;
@@ -587,7 +587,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, HVideoView.access$900(HVideoView.this), null, null, HVideoView.access$1400(HVideoView.this));
                 }
@@ -675,7 +675,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("fb8582ac", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     HVideoView.access$1002(HVideoView.this, System.currentTimeMillis());
                     HVideoView hVideoView = HVideoView.this;
@@ -692,7 +692,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
+                } else if (StringUtils.isEmpty(HVideoView.access$900(HVideoView.this))) {
                 } else {
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, HVideoView.access$900(HVideoView.this), null, null, HVideoView.access$1400(HVideoView.this));
                 }
@@ -884,7 +884,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                         String playUrl = z ? ((MonitorMediaPlayer) iMediaPlayer).getPlayUrl() : "";
                         String access$400 = HVideoView.access$400(HVideoView.access$300(HVideoView.this));
                         e.e(HVideoView.TAG, "HVideoView start play. selfId:" + hashCode() + ", playUrl=" + playUrl + ", localPathUrl=" + access$400 + ", videoUrl=" + HVideoView.access$300(HVideoView.this));
-                        if (j.k() && z && !TextUtils.equals(playUrl, access$400)) {
+                        if (j.k() && z && !StringUtils.equals(playUrl, access$400)) {
                             TBS.Ext.commitEvent("Page_Home", 19999, "HVideoView path error", "");
                             try {
                                 HVideoView.access$500(HVideoView.this).pause();
@@ -933,7 +933,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
             ipChange.ipc$dispatch("9e694ff7", new Object[]{this, str});
             return;
         }
-        if (this.enableQueue && !TextUtils.isEmpty(str)) {
+        if (this.enableQueue && !StringUtils.isEmpty(str)) {
             showCoverImageView();
         }
         this.coverImageView.setImageUrl(str);
@@ -951,7 +951,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         } else {
             this.videoUrl = str2;
         }
-        if (TextUtils.isEmpty(this.videoUrl)) {
+        if (StringUtils.isEmpty(this.videoUrl)) {
             str2 = " , original Url = " + str;
         }
         e.e(TAG, "setVideoUrl. selfId:" + hashCode() + ", videoUrl=" + this.videoUrl + str2);
@@ -1027,7 +1027,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         if (this.ivPlayButton == null) {
             this.ivPlayButton = (TUrlImageView) findViewById(R.id.iv_play_btn);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.iconOffsetY = fpr.a(getContext(), str, 0);
         } else {
             this.iconOffsetY = 0;
@@ -1046,7 +1046,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         if (this.ivPlayButton == null) {
             this.ivPlayButton = (TUrlImageView) findViewById(R.id.iv_play_btn);
         }
-        if (this.ivPlayButton == null || TextUtils.isEmpty(str)) {
+        if (this.ivPlayButton == null || StringUtils.isEmpty(str)) {
             return;
         }
         this.iconSize = fpr.a(getContext(), str, 0);
@@ -1172,14 +1172,14 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         }
         if (this.enableQueue && (jSONObject = this.currentData) != null) {
             String string = jSONObject.getString("enqueued");
-            if (this.enableQueue && TextUtils.isEmpty(string)) {
+            if (this.enableQueue && StringUtils.isEmpty(string)) {
                 callbackStatus(2);
                 return;
             }
         }
         boolean newCanPlayVideo = newCanPlayVideo(getContext());
         e.e(TAG, "playVideo  selfId:" + hashCode() + " 是否走新播控逻辑" + newCanPlayVideo + " videoUrl:" + this.videoUrl);
-        if (!this.mCanPlay || TextUtils.isEmpty(this.videoUrl) || !newCanPlayVideo) {
+        if (!this.mCanPlay || StringUtils.isEmpty(this.videoUrl) || !newCanPlayVideo) {
             showCoverImageView();
             this.videoView.release();
             this.videoView.setTag("");
@@ -1193,7 +1193,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
             String a2 = b.a().a(this.videoUrl);
             String mediaPlayUrl = this.videoView.getMediaPlayUrl();
             if (this.videoView.isPlaying()) {
-                if (!isForcePause() || TextUtils.equals(a2, mediaPlayUrl)) {
+                if (!isForcePause() || StringUtils.equals(a2, mediaPlayUrl)) {
                     e.e(TAG, "playVideo  selfId:" + hashCode() + " 当前videoView isPlaying videoUrl:" + this.videoUrl);
                     return;
                 }
@@ -1201,7 +1201,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
             }
             if (a2 != null) {
                 e.e(TAG, "playVideo  selfId:" + hashCode() + " localPath:" + a2 + " lastPath:" + mediaPlayUrl + " videoUrl:" + this.videoUrl);
-                if (!TextUtils.equals(mediaPlayUrl, a2)) {
+                if (!StringUtils.equals(mediaPlayUrl, a2)) {
                     this.videoView.release();
                     this.videoView.setVideoPath(a2);
                     if (k && !checkNeedPlay()) {
@@ -1212,12 +1212,12 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 }
                 e.e(TAG, "playVideo  selfId:" + hashCode() + " localPath:" + a2 + " lastPath:" + mediaPlayUrl + " videoUrl:" + this.videoUrl);
                 if (isForcePause()) {
-                    if (!TextUtils.equals(a2, this.videoView.getMediaPlayUrl())) {
+                    if (!StringUtils.equals(a2, this.videoView.getMediaPlayUrl())) {
                         return;
                     }
                     innerPlayVideo();
                     return;
-                } else if (this.videoView.isPlaying() || !TextUtils.equals(a2, this.videoView.getMediaPlayUrl())) {
+                } else if (this.videoView.isPlaying() || !StringUtils.equals(a2, this.videoView.getMediaPlayUrl())) {
                     return;
                 } else {
                     innerPlayVideo();
@@ -1244,7 +1244,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                         return;
                     }
                     e.e(HVideoView.TAG, "downLoadFinish playVideo  localPath = null; downloadVideo selfId:" + hashCode() + " videoUrl:" + HVideoView.access$300(HVideoView.this) + " downLoadUrl:" + str);
-                    if (this.f12741a != HVideoView.this.currentData || !TextUtils.equals(HVideoView.access$300(HVideoView.this), str)) {
+                    if (this.f12741a != HVideoView.this.currentData || !StringUtils.equals(HVideoView.access$300(HVideoView.this), str)) {
                         return;
                     }
                     e.e(HVideoView.TAG, "downLoadFinish playVideo  data == currentData;");
@@ -1288,7 +1288,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
             this.videoView.setVisibility(0);
             this.videoView.start();
             e.e(TAG, "playVideo  selfId:" + hashCode() + " videoUrl:" + this.videoUrl + "video isPlaying:" + this.videoView.isPlaying() + "sectionBizCode:" + this.sectionBizCode);
-            if (TextUtils.isEmpty(this.mVideoId)) {
+            if (StringUtils.isEmpty(this.mVideoId)) {
                 return;
             }
             this.videoView.registerOnStartListener(this.mOnStartListener);
@@ -1327,7 +1327,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         }
         try {
             String absolutePath = Globals.getApplication().getExternalCacheDir().getAbsolutePath();
-            if (!TextUtils.isEmpty(absolutePath)) {
+            if (!StringUtils.isEmpty(absolutePath)) {
                 return absolutePath + "/recommend/";
             }
         } catch (Throwable unused) {
@@ -1341,11 +1341,11 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3848e5c9", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String str2 = getVideoFileRootPath() + i.a(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             e.e(TAG, "getVideoFilePath empty");
         }
         return str2;
@@ -1359,7 +1359,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
             return;
         }
         if (this.mContext != activity) {
-            if (!TextUtils.equals(TBMainHost.a().getSimpleName(), activity.getLocalClassName())) {
+            if (!StringUtils.equals(TBMainHost.a().getSimpleName(), activity.getLocalClassName())) {
                 return;
             }
             Context context = this.mContext;
@@ -1406,7 +1406,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             String access$400 = HVideoView.access$400(str);
@@ -1551,7 +1551,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1429a872", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mScm) && (jSONObject = this.currentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
+        if (StringUtils.isEmpty(this.mScm) && (jSONObject = this.currentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
             this.mScm = jSONObject2.getString("scm");
         }
         return this.mScm;
@@ -1563,7 +1563,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("edfaa715", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mItemID) && (jSONObject = this.currentData) != null && jSONObject.getJSONObject("item") != null && this.currentData.getJSONObject("item").getJSONObject("0") != null && this.currentData.getJSONObject("item").getJSONObject("0").getJSONObject("clickParam") != null) {
+        if (StringUtils.isEmpty(this.mItemID) && (jSONObject = this.currentData) != null && jSONObject.getJSONObject("item") != null && this.currentData.getJSONObject("item").getJSONObject("0") != null && this.currentData.getJSONObject("item").getJSONObject("0").getJSONObject("clickParam") != null) {
             this.mItemID = this.currentData.getJSONObject("item").getJSONObject("0").getJSONObject("clickParam").getString("itemId");
         }
         return this.mItemID;
@@ -1631,7 +1631,7 @@ public class HVideoView extends FrameLayout implements Application.ActivityLifec
                 if (hVideoView == null) {
                     e.e(HVideoView.TAG, "RecyclerViewStateReceiver  onReceive: hVideo == null");
                     b();
-                } else if (!TextUtils.isEmpty(HVideoView.access$300(hVideoView)) && HVideoView.access$500(hVideoView).getCurrentState() == 0) {
+                } else if (!StringUtils.isEmpty(HVideoView.access$300(hVideoView)) && HVideoView.access$500(hVideoView).getCurrentState() == 0) {
                     hVideoView.playVideo();
                 }
                 if (hVideoView == null) {

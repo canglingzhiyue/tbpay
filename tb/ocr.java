@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes8.dex */
@@ -16,7 +16,7 @@ public class ocr {
         if (ipChange instanceof IpChange) {
             return (oct) ipChange.ipc$dispatch("953ddc6a", new Object[]{str, str2});
         }
-        if ("taopasswordBackflow_goods".equals(str) && !TextUtils.isEmpty(str2)) {
+        if ("taopasswordBackflow_goods".equals(str) && !StringUtils.isEmpty(str2)) {
             return new ocs(str2);
         }
         return null;

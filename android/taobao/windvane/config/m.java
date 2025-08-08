@@ -1,6 +1,6 @@
 package android.taobao.windvane.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONException;
@@ -54,7 +54,7 @@ public class m implements b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject jSONObject = null;
             try {

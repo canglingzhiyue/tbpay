@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -83,7 +83,7 @@ public class soo {
             Object obj = jSONObject.get("cache_expire_timestamp");
             if (obj != null) {
                 String obj2 = obj.toString();
-                if (!TextUtils.isEmpty(obj2)) {
+                if (!StringUtils.isEmpty(obj2)) {
                     String[] split = obj2.split(",");
                     this.o = new long[split.length];
                     for (int i = 0; i < split.length; i++) {

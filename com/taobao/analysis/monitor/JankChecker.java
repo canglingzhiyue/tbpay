@@ -1,6 +1,6 @@
 package com.taobao.analysis.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -124,7 +124,7 @@ public class JankChecker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             c cVar = new c();
             cVar.b = "unfinished";
@@ -136,7 +136,7 @@ public class JankChecker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || !this.b.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.b.containsKey(str)) {
         } else {
             c cVar = this.b.get(str);
             cVar.f8571a = str2;

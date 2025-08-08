@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.interact.publish.service.c;
@@ -129,7 +129,7 @@ public class WVInteractsdkUpload extends e {
         MtopInfo mtopInfo = new MtopInfo();
         mtopInfo.setBizCode(bVar.q);
         String str = bVar.k;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             mtopInfo.setOwnerNick(str);
         }
         final int length = jSONArray.length();

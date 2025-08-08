@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.promotionsubmit.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -67,7 +67,7 @@ public abstract class BaseEvent implements Serializable {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("6bcf52be", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Matcher matcher = Pattern.compile(DOLLAR_PLACE_HOLDER).matcher(str);

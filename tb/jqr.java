@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.intelligence.IIntelligenceService;
@@ -59,11 +59,11 @@ public class jqr {
         jcu a2 = a(str);
         String valueOf = String.valueOf(((this.f29714a.f() - 1) * Long.parseLong(this.f29714a.g())) + this.f29714a.d());
         String str2 = "0";
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             valueOf = str2;
         }
-        if (a2 != null && TextUtils.isEmpty(str)) {
-            if (!TextUtils.isEmpty(a2.e())) {
+        if (a2 != null && StringUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(a2.e())) {
                 str2 = a2.e();
             }
             if (Long.parseLong(valueOf) > Long.parseLong(str2)) {
@@ -104,7 +104,7 @@ public class jqr {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2f0a5cc6", new Object[]{this, str, jcuVar});
-        } else if (TextUtils.isEmpty(str) || (lruCache = this.c) == null) {
+        } else if (StringUtils.isEmpty(str) || (lruCache = this.c) == null) {
         } else {
             lruCache.put(str, jcuVar);
         }

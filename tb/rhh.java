@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.launcher.task.ScheduleTask;
 import com.taobao.taolive.sdk.utils.q;
@@ -36,10 +36,10 @@ public final class rhh {
             return;
         }
         for (ScheduleTask scheduleTask : list) {
-            if (TextUtils.equals(scheduleTask.j(), "complete")) {
+            if (StringUtils.equals(scheduleTask.j(), "complete")) {
                 q.b("TaskSchedulers", "提交任务失败，任务已完成：" + scheduleTask);
             } else {
-                if (TextUtils.equals(scheduleTask.l(), "main")) {
+                if (StringUtils.equals(scheduleTask.l(), "main")) {
                     this.f33158a.a(scheduleTask);
                 } else {
                     this.b.a(scheduleTask);
@@ -58,10 +58,10 @@ public final class rhh {
             return;
         }
         for (ScheduleTask scheduleTask : list) {
-            if (TextUtils.equals(scheduleTask.j(), "complete")) {
+            if (StringUtils.equals(scheduleTask.j(), "complete")) {
                 q.b("TaskSchedulers", "取消任务失败，任务已完成：" + scheduleTask);
             } else {
-                if (TextUtils.equals(scheduleTask.l(), "main")) {
+                if (StringUtils.equals(scheduleTask.l(), "main")) {
                     this.f33158a.b(scheduleTask);
                 } else {
                     this.b.b(scheduleTask);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -30,7 +30,7 @@ public class tea {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ad15", new Object[]{str, new Integer(i)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return b(str, String.valueOf(i));
         }
         return false;
@@ -41,7 +41,7 @@ public class tea {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return b(str, str2);
         }
         return false;
@@ -52,7 +52,7 @@ public class tea {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        boolean equals = TextUtils.equals(f34054a.get(str), str2);
+        boolean equals = StringUtils.equals(f34054a.get(str), str2);
         if (!equals) {
             f34054a.put(str, str2);
         }

@@ -1,7 +1,7 @@
 package com.taobao.pha.core.offlineresource;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class OfflineResourceInterceptor {
         this.b = appController;
         for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     this.c.add(Pattern.compile(str));
                 } catch (Exception e) {
@@ -102,7 +102,7 @@ public class OfflineResourceInterceptor {
         }
         try {
             String a2 = p.c().a("disk_size_limit");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return 52428800;
             }
             int parseInt = Integer.parseInt(a2);
@@ -149,7 +149,7 @@ public class OfflineResourceInterceptor {
         }
         try {
             String a2 = p.c().a(str);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return null;
             }
             return a2.split(",");
@@ -187,7 +187,7 @@ public class OfflineResourceInterceptor {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("resUrl", (Object) uri2);
         String a3 = b(uri2) ? a(uri2) : null;
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             c j = p.b().j();
             if (j != null && (a2 = j.a(uri2)) != null && a2.e() != null) {
                 jSONObject.put("hitType", (Object) OfflineResourceHitType.THIRD_PARTY_HIT);
@@ -198,7 +198,7 @@ public class OfflineResourceInterceptor {
             a3 = a(uri2, map, jSONObject);
             jSONObject.put("hitType", (Object) OfflineResourceHitType.NO_HIT);
             jSONObject.put("timeCost", (Object) Long.valueOf(System.currentTimeMillis() - currentTimeMillis));
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 if (!a(uri2, a3)) {
                     jSONObject.put("errorCode", (Object) PHAErrorType.FILE_ERROR.toString());
                     jSONObject.put("errorMessage", (Object) a.ERR_MSG_RESOURCE_SAVE_FAILED);
@@ -220,7 +220,7 @@ public class OfflineResourceInterceptor {
             jSONObject.put("timeCost", (Object) Long.valueOf(System.currentTimeMillis() - currentTimeMillis));
             this.b.P().a("offlineResource", jSONObject);
         }
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return null;
         }
         ngm ngmVar = new ngm(a(uri), null, new ByteArrayInputStream(a3.getBytes()));
@@ -339,10 +339,10 @@ public class OfflineResourceInterceptor {
             return null;
         }
         String str2 = list.get(0);
-        if (TextUtils.isEmpty(str2) || (c = a2.c()) == null) {
+        if (StringUtils.isEmpty(str2) || (c = a2.c()) == null) {
             return null;
         }
-        if (TextUtils.equals(str2, ngn.a(c))) {
+        if (StringUtils.equals(str2, ngn.a(c))) {
             return new String(c);
         }
         jSONObject.put("errorCode", (Object) PHAErrorType.TYPE_ERROR.toString());

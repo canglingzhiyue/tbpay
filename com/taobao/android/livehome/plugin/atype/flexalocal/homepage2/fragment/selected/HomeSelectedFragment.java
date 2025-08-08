@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -611,7 +611,7 @@ public class HomeSelectedFragment extends HomeFollowDXFragment implements Handle
                                     } else {
                                         this.mBackGround = jSONObject6.getString("backgroundPicUrl");
                                     }
-                                    if (!TextUtils.isEmpty(this.mBackGround)) {
+                                    if (!StringUtils.isEmpty(this.mBackGround)) {
                                         this.mTopAtmosphereLayout.setVisibility(8);
                                         this.mTopBackground.setVisibility(0);
                                         if (getContext() != null) {
@@ -622,7 +622,7 @@ public class HomeSelectedFragment extends HomeFollowDXFragment implements Handle
                                             }
                                             this.mTopBackground.setTranslationY(Math.min((((-c.a()) * 12) / 750) + (sdt.h(getContext()) != 0 ? sdt.h(getContext()) - 104 : 0), 0));
                                         }
-                                        if ((TextUtils.isEmpty(string) || !string.equals("cache")) && !this.mNewChannelCommercialCardExposure) {
+                                        if ((StringUtils.isEmpty(string) || !string.equals("cache")) && !this.mNewChannelCommercialCardExposure) {
                                             this.mNewChannelCommercialCardExposure = true;
                                             JSONObject jSONObject7 = jSONObject6.getJSONObject(d.SHOW_MAIDIAN);
                                             if (jSONObject7 != null) {
@@ -631,7 +631,7 @@ public class HomeSelectedFragment extends HomeFollowDXFragment implements Handle
                                         }
                                         this.mHasNewChannelCommercialCard = true;
                                     }
-                                    if (!TextUtils.isEmpty(this.mBackGround)) {
+                                    if (!StringUtils.isEmpty(this.mBackGround)) {
                                         if ("true".equals(jSONObject6.getString("isGIF")) && !d) {
                                             this.mTopBackground.setSkipAutoSize(true);
                                         } else {
@@ -694,7 +694,7 @@ public class HomeSelectedFragment extends HomeFollowDXFragment implements Handle
                         setToolbarColor(this.mSelectColor);
                     }
                 }
-                if (!TextUtils.isEmpty(string) && !string.equals("cache") && (jSONObject = jSONArray2.getJSONObject(2)) != null && jSONObject.getJSONArray("cardData") != null && jSONObject.getJSONArray("cardData").size() > 0) {
+                if (!StringUtils.isEmpty(string) && !string.equals("cache") && (jSONObject = jSONArray2.getJSONObject(2)) != null && jSONObject.getJSONArray("cardData") != null && jSONObject.getJSONArray("cardData").size() > 0) {
                     int size = jSONObject.getJSONArray("cardData").size();
                     JSONArray jSONArray4 = jSONObject.getJSONArray("cardData");
                     if (com.taobao.android.livehome.plugin.atype.flexalocal.utils.i.q() && X) {
@@ -808,7 +808,7 @@ public class HomeSelectedFragment extends HomeFollowDXFragment implements Handle
             ipChange.ipc$dispatch("9eabffdb", new Object[]{this, tUrlImageView, new Boolean(z), str});
             return;
         }
-        if (!z || TextUtils.isEmpty(str)) {
+        if (!z || StringUtils.isEmpty(str)) {
             z2 = false;
         }
         if (z2) {
@@ -913,7 +913,7 @@ public class HomeSelectedFragment extends HomeFollowDXFragment implements Handle
             return;
         }
         super.onTabAppear();
-        if (TextUtils.equals(this.mChannelType, "jingxuan")) {
+        if (StringUtils.equals(this.mChannelType, "jingxuan")) {
             sendJellyMarqueeTabUpdate(true);
         }
         setToolbarColor(this.cacheCurrentTabIsBlack);
@@ -938,7 +938,7 @@ public class HomeSelectedFragment extends HomeFollowDXFragment implements Handle
             return;
         }
         super.onTabDisappear();
-        if (!TextUtils.equals(this.mChannelType, "jingxuan")) {
+        if (!StringUtils.equals(this.mChannelType, "jingxuan")) {
             return;
         }
         sendJellyMarqueeTabUpdate(false);

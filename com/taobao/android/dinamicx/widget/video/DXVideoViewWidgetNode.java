@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.widget.video;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -105,7 +105,7 @@ public class DXVideoViewWidgetNode extends DXWidgetNode implements al, fym {
             HashMap hashMap = new HashMap();
             hashMap.put("isPlayControlTrigger", f.a(z));
             hashMap.put("isResumePlay", f.a(z2));
-            hashMap.put("videoIdentifier", f.a(TextUtils.isEmpty(DXVideoViewWidgetNode.access$100(DXVideoViewWidgetNode.this)) ? DXVideoViewWidgetNode.access$200(DXVideoViewWidgetNode.this) : DXVideoViewWidgetNode.access$100(DXVideoViewWidgetNode.this)));
+            hashMap.put("videoIdentifier", f.a(StringUtils.isEmpty(DXVideoViewWidgetNode.access$100(DXVideoViewWidgetNode.this)) ? DXVideoViewWidgetNode.access$200(DXVideoViewWidgetNode.this) : DXVideoViewWidgetNode.access$100(DXVideoViewWidgetNode.this)));
             dXEvent.setArgs(hashMap);
             DXVideoViewWidgetNode.this.postEvent(dXEvent);
         }
@@ -290,13 +290,13 @@ public class DXVideoViewWidgetNode extends DXWidgetNode implements al, fym {
         view.setTag(R.id.dx_video_player_event, this.iVideoPlayEventListener);
         DXVideoView dXVideoView = (DXVideoView) view;
         DXWidgetNode queryRootWidgetNode = queryRootWidgetNode();
-        if (TextUtils.isEmpty(this.iconId)) {
+        if (StringUtils.isEmpty(this.iconId)) {
             dXVideoView.setPlayButtonImage("https://gw.alicdn.com/imgextra/i4/O1CN01JbjPoN1KKufxzJk3o_!!6000000001146-2-tps-192-192.png");
         } else {
             dXVideoView.setCustomerPlayIcon(queryRootWidgetNode.queryWidgetNodeByUserId(this.iconId));
         }
-        dXVideoView.setBizId(TextUtils.isEmpty(this.businessId) ? "DXVideo" : this.businessId);
-        dXVideoView.setSubBusinessId(TextUtils.isEmpty(this.subBusinessId) ? "" : this.subBusinessId);
+        dXVideoView.setBizId(StringUtils.isEmpty(this.businessId) ? "DXVideo" : this.businessId);
+        dXVideoView.setSubBusinessId(StringUtils.isEmpty(this.subBusinessId) ? "" : this.subBusinessId);
         dXVideoView.setProgressInterval(this.progressInterval);
         dXVideoView.setVideoId(this.videoId);
         dXVideoView.setVideoUrl(this.videoUrl);
@@ -502,7 +502,7 @@ public class DXVideoViewWidgetNode extends DXWidgetNode implements al, fym {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("24f5d3d6", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.progressBarId)) {
+        } else if (StringUtils.isEmpty(this.progressBarId)) {
         } else {
             DXWidgetNode queryWTByUserId = queryRootWidgetNode().queryWTByUserId(this.progressBarId);
             if (!(queryWTByUserId instanceof DXProgressBarWidgetNode)) {

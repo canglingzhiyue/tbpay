@@ -1,6 +1,6 @@
 package com.taobao.global.setting.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
 import com.taobao.orange.OrangeConfig;
@@ -20,7 +20,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         String config = OrangeConfig.getInstance().getConfig("mytaobao_setting_sdk", "modifyDataPriorityList", "");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return "mytaobao".equals(str);
         }
         String[] split = config.split(",");

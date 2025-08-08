@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -127,7 +127,7 @@ public abstract class c<T extends com.taobao.android.detail.datasdk.model.viewmo
             com.taobao.android.detail.core.detail.kit.utils.d.a(this.f9568a, this.c, this.b, this.c.events);
             if (this.b != null && this.c.component.mapping != null && this.c.component.mapping.containsKey("accessHint")) {
                 String string = this.c.component.mapping.getString("accessHint");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.b.setContentDescription(string);
                 }
             }
@@ -158,7 +158,7 @@ public abstract class c<T extends com.taobao.android.detail.datasdk.model.viewmo
                 return;
             }
             String string = this.c.component.mapping.getString("accessHint");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             this.b.setContentDescription(string);

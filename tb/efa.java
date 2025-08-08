@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -37,7 +37,7 @@ public class efa implements j<com.taobao.android.detail.core.event.basic.j> {
         if (jVar != null && jVar.a() != null && !jVar.a().isEmpty() && jVar.b) {
             try {
                 String a2 = b.a(R.string.x_detail_app_title_product_info);
-                if (!TextUtils.isEmpty(jVar.c)) {
+                if (!StringUtils.isEmpty(jVar.c)) {
                     a2 = jVar.c;
                 }
                 ProductInfoFragment.startFragment(this.f27258a, a2, jVar.a());

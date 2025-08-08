@@ -3,7 +3,7 @@ package com.alibaba.poplayer.info.frequency;
 import android.os.Looper;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -161,7 +161,7 @@ public abstract class FrequencyManager {
         }
         try {
             if (a(j3, j4) && j2 > 0 && j > 0) {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     com.alibaba.poplayer.utils.c.b("configCheck", str2, "updateFrequencyInfo.infoKey=null");
                     return 1;
                 }
@@ -224,7 +224,7 @@ public abstract class FrequencyManager {
             if (a(j3, j6) && j2 > 0 && j > 0) {
                 synchronized (this) {
                     JSONObject jSONObject2 = this.f3181a;
-                    if (jSONObject2 != null && !TextUtils.isEmpty(str)) {
+                    if (jSONObject2 != null && !StringUtils.isEmpty(str)) {
                         JSONObject jSONObject3 = jSONObject2.getJSONObject(str);
                         if (jSONObject3 == null) {
                             com.alibaba.poplayer.utils.c.b("configCheck", str2, "checkFrequencyInfo.infoJsonConfigObject=null");
@@ -312,7 +312,7 @@ public abstract class FrequencyManager {
             ipChange.ipc$dispatch("2d171427", new Object[]{this, str, set, new Boolean(z)});
         } else if (set != null) {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -321,13 +321,13 @@ public abstract class FrequencyManager {
                 }
                 synchronized (this) {
                     JSONObject jSONObject = this.f3181a;
-                    if (jSONObject != null && !TextUtils.isEmpty(str)) {
+                    if (jSONObject != null && !StringUtils.isEmpty(str)) {
                         JSONObject jSONObject2 = jSONObject.getJSONObject(str);
                         JSONObject jSONObject3 = new JSONObject();
                         ArrayList<String> arrayList = new ArrayList(set);
                         if (jSONObject2 != null) {
                             for (String str2 : jSONObject2.keySet()) {
-                                if (!TextUtils.isEmpty(str2)) {
+                                if (!StringUtils.isEmpty(str2)) {
                                     FrequencyInfo frequencyInfo = (FrequencyInfo) jSONObject2.getJSONObject(str2).toJavaObject(FrequencyInfo.class);
                                     if (arrayList.contains(str2) || !a(frequencyInfo)) {
                                         FrequencyInfo frequencyInfo2 = new FrequencyInfo();

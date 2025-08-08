@@ -2,7 +2,7 @@ package com.ali.user.open.core.device;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Locale;
 import tb.kge;
@@ -22,7 +22,7 @@ public class DeviceInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("609fd211", new Object[]{context});
-        } else if (!TextUtils.isEmpty(deviceId)) {
+        } else if (!StringUtils.isEmpty(deviceId)) {
         } else {
             initDeviceId(context);
         }

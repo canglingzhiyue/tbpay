@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.module.internal.password.pay.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.module.internal.password.pay.model.AMInitDataModel;
 import com.alipay.mobile.verifyidentity.module.internal.password.pay.model.InitDataModel;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -18,7 +18,7 @@ public class AMModelHandler {
         InitDataModel initDataModel = new InitDataModel();
         String str = aMInitDataModel.inputType;
         initDataModel.isSimplePPW = false;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str.equals("numeric") || str.equals("number")) {
                 initDataModel.isSimplePPW = true;
             } else if (str.equals("text")) {
@@ -41,7 +41,7 @@ public class AMModelHandler {
         initDataModel.logonId = "";
         initDataModel.refer = "";
         initDataModel.predata = aMInitDataModel.predata;
-        initDataModel.isFindPPW = true ^ TextUtils.isEmpty(aMInitDataModel.foot_tip);
+        initDataModel.isFindPPW = true ^ StringUtils.isEmpty(aMInitDataModel.foot_tip);
         initDataModel.sourceToPwd = aMInitDataModel.sourceToPwd;
         initDataModel.sceneId = "";
         initDataModel.completePPWFlag = aMInitDataModel.completePPWFlag;

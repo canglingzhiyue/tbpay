@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.widget;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import java.util.Map;
@@ -64,7 +64,7 @@ public class bg {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("ffdadd6f", new Object[]{this, str, dXRuntimeContext});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (!this.c.containsKey(str)) {
@@ -87,7 +87,7 @@ public class bg {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("457c200e", new Object[]{this, str, dXRuntimeContext});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (!this.d.containsKey(str)) {

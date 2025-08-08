@@ -1,7 +1,7 @@
 package com.taobao.message.kit.util;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.uikit.util.ApplicationUtil;
 import com.taobao.orange.OrangeConfig;
@@ -77,7 +77,7 @@ public class ConfigUtil {
             return (String) ipChange.ipc$dispatch("4d85580", new Object[]{str, str2, str3});
         }
         String config = OrangeConfig.getInstance().getConfig(str, str2, "");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             return config;
         }
         OrangeConfig.getInstance().registerListener(new String[]{str}, new d() { // from class: com.taobao.message.kit.util.ConfigUtil.1
@@ -91,13 +91,13 @@ public class ConfigUtil {
                     return;
                 }
                 OrangeConfig.getInstance().unregisterListener(new String[]{str}, this);
-                if (!TextUtils.equals(str4, str)) {
+                if (!StringUtils.equals(str4, str)) {
                     return;
                 }
                 String config2 = OrangeConfig.getInstance().getConfig(str, str2, "");
                 SharedPreferences sharedPreferences = ApplicationUtil.getApplication().getSharedPreferences(ConfigUtil.SP_NAME, 0);
-                if (!TextUtils.isEmpty(config2)) {
-                    if (TextUtils.equals(sharedPreferences.getString(ConfigUtil.access$000(str, str2), null), config2)) {
+                if (!StringUtils.isEmpty(config2)) {
+                    if (StringUtils.equals(sharedPreferences.getString(ConfigUtil.access$000(str, str2), null), config2)) {
                         return;
                     }
                     sharedPreferences.edit().putString(ConfigUtil.access$000(str, str2), config2).apply();

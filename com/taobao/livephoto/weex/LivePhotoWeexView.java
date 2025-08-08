@@ -3,7 +3,7 @@ package com.taobao.livephoto.weex;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorCode;
@@ -183,7 +183,7 @@ public class LivePhotoWeexView extends WeexPlatformView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ecedf243", new Object[]{this, str});
-        } else if (this.mLivePhotoView == null || TextUtils.isEmpty(str)) {
+        } else if (this.mLivePhotoView == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 this.mLivePhotoView.setLivePhotoInfo(new JSONObject(str));
@@ -471,7 +471,7 @@ public class LivePhotoWeexView extends WeexPlatformView {
             return;
         }
         String coverPath = livePhotoView.getCoverPath();
-        if (!TextUtils.isEmpty(coverPath)) {
+        if (!StringUtils.isEmpty(coverPath)) {
             HashMap hashMap = new HashMap();
             hashMap.put("path", coverPath);
             bVar.a(MUSValue.ofJSON(hashMap));
@@ -493,7 +493,7 @@ public class LivePhotoWeexView extends WeexPlatformView {
             return;
         }
         String videoPath = livePhotoView.getVideoPath();
-        if (!TextUtils.isEmpty(videoPath)) {
+        if (!StringUtils.isEmpty(videoPath)) {
             HashMap hashMap = new HashMap();
             hashMap.put("path", videoPath);
             bVar.a(MUSValue.ofJSON(hashMap));
@@ -516,7 +516,7 @@ public class LivePhotoWeexView extends WeexPlatformView {
                     return;
                 }
                 LivePhotoWeexView.access$000(LivePhotoWeexView.this, 0, str);
-                if (LivePhotoWeexView.access$100(LivePhotoWeexView.this) == null || TextUtils.isEmpty(str)) {
+                if (LivePhotoWeexView.access$100(LivePhotoWeexView.this) == null || StringUtils.isEmpty(str)) {
                     return;
                 }
                 HashMap hashMap = new HashMap();
@@ -530,7 +530,7 @@ public class LivePhotoWeexView extends WeexPlatformView {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("3dd7e573", new Object[]{this, str});
-                } else if (LivePhotoWeexView.access$200(LivePhotoWeexView.this) == null || TextUtils.isEmpty(str)) {
+                } else if (LivePhotoWeexView.access$200(LivePhotoWeexView.this) == null || StringUtils.isEmpty(str)) {
                 } else {
                     HashMap hashMap = new HashMap();
                     hashMap.put("path", str);

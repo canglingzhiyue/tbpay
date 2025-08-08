@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.db.MspDBHelper;
@@ -51,7 +51,7 @@ public class O2OAdH5Support extends e {
             } catch (Exception unused2) {
                 str3 = null;
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 commitO2OExpoEvent(str3, str4, wVCallBackContext);
             } else {
                 TaoLog.Logd("AlimamaSdk", String.format("error executing js, action = %s, params = %s", str, str2));
@@ -63,7 +63,7 @@ public class O2OAdH5Support extends e {
                 str4 = JSON.parseObject(str2).getString("url");
             } catch (Exception unused3) {
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 commitO2OClickEvent(str4, wVCallBackContext);
             } else {
                 TaoLog.Logd("AlimamaSdk", String.format("error executing js, action = %s, params = %s", str, str2));
@@ -81,7 +81,7 @@ public class O2OAdH5Support extends e {
                 String string3 = jSONObject.getString(MspDBHelper.BizEntry.COLUMN_NAME_PID);
                 String string4 = jSONObject.getString("type");
                 String string5 = jSONObject.getString("args");
-                str4 = new b(string, string4).b(string2).a(string3).a(TextUtils.isEmpty(string5) ? null : dbf.a(string5));
+                str4 = new b(string, string4).b(string2).a(string3).a(StringUtils.isEmpty(string5) ? null : dbf.a(string5));
             } catch (Exception unused4) {
                 TaoLog.Logd("AlimamaSdk", String.format("error executing js, action = %s, params = %s", str, str2));
                 notifyError("o2o cpa click params parse error", wVCallBackContext);

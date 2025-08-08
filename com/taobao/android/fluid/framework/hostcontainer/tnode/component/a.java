@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.hostcontainer.tnode.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import tb.kge;
@@ -23,7 +23,7 @@ public final class a {
 
     public static boolean a(boolean z, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f7197a3a", new Object[]{new Boolean(z), str})).booleanValue() : spj.a() && z && !TextUtils.equals("outside", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f7197a3a", new Object[]{new Boolean(z), str})).booleanValue() : spj.a() && z && !StringUtils.equals("outside", str);
     }
 
     public static boolean b() {

@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transportext.biz.shared;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
 import com.alipay.mobile.common.transport.TransportStrategy;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -144,7 +144,7 @@ public final class ExtTransportStrategy {
             return
         L15:
             java.lang.String r0 = r6.api
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L1e
             return
         L1e:
@@ -213,7 +213,7 @@ public final class ExtTransportStrategy {
         if (MiscUtils.isDebugger(context)) {
             return getConfigureManager().getStringValue(TransportConfigureItem.SPDY_URL);
         }
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return b;
         }
         b = "https://mobilegw.alipay.com/mgw.htm";
@@ -317,7 +317,7 @@ public final class ExtTransportStrategy {
         try {
             String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPC_DIAGNOSE_UPLOAD_TIME);
             LogCatUtil.info(TAG, "getRpcDiagnoseUploadTime, the rdut time is :" + stringValue + "s");
-            if (TextUtils.isEmpty(stringValue) || (valueOf = Long.valueOf(Long.parseLong(stringValue))) == null) {
+            if (StringUtils.isEmpty(stringValue) || (valueOf = Long.valueOf(Long.parseLong(stringValue))) == null) {
                 return -1L;
             }
             return valueOf.longValue();

@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import cn.wh.auth.server.a;
 import com.alibaba.security.realidentity.i2;
 import com.alipay.mobile.common.logging.api.LogContext;
@@ -25,10 +25,10 @@ public abstract class age {
         String str;
         this.f25317a = agdVar;
         final agi agiVar = new agi();
-        if (TextUtils.isEmpty(this.c.b())) {
+        if (StringUtils.isEmpty(this.c.b())) {
             agiVar.b("应用ID异常");
             str = i2.l;
-        } else if (!TextUtils.isEmpty(this.c.a())) {
+        } else if (!StringUtils.isEmpty(this.c.a())) {
             if (!agh.a(this.b)) {
                 agiVar.b("APP尚未安装");
                 agiVar.a(i2.c);

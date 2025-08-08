@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.aura.service.event.c;
@@ -136,7 +136,7 @@ public class bad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ca7f23d7", new Object[]{aURARenderComponent})).booleanValue();
         }
-        if (aURARenderComponent == null || TextUtils.isEmpty(aURARenderComponent.key) || TextUtils.isEmpty(b(aURARenderComponent))) {
+        if (aURARenderComponent == null || StringUtils.isEmpty(aURARenderComponent.key) || StringUtils.isEmpty(b(aURARenderComponent))) {
             return false;
         }
         if (aURARenderComponent.data != null && aURARenderComponent.data.fields != null) {

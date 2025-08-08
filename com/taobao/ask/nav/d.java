@@ -1,6 +1,6 @@
 package com.taobao.ask.nav;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -36,7 +36,7 @@ public class d {
             if (!("answer".equals(str) ? a() : c())) {
                 return false;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return true;
             }
             String a2 = com.taobao.ask.utils.c.a("ask_everyone", str + "_publisher_" + str2 + "_enable", "0");

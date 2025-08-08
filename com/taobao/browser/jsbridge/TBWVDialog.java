@@ -4,7 +4,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,7 +43,7 @@ public class TBWVDialog extends e {
             Object parse = JSONObject.parse(str);
             r rVar = new r();
             if (parse != null && (parse instanceof JSONObject)) {
-                if (!TextUtils.isEmpty(((JSONObject) parse).getString("url"))) {
+                if (!StringUtils.isEmpty(((JSONObject) parse).getString("url"))) {
                     WVUCWebView wVUCWebView = new WVUCWebView(this.mContext);
                     wVUCWebView.loadUrl(((JSONObject) parse).getString("url"));
                     this.mDialog = new TBMaterialDialog.Builder(this.mContext).cardDialog(true).customView((View) wVUCWebView, false).build();

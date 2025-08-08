@@ -18,7 +18,7 @@ import android.support.v4.view.OnApplyWindowInsetsListener;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -546,7 +546,7 @@ public class CollapsingToolbarLayout extends FrameLayout {
             getViewOffsetHelper(getChildAt(i6)).a();
         }
         if (this.mToolbar != null) {
-            if (this.mCollapsingTitleEnabled && TextUtils.isEmpty(this.mCollapsingTextHelper.j())) {
+            if (this.mCollapsingTitleEnabled && StringUtils.isEmpty(this.mCollapsingTextHelper.j())) {
                 this.mCollapsingTextHelper.a(this.mToolbar.getTitle());
             }
             View view3 = this.mToolbarDirectChild;

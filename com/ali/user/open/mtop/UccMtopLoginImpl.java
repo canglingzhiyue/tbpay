@@ -1,6 +1,6 @@
 package com.ali.user.open.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.callback.LoginCallback;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.service.UserTrackerService;
@@ -112,7 +112,7 @@ public class UccMtopLoginImpl implements c {
 
     public boolean isSessionValid(String str) {
         Session session;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         SDKLogger.e(TAG, "func isSessionValid");
@@ -122,7 +122,7 @@ public class UccMtopLoginImpl implements c {
             th.printStackTrace();
             session = null;
         }
-        if (session == null || TextUtils.isEmpty(session.sid)) {
+        if (session == null || StringUtils.isEmpty(session.sid)) {
             SDKLogger.e(TAG, "isSessionValid()  session is null");
             return false;
         } else if (session.loginTime == 0 || session.expireIn == 0) {

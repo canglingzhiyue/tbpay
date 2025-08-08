@@ -2,7 +2,7 @@ package com.taobao.vessel;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -183,9 +183,9 @@ public class VesselViewFragment extends Fragment {
         if (this.mVesselType == null) {
             this.mVesselType = VesselType.Weex;
         }
-        if (!TextUtils.isEmpty(this.mUri)) {
+        if (!StringUtils.isEmpty(this.mUri)) {
             this.mVesselView.loadUrl(this.mVesselType, this.mUri, this.mVesselParams);
-        } else if (!TextUtils.isEmpty(this.mVesselData)) {
+        } else if (!StringUtils.isEmpty(this.mVesselData)) {
             this.mVesselView.loadData(this.mVesselType, this.mVesselData);
         }
         return this.mContentView;

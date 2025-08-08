@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.b;
 import com.taobao.flowcustoms.afc.utils.c;
@@ -28,10 +28,10 @@ public class LoginFreeJsBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, ACTION)) {
+        if (StringUtils.equals(str, ACTION)) {
             c.a("linkx", "LoginFreeJsBridge === execute === js调用免登");
             String a2 = b.a().a("is_js_login_open", "true");
-            if (TextUtils.equals("false", a2)) {
+            if (StringUtils.equals("false", a2)) {
                 c.a("linkx", "LoginFreeJsBridge === execute === js调用免登：" + a2);
                 return false;
             }

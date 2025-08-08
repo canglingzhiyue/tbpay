@@ -1,7 +1,7 @@
 package com.taobao.android.litecreator.modules.edit.image.thumbnaillist;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.u;
@@ -104,7 +104,7 @@ public class e extends com.taobao.android.litecreator.widgets.d {
 
     private boolean b(RecyclerView.ViewHolder viewHolder) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d73f6208", new Object[]{this, viewHolder})).booleanValue() : this.b != null && TextUtils.equals(((gzs) viewHolder).b(), this.b.a());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d73f6208", new Object[]{this, viewHolder})).booleanValue() : this.b != null && StringUtils.equals(((gzs) viewHolder).b(), this.b.a());
     }
 
     @Override // com.taobao.android.litecreator.widgets.d, android.support.v7.widget.helper.ItemTouchHelper.Callback

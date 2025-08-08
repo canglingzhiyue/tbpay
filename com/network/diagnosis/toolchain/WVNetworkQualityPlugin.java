@@ -3,7 +3,7 @@ package com.network.diagnosis.toolchain;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.detect.NetworkDetector;
 import anet.channel.util.ALog;
 import com.alibaba.fastjson.JSON;
@@ -40,7 +40,7 @@ public class WVNetworkQualityPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!WV_GET_RTT.equals(str) || TextUtils.isEmpty(str2)) {
+        if (!WV_GET_RTT.equals(str) || StringUtils.isEmpty(str2)) {
             wVCallBackContext.error();
             return false;
         }

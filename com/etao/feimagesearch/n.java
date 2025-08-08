@@ -3,7 +3,7 @@ package com.etao.feimagesearch;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
 import com.etao.feimagesearch.jni.PailitaoCUtil;
@@ -92,7 +92,7 @@ public class n implements coq {
             cot.a("AutoDetect", "TKWatermarkDetector", "before detectVideoWaterMark " + hashCode);
             String b = PailitaoCUtil.b(allocateDirect.array(), c.getWidth(), c.getHeight());
             cot.a("AutoDetect", "TKWatermarkDetector", "after detectVideoWaterMark result " + b + ", " + hashCode);
-            if (!TextUtils.isEmpty(b) && com.a()) {
+            if (!StringUtils.isEmpty(b) && com.a()) {
                 ad.c("videoWaterMark", new ac() { // from class: com.etao.feimagesearch.n.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

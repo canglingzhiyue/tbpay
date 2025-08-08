@@ -2,7 +2,7 @@ package com.taobao.mytaobao.dataservice.datasource;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -205,7 +205,7 @@ public final class e {
         mtopRequest.setVersion("1.0");
         JSONObject jSONObject2 = new JSONObject();
         String string = jSONObject2.getString(PushConstants.PARAMS);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             parseObject = new JSONObject();
         } else {
             parseObject = JSON.parseObject(string);

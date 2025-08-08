@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -70,7 +70,7 @@ public class LVWebViewActivity extends AppCompatActivity {
             return;
         }
         String stringExtra = intent.getStringExtra("url");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             gwo.a(6, "LVWebViewActivity", "url is null!!");
             finish();
             return;

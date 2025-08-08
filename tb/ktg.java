@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.global.setting.mtop.response.UserProfileDataResponse;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -18,7 +18,7 @@ public class ktg extends kte implements ktf {
             return;
         }
         MtopRequest mtopRequest = new MtopRequest();
-        mtopRequest.setApiName(TextUtils.equals(str, "mytaobao") ? "mtop.taobao.mclaren.getuserprofile.center" : "mtop.taobao.mclaren.getUserProfile");
+        mtopRequest.setApiName(StringUtils.equals(str, "mytaobao") ? "mtop.taobao.mclaren.getuserprofile.center" : "mtop.taobao.mclaren.getUserProfile");
         mtopRequest.setVersion("1.0");
         mtopRequest.setNeedSession(true);
         a(mtopRequest, iRemoteBaseListener, UserProfileDataResponse.class);

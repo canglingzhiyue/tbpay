@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -184,7 +184,7 @@ public class q implements View.OnClickListener {
 
     public static boolean a(LiveItem liveItem) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f1232887", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.itemExtData == null || !TextUtils.equals(liveItem.itemExtData.getString("smallCardItemType"), "itemZone")) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f1232887", new Object[]{liveItem})).booleanValue() : (liveItem == null || liveItem.itemExtData == null || !StringUtils.equals(liveItem.itemExtData.getString("smallCardItemType"), "itemZone")) ? false : true;
     }
 
     public static boolean b(LiveItem liveItem) {
@@ -403,11 +403,11 @@ public class q implements View.OnClickListener {
             f();
             a(this.e, sabItemAtmosphere.atmosphereBgImg, -1, true);
             a(this.d, sabItemAtmosphere.posterMark, 0, true);
-            if (!TextUtils.isEmpty(sabItemAtmosphere.benefitTitleImg)) {
+            if (!StringUtils.isEmpty(sabItemAtmosphere.benefitTitleImg)) {
                 this.f.setImageUrl(sabItemAtmosphere.benefitTitleImg);
                 this.f.setVisibility(0);
                 this.g.setVisibility(8);
-            } else if (!TextUtils.isEmpty(sabItemAtmosphere.benefitTitle)) {
+            } else if (!StringUtils.isEmpty(sabItemAtmosphere.benefitTitle)) {
                 this.g.setText(sabItemAtmosphere.benefitTitle);
                 this.g.setVisibility(0);
                 this.f.setVisibility(8);
@@ -520,7 +520,7 @@ public class q implements View.OnClickListener {
             }
             if (c() && !this.q) {
                 c(liveItem);
-            } else if (!TextUtils.equals(str, "SUCCESS") || !TextUtils.equals(str2, "showcase")) {
+            } else if (!StringUtils.equals(str, "SUCCESS") || !StringUtils.equals(str2, "showcase")) {
             } else {
                 a(liveItem, true);
             }

@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.metaInfo.appinfo.core.requestConfig;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class a extends AbsAppInfoRequestConfig {
             if (this.c != null) {
                 jSONObject2.put("request_scene", (Object) this.c.getName());
             }
-            if (!TextUtils.isEmpty(basicRequestParam.url)) {
+            if (!StringUtils.isEmpty(basicRequestParam.url)) {
                 jSONObject2.put("url", (Object) basicRequestParam.url);
             }
             jSONArray.add(jSONObject);

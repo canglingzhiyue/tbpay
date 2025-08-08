@@ -1,6 +1,6 @@
 package com.taobao.android.detail.industry.scene.trwidget;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
@@ -96,11 +96,11 @@ public final class e implements etn {
                 return;
             }
             String appId = tRWidgetInstance.getApp().getAppId();
-            if (TextUtils.isEmpty(appId) || (widgetMonitor = tRWidgetInstance.getWidgetMonitor()) == null) {
+            if (StringUtils.isEmpty(appId) || (widgetMonitor = tRWidgetInstance.getWidgetMonitor()) == null) {
                 return;
             }
             String string = widgetMonitor.getString("widgetFirstScreenCoverage");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             HashMap hashMap = new HashMap();

@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -75,10 +75,10 @@ public class c extends DXImageWidgetNode {
             return;
         }
         ImageView imageView = (ImageView) view;
-        if (!TextUtils.isEmpty(this.f14624a)) {
+        if (!StringUtils.isEmpty(this.f14624a)) {
             setImageScaleType(imageView, getScaleType());
             fxe.a(new a(imageView, true, this.f14624a, getMeasuredWidth(), getMeasuredHeight()), new Void[0]);
-        } else if (!TextUtils.isEmpty(this.b)) {
+        } else if (!StringUtils.isEmpty(this.b)) {
             setImageScaleType(imageView, getScaleType());
             fxe.a(new a(imageView, false, this.b, getMeasuredWidth(), getMeasuredHeight()), new Void[0]);
         } else {

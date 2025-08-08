@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -550,7 +550,7 @@ public class TTDetailBaseActivity extends AppCompatActivity implements com.taoba
         Bundle bundle2 = new Bundle();
         bundle2.putString(getString(R.string.tt_detail_zzb_key_page), "Page_Detail");
         String v = this.c.v();
-        if (!TextUtils.isEmpty(v)) {
+        if (!StringUtils.isEmpty(v)) {
             bundle2.putString(getString(R.string.tt_detail_zzb_key_id), v);
         }
         Map<String, String> g = this.c.g();

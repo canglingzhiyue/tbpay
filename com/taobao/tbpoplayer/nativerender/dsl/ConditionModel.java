@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender.dsl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -23,6 +23,6 @@ public class ConditionModel implements INativeModel {
     @Override // com.taobao.tbpoplayer.nativerender.dsl.INativeModel
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : (!TextUtils.isEmpty(this.left) || !TextUtils.isEmpty(this.right)) && !TextUtils.isEmpty(this.operator);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : (!StringUtils.isEmpty(this.left) || !StringUtils.isEmpty(this.right)) && !StringUtils.isEmpty(this.operator);
     }
 }

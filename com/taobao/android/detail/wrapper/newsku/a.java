@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.newsku;
 
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -190,7 +190,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a821d370", new Object[]{this, new Boolean(z)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(o())) {
+        if (!StringUtils.isEmpty(o())) {
             if (this.c == null) {
                 final long currentTimeMillis = System.currentTimeMillis();
                 Log.e("SKU trace", "init time " + currentTimeMillis);
@@ -465,7 +465,7 @@ public class a {
         this.c.b(new JSONObject() { // from class: com.taobao.android.detail.wrapper.newsku.PreFetchSKUCore$3
             {
                 putAll(a.a(a.this, a.a(a.this, z, z2, str), z2));
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     put("id_biz_property", new JSONObject() { // from class: com.taobao.android.detail.wrapper.newsku.PreFetchSKUCore$3.1
                         {
                             put("skuId", (Object) str2);
@@ -487,7 +487,7 @@ public class a {
                 });
                 put("fromSendGiftButton", Boolean.valueOf(z));
                 String b = a.b(a.this);
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     put("quantity", (Object) b);
                 }
             }
@@ -575,7 +575,7 @@ public class a {
         if (str2 == null) {
             str2 = f(str);
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         this.c.b().y();

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -99,7 +99,7 @@ public class ezh {
             for (DXTemplateItem dXTemplateItem : fvbVar.b) {
                 i.a("DinamicXEngine", "failedTemplateItem: " + dXTemplateItem.toString());
                 String b2 = b(dXTemplateItem);
-                if (!TextUtils.isEmpty(b2) && (list2 = this.f.get(b2)) != null) {
+                if (!StringUtils.isEmpty(b2) && (list2 = this.f.get(b2)) != null) {
                     for (final c cVar : list2) {
                         final ezi a2 = a(dXTemplateItem);
                         a(new Runnable() { // from class: tb.ezh.2
@@ -123,7 +123,7 @@ public class ezh {
         if (fvbVar.f28139a != null && !fvbVar.f28139a.isEmpty()) {
             for (DXTemplateItem dXTemplateItem2 : fvbVar.f28139a) {
                 String b3 = b(dXTemplateItem2);
-                if (!TextUtils.isEmpty(b3) && (list = this.f.get(b3)) != null) {
+                if (!StringUtils.isEmpty(b3) && (list = this.f.get(b3)) != null) {
                     for (final c cVar2 : list) {
                         final ezi a3 = a(dXTemplateItem2);
                         a(new Runnable() { // from class: tb.ezh.10
@@ -679,7 +679,7 @@ public class ezh {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d4f5f10e", new Object[]{this, dXTemplateItem});
         }
-        if (dXTemplateItem == null || TextUtils.isEmpty(dXTemplateItem.f()) || dXTemplateItem.g() < 0) {
+        if (dXTemplateItem == null || StringUtils.isEmpty(dXTemplateItem.f()) || dXTemplateItem.g() < 0) {
             return null;
         }
         return dXTemplateItem.f() + " | " + dXTemplateItem.g();
@@ -690,7 +690,7 @@ public class ezh {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("39f7005a", new Object[]{this, eziVar});
         }
-        if (eziVar == null || TextUtils.isEmpty(eziVar.a()) || eziVar.b() < 0) {
+        if (eziVar == null || StringUtils.isEmpty(eziVar.a()) || eziVar.b() < 0) {
             return null;
         }
         return eziVar.a() + " | " + eziVar.b();
@@ -698,7 +698,7 @@ public class ezh {
 
     private boolean a(ezi eziVar, ezi eziVar2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6b1cdfa4", new Object[]{this, eziVar, eziVar2})).booleanValue() : eziVar != null && eziVar2 != null && TextUtils.equals(eziVar.a(), eziVar2.a()) && eziVar.b() == eziVar2.b();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6b1cdfa4", new Object[]{this, eziVar, eziVar2})).booleanValue() : eziVar != null && eziVar2 != null && StringUtils.equals(eziVar.a(), eziVar2.a()) && eziVar.b() == eziVar2.b();
     }
 
     private boolean d(ezi eziVar) {

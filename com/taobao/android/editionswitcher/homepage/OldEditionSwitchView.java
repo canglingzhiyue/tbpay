@@ -1,7 +1,7 @@
 package com.taobao.android.editionswitcher.homepage;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListAdapter;
@@ -90,13 +90,13 @@ public class OldEditionSwitchView extends EditionSwitchView {
             a aVar = new a();
             aVar.f12297a = stringArray[i2].trim();
             aVar.b = stringArray2[i2].trim();
-            if (TextUtils.equals(aVar.f12297a, str)) {
+            if (StringUtils.equals(aVar.f12297a, str)) {
                 aVar.d = true;
                 z = true;
             } else {
                 aVar.d = false;
             }
-            if (TextUtils.equals(aVar.f12297a, "CN")) {
+            if (StringUtils.equals(aVar.f12297a, "CN")) {
                 i = i2;
             }
             arrayList.add(aVar);

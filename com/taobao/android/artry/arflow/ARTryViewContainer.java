@@ -2,7 +2,7 @@ package com.taobao.android.artry.arflow;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.FrameLayout;
@@ -239,7 +239,7 @@ public class ARTryViewContainer extends FrameLayout {
         if (this.mARTryJSFlowForMiniApp == null) {
             return false;
         }
-        if (TextUtils.equals(str, "fetchSimpleGraphLoadingDuration")) {
+        if (StringUtils.equals(str, "fetchSimpleGraphLoadingDuration")) {
             dpvVar.a("simpleGraphLoadingDuration", Long.valueOf(this.mSimpleGraphStartDuration));
             c.a(true, (a) dpvVar);
             return true;

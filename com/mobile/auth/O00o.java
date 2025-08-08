@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import com.taobao.android.change.app.icon.core.Constrant;
 import java.util.HashMap;
@@ -83,7 +83,7 @@ public class O00o {
             a2.O0000oo(aVar.b("loginMethod", str2));
             a2.O0000oO0(aVar.b("isCacheScrip", false) ? "scrip" : "pgw");
             a2.O0000Oo0(O0O0O0o.O000000o(context));
-            if (!TextUtils.isEmpty(O00000Oo)) {
+            if (!StringUtils.isEmpty(O00000Oo)) {
                 str2 = O00000Oo;
             }
             a2.O0000Oo(str2);

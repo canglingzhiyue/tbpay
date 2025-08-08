@@ -8,7 +8,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -175,7 +175,7 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || !TextUtils.equals("com.alipay.android.app.pay.ACTION_PAY_SUCCESS", intent.getAction()) || context == null) {
+            } else if (intent == null || !StringUtils.equals("com.alipay.android.app.pay.ACTION_PAY_SUCCESS", intent.getAction()) || context == null) {
                 bxb.a(bxb.a.b(TBOrderDetailActivity.d(TBOrderDetailActivity.this), "payResultOfDetail").a(1.0f).a("支付失败").a(false));
             } else {
                 com.taobao.android.order.bundle.helper.a.a(context.getApplicationContext(), false);
@@ -374,7 +374,7 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
             return;
         }
         this.h = com.taobao.android.order.bundle.helper.g.d(getIntent());
-        if (TextUtils.isEmpty(this.h)) {
+        if (StringUtils.isEmpty(this.h)) {
             if (getIntent() != null && getIntent().getData() != null) {
                 hyq.a(this, "TBOrderDetailActivity", alz.BizKeyOrderDetail, "orderId", "orderId 为空,formType = " + getIntent().getData().toString());
             }
@@ -569,7 +569,7 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
         }
         try {
             String str = this.l.l().get("extParams");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject parseObject = JSON.parseObject(str);
                 for (String str2 : jSONObject.keySet()) {
                     parseObject.put(str2, jSONObject.get(str2));
@@ -700,14 +700,14 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6782afb", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.h)) {
+        } else if (StringUtils.isEmpty(this.h)) {
             bxb.a(bxb.a.b(OrderBizCode.orderDetail, "odetail2UTReport").a(0.01f).a("orderId丢失").a(false));
         } else {
             HashMap hashMap = new HashMap();
             hashMap.put("newOrderId", this.h);
             hashMap.put("olVersion", "2");
             boolean s = s();
-            if (!TextUtils.isEmpty(this.G)) {
+            if (!StringUtils.isEmpty(this.G)) {
                 hashMap.put("orderStatus", this.G);
             } else {
                 bxb.a(bxb.a.b(OrderBizCode.orderDetail, "odetail2UTReport").a(0.01f).a(String.format("orderStatus丢失，是否为物流详情页 - %s", Boolean.valueOf(s))).a(false));
@@ -824,7 +824,7 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
             com.taobao.android.order.bundle.helper.g.a(hashMap, getIntent());
             hashMap.put(CoreConstants.USE_V2, "true");
         }
-        if (!TextUtils.isEmpty(this.F)) {
+        if (!StringUtils.isEmpty(this.F)) {
             hashMap.put("pageFrom", this.F);
         }
         hashMap.put(CoreConstants.IN_PARAM_ARCHIVE, String.valueOf(p()));
@@ -887,7 +887,7 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
                 hyq.a(this, "TBOrderDetailActivity", "OrderDetail", mtopResponse.getRetCode() + "-detail", "detail", mtopResponse);
                 org.json.JSONObject dataJsonObject = mtopResponse.getDataJsonObject();
                 String optString = dataJsonObject != null ? dataJsonObject.optString(Constants.WEIBO_REDIRECTURL_KEY) : null;
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     a(optString, mtopResponse.getRetCode(), mtopResponse);
                     return;
                 }
@@ -941,7 +941,7 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
         if (mtopResponse != null && mtopResponse.getDataJsonObject() != null) {
             this.p.initBodyWrapper(mtopResponse.getDataJsonObject().optJSONObject("global"));
         }
-        if (!TextUtils.isEmpty(this.w) && i() != null) {
+        if (!StringUtils.isEmpty(this.w) && i() != null) {
             i().a(this.w);
         }
         f();
@@ -978,7 +978,7 @@ public class TBOrderDetailActivity extends TBOrderBaseActivity implements e, agc
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
         } else if (s()) {
         } else {
-            bxb.a(bxb.a.b(OrderBizCode.orderDetail, "odetail2PV").a(spk.a("babelorder", "odetail2Sampling", 1.0f)).c("c1", TextUtils.isEmpty(this.h) ? "unknown" : this.h).a(String.format("pageName: %s, orderStatus: %s", ParallelBizValueHelper.a(ParallelBizValueHelper.PageType.order_detail), this.G)).a(true));
+            bxb.a(bxb.a.b(OrderBizCode.orderDetail, "odetail2PV").a(spk.a("babelorder", "odetail2Sampling", 1.0f)).c("c1", StringUtils.isEmpty(this.h) ? "unknown" : this.h).a(String.format("pageName: %s, orderStatus: %s", ParallelBizValueHelper.a(ParallelBizValueHelper.PageType.order_detail), this.G)).a(true));
         }
     }
 

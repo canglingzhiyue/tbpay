@@ -2,7 +2,7 @@ package com.taobao.android.opencart.check;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.navigation.NavigationTabMsgMode;
@@ -304,7 +304,7 @@ public class CheckHoldManager {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("cartId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if (c(jSONObject)) {
@@ -322,7 +322,7 @@ public class CheckHoldManager {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("cartId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if (c(jSONObject)) {

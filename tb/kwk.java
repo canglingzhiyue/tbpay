@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.i;
@@ -44,7 +44,7 @@ public class kwk {
         String string = jSONObject2.getString("api");
         String string2 = jSONObject2.getString("version");
         String string3 = jSONObject2.getString("channel");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
             string = "mtop.taobao.wireless.home.awesome.itemdetail.recommend";
             string2 = "1.0";
             string3 = "detail";
@@ -62,7 +62,7 @@ public class kwk {
         jSONObject3.put("itemId", (Object) string4);
         String string5 = jSONObject2.getString("userId");
         jSONObject3.put("sellerId", (Object) string5);
-        String string6 = TextUtils.isEmpty(jSONObject2.getString("from")) ? REC_CUBE : jSONObject2.getString("from");
+        String string6 = StringUtils.isEmpty(jSONObject2.getString("from")) ? REC_CUBE : jSONObject2.getString("from");
         jSONObject3.put("from", (Object) string6);
         kwkVar.d = string4;
         kwkVar.e = string5;

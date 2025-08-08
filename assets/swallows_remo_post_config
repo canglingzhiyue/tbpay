@@ -1,0 +1,17 @@
+[
+  {
+    "uri": "primary7.prof",
+    "processType": "remote",
+    "afterAction": "RemoveFromApk"
+  },
+  {
+    "uri": "primary80.prof",
+    "processType": "remote",
+    "afterAction": "RemoveFromApk"
+  },
+  {
+    "uri": "primary81.prof",
+    "processType": "remote",
+    "afterAction": "RemoveFromApk"
+  }
+]

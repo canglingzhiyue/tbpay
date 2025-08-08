@@ -1,7 +1,7 @@
 package com.taobao.weaver.prefetch;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weaver.prefetch.PerformanceData;
@@ -141,7 +141,7 @@ public class e {
             if (r3 == 0) goto L89
             java.lang.String r0 = r13.a(r14)
             java.lang.String r1 = r3.b
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 != 0) goto L6c
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
             r1.<init>()
@@ -202,7 +202,7 @@ public class e {
         if (this.f23473a != null) {
             String[] split = str.split("#");
             String a2 = this.f23473a.a(split[0]);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 str = a(a2).concat("#").concat(split[1]);
             }
         }

@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
@@ -135,11 +135,11 @@ public class UPPayWapActivity extends Activity {
                 this.i = null;
             }
             String string = extras.containsKey(MspGlobalDefine.SCHEME_PAY_RESULT) ? extras.getString(MspGlobalDefine.SCHEME_PAY_RESULT) : extras.containsKey("code") ? extras.getString("code") : "";
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "";
             }
             String string2 = extras.containsKey("data") ? extras.getString("data") : "";
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 string2 = "";
             }
             JSONObject jSONObject = new JSONObject();
@@ -167,7 +167,7 @@ public class UPPayWapActivity extends Activity {
                 }
                 this.e = "link".equals(getIntent().getStringExtra("actionType"));
                 this.f = getIntent().getStringExtra(f24013a);
-                if (TextUtils.isEmpty(this.f)) {
+                if (StringUtils.isEmpty(this.f)) {
                     this.f = "00";
                 }
                 String str = "";

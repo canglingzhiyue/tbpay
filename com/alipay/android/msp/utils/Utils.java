@@ -17,7 +17,7 @@ import android.telephony.CellLocation;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -247,7 +247,7 @@ public class Utils {
         }
         String[] split = str.substring(indexOf, lastIndexOf).split("' *, *'", -1);
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i])) {
+            if (!StringUtils.isEmpty(split[i])) {
                 split[i] = split[i].trim().replaceAll("'", "").replaceAll("\"", "");
             }
         }
@@ -291,7 +291,7 @@ public class Utils {
         }
         try {
             String alipaySdkVersion = getAlipaySdkVersion(str);
-            if (!TextUtils.isEmpty(alipaySdkVersion)) {
+            if (!StringUtils.isEmpty(alipaySdkVersion)) {
                 String[] split = alipaySdkVersion.split("\\.");
                 int intValue = Integer.valueOf(split[2]).intValue();
                 int intValue2 = Integer.valueOf(split[3]).intValue();
@@ -389,20 +389,20 @@ public class Utils {
             JSONObject jSONObject4 = jSONObject.getJSONObject("tplInfo");
             String string = jSONObject4.getString("tplHash");
             String string2 = jSONObject4.getString("tplId");
-            if (!TextUtils.isEmpty(string) && !string2.contains(string) && !string2.contains("paycode-guide-banner") && !TextUtils.equals("true", PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_frame_tplhash_degrade"))) {
+            if (!StringUtils.isEmpty(string) && !string2.contains(string) && !string2.contains("paycode-guide-banner") && !StringUtils.equals("true", PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_frame_tplhash_degrade"))) {
                 string2 = string2 + "_" + string;
             }
             jSONObject3.put(MspFlybirdDefine.FLYBIRD_TEMPLATE_ID, (Object) string2);
-            if (TextUtils.isEmpty(jSONObject4.getString("tplVersion"))) {
+            if (StringUtils.isEmpty(jSONObject4.getString("tplVersion"))) {
                 jSONObject4.put("tplVersion", "5.4.9");
             }
-            if (TextUtils.isEmpty(jSONObject4.getString("time"))) {
+            if (StringUtils.isEmpty(jSONObject4.getString("time"))) {
                 jSONObject4.put("time", "0001");
             }
-            if (TextUtils.isEmpty(jSONObject4.getString("platform"))) {
+            if (StringUtils.isEmpty(jSONObject4.getString("platform"))) {
                 jSONObject4.put("platform", "android");
             }
-            if (TextUtils.isEmpty(jSONObject4.getString("publishVersion"))) {
+            if (StringUtils.isEmpty(jSONObject4.getString("publishVersion"))) {
                 jSONObject4.put("publishVersion", "150924");
             }
             jSONObject4.put("tplId", (Object) string2);
@@ -466,7 +466,7 @@ public class Utils {
         TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
         CellLocation cellLocation = null;
         if (ActivityCompat.checkSelfPermission(context, com.taobao.tao.homepage.a.ACCESS_FINE_LOCATION) == 0 || ActivityCompat.checkSelfPermission(context, "android.permission.ACCESS_COARSE_LOCATION") == 0) {
-            if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_cell_info_10556"), nom.VALUE_YES)) {
+            if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_cell_info_10556"), nom.VALUE_YES)) {
                 return mCellInfo;
             }
             if (telephonyManager != null) {
@@ -520,7 +520,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("20723d4c", new Object[0])).booleanValue();
         }
-        if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_root_10556"), nom.VALUE_YES)) {
+        if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_disable_root_10556"), nom.VALUE_YES)) {
             return false;
         }
         Boolean bool = mIsRootDevice;
@@ -626,7 +626,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f1cd0857", new Object[]{context, str})).booleanValue();
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -639,7 +639,7 @@ public class Utils {
 
     public static String toJsJsonString(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8070a032", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8070a032", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029");
     }
 
     public static boolean greaterThanVersion_Q() {
@@ -658,7 +658,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return (Signature[]) ipChange.ipc$dispatch("8a8e40fd", new Object[]{context, str});
         }
-        if (!TextUtils.isEmpty(str) && context != null) {
+        if (!StringUtils.isEmpty(str) && context != null) {
             LogUtil.record(2, "MspPayApp:getRawSignature", "getRawSignature, packageName=".concat(String.valueOf(str)));
             try {
                 PackageInfo packageInfo = context.getPackageManager().getPackageInfo(str, 64);
@@ -783,7 +783,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d5c5fc81", new Object[]{str, str2, str3, str4, str5})).booleanValue();
         }
-        if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4) || TextUtils.isEmpty(str5) || str2 == null || str2.length() <= 0 || str == null || str.length() <= 0) {
+        if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4) || StringUtils.isEmpty(str5) || str2 == null || str2.length() <= 0 || str == null || str.length() <= 0) {
             return false;
         }
         try {
@@ -825,7 +825,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e3cb8ca3", new Object[]{str, str2, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return -1;
         }
         try {
@@ -855,7 +855,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("bf01e97c", new Object[]{str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {
@@ -947,7 +947,7 @@ public class Utils {
             return (String) ipChange.ipc$dispatch("c710e989", new Object[]{mspTradeContext});
         }
         String fromApi = mspTradeContext.getPaySession().getFromApi();
-        return !TextUtils.isEmpty(fromApi) ? fromApi : MspGlobalDefine.DIRECT_API;
+        return !StringUtils.isEmpty(fromApi) ? fromApi : MspGlobalDefine.DIRECT_API;
     }
 
     public static String getInvokeFromSource(MspTradeContext mspTradeContext) {
@@ -956,6 +956,6 @@ public class Utils {
             return (String) ipChange.ipc$dispatch("63d023fa", new Object[]{mspTradeContext});
         }
         String fromSource = mspTradeContext.getPaySession().getFromSource();
-        return !TextUtils.isEmpty(fromSource) ? fromSource : "native";
+        return !StringUtils.isEmpty(fromSource) ? fromSource : "native";
     }
 }

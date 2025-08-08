@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.PushManager;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
@@ -77,7 +77,7 @@ public class d {
                     break;
                 }
             }
-            if (!TextUtils.isEmpty(str3) || queryIntentServices.size() <= 0) {
+            if (!StringUtils.isEmpty(str3) || queryIntentServices.size() <= 0) {
                 str = str3;
                 str2 = str4;
             } else {
@@ -89,7 +89,7 @@ public class d {
             str2 = null;
         }
         DebugLogger.i("UxIPUtils", "current process packageName " + str2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 String jSONObject = e.a((Map) map).toString();
                 Intent intent = new Intent();
@@ -108,7 +108,7 @@ public class d {
     public static com.meizu.cloud.pushsdk.handler.e.j.d a(String str) {
         String str2;
         com.meizu.cloud.pushsdk.handler.e.j.d dVar = new com.meizu.cloud.pushsdk.handler.e.j.d();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String str3 = null;
@@ -131,7 +131,7 @@ public class d {
 
     public static String a(Intent intent) {
         String stringExtra = intent.getStringExtra(PushConstants.EXTRA_APP_PUSH_TASK_ID);
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             try {
                 MPushMessage mPushMessage = (MPushMessage) intent.getSerializableExtra(PushConstants.MZ_PUSH_PRIVATE_MESSAGE);
                 return mPushMessage != null ? mPushMessage.getTaskId() : stringExtra;
@@ -148,13 +148,13 @@ public class d {
     }
 
     public static void a(Context context, Intent intent, String str, String str2, int i) {
-        if (!TextUtils.isEmpty(a(intent))) {
+        if (!StringUtils.isEmpty(a(intent))) {
             a(context, context.getPackageName(), intent.getStringExtra(PushConstants.MZ_PUSH_MESSAGE_STATISTICS_IMEI_KEY), a(intent), str, str2, i);
         }
     }
 
     public static void a(Context context, String str, int i, String str2, String str3) {
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             a(context, context.getPackageName(), str3, str2, PushManager.TAG, str, i);
         }
     }
@@ -189,14 +189,14 @@ public class d {
         hashMap.put("ti", str3);
         hashMap.put(AppIconSetting.DEFAULT_LARGE_ICON, str2);
         hashMap.put("fdId", com.meizu.cloud.pushsdk.d.c.b(context));
-        if (TextUtils.isEmpty(str6)) {
+        if (StringUtils.isEmpty(str6)) {
             str6 = String.valueOf(System.currentTimeMillis() / 1000);
         }
         hashMap.put("ts", str6);
         hashMap.put("pn", str);
         hashMap.put("pv", PushManager.TAG);
         hashMap.put("nm", String.valueOf(System.currentTimeMillis() / 1000));
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put("si", str4);
         }
         if (!a(context, hashMap, z, j)) {
@@ -208,7 +208,7 @@ public class d {
     public static void a(Context context, boolean z, String str, Map<String, String> map) {
         DebugLogger.e("UxIPUtils", "onLogEvent eventName [" + str + "] properties = " + map);
         if (!"notification_service_message".equals(str)) {
-            com.meizu.cloud.pushsdk.f.a.a(context, (com.meizu.cloud.pushsdk.e.d.a) null, (f) null).a(((b.c) com.meizu.cloud.pushsdk.f.d.b.d().c(str).a(1).a(Long.valueOf(map.get("ts")).longValue())).b(map.get("nm") != null ? map.get("nm") : String.valueOf(System.currentTimeMillis() / 1000)).a(map.get(AppIconSetting.DEFAULT_LARGE_ICON)).d(map.get("fdId")).f(map.get("pn")).g(map.get("pv")).i(map.get("ti")).h(TextUtils.isEmpty(map.get("si")) ? "" : map.get("si")).e(String.valueOf(b.e(context, map.get("pn")))).b(), z);
+            com.meizu.cloud.pushsdk.f.a.a(context, (com.meizu.cloud.pushsdk.e.d.a) null, (f) null).a(((b.c) com.meizu.cloud.pushsdk.f.d.b.d().c(str).a(1).a(Long.valueOf(map.get("ts")).longValue())).b(map.get("nm") != null ? map.get("nm") : String.valueOf(System.currentTimeMillis() / 1000)).a(map.get(AppIconSetting.DEFAULT_LARGE_ICON)).d(map.get("fdId")).f(map.get("pn")).g(map.get("pv")).i(map.get("ti")).h(StringUtils.isEmpty(map.get("si")) ? "" : map.get("si")).e(String.valueOf(b.e(context, map.get("pn")))).b(), z);
         }
     }
 

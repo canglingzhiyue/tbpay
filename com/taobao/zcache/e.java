@@ -1,6 +1,6 @@
 package com.taobao.zcache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -28,7 +28,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("2f58b020", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         JSONObject jSONObject = new JSONObject();
@@ -36,7 +36,7 @@ public class e {
             VariationSet activate = UTABTest.activate("AB_", str2);
             if (activate != null && (variation = activate.getVariation("zcache_list")) != null) {
                 String valueAsString = variation.getValueAsString("");
-                if (!TextUtils.isEmpty(valueAsString)) {
+                if (!StringUtils.isEmpty(valueAsString)) {
                     try {
                         JSONObject jSONObject2 = new JSONObject(valueAsString);
                         Iterator<String> keys = jSONObject2.keys();

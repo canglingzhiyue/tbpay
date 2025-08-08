@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Build;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.photo.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -148,7 +148,7 @@ public class nfn implements nfl {
                 }
             }
         }
-        if (this.c == null || TextUtils.isEmpty(str)) {
+        if (this.c == null || StringUtils.isEmpty(str)) {
             return false;
         }
         synchronized (this.f31423a) {

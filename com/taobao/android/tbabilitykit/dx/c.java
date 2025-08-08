@@ -1,6 +1,6 @@
 package com.taobao.android.tbabilitykit.dx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -47,7 +47,7 @@ public class c extends dlg<l> {
             return a("rootWidget为空", true);
         }
         String c = dlhVar.c("userId");
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             j = d.queryWidgetNodeByUserId(c);
         } else {
             j = lVar.j();

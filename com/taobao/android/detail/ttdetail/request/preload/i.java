@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.request.preload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.request.params.PreloadRequestParams;
 import com.taobao.android.detail.ttdetail.request.preload.f;
@@ -45,7 +45,7 @@ public class i {
                 for (c cVar : list) {
                     if (cVar != null) {
                         String str = cVar.b;
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             if (h.a().a(str) != null) {
                                 com.taobao.android.detail.ttdetail.utils.i.a("TTDetailRealTask", "预加载缓存已有数据");
                             } else if (f10799a.a(str)) {

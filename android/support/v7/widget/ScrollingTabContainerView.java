@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -190,11 +190,11 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
                     this.mIconView.setImageDrawable(null);
                 }
             }
-            boolean z = !TextUtils.isEmpty(b);
+            boolean z = !StringUtils.isEmpty(b);
             if (z) {
                 if (this.mTextView == null) {
                     AppCompatTextView appCompatTextView = new AppCompatTextView(getContext(), null, R.attr.actionBarTabTextStyle);
-                    appCompatTextView.setEllipsize(TextUtils.TruncateAt.END);
+                    appCompatTextView.setEllipsize(StringUtils.TruncateAt.END);
                     LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
                     layoutParams2.gravity = 16;
                     appCompatTextView.setLayoutParams(layoutParams2);

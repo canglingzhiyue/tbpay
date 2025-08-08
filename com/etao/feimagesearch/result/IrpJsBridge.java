@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.RectF;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.export.UMLLCons;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
@@ -45,16 +45,16 @@ public class IrpJsBridge extends e {
             String optString = jSONObject3.optString(UMLLCons.FEATURE_TYPE_PAGE);
             String optString2 = jSONObject3.optString("Ctrl");
             org.json.JSONObject optJSONObject = jSONObject3.optJSONObject("Args");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 optString = StatisticalDataPoint.PageName.PHOTO_SEARCH_RESULT.getPageName();
             }
-            if (TextUtils.isEmpty(optString2)) {
+            if (StringUtils.isEmpty(optString2)) {
                 optString2 = "unknown";
             }
             String parseUTArgs = parseUTArgs(optJSONObject);
             if ("ItemClick".equals(optString2) && (this.mContext instanceof b)) {
                 utItemClick("," + parseUTArgs, "ItemClick", ((b) this.mContext).d());
-            } else if (!TextUtils.isEmpty(parseUTArgs)) {
+            } else if (!StringUtils.isEmpty(parseUTArgs)) {
                 cox.d(optString, optString2, parseUTArgs);
             } else {
                 cox.d(optString, optString2, new String[0]);
@@ -82,7 +82,7 @@ public class IrpJsBridge extends e {
             sb.append(optString);
         }
         String sb2 = sb.toString();
-        return (TextUtils.isEmpty(sb2) || sb2.length() <= 1) ? "" : sb2.substring(1);
+        return (StringUtils.isEmpty(sb2) || sb2.length() <= 1) ? "" : sb2.substring(1);
     }
 
     private void utItemClick(String str, String str2, String str3) {
@@ -93,7 +93,7 @@ public class IrpJsBridge extends e {
         }
         StringBuilder sb = new StringBuilder("pssource=" + str3);
         sb.append(",utdid=" + UTDevice.getUtdid(this.mContext));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
         }
         cox.d(StatisticalDataPoint.PageName.PHOTO_SEARCH_RESULT.getPageName(), str2, sb.toString());
@@ -249,7 +249,7 @@ public class IrpJsBridge extends e {
         }
         cot.d(LOG_TAG, "updateContext " + jSONObject.toJSONString());
         String string = jSONObject.getString("region");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         String[] split = string.split(",");

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -60,12 +60,12 @@ public class xnj {
 
     public boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : TextUtils.equals("clickAiRefresh", this.f);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue() : StringUtils.equals("clickAiRefresh", this.f);
     }
 
     public boolean f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[]{this})).booleanValue() : TextUtils.equals(Constant.KEY_PAGEBACK, this.f);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[]{this})).booleanValue() : StringUtils.equals(Constant.KEY_PAGEBACK, this.f);
     }
 
     public String g() {

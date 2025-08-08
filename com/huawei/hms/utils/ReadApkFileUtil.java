@@ -1,7 +1,7 @@
 package com.huawei.hms.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidException;
 import android.util.Base64;
 import com.huawei.hms.support.log.HMSLog;
@@ -411,7 +411,7 @@ public class ReadApkFileUtil {
     }
 
     private static byte[] b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new byte[0];
         }
         int length = str.length();

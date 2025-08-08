@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -281,7 +281,7 @@ public class nql extends nqj<HistoryCellBean, e> implements View.OnClickListener
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(i2, i2);
         layoutParams.gravity = 53;
         tUrlImageView.setLayoutParams(layoutParams);
-        if (!TextUtils.isEmpty(activateBean.iconUrl)) {
+        if (!StringUtils.isEmpty(activateBean.iconUrl)) {
             tUrlImageView.setImageUrl(activateBean.iconUrl);
         }
         TextView textView = new TextView(activity);
@@ -314,7 +314,7 @@ public class nql extends nqj<HistoryCellBean, e> implements View.OnClickListener
         int i4 = k;
         textView.setPadding(i3, i4, i3, i4);
         textView.setLines(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         textView.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
         if (z2) {
             textView.setTextColor(resources.getColor(R.color.gray_aa));

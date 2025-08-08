@@ -16,7 +16,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.Choreographer;
 import android.view.KeyEvent;
@@ -230,15 +230,15 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+            } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
             } else {
                 String action = intent.getAction();
-                if (TextUtils.equals(action, LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
+                if (StringUtils.equals(action, LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
                     TaoLiveVideoActivity taoLiveVideoActivity = TaoLiveVideoActivity.this;
                     TaoLiveVideoActivity.a(taoLiveVideoActivity, taoLiveVideoActivity);
                     TLog.loge(MediaConstant.LBLIVE_SOURCE, TaoLiveVideoActivity.b() + "_APM", "onCreate checkSessionValid NOTIFY_LOGIN_SUCCESS");
                     TaoLiveVideoActivity.l(TaoLiveVideoActivity.this);
-                } else if (!TextUtils.equals(action, LoginAction.NOTIFY_LOGIN_CANCEL.name())) {
+                } else if (!StringUtils.equals(action, LoginAction.NOTIFY_LOGIN_CANCEL.name())) {
                 } else {
                     TaoLiveVideoActivity taoLiveVideoActivity2 = TaoLiveVideoActivity.this;
                     TaoLiveVideoActivity.a(taoLiveVideoActivity2, taoLiveVideoActivity2);
@@ -714,7 +714,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
         }
         if (getIntent() != null && getIntent().getData() != null) {
             String queryParameter = getIntent().getData().getQueryParameter("livesource");
-            if (!TextUtils.isEmpty(queryParameter) && a(queryParameter) && !m.e()) {
+            if (!StringUtils.isEmpty(queryParameter) && a(queryParameter) && !m.e()) {
                 return true;
             }
         }
@@ -759,7 +759,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
             java.lang.String r5 = "StartUpOptBlacklist"
             java.lang.String r6 = "tab2,taolivejulang,haiguan,anchor_pc_share"
             java.lang.String r1 = r4.a(r1, r5, r6)
-            boolean r4 = android.text.TextUtils.isEmpty(r8)
+            boolean r4 = android.text.StringUtils.isEmpty(r8)
             if (r4 != 0) goto L88
             java.lang.String r4 = "."
             boolean r4 = r8.contains(r4)
@@ -770,15 +770,15 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
             int r4 = r8.length
             if (r4 <= 0) goto L88
             r4 = r8[r3]
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             if (r4 != 0) goto L88
-            boolean r4 = android.text.TextUtils.isEmpty(r1)
+            boolean r4 = android.text.StringUtils.isEmpty(r1)
             if (r4 != 0) goto L88
             r8 = r8[r3]
             boolean r8 = r1.contains(r8)
             goto L89
         L7d:
-            boolean r4 = android.text.TextUtils.isEmpty(r1)
+            boolean r4 = android.text.StringUtils.isEmpty(r1)
             if (r4 != 0) goto L88
             boolean r8 = r1.contains(r8)
             goto L89
@@ -883,7 +883,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
             String str = null;
             String string = getIntent().getExtras() != null ? getIntent().getExtras().getString("mediaInfo") : null;
             Uri data = getIntent().getData();
-            if (data != null && !TextUtils.isEmpty(data.getQueryParameter(aw.PARAM_PLAY_VIEW_TOKEN))) {
+            if (data != null && !StringUtils.isEmpty(data.getQueryParameter(aw.PARAM_PLAY_VIEW_TOKEN))) {
                 str = data.getQueryParameter(aw.PARAM_PLAY_VIEW_TOKEN);
             }
             if (string != null || str != null) {
@@ -984,7 +984,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
         String nick = Login.getNick();
         s.f18233a.d().a("taolive_check_login_session_valid", Boolean.valueOf(checkSessionValid));
         if (this.j) {
-            if (!checkSessionValid && ((TextUtils.isEmpty(userId) || TextUtils.isEmpty(nick)) && !a(checkSessionValid))) {
+            if (!checkSessionValid && ((StringUtils.isEmpty(userId) || StringUtils.isEmpty(nick)) && !a(checkSessionValid))) {
                 return false;
             }
         } else if (!a(checkSessionValid)) {
@@ -1031,7 +1031,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
         final View inflate = LayoutInflater.from(this).inflate(R.layout.taolive_root_layout, (ViewGroup) null, false);
         h hVar = new h();
         Uri data = intent.getData();
-        if (data != null && !TextUtils.isEmpty(str)) {
+        if (data != null && !StringUtils.isEmpty(str)) {
             if (com.taobao.taolive.sdk.ui.media.g.a().d(str)) {
                 hVar.f21934a = str;
             } else {
@@ -1100,7 +1100,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
         } else {
             if (i() && intent.getExtras() != null) {
                 String string = intent.getExtras().getString("coverImage");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     a(fVar, string);
                 }
             }
@@ -1419,7 +1419,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
         String str2 = ag.PAGE_HOME_LIVETAB;
         if (equals) {
             String queryParameter = data.getQueryParameter(com.taobao.taolive.room.controller2.j.PARAM_LIVEHOME_SPM);
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 str = queryParameter;
             }
         } else {
@@ -1428,20 +1428,20 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
         ai.a((a) null, (Object) this, str2);
         hashMap.put("spm-cnt", str);
         this.f = data.getQueryParameter("livesource");
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             hashMap.put("livesource", this.f);
             hashMap.put("entryLiveSource", this.f);
         }
         String queryParameter2 = data.getQueryParameter("spm");
-        if (!TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter2)) {
             hashMap.put("entrySpm", queryParameter2);
         }
         String queryParameter3 = data.getQueryParameter("userId");
-        if (!TextUtils.isEmpty(queryParameter3)) {
+        if (!StringUtils.isEmpty(queryParameter3)) {
             hashMap.put("account_id", queryParameter3);
         }
         String queryParameter4 = data.getQueryParameter("id");
-        if (!TextUtils.isEmpty(queryParameter4)) {
+        if (!StringUtils.isEmpty(queryParameter4)) {
             hashMap.put("feed_id", queryParameter4);
         }
         hashMap.put("isAfcColdContext", String.valueOf(this.j));
@@ -1665,10 +1665,10 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
                     ipChange2.ipc$dispatch("6b9b1c8", new Object[]{this, view, str, str2, str3});
                     return;
                 }
-                if (!TextUtils.isEmpty(str) && aa.i()) {
+                if (!StringUtils.isEmpty(str) && aa.i()) {
                     str = str.replace(com.taobao.taolive.room.utils.y.TAOLIVE_ONLINE_LIVE_ID, "id=" + aa.C());
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = com.taobao.taolive.room.utils.c.a(str2);
                 }
                 String replace = str.replace("forceRefresh=true", "forceRefresh=false");
@@ -2193,11 +2193,11 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
             return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{this, str, new Boolean(z)})).booleanValue();
         }
         this.n = false;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Uri parse = Uri.parse(str);
-            if (TextUtils.equals("/tbopen/index.html", parse.getPath())) {
+            if (StringUtils.equals("/tbopen/index.html", parse.getPath())) {
                 String queryParameter = parse.getQueryParameter("h5Url");
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     return false;
                 }
                 parse = Uri.parse(queryParameter);
@@ -2207,7 +2207,7 @@ public class TaoLiveVideoActivity extends CustomBaseActivity implements com.alib
                 str2 = str;
                 z2 = false;
             }
-            if (parse != null && !TextUtils.equals("/taolive/video.html", parse.getPath()) && !TextUtils.equals("/act/talent/live.html", parse.getPath())) {
+            if (parse != null && !StringUtils.equals("/taolive/video.html", parse.getPath()) && !StringUtils.equals("/act/talent/live.html", parse.getPath())) {
                 if (z) {
                     ai.b((a) null, this);
                     this.n = true;

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.nextrpc.a;
@@ -87,15 +87,15 @@ public final class idg extends idc {
                 com.taobao.android.purchase.core.address.a.a(e, str);
             } else if (com.taobao.android.purchase.core.b.MTOP_BIZ_USER_ADDRESS_IS_NOT_FULL.equals(a2)) {
                 b = com.taobao.android.purchase.core.b.NORMAL_WARNING_TITLE;
-                a(e, str, !TextUtils.isEmpty(str2) ? str2 : a2, d);
+                a(e, str, !StringUtils.isEmpty(str2) ? str2 : a2, d);
             } else if (com.taobao.android.purchase.core.b.MTOP_BIZ_USER_ADDRESS_IS_FULL.equals(a2)) {
                 b = com.taobao.android.purchase.core.b.NORMAL_WARNING_TITLE;
-                b(e, str, !TextUtils.isEmpty(str2) ? str2 : a2, d);
+                b(e, str, !StringUtils.isEmpty(str2) ? str2 : a2, d);
             } else if (i == 419) {
                 b = com.taobao.android.purchase.core.b.BUILD_ORDER_WARNING_TITLE_NEW;
                 fke.a(e);
             } else {
-                String str3 = TextUtils.isEmpty(str2) ? a2 : str2;
+                String str3 = StringUtils.isEmpty(str2) ? a2 : str2;
                 String str4 = com.taobao.android.purchase.core.b.BUILD_ORDER_WARNING_TITLE_NEW;
                 boolean e2 = e();
                 if (e2) {
@@ -104,7 +104,7 @@ public final class idg extends idc {
                 a(e, g, str4, str3, str, e2, true);
                 b = str4;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = a2;
             }
             com.taobao.android.purchase.core.utils.c.a(str2, b);
@@ -228,7 +228,7 @@ public final class idg extends idc {
                     return;
                 }
                 Bundle bundle = new Bundle();
-                if (!TextUtils.isEmpty(dujVar.j())) {
+                if (!StringUtils.isEmpty(dujVar.j())) {
                     bundle.putString(com.taobao.android.purchase.core.b.ACTIVITY_DEFAULT_ADDRESS_ID_KEY, dujVar.j());
                 }
                 if ("BIANLI".equals(dujVar.m())) {
@@ -240,10 +240,10 @@ public final class idg extends idc {
                 if (dujVar.o()) {
                     bundle.putInt(com.taobao.android.purchase.core.b.ACTIVITY_KEY_BIZ_TYPE, dujVar.n());
                 }
-                if (!TextUtils.isEmpty(dujVar.l())) {
+                if (!StringUtils.isEmpty(dujVar.l())) {
                     bundle.putString(com.taobao.android.purchase.core.b.ACTIVITY_MANAGER_ADDRESS_STORE_ID, dujVar.l());
                 }
-                if (!TextUtils.isEmpty(dujVar.j())) {
+                if (!StringUtils.isEmpty(dujVar.j())) {
                     bundle.putString(com.taobao.android.purchase.core.b.ACTIVITY_DEFAULT_ADDRESS_ID_KEY, dujVar.j());
                 }
                 com.taobao.android.purchase.core.address.a.a(context, bundle, 54);

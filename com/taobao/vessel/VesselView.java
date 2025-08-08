@@ -2,7 +2,7 @@ package com.taobao.vessel;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -458,7 +458,7 @@ public class VesselView extends VesselParentView {
         if (ipChange instanceof IpChange) {
             return (VesselType) ipChange.ipc$dispatch("8f22e371", new Object[]{this});
         }
-        return b.a(TextUtils.isEmpty(this.mDowngradeUrl) ? b.b(this.mOriginUrl) : this.mDowngradeUrl);
+        return b.a(StringUtils.isEmpty(this.mDowngradeUrl) ? b.b(this.mOriginUrl) : this.mDowngradeUrl);
     }
 
     public boolean downgrade(String str) {
@@ -474,7 +474,7 @@ public class VesselView extends VesselParentView {
         removeAllViews();
         this.mProxyView.onDestroy();
         this.mProxyView = null;
-        if (!TextUtils.isEmpty(this.mDowngradeUrl)) {
+        if (!StringUtils.isEmpty(this.mDowngradeUrl)) {
             createView(this.mDowngradeUrl);
             return true;
         } else if (this.mCurrentVesselType == VesselType.Weex) {

@@ -1,6 +1,6 @@
 package com.ali.user.mobile.info;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.DataCallback;
 import com.ali.user.mobile.log.UserTrackAdapter;
@@ -170,7 +170,7 @@ public class AlipayInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5fbdcf47", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.mApdid)) {
+        } else if (!StringUtils.isEmpty(this.mApdid)) {
         } else {
             generateAlipayTokens(null);
         }
@@ -181,7 +181,7 @@ public class AlipayInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a23faff", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mApdid) && this.alipaySecuritySdk != null) {
+        if (StringUtils.isEmpty(this.mApdid) && this.alipaySecuritySdk != null) {
             generateAlipayTokens(null);
         }
         return this.mApdid;
@@ -192,7 +192,7 @@ public class AlipayInfo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e63dfe7a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mApdidToken) && this.alipaySecuritySdk != null) {
+        if (StringUtils.isEmpty(this.mApdidToken) && this.alipaySecuritySdk != null) {
             generateAlipayTokens(null);
             UserTrackAdapter.sendUT("Event_InitApdidToken");
         }
@@ -204,7 +204,7 @@ public class AlipayInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1eabc8aa", new Object[]{this, dataCallback});
-        } else if (TextUtils.isEmpty(this.mApdidToken)) {
+        } else if (StringUtils.isEmpty(this.mApdidToken)) {
             if (this.alipaySecuritySdk == null) {
                 try {
                     this.alipaySecuritySdk = APSecuritySdk.getInstance(DataProviderFactory.getApplicationContext());

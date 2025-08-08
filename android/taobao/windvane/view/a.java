@@ -5,7 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.taobao.windvane.export.adapter.ILocalizationService;
 import android.taobao.windvane.util.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -163,7 +163,7 @@ public class a {
         this.g.setLayoutParams(layoutParams);
         this.g.setBackgroundColor(-7829368);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-1, -2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Button button = new Button(this.c);
             button.setText(str);
             button.setBackgroundColor(-657931);

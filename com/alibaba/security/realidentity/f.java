@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
@@ -141,7 +141,7 @@ public final class f {
                     return;
                 }
                 String name = nextEntry.getName();
-                if (TextUtils.isEmpty(name) || !name.contains("../")) {
+                if (StringUtils.isEmpty(name) || !name.contains("../")) {
                     File file3 = new File(file2, name);
                     if (nextEntry.isDirectory()) {
                         file3.mkdirs();
@@ -266,7 +266,7 @@ public final class f {
         if (sb == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
             sb.append(File.separator);
             sb.append(str2);
@@ -355,7 +355,7 @@ public final class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             File file = new File(str);
             if (!file.exists()) {

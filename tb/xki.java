@@ -8,7 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.util.i;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -31,10 +31,10 @@ public class xki implements srf {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || !TextUtils.equals(intent.getAction(), "TBBootImageForbiddenModeBroadcast")) {
+            } else if (intent == null || !StringUtils.equals(intent.getAction(), "TBBootImageForbiddenModeBroadcast")) {
             } else {
                 String stringExtra = intent.getStringExtra("stage");
-                if (TextUtils.equals(stringExtra, "startForbidden")) {
+                if (StringUtils.equals(stringExtra, "startForbidden")) {
                     String stringExtra2 = intent.getStringExtra("timeout");
                     int i = ShopConstants.K_ALL_WEEX_ENABLED_CACHE_TIME_DEFAULT;
                     try {
@@ -49,7 +49,7 @@ public class xki implements srf {
                     kej.a("BroadcastFlowInterceptor", "receive 屏蔽时间：" + i2);
                     xki.a(xki.this, intent, i);
                 }
-                if (!TextUtils.equals(stringExtra, "stopForbidden")) {
+                if (!StringUtils.equals(stringExtra, "stopForbidden")) {
                     return;
                 }
                 kej.a("BroadcastFlowInterceptor", "receive 解除屏蔽 ：");

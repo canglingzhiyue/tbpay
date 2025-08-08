@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -107,7 +107,7 @@ public class lwt {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6b7b3e1b", new Object[]{this, aVar, strArr, str})).booleanValue();
         }
-        if (strArr != null && !TextUtils.isEmpty(str)) {
+        if (strArr != null && !StringUtils.isEmpty(str)) {
             return false;
         }
         com.taobao.informationflowdataservice.dataservice.utils.baseutils.linklog.a.b("netRequest", "param_error", "网关2.0网络请求，参数异常", "RecmdRequestController", "containerId or requestType is empty");
@@ -248,7 +248,7 @@ public class lwt {
         JSONObject jSONObject = (JSONObject) obj;
         String string = jSONObject.getString("apiName");
         String string2 = jSONObject.getString("apiVersion");
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
             return new com.taobao.informationflowdataservice.dataservice.bizcode.model.a(string, string2);
         }
         return null;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.aidl.Connection;
 import com.airbnb.lottie.network.a;
 import java.io.IOException;
@@ -51,7 +51,7 @@ public class aio implements a {
     public String c() {
         try {
             String a2 = a(this.f25354a.getConnHeadFields().get("content-type"));
-            return TextUtils.isEmpty(a2) ? a(this.f25354a.getConnHeadFields().get("Content-Type")) : a2;
+            return StringUtils.isEmpty(a2) ? a(this.f25354a.getConnHeadFields().get("Content-Type")) : a2;
         } catch (Exception unused) {
             return "";
         }

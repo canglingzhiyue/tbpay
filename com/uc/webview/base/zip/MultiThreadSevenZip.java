@@ -1,7 +1,7 @@
 package com.uc.webview.base.zip;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.Log;
 import com.uc.webview.base.cyclone.Z7Dec;
 import com.uc.webview.base.io.d;
@@ -26,7 +26,7 @@ public final class MultiThreadSevenZip {
     private void checkFileIfNeed(int i, String str) {
         if (i == 0) {
             try {
-                if (TextUtils.isEmpty(this.mCheckFile)) {
+                if (StringUtils.isEmpty(this.mCheckFile)) {
                     return;
                 }
                 File file = new File(this.mCheckFile);

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -822,7 +822,7 @@ public final class e extends psy implements av, ba, snz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("63fccf7", new Object[]{this});
-        } else if (this.G != null || this.H == null || TextUtils.isEmpty(this.J)) {
+        } else if (this.G != null || this.H == null || StringUtils.isEmpty(this.J)) {
         } else {
             sps sessionParams = ((ISceneConfigService) this.E.getService(ISceneConfigService.class)).getSessionParams();
             s.a aVar = new s.a((Activity) this.D);
@@ -927,7 +927,7 @@ public final class e extends psy implements av, ba, snz {
             jSONObject2.put(com.taobao.android.weex_framework.util.a.ATOM_length, this.L);
             jSONObject2.put("video_url", this.J);
             jSONArray.put(jSONObject2);
-            if (!TextUtils.isEmpty(this.K)) {
+            if (!StringUtils.isEmpty(this.K)) {
                 jSONObject.put("caches", jSONArray);
             }
             jSONObject.put("resources", jSONArray);
@@ -977,7 +977,7 @@ public final class e extends psy implements av, ba, snz {
                 a(musicInfoVO.musicParams.playPairs.startTime, musicInfoVO.musicParams.playPairs.endTime);
             }
         }
-        if (TextUtils.isEmpty(this.H.i().publishStatus) || TextUtils.isEmpty(this.H.f().music) || !TextUtils.isEmpty(this.J)) {
+        if (StringUtils.isEmpty(this.H.i().publishStatus) || StringUtils.isEmpty(this.H.f().music) || !StringUtils.isEmpty(this.J)) {
             return;
         }
         this.J = this.H.f().music;

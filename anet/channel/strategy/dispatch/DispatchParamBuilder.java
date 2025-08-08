@@ -1,7 +1,7 @@
 package anet.channel.strategy.dispatch;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.security.SecurityHelper;
@@ -61,7 +61,7 @@ public class DispatchParamBuilder {
         } else if (sign2 == null) {
             ALog.e(TAG, "amdc sign is null", null, "isAllowLightAmdcRequest", Boolean.valueOf(z));
             return null;
-        } else if (TextUtils.isEmpty(sign2.getAppkey())) {
+        } else if (StringUtils.isEmpty(sign2.getAppkey())) {
             ALog.e(TAG, "amdc appkey is empty", null, "isAllowLightAmdcRequest", Boolean.valueOf(z));
             return null;
         } else {
@@ -92,13 +92,13 @@ public class DispatchParamBuilder {
         map.put(DispatchConstants.STACK_TYPE, Integer.toString(getStackType()));
         map.put("domain", formatDomains(map));
         String abStrategy = Utils.getAbStrategy();
-        if (!TextUtils.isEmpty(abStrategy)) {
+        if (!StringUtils.isEmpty(abStrategy)) {
             map.put(DispatchConstants.AB_STRATEGY, abStrategy);
         }
         map.put("t", String.valueOf(System.currentTimeMillis()));
         HashMap hashMap = new HashMap();
         hashMap.put(DispatchConstants.PLATFORM_VERSION, Build.VERSION.RELEASE);
-        if (!TextUtils.isEmpty(GlobalAppRuntimeInfo.getUtdid())) {
+        if (!StringUtils.isEmpty(GlobalAppRuntimeInfo.getUtdid())) {
             hashMap.put("deviceId", GlobalAppRuntimeInfo.getUtdid());
         }
         hashMap.put(DispatchConstants.CARRIER, NetworkStatusHelper.getCarrier());
@@ -132,7 +132,7 @@ public class DispatchParamBuilder {
             } else {
                 map.put("v", DispatchConstants.LATEST_VER_CODE_PROTOCOL);
             }
-            if (!TextUtils.isEmpty(userId)) {
+            if (!StringUtils.isEmpty(userId)) {
                 hashMap.put("sid", userId);
             }
             if (z) {
@@ -150,7 +150,7 @@ public class DispatchParamBuilder {
                 hashMap2.putAll(map);
                 hashMap2.putAll(hashMap);
                 sign = getSign(sign2, hashMap2);
-                if (TextUtils.isEmpty(sign)) {
+                if (StringUtils.isEmpty(sign)) {
                     return null;
                 }
             }
@@ -162,7 +162,7 @@ public class DispatchParamBuilder {
             } else {
                 map.put("v", DispatchConstants.VER_CODE_PROTOCOL);
             }
-            if (!TextUtils.isEmpty(GlobalAppRuntimeInfo.getUserId())) {
+            if (!StringUtils.isEmpty(GlobalAppRuntimeInfo.getUserId())) {
                 map.put("sid", GlobalAppRuntimeInfo.getUserId());
             }
             if (sign2.useSecurityGuard()) {
@@ -175,7 +175,7 @@ public class DispatchParamBuilder {
             hashMap3.putAll(map);
             hashMap3.putAll(hashMap);
             String sign3 = getSign(sign2, hashMap3);
-            if (TextUtils.isEmpty(sign3)) {
+            if (StringUtils.isEmpty(sign3)) {
                 return null;
             }
             map.put("sign", sign3);

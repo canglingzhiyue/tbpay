@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.SecExceptionCode;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.GlobalSettings;
@@ -26,7 +26,7 @@ public final class x {
 
         static {
             String str = GlobalSettings.get((int) SecExceptionCode.SEC_ERROR_INIT_DELAY_REPORT_ERROR, "");
-            f23946a = !TextUtils.isEmpty(str) && !x.a(str);
+            f23946a = !StringUtils.isEmpty(str) && !x.a(str);
         }
     }
 
@@ -40,7 +40,7 @@ public final class x {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String a(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         return str.replace("${NAME}", str2).replace("${ARCH}", EnvInfo.is64Bit() ? "Arm64" : "Arm32");
@@ -138,17 +138,17 @@ public final class x {
         } catch (Throwable unused) {
             str2 = null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             int lastIndexOf2 = str2.lastIndexOf(47);
             String substring = lastIndexOf2 > 0 ? str2.substring(lastIndexOf2 + 1) : str2;
-            return TextUtils.isEmpty(substring) ? str : substring;
+            return StringUtils.isEmpty(substring) ? str : substring;
         }
         return str2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean b(String str, String str2) {
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !str.equals(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !str.equals(str2)) {
             try {
                 String[] split = str.split("\\.");
                 String[] split2 = str2.split("\\.");

@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.logbuilder;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.input.InputFrame3;
 import com.taobao.search.common.util.k;
@@ -104,7 +104,7 @@ public class g {
                 long currentTimeMillis = System.currentTimeMillis();
                 String a2 = g.a(g.this);
                 String a3 = aqb.a(aob.a().k(), g.TAG_TIME_ADJUST_HOST_PORT);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     a2 = a3;
                 }
                 String str = g.b(g.this) + a2 + g.c(g.this);
@@ -119,7 +119,7 @@ public class g {
                         return;
                     }
                     String optString = optJSONObject.optString("t");
-                    if (TextUtils.isEmpty(optString)) {
+                    if (StringUtils.isEmpty(optString)) {
                         return;
                     }
                     try {

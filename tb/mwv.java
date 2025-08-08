@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -49,7 +49,7 @@ public class mwv {
             com.alibaba.fastjson.JSONObject jSONObject = (com.alibaba.fastjson.JSONObject) it.next();
             com.alibaba.fastjson.JSONObject jSONObject2 = jSONObject.getJSONObject("ext");
             String string = jSONObject.getString("jumpUrl");
-            if (jSONObject2 != null && TextUtils.isEmpty(string)) {
+            if (jSONObject2 != null && StringUtils.isEmpty(string)) {
                 arrayList.add((DeliverInfoBean) JSON.toJavaObject(jSONObject2, DeliverInfoBean.class));
             }
         }

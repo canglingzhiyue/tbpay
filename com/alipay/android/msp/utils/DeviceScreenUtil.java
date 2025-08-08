@@ -3,7 +3,7 @@ package com.alipay.android.msp.utils;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,13 +52,13 @@ public class DeviceScreenUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1d70aa8c", new Object[0])).booleanValue();
         }
-        if ("samsung".equalsIgnoreCase(Build.BRAND) && TextUtils.equals("SM-F9000", Build.MODEL)) {
+        if ("samsung".equalsIgnoreCase(Build.BRAND) && StringUtils.equals("SM-F9000", Build.MODEL)) {
             return true;
         }
-        if ((HUAWEI_BRAND.equalsIgnoreCase(Build.BRAND) && (HUAWEI_FOLD_DEVICES.contains(Build.DEVICE) || HUAWEI_FOLD_MODELS.contains(Build.MODEL))) || TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_foldable_device_model_10550"), nom.VALUE_YES)) {
+        if ((HUAWEI_BRAND.equalsIgnoreCase(Build.BRAND) && (HUAWEI_FOLD_DEVICES.contains(Build.DEVICE) || HUAWEI_FOLD_MODELS.contains(Build.MODEL))) || StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_foldable_device_model_10550"), nom.VALUE_YES)) {
             return true;
         }
-        if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_degrade_foldable_device_10550"), nom.VALUE_YES)) {
+        if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_degrade_foldable_device_10550"), nom.VALUE_YES)) {
             return false;
         }
         return isOPPOFold() || isVivoFoldableDevice() || isXiaomiFold() || isHwFoldableDevice(GlobalHelper.getInstance().getContext()) || isHonorFoldableDevice(GlobalHelper.getInstance().getContext());

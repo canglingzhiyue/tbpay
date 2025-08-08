@@ -3,7 +3,7 @@ package com.taobao.accs.net;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.CustomDataFrameCb;
 import anet.channel.IAuth;
@@ -386,7 +386,7 @@ public class e extends com.taobao.accs.net.c implements CustomDataFrameCb {
                         for (Message message : a3) {
                             if (!message.isAck && !message.isTimeOut()) {
                                 String str2 = message.serviceId;
-                                if (!TextUtils.isEmpty(str2) && b2.contains(str2) && !e.z().containsKey(message.getDataId())) {
+                                if (!StringUtils.isEmpty(str2) && b2.contains(str2) && !e.z().containsKey(message.getDataId())) {
                                     e.this.a(message, 0);
                                     e.z().put(message.getDataId(), null);
                                 }
@@ -421,7 +421,7 @@ public class e extends com.taobao.accs.net.c implements CustomDataFrameCb {
                     return;
                 }
                 try {
-                    if (e.this.d == null || TextUtils.isEmpty(e.this.k())) {
+                    if (e.this.d == null || StringUtils.isEmpty(e.this.k())) {
                         return;
                     }
                     ALog.i(e.this.g(), "mTryStartServiceRunable bindapp", new Object[0]);
@@ -1295,7 +1295,7 @@ public class e extends com.taobao.accs.net.c implements CustomDataFrameCb {
                 }
                 v();
                 this.j = accsClientConfig;
-                if (!TextUtils.isEmpty(this.b) && !this.b.equals(this.j.getAppKey())) {
+                if (!StringUtils.isEmpty(this.b) && !this.b.equals(this.j.getAppKey())) {
                     com.taobao.accs.utl.d.a("accs", BaseMonitor.COUNT_APPKEY_CHANGED, "", mto.a.GEO_NOT_SUPPORT);
                 }
                 this.b = this.j.getAppKey();
@@ -1499,11 +1499,11 @@ public class e extends com.taobao.accs.net.c implements CustomDataFrameCb {
                                     com.taobao.accs.utl.d.a("accs", BaseMonitor.COUNT_POINT_REGID_ONLINE, "get regId by online", mto.a.GEO_NOT_SUPPORT);
                                 }
                             }
-                            if (TextUtils.isEmpty(str)) {
+                            if (StringUtils.isEmpty(str)) {
                                 str = UtilityImpl.createRegId();
                                 com.taobao.accs.utl.d.a("accs", BaseMonitor.COUNT_POINT_REGID_NATIVE, "get regId by native", mto.a.GEO_NOT_SUPPORT);
                             }
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 synchronized (e.class) {
                                     if (l.r(b.b(b.this).d)) {
                                         l.c(b.b(b.this).d, str);
@@ -1596,7 +1596,7 @@ public class e extends com.taobao.accs.net.c implements CustomDataFrameCb {
                             ALog.d(b.a(b.this), "auth", "header", header);
                         }
                         String str = header.get("x-at");
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             b.b(b.this).l = str;
                         }
                         b.b(b.this).m = header.get("x-gw-unit");

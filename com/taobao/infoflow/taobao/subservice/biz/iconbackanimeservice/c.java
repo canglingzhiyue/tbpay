@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.iconbackanimeservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -37,7 +37,7 @@ public class c implements IDxItemClickService.c {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("574cdb3b", new Object[]{this, baseSectionModel, baseSubItemModel});
         }
-        if (!TextUtils.equals("icon_and_miniapp_nomore_2019_v1", baseSectionModel.getSectionBizCode())) {
+        if (!StringUtils.equals("icon_and_miniapp_nomore_2019_v1", baseSectionModel.getSectionBizCode())) {
             return null;
         }
         String itemBizCode = baseSubItemModel.getItemBizCode();
@@ -66,7 +66,7 @@ public class c implements IDxItemClickService.c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("33324d3", new Object[]{this, iIconService, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ldf.d("TargetUrlParamsCreatorImpl", "itemBizCode == null");
             return false;
         } else if (iIconService.isPassPopLayerDataAvailable(str)) {

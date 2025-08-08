@@ -1,6 +1,6 @@
 package com.taobao.taopai.material.request.musiclist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -151,7 +151,7 @@ public class MusicListBusiness extends BaseMaterialBusiness<MusicListBean> {
                 if (!this.mIsReturnData) {
                     this.mListener.a(musicListResponse.mo2429getData());
                 }
-                if (TextUtils.isEmpty(getCacheFilePath())) {
+                if (StringUtils.isEmpty(getCacheFilePath())) {
                     return;
                 }
                 saveCache(musicListResponse.mo2429getData());

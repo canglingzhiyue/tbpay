@@ -3,7 +3,7 @@ package com.taobao.android.detail2.core.framework.secondpage;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
@@ -129,7 +129,7 @@ public abstract class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.e)) {
+        } else if (StringUtils.isEmpty(this.e)) {
         } else {
             fjt.a(fjt.TAG_SECOND_PAGE, "二级页appear页面埋点");
             UTTracker defaultTracker = UTAnalytics.getInstance().getDefaultTracker();

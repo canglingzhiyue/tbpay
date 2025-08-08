@@ -3,7 +3,7 @@ package com.huawei.hms.common.internal;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.adapter.BaseAdapter;
 import com.huawei.hms.common.internal.AnyClient;
 import com.huawei.hms.common.internal.BaseHmsClient;
@@ -120,7 +120,7 @@ public abstract class HmsClient extends BaseHmsClient implements AnyClient {
     }
 
     public void updateSessionId(String str) {
-        if (TextUtils.isEmpty(this.sessionId)) {
+        if (StringUtils.isEmpty(this.sessionId)) {
             this.sessionId = str;
         }
     }

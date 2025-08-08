@@ -1,7 +1,7 @@
 package com.taobao.homepage.business.permission;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -30,13 +30,13 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ee2b494", new Object[]{str, str2, str3, str4})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str3) && "LBS".equals(str)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str3) && "LBS".equals(str)) {
             e.d("homepage.LBSSharedPreferenceUtils", "updateCache", str, str2, str3);
             if (f17234a == null) {
                 b();
             }
             JSONObject jSONObject = f17234a;
-            if (jSONObject != null && !TextUtils.isEmpty(str2) && jSONObject.containsKey(str2)) {
+            if (jSONObject != null && !StringUtils.isEmpty(str2) && jSONObject.containsKey(str2)) {
                 jSONObject.put(str2, (Object) str3);
                 String jSONString = f17234a.toJSONString();
                 SharedPreferences a2 = a();
@@ -57,7 +57,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONObject jSONObject = f17234a;
@@ -83,12 +83,12 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && "LBS".equals(str)) {
+        if (!StringUtils.isEmpty(str) && "LBS".equals(str)) {
             if (f17234a == null) {
                 b();
             }
             JSONObject jSONObject = f17234a;
-            if (jSONObject != null && !TextUtils.isEmpty(str2)) {
+            if (jSONObject != null && !StringUtils.isEmpty(str2)) {
                 String string = jSONObject.getString(str2);
                 e.d("homepage.LBSSharedPreferenceUtils", "getCacheValue", str, str2, string);
                 return string;
@@ -110,7 +110,7 @@ public class b {
             return;
         }
         String string = a().getString("tb_homepage_clientCache_lbs", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         try {

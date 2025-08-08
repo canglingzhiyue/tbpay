@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.appmonitor.IAppMonitor;
 import anet.channel.statist.AlarmObject;
@@ -97,7 +97,7 @@ public class mmt {
             sb.append("");
             sb.append((str + System.currentTimeMillis()).hashCode());
             String sb2 = sb.toString();
-            if (TextUtils.isEmpty(sb2)) {
+            if (StringUtils.isEmpty(sb2)) {
                 return;
             }
             HashMap hashMap = new HashMap();

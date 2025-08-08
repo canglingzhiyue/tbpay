@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx;
 
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class ab extends m {
         String t = dXRuntimeContext.t();
         DXEngineConfig b = b();
         LruCache<String, a> a2 = a(true);
-        if (b == null || !b.e() || TextUtils.isEmpty(t) || aVar == null || a2 == null) {
+        if (b == null || !b.e() || StringUtils.isEmpty(t) || aVar == null || a2 == null) {
             return;
         }
         a2.put(t, aVar);
@@ -88,7 +88,7 @@ public class ab extends m {
         String t = dXRuntimeContext.t();
         DXEngineConfig b = b();
         LruCache<String, a> a2 = a(false);
-        if (b != null && b.e() && !TextUtils.isEmpty(t) && a2 != null) {
+        if (b != null && b.e() && !StringUtils.isEmpty(t) && a2 != null) {
             return a2.get(t);
         }
         return null;
@@ -118,7 +118,7 @@ public class ab extends m {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (a2 = a(false)) == null) {
+        } else if (StringUtils.isEmpty(str) || (a2 = a(false)) == null) {
         } else {
             a2.remove(str);
         }

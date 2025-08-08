@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.marvel.MeEditor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.editor.data.AiQuality;
@@ -41,7 +41,7 @@ public class ioo {
         this.c = aiQuality;
         if (aiQuality == null || !aiQuality.enable) {
             a();
-        } else if (TextUtils.isEmpty(aiQuality.dirPath) || !aiQuality.enable) {
+        } else if (StringUtils.isEmpty(aiQuality.dirPath) || !aiQuality.enable) {
         } else {
             a(aiQuality);
         }

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.context.MspContext;
@@ -52,7 +52,7 @@ public class FeedbackStore extends LocalEventStore {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             JSONObject parseObject = JSON.parseObject(str);
@@ -69,7 +69,7 @@ public class FeedbackStore extends LocalEventStore {
             if (booleanValue) {
                 EventLogUtilMig.appendBizInfoToLogMap(hashMap, this.f4584a);
             }
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 EventLogUtil.logPayEvent(string, hashMap);
             } else {
                 PhoneCashierMspEngine.getMspLog().walletEventLog(string, string2, hashMap);
@@ -83,7 +83,7 @@ public class FeedbackStore extends LocalEventStore {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject parseObject = JSON.parseObject(str);

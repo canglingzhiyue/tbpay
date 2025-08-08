@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.card.cards.video.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -38,7 +38,7 @@ public class CardMissVideoStatusManager {
         if (!son.k()) {
             return false;
         }
-        if (!TextUtils.isEmpty(this.b) && this.b.contains(str)) {
+        if (!StringUtils.isEmpty(this.b) && this.b.contains(str)) {
             spz.c("CardMissVideoStatusManager", "卡片消失，" + str + "已经调用过，不重复调用");
             return true;
         }
@@ -61,7 +61,7 @@ public class CardMissVideoStatusManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             spz.c("CardMissVideoStatusManager", "卡片消失，mCardMissVideoStatusStr已经清空");
             this.b = null;
         } else {

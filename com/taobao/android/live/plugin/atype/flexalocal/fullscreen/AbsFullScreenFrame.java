@@ -10,7 +10,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.view.ViewPager;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1148,7 +1148,7 @@ public abstract class AbsFullScreenFrame extends FullScreenFrame {
                 return;
             }
             ((e) this.mFrameContext).o().accessListener(AccessListenerEnum.onClickCleanScreen, bool);
-        } else if (TextUtils.equals(str, FullScreenFrame.EVENT_TAOLIVE_ROOM_CLEAR_SCREEN)) {
+        } else if (StringUtils.equals(str, FullScreenFrame.EVENT_TAOLIVE_ROOM_CLEAR_SCREEN)) {
             TaoliveRoomRightGuideFrame taoliveRoomRightGuideFrame2 = this.mMoreLiveRightGuideFrame;
             if (taoliveRoomRightGuideFrame2 != null) {
                 taoliveRoomRightGuideFrame2.updateClearScreenStatus(((Boolean) obj).booleanValue());
@@ -1157,9 +1157,9 @@ public abstract class AbsFullScreenFrame extends FullScreenFrame {
                 return;
             }
             ((e) this.mFrameContext).o().accessListener(AccessListenerEnum.onClickCleanScreen, false);
-        } else if (TextUtils.equals(str, xkw.EVENT_TAB2_MORE_LIVE_RIGHT_GUIDE_FRAME_IS_SHOW)) {
+        } else if (StringUtils.equals(str, xkw.EVENT_TAB2_MORE_LIVE_RIGHT_GUIDE_FRAME_IS_SHOW)) {
             handleTab2MoreLiveShow(obj);
-        } else if (TextUtils.equals(str, xkw.EVENT_CAN_SHOW_POP_LAYER)) {
+        } else if (StringUtils.equals(str, xkw.EVENT_CAN_SHOW_POP_LAYER)) {
             q.b(TAG, "setCanShowPopFlag，收到onEvent处理canShowPopFlag的消息");
             setCanShowPopFlag(obj);
         } else if (xkw.EVENT_CLEAR_SCREEN_IMMERSIVE.equals(str)) {

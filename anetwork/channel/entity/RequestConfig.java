@@ -1,6 +1,6 @@
 package anetwork.channel.entity;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import anet.channel.Config;
@@ -130,7 +130,7 @@ public class RequestConfig {
             return (SessionCenter) ipChange.ipc$dispatch("f63739e7", new Object[]{requestConfig});
         }
         String requestProperty = requestConfig.getRequestProperty(RequestConstant.APPKEY);
-        if (TextUtils.isEmpty(requestProperty)) {
+        if (StringUtils.isEmpty(requestProperty)) {
             return SessionCenter.getInstance();
         }
         ENV env = ENV.ONLINE;

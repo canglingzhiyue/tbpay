@@ -1,6 +1,6 @@
 package com.alipay.android.msp.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.core.context.MspTradeContext;
@@ -20,7 +20,7 @@ public class EventLogUtilMig {
         } else {
             try {
                 String apLinkToken = mspContext instanceof MspTradeContext ? ((MspTradeContext) mspContext).getApLinkToken() : "";
-                if (!TextUtils.isEmpty(apLinkToken) && !map.containsKey("ap_link_token")) {
+                if (!StringUtils.isEmpty(apLinkToken) && !map.containsKey("ap_link_token")) {
                     map.put("ap_link_token", apLinkToken);
                 }
             } catch (Exception e) {
@@ -28,7 +28,7 @@ public class EventLogUtilMig {
             }
             try {
                 String attr = mspContext.getStatisticInfo().getAttr(Vector.Trade, "bizType");
-                if (TextUtils.isEmpty(attr) || map.containsKey("biz_type")) {
+                if (StringUtils.isEmpty(attr) || map.containsKey("biz_type")) {
                     return;
                 }
                 map.put("biz_type", attr);

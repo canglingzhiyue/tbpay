@@ -12,7 +12,7 @@ import android.os.IInterface;
 import android.os.RemoteException;
 import android.preference.PreferenceManager;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
@@ -401,7 +401,7 @@ public class ShareBusiness {
         }
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put(SHARE_INTENT_EXTAR_BUSINESS_ID, shareContent.businessId);
-        if (TextUtils.isEmpty(shareContent.contentType)) {
+        if (StringUtils.isEmpty(shareContent.contentType)) {
             shareContent.contentType = shareContent.shareScene;
         }
         hashMap.put(SHARE_INTENT_EXTAR_CONTENTTYPE, shareContent.contentType);
@@ -447,10 +447,10 @@ public class ShareBusiness {
         if (shareContent.businessInfo != null) {
             hashMap.put(SHARE_INTENT_EXTRA_BUSINESS_INFO, JSON.toJSONString(shareContent.businessInfo));
         }
-        if (!TextUtils.isEmpty(shareContent.maskAlpha)) {
+        if (!StringUtils.isEmpty(shareContent.maskAlpha)) {
             hashMap.put(SHARE_INTENT_EXTRA_MASK_ALPHA, shareContent.maskAlpha);
         }
-        if (shareContent.popType != ShareContent.TaoPasswordPopType.NONE && !TextUtils.isEmpty(shareContent.popUrl)) {
+        if (shareContent.popType != ShareContent.TaoPasswordPopType.NONE && !StringUtils.isEmpty(shareContent.popUrl)) {
             hashMap.put(SHARE_INTENT_EXTAR_POPTYPE, shareContent.popType.name);
             hashMap.put(SHARE_INTENT_EXTAR_POPURL, shareContent.popUrl);
         }
@@ -460,10 +460,10 @@ public class ShareBusiness {
         if (shareContent.markMap != null) {
             hashMap.put(SHARE_INTENT_EXTAR_MARK_MAP, JSON.toJSONString(shareContent.markMap));
         }
-        if (!TextUtils.isEmpty(shareContent.smsTemplate)) {
+        if (!StringUtils.isEmpty(shareContent.smsTemplate)) {
             hashMap.put(SHARE_INTENT_EXTRA_SMS_TEMPLATE, shareContent.smsTemplate);
         }
-        if (!TextUtils.isEmpty(shareContent.qrTipsText)) {
+        if (!StringUtils.isEmpty(shareContent.qrTipsText)) {
             hashMap.put(SHARE_INTENT_EXTRA_QR_TIPS_TXT, shareContent.qrTipsText);
         }
         if (shareContent.mediaPublisher != null) {
@@ -683,7 +683,7 @@ public class ShareBusiness {
             return (ShareContent) ipChange.ipc$dispatch("4b6bf513", new Object[]{this, context});
         }
         String string = PreferenceManager.getDefaultSharedPreferences(context).getString("tb_last_share_content", null);
-        if (TextUtils.isEmpty(string) || (split = string.split(",")) == null || split.length < 6) {
+        if (StringUtils.isEmpty(string) || (split = string.split(",")) == null || split.length < 6) {
             return null;
         }
         ShareContent shareContent = new ShareContent();
@@ -755,7 +755,7 @@ public class ShareBusiness {
         }
         String cacheTaopassword = getCacheTaopassword();
         putCacheTaopassword("");
-        return !TextUtils.isEmpty(cacheTaopassword) && cacheTaopassword.equals(str);
+        return !StringUtils.isEmpty(cacheTaopassword) && cacheTaopassword.equals(str);
     }
 
     @Deprecated
@@ -771,7 +771,7 @@ public class ShareBusiness {
         }
         String string = context.getSharedPreferences(ShareConstants.SP_SHARE, 0).getString(ShareConstants.KEY_TAO_PASSWORD, "");
         ClipboardManager clipboardManager = (ClipboardManager) context.getSystemService("clipboard");
-        if (!TextUtils.equals(isFetchClipboardEnable() ? c.a(context) : null, string)) {
+        if (!StringUtils.equals(isFetchClipboardEnable() ? c.a(context) : null, string)) {
             return null;
         }
         clearPrimaryClip(clipboardManager);
@@ -822,7 +822,7 @@ public class ShareBusiness {
         if (shareContent != null) {
             str = shareContent.businessId;
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             return;
         }
         translateShareContent(shareContent);

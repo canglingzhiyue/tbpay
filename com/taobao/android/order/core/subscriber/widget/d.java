@@ -3,7 +3,7 @@ package com.taobao.android.order.core.subscriber.widget;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.PopupWindow;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -20,7 +20,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("895ff3f5", new Object[]{context, str, bVar});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             if (Build.VERSION.SDK_INT > 29) {
                 f fVar = new f(context);

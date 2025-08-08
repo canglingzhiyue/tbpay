@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.ui;
 
 import android.content.Context;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
@@ -205,8 +205,8 @@ public class APTextView extends TextView implements APViewInterface {
             leftPaddingOffset = Math.max(leftPaddingOffset, i6);
         }
         CharSequence text = getText();
-        CharSequence ellipsize = TextUtils.ellipsize(text, getPaint(), leftPaddingOffset, getEllipsize());
-        if (TextUtils.equals(ellipsize, text)) {
+        CharSequence ellipsize = StringUtils.ellipsize(text, getPaint(), leftPaddingOffset, getEllipsize());
+        if (StringUtils.equals(ellipsize, text)) {
             return;
         }
         if (text.length() > ellipsize.length()) {
@@ -235,7 +235,7 @@ public class APTextView extends TextView implements APViewInterface {
                 if (c() != 1) {
                     super.setText(spannableStringBuilder, bufferType);
                 } else {
-                    super.setText(TextUtils.ellipsize(spannableStringBuilder, getPaint(), this.h, getEllipsize()), bufferType);
+                    super.setText(StringUtils.ellipsize(spannableStringBuilder, getPaint(), this.h, getEllipsize()), bufferType);
                 }
             } else {
                 super.setText(spannableStringBuilder, bufferType);

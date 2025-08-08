@@ -2,7 +2,7 @@ package com.alipay.module.face;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.security.realidentity.RPVerify;
 import com.alibaba.security.realidentity.ui.webview.jsbridge.BaseJsExecutor;
@@ -46,13 +46,13 @@ public class AliFaceCertModule extends MicroModule {
         VerifyLogCat.d(str, "onStart" + getModuleName());
         AliFaceCertHelper aliFaceCertHelper = this.aliFaceCertHelper;
         VerifyLogCat.d("AliFaceCertHelper", "AliFaceCertHelper onStart");
-        if (TextUtils.isEmpty(aliFaceCertHelper.c)) {
+        if (StringUtils.isEmpty(aliFaceCertHelper.c)) {
             VerifyLogCat.w("AliFaceCertHelper", "mModuleData is empty");
             MicroModuleContext.getInstance().notifyAndFinishModule(aliFaceCertHelper.f6110a, aliFaceCertHelper.b, aliFaceCertHelper.d.getModuleName(), new DefaultModuleResult("2002"));
             return;
         }
         String string = JSON.parseObject(aliFaceCertHelper.c).getString(BaseJsExecutor.NAME_VERIFY_TOKEN);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         VerifyLogCat.i("AliFaceCertHelper", "本次走集团人脸, aliface:" + string);

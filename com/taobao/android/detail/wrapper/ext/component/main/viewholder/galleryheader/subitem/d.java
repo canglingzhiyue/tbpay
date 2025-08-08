@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -378,10 +378,10 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
         a2.H(false);
         try {
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(this.l.itemId)) {
+            if (!StringUtils.isEmpty(this.l.itemId)) {
                 hashMap.put("itemId", this.l.itemId);
             }
-            if (!TextUtils.isEmpty(this.l.parentModel.sellerId) && TextUtils.isDigitsOnly(this.l.parentModel.sellerId)) {
+            if (!StringUtils.isEmpty(this.l.parentModel.sellerId) && StringUtils.isDigitsOnly(this.l.parentModel.sellerId)) {
                 hashMap.put("sellerId", this.l.parentModel.sellerId);
             }
             a2.a((Map<String, String>) hashMap);
@@ -402,10 +402,10 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
         }
         a(this.s);
         a2.a(this.s);
-        if (!TextUtils.isEmpty(this.l.parentModel.sellerId) && TextUtils.isDigitsOnly(this.l.parentModel.sellerId)) {
+        if (!StringUtils.isEmpty(this.l.parentModel.sellerId) && StringUtils.isDigitsOnly(this.l.parentModel.sellerId)) {
             a2.b(Long.parseLong(this.l.parentModel.sellerId));
         }
-        if ((this.l != null) & (!TextUtils.isEmpty(this.l.thumbnailUrl))) {
+        if ((this.l != null) & (!StringUtils.isEmpty(this.l.thumbnailUrl))) {
             a2.i(true);
             com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
             aVar.a(new DWFrontCoverBean(0L, null, this.l.thumbnailUrl));
@@ -508,7 +508,7 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
                 String queryParameter = data.getQueryParameter("spm-url");
                 String queryParameter2 = data.getQueryParameter("spm");
                 String queryParameter3 = data.getQueryParameter("from");
-                if (queryParameter == null && !TextUtils.isEmpty(queryParameter2)) {
+                if (queryParameter == null && !StringUtils.isEmpty(queryParameter2)) {
                     queryParameter = queryParameter2;
                 }
                 if (queryParameter == null && queryParameter2 == null) {
@@ -537,7 +537,7 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
             return;
         }
         DWInstance dWInstance = this.i;
-        if (dWInstance == null || dWInstance.getVideoState() == 0 || this.i.getVideoState() == 3 || (videoModel = this.l) == null || videoModel.parentModel == null || TextUtils.equals("false", OrangeConfig.getInstance().getConfig("android_detail", "enable_orientation", "true"))) {
+        if (dWInstance == null || dWInstance.getVideoState() == 0 || this.i.getVideoState() == 3 || (videoModel = this.l) == null || videoModel.parentModel == null || StringUtils.equals("false", OrangeConfig.getInstance().getConfig("android_detail", "enable_orientation", "true"))) {
             return;
         }
         if (!this.l.parentModel.isPopupMode) {
@@ -901,7 +901,7 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
             hashMap.put("videoRatio", this.l.spatialVideoDimension);
             hashMap.put("price", this.l.transmitPrice);
             hashMap.put("title", this.l.title);
-            hashMap.put("totalSoldQuantity", TextUtils.isEmpty(this.l.totalSoldQuantity) ? "0" : this.l.totalSoldQuantity);
+            hashMap.put("totalSoldQuantity", StringUtils.isEmpty(this.l.totalSoldQuantity) ? "0" : this.l.totalSoldQuantity);
             hashMap.put("coverUrl", this.l.thumbnailUrl);
             hashMap.put(IWebViewExtension.SNAPSHOT_BUNDLE_KEY_BITMAP, this.l.bitmap);
             try {
@@ -1259,11 +1259,11 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
         }
         this.l = (VideoModel) subItemModel;
         this.p = this.l.videoView;
-        if (TextUtils.isEmpty(this.l.spatialVideoDimension)) {
+        if (StringUtils.isEmpty(this.l.spatialVideoDimension)) {
             return;
         }
         String[] split = this.l.spatialVideoDimension.split(":");
-        if (split.length != 2 || !TextUtils.isDigitsOnly(split[0]) || !TextUtils.isDigitsOnly(split[1])) {
+        if (split.length != 2 || !StringUtils.isDigitsOnly(split[0]) || !StringUtils.isDigitsOnly(split[1])) {
             return;
         }
         this.F = Float.parseFloat(split[1]) / Float.parseFloat(split[0]);
@@ -1288,7 +1288,7 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
         int i = Build.VERSION.SDK_INT;
         long a2 = com.taobao.android.detail.core.detail.kit.utils.c.a();
         String d2 = NetworkUtils.d(this.h);
-        if (i >= 17 && a2 >= 1000000 && !d2.equals("2g") && !TextUtils.isEmpty(this.l.videoUrl) && !TextUtils.isEmpty(this.l.thumbnailUrl)) {
+        if (i >= 17 && a2 >= 1000000 && !d2.equals("2g") && !StringUtils.isEmpty(this.l.videoUrl) && !StringUtils.isEmpty(this.l.thumbnailUrl)) {
             return;
         }
         this.q.a(this.l);
@@ -1303,7 +1303,7 @@ public class d implements com.taobao.android.detail.wrapper.ext.component.main.v
             return false;
         }
         VideoModel videoModel = (VideoModel) subItemModel;
-        return Build.VERSION.SDK_INT >= 17 && com.taobao.android.detail.core.detail.kit.utils.c.a() >= 1000000 && !NetworkUtils.d(context).equals("2g") && !TextUtils.isEmpty(videoModel.videoUrl) && !TextUtils.isEmpty(videoModel.thumbnailUrl);
+        return Build.VERSION.SDK_INT >= 17 && com.taobao.android.detail.core.detail.kit.utils.c.a() >= 1000000 && !NetworkUtils.d(context).equals("2g") && !StringUtils.isEmpty(videoModel.videoUrl) && !StringUtils.isEmpty(videoModel.thumbnailUrl);
     }
 
     @Override // com.taobao.avplayer.av

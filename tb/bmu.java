@@ -1,7 +1,7 @@
 package tb;
 
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.EditText;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -58,7 +58,7 @@ public class bmu {
             ipChange.ipc$dispatch("5a41dde1", new Object[]{editText, str});
         } else if (editText == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             editText.setHint(str);

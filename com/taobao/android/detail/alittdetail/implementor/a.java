@@ -2,7 +2,7 @@ package com.taobao.android.detail.alittdetail.implementor;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -113,7 +113,7 @@ public class a implements ezm {
         dVar.a(jSONObject.getString("backgroundColor"));
         dVar.a(a(jSONObject.getString("gravity")));
         String string = jSONObject.getString("defaultIndex");
-        int parseInt = TextUtils.isEmpty(string) ? 0 : Integer.parseInt(string);
+        int parseInt = StringUtils.isEmpty(string) ? 0 : Integer.parseInt(string);
         dVar.a(parseInt);
         if (jSONObject.getBooleanValue("showBottomBar")) {
             dVar.a(new b(0.0f, 0.0f, 0.0f, (float) a()));
@@ -133,13 +133,13 @@ public class a implements ezm {
                     i.a("OpenPopDialogImplementor", "bizDataParams is empty");
                 } else {
                     String string2 = jSONObject2.getString("renderType");
-                    if (TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string2)) {
                         i.a("OpenPopDialogImplementor", "renderType is empty");
                     } else {
                         com.taobao.android.stdpop.api.viewpager.a aVar = null;
-                        if (TextUtils.equals(string2, "Native")) {
+                        if (StringUtils.equals(string2, "Native")) {
                             aVar = a(jSONObject2, size, i, parseInt);
-                        } else if (TextUtils.equals(string2, "Weex2.0") || TextUtils.equals(string2, "H5")) {
+                        } else if (StringUtils.equals(string2, "Weex2.0") || StringUtils.equals(string2, "H5")) {
                             aVar = a(jSONObject2);
                         }
                         if (aVar != null) {
@@ -220,7 +220,7 @@ public class a implements ezm {
             return (com.taobao.android.stdpop.api.viewpager.a) ipChange.ipc$dispatch("e4e2e07f", new Object[]{this, jSONObject, new Integer(i), new Integer(i2), new Integer(i3)});
         }
         String string = jSONObject.getString("title");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             i.a("OpenPopDialogImplementor", "title is empty");
             return null;
         }
@@ -238,7 +238,7 @@ public class a implements ezm {
         }
         String string = jSONObject.getString("title");
         String string2 = jSONObject.getString("url");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             i.a("OpenPopDialogImplementor", "url is empty");
             return null;
         }
@@ -265,15 +265,15 @@ public class a implements ezm {
                 return;
             }
             String string = jSONObject2.getString("renderType");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 i.a("OpenPopDialogImplementor", "renderType is empty");
-            } else if (TextUtils.equals(string, "Native")) {
+            } else if (StringUtils.equals(string, "Native")) {
                 JSONObject jSONObject3 = jSONObject2.getJSONObject("detailClientParams");
                 if (jSONObject3 == null || jSONObject3.isEmpty() || !RateNode.TAG.equals(jSONObject3.getString("bizId"))) {
                     return;
                 }
                 a(b(jSONObject3, 1, 0, 0), jSONObject, jSONObject2);
-            } else if (!TextUtils.equals(string, "Weex2.0")) {
+            } else if (!StringUtils.equals(string, "Weex2.0")) {
             } else {
                 b(jSONObject, jSONObject2);
             }
@@ -377,7 +377,7 @@ public class a implements ezm {
         }
         b.a(jSONObject2.getString("title"));
         String string = jSONObject2.getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             i.a("OpenPopDialogImplementor", "url is empty");
             return;
         }
@@ -472,7 +472,7 @@ public class a implements ezm {
         if (ipChange instanceof IpChange) {
             return (PopGravity) ipChange.ipc$dispatch("df738933", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         char c = 65535;

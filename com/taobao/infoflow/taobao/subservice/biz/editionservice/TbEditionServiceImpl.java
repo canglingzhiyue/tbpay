@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.biz.IEditionService;
 import com.taobao.infoflow.protocol.subservice.framework.IContainerDataService;
@@ -30,7 +30,7 @@ public class TbEditionServiceImpl implements IEditionService {
             }
             String action = intent.getAction();
             ldf.b(TbEditionServiceImpl.TAG, "areaChangeReceiver : " + action);
-            if (!TextUtils.equals(action, "EDITON_SWITCHER_EDITTION_CODE_CHANGED")) {
+            if (!StringUtils.equals(action, "EDITON_SWITCHER_EDITTION_CODE_CHANGED")) {
                 return;
             }
             TbEditionServiceImpl.access$000(TbEditionServiceImpl.this);

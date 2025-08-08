@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.biz.config.RPBizConfig;
 import com.alibaba.security.realidentity.service.sensor.api.RpSecException;
 import com.alibaba.security.realidentity.service.sensor.model.DisplayInfo;
@@ -103,7 +103,7 @@ public class r3 implements t3 {
             return;
         }
         String str = hashMap.get(m);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.j = Boolean.parseBoolean(str);
         }
         z3 z3Var = new z3(hashMap);

@@ -1,7 +1,7 @@
 package com.taobao.live.ubee.core;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.SparseIntArray;
 import com.alibaba.fastjson.JSON;
@@ -121,10 +121,10 @@ public class d implements prt.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("49523982", new Object[]{this, str, str2, strArr});
-        } else if (!c() || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || a(str2) || (b = this.f17804a.b()) == null || (jSONObject = b.getJSONObject(str)) == null) {
+        } else if (!c() || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || a(str2) || (b = this.f17804a.b()) == null || (jSONObject = b.getJSONObject(str)) == null) {
         } else {
             String string = jSONObject.getString(str2);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             a aVar = new a();
@@ -190,7 +190,7 @@ public class d implements prt.a {
         HashMap hashMap = new HashMap();
         if (strArr != null && strArr.length > 0) {
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String[] split = str.split("=");
                     if (split.length == 2) {
                         hashMap.put(split[0].trim(), split[1].trim());

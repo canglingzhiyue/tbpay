@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,7 +68,7 @@ public class pfn implements ibq {
             ipChange.ipc$dispatch("6017a50", new Object[]{this, liveTimemovingModel, new Integer(i), dXRuntimeContext});
         } else if (liveTimemovingModel == null) {
         } else {
-            if (liveTimemovingModel.extendVal != null && !TextUtils.isEmpty(liveTimemovingModel.extendVal.timeMovingPlayInfo) && (timeMovingPlayInfo = (LiveItem.TimeMovingPlayInfo) pqj.a(liveTimemovingModel.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class)) != null) {
+            if (liveTimemovingModel.extendVal != null && !StringUtils.isEmpty(liveTimemovingModel.extendVal.timeMovingPlayInfo) && (timeMovingPlayInfo = (LiveItem.TimeMovingPlayInfo) pqj.a(liveTimemovingModel.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class)) != null) {
                 HashMap<String, String> a2 = pfk.a(timeMovingPlayInfo, liveTimemovingModel.extendVal.playUrl, this.c);
                 f.a().a(System.currentTimeMillis());
                 f.a().a(f.e);
@@ -280,7 +280,7 @@ public class pfn implements ibq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("78fdf083", new Object[]{this, liveTimemovingModel});
-        } else if (liveTimemovingModel == null || liveTimemovingModel.extendVal == null || TextUtils.isEmpty(liveTimemovingModel.extendVal.timeMovingPlayInfo)) {
+        } else if (liveTimemovingModel == null || liveTimemovingModel.extendVal == null || StringUtils.isEmpty(liveTimemovingModel.extendVal.timeMovingPlayInfo)) {
         } else {
             d.c = liveTimemovingModel.itemId;
             LiveItem.TimeMovingPlayInfo timeMovingPlayInfo = (LiveItem.TimeMovingPlayInfo) pqj.a(liveTimemovingModel.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class);
@@ -415,15 +415,15 @@ public class pfn implements ibq {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d9378d6f", new Object[]{this, str, str2})).intValue();
         }
-        if ((!TextUtils.isEmpty(str2) || !TextUtils.isEmpty(str)) && (b = b()) != null) {
-            if (!TextUtils.isEmpty(str)) {
+        if ((!StringUtils.isEmpty(str2) || !StringUtils.isEmpty(str)) && (b = b()) != null) {
+            if (!StringUtils.isEmpty(str)) {
                 while (i < b.size()) {
                     if (str.equals(b.get(i).itemId)) {
                         return i;
                     }
                     i++;
                 }
-            } else if (!TextUtils.isEmpty(str2)) {
+            } else if (!StringUtils.isEmpty(str2)) {
                 while (i < b.size()) {
                     LiveTimemovingModel liveTimemovingModel = b.get(i);
                     if (liveTimemovingModel.extendVal != null && liveTimemovingModel.extendVal.timeMovingPlayInfo != null && (timeMovingPlayInfo = (LiveItem.TimeMovingPlayInfo) pqj.a(liveTimemovingModel.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class)) != null && str2.equals(timeMovingPlayInfo.timeMovingId)) {

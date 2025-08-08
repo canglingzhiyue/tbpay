@@ -3,7 +3,7 @@ package com.taobao.search.jarvis.action;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -109,11 +109,11 @@ public final class SearchRerankAction implements jxt {
             str2 = "";
         }
         String string = b2 != null ? b2.getString("modelPage") : null;
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "tb_search_srp";
         }
         String string2 = b2 != null ? b2.getString("modelEvent") : null;
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "srp_rerank";
         }
         com.taobao.android.jarviswe.a.a().a(string, string2, input, new b(jarvis, str2));
@@ -130,7 +130,7 @@ public final class SearchRerankAction implements jxt {
             str3 = mainInfo.abtest;
         }
         hashMap2.put("wlsort", str3);
-        hashMap2.put("src", TextUtils.equals(d3.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+        hashMap2.put("src", StringUtils.equals(d3.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
         e.c("SearchEdgeCompute", "SearchRerankCall", hashMap2);
     }
 
@@ -152,7 +152,7 @@ public final class SearchRerankAction implements jxt {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("12981c64", new Object[]{this, str, str2});
-            } else if (TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.isEmpty(str2)) {
             } else {
                 JSONObject parseObject = JSON.parseObject(str2);
                 JSONObject b = com.taobao.android.searchbaseframe.util.a.b(parseObject, "results");
@@ -168,7 +168,7 @@ public final class SearchRerankAction implements jxt {
                 ArrayMap arrayMap2 = arrayMap;
                 String str3 = null;
                 arrayMap2.put("uniq_id", b != null ? b.getString("uniq_id") : null);
-                arrayMap2.put("src", TextUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+                arrayMap2.put("src", StringUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
                 BaseSearchResult baseSearchResult = (BaseSearchResult) d.getTotalSearchResult();
                 arrayMap2.put("wlsort", (baseSearchResult == null || (mainInfo2 = baseSearchResult.getMainInfo()) == null) ? null : mainInfo2.abtest);
                 if (b2 == null || b2.isEmpty()) {
@@ -188,7 +188,7 @@ public final class SearchRerankAction implements jxt {
                 }
                 if (d2.isTaskRunning()) {
                     SearchRerankAction.Companion.a(this.b, b);
-                } else if (!TextUtils.equals(str3, this.c)) {
+                } else if (!StringUtils.equals(str3, this.c)) {
                     SearchRerankAction.Companion.b(this.b, b);
                 } else {
                     ArrayList access$getItemIdList = SearchRerankAction.access$getItemIdList(SearchRerankAction.this, b2, "m");
@@ -261,7 +261,7 @@ public final class SearchRerankAction implements jxt {
         int cellsCount = baseSearchResult.getCellsCount();
         for (int i = f + 1; i < cellsCount; i++) {
             BaseCellBean baseCellBean = baseSearchResult.getCell(i);
-            if (TextUtils.equals(baseCellBean.cardType, "item") && !baseCellBean.isExposed) {
+            if (StringUtils.equals(baseCellBean.cardType, "item") && !baseCellBean.isExposed) {
                 if (baseCellBean.isP4p) {
                     String str = baseCellBean.itemId;
                     q.a((Object) str, "baseCellBean.itemId");
@@ -636,7 +636,7 @@ public final class SearchRerankAction implements jxt {
                 str3 = mainInfo.rn;
             }
             hashMap.put(k.a.PARAM_KEY_FIRST_RN, str3);
-            hashMap.put("src", TextUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+            hashMap.put("src", StringUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
             hashMap.put("errorCode", str);
             hashMap.put("errorMessage", str2);
             e.c("SearchEdgeCompute", "DropRerankByError", hashMap);
@@ -660,7 +660,7 @@ public final class SearchRerankAction implements jxt {
             BaseSearchResult baseSearchResult = (BaseSearchResult) d.getTotalSearchResult();
             String str = null;
             hashMap.put("wlsort", (baseSearchResult == null || (mainInfo3 = baseSearchResult.getMainInfo()) == null) ? null : mainInfo3.abtest);
-            hashMap.put("src", TextUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+            hashMap.put("src", StringUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
             hashMap.put("uniq_id", jSONObject != null ? jSONObject.getString("uniq_id") : null);
             BaseSearchResult baseSearchResult2 = (BaseSearchResult) d.getTotalSearchResult();
             hashMap.put(k.a.PARAM_KEY_FIRST_RN, (baseSearchResult2 == null || (mainInfo2 = baseSearchResult2.getMainInfo()) == null) ? null : mainInfo2.rn);
@@ -687,7 +687,7 @@ public final class SearchRerankAction implements jxt {
             com.taobao.android.searchbaseframe.datasource.impl.a d = b.d();
             q.a((Object) d, "jarvis.widgetModelAdapter.scopeDatasource");
             HashMap hashMap = new HashMap();
-            hashMap.put("src", TextUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+            hashMap.put("src", StringUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
             BaseSearchResult baseSearchResult = (BaseSearchResult) d.getTotalSearchResult();
             String str = null;
             hashMap.put(k.a.PARAM_KEY_FIRST_RN, (baseSearchResult == null || (mainInfo3 = baseSearchResult.getMainInfo()) == null) ? null : mainInfo3.rn);
@@ -719,7 +719,7 @@ public final class SearchRerankAction implements jxt {
             BaseSearchResult baseSearchResult = (BaseSearchResult) d.getTotalSearchResult();
             String str = null;
             hashMap.put(k.a.PARAM_KEY_FIRST_RN, (baseSearchResult == null || (mainInfo2 = baseSearchResult.getMainInfo()) == null) ? null : mainInfo2.rn);
-            hashMap.put("src", TextUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+            hashMap.put("src", StringUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
             BaseSearchResult baseSearchResult2 = (BaseSearchResult) d.getTotalSearchResult();
             hashMap.put("wlsort", (baseSearchResult2 == null || (mainInfo = baseSearchResult2.getMainInfo()) == null) ? null : mainInfo.abtest);
             if (jSONObject != null) {
@@ -749,7 +749,7 @@ public final class SearchRerankAction implements jxt {
             BaseSearchResult baseSearchResult = (BaseSearchResult) d.getTotalSearchResult();
             String str = null;
             hashMap.put(k.a.PARAM_KEY_FIRST_RN, (baseSearchResult == null || (mainInfo2 = baseSearchResult.getMainInfo()) == null) ? null : mainInfo2.rn);
-            hashMap.put("src", TextUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+            hashMap.put("src", StringUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
             BaseSearchResult baseSearchResult2 = (BaseSearchResult) d.getTotalSearchResult();
             hashMap.put("wlsort", (baseSearchResult2 == null || (mainInfo = baseSearchResult2.getMainInfo()) == null) ? null : mainInfo.abtest);
             if (jSONObject != null) {

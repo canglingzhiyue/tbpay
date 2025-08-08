@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 
@@ -28,12 +28,12 @@ public class dmj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6ed04210", new Object[]{this, activity, dmkVar, str, str2, str3, str4});
-        } else if (activity == null || TextUtils.isEmpty(str2)) {
+        } else if (activity == null || StringUtils.isEmpty(str2)) {
         } else {
             this.b = activity;
             String string = activity.getString(R.string.ak_alert_confirm);
             AlertDialog.Builder a2 = a(str, str2, str3, activity);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 a2.setNegativeButton(str3, new DialogInterface.OnClickListener() { // from class: tb.dmj.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -52,7 +52,7 @@ public class dmj {
                     }
                 });
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = string;
             }
             a2.setPositiveButton(str4, new DialogInterface.OnClickListener() { // from class: tb.dmj.3
@@ -71,7 +71,7 @@ public class dmj {
                     }
                     dmkVar2.a(true);
                 }
-            }).setCancelable(!TextUtils.isEmpty(str3)).setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: tb.dmj.2
+            }).setCancelable(!StringUtils.isEmpty(str3)).setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: tb.dmj.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 @Override // android.content.DialogInterface.OnCancelListener
@@ -109,10 +109,10 @@ public class dmj {
             return (AlertDialog.Builder) ipChange.ipc$dispatch("a203ac26", new Object[]{str, str2, str3, context});
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context, 3);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             builder.setTitle(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             builder.setMessage(str2);
         }
         return builder;

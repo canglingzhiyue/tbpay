@@ -1,6 +1,6 @@
 package com.alibaba.android.bindingx.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.internal.m;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.LinkedHashMap;
@@ -27,7 +27,7 @@ public class BindingXJSFunctionRegister {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("40627f14", new Object[]{this, str, mVar});
-        } else if (TextUtils.isEmpty(str) || mVar == null) {
+        } else if (StringUtils.isEmpty(str) || mVar == null) {
         } else {
             this.mJSFunctionMap.put(str, mVar);
         }
@@ -35,7 +35,7 @@ public class BindingXJSFunctionRegister {
 
     public boolean unregisterJSFunction(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fe865052", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && this.mJSFunctionMap.remove(str) != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fe865052", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && this.mJSFunctionMap.remove(str) != null;
     }
 
     public void clear() {

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
@@ -274,7 +274,7 @@ public class qca {
         materialResource.setExtend(materialDetail.getExtend());
         materialResource.setTid(materialDetail.getTid());
         materialResource.setVersion(materialDetail.getVersion());
-        if (!TextUtils.isEmpty(str) && str.endsWith(".png")) {
+        if (!StringUtils.isEmpty(str) && str.endsWith(".png")) {
             materialResource.setDirPath(new File(str).getParentFile().getPath());
         } else {
             materialResource.setDirPath(str);

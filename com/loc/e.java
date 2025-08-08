@@ -10,7 +10,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alibaba.security.ccrc.service.build.Ta;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
@@ -235,7 +235,7 @@ public final class e {
         try {
             aMapLocationClientOption = fr.a(bundle.getBundle("optBundle"));
             String string = bundle.getString(Repeat.D);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 o.a(string);
             }
         } catch (Throwable th) {
@@ -362,7 +362,7 @@ public final class e {
                     }
                     a(bundle);
                     this.c = this.f.a(d, d2);
-                    if (this.c == null || TextUtils.isEmpty(this.c.getAdCode())) {
+                    if (this.c == null || StringUtils.isEmpty(this.c.getAdCode())) {
                         return;
                     }
                     a(messenger, str);
@@ -374,10 +374,10 @@ public final class e {
     }
 
     public final boolean a(String str) {
-        if (TextUtils.isEmpty(this.l)) {
+        if (StringUtils.isEmpty(this.l)) {
             this.l = fr.b(this.e);
         }
-        return !TextUtils.isEmpty(str) && str.equals(this.l);
+        return !StringUtils.isEmpty(str) && str.equals(this.l);
     }
 
     public final Handler b() {
@@ -386,13 +386,13 @@ public final class e {
 
     public final void b(Intent intent) {
         String stringExtra = intent.getStringExtra("a");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             m.a(this.e, stringExtra);
         }
         this.f7754a = intent.getStringExtra(TplMsg.VALUE_T_NATIVE_RETURN);
         l.a(this.f7754a);
         String stringExtra2 = intent.getStringExtra(Repeat.D);
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             o.a(stringExtra2);
         }
     }

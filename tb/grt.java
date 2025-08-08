@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 
@@ -41,7 +41,7 @@ public class grt {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue();
         }
         if (f28420a == null) {
-            f28420a = Boolean.valueOf(TextUtils.equals(c(), "x86"));
+            f28420a = Boolean.valueOf(StringUtils.equals(c(), "x86"));
         }
         return f28420a.booleanValue();
     }

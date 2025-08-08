@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.v4.app.NotificationManagerCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.e;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.a$a;
@@ -211,7 +211,7 @@ public final class SystemAbility extends AbsSystemAbility {
             return new g<>(null, a$a.Companion.b("Context 为空"));
         }
         String str2 = params.f8838a;
-        if (!(!TextUtils.isEmpty(str2))) {
+        if (!(!StringUtils.isEmpty(str2))) {
             str2 = null;
         }
         if (str2 == null) {

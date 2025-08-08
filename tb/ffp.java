@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.event.a;
 import com.taobao.android.detail.core.utils.p;
@@ -40,14 +40,14 @@ public class ffp implements j<enu> {
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("30ca8c43", new Object[]{this, enuVar});
         }
-        if (TextUtils.isEmpty(enuVar.f27479a)) {
+        if (StringUtils.isEmpty(enuVar.f27479a)) {
             return a.FAILURE;
         }
-        if (!TextUtils.isEmpty(enuVar.d)) {
+        if (!StringUtils.isEmpty(enuVar.d)) {
             eps.a(this.f27902a, enuVar.d, enuVar.c);
         }
         Application a2 = epo.a();
-        if (!TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(enuVar.f27479a)) {
+        if (!StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(enuVar.f27479a)) {
             enuVar.f27479a = p.a(enuVar.f27479a, "pre_item_id", this.b);
         }
         if (enuVar.f27479a.contains("currentClickTime=")) {

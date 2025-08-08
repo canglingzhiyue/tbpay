@@ -2,7 +2,7 @@ package com.alipay.mobile.common.logging.uploader;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.encrypt.LogEncryptClient;
@@ -78,7 +78,7 @@ public class RpcUploader extends BaseUploader {
                 String name = file.getName();
                 try {
                     String a2 = a(name);
-                    if (!TextUtils.isEmpty(a2) && LogStrategyManager.getInstance().isRealTimeLogCategory(a2) && LogStrategyManager.getInstance().isLogSend(name)) {
+                    if (!StringUtils.isEmpty(a2) && LogStrategyManager.getInstance().isRealTimeLogCategory(a2) && LogStrategyManager.getInstance().isLogSend(name)) {
                         arrayList.add(file);
                     }
                 } catch (Throwable th) {
@@ -118,7 +118,7 @@ public class RpcUploader extends BaseUploader {
                     File file = list.get(i2);
                     if (file != null && file.exists()) {
                         String readFile = FileUtil.readFile(file);
-                        if (TextUtils.isEmpty(readFile)) {
+                        if (StringUtils.isEmpty(readFile)) {
                             file.delete();
                             throw new IllegalStateException("file content is empty");
                             break;
@@ -151,7 +151,7 @@ public class RpcUploader extends BaseUploader {
                         ArrayList arrayList7 = new ArrayList();
                         int length2 = split.length;
                         while (i < length2) {
-                            if (!TextUtils.isEmpty(split[i])) {
+                            if (!StringUtils.isEmpty(split[i])) {
                                 arrayList7.add(b(split[i]));
                             }
                             i++;
@@ -272,7 +272,7 @@ public class RpcUploader extends BaseUploader {
                         String str4 = "default";
                         if (bundle != null) {
                             try {
-                                if (!TextUtils.isEmpty(bundle.getString("event"))) {
+                                if (!StringUtils.isEmpty(bundle.getString("event"))) {
                                     str4 = bundle.getString("event");
                                 }
                             } catch (Throwable th) {
@@ -290,7 +290,7 @@ public class RpcUploader extends BaseUploader {
                             throw new IllegalStateException("file object is NULL");
                         }
                         String readFile = FileUtil.readFile(file);
-                        if (TextUtils.isEmpty(readFile)) {
+                        if (StringUtils.isEmpty(readFile)) {
                             file.delete();
                             throw new IllegalStateException("file content is empty");
                         }
@@ -351,9 +351,9 @@ public class RpcUploader extends BaseUploader {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && (logEncryptClient = LoggerFactory.getLogContext().getLogEncryptClient()) != null && str.startsWith("1_")) {
+        if (!StringUtils.isEmpty(str) && (logEncryptClient = LoggerFactory.getLogContext().getLogEncryptClient()) != null && str.startsWith("1_")) {
             String decrypt = logEncryptClient.decrypt(str.substring(2));
-            if (!TextUtils.isEmpty(decrypt)) {
+            if (!StringUtils.isEmpty(decrypt)) {
                 return decrypt;
             }
         }

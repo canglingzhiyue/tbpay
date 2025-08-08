@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.xiaomi.clientreport.data.Config;
 import com.xiaomi.clientreport.data.EventClientReport;
@@ -88,7 +88,7 @@ public class fc {
     }
 
     public static ig a(Context context, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         ig igVar = new ig();
@@ -170,6 +170,6 @@ public class fc {
 
     /* renamed from: a  reason: collision with other method in class */
     public static boolean m1921a(Context context) {
-        return context != null && !TextUtils.isEmpty(context.getPackageName()) && "com.xiaomi.xmsf".equals(context.getPackageName());
+        return context != null && !StringUtils.isEmpty(context.getPackageName()) && "com.xiaomi.xmsf".equals(context.getPackageName());
     }
 }

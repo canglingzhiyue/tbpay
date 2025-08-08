@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -113,7 +113,7 @@ public class oug extends oud<a> {
             this.e.setTextSize(1, intValue3 / 2);
         }
         String string = jSONObject.getString("textColor");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.e.setTextColor(Color.parseColor(string));
         }
         int a3 = nyq.a(this.d, jSONObject.getIntValue("space") / 2);
@@ -137,10 +137,10 @@ public class oug extends oud<a> {
         com.taobao.share.globalmodel.a d = aVar.d();
         this.c.setWhenNullClearImg(true);
         String string = this.f.getString(d.c());
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.c.setImageUrl(null);
             this.c.setImageUrl(string);
-        } else if (!TextUtils.isEmpty(d.b())) {
+        } else if (!StringUtils.isEmpty(d.b())) {
             this.c.setImageUrl(null);
             this.c.setImageUrl(d.b());
         } else if (d.e() == -1 && d.f() > 0) {
@@ -149,7 +149,7 @@ public class oug extends oud<a> {
         if (d.d() != null) {
             this.e.setText(d.d());
         }
-        if (!TextUtils.isEmpty(d.h())) {
+        if (!StringUtils.isEmpty(d.h())) {
             this.f32427a.setContentDescription(d.h());
         }
         this.f32427a.setOnClickListener(new View.OnClickListener() { // from class: tb.oug.1

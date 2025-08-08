@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.callback.CommonDataCallback;
@@ -115,7 +115,7 @@ public class qqw extends f {
         if (jSONObject != null) {
             try {
                 String optString = jSONObject.optString(ParamsConstants.Key.PARAM_ALIPAY_URL);
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     a(activity, gVar, remove, optString);
                     return;
                 }

@@ -3,7 +3,7 @@ package com.taobao.detail.rate.vivid.ability;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.m;
 import com.taobao.detail.rate.v2.RateViewPagerFragmentV2;
@@ -27,7 +27,7 @@ public class l extends dlg {
             return (dkx) ipChange.ipc$dispatch("1c5b757e", new Object[]{this, dlhVar, dleVar, dllVar});
         }
         String a2 = m.a("", dlhVar.c(), "params", "tagId");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return new dla();
         }
         Bundle bundle = new Bundle();

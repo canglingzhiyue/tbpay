@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -521,7 +521,7 @@ public class syc implements b {
         if (w == null) {
             return;
         }
-        if (TextUtils.equals(q(), NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET)) {
+        if (StringUtils.equals(q(), NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET)) {
             w.b();
         } else {
             w.c();
@@ -680,7 +680,7 @@ public class syc implements b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5dd2870", new Object[]{this});
-        } else if (TextUtils.equals(q(), NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET)) {
+        } else if (StringUtils.equals(q(), NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET)) {
             this.f33938a.i().smoothScrollToPosition(0);
         } else {
             a(true);

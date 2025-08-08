@@ -2,7 +2,7 @@ package com.taobao.taolive.room.utils;
 
 import android.content.Context;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
@@ -37,7 +37,7 @@ public class l {
             ZipEntry nextEntry = zipInputStream.getNextEntry();
             if (nextEntry != null) {
                 String name = nextEntry.getName();
-                if (!TextUtils.isEmpty(name) && !name.contains("../")) {
+                if (!StringUtils.isEmpty(name) && !name.contains("../")) {
                     if (nextEntry.isDirectory()) {
                         String substring = name.substring(0, name.length() - 1);
                         new File(str2 + File.separator + substring).mkdirs();
@@ -84,7 +84,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = Environment.getDownloadCacheDirectory().getAbsolutePath();
         }
         if (str.endsWith(File.separator)) {

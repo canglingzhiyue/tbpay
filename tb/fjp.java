@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.link.export.TraceLogEventType;
 import com.alibaba.fastjson.JSON;
@@ -416,11 +416,11 @@ public class fjp {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str3)) {
-                if (TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "";
                 }
-                String str5 = TextUtils.isEmpty(str4) ? "" : str4;
+                String str5 = StringUtils.isEmpty(str4) ? "" : str4;
                 if (map == null) {
                     map = new HashMap<>();
                 }

@@ -2,7 +2,7 @@ package com.alibaba.android.split.core.plugin;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.internal.FlexaClassLoader;
 import com.alibaba.android.split.core.internal.InternalHacker;
@@ -136,7 +136,7 @@ public class f extends a<e> {
 
     private static String a(CharSequence charSequence, Iterable<? extends CharSequence> iterable) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("3dc7e92b", new Object[]{charSequence, iterable}) : TextUtils.join(charSequence, iterable);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("3dc7e92b", new Object[]{charSequence, iterable}) : StringUtils.join(charSequence, iterable);
     }
 
     @Override // com.alibaba.android.split.manager.b

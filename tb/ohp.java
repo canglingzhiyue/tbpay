@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -263,7 +263,7 @@ public class ohp {
         HStretchView hStretchView = new HStretchView(this.f);
         hStretchView.setScaleType(ImageView.ScaleType.FIT_XY);
         String a2 = ohs.a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hStretchView.setImageUrl(a2);
         }
         return hStretchView;
@@ -279,7 +279,7 @@ public class ohp {
         hImageView.setScaleType(ImageView.ScaleType.FIT_XY);
         hImageView.setVisibility(0);
         String b = ohs.b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             hImageView.setImageUrl(b);
         }
         return hImageView;

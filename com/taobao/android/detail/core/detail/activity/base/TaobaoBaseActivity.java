@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.activity.base;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.utils.tstudio.TStudioHelper;
@@ -155,7 +155,7 @@ public class TaobaoBaseActivity extends BaseActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5347b178", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             String simpleName = getClass().getSimpleName();
             int indexOf = simpleName.indexOf(Dispatchers.TYPE_ACTIVITY);
             if (indexOf != -1) {

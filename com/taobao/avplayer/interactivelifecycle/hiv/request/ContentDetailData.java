@@ -1,6 +1,6 @@
 package com.taobao.avplayer.interactivelifecycle.hiv.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.core.IDWObject;
 import java.io.Serializable;
@@ -125,7 +125,7 @@ public class ContentDetailData implements IDWObject {
             return (String) ipChange.ipc$dispatch("4164059", new Object[]{this});
         }
         ShopInfo shopInfo = this.shopInfo;
-        if (shopInfo != null && !TextUtils.isEmpty(shopInfo.shopLogo)) {
+        if (shopInfo != null && !StringUtils.isEmpty(shopInfo.shopLogo)) {
             return this.shopInfo.shopLogo;
         }
         TalentInfo talentInfo = this.talentInfo;

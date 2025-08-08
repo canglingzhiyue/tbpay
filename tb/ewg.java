@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.event.basic.a;
@@ -47,7 +47,7 @@ public class ewg implements evy {
         if (ipChange instanceof IpChange) {
             return (Event) ipChange.ipc$dispatch("f5d82f3b", new Object[]{this, actionModel, nodeBundle});
         }
-        if (actionModel != null && !TextUtils.isEmpty(actionModel.type)) {
+        if (actionModel != null && !StringUtils.isEmpty(actionModel.type)) {
             if ("open_url".equals(actionModel.type)) {
                 return new r(actionModel.params);
             }
@@ -145,7 +145,7 @@ public class ewg implements evy {
             return (Event) ipChange.ipc$dispatch("cbf76c3c", new Object[]{this, actionModel, nodeBundle});
         }
         JSONObject jSONObject = actionModel.params;
-        if (jSONObject.containsKey("iconType") && !TextUtils.isEmpty(jSONObject.getString("iconType"))) {
+        if (jSONObject.containsKey("iconType") && !StringUtils.isEmpty(jSONObject.getString("iconType"))) {
             int parseInt = Integer.parseInt(jSONObject.getString("iconType"));
             if (parseInt == 1) {
                 return new evp(TitleViewModel.ShareType.SHARE_TYPE_DEFAULT, actionModel.params);

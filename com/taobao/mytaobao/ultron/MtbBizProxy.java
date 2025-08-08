@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -575,7 +575,7 @@ public class MtbBizProxy extends com.taobao.mytaobao.base.d implements View.OnCl
         if (com.taobao.mytaobao.basement.a.b()) {
             mxf.a(mxf.initWindWeexBasement);
             String c = com.taobao.mytaobao.basement.a.c();
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 mtx.d(this.q).a(true);
                 if (this.o != null) {
                     com.taobao.mytaobao.basement.a.g();
@@ -864,7 +864,7 @@ public class MtbBizProxy extends com.taobao.mytaobao.base.d implements View.OnCl
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || TextUtils.isEmpty(intent.getAction()) || mxq.b(MtbBizProxy.this.m())) {
+            } else if (intent == null || StringUtils.isEmpty(intent.getAction()) || mxq.b(MtbBizProxy.this.m())) {
             } else {
                 String action = intent.getAction();
                 if (MtbBizProxy.d(MtbBizProxy.this) == null) {
@@ -921,7 +921,7 @@ public class MtbBizProxy extends com.taobao.mytaobao.base.d implements View.OnCl
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("c707e44c", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (layoutManager = e().getLayoutManager()) == null) {
+        if (StringUtils.isEmpty(str) || (layoutManager = e().getLayoutManager()) == null) {
             return null;
         }
         for (int i = 0; i < layoutManager.getItemCount(); i++) {
@@ -973,11 +973,11 @@ public class MtbBizProxy extends com.taobao.mytaobao.base.d implements View.OnCl
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || TextUtils.isEmpty(intent.getAction()) || mxq.b(MtbBizProxy.this.m())) {
+            } else if (intent == null || StringUtils.isEmpty(intent.getAction()) || mxq.b(MtbBizProxy.this.m())) {
             } else {
                 String stringExtra = intent.getStringExtra("extra-festival-change-reason");
                 if (mxa.c()) {
-                    if (!TextUtils.equals(com.taobao.android.tbtheme.kit.j.ACTION_THEME_CHANGE, intent.getAction())) {
+                    if (!StringUtils.equals(com.taobao.android.tbtheme.kit.j.ACTION_THEME_CHANGE, intent.getAction())) {
                         return;
                     }
                     MtbBizProxy.this.e.c();
@@ -985,7 +985,7 @@ public class MtbBizProxy extends com.taobao.mytaobao.base.d implements View.OnCl
                         return;
                     }
                     MtbBizProxy.d(MtbBizProxy.this).k();
-                } else if ((!TextUtils.equals(stringExtra, FestivalMgr.SKIN_CHANGE_REASON_CONFIG_CHANGE) && !TextUtils.equals(intent.getAction(), mxo.SKIN_BROADCAST_ACTION)) || !MtbBizProxy.i(MtbBizProxy.this)) {
+                } else if ((!StringUtils.equals(stringExtra, FestivalMgr.SKIN_CHANGE_REASON_CONFIG_CHANGE) && !StringUtils.equals(intent.getAction(), mxo.SKIN_BROADCAST_ACTION)) || !MtbBizProxy.i(MtbBizProxy.this)) {
                 } else {
                     FestivalMgr.a().c();
                     MtbBizProxy.this.e.e();

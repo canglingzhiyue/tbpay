@@ -2,7 +2,7 @@ package com.taobao.infoflow.core.subservice.biz.rocketservice;
 
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -284,7 +284,7 @@ public class RocketServiceImpl implements IRocketSubService {
         }
         try {
             if (this.mInfoFlowContext != null && (iContainerDataService = (IContainerDataService) this.mInfoFlowContext.a(IContainerDataService.class)) != null && (containerData = iContainerDataService.getContainerData()) != null && containerData.getBase() != null && (ext = containerData.getBase().getExt()) != null) {
-                return TextUtils.equals("true", ext.getString("rocketDirectRefresh"));
+                return StringUtils.equals("true", ext.getString("rocketDirectRefresh"));
             }
             return false;
         } catch (Exception e) {

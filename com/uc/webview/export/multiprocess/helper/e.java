@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import java.io.File;
 import java.io.FileInputStream;
@@ -152,7 +152,7 @@ public final class e {
         Iterator<String> it = arrayList.iterator();
         while (it.hasNext()) {
             String next = it.next();
-            if (!TextUtils.isEmpty(next)) {
+            if (!StringUtils.isEmpty(next)) {
                 c.b(str, " %s", next);
                 try {
                     File file = new File(next);

@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.view.ViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
@@ -634,7 +634,7 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
             observableHorizontalScrollView2.addScrollChangedListener(this);
             view = c2;
             observableHorizontalScrollView = c2;
-        } else if (!TextUtils.isEmpty(((c) this.viewParams).s) || !TextUtils.isEmpty(((c) this.viewParams).t) || this.node.d(c.MAX_SCROLL_OFFSET)) {
+        } else if (!StringUtils.isEmpty(((c) this.viewParams).s) || !StringUtils.isEmpty(((c) this.viewParams).t) || this.node.d(c.MAX_SCROLL_OFFSET)) {
             this.refreshLayout = new TNodeTBSwipeRefreshLayout(context);
             try {
                 if (((c) this.viewParams).u > 0) {
@@ -654,7 +654,7 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
             absTNodeScrollView.addScrollChangedListener(this);
             absTNodeScrollView.setScrollComponent(this);
             this.refreshLayout.addView(createScrollView);
-            if (!TextUtils.isEmpty(((c) this.viewParams).s)) {
+            if (!StringUtils.isEmpty(((c) this.viewParams).s)) {
                 this.refreshLayout.enablePullRefresh(true);
                 this.refreshLayout.getRefresHeader().setBackgroundColor(0);
                 this.refreshLayout.setOnPullRefreshListener(new TBSwipeRefreshLayout.OnPullRefreshListener() { // from class: com.taobao.tao.flexbox.layoutmanager.component.ScrollViewComponent.4
@@ -709,7 +709,7 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
                     }
                 });
             }
-            if (!TextUtils.isEmpty(((c) this.viewParams).t)) {
+            if (!StringUtils.isEmpty(((c) this.viewParams).t)) {
                 this.refreshLayout.enableLoadMore(true);
                 this.refreshLayout.setOnPushLoadMoreListener(new TBSwipeRefreshLayout.OnPushLoadMoreListener() { // from class: com.taobao.tao.flexbox.layoutmanager.component.ScrollViewComponent.5
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -961,7 +961,7 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
         if (ipChange instanceof IpChange) {
             return (com.taobao.tao.flexbox.layoutmanager.core.c) ipChange.ipc$dispatch("1e262aca", new Object[]{this, str});
         }
-        if (oeb.a("optScrollable", true) && TextUtils.equals(str, Constants.Name.SCROLLABLE)) {
+        if (oeb.a("optScrollable", true) && StringUtils.equals(str, Constants.Name.SCROLLABLE)) {
             return this.scroll;
         }
         return super.getAttributeHandler(str);
@@ -1651,11 +1651,11 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f4f98e24", new Object[]{this, cVar});
-        } else if (TextUtils.equals(cVar.n, this.preMaxScrollOffsetViewID)) {
+        } else if (StringUtils.equals(cVar.n, this.preMaxScrollOffsetViewID)) {
         } else {
             removeComponentInfoChangeObserver(this.preMaxScrollOffsetViewID, ComponentInfoDef.HEIGHT, this.maxScrollOffsetFromViewObserver);
             this.preMaxScrollOffsetViewID = cVar.n;
-            if (TextUtils.isEmpty(cVar.n)) {
+            if (StringUtils.isEmpty(cVar.n)) {
                 return;
             }
             registerComponentInfoChangeObserver(cVar.n, ComponentInfoDef.HEIGHT, this.maxScrollOffsetFromViewObserver);
@@ -1667,7 +1667,7 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("9718cf8", new Object[]{this})).intValue();
         }
-        if (!TextUtils.isEmpty(getViewParams().n)) {
+        if (!StringUtils.isEmpty(getViewParams().n)) {
             return this.maxScrollOffsetFromView;
         }
         return getViewParams().m;
@@ -1696,7 +1696,7 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
             return;
         }
         this.currMaxScrollOffset = realMaxScrollOffset;
-        if (TextUtils.isEmpty(oec.a(this.node.e(c.MSG_ON_MAX_SCROLL_OFFSET_CHANGE), (String) null))) {
+        if (StringUtils.isEmpty(oec.a(this.node.e(c.MSG_ON_MAX_SCROLL_OFFSET_CHANGE), (String) null))) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -1723,7 +1723,7 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
                 }
                 com.taobao.tao.flexbox.layoutmanager.core.aa next = it.next();
                 String a2 = oec.a(next.e(c.FILL_PORT_OFFSET_VIEW), str);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     aaVar = next;
                     str = a2;
                     break;
@@ -1734,11 +1734,11 @@ public class ScrollViewComponent extends Component<View, c> implements com.taoba
         String str3 = this.currFillPortOffsetViewId;
         this.currFillPortNode = aaVar;
         this.currFillPortOffsetViewId = str;
-        if (TextUtils.equals(str3, this.currFillPortOffsetViewId)) {
+        if (StringUtils.equals(str3, this.currFillPortOffsetViewId)) {
             return;
         }
         removeComponentInfoChangeObserver(str3, ComponentInfoDef.HEIGHT, this.fillPortOffsetFromViewObserver);
-        if (TextUtils.isEmpty(this.currFillPortOffsetViewId)) {
+        if (StringUtils.isEmpty(this.currFillPortOffsetViewId)) {
             return;
         }
         registerComponentInfoChangeObserver(this.currFillPortOffsetViewId, ComponentInfoDef.HEIGHT, this.fillPortOffsetFromViewObserver);

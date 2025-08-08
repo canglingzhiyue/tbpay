@@ -2,7 +2,7 @@ package com.taobao.android.dinamic.tempate;
 
 import android.content.Context;
 import android.content.res.XmlResourceParser;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -84,7 +84,7 @@ public class DTemplateManager {
         if (ipChange instanceof IpChange) {
             return (DTemplateManager) ipChange.ipc$dispatch("20564b90", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return e.a("default").b;
         }
         return e.a(str).b;
@@ -95,7 +95,7 @@ public class DTemplateManager {
         if (ipChange instanceof IpChange) {
             return (XmlResourceParser) ipChange.ipc$dispatch("1a819744", new Object[]{this, dinamicTemplate});
         }
-        if (this.e != null && dinamicTemplate != null && !TextUtils.isEmpty(dinamicTemplate.name)) {
+        if (this.e != null && dinamicTemplate != null && !StringUtils.isEmpty(dinamicTemplate.name)) {
             try {
                 int b = b(dinamicTemplate.name);
                 if (b > 0) {
@@ -115,7 +115,7 @@ public class DTemplateManager {
             return (byte[]) ipChange.ipc$dispatch("29758fca", new Object[]{this, dinamicTemplate});
         }
         String h = h(dinamicTemplate);
-        if (!TextUtils.isEmpty(h)) {
+        if (!StringUtils.isEmpty(h)) {
             return this.b.b(h);
         }
         return null;
@@ -240,7 +240,7 @@ public class DTemplateManager {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
-        if (this.e != null && !TextUtils.isEmpty(str)) {
+        if (this.e != null && !StringUtils.isEmpty(str)) {
             Integer num = this.c.get(str);
             if (num == null) {
                 try {
@@ -262,7 +262,7 @@ public class DTemplateManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Boolean bool = this.d.get(str);

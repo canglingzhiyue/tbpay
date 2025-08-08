@@ -3,7 +3,7 @@ package com.taobao.android.lightvane.jsbridge;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.Metadata;
 import kotlin.jvm.internal.q;
@@ -89,7 +89,7 @@ public final class f implements Handler.Callback {
                 b = null;
             }
             c cVar = (c) b;
-            String e = TextUtils.isEmpty(eVar.e()) ? "{}" : eVar.e();
+            String e = StringUtils.isEmpty(eVar.e()) ? "{}" : eVar.e();
             if (cVar != null) {
                 if (!cVar.executeSafe(eVar.d(), e, dVar)) {
                     a(6, eVar);

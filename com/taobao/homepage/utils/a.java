@@ -9,7 +9,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.accessibility.AccessibilityManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -101,7 +101,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        TextUtils.SimpleStringSplitter simpleStringSplitter = new TextUtils.SimpleStringSplitter(riy.CONDITION_IF_MIDDLE);
+        StringUtils.SimpleStringSplitter simpleStringSplitter = new StringUtils.SimpleStringSplitter(riy.CONDITION_IF_MIDDLE);
         String string = Settings.Secure.getString(context.getApplicationContext().getContentResolver(), "enabled_accessibility_services");
         if (string != null) {
             simpleStringSplitter.setString(string);

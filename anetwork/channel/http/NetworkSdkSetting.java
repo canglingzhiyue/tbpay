@@ -2,7 +2,7 @@ package anetwork.channel.http;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.DetectorCenter;
 import anet.channel.GlobalAppRuntimeInfo;
@@ -275,7 +275,7 @@ public class NetworkSdkSetting implements Serializable {
                     GlobalAppRuntimeInfo.setTtid((String) hashMap.get("ttid"));
                     GlobalAppRuntimeInfo.setUtdid((String) hashMap.get("deviceId"));
                     String str = (String) hashMap.get("process");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         GlobalAppRuntimeInfo.setCurrentProcess(str);
                     }
                     initParams = new HashMap<>(hashMap);

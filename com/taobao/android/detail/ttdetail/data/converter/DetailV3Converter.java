@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.data.converter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -502,7 +502,7 @@ public class DetailV3Converter {
         int i4 = 0;
         while (i4 < size) {
             String string = jSONArray2.getString(i4);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 char c2 = 65535;
                 switch (string.hashCode()) {
                     case -1855408664:
@@ -682,7 +682,7 @@ public class DetailV3Converter {
         int i4 = 0;
         while (i4 < size) {
             final String string = jSONArray3.getString(i4);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 switch (string.hashCode()) {
                     case -1194473495:
                         if (string.equals(com.taobao.android.detail.ttdetail.constant.a.DIVISION_RECOMMEND)) {
@@ -928,7 +928,7 @@ public class DetailV3Converter {
                     return;
                 }
                 boolean booleanValue = jSONObject8.getBooleanValue("shrinkPriceInfo");
-                if (!TextUtils.equals("description", str) || !booleanValue) {
+                if (!StringUtils.equals("description", str) || !booleanValue) {
                     return;
                 }
                 JSONObject parseObject = JSONObject.parseObject(JSON.toJSONString(jSONObject6, SerializerFeature.DisableCircularReferenceDetect));
@@ -978,7 +978,7 @@ public class DetailV3Converter {
                     put("title", (Object) new JSONObject() { // from class: com.taobao.android.detail.ttdetail.data.converter.DetailV3Converter.29.1
                         {
                             String string = jSONObject9.getString("detailExtraTitle");
-                            put("detail", (Object) (TextUtils.isEmpty(string) ? jSONObject9.getString("detailTitle") : string));
+                            put("detail", (Object) (StringUtils.isEmpty(string) ? jSONObject9.getString("detailTitle") : string));
                             put("content", jSONObject9.getString("contentTitle"));
                             put("shop", jSONObject9.getString("shopTitle"));
                             put(com.alibaba.triver.triver_shop.newShop.ext.g.KEY_APM_SHOP_URL, jSONObject9.getString(com.alibaba.triver.triver_shop.newShop.ext.g.KEY_APM_SHOP_URL));
@@ -1015,10 +1015,10 @@ public class DetailV3Converter {
                     return;
                 }
                 String string = jSONObject11.getString("positionKey");
-                if (TextUtils.equals("detail3NaviItemBack", str2) || TextUtils.equals("back", string)) {
+                if (StringUtils.equals("detail3NaviItemBack", str2) || StringUtils.equals("back", string)) {
                     return;
                 }
-                if (!TextUtils.equals("detail3NaviItemSearch", str2) && !TextUtils.equals("search", string)) {
+                if (!StringUtils.equals("detail3NaviItemSearch", str2) && !StringUtils.equals("search", string)) {
                     jSONArray2.add(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.data.converter.DetailV3Converter.31.2
                         {
                             Object obj;
@@ -1029,8 +1029,8 @@ public class DetailV3Converter {
                             put(TaoliveSearchHotWords.TYPE_HINT, jSONObject11.getString("accessHint"));
                             put("args", jSONObject11.getString("args"));
                             String string3 = jSONObject11.getString("jumpUrl");
-                            put("action", (Object) (TextUtils.isEmpty(string3) ? string2 : string3));
-                            if (TextUtils.equals("cart", string2)) {
+                            put("action", (Object) (StringUtils.isEmpty(string3) ? string2 : string3));
+                            if (StringUtils.equals("cart", string2)) {
                                 JSONObject jSONObject14 = jSONObject.getJSONObject("trade");
                                 Object obj2 = "";
                                 if (jSONObject14 == null || (jSONObject13 = jSONObject14.getJSONObject("cartIcon")) == null) {
@@ -1082,7 +1082,7 @@ public class DetailV3Converter {
                 JSONObject jSONObject5 = jSONArray.getJSONObject(i2);
                 if (jSONObject5 != null && "open_url".equalsIgnoreCase(jSONObject5.getString("type")) && (jSONObject3 = jSONObject5.getJSONObject("fields")) != null) {
                     String string = jSONObject3.getString("url");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         return l.a(string, jSONObject3.getJSONObject(DxContainerActivity.PARAMS_URL_BUSINESS_PARAMS));
                     }
                 }
@@ -1114,7 +1114,7 @@ public class DetailV3Converter {
                     put("title", (Object) new JSONObject() { // from class: com.taobao.android.detail.ttdetail.data.converter.DetailV3Converter.33.1
                         {
                             String string = jSONObject9.getString("detailExtraTitle");
-                            put("detail", (Object) (TextUtils.isEmpty(string) ? jSONObject9.getString("detailTitle") : string));
+                            put("detail", (Object) (StringUtils.isEmpty(string) ? jSONObject9.getString("detailTitle") : string));
                             put("content", jSONObject9.getString("contentTitle"));
                             put("shop", jSONObject9.getString("shopTitle"));
                             put(com.alibaba.triver.triver_shop.newShop.ext.g.KEY_APM_SHOP_URL, jSONObject9.getString(com.alibaba.triver.triver_shop.newShop.ext.g.KEY_APM_SHOP_URL));
@@ -1171,8 +1171,8 @@ public class DetailV3Converter {
                     put("icon", JSONObject.this.getString("value"));
                     put(TaoliveSearchHotWords.TYPE_HINT, JSONObject.this.getString("accessHint"));
                     String string2 = JSONObject.this.getString("jumpUrl");
-                    put("action", (Object) (TextUtils.isEmpty(string2) ? string : string2));
-                    if (TextUtils.equals("cart", string)) {
+                    put("action", (Object) (StringUtils.isEmpty(string2) ? string : string2));
+                    if (StringUtils.equals("cart", string)) {
                         JSONObject jSONObject11 = jSONObject.getJSONObject("trade");
                         Object obj2 = "";
                         if (jSONObject11 == null || (jSONObject10 = jSONObject11.getJSONObject("cartIcon")) == null) {
@@ -1219,7 +1219,7 @@ public class DetailV3Converter {
                     return;
                 }
                 final String string = jSONObject6.getString("title");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 JSONArray.this.add(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.data.converter.DetailV3Converter.38.1
@@ -1259,10 +1259,10 @@ public class DetailV3Converter {
             if (jSONArray2 != null && !jSONArray2.isEmpty()) {
                 int size2 = jSONArray2.size();
                 for (int i3 = 0; i3 < size2; i3++) {
-                    if (TextUtils.equals(str, jSONArray2.getString(i3))) {
+                    if (StringUtils.equals(str, jSONArray2.getString(i3))) {
                         final String string = jSONObject.getString("name");
                         final String string2 = jSONObject.getString("containerType");
-                        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                             return new JSONObject() { // from class: com.taobao.android.detail.ttdetail.data.converter.DetailV3Converter.39
                                 {
                                     put("name", (Object) string);
@@ -1293,9 +1293,9 @@ public class DetailV3Converter {
         JSONObject jSONObject2 = jSONObject.getJSONObject(str);
         if (jSONObject2 != null && !jSONObject2.isEmpty()) {
             String string = jSONObject2.getString("type");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 String[] split = string.split("\\$");
-                if (split.length >= 2 && TextUtils.equals(split[0], "layout") && TextUtils.equals(split[1], "card")) {
+                if (split.length >= 2 && StringUtils.equals(split[0], "layout") && StringUtils.equals(split[1], "card")) {
                     return 1;
                 }
             }

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.event.a;
@@ -46,7 +46,7 @@ public class efo implements j<edn> {
         c cVar = this.f27280a.y().t;
         String u = cVar.u();
         DetailCoreActivity detailCoreActivity2 = this.f27280a;
-        if (TextUtils.isEmpty(u)) {
+        if (StringUtils.isEmpty(u)) {
             u = "";
         }
         a(detailCoreActivity2, "", u, cVar.k(), eqb.m(cVar.f10055a).price.priceText, cVar.l(), cVar.i());
@@ -57,7 +57,7 @@ public class efo implements j<edn> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c65e059c", new Object[]{this, context, str, str2, str3, str4, str5, str6});
-        } else if (TextUtils.isEmpty(str2) && TextUtils.isEmpty(str3) && TextUtils.isEmpty(str4) && TextUtils.isEmpty(str5) && TextUtils.isEmpty(str6)) {
+        } else if (StringUtils.isEmpty(str2) && StringUtils.isEmpty(str3) && StringUtils.isEmpty(str4) && StringUtils.isEmpty(str5) && StringUtils.isEmpty(str6)) {
         } else {
             final String a2 = a(str);
             final String a3 = a(str2);
@@ -80,7 +80,7 @@ public class efo implements j<edn> {
 
     private String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : TextUtils.isEmpty(str) ? "" : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : StringUtils.isEmpty(str) ? "" : str;
     }
 
     @Override // com.taobao.android.trade.event.j

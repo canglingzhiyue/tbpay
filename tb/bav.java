@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.nodemodel.AURAPluginContainerNodeModel;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,7 +54,7 @@ public class bav {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fad605d6", new Object[]{this, context, str, aqtVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.c.execute(new Runnable() { // from class: tb.bav.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

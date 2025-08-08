@@ -1,6 +1,6 @@
 package com.uc.webview.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Map;
 
 /* loaded from: classes9.dex */
@@ -27,7 +27,7 @@ public class SdkGlobalSettings {
     }
 
     public static boolean isAccessible(String str, String str2) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         return isAccessibleExactMatch(str, str2);

@@ -1,7 +1,7 @@
 package com.vivo.push.c;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.u;
 import java.util.HashMap;
 
@@ -26,7 +26,7 @@ public final class a {
             return 8006;
         }
         String str = this.b.get("pushSupport");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 2;
         }
         try {

@@ -1,6 +1,6 @@
 package io.unicorn.plugin.platform;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.taobao.android.weex.WeexInstance;
 import com.taobao.android.weex.WeexInstanceImpl;
@@ -39,7 +39,7 @@ public class e {
 
     public static float a(String str) {
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.equals(str, "null")) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.equals(str, "null")) {
                 return Float.parseFloat(str);
             }
             return 0.0f;
@@ -263,7 +263,7 @@ public class e {
         }
         String trim = obj.toString().trim();
         try {
-            if (!TextUtils.isEmpty(trim) && "true".equals(trim)) {
+            if (!StringUtils.isEmpty(trim) && "true".equals(trim)) {
                 z = true;
             }
             return Boolean.valueOf(z);
@@ -283,10 +283,10 @@ public class e {
             return 0;
         }
         String trim = obj.toString().trim();
-        if (TextUtils.equals("px", trim.length() >= 2 ? trim.substring(trim.length() - 2, trim.length()) : "")) {
+        if (StringUtils.equals("px", trim.length() >= 2 ? trim.substring(trim.length() - 2, trim.length()) : "")) {
             try {
                 String substring = trim.substring(0, trim.length() - 2);
-                if (TextUtils.isEmpty(substring) || !substring.contains(".")) {
+                if (StringUtils.isEmpty(substring) || !substring.contains(".")) {
                     return Integer.parseInt(substring);
                 }
                 a2 = a(substring);
@@ -307,7 +307,7 @@ public class e {
             }
         } else {
             try {
-                if (TextUtils.isEmpty(trim)) {
+                if (StringUtils.isEmpty(trim)) {
                     return 0;
                 }
                 if (!trim.contains(".")) {

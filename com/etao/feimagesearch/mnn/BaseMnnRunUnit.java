@@ -2,7 +2,7 @@ package com.etao.feimagesearch.mnn;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.mnn.utils.MnnUtils;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
@@ -119,7 +119,7 @@ public class BaseMnnRunUnit<INPUT, OUTPUT> implements com.etao.feimagesearch.mnn
                 return;
             }
             LinkedHashSet linkedHashSet = new LinkedHashSet();
-            if (!TextUtils.isEmpty(BaseMnnRunUnit.e(BaseMnnRunUnit.this))) {
+            if (!StringUtils.isEmpty(BaseMnnRunUnit.e(BaseMnnRunUnit.this))) {
                 BaseMnnRunUnit baseMnnRunUnit = BaseMnnRunUnit.this;
                 if (!BaseMnnRunUnit.b(baseMnnRunUnit, BaseMnnRunUnit.e(baseMnnRunUnit))) {
                     String a2 = MnnUtils.a(BaseMnnRunUnit.a(BaseMnnRunUnit.this), BaseMnnRunUnit.e(BaseMnnRunUnit.this));
@@ -127,7 +127,7 @@ public class BaseMnnRunUnit<INPUT, OUTPUT> implements com.etao.feimagesearch.mnn
                     linkedHashSet.add(a2);
                 }
             }
-            if (!TextUtils.isEmpty(BaseMnnRunUnit.f(BaseMnnRunUnit.this))) {
+            if (!StringUtils.isEmpty(BaseMnnRunUnit.f(BaseMnnRunUnit.this))) {
                 BaseMnnRunUnit baseMnnRunUnit2 = BaseMnnRunUnit.this;
                 if (!BaseMnnRunUnit.b(baseMnnRunUnit2, BaseMnnRunUnit.e(baseMnnRunUnit2))) {
                     String a3 = MnnUtils.a(BaseMnnRunUnit.a(BaseMnnRunUnit.this), BaseMnnRunUnit.f(BaseMnnRunUnit.this));
@@ -645,7 +645,7 @@ public class BaseMnnRunUnit<INPUT, OUTPUT> implements com.etao.feimagesearch.mnn
         HashMap<String, Object> hashMap = new HashMap<>(5);
         HashMap<String, Object> hashMap2 = hashMap;
         hashMap2.put(com.etao.feimagesearch.mnn.utils.a.f, vector);
-        if (com.etao.feimagesearch.config.b.cJ() && !TextUtils.isEmpty(this.c) && q.a((Object) this.o, (Object) "plt_autodetect")) {
+        if (com.etao.feimagesearch.config.b.cJ() && !StringUtils.isEmpty(this.c) && q.a((Object) this.o, (Object) "plt_autodetect")) {
             hashMap2.put(com.etao.feimagesearch.mnn.utils.a.g, com.etao.feimagesearch.mnn.j.Companion.a().b(this.o, this.c));
         }
         a(hashMap);
@@ -823,7 +823,7 @@ public class BaseMnnRunUnit<INPUT, OUTPUT> implements com.etao.feimagesearch.mnn
             kVar.a(i2, message2);
         } else {
             cot.a("AutoDetect", this.f6733a, "onBuildResult success");
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 com.etao.feimagesearch.mnn.j.Companion.a().a(this.o, this.c);
             }
             a(j2);
@@ -968,7 +968,7 @@ public class BaseMnnRunUnit<INPUT, OUTPUT> implements com.etao.feimagesearch.mnn
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{this, str})).booleanValue();
         }
-        if (str == null || TextUtils.isEmpty(str) || !com.etao.feimagesearch.config.b.cs()) {
+        if (str == null || StringUtils.isEmpty(str) || !com.etao.feimagesearch.config.b.cs()) {
             return false;
         }
         return q.a((Object) "plt_autodetect", (Object) str) || q.a((Object) "plt_smart_camera", (Object) str);

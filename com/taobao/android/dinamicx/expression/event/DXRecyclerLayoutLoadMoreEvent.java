@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.expression.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.dinamicx.expression.expr_v2.f;
 import java.util.HashMap;
 import tb.kge;
@@ -20,7 +20,7 @@ public class DXRecyclerLayoutLoadMoreEvent extends DXEvent {
         if (this.args == null) {
             this.args = new HashMap();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.args.put("userId", f.a(""));
         } else {
             this.args.put("userId", f.a(str));

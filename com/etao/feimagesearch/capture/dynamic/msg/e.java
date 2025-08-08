@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.capture.dynamic.msg;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -33,7 +33,7 @@ public final class e extends b {
             return (JSONObject) ipChange.ipc$dispatch("d2e6990d", new Object[]{this});
         }
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put((JSONObject) "url", TextUtils.isEmpty(this.f6569a) ? "" : this.f6569a);
+        jSONObject.put((JSONObject) "url", StringUtils.isEmpty(this.f6569a) ? "" : this.f6569a);
         return jSONObject;
     }
 }

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,7 +40,7 @@ public class IPaySafeInputWidget implements View.OnTouchListener, VISafeInputInt
     private View.OnFocusChangeListener f = null;
     private OnConfirmListener g = null;
     private boolean i = false;
-    private EditTextUtil j = EditTextManager.getEditTextUtils();
+    private EditTextUtil j = EditTextManager.getEditStringUtils();
     private String l = "";
     private EncryptRandomType m = EncryptRandomType.randomafter;
 
@@ -122,7 +122,7 @@ public class IPaySafeInputWidget implements View.OnTouchListener, VISafeInputInt
                 }
                 IPaySafeInputWidget.access$600(IPaySafeInputWidget.this).OnTextChanged(IPaySafeInputWidget.access$200(IPaySafeInputWidget.this), charSequence.toString(), i, i2, i3);
                 if (IPaySafeInputWidget.access$700(IPaySafeInputWidget.this) != null) {
-                    if (TextUtils.isEmpty(charSequence)) {
+                    if (StringUtils.isEmpty(charSequence)) {
                         IPaySafeInputWidget.access$700(IPaySafeInputWidget.this).setEnabled(false);
                     } else {
                         IPaySafeInputWidget.access$700(IPaySafeInputWidget.this).setEnabled(true);
@@ -325,7 +325,7 @@ public class IPaySafeInputWidget implements View.OnTouchListener, VISafeInputInt
             ipChange.ipc$dispatch("3b30c997", new Object[]{iPaySafeInputWidget});
         } else if (!iPaySafeInputWidget.d.isEnabled()) {
         } else {
-            if (!TextUtils.isEmpty(iPaySafeInputWidget.d.getText()) && iPaySafeInputWidget.h != null && iPaySafeInputWidget.d.isFocused()) {
+            if (!StringUtils.isEmpty(iPaySafeInputWidget.d.getText()) && iPaySafeInputWidget.h != null && iPaySafeInputWidget.d.isFocused()) {
                 iPaySafeInputWidget.i = true;
                 iPaySafeInputWidget.d.setOnTouchListener(iPaySafeInputWidget);
                 iPaySafeInputWidget.d.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, iPaySafeInputWidget.h, (Drawable) null);

@@ -14,7 +14,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.WindowInsets;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -144,7 +144,7 @@ public class kil {
         if (str.equals(com.taobao.android.weex_framework.util.a.ATOM_EXT_random)) {
             return -7829368;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         if (str.charAt(0) == '#' && str.length() > 7) {
@@ -205,7 +205,7 @@ public class kil {
             return ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue();
         }
         if (b == null) {
-            b = Boolean.valueOf(TextUtils.equals(e(), "x86"));
+            b = Boolean.valueOf(StringUtils.equals(e(), "x86"));
         }
         return b.booleanValue();
     }
@@ -248,7 +248,7 @@ public class kil {
             return (JSONObject) ipChange.ipc$dispatch("fc81489c", new Object[]{str, str2});
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("title", (Object) str);
         }
         jSONObject.put("titleColor", (Object) "#ffffff");
@@ -264,7 +264,7 @@ public class kil {
             return (JSONObject) ipChange.ipc$dispatch("9d61c62f", new Object[]{str, str2, num, str3, str4});
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("title", (Object) str);
             jSONObject.put("titleColor", (Object) str4);
         }
@@ -302,7 +302,7 @@ public class kil {
                 }
                 String string = jSONObject.getString("font");
                 int i2 = 13;
-                if (!TextUtils.isEmpty(string) && TextUtils.isDigitsOnly(string)) {
+                if (!StringUtils.isEmpty(string) && StringUtils.isDigitsOnly(string)) {
                     try {
                         i2 = Integer.valueOf(string).intValue() / 2;
                     } catch (Exception e) {
@@ -310,7 +310,7 @@ public class kil {
                     }
                 }
                 jSONObject2.put("contentTextSize", (Object) Integer.valueOf(i2));
-                jSONObject2.put("textColor", (Object) (!TextUtils.isEmpty(jSONObject.getString("color")) ? jSONObject.getString("color") : "#ffffff"));
+                jSONObject2.put("textColor", (Object) (!StringUtils.isEmpty(jSONObject.getString("color")) ? jSONObject.getString("color") : "#ffffff"));
                 jSONArray2.add(jSONObject2);
             }
         }

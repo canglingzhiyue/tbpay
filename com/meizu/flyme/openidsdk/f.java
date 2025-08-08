@@ -7,7 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.database.Cursor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.kge;
 
 /* loaded from: classes4.dex */
@@ -302,7 +302,7 @@ class f {
                 return false;
             }
             String a2 = a(packageManager, "com.meizu.flyme.openidsdk");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return false;
             }
             String b = b(packageManager, a2);

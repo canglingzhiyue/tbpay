@@ -3,7 +3,7 @@ package com.alipay.zoloz.toyger.workspace.alert;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.mobile.security.bio.constants.ZcodeConstants;
 import com.alipay.zoloz.toyger.interfaces.DialogCallback;
@@ -226,7 +226,7 @@ public class AlertHelper implements DialogInterface.OnClickListener, View.OnClic
                 }
             case DIALOG_TYPE_INDEX_REMOTE_COMMAND_FAIL_MAX_RETRY:
             case DIALOG_TYPE_INDEX_FACE_FAIL_NO_RETRY:
-                if (!TextUtils.isEmpty(this.e)) {
+                if (!StringUtils.isEmpty(this.e)) {
                     this.b.alertClickRecord(z ? this.d : this.e, this.f);
                     ToygerWorkspace toygerWorkspace = this.b;
                     if (!z) {

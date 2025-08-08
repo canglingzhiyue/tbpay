@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Process;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.MeasureSet;
@@ -529,10 +529,10 @@ public final class DAI {
         if (aVar.c != null) {
             mSceneModelNameMap.put(aVar.c, aVar.b());
         }
-        if (!TextUtils.isEmpty(aVar.f23718a)) {
+        if (!StringUtils.isEmpty(aVar.f23718a)) {
             mKeyNameMap.put(aVar.f23718a, aVar.b());
             mAliasTriIdMap.put(aVar.f23718a, aVar.g);
-            if (!TextUtils.isEmpty(aVar.a())) {
+            if (!StringUtils.isEmpty(aVar.a())) {
                 mFeatureCenterTaskMap.put(aVar.f23718a, aVar.g);
             }
         }
@@ -645,10 +645,10 @@ public final class DAI {
         }
         try {
             String str3 = mFeatureCenterTaskMap.get(str);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = mKeyNameMap.get(str);
             }
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 if (dAICallback != null) {
                     dAICallback.onError(new DAIError(209, "model not register"));
                 }
@@ -741,7 +741,7 @@ public final class DAI {
         }
         try {
             String str3 = mKeyNameMap.get(str);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 if (cVar != null) {
                     HashMap hashMap = new HashMap();
                     hashMap.put("code", 0);

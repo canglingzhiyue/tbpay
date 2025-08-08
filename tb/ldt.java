@@ -9,7 +9,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.engine.env.protocol.h;
@@ -37,7 +37,7 @@ public class ldt {
             Uri parse = Uri.parse(str);
             String queryParameter = parse.getQueryParameter("image");
             String queryParameter2 = parse.getQueryParameter("transition");
-            if (!TextUtils.isEmpty(queryParameter) && TextUtils.equals("scale", queryParameter2)) {
+            if (!StringUtils.isEmpty(queryParameter) && StringUtils.equals("scale", queryParameter2)) {
                 ViewCompat.setTransitionName(view, "similar_activity_transition");
                 b.h().a(queryParameter).addLoaderExtra(esr.BUNDLE_BIZ_CODE, "5401").fetch();
                 if (((RecyclerView) view.getParent()).getItemAnimator().isRunning()) {

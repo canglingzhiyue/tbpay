@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -152,7 +152,7 @@ public class fan extends b<fbd> implements View.OnClickListener {
                 dzh.f(this.o, ((fbd) this.c).y, ((fbd) this.c).z);
             }
             String obj = view.getTag().toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 return;
             }
             epq.a(this.g, obj);
@@ -175,7 +175,7 @@ public class fan extends b<fbd> implements View.OnClickListener {
             this.l.setLayoutParams(layoutParams);
         }
         a(this.l, fbdVar.b, new epm(this.p, this.q), null, new epl.a().b(R.drawable.detail_img_load_fail).a(R.drawable.detail_img_load_fail).c(this.l.getScaleType()).a());
-        if (TextUtils.isEmpty(fbdVar.f27734a)) {
+        if (StringUtils.isEmpty(fbdVar.f27734a)) {
             this.n.setVisibility(8);
         } else {
             this.n.setText(fbdVar.f27734a);

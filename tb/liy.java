@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.biz.IFirstScreenDataService;
@@ -21,7 +21,7 @@ public class liy {
             return ((Number) ipChange.ipc$dispatch("f2eb53f6", new Object[]{ljsVar})).intValue();
         }
         String b = b(ljsVar);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return -1;
         }
         int a2 = a(ljsVar, b);

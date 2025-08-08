@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -236,7 +236,7 @@ public class qnm extends DXWidgetNode implements ifl {
             return;
         }
         String u = this.f32962a.u();
-        if (TextUtils.isEmpty(u) || hImageView == null) {
+        if (StringUtils.isEmpty(u) || hImageView == null) {
             return;
         }
         int a2 = pbh.a(u);

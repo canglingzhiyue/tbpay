@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -62,7 +62,7 @@ public class tid extends RecyclerView.ViewHolder {
             ipChange.ipc$dispatch("266fb88", new Object[]{this, jSONObject});
             return;
         }
-        final boolean equals = TextUtils.equals(jSONObject.getString(b.MENU_CODE), b.MY_CHANNEL);
+        final boolean equals = StringUtils.equals(jSONObject.getString(b.MENU_CODE), b.MY_CHANNEL);
         if (!equals) {
             StaggeredGridLayoutManager.LayoutParams layoutParams = (StaggeredGridLayoutManager.LayoutParams) this.itemView.getLayoutParams();
             layoutParams.topMargin = f.a(this.itemView.getContext(), 14.0f);

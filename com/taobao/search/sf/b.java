@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -113,7 +113,7 @@ public class b implements inx.b {
             } else if (noa.SHOW_NEW_SIMILAR_PAGE.equals(str)) {
                 this.c = this.g;
                 recyclerView.setBackgroundColor(a2);
-            } else if (TextUtils.isEmpty(str2) || "all".equalsIgnoreCase(str2)) {
+            } else if (StringUtils.isEmpty(str2) || "all".equalsIgnoreCase(str2)) {
                 this.c = this.h;
                 recyclerView.setBackgroundColor(a2);
             } else if (this.i.contains(str2)) {

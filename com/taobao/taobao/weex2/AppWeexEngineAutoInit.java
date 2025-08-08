@@ -3,7 +3,7 @@ package com.taobao.taobao.weex2;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
@@ -138,7 +138,7 @@ public class AppWeexEngineAutoInit implements Serializable {
                     return ((Boolean) ipChange2.ipc$dispatch("135030bb", new Object[]{this, context, pVar, str})).booleanValue();
                 }
                 String string = JSON.parseObject(str).getString("url");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return false;
                 }
                 if (!Nav.from(context).toUri(string)) {

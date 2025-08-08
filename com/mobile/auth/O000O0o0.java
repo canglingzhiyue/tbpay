@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.O000OO;
 import com.mobile.auth.O000Oo0;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
@@ -61,7 +61,7 @@ public final class O000O0o0 {
             String str7 = O000000o;
             O000000o.O000000o(str7, "request result : " + O000000o3);
             String O00000Oo2 = O00000Oo(context, O000000o3, O00000Oo, network);
-            if (TextUtils.isEmpty(O00000Oo2)) {
+            if (StringUtils.isEmpty(O00000Oo2)) {
                 return "{\"result\":80001,\"msg\":\"请求异常\"}";
             }
             O000O0OO.O000000o(str5, O00000Oo2, O000000o2);
@@ -82,7 +82,7 @@ public final class O000O0o0 {
             try {
                 try {
                     String str2 = list.get(i);
-                    if (!TextUtils.isEmpty(list.get(i)) && context != null && Build.VERSION.SDK_INT < 21) {
+                    if (!StringUtils.isEmpty(list.get(i)) && context != null && Build.VERSION.SDK_INT < 21) {
                         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
                         if (connectivityManager.getNetworkInfo(5).getState().compareTo(NetworkInfo.State.CONNECTED) == 0) {
                             ((Boolean) Class.forName("android.net.ConnectivityManager").getMethod("requestRouteToHost", Integer.TYPE, Integer.TYPE).invoke(connectivityManager, 5, Integer.valueOf(O000OO.O000000o(O000OO.O00000Oo(str2))))).booleanValue();
@@ -90,7 +90,7 @@ public final class O000O0o0 {
                     }
                     String O000000o2 = O000000o(context, list.get(i), str, network);
                     try {
-                        JSONObject jSONObject = !TextUtils.isEmpty(O000000o2) ? new JSONObject(O000000o2) : null;
+                        JSONObject jSONObject = !StringUtils.isEmpty(O000000o2) ? new JSONObject(O000000o2) : null;
                         if (jSONObject != null && jSONObject.getInt("result") == 0) {
                             return O000000o2;
                         }
@@ -174,7 +174,7 @@ public final class O000O0o0 {
     private String O00000Oo() {
         try {
             String uuid = UUID.randomUUID().toString();
-            if (TextUtils.isEmpty(uuid)) {
+            if (StringUtils.isEmpty(uuid)) {
                 return "";
             }
             String replace = uuid.replace("-", "");
@@ -197,15 +197,15 @@ public final class O000O0o0 {
 
     private String O00000Oo(Context context, String str, String str2, Network network) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             JSONObject jSONObject = new JSONObject(str);
             int optInt = jSONObject.optInt("result");
             String optString = jSONObject.optString("data");
-            if ((optInt == 0 || optInt == 30002) && !TextUtils.isEmpty(optString)) {
+            if ((optInt == 0 || optInt == 30002) && !StringUtils.isEmpty(optString)) {
                 String O000000o2 = O000000o(optString, str2);
-                if (!TextUtils.isEmpty(O000000o2)) {
+                if (!StringUtils.isEmpty(O000000o2)) {
                     try {
                         jSONObject.put("data", new JSONObject(O000000o2));
                     } catch (JSONException e) {
@@ -242,15 +242,15 @@ public final class O000O0o0 {
 
     private static String O00000o0(Context context, String str, String str2, Network network) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             JSONObject jSONObject = new JSONObject(str);
             int optInt = jSONObject.optInt("result");
             String optString = jSONObject.optString("data");
-            if (optInt == 0 && !TextUtils.isEmpty(optString)) {
+            if (optInt == 0 && !StringUtils.isEmpty(optString)) {
                 String O000000o2 = O000000o(optString, str2);
-                if (!TextUtils.isEmpty(O000000o2)) {
+                if (!StringUtils.isEmpty(O000000o2)) {
                     try {
                         jSONObject.put("data", new JSONObject(O000000o2));
                     } catch (JSONException e) {

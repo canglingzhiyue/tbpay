@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
@@ -66,7 +66,7 @@ public class oqn {
                 ArrayList arrayList = new ArrayList(deltaData.size());
                 for (SectionModel sectionModel : deltaData) {
                     String string = sectionModel.getString("sectionBizCode");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         arrayList.add(string);
                     }
                 }
@@ -80,10 +80,10 @@ public class oqn {
         if (awesomeGetContainerParams.passParams == null) {
             awesomeGetContainerParams.passParams = new JSONObject();
         }
-        if (!TextUtils.isEmpty(TBSpeed.getSubEdition())) {
+        if (!StringUtils.isEmpty(TBSpeed.getSubEdition())) {
             awesomeGetContainerParams.passParams.put("subEdition", (Object) TBSpeed.getSubEdition());
         }
-        if (!TextUtils.isEmpty(TBSpeed.getSpeedPassParams())) {
+        if (!StringUtils.isEmpty(TBSpeed.getSpeedPassParams())) {
             awesomeGetContainerParams.passParams.put("subEditionPassParams", (Object) TBSpeed.getSpeedPassParams());
         }
         return awesomeGetContainerParams;
@@ -113,7 +113,7 @@ public class oqn {
         orb.a(jSONObject2);
         jSONObject2.put("deviceLevel", (Object) g.b());
         String A = c.a().A();
-        if (!TextUtils.isEmpty(A)) {
+        if (!StringUtils.isEmpty(A)) {
             jSONObject2.put("currentTabType", (Object) A);
         }
         JSONObject b2 = b(jSONObject);

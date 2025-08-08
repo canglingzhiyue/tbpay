@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.comments.chat;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,12 +74,12 @@ public class ChatTopMessage extends ChatMessage implements f {
         this.mLeftMargin = 0;
         this.mShowTime = -1;
         this.mProvType = i;
-        if (TextUtils.isEmpty(str) && tLiveMsg != null) {
+        if (StringUtils.isEmpty(str) && tLiveMsg != null) {
             this.mUserNick = tLiveMsg.from;
         } else {
             this.mUserNick = str;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 this.mContent = (String) JSON.parseObject(new String(tLiveMsg.data)).getObject("content", String.class);
             } catch (Exception unused) {

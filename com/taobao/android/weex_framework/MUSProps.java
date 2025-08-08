@@ -1,6 +1,6 @@
 package com.taobao.android.weex_framework;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
@@ -37,7 +37,7 @@ public final class MUSProps implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ed3ff30d", new Object[]{this, str, mUSValue});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mRawProps.add(new t(str, mUSValue));
         }

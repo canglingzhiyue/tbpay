@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
@@ -193,10 +193,10 @@ public class bmp extends af {
             view.setTag(ID_KEY_BOARD, Integer.valueOf(this.l));
             bmu.b(editText, this.m);
             view.setTag(ID_MAX_LENGTH, Integer.valueOf(this.m));
-            if (!TextUtils.isEmpty(this.j)) {
+            if (!StringUtils.isEmpty(this.j)) {
                 bmu.a(editText, this.j);
                 view.setTag(ID_PLACE_HOLDER, this.j);
-            } else if (TextUtils.isEmpty(this.o)) {
+            } else if (StringUtils.isEmpty(this.o)) {
             } else {
                 a(editText, "input".equalsIgnoreCase(this.o));
             }
@@ -221,7 +221,7 @@ public class bmp extends af {
             ipChange.ipc$dispatch("ede516ab", new Object[]{this, context, view});
             return;
         }
-        if (!TextUtils.isEmpty(this.n)) {
+        if (!StringUtils.isEmpty(this.n)) {
             setText(this.i + this.n);
         }
         super.onRenderView(context, view);

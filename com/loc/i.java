@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
@@ -96,7 +96,7 @@ public final class i {
             java.lang.String r7 = "callback"
             r8 = 0
             java.lang.String r5 = r5.optString(r7, r8)     // Catch: java.lang.Throwable -> L4f
-            boolean r7 = android.text.TextUtils.isEmpty(r5)     // Catch: java.lang.Throwable -> L4f
+            boolean r7 = android.text.StringUtils.isEmpty(r5)     // Catch: java.lang.Throwable -> L4f
             if (r7 != 0) goto L4a
         L47:
             r9.g = r5     // Catch: java.lang.Throwable -> L4f
@@ -211,7 +211,7 @@ public final class i {
         try {
             this.f.getSettings().setJavaScriptEnabled(true);
             this.f.addJavascriptInterface(this, "AMapAndroidLoc");
-            if (!TextUtils.isEmpty(this.f.getUrl())) {
+            if (!StringUtils.isEmpty(this.f.getUrl())) {
                 this.f.reload();
             }
             if (this.e == null) {

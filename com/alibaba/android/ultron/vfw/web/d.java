@@ -74,7 +74,7 @@ public class d extends com.alibaba.android.ultron.vfw.viewholder.b implements bm
             boolean r1 = tb.jqi.a(r1, r3, r2)
             r0.setDoNotCallCoreDestroy(r1)
             java.lang.String r0 = r4.g
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L49
             tb.bny r5 = r4.f2738a
             android.content.Context r5 = r5.k()
@@ -87,7 +87,7 @@ public class d extends com.alibaba.android.ultron.vfw.viewholder.b implements bm
             java.lang.String r1 = r0.getQueryParameter(r1)
             java.lang.String r2 = "width"
             java.lang.String r0 = r0.getQueryParameter(r2)
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             r3 = -1
             if (r2 != 0) goto L68
             int r1 = java.lang.Integer.parseInt(r1)     // Catch: java.lang.Exception -> L68
@@ -95,7 +95,7 @@ public class d extends com.alibaba.android.ultron.vfw.viewholder.b implements bm
         L68:
             r1 = -1
         L69:
-            boolean r2 = android.text.TextUtils.isEmpty(r0)
+            boolean r2 = android.text.StringUtils.isEmpty(r0)
             if (r2 != 0) goto L74
             int r0 = java.lang.Integer.parseInt(r0)     // Catch: java.lang.Exception -> L74
             goto L75

@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.floatview;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.open.g;
@@ -187,7 +187,7 @@ public class FloatViewWeexModule extends WXModule {
                         if (ipChange instanceof IpChange) {
                             return (eoz) ipChange.ipc$dispatch("ed3ce113", new Object[]{this, str});
                         }
-                        if (!TextUtils.equals(str, "detail_floatweex_instance")) {
+                        if (!StringUtils.equals(str, "detail_floatweex_instance")) {
                             return null;
                         }
                         return a.this;
@@ -280,7 +280,7 @@ public class FloatViewWeexModule extends WXModule {
                         if (ipChange instanceof IpChange) {
                             return (eoz) ipChange.ipc$dispatch("ed3ce113", new Object[]{this, str});
                         }
-                        if (!TextUtils.equals(str, b.this.getkey())) {
+                        if (!StringUtils.equals(str, b.this.getkey())) {
                             return null;
                         }
                         return b.this;

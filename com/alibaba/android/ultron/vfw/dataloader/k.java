@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.dataloader;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.spindle.stage.StageType;
 import com.alibaba.android.ultron.vfw.instance.UltronError;
 import com.alibaba.fastjson.JSONObject;
@@ -50,7 +50,7 @@ public class k implements o {
         jSONObject5.put("platform", (Object) "Android");
         jSONObject5.put("storedState", (Object) jSONObject);
         jSONObject5.put("opState", (Object) jSONObject4);
-        if (TextUtils.isEmpty("main")) {
+        if (StringUtils.isEmpty("main")) {
             a();
             return;
         }

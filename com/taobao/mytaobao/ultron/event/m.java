@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,7 +57,7 @@ public class m implements dln {
             }
             String string = c.getString("componentKey");
             JSONArray jSONArray = c.getJSONArray("events");
-            if (jSONArray == null || TextUtils.isEmpty(string)) {
+            if (jSONArray == null || StringUtils.isEmpty(string)) {
                 return null;
             }
             for (int i = 0; i < jSONArray.size(); i++) {

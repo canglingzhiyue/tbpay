@@ -1,7 +1,7 @@
 package com.taobao.muniontaobaosdk.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.utils.Global;
@@ -84,7 +84,7 @@ public class b {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             arrayList.add(String.format("%s=%s", entry.getKey(), entry.getValue()));
         }
-        return TextUtils.join(",", arrayList);
+        return StringUtils.join(",", arrayList);
     }
 
     public static String c(Map<String, Object> map) {
@@ -99,7 +99,7 @@ public class b {
         for (Map.Entry<String, Object> entry : map.entrySet()) {
             arrayList.add(String.format("%s=%s", entry.getKey(), entry.getValue()));
         }
-        return TextUtils.join(",", arrayList);
+        return StringUtils.join(",", arrayList);
     }
 
     public static String a(Throwable th, int i, int i2) {

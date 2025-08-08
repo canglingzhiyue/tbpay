@@ -2,7 +2,7 @@ package com.taobao.themis.taobao.exp;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.ut.abtest.VariationSet;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -92,7 +92,7 @@ public final class TMSSimpleLaunchSwitch {
             return ((Number) ipChange.ipc$dispatch("9b80d7fd", new Object[]{this, context, str})).longValue();
         }
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return 3L;
         }
         List<String> list = f22831a;

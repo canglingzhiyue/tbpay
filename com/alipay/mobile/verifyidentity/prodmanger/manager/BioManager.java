@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.prodmanger.manager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -134,7 +134,7 @@ public class BioManager extends BaseProdManager {
         if (ipChange instanceof IpChange) {
             return (Bundle) ipChange.ipc$dispatch("b734c076", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Bundle bundle = new Bundle();
@@ -168,7 +168,7 @@ public class BioManager extends BaseProdManager {
             return (Bundle) ipChange.ipc$dispatch("43d4eb77", new Object[]{this, str});
         }
         Bundle bundle = new Bundle();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -189,7 +189,7 @@ public class BioManager extends BaseProdManager {
             bundle.putString(rrv.PRODUCT_ID, this.b);
             if (jSONObject != null) {
                 String jSONString = jSONObject.toJSONString();
-                boolean contains = !TextUtils.isEmpty(jSONString) ? jSONString.contains("intelligentEnable") : false;
+                boolean contains = !StringUtils.isEmpty(jSONString) ? jSONString.contains("intelligentEnable") : false;
                 BioInfoFull bioInfoFull = (BioInfoFull) JSON.parseObject(jSONString, BioInfoFull.class);
                 this.d = bioInfoFull.productStatus;
                 if (bioInfoFull != null) {
@@ -208,7 +208,7 @@ public class BioManager extends BaseProdManager {
                         bundle.putString("btnNormalColor", map.get("btnNormalColor"));
                         bundle.putString("btnPressedColor", map.get("btnPressedColor"));
                         bundle.putString("btnText", map.get("btnText"));
-                        TextUtils.isEmpty(map.get("pageSlider"));
+                        StringUtils.isEmpty(map.get("pageSlider"));
                         PageSliderFull pageSliderFull = (PageSliderFull) JSON.parseObject(map.get("pageSlider"), PageSliderFull.class);
                         if (pageSliderFull != null) {
                             bundle.putBoolean("sliderVisible", true);

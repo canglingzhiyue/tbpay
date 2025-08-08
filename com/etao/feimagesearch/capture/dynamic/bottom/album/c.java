@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.album.k;
@@ -160,7 +160,7 @@ public final class c extends ctb<d> implements q.a {
                     int i6 = 0;
                     for (o oVar : arrayList) {
                         String b = t.INSTANCE.b(oVar);
-                        if (!TextUtils.isEmpty(b)) {
+                        if (!StringUtils.isEmpty(b)) {
                             String str = null;
                             if (oVar.c()) {
                                 String h = oVar.h();

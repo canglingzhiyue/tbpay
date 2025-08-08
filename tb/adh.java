@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.android.ultron.vfw.weex2.UltronWeex2DialogFragment;
 import com.alibaba.android.ultron.vfw.weex2.f;
@@ -88,7 +88,7 @@ public class adh {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.startsWith("${") && str.endsWith(riy.BLOCK_END_STR);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.startsWith("${") && str.endsWith(riy.BLOCK_END_STR);
     }
 
     public static Object a(String str, JSONObject jSONObject) {
@@ -128,7 +128,7 @@ public class adh {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 return Uri.parse(str).getQueryParameter(str2);
             } catch (Exception unused) {
@@ -143,7 +143,7 @@ public class adh {
         }
         try {
             String queryParameter = uri.getQueryParameter("popFrom");
-            if (TextUtils.equals("live_detail", queryParameter) || TextUtils.equals("live", queryParameter)) {
+            if (StringUtils.equals("live_detail", queryParameter) || StringUtils.equals("live", queryParameter)) {
                 LocalBroadcastManager.getInstance(context).sendBroadcast(new Intent("TradePay.Event.livebag.close"));
             }
             List<String> b2 = b(queryParameter);
@@ -175,7 +175,7 @@ public class adh {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("89cdf874", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             jqg.a("UltronTradeHybridHelper", "loadFinishedDialogActivities:", "popFrom is empty!");
             return null;
         }
@@ -337,7 +337,7 @@ public class adh {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5e7f4c93", new Object[]{str, strArr});
         }
-        if (TextUtils.isEmpty(str) || strArr == null) {
+        if (StringUtils.isEmpty(str) || strArr == null) {
             return str;
         }
         if (!add.a()) {
@@ -346,7 +346,7 @@ public class adh {
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (String str2 : strArr) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 buildUpon.appendQueryParameter(str2, "true");
             }
         }
@@ -357,7 +357,7 @@ public class adh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{str});
-        } else if (!TextUtils.equals(str, "mytaobao")) {
+        } else if (!StringUtils.equals(str, "mytaobao")) {
         } else {
             if (e) {
                 jqg.a("UltronTradeHybridHelper", "tryPrefetchOListImgOnMytaobao:", "has prefetched");
@@ -395,7 +395,7 @@ public class adh {
             ipChange.ipc$dispatch("168639f6", new Object[]{ultronWeex2DialogFragment, str, str2});
         } else if (!spk.a(iro.ORANGE_KEY_HYBRID_CONTAINER, "enableRedirectByWeexError", true)) {
             jqg.a("UltronTradeHybridHelper", "redirectPageByWeexError", "switcher is off");
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             jqg.a("UltronTradeHybridHelper", "redirectPageByWeexError", "weexUrl is empty");
         } else if (ultronWeex2DialogFragment == null || ultronWeex2DialogFragment.getActivity() == null) {
             jqg.a("UltronTradeHybridHelper", "redirectPageByWeexError", "context is error");

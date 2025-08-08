@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -37,7 +37,7 @@ public class r extends bca {
         bei.d(this.h);
         this.f25791a.x().b(4);
         final String string = this.h.getFields().getString("jumpTargetKey");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         final bcf bcfVar = new bcf(this.f25791a);

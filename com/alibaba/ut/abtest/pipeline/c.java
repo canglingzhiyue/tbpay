@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.pipeline;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.internal.util.j;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Type;
@@ -124,7 +124,7 @@ public class c {
         }
 
         public a(String str) {
-            j.a(!TextUtils.isEmpty(str), "Url cannot be empty");
+            j.a(!StringUtils.isEmpty(str), "Url cannot be empty");
             this.f4211a = new c();
             c.a(this.f4211a, str);
         }

@@ -1,6 +1,6 @@
 package com.taobao.share.core.contacts.mtop.response;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.taobao.contacts.data.member.ShareResultMember;
@@ -58,7 +58,7 @@ public class ComTaobaoMclContactsSendshareResponseData implements Serializable, 
     }
 
     private String decrypt(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {

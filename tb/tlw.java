@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.p1;
@@ -46,7 +46,7 @@ public final class tlw implements tlu {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("4f2fc4ea", new Object[]{this, str, map});
-            } else if (!TextUtils.equals(tlw.a(tlw.this), str)) {
+            } else if (!StringUtils.equals(tlw.a(tlw.this), str)) {
             } else {
                 tlw.b(tlw.this);
             }
@@ -83,7 +83,7 @@ public final class tlw implements tlu {
         Uri b = navigationInfo.b();
         JSONArray jSONArray = this.c;
         String a2 = jSONArray != null ? a(jSONArray, b) : null;
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         Context applicationContext = navigationInfo.c().getApplicationContext();
@@ -172,7 +172,7 @@ public final class tlw implements tlu {
                 q.b(string, "condition.getString(\"host\")");
                 String string2 = jSONObject2.getString("path");
                 q.b(string2, "condition.getString(\"path\")");
-                if (TextUtils.equals(host, string) && TextUtils.equals(path, string2)) {
+                if (StringUtils.equals(host, string) && StringUtils.equals(path, string2)) {
                     return jSONObject.getString("name");
                 }
             }

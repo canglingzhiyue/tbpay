@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.os.Process;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -124,7 +124,7 @@ public class ProcessInfoImpl implements ProcessInfo {
             this.c = ProcessInfo.ALIAS_SSS;
         } else {
             new StringBuilder("unknown process: ").append(this.d);
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 this.c = "unknown";
             } else {
                 String str3 = this.d;
@@ -156,7 +156,7 @@ public class ProcessInfoImpl implements ProcessInfo {
         } catch (Throwable unused) {
             str = null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -166,7 +166,7 @@ public class ProcessInfoImpl implements ProcessInfo {
         } catch (Throwable unused2) {
             str2 = str;
         }
-        return !TextUtils.isEmpty(str2) ? str2 : getProcessNameById(getProcessId());
+        return !StringUtils.isEmpty(str2) ? str2 : getProcessNameById(getProcessId());
     }
 
     public static boolean isCurrentProcessIsolated() {
@@ -213,7 +213,7 @@ public class ProcessInfoImpl implements ProcessInfo {
             CrashBridge.d();
             this.y.get(ProcessInfo.SR_COMPONENT_NAME);
             CrashBridge.d();
-            if (TextUtils.isEmpty(this.y.get(LogContext.STORAGE_APPID))) {
+            if (StringUtils.isEmpty(this.y.get(LogContext.STORAGE_APPID))) {
                 return;
             }
             LoggerFactory.getLogContext().putContextParam(LogContext.STORAGE_APPID, this.y.get(ProcessInfo.SR_APP_ID));
@@ -354,7 +354,7 @@ public class ProcessInfoImpl implements ProcessInfo {
             return (Set) ipChange.ipc$dispatch("9d39ce61", new Object[]{this, str});
         }
         HashSet hashSet = new HashSet();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashSet;
         }
         try {
@@ -375,7 +375,7 @@ public class ProcessInfoImpl implements ProcessInfo {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("61577bda", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         try {

@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.ac.g;
@@ -27,7 +27,7 @@ public class StorageModule {
         } else {
             JSONObject jSONObject = (JSONObject) cVar.b;
             String string = jSONObject.containsKey("key") ? jSONObject.getString("key") : null;
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (jSONObject.getBooleanValue("memory")) {
                     cVar.c.a(cVar, ohh.a(string));
                     return;
@@ -64,7 +64,7 @@ public class StorageModule {
             if (jSONObject.containsKey("value")) {
                 obj = jSONObject.get("value");
             }
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             if (jSONObject.getBooleanValue("memory")) {

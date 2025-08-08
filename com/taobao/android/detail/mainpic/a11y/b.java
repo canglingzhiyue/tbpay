@@ -1,6 +1,6 @@
 package com.taobao.android.detail.mainpic.a11y;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -88,7 +88,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.startsWith("http") || str.startsWith("https")) {
+        if (StringUtils.isEmpty(str) || str.startsWith("http") || str.startsWith("https")) {
             return str;
         }
         if (str.startsWith(ado.URL_SEPARATOR)) {

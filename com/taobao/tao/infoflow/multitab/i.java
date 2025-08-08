@@ -2,7 +2,7 @@ package com.taobao.tao.infoflow.multitab;
 
 import android.app.ActivityManager;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -91,13 +91,13 @@ public class i {
             JSONObject jSONObject3 = a2.get(i);
             if (jSONObject3 != null && (jSONObject2 = a2.get(i).getJSONObject("content")) != null) {
                 String string = jSONObject2.getString(e.KEY_TAB_ID);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.c.put(string, jSONObject3);
                     this.n.put(Integer.valueOf(i), string);
                     String string2 = jSONObject2.getString("containerType");
                     this.f.put(string, string2);
                     String string3 = jSONObject2.getString(e.KEY_IS_RECOMMEND_TAB);
-                    if (!TextUtils.isEmpty(string3) && Boolean.parseBoolean(string3)) {
+                    if (!StringUtils.isEmpty(string3) && Boolean.parseBoolean(string3)) {
                         this.s = iHomeSubTabController;
                         if (this.s == null) {
                             this.s = new ojr(this.j, ovr.TAB_ID_MAINLAND_RECOMMEND_MICROSERVICES);
@@ -113,7 +113,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cfb465b5", new Object[]{this, str, new Integer(i), str2, jSONObject});
-        } else if (TextUtils.isEmpty(str2) || this.f20645a.get(str2) != null) {
+        } else if (StringUtils.isEmpty(str2) || this.f20645a.get(str2) != null) {
         } else {
             char c = 65535;
             switch (str.hashCode()) {
@@ -178,7 +178,7 @@ public class i {
             return null;
         }
         String n = n(i);
-        if (!TextUtils.isEmpty(n)) {
+        if (!StringUtils.isEmpty(n)) {
             return this.f20645a.get(n);
         }
         return null;
@@ -189,7 +189,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (IHomeSubTabController) ipChange.ipc$dispatch("b23069c4", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f20645a.get(str);
         }
         return null;
@@ -206,7 +206,7 @@ public class i {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
         for (Map.Entry<Integer, String> entry : this.n.entrySet()) {
-            if (TextUtils.equals(str, entry.getValue())) {
+            if (StringUtils.equals(str, entry.getValue())) {
                 return entry.getKey().intValue();
             }
         }
@@ -224,7 +224,7 @@ public class i {
             return (View) ipChange.ipc$dispatch("1eba2fd3", new Object[]{this, new Integer(i)});
         }
         String n = n(i);
-        if (!TextUtils.isEmpty(n)) {
+        if (!StringUtils.isEmpty(n)) {
             return this.b.get(n);
         }
         return null;
@@ -250,7 +250,7 @@ public class i {
             return null;
         }
         String n = n(i);
-        if (!TextUtils.isEmpty(n)) {
+        if (!StringUtils.isEmpty(n)) {
             return this.c.get(n);
         }
         return null;
@@ -274,7 +274,7 @@ public class i {
         }
         for (int i2 = i - 1; i2 >= 0; i2--) {
             String j = e.j(c(i2));
-            if (!TextUtils.isEmpty(j)) {
+            if (!StringUtils.isEmpty(j)) {
                 g.a("SubMultiTabManager", "从右往左找，找到的链接是：" + j);
                 return j;
             }
@@ -289,7 +289,7 @@ public class i {
         }
         for (int i2 = i + 1; i2 < this.c.size(); i2++) {
             String j = e.j(c(i2));
-            if (!TextUtils.isEmpty(j)) {
+            if (!StringUtils.isEmpty(j)) {
                 g.a("SubMultiTabManager", "从左往右找，找到的链接是：" + j);
                 return j;
             }
@@ -320,7 +320,7 @@ public class i {
             return ((Boolean) ipChange.ipc$dispatch("ad401d7c", new Object[]{this, new Integer(i)})).booleanValue();
         }
         String n = n(i);
-        return TextUtils.isEmpty(n) || !this.b.containsKey(n);
+        return StringUtils.isEmpty(n) || !this.b.containsKey(n);
     }
 
     public void d() {
@@ -330,23 +330,23 @@ public class i {
             return;
         }
         for (Map.Entry<String, IHomeSubTabController> entry : this.f20645a.entrySet()) {
-            if (!TextUtils.equals(entry.getKey(), this.k) && (a(entry.getKey()) != this.g || (entry.getValue() instanceof ovn))) {
+            if (!StringUtils.equals(entry.getKey(), this.k) && (a(entry.getKey()) != this.g || (entry.getValue() instanceof ovn))) {
                 entry.getValue().onDestroy();
                 this.f20645a.remove(entry.getKey());
             }
         }
         for (Map.Entry<String, View> entry2 : this.b.entrySet()) {
-            if (!TextUtils.equals(entry2.getKey(), this.k)) {
+            if (!StringUtils.equals(entry2.getKey(), this.k)) {
                 this.b.remove(entry2.getKey());
             }
         }
         for (Map.Entry<String, String> entry3 : this.f.entrySet()) {
-            if (!TextUtils.equals(entry3.getKey(), this.k)) {
+            if (!StringUtils.equals(entry3.getKey(), this.k)) {
                 this.f.remove(entry3.getKey());
             }
         }
         for (Map.Entry<String, JSONObject> entry4 : this.c.entrySet()) {
-            if (!TextUtils.equals(entry4.getKey(), this.k)) {
+            if (!StringUtils.equals(entry4.getKey(), this.k)) {
                 this.c.remove(entry4.getKey());
             }
         }
@@ -401,7 +401,7 @@ public class i {
             return;
         }
         String n = n(i);
-        if (TextUtils.isEmpty(n)) {
+        if (StringUtils.isEmpty(n)) {
             return;
         }
         this.f20645a.put(n, this.l);
@@ -422,7 +422,7 @@ public class i {
             return (String) ipChange.ipc$dispatch("da9643a6", new Object[]{this, new Integer(i)});
         }
         String n = n(i);
-        return TextUtils.isEmpty(n) ? "" : this.f.get(n);
+        return StringUtils.isEmpty(n) ? "" : this.f.get(n);
     }
 
     private void o(int i) {
@@ -452,7 +452,7 @@ public class i {
         }
         String n = n(i);
         g.a("SubMultiTabManager", "createView: position " + i + ",tabId:" + n);
-        if (TextUtils.isEmpty(n)) {
+        if (StringUtils.isEmpty(n)) {
             return new SubWrapFrameLayout(viewGroup.getContext(), i);
         }
         View view = this.b.get(n);
@@ -482,7 +482,7 @@ public class i {
             return new View(context);
         }
         String n = n(i);
-        if (TextUtils.isEmpty(n)) {
+        if (StringUtils.isEmpty(n)) {
             return new View(context);
         }
         o(i);
@@ -504,7 +504,7 @@ public class i {
             return;
         }
         String n = n(i);
-        if (TextUtils.isEmpty(n)) {
+        if (StringUtils.isEmpty(n)) {
             return;
         }
         this.b.remove(n);
@@ -526,7 +526,7 @@ public class i {
         }
         for (int i = 0; i < this.f20645a.size(); i++) {
             String n = n(i);
-            if (!TextUtils.isEmpty(n)) {
+            if (!StringUtils.isEmpty(n)) {
                 IHomeSubTabController iHomeSubTabController = this.f20645a.get(n);
                 if (iHomeSubTabController instanceof com.taobao.infoflow.a) {
                     com.taobao.infoflow.a aVar = (com.taobao.infoflow.a) iHomeSubTabController;
@@ -598,7 +598,7 @@ public class i {
             }
         }
         String n = n(i3);
-        if (TextUtils.isEmpty(n) || !this.b.containsKey(n)) {
+        if (StringUtils.isEmpty(n) || !this.b.containsKey(n)) {
             return;
         }
         View view = this.b.get(n);
@@ -653,7 +653,7 @@ public class i {
             return;
         }
         String n = n(i);
-        if (TextUtils.isEmpty(n) || this.b.containsKey(n) || view == null) {
+        if (StringUtils.isEmpty(n) || this.b.containsKey(n) || view == null) {
             return;
         }
         this.b.put(n, view);
@@ -667,7 +667,7 @@ public class i {
             return;
         }
         int a2 = a(str);
-        if (a2 == this.e || TextUtils.equals(str, this.k)) {
+        if (a2 == this.e || StringUtils.equals(str, this.k)) {
             g.a("SubMultiTabManager", "updateTabCache recommend not update: ");
             return;
         }

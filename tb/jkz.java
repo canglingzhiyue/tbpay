@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
 
@@ -34,7 +34,7 @@ public class jkz extends jku {
         if (ipChange instanceof IpChange) {
             return (jkz) ipChange.ipc$dispatch("e2617daf", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@decodeParamsFromUrl.")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@decodeParamsFromUrl.")) {
             return null;
         }
         return new jkz(str);
@@ -48,7 +48,7 @@ public class jkz extends jku {
         }
         try {
             Uri b = aVar.b();
-            if (!TextUtils.isEmpty(this.b) && b != null && (queryParameter = b.getQueryParameter(this.b)) != null) {
+            if (!StringUtils.isEmpty(this.b) && b != null && (queryParameter = b.getQueryParameter(this.b)) != null) {
                 return Uri.decode(queryParameter);
             }
         } catch (Throwable th) {

@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -25,7 +25,7 @@ public class i {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             MessageDigest messageDigest = MessageDigest.getInstance("MD5");
@@ -67,7 +67,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

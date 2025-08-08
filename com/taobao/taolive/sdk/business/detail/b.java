@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.business.detail;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -152,7 +152,7 @@ public class b extends com.taobao.taolive.sdk.business.b implements d {
             if (l.d(pmd.a().d().a("tblive", "enableGoodsMultiTabContainerV2", "true"))) {
                 q.b("LiveDetailBusiness", "enableGoodsMultiTabContainerV2 true");
                 try {
-                    if (TextUtils.isEmpty(liveDetailRequest.extendJson)) {
+                    if (StringUtils.isEmpty(liveDetailRequest.extendJson)) {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("supportItemH5", (Object) "1");
                         liveDetailRequest.extendJson = JSONObject.toJSONString(jSONObject);

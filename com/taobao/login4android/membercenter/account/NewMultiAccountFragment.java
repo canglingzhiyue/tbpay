@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -226,7 +226,7 @@ public class NewMultiAccountFragment extends BaseLogonFragment implements View.O
         } else {
             Bundle bundle = new Bundle();
             String hintInput = getHintInput();
-            if (!TextUtils.isEmpty(hintInput)) {
+            if (!StringUtils.isEmpty(hintInput)) {
                 LoginParam loginParam = new LoginParam();
                 loginParam.loginId = hintInput;
                 bundle.putString(LoginConstant.LOGINPARAM, JSON.toJSONString(loginParam));
@@ -432,7 +432,7 @@ public class NewMultiAccountFragment extends BaseLogonFragment implements View.O
         if (Login.checkSessionValid()) {
             gotoLoginActivity(null, true, 1);
             sendControl("Button_Add");
-        } else if (TextUtils.isEmpty(Login.getUserId()) || TextUtils.isEmpty(Login.getLoginToken())) {
+        } else if (StringUtils.isEmpty(Login.getUserId()) || StringUtils.isEmpty(Login.getLoginToken())) {
             toLoginWithCurrent(true);
         } else {
             LoginController.getInstance().doAutoLoginWithCallback(Login.getLoginToken(), Login.getUserId(), SiteUtil.getDefaultLoginSite(), ApiReferer.generateApiReferer(), false, new AutoLoginCallback() { // from class: com.taobao.login4android.membercenter.account.NewMultiAccountFragment.4
@@ -486,7 +486,7 @@ public class NewMultiAccountFragment extends BaseLogonFragment implements View.O
             return (String) ipChange.ipc$dispatch("94296a4c", new Object[]{this});
         }
         String email = Login.getEmail();
-        return TextUtils.isEmpty(email) ? Login.getNick() : email;
+        return StringUtils.isEmpty(email) ? Login.getNick() : email;
     }
 
     private boolean sessionListEmpty(SessionList sessionList) {
@@ -631,7 +631,7 @@ public class NewMultiAccountFragment extends BaseLogonFragment implements View.O
         sendControl("Button_Change_Click");
         if (Login.checkSessionValid()) {
             doChange(i);
-        } else if (TextUtils.isEmpty(Login.getUserId()) || TextUtils.isEmpty(Login.getLoginToken())) {
+        } else if (StringUtils.isEmpty(Login.getUserId()) || StringUtils.isEmpty(Login.getLoginToken())) {
             LoginStatus.compareAndSetFromChangeAccount(false, true);
             toLoginWithCurrent(false);
         } else {
@@ -769,7 +769,7 @@ public class NewMultiAccountFragment extends BaseLogonFragment implements View.O
         if (Login.checkSessionValid()) {
             doDelete(i);
             sendControl("Button_Delete");
-        } else if (TextUtils.isEmpty(Login.getUserId()) || TextUtils.isEmpty(Login.getLoginToken())) {
+        } else if (StringUtils.isEmpty(Login.getUserId()) || StringUtils.isEmpty(Login.getLoginToken())) {
             toLoginWithCurrent(false);
         } else {
             LoginController.getInstance().doAutoLoginWithCallback(Login.getLoginToken(), Login.getUserId(), SiteUtil.getDefaultLoginSite(), ApiReferer.generateApiReferer(), false, new AutoLoginCallback() { // from class: com.taobao.login4android.membercenter.account.NewMultiAccountFragment.9

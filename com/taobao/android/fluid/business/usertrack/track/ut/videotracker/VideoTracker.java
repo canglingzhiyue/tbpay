@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.business.usertrack.track.ut.videotracker;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.monitor.track.spm.merge.MergeUtil;
 import com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -203,10 +203,10 @@ public class VideoTracker {
         c cVar = this.i;
         cVar.c = str2;
         c.a e = cVar.a(this.h).a().e();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             e.b(str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             e.d(str4);
         }
         a("info", str, this.e, e.i());
@@ -221,16 +221,16 @@ public class VideoTracker {
         c cVar = this.i;
         cVar.c = str2;
         c.a a2 = cVar.a(this.h).a().e().a(j);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             a2.a(str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             a2.b(str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             a2.c(str5);
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             a2.d(str6);
         }
         a("info", str, this.e, a2.i());
@@ -254,13 +254,13 @@ public class VideoTracker {
                 }
                 a2.a(String.valueOf(z));
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 a2.b(str2);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 a2.c(str3);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 a2.d(str4);
             }
             a("error", str, this.e, a2.i());
@@ -384,10 +384,10 @@ public class VideoTracker {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
         } else if (this.h == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.h.k = str;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             this.h.l = str2;
@@ -398,7 +398,7 @@ public class VideoTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("669e4a77", new Object[]{this, str});
-        } else if (this.h == null || TextUtils.isEmpty(str)) {
+        } else if (this.h == null || StringUtils.isEmpty(str)) {
         } else {
             this.h.m = str;
         }
@@ -440,7 +440,7 @@ public class VideoTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0cfe3b8", new Object[]{this, str});
-        } else if (this.h == null || TextUtils.isEmpty(str)) {
+        } else if (this.h == null || StringUtils.isEmpty(str)) {
         } else {
             this.h.o = str;
         }
@@ -469,7 +469,7 @@ public class VideoTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fb017cf9", new Object[]{this, str});
-        } else if (this.h == null || TextUtils.isEmpty(str)) {
+        } else if (this.h == null || StringUtils.isEmpty(str)) {
         } else {
             this.h.n = str;
         }
@@ -619,10 +619,10 @@ public class VideoTracker {
                     break;
                 case 3:
                     this.i.B = SystemClock.elapsedRealtime();
-                    if (!TextUtils.isEmpty(strArr[0])) {
+                    if (!StringUtils.isEmpty(strArr[0])) {
                         f.a(strArr[0]);
                     }
-                    if (!TextUtils.isEmpty(strArr[1])) {
+                    if (!StringUtils.isEmpty(strArr[1])) {
                         f.b(strArr[1]);
                     }
                     str2 = "info";
@@ -633,31 +633,31 @@ public class VideoTracker {
                     break;
                 case 5:
                     f.a(SystemClock.elapsedRealtime() - this.i.B);
-                    if (!TextUtils.isEmpty(strArr[0])) {
+                    if (!StringUtils.isEmpty(strArr[0])) {
                         f.a(strArr[0]);
                     }
-                    if (!TextUtils.isEmpty(strArr[1])) {
+                    if (!StringUtils.isEmpty(strArr[1])) {
                         f.b(strArr[1]);
                         break;
                     }
                     break;
                 case 6:
-                    if (!TextUtils.isEmpty(strArr[0])) {
+                    if (!StringUtils.isEmpty(strArr[0])) {
                         f.a(strArr[0]);
                         break;
                     }
                     break;
                 case 7:
-                    if (!TextUtils.isEmpty(strArr[0])) {
+                    if (!StringUtils.isEmpty(strArr[0])) {
                         f.a(strArr[0]);
                     }
-                    if (!TextUtils.isEmpty(strArr[1])) {
+                    if (!StringUtils.isEmpty(strArr[1])) {
                         f.b(strArr[1]);
                     }
-                    if (!TextUtils.isEmpty(strArr[2])) {
+                    if (!StringUtils.isEmpty(strArr[2])) {
                         f.c(strArr[2]);
                     }
-                    if (!TextUtils.isEmpty(strArr[3])) {
+                    if (!StringUtils.isEmpty(strArr[3])) {
                         f.d(strArr[3]);
                     }
                     str2 = "info";

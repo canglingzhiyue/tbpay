@@ -3,7 +3,7 @@ package com.taobao.taobao;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.Constant;
 import com.taobao.android.nav.Nav;
@@ -72,7 +72,7 @@ public class a implements c.b, com.taobao.taobao.internal.b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (!f21205a && str == null) {
                 throw new AssertionError();
             }
@@ -300,7 +300,7 @@ public class a implements c.b, com.taobao.taobao.internal.b {
         }
         Uri.Builder appendQueryParameter = Uri.parse(str).buildUpon().appendQueryParameter("tradeHybrid", "true");
         String orderIds = this.d.getOrderIds();
-        if (TextUtils.isEmpty(orderIds)) {
+        if (StringUtils.isEmpty(orderIds)) {
             appendQueryParameter.appendQueryParameter("preRequestStorageKey", "paySuccessOrderId_" + orderIds);
         }
         return appendQueryParameter.build().toString();

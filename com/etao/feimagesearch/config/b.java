@@ -2,7 +2,7 @@ package com.etao.feimagesearch.config;
 
 import android.app.Activity;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.security.realidentity.f3;
 import com.alipay.mobile.common.logging.util.perf.Constants;
@@ -130,7 +130,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
         String b2 = b("irpWebUrl", str);
-        return TextUtils.isEmpty(b2) ? str : b2;
+        return StringUtils.isEmpty(b2) ? str : b2;
     }
 
     public static boolean a() {
@@ -140,7 +140,7 @@ public class b {
 
     public static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : TextUtils.equals("true", b("sessionReleaseClose", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : StringUtils.equals("true", b("sessionReleaseClose", ""));
     }
 
     public static String c() {
@@ -154,7 +154,7 @@ public class b {
             return (YuvDiffCheckerConfig) ipChange.ipc$dispatch("76f29b63", new Object[0]);
         }
         String b2 = b("yuvDiffCheckerConfig", "{}");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new YuvDiffCheckerConfig();
         }
         try {
@@ -175,7 +175,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue();
         }
         String b2 = b("new_scene_source", "");
-        if (!TextUtils.isEmpty(b2) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(b2) && !StringUtils.isEmpty(str)) {
             return b2.contains(str);
         }
         return false;
@@ -227,7 +227,7 @@ public class b {
             return false;
         }
         String a2 = a("tbAndroidPltVideoSearch2");
-        return TextUtils.isEmpty(a2) || TextUtils.equals("enable", a2);
+        return StringUtils.isEmpty(a2) || StringUtils.equals("enable", a2);
     }
 
     public static boolean o() {
@@ -235,7 +235,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("631b57a", new Object[0])).booleanValue();
         }
-        if (!TextUtils.isEmpty(bd())) {
+        if (!StringUtils.isEmpty(bd())) {
             return d("tbAndroidPltMarketingTab", "baseline");
         }
         return false;
@@ -243,7 +243,7 @@ public class b {
 
     public static boolean p() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("63fccfb", new Object[0])).booleanValue() : TextUtils.equals(a("tbAndroidVideoSearchOnlinePic"), "baseline");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("63fccfb", new Object[0])).booleanValue() : StringUtils.equals(a("tbAndroidVideoSearchOnlinePic"), "baseline");
     }
 
     public static String q() {
@@ -284,7 +284,7 @@ public class b {
 
     public static boolean x() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6b08903", new Object[0])).booleanValue() : TextUtils.equals(a("tbAndroidVideoSearchAutoPop"), "baseline");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6b08903", new Object[0])).booleanValue() : StringUtils.equals(a("tbAndroidVideoSearchAutoPop"), "baseline");
     }
 
     public static boolean y() {
@@ -296,17 +296,17 @@ public class b {
         if (j != null) {
             return j.booleanValue();
         }
-        return TextUtils.equals("enable", a("tbAndroidPltHardwareDecodeV2"));
+        return StringUtils.equals("enable", a("tbAndroidPltHardwareDecodeV2"));
     }
 
     public static boolean z() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6ccb805", new Object[0])).booleanValue() : !TextUtils.equals("false", b("watermarkDetect", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6ccb805", new Object[0])).booleanValue() : !StringUtils.equals("false", b("watermarkDetect", ""));
     }
 
     public static boolean A() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3a97c4c", new Object[0])).booleanValue() : !TextUtils.equals("false", b("watermarkAlbumDetect", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3a97c4c", new Object[0])).booleanValue() : !StringUtils.equals("false", b("watermarkAlbumDetect", "true"));
     }
 
     public static float B() {
@@ -316,7 +316,7 @@ public class b {
 
     public static boolean C() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3c5ab4e", new Object[0])).booleanValue() : TextUtils.equals(b("disableCenterCheck", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3c5ab4e", new Object[0])).booleanValue() : StringUtils.equals(b("disableCenterCheck", "false"), "true");
     }
 
     public static int D() {
@@ -374,7 +374,7 @@ public class b {
 
     public static boolean K() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4366756", new Object[0])).booleanValue() : TextUtils.equals(b("irpBackPopDisabled", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4366756", new Object[0])).booleanValue() : StringUtils.equals(b("irpBackPopDisabled", "false"), "true");
     }
 
     public static boolean M() {
@@ -383,7 +383,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("4529658", new Object[0])).booleanValue();
         }
         DowngradeStrategy downgradeStrategy = Downgrade.getInstance().getDowngradeStrategy("search");
-        return downgradeStrategy != null && TextUtils.equals("degrade", downgradeStrategy.getTacticsPerformance());
+        return downgradeStrategy != null && StringUtils.equals("degrade", downgradeStrategy.getTacticsPerformance());
     }
 
     public static boolean N() {
@@ -407,7 +407,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("4990bdd", new Object[0])).booleanValue();
         }
         if (!N()) {
-            return TextUtils.equals(a("tbAndroidPltFaceDetect"), "enable");
+            return StringUtils.equals(a("tbAndroidPltFaceDetect"), "enable");
         }
         return false;
     }
@@ -424,12 +424,12 @@ public class b {
 
     public static boolean U() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4c35260", new Object[0])).booleanValue() : TextUtils.equals("true", b("disableOneCapture", "false"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4c35260", new Object[0])).booleanValue() : StringUtils.equals("true", b("disableOneCapture", "false"));
     }
 
     public static boolean V() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4d169e1", new Object[0])).booleanValue() : TextUtils.equals(b("restrainRegionDisable", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4d169e1", new Object[0])).booleanValue() : StringUtils.equals(b("restrainRegionDisable", "false"), "true");
     }
 
     public static boolean W() {
@@ -438,7 +438,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("4df8162", new Object[0])).booleanValue();
         }
         if (!com.a()) {
-            return TextUtils.equals(a("tbAndroidPltElderVersion"), "enable");
+            return StringUtils.equals(a("tbAndroidPltElderVersion"), "enable");
         }
         return true;
     }
@@ -449,7 +449,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("4ed98e3", new Object[0])).booleanValue();
         }
         if (!com.a()) {
-            return TextUtils.equals(a("tbAndroidSearchDoorGuessSearch"), "enable");
+            return StringUtils.equals(a("tbAndroidSearchDoorGuessSearch"), "enable");
         }
         return true;
     }
@@ -465,14 +465,14 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("ab00982c", new Object[0])).booleanValue();
         }
         if (!com.a()) {
-            return TextUtils.equals(a("tbAndroidAutoDetectDiffThreshold"), "enable");
+            return StringUtils.equals(a("tbAndroidAutoDetectDiffThreshold"), "enable");
         }
         return true;
     }
 
     public static boolean ac() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab0eafad", new Object[0])).booleanValue() : TextUtils.equals("true", b("pltImageCacheOn", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab0eafad", new Object[0])).booleanValue() : StringUtils.equals("true", b("pltImageCacheOn", "true"));
     }
 
     public static int ae() {
@@ -482,7 +482,7 @@ public class b {
 
     public static boolean af() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab38f630", new Object[0])).booleanValue() : TextUtils.equals("true", b("localImageDisabled", "false"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab38f630", new Object[0])).booleanValue() : StringUtils.equals("true", b("localImageDisabled", "false"));
     }
 
     public static String ah() {
@@ -496,7 +496,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("ab715434", new Object[0])).booleanValue();
         }
         String b2 = b("permission_req_opt_enable", "");
-        return TextUtils.isEmpty(b2) || "true".equals(b2);
+        return StringUtils.isEmpty(b2) || "true".equals(b2);
     }
 
     public static boolean ak() {
@@ -510,20 +510,20 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("7f180e83", new Object[]{str, str2})).booleanValue();
         }
         String a2 = a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = str2;
         }
-        return TextUtils.equals(a2, "enable");
+        return StringUtils.equals(a2, "enable");
     }
 
     public static boolean al() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab8d8336", new Object[0])).booleanValue() : TextUtils.equals(b("disableAlbumAnimation", "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab8d8336", new Object[0])).booleanValue() : StringUtils.equals(b("disableAlbumAnimation", "true"), "true");
     }
 
     public static boolean am() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab9b9ab7", new Object[0])).booleanValue() : TextUtils.equals(b("shopMuiseEnable", "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ab9b9ab7", new Object[0])).booleanValue() : StringUtils.equals(b("shopMuiseEnable", "true"), "true");
     }
 
     public static int ao() {
@@ -533,7 +533,7 @@ public class b {
 
     public static boolean as() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("abf027bd", new Object[0])).booleanValue() : TextUtils.equals("true", b("remoteImageFallback", "false"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("abf027bd", new Object[0])).booleanValue() : StringUtils.equals("true", b("remoteImageFallback", "false"));
     }
 
     public static boolean at() {
@@ -542,7 +542,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("abfe3f3e", new Object[0])).booleanValue();
         }
         String a2 = a("tbAndroidPltVideoSearchEnableNewIrp");
-        return TextUtils.isEmpty(a2) || "enable".equals(a2);
+        return StringUtils.isEmpty(a2) || "enable".equals(a2);
     }
 
     public static boolean au() {
@@ -561,7 +561,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("ac52cc44", new Object[0])).booleanValue();
         }
         String a2 = a("tbAndroidPltEnableScanAlbumConfigConvertV2");
-        return TextUtils.isEmpty(a2) || "enable".equals(a2);
+        return StringUtils.isEmpty(a2) || "enable".equals(a2);
     }
 
     public static boolean aB() {
@@ -676,17 +676,17 @@ public class b {
 
     public static boolean aU() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa49669f", new Object[0])).booleanValue() : TextUtils.equals(b("cropGuideEnabled", "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa49669f", new Object[0])).booleanValue() : StringUtils.equals(b("cropGuideEnabled", "true"), "true");
     }
 
     public static boolean aV() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa577e20", new Object[0])).booleanValue() : TextUtils.equals(b("convertArgbEnabled", "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa577e20", new Object[0])).booleanValue() : StringUtils.equals(b("convertArgbEnabled", "true"), "true");
     }
 
     public static boolean aW() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa6595a1", new Object[0])).booleanValue() : !TextUtils.isEmpty(b("tbAndroidPltEnableUploadLocationOnMtop", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa6595a1", new Object[0])).booleanValue() : !StringUtils.isEmpty(b("tbAndroidPltEnableUploadLocationOnMtop", ""));
     }
 
     public static boolean aX() {
@@ -701,7 +701,7 @@ public class b {
 
     public static boolean bc() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("acc3884c", new Object[0])).booleanValue() : TextUtils.equals(b("appendPageSpm", "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("acc3884c", new Object[0])).booleanValue() : StringUtils.equals(b("appendPageSpm", "true"), "true");
     }
 
     public static String bd() {
@@ -715,7 +715,7 @@ public class b {
             return (String[]) ipChange.ipc$dispatch("b301a5da", new Object[0]);
         }
         String b2 = b("tbAndroidPltIrpOuterTrafficValidKeys", "item_id");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new String[0];
         }
         return b2.split("/");
@@ -727,7 +727,7 @@ public class b {
             return (String[]) ipChange.ipc$dispatch("fd333f1b", new Object[0]);
         }
         String b2 = b("tbAndroidPltIrpOuterTrafficValidKeys", "picurl/tfskey");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new String[0];
         }
         return b2.split("/");
@@ -745,7 +745,7 @@ public class b {
 
     public static boolean bj() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ad262cd3", new Object[0])).booleanValue() : TextUtils.equals(b("tbAndroidPltIrpPageUTFixedParamsEnabled", "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ad262cd3", new Object[0])).booleanValue() : StringUtils.equals(b("tbAndroidPltIrpPageUTFixedParamsEnabled", "true"), "true");
     }
 
     public static boolean bk() {
@@ -779,7 +779,7 @@ public class b {
             return (String[]) ipChange.ipc$dispatch("c1b80768", new Object[0]);
         }
         String b2 = b("tbAndroidPltIrpOuterTrafficPSSourceKeysV2", "");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new String[0];
         }
         return b2.split("/");
@@ -791,7 +791,7 @@ public class b {
             return (String[]) ipChange.ipc$dispatch("b70016fb", new Object[0]);
         }
         String b2 = b("tbAndroidPltIrpCompatibleModePSSourceKeys", "order_invaliditem");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new String[0];
         }
         return b2.split("/");
@@ -818,7 +818,7 @@ public class b {
             return (String[]) ipChange.ipc$dispatch("34b005ad", new Object[0]);
         }
         String b2 = b("tbAndroidPltIrpRequestExtraParamsPassPSSourceKeys", "pplActivity");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new String[0];
         }
         return b2.split("/");
@@ -875,7 +875,7 @@ public class b {
             return (String[]) ipChange.ipc$dispatch("9594e2be", new Object[0]);
         }
         String b2 = b("irpServerPassParamKeys", "busiKey/n/maxn/vm/m/biz_type/setSpApp/closepict/page/client/utd_id/newPhotoSearch/subSearchType/sversion/musPageVersion/extraParams/rainbow/plt_autodetect_extraInfo/faceCount/face/debug/watermark/videoWatermark/full_region_size/cameraMode/barCode/pssource/photofrom/passThroughParams/regionChanged/pltSession/seller_id/hasCropedImage/sellid/shopId/sellerId/sellerid/shopid/itemid/item_id/shop_id/originalRegion/region/picurl/cmt/screenshotsAppSrc/imgClientChannel/imgClientDetectExtraInfo");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new String[0];
         }
         return b2.split("/");
@@ -892,7 +892,7 @@ public class b {
             return (String[]) ipChange.ipc$dispatch("29f81540", new Object[0]);
         }
         String b2 = b("irpRegionEditImgRequestSizeConfig", "224/224");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new String[0];
         }
         return b2.split("/");
@@ -950,12 +950,12 @@ public class b {
             return (String) ipChange.ipc$dispatch("c2e2d9a6", new Object[]{str});
         }
         String g = d(str) ? g() : "21834";
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return g;
         }
         String str2 = "";
         String b2 = b("appIdConfig", str2);
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return g;
         }
         String[] split = b2.split(";");
@@ -972,14 +972,14 @@ public class b {
             if (split2.length >= 2) {
                 String str3 = split2[0];
                 String str4 = split2[1];
-                if (str.equals(str3) && !TextUtils.isEmpty(str4)) {
+                if (str.equals(str3) && !StringUtils.isEmpty(str4)) {
                     str2 = str4;
                     break;
                 }
             }
             i++;
         }
-        return TextUtils.isEmpty(str2) ? g : str2;
+        return StringUtils.isEmpty(str2) ? g : str2;
     }
 
     private static String cN() {
@@ -999,11 +999,11 @@ public class b {
             return (String) ipChange.ipc$dispatch("d5ba45e4", new Object[0]);
         }
         String cN = cN();
-        if (!TextUtils.isEmpty(cN)) {
+        if (!StringUtils.isEmpty(cN)) {
             return cN;
         }
         String a2 = com.etao.feimagesearch.capture.dynamic.templates.b.a(com.etao.feimagesearch.capture.dynamic.templates.b.c());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         if (com.alibaba.ability.localization.b.c()) {
@@ -1066,7 +1066,7 @@ public class b {
         }
         try {
             String a2 = com.taobao.android.searchbaseframe.chitu.c.a(str, imo.b());
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return Boolean.valueOf("true".equals(a2));
             }
             return null;
@@ -1106,11 +1106,11 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c83cac43", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String b2 = b("componentConfig", "huichang_618fushi:plt_more_clothing_api");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return "";
         }
         String[] split = b2.split(";");
@@ -1128,13 +1128,13 @@ public class b {
             if (split2.length >= 2) {
                 String str3 = split2[0];
                 str2 = split2[1];
-                if (str.equals(str3) && !TextUtils.isEmpty(str2)) {
+                if (str.equals(str3) && !StringUtils.isEmpty(str2)) {
                     break;
                 }
             }
             i++;
         }
-        return TextUtils.isEmpty(str2) ? "" : str2;
+        return StringUtils.isEmpty(str2) ? "" : str2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x005b  */
@@ -1165,12 +1165,12 @@ public class b {
             if (r0 == 0) goto L29
             return r3
         L29:
-            boolean r0 = android.text.TextUtils.isEmpty(r6)
+            boolean r0 = android.text.StringUtils.isEmpty(r6)
             if (r0 != 0) goto L80
             java.lang.String r0 = "push;1111xianshang;haiguan;dhhdpa;"
             java.lang.String r1 = "irpLoadingOptimizeWhiteList"
             java.lang.String r1 = b(r1, r0)
-            boolean r4 = android.text.TextUtils.isEmpty(r1)
+            boolean r4 = android.text.StringUtils.isEmpty(r1)
             java.lang.String r5 = ";"
             if (r4 != 0) goto L58
             java.lang.StringBuilder r4 = new java.lang.StringBuilder
@@ -1188,7 +1188,7 @@ public class b {
             if (r1 != 0) goto L7f
             java.lang.String r1 = "irpLoadingOptimizeWhiteListV2"
             java.lang.String r0 = b(r1, r0)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L80
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
             r1.<init>()
@@ -1219,7 +1219,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("3a02c9a1", new Object[0]);
         }
         String k = k("metasightARUrl");
-        return TextUtils.isEmpty(k) ? b("xrPageMusTemplateUrl", "https://g.alicdn.com/tb-webb-widget/plt_scene_ar_activity_widget/0.0.2/weex/home.v20.wlm") : k;
+        return StringUtils.isEmpty(k) ? b("xrPageMusTemplateUrl", "https://g.alicdn.com/tb-webb-widget/plt_scene_ar_activity_widget/0.0.2/weex/home.v20.wlm") : k;
     }
 
     public static boolean n(String str) {
@@ -1227,11 +1227,11 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b82b1483", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String b2 = b("watermarkDetectWhiteList", "anma1;anma2;");
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             if (b2.contains(str + ";")) {
                 return true;
             }
@@ -1306,7 +1306,7 @@ public class b {
             return (YuvDiffCheckerConfig) ipChange.ipc$dispatch("4d02d43d", new Object[0]);
         }
         String b2 = b("newYuvDiffCheckerConfig", "{}");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return new YuvDiffCheckerConfig();
         }
         try {
@@ -1384,7 +1384,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("a92f907a", new Object[0])).intValue();
         }
         String a2 = a("tbAndroidPltCaptureNewStyleConfigV2");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = "0";
         }
         return g.b(a2, 0);
@@ -1491,7 +1491,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("660a5233", new Object[0]);
         }
         String k = k("AutoDetectAlgoConfig");
-        return !TextUtils.isEmpty(k) ? k : a("tbAndroidPltAutoDetectAlgoConfig", "");
+        return !StringUtils.isEmpty(k) ? k : a("tbAndroidPltAutoDetectAlgoConfig", "");
     }
 
     public static String ef() {
@@ -1500,7 +1500,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("962500f8", new Object[0]);
         }
         String k = k("SmartDetectAlgoConfig");
-        return !TextUtils.isEmpty(k) ? k : a("tbAndroidPltSmartDetectAlgoConfig", "");
+        return !StringUtils.isEmpty(k) ? k : a("tbAndroidPltSmartDetectAlgoConfig", "");
     }
 
     public static boolean dk() {
@@ -1572,7 +1572,7 @@ public class b {
 
     public static boolean dt() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b11cc91b", new Object[0])).booleanValue() : TextUtils.isEmpty(b("useNewIrpNotSafeDialog", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b11cc91b", new Object[0])).booleanValue() : StringUtils.isEmpty(b("useNewIrpNotSafeDialog", ""));
     }
 
     public static String du() {
@@ -1636,7 +1636,7 @@ public class b {
 
     public static boolean dJ() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aeccedf1", new Object[0])).booleanValue() : TextUtils.equals("true", b("albumCrashFixed", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aeccedf1", new Object[0])).booleanValue() : StringUtils.equals("true", b("albumCrashFixed", "true"));
     }
 
     public static long dK() {
@@ -1676,7 +1676,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("af59d8eb", new Object[0])).longValue();
         }
         String k = k("ScanTimeout");
-        if (!TextUtils.isEmpty(k)) {
+        if (!StringUtils.isEmpty(k)) {
             return g.a(k, 1500L);
         }
         return g.a(b("ScanCodeTimeConfigOnTakePhoto", "1500"), 1500L);
@@ -1688,7 +1688,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("3fe0942", new Object[0])).longValue();
         }
         String k = k("ScanTimeout");
-        if (!TextUtils.isEmpty(k)) {
+        if (!StringUtils.isEmpty(k)) {
             return g.a(k, 1500L);
         }
         return g.a(b("albumIrpScanCaptureMergeTimeoutConfigV2", "1500"), 1500L);
@@ -1723,7 +1723,7 @@ public class b {
 
     public static boolean dC() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ae6a496a", new Object[0])).booleanValue() : TextUtils.isEmpty(b("enableCaptureNewImageLoader", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ae6a496a", new Object[0])).booleanValue() : StringUtils.isEmpty(b("enableCaptureNewImageLoader", ""));
     }
 
     public static boolean cY() {
@@ -1745,7 +1745,7 @@ public class b {
 
     public static boolean dE() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ae86786c", new Object[0])).booleanValue() : TextUtils.equals("true", b("irpTitleBarGuideDisabled", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ae86786c", new Object[0])).booleanValue() : StringUtils.equals("true", b("irpTitleBarGuideDisabled", ""));
     }
 
     public static boolean bs() {
@@ -1768,12 +1768,12 @@ public class b {
 
     public static boolean dY() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("afa04e80", new Object[0])).booleanValue() : TextUtils.equals(b("irpScreenshotFloatInPadEnable", ""), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("afa04e80", new Object[0])).booleanValue() : StringUtils.equals(b("irpScreenshotFloatInPadEnable", ""), "true");
     }
 
     public static boolean dZ() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("afae6601", new Object[0])).booleanValue() : TextUtils.equals(b("irpScreenshotFloatInFoldEnable", ""), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("afae6601", new Object[0])).booleanValue() : StringUtils.equals(b("irpScreenshotFloatInFoldEnable", ""), "true");
     }
 
     public static boolean dS() {
@@ -2022,7 +2022,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String b2 = b("irpDRSPSSourceBlackList", "");
@@ -2066,7 +2066,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("4447ed7", new Object[0])).booleanValue();
         }
         String e = e("tbAndroidPltElderAdaptV2");
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             return false;
         }
         boolean b2 = j.INSTANCE.b();

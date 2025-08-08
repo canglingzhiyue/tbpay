@@ -3,7 +3,7 @@ package com.taobao.search.sf.widgets.onesearch;
 import android.app.Activity;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -160,13 +160,13 @@ public class g extends ius<a, FrameLayout, iru<? extends com.taobao.android.sear
             Map<String, String> a3 = y.a(aVar.e);
             a3.remove(com.taobao.vessel.utils.b.WX_TPL);
             String a4 = y.a(a2, a3);
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 aVar.e = a4;
                 str = a4;
             }
             String str2 = aVar.e;
             String a5 = y.a(str, "_s_nx_from", aVar.d);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 d();
                 e();
                 return;
@@ -225,11 +225,11 @@ public class g extends ius<a, FrameLayout, iru<? extends com.taobao.android.sear
                                     return (WXSDKInstance.f) ipChange3.ipc$dispatch("31ade3fe", new Object[]{this, str3, str4, jSONArray, jSONObject2});
                                 }
                                 try {
-                                    if (!TextUtils.equals("push", str4) || !TextUtils.equals(str3, "navigator") || (a7 = g.a(g.this, jSONArray)) == null) {
+                                    if (!StringUtils.equals("push", str4) || !StringUtils.equals(str3, "navigator") || (a7 = g.a(g.this, jSONArray)) == null) {
                                         return null;
                                     }
                                     Uri parse = Uri.parse(a7.getString("url"));
-                                    if (!TextUtils.isEmpty(parse.getQueryParameter("spm"))) {
+                                    if (!StringUtils.isEmpty(parse.getQueryParameter("spm"))) {
                                         return null;
                                     }
                                     a7.put("url", (Object) parse.buildUpon().appendQueryParameter("spm", g.a(g.this.getModel())).build().toString());
@@ -307,7 +307,7 @@ public class g extends ius<a, FrameLayout, iru<? extends com.taobao.android.sear
             return null;
         }
         String str = map.get("spm-cnt");
-        if (TextUtils.isEmpty(str) || (split = str.split("\\.")) == null || split.length < 2) {
+        if (StringUtils.isEmpty(str) || (split = str.split("\\.")) == null || split.length < 2) {
             return str;
         }
         return split[0] + "." + split[1] + ".pinzhuan.0";
@@ -322,7 +322,7 @@ public class g extends ius<a, FrameLayout, iru<? extends com.taobao.android.sear
             Object obj = jSONArray.get(i);
             if (obj instanceof JSONObject) {
                 JSONObject jSONObject = (JSONObject) obj;
-                if (!TextUtils.isEmpty(jSONObject.getString("url"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("url"))) {
                     return jSONObject;
                 }
             }

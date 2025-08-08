@@ -6,7 +6,7 @@ import android.os.Build;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.iifaa.did.api.DIDCoreSDK;
 import com.alipay.android.phone.iifaa.did.api.DIDResult;
@@ -103,11 +103,11 @@ public class a extends e {
         hashMap.put("message", b.getString("message"));
         hashMap.put("time_cost", String.valueOf(currentTimeMillis2));
         String a3 = ifh.a();
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             hashMap.put(com.taobao.tao.messagekit.base.network.a.KEY_DID, a3);
         }
         String string2 = jSONObject.getString("token");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             hashMap.put("biz_token", string2);
         }
         Context context = getContext();
@@ -131,7 +131,7 @@ public class a extends e {
 
     @Override // android.taobao.windvane.jsbridge.e
     public boolean execute(String str, String str2, WVCallBackContext wVCallBackContext) {
-        if (!"didProcessCmd".equals(str) || TextUtils.isEmpty(str2)) {
+        if (!"didProcessCmd".equals(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         new Thread(new RunnableC0002a(str2, wVCallBackContext), "IifaaDidTBJsBridge").start();

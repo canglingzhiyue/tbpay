@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.pre.PreRequestInfo;
@@ -24,7 +24,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         JSONObject b = pqj.b(str);
@@ -41,7 +41,7 @@ public class j {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         JSONObject b = pqj.b(str);
-        if (TextUtils.isEmpty(str) || b == null) {
+        if (StringUtils.isEmpty(str) || b == null) {
             return str;
         }
         b.remove("pcmId");
@@ -59,7 +59,7 @@ public class j {
             return null;
         }
         String str = map.get("timeMovingSpfPlayVideo");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return (LiveItem.SpfPlayVideo) pqj.a(str, LiveItem.SpfPlayVideo.class);
         }
         if (map.get(aw.PRE_REQUEST_TIME_MOVE_KEY) != null && (c = com.taobao.taolive.room.pre.a.a().c(map.get(aw.PRE_REQUEST_TIME_MOVE_KEY))) != null && c.responseStatus == 1 && (videoInfo = c.info) != null && videoInfo.timeMovingPlayInfo != null) {

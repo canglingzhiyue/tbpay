@@ -1,6 +1,6 @@
 package com.taobao.analysis.fulltrace;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import anet.channel.GlobalAppRuntimeInfo;
@@ -170,7 +170,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                         return;
                     }
                     ALog.i(FullTraceAnalysis.TAG, "[registerStages]", null, "module", str, NWFullTracePlugin.FullTraceJSParam.STAGES, list.toString());
-                    if (TextUtils.isEmpty(str) || (list2 = list) == null || list2.size() <= 0) {
+                    if (StringUtils.isEmpty(str) || (list2 = list) == null || list2.size() <= 0) {
                         return;
                     }
                     com.taobao.analysis.fulltrace.a.a(str, list);
@@ -199,7 +199,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                     return;
                 }
                 ALog.i(FullTraceAnalysis.TAG, "[start]", str, "module", str2, "tag", str3, "stage", str4, "time", Long.valueOf(currentTimeMillis));
-                if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str4) || (fullTraceStatistic = (FullTraceStatistic) FullTraceAnalysis.access$200(FullTraceAnalysis.this).get(str)) == null) {
+                if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str4) || (fullTraceStatistic = (FullTraceStatistic) FullTraceAnalysis.access$200(FullTraceAnalysis.this).get(str)) == null) {
                     return;
                 }
                 com.taobao.analysis.fulltrace.a aVar = fullTraceStatistic.modules.get(str2);
@@ -207,7 +207,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                     aVar = new com.taobao.analysis.fulltrace.a(str2);
                     fullTraceStatistic.modules.put(str2, aVar);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     aVar.b = str3;
                 }
                 if (!aVar.a(str4)) {
@@ -240,7 +240,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                     return;
                 }
                 ALog.i(FullTraceAnalysis.TAG, "[end]", str, "module", str2, "tag", str3, "stage", str4, "time", Long.valueOf(currentTimeMillis));
-                if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str4) || (fullTraceStatistic = (FullTraceStatistic) FullTraceAnalysis.access$200(FullTraceAnalysis.this).get(str)) == null || (aVar = fullTraceStatistic.modules.get(str2)) == null || (pair = aVar.c.get(str4)) == null || ((Long) pair.first).longValue() <= 0) {
+                if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str4) || (fullTraceStatistic = (FullTraceStatistic) FullTraceAnalysis.access$200(FullTraceAnalysis.this).get(str)) == null || (aVar = fullTraceStatistic.modules.get(str2)) == null || (pair = aVar.c.get(str4)) == null || ((Long) pair.first).longValue() <= 0) {
                     return;
                 }
                 if (aVar.a(str4)) {
@@ -298,7 +298,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                         return;
                     }
                     ALog.i(FullTraceAnalysis.TAG, "[commitModuleTrace]", str, "module", str2, "tag", str3, NWFullTracePlugin.FullTraceJSParam.STAGES, map);
-                    if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (map2 = map) == null || map2.size() <= 0 || (fullTraceStatistic = (FullTraceStatistic) FullTraceAnalysis.access$200(FullTraceAnalysis.this).get(str)) == null) {
+                    if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (map2 = map) == null || map2.size() <= 0 || (fullTraceStatistic = (FullTraceStatistic) FullTraceAnalysis.access$200(FullTraceAnalysis.this).get(str)) == null) {
                         return;
                     }
                     com.taobao.analysis.fulltrace.a aVar = fullTraceStatistic.modules.get(str2);
@@ -306,7 +306,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                         aVar = new com.taobao.analysis.fulltrace.a(str2);
                         fullTraceStatistic.modules.put(str2, aVar);
                     }
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         aVar.b = str3;
                     }
                     aVar.c.putAll(map);
@@ -328,7 +328,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                 }
             }
             fullTraceStatistic.moduleTrace = fullTraceStatistic.buildModuleTrace();
-            if (TextUtils.isEmpty(fullTraceStatistic.url)) {
+            if (StringUtils.isEmpty(fullTraceStatistic.url)) {
                 return;
             }
             if (dis.a()) {
@@ -416,7 +416,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("debacd65", new Object[]{this, str, str2, bVar});
-        } else if (!GlobalAppRuntimeInfo.isTargetProcess() || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        } else if (!GlobalAppRuntimeInfo.isTargetProcess() || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
         } else {
             dit.a(new Runnable() { // from class: com.taobao.analysis.fulltrace.FullTraceAnalysis.8
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -545,7 +545,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                     }
                     JSONObject jSONObject = new JSONObject();
                     try {
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             jSONObject.put("jumpUrl", str3);
                         }
                         for (Map.Entry entry : FullTraceAnalysis.access$500(FullTraceAnalysis.this).entrySet()) {
@@ -604,7 +604,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
         } else if (!this.mIsTLogTraceEnable || this.mIsTlogTraceError) {
         } else {
             try {
-                String str7 = TextUtils.isEmpty(str2) ? "empty" : str2;
+                String str7 = StringUtils.isEmpty(str2) ? "empty" : str2;
                 long currentTimeMillis = System.currentTimeMillis();
                 if (i == 0) {
                     valueOf = "1";
@@ -615,9 +615,9 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
                 String str9 = "";
                 if (i != 1) {
                     StringBuilder sb = new StringBuilder();
-                    sb.append(TextUtils.isEmpty(str3) ? str9 : str3);
+                    sb.append(StringUtils.isEmpty(str3) ? str9 : str3);
                     sb.append("_");
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         str9 = str4;
                     }
                     sb.append(str9);
@@ -642,7 +642,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ce94f86a", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str) || obj == null) {
+        } else if (StringUtils.isEmpty(str) || obj == null) {
         } else {
             this.extraInfos.put(str, obj);
         }
@@ -680,12 +680,12 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("314db2a4", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         for (int i = 0; i < this.importantApis.size(); i++) {
             String str2 = this.importantApis.get(i);
-            if (!TextUtils.isEmpty(str2) && str.contains(str2)) {
+            if (!StringUtils.isEmpty(str2) && str.contains(str2)) {
                 return true;
             }
         }
@@ -715,13 +715,13 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("95e0f66e", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         for (int i = 0; i < this.importantNetworkUrls.size(); i++) {
             try {
                 String str2 = this.importantNetworkUrls.get(i);
-                if (!TextUtils.isEmpty(str2) && str.toLowerCase().contains(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.toLowerCase().contains(str2)) {
                     return true;
                 }
             } catch (Exception unused) {
@@ -741,7 +741,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6efc50f", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.importantApis.contains(str);
         }
         return false;
@@ -761,7 +761,7 @@ public class FullTraceAnalysis implements com.taobao.analysis.a {
             sb.append("|");
             sb.append(str3);
             sb.append("|");
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 sb.append(str4);
             }
             AdapterForTLog.loge(FALCO_LOG_TAG, sb.toString());

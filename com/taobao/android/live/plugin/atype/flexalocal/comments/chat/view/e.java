@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.comments.chat.view;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -22,7 +22,7 @@ public class e {
             ipChange.ipc$dispatch("4157ad64", new Object[]{this, viewGroup, chatTopMessage});
         } else if (viewGroup == null || chatTopMessage == null || chatTopMessage.mData == null) {
         } else {
-            if (TextUtils.isEmpty(chatTopMessage.mDxTemplateName)) {
+            if (StringUtils.isEmpty(chatTopMessage.mDxTemplateName)) {
                 plx.b("EntranceAreaDXRender", "renderEntranceItem | template name is Empty.");
                 return;
             }

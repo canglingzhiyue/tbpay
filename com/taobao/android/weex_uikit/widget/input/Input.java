@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.widget.input;
 
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -134,7 +134,7 @@ public class Input extends BaseInput {
             return;
         }
         super.addEvent(str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         char c = 65535;
@@ -190,7 +190,7 @@ public class Input extends BaseInput {
                         if (text == null) {
                             text = "";
                         }
-                        if (TextUtils.equals(text, Input.access$000(Input.this))) {
+                        if (StringUtils.equals(text, Input.access$000(Input.this))) {
                             return;
                         }
                         Input.this.fireEvent("change", null);
@@ -259,7 +259,7 @@ public class Input extends BaseInput {
                         if (Input.access$100(Input.this)) {
                             Input.access$102(Input.this, false);
                             Input.access$202(Input.this, charSequence.toString());
-                        } else if (TextUtils.equals(Input.access$200(Input.this), charSequence)) {
+                        } else if (StringUtils.equals(Input.access$200(Input.this), charSequence)) {
                         } else {
                             Input.access$202(Input.this, charSequence.toString());
                             JSONObject jSONObject = new JSONObject();

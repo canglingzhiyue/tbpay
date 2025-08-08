@@ -1,7 +1,7 @@
 package com.mobile.auth.gatewayauth.manager;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.open.core.util.ParamsConstants;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -210,7 +210,7 @@ public class O00000o {
         String encrypt;
         try {
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(this.O0000OoO)) {
+            if (!StringUtils.isEmpty(this.O0000OoO)) {
                 uStruct.setEt(this.O0000OoO);
             }
             try {
@@ -222,7 +222,7 @@ public class O00000o {
                 }
                 jSONObject.put(RVStartParams.KEY_URL_SHORT, json);
                 jSONObject.put(RVStartParams.KEY_URL_SHORT, uStruct.toJson());
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     Map<String, String> O00000Oo2 = O00000Oo(uStruct.getPrivateIp());
                     if (this.O0000o != null && !this.O0000o.isEmpty()) {
                         O00000Oo2.putAll(this.O0000o);
@@ -349,7 +349,7 @@ public class O00000o {
     public Map<String, String> O00000Oo(String str) {
         try {
             HashMap hashMap = new HashMap();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 hashMap.put("innerIP", str);
             }
             hashMap.put(ParamsConstants.Key.PARAM_SCENE_CODE, this.O0000Ooo);
@@ -367,7 +367,7 @@ public class O00000o {
 
     public synchronized String O00000o() {
         try {
-            if (TextUtils.isEmpty(this.O0000Oo0)) {
+            if (StringUtils.isEmpty(this.O0000Oo0)) {
                 return O0000O0o();
             }
             return this.O0000Oo0;
@@ -384,7 +384,7 @@ public class O00000o {
 
     public synchronized String O00000o0() {
         try {
-            if (TextUtils.isEmpty(this.O0000OOo)) {
+            if (StringUtils.isEmpty(this.O0000OOo)) {
                 return O00000oo();
             }
             return this.O0000OOo;
@@ -415,7 +415,7 @@ public class O00000o {
 
     public synchronized String O00000oO() {
         try {
-            if (TextUtils.isEmpty(this.O0000Oo)) {
+            if (StringUtils.isEmpty(this.O0000Oo)) {
                 return O0000Oo();
             }
             return this.O0000Oo;

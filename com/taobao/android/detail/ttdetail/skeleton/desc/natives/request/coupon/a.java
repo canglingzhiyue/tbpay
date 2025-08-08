@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.request.coupon;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Network;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
@@ -41,7 +41,7 @@ public class a {
         if (apiRequest == null) {
             return null;
         }
-        if (TextUtils.isEmpty(apiRequest.httpUrl)) {
+        if (StringUtils.isEmpty(apiRequest.httpUrl)) {
             return b(apiRequest, context);
         }
         return c(apiRequest, context);

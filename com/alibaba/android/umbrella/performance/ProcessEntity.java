@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -53,7 +53,7 @@ public class ProcessEntity implements Serializable {
             return;
         }
         Map<String, Long> map = this.process;
-        if (map == null || map.containsKey(str) || TextUtils.isEmpty(str) || j <= 0) {
+        if (map == null || map.containsKey(str) || StringUtils.isEmpty(str) || j <= 0) {
             return;
         }
         this.process.put(str, Long.valueOf(j));
@@ -66,7 +66,7 @@ public class ProcessEntity implements Serializable {
             return;
         }
         Map<String, Long> map = this.init;
-        if (map == null || map.containsKey(str) || TextUtils.isEmpty(str) || j <= 0) {
+        if (map == null || map.containsKey(str) || StringUtils.isEmpty(str) || j <= 0) {
             return;
         }
         this.init.put(str, Long.valueOf(j));
@@ -79,7 +79,7 @@ public class ProcessEntity implements Serializable {
             return;
         }
         Map<String, Long> map = this.lifeCycle;
-        if (map == null || map.containsKey(str) || TextUtils.isEmpty(str) || j <= 0) {
+        if (map == null || map.containsKey(str) || StringUtils.isEmpty(str) || j <= 0) {
             return;
         }
         this.lifeCycle.put(str, Long.valueOf(j));
@@ -92,7 +92,7 @@ public class ProcessEntity implements Serializable {
             return;
         }
         Map<String, Long> map = this.netWork;
-        if (map == null || map.containsKey(str) || TextUtils.isEmpty(str) || j <= 0) {
+        if (map == null || map.containsKey(str) || StringUtils.isEmpty(str) || j <= 0) {
             return;
         }
         this.netWork.put(str, Long.valueOf(j));
@@ -105,7 +105,7 @@ public class ProcessEntity implements Serializable {
             return;
         }
         Map<String, Long> map = this.dataParse;
-        if (map == null || map.containsKey(str) || TextUtils.isEmpty(str) || j <= 0) {
+        if (map == null || map.containsKey(str) || StringUtils.isEmpty(str) || j <= 0) {
             return;
         }
         this.dataParse.put(str, Long.valueOf(j));
@@ -115,7 +115,7 @@ public class ProcessEntity implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3d9d12d1", new Object[]{this, str, new Long(j)});
-        } else if (this.createView == null || TextUtils.isEmpty(str) || j <= 0) {
+        } else if (this.createView == null || StringUtils.isEmpty(str) || j <= 0) {
         } else {
             if (this.createView.containsKey(str)) {
                 this.createView.put(str, Long.valueOf((j + this.createView.get(str).longValue()) / 2));
@@ -129,7 +129,7 @@ public class ProcessEntity implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("54abdab0", new Object[]{this, str, new Long(j)});
-        } else if (this.bindData == null || TextUtils.isEmpty(str) || j <= 0) {
+        } else if (this.bindData == null || StringUtils.isEmpty(str) || j <= 0) {
         } else {
             if (this.bindData.containsKey(str)) {
                 this.bindData.put(str, Long.valueOf((j + this.bindData.get(str).longValue()) / 2));
@@ -143,7 +143,7 @@ public class ProcessEntity implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a824d139", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.args.put(str, str2);
         }
@@ -153,7 +153,7 @@ public class ProcessEntity implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1661f5d3", new Object[]{this, str, new Long(j)});
-        } else if (this.otherProcess == null || TextUtils.isEmpty(str) || j < 0) {
+        } else if (this.otherProcess == null || StringUtils.isEmpty(str) || j < 0) {
         } else {
             this.otherProcess.put(str, Long.valueOf(j));
         }
@@ -172,7 +172,7 @@ public class ProcessEntity implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("96dbd26f", new Object[]{this, str, str2});
-        } else if (this.abTest == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (this.abTest == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             List<String> list = this.abTest;
             list.add(str + ":" + str2);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taopai.material.maires.MaiResDependenceList;
 import com.taobao.taopai.material.maires.b;
@@ -131,7 +131,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("586a9090", new Object[]{this, str, str2, new Integer(i), str3, new Integer(i2), aVar});
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
             aVar.a(-3, "params invalid");
         } else {
             this.g.clear();
@@ -286,11 +286,11 @@ public class b {
             });
         } else {
             for (MaiResDependenceList.MaiResDependenceItem maiResDependenceItem : maiResDependenceList.mDependenceList) {
-                if (TextUtils.equals(maiResDependenceItem.type, "algorithm")) {
+                if (StringUtils.equals(maiResDependenceItem.type, "algorithm")) {
                     String str = maiResDependenceItem.type + "_" + maiResDependenceItem.name;
                     this.f.put(str, maiResDependenceItem);
                     a(str, maiResDependenceItem);
-                } else if (TextUtils.equals(maiResDependenceItem.type, "font")) {
+                } else if (StringUtils.equals(maiResDependenceItem.type, "font")) {
                     String valueOf = String.valueOf(maiResDependenceItem.id);
                     this.f.put(valueOf, maiResDependenceItem);
                     a(maiResDependenceItem.materialType, maiResDependenceItem.version, String.valueOf(maiResDependenceItem.id), maiResDependenceItem.url, valueOf);
@@ -333,7 +333,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("598a7fef", new Object[]{this, maiResDependenceItem, str, maiResResponseModel});
-        } else if (maiResResponseModel != null && !TextUtils.isEmpty(maiResResponseModel.resourceUrl)) {
+        } else if (maiResResponseModel != null && !StringUtils.isEmpty(maiResResponseModel.resourceUrl)) {
             String str2 = "mai download url = " + maiResResponseModel.resourceUrl;
             this.g.put(maiResDependenceItem.name, Long.valueOf(SystemClock.elapsedRealtime()));
             maiResDependenceItem.url = maiResResponseModel.resourceUrl;
@@ -379,12 +379,12 @@ public class b {
             return;
         }
         String b = qbs.b(str3, false);
-        if (!TextUtils.isEmpty(b) && new File(b).exists()) {
+        if (!StringUtils.isEmpty(b) && new File(b).exists()) {
             String valueOf = String.valueOf(str2.hashCode());
             File[] listFiles = new File(b).listFiles();
             if (listFiles != null && listFiles.length > 0) {
                 for (File file : listFiles) {
-                    if (TextUtils.equals(valueOf, file.getName()) && qbr.a(file)) {
+                    if (StringUtils.equals(valueOf, file.getName()) && qbr.a(file)) {
                         String str4 = "find cache resource " + valueOf;
                         a(str3, 0, "");
                         return;

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.view.AccessibilityDelegateCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -181,7 +181,7 @@ public abstract class AbstractGoodFrame extends BaseFrame implements a<EnterGood
                 if (this.mFrameContext.g() != null) {
                     this.mGoodLiveContext.P = this.mFrameContext.g().get(aw.PARAM_ITEM_IDS);
                     this.mGoodLiveContext.Q = this.mFrameContext.g().get(aw.PARAM_SJSD_ITEM_ID);
-                    if (TextUtils.isEmpty(this.mDefaultCategoryId)) {
+                    if (StringUtils.isEmpty(this.mDefaultCategoryId)) {
                         this.mDefaultCategoryId = this.mFrameContext.g().get(aw.PARAM_CATEGORY_ID);
                     }
                 }
@@ -291,7 +291,7 @@ public abstract class AbstractGoodFrame extends BaseFrame implements a<EnterGood
         } else if (this.mLiveDataModel == null || this.mLiveDataModel.mVideoInfo == null) {
             his.b(TAG, "show | mLiveDataModel is null. mLiveId=" + this.mLiveId + " this=" + this);
         } else {
-            hib.a(!(!z ? this.mGoodsView != null : this.mItemGroupContainer != null), this.mGoodLiveContext, (hashMap == null || TextUtils.isEmpty(hashMap.get("from"))) ? false : "wyswyg".equals(hashMap.get("from")));
+            hib.a(!(!z ? this.mGoodsView != null : this.mItemGroupContainer != null), this.mGoodLiveContext, (hashMap == null || StringUtils.isEmpty(hashMap.get("from"))) ? false : "wyswyg".equals(hashMap.get("from")));
             ItemGroupPageInfo itemGroupPageInfo = null;
             if (this.mFrameContext == null) {
                 gVar = null;
@@ -313,7 +313,7 @@ public abstract class AbstractGoodFrame extends BaseFrame implements a<EnterGood
                 his.b(TAG, "setDisableExplainFunction");
             }
             String str = hashMap != null ? hashMap.get("glopenfrom") : "";
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = hashMap != null ? hashMap.get("from") : "";
             }
             if (z && hir.j()) {
@@ -344,9 +344,9 @@ public abstract class AbstractGoodFrame extends BaseFrame implements a<EnterGood
                         j2 = l.a(this.presetTopItemId, -1L);
                     }
                     this.presetTopItemId = null;
-                    String str2 = TextUtils.isEmpty(this.mDefaultCategoryId) ? j2 > 0 ? "0" : null : this.mDefaultCategoryId;
+                    String str2 = StringUtils.isEmpty(this.mDefaultCategoryId) ? j2 > 0 ? "0" : null : this.mDefaultCategoryId;
                     String str3 = hashMap != null ? hashMap.get(aw.PARAM_CATEGORY_ID) : "";
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = str2;
                     }
                     this.mGoodsView.a(str3, j2, str);
@@ -601,7 +601,7 @@ public abstract class AbstractGoodFrame extends BaseFrame implements a<EnterGood
             if (hir.R() && hjs.a(this.mFrameContext, (Activity) this.mContext, this.mLiveDataModel.mVideoInfo, enterGoodsData)) {
                 return;
             }
-            if (TextUtils.equals(hjs.UNDER_TAKE_ITEM_GROUP_LIST, enterGoodsData.itemHoldType) && enterGoodsData.itemGroupListInfo != null) {
+            if (StringUtils.equals(hjs.UNDER_TAKE_ITEM_GROUP_LIST, enterGoodsData.itemHoldType) && enterGoodsData.itemGroupListInfo != null) {
                 if (!hir.r()) {
                     his.b(TAG, "checkEnterUnderTakeNew| type=itemGroupList, orange is false.");
                     return;
@@ -612,7 +612,7 @@ public abstract class AbstractGoodFrame extends BaseFrame implements a<EnterGood
                 hashMap.put("popId", enterGoodsData.popId);
                 hashMap.put("data", enterGoodsData.itemGroupListInfo.toJSONString());
                 show(true, hashMap, -1L, false);
-            } else if (!u.ar() || !TextUtils.equals(hjs.UNDER_TAKE_GOODS_LIST, enterGoodsData.itemHoldType)) {
+            } else if (!u.ar() || !StringUtils.equals(hjs.UNDER_TAKE_GOODS_LIST, enterGoodsData.itemHoldType)) {
             } else {
                 long a2 = hjs.a(enterGoodsData);
                 HashMap<String, String> hashMap2 = new HashMap<>();

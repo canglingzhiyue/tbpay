@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -146,7 +146,7 @@ public class pgx extends h {
         if (ipChange instanceof IpChange) {
             return (JSONArray) ipChange.ipc$dispatch("4a02706b", new Object[]{this, dXRootView, str});
         }
-        if (!TextUtils.isEmpty(str) && dXRootView != null && dXRootView.getExpandWidgetNode() != null && (tborderJson = dXRootView.getExpandWidgetNode().getTborderJson()) != null && tborderJson.getJSONArray(str) != null) {
+        if (!StringUtils.isEmpty(str) && dXRootView != null && dXRootView.getExpandWidgetNode() != null && (tborderJson = dXRootView.getExpandWidgetNode().getTborderJson()) != null && tborderJson.getJSONArray(str) != null) {
             return hsz.a(tborderJson.getJSONArray(str));
         }
         return null;

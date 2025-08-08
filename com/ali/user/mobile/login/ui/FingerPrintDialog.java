@@ -6,7 +6,7 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -312,7 +312,7 @@ public class FingerPrintDialog extends DialogFragment {
                                     ipChange3.ipc$dispatch("c05e8ce8", new Object[]{this, new Integer(i), charSequence});
                                     return;
                                 }
-                                if (i < 1000 && !TextUtils.isEmpty(charSequence)) {
+                                if (i < 1000 && !StringUtils.isEmpty(charSequence)) {
                                     FingerPrintDialog.this.mMessage.setText(charSequence.toString());
                                 }
                                 UserTrackAdapter.sendExtendUT("FingerPrintFailed", "onAuthenticationHelp", String.valueOf(FingerPrintDialog.this.status), null);

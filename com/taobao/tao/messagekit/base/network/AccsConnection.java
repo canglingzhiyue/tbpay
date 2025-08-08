@@ -1,6 +1,6 @@
 package com.taobao.tao.messagekit.base.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.base.d;
 import com.taobao.tao.messagekit.core.model.AccsConnInfo;
@@ -237,10 +237,10 @@ public abstract class AccsConnection extends olu<DataPackage, byte[]> {
             if (getRouteInfo() != null) {
                 return str;
             }
-            if (!TextUtils.isEmpty(this.f20773a)) {
+            if (!StringUtils.isEmpty(this.f20773a)) {
                 str = str + this.f20773a;
             }
-            if (TextUtils.isEmpty(this.b) || olt.a()) {
+            if (StringUtils.isEmpty(this.b) || olt.a()) {
                 return str;
             }
             return str + ":T_" + this.b;
@@ -251,7 +251,7 @@ public abstract class AccsConnection extends olu<DataPackage, byte[]> {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("4fc0e5b8", new Object[]{this});
             }
-            if (!TextUtils.isEmpty(this.g)) {
+            if (!StringUtils.isEmpty(this.g)) {
                 return this.g + "||";
             }
             h a2 = com.taobao.tao.powermsg.managers.e.a(this.k, this.b);

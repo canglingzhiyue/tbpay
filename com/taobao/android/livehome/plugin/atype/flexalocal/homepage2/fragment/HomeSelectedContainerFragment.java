@@ -10,7 +10,7 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -132,7 +132,7 @@ public class HomeSelectedContainerFragment extends HomeBaseFragment2 implements 
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 HomeSelectedContainerFragment homeSelectedContainerFragment = HomeSelectedContainerFragment.this;
                 HomeSelectedContainerFragment.access$600(homeSelectedContainerFragment, HomeSelectedContainerFragment.access$100(homeSelectedContainerFragment).getCurrentItem(), str);
@@ -395,7 +395,7 @@ public class HomeSelectedContainerFragment extends HomeBaseFragment2 implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ffe89810", new Object[]{this, context, str, str2, str3, str4, rightInfo});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Bundle bundle = new Bundle();
             bundle.putString("word", str2);
@@ -414,16 +414,16 @@ public class HomeSelectedContainerFragment extends HomeBaseFragment2 implements 
             } else {
                 str5 = str + "?search_entry=jingxuan";
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str5 = str5 + "&word=" + Uri.encode(str2);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 str5 = str5 + "&type=" + Uri.encode(str3);
             }
             if (rightInfo != null) {
                 str5 = str5 + "&rightInfo=" + Uri.encode(JSON.toJSONString(rightInfo));
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str5 = str5 + "&url=" + Uri.encode(str4);
             }
             Nav.from(context).withExtras(bundle).toUri(str5 + "&nativeKeyboard=true");
@@ -1545,7 +1545,7 @@ public class HomeSelectedContainerFragment extends HomeBaseFragment2 implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca3d5792", new Object[]{this, str});
-        } else if (this.mTabLayout == null || TextUtils.isEmpty(str) || (tabPosition = getTabPosition(str)) < 0 || tabPosition == this.mTabLayout.getSelectedTabPosition() || (tabAt = this.mTabLayout.getTabAt(tabPosition)) == null || tabAt.h() == null) {
+        } else if (this.mTabLayout == null || StringUtils.isEmpty(str) || (tabPosition = getTabPosition(str)) < 0 || tabPosition == this.mTabLayout.getSelectedTabPosition() || (tabAt = this.mTabLayout.getTabAt(tabPosition)) == null || tabAt.h() == null) {
         } else {
             tabAt.h().performClick();
         }

@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -100,14 +100,14 @@ public class ac extends bca {
             IDMComponent iDMComponent = c.get(i);
             if (iDMComponent != null) {
                 String id = iDMComponent.getId();
-                if (!TextUtils.isEmpty(id)) {
+                if (!StringUtils.isEmpty(id)) {
                     sb.append(id);
                     if (i < c.size() - 1) {
                         sb.append("_");
                     }
                 }
                 String string = iDMComponent.getFields().getJSONObject("sku").getString("skuId");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     sb2.append(string);
                     if (i < c.size() - 1) {
                         sb2.append("_");

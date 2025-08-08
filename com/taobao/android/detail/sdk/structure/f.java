@@ -1,7 +1,7 @@
 package com.taobao.android.detail.sdk.structure;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -121,7 +121,7 @@ public class f {
             return (g) ipChange.ipc$dispatch("e908a678", new Object[]{this, str});
         }
         j.a("mCreateDetailModel");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new g(1, "response string is empty.");
         }
         JSONObject jSONObject = null;
@@ -167,7 +167,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (NodeBundle) ipChange.ipc$dispatch("a0892979", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null || jSONObject.isEmpty()) {
             return null;
         }
         return a(jSONObject);
@@ -203,7 +203,7 @@ public class f {
         }
         JSONArray jSONArray = jSONObject.getJSONArray("apiStack");
         String string = (jSONArray == null || jSONArray.isEmpty()) ? null : jSONArray.getJSONObject(0).getString("value");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {
@@ -301,14 +301,14 @@ public class f {
         String str2 = layoutNode.ruleTemplateId;
         String str3 = layoutNode.actionTemplateId;
         String str4 = layoutNode.themeTemplateId;
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4) || (TextUtils.isEmpty(str) && layoutNode.layoutJson == null)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4) || (StringUtils.isEmpty(str) && layoutNode.layoutJson == null)) {
             str = h.e;
             str2 = h.f;
             str3 = h.g;
             str4 = h.h;
             z = true;
         }
-        if (layoutNode.layoutJson != null && TextUtils.isEmpty(str)) {
+        if (layoutNode.layoutJson != null && StringUtils.isEmpty(str)) {
             str = h.e;
         }
         ArrayList<jkn> arrayList = new ArrayList<>();
@@ -494,7 +494,7 @@ public class f {
             tb.jkl r5 = r3.y
             java.lang.String r2 = com.taobao.android.detail.sdk.structure.a.f10327a
             java.lang.String r5 = r5.a(r2)
-            boolean r2 = android.text.TextUtils.isEmpty(r5)
+            boolean r2 = android.text.StringUtils.isEmpty(r5)
             if (r2 != 0) goto L6c
             com.alibaba.fastjson.JSONObject r4 = com.alibaba.fastjson.JSON.parseObject(r5)
             com.alibaba.fastjson.JSONObject r5 = r4.getJSONObject(r0)

@@ -1,6 +1,6 @@
 package com.taobao.taopai.material.jni;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taopai.material.jni.ResourceJniInteract;
@@ -54,7 +54,7 @@ public class ResourceJniInteract {
             return "";
         }
         String b = qbs.b(str, false);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return "";
         }
         File file = new File(b);
@@ -72,7 +72,7 @@ public class ResourceJniInteract {
             return;
         }
         String resourceFromCacheWithIdOrTag = getResourceFromCacheWithIdOrTag(str);
-        if (TextUtils.isEmpty(resourceFromCacheWithIdOrTag)) {
+        if (StringUtils.isEmpty(resourceFromCacheWithIdOrTag)) {
             downloadMaterialById(str, j2, j);
         } else {
             onResourcePathResult(j, j2, str, resourceFromCacheWithIdOrTag, "");
@@ -83,7 +83,7 @@ public class ResourceJniInteract {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9422754b", new Object[]{str, qbtVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             Log.e(TAG, "getResourcePathForMaterialWithTag  Tag is null");
         } else {
             getResourcePathForMaterialWithTag(str, -1L, -1L, qbtVar);
@@ -106,7 +106,7 @@ public class ResourceJniInteract {
             return;
         }
         final String resourceFromCacheWithIdOrTag = getResourceFromCacheWithIdOrTag(str);
-        if (TextUtils.isEmpty(resourceFromCacheWithIdOrTag)) {
+        if (StringUtils.isEmpty(resourceFromCacheWithIdOrTag)) {
             downloadByTag(str, j, j2, qbtVar);
         } else if (j != -1) {
             onResourcePathResult(j, j2, str, resourceFromCacheWithIdOrTag, "");
@@ -151,7 +151,7 @@ public class ResourceJniInteract {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("19ff4295", new Object[]{str, new Long(j), new Long(j2), qbtVar, maiResResponseModel});
-        } else if (maiResResponseModel != null && !TextUtils.isEmpty(maiResResponseModel.resourceUrl)) {
+        } else if (maiResResponseModel != null && !StringUtils.isEmpty(maiResResponseModel.resourceUrl)) {
             String str2 = "getMaterialWithTag success url = " + maiResResponseModel.resourceUrl;
             downloadFile("getMaterialWithTag", str, j, j2, qbtVar, maiResResponseModel, str);
         } else {
@@ -272,7 +272,7 @@ public class ResourceJniInteract {
         a.a().a(str2, null);
         AnonymousClass2 anonymousClass2 = new AnonymousClass2(str, str2, j, j2, qbtVar, currentTimeMillis);
         b bVar = new b(materialDetailBean.materialType, materialDetailBean.getVersion(), String.valueOf(materialDetailBean.getTid()), materialDetailBean.getResourceUrl());
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             bVar.c(str3);
         }
         bVar.a(false);

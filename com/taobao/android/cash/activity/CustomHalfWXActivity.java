@@ -16,7 +16,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -344,19 +344,19 @@ public class CustomHalfWXActivity extends AppCompatActivity {
             return findFragmentByTag;
         }
         Bundle bundle = new Bundle();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             bundle.putString(WeexPageFragment.FRAGMENT_ARG_TEMPLATE, str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             bundle.putString(WeexPageFragment.FRAGMENT_ARG_BUNDLE_URL, str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             bundle.putString(WeexPageFragment.FRAGMENT_ARG_RENDER_URL, str3);
         }
         if (hashMap != null) {
             bundle.putSerializable(WeexPageFragment.FRAGMENT_ARG_CUSTOM_OPT, hashMap);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             bundle.putString(WeexPageFragment.FRAGMENT_ARG_INIT_DATA, str4);
         }
         if (serializable != null) {
@@ -364,7 +364,7 @@ public class CustomHalfWXActivity extends AppCompatActivity {
         }
         Fragment instantiate = Fragment.instantiate(fragmentActivity, cls.getName(), bundle);
         FragmentTransaction beginTransaction = this.j.beginTransaction();
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = WeexPageFragment.FRAGMENT_TAG;
         }
         beginTransaction.add(i2, instantiate, str5);
@@ -378,7 +378,7 @@ public class CustomHalfWXActivity extends AppCompatActivity {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         try {
-            return !TextUtils.isEmpty(str) ? Uri.parse(str).buildUpon().clearQuery().build().toString() : str;
+            return !StringUtils.isEmpty(str) ? Uri.parse(str).buildUpon().clearQuery().build().toString() : str;
         } catch (Exception unused) {
             return str;
         }
@@ -523,7 +523,7 @@ public class CustomHalfWXActivity extends AppCompatActivity {
                 AppMonitor.Alarm.commitFail("weex", "renderResult", a(), "99301", str2);
                 LocalBroadcastManager.getInstance(wXSDKInstance.O()).sendBroadcast(new Intent("com.ali.user.cash.close.weex"));
             }
-            if (!TextUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_BUNDLE_DOWNLOAD_FAILED.getErrorCode())) {
+            if (!StringUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_BUNDLE_DOWNLOAD_FAILED.getErrorCode())) {
                 return;
             }
             try {
@@ -540,7 +540,7 @@ public class CustomHalfWXActivity extends AppCompatActivity {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                        } else if (a.this.b == null || TextUtils.isEmpty(a.this.b.getOriginalRenderUrl()) || TextUtils.isEmpty(a.this.b.getOriginalUrl())) {
+                        } else if (a.this.b == null || StringUtils.isEmpty(a.this.b.getOriginalRenderUrl()) || StringUtils.isEmpty(a.this.b.getOriginalUrl())) {
                         } else {
                             a.this.b.replace(a.this.b.getOriginalUrl(), a.this.b.getOriginalRenderUrl());
                         }

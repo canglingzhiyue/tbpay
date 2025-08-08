@@ -1,13 +1,13 @@
 package com.huawei.hms.hatool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Map;
 import java.util.regex.Pattern;
 
 /* loaded from: classes4.dex */
 public class e1 {
     public static String a(String str, String str2, String str3, String str4) {
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return a(str, str2, str3) ? str2 : str4;
         }
         v.f("hmsSdk", "checkStrParameter() Parameter verification failure! Parameter:" + str);
@@ -21,7 +21,7 @@ public class e1 {
     public static boolean a(String str, String str2, int i) {
         StringBuilder sb;
         String str3;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             sb = new StringBuilder();
             str3 = "checkString() Parameter is empty : ";
         } else if (str2.length() <= i) {
@@ -39,7 +39,7 @@ public class e1 {
     public static boolean a(String str, String str2, String str3) {
         StringBuilder sb;
         String str4;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             sb = new StringBuilder();
             str4 = "checkString() Parameter is null! Parameter:";
         } else if (Pattern.compile(str3).matcher(str2).matches()) {

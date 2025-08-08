@@ -3,7 +3,7 @@ package com.taobao.search.sf.widgets.onesearch;
 import android.app.Activity;
 import android.support.v4.view.ViewCompat;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -296,7 +296,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
             ipChange.ipc$dispatch("15b1a402", new Object[]{this, sFOnesearchBean});
             return;
         }
-        if (!TextUtils.isEmpty(sFOnesearchBean.utLogMap) && !TextUtils.isEmpty(sFOnesearchBean.expArg1)) {
+        if (!StringUtils.isEmpty(sFOnesearchBean.utLogMap) && !StringUtils.isEmpty(sFOnesearchBean.expArg1)) {
             HashMap hashMap = new HashMap();
             hashMap.put("utLogMap", r.c(sFOnesearchBean.utLogMap));
             hashMap.put("spm", "a2141.7631557.0.0");
@@ -424,7 +424,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
             this.w = com.taobao.android.searchbaseframe.util.g.a(r.a(oneSearchBean.url, "_xsearchTabTextNormalColor"), (Integer) null);
             this.x = com.taobao.android.searchbaseframe.util.g.a(r.a(oneSearchBean.url, "_xsearchTabTextSelectedColor"), (Integer) null);
             this.y = Integer.valueOf(SFPromotionBean.a(r.a(oneSearchBean.url, "_xsearchStatusBarStyle")));
-            if (!TextUtils.isEmpty(this.z.backgroundColor)) {
+            if (!StringUtils.isEmpty(this.z.backgroundColor)) {
                 ((FrameLayout) getView()).setBackgroundColor(com.taobao.android.searchbaseframe.util.g.a(this.z.backgroundColor, -1));
             } else {
                 ViewCompat.setBackground(getView(), null);
@@ -445,7 +445,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
             if (this.m) {
                 postEvent(new nwk.e(this.s));
                 if (this.g != null) {
-                    a(TextUtils.equals(r.a(oneSearchBean.url, "_xsearchHideMaskView"), nom.VALUE_YES));
+                    a(StringUtils.equals(r.a(oneSearchBean.url, "_xsearchHideMaskView"), nom.VALUE_YES));
                 }
             } else {
                 postEvent(new nwk.f(this.s));
@@ -488,7 +488,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
         } else if (getView() == 0) {
         } else {
             x();
-            if (TextUtils.equals(this.o, oneSearchBean.url)) {
+            if (StringUtils.equals(this.o, oneSearchBean.url)) {
                 q.a("SFOnesearchWidget", "url一致，不展示");
                 o();
                 return;
@@ -497,7 +497,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
             boolean b = b(str);
             int a2 = a(str);
             this.i.f19176a = a2;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.o = str;
             }
             if (a2 != -1) {
@@ -583,7 +583,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
         if (nom.VALUE_YES.equals(a2)) {
             this.m = true;
             String a3 = r.a(str, nom.KEY_X_NAVI_STYLE);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 this.t = true;
                 this.u = a3;
             }
@@ -672,7 +672,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str) || str.contains(k.URL_PAY_INIT)) {
+        if (StringUtils.isEmpty(str) || str.contains(k.URL_PAY_INIT)) {
             return -1;
         }
         if (str.contains(k.URL_TRIPH_INIT)) {
@@ -686,7 +686,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
 
     private boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : TextUtils.isEmpty(str) || (!str.startsWith("http://s.m.taobao.com/page") && !str.startsWith("https://s.m.taobao.com/page"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : StringUtils.isEmpty(str) || (!str.startsWith("http://s.m.taobao.com/page") && !str.startsWith("https://s.m.taobao.com/page"));
     }
 
     private void d(OneSearchBean oneSearchBean) {
@@ -811,7 +811,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
                 return str;
             }
             String cityName = a2.getCityName();
-            if (TextUtils.isEmpty(cityName)) {
+            if (StringUtils.isEmpty(cityName)) {
                 q.a("SFOnesearchWidget", "获取城市失败");
                 return str;
             }
@@ -1168,7 +1168,7 @@ public class c extends ius<SFOnesearchBean, FrameLayout, com.taobao.search.sf.a>
         if (oneSearchBean2 != null && oneSearchBean2.isNewSearch) {
             return false;
         }
-        return this.m || ((oneSearchBean = this.z) != null && !TextUtils.isEmpty(oneSearchBean.backgroundColor));
+        return this.m || ((oneSearchBean = this.z) != null && !StringUtils.isEmpty(oneSearchBean.backgroundColor));
     }
 
     @Override // tb.iom

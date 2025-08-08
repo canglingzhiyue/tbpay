@@ -3,7 +3,7 @@ package com.taobao.msgnotification;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.notification.util.EnvUtil;
 import com.taobao.tao.log.TLog;
@@ -24,7 +24,7 @@ public class AgooNotificationReceiverForChannel extends BroadcastReceiver {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-        } else if (!"com.taobao.taobao.intent.action.COMMAND.channel".equals(intent.getAction()) || !TextUtils.equals(intent.getStringExtra("command"), AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
+        } else if (!"com.taobao.taobao.intent.action.COMMAND.channel".equals(intent.getAction()) || !StringUtils.equals(intent.getStringExtra("command"), AgooConstants.AGOO_COMMAND_MESSAGE_DELETED)) {
         } else {
             if (EnvUtil.isProcessRight(context)) {
                 TLog.loge("AgooNotificationReceiverForChannel", "转发到主进程处理事件");

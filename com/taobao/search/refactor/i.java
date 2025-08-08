@@ -2,7 +2,7 @@ package com.taobao.search.refactor;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -94,24 +94,24 @@ public final class i {
         try {
             if (z) {
                 boxSearchUrl = dataObject.getString(nsk.KEY_GUIDE_SEARCH_URL);
-                if (TextUtils.isEmpty(boxSearchUrl)) {
+                if (StringUtils.isEmpty(boxSearchUrl)) {
                     boxSearchUrl = dataObject.getString(nom.KEY_BOX_SEARCH);
                     z2 = false;
                 } else {
                     z2 = true;
                 }
-                if (TextUtils.isEmpty(boxSearchUrl)) {
+                if (StringUtils.isEmpty(boxSearchUrl)) {
                     return;
                 }
                 if (z2) {
-                    if (TextUtils.isEmpty(dataObject.getString(nsk.KEY_GUIDE_SEARCH_URL))) {
+                    if (StringUtils.isEmpty(dataObject.getString(nsk.KEY_GUIDE_SEARCH_URL))) {
                         z3 = false;
                     }
                     result.guideSearch = z3;
                 }
             } else {
                 boxSearchUrl = dataObject.getString(nom.KEY_BOX_SEARCH);
-                if (TextUtils.isEmpty(boxSearchUrl)) {
+                if (StringUtils.isEmpty(boxSearchUrl)) {
                     return;
                 }
                 z2 = false;
@@ -205,7 +205,7 @@ public final class i {
                 return;
             }
             String mergeForBts2 = b.getString("for_bts");
-            if (TextUtils.isEmpty(mergeForBts2)) {
+            if (StringUtils.isEmpty(mergeForBts2)) {
                 mergeForBts = nth.a();
             } else {
                 kotlin.jvm.internal.q.a((Object) mergeForBts2, "mergeForBts");

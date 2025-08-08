@@ -2,7 +2,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.dinamicx;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -318,13 +318,13 @@ public class n extends DXWidgetNode {
         if (obj2 != null) {
             tBLiveOpenCardView.setTag(obj2);
         }
-        if (!TextUtils.isEmpty(this.f) && -1 != (a4 = pbh.a(this.f))) {
+        if (!StringUtils.isEmpty(this.f) && -1 != (a4 = pbh.a(this.f))) {
             tBLiveOpenCardView.setBackgroundResource(a4);
         }
-        if (!TextUtils.isEmpty(this.t) && -1 != (a3 = pbh.a(this.t))) {
+        if (!StringUtils.isEmpty(this.t) && -1 != (a3 = pbh.a(this.t))) {
             tBLiveOpenCardView.setPlaceHoldImageResId(a3);
         }
-        if (TextUtils.isEmpty(this.r) || -1 == (a2 = pbh.a(this.r))) {
+        if (StringUtils.isEmpty(this.r) || -1 == (a2 = pbh.a(this.r))) {
             return;
         }
         tBLiveOpenCardView.setColorFilter(a2);
@@ -334,7 +334,7 @@ public class n extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cffaf7ce", new Object[]{this, tBLiveOpenCardView});
-        } else if (TextUtils.isEmpty(this.A) || tBLiveOpenCardView == null) {
+        } else if (StringUtils.isEmpty(this.A) || tBLiveOpenCardView == null) {
         } else {
             int a2 = pbh.a(this.A);
             if (a2 != -1) {
@@ -356,7 +356,7 @@ public class n extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cf21872d", new Object[]{this, tBLiveOpenCardView});
-        } else if (TextUtils.isEmpty(this.C) || TextUtils.isEmpty(this.g)) {
+        } else if (StringUtils.isEmpty(this.C) || StringUtils.isEmpty(this.g)) {
         } else {
             if (this.C.equals(this.g)) {
                 tBLiveOpenCardView.setVisibility(0);

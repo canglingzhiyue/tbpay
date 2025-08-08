@@ -2,7 +2,7 @@ package com.taobao.taolive.sdk.model;
 
 import android.net.Uri;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -173,7 +173,7 @@ public class k extends d implements i.a {
         this.g = z7 && com.taobao.taolive.sdk.utils.l.d(a2);
         this.A = z5;
         String c = u.c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             if (this.s == null) {
                 this.s = new ArrayList();
             }
@@ -188,8 +188,8 @@ public class k extends d implements i.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1bdf0661", new Object[]{this, tLiveMsg});
-        } else if (TextUtils.isEmpty(tLiveMsg.topic) || !TextUtils.equals(tLiveMsg.topic, this.x)) {
-            if (!TextUtils.equals(tLiveMsg.topic, this.x)) {
+        } else if (StringUtils.isEmpty(tLiveMsg.topic) || !StringUtils.equals(tLiveMsg.topic, this.x)) {
+            if (!StringUtils.equals(tLiveMsg.topic, this.x)) {
                 this.m.a(this.f21848a, tLiveMsg, 502);
                 g(tLiveMsg);
             }
@@ -342,7 +342,7 @@ public class k extends d implements i.a {
             jSONObject.put("needEventWhenIgnorePv", (Object) "true");
             if (heartParams.containsKey(str4) && heartParams.get(str4) != null) {
                 String decode = Uri.decode(heartParams.get(str4));
-                if (!TextUtils.isEmpty(decode) && (split = decode.split("&")) != null) {
+                if (!StringUtils.isEmpty(decode) && (split = decode.split("&")) != null) {
                     int length = split.length;
                     int i = 0;
                     while (true) {
@@ -352,7 +352,7 @@ public class k extends d implements i.a {
                         String str5 = split[i];
                         if (str5 != null && str5.startsWith("liveAlgoParams:")) {
                             String replace = str5.replace("liveAlgoParams:", "");
-                            if (!TextUtils.isEmpty(replace)) {
+                            if (!StringUtils.isEmpty(replace)) {
                                 JSONObject jSONObject3 = new JSONObject();
                                 String[] split2 = replace.split("#");
                                 for (String str6 : split2) {
@@ -404,7 +404,7 @@ public class k extends d implements i.a {
             return;
         }
         super.d();
-        if (!TextUtils.isEmpty(this.y)) {
+        if (!StringUtils.isEmpty(this.y)) {
             this.m.a(this.f21848a, this.y, this.D);
         } else {
             this.m.a(this.f21848a, (String) null, this.D);
@@ -439,7 +439,7 @@ public class k extends d implements i.a {
             return;
         }
         super.g();
-        if (!TextUtils.isEmpty(this.y)) {
+        if (!StringUtils.isEmpty(this.y)) {
             if (!u.q()) {
                 return;
             }

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.core.section;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspTradeContext;
@@ -33,10 +33,10 @@ public class MqpBizSection {
             ipChange.ipc$dispatch("793eadf1", new Object[0]);
             return;
         }
-        f4556a = TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_gray_biz_worker"), "10000");
+        f4556a = StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_gray_biz_worker"), "10000");
         String walletConfig = PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_config_pay_worker_cmd_list");
         LogUtil.record(2, TAG, "MQP_config_pay_worker_cmd_list=".concat(String.valueOf(walletConfig)));
-        if (TextUtils.isEmpty(walletConfig)) {
+        if (StringUtils.isEmpty(walletConfig)) {
             return;
         }
         try {
@@ -154,7 +154,7 @@ public class MqpBizSection {
             String actionName = mspEvent.getActionName();
             String jSONString = mspEvent.getActionParamsJson() != null ? mspEvent.getActionParamsJson().toJSONString() : null;
             String[] actionParamsArray = mspEvent.getActionParamsArray();
-            if (!TextUtils.equals(actionName, MspEventTypes.ACTION_STRING_OPENWEB) && !TextUtils.equals(actionName, MspEventTypes.ACTION_STRING_OPENURL) && !TextUtils.equals(actionName, MspEventTypes.ACTION_META_OPENURL) && !TextUtils.equals(actionName, MspEventTypes.ACTION_STRING_VID) && !a(actionName)) {
+            if (!StringUtils.equals(actionName, MspEventTypes.ACTION_STRING_OPENWEB) && !StringUtils.equals(actionName, MspEventTypes.ACTION_STRING_OPENURL) && !StringUtils.equals(actionName, MspEventTypes.ACTION_META_OPENURL) && !StringUtils.equals(actionName, MspEventTypes.ACTION_STRING_VID) && !a(actionName)) {
                 return;
             }
             a(new MqpSectionModel(IMqpSectionListener.SECTION_CASHIER_CMD, new MqpSectionModel.CashierCmdParams(actionName, jSONString, actionParamsArray), mspContext));
@@ -167,7 +167,7 @@ public class MqpBizSection {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (jSONArray = b) != null && jSONArray.length() > 0) {
+        if (!StringUtils.isEmpty(str) && (jSONArray = b) != null && jSONArray.length() > 0) {
             for (int i = 0; i < b.length(); i++) {
                 try {
                     if (b.get(i).equals(str)) {

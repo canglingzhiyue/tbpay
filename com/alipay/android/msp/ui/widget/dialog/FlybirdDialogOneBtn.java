@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Html;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -135,7 +135,7 @@ public class FlybirdDialogOneBtn extends AlertDialog {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
         } else if (this.f == null) {
         } else {
-            if (!TextUtils.isEmpty(this.f5079a)) {
+            if (!StringUtils.isEmpty(this.f5079a)) {
                 this.f.setVisibility(0);
                 CharSequence charSequence = null;
                 try {

@@ -1,7 +1,7 @@
 package com.taobao.tao.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,10 +42,10 @@ public class UriUtil {
         String[] split = (fragment == null || !fragment.contains("?")) ? null : fragment.split("\\?");
         if (split != null && split.length > 0) {
             fragment = split[0];
-            query = !TextUtils.isEmpty(query) ? query + "&" + split[1] : split[1];
+            query = !StringUtils.isEmpty(query) ? query + "&" + split[1] : split[1];
         }
         if (fragment != null && fragment.contains("&") && (indexOf = fragment.indexOf("&")) > 0) {
-            if (!TextUtils.isEmpty(query)) {
+            if (!StringUtils.isEmpty(query)) {
                 String str = query + "&" + fragment.substring(indexOf + 1);
             } else {
                 fragment.substring(indexOf + 1);
@@ -72,7 +72,7 @@ public class UriUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b262f31", new Object[]{uri, str});
         }
-        if (uri != null && !TextUtils.isEmpty(str) && (queryParameterNames = uri.getQueryParameterNames()) != null) {
+        if (uri != null && !StringUtils.isEmpty(str) && (queryParameterNames = uri.getQueryParameterNames()) != null) {
             for (String str2 : queryParameterNames) {
                 if (str2.equals(str)) {
                     return uri.getQueryParameter(str);
@@ -112,7 +112,7 @@ public class UriUtil {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("e535a617", new Object[]{str, str2, str3});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return appendQueryParameter(Uri.parse(str), str2, str3);
         }
         return null;

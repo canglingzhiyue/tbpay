@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.ace.b;
@@ -136,7 +136,7 @@ public class ims implements imr<JsonRpcRequest, JsonRpcResponse> {
 
     private boolean c(WebSocket webSocket) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("780ab890", new Object[]{this, webSocket})).booleanValue() : TextUtils.equals(webSocket.getLocalSocketAddress().getHostName(), webSocket.getRemoteSocketAddress().getHostName());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("780ab890", new Object[]{this, webSocket})).booleanValue() : StringUtils.equals(webSocket.getLocalSocketAddress().getHostName(), webSocket.getRemoteSocketAddress().getHostName());
     }
 
     private void d(WebSocket webSocket) {

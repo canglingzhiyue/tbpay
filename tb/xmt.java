@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -125,7 +125,7 @@ public final class xmt {
         }
         String str = "current keySection = " + keySection;
         this.f34378a.put(keySection, stagBean);
-        if (!TextUtils.equals(keySection, "endImageLoaded") || (jSONObject = this.k) == null) {
+        if (!StringUtils.equals(keySection, "endImageLoaded") || (jSONObject = this.k) == null) {
             return;
         }
         c(jSONObject);
@@ -259,7 +259,7 @@ public final class xmt {
             return;
         }
         long a2 = ivwVar2.a() - ivwVar.a();
-        if (TextUtils.equals(str, "firstFrame")) {
+        if (StringUtils.equals(str, "firstFrame")) {
             str2 = "first_frame_rate_list";
         } else {
             str2 = "process_rate_list_" + str;

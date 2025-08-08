@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.c;
 import com.taobao.android.task.Coordinator;
@@ -37,11 +37,11 @@ public class luu {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bbc5dc40", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(f30929a)) {
+        if (!StringUtils.isEmpty(f30929a)) {
             return f30929a;
         }
         String a2 = c.a.a("InfoFlow_OAID", "oaid", (String) null);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             f30929a = a2;
             return a2;
         }

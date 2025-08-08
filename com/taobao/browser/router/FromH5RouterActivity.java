@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.windvane.monitor.a;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -165,11 +165,11 @@ public class FromH5RouterActivity extends NavRouterActivity {
             return (Uri) ipChange.ipc$dispatch("ed7d2392", new Object[]{this, uri});
         }
         String queryParameter = uri.getQueryParameter("weburl");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             Nav.from(this).toUri(queryParameter);
         } else {
             String uri2 = uri.toString();
-            if (!TextUtils.isEmpty(uri2) && uri2.contains("/?")) {
+            if (!StringUtils.isEmpty(uri2) && uri2.contains("/?")) {
                 String substring = uri2.substring(uri2.indexOf("/?") + 1);
                 Nav from = Nav.from(this);
                 from.toUri("http://m.taobao.com/index.htm" + substring);
@@ -202,7 +202,7 @@ public class FromH5RouterActivity extends NavRouterActivity {
         }
         String fragment = uri.getFragment();
         c(uri);
-        if (!TextUtils.isEmpty(fragment) && fragment.indexOf(f) < 0) {
+        if (!StringUtils.isEmpty(fragment) && fragment.indexOf(f) < 0) {
             return null;
         }
         Nav.from(this).toUri(uri);
@@ -215,13 +215,13 @@ public class FromH5RouterActivity extends NavRouterActivity {
             return (Uri) ipChange.ipc$dispatch("1174f96f", new Object[]{this, uri});
         }
         String fragment = uri.getFragment();
-        if (!TextUtils.isEmpty(fragment) && fragment.indexOf(g) >= 0) {
+        if (!StringUtils.isEmpty(fragment) && fragment.indexOf(g) >= 0) {
             Nav.from(this).toUri(uri);
             return null;
-        } else if (!TextUtils.isEmpty(fragment) && fragment.indexOf(h) >= 0) {
+        } else if (!StringUtils.isEmpty(fragment) && fragment.indexOf(h) >= 0) {
             Nav.from(this).disallowLoopback().toUri(uri);
             return null;
-        } else if (!TextUtils.isEmpty(fragment) && fragment.indexOf(i) >= 0) {
+        } else if (!StringUtils.isEmpty(fragment) && fragment.indexOf(i) >= 0) {
             String[] split = fragment.split("-");
             if (split.length <= 2) {
                 return null;
@@ -242,7 +242,7 @@ public class FromH5RouterActivity extends NavRouterActivity {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e5d05adb", new Object[]{this, uri})).booleanValue();
         }
-        if (TextUtils.isEmpty("")) {
+        if (StringUtils.isEmpty("")) {
             return false;
         }
         return Pattern.compile("").matcher(uri.toString()).matches();
@@ -269,7 +269,7 @@ public class FromH5RouterActivity extends NavRouterActivity {
                     return;
                 }
                 String string = extras.getString("outUrl");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 Intent c2 = c(uri);

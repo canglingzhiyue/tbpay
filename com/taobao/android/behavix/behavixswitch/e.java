@@ -2,7 +2,7 @@ package com.taobao.android.behavix.behavixswitch;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.bhxbridge.BHXCXXInnerBridge;
 import com.taobao.tao.log.TLog;
@@ -60,7 +60,7 @@ public class e {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{this, str, str2, str3});
         }
         String a2 = a.a(str, str2, str3);
-        return TextUtils.equals(a2, f9174a) ? str3 : a2;
+        return StringUtils.equals(a2, f9174a) ? str3 : a2;
     }
 
     public void a(String str, Map<String, String> map) {

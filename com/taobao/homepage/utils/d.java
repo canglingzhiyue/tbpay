@@ -2,7 +2,7 @@ package com.taobao.homepage.utils;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
 import java.util.HashMap;
@@ -51,7 +51,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{str, str2, str3})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || (a2 = a(str)) == null) {
+        if (StringUtils.isEmpty(str2) || (a2 = a(str)) == null) {
             return false;
         }
         SharedPreferences.Editor edit = a2.edit();
@@ -63,7 +63,7 @@ public class d {
     public static String b(String str, String str2, String str3) {
         SharedPreferences a2;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("87942679", new Object[]{str, str2, str3}) : (!TextUtils.isEmpty(str2) && (a2 = a(str)) != null) ? a2.getString(str2, str3) : str3;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("87942679", new Object[]{str, str2, str3}) : (!StringUtils.isEmpty(str2) && (a2 = a(str)) != null) ? a2.getString(str2, str3) : str3;
     }
 
     public static boolean a(String str, String str2, int i) {
@@ -72,7 +72,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4dba950b", new Object[]{str, str2, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || (a2 = a(str)) == null) {
+        if (StringUtils.isEmpty(str2) || (a2 = a(str)) == null) {
             return false;
         }
         SharedPreferences.Editor edit = a2.edit();
@@ -84,7 +84,7 @@ public class d {
     public static int b(String str, String str2, int i) {
         SharedPreferences a2;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("551fca19", new Object[]{str, str2, new Integer(i)})).intValue() : (!TextUtils.isEmpty(str2) && (a2 = a(str)) != null) ? a2.getInt(str2, i) : i;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("551fca19", new Object[]{str, str2, new Integer(i)})).intValue() : (!StringUtils.isEmpty(str2) && (a2 = a(str)) != null) ? a2.getInt(str2, i) : i;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0063  */
@@ -117,7 +117,7 @@ public class d {
             java.lang.String r1 = ""
             if (r5 == 0) goto L43
             java.lang.String r5 = tb.kst.d()
-            boolean r2 = android.text.TextUtils.isEmpty(r5)
+            boolean r2 = android.text.StringUtils.isEmpty(r5)
             if (r2 != 0) goto L43
             java.lang.StringBuilder r2 = new java.lang.StringBuilder
             r2.<init>()
@@ -158,7 +158,7 @@ public class d {
         if (z) {
             try {
                 String d = kst.d();
-                if (!TextUtils.isEmpty(d)) {
+                if (!StringUtils.isEmpty(d)) {
                     str4 = str4 + d + "_";
                 }
             } catch (Throwable unused) {
@@ -201,7 +201,7 @@ public class d {
             java.lang.String r1 = ""
             if (r5 == 0) goto L43
             java.lang.String r5 = tb.kst.d()
-            boolean r2 = android.text.TextUtils.isEmpty(r5)
+            boolean r2 = android.text.StringUtils.isEmpty(r5)
             if (r2 != 0) goto L43
             java.lang.StringBuilder r2 = new java.lang.StringBuilder
             r2.<init>()
@@ -242,7 +242,7 @@ public class d {
         if (z) {
             try {
                 String d = kst.d();
-                if (!TextUtils.isEmpty(d)) {
+                if (!StringUtils.isEmpty(d)) {
                     str4 = str4 + d + "_";
                 }
             } catch (Throwable unused) {

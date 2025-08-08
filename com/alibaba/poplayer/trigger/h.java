@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.trigger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -53,7 +53,7 @@ public class h {
         }
         try {
             com.alibaba.poplayer.utils.c.c("triggerEvent", "", "TriggerBroadcastProcessor.triggerSchemaPop.onReceive?uri=" + str + "&param=" + str2);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (PopLayer.getReference().internalGetCurrentActivity() == null) {
@@ -63,7 +63,7 @@ public class h {
             if (str2 == null) {
                 str2 = "";
             }
-            if (!str.startsWith(cag.PAGE_SCHEME) && !TextUtils.isEmpty(str3) && str3.contains("clean")) {
+            if (!str.startsWith(cag.PAGE_SCHEME) && !StringUtils.isEmpty(str3) && str3.contains("clean")) {
                 String c = caf.a().c();
                 cag.i().a(c, c, true);
             }
@@ -80,7 +80,7 @@ public class h {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.alibaba.poplayer.utils.c.c("triggerEvent", "", "TriggerBroadcastProcessor.triggerFragmentSwitchPop.onReceive?fragmentName is empty");
                 return;
             }
@@ -88,7 +88,7 @@ public class h {
                 str2 = "";
             }
             com.alibaba.poplayer.utils.c.c("triggerEvent", "", "TriggerBroadcastProcessor.triggerFragmentSwitchPop..onReceive.fragmentName=" + str + ",param=" + str2 + ",needAcParam=" + z + ".fromBroadcast=" + z2);
-            if (!TextUtils.isEmpty(str3) && str3.contains("clean")) {
+            if (!StringUtils.isEmpty(str3) && str3.contains("clean")) {
                 String c = caf.a().c();
                 cag.i().a(InternalTriggerController.a(c, str), c, false);
                 return;
@@ -114,7 +114,7 @@ public class h {
                 return;
             }
             com.alibaba.poplayer.utils.c.c("triggerEvent", "", "TriggerBroadcastProcessor.triggerPreDealPop.onReceive.uriSet=" + str + ".traceId=" + str4 + ".indexMap=" + str2);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (PopLayer.getReference().internalGetCurrentActivity() == null) {
@@ -151,10 +151,10 @@ public class h {
         }
         try {
             PreDealCustomEventParams preDealCustomEventParams = new PreDealCustomEventParams();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 preDealCustomEventParams.setUriSet(new HashSet(Arrays.asList(str.split(","))));
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 preDealCustomEventParams.setIndexMap((Map) JSON.parseObject(str2, new TypeReference<HashMap<String, PreDealIndexContent>>() { // from class: com.alibaba.poplayer.trigger.h.1
                 }, new Feature[0]));
             }

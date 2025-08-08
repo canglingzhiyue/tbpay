@@ -1,6 +1,6 @@
 package com.taobao.android.festival.skin;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import mtopsdk.mtop.domain.IMTOPDataObject;
 import tb.kge;
 
@@ -26,7 +26,7 @@ public class SkinConfig implements IMTOPDataObject {
     }
 
     public boolean isValidConfig() {
-        return !TextUtils.isEmpty(this.skinCode) && !TextUtils.isEmpty(this.skinUrl);
+        return !StringUtils.isEmpty(this.skinCode) && !StringUtils.isEmpty(this.skinUrl);
     }
 
     public boolean equals(Object obj) {
@@ -34,6 +34,6 @@ public class SkinConfig implements IMTOPDataObject {
             return false;
         }
         SkinConfig skinConfig = (SkinConfig) obj;
-        return TextUtils.equals(this.skinCode, skinConfig.skinCode) && TextUtils.equals(this.skinUrl, skinConfig.skinUrl) && TextUtils.equals(this.skinZipUrl, skinConfig.skinZipUrl) && this.version == skinConfig.version;
+        return StringUtils.equals(this.skinCode, skinConfig.skinCode) && StringUtils.equals(this.skinUrl, skinConfig.skinUrl) && StringUtils.equals(this.skinZipUrl, skinConfig.skinZipUrl) && this.version == skinConfig.version;
     }
 }

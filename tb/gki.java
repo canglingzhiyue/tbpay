@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class gki {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("a55f6bd6", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return this.f28365a.c();
         }
         return a.a(str);

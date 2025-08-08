@@ -2,7 +2,7 @@ package com.alibaba.android.split.core.splitinstall;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -63,12 +63,12 @@ public class j {
                     a2.a(bhfVar);
                     String a3 = this.b.a(bhfVar.a());
                     HashSet hashSet = new HashSet();
-                    if (!TextUtils.isEmpty(a3)) {
+                    if (!StringUtils.isEmpty(a3)) {
                         bhfVar.a(a3);
                         hashSet.add(a3);
                         hashSet.addAll(this.b.g(a3));
                     }
-                    if (TextUtils.isEmpty(a3) || com.alibaba.android.split.p.a().a().containsAll(hashSet)) {
+                    if (StringUtils.isEmpty(a3) || com.alibaba.android.split.p.a().a().containsAll(hashSet)) {
                         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.alibaba.android.split.core.splitinstall.j.1
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -94,12 +94,12 @@ public class j {
                 String d = this.b.d(bhdVar.a());
                 a2.a(bhdVar);
                 HashSet hashSet2 = new HashSet();
-                if (!TextUtils.isEmpty(d)) {
+                if (!StringUtils.isEmpty(d)) {
                     bhdVar.a(d);
                     hashSet2.add(d);
                     hashSet2.addAll(this.b.g(d));
                 }
-                if (TextUtils.isEmpty(d) || com.alibaba.android.split.p.a().a().containsAll(hashSet2)) {
+                if (StringUtils.isEmpty(d) || com.alibaba.android.split.p.a().a().containsAll(hashSet2)) {
                     new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.alibaba.android.split.core.splitinstall.j.2
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -113,7 +113,7 @@ public class j {
                             }
                         }
                     });
-                } else if (!TextUtils.isEmpty(d)) {
+                } else if (!StringUtils.isEmpty(d)) {
                     bhdVar.a(d);
                     this.f2468a.add(bhdVar.d());
                 }
@@ -121,16 +121,16 @@ public class j {
         }
         if (a.e(aVar).size() > 0) {
             for (final bhg bhgVar : a.e(aVar)) {
-                if (TextUtils.isEmpty(bhgVar.d())) {
+                if (StringUtils.isEmpty(bhgVar.d())) {
                     a2.a(bhgVar);
                     String c = this.b.c(bhgVar.a());
                     HashSet hashSet3 = new HashSet();
-                    if (!TextUtils.isEmpty(c)) {
+                    if (!StringUtils.isEmpty(c)) {
                         bhgVar.a(c);
                         hashSet3.add(c);
                         hashSet3.addAll(this.b.g(c));
                     }
-                    if (TextUtils.isEmpty(c) || com.alibaba.android.split.p.a().a().containsAll(hashSet3)) {
+                    if (StringUtils.isEmpty(c) || com.alibaba.android.split.p.a().a().containsAll(hashSet3)) {
                         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.alibaba.android.split.core.splitinstall.j.3
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -144,7 +144,7 @@ public class j {
                                 }
                             }
                         });
-                    } else if (!TextUtils.isEmpty(c)) {
+                    } else if (!StringUtils.isEmpty(c)) {
                         this.f2468a.add(c);
                         bhgVar.a(this.b.d(bhgVar.a()));
                     }
@@ -154,15 +154,15 @@ public class j {
         if (a.f(aVar).size() > 0) {
             for (final bhe bheVar : a.f(aVar)) {
                 a2.a(bheVar);
-                if (TextUtils.isEmpty(bheVar.d())) {
+                if (StringUtils.isEmpty(bheVar.d())) {
                     String f = this.b.f(bheVar.a());
                     HashSet hashSet4 = new HashSet();
-                    if (!TextUtils.isEmpty(f)) {
+                    if (!StringUtils.isEmpty(f)) {
                         bheVar.a(f);
                         hashSet4.add(f);
                         hashSet4.addAll(this.b.g(f));
                     }
-                    if (TextUtils.isEmpty(f) || com.alibaba.android.split.p.a().a().containsAll(hashSet4)) {
+                    if (StringUtils.isEmpty(f) || com.alibaba.android.split.p.a().a().containsAll(hashSet4)) {
                         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.alibaba.android.split.core.splitinstall.j.4
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -176,7 +176,7 @@ public class j {
                                 }
                             }
                         });
-                    } else if (!TextUtils.isEmpty(f)) {
+                    } else if (!StringUtils.isEmpty(f)) {
                         this.f2468a.add(f);
                         bheVar.a(f);
                     }

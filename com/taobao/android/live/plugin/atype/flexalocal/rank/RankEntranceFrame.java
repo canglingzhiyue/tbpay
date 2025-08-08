@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.rank;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.FrameLayout;
@@ -219,7 +219,7 @@ public class RankEntranceFrame extends BaseFrame implements com.taobao.taolive.s
                 return;
             }
             String string = jSONObject.getString("templateName");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 q.b("RankEntranceFrame", "onEvent: renderDX error: templateName is null!");
                 return;
             }

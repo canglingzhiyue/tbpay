@@ -2,7 +2,7 @@ package tb;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,10 +32,10 @@ public class shj implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("77d86ebd", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(WindvanePluginRegister.WVTNodeCachePlugin.ACTION_GET_CACHE, str)) {
+        if (StringUtils.equals(WindvanePluginRegister.WVTNodeCachePlugin.ACTION_GET_CACHE, str)) {
             return a(str2, wVCallBackContext);
         }
-        if (!TextUtils.equals("updateCache", str)) {
+        if (!StringUtils.equals("updateCache", str)) {
             return false;
         }
         return b(str2, wVCallBackContext);
@@ -61,7 +61,7 @@ public class shj implements b {
             return ((Boolean) ipChange.ipc$dispatch("26c8934", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         laq c = laq.a().a("Bridge").b("updateCacheValue").c("homepage.HomePageWVPlugin.updateCacheValue");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject != null) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -186,7 +186,7 @@ public abstract class ekq<ContentView extends View> extends atl {
             return;
         }
         final String b = b(aURARenderComponent);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         final TUrlImageView a2 = a(frameLayout);

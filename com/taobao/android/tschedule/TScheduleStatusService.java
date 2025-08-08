@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.ut.abtest.UTABTest;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -136,7 +136,7 @@ public class TScheduleStatusService extends Service {
 
         @Override // com.taobao.android.tschedule.aidl.ITScheduleStatus
         public boolean isConfigrUrl(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             return TScheduleStatusService.f().values().contains(jmi.a(str));
@@ -164,10 +164,10 @@ public class TScheduleStatusService extends Service {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String str3 = b.get(str);
-            if (!TextUtils.equals(str3, str2)) {
+            if (!StringUtils.equals(str3, str2)) {
                 String str4 = null;
                 Iterator<String> it = e.keySet().iterator();
                 while (true) {
@@ -175,7 +175,7 @@ public class TScheduleStatusService extends Service {
                         break;
                     }
                     String next = it.next();
-                    if (TextUtils.equals(str3, e.get(next))) {
+                    if (StringUtils.equals(str3, e.get(next))) {
                         str4 = next;
                         break;
                     }
@@ -197,13 +197,13 @@ public class TScheduleStatusService extends Service {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d7b3a26d", new Object[]{str, str2, list});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             String str3 = jmi.a(str2, list).content;
             if (str2.startsWith(jli.PREFIX)) {
                 String substring = str2.substring(9);
                 HashMap<String, String> hashMap = d;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     str2 = jmi.a(str3);
                 }
                 hashMap.put(substring, str2);
@@ -219,9 +219,9 @@ public class TScheduleStatusService extends Service {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         String str2 = b.get(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             String a2 = jmi.a(UTABTest.COMPONENT_URI, str2, "bucket");
-            if (!TextUtils.isEmpty(a2) && !TextUtils.equals(a2, str2)) {
+            if (!StringUtils.isEmpty(a2) && !StringUtils.equals(a2, str2)) {
                 jkq.a(TAG, "fetch url from utabtest, new url = " + a2 + ", originUrl=" + str2);
                 return a2;
             }
@@ -233,7 +233,7 @@ public class TScheduleStatusService extends Service {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             e.put(str, str2);
         }
@@ -243,7 +243,7 @@ public class TScheduleStatusService extends Service {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             e.remove(str);
         }
@@ -255,7 +255,7 @@ public class TScheduleStatusService extends Service {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
         String str2 = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Iterator<String> it = e.keySet().iterator();
@@ -264,7 +264,7 @@ public class TScheduleStatusService extends Service {
                 break;
             }
             String next = it.next();
-            if (TextUtils.equals(str, e.get(next))) {
+            if (StringUtils.equals(str, e.get(next))) {
                 str2 = next;
                 break;
             }
@@ -285,7 +285,7 @@ public class TScheduleStatusService extends Service {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return e.values().contains(str);
         }
         return false;

@@ -1,7 +1,7 @@
 package com.taobao.tao.homepage;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.runtimepermission.f;
 import com.taobao.taobao.R;
@@ -24,7 +24,7 @@ public class g implements com.taobao.runtimepermission.i {
         boolean z2 = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ffc5a768", new Object[]{this, context, list, list2, dVar});
-        } else if (context != null && TextUtils.equals(context.getPackageName(), "com.taobao.taobao")) {
+        } else if (context != null && StringUtils.equals(context.getPackageName(), "com.taobao.taobao")) {
             if (list == null || dVar == null) {
                 String[] strArr = new String[1];
                 StringBuilder sb = new StringBuilder();
@@ -40,7 +40,7 @@ public class g implements com.taobao.runtimepermission.i {
                 return;
             }
             for (String str : list) {
-                if (TextUtils.equals(str, a.ACCESS_FINE_LOCATION)) {
+                if (StringUtils.equals(str, a.ACCESS_FINE_LOCATION)) {
                     z = a.a(dVar);
                 }
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -91,7 +91,7 @@ public class tha extends h {
             return ((Boolean) ipChange.ipc$dispatch("3d039b67", new Object[]{this, dXRuntimeContext, str})).booleanValue();
         }
         if (dXRuntimeContext != null && (b = lfq.b(dXRuntimeContext)) != null && (ext = b.getExt()) != null) {
-            return TextUtils.equals("true", ext.getString(str));
+            return StringUtils.equals("true", ext.getString(str));
         }
         return false;
     }

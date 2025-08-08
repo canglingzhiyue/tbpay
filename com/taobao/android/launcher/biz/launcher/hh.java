@@ -2,7 +2,7 @@ package com.taobao.android.launcher.biz.launcher;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -100,7 +100,7 @@ public class hh extends com.taobao.android.launcher.biz.task.j {
             return null;
         }
         String queryParameter = data.getQueryParameter("h5Url");
-        if (TextUtils.isEmpty(queryParameter) || (parse = Uri.parse(queryParameter)) == null || parse.isOpaque()) {
+        if (StringUtils.isEmpty(queryParameter) || (parse = Uri.parse(queryParameter)) == null || parse.isOpaque()) {
             return null;
         }
         return parse;
@@ -132,7 +132,7 @@ public class hh extends com.taobao.android.launcher.biz.task.j {
         String queryParameter = uri.getQueryParameter("tabid");
         String queryParameter2 = uri.getQueryParameter("skipOpt");
         TLog.loge(gve.MODULE, getId(), "path:" + path + " tabId:" + queryParameter + " skpOpt:" + queryParameter2);
-        return (TextUtils.equals(path, "/guangguang/index.htm") || TextUtils.equals(path, "/tnode/index.htm")) && !TextUtils.equals(queryParameter2, "1");
+        return (StringUtils.equals(path, "/guangguang/index.htm") || StringUtils.equals(path, "/tnode/index.htm")) && !StringUtils.equals(queryParameter2, "1");
     }
 
     private boolean b(Uri uri) {
@@ -146,7 +146,7 @@ public class hh extends com.taobao.android.launcher.biz.task.j {
         String path = uri.getPath();
         String queryParameter = uri.getQueryParameter("skipOpt");
         TLog.loge(gve.MODULE, getId(), "path:" + path + " skpOpt:" + queryParameter);
-        return TextUtils.equals(path, "/app/tb-source-app/video-fullpage/pages/index2") && !TextUtils.equals(queryParameter, "1");
+        return StringUtils.equals(path, "/app/tb-source-app/video-fullpage/pages/index2") && !StringUtils.equals(queryParameter, "1");
     }
 
     public static boolean Q_() {

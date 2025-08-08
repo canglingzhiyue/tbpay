@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e.j;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.Ta;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import org.json.JSONException;
@@ -46,7 +46,7 @@ public class b implements Parcelable {
 
     public b(String str, String str2, String str3) {
         this.f7987a = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.b = new com.meizu.cloud.pushsdk.handler.e.j.a();
             this.c = new f();
             return;

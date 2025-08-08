@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.taobao.windvane.extra.uc.WVUCWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -368,7 +368,7 @@ public class EmbedWeexView extends BaseEmbedView implements AppDestroyPoint, App
             RVLogger.d("EmbedWeexView", "getView is snapshot");
             this.f4152a = b.a();
             WXSDKInstance wXSDKInstance = this.f4152a;
-            if (wXSDKInstance != null && !this.m && !TextUtils.equals(this.i, wXSDKInstance.ak())) {
+            if (wXSDKInstance != null && !this.m && !StringUtils.equals(this.i, wXSDKInstance.ak())) {
                 this.f4152a = null;
             }
             if (this.f4152a != null) {
@@ -457,7 +457,7 @@ public class EmbedWeexView extends BaseEmbedView implements AppDestroyPoint, App
                         if (Math.abs(EmbedWeexView.access$100(EmbedWeexView.this) - EmbedWeexView.access$000(EmbedWeexView.this)) > 200) {
                             EmbedWeexView.access$102(EmbedWeexView.this, EmbedWeexView.access$000(EmbedWeexView.this));
                             if (EmbedWeexView.access$200(EmbedWeexView.this) != null && EmbedWeexView.this.getOuterPage() != null && EmbedWeexView.this.getOuterPage().getRender() != null && (EmbedWeexView.this.getOuterPage().getRender() instanceof cda)) {
-                                if (TextUtils.isEmpty(EmbedWeexView.access$300(EmbedWeexView.this))) {
+                                if (StringUtils.isEmpty(EmbedWeexView.access$300(EmbedWeexView.this))) {
                                     EmbedWeexView.this.getOuterPage().getRender().a("if(window.__WEEX_SCROLL__ && typeof window.__WEEX_SCROLL__ === 'function') {window.__WEEX_SCROLL__(" + cbc.b(EmbedWeexView.access$200(EmbedWeexView.this), EmbedWeexView.access$000(EmbedWeexView.this)) + ")}");
                                 } else {
                                     EmbedWeexView.this.getOuterPage().getRender().a("if(window.__WEEX_SCROLL__ && typeof window.__WEEX_SCROLL__ === 'function') {window['__WEEX_SCROLL(" + EmbedWeexView.access$300(EmbedWeexView.this) + ")__'](" + cbc.b(EmbedWeexView.access$200(EmbedWeexView.this), EmbedWeexView.access$000(EmbedWeexView.this)) + ")}");
@@ -565,7 +565,7 @@ public class EmbedWeexView extends BaseEmbedView implements AppDestroyPoint, App
                     WXSwipeLayout wXSwipeLayout = (WXSwipeLayout) childAt;
                     if (!this.g.contains(wXSwipeLayout)) {
                         this.g.add(wXSwipeLayout);
-                        if (TextUtils.indexOf(this.i, "isNestCategory=true") > 0) {
+                        if (StringUtils.indexOf(this.i, "isNestCategory=true") > 0) {
                             this.h = (FrameLayout) wXSwipeLayout.getParent().getParent().getParent().getParent().getParent().getParent().getParent();
                         }
                         wXSwipeLayout.addOnRefreshOffsetChangedListener(new WXSwipeLayout.OnRefreshOffsetChangedListener() { // from class: com.alibaba.triver.triver_shop.weexview.EmbedWeexView.4
@@ -587,7 +587,7 @@ public class EmbedWeexView extends BaseEmbedView implements AppDestroyPoint, App
                                             layoutParams.topMargin = i2;
                                             EmbedWeexView.access$700(EmbedWeexView.this).setLayoutParams(layoutParams);
                                         }
-                                        if (TextUtils.isEmpty(EmbedWeexView.access$300(EmbedWeexView.this))) {
+                                        if (StringUtils.isEmpty(EmbedWeexView.access$300(EmbedWeexView.this))) {
                                             render = (cda) EmbedWeexView.this.getOuterPage().getRender();
                                             sb = new StringBuilder();
                                             sb.append("if(window.__WEEX_SCROLL__ && typeof window.__WEEX_SCROLL__ === 'function') {window.__WEEX_SCROLL__(");
@@ -709,7 +709,7 @@ public class EmbedWeexView extends BaseEmbedView implements AppDestroyPoint, App
         }
         RVLogger.d("EmbedWeexView", "onRecivedRender : " + jSONObject);
         a(jSONObject);
-        if (this.f4152a == null || !this.m || TextUtils.isEmpty(this.i) || !TextUtils.isEmpty(this.f4152a.ak())) {
+        if (this.f4152a == null || !this.m || StringUtils.isEmpty(this.i) || !StringUtils.isEmpty(this.f4152a.ak())) {
             return;
         }
         d();
@@ -792,7 +792,7 @@ public class EmbedWeexView extends BaseEmbedView implements AppDestroyPoint, App
             if (this.c == null || this.d == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(this.i) && this.i.indexOf("ignore2006=1") >= 0 && this.mOuterApp != null && (this.mOuterApp.getAppContext().getContext() instanceof Activity)) {
+            if (!StringUtils.isEmpty(this.i) && this.i.indexOf("ignore2006=1") >= 0 && this.mOuterApp != null && (this.mOuterApp.getAppContext().getContext() instanceof Activity)) {
                 UTAnalytics.getInstance().getDefaultTracker().updatePageStatus(this.mOuterApp.getAppContext().getContext(), UTPageStatus.UT_H5_IN_WebView);
             }
             WVUCWebView wVUCWebView = new WVUCWebView(this.c);

@@ -1,6 +1,6 @@
 package com.taobao.unit.center.mdc.dinamicx.dataParse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import tb.fut;
@@ -26,11 +26,11 @@ public class DataParseRelationOp implements fut {
             String str = "" + objArr[0];
             String str2 = "" + objArr[1];
             String str3 = "" + objArr[2];
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String str4 = str2;
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     String str5 = str3;
-                    if (!TextUtils.isEmpty(str5) && !"null".equals(str4) && !"null".equals(str5)) {
+                    if (!StringUtils.isEmpty(str5) && !"null".equals(str4) && !"null".equals(str5)) {
                         try {
                             double parseDouble = Double.parseDouble(str2);
                             double parseDouble2 = Double.parseDouble(str3);

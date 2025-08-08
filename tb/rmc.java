@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -32,7 +32,7 @@ public class rmc extends rmd {
         } else if (!(obj instanceof ImageButton) || (imageButton = (ImageButton) obj) == null) {
         } else {
             String str4 = rlz.a().g(str3).get(str2);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str2 = str4;
             }
             HashMap<String, Object> hashMap = rlz.a().d(str, str3).get(str2);

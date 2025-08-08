@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.b;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -94,7 +94,7 @@ public class hgh implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.e = str;
             a();
@@ -125,7 +125,7 @@ public class hgh implements View.OnClickListener {
             return;
         }
         String a2 = ply.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         HashMap hashMap = new HashMap();

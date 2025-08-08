@@ -1,6 +1,6 @@
 package com.taobao.android.behavir.fatigue;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -101,11 +101,11 @@ public class FatigueManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("211e4c7d", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (sFatigueSummary == null) {
                 String a2 = com.taobao.android.behavix.behavixswitch.a.a("fatigueSummaryList", "[\"Page_Home\", \"Page_MyTaobao\"]");
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     sFatigueSummary = JSON.parseArray(a2);
                 }
             }

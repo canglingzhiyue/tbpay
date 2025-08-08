@@ -3,7 +3,7 @@ package tb;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sku.widget.IconFontView;
 import com.taobao.android.task.Coordinator;
@@ -185,7 +185,7 @@ public class idk {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         a e2 = e();
-        if (str != null && a.a(e2) != null && str.equals(a.a(e2)) && !TextUtils.isEmpty(a.b(e2))) {
+        if (str != null && a.a(e2) != null && str.equals(a.a(e2)) && !StringUtils.isEmpty(a.b(e2))) {
             return a.b(e2);
         }
         a.a(e2, str);
@@ -199,7 +199,7 @@ public class idk {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
         a e2 = e();
-        if (str != null && a.a(e2) != null && str.equals(a.a(e2)) && !TextUtils.isEmpty(a.b(e2))) {
+        if (str != null && a.a(e2) != null && str.equals(a.a(e2)) && !StringUtils.isEmpty(a.b(e2))) {
             return a.b(e2);
         }
         return null;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -189,7 +189,7 @@ public class eab extends c<egu> implements j<DetailEvent> {
         if (eguVar.g) {
             this.h.setVisibility(8);
             a(eguVar.h);
-        } else if (!TextUtils.isEmpty(eguVar.d)) {
+        } else if (!StringUtils.isEmpty(eguVar.d)) {
             this.h.setVisibility(0);
             this.h.setText(eguVar.d);
             this.g.setBackgroundResource(R.drawable.detail_bottombar_jhs_common_waiting_bg_old);

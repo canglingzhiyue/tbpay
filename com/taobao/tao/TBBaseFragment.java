@@ -3,7 +3,7 @@ package com.taobao.tao;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -121,7 +121,7 @@ public abstract class TBBaseFragment extends SupportFragment {
             return;
         }
         super.onResume();
-        if (getActivity() != null && !TextUtils.isEmpty(getUTPageName())) {
+        if (getActivity() != null && !StringUtils.isEmpty(getUTPageName())) {
             UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(getActivity(), getUTPageName());
         }
         if (TBMainHost.a(getActivity()) == null || getClass().getName().equals(com.taobao.tao.navigation.e.b(0).k())) {
@@ -129,7 +129,7 @@ public abstract class TBBaseFragment extends SupportFragment {
         }
         Intent intent = new Intent(PopLayer.ACTION_FRAGMENT_SWITCH);
         String popLayerconfigName = getPopLayerconfigName();
-        if (!TextUtils.isEmpty(popLayerconfigName)) {
+        if (!StringUtils.isEmpty(popLayerconfigName)) {
             intent.putExtra(PopLayer.EXTRA_KEY_FRAGMENT_NAME, popLayerconfigName);
         }
         if (getActivity() != null && getActivity().getIntent() != null && getActivity().getIntent().getData() != null) {
@@ -143,7 +143,7 @@ public abstract class TBBaseFragment extends SupportFragment {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("af34da76", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mPoplayerConfigName)) {
+        if (!StringUtils.isEmpty(this.mPoplayerConfigName)) {
             return this.mPoplayerConfigName;
         }
         int a2 = com.taobao.tao.navigation.e.a(getClass().getName());
@@ -183,7 +183,7 @@ public abstract class TBBaseFragment extends SupportFragment {
             return;
         }
         super.onPause();
-        if (getActivity() == null || TextUtils.isEmpty(getUTPageName())) {
+        if (getActivity() == null || StringUtils.isEmpty(getUTPageName())) {
             return;
         }
         UTAnalytics.getInstance().getDefaultTracker().pageDisAppear(getActivity());

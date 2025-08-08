@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -85,7 +85,7 @@ public class pal implements pny {
         shareContent.description = str;
         shareContent.imageUrl = str2;
         shareContent.shareScene = "talent";
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             shareContent.url = str5;
         } else {
             if (z) {
@@ -99,10 +99,10 @@ public class pal implements pny {
         shareContent.url = b(shareContent.url);
         shareContent.wwMsgType = WWMessageType.WWMessageTypeDefault;
         shareContent.disableBackToClient = true;
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             shareContent.businessId = str7;
             shareContent.templateId = "live";
-        } else if (!TextUtils.isEmpty(str6)) {
+        } else if (!StringUtils.isEmpty(str6)) {
             shareContent.businessId = "tblive_guard";
             shareContent.templateId = "weex";
             shareContent.templateParams = a(activity, z, str8);
@@ -123,15 +123,15 @@ public class pal implements pny {
         VideoInfo u = poy.u(n.a());
         if (u != null && u.broadCaster != null) {
             String str2 = u.broadCaster.headImg;
-            if (u.shareUrlDO != null && !TextUtils.isEmpty(u.shareUrlDO.iconUrl)) {
+            if (u.shareUrlDO != null && !StringUtils.isEmpty(u.shareUrlDO.iconUrl)) {
                 str2 = u.shareUrlDO.iconUrl;
             }
             String str3 = u.broadCaster.accountName;
-            if (u.shareUrlDO != null && !TextUtils.isEmpty(u.shareUrlDO.accountName)) {
+            if (u.shareUrlDO != null && !StringUtils.isEmpty(u.shareUrlDO.accountName)) {
                 str3 = u.shareUrlDO.accountName;
             }
             String str4 = u.title;
-            if (u.shareUrlDO != null && !TextUtils.isEmpty(u.shareUrlDO.title)) {
+            if (u.shareUrlDO != null && !StringUtils.isEmpty(u.shareUrlDO.title)) {
                 str4 = u.shareUrlDO.title;
             }
             hashMap.put("topLogo", str2);
@@ -185,7 +185,7 @@ public class pal implements pny {
             return;
         }
         String str = map.get(aw.PARAM_SHARE_WEEX);
-        if (shareContent == null || TextUtils.isEmpty(str)) {
+        if (shareContent == null || StringUtils.isEmpty(str)) {
             return;
         }
         shareContent.businessId = "taobaolive_fandom";
@@ -194,7 +194,7 @@ public class pal implements pny {
         hashMap.put("weexURL", str);
         HashMap hashMap2 = new HashMap();
         hashMap2.put("width", "750");
-        if (!TextUtils.isEmpty(map.get(aw.PARAM_FANDOM_HOT_ITEMS))) {
+        if (!StringUtils.isEmpty(map.get(aw.PARAM_FANDOM_HOT_ITEMS))) {
             hashMap2.put("height", "" + ((Math.min(v.b(map.get(aw.PARAM_FANDOM_HOT_ITEM_COUNT)) / 2, 8) * 492) + 854));
         } else {
             hashMap2.put("height", "855");
@@ -213,24 +213,24 @@ public class pal implements pny {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (!aa.aw() || (u = poy.u(n.a())) == null || !TextUtils.isEmpty(u.paidLiveType) || !"1".equals(u.roomStatus) || u.liveUrlList == null || u.liveUrlList.size() <= 1) {
+        if (!aa.aw() || (u = poy.u(n.a())) == null || !StringUtils.isEmpty(u.paidLiveType) || !"1".equals(u.roomStatus) || u.liveUrlList == null || u.liveUrlList.size() <= 1) {
             return str;
         }
         QualitySelectItem qualitySelectItem = u.liveUrlList.get(1);
-        if (!TextUtils.isEmpty(qualitySelectItem.rtcLiveUrl) && u.F()) {
+        if (!StringUtils.isEmpty(qualitySelectItem.rtcLiveUrl) && u.F()) {
             encode = Uri.encode(qualitySelectItem.rtcLiveUrl);
             str2 = "rtcLive";
-        } else if (!TextUtils.isEmpty(qualitySelectItem.bfrtcUrl) && u.E()) {
+        } else if (!StringUtils.isEmpty(qualitySelectItem.bfrtcUrl) && u.E()) {
             encode = Uri.encode(qualitySelectItem.bfrtcUrl);
             str2 = "bfrtc";
-        } else if (!TextUtils.isEmpty(qualitySelectItem.artpUrl) && u.D()) {
+        } else if (!StringUtils.isEmpty(qualitySelectItem.artpUrl) && u.D()) {
             encode = Uri.encode(qualitySelectItem.artpUrl);
             str2 = "artp";
         } else {
             encode = Uri.encode(qualitySelectItem.flvUrl);
             str2 = "flv";
         }
-        if (TextUtils.isEmpty(encode) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(encode) || StringUtils.isEmpty(str2)) {
             return str;
         }
         if (str.contains("?")) {
@@ -261,18 +261,18 @@ public class pal implements pny {
             String str16 = map.get("business_id");
             String str17 = map.get("liveShareUrlParams");
             String str18 = map.get(b.LIVE_SHARE_ACTION_INFO_PARAMS);
-            if (TextUtils.isEmpty(str16)) {
+            if (StringUtils.isEmpty(str16)) {
                 str16 = map.get("businessId");
             }
             ShareContent a2 = a(activity, str2, str3, str4, str5, false, str15, null, str16, null);
-            if (!TextUtils.isEmpty(a2.url)) {
-                if (!TextUtils.isEmpty(str17)) {
+            if (!StringUtils.isEmpty(a2.url)) {
+                if (!StringUtils.isEmpty(str17)) {
                     z4 = true;
                     a2.url = a(a2.url, "liveShareUrlParams", str17, true);
                 } else {
                     z4 = true;
                 }
-                if (!TextUtils.isEmpty(str18)) {
+                if (!StringUtils.isEmpty(str18)) {
                     a2.url = a(a2.url, b.LIVE_SHARE_ACTION_INFO_PARAMS, str18, z4);
                 }
             }
@@ -290,8 +290,8 @@ public class pal implements pny {
             }
             String str19 = null;
             if (u.shareUrlDO != null) {
-                String str20 = !TextUtils.isEmpty(u.shareUrlDO.shareCardUrl) ? u.shareUrlDO.shareCardUrl : null;
-                if (!TextUtils.isEmpty(u.shareUrlDO.bgImgUrl)) {
+                String str20 = !StringUtils.isEmpty(u.shareUrlDO.shareCardUrl) ? u.shareUrlDO.shareCardUrl : null;
+                if (!StringUtils.isEmpty(u.shareUrlDO.bgImgUrl)) {
                     str7 = str20;
                     str6 = u.shareUrlDO.bgImgUrl;
                 } else {
@@ -312,17 +312,17 @@ public class pal implements pny {
                 String str24 = map.get("business_id");
                 str10 = ", content.templateId: ";
                 String str25 = map.get("singleTarget");
-                if (TextUtils.isEmpty(str24)) {
+                if (StringUtils.isEmpty(str24)) {
                     str24 = map.get("businessId");
                 }
-                if (!TextUtils.isEmpty(d)) {
-                    if (!TextUtils.isEmpty(str21)) {
+                if (!StringUtils.isEmpty(d)) {
+                    if (!StringUtils.isEmpty(str21)) {
                         z3 = false;
                         d = a(d, aw.PARAM_SJSD_ITEM_ID, str21, false);
                     } else {
                         z3 = false;
                     }
-                    if (!TextUtils.isEmpty(str23)) {
+                    if (!StringUtils.isEmpty(str23)) {
                         d = a(d, "livesource", str23, z3);
                     }
                 }
@@ -347,14 +347,14 @@ public class pal implements pny {
             String str30 = str13;
             String str31 = str10;
             ShareContent a3 = a(activity, str2, str6, str4, str5, false, str11, str7, str19, str14);
-            if (!TextUtils.isEmpty(a3.url)) {
-                if (!TextUtils.isEmpty(str30)) {
+            if (!StringUtils.isEmpty(a3.url)) {
+                if (!StringUtils.isEmpty(str30)) {
                     z2 = true;
                     a3.url = a(a3.url, "liveShareUrlParams", str30, true);
                 } else {
                     z2 = true;
                 }
-                if (!TextUtils.isEmpty(str28)) {
+                if (!StringUtils.isEmpty(str28)) {
                     a3.url = a(a3.url, b.LIVE_SHARE_ACTION_INFO_PARAMS, str28, z2);
                 }
             }
@@ -371,7 +371,7 @@ public class pal implements pny {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d604f12", new Object[]{this, str, str2, str3, new Boolean(z)});
         }
-        if (str == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (str == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             TLog.loge(pnj.LOG_TAG, "TLiveShareAdapter", "[appendValueToUrl] params error,  url: " + str + ", key: " + str2 + ", value: " + str3);
             return str;
         } else if (str.contains("?")) {
@@ -391,7 +391,7 @@ public class pal implements pny {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.contains("cp_origin=")) {
+        if (StringUtils.isEmpty(str) || str.contains("cp_origin=")) {
             return str;
         }
         if (str.contains("?")) {
@@ -453,7 +453,7 @@ public class pal implements pny {
             hashMap2.put("height", psm.c());
             hashMap.put("weexCardSize", hashMap2);
             hashMap.put("shareInfo", a(z, activity.getString(R.string.tb_impl_online_number, new Object[]{String.valueOf(t.a(u))}), u.status == 0 ? "living" : ag.CLICK_REPLAY));
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("singleTarget", str);
             }
         }
@@ -500,13 +500,13 @@ public class pal implements pny {
                 hashMap.put(aw.PARAM_ELEVEN_LIVE_ID, u.topic);
                 hashMap.put("userAvatar", str3);
             } else {
-                hashMap.put("accountAvatar", !TextUtils.isEmpty(u.shareUrlDO.iconUrl) ? u.shareUrlDO.iconUrl : u.broadCaster.headImg);
-                hashMap.put("accountName", !TextUtils.isEmpty(u.shareUrlDO.accountName) ? u.shareUrlDO.accountName : u.broadCaster.accountName);
+                hashMap.put("accountAvatar", !StringUtils.isEmpty(u.shareUrlDO.iconUrl) ? u.shareUrlDO.iconUrl : u.broadCaster.headImg);
+                hashMap.put("accountName", !StringUtils.isEmpty(u.shareUrlDO.accountName) ? u.shareUrlDO.accountName : u.broadCaster.accountName);
                 hashMap.put("accountId", u.broadCaster.accountId);
-                hashMap.put("coverImageSource", !TextUtils.isEmpty(u.shareUrlDO.bgImgUrl) ? u.shareUrlDO.bgImgUrl : u.coverImg);
+                hashMap.put("coverImageSource", !StringUtils.isEmpty(u.shareUrlDO.bgImgUrl) ? u.shareUrlDO.bgImgUrl : u.coverImg);
                 hashMap.put("landscape", z ? "1" : "0");
                 hashMap.put(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID, u.liveId);
-                hashMap.put("liveTitle", !TextUtils.isEmpty(u.shareUrlDO.title) ? u.shareUrlDO.title : u.title);
+                hashMap.put("liveTitle", !StringUtils.isEmpty(u.shareUrlDO.title) ? u.shareUrlDO.title : u.title);
                 hashMap.put("livetype", str2);
                 hashMap.put("userCount", str);
                 hashMap.put("vrType", "" + u.vrType);

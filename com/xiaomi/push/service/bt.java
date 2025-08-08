@@ -1,6 +1,6 @@
 package com.xiaomi.push.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import java.io.ByteArrayOutputStream;
 import java.security.KeyFactory;
@@ -29,7 +29,7 @@ public class bt {
     }
 
     public static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.support.api.push.TransActivity;
 import com.huawei.hms.support.log.HMSLog;
@@ -59,7 +59,7 @@ public class l {
         Bundle bundle = new Bundle();
         String k = mVar.k();
         HMSLog.i("PushSelfShowLog", "the package name of notification is:" + k);
-        if (!TextUtils.isEmpty(k)) {
+        if (!StringUtils.isEmpty(k)) {
             String a2 = d.a(context, k);
             HMSLog.i("PushSelfShowLog", "the app name is:" + a2);
             if (a2 != null) {
@@ -119,7 +119,7 @@ public class l {
 
     private static boolean a(m mVar) {
         if (mVar != null) {
-            return TextUtils.isEmpty(mVar.u()) && TextUtils.isEmpty(mVar.j());
+            return StringUtils.isEmpty(mVar.u()) && StringUtils.isEmpty(mVar.j());
         }
         return true;
     }
@@ -132,7 +132,7 @@ public class l {
         if ("com.huawei.android.pushagent".equals(context.getPackageName())) {
             Bundle bundle = new Bundle();
             String k = mVar.k();
-            if (TextUtils.isEmpty(k)) {
+            if (StringUtils.isEmpty(k)) {
                 return;
             }
             bundle.putString("hw_origin_sender_package_name", k);
@@ -142,7 +142,7 @@ public class l {
 
     private static void b(m mVar, Notification.Builder builder) {
         String t = mVar.t();
-        if (!TextUtils.isEmpty(t)) {
+        if (!StringUtils.isEmpty(t)) {
             builder.setSubText(t);
         }
     }
@@ -172,12 +172,12 @@ public class l {
     private static void d(m mVar, Notification.Builder builder) {
         String u = mVar.u();
         String j = mVar.j();
-        if (TextUtils.isEmpty(j)) {
+        if (StringUtils.isEmpty(j)) {
             builder.setContentText(u);
             return;
         }
         builder.setContentText(j);
-        if (TextUtils.isEmpty(u)) {
+        if (StringUtils.isEmpty(u)) {
             return;
         }
         builder.setContentTitle(u);

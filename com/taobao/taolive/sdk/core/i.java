@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -358,7 +358,7 @@ public class i implements com.taobao.taolive.sdk.core.b, d.a {
             TBLiveDataModel tBLiveDataModel4 = this.e;
             if (tBLiveDataModel4 != null && tBLiveDataModel4.mVideoInfo != null && this.e.mVideoInfo.tbtvLiveDO != null && (obj instanceof TBTVProgramMessage)) {
                 TBTVProgramMessage tBTVProgramMessage = (TBTVProgramMessage) obj;
-                if (TextUtils.equals(this.e.mVideoInfo.liveId, tBTVProgramMessage.liveDO.liveId) || TextUtils.equals(this.e.mVideoInfo.tbtvLiveDO.liveId, tBTVProgramMessage.liveDO.liveId)) {
+                if (StringUtils.equals(this.e.mVideoInfo.liveId, tBTVProgramMessage.liveDO.liveId) || StringUtils.equals(this.e.mVideoInfo.tbtvLiveDO.liveId, tBTVProgramMessage.liveDO.liveId)) {
                     return;
                 }
                 this.e.mVideoInfo.tbtvLiveDO = tBTVProgramMessage.liveDO;
@@ -689,7 +689,7 @@ public class i implements com.taobao.taolive.sdk.core.b, d.a {
             this.d = new com.taobao.taolive.sdk.model.d(1, tBLiveDataModel.mVideoInfo.topic, str4, z2, z, tBLiveDataModel.mVideoInfo.forceCommentsUseCdn, false, this);
         } else {
             poy.e(com.taobao.taolive.sdk.controller.k.a(tBLiveDataModel.mVideoInfo), aVar);
-            this.d = new com.taobao.taolive.sdk.model.k(1, str2, str4, str3, z2, z, tBLiveDataModel.mVideoInfo.forceCommentsUseCdn, false, "1".equals(tBLiveDataModel.mVideoInfo.roomStatus), false, !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchMSGCdnUrl) || (tBLiveDataModel.mVideoInfo.fetchItemUseCdn && u.r() && !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchItemUseCdnUrl)), this);
+            this.d = new com.taobao.taolive.sdk.model.k(1, str2, str4, str3, z2, z, tBLiveDataModel.mVideoInfo.forceCommentsUseCdn, false, "1".equals(tBLiveDataModel.mVideoInfo.roomStatus), false, !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchMSGCdnUrl) || (tBLiveDataModel.mVideoInfo.fetchItemUseCdn && u.r() && !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchItemUseCdnUrl)), this);
             pqi.a().a("Page_TaobaoLiveWatch", "LiveRoomInit", pqi.a().b());
         }
         if (u.aP() && tBLiveDataModel.mVideoInfo.isOfficialType()) {

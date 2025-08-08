@@ -1,6 +1,6 @@
 package com.taobao.alimama.login;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.io.SharedPreferencesUtils;
@@ -103,7 +103,7 @@ public class LoginManager {
                 if (this.f8437a == null) {
                     try {
                         String string = SharedPreferencesUtils.getString(DefaultGetter.PREF_KEY, "");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             this.f8437a = (LoginInfo) JSON.parseObject(string, LoginInfo.class);
                         }
                     } catch (Exception unused) {

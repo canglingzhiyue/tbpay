@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.utils.Global;
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class fku {
         this.d = fky.e(Global.getApplication());
         this.h = fky.i(Global.getApplication());
         this.i = fky.j(Global.getApplication());
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             Collections.addAll(this.e, this.d.split(","));
         }
         this.g = fky.b(Global.getApplication());
@@ -59,11 +59,11 @@ public class fku {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String str2 = "";
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = str2;
         }
         fkw fkwVar = this.f;
-        if (fkwVar != null && !TextUtils.isEmpty(fkwVar.F)) {
+        if (fkwVar != null && !StringUtils.isEmpty(fkwVar.F)) {
             str2 = this.f.F;
         }
         return str + str2;

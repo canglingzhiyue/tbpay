@@ -1,7 +1,7 @@
 package com.taobao.family;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.alibaba.wireless.security.open.dynamicdataencrypt.IDynamicDataEncryptComponent;
@@ -32,10 +32,10 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (this.f17130a != null && !TextUtils.isEmpty(str2)) {
+        if (this.f17130a != null && !StringUtils.isEmpty(str2)) {
             try {
                 String dynamicEncryptDDp = this.f17130a.dynamicEncryptDDp(str2);
-                if (TextUtils.isEmpty(dynamicEncryptDDp)) {
+                if (StringUtils.isEmpty(dynamicEncryptDDp)) {
                     return false;
                 }
                 j.a(str, dynamicEncryptDDp);
@@ -52,7 +52,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         return a(KEY_MEMBERS + str2, str);
@@ -63,7 +63,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return b(KEY_MEMBERS + str);
@@ -78,7 +78,7 @@ public class d {
             return "";
         }
         String a2 = j.a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "";
         }
         try {

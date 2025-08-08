@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -105,7 +105,7 @@ public class ThirdH5PageExitDialog extends AlertDialog {
         if (this.f != null && this.g != null && (textView = this.e) != null) {
             textView.setVisibility(8);
             this.f.setText(LanguageHelper.localizedStringForKey("flybird_thirdwap_tips", getContext().getString(R.string.flybird_thirdwap_tips), new Object[0]));
-            if (TextUtils.isEmpty(this.k)) {
+            if (StringUtils.isEmpty(this.k)) {
                 this.f.setText(LanguageHelper.localizedStringForKey("flybird_thirdwap_text", getContext().getString(R.string.flybird_thirdwap_text), new Object[0]));
                 this.g.setVisibility(8);
             } else {
@@ -134,7 +134,7 @@ public class ThirdH5PageExitDialog extends AlertDialog {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
         } else if (this.d == null) {
         } else {
-            if (!TextUtils.isEmpty(this.f5082a)) {
+            if (!StringUtils.isEmpty(this.f5082a)) {
                 this.d.setVisibility(0);
                 this.d.setText(this.f5082a);
                 return;

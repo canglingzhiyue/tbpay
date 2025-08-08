@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.taolive.sdk.model.common.AccountInfo;
@@ -23,7 +23,7 @@ public class pay implements cgz {
             return;
         }
         String str = accountInfo.accountInfoUrl;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Nav.from(context).toUri(str);

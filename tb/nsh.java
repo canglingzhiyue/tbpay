@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -233,7 +233,7 @@ public class nsh extends ius<Void, TRecyclerView, nsi> implements View.OnTouchLi
         arrayMap.put("q", str);
         com.taobao.search.mmd.util.e.a("Activate_" + activateBean.groupType, (ArrayMap<String, String>) arrayMap);
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(activateBean.suggestRn)) {
+        if (!StringUtils.isEmpty(activateBean.suggestRn)) {
             hashMap.put(k.KEY_SUGGEST_RN, activateBean.suggestRn);
         }
         nse.a(getModel(), getActivity(), str, hashMap, this);
@@ -368,9 +368,9 @@ public class nsh extends ius<Void, TRecyclerView, nsi> implements View.OnTouchLi
             HashMap hashMap = new HashMap();
             hashMap.put("q", string);
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String string2 = jSONObject.getString(str);
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         hashMap.put(str, string2);
                     }
                 }

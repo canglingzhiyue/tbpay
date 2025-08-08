@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.mnn.BaseMnnRunUnit;
 import com.taobao.mrt.e;
@@ -36,19 +36,19 @@ public class msl implements e {
                 String str2 = "";
                 sb.append(str2);
                 String sb2 = sb.toString();
-                if (TextUtils.isEmpty(sb2)) {
+                if (StringUtils.isEmpty(sb2)) {
                     a.c("ResourcePathApi", "taskName  is empty");
                     return null;
                 }
                 if (map.get("fileName") != null) {
                     str2 = map.get("fileName") + str2;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return null;
                 }
                 String g = g.a().g(sb2 + ".local");
                 a.c("ResourcePathApi", "task " + sb2 + " localTaskName: " + g);
-                if (TextUtils.isEmpty(g)) {
+                if (StringUtils.isEmpty(g)) {
                     g = sb2;
                 }
                 MRTTaskDescription b = g.a().b(g);
@@ -62,7 +62,7 @@ public class msl implements e {
                     return null;
                 }
                 String b2 = ((msh) a2.resourceOperation).b(str2);
-                if (TextUtils.isEmpty(b2)) {
+                if (StringUtils.isEmpty(b2)) {
                     a.c("ResourcePathApi", "task " + g + " resource :" + str2 + " not exist");
                     return null;
                 }

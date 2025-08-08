@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aa;
 import java.util.ArrayList;
@@ -99,7 +99,7 @@ public class h {
             return (TppParamFeedInfo) ipChange.ipc$dispatch("e131f514", new Object[]{this, str});
         }
         TppParamFeedInfo tppParamFeedInfo = this.b;
-        if (tppParamFeedInfo != null && TextUtils.equals(str, tppParamFeedInfo.liveId)) {
+        if (tppParamFeedInfo != null && StringUtils.equals(str, tppParamFeedInfo.liveId)) {
             return this.b;
         }
         i b = b(str);

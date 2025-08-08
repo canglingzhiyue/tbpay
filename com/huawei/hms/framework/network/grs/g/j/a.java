@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.g.j;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
 import com.huawei.hms.framework.network.grs.GrsApp;
@@ -27,7 +27,7 @@ public class a {
             }
             String a2 = c.a(GrsApp.getInstance().getBrand("/") + "grs_sdk_server_config.json", context);
             ArrayList arrayList = null;
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return null;
             }
             try {

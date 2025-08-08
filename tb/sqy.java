@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
@@ -66,7 +66,7 @@ public class sqy {
             return ((Boolean) ipChange.ipc$dispatch("265ed169", new Object[]{jSONObject})).booleanValue();
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("ext");
-        return jSONObject2 != null && !jSONObject2.getBooleanValue(e.KEY_IS_FESTIVAL) && !TextUtils.isEmpty(FestivalMgr.a().a("global", "actionBarBackgroundColor"));
+        return jSONObject2 != null && !jSONObject2.getBooleanValue(e.KEY_IS_FESTIVAL) && !StringUtils.isEmpty(FestivalMgr.a().a("global", "actionBarBackgroundColor"));
     }
 
     private static int a(String str, int i) {
@@ -74,7 +74,7 @@ public class sqy {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {

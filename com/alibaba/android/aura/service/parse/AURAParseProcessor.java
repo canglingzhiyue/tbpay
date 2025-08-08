@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.service.parse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.ability.excutor.BaseExecutor;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.datamodel.parse.AURAParseIO;
@@ -158,7 +158,7 @@ public class AURAParseProcessor implements c {
             ard a4 = arc.a();
             a4.a("生成状态树 耗时 = " + (currentTimeMillis2 - currentTimeMillis), arc.a.a().a("AURA/performance").a("start", currentTimeMillis).a("end", currentTimeMillis2).b());
         }
-        if (a2.b().e() == null || TextUtils.isEmpty(a2.b().k())) {
+        if (a2.b().e() == null || StringUtils.isEmpty(a2.b().k())) {
             arc.a().b("AURAParseProcessor", BaseExecutor.EXECUTOR_SUFFIX, "stateTree is empty");
             a(1, "-5000_RENDER_STATE_TREE_EMPTY", "状态树为空，不执行渲染", (HashMap<String, Object>) null);
             return;
@@ -320,7 +320,7 @@ public class AURAParseProcessor implements c {
             return;
         }
         String root = ultronProtocol.getHierarchy().getRoot();
-        if (TextUtils.isEmpty(root)) {
+        if (StringUtils.isEmpty(root)) {
             arc.a().a("AURAParseProcessor", "createStateTree", "protocol[hierarchy.root] is NULL!");
         }
         long currentTimeMillis = System.currentTimeMillis();
@@ -372,9 +372,9 @@ public class AURAParseProcessor implements c {
             a6.a("渲染状态树遍历 耗时 = " + (currentTimeMillis6 - currentTimeMillis5), arc.a.a().a("AURA/performance").a("start", currentTimeMillis5).a(str4, currentTimeMillis6).b());
         }
         String k = bVar.b().k();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             k = str;
-        } else if (TextUtils.isEmpty(k)) {
+        } else if (StringUtils.isEmpty(k)) {
             k = root;
         }
         bVar.b(com.alibaba.android.umf.node.service.parse.state.a.a(k, jSONObject, ultronProtocol, multiTreeNode2, multiTreeNode4, hashMap, null, null));
@@ -463,7 +463,7 @@ public class AURAParseProcessor implements c {
             RenderComponent data = treeNode.data();
             if (data != null) {
                 String str = data.key;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     a(aURAGlobalData, treeNode, aVar.k());
                     AURARenderComponent a2 = a((AURARenderComponent) null, treeNode, l);
                     a(treeNode, a2, l, j);
@@ -479,7 +479,7 @@ public class AURAParseProcessor implements c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bc978465", new Object[]{this, aURAGlobalData, treeNode, str});
-        } else if (TextUtils.isEmpty(str) || !str.equals(treeNode.data().key)) {
+        } else if (StringUtils.isEmpty(str) || !str.equals(treeNode.data().key)) {
         } else {
             aURAGlobalData.update("global_data_render_root", treeNode);
         }
@@ -494,7 +494,7 @@ public class AURAParseProcessor implements c {
         AURARenderComponent aURARenderComponent2 = map.get(str);
         if (aURARenderComponent2 == null) {
             aURARenderComponent2 = bst.a(treeNode, aURARenderComponent);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 map.put(str, aURARenderComponent2);
             }
             if (aURARenderComponent != null) {
@@ -622,7 +622,7 @@ public class AURAParseProcessor implements c {
         if (ipChange instanceof IpChange) {
             return (AURARenderComponent) ipChange.ipc$dispatch("fdc1d212", new Object[]{this, str, aVar, aURAGlobalData});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         AURARenderComponent aURARenderComponent = a(aVar, aURAGlobalData).get(str);
@@ -644,7 +644,7 @@ public class AURAParseProcessor implements c {
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             String string = jSONArray.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 RenderComponent a2 = asr.a(ultronProtocol, string);
                 a(bVar.b().f().get(string), a2);
                 map.put(string, a2);
@@ -673,7 +673,7 @@ public class AURAParseProcessor implements c {
             }
             for (Map.Entry<String, Object> entry : renderComponent2.component.getLocalFields().entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     renderComponent2.component.getFields().put(key, entry.getValue());
                 }
             }
@@ -786,7 +786,7 @@ public class AURAParseProcessor implements c {
             return true;
         }
         String string = jSONObject2.getString("protocolVersion");
-        if (TextUtils.isEmpty(string) || string.compareTo("4.0") < 0) {
+        if (StringUtils.isEmpty(string) || string.compareTo("4.0") < 0) {
             HashMap<String, Object> hashMap = new HashMap<>();
             if (string.compareTo("3.0") == 0) {
                 hashMap.put("NextRPCRemoteResponseJson", jSONObject);
@@ -828,7 +828,7 @@ public class AURAParseProcessor implements c {
             return;
         }
         TreeNode<RenderComponent> parent = treeNode.parent();
-        if (parent == null || (data = parent.data()) == null || (data2 = treeNode.data()) == null || TextUtils.isEmpty(data2.key) || (component = data2.component) == null || component.getFields() == null) {
+        if (parent == null || (data = parent.data()) == null || (data2 = treeNode.data()) == null || StringUtils.isEmpty(data2.key) || (component = data2.component) == null || component.getFields() == null) {
             return;
         }
         Object obj = component.getFields().get("code");

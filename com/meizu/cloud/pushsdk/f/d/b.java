@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.f.d;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushsdk.f.d.a;
 import com.meizu.cloud.pushsdk.notification.model.AppIconSetting;
 
@@ -123,7 +123,7 @@ public class b extends com.meizu.cloud.pushsdk.f.d.a {
         com.meizu.cloud.pushsdk.f.b.c cVar = new com.meizu.cloud.pushsdk.f.b.c();
         cVar.a("en", this.d);
         cVar.a("ti", this.e);
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             str = this.g;
             str2 = "fdId";
         } else {

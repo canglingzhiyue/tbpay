@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.performance.m;
@@ -106,7 +106,7 @@ public class eir {
             return ((Boolean) ipChange.ipc$dispatch("7d253fb5", new Object[]{str, new Long(j)})).booleanValue();
         }
         String e = epo.g().e();
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             return false;
         }
         long a2 = a(str, j);

@@ -2,7 +2,7 @@ package com.taobao.tao.recommend4.recyclerview;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -347,7 +347,7 @@ public class i extends RecyclerView.OnScrollListener {
 
     private boolean a(SectionModel sectionModel) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4ba04289", new Object[]{this, sectionModel})).booleanValue() : (sectionModel == null || sectionModel.getJSONObject("template") == null || !TextUtils.equals("one", com.taobao.homepage.utils.o.b(sectionModel.getJSONObject("template")))) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4ba04289", new Object[]{this, sectionModel})).booleanValue() : (sectionModel == null || sectionModel.getJSONObject("template") == null || !StringUtils.equals("one", com.taobao.homepage.utils.o.b(sectionModel.getJSONObject("template")))) ? false : true;
     }
 
     private ViewPager.OnPageChangeListener e(final ChildRecyclerView childRecyclerView) {

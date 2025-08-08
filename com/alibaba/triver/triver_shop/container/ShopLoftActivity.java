@@ -14,7 +14,7 @@ import android.support.constraint.Guideline;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.cache.d;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -299,7 +299,7 @@ public class ShopLoftActivity extends FragmentActivity implements View.OnClickLi
             } else if (intent == null || ShopLoftActivity.this.isFinishing() || !ShopLoftActivity.KEY_SHOP_LOFT_BROADCAST_EVENT.equals(intent.getAction())) {
             } else {
                 String stringExtra = intent.getStringExtra("event");
-                if (TextUtils.isEmpty(stringExtra)) {
+                if (StringUtils.isEmpty(stringExtra)) {
                     return;
                 }
                 if (b.c.EVENT_ON_HIDE_BAR.equals(stringExtra)) {
@@ -773,7 +773,7 @@ public class ShopLoftActivity extends FragmentActivity implements View.OnClickLi
         String a2 = com.alibaba.triver.triver_shop.newShop.ext.b.a(this, "shopLoftActivity", str);
         long b = com.alibaba.triver.triver_shop.newShop.ext.b.b(a2);
         long currentTimeMillis = System.currentTimeMillis();
-        if (!TextUtils.isEmpty(a2) && currentTimeMillis - b < d.DEFAULT_MAX_AGE) {
+        if (!StringUtils.isEmpty(a2) && currentTimeMillis - b < d.DEFAULT_MAX_AGE) {
             z = false;
         }
         if (z) {

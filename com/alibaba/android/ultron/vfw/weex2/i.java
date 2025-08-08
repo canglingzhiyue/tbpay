@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.vfw.weex2;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -27,7 +27,7 @@ public final class i {
         } else if (frameLayout == null || iDMComponent == null || (fields = iDMComponent.getFields()) == null || !fields.containsKey("config")) {
         } else {
             String string = fields.getJSONObject("config").getString("downgradeStrategy");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "invisible";
             }
             int hashCode = string.hashCode();
@@ -88,7 +88,7 @@ public final class i {
             return null;
         }
         JSONObject fields = iDMComponent.getFields();
-        if (fields != null && !TextUtils.isEmpty(fields.getString("url"))) {
+        if (fields != null && !StringUtils.isEmpty(fields.getString("url"))) {
             return fields.getString("url");
         }
         JSONObject containerInfo = iDMComponent.getContainerInfo();

@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import com.ali.user.open.core.util.ParamsConstants;
@@ -197,7 +197,7 @@ public class BroadcastManager {
 
         private boolean a(String str) {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !TextUtils.equals(str, FestivalMgr.SKIN_CHANGE_REASON_CONFIG_CHANGE) || !FestivalMgr.a().f();
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !StringUtils.equals(str, FestivalMgr.SKIN_CHANGE_REASON_CONFIG_CHANGE) || !FestivalMgr.a().f();
         }
     }
 
@@ -235,7 +235,7 @@ public class BroadcastManager {
                 return;
             }
             HomeLocationResult homeLocationResult = null;
-            if (TextUtils.equals(action, "EDITON_SWITCHER_EDITTION_CODE_CHANGED") && !n.n().j()) {
+            if (StringUtils.equals(action, "EDITON_SWITCHER_EDITTION_CODE_CHANGED") && !n.n().j()) {
                 i.b((String) null);
                 alj.a().b("homepage", i.a());
                 ksp.a("BroadcastManager", "AreaChangeReceiver homepage " + i.a());
@@ -247,7 +247,7 @@ public class BroadcastManager {
                 ChangeContainerProcess.a().a(ChangeContainerProcess.ChangeContainerType.edition);
                 oql.a().g();
                 e.a(lboVar.a().getCurActivity());
-            } else if (TextUtils.equals(action, b.ACTION_LOCATION_CHANGED) && !n.n().j()) {
+            } else if (StringUtils.equals(action, b.ACTION_LOCATION_CHANGED) && !n.n().j()) {
                 if (com.alibaba.ability.localization.b.c()) {
                     return;
                 }
@@ -256,9 +256,9 @@ public class BroadcastManager {
                     homeLocationResult = (HomeLocationResult) serializableExtra;
                 }
                 g.a(lboVar.a(), 0, homeLocationResult);
-            } else if (TextUtils.equals(action, "com.taobao.social.family.add")) {
+            } else if (StringUtils.equals(action, "com.taobao.social.family.add")) {
                 a.a(context, b.REFRESH_SOURCE_OLD_USER_BIND);
-            } else if (!TextUtils.equals(action, b.ACTION_LOCATION_RECEIVE) || n.n().j()) {
+            } else if (!StringUtils.equals(action, b.ACTION_LOCATION_RECEIVE) || n.n().j()) {
             } else {
                 kxf.a().c(50018);
             }
@@ -272,7 +272,7 @@ public class BroadcastManager {
                 return;
             }
             String str = l.b(context).hngCookie;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             String replace = str.replace("|", "%7C");
@@ -344,7 +344,7 @@ public class BroadcastManager {
             } else if (n.n().j() || (lboVar = this.f17314a.get()) == null || lboVar.a().getCurActivity() == null) {
             } else {
                 String stringExtra = intent.getStringExtra("TaoOptionKey");
-                if (TextUtils.isEmpty(stringExtra)) {
+                if (StringUtils.isEmpty(stringExtra)) {
                     return;
                 }
                 String stringExtra2 = intent.getStringExtra(stringExtra);

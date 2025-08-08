@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.text.Html;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -153,13 +153,13 @@ public class AddonDialogFragment extends DialogFragment implements View.OnClickL
             if (getActivity() == null || (addonModel2 = this.mAddonModel) == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(addonModel2.thresholdText)) {
+            if (!StringUtils.isEmpty(addonModel2.thresholdText)) {
                 this.mTvThreshold.setText(Html.fromHtml(this.mAddonModel.thresholdText));
             }
-            if (!TextUtils.isEmpty(this.mAddonModel.promotionText)) {
+            if (!StringUtils.isEmpty(this.mAddonModel.promotionText)) {
                 this.mTvPromotion.setText(Html.fromHtml(this.mAddonModel.promotionText));
             }
-            if (!TextUtils.isEmpty(this.mAddonModel.logo)) {
+            if (!StringUtils.isEmpty(this.mAddonModel.logo)) {
                 f.a(getContext()).a(this.mTvClose, this.mAddonModel.logo);
             }
             if (this.mAddonModel.items == null) {
@@ -189,10 +189,10 @@ public class AddonDialogFragment extends DialogFragment implements View.OnClickL
                     if (next.maskColor != null) {
                         this.mMaskMore.setBackgroundColor(b.a(next.maskColor));
                     }
-                    if (!TextUtils.isEmpty(next.text)) {
+                    if (!StringUtils.isEmpty(next.text)) {
                         this.mTvItemMore.setText(next.text);
                     }
-                    if (!TextUtils.isEmpty(next.subImage)) {
+                    if (!StringUtils.isEmpty(next.subImage)) {
                         f.a(getContext()).a(this.mIvMoreSpot, next.subImage);
                     }
                 }

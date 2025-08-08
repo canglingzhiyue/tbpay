@@ -14,7 +14,7 @@ import android.os.Looper;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -301,7 +301,7 @@ public class oec {
         }
         if (c == null) {
             String i = i();
-            if (TextUtils.equals(i, "x86") || TextUtils.equals(i, "x86_64")) {
+            if (StringUtils.equals(i, "x86") || StringUtils.equals(i, "x86_64")) {
                 z = true;
             }
             c = Boolean.valueOf(z);
@@ -512,7 +512,7 @@ public class oec {
         } else {
             valueOf = String.valueOf(obj);
         }
-        if (!TextUtils.isEmpty(valueOf) && !valueOf.equals("null")) {
+        if (!StringUtils.isEmpty(valueOf) && !valueOf.equals("null")) {
             return valueOf;
         }
         return null;
@@ -897,7 +897,7 @@ public class oec {
 
     public static String c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.replaceAll("^((?i)https:)?//", k.HTTP_PREFIX);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.replaceAll("^((?i)https:)?//", k.HTTP_PREFIX);
     }
 
     public static String d(String str) {
@@ -905,7 +905,7 @@ public class oec {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int e2 = e(str);
@@ -921,7 +921,7 @@ public class oec {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (indexOf = str.indexOf("?")) != -1 && indexOf < str.length() - 1) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (indexOf = str.indexOf("?")) != -1 && indexOf < str.length() - 1) {
             for (String str3 : str.substring(indexOf + 1).split("&")) {
                 String[] split = str3.split("=");
                 if (split.length == 2 && str2.equals(split[0])) {
@@ -1046,7 +1046,7 @@ public class oec {
         if (ipChange instanceof IpChange) {
             return (Rect) ipChange.ipc$dispatch("dc189b01", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new Rect();
         }
         String[] split = str.split(",");
@@ -1191,11 +1191,11 @@ public class oec {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("e52e6d20", new Object[]{uri, str});
         }
-        if (TextUtils.isEmpty(str) || uri == null) {
+        if (StringUtils.isEmpty(str) || uri == null) {
             return uri;
         }
         String encodedQuery = uri.getEncodedQuery();
-        if (!TextUtils.isEmpty(encodedQuery)) {
+        if (!StringUtils.isEmpty(encodedQuery)) {
             str = str + "?" + encodedQuery;
         }
         return Uri.parse(str);
@@ -1208,7 +1208,7 @@ public class oec {
 
     public static boolean i(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || "''".equals(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || "''".equals(str);
     }
 
     public static boolean a(Object obj, Object obj2) {
@@ -1231,7 +1231,7 @@ public class oec {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("34f906bc", new Object[]{aaVar, new Boolean(z), str, str2, drawable});
         } else if (z) {
-            if (TextUtils.isEmpty(a(aaVar.e("onloadsuccess"), (String) null))) {
+            if (StringUtils.isEmpty(a(aaVar.e("onloadsuccess"), (String) null))) {
                 return;
             }
             HashMap hashMap = new HashMap();
@@ -1242,7 +1242,7 @@ public class oec {
                 hashMap.put("height", Integer.valueOf(drawable.getIntrinsicHeight()));
             }
             aaVar.k().b(0, aaVar, "onloadsuccess", null, hashMap, null);
-        } else if (TextUtils.isEmpty(a(aaVar.e("onloadfail"), (String) null))) {
+        } else if (StringUtils.isEmpty(a(aaVar.e("onloadfail"), (String) null))) {
         } else {
             HashMap hashMap2 = new HashMap();
             hashMap2.put("url", str);
@@ -1371,7 +1371,7 @@ public class oec {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[0])).booleanValue();
         }
-        return TextUtils.equals(acg.a().getString(acg.a().getResources().getIdentifier("ttid", "string", "com.taobao.taobao")), "212200");
+        return StringUtils.equals(acg.a().getString(acg.a().getResources().getIdentifier("ttid", "string", "com.taobao.taobao")), "212200");
     }
 
     public static String d(Context context) {
@@ -1402,7 +1402,7 @@ public class oec {
             try {
                 ActivityManager activityManager = (ActivityManager) context.getSystemService("activity");
                 if (activityManager != null && (runningTasks = activityManager.getRunningTasks(1)) != null && runningTasks.get(0) != null && runningTasks.get(0).topActivity != null) {
-                    return TextUtils.equals(runningTasks.get(0).topActivity.getPackageName(), context.getPackageName());
+                    return StringUtils.equals(runningTasks.get(0).topActivity.getPackageName(), context.getPackageName());
                 }
             } catch (Exception unused) {
             }

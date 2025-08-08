@@ -3,7 +3,7 @@ package com.huawei.hms.update.note;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.huawei.hms.activity.IBridgeActivityDelegate;
 import com.huawei.hms.adapter.sysobs.SystemManager;
@@ -54,7 +54,7 @@ public class AppSpoofResolution implements IBridgeActivityDelegate {
         @Override // com.huawei.hms.ui.AbstractDialog
         public String onGetMessageString(Context context) {
             String applicationName = new PackageManagerHelper(context).getApplicationName("com.huawei.hwid");
-            if (TextUtils.isEmpty(applicationName)) {
+            if (StringUtils.isEmpty(applicationName)) {
                 applicationName = "com.huawei.hwid";
             }
             if (ResourceLoaderUtil.getmContext() == null) {

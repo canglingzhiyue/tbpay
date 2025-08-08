@@ -10,7 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.KeyEvent;
@@ -215,7 +215,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
         if (this.mWeex2Instance != null) {
             destroyWeex2Instance();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             jqg.a(FRAGMENT_TAG, "setWeex2InstanceByPreRender:", "instanceId is empty");
             this.mWeex2Instance = null;
             return;
@@ -337,7 +337,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("18d6042c", new Object[]{this});
-        } else if (this.mRootView == null || TextUtils.isEmpty(this.mWeex2Url) || !TextUtils.equals(adh.a(this.mWeex2Url, "pageType"), "pop") || (findViewById = this.mRootView.findViewById(R.id.dialog_fragment_layout_container)) == null) {
+        } else if (this.mRootView == null || StringUtils.isEmpty(this.mWeex2Url) || !StringUtils.equals(adh.a(this.mWeex2Url, "pageType"), "pop") || (findViewById = this.mRootView.findViewById(R.id.dialog_fragment_layout_container)) == null) {
         } else {
             findViewById.setBackgroundColor(Color.parseColor("#00000000"));
         }
@@ -347,7 +347,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3e6736b0", new Object[]{this});
-        } else if (this.mRootView == null || TextUtils.isEmpty(this.mWeex2Url)) {
+        } else if (this.mRootView == null || StringUtils.isEmpty(this.mWeex2Url)) {
         } else {
             if (!com.alibaba.android.ultron.vfw.weex2.highPerformance.model.a.a(this.mWeex2Url, cts.a.PRE_RENDER_URL_ORDER_DETAIL) || !spk.a(iro.ORANGE_KEY_ORDER_DETAIL, "setDarkStatusBar", true)) {
                 jqg.a(FRAGMENT_TAG, "setDarkStatusBar:", "switcher is off: " + this.mWeex2Url);
@@ -412,7 +412,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
         UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(getActivity());
         UTTracker defaultTracker = UTAnalytics.getInstance().getDefaultTracker();
         FragmentActivity activity = getActivity();
-        if (!TextUtils.isEmpty(this.mContainerBizName)) {
+        if (!StringUtils.isEmpty(this.mContainerBizName)) {
             str2 = this.mContainerBizName;
         }
         defaultTracker.updatePageName(activity, str2);
@@ -464,7 +464,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
         }
         if (!isSkipFragmentContainerUt()) {
             UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(getActivity());
-            UTAnalytics.getInstance().getDefaultTracker().updatePageName(getActivity(), TextUtils.isEmpty(this.mBizName) ? "" : this.mBizName);
+            UTAnalytics.getInstance().getDefaultTracker().updatePageName(getActivity(), StringUtils.isEmpty(this.mBizName) ? "" : this.mBizName);
         }
         com.alibaba.android.ultron.vfw.weex2.highPerformance.widget.a aVar = this.mFragmentLifeCycleListener;
         if (aVar == null) {
@@ -983,10 +983,10 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
             Context context = getContext();
             if (context == null) {
                 UnifyLog.d("UltronWeex2DialogFragment.rebuildInstanceByPreRender", "context is null");
-            } else if (TextUtils.isEmpty(this.mWeex2Url)) {
+            } else if (StringUtils.isEmpty(this.mWeex2Url)) {
                 UnifyLog.d("UltronWeex2DialogFragment.rebuildInstanceByPreRender", "mWeex2Url is empty");
             } else {
-                boolean equals = TextUtils.equals("true", adh.a(this.mWeex2Url, cts.a.QUERY_ASYNC_CREATE_INSTANCE));
+                boolean equals = StringUtils.equals("true", adh.a(this.mWeex2Url, cts.a.QUERY_ASYNC_CREATE_INSTANCE));
                 DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
                 int i2 = this.mExpectWidth;
                 if (i2 <= 0) {
@@ -998,20 +998,20 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
                 String str = "default";
                 if (com.alibaba.android.ultron.vfw.weex2.highPerformance.model.a.a(this.mWeex2Url, cts.a.PRE_RENDER_URL_LOGISTICS)) {
                     f a3 = f.a();
-                    if (!TextUtils.isEmpty(this.mBizName)) {
+                    if (!StringUtils.isEmpty(this.mBizName)) {
                         str = this.mBizName;
                     }
                     setWeex2InstanceByPreRender(a3.a(context, str, this.mWeex2Url, i3, i5));
                 } else if (!equals) {
                     if (iro.b()) {
                         f a4 = f.a();
-                        if (!TextUtils.isEmpty(this.mBizName)) {
+                        if (!StringUtils.isEmpty(this.mBizName)) {
                             str = this.mBizName;
                         }
                         a2 = a4.a(context, str, this.mWeex2Url, UltronTradeHybridInstanceRenderMode.SURFACE, i3, i5);
                     } else {
                         f a5 = f.a();
-                        if (!TextUtils.isEmpty(this.mBizName)) {
+                        if (!StringUtils.isEmpty(this.mBizName)) {
                             str = this.mBizName;
                         }
                         a2 = a5.a(context, str, this.mWeex2Url, UltronTradeHybridInstanceRenderMode.TEXTURE, i3, i5);
@@ -1028,7 +1028,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
                         i = i5;
                     }
                     a.C0105a c0105a = new a.C0105a();
-                    if (!TextUtils.isEmpty(this.mBizName)) {
+                    if (!StringUtils.isEmpty(this.mBizName)) {
                         str = this.mBizName;
                     }
                     f.a().a(context, i3, i, c0105a.a(str).b(this.mWeex2Url).g(iro.b() ? UltronTradeHybridInstanceRenderMode.SURFACE : UltronTradeHybridInstanceRenderMode.TEXTURE).a(), (CopyOnWriteArrayList<Pair<com.alibaba.android.ultron.vfw.weex2.highPerformance.model.a, Object>>) null, new f.a() { // from class: com.alibaba.android.ultron.vfw.weex2.UltronWeex2DialogFragment.2
@@ -1039,7 +1039,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
                             IpChange ipChange2 = $ipChange;
                             if (ipChange2 instanceof IpChange) {
                                 ipChange2.ipc$dispatch("84edcb9b", new Object[]{this, str2, pVar});
-                            } else if (TextUtils.isEmpty(str2) || pVar == null) {
+                            } else if (StringUtils.isEmpty(str2) || pVar == null) {
                                 jqg.a(UltronWeex2DialogFragment.FRAGMENT_TAG, "onInstanceCreatedInMain", "callback is invalid");
                             } else {
                                 UltronWeex2DialogFragment.this.setWeex2InstanceByPreRender(pVar);
@@ -1097,7 +1097,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
             ipChange.ipc$dispatch("d3ae0eb0", new Object[]{this});
         } else if (this.mWeex2Instance == null) {
             UnifyLog.d("UltronWeex2DialogFragment.setupWeex2GestureListener", "mWeex2Instance is null");
-        } else if (!TextUtils.equals(adh.a(this.mWeex2Url, com.taobao.android.detail.wrapper.nav.c.STDPOP_NAV_MODE), com.taobao.android.detail.wrapper.nav.c.STDPOP_MODE_VALUE)) {
+        } else if (!StringUtils.equals(adh.a(this.mWeex2Url, com.taobao.android.detail.wrapper.nav.c.STDPOP_NAV_MODE), com.taobao.android.detail.wrapper.nav.c.STDPOP_MODE_VALUE)) {
             UnifyLog.a("UltronWeex2DialogFragment.setupWeex2GestureListener", "only under std_mega_pop mode can setup gesture intercept");
         } else {
             this.mWeex2Instance.setGestureEventListener(new jvq() { // from class: com.alibaba.android.ultron.vfw.weex2.UltronWeex2DialogFragment.3
@@ -1154,7 +1154,7 @@ public class UltronWeex2DialogFragment extends DialogFragment implements c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fb194f12", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.equals(adh.a(this.mWeex2Url, "skipTradeHybridContainerUt"), "true")) {
+        if (StringUtils.equals(adh.a(this.mWeex2Url, "skipTradeHybridContainerUt"), "true")) {
             return true;
         }
         return (!(getActivity() instanceof UltronTradeHybridActivity) || !((UltronTradeHybridActivity) getActivity()).c()) && !isFragmentEmbedded();

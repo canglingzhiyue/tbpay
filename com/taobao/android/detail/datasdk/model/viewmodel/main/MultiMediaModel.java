@@ -1,7 +1,7 @@
 package com.taobao.android.detail.datasdk.model.viewmodel.main;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.event.video.GallerySourceType;
@@ -200,9 +200,9 @@ public class MultiMediaModel extends b implements SubItemModel {
             Iterator<SkuBaseNode.SkuPropertyValue> it = skuProperty.values.iterator();
             while (it.hasNext()) {
                 SkuBaseNode.SkuPropertyValue next = it.next();
-                if (!TextUtils.isEmpty(next.image)) {
+                if (!StringUtils.isEmpty(next.image)) {
                     String str = next.image;
-                    String str2 = TextUtils.isEmpty(next.alias) ? next.name : next.alias;
+                    String str2 = StringUtils.isEmpty(next.alias) ? next.name : next.alias;
                     NormalImageModel normalImageModel = new NormalImageModel();
                     normalImageModel.imageUrl = str;
                     normalImageModel.skuBottomText = str2;

@@ -5,7 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
@@ -75,7 +75,7 @@ public class c {
         Calendar calendar3 = Calendar.getInstance(Locale.getDefault());
         calendar2.set(1900, 0, 1);
         calendar3.set(2100, 11, 31);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             if (datePicker.getMaxDate() >= a(str3).getTime()) {
                 datePicker.setMinDate(a(str3).getTime());
             } else {
@@ -83,7 +83,7 @@ public class c {
                 datePicker.setMaxDate(calendar3.getTimeInMillis());
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if (datePicker.getMinDate() <= a(str2).getTime()) {
                 datePicker.setMaxDate(a(str2).getTime());
             } else {
@@ -204,7 +204,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9741d584", new Object[]{alertDialog, new Integer(i), charSequence});
-        } else if (TextUtils.isEmpty(charSequence) || "null".equals(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence) || "null".equals(charSequence)) {
         } else {
             try {
                 if (alertDialog.getWindow() == null) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -144,7 +144,7 @@ public abstract class epf extends b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("13e5e549", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.u) && this.dmComponent != null) {
+        if (StringUtils.isEmpty(this.u) && this.dmComponent != null) {
             return super.getType();
         }
         return this.u;
@@ -164,7 +164,7 @@ public abstract class epf extends b {
             return null;
         }
         JSONObject jSONObject = this.component.mapping.getJSONObject("componentTitle");
-        if (TextUtils.isEmpty(jSONObject.getString("text"))) {
+        if (StringUtils.isEmpty(jSONObject.getString("text"))) {
             return null;
         }
         eph ephVar = new eph(this.component);

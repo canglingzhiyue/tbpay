@@ -2,7 +2,7 @@ package com.taobao.message.sp.category;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -131,7 +131,7 @@ public class SimpleMessageTabLoadMonitorPlugin extends PageLoadPlugin {
             return;
         }
         super.onSourceEnd(sourceItem, action);
-        if ("treeSource".equals(sourceItem.name) && TextUtils.equals(action.getName(), StdActions.UPDATE_ORIGINAL_DATA) && (action.getData() instanceof TreeQueryResult)) {
+        if ("treeSource".equals(sourceItem.name) && StringUtils.equals(action.getName(), StdActions.UPDATE_ORIGINAL_DATA) && (action.getData() instanceof TreeQueryResult)) {
             TreeQueryResult treeQueryResult = (TreeQueryResult) action.getData();
             if (this.firstSize < 0 && treeQueryResult.list != null) {
                 this.firstSize = treeQueryResult.list.size();
@@ -165,7 +165,7 @@ public class SimpleMessageTabLoadMonitorPlugin extends PageLoadPlugin {
             AbsListWidgetInstance.SectionAdapter sectionAdapter = (AbsListWidgetInstance.SectionAdapter) tRecyclerView.getRawAdapter();
             for (int i = 0; i < tRecyclerView.getItemCount(); i++) {
                 ViewObject findViewObject = sectionAdapter.findViewObject(i);
-                if (findViewObject != null && findViewObject.info != null && findViewObject.info.renderTemplate != null && TextUtils.equals(findViewObject.info.renderTemplate.name, "widget.message.common.itemwrapper")) {
+                if (findViewObject != null && findViewObject.info != null && findViewObject.info.renderTemplate != null && StringUtils.equals(findViewObject.info.renderTemplate.name, "widget.message.common.itemwrapper")) {
                     return true;
                 }
             }

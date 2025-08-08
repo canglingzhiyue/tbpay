@@ -120,7 +120,7 @@ public class TokenGenerator {
             java.lang.String r0 = "rpk"
             r2 = r24
             java.lang.String r0 = com.mobile.auth.gatewayauth.utils.O0000o00.O000000o(r2, r0)     // Catch: java.lang.Throwable -> L7e
-            boolean r1 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L7e
+            boolean r1 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L7e
             if (r1 != 0) goto L28
             r11 = r0
             r0 = 1

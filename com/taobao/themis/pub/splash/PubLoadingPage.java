@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -128,7 +128,7 @@ public final class PubLoadingPage extends RelativeLayout implements com.taobao.t
         this.mProgressView = progressView;
         View findViewById3 = findViewById(R.id.appName);
         TextView textView = (TextView) findViewById3;
-        if (!TextUtils.isEmpty(this.mName)) {
+        if (!StringUtils.isEmpty(this.mName)) {
             q.b(textView, "this");
             textView.setText(this.mName);
         }
@@ -138,7 +138,7 @@ public final class PubLoadingPage extends RelativeLayout implements com.taobao.t
         View findViewById4 = findViewById(R.id.appLogo);
         TUrlImageView tUrlImageView = (TUrlImageView) findViewById4;
         tUrlImageView.addFeature(new RoundFeature());
-        if (!TextUtils.isEmpty(this.mLogo)) {
+        if (!StringUtils.isEmpty(this.mLogo)) {
             q.b(tUrlImageView, "this");
             String str = this.mLogo;
             q.a((Object) str);
@@ -168,7 +168,7 @@ public final class PubLoadingPage extends RelativeLayout implements com.taobao.t
         this.mProgressView = progressView;
         View findViewById3 = findViewById(R.id.appName);
         TextView textView = (TextView) findViewById3;
-        if (!TextUtils.isEmpty(this.mName)) {
+        if (!StringUtils.isEmpty(this.mName)) {
             q.b(textView, "this");
             textView.setText(this.mName);
         }
@@ -178,7 +178,7 @@ public final class PubLoadingPage extends RelativeLayout implements com.taobao.t
         View findViewById4 = findViewById(R.id.appLogo);
         TUrlImageView tUrlImageView = (TUrlImageView) findViewById4;
         tUrlImageView.addFeature(new RoundFeature());
-        if (!TextUtils.isEmpty(this.mLogo)) {
+        if (!StringUtils.isEmpty(this.mLogo)) {
             q.b(tUrlImageView, "this");
             String str = this.mLogo;
             q.a((Object) str);
@@ -208,7 +208,7 @@ public final class PubLoadingPage extends RelativeLayout implements com.taobao.t
         this.mProgressView = progressView;
         View findViewById3 = findViewById(R.id.appName);
         TextView textView = (TextView) findViewById3;
-        if (!TextUtils.isEmpty(this.mName)) {
+        if (!StringUtils.isEmpty(this.mName)) {
             q.b(textView, "this");
             textView.setText(this.mName);
         }
@@ -218,7 +218,7 @@ public final class PubLoadingPage extends RelativeLayout implements com.taobao.t
         View findViewById4 = findViewById(R.id.appLogo);
         TUrlImageView tUrlImageView = (TUrlImageView) findViewById4;
         tUrlImageView.addFeature(new RoundFeature());
-        if (!TextUtils.isEmpty(this.mLogo)) {
+        if (!StringUtils.isEmpty(this.mLogo)) {
             q.b(tUrlImageView, "this");
             String str = this.mLogo;
             q.a((Object) str);
@@ -237,7 +237,7 @@ public final class PubLoadingPage extends RelativeLayout implements com.taobao.t
             return;
         }
         q.d(logo, "logo");
-        if (TextUtils.equals(logo, this.mLogo)) {
+        if (StringUtils.equals(logo, this.mLogo)) {
             return;
         }
         setImage(this.mImageView, logo);

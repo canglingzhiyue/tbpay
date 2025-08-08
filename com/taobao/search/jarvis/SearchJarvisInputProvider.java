@@ -1,6 +1,6 @@
 package com.taobao.search.jarvis;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.cell.BaseCellBean;
@@ -93,7 +93,7 @@ public final class SearchJarvisInputProvider implements jyc {
                 hashMap2.put("pv_pos", String.valueOf(baseCellBean.pagePos));
                 hashMap2.put("pv_size", Integer.valueOf(baseCellBean.pageSize));
                 hashMap2.put("page", String.valueOf(baseCellBean.pageNo));
-                if (!TextUtils.isEmpty(baseCellBean.itemId)) {
+                if (!StringUtils.isEmpty(baseCellBean.itemId)) {
                     hashMap2.put("trigger_item_id", baseCellBean.itemId);
                 }
             }

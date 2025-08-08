@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridInstanceRenderMode;
@@ -58,7 +58,7 @@ public class nap extends nah {
             return;
         }
         this.b = intent.getData().toString();
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             Toast.makeText(this.f31357a.b(), "url 链接为空！", 0).show();
             b();
             return;
@@ -126,7 +126,7 @@ public class nap extends nah {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b = str;
             this.f31357a.a(d(), false, "");
@@ -137,7 +137,7 @@ public class nap extends nah {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Intent intent = new Intent(this.f31357a.b(), TMGCashierActivity.class);
             intent.setData(Uri.parse(str));
@@ -154,7 +154,7 @@ public class nap extends nah {
         }
         JSONObject jSONObject = new JSONObject(str);
         String string = jSONObject.isNull("url") ? null : jSONObject.getString("url");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.b = string;
         }
         this.f31357a.a(d(), true, jSONObject.has("currentUrl") ? jSONObject.getString("currentUrl") : "");

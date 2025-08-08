@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.android.cachecleaner.autoclear.biz.ConfigCenter;
@@ -103,7 +103,7 @@ public abstract class duz {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3a5a7a96", new Object[]{this, bizVerConditionData})).booleanValue();
         }
-        if (bizVerConditionData != null && !TextUtils.isEmpty(bizVerConditionData.checkKey)) {
+        if (bizVerConditionData != null && !StringUtils.isEmpty(bizVerConditionData.checkKey)) {
             return this.b.getSharedPreferences("biz_clear_executed_sp", 0).getBoolean(bizVerConditionData.checkKey, false);
         }
         return false;
@@ -113,7 +113,7 @@ public abstract class duz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3b28f913", new Object[]{this, bizVerConditionData});
-        } else if (bizVerConditionData == null || TextUtils.isEmpty(bizVerConditionData.checkKey)) {
+        } else if (bizVerConditionData == null || StringUtils.isEmpty(bizVerConditionData.checkKey)) {
         } else {
             SharedPreferences.Editor edit = this.b.getSharedPreferences("biz_clear_executed_sp", 0).edit();
             edit.putBoolean(bizVerConditionData.checkKey, true);

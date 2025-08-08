@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.os.CountDownTimer;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -279,7 +279,7 @@ public class ListItemPopView extends nlf implements d {
             });
             String string = jSONObject.getString("benefitIcon");
             String string2 = jSONObject.getString("benefitTitle");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 ((LinearLayout) this.h.findViewById(R.id.recommend_pop_list_red_package_layout)).setVisibility(0);
                 ((TUrlImageView) this.h.findViewById(R.id.recommend_pop_list_red_package_img)).setImageUrl(string);
                 ((TextView) this.h.findViewById(R.id.recommend_pop_list_red_package_txt)).setText(string2);
@@ -386,7 +386,7 @@ public class ListItemPopView extends nlf implements d {
             str = (String) aVar.f32947a[2];
         }
         for (ListItemInfo listItemInfo : this.i) {
-            if (TextUtils.equals(str2, listItemInfo.itemId) || (listItemInfo.card != null && TextUtils.equals(str, listItemInfo.card.getString("detailUrl")))) {
+            if (StringUtils.equals(str2, listItemInfo.itemId) || (listItemInfo.card != null && StringUtils.equals(str, listItemInfo.card.getString("detailUrl")))) {
                 return listItemInfo;
             }
         }

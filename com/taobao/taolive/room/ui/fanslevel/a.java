@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.ui.fanslevel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.infoflow.multitab.e;
 import com.taobao.taolive.room.business.fanslevel.GetFansLevelDetailData;
@@ -107,7 +107,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (this.h != null && !TextUtils.isEmpty(str) && (map = this.h.get(str)) != null) {
+        if (this.h != null && !StringUtils.isEmpty(str) && (map = this.h.get(str)) != null) {
             return map.get(e.KEY_BG_COLOR);
         }
         return null;

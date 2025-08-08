@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.DataCallback;
@@ -48,7 +48,7 @@ public class b {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                    } else if (!TextUtils.isEmpty(str)) {
+                    } else if (!StringUtils.isEmpty(str)) {
                         new CoordinatorWrapper().execute(new AsyncTask<Object, Void, Boolean>() { // from class: com.taobao.android.sns4android.alipay2.b.1.1
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 

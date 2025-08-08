@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.preload.g;
@@ -41,7 +41,7 @@ public class fjx {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
         fkt.a();
-        if (!fkt.au || TextUtils.isEmpty(str2)) {
+        if (!fkt.au || StringUtils.isEmpty(str2)) {
             return str;
         }
         return str2 + "_" + str;
@@ -50,7 +50,7 @@ public class fjx {
     public static String a(String str) {
         Uri parse;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (!TextUtils.isEmpty(str) && (parse = Uri.parse(str)) != null) ? parse.getQueryParameter("newDetailChannel") : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (!StringUtils.isEmpty(str) && (parse = Uri.parse(str)) != null) ? parse.getQueryParameter("newDetailChannel") : "";
     }
 
     public static String a(Uri uri) {
@@ -77,6 +77,6 @@ public class fjx {
             return str;
         }
         String str2 = map.get(str);
-        return TextUtils.isEmpty(str2) ? str : str2;
+        return StringUtils.isEmpty(str2) ? str : str2;
     }
 }

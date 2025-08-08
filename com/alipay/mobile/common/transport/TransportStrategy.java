@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.netsdkextdependapi.configservice.NwConfigServiceUtil;
@@ -195,7 +195,7 @@ public class TransportStrategy {
 
     public static final boolean isEnabledRpcV2() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8cda4655", new Object[0])).booleanValue() : TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPCV2_SWITCH), "T");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8cda4655", new Object[0])).booleanValue() : StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPCV2_SWITCH), "T");
     }
 
     public static boolean isAlipayUrl(String str) {
@@ -203,7 +203,7 @@ public class TransportStrategy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8846b510", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return isAlipayHost(new URL(str).getHost());
         }
         return false;
@@ -211,7 +211,7 @@ public class TransportStrategy {
 
     public static final boolean isAlipayHost(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("30c94971", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.contains("alipay");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("30c94971", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.contains("alipay");
     }
 
     public static final boolean checkCanUseExtTransportByURL(URL url, Context context) {
@@ -227,7 +227,7 @@ public class TransportStrategy {
             return false;
         }
         URL gWFURLObj = ReadSettingServerUrl.getInstance().getGWFURLObj(context);
-        if (TextUtils.equals(url.getHost(), gWFURLObj.getHost())) {
+        if (StringUtils.equals(url.getHost(), gWFURLObj.getHost())) {
             return true;
         }
         LogCatUtil.info(TAG, "[checkCanUseExtTransportByURL] URL don't support. target url: " + url.getHost() + ", setting gw url: " + gWFURLObj.getHost());
@@ -240,11 +240,11 @@ public class TransportStrategy {
             return ((Boolean) ipChange.ipc$dispatch("a480d5af", new Object[]{str})).booleanValue();
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.CDN_URL);
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             return false;
         }
         try {
-            return TextUtils.equals(new URL(stringValue).getHost(), str);
+            return StringUtils.equals(new URL(stringValue).getHost(), str);
         } catch (Exception unused) {
             return false;
         }
@@ -403,7 +403,7 @@ public class TransportStrategy {
             return ((Boolean) ipChange.ipc$dispatch("f8fd3d9e", new Object[0])).booleanValue();
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.WHITE_LIST_USER);
-        return stringValue != null && TextUtils.equals(stringValue, "T");
+        return stringValue != null && StringUtils.equals(stringValue, "T");
     }
 
     public static final void incrementRpcErrorCount() {
@@ -463,9 +463,9 @@ public class TransportStrategy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("72b7b732", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             for (String str3 : str2.split(",")) {
-                if (TextUtils.equals(str3, str)) {
+                if (StringUtils.equals(str3, str)) {
                     return true;
                 }
             }
@@ -639,7 +639,7 @@ public class TransportStrategy {
             }
             i = (byte) -1;
         }
-        if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DNS_SWITCH), "T")) {
+        if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DNS_SWITCH), "T")) {
             return true;
         }
         LogCatUtil.debug(TAG, "dnsSwitch is off");
@@ -712,7 +712,7 @@ public class TransportStrategy {
 
     public static boolean isEnableMarsMultiLink() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("10c74f3c", new Object[0])).booleanValue() : TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.MARS_MULTILINK), "T");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("10c74f3c", new Object[0])).booleanValue() : StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.MARS_MULTILINK), "T");
     }
 
     public static void setUseMarsMultiLink(boolean z) {
@@ -758,7 +758,7 @@ public class TransportStrategy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("64e71e43", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !isEnabledBifrostH2MultipleSwitch()) {
+        if (StringUtils.isEmpty(str) || !isEnabledBifrostH2MultipleSwitch()) {
             return false;
         }
         try {
@@ -779,7 +779,7 @@ public class TransportStrategy {
         }
         String host = url.getHost();
         for (String str2 : strArr) {
-            if (!TextUtils.isEmpty(str2) && host.equalsIgnoreCase(str2.trim())) {
+            if (!StringUtils.isEmpty(str2) && host.equalsIgnoreCase(str2.trim())) {
                 LogCatUtil.info(TAG, "isHitBifrostH2MultiplexByUrl return true,host= " + host);
                 return true;
             }
@@ -793,7 +793,7 @@ public class TransportStrategy {
             return (String[]) ipChange.ipc$dispatch("11a28f78", new Object[0]);
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.BIFROST_H2_MULTIPLEX_GW_DOMAIN_WHITE_LIST);
-        if (!TextUtils.isEmpty(stringValue)) {
+        if (!StringUtils.isEmpty(stringValue)) {
             return stringValue.split(",");
         }
         return null;

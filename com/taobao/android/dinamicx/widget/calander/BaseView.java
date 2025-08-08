@@ -3,7 +3,7 @@ package com.taobao.android.dinamicx.widget.calander;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -114,7 +114,7 @@ public abstract class BaseView extends View implements View.OnClickListener, Vie
         }
         initCommonPaint(paint, i, i2);
         try {
-            if (this.typeface == null && this.mDelegate != null && !TextUtils.isEmpty(this.mDelegate.d())) {
+            if (this.typeface == null && this.mDelegate != null && !StringUtils.isEmpty(this.mDelegate.d())) {
                 this.typeface = fxo.a().a(this.mDelegate.d(), 0);
             }
             if (this.typeface == null) {

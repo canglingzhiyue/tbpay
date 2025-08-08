@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.Window;
@@ -149,7 +149,7 @@ public class TabFrameActivity extends CustomBaseActivity implements d {
             return;
         }
         String stringExtra = intent.getStringExtra(nfc.PHA_MONITOR_DIMENSION_MANIFEST_URL);
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             ngr.b("TabFrameActivity", "manifestUrl is null.");
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("isFragment", (Object) 0);
@@ -426,7 +426,7 @@ public class TabFrameActivity extends CustomBaseActivity implements d {
             }
             if (z) {
                 String queryParameter = uri.getQueryParameter("status_bar_transparent");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     this.e = "true".equals(queryParameter);
                 }
             }

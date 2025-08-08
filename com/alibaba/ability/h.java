@@ -1,6 +1,6 @@
 package com.alibaba.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.a;
 import kotlin.jvm.internal.q;
@@ -35,7 +35,7 @@ public final class h {
         q.d(name, "name");
         q.d(nameSpace, "nameSpace");
         String b = b(name, nameSpace);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return null;
         }
         try {

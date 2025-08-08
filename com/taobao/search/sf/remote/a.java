@@ -1,7 +1,7 @@
 package com.taobao.search.sf.remote;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitinstall.g;
 import com.alibaba.android.split.k;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -30,7 +30,7 @@ public final class a {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
         q.c(context, "context");
-        if (str != null && !TextUtils.isEmpty(str)) {
+        if (str != null && !StringUtils.isEmpty(str)) {
             return INSTANCE.b(context, str);
         }
         return false;

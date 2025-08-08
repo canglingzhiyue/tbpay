@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -26,7 +26,7 @@ public class mww {
         }
         String string = jSONObject.getString("type");
         JSONObject jSONObject2 = jSONObject.getJSONObject("fields");
-        if (TextUtils.isEmpty(jSONObject2 == null ? "" : jSONObject2.getString("nextRenderRoot"))) {
+        if (StringUtils.isEmpty(jSONObject2 == null ? "" : jSONObject2.getString("nextRenderRoot"))) {
             list = null;
         }
         return new DMEvent(string, jSONObject2, list);

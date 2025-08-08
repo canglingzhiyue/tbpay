@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import anet.channel.strategy.dispatch.DispatchCore;
@@ -233,7 +233,7 @@ public abstract class awn extends atl {
             sb.append(aURARenderComponentContainer.identifySuffix == null ? "" : aURARenderComponentContainer.identifySuffix);
             str = sb.toString();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String valueOf = String.valueOf(System.currentTimeMillis());

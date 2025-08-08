@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.g;
@@ -40,7 +40,7 @@ public class hmr extends hme<d> {
         float f = h;
         this.i = new a(context, this, (int) f, (int) f, 0);
         a aVar = this.i;
-        if (z && !TextUtils.isEmpty(dVar.h())) {
+        if (z && !StringUtils.isEmpty(dVar.h())) {
             g = dVar.h();
         } else {
             g = dVar.g();
@@ -58,15 +58,15 @@ public class hmr extends hme<d> {
         this.e = new TextPaint();
         this.e.setAntiAlias(true);
         this.e.setTextSize(l.a(((d) this.c).d()));
-        this.e.setColor(g.a((!this.d || TextUtils.isEmpty(((d) this.c).c())) ? ((d) this.c).b() : ((d) this.c).c(), -1));
+        this.e.setColor(g.a((!this.d || StringUtils.isEmpty(((d) this.c).c())) ? ((d) this.c).b() : ((d) this.c).c(), -1));
         this.e.setAlpha((int) (this.g * 255.0f));
         this.e.setFakeBoldText(true);
-        if (TextUtils.isEmpty(((d) this.c).f()) && TextUtils.isEmpty(((d) this.c).e())) {
+        if (StringUtils.isEmpty(((d) this.c).f()) && StringUtils.isEmpty(((d) this.c).e())) {
             return;
         }
         this.f = new Paint();
         this.f.setAntiAlias(true);
-        this.f.setColor(g.a((!this.d || TextUtils.isEmpty(((d) this.c).f())) ? ((d) this.c).e() : ((d) this.c).f(), 0));
+        this.f.setColor(g.a((!this.d || StringUtils.isEmpty(((d) this.c).f())) ? ((d) this.c).e() : ((d) this.c).f(), 0));
         this.f.setStyle(Paint.Style.FILL);
         this.f.setAlpha((int) (this.g * 255.0f));
     }

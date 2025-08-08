@@ -1,7 +1,7 @@
 package com.alibaba.motu.tbrest;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.taobao.orange.OrangeConfig;
 import java.io.Serializable;
@@ -43,7 +43,7 @@ public class OrangeRestLauncher implements Serializable {
         private void a(Map<String, String> map) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     this.f3147a.a(key, OrangeRestLauncher.getSafeFloat(entry.getValue(), 1.0f));
                 }
             }
@@ -76,7 +76,7 @@ public class OrangeRestLauncher implements Serializable {
 
         private int a(String str, int i) {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return Integer.valueOf(str).intValue();
                 }
             } catch (Exception unused) {
@@ -92,7 +92,7 @@ public class OrangeRestLauncher implements Serializable {
             this.f3148a.b(a(map.get(OrangeRestLauncher.CLEAR_PRIVACY_DATA), true));
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key) && a(key)) {
+                if (!StringUtils.isEmpty(key) && a(key)) {
                     this.f3148a.a(key, OrangeRestLauncher.getSafeFloat(entry.getValue(), 1.0f));
                 }
             }
@@ -105,7 +105,7 @@ public class OrangeRestLauncher implements Serializable {
 
         private boolean a(String str, boolean z) {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return Boolean.valueOf(str).booleanValue();
                 }
             } catch (Exception unused) {
@@ -132,7 +132,7 @@ public class OrangeRestLauncher implements Serializable {
     /* JADX INFO: Access modifiers changed from: private */
     public static float getSafeFloat(String str, float f) {
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Float.valueOf(str).floatValue();
             }
         } catch (Exception unused) {

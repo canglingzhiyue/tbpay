@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -53,7 +53,7 @@ public final class avq extends arn {
             return;
         }
         super.afterServiceExecute(cVar, aVar, z);
-        if (!TextUtils.equals(aVar.c(), com.alibaba.android.aura.service.parse.a.PARSE_SERVICE_CODE)) {
+        if (!StringUtils.equals(aVar.c(), com.alibaba.android.aura.service.parse.a.PARSE_SERVICE_CODE)) {
             return;
         }
         a(cVar);

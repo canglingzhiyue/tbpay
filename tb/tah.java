@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.TTDetailBaseActivity;
@@ -49,7 +49,7 @@ public class tah extends fuf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3d039b63", new Object[]{this, dXRuntimeContext, str});
-        } else if (dXRuntimeContext == null || dXRuntimeContext.m() == null || TextUtils.isEmpty(str)) {
+        } else if (dXRuntimeContext == null || dXRuntimeContext.m() == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 final String v = ((TTDetailBaseActivity) dXRuntimeContext.m()).j().v();

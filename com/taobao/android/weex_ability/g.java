@@ -1,7 +1,7 @@
 package com.taobao.android.weex_ability;
 
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,7 +54,7 @@ public class g implements b {
         if (ipChange instanceof IpChange) {
             return (Typeface) ipChange.ipc$dispatch("79ebd1a8", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         a();
@@ -67,7 +67,7 @@ public class g implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         a();

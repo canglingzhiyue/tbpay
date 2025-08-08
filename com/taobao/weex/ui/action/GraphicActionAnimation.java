@@ -8,7 +8,7 @@ import android.animation.PropertyValuesHolder;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v4.view.animation.PathInterpolatorCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +72,7 @@ public class GraphicActionAnimation extends BasicGraphicAction implements a<d> {
         this.styleNeedInit = false;
         this.styleNeedInit = true;
         this.callback = str3;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.mAnimationBean = (WXAnimationBean) JSONObject.parseObject(str2, WXAnimationBean.class);
         }
     }
@@ -115,7 +115,7 @@ public class GraphicActionAnimation extends BasicGraphicAction implements a<d> {
             }
             if (this.styleNeedInit) {
                 String str = (String) wXComponent.getStyles().get("transformOrigin");
-                if (TextUtils.isEmpty(this.mAnimationBean.styles.transformOrigin)) {
+                if (StringUtils.isEmpty(this.mAnimationBean.styles.transformOrigin)) {
                     this.mAnimationBean.styles.transformOrigin = str;
                 }
                 this.mAnimationBean.styles.init(this.mAnimationBean.styles.transformOrigin, this.mAnimationBean.styles.transform, (int) wXComponent.getLayoutWidth(), (int) wXComponent.getLayoutHeight(), wXSDKInstance.y(), wXSDKInstance);
@@ -173,7 +173,7 @@ public class GraphicActionAnimation extends BasicGraphicAction implements a<d> {
             return null;
         }
         List<PropertyValuesHolder> holders = style.getHolders();
-        if (!TextUtils.isEmpty(style.backgroundColor)) {
+        if (!StringUtils.isEmpty(style.backgroundColor)) {
             BorderDrawable borderDrawable = WXViewInnerUtils.getBorderDrawable(view);
             if (borderDrawable != null) {
                 holders.add(PropertyValuesHolder.ofObject(new BackgroundColorProperty(), new ArgbEvaluator(), Integer.valueOf(borderDrawable.getColor()), Integer.valueOf(WXResourceUtils.getColor(style.backgroundColor))));
@@ -181,12 +181,12 @@ public class GraphicActionAnimation extends BasicGraphicAction implements a<d> {
                 holders.add(PropertyValuesHolder.ofObject(new BackgroundColorProperty(), new ArgbEvaluator(), Integer.valueOf(((ColorDrawable) view.getBackground()).getColor()), Integer.valueOf(WXResourceUtils.getColor(style.backgroundColor))));
             }
         }
-        if (view.getLayoutParams() != null && (!TextUtils.isEmpty(style.width) || !TextUtils.isEmpty(style.height))) {
+        if (view.getLayoutParams() != null && (!StringUtils.isEmpty(style.width) || !StringUtils.isEmpty(style.height))) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            if (!TextUtils.isEmpty(style.width)) {
+            if (!StringUtils.isEmpty(style.width)) {
                 holders.add(PropertyValuesHolder.ofInt(String.valueOf(new WidthProperty()), layoutParams.width, (int) WXViewInnerUtils.getRealPxByWidth(wXSDKInstance, WXUtils.getFloat(style.width), i)));
             }
-            if (!TextUtils.isEmpty(style.height)) {
+            if (!StringUtils.isEmpty(style.height)) {
                 holders.add(PropertyValuesHolder.ofInt(String.valueOf(new HeightProperty()), layoutParams.height, (int) WXViewInnerUtils.getRealPxByWidth(wXSDKInstance, WXUtils.getFloat(style.height), i)));
             }
         }
@@ -205,7 +205,7 @@ public class GraphicActionAnimation extends BasicGraphicAction implements a<d> {
         if (ipChange instanceof IpChange) {
             return (Animator.AnimatorListener) ipChange.ipc$dispatch("e9bb707e", new Object[]{this, wXSDKInstance, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return new AnimatorListenerAdapter() { // from class: com.taobao.weex.ui.action.GraphicActionAnimation.1
@@ -234,7 +234,7 @@ public class GraphicActionAnimation extends BasicGraphicAction implements a<d> {
             return (Interpolator) ipChange.ipc$dispatch("c1ad726c", new Object[]{this});
         }
         String str = this.mAnimationBean.timingFunction;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         char c = 65535;

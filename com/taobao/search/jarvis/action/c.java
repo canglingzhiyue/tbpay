@@ -1,6 +1,6 @@
 package com.taobao.search.jarvis.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseSearchResult;
@@ -117,7 +117,7 @@ public final class c extends i {
             str = mainInfo.abtest;
         }
         hashMap2.put("wlsort", str);
-        hashMap2.put("src", TextUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
+        hashMap2.put("src", StringUtils.equals(d.getParamValue("m"), noa.VALUE_MODULE_INSHOP) ? "inshop" : "mainse");
         return hashMap2;
     }
 }

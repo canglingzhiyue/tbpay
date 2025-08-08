@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
@@ -89,16 +89,16 @@ public class srt {
                             }
                             String str2 = "";
                             if (sruVar.e == 0 && keu.a(sruVar.f30167a, keu.SUFFIX_MP4)) {
-                                sruVar.c = TextUtils.isEmpty(sruVar.c) ? str2 : sruVar.c;
-                                sruVar.d = TextUtils.isEmpty(sruVar.d) ? srt.a(sruVar.f30167a) : sruVar.d;
+                                sruVar.c = StringUtils.isEmpty(sruVar.c) ? str2 : sruVar.c;
+                                sruVar.d = StringUtils.isEmpty(sruVar.d) ? srt.a(sruVar.f30167a) : sruVar.d;
                                 arrayList.add(sruVar);
                             }
                             if (sruVar.e == 2) {
-                                if (!TextUtils.isEmpty(sruVar.c)) {
+                                if (!StringUtils.isEmpty(sruVar.c)) {
                                     str2 = sruVar.c;
                                 }
                                 sruVar.c = str2;
-                                sruVar.d = TextUtils.isEmpty(sruVar.d) ? srt.a(sruVar.f30167a) : sruVar.d;
+                                sruVar.d = StringUtils.isEmpty(sruVar.d) ? srt.a(sruVar.f30167a) : sruVar.d;
                                 arrayList.add(sruVar);
                             }
                         }
@@ -115,7 +115,7 @@ public class srt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || str.toLowerCase().endsWith(".gif")) {
+        if (StringUtils.isEmpty(str) || str.toLowerCase().endsWith(".gif")) {
             return str;
         }
         DisplayMetrics displayMetrics = f.b().getResources().getDisplayMetrics();
@@ -187,7 +187,7 @@ public class srt {
             NetWorkUtils.ConnectType connectType = NetWorkUtils.getConnectType(f.b());
             ArrayList<sru> arrayList = new ArrayList();
             for (sru sruVar : list) {
-                if (TextUtils.isEmpty(ssf.a(str, sruVar.f30167a))) {
+                if (StringUtils.isEmpty(ssf.a(str, sruVar.f30167a))) {
                     arrayList.add(sruVar);
                 }
             }
@@ -276,12 +276,12 @@ public class srt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
             URL url = new URL(str);
-            if (TextUtils.isEmpty(url.getFile())) {
+            if (StringUtils.isEmpty(url.getFile())) {
                 return null;
             }
             String name = new File(url.getFile()).getName();

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.exception.InfoFlowRuntimeException;
@@ -62,9 +62,9 @@ public class xko {
         ldf.d("NdUtParamsFilter", "getNdUtParamsWhiteList targetContainer: " + str);
         Set<String> set = null;
         try {
-            if (TextUtils.equals("newDetail", str)) {
+            if (StringUtils.equals("newDetail", str)) {
                 set = xjj.b();
-            } else if (TextUtils.equals(a.TARGET_TYPE_LITE_DETAIL, str)) {
+            } else if (StringUtils.equals(a.TARGET_TYPE_LITE_DETAIL, str)) {
                 set = xjj.a();
             } else {
                 ldf.d("NdUtParamsFilter", "未实现目标容器白名单 ： " + str);

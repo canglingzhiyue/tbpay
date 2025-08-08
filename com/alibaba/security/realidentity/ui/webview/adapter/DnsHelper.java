@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity.ui.webview.adapter;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.c4;
 import com.alibaba.security.realidentity.service.track.model.TrackLog;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -53,9 +53,9 @@ public class DnsHelper extends AsyncTask<String, Void, Map<String, Boolean>> {
             return (Map) ipChange.ipc$dispatch("fcbec99d", new Object[]{this, str});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String host = URI.create(str).getHost();
-                if (!TextUtils.isEmpty(host)) {
+                if (!StringUtils.isEmpty(host)) {
                     InetAddress[] allByName = InetAddress.getAllByName(host);
                     HashMap hashMap = new HashMap();
                     for (InetAddress inetAddress : allByName) {

@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -165,7 +165,7 @@ public final class e extends com.etao.feimagesearch.newresult.base.a {
             map.put("pssource", bundle.getString("pssource"));
             map.put(com.etao.feimagesearch.model.d.KEY_PIC_URL, string);
             String string2 = bundle.getString(com.etao.feimagesearch.model.d.KEY_PHOTO_FROM);
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 map.put(com.etao.feimagesearch.model.d.KEY_PHOTO_FROM, PhotoFrom.Values.PREVIEW.getValue());
             } else {
                 map.put(com.etao.feimagesearch.model.d.KEY_PHOTO_FROM, string2);
@@ -267,15 +267,15 @@ public final class e extends com.etao.feimagesearch.newresult.base.a {
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         String str3 = map.get("entryUtparam");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             linkedHashMap.put("entryUtparam", str3);
         }
         String str4 = map.get(pqq.KEY_ENTRY_SCM);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             linkedHashMap.put(pqq.KEY_ENTRY_SCM, str4);
         }
         String str5 = map.get("entrySpm");
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             linkedHashMap.put("entrySpm", str5);
         }
         if (!(!linkedHashMap.isEmpty())) {
@@ -305,7 +305,7 @@ public final class e extends com.etao.feimagesearch.newresult.base.a {
             str = "";
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "a2141.7690630";
         }
         linkedHashMap.put("spm-cnt", str);
@@ -331,7 +331,7 @@ public final class e extends com.etao.feimagesearch.newresult.base.a {
             q.b("irpDatasource");
         }
         String value = irpDatasource4.a().getValue();
-        if (!TextUtils.isEmpty(r)) {
+        if (!StringUtils.isEmpty(r)) {
             return;
         }
         String str2 = "unknown";
@@ -418,7 +418,7 @@ public final class e extends com.etao.feimagesearch.newresult.base.a {
         q.a((Object) noPicValidKeys, "noPicValidKeys");
         if (true ^ (noPicValidKeys.length == 0)) {
             for (String str : noPicValidKeys) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     IrpDatasource irpDatasource3 = this.c;
                     if (irpDatasource3 == null) {
                         q.b("irpDatasource");
@@ -427,7 +427,7 @@ public final class e extends com.etao.feimagesearch.newresult.base.a {
                     if (str2 == null) {
                         str2 = "";
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         hashMap.put(str, str2);
                     }
                 }
@@ -474,7 +474,7 @@ public final class e extends com.etao.feimagesearch.newresult.base.a {
         q.a((Object) uTAnalytics, "UTAnalytics.getInstance()");
         String prePageSpm = uTAnalytics.getDefaultTracker().getPageSpmUrl(k().a());
         String str2 = prePageSpm;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             linkedHashMap.put("prePage", "unknown");
         } else {
             q.a((Object) prePageSpm, "prePageSpm");

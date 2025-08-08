@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.statisticsv2;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.model.StBiz;
 import com.alipay.android.msp.framework.statisticsv2.model.StError;
 import com.alipay.android.msp.framework.statisticsv2.model.StEvent;
@@ -120,16 +120,16 @@ public class Recorder {
             ipChange.ipc$dispatch("10e8cc83", new Object[]{this, str, str2, new Long(j)});
             return;
         }
-        LogUtil.record(2, "Recorder#updateResult", TextUtils.isEmpty(str) ? "null" : str);
+        LogUtil.record(2, "Recorder#updateResult", StringUtils.isEmpty(str) ? "null" : str);
         VectorData vectorData = this.b.get(Vector.Result);
         if (vectorData == null) {
             return;
         }
         String str3 = "";
         LogUtil.record(2, "Recorder#updateResult", "not use regex");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str3 = a(str);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = str;
             }
         }
@@ -146,12 +146,12 @@ public class Recorder {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
             for (String str2 : str.split(";")) {
-                if (!TextUtils.isEmpty(str2) && str2.startsWith("resultStatus={")) {
+                if (!StringUtils.isEmpty(str2) && str2.startsWith("resultStatus={")) {
                     return str2.substring(14, str2.length() - 1);
                 }
             }
@@ -183,7 +183,7 @@ public class Recorder {
             ipChange.ipc$dispatch("1f49d433", new Object[]{this, str, str2, th});
             return;
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             this.f4851a.get(Vector.Error).add(new StError(str, str2, th, ""));
         }
     }
@@ -194,7 +194,7 @@ public class Recorder {
             ipChange.ipc$dispatch("f4e3624c", new Object[]{this, str, str2, str3});
             return;
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             this.f4851a.get(Vector.Error).add(new StError(str, str2, str3));
         }
     }
@@ -217,7 +217,7 @@ public class Recorder {
             ipChange.ipc$dispatch("e32ea58b", new Object[]{this, str, str2, str3, str4});
             return;
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             this.f4851a.get(Vector.Error).add(new StError(str, str2, str3, str4));
         }
     }
@@ -316,7 +316,7 @@ public class Recorder {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         try {
@@ -330,6 +330,6 @@ public class Recorder {
         if (i == ResultStatus.FAILED.getStatus() || i == ResultStatus.PARAMS_ERROR.getStatus()) {
             return String.valueOf(ClientEndCode.SERVERERROR_COMMON);
         }
-        return (TextUtils.isEmpty(str2) || TextUtils.equals(str2, Grammar.ATTR_DEFAULT_VALUE)) ? String.valueOf(ClientEndCode.USEREXIT) : str2;
+        return (StringUtils.isEmpty(str2) || StringUtils.equals(str2, Grammar.ATTR_DEFAULT_VALUE)) ? String.valueOf(ClientEndCode.USEREXIT) : str2;
     }
 }

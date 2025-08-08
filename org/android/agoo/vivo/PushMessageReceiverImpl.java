@@ -1,7 +1,7 @@
 package org.android.agoo.vivo;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.ALog;
 import com.vivo.push.sdk.BasePushMessageReceiver;
@@ -18,7 +18,7 @@ public class PushMessageReceiverImpl extends OpenClientPushMessageReceiver {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("975a4620", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str) || context == null) {
+        } else if (StringUtils.isEmpty(str) || context == null) {
         } else {
             ALog.d(BasePushMessageReceiver.TAG, "onReceiveRegId", "token", str);
             NotifManager notifManager = new NotifManager();

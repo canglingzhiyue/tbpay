@@ -1,7 +1,7 @@
 package com.alipay.security.mobile.silentop;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
 import com.alipay.security.mobile.api.IFAAManagerAdaptor;
 import com.alipay.security.mobile.auth.AuthenticatorCallback;
@@ -225,7 +225,7 @@ public class SilentOpManager {
                 AuthenticatorLOG.debug(sb.toString() != null ? silenceRpcResult.getMessage() : "silenceRpcResult null");
                 AuthenticatorLOG.fpInfo("DeReg IFAA");
                 String deregInfo = SilentOpDataHelper.getInstance().getDeregInfo();
-                if (TextUtils.isEmpty(deregInfo)) {
+                if (StringUtils.isEmpty(deregInfo)) {
                     AuthenticatorLOG.fpInfo("DeReg IFAA err,dereinfo is null");
                     return;
                 } else {

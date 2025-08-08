@@ -1,6 +1,6 @@
 package com.taobao.tinct.impl.collect;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alipay.mobile.common.transportext.amnet.Baggage;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class ChangeRecord {
             }
         }
         com.taobao.tinct.model.b bVar = this.inlinePatchInfo;
-        if (bVar != null && !TextUtils.isEmpty(bVar.getVersion())) {
+        if (bVar != null && !StringUtils.isEmpty(bVar.getVersion())) {
             if (!z) {
                 sb.append("^");
             }

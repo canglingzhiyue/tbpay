@@ -1,7 +1,7 @@
 package com.taobao.android.tcon;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.motu.tbrest.d;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -18,7 +18,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f47168dc", new Object[]{application, hashMap});
-        } else if (!TextUtils.equals(LauncherRuntime.c, LauncherRuntime.b) || ABGlobal.isFeatureOpened(null, "disable_ut_pre_track")) {
+        } else if (!StringUtils.equals(LauncherRuntime.c, LauncherRuntime.b) || ABGlobal.isFeatureOpened(null, "disable_ut_pre_track")) {
         } else {
             try {
                 if (d.a().f3151a == null || d.a().c == null) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -227,10 +227,10 @@ public final class ojw extends x {
         if (a2 == null) {
             return;
         }
-        if (!TextUtils.isEmpty(a2.j) && (tUrlImageView = (TUrlImageView) objectRef.element) != null) {
+        if (!StringUtils.isEmpty(a2.j) && (tUrlImageView = (TUrlImageView) objectRef.element) != null) {
             tUrlImageView.setImageUrl(a2.j);
         }
-        if (!TextUtils.isEmpty(a2.i) && (observerImageView = (ObserverImageView) objectRef2.element) != null) {
+        if (!StringUtils.isEmpty(a2.i) && (observerImageView = (ObserverImageView) objectRef2.element) != null) {
             observerImageView.setImageUrl(a2.i);
         }
         TUrlImageView tUrlImageView2 = (TUrlImageView) objectRef.element;

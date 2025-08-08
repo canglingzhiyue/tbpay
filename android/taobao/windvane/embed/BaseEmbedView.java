@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uc.webview.export.extension.EmbedViewConfig;
@@ -94,7 +94,7 @@ public abstract class BaseEmbedView extends e implements IEmbedView, IEmbedViewC
         if (!str2.equals(getViewType()) || iWVWebView == null) {
             return false;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str3 = "WVEmbedView";
         } else {
             str3 = "WVEmbedView_" + str;
@@ -129,7 +129,7 @@ public abstract class BaseEmbedView extends e implements IEmbedView, IEmbedViewC
         if (!str2.equals(getViewType()) || iWVWebView == null) {
             return false;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str3 = "WVEmbedView";
         } else {
             str3 = "WVEmbedView_" + str;

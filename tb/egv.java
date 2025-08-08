@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.FeatureNode;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ItemNode;
@@ -58,12 +58,12 @@ public abstract class egv extends epi {
         this.s = e.isBuyEnable;
         this.t = e.isCartEnable;
         this.w = e.hintBanner;
-        this.u = TextUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
-        this.v = TextUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
+        this.u = StringUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
+        this.v = StringUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
         if (g != null && g.jhsNode != null) {
             this.x = Long.valueOf(g.jhsNode.verticalBiz);
         }
-        if (!TextUtils.isEmpty(c.sellCount)) {
+        if (!StringUtils.isEmpty(c.sellCount)) {
             try {
                 this.y = Integer.parseInt(c.sellCount);
             } catch (Exception unused) {
@@ -75,7 +75,7 @@ public abstract class egv extends epi {
         }
         this.z = Boolean.parseBoolean(componentModel.mapping.getString("drawLine"));
         String string = componentModel.mapping.getString("widthRatio");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.A = Double.parseDouble(string);
@@ -96,12 +96,12 @@ public abstract class egv extends epi {
         this.s = e.isBuyEnable;
         this.t = e.isCartEnable;
         this.w = e.hintBanner;
-        this.u = TextUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
-        this.v = TextUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
+        this.u = StringUtils.isEmpty(e.buyText) ? "立即购买" : e.buyText;
+        this.v = StringUtils.isEmpty(e.cartText) ? "加入购物车" : e.cartText;
         if (g != null && g.jhsNode != null) {
             this.x = Long.valueOf(g.jhsNode.verticalBiz);
         }
-        if (!TextUtils.isEmpty(c.sellCount)) {
+        if (!StringUtils.isEmpty(c.sellCount)) {
             try {
                 this.y = Integer.parseInt(c.sellCount);
             } catch (Exception unused) {
@@ -113,7 +113,7 @@ public abstract class egv extends epi {
         }
         this.z = Boolean.parseBoolean(iDMComponent.getFields().getString("drawLine"));
         String string = iDMComponent.getFields().getString("widthRatio");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.A = Double.parseDouble(string);

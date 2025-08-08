@@ -1,6 +1,6 @@
 package android.taobao.windvane.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -69,7 +69,7 @@ public class b {
         }
         try {
             if (android.taobao.windvane.util.m.a()) {
-                android.taobao.windvane.util.m.b("UserTrackUtil", "commitEvent: " + str + "||" + i + "||" + str2 + "||" + str3 + "||" + str4 + ((Object) TextUtils.concat(str5)));
+                android.taobao.windvane.util.m.b("UserTrackUtil", "commitEvent: " + str + "||" + i + "||" + str2 + "||" + str3 + "||" + str4 + ((Object) StringUtils.concat(str5)));
             }
             b.invoke(null, str, Integer.valueOf(i), str2, str3, str4, new String[]{str5});
         } catch (Exception e) {
@@ -83,7 +83,7 @@ public class b {
         }
         try {
             if (android.taobao.windvane.util.m.a()) {
-                android.taobao.windvane.util.m.b("UserTrackUtil", "commitEvent: " + i + "||" + str + "||" + str2 + "||" + str3 + ((Object) TextUtils.concat(strArr)));
+                android.taobao.windvane.util.m.b("UserTrackUtil", "commitEvent: " + i + "||" + str + "||" + str2 + "||" + str3 + ((Object) StringUtils.concat(strArr)));
             }
             c.invoke(null, Integer.valueOf(i), str, str2, str3, strArr);
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class b {
         StringBuilder sb = new StringBuilder(map.size() * 28);
         for (Map.Entry<String, Object> entry : map.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key)) {
+            if (!StringUtils.isEmpty(key)) {
                 sb.append(key);
                 sb.append("=");
                 sb.append(entry.getValue());

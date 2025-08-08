@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mediaplay.MediaPlayCenter;
@@ -199,7 +199,7 @@ public class prz implements e {
             ipChange.ipc$dispatch("9a1a14b3", new Object[]{this, mediaLiveInfo, str});
         } else if (mediaLiveInfo != null) {
             this.f32846a.updateLiveMediaInfoData(mediaLiveInfo);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f32846a.updateLiveMediaInfoData(null);
             this.f32846a.setMediaUrl(str);

@@ -6,7 +6,7 @@ import android.content.Context;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.RecyclerView;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,7 +71,7 @@ public class a {
         }
         this.g.put(6, "secKill");
         String e = com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.e();
-        if (!z || TextUtils.isEmpty(e)) {
+        if (!z || StringUtils.isEmpty(e)) {
             return;
         }
         if (e.contains("pcg")) {
@@ -153,7 +153,7 @@ public class a {
         }
         List<IDMComponent> list = null;
         UltronInstanceViewModel ultronInstanceViewModel = (UltronInstanceViewModel) new ViewModelProvider((ViewModelStoreOwner) this.b, new com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.h()).get(UltronInstanceViewModel.class);
-        if (com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.o() && ((TextUtils.equals("normal2", str) || TextUtils.equals("normal", str)) && cVar != null && cVar.E() != null)) {
+        if (com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.o() && ((StringUtils.equals("normal2", str) || StringUtils.equals("normal", str)) && cVar != null && cVar.E() != null)) {
             list = cVar.E().a(str);
         }
         if (list == null) {
@@ -245,7 +245,7 @@ public class a {
             return false;
         }
         String string = iDMComponent.getFields().getString("exclusion");
-        boolean parseBoolean = !TextUtils.isEmpty(string) ? Boolean.parseBoolean(string) : false;
+        boolean parseBoolean = !StringUtils.isEmpty(string) ? Boolean.parseBoolean(string) : false;
         for (IDMComponent iDMComponent2 : iDMComponent.getChildren()) {
             if (a(iDMComponent2, jSONObject)) {
                 h a2 = a(iDMComponent2, (ViewGroup) iDMComponentsFrameLayout, true);
@@ -317,7 +317,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("ca1a8088", new Object[]{this, iDMComponent, jSONObject})).booleanValue();
         }
         String string = iDMComponent.getFields().getString("dependency");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return fqr.a(fnk.a(string, "", new fpd.a().b(jSONObject).a()));
         }
         return true;

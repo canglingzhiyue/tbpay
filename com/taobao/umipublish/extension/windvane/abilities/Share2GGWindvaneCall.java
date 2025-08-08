@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONArray;
@@ -193,7 +193,7 @@ public final class Share2GGWindvaneCall {
         }
         if (b3 != null) {
             for (Map.Entry<String, Object> entry2 : b3.entrySet()) {
-                if (!TextUtils.isEmpty(entry2.getKey()) && entry2.getValue() != null) {
+                if (!StringUtils.isEmpty(entry2.getKey()) && entry2.getValue() != null) {
                     appendQueryParameter.appendQueryParameter(entry2.getKey(), entry2.getValue().toString());
                 }
             }
@@ -445,7 +445,7 @@ public final class Share2GGWindvaneCall {
                     }
                     String a3 = m.a((JSONObject) obj, "tag", "");
                     String a4 = m.a((JSONObject) obj, "path", "");
-                    if (!TextUtils.isEmpty(a3) && !TextUtils.isEmpty(a4)) {
+                    if (!StringUtils.isEmpty(a3) && !StringUtils.isEmpty(a4)) {
                         jSONObject3.put(a3, (Object) a4);
                     }
                 }

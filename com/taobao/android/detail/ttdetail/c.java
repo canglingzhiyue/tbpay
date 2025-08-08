@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
@@ -203,7 +203,7 @@ public class c {
                 }
                 c.d(c.this).e().a(com.taobao.android.detail.core.aura.observer.d.KEY_PRICE_MODEL, a3.getKey());
                 String str4 = (String) a3.getValue();
-                if (TextUtils.isEmpty(str3) && TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str3) && StringUtils.isEmpty(str4)) {
                     str4 = str3;
                 }
                 c.d(c.this).e().a(a.KEY_PROP_PATH, str4);
@@ -246,9 +246,9 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("3c6e0ee7", new Object[]{this, list, str})).booleanValue();
         }
         if (list == null || list.isEmpty()) {
-            return TextUtils.isEmpty(str);
+            return StringUtils.isEmpty(str);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         StringBuilder sb = new StringBuilder();
@@ -256,7 +256,7 @@ public class c {
             sb.append(";");
             sb.append(str2);
         }
-        return TextUtils.equals(str, sb.deleteCharAt(0).toString());
+        return StringUtils.equals(str, sb.deleteCharAt(0).toString());
     }
 
     private Map.Entry<String, String> a(List<String> list, JSONArray jSONArray, boolean z) {
@@ -270,7 +270,7 @@ public class c {
                 JSONObject jSONObject = jSONArray.getJSONObject(i);
                 if (jSONObject != null) {
                     String string = jSONObject.getString(a.KEY_PROP_PATH);
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         if (list == null || list.isEmpty()) {
                             return new AbstractMap.SimpleEntry(jSONObject.toJSONString(), string);
                         }
@@ -413,7 +413,7 @@ public class c {
             ezv e = this.c.e();
             String str = (String) e.a("skuClickTimeType");
             String str2 = (String) e.a("skuClickTime");
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 jSONObject.put(str, (Object) str2);
                 if (this.g == null) {
                     z = true;
@@ -707,7 +707,7 @@ public class c {
         iyf.a().b("beforeWeexInitInShow", "afterMtop");
         this.d.b(new TBSkuWrapper$10(this, str, z, str2));
         m();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.d.g(str3);
         } else {
             this.d.e();

@@ -4,7 +4,7 @@ import android.location.Location;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.android.msp.utils.UserLocation;
@@ -527,7 +527,7 @@ public class AMapLocation extends Location implements Parcelable, Cloneable {
     }
 
     public void setFloor(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = str.replace(UTConstant.Args.UT_SUCCESS_F, "");
             try {
                 Integer.parseInt(str);

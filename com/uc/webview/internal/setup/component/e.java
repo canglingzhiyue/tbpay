@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ErrorConstant;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.GlobalSettings;
@@ -67,15 +67,15 @@ final class e extends com.uc.webview.internal.setup.component.a {
         private boolean b;
 
         b(String str) {
-            this.b = TextUtils.isEmpty(str) || x.a(str);
+            this.b = StringUtils.isEmpty(str) || x.a(str);
         }
 
         @Override // com.uc.webview.base.GlobalSettings.Observer
         public final void onValueChanged(int i, String str) {
-            if (i != e.this.g || TextUtils.isEmpty(str) || str.equals(e.this.h)) {
+            if (i != e.this.g || StringUtils.isEmpty(str) || str.equals(e.this.h)) {
                 return;
             }
-            int i2 = TextUtils.isEmpty(e.this.h) ? -105 : -106;
+            int i2 = StringUtils.isEmpty(e.this.h) ? -105 : -106;
             e.this.h = str;
             if (x.a(e.this.h)) {
                 e.this.d.b(i2);

@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.manager.CcrcContextImpl;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class CcrcContext {
         if (context == null) {
             Logging.e(TAG, "context is null");
             return false;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             Logging.e(TAG, "ttid is empty");
             return false;
         } else {

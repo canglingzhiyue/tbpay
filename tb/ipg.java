@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.iifaa.did.api.DIDResult;
 import com.alipay.android.phone.iifaa.did.model.DecentralizedID;
@@ -200,7 +200,7 @@ public class ipg implements ifi {
                 return null;
             }
             String did = ifh.i(JSONObject.toJSONString(documentSignData)).getDid();
-            if (!TextUtils.isEmpty(did)) {
+            if (!StringUtils.isEmpty(did)) {
                 return ifh.e(did);
             }
             iqh.a().c("TrustedCertServiceImpl", "DID 导入失败");
@@ -237,7 +237,7 @@ public class ipg implements ifi {
         try {
             iqh.a().b("TrustedCertServiceImpl", "进入 getAndCheckAvailableDID,vmType=" + str);
             String a2 = ifh.a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 documentSignData = ifh.h(a2);
                 if (documentSignData == null) {
                     ifh.f(a2);
@@ -246,7 +246,7 @@ public class ipg implements ifi {
             } else {
                 documentSignData = null;
             }
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 if (z) {
                     return a(context);
                 }
@@ -282,7 +282,7 @@ public class ipg implements ifi {
     public final VerificationMethod a() {
         try {
             DIDResult a2 = ifh.a(VerificationMethod.VM_SM2, "");
-            if (TextUtils.isEmpty(a2.getPublicKey())) {
+            if (StringUtils.isEmpty(a2.getPublicKey())) {
                 return null;
             }
             VerificationMethod verificationMethod = new VerificationMethod();
@@ -333,7 +333,7 @@ public class ipg implements ifi {
             return DIDResult.genResult(DIDResult.a.FUNC_DEMOTED.ordinal(), "IIFAA客户端功能降级");
         }
         String string = jSONObject.getString("vmType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return DIDResult.genResult(DIDResult.a.WRONG_PARAMS);
         }
         DecentralizedID a2 = a(context, string, true);
@@ -349,7 +349,7 @@ public class ipg implements ifi {
             }
             DidIdpRpcResponse a3 = a(context, DidIdpRpcRequest.ACTION_ADD_VM, a2, str, documentSignData);
             if (a3 != null && a3.success && 100000 == a3.errCode) {
-                if (!TextUtils.isEmpty(ifh.i(JSONObject.toJSONString(a3.signDocument)).getDid())) {
+                if (!StringUtils.isEmpty(ifh.i(JSONObject.toJSONString(a3.signDocument)).getDid())) {
                     return ifh.e(str);
                 }
                 iqh.a().c("TrustedCertServiceImpl", "DID文档 insertOrUpdateDocument 失败");

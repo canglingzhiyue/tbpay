@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -99,7 +99,7 @@ public class jme {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str)) {
         } else {
             i.b().a(new Runnable() { // from class: tb.jme.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -116,7 +116,7 @@ public class jme {
                         return;
                     }
                     String str2 = new String(syncSend.getBytedata());
-                    if (TextUtils.isEmpty(str2) || !jme.a(jme.this)) {
+                    if (StringUtils.isEmpty(str2) || !jme.a(jme.this)) {
                         return;
                     }
                     jme.b().insertString(new e(str), str2);

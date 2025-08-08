@@ -48,7 +48,7 @@ public class MetaExitStore extends LocalEventStore {
             com.alibaba.fastjson.JSONObject r10 = r10.getActionParamsJson()
             java.lang.String r0 = "mode"
             java.lang.String r10 = r10.getString(r0)
-            boolean r0 = android.text.TextUtils.isEmpty(r10)
+            boolean r0 = android.text.StringUtils.isEmpty(r10)
             java.lang.String r6 = "exit"
             if (r0 == 0) goto L3a
             r10 = r6

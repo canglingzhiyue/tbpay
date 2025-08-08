@@ -3,7 +3,7 @@ package com.alipay.android.msp.core.component;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.drivers.actions.ActionsCreator;
@@ -28,7 +28,7 @@ public class CertPayReceiver extends BroadcastReceiver {
         } else {
             try {
                 String stringExtra = intent.getStringExtra("certpay_session");
-                if (TextUtils.isEmpty(stringExtra) || (mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(CashierSceneDictionary.getInstance().getCertPayBizId(stringExtra))) == null) {
+                if (StringUtils.isEmpty(stringExtra) || (mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(CashierSceneDictionary.getInstance().getCertPayBizId(stringExtra))) == null) {
                     return;
                 }
                 ActionsCreator.get(mspContextByBizId).createEventAction(new EventAction("exit"));

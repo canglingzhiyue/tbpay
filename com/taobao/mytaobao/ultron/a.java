@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ultron;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -50,7 +50,7 @@ public class a implements d.c {
                         arrayList2.add(iDMComponent);
                     } else if ("header".equals(b)) {
                         arrayList.add(iDMComponent);
-                    } else if (iDMComponent != null && TextUtils.equals("orderModule", iDMComponent.getTag())) {
+                    } else if (iDMComponent != null && StringUtils.equals("orderModule", iDMComponent.getTag())) {
                         mwu.a(iDMComponent, d.b());
                     }
                 }

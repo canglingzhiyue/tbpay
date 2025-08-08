@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseIntArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.safeclean.g;
@@ -17,7 +17,7 @@ public class cja {
         f26298a = new SparseIntArray();
         try {
             String string = g.a().f6400a.getString("retry_count", "");
-            if (TextUtils.isEmpty(string) || string.equals("{}")) {
+            if (StringUtils.isEmpty(string) || string.equals("{}")) {
                 return;
             }
             a(string);

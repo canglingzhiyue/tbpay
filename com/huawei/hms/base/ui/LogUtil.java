@@ -1,6 +1,6 @@
 package com.huawei.hms.base.ui;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import java.util.regex.Pattern;
 
@@ -11,7 +11,7 @@ public class LogUtil {
     private static final Pattern f7367a = Pattern.compile("[0-9]*[a-z|A-Z]*[一-龥]*");
 
     private static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int length = str.length();
@@ -35,7 +35,7 @@ public class LogUtil {
 
     private static String a(String str, boolean z) {
         StringBuilder sb = new StringBuilder(512);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (z) {
                 str = a(str);
             }
@@ -45,14 +45,14 @@ public class LogUtil {
     }
 
     public static void e(String str, String str2) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         Log.e(str, a(str2, false));
     }
 
     public static void e(String str, String str2, boolean z) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         Log.e(str, a(str2, z));

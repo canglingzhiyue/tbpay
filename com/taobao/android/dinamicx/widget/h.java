@@ -3,7 +3,7 @@ package com.taobao.android.dinamicx.widget;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -238,7 +238,7 @@ public class h extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7c92be1d", new Object[]{this, textView, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 if (DinamicXEngine.i() == null) {
@@ -309,7 +309,7 @@ public class h extends DXWidgetNode {
         TextView seeMoreView = dXNativeCountDownTimerView.getSeeMoreView();
         seeMoreView.setText(str);
         a(seeMoreView, i, i2, i3, i4, 0, 0, d, i5);
-        if (TextUtils.isEmpty(this.I)) {
+        if (StringUtils.isEmpty(this.I)) {
             return;
         }
         a(seeMoreView, this.I, this.H);
@@ -359,7 +359,7 @@ public class h extends DXWidgetNode {
             textView.setVisibility(8);
         }
         a(textView4, textView6, textView2, textView, i8, i9);
-        if (!TextUtils.isEmpty(this.I)) {
+        if (!StringUtils.isEmpty(this.I)) {
             a(textView4, this.I, this.H);
             a(textView, this.I, this.H);
             a(textView6, this.I, this.H);
@@ -431,7 +431,7 @@ public class h extends DXWidgetNode {
             textView6.setIncludeFontPadding(false);
             textView.setIncludeFontPadding(false);
         }
-        if (!TextUtils.isEmpty(this.I)) {
+        if (!StringUtils.isEmpty(this.I)) {
             a(textView3, this.I, this.H);
             a(textView6, this.I, this.H);
             a(textView, this.I, this.H);

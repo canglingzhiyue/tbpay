@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.request;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.request.params.MtopRequestParams;
@@ -126,7 +126,7 @@ public abstract class MtopRequestClient<E extends MtopRequestParams, T> implemen
         }
         remoteBusiness.registeListener((IRemoteListener) this);
         String unitStrategy = getUnitStrategy();
-        if (!TextUtils.isEmpty(unitStrategy)) {
+        if (!StringUtils.isEmpty(unitStrategy)) {
             this.mRemoteBusiness.mo1328setUnitStrategy(unitStrategy);
         }
         if (!isUseWua()) {

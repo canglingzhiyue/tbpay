@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.datamodel.protocol.ultron;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.b;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
@@ -41,7 +41,7 @@ public class UltronProtocol extends BaseProtocol {
         kge.a(-356494654);
     }
 
-    public static /* synthetic */ Object ipc$super(UltronProtocol ultronProtocol, String str, Object... objArr) {
+    public static /* synthetic */ Object ipc$super(UltronProtocol ultronProtocol, String str, Object... objArr) throws InstantReloadException {
         str.hashCode();
         throw new InstantReloadException(String.format("String switch could not find '%s'", str));
     }
@@ -96,7 +96,7 @@ public class UltronProtocol extends BaseProtocol {
             }
             this.data = new HashMap();
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     JSONObject jSONObject3 = jSONObject.getJSONObject(str);
                     if (jSONObject3 instanceof JSONObject) {
                         this.data.put(str, new Component(jSONObject3));

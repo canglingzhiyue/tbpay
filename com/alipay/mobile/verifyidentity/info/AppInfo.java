@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.info;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.mobile.verifyidentity.dataprovider.AppDataProvider;
 import com.alipay.mobile.verifyidentity.engine.MicroModuleContext;
@@ -171,7 +171,7 @@ public class AppInfo {
             return (String) ipChange.ipc$dispatch("92150ca3", new Object[]{this});
         }
         AppDataProvider appDataProvider = this.c;
-        if (appDataProvider != null && !TextUtils.isEmpty(appDataProvider.getAppName())) {
+        if (appDataProvider != null && !StringUtils.isEmpty(appDataProvider.getAppName())) {
             return this.c.getAppName();
         }
         return this.d.getAppName();
@@ -183,7 +183,7 @@ public class AppInfo {
             return (String) ipChange.ipc$dispatch("65f009ac", new Object[]{this});
         }
         AppDataProvider appDataProvider = this.c;
-        if (appDataProvider != null && !TextUtils.isEmpty(appDataProvider.getAppVersion())) {
+        if (appDataProvider != null && !StringUtils.isEmpty(appDataProvider.getAppVersion())) {
             return this.c.getAppVersion();
         }
         return this.d.getAppVersion();
@@ -195,7 +195,7 @@ public class AppInfo {
             return (String) ipChange.ipc$dispatch("a23faff", new Object[]{this});
         }
         AppDataProvider appDataProvider = this.c;
-        if (appDataProvider != null && !TextUtils.isEmpty(appDataProvider.getApdid())) {
+        if (appDataProvider != null && !StringUtils.isEmpty(appDataProvider.getApdid())) {
             return this.c.getApdid();
         }
         return this.d.getApdid();
@@ -207,7 +207,7 @@ public class AppInfo {
             return (String) ipChange.ipc$dispatch("e63dfe7a", new Object[]{this});
         }
         AppDataProvider appDataProvider = this.c;
-        if (appDataProvider != null && !TextUtils.isEmpty(appDataProvider.getApdidToken())) {
+        if (appDataProvider != null && !StringUtils.isEmpty(appDataProvider.getApdidToken())) {
             return this.c.getApdidToken();
         }
         return this.d.getApdidToken();
@@ -255,7 +255,7 @@ public class AppInfo {
             return (String) ipChange.ipc$dispatch("49079005", new Object[]{this});
         }
         AppDataProvider appDataProvider = this.c;
-        if (appDataProvider != null && !TextUtils.isEmpty(appDataProvider.getAppKey())) {
+        if (appDataProvider != null && !StringUtils.isEmpty(appDataProvider.getAppKey())) {
             return this.c.getAppKey();
         }
         return this.d.getAppKey();
@@ -267,7 +267,7 @@ public class AppInfo {
             return (String) ipChange.ipc$dispatch("db4aa3a9", new Object[]{this});
         }
         AppDataProvider appDataProvider = this.c;
-        if (appDataProvider != null && !TextUtils.isEmpty(appDataProvider.getUmidToken())) {
+        if (appDataProvider != null && !StringUtils.isEmpty(appDataProvider.getUmidToken())) {
             return this.c.getUmidToken();
         }
         return this.d.getUmidToken();

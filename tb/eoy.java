@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
@@ -32,7 +32,7 @@ public class eoy {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("41ebe234", new Object[]{iDMComponent});
         }
-        if (iDMComponent == null || TextUtils.isEmpty(iDMComponent.getType())) {
+        if (iDMComponent == null || StringUtils.isEmpty(iDMComponent.getType())) {
             epp.a("UltronUtils", "组件Key解析异常 ");
             return "";
         }
@@ -49,7 +49,7 @@ public class eoy {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("759a0cf5", new Object[]{iDMComponent});
         }
-        if (iDMComponent == null || TextUtils.isEmpty(iDMComponent.getType())) {
+        if (iDMComponent == null || StringUtils.isEmpty(iDMComponent.getType())) {
             epp.a("UltronUtils", "组件rule解析异常 ");
             return "";
         }

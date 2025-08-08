@@ -1,7 +1,7 @@
 package com.taobao.tao.homepage;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
@@ -65,7 +65,7 @@ public class k implements a.d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3526bd3", new Object[]{this, str, new Integer(i), new Long(j)});
-        } else if (!TextUtils.equals(str, HomepageFragment.class.getSimpleName()) || (homepageFragment = this.f20595a.get()) == null) {
+        } else if (!StringUtils.equals(str, HomepageFragment.class.getSimpleName()) || (homepageFragment = this.f20595a.get()) == null) {
         } else {
             long pageStart = homepageFragment.getPageStart();
             long elapsedRealtime = SystemClock.elapsedRealtime() - pageStart;
@@ -101,7 +101,7 @@ public class k implements a.d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!com.taobao.android.home.component.utils.j.a("enableHomePageReportJumpUrl", true) || TextUtils.isEmpty(str)) {
+        } else if (!com.taobao.android.home.component.utils.j.a("enableHomePageReportJumpUrl", true) || StringUtils.isEmpty(str)) {
         } else {
             s.f18233a.d().a("home_page_first_jump_url", str);
             s.f18233a.d().a("home_page_first_jump_time", SystemClock.uptimeMillis());

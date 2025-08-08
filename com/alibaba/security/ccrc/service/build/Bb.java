@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
@@ -159,7 +159,7 @@ public abstract class Bb extends AbstractC1227la implements Eb {
             resetDetectData();
             if (this.j) {
                 interfaceC1254ub.a(true, "");
-                if (this.d == null || TextUtils.isEmpty(d())) {
+                if (this.d == null || StringUtils.isEmpty(d())) {
                     return;
                 }
                 this.d.a(d(), false);

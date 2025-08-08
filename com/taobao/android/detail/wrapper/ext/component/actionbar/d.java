@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.component.actionbar;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.taobao.TBActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -284,9 +284,9 @@ public class d extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
                 Iterator<ehf> it = ehhVar.k.f27309a.iterator();
                 while (it.hasNext()) {
                     ehf next = it.next();
-                    if (!TextUtils.isEmpty(next.d)) {
+                    if (!StringUtils.isEmpty(next.d)) {
                         taoDetailActionBar.addTabWithImage(next.d, next.events);
-                    } else if (!TextUtils.isEmpty(next.c)) {
+                    } else if (!StringUtils.isEmpty(next.c)) {
                         taoDetailActionBar.addTabWithText(next.c, next.events);
                     }
                 }
@@ -316,14 +316,14 @@ public class d extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         com.taobao.android.detail.core.detail.kit.utils.d.a(this.f9568a, this.c, tIconFontTextView, eheVar.events);
         if (eheVar.component != null && eheVar.component.mapping != null && eheVar.component.mapping.containsKey("accessHint")) {
             String string = eheVar.component.mapping.getString("accessHint");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 tIconFontTextView.setContentDescription(string);
             }
         }
         try {
             if (eheVar.dmComponent != null && eheVar.dmComponent.getFields() != null && eheVar.dmComponent.getFields().getJSONObject("payload").containsKey("accessHint")) {
                 String string2 = eheVar.dmComponent.getFields().getJSONObject("payload").getString("accessHint");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     tIconFontTextView.setContentDescription(string2);
                 }
             }
@@ -392,7 +392,7 @@ public class d extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
             this.g.setTabItemUnSelectedTextColor(a5);
             this.g.setTabItemBackgroundColor(0);
             this.g.setSyncTransparencyViewBackgroundColor(a6);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             com.taobao.phenix.intf.b.h().a(a3).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.android.detail.wrapper.ext.component.actionbar.d.3

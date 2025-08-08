@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.util.HashMap;
 
@@ -58,7 +58,7 @@ public class FeatureManager {
 
     public void put(String str, Object obj) {
         try {
-            if (TextUtils.isEmpty(str) || this.mConfigs == null) {
+            if (StringUtils.isEmpty(str) || this.mConfigs == null) {
                 return;
             }
             this.mConfigs.put(str, obj);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 
@@ -41,7 +41,7 @@ public final class jqb {
                                 }
                             } else if (length > 4) {
                                 String substring = str3.substring(0, str3.indexOf(oan.DEFAULT_PLAN_B_PASSWORD_REGEX));
-                                if (!TextUtils.isEmpty(substring) && a2.contains(substring.substring(2))) {
+                                if (!StringUtils.isEmpty(substring) && a2.contains(substring.substring(2))) {
                                     return true;
                                 }
                             } else {
@@ -71,10 +71,10 @@ public final class jqb {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         return str + "." + str2;

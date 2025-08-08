@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAInputData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.a;
@@ -83,7 +83,7 @@ public final class ayb extends arn {
         for (Event event : list) {
             String type = event.getType();
             JSONObject fields = event.getFields();
-            if (!TextUtils.isEmpty(type)) {
+            if (!StringUtils.isEmpty(type)) {
                 d dVar = new d();
                 dVar.a(fields);
                 dVar.a(renderTree);

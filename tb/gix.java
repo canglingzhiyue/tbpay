@@ -10,7 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.TextureView;
@@ -38,7 +38,7 @@ public class gix {
             return (String) ipChange.ipc$dispatch("29fb2519", new Object[]{bArr, new Integer(i), new Integer(i2), new Integer(i3), new Integer(i4), str, new Float(f)});
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.equals(Constants.SHARETYPE_WITH_QRCODE, str) && !TextUtils.equals("image/jpeg", str)) {
+        if (!StringUtils.equals(Constants.SHARETYPE_WITH_QRCODE, str) && !StringUtils.equals("image/jpeg", str)) {
             String str2 = "invalid image type:" + str;
             return "";
         }
@@ -48,7 +48,7 @@ public class gix {
         }
         String str3 = "data:" + str + ";base64,";
         String encodeToString = Base64.encodeToString(b, 2);
-        if (TextUtils.isEmpty(encodeToString)) {
+        if (StringUtils.isEmpty(encodeToString)) {
             return "";
         }
         sb.append(str3);
@@ -73,7 +73,7 @@ public class gix {
         }
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         int i = (int) (f * 100.0f);
-        if (TextUtils.equals(str3.toLowerCase(), "png")) {
+        if (StringUtils.equals(str3.toLowerCase(), "png")) {
             compressFormat = Bitmap.CompressFormat.PNG;
         } else {
             compressFormat = Bitmap.CompressFormat.JPEG;
@@ -86,7 +86,7 @@ public class gix {
         String str4 = "data:" + str3 + ";base64,";
         String encodeToString = Base64.encodeToString(byteArray, 2);
         StringBuilder sb = new StringBuilder();
-        if (TextUtils.isEmpty(encodeToString)) {
+        if (StringUtils.isEmpty(encodeToString)) {
             return "data:,";
         }
         sb.append(str4);
@@ -110,7 +110,7 @@ public class gix {
             return null;
         }
         int i8 = (int) (f * 100.0f);
-        if (TextUtils.equals(str2.toLowerCase(), "png")) {
+        if (StringUtils.equals(str2.toLowerCase(), "png")) {
             compressFormat = Bitmap.CompressFormat.PNG;
         } else {
             compressFormat = Bitmap.CompressFormat.JPEG;
@@ -215,7 +215,7 @@ public class gix {
         createBitmap.copyPixelsFromBuffer(ByteBuffer.wrap(bArr));
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         int i5 = (int) (f * 100.0f);
-        if (TextUtils.equals(str.toLowerCase(), "png")) {
+        if (StringUtils.equals(str.toLowerCase(), "png")) {
             compressFormat = Bitmap.CompressFormat.PNG;
         } else {
             compressFormat = Bitmap.CompressFormat.JPEG;
@@ -226,6 +226,6 @@ public class gix {
 
     public static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.equals(Constants.SHARETYPE_WITH_QRCODE, str) ? "png" : TextUtils.equals("image/jpeg", str) ? f.FILE_TYPE_IMAGE_JPG : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.equals(Constants.SHARETYPE_WITH_QRCODE, str) ? "png" : StringUtils.equals("image/jpeg", str) ? f.FILE_TYPE_IMAGE_JPG : "";
     }
 }

@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Debug;
 import android.os.Environment;
 import android.os.StatFs;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
@@ -321,14 +321,14 @@ public class DeviceHWInfo {
         L12:
             java.lang.String r0 = com.alipay.mobile.common.logging.api.DeviceHWInfo.sCpuName
             java.lang.String r1 = "-1"
-            boolean r0 = android.text.TextUtils.equals(r0, r1)
+            boolean r0 = android.text.StringUtils.equals(r0, r1)
             if (r0 == 0) goto L1f
             java.lang.String r0 = com.alipay.mobile.common.logging.api.DeviceHWInfo.sCpuName
             return r0
         L1f:
             java.lang.String r0 = com.alipay.mobile.common.logging.api.DeviceHWInfo.sCpuName
             java.lang.String r1 = "-100"
-            boolean r0 = android.text.TextUtils.equals(r0, r1)
+            boolean r0 = android.text.StringUtils.equals(r0, r1)
             if (r0 == 0) goto La1
             java.lang.Class<com.alipay.mobile.common.logging.api.DeviceHWInfo> r0 = com.alipay.mobile.common.logging.api.DeviceHWInfo.class
             monitor-enter(r0)
@@ -657,7 +657,7 @@ public class DeviceHWInfo {
     }
 
     private static String b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

@@ -2,7 +2,7 @@ package com.taobao.desktop.widget.action;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -169,7 +169,7 @@ public class a extends f {
             return;
         }
         String d = g.a(this.c).d(this.e);
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             return;
         }
         String b = b(d);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.component.actionbar;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.kit.view.widget.base.uikit.TIconFontTextView;
@@ -121,7 +121,7 @@ public class e {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                 return;
             }
-            if (!ErrorConstant.isSessionInvalid(str) && !TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+            if (!ErrorConstant.isSessionInvalid(str) && !StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                 if (com.alibaba.ability.localization.b.c()) {
                     epo.a(com.alibaba.ability.localization.b.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_collect_fail)));
                 } else {
@@ -158,7 +158,7 @@ public class e {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                 return;
             }
-            if (!ErrorConstant.isSessionInvalid(str) && !TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+            if (!ErrorConstant.isSessionInvalid(str) && !StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                 if (com.alibaba.ability.localization.b.c()) {
                     epo.a(com.alibaba.ability.localization.b.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_cancel_collect_fail)));
                 } else {
@@ -179,7 +179,7 @@ public class e {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 if ((e.d(e.this) instanceof Activity) && !((Activity) e.d(e.this)).hasWindowFocus()) {
                     return;
@@ -285,7 +285,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.g = str;
         }

@@ -2,7 +2,7 @@ package com.alipay.android.msp.drivers.stores.storecenter;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.context.MspContext;
@@ -60,7 +60,7 @@ public abstract class StoreCenter {
             return ((Boolean) ipChange.ipc$dispatch("5d38bc98", new Object[]{this, str})).booleanValue();
         }
         LogUtil.record(2, "StoreCenter:isActionNameSupported", "pluginName-".concat(String.valueOf(str)));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (str.startsWith("loc:")) {
@@ -231,7 +231,7 @@ public abstract class StoreCenter {
                 return;
             }
             for (EventAction.MspEvent mspEvent : mspEvents) {
-                if (!TextUtils.equals(mspEvent.getActionName(), MspEventTypes.ACTION_STRING_BNCB) && !TextUtils.equals(mspEvent.getActionName(), "continue") && !TextUtils.equals(mspEvent.getActionName(), "log") && !TextUtils.equals(mspEvent.getActionName(), MspEventTypes.ACTION_INVOKE_QR_GEN)) {
+                if (!StringUtils.equals(mspEvent.getActionName(), MspEventTypes.ACTION_STRING_BNCB) && !StringUtils.equals(mspEvent.getActionName(), "continue") && !StringUtils.equals(mspEvent.getActionName(), "log") && !StringUtils.equals(mspEvent.getActionName(), MspEventTypes.ACTION_INVOKE_QR_GEN)) {
                     UserFeedBackUtil.getInstance().setUserFeedBackTag(null);
                 }
             }
@@ -249,9 +249,9 @@ public abstract class StoreCenter {
         MspContext mspContext = this.b;
         boolean z = mspContext != null && mspContext.isGrayNative2Dyapi();
         EventAction.MspEvent[] mspEvents = eventAction.getMspEvents();
-        if (mspEvents != null && context != null && z && !TextUtils.equals(eventAction.getEventFrom(), "invoke") && !TextUtils.equals(eventAction.getEventFrom(), "submit") && mspEvents.length > 1) {
+        if (mspEvents != null && context != null && z && !StringUtils.equals(eventAction.getEventFrom(), "invoke") && !StringUtils.equals(eventAction.getEventFrom(), "submit") && mspEvents.length > 1) {
             String actionData = eventAction.getActionData();
-            if (!TextUtils.isEmpty(actionData) && actionData.contains(";loc")) {
+            if (!StringUtils.isEmpty(actionData) && actionData.contains(";loc")) {
                 return true;
             }
         }
@@ -269,16 +269,16 @@ public abstract class StoreCenter {
         if (mspContext == null || !mspContext.isGrayNative2Dyapi()) {
             z = false;
         }
-        if (eventAction.getMspEvents() != null && context != null && z && !TextUtils.equals(eventAction.getEventFrom(), "invoke") && !TextUtils.equals(eventAction.getEventFrom(), "submit")) {
+        if (eventAction.getMspEvents() != null && context != null && z && !StringUtils.equals(eventAction.getEventFrom(), "invoke") && !StringUtils.equals(eventAction.getEventFrom(), "submit")) {
             String actionName = mspEvent.getActionName();
-            if (TextUtils.isEmpty(actionName)) {
+            if (StringUtils.isEmpty(actionName)) {
                 return false;
             }
             try {
                 JSONObject drmValueFromKey = DrmManager.getInstance(context).getDrmValueFromKey("gray_dynamic_api");
                 if (drmValueFromKey != null) {
                     String string = drmValueFromKey.getString(actionName);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         boolean procGraySwitchWithRate = DrmManager.getInstance(context).procGraySwitchWithRate(context, Integer.parseInt(string));
                         LogUtil.record(2, "StoreCenter:needCastActionToDoc", "name=" + actionName + " needCastActionToDoc=" + procGraySwitchWithRate);
                         return procGraySwitchWithRate;
@@ -295,9 +295,9 @@ public abstract class StoreCenter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("564e61ea", new Object[]{this, str, localEventStore});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (localEventStore == null && !TextUtils.equals(str, "showLoading") && !TextUtils.equals(str, "hideLoading")) {
+            if (localEventStore == null && !StringUtils.equals(str, "showLoading") && !StringUtils.equals(str, "hideLoading")) {
                 return;
             }
             if (localEventStore != null && a(str, localEventStore.getContext())) {
@@ -325,11 +325,11 @@ public abstract class StoreCenter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b6e7fbda", new Object[]{this, str, context})).booleanValue();
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             try {
                 if (this.d != null) {
                     String string = this.d.getString(str);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         boolean procGraySwitchWithRate = DrmManager.getInstance(context).procGraySwitchWithRate(context, Integer.parseInt(string));
                         LogUtil.record(2, "isDeprecatedApi", "apiName=" + str + " isDeprecatedApi=" + procGraySwitchWithRate);
                         return procGraySwitchWithRate;

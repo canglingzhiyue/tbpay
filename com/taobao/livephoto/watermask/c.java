@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.marvel.Exporter;
 import com.alibaba.marvel.Marvel;
@@ -81,7 +81,7 @@ public class c {
             return;
         }
         AdapterForTLog.loge("VideoWaterMask", "doImageExport,imagePath:" + str + ", width:" + i + ", height:" + i2);
-        if (c() && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (c() && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             Project b = b();
             b.getMeEditor().setCanvasSize(i, i2);
             a(b.getMeEditor(), str, str2);
@@ -132,7 +132,7 @@ public class c {
             return;
         }
         AdapterForTLog.loge("VideoWaterMask", "doVideoExport, videoPath = " + str + ", waterMaskPath = " + str2);
-        if (c() && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (c() && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             Project b = b();
             String createResourceIfNeeded = b.getMeEditor().createResourceIfNeeded(str, "resMedia");
             int resWidth = b.getMeEditor().getResWidth(createResourceIfNeeded);

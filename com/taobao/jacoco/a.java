@@ -2,7 +2,7 @@ package com.taobao.jacoco;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -77,7 +77,7 @@ public class a implements Runnable {
             }
             File b2 = kgd.b(this.c);
             kgd.a(a(), b2);
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 throw new IllegalArgumentException("buildId is empty");
             }
             final String str = this.d;
@@ -234,7 +234,7 @@ public class a implements Runnable {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
         String str = (String) c.a(OConstant.LAUNCH_ONLINEAPPKEY, "");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = (String) c.a("constantAppkey", "");
         }
         String value = UTUtdid.instance(this.c).getValue();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.android.aura.datamodel.nextrpc.a;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,7 +27,7 @@ public class baq {
             return null;
         }
         String a2 = a(g);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         MtopStatistics mtopStat = g.getMtopStat();

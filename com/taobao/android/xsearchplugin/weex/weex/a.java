@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -204,7 +204,7 @@ public abstract class a implements com.taobao.weex.c {
             b(weexBean.type);
             if (jzg.a(this.b)) {
                 String a2 = jzg.a(weexBean.type);
-                if (!TextUtils.isEmpty(a2) && a2.startsWith("http")) {
+                if (!StringUtils.isEmpty(a2) && a2.startsWith("http")) {
                     a().b().d("AbsWeexRender", "使用测试模板进行");
                     return a(weexBean, map, a2);
                 }

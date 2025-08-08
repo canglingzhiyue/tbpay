@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.base.IJsBridgeService;
@@ -40,19 +40,19 @@ public class lrk extends lrr {
             interfaceC0670a.a("-4");
         } else {
             String string = jSONObject.getString("sectionBizCode");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 ldf.d("ShareDataFindSmartContentInfoFeature", "sectionBizCode is empty");
                 interfaceC0670a.a("-4");
                 return;
             }
             String string2 = jSONObject.getString("domain");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 ldf.d("ShareDataFindSmartContentInfoFeature", "domain is empty");
                 interfaceC0670a.a("-4");
                 return;
             }
             String string3 = jSONObject.getString("id");
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 ldf.d("ShareDataFindSmartContentInfoFeature", "id is empty");
                 interfaceC0670a.a("-4");
             } else if (this.f30862a.a(string) == null) {

@@ -1,6 +1,6 @@
 package com.taobao.taobao.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.TBS;
 import com.taobao.taolive.room.utils.ag;
@@ -103,20 +103,20 @@ public class e {
             return;
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             sb.append("spm=" + str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             sb.append(",scm=" + str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             sb.append(",extra=" + str5);
         }
         if (map != null && map.size() > 0) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     sb.append("," + key + "=" + value);
                 }
             }

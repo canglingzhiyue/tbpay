@@ -12,7 +12,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.api.Api;
 import com.huawei.hms.api.HuaweiApiClient;
 import com.huawei.hms.common.api.ConnectionPostProcessor;
@@ -352,7 +352,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
         SubAppInfo subAppInfo = this.o;
         PendingIntent pendingIntent = null;
         String subAppID = subAppInfo == null ? null : subAppInfo.getSubAppID();
-        if (!TextUtils.isEmpty(subAppID)) {
+        if (!StringUtils.isEmpty(subAppID)) {
             this.d = subAppID;
         }
         int statusCode = resolveResult.getStatus().getStatusCode();
@@ -505,7 +505,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
         }
         for (Api<?> api : apiMap.keySet()) {
             String apiName = api.getApiName();
-            if (!TextUtils.isEmpty(apiName) && (num = HuaweiApiAvailability.getApiMap().get(apiName)) != null && (intValue = num.intValue()) > i) {
+            if (!StringUtils.isEmpty(apiName) && (num = HuaweiApiAvailability.getApiMap().get(apiName)) != null && (intValue = num.intValue()) > i) {
                 i = intValue;
             }
         }
@@ -637,7 +637,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
             this.h = new WeakReference<>(activity);
             this.i = new WeakReference<>(activity);
         }
-        this.d = TextUtils.isEmpty(this.c) ? Util.getAppId(this.b) : this.c;
+        this.d = StringUtils.isEmpty(this.c) ? Util.getAppId(this.b) : this.c;
         int e2 = e();
         HMSLog.i("HuaweiApiClientImpl", "connect minVersion:" + e2);
         HuaweiApiAvailability.setServicesVersionCode(e2);
@@ -669,7 +669,7 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
         if (i == 3 || i == 5 || i == 2 || i == 4) {
             return;
         }
-        this.d = TextUtils.isEmpty(this.c) ? Util.getAppId(this.b) : this.c;
+        this.d = StringUtils.isEmpty(this.c) ? Util.getAppId(this.b) : this.c;
         l();
     }
 
@@ -1062,10 +1062,10 @@ public class HuaweiApiClientImpl extends HuaweiApiClient implements ServiceConne
             str = "subAppInfo is null";
         } else {
             String subAppID = subAppInfo.getSubAppID();
-            if (TextUtils.isEmpty(subAppID)) {
+            if (StringUtils.isEmpty(subAppID)) {
                 str = "subAppId is empty";
             } else {
-                if (!subAppID.equals(TextUtils.isEmpty(this.c) ? Util.getAppId(this.b) : this.c)) {
+                if (!subAppID.equals(StringUtils.isEmpty(this.c) ? Util.getAppId(this.b) : this.c)) {
                     this.o = new SubAppInfo(subAppInfo);
                     return true;
                 }

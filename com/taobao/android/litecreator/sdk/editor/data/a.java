@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -228,13 +228,13 @@ public class a {
                 while (i2 < size) {
                     Paster paster5 = list2.get(i2);
                     Paster a3 = a(paster5.id);
-                    if (a3 == null || !TextUtils.equals(paster5.id, a3.id) || !(a3.extra instanceof String)) {
+                    if (a3 == null || !StringUtils.equals(paster5.id, a3.id) || !(a3.extra instanceof String)) {
                         i = size;
                         paster = paster4;
                         paster2 = paster3;
                     } else {
                         String str = (String) a3.extra;
-                        boolean equals = TextUtils.equals(paster5.resPath, a3.resPath);
+                        boolean equals = StringUtils.equals(paster5.resPath, a3.resPath);
                         boolean isSameAs = paster5.transform.isSameAs(a3.transform);
                         boolean z = paster5.startTimeUs == a3.startTimeUs;
                         int i3 = size;
@@ -243,9 +243,9 @@ public class a {
                         boolean z4 = paster5.shadowColor == a3.shadowColor;
                         boolean z5 = paster5.textColor == a3.textColor;
                         i = i3;
-                        boolean equals2 = TextUtils.equals(paster5.textFontPath, a3.textFontPath);
+                        boolean equals2 = StringUtils.equals(paster5.textFontPath, a3.textFontPath);
                         paster2 = paster3;
-                        boolean equals3 = TextUtils.equals(paster5.text, a3.text);
+                        boolean equals3 = StringUtils.equals(paster5.text, a3.text);
                         paster = paster4;
                         boolean z6 = paster5.mute == a3.mute;
                         if (!(equals && isSameAs && z && z2 && z5 && z3 && z4 && equals2 && equals3 && z6)) {
@@ -323,7 +323,7 @@ public class a {
             return null;
         }
         for (Paster paster : list) {
-            if (TextUtils.equals(paster.id, str)) {
+            if (StringUtils.equals(paster.id, str)) {
                 return paster;
             }
         }

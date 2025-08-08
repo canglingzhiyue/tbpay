@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -104,7 +104,7 @@ public class j extends MainViewModel {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.f10429a) && TextUtils.isEmpty(this.b) && TextUtils.isEmpty(this.d) && TextUtils.isEmpty(this.e) && TextUtils.isEmpty(this.f) && (((arrayList = this.j) == null || arrayList.size() == 0) && this.g < 3)) {
+        if (StringUtils.isEmpty(this.f10429a) && StringUtils.isEmpty(this.b) && StringUtils.isEmpty(this.d) && StringUtils.isEmpty(this.e) && StringUtils.isEmpty(this.f) && (((arrayList = this.j) == null || arrayList.size() == 0) && this.g < 3)) {
             return false;
         }
         return super.isValid();

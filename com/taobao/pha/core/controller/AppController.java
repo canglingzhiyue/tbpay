@@ -15,7 +15,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -339,7 +339,7 @@ public class AppController extends com.taobao.pha.core.e {
         if (this.R) {
             this.Q = new h(this);
         }
-        this.z = TextUtils.equals(this.c.getQueryParameter("disableProgress"), "true");
+        this.z = StringUtils.equals(this.c.getQueryParameter("disableProgress"), "true");
         this.k = new com.taobao.pha.core.phacontainer.a(this);
         Cnew.a(new Runnable() { // from class: com.taobao.pha.core.controller.AppController.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -657,7 +657,7 @@ public class AppController extends com.taobao.pha.core.e {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{this, str});
         }
         ArrayList arrayList = new ArrayList();
-        if (TextUtils.isEmpty(str) || (oVar = this.f18708a) == null) {
+        if (StringUtils.isEmpty(str) || (oVar = this.f18708a) == null) {
             return arrayList;
         }
         List<nfz> d = oVar.d();
@@ -665,7 +665,7 @@ public class AppController extends com.taobao.pha.core.e {
             return d;
         }
         for (nfz nfzVar : d) {
-            if (nfzVar != null && TextUtils.equals(nfzVar.d(), str)) {
+            if (nfzVar != null && StringUtils.equals(nfzVar.d(), str)) {
                 arrayList.add(nfzVar);
             }
         }
@@ -855,7 +855,7 @@ public class AppController extends com.taobao.pha.core.e {
             return;
         }
         this.B.add(cVar);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.A.put(str, cVar);
@@ -1275,7 +1275,7 @@ public class AppController extends com.taobao.pha.core.e {
         }
         this.m = AppEntryType.DEFAULT;
         String queryParameter = this.c.getQueryParameter("pha_active_page_key");
-        if (TextUtils.isEmpty(queryParameter) || manifestModel.tabBar == null) {
+        if (StringUtils.isEmpty(queryParameter) || manifestModel.tabBar == null) {
             return;
         }
         ArrayList<PageModel> arrayList = manifestModel.pages;
@@ -1289,12 +1289,12 @@ public class AppController extends com.taobao.pha.core.e {
             PageModel pageModel = arrayList.get(i);
             if (pageModel != null) {
                 i2 = pageModel.getDefaultFrameIndex();
-                if (TextUtils.equals(pageModel.key, queryParameter)) {
+                if (StringUtils.equals(pageModel.key, queryParameter)) {
                     break;
                 } else if (pageModel.frames != null) {
                     for (int i3 = 0; i3 < pageModel.frames.size(); i3++) {
                         PageModel pageModel2 = pageModel.frames.get(i3);
-                        if (pageModel2 != null && TextUtils.equals(pageModel2.key, queryParameter)) {
+                        if (pageModel2 != null && StringUtils.equals(pageModel2.key, queryParameter)) {
                             i2 = i3;
                             break loop0;
                         }
@@ -1396,7 +1396,7 @@ public class AppController extends com.taobao.pha.core.e {
             ipChange.ipc$dispatch("feaba7d8", new Object[]{this, manifestModel});
         } else if (!(this.l instanceof AppFragment)) {
         } else {
-            if (!TextUtils.isEmpty(manifestModel.backgroundColor)) {
+            if (!StringUtils.isEmpty(manifestModel.backgroundColor)) {
                 ((AppFragment) this.l).setBackgroundColor(ngn.f(manifestModel.backgroundColor));
             }
             this.p = new n(this);
@@ -1477,10 +1477,10 @@ public class AppController extends com.taobao.pha.core.e {
         }
         String queryParameter = this.c.getQueryParameter("pha_sub_page_key");
         String queryParameter2 = this.c.getQueryParameter("pha_jump_url");
-        if (TextUtils.isEmpty(queryParameter) && TextUtils.isEmpty(queryParameter2)) {
+        if (StringUtils.isEmpty(queryParameter) && StringUtils.isEmpty(queryParameter2)) {
             return null;
         }
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             Iterator<PageModel> it = this.o.pages.iterator();
             while (true) {
                 if (!it.hasNext()) {
@@ -1488,7 +1488,7 @@ public class AppController extends com.taobao.pha.core.e {
                     break;
                 }
                 pageModel = it.next();
-                if (pageModel != null && !TextUtils.isEmpty(pageModel.key) && queryParameter.equals(pageModel.key)) {
+                if (pageModel != null && !StringUtils.isEmpty(pageModel.key) && queryParameter.equals(pageModel.key)) {
                     break;
                 }
             }
@@ -1498,7 +1498,7 @@ public class AppController extends com.taobao.pha.core.e {
                 if (pageModel.frames.size() > 0 && (pageModel2 = pageModel.frames.get(pageModel.getActiveIndex())) != null) {
                     url = pageModel2.getUrl();
                 }
-                if (TextUtils.isEmpty(url) || !this.f.isTrustedUrl(url)) {
+                if (StringUtils.isEmpty(url) || !this.f.isTrustedUrl(url)) {
                     pageModel = null;
                     aVar = new com.taobao.pha.core.error.a(PHAErrorType.SECURITY_ERROR, com.taobao.pha.core.error.a.ERR_MSG_INVALID_DOMAIN);
                 }
@@ -1508,9 +1508,9 @@ public class AppController extends com.taobao.pha.core.e {
         } else {
             pageModel = null;
         }
-        if (pageModel == null && !TextUtils.isEmpty(queryParameter2)) {
+        if (pageModel == null && !StringUtils.isEmpty(queryParameter2)) {
             queryParameter2 = Uri.decode(queryParameter2);
-            if (!TextUtils.isEmpty(queryParameter2)) {
+            if (!StringUtils.isEmpty(queryParameter2)) {
                 this.m = AppEntryType.SUB_PAGE_JUMP_URL;
                 if (this.f.isTrustedUrl(queryParameter2)) {
                     pageModel = new PageModel();
@@ -1522,9 +1522,9 @@ public class AppController extends com.taobao.pha.core.e {
             }
         }
         if (aVar != null) {
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 aVar.c.put("subPageKey", (Object) queryParameter);
-            } else if (!TextUtils.isEmpty(queryParameter2)) {
+            } else if (!StringUtils.isEmpty(queryParameter2)) {
                 aVar.c.put("jumpUrl", (Object) queryParameter2);
             }
             this.i.a(nfc.PHA_MONITOR_MODULE_POINT_LOAD_SUB_PAGE, aVar);
@@ -1541,9 +1541,9 @@ public class AppController extends com.taobao.pha.core.e {
         ngr.b("AppController", "load SubPageUI");
         Boolean valueOf = Boolean.valueOf(this.j.a(pageModel));
         JSONObject jSONObject = new JSONObject();
-        if (this.m == AppEntryType.SUB_PAGE_KEY && !TextUtils.isEmpty(pageModel.key)) {
+        if (this.m == AppEntryType.SUB_PAGE_KEY && !StringUtils.isEmpty(pageModel.key)) {
             jSONObject.put("subPageKey", (Object) pageModel.key);
-        } else if (this.m == AppEntryType.SUB_PAGE_JUMP_URL && !TextUtils.isEmpty(pageModel.getUrl())) {
+        } else if (this.m == AppEntryType.SUB_PAGE_JUMP_URL && !StringUtils.isEmpty(pageModel.getUrl())) {
             jSONObject.put("jumpUrl", (Object) pageModel.getUrl());
         }
         if (valueOf.booleanValue()) {

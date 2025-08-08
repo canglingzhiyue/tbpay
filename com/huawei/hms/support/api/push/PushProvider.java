@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.log.HMSLog;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -56,7 +56,7 @@ public class PushProvider extends ContentProvider {
                 return ParcelFileDescriptor.open(file2, 268435456);
             }
         } else {
-            if (!TextUtils.isEmpty(getContext().getFilesDir() + "")) {
+            if (!StringUtils.isEmpty(getContext().getFilesDir() + "")) {
                 File file3 = new File(str2.substring(0, str2.length() - 6) + "/shared_prefs/push_notify_flag.xml");
                 if (file3.exists()) {
                     return ParcelFileDescriptor.open(file3, 268435456);

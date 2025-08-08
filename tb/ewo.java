@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -110,7 +110,7 @@ public class ewo implements IProtocol {
         if (ipChange instanceof IpChange) {
             return (RuleModel) ipChange.ipc$dispatch("c224d7e5", new Object[]{this, str, str2});
         }
-        if (ewu.a(this.f27612a) || TextUtils.isEmpty(str2)) {
+        if (ewu.a(this.f27612a) || StringUtils.isEmpty(str2)) {
             return null;
         }
         return this.f27612a.get(str2);
@@ -122,7 +122,7 @@ public class ewo implements IProtocol {
         if (ipChange instanceof IpChange) {
             return (ActionModel) ipChange.ipc$dispatch("ff1c0777", new Object[]{this, str});
         }
-        if (ewu.a(this.b) || TextUtils.isEmpty(str)) {
+        if (ewu.a(this.b) || StringUtils.isEmpty(str)) {
             return null;
         }
         return new ActionModel(this.b.get(str));

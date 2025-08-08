@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class sts {
             ldf.d("ExpoFilterManger", "ext == null");
             return false;
         }
-        return TextUtils.equals("true", ext.getString("clearExposureFilterBuffer"));
+        return StringUtils.equals("true", ext.getString("clearExposureFilterBuffer"));
     }
 
     private void b(IContainerDataModel<?> iContainerDataModel) {
@@ -134,7 +134,7 @@ public class sts {
                 while (it.hasNext()) {
                     SectionModel sectionModel = (SectionModel) it.next();
                     String string = sectionModel.getExt().getString("cardFeatureId");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         ldf.d("ExpoFilterManger", "cardFeatureId is empty");
                     } else if (this.b.a((b<String>) string)) {
                         arrayList.add(sectionModel);

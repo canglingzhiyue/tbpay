@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -165,7 +165,7 @@ public class bal implements bae {
             arc.a().c("Weex2ListenerImpl", "reportError", str);
         } else {
             b bVar = new b(1, "Weex2", str2, str);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("AuraComponentKey", str3);
                 bVar.a(hashMap);

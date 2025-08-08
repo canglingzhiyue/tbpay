@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -45,7 +45,7 @@ public class jnx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f09a25c7", new Object[]{this, aVar});
-        } else if (aVar == null || TextUtils.isEmpty(aVar.a())) {
+        } else if (aVar == null || StringUtils.isEmpty(aVar.a())) {
         } else {
             this.f29652a.put(aVar.a(), aVar);
         }

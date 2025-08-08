@@ -15,7 +15,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.GestureDetectorCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Pair;
@@ -424,7 +424,7 @@ public class NavigationTabIndicatorView extends FrameLayout {
         g gVar = this.mNavigationTab;
         if (gVar != null && gVar.i() != null) {
             Map<String, String> i = this.mNavigationTab.i();
-            if (!TextUtils.isEmpty(i.get("pageName")) && !TextUtils.isEmpty(i.get("controlName"))) {
+            if (!StringUtils.isEmpty(i.get("pageName")) && !StringUtils.isEmpty(i.get("controlName"))) {
                 UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = new UTHitBuilders.UTControlHitBuilder(i.get("pageName"), i.get("controlName"));
                 uTControlHitBuilder.setProperty("spm", this.mNavigationTab.h().get("spm-url"));
                 UTAnalytics.getInstance().getDefaultTracker().send(uTControlHitBuilder.build());
@@ -463,7 +463,7 @@ public class NavigationTabIndicatorView extends FrameLayout {
             ipChange.ipc$dispatch("88c4d8db", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.mTitle)) {
+        if (!StringUtils.isEmpty(this.mTitle)) {
             this.mTitleView.setText(this.mTitle);
             setContentDescription(this.mTitle);
         }
@@ -642,13 +642,13 @@ public class NavigationTabIndicatorView extends FrameLayout {
         switch (navigationTabMsgMode) {
             case TEXT:
             case GUARDIAN_TEXT:
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     navigationTabMsgMode = NavigationTabMsgMode.NONE;
                     break;
                 }
                 break;
             case RED_POINT_INDICATOR:
-                if (TextUtils.isEmpty(str) || "0".equals(str)) {
+                if (StringUtils.isEmpty(str) || "0".equals(str)) {
                     navigationTabMsgMode = NavigationTabMsgMode.NONE;
                     break;
                 }
@@ -686,7 +686,7 @@ public class NavigationTabIndicatorView extends FrameLayout {
         switch (this.mMode) {
             case TEXT:
             case GUARDIAN_TEXT:
-                updateMessageViewVisibility(true ^ TextUtils.isEmpty(this.mMessage));
+                updateMessageViewVisibility(true ^ StringUtils.isEmpty(this.mMessage));
                 updateMessageView(R.drawable.uik_navigation_message_more_bg);
                 this.mMessageView.setText(this.mMessage);
                 layoutParams.gravity = 17;
@@ -698,7 +698,7 @@ public class NavigationTabIndicatorView extends FrameLayout {
                 this.mMessageView.setPadding(12, 0, 12, 0);
                 break;
             case RED_POINT_INDICATOR:
-                if (TextUtils.isEmpty(this.mMessage) || "0".equals(this.mMessage)) {
+                if (StringUtils.isEmpty(this.mMessage) || "0".equals(this.mMessage)) {
                     updateMessageViewVisibility(false);
                     break;
                 } else {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -94,7 +94,7 @@ public final class awj extends aso {
             return;
         }
         String string = jSONObject.getString("min");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         Iterator<Object> it = jSONArray.iterator();
@@ -103,7 +103,7 @@ public final class awj extends aso {
             Object next = it.next();
             if (next instanceof JSONObject) {
                 String string2 = ((JSONObject) next).getString("optional");
-                if (!TextUtils.isEmpty(string2) && (string2.equals("disable") || string2.equals("none"))) {
+                if (!StringUtils.isEmpty(string2) && (string2.equals("disable") || string2.equals("none"))) {
                     i++;
                 }
             }
@@ -117,7 +117,7 @@ public final class awj extends aso {
             if (next2 instanceof JSONObject) {
                 JSONObject jSONObject2 = (JSONObject) next2;
                 String string3 = jSONObject2.getString("id");
-                if (!TextUtils.isEmpty(string3) && TextUtils.isEmpty(jSONObject2.getString("optional")) && jSONArray2.contains(string3)) {
+                if (!StringUtils.isEmpty(string3) && StringUtils.isEmpty(jSONObject2.getString("optional")) && jSONArray2.contains(string3)) {
                     jSONObject2.put("optional", (Object) "force");
                 }
             }

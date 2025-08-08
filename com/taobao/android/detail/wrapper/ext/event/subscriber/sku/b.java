@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.event.subscriber.sku;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.wrapper.activity.DetailActivity;
@@ -73,9 +73,9 @@ public class b implements j<com.taobao.android.detail.wrapper.ext.event.subscrib
         }
         this.f11293a.f(true);
         a aVar2 = new a(detailActivity.v);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             aVar2.a(1, b);
-        } else if (!TextUtils.isEmpty(a2)) {
+        } else if (!StringUtils.isEmpty(a2)) {
             aVar2.a(2, a2);
         }
         this.b = aVar2;
@@ -109,7 +109,7 @@ public class b implements j<com.taobao.android.detail.wrapper.ext.event.subscrib
             }
             this.f = i;
             this.e = str;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.c = true;

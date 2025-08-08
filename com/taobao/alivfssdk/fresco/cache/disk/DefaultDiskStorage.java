@@ -1,6 +1,6 @@
 package com.taobao.alivfssdk.fresco.cache.disk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.security.realidentity.v2;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -306,7 +306,7 @@ public class DefaultDiskStorage implements com.taobao.alivfssdk.fresco.cache.dis
         if (listFiles != null) {
             for (File file : listFiles) {
                 c b2 = c.b(file);
-                if (b2 != null && b2.f8508a == FileType.CONTENT && str.equals(b2.b) && !TextUtils.isEmpty(b2.c)) {
+                if (b2 != null && b2.f8508a == FileType.CONTENT && str.equals(b2.b) && !StringUtils.isEmpty(b2.c)) {
                     try {
                         arrayList.add(new String(Base64.decode(b2.c, 11), "UTF-8"));
                     } catch (UnsupportedEncodingException e) {
@@ -452,7 +452,7 @@ public class DefaultDiskStorage implements com.taobao.alivfssdk.fresco.cache.dis
         private c(FileType fileType, String str, com.taobao.alivfssdk.fresco.cache.common.b bVar) {
             this.f8508a = fileType;
             this.b = str;
-            if ((bVar instanceof com.taobao.alivfssdk.fresco.cache.common.f) && !TextUtils.isEmpty(((com.taobao.alivfssdk.fresco.cache.common.f) bVar).b)) {
+            if ((bVar instanceof com.taobao.alivfssdk.fresco.cache.common.f) && !StringUtils.isEmpty(((com.taobao.alivfssdk.fresco.cache.common.f) bVar).b)) {
                 try {
                     this.c = Base64.encodeToString(((com.taobao.alivfssdk.fresco.cache.common.f) bVar).b.getBytes("UTF-8"), 11);
                     return;
@@ -485,7 +485,7 @@ public class DefaultDiskStorage implements com.taobao.alivfssdk.fresco.cache.dis
                 return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
             }
             String str2 = str + File.separator + this.b;
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 str2 = str2 + riy.AND_NOT + this.c;
             }
             return str2 + this.f8508a.extension;
@@ -497,7 +497,7 @@ public class DefaultDiskStorage implements com.taobao.alivfssdk.fresco.cache.dis
                 return (File) ipChange.ipc$dispatch("4659278e", new Object[]{this, file});
             }
             String str = this.b;
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 str = str + riy.AND_NOT + this.c + ".";
             }
             return File.createTempFile(str, ".tmp", file);

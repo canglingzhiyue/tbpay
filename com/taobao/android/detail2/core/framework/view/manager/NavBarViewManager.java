@@ -11,7 +11,7 @@ import android.support.v4.view.AccessibilityDelegateCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -756,7 +756,7 @@ public class NavBarViewManager {
 
     public static boolean c(AtmosParams atmosParams) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6d0fc6c", new Object[]{atmosParams})).booleanValue() : (atmosParams == null || atmosParams.background == null || TextUtils.isEmpty(atmosParams.background.imageUrl)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6d0fc6c", new Object[]{atmosParams})).booleanValue() : (atmosParams == null || atmosParams.background == null || StringUtils.isEmpty(atmosParams.background.imageUrl)) ? false : true;
     }
 
     public void a() {

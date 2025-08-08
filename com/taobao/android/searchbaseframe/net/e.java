@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.net;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -105,7 +105,7 @@ public class e {
         }
         try {
             String str = new String(a2, "UTF-8");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 throw new ResultException(new ResultError(5));
             }
             try {

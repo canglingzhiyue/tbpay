@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.idst.nls.restapi.HttpRequest;
@@ -66,7 +66,7 @@ public class ayo {
             e.a("tanx_click_invoke_success", d());
             for (final String str : this.d) {
                 String host = Uri.parse(str).getHost();
-                if (TextUtils.isEmpty(host)) {
+                if (StringUtils.isEmpty(host)) {
                     e.a("tanx_click_invalid_url", "msg=domain_not_right", d());
                 } else {
                     final String b = b(host);
@@ -147,7 +147,7 @@ public class ayo {
         for (int i = 0; i < parseArray.size(); i++) {
             this.d.add(parseArray.getString(i));
         }
-        if (TextUtils.isEmpty(this.f25697a.get(MspDBHelper.BizEntry.COLUMN_NAME_PID))) {
+        if (StringUtils.isEmpty(this.f25697a.get(MspDBHelper.BizEntry.COLUMN_NAME_PID))) {
             a("pid_empty");
         }
         if (this.d.size() == 0) {
@@ -184,7 +184,7 @@ public class ayo {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         StringBuilder sb = new StringBuilder(d());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(",host=");
             sb.append(str);
         }

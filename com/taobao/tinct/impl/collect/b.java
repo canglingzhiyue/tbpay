@@ -1,7 +1,7 @@
 package com.taobao.tinct.impl.collect;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -359,7 +359,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("dbf576d6", new Object[]{this, cVar})).booleanValue();
         }
-        if (cVar != null && !TextUtils.isEmpty(cVar.a())) {
+        if (cVar != null && !StringUtils.isEmpty(cVar.a())) {
             List<com.taobao.tinct.model.c> list = this.f.touchStoneInfo.get(cVar.getBizName());
             if (list != null) {
                 if (list.contains(cVar)) {
@@ -386,7 +386,7 @@ public class b {
         CustomChangeInfo customChangeInfo2 = this.f.customInfo.get(customChangeInfo.getHashKey());
         if (customChangeInfo2 != null) {
             if (customChangeInfo.isFull()) {
-                if (customChangeInfo2.getFullExpireTime() != -1 && TextUtils.equals(customChangeInfo2.getVersion(), customChangeInfo.getVersion())) {
+                if (customChangeInfo2.getFullExpireTime() != -1 && StringUtils.equals(customChangeInfo2.getVersion(), customChangeInfo.getVersion())) {
                     String.format("[Not Change] Receive full custom tinct %s have not changed!", customChangeInfo.getTinctTag());
                     return false;
                 }
@@ -394,7 +394,7 @@ public class b {
                 customChangeInfo.updateFullExpireTime();
                 b(customChangeInfo);
                 return false;
-            } else if (customChangeInfo2.getFullExpireTime() == -1 && TextUtils.equals(customChangeInfo2.getVersion(), customChangeInfo.getVersion())) {
+            } else if (customChangeInfo2.getFullExpireTime() == -1 && StringUtils.equals(customChangeInfo2.getVersion(), customChangeInfo.getVersion())) {
                 String.format("[Not Change] Receive gray custom tinct %s have not changed!", customChangeInfo.getTinctTag());
                 if (!customChangeInfo2.isStatistics() || com.taobao.tinct.impl.config.a.g(customChangeInfo) == 1) {
                     e.a(customChangeInfo2, "change");

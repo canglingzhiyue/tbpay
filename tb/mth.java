@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -15,13 +15,13 @@ public class mth {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
             String a2 = mti.a().a("mode", "1");
             String a3 = mti.a().a("list", "");
-            if (!TextUtils.isEmpty(a3) && a3.split(",").length != 0) {
+            if (!StringUtils.isEmpty(a3) && a3.split(",").length != 0) {
                 if (str.startsWith(ado.URL_SEPARATOR)) {
                     i = 2;
                 } else {
@@ -33,7 +33,7 @@ public class mth {
                 }
                 String substring = str.substring(i);
                 String[] split = a3.split(",");
-                if (TextUtils.equals(a2, "2")) {
+                if (StringUtils.equals(a2, "2")) {
                     int length = split.length;
                     int i2 = 0;
                     while (true) {
@@ -41,7 +41,7 @@ public class mth {
                             break;
                         }
                         String str2 = split[i2];
-                        if (!TextUtils.isEmpty(str2) && substring.startsWith(str2)) {
+                        if (!StringUtils.isEmpty(str2) && substring.startsWith(str2)) {
                             z = false;
                             break;
                         }
@@ -50,7 +50,7 @@ public class mth {
                     if (!z) {
                         return false;
                     }
-                } else if (TextUtils.equals(a2, "1")) {
+                } else if (StringUtils.equals(a2, "1")) {
                     int length2 = split.length;
                     int i3 = 0;
                     while (true) {
@@ -59,7 +59,7 @@ public class mth {
                             break;
                         }
                         String str3 = split[i3];
-                        if (!TextUtils.isEmpty(str3) && substring.startsWith(str3)) {
+                        if (!StringUtils.isEmpty(str3) && substring.startsWith(str3)) {
                             break;
                         }
                         i3++;
@@ -70,10 +70,10 @@ public class mth {
                 }
                 return str.contains("x-ssr=true");
             }
-            if (TextUtils.equals(a2, "2")) {
+            if (StringUtils.equals(a2, "2")) {
                 return str.contains("x-ssr=true");
             }
-            if (TextUtils.equals(a2, "1")) {
+            if (StringUtils.equals(a2, "1")) {
                 return false;
             }
             return str.contains("x-ssr=true");

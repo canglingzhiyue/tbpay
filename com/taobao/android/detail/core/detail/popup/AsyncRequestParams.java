@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.detail.popup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.request.MtopRequestParams;
@@ -33,7 +33,7 @@ public class AsyncRequestParams implements MtopRequestParams {
         }
         this.api = jSONObject.getString("api");
         this.version = jSONObject.getString("version");
-        if (TextUtils.isEmpty(this.api) || TextUtils.isEmpty(this.version)) {
+        if (StringUtils.isEmpty(this.api) || StringUtils.isEmpty(this.version)) {
             return;
         }
         this.isTradeUnit = jSONObject.getBooleanValue(TRADE_UNIT);

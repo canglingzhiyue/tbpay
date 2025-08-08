@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.AccsClientConfig;
 import com.taobao.accs.base.IBaseService;
@@ -82,7 +82,7 @@ public abstract class d implements IBaseService {
         }
         String action = intent.getAction();
         ALog.i(TAG, "onStartCommand begin", "action", action);
-        if (TextUtils.equals(action, Constants.ACTION_START_SERVICE)) {
+        if (StringUtils.equals(action, Constants.ACTION_START_SERVICE)) {
             handleStartCommand(intent);
         }
         return onHostStartCommand(intent, i, i2);
@@ -115,7 +115,7 @@ public abstract class d implements IBaseService {
             boolean booleanExtra = intent.getBooleanExtra("start", false);
             int intExtra = intent.getIntExtra("mode", 0);
             ALog.i(TAG, "handleStartCommand", Constants.KEY_CONFIG_TAG, stringExtra5, "appkey", stringExtra2, "appSecret", stringExtra4, "ttid", stringExtra3, "pkg", stringExtra);
-            if (TextUtils.isEmpty(stringExtra) || TextUtils.isEmpty(stringExtra2) || !stringExtra.equals(this.mContext.getPackageName())) {
+            if (StringUtils.isEmpty(stringExtra) || StringUtils.isEmpty(stringExtra2) || !stringExtra.equals(this.mContext.getPackageName())) {
                 return;
             }
             o.a(this.mContext, intExtra);
@@ -141,7 +141,7 @@ public abstract class d implements IBaseService {
         } catch (Throwable th) {
             ALog.e(TAG, "getConnection", th, new Object[0]);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ALog.e(TAG, "getConnection configTag null or env invalid", "conns.size", Integer.valueOf(mConnections.size()));
             if (mConnections.size() <= 0) {
                 return null;

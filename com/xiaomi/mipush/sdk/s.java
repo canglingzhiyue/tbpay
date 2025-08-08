@@ -1,7 +1,7 @@
 package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ic;
 import com.xiaomi.push.im;
 import com.xiaomi.push.iy;
@@ -70,7 +70,7 @@ public class s {
         s a2;
         int i;
         b m1665a = b.m1665a(context);
-        if (TextUtils.isEmpty(m1665a.m1673c()) || TextUtils.isEmpty(m1665a.d())) {
+        if (StringUtils.isEmpty(m1665a.m1673c()) || StringUtils.isEmpty(m1665a.d())) {
             a2 = a(context);
             i = 6;
         } else if (m1665a.m1677f()) {

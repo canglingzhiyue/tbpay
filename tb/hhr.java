@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.a;
@@ -41,13 +41,13 @@ public class hhr {
         this.f28665a = "预约成功，将在主播开卖时提醒你";
         this.b = "已取消预约";
         String a2 = v.b.a("goodlist", "preheatToast", "");
-        if (!TextUtils.isEmpty(a2) && (b = pqj.b(a2)) != null) {
+        if (!StringUtils.isEmpty(a2) && (b = pqj.b(a2)) != null) {
             String string = b.getString("add");
             String string2 = b.getString("cancel");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.f28665a = string;
             }
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return;
             }
             this.b = string2;
@@ -61,7 +61,7 @@ public class hhr {
             ipChange.ipc$dispatch("b0d0da3e", new Object[]{this, cVar, context, liveItem, str});
         } else if (liveItem == null) {
         } else {
-            if (liveItem.personalityData != null && TextUtils.equals("1", liveItem.personalityData.getString("subscribeStatus"))) {
+            if (liveItem.personalityData != null && StringUtils.equals("1", liveItem.personalityData.getString("subscribeStatus"))) {
                 z = false;
             }
             a(cVar, liveItem, z);

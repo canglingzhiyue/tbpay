@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.util.HashMap;
@@ -40,7 +40,7 @@ public class bbe {
             if (map != null) {
                 for (String str2 : map.keySet()) {
                     String str3 = map.get(str2);
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         a2.a(str2, str3);
                     }
                 }

@@ -9,7 +9,7 @@ public class EditTextManager {
     /* renamed from: a  reason: collision with root package name */
     private static EditTextUtil f5926a;
 
-    public static EditTextUtil getEditTextUtils() {
+    public static EditTextUtil getEditStringUtils() {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (EditTextUtil) ipChange.ipc$dispatch("195dbf2f", new Object[0]);

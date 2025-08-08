@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.platform.d;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.PlatformMessageSender;
@@ -43,7 +43,7 @@ public class d extends c<SubAliasStatus> {
     }
 
     private void f(String str) {
-        com.meizu.cloud.pushsdk.util.b.j(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), str);
+        com.meizu.cloud.pushsdk.util.b.j(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), str);
     }
 
     private boolean n() {
@@ -57,14 +57,14 @@ public class d extends c<SubAliasStatus> {
     }
 
     private String p() {
-        return com.meizu.cloud.pushsdk.util.b.a(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
+        return com.meizu.cloud.pushsdk.util.b.a(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     /* renamed from: a */
     public void b(SubAliasStatus subAliasStatus) {
-        PlatformMessageSender.a(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), subAliasStatus);
+        PlatformMessageSender.a(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), subAliasStatus);
     }
 
     public void b(int i) {
@@ -77,7 +77,7 @@ public class d extends c<SubAliasStatus> {
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     protected boolean d() {
-        return !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.j);
+        return !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.j);
     }
 
     public void e(String str) {
@@ -112,10 +112,10 @@ public class d extends c<SubAliasStatus> {
         String str;
         SubAliasStatus subAliasStatus = new SubAliasStatus();
         subAliasStatus.setCode("20001");
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             str = "appId not empty";
-        } else if (!TextUtils.isEmpty(this.d)) {
-            if (TextUtils.isEmpty(this.j)) {
+        } else if (!StringUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.j)) {
                 str = "pushId not empty";
             }
             return subAliasStatus;

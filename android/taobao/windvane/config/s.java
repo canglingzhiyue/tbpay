@@ -1,6 +1,6 @@
 package android.taobao.windvane.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONException;
@@ -64,7 +64,7 @@ public class s implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONObject jSONObject = null;
@@ -81,7 +81,7 @@ public class s implements b {
         String optString3 = jSONObject.optString("api_group", "");
         this.b = jSONObject.optString("forbiddenDomainRedirectURL", "https://h5.m.taobao.com/forbidden_error.html");
         t.a().a(optString, optString2, optString3, false);
-        if (!TextUtils.isEmpty(this.b) && t.a().h(this.b)) {
+        if (!StringUtils.isEmpty(this.b) && t.a().h(this.b)) {
             this.b = "";
         }
         return true;

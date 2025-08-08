@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.bio.api.BioDetector;
@@ -117,7 +117,7 @@ public class VIUtils {
         if (dialogHelper == null) {
             dialogHelper = new DialogHelper(activity);
         }
-        if (TextUtils.isEmpty(microModule.getVerifyId())) {
+        if (StringUtils.isEmpty(microModule.getVerifyId())) {
             microModuleContext.notifyAndFinishModule(microModule.getVerifyId(), microModule.getToken(), microModule.getModuleName(), new DefaultModuleResult("1002"));
             return;
         }
@@ -159,7 +159,7 @@ public class VIUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c4f5c998", new Object[]{microModuleContext, microModule});
-        } else if (TextUtils.isEmpty(microModule.getVerifyId())) {
+        } else if (StringUtils.isEmpty(microModule.getVerifyId())) {
             microModuleContext.notifyAndFinishModule(microModule.getVerifyId(), microModule.getToken(), microModule.getModuleName(), new DefaultModuleResult("1002"));
         } else {
             microModuleContext.showProgressDialog("");
@@ -201,7 +201,7 @@ public class VIUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f21bf6cf", new Object[]{microModuleContext, str, str2, str3, moduleListener, verifyIdentityTask});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             moduleListener.onModuleExecuteResult(str, str2, str3, new DefaultModuleResult("1002"), verifyIdentityTask);
         } else {
             microModuleContext.showProgressDialog("");
@@ -282,7 +282,7 @@ public class VIUtils {
             return (String) ipChange.ipc$dispatch("58ad3b3d", new Object[0]);
         }
         String str = UserIdCache.uid;
-        return !TextUtils.isEmpty(str) ? str : "";
+        return !StringUtils.isEmpty(str) ? str : "";
     }
 
     public static String getTid() {

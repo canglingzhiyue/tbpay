@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.homepage.busniess.acds;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.Serializable;
 import mtopsdk.mtop.domain.IMTOPDataObject;
 import tb.kge;
@@ -65,15 +65,15 @@ public class DealInfo implements Serializable, IMTOPDataObject {
                     break;
             }
             if (c == 0) {
-                z2 = TextUtils.equals(this.toPayBiz, dealInfo.toPayBiz);
+                z2 = StringUtils.equals(this.toPayBiz, dealInfo.toPayBiz);
             } else if (c == 1) {
-                z2 = TextUtils.equals(this.hasPaid, dealInfo.hasPaid);
+                z2 = StringUtils.equals(this.hasPaid, dealInfo.hasPaid);
             } else if (c == 2) {
-                z2 = TextUtils.equals(this.toConfirmBiz, dealInfo.toConfirmBiz);
+                z2 = StringUtils.equals(this.toConfirmBiz, dealInfo.toConfirmBiz);
             } else if (c == 3) {
-                z2 = TextUtils.equals(this.toComment, dealInfo.toComment);
+                z2 = StringUtils.equals(this.toComment, dealInfo.toComment);
             } else if (c == 4) {
-                z2 = TextUtils.equals(this.refundBiz, dealInfo.refundBiz);
+                z2 = StringUtils.equals(this.refundBiz, dealInfo.refundBiz);
             }
             if (!z2) {
                 return z2;

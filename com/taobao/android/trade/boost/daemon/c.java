@@ -1,6 +1,6 @@
 package com.taobao.android.trade.boost.daemon;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,16 +33,16 @@ public class c implements com.taobao.android.trade.boost.request.mtop.b {
             return (Map) ipChange.ipc$dispatch("2dd9d11d", new Object[]{this});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             hashMap.put(f15591a, this.e);
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             hashMap.put(b, this.f);
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             hashMap.put(d, this.h);
         }
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             hashMap.put(c, this.g);
         }
         return hashMap;

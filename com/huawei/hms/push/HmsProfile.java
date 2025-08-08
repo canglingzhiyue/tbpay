@@ -2,7 +2,7 @@ package com.huawei.hms.push;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.aaid.task.PushClientBuilder;
 import com.huawei.hms.api.Api;
@@ -51,9 +51,9 @@ public class HmsProfile {
             cxsVar.a((Exception) ErrorEnum.ERROR_OPERATION_NOT_SUPPORTED.toApiException());
             return cxsVar.a();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String a2 = a(this.f7514a);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 HMSLog.i(c, "agc connect services config missing project id.");
                 cxs cxsVar2 = new cxs();
                 cxsVar2.a((Exception) ErrorEnum.ERROR_MISSING_PROJECT_ID.toApiException());
@@ -108,7 +108,7 @@ public class HmsProfile {
             cxs cxsVar = new cxs();
             cxsVar.a((Exception) ErrorEnum.ERROR_PUSH_ARGUMENTS_INVALID.toApiException());
             return cxsVar.a();
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             return a(0, str, i, str2);
         } else {
             HMSLog.i(c, "add profile params is empty.");
@@ -123,7 +123,7 @@ public class HmsProfile {
     }
 
     public cxr<Void> deleteProfile(String str, String str2) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             HMSLog.e(c, "del profile params is empty.");
             cxs cxsVar = new cxs();
             cxsVar.a((Exception) ErrorEnum.ERROR_PUSH_ARGUMENTS_INVALID.toApiException());

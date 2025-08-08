@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -49,7 +49,7 @@ public class nhk {
                         arc.a().a("beforeFlowExecute", arc.a.a().b("TBBuyPreload").a("AURA/preload").a("preloadData", jSONObject.toJSONString()).b());
                     }
                     String f = f(jSONObject);
-                    if (!TextUtils.isEmpty(f)) {
+                    if (!StringUtils.isEmpty(f)) {
                         a.a(f, 50, context);
                     }
                     d(jSONObject);
@@ -128,7 +128,7 @@ public class nhk {
             Object obj = jSONObject.get(str);
             if (obj instanceof String) {
                 String c = c((String) obj);
-                if (!TextUtils.isEmpty(c)) {
+                if (!StringUtils.isEmpty(c)) {
                     Object a2 = a(jSONObject2, c);
                     if (a2 == null) {
                         a2 = "";
@@ -141,7 +141,7 @@ public class nhk {
 
     private static Object a(JSONObject jSONObject, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ipChange.ipc$dispatch("805a9220", new Object[]{jSONObject, str}) : (TextUtils.isEmpty(str) || TextUtils.equals(str, "*")) ? jSONObject : bbd.b.a(str.split("\\."), jSONObject);
+        return ipChange instanceof IpChange ? ipChange.ipc$dispatch("805a9220", new Object[]{jSONObject, str}) : (StringUtils.isEmpty(str) || StringUtils.equals(str, "*")) ? jSONObject : bbd.b.a(str.split("\\."), jSONObject);
     }
 
     private static String c(String str) {
@@ -220,7 +220,7 @@ public class nhk {
             }
             String string = jSONObject2.getJSONObject("events").getJSONArray("addressClick").getJSONObject(0).getJSONObject("fields").getString("data");
             String string2 = jSONObject3.getString("currentAddressId");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return;
             }
             JSONArray jSONArray2 = JSONObject.parseObject(string).getJSONArray("deliverAddrList");

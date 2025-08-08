@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
@@ -292,7 +292,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
             return;
         }
         super.notifyAppearStateChange(str, str2);
-        if (!TextUtils.isEmpty(this.mSplayerGroup)) {
+        if (!StringUtils.isEmpty(this.mSplayerGroup)) {
             if ("appear".equals(str)) {
                 c.a().a(this);
             } else if ("disappear".equals(str)) {
@@ -739,7 +739,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3d606e02", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mScreenMode = str;
             if (this.mTBDWInstance == null || !this.mInit) {
@@ -805,7 +805,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("846fd9a0", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mThumbnailSource = str;
         }
@@ -816,7 +816,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c6bc05eb", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mThumbnailSource = str;
         }
@@ -907,7 +907,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f05e5b0b", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             char c = 65535;
             int hashCode = str.hashCode();
@@ -949,7 +949,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
                     play();
                 } else if (this.mTBDWInstance == null) {
                 } else {
-                    if (!TextUtils.isEmpty(this.mSplayerGroup)) {
+                    if (!StringUtils.isEmpty(this.mSplayerGroup)) {
                         c.a().b();
                     }
                     if (this.mTBDWInstance.getVideoState() == 0 || this.mTBDWInstance.getVideoState() == 5 || this.mTBDWInstance.getVideoState() == 8 || this.mTBDWInstance.getVideoState() == 4) {
@@ -1052,7 +1052,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
             ipChange.ipc$dispatch("6fe955bb", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.mSplayerGroup)) {
+        if (!StringUtils.isEmpty(this.mSplayerGroup)) {
             c.a().b();
         }
         bk bkVar = this.mTBDWInstance;
@@ -1195,7 +1195,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fa7d505d", new Object[]{this})).booleanValue();
         }
-        if ((!TextUtils.isEmpty(this.mSrc) || !TextUtils.isEmpty(this.mVideoID)) && (getContext() instanceof Activity)) {
+        if ((!StringUtils.isEmpty(this.mSrc) || !StringUtils.isEmpty(this.mVideoID)) && (getContext() instanceof Activity)) {
             return true;
         }
         com.taobao.taobaoavsdk.util.c.b("TBDWInstance", " WXInteractiveComponent checkData error ");
@@ -1269,12 +1269,12 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         if (dWAspectRatio != null) {
             aVar.a(dWAspectRatio);
         }
-        if (!TextUtils.isEmpty(this.mVideoPlayScenes)) {
+        if (!StringUtils.isEmpty(this.mVideoPlayScenes)) {
             aVar.k(this.mVideoPlayScenes);
         }
         aVar.a(DWInstanceType.PIC);
         this.mHigDWInstance = aVar.c();
-        if (!TextUtils.isEmpty(this.mThumbnailSource)) {
+        if (!StringUtils.isEmpty(this.mThumbnailSource)) {
             TUrlImageView tUrlImageView = new TUrlImageView(getContext());
             ImageView.ScaleType scaleType = this.mPosterScaleType;
             if (scaleType != null) {
@@ -1361,10 +1361,10 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         if (dWAspectRatio != null) {
             aVar.a(dWAspectRatio);
         }
-        if (!TextUtils.isEmpty(this.mVideoPlayScenes)) {
+        if (!StringUtils.isEmpty(this.mVideoPlayScenes)) {
             aVar.g(this.mVideoPlayScenes);
         }
-        if (!TextUtils.isEmpty(this.mThumbnailSource)) {
+        if (!StringUtils.isEmpty(this.mThumbnailSource)) {
             aVar.i(true);
             com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar2 = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
             DWFrontCoverBean dWFrontCoverBean = new DWFrontCoverBean(0L, null, this.mThumbnailSource);
@@ -1382,10 +1382,10 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
             for (Map.Entry<String, String> entry : hashMap2.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if ("showNotWifiHint".equals(key) && !TextUtils.isEmpty(value)) {
+                if ("showNotWifiHint".equals(key) && !StringUtils.isEmpty(value)) {
                     this.mTBDWInstance.setShowNotWifiHint(b.a(value));
                 }
-                if ("showPlayWithCacheHint".equals(key) && !TextUtils.isEmpty(value)) {
+                if ("showPlayWithCacheHint".equals(key) && !StringUtils.isEmpty(value)) {
                     this.mTBDWInstance.setShowPlayWithCacheHint(b.a(value));
                 }
             }
@@ -1473,7 +1473,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
         super.destroy();
         destroyInner();
         this.mInit = false;
-        if (TextUtils.isEmpty(this.mSplayerGroup)) {
+        if (StringUtils.isEmpty(this.mSplayerGroup)) {
             return;
         }
         c.a().b(this);
@@ -1693,7 +1693,7 @@ public class WXInteractiveComponent extends WXComponent<FrameLayout> implements 
 
     private boolean isHiv() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("14ba8d16", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.mCId);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("14ba8d16", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.mCId);
     }
 
     @Override // com.taobao.avplayer.av

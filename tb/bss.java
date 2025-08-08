@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
 import java.io.BufferedInputStream;
@@ -18,7 +18,7 @@ public class bss {
 
     public static String a(Context context, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str}) : TextUtils.isEmpty(str) ? "" : new String(b(context, str));
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str}) : StringUtils.isEmpty(str) ? "" : new String(b(context, str));
     }
 
     public static byte[] b(Context context, String str) {

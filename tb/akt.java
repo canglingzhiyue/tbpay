@@ -75,7 +75,7 @@ public final class akt {
             java.lang.String r0 = "peroid"
             java.lang.Object r0 = r8.get(r0)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L35
             long r4 = java.lang.Long.parseLong(r0)     // Catch: java.lang.NumberFormatException -> L31
             android.content.SharedPreferences$Editor r1 = tb.alg.b()     // Catch: java.lang.NumberFormatException -> L31
@@ -92,7 +92,7 @@ public final class akt {
             java.lang.String r4 = "switch"
             java.lang.Object r5 = r8.get(r4)
             java.lang.String r5 = (java.lang.String) r5
-            boolean r6 = android.text.TextUtils.isEmpty(r5)
+            boolean r6 = android.text.StringUtils.isEmpty(r5)
             if (r6 != 0) goto L5d
             java.lang.String r1 = "True"
             boolean r1 = r5.equalsIgnoreCase(r1)
@@ -109,7 +109,7 @@ public final class akt {
             java.lang.String r2 = "reportPeroid"
             java.lang.Object r2 = r8.get(r2)
             java.lang.String r2 = (java.lang.String) r2
-            boolean r4 = android.text.TextUtils.isEmpty(r2)
+            boolean r4 = android.text.StringUtils.isEmpty(r2)
             if (r4 != 0) goto L80
             long r6 = java.lang.Long.parseLong(r2)     // Catch: java.lang.NumberFormatException -> L7c
             android.content.SharedPreferences$Editor r2 = tb.alg.b()     // Catch: java.lang.NumberFormatException -> L7c

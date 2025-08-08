@@ -1,0 +1,26 @@
+{
+  "api": "mtop.detail.mainpic.delta",
+  "data": {
+    "data": {
+    },
+    "endpoint": {
+      "mode": "wireless_default",
+      "protocolVersion": "3.0",
+      "ultronage": "true"
+    },
+    "hierarchy": {
+      "delta": [
+
+      ],
+      "structure": {
+
+      }
+    },
+    "container": {},
+    "reload": "true"
+  },
+  "v": "1.0",
+  "ret": [
+    "SUCCESS::调用成功"
+  ]
+}

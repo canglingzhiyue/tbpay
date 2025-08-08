@@ -2,7 +2,7 @@ package com.taobao.taolive.room;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.live.timemove.base.data.RecModel;
@@ -58,7 +58,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null || parse.isOpaque()) {
+        } else if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null || parse.isOpaque()) {
         } else {
             b(parse.getQueryParameter("h5Url"));
         }
@@ -68,7 +68,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a(f21618a + "_APM", "InitTaoLiveColdLaunch preStartRequestDetail " + str);
             Uri parse = Uri.parse(str);
@@ -84,7 +84,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c64db40", new Object[]{preSimpleRequestParams, str})).booleanValue();
         }
-        if (!l.d(preSimpleRequestParams.needRecommend) && (!TextUtils.isEmpty(preSimpleRequestParams.timeMovingItemId) || RecModel.MEDIA_TYPE_TIMEMOVE.equals(preSimpleRequestParams.productType) || (TextUtils.isEmpty(preSimpleRequestParams.userId) && TextUtils.isEmpty(preSimpleRequestParams.feedId)))) {
+        if (!l.d(preSimpleRequestParams.needRecommend) && (!StringUtils.isEmpty(preSimpleRequestParams.timeMovingItemId) || RecModel.MEDIA_TYPE_TIMEMOVE.equals(preSimpleRequestParams.productType) || (StringUtils.isEmpty(preSimpleRequestParams.userId) && StringUtils.isEmpty(preSimpleRequestParams.feedId)))) {
             return false;
         }
         a(f21618a + "_APM", "InitTaoLiveColdLaunch preStartRequestDetail start");

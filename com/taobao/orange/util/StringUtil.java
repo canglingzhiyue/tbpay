@@ -1,6 +1,6 @@
 package com.taobao.orange.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -19,7 +19,7 @@ public class StringUtil {
             return ((Number) ipChange.ipc$dispatch("19d449c0", new Object[]{str})).intValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Integer.parseInt(str);
             }
             return 0;

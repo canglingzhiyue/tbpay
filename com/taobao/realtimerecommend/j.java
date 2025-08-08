@@ -1,6 +1,6 @@
 package com.taobao.realtimerecommend;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -90,7 +90,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("6a0a6430", new Object[]{jSONObject, str});
         }
-        if (jSONObject != null && !jSONObject.isEmpty() && !TextUtils.isEmpty(str) && (jSONObject2 = jSONObject.getJSONObject("edgeComputeConfig")) != null) {
+        if (jSONObject != null && !jSONObject.isEmpty() && !StringUtils.isEmpty(str) && (jSONObject2 = jSONObject.getJSONObject("edgeComputeConfig")) != null) {
             return jSONObject2.getJSONObject(str);
         }
         return null;
@@ -98,7 +98,7 @@ public class j {
 
     public static boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : TextUtils.equals("l", g.b());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : StringUtils.equals("l", g.b());
     }
 
     public static List<SectionModel> a(List<SectionModel> list) {
@@ -156,7 +156,7 @@ public class j {
                                 if (((SectionModel) arrayList.get(i)).getJSONObject("args") != null) {
                                     str2 = ((SectionModel) arrayList.get(i)).getJSONObject("args").getString("isFixPos");
                                 }
-                                if (TextUtils.equals(str2, "true")) {
+                                if (StringUtils.equals(str2, "true")) {
                                     arrayList2.set(arrayList2.size() - 1, ((String) arrayList2.get(arrayList2.size() - 1)) + ":**fixPos**");
                                 }
                             }
@@ -233,7 +233,7 @@ public class j {
             r5.<init>()
             java.lang.String r6 = "x_item_ids"
             java.lang.String r6 = r4.getString(r6)     // Catch: java.lang.Throwable -> Lb4
-            boolean r7 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> Lb5
+            boolean r7 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> Lb5
             if (r7 == 0) goto L54
             java.lang.String r7 = "x_object_id"
             java.lang.String r6 = r4.getString(r7)     // Catch: java.lang.Throwable -> Lb5
@@ -353,7 +353,7 @@ public class j {
         } else {
             str2 = (str == null || !str.startsWith(ksk.REC_MAIN.f30287a)) ? "" : kss.f30292a;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -405,7 +405,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("48075345", new Object[]{jSONObject, str})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && (awesomeGetData = (AwesomeGetData) jSONObject.get("dataModel")) != null && (awesomeGetContainerData = awesomeGetData.containers.get(str)) != null && awesomeGetContainerData.base != null && (mo1280getPageParams = awesomeGetContainerData.base.mo1280getPageParams()) != null) {
+        if (!StringUtils.isEmpty(str) && (awesomeGetData = (AwesomeGetData) jSONObject.get("dataModel")) != null && (awesomeGetContainerData = awesomeGetData.containers.get(str)) != null && awesomeGetContainerData.base != null && (mo1280getPageParams = awesomeGetContainerData.base.mo1280getPageParams()) != null) {
             return mo1280getPageParams.getPageNum();
         }
         return 0;

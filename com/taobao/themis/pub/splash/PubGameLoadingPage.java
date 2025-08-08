@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.RotateAnimation;
@@ -223,7 +223,7 @@ public final class PubGameLoadingPage extends RelativeLayout implements com.taob
             return;
         }
         q.d(logo, "logo");
-        if (TextUtils.equals(logo, this.mLogo)) {
+        if (StringUtils.equals(logo, this.mLogo)) {
             return;
         }
         setImage(this.mIVLogo, logo);

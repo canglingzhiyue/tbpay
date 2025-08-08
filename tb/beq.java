@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Color;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
@@ -46,7 +46,7 @@ public class beq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("308335f0", new Object[]{textView, str, str2});
-        } else if (textView == null || TextUtils.isEmpty(str)) {
+        } else if (textView == null || StringUtils.isEmpty(str)) {
         } else {
             if (d == null) {
                 d = a("common_price");
@@ -298,7 +298,7 @@ public class beq {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("2701df27", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b = str;
             }
             return this;
@@ -367,13 +367,13 @@ public class beq {
                 return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
             }
             try {
-                if (TextUtils.isEmpty(this.f25836a)) {
+                if (StringUtils.isEmpty(this.f25836a)) {
                     return false;
                 }
                 if (this.d > this.e) {
                     this.d = this.e;
                 }
-                if (TextUtils.isEmpty(this.c)) {
+                if (StringUtils.isEmpty(this.c)) {
                     char charAt = this.f25836a.charAt(0);
                     int i2 = 0;
                     while (i2 < this.f25836a.length() && !Character.isDigit(charAt)) {
@@ -384,7 +384,7 @@ public class beq {
                         this.c = this.f25836a.substring(0, i2);
                     }
                 }
-                if (!TextUtils.isEmpty(this.c)) {
+                if (!StringUtils.isEmpty(this.c)) {
                     this.j = new b(0, this.c.length());
                     i = this.c.length();
                     this.f25836a = this.f25836a.substring(i);
@@ -399,13 +399,13 @@ public class beq {
                     }
                 }
                 this.f25836a = new DecimalFormat(sb.toString()).format(Double.parseDouble(this.f25836a));
-                if (!TextUtils.isEmpty(this.f25836a)) {
+                if (!StringUtils.isEmpty(this.f25836a)) {
                     this.f25836a = this.f25836a.replaceAll(",", ".");
                 }
                 if (!this.h) {
                     this.f25836a = d(this.f25836a);
                 }
-                if (!TextUtils.isEmpty(this.c)) {
+                if (!StringUtils.isEmpty(this.c)) {
                     this.f25836a = this.c + this.f25836a;
                 }
                 int indexOf = this.f25836a.indexOf(".");

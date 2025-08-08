@@ -2,7 +2,7 @@ package com.taobao.speech.jsbridgeStatic;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -122,7 +122,7 @@ public class TBNlsVoiceRecognizer extends e {
                 TBNlsVoiceRecognizer.access$000(TBNlsVoiceRecognizer.this, wVCallBackContext2, false, "Permission Fail");
             }
         });
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             b.a(str);
         }
         b.a();

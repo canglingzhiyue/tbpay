@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.mobile.common.transport.config.UserNetworkPreferencesManager;
 import com.alipay.mobile.common.transport.context.TransportContext;
@@ -191,7 +191,7 @@ public class ZClientConnectionOperator extends DefaultClientConnectionOperator {
         } else if (a(operatedClientConnection)) {
             throw iOException;
         } else {
-            if (iOException == null || TextUtils.isEmpty(iOException.getMessage()) || !iOException.getMessage().contains("shutdown")) {
+            if (iOException == null || StringUtils.isEmpty(iOException.getMessage()) || !iOException.getMessage().contains("shutdown")) {
                 return;
             }
             LogCatUtil.info("ClientConnectionOperator", "Connection shutdown, don't retry!");

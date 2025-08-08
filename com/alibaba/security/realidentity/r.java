@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.algo.jni.CommonUtilJni;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public class r extends t {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("792658a9", new Object[]{this, str});
         }
-        if (b() && !TextUtils.isEmpty(str)) {
+        if (b() && !StringUtils.isEmpty(str)) {
             return this.f3489a.makeStrResult(str);
         }
         return null;

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.params.HttpParams;
@@ -28,7 +28,7 @@ public final class HttpClientUtils {
                 LogCatUtil.warn("HttpClientUtils", "[removeParamter] parameter type = " + parameter.getClass().getName());
                 obj = parameter.toString();
             }
-            return TextUtils.isEmpty(obj) ? "" : obj;
+            return StringUtils.isEmpty(obj) ? "" : obj;
         } catch (Throwable th) {
             LogCatUtil.warn("HttpClientUtils", "removeParamter fail.", th);
             return "";

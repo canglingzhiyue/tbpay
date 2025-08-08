@@ -1,7 +1,7 @@
 package com.taobao.taolive.dinamicext.homepage;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -82,7 +82,7 @@ public class TLiveViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("168445d4", new Object[]{this, tLiveView, str});
-        } else if (TextUtils.isEmpty(str) || tLiveView == null) {
+        } else if (StringUtils.isEmpty(str) || tLiveView == null) {
         } else {
             tLiveView.setScaleType(pbh.c(str));
         }

@@ -1,7 +1,7 @@
 package com.taobao.android.home.component.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.akt;
@@ -45,7 +45,7 @@ public class j {
             return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue();
         }
         String a2 = a(str, z + "");
-        return TextUtils.isEmpty(a2) ? z : a2.trim().toLowerCase().equals("true");
+        return StringUtils.isEmpty(a2) ? z : a2.trim().toLowerCase().equals("true");
     }
 
     public static int a(String str, int i) {
@@ -78,7 +78,7 @@ public class j {
             return ((Number) ipChange.ipc$dispatch("57a83dc", new Object[0])).intValue();
         }
         String a2 = a("home_location_interval_switch", "12");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 return Integer.valueOf(a2).intValue();
             } catch (Throwable unused) {
@@ -94,7 +94,7 @@ public class j {
             return ((Number) ipChange.ipc$dispatch("596b2d9", new Object[0])).doubleValue();
         }
         String a2 = a("homeLocationRefreshDistance", "500");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 return Double.valueOf(a2).doubleValue();
             } catch (Throwable unused) {

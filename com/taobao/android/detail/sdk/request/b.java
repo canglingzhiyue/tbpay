@@ -1,7 +1,7 @@
 package com.taobao.android.detail.sdk.request;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.entity.RequestImpl;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b2d83c6e", new Object[]{this, str, nodeBundle, cVar, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             int a2 = com.taobao.android.detail.sdk.request.a.a(str);
             if (a2 == 1) {
@@ -179,6 +179,6 @@ public class b {
 
     private String a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : TextUtils.isEmpty(str2) ? str : new Uri.Builder().encodedPath(str).appendQueryParameter(this.b, str2).build().toString();
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : StringUtils.isEmpty(str2) ? str : new Uri.Builder().encodedPath(str).appendQueryParameter(this.b, str2).build().toString();
     }
 }

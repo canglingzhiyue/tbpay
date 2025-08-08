@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -101,14 +101,14 @@ public class fbt extends c<fce> {
                     detailImageView.setAdjustViewBounds(z);
                     detailImageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                     View view = new View(this.f9568a);
-                    if (!TextUtils.isEmpty(bVar.f10036a)) {
+                    if (!StringUtils.isEmpty(bVar.f10036a)) {
                         a(bVar.f10036a, null, detailImageView);
                     }
                     TextView textView = new TextView(this.f9568a);
                     textView.setTextSize(12.0f);
                     LinearLayout.LayoutParams layoutParams5 = new LinearLayout.LayoutParams(-1, -1);
                     layoutParams5.weight = 1.0f;
-                    if (!TextUtils.isEmpty(bVar.c)) {
+                    if (!StringUtils.isEmpty(bVar.c)) {
                         textView.setText(bVar.c);
                     }
                     textView.setClickable(false);

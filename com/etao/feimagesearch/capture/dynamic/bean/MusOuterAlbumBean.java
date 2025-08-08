@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.capture.dynamic.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.capture.dynamic.hybrid.TBAlbumImg;
@@ -281,7 +281,7 @@ public final class MusOuterAlbumBean {
                 return null;
             }
             String a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, TBAlbumImg.ATTR_IMG_KEY, "");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return null;
             }
             MusOuterAlbumBean musOuterAlbumBean = new MusOuterAlbumBean(null, null, false, null, null, null, 63, null);

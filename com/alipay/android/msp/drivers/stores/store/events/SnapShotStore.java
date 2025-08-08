@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.callback.ImageUploadCallback;
@@ -106,7 +106,7 @@ public class SnapShotStore extends LocalEventStore {
         this.j = true;
         if (actionParamsJson != null) {
             try {
-                z = !TextUtils.equals(actionParamsJson.getString(cjn.HUMMER_FOUNDATION_SHOW_ALERT), "false");
+                z = !StringUtils.equals(actionParamsJson.getString(cjn.HUMMER_FOUNDATION_SHOW_ALERT), "false");
             } catch (Throwable th2) {
                 LogUtil.printExceptionStackTrace(th2);
                 if (this.f4584a != null && actionParamsJson != null) {
@@ -203,7 +203,7 @@ public class SnapShotStore extends LocalEventStore {
             ipChange.ipc$dispatch("107e867d", new Object[]{this, new Boolean(z), eventAction});
         } else if (this.h.isFinishing()) {
         } else {
-            if (TextUtils.isEmpty(this.k)) {
+            if (StringUtils.isEmpty(this.k)) {
                 a(eventAction, z);
             } else {
                 a(z, eventAction, new ImageUploadCallback() { // from class: com.alipay.android.msp.drivers.stores.store.events.SnapShotStore.2
@@ -339,7 +339,7 @@ public class SnapShotStore extends LocalEventStore {
                         return;
                     }
                     String a2 = SnapShotStore.a(SnapShotStore.this, bitmap);
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         SnapShotStore.b(SnapShotStore.this, eventAction, z);
                     } else {
                         SnapShotStore.a(SnapShotStore.this, eventAction, a2, z);

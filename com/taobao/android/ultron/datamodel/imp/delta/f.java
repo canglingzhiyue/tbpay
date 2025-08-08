@@ -1,7 +1,7 @@
 package com.taobao.android.ultron.datamodel.imp.delta;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -81,7 +81,7 @@ public class f extends a {
                 String string3 = jSONObject3.getString(str);
                 String str2 = str;
                 String string4 = jSONObject3.getString("source");
-                if (TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3) || TextUtils.isEmpty(string4)) {
+                if (StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3) || StringUtils.isEmpty(string4)) {
                     pattern = compile;
                 } else {
                     Matcher matcher = compile.matcher(string3);

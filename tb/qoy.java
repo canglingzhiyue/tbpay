@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.sp.framework.model.SimpleProfile;
@@ -102,7 +102,7 @@ public class qoy {
             jSONObject.put("error", (Object) this.c);
             jSONObject.put("message", (Object) this.d);
             jSONObject.put("errorMessage", (Object) this.d);
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 jSONObject.put(SimpleProfile.KEY_SIGNATURE, (Object) this.e);
             }
             return jSONObject;

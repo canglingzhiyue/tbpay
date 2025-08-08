@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ShortcutInfo;
 import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.drawable.IconCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Arrays;
 
 /* loaded from: classes2.dex */
@@ -32,7 +32,7 @@ public class ShortcutInfoCompat {
         }
 
         public ShortcutInfoCompat build() {
-            if (!TextUtils.isEmpty(this.mInfo.mLabel)) {
+            if (!StringUtils.isEmpty(this.mInfo.mLabel)) {
                 if (this.mInfo.mIntents != null && this.mInfo.mIntents.length != 0) {
                     return this.mInfo;
                 }
@@ -144,10 +144,10 @@ public class ShortcutInfoCompat {
         if (iconCompat != null) {
             intents.setIcon(iconCompat.toIcon());
         }
-        if (!TextUtils.isEmpty(this.mLongLabel)) {
+        if (!StringUtils.isEmpty(this.mLongLabel)) {
             intents.setLongLabel(this.mLongLabel);
         }
-        if (!TextUtils.isEmpty(this.mDisabledMessage)) {
+        if (!StringUtils.isEmpty(this.mDisabledMessage)) {
             intents.setDisabledMessage(this.mDisabledMessage);
         }
         ComponentName componentName = this.mActivity;

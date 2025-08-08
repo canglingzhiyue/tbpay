@@ -2,7 +2,7 @@ package com.taobao.android.tschedule.trigger.nav;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.TSchedule;
@@ -39,13 +39,13 @@ public class a {
             return true;
         }
         String uri = data.toString();
-        if (TextUtils.isEmpty(uri) || b(uri) || !jmh.a(jmg.SWITCH_KEY_ENABLE_NAV, false)) {
+        if (StringUtils.isEmpty(uri) || b(uri) || !jmh.a(jmg.SWITCH_KEY_ENABLE_NAV, false)) {
             return true;
         }
         String stringExtra = intent.getStringExtra("referrer");
         boolean booleanExtra = intent.getBooleanExtra("from_browser", false);
         jkq.a("TS.navHook", "navBefore.url = " + uri + "; referrerUrl = " + stringExtra + "; fromBrowser = " + booleanExtra);
-        if (booleanExtra || TextUtils.equals(jmi.a(uri), jmi.a(stringExtra))) {
+        if (booleanExtra || StringUtils.equals(jmi.a(uri), jmi.a(stringExtra))) {
             jkq.a("TS.navHook", "navBefore。browser url, discard");
             return true;
         }
@@ -70,14 +70,14 @@ public class a {
             return true;
         }
         String uri = data.toString();
-        if (TextUtils.isEmpty(uri) || b(uri)) {
+        if (StringUtils.isEmpty(uri) || b(uri)) {
             return true;
         }
         String stringExtra = intent.getStringExtra("referrer");
         boolean booleanExtra = intent.getBooleanExtra("from_browser", false);
         jkq.a("TS.navHook", "navAfter.url = " + uri + "; refreUrl = " + stringExtra + "; fromBrowser = " + booleanExtra);
         String a2 = jmi.a(uri);
-        if (booleanExtra && TextUtils.equals(a2, jmi.a(stringExtra))) {
+        if (booleanExtra && StringUtils.equals(a2, jmi.a(stringExtra))) {
             jkq.a("TS.navHook", "navAfter。browser url, discard");
             return true;
         }

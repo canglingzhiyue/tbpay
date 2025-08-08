@@ -1,7 +1,7 @@
 package tb;
 
 import android.animation.ValueAnimator;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,7 +62,7 @@ public class tgy extends h {
                 ldf.d("DXChangeVisibleItemEventHandler", "infoFlowContext is null");
             } else if (((IMainFeedsViewService) a2.a(IMainFeedsViewService.class)) == null || (s = dXRuntimeContext.s()) == null) {
             } else {
-                a(s, layoutHeight, TextUtils.equals(str2, "0"), str3);
+                a(s, layoutHeight, StringUtils.equals(str2, "0"), str3);
             }
         }
     }
@@ -94,7 +94,7 @@ public class tgy extends h {
                     ViewGroup.LayoutParams layoutParams2 = dXRootView.getLayoutParams();
                     layoutParams2.height = intValue;
                     dXRootView.setLayoutParams(layoutParams2);
-                    if (intValue != i || !TextUtils.equals("true", str)) {
+                    if (intValue != i || !StringUtils.equals("true", str)) {
                         return;
                     }
                     thb.a(HMultiSelectView.FEEDBACK_ROOT_USER_ID, dXRootView);

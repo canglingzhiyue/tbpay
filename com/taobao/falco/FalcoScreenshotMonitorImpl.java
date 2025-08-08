@@ -7,7 +7,7 @@ import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -372,7 +372,7 @@ public class FalcoScreenshotMonitorImpl implements FalcoScreenshotMonitor {
                         for (Map.Entry<String, String> entry2 : a2.entrySet()) {
                             String key2 = entry2.getKey();
                             String value = entry2.getValue();
-                            if (!TextUtils.isEmpty(key2) && !TextUtils.isEmpty(value)) {
+                            if (!StringUtils.isEmpty(key2) && !StringUtils.isEmpty(value)) {
                                 jSONObject2.put(key2, value);
                             }
                         }
@@ -396,7 +396,7 @@ public class FalcoScreenshotMonitorImpl implements FalcoScreenshotMonitor {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5e39927a", new Object[]{this, str, aVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || str.length() > 100 || aVar == null) {
+        if (StringUtils.isEmpty(str) || str.length() > 100 || aVar == null) {
             return false;
         }
         dit.e(new ScreenShotRunnable(this, 6, str, aVar));
@@ -409,7 +409,7 @@ public class FalcoScreenshotMonitorImpl implements FalcoScreenshotMonitor {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || str.length() > 100) {
+        if (StringUtils.isEmpty(str) || str.length() > 100) {
             return false;
         }
         dit.e(new ScreenShotRunnable(this, 7, str));

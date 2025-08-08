@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -194,7 +194,7 @@ public class GoodFrame extends AbstractGoodFrame implements f, d.a, pox<EnterGoo
             com.taobao.android.live.plugin.atype.flexalocal.good.a.a().r().a("TBLiveWeex.Event.goodListStatus", hashMap2);
         }
         this.popId = null;
-        if (hashMap != null && !TextUtils.isEmpty(hashMap.get("from"))) {
+        if (hashMap != null && !StringUtils.isEmpty(hashMap.get("from"))) {
             this.popId = hashMap.get("popId");
             "wyswyg".equals(hashMap.get("from"));
         }
@@ -247,7 +247,7 @@ public class GoodFrame extends AbstractGoodFrame implements f, d.a, pox<EnterGoo
         jSONObject.put("name", (Object) "goods");
         ISmartLandingProxy.b bVar = b.F;
         String str = this.popId;
-        bVar.a(z, str, true ^ TextUtils.isEmpty(str), jSONObject);
+        bVar.a(z, str, true ^ StringUtils.isEmpty(str), jSONObject);
     }
 
     @Override // com.taobao.android.live.plugin.atype.flexalocal.good.goodframe.AbstractGoodFrame, com.taobao.alilive.aliliveframework.frame.BaseFrame, com.taobao.alilive.aliliveframework.frame.IComponentLifeCycle
@@ -312,7 +312,7 @@ public class GoodFrame extends AbstractGoodFrame implements f, d.a, pox<EnterGoo
                 } else if (!(obj instanceof JSONObject)) {
                 } else {
                     String string = ((JSONObject) obj).getString("name");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
                     char c = 65535;
@@ -372,7 +372,7 @@ public class GoodFrame extends AbstractGoodFrame implements f, d.a, pox<EnterGoo
             }
             if (this.mGoodLiveContext != null) {
                 String str2 = hashMap.get("expansionRedPacketList");
-                if (!TextUtils.isEmpty(str2) && com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.u()) {
+                if (!StringUtils.isEmpty(str2) && com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.u()) {
                     this.mGoodLiveContext.x().a(pqj.c(str2));
                     new xmj((ViewGroup) this.mCover.getParent()).a();
                 }

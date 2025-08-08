@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.preload.launcher;
 import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -179,7 +179,7 @@ public class TBGuangPickPreloadModule {
                     str = b.getContentId();
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = skw.FAKE_CONTENT_ID;
             }
             return d.a(jSONObject, str, false, false, 0, null, false).getJSONObject("data");

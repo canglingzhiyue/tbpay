@@ -1,6 +1,6 @@
 package com.taobao.android.miniLive.services;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -139,7 +139,7 @@ public class c implements hua.a, ppq.a {
         this.l = f.a().c();
         if (this.l != null) {
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 jSONObject.put("itemid", (Object) this.e);
             }
             jSONObject.put("guardAnchorSwitch", (Object) Boolean.valueOf(pmd.a().a("enableAnchorGuard")));
@@ -212,7 +212,7 @@ public class c implements hua.a, ppq.a {
             }
             this.o = new hua(this.m.mVideoInfo.roomType, this.m.mVideoInfo.topic, z, this.m.mVideoInfo.forceCommentsUseCdn, this);
         } else {
-            this.o = new htz(this.m.mVideoInfo.roomType, str, str2, z, this.m.mVideoInfo.forceCommentsUseCdn, this.i, u.r() && this.m.mVideoInfo.fetchItemUseCdn && !TextUtils.isEmpty(this.m.mVideoInfo.fetchItemUseCdnUrl), this);
+            this.o = new htz(this.m.mVideoInfo.roomType, str, str2, z, this.m.mVideoInfo.forceCommentsUseCdn, this.i, u.r() && this.m.mVideoInfo.fetchItemUseCdn && !StringUtils.isEmpty(this.m.mVideoInfo.fetchItemUseCdnUrl), this);
         }
         this.o.a(this.n);
         this.o.a(this.m.mVideoInfo.liveId);

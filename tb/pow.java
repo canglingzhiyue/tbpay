@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.NetBaseOutDo;
@@ -155,7 +155,7 @@ public class pow extends HandlerThread implements d, ppp.a {
 
     private boolean g() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e) || TextUtils.isEmpty(this.f) || TextUtils.isEmpty(this.g);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.d) || StringUtils.isEmpty(this.e) || StringUtils.isEmpty(this.f) || StringUtils.isEmpty(this.g);
     }
 
     public void d() {

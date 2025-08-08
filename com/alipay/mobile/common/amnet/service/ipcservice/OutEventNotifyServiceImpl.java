@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.service.ipcservice;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetManager;
 import com.alipay.mobile.common.amnet.api.AmnetUserInfo;
 import com.alipay.mobile.common.amnet.ipcapi.pushproc.OutEventNotifyService;
@@ -124,7 +124,7 @@ public class OutEventNotifyServiceImpl implements OutEventNotifyService {
             ipChange.ipc$dispatch("bb7e565a", new Object[]{this, new Byte(b), str});
         } else if (!a().isActivated()) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.debug(TAG, "notifyUpdateDnsInfo,dnsType:" + ((int) b) + ",ipInfo is null,need't notify MNET");
                 return;
             }

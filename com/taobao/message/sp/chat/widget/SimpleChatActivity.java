@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -486,7 +486,7 @@ public final class SimpleChatActivity extends AppCompatActivity implements INeed
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ee7f1e04", new Object[]{this, parseContext});
-        } else if (!TextUtils.isEmpty(parseContext.getTargetNick())) {
+        } else if (!StringUtils.isEmpty(parseContext.getTargetNick())) {
             SimpleProfileCache simpleProfileCache = SimpleProfileCache.INSTANCE;
             String targetNick = parseContext.getTargetNick();
             if (targetNick == null) {
@@ -535,7 +535,7 @@ public final class SimpleChatActivity extends AppCompatActivity implements INeed
                     SimpleChatActivity.access$processError(SimpleChatActivity.this, p0);
                 }
             });
-        } else if (!TextUtils.isEmpty(parseContext.getTargetId())) {
+        } else if (!StringUtils.isEmpty(parseContext.getTargetId())) {
             SimpleProfileCache simpleProfileCache2 = SimpleProfileCache.INSTANCE;
             String targetId = parseContext.getTargetId();
             if (targetId == null) {
@@ -664,8 +664,8 @@ public final class SimpleChatActivity extends AppCompatActivity implements INeed
         viewCenterProps.bizType = String.valueOf(parseContext.getBizType());
         viewCenterProps.identifier = parseContext.getIdentifier();
         viewCenterProps.targetId = parseContext.getTargetId();
-        viewCenterProps.targetType = !TextUtils.isEmpty(parseContext.getTargetType()) ? parseContext.getTargetType() : "3";
-        if (TextUtils.isEmpty(Login.getUserId())) {
+        viewCenterProps.targetType = !StringUtils.isEmpty(parseContext.getTargetType()) ? parseContext.getTargetType() : "3";
+        if (StringUtils.isEmpty(Login.getUserId())) {
             parseLong = 0;
         } else {
             String userId = Login.getUserId();

@@ -2,7 +2,7 @@ package com.taobao.media;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.android.bindingx.core.internal.BindingXConstants;
@@ -217,38 +217,38 @@ public class TriverEmbedLiveView extends BaseEmbedView implements e, Serializabl
             ipChange.ipc$dispatch("79431965", new Object[]{this, map});
         } else if (map == null || map.size() <= 0) {
         } else {
-            if (!TextUtils.isEmpty(map.get("src"))) {
+            if (!StringUtils.isEmpty(map.get("src"))) {
                 this.mSrc = map.get("src");
             }
-            if (!TextUtils.isEmpty(map.get("mode"))) {
+            if (!StringUtils.isEmpty(map.get("mode"))) {
                 this.mMode = map.get("mode");
             }
-            if (!TextUtils.isEmpty(map.get("orientation"))) {
+            if (!StringUtils.isEmpty(map.get("orientation"))) {
                 this.mOrientation = map.get("orientation");
             }
-            if (!TextUtils.isEmpty(map.get(a.ATOM_EXT_UDL_object_fit))) {
+            if (!StringUtils.isEmpty(map.get(a.ATOM_EXT_UDL_object_fit))) {
                 this.mObjectFit = map.get(a.ATOM_EXT_UDL_object_fit);
             }
-            if (!TextUtils.isEmpty(map.get("from"))) {
+            if (!StringUtils.isEmpty(map.get("from"))) {
                 this.mFrom = map.get("from");
             }
-            if (!TextUtils.isEmpty(map.get(oyw.VIDEO_PLAY_SCENES))) {
+            if (!StringUtils.isEmpty(map.get(oyw.VIDEO_PLAY_SCENES))) {
                 this.mPlayScenes = map.get(oyw.VIDEO_PLAY_SCENES);
             }
             try {
-                if (!TextUtils.isEmpty(map.get(MusLiveVideo.ATTR_MUTE))) {
+                if (!StringUtils.isEmpty(map.get(MusLiveVideo.ATTR_MUTE))) {
                     this.mMuted = Boolean.parseBoolean(map.get(MusLiveVideo.ATTR_MUTE));
                 }
-                if (!TextUtils.isEmpty(map.get("autoplay"))) {
+                if (!StringUtils.isEmpty(map.get("autoplay"))) {
                     this.mAutoplay = Boolean.parseBoolean(map.get("autoplay"));
                 }
             } catch (Exception unused) {
             }
             try {
-                if (!TextUtils.isEmpty(map.get("min-cache"))) {
+                if (!StringUtils.isEmpty(map.get("min-cache"))) {
                     this.mMinCache = Float.parseFloat(map.get("min-cache"));
                 }
-                if (TextUtils.isEmpty(map.get("max-cache"))) {
+                if (StringUtils.isEmpty(map.get("max-cache"))) {
                     return;
                 }
                 this.mMaxCache = Float.parseFloat(map.get("max-cache"));
@@ -423,7 +423,7 @@ public class TriverEmbedLiveView extends BaseEmbedView implements e, Serializabl
         } else if (jSONObject == null || jSONObject.size() == 0) {
         } else {
             parseVideoParams(jSONObject);
-            if (!TextUtils.isEmpty(this.mSrc) && this.mMediaPlayCenter == null) {
+            if (!StringUtils.isEmpty(this.mSrc) && this.mMediaPlayCenter == null) {
                 initPlayer();
             }
             MediaPlayCenter mediaPlayCenter = this.mMediaPlayCenter;
@@ -441,31 +441,31 @@ public class TriverEmbedLiveView extends BaseEmbedView implements e, Serializabl
             return;
         }
         try {
-            if (!TextUtils.isEmpty(jSONObject.getString("src"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("src"))) {
                 this.mSrc = jSONObject.getString("src");
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("mode"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("mode"))) {
                 this.mMode = jSONObject.getString("mode");
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("orientation"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("orientation"))) {
                 this.mOrientation = jSONObject.getString("orientation");
             }
-            if (!TextUtils.isEmpty(jSONObject.getString(a.ATOM_EXT_UDL_object_fit)) || !TextUtils.isEmpty(jSONObject.getString("objectFit"))) {
-                this.mObjectFit = TextUtils.isEmpty(jSONObject.getString(a.ATOM_EXT_UDL_object_fit)) ? jSONObject.getString("objectFit") : jSONObject.getString(a.ATOM_EXT_UDL_object_fit);
+            if (!StringUtils.isEmpty(jSONObject.getString(a.ATOM_EXT_UDL_object_fit)) || !StringUtils.isEmpty(jSONObject.getString("objectFit"))) {
+                this.mObjectFit = StringUtils.isEmpty(jSONObject.getString(a.ATOM_EXT_UDL_object_fit)) ? jSONObject.getString("objectFit") : jSONObject.getString(a.ATOM_EXT_UDL_object_fit);
             }
-            if (!TextUtils.isEmpty(jSONObject.getString(MusLiveVideo.ATTR_MUTE))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(MusLiveVideo.ATTR_MUTE))) {
                 this.mMuted = Boolean.parseBoolean(jSONObject.getString(MusLiveVideo.ATTR_MUTE));
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("autoplay"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("autoplay"))) {
                 this.mAutoplay = Boolean.parseBoolean(jSONObject.getString("autoplay"));
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("min-cache")) || !TextUtils.isEmpty(jSONObject.getString("minCache"))) {
-                this.mMinCache = Float.parseFloat(TextUtils.isEmpty(jSONObject.getString("min-cache")) ? jSONObject.getString("minCache") : jSONObject.getString("min-cache"));
+            if (!StringUtils.isEmpty(jSONObject.getString("min-cache")) || !StringUtils.isEmpty(jSONObject.getString("minCache"))) {
+                this.mMinCache = Float.parseFloat(StringUtils.isEmpty(jSONObject.getString("min-cache")) ? jSONObject.getString("minCache") : jSONObject.getString("min-cache"));
             }
-            if (TextUtils.isEmpty(jSONObject.getString("max-cache")) && TextUtils.isEmpty(jSONObject.getString("maxCache"))) {
+            if (StringUtils.isEmpty(jSONObject.getString("max-cache")) && StringUtils.isEmpty(jSONObject.getString("maxCache"))) {
                 return;
             }
-            this.mMaxCache = Float.parseFloat(TextUtils.isEmpty(jSONObject.getString("max-cache")) ? jSONObject.getString("maxCache") : jSONObject.getString("max-cache"));
+            this.mMaxCache = Float.parseFloat(StringUtils.isEmpty(jSONObject.getString("max-cache")) ? jSONObject.getString("maxCache") : jSONObject.getString("max-cache"));
         } catch (Exception unused) {
         }
     }
@@ -508,10 +508,10 @@ public class TriverEmbedLiveView extends BaseEmbedView implements e, Serializabl
         } else {
             this.mMediaPlayCenter = new MediaPlayCenter(this.mContextRef.get());
             this.mMediaPlayCenter.setUsingInterface(COMPONENT_NAME);
-            if (!TextUtils.isEmpty(this.mFrom)) {
+            if (!StringUtils.isEmpty(this.mFrom)) {
                 this.mMediaPlayCenter.setBizCode(this.mFrom);
             }
-            if (!TextUtils.isEmpty(this.mPlayScenes)) {
+            if (!StringUtils.isEmpty(this.mPlayScenes)) {
                 this.mMediaPlayCenter.setPlayScenes(this.mPlayScenes);
             }
             this.mMediaPlayCenter.setMediaUrl(this.mSrc);

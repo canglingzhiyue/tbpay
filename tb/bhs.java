@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.a;
 import com.alibaba.android.split.j;
 import com.alibaba.android.split.k;
@@ -31,7 +31,7 @@ public class bhs implements bhv {
                 String a2 = k.a().b().j().a();
                 bgu bguVar = this.f25915a;
                 bguVar.d("CurrentUseHisAppVersion:" + a2, new Object[0]);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     if (b.a().c(str).matchedAppFeatureMd5.containsKey(a2)) {
                         return true;
                     }

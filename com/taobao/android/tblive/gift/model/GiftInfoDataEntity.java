@@ -1,6 +1,6 @@
 package com.taobao.android.tblive.gift.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -56,7 +56,7 @@ public class GiftInfoDataEntity implements Serializable {
         if (ipChange instanceof IpChange) {
             return (TBLiveGiftEntity) ipChange.ipc$dispatch("1cc92d7d", new Object[]{str, jcaVar, str2});
         }
-        if (TextUtils.isEmpty(str) || jcaVar == null) {
+        if (StringUtils.isEmpty(str) || jcaVar == null) {
             return null;
         }
         try {
@@ -83,16 +83,16 @@ public class GiftInfoDataEntity implements Serializable {
         tBLiveGiftEntity.mEnableShowSmallGiftView = true;
         tBLiveGiftEntity.mAnimationImg = giftEffectInfo.animationImg;
         tBLiveGiftEntity.mAnimationMp4 = giftEffectInfo.animationMp4;
-        if (TextUtils.equals(jcaVar.i(), giftEffectInfo.utdid) || TextUtils.equals(jcaVar.j(), giftEffectInfo.senderId)) {
+        if (StringUtils.equals(jcaVar.i(), giftEffectInfo.utdid) || StringUtils.equals(jcaVar.j(), giftEffectInfo.senderId)) {
             z = true;
         }
         tBLiveGiftEntity.mIsSelfGift = z;
         tBLiveGiftEntity.buildPoolTime = System.currentTimeMillis();
         tBLiveGiftEntity.mExpireTime = jcaVar.d();
-        if (TextUtils.isEmpty(giftEffectInfo.backgroundStartColor)) {
+        if (StringUtils.isEmpty(giftEffectInfo.backgroundStartColor)) {
             giftEffectInfo.backgroundStartColor = "#66000000";
         }
-        if (TextUtils.isEmpty(giftEffectInfo.backgroundEndColor)) {
+        if (StringUtils.isEmpty(giftEffectInfo.backgroundEndColor)) {
             giftEffectInfo.backgroundEndColor = "#20000000";
         }
         tBLiveGiftEntity.originGiftData = (JSONObject) JSONObject.toJSON(giftEffectInfo);

@@ -6,7 +6,7 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.config.a;
 import com.taobao.tao.log.TLog;
@@ -369,10 +369,10 @@ public class l {
             String substring = configuration.substring(indexOf + 13, configuration.indexOf(riy.BRACKET_END_STR, indexOf));
             int indexOf2 = configuration.indexOf("mMaxBounds=Rect(");
             String substring2 = configuration.substring(indexOf2 + 16, configuration.indexOf(riy.BRACKET_END_STR, indexOf2));
-            boolean z = !TextUtils.isEmpty(configuration) && configuration.contains("mWindowingMode=freeform");
+            boolean z = !StringUtils.isEmpty(configuration) && configuration.contains("mWindowingMode=freeform");
             TLog.loge("TBDeviceUtils", "bound=" + substring + " max=" + substring2 + " freeformMode=" + z);
-            if (!z && !TextUtils.isEmpty(substring2)) {
-                if (!TextUtils.equals(substring2, substring)) {
+            if (!z && !StringUtils.isEmpty(substring2)) {
+                if (!StringUtils.equals(substring2, substring)) {
                     return true;
                 }
             }
@@ -883,7 +883,7 @@ public class l {
             TLog.loge("TBDeviceUtils", "isSamsungFoldableDevice: ", th);
             str = "";
         }
-        return TextUtils.equals(str, "TRUE");
+        return StringUtils.equals(str, "TRUE");
     }
 
     public static boolean e(Context context) {

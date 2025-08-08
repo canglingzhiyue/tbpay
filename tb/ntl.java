@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
 import com.taobao.search.common.util.r;
@@ -25,7 +25,7 @@ public final class ntl {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("db255473", new Object[]{this, bool, str})).booleanValue();
         }
-        if (bool != null && !q.a((Object) bool, (Object) false) && !TextUtils.isEmpty(str)) {
+        if (bool != null && !q.a((Object) bool, (Object) false) && !StringUtils.isEmpty(str)) {
             return k.b.a(str);
         }
         return true;
@@ -36,7 +36,7 @@ public final class ntl {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         String[] whiteList = r.av();
@@ -55,7 +55,7 @@ public final class ntl {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         String[] whiteList = r.au();

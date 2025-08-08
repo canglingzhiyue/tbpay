@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.activity.BridgeActivity;
 import com.huawei.hms.adapter.AvailableAdapter;
 import com.huawei.hms.adapter.internal.CommonCode;
@@ -178,7 +178,7 @@ public class BaseAdapter {
                 if (value == null) {
                     HMSLog.e("BaseAdapter", "response null");
                     b.onError(BaseAdapter.this.b(-1));
-                } else if (TextUtils.isEmpty(value.getJsonHeader())) {
+                } else if (StringUtils.isEmpty(value.getJsonHeader())) {
                     HMSLog.e("BaseAdapter", "jsonHeader null");
                     b.onError(BaseAdapter.this.b(-1));
                 } else {
@@ -496,7 +496,7 @@ public class BaseAdapter {
 
             @Override // com.huawei.hms.adapter.sysobs.SystemObserver
             public boolean onSolutionResult(Intent intent, String str) {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     HMSLog.e("BaseAdapter", "onSolutionResult but id is null");
                     BaseCallBack b = BaseAdapter.this.b();
                     if (b == null) {
@@ -575,14 +575,14 @@ public class BaseAdapter {
         coreBaseRequest.setJsonHeader(str);
         coreBaseRequest.setParcelable(parcelable);
         String apiName = this.j.getApiName();
-        if (TextUtils.isEmpty(apiName)) {
+        if (StringUtils.isEmpty(apiName)) {
             HMSLog.e("BaseAdapter", "get uri null");
             baseCallBack.onError(b(-5));
             return;
         }
         String transactionId = this.j.getTransactionId();
         this.h = transactionId;
-        if (TextUtils.isEmpty(transactionId)) {
+        if (StringUtils.isEmpty(transactionId)) {
             HMSLog.e("BaseAdapter", "get transactionId null");
             baseCallBack.onError(b(-6));
             return;

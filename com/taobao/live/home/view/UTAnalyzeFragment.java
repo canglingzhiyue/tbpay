@@ -1,7 +1,7 @@
 package com.taobao.live.home.view;
 
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
@@ -73,7 +73,7 @@ public class UTAnalyzeFragment extends Fragment {
             return;
         }
         String uTPageName = getUTPageName();
-        if (!TextUtils.isEmpty(uTPageName)) {
+        if (!StringUtils.isEmpty(uTPageName)) {
             UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(getActivity(), uTPageName);
             UTAnalytics.getInstance().getDefaultTracker().updatePageName(getActivity(), uTPageName);
         }
@@ -111,7 +111,7 @@ public class UTAnalyzeFragment extends Fragment {
             return;
         }
         String uTPageName = getUTPageName();
-        if (!TextUtils.isEmpty(uTPageName)) {
+        if (!StringUtils.isEmpty(uTPageName)) {
             UTAnalytics.getInstance().getDefaultTracker().pageDisAppear(getActivity());
             UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(getActivity(), uTPageName);
             UTAnalytics.getInstance().getDefaultTracker().updatePageName(getActivity(), uTPageName);

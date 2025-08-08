@@ -3,7 +3,7 @@ package com.vivo.push;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.vivo.push.sdk.PushMessageCallback;
 import com.vivo.push.util.ContextDelegate;
@@ -181,12 +181,12 @@ public final class m {
                 return;
             }
             String g = com.vivo.push.restructure.a.a().e().g();
-            JSONObject jSONObject = TextUtils.isEmpty(g) ? new JSONObject() : new JSONObject(g);
+            JSONObject jSONObject = StringUtils.isEmpty(g) ? new JSONObject() : new JSONObject(g);
             for (String str : list) {
                 jSONObject.put(str, System.currentTimeMillis());
             }
             String jSONObject2 = jSONObject.toString();
-            if (TextUtils.isEmpty(jSONObject2)) {
+            if (StringUtils.isEmpty(jSONObject2)) {
                 com.vivo.push.restructure.a.a().e().h();
             } else {
                 com.vivo.push.restructure.a.a().e().d(jSONObject2);
@@ -203,7 +203,7 @@ public final class m {
     }
 
     private static boolean a(String str, String str2) {
-        return TextUtils.isEmpty(str) || TextUtils.isEmpty(str2);
+        return StringUtils.isEmpty(str) || StringUtils.isEmpty(str2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -226,12 +226,12 @@ public final class m {
                 return;
             }
             String g = com.vivo.push.restructure.a.a().e().g();
-            JSONObject jSONObject = TextUtils.isEmpty(g) ? new JSONObject() : new JSONObject(g);
+            JSONObject jSONObject = StringUtils.isEmpty(g) ? new JSONObject() : new JSONObject(g);
             for (String str : list) {
                 jSONObject.remove(str);
             }
             String jSONObject2 = jSONObject.toString();
-            if (TextUtils.isEmpty(jSONObject2)) {
+            if (StringUtils.isEmpty(jSONObject2)) {
                 com.vivo.push.restructure.a.a().e().h();
             } else {
                 com.vivo.push.restructure.a.a().e().d(jSONObject2);
@@ -251,7 +251,7 @@ public final class m {
             arrayList.clear();
             com.vivo.push.util.u.d("PushClientManager", "getTags error");
         }
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             return arrayList;
         }
         Iterator<String> keys = new JSONObject(g).keys();
@@ -410,12 +410,12 @@ public final class m {
                 return;
             }
             iPushActionListener.onStateChanged(102);
-        } else if (!TextUtils.isEmpty(this.j) && this.j.equals(str)) {
+        } else if (!StringUtils.isEmpty(this.j) && this.j.equals(str)) {
             if (iPushActionListener == null) {
                 return;
             }
             iPushActionListener.onStateChanged(0);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (iPushActionListener == null) {
                 return;
             }
@@ -438,7 +438,7 @@ public final class m {
                     }
                     iPushActionListener.onStateChanged(101);
                     return;
-                } else if (TextUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
+                } else if (StringUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
                     if (iPushActionListener == null) {
                         return;
                     }
@@ -505,7 +505,7 @@ public final class m {
                     }
                     iPushActionListener.onStateChanged(101);
                     return;
-                } else if (TextUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
+                } else if (StringUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
                     if (iPushActionListener == null) {
                         return;
                     }
@@ -548,12 +548,12 @@ public final class m {
                 return;
             }
             iPushActionListener.onStateChanged(102);
-        } else if (TextUtils.isEmpty(this.j)) {
+        } else if (StringUtils.isEmpty(this.j)) {
             if (iPushActionListener == null) {
                 return;
             }
             iPushActionListener.onStateChanged(0);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (iPushActionListener == null) {
                 return;
             }
@@ -576,7 +576,7 @@ public final class m {
                     }
                     iPushActionListener.onStateChanged(101);
                     return;
-                } else if (TextUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
+                } else if (StringUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
                     if (iPushActionListener == null) {
                         return;
                     }
@@ -636,7 +636,7 @@ public final class m {
                     }
                     iPushActionListener.onStateChanged(101);
                     return;
-                } else if (TextUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
+                } else if (StringUtils.isEmpty(com.vivo.push.restructure.a.a().h().b())) {
                     if (iPushActionListener == null) {
                         return;
                     }

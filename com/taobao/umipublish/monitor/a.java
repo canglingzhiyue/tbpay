@@ -1,7 +1,7 @@
 package com.taobao.umipublish.monitor;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.data.IUGCMedia;
 import com.taobao.umipublish.monitor.UmiPublishMonitor;
@@ -46,7 +46,7 @@ public class a {
         }
         HashMap hashMap = new HashMap();
         String str = map == null ? null : map.get(VPM_TRACK_ID);
-        if (a() && !TextUtils.isEmpty(str)) {
+        if (a() && !StringUtils.isEmpty(str)) {
             hashMap.put("EagleEye-UserData", "cqp_track_id=" + map.get(VPM_TRACK_ID));
         }
         return hashMap;
@@ -147,7 +147,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("50440e27", new Object[]{map});
         }
         String str = map.get(ios.URL_KEY_PHOTO_BIZ_CODE);
-        return TextUtils.isEmpty(str) ? map.get(ios.URL_KEY_VIDEO_BIZ_CODE) : str;
+        return StringUtils.isEmpty(str) ? map.get(ios.URL_KEY_VIDEO_BIZ_CODE) : str;
     }
 
     private static boolean a() {

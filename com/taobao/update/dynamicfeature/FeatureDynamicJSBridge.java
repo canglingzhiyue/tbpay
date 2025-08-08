@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.k;
 import com.alibaba.android.split.p;
 import com.alibaba.fastjson.JSON;
@@ -147,7 +147,7 @@ public class FeatureDynamicJSBridge extends e {
         }
         ArrayList arrayList = new ArrayList();
         for (String str : com.android.tools.bundleInfo.b.a().j()) {
-            if (!TextUtils.isEmpty(com.android.tools.bundleInfo.b.a().c(str).matchedAppVersion)) {
+            if (!StringUtils.isEmpty(com.android.tools.bundleInfo.b.a().c(str).matchedAppVersion)) {
                 arrayList.add(str + "------>" + com.android.tools.bundleInfo.b.a().c(str).matchedAppVersion);
             }
         }

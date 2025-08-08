@@ -13,7 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -2459,7 +2459,7 @@ public final class NativeShopActivity extends FragmentActivity implements com.al
             throw null;
         }
         DXTemplateItem a2 = dinamicXEngine.a(b(jSONObject));
-        if (a2 != null && TextUtils.equals(jSONObject.getString("version"), String.valueOf(a2.b))) {
+        if (a2 != null && StringUtils.equals(jSONObject.getString("version"), String.valueOf(a2.b))) {
             rulVar.mo2421invoke(a(a2, jSONObject2));
             a(j() + 1);
             b(com.alibaba.triver.triver_shop.newShop.ext.g.KEY_PAGE_LOADED);
@@ -2621,7 +2621,7 @@ public final class NativeShopActivity extends FragmentActivity implements com.al
                 }
                 this.z = str;
             }
-            if (!TextUtils.isEmpty(this.z)) {
+            if (!StringUtils.isEmpty(this.z)) {
                 a2 = com.alibaba.triver.triver_shop.newShop.ext.h.a(this.z, I);
             } else {
                 String str2 = this.x;

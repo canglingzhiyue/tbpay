@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.assist;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -37,7 +37,7 @@ public class MspBizImplNewRpc {
         }
         rpcInvokeContext.setRpcLoggerLevel(1);
         String configSDKAppId = GlobalHelper.getInstance().getConfigSDKAppId();
-        if (!TextUtils.isEmpty(configSDKAppId)) {
+        if (!StringUtils.isEmpty(configSDKAppId)) {
             rpcInvokeContext.setAppId(configSDKAppId);
             rpcInvokeContext.setAppKey(configSDKAppId);
         } else {

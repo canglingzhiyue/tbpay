@@ -1,6 +1,6 @@
 package com.taobao.android.diagnose.scene.engine.reader;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -38,7 +38,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("627608df", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f11721a)) {
+        if (StringUtils.isEmpty(this.f11721a)) {
             return Collections.emptyList();
         }
         try {
@@ -66,7 +66,7 @@ public class b {
             return (RuleDefine) ipChange.ipc$dispatch("faa6a945", new Object[]{this});
         }
         try {
-            if (TextUtils.isEmpty(this.f11721a)) {
+            if (StringUtils.isEmpty(this.f11721a)) {
                 return null;
             }
             return (RuleDefine) JSON.parseObject(this.f11721a, RuleDefine.class);

@@ -1,6 +1,6 @@
 package com.taobao.avplayer.core.animation.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
@@ -21,7 +21,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (Interpolator) ipChange.ipc$dispatch("1042ff47", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         char c = 65535;

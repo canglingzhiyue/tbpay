@@ -16,7 +16,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.embed.BaseEmbedView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -228,10 +228,10 @@ public class WVARCameraView extends BaseEmbedView implements b {
         }
         Object obj = this.params.mObjectParam.get("active");
         Object obj2 = this.params.mObjectParam.get(INIT_DEVICE_POSITION);
-        if (obj2 == null || !TextUtils.equals(obj2.toString(), "back")) {
+        if (obj2 == null || !StringUtils.equals(obj2.toString(), "back")) {
             z3 = true;
         }
-        TextUtils.isEmpty(this.mCurrentType);
+        StringUtils.isEmpty(this.mCurrentType);
         final Object obj3 = this.params.mObjectParam.get("config");
         try {
             this.mCurrentType = (String) obj3;
@@ -400,11 +400,11 @@ public class WVARCameraView extends BaseEmbedView implements b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c7e54d06", new Object[]{this, str, strArr})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && strArr != null && strArr.length > 0) {
+        if (!StringUtils.isEmpty(str) && strArr != null && strArr.length > 0) {
             int i = -1;
             for (String str2 : strArr) {
                 i++;
-                if (TextUtils.equals(str2, str)) {
+                if (StringUtils.equals(str2, str)) {
                     return i;
                 }
             }
@@ -419,7 +419,7 @@ public class WVARCameraView extends BaseEmbedView implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b5683d51", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "preloadResource")) {
+        if (StringUtils.equals(str, "preloadResource")) {
             setupAREngine(this.mIsInAlbumMode, true);
             return true;
         } else if (!this.mIsCreateAREngine) {
@@ -430,13 +430,13 @@ public class WVARCameraView extends BaseEmbedView implements b {
                 jSONObject = JSONObject.parseObject(str2);
             } catch (Throwable unused) {
             }
-            if (TextUtils.equals(str, "takePhoto")) {
+            if (StringUtils.equals(str, "takePhoto")) {
                 innerTakePicture(jSONObject);
                 return true;
-            } else if (TextUtils.equals(str, "snapshot") && jSONObject != null) {
+            } else if (StringUtils.equals(str, "snapshot") && jSONObject != null) {
                 innerTakePicture(jSONObject);
                 return true;
-            } else if (!TextUtils.equals(str, "choosePhotoLibrary")) {
+            } else if (!StringUtils.equals(str, "choosePhotoLibrary")) {
                 return false;
             } else {
                 if (Build.VERSION.SDK_INT >= 33) {
@@ -663,7 +663,7 @@ public class WVARCameraView extends BaseEmbedView implements b {
             }
             if (pairArr != null && pairArr.length > 0) {
                 String str = (String) pairArr[0].first;
-                if (!TextUtils.isEmpty(str) && new File(str).exists()) {
+                if (!StringUtils.isEmpty(str) && new File(str).exists()) {
                     try {
                         int attributeInt = new ExifInterface(str).getAttributeInt(android.support.media.ExifInterface.TAG_ORIENTATION, 1);
                         if (attributeInt == 3) {

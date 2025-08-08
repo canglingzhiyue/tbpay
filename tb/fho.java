@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -864,13 +864,13 @@ public class fho extends com.taobao.android.detail2.core.framework.view.feeds.d<
                 return;
             }
             fjp.a(this.j.f(), "deliverPicFail", (Object) "componentNull");
-        } else if (TextUtils.isEmpty(((fhi) this.i).V.f27945a)) {
+        } else if (StringUtils.isEmpty(((fhi) this.i).V.f27945a)) {
             fjt.a(fjt.TAG_RENDER, ((fhi) this.i).f + "mNoOpenImmedPlaceHolderComponent.url为空，bindNoOpenImmedPlaceHolder return");
             if (((fhi) this.i).f != 0) {
                 return;
             }
             fjp.a(this.j.f(), "deliverPicFail", (Object) "componentUrlNull");
-        } else if (TextUtils.isEmpty(((fhi) this.i).V.c)) {
+        } else if (StringUtils.isEmpty(((fhi) this.i).V.c)) {
             fjt.a(fjt.TAG_RENDER, ((fhi) this.i).f + "mNoOpenImmedPlaceHolderComponent.dimension为空，bindNoOpenImmedPlaceHolder return");
             if (((fhi) this.i).f != 0) {
                 return;
@@ -919,7 +919,7 @@ public class fho extends com.taobao.android.detail2.core.framework.view.feeds.d<
             return null;
         }
         String string = ((fhi) this.i).H().getString("openImmediatelyBlur");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {

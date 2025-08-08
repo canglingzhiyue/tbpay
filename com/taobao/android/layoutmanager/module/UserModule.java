@@ -3,7 +3,7 @@ package com.taobao.android.layoutmanager.module;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
@@ -107,7 +107,7 @@ public class UserModule {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-                    } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+                    } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
                     } else {
                         int i = AnonymousClass2.f13265a[LoginAction.valueOf(intent.getAction()).ordinal()];
                         if (i == 1) {

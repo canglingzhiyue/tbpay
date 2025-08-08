@@ -2,7 +2,7 @@ package com.taobao.passivelocation.aidl;
 
 import android.content.Context;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -176,7 +176,7 @@ public class LocationServiceManager {
                 return sLocationDTO;
             }
             String string = PreferenceManager.getDefaultSharedPreferences(Globals.getApplication()).getString(NAVI_RESULT, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             LocationDTO locationDTO = (LocationDTO) JSON.parseObject(string, LocationDTO.class);

@@ -1,6 +1,6 @@
 package com.taobao.message.notification.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import tb.kge;
@@ -15,6 +15,6 @@ public class SwitchUtil {
 
     public static boolean isNewLocalPush() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4bf3a6ba", new Object[0])).booleanValue() : TextUtils.equals("1", OrangeConfig.getInstance().getConfig("mpm_business_switch", "useNewLocalPush", "1"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4bf3a6ba", new Object[0])).booleanValue() : StringUtils.equals("1", OrangeConfig.getInstance().getConfig("mpm_business_switch", "useNewLocalPush", "1"));
     }
 }

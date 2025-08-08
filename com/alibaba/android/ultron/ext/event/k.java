@@ -3,7 +3,7 @@ package com.alibaba.android.ultron.ext.event;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.ext.event.widget.b;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -66,7 +66,7 @@ public class k extends j {
             String string = jSONObject.getString("weexPopUrl");
             String string2 = jSONObject.getString("heightPercent");
             JSONObject jSONObject2 = jSONObject.getJSONObject("queryParams");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             String a2 = a(string, jSONObject2);
@@ -74,7 +74,7 @@ public class k extends j {
             b.C0091b c0091b = new b.C0091b();
             c0091b.a(-1);
             c0091b.a(a2);
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 try {
                     c0091b.a(Float.valueOf(string2).floatValue());
                 } catch (Exception unused) {
@@ -95,12 +95,12 @@ public class k extends j {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9e721362", new Object[]{this, str, jSONObject});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (entry != null && !TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+            if (entry != null && !StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                 buildUpon.appendQueryParameter(entry.getKey(), String.valueOf(entry.getValue()));
             }
         }

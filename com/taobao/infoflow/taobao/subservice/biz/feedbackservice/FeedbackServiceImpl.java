@@ -2,7 +2,7 @@ package com.taobao.infoflow.taobao.subservice.biz.feedbackservice;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -138,7 +138,7 @@ public class FeedbackServiceImpl implements IFeedbackService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("613f3af7", new Object[]{this, str});
-        } else if (this.mDeleteHostCardHelper == null || this.mMainFeedService == null || TextUtils.isEmpty(str)) {
+        } else if (this.mDeleteHostCardHelper == null || this.mMainFeedService == null || StringUtils.isEmpty(str)) {
         } else {
             int positionBySectionBizCode = this.mMainFeedService.getPositionBySectionBizCode(str);
             if (positionBySectionBizCode < 0) {
@@ -159,7 +159,7 @@ public class FeedbackServiceImpl implements IFeedbackService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6bc8677d", new Object[]{this, str, str2});
-        } else if (this.mDeleteHostCardHelper == null || this.mMainFeedService == null || TextUtils.isEmpty(str)) {
+        } else if (this.mDeleteHostCardHelper == null || this.mMainFeedService == null || StringUtils.isEmpty(str)) {
         } else {
             int positionBySectionBizCode = this.mMainFeedService.getPositionBySectionBizCode(str);
             if (positionBySectionBizCode < 0) {
@@ -172,7 +172,7 @@ public class FeedbackServiceImpl implements IFeedbackService {
                 return;
             }
             String string = findItemDataByPosition.getExt() == null ? "" : findItemDataByPosition.getExt().getString(KEY_CARD_FEATURE_ID);
-            if (!TextUtils.isEmpty(str2) && !TextUtils.equals(string, str2)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.equals(string, str2)) {
                 ldf.d(TAG, "feedback delete host card failed, card unique not match");
                 return;
             }
@@ -221,7 +221,7 @@ public class FeedbackServiceImpl implements IFeedbackService {
                     }
                     String string = jSONObject.getString("sectionBizCode");
                     String string2 = jSONObject.getString(FeedbackServiceImpl.KEY_SECTION_UNIQUE_KEY);
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         ldf.d(FeedbackServiceImpl.TAG, "delete card sectionBizCode is null");
                     } else {
                         FeedbackServiceImpl.this.deleteHostCardByBizCodeWithUniqueKey(string, string2);
@@ -248,7 +248,7 @@ public class FeedbackServiceImpl implements IFeedbackService {
                         return;
                     }
                     String access$000 = FeedbackServiceImpl.access$000(FeedbackServiceImpl.this, baseSectionModel);
-                    if (!TextUtils.equals("liteDetail", access$000) && !TextUtils.equals("newDetail", access$000)) {
+                    if (!StringUtils.equals("liteDetail", access$000) && !StringUtils.equals("newDetail", access$000)) {
                         return;
                     }
                     JSONObject jSONObject = new JSONObject();

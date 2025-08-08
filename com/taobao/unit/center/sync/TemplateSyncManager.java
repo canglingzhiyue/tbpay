@@ -1,6 +1,6 @@
 package com.taobao.unit.center.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alipay.android.msp.framework.statisticsv2.model.StWindow;
@@ -187,7 +187,7 @@ public final class TemplateSyncManager implements ITemplateSyncService {
             }
             String stringSharedPreference = SharedPreferencesUtil.getStringSharedPreference(this.KEY_SYNC);
             TLog.loge(SyncConstant.TAG, "layoutJSON: " + stringSharedPreference);
-            if (TextUtils.isEmpty(stringSharedPreference)) {
+            if (StringUtils.isEmpty(stringSharedPreference)) {
                 return;
             }
             JSONArray jSONArray = com.alibaba.fastjson.JSONObject.parseObject(stringSharedPreference).getJSONArray(this.KEY_LAYOUT_MAP);
@@ -309,7 +309,7 @@ public final class TemplateSyncManager implements ITemplateSyncService {
         }
         String data = SharedPreferencesUtil.getStringSharedPreference("templateSyncInfo" + i);
         try {
-            if (TextUtils.isEmpty(data) || this.isReset) {
+            if (StringUtils.isEmpty(data) || this.isReset) {
                 return null;
             }
             com.alibaba.fastjson.JSONObject parseObject = com.alibaba.fastjson.JSONObject.parseObject(data);

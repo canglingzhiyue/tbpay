@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.s;
@@ -25,7 +25,7 @@ public class ora {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("266fb88", new Object[]{jSONObject});
-        } else if (jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("monitorCard"))) {
+        } else if (jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("monitorCard"))) {
             b = new HashSet(Arrays.asList(jSONObject.getString("monitorCard").split(",")));
         } else {
             HashSet hashSet = new HashSet(1);
@@ -38,10 +38,10 @@ public class ora {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6f32d068", new Object[]{jSONObject, jSONObject2});
-        } else if (jSONObject2 != null && TextUtils.equals(jSONObject2.getString("brandAd"), "1") && TextUtils.isEmpty(jSONObject2.getString("ifs"))) {
+        } else if (jSONObject2 != null && StringUtils.equals(jSONObject2.getString("brandAd"), "1") && StringUtils.isEmpty(jSONObject2.getString("ifs"))) {
             TLog.loge("AdMonitorHelper", "brandAd card do not contain ifs url.");
             a(jSONObject, "BizBrandAd", "BrandAdNoIfs", "");
-        } else if (jSONObject2 == null || TextUtils.isEmpty(jSONObject2.getString("ifs")) || TextUtils.equals(jSONObject2.getString("brandAd"), "1")) {
+        } else if (jSONObject2 == null || StringUtils.isEmpty(jSONObject2.getString("ifs")) || StringUtils.equals(jSONObject2.getString("brandAd"), "1")) {
         } else {
             TLog.loge("AdMonitorHelper", "ifs card is not brandAd");
             a(jSONObject, "BizBrandAd", "IfsNotBrandAdV2", "");

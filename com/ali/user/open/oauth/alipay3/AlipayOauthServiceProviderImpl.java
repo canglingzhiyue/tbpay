@@ -3,7 +3,7 @@ package com.ali.user.open.oauth.alipay3;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.login.model.LoginConstant;
 import com.ali.user.open.core.AliMemberSDK;
@@ -58,7 +58,7 @@ public class AlipayOauthServiceProviderImpl extends BaseOauthServiceProviderImpl
             hashMap.put("code", String.valueOf(102));
             ((UserTrackerService) AliMemberSDK.getService(UserTrackerService.class)).send("Page_AlipayOauth", "Page_AlipayOauth_Fail", hashMap);
             oauthCallback.onFail(str, 102, "param is null");
-        } else if (appCredential == null || TextUtils.isEmpty(appCredential.appKey)) {
+        } else if (appCredential == null || StringUtils.isEmpty(appCredential.appKey)) {
             hashMap.put("code", String.valueOf(101));
             ((UserTrackerService) AliMemberSDK.getService(UserTrackerService.class)).send("Page_AlipayOauth", "Page_AlipayOauth_Fail", hashMap);
             oauthCallback.onFail(str, 101, "app credential is null");
@@ -76,7 +76,7 @@ public class AlipayOauthServiceProviderImpl extends BaseOauthServiceProviderImpl
         try {
             Class.forName("com.alipay.sdk.auth.OpenAuthTask");
             HashMap hashMap = new HashMap();
-            if (map != null && !TextUtils.isEmpty(map.get(ParamsConstants.Key.PARAM_ALIPAY_URL))) {
+            if (map != null && !StringUtils.isEmpty(map.get(ParamsConstants.Key.PARAM_ALIPAY_URL))) {
                 hashMap.put("url", map.get(ParamsConstants.Key.PARAM_ALIPAY_URL));
             } else if (map != null && "1".equals(map.get(ParamsConstants.Key.PARAM_ALIPAY_QUICK_LOGIN))) {
                 hashMap.put("url", "https://render.alipay.com/p/yuyan/180020010001205638/fast-login.html?auth_type=PURE_OAUTH_SDK&third_party=TAO_BAO&app_id=" + appCredential.appKey + "&scope=login_getPayInfo&auth_token_type=once&state=init");
@@ -103,16 +103,16 @@ public class AlipayOauthServiceProviderImpl extends BaseOauthServiceProviderImpl
                         hashMap2.put("iCode", String.valueOf(i));
                         ((UserTrackerService) AliMemberSDK.getService(UserTrackerService.class)).send("Page_AlipayOauth", "Page_AlipayOauth_Fail", hashMap2);
                         oauthCallback.onFail(str, 202, "");
-                    } else if (!TextUtils.isEmpty(bundle.getString(AlipayConstant.LOGIN_ALIPAY_AUTH_CODE_KEY))) {
+                    } else if (!StringUtils.isEmpty(bundle.getString(AlipayConstant.LOGIN_ALIPAY_AUTH_CODE_KEY))) {
                         hashMap2.put("authCode", bundle.getString(AlipayConstant.LOGIN_ALIPAY_AUTH_CODE_KEY));
                         ((UserTrackerService) AliMemberSDK.getService(UserTrackerService.class)).send("Page_AlipayOauth", "Page_AlipayOauth_Code9000", hashMap2);
                         oauthCallback.onSuccess(str, hashMap2);
-                    } else if (TextUtils.equals(bundle.getString("authStatus"), LoginConstant.FETCH_IV_FAIL_CANCEL) || TextUtils.equals(bundle.getString("authStatus"), "USER_BACK")) {
+                    } else if (StringUtils.equals(bundle.getString("authStatus"), LoginConstant.FETCH_IV_FAIL_CANCEL) || StringUtils.equals(bundle.getString("authStatus"), "USER_BACK")) {
                         ((UserTrackerService) AliMemberSDK.getService(UserTrackerService.class)).send("Page_AlipayOauth", "Page_AlipayOauth_Code9000_CANCEL", hashMap2);
                         oauthCallback.onFail(str, 204, "");
                     } else {
                         hashMap2.put("iCode", String.valueOf(i));
-                        hashMap2.put("authStatus", TextUtils.isEmpty(bundle.getString("authStatus")) ? "empty" : bundle.getString("authStatus"));
+                        hashMap2.put("authStatus", StringUtils.isEmpty(bundle.getString("authStatus")) ? "empty" : bundle.getString("authStatus"));
                         ((UserTrackerService) AliMemberSDK.getService(UserTrackerService.class)).send("Page_AlipayOauth", "Page_AlipayOauth_Fail", hashMap2);
                         oauthCallback.onFail(str, 202, "");
                     }
@@ -145,7 +145,7 @@ public class AlipayOauthServiceProviderImpl extends BaseOauthServiceProviderImpl
                     }
                     HashMap hashMap = new HashMap();
                     hashMap.put("code", i + "");
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = "empty";
                     }
                     hashMap.put("msg", str);

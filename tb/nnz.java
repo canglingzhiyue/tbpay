@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import com.taobao.search.sf.datasource.c;
@@ -42,7 +42,7 @@ public class nnz {
         if (ipChange instanceof IpChange) {
             return (c) ipChange.ipc$dispatch("6d97b7a2", new Object[]{this, str});
         }
-        if (!TextUtils.equals(str, this.b)) {
+        if (!StringUtils.equals(str, this.b)) {
             q.a("SearchDatasourceManager", "token is invalid");
             return null;
         }

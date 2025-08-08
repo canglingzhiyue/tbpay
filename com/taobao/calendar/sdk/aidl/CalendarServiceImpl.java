@@ -5,7 +5,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.evo.internal.database.ExperimentDO;
 import com.alibaba.fastjson.JSON;
@@ -181,7 +181,7 @@ public class CalendarServiceImpl extends Service {
                 return;
             }
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     this.listener.onError("param error. param is empty", "");
                     return;
                 }
@@ -193,11 +193,11 @@ public class CalendarServiceImpl extends Service {
                 if (parseObject.containsKey("start_time") && parseObject.containsKey(ExperimentDO.COLUMN_END_TIME)) {
                     String string = parseObject.getString("start_time");
                     String string2 = parseObject.getString(ExperimentDO.COLUMN_END_TIME);
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                         String formatCompat = DateUtils.formatCompat(string, "yyyyMMddHHmmss", "yyyy-MM-dd");
                         String formatCompat2 = DateUtils.formatCompat(string2, "yyyyMMddHHmmss", "yyyy-MM-dd");
                         String string3 = parseObject.getString("source_id");
-                        if (!TextUtils.isEmpty(string3) && "0".equals(string3)) {
+                        if (!StringUtils.isEmpty(string3) && "0".equals(string3)) {
                             string3 = "";
                         }
                         String string4 = parseObject.getString("user_id");
@@ -239,7 +239,7 @@ public class CalendarServiceImpl extends Service {
                 return;
             }
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     this.listener.onError("param error. param is empty", "");
                     return;
                 }
@@ -251,11 +251,11 @@ public class CalendarServiceImpl extends Service {
                 if (parseObject.containsKey("start_time") && parseObject.containsKey(ExperimentDO.COLUMN_END_TIME)) {
                     String string = parseObject.getString("start_time");
                     String string2 = parseObject.getString(ExperimentDO.COLUMN_END_TIME);
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                         String formatCompat = DateUtils.formatCompat(string, "yyyyMMddHHmmss", "yyyy-MM-dd");
                         String formatCompat2 = DateUtils.formatCompat(string2, "yyyyMMddHHmmss", "yyyy-MM-dd");
                         String string3 = parseObject.getString("source_id");
-                        if (!TextUtils.isEmpty(string3) && "0".equals(string3)) {
+                        if (!StringUtils.isEmpty(string3) && "0".equals(string3)) {
                             string3 = "";
                         }
                         String string4 = parseObject.getString("user_id");
@@ -318,13 +318,13 @@ public class CalendarServiceImpl extends Service {
                 try {
                     scheduleDO.setStartTime(Long.valueOf(CalendarServiceImpl.this.stringToDate(scheduleDTO.getStartTime(), "yyyyMMddHHmmss").getTime()));
                     scheduleDO.endTime = CalendarServiceImpl.this.stringToDate(scheduleDTO.getEndTime(), "yyyyMMddHHmmss").getTime();
-                    scheduleDO.title = TextUtils.isEmpty(scheduleDTO.getTitle()) ? "title" : scheduleDTO.getTitle();
+                    scheduleDO.title = StringUtils.isEmpty(scheduleDTO.getTitle()) ? "title" : scheduleDTO.getTitle();
                     scheduleDO.description = scheduleDTO.getDescription();
                     boolean z = false;
                     scheduleDO.isAllDay = scheduleDTO.getIsallday() == 1;
                     String link = scheduleDTO.getLink();
                     String replaceOrAddQueryParameter = Utils.replaceOrAddQueryParameter(link, "spm", "a2141.7779397." + scheduleDTO.getSourceId());
-                    if (TextUtils.isEmpty(replaceOrAddQueryParameter)) {
+                    if (StringUtils.isEmpty(replaceOrAddQueryParameter)) {
                         replaceOrAddQueryParameter = "link";
                     }
                     scheduleDO.link = replaceOrAddQueryParameter;
@@ -333,7 +333,7 @@ public class CalendarServiceImpl extends Service {
                         z = true;
                     }
                     scheduleDO.isEditable = z;
-                    scheduleDO.remind = TextUtils.isEmpty(String.valueOf(scheduleDTO.getRemind())) ? 300L : scheduleDTO.getRemind();
+                    scheduleDO.remind = StringUtils.isEmpty(String.valueOf(scheduleDTO.getRemind())) ? 300L : scheduleDTO.getRemind();
                     if (CalendarServiceImpl.inited) {
                         TableSchedule.newSchedule(scheduleDO, queryHandler, str);
                         this.listener.onSuccess(true, scheduleDO.eventId, null);

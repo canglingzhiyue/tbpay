@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -228,7 +228,7 @@ public class h extends RecyclerView.Adapter<c> {
         RecyclerView i = this.b.i();
         SectionModel sectionModel = this.n.get(0);
         String str = "";
-        if (TextUtils.equals(sectionModel != null ? sectionModel.getString("sectionBizCode") : str, "error")) {
+        if (StringUtils.equals(sectionModel != null ? sectionModel.getString("sectionBizCode") : str, "error")) {
             RecyclerView.ViewHolder findViewHolderForAdapterPosition2 = i.findViewHolderForAdapterPosition(0);
             if (findViewHolderForAdapterPosition2 == null || findViewHolderForAdapterPosition2.itemView == null) {
                 return;
@@ -241,7 +241,7 @@ public class h extends RecyclerView.Adapter<c> {
             if (sectionModel2 != null) {
                 str = sectionModel2.getString("sectionBizCode");
             }
-            if (!TextUtils.equals(str, "loading")) {
+            if (!StringUtils.equals(str, "loading")) {
                 return;
             }
             this.m = TBLoadMoreFooter.LoadMoreState.NONE;
@@ -317,17 +317,17 @@ public class h extends RecyclerView.Adapter<c> {
         String string = sectionModel.getString("sectionBizCode");
         if (!z && i > this.e) {
             this.d++;
-            if (!TextUtils.equals(string, "loading") || !TextUtils.equals(string, "error")) {
+            if (!StringUtils.equals(string, "loading") || !StringUtils.equals(string, "error")) {
                 this.g++;
             }
         }
         if (!kst.a(cVar.f20991a, sectionModel)) {
-            if (TextUtils.equals(string, "loading")) {
+            if (StringUtils.equals(string, "loading")) {
                 ((TBLoadMoreFooter) ((FrameLayout) cVar.itemView).getChildAt(0)).changeToState(this.m);
                 if (this.d > 1 && !j()) {
                     this.b.d();
                 }
-            } else if (!TextUtils.equals(string, "error") && !z) {
+            } else if (!StringUtils.equals(string, "error") && !z) {
                 if (com.taobao.homepage.utils.o.a(sectionModel.getJSONObject("template")).a()) {
                     this.l.a(cVar, sectionModel, f());
                 } else {
@@ -357,7 +357,7 @@ public class h extends RecyclerView.Adapter<c> {
             return ((Boolean) ipChange.ipc$dispatch("5eb3ff5", new Object[]{this})).booleanValue();
         }
         osm osmVar = this.b;
-        if (osmVar != null && !TextUtils.isEmpty(osmVar.g())) {
+        if (osmVar != null && !StringUtils.isEmpty(osmVar.g())) {
             boolean contains = this.b.g().contains(syc.MULTI_NATIVE_INFOFLOW_CID_PREFIX);
             int i = this.u;
             boolean z = i > 0 && i == this.n.size() - this.t;
@@ -619,8 +619,8 @@ public class h extends RecyclerView.Adapter<c> {
         if (jSONObject == null || layoutParams == null || view == null) {
             return false;
         }
-        if (!TextUtils.equals(jSONObject.getString("sectionBizCode"), "error") && !TextUtils.equals(jSONObject.getString("sectionBizCode"), "loading")) {
-            if (!(jSONObject.getJSONObject("template") != null && TextUtils.equals("one", com.taobao.homepage.utils.o.b(jSONObject.getJSONObject("template")))) && a(view, R.id.tag_recommend_decoration_width, layoutParams.width) <= this.h) {
+        if (!StringUtils.equals(jSONObject.getString("sectionBizCode"), "error") && !StringUtils.equals(jSONObject.getString("sectionBizCode"), "loading")) {
+            if (!(jSONObject.getJSONObject("template") != null && StringUtils.equals("one", com.taobao.homepage.utils.o.b(jSONObject.getJSONObject("template")))) && a(view, R.id.tag_recommend_decoration_width, layoutParams.width) <= this.h) {
                 return false;
             }
         }

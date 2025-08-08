@@ -14,7 +14,7 @@ import android.taobao.windvane.util.a;
 import android.taobao.windvane.util.e;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.entity.ConnType;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.Header;
@@ -281,7 +281,7 @@ public class AliNetworkAdapter implements INetwork, adm {
         }
         int statusCode = syncSend.getStatusCode();
         String str = syncSend.getStatisticData().connectionType;
-        if (!TextUtils.isEmpty(str) && str.startsWith(ConnType.HTTP2)) {
+        if (!StringUtils.isEmpty(str) && str.startsWith(ConnType.HTTP2)) {
             eventHandler.status(2, 0, statusCode, "");
         } else {
             eventHandler.status(0, 0, statusCode, "");
@@ -307,7 +307,7 @@ public class AliNetworkAdapter implements INetwork, adm {
         }
         try {
             String url = aliRequestAdapter.getUrl();
-            if (url != null && TextUtils.equals(p.d(url), p.d(this.webView.getCachedUrl()))) {
+            if (url != null && StringUtils.equals(p.d(url), p.d(this.webView.getCachedUrl()))) {
                 z = true;
             }
             if (z) {
@@ -525,7 +525,7 @@ public class AliNetworkAdapter implements INetwork, adm {
                 if (AliNetworkAdapter.access$000(AliNetworkAdapter.this) != null) {
                     str2 = AliNetworkAdapter.access$000(AliNetworkAdapter.this).getCachedUrl();
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 android.taobao.windvane.monitor.r.commitWebpResource(str, str2, 3);
@@ -538,7 +538,7 @@ public class AliNetworkAdapter implements INetwork, adm {
                 ipChange.ipc$dispatch("3becd1a7", new Object[]{this, new Integer(i), str, str2, new Boolean(z), map});
             } else if (o.getWVNetWorkMonitorInterface() == null) {
             } else {
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "unknown";
                 }
                 o.getWVNetWorkMonitorInterface().onResponse(this.mUrl, str2, i, z, map);
@@ -616,7 +616,7 @@ public class AliNetworkAdapter implements INetwork, adm {
                 if (list2 != null && list2.size() > 0) {
                     str = list2.get(0);
                 }
-                if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
                     return;
                 }
                 adl.a().a(new adk(this.mUrl, str, str2));
@@ -702,7 +702,7 @@ public class AliNetworkAdapter implements INetwork, adm {
                 java.lang.String r4 = "Referer"
                 java.lang.Object r4 = r1.get(r4)     // Catch: java.lang.Throwable -> L75
                 java.lang.String r4 = (java.lang.String) r4     // Catch: java.lang.Throwable -> L75
-                boolean r0 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L52
+                boolean r0 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L52
                 if (r0 == 0) goto L50
                 java.lang.String r0 = "referer"
                 java.lang.Object r0 = r1.get(r0)     // Catch: java.lang.Throwable -> L52
@@ -723,7 +723,7 @@ public class AliNetworkAdapter implements INetwork, adm {
                 android.taobao.windvane.extra.uc.WVUCWebView r4 = android.taobao.windvane.extra.uc.AliNetworkAdapter.access$000(r4)     // Catch: java.lang.Throwable -> L75
                 java.lang.String r4 = r4.getCachedUrl()     // Catch: java.lang.Throwable -> L75
                 java.lang.String r4 = android.taobao.windvane.util.p.d(r4)     // Catch: java.lang.Throwable -> L75
-                boolean r1 = android.text.TextUtils.equals(r1, r4)     // Catch: java.lang.Throwable -> L75
+                boolean r1 = android.text.StringUtils.equals(r1, r4)     // Catch: java.lang.Throwable -> L75
                 if (r1 == 0) goto L73
                 r3 = 1
             L73:

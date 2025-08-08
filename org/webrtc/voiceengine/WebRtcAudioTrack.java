@@ -12,7 +12,7 @@ import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.trtc.impl.h;
 import com.taobao.trtc.utils.TrtcLog;
 import java.nio.ByteBuffer;
-import org.webrtc.ContextUtils;
+import org.webrtc.ConStringUtils;
 import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import tb.kge;
@@ -299,7 +299,7 @@ public class WebRtcAudioTrack {
         this.threadChecker.checkIsOnValidThread();
         Logging.d(TAG, "ctor " + WebRtcAudioUtils.getThreadInfo() + ", streamForMusic: " + z);
         this.nativeAudioTrack = j;
-        this.audioManager = (AudioManager) ContextUtils.getApplicationContext().getSystemService("audio");
+        this.audioManager = (AudioManager) ConStringUtils.getApplicationContext().getSystemService("audio");
         if (z) {
             if (Build.VERSION.SDK_INT >= 21) {
                 setAudioTrackUsageAttribute(1);

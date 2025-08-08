@@ -13,7 +13,7 @@ final class a extends BroadcastReceiver {
         if (r1 == 0) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
-        if (android.text.TextUtils.equals(r6.getStringExtra("openIdPackage"), r5.getPackageName()) != false) goto L7;
+        if (android.text.StringUtils.equals(r6.getStringExtra("openIdPackage"), r5.getPackageName()) != false) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x002d, code lost:
         r0 = true;
@@ -42,7 +42,7 @@ final class a extends BroadcastReceiver {
             java.lang.String r1 = "openIdPackage"
             java.lang.String r1 = r6.getStringExtra(r1)
             java.lang.String r5 = r5.getPackageName()
-            boolean r5 = android.text.TextUtils.equals(r1, r5)
+            boolean r5 = android.text.StringUtils.equals(r1, r5)
             if (r5 == 0) goto L46
         L2d:
             r0 = 1

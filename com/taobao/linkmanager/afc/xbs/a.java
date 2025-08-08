@@ -3,7 +3,7 @@ package com.taobao.linkmanager.afc.xbs;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.linkmanager.flowout.e;
 import tb.kge;
@@ -42,7 +42,7 @@ public class a {
         Intent intent2 = new Intent();
         intent2.setAction("com.alibaba.intent.action.GETWAY");
         intent2.setData(Uri.parse("tbopen://linkpartner/entrance?fl_out_id=8617ab96f88d12c0"));
-        if (aVar != null && !TextUtils.isEmpty(com.taobao.flowcustoms.afc.a.b)) {
+        if (aVar != null && !StringUtils.isEmpty(com.taobao.flowcustoms.afc.a.b)) {
             intent2.setPackage(com.taobao.flowcustoms.afc.a.b);
         }
         intent2.putExtra("pluginRules", "forward");
@@ -57,7 +57,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (Intent) ipChange.ipc$dispatch("cf7ed7de", new Object[]{aVar});
         }
-        if (aVar == null || TextUtils.isEmpty(aVar.h)) {
+        if (aVar == null || StringUtils.isEmpty(aVar.h)) {
             return null;
         }
         Uri parse = Uri.parse(aVar.h);
@@ -65,7 +65,7 @@ public class a {
         intent.setData(parse);
         intent.setFlags(268435456);
         intent.setFlags(131072);
-        if (!TextUtils.isEmpty(com.taobao.flowcustoms.afc.a.b)) {
+        if (!StringUtils.isEmpty(com.taobao.flowcustoms.afc.a.b)) {
             intent.setPackage(com.taobao.flowcustoms.afc.a.b);
         }
         return intent;

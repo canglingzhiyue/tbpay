@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.session.SessionManager;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class jdy extends jdx {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
         String a2 = a("APP_VERSION", "");
-        return TextUtils.isEmpty(a2) ? jgr.a(this.f29490a) : a2;
+        return StringUtils.isEmpty(a2) ? jgr.a(this.f29490a) : a2;
     }
 
     public String c() {
@@ -38,7 +38,7 @@ public class jdy extends jdx {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this});
         }
         String a2 = a(SessionManager.CURRENT_PROCESS, "");
-        return TextUtils.isEmpty(a2) ? jgr.b(this.f29490a) : a2;
+        return StringUtils.isEmpty(a2) ? jgr.b(this.f29490a) : a2;
     }
 
     public jdv d() {

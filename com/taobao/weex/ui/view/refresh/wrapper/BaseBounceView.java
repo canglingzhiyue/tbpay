@@ -1,7 +1,7 @@
 package com.taobao.weex.ui.view.refresh.wrapper;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -159,7 +159,7 @@ public abstract class BaseBounceView<T extends View> extends FrameLayout {
         }
         this.swipeLayout.setRefreshHeight((int) wXComponent.getLayoutHeight());
         String string = WXUtils.getString((String) wXComponent.getStyles().get("backgroundColor"), null);
-        if (string != null && !TextUtils.isEmpty(string) && (color = WXResourceUtils.getColor(string)) != 0) {
+        if (string != null && !StringUtils.isEmpty(string) && (color = WXResourceUtils.getColor(string)) != 0) {
             this.swipeLayout.setRefreshBgColor(color);
         }
         headerView.setRefreshView(wXComponent.mo1286getHostView());
@@ -180,7 +180,7 @@ public abstract class BaseBounceView<T extends View> extends FrameLayout {
         }
         this.swipeLayout.setLoadingHeight((int) wXComponent.getLayoutHeight());
         String string = WXUtils.getString((String) wXComponent.getStyles().get("backgroundColor"), null);
-        if (string != null && !TextUtils.isEmpty(string) && (color = WXResourceUtils.getColor(string)) != 0) {
+        if (string != null && !StringUtils.isEmpty(string) && (color = WXResourceUtils.getColor(string)) != 0) {
             this.swipeLayout.setLoadingBgColor(color);
         }
         footerView.setRefreshView(wXComponent.mo1286getHostView());

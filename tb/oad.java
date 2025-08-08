@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -20,7 +20,7 @@ public class oad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Map<String, String> a2 = oae.a(str);
@@ -28,7 +28,7 @@ public class oad {
             str2 = "queryParams=isNull&checkUrl=" + str;
         } else {
             String queryParameter = Uri.parse(str).getQueryParameter("sm");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 String str3 = "&sm=";
                 if (!str.contains(str3)) {
                     str3 = "?sm=";
@@ -37,7 +37,7 @@ public class oad {
                 oaj oajVar = new oaj();
                 oajVar.a(replace);
                 String a3 = oajVar.a();
-                boolean equals = TextUtils.equals(a3, queryParameter);
+                boolean equals = StringUtils.equals(a3, queryParameter);
                 if (!equals) {
                     AppMonitor.Alarm.commitFail("share", "PwdUrlCheckUtils", "", "generateSign=" + a3 + "&paramsSign=" + queryParameter + "&checkUrl=" + str);
                 }

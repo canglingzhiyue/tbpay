@@ -1,7 +1,7 @@
 package tb;
 
 import android.taobao.util.j;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.dynamic.bean.SearchDomBean;
@@ -85,7 +85,7 @@ public class nog {
         auctionBaseBean.mainPicJumpUrl = jSONObject.optString("mainPicJumpUrl");
         auctionBaseBean.wfPicUrl = j.a(jSONObject.optString(PRD_WF_PICURL));
         auctionBaseBean.uprightImgAspectRatio = jSONObject.optString("uprightImgAspectRatio");
-        if (TextUtils.isEmpty(auctionBaseBean.uprightImgAspectRatio)) {
+        if (StringUtils.isEmpty(auctionBaseBean.uprightImgAspectRatio)) {
             auctionBaseBean.uprightImgAspectRatio = "0.66";
         }
         String trim = jSONObject.optString("location").trim();
@@ -111,7 +111,7 @@ public class nog {
         auctionBaseBean.spuId = j.a(jSONObject.optString(PRD_SPU_ID));
         auctionBaseBean.uniqPid = j.a(jSONObject.optString(PRD_UNIQPID));
         String a2 = j.a(jSONObject.optString(PRD_ICON_LIST));
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             Collections.addAll(auctionBaseBean.iconSet, a2.split(","));
         }
         if (map != null) {
@@ -124,7 +124,7 @@ public class nog {
             for (int i = 0; i < length; i++) {
                 if (!optJSONArray.isNull(i)) {
                     String optString = optJSONArray.optString(i);
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         arrayList.add(optString);
                     }
                 }
@@ -134,7 +134,7 @@ public class nog {
         auctionBaseBean.summaryTipsColor = jSONObject.optString("summaryTipsColor");
         auctionBaseBean.o2oShopId = j.a(jSONObject.optString(PRD_O2O_SHOP_ID));
         auctionBaseBean.itemId = jSONObject.optString("item_id");
-        if (TextUtils.isEmpty(auctionBaseBean.itemId)) {
+        if (StringUtils.isEmpty(auctionBaseBean.itemId)) {
             auctionBaseBean.itemId = jSONObject.optString("nid");
         }
         auctionBaseBean.nick = jSONObject.optString("nick");
@@ -170,7 +170,7 @@ public class nog {
             while (keys.hasNext()) {
                 String next = keys.next();
                 String optString2 = optJSONObject.optString(next);
-                if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(optString2)) {
+                if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(optString2)) {
                     map2.put(next, optString2);
                 }
             }
@@ -237,7 +237,7 @@ public class nog {
             JSONObject optJSONObject = optJSONArray.optJSONObject(i);
             if (optJSONObject != null) {
                 String optString = optJSONObject.optString("fieldTemplate");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     char c = 65535;
                     switch (optString.hashCode()) {
                         case 75165:
@@ -321,7 +321,7 @@ public class nog {
             return;
         }
         String optString = jSONObject.optString("imageUrl");
-        if (TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString)) {
             return;
         }
         int optInt = jSONObject.optInt("width");
@@ -353,7 +353,7 @@ public class nog {
         while (keys.hasNext()) {
             String next = keys.next();
             String optString = optJSONObject.optString(next);
-            if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(optString)) {
                 hashMap.put(next, optString);
             }
         }
@@ -376,7 +376,7 @@ public class nog {
         auctionBaseBean.discountInfoColor = optJSONObject.optString("textColor");
         auctionBaseBean.discountInfoBgColor = optJSONObject.optString(e.KEY_BG_COLOR);
         auctionBaseBean.discountInfoBorderColor = optJSONObject.optString("borderColor");
-        if (!TextUtils.isEmpty(auctionBaseBean.discountInfoIcon)) {
+        if (!StringUtils.isEmpty(auctionBaseBean.discountInfoIcon)) {
             int optInt = optJSONObject.optInt("iconWidth");
             int optInt2 = optJSONObject.optInt("iconHeight");
             if (optInt > 0 && optInt2 > 0) {
@@ -384,7 +384,7 @@ public class nog {
             }
         }
         String optString = optJSONObject.optString("prizeIds");
-        if (TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString)) {
             return;
         }
         Collections.addAll(auctionBaseBean.discountPrizeIdInfo, optString.split(","));
@@ -404,7 +404,7 @@ public class nog {
         while (keys.hasNext()) {
             String next = keys.next();
             String optString = optJSONObject.optString(next);
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 auctionBaseBean.trace.put(next, optString);
             }
         }
@@ -427,7 +427,7 @@ public class nog {
         String optString4 = optJSONObject.optString("iconUrl");
         String a2 = a.a(j.a(optJSONObject.optString("coverUrl")));
         int optInt = optJSONObject.optInt("playTimes");
-        if (TextUtils.isEmpty(optString3) && TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString3) && StringUtils.isEmpty(optString)) {
             return;
         }
         auctionBaseBean.videoIcon = optString4;
@@ -466,7 +466,7 @@ public class nog {
         String optString4 = optJSONObject.optString("iconUrl");
         String a2 = a.a(j.a(optJSONObject.optString("coverUrl")));
         int optInt = optJSONObject.optInt("playTimes");
-        if (TextUtils.isEmpty(optString3) && TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString3) && StringUtils.isEmpty(optString)) {
             return;
         }
         auctionBaseBean.videoIcon = optString4;
@@ -525,7 +525,7 @@ public class nog {
             if (optJSONObject != null) {
                 String optString = optJSONObject.optString("key");
                 String optString2 = optJSONObject.optString("value");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     auctionBaseBean.extraParams.put(optString, optString2);
                 }
             }
@@ -634,7 +634,7 @@ public class nog {
                 while (keys.hasNext()) {
                     String next = keys.next();
                     String optString = optJSONObject2.optString(next);
-                    if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(optString)) {
                         hashMap.put(next, optString);
                     }
                 }

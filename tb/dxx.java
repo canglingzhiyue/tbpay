@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.LinkedHashMap;
@@ -71,7 +71,7 @@ public class dxx extends dxv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6198cb60", new Object[]{this, str, view});
-        } else if (TextUtils.isEmpty(str) || view == null) {
+        } else if (StringUtils.isEmpty(str) || view == null) {
         } else {
             this.g.post(new Runnable() { // from class: tb.dxx.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -109,7 +109,7 @@ public class dxx extends dxv {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         Lock readLock = this.f.readLock();

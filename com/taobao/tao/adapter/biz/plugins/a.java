@@ -10,7 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import anetwork.channel.download.DownloadManager;
 import com.alibaba.fastjson.JSONObject;
@@ -241,7 +241,7 @@ public class a implements com.taobao.tao.adapter.biz.plugins.watermask.a, obk.a 
         } else {
             TBShareContent a2 = bVar.a().a();
             if (a2 != null && a2.extraParams != null) {
-                this.v = TextUtils.equals("true", a2.extraParams.remove("isWeexDownload"));
+                this.v = StringUtils.equals("true", a2.extraParams.remove("isWeexDownload"));
             }
             this.t = SystemClock.elapsedRealtime();
             e();
@@ -314,7 +314,7 @@ public class a implements com.taobao.tao.adapter.biz.plugins.watermask.a, obk.a 
             return ((Boolean) ipChange.ipc$dispatch("2c8f04a5", new Object[]{this, bVar})).booleanValue();
         }
         if (oda.b() && bVar != null && bVar.a() != null && (a2 = bVar.a().a()) != null && a2.extraParams != null) {
-            if (!TextUtils.isEmpty(a2.extraParams.get("waterMaskVideoPath"))) {
+            if (!StringUtils.isEmpty(a2.extraParams.get("waterMaskVideoPath"))) {
                 this.f19808a = a2.extraParams.get("waterMaskVideoPath");
                 this.u = true;
                 this.w = "downloadVideoUrl";
@@ -328,20 +328,20 @@ public class a implements com.taobao.tao.adapter.biz.plugins.watermask.a, obk.a 
             this.h.put(RATIO_SCALE_MAP_KEY, a2.extraParams.get("waterMarkRatioScaleMap"));
             this.h.put(RATIO_POSITION_MAP_KEY, a2.extraParams.get("waterMarkRatioPositionMap"));
             this.h.put(RATIO_ANCHOR_MAP_KEY, a2.extraParams.get("waterMarkRatioAnchorMap"));
-            this.g = TextUtils.equals("isAddWaterMaskOnly", a2.extraParams.get("videoTemplateScheme"));
+            this.g = StringUtils.equals("isAddWaterMaskOnly", a2.extraParams.get("videoTemplateScheme"));
             if (this.g) {
                 this.c = a2.extraParams.get("videoResZipUrl");
-                return !TextUtils.isEmpty(this.f19808a) && !TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(this.c);
+                return !StringUtils.isEmpty(this.f19808a) && !StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(this.c);
             }
             OrangeConfig orangeConfig = OrangeConfig.getInstance();
             this.c = orangeConfig.getConfig("android_share_bizconfig", a2.businessId + "_videoResZipUrl", "https://wantu-1lh1-videotool-hz.oss-cn-hangzhou.aliyuncs.com/material/onion/watermark_gg.zip");
             this.d = a2.extraParams.get("userId");
             this.f = a2.extraParams.get("userNick");
-            if (TextUtils.isEmpty(this.f) && a2.templateParams != null && a2.templateParams.containsKey("userNick")) {
+            if (StringUtils.isEmpty(this.f) && a2.templateParams != null && a2.templateParams.containsKey("userNick")) {
                 this.f = (String) a2.templateParams.get("userNick");
             }
             this.e = a2.extraParams.get("avatarPath");
-            if (!TextUtils.isEmpty(this.f19808a) && !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.f) && !TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.f19808a) && !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.f) && !StringUtils.isEmpty(this.e)) {
                 return true;
             }
         }

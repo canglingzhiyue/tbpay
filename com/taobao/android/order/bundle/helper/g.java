@@ -3,7 +3,7 @@ package com.taobao.android.order.bundle.helper;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.base.parallelbiz.ParallelBizValueHelper;
 import com.taobao.android.order.bundle.constants.CoreConstants;
@@ -69,7 +69,7 @@ public class g {
             return "";
         }
         String stringExtra = intent.getStringExtra(str);
-        return (!TextUtils.isEmpty(stringExtra) || intent.getData() == null || (queryParameter = intent.getData().getQueryParameter(str)) == null) ? stringExtra : queryParameter.trim();
+        return (!StringUtils.isEmpty(stringExtra) || intent.getData() == null || (queryParameter = intent.getData().getQueryParameter(str)) == null) ? stringExtra : queryParameter.trim();
     }
 
     public static String c(Intent intent) {
@@ -82,7 +82,7 @@ public class g {
             return "";
         }
         String stringExtra = intent.getStringExtra("isSearch");
-        return (!TextUtils.isEmpty(stringExtra) || intent.getData() == null || (queryParameter = intent.getData().getQueryParameter("isSearch")) == null) ? stringExtra : queryParameter.trim();
+        return (!StringUtils.isEmpty(stringExtra) || intent.getData() == null || (queryParameter = intent.getData().getQueryParameter("isSearch")) == null) ? stringExtra : queryParameter.trim();
     }
 
     public static String d(Intent intent) {
@@ -96,11 +96,11 @@ public class g {
         }
         try {
             str = intent.getStringExtra(CoreConstants.IN_PARAM_BIZ_ORDER_ID);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intent.getStringExtra(CoreConstants.IN_PARAM_PAY_ORDER_ID);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = intent.getStringExtra("orderId");
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = intent.getStringExtra("orderID");
                     }
                 }
@@ -109,13 +109,13 @@ public class g {
             hyn.a("ParamsHelper", "getOrderId", "get orderId  error= " + e.toString());
         }
         Uri data = intent.getData();
-        if (data != null && TextUtils.isEmpty(str)) {
+        if (data != null && StringUtils.isEmpty(str)) {
             String queryParameter = data.getQueryParameter(CoreConstants.IN_PARAM_PAY_ORDER_ID);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 queryParameter = data.getQueryParameter(CoreConstants.IN_PARAM_BIZ_ORDER_ID);
             }
-            str = TextUtils.isEmpty(queryParameter) ? data.getQueryParameter("orderId") : queryParameter;
-            if (TextUtils.isEmpty(str)) {
+            str = StringUtils.isEmpty(queryParameter) ? data.getQueryParameter("orderId") : queryParameter;
+            if (StringUtils.isEmpty(str)) {
                 str = data.getQueryParameter("orderID");
             }
         }
@@ -134,15 +134,15 @@ public class g {
         }
         try {
             str = intent.getStringExtra(CoreConstants.IN_PARAM_ARCHIVE);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intent.getStringExtra(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER);
             }
         } catch (Exception e) {
             hyn.a("ParamsHelper", "getIsArchive", "get mArchive  error= " + e.toString());
         }
-        if (intent.getData() != null && TextUtils.isEmpty(str)) {
+        if (intent.getData() != null && StringUtils.isEmpty(str)) {
             str = intent.getData().getQueryParameter(CoreConstants.IN_PARAM_ARCHIVE);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intent.getData().getQueryParameter(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER);
             }
         }
@@ -175,12 +175,12 @@ public class g {
         L1a:
             java.lang.String r1 = ""
             if (r8 == 0) goto L85
-            boolean r2 = android.text.TextUtils.isEmpty(r9)
+            boolean r2 = android.text.StringUtils.isEmpty(r9)
             if (r2 == 0) goto L25
             goto L85
         L25:
             java.lang.String r2 = r8.getStringExtra(r9)     // Catch: java.lang.Exception -> L40
-            boolean r5 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L3e
+            boolean r5 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L3e
             if (r5 == 0) goto L66
             android.net.Uri r5 = r8.getData()     // Catch: java.lang.Exception -> L3e
             if (r5 == 0) goto L66
@@ -292,11 +292,11 @@ public class g {
         }
         Bundle extras = intent.getExtras();
         String a2 = a(intent.getData());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         String a3 = a(extras);
-        return !TextUtils.isEmpty(a3) ? a3 : TabType.ALL.getValue();
+        return !StringUtils.isEmpty(a3) ? a3 : TabType.ALL.getValue();
     }
 
     private static String a(Bundle bundle) {
@@ -317,7 +317,7 @@ public class g {
                     str = serializable instanceof String ? a(bundle.getString(IN_PARAM_ORDER_LIST_TYPE)) : null;
                 }
                 try {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         com.taobao.android.order.bundle.base.parallelbiz.a.a(ParallelBizValueHelper.PageType.order_list, "_OrderListType", null);
                         return str;
                     }
@@ -333,7 +333,7 @@ public class g {
             }
             String c = c((String) obj);
             try {
-                if (TextUtils.isEmpty(c)) {
+                if (StringUtils.isEmpty(c)) {
                     return c;
                 }
                 com.taobao.android.order.bundle.base.parallelbiz.a.a(ParallelBizValueHelper.PageType.order_list, "_tabCode", null);
@@ -355,12 +355,12 @@ public class g {
             return null;
         }
         String a2 = a(uri.getQueryParameter(IN_PARAM_ORDER_LIST_TYPE));
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             com.taobao.android.order.bundle.base.parallelbiz.a.a(ParallelBizValueHelper.PageType.order_list, "_OrderListType", null);
             return a2;
         }
         String c = c(uri.getQueryParameter("tabCode"));
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return c;
         }
         com.taobao.android.order.bundle.base.parallelbiz.a.a(ParallelBizValueHelper.PageType.order_list, "_tabCode", null);
@@ -372,7 +372,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String b = b(str.trim());

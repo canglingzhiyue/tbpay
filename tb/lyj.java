@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,7 +36,7 @@ public class lyj {
             return a(f30993a.get(str));
         }
         Map<String, String> b = b(str);
-        if (f30993a != null && !TextUtils.isEmpty(str) && b.size() > 0) {
+        if (f30993a != null && !StringUtils.isEmpty(str) && b.size() > 0) {
             f30993a.put(str, b);
         }
         return a(b);
@@ -48,7 +48,7 @@ public class lyj {
             return (Map) ipChange.ipc$dispatch("d2e5f268", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             JSONObject parseObject = JSON.parseObject(str.replace("'", "\"").replace(";", ","));
             if (parseObject.keySet().size() > 0) {
                 for (String str2 : parseObject.keySet()) {

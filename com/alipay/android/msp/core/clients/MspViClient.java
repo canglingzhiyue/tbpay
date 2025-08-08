@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core.clients;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
@@ -45,10 +45,10 @@ public class MspViClient {
             AlertIntelligenceEngine.startAction(this.f4508a, "act", MspEventTypes.ACTION_STRING_VID, jSONObject.toJSONString(), "", "");
         }
         try {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 this.c = null;
                 LogUtil.i("MspViClient", "onVerifyidEnd", "nextVid：" + this.b + " ");
-                if (!TextUtils.isEmpty(this.b)) {
+                if (!StringUtils.isEmpty(this.b)) {
                     JSONObject parseObject = JSON.parseObject(this.b);
                     JSONObject parseObject2 = JSON.parseObject(parseObject.getString("VIData"));
                     String string = parseObject2.getString(MspEventTypes.ACTION_STRING_VID);
@@ -76,7 +76,7 @@ public class MspViClient {
             String string3 = parseObject4.getString("uri");
             parseObject4.remove("uri");
             parseObject4.put("name", (Object) string3);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject2 = JsonUtil.merge(jSONObject2, JSON.parseObject(str2));
             }
             parseObject4.put("params", (Object) jSONObject2);

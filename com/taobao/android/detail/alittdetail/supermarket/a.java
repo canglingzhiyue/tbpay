@@ -1,7 +1,7 @@
 package com.taobao.android.detail.alittdetail.supermarket;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class a {
             return;
         }
         Vertical.d dVar = null;
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             com.taobao.android.msoa.c.a().a(str, "msoa_error_invalid_param", "invalid parameter", null);
             return;
         }
@@ -70,7 +70,7 @@ public class a {
         if (vertical != null) {
             dVar = vertical.getSupermarket();
         }
-        if (dVar != null && !TextUtils.isEmpty(dVar.a())) {
+        if (dVar != null && !StringUtils.isEmpty(dVar.a())) {
             hashMap.put("tpId", dVar.a());
         }
         try {

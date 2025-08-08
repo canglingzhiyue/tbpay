@@ -5,7 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -180,14 +180,14 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("7b6a2a25", new Object[]{this, new Integer(i), str, new Integer(i2), new Integer(i3), new Integer(i4)});
                     } else {
-                        EditTextManager.getEditTextUtils().OnTextChanged(i, str, i2, i3, i4);
+                        EditTextManager.getEditStringUtils().OnTextChanged(i, str, i2, i3, i4);
                     }
                 }
 
                 @Override // com.alipay.android.app.template.TemplatePasswordService
                 public String getText(int i) {
                     IpChange ipChange2 = $ipChange;
-                    return ipChange2 instanceof IpChange ? (String) ipChange2.ipc$dispatch("8f841a27", new Object[]{this, new Integer(i)}) : EditTextManager.getEditTextUtils().getText(i);
+                    return ipChange2 instanceof IpChange ? (String) ipChange2.ipc$dispatch("8f841a27", new Object[]{this, new Integer(i)}) : EditTextManager.getEditStringUtils().getText(i);
                 }
 
                 @Override // com.alipay.android.app.template.TemplatePasswordService
@@ -196,7 +196,7 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("d17cb12f", new Object[]{this, new Integer(i)});
                     } else {
-                        EditTextManager.getEditTextUtils().clear(i);
+                        EditTextManager.getEditStringUtils().clear(i);
                     }
                 }
             };
@@ -313,9 +313,9 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
                 }
                 if (PasswordInputPlugin.d(PasswordInputPlugin.this)) {
                     String obj = PasswordInputPlugin.e(PasswordInputPlugin.this).getText().toString();
-                    if (!TextUtils.equals(obj, PasswordInputPlugin.f(PasswordInputPlugin.this))) {
+                    if (!StringUtils.equals(obj, PasswordInputPlugin.f(PasswordInputPlugin.this))) {
                         PasswordInputPlugin.a(PasswordInputPlugin.this, obj);
-                        if (TextUtils.equals(PasswordInputPlugin.g(PasswordInputPlugin.this), UiUtil.INPUT_TYPE_VALUE_MONTH)) {
+                        if (StringUtils.equals(PasswordInputPlugin.g(PasswordInputPlugin.this), UiUtil.INPUT_TYPE_VALUE_MONTH)) {
                             PasswordInputPlugin.a(PasswordInputPlugin.this).deliverOnInput(PasswordInputPlugin.this.getNode(), obj.replaceAll("/", ""));
                         } else {
                             PasswordInputPlugin.a(PasswordInputPlugin.this).deliverOnInput(PasswordInputPlugin.this.getNode(), obj);
@@ -333,7 +333,7 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.h.setHint(str);
@@ -515,8 +515,8 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
             return ((Boolean) ipChange.ipc$dispatch("b23670e3", new Object[]{this})).booleanValue();
         }
         h();
-        if (!TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_CHECKBOX) && !TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
-            if (TextUtils.isEmpty(this.v)) {
+        if (!StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_CHECKBOX) && !StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
+            if (StringUtils.isEmpty(this.v)) {
                 this.h.setSingleLine();
                 this.h.setHorizontallyScrolling(true);
                 UIUtil.setSafeKeyboardSoftInput(this.h);
@@ -532,14 +532,14 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
             Editable editableText = this.h.getEditableText();
             if (editableText != null) {
                 String obj = editableText.toString();
-                if (!TextUtils.isEmpty(obj)) {
+                if (!StringUtils.isEmpty(obj)) {
                     this.h.setSelection(obj.length());
                 }
             }
-        } else if (TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
+        } else if (StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
             this.r = false;
             String obj2 = this.h.getEditableText().toString();
-            if (!TextUtils.isEmpty(obj2) && obj2.length() == 4) {
+            if (!StringUtils.isEmpty(obj2) && obj2.length() == 4) {
                 EditText editText = this.h;
                 editText.setText(obj2.substring(0, 2) + "/" + obj2.substring(2));
             }
@@ -683,9 +683,9 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-        } else if (TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
+        } else if (StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_MONTH)) {
         } else {
-            if (!TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_CHECKBOX)) {
+            if (!StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_CHECKBOX)) {
                 try {
                     f();
                     return;
@@ -702,9 +702,9 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
-        } else if (!this.h.isEnabled() || TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
+        } else if (!this.h.isEnabled() || StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
         } else {
-            if (!TextUtils.isEmpty(this.h.getText()) && this.j != null && this.h.isFocused()) {
+            if (!StringUtils.isEmpty(this.h.getText()) && this.j != null && this.h.isFocused()) {
                 this.q = true;
                 this.h.setOnTouchListener(this);
                 this.h.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, this.j, (Drawable) null);
@@ -771,7 +771,7 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
         } else if (this.c == null || this.b == null || i() <= 0.1d || !this.c.isOnloadFinish()) {
         } else {
             if (z && view.isEnabled()) {
-                if (TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
+                if (StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYSPWD)) {
                     EditText editText = this.h;
                     editText.setSelection(editText.getEditableText().length());
                 }
@@ -795,7 +795,7 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9446144c", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_CHECKBOX)) {
+        if (!StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_CHECKBOX)) {
             if (str.equals(Constants.Event.FOCUS)) {
                 this.w = true;
                 this.c.setAutoFocus(this);
@@ -817,7 +817,7 @@ public class PasswordInputPlugin extends AbsFBPlugin implements View.OnClickList
     public String getEncryptValue() {
         TemplatePasswordService passwordService;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("71c53bb7", new Object[]{this}) : ((TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYSPWD) || TextUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYPWD)) && (passwordService = getPasswordService()) != null) ? passwordService.getText(this.d) : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("71c53bb7", new Object[]{this}) : ((StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYSPWD) || StringUtils.equals(this.v, UiUtil.INPUT_TYPE_VALUE_PAYPWD)) && (passwordService = getPasswordService()) != null) ? passwordService.getText(this.d) : "";
     }
 
     public void doDestroy() {

@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -99,7 +99,7 @@ public class FoldPosture {
         if (Build.VERSION.SDK_INT < 17) {
             return;
         }
-        if (TextUtils.equals(Build.MANUFACTURER.toLowerCase(), "oppo")) {
+        if (StringUtils.equals(Build.MANUFACTURER.toLowerCase(), "oppo")) {
             a(VExecutors.newSingleThreadExecutor(new h() { // from class: com.taobao.android.autosize.orientation.FoldPosture.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -166,7 +166,7 @@ public class FoldPosture {
             return;
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         try {

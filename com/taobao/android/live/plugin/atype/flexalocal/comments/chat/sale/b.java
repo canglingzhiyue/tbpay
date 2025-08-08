@@ -5,7 +5,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -108,7 +108,7 @@ public class b implements c, d, com.taobao.taolive.sdk.model.a, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a821d36c", new Object[]{this, new Boolean(z)});
-        } else if (this.g == null || TextUtils.isEmpty(this.h)) {
+        } else if (this.g == null || StringUtils.isEmpty(this.h)) {
         } else {
             this.g.a(this.h, this.i, "hotSale", z, z ? null : this.l.toString());
         }
@@ -256,7 +256,7 @@ public class b implements c, d, com.taobao.taolive.sdk.model.a, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3897928", new Object[]{this, str, obj});
-        } else if ((!com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_ANCHOR_RESPONSE_VIEW.equals(str) && !com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_SAYS_CLUSTER_VIEW.equals(str)) || !(obj instanceof String) || !TextUtils.equals((String) obj, "true")) {
+        } else if ((!com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_ANCHOR_RESPONSE_VIEW.equals(str) && !com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_SAYS_CLUSTER_VIEW.equals(str)) || !(obj instanceof String) || !StringUtils.equals((String) obj, "true")) {
         } else {
             e();
         }

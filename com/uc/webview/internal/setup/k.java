@@ -1,7 +1,7 @@
 package com.uc.webview.internal.setup;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.internal.setup.b;
 import com.uc.webview.internal.setup.download.IDownloadHandle;
@@ -49,7 +49,7 @@ public final class k {
             sb.append("\n  decompressedDir: ");
             sb.append(this.f.getAbsolutePath());
         }
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             sb.append("\n  updateUrl: ");
             sb.append(this.g);
         }

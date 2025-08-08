@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -132,7 +132,7 @@ public class c implements iuj<LinearLayout, ShopSearchBarPresenter> {
         this.h = (TextView) view.findViewById(R.id.photoBtn);
         this.f19414a.setOnEditorActionListener(this.g);
         this.d.getDrawable().setColorFilter(-1, PorterDuff.Mode.SRC_IN);
-        if (!TextUtils.isEmpty(this.g.getDisplayHint())) {
+        if (!StringUtils.isEmpty(this.g.getDisplayHint())) {
             this.f19414a.setHint(this.g.getDisplayHint());
         }
         if (this.g.getDisplayQuery() != null) {
@@ -162,7 +162,7 @@ public class c implements iuj<LinearLayout, ShopSearchBarPresenter> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (this.f19414a == null || TextUtils.isEmpty(str)) {
+        } else if (this.f19414a == null || StringUtils.isEmpty(str)) {
         } else {
             this.f19414a.setHint(str);
         }

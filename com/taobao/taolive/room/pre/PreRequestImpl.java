@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.pre;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.business.IRemoteExtendListener;
@@ -45,7 +45,7 @@ public class PreRequestImpl implements IRemoteExtendListener, TBLiveDataProvider
         }
         this.mPreRequestInfo = preRequestInfo;
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(preRequestInfo.params.itemid)) {
+        if (!StringUtils.isEmpty(preRequestInfo.params.itemid)) {
             jSONObject.put("itemid", (Object) preRequestInfo.params.itemid);
         }
         jSONObject.put("guardAnchorSwitch", (Object) Boolean.valueOf(pmd.a().a("enableAnchorGuard")));
@@ -56,10 +56,10 @@ public class PreRequestImpl implements IRemoteExtendListener, TBLiveDataProvider
         preRequestInfo.tbLiveDataProvider.setIRemoteExtendListener(this);
         com.taobao.taolive.sdk.business.detail.a aVar = new com.taobao.taolive.sdk.business.detail.a(preRequestInfo.params.feedId, preRequestInfo.params.userId);
         aVar.c(preRequestInfo.params.timeMovingItemId).d(preRequestInfo.params.sjsdItemId).e(preRequestInfo.params.liveSource).f(jSONObject.toString()).a(preRequestInfo.params.itemIds, preRequestInfo.params.holdType).h(preRequestInfo.params.forceFandom).i(preRequestInfo.params.transParams).j(preRequestInfo.params.needRecommend);
-        if (!TextUtils.isEmpty(preRequestInfo.params.productType)) {
+        if (!StringUtils.isEmpty(preRequestInfo.params.productType)) {
             aVar.b(preRequestInfo.params.productType);
         }
-        if (!TextUtils.isEmpty(preRequestInfo.params.timeMovingItemId)) {
+        if (!StringUtils.isEmpty(preRequestInfo.params.timeMovingItemId)) {
             aVar.c(preRequestInfo.params.timeMovingItemId);
         }
         aVar.g(preRequestInfo.params.useLiveFandom);
@@ -180,7 +180,7 @@ public class PreRequestImpl implements IRemoteExtendListener, TBLiveDataProvider
             bVar2.onGetHeaderFields(this.mPreRequestInfo.headerMap);
             n.b(a.TAG, "addResponseListener headerResponseStatus success");
         }
-        if (this.mPreRequestInfo.fandomInfo == null || TextUtils.isEmpty(this.mPreRequestInfo.fandomResponse) || (aVar2 = this.mIGetVideoInfoListener) == null) {
+        if (this.mPreRequestInfo.fandomInfo == null || StringUtils.isEmpty(this.mPreRequestInfo.fandomResponse) || (aVar2 = this.mIGetVideoInfoListener) == null) {
             return;
         }
         aVar2.onGetFandomInfoSuccess(this.mPreRequestInfo.fandomInfo, this.mPreRequestInfo.fandomResponse);

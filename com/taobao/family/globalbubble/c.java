@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -473,7 +473,7 @@ public class c {
             str3 = Uri.parse(str2).getQueryParameter("tbSocialPopKey");
         } catch (Throwable unused) {
         }
-        if (TextUtils.isEmpty(str3) || !Login.checkSessionValid()) {
+        if (StringUtils.isEmpty(str3) || !Login.checkSessionValid()) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -557,7 +557,7 @@ public class c {
             return null;
         }
         String string = this.h.get().getSharedPreferences("TB_Detail", 0).getString(nyo.SP_KEY_AFFECTION_DETAIL, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         DetailAffectionBean detailAffectionBean = (DetailAffectionBean) JSON.parseObject(string, DetailAffectionBean.class);

@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -32,7 +32,7 @@ public class j extends q {
         }
         String string = fields.getString("type");
         String string2 = fields.getString("target");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || (b = eVar.h().b()) == null || (b2 = b.b(string2)) == null || b2.getEventMap() == null || (list = b2.getEventMap().get(string)) == null) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || (b = eVar.h().b()) == null || (b2 = b.b(string2)) == null || b2.getEventMap() == null || (list = b2.getEventMap().get(string)) == null) {
             return;
         }
         com.alibaba.android.ultron.event.base.f d = eVar.h().d();

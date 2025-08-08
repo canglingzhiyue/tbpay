@@ -5,7 +5,7 @@ import android.graphics.SurfaceTexture;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.Surface;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -149,7 +149,7 @@ public class FCanvasJNIBridge {
         ensureRunningOnMainThread();
         Long l = this.nativePlatformViewId;
         if (l != null) {
-            nativeDestroy(l.longValue(), TextUtils.isEmpty(str) ? "" : str);
+            nativeDestroy(l.longValue(), StringUtils.isEmpty(str) ? "" : str);
         }
         this.nativePlatformViewId = null;
         com.taobao.android.fcanvas.integration.b.a().a(str);
@@ -173,7 +173,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ccbc2cd2", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             sOnCanvasTypeChangedListenerMap.remove(str);
             sOnCanvasFirstFrameListenerMap.remove(str);
@@ -245,7 +245,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("64903227", new Object[]{str, bVar});
-        } else if (TextUtils.isEmpty(str) || bVar == null) {
+        } else if (StringUtils.isEmpty(str) || bVar == null) {
         } else {
             sOnCanvasFirstFrameListenerMap.put(str, bVar);
         }
@@ -255,7 +255,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b8601cb", new Object[]{str, onCanvasTypeChangedListener});
-        } else if (TextUtils.isEmpty(str) || onCanvasTypeChangedListener == null) {
+        } else if (StringUtils.isEmpty(str) || onCanvasTypeChangedListener == null) {
         } else {
             sOnCanvasTypeChangedListenerMap.put(str, onCanvasTypeChangedListener);
         }
@@ -295,7 +295,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fb348b88", new Object[]{str, handler});
-        } else if (TextUtils.isEmpty(str) || handler == null) {
+        } else if (StringUtils.isEmpty(str) || handler == null) {
         } else {
             sCardJSHandlers.put(str, new WeakReference<>(handler));
         }
@@ -307,7 +307,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8476e718", new Object[]{str, new Long(j)});
-        } else if (TextUtils.isEmpty(str) || (weakReference = sCardJSHandlers.get(str)) == null || (handler = weakReference.get()) == null) {
+        } else if (StringUtils.isEmpty(str) || (weakReference = sCardJSHandlers.get(str)) == null || (handler = weakReference.get()) == null) {
         } else {
             handler.post(new Runnable() { // from class: com.taobao.android.fcanvas.integration.bridge.FCanvasJNIBridge.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -330,7 +330,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b5fa1a9", new Object[]{str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || (onCanvasTypeChangedListener = sOnCanvasTypeChangedListenerMap.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (onCanvasTypeChangedListener = sOnCanvasTypeChangedListenerMap.get(str)) == null) {
         } else {
             onCanvasTypeChangedListener.onCanvasTypeChanged(str, z);
             sOnCanvasTypeChangedListenerMap.remove(str);
@@ -342,7 +342,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3814eb49", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || (bVar = sOnCanvasFirstFrameListenerMap.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (bVar = sOnCanvasFirstFrameListenerMap.get(str)) == null) {
         } else {
             bVar.a();
             sOnCanvasFirstFrameListenerMap.remove(str);
@@ -366,7 +366,7 @@ public class FCanvasJNIBridge {
             str4 = com.taobao.android.litecreator.comprehension.f.FILE_TYPE_IMAGE_JPG;
         }
         String a2 = gix.a(str, z, i, i2, i3, i4, i5, i6, str4, f, z2);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "";
         }
         try {
@@ -522,7 +522,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8e0c5bbf", new Object[]{new Long(j), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             nRegisterCanvasNativeAPI(j, str);
         }
@@ -532,7 +532,7 @@ public class FCanvasJNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("433312b8", new Object[]{new Long(j), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             nUnRegisterCanvasNativeAPI(j, str);
             sCardJSHandlers.remove(str);
@@ -596,7 +596,7 @@ public class FCanvasJNIBridge {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("76fd38c1", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && isAttached()) {
+        if (!StringUtils.isEmpty(str) && isAttached()) {
             return nMakeSnapshot(str);
         }
         return null;

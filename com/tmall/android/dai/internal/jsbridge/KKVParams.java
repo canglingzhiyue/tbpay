@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.DAIKVStoreage;
@@ -36,7 +36,7 @@ public class KKVParams implements Serializable {
         if (ipChange instanceof IpChange) {
             return (KKVParams) ipChange.ipc$dispatch("c9ac3326", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new KKVParams();
         }
         try {
@@ -75,10 +75,10 @@ public class KKVParams implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("84643f88", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.key)) {
+        if (StringUtils.isEmpty(this.key)) {
             return false;
         }
-        String str = TextUtils.isEmpty(this.subKey) ? "#" : this.subKey;
+        String str = StringUtils.isEmpty(this.subKey) ? "#" : this.subKey;
         int i = this.type;
         if (i == 0) {
             return DAIKVStoreage.put(this.key, str, this.value);
@@ -97,10 +97,10 @@ public class KKVParams implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5615b163", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.key)) {
+        if (StringUtils.isEmpty(this.key)) {
             return null;
         }
-        String str = TextUtils.isEmpty(this.subKey) ? "#" : this.subKey;
+        String str = StringUtils.isEmpty(this.subKey) ? "#" : this.subKey;
         int i = this.type;
         if (i == 0) {
             return DAIKVStoreage.getValue(this.key, str);

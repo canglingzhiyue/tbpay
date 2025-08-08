@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.alibaba.fastjson.JSONObject;
@@ -397,7 +397,7 @@ public class lmh extends DXWidgetNode implements IVideoPlayControllerService.b {
             return false;
         }
         String str2 = "";
-        if (TextUtils.equals(str, "play")) {
+        if (StringUtils.equals(str, "play")) {
             ((HVideoView) v).playVideo();
             String[] strArr = new String[2];
             strArr[0] = "start video: section:";
@@ -407,7 +407,7 @@ public class lmh extends DXWidgetNode implements IVideoPlayControllerService.b {
             }
             strArr[1] = str2;
             ldf.d(TAG, strArr);
-        } else if (TextUtils.equals(str, "pause")) {
+        } else if (StringUtils.equals(str, "pause")) {
             ((HVideoView) v).pauseVideo();
             String[] strArr2 = new String[2];
             strArr2[0] = "pause video: section:";
@@ -575,7 +575,7 @@ public class lmh extends DXWidgetNode implements IVideoPlayControllerService.b {
             ldk.a("video", "video_playFail", "", "Page_Home_VideoPlayer", "", null, str, str2);
         } else if (i != 4) {
         } else {
-            if (TextUtils.equals("pre_download_failed", str)) {
+            if (StringUtils.equals("pre_download_failed", str)) {
                 ldk.a("video", "video_downloadFail", "", "Page_Home_VideoPlayer", "", null, str, str2);
             } else {
                 ldk.a("video", "video_fetchFail", "", "Page_Home_VideoPlayer", "", null, str, str2);

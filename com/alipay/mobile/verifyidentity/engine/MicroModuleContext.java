@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.callback.ModuleListener;
 import com.alipay.mobile.verifyidentity.data.DefaultModuleResult;
 import com.alipay.mobile.verifyidentity.data.ModuleExecuteResult;
@@ -149,7 +149,7 @@ public class MicroModuleContext {
         if (this.g == null) {
             VerifyLogCat.i(f5862a, "核身引擎Context为空，进入致命恢复逻辑");
             try {
-                this.g = (Context) ReflectUtils.invokeStaticMethod("com.alipay.mobile.verifyidentity.alipay.util.ContextUtils", "getContext", null, null);
+                this.g = (Context) ReflectUtils.invokeStaticMethod("com.alipay.mobile.verifyidentity.alipay.util.ConStringUtils", "getContext", null, null);
             } catch (Throwable th) {
                 VerifyLogCat.e(f5862a, "致命恢复失败！！！ ", th);
             }
@@ -182,7 +182,7 @@ public class MicroModuleContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6dbf9044", new Object[]{this, microModule, str});
-        } else if (microModule == null || TextUtils.isEmpty(str)) {
+        } else if (microModule == null || StringUtils.isEmpty(str)) {
             VerifyLogCat.w(f5862a, "startActivity className failed");
         } else {
             Intent intent = new Intent(this.f, a(str));

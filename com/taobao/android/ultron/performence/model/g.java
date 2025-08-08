@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.performence.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ public final class g {
                 return this;
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             this.c.add(new a(str, str3));
         } else {
             List<a> list = this.c;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -356,7 +356,7 @@ public class b extends eoz {
                 if (ipChange2 instanceof IpChange) {
                     return (eoz) ipChange2.ipc$dispatch("ed3ce113", new Object[]{this, str2});
                 }
-                if (!TextUtils.equals(str2, a.a("detail_container_floatweex_container", b.f(b.this)))) {
+                if (!StringUtils.equals(str2, a.a("detail_container_floatweex_container", b.f(b.this)))) {
                     return null;
                 }
                 return b.this;
@@ -718,19 +718,19 @@ public class b extends eoz {
                 return;
             }
             String str = (String) obj;
-            if (TextUtils.equals(str, "show")) {
+            if (StringUtils.equals(str, "show")) {
                 l();
-            } else if (TextUtils.equals(str, "dismiss")) {
+            } else if (StringUtils.equals(str, "dismiss")) {
                 m();
-            } else if (TextUtils.equals(str, "destroy")) {
+            } else if (StringUtils.equals(str, "destroy")) {
                 i();
-            } else if (TextUtils.equals(str, "getItemId")) {
+            } else if (StringUtils.equals(str, "getItemId")) {
                 r();
-            } else if (TextUtils.equals(str, "registerPageScrollState")) {
+            } else if (StringUtils.equals(str, "registerPageScrollState")) {
                 n();
-            } else if (TextUtils.equals(str, "unRegisterPageScrollState")) {
+            } else if (StringUtils.equals(str, "unRegisterPageScrollState")) {
                 o();
-            } else if (TextUtils.equals(str, "scrollToDetailInfo")) {
+            } else if (StringUtils.equals(str, "scrollToDetailInfo")) {
                 p();
             } else {
                 i.a("floatView.VesselWeexViewDecorator", "无法处理operate_detail_weex_float operate:" + str);
@@ -752,7 +752,7 @@ public class b extends eoz {
                 return;
             }
             String str = (String) obj;
-            if (TextUtils.equals(str, "componentLifeCycle")) {
+            if (StringUtils.equals(str, "componentLifeCycle")) {
                 Object obj2 = map.get("componentKey");
                 if (obj2 == null || !(obj2 instanceof String)) {
                     return;

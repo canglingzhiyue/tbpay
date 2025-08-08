@@ -2,7 +2,7 @@ package com.tmall.android.dai.internal.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.walle.bridge.CppApiBridge;
@@ -208,7 +208,7 @@ public class d {
             return ((Boolean) ipChange.ipc$dispatch("6076ef7", new Object[]{this})).booleanValue();
         }
         String a2 = com.tmall.android.dai.internal.util.c.a();
-        return !TextUtils.isEmpty(a2) && "low".equalsIgnoreCase(a2);
+        return !StringUtils.isEmpty(a2) && "low".equalsIgnoreCase(a2);
     }
 
     private boolean j() {
@@ -220,7 +220,7 @@ public class d {
             return false;
         }
         String config = OrangeConfig.getInstance().getConfig("EdgeComputingIsEnabled", "lowDeviceClosed", "true");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return false;
         }
         try {

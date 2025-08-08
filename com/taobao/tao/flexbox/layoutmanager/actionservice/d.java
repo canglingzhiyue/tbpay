@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.actionservice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
@@ -92,7 +92,7 @@ public class d {
         } else if (c2.f19965a.startsWith("file://")) {
             String[] split = c2.f19965a.split("/");
             String a2 = a(split[split.length - 1], com.taobao.tao.flexbox.layoutmanager.actionservice.core.a.a());
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 c2.b = a2;
                 aVar.a(c2);
                 return;
@@ -100,7 +100,7 @@ public class d {
             aVar.a("JS code not exist in " + c2.f19965a);
         } else if (c2.f19965a.startsWith("http")) {
             String streamByUrl = android.taobao.windvane.packageapp.zipapp.utils.c.getStreamByUrl(c2.f19965a);
-            if (!TextUtils.isEmpty(streamByUrl)) {
+            if (!StringUtils.isEmpty(streamByUrl)) {
                 c2.b = streamByUrl;
                 aVar.a(c2);
                 return;
@@ -230,7 +230,7 @@ public class d {
             return;
         }
         String streamByUrl = android.taobao.windvane.packageapp.zipapp.utils.c.getStreamByUrl(this.f19962a);
-        if (!TextUtils.isEmpty(streamByUrl)) {
+        if (!StringUtils.isEmpty(streamByUrl)) {
             try {
                 e(streamByUrl);
                 this.c = 2;
@@ -288,7 +288,7 @@ public class d {
             this.b = new HashMap();
         }
         String a2 = a("ActionService_ModuleMapping.js", com.taobao.tao.flexbox.layoutmanager.actionservice.core.a.a());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             a(JSONObject.parseObject(a2));
         }
         a(JSONObject.parseObject(str));
@@ -380,7 +380,7 @@ public class d {
         if (jSONObject != null) {
             str = jSONObject.getString("android-version");
         }
-        return TextUtils.isEmpty(str) ? jSONObject.getString("version") : str;
+        return StringUtils.isEmpty(str) ? jSONObject.getString("version") : str;
     }
 
     public boolean b() {

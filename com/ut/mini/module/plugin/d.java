@@ -1,6 +1,6 @@
 package com.ut.mini.module.plugin;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import tb.apr;
@@ -59,7 +59,7 @@ public class d {
             ipChange.ipc$dispatch("6e170c04", new Object[]{this, aVar, new Boolean(z), list, list2});
         } else if (aVar == null) {
             apr.e("UTPluginMgr", "registerPlugin listener is null");
-        } else if (TextUtils.isEmpty(aVar.getPluginName())) {
+        } else if (StringUtils.isEmpty(aVar.getPluginName())) {
             apr.e("UTPluginMgr", "registerPlugin listenerName is null");
         } else {
             aVar.setUTPluginParam(false, z, list, list2);

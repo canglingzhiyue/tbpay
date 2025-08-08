@@ -1,7 +1,7 @@
 package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes9.dex */
@@ -26,7 +26,7 @@ public class j implements Runnable {
     @Override // java.lang.Runnable
     public void run() {
         String str;
-        if (!TextUtils.isEmpty(this.f78a)) {
+        if (!StringUtils.isEmpty(this.f78a)) {
             String[] split = this.f78a.split(Constants.WAVE_SEPARATOR);
             int length = split.length;
             int i = 0;
@@ -36,13 +36,13 @@ public class j implements Runnable {
                     break;
                 }
                 String str2 = split[i];
-                if (!TextUtils.isEmpty(str2) && str2.startsWith("token:")) {
+                if (!StringUtils.isEmpty(str2) && str2.startsWith("token:")) {
                     str = str2.substring(str2.indexOf(":") + 1);
                     break;
                 }
                 i++;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("ASSEMBLE_PUSH : receive incorrect token");
                 return;
             }

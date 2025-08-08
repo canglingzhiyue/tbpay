@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
@@ -39,7 +39,7 @@ public class e {
         String a2 = d.a(context, "global_v2", "app_ver", "");
         d.b(context, "global_v2", "app_ver", d);
         q0.b(a2);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             v.c("hmsSdk", "app ver is first save!");
         } else if (a2.equals(d)) {
         } else {
@@ -100,7 +100,7 @@ public class e {
         String a2 = r0.a(context);
         if (a1.e(str, str2) && !"WIFI".equals(a2)) {
             v.c("hmsSdk", "strNetworkType is :" + a2);
-        } else if (TextUtils.isEmpty(a2) || "2G".equals(a2)) {
+        } else if (StringUtils.isEmpty(a2) || "2G".equals(a2)) {
             v.e("hmsSdk", "The network is bad.");
         } else {
             b0.c().a(new v0(str, str2, str3));

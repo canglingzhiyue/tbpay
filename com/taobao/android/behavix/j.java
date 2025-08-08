@@ -1,6 +1,6 @@
 package com.taobao.android.behavix;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class j {
         StringBuilder sb = new StringBuilder(600);
         for (String str : map.keySet()) {
             String str2 = map.get(str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(str2);
@@ -100,7 +100,7 @@ public class j {
         for (String str : map.keySet()) {
             Object obj = map.get(str);
             String obj2 = obj instanceof String ? (String) obj : obj == null ? null : obj.toString();
-            if (!TextUtils.isEmpty(obj2)) {
+            if (!StringUtils.isEmpty(obj2)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(obj2);
@@ -148,7 +148,7 @@ public class j {
         for (String str : strArr) {
             if (!aqc.e(str) && (indexOf = str.indexOf("=")) >= 0) {
                 String substring = str.substring(0, indexOf);
-                if (!TextUtils.isEmpty(substring)) {
+                if (!StringUtils.isEmpty(substring)) {
                     hashMap.put(substring, indexOf < str.length() ? str.substring(indexOf + 1) : "");
                 }
             }
@@ -165,7 +165,7 @@ public class j {
             return null;
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
             Iterator<String> it = a(str, str2, false).iterator();
             int length = str3.length();
             while (it.hasNext()) {
@@ -312,7 +312,7 @@ public class j {
         }
         String str2 = "";
         if (strArr != null && strArr.length != 0) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str2;
             }
             for (int i = 0; i < strArr.length; i++) {

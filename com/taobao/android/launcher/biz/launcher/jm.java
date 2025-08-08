@@ -2,7 +2,7 @@ package com.taobao.android.launcher.biz.launcher;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -64,9 +64,9 @@ public class jm extends com.taobao.android.launcher.biz.task.j {
             return false;
         }
         String queryParameter = data.getQueryParameter("h5Url");
-        if (TextUtils.isEmpty(queryParameter) || com.taobao.android.launcher.bootstrap.tao.ability.h.c(queryParameter) == null || (parse = Uri.parse(queryParameter)) == null) {
+        if (StringUtils.isEmpty(queryParameter) || com.taobao.android.launcher.bootstrap.tao.ability.h.c(queryParameter) == null || (parse = Uri.parse(queryParameter)) == null) {
             return false;
         }
-        return TextUtils.equals(parse.getHost(), "s.m.taobao.com") && TextUtils.equals(parse.getPath(), "/h5");
+        return StringUtils.equals(parse.getHost(), "s.m.taobao.com") && StringUtils.equals(parse.getPath(), "/h5");
     }
 }

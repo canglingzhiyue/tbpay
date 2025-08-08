@@ -1,6 +1,6 @@
 package com.taobao.search.refactor.list;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.meta.structure.list.h;
@@ -98,7 +98,7 @@ public final class c extends b {
                     BaseCellBean cell = commonSearchResult.getCell(itemPos.intValue());
                     if (cell instanceof MuiseCellBean) {
                         MuiseCellBean muiseCellBean = (MuiseCellBean) cell;
-                        if (muiseCellBean.ndPreview && !TextUtils.isEmpty(muiseCellBean.ndPreviewUrl) && !muiseCellBean.ndPreviewTriggered) {
+                        if (muiseCellBean.ndPreview && !StringUtils.isEmpty(muiseCellBean.ndPreviewUrl) && !muiseCellBean.ndPreviewTriggered) {
                             muiseCellBean.ndPreviewTriggered = true;
                             arrayList2.add(cell);
                         }

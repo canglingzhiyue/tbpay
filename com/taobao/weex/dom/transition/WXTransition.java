@@ -10,7 +10,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.view.animation.PathInterpolatorCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.Interpolator;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -347,7 +347,7 @@ public class WXTransition {
         }
         ArrayList arrayList = new ArrayList(8);
         String string = WXUtils.getString(this.transformPendingUpdates.remove("transform"), null);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             for (PropertyValuesHolder propertyValuesHolder : TransformParser.toHolders(TransformParser.parseTransForm(this.mWXComponent.getInstance(), string, (int) this.mWXComponent.getLayoutWidth(), (int) this.mWXComponent.getLayoutHeight(), this.mWXComponent.getViewPortWidth()))) {
                 arrayList.add(propertyValuesHolder);
             }
@@ -712,7 +712,7 @@ public class WXTransition {
         } else {
             final String ref = wXComponent.getRef();
             final String instanceId = wXComponent.getInstanceId();
-            if (TextUtils.isEmpty(ref) || TextUtils.isEmpty(instanceId)) {
+            if (StringUtils.isEmpty(ref) || StringUtils.isEmpty(instanceId)) {
                 return;
             }
             WXSDKManager.getInstance().getWXBridgeManager().post(new Runnable() { // from class: com.taobao.weex.dom.transition.WXTransition.7
@@ -790,7 +790,7 @@ public class WXTransition {
             }
             string = string.replaceAll("px", "");
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return j;
         }
         try {
@@ -805,7 +805,7 @@ public class WXTransition {
         if (ipChange instanceof IpChange) {
             return (Interpolator) ipChange.ipc$dispatch("bafeb776", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             char c = 65535;
             switch (str.hashCode()) {
                 case -1965120668:
@@ -886,7 +886,7 @@ public class WXTransition {
             wXTransition.properties.clear();
             for (String str2 : PROPERTY_SPLIT_PATTERN.split(str)) {
                 String trim = str2.trim();
-                if (!TextUtils.isEmpty(trim)) {
+                if (!StringUtils.isEmpty(trim)) {
                     if (!LAYOUT_PROPERTIES.contains(trim) && !TRANSFORM_PROPERTIES.contains(trim)) {
                         if (WXEnvironment.isApkDebugable()) {
                             WXLogUtils.e("WXTransition Property Not Supported" + trim + " in " + str);

@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.metaInfo.appinfo.cacheConfig;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -73,11 +73,11 @@ public class b {
             return;
         }
         String j = n.j();
-        if (!TextUtils.isEmpty(j)) {
+        if (!StringUtils.isEmpty(j)) {
             a(j);
         }
         String k = n.k();
-        if (TextUtils.isEmpty(k)) {
+        if (StringUtils.isEmpty(k)) {
             return;
         }
         b(k);
@@ -87,7 +87,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 List<AppInfoCacheConfig.ExpireConfig> list = (List) JSONObject.parseObject(str, new TypeReference<List<AppInfoCacheConfig.ExpireConfig>>() { // from class: com.taobao.themis.kernel.metaInfo.appinfo.cacheConfig.b.2
@@ -106,7 +106,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 AppInfoCacheConfig.CacheTime cacheTime = (AppInfoCacheConfig.CacheTime) JSONObject.parseObject(str, AppInfoCacheConfig.CacheTime.class);

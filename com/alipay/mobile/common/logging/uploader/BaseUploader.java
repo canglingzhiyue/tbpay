@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.logging.MdapLogUploadManager;
@@ -90,16 +90,16 @@ public class BaseUploader {
         }
         try {
             String readFile = FileUtil.readFile(file);
-            if (TextUtils.isEmpty(readFile)) {
+            if (StringUtils.isEmpty(readFile)) {
                 file.delete();
                 throw new IllegalStateException("file content is empty");
             }
             String b = b(readFile);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 throw new IllegalStateException("decode file content is empty");
             }
             String logHost = LoggerFactory.getLogContext().getLogHost();
-            if (TextUtils.isEmpty(logHost)) {
+            if (StringUtils.isEmpty(logHost)) {
                 throw new IllegalStateException("log host is empty");
             }
             if (LoggingUtil.isOfflineMode()) {
@@ -132,7 +132,7 @@ public class BaseUploader {
             if (str != null && (logStrategyInfo = LogStrategyManager.getInstance().getLogStrategyInfo(str)) != null) {
                 z = logStrategyInfo.isUsemetds();
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 LoggerFactory.getTraceLogger().info(f5455a, "uploadUrl = " + str2 + " logCategory = " + str);
             } else if (!z) {
                 str2 = logHost + "/loggw/logUpload.do";
@@ -167,7 +167,7 @@ public class BaseUploader {
                     }
                     try {
                         file.delete();
-                        if (LoggingUtil.isDebuggable(this.c) && !TextUtils.isEmpty(responseContent)) {
+                        if (LoggingUtil.isDebuggable(this.c) && !StringUtils.isEmpty(responseContent)) {
                             try {
                                 int indexOf = responseContent.indexOf("logSwitch=");
                                 if (indexOf > 0) {
@@ -198,15 +198,15 @@ public class BaseUploader {
         if (ipChange instanceof IpChange) {
             return (Pair) ipChange.ipc$dispatch("c362a2da", new Object[]{this, str, str2, str3, str4});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalStateException("logContent is empty");
         }
         String b = b(str);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             throw new IllegalStateException("decode file content is empty");
         }
         String logHost = LoggerFactory.getLogContext().getLogHost();
-        if (TextUtils.isEmpty(logHost)) {
+        if (StringUtils.isEmpty(logHost)) {
             throw new IllegalStateException("log host is empty");
         }
         byte[] gzipDataByString = LoggingUtil.gzipDataByString(b);
@@ -220,7 +220,7 @@ public class BaseUploader {
         hashMap.put("event", str4);
         hashMap.put(LoggingSPCache.STORAGE_PRODUCTVERSION, LoggerFactory.getLogContext().getProductVersion());
         hashMap.put("utdId", LoggerFactory.getLogContext().getDeviceId());
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             LoggerFactory.getTraceLogger().info(f5455a, "uploadUrl = " + str3 + " logCategory = " + str2);
         } else {
             str3 = logHost + "/loggw/logUpload.do";
@@ -266,7 +266,7 @@ public class BaseUploader {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split("_");
@@ -288,11 +288,11 @@ public class BaseUploader {
         String[] split = str.split("\\$\\$");
         StringBuffer stringBuffer = new StringBuffer();
         for (String str2 : split) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (str2.startsWith("1_")) {
                     try {
                         String decrypt = logEncryptClient.decrypt(str2.substring(2));
-                        if (!TextUtils.isEmpty(decrypt)) {
+                        if (!StringUtils.isEmpty(decrypt)) {
                             stringBuffer.append(decrypt);
                             stringBuffer.append("$$");
                         }

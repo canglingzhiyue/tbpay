@@ -1,7 +1,7 @@
 package com.vivo.push.cache;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.vivo.push.util.j;
 import com.vivo.push.util.u;
@@ -25,11 +25,11 @@ public final class a extends c<com.vivo.push.model.a> {
 
     @Override // com.vivo.push.cache.c
     public final List<com.vivo.push.model.a> a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             for (String str2 : str.trim().split("@#")) {
                 String trim = str2.trim();
                 String[] split = trim.trim().split(",");
@@ -47,7 +47,7 @@ public final class a extends c<com.vivo.push.model.a> {
 
     public final int b() {
         com.vivo.push.model.a c = c("push_mode");
-        if (c != null && !TextUtils.isEmpty(c.b())) {
+        if (c != null && !StringUtils.isEmpty(c.b())) {
             try {
                 return Integer.parseInt(c.b());
             } catch (Exception unused) {
@@ -64,7 +64,7 @@ public final class a extends c<com.vivo.push.model.a> {
     public final com.vivo.push.model.a c(String str) {
         synchronized (f24177a) {
             for (T t : this.b) {
-                if (!TextUtils.isEmpty(t.a()) && t.a().equals(str)) {
+                if (!StringUtils.isEmpty(t.a()) && t.a().equals(str)) {
                     return t;
                 }
             }

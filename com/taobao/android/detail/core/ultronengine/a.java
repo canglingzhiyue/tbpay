@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.ultronengine;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -200,7 +200,7 @@ public class a {
             if (jSONArray != null) {
                 for (int i = 0; i < jSONArray.size(); i++) {
                     String string = jSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         hashMap.put(string, key);
                     }
                 }
@@ -263,7 +263,7 @@ public class a {
                 if (string2 != null && (jSONObject3 = jSONObject2.getJSONObject(string2)) != null && (string = jSONObject3.getString("type")) != null && !b2.contains(string) && ((str = c.get(string)) == null || !set.contains(str))) {
                     JSONObject jSONObject4 = jSONObject3.getJSONObject("fields");
                     String string3 = jSONObject4 != null ? jSONObject4.getString("filter") : null;
-                    if (TextUtils.isEmpty(string3) || !eni.a(epo.a(), string3, bVar2.a())) {
+                    if (StringUtils.isEmpty(string3) || !eni.a(epo.a(), string3, bVar2.a())) {
                         arrayList.add(string);
                         if (!com.taobao.android.detail.core.debug.a.a(this.b)) {
                             break;

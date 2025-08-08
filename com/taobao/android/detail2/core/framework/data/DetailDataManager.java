@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework.data;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.bio.api.BioDetector;
@@ -497,14 +497,14 @@ public class DetailDataManager implements j<fik> {
         fhiVar.k = str;
         fhiVar.g = j().I();
         fhiVar.y = false;
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             fhiVar.b(c2);
         }
         if (j().r().a(j().k().W)) {
             if (j().s() != null) {
                 fjt.a(fjt.TAG_RENDER, "generateOpenImmediatelyNodeOld simpleDeliverData不为空");
                 fjp.a(this.f11512a.f(), "navDeliverDataHit", (Object) "true");
-                if (TextUtils.isEmpty(j().t()) || TextUtils.isEmpty(j().ak())) {
+                if (StringUtils.isEmpty(j().t()) || StringUtils.isEmpty(j().ak())) {
                     fjp.a(fjp.SCENE_OPEN_IMMEDIATELY, fjp.ERROR_CODE_DELIVER_DATA_ABSENT, "simpledeliverdata缺失，url: " + j().t() + ", dimension: " + j().ak(), (Map<String, String>) null);
                 } else if (j().am() == null) {
                     fjp.a(fjp.SCENE_OPEN_IMMEDIATELY, fjp.ERROR_CODE_DELIVER_DATA_ABSENT, "simpledeliverdata feature缺失", (Map<String, String>) null);
@@ -541,7 +541,7 @@ public class DetailDataManager implements j<fik> {
         }
         JSONObject F = j().F();
         String c2 = j().c(str2);
-        if (F != null && !TextUtils.isEmpty(c2) && !fme.EXP_ITEM_ARTICLE.equals(j().k().F)) {
+        if (F != null && !StringUtils.isEmpty(c2) && !fme.EXP_ITEM_ARTICLE.equals(j().k().F)) {
             a2.a(c2, F);
             a2.y = false;
         } else {
@@ -763,7 +763,7 @@ public class DetailDataManager implements j<fik> {
             ipChange.ipc$dispatch("266fb88", new Object[]{this, jSONObject});
         } else if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("serverAPMParams")) != null) {
             for (String str : jSONObject2.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     fjp.a(this.f11512a.f(), str, (Object) jSONObject2.getString(str));
                 }
             }
@@ -777,7 +777,7 @@ public class DetailDataManager implements j<fik> {
             return ((Boolean) ipChange.ipc$dispatch("a35a2265", new Object[]{this, str, new Boolean(z), new Integer(i)})).booleanValue();
         }
         boolean b2 = b(z);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             fjp.a("recommend", fjp.ERROR_CODE_RECOMMEND_ITEM_ID_EMPTY, "请求推荐列表时itemid为空", j().T(), "", "");
             i2 = 4;
         } else if (!this.b) {
@@ -1123,9 +1123,9 @@ public class DetailDataManager implements j<fik> {
             String string = fikVar.i.getString("operateType");
             String string2 = fikVar.i.getString("cacheKey");
             Object obj = fikVar.i.get("cacheValue");
-            if (TextUtils.equals(string, "set")) {
+            if (StringUtils.equals(string, "set")) {
                 j().a(string2, obj);
-            } else if (TextUtils.equals(string, "get")) {
+            } else if (StringUtils.equals(string, "get")) {
                 Object d = j().d(string2);
                 JSONObject jSONObject = new JSONObject();
                 JSONObject jSONObject2 = new JSONObject();
@@ -1138,7 +1138,7 @@ public class DetailDataManager implements j<fik> {
                     return;
                 }
                 fikVar.g.a(jSONObject);
-            } else if (!TextUtils.equals(string, "delete")) {
+            } else if (!StringUtils.equals(string, "delete")) {
             } else {
                 j().e(string2);
             }

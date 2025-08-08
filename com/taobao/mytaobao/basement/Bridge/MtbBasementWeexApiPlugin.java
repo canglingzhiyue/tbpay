@@ -1,7 +1,7 @@
 package com.taobao.mytaobao.basement.Bridge;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,7 +63,7 @@ public class MtbBasementWeexApiPlugin extends MUSModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("13f4605c", new Object[]{str, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("type", (Object) str);
@@ -117,7 +117,7 @@ public class MtbBasementWeexApiPlugin extends MUSModule {
         }
         String string = jSONObject.getString("url");
         TLog.loge(BasementConstants.WEEX_TAG, String.format("MtbBasementWeexApiPlugin.openWindowFromEmbedView url:%s", string));
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             String queryParameter = Uri.parse(string).getQueryParameter("spm");
             WeakReference<b> weakReference = abilityRef;
             b bVar = weakReference == null ? null : weakReference.get();

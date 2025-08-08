@@ -1,6 +1,6 @@
 package com.taobao.themis.ability.basic.apm;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.a$a;
 import com.alibaba.fastjson.JSON;
@@ -61,7 +61,7 @@ public final class TMSAPMAbility extends AbsAPMAbility {
                     callback.a(a$a.d(null));
                     return;
                 }
-                if (TextUtils.equals(params.f8797a, "renderStrategy") && (zVar = (z) a2.a(z.class)) != null) {
+                if (StringUtils.equals(params.f8797a, "renderStrategy") && (zVar = (z) a2.a(z.class)) != null) {
                     String str3 = params.b;
                     q.b(str3, "params.value");
                     zVar.a(str3);

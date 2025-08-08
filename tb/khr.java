@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -303,15 +303,15 @@ public class khr {
                 JSONObject jSONObject2 = (JSONObject) it.next();
                 String string = jSONObject2.getString("identifier");
                 Iterator<Object> it2 = it;
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     string = jSONObject2.getString("title");
                 }
                 SearchableItemAttributeSet a3 = cxxVar.a(string, str);
                 String str6 = str5;
-                a3.setContentType(TextUtils.isEmpty(jSONObject2.getString(str5)) ? "application" : jSONObject2.getString(str5));
+                a3.setContentType(StringUtils.isEmpty(jSONObject2.getString(str5)) ? "application" : jSONObject2.getString(str5));
                 a3.setDisplayName(jSONObject2.getString("title"));
                 a3.setDescription(jSONObject2.getString("desc"));
-                if (TextUtils.isEmpty(jSONObject2.getString(str4))) {
+                if (StringUtils.isEmpty(jSONObject2.getString(str4))) {
                     a3.setLogoURL("https://img.alicdn.com/imgextra/i2/O1CN01znGs3z1pDMFUtRqtG_!!6000000005326-2-tps-80-80.png");
                 } else {
                     a3.setLogoURL(jSONObject2.getString(str4));
@@ -336,10 +336,10 @@ public class khr {
                 if (jSONObject.getInteger("storeStatus") != null) {
                     a3.setStoreStatus(jSONObject.getInteger("storeStatus").intValue());
                 }
-                if (!TextUtils.isEmpty(jSONObject.getString("productPrice"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("productPrice"))) {
                     a3.setProductPrice(Float.parseFloat(jSONObject.getString("productPrice")));
                 }
-                if (!TextUtils.isEmpty(jSONObject.getString("productRating"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("productRating"))) {
                     a3.setProductRating(Float.parseFloat(jSONObject.getString("productRating")));
                 }
                 String str8 = str3;

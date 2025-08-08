@@ -1,6 +1,6 @@
 package com.taobao.android.cachecleaner.monitor.info;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.tao.log.TLog;
@@ -36,7 +36,7 @@ public class c {
             return (a) ipChange.ipc$dispatch("22412921", new Object[]{this, aVar, aVar2});
         }
         a aVar3 = new a();
-        if (TextUtils.equals(aVar.getName(), aVar2.getName())) {
+        if (StringUtils.equals(aVar.getName(), aVar2.getName())) {
             a(aVar, aVar2, aVar3);
             b(aVar, aVar2, aVar3);
             return aVar3;

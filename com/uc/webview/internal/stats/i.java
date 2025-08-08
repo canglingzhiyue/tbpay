@@ -2,7 +2,7 @@ package com.uc.webview.internal.stats;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.mobilesdk.socketcraft.api.WSContextConstant;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.GlobalSettings;
@@ -69,10 +69,10 @@ public final class i {
                     if (!format.equals(com.uc.webview.base.h.c("srt")) && (a2 = com.uc.webview.base.h.a()) != null) {
                         if (this.e == null) {
                             String m = EnvInfo.m();
-                            if (TextUtils.isEmpty(m) || "null".equals(m)) {
+                            if (StringUtils.isEmpty(m) || "null".equals(m)) {
                                 m = EnvInfo.l();
                             }
-                            this.e = TextUtils.isEmpty(m) ? new Random() : new Random(m.hashCode() ^ System.nanoTime());
+                            this.e = StringUtils.isEmpty(m) ? new Random() : new Random(m.hashCode() ^ System.nanoTime());
                         }
                         a2.a("srt", format).a("srh", this.e.nextInt(100) + 1 <= i).a();
                     }
@@ -141,7 +141,7 @@ public final class i {
     }
 
     static /* synthetic */ boolean a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
             return lowerCase.startsWith(com.taobao.search.common.util.k.HTTP_PREFIX) || lowerCase.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX);
         }
@@ -267,7 +267,7 @@ public final class i {
             int r0 = r1.get(r0)     // Catch: java.lang.Throwable -> Lde
             r1 = 190(0xbe, float:2.66E-43)
             java.lang.String r1 = com.uc.webview.base.GlobalSettings.getStringValue(r1)     // Catch: java.lang.Throwable -> Lde
-            boolean r4 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Lde
+            boolean r4 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Lde
             if (r4 == 0) goto L56
             r0 = 0
             goto L69
@@ -365,7 +365,7 @@ public final class i {
             com.uc.webview.base.task.d.b("cmpv", new Runnable() { // from class: com.uc.webview.internal.stats.i.1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (TextUtils.isEmpty(str) || (!str.startsWith("ext:") && !str.startsWith("about:"))) {
+                    if (StringUtils.isEmpty(str) || (!str.startsWith("ext:") && !str.startsWith("about:"))) {
                         a.az azVar = new a.az();
                         azVar.b = i;
                         long j = 0;

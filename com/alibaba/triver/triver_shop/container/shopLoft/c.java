@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -248,7 +248,7 @@ public final class c implements b {
         }
         TextView textView = this.h;
         if (textView != null) {
-            if (TextUtils.isEmpty(this.k)) {
+            if (StringUtils.isEmpty(this.k)) {
                 FrameLayout frameLayout4 = this.i;
                 if (frameLayout4 != null) {
                     o.d(frameLayout4);

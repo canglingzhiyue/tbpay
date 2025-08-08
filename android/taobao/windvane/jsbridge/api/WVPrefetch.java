@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,12 +59,12 @@ public class WVPrefetch extends e {
             final String url = webview.getUrl();
             final String string = parseObject.getString("externalKey");
             String string2 = parseObject.getString("url");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 string2 = webview.getUrl();
             }
             final String str2 = string2;
             String matchingUrl = getMatchingUrl(str2);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 matchingUrl = matchingUrl + "#" + string;
             }
             m.b(android.taobao.windvane.monitor.a.MONITOR_POINT_WV_PREFETCH, "getData: " + matchingUrl);
@@ -79,7 +79,7 @@ public class WVPrefetch extends e {
                         return;
                     }
                     try {
-                        if (!TextUtils.isEmpty(cVar.e)) {
+                        if (!StringUtils.isEmpty(cVar.e)) {
                             wVCallBackContext.success(cVar.e);
                             return;
                         }
@@ -125,7 +125,7 @@ public class WVPrefetch extends e {
         try {
             JSONObject parseObject = JSONObject.parseObject(str);
             String string = parseObject.getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error(r.RET_PARAM_ERR);
                 return;
             }

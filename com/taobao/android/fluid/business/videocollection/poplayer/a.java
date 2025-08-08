@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.business.videocollection.poplayer;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
 import tb.kge;
@@ -26,7 +26,7 @@ public class a {
             return false;
         }
         Uri fluidUrl = fluidContext.getInstanceConfig().getFluidUrl();
-        if (fluidUrl == null || !TextUtils.equals(fluidUrl.getQueryParameter("type"), com.taobao.android.fluid.business.globalinteraction.render.a.GUANGGUANG_COLLECTION)) {
+        if (fluidUrl == null || !StringUtils.equals(fluidUrl.getQueryParameter("type"), com.taobao.android.fluid.business.globalinteraction.render.a.GUANGGUANG_COLLECTION)) {
             spz.c("PopupDialog", "当前非二跳页");
             return false;
         } else if (fluidContext.getService(INativeCollectionPoplayerService.class) == null) {

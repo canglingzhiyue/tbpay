@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -500,7 +500,7 @@ public final class NSSceneHeaderMuiseWidget extends SearchSceneEnhancedMuiseModW
                 return;
             }
             q.a((Object) b2, "FastJsonParseUtil.optJSO…model, \"style\") ?: return");
-            this.h = TextUtils.equals(b2.getString(nom.KEY_IMMERSE_STYLE), nom.VALUE_YES);
+            this.h = StringUtils.equals(b2.getString(nom.KEY_IMMERSE_STYLE), nom.VALUE_YES);
             JSONObject jSONObject2 = muiseBean.extraStatus;
             q.a((Object) jSONObject2, "bean.extraStatus");
             jSONObject2.put((JSONObject) nom.KEY_IMMERSE_STYLE, String.valueOf(this.h));
@@ -509,7 +509,7 @@ public final class NSSceneHeaderMuiseWidget extends SearchSceneEnhancedMuiseModW
             this.g_ = Integer.valueOf(SFPromotionBean.a(b2.getString("statusBarStyle")));
             String string = b2.getString("width");
             String string2 = b2.getString("height");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             int b3 = g.b(string, -1);
@@ -525,7 +525,7 @@ public final class NSSceneHeaderMuiseWidget extends SearchSceneEnhancedMuiseModW
             this.k = (this.h ? this.j : 0) + this.i + (this.h ? j() : 0);
             String string3 = b2.getString("stickyHeight");
             this.q = b2.getBoolean("sticky");
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 return;
             }
             try {

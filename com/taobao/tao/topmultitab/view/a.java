@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -204,7 +204,7 @@ public class a extends PagerAdapter {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("f74757ec", new Object[]{this, context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (n.p()) {
@@ -233,7 +233,7 @@ public class a extends PagerAdapter {
         ArrayList arrayList = new ArrayList();
         for (JSONObject jSONObject : a2) {
             String a3 = a(jSONObject);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 arrayList.add(a3);
             }
         }
@@ -310,7 +310,7 @@ public class a extends PagerAdapter {
             return null;
         }
         String a2 = a(this.f21157a.get(i));
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return c.a().b(a2);
         }
         return null;
@@ -392,7 +392,7 @@ public class a extends PagerAdapter {
             return "";
         }
         String string = jSONObject.getJSONObject("content").getString("title");
-        return TextUtils.isEmpty(string) ? "" : string;
+        return StringUtils.isEmpty(string) ? "" : string;
     }
 
     public void e() {
@@ -523,7 +523,7 @@ public class a extends PagerAdapter {
 
     private boolean e(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : TextUtils.equals("subscribe", str) || this.g.contains(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : StringUtils.equals("subscribe", str) || this.g.contains(str);
     }
 
     private void a(ViewGroup viewGroup, View view) {

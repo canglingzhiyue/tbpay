@@ -1,6 +1,6 @@
 package com.taobao.tbliveinteractive.business.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.ju.track.server.JTrackParams;
@@ -88,7 +88,7 @@ public class a {
         if (pmd.a().q() != null && pmd.a().q().c() && videoInfo != null && videoInfo.broadCaster != null) {
             this.c.a(str, jSONObject.toString(), a(videoInfo).toString(), "970", videoInfo.broadCaster.accountId + "_1_" + videoInfo.liveId);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         a("TBLiveWVPlugin.Event.actionReport", a(str, jSONObject, a(videoInfo)));
@@ -104,7 +104,7 @@ public class a {
             this.b = fandomInfo.topic;
             this.c.a(str, fandomInfo.broadCaster.accountId, fandomInfo.id, str2);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         a("TBLiveWVPlugin.Event.actionReport", a(str, jSONObject, a((VideoInfo) null)));

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.ali.user.mobile.ui.WebConstant;
 import com.alibaba.fastjson.JSONObject;
@@ -48,10 +48,10 @@ public class jhp extends b {
         if (str3 != null) {
             jSONObject.put("uploadId", (Object) str3);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("errorCode", (Object) str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             jSONObject.put("errorMessage", (Object) str2);
         }
         RemoteFileInfo[] remoteFileInfoArr = this.b;

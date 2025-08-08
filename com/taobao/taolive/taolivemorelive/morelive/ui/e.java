@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -324,7 +324,7 @@ public class e extends g implements com.taobao.live.home.dinamic.view.a, a.Inter
                     return (FeedListResponse) ipChange2.ipc$dispatch("7bdf286c", new Object[]{this, mtopResponse});
                 }
                 String str = (mtopResponse == null || mtopResponse.getBytedata() == null) ? null : new String(mtopResponse.getBytedata());
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     try {
                         TaoMoreLiveListData taoMoreLiveListData = new TaoMoreLiveListData();
                         TaoMoreLiveFeedListResponse taoMoreLiveFeedListResponse = new TaoMoreLiveFeedListResponse();
@@ -368,7 +368,7 @@ public class e extends g implements com.taobao.live.home.dinamic.view.a, a.Inter
                     taoMoreLiveListData.dataList = new ArrayList();
                     for (int i = 0; i < jSONArray.size(); i++) {
                         JSONObject jSONObject2 = jSONArray.getJSONObject(i);
-                        if (jSONObject2 != null && (a2 = a(jSONObject2)) != null && !TextUtils.isEmpty(a2.templateName)) {
+                        if (jSONObject2 != null && (a2 = a(jSONObject2)) != null && !StringUtils.isEmpty(a2.templateName)) {
                             taoMoreLiveListData.dataList.add(a2);
                         }
                     }
@@ -411,11 +411,11 @@ public class e extends g implements com.taobao.live.home.dinamic.view.a, a.Inter
         if (c != null && (a2 = k.a(c)) != null && a2.broadCaster != null) {
             str = a2.liveId;
         }
-        if (!l.e(str) && TextUtils.isDigitsOnly(str)) {
+        if (!l.e(str) && StringUtils.isDigitsOnly(str)) {
             taoMoreLiveRequest.setLiveId(Long.parseLong(str));
         }
         String o = poy.o(this.l);
-        if (!TextUtils.isEmpty(o) && TextUtils.isDigitsOnly(o)) {
+        if (!StringUtils.isEmpty(o) && StringUtils.isDigitsOnly(o)) {
             taoMoreLiveRequest.setItemId(Long.parseLong(o));
         }
         taoMoreLiveRequest.setN(20L);
@@ -441,7 +441,7 @@ public class e extends g implements com.taobao.live.home.dinamic.view.a, a.Inter
         hashMap.put(TBLiveRecEngineV2.PARAM_ENTRY_LIVE_TRACE_ID, poy.V(this.l));
         hashMap.put("platform", "android");
         Map<String, String> aa = poy.aa(this.l);
-        if (aa != null && !TextUtils.isEmpty(aa.get(aw.PARAM_TIMEMOVING_ITEM_ID))) {
+        if (aa != null && !StringUtils.isEmpty(aa.get(aw.PARAM_TIMEMOVING_ITEM_ID))) {
             hashMap.put(TBLiveRecEngineV2.PARAM_ENTRY_TIMESHIFT_ITEM_ID, aa.get(aw.PARAM_TIMEMOVING_ITEM_ID));
         }
         TBLiveDataModel c = j.c(this.l);
@@ -492,7 +492,7 @@ public class e extends g implements com.taobao.live.home.dinamic.view.a, a.Inter
                             String string = jSONObject3.getString("trackInfo");
                             if (jSONObject4 != null) {
                                 HashMap hashMap2 = new HashMap();
-                                if (!TextUtils.isEmpty(string)) {
+                                if (!StringUtils.isEmpty(string)) {
                                     hashMap2.put("trackInfo", string);
                                 }
                                 hashMap2.putAll(pqp.a(jSONObject4.getString("params")));
@@ -516,7 +516,7 @@ public class e extends g implements com.taobao.live.home.dinamic.view.a, a.Inter
         }
         if (jSONObject != null) {
             String string = jSONObject.getString("accountId");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return Long.valueOf(l.b(string));
             }
             JSONObject jSONObject2 = jSONObject.getJSONObject("accountInfo");

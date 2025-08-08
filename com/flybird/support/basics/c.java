@@ -1,6 +1,6 @@
 package com.flybird.support.basics;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.birdnest.platform.ConnectionUtils;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -195,7 +195,7 @@ public final class c {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("fefdfe4f", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             cun.a("empty file name");
             return null;
         }
@@ -213,11 +213,11 @@ public final class c {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("19197cee", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             cun.a("empty folder name");
             return null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             file = b(str);
         } else {
             file = new File(b(str), str2);
@@ -247,7 +247,7 @@ public final class c {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("3334fb8d", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             File file = new File(new File(AppContextHolder.f7228a.getFilesDir(), str), str2);
             if (file.isFile()) {
                 return file;
@@ -337,7 +337,7 @@ public final class c {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("36a9927a", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             cun.a("empty folder path");
             return null;
         }
@@ -359,11 +359,11 @@ public final class c {
             ipChange.ipc$dispatch("98586481", new Object[]{str, str2});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             cun.a("empty folder path");
         }
         File file = new File(AppContextHolder.f7228a.getFilesDir(), str);
-        File file2 = !TextUtils.isEmpty(str2) ? new File(file, str2) : file;
+        File file2 = !StringUtils.isEmpty(str2) ? new File(file, str2) : file;
         if (file2.isFile()) {
             if (file2.delete()) {
                 return;

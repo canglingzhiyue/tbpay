@@ -8,7 +8,7 @@ import android.net.NetworkRequest;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.status.NetworkStatusHelper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -199,7 +199,7 @@ public class NetworkUtil {
         }
         String str2 = TAG;
         LoginTLogAdapter.e(str2, "requestBy4G request:" + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             LoginTLogAdapter.e(TAG, "url is null");
             ThreadHelper.getInstance().executeInUI(new Runnable() { // from class: com.ali.user.mobile.utils.NetworkUtil.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

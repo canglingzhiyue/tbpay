@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ultronengine.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -71,7 +71,7 @@ public class f extends com.alibaba.android.ultron.event.q {
             return;
         }
         String string = e2.getString("quantity");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         e.e(string);

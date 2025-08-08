@@ -3,7 +3,7 @@ package com.taobao.taobao.scancode.barcode.util;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.scancode.gateway.util.j;
 import tb.cpe;
@@ -27,7 +27,7 @@ public class c {
             return;
         }
         String queryParameter = activity.getIntent().getData().getQueryParameter("pssource");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             queryParameter = cpe.PsSourceSY_SYS;
         }
         j.a(activity.getApplicationContext(), cssVar).a(Uri.parse(com.taobao.android.detail.ttdetail.constant.a.FIND_SIMILAR_URL_PREFIX).buildUpon().appendQueryParameter("pssource", queryParameter).appendQueryParameter(com.etao.feimagesearch.model.d.KEY_PHOTO_FROM, "productCode").appendQueryParameter("barcode", str).build().toString());

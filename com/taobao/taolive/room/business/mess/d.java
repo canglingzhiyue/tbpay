@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.business.mess;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class d extends b implements cgv {
             mtopMediaplatformAliveRecommendLivesRequest.API_NAME = "mtop.mediaplatform.alive.recommend.lives";
             mtopMediaplatformAliveRecommendLivesRequest.VERSION = "1.0";
         }
-        if (!TextUtils.isEmpty(poz.l(this.f21536a))) {
+        if (!StringUtils.isEmpty(poz.l(this.f21536a))) {
             mtopMediaplatformAliveRecommendLivesRequest.setSource(poz.l(this.f21536a));
         } else {
             mtopMediaplatformAliveRecommendLivesRequest.setSource("source_live");
@@ -79,7 +79,7 @@ public class d extends b implements cgv {
         mtopMediaplatformAliveRecommendLivesRequest.setS(cgwVar.c);
         mtopMediaplatformAliveRecommendLivesRequest.setN(cgwVar.d);
         mtopMediaplatformAliveRecommendLivesRequest.setAccountStays(cgwVar.e);
-        if (TextUtils.isDigitsOnly(cgwVar.f26296a)) {
+        if (StringUtils.isDigitsOnly(cgwVar.f26296a)) {
             mtopMediaplatformAliveRecommendLivesRequest.setLiveId(v.c(cgwVar.f26296a));
         }
         mtopMediaplatformAliveRecommendLivesRequest.setLastBroadCastId(cgwVar.f);

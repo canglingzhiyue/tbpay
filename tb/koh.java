@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
 import com.taobao.flowcustoms.afc.a;
@@ -45,15 +45,15 @@ public class koh {
         } else if (aVar == null) {
         } else {
             Map<String, String> a2 = a(aVar);
-            a2.put("appkey", TextUtils.isEmpty(aVar.f17179a) ? "unknown" : aVar.f17179a);
-            a2.put("action", TextUtils.isEmpty(aVar.e) ? "unknown" : aVar.e);
+            a2.put("appkey", StringUtils.isEmpty(aVar.f17179a) ? "unknown" : aVar.f17179a);
+            a2.put("action", StringUtils.isEmpty(aVar.e) ? "unknown" : aVar.e);
             String str2 = aou.module;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "unknown";
             }
             a2.put("module", str2);
-            a2.put("h5Url", TextUtils.isEmpty(aVar.g) ? "unknown" : aVar.g);
-            if (TextUtils.isEmpty(str)) {
+            a2.put("h5Url", StringUtils.isEmpty(aVar.g) ? "unknown" : aVar.g);
+            if (StringUtils.isEmpty(str)) {
                 str = "unknown";
             }
             a2.put(c.VISA, str);
@@ -71,7 +71,7 @@ public class koh {
             return hashMap;
         }
         String str = "unknown";
-        hashMap.put(SOURCE_PACKAGE_NAME, !TextUtils.isEmpty(a.b) ? a.b : str);
+        hashMap.put(SOURCE_PACKAGE_NAME, !StringUtils.isEmpty(a.b) ? a.b : str);
         hashMap.put(CURRENT_PACKAGE_NAME, AfcUtils.a(AfcCustomSdk.a().f17167a));
         hashMap.put("targetUrl", aVar.n != null ? aVar.n.toString() : str);
         hashMap.put("source", aVar.i == null ? str : aVar.i);
@@ -84,9 +84,9 @@ public class koh {
         hashMap.put(SOURCE_VC, b);
         hashMap.put(LINK_MANAGER_SDK_VERSION, AfcCustomSdk.SDK_VERSION);
         hashMap.put(SOURCE_SDK_VERSION, aVar.d);
-        hashMap.put("userid", TextUtils.isEmpty(aVar.B) ? str : aVar.B);
-        hashMap.put(COLDBOOT, TextUtils.isEmpty(aVar.C) ? str : aVar.C);
-        if (!TextUtils.isEmpty(aVar.D)) {
+        hashMap.put("userid", StringUtils.isEmpty(aVar.B) ? str : aVar.B);
+        hashMap.put(COLDBOOT, StringUtils.isEmpty(aVar.C) ? str : aVar.C);
+        if (!StringUtils.isEmpty(aVar.D)) {
             str = aVar.D;
         }
         hashMap.put("launchType", str);
@@ -94,7 +94,7 @@ public class koh {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0044, code lost:
-        if (android.text.TextUtils.isEmpty(r1) == false) goto L17;
+        if (android.text.StringUtils.isEmpty(r1) == false) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0047, code lost:
         com.taobao.flowcustoms.afc.utils.c.a("linkx", "AfcDataManager === getVisa === visa=" + r1);
@@ -126,12 +126,12 @@ public class koh {
             return r1
         L1d:
             java.lang.String r2 = r4.getDataString()     // Catch: java.lang.Throwable -> L3c
-            boolean r3 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L3c
+            boolean r3 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L3c
             if (r3 != 0) goto L2f
             android.net.Uri r2 = android.net.Uri.parse(r2)     // Catch: java.lang.Throwable -> L3c
             java.lang.String r1 = r2.getQueryParameter(r0)     // Catch: java.lang.Throwable -> L3c
         L2f:
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             if (r2 == 0) goto L47
         L35:
             java.lang.String r1 = r4.getStringExtra(r0)
@@ -142,7 +142,7 @@ public class koh {
         L3c:
             r2 = move-exception
             r2.printStackTrace()     // Catch: java.lang.Throwable -> L3a
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             if (r2 == 0) goto L47
             goto L35
         L47:
@@ -156,7 +156,7 @@ public class koh {
             com.taobao.flowcustoms.afc.utils.c.a(r0, r4)
             return r1
         L5f:
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 == 0) goto L68
             r4.getStringExtra(r0)
         L68:

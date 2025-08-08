@@ -1,7 +1,7 @@
 package com.taobao.search.musie.component.audio;
 
 import android.media.MediaPlayer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.ac;
@@ -163,7 +163,7 @@ public class Audio extends UINode {
             return;
         }
         String str = (String) getAttribute("src");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.mediaPlayer = new MediaPlayer();

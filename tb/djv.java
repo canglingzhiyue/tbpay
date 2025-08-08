@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.vessel.utils.b;
 import java.io.File;
@@ -18,7 +18,7 @@ public class djv {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || str.contains("http:") || str.contains(b.HTTPS_SCHEMA)) {
+        if (StringUtils.isEmpty(str) || str.contains("http:") || str.contains(b.HTTPS_SCHEMA)) {
             return false;
         }
         return new File(str).exists();
@@ -51,12 +51,12 @@ public class djv {
 
     private static boolean f(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !str.startsWith("http:") && !str.startsWith(b.HTTPS_SCHEMA);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !str.startsWith("http:") && !str.startsWith(b.HTTPS_SCHEMA);
     }
 
     private static String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : (!TextUtils.isEmpty(str) && str.endsWith(".heic") && str.contains(".jpg")) ? str.substring(0, str.lastIndexOf(".jpg") + 4) : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : (!StringUtils.isEmpty(str) && str.endsWith(".heic") && str.contains(".jpg")) ? str.substring(0, str.lastIndexOf(".jpg") + 4) : str;
     }
 
     private static boolean c(String str) {
@@ -64,7 +64,7 @@ public class djv {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.endsWith(".heic");
         }
         return false;

@@ -2,7 +2,7 @@ package com.taobao.update.framework;
 
 import android.app.Application;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.android.agoo.common.AgooConstants;
@@ -53,7 +53,7 @@ public class UpdateRuntime {
         sContext = application;
         sGroup = str3;
         sTTid = str;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sAppName = str2;
         } else {
             sAppName = application.getApplicationInfo().loadLabel(application.getPackageManager()).toString();
@@ -81,7 +81,7 @@ public class UpdateRuntime {
         sContext = application;
         sGroup = bVar.group;
         sTTid = bVar.ttid;
-        if (!TextUtils.isEmpty(bVar.appName)) {
+        if (!StringUtils.isEmpty(bVar.appName)) {
             sAppName = bVar.appName;
         } else {
             sAppName = application.getApplicationInfo().loadLabel(application.getPackageManager()).toString();

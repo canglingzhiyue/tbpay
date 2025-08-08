@@ -1,7 +1,7 @@
 package com.huawei.hms.opendevice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.HmsInstanceId;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.aaid.entity.TokenReq;
@@ -67,11 +67,11 @@ public class f extends TaskApiCall<PushClient, TokenResult> {
                 tokenResult.setRetCode(ErrorEnum.fromCode(tokenResp.getRetCode()).getExternalCode());
                 cxsVar.a((cxs<TokenResult>) tokenResult);
                 String token = tokenResp.getToken();
-                if (TextUtils.isEmpty(token)) {
+                if (StringUtils.isEmpty(token)) {
                     HMSLog.i(HmsInstanceId.TAG, "GetTokenTask receive an empty token, please check onNewToken callback method.");
                 } else {
                     a(token, this.b.getSubjectId());
-                    if (TextUtils.isEmpty(this.b.getSubjectId())) {
+                    if (StringUtils.isEmpty(this.b.getSubjectId())) {
                         m.a(this.f7499a, token);
                     }
                 }

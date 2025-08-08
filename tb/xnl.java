@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.action.IUiRefreshActionModel;
 import com.taobao.infoflow.protocol.subservice.framework.IContainerService;
@@ -98,7 +98,7 @@ public class xnl {
                 return;
             }
             String requestType = iUiRefreshActionModel.getRequestType();
-            if (TextUtils.isEmpty(requestType)) {
+            if (StringUtils.isEmpty(requestType)) {
                 ldf.d("InfoFlowCacheDataValidator", "requestType is null");
                 return;
             }

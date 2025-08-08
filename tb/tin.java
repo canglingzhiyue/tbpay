@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
@@ -44,7 +44,7 @@ public class tin {
             return null;
         }
         boolean enableOutLinkBackRefresh = iSmartBackRefreshService.enableOutLinkBackRefresh();
-        boolean z2 = TextUtils.equals(str, "coldStart") || iSmartBackRefreshService.isCurrentRefreshByOutLink();
+        boolean z2 = StringUtils.equals(str, "coldStart") || iSmartBackRefreshService.isCurrentRefreshByOutLink();
         if (!a(str, enableOutLinkBackRefresh)) {
             ldf.d("SmartBackRefresher", "不允许携带 Bx 行为数据");
             return null;

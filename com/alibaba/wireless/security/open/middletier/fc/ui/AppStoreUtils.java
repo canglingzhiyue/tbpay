@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.List;
@@ -52,7 +52,7 @@ public class AppStoreUtils {
                     charSequence = "";
                     str = charSequence;
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put(charSequence.toString(), str);
                 }
             }

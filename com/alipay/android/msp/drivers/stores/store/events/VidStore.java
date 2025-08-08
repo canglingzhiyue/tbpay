@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.clients.MspViClient;
@@ -39,7 +39,7 @@ public class VidStore extends LocalEventStore {
         String string = actionParamsJson.getString("VIData");
         String string2 = actionParamsJson.getString("nextVid");
         LogUtil.record(1, "VidStore:onDialogAction", "nextVid：" + string2 + " ");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             mspViClient.setNextVid(string2);
         }
         VIMessageChannelCallback vIMessageChannelCallback = mspViClient.getVIMessageChannelCallback();
@@ -49,9 +49,9 @@ public class VidStore extends LocalEventStore {
             String string4 = parseObject.getString("data");
             LogUtil.record(1, "VidStore:onDialogAction", "verifyId::verifyData " + string3 + " " + string4);
             this.f.onStatistic("action", "vid|".concat(String.valueOf(string3)));
-            if (TextUtils.isEmpty(string3) && TextUtils.isEmpty(string4) && this.f4584a != null) {
+            if (StringUtils.isEmpty(string3) && StringUtils.isEmpty(string4) && this.f4584a != null) {
                 StatisticInfo statisticInfo = this.f4584a.getStatisticInfo();
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     string = "";
                 }
                 statisticInfo.addError(ErrorType.DEFAULT, ErrorCode.DEFAULT_VID_DATA_ERROR, string);

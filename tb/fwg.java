@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -47,7 +47,7 @@ public class fwg {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("81233aeb", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a().f28149a.get(str);
         }
         return null;
@@ -57,7 +57,7 @@ public class fwg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a35a7c79", new Object[]{this, str, bArr});
-        } else if (TextUtils.isEmpty(str) || bArr == null) {
+        } else if (StringUtils.isEmpty(str) || bArr == null) {
         } else {
             a().f28149a.put(str, bArr);
         }
@@ -121,7 +121,7 @@ public class fwg {
                         Map<String, String> map = c.g.b;
                         str = map.get(c.f11925a + "_" + c.b + "_index.dx");
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return;
                     }
                     fuw.a(str);

@@ -3,7 +3,7 @@ package com.taobao.accs.asp;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.client.GlobalClientInfo;
 import com.taobao.accs.utl.ALog;
@@ -68,7 +68,7 @@ public class f {
             return ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue();
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2) || (runningAppProcesses = GlobalClientInfo.getInstance(jzv.a()).getActivityManager().getRunningAppProcesses()) == null) {
+        if (StringUtils.isEmpty(a2) || (runningAppProcesses = GlobalClientInfo.getInstance(jzv.a()).getActivityManager().getRunningAppProcesses()) == null) {
             return false;
         }
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {

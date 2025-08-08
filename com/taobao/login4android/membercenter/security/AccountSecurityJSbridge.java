@@ -9,7 +9,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.login.action.LoginResActions;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -158,7 +158,7 @@ public class AccountSecurityJSbridge extends e {
                 if (!"native".equals(optString)) {
                     return;
                 }
-                if (TextUtils.isEmpty(optString3)) {
+                if (StringUtils.isEmpty(optString3)) {
                     setErrorCallback(wVCallBackContext);
                     return;
                 }
@@ -166,7 +166,7 @@ public class AccountSecurityJSbridge extends e {
                 Login.navByScene(this.mContext, optString3);
                 return;
             }
-            if (TextUtils.isEmpty(optString2)) {
+            if (StringUtils.isEmpty(optString2)) {
                 setErrorCallback(wVCallBackContext);
             } else {
                 NavUtil.navTo(this.mContext, optString2);

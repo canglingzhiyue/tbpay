@@ -94,13 +94,13 @@ public class SimplePassword extends LinearLayout {
     public SimplePassword(Context context) {
         super(context);
         this.e = 0;
-        this.h = EditTextManager.getEditTextUtils();
+        this.h = EditTextManager.getEditStringUtils();
     }
 
     public SimplePassword(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.e = 0;
-        this.h = EditTextManager.getEditTextUtils();
+        this.h = EditTextManager.getEditStringUtils();
         LayoutInflater.from(context).inflate(R.layout.mybank_safe_input_simple_password, (ViewGroup) this, true);
         this.f5924a = (LinearLayout) findViewById(R.id.mini_linSimplePwdComponent);
         this.b = new ArrayList();

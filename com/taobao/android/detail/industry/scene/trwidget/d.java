@@ -3,7 +3,7 @@ package com.taobao.android.detail.industry.scene.trwidget;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -253,7 +253,7 @@ public final class d implements atd {
         if (ipChange instanceof IpChange) {
             return (TRWidgetInstance) ipChange.ipc$dispatch("2fbeae3f", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         ConcurrentHashMap<String, TRWidgetInstance> c = c();

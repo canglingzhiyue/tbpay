@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.f;
@@ -57,7 +57,7 @@ public abstract class oqs {
             return;
         }
         AwesomeGetData awesomeGetData = (AwesomeGetData) jSONObject.get("dataModel");
-        if (TextUtils.isEmpty(this.f32307a) || awesomeGetData == null || awesomeGetData.containers == null || awesomeGetData.containers.get(this.f32307a) == null) {
+        if (StringUtils.isEmpty(this.f32307a) || awesomeGetData == null || awesomeGetData.containers == null || awesomeGetData.containers.get(this.f32307a) == null) {
             return;
         }
         AwesomeGetContainerData awesomeGetContainerData = awesomeGetData.containers.get(this.f32307a);
@@ -66,7 +66,7 @@ public abstract class oqs {
         }
         String string = jSONObject.getString("dataChangeType");
         JSONObject clientCache = awesomeGetContainerData.getClientCache();
-        if (TextUtils.equals("delta", string)) {
+        if (StringUtils.equals("delta", string)) {
             clientCache = awesomeGetContainerData.getClientCacheDelta();
         }
         lar.g("handleLocationParam");
@@ -76,7 +76,7 @@ public abstract class oqs {
         oqu.a().a(awesomeGetContainerData);
         lar.h("handleDeltaPassParams");
         laq a2 = laq.a();
-        if (awesomeGetData.ext != null && TextUtils.equals("true", awesomeGetData.ext.getString("isSwitchVersionByNewSDK"))) {
+        if (awesomeGetData.ext != null && StringUtils.equals("true", awesomeGetData.ext.getString("isSwitchVersionByNewSDK"))) {
             lar.g("onVersionResponse");
             JSONObject jSONObject2 = awesomeGetData.ext.getJSONObject("switchVersionResponse");
             c.a().c().a(jSONObject2);
@@ -168,7 +168,7 @@ public abstract class oqs {
             return;
         }
         String string = jSONObject.getString(i.CDN_REQUEST_TYPE);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             b.c("requestType == null").b();
         } else if (!c.getBooleanValue("updateLtv")) {
         } else {

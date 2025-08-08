@@ -4,7 +4,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewParent;
 import android.widget.ScrollView;
@@ -310,7 +310,7 @@ public class k extends RecyclerView.OnScrollListener {
                 ksk kskVar = this.e;
                 if (kskVar != null) {
                     RecommendChannelType channelType = RecommendChannelType.getChannelType(kskVar.f30287a);
-                    if (channelType == null || TextUtils.isEmpty(channelType.adNamespace)) {
+                    if (channelType == null || StringUtils.isEmpty(channelType.adNamespace)) {
                         com.taobao.android.home.component.utils.e.e("Home.nestedExposure", "channelType is null. containerType.containerId : " + this.e.f30287a);
                     } else {
                         a2.put("adNamespace", (Object) channelType.adNamespace);

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.amnet.biz.inner;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mars.comm.Alarm;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.amnet.api.AmnetListenerAdpter;
@@ -383,7 +383,7 @@ public class AmnetMonitorLoggerListener extends AmnetListenerAdpter {
             if (touching.freqConn) {
                 logModel.sfc = "T";
             }
-            if (!TextUtils.isEmpty(separating.mtag)) {
+            if (!StringUtils.isEmpty(separating.mtag)) {
                 logModel.mtag = "";
             }
             logModel.cid = String.valueOf(touching.cid);
@@ -452,7 +452,7 @@ public class AmnetMonitorLoggerListener extends AmnetListenerAdpter {
             return;
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.AMENT_INTLGNT_HB_PERF);
-        if (TextUtils.isEmpty(stringValue) || !stringValue.startsWith("T")) {
+        if (StringUtils.isEmpty(stringValue) || !stringValue.startsWith("T")) {
             LogCatUtil.debug("AmnetMonitorLoggerListener", "Intelligent Hearbeat data report is off");
             return;
         }
@@ -523,7 +523,7 @@ public class AmnetMonitorLoggerListener extends AmnetListenerAdpter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f899c272", new Object[]{this, new Integer(i), str});
-        } else if (TextUtils.equals(this.e, LogModel.EVENT_KEY_ERROR) && this.f != -1 && System.currentTimeMillis() <= this.f) {
+        } else if (StringUtils.equals(this.e, LogModel.EVENT_KEY_ERROR) && this.f != -1 && System.currentTimeMillis() <= this.f) {
             LogCatUtil.info("AmnetMonitorLoggerListener", "Repeat the event =" + this.e);
         } else {
             this.e = LogModel.EVENT_KEY_ERROR;

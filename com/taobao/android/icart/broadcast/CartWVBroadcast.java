@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -152,7 +152,7 @@ public class CartWVBroadcast extends BroadcastReceiver {
         String string2 = jSONObject.getString("type");
         String string3 = jSONObject.getString("cartId");
         String string4 = jSONObject.getString("toBundleId");
-        if (TextUtils.isEmpty(string2) || str == null || string == null) {
+        if (StringUtils.isEmpty(string2) || str == null || string == null) {
             return;
         }
         IDMComponent b = this.c.n().w().b(string);
@@ -181,7 +181,7 @@ public class CartWVBroadcast extends BroadcastReceiver {
             return;
         }
         final String string = jSONObject.getString("componentKey");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         final bcf bcfVar = new bcf(this.c);

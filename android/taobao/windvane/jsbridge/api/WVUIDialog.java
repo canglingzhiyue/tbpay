@@ -7,7 +7,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.xsearchplugin.weex.weex.i;
 import org.json.JSONException;
@@ -108,7 +108,7 @@ public class WVUIDialog extends e {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this.mContext);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 builder.setTitle(jSONObject.optString("title", "提示"));
@@ -141,7 +141,7 @@ public class WVUIDialog extends e {
             return;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(this.mContext);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 builder.setTitle(jSONObject.optString("title", ""));
@@ -201,7 +201,7 @@ public class WVUIDialog extends e {
             } else if (WVUIDialog.access$300(WVUIDialog.this) == null) {
             } else {
                 r rVar = new r();
-                if (!TextUtils.isEmpty(WVUIDialog.access$400(WVUIDialog.this))) {
+                if (!StringUtils.isEmpty(WVUIDialog.access$400(WVUIDialog.this))) {
                     rVar.a("identifier", WVUIDialog.access$400(WVUIDialog.this));
                 }
                 rVar.b();

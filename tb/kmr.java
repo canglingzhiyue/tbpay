@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.net.URL;
@@ -28,7 +28,7 @@ public class kmr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.e.d)) {
+        if (!StringUtils.isEmpty(this.e.d)) {
             return this.e.d;
         }
         try {

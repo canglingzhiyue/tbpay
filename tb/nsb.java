@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.r;
 import com.taobao.browser.utils.i;
@@ -64,7 +64,7 @@ public class nsb extends iue<nsc, nsd> implements nsi {
                 break;
             }
             String str = strArr[i2];
-            if (!TextUtils.isEmpty(this.f31708a.get(str))) {
+            if (!StringUtils.isEmpty(this.f31708a.get(str))) {
                 Map<String, String> map = this.f31708a;
                 map.put("sellerId", map.remove(str));
                 break;
@@ -78,7 +78,7 @@ public class nsb extends iue<nsc, nsd> implements nsi {
                 break;
             }
             String str2 = strArr2[i];
-            if (!TextUtils.isEmpty(this.f31708a.get(str2))) {
+            if (!StringUtils.isEmpty(this.f31708a.get(str2))) {
                 Map<String, String> map2 = this.f31708a;
                 map2.put("shopId", map2.remove(str2));
                 break;
@@ -98,12 +98,12 @@ public class nsb extends iue<nsc, nsd> implements nsi {
         }
         HashMap hashMap = new HashMap();
         String str = this.f31708a.get("shopId");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("shop_id", str);
         String str2 = this.f31708a.get("sellerId");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("seller_id", str2);

@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.AlphaAnimation;
@@ -206,7 +206,7 @@ public class BottomInputFrame extends BaseFrame implements View.OnClickListener,
                     BottomInputFrame.access$002(BottomInputFrame.this, b.getIntValue("switchStatus"));
                     BottomInputFrame.access$100(BottomInputFrame.this);
                     BottomInputFrame.this.mLiveDataModel.mVideoInfo.commentSwitchStatus = BottomInputFrame.access$000(BottomInputFrame.this);
-                } else if (i != 10085 || !(obj instanceof String) || !ply.m() || BottomInputFrame.access$000(BottomInputFrame.this) == 1 || BottomInputFrame.this.isLandscape() || BottomInputFrame.this.mLiveDataModel == null || BottomInputFrame.this.mLiveDataModel.mVideoInfo == null || BottomInputFrame.access$200(BottomInputFrame.this) == null || !TextUtils.equals(BottomInputFrame.this.mLiveDataModel.mVideoInfo.roomStatus, "1")) {
+                } else if (i != 10085 || !(obj instanceof String) || !ply.m() || BottomInputFrame.access$000(BottomInputFrame.this) == 1 || BottomInputFrame.this.isLandscape() || BottomInputFrame.this.mLiveDataModel == null || BottomInputFrame.this.mLiveDataModel.mVideoInfo == null || BottomInputFrame.access$200(BottomInputFrame.this) == null || !StringUtils.equals(BottomInputFrame.this.mLiveDataModel.mVideoInfo.roomStatus, "1")) {
                 } else {
                     BottomInputFrame.access$200(BottomInputFrame.this).a(BottomInputFrame.access$300(BottomInputFrame.this), String.valueOf(obj));
                 }
@@ -309,7 +309,7 @@ public class BottomInputFrame extends BaseFrame implements View.OnClickListener,
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5062bda", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (textView = this.mChatView) == null) {
+        } else if (StringUtils.isEmpty(str) || (textView = this.mChatView) == null) {
         } else {
             textView.setText(str);
         }
@@ -341,7 +341,7 @@ public class BottomInputFrame extends BaseFrame implements View.OnClickListener,
                         } else if (netBaseOutDo == null || netBaseOutDo.mo1437getData() == null) {
                         } else {
                             LiveDetailMessinfoResponseData liveDetailMessinfoResponseData = (LiveDetailMessinfoResponseData) pqj.a(pqj.a(netBaseOutDo.mo1437getData()), LiveDetailMessinfoResponseData.class);
-                            if (liveDetailMessinfoResponseData != null && !TextUtils.isEmpty(liveDetailMessinfoResponseData.hasLive)) {
+                            if (liveDetailMessinfoResponseData != null && !StringUtils.isEmpty(liveDetailMessinfoResponseData.hasLive)) {
                                 BottomInputFrame.access$402(BottomInputFrame.this, liveDetailMessinfoResponseData.hasLive);
                                 BottomInputFrame.access$500(BottomInputFrame.this, videoInfo);
                                 return;

@@ -1,7 +1,7 @@
 package com.taobao.android.upp;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -124,7 +124,7 @@ public class g extends UppProtocolImpl {
                         NativeDelegate.registerResourceSchemeToCpp(str, activity, jSONObject3.getJSONObject("data").getString("schemeId"), jSONObject2, new d(bVar));
                     }
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     registerUPPCallbackWithScene(str, activity, aVar);
                 }
                 BHREvent buildInternalEvent = BHREvent.buildInternalEvent(str, "PlanRegister", String.valueOf(activity.hashCode()), true);

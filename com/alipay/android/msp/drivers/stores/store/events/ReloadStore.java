@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -54,7 +54,7 @@ public class ReloadStore extends LocalEventStore {
                 sb.append(",");
             }
         }
-        if (TextUtils.isEmpty(sb.toString())) {
+        if (StringUtils.isEmpty(sb.toString())) {
             return "";
         }
         PluginManager.getRender().callRenderReload(sb.toString());

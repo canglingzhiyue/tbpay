@@ -1,6 +1,6 @@
 package com.taobao.android.livehome.plugin.atype.flexalocal.dinamic.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.android.livehome.plugin.atype.flexalocal.business.common.TypedObject;
 import java.util.HashMap;
@@ -67,7 +67,7 @@ public class DinamicDataObject extends TypedObject {
 
     public void setType(String str) {
         HashMap<String, Object> hashMap;
-        if (!TextUtils.isEmpty(str) && (hashMap = this.data) != null) {
+        if (!StringUtils.isEmpty(str) && (hashMap = this.data) != null) {
             if (this.isDinamicX) {
                 Object obj = hashMap.get("data");
                 if (!(obj instanceof JSONObject)) {

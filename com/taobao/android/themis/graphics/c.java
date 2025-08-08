@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;
@@ -522,7 +522,7 @@ public class c implements IRiverBackend {
             return false;
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return JSEngine.startRemoteInspect(str);
             }
         } catch (Throwable th) {

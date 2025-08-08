@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -64,7 +64,7 @@ public class lih extends acj.a {
         }
         BaseSectionModel a2 = a(this.b, i);
         BaseSectionModel a3 = a(this.f30651a, i2);
-        return a2 == a3 || !(a2 == null || a3 == null || !TextUtils.equals(a2.getString("sectionBizCode"), a3.getString("sectionBizCode")));
+        return a2 == a3 || !(a2 == null || a3 == null || !StringUtils.equals(a2.getString("sectionBizCode"), a3.getString("sectionBizCode")));
     }
 
     @Override // tb.acj.a

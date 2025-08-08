@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LogEvent;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -42,15 +42,15 @@ public class EventLoggerImpl implements EventLogger {
             ipChange.ipc$dispatch("a2e9a117", new Object[]{this, str, antEvent});
         } else if (antEvent == null) {
         } else {
-            if (TextUtils.isEmpty(antEvent.getEventID())) {
+            if (StringUtils.isEmpty(antEvent.getEventID())) {
                 LoggerFactory.getTraceLogger().warn("EventLogger", "illegal args, eventId is empty!");
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = antEvent.getBizType();
             }
             String str2 = str;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 LoggerFactory.getTraceLogger().warn("EventLogger", "illegal args, bizType is empty!");
             } else {
                 this.f5445a.appendLogEvent(new LogEvent(str2, "EventLogger", new LogEvent.Level(antEvent.getLoggerLevel()), null, PendingRender.a(this.b, antEvent)));

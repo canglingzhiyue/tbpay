@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -393,7 +393,7 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
             }
             this.supportLongPress = cVar.f9716a;
             this.fromDetailMain = cVar.b;
-            this.imageOffset = !TextUtils.isEmpty(this.galleryDTO.j) ? 1 : 0;
+            this.imageOffset = !StringUtils.isEmpty(this.galleryDTO.j) ? 1 : 0;
             this.totalPages = this.galleryDTO.e.size() + this.imageOffset;
             processBigImageUrl(this.galleryDTO);
             if (this.galleryDTO.d == null || this.galleryDTO.d.isEmpty()) {
@@ -670,7 +670,7 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
             if (GalleryPopupWindow.access$400(GalleryPopupWindow.this).d == null || GalleryPopupWindow.access$400(GalleryPopupWindow.this).d.isEmpty()) {
                 return 0;
             }
-            if (TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).j)) {
+            if (StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).j)) {
                 return GalleryPopupWindow.access$400(GalleryPopupWindow.this).d.size() + (GalleryPopupWindow.access$300(GalleryPopupWindow.this) ? 1 : 0);
             }
             return GalleryPopupWindow.access$400(GalleryPopupWindow.this).d.size() + (GalleryPopupWindow.access$300(GalleryPopupWindow.this) ? 1 : 0) + 1;
@@ -682,7 +682,7 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
             if (ipChange instanceof IpChange) {
                 return ipChange.ipc$dispatch("1038d332", new Object[]{this, viewGroup, new Integer(i)});
             }
-            if (i == 0 && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
+            if (i == 0 && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
                 if (this.e == null) {
                     bk.a aVar = new bk.a(GalleryPopupWindow.access$500(GalleryPopupWindow.this));
                     aVar.e("DETAILMAIN");
@@ -824,7 +824,7 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
                     return ((Boolean) ipChange.ipc$dispatch("7edba102", new Object[]{this, view})).booleanValue();
                 }
                 if (this.b != null && !com.alibaba.ability.localization.b.c() && GalleryPopupWindow.access$1700(GalleryPopupWindow.this) && !this.b.isZoomState() && !this.b.isActionMoving()) {
-                    if (TextUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "DetailImagePopupLongPressShare", "false"))) {
+                    if (StringUtils.equals("true", OrangeConfig.getInstance().getConfig("android_share_bizconfig", "DetailImagePopupLongPressShare", "false"))) {
                         eoi eoiVar = new eoi(TitleViewModel.ShareType.SHARE_TYPE_DEFAULT);
                         eoiVar.b = new HashMap();
                         eoiVar.b.put("share_businessId", "picture-desc");
@@ -849,7 +849,7 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
                 if (b != null && (obj instanceof ImageView)) {
                     b.a((String) null, (DetailImageView) obj);
                 }
-                if (i == 0 && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !TextUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
+                if (i == 0 && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).k) && !StringUtils.isEmpty(GalleryPopupWindow.access$400(GalleryPopupWindow.this).l)) {
                     bk bkVar = this.e;
                     if (bkVar != null) {
                         bkVar.removeCoverView(this.g);
@@ -1059,7 +1059,7 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
         }
         ecf.a(this.mActivity, i);
         changeIndexPos(i);
-        if (i != 0 || a.a(this.mBigGalleryAdapter) == null || TextUtils.isEmpty(this.galleryDTO.k) || TextUtils.isEmpty(this.galleryDTO.l)) {
+        if (i != 0 || a.a(this.mBigGalleryAdapter) == null || StringUtils.isEmpty(this.galleryDTO.k) || StringUtils.isEmpty(this.galleryDTO.l)) {
             return;
         }
         com.taobao.android.detail.wrapper.ext.component.main.viewholder.galleryheader.core.c.a(this.mActivity, this.galleryDTO.n, this.galleryDTO.o, null);
@@ -1101,13 +1101,13 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
                 str2 = this.galleryDTO.i.get(str3);
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mTvDesc.setText(str);
             this.mTvDesc.setVisibility(0);
         } else {
             this.mTvDesc.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.mTvSubDesc.setText(str2);
             this.mSubDescContainer.setVisibility(0);
             return;
@@ -1291,7 +1291,7 @@ public class GalleryPopupWindow extends PopupWindow implements Handler.Callback,
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f4c13b05", new Object[]{this, new Integer(i), new Float(f), new Integer(i2)});
-        } else if ((i == 0 && !TextUtils.isEmpty(this.galleryDTO.j)) || i != 0 || TextUtils.isEmpty(this.galleryDTO.k) || a.a(this.mBigGalleryAdapter) == null) {
+        } else if ((i == 0 && !StringUtils.isEmpty(this.galleryDTO.j)) || i != 0 || StringUtils.isEmpty(this.galleryDTO.k) || a.a(this.mBigGalleryAdapter) == null) {
         } else {
             int videoState = a.a(this.mBigGalleryAdapter).getVideoState();
             if (f >= 0.5d && videoState == 1) {

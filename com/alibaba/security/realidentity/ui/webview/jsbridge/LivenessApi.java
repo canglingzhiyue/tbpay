@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity.ui.webview.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.RPDetail;
 import com.alibaba.security.realidentity.RPEventListener;
 import com.alibaba.security.realidentity.RPResult;
@@ -35,7 +35,7 @@ public class LivenessApi extends BaseJsExecutor {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4d162c2f", new Object[]{this, str, jsCallbackAdapter})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             callbackUnknowError(jsCallbackAdapter, BaseJsExecutor.VALUE_INPUT_PARAM_ERROR);
             trackExceptionLog("LivenessApi parse params is null");
             return true;

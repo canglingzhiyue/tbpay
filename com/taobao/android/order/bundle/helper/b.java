@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilityidl.ability.BroadcastAddListenerEventResult;
@@ -40,7 +40,7 @@ public final class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b659d7", new Object[]{str, context, intent, str2, new Boolean(z)});
-        } else if (context == null || TextUtils.isEmpty(str2)) {
+        } else if (context == null || StringUtils.isEmpty(str2)) {
         } else {
             if (intent == null) {
                 intent = new Intent();
@@ -49,7 +49,7 @@ public final class b {
             intent.putExtra(str2, true);
             intent.putExtra(IMMEDIATELY_REFRESH, z);
             String packageName = context.getPackageName();
-            if (TextUtils.isEmpty(packageName)) {
+            if (StringUtils.isEmpty(packageName)) {
                 packageName = "com.taobao.taobao";
             }
             intent.setPackage(packageName);

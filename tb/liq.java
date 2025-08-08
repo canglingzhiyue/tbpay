@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -28,7 +28,7 @@ public class liq {
             return;
         }
         String b = b(iContainerDataModel);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             this.f30665a = -1;
         } else {
             this.f30665a = a(this.f30665a, b, iContainerDataModel);
@@ -91,7 +91,7 @@ public class liq {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c1aa3516", new Object[]{this, str, list})).intValue();
         }
-        if (TextUtils.isEmpty(str) || list == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(str) || list == null || list.isEmpty()) {
             return -1;
         }
         for (int i = 0; i < list.size(); i++) {
@@ -107,9 +107,9 @@ public class liq {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.equals(str, str2)) {
-            if (!TextUtils.equals(str + "_delta", str2)) {
-                if (!TextUtils.equals(str, str2 + "_delta")) {
+        if (!StringUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str + "_delta", str2)) {
+                if (!StringUtils.equals(str, str2 + "_delta")) {
                     return false;
                 }
             }

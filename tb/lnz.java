@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -310,7 +310,7 @@ public class lnz {
         }
         List totalData = containerData.getTotalData();
         for (int i = 0; i < totalData.size(); i++) {
-            if (TextUtils.equals(str, ((SectionModel) totalData.get(i)).getSectionBizCode()) && (findItemViewByPosition = this.f30763a.findItemViewByPosition(i)) != null && findItemViewByPosition.getVisibility() == 0 && (b = b(findItemViewByPosition)) != null) {
+            if (StringUtils.equals(str, ((SectionModel) totalData.get(i)).getSectionBizCode()) && (findItemViewByPosition = this.f30763a.findItemViewByPosition(i)) != null && findItemViewByPosition.getVisibility() == 0 && (b = b(findItemViewByPosition)) != null) {
                 return b;
             }
         }

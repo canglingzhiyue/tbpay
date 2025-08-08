@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.standard.video;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
@@ -105,7 +105,7 @@ public final class e extends a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                } else if (!TextUtils.equals(com.taobao.android.detail.core.utils.d.c(b), "openUrl") || TextUtils.isEmpty(d)) {
+                } else if (!StringUtils.equals(com.taobao.android.detail.core.utils.d.c(b), "openUrl") || StringUtils.isEmpty(d)) {
                 } else {
                     epq.a(e.a(e.this), d);
                     ecf.a(e.a(e.this), e.a(e.this, d));
@@ -140,7 +140,7 @@ public final class e extends a {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{this, str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         hashMap.put("url", str);

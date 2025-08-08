@@ -2,7 +2,7 @@ package com.taobao.search.common.util;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import tb.kge;
@@ -26,7 +26,7 @@ public class x {
         }
         try {
             String host = Uri.parse(str).getHost();
-            if (TextUtils.isEmpty(host)) {
+            if (StringUtils.isEmpty(host)) {
                 q.h("SearchUrlNavUtil", "host为空");
                 return false;
             } else if (!host.endsWith(".taobao.com") && !host.endsWith(".tmall.com") && !host.endsWith(k.ALIBABA_INC_HOST)) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -84,7 +84,7 @@ public class fuw {
         } else if (!f28135a && !DinamicXEngine.j()) {
         } else {
             String e = e(strArr);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 Log.e("DinamicX", e);
             } else {
                 Log.e(str, e);
@@ -99,7 +99,7 @@ public class fuw {
         } else if (!f28135a && !DinamicXEngine.j()) {
         } else {
             String b = b(objArr);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 Log.e("DinamicX", b);
             } else {
                 Log.e(str, b);
@@ -193,7 +193,7 @@ public class fuw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{str, str2});
-        } else if ((!DinamicXEngine.j() && !f28135a) || TextUtils.isEmpty(str)) {
+        } else if ((!DinamicXEngine.j() && !f28135a) || StringUtils.isEmpty(str)) {
         } else {
             String str3 = "DinamicX_perform_" + str;
         }

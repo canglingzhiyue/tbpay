@@ -2,7 +2,7 @@ package com.xiaomi.push.service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,17 +30,17 @@ public class w {
         }
         SharedPreferences sharedPreferences = this.f1030a.getSharedPreferences("mipush_app_info", 0);
         for (String str : sharedPreferences.getString("unregistered_pkg_names", "").split(",")) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.f1031a.add(str);
             }
         }
         for (String str2 : sharedPreferences.getString("disable_push_pkg_names", "").split(",")) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.b.add(str2);
             }
         }
         for (String str3 : sharedPreferences.getString("disable_push_pkg_names_cache", "").split(",")) {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 this.c.add(str3);
             }
         }

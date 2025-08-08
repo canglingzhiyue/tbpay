@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -23,10 +23,10 @@ public class qqz {
         } else {
             String str2 = KEY_ENABLE_SKU_NEW_MTOP;
             String string = jSONObject2.getString(str2);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str2 = str2 + str;
             }
             qrf.a(context, str2, string);
@@ -38,12 +38,12 @@ public class qqz {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        boolean isEmpty = TextUtils.isEmpty(str);
+        boolean isEmpty = StringUtils.isEmpty(str);
         String str2 = KEY_ENABLE_SKU_NEW_MTOP;
         if (!isEmpty) {
             str2 = str2 + str;
         }
         String a2 = qrf.a(context, str2);
-        return "true".equals(a2) || TextUtils.isEmpty(a2);
+        return "true".equals(a2) || StringUtils.isEmpty(a2);
     }
 }

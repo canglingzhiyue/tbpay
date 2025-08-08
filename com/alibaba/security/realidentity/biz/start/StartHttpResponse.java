@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity.biz.start;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.model.HttpResponse;
 import com.alibaba.security.realidentity.b;
 import com.alibaba.security.realidentity.biz.config.RPBizConfig;
@@ -73,12 +73,12 @@ public class StartHttpResponse extends HttpResponse {
 
     public boolean isLimited() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1551199b", new Object[]{this})).booleanValue() : TextUtils.equals(this.retCode, MTOP_VERIFY_FAIL_OVER_LIMIT);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1551199b", new Object[]{this})).booleanValue() : StringUtils.equals(this.retCode, MTOP_VERIFY_FAIL_OVER_LIMIT);
     }
 
     public boolean isNeedLogin() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4272ce74", new Object[]{this})).booleanValue() : TextUtils.equals(this.retCode, FAIL_BIZ_LOGIN_OUT);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4272ce74", new Object[]{this})).booleanValue() : StringUtils.equals(this.retCode, FAIL_BIZ_LOGIN_OUT);
     }
 
     public boolean isRepeatedSubmitted() {

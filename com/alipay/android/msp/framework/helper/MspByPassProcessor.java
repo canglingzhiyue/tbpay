@@ -6,7 +6,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -145,7 +145,7 @@ public class MspByPassProcessor {
                 try {
                     LogUtil.printExceptionStackTrace(th3);
                     String message = th3.getMessage();
-                    if (TextUtils.isEmpty(message)) {
+                    if (StringUtils.isEmpty(message)) {
                         message = th3.getClass().getName();
                     }
                     EventLogUtil.logPayEvent("1010393", "scene", this.e, "result_reason", message);
@@ -195,7 +195,7 @@ public class MspByPassProcessor {
             }
             if (GlobalConstant.DEBUG) {
                 try {
-                    if (!TextUtils.isEmpty(PhoneCashierMspEngine.getMspWallet().getSofaGroupName(context))) {
+                    if (!StringUtils.isEmpty(PhoneCashierMspEngine.getMspWallet().getSofaGroupName(context))) {
                         return "https://gw-office.alipayobjects.com/mobiletms/" + Uri.encode(sofaGroupName) + "/digest.json";
                     }
                 } catch (Throwable th) {
@@ -272,7 +272,7 @@ public class MspByPassProcessor {
                             str2 = a(jSONObject);
                             String string4 = MspByPassProcessor.b(MspByPassProcessor.this).getString(str, str3);
                             LogUtil.d("MspByPassProcessor", "process", "group hash check, currentHash=" + str2 + ", groupHash=" + string4 + ", groupName=" + str);
-                            if (!TextUtils.equals(str2, string4)) {
+                            if (!StringUtils.equals(str2, string4)) {
                                 break;
                             }
                         }
@@ -347,7 +347,7 @@ public class MspByPassProcessor {
                     JSONObject parseObject = JSON.parseObject(string);
                     String string2 = parseObject.getString("time");
                     String string3 = parseObject.getString("tplVersion");
-                    if (z && (string3.compareTo(notifyTplUpdate.tplVersion) > 0 || (TextUtils.equals(string3, notifyTplUpdate.tplVersion) && string2.compareTo(notifyTplUpdate.time) > 0))) {
+                    if (z && (string3.compareTo(notifyTplUpdate.tplVersion) > 0 || (StringUtils.equals(string3, notifyTplUpdate.tplVersion) && string2.compareTo(notifyTplUpdate.time) > 0))) {
                         z = false;
                     }
                 } catch (Exception e) {

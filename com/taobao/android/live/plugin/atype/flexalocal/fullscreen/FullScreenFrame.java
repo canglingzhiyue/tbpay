@@ -10,7 +10,7 @@ import android.os.ResultReceiver;
 import android.os.SystemClock;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -736,12 +736,12 @@ public abstract class FullScreenFrame extends BaseFrame implements View.OnClickL
         } else if (!hgs.f() || (u = poy.u(this.mFrameContext)) == null || u.accessInfo == null) {
         } else {
             if (u.accessInfo.access) {
-                if (TextUtils.equals("PRIVATE", u.accessInfo.accessType)) {
+                if (StringUtils.equals("PRIVATE", u.accessInfo.accessType)) {
                     format = "欢迎进入会员专属直播间";
                 } else {
-                    format = TextUtils.equals("VIP", u.accessInfo.accessType) ? String.format("欢迎%s\n进入您的专属直播间！", pmd.a().q().b()) : "";
+                    format = StringUtils.equals("VIP", u.accessInfo.accessType) ? String.format("欢迎%s\n进入您的专属直播间！", pmd.a().q().b()) : "";
                 }
-                if (TextUtils.isEmpty(format)) {
+                if (StringUtils.isEmpty(format)) {
                     return;
                 }
                 hgt.b(this.mContext, format);
@@ -941,7 +941,7 @@ public abstract class FullScreenFrame extends BaseFrame implements View.OnClickL
                     }
                 });
             }
-        } else if (!hgs.g() || !poy.i(this.mFrameContext) || TextUtils.isEmpty(poy.j(this.mFrameContext))) {
+        } else if (!hgs.g() || !poy.i(this.mFrameContext) || StringUtils.isEmpty(poy.j(this.mFrameContext))) {
         } else {
             if (c.a().d()) {
                 initTBLiveXBackFrameInner();
@@ -1197,7 +1197,7 @@ public abstract class FullScreenFrame extends BaseFrame implements View.OnClickL
                 return;
             }
             passEventViewPager2.setCanScroll(false);
-        } else if (TextUtils.equals(str, EVENT_TAOLIVE_ROOM_CLEAR_SCREEN)) {
+        } else if (StringUtils.equals(str, EVENT_TAOLIVE_ROOM_CLEAR_SCREEN)) {
             this.isClearScreen = ((Boolean) obj).booleanValue();
             PassEventViewPager passEventViewPager3 = this.mViewPager;
             if (this.isClearScreen) {
@@ -1295,7 +1295,7 @@ public abstract class FullScreenFrame extends BaseFrame implements View.OnClickL
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5eede68b", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (hkl.a().b() != null && hkl.a().b().platformUtilsShouldOpenOnce("true", str)) {
                 return;

@@ -1,6 +1,6 @@
 package com.taobao.umipublish.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.database.ExperimentDO;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -119,7 +119,7 @@ public class UmiPublishMonitor {
             return;
         }
         for (UmiPublishTracker.VideoMeta videoMeta : b2.videos) {
-            if (videoMeta.origin_meta != null && TextUtils.equals(videoMeta.origin_meta.file_path, str2)) {
+            if (videoMeta.origin_meta != null && StringUtils.equals(videoMeta.origin_meta.file_path, str2)) {
                 videoMeta.publish_meta = new UmiPublishTracker.PublishMetaInfo(str3);
             }
         }
@@ -136,7 +136,7 @@ public class UmiPublishMonitor {
             return;
         }
         for (UmiPublishTracker.ImageMeta imageMeta : b2.photos) {
-            if (imageMeta.origin_meta != null && TextUtils.equals(imageMeta.origin_meta.file_path, str2)) {
+            if (imageMeta.origin_meta != null && StringUtils.equals(imageMeta.origin_meta.file_path, str2)) {
                 imageMeta.publish_meta = new UmiPublishTracker.PublishMetaInfo();
                 imageMeta.publish_meta.remote_url = str3;
             }
@@ -237,7 +237,7 @@ public class UmiPublishMonitor {
             r0.location = r7     // Catch: java.lang.Throwable -> La9
             r0.umimonitor_error_code = r8     // Catch: java.lang.Throwable -> La9
             r0.umimonitor_error_msg = r10     // Catch: java.lang.Throwable -> La9
-            boolean r1 = android.text.TextUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> La9
+            boolean r1 = android.text.StringUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> La9
             if (r1 == 0) goto L50
             r1 = r9
             goto L58
@@ -391,7 +391,7 @@ public class UmiPublishMonitor {
             return;
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             jSONObject.put(i.FEATURE_LOCAL_URL, (Object) str3);
             jSONObject.put("file_size", (Object) Long.valueOf(k.b(str3)));
         }
@@ -451,7 +451,7 @@ public class UmiPublishMonitor {
             return;
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str4) && !TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str4) && !StringUtils.isEmpty(str5)) {
             jSONObject.put(str4, (Object) str5);
         }
         a(str, str2, str3, jSONObject);
@@ -604,10 +604,10 @@ public class UmiPublishMonitor {
             }
             JSONObject jSONObject3 = jSONObject.getJSONObject("taopai_document");
             String string = jSONObject.getString("clip_output_path");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = jSONObject.getString("record_output_path");
             }
-            if (TextUtils.isEmpty(string) && jSONObject.containsKey("taopai_enter_param") && jSONObject.getJSONObject("taopai_enter_param").getJSONArray("elements") != null && jSONObject.getJSONObject("taopai_enter_param").getJSONArray("elements").size() > 0) {
+            if (StringUtils.isEmpty(string) && jSONObject.containsKey("taopai_enter_param") && jSONObject.getJSONObject("taopai_enter_param").getJSONArray("elements") != null && jSONObject.getJSONObject("taopai_enter_param").getJSONArray("elements").size() > 0) {
                 string = jSONObject.getJSONObject("taopai_enter_param").getJSONArray("elements").getJSONObject(0).getString("fileUrl");
             }
             UmiPublishTracker.VideoMeta videoMeta = new UmiPublishTracker.VideoMeta();
@@ -642,15 +642,15 @@ public class UmiPublishMonitor {
                     JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                     String string = jSONObject2.getString("type");
                     String string2 = jSONObject2.getString("path");
-                    if (!TextUtils.isEmpty(string2)) {
-                        if (TextUtils.equals(string, "video") && b2.videos.size() > 0) {
+                    if (!StringUtils.isEmpty(string2)) {
+                        if (StringUtils.equals(string, "video") && b2.videos.size() > 0) {
                             b2.videos.clear();
-                        } else if (TextUtils.equals(string, "image") && b2.photos.size() > 0) {
+                        } else if (StringUtils.equals(string, "image") && b2.photos.size() > 0) {
                             Iterator<UmiPublishTracker.ImageMeta> it = b2.photos.iterator();
                             while (true) {
                                 if (!it.hasNext()) {
                                     break;
-                                } else if (TextUtils.equals(it.next().origin_meta.file_path, string2)) {
+                                } else if (StringUtils.equals(it.next().origin_meta.file_path, string2)) {
                                     it.remove();
                                     break;
                                 }

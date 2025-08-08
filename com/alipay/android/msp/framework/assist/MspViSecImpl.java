@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.assist;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.template.JSPlugin;
@@ -238,7 +238,7 @@ public class MspViSecImpl implements IViSecEngine {
             LogUtil.printExceptionStackTrace(th);
             str = "{\"type\":-1}";
         }
-        return !TextUtils.isEmpty(str) ? str : "{\"type\":-1}";
+        return !StringUtils.isEmpty(str) ? str : "{\"type\":-1}";
     }
 
     @Override // com.alipay.android.msp.plugin.engine.IViSecEngine
@@ -397,7 +397,7 @@ public class MspViSecImpl implements IViSecEngine {
             }
         };
         try {
-            if (!TextUtils.isEmpty(string4) && !"standard".equalsIgnoreCase(string4)) {
+            if (!StringUtils.isEmpty(string4) && !"standard".equalsIgnoreCase(string4)) {
                 if ("verify_init".equalsIgnoreCase(string4)) {
                     verifyIdentityEngine.fastVerifyWithInitRequest(string5, string6, string7, string8, cleanParams, vIListenerByVerifyId, string3);
                     return;
@@ -483,7 +483,7 @@ public class MspViSecImpl implements IViSecEngine {
                     return;
                 }
             }
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 verifyIdentityEngine.startVerifyByToken(string2, string3, cleanParams, verifyIdentityListener);
             } else {
                 verifyIdentityEngine.startVerifyByVerifyId(string, string2, string3, cleanParams, vIListenerByVerifyId);

@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -891,7 +891,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
                 initDisableAudio(true);
             }
         } else if (MediaConstant.CMD_LIVE_PUSH_CONTROL_INFO.equals(str)) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             this.mLivePushControlInfo = str2;
@@ -899,7 +899,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
         } else if (MediaConstant.CMD_LIVE_REMOVE_CONTROL_INFO.equals(str)) {
             this.mLivePushControlInfo = null;
         } else if (MediaConstant.CMD_UPDATE_PLAY_EX.equals(str)) {
-            if (TextUtils.isEmpty(str2) || (b = b.b(str2, ",", "=")) == null || b.size() <= 0) {
+            if (StringUtils.isEmpty(str2) || (b = b.b(str2, ",", "=")) == null || b.size() <= 0) {
                 return;
             }
             if (this.mDynamicPlayExMap == null) {
@@ -981,7 +981,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
     private boolean checkUseMediaCodec() {
         boolean z;
         String config = OrangeConfig.getInstance().getConfig("DWInteractive", ORANGE_DISABLE_HARDWARE_DECODER_STRATEGY, MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264);
-        if (TextUtils.isEmpty(config) || MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264.equals(config)) {
+        if (StringUtils.isEmpty(config) || MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264.equals(config)) {
             z = !b.b(this.mConfig.y, OrangeConfig.getInstance().getConfig("DWInteractive", ORANGE_DISABLE_HARDWARE_DECODER_LIST, MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264));
         } else {
             if (mDisableHardwareUtil == null) {
@@ -1054,7 +1054,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
         String str2 = "";
         while (it.hasNext()) {
             Long next = it.next();
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 sb = new StringBuilder();
             } else {
                 sb = new StringBuilder();
@@ -1109,7 +1109,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
 
     private void generateRtcLiveControllInfoAndSetToCore() {
         JSONObject optJSONObject;
-        if (TextUtils.isEmpty(this.mLivePushControlInfo) || !this.mEnableRtcSwitch) {
+        if (StringUtils.isEmpty(this.mLivePushControlInfo) || !this.mEnableRtcSwitch) {
             return;
         }
         JSONObject jSONObject = new JSONObject();
@@ -1280,7 +1280,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
             java.util.concurrent.atomic.AtomicReference<java.lang.String> r1 = tv.danmaku.ijk.media.player.TaobaoMediaPlayer.mFFMpegSoPath
             java.lang.Object r1 = r1.get()
             java.lang.CharSequence r1 = (java.lang.CharSequence) r1
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 != 0) goto Lbf
             java.util.concurrent.atomic.AtomicReference<java.lang.String> r1 = tv.danmaku.ijk.media.player.TaobaoMediaPlayer.mFFMpegSoPath
             java.lang.Object r1 = r1.get()
@@ -1668,9 +1668,9 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
         }
         oyu.Q();
         String str = oyu.aW;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = MediaAdapteManager.mConfigAdapter.getConfig("DWInteractive", "flvConfigTest", "");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
         }
@@ -1968,7 +1968,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
 
     public HashMap<String, String> getLiveControlInfoForPlayEx() {
         Set<Map.Entry<String, Object>> entrySet;
-        if (TextUtils.isEmpty(this.mLivePushControlInfo)) {
+        if (StringUtils.isEmpty(this.mLivePushControlInfo)) {
             return null;
         }
         HashMap<String, String> hashMap = new HashMap<>();
@@ -1977,7 +1977,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
             if (jSONObject != null && (entrySet = jSONObject.entrySet()) != null && entrySet.size() > 0) {
                 for (Map.Entry<String, Object> entry : entrySet) {
                     String str = entry.getKey().toString();
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         hashMap.put(str, entry.getValue().toString());
                     }
                 }
@@ -2170,8 +2170,8 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
         mArtcSoMajorVersion.set(ozsVar.c);
         mArtcSoMinorVersion.set(ozsVar.d);
         mFFMpegSoPath.set(ozsVar.f);
-        boolean z = !TextUtils.isEmpty(mArtcSoPath.get());
-        TextUtils.isEmpty(mFFMpegSoPath.get());
+        boolean z = !StringUtils.isEmpty(mArtcSoPath.get());
+        StringUtils.isEmpty(mFFMpegSoPath.get());
         if (z) {
             if (b.a(OrangeConfig.getInstance().getConfig("DWInteractive", "disableFetchInfo", "false"))) {
                 notifyVideoInfo(811L, 1L, null);
@@ -2426,7 +2426,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
         if (r7 != false) goto L11;
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0066, code lost:
-        if (android.text.TextUtils.isEmpty(r7) == false) goto L13;
+        if (android.text.StringUtils.isEmpty(r7) == false) goto L13;
      */
     /* JADX WARN: Removed duplicated region for block: B:99:0x01fe  */
     @Override // tv.danmaku.ijk.media.player.IMediaPlayer
@@ -2497,7 +2497,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
             for (Map.Entry<String, String> entry : hashMap.entrySet()) {
                 sb.append(entry.getKey());
                 sb.append(":");
-                if (!TextUtils.isEmpty(entry.getValue())) {
+                if (!StringUtils.isEmpty(entry.getValue())) {
                     sb.append(entry.getValue());
                 }
                 sb.append("\r\n");
@@ -2533,7 +2533,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
     }
 
     public void setPlayingLiveDefinition(String str) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(this.mPlayingLiveDefinition) || this.mPlayingLiveDefinition.equals(str)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(this.mPlayingLiveDefinition) || this.mPlayingLiveDefinition.equals(str)) {
             this.mPlayingLiveDefinition = str;
             return;
         }
@@ -2703,7 +2703,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
 
     public void startRtcAdaption(String str) {
         AVSDKLog.e("AVSDK", "TaobaoMediaPlayer:" + this + " startRtcAdaption " + str);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             _startRtcAdaption(str);
             return;
         }
@@ -2826,7 +2826,7 @@ public final class TaobaoMediaPlayer extends MonitorMediaPlayer implements c, l,
 
     public void updateSeamlessSwitchStatus(int i, String str) {
         String str2 = "" + i + riy.BRACKET_START_STR + str + riy.BRACKET_END_STR;
-        if (TextUtils.isEmpty(this.mSeamlessSwitchStatusAll)) {
+        if (StringUtils.isEmpty(this.mSeamlessSwitchStatusAll)) {
             this.mSeamlessSwitchStatusAll = str2;
             return;
         }

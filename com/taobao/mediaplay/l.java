@@ -1,6 +1,6 @@
 package com.taobao.mediaplay;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (map != null) {
                 this.b.put(str, map);
@@ -54,7 +54,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             return null;
         } else {
             return this.b.get(str);
@@ -65,7 +65,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             return false;
         } else {
             Map<String, String> map = this.b.get(str);

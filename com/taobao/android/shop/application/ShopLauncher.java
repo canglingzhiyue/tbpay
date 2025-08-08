@@ -2,7 +2,7 @@ package com.taobao.android.shop.application;
 
 import android.app.Application;
 import android.taobao.windvane.packageapp.zipapp.utils.c;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.aliweex.utils.MemoryMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class ShopLauncher implements Serializable {
             }
             try {
                 String config = OrangeConfig.getInstance().getConfig("shop_render", "launcher_shop_init_inner_js", "//market.m.taobao.com/app/tb-source-app/shopindex/pages/index");
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     long currentTimeMillis = System.currentTimeMillis();
                     int b = i.a().b(config);
                     if (a.a().booleanValue() && -1 != b) {
@@ -45,12 +45,12 @@ public class ShopLauncher implements Serializable {
                     }
                 }
                 String config2 = OrangeConfig.getInstance().getConfig("shop_render", "launcher_shop_init_other_js", "");
-                if (!TextUtils.isEmpty(config2)) {
+                if (!StringUtils.isEmpty(config2)) {
                     long currentTimeMillis2 = System.currentTimeMillis();
                     String[] split = config2.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
                     if (split != null && split.length > 0) {
                         for (int i = 0; i < split.length; i++) {
-                            if (!TextUtils.isEmpty(split[i])) {
+                            if (!StringUtils.isEmpty(split[i])) {
                                 int b2 = i.a().b(split[i]);
                                 if (a.a().booleanValue() && -1 != b2) {
                                     a.a("main-cost", "ShopApplication prepare other js-bundle done. cost ", Long.valueOf(System.currentTimeMillis() - currentTimeMillis2), " ms. ", Integer.valueOf(b2), Thread.currentThread().getName());
@@ -116,7 +116,7 @@ public class ShopLauncher implements Serializable {
             a.b("main-cost", "ShopLauncher prepareJS ", Boolean.valueOf(z));
             try {
                 String config = OrangeConfig.getInstance().getConfig("shop_render", "launcher_shop_init_frame_js", "https://market.m.taobao.com/apps/market/shop/weex_v2.html");
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     long currentTimeMillis = System.currentTimeMillis();
                     int b = i.a().b(config);
                     if (a.a().booleanValue() && -1 != b) {
@@ -141,7 +141,7 @@ public class ShopLauncher implements Serializable {
             return;
         }
         String streamByUrl = c.getStreamByUrl("rax", str3);
-        if (TextUtils.isEmpty(streamByUrl)) {
+        if (StringUtils.isEmpty(streamByUrl)) {
             streamByUrl = WXFileUtils.loadAsset(str2, WXEnvironment.getApplication());
         }
         boolean registerService = WXSDKEngine.registerService(str, streamByUrl, new HashMap());

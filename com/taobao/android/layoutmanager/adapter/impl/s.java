@@ -1,7 +1,7 @@
 package com.taobao.android.layoutmanager.adapter.impl;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
 import com.taobao.android.tbtheme.kit.ThemeData;
@@ -94,13 +94,13 @@ public class s implements IFestival {
         }
         try {
             String str = com.taobao.android.tbtheme.kit.j.f().actionBarBackgroundColor;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = com.taobao.android.tbtheme.kit.j.f().skinColor;
             }
             if (str != null && str.length() > 0 && str.charAt(0) == '#') {
                 return str;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             int parseColor = Color.parseColor(str);

@@ -1,7 +1,7 @@
 package com.taobao.weex.common;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKInstance;
@@ -111,7 +111,7 @@ public abstract class WXModule implements IWXObject {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bf5a071d", new Object[]{this, str, str2, map});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             if (map == null || map.size() <= 0 || !map.containsKey(bip.REQUEST_ONCE) || !ifq.a(map.get(bip.REQUEST_ONCE), false).booleanValue()) {
                 z = false;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.weex_framework.util.a;
 
 /* loaded from: classes7.dex */
@@ -18,7 +18,7 @@ public class npl extends npm {
         a("src", "c2c");
         a("history", "off");
         a("action", a.ATOM_EXT_del);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a("q", str);
         }
     }

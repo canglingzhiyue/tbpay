@@ -1,7 +1,7 @@
 package com.huawei.hms.push;
 
 import android.app.Notification;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public class h {
@@ -12,13 +12,13 @@ public class h {
 
     public static void a(Notification.Builder builder, String str, m mVar) {
         Notification.BigTextStyle bigTextStyle = new Notification.BigTextStyle();
-        if (!TextUtils.isEmpty(mVar.h())) {
+        if (!StringUtils.isEmpty(mVar.h())) {
             bigTextStyle.setBigContentTitle(mVar.h());
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             bigTextStyle.bigText(str);
         }
         builder.setStyle(bigTextStyle);

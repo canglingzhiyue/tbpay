@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.subservice.biz.loginservice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.biz.ILoginService;
 import com.taobao.infoflow.protocol.subservice.framework.IContainerDataService;
@@ -32,7 +32,7 @@ public class TbLoginServiceImpl implements ILoginService {
             } else if (intent == null) {
             } else {
                 String action = intent.getAction();
-                if (TextUtils.isEmpty(action)) {
+                if (StringUtils.isEmpty(action)) {
                     return;
                 }
                 int i = AnonymousClass2.f17468a[LoginAction.valueOf(action).ordinal()];
@@ -132,7 +132,7 @@ public class TbLoginServiceImpl implements ILoginService {
     @Override // com.taobao.infoflow.protocol.subservice.biz.ILoginService
     public boolean isLogin() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dfb0d96a", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(Login.getOldUserId());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dfb0d96a", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(Login.getOldUserId());
     }
 
     private void processLoginChange() {

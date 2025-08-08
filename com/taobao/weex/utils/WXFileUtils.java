@@ -1,7 +1,7 @@
 package com.taobao.weex.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
@@ -40,7 +40,7 @@ public class WXFileUtils {
             return (String) ipChange.ipc$dispatch("69d2e814", new Object[]{str, context});
         }
         String str2 = "weex loadFileOrAsset path " + str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         File file = new File(str);
@@ -61,7 +61,7 @@ public class WXFileUtils {
             return (String) ipChange.ipc$dispatch("6777ecd3", new Object[]{str, context});
         }
         String str2 = "weex loadAsset path " + str;
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -157,7 +157,7 @@ public class WXFileUtils {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("22b8bb88", new Object[]{str, context});
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             try {
                 InputStream proxy_open = AssetsDelegate.proxy_open(context.getAssets(), str);
                 byte[] bArr = new byte[4096];
@@ -177,7 +177,7 @@ public class WXFileUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fe988c3b", new Object[]{str, bArr, context})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || bArr == null || context == null) {
+        if (StringUtils.isEmpty(str) || bArr == null || context == null) {
             return false;
         }
         FileOutputStream fileOutputStream = null;

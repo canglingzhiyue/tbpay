@@ -1,7 +1,7 @@
 package tb;
 
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,14 +33,14 @@ public class hyc {
             ipChange.ipc$dispatch("15cd32d5", new Object[]{textView, str, new Boolean(z), new Integer(i)});
         } else if (textView == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 textView.setVisibility(8);
                 return;
             }
             textView.setVisibility(0);
             if (!z) {
                 textView.setText(str);
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 int indexOf = str.indexOf(46);
                 SpannableString spannableString = new SpannableString(str);
@@ -67,7 +67,7 @@ public class hyc {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         char[] charArray = str.toCharArray();

@@ -1,6 +1,6 @@
 package com.ali.user.mobile.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.callback.RpcRequestCallbackWithCode;
@@ -54,7 +54,7 @@ public class MtopRpcServiceImpl implements RpcService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("821380aa", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             MtopSetting.setParam(Mtop.Id.INNER, MtopParamType.HEADER, str, str2);
         }
@@ -67,7 +67,7 @@ public class MtopRpcServiceImpl implements RpcService {
             return (String) ipChange.ipc$dispatch("79a7d1d2", new Object[]{this});
         }
         this.deviceId = SDKConfig.getInstance().getGlobalDeviceId();
-        if (TextUtils.isEmpty(this.deviceId)) {
+        if (StringUtils.isEmpty(this.deviceId)) {
             try {
                 DeviceIDManager.getInstance().getDeviceID(DataProviderFactory.getApplicationContext(), DataProviderFactory.getDataProvider().getAppkey());
             } catch (Exception e) {

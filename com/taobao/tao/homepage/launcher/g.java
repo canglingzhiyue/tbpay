@@ -1,7 +1,7 @@
 package com.taobao.tao.homepage.launcher;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -96,7 +96,7 @@ public class g extends b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             c = c.a.a("home_device", "level", "l");
         }
         return c;

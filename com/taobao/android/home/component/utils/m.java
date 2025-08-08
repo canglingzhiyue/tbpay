@@ -2,7 +2,7 @@ package com.taobao.android.home.component.utils;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -77,7 +77,7 @@ public class m {
             return;
         }
         String string = this.c.getSharedPreferences("home_client_abtest", 0).getString("home_client_abtest", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         synchronized (this) {
@@ -103,7 +103,7 @@ public class m {
                 }
             }
             this.b = sb.toString();
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 return;
             }
             String str = this.b;
@@ -170,7 +170,7 @@ public class m {
                 return (T) this.e.get(str);
             }
             ?? r0 = (T) jSONObject.getString("value");
-            if (!TextUtils.isEmpty(r0)) {
+            if (!StringUtils.isEmpty(r0)) {
                 if (cls == String.class) {
                     return r0;
                 }
@@ -245,7 +245,7 @@ public class m {
             if (map != null) {
                 hashMap.putAll(map);
             }
-            if (!TextUtils.isEmpty(this.b)) {
+            if (!StringUtils.isEmpty(this.b)) {
                 hashMap.put("home_client_abtest", this.b);
             }
             this.d.commitSuccess(str, str2, str3, str4, str5, hashMap);

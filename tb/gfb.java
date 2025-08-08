@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.bj;
 import java.util.List;
@@ -20,7 +20,7 @@ public class gfb {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("183bb562", new Object[]{str, obj, obj2, bjVar})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && obj != null) {
+        if (!StringUtils.isEmpty(str) && obj != null) {
             StringTokenizer stringTokenizer = new StringTokenizer(str, ".[]", false);
             while (stringTokenizer.hasMoreTokens()) {
                 String nextToken = stringTokenizer.nextToken();

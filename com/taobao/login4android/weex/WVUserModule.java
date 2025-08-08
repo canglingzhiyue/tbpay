@@ -8,7 +8,7 @@ import android.os.Build;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.exception.RpcException;
@@ -81,7 +81,7 @@ public class WVUserModule extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 UserTrackAdapter.sendUT(str);
             }
         } catch (Exception e) {
@@ -198,12 +198,12 @@ public class WVUserModule extends e {
             return;
         }
         Context context = wVCallBackContext.getWebview().getContext();
-        if (!(context instanceof Activity) || TextUtils.isEmpty(str)) {
+        if (!(context instanceof Activity) || StringUtils.isEmpty(str)) {
             return;
         }
         authCodeCallerUrl = wVCallBackContext.getWebview().getUrl();
         com.alibaba.fastjson.JSONObject parseObject = JSON.parseObject(str);
-        if (TextUtils.isEmpty(parseObject.getString("appkey"))) {
+        if (StringUtils.isEmpty(parseObject.getString("appkey"))) {
             r rVar = new r();
             rVar.a("code", "10021");
             wVCallBackContext.error(rVar);
@@ -229,7 +229,7 @@ public class WVUserModule extends e {
             super.onActivityResult(i, i2, intent);
         } else if (i2 == -1 && intent != null) {
             String stringExtra = intent.getStringExtra("result");
-            if (this.mCallback != null && !TextUtils.isEmpty(stringExtra)) {
+            if (this.mCallback != null && !StringUtils.isEmpty(stringExtra)) {
                 r rVar = new r();
                 rVar.a("authCode", stringExtra);
                 this.mCallback.success(rVar);
@@ -254,7 +254,7 @@ public class WVUserModule extends e {
             return;
         }
         Context context = wVCallBackContext.getWebview().getContext();
-        if ((context instanceof Activity) && !TextUtils.isEmpty(str)) {
+        if ((context instanceof Activity) && !StringUtils.isEmpty(str)) {
             try {
                 url = wVCallBackContext.getWebview().getUrl();
                 getSsoTokenFromRemote(context, wVCallBackContext);
@@ -281,7 +281,7 @@ public class WVUserModule extends e {
             rpcRequest.addParam("riskControlInfo", JSON.toJSONString(SecurityGuardManagerWraper.buildWSecurityData()));
             HashMap hashMap = new HashMap();
             hashMap.put("imei", "");
-            if (!TextUtils.isEmpty(url)) {
+            if (!StringUtils.isEmpty(url)) {
                 hashMap.put("url", URLEncoder.encode(url));
             }
             url = "";

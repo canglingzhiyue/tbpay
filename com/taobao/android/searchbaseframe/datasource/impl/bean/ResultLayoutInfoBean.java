@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.datasource.impl.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class ResultLayoutInfoBean implements Serializable {
         } else if (jSONArray != null) {
             for (int i = 0; i < jSONArray.size(); i++) {
                 String string = jSONArray.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     list.add(string);
                 }
             }

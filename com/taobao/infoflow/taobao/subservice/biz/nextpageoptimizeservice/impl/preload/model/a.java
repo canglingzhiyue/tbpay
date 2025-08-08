@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.nextpageoptimizeservice.impl.preload.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.utils.lang3.ObjectUtils;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseItemModel;
@@ -35,7 +35,7 @@ public class a {
         ArrayList arrayList = new ArrayList();
         for (BaseSectionModel baseSectionModel : list) {
             String a2 = a(baseSectionModel, str);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 PreLoadItem preLoadItem = new PreLoadItem();
                 preLoadItem.setUrl(a2);
                 arrayList.add(preLoadItem);
@@ -72,7 +72,7 @@ public class a {
         }
         for (int i = 0; i < itemCount; i++) {
             BaseSubItemModel mo1094getBaseItemModel = mo1097getItem.mo1094getBaseItemModel(i);
-            if (mo1094getBaseItemModel != null && !ObjectUtils.a(mo1094getBaseItemModel.getExt()) && TextUtils.equals(str, mo1094getBaseItemModel.getExt().getString(DinamicxNativeConfig.TARGETTYPE)) && !TextUtils.equals("true", mo1094getBaseItemModel.getExt().getString("enableSimpleDeliver"))) {
+            if (mo1094getBaseItemModel != null && !ObjectUtils.a(mo1094getBaseItemModel.getExt()) && StringUtils.equals(str, mo1094getBaseItemModel.getExt().getString(DinamicxNativeConfig.TARGETTYPE)) && !StringUtils.equals("true", mo1094getBaseItemModel.getExt().getString("enableSimpleDeliver"))) {
                 return mo1094getBaseItemModel.getTargetUrl();
             }
         }

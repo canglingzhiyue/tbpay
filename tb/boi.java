@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -150,7 +150,7 @@ public class boi extends h {
         }
         new b().handleEvent(dXEvent, objArr, dXRuntimeContext);
         bkd.a("DinamicXPageEventDispatcherV3", "handleEvent", "handle event by EventChainHandler");
-        if (objArr == null || objArr.length == 0 || TextUtils.isEmpty(objArr[0].toString())) {
+        if (objArr == null || objArr.length == 0 || StringUtils.isEmpty(objArr[0].toString())) {
             return;
         }
         fkg.a(objArr[0].toString(), dXRuntimeContext);

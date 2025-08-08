@@ -1,7 +1,7 @@
 package com.taobao.search.musie.video;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -79,7 +79,7 @@ public class a implements com.taobao.android.weex_uikit.widget.video.c, av, ax {
         if (ipChange instanceof IpChange) {
             return (DWAspectRatio) ipChange.ipc$dispatch("847e8ea9", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return DWAspectRatio.DW_FIT_CENTER;
         }
         char c = 65535;

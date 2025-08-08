@@ -1,13 +1,13 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 
 /* loaded from: classes4.dex */
 public class O0O00o0 {
     public static String O000000o(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {

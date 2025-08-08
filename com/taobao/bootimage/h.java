@@ -1,7 +1,7 @@
 package com.taobao.bootimage;
 
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.triver.triver_shop.newShop.event.ucp.a;
@@ -73,7 +73,7 @@ public class h {
                 return false;
             }
             this.f16685a = jSONObject.getString("popIndexId");
-            if (TextUtils.isEmpty(this.f16685a)) {
+            if (StringUtils.isEmpty(this.f16685a)) {
                 h.a(tiq.BIZ_CODE, keo.i(), keq.UCP_ERROR, null, keq.UCP_POP_INDEX_FAIL, string);
                 AppMonitor.Alarm.commitFail("Page_Topshow", "linkage_pop", "102", string);
             }

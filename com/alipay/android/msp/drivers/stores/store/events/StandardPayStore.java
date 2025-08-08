@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.clients.MspUIClient;
 import com.alipay.android.msp.core.context.MspContext;
@@ -121,11 +121,11 @@ public class StandardPayStore extends LocalEventStore {
                         str = null;
                         str2 = null;
                         for (String str4 : payV2.keySet()) {
-                            if (TextUtils.equals(str4, "resultStatus")) {
+                            if (StringUtils.equals(str4, "resultStatus")) {
                                 str3 = payV2.get(str4);
-                            } else if (TextUtils.equals(str4, "result")) {
+                            } else if (StringUtils.equals(str4, "result")) {
                                 str2 = payV2.get(str4);
-                            } else if (TextUtils.equals(str4, "memo")) {
+                            } else if (StringUtils.equals(str4, "memo")) {
                                 str = payV2.get(str4);
                             }
                         }

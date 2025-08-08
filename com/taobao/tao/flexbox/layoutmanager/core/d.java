@@ -2,7 +2,7 @@ package com.taobao.tao.flexbox.layoutmanager.core;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -115,7 +115,7 @@ public abstract class d<V extends View, P extends ogl, D extends Drawable> exten
             return ((Boolean) ipChange.ipc$dispatch("5e62ddc", new Object[]{this})).booleanValue();
         }
         aa J = this.node.J();
-        return J != null && !checkViewAttrs() && this.viewParams.aI == null && this.viewParams.aT == 1.0f && this.viewParams.aY == null && this.viewParams.ba && !this.viewParams.aZ && !this.viewParams.be && this.viewParams.bg == 0 && this.viewParams.bk == null && this.viewParams.bl == 0.0f && this.viewParams.bm == 0.0f && this.viewParams.bn == 0.0f && this.viewParams.bo == 0.0f && this.viewParams.bp == 0.0f && this.viewParams.bq == 1.0f && this.viewParams.br == 1.0f && this.viewParams.bs == null && this.viewParams.bA == null && TextUtils.isEmpty(this.viewParams.bc) && TextUtils.isEmpty(this.viewParams.bd) && J.I() != null && !(J.I() instanceof g) && !(J.I() instanceof z) && !(J.I() instanceof ah) && !isScrollViewDescendant() && !(J.I() instanceof PopLayerComponent);
+        return J != null && !checkViewAttrs() && this.viewParams.aI == null && this.viewParams.aT == 1.0f && this.viewParams.aY == null && this.viewParams.ba && !this.viewParams.aZ && !this.viewParams.be && this.viewParams.bg == 0 && this.viewParams.bk == null && this.viewParams.bl == 0.0f && this.viewParams.bm == 0.0f && this.viewParams.bn == 0.0f && this.viewParams.bo == 0.0f && this.viewParams.bp == 0.0f && this.viewParams.bq == 1.0f && this.viewParams.br == 1.0f && this.viewParams.bs == null && this.viewParams.bA == null && StringUtils.isEmpty(this.viewParams.bc) && StringUtils.isEmpty(this.viewParams.bd) && J.I() != null && !(J.I() instanceof g) && !(J.I() instanceof z) && !(J.I() instanceof ah) && !isScrollViewDescendant() && !(J.I() instanceof PopLayerComponent);
     }
 
     private boolean isScrollViewDescendant() {

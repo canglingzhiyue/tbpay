@@ -1,6 +1,6 @@
 package com.taobao.downloader.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -54,10 +54,10 @@ public class b implements f {
             return;
         }
         String config = OrangeConfig.getInstance().getConfig(GROUP, "predownload_tasks_version", "");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             config = OrangeConfig.getInstance().getConfig(GROUP, "predownload_tasks", "");
         }
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             kmv.b(TAG, "read config is null", new Object[0]);
             return;
         }
@@ -69,7 +69,7 @@ public class b implements f {
         } catch (Throwable unused) {
         }
         String config2 = OrangeConfig.getInstance().getConfig(GROUP, "boost_biz", "");
-        if (TextUtils.isEmpty(config2)) {
+        if (StringUtils.isEmpty(config2)) {
             return;
         }
         com.taobao.downloader.a.r = config2;

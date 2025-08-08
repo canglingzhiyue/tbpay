@@ -1,6 +1,6 @@
 package com.tmall.android.dai.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.internal.config.Config;
@@ -146,7 +146,7 @@ public class i extends g {
         }
         ArrayList arrayList = new ArrayList();
         for (String str : list) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 arrayList.add(new g.a(str));
             }
         }
@@ -165,7 +165,7 @@ public class i extends g {
         }
         HashMap hashMap = new HashMap();
         for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey()) && (value = entry.getValue()) != null && value.size() > 0 && (b = b(value)) != null && b.size() > 0) {
+            if (!StringUtils.isEmpty(entry.getKey()) && (value = entry.getValue()) != null && value.size() > 0 && (b = b(value)) != null && b.size() > 0) {
                 hashMap.put(entry.getKey(), b);
             }
         }

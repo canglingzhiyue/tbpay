@@ -1,7 +1,7 @@
 package com.taobao.android.launcher.biz.task;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ public class k {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bf98bf8e", new Object[]{str, iVar})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && iVar != null) {
+        if (!StringUtils.isEmpty(str) && iVar != null) {
             return LauncherRuntime.a(new e(str) { // from class: com.taobao.android.launcher.biz.task.k.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

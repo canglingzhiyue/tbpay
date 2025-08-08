@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -184,9 +184,9 @@ public class iok {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
         if (str2 == null) {
-            return TextUtils.isEmpty(str);
+            return StringUtils.isEmpty(str);
         }
-        return TextUtils.equals(str2, str);
+        return StringUtils.equals(str2, str);
     }
 
     private void e() {
@@ -213,7 +213,7 @@ public class iok {
             JSONObject jSONObject4 = adjustModel.getJSONObject(i);
             if (jSONObject4 != null && !jSONObject4.isEmpty() && (jSONObject2 = jSONObject4.getJSONObject(KEY_PRICE_SECTION)) != null && !jSONObject2.isEmpty()) {
                 String string = jSONObject4.getString(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH);
-                if (TextUtils.isEmpty(jSONObject4.getString("skuId")) && TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(jSONObject4.getString("skuId")) && StringUtils.isEmpty(string)) {
                     jSONObject.put(KEY_PRICE_SECTION, (Object) jSONObject2);
                     return;
                 }

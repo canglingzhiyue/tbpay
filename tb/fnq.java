@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.exception.DinamicException;
 import com.taobao.android.dinamic.f;
@@ -56,7 +56,7 @@ public class fnq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("28cde57e", new Object[]{str, fnlVar});
-        } else if (TextUtils.isEmpty(str) || fnlVar == null) {
+        } else if (StringUtils.isEmpty(str) || fnlVar == null) {
             throw new DinamicException("prefix or parser is null");
         } else {
             if (f28081a.get(str) != null) {
@@ -70,7 +70,7 @@ public class fnq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3db6adbf", new Object[]{str, fnlVar});
-        } else if (TextUtils.isEmpty(str) || fnlVar == null) {
+        } else if (StringUtils.isEmpty(str) || fnlVar == null) {
             throw new DinamicException("prefix or parser is null");
         } else {
             f28081a.put(str, fnlVar);

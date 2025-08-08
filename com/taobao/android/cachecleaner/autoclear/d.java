@@ -3,7 +3,7 @@ package com.taobao.android.cachecleaner.autoclear;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.android.cachecleaner.autoclear.biz.data.BizTaskData;
@@ -211,7 +211,7 @@ public class d {
             return ((Boolean) ipChange.ipc$dispatch("ec608ed4", new Object[]{file, list})).booleanValue();
         }
         String absolutePath = file.getAbsolutePath();
-        if (TextUtils.isEmpty(absolutePath)) {
+        if (StringUtils.isEmpty(absolutePath)) {
             return false;
         }
         for (String str : list) {
@@ -287,7 +287,7 @@ public class d {
             java.io.File r9 = (java.io.File) r9
             return r9
         L18:
-            boolean r0 = android.text.TextUtils.isEmpty(r10)
+            boolean r0 = android.text.StringUtils.isEmpty(r10)
             r1 = 0
             if (r0 == 0) goto L20
             return r1

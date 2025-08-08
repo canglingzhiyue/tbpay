@@ -1,6 +1,6 @@
 package com.ali.user.mobile.login.tasks;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.CommonDataCallback;
@@ -68,7 +68,7 @@ public class FingerTask extends BaseLoginTask {
                         FingerTask.this.loginParam.utPageName = str;
                         FingerTask.this.loginParam.nativeLoginType = FingerTask.this.getLoginType();
                         UserTrackAdapter.sendUT(str, UTConstant.CustomEvent.FINGER_TOKEN_COMMIT, "", FingerTask.this.getLocalLoginType(), LoginComponent.getProperties(FingerTask.this.loginParam));
-                        if (TextUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(FingerTask.this.loginParam.biometricId))) {
+                        if (StringUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(FingerTask.this.loginParam.biometricId))) {
                             FingerTask.this.fail(1601, "指纹登录失败，请换个方式登录", str, commonDataCallback);
                         } else if (ServiceFactory.getService(FingerprintService.class) != null) {
                             ((NavigatorService) ServiceFactory.getService(NavigatorService.class)).fingerLogin(DataProviderFactory.getApplicationContext(), new CommonCallback() { // from class: com.ali.user.mobile.login.tasks.FingerTask.1.1
@@ -82,7 +82,7 @@ public class FingerTask extends BaseLoginTask {
                                         return;
                                     }
                                     String fingerValue = SecurityGuardManagerWraper.getFingerValue(FingerTask.this.loginParam.biometricId);
-                                    if (TextUtils.isEmpty(fingerValue)) {
+                                    if (StringUtils.isEmpty(fingerValue)) {
                                         FingerTask.this.fail(1601, "指纹登录失败，请换个方式登录", str, commonDataCallback);
                                         return;
                                     }

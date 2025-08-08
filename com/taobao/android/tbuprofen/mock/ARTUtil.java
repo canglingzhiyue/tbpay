@@ -1,6 +1,6 @@
 package com.taobao.android.tbuprofen.mock;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.h;
 import com.taobao.android.tbuprofen.log.c;
@@ -37,7 +37,7 @@ public class ARTUtil {
         kge.a(1928237049);
         f15493a = false;
         try {
-            if (!TextUtils.isEmpty(h.b().a("tbuprofen-util"))) {
+            if (!StringUtils.isEmpty(h.b().a("tbuprofen-util"))) {
                 return;
             }
             f15493a = true;

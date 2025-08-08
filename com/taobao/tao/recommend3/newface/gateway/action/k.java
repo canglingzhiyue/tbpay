@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend3.newface.gateway.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.uikit.extend.component.unify.Toast.TBToast;
@@ -32,7 +32,7 @@ public class k implements gke {
             return;
         }
         final String a2 = a(c, jSONObject);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             com.taobao.android.home.component.utils.e.e("NewFaceToastAction", "toastText is empty");
         } else {
             com.taobao.gateway.dispatch.a.b().c(new Runnable() { // from class: com.taobao.tao.recommend3.newface.gateway.action.k.1
@@ -63,11 +63,11 @@ public class k implements gke {
                 return null;
             }
             String string = jSONObject2.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE);
-            if (TextUtils.isEmpty(string) || (jSONObject3 = jSONObject4.getJSONObject(string)) == null) {
+            if (StringUtils.isEmpty(string) || (jSONObject3 = jSONObject4.getJSONObject(string)) == null) {
                 return null;
             }
             String string2 = jSONObject2.getString("toastType");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 return jSONObject3.getString(string2);
             }
             return null;

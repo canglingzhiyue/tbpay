@@ -3,7 +3,7 @@ package com.taobao.android.detail.industry.scene.weex2;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.q;
@@ -129,7 +129,7 @@ public class DIWeex2Module extends MUSModule {
         bag auraWeexInstance = getAuraWeexInstance();
         try {
             com.taobao.android.detail.industry.tool.a.a("DIWeex2Module", "onError:" + str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             JSONObject parseObject = JSONObject.parseObject(str);
@@ -292,7 +292,7 @@ public class DIWeex2Module extends MUSModule {
             }
             String str2 = (String) parseObject.get("skuId");
             String str3 = (String) parseObject.get(g.KEY_PV_PATH);
-            if (TextUtils.isEmpty(str2) && TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2) && StringUtils.isEmpty(str2)) {
                 callError(bVar, "skuId invalid and pvPath invalid");
             } else if (auraWeexInstance != null) {
                 q g = auraWeexInstance.g();

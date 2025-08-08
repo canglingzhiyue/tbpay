@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.support.log.HMSLog;
 import java.io.BufferedReader;
@@ -68,12 +68,12 @@ public abstract class d {
     }
 
     public static String a(Context context) {
-        if (!TextUtils.isEmpty(f7497a)) {
+        if (!StringUtils.isEmpty(f7497a)) {
             return f7497a;
         }
         String b = b(context);
         f7497a = b;
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return f7497a;
         }
         String a2 = a();
@@ -114,7 +114,7 @@ public abstract class d {
         } else {
             parent = context.getFilesDir().getParent();
         }
-        if (TextUtils.isEmpty(parent)) {
+        if (StringUtils.isEmpty(parent)) {
             HMSLog.e("CommFun", "get storage root path of the current user failed.");
         }
         return parent;

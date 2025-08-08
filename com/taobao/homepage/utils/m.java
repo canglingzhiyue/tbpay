@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRenderOptions;
@@ -75,7 +75,7 @@ public class m {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f6b02c72", new Object[]{str, dVar})).booleanValue();
         }
-        if (!n.f() || !TextUtils.equals(str, "coldStart") || dVar == null || (b2 = b()) == null) {
+        if (!n.f() || !StringUtils.equals(str, "coldStart") || dVar == null || (b2 = b()) == null) {
             return false;
         }
         dVar.a(b2.mo2429getData());
@@ -112,10 +112,10 @@ public class m {
         if (a2 == null) {
             return;
         }
-        boolean equals = TextUtils.equals(str2, "loadCache");
+        boolean equals = StringUtils.equals(str2, "loadCache");
         com.taobao.android.home.component.utils.e.e(TAG, "preloadCards isCacheRender ： " + equals + " , cid " + str + " ,threadName : " + Thread.currentThread().getName());
-        boolean equals2 = TextUtils.equals(str2, "scrollNextPage");
-        boolean equals3 = TextUtils.equals(str2, "coldStart");
+        boolean equals2 = StringUtils.equals(str2, "scrollNextPage");
+        boolean equals3 = StringUtils.equals(str2, "coldStart");
         if (!equals && !equals2 && !equals3) {
             return;
         }

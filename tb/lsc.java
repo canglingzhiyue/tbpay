@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class lsc extends kuj {
         if (ipChange instanceof IpChange) {
             return (g) ipChange.ipc$dispatch("64e5757e", new Object[]{this, new Integer(i)});
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             return null;
         }
         IDMComponentsFrameLayout a2 = this.b.a();
@@ -61,7 +61,7 @@ public class lsc extends kuj {
         }
         super.a(gVar, jSONObject, i);
         String a2 = gVar.a();
-        if (com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.f() && !com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.a(this.f30327a) && TextUtils.equals("normal", a2) && hiu.a(jSONObject, true)) {
+        if (com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.f() && !com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.a(this.f30327a) && StringUtils.equals("normal", a2) && hiu.a(jSONObject, true)) {
             a2 = "secKill";
         }
         this.b.a(this.f30327a, (IDMComponentsFrameLayout) gVar.itemView, jSONObject, a2);

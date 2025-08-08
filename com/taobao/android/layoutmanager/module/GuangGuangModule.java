@@ -1,6 +1,6 @@
 package com.taobao.android.layoutmanager.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.aa;
@@ -34,16 +34,16 @@ public class GuangGuangModule {
             int intValue = jSONObject.getIntValue("downloadSize");
             String string4 = jSONObject.getString("userId");
             String string5 = jSONObject.getString("videoChannel");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             HashMap hashMap = new HashMap();
             hashMap.put(MusLiveVideo.ATTR_PLAY_SCENES, string2);
             hashMap.put("from", string3);
-            if (!TextUtils.isEmpty(string4)) {
+            if (!StringUtils.isEmpty(string4)) {
                 hashMap.put("userId", string4);
             }
-            if (!TextUtils.isEmpty(string5)) {
+            if (!StringUtils.isEmpty(string5)) {
                 hashMap.put("videoChannel", string5);
             }
             aa.a(cVar.a(), string, hashMap, intValue, new d() { // from class: com.taobao.android.layoutmanager.module.GuangGuangModule.1

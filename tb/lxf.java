@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.datastructure.a;
@@ -34,7 +34,7 @@ public class lxf {
             return;
         }
         String[] a2 = a(strArr);
-        if (TextUtils.isEmpty(str) || a2 == null || aVar == null) {
+        if (StringUtils.isEmpty(str) || a2 == null || aVar == null) {
             return;
         }
         a(str, aVar, a(str, a2, jSONObject));
@@ -74,7 +74,7 @@ public class lxf {
             return;
         }
         for (String str2 : strArr) {
-            if (TextUtils.equals(str, "PageBack")) {
+            if (StringUtils.equals(str, "PageBack")) {
                 a(str2, jSONObject);
             }
         }
@@ -94,7 +94,7 @@ public class lxf {
         for (String str2 : a2.keySet()) {
             String string = a2.getString(str2);
             jSONObject.put(str2, (Object) a2.getString(str2));
-            if (TextUtils.equals("itemId", str2)) {
+            if (StringUtils.equals("itemId", str2)) {
                 lxn.a(str, string);
             }
         }
@@ -110,7 +110,7 @@ public class lxf {
         }
         ArrayList arrayList = new ArrayList();
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 arrayList.add(str);
             }
         }

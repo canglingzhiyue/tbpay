@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.PriceNode;
@@ -53,13 +53,13 @@ public class fcf extends b {
         }
         if (m.price != null) {
             String str = m.price.priceText;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f27790a = "¥" + a(str);
             }
         }
         if (m.extraPrices != null && !m.extraPrices.isEmpty()) {
             String str2 = m.extraPrices.get(m.extraPrices.size() - 1).priceText;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.b = "¥" + a(str2);
             }
         }
@@ -83,7 +83,7 @@ public class fcf extends b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int i = -1;

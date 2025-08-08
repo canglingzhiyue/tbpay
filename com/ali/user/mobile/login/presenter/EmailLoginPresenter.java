@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login.presenter;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.ability.excutor.ExecutorCenter;
 import com.ali.user.mobile.ability.excutor.ExecutorContext;
 import com.ali.user.mobile.ability.excutor.ExecutorResult;
@@ -90,7 +90,7 @@ public class EmailLoginPresenter extends BaseLoginPresenter {
                     LoginReturnData loginReturnData = (LoginReturnData) rpcResponse.returnValue;
                     if (executorResult != null) {
                         EmailLoginPresenter.this.emailSid = ((LoginReturnData) rpcResponse.returnValue).extMap.get("emailSid");
-                        if (TextUtils.equals(rpcResponse.actionType, "SUCCESS")) {
+                        if (StringUtils.equals(rpcResponse.actionType, "SUCCESS")) {
                             EmailLoginPresenter.this.sendSuccess(true, rpcResponse.code, loginReturnData.extMap, commonUICallback);
                             return;
                         }

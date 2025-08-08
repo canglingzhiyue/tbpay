@@ -1,6 +1,6 @@
 package com.taobao.search.musie.videoscroll;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.HorizontalScrollView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -70,7 +70,7 @@ public class MUSVideoScroll extends Scroller {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7ff29263", new Object[]{this, uINode, str, mUSValue})).booleanValue();
         }
-        if (!TextUtils.equals(str, "autoplay")) {
+        if (!StringUtils.equals(str, "autoplay")) {
             return super.onUpdateAttr(uINode, str, mUSValue);
         }
         if (mUSValue != null) {
@@ -111,7 +111,7 @@ public class MUSVideoScroll extends Scroller {
             ipChange.ipc$dispatch("931d4", new Object[]{this, view, new Integer(i), new Integer(i2), new Integer(i3), new Integer(i4)});
             return;
         }
-        if (!TextUtils.equals("play", super.getNativeState("videostatus"))) {
+        if (!StringUtils.equals("play", super.getNativeState("videostatus"))) {
             super.fireNativeEvent("videocallback", "start");
             if (g.a()) {
                 g.a("fireNativeEvent(Video.VIDEO_CALLBACK, Video.STATUS_START) to require playable status");
@@ -153,7 +153,7 @@ public class MUSVideoScroll extends Scroller {
     @Override // com.taobao.android.weex_uikit.ui.UINode
     public String getNativeState(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d706e02b", new Object[]{this, str}) : (!TextUtils.equals(str, "videostatus") || !isAutoplay()) ? super.getNativeState(str) : "play";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d706e02b", new Object[]{this, str}) : (!StringUtils.equals(str, "videostatus") || !isAutoplay()) ? super.getNativeState(str) : "play";
     }
 
     /* loaded from: classes7.dex */

@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -69,7 +69,7 @@ public class b {
             return (MessageData) ipChange.ipc$dispatch("248eeb32", new Object[]{context});
         }
         MessageData messageData = com.taobao.wireless.link.controller.a.a().f23587a;
-        return TextUtils.isEmpty(messageData.noti_type) ? (MessageData) rkk.a(context).b("message_data", new MessageData()) : messageData;
+        return StringUtils.isEmpty(messageData.noti_type) ? (MessageData) rkk.a(context).b("message_data", new MessageData()) : messageData;
     }
 
     public static void c(Context context) {
@@ -183,7 +183,7 @@ public class b {
             return (RemoteViews) ipChange.ipc$dispatch("1c642bad", new Object[]{context, messageData});
         }
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.notification_bar);
-        if (messageData != null && !TextUtils.isEmpty(messageData.noti_text_title)) {
+        if (messageData != null && !StringUtils.isEmpty(messageData.noti_text_title)) {
             remoteViews.setTextViewText(R.id.tv_name, messageData.noti_text_title);
         }
         if (com.taobao.wireless.link.controller.a.a().e != null) {
@@ -195,13 +195,13 @@ public class b {
         if (com.taobao.wireless.link.controller.a.a().g != null) {
             remoteViews.setImageViewBitmap(R.id.iv_left_logo, com.taobao.wireless.link.controller.a.a().g);
         }
-        if (messageData != null && !TextUtils.isEmpty(messageData.noti_text_hc)) {
+        if (messageData != null && !StringUtils.isEmpty(messageData.noti_text_hc)) {
             remoteViews.setTextViewText(R.id.tv_left_name, messageData.noti_text_hc);
         }
         if (com.taobao.wireless.link.controller.a.a().h != null) {
             remoteViews.setImageViewBitmap(R.id.iv_right_logo, com.taobao.wireless.link.controller.a.a().h);
         }
-        if (messageData != null && !TextUtils.isEmpty(messageData.noti_text_hd)) {
+        if (messageData != null && !StringUtils.isEmpty(messageData.noti_text_hd)) {
             remoteViews.setTextViewText(R.id.tv_right_name, messageData.noti_text_hd);
         }
         return remoteViews;
@@ -398,7 +398,7 @@ public class b {
                     return;
                 }
                 d(context);
-            } else if (!b(0) || TextUtils.isEmpty(b(context).noti_type)) {
+            } else if (!b(0) || StringUtils.isEmpty(b(context).noti_type)) {
             } else {
                 a(context);
             }
@@ -416,14 +416,14 @@ public class b {
         try {
             rkk a2 = rkk.a(rjt.a().f33186a);
             str = com.taobao.wireless.link.controller.a.a().k;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = (String) a2.b("isShowNotifiSwitch", "false");
             }
         } catch (Throwable th) {
             rkg.a("link_tag", "NotificationUtils === isShowSwitch === 获取开关状态异常：" + th.getMessage());
         }
         if (!b(0)) {
-            if (!TextUtils.equals("true", str)) {
+            if (!StringUtils.equals("true", str)) {
                 return false;
             }
         }
@@ -437,10 +437,10 @@ public class b {
         }
         try {
             String str = com.taobao.wireless.link.controller.a.a().j;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = (String) rkk.a(rjt.a().f33186a).b("isShowNotifi", "false");
             }
-            return TextUtils.equals(str, "true");
+            return StringUtils.equals(str, "true");
         } catch (Exception e) {
             rkg.a("link_tag", "NotificationUtils === getSwitchState === 获取开关状态异常：" + e.getMessage());
             return false;

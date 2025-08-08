@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.message.kit.util.BundleSplitUtil;
@@ -67,10 +67,10 @@ public class ActivityJumpUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("24719ae8", new Object[]{context, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !BundleSplitUtil.INSTANCE.isMsgBundleReady() && str.contains(LANDING_URL)) {
+        if (!StringUtils.isEmpty(str) && !BundleSplitUtil.INSTANCE.isMsgBundleReady() && str.contains(LANDING_URL)) {
             try {
                 String queryParameter = Uri.parse(str).getQueryParameter(LANDING_URL);
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     return false;
                 }
                 Nav.from(context).toUri(queryParameter);

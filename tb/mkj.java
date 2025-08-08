@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class mkj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Object obj = this.f31065a.get(str);
@@ -43,7 +43,7 @@ public class mkj {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{this, str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         Object obj = this.f31065a.get(str);
@@ -55,7 +55,7 @@ public class mkj {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123b0c6", new Object[]{this, str, new Long(j)})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return j;
         }
         Object obj = this.f31065a.get(str);
@@ -67,7 +67,7 @@ public class mkj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{this, str, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return z;
         }
         Object obj = this.f31065a.get(str);
@@ -79,7 +79,7 @@ public class mkj {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123a1be", new Object[]{this, str, new Float(f)})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return f;
         }
         Object obj = this.f31065a.get(str);
@@ -91,7 +91,7 @@ public class mkj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f31065a.containsKey(str);
         }
         return false;
@@ -99,7 +99,7 @@ public class mkj {
 
     public <T> T a(String str, T t) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (T) ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, t}) : TextUtils.isEmpty(str) ? t : (T) this.f31065a.get(str);
+        return ipChange instanceof IpChange ? (T) ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, t}) : StringUtils.isEmpty(str) ? t : (T) this.f31065a.get(str);
     }
 
     public Map<String, ?> j() {

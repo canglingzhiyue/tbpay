@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
@@ -89,7 +89,7 @@ public class plj implements plh {
             if (aVar != null && aVar.d() != null) {
                 liveDetailMessinfoResponseData = this.e.d().f();
             }
-            if (liveDetailMessinfoResponseData != null && !TextUtils.isEmpty(liveDetailMessinfoResponseData.snsNick)) {
+            if (liveDetailMessinfoResponseData != null && !StringUtils.isEmpty(liveDetailMessinfoResponseData.snsNick)) {
                 chatMessage.mUserNick = liveDetailMessinfoResponseData.snsNick;
             }
             if (liveDetailMessinfoResponseData != null && liveDetailMessinfoResponseData.visitorIdentity != null) {
@@ -124,7 +124,7 @@ public class plj implements plh {
                     new pky().a(chatMessage);
                     if (optJSONObject != null) {
                         String optString = optJSONObject.optString("tbNick");
-                        if (!TextUtils.isEmpty(optString)) {
+                        if (!StringUtils.isEmpty(optString)) {
                             chatMessage.mUserNick = optString;
                         }
                         chatMessage.isOnScreen = optJSONObject.optBoolean("show", true);
@@ -146,7 +146,7 @@ public class plj implements plh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6dfe77ca", new Object[]{this, new Integer(i), netResponse, obj});
-        } else if (netResponse != null && !TextUtils.isEmpty(netResponse.getRetMsg())) {
+        } else if (netResponse != null && !StringUtils.isEmpty(netResponse.getRetMsg())) {
             d.a(this.c, netResponse.getRetMsg(), 17);
         } else {
             Context context = this.c;
@@ -175,7 +175,7 @@ public class plj implements plh {
         if (u != null && u.broadCaster != null && !u.broadCaster.follow) {
             d = "0";
         }
-        if (chatMessage == null || chatMessage.renders == null || TextUtils.isEmpty(d)) {
+        if (chatMessage == null || chatMessage.renders == null || StringUtils.isEmpty(d)) {
             return;
         }
         chatMessage.renders.put(com.taobao.taolive.room.ui.fanslevel.a.FANS_LEVEL_RENDER, d);

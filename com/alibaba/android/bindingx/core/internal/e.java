@@ -1,7 +1,7 @@
 package com.alibaba.android.bindingx.core.internal;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.android.bindingx.core.internal.s;
@@ -79,7 +79,7 @@ public class e extends AbstractEventHandler implements View.OnTouchListener, s.a
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        View a2 = this.i.b().a(str, TextUtils.isEmpty(this.f) ? this.e : this.f);
+        View a2 = this.i.b().a(str, StringUtils.isEmpty(this.f) ? this.e : this.f);
         if (a2 == null) {
             com.alibaba.android.bindingx.core.h.d("[RotationHandler] onCreate failed. sourceView not found:" + str);
             return false;
@@ -95,7 +95,7 @@ public class e extends AbstractEventHandler implements View.OnTouchListener, s.a
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
-        View a2 = this.i.b().a(str, TextUtils.isEmpty(this.f) ? this.e : this.f);
+        View a2 = this.i.b().a(str, StringUtils.isEmpty(this.f) ? this.e : this.f);
         com.alibaba.android.bindingx.core.h.b("remove touch listener success.[" + str + "," + str2 + riy.ARRAY_END_STR);
         if (a2 == null) {
             return false;

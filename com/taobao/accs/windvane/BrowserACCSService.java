@@ -3,7 +3,7 @@ package com.taobao.accs.windvane;
 import android.content.Intent;
 import android.taobao.windvane.extra.jsbridge.WVACCSService;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.TaoBaseService;
@@ -63,7 +63,7 @@ public class BrowserACCSService extends WVACCSService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("694255fc", new Object[]{this, str, str2, str3, bArr, extraInfo});
-        } else if (!TextUtils.isEmpty(str) && l.a(this, 1, str)) {
+        } else if (!StringUtils.isEmpty(str) && l.a(this, 1, str)) {
             try {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("serviceId", str);

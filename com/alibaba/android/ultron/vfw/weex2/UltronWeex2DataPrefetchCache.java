@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
@@ -49,7 +49,7 @@ public class UltronWeex2DataPrefetchCache {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6635bcfe", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             jqh.a(new Runnable() { // from class: com.alibaba.android.ultron.vfw.weex2.UltronWeex2DataPrefetchCache.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -68,9 +68,9 @@ public class UltronWeex2DataPrefetchCache {
                             lruCache = new LruCache(10);
                         }
                         String e = UltronWeex2DataPrefetchCache.b(UltronWeex2DataPrefetchCache.this).e(str);
-                        JSONObject parseObject = !TextUtils.isEmpty(e) ? JSONObject.parseObject(e) : new JSONObject();
+                        JSONObject parseObject = !StringUtils.isEmpty(e) ? JSONObject.parseObject(e) : new JSONObject();
                         for (String str2 : jSONObject.keySet()) {
-                            if (!TextUtils.isEmpty(str2) && (jSONObject2 = jSONObject.getJSONObject(str2)) != null) {
+                            if (!StringUtils.isEmpty(str2) && (jSONObject2 = jSONObject.getJSONObject(str2)) != null) {
                                 lruCache.put(str2, jSONObject2);
                                 parseObject.put(str2, (Object) jSONObject2);
                             }
@@ -94,7 +94,7 @@ public class UltronWeex2DataPrefetchCache {
         } catch (Throwable th) {
             jqg.b("UltronWeex2DataPrefetchCache.getCache", th.toString());
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             Pair<JSONObject, String> c = c(str, str2);
             if (c != null && c.first != null) {
                 return c;
@@ -114,7 +114,7 @@ public class UltronWeex2DataPrefetchCache {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             e(str, str2);
             f(str, str2);
@@ -125,7 +125,7 @@ public class UltronWeex2DataPrefetchCache {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f2751a.remove(str);
             a().c(str);
@@ -180,7 +180,7 @@ public class UltronWeex2DataPrefetchCache {
             return new Pair<>(null, CacheType.UNREQUESTED.name());
         }
         String e = a().e(str);
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             return new Pair<>(null, CacheType.UNREQUESTED.name());
         }
         try {
@@ -223,7 +223,7 @@ public class UltronWeex2DataPrefetchCache {
         } else if (!a().b(str)) {
         } else {
             String e = a().e(str);
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 return;
             }
             try {

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +34,7 @@ public class b {
             }
             StringBuilder sb = new StringBuilder();
             for (String str3 : list) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     sb.append(str);
                     sb.append(str2);
                     sb.append(str3);

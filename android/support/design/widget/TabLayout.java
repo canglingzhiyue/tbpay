@@ -22,7 +22,7 @@ import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.TooltipCompat;
 import android.text.Layout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -363,7 +363,7 @@ public class TabLayout extends HorizontalScrollView {
                 }
                 imageView.setContentDescription(h);
             }
-            boolean z = !TextUtils.isEmpty(e);
+            boolean z = !StringUtils.isEmpty(e);
             if (textView != null) {
                 if (z) {
                     textView.setText(e);
@@ -872,7 +872,7 @@ public class TabLayout extends HorizontalScrollView {
         if (tabItem.mCustomLayout != 0) {
             newTab.a(tabItem.mCustomLayout);
         }
-        if (!TextUtils.isEmpty(tabItem.getContentDescription())) {
+        if (!StringUtils.isEmpty(tabItem.getContentDescription())) {
             newTab.b(tabItem.getContentDescription());
         }
         addTab(newTab);
@@ -1011,7 +1011,7 @@ public class TabLayout extends HorizontalScrollView {
         while (true) {
             if (i < size) {
                 d dVar = this.mTabs.get(i);
-                if (dVar != null && dVar.c() != null && !TextUtils.isEmpty(dVar.e())) {
+                if (dVar != null && dVar.c() != null && !StringUtils.isEmpty(dVar.e())) {
                     z = true;
                     break;
                 }

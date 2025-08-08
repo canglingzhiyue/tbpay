@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -34,9 +34,9 @@ public class ntg {
         ntgVar.c = jSONObject.getString("backgroundImage");
         ntgVar.d = jSONObject.getString("backgroundColor");
         String string = jSONObject.getString("statusBarStyle");
-        if (TextUtils.equals(string, "light")) {
+        if (StringUtils.equals(string, "light")) {
             ntgVar.f = 10002;
-        } else if (TextUtils.equals(string, "dark")) {
+        } else if (StringUtils.equals(string, "dark")) {
             ntgVar.f = 10001;
         } else {
             ntgVar.f = 10000;

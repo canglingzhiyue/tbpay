@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -37,7 +37,7 @@ public class kzg extends h {
                 return;
             }
             String obj = objArr[0] == null ? null : objArr[0].toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 c.a("DXPopMessage ", "messageId is empty");
                 return;
             }

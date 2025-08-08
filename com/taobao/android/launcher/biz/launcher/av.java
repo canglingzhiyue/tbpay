@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
@@ -263,7 +263,7 @@ public class av extends com.taobao.android.launcher.biz.task.j {
                     String str2 = "saveAgooConfig fail:" + e.toString();
                 }
             }
-            if (TextUtils.equals(str, "default")) {
+            if (StringUtils.equals(str, "default")) {
                 return;
             }
             SharedPreferences.Editor edit = this.f13027a.getSharedPreferences(Constants.SP_FILE_NAME, 0).edit();
@@ -326,7 +326,7 @@ public class av extends com.taobao.android.launcher.biz.task.j {
                 return;
             }
             String a2 = a(this.f13027a);
-            if (TextUtils.isEmpty(a2) || TextUtils.equals(a2, "default")) {
+            if (StringUtils.isEmpty(a2) || StringUtils.equals(a2, "default")) {
                 return;
             }
             try {

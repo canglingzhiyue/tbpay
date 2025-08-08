@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.http.RequestMethodConstants;
 import com.alipay.mobile.common.transport.http.ZNetworkHttpEntityWrapper;
 import com.alipay.mobile.common.transport.http.method.HttpGetExt;
@@ -27,31 +27,31 @@ public final class RequestMethodUtils {
         if (ipChange instanceof IpChange) {
             return (HttpUriRequest) ipChange.ipc$dispatch("94927d1b", new Object[]{httpEntity, str, uri});
         }
-        if (TextUtils.equals(str, "PUT")) {
+        if (StringUtils.equals(str, "PUT")) {
             HttpPut httpPut = new HttpPut(uri);
             if (httpEntity != null) {
                 httpPut.setEntity(new ZNetworkHttpEntityWrapper(httpEntity));
             }
             return httpPut;
-        } else if (TextUtils.equals(str, "POST")) {
+        } else if (StringUtils.equals(str, "POST")) {
             HttpPost httpPost = new HttpPost(uri);
             if (httpEntity != null) {
                 httpPost.setEntity(new ZNetworkHttpEntityWrapper(httpEntity));
             }
             return httpPost;
-        } else if (TextUtils.equals(str, "HEAD")) {
+        } else if (StringUtils.equals(str, "HEAD")) {
             return new HttpHead(uri);
         } else {
-            if (TextUtils.equals(str, "DELETE")) {
+            if (StringUtils.equals(str, "DELETE")) {
                 return new HttpDelete(uri);
             }
-            if (TextUtils.equals(str, "OPTIONS")) {
+            if (StringUtils.equals(str, "OPTIONS")) {
                 return new HttpOptions(uri);
             }
-            if (TextUtils.equals(str, RequestMethodConstants.TRACE_METHOD)) {
+            if (StringUtils.equals(str, RequestMethodConstants.TRACE_METHOD)) {
                 return new HttpTrace(uri);
             }
-            if (TextUtils.equals(str, "GET")) {
+            if (StringUtils.equals(str, "GET")) {
                 return new HttpGet(uri);
             }
             if (httpEntity != null) {

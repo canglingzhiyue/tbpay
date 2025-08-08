@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.Map;
@@ -25,7 +25,7 @@ public final class awx extends aqm {
         String str = map.get("namespace");
         String str2 = map.get("key");
         String str3 = map.get("default");
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return Boolean.parseBoolean(str3);
         }
         try {

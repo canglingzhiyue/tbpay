@@ -5,7 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -125,7 +125,7 @@ public class FaceAuthDialog extends IBiometricValidateNewDialog {
             }
         });
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_SWITCH);
-        if (!TextUtils.isEmpty(clientText)) {
+        if (!StringUtils.isEmpty(clientText)) {
             this.e.setText(clientText);
         }
         this.d.setOnClickListener(new View.OnClickListener() { // from class: com.alipay.android.phone.seauthenticator.iotauth.face.FaceAuthDialog.2
@@ -192,7 +192,7 @@ public class FaceAuthDialog extends IBiometricValidateNewDialog {
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_NOT_MATCH);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.face_auth_not_match);
         }
         updateMsg(clientText, 0, -65536);
@@ -206,7 +206,7 @@ public class FaceAuthDialog extends IBiometricValidateNewDialog {
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_OVER_COUNT);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.face_auth_over_count);
         }
         updateMsg(clientText, 0, -65536);
@@ -220,7 +220,7 @@ public class FaceAuthDialog extends IBiometricValidateNewDialog {
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_SUCCESS);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.face_auth_success);
         }
         updateMsg(clientText, 0, -16777216);
@@ -234,7 +234,7 @@ public class FaceAuthDialog extends IBiometricValidateNewDialog {
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_FAILURE);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.face_auth_fail);
         }
         updateMsg(clientText, 0, -65536);
@@ -248,7 +248,7 @@ public class FaceAuthDialog extends IBiometricValidateNewDialog {
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_PROCESSING);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.face_auth_processing);
         }
         updateMsg(clientText, 200, -16777216);
@@ -259,7 +259,7 @@ public class FaceAuthDialog extends IBiometricValidateNewDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.b == null || TextUtils.isEmpty(str)) {
+        } else if (this.b == null || StringUtils.isEmpty(str)) {
         } else {
             this.b.postDelayed(new Runnable() { // from class: com.alipay.android.phone.seauthenticator.iotauth.face.FaceAuthDialog.4
                 public static volatile transient /* synthetic */ IpChange $ipChange;

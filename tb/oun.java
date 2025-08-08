@@ -2,7 +2,7 @@ package tb;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -28,7 +28,7 @@ public class oun {
             final String text = bubbleTipsBean.getText();
             try {
                 final int parseInt = Integer.parseInt(index);
-                if (TextUtils.isEmpty(text) || parseInt < 0) {
+                if (StringUtils.isEmpty(text) || parseInt < 0) {
                     return;
                 }
                 recyclerView.post(new Runnable() { // from class: tb.oun.1

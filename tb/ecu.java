@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collections;
 import java.util.List;
@@ -129,7 +129,7 @@ public class ecu {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (ab != null && !TextUtils.isEmpty(str)) {
+        if (ab != null && !StringUtils.isEmpty(str)) {
             return ab.contains(str);
         }
         return false;

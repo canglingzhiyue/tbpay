@@ -1,7 +1,7 @@
 package com.alipay.zoloz.toyger.bean;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.biometrics.common.proguard.INotProguard;
 import com.alipay.mobile.security.bio.config.BisRuntimeInfoEnum;
 import com.alipay.mobile.security.bio.config.BisSdkModuleEnum;
@@ -45,7 +45,7 @@ public class ZFaceMetaInfo extends BioMetaInfo implements INotProguard {
         bioServiceDescription2.setClazz(ToygerIspService.class);
         bioServiceDescription2.setInterfaceName(ToygerIspService.class.getName());
         addExtService(bioServiceDescription2);
-        if (TextUtils.equals("Cherry", "Cherry")) {
+        if (StringUtils.equals("Cherry", "Cherry")) {
             addProductID(Long.valueOf(BisSdkModuleEnum.SME_DARK.getProductID()));
         }
         if (ToygerMetaInfo.isGemini()) {
@@ -95,7 +95,7 @@ public class ZFaceMetaInfo extends BioMetaInfo implements INotProguard {
         }
         if (Runtime.checkBioResWhenUpdate(context.getApplicationContext())) {
             arrayList.add(Long.valueOf(BisSdkModuleEnum.SME_PANO.getProductID()));
-            if (TextUtils.equals("Cherry", "Cherry")) {
+            if (StringUtils.equals("Cherry", "Cherry")) {
                 arrayList.add(Long.valueOf(BisSdkModuleEnum.SME_GARFI.getProductID()));
             }
             arrayList.add(Long.valueOf(BisSdkModuleEnum.SME_ZFACE_CHERRY.getProductID()));

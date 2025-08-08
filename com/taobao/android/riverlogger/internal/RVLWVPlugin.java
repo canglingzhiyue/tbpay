@@ -5,7 +5,7 @@ import android.os.Looper;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.h;
@@ -44,7 +44,7 @@ public class RVLWVPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "openRemote")) {
+        if (StringUtils.equals(str, "openRemote")) {
             JSONObject a2 = b.a(str2);
             String str4 = null;
             if (a2 != null) {
@@ -94,7 +94,7 @@ public class RVLWVPlugin extends e {
                 }
             });
             return true;
-        } else if (TextUtils.equals(str, "postLocalMessage")) {
+        } else if (StringUtils.equals(str, "postLocalMessage")) {
             getLocalChannel().a(b.a(str2), new com.taobao.android.riverlogger.inspector.h() { // from class: com.taobao.android.riverlogger.internal.RVLWVPlugin.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -123,7 +123,7 @@ public class RVLWVPlugin extends e {
                 }
             });
             return true;
-        } else if (!TextUtils.equals(str, "subscribeLocalMessage")) {
+        } else if (!StringUtils.equals(str, "subscribeLocalMessage")) {
             return false;
         } else {
             getLocalChannel().b(b.a(str2), new com.taobao.android.riverlogger.inspector.h() { // from class: com.taobao.android.riverlogger.internal.RVLWVPlugin.3

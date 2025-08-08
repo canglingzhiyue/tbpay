@@ -2,7 +2,7 @@ package com.taobao.taobaoavsdk.cache.library;
 
 import android.net.Uri;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import anet.channel.util.HttpHelper;
 import anetwork.channel.Network;
@@ -474,7 +474,7 @@ public class k implements q {
             return;
         }
         l lVar = this.l;
-        if (lVar == null || (a2 = lVar.a(this.b)) == null || TextUtils.isEmpty(a2.b()) || a2.a() == -2147483648L || this.e == a2.a()) {
+        if (lVar == null || (a2 = lVar.a(this.b)) == null || StringUtils.isEmpty(a2.b()) || a2.a() == -2147483648L || this.e == a2.a()) {
             return;
         }
         this.g = a2.b();
@@ -618,7 +618,7 @@ public class k implements q {
                     this.u = j2;
                 }
             }
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 requestImpl.addHeader(HttpConstant.USER_AGENT, this.h);
             }
             if (i > 0) {
@@ -638,10 +638,10 @@ public class k implements q {
             if (i7 > 0) {
                 requestImpl.setRetryTime(i7);
             }
-            if (!TextUtils.isEmpty(this.o)) {
+            if (!StringUtils.isEmpty(this.o)) {
                 requestImpl.setBizId(this.o);
             }
-            if (this.t && !TextUtils.isEmpty(this.j)) {
+            if (this.t && !StringUtils.isEmpty(this.j)) {
                 requestImpl.addHeader("f-biz-req-id", this.j);
             }
             this.T = System.currentTimeMillis();
@@ -664,7 +664,7 @@ public class k implements q {
                 if (this.s != null) {
                     try {
                         String singleHeaderFieldByKey = HttpHelper.getSingleHeaderFieldByKey(connection.getConnHeadFields(), HttpConstant.X_CACHE);
-                        if (!TextUtils.isEmpty(singleHeaderFieldByKey)) {
+                        if (!StringUtils.isEmpty(singleHeaderFieldByKey)) {
                             this.s.a(HttpConstant.X_CACHE, singleHeaderFieldByKey);
                         }
                     } catch (Exception unused) {
@@ -703,7 +703,7 @@ public class k implements q {
                 requestImpl.setConnectTimeout(i);
                 requestImpl.setReadTimeout(i);
             }
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 requestImpl.addHeader(HttpConstant.USER_AGENT, this.h);
             }
             connection = this.k.getConnection(requestImpl, null);
@@ -753,7 +753,7 @@ public class k implements q {
         int i3 = 0;
         while (true) {
             Uri parse = Uri.parse(str);
-            if (!TextUtils.isEmpty(this.n) && !str.startsWith("https")) {
+            if (!StringUtils.isEmpty(this.n) && !str.startsWith("https")) {
                 str = str.replaceFirst(parse.getHost(), this.n);
             }
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "openConnection " + str + ", " + this);
@@ -790,10 +790,10 @@ public class k implements q {
                 httpURLConnection.setConnectTimeout(i);
                 httpURLConnection.setReadTimeout(i);
             }
-            if (!TextUtils.isEmpty(this.n)) {
+            if (!StringUtils.isEmpty(this.n)) {
                 httpURLConnection.setRequestProperty(HttpConstant.HOST, parse.getHost());
             }
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 httpURLConnection.setRequestProperty(HttpConstant.USER_AGENT, this.h);
             }
             int responseCode = httpURLConnection.getResponseCode();
@@ -826,7 +826,7 @@ public class k implements q {
 
     private String a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) ? str : str2.startsWith("/") ? com.taobao.taobaoavsdk.util.b.a(str, str2) : str2;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) ? str : str2.startsWith("/") ? com.taobao.taobaoavsdk.util.b.a(str, str2) : str2;
     }
 
     private HttpURLConnection e(int i) throws IOException, ProxyCacheException {
@@ -840,7 +840,7 @@ public class k implements q {
         int i2 = 0;
         do {
             Uri parse = Uri.parse(str);
-            if (!TextUtils.isEmpty(this.n)) {
+            if (!StringUtils.isEmpty(this.n)) {
                 str = str.replaceFirst(parse.getHost(), this.n);
             }
             httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
@@ -849,10 +849,10 @@ public class k implements q {
                 httpURLConnection.setConnectTimeout(i);
                 httpURLConnection.setReadTimeout(i);
             }
-            if (!TextUtils.isEmpty(this.n)) {
+            if (!StringUtils.isEmpty(this.n)) {
                 httpURLConnection.setRequestProperty(HttpConstant.HOST, parse.getHost());
             }
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 httpURLConnection.setRequestProperty(HttpConstant.USER_AGENT, this.h);
             }
             int responseCode = httpURLConnection.getResponseCode();
@@ -883,10 +883,10 @@ public class k implements q {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("50938a53", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             l();
         }
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             j();
         }
         return this.g;
@@ -897,7 +897,7 @@ public class k implements q {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fe3ba4ac", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             l();
         }
         return this.g;
@@ -928,7 +928,7 @@ public class k implements q {
         } else if (dVar != null) {
             try {
                 String a2 = dVar.a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 String[] split = a2.split(",");

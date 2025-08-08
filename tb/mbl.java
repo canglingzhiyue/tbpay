@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.linkback.d;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
@@ -87,11 +87,11 @@ public class mbl {
                 return;
             }
             String simpleName = activity.getClass().getSimpleName();
-            if (TextUtils.equals(Welcome.class.getSimpleName(), simpleName) || !TbFcLinkInit.instance().isAfcLink) {
+            if (StringUtils.equals(Welcome.class.getSimpleName(), simpleName) || !TbFcLinkInit.instance().isAfcLink) {
                 return;
             }
             c.a("linkx", "TbNavCenter === onActivityResumed:" + simpleName + " === 页面不相同，关闭海关中转页面");
-            if (TextUtils.isEmpty(mbl.a(mbl.this)) || !e.b(Uri.parse(mbl.a(mbl.this)))) {
+            if (StringUtils.isEmpty(mbl.a(mbl.this)) || !e.b(Uri.parse(mbl.a(mbl.this)))) {
                 mbm.a();
             }
             TbFcLinkInit.instance().mApplication.unregisterActivityLifecycleCallbacks(mbl.b(mbl.this));
@@ -134,13 +134,13 @@ public class mbl {
         lyq.a().a(str);
         try {
             String str2 = aVar.F;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 d.a().a(str2);
             }
         } catch (Exception e) {
             c.b("linkx", "TbNavCenter === navToPage: afcBackUrl处理异常：" + e);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             TFCCommonUtils.a((Context) TbFcLinkInit.instance().mApplication);
             c.a("linkx", "TbNavCenter === navToPage: landingUrl为空，跳到首页");
             return;
@@ -154,7 +154,7 @@ public class mbl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             d.a().c();
         } else {
             d.a().a(str);
@@ -189,10 +189,10 @@ public class mbl {
         }
         try {
             String a2 = b.a().a("isSendLandingDataAvailable", "true");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = f.a(context).a("flow_customs_in_local").get("isSendLandingDataAvailable");
             }
-            return TextUtils.equals("true", a2);
+            return StringUtils.equals("true", a2);
         } catch (Exception e) {
             c.b("linkx", "TbNavCenter === isSendLandingDataAvailable === 异常" + e);
             return false;

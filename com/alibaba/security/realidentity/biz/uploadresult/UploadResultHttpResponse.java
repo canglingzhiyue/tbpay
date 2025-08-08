@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity.biz.uploadresult;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.model.HttpResponse;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -24,7 +24,7 @@ public class UploadResultHttpResponse extends HttpResponse {
 
         public boolean isSuccess() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6049a784", new Object[]{this})).booleanValue() : TextUtils.equals("UPLOAD_STATUS_SUCCESS", this.name);
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6049a784", new Object[]{this})).booleanValue() : StringUtils.equals("UPLOAD_STATUS_SUCCESS", this.name);
         }
     }
 

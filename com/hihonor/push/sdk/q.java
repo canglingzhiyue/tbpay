@@ -1,6 +1,6 @@
 package com.hihonor.push.sdk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Arrays;
 
 /* loaded from: classes4.dex */
@@ -28,7 +28,7 @@ public class q {
             return true;
         }
         if (obj != null && q.class == obj.getClass()) {
-            return TextUtils.equals(this.f7285a, ((q) obj).f7285a);
+            return StringUtils.equals(this.f7285a, ((q) obj).f7285a);
         }
         return false;
     }

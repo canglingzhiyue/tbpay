@@ -2,7 +2,7 @@ package com.taobao.homepage.pop.view.popview;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -282,7 +282,7 @@ public class BasePopView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("708e292a", new Object[]{this, new Integer(i), str});
-        } else if (!TextUtils.equals(str, this.mPopData.getBusinessID())) {
+        } else if (!StringUtils.equals(str, this.mPopData.getBusinessID())) {
         } else {
             IPopData iPopData = this.mPopData;
             if (iPopData != null && iPopData.getPopConfig().isPopMessage()) {
@@ -550,7 +550,7 @@ public class BasePopView extends FrameLayout {
 
     private boolean shouldProcessAttach(View view, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("af877078", new Object[]{this, view, str})).booleanValue() : (view == null || this.mPopData.getPopConfig().getPoint() == null || !TextUtils.equals(str, this.mPopData.getPopConfig().getPoint().getSectionBizCode())) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("af877078", new Object[]{this, view, str})).booleanValue() : (view == null || this.mPopData.getPopConfig().getPoint() == null || !StringUtils.equals(str, this.mPopData.getPopConfig().getPoint().getSectionBizCode())) ? false : true;
     }
 
     private boolean shouldChangeVisible(IPopConfig iPopConfig, int i) {

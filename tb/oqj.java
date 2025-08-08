@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import com.taobao.android.layoutmanager.module.MtopModule;
@@ -55,7 +55,7 @@ public class oqj {
         }
         AwesomeGetContainerParams awesomeGetContainerParams = awesomeGetRequestParams.containerParams.get(str);
         final String str2 = awesomeGetContainerParams != null ? awesomeGetContainerParams.requestType : null;
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             c = str2;
             if (LauncherRuntime.k == 0) {
                 ksr.c(str2, "firstRequestType");

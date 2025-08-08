@@ -2,7 +2,7 @@ package com.alipay.android.msp.network.decorator;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -69,19 +69,19 @@ public final class RpcRequestDecorator {
             if (requestConfig.ismNeedUa()) {
                 parseObject.put(MspGlobalDefine.UAC, (Object) MspConfig.getInstance().getUserAgentC());
             }
-            if (!TextUtils.isEmpty(requestConfig.getSessionId())) {
+            if (!StringUtils.isEmpty(requestConfig.getSessionId())) {
                 parseObject.put(MspGlobalDefine.SESSION, (Object) requestConfig.getSessionId());
             }
             LogUtil.record(2, AlipaySDKJSBridge.LOG_TAG, "RpcRequestDecorator.getCommonRequestParamsString", "getApdidToken start");
             String apdidToken = PhoneCashierMspEngine.getMspBase().getApdidToken(globalHelper.getContext());
             LogUtil.record(2, AlipaySDKJSBridge.LOG_TAG, "RpcRequestDecorator.getCommonRequestParamsString", "getApdidToken end");
-            if (TextUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
+            if (StringUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
                 parseObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 2));
             } else {
                 parseObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 1));
             }
             String localeDesByFlag = Utils.getLocaleDesByFlag(PhoneCashierMspEngine.getMspBase().getMspLocale(PhoneCashierMspEngine.getMspWallet().getAlipayLocaleDes()));
-            if (!TextUtils.isEmpty(localeDesByFlag)) {
+            if (!StringUtils.isEmpty(localeDesByFlag)) {
                 parseObject.put(MspGlobalDefine.LANG, (Object) localeDesByFlag);
             }
             parseObject.put("tid", (Object) TidStorage.getInstance().getTid());
@@ -109,19 +109,19 @@ public final class RpcRequestDecorator {
         jSONObject.put("method", (Object) requestConfig.getMethod());
         parseObject.put("action", (Object) jSONObject);
         parseObject.put("bp", (Object) PluginManager.getRender().getEngineParams());
-        if (!TextUtils.isEmpty(requestConfig.getSessionId())) {
+        if (!StringUtils.isEmpty(requestConfig.getSessionId())) {
             parseObject.put(MspGlobalDefine.SESSION, (Object) requestConfig.getSessionId());
         }
         parseObject.put("tid", (Object) TidStorage.getInstance().getTid());
-        if (TextUtils.equals(requestConfig.getType(), "channelPropagate") && TextUtils.equals(requestConfig.getMethod(), "consult")) {
+        if (StringUtils.equals(requestConfig.getType(), "channelPropagate") && StringUtils.equals(requestConfig.getMethod(), "consult")) {
             String apdidToken = PhoneCashierMspEngine.getMspBase().getApdidToken(context);
-            if (TextUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
+            if (StringUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
                 parseObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 2));
             } else {
                 parseObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 1));
             }
             String localeDesByFlag = Utils.getLocaleDesByFlag(PhoneCashierMspEngine.getMspBase().getMspLocale(PhoneCashierMspEngine.getMspWallet().getAlipayLocaleDes()));
-            if (!TextUtils.isEmpty(localeDesByFlag)) {
+            if (!StringUtils.isEmpty(localeDesByFlag)) {
                 parseObject.put(MspGlobalDefine.LANG, (Object) localeDesByFlag);
             }
         }
@@ -150,7 +150,7 @@ public final class RpcRequestDecorator {
         LogUtil.record(2, AlipaySDKJSBridge.LOG_TAG, "RpcRequestDecorator.getFirstRequestParamsString", "getApdidToken startPay msms");
         String apdidToken = PhoneCashierMspEngine.getMspBase().getApdidToken(globalHelper.getContext());
         LogUtil.record(2, AlipaySDKJSBridge.LOG_TAG, "RpcRequestDecorator.getFirstRequestParamsString", "getApdidToken end msms");
-        if (TextUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
+        if (StringUtils.isEmpty(apdidToken) || apdidToken.length() <= 15) {
             jSONObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 2));
         } else {
             jSONObject.put(MspGlobalDefine.UA, (Object) MspConfig.getInstance().getUserAgentByType(false, 1));

@@ -1,7 +1,7 @@
 package com.taobao.mytaobao.newsetting;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -47,7 +47,7 @@ public class d {
             return;
         }
         String config = OrangeConfig.getInstance().getConfig("fontSizeSetting", "open", "true");
-        if (!b.a() && !TextUtils.equals(config, "true")) {
+        if (!b.a() && !StringUtils.equals(config, "true")) {
             return;
         }
         if (eVar == null || context == null) {

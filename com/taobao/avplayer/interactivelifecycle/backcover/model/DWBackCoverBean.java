@@ -1,6 +1,6 @@
 package com.taobao.avplayer.interactivelifecycle.backcover.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.triver.triver_shop.newShop.ext.g;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.core.IDWObject;
@@ -89,7 +89,7 @@ public class DWBackCoverBean implements IDWObject {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("375ab3de", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mGoshopUrl) && (jSONObject = this.mData) != null) {
+        if (StringUtils.isEmpty(this.mGoshopUrl) && (jSONObject = this.mData) != null) {
             Object opt = jSONObject.opt("extendsMap");
             String str = null;
             if (opt == null) {
@@ -110,7 +110,7 @@ public class DWBackCoverBean implements IDWObject {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5af8aac5", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mShortKeyId) && (jSONObject = this.mData) != null) {
+        if (StringUtils.isEmpty(this.mShortKeyId) && (jSONObject = this.mData) != null) {
             Object opt = jSONObject.opt("shortKeyId");
             this.mShortKeyId = opt == null ? null : opt.toString();
         }
@@ -173,7 +173,7 @@ public class DWBackCoverBean implements IDWObject {
             return ((Number) ipChange.ipc$dispatch("9ddb71ec", new Object[]{this})).intValue();
         }
         JSONObject jSONObject = this.mData;
-        if (jSONObject != null && (opt = jSONObject.opt("extendsMap")) != null && (opt2 = ((JSONObject) opt).opt("recommendVideos")) != null && (opt2 instanceof JSONObject) && (opt3 = ((JSONObject) opt2).opt("currentPage")) != null && TextUtils.isDigitsOnly(opt3.toString())) {
+        if (jSONObject != null && (opt = jSONObject.opt("extendsMap")) != null && (opt2 = ((JSONObject) opt).opt("recommendVideos")) != null && (opt2 instanceof JSONObject) && (opt3 = ((JSONObject) opt2).opt("currentPage")) != null && StringUtils.isDigitsOnly(opt3.toString())) {
             return Integer.valueOf(opt3.toString()).intValue();
         }
         return 0;
@@ -188,7 +188,7 @@ public class DWBackCoverBean implements IDWObject {
             return ((Number) ipChange.ipc$dispatch("2822d620", new Object[]{this})).intValue();
         }
         JSONObject jSONObject = this.mData;
-        if (jSONObject != null && (opt = jSONObject.opt("extendsMap")) != null && (opt instanceof JSONObject) && (opt2 = ((JSONObject) opt).opt("recommendVideos")) != null && (opt2 instanceof JSONObject) && (opt3 = ((JSONObject) opt2).opt("pageSize")) != null && TextUtils.isDigitsOnly(opt3.toString())) {
+        if (jSONObject != null && (opt = jSONObject.opt("extendsMap")) != null && (opt instanceof JSONObject) && (opt2 = ((JSONObject) opt).opt("recommendVideos")) != null && (opt2 instanceof JSONObject) && (opt3 = ((JSONObject) opt2).opt("pageSize")) != null && StringUtils.isDigitsOnly(opt3.toString())) {
             return Integer.valueOf(opt3.toString()).intValue();
         }
         return 0;
@@ -208,7 +208,7 @@ public class DWBackCoverBean implements IDWObject {
                 return 0;
             }
             Object opt3 = ((JSONObject) opt2).opt("recommendVideos");
-            if (opt3 != null && (opt3 instanceof JSONObject) && (opt = ((JSONObject) opt3).opt("total")) != null && TextUtils.isDigitsOnly(opt.toString())) {
+            if (opt3 != null && (opt3 instanceof JSONObject) && (opt = ((JSONObject) opt3).opt("total")) != null && StringUtils.isDigitsOnly(opt.toString())) {
                 i = Integer.valueOf(opt.toString()).intValue();
             }
         }

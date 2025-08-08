@@ -9,7 +9,7 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -277,11 +277,11 @@ public class NavBarPlugin extends AbsFBPlugin implements IEventSubscriber {
                                     if (mspUIClient.getCurrentPresenter() != null && mspUIClient.getCurrentPresenter().mo545getIView() != null) {
                                         NavBarPlugin.access$202(NavBarPlugin.this, mspUIClient.getCurrentPresenter().getActivity().findViewById(R.id.rl_nav_bar));
                                         String str3 = string4;
-                                        if (TextUtils.isEmpty(str3)) {
+                                        if (StringUtils.isEmpty(str3)) {
                                             str3 = "#ffffff";
                                         }
                                         NavBarPlugin.access$300(NavBarPlugin.this, string, navBarClickAction);
-                                        if (!TextUtils.isEmpty(string5)) {
+                                        if (!StringUtils.isEmpty(string5)) {
                                             final ImageView imageView = new ImageView(NavBarPlugin.access$400(NavBarPlugin.this));
                                             imageView.setLayoutParams(new ViewGroup.LayoutParams(1080, 1960));
                                             imageView.setScaleType(ImageView.ScaleType.FIT_START);
@@ -350,16 +350,16 @@ public class NavBarPlugin extends AbsFBPlugin implements IEventSubscriber {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("130bb596", new Object[]{this, str, navBarClickAction});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject parseObject = JSON.parseObject(str);
             if (!parseObject.containsKey("type")) {
                 return;
             }
             String string = parseObject.getString("type");
-            if (TextUtils.equals(string, "text")) {
+            if (StringUtils.equals(string, "text")) {
                 this.mNavBarView.findViewById(R.id.nav_left_imageview).setVisibility(8);
-            } else if (!TextUtils.equals(string, "image") || !parseObject.containsKey("image")) {
+            } else if (!StringUtils.equals(string, "image") || !parseObject.containsKey("image")) {
             } else {
                 this.mNavBarView.findViewById(R.id.nav_left_textview).setVisibility(8);
                 ImageView imageView = (ImageView) this.mNavBarView.findViewById(R.id.nav_left_imageview);
@@ -585,7 +585,7 @@ public class NavBarPlugin extends AbsFBPlugin implements IEventSubscriber {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3897928", new Object[]{this, str, obj});
-        } else if (!TextUtils.equals(str, MspGlobalDefine.EVENT_CONTAINER_FINISH) || this.mBizId != ((Integer) obj).intValue()) {
+        } else if (!StringUtils.equals(str, MspGlobalDefine.EVENT_CONTAINER_FINISH) || this.mBizId != ((Integer) obj).intValue()) {
         } else {
             EventBusManager.getInstance().unregister(this);
             unregisterNavBarReceiver(this.mContext);

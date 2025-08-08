@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.preload;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.l;
@@ -43,25 +43,25 @@ public class PreloadTasksBroadCastReceiver extends BroadcastReceiver {
                 return;
             }
             String stringExtra = intent.getStringExtra(PreloadTaskBroadcastReceiver.START_PRELOAD_TASKS);
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 i.c(l.a("PreloadTasksBroadCastReceiver"), "开始发送预加载请求");
                 c(stringExtra);
                 return;
             }
             String stringExtra2 = intent.getStringExtra("updatePreloadDataSource");
-            if (!TextUtils.isEmpty(stringExtra2)) {
+            if (!StringUtils.isEmpty(stringExtra2)) {
                 i.c(l.a("PreloadTasksBroadCastReceiver"), "开始更新预加载数据源");
                 b(stringExtra2);
                 return;
             }
             String stringExtra3 = intent.getStringExtra("clearPreloadDataSource");
-            if (!TextUtils.isEmpty(stringExtra3)) {
+            if (!StringUtils.isEmpty(stringExtra3)) {
                 i.c(l.a("PreloadTasksBroadCastReceiver"), "开始删除预加载数据源");
                 a(stringExtra3);
                 return;
             }
             String stringExtra4 = intent.getStringExtra("updateBucketId");
-            if (TextUtils.isEmpty(stringExtra4)) {
+            if (StringUtils.isEmpty(stringExtra4)) {
                 return;
             }
             i.c(l.a("PreloadTasksBroadCastReceiver"), "开始更新实验桶号");

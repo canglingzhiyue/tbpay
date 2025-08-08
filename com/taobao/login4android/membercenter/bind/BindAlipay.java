@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.helper.BroadCastHelper;
 import com.ali.user.mobile.callback.RpcRequestCallback;
@@ -101,7 +101,7 @@ public class BindAlipay {
                     return;
                 }
                 MtopAccountCenterUrlResponseData mtopAccountCenterUrlResponseData = (MtopAccountCenterUrlResponseData) rpcResponse;
-                if (mtopAccountCenterUrlResponseData != null && !TextUtils.isEmpty(mtopAccountCenterUrlResponseData.h5Url)) {
+                if (mtopAccountCenterUrlResponseData != null && !StringUtils.isEmpty(mtopAccountCenterUrlResponseData.h5Url)) {
                     BindAlipay.mBindCaller = onBindCaller;
                     BindAlipay.openAccountBindPage(context, mtopAccountCenterUrlResponseData.h5Url + "?" + BindParam.this.toString());
                     return;

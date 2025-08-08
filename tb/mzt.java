@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -61,7 +61,7 @@ public class mzt implements mzs<myy> {
                 hashMap.put(b.substring(10), b2);
             }
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return new mzn(str2, str, hashMap);
         }
         return null;

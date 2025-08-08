@@ -1,6 +1,6 @@
 package com.taobao.avplayer.interactivelifecycle.frontcover.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.core.IDWObject;
@@ -33,7 +33,7 @@ public class DWFrontCoverBean implements IDWObject {
         if (opt != null) {
             Object opt2 = ((JSONObject) opt).opt("videoPlayTimes");
             String obj = opt2 == null ? "0" : opt2.toString();
-            if (!TextUtils.isEmpty(obj) && TextUtils.isDigitsOnly(obj)) {
+            if (!StringUtils.isEmpty(obj) && StringUtils.isDigitsOnly(obj)) {
                 this.mPlayTimes = Long.parseLong(obj);
             }
         }
@@ -41,7 +41,7 @@ public class DWFrontCoverBean implements IDWObject {
         this.mCoverPicUrl = opt3 == null ? null : String.valueOf(opt3);
         Object opt4 = this.mData.opt("duration");
         this.mVideoDuration = opt4 == null ? null : String.valueOf(opt4);
-        if (!TextUtils.isEmpty(this.mVideoDuration) && TextUtils.isDigitsOnly(this.mVideoDuration)) {
+        if (!StringUtils.isEmpty(this.mVideoDuration) && StringUtils.isDigitsOnly(this.mVideoDuration)) {
             this.mVideoDuration = kco.b(Integer.parseInt(this.mVideoDuration));
         } else {
             this.mVideoDuration = null;

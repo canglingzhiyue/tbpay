@@ -1,7 +1,7 @@
 package com.taobao.tao.log;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.statistics.TLogEventHelper;
@@ -183,7 +183,7 @@ public class TLogNative {
             return (String) ipChange.ipc$dispatch("876e28d0", new Object[0]);
         }
         String str = d.m;
-        return TextUtils.isEmpty(str) ? "t_remote_debugger" : str;
+        return StringUtils.isEmpty(str) ? "t_remote_debugger" : str;
     }
 
     public static String getRc4EncryptSecretyKeyValue() {
@@ -208,7 +208,7 @@ public class TLogNative {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b93517c", new Object[]{str, hashMap});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 TLogEventHelper.a(str, hashMap);
@@ -237,7 +237,7 @@ public class TLogNative {
             return;
         }
         long j2 = j;
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return;
         }
         if (f.a().d() == 2) {
@@ -298,7 +298,7 @@ public class TLogNative {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8ac575f8", new Object[]{logLevel, str, str2, str3, str4, str5, new Long(j), str6, str7, str8, new Integer(i), str9, str10});
-        } else if (TextUtils.isEmpty(str6)) {
+        } else if (StringUtils.isEmpty(str6)) {
         } else {
             if (f.a().d() == 2) {
                 writeCacheTLog();
@@ -420,7 +420,7 @@ public class TLogNative {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ac840cd0", new Object[]{logCategory, logLevel, str, str2, str3});
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
         } else {
             if (f.a().d() == 2) {
                 writeCacheTLog();
@@ -472,7 +472,7 @@ public class TLogNative {
                 if (next.category != LogCategory.CodeLog || isModuleEnabledForLevel(next.level.getIndex(), next.module)) {
                     if (next.pid != pid) {
                         Log.e(TAG, String.format("在fork的进程%d, 写tlog (%d). Module=%s", Integer.valueOf(Process.myPid()), Integer.valueOf(pid), next.module));
-                    } else if (TextUtils.isEmpty(next.log)) {
+                    } else if (StringUtils.isEmpty(next.log)) {
                         return;
                     } else {
                         try {

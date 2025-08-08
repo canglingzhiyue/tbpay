@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.widget;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.component.DXWebView;
 import kotlin.Metadata;
@@ -34,7 +34,7 @@ public final class DXWebViewWidgetNode$loadUrl$1 extends Lambda implements ruk<k
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7560ccff", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.$url)) {
+        } else if (StringUtils.isEmpty(this.$url)) {
             ah ahVar = this.this$0;
             DXWebView dXWebView = ah.$ipChange;
             if (dXWebView == null) {

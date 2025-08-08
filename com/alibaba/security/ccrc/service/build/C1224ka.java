@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
 import com.alibaba.security.wukong.bx.CcrcBHService;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -22,7 +22,7 @@ public class C1224ka extends AbstractC1200ca {
         }
         Map<String, Object> map = JsonUtils.toMap(str2);
         String str3 = (String) map.get(Ta.h);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             AbstractC1200ca.a(interfaceC1203da, "参数异常", null);
             return true;
         }

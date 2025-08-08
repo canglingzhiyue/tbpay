@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.event.ext;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.bkd;
@@ -28,7 +28,7 @@ public class i extends p {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c03fdde0", new Object[]{this, eVar});
-        } else if (TextUtils.isEmpty(e(eVar).getString("url"))) {
+        } else if (StringUtils.isEmpty(e(eVar).getString("url"))) {
             HashMap hashMap = new HashMap();
             hashMap.put("fields", eVar.d().getFields().toString());
             hashMap.put("event", e(eVar).toString());

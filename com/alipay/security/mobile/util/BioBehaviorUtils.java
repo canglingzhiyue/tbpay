@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.behavor.Behavor;
 import com.alipay.mobile.framework.service.common.impl.MpaasRpcServiceImpl;
@@ -117,7 +117,7 @@ public class BioBehaviorUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("406bc5bc", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             LogInfoEntity logInfoEntity = this.logsContainerMap.get(str);
             if (logInfoEntity == null) {
@@ -134,7 +134,7 @@ public class BioBehaviorUtils {
             ipChange.ipc$dispatch("d574c905", new Object[]{this, str, str2});
             return;
         }
-        if (this.logsContainerMap != null && !TextUtils.isEmpty(str)) {
+        if (this.logsContainerMap != null && !StringUtils.isEmpty(str)) {
             LogInfoEntity logInfoEntity = this.logsContainerMap.get(str);
             if (logInfoEntity != null && logInfoEntity.logList != null) {
                 if (logInfoEntity.logList.size() < 3) {

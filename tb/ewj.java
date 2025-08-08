@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.node.NodeBundle;
 import com.taobao.android.detail.sdk.model.template.ComponentModel;
@@ -38,7 +38,7 @@ public class ewj implements ewb {
             return null;
         }
         String str = componentModel.key;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int a2 = ewy.a(str);

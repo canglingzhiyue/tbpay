@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.umbrella.link.export.UmTypeKey;
@@ -175,7 +175,7 @@ public class AddCartUtil {
         } else if (mtopResponse == null) {
         } else {
             String retMsg = mtopResponse.getRetMsg();
-            if (TextUtils.isEmpty(retMsg)) {
+            if (StringUtils.isEmpty(retMsg)) {
                 retMsg = b.a(R.string.app_busy_system_tired);
                 if (mtopResponse != null && mtopResponse.isApiLockedResult()) {
                     retMsg = b.a(R.string.taobao_app_1028_1_21641);
@@ -198,7 +198,7 @@ public class AddCartUtil {
             }
             String string = jSONObject.getString("itemId");
             String str2 = "sku";
-            boolean equals = TextUtils.equals("1", jSONObject.getString(str2));
+            boolean equals = StringUtils.equals("1", jSONObject.getString(str2));
             String string2 = jSONObject.getString("scm");
             if (!equals) {
                 str2 = "cart";

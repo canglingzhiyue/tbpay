@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.a;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,7 +43,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("69a74d06", new Object[]{uINode, obj, str, onClickListener, mVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (onClickListener != null) {
                 uINode.removeClickListener(onClickListener);
             }
@@ -70,7 +70,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ee8fe6c5", new Object[]{uINode, mUSDKInstance, obj, mVar});
-        } else if (TextUtils.isEmpty((String) uINode.getAttribute(Constants.Name.HREF))) {
+        } else if (StringUtils.isEmpty((String) uINode.getAttribute(Constants.Name.HREF))) {
         } else {
             mVar.a(new View.OnClickListener() { // from class: com.taobao.android.weex_uikit.widget.a.b.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -106,12 +106,12 @@ public class b {
             return;
         }
         String str = (String) uINode.getAttribute(Constants.Name.HREF);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Uri parse = Uri.parse(str);
         String scheme = parse.getScheme();
-        if (TextUtils.isEmpty(scheme) || "http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
+        if (StringUtils.isEmpty(scheme) || "http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) {
             b(uINode, str);
             return;
         }
@@ -137,13 +137,13 @@ public class b {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             Uri parse = Uri.parse(str);
             String scheme = parse.getScheme();
             Uri.Builder buildUpon = parse.buildUpon();
-            if (TextUtils.isEmpty(scheme)) {
+            if (StringUtils.isEmpty(scheme)) {
                 buildUpon.scheme("http");
             }
             Intent intent = new Intent("android.intent.action.VIEW", buildUpon.build());

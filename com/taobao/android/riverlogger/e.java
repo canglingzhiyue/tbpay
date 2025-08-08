@@ -3,7 +3,7 @@ package com.taobao.android.riverlogger;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.http.RequestMethodConstants;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.inspector.a;
@@ -102,7 +102,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d466d26b", new Object[]{rVLLevel, str, str2});
-        } else if (rVLLevel == null || rVLLevel.value > d.value || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (rVLLevel == null || rVLLevel.value > d.value || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             d dVar = new d(rVLLevel, str, System.currentTimeMillis());
             dVar.i = str2;

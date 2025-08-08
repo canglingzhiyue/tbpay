@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.util.ArrayMap;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -679,7 +679,7 @@ public class o {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("61b6362a", new Object[]{this, context, str});
-            } else if (context == null || TextUtils.isEmpty(str)) {
+            } else if (context == null || StringUtils.isEmpty(str)) {
             } else {
                 Nav.from(context).toUri(str);
             }

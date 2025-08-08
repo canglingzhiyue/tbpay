@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.os.MessageQueue;
 import android.os.Process;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.custom.TradeHybridCustomAnnotation;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.f;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridStage;
@@ -277,7 +277,7 @@ public class CartVEngineFactory {
         } else if (!UltronTradeHybridStage.ON_CONTAINER_DESTROY.equals(str) && !UltronTradeHybridStage.ON_TAB_CHANGE.equals(str)) {
         } else {
             String a2 = jqi.a("iCart", "prefetchScenesFromTrade", "orderList,orderDetail,sku,newBuy,paysuccess,mytaobao");
-            if (TextUtils.isEmpty(a2) || !a2.contains(str2)) {
+            if (StringUtils.isEmpty(a2) || !a2.contains(str2)) {
                 return;
             }
             if (jqi.a("iCart", "onlyDoPreRequestWhenPrefetchFromTrade", true, true)) {

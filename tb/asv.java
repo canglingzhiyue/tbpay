@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
@@ -65,7 +65,7 @@ public final class asv {
         }
         for (atc atcVar : b) {
             String a2 = atcVar.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 ard a3 = arc.a();
                 a3.c("AURARenderContainerEngine", "", "componentType of " + atcVar + " is empty!!!");
             } else {

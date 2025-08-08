@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.ext.vlayout.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -33,7 +33,7 @@ public abstract class aum<LH extends c> implements auh<LH> {
         Object obj = map.get(str);
         if (obj instanceof String) {
             String str3 = (String) obj;
-            return TextUtils.isEmpty(str3) ? str2 : str3;
+            return StringUtils.isEmpty(str3) ? str2 : str3;
         }
         return String.valueOf(obj);
     }

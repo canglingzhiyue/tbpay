@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.aaid.HmsInstanceId;
@@ -104,13 +104,13 @@ public class HuaWeiRegister {
                     try {
                         String string = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getString(Constants.HUAWEI_HMS_CLIENT_APPID);
                         String str = "";
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             str = string.replace("appid=", str);
                         }
                         ALog.e(HuaWeiRegister.TAG, "getToken", "appId", str);
-                        String token = TextUtils.isEmpty(str) ? HmsInstanceId.getInstance(context).getToken() : HmsInstanceId.getInstance(context).getToken(str, HmsMessaging.DEFAULT_TOKEN_SCOPE);
+                        String token = StringUtils.isEmpty(str) ? HmsInstanceId.getInstance(context).getToken() : HmsInstanceId.getInstance(context).getToken(str, HmsMessaging.DEFAULT_TOKEN_SCOPE);
                         ALog.e(HuaWeiRegister.TAG, "onToken", "token", token);
-                        if (TextUtils.isEmpty(token)) {
+                        if (StringUtils.isEmpty(token)) {
                             return;
                         }
                         NotifManager notifManager = new NotifManager();

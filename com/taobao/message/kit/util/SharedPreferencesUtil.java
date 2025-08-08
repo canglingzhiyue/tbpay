@@ -3,7 +3,7 @@ package com.taobao.message.kit.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.uikit.util.ApplicationUtil;
 import com.taobao.tao.log.TLog;
@@ -57,7 +57,7 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("64051cfc", new Object[]{str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(ApplicationUtil.getApplication()).edit();
             edit.putBoolean(str, z);
@@ -69,7 +69,7 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6ffdf272", new Object[]{str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
         } else {
             SharedPreferences.Editor edit = ApplicationUtil.getApplication().getSharedPreferences(str, 0).edit();
             edit.putBoolean(str2, z);
@@ -130,9 +130,9 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9ed7c3f7", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ApplicationUtil.getApplication());
             } else {
                 sharedPreferences = ApplicationUtil.getApplication().getSharedPreferences(str, 0);
@@ -148,9 +148,9 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b66968ac", new Object[]{str, str2, new Long(j)});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ApplicationUtil.getApplication());
             } else {
                 sharedPreferences = ApplicationUtil.getApplication().getSharedPreferences(str, 0);
@@ -165,7 +165,7 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6edfbb6d", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(ApplicationUtil.getApplication()).edit();
             edit.putString(str, str2);
@@ -184,14 +184,14 @@ public class SharedPreferencesUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3d3974", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "key is null: " + str + str3);
             return str3;
         } else if (ApplicationUtil.getApplication() == null) {
             TLog.loge(TAG, "application is null: " + str + str2 + str3);
             return str3;
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ApplicationUtil.getApplication());
             } else {
                 sharedPreferences = ApplicationUtil.getApplication().getSharedPreferences(str, 0);
@@ -209,7 +209,7 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ee8371b6", new Object[]{str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(ApplicationUtil.getApplication()).edit();
             edit.putLong(str, j);
@@ -257,7 +257,7 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b779693a", new Object[]{str, str2, new Integer(i)});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             SharedPreferences.Editor edit = ApplicationUtil.getApplication().getSharedPreferences(str, 0).edit();
             edit.putInt(str2, i);
@@ -269,7 +269,7 @@ public class SharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a9f63804", new Object[]{str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(ApplicationUtil.getApplication()).edit();
             edit.putInt(str, i);

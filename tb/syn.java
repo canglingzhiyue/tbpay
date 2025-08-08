@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,7 +112,7 @@ public class syn extends RecyclerView.Adapter {
             for (String str2 : qualityContentModel.images) {
                 this.e.add(str2);
                 this.f.put(str2, qualityContentModel.desc);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.g.put(str2, str);
                 }
             }
@@ -136,7 +136,7 @@ public class syn extends RecyclerView.Adapter {
         } else if (!(viewHolder instanceof a) || (list = this.b) == null || i >= list.size() || (qualityContentModel = this.b.get(i)) == null) {
         } else {
             a aVar = (a) viewHolder;
-            if (!TextUtils.isEmpty(qualityContentModel.desc)) {
+            if (!StringUtils.isEmpty(qualityContentModel.desc)) {
                 aVar.b.setText(qualityContentModel.desc);
                 aVar.b.setVisibility(0);
             } else {

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.transition.Transition;
 import android.transition.TransitionSet;
 import android.util.Pair;
@@ -293,7 +293,7 @@ public class b extends f implements ogb {
             String queryParameter = uri.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_NAVBAR_HIDE);
             String queryParameter2 = uri.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_STATUSBAR_COLOR);
             int i = a2 ? 0 : a3 ? 1 : -1;
-            if (!TextUtils.isEmpty(queryParameter2)) {
+            if (!StringUtils.isEmpty(queryParameter2)) {
                 if (queryParameter2.length() >= 2) {
                     char charAt = queryParameter2.charAt(0);
                     char charAt2 = queryParameter2.charAt(1);
@@ -335,7 +335,7 @@ public class b extends f implements ogb {
         for (String str : nVar.f20267a) {
             Transition a2 = n.a(this.f13189a, str, nVar, false);
             if (a2 != null) {
-                if (TextUtils.equals(str, "share") || TextUtils.equals(str, n.TRANSITION_TYPE_CORNER_RADIUS)) {
+                if (StringUtils.equals(str, "share") || StringUtils.equals(str, n.TRANSITION_TYPE_CORNER_RADIUS)) {
                     setSharedElementEnterTransition(a2);
                 } else {
                     setEnterTransition(a2);
@@ -345,7 +345,7 @@ public class b extends f implements ogb {
         for (String str2 : nVar.b) {
             Transition a3 = n.a(this.f13189a, str2, nVar, true);
             if (a3 != null) {
-                if (TextUtils.equals(str2, "share") || TextUtils.equals(str2, n.TRANSITION_TYPE_CORNER_RADIUS)) {
+                if (StringUtils.equals(str2, "share") || StringUtils.equals(str2, n.TRANSITION_TYPE_CORNER_RADIUS)) {
                     setSharedElementReturnTransition(a3);
                 } else {
                     setExitTransition(a3);
@@ -737,7 +737,7 @@ public class b extends f implements ogb {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("fd07be6c", new Object[]{this, view, new Boolean(z)});
         }
-        if (getSharedElementEnterTransition() == null || !TextUtils.equals(getSharedElementEnterTransition().getClass().getSimpleName(), "MaterialContainerTransform")) {
+        if (getSharedElementEnterTransition() == null || !StringUtils.equals(getSharedElementEnterTransition().getClass().getSimpleName(), "MaterialContainerTransform")) {
             return view;
         }
         if (view != null) {
@@ -965,7 +965,7 @@ public class b extends f implements ogb {
         }
         Intent intent = new Intent(PopLayer.ACTION_FRAGMENT_SWITCH);
         m.b bVar = this.h;
-        intent.putExtra(PopLayer.EXTRA_KEY_FRAGMENT_NAME, (bVar == null || TextUtils.isEmpty(bVar.i)) ? "TNodePage" : this.h.i);
+        intent.putExtra(PopLayer.EXTRA_KEY_FRAGMENT_NAME, (bVar == null || StringUtils.isEmpty(bVar.i)) ? "TNodePage" : this.h.i);
         intent.putExtra(PopLayer.EXTRA_KEY_FRAGMENT_PARAM, this.url);
         LocalBroadcastManager.getInstance(this.f13189a).sendBroadcast(intent);
     }

@@ -1,7 +1,7 @@
 package com.taobao.android.tbsku.bizevent;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class a implements iyd {
             final String valueOf = String.valueOf(iyeVar.c().get(0));
             String valueOf2 = String.valueOf(iyeVar.c().get(1));
             final String valueOf3 = String.valueOf(iyeVar.c().get(2));
-            if (TextUtils.isEmpty(valueOf) || TextUtils.isEmpty(valueOf2) || valueOf3 == null || (b = iyeVar.b()) == null || (jSONObject = b.getJSONObject("fields")) == null || jSONObject.isEmpty()) {
+            if (StringUtils.isEmpty(valueOf) || StringUtils.isEmpty(valueOf2) || valueOf3 == null || (b = iyeVar.b()) == null || (jSONObject = b.getJSONObject("fields")) == null || jSONObject.isEmpty()) {
                 return;
             }
             String string = jSONObject.getString("itemId");
@@ -151,7 +151,7 @@ public class a implements iyd {
             jSONObject2.putAll(map);
             jSONObject.put("params", (Object) jSONObject2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             jSONObject.put("selectedTips", (Object) str3);
         }
         com.alibaba.android.ultron.event.base.e a2 = d.a();
@@ -178,7 +178,7 @@ public class a implements iyd {
         StringBuilder sb = new StringBuilder();
         if (strArr != null && strArr.length > 0) {
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     sb.append(str);
                     sb.append(",");
                 }

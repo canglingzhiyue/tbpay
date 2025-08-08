@@ -2,7 +2,7 @@ package com.taobao.taolive.room.utils;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.ado;
 import tb.ddw;
@@ -34,7 +34,7 @@ public class s {
             ipChange.ipc$dispatch("5844481b", new Object[]{context, str, bundle, new Integer(i), new Boolean(z)});
             return;
         }
-        if (!TextUtils.isEmpty(str) && str.startsWith(ado.URL_SEPARATOR)) {
+        if (!StringUtils.isEmpty(str) && str.startsWith(ado.URL_SEPARATOR)) {
             str = "http:" + str;
         }
         if (pmd.a().r() != null) {
@@ -61,7 +61,7 @@ public class s {
             ipChange.ipc$dispatch("23e165aa", new Object[]{context, str, bundle, new Boolean(z)});
             return;
         }
-        if (!TextUtils.isEmpty(str) && str.startsWith(ado.URL_SEPARATOR)) {
+        if (!StringUtils.isEmpty(str) && str.startsWith(ado.URL_SEPARATOR)) {
             str = "http:" + str;
         }
         if (pmd.a().r() != null) {

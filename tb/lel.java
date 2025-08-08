@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONObject;
@@ -80,7 +80,7 @@ public class lel {
             return;
         }
         String string = jSONObject2.getString("upBizParam");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ldf.d("NewInterActiveUtil", "upBizParam is empty");
         }
         JSONObject jSONObject3 = new JSONObject();
@@ -167,7 +167,7 @@ public class lel {
                 } else {
                     lel lelVar = lel.this;
                     final String a2 = lel.a(lelVar, lel.b(lelVar));
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         return;
                     }
                     ljd.a().b(new Runnable() { // from class: tb.lel.2.1
@@ -210,7 +210,7 @@ public class lel {
             return null;
         }
         String string = ext.getString("insertCardToast");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ldf.d("NewInterActiveUtil", "insertCardToast error toast 未下发");
         }
         return string;

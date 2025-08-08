@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.taobao.windvane.webview.WVWebView;
 import android.taobao.windvane.webview.WVWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.WebView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class BrowserCommonWebViewClient extends WVWebViewClient {
                 return false;
             }
             String url = wVWebView.getUrl();
-            if (TextUtils.isEmpty(url)) {
+            if (StringUtils.isEmpty(url)) {
                 String str2 = "weburl1:" + url;
                 url = this.mHelper.b("");
                 String str3 = "weburl2:" + url;

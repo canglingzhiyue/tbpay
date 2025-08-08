@@ -8,7 +8,7 @@ import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.extra.uc.preRender.PreRenderWebView;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.webkit.URLUtil;
@@ -206,14 +206,14 @@ public abstract class BasePreInitManager<WebView extends PreRenderWebView> {
         }
         if (map != null && map.containsKey("injectJs")) {
             String str3 = map.get("injectJs");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 remove.injectJsEarly(str3);
             }
         }
         long j = Long.MAX_VALUE;
         if (map != null && map.containsKey("timeout")) {
             String str4 = map.get("timeout");
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 try {
                     int parseInt = Integer.parseInt(str4);
                     j = System.currentTimeMillis() + parseInt;
@@ -398,7 +398,7 @@ public abstract class BasePreInitManager<WebView extends PreRenderWebView> {
         if (ipChange instanceof IpChange) {
             return (WebView) ipChange.ipc$dispatch("89b10fc5", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return this.preRenderWebViews.remove(str);
@@ -411,13 +411,13 @@ public abstract class BasePreInitManager<WebView extends PreRenderWebView> {
         }
         String host = uri.getHost();
         String host2 = uri2.getHost();
-        if (!TextUtils.equals(host, host2)) {
+        if (!StringUtils.equals(host, host2)) {
             m.e(TAG, "host equal=[false],require=[" + host + "],real=[" + host2 + riy.ARRAY_END_STR);
             return false;
         }
         String path = uri.getPath();
         String path2 = uri2.getPath();
-        if (TextUtils.equals(path, path2)) {
+        if (StringUtils.equals(path, path2)) {
             return true;
         }
         m.e(TAG, "path equal=[false],require=[" + path + "],real=[" + path2 + riy.ARRAY_END_STR);
@@ -441,13 +441,13 @@ public abstract class BasePreInitManager<WebView extends PreRenderWebView> {
         for (String str : queryParameterNames) {
             String queryParameter = uri.getQueryParameter(str);
             String queryParameter2 = uri2.getQueryParameter(str);
-            if (!TextUtils.equals(queryParameter, queryParameter2)) {
+            if (!StringUtils.equals(queryParameter, queryParameter2)) {
                 try {
                     JSONObject parseObject = JSONObject.parseObject(queryParameter);
                     JSONObject parseObject2 = JSONObject.parseObject(queryParameter2);
                     if (parseObject2 != null && parseObject != null) {
                         for (String str2 : parseObject.keySet()) {
-                            if (!TextUtils.equals(parseObject.getString(str2), parseObject2.getString(str2))) {
+                            if (!StringUtils.equals(parseObject.getString(str2), parseObject2.getString(str2))) {
                                 m.e(TAG, "query value is not equal, require=[" + queryParameter + "],real=[" + queryParameter2 + riy.ARRAY_END_STR);
                                 return false;
                             }

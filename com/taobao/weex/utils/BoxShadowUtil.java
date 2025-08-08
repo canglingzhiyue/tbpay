@@ -18,7 +18,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -89,7 +89,7 @@ public class BoxShadowUtil {
             WXLogUtils.w("BoxShadowUtil", "box-shadow was disabled by config");
         } else if (view == null) {
             WXLogUtils.w("BoxShadowUtil", "Target view is null!");
-        } else if (TextUtils.isEmpty(str) && Build.VERSION.SDK_INT >= 18) {
+        } else if (StringUtils.isEmpty(str) && Build.VERSION.SDK_INT >= 18) {
             view.getOverlay().clear();
             WXLogUtils.d("BoxShadowUtil", "Remove all box-shadow");
         } else {
@@ -279,7 +279,7 @@ public class BoxShadowUtil {
             return (BoxShadowOptions) ipChange.ipc$dispatch("e8effe8f", new Object[]{wXSDKInstance, str, new Integer(i)});
         }
         BoxShadowOptions boxShadowOptions = new BoxShadowOptions(wXSDKInstance, i);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String replaceAll = str.replaceAll("\\s*,\\s+", ",");
@@ -289,7 +289,7 @@ public class BoxShadowUtil {
         }
         ArrayList arrayList = new ArrayList(Arrays.asList(replaceAll.trim().split("\\s+")));
         String str2 = (String) arrayList.get(arrayList.size() - 1);
-        if (!TextUtils.isEmpty(str2) && (str2.startsWith("#") || str2.startsWith("rgb") || WXResourceUtils.isNamedColor(str2))) {
+        if (!StringUtils.isEmpty(str2) && (str2.startsWith("#") || str2.startsWith("rgb") || WXResourceUtils.isNamedColor(str2))) {
             boxShadowOptions.color = WXResourceUtils.getColor(str2, -16777216);
             arrayList.remove(arrayList.size() - 1);
         }
@@ -300,10 +300,10 @@ public class BoxShadowUtil {
         if (arrayList.size() < 2) {
             return null;
         }
-        if (!TextUtils.isEmpty((CharSequence) arrayList.get(0))) {
+        if (!StringUtils.isEmpty((CharSequence) arrayList.get(0))) {
             boxShadowOptions.hShadow = WXViewInnerUtils.getRealSubPxByWidth(wXSDKInstance, WXUtils.getFloat(((String) arrayList.get(0)).trim(), Float.valueOf(0.0f)).floatValue(), i);
         }
-        if (!TextUtils.isEmpty((CharSequence) arrayList.get(1))) {
+        if (!StringUtils.isEmpty((CharSequence) arrayList.get(1))) {
             boxShadowOptions.vShadow = WXViewInnerUtils.getRealPxByWidth(wXSDKInstance, WXUtils.getFloat(((String) arrayList.get(1)).trim(), Float.valueOf(0.0f)).floatValue(), i);
         }
         for (int i2 = 2; i2 < arrayList.size(); i2++) {
@@ -568,7 +568,7 @@ public class BoxShadowUtil {
                     IpChange ipChange = $ipChange;
                     if (ipChange instanceof IpChange) {
                         ipChange.ipc$dispatch("f571fd04", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         float floatValue = WXUtils.getFloat(str, Float.valueOf(0.0f)).floatValue();
                         BoxShadowOptions boxShadowOptions = BoxShadowOptions.this;
@@ -585,7 +585,7 @@ public class BoxShadowUtil {
                     IpChange ipChange = $ipChange;
                     if (ipChange instanceof IpChange) {
                         ipChange.ipc$dispatch("f571fd04", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         float floatValue = WXUtils.getFloat(str, Float.valueOf(0.0f)).floatValue();
                         BoxShadowOptions boxShadowOptions = BoxShadowOptions.this;

@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes7.dex */
@@ -30,7 +30,7 @@ public class lxq {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{str, str2, str3})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || (c = lxm.c()) == null) {
+        if (StringUtils.isEmpty(str2) || (c = lxm.c()) == null) {
             return false;
         }
         SharedPreferences.Editor edit = c.getSharedPreferences(str, 0).edit();
@@ -45,7 +45,7 @@ public class lxq {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("87942679", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str2) || (c = lxm.c()) == null) {
+        if (StringUtils.isEmpty(str2) || (c = lxm.c()) == null) {
             return null;
         }
         return c.getSharedPreferences(str, 0).getString(str2, str3);

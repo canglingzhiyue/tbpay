@@ -1,7 +1,7 @@
 package com.taobao.unit.center.mdc.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -458,7 +458,7 @@ public class DXMsgDXWrapperWidgetNodeV2 extends DXWidgetNode {
             ((DXWidgetInstance.MPUserContext) getDXRuntimeContext().b()).addDisposable("DXWrapperCache." + getUserId() + getWidgetId(), new WidgetInstanceHolder(widgetInterface));
         }
         String string = jSONObject.getString("VC_UNI_ID");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             if (ViewCenterPreloadCache.getWidgetInterface(this.auraContainerKey, string) != null) {
                 ViewCenterPreloadCache.removeWidgetInterface(this.auraContainerKey, string);
                 return;
@@ -494,7 +494,7 @@ public class DXMsgDXWrapperWidgetNodeV2 extends DXWidgetNode {
                 JSONObject jSONObject2 = this.mData;
                 if (jSONObject2 != null) {
                     String string = jSONObject2.getString("VC_UNI_ID");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         widgetInterface = ViewCenterPreloadCache.getWidgetInterface(this.auraContainerKey, string);
                     }
                 }
@@ -502,7 +502,7 @@ public class DXMsgDXWrapperWidgetNodeV2 extends DXWidgetNode {
                     LayoutInfo layoutInfo = this.mLayoutInfo;
                     if (layoutInfo != null) {
                         createView = viewCenterService.createView(layoutInfo);
-                    } else if (!TextUtils.isEmpty(this.templateId) && TextUtils.isDigitsOnly(this.templateId)) {
+                    } else if (!StringUtils.isEmpty(this.templateId) && StringUtils.isDigitsOnly(this.templateId)) {
                         createView = viewCenterService.createView(Integer.parseInt(this.templateId));
                     }
                     widgetInterface = createView;
@@ -538,7 +538,7 @@ public class DXMsgDXWrapperWidgetNodeV2 extends DXWidgetNode {
         if (layoutInfo != null) {
             return layoutInfo.layoutId;
         }
-        return (TextUtils.isEmpty(this.templateId) || !TextUtils.isDigitsOnly(this.templateId)) ? "" : String.valueOf(this.templateId);
+        return (StringUtils.isEmpty(this.templateId) || !StringUtils.isDigitsOnly(this.templateId)) ? "" : String.valueOf(this.templateId);
     }
 
     /* loaded from: classes9.dex */
@@ -708,7 +708,7 @@ public class DXMsgDXWrapperWidgetNodeV2 extends DXWidgetNode {
             java.lang.String r5 = ""
         L3b:
             java.lang.String r0 = "10022"
-            boolean r5 = android.text.TextUtils.equals(r5, r0)
+            boolean r5 = android.text.StringUtils.equals(r5, r0)
             if (r5 == 0) goto L44
             return r2
         L44:

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.rpc.transport;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.rpc.ProtocolVersions;
 import com.alipay.mobile.common.rpc.RpcInterceptor;
 import com.alipay.mobile.common.rpc.RpcInvokeContext;
@@ -85,7 +85,7 @@ public class InnerRpcInvokeContext implements RpcInvokeContext {
         if (str.equals("https://mgwapi-tb.alipay.com/mgw.htm")) {
             return;
         }
-        if (TextUtils.isEmpty(this.protocolVersion) && !TextUtils.equals(str, ReadSettingServerUrl.getInstance().getGWFURL(TransportEnvUtil.getContext()))) {
+        if (StringUtils.isEmpty(this.protocolVersion) && !StringUtils.equals(str, ReadSettingServerUrl.getInstance().getGWFURL(TransportEnvUtil.getContext()))) {
             setRpcProtocol(ProtocolVersions.HTTP_1_1);
         }
         if (!this.useMultiplexLink) {
@@ -127,9 +127,9 @@ public class InnerRpcInvokeContext implements RpcInvokeContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1518e9f6", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn("RpcInvokeContext", "addRequestHeader. key is empty.");
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             LogCatUtil.warn("RpcInvokeContext", "addRequestHeader. value is null, key= " + str);
         } else if (this.requestHeaders.containsKey(str)) {
             LogCatUtil.warn("RpcInvokeContext", "addRequestHeader. Find duplicate key : " + str + " , ignore them.");
@@ -422,7 +422,7 @@ public class InnerRpcInvokeContext implements RpcInvokeContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e6e4a84", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn("RpcInvokeContext", "[setBizLog] ");
         } else {
             this.bizLog = str;
@@ -443,13 +443,13 @@ public class InnerRpcInvokeContext implements RpcInvokeContext {
         } else if (rpcMgwEnvConfig == null) {
         } else {
             this.c = rpcMgwEnvConfig;
-            if (!TextUtils.isEmpty(this.c.getAppId())) {
+            if (!StringUtils.isEmpty(this.c.getAppId())) {
                 setAppId(this.c.getAppId());
             }
-            if (!TextUtils.isEmpty(this.c.getAppKey())) {
+            if (!StringUtils.isEmpty(this.c.getAppKey())) {
                 setAppKey(this.c.getAppKey());
             }
-            if (TextUtils.isEmpty(this.c.getMgwUrl())) {
+            if (StringUtils.isEmpty(this.c.getMgwUrl())) {
                 return;
             }
             setGwUrl(this.c.getMgwUrl());
@@ -485,7 +485,7 @@ public class InnerRpcInvokeContext implements RpcInvokeContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1cdc7c8", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.d.put(str, str2);
         }
@@ -499,7 +499,7 @@ public class InnerRpcInvokeContext implements RpcInvokeContext {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.d.remove(str);

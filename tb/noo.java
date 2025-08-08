@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import java.util.HashSet;
@@ -24,7 +24,7 @@ public class noo {
             for (Map.Entry<String, String> entry : map2.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (TextUtils.isEmpty(key)) {
+                if (StringUtils.isEmpty(key)) {
                     q.b("GlobalParamsUtil", "fillGlobalParams:key为空");
                 } else if (!key.startsWith(noa.GLOBAL_PARAM_PREFIX)) {
                     q.b("GlobalParamsUtil", "fillGlobalParams:非全局参数");
@@ -46,16 +46,16 @@ public class noo {
             q.b("GlobalParamsUtil", "replaceGlobalParams:params为空");
         } else {
             for (String str : new HashSet(map.keySet())) {
-                if (!TextUtils.isEmpty(str) && str.startsWith(noa.GLOBAL_PARAM_PREFIX)) {
+                if (!StringUtils.isEmpty(str) && str.startsWith(noa.GLOBAL_PARAM_PREFIX)) {
                     if (2 >= str.length()) {
                         q.b("GlobalParamsUtil", "replaceGlobalParams:参数前缀位置超长");
                     } else {
                         String substring = str.substring(2);
-                        if (TextUtils.isEmpty(substring)) {
+                        if (StringUtils.isEmpty(substring)) {
                             q.b("GlobalParamsUtil", "replaceGlobalParams:realParams为空");
                         } else {
                             String remove = map.remove(str);
-                            if (TextUtils.isEmpty(remove)) {
+                            if (StringUtils.isEmpty(remove)) {
                                 q.b("GlobalParamsUtil", "replaceGlobalParams:value为空");
                             } else {
                                 map.put(substring, remove);
@@ -74,7 +74,7 @@ public class noo {
             return (String) ipChange.ipc$dispatch("d0668d9", new Object[]{map, str});
         }
         String str2 = map.get(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
         return map.get(noa.GLOBAL_PARAM_PREFIX + str);

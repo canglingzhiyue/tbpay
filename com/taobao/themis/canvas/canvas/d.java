@@ -1,6 +1,6 @@
 package com.taobao.themis.canvas.canvas;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,12 +41,12 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
             String a2 = n.a(i.ORANGE_GROUP_THEMIS_GRAPHICS_COMMON, "enable_fixed_frame_rate_white_list", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 TMSLogger.b("TMSCanvasUtils", "[orange] enable_fixed_frame_rate_white_list, value: " + a2);
                 JSONArray parseArray = JSON.parseArray(a2);
                 if (parseArray != null) {

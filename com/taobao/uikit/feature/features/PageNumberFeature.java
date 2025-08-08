@@ -2,7 +2,7 @@ package com.taobao.uikit.feature.features;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -301,7 +301,7 @@ public class PageNumberFeature extends AbsFeature<ListView> implements AbsListVi
                 }
                 String format = i3 > 0 ? String.format("%s/%s", Integer.valueOf(i5), Integer.valueOf(i6)) : String.format("%s", Integer.valueOf(i5));
                 PageNumberFeature.access$002(PageNumberFeature.this, i5);
-                if (TextUtils.equals(getText(), format)) {
+                if (StringUtils.equals(getText(), format)) {
                     return;
                 }
                 setText(format);

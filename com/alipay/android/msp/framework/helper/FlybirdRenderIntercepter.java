@@ -2,7 +2,7 @@ package com.alipay.android.msp.framework.helper;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.core.frame.MspWindowFrame;
 import com.alipay.android.msp.drivers.stores.store.events.FeedbackStore;
@@ -38,7 +38,7 @@ public class FlybirdRenderIntercepter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("95692511", new Object[]{this, context, mspWindowFrame, str, intercepterCallback})).booleanValue();
         }
-        return FlybirdUtil.isErrorTpl2Native(context) && TextUtils.equals(MspFlybirdDefine.FLYBIRD_ERROR_TPL, mspWindowFrame.getTplId()) && a(context, str, intercepterCallback, mspWindowFrame);
+        return FlybirdUtil.isErrorTpl2Native(context) && StringUtils.equals(MspFlybirdDefine.FLYBIRD_ERROR_TPL, mspWindowFrame.getTplId()) && a(context, str, intercepterCallback, mspWindowFrame);
     }
 
     private boolean a(final Context context, String str, final IntercepterCallback intercepterCallback, final MspWindowFrame mspWindowFrame) {
@@ -50,7 +50,7 @@ public class FlybirdRenderIntercepter {
         }
         try {
             JSONObject jSONObject = new JSONObject(str == null ? "{}" : str);
-            if (!TextUtils.isEmpty(jSONObject.optString("loginAccount"))) {
+            if (!StringUtils.isEmpty(jSONObject.optString("loginAccount"))) {
                 return false;
             }
             final ArrayList arrayList = new ArrayList();
@@ -114,7 +114,7 @@ public class FlybirdRenderIntercepter {
             arrayList.size();
             final String optString2 = jSONObject.optString("title");
             String optString3 = jSONObject.optString("msg");
-            if (TextUtils.isEmpty(optString3)) {
+            if (StringUtils.isEmpty(optString3)) {
                 optString3 = LanguageHelper.localizedStringForKey("mini_server_busy", context.getString(R.string.mini_server_busy), new Object[0]);
             }
             final String str2 = optString3;
@@ -192,10 +192,10 @@ public class FlybirdRenderIntercepter {
                     int bizId = mspWindowFrame.getBizId();
                     String createSpmSessionId = FeedbackStore.createSpmSessionId(bizId, mspWindowFrame);
                     JSONObject jSONObject = new JSONObject();
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         jSONObject.put("title", str);
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         jSONObject.put("message", str2);
                     }
                     SpmWrapper.onPageExposure(mspWindowFrame, "a283.b43760.c107670", "pay", "", createSpmSessionId, jSONObject.toString(), bizId);
@@ -229,7 +229,7 @@ public class FlybirdRenderIntercepter {
                     int bizId = mspWindowFrame.getBizId();
                     String createSpmSessionId = FeedbackStore.createSpmSessionId(bizId, mspWindowFrame);
                     JSONObject jSONObject2 = new JSONObject();
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         jSONObject2.put("text", str);
                     }
                     if (jSONObject != null) {

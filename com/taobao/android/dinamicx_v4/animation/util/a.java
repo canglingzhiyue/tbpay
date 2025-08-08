@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx_v4.animation.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Property;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
@@ -132,7 +132,7 @@ public abstract class a<T> {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("f46b8f6", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f12217a.get(str);
         }
         return null;

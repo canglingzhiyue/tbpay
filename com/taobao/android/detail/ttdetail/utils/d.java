@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -177,7 +177,7 @@ public class d {
             return str;
         }
         String completedTo = delivery.getCompletedTo();
-        if (TextUtils.isEmpty(completedTo)) {
+        if (StringUtils.isEmpty(completedTo)) {
             completedTo = delivery.getTo();
         }
         return completedTo == null ? str : completedTo;
@@ -302,36 +302,36 @@ public class d {
         JSONObject e = g.e(jSONObject);
         JSONObject jSONObject2 = e != null ? e.getJSONObject("meta") : null;
         String j = j(jSONObject);
-        if (TextUtils.isEmpty(j)) {
+        if (StringUtils.isEmpty(j)) {
             j = j(jSONObject2);
         }
-        if (TextUtils.isEmpty(j)) {
+        if (StringUtils.isEmpty(j)) {
             j = b(str, jSONObject);
         }
-        if (TextUtils.isEmpty(j)) {
+        if (StringUtils.isEmpty(j)) {
             j = b(str, jSONObject2);
         }
         if (DetailV3Converter.h(e)) {
             return j;
         }
         if (!i(e)) {
-            if (TextUtils.isEmpty(j)) {
+            if (StringUtils.isEmpty(j)) {
                 j = c(str, jSONObject);
             }
-            if (TextUtils.isEmpty(j)) {
+            if (StringUtils.isEmpty(j)) {
                 j = c(str, jSONObject2);
             }
-            return TextUtils.isEmpty(j) ? a(str) : j;
+            return StringUtils.isEmpty(j) ? a(str) : j;
         } else if (n(jSONObject) || n(jSONObject2) || m(jSONObject) || m(jSONObject2) || o(jSONObject) || o(jSONObject2)) {
             return j;
         } else {
-            if (TextUtils.isEmpty(j)) {
+            if (StringUtils.isEmpty(j)) {
                 j = d(str, jSONObject);
             }
-            if (TextUtils.isEmpty(j)) {
+            if (StringUtils.isEmpty(j)) {
                 j = d(str, jSONObject2);
             }
-            return TextUtils.isEmpty(j) ? a(str) : j;
+            return StringUtils.isEmpty(j) ? a(str) : j;
         }
     }
 
@@ -371,7 +371,7 @@ public class d {
             return null;
         }
         String string = jSONObject3.getString("h5ItemUrl");
-        return TextUtils.isEmpty(string) ? a(str) : string;
+        return StringUtils.isEmpty(string) ? a(str) : string;
     }
 
     private static String c(String str, JSONObject jSONObject) {
@@ -385,7 +385,7 @@ public class d {
             return null;
         }
         String string = jSONObject3.getString("h5ItemUrl");
-        return TextUtils.isEmpty(string) ? a(str) : string;
+        return StringUtils.isEmpty(string) ? a(str) : string;
     }
 
     private static String a(String str) {
@@ -698,6 +698,6 @@ public class d {
         if (jSONObject2 == null) {
             return true;
         }
-        return TextUtils.isEmpty(jSONObject2.getString("skuWeexUrl")) && TextUtils.isEmpty(jSONObject2.getString("skuV3WeexUrl"));
+        return StringUtils.isEmpty(jSONObject2.getString("skuWeexUrl")) && StringUtils.isEmpty(jSONObject2.getString("skuV3WeexUrl"));
     }
 }

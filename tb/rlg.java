@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.utils.a;
 import com.tmall.android.dai.DAI;
@@ -54,7 +54,7 @@ public class rlg implements d {
         } else {
             String str2 = "";
             if (parseInt == c) {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     hashMap.put("success", "0");
                 } else {
                     com.tmall.android.dai.model.a registeredModel = DAI.getRegisteredModel(str);
@@ -97,7 +97,7 @@ public class rlg implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d7b3cea7", new Object[]{this, map, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             map.put("success", "0");
         } else {
             map.put("success", "1");

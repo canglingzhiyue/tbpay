@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
 import com.alipay.android.msp.plugin.engine.IJumpEngine;
 import com.alipay.android.msp.utils.LogUtil;
@@ -39,7 +39,7 @@ public class MspJumpImpl implements IJumpEngine {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             Intent intent = new Intent();

@@ -6,7 +6,7 @@ import android.os.Build;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.mobile.verifyidentity.module.utils.DataHelper;
 import com.alipay.security.mobile.util.ConfigServiceUtil;
@@ -202,7 +202,7 @@ public class b {
             String string2 = jSONObject2.getString("authTlv");
             final String string3 = jSONObject.getString("faceVerifyId");
             final String string4 = jSONObject.getString("homeServer");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                 d.a(string);
                 d.c(string2);
                 d.a(czbVar);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.kit.model.theme.a;
@@ -30,7 +30,7 @@ public class dzi {
         if (bVar != null && bVar.component != null) {
             String str4 = bVar.component.style;
             str2 = a(bVar.themeGroup);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str3 = str4;
             }
         } else {
@@ -46,7 +46,7 @@ public class dzi {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x002f, code lost:
-        if (android.text.TextUtils.isEmpty(r1) != false) goto L28;
+        if (android.text.StringUtils.isEmpty(r1) != false) goto L28;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -77,7 +77,7 @@ public class dzi {
             java.lang.String r1 = r1.style
             java.lang.String r3 = r3.themeGroup
             java.lang.String r3 = a(r3)
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             if (r2 == 0) goto L37
             goto L36
         L32:
@@ -91,7 +91,7 @@ public class dzi {
             r2.append(r1)
             r2.append(r4)
             java.lang.String r4 = r2.toString()
-            boolean r1 = android.text.TextUtils.isEmpty(r4)
+            boolean r1 = android.text.StringUtils.isEmpty(r4)
             r2 = 0
             if (r1 == 0) goto L4e
             return r2
@@ -104,7 +104,7 @@ public class dzi {
             java.lang.Object r0 = r0.get(r4)
             java.lang.String r0 = (java.lang.String) r0
         L66:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L6d
             goto L6e
         L6d:
@@ -143,7 +143,7 @@ public class dzi {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && rlz.a().g().contains(str)) {
+        if (!StringUtils.isEmpty(str) && rlz.a().g().contains(str)) {
             return str;
         }
         a aVar = f27131a;

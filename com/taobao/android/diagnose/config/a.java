@@ -2,7 +2,7 @@ package com.taobao.android.diagnose.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -88,27 +88,27 @@ public class a {
                 f = b2.getInt(CONFIG_SNAPSHOT_EXPIRE_DAY, 7);
                 g = b2.getBoolean(CONFIG_EXCEPTION_MONITOR_ENABLE, true);
                 String string = b2.getString(CONFIG_UT_COLLECT_CONFIG, "");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     h = (UTCollectConfig) JSON.parseObject(string, UTCollectConfig.class);
                 }
                 i = b2.getInt(CONFIG_MONITOR_SAMPLE, 10000);
                 String string2 = b2.getString(CONFIG_ACTION_TLOG_UPLOAD, "");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     j = (TLogUploadActionConfig) JSON.parseObject(string2, TLogUploadActionConfig.class);
                 }
                 String string3 = b2.getString(CONFIG_SCENE_AVAILABLE_LIST, "");
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     k = (List) JSON.parseObject(string3, new TypeReference<List<String>>() { // from class: com.taobao.android.diagnose.config.a.1
                     }, new Feature[0]);
                 }
                 com.taobao.android.diagnose.scene.engine.config.a.a(b2.getLong(CONFIG_SCENE_CHECK_RULE_INTERVAL, 0L));
                 l = b2.getBoolean(CONFIG_CHANNEL_ENABLE, true);
                 String string4 = b2.getString(CONFIG_ABNORMAL_CONFIG, "");
-                if (!TextUtils.isEmpty(string4)) {
+                if (!StringUtils.isEmpty(string4)) {
                     m = (AbnormalConfig) JSON.parseObject(string4, AbnormalConfig.class);
                 }
                 String string5 = b2.getString(CONFIG_RUNTIME_MONITOR_CONFIG, "");
-                if (!TextUtils.isEmpty(string5)) {
+                if (!StringUtils.isEmpty(string5)) {
                     n = (RuntimeMonitorConfig) JSON.parseObject(string5, RuntimeMonitorConfig.class);
                 }
                 o = b2.getBoolean(CONFIG_NEW_FEATURE, true);
@@ -262,7 +262,7 @@ public class a {
         }
         SharedPreferences.Editor edit = b2.edit();
         edit.putString("info_last_crash", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             edit.apply();
         } else {
             edit.commit();

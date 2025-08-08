@@ -1,7 +1,7 @@
 package com.taobao.avplayer.component.weex;
 
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.CodeUsageCounter;
 import java.util.LinkedList;
@@ -57,7 +57,7 @@ public class c {
         int i = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             WXInteractiveComponent wXInteractiveComponent = null;
             int b = kcl.b();
             int i2 = b;
@@ -103,7 +103,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             for (WXInteractiveComponent wXInteractiveComponent : this.b) {
                 if (str.equals(wXInteractiveComponent.mSplayerGroup)) {
                     wXInteractiveComponent.pause();

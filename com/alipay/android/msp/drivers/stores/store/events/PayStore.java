@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -64,7 +64,7 @@ public class PayStore extends LocalEventStore {
             }
             if (parseObject.containsKey("sourceBundleId")) {
                 String string = parseObject.getString("sourceBundleId");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     jSONObject2.put("sourceBundleId", (Object) string);
                 }
             }

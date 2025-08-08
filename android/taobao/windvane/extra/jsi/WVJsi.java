@@ -7,7 +7,7 @@ import android.taobao.windvane.config.j;
 import android.taobao.windvane.extra.uc.UCLog;
 import android.taobao.windvane.extra.uc.remotefetch.WVUCRemoteFetcher;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.jsi.standard.JSEngine;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -136,7 +136,7 @@ public class WVJsi {
                 qfyVar.a(context);
             }
             String fetchUCRemoteLocal = WVUCRemoteFetcher.fetchUCRemoteLocal();
-            if (TextUtils.isEmpty(fetchUCRemoteLocal)) {
+            if (StringUtils.isEmpty(fetchUCRemoteLocal)) {
                 e.a(RVLLevel.Error, "WVJsi/LOAD").a("V8_LOAD_FAIL").a("msg", (Object) "kernel file, kernelPath is empty").a();
                 tryFetchRemoteUC();
                 return false;
@@ -176,7 +176,7 @@ public class WVJsi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7e55a33a", new Object[0]);
-        } else if (!TextUtils.isEmpty(WVUCRemoteFetcher.fetchUCRemoteLocal())) {
+        } else if (!StringUtils.isEmpty(WVUCRemoteFetcher.fetchUCRemoteLocal())) {
         } else {
             WVUCRemoteFetcher.fetchUCRemote(null);
         }

@@ -11,7 +11,7 @@ import android.net.NetworkInfo;
 import android.net.Proxy;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.util.HMacUtil;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
@@ -103,11 +103,11 @@ public class UtilityImpl {
         }
         d.a("accs", BaseMonitor.COUNT_FULL_VERIFY, "getProxyHost", mto.a.GEO_NOT_SUPPORT);
         String string = APreferencesManager.getSharedPreferences(context, Constants.SP_FILE_NAME, 4).getString(Constants.KEY_PROXY_HOST, null);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         String proxyIp = getProxyIp();
-        if (!TextUtils.isEmpty(proxyIp)) {
+        if (!StringUtils.isEmpty(proxyIp)) {
             return proxyIp;
         }
         return null;
@@ -141,7 +141,7 @@ public class UtilityImpl {
         if (ALog.isPrintLog(ALog.Level.D)) {
             return true;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return Constants.IMPAAS.equals(str) || Constants.HD_DDZ.equals(str) || "powermsg".equals(str) || "pmmonitor".equals(str) || "powermsg3".equals(str) || GlobalClientInfo.AGOO_SERVICE_ID.equals(str) || "amp-sync".equals(str);
@@ -367,7 +367,7 @@ public class UtilityImpl {
             int myUid = Process.myUid();
             for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : GlobalClientInfo.getInstance(context).getActivityManager().getRunningAppProcesses()) {
                 if (runningAppProcessInfo.uid == myUid) {
-                    if (!TextUtils.isEmpty(com.taobao.accs.client.a.e) && com.taobao.accs.client.a.e.equals(runningAppProcessInfo.processName)) {
+                    if (!StringUtils.isEmpty(com.taobao.accs.client.a.e) && com.taobao.accs.client.a.e.equals(runningAppProcessInfo.processName)) {
                         ALog.e(TAG, "killService", "processName", runningAppProcessInfo.processName);
                         Process.killProcess(runningAppProcessInfo.pid);
                         return;
@@ -397,7 +397,7 @@ public class UtilityImpl {
             return "wifi";
         }
         String subtypeName = activeNetworkInfo.getSubtypeName();
-        return !TextUtils.isEmpty(subtypeName) ? subtypeName.replaceAll(" ", "") : "";
+        return !StringUtils.isEmpty(subtypeName) ? subtypeName.replaceAll(" ", "") : "";
     }
 
     public static String getNetworkTypeExt(Context context) {
@@ -434,7 +434,7 @@ public class UtilityImpl {
                     return "4g";
                 default:
                     String subtypeName = activeNetworkInfo.getSubtypeName();
-                    if (TextUtils.isEmpty(subtypeName)) {
+                    if (StringUtils.isEmpty(subtypeName)) {
                         return "unknown";
                     }
                     if (!subtypeName.equalsIgnoreCase("td-scdma") && !subtypeName.equalsIgnoreCase("td_scdma")) {
@@ -471,13 +471,13 @@ public class UtilityImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("86433de", new Object[]{context, str, str2, str3, str4, new Integer(i)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ALog.e(TAG, "getAppsign appkey null", new Object[0]);
             return null;
         }
         try {
             if (isSecurityOff(str4)) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     byte[] bytes = str2.getBytes();
                     if (l.s(context)) {
                         str6 = "2&" + str + "&" + l.q(context) + "&" + i;
@@ -519,13 +519,13 @@ public class UtilityImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e9337a25", new Object[]{context, str, str2, str3, str4, new Integer(i)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ALog.e(TAG, "getCreateRegIdAppSign appkey null", new Object[0]);
             return null;
         }
         try {
             if (isSecurityOff(str4)) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     byte[] bytes = str2.getBytes();
                     return HMacUtil.hmacSha1Hex(bytes, ("1&" + str + "&" + str3 + "&" + i).getBytes());
                 }
@@ -846,7 +846,7 @@ public class UtilityImpl {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             GlobalClientInfo.mCookieSec = str;
@@ -977,7 +977,7 @@ public class UtilityImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e11ddb22", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(oaid)) {
+        if (!StringUtils.isEmpty(oaid)) {
             return oaid;
         }
         if (context == null) {
@@ -1005,7 +1005,7 @@ public class UtilityImpl {
                     }
                     try {
                         String a2 = bzj.a(context);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             UtilityImpl.access$002(a2);
                             APreferencesManager.getSharedPreferences(context, Constants.SP_FILE_NAME, 0).edit().putString("oaid", UtilityImpl.access$000()).apply();
                         }
@@ -1036,7 +1036,7 @@ public class UtilityImpl {
             return ((Boolean) ipChange.ipc$dispatch("c4d7b97c", new Object[0])).booleanValue();
         }
         if (isAppKeepAlive == null) {
-            if (TextUtils.isEmpty(getOAID(GlobalClientInfo.getContext()))) {
+            if (StringUtils.isEmpty(getOAID(GlobalClientInfo.getContext()))) {
                 ALog.e(TAG, "empty oaid", new Object[0]);
                 return false;
             }
@@ -1100,11 +1100,11 @@ public class UtilityImpl {
         }
         if (keepAliveBucketId < 0) {
             try {
-                if (TextUtils.isEmpty(getOAID(context))) {
+                if (StringUtils.isEmpty(getOAID(context))) {
                     return -1;
                 }
                 String l = m.l();
-                if (TextUtils.isEmpty(l)) {
+                if (StringUtils.isEmpty(l)) {
                     l = Build.BRAND.equals("vivo") ? "abtestlayer88" : "abtestlayer0";
                 }
                 String str = l + oaid2.toLowerCase();
@@ -1134,7 +1134,7 @@ public class UtilityImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("904e852c", new Object[]{context});
         }
-        if (TextUtils.isEmpty(appVersionName)) {
+        if (StringUtils.isEmpty(appVersionName)) {
             try {
                 appVersionName = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
                 ALog.e(TAG, "getVersionName = " + appVersionName, new Object[0]);
@@ -1156,7 +1156,7 @@ public class UtilityImpl {
             return bool.booleanValue();
         }
         String versionName = getVersionName(context);
-        if (!TextUtils.isEmpty(versionName) && versionName.split("\\.").length <= 3) {
+        if (!StringUtils.isEmpty(versionName) && versionName.split("\\.").length <= 3) {
             z = true;
         }
         Boolean valueOf = Boolean.valueOf(z);
@@ -1174,8 +1174,8 @@ public class UtilityImpl {
             synchronized (mLock) {
                 SharedPreferences sharedPreferences = APreferencesManager.getSharedPreferences(context, Constants.SP_FILE_NAME, 0);
                 String string = sharedPreferences.getString("appkey", "");
-                if (!TextUtils.isEmpty(str) && !string.equals(str) && !string.contains(str)) {
-                    if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(str) && !string.equals(str) && !string.contains(str)) {
+                    if (!StringUtils.isEmpty(string)) {
                         str = string + "|" + str;
                     }
                     SharedPreferences.Editor edit = sharedPreferences.edit();
@@ -1205,13 +1205,13 @@ public class UtilityImpl {
                 int i3 = sharedPreferences.getInt(Constants.SP_KEY_DEBUG_MODE, 0);
                 SharedPreferences.Editor edit = APreferencesManager.getSharedPreferences(context, Constants.SP_FILE_NAME, 0).edit();
                 edit.clear();
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     edit.putString("appkey", string);
                 }
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     edit.putString("app_sercet", string2);
                 }
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     edit.putString(Constants.KEY_PROXY_HOST, string3);
                 }
                 if (i > 0) {
@@ -1237,7 +1237,7 @@ public class UtilityImpl {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             String str = (String) cls.getDeclaredMethod("get", clsArr).invoke(cls, objArr);
             ALog.d(TAG, "getEmuiVersion", "result", str);
-            return !TextUtils.isEmpty(str) ? str : "";
+            return !StringUtils.isEmpty(str) ? str : "";
         } catch (Exception e) {
             ALog.e(TAG, "getEmuiVersion", e, new Object[0]);
             return "";
@@ -1253,9 +1253,9 @@ public class UtilityImpl {
         try {
             for (Map.Entry<String, List<String>> entry : map.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     String list2String = list2String(entry.getValue());
-                    if (!TextUtils.isEmpty(list2String)) {
+                    if (!StringUtils.isEmpty(list2String)) {
                         if (!key.startsWith(":")) {
                             key = key.toLowerCase(Locale.US);
                         }
@@ -1353,7 +1353,7 @@ public class UtilityImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7f3304d6", new Object[]{str, new Boolean(z), new Integer(i)});
         }
-        int length = TextUtils.isEmpty(str) ? 0 : str.length();
+        int length = StringUtils.isEmpty(str) ? 0 : str.length();
         if (length >= i) {
             return str;
         }

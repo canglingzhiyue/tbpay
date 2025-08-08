@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.behavixswitch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
@@ -184,10 +184,10 @@ public class b {
                     }
                     try {
                         String a2 = a.a(j.a.K_BEHAVIX_CONFIG, com.taobao.android.behavix.adapter.a.a(j.a.K_BEHAVIX_CONFIG));
-                        if (TextUtils.equals(a2, b.a(b.this))) {
+                        if (StringUtils.equals(a2, b.a(b.this))) {
                             return;
                         }
-                        if (TextUtils.isEmpty(a2)) {
+                        if (StringUtils.isEmpty(a2)) {
                             b.a(b.this, new ArrayList());
                             b.b(b.this, new ArrayList());
                             return;
@@ -226,7 +226,7 @@ public class b {
             return;
         }
         String a2 = a.a(j.a.K_UT_EVENT_FILTERS, "");
-        if (TextUtils.equals(this.e, a2)) {
+        if (StringUtils.equals(this.e, a2)) {
             return;
         }
         try {

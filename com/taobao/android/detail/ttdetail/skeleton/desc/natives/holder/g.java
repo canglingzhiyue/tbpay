@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,10 +80,10 @@ public class g extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             return;
         }
         String str = gVar.f10872a;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.h.setTextColor(com.taobao.android.detail.ttdetail.utils.w.a(str));
         }
-        if (!TextUtils.isEmpty(gVar.d)) {
+        if (!StringUtils.isEmpty(gVar.d)) {
             this.g.setBackgroundColor(com.taobao.android.detail.ttdetail.utils.w.a(gVar.d));
         }
         String str2 = gVar.h;
@@ -97,10 +97,10 @@ public class g extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             this.g.setPadding(0, 0, 0, com.taobao.android.detail.ttdetail.utils.f.a(i));
         }
         String str3 = gVar.b;
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.i.setBackgroundColor(com.taobao.android.detail.ttdetail.utils.w.a(str3));
         }
-        if (!TextUtils.isEmpty(gVar.f)) {
+        if (!StringUtils.isEmpty(gVar.f)) {
             this.j.setVisibility(0);
             this.j.setText("큚");
             this.k.setText(gVar.f);
@@ -114,7 +114,7 @@ public class g extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         }
         this.h.setText(gVar.c);
         String str4 = gVar.e;
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             this.l.setVisibility(8);
             return;
         }
@@ -159,15 +159,15 @@ public class g extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         } else {
             a(this.f10821a);
             String str = gVar.f10872a;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.h.setTextColor(com.taobao.android.detail.ttdetail.utils.w.a(str));
             }
             String str2 = gVar.b;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.i.setBackgroundColor(com.taobao.android.detail.ttdetail.utils.w.a(str2));
             }
             String str3 = gVar.c;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 this.h.setText(str3);
             }
             d(gVar);
@@ -213,7 +213,7 @@ public class g extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             return;
         }
         DetailImageView detailImageView = (DetailImageView) this.m.findViewById(R.id.divider_logo);
-        if (!TextUtils.isEmpty(gVar.e)) {
+        if (!StringUtils.isEmpty(gVar.e)) {
             a(detailImageView, gVar.e, null, null, new d.a().a(true).a());
             detailImageView.setVisibility(0);
         } else {
@@ -222,10 +222,10 @@ public class g extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         String str = gVar.c == null ? "" : gVar.c;
         TextView textView = (TextView) this.m.findViewById(R.id.divider_text);
         textView.setText(str);
-        if (!TextUtils.isEmpty(gVar.f10872a)) {
+        if (!StringUtils.isEmpty(gVar.f10872a)) {
             textView.setTextColor(com.taobao.android.detail.ttdetail.utils.w.a(gVar.f10872a));
         }
-        if (TextUtils.isEmpty(gVar.d)) {
+        if (StringUtils.isEmpty(gVar.d)) {
             return;
         }
         this.m.setBackgroundColor(com.taobao.android.detail.ttdetail.utils.w.a(gVar.d));

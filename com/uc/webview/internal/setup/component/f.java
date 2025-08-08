@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.internal.setup.component.j;
 import java.io.File;
 import java.io.FileInputStream;
@@ -103,7 +103,7 @@ final class f implements k {
     @Override // com.uc.webview.internal.setup.component.k
     public final p a(i iVar) {
         int a2 = a(iVar.f23911a);
-        if (p.a(a2) && !TextUtils.isEmpty(iVar.g) && this.f23908a.j != null && this.f23908a.j.length > 0 && !a(iVar, iVar.f23911a)) {
+        if (p.a(a2) && !StringUtils.isEmpty(iVar.g) && this.f23908a.j != null && this.f23908a.j.length > 0 && !a(iVar, iVar.f23911a)) {
             a2 = -250;
         }
         return new p(a2, -10);

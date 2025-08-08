@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.UUID;
 
@@ -26,6 +26,6 @@ public class ior {
             return UUID.randomUUID().toString();
         }
         String queryParameter = uri.getQueryParameter(f29193a);
-        return !TextUtils.isEmpty(queryParameter) ? queryParameter : UUID.randomUUID().toString();
+        return !StringUtils.isEmpty(queryParameter) ? queryParameter : UUID.randomUUID().toString();
     }
 }

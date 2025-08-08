@@ -3,7 +3,7 @@ package com.ali.user.mobile.helper;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -138,13 +138,13 @@ public class DialogHelper {
                 } else {
                     AliUserDialog.Builder Builder = AliUserDialog.Builder(DialogHelper.access$000(DialogHelper.this));
                     Builder.setMessageCenter(z);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         Builder.setTitle(str);
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         Builder.setMessage(str2);
                     }
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         Builder.setOnPositiveClickListener(str3, new AliUserDialog.PositiveClickListener() { // from class: com.ali.user.mobile.helper.DialogHelper.1.1
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -169,7 +169,7 @@ public class DialogHelper {
                             }
                         });
                     }
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         Builder.setOnNegativeClickListener(str4, new AliUserDialog.NegativeClickListener() { // from class: com.ali.user.mobile.helper.DialogHelper.1.2
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -226,17 +226,17 @@ public class DialogHelper {
                 } else if (DialogHelper.access$000(DialogHelper.this) == null || DialogHelper.access$000(DialogHelper.this).isFinishing()) {
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(DialogHelper.access$000(DialogHelper.this), 16973939));
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         builder.setTitle(str);
                     }
                     View view2 = view;
                     if (view2 != null) {
                         builder.setView(view2);
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         builder.setPositiveButton(str2, onClickListener);
                     }
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         builder.setNegativeButton(str3, onClickListener2);
                     }
                     try {

@@ -9,7 +9,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.hihonor.push.sdk.common.data.DownMsgType;
 
 /* loaded from: classes4.dex */
@@ -66,14 +66,14 @@ public abstract class HonorMessageService extends Service {
 
     public final void a(Intent intent) {
         try {
-            if (!TextUtils.equals(intent.getStringExtra("event_type"), DownMsgType.RECEIVE_TOKEN)) {
+            if (!StringUtils.equals(intent.getStringExtra("event_type"), DownMsgType.RECEIVE_TOKEN)) {
                 b(intent);
                 return;
             }
             String stringExtra = intent.getStringExtra("push_token");
             Context a2 = k.e.a();
             i iVar = i.b;
-            if (!TextUtils.equals(stringExtra, iVar.a(a2))) {
+            if (!StringUtils.equals(stringExtra, iVar.a(a2))) {
                 iVar.a(a2, stringExtra);
             }
             onNewToken(stringExtra);

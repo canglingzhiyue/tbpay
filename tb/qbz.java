@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 
@@ -23,7 +23,7 @@ public class qbz {
             return "";
         }
         for (File file2 : listFiles) {
-            if (TextUtils.equals("material.json", file2.getName()) || TextUtils.equals("config.json", file2.getName())) {
+            if (StringUtils.equals("material.json", file2.getName()) || StringUtils.equals("config.json", file2.getName())) {
                 return file2.getAbsolutePath();
             }
         }

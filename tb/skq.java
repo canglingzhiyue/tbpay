@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -174,7 +174,7 @@ public class skq {
             return (String) ipChange.ipc$dispatch("5d9eff91", new Object[0]);
         }
         String a2 = oeb.a("weitao_switch.h5LayerWebViewLoadURL", "https://web.m.taobao.com/app/tbvideo/global-interaction-view/global?isGlobal=true");
-        return !TextUtils.isEmpty(a2) ? a2 : "https://web.m.taobao.com/app/tbvideo/global-interaction-view/global?isGlobal=true";
+        return !StringUtils.isEmpty(a2) ? a2 : "https://web.m.taobao.com/app/tbvideo/global-interaction-view/global?isGlobal=true";
     }
 
     public static JSONObject i() {

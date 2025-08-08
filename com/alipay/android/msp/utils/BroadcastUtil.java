@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.biz.substitute.SubstituteConstants;
@@ -188,7 +188,7 @@ public class BroadcastUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b6694c5f", new Object[]{str, context, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("notifyName", (Object) str);
@@ -262,7 +262,7 @@ public class BroadcastUtil {
         }
         intent.putExtra("mspBizId", i);
         jSONObject2.put("mspBizId", (Object) Integer.valueOf(i));
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             intent.putExtra(MspGlobalDefine.NOTIFY_HASH_ID, str2);
             jSONObject2.put(MspGlobalDefine.NOTIFY_HASH_ID, (Object) str2);
         }

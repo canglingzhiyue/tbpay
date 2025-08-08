@@ -1,7 +1,7 @@
 package com.tanx.exposer.achieve;
 
 import android.database.Cursor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.tanx.exposer.achieve.retry.AdMonitorRetryType;
@@ -63,7 +63,7 @@ public class b {
         this.k = cursor.getString(cursor.getColumnIndex("date"));
         this.j = cursor.getLong(cursor.getColumnIndex(PushConstants.REGISTER_STATUS_EXPIRE_TIME));
         String string = cursor.getString(cursor.getColumnIndex("monitor_extra_params"));
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 this.g = new c(string);
             } catch (JSONException e) {

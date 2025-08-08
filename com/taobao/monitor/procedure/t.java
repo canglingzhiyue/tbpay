@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.security.faceauth.api.AntDetector;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.ProcedureGlobal;
@@ -383,7 +383,7 @@ public class t implements i, k {
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                 } else {
-                    t.a(t.this).a(str, j, TextUtils.isEmpty(str2) ? "UNKNOWN" : str2, map);
+                    t.a(t.this).a(str, j, StringUtils.isEmpty(str2) ? "UNKNOWN" : str2, map);
                 }
             }
         });

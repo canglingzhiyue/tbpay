@@ -3,7 +3,7 @@ package com.taobao.relationship.weex;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.ir.runtime.ApplicationInvoker;
@@ -62,7 +62,7 @@ public class FollowWeexSerivice extends Service implements IExternalComponentGet
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("464bab4e", new Object[]{this, str, wXSDKInstance});
         }
-        if (!TextUtils.equals(FOLLOW_WEEX_BUTTON, str)) {
+        if (!StringUtils.equals(FOLLOW_WEEX_BUTTON, str)) {
             return null;
         }
         return FollowWeexComponent.class;

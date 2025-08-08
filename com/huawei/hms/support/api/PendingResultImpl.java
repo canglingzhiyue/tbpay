@@ -3,7 +3,7 @@ package com.huawei.hms.support.api;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.huawei.hms.adapter.BaseAdapter;
 import com.huawei.hms.common.internal.TransactionIdCreater;
@@ -158,11 +158,11 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
         }
         hashMap.put("version", "0");
         String appId = Util.getAppId(apiClient.getContext());
-        if (TextUtils.isEmpty(appId) && (subAppInfo = apiClient.getSubAppInfo()) != null) {
+        if (StringUtils.isEmpty(appId) && (subAppInfo = apiClient.getSubAppInfo()) != null) {
             appId = subAppInfo.getSubAppID();
         }
         hashMap.put("appid", appId);
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             String id = TransactionIdCreater.getId(appId, this.d);
             this.e = id;
             hashMap.put(HiAnalyticsConstant.HaKey.BI_KEY_TRANSID, id);
@@ -199,7 +199,7 @@ public abstract class PendingResultImpl<R extends Result, T extends IMessageEnti
         int statusCode2 = commonStatus.getStatusCode();
         String statusMessage2 = commonStatus.getStatusMessage();
         if (statusCode == statusCode2) {
-            if (!TextUtils.isEmpty(statusMessage) || TextUtils.isEmpty(statusMessage2)) {
+            if (!StringUtils.isEmpty(statusMessage) || StringUtils.isEmpty(statusMessage2)) {
                 return;
             }
             HMSLog.i("PendingResultImpl", "rstStatus msg (" + statusMessage + ") is not equal commonStatus msg (" + statusMessage2 + riy.BRACKET_END_STR);

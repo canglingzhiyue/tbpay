@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.alilive.adapter.uikit.AliUrlImageView;
@@ -175,7 +175,7 @@ public class pgs {
         } else if (this.c == null || videoInfo == null) {
         } else {
             ImageView imageView = null;
-            if (!TextUtils.isEmpty(videoInfo.coverImg169)) {
+            if (!StringUtils.isEmpty(videoInfo.coverImg169)) {
                 imageView = new ImageView(this.d);
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
@@ -265,7 +265,7 @@ public class pgs {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (aliUrlImageView = this.m) == null) {
+        } else if (StringUtils.isEmpty(str) || (aliUrlImageView = this.m) == null) {
         } else {
             aliUrlImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             this.m.setImageUrl(str);

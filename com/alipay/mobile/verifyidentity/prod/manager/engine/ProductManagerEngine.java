@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.prod.manager.engine;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -98,7 +98,7 @@ public class ProductManagerEngine {
             return;
         }
         VerifyLogCat.i(f5941a, "启动支付后推荐开通");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject != null) {
@@ -229,7 +229,7 @@ public class ProductManagerEngine {
             VerifyLogCat.i(f5941a, "调用方没有传入回调，放弃回调");
         } else {
             ProdManagerResult prodManagerResult = new ProdManagerResult(str2);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 prodManagerResult.setMessage(str3);
             }
             prodManagerListener.onResult(str, prodManagerResult);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.business.usertrack.ITrackService;
@@ -45,7 +45,7 @@ public class noi {
             map.put("content_type", cVar.H());
             if (i2.content != null && i2.content.itemIds != null && i2.content.itemIds.size() > 0) {
                 String str = i2.content.itemIds.get(0);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     map.put("item_id", str);
                 }
             }
@@ -106,10 +106,10 @@ public class noi {
             }
             if (slm.a(i.trackInfo)) {
                 hashMap.put("trackInfo", i.trackInfo);
-            } else if (!TextUtils.isEmpty(sessionParams.A)) {
+            } else if (!StringUtils.isEmpty(sessionParams.A)) {
                 hashMap.put("trackInfo", sessionParams.A);
             }
-            if (TextUtils.isEmpty(cVar.e())) {
+            if (StringUtils.isEmpty(cVar.e())) {
                 hashMap.put("content_account_id", cVar.c());
             } else {
                 hashMap.put("content_account_id", cVar.d());

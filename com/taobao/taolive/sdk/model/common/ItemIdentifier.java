@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.model.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.INetDataObject;
 import java.util.Objects;
@@ -52,6 +52,6 @@ public final class ItemIdentifier implements INetDataObject {
 
     public boolean equals(int i, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1b9c438b", new Object[]{this, new Integer(i), str})).booleanValue() : this.goodsIndex == i && TextUtils.equals(this.itemId, str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1b9c438b", new Object[]{this, new Integer(i), str})).booleanValue() : this.goodsIndex == i && StringUtils.equals(this.itemId, str);
     }
 }

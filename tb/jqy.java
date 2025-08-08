@@ -5,7 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.renderscript.RenderScript;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
@@ -522,7 +522,7 @@ public class jqy implements hjl, shm, snz {
         }
         DWAspectRatio a2 = sjs.a(z, this.b.l().cK_());
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_CROP;
-        if (TextUtils.equals(a2.name(), DWAspectRatio.DW_FIT_CENTER.name())) {
+        if (StringUtils.equals(a2.name(), DWAspectRatio.DW_FIT_CENTER.name())) {
             scaleType = ImageView.ScaleType.FIT_CENTER;
         }
         this.g.setImageDrawable(bitmapDrawable);

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.data.meta;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -207,7 +207,7 @@ public class Vertical extends Meta {
                         ArrayList arrayList2 = new ArrayList();
                         for (String str2 : jSONObject3.keySet()) {
                             String string = jSONObject3.getString(str2);
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 arrayList2.add(new Pair(str2, string));
                             }
                         }

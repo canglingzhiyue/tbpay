@@ -1,6 +1,6 @@
 package com.taobao.android.xsearchplugin.weex.weex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKEngine;
@@ -79,7 +79,7 @@ public class XSearchUtilModule extends WXModule {
         String b = sConstantAdapter.b();
         String a2 = sConstantAdapter.a();
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             jSONObject.put("sversion", (Object) e);
             jSONObject.put("utd_id", (Object) b);
             jSONObject.put("ttid", (Object) a2);

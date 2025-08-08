@@ -1,6 +1,6 @@
 package com.taobao.umipublish.extension.windvane.abilities;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
@@ -57,7 +57,7 @@ public class QuickBaseAbility extends BaseAbility {
                     if (c == null) {
                         return;
                     }
-                    QuickBaseAbility.this.a(TextUtils.isEmpty(c.getLoadingText()) ? b.a(R.string.gg_pub_loading_1) : c.getLoadingText());
+                    QuickBaseAbility.this.a(StringUtils.isEmpty(c.getLoadingText()) ? b.a(R.string.gg_pub_loading_1) : c.getLoadingText());
                 }
             });
             QuickBaseAbility.this.progressCallback(i);
@@ -151,7 +151,7 @@ public class QuickBaseAbility extends BaseAbility {
             return b;
         }
         String c = e.c(this.mContext);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return null;
         }
         JSONObject jSONObject2 = (JSONObject) JSON.toJSON(ios.a(c).a());

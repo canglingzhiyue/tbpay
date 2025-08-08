@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class izy extends izq {
             return (dkx) ipChange.ipc$dispatch("8d2f84b8", new Object[]{this, dlhVar, dXRecyclerLayout, dXWidgetNode, lVar, str});
         }
         String c = dlhVar.c("targetNodeId");
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             j = dXWidgetNode.queryWidgetNodeByUserId(c);
         } else {
             j = lVar.j();

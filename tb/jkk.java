@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -523,7 +523,7 @@ public class jkk {
             if (ipChange instanceof IpChange) {
                 return (jkk) ipChange.ipc$dispatch("f067314", new Object[]{this});
             }
-            if (this.f29600a == null || TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c)) {
+            if (this.f29600a == null || StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c)) {
                 throw new IllegalArgumentException();
             }
             return new jkk(this);

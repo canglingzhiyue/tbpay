@@ -1,7 +1,7 @@
 package com.sina.weibo.sdk.net;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.kge;
 
 /* loaded from: classes4.dex */
@@ -13,13 +13,13 @@ public class HttpManager {
 
     public static String a(Context context, String str, String str2, String str3, String str4) {
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             sb.append(str3);
         }
         return calcOauthSignNative(context, sb.toString(), str4);

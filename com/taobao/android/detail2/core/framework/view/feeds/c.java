@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework.view.feeds;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -230,7 +230,7 @@ public class c extends RecyclerView.Adapter<d> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6ba5438c", new Object[]{this, new Boolean(z), str, dVar});
-        } else if (dVar == null || TextUtils.isEmpty(str)) {
+        } else if (dVar == null || StringUtils.isEmpty(str)) {
             fjt.a(fjt.TAG_RENDER, "node为空或者nid为空，丢弃refreshnode请求");
         } else {
             for (int i = 0; i < this.c.size(); i++) {
@@ -316,7 +316,7 @@ public class c extends RecyclerView.Adapter<d> {
         }
         for (int i = 0; i < this.c.size(); i++) {
             com.taobao.android.detail2.core.framework.data.model.d dVar = this.c.get(i);
-            if (dVar != null && TextUtils.equals(dVar.k, str)) {
+            if (dVar != null && StringUtils.equals(dVar.k, str)) {
                 if (dVar.j != null) {
                     fjt.a(fjt.TAG_RENDER, "删除第" + i + "个节点, 根节点个数：" + dVar.j.size() + ", itemid: " + dVar.k);
                 } else {
@@ -336,7 +336,7 @@ public class c extends RecyclerView.Adapter<d> {
         }
         for (int i = 0; i < this.c.size(); i++) {
             com.taobao.android.detail2.core.framework.data.model.d dVar = this.c.get(i);
-            if (dVar != null && TextUtils.equals(dVar.k, str)) {
+            if (dVar != null && StringUtils.equals(dVar.k, str)) {
                 return i;
             }
         }
@@ -353,7 +353,7 @@ public class c extends RecyclerView.Adapter<d> {
         if (list == null) {
             return -1;
         }
-        return (i < 0 || i >= list.size() || (dVar = this.c.get(i)) == null || !TextUtils.equals(dVar.k, str)) ? b(str) : i;
+        return (i < 0 || i >= list.size() || (dVar = this.c.get(i)) == null || !StringUtils.equals(dVar.k, str)) ? b(str) : i;
     }
 
     public d a(ViewGroup viewGroup, int i) {

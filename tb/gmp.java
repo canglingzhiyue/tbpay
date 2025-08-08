@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.taobao.util.j;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,10 +27,10 @@ public class gmp {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1cb6e294", new Object[]{context, jSONObject})).booleanValue();
         }
-        if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("targetUrl"))) {
+        if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("targetUrl"))) {
             String[] strArr = new String[1];
             StringBuilder sb = new StringBuilder();
-            sb.append("item == null || TextUtils.isEmpty(item.getString(S_I_TARGET_URL))");
+            sb.append("item == null || StringUtils.isEmpty(item.getString(S_I_TARGET_URL))");
             if (jSONObject != null) {
                 z = false;
             }

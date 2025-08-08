@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.diagnose.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetNetworkDiagnoseListener;
 import com.alipay.mobile.common.amnet.api.AmnetStorageListener;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
@@ -110,7 +110,7 @@ public class DiagnoseBySystemCall implements AmnetNetworkDiagnoseListener {
             return;
         }
         LogCatUtil.info("DIAGNOSE-SYS", sb2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.c.add(str);
             if (str.contains(Configuration.LOG_TYPE_OUT_DIAGO)) {
                 a(z2, str);
@@ -236,7 +236,7 @@ public class DiagnoseBySystemCall implements AmnetNetworkDiagnoseListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f7197a36", new Object[]{this, new Boolean(z), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.g |= z;
             this.h = true;
@@ -246,7 +246,7 @@ public class DiagnoseBySystemCall implements AmnetNetworkDiagnoseListener {
                     return;
                 }
                 String substring = str.substring(indexOf + 10);
-                if (!TextUtils.isEmpty(substring) && !z && (convertLinkData = SpeedTestManager.convertLinkData(substring)) != null && !convertLinkData.isEmpty() && (speedTestLinkData = convertLinkData.get(0)) != null) {
+                if (!StringUtils.isEmpty(substring) && !z && (convertLinkData = SpeedTestManager.convertLinkData(substring)) != null && !convertLinkData.isEmpty() && (speedTestLinkData = convertLinkData.get(0)) != null) {
                     this.i += speedTestLinkData.describe + ";" + speedTestLinkData.errCode + ";";
                 }
             } catch (Throwable th) {

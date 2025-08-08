@@ -1,6 +1,6 @@
 package com.taobao.unit.center.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -227,7 +227,7 @@ public final class LayoutSyncManager implements ILayoutSyncService {
             java.lang.String r0 = com.taobao.message.kit.util.SharedPreferencesUtil.getStringSharedPreference(r8)
             r1 = r0
             java.lang.CharSequence r1 = (java.lang.CharSequence) r1
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             java.lang.String r2 = "cbq@sync"
             if (r1 != 0) goto L70
             java.lang.Class<com.taobao.unit.center.mtop.UnitCenterLayoutInfoModel> r1 = com.taobao.unit.center.mtop.UnitCenterLayoutInfoModel.class
@@ -294,7 +294,7 @@ public final class LayoutSyncManager implements ILayoutSyncService {
             return;
         }
         String loadZipFromAsset = FileUtil.loadZipFromAsset(ApplicationUtil.getApplication(), "compress/mpm_layoutinfo.json.zip");
-        if (TextUtils.isEmpty(loadZipFromAsset)) {
+        if (StringUtils.isEmpty(loadZipFromAsset)) {
             return;
         }
         JSONArray jsonArray = JSONArray.parseArray(loadZipFromAsset);

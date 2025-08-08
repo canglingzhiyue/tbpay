@@ -3,7 +3,7 @@ package com.taobao.taobao.weex2.modules;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.user.UserAbility;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -78,7 +78,7 @@ public class AliMUSLoginModule extends MUSModule {
         String userId = Login.getUserId();
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
-        if (isLogin() && !TextUtils.isEmpty(nick) && !TextUtils.isEmpty(userId)) {
+        if (isLogin() && !StringUtils.isEmpty(nick) && !StringUtils.isEmpty(userId)) {
             hashMap.put(UserAbility.API_IS_LOGIN, "true");
             hashMap.put("nick", nick);
             hashMap.put("userId", userId);
@@ -116,7 +116,7 @@ public class AliMUSLoginModule extends MUSModule {
 
     private boolean isLogin() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dfb0d96a", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(Login.getSid()) && Login.checkSessionValid();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dfb0d96a", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(Login.getSid()) && Login.checkSessionValid();
     }
 
     /* loaded from: classes8.dex */

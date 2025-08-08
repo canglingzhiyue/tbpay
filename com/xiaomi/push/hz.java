@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,14 +51,14 @@ public class hz {
         if (igVar.f513a) {
             igVar.a("push_sdk_channel");
         }
-        if (TextUtils.isEmpty(igVar.d())) {
+        if (StringUtils.isEmpty(igVar.d())) {
             igVar.f(com.xiaomi.push.service.ca.a());
         }
         igVar.b(System.currentTimeMillis());
-        if (TextUtils.isEmpty(igVar.e())) {
+        if (StringUtils.isEmpty(igVar.e())) {
             igVar.e(context.getPackageName());
         }
-        if (TextUtils.isEmpty(igVar.c())) {
+        if (StringUtils.isEmpty(igVar.c())) {
             igVar.e(igVar.e());
         }
     }

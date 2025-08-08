@@ -5,7 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson2.time.e;
 import com.taobao.calendar.bridge.model.ScheduleDTOModule;
 import com.taobao.calendar.exception.CalendarResult;
@@ -124,7 +124,7 @@ public class kfk implements kfh {
             return;
         }
         ScheduleDTOModule scheduleDTOModule = null;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             kfiVar.a(CalendarResult.KTCALENDAR_INVALID_PARAM, null);
             return;
         }
@@ -160,7 +160,7 @@ public class kfk implements kfh {
             query.moveToFirst();
             while (!query.isAfterLast()) {
                 String string = query.getString(query.getColumnIndex("title"));
-                if (!TextUtils.isEmpty(scheduleDTOModule.getTitle()) && scheduleDTOModule.getTitle().equals(string)) {
+                if (!StringUtils.isEmpty(scheduleDTOModule.getTitle()) && scheduleDTOModule.getTitle().equals(string)) {
                     hashMap.put(Integer.valueOf(query.getInt(query.getColumnIndex("_id"))), scheduleDTOModule);
                 }
                 query.moveToNext();

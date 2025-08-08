@@ -15,7 +15,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.ResourceCursorAdapter;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.TextAppearanceSpan;
 import android.util.Log;
 import android.util.TypedValue;
@@ -257,7 +257,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
 
     private void setViewText(TextView textView, CharSequence charSequence) {
         textView.setText(charSequence);
-        textView.setVisibility(TextUtils.isEmpty(charSequence) ? 8 : 0);
+        textView.setVisibility(StringUtils.isEmpty(charSequence) ? 8 : 0);
     }
 
     private void storeInIconCache(String str, Drawable drawable) {
@@ -283,7 +283,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
         if (aVar.b != null) {
             String stringOrNull = getStringOrNull(cursor, this.mText2UrlCol);
             CharSequence formatUrl = stringOrNull != null ? formatUrl(stringOrNull) : getStringOrNull(cursor, this.mText2Col);
-            if (TextUtils.isEmpty(formatUrl)) {
+            if (StringUtils.isEmpty(formatUrl)) {
                 if (aVar.f1460a != null) {
                     aVar.f1460a.setSingleLine(false);
                     aVar.f1460a.setMaxLines(2);
@@ -363,7 +363,7 @@ class SuggestionsAdapter extends ResourceCursorAdapter implements View.OnClickLi
     Drawable getDrawableFromResourceUri(Uri uri) throws FileNotFoundException {
         int parseInt;
         String authority = uri.getAuthority();
-        if (TextUtils.isEmpty(authority)) {
+        if (StringUtils.isEmpty(authority)) {
             throw new FileNotFoundException("No authority: " + uri);
         }
         try {

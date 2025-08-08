@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -187,12 +187,12 @@ public class ocu {
                             com.taobao.share.ui.engine.structure.a aVar2 = (com.taobao.share.ui.engine.structure.a) bVar;
                             JSONObject jSONObject = parseObject;
                             String string = jSONObject != null ? jSONObject.getString(aVar2.d().c()) : null;
-                            if (TextUtils.isEmpty(string)) {
+                            if (StringUtils.isEmpty(string)) {
                                 string = aVar2.d().b();
                             }
                             TBPublicMenuItem.Builder icon = new TBPublicMenuItem.Builder().setTitle(aVar2.d().d()).setIcon(string);
                             String k = aVar2.d().k();
-                            if (!TextUtils.isEmpty(k)) {
+                            if (!StringUtils.isEmpty(k)) {
                                 icon.setImageTipUri(k);
                                 icon.setMessageMode(TBPublicMenuItem.MessageMode.IMG_TIPS);
                             }
@@ -311,12 +311,12 @@ public class ocu {
                             if (arrayList.contains(aVar2.d().c())) {
                                 JSONObject jSONObject = parseObject;
                                 String string = jSONObject != null ? jSONObject.getString(aVar2.d().c()) : null;
-                                if (TextUtils.isEmpty(string)) {
+                                if (StringUtils.isEmpty(string)) {
                                     string = aVar2.d().b();
                                 }
                                 TBPublicMenuItem.Builder icon = new TBPublicMenuItem.Builder().setTitle(aVar2.d().d()).setIcon(string);
                                 String k = aVar2.d().k();
-                                if (!TextUtils.isEmpty(k)) {
+                                if (!StringUtils.isEmpty(k)) {
                                     icon.setImageTipUri(k);
                                     icon.setMessageMode(TBPublicMenuItem.MessageMode.IMG_TIPS);
                                 }
@@ -357,7 +357,7 @@ public class ocu {
                             aVar.c = contactInfo;
                             arrayList3.add(aVar);
                             String config = OrangeConfig.getInstance().getConfig("android_share_bizconfig", "TBPublicShareUserDefaultIcon", "https://gw.alicdn.com/imgextra/i1/O1CN014yqM2I26fc1KAMdZc_!!6000000007689-2-tps-144-144.png");
-                            if (!TextUtils.isEmpty(contactInfo.getHeadUrl())) {
+                            if (!StringUtils.isEmpty(contactInfo.getHeadUrl())) {
                                 config = contactInfo.getHeadUrl();
                             }
                             arrayList2.add(new TBPublicMenuItem.Builder().setTitle(contactInfo.getDisplayName()).setIcon(config).build());

@@ -1,7 +1,7 @@
 package tb;
 
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes2.dex */
@@ -33,7 +33,7 @@ public class adf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f25264a = true;
             b = str;
@@ -63,7 +63,7 @@ public class adf {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("d01caed6", new Object[]{this, iWVWebView, str});
-            } else if (!adf.b() || TextUtils.isEmpty(adf.c()) || !(iWVWebView instanceof IWVWebView)) {
+            } else if (!adf.b() || StringUtils.isEmpty(adf.c()) || !(iWVWebView instanceof IWVWebView)) {
             } else {
                 iWVWebView.evaluateJavascript(adf.c());
             }

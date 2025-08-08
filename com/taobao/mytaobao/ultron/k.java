@@ -2,7 +2,7 @@ package com.taobao.mytaobao.ultron;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.instance.UltronInstanceConfig;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -103,7 +103,7 @@ public final class k {
             }
             q.c(switchKey, "switchKey");
             String str = switchKey;
-            if (TextUtils.equals(str, "enableDXPreCreateView") || TextUtils.equals(str, fgo.ENABLE_PIPE_LINE_CHCHE)) {
+            if (StringUtils.equals(str, "enableDXPreCreateView") || StringUtils.equals(str, fgo.ENABLE_PIPE_LINE_CHCHE)) {
                 return true;
             }
             return super.a(switchKey, z);

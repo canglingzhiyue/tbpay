@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.PersistableBundle;
 import android.os.TransactionTooLargeException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.AbsSavedState;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -159,7 +159,7 @@ public class hht implements igy {
                 sb.append(riy.ARRAY_START_STR);
                 while (i < size) {
                     String a2 = a(sparseArray.get(i));
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         sb.append(a2 + ",");
                     }
                     i++;

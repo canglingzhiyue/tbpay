@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.profile;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -191,7 +191,7 @@ public class a extends RecyclerView.Adapter {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                    } else if (TextUtils.isEmpty(a.a(a.this))) {
+                    } else if (StringUtils.isEmpty(a.a(a.this))) {
                     } else {
                         pmd.a().r().a(a.b(a.this), a.a(a.this), null);
                         c.f(a.c(a.this), a.d(a.this));

@@ -3,7 +3,7 @@ package com.taobao.uikit.actionbar;
 import android.graphics.Rect;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -134,7 +134,7 @@ public class TBPublicMenuAdapter extends RecyclerView.Adapter<ViewHolder> implem
         if (tBPublicMenuItem == null) {
             return;
         }
-        if (!TextUtils.isEmpty(tBPublicMenuItem.mIconUrl)) {
+        if (!StringUtils.isEmpty(tBPublicMenuItem.mIconUrl)) {
             viewHolder.mIconView.setVisibility(8);
             viewHolder.mIconImageView.setVisibility(0);
             viewHolder.mIconImageView.setImageDrawable(null);
@@ -145,7 +145,7 @@ public class TBPublicMenuAdapter extends RecyclerView.Adapter<ViewHolder> implem
             viewHolder.mIconImageView.setVisibility(0);
             viewHolder.mIconImageView.setImageDrawable(tBPublicMenuItem.mIconDrawable);
             viewHolder.mIconView.setText("");
-        } else if (!TextUtils.isEmpty(tBPublicMenuItem.mTitle)) {
+        } else if (!StringUtils.isEmpty(tBPublicMenuItem.mTitle)) {
             viewHolder.mIconView.setVisibility(0);
             viewHolder.mIconImageView.setVisibility(8);
             if (tBPublicMenuItem.getTitle().length() >= 2 && tBPublicMenuItem.getTitle().charAt(1) == ':') {
@@ -162,7 +162,7 @@ public class TBPublicMenuAdapter extends RecyclerView.Adapter<ViewHolder> implem
         }
         viewHolder.mIconView.invalidate();
         viewHolder.mIconImageView.invalidate();
-        if (!TextUtils.isEmpty(tBPublicMenuItem.getTitle())) {
+        if (!StringUtils.isEmpty(tBPublicMenuItem.getTitle())) {
             if (tBPublicMenuItem.getTitle().length() >= 2 && tBPublicMenuItem.getTitle().charAt(1) == ':') {
                 viewHolder.mTitleView.setText(tBPublicMenuItem.getTitle().substring(tBPublicMenuItem.getTitle().indexOf(":") + 1, tBPublicMenuItem.getTitle().length()));
             } else {
@@ -179,7 +179,7 @@ public class TBPublicMenuAdapter extends RecyclerView.Adapter<ViewHolder> implem
         }
         int i2 = AnonymousClass1.$SwitchMap$com$taobao$uikit$actionbar$TBPublicMenuItem$MessageMode[tBPublicMenuItem.getMessageMode().ordinal()];
         if (i2 == 1) {
-            if (TextUtils.isEmpty(tBPublicMenuItem.mMessage) || "0".equals(tBPublicMenuItem.mMessage)) {
+            if (StringUtils.isEmpty(tBPublicMenuItem.mMessage) || "0".equals(tBPublicMenuItem.mMessage)) {
                 return;
             }
             viewHolder.mMessageView.setVisibility(0);
@@ -196,7 +196,7 @@ public class TBPublicMenuAdapter extends RecyclerView.Adapter<ViewHolder> implem
                 }
                 viewHolder.mMessageView.setText("");
                 viewHolder.mMessageView.setVisibility(8);
-            } else if (!TextUtils.isEmpty(tBPublicMenuItem.mMessage)) {
+            } else if (!StringUtils.isEmpty(tBPublicMenuItem.mMessage)) {
                 viewHolder.mMessageView.setVisibility(0);
                 viewHolder.mMessageView.setText(tBPublicMenuItem.mMessage);
                 viewHolder.mMessageView.setBackgroundResource(R.drawable.uik_action_message_more_bg);

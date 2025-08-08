@@ -3,7 +3,7 @@ package com.alibaba.poplayer.trigger;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -56,7 +56,7 @@ public class TriggerBroadcastReceiver extends BroadcastReceiver {
         }
         try {
             String action = intent.getAction();
-            if (TextUtils.isEmpty(action)) {
+            if (StringUtils.isEmpty(action)) {
                 return;
             }
             com.alibaba.poplayer.utils.c.c("triggerEvent", "", "TriggerBroadcastReceiver.onReceive.action=." + action);

@@ -15,7 +15,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,11 +87,11 @@ public class TaoLiveHomepageActivity extends CustomBaseActivity implements com.a
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+            } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
             } else {
                 String action = intent.getAction();
-                if (!TextUtils.equals(action, LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
-                    if (!TextUtils.equals(action, LoginAction.NOTIFY_LOGIN_CANCEL.name())) {
+                if (!StringUtils.equals(action, LoginAction.NOTIFY_LOGIN_SUCCESS.name())) {
+                    if (!StringUtils.equals(action, LoginAction.NOTIFY_LOGIN_CANCEL.name())) {
                         return;
                     }
                     TaoLiveHomepageActivity taoLiveHomepageActivity = TaoLiveHomepageActivity.this;
@@ -320,7 +320,7 @@ public class TaoLiveHomepageActivity extends CustomBaseActivity implements com.a
             String nick = Login.getNick();
             s.f18233a.d().a("taolive_check_login_session_valid", Boolean.valueOf(checkSessionValid));
             if (this.d && c.d()) {
-                if (!checkSessionValid && ((TextUtils.isEmpty(userId) || TextUtils.isEmpty(nick)) && !a(checkSessionValid))) {
+                if (!checkSessionValid && ((StringUtils.isEmpty(userId) || StringUtils.isEmpty(nick)) && !a(checkSessionValid))) {
                     d(false);
                     return;
                 }
@@ -423,7 +423,7 @@ public class TaoLiveHomepageActivity extends CustomBaseActivity implements com.a
         }
         this.i = data.getQueryParameter("livesource");
         String queryParameter = data.getQueryParameter("tabSpm");
-        if (!TextUtils.isEmpty(this.i) && this.i.startsWith("taolivejulang") && !TextUtils.isEmpty(queryParameter) && com.taobao.taolivehome.utils.j.a()) {
+        if (!StringUtils.isEmpty(this.i) && this.i.startsWith("taolivejulang") && !StringUtils.isEmpty(queryParameter) && com.taobao.taolivehome.utils.j.a()) {
             if ("jingxuan,singleLiveTab".equals(data.getQueryParameter("channelType")) && z) {
                 this.j = new Object();
                 UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(this.j, "Page_TaobaoLiveWatch");
@@ -434,24 +434,24 @@ public class TaoLiveHomepageActivity extends CustomBaseActivity implements com.a
                 UTAnalytics.getInstance().getDefaultTracker().updatePageName(this, "PageTaoLive");
                 str = "";
             }
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 str = queryParameter;
             }
             hashMap.put("spm-cnt", str);
-            if (!TextUtils.isEmpty(this.i)) {
+            if (!StringUtils.isEmpty(this.i)) {
                 hashMap.put("livesource", this.i);
                 hashMap.put("entryLiveSource", this.i);
             }
             String queryParameter2 = data.getQueryParameter("spm");
-            if (!TextUtils.isEmpty(queryParameter2)) {
+            if (!StringUtils.isEmpty(queryParameter2)) {
                 hashMap.put("entrySpm", queryParameter2);
             }
             String queryParameter3 = data.getQueryParameter("userId");
-            if (!TextUtils.isEmpty(queryParameter3)) {
+            if (!StringUtils.isEmpty(queryParameter3)) {
                 hashMap.put("account_id", queryParameter3);
             }
             String queryParameter4 = data.getQueryParameter("id");
-            if (!TextUtils.isEmpty(queryParameter4)) {
+            if (!StringUtils.isEmpty(queryParameter4)) {
                 hashMap.put("feed_id", queryParameter4);
             }
             hashMap.put("isAfcColdContext", String.valueOf(this.d));

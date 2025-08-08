@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
@@ -390,7 +390,7 @@ public class dau {
                 hashMap.put("has_tmpl_cache_value", Double.valueOf(d));
                 hashMap2.put("has_tmpl_cache", String.valueOf(b));
             }
-            if (!TextUtils.isEmpty(f26646a.K)) {
+            if (!StringUtils.isEmpty(f26646a.K)) {
                 nnh.a(f26646a.K, "capturePerfDimension", hashMap2);
                 nnh.a(f26646a.K, "capturePerfMeasure", hashMap);
                 nnh.a(f26646a.K, "bizPageLoadEnd", Long.valueOf(Math.max(Math.max(f26646a.M, f26646a.L), Math.max(f26646a.N, f26646a.O))));

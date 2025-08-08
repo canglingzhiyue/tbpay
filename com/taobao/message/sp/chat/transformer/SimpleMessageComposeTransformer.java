@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.transformer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -55,7 +55,7 @@ public class SimpleMessageComposeTransformer implements DiffTransfomer, Transfor
         JSONArray jSONArray = (JSONArray) sharedState.getRuntimeData("messageViewObjects", JSONArray.class, new JSONArray());
         SimpleMessageListData simpleMessageListData = (SimpleMessageListData) sharedState.getOriginData(SimpleMessageListData.SOURCE_NAME_MESSAGE, SimpleMessageListData.class, null);
         ArrayList arrayList = new ArrayList();
-        if (TextUtils.equals(action.getName(), StdActions.UPDATE_ORIGINAL_DATA)) {
+        if (StringUtils.equals(action.getName(), StdActions.UPDATE_ORIGINAL_DATA)) {
             Map<String, Map<String, Object>> map = (Map) sharedState.getRuntimeData("messageViewDataMap", Map.class, new HashMap());
             Map<String, Map<String, Object>> map2 = (Map) sharedState.getRuntimeData("messageViewUpdateDataMap", Map.class, new HashMap());
             boolean z = !"0".equals(sharedState.getProp("oldToNew", String.class, null));
@@ -94,9 +94,9 @@ public class SimpleMessageComposeTransformer implements DiffTransfomer, Transfor
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("31185aed", new Object[]{this, str, jSONArray})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && jSONArray != null) {
+        if (!StringUtils.isEmpty(str) && jSONArray != null) {
             for (int i = 0; i < jSONArray.size(); i++) {
-                if (TextUtils.equals(str, jSONArray.getJSONObject(i).getJSONObject("data").getString(UNI_KEY))) {
+                if (StringUtils.equals(str, jSONArray.getJSONObject(i).getJSONObject("data").getString(UNI_KEY))) {
                     return true;
                 }
             }
@@ -131,7 +131,7 @@ public class SimpleMessageComposeTransformer implements DiffTransfomer, Transfor
         viewCenterProps.targetType = (String) sharedState.getProp(DinamicxNativeConfig.TARGETTYPE, String.class, null);
         viewCenterProps.tag = (String) sharedState.getProp("tag", String.class, null);
         String str = (String) sharedState.getProp("accountId", String.class, null);
-        viewCenterProps.userId = TextUtils.isEmpty(str) ? 0L : Long.parseLong(str);
+        viewCenterProps.userId = StringUtils.isEmpty(str) ? 0L : Long.parseLong(str);
         viewCenterProps.ccode = (String) sharedState.getProp("ccode", String.class, null);
         viewCenterProps.spm = (String) sharedState.getProp("spm", String.class, null);
         viewCenterProps.instance = this.mItem.instance;

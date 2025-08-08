@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.ability.excutor.Executor;
 import com.ali.user.mobile.ability.excutor.ExecutorCenter;
 import com.ali.user.mobile.ability.excutor.ExecutorContext;
@@ -70,7 +70,7 @@ public class ExecutorJSBridge extends e {
             JSONObject jSONObject = new JSONObject(str2);
             String optString = jSONObject.optString("name");
             JSONObject optJSONObject = jSONObject.optJSONObject("params");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 setResultParamError(wVCallBackContext);
             } else {
                 Executor findExecutor = ExecutorCenter.getInstance().findExecutor(optString);

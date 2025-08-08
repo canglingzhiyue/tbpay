@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import com.taobao.search.common.util.r;
@@ -22,7 +22,7 @@ public class ntv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5791d8bf", new Object[]{activity, commonSearchContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.a("SearchPoplayerUtil", "SRP不调用poplayer:传给poplayer的url为空");
         } else {
             if (r.aF()) {

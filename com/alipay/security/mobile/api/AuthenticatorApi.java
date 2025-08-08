@@ -1,7 +1,7 @@
 package com.alipay.security.mobile.api;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.security.mobile.agent.AuthenticatorLock;
 import com.alipay.security.mobile.auth.AuthInfo;
 import com.alipay.security.mobile.auth.AuthenticatorCallback;
@@ -77,7 +77,7 @@ public class AuthenticatorApi {
                     int checkUserStatus = !CommonUtils.isBlank(str) ? create.checkUserStatus(str) : 2;
                     int i3 = init == 127 ? 5 : 6;
                     int parseInt = Integer.parseInt(ConfigServiceUtil.syncConfigMode(ConfigServiceUtil.KEY_IFAA_DI_MAX_LENGTH, "100"));
-                    if (parseInt > 0 && (TextUtils.isEmpty(deviceId) || deviceId.length() > parseInt)) {
+                    if (parseInt > 0 && (StringUtils.isEmpty(deviceId) || deviceId.length() > parseInt)) {
                         TrackEvent.getIns().event(null, "di为空 或者 di超长,替换为\"null\"占位");
                         deviceId = "null";
                     }

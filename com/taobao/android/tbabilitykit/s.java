@@ -1,7 +1,7 @@
 package com.taobao.android.tbabilitykit;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class s implements dlp {
             return new dkw(new dkv(10004, "ut异常error context为空"), false);
         }
         if ("updatePageName".equals(str)) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return new dkw(new dkv(10004, "ut异常error updatePageName pageName为空"), false);
             }
             Context a3 = dleVar.a();
@@ -96,7 +96,7 @@ public class s implements dlp {
                 a2 = 2201;
             } else if ("pageExposure".equals(str)) {
                 a2 = 2001;
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 return new dkw(new dkv(10004, "utAction 为空"), false);
             } else {
                 a2 = a(str);
@@ -118,7 +118,7 @@ public class s implements dlp {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     hashMap.put(key, String.valueOf(value));
                 }
             }

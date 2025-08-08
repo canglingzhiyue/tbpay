@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.NetworkInfo;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.BuildConfig;
 import com.xiaomi.push.gw;
 import com.xiaomi.push.ia;
@@ -124,7 +124,7 @@ public class p {
     }
 
     private int a() {
-        if (!TextUtils.isEmpty(this.f1008a)) {
+        if (!StringUtils.isEmpty(this.f1008a)) {
             try {
                 return this.f1007a.getInt(a.a(this.f1008a), -1);
             } catch (Throwable unused) {
@@ -161,7 +161,7 @@ public class p {
         }
         String str3 = null;
         u m2360a = v.m2360a(this.f1006a);
-        if (m2360a != null && !TextUtils.isEmpty(m2360a.f1028a)) {
+        if (m2360a != null && !StringUtils.isEmpty(m2360a.f1028a)) {
             String[] split = m2360a.f1028a.split("@");
             if (split.length > 0) {
                 str3 = split[0];
@@ -216,7 +216,7 @@ public class p {
     }
 
     private boolean a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.startsWith("W-") || str.startsWith("M-");
@@ -284,7 +284,7 @@ public class p {
             r0 = 0
             r10.getAndSet(r0)
             java.lang.String r10 = r9.f1008a
-            boolean r10 = android.text.TextUtils.isEmpty(r10)
+            boolean r10 = android.text.StringUtils.isEmpty(r10)
             r2 = 1
             if (r10 != 0) goto L8d
             int r10 = r9.a()
@@ -312,7 +312,7 @@ public class p {
     }
 
     private boolean b() {
-        return !TextUtils.isEmpty(this.f1008a) && this.f1008a.startsWith("M-") && !az.a(this.f1006a).a(ih.IntelligentHeartbeatUseInMobileNetworkBoolean.a(), false);
+        return !StringUtils.isEmpty(this.f1008a) && this.f1008a.startsWith("M-") && !az.a(this.f1006a).a(ih.IntelligentHeartbeatUseInMobileNetworkBoolean.a(), false);
     }
 
     private long c() {
@@ -339,7 +339,7 @@ public class p {
     private void d(String str) {
         String str2;
         String str3;
-        if (m2337c() && !TextUtils.isEmpty(str)) {
+        if (m2337c() && !StringUtils.isEmpty(str)) {
             if (str.startsWith("W-")) {
                 str2 = "W";
             } else if (!str.startsWith("M-")) {
@@ -358,7 +358,7 @@ public class p {
             sb.append(":::");
             sb.append(valueOf2);
             String string = this.f1007a.getString(a.f(), null);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 str3 = sb.toString();
             } else {
                 str3 = string + "###" + sb.toString();
@@ -391,7 +391,7 @@ public class p {
     private void f() {
         int i = this.f1004a;
         String h = i != 0 ? i != 1 ? null : a.h() : a.g();
-        if (!TextUtils.isEmpty(h)) {
+        if (!StringUtils.isEmpty(h)) {
             if (this.f1007a.getLong(a.i(), -1L) == -1) {
                 this.f1005a = System.currentTimeMillis();
                 this.f1007a.edit().putLong(a.i(), this.f1005a).apply();
@@ -434,7 +434,7 @@ public class p {
         if (this.f1014c && !b() && ((az.a(this.f1006a).a(ih.IntelligentHeartbeatSwitchBoolean.a(), true) || c() >= System.currentTimeMillis()) && (a2 = a()) != -1)) {
             b = a2;
         }
-        if (!TextUtils.isEmpty(this.f1008a) && !"WIFI-ID-UNKNOWN".equals(this.f1008a) && this.f1004a == 1) {
+        if (!StringUtils.isEmpty(this.f1008a) && !"WIFI-ID-UNKNOWN".equals(this.f1008a) && this.f1004a == 1) {
             if (b >= 300000) {
                 z = false;
             }
@@ -468,7 +468,7 @@ public class p {
                     return;
                 }
                 String subtypeName = networkInfo.getSubtypeName();
-                if (!TextUtils.isEmpty(subtypeName) && !"UNKNOWN".equalsIgnoreCase(subtypeName)) {
+                if (!StringUtils.isEmpty(subtypeName) && !"UNKNOWN".equalsIgnoreCase(subtypeName)) {
                     str = "M-" + subtypeName;
                 }
                 b(str);
@@ -482,10 +482,10 @@ public class p {
 
     /* renamed from: a  reason: collision with other method in class */
     public synchronized void m2343a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             e();
         }
-        if (m2338d() && !TextUtils.isEmpty(str)) {
+        if (m2338d() && !StringUtils.isEmpty(str)) {
             b("W-" + str);
         }
     }
@@ -499,7 +499,7 @@ public class p {
     public void m2345b() {
         if (m2338d()) {
             f();
-            if (!this.f1010a || TextUtils.isEmpty(this.f1008a) || !this.f1008a.equals(this.f1011b)) {
+            if (!this.f1010a || StringUtils.isEmpty(this.f1008a) || !this.f1008a.equals(this.f1011b)) {
                 return;
             }
             this.f1009a.getAndIncrement();

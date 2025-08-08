@@ -1,7 +1,7 @@
 package com.taobao.android.shop.api.impl;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.msoa.c;
 import java.io.Serializable;
@@ -33,7 +33,7 @@ public class MSOATBShopServiceImpl implements Serializable {
         HashMap hashMap = new HashMap();
         hashMap.put("msg", "shopId=" + str2 + ",homePageId=" + str3 + ", needRefresh=" + z);
         sendBroadcastCloseLoft();
-        if (z && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+        if (z && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
             sendBroadcastRefreshHomePage(str2, str3);
         }
         ixi.a("MSOATBShopServiceImpl::exitLoft end");

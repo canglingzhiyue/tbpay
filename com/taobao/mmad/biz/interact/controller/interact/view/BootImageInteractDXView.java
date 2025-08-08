@@ -1,7 +1,7 @@
 package com.taobao.mmad.biz.interact.controller.interact.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -366,7 +366,7 @@ public class BootImageInteractDXView extends BootImageInteractSlideView {
         try {
             String string = this.splashObject.getJSONObject("item").getJSONObject("0").getString("targetUrl");
             stv.a(TAG, "handleEvent jumpNextPage: targetUrl=" + string);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Nav.from(getContext()).toUri(string);

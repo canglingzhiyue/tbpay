@@ -1,7 +1,7 @@
 package com.taobao.android.sku.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -129,7 +129,7 @@ public final class s {
         if (this.b == null) {
             return;
         }
-        if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
             return;
         }
         try {

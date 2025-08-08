@@ -11,7 +11,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -195,7 +195,7 @@ public class k extends ImageLoader {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56bb4e88", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             char c2 = 65535;
             switch (str.hashCode()) {
@@ -385,7 +385,7 @@ public class k extends ImageLoader {
             j = System.currentTimeMillis();
         }
         this.f19968a = -1;
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             com.taobao.phenix.intf.b.h().a(this.e);
             return null;
         }
@@ -532,7 +532,7 @@ public class k extends ImageLoader {
         phenixCreator.handler(new d());
         if (oeb.y()) {
             str2 = str4;
-            if (!TextUtils.equals(str3, str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.equals(str3, str2) && !StringUtils.isEmpty(str3)) {
                 phenixCreator.retryHandler(new a().a(str3));
             }
         } else {
@@ -627,10 +627,10 @@ public class k extends ImageLoader {
             ipChange.ipc$dispatch("99d6b24c", new Object[]{this, bVar, map});
         } else if (bVar == null) {
         } else {
-            if (bVar.g != null && !TextUtils.isEmpty(bVar.g.j)) {
+            if (bVar.g != null && !StringUtils.isEmpty(bVar.g.j)) {
                 map.put("scene", bVar.g.j);
             }
-            if (bVar.g != null && !TextUtils.isEmpty(bVar.g.i)) {
+            if (bVar.g != null && !StringUtils.isEmpty(bVar.g.i)) {
                 map.put("pageName", bVar.g.i);
                 return;
             }

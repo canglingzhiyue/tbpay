@@ -1,7 +1,7 @@
 package com.taobao.tao.channel;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -197,13 +197,13 @@ public class a implements nza {
                     String channelSource = channelListBean3.getChannelSource();
                     b2.d(str);
                     b2.a(false);
-                    if (!TextUtils.isEmpty(icon)) {
+                    if (!StringUtils.isEmpty(icon)) {
                         b2.b(icon);
                     }
-                    if (!TextUtils.isEmpty(title)) {
+                    if (!StringUtils.isEmpty(title)) {
                         b2.c(title);
                     }
-                    if (!TextUtils.isEmpty(action)) {
+                    if (!StringUtils.isEmpty(action)) {
                         b2.a(action);
                     }
                     if ("2".equals(channelListBean3.getChannelSource())) {
@@ -254,7 +254,7 @@ public class a implements nza {
                     com.taobao.share.globalmodel.a aVar = null;
                     if (toolListBean.getToolSource() == null || "1".equals(toolListBean.getToolSource())) {
                         aVar = b(type);
-                    } else if (obh.a() || !TextUtils.isEmpty(toolListBean.getToolUrl())) {
+                    } else if (obh.a() || !StringUtils.isEmpty(toolListBean.getToolUrl())) {
                         aVar = new com.taobao.share.globalmodel.a();
                         aVar.d(toolListBean.getType());
                         aVar.f(toolListBean.getTitle());
@@ -265,10 +265,10 @@ public class a implements nza {
                         aVar.i(JSON.toJSONString(toolListBean));
                     }
                     if (aVar != null) {
-                        if (!TextUtils.isEmpty(toolListBean.getTitle())) {
+                        if (!StringUtils.isEmpty(toolListBean.getTitle())) {
                             aVar.c(toolListBean.getTitle());
                         }
-                        if (!TextUtils.isEmpty(toolListBean.getIcon())) {
+                        if (!StringUtils.isEmpty(toolListBean.getIcon())) {
                             aVar.b(toolListBean.getIcon());
                         }
                         if (map != null) {
@@ -358,7 +358,7 @@ public class a implements nza {
         HashMap<String, String> c = c();
         for (int i = 0; i < arrayList.size(); i++) {
             String str = c.get(arrayList.get(i));
-            if (!ShareTargetType.Share2Contact.getValue().equals(str) && !TextUtils.isEmpty(str) && !arrayList2.contains(str)) {
+            if (!ShareTargetType.Share2Contact.getValue().equals(str) && !StringUtils.isEmpty(str) && !arrayList2.contains(str)) {
                 arrayList2.add(str);
             }
         }
@@ -467,7 +467,7 @@ public class a implements nza {
                 arrayList.add(ShareTargetType.Share2Weixin.getValue());
             }
         }
-        if (TextUtils.equals("item", e.b().c()) || TextUtils.equals("guang", e.b().c())) {
+        if (StringUtils.equals("item", e.b().c()) || StringUtils.equals("guang", e.b().c())) {
             return;
         }
         arrayList.remove(ShareTargetType.Share2IShopping.getValue());
@@ -532,7 +532,7 @@ public class a implements nza {
                         return !com.alibaba.ability.localization.b.b() && ShareApi.getInstance().canShare(e.b().e(), SharePlatform.Instagram);
                     } else if (ShareTargetType.Share2Facebook.getValue().equals(str)) {
                         return !com.alibaba.ability.localization.b.b() && ShareApi.getInstance().canShare(e.b().e(), SharePlatform.Facebook);
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                         return false;
                     } else {
                         return nyk.a(str);
@@ -553,7 +553,7 @@ public class a implements nza {
             HashMap hashMap = new HashMap();
             List arrayList = new ArrayList();
             String str = "";
-            if (TextUtils.equals(tBShareContent.templateId, "detail")) {
+            if (StringUtils.equals(tBShareContent.templateId, "detail")) {
                 ArrayList arrayList2 = new ArrayList();
                 arrayList2.add(tBShareContent.imageUrl);
                 hashMap.put("images", arrayList2);
@@ -569,10 +569,10 @@ public class a implements nza {
                     if (arrayList.size() == 0) {
                         tBShareContent.templateParams.put("images", hashMap.get("images"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
                         tBShareContent.templateParams.put("title", hashMap.get("title"));
                     }
-                    if (!TextUtils.isEmpty((String) tBShareContent.templateParams.get("price"))) {
+                    if (!StringUtils.isEmpty((String) tBShareContent.templateParams.get("price"))) {
                         return;
                     }
                     tBShareContent.templateParams.put("price", hashMap.get("price"));
@@ -583,7 +583,7 @@ public class a implements nza {
                 return;
             }
             List list = arrayList;
-            if (TextUtils.equals(tBShareContent.templateId, "live")) {
+            if (StringUtils.equals(tBShareContent.templateId, "live")) {
                 ArrayList arrayList3 = new ArrayList();
                 arrayList3.add(tBShareContent.imageUrl);
                 hashMap.put("images", arrayList3);
@@ -603,22 +603,22 @@ public class a implements nza {
                     if (list.size() == 0) {
                         tBShareContent.templateParams.put("images", hashMap.get("images"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
                         tBShareContent.templateParams.put("title", hashMap.get("title"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("price"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("price"))) {
                         tBShareContent.templateParams.put("price", hashMap.get("price"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("headImg"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("headImg"))) {
                         tBShareContent.templateParams.put("headImg", hashMap.get("headImg"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("userNick"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("userNick"))) {
                         tBShareContent.templateParams.put("userNick", hashMap.get("userNick"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("statusIcon"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("statusIcon"))) {
                         tBShareContent.templateParams.put("statusIcon", hashMap.get("statusIcon"));
                     }
-                    if (!TextUtils.isEmpty((String) tBShareContent.templateParams.get("brandIcon"))) {
+                    if (!StringUtils.isEmpty((String) tBShareContent.templateParams.get("brandIcon"))) {
                         return;
                     }
                     tBShareContent.templateParams.put("brandIcon", hashMap.get("brandIcon"));
@@ -626,7 +626,7 @@ public class a implements nza {
                 }
                 tBShareContent.templateParams = hashMap;
                 TLog.loge("ChannelBusiness", "content.templateParams null了 ");
-            } else if (TextUtils.equals(tBShareContent.templateId, "shop")) {
+            } else if (StringUtils.equals(tBShareContent.templateId, "shop")) {
                 ArrayList arrayList4 = new ArrayList();
                 arrayList4.add(tBShareContent.businessInfo == null ? str : tBShareContent.businessInfo.get("imageleft"));
                 arrayList4.add(tBShareContent.businessInfo == null ? str : tBShareContent.businessInfo.get("imageRight1"));
@@ -652,13 +652,13 @@ public class a implements nza {
                     if (parseArray.size() == 0) {
                         tBShareContent.templateParams.put("images", hashMap.get("images"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
                         tBShareContent.templateParams.put("title", hashMap.get("title"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("brandIcon"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("brandIcon"))) {
                         tBShareContent.templateParams.put("brandIcon", hashMap.get("brandIcon"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("levelIcon"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("levelIcon"))) {
                         tBShareContent.templateParams.put("levelIcon", hashMap.get("levelIcon"));
                     }
                     ArrayList arrayList5 = null;
@@ -680,7 +680,7 @@ public class a implements nza {
                 }
                 tBShareContent.templateParams = hashMap;
                 TLog.loge("ChannelBusiness", "content.templateParams null了 ");
-            } else if (TextUtils.equals(tBShareContent.templateId, "group")) {
+            } else if (StringUtils.equals(tBShareContent.templateId, "group")) {
                 ArrayList arrayList6 = new ArrayList();
                 arrayList6.add(tBShareContent.imageUrl);
                 hashMap.put("images", arrayList6);
@@ -700,22 +700,22 @@ public class a implements nza {
                     if (list.size() == 0) {
                         tBShareContent.templateParams.put("images", hashMap.get("images"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("title"))) {
                         tBShareContent.templateParams.put("title", hashMap.get("title"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("price"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("price"))) {
                         tBShareContent.templateParams.put("price", hashMap.get("price"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("headImg"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("headImg"))) {
                         tBShareContent.templateParams.put("headImg", hashMap.get("headImg"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("userNick"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("userNick"))) {
                         tBShareContent.templateParams.put("userNick", hashMap.get("userNick"));
                     }
-                    if (TextUtils.isEmpty((String) tBShareContent.templateParams.get("brandIcon"))) {
+                    if (StringUtils.isEmpty((String) tBShareContent.templateParams.get("brandIcon"))) {
                         tBShareContent.templateParams.put("brandIcon", hashMap.get("brandIcon"));
                     }
-                    if (!TextUtils.isEmpty((String) tBShareContent.templateParams.get("description"))) {
+                    if (!StringUtils.isEmpty((String) tBShareContent.templateParams.get("description"))) {
                         return;
                     }
                     tBShareContent.templateParams.put("description", hashMap.get("description"));
@@ -723,7 +723,7 @@ public class a implements nza {
                 }
                 tBShareContent.templateParams = hashMap;
                 TLog.loge("ChannelBusiness", "content.templateParams null了 ");
-            } else if (!TextUtils.equals(tBShareContent.templateId, "weex")) {
+            } else if (!StringUtils.equals(tBShareContent.templateId, "weex")) {
             } else {
                 HashMap hashMap2 = new HashMap();
                 HashMap hashMap3 = new HashMap();
@@ -741,7 +741,7 @@ public class a implements nza {
         if (ipChange instanceof IpChange) {
             return (com.taobao.share.globalmodel.a) ipChange.ipc$dispatch("7d86359d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         com.taobao.share.globalmodel.a aVar = new com.taobao.share.globalmodel.a();
@@ -764,7 +764,7 @@ public class a implements nza {
             aVar.a(true);
             aVar.f(com.alibaba.ability.localization.b.a(R.string.share_save_image));
             return aVar;
-        } else if (ShareTargetType.Share2SinaWeibo.getValue().equals(str) || TextUtils.equals(str, nyk.KEY_SHARE_CONFIG_SINAWEIBO)) {
+        } else if (ShareTargetType.Share2SinaWeibo.getValue().equals(str) || StringUtils.equals(str, nyk.KEY_SHARE_CONFIG_SINAWEIBO)) {
             aVar.c(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17877));
             aVar.d(ShareTargetType.Share2SinaWeibo.getValue());
             aVar.a(-1);

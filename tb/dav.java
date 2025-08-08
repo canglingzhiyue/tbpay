@@ -1,13 +1,13 @@
 package tb;
 
 import android.support.v4.view.InputDeviceCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.nio.ByteBuffer;
 
 /* loaded from: classes4.dex */
 public class dav {
     public static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         byte[] bytes = str.getBytes();
@@ -41,7 +41,7 @@ public class dav {
     }
 
     public static String b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

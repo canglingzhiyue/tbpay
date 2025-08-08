@@ -1,6 +1,6 @@
 package com.taobao.android.industry.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -46,7 +46,7 @@ public class IdsMonitorUtil {
             if (hashMap == null) {
                 hashMap = new HashMap<>();
             }
-            if (hashMap != null && !TextUtils.isEmpty(str)) {
+            if (hashMap != null && !StringUtils.isEmpty(str)) {
                 hashMap.put("bizCode", str);
             }
             AppMonitor.Alarm.commitSuccess("Industry_Scene", "Monitor_Module_Error", hashMap.toString());
@@ -63,7 +63,7 @@ public class IdsMonitorUtil {
         if (hashMap == null) {
             hashMap = new HashMap<>();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("bizCode", str);
         }
         AppMonitor.Alarm.commitFail("Industry_Scene", "Monitor_Module_Error", hashMap.toString(), str2, str3);

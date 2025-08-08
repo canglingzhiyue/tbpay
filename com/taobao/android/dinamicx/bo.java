@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx;
 
 import android.content.Context;
 import android.support.v4.util.LongSparseArray;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -530,7 +530,7 @@ public class bo extends m {
                     dXWidgetNode.setDoubleAttribute(valueAt.f29329a, Double.longBitsToDouble(valueAt.d));
                 } else if (s == 8) {
                     String str = valueAt.e;
-                    if (TextUtils.isEmpty(valueAt.e)) {
+                    if (StringUtils.isEmpty(valueAt.e)) {
                         List<s.a> list = dXWidgetNode.getDXRuntimeContext().n().c;
                         list.add(new s.a(DXMonitorConstant.DX_MONITOR_PIPELINE, "Pipeline_Stage_Load_Binary", s.DXERROR_PIPELINE_CREATE_WT_CREATE_NODE_STRING_ERROR, "className" + dXWidgetNode.getClass().getName() + " key " + valueAt.f29329a + " value " + valueAt.d));
                         fux.b(" DXBinaryLoader createWidgetTree error 70018");
@@ -585,7 +585,7 @@ public class bo extends m {
                                 continue;
                             } else {
                                 String str2 = valueAt.e;
-                                if (TextUtils.isEmpty(str2)) {
+                                if (StringUtils.isEmpty(str2)) {
                                     List<s.a> list4 = dXWidgetNode.getDXRuntimeContext().n().c;
                                     list4.add(new s.a(DXMonitorConstant.DX_MONITOR_PIPELINE, "Pipeline_Stage_Load_Binary", s.DXERROR_PIPELINE_CREATE_WT_CREATE_NODE_WIDGET_ERROR_70043, "className" + dXWidgetNode.getClass().getName() + " key " + valueAt.f29329a + " value " + valueAt.d));
                                     fux.b(" DXBinaryLoader createWidgetTree error 70043");

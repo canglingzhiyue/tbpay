@@ -9,7 +9,7 @@ import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -218,7 +218,7 @@ public class ToygerActivity extends BioFragmentContainer implements ToygerCallba
         if (this.e != null && this.e.getExtMetaInfo() != null) {
             try {
                 String str = this.e.getExtProperty().get("deviceNum");
-                if (TextUtils.isEmpty(str) || !str.trim().startsWith("TEST_ZOLOZ_")) {
+                if (StringUtils.isEmpty(str) || !str.trim().startsWith("TEST_ZOLOZ_")) {
                     return;
                 }
                 TextView textView = new TextView(this);
@@ -293,7 +293,7 @@ public class ToygerActivity extends BioFragmentContainer implements ToygerCallba
                     if (ToygerActivity.this.mFaceRemoteConfig != null && ToygerActivity.this.mFaceRemoteConfig.getUpload() != null) {
                         str = ToygerActivity.this.mFaceRemoteConfig.getUpload().getString("log_classifier");
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = MetaRecord.DEFAULT_LOG_CLASSIFIERS;
                     }
                     zimRecordService.setLogClassifier(new HashSet(Arrays.asList(str.split("#"))));
@@ -601,7 +601,7 @@ public class ToygerActivity extends BioFragmentContainer implements ToygerCallba
             hashMap.put("uiVersion", this.mFaceRemoteConfig.getUi() + "");
             hashMap.put(Constants.VI_ENGINE_VERIFYID, this.e.getExtProperty().get("verifyid"));
             String staticApDidToken = ApSecurityService.getStaticApDidToken();
-            if (TextUtils.isEmpty(staticApDidToken) && (apSecurityService = (ApSecurityService) BioServiceManager.getCurrentInstance().getBioService(ApSecurityService.class)) != null) {
+            if (StringUtils.isEmpty(staticApDidToken) && (apSecurityService = (ApSecurityService) BioServiceManager.getCurrentInstance().getBioService(ApSecurityService.class)) != null) {
                 staticApDidToken = apSecurityService.getApDidToken();
             }
             hashMap.put("APDIDTOKEN", staticApDidToken);

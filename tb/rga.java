@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.update.datasource.local.UpdateInfo;
 
@@ -44,7 +44,7 @@ public class rga {
             return ((Boolean) ipChange.ipc$dispatch("121fc49b", new Object[]{this, updateInfo})).booleanValue();
         }
         String config = rfy.sUpdateAdapter.getConfig(rfx.UPDATE_CONFIG_GROUP, rfx.UPDATE_CACHE_HOUR, "3");
-        long intValue = (TextUtils.isEmpty(config) || !TextUtils.isDigitsOnly(config)) ? 0L : Integer.valueOf(config).intValue() * 60 * 60 * 1000;
+        long intValue = (StringUtils.isEmpty(config) || !StringUtils.isDigitsOnly(config)) ? 0L : Integer.valueOf(config).intValue() * 60 * 60 * 1000;
         return 0 != intValue && updateInfo != null && updateInfo.lastUpdateTime > 0 && rgq.getVersionName().equals(updateInfo.appVersion) && updateInfo.updateList.size() != 0 && System.currentTimeMillis() - updateInfo.lastUpdateTime < intValue;
     }
 }

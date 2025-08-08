@@ -1,7 +1,7 @@
 package com.taobao.share.core.share.interceptor;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.share.globalmodel.TBShareContent;
@@ -43,11 +43,11 @@ public class g implements b {
             aVar.a(cVar);
             obk.a().onEvent(aVar);
             return true;
-        } else if (tBShareContent == null || tBShareContent.extraParams == null || !TextUtils.equals(tBShareContent.extraParams.get("sysSharePanel"), "true")) {
+        } else if (tBShareContent == null || tBShareContent.extraParams == null || !StringUtils.equals(tBShareContent.extraParams.get("sysSharePanel"), "true")) {
             return false;
         } else {
             String str2 = tBShareContent.extraParams.get("sysShareText") == null ? "" : tBShareContent.extraParams.get("sysShareText");
-            if (!TextUtils.isEmpty(tBShareContent.extraParams.get("sysShareTarget"))) {
+            if (!StringUtils.isEmpty(tBShareContent.extraParams.get("sysShareTarget"))) {
                 str2 = str2 + tBShareContent.extraParams.get("sysShareTarget");
             }
             a(tBShareContent, str2);

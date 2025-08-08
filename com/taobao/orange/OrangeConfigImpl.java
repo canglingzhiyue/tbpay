@@ -9,7 +9,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ABSwitchUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -330,7 +330,7 @@ public class OrangeConfigImpl extends OrangeConfig {
             OLog.e("OrangeConfigImpl", "init error as ctx is null", new Object[0]);
         } else {
             String packageName = context.getPackageName();
-            a.f18576a = !TextUtils.isEmpty(packageName) && packageName.equals("com.taobao.taobao");
+            a.f18576a = !StringUtils.isEmpty(packageName) && packageName.equals("com.taobao.taobao");
             a.b = com.taobao.orange.util.a.a(context);
             boolean z = (context.getApplicationInfo().flags & 2) != 0;
             if (z) {
@@ -339,7 +339,7 @@ public class OrangeConfigImpl extends OrangeConfig {
                 OLog.isUseTlog = true;
             }
             OLog.i("OrangeConfigImpl", "init", com.taobao.tao.log.statistics.d.PARAM_IS_DEBUG, Boolean.valueOf(z), "isMainProcess", Boolean.valueOf(a.b));
-            if (TextUtils.isEmpty(oConfig.appKey) || TextUtils.isEmpty(oConfig.appVersion)) {
+            if (StringUtils.isEmpty(oConfig.appKey) || StringUtils.isEmpty(oConfig.appVersion)) {
                 OLog.e("OrangeConfigImpl", "init error as appKey or appVersion is empty", new Object[0]);
                 return;
             }
@@ -451,7 +451,7 @@ public class OrangeConfigImpl extends OrangeConfig {
             return;
         }
         long currentTimeMillis = System.currentTimeMillis() / 1000;
-        if (!TextUtils.isEmpty(a.C)) {
+        if (!StringUtils.isEmpty(a.C)) {
             String[] split = a.C.split("#");
             long parseLong = Long.parseLong(split[0]);
             long parseLong2 = Long.parseLong(split[1]);
@@ -461,7 +461,7 @@ public class OrangeConfigImpl extends OrangeConfig {
             }
         }
         long longValue = ((Long) h.b(context, OConstant.PROCESS_QUERY_SENT_LAST_TIME_SECONDS, (Object) 0L)).longValue();
-        if (!TextUtils.isEmpty(a.D)) {
+        if (!StringUtils.isEmpty(a.D)) {
             String[] split2 = a.D.split("#");
             i2 = (int) ((Math.random() * Integer.parseInt(split2[0])) + 1.0d);
             if (longValue > 0) {
@@ -510,7 +510,7 @@ public class OrangeConfigImpl extends OrangeConfig {
             naa newInstance = a.f.newInstance();
             try {
                 String b = b();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     OLog.e("OrangeConfigImpl", "triggerIndexUpdate", "get request url failed");
                     if (newInstance == null) {
                         return;
@@ -616,7 +616,7 @@ public class OrangeConfigImpl extends OrangeConfig {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("611c4ee3", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             OLog.e("OrangeConfigImpl", "getConfig error as param is empty", new Object[0]);
             return str3;
         }
@@ -645,7 +645,7 @@ public class OrangeConfigImpl extends OrangeConfig {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("6165ac1", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             OLog.e("OrangeConfigImpl", "getConfig error as param is empty", new Object[0]);
             return null;
         }
@@ -674,7 +674,7 @@ public class OrangeConfigImpl extends OrangeConfig {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3a44377c", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             OLog.e("OrangeConfigImpl", "getCustomConfig error as param is empty", new Object[0]);
             return null;
         }
@@ -1044,23 +1044,23 @@ public class OrangeConfigImpl extends OrangeConfig {
                 ConfigDO configDO2 = (ConfigDO) com.taobao.orange.util.b.b(OConstant.PROCESS_ISOLATED_LOCAL_CONFIG);
                 if (configDO2 != null && configDO2.content != null) {
                     String str = configDO2.content.get("processIsolated");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         a.A = Boolean.parseBoolean(str);
                     }
                     String str2 = configDO2.content.get(OConstant.SYSKEY_PROCESS_QUERY);
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         a.B = Boolean.parseBoolean(str2);
                     }
                     String str3 = configDO2.content.get(OConstant.SYSKEY_PROCESS_QUERY_FORBID_TIME);
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         a.C = str3;
                     }
                     String str4 = configDO2.content.get(OConstant.SYSKEY_PROCESS_QUERY_STRATEGY);
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         a.D = str4;
                     }
                     String str5 = configDO2.content.get(OConstant.SYSKEY_PROCESS_MEMORY_OPTIMIZE);
-                    if (!TextUtils.isEmpty(str5) && "OPPO".equalsIgnoreCase(Build.BRAND)) {
+                    if (!StringUtils.isEmpty(str5) && "OPPO".equalsIgnoreCase(Build.BRAND)) {
                         a.H = Boolean.parseBoolean(str5);
                     }
                     com.taobao.orange.util.b.b(configDO2, OConstant.ORANGE_LOCAL_FILE);
@@ -1069,7 +1069,7 @@ public class OrangeConfigImpl extends OrangeConfig {
             } else if (!a.b || (configDO = (ConfigDO) com.taobao.orange.util.b.b(OConstant.ORANGE_LOCAL_FILE)) == null || configDO.content == null) {
             } else {
                 String str6 = configDO.content.get("processIsolated");
-                if (TextUtils.isEmpty(str6)) {
+                if (StringUtils.isEmpty(str6)) {
                     return;
                 }
                 a.A = Boolean.parseBoolean(str6);

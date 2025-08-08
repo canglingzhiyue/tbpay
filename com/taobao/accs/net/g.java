@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.Constants;
 import anet.channel.Session;
 import anet.channel.SessionCenter;
@@ -535,7 +535,7 @@ public class g implements IHeartbeat, AccsConnectStateListener, Runnable {
         this.m = Long.valueOf(SystemClock.elapsedRealtime());
         this.q = 0L;
         String h = h();
-        boolean z = !TextUtils.isEmpty(this.o) && !TextUtils.isEmpty(h) && !this.o.equals(h);
+        boolean z = !StringUtils.isEmpty(this.o) && !StringUtils.isEmpty(h) && !this.o.equals(h);
         ALog.e("SmartHeartbeatImpl", "onConnected", "lastNetType", this.o, "newType", h, "changed", Boolean.valueOf(z));
         if (z) {
             this.g.set(0);

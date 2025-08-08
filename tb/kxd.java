@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -142,7 +142,7 @@ public class kxd implements com.taobao.android.trade.boost.request.mtop.a<Settin
             return i.FAILURE;
         }
         this.b = b(kxcVar);
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return i.FAILURE;
         }
         SettingNewConfigParams.a d = d();
@@ -185,7 +185,7 @@ public class kxd implements com.taobao.android.trade.boost.request.mtop.a<Settin
         Object param = kxcVar.getParam();
         if (param instanceof String) {
             String str = (String) param;
-            if (!TextUtils.isEmpty(str) && c().contains(str)) {
+            if (!StringUtils.isEmpty(str) && c().contains(str)) {
                 return str;
             }
         }
@@ -199,7 +199,7 @@ public class kxd implements com.taobao.android.trade.boost.request.mtop.a<Settin
         }
         ArrayList arrayList = new ArrayList();
         String l = com.taobao.android.home.component.utils.j.l();
-        if (!TextUtils.isEmpty(l)) {
+        if (!StringUtils.isEmpty(l)) {
             arrayList.addAll(Arrays.asList(l.split(",")));
         }
         return arrayList;

@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,7 +43,7 @@ public class ExtendBlock implements Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("46ef06d5", new Object[]{this, str, bVar});
-        } else if (bVar != null && !TextUtils.isEmpty(str)) {
+        } else if (bVar != null && !StringUtils.isEmpty(str)) {
             JSONObject jSONObject = this.blockHierarchy.get(str);
             if (jSONObject == null) {
                 jSONObject = new JSONObject();
@@ -101,7 +101,7 @@ public class ExtendBlock implements Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a5d4a063", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (map = this.blockComponents) == null || !map.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || (map = this.blockComponents) == null || !map.containsKey(str)) {
         } else {
             this.blockComponents.remove(str);
         }
@@ -111,7 +111,7 @@ public class ExtendBlock implements Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b9d3e35d", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !this.blockHierarchy.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.blockHierarchy.containsKey(str)) {
         } else {
             this.blockHierarchy.remove(str);
         }

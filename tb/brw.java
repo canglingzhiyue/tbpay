@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
@@ -75,7 +75,7 @@ public class brw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.d.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || this.d.containsKey(str)) {
         } else {
             this.d.put(str, Integer.valueOf(this.b));
             this.b++;
@@ -99,7 +99,7 @@ public class brw {
                 this.c.put(i, -2147483647);
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 bqe.a().c("UMFRenderContainerViewTypeTransformer", "the itemViewType generated from componentCreator[" + b + "] is empty");
             }
             Integer num = this.d.get(str);

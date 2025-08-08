@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.ui.views.MspWebActivity;
@@ -38,7 +38,7 @@ public class fka {
                     break;
                 }
                 JSONObject jSONObject3 = (JSONObject) jSONArray2.get(size);
-                if (TextUtils.equals("more", jSONObject3.getString(MspWebActivity.BTN_TYPE))) {
+                if (StringUtils.equals("more", jSONObject3.getString(MspWebActivity.BTN_TYPE))) {
                     z = jSONObject3.getJSONObject("fields").getBooleanValue("showShare");
                     break;
                 }

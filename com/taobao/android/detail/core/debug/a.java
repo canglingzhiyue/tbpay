@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Field;
@@ -289,7 +289,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d49a9c1e", new Object[]{context, str, new Integer(i)})).booleanValue();
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return false;
         }
         SharedPreferences.Editor edit = context.getApplicationContext().getSharedPreferences(PREFERENCES_DEBUG_TOOLS_NAME, 0).edit();
@@ -305,6 +305,6 @@ public class a {
 
     private static int c(Context context, String str, int i) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("d424360e", new Object[]{context, str, new Integer(i)})).intValue() : (context == null || TextUtils.isEmpty(str)) ? i : context.getApplicationContext().getSharedPreferences(PREFERENCES_DEBUG_TOOLS_NAME, 0).getInt(str, i);
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("d424360e", new Object[]{context, str, new Integer(i)})).intValue() : (context == null || StringUtils.isEmpty(str)) ? i : context.getApplicationContext().getSharedPreferences(PREFERENCES_DEBUG_TOOLS_NAME, 0).getInt(str, i);
     }
 }

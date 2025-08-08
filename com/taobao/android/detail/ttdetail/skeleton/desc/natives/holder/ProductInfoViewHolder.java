@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -400,7 +400,7 @@ public class ProductInfoViewHolder extends e<com.taobao.android.detail.ttdetail.
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("daf50b49", new Object[]{this, str, onClickListener});
         }
-        if (TextUtils.isEmpty(str) || onClickListener == null) {
+        if (StringUtils.isEmpty(str) || onClickListener == null) {
             return new View(this.f10821a);
         }
         if (this.n == null) {

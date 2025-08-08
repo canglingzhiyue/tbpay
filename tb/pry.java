@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -169,7 +169,7 @@ public class pry implements IMediaPlayer.d, IMediaPlayer.e, IMediaPlayer.g, IMed
         } else {
             final Drawable drawable = context.getResources().getDrawable(i);
             this.f32843a.a(drawable, true);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             g.b(str, this.g, -1, -1, new g.a() { // from class: tb.pry.1
@@ -509,9 +509,9 @@ public class pry implements IMediaPlayer.d, IMediaPlayer.e, IMediaPlayer.g, IMed
         dVar.d(this.b.g);
         dVar.g(this.b.h);
         dVar.c(this.b.j);
-        if (!TextUtils.isEmpty(this.b.e)) {
+        if (!StringUtils.isEmpty(this.b.e)) {
             b(dVar, this.b.e);
-        } else if (!TextUtils.isEmpty(this.b.d)) {
+        } else if (!StringUtils.isEmpty(this.b.d)) {
             a(dVar, this.b.d);
             dVar.a((MediaData) null, this.b.d);
         }
@@ -553,7 +553,7 @@ public class pry implements IMediaPlayer.d, IMediaPlayer.e, IMediaPlayer.g, IMed
         a3.g(this.b.h);
         a3.c(false);
         if (this.b.c == null) {
-            if (!TextUtils.isEmpty(this.b.b)) {
+            if (!StringUtils.isEmpty(this.b.b)) {
                 a3.a((MediaData) null, this.b.b);
             }
         } else {
@@ -679,7 +679,7 @@ public class pry implements IMediaPlayer.d, IMediaPlayer.e, IMediaPlayer.g, IMed
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("94b357fc", new Object[]{this, dVar, str});
-        } else if (TextUtils.isEmpty(str) || dVar == null) {
+        } else if (StringUtils.isEmpty(str) || dVar == null) {
         } else {
             Uri parse = Uri.parse(str);
             String queryParameter = parse != null ? parse.getQueryParameter("timeMovingCacheKey") : "";

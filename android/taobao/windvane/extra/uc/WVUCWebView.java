@@ -58,7 +58,7 @@ import android.taobao.windvane.webview.g;
 import android.taobao.windvane.webview.i;
 import android.taobao.windvane.webview.k;
 import android.taobao.windvane.webview.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidRuntimeException;
 import android.util.AttributeSet;
 import android.util.SparseArray;
@@ -863,7 +863,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         if (!z) {
             try {
                 String config = OrangeConfig.getInstance().getConfig("WindVane", "useSysWebViewBizList", "");
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     String[] split = config.split(";");
                     String name = context.getClass().getName();
                     boolean z2 = z;
@@ -1601,7 +1601,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         this.mPageStart = 0L;
         this.injectJs = new StringBuilder("javascript:");
         this.isPreInit = false;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.pid = str;
         }
         this.context = context;
@@ -1767,7 +1767,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1356731", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             UC_CORE_URL = str;
         }
@@ -1863,7 +1863,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
             sCoreFailedCode = uCKnownException.errCode();
             str = uCKnownException.getMessage();
             sCoreFailedMsg = str;
-            if (TextUtils.isEmpty(str) && (rootCause = uCKnownException.getRootCause()) != null) {
+            if (StringUtils.isEmpty(str) && (rootCause = uCKnownException.getRootCause()) != null) {
                 str = rootCause.getMessage();
             }
         } else {
@@ -2037,13 +2037,13 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                 return !mUseSystemWebView;
             }
             String k = android.taobao.windvane.config.a.a().k();
-            if (!TextUtils.isEmpty(k)) {
+            if (!StringUtils.isEmpty(k)) {
                 android.taobao.windvane.util.m.e(TAG, "当前已解压" + format);
                 UCSetupService.initU4ByExtractedDir(context, strArr, k);
                 return !mUseSystemWebView;
             }
             String str2 = UC_CORE_REMOTE_SO_PATH;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 android.taobao.windvane.util.m.e(TAG, "当前远程化SO" + format);
                 android.taobao.windvane.util.m.e(TAG, "当前远程化SO路径：" + str2);
                 File file = new File(str2);
@@ -2055,7 +2055,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                     UCSetupService.initU4ByExtractedDir(context, strArr, str2);
                 }
                 return !mUseSystemWebView;
-            } else if (TextUtils.isEmpty(UC_CORE_URL)) {
+            } else if (StringUtils.isEmpty(UC_CORE_URL)) {
                 new AndroidRuntimeException("neither inner so, remote so, nor download so").printStackTrace();
                 if (WVUCUtils.is64Bit()) {
                     sCoreFailedCode = 300764;
@@ -2098,7 +2098,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("28ea03b9", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.uid)) {
+        } else if (StringUtils.isEmpty(this.uid)) {
             this.uid = "" + id.addAndGet(1);
         } else {
             this.uid += "_" + subId.addAndGet(1);
@@ -2313,7 +2313,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         } else {
             if (android.taobao.windvane.util.p.b(str) && android.taobao.windvane.config.p.c(str, this)) {
                 String b = android.taobao.windvane.config.s.a().b();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     HashMap hashMap = new HashMap(2);
                     hashMap.put("cause", "POST_ACCESS_FORBIDDEN");
                     hashMap.put("url", str);
@@ -2394,7 +2394,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                 }
             }
             j.a();
-            if (!TextUtils.isEmpty(j.commonConfig.be)) {
+            if (!StringUtils.isEmpty(j.commonConfig.be)) {
                 j.a();
                 if (str.matches(j.commonConfig.be)) {
                     if (this.overrideBizId == null) {
@@ -2407,7 +2407,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
             if (android.taobao.windvane.util.p.b(str)) {
                 if (android.taobao.windvane.config.p.c(str, this)) {
                     String b = android.taobao.windvane.config.n.a().b();
-                    if (TextUtils.isEmpty(b)) {
+                    if (StringUtils.isEmpty(b)) {
                         HashMap hashMap = new HashMap(2);
                         hashMap.put("cause", "GET_ACCESS_FORBIDDEN");
                         hashMap.put("url", str);
@@ -2430,7 +2430,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                         HashMap hashMap2 = new HashMap();
                         hashMap2.put("userAgent", getUserAgentString());
                         String a2 = com.taobao.weaver.prefetch.e.a().a(str, hashMap2);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             str = a2;
                         }
                     } catch (Throwable th) {
@@ -2441,11 +2441,11 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                         tryPrcacheDocument(str);
                     }
                 }
-            } else if (!TextUtils.isEmpty(str) && !str.startsWith("javascript:") && !str.startsWith("about:")) {
+            } else if (!StringUtils.isEmpty(str) && !str.startsWith("javascript:") && !str.startsWith("about:")) {
                 android.taobao.windvane.monitor.a.commitFail("NoHttpLoad", 1, null, str);
             }
             String handleUrlSchema = handleUrlSchema(str);
-            if (!TextUtils.isEmpty(handleUrlSchema) && !handleUrlSchema.startsWith("javascript:") && !handleUrlSchema.startsWith("about:")) {
+            if (!StringUtils.isEmpty(handleUrlSchema) && !handleUrlSchema.startsWith("javascript:") && !handleUrlSchema.startsWith("about:")) {
                 if (this.firstTimeLoad && !handleUrlSchema.contains(BasePreInitManager.PRE_RENDER_URL_ADDITION_JUDGE)) {
                     this.wvh5PPManager.pageDidLoadRequest();
                     android.taobao.windvane.util.m.b(TAG, "pageDidLoadRequest " + getCurId() + " this=" + this + " loadUrl::" + handleUrlSchema);
@@ -2456,7 +2456,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                 this.wpData.setPageCurrentStatus("loadUrl");
                 try {
                     String queryParameter = Uri.parse(handleUrlSchema).getQueryParameter("_wvPgName");
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         setFalcoPageName(queryParameter);
                     }
                 } catch (Throwable th2) {
@@ -2540,7 +2540,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("32ff6a87", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.startsWith("javascript:") || str.startsWith("about:") || str.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX)) {
+        if (StringUtils.isEmpty(str) || str.startsWith("javascript:") || str.startsWith("about:") || str.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX)) {
             return str;
         }
         boolean isInHttpUrlWhiteList = isInHttpUrlWhiteList(str);
@@ -2551,7 +2551,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
             return str;
         } else {
             String dealUrlScheme = a2.dealUrlScheme(str);
-            if (TextUtils.equals(str, dealUrlScheme)) {
+            if (StringUtils.equals(str, dealUrlScheme)) {
                 return str;
             }
             android.taobao.windvane.monitor.a.commitFail(android.taobao.windvane.monitor.a.MONITOR_POINT_DEAL_URL_SCHEME, 0, str, dealUrlScheme);
@@ -2567,7 +2567,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
             return ((Boolean) ipChange.ipc$dispatch("a439b3c4", new Object[]{this, str})).booleanValue();
         }
         String str2 = j.commonConfig.cl;
-        if (!TextUtils.isEmpty(str2) && (split = str2.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(str2) && (split = str2.split(",")) != null && split.length != 0) {
             try {
                 for (String str3 : split) {
                     if (str.startsWith(ado.URL_SEPARATOR + str3)) {
@@ -2696,7 +2696,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         }
         String url = getUrl();
         adl a2 = adl.a();
-        if (!TextUtils.isEmpty(url) && a2 != null) {
+        if (!StringUtils.isEmpty(url) && a2 != null) {
             a2.a(url);
         }
         goBack();
@@ -2746,7 +2746,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         this.mIsCoreDestroy = false;
         setContentDescription(TAG);
         this.mHandler = new Handler(Looper.getMainLooper(), this);
-        if (TextUtils.equals("true", UCSoSettings.getInstance().UC_DEBUGGABLE)) {
+        if (StringUtils.equals("true", UCSoSettings.getInstance().UC_DEBUGGABLE)) {
             try {
                 if (WVCore.getInstance().isUCStartInit()) {
                     WebView.setWebContentsDebuggingEnabled(true);
@@ -2764,7 +2764,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         android.taobao.windvane.util.m.b(TAG, "Webview init setUseTaobaoNetwork =" + getUseTaobaoNetwork());
         try {
             j.a();
-            if (!TextUtils.isEmpty(j.commonConfig.q)) {
+            if (!StringUtils.isEmpty(j.commonConfig.q)) {
                 pattern = Pattern.compile(j.commonConfig.q);
             }
         } catch (Exception e2) {
@@ -3038,13 +3038,13 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         String i = android.taobao.windvane.config.a.a().i();
         String userAgentString = settings.getUserAgentString();
         if (userAgentString != null) {
-            if (!TextUtils.isEmpty(h) && !TextUtils.isEmpty(i)) {
+            if (!StringUtils.isEmpty(h) && !StringUtils.isEmpty(i)) {
                 userAgentString = userAgentString + " AliApp(" + h + "/" + i + riy.BRACKET_END_STR;
             }
             if (!userAgentString.contains("UCBS/") && getCurrentViewCoreType() == 3) {
                 userAgentString = userAgentString + " UCBS/2.11.1.1";
             }
-            if (!userAgentString.contains("TTID/") && !TextUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
+            if (!userAgentString.contains("TTID/") && !StringUtils.isEmpty(android.taobao.windvane.config.a.a().b())) {
                 userAgentString = userAgentString + " TTID/" + android.taobao.windvane.config.a.a().b();
             }
         }
@@ -3442,7 +3442,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a0783522", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.cachedUrl)) {
+        if (StringUtils.isEmpty(this.cachedUrl)) {
             return null;
         }
         return this.cachedUrl;
@@ -3452,7 +3452,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f0cc2afc", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || str.startsWith("javascript:") || str.startsWith("about:")) {
+        } else if (StringUtils.isEmpty(str) || str.startsWith("javascript:") || str.startsWith("about:")) {
         } else {
             this.cachedUrl = str;
         }
@@ -3849,7 +3849,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ec6d1883", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.mH5MonitorCache == null) {
                 this.mH5MonitorCache = new Hashtable<>();
@@ -3859,7 +3859,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                 hashtable = new Hashtable<>();
                 this.mH5MonitorCache.put(str, hashtable);
             }
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = "";
             }
             hashtable.put(str2, str3);
@@ -4411,7 +4411,7 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
                 android.taobao.windvane.util.m.e(WVUCWebView.TAG, "call staticInitializeOnce in WVUCWebView.Builder.build");
                 WVUCWebView.staticInitializeOnce();
             }
-            if (this.enablePrerender && !TextUtils.isEmpty(this.realUrl) && (a2 = android.taobao.windvane.export.prerender.d.INSTANCE.a(new android.taobao.windvane.export.prerender.c(this.mContext, this.realUrl, 1))) != null) {
+            if (this.enablePrerender && !StringUtils.isEmpty(this.realUrl) && (a2 = android.taobao.windvane.export.prerender.d.INSTANCE.a(new android.taobao.windvane.export.prerender.c(this.mContext, this.realUrl, 1))) != null) {
                 return a2;
             }
             WVUCWebView wVUCWebView = null;
@@ -4435,11 +4435,11 @@ public class WVUCWebView extends WebView implements Handler.Callback, IPerforman
             }
             if (j.commonConfig.cM) {
                 String str = DevTools.BACK_END_JS;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     wVUCWebView.injectJsEarly(str);
                 }
                 String str2 = DevTools.INJECTED_JS;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     wVUCWebView.injectJsEarly(str2);
                 }
             }

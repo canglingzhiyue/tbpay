@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -180,7 +180,7 @@ public class pbm {
             return;
         }
         String str2 = "startPlayer: " + hashCode();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.l = pro.d(str);
         }
         if (this.k == null || (jSONObject = this.c) == null) {
@@ -258,7 +258,7 @@ public class pbm {
                 JSONObject jSONObject3 = jSONObject2.getJSONObject("liveRoomInfo");
                 if (this.k != null && jSONObject3 != null) {
                     String string = jSONObject3.getString(aw.PARAM_COVER_IMG);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         this.k.setImageUrl(string);
                         this.k.setScaleType(ImageView.ScaleType.CENTER_CROP);
                     }
@@ -280,7 +280,7 @@ public class pbm {
                         return;
                     }
                     String string2 = jSONObject4.getString("jumpUrl");
-                    if (!TextUtils.isEmpty(string2) && pbm.a(pbm.this) != null) {
+                    if (!StringUtils.isEmpty(string2) && pbm.a(pbm.this) != null) {
                         Nav.from(pbm.a(pbm.this)).toUri(string2);
                     }
                     Map<String, String> a2 = pbk.a(pbm.b(pbm.this));
@@ -327,7 +327,7 @@ public class pbm {
             return;
         }
         String string = jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         b(string);

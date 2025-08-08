@@ -1,7 +1,7 @@
 package com.alibaba.analytics;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.dai.adapter.MRTTaobaoAdapter;
@@ -38,7 +38,7 @@ public class InitDai implements Serializable {
             if (this.isDebuggable) {
                 String str = "application:" + application + ",params:" + hashMap;
             }
-            if (!TextUtils.equals(String.valueOf(hashMap.get("process")), String.valueOf(hashMap.get("packageName")))) {
+            if (!StringUtils.equals(String.valueOf(hashMap.get("process")), String.valueOf(hashMap.get("packageName")))) {
                 return;
             }
             initDai(application);

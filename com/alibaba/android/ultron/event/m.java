@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.event;
 
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -29,7 +29,7 @@ public class m extends q {
         } else if (eVar == null || (b = b()) == null || (fields = b.getFields()) == null) {
         } else {
             String string = fields.getString(DM_COMPONENT_EXT_KEY_TEXT);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Object d = eVar.d(com.alibaba.android.ultron.event.base.f.KEY_DXEVENT);

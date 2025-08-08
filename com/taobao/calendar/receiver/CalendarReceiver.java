@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.launcher.bootstrap.tao.f;
 import com.taobao.login4android.broadcast.LoginAction;
 import tb.kfg;
@@ -79,7 +79,7 @@ public class CalendarReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         this.f16860a = new kfg(context);
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         LoginAction loginAction = null;

@@ -7,7 +7,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -65,7 +65,7 @@ public class TMSTinyH5APIBridge extends e {
         if (wVCallBackContext == null) {
             TMSLogger.d(TAG, "execute: wvCallBackContext is null");
             return false;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("invalid action");
             TMSLogger.d(TAG, "execute: action is null");
             return false;
@@ -99,7 +99,7 @@ public class TMSTinyH5APIBridge extends e {
                     return true;
                 }
                 JSONObject jSONObject = null;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     try {
                         jSONObject = JSON.parseObject(str2);
                     } catch (Exception e) {

@@ -2,7 +2,7 @@ package com.taobao.alimama;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -147,7 +147,7 @@ public final class AlimamaAdvertising implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f65f3d03", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String a2 = getDefaultTkCpsAd().a(str);
@@ -277,7 +277,7 @@ public final class AlimamaAdvertising implements Serializable {
             return (String) ipChange.ipc$dispatch("514099f6", new Object[]{this, str, str2, list});
         }
         e.a("handle_interaction_click", "url = " + str + ", actionType = " + str2 + ", actionList=" + list);
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && list != null && list.contains(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && list != null && list.contains(str2)) {
             return str;
         }
         return null;
@@ -293,7 +293,7 @@ public final class AlimamaAdvertising implements Serializable {
         if (application == null) {
             application = Global.getApplication();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = Global.getPackageName();
         }
         buildIfsExposure(application, str2).withArgPid(str).commit();
@@ -311,7 +311,7 @@ public final class AlimamaAdvertising implements Serializable {
             return;
         }
         Application application = Global.getApplication();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = Global.getPackageName();
         }
         JSONArray parseArray = JSONArray.parseArray(str);
@@ -348,9 +348,9 @@ public final class AlimamaAdvertising implements Serializable {
         if (ipChange instanceof IpChange) {
             return (com.taobao.alimama.tkcps.b) ipChange.ipc$dispatch("c1d39691", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mTkDefaultKey)) {
+        if (StringUtils.isEmpty(this.mTkDefaultKey)) {
             this.mTkDefaultKey = Global.getPackageName();
-            if (TextUtils.isEmpty(this.mTkDefaultKey)) {
+            if (StringUtils.isEmpty(this.mTkDefaultKey)) {
                 this.mTkDefaultKey = "default";
             }
         }
@@ -498,7 +498,7 @@ public final class AlimamaAdvertising implements Serializable {
             return;
         }
         String a2 = com.taobao.utils.a.a(str, kuh.ALI_TRACK_ID);
-        if (TextUtils.isEmpty(a2) || !a2.matches("\\d+_[A-Za-z0-9]{32}")) {
+        if (StringUtils.isEmpty(a2) || !a2.matches("\\d+_[A-Za-z0-9]{32}")) {
             z2 = false;
         }
         if (!z2) {

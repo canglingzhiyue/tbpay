@@ -3,7 +3,7 @@ package com.taobao.tbdeviceevaluator.jsbridge;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.resourceguardian.data.model.RGConstantsTypeInfo;
@@ -50,7 +50,7 @@ public class AliHADeviceEvaluationBridge extends e {
             str2 = "";
         }
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 z = true;
             } else if ("all".equalsIgnoreCase(str2)) {
                 z = false;

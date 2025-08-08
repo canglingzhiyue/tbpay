@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.notification.g;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.taobao.android.litecreator.util.k;
 import java.io.BufferedReader;
@@ -69,7 +69,7 @@ public class a {
 
     public static boolean a(String str) {
         File[] listFiles;
-        if (!TextUtils.isEmpty(str) && !str.contains("../")) {
+        if (!StringUtils.isEmpty(str) && !str.contains("../")) {
             String str2 = File.separator;
             if (!str.endsWith(str2)) {
                 str = str + str2;
@@ -100,7 +100,7 @@ public class a {
     }
 
     public static boolean b(String str) {
-        if (!TextUtils.isEmpty(str) && !str.contains("../")) {
+        if (!StringUtils.isEmpty(str) && !str.contains("../")) {
             File file = new File(str);
             if (file.isFile() && file.exists()) {
                 return file.delete();

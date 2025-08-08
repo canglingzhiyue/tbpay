@@ -1,7 +1,7 @@
 package com.taobao.avplayer.playercontrol.hiv;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -288,10 +288,10 @@ public class e implements aw {
             this.r = (ImageView) inflate.findViewById(R.id.img_player_control_video_ext_data_share);
             this.r.setOnClickListener(new a());
             this.g.setVisibility((!this.m || !this.n) ? 8 : 0);
-            if (contentDetailData.talentInfo != null && !TextUtils.isEmpty(contentDetailData.talentInfo.nick)) {
+            if (contentDetailData.talentInfo != null && !StringUtils.isEmpty(contentDetailData.talentInfo.nick)) {
                 this.l = contentDetailData.talentInfo.nick;
             }
-            if (contentDetailData.shopInfo != null && !TextUtils.isEmpty(contentDetailData.shopInfo.shopUrl)) {
+            if (contentDetailData.shopInfo != null && !StringUtils.isEmpty(contentDetailData.shopInfo.shopUrl)) {
                 this.l = contentDetailData.shopInfo.shopTitle;
                 this.k = contentDetailData.shopInfo.shopUrl;
                 this.h.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.avplayer.playercontrol.hiv.e.3
@@ -444,7 +444,7 @@ public class e implements aw {
             this.t.setVisibility(8);
         }
         this.m = z;
-        if (z && this.m && this.n && (!TextUtils.isEmpty(this.k) || !TextUtils.isEmpty(this.l))) {
+        if (z && this.m && this.n && (!StringUtils.isEmpty(this.k) || !StringUtils.isEmpty(this.l))) {
             this.g.setVisibility(0);
         } else {
             this.g.setVisibility(8);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.windvane.wvplugin.pagedetail;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.l;
 import com.taobao.android.detail.core.performance.preload.j;
@@ -32,10 +32,10 @@ public class PreloadPageDetailPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i.c(l.a(TAG), "WVApi action为空");
             return false;
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             i.c(l.a(TAG), "WVApi params为空");
             return false;
         } else if (!START_PRELOAD.equals(str)) {

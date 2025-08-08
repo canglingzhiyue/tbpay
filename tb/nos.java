@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.j;
@@ -134,7 +134,7 @@ public class nos extends Drawable {
 
     private boolean a(SearchDomBean searchDomBean) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d1800df2", new Object[]{this, searchDomBean})).booleanValue() : !TextUtils.isEmpty(searchDomBean.backgroundGradientStart) && !TextUtils.isEmpty(searchDomBean.backgroundGradientEnd);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d1800df2", new Object[]{this, searchDomBean})).booleanValue() : !StringUtils.isEmpty(searchDomBean.backgroundGradientStart) && !StringUtils.isEmpty(searchDomBean.backgroundGradientEnd);
     }
 
     private void b(SearchDomBean searchDomBean) {
@@ -159,7 +159,7 @@ public class nos extends Drawable {
             return ((Boolean) ipChange.ipc$dispatch("eb5a3c30", new Object[]{this, searchDomBean})).booleanValue();
         }
         String str = searchDomBean.borderColor;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         this.c.setColor(d.a(str, 0));

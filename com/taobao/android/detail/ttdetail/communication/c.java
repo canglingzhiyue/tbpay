@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.communication;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
 import tb.kge;
@@ -22,7 +22,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("3f6621dd", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (c.class) {
@@ -51,7 +51,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("59d71afc", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || !f10526a.containsKey(str)) {
+        if (StringUtils.isEmpty(str) || !f10526a.containsKey(str)) {
             return null;
         }
         return f10526a.get(str);
@@ -61,7 +61,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (c.class) {
                 if (f10526a.containsKey(str)) {

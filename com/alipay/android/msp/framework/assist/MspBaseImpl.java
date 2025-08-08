@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.assist;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.framework.cache.SecurityCacheStorage;
@@ -94,7 +94,7 @@ public class MspBaseImpl implements IBaseEngine {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("30ed0fd2", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         String replaceAll = str.replaceAll("-", "_");

@@ -2,7 +2,7 @@ package com.taobao.android.dinamic.constructor;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
@@ -170,7 +170,7 @@ public class DTextViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("955341a5", new Object[]{this, textView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             textView.setTypeface(Typeface.defaultFromStyle(0));
         } else {
             int intValue = Integer.valueOf(str).intValue();
@@ -225,12 +225,12 @@ public class DTextViewConstructor extends h {
         if (intValue == 0) {
             textView.setEllipsize(null);
         } else if (intValue == 1) {
-            textView.setEllipsize(TextUtils.TruncateAt.START);
+            textView.setEllipsize(StringUtils.TruncateAt.START);
         } else if (intValue == 2) {
-            textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+            textView.setEllipsize(StringUtils.TruncateAt.MIDDLE);
         } else if (intValue != 3) {
         } else {
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
         }
     }
 
@@ -303,7 +303,7 @@ public class DTextViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6b0f8bc6", new Object[]{this, textView, str});
-        } else if (!TextUtils.equals(PromotionFilterBean.SINGLE, str)) {
+        } else if (!StringUtils.equals(PromotionFilterBean.SINGLE, str)) {
         } else {
             textView.getPaint().setFlags(16);
         }

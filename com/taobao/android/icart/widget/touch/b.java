@@ -2,7 +2,7 @@ package com.taobao.android.icart.widget.touch;
 
 import android.graphics.Point;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -381,7 +381,7 @@ public class b extends DragFloatLayer.a<String, IDMComponent> {
             }
             for (int size2 = b.this.f12915a.size() - 1; size2 >= 0; size2--) {
                 IDMComponent iDMComponent2 = (IDMComponent) b.this.f12915a.get(size2);
-                if (b.f(b.this) != null && TextUtils.equals(iDMComponent2.getKey(), b.f(b.this).getKey())) {
+                if (b.f(b.this) != null && StringUtils.equals(iDMComponent2.getKey(), b.f(b.this).getKey())) {
                     iDMComponent2.writeFields("_draging", "true");
                 } else if (iDMComponent2.getFields() != null) {
                     iDMComponent2.getFields().remove("_draging");

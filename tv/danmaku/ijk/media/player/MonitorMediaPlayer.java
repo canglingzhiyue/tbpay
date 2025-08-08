@@ -11,7 +11,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LogPrinter;
 import android.view.Surface;
 import anet.channel.util.HttpConstant;
@@ -1255,38 +1255,38 @@ public abstract class MonitorMediaPlayer extends c {
 
     private void appendExtraQueryToPath(StringBuilder sb) {
         if (this.mConfig.ac > 0) {
-            if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb.append("&");
             }
             sb.append("connTimeout=" + this.mConfig.ac);
         }
         if (this.mConfig.ad > 0) {
-            if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb.append("&");
             }
             sb.append("readTimeout=" + this.mConfig.ad);
         }
         if (this.mConfig.ae > 0) {
-            if (!TextUtils.isEmpty(sb)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb.append("&");
             }
             sb.append("RetryTime=" + this.mConfig.ae);
         }
         String bizGroupCode = getBizGroupCode();
-        if (!TextUtils.isEmpty(bizGroupCode)) {
-            if (!TextUtils.isEmpty(sb)) {
+        if (!StringUtils.isEmpty(bizGroupCode)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb.append("&");
             }
             sb.append("bizCode=" + bizGroupCode);
         }
-        if (!TextUtils.isEmpty(this.mConfig.B)) {
-            if (!TextUtils.isEmpty(sb)) {
+        if (!StringUtils.isEmpty(this.mConfig.B)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb.append("&");
             }
             sb.append("videoId=" + this.mConfig.B);
         }
-        if (!TextUtils.isEmpty(this.mConfig.D)) {
-            if (!TextUtils.isEmpty(sb)) {
+        if (!StringUtils.isEmpty(this.mConfig.D)) {
+            if (!StringUtils.isEmpty(sb)) {
                 sb.append("&");
             }
             sb.append("videoDefine=" + this.mConfig.D);
@@ -1330,12 +1330,12 @@ public abstract class MonitorMediaPlayer extends c {
             r0 = 0
             r6.mFromNotValid = r0
             java.lang.String r0 = r7.y
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             java.lang.String r1 = "DWInteractive"
             r2 = 1
             if (r0 != 0) goto L87
             java.lang.String r0 = r7.B
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L48
             goto L87
         L48:
@@ -1343,7 +1343,7 @@ public abstract class MonitorMediaPlayer extends c {
             r3 = 2
             if (r0 != r3) goto L89
             java.lang.String r0 = r7.W
-            boolean r3 = android.text.TextUtils.isEmpty(r0)
+            boolean r3 = android.text.StringUtils.isEmpty(r0)
             if (r3 == 0) goto L6c
             java.util.Map<java.lang.String, java.lang.String> r3 = r7.aa
             if (r3 == 0) goto L6c
@@ -1359,7 +1359,7 @@ public abstract class MonitorMediaPlayer extends c {
             java.lang.String r4 = "ignoreToastListOfPlayScenes"
             java.lang.String r5 = "[\"MyTBVideoEmbedView\", \"WXInteractiveComponent\"]"
             java.lang.String r3 = r3.getConfig(r1, r4, r5)
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L89
             java.lang.String r0 = r6.mUsingInterface
             boolean r0 = com.taobao.taobaoavsdk.util.b.d(r0, r3)
@@ -1383,7 +1383,7 @@ public abstract class MonitorMediaPlayer extends c {
         La3:
             if (r7 == 0) goto Lc2
             java.lang.String r3 = r7.B
-            boolean r3 = android.text.TextUtils.isEmpty(r3)
+            boolean r3 = android.text.StringUtils.isEmpty(r3)
             if (r3 != 0) goto Lc2
             java.lang.String r7 = r7.B
             java.lang.String r3 = "http"
@@ -1431,7 +1431,7 @@ public abstract class MonitorMediaPlayer extends c {
         String str2;
         Context context = null;
         HashMap hashMap = !this.mOrangeForceStaticConfigVPMInfo ? new HashMap() : null;
-        if (this.mUTRun == null || TextUtils.isEmpty(this.mPlayUrl)) {
+        if (this.mUTRun == null || StringUtils.isEmpty(this.mPlayUrl)) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "can't commit player vpm info\n");
             return;
         }
@@ -1439,7 +1439,7 @@ public abstract class MonitorMediaPlayer extends c {
             return;
         }
         String currentPageName = l.getInstance().getCurrentPageName();
-        if (!TextUtils.isEmpty(currentPageName)) {
+        if (!StringUtils.isEmpty(currentPageName)) {
             this.mCurrentPageName = currentPageName;
         }
         synchronized (this.mLock) {
@@ -1578,7 +1578,7 @@ public abstract class MonitorMediaPlayer extends c {
                 this.videoRenderingStalledTotalDurationNew_43833053_LastForVpm = this.videoRenderingStalledTotalDurationNew_43833053;
                 this.videoRenderingStalledCountNew_43833053_LastForVpm = this.videoRenderingStalledCountNew_43833053;
                 if (this.mEnableVPM) {
-                    this.mPlayStatStaticValue = TextUtils.join(",", strArr);
+                    this.mPlayStatStaticValue = StringUtils.join(",", strArr);
                     ((TaobaoMediaPlayer) this)._setPropertyString(21006, this.mPlayStatStaticValue);
                 } else {
                     TBS.Adv.ctrlClicked("Page_Video", CT.Button, "Playing", strArr);
@@ -1642,7 +1642,7 @@ public abstract class MonitorMediaPlayer extends c {
             sb2.append("force=");
             sb2.append(z ? 1 : 0);
             strArr[20] = sb2.toString();
-            AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TaobaoMediaPlayer:" + this + " commitSeamlessSwitchStats: " + TextUtils.join(",", strArr));
+            AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "TaobaoMediaPlayer:" + this + " commitSeamlessSwitchStats: " + StringUtils.join(",", strArr));
             TBS.Adv.ctrlClicked("Page_Video", CT.Button, "SeamLessSwitchVideo", strArr);
             commitPlaying();
         } catch (Throwable unused) {
@@ -1684,7 +1684,7 @@ public abstract class MonitorMediaPlayer extends c {
     private int getCdnCacheValue(Map<String, String> map) {
         if (map != null) {
             String str = map.get(HttpConstant.X_CACHE);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (str.startsWith("HIT")) {
                     return 1;
                 }
@@ -1722,7 +1722,7 @@ public abstract class MonitorMediaPlayer extends c {
         if (a2 >= 10 && a2 <= 10000) {
             long c = com.taobao.taobaoavsdk.util.b.c(MediaAdapteManager.mConfigAdapter.getConfig("tblivertc", "GrtnMaxDelayMs", "6000"));
             if (c >= a2 && c <= 30000) {
-                return TextUtils.join("&", new String[]{"rtc_delay=" + a2, "mbdfu=" + c, "max_delay=" + c, "pidm=0"});
+                return StringUtils.join("&", new String[]{"rtc_delay=" + a2, "mbdfu=" + c, "max_delay=" + c, "pidm=0"});
             }
         }
         return null;
@@ -1773,7 +1773,7 @@ public abstract class MonitorMediaPlayer extends c {
         if (context == null) {
             return "";
         }
-        if (!TextUtils.isEmpty(mOutputSampleRate)) {
+        if (!StringUtils.isEmpty(mOutputSampleRate)) {
             return mOutputSampleRate;
         }
         try {
@@ -1803,16 +1803,16 @@ public abstract class MonitorMediaPlayer extends c {
     public static String getProxyVideoUrl(Context context, com.taobao.taobaoavsdk.widget.media.c cVar, String str) {
         if (context != null && cVar != null) {
             try {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(cVar.r) && !str.contains(".m3u8") && str.startsWith("http")) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(cVar.r) && !str.contains(".m3u8") && str.startsWith("http")) {
                     StringBuilder sb = new StringBuilder(100);
-                    if (!TextUtils.isEmpty(cVar.t)) {
-                        if (!TextUtils.isEmpty(sb)) {
+                    if (!StringUtils.isEmpty(cVar.t)) {
+                        if (!StringUtils.isEmpty(sb)) {
                             sb.append("&");
                         }
                         sb.append("playTokenId=" + cVar.t);
                     }
-                    if (!TextUtils.isEmpty(cVar.r)) {
-                        if (!TextUtils.isEmpty(sb)) {
+                    if (!StringUtils.isEmpty(cVar.r)) {
+                        if (!StringUtils.isEmpty(sb)) {
                             sb.append("&");
                         }
                         sb.append("videoCacheId=" + cVar.r);
@@ -1919,7 +1919,7 @@ public abstract class MonitorMediaPlayer extends c {
         /*
             r11 = this;
             java.lang.String r0 = "AVSDK"
-            boolean r1 = android.text.TextUtils.isEmpty(r12)
+            boolean r1 = android.text.StringUtils.isEmpty(r12)
             r2 = 1
             r3 = 0
             com.alibaba.fastjson.JSONArray r13 = com.alibaba.fastjson.JSON.parseArray(r13)     // Catch: java.lang.Throwable -> Lbd
@@ -2184,7 +2184,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     private void registerMonitor() {
         try {
-            if (TextUtils.isEmpty(this.AppMonitor_Module)) {
+            if (StringUtils.isEmpty(this.AppMonitor_Module)) {
                 return;
             }
             DimensionSet create = DimensionSet.create();
@@ -2307,7 +2307,7 @@ public abstract class MonitorMediaPlayer extends c {
 
             @Override // android.util.LogPrinter, android.util.Printer
             public void println(String str) {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 if (str.startsWith(">>>>> Dispatching to")) {
@@ -2349,7 +2349,7 @@ public abstract class MonitorMediaPlayer extends c {
     private boolean useCache() {
         String str;
         String str2;
-        if (this.mConfig == null || this.mConfig.b != 2 || TextUtils.isEmpty(this.mConfig.r) || this.mPlayUrl == null || this.mPlayUrl.contains(".m3u8") || !this.mPlayUrl.startsWith("http")) {
+        if (this.mConfig == null || this.mConfig.b != 2 || StringUtils.isEmpty(this.mConfig.r) || this.mPlayUrl == null || this.mPlayUrl.contains(".m3u8") || !this.mPlayUrl.startsWith("http")) {
             if (this.mConfig == null) {
                 str = "useCache false for null config";
             } else {
@@ -2380,7 +2380,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     private boolean useUrlAudioCache() {
         String str;
-        if (this.mConfig == null || !this.mConfig.ah || !this.mConfig.at || TextUtils.isEmpty(this.mPlayUrl)) {
+        if (this.mConfig == null || !this.mConfig.ah || !this.mConfig.at || StringUtils.isEmpty(this.mPlayUrl)) {
             return false;
         }
         if (com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", MUSIC_URL_CACHE_ENABLE_FORCE, "true")) && this.mConfig.ah) {
@@ -2545,11 +2545,11 @@ public abstract class MonitorMediaPlayer extends c {
             return null;
         }
         String str = this.mConfigClone.ab.get("bizGroup");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String str2 = (this.mConfigClone.aa == null || this.mConfigClone.aa.size() <= 0) ? "" : this.mConfigClone.aa.get("vod_scenario");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return this.mConfigClone.y;
         }
         return this.mConfigClone.y + "_" + str2;
@@ -2600,7 +2600,7 @@ public abstract class MonitorMediaPlayer extends c {
                 }
                 StringBuilder sb = new StringBuilder(128);
                 String a7 = f.a(this.mPlayUrl, a6, sb);
-                if (!TextUtils.isEmpty(sb.toString())) {
+                if (!StringUtils.isEmpty(sb.toString())) {
                     this.mBackupCdnIp = sb.toString();
                 }
                 return a7;
@@ -2642,7 +2642,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     protected String getDynamicPlayExParam(String str) {
         HashMap<String, String> hashMap;
-        if (!TextUtils.isEmpty(str) && (hashMap = this.mDynamicPlayExMap) != null && hashMap.size() > 0) {
+        if (!StringUtils.isEmpty(str) && (hashMap = this.mDynamicPlayExMap) != null && hashMap.size() > 0) {
             for (Map.Entry<String, String> entry : this.mDynamicPlayExMap.entrySet()) {
                 if (str.equals(entry.getKey())) {
                     return entry.getValue();
@@ -2707,7 +2707,7 @@ public abstract class MonitorMediaPlayer extends c {
     }
 
     protected long getPlayTimeByVideoResolution(String str) {
-        if (TextUtils.isEmpty(str) || !this.mVideoResolutionPlayTimeMap.containsKey(str)) {
+        if (StringUtils.isEmpty(str) || !this.mVideoResolutionPlayTimeMap.containsKey(str)) {
             return 0L;
         }
         return this.mVideoResolutionPlayTimeMap.get(str).longValue();
@@ -2734,7 +2734,7 @@ public abstract class MonitorMediaPlayer extends c {
     }
 
     protected long getRenderingStalledCountNewByVideoResolution(String str) {
-        if (TextUtils.isEmpty(str) || !this.mVideoResolutionRenderingStalledCountMap.containsKey(str)) {
+        if (StringUtils.isEmpty(str) || !this.mVideoResolutionRenderingStalledCountMap.containsKey(str)) {
             return 0L;
         }
         return this.mVideoResolutionRenderingStalledCountMap.get(str).longValue();
@@ -2763,7 +2763,7 @@ public abstract class MonitorMediaPlayer extends c {
     }
 
     protected boolean isArtpUrl(String str) {
-        return !TextUtils.isEmpty(str) && str.contains(TaoLiveVideoView.TBLIVE_ARTP_SCHEMA);
+        return !StringUtils.isEmpty(str) && str.contains(TaoLiveVideoView.TBLIVE_ARTP_SCHEMA);
     }
 
     public boolean isAudioHardwareDecode() {
@@ -2780,7 +2780,7 @@ public abstract class MonitorMediaPlayer extends c {
     }
 
     protected boolean isGrtnUrl(String str) {
-        return !TextUtils.isEmpty(str) && str.contains(TaoLiveVideoView.TBLIVE_GRTN_SCHEMA);
+        return !StringUtils.isEmpty(str) && str.contains(TaoLiveVideoView.TBLIVE_GRTN_SCHEMA);
     }
 
     public boolean isHardwareDecode() {
@@ -2800,7 +2800,7 @@ public abstract class MonitorMediaPlayer extends c {
     }
 
     public boolean isRtcUrl(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.contains(TaoLiveVideoView.TBLIVE_ARTP_SCHEMA) || str.contains(TaoLiveVideoView.TBLIVE_GRTN_SCHEMA);
@@ -2814,7 +2814,7 @@ public abstract class MonitorMediaPlayer extends c {
         if (j == 10000) {
             return true;
         }
-        if (j != 0 && !TextUtils.isEmpty(str)) {
+        if (j != 0 && !StringUtils.isEmpty(str)) {
             long c = com.taobao.taobaoavsdk.util.b.c(str);
             if (c == 0) {
                 return false;
@@ -3040,10 +3040,10 @@ public abstract class MonitorMediaPlayer extends c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:165:0x0407, code lost:
-        if (android.text.TextUtils.isEmpty(r1) == false) goto L136;
+        if (android.text.StringUtils.isEmpty(r1) == false) goto L136;
      */
     /* JADX WARN: Code restructure failed: missing block: B:182:0x045a, code lost:
-        if (android.text.TextUtils.isEmpty(r1) == false) goto L136;
+        if (android.text.StringUtils.isEmpty(r1) == false) goto L136;
      */
     /* JADX WARN: Removed duplicated region for block: B:195:0x049e  */
     /* JADX WARN: Removed duplicated region for block: B:198:0x04c7  */
@@ -3079,7 +3079,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void monitorError(int i, int i2) {
-        if (this.mConfig == null || TextUtils.isEmpty(this.AppMonitor_Module) || this.mCommitPlayError) {
+        if (this.mConfig == null || StringUtils.isEmpty(this.AppMonitor_Module) || this.mCommitPlayError) {
             return;
         }
         com.taobao.taobaoavsdk.Tracer.b.a(this.mAnalysis, "VIDEO_ERROR", String.valueOf(i));
@@ -3111,7 +3111,7 @@ public abstract class MonitorMediaPlayer extends c {
             baseDimensionValues.put("error_code", String.valueOf(i));
             baseDimensionValues.put("extra", String.valueOf(i2));
             Context context = this.mContextRef == null ? null : this.mContextRef.get();
-            if (context != null && (context instanceof Activity) && ((Activity) context).getIntent() != null && ((Activity) context).getIntent().getData() != null && !TextUtils.isEmpty(((Activity) context).getIntent().getData().toString())) {
+            if (context != null && (context instanceof Activity) && ((Activity) context).getIntent() != null && ((Activity) context).getIntent().getData() != null && !StringUtils.isEmpty(((Activity) context).getIntent().getData().toString())) {
                 baseDimensionValues.put("page_url", ((Activity) context).getIntent().getData().toString());
             }
             HashMap hashMap = new HashMap();
@@ -3354,7 +3354,7 @@ public abstract class MonitorMediaPlayer extends c {
         this.mLastIsConnected = 1;
         this.mHeartBeatCount = 0L;
         this.mUserStartTime = 0L;
-        if (TextUtils.isEmpty(this.mPlayUrl) || ((this.mConfig.b != 0 && (this.mConfig.b != 2 || !this.mEnableVPM)) || MediaAdapteManager.mConfigAdapter == null || !com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.mConfig.q, "startHeartBeat", "true")))) {
+        if (StringUtils.isEmpty(this.mPlayUrl) || ((this.mConfig.b != 0 && (this.mConfig.b != 2 || !this.mEnableVPM)) || MediaAdapteManager.mConfigAdapter == null || !com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.mConfig.q, "startHeartBeat", "true")))) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "heartBeatMonitorStart failed, mEnableVPM is " + this.mEnableVPM);
         } else {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "heartBeatMonitorStart ");
@@ -3388,7 +3388,7 @@ public abstract class MonitorMediaPlayer extends c {
         }
         if (context != null && (context instanceof Activity)) {
             Activity activity = (Activity) context;
-            if (activity.getIntent() != null && activity.getIntent().getData() != null && !TextUtils.isEmpty(activity.getIntent().getData().toString())) {
+            if (activity.getIntent() != null && activity.getIntent().getData() != null && !StringUtils.isEmpty(activity.getIntent().getData().toString())) {
                 this.mPageUrl = activity.getIntent().getData().toString();
             }
         }
@@ -3447,12 +3447,12 @@ public abstract class MonitorMediaPlayer extends c {
                 sb.append(",");
                 sb.append(taobaoMediaPlayer._getPropertyString(21990));
                 String _getPropertyString = taobaoMediaPlayer._getPropertyString(21008);
-                if (!TextUtils.isEmpty(_getPropertyString)) {
+                if (!StringUtils.isEmpty(_getPropertyString)) {
                     sb.append(",");
                     sb.append(_getPropertyString);
                 }
                 String _getPropertyString2 = taobaoMediaPlayer._getPropertyString(21009);
-                if (!TextUtils.isEmpty(_getPropertyString2)) {
+                if (!StringUtils.isEmpty(_getPropertyString2)) {
                     sb.append(",");
                     sb.append(_getPropertyString2);
                 }
@@ -3609,7 +3609,7 @@ public abstract class MonitorMediaPlayer extends c {
             sb.append(getRenderingStalledCountNewByVideoResolution("2k"));
             sb.append(",video_rendering_stalled_count_new_over2k=");
             sb.append(getRenderingStalledCountNewByVideoResolution(VIDEO_RESOLUTION_over2k));
-            if (!TextUtils.isEmpty(this.mSeamlessSwitchStatusAll)) {
+            if (!StringUtils.isEmpty(this.mSeamlessSwitchStatusAll)) {
                 sb.append(",switch_status=");
                 sb.append(this.mSeamlessSwitchStatusAll);
             }
@@ -3764,7 +3764,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void monitorRtcAdaptionTraceData(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         try {
@@ -3798,13 +3798,13 @@ public abstract class MonitorMediaPlayer extends c {
     /* JADX INFO: Access modifiers changed from: protected */
     public void monitorRtcCommonTraceInfo(String str) {
         String next;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         try {
             org.json.JSONObject jSONObject = new org.json.JSONObject(str);
             String optString = jSONObject.optString("traceType");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 return;
             }
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "monitorRtcCommonTraceInfo: " + str);
@@ -3832,7 +3832,7 @@ public abstract class MonitorMediaPlayer extends c {
             strArr[6] = sb.toString();
             strArr[7] = "abtestId=" + getDynamicPlayExParam("adaption_abtest_id");
             strArr[8] = str2;
-            if (!TextUtils.equals(optString, "0")) {
+            if (!StringUtils.equals(optString, "0")) {
                 return;
             }
             commitStat19997("Page_Video", CT.Button, "RtcLiveSwitchStream", strArr);
@@ -4428,7 +4428,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String parseValueFromString(String str, String str2, String str3) {
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str) || StringUtils.isEmpty(str3)) {
             return null;
         }
         String[] split = str2.split(str3);
@@ -4442,7 +4442,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String replaceValueForKey(String str, String str2, String str3, String str4, int i) {
-        if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str) || StringUtils.isEmpty(str4)) {
             return str3;
         }
         String[] split = str3.split(str4);
@@ -4535,7 +4535,7 @@ public abstract class MonitorMediaPlayer extends c {
 
     public void setDynamicPlayExParam(String str) {
         HashMap<String, String> b;
-        if (!TextUtils.isEmpty(str) && (b = com.taobao.taobaoavsdk.util.b.b(str, ",", "=")) != null && b.size() > 0) {
+        if (!StringUtils.isEmpty(str) && (b = com.taobao.taobaoavsdk.util.b.b(str, ",", "=")) != null && b.size() > 0) {
             if (this.mDynamicPlayExMap == null) {
                 this.mDynamicPlayExMap = new HashMap<>();
             }
@@ -4726,7 +4726,7 @@ public abstract class MonitorMediaPlayer extends c {
     }
 
     protected void updateVideoResolutionPlayTimeMap(long j, String str) {
-        if (j <= 0 || TextUtils.isEmpty(str)) {
+        if (j <= 0 || StringUtils.isEmpty(str)) {
             return;
         }
         if (this.mVideoResolutionPlayTimeMap.containsKey(str)) {
@@ -4740,7 +4740,7 @@ public abstract class MonitorMediaPlayer extends c {
             this.mVideoResolutionRenderingStalledCountMap = new HashMap();
         }
         long j = this.videoRenderingStalledCountNew_43833053 - this.videoRenderingStalledCountNewWithResolution;
-        if (j <= 0 || TextUtils.isEmpty(str)) {
+        if (j <= 0 || StringUtils.isEmpty(str)) {
             return;
         }
         this.mVideoResolutionRenderingStalledCountMap.put(str, Long.valueOf(j));

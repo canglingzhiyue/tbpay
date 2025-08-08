@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.config.fetch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -77,7 +77,7 @@ public class ConfigFetcherNew implements IConfigFetcher {
         public boolean a() {
             Map<String, Set<String>> map;
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.b) && (map = this.c) != null && !map.isEmpty();
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.b) && (map = this.c) != null && !map.isEmpty();
         }
     }
 
@@ -184,7 +184,7 @@ public class ConfigFetcherNew implements IConfigFetcher {
         }
         try {
             String configItemById = this.mConfigAdapter.getConfigItemById(str);
-            if (!TextUtils.isEmpty(configItemById)) {
+            if (!StringUtils.isEmpty(configItemById)) {
                 return com.alibaba.poplayer.config.manager.c.a(configItemById, str, str2);
             }
             return null;

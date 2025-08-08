@@ -3,7 +3,7 @@ package com.alipay.mobile.common.logging.process;
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -46,7 +46,7 @@ public class BaseServiceInlite extends IntentService {
         } else if (intent != null) {
             String action = intent.getAction();
             Bundle extras = intent.getExtras();
-            if (TextUtils.isEmpty(action) || extras == null) {
+            if (StringUtils.isEmpty(action) || extras == null) {
                 return;
             }
             if (action.equals(getPackageName() + LogContext.ACTION_UPLOAD_MDAPLOG)) {

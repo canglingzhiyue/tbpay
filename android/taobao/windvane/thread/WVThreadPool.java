@@ -1,7 +1,7 @@
 package android.taobao.windvane.thread;
 
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -89,7 +89,7 @@ public class WVThreadPool {
             return;
         }
         refreshTaskMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (this.tasks.size() != 0 && this.tasks.size() == CORE_POOL_SIZE - 1 && !this.tasks.containsKey(str)) {
                 String str2 = (String) this.tasks.keySet().toArray()[0];
                 Future remove = this.tasks.remove(str2);

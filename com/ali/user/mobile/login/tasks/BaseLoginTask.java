@@ -1,6 +1,6 @@
 package com.ali.user.mobile.login.tasks;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
@@ -336,7 +336,7 @@ public abstract class BaseLoginTask {
             String str = rpcResponse.actionType;
             String str2 = TAG;
             LoginTLogAdapter.e(str2, "loginType=" + calLoginType(loginBaseParam) + ", actionType=" + str + ", msg=" + rpcResponse.message);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if ("SUCCESS".equals(str)) {
                     onReceiveSuccess(loginBaseParam, rpcResponse, loginTasksCallback);
                     return;
@@ -383,7 +383,7 @@ public abstract class BaseLoginTask {
             return;
         }
         AppMonitorAdapter.commitSuccess("Page_Login", "login");
-        if (rpcResponse != null && rpcResponse.returnValue != null && rpcResponse.returnValue.extMap != null && !TextUtils.isEmpty(rpcResponse.returnValue.extMap.get("loginPostUrl"))) {
+        if (rpcResponse != null && rpcResponse.returnValue != null && rpcResponse.returnValue.extMap != null && !StringUtils.isEmpty(rpcResponse.returnValue.extMap.get("loginPostUrl"))) {
             ((NavigatorService) ServiceFactory.getService(NavigatorService.class)).navToLoginPostPage(DataProviderFactory.getApplicationContext(), rpcResponse.returnValue.extMap.get("loginPostUrl"), "true".equals(rpcResponse.returnValue.extMap.get(g.KEY_IS_TRANSPARENT)), new LoginFilterCallback() { // from class: com.ali.user.mobile.login.tasks.BaseLoginTask.7
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -447,10 +447,10 @@ public abstract class BaseLoginTask {
             return (String) ipChange.ipc$dispatch("4619b636", new Object[]{this, loginBaseParam});
         }
         String loginType = getLoginType();
-        if (TextUtils.isEmpty(loginType) && loginBaseParam != null && !TextUtils.isEmpty(loginBaseParam.snsType)) {
+        if (StringUtils.isEmpty(loginType) && loginBaseParam != null && !StringUtils.isEmpty(loginBaseParam.snsType)) {
             loginType = b.a(loginBaseParam.snsType);
         }
-        return (!TextUtils.isEmpty(loginType) || loginBaseParam == null || TextUtils.isEmpty(loginBaseParam.nativeLoginType)) ? loginType : loginBaseParam.nativeLoginType;
+        return (!StringUtils.isEmpty(loginType) || loginBaseParam == null || StringUtils.isEmpty(loginBaseParam.nativeLoginType)) ? loginType : loginBaseParam.nativeLoginType;
     }
 
     public void onReceiveNotSuccessActionType(LoginBaseParam loginBaseParam, RpcResponse<LoginReturnData> rpcResponse) {
@@ -470,7 +470,7 @@ public abstract class BaseLoginTask {
             return;
         }
         LoginReturnData loginReturnData = rpcResponse.returnValue;
-        if (loginReturnData != null && !TextUtils.isEmpty(loginReturnData.h5Url)) {
+        if (loginReturnData != null && !StringUtils.isEmpty(loginReturnData.h5Url)) {
             showToast(rpcResponse, ApiConstants.ApiField.SMS_LOGIN_REMIND_TIPS);
             navToWebViewPage(loginBaseParam, rpcResponse, loginTasksCallback);
         } else if (loginTasksCallback == null) {
@@ -487,7 +487,7 @@ public abstract class BaseLoginTask {
         }
         LoginReturnData loginReturnData = rpcResponse.returnValue;
         long j = 1000;
-        if (loginReturnData.extMap == null || TextUtils.isEmpty(loginReturnData.extMap.get("syncWaitTime"))) {
+        if (loginReturnData.extMap == null || StringUtils.isEmpty(loginReturnData.extMap.get("syncWaitTime"))) {
             return;
         }
         try {
@@ -541,13 +541,13 @@ public abstract class BaseLoginTask {
                 }
                 String str = (String) event.params.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
                 String str2 = (String) event.params.get("result");
-                if (!TextUtils.isEmpty(str) && TextUtils.equals(str2, "success")) {
+                if (!StringUtils.isEmpty(str) && StringUtils.equals(str2, "success")) {
                     LoginBaseParam loginBaseParam2 = (LoginBaseParam) JSON.parseObject(str, LoginBaseParam.class);
                     if (loginBaseParam2 == null) {
                         loginBaseParam2 = new LoginBaseParam();
                     }
                     BaseLoginTask.this.invokeTokenLoginRpc(loginBaseParam2, loginTasksCallback);
-                } else if (TextUtils.equals(str2, "cancel") && (loginTasksCallback2 = loginTasksCallback) != null) {
+                } else if (StringUtils.equals(str2, "cancel") && (loginTasksCallback2 = loginTasksCallback) != null) {
                     loginTasksCallback2.onCancel();
                 } else {
                     LoginTasksCallback loginTasksCallback4 = loginTasksCallback;
@@ -608,7 +608,7 @@ public abstract class BaseLoginTask {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("93e51c7a", new Object[]{this, map});
-                } else if (map != null && !TextUtils.isEmpty(map.get(UccConstants.PARAM_LOGIN_DATA))) {
+                } else if (map != null && !StringUtils.isEmpty(map.get(UccConstants.PARAM_LOGIN_DATA))) {
                     RpcResponse<LoginReturnData> rpcResponse2 = new RpcResponse<>();
                     rpcResponse2.returnValue = (LoginReturnData) JSON.parseObject(map.get(UccConstants.PARAM_LOGIN_DATA), LoginReturnData.class);
                     rpcResponse2.actionType = "SUCCESS";

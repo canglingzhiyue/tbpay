@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -40,7 +40,7 @@ public class brf implements brd {
                 hashMap.putAll(data);
             }
             String str = (String) bbc.a(hashMap, "selectedDate", String.class, null);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject jSONObject = (JSONObject) bbc.a(hashMap, "group", JSONObject.class, new JSONObject());
                 a(hashMap, jSONObject, str);
                 a((JSONObject) bbc.a(hashMap, "disabled", JSONObject.class, null), jSONObject, str);
@@ -104,7 +104,7 @@ public class brf implements brd {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                 if (!bau.a(jSONObject2)) {
                     String string = jSONObject2.getString("id");
-                    if (!TextUtils.isEmpty(string) && (jSONArray2 == null || !jSONArray2.contains(string))) {
+                    if (!StringUtils.isEmpty(string) && (jSONArray2 == null || !jSONArray2.contains(string))) {
                         jSONArray3.add(string);
                         break;
                     }

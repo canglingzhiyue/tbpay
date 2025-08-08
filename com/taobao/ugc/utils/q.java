@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import com.alibaba.fastjson.JSON;
@@ -222,7 +222,7 @@ public class q {
         if (map == null || map.isEmpty()) {
             return "";
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             str2 = "";
         }
         StringBuilder sb = new StringBuilder();
@@ -249,7 +249,7 @@ public class q {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         for (String str2 : str.split(",")) {
@@ -353,7 +353,7 @@ public class q {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig("tb_ratepublish_android", str, "");
-            return TextUtils.isEmpty(config) ? str2 : config;
+            return StringUtils.isEmpty(config) ? str2 : config;
         } catch (Throwable unused) {
             return str2;
         }

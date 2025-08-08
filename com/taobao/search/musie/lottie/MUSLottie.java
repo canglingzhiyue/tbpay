@@ -2,7 +2,7 @@ package com.taobao.search.musie.lottie;
 
 import android.animation.Animator;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.g;
 import com.airbnb.lottie.j;
@@ -291,9 +291,9 @@ public final class MUSLottie extends UINode implements Animator.AnimatorListener
         String str2 = (String) getAttribute("src");
         lottieAnimationView.removeAllLottieOnCompositionLoadedListener();
         lottieAnimationView.setFailureListener(null);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             lottieAnimationView.setAnimationFromJson(str, null);
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             lottieAnimationView.setAnimationFromUrl(str2, str2);
             lottieAnimationView.addLottieOnCompositionLoadedListener(new a(str2));
             lottieAnimationView.setFailureListener(new b(str2));

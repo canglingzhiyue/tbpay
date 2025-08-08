@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -115,7 +115,7 @@ public class pqi {
             str4 = "UnknownCode";
         }
         if (pmd.a().n() != null) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 pmd.a().n().a("taolive", str, str3, str4);
             } else {
                 pmd.a().n().a("taolive", str, str2, str3, str4);

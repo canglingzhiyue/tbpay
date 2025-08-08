@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -295,7 +295,7 @@ public class PopLayerWeexView extends PopLayerBaseView<View, d> {
         JSONObject jSONObject = null;
         try {
             String str = dVar.x().params;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject = (JSONObject) new JSONTokener(str).nextValue();
             }
         } catch (Throwable th) {
@@ -449,10 +449,10 @@ public class PopLayerWeexView extends PopLayerBaseView<View, d> {
                 com.alibaba.poplayer.utils.c.c("containerLifeCycle", str, "PopLayerWeexView.init.renderWeex mInstance == null");
                 return;
             }
-            if (!TextUtils.isEmpty(this.weexSource)) {
+            if (!StringUtils.isEmpty(this.weexSource)) {
                 com.alibaba.poplayer.utils.c.c("containerLifeCycle", str, "PopLayerWeexView.init.renderWeex.load weexSource");
                 this.mInstance.a("PopLayer.IndexId=" + str, this.weexSource, (Map<String, Object>) null, (String) null, WXRenderStrategy.APPEND_ASYNC);
-            } else if (!TextUtils.isEmpty(this.weexUrl)) {
+            } else if (!StringUtils.isEmpty(this.weexUrl)) {
                 com.alibaba.poplayer.utils.c.c("containerLifeCycle", str, "PopLayerWeexView.init.renderWeex.load url=" + this.weexUrl);
                 this.mInstance.c(this.weexUrl, this.weexUrl, null, null, WXRenderStrategy.APPEND_ASYNC);
             }
@@ -489,7 +489,7 @@ public class PopLayerWeexView extends PopLayerBaseView<View, d> {
             return (WXSDKInstance.f) ipChange.ipc$dispatch("2849a65c", new Object[]{popRequest, str, str2, jSONArray, jSONObject});
         }
         try {
-            if ("userTrack".equals(str) && !TextUtils.isEmpty(str2) && (("commit".equals(str2) || "commitut".equals(str2)) && jSONArray != null && g4.b.i.equals(jSONArray.getString(0)))) {
+            if ("userTrack".equals(str) && !StringUtils.isEmpty(str2) && (("commit".equals(str2) || "commitut".equals(str2)) && jSONArray != null && g4.b.i.equals(jSONArray.getString(0)))) {
                 String a2 = d.a(popRequest);
                 com.alibaba.poplayer.utils.c.b("pageLifeCycle", a2, "this page is using userTrack enter.intercepted.methodStr=" + str2);
                 z = true;

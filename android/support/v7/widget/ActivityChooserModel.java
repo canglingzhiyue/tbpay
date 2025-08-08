@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.database.DataSetObservable;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Xml;
 import java.io.FileInputStream;
@@ -211,7 +211,7 @@ public class ActivityChooserModel extends DataSetObservable {
 
     private ActivityChooserModel(Context context, String str) {
         this.b = context.getApplicationContext();
-        if (TextUtils.isEmpty(str) || str.endsWith(".xml")) {
+        if (StringUtils.isEmpty(str) || str.endsWith(".xml")) {
             this.c = str;
             return;
         }
@@ -248,7 +248,7 @@ public class ActivityChooserModel extends DataSetObservable {
                 return;
             }
             this.n = false;
-            if (TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.c)) {
                 return;
             }
             new b().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new ArrayList(this.i), this.c);
@@ -289,7 +289,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     private boolean h() {
-        if (!this.d || !this.n || TextUtils.isEmpty(this.c)) {
+        if (!this.d || !this.n || StringUtils.isEmpty(this.c)) {
             return false;
         }
         this.d = false;

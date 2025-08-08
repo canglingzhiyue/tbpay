@@ -3,7 +3,7 @@ package com.xiaomi.push;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes9.dex */
@@ -12,13 +12,13 @@ public class ez implements ev {
         if ("com.xiaomi.mipush.sdk.WAKEUP".equals(intent.getAction())) {
             String stringExtra = intent.getStringExtra("waker_pkgname");
             String stringExtra2 = intent.getStringExtra("awake_info");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 eo.a(service.getApplicationContext(), "service", 1007, "old version message");
-            } else if (TextUtils.isEmpty(stringExtra2)) {
+            } else if (StringUtils.isEmpty(stringExtra2)) {
                 eo.a(service.getApplicationContext(), stringExtra, 1007, "play with service ");
             } else {
                 String b = en.b(stringExtra2);
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     eo.a(service.getApplicationContext(), b, 1007, "old version message ");
                 } else {
                     eo.a(service.getApplicationContext(), "service", 1008, "B get a incorrect message");
@@ -28,8 +28,8 @@ public class ez implements ev {
     }
 
     private void a(Context context, String str, String str2, String str3) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
-            if (TextUtils.isEmpty(str3)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str3)) {
                 eo.a(context, "service", 1008, "argument error");
             } else {
                 eo.a(context, str3, 1008, "argument error");

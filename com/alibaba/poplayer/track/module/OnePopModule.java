@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.track.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -144,7 +144,7 @@ public class OnePopModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || str.startsWith("poplayer")) {
+        } else if (StringUtils.isEmpty(str) || str.startsWith("poplayer")) {
         } else {
             this.as++;
             this.at = str;

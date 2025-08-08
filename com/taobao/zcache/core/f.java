@@ -1,6 +1,6 @@
 package com.taobao.zcache.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.zcache.PackUpdateFinishedCallback;
 import com.taobao.zcache.s;
@@ -85,7 +85,7 @@ public class f {
             i iVar = f23642a.get(str);
             if (iVar == null) {
                 iVar = new i(str);
-                if (TextUtils.isEmpty(iVar.f23646a)) {
+                if (StringUtils.isEmpty(iVar.f23646a)) {
                     return;
                 }
                 f23642a.put(str, iVar);

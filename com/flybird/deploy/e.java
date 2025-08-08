@@ -1,6 +1,6 @@
 package com.flybird.deploy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.flybird.deploy.callback.a;
 import com.flybird.deploy.model.FBFullTplInfo;
@@ -60,7 +60,7 @@ public class e implements Runnable {
         c0256a.customInfo.a(bVar.a());
         try {
             String delayedGetWaitQueueTpls = FBTemplateDecider.delayedGetWaitQueueTpls(fBTemplateDecider.j);
-            if (TextUtils.isEmpty(delayedGetWaitQueueTpls)) {
+            if (StringUtils.isEmpty(delayedGetWaitQueueTpls)) {
                 cun.c("_triggerDelayedTplUpdateAsync nothing to update");
                 aVar.onSuccess(arrayList, c0256a);
                 return;

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.Request;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -232,7 +232,7 @@ public class HttpUrlRequest extends Request {
         Iterator<Header> it = this.d.iterator();
         while (it.hasNext()) {
             Header next = it.next();
-            if ("Content-Type".equalsIgnoreCase(next.getName()) && !TextUtils.isEmpty(next.getValue())) {
+            if ("Content-Type".equalsIgnoreCase(next.getName()) && !StringUtils.isEmpty(next.getValue())) {
                 this.c = next.getValue();
                 return this.c;
             }
@@ -391,7 +391,7 @@ public class HttpUrlRequest extends Request {
         if (map != null && map.containsKey(TransportConstants.KEY_REQ_DATA_DIGEST)) {
             i = 31 + this.e.get(TransportConstants.KEY_REQ_DATA_DIGEST).hashCode();
         }
-        int hashCode = (i * 31) + (TextUtils.isEmpty(this.f5557a) ? 0 : this.f5557a.hashCode());
+        int hashCode = (i * 31) + (StringUtils.isEmpty(this.f5557a) ? 0 : this.f5557a.hashCode());
         if (this.e.containsKey("operationType")) {
             i2 = this.e.get("operationType").hashCode();
         }
@@ -423,7 +423,7 @@ public class HttpUrlRequest extends Request {
             if (httpUrlRequest.f5557a != null) {
                 return false;
             }
-        } else if (!TextUtils.equals(str, httpUrlRequest.f5557a)) {
+        } else if (!StringUtils.equals(str, httpUrlRequest.f5557a)) {
             return false;
         }
         return true;
@@ -478,7 +478,7 @@ public class HttpUrlRequest extends Request {
         }
         Iterator<Header> it = this.d.iterator();
         while (it.hasNext()) {
-            if (TextUtils.equals(str, it.next().getName())) {
+            if (StringUtils.equals(str, it.next().getName())) {
                 return true;
             }
         }
@@ -909,7 +909,7 @@ public class HttpUrlRequest extends Request {
             java.lang.String r4 = r5.toString()
             com.alipay.mobile.common.transport.utils.LogCatUtil.warn(r1, r4)
         L4d:
-            boolean r4 = android.text.TextUtils.isEmpty(r3)
+            boolean r4 = android.text.StringUtils.isEmpty(r3)
             if (r4 != 0) goto L56
             r8.addTags(r2, r3)
         L56:
@@ -921,7 +921,7 @@ public class HttpUrlRequest extends Request {
             boolean r9 = r2 instanceof java.lang.String     // Catch: java.lang.Throwable -> L8d
             if (r9 == 0) goto L70
             java.lang.String r2 = (java.lang.String) r2     // Catch: java.lang.Throwable -> L8d
-            boolean r9 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L8d
+            boolean r9 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L8d
             if (r9 != 0) goto La6
             r8.addTags(r0, r2)     // Catch: java.lang.Throwable -> L8d
             goto La6
@@ -966,14 +966,14 @@ public class HttpUrlRequest extends Request {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5bbed21a", new Object[]{this})).booleanValue();
         }
-        return this.y || TextUtils.equals(getTag(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK), "true");
+        return this.y || StringUtils.equals(getTag(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK), "true");
     }
 
     public void putLogAttachment(String str, String str2) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8737ead3", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             if (this.z == null) {
                 this.z = new HashMap(1);

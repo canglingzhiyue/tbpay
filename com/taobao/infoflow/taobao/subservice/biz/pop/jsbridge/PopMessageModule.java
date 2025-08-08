@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.pop.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,7 +45,7 @@ public class PopMessageModule extends MUSModule {
             return;
         }
         String businessId = getBusinessId(getInstance());
-        if (TextUtils.isEmpty(businessId)) {
+        if (StringUtils.isEmpty(businessId)) {
             com.taobao.homepage.pop.utils.c.a(TAG, "can't found businessId from instance");
             return;
         }

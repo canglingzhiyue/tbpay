@@ -1,7 +1,7 @@
 package com.taobao.android.ultron.datamodel.imp;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -108,7 +108,7 @@ public class f implements jou {
                 this.f15780a = i.a(new BigInteger(bVar.F()), i.FEATURE_TAG_ID);
             } catch (Exception e) {
                 UnifyLog.a(bVar.h(), "ParseModule", "parseComponents exception", e.getMessage());
-                bga.a.a(TextUtils.isEmpty(bVar.h()) ? str : bVar.h(), "ParseModule.protocolFeatureCheck", e);
+                bga.a.a(StringUtils.isEmpty(bVar.h()) ? str : bVar.h(), "ParseModule.protocolFeatureCheck", e);
             }
         }
         if (jSONObject == null) {
@@ -121,7 +121,7 @@ public class f implements jou {
             } else {
                 g = g(bVar, jSONObject);
             }
-            if (!TextUtils.isEmpty(bVar.h())) {
+            if (!StringUtils.isEmpty(bVar.h())) {
                 str = bVar.h();
             }
             if (g == null) {
@@ -136,7 +136,7 @@ public class f implements jou {
             bVar.b(g);
             return true;
         } catch (Throwable th) {
-            if (!TextUtils.isEmpty(bVar.h())) {
+            if (!StringUtils.isEmpty(bVar.h())) {
                 str = bVar.h();
             }
             bga.a.a(str, "ParseModule.parseResponse", th);
@@ -490,7 +490,7 @@ public class f implements jou {
                 String string = jSONObject2.getString("type");
                 String string2 = jSONObject2.getString("target");
                 String string3 = jSONObject2.getString("source");
-                if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+                if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
                     pattern = compile;
                 } else {
                     Matcher matcher = compile.matcher(string2);
@@ -732,10 +732,10 @@ public class f implements jou {
         }
         String G = bVar.G();
         JSONObject n = bVar.n();
-        if (TextUtils.isEmpty(G)) {
+        if (StringUtils.isEmpty(G)) {
             G = n.getString("root");
         }
-        if (TextUtils.isEmpty(G)) {
+        if (StringUtils.isEmpty(G)) {
             bga.a.a(bVar.h(), "FullResponseParse", ErrorConstants.PROTOCOL_ROOT_KEY_EMPTY.errorCode(), ErrorConstants.PROTOCOL_ROOT_KEY_EMPTY.errorMessage());
         } else {
             bVar.a(a(bVar, G));
@@ -864,7 +864,7 @@ public class f implements jou {
             if (dMComponent != null) {
                 try {
                     String string = dMComponent.getFields().getString("cornerType");
-                    if (!TextUtils.isEmpty(string) && jSONObject4 != null && (jSONObject2 = jSONObject4.getJSONObject("fields")) != null) {
+                    if (!StringUtils.isEmpty(string) && jSONObject4 != null && (jSONObject2 = jSONObject4.getJSONObject("fields")) != null) {
                         jSONObject2.put("cornerType", (Object) string);
                     }
                     if (key != null && this.f15780a && (a2 = a(key)) != null && a2.length == 2) {
@@ -874,7 +874,7 @@ public class f implements jou {
                     dMComponent.onReload(bVar, jSONObject4);
                     dMComponent.onReloadEvent(h(bVar, jSONObject4.getJSONObject("events")));
                 } catch (Throwable th) {
-                    bga.a.a(TextUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "parseAdjustResponseJson", th);
+                    bga.a.a(StringUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "parseAdjustResponseJson", th);
                 }
             }
         }
@@ -956,7 +956,7 @@ public class f implements jou {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ad023781", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (indexOf = str.indexOf("_")) <= 0 || indexOf >= str.length() - 1) {
+        if (StringUtils.isEmpty(str) || (indexOf = str.indexOf("_")) <= 0 || indexOf >= str.length() - 1) {
             return null;
         }
         return new String[]{str.substring(0, indexOf), str.substring(indexOf + 1, str.length())};
@@ -975,7 +975,7 @@ public class f implements jou {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && (value instanceof JSONArray)) {
+            if (!StringUtils.isEmpty(key) && (value instanceof JSONArray)) {
                 JSONArray jSONArray = (JSONArray) value;
                 ArrayList arrayList = new ArrayList(jSONArray.size());
                 Iterator<Object> it = jSONArray.iterator();
@@ -1003,7 +1003,7 @@ public class f implements jou {
         String string = jSONObject.getString("type");
         JSONObject jSONObject2 = jSONObject.getJSONObject("fields");
         String string2 = jSONObject2 == null ? "" : jSONObject2.getString("nextRenderRoot");
-        if (this.e && !TextUtils.isEmpty(string2)) {
+        if (this.e && !StringUtils.isEmpty(string2)) {
             list = a(bVar, string2);
         }
         return new DMEvent(string, jSONObject2, list, jSONObject.getIntValue("option"));
@@ -1033,7 +1033,7 @@ public class f implements jou {
         if (iDMComponent != null && iDMComponent.getFields() != null && "true".equals(iDMComponent.getCardGroup())) {
             str = iDMComponent.getKey();
         }
-        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get(c) == null || TextUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get(c)))) ? str : (String) iDMComponent2.getExtMap().get(c);
+        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get(c) == null || StringUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get(c)))) ? str : (String) iDMComponent2.getExtMap().get(c);
     }
 
     private String b(IDMComponent iDMComponent, IDMComponent iDMComponent2) {
@@ -1045,14 +1045,14 @@ public class f implements jou {
         if (iDMComponent != null && iDMComponent.getFields() != null && iDMComponent.getPosition() != null) {
             str = iDMComponent.getPosition();
         }
-        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get(d) == null || TextUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get(d)))) ? str : (String) iDMComponent2.getExtMap().get(d);
+        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get(d) == null || StringUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get(d)))) ? str : (String) iDMComponent2.getExtMap().get(d);
     }
 
     private void a(IDMComponent iDMComponent, String str) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a050eeb6", new Object[]{this, iDMComponent, str});
-        } else if (TextUtils.isEmpty(str) || iDMComponent.getExtMap() == null) {
+        } else if (StringUtils.isEmpty(str) || iDMComponent.getExtMap() == null) {
         } else {
             iDMComponent.getExtMap().put(c, str);
         }
@@ -1062,7 +1062,7 @@ public class f implements jou {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e2681c15", new Object[]{this, iDMComponent, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             iDMComponent.getExtMap().put(d, str);
         }

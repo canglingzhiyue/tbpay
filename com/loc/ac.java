@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONObject;
 
 /* loaded from: classes4.dex */
@@ -38,7 +38,7 @@ public class ac {
                 str = y.c(this.d);
                 long d = y.d(this.d);
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     a2 = cr.a();
                     csVar = new cs() { // from class: com.loc.ac.1
                         @Override // com.loc.cs
@@ -68,13 +68,13 @@ public class ac {
                                         String optString = jSONObject.optString("aaid", "");
                                         String optString2 = jSONObject.optString("resetToken", "");
                                         String optString3 = jSONObject.optString("uabc", "");
-                                        if (!TextUtils.isEmpty(optString)) {
+                                        if (!StringUtils.isEmpty(optString)) {
                                             y.c(ac.this.d, optString);
                                         }
-                                        if (!TextUtils.isEmpty(optString2)) {
+                                        if (!StringUtils.isEmpty(optString2)) {
                                             y.e(ac.this.d, optString2);
                                         }
-                                        if (!TextUtils.isEmpty(optString3)) {
+                                        if (!StringUtils.isEmpty(optString3)) {
                                             y.d(ac.this.d, optString3);
                                         }
                                     }
@@ -115,13 +115,13 @@ public class ac {
                                         String optString = jSONObject.optString("aaid", "");
                                         String optString2 = jSONObject.optString("resetToken", "");
                                         String optString3 = jSONObject.optString("uabc", "");
-                                        if (!TextUtils.isEmpty(optString)) {
+                                        if (!StringUtils.isEmpty(optString)) {
                                             y.c(ac.this.d, optString);
                                         }
-                                        if (!TextUtils.isEmpty(optString2)) {
+                                        if (!StringUtils.isEmpty(optString2)) {
                                             y.e(ac.this.d, optString2);
                                         }
-                                        if (!TextUtils.isEmpty(optString3)) {
+                                        if (!StringUtils.isEmpty(optString3)) {
                                             y.d(ac.this.d, optString3);
                                         }
                                     }

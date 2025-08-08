@@ -1,6 +1,6 @@
 package com.huawei.hms.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.core.aidl.IMessageEntity;
 import com.huawei.hms.core.aidl.annotation.Packed;
 import com.huawei.hms.support.log.HMSLog;
@@ -262,7 +262,7 @@ public class JsonUtil {
     }
 
     public static Object getInfoFromJsonobject(String str, String str2) {
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 if (!jSONObject.has(str2)) {

@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import com.alibaba.fastjson.JSON;
@@ -143,7 +143,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
             return (String) ipChange.ipc$dispatch("4f12f6e4", new Object[]{jSONObject, aVar});
         }
         String string = jSONObject.getString("page_key");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         if (aVar instanceof nfz) {
@@ -336,10 +336,10 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
             if (decorView == null) {
                 return "can not get decroView";
             }
-            if (TextUtils.equals("dark", str)) {
+            if (StringUtils.equals("dark", str)) {
                 decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() | 8192);
                 return null;
-            } else if (!TextUtils.equals("light", str)) {
+            } else if (!StringUtils.equals("light", str)) {
                 return "scheme invalid";
             } else {
                 decorView.setSystemUiVisibility(decorView.getSystemUiVisibility() & (-8193));
@@ -434,7 +434,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
                 return;
             }
             String string = jSONObject.getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 parse = Uri.parse(appController.t().toString());
                 String a2 = nfb.a();
                 ngr.d(a2, "clearCache with default manifestUrl: " + parse.toString());
@@ -602,12 +602,12 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
                 return;
             }
             String a2 = nfb.a(jSONObject, aVar);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 interfaceC0751a.a(PHAErrorType.REFERENCE_ERROR, "Param page_key shouldn't be empty.");
                 return;
             }
             String string = jSONObject.getString("targetOrigin");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 interfaceC0751a.a(PHAErrorType.REFERENCE_ERROR, "Param targetOrigin shouldn't be empty.");
                 return;
             }
@@ -666,7 +666,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
                 return;
             }
             String string = jSONObject.getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 interfaceC0751a.a(PHAErrorType.REFERENCE_ERROR, "Param url is null.");
                 return;
             }
@@ -755,7 +755,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
             int i = 1;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("a73a53cd", new Object[]{appController, jSONObject, interfaceC0751a});
-            } else if (TextUtils.isEmpty(jSONObject.getString("url"))) {
+            } else if (StringUtils.isEmpty(jSONObject.getString("url"))) {
                 interfaceC0751a.a(PHAErrorType.REFERENCE_ERROR, "Param url is null.");
             } else {
                 try {
@@ -845,7 +845,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
             int i = 1;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3968610b", new Object[]{appController, jSONObject, interfaceC0751a});
-            } else if (TextUtils.isEmpty(jSONObject.getString("url"))) {
+            } else if (StringUtils.isEmpty(jSONObject.getString("url"))) {
                 interfaceC0751a.a(PHAErrorType.REFERENCE_ERROR, "Param url is null.");
             } else {
                 try {
@@ -1185,7 +1185,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
                 str = null;
                 jSONObject2 = null;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return false;
             }
             com.taobao.pha.core.p.b().i().a(str, str2, jSONObject2);
@@ -1211,7 +1211,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
             com.taobao.pha.core.l i = com.taobao.pha.core.p.b().i();
             i.b(context, str2);
             i.a(context, jSONObject2);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 i.b(context, Uri.parse(str));
             }
             return true;
@@ -1820,7 +1820,7 @@ public class nfb implements com.taobao.pha.core.jsbridge.a {
             } else {
                 JSONObject jSONObject2 = new JSONObject();
                 String string = jSONObject.getString("key");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     interfaceC0751a.a(PHAErrorType.REFERENCE_ERROR, "Parameter \"key\" shouldn't be empty.");
                     return;
                 }

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.component.main.viewholder.galleryheader.core;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
 import com.ut.mini.UTHitBuilders;
@@ -37,7 +37,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4477c749", new Object[]{context, str, hashMap});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder(str);
             uTCustomHitBuilder.setEventPage("Page_Detail");

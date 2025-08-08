@@ -3,7 +3,7 @@ package mtopsdk.ssrcore;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
 import mtopsdk.common.util.TBSdkLog;
@@ -27,7 +27,7 @@ public class a implements mtd {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3d571220", new Object[]{this, mtjVar, mtcVar, handler})).booleanValue();
         }
-        if (mtcVar == null || mtjVar == null || TextUtils.isEmpty(mtjVar.f31244a)) {
+        if (mtcVar == null || mtjVar == null || StringUtils.isEmpty(mtjVar.f31244a)) {
             TBSdkLog.e("ssr.MtopSsrService", "illegal param.");
             return false;
         } else if (!mth.a(mtjVar.f31244a)) {
@@ -51,7 +51,7 @@ public class a implements mtd {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9299d0f2", new Object[]{this, mtjVar})).booleanValue();
         }
-        if (mtjVar != null && !TextUtils.isEmpty(mtjVar.f31244a) && (remove = this.f25032a.remove(mtjVar.f31244a)) != null && !remove.e()) {
+        if (mtjVar != null && !StringUtils.isEmpty(mtjVar.f31244a) && (remove = this.f25032a.remove(mtjVar.f31244a)) != null && !remove.e()) {
             remove.d();
         }
         return false;
@@ -64,15 +64,15 @@ public class a implements mtd {
         }
         b a2 = b.a(Mtop.instance(Mtop.Id.SSR, (Context) null), mtjVar);
         String str = mtjVar.f31244a;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Uri parse = Uri.parse(str);
             String query = parse.getQuery();
-            if (!TextUtils.isEmpty(query)) {
+            if (!StringUtils.isEmpty(query)) {
                 if (query.contains("x-sec=wua")) {
                     a2.h();
                 }
                 String queryParameter = parse.getQueryParameter("x-login");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     a2.a(queryParameter);
                 }
             }

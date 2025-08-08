@@ -2,7 +2,7 @@ package com.alibaba.android.nextrpc.stream.internal;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.internal.utils.UnifyLog;
 import com.alibaba.android.nextrpc.request.AttachedResponse;
 import com.alibaba.android.nextrpc.stream.internal.mtop.IStreamMtopRequestCallback;
@@ -146,10 +146,10 @@ public class StreamNextRpcRequestImpl implements IStreamMtopRequestCallback, a {
             return;
         }
         com.taobao.tao.stream.d mtopStreamResponse = streamRemoteMainResponse.getMtopStreamResponse();
-        if (TextUtils.isEmpty(mtopStreamResponse.c)) {
+        if (StringUtils.isEmpty(mtopStreamResponse.c)) {
             mtopStreamResponse.c = this.mApiName;
         }
-        if (TextUtils.isEmpty(mtopStreamResponse.d)) {
+        if (StringUtils.isEmpty(mtopStreamResponse.d)) {
             mtopStreamResponse.d = this.mVersion;
         }
         if (!streamRemoteMainResponse.isBizSuccess()) {
@@ -163,7 +163,7 @@ public class StreamNextRpcRequestImpl implements IStreamMtopRequestCallback, a {
         this.mainNum++;
         streamRemoteMainResponse.setMainNum(this.mainNum);
         String attachedResponseStat = streamRemoteMainResponse.getAttachedResponseStat();
-        if (TextUtils.isEmpty(attachedResponseStat)) {
+        if (StringUtils.isEmpty(attachedResponseStat)) {
             this.nextRpcResponseCallback.a(streamRemoteMainResponse, null);
             if (attachedResponseStat == null) {
                 z = false;
@@ -340,7 +340,7 @@ public class StreamNextRpcRequestImpl implements IStreamMtopRequestCallback, a {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     List arrayList = new ArrayList();
                     if (value instanceof JSONArray) {
                         arrayList = JSONObject.parseArray(((JSONArray) value).toJSONString(), String.class);

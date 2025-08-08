@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.impl.common.d;
 
@@ -19,7 +19,7 @@ public class mpf implements mqb {
         if (ipChange instanceof IpChange) {
             return (mqc) ipChange.ipc$dispatch("7c728eb5", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new mqa();
         }
         char c = 65535;

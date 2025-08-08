@@ -3,7 +3,7 @@ package com.taobao.android.ultron.datamodel.cache.db;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.datamodel.cache.db.Entry;
 import java.lang.reflect.Field;
@@ -205,7 +205,7 @@ public final class a {
                 sb.append(c0609a.f15741a);
                 sb.append(' ');
                 sb.append(f15740a[c0609a.b]);
-                if (!TextUtils.isEmpty(c0609a.e)) {
+                if (!StringUtils.isEmpty(c0609a.e)) {
                     sb.append(" DEFAULT ");
                     sb.append(c0609a.e);
                 }

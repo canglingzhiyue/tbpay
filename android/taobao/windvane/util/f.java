@@ -1,6 +1,6 @@
 package android.taobao.windvane.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
 import com.taobao.analysis.v3.r;
@@ -90,7 +90,7 @@ public class f {
         if (nVar == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             nVar.c();
         } else {
             nVar.b(str);

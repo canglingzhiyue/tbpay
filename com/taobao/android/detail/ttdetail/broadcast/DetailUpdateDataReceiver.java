@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.broadcast;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -60,7 +60,7 @@ public class DetailUpdateDataReceiver extends BroadcastReceiver {
         }
         String a3 = this.f10512a.e().a();
         String stringExtra = intent.getStringExtra("skuToken");
-        boolean equals = TextUtils.equals(intent.getStringExtra("from"), "appletBridge");
+        boolean equals = StringUtils.equals(intent.getStringExtra("from"), "appletBridge");
         i.a("DetailUpdateDataReceiver", "onReceive skuToken=" + stringExtra + ", fromApplet=" + equals);
         if (!a3.equals(stringExtra) && !equals) {
             i.a("DetailUpdateDataReceiver", "skuToken不相等，containerToken=" + a3);
@@ -75,7 +75,7 @@ public class DetailUpdateDataReceiver extends BroadcastReceiver {
             return;
         }
         String stringExtra2 = intent.getStringExtra("areaChangedByUser");
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             a2.put("areaChangedByUser", stringExtra2);
         }
         i.a("DetailUpdateDataReceiver", "onUpdateDetail");
@@ -91,7 +91,7 @@ public class DetailUpdateDataReceiver extends BroadcastReceiver {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("f612a99a", new Object[]{this, intent});
         }
-        if (!TextUtils.equals((String) this.f10512a.e().a("requestItemId"), intent.getStringExtra(fgl.ORIGINALITEMID))) {
+        if (!StringUtils.equals((String) this.f10512a.e().a("requestItemId"), intent.getStringExtra(fgl.ORIGINALITEMID))) {
             return null;
         }
         String stringExtra = intent.getStringExtra(fgl.TARGETITEMID);
@@ -100,27 +100,27 @@ public class DetailUpdateDataReceiver extends BroadcastReceiver {
         boolean b = at.b(pirVar);
         if (a2 && !b) {
             String c = at.c(pirVar);
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 stringExtra = c;
             }
         }
         HashMap hashMap = new HashMap();
         hashMap.put(DetailCoreActivity.DETAIL_ITEM_ID, stringExtra);
         String stringExtra2 = intent.getStringExtra(mrm.KEY_AREA_ID);
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             hashMap.put(mrm.KEY_AREA_ID, stringExtra2);
         }
         String stringExtra3 = intent.getStringExtra("addressId");
         this.c.a(stringExtra3);
-        if (!TextUtils.isEmpty(stringExtra3)) {
+        if (!StringUtils.isEmpty(stringExtra3)) {
             hashMap.put("addressId", stringExtra3);
         }
         String stringExtra4 = intent.getStringExtra("params");
-        if (!TextUtils.isEmpty(stringExtra4)) {
+        if (!StringUtils.isEmpty(stringExtra4)) {
             hashMap.put("params", stringExtra4);
         }
         String stringExtra5 = intent.getStringExtra("relatedAuctionParams");
-        if (!TextUtils.isEmpty(stringExtra5)) {
+        if (!StringUtils.isEmpty(stringExtra5)) {
             hashMap.put("relatedAuctionParams", stringExtra5);
         }
         return hashMap;

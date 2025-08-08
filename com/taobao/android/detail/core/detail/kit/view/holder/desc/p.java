@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -111,7 +111,7 @@ public class p extends b<com.taobao.android.detail.core.model.viewmodel.desc.m> 
         }
         this.q = z;
         this.m.setBackgroundResource(this.q ? this.r : this.s);
-        if (TextUtils.isEmpty(this.p)) {
+        if (StringUtils.isEmpty(this.p)) {
             return;
         }
         StringBuilder sb = new StringBuilder();
@@ -134,7 +134,7 @@ public class p extends b<com.taobao.android.detail.core.model.viewmodel.desc.m> 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-        } else if (TextUtils.isEmpty(this.o)) {
+        } else if (StringUtils.isEmpty(this.o)) {
         } else {
             com.taobao.android.detail.core.event.params.i iVar = new com.taobao.android.detail.core.event.params.i();
             iVar.b = this.o;
@@ -176,7 +176,7 @@ public class p extends b<com.taobao.android.detail.core.model.viewmodel.desc.m> 
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("a3139d96", new Object[]{this, mVar});
         }
-        if (TextUtils.isEmpty(mVar.f9761a)) {
+        if (StringUtils.isEmpty(mVar.f9761a)) {
             this.m.setVisibility(8);
             return new View(this.g);
         }

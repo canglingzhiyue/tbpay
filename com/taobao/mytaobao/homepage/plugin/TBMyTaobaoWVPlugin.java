@@ -3,7 +3,7 @@ package com.taobao.mytaobao.homepage.plugin;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -28,7 +28,7 @@ public class TBMyTaobaoWVPlugin extends e {
         }
         TLog.logi(TAG, "getPassParams");
         String a2 = mxo.a(TAG);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = new JSONObject(0).toString();
         }
         wVCallBackContext.success(a2);

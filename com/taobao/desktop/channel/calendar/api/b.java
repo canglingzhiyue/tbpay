@@ -1,7 +1,7 @@
 package com.taobao.desktop.channel.calendar.api;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.desktop.channel.calendar.CalendarInsertData;
@@ -85,7 +85,7 @@ public class b {
             if (jSONObject2 != null) {
                 String string = jSONObject2.getString("mode");
                 calendarInsertData.setFreq(jSONObject2.getString("mode"));
-                if (string.equals("weekly") && TextUtils.isEmpty(jSONObject2.getString("daysOfTheWeek"))) {
+                if (string.equals("weekly") && StringUtils.isEmpty(jSONObject2.getString("daysOfTheWeek"))) {
                     return "PARAM_INVALID";
                 }
                 if (jSONObject2.getLong("end").longValue() < System.currentTimeMillis()) {

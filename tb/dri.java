@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class dri {
 
     public dri(JSONObject jSONObject) {
         this.f26921a = jSONObject.getString("type");
-        if (TextUtils.equals(this.f26921a, BHRTaskConfigBase.TYPE_CONFIG_UT)) {
+        if (StringUtils.equals(this.f26921a, BHRTaskConfigBase.TYPE_CONFIG_UT)) {
             this.b = d.a(jSONObject.getJSONArray("pgIn"));
             this.c = d.a(jSONObject.getJSONArray("pgNIn"));
             this.d = d.a(a(jSONObject.getJSONArray("eIdIn")));
@@ -45,7 +45,7 @@ public class dri {
             this.i = d.a(jSONObject.getJSONArray("arg2NIn"));
             this.j = d.a(jSONObject.getJSONObject("argsIn"));
             this.k = d.a(jSONObject.getJSONObject("argsNIn"));
-        } else if (!TextUtils.equals(this.f26921a, NativeDelegate.SETTING_BIZ)) {
+        } else if (!StringUtils.equals(this.f26921a, NativeDelegate.SETTING_BIZ)) {
         } else {
             this.b = d.a(jSONObject.getJSONArray("sceneIn"));
             this.c = d.a(jSONObject.getJSONArray("sceneNIn"));
@@ -71,7 +71,7 @@ public class dri {
         JSONArray jSONArray2 = new JSONArray();
         for (int i = 0; i < jSONArray.size(); i++) {
             String string = jSONArray.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jSONArray2.add(dro.a(string));
             }
         }

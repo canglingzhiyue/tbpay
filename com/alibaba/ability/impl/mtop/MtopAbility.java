@@ -1,7 +1,7 @@
 package com.alibaba.ability.impl.mtop;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.FinishResult;
@@ -384,7 +384,7 @@ public final class MtopAbility extends alm {
         if (ipChange instanceof IpChange) {
             return (ExecuteResult) ipChange.ipc$dispatch("c6683db4", new Object[]{this, aVar, alnVar, alsVar});
         }
-        if (TextUtils.isEmpty(aVar.f1925a)) {
+        if (StringUtils.isEmpty(aVar.f1925a)) {
             return new ErrorResult("400", "account参数为空", (Map) null, 4, (o) null);
         }
         Pair[] pairArr = new Pair[1];
@@ -693,7 +693,7 @@ public final class MtopAbility extends alm {
                 for (Map.Entry<String, List<String>> entry : headerFields.entrySet()) {
                     String key = entry.getKey();
                     List<String> value = entry.getValue();
-                    String join = value != null ? TextUtils.join(",", value) : "";
+                    String join = value != null ? StringUtils.join(",", value) : "";
                     if (key != null) {
                         jSONObject2.put((JSONObject) key, join);
                     }
@@ -930,7 +930,7 @@ public final class MtopAbility extends alm {
                 JSONObject jSONObject2 = new JSONObject();
                 for (Map.Entry<String, ? extends List<String>> entry : map.entrySet()) {
                     String key = entry.getKey();
-                    String join = TextUtils.join(",", entry.getValue());
+                    String join = StringUtils.join(",", entry.getValue());
                     if (key != null) {
                         jSONObject2.put((JSONObject) key, join);
                     }

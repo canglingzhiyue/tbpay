@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -78,10 +78,10 @@ public class e extends b<com.taobao.android.detail.core.model.viewmodel.desc.b> 
             layoutParams.height = i2;
             this.k.setLayoutParams(layoutParams);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.k.setTextColor(com.taobao.android.detail.core.utils.c.a(str2));
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.k.setBackgroundColor(com.taobao.android.detail.core.utils.c.a(str3));
         }
         if (i3 > 0) {
@@ -100,6 +100,6 @@ public class e extends b<com.taobao.android.detail.core.model.viewmodel.desc.b> 
     /* renamed from: c  reason: avoid collision after fix types in other method */
     public boolean c2(com.taobao.android.detail.core.model.viewmodel.desc.b bVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9a680901", new Object[]{this, bVar})).booleanValue() : TextUtils.isEmpty(bVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9a680901", new Object[]{this, bVar})).booleanValue() : StringUtils.isEmpty(bVar.b);
     }
 }

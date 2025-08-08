@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Header;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
@@ -44,7 +44,7 @@ public class nhc implements nfg {
         if (e != null) {
             DegradableNetwork degradableNetwork = new DegradableNetwork(e);
             RequestImpl requestImpl = new RequestImpl(str);
-            if (!"GET".equals(str2) && !TextUtils.isEmpty(str2)) {
+            if (!"GET".equals(str2) && !StringUtils.isEmpty(str2)) {
                 requestImpl.setMethod(str2);
             }
             ArrayList arrayList = new ArrayList();

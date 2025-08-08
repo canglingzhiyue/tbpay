@@ -17,7 +17,7 @@ import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.android.os.BuildEx;
 import com.huawei.android.telephony.ServiceStateEx;
 import java.lang.reflect.InvocationTargetException;
@@ -160,7 +160,7 @@ public class NetworkUtil {
     }
 
     public static String getHost(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -831,11 +831,11 @@ public class NetworkUtil {
         String str = TAG;
         Logger.v(str, "newWorkType " + networkType);
         if (networkType == 4) {
-            if (!TextUtils.equals(STR_NSA, getNetWorkNSAorSA())) {
+            if (!StringUtils.equals(STR_NSA, getNetWorkNSAorSA())) {
                 return networkType;
             }
             return 7;
-        } else if (networkType == 5 && TextUtils.equals(STR_SA, getNetWorkNSAorSA())) {
+        } else if (networkType == 5 && StringUtils.equals(STR_SA, getNetWorkNSAorSA())) {
             return 8;
         } else {
             return networkType;

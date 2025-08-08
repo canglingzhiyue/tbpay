@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
 import com.taobao.accs.data.Message;
@@ -123,7 +123,7 @@ public class NoTraceTriggerHelper {
                                 return;
                             }
                             try {
-                                if (TextUtils.isEmpty(l.n(context))) {
+                                if (StringUtils.isEmpty(l.n(context))) {
                                     return;
                                 }
                                 JSONObject jSONObject = new JSONObject(l.n(context));
@@ -246,13 +246,13 @@ public class NoTraceTriggerHelper {
         intentFilter.addAction("android.bluetooth.device.action.ACL_CONNECTED");
         intentFilter.addAction("android.bluetooth.device.action.ACL_DISCONNECTED");
         String packageName = context.getPackageName();
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             c = packageName + "_" + f.ACTION_STATE_FORE;
         }
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             d = packageName + "_" + f.ACTION_STATE_BACK;
         }
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             e = packageName + "_ACTION_TP_TRIGGER";
         }
         intentFilter.addAction(c);
@@ -289,7 +289,7 @@ public class NoTraceTriggerHelper {
         String str14 = "trace";
         try {
             if (i == 4 || i == 3 || i == 6) {
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 Bundle bundle = new Bundle();

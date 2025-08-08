@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import java.util.regex.Matcher;
@@ -26,14 +26,14 @@ public class ihv extends fuf {
             try {
                 String str = (String) objArr[0];
                 String str2 = (String) objArr[1];
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     Matcher matcher = Pattern.compile("-(\\d+)-(\\d+)\\.").matcher(str);
                     if (!matcher.find()) {
                         return "match_content";
                     }
                     String group = matcher.group(1);
                     String group2 = matcher.group(2);
-                    if (!TextUtils.isEmpty(group) && !TextUtils.isEmpty(group2)) {
+                    if (!StringUtils.isEmpty(group) && !StringUtils.isEmpty(group2)) {
                         float parseFloat = Float.parseFloat(group);
                         float parseFloat2 = Float.parseFloat(group2);
                         if (parseFloat != 0.0f && parseFloat2 != 0.0f) {
@@ -47,7 +47,7 @@ public class ihv extends fuf {
                             if (group4 == null) {
                                 group4 = "";
                             }
-                            if (TextUtils.isEmpty(group3) || (parseInt = Integer.parseInt(group3)) <= 0) {
+                            if (StringUtils.isEmpty(group3) || (parseInt = Integer.parseInt(group3)) <= 0) {
                                 return "match_content";
                             }
                             return ((int) (parseInt * f)) + group4;

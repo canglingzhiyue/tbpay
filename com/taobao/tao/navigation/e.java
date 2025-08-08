@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
@@ -707,7 +707,7 @@ public class e {
             if (f20801a.get(i2) != null) {
                 String k2 = f20801a.get(i2).k();
                 String j2 = b.get(i2).j();
-                if ((!TextUtils.isEmpty(k2) && k2.equals(str)) || (!TextUtils.isEmpty(j2) && j2.equals(str))) {
+                if ((!StringUtils.isEmpty(k2) && k2.equals(str)) || (!StringUtils.isEmpty(j2) && j2.equals(str))) {
                     return i2;
                 }
             }
@@ -725,7 +725,7 @@ public class e {
             g gVar = f20801a.get(i2);
             if (gVar != null) {
                 String k2 = gVar.k();
-                if (!TextUtils.isEmpty(k2) && k2.equals(str)) {
+                if (!StringUtils.isEmpty(k2) && k2.equals(str)) {
                     return gVar;
                 }
             }
@@ -1222,7 +1222,7 @@ public class e {
             return;
         }
         for (see seeVar : r) {
-            TextUtils.equals(seeVar.a(), str);
+            StringUtils.equals(seeVar.a(), str);
         }
     }
 

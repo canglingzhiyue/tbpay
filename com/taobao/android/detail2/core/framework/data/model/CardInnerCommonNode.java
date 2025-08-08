@@ -1,6 +1,6 @@
 package com.taobao.android.detail2.core.framework.data.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.base.weex.g;
@@ -51,7 +51,7 @@ public class CardInnerCommonNode implements Serializable {
         } else if (jSONObject != null) {
             try {
                 for (String str : jSONObject.keySet()) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         this.containerInfo.b.put(str, jSONObject.getString(str));
                     }
                 }
@@ -67,6 +67,6 @@ public class CardInnerCommonNode implements Serializable {
             return ((Boolean) ipChange.ipc$dispatch("e8d6b022", new Object[]{this})).booleanValue();
         }
         g gVar = this.containerInfo;
-        return gVar != null && !TextUtils.isEmpty(gVar.a());
+        return gVar != null && !StringUtils.isEmpty(gVar.a());
     }
 }

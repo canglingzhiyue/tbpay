@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.net.ConnectivityManager;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.AccsIPCProvider;
@@ -298,7 +298,7 @@ public class GlobalClientInfo implements IGlobalClientInfoService {
             return;
         }
         ALog.e(TAG, "registerService info", "serviceId", str, "serviceClassName", str2);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         SERVICES.put(str, str2);
@@ -336,7 +336,7 @@ public class GlobalClientInfo implements IGlobalClientInfoService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a5dd008a", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ALog.e(TAG, "unRegisterService", "serviceId", str);
             SERVICES.remove(str);
@@ -532,7 +532,7 @@ public class GlobalClientInfo implements IGlobalClientInfoService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("38f03835", new Object[]{this, str, accsDataListener});
-        } else if ((l.b() && !UtilityImpl.isMainProcess(mContext)) || TextUtils.isEmpty(str) || accsDataListener == null) {
+        } else if ((l.b() && !UtilityImpl.isMainProcess(mContext)) || StringUtils.isEmpty(str) || accsDataListener == null) {
         } else {
             ALog.e(TAG, "registerListener info", "serviceId", str);
             this.LISTENERS.put(str, accsDataListener);

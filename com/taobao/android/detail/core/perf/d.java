@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.perf;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import java.util.HashMap;
@@ -26,10 +26,10 @@ public class d {
         if (detailCoreActivity == null) {
             return hashMap;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("fromSource", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("bucketId", str2);
         }
         com.taobao.android.detail.datasdk.model.datamodel.node.c C = detailCoreActivity.C();

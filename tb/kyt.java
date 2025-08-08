@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.goodprice.minidetail.GoodPriceWeex2Manager;
 import com.taobao.android.home.component.utils.e;
@@ -122,7 +122,7 @@ public class kyt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b7da5f8a", new Object[]{str, context});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         if (str.contains("market.wapa.taobao.com/app/mini-detail/mini-detail/index") || str.contains("market.m.taobao.com/app/mini-detail/mini-detail/index")) {

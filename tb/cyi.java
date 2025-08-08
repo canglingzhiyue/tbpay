@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.util.Locale;
 
@@ -24,7 +24,7 @@ public final class cyi {
     public static byte[] a(String str) {
         StringBuilder sb;
         String message;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new byte[0];
         }
         try {

@@ -15,7 +15,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
@@ -198,8 +198,8 @@ public class ImageLoader {
             ipChange.ipc$dispatch("cf4dcb30", new Object[]{view, str, str2, str3, loadAction, clipsInfo, context, imageLoadCallback});
             return;
         }
-        boolean z2 = !TextUtils.isEmpty(str2);
-        boolean z3 = !TextUtils.isEmpty(str3);
+        boolean z2 = !StringUtils.isEmpty(str2);
+        boolean z3 = !StringUtils.isEmpty(str3);
         if (z2 && !z3) {
             if (loadAction == LoadAction.Background) {
                 z = true;
@@ -284,7 +284,7 @@ public class ImageLoader {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a50b361c", new Object[]{this, view, str, loadAction, clipsInfo, context, imageLoadCallback});
-        } else if (view == null || TextUtils.isEmpty(str)) {
+        } else if (view == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 if (isLocalImage(str)) {
@@ -324,7 +324,7 @@ public class ImageLoader {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c125fd1b", new Object[]{this, view, str, loadAction, clipsInfo, context, imageLoadCallback});
-        } else if (view == null || str == null || TextUtils.isEmpty(str)) {
+        } else if (view == null || str == null || StringUtils.isEmpty(str)) {
         } else {
             if (str.startsWith(DATA_URL_HEAD)) {
                 drawable = getBase64Drawable(str, context);
@@ -434,11 +434,11 @@ public class ImageLoader {
         if (ipChange instanceof IpChange) {
             return (Drawable) ipChange.ipc$dispatch("e1934a54", new Object[]{this, clipsInfo, context, str});
         }
-        if (TextUtils.isEmpty(str) || (imageResId = getImageResId(str)) == 0) {
+        if (StringUtils.isEmpty(str) || (imageResId = getImageResId(str)) == 0) {
             return null;
         }
         Drawable drawable = context.getResources().getDrawable(imageResId);
-        return !TextUtils.equals(drawable.getClass().getSimpleName(), BitmapDrawable.class.getSimpleName()) ? drawable : new BitmapDrawable(context.getResources(), getDrawable(clipsInfo, BitmapFactory.decodeResource(context.getResources(), imageResId)));
+        return !StringUtils.equals(drawable.getClass().getSimpleName(), BitmapDrawable.class.getSimpleName()) ? drawable : new BitmapDrawable(context.getResources(), getDrawable(clipsInfo, BitmapFactory.decodeResource(context.getResources(), imageResId)));
     }
 
     public int getImageResId(String str) {
@@ -446,7 +446,7 @@ public class ImageLoader {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("4b7ca73a", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         String substring = str.substring(str.lastIndexOf(":") + 1);
@@ -455,7 +455,7 @@ public class ImageLoader {
                 int indexOf = substring.indexOf("/");
                 String substring2 = substring.substring(0, indexOf);
                 substring = substring.substring(indexOf + 1);
-                if (!TextUtils.isEmpty(substring2)) {
+                if (!StringUtils.isEmpty(substring2)) {
                     return ResUtils.getResourceId(substring, a.CONTACTS_INFO_NOT_EMPTY_STATUS, substring2);
                 }
             }
@@ -512,7 +512,7 @@ public class ImageLoader {
             return ((Boolean) ipChange.ipc$dispatch("546e448f", new Object[]{this, str})).booleanValue();
         }
         Context context = MspContextUtil.getContext();
-        return !TextUtils.isEmpty(str) && (str.startsWith("local:") || str.startsWith("com.alipay.android.app") || ((DrmManager.getInstance(context).isDegrade(DrmKey.DEGRADE_DATA_URL_TB, false, context) ^ true) && str.startsWith(DATA_URL_HEAD)));
+        return !StringUtils.isEmpty(str) && (str.startsWith("local:") || str.startsWith("com.alipay.android.app") || ((DrmManager.getInstance(context).isDegrade(DrmKey.DEGRADE_DATA_URL_TB, false, context) ^ true) && str.startsWith(DATA_URL_HEAD)));
     }
 
     /* loaded from: classes3.dex */
@@ -670,7 +670,7 @@ public class ImageLoader {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("326397c3", new Object[]{this, str});
             }
-            if (str == null || TextUtils.isEmpty(str)) {
+            if (str == null || StringUtils.isEmpty(str)) {
                 return null;
             }
             return MD5.encryptMd5_32(str) + ".png";

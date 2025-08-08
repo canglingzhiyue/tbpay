@@ -1,6 +1,6 @@
 package com.taobao.login4android.ui;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.ali.user.mobile.utils.ImageUtil;
@@ -36,7 +36,7 @@ public class AliUserBindMobileDialog extends TaobaoRegProtocolDialogFragment {
         }
         if (!NetworkUtil.isNetworkConnected()) {
             imageView.setVisibility(8);
-        } else if (!TextUtils.isEmpty(this.mLogoUrl)) {
+        } else if (!StringUtils.isEmpty(this.mLogoUrl)) {
             ImageUtil.updateImage(imageView, this.mLogoUrl);
         } else {
             ImageUtil.updateImage(imageView, "https://gw.alicdn.com/imgextra/i4/O1CN012c7Vcs1Xr3OZMZ4la_!!6000000002976-2-tps-885-435.png");

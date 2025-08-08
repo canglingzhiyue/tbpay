@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.config.a;
@@ -82,7 +82,7 @@ public class d {
             return false;
         } else {
             ComponentName b = b(context, intent);
-            if (b != null && !TextUtils.isEmpty(b.getPackageName()) && !TextUtils.equals(b.getPackageName(), a(context))) {
+            if (b != null && !StringUtils.isEmpty(b.getPackageName()) && !StringUtils.equals(b.getPackageName(), a(context))) {
                 TLog.loge("TBAutoSize.ActivityRoutePadCompat", "Pad pop mode pae open fail. jump other app, packageName = " + b.getPackageName());
                 return false;
             }
@@ -116,7 +116,7 @@ public class d {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         String userId = Login.getUserId();
-        return TextUtils.isEmpty(userId) ? str.concat("_NotLogin") : str.concat("_").concat(userId);
+        return StringUtils.isEmpty(userId) ? str.concat("_NotLogin") : str.concat("_").concat(userId);
     }
 
     private static ComponentName b(Context context, Intent intent) {

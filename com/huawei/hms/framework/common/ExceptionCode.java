@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.ConnectException;
@@ -50,7 +50,7 @@ public class ExceptionCode {
     }
 
     private static String checkStrContainsKey(String str, String... strArr) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         for (String str2 : strArr) {

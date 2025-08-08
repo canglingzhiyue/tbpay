@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alibaba.fastjson.JSON;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -108,19 +108,19 @@ public class scf implements ProtocolParamBuilder {
         }
         hashMap.put(HttpHeaderConstant.X_FEATURES, String.valueOf(mtopTotalFeatures));
         a(mtop, mtopNetworkProp, hashMap);
-        if (!TextUtils.isEmpty(mtopNetworkProp.openBiz)) {
+        if (!StringUtils.isEmpty(mtopNetworkProp.openBiz)) {
             hashMap.put("open-biz", mtopNetworkProp.openBiz);
-            if (!TextUtils.isEmpty(mtopNetworkProp.miniAppKey)) {
+            if (!StringUtils.isEmpty(mtopNetworkProp.miniAppKey)) {
                 hashMap.put("mini-appkey", mtopNetworkProp.miniAppKey);
             }
-            if (!TextUtils.isEmpty(mtopNetworkProp.reqAppKey)) {
+            if (!StringUtils.isEmpty(mtopNetworkProp.reqAppKey)) {
                 hashMap.put("req-appkey", mtopNetworkProp.requestSourceAppKey);
             }
-            if (!TextUtils.isEmpty(mtopNetworkProp.openBizData)) {
+            if (!StringUtils.isEmpty(mtopNetworkProp.openBizData)) {
                 hashMap.put("open-biz-data", mtopNetworkProp.openBizData);
             }
             mtopNetworkProp.accessToken = mtopsdk.xstate.a.a(StringUtils.concatStr(mtop.getInstanceId(), mtopNetworkProp.miniAppKey), "accessToken");
-            if (!TextUtils.isEmpty(mtopNetworkProp.accessToken)) {
+            if (!StringUtils.isEmpty(mtopNetworkProp.accessToken)) {
                 hashMap.put("accessToken", mtopNetworkProp.accessToken);
             }
         }
@@ -192,7 +192,7 @@ public class scf implements ProtocolParamBuilder {
             JSONObject jSONObject = new JSONObject();
             if ((mtopNetworkProp.netParam & 1) != 0) {
                 String str3 = NetworkStateReceiver.f25047a;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     try {
                         jSONObject.put(NetParam.NetParamKey.SSID, str3);
                     } catch (JSONException e) {
@@ -202,7 +202,7 @@ public class scf implements ProtocolParamBuilder {
             }
             if ((mtopNetworkProp.netParam & 2) != 0) {
                 String str4 = NetworkStateReceiver.b;
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     try {
                         jSONObject.put(NetParam.NetParamKey.BSSID, str4);
                     } catch (JSONException e2) {

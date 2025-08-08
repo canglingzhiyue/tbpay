@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspNetConstants;
 import com.alipay.android.msp.framework.dns.DnsValue;
 import com.alipay.android.msp.framework.exception.NetErrorException;
@@ -78,7 +78,7 @@ public class TransChannel implements ITransChannel {
         if (ipChange instanceof IpChange) {
             return (ByteArrayEntity) ipChange.ipc$dispatch("89b4a4ba", new Object[]{this, str, bArr});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = MspNetConstants.Request.DEFAULT_CONTENT_TYPE;
         }
         ByteArrayEntity byteArrayEntity = new ByteArrayEntity(bArr);
@@ -162,13 +162,13 @@ public class TransChannel implements ITransChannel {
         if (ipChange instanceof IpChange) {
             return (Header) ipChange.ipc$dispatch("55b45db8", new Object[]{this, str, headerArr});
         }
-        if (headerArr == null || headerArr.length <= 0 || TextUtils.isEmpty(str)) {
+        if (headerArr == null || headerArr.length <= 0 || StringUtils.isEmpty(str)) {
             return null;
         }
         String lowerCase = str.toLowerCase();
         for (Header header : headerArr) {
             String name = header.getName();
-            if (!TextUtils.isEmpty(name) && TextUtils.equals(name.toLowerCase(), lowerCase)) {
+            if (!StringUtils.isEmpty(name) && StringUtils.equals(name.toLowerCase(), lowerCase)) {
                 return header;
             }
         }
@@ -198,7 +198,7 @@ public class TransChannel implements ITransChannel {
             property = System.getProperty("http.proxyHost");
             property2 = System.getProperty("http.proxyPort");
         }
-        if (TextUtils.isEmpty(property)) {
+        if (StringUtils.isEmpty(property)) {
             return null;
         }
         return new HttpHost(property, Integer.parseInt(property2));

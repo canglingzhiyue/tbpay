@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.strategy;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
 import com.alipay.mobile.common.transport.utils.ConnectionUtil;
@@ -22,27 +22,27 @@ public class StrategyUtil {
         if (context == null) {
             return false;
         }
-        return TextUtils.isEmpty(str) || !str.contains(String.valueOf(ConnectionUtil.getConnType(context)));
+        return StringUtils.isEmpty(str) || !str.contains(String.valueOf(ConnectionUtil.getConnType(context)));
     }
 
     public static final boolean isUse4SdkVersion(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("466b6b4a", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || !str.contains(String.valueOf(Build.VERSION.SDK_INT));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("466b6b4a", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || !str.contains(String.valueOf(Build.VERSION.SDK_INT));
     }
 
     public static final boolean isUse4Brand(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("be00885", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.isEmpty(Build.BRAND) || !str.contains(Build.BRAND.trim().toLowerCase().replaceAll("\\s+", "_"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("be00885", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.isEmpty(Build.BRAND) || !str.contains(Build.BRAND.trim().toLowerCase().replaceAll("\\s+", "_"));
     }
 
     public static final boolean isUse4Model(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7edf72a7", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.isEmpty(Build.MODEL) || !str.contains(Build.MODEL.trim().toLowerCase().replaceAll("\\s+", "_"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7edf72a7", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.isEmpty(Build.MODEL) || !str.contains(Build.MODEL.trim().toLowerCase().replaceAll("\\s+", "_"));
     }
 
     public static final boolean isUse4Hardware(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6f1a8434", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.isEmpty(Build.HARDWARE) || !str.contains(Build.HARDWARE.trim().toLowerCase().replaceAll("\\s+", "_"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6f1a8434", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.isEmpty(Build.HARDWARE) || !str.contains(Build.HARDWARE.trim().toLowerCase().replaceAll("\\s+", "_"));
     }
 
     public static final boolean grayscaleUtdid(String str, int[] iArr) {
@@ -60,10 +60,10 @@ public class StrategyUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fe357b5c", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        return TextUtils.equals(str, "alipay.client.switches.all.get.afterlogin") || str.contains("alipay.client.switches.all.get");
+        return StringUtils.equals(str, "alipay.client.switches.all.get.afterlogin") || str.contains("alipay.client.switches.all.get");
     }
 
     public static final boolean isRetryTaskForSwitchRpc(String str) {

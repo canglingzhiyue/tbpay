@@ -1,7 +1,7 @@
 package anet.channel.detect;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.Session;
@@ -160,7 +160,7 @@ public class Ipv6Detector {
                             i = connStrategyListByHost.get(0).getPort();
                             str = ip;
                         }
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             return;
                         }
                         sb.append(riy.ARRAY_START_STR);

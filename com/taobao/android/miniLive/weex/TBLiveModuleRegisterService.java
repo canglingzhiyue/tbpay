@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.common.WXModule;
 import com.taobao.weex.ui.IExternalModuleGetter;
@@ -34,7 +34,7 @@ public class TBLiveModuleRegisterService extends Service implements IExternalMod
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("f9116d39", new Object[]{this, str, context});
         }
-        if (!TextUtils.equals(str, "tbMiniLiveRoom")) {
+        if (!StringUtils.equals(str, "tbMiniLiveRoom")) {
             return null;
         }
         return TBMiniLiveModule.class;

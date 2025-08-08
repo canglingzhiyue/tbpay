@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import com.taobao.alivfssdk.cache.c;
@@ -31,7 +31,7 @@ public class nix implements b {
     }
 
     public nix(int i, String str) {
-        com.taobao.tcommon.core.b.a(!TextUtils.isEmpty(str), "name cannot be empty when constructing AlivfsDiskCache");
+        com.taobao.tcommon.core.b.a(!StringUtils.isEmpty(str), "name cannot be empty when constructing AlivfsDiskCache");
         this.f31492a = i;
         this.b = "phximgs_" + str;
     }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.dynamicFeature.model.a;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -66,13 +66,13 @@ public class aao {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             arc.a().b("AURADynamicFeatureInstallerQueue.remove:artifactId is null");
         } else {
             try {
                 this.b.writeLock().lock();
                 for (a aVar : this.f25190a.keySet()) {
-                    if (aVar != null && TextUtils.equals(aVar.f2138a, str)) {
+                    if (aVar != null && StringUtils.equals(aVar.f2138a, str)) {
                         this.f25190a.remove(aVar);
                         return;
                     }

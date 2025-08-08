@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.utils;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,7 +98,7 @@ public class f {
         if (emh.sDefaultDimension.equalsIgnoreCase(str)) {
             return 1.0f;
         }
-        if (!TextUtils.isEmpty(str) && str.contains(":")) {
+        if (!StringUtils.isEmpty(str) && str.contains(":")) {
             String[] split = str.split(":", 2);
             return split.length < 2 ? f : Float.parseFloat(split[0]) / Float.parseFloat(split[1]);
         }

@@ -1,6 +1,6 @@
 package com.taobao.tao.detail.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.detail.domain.component.BaseComponent;
 import tb.kge;
@@ -26,7 +26,7 @@ public class TextComponent extends BaseComponent {
         if (ipChange instanceof IpChange) {
             return (TextComponent) ipChange.ipc$dispatch("c33cc290", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(this.text)) {
+        if (StringUtils.isEmpty(this.text)) {
             this.text = str;
         } else {
             this.text += "\n" + str;

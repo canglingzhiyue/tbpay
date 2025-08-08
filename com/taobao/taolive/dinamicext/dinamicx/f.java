@@ -1,7 +1,7 @@
 package com.taobao.taolive.dinamicext.dinamicx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -136,7 +136,7 @@ public class f extends DXWidgetNode {
             return;
         }
         TaoliveFavorComponent taoliveFavorComponent = (TaoliveFavorComponent) view;
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             taoliveFavorComponent.setFavorImg(this.f);
         }
         taoliveFavorComponent.setFavorNum(this.g);
@@ -153,7 +153,7 @@ public class f extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f8cae17c", new Object[]{this, taoliveFavorComponent});
-        } else if (TextUtils.isEmpty(this.i) || TextUtils.isEmpty(this.f21414a)) {
+        } else if (StringUtils.isEmpty(this.i) || StringUtils.isEmpty(this.f21414a)) {
         } else {
             if (this.i.equals(this.f21414a)) {
                 taoliveFavorComponent.setVisibility(0);
@@ -167,7 +167,7 @@ public class f extends DXWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("980ae3d", new Object[]{this, taoliveFavorComponent});
-        } else if (!TextUtils.isEmpty(this.b)) {
+        } else if (!StringUtils.isEmpty(this.b)) {
             if ("low".equals(this.b)) {
                 taoliveFavorComponent.setMaxDeviceLevel(3);
             } else if ("middle".equals(this.b)) {

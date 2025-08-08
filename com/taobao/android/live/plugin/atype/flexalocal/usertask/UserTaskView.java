@@ -10,7 +10,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.Layout;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -425,7 +425,7 @@ public class UserTaskView extends FrameLayout implements f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2335f94e", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             this.mEntryText.setVisibility(0);
             this.mEntryText.setText(str);
         } else {
@@ -443,7 +443,7 @@ public class UserTaskView extends FrameLayout implements f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8c2226a5", new Object[]{this, jSONObject});
-        } else if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("durationType"))) {
+        } else if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("durationType"))) {
         } else {
             if (bip.REQUEST_ONCE.equals(jSONObject.getString("durationType")) || "countdown_jump".equals(jSONObject.getString("durationType"))) {
                 resetAtmosphere();
@@ -479,7 +479,7 @@ public class UserTaskView extends FrameLayout implements f {
             int[] iArr = new int[2];
             this.mEntryLayout.getLocationInWindow(iArr);
             boolean z2 = iArr[0] < com.taobao.taolive.sdk.utils.b.a() / 2 && iArr[1] > 0;
-            if (!TextUtils.isEmpty(jSONObject.getString("finishHintImageUrl"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("finishHintImageUrl"))) {
                 this.mGuideView.setVisibility(0);
                 this.mGuideView.setSkipAutoSize(true);
                 this.mGuideView.setImageUrl(jSONObject.getString("finishHintImageUrl"));
@@ -518,10 +518,10 @@ public class UserTaskView extends FrameLayout implements f {
             }
             this.mAtmosphereBanner.setVisibility(i3);
             int tipLength = getTipLength(cash);
-            if (TextUtils.isEmpty(this.mAtmosphere.getString("durationType")) || "countdown_jump".equals(this.mAtmosphere.getString("durationType")) || bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType")) || (RVStartParams.TRANSPARENT_TITLE_ALWAYS.equals(this.mAtmosphere.getString("durationType")) && this.mAtmosphereShowAnimator != null)) {
+            if (StringUtils.isEmpty(this.mAtmosphere.getString("durationType")) || "countdown_jump".equals(this.mAtmosphere.getString("durationType")) || bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType")) || (RVStartParams.TRANSPARENT_TITLE_ALWAYS.equals(this.mAtmosphere.getString("durationType")) && this.mAtmosphereShowAnimator != null)) {
                 atmosphereBannerShowAnimator(z2, tipLength);
             }
-            if (!TextUtils.isEmpty(this.mAtmosphere.getString("durationType")) && !"countdown_jump".equals(this.mAtmosphere.getString("durationType")) && !"close".equals(this.mAtmosphere.getString("durationType")) && !bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType"))) {
+            if (!StringUtils.isEmpty(this.mAtmosphere.getString("durationType")) && !"countdown_jump".equals(this.mAtmosphere.getString("durationType")) && !"close".equals(this.mAtmosphere.getString("durationType")) && !bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType"))) {
                 return;
             }
             atmosphereBannerHideAnimator(z2, tipLength, z, i2);
@@ -631,7 +631,7 @@ public class UserTaskView extends FrameLayout implements f {
                                 if (UserTaskView.access$000(UserTaskView.this) != null) {
                                     UserTaskView.access$000(UserTaskView.this).setVisibility(8);
                                 }
-                                if (UserTaskView.access$300(UserTaskView.this) == null || UserTaskView.access$200(UserTaskView.this) == null || TextUtils.isEmpty(UserTaskView.access$200(UserTaskView.this).getString("finishHintImageUrl"))) {
+                                if (UserTaskView.access$300(UserTaskView.this) == null || UserTaskView.access$200(UserTaskView.this) == null || StringUtils.isEmpty(UserTaskView.access$200(UserTaskView.this).getString("finishHintImageUrl"))) {
                                     return;
                                 }
                                 UserTaskView.access$300(UserTaskView.this).setVisibility(4);
@@ -737,7 +737,7 @@ public class UserTaskView extends FrameLayout implements f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3b972744", new Object[]{this, jSONObject, new Boolean(z)});
-        } else if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("amount"))) {
+        } else if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("amount"))) {
             this.mInnerGoldTextSwitcher.setVisibility(8);
         } else {
             this.mInnerGoldTextSwitcher.setVisibility(0);
@@ -761,25 +761,25 @@ public class UserTaskView extends FrameLayout implements f {
             String string2 = jSONObject.getString("content") == null ? "" : jSONObject.getString("content");
             String string3 = jSONObject.getString(nog.PRICE_UNIT) == null ? "" : jSONObject.getString(nog.PRICE_UNIT);
             String str = string + string2 + string3;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             Integer integer = jSONObject.getInteger("duration");
             int intValue = integer != null ? integer.intValue() : 0;
             this.mGoldLayout.setVisibility(0);
             SpannableString spannableString = new SpannableString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 i = string.length();
                 spannableString.setSpan(new AbsoluteSizeSpan(13, true), 0, i, 17);
             } else {
                 i = 0;
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 int length = string2.length() + i;
                 spannableString.setSpan(new AbsoluteSizeSpan(19, true), i, length, 17);
                 i = length;
             }
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 spannableString.setSpan(new AbsoluteSizeSpan(10, true), i, string3.length() + i, 17);
             }
             this.mGoldText.setText(spannableString);
@@ -816,7 +816,7 @@ public class UserTaskView extends FrameLayout implements f {
         if (linearLayout != null) {
             linearLayout.setVisibility(8);
         }
-        if (this.mGuideView == null || (jSONObject = this.mAtmosphere) == null || TextUtils.isEmpty(jSONObject.getString("finishHintImageUrl"))) {
+        if (this.mGuideView == null || (jSONObject = this.mAtmosphere) == null || StringUtils.isEmpty(jSONObject.getString("finishHintImageUrl"))) {
             return;
         }
         this.mGuideView.setVisibility(4);
@@ -847,25 +847,25 @@ public class UserTaskView extends FrameLayout implements f {
             str = jSONObject.getString(nog.PRICE_UNIT);
         }
         String str2 = string + string2 + str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         Integer integer = jSONObject.getInteger("duration");
         int intValue = integer != null ? integer.intValue() : 0;
         this.mCashLayout.setVisibility(0);
         SpannableString spannableString = new SpannableString(str2);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             i = string.length();
             spannableString.setSpan(new AbsoluteSizeSpan(13, true), 0, i, 17);
         } else {
             i = 0;
         }
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             int length = string2.length() + i;
             spannableString.setSpan(new AbsoluteSizeSpan(19, true), i, length, 17);
             i = length;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             spannableString.setSpan(new AbsoluteSizeSpan(10, true), i, str.length() + i, 17);
         }
         this.mCashText.setText(spannableString);
@@ -907,7 +907,7 @@ public class UserTaskView extends FrameLayout implements f {
         if (str2 != null) {
             str4 = str4 + str2;
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return;
         }
         if (!z) {
@@ -918,20 +918,20 @@ public class UserTaskView extends FrameLayout implements f {
             this.mContentSwitch.setVisibility(8);
             this.mContentUnit.setVisibility(8);
             SpannableString spannableString = new SpannableString(str4);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 i = str.length();
                 spannableString.setSpan(new AbsoluteSizeSpan(21, true), 0, i, 17);
             } else {
                 i = 0;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 spannableString.setSpan(new AbsoluteSizeSpan(14, true), i, str2.length() + i, 17);
             }
             this.mContent.setText(spannableString);
             return;
         }
         this.mContent.setVisibility(8);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mContentSwitch.setVisibility(0);
             if (this.mShowCashFirst) {
                 this.mContentSwitch.setCurrentText(str);
@@ -940,7 +940,7 @@ public class UserTaskView extends FrameLayout implements f {
             }
             this.mShowCashFirst = false;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         this.mContentUnit.setVisibility(0);
@@ -954,7 +954,7 @@ public class UserTaskView extends FrameLayout implements f {
             ipChange.ipc$dispatch("152bd731", new Object[]{this, str, str2});
             return;
         }
-        if (!TextUtils.isEmpty(str2) && (tUrlImageView = this.mIcon) != null) {
+        if (!StringUtils.isEmpty(str2) && (tUrlImageView = this.mIcon) != null) {
             tUrlImageView.setVisibility(0);
             this.mIcon.setImageUrl(str2);
         } else {
@@ -963,7 +963,7 @@ public class UserTaskView extends FrameLayout implements f {
                 tUrlImageView2.setVisibility(8);
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.mTitle.setText(str);
@@ -982,11 +982,11 @@ public class UserTaskView extends FrameLayout implements f {
             tUrlImageView.setSkipAutoSize(true);
             this.mAliUrlImageView.setWhenNullClearImg(false);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.mAliUrlImageView.getLayoutParams();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (!str2.equals(this.mAliUrlImageView.getImageUrl())) {
                     this.mAliUrlImageView.setImageUrl(str2);
                 }
-            } else if (!TextUtils.isEmpty(str) && !str.equals(this.mAliUrlImageView.getImageUrl())) {
+            } else if (!StringUtils.isEmpty(str) && !str.equals(this.mAliUrlImageView.getImageUrl())) {
                 this.mAliUrlImageView.setImageUrl(str);
             }
             this.mAliUrlImageView.setLayoutParams(layoutParams);

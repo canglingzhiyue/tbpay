@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.data_highway.jni.DataHighwayNative;
@@ -67,7 +67,7 @@ public class ktn {
                     HashMap hashMap = new HashMap();
                     String e = a.a().e();
                     MtopRequest mtopRequest = new MtopRequest();
-                    if (TextUtils.isEmpty(e)) {
+                    if (StringUtils.isEmpty(e)) {
                         Log.e("HighwayMtopUtil", "HighwayMtopUtil empty domain:" + e);
                         return;
                     }
@@ -115,12 +115,12 @@ public class ktn {
                 jSONObject.put("enablePreview", true);
             }
             jSONObject.put("version", z ? 2L : j);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put("featureVersion", str);
             }
             jSONObject.put("eventName", str2);
             jSONObject.put(com.taobao.android.behavix.feature.a.FEATURE_NAME, str2);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 jSONObject.put("reason", str3);
             }
             jSONObject.put("eventId", j2);

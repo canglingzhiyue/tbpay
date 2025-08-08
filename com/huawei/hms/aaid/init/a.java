@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.HmsInstanceId;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.common.ApiException;
@@ -32,7 +32,7 @@ public class a implements Runnable {
             try {
                 str = HmsInstanceId.getInstance(this.f7314a).getToken(Util.getAppId(this.f7314a), null);
                 HMSLog.i("AutoInit", "Push init succeed");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
             } catch (ApiException e) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.constant.a;
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ public class eih {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "low";
         }
         for (eih eihVar : CHANNEL_LIST) {
@@ -62,6 +62,6 @@ public class eih {
 
     public static String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : TextUtils.isEmpty(str) ? a.UN_KNOW : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{str}) : StringUtils.isEmpty(str) ? a.UN_KNOW : str;
     }
 }

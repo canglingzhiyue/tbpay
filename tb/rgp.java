@@ -38,7 +38,7 @@ public class rgp {
             boolean r6 = r6.booleanValue()
             return r6
         L1c:
-            boolean r0 = android.text.TextUtils.isEmpty(r6)
+            boolean r0 = android.text.StringUtils.isEmpty(r6)
             if (r0 == 0) goto L23
             return r2
         L23:

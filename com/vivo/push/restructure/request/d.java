@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.api.entity.core.JosStatusCodes;
 import com.vivo.push.i;
 import com.vivo.push.util.u;
@@ -54,7 +54,7 @@ public final class d {
             u.c(b, "send command error by aidl");
         }
         String k = com.vivo.push.restructure.a.a().e().k();
-        if (TextUtils.isEmpty(k)) {
+        if (StringUtils.isEmpty(k)) {
             return 8001;
         }
         Intent intent2 = new Intent("com.vivo.pushservice.action.METHOD");

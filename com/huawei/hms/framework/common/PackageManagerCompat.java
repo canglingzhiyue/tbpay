@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +31,7 @@ public class PackageManagerCompat {
     }
 
     public static String getAppVersion(Context context) {
-        if (!TextUtils.isEmpty(sAppVersion)) {
+        if (!StringUtils.isEmpty(sAppVersion)) {
             return sAppVersion;
         }
         if (ContextHolder.getAppContext() != null) {
@@ -114,7 +114,7 @@ public class PackageManagerCompat {
         for (String str2 : getBundleFromKitOrAPP(context).keySet()) {
             if (str2.startsWith(str)) {
                 String string = bundleFromKitOrAPP.getString(str2);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     hashMap.put(str2.substring(str.length()), string);
                 }
             }

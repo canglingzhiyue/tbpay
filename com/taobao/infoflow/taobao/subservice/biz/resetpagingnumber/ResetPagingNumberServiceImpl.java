@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.resetpagingnumber;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -169,7 +169,7 @@ public class ResetPagingNumberServiceImpl implements IResetPagingNumberService {
                 if (ipChange2 instanceof IpChange) {
                     return (Map) ipChange2.ipc$dispatch("add74dce", new Object[]{this, lliVar, str});
                 }
-                if (!ResetPagingNumberServiceImpl.access$000(ResetPagingNumberServiceImpl.this) || !TextUtils.equals(str, "scrollNextPage") || !ResetPagingNumberServiceImpl.access$100(ResetPagingNumberServiceImpl.this)) {
+                if (!ResetPagingNumberServiceImpl.access$000(ResetPagingNumberServiceImpl.this) || !StringUtils.equals(str, "scrollNextPage") || !ResetPagingNumberServiceImpl.access$100(ResetPagingNumberServiceImpl.this)) {
                     return null;
                 }
                 ResetPagingNumberServiceImpl.access$002(ResetPagingNumberServiceImpl.this, false);

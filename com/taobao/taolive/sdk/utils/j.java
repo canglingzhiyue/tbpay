@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -79,7 +79,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -107,7 +107,7 @@ public class j {
         if (b instanceof JSONObject) {
             liveItem.itemExtData = (JSONObject) b;
             for (String str : liveItem.itemExtData.keySet()) {
-                if (!TextUtils.isEmpty(str) && (obj = liveItem.itemExtData.get(str)) != null && !(obj instanceof JSON)) {
+                if (!StringUtils.isEmpty(str) && (obj = liveItem.itemExtData.get(str)) != null && !(obj instanceof JSON)) {
                     liveItem.itemExtData.put(str, (Object) obj.toString());
                 }
             }

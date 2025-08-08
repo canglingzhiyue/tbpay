@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -156,7 +156,7 @@ public class h {
         }
         if (arrayList.contains("dAccessibilityTextHidden")) {
             String str = (String) map.get("dAccessibilityTextHidden");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 setAccessibilityHidden(view, Boolean.valueOf(str).booleanValue());
             } else {
                 setAccessibilityHidden(view, true);
@@ -254,7 +254,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("70c4359", new Object[]{this, view, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 view.setAlpha(Float.valueOf(str).floatValue());
             } catch (NumberFormatException unused) {
@@ -269,11 +269,11 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca5e8361", new Object[]{this, view, str});
-        } else if (TextUtils.equals("visible", str)) {
+        } else if (StringUtils.equals("visible", str)) {
             view.setVisibility(0);
-        } else if (TextUtils.equals("invisible", str)) {
+        } else if (StringUtils.equals("invisible", str)) {
             view.setVisibility(4);
-        } else if (TextUtils.equals("gone", str)) {
+        } else if (StringUtils.equals("gone", str)) {
             view.setVisibility(8);
         } else {
             view.setVisibility(0);
@@ -299,17 +299,17 @@ public class h {
         if (background != null && (background instanceof GradientDrawable)) {
             GradientDrawable gradientDrawable = (GradientDrawable) background;
             int a2 = fpn.a(str4, 0);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 gradientDrawable.setColor(a2);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 gradientDrawable.setCornerRadius(fpr.a(view.getContext(), str, 0));
             }
-            if (TextUtils.isEmpty(str2) && TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str2) && StringUtils.isEmpty(str3)) {
                 return;
             }
             gradientDrawable.setStroke(fpr.a(view.getContext(), str3, 0), fpn.a(str2, a2));
-        } else if (!TextUtils.isEmpty(str) || !TextUtils.isEmpty(str2) || !TextUtils.isEmpty(str3)) {
+        } else if (!StringUtils.isEmpty(str) || !StringUtils.isEmpty(str2) || !StringUtils.isEmpty(str3)) {
             int a3 = fpn.a(str4, 0);
             GradientDrawable gradientDrawable2 = new GradientDrawable();
             int a4 = fpr.a(view.getContext(), str, 0);
@@ -384,7 +384,7 @@ public class h {
         }
         for (a aVar : this.methodInfos) {
             for (String str2 : aVar.b) {
-                if (TextUtils.equals(str, str2)) {
+                if (StringUtils.equals(str, str2)) {
                     return aVar;
                 }
             }
@@ -423,7 +423,7 @@ public class h {
             Iterator it = arrayList.iterator();
             while (true) {
                 if (it.hasNext()) {
-                    if (TextUtils.equals((String) it.next(), entry.getKey())) {
+                    if (StringUtils.equals((String) it.next(), entry.getKey())) {
                         z = true;
                         break;
                     }

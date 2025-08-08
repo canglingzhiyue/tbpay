@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
@@ -74,7 +74,7 @@ public class AddressEntranceActivity extends Activity {
         this.b = System.currentTimeMillis();
         dof.a("createEntryAct", "" + this.b, "", null);
         String b = efe.b("address_test_serial", "");
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             Toast.makeText(this, "address_test_serial:" + b, 0).show();
         }
         efe.a((Activity) this);
@@ -162,7 +162,7 @@ public class AddressEntranceActivity extends Activity {
                 String str4 = "";
                 if (this.f8983a.toString().contains("edit_address") || this.f8983a.toString().contains("add_address")) {
                     String string = extras.getString("sourceAddress");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         try {
                             str4 = JSON.parseObject(string).getString(c.K_DELIVERY_ID);
                         } catch (Throwable th) {
@@ -170,7 +170,7 @@ public class AddressEntranceActivity extends Activity {
                         }
                     }
                     if (this.f8983a.toString().contains("edit_address")) {
-                        if (TextUtils.isEmpty(str4)) {
+                        if (StringUtils.isEmpty(str4)) {
                             str2 = a2 + "&pageType=0";
                         } else {
                             str2 = a2 + "&deliverId=" + str4 + "&pageType=1";
@@ -227,17 +227,17 @@ public class AddressEntranceActivity extends Activity {
                         }
                     }
                     AdapterForTLog.logd(TAG, "transparent_address data= " + c.v);
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         a("cart", str3, true, true);
                     }
                 } else if (this.f8983a.toString().contains("/deliver/common_address.htm")) {
                     try {
                         String queryParameter = this.f8983a.getQueryParameter("bizId");
-                        if (TextUtils.isEmpty(queryParameter)) {
+                        if (StringUtils.isEmpty(queryParameter)) {
                             queryParameter = extras.getString("bizId");
                         }
                         String queryParameter2 = this.f8983a.getQueryParameter("data");
-                        if (TextUtils.isEmpty(queryParameter2)) {
+                        if (StringUtils.isEmpty(queryParameter2)) {
                             Object obj = extras.get("data");
                             if (obj instanceof String) {
                                 queryParameter2 = (String) obj;
@@ -270,7 +270,7 @@ public class AddressEntranceActivity extends Activity {
             return "";
         }
         String query = uri.getQuery();
-        return !TextUtils.isEmpty(query) ? query : "";
+        return !StringUtils.isEmpty(query) ? query : "";
     }
 
     private String a(String str) {
@@ -313,7 +313,7 @@ public class AddressEntranceActivity extends Activity {
         }
         if (ThemisConfig.a(str)) {
             String a2 = ThemisConfig.a(str, "");
-            if (!TextUtils.equals(str, "cart") && !TextUtils.equals(str, "purchase") && !TextUtils.equals(str, ThemisConfig.SCENE_TMALLMARKET)) {
+            if (!StringUtils.equals(str, "cart") && !StringUtils.equals(str, "purchase") && !StringUtils.equals(str, ThemisConfig.SCENE_TMALLMARKET)) {
                 str3 = a2;
             } else if (ThemisConfig.b(str2)) {
                 String b = efe.b(str2);
@@ -370,14 +370,14 @@ public class AddressEntranceActivity extends Activity {
         try {
             if (efe.a("weex_address_change_gray_percent")) {
                 String b = efe.b("weex_address_change_gray_url", "");
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     return;
                 }
                 c.b = b;
                 return;
             }
             String b2 = efe.b("weex_address_change_url", "");
-            if (TextUtils.isEmpty(b2)) {
+            if (StringUtils.isEmpty(b2)) {
                 return;
             }
             c.b = b2;

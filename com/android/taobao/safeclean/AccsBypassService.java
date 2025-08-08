@@ -141,7 +141,7 @@ public class AccsBypassService extends TaoBaseService {
         L43:
             r6 = r5
         L44:
-            boolean r7 = android.text.TextUtils.isEmpty(r5)
+            boolean r7 = android.text.StringUtils.isEmpty(r5)
             if (r7 == 0) goto L4b
             return
         L4b:

@@ -3,7 +3,7 @@ package com.taobao.highway.jsbridge;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.TBPlayerConst;
 import org.json.JSONException;
@@ -29,13 +29,13 @@ public class HighwayJSBridge extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 wVCallBackContext.error(r.RET_PARAM_ERR);
                 return false;
             }
             JSONObject jSONObject = new JSONObject(str2);
             if ("sendEvent".equals(str)) {
-                if (!TextUtils.isEmpty(jSONObject.getString("eventName")) && !TextUtils.isEmpty(jSONObject.getString("highway_content"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("eventName")) && !StringUtils.isEmpty(jSONObject.getString("highway_content"))) {
                     String string = jSONObject.getString("eventName");
                     JSONObject jSONObject2 = jSONObject.getJSONObject("highway_content");
                     kth a2 = ktk.a();
@@ -46,7 +46,7 @@ public class HighwayJSBridge extends e {
                 wVCallBackContext.error(r.RET_PARAM_ERR);
                 return false;
             } else if ("sendBatchEvent".equals(str)) {
-                if (TextUtils.isEmpty(jSONObject.getString("eventName"))) {
+                if (StringUtils.isEmpty(jSONObject.getString("eventName"))) {
                     wVCallBackContext.error(r.RET_PARAM_ERR);
                     return false;
                 }
@@ -54,7 +54,7 @@ public class HighwayJSBridge extends e {
                 wVCallBackContext.success(r.RET_SUCCESS);
                 return true;
             } else if ("sendSceneEvent".equals(str)) {
-                if (TextUtils.isEmpty(jSONObject.getString(TBPlayerConst.TBPlayerMethodSwitchPlayerScene_SceneName))) {
+                if (StringUtils.isEmpty(jSONObject.getString(TBPlayerConst.TBPlayerMethodSwitchPlayerScene_SceneName))) {
                     wVCallBackContext.error(r.RET_PARAM_ERR);
                     return false;
                 }

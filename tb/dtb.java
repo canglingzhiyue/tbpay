@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.buy.toggle.a;
@@ -68,7 +68,7 @@ public class dtb extends fuf {
                 if (a3 != null) {
                     return a3;
                 }
-                if (!TextUtils.isEmpty(valueOf3)) {
+                if (!StringUtils.isEmpty(valueOf3)) {
                     return dtd.a(valueOf3.split(SymbolExpUtil.SYMBOL_VERTICALBAR));
                 }
             } else if ("color".equalsIgnoreCase(valueOf)) {
@@ -86,7 +86,7 @@ public class dtb extends fuf {
                 if (a2 != null && a2.size() > 0) {
                     str = a2.get(0);
                 }
-                return TextUtils.isEmpty(str) ? valueOf3 : str;
+                return StringUtils.isEmpty(str) ? valueOf3 : str;
             }
         }
         return null;

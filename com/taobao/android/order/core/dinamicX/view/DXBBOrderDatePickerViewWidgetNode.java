@@ -1,7 +1,7 @@
 package com.taobao.android.order.core.dinamicX.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -233,7 +233,7 @@ public class DXBBOrderDatePickerViewWidgetNode extends DXWidgetNode {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("bca2fe55", new Object[]{this, str, str2, str3});
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             } else {
                 try {
                     String[] split = str2.split("-");

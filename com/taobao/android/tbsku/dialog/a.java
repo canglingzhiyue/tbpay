@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
@@ -120,7 +120,7 @@ public class a {
             HashMap hashMap = new HashMap();
             hashMap.put("bottomMode", a.j(a.this));
             hashMap.put("from", a.b(a.this).b);
-            hashMap.put("hasSkuId", TextUtils.isEmpty(a.e(a.this)) ? "false" : "true");
+            hashMap.put("hasSkuId", StringUtils.isEmpty(a.e(a.this)) ? "false" : "true");
             a.a(a.this, 2101, "enterSkuLightOff", null, null, hashMap);
         }
 
@@ -469,7 +469,7 @@ public class a {
                     return;
                 }
                 String valueOf = String.valueOf(objArr[2]);
-                if (TextUtils.isEmpty(valueOf)) {
+                if (StringUtils.isEmpty(valueOf)) {
                     f.a("[XLightOff]", "onFloatClickEvent change_sku_frame targetPropPath empty");
                 } else {
                     this.d.b(c(valueOf));
@@ -522,7 +522,7 @@ public class a {
             JSONObject jSONObject2 = jSONArray.getJSONObject(i);
             String string = jSONObject2.getString("url");
             String string2 = jSONObject2.getString("path");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (string2.equals(str2)) {
                     com.taobao.android.detail.core.standard.widget.lightoff.model.a aVar2 = this.e;
                     aVar2.h = i;
@@ -612,7 +612,7 @@ public class a {
                 lightOffFloatModel.version = jSONObject4.getString("version");
                 lightOffFloatModel.url = jSONObject4.getString("url");
                 lightOffFloatModel.loadTimeOut = 5000;
-                if (!TextUtils.isEmpty(jSONObject4.getString("loadTimeOut"))) {
+                if (!StringUtils.isEmpty(jSONObject4.getString("loadTimeOut"))) {
                     try {
                         lightOffFloatModel.loadTimeOut = Integer.parseInt(jSONObject4.getString("loadTimeOut"));
                     } catch (Exception e) {
@@ -682,7 +682,7 @@ public class a {
         } else {
             f.a("[XLightOff]", "sendChangePropEvent:" + jSONObject.toString());
             String string = jSONObject.getString("viewId");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 iybVar.h().put(string, Integer.valueOf((int) (((i / 6) * 348.5f) - 1.0f)));
             }
             this.b.b(new JSONObject() { // from class: com.taobao.android.tbsku.dialog.SkuLightoffProxy$6
@@ -706,7 +706,7 @@ public class a {
         f.a("[XLightOff]", sb.toString());
         if (jSONObject == null || !FROM_SKU_HEAD.equals(jSONObject.getString("from"))) {
             f.a("[XLightOff]", "onSKUActionCallback params not from lightOff:" + jSONObject.getString("from"));
-        } else if (TextUtils.isEmpty(jSONObject.getString("skuId"))) {
+        } else if (StringUtils.isEmpty(jSONObject.getString("skuId"))) {
             f.a("[XLightOff]", "onSKUActionCallback params no skuId");
         } else if (!"bottomInfo".equals(jSONObject.getString("type"))) {
             f.a("[XLightOff]", "onSKUActionCallback type not bottomInfo");
@@ -725,7 +725,7 @@ public class a {
         } else {
             JSONObject a2 = a(e(jSONObject), this.k.get(this.h));
             this.k.put(this.h, (JSONObject) a2.clone());
-            if (TextUtils.isEmpty(this.h) || !this.h.equals(jSONObject.getString("skuId")) || "0".equals(this.h)) {
+            if (StringUtils.isEmpty(this.h) || !this.h.equals(jSONObject.getString("skuId")) || "0".equals(this.h)) {
                 return;
             }
             JSONObject jSONObject2 = a2.getJSONObject("fields");
@@ -751,7 +751,7 @@ public class a {
             f.a("[XLightOff]", "updateSelectedFloatData no float template");
             return;
         }
-        if (!this.f && FROM_SKU_HEAD.equals(this.e.b) && !TextUtils.isEmpty(this.h) && !"0".equals(this.h)) {
+        if (!this.f && FROM_SKU_HEAD.equals(this.e.b) && !StringUtils.isEmpty(this.h) && !"0".equals(this.h)) {
             this.l.data = g(jSONObject);
             if (this.p.hasMessages(4097)) {
                 f.a("[XLightOff]", "updateSelectedFloatData has loading msg");
@@ -903,7 +903,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65420708", new Object[]{this, new Integer(i), str, obj, obj2, map});
-        } else if (TextUtils.isEmpty(this.g)) {
+        } else if (StringUtils.isEmpty(this.g)) {
         } else {
             qrg.a(i, str, obj, obj2, map);
         }
@@ -914,8 +914,8 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        boolean z = TextUtils.isEmpty(str2) || "0".equals(str2);
-        boolean z2 = TextUtils.isEmpty(str) || "0".equals(str);
+        boolean z = StringUtils.isEmpty(str2) || "0".equals(str2);
+        boolean z2 = StringUtils.isEmpty(str) || "0".equals(str);
         if (z && z2) {
             return true;
         }
@@ -930,7 +930,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("88097ea7", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         List<LightOffItemModel> list = this.e.e;

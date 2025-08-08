@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.al;
 import com.taobao.taobao.R;
@@ -177,7 +177,7 @@ public class f {
         }
         if (context != null) {
             externalStoragePublicDirectory = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             externalStoragePublicDirectory = new File(str2);
         }
         if (externalStoragePublicDirectory == null) {

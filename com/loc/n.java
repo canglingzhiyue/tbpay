@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.security.InvalidKeyException;
@@ -92,7 +92,7 @@ public final class n {
     }
 
     private static void a(ByteArrayOutputStream byteArrayOutputStream, String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             x.a(byteArrayOutputStream, str.getBytes().length > 255 ? (byte) -1 : (byte) str.getBytes().length, x.a(str));
         } else {
             x.a(byteArrayOutputStream, (byte) 0, new byte[0]);
@@ -150,7 +150,7 @@ public final class n {
         }
         aVar.w = o.a();
         String a2 = o.a(context);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             aVar.x = a2;
         } else {
             aVar.x = "";
@@ -158,33 +158,33 @@ public final class n {
         aVar.y = "aid=" + o.g();
         if ((z2 && ag.d) || ag.e) {
             String e = o.e(context);
-            if (!TextUtils.isEmpty(e)) {
+            if (!StringUtils.isEmpty(e)) {
                 aVar.y += "|oaid=" + e;
             }
         }
         String j = o.j();
-        if (!TextUtils.isEmpty(j)) {
+        if (!StringUtils.isEmpty(j)) {
             aVar.y += "|multiImeis=" + j;
         }
         String m = o.m();
-        if (!TextUtils.isEmpty(m)) {
+        if (!StringUtils.isEmpty(m)) {
             aVar.y += "|meid=" + m;
         }
         aVar.y += "|serial=" + o.f();
         String b = o.b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             aVar.y += "|adiuExtras=" + b;
         }
         aVar.y += "|storage=" + o.o() + "|ram=" + o.r(context) + "|arch=" + o.p();
         String b2 = ar.a().b();
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             aVar.z = b2;
         } else {
             aVar.z = "";
         }
         if (z) {
             String a3 = ac.a(context).a();
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 aVar.A = a3;
             }
         }

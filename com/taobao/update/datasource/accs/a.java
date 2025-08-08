@@ -1,6 +1,6 @@
 package com.taobao.update.datasource.accs;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.AccsAbstractDataListener;
 import com.taobao.accs.base.TaoBaseService;
@@ -81,7 +81,7 @@ public class a extends AccsAbstractDataListener implements rfq {
             if (reuVar != null) {
                 reuVar.commitSuccess("update_center_accs", "accs_message_receiver", str3);
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 return;
             }
             dispatchUpdate(from(), true, str4, str3);

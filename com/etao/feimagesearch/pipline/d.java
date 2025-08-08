@@ -3,7 +3,7 @@ package com.etao.feimagesearch.pipline;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.intelli.ClientModelType;
 import com.etao.feimagesearch.model.IrpParamModel;
@@ -157,7 +157,7 @@ public final class d {
         q.c(cameraPageModel, "cameraPageModel");
         IrpDatasource a2 = IrpDatasource.Companion.a(imgUri, bitmap, i, photoFrom, cameraPageModel);
         a2.a(j);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a2.d().put(ClientModelType.KEY_CLIENT_MODEL_TYPE, str);
         }
         a aVar = new a(crq.Companion.a(a2));

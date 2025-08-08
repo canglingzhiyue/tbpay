@@ -2,7 +2,7 @@ package com.taobao.errorview.mega;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +66,7 @@ public class ErrorViewWidgetAbility extends AbsErrorViewWidgetAbility {
                     }
                 }
             };
-            if (!TextUtils.isEmpty(str3) && !str3.contains("刷新") && !str3.toLowerCase().contains("refresh")) {
+            if (!StringUtils.isEmpty(str3) && !str3.contains("刷新") && !str3.toLowerCase().contains("refresh")) {
                 z = false;
             }
             TBErrorViewWidget tBErrorViewWidget = new TBErrorViewWidget(a2);
@@ -155,7 +155,7 @@ public class ErrorViewWidgetAbility extends AbsErrorViewWidgetAbility {
             return (Error) ipChange.ipc$dispatch("66c0b0c0", new Object[]{errorViewWidgetRequestError});
         }
         int i = -1;
-        if (!TextUtils.isEmpty(errorViewWidgetRequestError.responseCode)) {
+        if (!StringUtils.isEmpty(errorViewWidgetRequestError.responseCode)) {
             try {
                 i = Integer.parseInt(errorViewWidgetRequestError.responseCode);
             } catch (Exception unused) {

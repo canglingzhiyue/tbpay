@@ -2,7 +2,7 @@ package com.taobao.accs.utl;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSManager;
@@ -276,7 +276,7 @@ public class l {
             return ((Boolean) ipChange.ipc$dispatch("74de81b1", new Object[]{context, new Integer(i2), str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (b(context, i2, Constants.SP_FILE_NAME).contains(str)) {
                     return true;
                 }
@@ -331,7 +331,7 @@ public class l {
                 str3 = "powermsg3";
                 break;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             ALog.d("OrangeAdapter", "getServiceIdsByType, empty key", "type", Integer.valueOf(i2));
             return Collections.emptyList();
         }
@@ -341,7 +341,7 @@ public class l {
                 return list;
             }
             String string = APreferencesManager.getSharedPreferences(context, str, 0).getString(str2, str3);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 List<String> asList = Arrays.asList(string.split(","));
                 b.put(Integer.valueOf(i2), asList);
                 ALog.e("OrangeAdapter", "getServiceIdsByType content", "key", str2, "serviceIdMap", b, "list", asList);
@@ -427,7 +427,7 @@ public class l {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             i = str;
@@ -462,7 +462,7 @@ public class l {
         if (context == null) {
             context = jzv.a();
         }
-        if (TextUtils.isEmpty(i)) {
+        if (StringUtils.isEmpty(i)) {
             try {
                 i = APreferencesManager.getSharedPreferences(context, Constants.SP_FILE_NAME, 4).getString(Constants.SP_KEY_REG_ID, "");
             } catch (Throwable th) {
@@ -475,7 +475,7 @@ public class l {
 
     public static boolean r(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a994c9f3", new Object[]{context})).booleanValue() : TextUtils.isEmpty(q(context));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a994c9f3", new Object[]{context})).booleanValue() : StringUtils.isEmpty(q(context));
     }
 
     public static void a(Context context, long j2) {

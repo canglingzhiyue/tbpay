@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Outline;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.TextureView;
 import android.view.View;
@@ -256,13 +256,13 @@ public class VideoPlatformView extends WeexPlatformView implements av, ax, az, u
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ff48d810", new Object[]{this});
-        } else if ((!TextUtils.isEmpty(this.mSrc) || "TBVideo".equals(this.mVideoSource) || ("YKVideo".equals(this.mVideoSource) && !TextUtils.isEmpty(this.mVideoID))) && this.mTBDWInstance == null && !this.mLoadingLazy) {
+        } else if ((!StringUtils.isEmpty(this.mSrc) || "TBVideo".equals(this.mVideoSource) || ("YKVideo".equals(this.mVideoSource) && !StringUtils.isEmpty(this.mVideoID))) && this.mTBDWInstance == null && !this.mLoadingLazy) {
             try {
                 initMediaPlayer();
             } catch (Exception e) {
                 r.c(getMUSInstance().getInstanceId(), TAG, e.toString());
             }
-        } else if (this.mLoadingLazy && !TextUtils.isEmpty(this.mPoster)) {
+        } else if (this.mLoadingLazy && !StringUtils.isEmpty(this.mPoster)) {
             loadPosterView();
         } else {
             Log.e(TAG, "src or videoid is empty");
@@ -436,7 +436,7 @@ public class VideoPlatformView extends WeexPlatformView implements av, ax, az, u
             if (dWAspectRatio != null) {
                 aVar.a(dWAspectRatio);
             }
-            if (!TextUtils.isEmpty(this.mVideoSourceStr)) {
+            if (!StringUtils.isEmpty(this.mVideoSourceStr)) {
                 try {
                     JSONObject a2 = com.taobao.tao.flexbox.layoutmanager.player.videodecide.b.a().a(new JSONObject(this.mVideoSourceStr), new com.taobao.tao.flexbox.layoutmanager.player.videodecide.a(((Boolean) this.mVideoSourceConfig.get("enable")).booleanValue(), (float) ((Double) this.mVideoSourceConfig.get("ratio")).doubleValue(), ((Integer) this.mVideoSourceConfig.get("netSpeedType")).intValue(), 0.0f, this.mVideoSourceConfig.get("limitDeviceScore") != null ? ((Integer) this.mVideoSourceConfig.get("limitDeviceScore")).intValue() : 0, -1.0f));
                     if (a2 != null) {
@@ -453,7 +453,7 @@ public class VideoPlatformView extends WeexPlatformView implements av, ax, az, u
             HashMap<String, String> hashMap2 = new HashMap<>();
             int a3 = com.taobao.application.common.c.a().a("deviceLevel", -1);
             String str = a3 == 1 ? "50" : a3 == 2 ? "100" : a3 == 3 ? "200" : "";
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap2.put("_progressTime", str);
                 this.mTBDWInstance.addCustomParams(hashMap2);
             }
@@ -473,7 +473,7 @@ public class VideoPlatformView extends WeexPlatformView implements av, ax, az, u
                 this.mRootView.addView(this.mTBDWInstance.getView(), 0, layoutParams);
             } else {
                 this.mRootView.addView(this.mTBDWInstance.getView(), layoutParams);
-                if (!TextUtils.isEmpty(this.mPoster)) {
+                if (!StringUtils.isEmpty(this.mPoster)) {
                     loadPosterView();
                 }
             }
@@ -1070,7 +1070,7 @@ public class VideoPlatformView extends WeexPlatformView implements av, ax, az, u
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f05e5b0b", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             char c2 = 65535;
             int hashCode = str.hashCode();

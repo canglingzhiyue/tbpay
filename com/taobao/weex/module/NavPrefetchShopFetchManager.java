@@ -1,7 +1,7 @@
 package com.taobao.weex.module;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -72,12 +72,12 @@ public class NavPrefetchShopFetchManager {
                 if (!parse.isHierarchical()) {
                     return;
                 }
-                if ("h5.m.taobao.com".equals(parse.getHost()) && "/weex/viewpage.htm".equals(parse.getPath()) && !TextUtils.isEmpty(parse.getQueryParameter(i.WEEX_REFERER_ORIGIN))) {
+                if ("h5.m.taobao.com".equals(parse.getHost()) && "/weex/viewpage.htm".equals(parse.getPath()) && !StringUtils.isEmpty(parse.getQueryParameter(i.WEEX_REFERER_ORIGIN))) {
                     parse = Uri.parse(parse.getQueryParameter(i.WEEX_REFERER_ORIGIN));
                 }
                 MtopRequest mtopRequest = null;
                 final String queryParameter = parse.getQueryParameter("shopId");
-                if (TextUtils.isEmpty(queryParameter) && this.val$url != null && this.val$url.contains("shopId") && (indexOf = this.val$url.indexOf("shopId=")) > 0) {
+                if (StringUtils.isEmpty(queryParameter) && this.val$url != null && this.val$url.contains("shopId") && (indexOf = this.val$url.indexOf("shopId=")) > 0) {
                     int indexOf2 = this.val$url.indexOf("&", indexOf);
                     if (indexOf2 == -1) {
                         indexOf2 = this.val$url.length();
@@ -87,7 +87,7 @@ public class NavPrefetchShopFetchManager {
                         queryParameter = this.val$url.substring(i, indexOf2);
                     }
                 }
-                if (!TextUtils.isEmpty(queryParameter) && "true".equals(OrangeConfig.getInstance().getConfig("shop_render", "use_static_default_mtop_prefetch", "true")) && parse.getHost().contains("market.") && parse.getHost().contains(".taobao.com") && "/apps/market/shop/weex.html".equals(parse.getPath())) {
+                if (!StringUtils.isEmpty(queryParameter) && "true".equals(OrangeConfig.getInstance().getConfig("shop_render", "use_static_default_mtop_prefetch", "true")) && parse.getHost().contains("market.") && parse.getHost().contains(".taobao.com") && "/apps/market/shop/weex.html".equals(parse.getPath())) {
                     mtopRequest = new MtopRequest();
                     mtopRequest.setApiName(ShopPointExtension.SHOP_FETCH_API);
                     mtopRequest.setVersion("2.0");
@@ -320,9 +320,9 @@ public class NavPrefetchShopFetchManager {
             ipChange.ipc$dispatch("825a698a", new Object[]{this, str, fetchDataResultListener});
         } else if (fetchDataResultListener == null) {
         } else {
-            if (!TextUtils.isEmpty(str) && this.fetchCache.get(str) != null) {
+            if (!StringUtils.isEmpty(str) && this.fetchCache.get(str) != null) {
                 fetchDataResultListener.onReceiveFetchData(str, this.fetchCache.remove(str), this.mtopStartTimeCahce.get(str) != null ? this.mtopStartTimeCahce.get(str).longValue() : System.currentTimeMillis());
-            } else if (!TextUtils.isEmpty(str) && this.fetchCacheString.get(str) != null) {
+            } else if (!StringUtils.isEmpty(str) && this.fetchCacheString.get(str) != null) {
                 fetchDataResultListener.onReceiveFetchDataString(str, this.fetchCacheString.remove(str), this.mtopStartTimeCahce.get(str) != null ? this.mtopStartTimeCahce.get(str).longValue() : System.currentTimeMillis());
             } else {
                 this.mListener = new SoftReference<>(fetchDataResultListener);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -235,7 +235,7 @@ public class b extends eac<egs> implements j<DetailEvent> {
             a(this.k);
             this.g.setTextColor(this.f9568a.getResources().getColor(R.color.detail_bottom_presell_txt_invisable));
             this.g.setText("立刻购买");
-            if (!TextUtils.isEmpty(egsVar.l)) {
+            if (!StringUtils.isEmpty(egsVar.l)) {
                 this.g.setText(egsVar.l);
             }
             this.j.setClickable(false);
@@ -243,10 +243,10 @@ public class b extends eac<egs> implements j<DetailEvent> {
         } else {
             a(this.k);
             this.g.setText("立刻购买");
-            if (!TextUtils.isEmpty(egsVar.l)) {
+            if (!StringUtils.isEmpty(egsVar.l)) {
                 this.g.setText(egsVar.l);
             }
-            if (!TextUtils.isEmpty(egsVar.g)) {
+            if (!StringUtils.isEmpty(egsVar.g)) {
                 this.i.setText(egsVar.g);
                 this.i.setVisibility(0);
             }
@@ -282,18 +282,18 @@ public class b extends eac<egs> implements j<DetailEvent> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
             this.h.setVisibility(8);
-        } else if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             String str3 = str + "\n" + str2;
             SpannableString spannableString = new SpannableString(str3);
             spannableString.setSpan(new AbsoluteSizeSpan(epo.i), 0, str.length(), 33);
             spannableString.setSpan(new AbsoluteSizeSpan(epo.h), str.length() + 1, str3.length(), 33);
             this.h.setText(spannableString);
-        } else if (!TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
             this.h.setTextSize(1, 12.0f);
             this.h.setText(str);
-        } else if (!TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.h.setTextSize(1, 10.0f);
             this.h.setText(str2);

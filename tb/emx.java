@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -22,7 +22,7 @@ public class emx {
         if (ipChange instanceof IpChange) {
             return (emw) ipChange.ipc$dispatch("7c6edf25", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (f27449a.containsKey(str)) {
@@ -48,7 +48,7 @@ public class emx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || !f27449a.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !f27449a.containsKey(str)) {
         } else {
             f27449a.get(str).a();
             f27449a.remove(str);

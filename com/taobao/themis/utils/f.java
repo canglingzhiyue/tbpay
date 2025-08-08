@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -111,7 +111,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("eb7402d9", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -231,7 +231,7 @@ public class f {
 
     public static boolean e(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !"app".equals(str) && !NativeCallContext.DOMAIN_APPX.equals(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !"app".equals(str) && !NativeCallContext.DOMAIN_APPX.equals(str);
     }
 
     public static boolean b(Context context) {

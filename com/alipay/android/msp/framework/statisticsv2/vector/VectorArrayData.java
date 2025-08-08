@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.vector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.Grammar;
 import com.alipay.android.msp.framework.statisticsv2.Vector;
 import com.alipay.android.msp.framework.statisticsv2.model.IModel;
@@ -53,7 +53,7 @@ public class VectorArrayData {
         }
         if (!this.b.isEmpty()) {
             sb.deleteCharAt(sb.length() - 1);
-        } else if (TextUtils.isEmpty(a())) {
+        } else if (StringUtils.isEmpty(a())) {
             sb.append(Grammar.ATTR_DEFAULT_VALUE);
         }
         sb.append(Grammar.CONTAINER_END[0]);
@@ -74,7 +74,7 @@ public class VectorArrayData {
         String[] attrs = this.f4867a.getAttrs();
         for (String str : attrs) {
             String filter = Grammar.filter(map.get(str));
-            if (TextUtils.isEmpty(filter)) {
+            if (StringUtils.isEmpty(filter)) {
                 filter = Grammar.ATTR_DEFAULT_VALUE;
             }
             sb.append(filter);

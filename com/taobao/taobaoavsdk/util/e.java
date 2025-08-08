@@ -2,7 +2,7 @@ package com.taobao.taobaoavsdk.util;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -65,34 +65,34 @@ public class e {
             ipChange.ipc$dispatch("9eca0fff", new Object[]{this, context});
         } else if (MediaSystemUtils.isApkDebuggable()) {
             String a2 = oyu.a(context, "surfaceview_component_gray3", "surfaceview_module_gray3", "enable", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.h = Boolean.parseBoolean(a2);
             }
             String a3 = oyu.a(context, "surfaceview_component_gray3", "surfaceview_module_gray3", "subBusinessTypeList", "");
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 this.i = a3;
             }
             String a4 = oyu.a(context, "surfaceview_component_gray3", "surfaceview_module_gray3", "sdkVersion", "");
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 this.k = Integer.valueOf(a4).intValue();
             }
             String a5 = oyu.a(context, "surfaceview_component_gray3", "surfaceview_module_gray3", "enableLiveRoomInit", "");
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 n = Boolean.parseBoolean(a5);
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "initLiveRoomInitSurfaceViewParamFromAB mEnableLiveRoomInitSurfaceViewFromAB is " + n);
             }
             String a6 = oyu.a(context, "surfaceview_component_gray3", "surfaceview_module_gray3", "sdkVersionBlackList", "");
-            if (!TextUtils.isEmpty(a6) && a6.contains(String.valueOf(Build.VERSION.SDK_INT))) {
+            if (!StringUtils.isEmpty(a6) && a6.contains(String.valueOf(Build.VERSION.SDK_INT))) {
                 n = false;
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "initLiveRoomInitSurfaceViewParamFromAB mEnableLiveRoomInitSurfaceViewFromAB set to false because blackSDKversion=" + a6 + ", device sdk=" + Build.VERSION.SDK_INT);
             }
             String a7 = oyu.a(context, "surfaceview_component_gray3", "surfaceview_module_gray3", "deviceLevelBlackList", "");
-            if (!TextUtils.isEmpty(a7) && a7.contains(String.valueOf(oyu.c()))) {
+            if (!StringUtils.isEmpty(a7) && a7.contains(String.valueOf(oyu.c()))) {
                 n = false;
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "initLiveRoomInitSurfaceViewParamFromAB mEnableLiveRoomInitSurfaceViewFromAB set to false because deviceLevelBlackList=" + a7 + ", deviceLevel=" + oyu.c());
             }
             String a8 = oyu.a(context, "surfaceview_component_gray3", "surfaceview_module_gray3", "deviceModelBlackList", "");
-            if (TextUtils.isEmpty(a8) || !a8.contains(String.valueOf(Build.MODEL))) {
+            if (StringUtils.isEmpty(a8) || !a8.contains(String.valueOf(Build.MODEL))) {
                 return;
             }
             n = false;
@@ -121,7 +121,7 @@ public class e {
                     Variation variation5 = activate.getVariation("sdkVersionBlackList");
                     if (variation5 != null) {
                         String valueAsString = variation5.getValueAsString("");
-                        if (!TextUtils.isEmpty(valueAsString) && valueAsString.contains(String.valueOf(Build.VERSION.SDK_INT))) {
+                        if (!StringUtils.isEmpty(valueAsString) && valueAsString.contains(String.valueOf(Build.VERSION.SDK_INT))) {
                             n = false;
                             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "initLiveRoomInitSurfaceViewParamFromAB mEnableLiveRoomInitSurfaceViewFromAB set to false because blackSDKversion=" + valueAsString + ", device sdk=" + Build.VERSION.SDK_INT);
                         }
@@ -129,7 +129,7 @@ public class e {
                     Variation variation6 = activate.getVariation("deviceLevelBlackList");
                     if (variation6 != null) {
                         String valueAsString2 = variation6.getValueAsString("");
-                        if (!TextUtils.isEmpty(valueAsString2) && valueAsString2.contains(String.valueOf(oyu.c()))) {
+                        if (!StringUtils.isEmpty(valueAsString2) && valueAsString2.contains(String.valueOf(oyu.c()))) {
                             n = false;
                             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "initLiveRoomInitSurfaceViewParamFromAB mEnableLiveRoomInitSurfaceViewFromAB set to false because deviceLevelBlackList=" + valueAsString2 + ", deviceLevel=" + oyu.c());
                         }
@@ -137,7 +137,7 @@ public class e {
                     Variation variation7 = activate.getVariation("deviceModelBlackList");
                     if (variation7 != null) {
                         String valueAsString3 = variation7.getValueAsString("");
-                        if (!TextUtils.isEmpty(valueAsString3) && valueAsString3.contains(Build.MODEL)) {
+                        if (!StringUtils.isEmpty(valueAsString3) && valueAsString3.contains(Build.MODEL)) {
                             n = false;
                             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "initLiveRoomInitSurfaceViewParamFromAB deviceModelBlackList set to false because deviceModelBlackList=" + valueAsString3 + ", deviceModel=" + Build.MODEL);
                         }
@@ -226,10 +226,10 @@ public class e {
         if (Build.VERSION.SDK_INT < this.k) {
             this.j += 40;
             return false;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.j += 10;
             return false;
-        } else if (TextUtils.isEmpty(this.i)) {
+        } else if (StringUtils.isEmpty(this.i)) {
             this.j += 20;
             return false;
         } else {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.component.module.h;
 import com.taobao.android.detail.ttdetail.component.module.n;
@@ -24,7 +24,7 @@ public class eys implements n {
             return;
         }
         h a2 = eyq.f(this.f27661a).a(eyq.c(this.f27661a).getCurrentItem());
-        if (a2 == null || !TextUtils.equals(str, ((ezc) a2.getComponentData()).b())) {
+        if (a2 == null || !StringUtils.equals(str, ((ezc) a2.getComponentData()).b())) {
             return;
         }
         eyq.a(this.f27661a, (i3 * 1.0f) / i4, true);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.bundleInfo.DynamicFeatureInfo;
 import com.android.tools.bundleInfo.b;
@@ -168,7 +168,7 @@ public class bhn implements bhp, bhq {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5c510192", new Object[]{this});
-            } else if (!TextUtils.isEmpty(this.e) && this.e.equals(this.f)) {
+            } else if (!StringUtils.isEmpty(this.e) && this.e.equals(this.f)) {
                 this.c.a(this.g);
             } else {
                 bho bhoVar = this.d;

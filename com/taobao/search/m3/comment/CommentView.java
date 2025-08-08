@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -160,7 +160,7 @@ public final class CommentView extends BaseItemView {
         if (this.twoLineMode) {
             this.calculateHeight = 0;
             this.brokeTextLines.clear();
-            if (!TextUtils.isEmpty(aVar.a())) {
+            if (!StringUtils.isEmpty(aVar.a())) {
                 this.numCommentWidth = i.Companion.a(aVar.a(), this.numPaint);
                 float f3 = this.numCommentWidth;
                 int i4 = textMargin;
@@ -218,7 +218,7 @@ public final class CommentView extends BaseItemView {
             setMeasuredDimension(getMeasuredWidth(), this.calculateHeight);
             return;
         }
-        if (!TextUtils.isEmpty(aVar.a())) {
+        if (!StringUtils.isEmpty(aVar.a())) {
             this.numCommentWidth = i.Companion.a(aVar.a(), this.numPaint);
             float f4 = this.numCommentWidth;
             measuredWidth = (measuredWidth - f4) - textMargin;

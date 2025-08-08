@@ -1,7 +1,7 @@
 package com.taobao.taobao.internal;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class PayResultInfo implements Serializable {
             this.extendInfoStr = intent.getStringExtra(MspGlobalDefine.EXTENDINFO);
             this.renderTime = intent.getStringExtra("renderTime");
             this.alipayResult = "{\"result\":\"" + this.resultString + "\",\"memo\":\"" + this.memo + "\",\"ResultStatus\":\"" + this.resultStatus + "\"" + riy.BLOCK_END_STR;
-            if (!TextUtils.isEmpty(this.resultString)) {
+            if (!StringUtils.isEmpty(this.resultString)) {
                 try {
                     this.result = (Result) JSON.parseObject(this.resultString, Result.class);
                 } catch (Exception e) {
@@ -79,11 +79,11 @@ public class PayResultInfo implements Serializable {
                     String str = "Result parse error!=" + e.getMessage();
                 }
             }
-            if (this.result == null && !TextUtils.isEmpty(this.resultString) && this.resultString.contains(SIGN_AGREEMENT_SWITCH)) {
+            if (this.result == null && !StringUtils.isEmpty(this.resultString) && this.resultString.contains(SIGN_AGREEMENT_SWITCH)) {
                 this.alipaySignResp = "";
                 for (String str2 : this.resultString.split("&")) {
-                    if (!TextUtils.isEmpty(str2) && (str2.contains(SIGN_AGREEMENT_SWITCH) || str2.contains(SIGN_AGREEMENT_NO))) {
-                        if (TextUtils.isEmpty(this.alipaySignResp)) {
+                    if (!StringUtils.isEmpty(str2) && (str2.contains(SIGN_AGREEMENT_SWITCH) || str2.contains(SIGN_AGREEMENT_NO))) {
+                        if (StringUtils.isEmpty(this.alipaySignResp)) {
                             this.alipaySignResp = str2;
                         } else {
                             this.alipaySignResp += "&" + str2;
@@ -95,10 +95,10 @@ public class PayResultInfo implements Serializable {
                 return;
             }
             String string = intent.getExtras().getString(MspGlobalDefine.EXTENDINFO);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.extendInfo = (ExtendInfo) JSON.parseObject(string, ExtendInfo.class);
             }
-            if (this.extendInfo == null || TextUtils.isEmpty(this.extendInfo.sharepayData)) {
+            if (this.extendInfo == null || StringUtils.isEmpty(this.extendInfo.sharepayData)) {
                 return;
             }
             this.sharePayData = (SharePayData) JSON.parseObject(this.extendInfo.sharepayData, SharePayData.class);
@@ -120,7 +120,7 @@ public class PayResultInfo implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d66e3f57", new Object[]{this})).booleanValue();
         }
-        if (this.result != null && (extendInfo = this.extendInfo) != null && extendInfo.payerUserId != null && 0 != this.extendInfo.payerUserId.longValue() && (sharePayData = this.sharePayData) != null && !TextUtils.isEmpty(sharePayData.payurl)) {
+        if (this.result != null && (extendInfo = this.extendInfo) != null && extendInfo.payerUserId != null && 0 != this.extendInfo.payerUserId.longValue() && (sharePayData = this.sharePayData) != null && !StringUtils.isEmpty(sharePayData.payurl)) {
             return SHARE_TYPE.equals(this.result.biz_type);
         }
         return false;
@@ -132,7 +132,7 @@ public class PayResultInfo implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5b279778", new Object[]{this})).booleanValue();
         }
-        if (this.result != null && this.extendInfo != null && (sharePayData = this.sharePayData) != null && !TextUtils.isEmpty(sharePayData.payurl)) {
+        if (this.result != null && this.extendInfo != null && (sharePayData = this.sharePayData) != null && !StringUtils.isEmpty(sharePayData.payurl)) {
             return SHARE_TYPE.equals(this.result.biz_type);
         }
         return false;

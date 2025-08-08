@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Typeface;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.StyleSpan;
 import com.alibaba.fastjson.JSON;
@@ -78,7 +78,7 @@ public class lgd extends af {
         if (ipChange instanceof IpChange) {
             return (SpannableString) ipChange.ipc$dispatch("eabbd830", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return null;
         }
         JSONObject parseObject = JSON.parseObject(this.b);

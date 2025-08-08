@@ -1,6 +1,6 @@
 package com.taobao.live.home.dinamic.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.dkx;
@@ -29,11 +29,11 @@ public class d extends dlg {
         String string = c.getString("type");
         String string2 = c.getString("identifier");
         String string3 = c.getString("time");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || !TextUtils.isDigitsOnly(string3)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || !StringUtils.isDigitsOnly(string3)) {
             return new dky();
         }
         try {
-            if ("start".equals(string) && !TextUtils.isEmpty(string3) && TextUtils.isDigitsOnly(string3)) {
+            if ("start".equals(string) && !StringUtils.isEmpty(string3) && StringUtils.isDigitsOnly(string3)) {
                 long parseInt = Integer.parseInt(string3) * 1000;
                 h.a().a(string2, parseInt, parseInt, dllVar);
             } else if ("end".equals(string)) {

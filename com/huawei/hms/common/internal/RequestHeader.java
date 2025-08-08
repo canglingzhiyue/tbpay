@@ -1,7 +1,7 @@
 package com.huawei.hms.common.internal;
 
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.adapter.internal.CommonCode;
 import com.huawei.hms.core.aidl.IMessageEntity;
 import com.huawei.hms.core.aidl.annotation.Packed;
@@ -57,7 +57,7 @@ public class RequestHeader implements IMessageEntity {
     }
 
     public String getActualAppID() {
-        if (TextUtils.isEmpty(this.app_id)) {
+        if (StringUtils.isEmpty(this.app_id)) {
             return "";
         }
         String[] split = this.app_id.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
@@ -163,7 +163,7 @@ public class RequestHeader implements IMessageEntity {
             jSONObject.put("sdk_version", this.sdk_version);
             jSONObject.put("kitSdkVersion", this.kitSdkVersion);
             jSONObject.put("apiLevel", this.apiLevel);
-            if (!TextUtils.isEmpty(this.session_id)) {
+            if (!StringUtils.isEmpty(this.session_id)) {
                 jSONObject.put("session_id", this.session_id);
             }
             jSONObject.put(CommonCode.MapKey.TRANSACTION_ID, this.transaction_id);

@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.video;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,6 +169,6 @@ public class c extends Dialog implements View.OnClickListener {
 
     public static boolean a(DWInstance dWInstance) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a1f0cecd", new Object[]{dWInstance})).booleanValue() : (dWInstance == null || dWInstance.getVideoState() == 0 || dWInstance.getVideoState() == 3 || TextUtils.equals("false", epj.h().a("android_detail", "enable_orientation", "true"))) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a1f0cecd", new Object[]{dWInstance})).booleanValue() : (dWInstance == null || dWInstance.getVideoState() == 0 || dWInstance.getVideoState() == 3 || StringUtils.equals("false", epj.h().a("android_detail", "enable_orientation", "true"))) ? false : true;
     }
 }

@@ -1,6 +1,6 @@
 package com.taobao.pha.core.rescache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.security.MessageDigest;
@@ -83,7 +83,7 @@ public class Package {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("b3eb9614", new Object[]{this});
             }
-            if (TextUtils.isEmpty(this.key) && !TextUtils.isEmpty(this.path)) {
+            if (StringUtils.isEmpty(this.key) && !StringUtils.isEmpty(this.path)) {
                 this.key = Package.a(this.path);
             }
             return this.key;

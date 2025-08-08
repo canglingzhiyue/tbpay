@@ -2,7 +2,7 @@ package com.etao.feimagesearch.result;
 
 import android.graphics.Bitmap;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.e;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class d {
         this.c = rectF;
         this.h = z;
         this.b = i;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f6974a = str;
         }
     }

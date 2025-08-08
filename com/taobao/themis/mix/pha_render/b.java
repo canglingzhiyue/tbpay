@@ -1,7 +1,7 @@
 package com.taobao.themis.mix.pha_render;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.i;
@@ -88,7 +88,7 @@ public final class b implements i {
         jSONObject2.put((JSONObject) "miniapp_id", this.b.b().h());
         TMSMetaInfoWrapper v = this.b.b().v();
         String i = v != null ? v.i() : null;
-        if (!TextUtils.isEmpty(i) && (instance = Mtop.instance(i, this.f22587a)) != null && (b = h.b(instance, null)) != null) {
+        if (!StringUtils.isEmpty(i) && (instance = Mtop.instance(i, this.f22587a)) != null && (b = h.b(instance, null)) != null) {
             jSONObject2.put((JSONObject) "miniapp_uid", b.b);
         }
         return jSONObject;

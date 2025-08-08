@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.k;
 import com.alibaba.android.split.manager.a;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,7 +36,7 @@ public class bgm implements bgo<Fragment> {
             return (Fragment) ipChange.ipc$dispatch("13a755ca", new Object[]{this});
         }
         try {
-            if (this.f25875a.b() != null && this.f25875a.b().get() != null && !TextUtils.isEmpty(this.f25875a.d())) {
+            if (this.f25875a.b() != null && this.f25875a.b().get() != null && !StringUtils.isEmpty(this.f25875a.d())) {
                 ((a) k.a()).c().a(this.f25875a.b().get(), this.f25875a.d());
             }
             if (this.f25875a.b() != null && this.f25875a.b().get() != null) {

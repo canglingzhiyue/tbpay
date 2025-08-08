@@ -1,6 +1,6 @@
 package com.taobao.themis.container.splash;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -74,10 +74,10 @@ public final class TinyAppSplashView$onLaunchError$1 extends Lambda implements r
         ErrorInfo errorInfo = new ErrorInfo();
         errorInfo.c = this.$error.d;
         errorInfo.d = this.$error.e;
-        if (!TextUtils.isEmpty(this.$error.j)) {
+        if (!StringUtils.isEmpty(this.$error.j)) {
             errorInfo.f22390a = this.$error.j;
         }
-        if (!TextUtils.isEmpty(this.$error.k)) {
+        if (!StringUtils.isEmpty(this.$error.k)) {
             errorInfo.b = this.$error.k;
         }
         t tVar = t.INSTANCE;

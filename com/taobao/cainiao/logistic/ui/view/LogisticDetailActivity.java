@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -97,7 +97,7 @@ public class LogisticDetailActivity extends FragmentActivity {
         }
         setContentView(R.layout.activity_cn_logistic);
         String d = g.d(getIntent());
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             this.b = hyk.L();
             String trim = d.trim();
             this.b += trim;
@@ -106,13 +106,13 @@ public class LogisticDetailActivity extends FragmentActivity {
             String b = g.b(getIntent(), "mailNo");
             String b2 = g.b(getIntent(), CoreConstants.IN_PARAMS_ORDER_CODE);
             this.b = hyk.M();
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 this.b += "%26mailNo%3D" + b.trim();
             }
-            if (!TextUtils.isEmpty(b2)) {
+            if (!StringUtils.isEmpty(b2)) {
                 this.b += "%26orderCode%3D" + b2.trim();
             }
-            hyq.a("LogisticDetailActivity", (TextUtils.isEmpty(b) || TextUtils.isEmpty(b2)) ? "CNLD_DEFGRADE_2_MAILNO" : "CNLD_EMPTY_ORDERID", "intent=" + a());
+            hyq.a("LogisticDetailActivity", (StringUtils.isEmpty(b) || StringUtils.isEmpty(b2)) ? "CNLD_DEFGRADE_2_MAILNO" : "CNLD_EMPTY_ORDERID", "intent=" + a());
             Nav.from(this).toUri(this.b);
             finish();
         }
@@ -193,7 +193,7 @@ public class LogisticDetailActivity extends FragmentActivity {
                     JSONObject parseObject = JSON.parseObject(new String(mtopResponse.getBytedata()));
                     if (parseObject.getJSONObject("data") != null) {
                         String string = parseObject.getJSONObject("data").getString("result");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             Nav.from(LogisticDetailActivity.this).toUri(string);
                             String str2 = "CN_DEGRADE_2_NATIVE";
                             String str3 = string.contains("order_detail.htm") ? str2 : "CN_DEGRADE_2_MINIAPP";

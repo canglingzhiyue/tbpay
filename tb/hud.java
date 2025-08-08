@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -259,9 +259,9 @@ public class hud {
         }
         if (pmd.a().d() != null) {
             String a2 = pmd.a().d().a("tblive", "needShowWindowBiz", "search;huichang;juhuasuan");
-            if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(str) && (split = a2.split(";")) != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(str) && (split = a2.split(";")) != null && split.length > 0 && !StringUtils.isEmpty(str)) {
                 for (String str2 : split) {
-                    if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                    if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                         return true;
                     }
                 }
@@ -290,7 +290,7 @@ public class hud {
             return true;
         }
         String valueAsString = variation.getValueAsString("true");
-        if (TextUtils.isEmpty(valueAsString)) {
+        if (StringUtils.isEmpty(valueAsString)) {
             return true;
         }
         return Boolean.valueOf(valueAsString).booleanValue();
@@ -306,7 +306,7 @@ public class hud {
             return true;
         }
         String valueAsString = variation.getValueAsString("true");
-        if (TextUtils.isEmpty(valueAsString)) {
+        if (StringUtils.isEmpty(valueAsString)) {
             return true;
         }
         return Boolean.valueOf(valueAsString).booleanValue();
@@ -319,7 +319,7 @@ public class hud {
         }
         String tacticsPerformance = Downgrade.getInstance().getDowngradeStrategy("taolive").getTacticsPerformance();
         hue.a("TLiveConfig", "downgradeConfig " + tacticsPerformance);
-        return TextUtils.equals(tacticsPerformance, "degrade");
+        return StringUtils.equals(tacticsPerformance, "degrade");
     }
 
     public static boolean r() {
@@ -373,7 +373,7 @@ public class hud {
         }
         if (pmd.a().d() != null) {
             String a2 = pmd.a().d().a("tblive", "blockMiniLivePageList", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return a2.contains(str);
             }
         }
@@ -445,7 +445,7 @@ public class hud {
             c = new HashSet<>();
             if (pmd.a().d() != null) {
                 String a2 = pmd.a().d().a("tblive", "getTopActivityBlacks", "com.taobao.message.ui.biz.redpackage.activity.WeexAlphaBgActivity");
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     c.addAll(Arrays.asList(a2.split(";")));
                 }
             }

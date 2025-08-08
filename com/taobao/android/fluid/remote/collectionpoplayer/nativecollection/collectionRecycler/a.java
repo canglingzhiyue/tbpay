@@ -2,7 +2,7 @@ package com.taobao.android.fluid.remote.collectionpoplayer.nativecollection.coll
 
 import android.graphics.Outline;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -261,12 +261,12 @@ public class a extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         String str = bVar.i;
         int b2 = ohd.b(view$OnClickListenerC0498a.g.getContext(), bVar.j);
         int b3 = ohd.b(view$OnClickListenerC0498a.g.getContext(), bVar.k);
-        if ((TextUtils.isEmpty(str) || b2 <= 0 || b3 <= 0) && !bVar.g()) {
+        if ((StringUtils.isEmpty(str) || b2 <= 0 || b3 <= 0) && !bVar.g()) {
             str = bVar.h() ? LOCK_URL : UNLOCK_URL;
             b2 = ohd.b(view$OnClickListenerC0498a.g.getContext(), 40);
             b3 = ohd.b(view$OnClickListenerC0498a.g.getContext(), 16);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             TUrlImageView tUrlImageView = new TUrlImageView(view$OnClickListenerC0498a.g.getContext());
             tUrlImageView.setTag("customFreeImageView");
             tUrlImageView.setImageUrl(str);

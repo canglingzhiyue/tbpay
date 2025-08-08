@@ -3,7 +3,7 @@ package com.taobao.avplayer.playercontrol;
 import android.app.Activity;
 import android.os.Handler;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -153,7 +153,7 @@ public class b implements aw {
         layoutParams.gravity = 80;
         this.i.addView(this.g, 0, layoutParams);
         this.h = new TextView(this.f16563a.getActivity());
-        this.h.setEllipsize(TextUtils.TruncateAt.END);
+        this.h.setEllipsize(StringUtils.TruncateAt.END);
         this.h.setMaxLines(1);
         this.h.setTextSize(2, 12.0f);
         this.h.setTextColor(-1);

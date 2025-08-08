@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.AnrUncaughtListener;
 import com.taobao.android.tcrash.JvmUncaughtCrashListener;
@@ -39,7 +39,7 @@ public class jes implements AnrUncaughtListener, JvmUncaughtCrashListener {
         try {
             HashMap hashMap = new HashMap();
             String a2 = jgv.a(this.f29509a, "build_id");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 hashMap.put("bid", a2);
             }
             return hashMap;

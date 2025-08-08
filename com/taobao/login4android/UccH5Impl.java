@@ -2,7 +2,7 @@ package com.taobao.login4android;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.ali.user.mobile.base.helper.BroadCastHelper;
@@ -69,10 +69,10 @@ public class UccH5Impl implements IUccInterface {
                         commonDataCallback2.onSuccess(map);
                     } else if (map != null) {
                         String str3 = (String) map.get(UccConstants.PARAM_LOGIN_DATA);
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             HashMap hashMap = new HashMap();
                             Log.e(LoginThreadHelper.TAG, "loginType=" + urlParam.loginType);
-                            if (!TextUtils.isEmpty(urlParam.loginType)) {
+                            if (!StringUtils.isEmpty(urlParam.loginType)) {
                                 hashMap.put(LoginConstants.LOGIN_TYPE, urlParam.loginType);
                             }
                             LoginDataHelper.processLoginReturnData(true, (LoginReturnData) JSON.parseObject(str3, LoginReturnData.class), hashMap);

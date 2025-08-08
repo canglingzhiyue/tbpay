@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.common;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.libcore.io.ExternalStorageFile;
 import com.huawei.libcore.io.ExternalStorageFileInputStream;
 import com.huawei.libcore.io.ExternalStorageFileOutputStream;
@@ -29,7 +29,7 @@ public class CreateFileUtil {
     }
 
     public static void deleteSecure(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             deleteSecure(newFile(str));
         }
     }

@@ -1,6 +1,6 @@
 package com.taobao.tao.handler.worker;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.taopassword.constants.TPTargetType;
 import com.taobao.tao.util.AnalyticsUtil;
@@ -33,10 +33,10 @@ public class f extends oir {
         if (bVar == null) {
             return;
         }
-        boolean equals = TextUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b());
-        if (TextUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) || equals) {
+        boolean equals = StringUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b());
+        if (StringUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) || equals) {
             String a2 = obc.a(equals ? TPTargetType.QQFRIEND : TPTargetType.WEIXIN);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 obc.d(this.f32104a.b.b.getContext(), a2);
             }
             AnalyticsUtil.wxAndQQOnClick(bVar);

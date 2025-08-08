@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.module;
 
 import android.animation.AnimatorSet;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -133,6 +133,6 @@ public class AnimationModule {
 
     private static boolean isLottieType(Map map) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6c37caff", new Object[]{map})).booleanValue() : TextUtils.equals(oec.a(map.get("type"), (String) null), "lottie");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6c37caff", new Object[]{map})).booleanValue() : StringUtils.equals(oec.a(map.get("type"), (String) null), "lottie");
     }
 }

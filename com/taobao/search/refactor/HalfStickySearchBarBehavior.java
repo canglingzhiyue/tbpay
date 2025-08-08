@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -77,7 +77,7 @@ public class HalfStickySearchBarBehavior extends com.taobao.android.searchbasefr
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ab8b3996", new Object[]{this, new Float(f)});
-        } else if (!TextUtils.equals(FestivalMgr.a().d("global", nom.KEY_NAVI_STYLE), "0") || Build.VERSION.SDK_INT < 23) {
+        } else if (!StringUtils.equals(FestivalMgr.a().d("global", nom.KEY_NAVI_STYLE), "0") || Build.VERSION.SDK_INT < 23) {
         } else {
             View decorView = ((Activity) d().getContext()).getWindow().getDecorView();
             int systemUiVisibility = decorView.getSystemUiVisibility();

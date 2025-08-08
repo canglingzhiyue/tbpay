@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.FrameLayout;
@@ -221,7 +221,7 @@ public class fau extends b<fbj> {
     /* renamed from: c  reason: avoid collision after fix types in other method */
     public boolean c2(fbj fbjVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c53f79f0", new Object[]{this, fbjVar})).booleanValue() : TextUtils.isEmpty(fbjVar.f27747a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c53f79f0", new Object[]{this, fbjVar})).booleanValue() : StringUtils.isEmpty(fbjVar.f27747a);
     }
 
     public boolean d(fbj fbjVar) {
@@ -340,7 +340,7 @@ public class fau extends b<fbj> {
         }
         this.q.setAlpha(1.0f);
         this.q.setBackgroundColor(-1);
-        if (!TextUtils.isEmpty(this.z.f27747a)) {
+        if (!StringUtils.isEmpty(this.z.f27747a)) {
             this.q.setLayoutParams(new FrameLayout.LayoutParams(-1, this.v));
         }
         this.q.setVesselViewCallback(new rgw() { // from class: tb.fau.1
@@ -613,7 +613,7 @@ public class fau extends b<fbj> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         StringBuilder sb = new StringBuilder(str);
@@ -639,18 +639,18 @@ public class fau extends b<fbj> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(this.s)) {
+        } else if (StringUtils.isEmpty(this.s)) {
         } else {
             UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder(str);
             uTCustomHitBuilder.setEventPage("Page_Detail");
             uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_EVENT_ID, "2101");
             String str2 = this.y;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "";
             }
             uTCustomHitBuilder.setProperty("item_id", str2);
             String str3 = this.x;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = "";
             }
             uTCustomHitBuilder.setProperty("seller_id", str3);

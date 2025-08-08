@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.fulltrace.AnalysisFactory;
@@ -227,7 +227,7 @@ public class NetworkProxy implements Network {
         } else {
             request.setExtProperty(RequestConstant.KEY_REQ_START, String.valueOf(System.currentTimeMillis()));
             String extProperty = request.getExtProperty(RequestConstant.KEY_TRACE_ID);
-            if (TextUtils.isEmpty(extProperty)) {
+            if (StringUtils.isEmpty(extProperty)) {
                 extProperty = AnalysisFactory.getInstance().createRequest();
             }
             request.setExtProperty(RequestConstant.KEY_TRACE_ID, extProperty);

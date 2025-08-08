@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.model.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -664,7 +664,7 @@ public class VideoInfo implements INetDataObject {
     public boolean isOfficialLive() {
         OfficialLiveInfo officialLiveInfo;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("982b80cc", new Object[]{this})).booleanValue() : u.aP() && (officialLiveInfo = this.officialLiveInfo) != null && !TextUtils.isEmpty(officialLiveInfo.officialLive) && "1".equals(this.roomStatus);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("982b80cc", new Object[]{this})).booleanValue() : u.aP() && (officialLiveInfo = this.officialLiveInfo) != null && !StringUtils.isEmpty(officialLiveInfo.officialLive) && "1".equals(this.roomStatus);
     }
 
     public boolean isOfficialType() {
@@ -675,6 +675,6 @@ public class VideoInfo implements INetDataObject {
     public boolean enableProjectScreen() {
         ProjectScreenInfo projectScreenInfo;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e3477bad", new Object[]{this})).booleanValue() : u.aR() && "1".equals(this.roomStatus) && (projectScreenInfo = this.projectScreenInfo) != null && "true".equals(projectScreenInfo.enableProjectScreen) && (!TextUtils.isEmpty(this.projectScreenInfo.projectScreenPlayUrl) || !TextUtils.isEmpty(this.projectScreenInfo.projectScreenPlayUrlBackup));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e3477bad", new Object[]{this})).booleanValue() : u.aR() && "1".equals(this.roomStatus) && (projectScreenInfo = this.projectScreenInfo) != null && "true".equals(projectScreenInfo.enableProjectScreen) && (!StringUtils.isEmpty(this.projectScreenInfo.projectScreenPlayUrl) || !StringUtils.isEmpty(this.projectScreenInfo.projectScreenPlayUrlBackup));
     }
 }

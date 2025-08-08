@@ -1,6 +1,6 @@
 package com.alibaba.android.aura;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.android.aura.nodemodel.workflow.AURAExecuteNodeModel;
 import com.alibaba.android.umf.constants.UMFConstants;
@@ -62,7 +62,7 @@ public class m {
 
     public final n a(AURAExecuteNodeModel aURAExecuteNodeModel, d dVar, aqs aqsVar) {
         String str = aURAExecuteNodeModel.code;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             aqsVar.a(new b(0, "AURACoreDomain", UMFConstants.ErrorCode.SERVICE_NOT_FOUND, "创建服务失败(serviceCode为空)"));
             return null;
         }

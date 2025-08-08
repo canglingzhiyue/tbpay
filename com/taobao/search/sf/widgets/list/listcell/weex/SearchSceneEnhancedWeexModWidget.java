@@ -3,7 +3,7 @@ package com.taobao.search.sf.widgets.list.listcell.weex;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -257,7 +257,7 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
         } else {
             String string = b.getString("width");
             String string2 = b.getString("height");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             int b2 = g.b(string, -1);
@@ -265,12 +265,12 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
             if (b2 <= 0 || b3 <= 0) {
                 return;
             }
-            this.f = TextUtils.equals(b.getString("isGiraffe"), nom.VALUE_YES);
+            this.f = StringUtils.equals(b.getString("isGiraffe"), nom.VALUE_YES);
             this.i = b.getString("showType");
             this.k = b.getString("enterAnimation");
             this.p = g.b(b.getString("collapseSecond"), -1);
             this.q = g.b(b.getString("repeatCollapseSecond"), -1);
-            this.s = TextUtils.equals(nom.VALUE_YES, b.getString("enableGuide"));
+            this.s = StringUtils.equals(nom.VALUE_YES, b.getString("enableGuide"));
             this.o = (int) ((b3 / b2) * ntx.a());
             this.b = l.a(48);
             if ((getActivity() instanceof com.taobao.android.searchbaseframe.uikit.a) && ((com.taobao.android.searchbaseframe.uikit.a) getActivity()).aF_()) {
@@ -280,11 +280,11 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
             if (baseSearchResult == null || baseSearchResult.getTabs() == null || baseSearchResult.getTabs().size() <= 1) {
                 z = false;
             }
-            a(TextUtils.equals(b.getString("hideMaskView"), nom.VALUE_YES), z);
+            a(StringUtils.equals(b.getString("hideMaskView"), nom.VALUE_YES), z);
             if (z) {
                 this.b += l.a(48);
             }
-            this.c = l.a(TextUtils.equals(b.getString("enableSlide"), nom.VALUE_YES) ? 54 : 40);
+            this.c = l.a(StringUtils.equals(b.getString("enableSlide"), nom.VALUE_YES) ? 54 : 40);
             v();
             this.d = l.b(this.b);
             this.e = l.b(this.c);
@@ -299,11 +299,11 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
             this.m = Math.min(this.m, this.n);
             this.m = Math.max(this.m, this.o);
             this.h = b.getString(com.taobao.linkmanager.flowout.c.DEGTAGE_H5URL);
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 this.h = y.a(this.h, "offsetbottom", String.valueOf(this.e));
             }
-            this.g = TextUtils.equals(b.getString("disableAutoExpand"), nom.VALUE_YES);
-            this.t = TextUtils.equals(b.getString(nom.KEY_IMMERSE_STYLE), nom.VALUE_YES);
+            this.g = StringUtils.equals(b.getString("disableAutoExpand"), nom.VALUE_YES);
+            this.t = StringUtils.equals(b.getString(nom.KEY_IMMERSE_STYLE), nom.VALUE_YES);
             if (!this.t) {
                 this.w.setVisibility(8);
             }
@@ -327,7 +327,7 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
         }
         String str = this.i;
         this.j = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String str2 = this.i;
@@ -449,7 +449,7 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
         this.f29878a.a((ViewGroup) this.u, (WXSDKInstance) dVar, false);
         if (!this.s) {
             a(this.i, this.p);
-        } else if (TextUtils.equals(this.k, "drop")) {
+        } else if (StringUtils.equals(this.k, "drop")) {
             ((FrameLayout) getView()).postDelayed(new Runnable() { // from class: com.taobao.search.sf.widgets.list.listcell.weex.SearchSceneEnhancedWeexModWidget.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -510,11 +510,11 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
                     layoutParams.gravity = 49;
                     int d2 = (SearchSceneEnhancedWeexModWidget.d(SearchSceneEnhancedWeexModWidget.this) + SearchSceneEnhancedWeexModWidget.this.b) - l.a(41);
-                    if (TextUtils.equals(str, "full")) {
+                    if (StringUtils.equals(str, "full")) {
                         c = SearchSceneEnhancedWeexModWidget.e(SearchSceneEnhancedWeexModWidget.this);
                         d = SearchSceneEnhancedWeexModWidget.d(SearchSceneEnhancedWeexModWidget.this);
                     } else {
-                        if (TextUtils.equals(str, "advance")) {
+                        if (StringUtils.equals(str, "advance")) {
                             c = SearchSceneEnhancedWeexModWidget.c(SearchSceneEnhancedWeexModWidget.this);
                             d = SearchSceneEnhancedWeexModWidget.d(SearchSceneEnhancedWeexModWidget.this);
                         }
@@ -553,7 +553,7 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
         if (this.r) {
             return;
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             a(this.h);
         } else {
             ((FrameLayout) getView()).setVisibility(8);
@@ -701,12 +701,12 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
         int i = this.A;
         String str2 = i == 10002 ? "full" : i == 10003 ? "hidden" : "normal";
         hashMap.put("showType", str2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("triggerSource", str);
         }
         HashMap hashMap2 = new HashMap();
         String str3 = getModel().d().getTotalSearchResult() != 0 ? ((BaseSearchResult) getModel().d().getTotalSearchResult()).getMainInfo().rn : "";
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap2.put(aw.PARAM_SEARCH_KEYWORD_RN, str3);
         }
         hashMap.put("trace", hashMap2);
@@ -715,10 +715,10 @@ public class SearchSceneEnhancedWeexModWidget extends e implements iom {
         }
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("showType", str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             arrayMap.put(aw.PARAM_SEARCH_KEYWORD_RN, str3);
         }
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             arrayMap.put("defaultShowType", this.i);
         }
         arrayMap.put("q", getModel().c().getKeyword());

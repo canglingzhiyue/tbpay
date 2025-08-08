@@ -1,6 +1,6 @@
 package com.taobao.android.diagnose.scene.engine.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.func.ToolConfigManager;
 import tb.fmx;
@@ -30,7 +30,7 @@ public class c extends b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a4c0f245", new Object[]{this, fmxVar, fmyVar});
-        } else if (TextUtils.isEmpty(this.c)) {
+        } else if (StringUtils.isEmpty(this.c)) {
         } else {
             ToolConfigManager.a(fmyVar.a(), fmyVar.b(), this.c);
         }

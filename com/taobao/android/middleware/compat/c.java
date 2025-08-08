@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.info.AppInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
@@ -180,7 +180,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("551fcde7", new Object[]{str, str2, new Long(j)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             TBSdkLog.e("mtopsdk.SimpleSessionManager", "storeUserInfo, uid=" + str + ", sid=" + str2);
             SharedPreferences.Editor edit = c.edit();
@@ -216,14 +216,14 @@ public class c {
 
     public static boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[0])).booleanValue() : !TextUtils.isEmpty(f14315a) && !TextUtils.isEmpty(b) && (g < 0 || System.currentTimeMillis() / 1000 < g);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[0])).booleanValue() : !StringUtils.isEmpty(f14315a) && !StringUtils.isEmpty(b) && (g < 0 || System.currentTimeMillis() / 1000 < g);
     }
 
     public static void a(String str, String str2, long j) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4dba98c8", new Object[]{str, str2, new Long(j)});
-        } else if (TextUtils.equals(f14315a, str) && TextUtils.equals(b, str2) && g == j) {
+        } else if (StringUtils.equals(f14315a, str) && StringUtils.equals(b, str2) && g == j) {
         } else {
             f14315a = str;
             b = str2;

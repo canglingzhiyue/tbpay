@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,7 +20,7 @@ public class czf {
         czh czhVar = this.f26612a;
         if (czhVar != null) {
             String b = czhVar.b();
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 try {
                     JSONObject jSONObject = new JSONObject(b);
                     if (this.f26612a.c().a() != jSONObject.optInt("version", -1)) {
@@ -37,7 +37,7 @@ public class czf {
 
     public boolean a(String str) {
         if (this.f26612a != null) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.f26612a.a();
                 return true;
             }

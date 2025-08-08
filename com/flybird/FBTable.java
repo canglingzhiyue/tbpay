@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -449,7 +449,7 @@ public class FBTable extends FBView implements FBListView.FBListViewDragListener
                             JSONObject optJSONObject = jSONObject.optJSONObject("header");
                             if (optJSONObject != null && optJSONObject.length() > 0) {
                                 String optString = optJSONObject.optString("tpl");
-                                if (TextUtils.isEmpty(optString)) {
+                                if (StringUtils.isEmpty(optString)) {
                                     optString = optJSONObject.optString("tplId");
                                 }
                                 FBDocument a2 = fBTable.a(optString, optJSONObject.optString("data"));
@@ -465,7 +465,7 @@ public class FBTable extends FBView implements FBListView.FBListViewDragListener
                             JSONObject optJSONObject2 = jSONObject.optJSONObject("footer");
                             if (optJSONObject2 != null && optJSONObject2.length() > 0) {
                                 String optString2 = optJSONObject2.optString("tpl");
-                                if (TextUtils.isEmpty(optString2)) {
+                                if (StringUtils.isEmpty(optString2)) {
                                     optString2 = optJSONObject2.optString("tplId");
                                 }
                                 FBDocument a3 = fBTable.a(optString2, optJSONObject2.optString("data"));
@@ -540,7 +540,7 @@ public class FBTable extends FBView implements FBListView.FBListViewDragListener
                                         String optString3 = jSONObject2.optString("data");
                                         if (view == null) {
                                             String optString4 = jSONObject2.optString("tpl");
-                                            if (TextUtils.isEmpty(optString4)) {
+                                            if (StringUtils.isEmpty(optString4)) {
                                                 optString4 = jSONObject2.optString("tplId");
                                             }
                                             FBDocument a4 = FBTable.this.a(optString4, optString3);
@@ -656,7 +656,7 @@ public class FBTable extends FBView implements FBListView.FBListViewDragListener
                                         return;
                                     }
                                     Item item2 = FBTable.this.H.get(headerViewsCount);
-                                    boolean z = !TextUtils.isEmpty(FBTable.this.J);
+                                    boolean z = !StringUtils.isEmpty(FBTable.this.J);
                                     try {
                                         j2 = Long.decode(FBTable.this.J).longValue();
                                     } catch (NumberFormatException unused) {
@@ -712,9 +712,9 @@ public class FBTable extends FBView implements FBListView.FBListViewDragListener
             }
             str3 = null;
         }
-        TextUtils.isEmpty(str3);
-        if (!TextUtils.isEmpty(str3)) {
-            if (TextUtils.isEmpty(str2)) {
+        StringUtils.isEmpty(str3);
+        if (!StringUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "{}";
             }
             if (this.mDoc != null && this.mDoc.param != null) {

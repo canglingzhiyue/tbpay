@@ -1,6 +1,6 @@
 package mtopsdk.network.domain;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -106,7 +106,7 @@ public final class Request {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.c.put(str, str2);
         }
@@ -139,7 +139,7 @@ public final class Request {
         sb.append(", retryTimes=");
         sb.append(this.j);
         sb.append(", bizId=");
-        sb.append(!TextUtils.isEmpty(this.l) ? this.l : String.valueOf(this.k));
+        sb.append(!StringUtils.isEmpty(this.l) ? this.l : String.valueOf(this.k));
         sb.append(", bizTopic=");
         sb.append(this.B);
         sb.append(", pTraceId=");

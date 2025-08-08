@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class ljf {
             ipChange.ipc$dispatch("d0fa073", new Object[]{map, jSONObject});
         } else if (jSONObject != null) {
             String string = jSONObject.getString("nextPageUtBlackListKeys");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             for (String str : string.split(",")) {

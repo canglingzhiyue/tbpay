@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -178,7 +178,7 @@ public class lgu implements b {
         if (findItemViewByPosition == null) {
             ldf.d("ContainerInvokerImpl", "cardView is null");
             return null;
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             return findItemViewByPosition;
         } else {
             DXRootView a2 = a(findItemViewByPosition);

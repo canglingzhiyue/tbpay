@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.g;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.StringUtils;
 import com.huawei.hms.framework.network.grs.GrsBaseInfo;
@@ -28,14 +28,14 @@ public class b {
         Logger.i("GeoipCountry", "geoIpCountry is: " + str2);
         String a2 = this.c.a().a("geoipCountryCodetime", "0");
         long j = 0;
-        if (!TextUtils.isEmpty(a2) && a2.matches("\\d+")) {
+        if (!StringUtils.isEmpty(a2) && a2.matches("\\d+")) {
             try {
                 j = Long.parseLong(a2);
             } catch (NumberFormatException e) {
                 Logger.w("GeoipCountry", "convert urlParamKey from String to Long catch NumberFormatException.", e);
             }
         }
-        if (TextUtils.isEmpty(str2) || com.huawei.hms.framework.network.grs.h.e.a(Long.valueOf(j))) {
+        if (StringUtils.isEmpty(str2) || com.huawei.hms.framework.network.grs.h.e.a(Long.valueOf(j))) {
             com.huawei.hms.framework.network.grs.g.k.c cVar = new com.huawei.hms.framework.network.grs.g.k.c(this.b, this.f7425a);
             cVar.a("geoip.countrycode");
             com.huawei.hms.framework.network.grs.e.c c = this.c.c();
@@ -46,7 +46,7 @@ public class b {
                     Logger.w("GeoipCountry", "getGeoipCountry merge services occure jsonException. %s", StringUtils.anonymizeMessage(e2.getMessage()));
                     str = null;
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     c.b(ServiceNode.TAG, str);
                 }
             }

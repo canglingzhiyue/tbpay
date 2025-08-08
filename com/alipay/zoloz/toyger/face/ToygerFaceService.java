@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.ui.view.ALBiometricsActivityParentView;
 import com.alipay.zoloz.image.ToygerImageUtil;
 import com.alipay.zoloz.toyger.HandlerThreadPool;
@@ -1107,7 +1107,7 @@ public class ToygerFaceService extends ToygerBaseService<ToygerFaceCallback, Toy
             String str2 = (String) map.get(ToygerBaseService.KEY_PUBLIC_KEY);
             String str3 = (String) map.get(ToygerBaseService.KEY_UPLOAD_CONFIG);
             String str4 = (String) map.get(ToygerBaseService.KEY_IS_MIRROR);
-            if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
                 ToygerLog.e("TOYGER_FLOW_ANDROID", "ToygerFaceService.config() Invalid key or upload config!");
                 return false;
             }

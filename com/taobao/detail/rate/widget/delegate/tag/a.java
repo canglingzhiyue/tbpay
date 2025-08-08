@@ -3,7 +3,7 @@ package com.taobao.detail.rate.widget.delegate.tag;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -378,8 +378,8 @@ public class a extends kqb {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("19a074ce", new Object[]{this, list, new Integer(i)})).booleanValue();
         }
-        if (list != null && i < list.size() && (associationTagItem = list.get(i)) != null && !TextUtils.isEmpty(associationTagItem.status)) {
-            return TextUtils.equals(associationTagItem.status, "-1");
+        if (list != null && i < list.size() && (associationTagItem = list.get(i)) != null && !StringUtils.isEmpty(associationTagItem.status)) {
+            return StringUtils.equals(associationTagItem.status, "-1");
         }
         return false;
     }
@@ -479,11 +479,11 @@ public class a extends kqb {
                     String string2 = jSONObject.getString("fuzzyCount");
                     String string3 = jSONObject.getString("status");
                     String a2 = a(jSONObject);
-                    if (TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string2)) {
                         string2 = jSONObject.getString("count");
                     }
                     String str = string2;
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         arrayList.add(new AssociationTagItem(string, str, string3, a2, jSONObject));
                     }
                 }
@@ -503,19 +503,19 @@ public class a extends kqb {
             return "-8";
         }
         String string2 = jSONObject2.getString("labelType");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "tab";
         }
-        if (TextUtils.equals(string2, "tab")) {
+        if (StringUtils.equals(string2, "tab")) {
             string = jSONObject2.getString("rateType");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return "-8";
             }
-        } else if (!TextUtils.equals(string2, "impr")) {
+        } else if (!StringUtils.equals(string2, "impr")) {
             return "-8";
         } else {
             string = jSONObject.getString("labelId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return "-8";
             }
         }
@@ -527,10 +527,10 @@ public class a extends kqb {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3c6e0ed6", new Object[]{this, list, str})).intValue();
         }
-        if (list.size() > 0 && !TextUtils.isEmpty(str)) {
+        if (list.size() > 0 && !StringUtils.isEmpty(str)) {
             for (int i = 0; i < list.size(); i++) {
                 AssociationTagItem associationTagItem = list.get(i);
-                if (associationTagItem != null && TextUtils.equals(associationTagItem.title, str)) {
+                if (associationTagItem != null && StringUtils.equals(associationTagItem.title, str)) {
                     return i;
                 }
             }
@@ -547,7 +547,7 @@ public class a extends kqb {
             for (int i = 0; i < list.size(); i++) {
                 AssociationTagItem associationTagItem = list.get(i);
                 String a2 = a(jSONObject);
-                if (associationTagItem != null && TextUtils.equals(associationTagItem.id, a2)) {
+                if (associationTagItem != null && StringUtils.equals(associationTagItem.id, a2)) {
                     return i;
                 }
             }

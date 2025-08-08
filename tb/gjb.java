@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.utils.b;
 import com.taobao.android.festival.utils.c;
@@ -158,7 +158,7 @@ public class gjb {
             ZipEntry nextEntry = zipInputStream.getNextEntry();
             if (nextEntry != null) {
                 String name = nextEntry.getName();
-                if (!TextUtils.isEmpty(name) && !name.contains("../")) {
+                if (!StringUtils.isEmpty(name) && !name.contains("../")) {
                     String replaceAll = (b2 + name).replaceAll("\\*", "/");
                     if (!replaceAll.contains("../")) {
                         File file = new File(replaceAll.substring(0, replaceAll.lastIndexOf(47)));

@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.os.Environment;
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import com.taobao.alivfssdk.cache.b;
@@ -77,7 +77,7 @@ public class acv {
             return;
         }
         String packageName = application.getPackageName();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str = Environment.getExternalStorageState().toString() + "/" + str3 + "/" + packageName;
             str2 = application.getExternalCacheDir() + "/" + str3 + "/" + packageName;
         } else {

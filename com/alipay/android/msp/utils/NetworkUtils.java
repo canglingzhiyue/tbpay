@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Proxy;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transportext.biz.util.NetInfoHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -42,7 +42,7 @@ public class NetworkUtils {
             }
             String defaultHost = Proxy.getDefaultHost();
             int defaultPort = Proxy.getDefaultPort();
-            if (!TextUtils.isEmpty(defaultHost) && defaultPort > 0 && defaultPort < 65535) {
+            if (!StringUtils.isEmpty(defaultHost) && defaultPort > 0 && defaultPort < 65535) {
                 return isMobileWapProxyIp(defaultHost);
             }
             return false;

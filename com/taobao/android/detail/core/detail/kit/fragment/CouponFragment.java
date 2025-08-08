@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -116,7 +116,7 @@ public class CouponFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e7e712", new Object[]{fragmentActivity, str, str2, str3, str4});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             startFragment(fragmentActivity, newInstance(str, str2, str3, str4));
         }
@@ -376,7 +376,7 @@ public class CouponFragment extends FloatFragment {
                     CouponFragment couponFragment = CouponFragment.this;
                     couponFragment.update(CouponFragment.access$100(couponFragment));
                 }
-                if (TextUtils.isEmpty(e.retMsg)) {
+                if (StringUtils.isEmpty(e.retMsg)) {
                     return;
                 }
                 Toast.makeText(CouponFragment.this.context, e.retMsg, 0).show();
@@ -387,7 +387,7 @@ public class CouponFragment extends FloatFragment {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("ab3bce2d", new Object[]{this, mtopResponse});
-            } else if (TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+            } else if (StringUtils.isEmpty(mtopResponse.getRetMsg())) {
             } else {
                 Toast.makeText(CouponFragment.this.context, mtopResponse.getRetMsg(), 0).show();
             }
@@ -398,7 +398,7 @@ public class CouponFragment extends FloatFragment {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("8463ea48", new Object[]{this, mtopResponse});
-            } else if (TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+            } else if (StringUtils.isEmpty(mtopResponse.getRetMsg())) {
             } else {
                 Toast.makeText(CouponFragment.this.context, mtopResponse.getRetMsg(), 0).show();
             }

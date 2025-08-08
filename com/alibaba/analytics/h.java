@@ -1,7 +1,7 @@
 package com.alibaba.analytics;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.utdid2.device.UTDevice;
 import com.taobao.login4android.api.Login;
@@ -30,10 +30,10 @@ public class h implements DAIUserAdapter {
             return (String) ipChange.ipc$dispatch("58ad3b3d", new Object[]{this});
         }
         String userId = Login.getUserId();
-        if (TextUtils.isEmpty(userId)) {
+        if (StringUtils.isEmpty(userId)) {
             return this.b;
         }
-        if (!TextUtils.equals(userId, this.b)) {
+        if (!StringUtils.equals(userId, this.b)) {
             this.b = userId;
             this.f2117a.edit().putString("userId", this.b).apply();
         }

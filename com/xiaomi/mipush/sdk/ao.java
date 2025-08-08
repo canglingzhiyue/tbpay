@@ -14,7 +14,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.xiaomi.push.bg;
 import com.xiaomi.push.bh;
@@ -171,7 +171,7 @@ public class ao {
         jb jbVar2 = new jb();
         jbVar2.a(true);
         Intent m1646a = m1646a();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = bc.a();
             jbVar2.a(str);
             jbVar = z ? new jb(str, true) : null;
@@ -685,7 +685,7 @@ public class ao {
         Application application = (Application) bh.a(ProcessUtils.ACTIVITY_THREAD, "currentApplication", new Object[0]);
         String packageName = (application == null || application.getApplicationContext() == null) ? null : application.getApplicationContext().getPackageName();
         String packageName2 = this.f50a.getPackageName();
-        if (TextUtils.isEmpty(packageName) || packageName.equals(packageName2)) {
+        if (StringUtils.isEmpty(packageName) || packageName.equals(packageName2)) {
             packageName = packageName2;
         } else {
             com.xiaomi.channel.commonutils.logger.b.m1616a("application package name: " + packageName + ", not equals context package name: " + packageName2);

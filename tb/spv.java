@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.core.FluidContext;
@@ -49,7 +49,7 @@ public class spv {
     public boolean a(String str, String str2) {
         spw b;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : e(str) && (b = b(str)) != null && TextUtils.equals(b.c(), str2);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : e(str) && (b = b(str)) != null && StringUtils.equals(b.c(), str2);
     }
 
     public void a(String str) {
@@ -191,7 +191,7 @@ public class spv {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("63b6da3c", new Object[]{this, fluidContext, str});
         }
-        if (!this.c || TextUtils.isEmpty(str)) {
+        if (!this.c || StringUtils.isEmpty(str)) {
             return str;
         }
         String queryParameter = Uri.parse(str).getQueryParameter("id");
@@ -221,7 +221,7 @@ public class spv {
             return;
         }
         spw innerSharePlayerObject = ((ISharePlayerService) fluidContext.getService(ISharePlayerService.class)).getInnerSharePlayerObject();
-        if (innerSharePlayerObject == null || !TextUtils.equals(innerSharePlayerObject.c(), str2)) {
+        if (innerSharePlayerObject == null || !StringUtils.equals(innerSharePlayerObject.c(), str2)) {
             return;
         }
         innerSharePlayerObject.a(true);
@@ -230,7 +230,7 @@ public class spv {
 
     private boolean f(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(Uri.parse(str).getQueryParameter("id"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(Uri.parse(str).getQueryParameter("id"));
     }
 
     private spw g(String str) {
@@ -238,7 +238,7 @@ public class spv {
         if (ipChange instanceof IpChange) {
             return (spw) ipChange.ipc$dispatch("80814d54", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return b(str);
         }
         return null;

@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.deprecated.message.module.proxy;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -91,7 +91,7 @@ public class ShortVideoJsBridgeProxy implements Serializable {
         IWVWebView webview = wVCallBackContext.getWebview();
         if (webview instanceof WVUCWebView) {
             WVUCWebView wVUCWebView = (WVUCWebView) webview;
-            if ((wVUCWebView.getParent() instanceof DWPenetrateFrameLayout) && !TextUtils.isEmpty(str) && snf.c()) {
+            if ((wVUCWebView.getParent() instanceof DWPenetrateFrameLayout) && !StringUtils.isEmpty(str) && snf.c()) {
                 DWPenetrateFrameLayout dWPenetrateFrameLayout = (DWPenetrateFrameLayout) wVUCWebView.getParent();
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject != null && (jSONArray = parseObject.getJSONArray("rects")) != null) {

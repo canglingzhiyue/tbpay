@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class baf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e15695d0", new Object[]{this, bagVar});
-        } else if (bagVar == null || TextUtils.isEmpty(bagVar.l())) {
+        } else if (bagVar == null || StringUtils.isEmpty(bagVar.l())) {
         } else {
             this.f25726a.put(bagVar.l(), bagVar);
         }
@@ -32,7 +32,7 @@ public class baf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cfd99c51", new Object[]{this, bagVar});
-        } else if (bagVar == null || TextUtils.isEmpty(bagVar.l())) {
+        } else if (bagVar == null || StringUtils.isEmpty(bagVar.l())) {
         } else {
             this.f25726a.remove(bagVar.l());
         }
@@ -52,7 +52,7 @@ public class baf {
         if (ipChange instanceof IpChange) {
             return (bag) ipChange.ipc$dispatch("7c6d530c", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f25726a.get(str);
         }
         return null;

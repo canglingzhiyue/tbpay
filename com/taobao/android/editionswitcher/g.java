@@ -1,7 +1,7 @@
 package com.taobao.android.editionswitcher;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -96,7 +96,7 @@ public class g {
         }
         if (f12295a == null) {
             String a2 = com.taobao.homepage.business.permission.c.a("editionTipsIsShown", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 f12295a = JSON.parseObject(a2);
             }
         }

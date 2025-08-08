@@ -2,7 +2,7 @@ package com.alibaba.triver.triver_weex;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -296,7 +296,7 @@ public class WXAriverComponent extends WXDiv implements WXNestedHeader.c, PagePu
         if (!map.containsKey("visibility")) {
             return;
         }
-        if (TextUtils.equals("hidden", map.get("visibility").toString())) {
+        if (StringUtils.equals("hidden", map.get("visibility").toString())) {
             c cVar2 = this.mHelperWrapper;
             if (cVar2 == null) {
                 return;
@@ -305,7 +305,7 @@ public class WXAriverComponent extends WXDiv implements WXNestedHeader.c, PagePu
             cVar2.onHidden();
             this.mHelperWrapper.onPause();
             this.mHelperWrapper.onStop();
-        } else if (!TextUtils.equals("visible", map.get("visibility").toString()) || (cVar = this.mHelperWrapper) == null) {
+        } else if (!StringUtils.equals("visible", map.get("visibility").toString()) || (cVar = this.mHelperWrapper) == null) {
         } else {
             this.mIsVisible = true;
             cVar.onVisible();

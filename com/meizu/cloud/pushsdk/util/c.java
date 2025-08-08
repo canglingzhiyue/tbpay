@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import java.nio.charset.Charset;
 import java.security.KeyFactory;
@@ -21,7 +21,7 @@ public class c {
     public static String a(String str, String str2) {
         if (str != null) {
             try {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     return new String(a(b(str), a(str2)), f8017a);
                 }
             } catch (Exception e) {

@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSManager;
@@ -160,7 +160,7 @@ public class WVACCS extends e {
         } catch (JSONException unused) {
             wVCallBackContext.error(new r("HY_PARAM_ERR"));
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             wVCallBackContext.error(new r("HY_PARAM_ERR"));
             return;
         }
@@ -195,7 +195,7 @@ public class WVACCS extends e {
         } catch (JSONException unused) {
             wVCallBackContext.error(new r("HY_PARAM_ERR"));
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             wVCallBackContext.error(new r("HY_PARAM_ERR"));
             return;
         }

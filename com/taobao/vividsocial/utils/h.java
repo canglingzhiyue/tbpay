@@ -1,7 +1,7 @@
 package com.taobao.vividsocial.utils;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -31,7 +31,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             f23467a.put(str, str2);
         }
@@ -77,7 +77,7 @@ public class h {
             if (!b.contains(valueOf)) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(b);
-                sb.append(TextUtils.isEmpty(b) ? "" : ",");
+                sb.append(StringUtils.isEmpty(b) ? "" : ",");
                 sb.append(valueOf);
                 b = sb.toString();
             }
@@ -90,7 +90,7 @@ public class h {
                     }
                 }
                 return jSONObject;
-            } else if (variation != null && !TextUtils.isEmpty(variation.getValueAsString(""))) {
+            } else if (variation != null && !StringUtils.isEmpty(variation.getValueAsString(""))) {
                 return variation.getValueAsString("");
             }
         }

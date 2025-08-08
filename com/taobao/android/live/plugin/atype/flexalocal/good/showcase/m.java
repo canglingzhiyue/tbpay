@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.good.showcase;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -394,7 +394,7 @@ public class m extends com.taobao.android.live.plugin.atype.flexalocal.good.show
             if (hkk.P() && this.q && ((liveItem.sabItemAtmosphere != null || liveItem.sabItemAtmospherePreHeat != null) && !hkk.b(this.o))) {
                 ddw.a().a("com.taobao.taolive.room.init_sab_atmosphere", liveItem);
             }
-            if (hkk.ab() && liveItem.itemExtData != null && TextUtils.equals(liveItem.itemExtData.getString("smallCardItemType"), "itemZone")) {
+            if (hkk.ab() && liveItem.itemExtData != null && StringUtils.equals(liveItem.itemExtData.getString("smallCardItemType"), "itemZone")) {
                 ad.a("new_user_zone_card_show_count", ad.b("new_user_zone_card_show_count", 0) + 1);
                 ad.a("new_user_zone_card_show_time", System.currentTimeMillis());
             }
@@ -501,17 +501,17 @@ public class m extends com.taobao.android.live.plugin.atype.flexalocal.good.show
             if (r7 == 0) goto L79
             java.lang.String r7 = r0.rightType
             java.lang.String r1 = "item_soldQuantity"
-            boolean r7 = android.text.TextUtils.equals(r7, r1)
+            boolean r7 = android.text.StringUtils.equals(r7, r1)
             if (r7 != 0) goto L70
             java.lang.String r7 = r0.rightType
             java.lang.String r5 = "item_rankAtmosphere"
-            boolean r7 = android.text.TextUtils.equals(r7, r5)
+            boolean r7 = android.text.StringUtils.equals(r7, r5)
             if (r7 != 0) goto L70
             java.lang.String r7 = r0.subRightType
-            boolean r7 = android.text.TextUtils.equals(r7, r1)
+            boolean r7 = android.text.StringUtils.equals(r7, r1)
             if (r7 != 0) goto L70
             java.lang.String r7 = r0.subRightType
-            boolean r7 = android.text.TextUtils.equals(r7, r5)
+            boolean r7 = android.text.StringUtils.equals(r7, r5)
             if (r7 == 0) goto L6a
             goto L70
         L6a:
@@ -624,7 +624,7 @@ public class m extends com.taobao.android.live.plugin.atype.flexalocal.good.show
         }
         this.f13782a.setVisibility(0);
         boolean a2 = hiu.a(liveItem);
-        if (TextUtils.equals(str, "detailDefault") || TextUtils.equals(str, "hold")) {
+        if (StringUtils.equals(str, "detailDefault") || StringUtils.equals(str, "hold")) {
             z = true;
         }
         this.j.a(liveItem, z);
@@ -667,7 +667,7 @@ public class m extends com.taobao.android.live.plugin.atype.flexalocal.good.show
             com.taobao.android.live.plugin.atype.flexalocal.good.track.b.a(this.f, liveItem, this.b, "", hashMap);
         }
         k kVar = this.i;
-        if (TextUtils.equals(str, "detailDefault") || TextUtils.equals(str, "hold")) {
+        if (StringUtils.equals(str, "detailDefault") || StringUtils.equals(str, "hold")) {
             z2 = true;
         }
         this.j.a(liveItem, z2);
@@ -699,8 +699,8 @@ public class m extends com.taobao.android.live.plugin.atype.flexalocal.good.show
         } else {
             String l = Long.toString(liveItem.itemId);
             his.a("SingleGoodPlayer", "checkIsNeedShow | id=" + l + "    name=" + liveItem.itemName + "  index=" + liveItem.goodsIndex);
-            a(liveItem, TextUtils.equals(com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD, this.b.itemHoldType) ? SHOWCASE_SOURCE_HOLD : SHOWCASE_SOURCE_DETAIL_DEFAULT);
-            if (liveItem.extendVal == null || TextUtils.isEmpty(liveItem.extendVal.msgUuid)) {
+            a(liveItem, StringUtils.equals(com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD, this.b.itemHoldType) ? SHOWCASE_SOURCE_HOLD : SHOWCASE_SOURCE_DETAIL_DEFAULT);
+            if (liveItem.extendVal == null || StringUtils.isEmpty(liveItem.extendVal.msgUuid)) {
                 return;
             }
             his.a("SingleGoodPlayer", "checkIsNeedShow | msgId=" + liveItem.extendVal.msgUuid);

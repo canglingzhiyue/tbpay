@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.alibaba.analytics.core.sync.o;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -101,7 +101,7 @@ public class aow implements f.a {
             return;
         }
         apr.b("TnetSipHostPortMgr", "key", str, "value", str2);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         if ("amdc_sip_sample".equalsIgnoreCase(str)) {
@@ -139,7 +139,7 @@ public class aow implements f.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.b = 0;
             this.c = 0;
         } else {

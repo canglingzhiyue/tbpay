@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.comments.chat.bottom;
 
 import android.os.Message;
 import android.support.v4.util.Pools;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -180,7 +180,7 @@ public class b implements d, com.taobao.taolive.sdk.model.a, ddv {
         } else if (!com.taobao.android.live.plugin.atype.flexalocal.comments.chat.b.j() || chatMessage == null || chatMessage.renders == null) {
         } else {
             String str = chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE);
-            if (!TextUtils.equals(str, "follow") && !TextUtils.equals(str, "share")) {
+            if (!StringUtils.equals(str, "follow") && !StringUtils.equals(str, "share")) {
                 return;
             }
             this.h.removeMessages(2);
@@ -212,7 +212,7 @@ public class b implements d, com.taobao.taolive.sdk.model.a, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3897928", new Object[]{this, str, obj});
-        } else if ((!com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_ANCHOR_RESPONSE_VIEW.equals(str) && !com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_HOT_SALE_VIEW.equals(str) && !com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_SAYS_CLUSTER_VIEW.equals(str)) || !(obj instanceof String) || !TextUtils.equals((String) obj, "true")) {
+        } else if ((!com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_ANCHOR_RESPONSE_VIEW.equals(str) && !com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_HOT_SALE_VIEW.equals(str) && !com.taobao.android.live.plugin.atype.flexalocal.comments.chat.a.KEY_SAYS_CLUSTER_VIEW.equals(str)) || !(obj instanceof String) || !StringUtils.equals((String) obj, "true")) {
         } else {
             e();
         }

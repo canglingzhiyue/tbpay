@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.adaemon.e;
@@ -58,10 +58,10 @@ public class dcy extends dcw {
             if (!j.a().q()) {
                 e.b("LauncherTbAction", "switch off", new Object[0]);
                 c();
-            } else if (TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.b)) {
                 e.b("LauncherTbAction", "empty uri", new Object[0]);
                 c();
-            } else if (!TextUtils.isEmpty(this.f26703a) && !this.f26703a.contains(Build.MODEL)) {
+            } else if (!StringUtils.isEmpty(this.f26703a) && !this.f26703a.contains(Build.MODEL)) {
                 e.b("LauncherTbAction", "model err", "model", Build.MODEL);
                 c();
             } else {

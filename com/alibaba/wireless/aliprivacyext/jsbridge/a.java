@@ -1,7 +1,7 @@
 package com.alibaba.wireless.aliprivacyext.jsbridge;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,7 @@ public abstract class a {
         if (map != null) {
             hashMap.putAll(map);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("message", str);
         }
         if (bVar == null) {
@@ -47,7 +47,7 @@ public abstract class a {
         if (map != null) {
             hashMap.putAll(map);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("message", str);
         }
         if (bVar == null) {

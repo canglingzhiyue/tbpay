@@ -4,7 +4,7 @@ import android.app.Application;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.wireless.link.controller.a;
@@ -56,7 +56,7 @@ public class AssistantPermissionJsBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, ACTION_ASSISTANT_PERMISSION)) {
+        if (StringUtils.equals(str, ACTION_ASSISTANT_PERMISSION)) {
             try {
                 JSONObject jSONObject = new JSONObject(str2);
                 if (jSONObject.has("id")) {
@@ -65,7 +65,7 @@ public class AssistantPermissionJsBridge extends e {
             } catch (Exception e) {
                 rkg.a("link_tag", "AssistantPermissionJsBridge === execute === 获取id异常：" + e.getMessage());
             }
-            if (TextUtils.isEmpty(this.id)) {
+            if (StringUtils.isEmpty(this.id)) {
                 JSONObject jSONObject2 = new JSONObject();
                 try {
                     jSONObject2.put("supportAssistant", rjw.c(rjt.a().f33186a));
@@ -144,7 +144,7 @@ public class AssistantPermissionJsBridge extends e {
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 /* JADX WARN: Code restructure failed: missing block: B:20:0x007e, code lost:
-                    if (android.text.TextUtils.equals("true", r6) != false) goto L18;
+                    if (android.text.StringUtils.equals("true", r6) != false) goto L18;
                  */
                 @Override // tb.rjz
                 /*
@@ -185,12 +185,12 @@ public class AssistantPermissionJsBridge extends e {
                         java.lang.Object r6 = r7.get(r6)     // Catch: java.lang.Exception -> L81
                         java.lang.String r6 = (java.lang.String) r6     // Catch: java.lang.Exception -> L81
                         java.lang.String r7 = "false"
-                        boolean r6 = android.text.TextUtils.equals(r7, r6)     // Catch: java.lang.Exception -> L81
+                        boolean r6 = android.text.StringUtils.equals(r7, r6)     // Catch: java.lang.Exception -> L81
                         if (r6 == 0) goto L65
                         tb.rjt r6 = tb.rjt.a()     // Catch: java.lang.Exception -> L81
                         com.taobao.wireless.link.common.b r6 = r6.c     // Catch: java.lang.Exception -> L81
                         java.lang.String r6 = r6.f23584a     // Catch: java.lang.Exception -> L81
-                        boolean r6 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L81
+                        boolean r6 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L81
                         if (r6 != 0) goto L61
                         tb.rjt r6 = tb.rjt.a()     // Catch: java.lang.Exception -> L81
                         com.taobao.wireless.link.common.b r6 = r6.c     // Catch: java.lang.Exception -> L81
@@ -207,10 +207,10 @@ public class AssistantPermissionJsBridge extends e {
                         java.lang.String r6 = "local"
                         java.lang.Object r6 = r7.get(r6)     // Catch: java.lang.Exception -> L81
                         java.lang.String r6 = (java.lang.String) r6     // Catch: java.lang.Exception -> L81
-                        boolean r7 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L81
+                        boolean r7 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Exception -> L81
                         if (r7 != 0) goto L65
                         java.lang.String r7 = "true"
-                        boolean r6 = android.text.TextUtils.equals(r7, r6)     // Catch: java.lang.Exception -> L81
+                        boolean r6 = android.text.StringUtils.equals(r7, r6)     // Catch: java.lang.Exception -> L81
                         if (r6 == 0) goto L65
                         goto L61
                     L81:

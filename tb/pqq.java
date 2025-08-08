@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.common.VideoInfo;
 import com.taobao.taolive.sdk.utils.l;
@@ -69,7 +69,7 @@ public class pqq {
             map.put("entryLiveSource", a2.a());
             map.put("entrySpm", a2.b());
             map.put(KEY_ENTRY_SCM, a2.c());
-            if (!TextUtils.isEmpty(a2.f())) {
+            if (!StringUtils.isEmpty(a2.f())) {
                 map.put("trackInfo", a2.f());
             }
             map.put("liveAdParams", Uri.encode(a2.d()));
@@ -110,7 +110,7 @@ public class pqq {
             map.put("entrySpm", a2.b());
             map.put(KEY_ENTRY_SCM, a2.c());
             map.put("spm-url", a2.g());
-            if (!TextUtils.isEmpty(a2.f())) {
+            if (!StringUtils.isEmpty(a2.f())) {
                 map.put("trackInfo", a2.f());
             }
             map.put("liveAdParams", Uri.encode(a2.d()));

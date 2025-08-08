@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,9 +27,9 @@ public class leg {
             ipChange.ipc$dispatch("d1836630", new Object[]{hGifView, jSONObject});
         } else if (jSONObject == null) {
         } else {
-            if (TextUtils.equals(lix.c(jSONObject), "true")) {
+            if (StringUtils.equals(lix.c(jSONObject), "true")) {
                 hGifView.setStrategyConfig(f30520a);
-            } else if (TextUtils.equals(lix.d(jSONObject), "true")) {
+            } else if (StringUtils.equals(lix.d(jSONObject), "true")) {
                 hGifView.setStrategyConfig(b);
             } else {
                 hGifView.setStrategyConfig(lfx.IMAGE_STRATEGY_CONFIG);

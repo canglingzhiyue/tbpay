@@ -14,7 +14,7 @@ import android.taobao.windvane.util.f;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
 import android.taobao.windvane.webview.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.webkit.ValueCallback;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -351,7 +351,7 @@ public class WVH5PPManager {
                         ipChange2.ipc$dispatch("138ac29e", new Object[]{this, str});
                         return;
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = "{}";
                     }
                     if (str.startsWith("\"") && str.endsWith("\"")) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.layoutmanager.module.MtopModule;
@@ -44,7 +44,7 @@ public class nhe implements nfd {
             return new nhf(-3);
         }
         for (String str : b) {
-            if (TextUtils.isEmpty(jSONObject.getString(str))) {
+            if (StringUtils.isEmpty(jSONObject.getString(str))) {
                 ngr.b(f31465a, "Parameter \"" + str + "\" not exists.");
                 return new nhf(-1);
             }
@@ -95,10 +95,10 @@ public class nhe implements nfd {
         }
         MtopBusiness build = MtopBusiness.build(instance, a2, str);
         try {
-            if (!TextUtils.isEmpty(c.g)) {
+            if (!StringUtils.isEmpty(c.g)) {
                 build.mo1309setBizId(c.g);
             }
-            if (!TextUtils.isEmpty(c.h)) {
+            if (!StringUtils.isEmpty(c.h)) {
                 build.mo1310setBizTopic(c.h);
             }
         } catch (Exception unused) {
@@ -126,10 +126,10 @@ public class nhe implements nfd {
         String string3 = jSONObject.getString("pre_host");
         String string4 = jSONObject.getString("daily_host");
         String string5 = jSONObject.getString("custom_host");
-        if (!TextUtils.isEmpty(string2) || !TextUtils.isEmpty(string3) || !TextUtils.isEmpty(string4)) {
+        if (!StringUtils.isEmpty(string2) || !StringUtils.isEmpty(string3) || !StringUtils.isEmpty(string4)) {
             build.mo1314setCustomDomain(string2, string3, string4);
         }
-        if (!TextUtils.isEmpty(string5)) {
+        if (!StringUtils.isEmpty(string5)) {
             build.mo1313setCustomDomain(string5);
         }
         return build;
@@ -156,7 +156,7 @@ public class nhe implements nfd {
             }
         }
         String string2 = jSONObject.getString("dataType");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "originaljson";
         }
         nhgVar.i = string2;
@@ -188,7 +188,7 @@ public class nhe implements nfd {
             nhgVar.f = integer2.intValue();
         }
         String string3 = jSONObject.getString(MtopJSBridge.MtopJSParam.SESSION_OPTION);
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             string3 = "AutoLoginAndManualLogin";
         }
         nhgVar.k = string3;
@@ -211,7 +211,7 @@ public class nhe implements nfd {
         if (jSONObject3 != null) {
             for (String str2 : jSONObject3.keySet()) {
                 String string4 = jSONObject3.getString(str2);
-                if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(string4)) {
+                if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(string4)) {
                     nhgVar.b(str2, string4);
                 }
             }

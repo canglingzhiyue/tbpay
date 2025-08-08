@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tanx.exposer.achieve.AdMonitorCommitResult;
@@ -64,11 +64,11 @@ public class dgl extends dgk {
         }
         for (final String str : this.f26727a) {
             final String a2 = dhb.a(str);
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(a2)) {
                 dgy.b(this.c, this.b, "url_is_empty_or_hash_error");
             } else {
                 final String host = Uri.parse(str).getHost();
-                if (TextUtils.isEmpty(host)) {
+                if (StringUtils.isEmpty(host)) {
                     dgy.b(this.c, this.b, "domain_not_right");
                 } else if (e.contains(a2)) {
                     dgy.a(this.c);

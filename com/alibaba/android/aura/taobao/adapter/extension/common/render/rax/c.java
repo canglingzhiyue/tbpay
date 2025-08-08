@@ -6,7 +6,7 @@ import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -250,7 +250,7 @@ public class c {
             return;
         }
         String str = aURARenderComponentContainer.url;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             bqe.a().c("RaxComponentCreator", "renderView#url is empty");
             bsu.a(this.h, "TAG_RAX_ERROR", "umf-render-rax", "renderView#url is empty");
             return;
@@ -258,7 +258,7 @@ public class c {
         a((View) this.g);
         WVUCWebView wVUCWebView = (WVUCWebView) view;
         String str2 = aURARenderComponent.key;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             bqe.a().c("RaxComponentCreator", "renderView#componentKey is empty");
             bsu.a(this.h, "TAG_RAX_ERROR", "umf-render-rax", "renderView#componentKey is empty");
             return;
@@ -266,7 +266,7 @@ public class c {
         if (this.d && a(str, str2).equals(this.c)) {
             awk.a(this.b, awk.BRIDGE_EVENT_UPDATE, d());
         } else {
-            if (!TextUtils.isEmpty(wVUCWebView.getCurrentUrl())) {
+            if (!StringUtils.isEmpty(wVUCWebView.getCurrentUrl())) {
                 wVUCWebView.setVisibility(4);
             }
             wVUCWebView.loadUrl(str);
@@ -326,7 +326,7 @@ public class c {
             AURARenderComponentContainer aURARenderComponentContainer = aURARenderComponentData.container;
             str = aURARenderComponentContainer.containerType + "_" + aURARenderComponentContainer.name + "_" + aURARenderComponentContainer.version;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = String.valueOf(System.currentTimeMillis());
             bqe.a().c("RaxComponentCreator", "getItemViewType#failed to get itemViewType from component, use system time instead, component=" + aURARenderComponent);
         }

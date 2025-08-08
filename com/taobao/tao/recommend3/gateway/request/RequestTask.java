@@ -1,7 +1,7 @@
 package com.taobao.tao.recommend3.gateway.request;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.bio.api.BioDetector;
@@ -172,9 +172,9 @@ public class RequestTask {
             return;
         }
         this.f = a(b().iterator().next());
-        if (!z && TextUtils.equals(this.f, "coldStart")) {
+        if (!z && StringUtils.equals(this.f, "coldStart")) {
             String a2 = a(false);
-            if (TextUtils.equals(a2, "code_sign_free")) {
+            if (StringUtils.equals(a2, "code_sign_free")) {
                 this.c.API_NAME = "mtop.taobao.wireless.home.newface.awesome.newget";
             } else {
                 com.taobao.android.home.component.utils.e.e("gateway.RequestTask", "SignFree code value:" + a2);
@@ -204,7 +204,7 @@ public class RequestTask {
         if (j.a("mtopStreamParse", true)) {
             this.b.mo1330supportStreamJson(true);
         }
-        if (TextUtils.equals(this.f, "coldStart")) {
+        if (StringUtils.equals(this.f, "coldStart")) {
             this.f20907a.b("mtopRequestParams");
             this.f20907a.a("mtopRequest", 1);
         }
@@ -283,14 +283,14 @@ public class RequestTask {
             java.lang.String r2 = "homeSignFreeTimeOffset"
             java.lang.String r2 = com.taobao.android.home.component.utils.j.a(r2, r10)
             r3 = 0
-            boolean r5 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.NumberFormatException -> L67
+            boolean r5 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.NumberFormatException -> L67
             if (r5 != 0) goto L67
             long r5 = java.lang.Long.parseLong(r1)     // Catch: java.lang.NumberFormatException -> L67
             goto L68
         L67:
             r5 = r3
         L68:
-            boolean r1 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.NumberFormatException -> L73
+            boolean r1 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.NumberFormatException -> L73
             if (r1 != 0) goto L73
             long r1 = java.lang.Long.parseLong(r2)     // Catch: java.lang.NumberFormatException -> L73
             r3 = r1
@@ -308,7 +308,7 @@ public class RequestTask {
             java.lang.String r2 = "homeSignFreeDateList"
             java.lang.String r10 = com.taobao.android.home.component.utils.j.a(r2, r10)
             r3 = 0
-            boolean r4 = android.text.TextUtils.isEmpty(r10)
+            boolean r4 = android.text.StringUtils.isEmpty(r10)
             if (r4 != 0) goto L9c
             java.lang.Class<java.lang.Long> r4 = java.lang.Long.class
             java.util.List r3 = com.alibaba.fastjson.JSON.parseArray(r10, r4)     // Catch: java.lang.Exception -> L9c
@@ -359,13 +359,13 @@ public class RequestTask {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c1453b7b", new Object[]{this, str, mtopResponse})).booleanValue();
         }
-        if (mtopResponse != null && TextUtils.equals(str, "coldStart") && TextUtils.equals(mtopResponse.getApi(), "mtop.taobao.wireless.home.newface.awesome.newget")) {
-            if (TextUtils.equals(mtopResponse.getRetCode(), "FAIL_SYS_USER_VALIDATE")) {
+        if (mtopResponse != null && StringUtils.equals(str, "coldStart") && StringUtils.equals(mtopResponse.getApi(), "mtop.taobao.wireless.home.newface.awesome.newget")) {
+            if (StringUtils.equals(mtopResponse.getRetCode(), "FAIL_SYS_USER_VALIDATE")) {
                 s.f18233a.d().a("USER_VALIDATE", "true");
                 return true;
             } else if (mtopResponse.getResponseCode() == 200 && (headerFields = mtopResponse.getHeaderFields()) != null && !headerFields.isEmpty() && headerFields.containsKey("bx-signwl-retry-ts") && (list = headerFields.get("bx-signwl-retry-ts")) != null && list.size() > 0) {
                 String str2 = list.get(0);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     long j2 = 0;
                     try {
                         j = Long.parseLong(str2) * 1000;
@@ -398,7 +398,7 @@ public class RequestTask {
             } else {
                 str = "false";
             }
-            c.a.b("homepage_switch", "homeSignFreeAb", TextUtils.equals("true", str));
+            c.a.b("homepage_switch", "homeSignFreeAb", StringUtils.equals("true", str));
             ksr.b("sign_free_error_code", str);
         }
     }
@@ -435,7 +435,7 @@ public class RequestTask {
             }
             String str = (mtopResponse == null || mtopResponse.getMtopStat() == null) ? null : mtopResponse.getMtopStat().falcoId;
             long uptimeMillis = SystemClock.uptimeMillis();
-            if (TextUtils.equals(RequestTask.this.f, "coldStart") && n.e() && (b = com.taobao.homepage.utils.m.b()) != null) {
+            if (StringUtils.equals(RequestTask.this.f, "coldStart") && n.e() && (b = com.taobao.homepage.utils.m.b()) != null) {
                 baseOutDo = b;
             }
             traceMtopEnd();
@@ -479,7 +479,7 @@ public class RequestTask {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("4e338a75", new Object[]{this});
-            } else if (!TextUtils.equals(RequestTask.this.f, "coldStart")) {
+            } else if (!StringUtils.equals(RequestTask.this.f, "coldStart")) {
             } else {
                 RequestTask.this.f20907a.b("mtopRequest");
                 RequestTask.this.f20907a.a("homeDataProcess", 1);
@@ -515,7 +515,7 @@ public class RequestTask {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("ec42af8e", new Object[]{this, mtopResponse});
-            } else if (!TextUtils.equals(RequestTask.this.f, "scrollNextPage")) {
+            } else if (!StringUtils.equals(RequestTask.this.f, "scrollNextPage")) {
             } else {
                 if (mtopResponse == null) {
                     lap.a("MTopRequest", "commitScrollNextPageError", "response == null");
@@ -583,7 +583,7 @@ public class RequestTask {
                 }
             } else {
                 if (mtopResponse != null) {
-                    if (!TextUtils.isEmpty(mtopResponse.getMtopStat().fullTraceId)) {
+                    if (!StringUtils.isEmpty(mtopResponse.getMtopStat().fullTraceId)) {
                         ksr.a(mtopResponse.getApi(), mtopResponse.getV(), mtopResponse.getRetCode(), mtopResponse.getRetMsg(), "fullTraceID", mtopResponse.getMtopStat().fullTraceId);
                     } else {
                         ksr.a(mtopResponse.getApi(), mtopResponse.getV(), mtopResponse.getRetCode(), mtopResponse.getRetMsg(), null, null);
@@ -604,7 +604,7 @@ public class RequestTask {
                 return (String) ipChange.ipc$dispatch("79a4614d", new Object[]{this, mtopResponse});
             }
             String retCode = mtopResponse.getRetCode();
-            if (!TextUtils.equals("SUCCESS", retCode)) {
+            if (!StringUtils.equals("SUCCESS", retCode)) {
                 return retCode;
             }
             String[] ret = mtopResponse.getRet();
@@ -636,7 +636,7 @@ public class RequestTask {
             hashMap.put("serverRT", str3);
             hashMap.put("responseLength", str2);
             hashMap.put("homeApi", this.c.API_NAME);
-            if (TextUtils.equals(this.f, "coldStart")) {
+            if (StringUtils.equals(this.f, "coldStart")) {
                 s.f18233a.d().a("homeApi", this.c.API_NAME);
             }
             oqd.a(this.f, oqd.MTOP_STAGE_NETWORKREQUEST, 0L, j - this.k, hashMap, false);

@@ -1,6 +1,6 @@
 package com.taobao.search.jarvis.rcmd;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.searchbaseframe.xsl.module.XslSearchResult;
 import com.taobao.android.searchbaseframe.xsl.refact.XslDataSource;
 import com.taobao.android.xsearchplugin.jarvis.utils.JarvisConstant;
@@ -36,11 +36,11 @@ public class SearchXslDatasource extends XslDataSource {
         super.addTppPageParam(map);
         if (getTotalSearchResult() != 0) {
             String extMod = ((XslSearchResult) getTotalSearchResult()).getExtMod(JarvisConstant.KEY_JARVIS_MODEL_NAME);
-            if (TextUtils.isEmpty(extMod)) {
+            if (StringUtils.isEmpty(extMod)) {
                 return;
             }
             String a2 = com.tmall.android.dai.f.a(extMod, "version");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             map.put(noa.KEY_MODEL_NAME, extMod);

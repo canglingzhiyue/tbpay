@@ -1,7 +1,7 @@
 package com.taobao.pha.tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -33,7 +33,7 @@ public class k extends neg {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{this, context, str})).booleanValue();
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             return ABGlobal.isFeatureOpened(context, str);
         }
         return false;
@@ -47,9 +47,9 @@ public class k extends neg {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (activate = UTABTest.activate(UTABTest.COMPONENT_NAV, str)) != null && (variation = activate.getVariation("bucket")) != null) {
+        if (!StringUtils.isEmpty(str) && (activate = UTABTest.activate(UTABTest.COMPONENT_NAV, str)) != null && (variation = activate.getVariation("bucket")) != null) {
             String valueAsString = variation.getValueAsString(null);
-            if (!TextUtils.equals(valueAsString, str)) {
+            if (!StringUtils.equals(valueAsString, str)) {
                 ngr.a("TBConfigProvider", "abtest valid, use abUrl:" + valueAsString);
                 return valueAsString;
             }

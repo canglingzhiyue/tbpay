@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -56,8 +56,8 @@ public class ool extends a {
         com.taobao.tao.linklog.a.a("eventProcess", "ROverlayEventHandler", "homepage overlay");
         Object tag = a2.getTag(R.id.tag_recommend_containerId);
         String obj2 = tag == null ? null : tag.toString();
-        String substring = !TextUtils.isEmpty(obj2) ? obj2.substring(obj2.lastIndexOf(95) + 1) : null;
-        if (TextUtils.isEmpty(substring)) {
+        String substring = !StringUtils.isEmpty(obj2) ? obj2.substring(obj2.lastIndexOf(95) + 1) : null;
+        if (StringUtils.isEmpty(substring)) {
             com.taobao.tao.linklog.a.a("eventProcess", "ROverlayEventHandler", "Overlay params error");
         } else {
             a(view, sectionModel, (View.OnClickListener) null, (View.OnClickListener) null, substring);
@@ -74,7 +74,7 @@ public class ool extends a {
             return;
         }
         String str2 = this.f32228a;
-        if (str2 != null && !TextUtils.equals(str2, str)) {
+        if (str2 != null && !StringUtils.equals(str2, str)) {
             c.a();
             c = new orv();
             this.f32228a = str;

@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -200,7 +200,7 @@ public class o {
             try {
                 MtopRequest mtopRequest = new MtopRequest();
                 mtopRequest.setApiName(preFetchModel.requestAddress);
-                mtopRequest.setVersion(!TextUtils.isEmpty(preFetchModel.requestVer) ? preFetchModel.requestVer : !TextUtils.isEmpty(preFetchModel.version) ? preFetchModel.version : "1.0");
+                mtopRequest.setVersion(!StringUtils.isEmpty(preFetchModel.requestVer) ? preFetchModel.requestVer : !StringUtils.isEmpty(preFetchModel.version) ? preFetchModel.version : "1.0");
                 mtopRequest.setNeedEcode(false);
                 mtopRequest.setData(p.a(this.f22242a, preFetchModel.requestParams));
                 MtopBusiness mo1305reqMethod = MtopBusiness.build(Mtop.instance(Mtop.Id.INNER, PopLayer.getReference().getApp()), mtopRequest, TaoPackageInfo.getTTID()).registerListener((IRemoteListener) new IRemoteBaseListener() { // from class: com.taobao.tbpoplayer.nativerender.PreRequestFetcher$1
@@ -230,7 +230,7 @@ public class o {
                         if (mtopResponse != null && mtopResponse.isApiSuccess() && mtopResponse.getBytedata() != null) {
                             try {
                                 String str = new String(mtopResponse.getBytedata(), "UTF-8");
-                                if (!TextUtils.isEmpty(str)) {
+                                if (!StringUtils.isEmpty(str)) {
                                     com.alibaba.poplayer.utils.c.a("dealPreFetch.MTOP.apiName=%s.params=%s.result=%s", preFetchModel.requestAddress, preFetchModel.requestParams, str);
                                     JSONObject jSONObject = JSON.parseObject(str).getJSONObject("data");
                                     if (jSONObject != null) {
@@ -268,7 +268,7 @@ public class o {
                 if (preFetchModel.needWua) {
                     mo1305reqMethod.mo1335useWua();
                 }
-                if (!TextUtils.isEmpty(preFetchModel.safeToken)) {
+                if (!StringUtils.isEmpty(preFetchModel.safeToken)) {
                     mo1305reqMethod.mo1289addHttpQueryParameter("asac", preFetchModel.safeToken);
                 }
                 mo1305reqMethod.startRequest();

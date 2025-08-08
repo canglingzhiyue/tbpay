@@ -1,7 +1,7 @@
 package com.taobao.homepage.pop.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -112,7 +112,7 @@ public class b {
         if (view == null) {
             c.a("PopDxUtils ", "card view is empty");
             return null;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             c.a("PopDxUtils ", "itemBizCode is empty");
             return view;
         } else {

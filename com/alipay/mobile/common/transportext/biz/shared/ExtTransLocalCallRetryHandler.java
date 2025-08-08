@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.shared;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.ipcapi.mainproc.MainProcDataListenService;
 import com.alipay.mobile.common.amnet.ipcapi.mainproc.MainProcGeneralListenService;
 import com.alipay.mobile.common.ipc.api.LocalCallRetryHandler;
@@ -31,7 +31,7 @@ public class ExtTransLocalCallRetryHandler implements LocalCallRetryHandler {
         }
         if (iPCResult.resultCode != 100) {
             str = "Only support SERVICE_NOT_FOUND_CODE retry!";
-        } else if (!TextUtils.isEmpty(iPCParameter.className)) {
+        } else if (!StringUtils.isEmpty(iPCParameter.className)) {
             if (serviceBeanManager.getServiceBean(iPCParameter.className) != null) {
                 sb2 = "serviceBean is not null.  return true;";
             } else {

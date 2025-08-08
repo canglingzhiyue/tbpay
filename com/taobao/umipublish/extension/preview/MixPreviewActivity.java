@@ -3,7 +3,7 @@ package com.taobao.umipublish.extension.preview;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSONArray;
@@ -107,7 +107,7 @@ public class MixPreviewActivity extends UmiImagePreviewActivity {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String stringExtra = getIntent().getStringExtra("pageName");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             this.g = stringExtra;
         }
         return this.g;
@@ -120,7 +120,7 @@ public class MixPreviewActivity extends UmiImagePreviewActivity {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
         String stringExtra = getIntent().getStringExtra("spm");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             this.h = stringExtra;
         }
         return this.h;

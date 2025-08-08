@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.metaevents;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -29,7 +29,7 @@ public class MetaOffNotificationStore extends LocalEventStore {
         }
         JSONObject jSONObject = new JSONObject();
         String string = mspEvent.getActionParamsJson().getString("name");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             jSONObject.put("message", (Object) "param name must not null");
             jSONObject.put("success", (Object) Boolean.FALSE);
             return jSONObject.toJSONString();

@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.security.realidentity.j3;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -1293,7 +1293,7 @@ public class TrtcEngineImpl extends com.taobao.trtc.api.e {
             return ((Boolean) ipChange.ipc$dispatch("20267e10", new Object[]{this, gVar})).booleanValue();
         }
         gVar.b = gVar.b == null ? "" : gVar.b;
-        if (TextUtils.isEmpty(gVar.f23039a)) {
+        if (StringUtils.isEmpty(gVar.f23039a)) {
             TrtcLog.a("TrtcEngine", "checkParams error, channel id is empty");
             return false;
         } else if (!gVar.e || gVar.c != null) {
@@ -1855,7 +1855,7 @@ public class TrtcEngineImpl extends com.taobao.trtc.api.e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8f64af7b", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             b(new Runnable() { // from class: com.taobao.trtc.impl.-$$Lambda$TrtcEngineImpl$_hymOHg-XxW1nydguYPepVXbxos
                 {
@@ -1962,11 +1962,11 @@ public class TrtcEngineImpl extends com.taobao.trtc.api.e {
             trtcConfig.setWorkMode(this.e);
             TrtcLog.a("TrtcEngine", "engine initialize, set to default work mode: " + this.e);
         }
-        if (TextUtils.isEmpty(trtcConfig.getDeviceId())) {
+        if (StringUtils.isEmpty(trtcConfig.getDeviceId())) {
             trtcConfig.setDeviceId(UTDevice.getUtdid(h.f23132a));
             TrtcLog.d("TrtcEngine", "Get deviceId: " + trtcConfig.getDeviceId());
         }
-        if (TextUtils.isEmpty(trtcConfig.getRegId())) {
+        if (StringUtils.isEmpty(trtcConfig.getRegId())) {
             try {
                 trtcConfig.setRegId((String) ACCSClient.class.getMethod("getRegId", Context.class).invoke(null, h.f23132a));
             } catch (Throwable unused) {
@@ -1976,7 +1976,7 @@ public class TrtcEngineImpl extends com.taobao.trtc.api.e {
         this.c.osVersion = Build.VERSION.RELEASE;
         this.c.model = Build.MODEL;
         TelephonyManager telephonyManager = (TelephonyManager) h.f23132a.getSystemService("phone");
-        if (telephonyManager != null && !TextUtils.isEmpty(telephonyManager.getNetworkOperatorName())) {
+        if (telephonyManager != null && !StringUtils.isEmpty(telephonyManager.getNetworkOperatorName())) {
             this.c.carriers = telephonyManager.getNetworkOperatorName();
         }
         String a2 = SystemProperties.a("ro.board.platform");
@@ -1986,10 +1986,10 @@ public class TrtcEngineImpl extends com.taobao.trtc.api.e {
         c(trtcConfig);
         kgj e = this.b.e();
         if (e != null) {
-            this.c.chipset = TextUtils.isEmpty(e.f30053a) ? "" : e.f30053a;
+            this.c.chipset = StringUtils.isEmpty(e.f30053a) ? "" : e.f30053a;
             com.taobao.trtc.utils.h.a("TrtcEngine", "\"Brand\":\"" + Build.BRAND + "\",\"Model\":\"" + Build.MODEL + "\",\"UserId\":\"" + this.c.config.getUserId() + "\",\"DeviceInfo\":" + JSON.toJSONString(e));
         }
-        if (!TextUtils.isEmpty(trtcConfig.getRegId())) {
+        if (!StringUtils.isEmpty(trtcConfig.getRegId())) {
             com.taobao.trtc.utils.h.a("TrtcEngine", "accs regId: " + trtcConfig.getRegId());
         }
         this.c.orangeConfigs = qvc.c();

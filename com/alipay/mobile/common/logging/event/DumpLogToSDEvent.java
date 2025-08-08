@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.util.FileUtil;
@@ -24,7 +24,7 @@ public class DumpLogToSDEvent implements ClientEvent {
             return;
         }
         final String str = (String) obj;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         LoggingAsyncTaskExecutor.executeIO(new Runnable() { // from class: com.alipay.mobile.common.logging.event.DumpLogToSDEvent.1

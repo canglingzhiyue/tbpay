@@ -2,7 +2,7 @@ package com.alibaba.triver.triver_shop;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.TBWXSDKEngine;
 import com.taobao.weex.WXEnvironment;
@@ -27,7 +27,7 @@ public class e {
             ipChange.ipc$dispatch("6d4e19a2", new Object[]{context, shareContent, str});
             return;
         }
-        if (TextUtils.equals("weex", shareContent.templateId) && !WXEnvironment.JsFrameworkInit) {
+        if (StringUtils.equals("weex", shareContent.templateId) && !WXEnvironment.JsFrameworkInit) {
             TBWXSDKEngine.initSDKEngine();
             while (!WXEnvironment.JsFrameworkInit) {
                 try {

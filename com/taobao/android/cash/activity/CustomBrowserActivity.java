@@ -19,7 +19,7 @@ import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -232,17 +232,17 @@ public class CustomBrowserActivity extends AppCompatActivity {
         String queryParameter2 = parse.getQueryParameter("fullPage");
         String queryParameter3 = parse.getQueryParameter("height");
         try {
-            if (!TextUtils.isEmpty(queryParameter3)) {
+            if (!StringUtils.isEmpty(queryParameter3)) {
                 i3 = Integer.parseInt(queryParameter3);
             }
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 i3 = Integer.parseInt(queryParameter);
             }
         } catch (Exception e) {
             e.printStackTrace();
             String str = "pa rseInt error:" + e.getMessage();
         }
-        if (!TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter2)) {
             i2 = Integer.parseInt(queryParameter2);
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
             int i4 = displayMetrics.widthPixels;
@@ -311,7 +311,7 @@ public class CustomBrowserActivity extends AppCompatActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f9294a.loadUrl(str);
         }

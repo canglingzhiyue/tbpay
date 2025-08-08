@@ -2,7 +2,7 @@ package com.alibaba.android.icart.core.data.request;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
@@ -70,35 +70,35 @@ public abstract class a implements b {
         if (bgd.a()) {
             jSONObject.put(com.taobao.tao.log.statistics.d.PARAM_IS_INNER, (Object) String.valueOf(bgd.a()));
         }
-        if (!TextUtils.isEmpty(bcd.a().c())) {
+        if (!StringUtils.isEmpty(bcd.a().c())) {
             jSONObject.put("addressId", (Object) bcd.a().c());
         }
         if (v.b() != null) {
             jSONObject.put("cartSortParams", (Object) v.b());
         }
         String d = this.f2310a.n().v().d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             jSONObject.put("cartCustomExParam", (Object) d);
         }
         String h = this.f2310a.o().h();
-        if (!TextUtils.isEmpty(h)) {
+        if (!StringUtils.isEmpty(h)) {
             jSONObject.put("tabFilterItem", (Object) h);
         }
-        if (!TextUtils.isEmpty(this.f2310a.b())) {
+        if (!StringUtils.isEmpty(this.f2310a.b())) {
             jSONObject.put("filterItem", (Object) this.f2310a.b());
         }
         if (this.f2310a.o().b()) {
             jSONObject.put("isPromotionChecked", "true");
         }
         String u = this.f2310a.o().u();
-        if (!TextUtils.isEmpty(u)) {
+        if (!StringUtils.isEmpty(u)) {
             jSONObject.put("transparentState", (Object) u);
         }
         if (!requestConfig.g() && bem.t(this.f2310a)) {
             jSONObject.put("mixCart", "true");
         }
         String n = this.d.v().n();
-        if (!TextUtils.isEmpty(n)) {
+        if (!StringUtils.isEmpty(n)) {
             jSONObject.put("holdCustomExParams", (Object) n);
         }
         jSONObject.put("instanceId", (Object) this.f2310a.o().c());
@@ -178,7 +178,7 @@ public abstract class a implements b {
             return (JSONObject) ipChange.ipc$dispatch("3729093d", new Object[]{this, map});
         }
         String str = map.get("exParams");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         JSONObject parseObject = JSONObject.parseObject(str);
@@ -275,7 +275,7 @@ public abstract class a implements b {
                             break;
                         }
                         com.taobao.android.ultron.common.model.b next = it.next();
-                        if (TextUtils.equals(b.b(), next.getType())) {
+                        if (StringUtils.equals(b.b(), next.getType())) {
                             bVar = next;
                             break;
                         }

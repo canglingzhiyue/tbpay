@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -181,7 +181,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         }
         this.mProgressText.setVisibility(0);
         String string = getIntent().getExtras().getString("pwd_PASS");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.mProgressText.setText(string);
         } else {
             this.mProgressText.setText(getResources().getString(R.string.pwd_verify_success));
@@ -251,7 +251,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
             });
             if (!z) {
                 String string = getIntent().getExtras().getString("pwd_other");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.mOther.setText(string);
                 }
             } else {
@@ -262,7 +262,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         } else if (!this.isShowGetBackPwd) {
         } else {
             String string2 = getIntent().getExtras().getString("pwd_action");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 this.mOther.setText(string2);
             } else {
                 this.mOther.setText(R.string.pwd_forget_in_layout);
@@ -297,7 +297,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         }
         this.mContent = (APTextView) findViewById(R.id.paypwd_content);
         String string = getIntent().getExtras().getString("footRemark");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.mContent.setText(string);
@@ -317,7 +317,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         this.mTick = (ImageView) findViewById(R.id.template_pay_success);
         this.mProgressText = (APTextView) findViewById(R.id.paypwd_progress_text);
         String string = getIntent().getExtras().getString("loadingTip");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "";
         }
         this.mProgressText.setText(string);
@@ -380,7 +380,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
                 }
                 PayPwdCommonActivity.access$800(PayPwdCommonActivity.this, str2);
                 PayPwdCommonActivity payPwdCommonActivity = PayPwdCommonActivity.this;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     i = str2.length();
                 }
                 payPwdCommonActivity.writePWDSwitchBehavorLog("1", String.valueOf(i));
@@ -553,7 +553,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         }
         this.mSubtitle = (APTextView) findViewById(R.id.paypwd_subtitle);
         String string = (getIntent() == null || getIntent().getExtras() == null) ? "" : getIntent().getExtras().getString("subtitle");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.mSubtitle.setText(string);
             this.mSubtitle.setVisibility(0);
             return;
@@ -673,7 +673,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
             r8 = r4
             goto L5a
         L49:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L59
             android.content.res.Resources r0 = r13.getResources()
             int r1 = com.taobao.taobao.R.string.pwd_other_way
@@ -683,7 +683,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         L5a:
             r6 = 0
             java.lang.String r7 = r14.verifyMessage
-            boolean r14 = android.text.TextUtils.isEmpty(r8)
+            boolean r14 = android.text.StringUtils.isEmpty(r8)
             if (r14 == 0) goto L64
             goto L69
         L64:
@@ -839,7 +839,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         }
         String str2 = f5931a;
         VerifyLogCat.i(str2, "updatePubKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i(f5931a, "服务端没有提供新的公钥，不更新");
             return;
         }

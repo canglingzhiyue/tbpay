@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -105,7 +105,7 @@ public class d implements l {
         if (ipChange instanceof IpChange) {
             return (RuleModel) ipChange.ipc$dispatch("726d9d1a", new Object[]{this, str, str2});
         }
-        if (a.a(this.f10858a) || TextUtils.isEmpty(str2)) {
+        if (a.a(this.f10858a) || StringUtils.isEmpty(str2)) {
             return null;
         }
         return this.f10858a.get(str2);
@@ -117,7 +117,7 @@ public class d implements l {
         if (ipChange instanceof IpChange) {
             return (ActionModel) ipChange.ipc$dispatch("d2bb9c5e", new Object[]{this, str});
         }
-        if (a.a(this.b) || TextUtils.isEmpty(str)) {
+        if (a.a(this.b) || StringUtils.isEmpty(str)) {
             return null;
         }
         return new ActionModel(this.b.get(str));

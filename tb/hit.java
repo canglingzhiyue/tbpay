@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -62,17 +62,17 @@ public class hit {
             hashMap.put("liveItemTags", "hotItemPreheat01");
         }
         if (liveItem.extendVal != null) {
-            hashMap.put("if_anchorbenefit", TextUtils.isEmpty(liveItem.extendVal.customizedItemRights) ? str : "1");
+            hashMap.put("if_anchorbenefit", StringUtils.isEmpty(liveItem.extendVal.customizedItemRights) ? str : "1");
         }
         hashMap.put("item_kind", c(liveItem));
         hashMap.put("button_status", d(liveItem));
-        if (liveItem.itemExtData != null && TextUtils.equals(liveItem.native_buttonStatus, ButtonStateHelper.ButtonState.SINGLE_DEFAULT_NEWBUY.getValue())) {
-            boolean equals = TextUtils.equals(liveItem.itemExtData.getString("enableCart"), "true");
+        if (liveItem.itemExtData != null && StringUtils.equals(liveItem.native_buttonStatus, ButtonStateHelper.ButtonState.SINGLE_DEFAULT_NEWBUY.getValue())) {
+            boolean equals = StringUtils.equals(liveItem.itemExtData.getString("enableCart"), "true");
             StringBuilder sb = new StringBuilder();
             sb.append("addCart_");
             sb.append(equals ? "1" : str);
             String sb2 = sb.toString();
-            boolean equals2 = TextUtils.equals(liveItem.itemExtData.getString("enableBuy"), "true");
+            boolean equals2 = StringUtils.equals(liveItem.itemExtData.getString("enableBuy"), "true");
             StringBuilder sb3 = new StringBuilder();
             sb3.append(sb2);
             sb3.append("@buyNow_");
@@ -99,20 +99,20 @@ public class hit {
             hashMap.put("is_bogo", "1");
         }
         String g = hiq.g(liveItem);
-        if (!TextUtils.isEmpty(g)) {
+        if (!StringUtils.isEmpty(g)) {
             hashMap.put("scene", g);
         }
         if (liveItem.extraUTParams != null && !liveItem.extraUTParams.isEmpty()) {
             String str2 = liveItem.extraUTParams.get("aggregation_type");
             String str3 = liveItem.extraUTParams.get("aggregation_id");
             String str4 = liveItem.extraUTParams.get("aggregation_source");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 hashMap.put("aggregation_id", str3);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put("aggregation_type", str2);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 hashMap.put("aggregation_source", str4);
             }
         }
@@ -121,8 +121,8 @@ public class hit {
             if (liveItem.personalityData.getJSONArray("itemGifts") != null && !liveItem.personalityData.getJSONArray("itemGifts").isEmpty()) {
                 hashMap.put("gift_id", liveItem.personalityData.getJSONArray("itemGifts").getJSONObject(0).getString(aw.PARAM_OPEN_REWARD_GIFT_ID));
             }
-            z3 = TextUtils.equals(liveItem.personalityData.getString("subscribeStatus"), "1");
-            if (!TextUtils.isEmpty(liveItem.personalityData.getString("priceTip"))) {
+            z3 = StringUtils.equals(liveItem.personalityData.getString("subscribeStatus"), "1");
+            if (!StringUtils.isEmpty(liveItem.personalityData.getString("priceTip"))) {
                 hashMap.put("priceTip", liveItem.personalityData.getString("priceTip"));
             }
             if (liveItem.personalityData.getJSONArray("itemPriceCompetitiveDesc") != null && !liveItem.personalityData.getJSONArray("itemPriceCompetitiveDesc").isEmpty() && (jSONObject2 = liveItem.personalityData.getJSONArray("itemPriceCompetitiveDesc").getJSONObject(0)) != null && jSONObject2.containsKey("text")) {
@@ -130,7 +130,7 @@ public class hit {
             }
             if (liveItem.personalityData.getJSONArray("itemServiceTagDTOList") != null) {
                 String a2 = a(liveItem.personalityData.getJSONArray("itemServiceTagDTOList"), "bizType", "&", 2);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     hashMap.put("serviceTypes", a2);
                 }
             }
@@ -169,19 +169,19 @@ public class hit {
             hashMap.put("picTopLabel", jSONObject.getString("labelType"));
         }
         String a3 = a(liveItem.itemIcons, "bizType", "&", 2);
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             hashMap.put("nameIconTypes", a3);
         }
         if (com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.a(cVar)) {
             str = "1";
         }
         hashMap.put("isNewGLPage", str);
-        if (liveItem.extendVal != null && !TextUtils.isEmpty(liveItem.extendVal.secKillInfo) && (b = pqj.b(liveItem.extendVal.secKillInfo)) != null) {
+        if (liveItem.extendVal != null && !StringUtils.isEmpty(liveItem.extendVal.secKillInfo) && (b = pqj.b(liveItem.extendVal.secKillInfo)) != null) {
             hashMap.put("activityType", b.getString("activityType"));
         }
         hashMap.put("showPrice", hiq.j(liveItem));
         String f = hiq.f(liveItem);
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             hashMap.put("itemPriceDesc", f);
         }
         hashMap.put("dataScene", (liveItem.nativeConfigInfos == null || !liveItem.nativeConfigInfos.containsKey("dataScene")) ? "mtop" : liveItem.nativeConfigInfos.getString("dataScene"));
@@ -199,9 +199,9 @@ public class hit {
             hashMap.put("categoryId", str);
             hashMap.put("categoryName", cVar.O.name);
             List<ItemCategory> a2 = qna.a(cVar);
-            if (a2 != null && !a2.isEmpty() && !TextUtils.isEmpty(str)) {
+            if (a2 != null && !a2.isEmpty() && !StringUtils.isEmpty(str)) {
                 for (int i = 0; i < a2.size(); i++) {
-                    if (TextUtils.equals(a2.get(i).categoryId, str)) {
+                    if (StringUtils.equals(a2.get(i).categoryId, str)) {
                         hashMap.put("class_number", String.valueOf(i));
                     }
                 }
@@ -221,9 +221,9 @@ public class hit {
         }
         if (liveItem != null && liveItem.itemExtData != null && liveItem.itemExtData.containsKey("itemSellingTotal")) {
             String string = liveItem.itemExtData.getString("itemSellingTotal");
-            if (!TextUtils.equals(string, "0") && !TextUtils.isEmpty(string)) {
+            if (!StringUtils.equals(string, "0") && !StringUtils.isEmpty(string)) {
                 z = true;
-                return !z && (liveItem == null && liveItem.liveItemStatusData != null && liveItem.liveItemStatusData.containsKey("isSpeaking") && TextUtils.equals(liveItem.liveItemStatusData.getString("isSpeaking"), "true"));
+                return !z && (liveItem == null && liveItem.liveItemStatusData != null && liveItem.liveItemStatusData.containsKey("isSpeaking") && StringUtils.equals(liveItem.liveItemStatusData.getString("isSpeaking"), "true"));
             }
         }
         z = false;
@@ -241,7 +241,7 @@ public class hit {
             if ("secKill".equals(liveItem.extendVal.itemBizType)) {
                 arrayList.add("2");
             }
-            if (TextUtils.equals("1", liveItem.extendVal.isYanxuan)) {
+            if (StringUtils.equals("1", liveItem.extendVal.isYanxuan)) {
                 arrayList.add("6");
             }
             if (hiq.b(liveItem)) {
@@ -255,7 +255,7 @@ public class hit {
             if (liveItem.liveItemStatusData.getBooleanValue("isTop")) {
                 arrayList.add("5");
             }
-            if (TextUtils.equals("true", liveItem.liveItemStatusData.getString("isYanXuanHot"))) {
+            if (StringUtils.equals("true", liveItem.liveItemStatusData.getString("isYanXuanHot"))) {
                 arrayList.add("7");
             }
             if (liveItem.liveItemStatusData.getBooleanValue("isPreHeat")) {
@@ -277,13 +277,13 @@ public class hit {
             return "1";
         }
         if (liveItem.itemExtData != null) {
-            if (TextUtils.equals("0", liveItem.itemExtData.getString("timingUpShelfStatus"))) {
+            if (StringUtils.equals("0", liveItem.itemExtData.getString("timingUpShelfStatus"))) {
                 return "6";
             }
             String string = liveItem.itemExtData.getString("preSaleStatus");
-            if (TextUtils.equals("0", string)) {
-                return TextUtils.equals("1", liveItem.itemExtData.getString("subscribeStatus")) ? "3" : "2";
-            } else if (TextUtils.equals("1", string)) {
+            if (StringUtils.equals("0", string)) {
+                return StringUtils.equals("1", liveItem.itemExtData.getString("subscribeStatus")) ? "3" : "2";
+            } else if (StringUtils.equals("1", string)) {
                 return "4";
             }
         }
@@ -294,7 +294,7 @@ public class hit {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1f792ecc", new Object[]{cVar, str, map});
-        } else if (TextUtils.isEmpty(str) || a.a().j() == null) {
+        } else if (StringUtils.isEmpty(str) || a.a().j() == null) {
         } else {
             HashMap<String, String> hashMap = new HashMap<>();
             if (map != null) {
@@ -352,7 +352,7 @@ public class hit {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                 if (jSONObject2 != null) {
                     String string = jSONObject2.getString("type");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         HashMap<String, String> hashMap = new HashMap<>();
                         hashMap.put("type", string);
                         if (a.a().j() != null) {
@@ -409,7 +409,7 @@ public class hit {
                 JSONObject jSONObject2 = (JSONObject) it.next();
                 if (jSONObject2 != null) {
                     String string = jSONObject2.getString("type");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         arrayList.add(string);
                     }
                 }
@@ -430,9 +430,9 @@ public class hit {
                 JSONObject jSONObject2 = (JSONObject) it.next();
                 if (jSONObject2 != null) {
                     String string = jSONObject2.getString("type");
-                    if (!TextUtils.isEmpty(string) && list.contains(string)) {
+                    if (!StringUtils.isEmpty(string) && list.contains(string)) {
                         String string2 = jSONObject2.getString("count");
-                        if (!TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string2)) {
                             hashMap.put(string + "_count", string2);
                         }
                     }
@@ -452,7 +452,7 @@ public class hit {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ba33f9a1", new Object[]{jSONArray, str, str2, new Integer(i)});
         }
-        if (jSONArray == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (jSONArray == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return "";
         }
         StringBuilder sb = new StringBuilder();
@@ -460,8 +460,8 @@ public class hit {
             JSONObject jSONObject = jSONArray.getJSONObject(i2);
             if (jSONObject != null) {
                 String string = jSONObject.getString(str);
-                if (!TextUtils.isEmpty(string)) {
-                    if (!TextUtils.isEmpty(sb)) {
+                if (!StringUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(sb)) {
                         sb.append(str2);
                     }
                     sb.append(string);

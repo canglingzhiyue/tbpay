@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.view.navbar;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -82,7 +82,7 @@ public class h extends g {
         } else if (this.c != null && (g = this.c.g()) != null && (list = g.S) != null) {
             ArrayList<TBPublicMenuItem> arrayList = new ArrayList<>();
             for (n nVar : list) {
-                if (nVar != null && !TextUtils.isEmpty(nVar.a()) && !TextUtils.isEmpty(nVar.b()) && !TextUtils.isEmpty(nVar.c())) {
+                if (nVar != null && !StringUtils.isEmpty(nVar.a()) && !StringUtils.isEmpty(nVar.b()) && !StringUtils.isEmpty(nVar.c())) {
                     TBPublicMenuItem.Builder builder = new TBPublicMenuItem.Builder();
                     builder.setName(nVar.a());
                     builder.setTitle(nVar.b() + ":" + nVar.c());

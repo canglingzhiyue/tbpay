@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.nirvana.tools.logger.model.c;
 import java.util.List;
@@ -32,7 +32,7 @@ public abstract class OO0O00o<T extends c> implements dao<T> {
             JSONArray jSONArray = new JSONArray();
             for (T t : list) {
                 String f = t.f();
-                if (!TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(f)) {
                     try {
                         jSONArray.put(new JSONObject(f));
                     } catch (Exception e) {

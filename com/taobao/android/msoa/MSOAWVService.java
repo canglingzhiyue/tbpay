@@ -6,7 +6,7 @@ import android.preference.PreferenceManager;
 import android.taobao.windvane.connect.HttpConnector;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class MSOAWVService extends android.taobao.windvane.jsbridge.e {
             com.alibaba.fastjson.JSONObject parseObject = com.alibaba.fastjson.JSONObject.parseObject(str2);
             if (parseObject != null) {
                 final String string = parseObject.getString("configUrl");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     new AsyncTask() { // from class: com.taobao.android.msoa.MSOAWVService.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -207,7 +207,7 @@ public class MSOAWVService extends android.taobao.windvane.jsbridge.e {
                 } else {
                     hashMap = null;
                 }
-                if (TextUtils.isEmpty(string5) || TextUtils.isEmpty(string6) || TextUtils.isEmpty(string7) || TextUtils.isEmpty(string8)) {
+                if (StringUtils.isEmpty(string5) || StringUtils.isEmpty(string6) || StringUtils.isEmpty(string7) || StringUtils.isEmpty(string8)) {
                     JSONObject jSONObject = new JSONObject();
                     try {
                         jSONObject.put("errorCode", "msoa_error_invalid_param");

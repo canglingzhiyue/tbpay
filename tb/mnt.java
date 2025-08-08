@@ -8,7 +8,7 @@ import android.graphics.drawable.NinePatchDrawable;
 import android.graphics.drawable.PictureDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -165,7 +165,7 @@ public class mnt {
             return true;
         } else if (view instanceof TextView) {
             if (!(view instanceof EditText)) {
-                return (!z && (view instanceof Button)) || !TextUtils.isEmpty(((TextView) view).getText().toString());
+                return (!z && (view instanceof Button)) || !StringUtils.isEmpty(((TextView) view).getText().toString());
             }
             zArr[0] = view.isFocusable();
             return true;

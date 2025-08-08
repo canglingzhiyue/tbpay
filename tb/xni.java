@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -114,10 +114,10 @@ public class xni {
         }
         String string = ext.getString(xnk.a.X_EXPOSED_ID);
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             sb.append(string);
         }
-        if (!TextUtils.isEmpty(sb.toString())) {
+        if (!StringUtils.isEmpty(sb.toString())) {
             jSONObject.put(JarvisConstant.KEY_JARVIS_TRIGGER, (Object) sb.toString());
         }
         if (list != null && !list.isEmpty()) {
@@ -136,7 +136,7 @@ public class xni {
             jSONObject.put("3min_clks", (Object) sb2.toString());
         }
         String a2 = a(xnn.a(j, "home.request.ClickAiRefresh.aiRefreshIpvItemId", "ClickAiRefreshBizParamCreator"));
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             jSONObject.put("3min_ipvs", (Object) a2);
         }
         map.put("clickRefreshFeatures", jSONObject.toString());
@@ -157,7 +157,7 @@ public class xni {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !str.contains("tb_bc_all_only_item_clk_vstr")) {
+        if (StringUtils.isEmpty(str) || !str.contains("tb_bc_all_only_item_clk_vstr")) {
             ldf.d("ClickAiRefreshBizParamCreator", "data is empty or have no ipv features");
             return null;
         }
@@ -166,7 +166,7 @@ public class xni {
             return null;
         }
         String string = jSONArray.getString(2);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         String[] split = string.split("#");
@@ -176,7 +176,7 @@ public class xni {
         StringBuilder sb = new StringBuilder();
         for (String str2 : split) {
             String[] split2 = str2.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
-            if (split2.length >= 2 && !TextUtils.isEmpty(split2[0]) && !TextUtils.isEmpty(split2[1])) {
+            if (split2.length >= 2 && !StringUtils.isEmpty(split2[0]) && !StringUtils.isEmpty(split2[1])) {
                 try {
                     xnk.a aVar = new xnk.a(split2[1], Long.parseLong(split2[0]));
                     if (aVar.b()) {

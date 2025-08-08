@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -65,7 +65,7 @@ public class b {
                             return;
                         }
                         String str4 = configs.get("tlog_file_size");
-                        if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.isEmpty(str4)) {
                             try {
                                 edit.putLong("tlog_file_size", Long.parseLong(str4));
                             } catch (Throwable th) {
@@ -73,7 +73,7 @@ public class b {
                             }
                         }
                         String str5 = configs.get("tlog_file_version");
-                        if (!TextUtils.isEmpty(str5)) {
+                        if (!StringUtils.isEmpty(str5)) {
                             try {
                                 edit.putInt("tlog_file_version", Integer.parseInt(str5));
                             } catch (Exception e) {
@@ -81,7 +81,7 @@ public class b {
                             }
                         }
                         String str6 = configs.get("tlog_statistics_sample");
-                        if (!TextUtils.isEmpty(str6)) {
+                        if (!StringUtils.isEmpty(str6)) {
                             try {
                                 edit.putInt("tlog_statistics_sample", Integer.parseInt(str6));
                             } catch (Throwable th2) {
@@ -89,7 +89,7 @@ public class b {
                             }
                         }
                         String str7 = configs.get("tlog_file_statistics_sample");
-                        if (!TextUtils.isEmpty(str7)) {
+                        if (!StringUtils.isEmpty(str7)) {
                             try {
                                 edit.putInt("tlog_file_statistics_sample", Integer.parseInt(str7));
                             } catch (Throwable th3) {
@@ -97,7 +97,7 @@ public class b {
                             }
                         }
                         String str8 = configs.get("tlog_buffer_size");
-                        if (!TextUtils.isEmpty(str8)) {
+                        if (!StringUtils.isEmpty(str8)) {
                             try {
                                 edit.putLong("tlog_buffer_size", Long.parseLong(str8));
                             } catch (Throwable th4) {
@@ -105,29 +105,29 @@ public class b {
                             }
                         }
                         String str9 = configs.get("tlog_scan_upload");
-                        if (!TextUtils.isEmpty(str9)) {
+                        if (!StringUtils.isEmpty(str9)) {
                             edit.putBoolean("tlog_scan_upload", "true".equals(str9));
                         }
                         String str10 = configs.get("tlog_multi_process_notify");
-                        if (!TextUtils.isEmpty(str10)) {
+                        if (!StringUtils.isEmpty(str10)) {
                             edit.putBoolean("tlog_multi_process_notify", "true".equals(str10));
                         }
                         String str11 = configs.get(e.TLOG_UDF_SWITCH);
-                        if (!TextUtils.isEmpty(str11)) {
+                        if (!StringUtils.isEmpty(str11)) {
                             edit.putBoolean(e.TLOG_UDF_SWITCH, "true".equals(str11));
                         }
                         String str12 = configs.get("tlog_use_zstd");
-                        if (!TextUtils.isEmpty(str12)) {
+                        if (!StringUtils.isEmpty(str12)) {
                             edit.putBoolean("tlog_use_zstd", "true".equals(str12));
                         }
                         String str13 = configs.get("tlog_intercept");
-                        if (!TextUtils.isEmpty(str13)) {
+                        if (!StringUtils.isEmpty(str13)) {
                             edit.putBoolean("tlog_intercept", "true".equals(str13));
                         } else {
                             edit.remove("tlog_intercept");
                         }
                         String str14 = configs.get("tlog_real_time");
-                        if (!TextUtils.isEmpty(str14)) {
+                        if (!StringUtils.isEmpty(str14)) {
                             str2 = "TLogConfigReceiver";
                             edit.putBoolean("tlog_real_time", "true".equals(str14));
                         } else {
@@ -135,13 +135,13 @@ public class b {
                             edit.remove("tlog_real_time");
                         }
                         String str15 = configs.get("tlog_slice_config");
-                        if (!TextUtils.isEmpty(str15)) {
+                        if (!StringUtils.isEmpty(str15)) {
                             edit.putString("tlog_slice_config", str15);
                         } else {
                             edit.remove("tlog_slice_config");
                         }
                         String str16 = configs.get("tlog_main_opt");
-                        if (!TextUtils.isEmpty(str16)) {
+                        if (!StringUtils.isEmpty(str16)) {
                             edit.putBoolean("tlog_main_opt", "true".equals(str16));
                         } else {
                             edit.remove("tlog_main_opt");
@@ -161,7 +161,7 @@ public class b {
                         return;
                     }
                     Log.e("TLogConfigReceiver", "tlogDestroy is: " + str17 + "tlogSwitch is : " + str18 + "  tlogLevel is : " + str19 + "  tlogModule is : " + str20);
-                    if (!TextUtils.isEmpty(str17) && "true".equals(str17)) {
+                    if (!StringUtils.isEmpty(str17) && "true".equals(str17)) {
                         Log.e("TLogConfigReceiver", "destroy tlog");
                         com.taobao.tao.log.e.a().c();
                         g.a(com.taobao.tao.log.utils.a.b());
@@ -169,20 +169,20 @@ public class b {
                         return;
                     }
                     edit.putBoolean("tlog_destroy", false);
-                    if (TextUtils.isEmpty(str18) || !"false".equals(str18)) {
+                    if (StringUtils.isEmpty(str18) || !"false".equals(str18)) {
                         edit.putBoolean(b.REMOTE_TLOG_CONFIG, true);
                     } else {
                         Log.e("TLogConfigReceiver", "switch tlog function");
                         com.taobao.tao.log.e.a().c();
                         edit.putBoolean(b.REMOTE_TLOG_CONFIG, false);
                     }
-                    if (!TextUtils.isEmpty(str19)) {
+                    if (!StringUtils.isEmpty(str19)) {
                         Log.e("TLogConfigReceiver", "change tlog level : " + str19);
                         LogLevel b = g.b(str19);
                         edit.putString(EnvironmentSwitcher.TLOG_LEVEL, str19);
                         com.taobao.tao.log.e.a().a(b);
                     }
-                    if (!TextUtils.isEmpty(str20)) {
+                    if (!StringUtils.isEmpty(str20)) {
                         Log.e("TLogConfigReceiver", "tlog model : " + str20);
                         if ("off".equals(str20)) {
                             com.taobao.tao.log.e.a().b();
@@ -195,7 +195,7 @@ public class b {
                             }
                         }
                     }
-                    if (!TextUtils.isEmpty(str21)) {
+                    if (!StringUtils.isEmpty(str21)) {
                         Log.e("TLogConfigReceiver", "change tlog start up sampling : " + str21);
                         try {
                             com.taobao.tao.log.f.a().a(Integer.valueOf(Integer.parseInt(str21)));
@@ -218,7 +218,7 @@ public class b {
             return;
         }
         String str2 = map.get(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 editor.putInt(str, Integer.parseInt(str2));
                 return;
@@ -237,7 +237,7 @@ public class b {
             return;
         }
         String str2 = map.get(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             editor.putBoolean(str, Boolean.parseBoolean(str2));
         } else {
             editor.remove(str);

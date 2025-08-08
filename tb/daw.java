@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.nirvana.tools.jsoner.a;
 import com.nirvana.tools.logger.model.ACMLimitConfig;
 import java.util.HashMap;
@@ -17,7 +17,7 @@ public class daw {
         synchronized (daw.class) {
             String str = (String) a(context, "ALITX_LOGGER_DATA", "AUTH_LIMIT_CONFIG_KEY", "");
             aCMLimitConfig = null;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     aCMLimitConfig = ACMLimitConfig.fromJson(str);
                 } catch (Exception unused) {
@@ -80,7 +80,7 @@ public class daw {
         synchronized (daw.class) {
             String str3 = (String) a(context, "ALITX_LOGGER_DATA", str, "");
             Map<String, Integer> map = null;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 map = a.a(str3);
             }
             if (map == null || map.isEmpty() || !map.containsKey(str2)) {
@@ -105,7 +105,7 @@ public class daw {
         synchronized (daw.class) {
             String str3 = (String) a(context, "ALITX_LOGGER_DATA", str, "");
             Map<String, Integer> map = null;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 map = a.a(str3);
             }
             if (map == null || map.isEmpty() || !map.containsKey(str2)) {

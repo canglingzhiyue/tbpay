@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -82,7 +82,7 @@ public class rfm extends d implements rfz {
                 boolean booleanValue = jSONObject.getBooleanValue("rollback");
                 String string3 = jSONObject.getString("md5");
                 boolean containsKey = jSONObject.containsKey("beta");
-                if ((!TextUtils.isEmpty(string2) || booleanValue) && string != null && string.equals(rgq.getVersionName())) {
+                if ((!StringUtils.isEmpty(string2) || booleanValue) && string != null && string.equals(rgq.getVersionName())) {
                     if (str.equals(rfx.SCAN)) {
                         a("C++ inlinepatch updating ......");
                     }

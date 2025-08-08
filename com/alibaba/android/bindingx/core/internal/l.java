@@ -1,6 +1,6 @@
 package com.alibaba.android.bindingx.core.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -36,7 +36,7 @@ public class l {
 
     public static boolean a(l lVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e109e72c", new Object[]{lVar})).booleanValue() : lVar != null && ((!TextUtils.isEmpty(lVar.b) && !"{}".equals(lVar.b)) || lVar.c != null);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e109e72c", new Object[]{lVar})).booleanValue() : lVar != null && ((!StringUtils.isEmpty(lVar.b) && !"{}".equals(lVar.b)) || lVar.c != null);
     }
 
     public boolean equals(Object obj) {

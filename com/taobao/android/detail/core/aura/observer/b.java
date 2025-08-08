@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.aura.observer;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -93,13 +93,13 @@ public class b extends c implements iyh.a {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c6e0ee3", new Object[]{this, list, str});
         } else if ((this.c instanceof com.taobao.android.detail.core.aura.observer.a) && (a2 = ((com.taobao.android.detail.core.aura.observer.a) this.c).a()) != null && (a3 = a(((DetailCoreActivity) this.c).L_())) != null && !a3.isEmpty()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 for (int i = 0; i < a3.size(); i++) {
                     JSONObject jSONObject = a3.getJSONObject(i);
                     if (a(list, jSONObject)) {
                         a2.a(d.KEY_PRICE_MODEL, JSON.toJSONString(jSONObject));
                         String string = jSONObject.getString(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH);
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             return;
                         }
                         a2.b(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH, string);
@@ -122,7 +122,7 @@ public class b extends c implements iyh.a {
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
-            if (TextUtils.isEmpty(jSONObject.getString(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH)) && TextUtils.isEmpty(jSONObject.getString("skuId"))) {
+            if (StringUtils.isEmpty(jSONObject.getString(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH)) && StringUtils.isEmpty(jSONObject.getString("skuId"))) {
                 return jSONObject;
             }
         }
@@ -135,7 +135,7 @@ public class b extends c implements iyh.a {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         try {
-            return TextUtils.equals("true", ((DetailCoreActivity) this.c).C().f10055a.a().getJSONObject("feature").getString("detail3SkuPriceLinkage"));
+            return StringUtils.equals("true", ((DetailCoreActivity) this.c).C().f10055a.a().getJSONObject("feature").getString("detail3SkuPriceLinkage"));
         } catch (Exception e) {
             i.a("MainPageSkuComponentUpdate", "isDetail3SkuLinkage parse exception:" + e.getMessage());
             return false;
@@ -151,7 +151,7 @@ public class b extends c implements iyh.a {
             return false;
         }
         String string = jSONObject.getString(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         List asList = Arrays.asList(string.split(";"));

@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.amap.api.location.AMapLocation;
 import java.util.List;
 import org.json.JSONObject;
@@ -74,7 +74,7 @@ public final class j {
                 return fiVar;
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             AMapLocation aMapLocation = new AMapLocation("");
             fr.a(aMapLocation, new JSONObject(str));
             if (fy.b(aMapLocation)) {
@@ -92,7 +92,7 @@ public final class j {
             e();
             if (b != null && b.a() != null) {
                 boolean z = false;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     long b2 = fy.b() - b.d();
                     if (b2 >= 0 && b2 <= j) {
                         z = true;
@@ -197,15 +197,15 @@ public final class j {
                 String b2 = this.c.b();
                 this.d = this.c;
                 String str3 = null;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str = p.b(fg.a(str2.getBytes("UTF-8"), this.f7821a));
-                    if (!TextUtils.isEmpty(b2)) {
+                    if (!StringUtils.isEmpty(b2)) {
                         str3 = p.b(fg.a(b2.getBytes("UTF-8"), this.f7821a));
                     }
                 } else {
                     str = null;
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 fi fiVar = new fi();

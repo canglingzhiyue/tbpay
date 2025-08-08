@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -55,7 +55,7 @@ public class kfg {
     }
 
     public void a(final ScheduleDTOModule scheduleDTOModule, final kfi kfiVar) {
-        if (scheduleDTOModule == null || TextUtils.isEmpty(scheduleDTOModule.getBizId()) || TextUtils.isEmpty(scheduleDTOModule.getOutId())) {
+        if (scheduleDTOModule == null || StringUtils.isEmpty(scheduleDTOModule.getBizId()) || StringUtils.isEmpty(scheduleDTOModule.getOutId())) {
             kfiVar.a(CalendarResult.KTCALENDAR_INVALID_PARAM, null);
         } else if (kfl.a().a(scheduleDTOModule.getBizId(), scheduleDTOModule.getOutId())) {
             kfiVar.a(CalendarResult.kTBCALENDAR_REMINDER_EXISTS, null);
@@ -74,7 +74,7 @@ public class kfg {
     }
 
     public void a(final String str, final String str2, final kfi kfiVar) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             kfiVar.a(CalendarResult.KTCALENDAR_INVALID_PARAM, null);
         }
         this.f30030a.a(str, str2, new kfi() { // from class: tb.kfg.2

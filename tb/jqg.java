@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import com.taobao.android.riverlogger.b;
@@ -138,7 +138,7 @@ public class jqg {
                         RVLLevel rVLLevel = RVLLevel.Error;
                         StringBuilder sb = new StringBuilder();
                         sb.append("Ultron/");
-                        sb.append(TextUtils.isEmpty(str) ? "common" : str);
+                        sb.append(StringUtils.isEmpty(str) ? "common" : str);
                         b a3 = e.a(rVLLevel, sb.toString()).a(RVLLevel.Error);
                         a3.a(j <= 0 ? System.currentTimeMillis() : j);
                         a3.a("message", (Object) str2);

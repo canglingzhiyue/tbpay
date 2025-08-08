@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -98,7 +98,7 @@ public abstract class mss extends msr implements IOldAgooNotification {
         Intent intent2 = this.d;
         if (intent2 != null) {
             String stringExtra = intent2.getStringExtra("notifyContentTargetUrl");
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 this.c.putString("notifyContentTargetUrl", stringExtra);
             }
             Bundle bundleExtra = this.d.getBundleExtra("notifyContentParamBundleKey");
@@ -148,7 +148,7 @@ public abstract class mss extends msr implements IOldAgooNotification {
         }
         String string = bundle.getString(AgooConstants.MESSAGE_BODY);
         TLog.loge(BasicLocalPush.TAG, " agooBody :" + string);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         Intent intent = new Intent();
@@ -232,7 +232,7 @@ public abstract class mss extends msr implements IOldAgooNotification {
             JSONObject jSONObject = JSON.parseObject(this.c.getString(AgooConstants.MESSAGE_BODY)).getJSONObject(Constants.KEY_EXTS);
             if (jSONObject != null) {
                 String string3 = jSONObject.getString(MarketingInnerNotificationAdapter.KEY_PUSHUTARGS);
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     try {
                         for (Map.Entry<String, Object> entry : JSON.parseObject(string3).entrySet()) {
                             if (entry.getValue() instanceof String) {

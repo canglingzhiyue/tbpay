@@ -1,7 +1,7 @@
 package com.taobao.android.icart.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.export.UmTypeKey;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -114,7 +114,7 @@ public class h extends bca {
         String string4 = c.getString(mrm.KEY_AREA_ID);
         if (!c.getBoolean("editable").booleanValue()) {
             String string5 = c.getString("invalidMsg");
-            if (TextUtils.isEmpty(string5)) {
+            if (StringUtils.isEmpty(string5)) {
                 string5 = this.e.getString(R.string.cart_msg_cannot_modify);
             }
             com.alibaba.android.icart.core.widget.d.a(this.e, string5);
@@ -149,7 +149,7 @@ public class h extends bca {
                     return;
                 }
                 String str2 = gnzVar.b;
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 JSONObject jSONObject4 = null;
@@ -189,7 +189,7 @@ public class h extends bca {
                     ipChange2.ipc$dispatch("20f12ca5", new Object[]{this, new Integer(i), str2});
                     return;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = h.i(h.this).getString(R.string.cart_msg_cannot_modify);
                 }
                 com.alibaba.android.icart.core.widget.d.a(h.j(h.this), str2);

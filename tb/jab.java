@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.eventchain.l;
@@ -31,7 +31,7 @@ public class jab extends dlg<l> {
             return new dkw(new dkv(30009, "rootWidget为空"), true);
         }
         String c = dlhVar.c("viewPagerUserId");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return new dkw(new dkv(30009, "userId为空"), true);
         }
         DXWidgetNode queryWidgetNodeByUserId = d.queryWidgetNodeByUserId(c);

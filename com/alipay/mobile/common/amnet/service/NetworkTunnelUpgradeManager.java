@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.amnet.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.amnet.api.AmnetResult;
 import com.alipay.mobile.common.amnet.api.model.AskConnStateCallback;
@@ -562,7 +562,7 @@ public class NetworkTunnelUpgradeManager {
             }
             try {
                 String config = NetworkConfigDAO.getInstance().getConfig(NetworkTunnelUpgradeManager.access$900());
-                if (TextUtils.isEmpty(config)) {
+                if (StringUtils.isEmpty(config)) {
                     long currentTimeMillis = System.currentTimeMillis();
                     LogCatUtil.info("NetworkTunnelUpgradeManager", "getNextUpgradeTime. upgradeRecordInfoJson is empty, use currentTimeMillis: " + currentTimeMillis);
                     return currentTimeMillis;

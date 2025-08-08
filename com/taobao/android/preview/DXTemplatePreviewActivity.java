@@ -9,7 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.b;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -260,12 +260,12 @@ public class DXTemplatePreviewActivity extends AppCompatActivity implements fve 
             Intent intent = getIntent();
             String stringExtra = intent.getStringExtra(PREVIEW_INFO);
             String stringExtra2 = intent.getStringExtra("fontSize");
-            if (!TextUtils.isEmpty(stringExtra2) ? Boolean.valueOf(stringExtra2).booleanValue() : false) {
+            if (!StringUtils.isEmpty(stringExtra2) ? Boolean.valueOf(stringExtra2).booleanValue() : false) {
                 spinner.setVisibility(0);
             } else {
                 spinner.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 log("onCreate info :" + stringExtra);
                 downLoadMockData(stringExtra);
                 return;
@@ -300,7 +300,7 @@ public class DXTemplatePreviewActivity extends AppCompatActivity implements fve 
         log("onNewIntent");
         try {
             String stringExtra = intent.getStringExtra(PREVIEW_INFO);
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 log("onNewIntent" + stringExtra);
                 downLoadMockData(stringExtra);
                 return;
@@ -331,7 +331,7 @@ public class DXTemplatePreviewActivity extends AppCompatActivity implements fve 
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x002d, code lost:
-        if (android.text.TextUtils.isEmpty(r6) == false) goto L11;
+        if (android.text.StringUtils.isEmpty(r6) == false) goto L11;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -360,7 +360,7 @@ public class DXTemplatePreviewActivity extends AppCompatActivity implements fve 
             if (r6 == 0) goto L30
             java.lang.String r0 = "bizType"
             java.lang.String r6 = r6.getString(r0)
-            boolean r0 = android.text.TextUtils.isEmpty(r6)
+            boolean r0 = android.text.StringUtils.isEmpty(r6)
             if (r0 != 0) goto L30
             goto L33
         L30:
@@ -614,7 +614,7 @@ public class DXTemplatePreviewActivity extends AppCompatActivity implements fve 
     }
 
     private void callMethod(a aVar) {
-        if (aVar != null && !TextUtils.isEmpty(aVar.b)) {
+        if (aVar != null && !StringUtils.isEmpty(aVar.b)) {
             try {
                 Class<?> cls = Class.forName(aVar.b);
                 cls.getMethod("previewEngineDidInitialized", bd.class).invoke(cls.newInstance(), this.engineRouter);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class bmk extends fnl {
         }
         if (list != null && list.size() > 0) {
             String valueOf = String.valueOf(list.get(0));
-            if (!TextUtils.isEmpty(valueOf) && "Android".equalsIgnoreCase(valueOf)) {
+            if (!StringUtils.isEmpty(valueOf) && "Android".equalsIgnoreCase(valueOf)) {
                 return true;
             }
         }

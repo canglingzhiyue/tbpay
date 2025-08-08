@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.hardwarepay.neo.dialog.impl;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,7 +128,7 @@ public class FpDefaultDialog implements IHardwarePayDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.f4728a == null || TextUtils.isEmpty(str)) {
+        } else if (this.f4728a == null || StringUtils.isEmpty(str)) {
         } else {
             this.f4728a.postDelayed(new Runnable() { // from class: com.alipay.android.msp.framework.hardwarepay.neo.dialog.impl.FpDefaultDialog.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -322,7 +322,7 @@ public class FpDefaultDialog implements IHardwarePayDialog {
                     this.e.setVisibility(0);
                     this.g.setVisibility(0);
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     this.f4728a.setText(LanguageHelper.localizedStringForKey("flybird_fp_open", activity.getString(R.string.flybird_fp_open), new Object[0]));
                 } else {
                     this.f4728a.setText(str);

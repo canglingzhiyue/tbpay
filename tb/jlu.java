@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
 import com.taobao.android.tschedule.taskcontext.baseparams.TimeContent;
@@ -52,7 +52,7 @@ public class jlu extends jls {
                 }
                 for (String str : queryParameterNames) {
                     String queryParameter = parse.getQueryParameter(str);
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         String encode = Uri.encode(queryParameter);
                         jkq.a("TS.Operator", "origin value = " + queryParameter + "; encode value = " + encode);
                         treeMap.put(str, encode);

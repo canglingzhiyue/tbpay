@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.Map;
@@ -52,7 +52,7 @@ public class lww {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
             } else if (!c) {
             } else {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 if (b) {
@@ -71,7 +71,7 @@ public class lww {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
             return;
         }
-        if (!TextUtils.isEmpty(str) && map != null) {
+        if (!StringUtils.isEmpty(str) && map != null) {
             a.a(str);
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 a.b(str, entry.getKey(), entry.getValue());
@@ -85,7 +85,7 @@ public class lww {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{this, str, str2, str3});
         }
         String a2 = a.a(str, str2, str3);
-        return TextUtils.equals(a2, f30961a) ? str3 : a2;
+        return StringUtils.equals(a2, f30961a) ? str3 : a2;
     }
 
     /* loaded from: classes7.dex */

@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Message;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -123,7 +123,7 @@ public class b extends WVUCWebViewClient {
         if (dVar != null) {
             dVar.c();
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             TBS.Ext.commitEvent("Page_Webview", Constants.EventID_H5_APPCACHE, str, this.c, "" + this.b, "" + this.d);
             this.c = null;
             this.b = 0;
@@ -230,13 +230,13 @@ public class b extends WVUCWebViewClient {
             return str;
         }
         try {
-            if (!TextUtils.isEmpty(str) && this.h != null) {
+            if (!StringUtils.isEmpty(str) && this.h != null) {
                 Uri parse = Uri.parse(str);
-                if (!TextUtils.isEmpty(parse.getQueryParameter("spm"))) {
+                if (!StringUtils.isEmpty(parse.getQueryParameter("spm"))) {
                     return str;
                 }
                 String a2 = g.a(this.h.getModel());
-                return !TextUtils.isEmpty(a2) ? parse.buildUpon().appendQueryParameter("spm", a2).toString() : str;
+                return !StringUtils.isEmpty(a2) ? parse.buildUpon().appendQueryParameter("spm", a2).toString() : str;
             }
             return str;
         } catch (Exception unused) {
@@ -298,7 +298,7 @@ public class b extends WVUCWebViewClient {
         if (str.contains(".manifest")) {
             this.c = str;
             this.b++;
-        } else if (!TextUtils.isEmpty(this.c)) {
+        } else if (!StringUtils.isEmpty(this.c)) {
             this.d++;
         }
         super.onLoadResource(webView, str);

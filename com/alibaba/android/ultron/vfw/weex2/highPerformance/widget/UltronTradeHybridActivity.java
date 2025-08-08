@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
@@ -122,7 +122,7 @@ public class UltronTradeHybridActivity extends BaseActivity implements hfg {
             UnifyLog.d("UltronTradeHybridActivity.initParams", "invalid url");
         } else {
             this.f2808a = getIntent().getData().toString();
-            if (!TextUtils.isEmpty(this.f2808a)) {
+            if (!StringUtils.isEmpty(this.f2808a)) {
                 if (com.alibaba.android.ultron.vfw.weex2.highPerformance.model.a.a(this.f2808a, cts.a.PRE_RENDER_URL_PAY_SUCCESS)) {
                     this.f2808a = adh.a(this.f2808a, cts.a.QUERY_HIT_PRERENDER_OPT);
                 }
@@ -139,12 +139,12 @@ public class UltronTradeHybridActivity extends BaseActivity implements hfg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f2808a)) {
+        } else if (StringUtils.isEmpty(this.f2808a)) {
             UnifyLog.d("UltronTradeHybridActivity.initStyle", "mUrl is empty");
         } else {
             Uri parse = Uri.parse(this.f2808a);
             try {
-                if (TextUtils.equals(parse.getQueryParameter(CXCommonActivity.NAV_OVERLAY), "true")) {
+                if (StringUtils.equals(parse.getQueryParameter(CXCommonActivity.NAV_OVERLAY), "true")) {
                     supportRequestWindowFeature(9);
                 } else {
                     supportRequestWindowFeature(8);
@@ -153,14 +153,14 @@ public class UltronTradeHybridActivity extends BaseActivity implements hfg {
                 UnifyLog.d("UltronTradeHybridActivity.initStyle", e.toString());
             }
             try {
-                if (TextUtils.equals(parse.getQueryParameter(CXCommonActivity.NAV_HIDDEN), "true")) {
+                if (StringUtils.equals(parse.getQueryParameter(CXCommonActivity.NAV_HIDDEN), "true")) {
                     getSupportActionBar().e();
                 }
             } catch (Exception e2) {
                 UnifyLog.d("UltronTradeHybridActivity.initStyle", e2.toString());
             }
             try {
-                if (TextUtils.equals(parse.getQueryParameter(CXCommonActivity.NAV_HIDDEN), "true")) {
+                if (StringUtils.equals(parse.getQueryParameter(CXCommonActivity.NAV_HIDDEN), "true")) {
                     getSupportActionBar().e();
                 }
             } catch (Exception e3) {
@@ -168,11 +168,11 @@ public class UltronTradeHybridActivity extends BaseActivity implements hfg {
             }
             String queryParameter = parse.getQueryParameter("wx_statusbar_hidden");
             String queryParameter2 = parse.getQueryParameter("_wx_statusbar_hidden");
-            if (TextUtils.equals(queryParameter, "true") || TextUtils.equals(queryParameter2, "true")) {
+            if (StringUtils.equals(queryParameter, "true") || StringUtils.equals(queryParameter2, "true")) {
                 this.d = true;
             }
             try {
-                if (!TextUtils.equals(parse.getQueryParameter("pageType"), "pop")) {
+                if (!StringUtils.equals(parse.getQueryParameter("pageType"), "pop")) {
                     return;
                 }
                 this.f = true;
@@ -205,7 +205,7 @@ public class UltronTradeHybridActivity extends BaseActivity implements hfg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             jqg.b("UltronTradeHybridActivity.switchInnerFragment", "pageUrl is empty");
         } else {
             try {
@@ -316,7 +316,7 @@ public class UltronTradeHybridActivity extends BaseActivity implements hfg {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
         } else if (!jqm.a()) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             Toast.makeText(this, str, 1).show();

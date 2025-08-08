@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.CcrcService;
 import com.alibaba.security.wukong.model.meta.Data;
 import com.alibaba.security.wukong.model.protocol.RiskSample;
@@ -62,7 +62,7 @@ public abstract class CCRCRiskSample extends RiskSample {
 
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.sampleID);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.sampleID);
     }
 
     public CCRCRiskSample(String str, Map<String, Object> map) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.AURAInputData;
@@ -327,7 +327,7 @@ public final class avm extends arn implements fve {
                 if (aURARenderComponentData != null && aURARenderComponentData.container != null) {
                     AURARenderComponentContainer aURARenderComponentContainer = aURARenderComponentData.container;
                     String str = aURARenderComponentContainer.name;
-                    if (!TextUtils.isEmpty(str) && a.b.f2133a.equals(aURARenderComponentContainer.containerType) && str.equals(dXTemplateItem.f11925a)) {
+                    if (!StringUtils.isEmpty(str) && a.b.f2133a.equals(aURARenderComponentContainer.containerType) && str.equals(dXTemplateItem.f11925a)) {
                         aURARenderComponentContainer.version = String.valueOf(dXTemplateItem.b);
                         aURARenderComponentContainer.url = dXTemplateItem.c;
                         aURARenderComponentContainer.identifySuffix = String.valueOf(System.currentTimeMillis());

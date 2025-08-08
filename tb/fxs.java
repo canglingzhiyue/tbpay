@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes5.dex */
@@ -14,7 +14,7 @@ public class fxs {
 
     public static boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : !TextUtils.isEmpty(a("ro.miui.ui.version.name")) || d() != -1;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : !StringUtils.isEmpty(a("ro.miui.ui.version.name")) || d() != -1;
     }
 
     public static boolean b() {
@@ -33,7 +33,7 @@ public class fxs {
             return ((Number) ipChange.ipc$dispatch("596b2de", new Object[0])).intValue();
         }
         String a2 = a("ro.miui.ui.version.code");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return -1;
         }
         try {

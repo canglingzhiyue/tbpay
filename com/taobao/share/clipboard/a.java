@@ -4,7 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.wireless.aliprivacyext.c;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,7 +41,7 @@ public class a {
                 ClipData primaryClip = clipboardManager.getPrimaryClip();
                 if (primaryClip != null && primaryClip.getItemCount() > 0) {
                     if (primaryClip.getDescription() != null && primaryClip.getDescription().getLabel() != null) {
-                        if (TextUtils.equals(nyg.TAO_FLAG + ShareBizAdapter.getInstance().getAppEnv().b().getPackageName(), primaryClip.getDescription().getLabel())) {
+                        if (StringUtils.equals(nyg.TAO_FLAG + ShareBizAdapter.getInstance().getAppEnv().b().getPackageName(), primaryClip.getDescription().getLabel())) {
                             nyy.a("ClipUrlWatcherControl", b.a(R.string.taobao_app_1010_1_18131));
                             return null;
                         }
@@ -51,7 +51,7 @@ public class a {
                         return null;
                     }
                     CharSequence text = itemAt.getText();
-                    if (!TextUtils.isEmpty(text)) {
+                    if (!StringUtils.isEmpty(text)) {
                         return text.toString();
                     }
                     return null;

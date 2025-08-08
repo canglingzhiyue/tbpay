@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,7 +54,7 @@ public class exs extends e {
             this.f = 0;
         }
         String string = jSONObject.getString("componentTitle");
-        if (TextUtils.isEmpty(string) || (parseObject = JSON.parseObject(string)) == null) {
+        if (StringUtils.isEmpty(string) || (parseObject = JSON.parseObject(string)) == null) {
             return;
         }
         this.e = parseObject.getString("text");
@@ -63,6 +63,6 @@ public class exs extends e {
     @Override // com.taobao.android.detail.sdk.vmodel.desc.e
     public boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.f27633a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.f27633a);
     }
 }

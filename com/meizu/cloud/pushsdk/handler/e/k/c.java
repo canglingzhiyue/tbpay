@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e.k;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
@@ -19,7 +19,7 @@ public class c extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
 
     /* renamed from: d  reason: avoid collision after fix types in other method */
     private void d2(MessageV3 messageV3) {
-        if (messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
+        if (messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
             return;
         }
         com.meizu.cloud.pushsdk.util.b.a(this.d, messageV3.getAdvertisementOption().getAdPackage(), System.currentTimeMillis());
@@ -38,7 +38,7 @@ public class c extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
             return;
         }
         d2(messageV3);
-        if (!TextUtils.isEmpty(messageV3.getTitle()) && !TextUtils.isEmpty(messageV3.getContent()) && b() != null) {
+        if (!StringUtils.isEmpty(messageV3.getTitle()) && !StringUtils.isEmpty(messageV3.getContent()) && b() != null) {
             b().c(c(), MzPushMessage.fromMessageV3(messageV3));
         }
         a(messageV3);

@@ -1,7 +1,7 @@
 package anet.channel.strategy.dispatch;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -174,7 +174,7 @@ public class AmdcRuntimeInfo {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a630317a", new Object[]{str})).booleanValue();
         }
-        if (controlMode != 0 && controlList != null && !controlList.isEmpty() && !TextUtils.isEmpty(str)) {
+        if (controlMode != 0 && controlList != null && !controlList.isEmpty() && !StringUtils.isEmpty(str)) {
             if (controlMode == 1) {
                 return controlList.contains(str);
             }

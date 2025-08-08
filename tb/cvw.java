@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.heytap.msp.push.encrypt.AESEncrypt;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -19,7 +19,7 @@ public class cvw {
     }
 
     private static String a() {
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             b = new String(cvg.a(DES_KEY_BASE64));
         }
         byte[] a2 = a(a(b));
@@ -51,7 +51,7 @@ public class cvw {
     public static String b(String str) {
         boolean z;
         String str2 = "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             boolean z2 = false;
             try {
                 str2 = cvx.a(str, a());
@@ -61,7 +61,7 @@ public class cvw {
                 cvy.a("sdkDecrypt DES excepiton " + e.toString());
                 z = false;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 z2 = z;
             }
             if (z2) {
@@ -84,7 +84,7 @@ public class cvw {
     public static String c(String str) {
         boolean z;
         String str2 = "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             boolean z2 = false;
             try {
                 str2 = AESEncrypt.decrypt(AESEncrypt.SDK_APP_SECRET, str);
@@ -94,7 +94,7 @@ public class cvw {
                 cvy.a("sdkDecrypt AES excepiton " + e.toString());
                 z = false;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 z2 = z;
             }
             if (z2) {
@@ -116,7 +116,7 @@ public class cvw {
 
     public static String d(String str) {
         cvy.a("sdkDecrypt start data " + str);
-        if (TextUtils.isEmpty(f26557a)) {
+        if (StringUtils.isEmpty(f26557a)) {
             f26557a = cvz.c().b();
         }
         if ("DES".equals(f26557a)) {

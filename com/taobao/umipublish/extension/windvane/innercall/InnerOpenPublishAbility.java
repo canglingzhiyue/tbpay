@@ -1,7 +1,7 @@
 package com.taobao.umipublish.extension.windvane.innercall;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -94,7 +94,7 @@ public class InnerOpenPublishAbility extends InnerCallBaseAbility {
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
-            if (jSONObject != null && jSONObject.containsKey("ref_id") && !TextUtils.isEmpty(jSONObject.getString("ref_id"))) {
+            if (jSONObject != null && jSONObject.containsKey("ref_id") && !StringUtils.isEmpty(jSONObject.getString("ref_id"))) {
                 return jSONObject;
             }
         }
@@ -110,14 +110,14 @@ public class InnerOpenPublishAbility extends InnerCallBaseAbility {
             if (jSONObject == null) {
                 jSONObject = new JSONObject();
             }
-            if (jSONObject2.containsKey("ref_id") && !TextUtils.isEmpty(jSONObject2.getString("ref_id"))) {
+            if (jSONObject2.containsKey("ref_id") && !StringUtils.isEmpty(jSONObject2.getString("ref_id"))) {
                 jSONObject.put("ref_id", (Object) jSONObject2.getString("ref_id"));
                 iUGCMedia.setMeta(RELATED_TOPIC_ID, jSONObject2.getString("ref_id"));
             } else {
                 u.a(TAG, "aYou innerOpenPublish, refId is null");
                 UmiPublishMonitor.a().b("wind_vane", "9002", "wind_vane_publish_ability_empty_ref_id", null);
             }
-            if (jSONObject2.containsKey("ref_name") && !TextUtils.isEmpty(jSONObject2.getString("ref_name"))) {
+            if (jSONObject2.containsKey("ref_name") && !StringUtils.isEmpty(jSONObject2.getString("ref_name"))) {
                 jSONObject.put("ref_name", (Object) jSONObject2.getString("ref_name"));
                 return;
             }
@@ -153,7 +153,7 @@ public class InnerOpenPublishAbility extends InnerCallBaseAbility {
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject = (JSONObject) jSONArray.get(i);
                 String string = jSONObject.getString("path");
-                if (!TextUtils.isEmpty(string) && (a2 = a(string)) != null) {
+                if (!StringUtils.isEmpty(string) && (a2 = a(string)) != null) {
                     MediaStatInfo mediaStatInfo = new MediaStatInfo(iUGCMedia.getPublishSessionId());
                     mediaStatInfo.album_film_template = m.a("", jSONObject, PARAMS_STAT_INFO, SUB_PARAMS_TEMPLATE_ID);
                     mediaStatInfo.source = m.a("", jSONObject, PARAMS_STAT_INFO, "source");
@@ -217,12 +217,12 @@ public class InnerOpenPublishAbility extends InnerCallBaseAbility {
         } else {
             String string = jSONObject2.getString(Material.RECOMMENDED_TITLE);
             String string2 = jSONObject2.getString(Material.RECOMMENDED_TEXT);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 aVar.addExtraInfoMeta(Material.RECOMMENDED_TITLE, string);
             } else {
                 aVar.removeExtraInfoMeta(Material.RECOMMENDED_TITLE);
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 aVar.addExtraInfoMeta(Material.RECOMMENDED_TEXT, string2);
             } else {
                 aVar.removeExtraInfoMeta(Material.RECOMMENDED_TEXT);

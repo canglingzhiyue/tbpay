@@ -1,6 +1,6 @@
 package com.taobao.message.launcher.init;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.util.BundleSplitUtil;
 import com.taobao.tao.log.TLog;
@@ -63,7 +63,7 @@ public final class FeatureInitHelper {
         q.c(source, "source");
         q.c(clazzName, "clazzName");
         TLog.loge(BundleSplitUtil.TAG, "MSG_Feature_Init");
-        if (TextUtils.isEmpty(clazzName)) {
+        if (StringUtils.isEmpty(clazzName)) {
             throw new InvalidParameterException("invalid init class name");
         }
         ReInitHelper.sInitClassName = clazzName;
@@ -81,7 +81,7 @@ public final class FeatureInitHelper {
         q.c(clazzName, "clazzName");
         q.c(onSuccess, "onSuccess");
         q.c(onFailure, "onFailure");
-        if (TextUtils.isEmpty(clazzName)) {
+        if (StringUtils.isEmpty(clazzName)) {
             throw new InvalidParameterException("invalid init class name");
         }
         ReInitHelper.sInitClassName = clazzName;
@@ -107,7 +107,7 @@ public final class FeatureInitHelper {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("aad89c6f", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return q.a((Object) statusMap.get(str), (Object) true);
         }
         return false;
@@ -121,7 +121,7 @@ public final class FeatureInitHelper {
             return;
         }
         q.c(userId, "userId");
-        if (TextUtils.isEmpty(userId)) {
+        if (StringUtils.isEmpty(userId)) {
             return;
         }
         statusMap.put(userId, Boolean.valueOf(z));

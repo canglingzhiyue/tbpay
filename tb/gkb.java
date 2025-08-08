@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes.dex */
@@ -41,7 +41,7 @@ public class gkb {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{this, str, str2, str3});
         }
         String a2 = a.a(str, str2, str3);
-        return TextUtils.equals(a2, f28360a) ? str3 : a2;
+        return StringUtils.equals(a2, f28360a) ? str3 : a2;
     }
 
     /* loaded from: classes.dex */

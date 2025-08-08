@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
@@ -48,7 +48,7 @@ public class FileUtil {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("2a4ae613", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -590,7 +590,7 @@ public class FileUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("80475771", new Object[]{zipFile, str})).booleanValue();
         }
-        if (zipFile != null && zipFile.size() != 0 && !TextUtils.isEmpty(str) && mkDirsIfNotExists(str)) {
+        if (zipFile != null && zipFile.size() != 0 && !StringUtils.isEmpty(str) && mkDirsIfNotExists(str)) {
             try {
                 try {
                     Enumeration<? extends ZipEntry> entries = zipFile.entries();
@@ -784,7 +784,7 @@ public class FileUtil {
         if (iLocalZipReader != null) {
             return iLocalZipReader.loadZipFromAsset(context, str);
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             if (Looper.myLooper() == Looper.getMainLooper() && ApplicationUtil.isDebug()) {
                 throw new IllegalStateException("loadZipFromAsset is time consuming, cannot running in mainThread!");
             }
@@ -813,20 +813,20 @@ public class FileUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9a7af5a6", new Object[]{context, str, str2});
         }
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         if (Looper.myLooper() == Looper.getMainLooper() && ApplicationUtil.isDebug()) {
             throw new IllegalStateException("loadZipFromAsset is time consuming, cannot running in mainThread!");
         }
         String msgFeatureVersion = BundleSplitUtil.INSTANCE.getMsgFeatureVersion();
-        if (TextUtils.isEmpty(msgFeatureVersion)) {
+        if (StringUtils.isEmpty(msgFeatureVersion)) {
             msgFeatureVersion = ApplicationBuildInfo.getAppVersionName();
         }
         String stringSharedPreference = SharedPreferencesUtil.getStringSharedPreference(str2, msgFeatureVersion, "");
-        if (TextUtils.isEmpty(stringSharedPreference)) {
+        if (StringUtils.isEmpty(stringSharedPreference)) {
             String loadZipFromAsset = loadZipFromAsset(context, str);
-            if (!TextUtils.isEmpty(loadZipFromAsset)) {
+            if (!StringUtils.isEmpty(loadZipFromAsset)) {
                 clearFileSync(str2);
                 SharedPreferencesUtil.addStringSharedPreference(str2, msgFeatureVersion, loadZipFromAsset);
                 return loadZipFromAsset;

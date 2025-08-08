@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.preload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -259,7 +259,7 @@ public class UsePreloadService implements IUsePreloadService {
         this.mPrePlayerVideoId = str;
         this.mTab3LauncherPrePlayerStartTime = oec.a(f.getTag(R.id.fluid_sdk_tag_play_start_time), System.currentTimeMillis());
         this.mPlayerPlayToken = snvVar.h();
-        if (sorVar.f33778a != null && !TextUtils.isEmpty(sorVar.b)) {
+        if (sorVar.f33778a != null && !StringUtils.isEmpty(sorVar.b)) {
             boolean z2 = sorVar.p;
             if (sorVar.s && z2) {
                 z = true;

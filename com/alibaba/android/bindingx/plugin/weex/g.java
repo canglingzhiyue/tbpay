@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.android.bindingx.core.d;
 import com.alibaba.android.bindingx.core.internal.BindingXConstants;
@@ -232,7 +232,7 @@ public class g extends com.alibaba.android.bindingx.core.internal.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        WXScroller b2 = i.b(TextUtils.isEmpty(this.f) ? this.e : this.f, str);
+        WXScroller b2 = i.b(StringUtils.isEmpty(this.f) ? this.e : this.f, str);
         if (b2 == null) {
             com.alibaba.android.bindingx.core.h.d("[ExpressionScrollHandler]source component not found.");
             return false;
@@ -322,11 +322,11 @@ public class g extends com.alibaba.android.bindingx.core.internal.a {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
         super.b(str, str2);
-        if (v != null && !TextUtils.isEmpty(this.w) && (aVar = v.get(this.w)) != null) {
+        if (v != null && !StringUtils.isEmpty(this.w) && (aVar = v.get(this.w)) != null) {
             aVar.f2263a = this.n;
             aVar.b = this.o;
         }
-        WXScroller b2 = i.b(TextUtils.isEmpty(this.f) ? this.e : this.f, str);
+        WXScroller b2 = i.b(StringUtils.isEmpty(this.f) ? this.e : this.f, str);
         if (b2 == null) {
             com.alibaba.android.bindingx.core.h.d("[ExpressionScrollHandler]source component not found.");
             return false;
@@ -643,7 +643,7 @@ public class g extends com.alibaba.android.bindingx.core.internal.a {
             this.c = 0;
             this.h = z;
             this.i = weakReference;
-            if (TextUtils.isEmpty(g.f(g.this)) || g.e() == null || (aVar = (a) g.e().get(g.f(g.this))) == null) {
+            if (StringUtils.isEmpty(g.f(g.this)) || g.e() == null || (aVar = (a) g.e().get(g.f(g.this))) == null) {
                 return;
             }
             this.b = aVar.f2263a;

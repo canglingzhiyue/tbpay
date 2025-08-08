@@ -1,6 +1,6 @@
 package com.taobao.android.tbabilitykit;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.FinishResult;
@@ -67,7 +67,7 @@ public final class e implements com.alibaba.ability.b {
                     }
                     if (!this.b.isEmpty()) {
                         for (Map.Entry entry : this.b.entrySet()) {
-                            if (!TextUtils.isEmpty((CharSequence) entry.getKey()) && entry.getValue() != null && !jSONObject2.containsKey(entry.getKey())) {
+                            if (!StringUtils.isEmpty((CharSequence) entry.getKey()) && entry.getValue() != null && !jSONObject2.containsKey(entry.getKey())) {
                                 jSONObject2.put((JSONObject) entry.getKey(), (Object) String.valueOf(entry.getValue()));
                             }
                         }
@@ -122,7 +122,7 @@ public final class e implements com.alibaba.ability.b {
             if (str == null) {
                 str = "";
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 dle dleVar = (dle) d;
                 dleVar.e().a(a(str, a2.get("value")), dleVar, (dll) null);
             }

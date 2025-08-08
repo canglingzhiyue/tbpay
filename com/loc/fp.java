@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.tao.util.Constants;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,7 +70,7 @@ public final class fp {
             fr.a(th, "Req", "copyContentWithByteLen");
             bArr[i] = 0;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             bArr[i] = 0;
             return i + 1;
         }
@@ -236,17 +236,17 @@ public final class fp {
         strArr[25] = this.M;
         strArr[26] = this.N;
         for (int i = 0; i < 27; i++) {
-            if (TextUtils.isEmpty(strArr[i])) {
+            if (StringUtils.isEmpty(strArr[i])) {
                 strArr[i] = "";
             }
         }
-        if (TextUtils.isEmpty(this.j) || (!"0".equals(this.j) && !"2".equals(this.j))) {
+        if (StringUtils.isEmpty(this.j) || (!"0".equals(this.j) && !"2".equals(this.j))) {
             this.j = "0";
         }
-        if (TextUtils.isEmpty(this.k) || (!"0".equals(this.k) && !"1".equals(this.k))) {
+        if (StringUtils.isEmpty(this.k) || (!"0".equals(this.k) && !"1".equals(this.k))) {
             this.k = "0";
         }
-        if (TextUtils.isEmpty(this.y) || (!"1".equals(this.y) && !"2".equals(this.y))) {
+        if (StringUtils.isEmpty(this.y) || (!"1".equals(this.y) && !"2".equals(this.y))) {
             this.y = "0";
         }
         if (!fb.a(this.z)) {
@@ -289,7 +289,7 @@ public final class fp {
         ArrayList<eg> e = ffVar.e();
         String str9 = h == 2 ? "1" : "0";
         if (i2 != null) {
-            if (TextUtils.isEmpty(fr.g)) {
+            if (StringUtils.isEmpty(fr.g)) {
                 try {
                     fr.g = o.k();
                 } catch (Throwable th) {
@@ -299,10 +299,10 @@ public final class fp {
             }
             str4 = "1";
             sb = sb2;
-            if (TextUtils.isEmpty(fr.g) && Build.VERSION.SDK_INT < 29) {
+            if (StringUtils.isEmpty(fr.g) && Build.VERSION.SDK_INT < 29) {
                 fr.g = "888888888888888";
             }
-            if (TextUtils.isEmpty(fr.h)) {
+            if (StringUtils.isEmpty(fr.h)) {
                 try {
                     fr.h = o.n();
                 } catch (SecurityException unused) {
@@ -310,7 +310,7 @@ public final class fp {
                     fr.a(th2, "Aps", "getApsReq part2");
                 }
             }
-            if (TextUtils.isEmpty(fr.h) && Build.VERSION.SDK_INT < 29) {
+            if (StringUtils.isEmpty(fr.h) && Build.VERSION.SDK_INT < 29) {
                 fr.h = "888888888888888";
             }
         } else {
@@ -406,25 +406,25 @@ public final class fp {
         this.D = sb3.toString();
         this.O = (int) ((fy.b() - ffVar.q()) / 1000);
         try {
-            if (TextUtils.isEmpty(I)) {
+            if (StringUtils.isEmpty(I)) {
                 I = o.f(context);
             }
         } catch (Throwable unused3) {
         }
         try {
-            if (TextUtils.isEmpty(K)) {
+            if (StringUtils.isEmpty(K)) {
                 K = o.a(context);
             }
         } catch (Throwable unused4) {
         }
         try {
-            if (TextUtils.isEmpty(this.M)) {
+            if (StringUtils.isEmpty(this.M)) {
                 this.M = o.f();
             }
         } catch (Throwable unused5) {
         }
         try {
-            if (TextUtils.isEmpty(this.N)) {
+            if (StringUtils.isEmpty(this.N)) {
                 this.N = o.e(context);
             }
         } catch (Throwable unused6) {

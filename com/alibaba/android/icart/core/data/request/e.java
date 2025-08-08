@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.data.request;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
@@ -131,7 +131,7 @@ public class e extends a {
                 com.taobao.android.ultron.datamodel.imp.b bVar = (com.taobao.android.ultron.datamodel.imp.b) e.this.f2310a.w();
                 if ((bVar == null || !bVar.e()) && (!map.containsKey("isCachaData") || !"true".equals(map.get("isCachaData")))) {
                     String u = bem.u(e.this.f2310a);
-                    if (!TextUtils.isEmpty(u)) {
+                    if (!StringUtils.isEmpty(u)) {
                         bdx.a("SendQueryRequest", "netRequest", "WAKEUP_ERROR", u, e.this.d.v().b());
                         e.this.d.v().c();
                         com.alibaba.android.icart.core.widget.d.a(e.this.b, u);
@@ -171,10 +171,10 @@ public class e extends a {
             String c = c(v.a());
             JSONObject jSONObject = new JSONObject();
             a(jSONObject, requestConfig);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 jSONObject.put("shopIdInfoStr", (Object) a2);
             }
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 jSONObject.put(s.DIVISION_CODE, (Object) c);
             }
             if (v.h()) {
@@ -244,7 +244,7 @@ public class e extends a {
         } catch (Exception unused) {
             str = null;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Matcher matcher = Pattern.compile("(?:^|;)\\s*sm4=([^;]*)").matcher(str);
@@ -267,7 +267,7 @@ public class e extends a {
             return;
         }
         String string = jSONObject2.getString("dataTracks");
-        if (TextUtils.isEmpty(string) || context == null) {
+        if (StringUtils.isEmpty(string) || context == null) {
             return;
         }
         UTABTest.activateServer(string, context);
@@ -285,7 +285,7 @@ public class e extends a {
                 return;
             }
             String string = popWindow.getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             t.a().a(this.b).a(string);

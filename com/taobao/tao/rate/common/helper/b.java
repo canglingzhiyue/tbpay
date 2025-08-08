@@ -2,7 +2,7 @@ package com.taobao.tao.rate.common.helper;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -28,7 +28,7 @@ public class b {
             ipChange.ipc$dispatch("6664ae8d", new Object[]{sb, jSONObject});
         } else if (jSONObject != null) {
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     Object obj = jSONObject.get(str);
                     if (!(obj instanceof String)) {
                         obj = String.valueOf(obj);
@@ -86,7 +86,7 @@ public class b {
             return intent;
         }
         for (String str : jSONObject.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Object obj = jSONObject.get(str);
                 intent.putExtra(str, obj instanceof String ? (String) obj : String.valueOf(obj));
             }

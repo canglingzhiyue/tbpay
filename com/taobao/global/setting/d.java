@@ -1,6 +1,6 @@
 package com.taobao.global.setting;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class d {
     }
 
     private d() {
-        this.f17208a = TextUtils.equals("true", ConfigCenter.getInstance().getConfig("mpm_data_switch", "mtbMuteEvoEnable", "true"));
+        this.f17208a = StringUtils.equals("true", ConfigCenter.getInstance().getConfig("mpm_data_switch", "mtbMuteEvoEnable", "true"));
         Coordinator.execute(new Runnable() { // from class: com.taobao.global.setting.d.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
 

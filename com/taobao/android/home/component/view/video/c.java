@@ -1,7 +1,7 @@
 package com.taobao.android.home.component.view.video;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.util.HashSet;
@@ -46,11 +46,11 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String a2 = f.a(str);
-        if (TextUtils.isEmpty(a2) || !new File(a2).exists()) {
+        if (StringUtils.isEmpty(a2) || !new File(a2).exists()) {
             return null;
         }
         this.f12762a.remove(str);

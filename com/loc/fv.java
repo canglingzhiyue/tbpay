@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.amap.api.location.AMapLocation;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -97,7 +97,7 @@ public final class fv {
                 }
             }
             String sb2 = sb.toString();
-            if (TextUtils.isEmpty(sb2)) {
+            if (StringUtils.isEmpty(sb2)) {
                 return;
             }
             fy.a(this.d, sb2);

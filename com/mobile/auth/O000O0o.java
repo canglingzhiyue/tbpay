@@ -2,7 +2,7 @@ package com.mobile.auth;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 
 /* loaded from: classes4.dex */
@@ -24,7 +24,7 @@ public final class O000O0o {
     public static void O000000o(Context context, String str, int i) {
         if (context != null) {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 try {
@@ -45,7 +45,7 @@ public final class O000O0o {
     public static void O000000o(Context context, String str, String str2) {
         if (context != null) {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 try {
@@ -66,7 +66,7 @@ public final class O000O0o {
     public static int O00000Oo(Context context, String str, int i) {
         if (context != null) {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     try {
                         return O000000o(context).getInt(str, i);
                     } catch (Exception e) {
@@ -93,7 +93,7 @@ public final class O000O0o {
     public static String O00000Oo(Context context, String str, String str2) {
         if (context != null) {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     try {
                         return O000000o(context).getString(str, str2);
                     } catch (Exception e) {

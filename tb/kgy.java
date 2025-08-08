@@ -11,7 +11,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Process;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class kgy {
                 boolean canDrawOverlays = Settings.canDrawOverlays(context);
                 kgz.a("TableUtils.checkFloatPermission.大于23.小于26，b=" + canDrawOverlays, new Object[0]);
                 String str = Build.BRAND;
-                if (canDrawOverlays && !TextUtils.isEmpty(str) && str.toLowerCase().contains("vivo")) {
+                if (canDrawOverlays && !StringUtils.isEmpty(str) && str.toLowerCase().contains("vivo")) {
                     canDrawOverlays = c(context) == 0;
                     kgz.a("TableUtils.checkFloatPermission.isVivo.结果为" + canDrawOverlays, new Object[0]);
                 }
@@ -177,7 +177,7 @@ public class kgy {
 
     public static String d(Context context) {
         String valueOf;
-        if (!TextUtils.isEmpty(f30063a)) {
+        if (!StringUtils.isEmpty(f30063a)) {
             return f30063a;
         }
         if (Build.VERSION.SDK_INT >= 24) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class fpo {
             return;
         }
         final Object a3 = fnk.a((String) a2.second, fpqVar.f28098a, fpdVar);
-        if (TextUtils.equals(str, "onTap")) {
+        if (StringUtils.equals(str, "onTap")) {
             view.setOnClickListener(new View.OnClickListener() { // from class: tb.fpo.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -97,7 +97,7 @@ public class fpo {
                 fpdVar.c().b().a(a.ERROR_CODE_EVENT_HANDLER_EXCEPTION, fpqVar.f28098a);
                 fpa.b("DinamicEventHandler", th, "handler prepareBindEvent failed, handler=", c.getClass().getName());
             }
-        } else if (!TextUtils.equals(str, "onLongTap")) {
+        } else if (!StringUtils.equals(str, "onLongTap")) {
         } else {
             view.setOnLongClickListener(new View.OnLongClickListener() { // from class: tb.fpo.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -133,10 +133,10 @@ public class fpo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b115a57d", new Object[]{this, view, fpdVar, fpqVar, str, str2});
-        } else if (TextUtils.equals(str, "onTap")) {
+        } else if (StringUtils.equals(str, "onTap")) {
             view.setOnClickListener(new fpp(fpdVar, str2, fpqVar));
             h.a(view, str2, fpdVar, fpqVar);
-        } else if (!TextUtils.equals(str, "onLongTap")) {
+        } else if (!StringUtils.equals(str, "onLongTap")) {
         } else {
             view.setOnLongClickListener(new fpp(fpdVar, str2, fpqVar));
             h.a(view, str2, fpdVar, fpqVar);

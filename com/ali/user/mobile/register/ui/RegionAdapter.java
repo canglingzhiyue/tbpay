@@ -2,7 +2,7 @@ package com.ali.user.mobile.register.ui;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -150,7 +150,7 @@ public class RegionAdapter extends BaseAdapter implements AUPinnedHeaderListView
             viewHolder.mRegionNubmerText.setText(regionInfo.code);
         }
         RegionInfo regionInfo2 = this.mCurrentRegion;
-        if (regionInfo2 != null && !TextUtils.isEmpty(regionInfo2.domain) && this.mCurrentRegion.domain.equals(regionInfo.domain)) {
+        if (regionInfo2 != null && !StringUtils.isEmpty(regionInfo2.domain) && this.mCurrentRegion.domain.equals(regionInfo.domain)) {
             viewHolder.mRegionSelectIcon.setVisibility(0);
         } else {
             viewHolder.mRegionNubmerText.setTextColor(this.mContext.getResources().getColor(R.color.aliuser_color_light_gray));

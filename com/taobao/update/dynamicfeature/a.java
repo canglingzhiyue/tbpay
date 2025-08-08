@@ -3,7 +3,7 @@ package com.taobao.update.dynamicfeature;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -117,7 +117,7 @@ public class a extends d implements rfz {
             final String string = this.b.getString("currentversion", "");
             if (!string.equals(versionName)) {
                 this.b.edit().putString("currentversion", versionName).commit();
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     ((req) com.taobao.update.framework.a.getInstance(req.class)).execute(new Runnable() { // from class: com.taobao.update.dynamicfeature.a.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -150,7 +150,7 @@ public class a extends d implements rfz {
         } else if (a(jSONObject)) {
             FeatureUpdateData2 b = b(jSONObject);
             if (a(b)) {
-                if (!TextUtils.equals(rfx.SCAN, str)) {
+                if (!StringUtils.equals(rfx.SCAN, str)) {
                     return;
                 }
                 c.getInstance().showToast("所有的版本已经部署过!");
@@ -170,7 +170,7 @@ public class a extends d implements rfz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Application application = rfy.getInstance().getApplication();
             SharedPreferences sharedPreferences = application.getSharedPreferences("dynamicdeploy_features_" + str, 0);
@@ -305,7 +305,7 @@ public class a extends d implements rfz {
             return (String) ipChange.ipc$dispatch("80c38867", new Object[]{this, list});
         }
         for (FeatureUpdateData.FeatureInfo featureInfo : list) {
-            if (!TextUtils.isEmpty(com.android.tools.bundleInfo.d.a().a(featureInfo.featureName))) {
+            if (!StringUtils.isEmpty(com.android.tools.bundleInfo.d.a().a(featureInfo.featureName))) {
                 return com.android.tools.bundleInfo.d.a().a(featureInfo.featureName);
             }
         }

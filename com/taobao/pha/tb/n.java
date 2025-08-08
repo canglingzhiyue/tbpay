@@ -56,7 +56,7 @@ public class n {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0064, code lost:
-        if (android.text.TextUtils.equals(r10, r8.c.f18837a) != false) goto L30;
+        if (android.text.StringUtils.equals(r10, r8.c.f18837a) != false) goto L30;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -83,7 +83,7 @@ public class n {
         L1b:
             r0 = 0
             if (r9 == 0) goto Lf8
-            boolean r9 = android.text.TextUtils.isEmpty(r10)
+            boolean r9 = android.text.StringUtils.isEmpty(r10)
             if (r9 == 0) goto L26
             goto Lf8
         L26:
@@ -97,7 +97,7 @@ public class n {
         L32:
             com.taobao.pha.webview.PHAWVUCWebView r1 = r8.b
             java.lang.String r9 = r9.f18837a
-            boolean r9 = android.text.TextUtils.isEmpty(r9)
+            boolean r9 = android.text.StringUtils.isEmpty(r9)
             if (r9 != 0) goto Lf8
             if (r1 != 0) goto L40
             goto Lf8
@@ -117,7 +117,7 @@ public class n {
             if (r9 != 0) goto L68
             com.taobao.pha.tb.n$a r9 = r8.c
             java.lang.String r9 = r9.f18837a
-            boolean r9 = android.text.TextUtils.equals(r10, r9)
+            boolean r9 = android.text.StringUtils.equals(r10, r9)
             if (r9 == 0) goto Lf3
             goto Lf4
         L68:
@@ -129,15 +129,15 @@ public class n {
             if (r4 == 0) goto Lf3
             java.lang.String r5 = r10.getScheme()     // Catch: java.lang.Exception -> Lf3
             java.lang.String r6 = r4.getScheme()     // Catch: java.lang.Exception -> Lf3
-            boolean r5 = android.text.TextUtils.equals(r5, r6)     // Catch: java.lang.Exception -> Lf3
+            boolean r5 = android.text.StringUtils.equals(r5, r6)     // Catch: java.lang.Exception -> Lf3
             if (r5 == 0) goto Lf3
             java.lang.String r5 = r10.getHost()     // Catch: java.lang.Exception -> Lf3
             java.lang.String r6 = r4.getHost()     // Catch: java.lang.Exception -> Lf3
-            boolean r5 = android.text.TextUtils.equals(r5, r6)     // Catch: java.lang.Exception -> Lf3
+            boolean r5 = android.text.StringUtils.equals(r5, r6)     // Catch: java.lang.Exception -> Lf3
             if (r5 == 0) goto Lf3
             java.lang.String r5 = r10.getPath()     // Catch: java.lang.Exception -> Lf3
             java.lang.String r6 = r4.getPath()     // Catch: java.lang.Exception -> Lf3
-            boolean r5 = android.text.TextUtils.equals(r5, r6)     // Catch: java.lang.Exception -> Lf3
+            boolean r5 = android.text.StringUtils.equals(r5, r6)     // Catch: java.lang.Exception -> Lf3
             if (r5 == 0) goto Lf3
             java.util.Set r5 = r10.getQueryParameterNames()     // Catch: java.lang.Exception -> Lf3
             java.util.Iterator r5 = r5.iterator()     // Catch: java.lang.Exception -> Lf3
@@ -150,7 +150,7 @@ public class n {
             if (r7 != 0) goto Laa
             java.lang.String r7 = r10.getQueryParameter(r6)     // Catch: java.lang.Exception -> Lf3
             java.lang.String r6 = r4.getQueryParameter(r6)     // Catch: java.lang.Exception -> Lf3
-            boolean r6 = android.text.TextUtils.equals(r7, r6)     // Catch: java.lang.Exception -> Lf3
+            boolean r6 = android.text.StringUtils.equals(r7, r6)     // Catch: java.lang.Exception -> Lf3
             if (r6 != 0) goto Laa
             r2 = 0
         Lcb:
@@ -165,7 +165,7 @@ public class n {
             if (r7 != 0) goto Ld3
             java.lang.String r7 = r10.getQueryParameter(r6)     // Catch: java.lang.Exception -> Lf3
             java.lang.String r6 = r4.getQueryParameter(r6)     // Catch: java.lang.Exception -> Lf3
-            boolean r6 = android.text.TextUtils.equals(r7, r6)     // Catch: java.lang.Exception -> Lf3
+            boolean r6 = android.text.StringUtils.equals(r7, r6)     // Catch: java.lang.Exception -> Lf3
             if (r6 != 0) goto Ld3
         Lf3:
             r2 = 0

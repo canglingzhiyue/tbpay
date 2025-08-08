@@ -2,7 +2,7 @@ package com.alipay.mobile.common.amnet.biz;
 
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AcceptDataListener;
 import com.alipay.mobile.common.amnet.api.AcceptDataManager;
 import com.alipay.mobile.common.amnet.api.model.AcceptedData;
@@ -376,7 +376,7 @@ public class AcceptDataManagerImpl implements AcceptDataManager {
                 return ((Number) ipChange.ipc$dispatch("e8a5df6b", new Object[]{this, map, bArr})).longValue();
             }
             String str = map.get(HeaderConstant.HEADER_KEY_RPCID);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.info("AcceptDataManager", "Can't get rpcID in earnest");
                 return -1L;
             }
@@ -391,7 +391,7 @@ public class AcceptDataManagerImpl implements AcceptDataManager {
             }
             if (map != null) {
                 String str = map.get(HeaderConstant.HEADER_KEY_PARAM_TRACEID);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     LogCatUtil.info("AcceptDataManager", "traceID=" + str);
                     return str;
                 }

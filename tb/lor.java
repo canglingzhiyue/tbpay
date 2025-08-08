@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -89,7 +89,7 @@ public class lor extends dlg<l> {
         }
         Context m = dXRuntimeContext.m();
         String c = dlhVar.c("marginTop");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             c = "0";
         }
         return gbg.a(m, c, -1);

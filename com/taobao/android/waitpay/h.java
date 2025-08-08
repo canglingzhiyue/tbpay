@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -72,14 +72,14 @@ public class h implements e {
         String stringExtra2 = this.f15832a.getStringExtra("pageType");
         Uri data = this.f15832a.getData();
         if (data != null) {
-            stringExtra = TextUtils.isEmpty(stringExtra) ? data.getQueryParameter("openFrom") : null;
-            stringExtra2 = TextUtils.isEmpty(stringExtra2) ? data.getQueryParameter("pageType") : null;
+            stringExtra = StringUtils.isEmpty(stringExtra) ? data.getQueryParameter("openFrom") : null;
+            stringExtra2 = StringUtils.isEmpty(stringExtra2) ? data.getQueryParameter("pageType") : null;
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             jSONObject.put("openFrom", (Object) stringExtra);
         }
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             jSONObject.put("pageType", (Object) stringExtra2);
         }
         return jSONObject;

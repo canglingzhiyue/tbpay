@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.flowcustoms.afc.a;
@@ -25,7 +25,7 @@ public class mbk extends mbn {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("62acc361", new Object[]{this, context, aVar, str, bundle})).booleanValue();
         }
-        if (TextUtils.equals(aVar.f, "h5")) {
+        if (StringUtils.equals(aVar.f, "h5")) {
             if (e.b(Uri.parse(str))) {
                 c.a("linkx", "TbNavCenter === B方案，跳首页");
                 uri = Nav.from(context).withExtras(bundle).withFlags(65536).disableTransition().toUri(str);

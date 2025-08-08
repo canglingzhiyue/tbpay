@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.g;
@@ -71,7 +71,7 @@ public class kxw implements j<Event> {
             return;
         }
         String a2 = a(d);
-        if (e.b() && !TextUtils.isEmpty(a2)) {
+        if (e.b() && !StringUtils.isEmpty(a2)) {
             e.a(b(d), true);
             lap.a("SearchBar", "SearchBarRefreshSubscriber", "updateSearchBarByNewData refreshSearchBox");
             return;

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.LocationCallBack;
 import com.taobao.android.revisionswitch.core.a;
@@ -146,7 +146,7 @@ public class ily implements ilz {
         Set<String> keySet = this.b.getAll().keySet();
         SharedPreferences.Editor edit = this.b.edit();
         for (String str : keySet) {
-            if (!TextUtils.equals("elderHome", str) && !TextUtils.equals(LocationCallBack.ORIGIN_ELDER_HOME, str)) {
+            if (!StringUtils.equals("elderHome", str) && !StringUtils.equals(LocationCallBack.ORIGIN_ELDER_HOME, str)) {
                 edit.remove(str);
             }
         }

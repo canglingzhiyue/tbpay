@@ -5,7 +5,7 @@ import android.content.ComponentCallbacks2;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.ui.webview.jsbridge.exec.TakePhotoApi;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -255,7 +255,7 @@ public class y implements ComponentCallbacks2 {
         for (WeakReference<a> weakReference : this.f12216a) {
             if (weakReference != null && weakReference.get() != null) {
                 String N_ = weakReference.get().N_();
-                if (!TextUtils.isEmpty(N_)) {
+                if (!StringUtils.isEmpty(N_)) {
                     sb.append(N_);
                     sb.append("\n");
                 }

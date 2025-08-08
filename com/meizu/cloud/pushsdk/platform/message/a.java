@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.platform.message;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.message.SubTagsStatus;
@@ -40,7 +40,7 @@ public class a {
         DebugLogger.i("StatusSerialize", "register status serialize pushSwitchStatusToString start, PushSwitchStatus=" + pushSwitchStatus);
         try {
             JSONObject a2 = a(new JSONObject(), pushSwitchStatus);
-            if (!TextUtils.isEmpty(pushSwitchStatus.getPushId())) {
+            if (!StringUtils.isEmpty(pushSwitchStatus.getPushId())) {
                 a2.put(PushConstants.REGISTER_STATUS_PUSH_ID, pushSwitchStatus.getPushId());
             }
             a2.put(PushConstants.PUSH_SWITCH_STATUS_IS_NOTIFICATION_SWITCH, pushSwitchStatus.isSwitchNotificationMessage());
@@ -59,7 +59,7 @@ public class a {
         DebugLogger.i("StatusSerialize", "register status serialize registerStatusToString start, RegisterStatus=" + registerStatus);
         try {
             JSONObject a2 = a(new JSONObject(), registerStatus);
-            if (!TextUtils.isEmpty(registerStatus.getPushId())) {
+            if (!StringUtils.isEmpty(registerStatus.getPushId())) {
                 a2.put(PushConstants.REGISTER_STATUS_PUSH_ID, registerStatus.getPushId());
             }
             if (registerStatus.getExpireTime() > 0) {
@@ -79,7 +79,7 @@ public class a {
         DebugLogger.i("StatusSerialize", "register status serialize subAliasStatusToString start, SubAliasStatus=" + subAliasStatus);
         try {
             JSONObject a2 = a(new JSONObject(), subAliasStatus);
-            if (!TextUtils.isEmpty(subAliasStatus.getPushId())) {
+            if (!StringUtils.isEmpty(subAliasStatus.getPushId())) {
                 a2.put(PushConstants.REGISTER_STATUS_PUSH_ID, subAliasStatus.getPushId());
             }
             a2.put("alias", subAliasStatus.getAlias());
@@ -97,7 +97,7 @@ public class a {
         DebugLogger.i("StatusSerialize", "register status serialize subTagsStatusToString start, SubTagsStatus=" + subTagsStatus);
         try {
             JSONObject a2 = a(new JSONObject(), subTagsStatus);
-            if (!TextUtils.isEmpty(subTagsStatus.getPushId())) {
+            if (!StringUtils.isEmpty(subTagsStatus.getPushId())) {
                 a2.put(PushConstants.REGISTER_STATUS_PUSH_ID, subTagsStatus.getPushId());
             }
             if (subTagsStatus.getTagList() != null) {

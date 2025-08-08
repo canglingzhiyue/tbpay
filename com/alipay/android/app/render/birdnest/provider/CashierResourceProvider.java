@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.app.cctemplate.storage.TemplateAssetsStorage;
 import com.alipay.android.app.render.api.ICashierProvider;
@@ -38,7 +38,7 @@ public class CashierResourceProvider implements BirdNestEngine.ResourceProvider 
         }
         try {
             String[] split = str.split("/");
-            if (TextUtils.equals(str3, a.CONTACTS_INFO_NOT_EMPTY_STATUS)) {
+            if (StringUtils.equals(str3, a.CONTACTS_INFO_NOT_EMPTY_STATUS)) {
                 if (split.length > 2) {
                     str4 = split[2];
                 } else if (split.length > 1) {

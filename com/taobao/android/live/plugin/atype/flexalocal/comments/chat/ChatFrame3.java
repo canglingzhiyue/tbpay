@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -435,7 +435,7 @@ public class ChatFrame3 extends BaseFrame implements ddv {
             if (tqa.AUCTION_CARD_SHOW.equals(str2)) {
                 String str3 = map.get("data");
                 try {
-                    if (TextUtils.isEmpty(str3) || (intValue = JSON.parseObject(str3).getIntValue("cardHeight")) < 0) {
+                    if (StringUtils.isEmpty(str3) || (intValue = JSON.parseObject(str3).getIntValue("cardHeight")) < 0) {
                         return;
                     }
                     updatePosition(com.taobao.taolive.room.utils.d.a(this.mContext, 370.0f), com.taobao.taolive.room.utils.d.a(this.mContext, intValue) + com.taobao.taolive.room.utils.d.a(this.mContext, 4.0f));
@@ -490,7 +490,7 @@ public class ChatFrame3 extends BaseFrame implements ddv {
             if (!hkk.f() || (dVar = this.mChatController) == null || !(obj instanceof String)) {
                 return;
             }
-            dVar.b(TextUtils.equals((String) obj, "false"));
+            dVar.b(StringUtils.equals((String) obj, "false"));
         } else if (!"com.taobao.taolive.room.goods_list_showing".equals(str)) {
         } else {
             Object gLConfig = com.taobao.android.live.plugin.proxy.f.m().getGLConfig(null, "glPerformanceExclusive");
@@ -570,7 +570,7 @@ public class ChatFrame3 extends BaseFrame implements ddv {
             return false;
         }
         String str = map.get(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.equals(this.mLiveDataModel.mVideoInfo.liveId);
         }
         return false;

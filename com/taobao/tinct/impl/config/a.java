@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Process;
 import android.preference.PreferenceManager;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -172,7 +172,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             b = new TinctConfig();
         } else {
             try {
@@ -192,14 +192,14 @@ public class a {
             return (Map) ipChange.ipc$dispatch("d2e5f268", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             HashMap hashMap = new HashMap();
             JSONArray parseArray = JSONArray.parseArray(str);
             for (int i = 0; i < parseArray.size(); i++) {
                 String string = parseArray.getString(i);
-                if (!TextUtils.isEmpty(string) && (bizMapperModel = (BizMapperModel) JSON.parseObject(string, BizMapperModel.class)) != null) {
+                if (!StringUtils.isEmpty(string) && (bizMapperModel = (BizMapperModel) JSON.parseObject(string, BizMapperModel.class)) != null) {
                     hashMap.put(bizMapperModel.getBizName(), bizMapperModel);
                 }
             }
@@ -414,8 +414,8 @@ public class a {
                     break;
                 }
                 TinctConfig.CustomMonitor next = it.next();
-                if (TextUtils.equals(next.ver, customChangeInfo.getVersion())) {
-                    if (!TextUtils.isEmpty(next.configType) ? TextUtils.equals(next.configType, customChangeInfo.getConfigType()) : true) {
+                if (StringUtils.equals(next.ver, customChangeInfo.getVersion())) {
+                    if (!StringUtils.isEmpty(next.configType) ? StringUtils.equals(next.configType, customChangeInfo.getConfigType()) : true) {
                         if (next.isGray && !a(a2.grayExpire, customChangeInfo.getUpdateTime())) {
                             return true;
                         }
@@ -442,8 +442,8 @@ public class a {
             return true;
         } else {
             for (TinctConfig.CustomMonitor customMonitor : a2.monitor) {
-                if (TextUtils.equals(customMonitor.ver, customChangeInfo.getVersion())) {
-                    if (!TextUtils.isEmpty(customMonitor.configType) ? TextUtils.equals(customMonitor.configType, customChangeInfo.getConfigType()) : true) {
+                if (StringUtils.equals(customMonitor.ver, customChangeInfo.getVersion())) {
+                    if (!StringUtils.isEmpty(customMonitor.configType) ? StringUtils.equals(customMonitor.configType, customChangeInfo.getConfigType()) : true) {
                         return !customMonitor.isGray;
                     }
                 }

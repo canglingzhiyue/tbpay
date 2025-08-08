@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilityidl.ability.ei;
@@ -27,7 +27,7 @@ public class hvm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("93897a37", new Object[]{context, new Integer(i), str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 ei a2 = ei.a(str);

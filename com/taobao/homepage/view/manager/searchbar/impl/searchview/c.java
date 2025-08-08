@@ -1,6 +1,6 @@
 package com.taobao.homepage.view.manager.searchbar.impl.searchview;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -189,10 +189,10 @@ public class c extends DXRootView.a implements tgs {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (TextUtils.equals(str, "home")) {
+        if (StringUtils.equals(str, "home")) {
             str = "home";
         }
         JSONObject c = sqg.c();

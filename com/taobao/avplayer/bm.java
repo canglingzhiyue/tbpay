@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -137,7 +137,7 @@ public class bm implements View.OnLongClickListener, aw {
         this.j = bVar.P;
         this.k = bVar.Q;
         a(bVar.R);
-        if (!TextUtils.isEmpty(this.b) && this.f16470a == null) {
+        if (!StringUtils.isEmpty(this.b) && this.f16470a == null) {
             this.f16470a = new ImageView(bVar.c);
             PhenixCreator a2 = com.taobao.phenix.intf.b.h().a(bVar.c).a(this.b);
             com.taobao.phenix.intf.event.a<FailPhenixEvent> aVar = new com.taobao.phenix.intf.event.a<FailPhenixEvent>() { // from class: com.taobao.avplayer.bm.1
@@ -211,15 +211,15 @@ public class bm implements View.OnLongClickListener, aw {
         }
         bl.a aVar = new bl.a(bVar.c);
         aVar.l("dwLivePhoto");
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "livePhoto:set videourl = " + this.d);
             aVar.a(this.d);
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "livePhoto:set mCacheKey = " + this.f);
             aVar.m(this.f);
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "livePhoto:set mVideoBytes = " + this.h);
             aVar.n(this.h);
         }
@@ -286,7 +286,7 @@ public class bm implements View.OnLongClickListener, aw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.c)) {
+        } else if (!StringUtils.isEmpty(this.c)) {
             bn bnVar = this.k;
             if (bnVar == null) {
                 return;
@@ -302,7 +302,7 @@ public class bm implements View.OnLongClickListener, aw {
                 this.f16470a.buildDrawingCache();
                 Bitmap drawingCache = this.f16470a.getDrawingCache();
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "livePhoto:getImgLocalPath bitmap=" + drawingCache + ", mDWActivity=" + this.o + ", mCacheKey=" + this.f);
-                if (drawingCache != null && this.o != null && !TextUtils.isEmpty(this.f)) {
+                if (drawingCache != null && this.o != null && !StringUtils.isEmpty(this.f)) {
                     com.taobao.taobaoavsdk.util.a.a().submit(new c(this.k, 0, drawingCache));
                 } else if (this.k == null) {
                 } else {
@@ -324,7 +324,7 @@ public class bm implements View.OnLongClickListener, aw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.e)) {
+        } else if (!StringUtils.isEmpty(this.e)) {
             bn bnVar = this.k;
             if (bnVar == null) {
                 return;
@@ -333,7 +333,7 @@ public class bm implements View.OnLongClickListener, aw {
         } else {
             try {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "livePhoto: getVideoLocalPath mDWActivity=" + this.o + ", mCacheKey=" + this.f);
-                if (this.o != null && !TextUtils.isEmpty(this.f)) {
+                if (this.o != null && !StringUtils.isEmpty(this.f)) {
                     com.taobao.taobaoavsdk.util.a.a().submit(new c(this.k, 1, null));
                     return;
                 }

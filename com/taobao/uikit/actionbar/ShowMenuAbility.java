@@ -1,7 +1,7 @@
 package com.taobao.uikit.actionbar;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.result.a$a;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -46,7 +46,7 @@ public class ShowMenuAbility extends AbsGlobalMenuAbility {
         final ArrayList<TBPublicMenuItem> arrayList = new ArrayList<>();
         boolean z = false;
         for (ax axVar : list) {
-            if (axVar == null || TextUtils.isEmpty(axVar.f8795a) || TextUtils.isEmpty(axVar.b)) {
+            if (axVar == null || StringUtils.isEmpty(axVar.f8795a) || StringUtils.isEmpty(axVar.b)) {
                 MenuLog.block("", TAG, "customPopoverItems is null. " + axVar);
                 bwVar.a(a$a.b("addItems is null"));
                 return false;

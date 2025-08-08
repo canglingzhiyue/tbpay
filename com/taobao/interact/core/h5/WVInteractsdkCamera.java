@@ -12,7 +12,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.h;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.zoloz.toyger.blob.BlobManager;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -371,7 +371,7 @@ public class WVInteractsdkCamera extends e {
                 jSONObject.put("duration", image.getDuration());
                 jSONObject.put("fileId", image.getFileId());
                 String str = "success data = " + jSONArray.toString();
-                if (TextUtils.isEmpty(image.getResourceUrl())) {
+                if (StringUtils.isEmpty(image.getResourceUrl())) {
                     z = false;
                 }
             } catch (JSONException e) {
@@ -439,7 +439,7 @@ public class WVInteractsdkCamera extends e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ec2ed2f9", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         Bitmap a2 = h.a(str, 640);

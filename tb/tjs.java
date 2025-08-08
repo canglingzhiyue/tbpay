@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -42,7 +42,7 @@ public class tjs {
             return;
         }
         String config = OrangeConfig.getInstance().getConfig("fontSizeSetting", "open", "true");
-        if (!tgc.a() && !TextUtils.equals(config, "true")) {
+        if (!tgc.a() && !StringUtils.equals(config, "true")) {
             return;
         }
         if (tjtVar == null || context == null) {

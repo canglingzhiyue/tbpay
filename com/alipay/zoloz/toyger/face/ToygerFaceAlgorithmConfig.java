@@ -1,6 +1,6 @@
 package com.alipay.zoloz.toyger.face;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.android.phone.zoloz.toyger.BuildConfig;
 import com.alipay.zoloz.toyger.ToygerAlgorithmConfig;
@@ -102,7 +102,7 @@ public class ToygerFaceAlgorithmConfig extends ToygerAlgorithmConfig {
         this.isMirror = false;
         this.checkFaceBeforeNanocut = false;
         this.detectImageFormat = "bgr";
-        if (TextUtils.equals("wallet", "wallet")) {
+        if (StringUtils.equals("wallet", "wallet")) {
             this.liveness_combination.add(NO_LIVENESS);
             ArrayList arrayList = new ArrayList();
             arrayList.add(valueOf);
@@ -122,7 +122,7 @@ public class ToygerFaceAlgorithmConfig extends ToygerAlgorithmConfig {
             this.quality_min_quality = 20.0f;
             this.detectMode = 0;
             this.threshold.put(NO_LIVENESS, arrayList);
-        } else if (TextUtils.equals(BuildConfig.PORTING_VENDING, "wallet")) {
+        } else if (StringUtils.equals(BuildConfig.PORTING_VENDING, "wallet")) {
             this.liveness_combination.add(BAT_LIVENESS);
             this.batLivenessThreshold = 0.5f;
             this.stack_time = 1.0f;
@@ -134,12 +134,12 @@ public class ToygerFaceAlgorithmConfig extends ToygerAlgorithmConfig {
             this.quality_depth_min_quality = 0.5f;
             this.depth_cache_num = 2;
             this.secProtocol = "";
-        } else if (TextUtils.equals(BuildConfig.PORTING_JRCLOUD, "wallet")) {
+        } else if (StringUtils.equals(BuildConfig.PORTING_JRCLOUD, "wallet")) {
             this.liveness_combination.add(NO_LIVENESS);
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(valueOf);
             this.threshold.put(NO_LIVENESS, arrayList2);
-        } else if (TextUtils.equals(BuildConfig.PORTING_SUDIYI, "wallet")) {
+        } else if (StringUtils.equals(BuildConfig.PORTING_SUDIYI, "wallet")) {
             this.liveness_combination.add(NO_LIVENESS);
             ArrayList arrayList3 = new ArrayList();
             arrayList3.add(valueOf);

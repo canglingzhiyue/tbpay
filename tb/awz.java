@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -158,7 +158,7 @@ public class awz {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("ae7f04d0", new Object[]{this, str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = AliSDetailScaleType.centerCrop;
             }
             this.e = str;
@@ -170,7 +170,7 @@ public class awz {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("36af44af", new Object[]{this, str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = AliSDetailScaleType.centerCrop;
             }
             this.f = str;
@@ -183,7 +183,7 @@ public class awz {
                 return (a) ipChange.ipc$dispatch("bedf848e", new Object[]{this, str});
             }
             String str2 = "false";
-            if (!TextUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str, str2)) {
                 str2 = "true";
             }
             this.g = str2;
@@ -196,7 +196,7 @@ public class awz {
                 return (a) ipChange.ipc$dispatch("470fc46d", new Object[]{this, str});
             }
             String str2 = "false";
-            if (!TextUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str, str2)) {
                 str2 = "true";
             }
             this.h = str2;
@@ -209,7 +209,7 @@ public class awz {
                 return (a) ipChange.ipc$dispatch("cf40044c", new Object[]{this, str});
             }
             String str2 = "false";
-            if (!TextUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str, str2)) {
                 str2 = "true";
             }
             this.i = str2;
@@ -254,8 +254,8 @@ public class awz {
             aVar.e("AURA");
             aVar.c("TBVideo");
             aVar.q(true);
-            aVar.N(TextUtils.equals(this.g, "true"));
-            aVar.f(TextUtils.equals(this.i, "true"));
+            aVar.N(StringUtils.equals(this.g, "true"));
+            aVar.f(StringUtils.equals(this.i, "true"));
             aVar.a(0, 9, 35, 0);
             aVar.g(false);
             aVar.H(false);
@@ -263,9 +263,9 @@ public class awz {
             aVar.x(false);
             aVar.n(false);
             DWAspectRatio dWAspectRatio = DWAspectRatio.DW_CENTER_CROP;
-            if (TextUtils.equals(this.e, AliSDetailScaleType.fitCenter)) {
+            if (StringUtils.equals(this.e, AliSDetailScaleType.fitCenter)) {
                 dWAspectRatio = DWAspectRatio.DW_FIT_CENTER;
-            } else if (TextUtils.equals(this.e, "fitXY")) {
+            } else if (StringUtils.equals(this.e, "fitXY")) {
                 dWAspectRatio = DWAspectRatio.DW_FIT_X_Y;
             }
             aVar.a(dWAspectRatio);
@@ -273,12 +273,12 @@ public class awz {
             aVar.a(this.c);
             aVar.c(this.j);
             aVar.d(this.k);
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 DWFrontCoverBean dWFrontCoverBean = new DWFrontCoverBean(0L, null, this.d);
                 ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_CROP;
-                if (TextUtils.equals(this.f, AliSDetailScaleType.fitCenter)) {
+                if (StringUtils.equals(this.f, AliSDetailScaleType.fitCenter)) {
                     scaleType = ImageView.ScaleType.FIT_CENTER;
-                } else if (TextUtils.equals(this.f, "fitXY")) {
+                } else if (StringUtils.equals(this.f, "fitXY")) {
                     scaleType = ImageView.ScaleType.FIT_XY;
                 }
                 dWFrontCoverBean.setScaleType(scaleType);
@@ -295,7 +295,7 @@ public class awz {
             }
             c.hideCloseView();
             c.hideMiniProgressBar();
-            if (TextUtils.equals(this.h, "false")) {
+            if (StringUtils.equals(this.h, "false")) {
                 c.hideController();
             }
             return new awz(this.f25661a, c, this.b);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.app.cctemplate.DynResResourceClient;
 import com.alipay.android.app.cctemplate.api.ITplProvider;
@@ -397,11 +397,11 @@ public class BirdNestRender implements ICashierRender {
             if (template.expLog != null) {
                 jSONObject.put("expLog", template.expLog);
             }
-            if (!TextUtils.isEmpty(template.expId)) {
+            if (!StringUtils.isEmpty(template.expId)) {
                 jSONObject.put("expId", template.expId);
             }
             String template2 = template.toString();
-            if (!TextUtils.isEmpty(template2)) {
+            if (!StringUtils.isEmpty(template2)) {
                 jSONObject.put("tplInfo", template2);
             }
         }
@@ -429,7 +429,7 @@ public class BirdNestRender implements ICashierRender {
         if (template != null) {
             try {
                 String template2 = template.toString();
-                if (!TextUtils.isEmpty(template2)) {
+                if (!StringUtils.isEmpty(template2)) {
                     jSONObject.put("tplInfo", template2);
                 }
             } catch (Throwable th2) {
@@ -773,7 +773,7 @@ public class BirdNestRender implements ICashierRender {
         if (template2 == null) {
             return false;
         }
-        if ((TextUtils.isEmpty(template2.expId) || template2.expId.toLowerCase().equals("null")) && template2.expInfo == null && template2.expLog == null) {
+        if ((StringUtils.isEmpty(template2.expId) || template2.expId.toLowerCase().equals("null")) && template2.expInfo == null && template2.expLog == null) {
             boolean needRollback = TemplateManager.needRollback(template2, template);
             TemplateService b = b();
             if (!needRollback && (b == null || !b.needUpdateLocalTpl(template, template2))) {
@@ -822,7 +822,7 @@ public class BirdNestRender implements ICashierRender {
                 return false;
             }
             String string = drmValueFromKey.getString(str.substring(9));
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return false;
             }
             return DrmUtil.procGraySwitchWithRate(context, Integer.parseInt(string), false);

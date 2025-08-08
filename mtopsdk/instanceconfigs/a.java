@@ -1,7 +1,7 @@
 package mtopsdk.instanceconfigs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.nio.charset.StandardCharsets;
@@ -214,7 +214,7 @@ public class a {
             return null;
         }
         for (MtopExternalInstanceConfigsData.a aVar : mtopExternalInstanceConfigsData.externalInstanceConfigs) {
-            if (aVar != null && TextUtils.equals(aVar.f25001a, str2)) {
+            if (aVar != null && StringUtils.equals(aVar.f25001a, str2)) {
                 return aVar;
             }
         }

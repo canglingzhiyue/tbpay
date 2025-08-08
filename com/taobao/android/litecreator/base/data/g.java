@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.editor.data.EditorInfo;
@@ -261,8 +261,8 @@ public class g {
             mediaResource.endTimeMs = ((Long) uGCVideo.raw.attach.get(c)).longValue();
             mediaResource.clipDurationMs = mediaResource.endTimeMs - mediaResource.startTimeMs;
         }
-        mediaResource.mediaType = TextUtils.isEmpty((CharSequence) uGCVideo.getMeta(f13306a)) ? "video" : (String) uGCVideo.getMeta(f13306a);
-        if (TextUtils.equals(mediaResource.mediaType, "video")) {
+        mediaResource.mediaType = StringUtils.isEmpty((CharSequence) uGCVideo.getMeta(f13306a)) ? "video" : (String) uGCVideo.getMeta(f13306a);
+        if (StringUtils.equals(mediaResource.mediaType, "video")) {
             mediaResource.originDurationMs = uGCVideo.raw.duration;
         }
         if (uGCVideo.getMeta().containsKey("mediaId")) {
@@ -288,7 +288,7 @@ public class g {
             mediaResource.endTimeMs = ((Long) uGCVideo.origin.attach.get(c)).longValue();
             mediaResource.clipDurationMs = mediaResource.endTimeMs - mediaResource.startTimeMs;
         }
-        mediaResource.mediaType = TextUtils.isEmpty((CharSequence) uGCVideo.getMeta(f13306a)) ? "video" : (String) uGCVideo.getMeta(f13306a);
+        mediaResource.mediaType = StringUtils.isEmpty((CharSequence) uGCVideo.getMeta(f13306a)) ? "video" : (String) uGCVideo.getMeta(f13306a);
         if (uGCVideo.getMeta().containsKey("mediaId")) {
             mediaResource.mediaId = ((Integer) uGCVideo.getMeta("mediaId")).intValue();
         }
@@ -306,7 +306,7 @@ public class g {
             mediaResource.endTimeMs = ((Long) uGCVideo.compress.attach.get(c)).longValue();
             mediaResource.clipDurationMs = mediaResource.endTimeMs - mediaResource.startTimeMs;
         }
-        mediaResource.mediaType = TextUtils.isEmpty((CharSequence) uGCVideo.getMeta(f13306a)) ? "video" : (String) uGCVideo.getMeta(f13306a);
+        mediaResource.mediaType = StringUtils.isEmpty((CharSequence) uGCVideo.getMeta(f13306a)) ? "video" : (String) uGCVideo.getMeta(f13306a);
         if (uGCVideo.getMeta().containsKey("mediaId")) {
             mediaResource.mediaId = ((Integer) uGCVideo.getMeta("mediaId")).intValue();
         }

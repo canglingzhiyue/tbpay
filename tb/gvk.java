@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.taobao.safemode.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import java.util.Set;
@@ -136,7 +136,7 @@ public class gvk {
 
     private String c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this}) : !TextUtils.isEmpty(this.e) ? a(this.e, "flg", "UNKNOWN") : String.format("0x%08X", Integer.valueOf(this.b.getFlags()));
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this}) : !StringUtils.isEmpty(this.e) ? a(this.e, "flg", "UNKNOWN") : String.format("0x%08X", Integer.valueOf(this.b.getFlags()));
     }
 
     private String d() {
@@ -144,7 +144,7 @@ public class gvk {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("43881515", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             String a2 = a(this.e, "cmp", null);
             if (a2 != null) {
                 return a2;

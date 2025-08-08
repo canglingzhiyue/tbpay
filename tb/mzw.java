@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.util.OLog;
 import javax.crypto.Mac;
@@ -31,7 +31,7 @@ public class mzw implements nab {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 Mac mac = Mac.getInstance("HmacSHA1");
                 mac.init(new SecretKeySpec(str2.getBytes("utf-8"), "HmacSHA1"));

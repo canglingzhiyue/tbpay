@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -64,7 +64,7 @@ public class rcx {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
         String str3 = this.f33081a.get(str);
-        return TextUtils.isEmpty(str3) ? str2 : str3;
+        return StringUtils.isEmpty(str3) ? str2 : str3;
     }
 
     public String d() {

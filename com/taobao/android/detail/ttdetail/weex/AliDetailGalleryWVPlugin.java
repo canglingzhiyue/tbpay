@@ -4,7 +4,7 @@ import android.content.Context;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -79,7 +79,7 @@ public class AliDetailGalleryWVPlugin extends e {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("a1ed17e3", new Object[]{this, jSONObject, str});
         }
-        if (jSONObject != null && !TextUtils.isEmpty(str)) {
+        if (jSONObject != null && !StringUtils.isEmpty(str)) {
             return jSONObject.getJSONObject(str);
         }
         return null;
@@ -122,7 +122,7 @@ public class AliDetailGalleryWVPlugin extends e {
         }
         try {
             String string = JSONObject.parseObject(str).getString("voName");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("voName is empty");
                 return false;
             }

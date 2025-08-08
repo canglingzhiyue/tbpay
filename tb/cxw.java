@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.huawei.android.os.SystemPropertiesEx;
 import java.lang.reflect.InvocationTargetException;
@@ -20,7 +20,7 @@ public class cxw {
     public static boolean a() {
         String a2 = a("hw_sc.build.platform.version");
         String str = "hmosVersion=" + a2;
-        return !TextUtils.isEmpty(a2) && a2.compareTo("2.0.0") > 0;
+        return !StringUtils.isEmpty(a2) && a2.compareTo("2.0.0") > 0;
     }
 
     public static boolean a(Context context) {

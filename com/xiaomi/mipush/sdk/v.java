@@ -8,7 +8,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PermissionInfo;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -66,7 +66,7 @@ public class v {
         boolean z = false;
         for (ResolveInfo resolveInfo : packageManager.queryBroadcastReceivers(intent, 16384)) {
             ActivityInfo activityInfo = resolveInfo.activityInfo;
-            if (activityInfo == null || TextUtils.isEmpty(activityInfo.name) || !activityInfo.name.equals(str2)) {
+            if (activityInfo == null || StringUtils.isEmpty(activityInfo.name) || !activityInfo.name.equals(str2)) {
                 z = false;
                 continue;
             } else {
@@ -105,7 +105,7 @@ public class v {
     private static boolean a(String[] strArr, String str) {
         if (strArr != null && str != null) {
             for (String str2 : strArr) {
-                if (TextUtils.equals(str2, str)) {
+                if (StringUtils.equals(str2, str)) {
                     return true;
                 }
             }
@@ -181,7 +181,7 @@ public class v {
             android.content.pm.ActivityInfo r2 = r2.activityInfo
             if (r2 == 0) goto La7
             java.lang.String r3 = r2.name     // Catch: java.lang.ClassNotFoundException -> La2
-            boolean r3 = android.text.TextUtils.isEmpty(r3)     // Catch: java.lang.ClassNotFoundException -> La2
+            boolean r3 = android.text.StringUtils.isEmpty(r3)     // Catch: java.lang.ClassNotFoundException -> La2
             if (r3 != 0) goto La7
             java.lang.Class<com.xiaomi.mipush.sdk.PushMessageReceiver> r3 = com.xiaomi.mipush.sdk.PushMessageReceiver.class
             java.lang.String r6 = r2.name     // Catch: java.lang.ClassNotFoundException -> La2
@@ -246,7 +246,7 @@ public class v {
         if (z) {
             if (packageInfo.requestedPermissions != null) {
                 for (String str2 : packageInfo.requestedPermissions) {
-                    if (!TextUtils.isEmpty(str2) && hashSet.contains(str2)) {
+                    if (!StringUtils.isEmpty(str2) && hashSet.contains(str2)) {
                         hashSet.remove(str2);
                         if (hashSet.isEmpty()) {
                             break;
@@ -282,7 +282,7 @@ public class v {
         }
         if (packageInfo.services != null) {
             for (ServiceInfo serviceInfo : packageInfo.services) {
-                if (!TextUtils.isEmpty(serviceInfo.name) && hashMap2.containsKey(serviceInfo.name)) {
+                if (!StringUtils.isEmpty(serviceInfo.name) && hashMap2.containsKey(serviceInfo.name)) {
                     b bVar = (b) hashMap2.remove(serviceInfo.name);
                     boolean z = bVar.f81a;
                     boolean z2 = bVar.f82b;
@@ -293,7 +293,7 @@ public class v {
                     if (z2 != serviceInfo.exported) {
                         throw new a(String.format("<service android:name=\"%1$s\" .../> in AndroidManifest had the wrong exported attribute, which should be android:exported=%2$b.", serviceInfo.name, Boolean.valueOf(z2)));
                     }
-                    if (!TextUtils.isEmpty(str) && !TextUtils.equals(str, serviceInfo.permission)) {
+                    if (!StringUtils.isEmpty(str) && !StringUtils.equals(str, serviceInfo.permission)) {
                         throw new a(String.format("<service android:name=\"%1$s\" .../> in AndroidManifest had the wrong permission attribute, which should be android:permission=\"%2$s\".", serviceInfo.name, str));
                     }
                     hashMap.put(serviceInfo.name, serviceInfo.processName);
@@ -304,10 +304,10 @@ public class v {
             }
         }
         if (hashMap2.isEmpty()) {
-            if (!TextUtils.equals((CharSequence) hashMap.get(PushMessageHandler.class.getCanonicalName()), (CharSequence) hashMap.get(MessageHandleService.class.getCanonicalName()))) {
+            if (!StringUtils.equals((CharSequence) hashMap.get(PushMessageHandler.class.getCanonicalName()), (CharSequence) hashMap.get(MessageHandleService.class.getCanonicalName()))) {
                 throw new a(String.format("\"%1$s\" and \"%2$s\" must be running in the same process.", PushMessageHandler.class.getCanonicalName(), MessageHandleService.class.getCanonicalName()));
             }
-            if (hashMap.containsKey("com.xiaomi.push.service.XMJobService") && hashMap.containsKey("com.xiaomi.push.service.XMPushService") && !TextUtils.equals((CharSequence) hashMap.get("com.xiaomi.push.service.XMJobService"), (CharSequence) hashMap.get("com.xiaomi.push.service.XMPushService"))) {
+            if (hashMap.containsKey("com.xiaomi.push.service.XMJobService") && hashMap.containsKey("com.xiaomi.push.service.XMPushService") && !StringUtils.equals((CharSequence) hashMap.get("com.xiaomi.push.service.XMJobService"), (CharSequence) hashMap.get("com.xiaomi.push.service.XMPushService"))) {
                 throw new a(String.format("\"%1$s\" and \"%2$s\" must be running in the same process.", "com.xiaomi.push.service.XMJobService", "com.xiaomi.push.service.XMPushService"));
             }
             return;

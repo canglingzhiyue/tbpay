@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewParent;
 import com.alibaba.fastjson.JSONObject;
@@ -53,7 +53,7 @@ public abstract class lds {
         } else {
             this.c = System.currentTimeMillis();
             String targetUrl = baseSubItemModel.getTargetUrl();
-            if (TextUtils.isEmpty(targetUrl)) {
+            if (StringUtils.isEmpty(targetUrl)) {
                 a(baseSectionModel, targetUrl);
                 return;
             }
@@ -118,13 +118,13 @@ public abstract class lds {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (this.d == null) {
             this.d = new ArrayList();
             String a2 = j.a("homepageNavSimpleProcessorUrls", "");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return false;
             }
             String[] split = a2.split(",");
@@ -339,7 +339,7 @@ public abstract class lds {
         Bundle bundle = new Bundle();
         if (ext != null) {
             String string = ext.getString("targetParams");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 bundle.putSerializable("targetParams", string);
             }
         }
@@ -368,11 +368,11 @@ public abstract class lds {
         }
         JSONObject ext = baseSectionModel.getExt();
         if (ext != null) {
-            if (TextUtils.equals("1", ext.getString(tim.S_ARGS_IS_CLIENT_CACHE))) {
+            if (StringUtils.equals("1", ext.getString(tim.S_ARGS_IS_CLIENT_CACHE))) {
                 bundle.putString(tim.S_ARGS_IS_CLIENT_CACHE, "1");
                 ldf.d("AbsTapEventProcess", "isClientCachetrue");
             }
-            if (TextUtils.equals("1", ext.getString("requestNewDetailFlag"))) {
+            if (StringUtils.equals("1", ext.getString("requestNewDetailFlag"))) {
                 bundle.putString("requestNewDetailFlag", "true");
             }
             String string = ext.getString("requestNewDetailTime");

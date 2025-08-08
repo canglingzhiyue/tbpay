@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
@@ -52,7 +52,7 @@ public class til {
             return;
         }
         laq.a().a("BottomTabBar").b("updateTabBarBgImage").c("TabBarActionButtonProvider.updateTabbarFestival").a("tabBarButtonImageUrl", str).b();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             b(str);
         } else {
             f();

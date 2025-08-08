@@ -3,7 +3,7 @@ package com.sina.weibo.sdk.auth;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.sina.weibo.sdk.b.a;
 import com.sina.weibo.sdk.b.c;
 import com.sina.weibo.sdk.common.UiError;
@@ -74,7 +74,7 @@ public final class a {
         Oauth2AccessToken readAccessToken = AccessTokenHelper.readAccessToken(activity);
         if (readAccessToken != null) {
             String accessToken = readAccessToken.getAccessToken();
-            if (!TextUtils.isEmpty(readAccessToken.getAccessToken())) {
+            if (!StringUtils.isEmpty(readAccessToken.getAccessToken())) {
                 hVar.put("trans_token", accessToken);
                 hVar.put("trans_access_token", accessToken);
             }

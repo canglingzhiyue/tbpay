@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.taobao.windvane.jsbridge.api.WVFile;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.AccsClientConfig;
 import com.taobao.accs.AccsMainService;
@@ -145,12 +145,12 @@ public class c {
         String stringExtra = intent.getStringExtra("dataId");
         String stringExtra2 = intent.getStringExtra("serviceId");
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             ALog.e("MsgDistribute", "action null", new Object[0]);
             return;
         }
         try {
-            if (TextUtils.equals(action, Constants.ACTION_RECEIVE)) {
+            if (StringUtils.equals(action, Constants.ACTION_RECEIVE)) {
                 try {
                     i = intent.getIntExtra("command", -1);
                     try {
@@ -265,7 +265,7 @@ public class c {
                                     try {
                                         Map<String, IAppReceiver> appReceiver = GlobalClientInfo.getInstance(context).getAppReceiver();
                                         IAppReceiver iAppReceiver = null;
-                                        if (!TextUtils.isEmpty(stringExtra5) && appReceiver != null) {
+                                        if (!StringUtils.isEmpty(stringExtra5) && appReceiver != null) {
                                             iAppReceiver = appReceiver.get(stringExtra5);
                                         }
                                         IAppReceiver iAppReceiver2 = iAppReceiver;
@@ -280,7 +280,7 @@ public class c {
                                             c = 0;
                                             try {
                                                 a(context, intent, stringExtra5, stringExtra4, i, stringExtra3, str2, str3, iAppReceiver2, intExtra);
-                                                if (!TextUtils.isEmpty(str2)) {
+                                                if (!StringUtils.isEmpty(str2)) {
                                                     DataReceiveMonitor dataReceiveMonitor = DataReceiveMonitor.get(intent);
                                                     if (dataReceiveMonitor != null) {
                                                         dataReceiveMonitor.distributeTime = currentTimeMillis;
@@ -428,17 +428,17 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("372f6013", new Object[]{this, context, str, str2, intent, iAppReceiver})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             String service = GlobalClientInfo.getInstance(context).getService(intent.getStringExtra(Constants.KEY_CONFIG_TAG), str);
-            if (TextUtils.isEmpty(service) && iAppReceiver != null) {
+            if (StringUtils.isEmpty(service) && iAppReceiver != null) {
                 try {
                     service = iAppReceiver.getService(str);
                 } catch (IPCException unused) {
                 }
             }
-            if (TextUtils.isEmpty(service)) {
+            if (StringUtils.isEmpty(service)) {
                 service = GlobalClientInfo.getInstance(context).getService(str);
             }
             if (UtilityImpl.isChannelProcess(context) && !com.taobao.accs.connection.state.a.a().a(context) && a(str, str2, intent)) {
@@ -448,7 +448,7 @@ public class c {
             } else if (l.a(context, 5, str) && !com.taobao.accs.connection.state.a.a().a(context)) {
                 ALog.e("MsgDistribute", "main process not alive, forbidden msg", "serviceId", str);
                 return true;
-            } else if (!TextUtils.isEmpty(service) || UtilityImpl.isMainProcess(context)) {
+            } else if (!StringUtils.isEmpty(service) || UtilityImpl.isMainProcess(context)) {
                 return false;
             } else {
                 ALog.e("MsgDistribute", "start MsgDistributeService", "dataId", str2);
@@ -516,16 +516,16 @@ public class c {
             return;
         }
         String service = GlobalClientInfo.getInstance(context).getService(intent.getStringExtra(Constants.KEY_CONFIG_TAG), str);
-        if (TextUtils.isEmpty(service) && iAppReceiver != null) {
+        if (StringUtils.isEmpty(service) && iAppReceiver != null) {
             try {
                 service = iAppReceiver.getService(str);
             } catch (IPCException unused) {
             }
         }
-        if (TextUtils.isEmpty(service)) {
+        if (StringUtils.isEmpty(service)) {
             service = GlobalClientInfo.getInstance(context).getService(str);
         }
-        boolean z = !TextUtils.isEmpty(service);
+        boolean z = !StringUtils.isEmpty(service);
         AccsDataListener accsDataListener = null;
         if (z && UtilityImpl.isMainProcess(context) && l.a(context, 4, str)) {
             accsDataListener = GlobalClientInfo.getInstance(context).getListener(str);
@@ -553,7 +553,7 @@ public class c {
             AccsDataListener accsDataListener3 = accsDataListener2;
             if (accsDataListener3 != null) {
                 com.taobao.accs.utl.b.a(context, intent, accsDataListener3);
-            } else if (!TextUtils.isEmpty(str) && !m.s().contains(str)) {
+            } else if (!StringUtils.isEmpty(str) && !m.s().contains(str)) {
                 ALog.e("MsgDistribute", "handleBusinessMsg getListener also null", "serviceId", str, "dataId", str2);
                 d.a(str3, BaseMonitor.COUNT_MSG_LOST, "no listener", mto.a.GEO_NOT_SUPPORT);
                 d.a(str3, BaseMonitor.ALARM_POINT_REQ_ERROR, str, "1", "service is null");
@@ -578,7 +578,7 @@ public class c {
                 if (ALog.isPrintLog(ALog.Level.D)) {
                     ALog.i("MsgDistribute", "handle agooControl message", "message", str2);
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     JSONObject jSONObject = new JSONObject(str2);
                     boolean z = jSONObject.getBoolean(Constants.KEY_CONTROL);
                     l.a(context, Constants.KEY_CONTROL, z);
@@ -610,7 +610,7 @@ public class c {
                 if (ALog.isPrintLog(ALog.Level.D)) {
                     ALog.i("MsgDistribute", "handle AgooReportToken,", "message", str2);
                 }
-                if (!TextUtils.isEmpty(str2) && "uploadVendorToken".equals(new JSONObject(str2).getString(Constants.KEY_CMD_TYPE))) {
+                if (!StringUtils.isEmpty(str2) && "uploadVendorToken".equals(new JSONObject(str2).getString(Constants.KEY_CMD_TYPE))) {
                     com.taobao.accs.common.a.a().schedule(new Runnable() { // from class: com.taobao.accs.data.c.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -670,10 +670,10 @@ public class c {
             if (i == 104) {
                 for (String str : hashMap.keySet()) {
                     String str2 = (String) hashMap.get(str);
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = GlobalClientInfo.getInstance(context).getService(str);
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         intent.setClassName(context, str2);
                         dcd.a(context, intent);
                     }
@@ -687,10 +687,10 @@ public class c {
         for (String str3 : hashMap.keySet()) {
             if ("accs".equals(str3) || "windvane".equals(str3) || "motu-remote".equals(str3)) {
                 String str4 = (String) hashMap.get(str3);
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     str4 = GlobalClientInfo.getInstance(context).getService(str3);
                 }
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     intent.setClassName(context, str4);
                     dcd.a(context, intent);
                 }
@@ -702,7 +702,7 @@ public class c {
         boolean booleanExtra2 = intent.getBooleanExtra(Constants.KEY_TYPE_INAPP, false);
         boolean booleanExtra3 = intent.getBooleanExtra(Constants.KEY_CENTER_HOST, false);
         TaoBaseService.ConnectInfo connectInfo = null;
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             if (booleanExtra) {
                 connectInfo = new TaoBaseService.ConnectInfo(stringExtra, booleanExtra2, booleanExtra3);
             } else {
@@ -775,12 +775,12 @@ public class c {
         }
         if (!intent.getBooleanExtra(Constants.KEY_SKIP_SYNC, false) && (map = (Map) intent.getSerializableExtra(TaoBaseService.ExtraInfo.EXT_HEADER)) != null && map.size() != 0) {
             String str = (String) map.get(34);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString = jSONObject.optString("streamId");
                 int optInt = jSONObject.optInt("streamSeqNum");
                 String stringExtra = intent.getStringExtra(Constants.KEY_CONFIG_TAG);
-                if (!TextUtils.isEmpty(optString) && optInt > 0 && !TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(optString) && optInt > 0 && !StringUtils.isEmpty(stringExtra)) {
                     if (!com.taobao.accs.connection.state.a.a().a(context)) {
                         ALog.e("MsgDistribute", "handleSyncMessage drop", new Object[0]);
                         return true;
@@ -795,7 +795,7 @@ public class c {
                         dcd.a(context, intent);
                     }
                     synchronized (this) {
-                        if (!TextUtils.isEmpty(this.c) && optString.equals(this.c)) {
+                        if (!StringUtils.isEmpty(this.c) && optString.equals(this.c)) {
                             if (optInt >= this.d && optInt - this.d <= 1) {
                                 d.a("accs", BaseMonitor.ALARM_MSG_ORDER, "");
                                 this.d = Math.max(optInt, this.d);
@@ -822,7 +822,7 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("137b363f", new Object[]{this, context, intent, str, str2, str3})).booleanValue();
         }
         AccsClientConfig accsClientConfig = null;
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             accsClientConfig = AccsClientConfig.getConfigByTag(str3);
         }
         if (context.getPackageName().equals(intent.getPackage())) {

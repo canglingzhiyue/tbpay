@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.httpdns;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.httpdns.HttpDns;
 import com.alipay.mobile.common.transport.httpdns.db.HttpdnsDBService;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -76,7 +76,7 @@ public class HttpdnsStorage {
         if (ipChange instanceof IpChange) {
             return (HttpDns.HttpdnsIP) ipChange.ipc$dispatch("5a4124ab", new Object[]{this, str, new Integer(i)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         HttpDns.HttpdnsIP httpdnsIP = this.f5585a.get(str);
@@ -97,7 +97,7 @@ public class HttpdnsStorage {
         if (ipChange instanceof IpChange) {
             return (HttpDns.HttpdnsIP) ipChange.ipc$dispatch("a5e24f75", new Object[]{this, str, new Integer(i)});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.b.queryIpInfoFromDB(str, i);
         }
         return null;
@@ -163,7 +163,7 @@ public class HttpdnsStorage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !this.f5585a.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.f5585a.containsKey(str)) {
         } else {
             this.f5585a.remove(str);
         }
@@ -173,7 +173,7 @@ public class HttpdnsStorage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b.removeIpInfoFromDB(str, i);
         }
@@ -183,7 +183,7 @@ public class HttpdnsStorage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4dba9507", new Object[]{this, str, str2, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b.removeSingleIpInfoFromDB(str, str2, i);
         }
@@ -289,7 +289,7 @@ public class HttpdnsStorage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e9b1a7fe", new Object[]{this, str, httpdnsIP});
-        } else if (TextUtils.isEmpty(str) || httpdnsIP == null) {
+        } else if (StringUtils.isEmpty(str) || httpdnsIP == null) {
             LogCatUtil.debug(TAG, "putSingleIp2Cache param is null");
         } else {
             this.f5585a.put(str, httpdnsIP);
@@ -300,7 +300,7 @@ public class HttpdnsStorage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c83cac5", new Object[]{this, str, httpdnsIP, new Integer(i)});
-        } else if (TextUtils.isEmpty(str) || httpdnsIP == null) {
+        } else if (StringUtils.isEmpty(str) || httpdnsIP == null) {
             LogCatUtil.debug(TAG, "putSingleIp2DB param is null");
         } else {
             this.b.insertIpinfo2DB(str, httpdnsIP, i);

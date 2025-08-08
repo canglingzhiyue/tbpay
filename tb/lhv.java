@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -347,7 +347,7 @@ public class lhv extends lku implements lks.c<RecyclerView>, lkz.a {
             ipChange.ipc$dispatch("d67d7b53", new Object[]{this, baseSectionModel, new Integer(i)});
         } else if (baseSectionModel == null || baseSectionModel.getBooleanValue("isUIThreadTrack") || baseSectionModel.getExt().getBooleanValue("hidden")) {
         } else {
-            if (TextUtils.isEmpty(baseSectionModel.getString("adNamespace"))) {
+            if (StringUtils.isEmpty(baseSectionModel.getString("adNamespace"))) {
                 baseSectionModel.put("adNamespace", (Object) "tb_recmd_homePage");
             }
             baseSectionModel.put("isUIThreadTrack", (Object) true);

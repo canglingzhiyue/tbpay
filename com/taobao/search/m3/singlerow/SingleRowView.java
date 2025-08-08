@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -125,8 +125,8 @@ public final class SingleRowView extends BaseItemView implements View.OnClickLis
         if (this.currentInfo == info) {
             return;
         }
-        this.hasIcon = !TextUtils.isEmpty(info.f());
-        this.hasRightIcon = !TextUtils.isEmpty(info.c());
+        this.hasIcon = !StringUtils.isEmpty(info.f());
+        this.hasRightIcon = !StringUtils.isEmpty(info.c());
         reset();
         this.useCapsule = z;
         this.currentInfo = info;
@@ -146,7 +146,7 @@ public final class SingleRowView extends BaseItemView implements View.OnClickLis
         paint.setColor(i);
         this.borderRadius = info.b() >= 0 ? l.a(info.b()) : -1;
         load();
-        if (TextUtils.isEmpty(info.a())) {
+        if (StringUtils.isEmpty(info.a())) {
             setOnClickListener(null);
             setClickable(false);
             return;

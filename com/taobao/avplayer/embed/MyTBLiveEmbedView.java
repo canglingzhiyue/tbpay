@@ -3,7 +3,7 @@ package com.taobao.avplayer.embed;
 import android.content.Context;
 import android.taobao.windvane.embed.BaseEmbedView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -193,7 +193,7 @@ public class MyTBLiveEmbedView extends BaseEmbedView implements e {
                     return false;
                 }
                 String valueOf = String.valueOf(obj);
-                if (TextUtils.isEmpty(valueOf)) {
+                if (StringUtils.isEmpty(valueOf)) {
                     return true;
                 }
                 myTBLiveEmbedView.setLiveUrlResources(valueOf, z);
@@ -212,7 +212,7 @@ public class MyTBLiveEmbedView extends BaseEmbedView implements e {
             @Override // com.taobao.avplayer.embed.MyTBLiveEmbedView.JSMethod
             public boolean doSomething(MyTBLiveEmbedView myTBLiveEmbedView, String str, WVCallBackContext wVCallBackContext) {
                 JSONObject parseObject;
-                if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+                if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
                     return true;
                 }
                 MyTBLiveEmbedView.access$500(myTBLiveEmbedView, Boolean.TRUE.equals(parseObject.getBoolean(MusLiveVideo.ATTR_MUTE)));
@@ -259,7 +259,7 @@ public class MyTBLiveEmbedView extends BaseEmbedView implements e {
                     wVCallBackContext.error();
                 }
                 boolean z = false;
-                if (!TextUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
+                if (!StringUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
                     try {
                         MyTBLiveEmbedView.access$800(myTBLiveEmbedView, Integer.parseInt(parseObject.getString("time")) * 1000);
                         z = true;
@@ -274,7 +274,7 @@ public class MyTBLiveEmbedView extends BaseEmbedView implements e {
         };
 
         public boolean doSomething(MyTBLiveEmbedView myTBLiveEmbedView, String str, WVCallBackContext wVCallBackContext) {
-            return !TextUtils.isEmpty(str) && wVCallBackContext != null;
+            return !StringUtils.isEmpty(str) && wVCallBackContext != null;
         }
     }
 
@@ -496,7 +496,7 @@ public class MyTBLiveEmbedView extends BaseEmbedView implements e {
         }
         this.mMediaPlayCenter = new MediaPlayCenter(this.mContext);
         this.mMediaPlayCenter.setUsingInterface(COMPONENT_NAME);
-        if (!TextUtils.isEmpty(this.mLiveUrlResources)) {
+        if (!StringUtils.isEmpty(this.mLiveUrlResources)) {
             MediaLiveInfo mediaLiveInfo = null;
             try {
                 mediaLiveInfo = (MediaLiveInfo) JSONObject.parseObject(this.mLiveUrlResources, MediaLiveInfo.class);
@@ -520,16 +520,16 @@ public class MyTBLiveEmbedView extends BaseEmbedView implements e {
         if (mediaAspectRatio != null) {
             this.mMediaPlayCenter.setMediaAspectRatio(mediaAspectRatio);
         }
-        if (!TextUtils.isEmpty(this.mBizCode)) {
+        if (!StringUtils.isEmpty(this.mBizCode)) {
             this.mMediaPlayCenter.setBusinessId(this.mBizCode);
         }
-        if (!TextUtils.isEmpty(this.mSubBizCode)) {
+        if (!StringUtils.isEmpty(this.mSubBizCode)) {
             this.mMediaPlayCenter.setBizCode(this.mSubBizCode);
         }
-        if (!TextUtils.isEmpty(this.mPlayScenes)) {
+        if (!StringUtils.isEmpty(this.mPlayScenes)) {
             this.mMediaPlayCenter.setPlayScenes(this.mPlayScenes);
         }
-        if (!TextUtils.isEmpty(this.mFeedId)) {
+        if (!StringUtils.isEmpty(this.mFeedId)) {
             this.mMediaPlayCenter.setMediaId(this.mFeedId);
         }
         this.mMediaPlayCenter.setConfigGroup("MediaLive");
@@ -659,7 +659,7 @@ public class MyTBLiveEmbedView extends BaseEmbedView implements e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9cbbb4a1", new Object[]{this, str});
-        } else if (TextUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_fill)) {
+        } else if (StringUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_fill)) {
             this.mObjectFit = MediaAspectRatio.DW_CENTER_CROP;
         } else {
             this.mObjectFit = MediaAspectRatio.DW_FIT_CENTER;

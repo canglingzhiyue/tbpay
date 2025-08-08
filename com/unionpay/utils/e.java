@@ -3,14 +3,14 @@ package com.unionpay.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.UUID;
 import tb.riy;
 
 /* loaded from: classes9.dex */
 public final class e {
     public static String a() {
-        return !TextUtils.isEmpty(Build.VERSION.RELEASE) ? Build.VERSION.RELEASE.trim() : "";
+        return !StringUtils.isEmpty(Build.VERSION.RELEASE) ? Build.VERSION.RELEASE.trim() : "";
     }
 
     public static String a(Context context) {
@@ -125,9 +125,9 @@ public final class e {
     }
 
     public static String b() {
-        if (!TextUtils.isEmpty(Build.MODEL)) {
+        if (!StringUtils.isEmpty(Build.MODEL)) {
             String trim = Build.MODEL.trim();
-            if (!TextUtils.isEmpty(trim)) {
+            if (!StringUtils.isEmpty(trim)) {
                 return trim.replace(" ", "");
             }
         }
@@ -138,9 +138,9 @@ public final class e {
         if (context != null) {
             try {
                 String a2 = UPUtils.a(context, "merchant_id");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     a2 = UUID.randomUUID().toString();
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         a2 = a2.replaceAll("-", "");
                         UPUtils.a(context, a2, "merchant_id");
                     }

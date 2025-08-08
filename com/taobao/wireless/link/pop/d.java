@@ -10,7 +10,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.taobao.accs.common.Constants;
@@ -125,7 +125,7 @@ public class d {
         }
         String str = popMessageData.blackList;
         String str2 = rjt.a().b;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return str.contains(str2);
         }
         return false;
@@ -192,11 +192,11 @@ public class d {
             return false;
         }
         if (popMessageData.messageType == 1) {
-            return !TextUtils.isEmpty(popMessageData.title) && !TextUtils.isEmpty(popMessageData.subTitle) && !TextUtils.isEmpty(popMessageData.rightButtonText) && !TextUtils.isEmpty(popMessageData.rightButtonUrl);
+            return !StringUtils.isEmpty(popMessageData.title) && !StringUtils.isEmpty(popMessageData.subTitle) && !StringUtils.isEmpty(popMessageData.rightButtonText) && !StringUtils.isEmpty(popMessageData.rightButtonUrl);
         } else if (popMessageData.messageType != 2) {
             return true;
         } else {
-            return !TextUtils.isEmpty(popMessageData.clickUrl) && !TextUtils.isEmpty(popMessageData.picUrl);
+            return !StringUtils.isEmpty(popMessageData.clickUrl) && !StringUtils.isEmpty(popMessageData.picUrl);
         }
     }
 
@@ -223,7 +223,7 @@ public class d {
             return ((Boolean) ipChange.ipc$dispatch("3a7862e8", new Object[]{context, new Integer(i)})).booleanValue();
         }
         String a2 = com.taobao.wireless.link.common.b.a(context, "mtopRequestScene", "1,2,3");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return true;
         }
         return a2.contains(i + "");

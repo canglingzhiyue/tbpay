@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +56,7 @@ public class ixd extends ixc<CustomBaseActivity> {
         }
         if (mtopResponse != null) {
             String retCode = mtopResponse.getRetCode();
-            if (TextUtils.equals("ERROR_SHOP", retCode) || TextUtils.equals("ERROR_STATUS", retCode) || TextUtils.equals("ERROR_PARAMS", retCode)) {
+            if (StringUtils.equals("ERROR_SHOP", retCode) || StringUtils.equals("ERROR_STATUS", retCode) || StringUtils.equals("ERROR_PARAMS", retCode)) {
                 this.c.setTitle(ErrorConstant.MappingMsg.SERVICE_MAPPING_MSG);
                 this.c.setSubTitle("别紧张，试试看刷新页面");
             } else {

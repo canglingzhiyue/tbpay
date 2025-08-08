@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -71,7 +71,7 @@ public final class dxc extends arv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1a501edd", new Object[]{this, aURARenderComponent, str});
-        } else if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && !TextUtils.isEmpty(str)) {
+        } else if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && !StringUtils.isEmpty(str)) {
             Object obj = aURARenderComponent.data.fields.get("items");
             JSONArray jSONArray = obj instanceof JSONArray ? (JSONArray) obj : null;
             if (jSONArray == null || jSONArray.isEmpty()) {
@@ -80,7 +80,7 @@ public final class dxc extends arv {
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject = jSONArray.getJSONObject(i);
                 if (jSONObject != null) {
-                    if (TextUtils.equals(String.valueOf(i), str)) {
+                    if (StringUtils.equals(String.valueOf(i), str)) {
                         jSONObject.put("isSelected", (Object) true);
                     } else {
                         jSONObject.put("isSelected", (Object) false);

@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.os.Looper;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitinstall.g;
 import com.alibaba.fastjson.JSONObject;
@@ -57,7 +57,7 @@ public class d {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && (str.startsWith(k.HTTP_PREFIX) || str.startsWith(k.HTTPS_PREFIX));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && (str.startsWith(k.HTTP_PREFIX) || str.startsWith(k.HTTPS_PREFIX));
     }
 
     public static boolean a() {
@@ -146,7 +146,7 @@ public class d {
         } else if (a(map)) {
             com.taobao.android.artry.common.c.a(true, ResultCode.SUCCESS, null, aVar);
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.taobao.android.artry.common.c.a(false, ResultCode.FAILED_TO_UPLOAD_PICTURE, aVar);
             }
             try {
@@ -156,7 +156,7 @@ public class d {
                 final File a3 = a2.a(System.currentTimeMillis() + "");
                 for (Map.Entry<String, Bitmap> entry : map.entrySet()) {
                     String key = entry.getKey();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         e.a aVar2 = new e.a(str, key);
                         Bitmap value = entry.getValue();
                         if (z) {

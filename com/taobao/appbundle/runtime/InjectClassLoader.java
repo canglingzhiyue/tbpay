@@ -2,7 +2,7 @@ package com.taobao.appbundle.runtime;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.android.split.core.splitinstall.g;
@@ -150,7 +150,7 @@ public final class InjectClassLoader extends PathClassLoader {
         q.d(name, "name");
         if (b.a().p(name)) {
             String f = b.a().f(name);
-            if (TextUtils.isEmpty(f)) {
+            if (StringUtils.isEmpty(f)) {
                 throw new ClassNotFoundException(name);
             }
             ArrayList arrayList = new ArrayList(1);
@@ -170,7 +170,7 @@ public final class InjectClassLoader extends PathClassLoader {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T>");
         } else if (b.a().u(name)) {
             String e = b.a().e(name);
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 throw new ClassNotFoundException(name);
             }
             ArrayList arrayList2 = new ArrayList(1);

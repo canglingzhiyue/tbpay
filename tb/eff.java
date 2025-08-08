@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -126,7 +126,7 @@ public class eff implements j<b> {
             return (i) ipChange.ipc$dispatch("8ac0529d", new Object[]{this, bVar});
         }
         String string = bVar.f9725a.params.getString("popType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "default";
         }
         final com.taobao.android.detail.core.detail.popup.f a2 = n.a(this.b).a(string);

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,7 +86,7 @@ public class d extends b {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         Context context = this.i.get();
-        if (this.h == null || TextUtils.isEmpty(this.h.imgUrl) || context == null || this.g == null || this.m == null) {
+        if (this.h == null || StringUtils.isEmpty(this.h.imgUrl) || context == null || this.g == null || this.m == null) {
             kej.a("BootImageColdStartController", "show false");
             return false;
         } else if (!super.b()) {
@@ -95,7 +95,7 @@ public class d extends b {
         } else {
             try {
                 String c = keo.c(this.h.imgUrl);
-                if (!TextUtils.isEmpty(c)) {
+                if (!StringUtils.isEmpty(c)) {
                     File file = new File(keo.d("Market"), c);
                     if (!file.exists()) {
                         kej.a("BootImageColdStartController", "pic is not exist");

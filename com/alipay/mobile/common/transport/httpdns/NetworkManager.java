@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transport.utils.MiscUtils;
 import com.alipay.mobile.common.transport.utils.NetworkAsyncTaskExecutor;
@@ -90,7 +90,7 @@ public class NetworkManager {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("3c04d85a", new Object[]{this, context2, intent});
-                    } else if (intent == null || !TextUtils.equals(intent.getAction(), "android.net.conn.CONNECTIVITY_CHANGE")) {
+                    } else if (intent == null || !StringUtils.equals(intent.getAction(), "android.net.conn.CONNECTIVITY_CHANGE")) {
                     } else {
                         LogCatUtil.info(NetworkManager.TAG, "onReceive at: " + getClass().getName() + ", Intent: " + intent);
                         try {

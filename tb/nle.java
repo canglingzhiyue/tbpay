@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,7 +91,7 @@ public class nle extends nlf {
             return;
         }
         this.i = (ItemInfo) pqj.a(this.d, ItemInfo.class);
-        this.h = qmz.a(this.b.l(), this.f31547a, TextUtils.isEmpty(this.g) ? "taolive_boom_panel" : this.g);
+        this.h = qmz.a(this.b.l(), this.f31547a, StringUtils.isEmpty(this.g) ? "taolive_boom_panel" : this.g);
         if (this.h == null) {
             return;
         }

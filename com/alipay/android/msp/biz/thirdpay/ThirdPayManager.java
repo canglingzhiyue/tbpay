@@ -2,7 +2,7 @@ package com.alipay.android.msp.biz.thirdpay;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.core.context.MspContext;
@@ -121,7 +121,7 @@ public final class ThirdPayManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dd2921c9", new Object[]{str, thirdPayImpl});
-        } else if (TextUtils.isEmpty(str) || thirdPayImpl == null) {
+        } else if (StringUtils.isEmpty(str) || thirdPayImpl == null) {
             LogUtil.record(8, "ThirdPayManager", "provide: failed 1 of " + str + ", " + thirdPayImpl);
         } else {
             LogUtil.record(2, "ThirdPayManager", "provided " + str + ", " + thirdPayImpl);
@@ -133,7 +133,7 @@ public final class ThirdPayManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fdcb14b5", new Object[]{str, jSONObject, new Integer(i), activity, thirdPayFinishCallback, runnable});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null || thirdPayFinishCallback == null || runnable == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null || thirdPayFinishCallback == null || runnable == null) {
             LogUtil.record(8, "ThirdPayManager", "pay: failed 1 of " + str + ", " + jSONObject + ", " + thirdPayFinishCallback + ", " + runnable);
             runnable.run();
         } else {
@@ -159,7 +159,7 @@ public final class ThirdPayManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2881f07b", new Object[]{str, context})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             LogUtil.record(8, "ThirdPayManager", "check: failed 1 of ".concat(String.valueOf(str)));
             return false;
         }

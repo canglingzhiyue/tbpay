@@ -1,6 +1,6 @@
 package com.ali.user.open.mtop.rpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.callback.LoginCallback;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.service.UserTrackerService;
@@ -109,12 +109,12 @@ public class UccTaobaoAuthMtopImpl implements c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7d0f9be5", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         SDKLogger.d(TAG, "func isSessionValid");
         Session session = ((SessionService) AliMemberSDK.getService(SessionService.class)).getSession(getSite());
-        if (session == null || TextUtils.isEmpty(session.sid)) {
+        if (session == null || StringUtils.isEmpty(session.sid)) {
             SDKLogger.d(TAG, "isSessionValid()  session is null");
             return false;
         } else if (session.loginTime == 0 || session.expireIn == 0) {

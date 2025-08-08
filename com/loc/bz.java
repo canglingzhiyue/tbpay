@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.ByteArrayOutputStream;
 
 /* loaded from: classes4.dex */
@@ -15,7 +15,7 @@ public final class bz {
     private String e;
 
     public bz(Context context, String str, String str2, String str3) throws k {
-        if (TextUtils.isEmpty(str3) || str3.length() > 256) {
+        if (StringUtils.isEmpty(str3) || str3.length() > 256) {
             throw new k("无效的参数 - IllegalArgumentException");
         }
         this.f7713a = context.getApplicationContext();
@@ -30,14 +30,14 @@ public final class bz {
 
     private byte[] b(String str) {
         byte[] a2;
-        if (!TextUtils.isEmpty(str) && (a2 = x.a(this.e)) != null) {
+        if (!StringUtils.isEmpty(str) && (a2 = x.a(this.e)) != null) {
             return x.a(a2.length);
         }
         return new byte[]{0, 0};
     }
 
     public final void a(String str) throws k {
-        if (TextUtils.isEmpty(str) || str.length() > 65536) {
+        if (StringUtils.isEmpty(str) || str.length() > 65536) {
             throw new k("无效的参数 - IllegalArgumentException");
         }
         this.e = str;

@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity.ui.widgets;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
@@ -68,7 +68,7 @@ public class GuideWidget extends BaseWidget {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.b.setVisibility(0);
             this.c.setText(str);
         } else {

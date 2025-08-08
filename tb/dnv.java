@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.viewholder.d;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class dnv extends fuf {
         }
         if (iDMComponent.getParent() != null && iDMComponent.getParent().getChildren() != null && iDMComponent.getParent().getChildren().size() != 0) {
             if (z) {
-                if (objArr == null || objArr.length < 2 || !(objArr[1] instanceof String) || TextUtils.isEmpty((String) objArr[1])) {
+                if (objArr == null || objArr.length < 2 || !(objArr[1] instanceof String) || StringUtils.isEmpty((String) objArr[1])) {
                     return iDMComponent == iDMComponent.getParent().getChildren().get(0);
                 }
                 if (iDMComponent.getParent() != null && iDMComponent.getParent().getChildren() != null) {
@@ -79,7 +79,7 @@ public class dnv extends fuf {
                             break;
                         }
                         IDMComponent next = it.next();
-                        if (objArr[1].equals(TextUtils.isEmpty(next.getPosition()) ? AgooConstants.MESSAGE_BODY : next.getPosition())) {
+                        if (objArr[1].equals(StringUtils.isEmpty(next.getPosition()) ? AgooConstants.MESSAGE_BODY : next.getPosition())) {
                             if (next == iDMComponent) {
                                 return true;
                             }

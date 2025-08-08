@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.standard.mainpic.weex;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -148,7 +148,7 @@ public class PicGalleryLightOffPicComponent extends WXComponent<View> {
 
     private static String getImageKey(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("58b6075", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.indexOf(ado.URL_SEPARATOR) >= 0 ? str.substring(str.indexOf(ado.URL_SEPARATOR) + 2) : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("58b6075", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.indexOf(ado.URL_SEPARATOR) >= 0 ? str.substring(str.indexOf(ado.URL_SEPARATOR) + 2) : str;
     }
 
     public static TouchImageView getTouchImageView(String str) {
@@ -157,7 +157,7 @@ public class PicGalleryLightOffPicComponent extends WXComponent<View> {
         if (ipChange instanceof IpChange) {
             return (TouchImageView) ipChange.ipc$dispatch("68cb0ac2", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && (weakReference = PICGALLERY_PIC_LIST.get(getImageKey(str))) != null && weakReference.get() != null) {
+        if (!StringUtils.isEmpty(str) && (weakReference = PICGALLERY_PIC_LIST.get(getImageKey(str))) != null && weakReference.get() != null) {
             return weakReference.get();
         }
         return null;

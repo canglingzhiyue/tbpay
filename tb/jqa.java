@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
@@ -130,7 +130,7 @@ public final class jqa {
         } else if (f29689a == null) {
             f29689a = new HashMap();
             String a2 = oeb.a("ShortVideo.extParamsMap", "ug_param,itemId=triggerItemId");
-            if (TextUtils.isEmpty(a2) || (split = a2.split(",")) == null) {
+            if (StringUtils.isEmpty(a2) || (split = a2.split(",")) == null) {
                 return;
             }
             for (String str : split) {
@@ -148,12 +148,12 @@ public final class jqa {
 
     private boolean a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : TextUtils.equals(str, "0") && TextUtils.equals(str2, "video");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue() : StringUtils.equals(str, "0") && StringUtils.equals(str2, "video");
     }
 
     private boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : TextUtils.equals(this.c.getTab3CardType(), "video");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : StringUtils.equals(this.c.getTab3CardType(), "video");
     }
 
     private void a(Uri uri) {
@@ -182,14 +182,14 @@ public final class jqa {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8ab43ee4", new Object[]{this, fluidContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Uri parse = Uri.parse(str);
             if (!a(parse.getQueryParameter(gvw.CONFIG_LAUNCH), parse.getQueryParameter("tabid"))) {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.d.a().e(str);
                 }
                 if (parse == null) {
@@ -219,7 +219,7 @@ public final class jqa {
             } else if (ogv.a(tNode.C())) {
             } else {
                 String str = (String) tNode.C().get("url");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 spz.c("SceneParamsManager", "解析视频流 TAB2 父容器页面链接：" + str);
@@ -244,11 +244,11 @@ public final class jqa {
             ipChange.ipc$dispatch("a8c37821", new Object[]{this, fluidContext, str, map});
         } else if (str != null) {
             try {
-                if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
+                if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
                     return;
                 }
                 String c = sov.c(parse);
-                if (!TextUtils.isEmpty(c)) {
+                if (!StringUtils.isEmpty(c)) {
                     this.d.a().c(c);
                 }
                 JSONObject a2 = sov.a(parse);

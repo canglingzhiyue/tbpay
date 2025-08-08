@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.adapter.c;
@@ -59,7 +59,7 @@ public class orf extends org {
     @Override // tb.org
     public boolean a(TraceModel traceModel, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c1c350fb", new Object[]{this, traceModel, new Boolean(z)})).booleanValue() : (!z && TextUtils.equals(traceModel.getName(), "homeSmoothInteractive")) || traceModel.getPriority() == 2;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c1c350fb", new Object[]{this, traceModel, new Boolean(z)})).booleanValue() : (!z && StringUtils.equals(traceModel.getName(), "homeSmoothInteractive")) || traceModel.getPriority() == 2;
     }
 
     @Override // tb.org
@@ -69,12 +69,12 @@ public class orf extends org {
             return ((Boolean) ipChange.ipc$dispatch("4efe027c", new Object[]{this, traceModel, new Boolean(z)})).booleanValue();
         }
         String name = traceModel.getName();
-        if (TextUtils.equals(name, "homeSmoothInteractive")) {
+        if (StringUtils.equals(name, "homeSmoothInteractive")) {
             s.f18233a.d().a("smoothInteractiveTime", traceModel.getEndTime());
             return true;
         }
         String a2 = a(traceModel, i.CDN_REQUEST_TYPE);
-        if (!TextUtils.isEmpty(a2) && !TextUtils.equals("coldStart", a2) && !TextUtils.equals("loadCache", a2) && !TextUtils.equals("locationChange", a2)) {
+        if (!StringUtils.isEmpty(a2) && !StringUtils.equals("coldStart", a2) && !StringUtils.equals("loadCache", a2) && !StringUtils.equals("locationChange", a2)) {
             return false;
         }
         String str = "Home_" + name;
@@ -82,7 +82,7 @@ public class orf extends org {
             c.a(str);
         } else {
             String a3 = a(traceModel, com.taobao.tao.recommend3.tracelog.c.c(traceModel.getName()));
-            if (TextUtils.isEmpty(a3) || Boolean.valueOf(a3).booleanValue()) {
+            if (StringUtils.isEmpty(a3) || Boolean.valueOf(a3).booleanValue()) {
                 c.a(str, traceModel.getSubProperties());
             } else {
                 c.a(str, this.f32319a, traceModel.getSubProperties());
@@ -98,7 +98,7 @@ public class orf extends org {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("28a5ad79", new Object[]{this, traceModel, str});
         }
-        if (traceModel != null && !TextUtils.isEmpty(str) && (subProperties = traceModel.getSubProperties()) != null && (obj = subProperties.get(str)) != null) {
+        if (traceModel != null && !StringUtils.isEmpty(str) && (subProperties = traceModel.getSubProperties()) != null && (obj = subProperties.get(str)) != null) {
             return obj.toString();
         }
         return null;

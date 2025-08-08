@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -124,7 +124,7 @@ public class lwl implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("37e26f54", new Object[]{this, jSONObject, str, list, gkcVar});
-        } else if (list == null || list.isEmpty() || str == null || TextUtils.isEmpty(str) || (a2 = this.b.a(str)) == null) {
+        } else if (list == null || list.isEmpty() || str == null || StringUtils.isEmpty(str) || (a2 = this.b.a(str)) == null) {
         } else {
             a2.a(list, new lwh() { // from class: tb.lwl.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;

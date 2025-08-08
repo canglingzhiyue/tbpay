@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LogEvent;
@@ -62,7 +62,7 @@ public class MdapFileAppender extends FileAppender {
         if (this.j) {
             this.j = false;
             String readFile = FileUtil.readFile(c());
-            if (!TextUtils.isEmpty(readFile)) {
+            if (!StringUtils.isEmpty(readFile)) {
                 this.h = readFile.split("\\$\\$").length;
             }
         }

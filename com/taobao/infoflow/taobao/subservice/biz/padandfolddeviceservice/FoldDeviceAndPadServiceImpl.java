@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.subservice.biz.padandfolddeviceservice;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import com.alibaba.fastjson.JSONObject;
@@ -530,7 +530,7 @@ public class FoldDeviceAndPadServiceImpl implements OnScreenChangedListener, IFo
                         }
                     }
                     FoldDeviceAndPadServiceImpl.access$802(FoldDeviceAndPadServiceImpl.this, isAdaptHudScreen);
-                    if (!TextUtils.equals("pullRefresh", iUiRefreshActionModel.getRequestType())) {
+                    if (!StringUtils.equals("pullRefresh", iUiRefreshActionModel.getRequestType())) {
                         return;
                     }
                     sdl.a();
@@ -658,7 +658,7 @@ public class FoldDeviceAndPadServiceImpl implements OnScreenChangedListener, IFo
             return DEFAULT_COLUMN_CONFIG;
         }
         String string = ext.getString(KEY_COLUMN_CONFIG);
-        return TextUtils.isEmpty(string) ? DEFAULT_COLUMN_CONFIG : string;
+        return StringUtils.isEmpty(string) ? DEFAULT_COLUMN_CONFIG : string;
     }
 
     private int getScaleColumnByScreenType() {

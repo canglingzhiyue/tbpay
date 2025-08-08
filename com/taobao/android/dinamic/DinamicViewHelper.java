@@ -1,6 +1,6 @@
 package com.taobao.android.dinamic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.constructor.DCheckBoxConstructor;
 import com.taobao.android.dinamic.constructor.DCountDownTimerConstructor;
@@ -47,7 +47,7 @@ public class DinamicViewHelper implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ed18789d", new Object[]{str, hVar});
-        } else if (TextUtils.isEmpty(str) || hVar == null) {
+        } else if (StringUtils.isEmpty(str) || hVar == null) {
             throw new DinamicException("viewIdentify or assistant is null");
         } else {
             if (viewConstructors.get(str) != null) {
@@ -61,7 +61,7 @@ public class DinamicViewHelper implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("245287ef", new Object[]{str, hVar});
-        } else if (TextUtils.isEmpty(str) || hVar == null) {
+        } else if (StringUtils.isEmpty(str) || hVar == null) {
             throw new DinamicException("viewIdentify or assistant is null");
         } else {
             viewConstructors.put(str, hVar);
@@ -72,7 +72,7 @@ public class DinamicViewHelper implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1c867125", new Object[]{str, aVar});
-        } else if (TextUtils.isEmpty(str) || aVar == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null) {
             throw new DinamicException("registerEventHandler failed, eventIdentify or handler is null");
         } else {
             if (eventHandlers.get(str) != null) {
@@ -86,7 +86,7 @@ public class DinamicViewHelper implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a09cf313", new Object[]{str, aVar});
-        } else if (TextUtils.isEmpty(str) || aVar == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null) {
             throw new DinamicException("registerEventHandler failed, eventIdentify or handler is null");
         } else {
             eventHandlers.put(str, aVar);

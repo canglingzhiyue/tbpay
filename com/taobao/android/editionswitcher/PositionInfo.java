@@ -1,6 +1,6 @@
 package com.taobao.android.editionswitcher;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -78,6 +78,6 @@ public class PositionInfo implements Serializable {
             return false;
         }
         PositionInfo positionInfo = (PositionInfo) obj;
-        return TextUtils.equals(this.countryCode, positionInfo.countryCode) && TextUtils.equals(this.countryName, positionInfo.countryName) && TextUtils.equals(this.countryNumCode, positionInfo.countryNumCode) && TextUtils.equals(this.languageCode, positionInfo.languageCode) && TextUtils.equals(this.actualLanguageCode, positionInfo.actualLanguageCode) && TextUtils.equals(this.currencyCode, positionInfo.currencyCode) && TextUtils.equals(this.hngCookie, positionInfo.hngCookie) && TextUtils.equals(this.cityId, positionInfo.cityId) && TextUtils.equals(this.cityName, positionInfo.cityName);
+        return StringUtils.equals(this.countryCode, positionInfo.countryCode) && StringUtils.equals(this.countryName, positionInfo.countryName) && StringUtils.equals(this.countryNumCode, positionInfo.countryNumCode) && StringUtils.equals(this.languageCode, positionInfo.languageCode) && StringUtils.equals(this.actualLanguageCode, positionInfo.actualLanguageCode) && StringUtils.equals(this.currencyCode, positionInfo.currencyCode) && StringUtils.equals(this.hngCookie, positionInfo.hngCookie) && StringUtils.equals(this.cityId, positionInfo.cityId) && StringUtils.equals(this.cityName, positionInfo.cityName);
     }
 }

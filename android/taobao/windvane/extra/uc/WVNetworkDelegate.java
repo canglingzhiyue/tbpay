@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.taobao.windvane.util.a;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -104,18 +104,18 @@ public class WVNetworkDelegate extends INetworkDelegate {
                         break;
                     }
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = HttpRequest.HEADER_ACCEPT;
                 }
                 if (isFeatureOpened) {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = "image/heic";
                     } else {
                         str = "image/heic," + str;
                     }
                 }
                 if (useAlphaChannelDecoder) {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = "image/heia";
                     } else {
                         str = "image/heia," + str;
@@ -163,8 +163,8 @@ public class WVNetworkDelegate extends INetworkDelegate {
             Uri parse = Uri.parse(str);
             if (parse != null) {
                 String host = parse.getHost();
-                if (!TextUtils.equals("gw.alicdn.com", host)) {
-                    if (TextUtils.equals("img.alicdn.com", host)) {
+                if (!StringUtils.equals("gw.alicdn.com", host)) {
+                    if (StringUtils.equals("img.alicdn.com", host)) {
                     }
                 }
                 return true;

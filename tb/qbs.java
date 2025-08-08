@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 
@@ -42,11 +42,11 @@ public class qbs {
                 } else {
                     absolutePath = context.getCacheDir().getAbsolutePath();
                 }
-                absolutePath2 = TextUtils.isEmpty(absolutePath) ? context.getCacheDir().getAbsolutePath() : absolutePath;
+                absolutePath2 = StringUtils.isEmpty(absolutePath) ? context.getCacheDir().getAbsolutePath() : absolutePath;
             } else {
                 absolutePath2 = context.getCacheDir().getAbsolutePath();
             }
-            if (TextUtils.isEmpty(absolutePath2)) {
+            if (StringUtils.isEmpty(absolutePath2)) {
                 return;
             }
             if (!absolutePath2.endsWith(File.separator)) {
@@ -67,7 +67,7 @@ public class qbs {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("31400281", new Object[]{context});
         }
-        if (TextUtils.isEmpty(f32890a)) {
+        if (StringUtils.isEmpty(f32890a)) {
             a(context);
         }
         return f32890a;

@@ -2,7 +2,7 @@ package com.taobao.android.litecreator.util;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
@@ -90,7 +90,7 @@ public class at {
             return ((Number) ipChange.ipc$dispatch("8123b0c6", new Object[]{str, new Long(j)})).longValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? j : Long.parseLong(str);
+            return StringUtils.isEmpty(str) ? j : Long.parseLong(str);
         } catch (Throwable unused) {
             return j;
         }
@@ -102,7 +102,7 @@ public class at {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? i : Integer.parseInt(str);
+            return StringUtils.isEmpty(str) ? i : Integer.parseInt(str);
         } catch (Throwable unused) {
             return i;
         }
@@ -128,7 +128,7 @@ public class at {
             return ((Number) ipChange.ipc$dispatch("8123a1be", new Object[]{str, new Float(f)})).floatValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? f : Float.parseFloat(str);
+            return StringUtils.isEmpty(str) ? f : Float.parseFloat(str);
         } catch (Exception unused) {
             return f;
         }
@@ -140,7 +140,7 @@ public class at {
             return ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? z : Boolean.parseBoolean(str);
+            return StringUtils.isEmpty(str) ? z : Boolean.parseBoolean(str);
         } catch (Exception unused) {
             return z;
         }
@@ -152,7 +152,7 @@ public class at {
             return ((Boolean) ipChange.ipc$dispatch("7d257bc5", new Object[]{str, new Boolean(z)})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return z;
             }
             if (!str.equalsIgnoreCase("true")) {
@@ -172,7 +172,7 @@ public class at {
             return ((Number) ipChange.ipc$dispatch("7d253be3", new Object[]{str, new Integer(i)})).intValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? i : Color.parseColor(str);
+            return StringUtils.isEmpty(str) ? i : Color.parseColor(str);
         } catch (Throwable unused) {
             return i;
         }
@@ -193,7 +193,7 @@ public class at {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("8c4a1d4b", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new ArrayList();
         }
         return Arrays.asList(str.split(str2));
@@ -281,10 +281,10 @@ public class at {
         }
         ArrayList arrayList = new ArrayList();
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (str.contains(",")) {
                     for (String str2 : str.split(",")) {
-                        if (!TextUtils.isEmpty(str2) && !arrayList.contains(str2)) {
+                        if (!StringUtils.isEmpty(str2) && !arrayList.contains(str2)) {
                             arrayList.add(str2);
                         }
                     }
@@ -335,7 +335,7 @@ public class at {
         if (map == null || map.isEmpty()) {
             return "";
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             str2 = "";
         }
         StringBuilder sb = new StringBuilder();
@@ -356,7 +356,7 @@ public class at {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

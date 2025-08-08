@@ -3,7 +3,7 @@ package com.alipay.android.msp.pay;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.base.SPTaskHelper;
 import com.alipay.android.app.cctemplate.api.TemplateService;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
@@ -53,7 +53,7 @@ public class GlobalConstant {
                 try {
                     SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
                     String string = defaultSharedPreferences.getString(KEY_RSA, null);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         RSA_PUBLIC = string;
                     } else {
                         RSA_PUBLIC = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDENksAVqDoz5SMCZq0bsZwE+I3NjrANyTTwUVSf1+ec1PfPB4tiocEpYJFCYju9MIbawR8ivECbUWjpffZq5QllJg+19CB7V5rYGcEnb/M7CS3lFF2sNcRFJUtXUUAqyR3/l7PmpxTwObZ4DLG258dhE2vFlVGXjnuLs+FI2hg4QIDAQAB";

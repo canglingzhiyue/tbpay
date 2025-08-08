@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -126,7 +126,7 @@ public class l extends ius<com.taobao.search.sf.widgets.list.floatbar.b, LinearL
             } else {
                 l.g(l.this).setVisibility(0);
                 int i = "promotion".equals(this.f19519a.l) ? 20 : 10;
-                if (!TextUtils.isEmpty(this.f19519a.e)) {
+                if (!StringUtils.isEmpty(this.f19519a.e)) {
                     l.h(l.this).setVisibility(0);
                     l.h(l.this).setImageUrl(this.f19519a.e);
                     k = l.k(l.this);
@@ -470,7 +470,7 @@ public class l extends ius<com.taobao.search.sf.widgets.list.floatbar.b, LinearL
         }
         this.v = (LinearLayout) this.e.findViewById(R.id.ll_push_button_container);
         String paramStr = getModel().d().getParamStr("bottomPadding");
-        if (TextUtils.isEmpty(paramStr)) {
+        if (StringUtils.isEmpty(paramStr)) {
             return;
         }
         this.e.setPadding(0, 0, 0, com.taobao.search.mmd.util.d.b(paramStr, 0));
@@ -798,7 +798,7 @@ public class l extends ius<com.taobao.search.sf.widgets.list.floatbar.b, LinearL
                 this.m.setTextColor(aVar.h);
                 this.i.setContentDescription(aVar.f19161a);
                 this.i.setImageUrl(aVar.b);
-                if (!a2 || TextUtils.isEmpty(aVar.c)) {
+                if (!a2 || StringUtils.isEmpty(aVar.c)) {
                     m();
                 }
                 String keyword = getModel().d().getKeyword();
@@ -885,11 +885,11 @@ public class l extends ius<com.taobao.search.sf.widgets.list.floatbar.b, LinearL
             aVar.u = true;
             return false;
         }
-        if (!TextUtils.isEmpty(aVar.d) || !TextUtils.isEmpty(aVar.e)) {
+        if (!StringUtils.isEmpty(aVar.d) || !StringUtils.isEmpty(aVar.e)) {
             a(aVar);
             z = true;
         }
-        if (!TextUtils.isEmpty(aVar.c)) {
+        if (!StringUtils.isEmpty(aVar.c)) {
             b(aVar);
             z = true;
         } else {
@@ -1063,7 +1063,7 @@ public class l extends ius<com.taobao.search.sf.widgets.list.floatbar.b, LinearL
         } else if (view != this.i && view != this.o) {
         } else {
             try {
-                if (this.q != null && !TextUtils.isEmpty(this.q.o)) {
+                if (this.q != null && !StringUtils.isEmpty(this.q.o)) {
                     this.q.s = true;
                     String str = this.q.o;
                     ArrayMap arrayMap2 = new ArrayMap();

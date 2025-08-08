@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
@@ -32,7 +32,7 @@ public final class hyo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9e721362", new Object[]{str, jSONObject});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
             return str;
         }
         StringBuilder sb = new StringBuilder(str);
@@ -42,7 +42,7 @@ public final class hyo {
             sb.append("&");
         }
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (entry != null && !TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+            if (entry != null && !StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                 sb.append(entry.getKey());
                 sb.append("=");
                 sb.append(entry.getValue());
@@ -134,7 +134,7 @@ public final class hyo {
             return;
         }
         String c = bxd.c();
-        if (TextUtils.isEmpty(c) || recyclerView == null || !"vivo".equalsIgnoreCase(Build.BRAND)) {
+        if (StringUtils.isEmpty(c) || recyclerView == null || !"vivo".equalsIgnoreCase(Build.BRAND)) {
             return;
         }
         String lowerCase = c.toLowerCase();

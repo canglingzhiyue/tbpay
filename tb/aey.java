@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,11 +44,11 @@ public class aey extends aec<Intent> {
         } else if (intent.hasExtra("from")) {
             str = intent.getStringExtra("from");
         }
-        if (TextUtils.isEmpty(str) || !TextUtils.equals(beg.g, str)) {
+        if (StringUtils.isEmpty(str) || !StringUtils.equals(beg.g, str)) {
             return false;
         }
         String stringExtra = intent.getStringExtra("cartIds");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return false;
         }
         TBBaseFragment.registerTBLifecycleCallbacks(new a(this.f25281a, stringExtra));

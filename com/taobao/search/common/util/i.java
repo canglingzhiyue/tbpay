@@ -1,6 +1,6 @@
 package com.taobao.search.common.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -239,7 +239,7 @@ public class i {
                 if (!this.b.isEmpty()) {
                     for (String str : extraParamsKeys) {
                         String str2 = this.b.get(str);
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             map.put(str, str2);
                         }
                     }

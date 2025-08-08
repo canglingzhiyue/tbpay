@@ -1,6 +1,6 @@
 package com.taobao.mrt.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.alinnpython.AliNNPython;
 import com.taobao.android.alinnpython.AliNNPythonThreadState;
@@ -129,7 +129,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a37b466f", new Object[]{this, str, aliNNPython});
-        } else if (TextUtils.isEmpty(str) || aliNNPython == null) {
+        } else if (StringUtils.isEmpty(str) || aliNNPython == null) {
         } else {
             try {
                 aliNNPython.reloadPackage(str);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -40,11 +40,11 @@ public final class beu {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("a40d9915", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String str2 = rlz.a().f() != null ? rlz.a().f().get(str) : "";
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str = str2;
         }
         HashMap<String, HashMap<String, Object>> e = rlz.a().e("ali_cart");

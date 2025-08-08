@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.alibaba.wireless.security.open.SecurityGuardParamContext;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -91,7 +91,7 @@ public class rpd extends m {
         }
         try {
             String str = this.f33296a.getPackageManager().getPackageInfo(this.f33296a.getPackageName(), 0).versionName;
-            return TextUtils.isEmpty(str) ? "0" : str;
+            return StringUtils.isEmpty(str) ? "0" : str;
         } catch (Throwable unused) {
             return "0";
         }

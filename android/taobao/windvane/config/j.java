@@ -1,7 +1,7 @@
 package android.taobao.windvane.config;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
 import java.util.Iterator;
@@ -71,7 +71,7 @@ public class j implements b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         String[] strArr5 = null;
@@ -84,7 +84,7 @@ public class j implements b {
         if (jSONObject == null) {
             return 0;
         }
-        if (!jSONObject.has("v") && !TextUtils.equals(a.a().i(), jSONObject.optString("appVersion"))) {
+        if (!jSONObject.has("v") && !StringUtils.equals(a.a().i(), jSONObject.optString("appVersion"))) {
             return 0;
         }
         android.taobao.windvane.util.m.c("WVConfig", "当前更新orange配置，是否有v=[" + jSONObject.has("v") + riy.ARRAY_END_STR);
@@ -145,7 +145,7 @@ public class j implements b {
         } catch (Throwable unused6) {
         }
         String optString = jSONObject.optString("disableInstallPeriod");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             String[] split = optString.trim().split("-");
             if (split.length == 2) {
                 if (split[0].matches("^[0-9]*$")) {
@@ -157,7 +157,7 @@ public class j implements b {
             }
         }
         String optString2 = jSONObject.optString("ucParam", "");
-        if (!TextUtils.isEmpty(optString2) && commonConfig.u != null) {
+        if (!StringUtils.isEmpty(optString2) && commonConfig.u != null) {
             commonConfig.u.a(optString2);
         }
         commonConfig.v = jSONObject.optBoolean("enableUCShareCore", true);
@@ -537,7 +537,7 @@ public class j implements b {
         JSONArray optJSONArray = jSONObject.optJSONArray(str);
         if (optJSONArray == null) {
             String optString = jSONObject.optString(str, MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264);
-            if (!TextUtils.isEmpty(optString) && optString.length() >= 2) {
+            if (!StringUtils.isEmpty(optString) && optString.length() >= 2) {
                 return optString.substring(1, optString.length() - 1).split(",");
             }
             return null;
@@ -565,7 +565,7 @@ public class j implements b {
             commonConfig.K = jSONObject.optString("zipDegradeList", "");
             String str = Build.BRAND + "@" + Build.VERSION.RELEASE;
             String str2 = commonConfig.K;
-            if (TextUtils.isEmpty(str2) || (split = str2.split(",")) == null) {
+            if (StringUtils.isEmpty(str2) || (split = str2.split(",")) == null) {
                 return;
             }
             for (String str3 : split) {

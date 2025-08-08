@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,7 +29,7 @@ public final class f {
             return null;
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             hashMap.put(a(str), "");
             return hashMap;
         }

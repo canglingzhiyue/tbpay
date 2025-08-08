@@ -6,7 +6,7 @@ import android.os.Process;
 import android.os.UserHandle;
 import android.os.storage.StorageManager;
 import android.os.storage.StorageVolume;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.android.weex_framework.module.builtin.WXStorageModule;
@@ -39,7 +39,7 @@ public class dvc {
         }
         final String absolutePath = new File(context.getPackageResourcePath()).getParentFile().getAbsolutePath();
         long j = 0;
-        if (TextUtils.isEmpty(absolutePath)) {
+        if (StringUtils.isEmpty(absolutePath)) {
             TLog.loge(CacheCleaner.MODULE, "OatDirCalculator", "calculateSize: query apk install path wrong, path " + absolutePath);
             return 0L;
         }

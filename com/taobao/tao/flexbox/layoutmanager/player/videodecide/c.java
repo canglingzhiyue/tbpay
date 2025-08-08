@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.player.videodecide;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -215,7 +215,7 @@ public class c {
                 }
                 String string2 = jSONArray.getJSONObject(0).getString("cacheKey");
                 a a2 = a(string, (com.taobao.tao.flexbox.layoutmanager.player.videodecide.a) null, false);
-                if (a2 == null || !TextUtils.equals(a2.b, string2)) {
+                if (a2 == null || !StringUtils.equals(a2.b, string2)) {
                     return;
                 }
                 a2.e = i;
@@ -374,7 +374,7 @@ public class c {
                             str = a(f2, f3, optJSONArray);
                         }
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return -2;
                     }
                     String a2 = a(jSONObject, "caches", str);
@@ -443,7 +443,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1b6e96a4", new Object[]{jSONObject, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

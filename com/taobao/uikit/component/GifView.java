@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Movie;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.animation.AnimationUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -295,7 +295,7 @@ public class GifView extends TView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1c1b834", new Object[]{this, str});
-        } else if (str == null || TextUtils.equals(str, this.mGifFilePath)) {
+        } else if (str == null || StringUtils.equals(str, this.mGifFilePath)) {
         } else {
             this.mGifFilePath = str;
             this.mGifResId = 0;
@@ -398,7 +398,7 @@ public class GifView extends TView {
                 try {
                     if (GifView.access$100(GifView.this) != 0) {
                         bufferedInputStream = GifView.this.getResources().openRawResource(GifView.access$100(GifView.this));
-                    } else if (!TextUtils.isEmpty(GifView.access$200(GifView.this))) {
+                    } else if (!StringUtils.isEmpty(GifView.access$200(GifView.this))) {
                         BufferedInputStream bufferedInputStream2 = new BufferedInputStream(new FileInputStream(GifView.access$200(GifView.this)));
                         try {
                             if (bufferedInputStream2.markSupported()) {

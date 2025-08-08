@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.text;
 
 import android.graphics.Typeface;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.widget.FontDO;
 import tb.kge;
@@ -17,7 +17,7 @@ public class k {
 
     public static int a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue() : TextUtils.equals(str, "italic") ? 2 : 0;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue() : StringUtils.equals(str, "italic") ? 2 : 0;
     }
 
     public static int b(String str) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -76,7 +76,7 @@ public final class ejv extends arv {
         HashMap hashMap = new HashMap();
         String string = jSONObject.getString("imageUrl");
         String str = map.get("mainImageUrl") instanceof String ? (String) map.get("mainImageUrl") : "";
-        if (TextUtils.equals(string, str)) {
+        if (StringUtils.equals(string, str)) {
             hashMap.put("originImageUrl", "");
         } else {
             hashMap.put("originImageUrl", str);
@@ -88,7 +88,7 @@ public final class ejv extends arv {
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                 if (jSONObject2 != null) {
-                    if (TextUtils.equals(jSONObject2.getString("imageUrl"), string)) {
+                    if (StringUtils.equals(jSONObject2.getString("imageUrl"), string)) {
                         jSONObject2.put(ThemisConfig.SCENE_SELECT, (Object) "true");
                     } else {
                         jSONObject2.put(ThemisConfig.SCENE_SELECT, (Object) "false");

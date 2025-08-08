@@ -1,7 +1,7 @@
 package com.taobao.share.core.share;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -60,7 +60,7 @@ public class ShareBusinessService extends AidlService<IShareBusiness, ShareBusin
 
         @Override // com.taobao.share.aidl.IShareBusiness
         public boolean share(List<String> list, String str) throws RemoteException {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             a a2 = a.a();

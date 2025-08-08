@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.base.f;
 import com.alibaba.fastjson.JSONObject;
@@ -32,7 +32,7 @@ public class mxb {
         } else if (iDMComponent != null && fVar != null && (a2 = a(iDMComponent, "percentExposureItem")) != null) {
             for (b bVar : a2) {
                 String type = bVar.getType();
-                if (!TextUtils.isEmpty(type)) {
+                if (!StringUtils.isEmpty(type)) {
                     e a3 = fVar.a().a(type);
                     a3.a(iDMComponent);
                     a3.e("percentExposureItem");
@@ -74,13 +74,13 @@ public class mxb {
                 return;
             }
             String string = fields.getString("page");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 String string2 = fields.getString("arg1");
                 String string3 = fields.getString("arg2");
                 String string4 = fields.getString("arg3");
                 String str = "";
-                String str2 = TextUtils.isEmpty(string3) ? str : string3;
-                if (!TextUtils.isEmpty(string4)) {
+                String str2 = StringUtils.isEmpty(string3) ? str : string3;
+                if (!StringUtils.isEmpty(string4)) {
                     str = string4;
                 }
                 JSONObject jSONObject = fields.getJSONObject("args");
@@ -89,7 +89,7 @@ public class mxb {
                     for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                         String key = entry.getKey();
                         Object value = entry.getValue();
-                        if (!TextUtils.isEmpty(key) && value != null) {
+                        if (!StringUtils.isEmpty(key) && value != null) {
                             hashMap.put(key, String.valueOf(value));
                         }
                     }
@@ -107,7 +107,7 @@ public class mxb {
             for (Map.Entry<String, Object> entry2 : jSONObject2.entrySet()) {
                 String key2 = entry2.getKey();
                 Object value2 = entry2.getValue();
-                if (!TextUtils.isEmpty(key2) && value2 != null) {
+                if (!StringUtils.isEmpty(key2) && value2 != null) {
                     hashMap2.put(key2, String.valueOf(value2));
                 }
             }

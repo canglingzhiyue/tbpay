@@ -3,7 +3,7 @@ package com.taobao.android.weex_framework.util;
 import android.app.Application;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -539,12 +539,12 @@ public class f {
             return ((Number) ipChange.ipc$dispatch("88097ea7", new Object[]{str})).intValue();
         }
         int o = o();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return o;
         }
         try {
             String a2 = a(Uri.parse(str).buildUpon().clearQuery().fragment("").scheme("").build().toString().replaceFirst("^(/|://|:/|//)", ""));
-            return TextUtils.isEmpty(a2) ? o : Integer.parseInt(a2);
+            return StringUtils.isEmpty(a2) ? o : Integer.parseInt(a2);
         } catch (Exception e) {
             e.printStackTrace();
             return o;

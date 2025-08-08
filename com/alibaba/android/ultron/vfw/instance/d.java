@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -224,11 +224,11 @@ public class d implements com.alibaba.android.ultron.vfw.instance.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3a97c48", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.i.l())) {
+        } else if (!StringUtils.isEmpty(this.i.l())) {
         } else {
             String traceId = UemAnalysis.getTraceId();
             UltronInstanceConfig ultronInstanceConfig = this.i;
-            if (TextUtils.isEmpty(traceId)) {
+            if (StringUtils.isEmpty(traceId)) {
                 traceId = "";
             }
             ultronInstanceConfig.b(traceId);
@@ -1000,7 +1000,7 @@ public class d implements com.alibaba.android.ultron.vfw.instance.b {
         try {
             this.s = new Dialog(a(), R.style.Dialog_Status_Container);
             this.s.setContentView(View.inflate(a(), R.layout.ultron_loading, null));
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 ((TextView) this.s.findViewById(R.id.text)).setText(str);
             }
             Window window = this.s.getWindow();

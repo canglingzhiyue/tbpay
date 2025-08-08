@@ -1,7 +1,7 @@
 package com.taobao.android.icart.event;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -77,7 +77,7 @@ public class k extends bca {
             return;
         }
         String valueOf = String.valueOf(objArr[1]);
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             return;
         }
         this.h.getFields().put("showQuantity", (Object) valueOf);

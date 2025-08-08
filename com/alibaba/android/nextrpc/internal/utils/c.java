@@ -1,6 +1,6 @@
 package com.alibaba.android.nextrpc.internal.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliConfigInterface;
 import com.taobao.android.e;
@@ -18,6 +18,6 @@ public class c {
         if (a2 == null) {
             return true;
         }
-        return TextUtils.equals(a2.a("nextrpc", "isMatchSuccessStr", "true"), Boolean.TRUE.toString());
+        return StringUtils.equals(a2.a("nextrpc", "isMatchSuccessStr", "true"), Boolean.TRUE.toString());
     }
 }

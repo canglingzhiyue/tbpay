@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.log.LoginTLogAdapter;
@@ -54,7 +54,7 @@ public class LoginThreadHelper {
         try {
             Class<?> cls = Class.forName("com.taobao.tao.TaobaoApplication");
             String str = (String) ReflectionHelper.invokeMethod(cls, cls.getDeclaredMethod(ProcessUtils.GET_PROCESS_NAME, Context.class), context);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         } catch (Throwable unused) {

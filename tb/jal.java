@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.statisticsv2.model.StEvent;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -125,7 +125,7 @@ public class jal {
         ffz.a(a2);
         final long elapsedRealtime = SystemClock.elapsedRealtime();
         String currentPageName = l.getInstance().getCurrentPageName();
-        if (TextUtils.isEmpty(currentPageName)) {
+        if (StringUtils.isEmpty(currentPageName)) {
             currentPageName = a2.getClass().getName();
         }
         final JSONObject jSONObject = new JSONObject();
@@ -223,21 +223,21 @@ public class jal {
         if (ipChange instanceof IpChange) {
             return (dkx) ipChange.ipc$dispatch("12eee68a", new Object[]{new Integer(i), str, jSONObject});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new dkw(new dkv(10004, "ut异常error send pageName 不为空"), false);
         }
         String string = jSONObject.getString("arg1");
         String string2 = jSONObject.getString("arg2");
         String string3 = jSONObject.getString("arg3");
-        String str2 = TextUtils.isEmpty(string2) ? "" : string2;
-        String str3 = TextUtils.isEmpty(string3) ? "" : string3;
+        String str2 = StringUtils.isEmpty(string2) ? "" : string2;
+        String str3 = StringUtils.isEmpty(string3) ? "" : string3;
         JSONObject jSONObject2 = jSONObject.getJSONObject("args");
         HashMap hashMap = new HashMap();
         if (jSONObject2 != null) {
             for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     hashMap.put(key, String.valueOf(value));
                 }
             }

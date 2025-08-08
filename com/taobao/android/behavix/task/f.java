@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import tb.dsn;
@@ -20,7 +20,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("21f1ee74", new Object[]{str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         char c = 65535;

@@ -2,7 +2,7 @@ package com.taobao.message.chatv2.viewcenter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -90,7 +90,7 @@ public class EventServiceImpl implements IEventService {
         this.context = context;
         this.eventManager = createEventManager(context);
         String value = ConfigUtil.getValue(Constants.OrangeNS.CONTAINER, "eventHandlerConvertBlackList", null);
-        if (!TextUtils.isEmpty(value)) {
+        if (!StringUtils.isEmpty(value)) {
             try {
                 this.eventHandlerConvertBlackList = JSON.parseArray(value);
             } catch (Throwable th) {
@@ -225,7 +225,7 @@ public class EventServiceImpl implements IEventService {
                     }
                 }
                 TLog.logw("viewcenter", "refresh view:  |uni_id:" + str);
-                if (TextUtils.isEmpty(str) || (actionDispatcher = (ActionDispatcher) EventServiceImpl.access$200(EventServiceImpl.this).get(str)) == null) {
+                if (StringUtils.isEmpty(str) || (actionDispatcher = (ActionDispatcher) EventServiceImpl.access$200(EventServiceImpl.this).get(str)) == null) {
                     return;
                 }
                 actionDispatcher.dispatch(action);
@@ -375,7 +375,7 @@ public class EventServiceImpl implements IEventService {
                     }
                 }
                 TLog.logw("viewcenter", "refresh view:  |uni_id:" + str);
-                if (TextUtils.isEmpty(str) || (actionDispatcher2 = (ActionDispatcher) EventServiceImpl.access$200(EventServiceImpl.this).get(str)) == null) {
+                if (StringUtils.isEmpty(str) || (actionDispatcher2 = (ActionDispatcher) EventServiceImpl.access$200(EventServiceImpl.this).get(str)) == null) {
                     return;
                 }
                 actionDispatcher2.dispatch(action);

@@ -1,6 +1,6 @@
 package com.taobao.message.sp.framework.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -342,13 +342,13 @@ public class SimpleConversation implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b49dbff7", new Object[]{str})).intValue();
         }
-        if (TextUtils.equals("bc", str)) {
+        if (StringUtils.equals("bc", str)) {
             return 2;
         }
-        if (TextUtils.equals("cc", str)) {
+        if (StringUtils.equals("cc", str)) {
             return 0;
         }
-        if (TextUtils.equals("notice", str) || TextUtils.equals("subscribe", str)) {
+        if (StringUtils.equals("notice", str) || StringUtils.equals("subscribe", str)) {
             return 1;
         }
         throw new RuntimeException(str + " is not supported");

@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.notice;
 
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
@@ -254,7 +254,7 @@ public class NoticeFrame3 extends BaseFrame implements a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a1d3d5b1", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.mNoticeQueue.isEmpty()) {
                 this.mNoticeQueue.add(str);

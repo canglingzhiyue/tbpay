@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.b;
 import com.alibaba.android.split.g;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -72,16 +72,16 @@ public class bgn extends asa implements bgo<cak> {
     /* JADX WARN: Type inference failed for: r2v7 */
     public cak a() {
         String a2 = this.b.a();
-        if (TextUtils.isEmpty(a2) && !TextUtils.isEmpty(this.b.d())) {
+        if (StringUtils.isEmpty(a2) && !StringUtils.isEmpty(this.b.d())) {
             a2 = this.f25876a.h(this.b.d());
         }
         ?? r2 = null;
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 this.e.d("InitialInstantialtor create Instance: %s", a2);
                 final long currentTimeMillis = System.currentTimeMillis();
                 try {
-                    if (!TextUtils.isEmpty(this.b.d())) {
+                    if (!StringUtils.isEmpty(this.b.d())) {
                         if (a.a().get(this.b.d()) == null) {
                             bnk c = this.d.c();
                             c.i = this.b.b();

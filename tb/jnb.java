@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -156,11 +156,11 @@ public abstract class jnb implements jnd {
             return;
         }
         String string = jSONObject.getString("name");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         String string2 = jSONObject.getString("page");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = jmq.d().a();
         }
         String str = string2;
@@ -169,7 +169,7 @@ public abstract class jnb implements jnd {
             jSONObject2 = new JSONObject();
         }
         String trackId = this.f29642a.getTrackId();
-        if (!TextUtils.isEmpty(trackId)) {
+        if (!StringUtils.isEmpty(trackId)) {
             jSONObject2.put("trackId", (Object) trackId);
         }
         List<String> b = b(jSONObject2);
@@ -189,14 +189,14 @@ public abstract class jnb implements jnd {
         if (m == null || (jSONObject2 = m.getJSONObject("exposure")) == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = jSONObject2.getString("name");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
         }
         String string = jSONObject2.getString("page");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = jmq.d().a();
         }
         String str2 = string;
@@ -206,7 +206,7 @@ public abstract class jnb implements jnd {
         }
         jSONObject3.putAll(jSONObject);
         String trackId = this.f29642a.getTrackId();
-        if (!TextUtils.isEmpty(trackId)) {
+        if (!StringUtils.isEmpty(trackId)) {
             jSONObject3.put("trackId", (Object) trackId);
         }
         List<String> b = b(jSONObject3);

@@ -2,7 +2,7 @@ package com.taobao.alimama.cpm;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alipay.android.msp.framework.db.MspDBHelper;
@@ -61,7 +61,7 @@ public class CpmAdvertise implements Serializable, Cloneable {
         if (this == cpmAdvertise) {
             return true;
         }
-        return cpmAdvertise != null && TextUtils.equals(this.bid, cpmAdvertise.bid) && TextUtils.equals(this.pid, cpmAdvertise.pid) && TextUtils.equals(this.clickUrl, cpmAdvertise.clickUrl) && TextUtils.equals(this.ifs, cpmAdvertise.ifs) && this.cachetime == cpmAdvertise.cachetime && TextUtils.equals(this.tmpl, cpmAdvertise.tmpl) && TextUtils.equals(this.imageUrl, cpmAdvertise.imageUrl);
+        return cpmAdvertise != null && StringUtils.equals(this.bid, cpmAdvertise.bid) && StringUtils.equals(this.pid, cpmAdvertise.pid) && StringUtils.equals(this.clickUrl, cpmAdvertise.clickUrl) && StringUtils.equals(this.ifs, cpmAdvertise.ifs) && this.cachetime == cpmAdvertise.cachetime && StringUtils.equals(this.tmpl, cpmAdvertise.tmpl) && StringUtils.equals(this.imageUrl, cpmAdvertise.imageUrl);
     }
 
     public boolean equals(Object obj) {
@@ -107,7 +107,7 @@ public class CpmAdvertise implements Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4e46cf0a", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             if (this.extra == null) {
                 this.extra = new HashMap();
@@ -122,7 +122,7 @@ public class CpmAdvertise implements Serializable, Cloneable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("84af4295", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (map = this.extra) == null) {
+        if (StringUtils.isEmpty(str) || (map = this.extra) == null) {
             return null;
         }
         return map.get(str);

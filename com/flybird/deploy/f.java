@@ -1,6 +1,6 @@
 package com.flybird.deploy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.flybird.deploy.callback.FBTemplateDeciderTemplateModelCallback;
 import com.flybird.deploy.callback.a;
@@ -49,7 +49,7 @@ public class f extends FBTemplateDeciderTemplateModelCallback {
         c0256a.hasUpdated = z;
         c0256a.updateSource = i3;
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 c0256a.locals.add(FBFullTplInfo.fromJSONString(str));
             }
         } catch (Throwable th) {

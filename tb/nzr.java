@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -163,7 +163,7 @@ public class nzr {
                         return;
                     }
                     nyy.b(nzr.TAG, b.a(R.string.taobao_app_1010_1_18114));
-                    if (TextUtils.equals(obc.b(context, obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY), str)) {
+                    if (StringUtils.equals(obc.b(context, obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY), str)) {
                         nyy.a(nzr.TAG, b.a(R.string.taobao_app_1010_1_18138));
                         return;
                     }
@@ -205,7 +205,7 @@ public class nzr {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b5b7ada", new Object[]{this, context, dVar, nzvVar});
-        } else if (TextUtils.isEmpty(dVar.f19658a)) {
+        } else if (StringUtils.isEmpty(dVar.f19658a)) {
         } else {
             b();
             c(context, dVar, nzvVar);
@@ -263,7 +263,7 @@ public class nzr {
                 AppMonitor.Alarm.commitFail("share", "querypassword", str2, str3, str);
             }
         };
-        if (nzvVar == null || TextUtils.isEmpty(dVar.f19658a)) {
+        if (nzvVar == null || StringUtils.isEmpty(dVar.f19658a)) {
             return;
         }
         this.f31856a = new PasswordCheckRequest();

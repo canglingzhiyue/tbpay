@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework.base.windvane;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.utils.Global;
@@ -33,10 +33,10 @@ public class NewDetailWVLocalWeexBranch extends NewDetailBaseWVPlugin {
         if (ACTION_SAVE_BRANCH.equals(str)) {
             String string = jSONObject.getString("wlm");
             String string2 = jSONObject.getString("containerName");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 handleCallbackFail("10005", ERROR_MSG_VERSION_EMPTY, wVCallBackContext);
                 return false;
-            } else if (TextUtils.isEmpty(string2)) {
+            } else if (StringUtils.isEmpty(string2)) {
                 handleCallbackFail("10006", ERROR_MSG_CONTAINER_NAME_EMPTY, wVCallBackContext);
                 return false;
             } else {
@@ -47,7 +47,7 @@ public class NewDetailWVLocalWeexBranch extends NewDetailBaseWVPlugin {
             }
         } else if (ACTION_CLEAR_BRANCH.equals(str)) {
             String string3 = jSONObject.getString("containerName");
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 handleCallbackFail("10006", ERROR_MSG_CONTAINER_NAME_EMPTY, wVCallBackContext);
                 return false;
             }

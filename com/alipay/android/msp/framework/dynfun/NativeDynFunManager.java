@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.dynfun;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -185,7 +185,7 @@ public class NativeDynFunManager {
                 ipChange.ipc$dispatch("82de1bfc", new Object[]{new Integer(i), str, dynDataWrapper});
                 return;
             }
-            if (!TextUtils.isEmpty(str) && dynDataWrapper != null) {
+            if (!StringUtils.isEmpty(str) && dynDataWrapper != null) {
                 ConcurrentHashMap<String, DynDataWrapper<?>> concurrentHashMap = c.get(Integer.valueOf(i));
                 if (concurrentHashMap == null) {
                     concurrentHashMap = new ConcurrentHashMap<>();
@@ -217,7 +217,7 @@ public class NativeDynFunManager {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("33931d41", new Object[]{new Integer(i), str, obj});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 throw new RuntimeException("missing dataName");
             } else {
                 ConcurrentHashMap<String, DynDataWrapper<?>> concurrentHashMap = c.get(Integer.valueOf(i));
@@ -233,7 +233,7 @@ public class NativeDynFunManager {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return ipChange.ipc$dispatch("da8a292d", new Object[]{new Integer(i), str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 throw new RuntimeException("missing dataName");
             } else {
                 ConcurrentHashMap<String, DynDataWrapper<?>> concurrentHashMap = c.get(Integer.valueOf(i));

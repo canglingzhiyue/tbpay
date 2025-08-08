@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.nextrpc.a;
 import com.alibaba.android.aura.f;
@@ -64,7 +64,7 @@ public final class icy extends asf {
             }
             JSONObject jSONObject3 = new JSONObject();
             String string = jSONObject2.getString(FullPage.PARAM_BACK2Tab2URL);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             jSONObject3.put(FullPage.PARAM_BACK2Tab2URL, (Object) string);

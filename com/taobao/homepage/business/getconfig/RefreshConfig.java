@@ -1,7 +1,7 @@
 package com.taobao.homepage.business.getconfig;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
 import java.io.Serializable;
@@ -29,7 +29,7 @@ public class RefreshConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bdc1b687", new Object[]{this})).booleanValue();
         }
-        if (this.parsePullTextColor == null && !TextUtils.isEmpty(this.pullTextColor)) {
+        if (this.parsePullTextColor == null && !StringUtils.isEmpty(this.pullTextColor)) {
             try {
                 this.parsePullTextColor = Integer.valueOf(Color.parseColor(this.pullTextColor));
             } catch (Exception e) {
@@ -37,6 +37,6 @@ public class RefreshConfig implements Serializable {
                 return false;
             }
         }
-        return !TextUtils.isEmpty(this.pullToRefreshText) && !TextUtils.isEmpty(this.releaseToRefreshText) && !TextUtils.isEmpty(this.refreshingText) && !TextUtils.isEmpty(this.refreshFinishedText) && this.pullTextSize.intValue() > 0 && this.pullRefreshHeight.intValue() > 0 && this.parsePullTextColor != null;
+        return !StringUtils.isEmpty(this.pullToRefreshText) && !StringUtils.isEmpty(this.releaseToRefreshText) && !StringUtils.isEmpty(this.refreshingText) && !StringUtils.isEmpty(this.refreshFinishedText) && this.pullTextSize.intValue() > 0 && this.pullRefreshHeight.intValue() > 0 && this.parsePullTextColor != null;
     }
 }

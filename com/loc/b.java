@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import java.util.HashMap;
@@ -49,22 +49,22 @@ public final class b {
     private static Map<String, String> b(Context context, String str, String str2, String str3, String str4, String str5, String str6, String str7) {
         HashMap hashMap = new HashMap(16);
         hashMap.put("key", l.f(context));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("keywords", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("types", str2);
         }
-        if (!TextUtils.isEmpty(str5) && !TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str5) && !StringUtils.isEmpty(str6)) {
             hashMap.put("location", str6 + "," + str5);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("city", str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put("offset", str4);
         }
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             hashMap.put("radius", str7);
         }
         return hashMap;

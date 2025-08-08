@@ -1,6 +1,6 @@
 package com.taobao.themis.open.permission.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.util.ParamsConstants;
 import com.alibaba.ariver.resource.api.models.PermissionModel;
 import com.alibaba.fastjson.JSON;
@@ -424,7 +424,7 @@ public final class AuthUtils {
         JSONObject a2 = com.taobao.themis.kernel.utils.f.a(com.taobao.themis.open.permission.auth.a.INSTANCE.b(k.o(instance)));
         String string = a2 != null ? a2.getString("accessToken") : null;
         long longValue = (a2 == null || (l = a2.getLong("expirationTime")) == null) ? -1L : l.longValue();
-        if (!TextUtils.isEmpty(string) && longValue > System.currentTimeMillis()) {
+        if (!StringUtils.isEmpty(string) && longValue > System.currentTimeMillis()) {
             return string;
         }
         c(instance);

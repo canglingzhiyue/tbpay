@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
@@ -828,7 +828,7 @@ public class PlayControlDwVideoView extends FrameLayout implements d {
             return ((Boolean) ipChange.ipc$dispatch("67e06a0a", new Object[]{this})).booleanValue();
         }
         boolean a2 = i.a(getContext());
-        if (this.mCanPlay && ((!TextUtils.isEmpty(this.mVideoUrl) || !TextUtils.isEmpty(this.videoPlayInfo)) && a2)) {
+        if (this.mCanPlay && ((!StringUtils.isEmpty(this.mVideoUrl) || !StringUtils.isEmpty(this.videoPlayInfo)) && a2)) {
             return true;
         }
         showCoverImageView();
@@ -945,7 +945,7 @@ public class PlayControlDwVideoView extends FrameLayout implements d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1429a872", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mScm) && (jSONObject = this.mCurrentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
+        if (StringUtils.isEmpty(this.mScm) && (jSONObject = this.mCurrentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
             this.mScm = jSONObject2.getString("scm");
         }
         return this.mScm;
@@ -957,7 +957,7 @@ public class PlayControlDwVideoView extends FrameLayout implements d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("edfaa715", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mItemId) && (jSONObject = this.mCurrentData) != null) {
+        if (StringUtils.isEmpty(this.mItemId) && (jSONObject = this.mCurrentData) != null) {
             Object a2 = lja.a("item.0.clickParam.itemId", jSONObject);
             if (a2 instanceof String) {
                 this.mItemId = (String) a2;

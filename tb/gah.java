@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.exception.a;
@@ -50,7 +50,7 @@ public class gah {
                 return gahVar;
             }
             String string = jSONObject2.getString("refreshStrategy");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return gahVar;
             }
             if (string.toLowerCase().equals("rebuildcontainer")) {
@@ -63,7 +63,7 @@ public class gah {
                 gahVar.f28249a = 0;
             }
             String string2 = jSONObject2.getString("refreshType");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return gahVar;
             }
             if (string2.equalsIgnoreCase("layout")) {

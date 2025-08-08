@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ha.bizerrorreporter.d;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -174,7 +174,7 @@ public class jfu implements jfs {
             return ((Boolean) ipChange.ipc$dispatch("2072b1d6", new Object[]{this, new Integer(i), file})).booleanValue();
         }
         String call = b(file, this.f29527a).call();
-        if (TextUtils.isEmpty(call)) {
+        if (StringUtils.isEmpty(call)) {
             jfj.b("TCrashFileSender", "file content is empty");
             jfr.a().a("EMPTY_FILE", "TCrash", file.getName());
             return false;

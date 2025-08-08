@@ -3,7 +3,7 @@ package com.ali.user.open.oauth.damai;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import com.ali.user.open.core.config.ConfigManager;
@@ -39,11 +39,11 @@ public class DamaiOauthServiceProviderImpl extends BaseOauthServiceProviderImpl 
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cf81cf25", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
-            if (this.mLoginPatterns == null && !TextUtils.isEmpty(ConfigManager.DAMAI_LOGIN_URLS)) {
+            if (this.mLoginPatterns == null && !StringUtils.isEmpty(ConfigManager.DAMAI_LOGIN_URLS)) {
                 String[] split = ConfigManager.DAMAI_LOGIN_URLS.split("[,]");
                 this.mLoginPatterns = new Pattern[split.length];
                 int length = this.mLoginPatterns.length;
@@ -77,7 +77,7 @@ public class DamaiOauthServiceProviderImpl extends BaseOauthServiceProviderImpl 
                 }
             }) {
                 String cookie = CookieManager.getInstance().getCookie(str2);
-                if (!TextUtils.isEmpty(cookie) && (split = cookie.split(";")) != null && split.length > 0) {
+                if (!StringUtils.isEmpty(cookie) && (split = cookie.split(";")) != null && split.length > 0) {
                     for (String str3 : split) {
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, dd-MMM-yyyy HH:mm:ss 'GMT'", Locale.ENGLISH);
                         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT+8"));

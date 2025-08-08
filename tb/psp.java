@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import com.taobao.taolivecontainer.TBLiveH5Container;
@@ -76,7 +76,7 @@ public class psp {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (this.c == 2 && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(this.f32866a)) {
+        if (this.c == 2 && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(this.f32866a)) {
             Uri parse = Uri.parse(this.f32866a);
             Uri parse2 = Uri.parse(str);
             String str2 = "";

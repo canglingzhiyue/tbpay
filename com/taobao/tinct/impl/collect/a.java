@@ -1,6 +1,6 @@
 package com.taobao.tinct.impl.collect;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -20,7 +20,7 @@ public class a implements com.taobao.tinct.a {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 Log.e(TAG, "Failed to report change info to appmonitor: " + str);
                 return;
             }

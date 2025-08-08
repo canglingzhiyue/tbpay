@@ -1,7 +1,7 @@
 package com.taobao.android.weex_plugin.component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -158,7 +158,7 @@ public class WebViewPlatformView extends WeexPlatformView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e1dea87e", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || getWebView() == null || TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str) || getWebView() == null || StringUtils.isEmpty(str)) {
         } else {
             loadUrl(str);
         }

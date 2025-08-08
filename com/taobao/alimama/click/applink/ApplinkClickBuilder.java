@@ -1,7 +1,7 @@
 package com.taobao.alimama.click.applink;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.utils.c;
 import com.taobao.munion.taosdk.MunionUrlBuilder;
@@ -29,7 +29,7 @@ public class ApplinkClickBuilder {
         if (ipChange instanceof IpChange) {
             return (ApplinkClickBuilder) ipChange.ipc$dispatch("fad0bbc1", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mArgsMap.put("eadt", str);
         }
         return this;
@@ -51,7 +51,7 @@ public class ApplinkClickBuilder {
         if (ipChange instanceof IpChange) {
             return (ApplinkClickBuilder) ipChange.ipc$dispatch("15812843", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             this.mArgsMap.put(str, str2);
         }
         return this;
@@ -73,7 +73,7 @@ public class ApplinkClickBuilder {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("11990eb5", new Object[]{this});
-        } else if (!c.e() || !TextUtils.isEmpty(this.mArgsMap.get("eadt")) || (str = this.mLinkUrl) == null) {
+        } else if (!c.e() || !StringUtils.isEmpty(this.mArgsMap.get("eadt")) || (str = this.mLinkUrl) == null) {
         } else {
             Uri parse = Uri.parse(str);
             if (!parse.isHierarchical()) {
@@ -91,7 +91,7 @@ public class ApplinkClickBuilder {
                 return;
             }
             String str2 = split[0];
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             withArgEadt(str2);

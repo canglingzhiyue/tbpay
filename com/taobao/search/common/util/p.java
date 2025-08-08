@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.search.sf.BaseResultActivity;
@@ -37,7 +37,7 @@ public class p {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             bundle.putString(entry.getKey(), entry.getValue());
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             bundle.putString("tab", str);
         }
         String str2 = map.get("q") == null ? "" : map.get("q");
@@ -76,7 +76,7 @@ public class p {
             if (cVar != null) {
                 noo.a(hashMap, cVar.getParamsSnapShot());
                 String tab = cVar.getTab();
-                if (!TextUtils.isEmpty(tab)) {
+                if (!StringUtils.isEmpty(tab)) {
                     hashMap.put("tab", tab);
                 }
             }
@@ -103,17 +103,17 @@ public class p {
         } else if (activity != null) {
             Bundle bundle = new Bundle();
             bundle.putString("q", str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 bundle.putString("tab", str2);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 bundle.putString("searchDoorFrom", str3);
             }
             if (map != null) {
                 for (Map.Entry<String, String> entry : map.entrySet()) {
                     String key = entry.getKey();
                     String value = entry.getValue();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         if (value == null) {
                             value = "";
                         }

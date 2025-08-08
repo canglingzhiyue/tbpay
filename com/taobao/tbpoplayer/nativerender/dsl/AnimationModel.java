@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender.dsl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -72,7 +72,7 @@ public class AnimationModel implements INativeModel {
         public boolean isValid() {
             List<TimeLineNode> list;
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.object) && (list = this.timeline) != null && !list.isEmpty();
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.object) && (list = this.timeline) != null && !list.isEmpty();
         }
     }
 
@@ -96,7 +96,7 @@ public class AnimationModel implements INativeModel {
         @Override // com.taobao.tbpoplayer.nativerender.dsl.INativeModel
         public boolean isValid() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.value) && this.fraction != null;
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.value) && this.fraction != null;
         }
     }
 }

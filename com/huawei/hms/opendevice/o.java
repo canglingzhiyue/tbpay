@@ -2,7 +2,7 @@ package com.huawei.hms.opendevice;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.log.HMSLog;
 import com.huawei.hms.utils.IOUtils;
 import com.taobao.calendar.sdk.db.schedule.Repeat;
@@ -34,12 +34,12 @@ public abstract class o {
 
     private static String a(String str) {
         String str2 = b.get(str);
-        return TextUtils.isEmpty(str2) ? "" : str2;
+        return StringUtils.isEmpty(str2) ? "" : str2;
     }
 
     private static void a(String str, Context context) {
         String c2 = d.c(context.getApplicationContext());
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             try {
                 a("s", str, c2 + "/files/s");
             } catch (IOException unused) {
@@ -83,7 +83,7 @@ public abstract class o {
 
     private static void a(String str, String str2, String str3, String str4, String str5, Context context) {
         String c2 = d.c(context.getApplicationContext());
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             try {
                 a("m", str, c2 + "/files/math/m");
                 a("p", str2, c2 + "/files/panda/p");
@@ -184,7 +184,7 @@ public abstract class o {
         }
         b.clear();
         String c2 = d.c(context);
-        if (TextUtils.isEmpty(c2)) {
+        if (StringUtils.isEmpty(c2)) {
             return;
         }
         String a2 = p.a(c2 + "/files/math/m");
@@ -243,6 +243,6 @@ public abstract class o {
     }
 
     private static boolean i() {
-        return !TextUtils.isEmpty(f());
+        return !StringUtils.isEmpty(f());
     }
 }

@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.event;
 
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.event.model.ConfirmDialogModel;
 import com.alibaba.android.icart.core.widget.a;
 import com.alibaba.android.umbrella.link.export.UmTypeKey;
@@ -147,7 +147,7 @@ public class h extends bca {
         } catch (Exception unused) {
             message = confirmDialogModel.getMessage();
         }
-        if (TextUtils.isEmpty(message) && !TextUtils.isEmpty(confirmDialogModel.getTitle())) {
+        if (StringUtils.isEmpty(message) && !StringUtils.isEmpty(confirmDialogModel.getTitle())) {
             message = confirmDialogModel.getTitle();
         }
         String str = message;

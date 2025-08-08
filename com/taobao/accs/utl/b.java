@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.detect.NetworkDetector;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -181,7 +181,7 @@ public class b {
                                                             final String stringExtra4 = intent.getStringExtra(Constants.KEY_ERROR_DETAIL);
                                                             final boolean booleanExtra2 = intent.getBooleanExtra(Constants.KEY_TYPE_INAPP, false);
                                                             final boolean booleanExtra3 = intent.getBooleanExtra(Constants.KEY_CENTER_HOST, false);
-                                                            if (!TextUtils.isEmpty(stringExtra3)) {
+                                                            if (!StringUtils.isEmpty(stringExtra3)) {
                                                                 if (booleanExtra) {
                                                                     a(stringExtra2, new Runnable() { // from class: com.taobao.accs.utl.b.7
                                                                         public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -341,7 +341,7 @@ public class b {
                                             Object obj = "1";
                                             Object obj2 = BaseMonitor.ALARM_POINT_REQ_ERROR;
                                             String str7 = name;
-                                            if (TextUtils.equals(Constants.SEND_TYPE_RES, intent.getStringExtra(Constants.KEY_SEND_TYPE))) {
+                                            if (StringUtils.equals(Constants.SEND_TYPE_RES, intent.getStringExtra(Constants.KEY_SEND_TYPE))) {
                                                 final byte[] byteArrayExtra2 = intent.getByteArrayExtra("data");
                                                 a(stringExtra2, new Runnable() { // from class: com.taobao.accs.utl.b.4
                                                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -490,7 +490,7 @@ public class b {
             try {
                 for (TaoBaseService.ExtHeaderType extHeaderType : TaoBaseService.ExtHeaderType.values()) {
                     String str = map.get(Integer.valueOf(extHeaderType.ordinal()));
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         hashMap.put(extHeaderType, str);
                     }
                 }

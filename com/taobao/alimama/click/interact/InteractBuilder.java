@@ -1,6 +1,6 @@
 package com.taobao.alimama.click.interact;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.muniontaobaosdk.util.b;
@@ -29,7 +29,7 @@ public class InteractBuilder {
         if (ipChange instanceof IpChange) {
             return (InteractBuilder) ipChange.ipc$dispatch("13e7b60e", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mArgsMap.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, str);
         }
         return this;
@@ -40,7 +40,7 @@ public class InteractBuilder {
         if (ipChange instanceof IpChange) {
             return (InteractBuilder) ipChange.ipc$dispatch("851da0d", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             this.mArgsMap.put(str, str2);
         }
         return this;
@@ -51,7 +51,7 @@ public class InteractBuilder {
         if (ipChange instanceof IpChange) {
             return (InteractBuilder) ipChange.ipc$dispatch("952b3768", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mArgsMap.put("namespace", str);
         }
         return this;

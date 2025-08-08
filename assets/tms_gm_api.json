@@ -1,0 +1,89 @@
+[
+  {
+    "name": "requestRenderLayout"
+  },
+  {
+    "name": "commitIfsEvent"
+  },
+  {
+    "name": "genClickIdBy"
+  },
+  {
+    "name": "commitTaokeInfo"
+  },
+  {
+    "name": "commitTanxInfo"
+  },
+  {
+    "name": "getWindowInfo"
+  },
+  {
+    "name": "getWindowInfoSync",
+    "sync": true
+  },
+  {
+    "name": "getSystemSetting"
+  },
+  {
+    "name": "getSystemSettingSync",
+    "sync": true
+  },
+  {
+    "name": "getDeviceInfo"
+  },
+  {
+    "name": "getDeviceInfoSync",
+    "sync": true
+  },
+  {
+    "name": "getAppBaseInfo"
+  },
+  {
+    "name": "getAppBaseInfoSync",
+    "sync": true
+  },
+  {
+    "name": "enableSwipeBack",
+    "namespace": "tb"
+  },
+  {
+    "name": "addToDesktop",
+    "namespace": "tb"
+  },
+  {
+    "name": "abilityHub"
+  },
+  {
+    "name": "hideBackButton"
+  },
+  {
+    "name": "showBackButton"
+  },
+  {
+    "name": "setRightItem"
+  },
+  {
+    "name": "showICONChangeGuide"
+  },
+  {
+    "name": "checkTinyAppPermission"
+  },
+  {
+    "name": "push"
+  },
+  {
+    "name": "pop"
+  },
+  {
+    "name": "push"
+  },
+  {
+    "name": "showAddIconGuideTips"
+  },
+  {
+    "name": "hideAddIconButton"
+  },
+  {
+    "name": "setNavigationBarStyle"
+  }
+]

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.ace.model.a;
 import com.taobao.android.searchbaseframe.ace.model.b;
@@ -66,7 +66,7 @@ public abstract class imy<REQUEST extends a, RESPONSE extends b> implements inb<
             return;
         }
         String id = response.getId();
-        if (TextUtils.isEmpty(id) || (remove = this.b.remove(id)) == null) {
+        if (StringUtils.isEmpty(id) || (remove = this.b.remove(id)) == null) {
             return;
         }
         remove.a(response);

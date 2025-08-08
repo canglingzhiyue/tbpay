@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.business.getCoupon;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.c;
@@ -79,7 +79,7 @@ public class b {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("service_mark", "officialCoupon");
         hashMap.putAll(hit.a(cVar, liveItem));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("clickSource", str);
         }
         if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() == null) {
@@ -95,7 +95,7 @@ public class b {
             return;
         }
         String str = "活动太火爆了，请稍后再试";
-        if (hir.n() && netResponse != null && !TextUtils.isEmpty(netResponse.getRetCode()) && netResponse.getRetCode().startsWith("FAIL_BIZ_") && !TextUtils.isEmpty(netResponse.getRetMsg())) {
+        if (hir.n() && netResponse != null && !StringUtils.isEmpty(netResponse.getRetCode()) && netResponse.getRetCode().startsWith("FAIL_BIZ_") && !StringUtils.isEmpty(netResponse.getRetMsg())) {
             str = netResponse.getRetMsg();
         }
         hix.a(context, str);

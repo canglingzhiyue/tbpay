@@ -3,7 +3,7 @@ package com.alibaba.ariver.app.api.ui.darkmode;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.app.api.App;
 import com.alibaba.ariver.app.api.model.AppConfigModel;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -77,6 +77,6 @@ public class ThemeUtils {
 
     private static boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : TextUtils.equals(f2894a, "dark");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : StringUtils.equals(f2894a, "dark");
     }
 }

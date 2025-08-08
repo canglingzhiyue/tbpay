@@ -2,7 +2,7 @@ package android.taobao.windvane.webview;
 
 import android.content.Context;
 import android.taobao.windvane.jsbridge.l;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ConsoleMessage;
 import android.webkit.GeolocationPermissions;
 import android.webkit.JsPromptResult;
@@ -92,7 +92,7 @@ public class WVWebChromeClient extends WebChromeClient {
             return true;
         }
         String message = consoleMessage.message();
-        if (!TextUtils.isEmpty(message) && message.startsWith("hybrid://")) {
+        if (!StringUtils.isEmpty(message) && message.startsWith("hybrid://")) {
             android.taobao.windvane.util.m.e(TAG, "Call from console.log");
             if (this.mWebView != null) {
                 l.b().a(this.mWebView, message);

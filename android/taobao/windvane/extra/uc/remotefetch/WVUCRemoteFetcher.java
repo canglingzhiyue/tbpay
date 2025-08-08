@@ -2,7 +2,7 @@ package android.taobao.windvane.extra.uc.remotefetch;
 
 import android.taobao.windvane.jsbridge.api.WVDevelopTool;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import tb.ihq;
@@ -42,7 +42,7 @@ public class WVUCRemoteFetcher {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("28b786e", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new File(str).exists();
         }
         return false;
@@ -55,7 +55,7 @@ public class WVUCRemoteFetcher {
         }
         if (WVDevelopTool.isEnableUCRemoteDebug()) {
             String uCRemoteDebugFilePath = WVDevelopTool.getUCRemoteDebugFilePath();
-            if (!TextUtils.isEmpty(uCRemoteDebugFilePath)) {
+            if (!StringUtils.isEmpty(uCRemoteDebugFilePath)) {
                 m.e(TAG, "use uc remote debug file path:" + uCRemoteDebugFilePath);
                 return uCRemoteDebugFilePath;
             }
@@ -66,7 +66,7 @@ public class WVUCRemoteFetcher {
 
     public static boolean hasUCRemoteLocal() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f7280108", new Object[0])).booleanValue() : !TextUtils.isEmpty(fetchUCRemoteLocal());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f7280108", new Object[0])).booleanValue() : !StringUtils.isEmpty(fetchUCRemoteLocal());
     }
 
     public static void fetchUCRemote(final WVUCFetcherCallback wVUCFetcherCallback) {
@@ -77,7 +77,7 @@ public class WVUCRemoteFetcher {
         }
         try {
             String fetchUCRemoteLocal = fetchUCRemoteLocal();
-            if (TextUtils.isEmpty(fetchUCRemoteLocal) || !isValidRemoteSoPath(fetchUCRemoteLocal)) {
+            if (StringUtils.isEmpty(fetchUCRemoteLocal) || !isValidRemoteSoPath(fetchUCRemoteLocal)) {
                 ihq.b().a(UC_CORE_REMOTE_SO_NAME, new ihu() { // from class: android.taobao.windvane.extra.uc.remotefetch.WVUCRemoteFetcher.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

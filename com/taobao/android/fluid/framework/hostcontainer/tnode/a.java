@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.hostcontainer.tnode;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import tb.kge;
@@ -15,7 +15,7 @@ public final class a {
 
     public static int a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue() : (TextUtils.isEmpty(str) || !str.equals("localFirst")) ? 1 : 0;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue() : (StringUtils.isEmpty(str) || !str.equals("localFirst")) ? 1 : 0;
     }
 
     public static boolean a() {

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -355,7 +355,7 @@ public class r extends d {
         }
         this.f10559a.clear();
         String f = f();
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             String[] split = f.split(":");
             try {
                 i = Integer.parseInt(split[0]);

@@ -2,7 +2,7 @@ package com.taobao.homepage.pop.view.container;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public abstract class b {
             return;
         }
         for (IPopData iPopData : list) {
-            if (iPopData != null && iPopData.valid() && (popConfig = iPopData.getPopConfig()) != null && popConfig.getHierarchy() == 2 && (point = popConfig.getPoint()) != null && !TextUtils.isEmpty(point.getSectionBizCode()) && (kyuVar = this.f) != null && (a2 = kyuVar.d().a(point.getSectionBizCode())) >= 0 && (b = this.f.d().b(a2)) != null) {
+            if (iPopData != null && iPopData.valid() && (popConfig = iPopData.getPopConfig()) != null && popConfig.getHierarchy() == 2 && (point = popConfig.getPoint()) != null && !StringUtils.isEmpty(point.getSectionBizCode()) && (kyuVar = this.f) != null && (a2 = kyuVar.d().a(point.getSectionBizCode())) >= 0 && (b = this.f.d().b(a2)) != null) {
                 a(new com.taobao.homepage.pop.viewmodel.b(iPopData, a2, b));
             }
         }

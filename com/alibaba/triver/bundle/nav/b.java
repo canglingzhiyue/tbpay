@@ -1,7 +1,7 @@
 package com.alibaba.triver.bundle.nav;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.kernel.i;
 import tb.kge;
@@ -16,7 +16,7 @@ public class b {
 
     public static boolean a(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1a285e3", new Object[]{uri})).booleanValue() : !TextUtils.isEmpty(b(uri));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1a285e3", new Object[]{uri})).booleanValue() : !StringUtils.isEmpty(b(uri));
     }
 
     public static String b(Uri uri) {
@@ -32,7 +32,7 @@ public class b {
 
     public static boolean c(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("beadfb21", new Object[]{uri})).booleanValue() : !TextUtils.isEmpty(d(uri));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("beadfb21", new Object[]{uri})).booleanValue() : !StringUtils.isEmpty(d(uri));
     }
 
     public static String d(Uri uri) {
@@ -51,8 +51,8 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
-            return TextUtils.equals("true", Uri.parse(str).getQueryParameter(i.IS_WIDGET));
+        if (!StringUtils.isEmpty(str)) {
+            return StringUtils.equals("true", Uri.parse(str).getQueryParameter(i.IS_WIDGET));
         }
         return false;
     }
@@ -62,14 +62,14 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
-            return TextUtils.equals("true", Uri.parse(str).getQueryParameter("isATS"));
+        if (!StringUtils.isEmpty(str)) {
+            return StringUtils.equals("true", Uri.parse(str).getQueryParameter("isATS"));
         }
         return false;
     }
 
     public static boolean e(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("cbb9705f", new Object[]{uri})).booleanValue() : uri != null && uri.isHierarchical() && TextUtils.equals(uri.getQueryParameter(i.KEY_AFC_LINK), "1");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("cbb9705f", new Object[]{uri})).booleanValue() : uri != null && uri.isHierarchical() && StringUtils.equals(uri.getQueryParameter(i.KEY_AFC_LINK), "1");
     }
 }

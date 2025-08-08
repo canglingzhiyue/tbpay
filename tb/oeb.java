@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.security.mobile.module.http.constant.RpcConfigureConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.global.setting.c;
@@ -308,7 +308,7 @@ public class oeb {
             return ((Boolean) ipChange.ipc$dispatch("4447ed7", new Object[0])).booleanValue();
         }
         String a2 = a("tnode_disable_pullrightexit_version", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             for (String str : a2.split(",")) {
                 if (oec.a((Object) str, 0) == Build.VERSION.SDK_INT) {
                     return true;
@@ -771,7 +771,7 @@ public class oeb {
             uri2 = uri;
         }
         String a2 = a("tnode.changeToNewContainer", "page_detail,page_fullpage,page_profile,page_search,page_guangguangcircle,page_content");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             String[] split2 = a2.split(",");
             if (g(uri.getPath())) {
                 str = "page_fullpage";
@@ -783,7 +783,7 @@ public class oeb {
                     return true;
                 }
             }
-            if (TextUtils.equals(str, g.GUANGGUANG_SHORT_LINK) && co()) {
+            if (StringUtils.equals(str, g.GUANGGUANG_SHORT_LINK) && co()) {
                 return true;
             }
         }
@@ -1277,7 +1277,7 @@ public class oeb {
             if (valueOf.booleanValue()) {
                 int a2 = a("apm_sample", 1);
                 String str = mnd.l;
-                if (!TextUtils.isEmpty(str) && str.split("\\.").length >= 4) {
+                if (!StringUtils.isEmpty(str) && str.split("\\.").length >= 4) {
                     a2 *= 200;
                 }
                 if (Math.random() * 1000.0d >= a2) {
@@ -1405,7 +1405,7 @@ public class oeb {
 
     public static boolean a(boolean z, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f7197a3a", new Object[]{new Boolean(z), str})).booleanValue() : !ohd.a(3) && !TextUtils.equals("outside", str) && !z && a("enableImmersiveLiveRoom", true);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f7197a3a", new Object[]{new Boolean(z), str})).booleanValue() : !ohd.a(3) && !StringUtils.equals("outside", str) && !z && a("enableImmersiveLiveRoom", true);
     }
 
     public static boolean cF() {
@@ -1452,7 +1452,7 @@ public class oeb {
 
     public static boolean bz() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ae07a4e3", new Object[0])).booleanValue() : !a.a().w().c() && TextUtils.equals("true", b("Tab2.Tab2TaskOpt.enable_layout", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ae07a4e3", new Object[0])).booleanValue() : !a.a().w().c() && StringUtils.equals("true", b("Tab2.Tab2TaskOpt.enable_layout", "true"));
     }
 
     public static boolean as() {

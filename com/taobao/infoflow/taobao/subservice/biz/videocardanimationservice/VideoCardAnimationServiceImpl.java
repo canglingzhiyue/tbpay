@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.videocardanimationservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.h;
@@ -46,7 +46,7 @@ public class VideoCardAnimationServiceImpl implements IVideoCardAnimationService
                 ipChange.ipc$dispatch("4935db30", new Object[]{this, iUiRefreshActionModel});
                 return;
             }
-            VideoCardAnimationServiceImpl.access$002(VideoCardAnimationServiceImpl.this, TextUtils.equals(iUiRefreshActionModel.getRequestType(), "coldStart"));
+            VideoCardAnimationServiceImpl.access$002(VideoCardAnimationServiceImpl.this, StringUtils.equals(iUiRefreshActionModel.getRequestType(), "coldStart"));
             ldf.d(VideoCardAnimationServiceImpl.TAG, "onUiRefreshStart isColdStart:" + VideoCardAnimationServiceImpl.access$000(VideoCardAnimationServiceImpl.this));
         }
     };
@@ -202,10 +202,10 @@ public class VideoCardAnimationServiceImpl implements IVideoCardAnimationService
             return false;
         }
         JSONObject jSONObject = this.mVideoAnimation;
-        if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("videoUrl"))) {
+        if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("videoUrl"))) {
             ldf.d(TAG, "enableShow:数据为空");
             return false;
-        } else if (TextUtils.isEmpty(getLocalVideoPath())) {
+        } else if (StringUtils.isEmpty(getLocalVideoPath())) {
             ldf.d(TAG, "enableShow:本地视频不存在");
             return false;
         } else if (!this.mVideoCardHelper.b(this.mVideoAnimation)) {

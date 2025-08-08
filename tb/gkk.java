@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -31,7 +31,7 @@ public class gkk implements gkl {
             return "";
         }
         String obj = list.get(0).toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             return "";
         }
         Object obj2 = list.get(1);

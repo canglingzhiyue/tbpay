@@ -1,7 +1,7 @@
 package com.xiaomi.push.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.tao.messagekit.base.network.AccsConnection;
 import com.xiaomi.mipush.sdk.Constants;
 import com.xiaomi.push.Cif;
@@ -38,7 +38,7 @@ public class ca {
         String str;
         synchronized (ca.class) {
             String format = f986a.format(Long.valueOf(System.currentTimeMillis()));
-            if (!TextUtils.equals(f24688a, format)) {
+            if (!StringUtils.equals(f24688a, format)) {
                 f987a.set(0L);
                 f24688a = format;
             }
@@ -90,7 +90,7 @@ public class ca {
             java.util.Map r7 = r6.m2037a()
             java.lang.Object r7 = r7.get(r8)
             java.lang.String r7 = (java.lang.String) r7
-            boolean r9 = android.text.TextUtils.isEmpty(r7)
+            boolean r9 = android.text.StringUtils.isEmpty(r7)
             if (r9 != 0) goto L57
             int r7 = java.lang.Integer.parseInt(r7)     // Catch: java.lang.Exception -> L57
             goto L58
@@ -168,11 +168,11 @@ public class ca {
         String str;
         if (igVar == null) {
             str = "item is null, verfiy ClientUploadDataItem failed.";
-        } else if (!z && TextUtils.isEmpty(igVar.f510a)) {
+        } else if (!z && StringUtils.isEmpty(igVar.f510a)) {
             str = "item.channel is null or empty, verfiy ClientUploadDataItem failed.";
-        } else if (TextUtils.isEmpty(igVar.f517d)) {
+        } else if (StringUtils.isEmpty(igVar.f517d)) {
             str = "item.category is null or empty, verfiy ClientUploadDataItem failed.";
-        } else if (TextUtils.isEmpty(igVar.f516c)) {
+        } else if (StringUtils.isEmpty(igVar.f516c)) {
             str = "item.name is null or empty, verfiy ClientUploadDataItem failed.";
         } else if (!com.xiaomi.push.bm.m1742a(igVar.f517d)) {
             str = "item.category can only contain ascii char, verfiy ClientUploadDataItem failed.";

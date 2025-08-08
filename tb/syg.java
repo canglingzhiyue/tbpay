@@ -82,7 +82,7 @@ public abstract class syg extends h {
             if (r0 == 0) goto L6e
             r10 = r10[r3]
             java.lang.String r10 = (java.lang.String) r10
-            boolean r0 = android.text.TextUtils.isEmpty(r10)
+            boolean r0 = android.text.StringUtils.isEmpty(r10)
             if (r0 != 0) goto L6e
             com.taobao.android.dinamicx.widget.DXWidgetNode r0 = r4.getExpandWidgetNode()
             com.taobao.android.dinamicx.widget.DXWidgetNode r10 = r0.queryWidgetNodeByUserId(r10)

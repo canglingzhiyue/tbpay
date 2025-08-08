@@ -1,6 +1,6 @@
 package com.taobao.homepage.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.c;
@@ -33,15 +33,15 @@ public class h {
         }
         JSONObject jSONObject = new JSONObject(map);
         String string = jSONObject.getString("rangerBucketsAlias");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             newRangerOptions.rangerBucketsAlias = string;
         }
         String string2 = jSONObject.getString("trackGroup");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             newRangerOptions.trackGroup = string2;
         }
         String string3 = jSONObject.getString("bizName");
-        if (!TextUtils.isEmpty(string3) && !"ranger".equals(string3)) {
+        if (!StringUtils.isEmpty(string3) && !"ranger".equals(string3)) {
             newRangerOptions.bizName = string3;
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("commonParams");
@@ -49,7 +49,7 @@ public class h {
             newRangerOptions.commParams = jSONObject2;
         }
         String string4 = jSONObject.getString("ranger_buckets");
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             return;
         }
         g.a().a(obj, string4, newRangerOptions);

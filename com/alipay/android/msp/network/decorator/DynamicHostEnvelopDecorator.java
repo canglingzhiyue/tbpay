@@ -1,7 +1,7 @@
 package com.alipay.android.msp.network.decorator;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -29,7 +29,7 @@ public class DynamicHostEnvelopDecorator extends BaseDecorator {
         jSONObject2.put("params", (Object) JSON.parseObject(new String(bArr)));
         jSONObject.put("data", (Object) jSONObject2);
         String jSONObject3 = jSONObject.toString();
-        if (!TextUtils.isEmpty(this.c.getRequestKey())) {
+        if (!StringUtils.isEmpty(this.c.getRequestKey())) {
             jSONObject3 = this.c.getRequestKey() + "=" + jSONObject3;
         }
         byte[] bytes = jSONObject3.getBytes();

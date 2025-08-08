@@ -1,7 +1,7 @@
 package anet.channel;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.entity.ConnType;
 import anet.channel.status.NetworkStatusHelper;
 import anet.channel.strategy.StrategyCenter;
@@ -99,7 +99,7 @@ public class AccsSessionManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c00243d0", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ALog.d(TAG, "closeSessions", this.instance.seqNum, "host", str);
             this.instance.getSessionRequest(str).closeSessions(false, str2);

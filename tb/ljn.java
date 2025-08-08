@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.common.Constants;
 import java.util.HashMap;
@@ -123,7 +123,7 @@ public class ljn {
                 return (a) ipChange.ipc$dispatch("4c707430", new Object[]{this});
             }
             String str = this.f30688a.g;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 char c = 65535;
                 switch (str.hashCode()) {
                     case -2113389068:

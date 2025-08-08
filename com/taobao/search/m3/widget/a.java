@@ -2,7 +2,7 @@ package com.taobao.search.m3.widget;
 
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -306,7 +306,7 @@ public final class a {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "Page_SearchItemList";
         }
         boolean exposed = this.d.getExposed();
@@ -418,7 +418,7 @@ public final class a {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
         } else if (this.d.isP4p || this.d.getX_qzt_ad() > 0) {
-            if (!this.d.getUseAuctionURL() || TextUtils.isEmpty(this.d.getAuctionURL())) {
+            if (!this.d.getUseAuctionURL() || StringUtils.isEmpty(this.d.getAuctionURL())) {
                 str = com.etao.feimagesearch.e.DETAIL_URL_PRE_1s;
             } else {
                 str = this.d.getAuctionURL();
@@ -466,7 +466,7 @@ public final class a {
                     if (jSONObject != null) {
                         String key = jSONObject.getString("key");
                         String value = jSONObject.getString("value");
-                        if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                        if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                             q.a((Object) key, "key");
                             q.a((Object) value, "value");
                             hashMap.put(key, value);
@@ -484,7 +484,7 @@ public final class a {
                     }
                 }
             }
-            AlimamaAdvertising.instance().handleAdUrlForClickid(a(this.d, str4, hashMap, new HashMap(), !TextUtils.isEmpty(this.d.getAuctionBean().p4pContentUrl) || this.d.isP4p || this.d.getX_qzt_ad() > 0).toString(), false);
+            AlimamaAdvertising.instance().handleAdUrlForClickid(a(this.d, str4, hashMap, new HashMap(), !StringUtils.isEmpty(this.d.getAuctionBean().p4pContentUrl) || this.d.isP4p || this.d.getX_qzt_ad() > 0).toString(), false);
         }
     }
 
@@ -498,10 +498,10 @@ public final class a {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(m3CellBean.getAuctionBean().p4pContentUrl)) {
+        if (!StringUtils.isEmpty(m3CellBean.getAuctionBean().p4pContentUrl)) {
             str = m3CellBean.getAuctionBean().p4pContentUrl;
             q.a((Object) str, "bean.auctionBean.p4pContentUrl");
-        } else if (!TextUtils.isEmpty(m3CellBean.getFinalTargetUrl())) {
+        } else if (!StringUtils.isEmpty(m3CellBean.getFinalTargetUrl())) {
             Uri.Builder uri = Uri.parse(m3CellBean.getFinalTargetUrl()).buildUpon();
             if (m3CellBean.isP4p || m3CellBean.getX_qzt_ad() > 0) {
                 q.a((Object) uri, "uri");
@@ -515,7 +515,7 @@ public final class a {
             Nav.from(this.e.getActivity()).toUri(uri.build());
             return;
         } else {
-            if (!m3CellBean.getUseAuctionURL() || TextUtils.isEmpty(m3CellBean.getAuctionURL())) {
+            if (!m3CellBean.getUseAuctionURL() || StringUtils.isEmpty(m3CellBean.getAuctionURL())) {
                 str = com.etao.feimagesearch.e.DETAIL_URL_PRE_1s;
             } else {
                 str = m3CellBean.getAuctionURL();
@@ -562,7 +562,7 @@ public final class a {
                     if (jSONObject != null) {
                         String key = jSONObject.getString("key");
                         String value = jSONObject.getString("value");
-                        if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                        if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                             q.a((Object) key, "key");
                             q.a((Object) value, "value");
                             hashMap2.put(key, value);
@@ -582,10 +582,10 @@ public final class a {
             }
         }
         String str6 = str;
-        if (TextUtils.isEmpty(str6)) {
+        if (StringUtils.isEmpty(str6)) {
             return;
         }
-        Uri a2 = a(m3CellBean, str6, hashMap, new HashMap(), !TextUtils.isEmpty(m3CellBean.getAuctionBean().p4pContentUrl) || m3CellBean.isP4p || m3CellBean.getX_qzt_ad() > 0);
+        Uri a2 = a(m3CellBean, str6, hashMap, new HashMap(), !StringUtils.isEmpty(m3CellBean.getAuctionBean().p4pContentUrl) || m3CellBean.isP4p || m3CellBean.getX_qzt_ad() > 0);
         c();
         Nav.from(this.e.getActivity()).toUri(a2);
     }
@@ -637,7 +637,7 @@ public final class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6ebca5bc", new Object[]{this, builder, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             builder.appendQueryParameter(str, str2);
         }
@@ -656,7 +656,7 @@ public final class a {
             str = this.f == 0 ? "430042_1006" : "430043_1006";
         }
         a(uri, com.taobao.alimama.c.E_URL, bean.getClickUrl());
-        if (!TextUtils.isEmpty(bean.getEtype())) {
+        if (!StringUtils.isEmpty(bean.getEtype())) {
             a(uri, "etype", bean.getEtype());
         } else {
             a(uri, "etype", "1");
@@ -684,7 +684,7 @@ public final class a {
         }
         String str = map.get("spm-cnt");
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return "";
         }
         if (str == null) {
@@ -776,7 +776,7 @@ public final class a {
         if (interactiveInfo != null) {
             StringBuilder sb = new StringBuilder();
             for (com.taobao.search.m3.interactive.c cVar : interactiveInfo.a()) {
-                if (!TextUtils.isEmpty(cVar.j())) {
+                if (!StringUtils.isEmpty(cVar.j())) {
                     if (sb.length() > 0) {
                         sb.append("|");
                     }
@@ -807,10 +807,10 @@ public final class a {
             q.a((Object) entry, "iterator.next()");
             Map.Entry<String, Object> entry2 = entry;
             String key = entry2.getKey();
-            if (!TextUtils.isEmpty(key) && (set == null || !set.contains(key))) {
+            if (!StringUtils.isEmpty(key) && (set == null || !set.contains(key))) {
                 Object value = entry2.getValue();
                 String obj = value != null ? value.toString() : null;
-                if (!TextUtils.isEmpty(obj)) {
+                if (!StringUtils.isEmpty(obj)) {
                     q.a((Object) key, "key");
                     map.put(key, obj);
                 }
@@ -855,7 +855,7 @@ public final class a {
             Map<String, String> map = it2.getMainInfo().pageTraceArgs;
             if (map != null) {
                 String str = map.get("spm-cnt");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put("spm", str);
                 }
             }
@@ -868,7 +868,7 @@ public final class a {
         String similarSameUrl = this.d.getSimilarSameUrl();
         if (similarSameUrl != null) {
             String queryParameter = Uri.parse(similarSameUrl).getQueryParameter("sellerId");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 hashMap.put("sellerId", queryParameter);
             }
         }
@@ -890,10 +890,10 @@ public final class a {
         if (jSONObject2 != null) {
             for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     Object value = entry.getValue();
                     String obj = value != null ? value.toString() : null;
-                    if (!TextUtils.isEmpty(obj)) {
+                    if (!StringUtils.isEmpty(obj)) {
                         q.a((Object) key, "key");
                         l.put(key, obj);
                     }
@@ -982,7 +982,7 @@ public final class a {
         }
         q.c(bean, "bean");
         String itemId = bean.itemId;
-        if (TextUtils.isEmpty(itemId)) {
+        if (StringUtils.isEmpty(itemId)) {
             return;
         }
         JSONObject jSONObject = new JSONObject();
@@ -1011,7 +1011,7 @@ public final class a {
         JSONObject jSONObject4 = jSONObject3;
         jSONObject4.put((JSONObject) "style", this.c.getValue());
         String picPath = this.c == ListStyle.LIST ? bean.getPicPath() : bean.getUprightImage();
-        if (TextUtils.isEmpty(picPath)) {
+        if (StringUtils.isEmpty(picPath)) {
             picPath = bean.getPicPath();
         }
         jSONObject4.put((JSONObject) nog.PRD_PICURL, picPath);
@@ -1027,7 +1027,7 @@ public final class a {
         Map<String, String> a3 = com.taobao.android.searchbaseframe.util.a.a(com.taobao.android.searchbaseframe.util.a.b(jSONObject, "clickTraceParams"));
         q.a((Object) a3, "FastJsonParseUtil.conver…ringMap(clickTraceObject)");
         String string = jSONObject.getString(nog.CLICK_TRACE);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             q.a((Object) itemId, "itemId");
             a(bean, itemId, string, a2, a3);
         }
@@ -1175,7 +1175,7 @@ public final class a {
         StringBuilder sb = new StringBuilder();
         for (int c2 = rwf.c(0, i - 10); c2 < d3; c2++) {
             BaseCellBean cell = commonSearchResult.getCell(c2);
-            if (TextUtils.equals("item", cell.cardType)) {
+            if (StringUtils.equals("item", cell.cardType)) {
                 if (sb.length() > 0) {
                     sb.append(",");
                 }
@@ -1194,10 +1194,10 @@ public final class a {
         q.a((Object) str, "if (result.cellsCount > …osition + 2).type else \"\"");
         map.put("nextItemsType", str2 + ',' + str);
         map.put("sessionid", commonSearchResult.getMainInfo().rn);
-        if (!TextUtils.isEmpty(commonSearchResult.sessionId)) {
+        if (!StringUtils.isEmpty(commonSearchResult.sessionId)) {
             map.put("sessionId", commonSearchResult.sessionId);
         }
-        if (!TextUtils.isEmpty(commonSearchResult.spClientSession)) {
+        if (!StringUtils.isEmpty(commonSearchResult.spClientSession)) {
             map.put("sp_client_session", commonSearchResult.spClientSession);
         }
         map.put("jarvis_dynamic_card", String.valueOf(false));
@@ -1247,7 +1247,7 @@ public final class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.d.itemId)) {
+        } else if (!StringUtils.isEmpty(this.d.itemId)) {
             if (com.taobao.search.common.util.r.N() && this.d.getJiaGouUt()) {
                 a();
             }
@@ -1265,7 +1265,7 @@ public final class a {
             JSONObject jSONObject = new JSONObject();
             hashMap2.put("exParams", jSONObject);
             StringBuilder sb = new StringBuilder();
-            if (!TextUtils.isEmpty(this.d.getAuctionBean().locType)) {
+            if (!StringUtils.isEmpty(this.d.getAuctionBean().locType)) {
                 jSONObject.put((JSONObject) noa.KEY_LOC_TYPE, this.d.getAuctionBean().locType);
                 sb.append(noa.KEY_LOC_TYPE);
             }
@@ -1278,9 +1278,9 @@ public final class a {
                     JSONObject jSONObject3 = extraParams.getJSONObject(i);
                     if (jSONObject3 != null) {
                         String string = jSONObject3.getString("key");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             String string2 = jSONObject3.getString("value");
-                            if (!TextUtils.isEmpty(string2)) {
+                            if (!StringUtils.isEmpty(string2)) {
                                 jSONObject2.put((JSONObject) string, string2);
                                 if (sb.length() > 0) {
                                     sb.append(",");

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.exthub.api.ExtHubApiResponse;
 import com.alibaba.exthub.api.ExtHubCallContext;
 import com.alibaba.exthub.api.ExtHubCaller;
@@ -128,7 +128,7 @@ public class JSPluginManager {
 
     public boolean containsInvoke(Context context, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f4866c58", new Object[]{this, context, str})).booleanValue() : !TextUtils.isEmpty(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f4866c58", new Object[]{this, context, str})).booleanValue() : !StringUtils.isEmpty(str);
     }
 
     public void destroy() {
@@ -318,7 +318,7 @@ public class JSPluginManager {
             ipChange.ipc$dispatch("946fcae9", new Object[]{this, jSPlugin});
         } else if (jSPlugin == null) {
             FBLogger.e(getClass().getName(), "the plugin should not null!");
-        } else if (TextUtils.isEmpty(jSPlugin.pluginName())) {
+        } else if (StringUtils.isEmpty(jSPlugin.pluginName())) {
             FBLogger.e(getClass().getName(), "the plugin name should not be empty!");
         } else {
             String pluginName = jSPlugin.pluginName();
@@ -334,7 +334,7 @@ public class JSPluginManager {
         int i = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a01cd92", new Object[]{this, context, fromCall, str, jSPlugin});
-        } else if (TextUtils.isEmpty(str) || jSPlugin == null) {
+        } else if (StringUtils.isEmpty(str) || jSPlugin == null) {
         } else {
             if (context != null) {
                 i = context.hashCode();
@@ -360,7 +360,7 @@ public class JSPluginManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("243a2c3b", new Object[]{this, birdNestEngine, fromCall, str, jSPlugin});
-        } else if (TextUtils.isEmpty(str) || jSPlugin == null) {
+        } else if (StringUtils.isEmpty(str) || jSPlugin == null) {
         } else {
             int hashCode = birdNestEngine.hashCode();
             synchronized (this.d) {
@@ -439,7 +439,7 @@ public class JSPluginManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3da60d0e", new Object[]{this, new Integer(i), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             FBLogger.e(getClass().getName(), "the plugin name should not be empty!");
         } else if (!this.d.containsKey(Integer.valueOf(i))) {
         } else {
@@ -495,7 +495,7 @@ public class JSPluginManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c78c188", new Object[]{this, fromCall, str, jSPlugin});
-        } else if (TextUtils.isEmpty(str) || jSPlugin == null) {
+        } else if (StringUtils.isEmpty(str) || jSPlugin == null) {
         } else {
             int contextHashCode = jSPlugin.getContextHashCode();
             synchronized (this.d) {

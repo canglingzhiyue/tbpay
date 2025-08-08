@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx.logic;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,10 +54,10 @@ public class b implements ghb {
                 if (!list.isEmpty() && dXRuntimeContext.m() != null) {
                     Context applicationContext = dXRuntimeContext.m().getApplicationContext();
                     DXTemplateItem c = dXRuntimeContext.c();
-                    if (TextUtils.isEmpty(this.f)) {
+                    if (StringUtils.isEmpty(this.f)) {
                         this.f = dXRuntimeContext.A();
                     }
-                    if (TextUtils.isEmpty(this.e)) {
+                    if (StringUtils.isEmpty(this.e)) {
                         this.e = a.b;
                         if (dXRuntimeContext.C() != null) {
                             DinamicXEngine b = dXRuntimeContext.C().b();
@@ -70,7 +70,7 @@ public class b implements ghb {
                     if (c == null) {
                         return;
                     }
-                    Uri parse = Uri.parse(!TextUtils.isEmpty(c.c) ? c.c : "dx://" + c.f11925a);
+                    Uri parse = Uri.parse(!StringUtils.isEmpty(c.c) ? c.c : "dx://" + c.f11925a);
                     MUSInstanceConfig mUSInstanceConfig = new MUSInstanceConfig();
                     Uri build = parse.buildUpon().appendQueryParameter("inspect_breakpt_key", dXRuntimeContext.c().f11925a).build();
                     mUSInstanceConfig.c(build.toString());

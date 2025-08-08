@@ -13,7 +13,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -113,7 +113,7 @@ public class m implements b {
                         add.setTitle(this.d.getResources().getString(value.b) + ":" + value.d);
                     } else if (value.c != null && !value.c.isRecycled()) {
                         add.setIcon(a(new BitmapDrawable(this.d.getResources(), value.c)));
-                    } else if (!TextUtils.isEmpty(value.e)) {
+                    } else if (!StringUtils.isEmpty(value.e)) {
                         ImageView imageView = new ImageView(this.d);
                         IImageLoader t = p.b().t();
                         if (t != null) {
@@ -261,7 +261,7 @@ public class m implements b {
                     JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                     c cVar = new c();
                     String string = jSONObject2.getString("text");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         cVar.d = string;
                         boolean booleanValue = jSONObject2.getBooleanValue("fromNative");
                         boolean booleanValue2 = jSONObject2.getBooleanValue("iconFont");

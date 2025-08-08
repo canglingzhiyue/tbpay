@@ -1,7 +1,7 @@
 package com.taobao.taolive.sdk.ui.media;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.ui.media.a;
 import java.util.HashMap;
@@ -60,7 +60,7 @@ public class g {
         }
         com.taobao.taolive.sdk.utils.m.a("PlayerRecycle", "old createPlayer token = " + str);
         a aVar = new a();
-        if (!TextUtils.isEmpty(str) && this.f21928a.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && this.f21928a.containsKey(str)) {
             com.taobao.taolive.sdk.ui.media.a<IMediaPlayer> aVar2 = this.f21928a.get(str);
             if (aVar2 != null) {
                 if (z) {
@@ -78,7 +78,7 @@ public class g {
                 aVar.f21932a = b2.a(hashMap);
                 aVar.b = 2;
                 aVar.f21932a.a(context);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.f21928a.put(str, new com.taobao.taolive.sdk.ui.media.a<>(aVar.f21932a, new a.InterfaceC0911a<IMediaPlayer>() { // from class: com.taobao.taolive.sdk.ui.media.g.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -325,11 +325,11 @@ public class g {
         }
         int i = -1;
         com.taobao.taolive.sdk.ui.media.a<IMediaPlayer> aVar = null;
-        if (!TextUtils.isEmpty(hVar.f21934a) && this.f21928a.containsKey(hVar.f21934a)) {
+        if (!StringUtils.isEmpty(hVar.f21934a) && this.f21928a.containsKey(hVar.f21934a)) {
             aVar = this.f21928a.get(hVar.f21934a);
             com.taobao.taolive.sdk.utils.m.a("PlayerRecycle", "hasPlayerRef by token = " + hVar.f21934a);
             i = 0;
-        } else if (!TextUtils.isEmpty(hVar.b)) {
+        } else if (!StringUtils.isEmpty(hVar.b)) {
             Iterator<Map.Entry<String, com.taobao.taolive.sdk.ui.media.a<IMediaPlayer>>> it = this.f21928a.entrySet().iterator();
             while (true) {
                 if (!it.hasNext()) {
@@ -386,10 +386,10 @@ public class g {
         if (!z) {
             return null;
         }
-        if (!TextUtils.isEmpty(hVar.f21934a) && this.f21928a.containsKey(hVar.f21934a)) {
+        if (!StringUtils.isEmpty(hVar.f21934a) && this.f21928a.containsKey(hVar.f21934a)) {
             aVar = this.f21928a.get(hVar.f21934a);
             com.taobao.taolive.sdk.utils.m.a("PlayerRecycle", "findPlayerRef by token = " + hVar.f21934a);
-        } else if (!TextUtils.isEmpty(hVar.b)) {
+        } else if (!StringUtils.isEmpty(hVar.b)) {
             Iterator<Map.Entry<String, com.taobao.taolive.sdk.ui.media.a<IMediaPlayer>>> it = this.f21928a.entrySet().iterator();
             while (true) {
                 if (!it.hasNext()) {
@@ -406,7 +406,7 @@ public class g {
                     break;
                 }
             }
-            if (str != null && aVar != null && !TextUtils.isEmpty(hVar.f21934a)) {
+            if (str != null && aVar != null && !StringUtils.isEmpty(hVar.f21934a)) {
                 this.f21928a.remove(str);
                 this.f21928a.put(hVar.f21934a, aVar);
             }
@@ -430,10 +430,10 @@ public class g {
         hashMap.put("enableOpenUseShortAudioFocus", String.valueOf(sst.a()));
         IMediaPlayer a2 = b2.a(hashMap);
         a2.a(context);
-        if (!TextUtils.isEmpty(hVar.f21934a)) {
+        if (!StringUtils.isEmpty(hVar.f21934a)) {
             str = hVar.f21934a;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return a2;
         }
         this.f21928a.put(str, new com.taobao.taolive.sdk.ui.media.a<>(a2, new a.InterfaceC0911a<IMediaPlayer>() { // from class: com.taobao.taolive.sdk.ui.media.g.3

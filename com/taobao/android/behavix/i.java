@@ -2,7 +2,7 @@ package com.taobao.android.behavix;
 
 import android.graphics.Rect;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -65,7 +65,7 @@ public class i {
         if (strArr != null) {
             try {
                 if (strArr.length >= i + 1 && strArr[i] != null) {
-                    if (TextUtils.equals(strArr[i], str)) {
+                    if (StringUtils.equals(strArr[i], str)) {
                         return true;
                     }
                 }
@@ -98,7 +98,7 @@ public class i {
             return;
         }
         clearExposeAction(str3, map, currentTimeMillis);
-        if (!TextUtils.equals("scrollEnd", str3)) {
+        if (!StringUtils.equals("scrollEnd", str3)) {
             return;
         }
         final HashMap hashMap = new HashMap(map);
@@ -240,7 +240,7 @@ public class i {
             ipChange.ipc$dispatch("b1ece137", new Object[]{str, map, new Long(j)});
         } else if (map == null) {
         } else {
-            if (!TextUtils.equals(str, "scrollStart") && !TextUtils.equals(str, "leave") && !TextUtils.equals(str, "pv")) {
+            if (!StringUtils.equals(str, "scrollStart") && !StringUtils.equals(str, "leave") && !StringUtils.equals(str, "pv")) {
                 return;
             }
             Iterator<Map.Entry<String, drs>> it = map.entrySet().iterator();

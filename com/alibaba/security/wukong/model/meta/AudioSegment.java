@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.model.meta;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 
@@ -25,7 +25,7 @@ public class AudioSegment extends BaseData {
 
         public static AudioEncodingConfig getByName(String str) {
             AudioEncodingConfig[] values;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return ENCODING_PCM_16BIT;
             }
             for (AudioEncodingConfig audioEncodingConfig : values()) {
@@ -64,7 +64,7 @@ public class AudioSegment extends BaseData {
 
         public static AudioFormat getByName(String str) {
             AudioFormat[] values;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return pcm;
             }
             for (AudioFormat audioFormat : values()) {

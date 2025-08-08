@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.good.goodviewnew;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,13 +36,13 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3657d03a", new Object[]{cVar, str, viewGroup, view, view2, view3});
-        } else if (cVar == null || viewGroup == null || view == null || view2 == null || TextUtils.isEmpty(str)) {
+        } else if (cVar == null || viewGroup == null || view == null || view2 == null || StringUtils.isEmpty(str)) {
             his.b("AddCartAnimHelper", "addCartAnim | params empty.");
         } else if (!(cVar.f() instanceof Activity)) {
         } else {
             String a2 = hiq.a(cVar.f());
             String simpleName = ((Activity) cVar.f()).getClass().getSimpleName();
-            if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(simpleName)) {
+            if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(simpleName)) {
                 return;
             }
             if (!a2.contains(simpleName)) {
@@ -55,7 +55,7 @@ public class h {
                 return;
             }
             String string = a3.b.getString("itemPic");
-            if (TextUtils.isEmpty(string) || (inflate = LayoutInflater.from(cVar.f()).inflate(R.layout.taolive_goods_cart_item_anim_view, (ViewGroup) null)) == null) {
+            if (StringUtils.isEmpty(string) || (inflate = LayoutInflater.from(cVar.f()).inflate(R.layout.taolive_goods_cart_item_anim_view, (ViewGroup) null)) == null) {
                 return;
             }
             int a4 = hin.a(cVar.f(), 30.0f);
@@ -75,7 +75,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("f64012ff", new Object[]{recyclerView, str});
         }
-        if (recyclerView != null && !TextUtils.isEmpty(str)) {
+        if (recyclerView != null && !StringUtils.isEmpty(str)) {
             try {
                 int childCount = recyclerView.getLayoutManager().getChildCount();
                 for (int i = 0; i < childCount; i++) {
@@ -115,7 +115,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("fa23e692", new Object[]{dXRootView, str});
         }
-        if (dXRootView == null || TextUtils.isEmpty(str)) {
+        if (dXRootView == null || StringUtils.isEmpty(str)) {
             return null;
         }
         DXWidgetNode expandWidgetNode = dXRootView.getExpandWidgetNode();
@@ -134,7 +134,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("8fad7ce7", new Object[]{str, cVar, cVar2});
         }
-        if (!TextUtils.isEmpty(str) && cVar != null && cVar2 != null) {
+        if (!StringUtils.isEmpty(str) && cVar != null && cVar2 != null) {
             if (cVar.a() == null || cVar.a().stateMultiTabView == null) {
                 singleTabBaseView = null;
             } else {
@@ -147,7 +147,7 @@ public class h {
                             break;
                         }
                         SingleTabBaseView singleTabBaseView2 = liveStateViewList.get(i);
-                        if (singleTabBaseView2 != null && singleTabBaseView2.getItemCategory() != null && TextUtils.equals(singleTabBaseView2.getItemCategory().categoryId, cVar2.d)) {
+                        if (singleTabBaseView2 != null && singleTabBaseView2.getItemCategory() != null && StringUtils.equals(singleTabBaseView2.getItemCategory().categoryId, cVar2.d)) {
                             singleTabBaseView = singleTabBaseView2;
                             break;
                         }
@@ -161,7 +161,7 @@ public class h {
                 RecyclerView.LayoutManager layoutManager = singleTabBaseView.getRecyclerView().getLayoutManager();
                 for (int i2 = 0; i2 < layoutManager.getChildCount(); i2++) {
                     View childAt = singleTabBaseView.getRecyclerView().getLayoutManager().getChildAt(i2);
-                    if ((childAt instanceof IDMComponentsFrameLayout) && (components = ((IDMComponentsFrameLayout) childAt).getComponents()) != null && components.size() != 0 && (data = components.get(0).getData()) != null && TextUtils.equals(str, com.taobao.android.live.plugin.atype.flexalocal.good.ultron.goods.list.a.a(data))) {
+                    if ((childAt instanceof IDMComponentsFrameLayout) && (components = ((IDMComponentsFrameLayout) childAt).getComponents()) != null && components.size() != 0 && (data = components.get(0).getData()) != null && StringUtils.equals(str, com.taobao.android.live.plugin.atype.flexalocal.good.ultron.goods.list.a.a(data))) {
                         his.b("AddCartAnimHelper", "onAddCart | find targetView, pos=" + i2);
                         return childAt;
                     }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -112,7 +112,7 @@ public class mti {
             return str2;
         }
         String str3 = this.f31242a.get(str);
-        return TextUtils.isEmpty(str3) ? str2 : str3;
+        return StringUtils.isEmpty(str3) ? str2 : str3;
     }
 
     public static Context b() {

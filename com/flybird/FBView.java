@@ -22,7 +22,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeProviderCompat;
 import android.text.Spannable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -458,7 +458,7 @@ public class FBView implements View.OnClickListener, View.OnFocusChangeListener,
                     int[] iArr = (i2 <= 0 || (i = this.mHeight) <= 0) ? null : new int[]{i2, i};
                     Context context = this.mDoc.k;
                     this.mDoc.getClass();
-                    if (!TextUtils.isEmpty(this.e) && !this.e.startsWith("http") && !this.e.startsWith("https") && !this.e.startsWith("www") && !this.e.startsWith("data:") && this.e.contains("/")) {
+                    if (!StringUtils.isEmpty(this.e) && !this.e.startsWith("http") && !this.e.startsWith("https") && !this.e.startsWith("www") && !this.e.startsWith("data:") && this.e.contains("/")) {
                         loadLocalDrawable = this.mDoc.getEngine().getImageLoader().loadLocalDrawable(this.mDoc.getEngine().getConfig().getResourceProvider(), context, this.e, this.mDoc.param.bundleName, iArr, true, this.mView, false, false);
                     } else {
                         loadLocalDrawable = this.mDoc.getEngine().getImageLoader().loadLocalDrawable(this.mDoc.getEngine().getConfig().getResourceProvider(), context, this.e, this.mDoc.param.bundleName, iArr, true, this.mView, false, false);
@@ -492,7 +492,7 @@ public class FBView implements View.OnClickListener, View.OnFocusChangeListener,
                             }
                         }, getExtraParams());
                     }
-                    if (loadLocalDrawable == null && (fBResourceClient = this.mDoc.param.resourceClient) != null && !TextUtils.isEmpty(this.e) && (shouldInterceptResource = fBResourceClient.shouldInterceptResource(this.e, FBResourceClient.Type.DRAWABLE)) != null) {
+                    if (loadLocalDrawable == null && (fBResourceClient = this.mDoc.param.resourceClient) != null && !StringUtils.isEmpty(this.e) && (shouldInterceptResource = fBResourceClient.shouldInterceptResource(this.e, FBResourceClient.Type.DRAWABLE)) != null) {
                         this.mView.setBackgroundDrawable((Drawable) shouldInterceptResource);
                         return;
                     } else if (loadLocalDrawable == null) {
@@ -1517,7 +1517,7 @@ public class FBView implements View.OnClickListener, View.OnFocusChangeListener,
                         return;
                     }
                     EditText editText = (EditText) view2;
-                    if (editText.getText() == null || !TextUtils.isEmpty(editText.getText().toString())) {
+                    if (editText.getText() == null || !StringUtils.isEmpty(editText.getText().toString())) {
                         return;
                     }
                     editText.setHint(str2);
@@ -1543,7 +1543,7 @@ public class FBView implements View.OnClickListener, View.OnFocusChangeListener,
                         return;
                     }
                 case 2:
-                    this.mOverScrollEnabled = TextUtils.equals(str2, "true");
+                    this.mOverScrollEnabled = StringUtils.equals(str2, "true");
                     a();
                     return;
                 case 3:
@@ -1621,7 +1621,7 @@ public class FBView implements View.OnClickListener, View.OnFocusChangeListener,
                     this.mExtParams.putString(str, str2);
                     return;
                 case '\b':
-                    this.mDoc.P = TextUtils.equals(str2, "true");
+                    this.mDoc.P = StringUtils.equals(str2, "true");
                     return;
                 case '\n':
                     View view6 = this.mView;
@@ -1631,7 +1631,7 @@ public class FBView implements View.OnClickListener, View.OnFocusChangeListener,
                     view6.setHorizontalScrollBarEnabled(Boolean.valueOf(str2).booleanValue());
                     return;
                 case 11:
-                    if (TextUtils.equals(str2, "disabled") || Boolean.parseBoolean(str2)) {
+                    if (StringUtils.equals(str2, "disabled") || Boolean.parseBoolean(str2)) {
                         c2 = 1;
                     }
                     this.mView.setEnabled(c2 ^ 1);
@@ -2064,7 +2064,7 @@ public class FBView implements View.OnClickListener, View.OnFocusChangeListener,
                         this.mView.setLayerType(2, null);
                     }
                     UiUtil.setAlpha(this.mView, this.mOpacity);
-                    if (!TextUtils.equals(this.mTag, AgooConstants.MESSAGE_BODY) || (parent = this.mView.getParent()) == null) {
+                    if (!StringUtils.equals(this.mTag, AgooConstants.MESSAGE_BODY) || (parent = this.mView.getParent()) == null) {
                         return;
                     }
                     View view4 = (View) parent;

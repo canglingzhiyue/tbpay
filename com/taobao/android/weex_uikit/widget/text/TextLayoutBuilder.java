@@ -11,7 +11,7 @@ import android.text.Layout;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ClickableSpan;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class TextLayoutBuilder {
         public float k = 0.0f;
         public float l = Float.MAX_VALUE;
         public boolean m = true;
-        public TextUtils.TruncateAt n = null;
+        public StringUtils.TruncateAt n = null;
         public boolean o = false;
         public int p = Integer.MAX_VALUE;
         public Layout.Alignment q = Layout.Alignment.ALIGN_NORMAL;
@@ -108,7 +108,7 @@ public class TextLayoutBuilder {
                 return ((Number) ipChange.ipc$dispatch("53a9ab15", new Object[]{this})).intValue();
             }
             int color = (((((((((((((((((((((((((((((((this.f16214a.getColor() + 31) * 31) + Float.floatToIntBits(this.f16214a.getTextSize())) * 31) + (this.f16214a.getTypeface() != null ? this.f16214a.getTypeface().hashCode() : 0)) * 31) + Float.floatToIntBits(this.b)) * 31) + Float.floatToIntBits(this.c)) * 31) + Float.floatToIntBits(this.d)) * 31) + this.e) * 31) + this.f16214a.linkColor) * 31) + Float.floatToIntBits(this.f16214a.density)) * 31) + Arrays.hashCode(this.f16214a.drawableState)) * 31) + this.f) * 31) + this.g) * 31) + Float.floatToIntBits(this.j)) * 31) + Float.floatToIntBits(this.k)) * 31) + Float.floatToIntBits(this.l)) * 31) + (this.m ? 1 : 0)) * 31;
-            TextUtils.TruncateAt truncateAt = this.n;
+            StringUtils.TruncateAt truncateAt = this.n;
             int hashCode = (((((color + (truncateAt != null ? truncateAt.hashCode() : 0)) * 31) + (this.o ? 1 : 0)) * 31) + this.p) * 31;
             Layout.Alignment alignment = this.q;
             int hashCode2 = (hashCode + (alignment != null ? alignment.hashCode() : 0)) * 31;
@@ -324,7 +324,7 @@ public class TextLayoutBuilder {
         return this;
     }
 
-    public TextLayoutBuilder a(TextUtils.TruncateAt truncateAt) {
+    public TextLayoutBuilder a(StringUtils.TruncateAt truncateAt) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (TextLayoutBuilder) ipChange.ipc$dispatch("6babda", new Object[]{this, truncateAt});
@@ -479,7 +479,7 @@ public class TextLayoutBuilder {
             return layout;
         }
         BoringLayout.Metrics metrics = null;
-        if (TextUtils.isEmpty(this.b.h)) {
+        if (StringUtils.isEmpty(this.b.h)) {
             return null;
         }
         if (this.h && (this.b.h instanceof Spannable) && ((ClickableSpan[]) ((Spannable) this.b.h).getSpans(0, this.b.h.length() - 1, ClickableSpan.class)).length > 0) {

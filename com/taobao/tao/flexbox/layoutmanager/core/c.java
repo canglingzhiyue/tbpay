@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -1004,7 +1004,7 @@ public abstract class c<V, D, P extends ogl> {
                 }
                 CharSequence contentDescription = ((Component) fVar).getContentDescription();
                 view.setContentDescription(contentDescription);
-                if (TextUtils.isEmpty(contentDescription)) {
+                if (StringUtils.isEmpty(contentDescription)) {
                     return;
                 }
                 view.setFocusable(true);
@@ -1341,7 +1341,7 @@ public abstract class c<V, D, P extends ogl> {
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("a8b0d9d2", new Object[]{this, aaVar, oglVar, str, obj});
-                } else if (!TextUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_box_shadow)) {
+                } else if (!StringUtils.equals(str, com.taobao.android.weex_framework.util.a.ATOM_EXT_UDL_box_shadow)) {
                 } else {
                     oglVar.h(aaVar.N(), obj);
                 }

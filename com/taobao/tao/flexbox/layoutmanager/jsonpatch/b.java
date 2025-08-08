@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.jsonpatch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -88,10 +88,10 @@ public class b implements d {
             return true;
         }
         if ((obj instanceof CharSequence) && obj2 == null) {
-            return TextUtils.isEmpty((CharSequence) obj);
+            return StringUtils.isEmpty((CharSequence) obj);
         }
         if ((obj2 instanceof CharSequence) && obj == null) {
-            return TextUtils.isEmpty((CharSequence) obj2);
+            return StringUtils.isEmpty((CharSequence) obj2);
         }
         return false;
     }
@@ -151,7 +151,7 @@ public class b implements d {
         String replaceAll = list.get(list.size() - 1).replaceAll("\"", "");
         if (a2 instanceof JSONObject) {
             Object remove = ((JSONObject) a2).remove(replaceAll);
-            return remove != null && (!(remove instanceof CharSequence) || !TextUtils.isEmpty((CharSequence) remove));
+            return remove != null && (!(remove instanceof CharSequence) || !StringUtils.isEmpty((CharSequence) remove));
         } else if (a2 instanceof JSONArray) {
             JSONArray jSONArray = (JSONArray) a2;
             jSONArray.mo1572remove(a(replaceAll, jSONArray.size() - 1, this.b.contains(CompatibilityFlags.REMOVE_NONE_EXISTING_ARRAY_ELEMENT)));

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -100,7 +100,7 @@ public class osd implements osm {
         if (kskVar == null) {
             return null;
         }
-        if (TextUtils.equals("tmallhk_ds_native_taobao", str)) {
+        if (StringUtils.equals("tmallhk_ds_native_taobao", str)) {
             return new osd(ksk.REC_DIRECT_SALE_CART);
         }
         return new osd(kskVar);

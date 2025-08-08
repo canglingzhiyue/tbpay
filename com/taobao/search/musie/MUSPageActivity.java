@@ -11,7 +11,7 @@ import android.support.v4.view.OnApplyWindowInsetsListener;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
 import android.support.v7.taobao.TBActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -214,14 +214,14 @@ public class MUSPageActivity extends CustomBaseActivity implements com.taobao.an
         }
         TLogTracker.a(com.taobao.search.common.util.r.bk());
         h();
-        if (TextUtils.isEmpty(this.f)) {
+        if (StringUtils.isEmpty(this.f)) {
             super.onCreate(null);
             com.taobao.android.weex_framework.util.g.b("MUSPageActivity", "没有wh_muise=true 或 _mus_tpl, 降级h5");
             b();
             return;
         }
         String a2 = nue.a().a(this.f);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.f = a2;
         }
         a((Bundle) null);
@@ -285,7 +285,7 @@ public class MUSPageActivity extends CustomBaseActivity implements com.taobao.an
                 Uri parse = Uri.parse(this.e);
                 String queryParameter = parse.getQueryParameter("_wx_statusbar_hidden");
                 String queryParameter2 = parse.getQueryParameter(CXCommonActivity.NAV_OVERLAY);
-                if (TextUtils.equals(queryParameter, "true") || TextUtils.equals(queryParameter2, "true")) {
+                if (StringUtils.equals(queryParameter, "true") || StringUtils.equals(queryParameter2, "true")) {
                     return new Pair<>(true, t.Undefine);
                 }
             } catch (Exception e) {
@@ -315,7 +315,7 @@ public class MUSPageActivity extends CustomBaseActivity implements com.taobao.an
         } else {
             String queryParameter = data.getQueryParameter("_mus_tpl");
             this.f = queryParameter;
-            TextUtils.isEmpty(queryParameter);
+            StringUtils.isEmpty(queryParameter);
         }
         String path = data.getPath();
         if (path == null) {
@@ -328,7 +328,7 @@ public class MUSPageActivity extends CustomBaseActivity implements com.taobao.an
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5dd2870", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f)) {
+        } else if (StringUtils.isEmpty(this.f)) {
         } else {
             this.b = MUSPageFragment.newInstance(this.f, this.e, null, null);
             this.b.setOnDowngradeListener(this);
@@ -411,7 +411,7 @@ public class MUSPageActivity extends CustomBaseActivity implements com.taobao.an
         } catch (Exception e) {
             com.taobao.android.weex_framework.util.g.c("MUSPageActivity", e);
         }
-        return TextUtils.equals(Uri.parse(this.e).getQueryParameter(CXCommonActivity.NAV_OVERLAY), Boolean.toString(true));
+        return StringUtils.equals(Uri.parse(this.e).getQueryParameter(CXCommonActivity.NAV_OVERLAY), Boolean.toString(true));
     }
 
     @Override // com.taobao.tao.BaseActivity, android.app.Activity
@@ -551,7 +551,7 @@ public class MUSPageActivity extends CustomBaseActivity implements com.taobao.an
                 findViewById2.setBackgroundColor(getResources().getColor(17170445));
             }
         }
-        if (TextUtils.isEmpty(this.k)) {
+        if (StringUtils.isEmpty(this.k)) {
             return;
         }
         UTAnalytics.getInstance().getDefaultTracker().updatePageName(this, this.k);
@@ -607,7 +607,7 @@ public class MUSPageActivity extends CustomBaseActivity implements com.taobao.an
         Uri data = getIntent().getData();
         if (data == null) {
             finish();
-        } else if (TextUtils.isEmpty(data.toString())) {
+        } else if (StringUtils.isEmpty(data.toString())) {
             finish();
         } else {
             Nav.from(this).toUri(data.buildUpon().appendQueryParameter("hybrid", "true").build().toString());

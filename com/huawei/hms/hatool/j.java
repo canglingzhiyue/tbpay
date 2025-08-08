@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import java.util.UUID;
 import tb.cye;
@@ -76,9 +76,9 @@ public class j {
             return "";
         }
         String e = q0.e();
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             e = d.a(this.f7464a, "global_v2", "uuid", "");
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 e = UUID.randomUUID().toString().replace("-", "");
                 d.b(this.f7464a, "global_v2", "uuid", e);
             }
@@ -109,7 +109,7 @@ public class j {
         if (z.f(str, str2)) {
             String p = s.c().b().p();
             String q = s.c().b().q();
-            if (!TextUtils.isEmpty(p) && !TextUtils.isEmpty(q)) {
+            if (!StringUtils.isEmpty(p) && !StringUtils.isEmpty(q)) {
                 return new Pair<>(p, q);
             }
             Pair<String, String> e = x0.e(this.f7464a);

@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -214,11 +214,11 @@ public class XRichTextViewByCouponV3 extends DXNativeTextView {
         int i2 = 2;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bd69fddb", new Object[]{this, canvas});
-        } else if (TextUtils.isEmpty(getText())) {
+        } else if (StringUtils.isEmpty(getText())) {
         } else {
             this.ascent = (int) this.textPaint.ascent();
             CharSequence text = getText();
-            String[] split = TextUtils.isEmpty(this.separator) ? new String[]{text.toString()} : text.toString().split(this.separator);
+            String[] split = StringUtils.isEmpty(this.separator) ? new String[]{text.toString()} : text.toString().split(this.separator);
             int width = getWidth();
             int paddingLeft = getPaddingLeft();
             getPaddingTop();

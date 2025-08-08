@@ -3,7 +3,7 @@ package com.taobao.mytaobao.pop.bridge;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class TBMyTaobaoPopWVApiPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && wVCallBackContext != null) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && wVCallBackContext != null) {
             if (K_GET_ICON_POSITION_V2.equals(str)) {
                 getIconLocalInfo(str2, wVCallBackContext);
             } else if (K_LOCAL_POP_ICON_V2.equals(str)) {

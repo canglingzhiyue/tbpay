@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.event.subscriber.sku;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliNavServiceInterface;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -70,8 +70,8 @@ public class c implements j<eod> {
         }
         DetailFullScreenVesselFragment.newInstance();
         DetailFullScreenVesselFragment.class.getSimpleName();
-        if (!TextUtils.isEmpty(eodVar.a())) {
-            if (!TextUtils.isEmpty(a())) {
+        if (!StringUtils.isEmpty(eodVar.a())) {
+            if (!StringUtils.isEmpty(a())) {
                 a2 = a();
             } else {
                 a2 = eodVar.a();
@@ -89,12 +89,12 @@ public class c implements j<eod> {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("7183fbc9", new Object[]{this, detailActivity, str, str2});
         }
-        if (detailActivity == null || TextUtils.isEmpty(str) || detailActivity.y() == null || detailActivity.y().t == null || detailActivity.y().t.f10055a == null) {
+        if (detailActivity == null || StringUtils.isEmpty(str) || detailActivity.y() == null || detailActivity.y().t == null || detailActivity.y().t.f10055a == null) {
             return null;
         }
         HashMap hashMap = new HashMap();
         String str3 = "";
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = str3;
         }
         hashMap.put("currentAddress", str2);
@@ -102,17 +102,17 @@ public class c implements j<eod> {
         com.taobao.android.detail.datasdk.model.datamodel.node.b bVar = detailActivity.y().t.f10055a;
         ItemNode c2 = eqb.c(bVar);
         if (c2 != null) {
-            hashMap.put("item_id", !TextUtils.isEmpty(c2.itemId) ? c2.itemId : str3);
-            hashMap2.put("itemId", !TextUtils.isEmpty(c2.itemId) ? c2.itemId : str3);
+            hashMap.put("item_id", !StringUtils.isEmpty(c2.itemId) ? c2.itemId : str3);
+            hashMap2.put("itemId", !StringUtils.isEmpty(c2.itemId) ? c2.itemId : str3);
         }
         SellerNode d2 = eqb.d(bVar);
         if (d2 != null) {
-            hashMap.put("seller_id", !TextUtils.isEmpty(d2.userId) ? d2.userId : str3);
-            hashMap2.put("sellerId", !TextUtils.isEmpty(d2.userId) ? d2.userId : str3);
+            hashMap.put("seller_id", !StringUtils.isEmpty(d2.userId) ? d2.userId : str3);
+            hashMap2.put("sellerId", !StringUtils.isEmpty(d2.userId) ? d2.userId : str3);
         }
         ShippingNode h = eqb.h(bVar);
         if (h != null) {
-            hashMap2.put(mrm.KEY_AREA_ID, !TextUtils.isEmpty(h.areaId) ? h.areaId : str3);
+            hashMap2.put(mrm.KEY_AREA_ID, !StringUtils.isEmpty(h.areaId) ? h.areaId : str3);
         }
         SkuCoreNode j = eqb.j(bVar);
         if (j != null && j.skuItem != null && j.skuItem.showAddressTaobao) {
@@ -121,7 +121,7 @@ public class c implements j<eod> {
             hashMap2.put("itemType", com.taobao.linkmanager.flowout.c.TMALL);
         }
         hashMap2.put("loadUrl", a(str, hashMap));
-        if (!TextUtils.isEmpty(detailActivity.h)) {
+        if (!StringUtils.isEmpty(detailActivity.h)) {
             str3 = detailActivity.h;
         }
         hashMap2.put("sku_token", str3);
@@ -133,7 +133,7 @@ public class c implements j<eod> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3a974c1b", new Object[]{this, context, str, map});
-        } else if (context == null || TextUtils.isEmpty(str) || map == null || map.isEmpty() || (a2 = t.a()) == null) {
+        } else if (context == null || StringUtils.isEmpty(str) || map == null || map.isEmpty() || (a2 = t.a()) == null) {
         } else {
             a2.a(context).a(a(str, map));
         }
@@ -144,7 +144,7 @@ public class c implements j<eod> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str) || map == null || map.isEmpty()) {
+        if (StringUtils.isEmpty(str) || map == null || map.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();

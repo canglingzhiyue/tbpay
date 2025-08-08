@@ -1,7 +1,7 @@
 package com.taobao.browser.nav;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.h;
 import com.taobao.pha.core.p;
@@ -53,7 +53,7 @@ public class e {
             return "*.taobao.com,*.tmall.com,*.alicdn.com,*.alibaba-inc.com".split(",");
         }
         String a2 = c.a("themis_domain_white_list");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "*.taobao.com,*.tmall.com,*.alicdn.com,*.alibaba-inc.com".split(",");
         }
         return a2.split(",");

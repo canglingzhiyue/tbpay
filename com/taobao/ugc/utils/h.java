@@ -1,6 +1,6 @@
 package com.taobao.ugc.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -17,7 +17,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c22", new Object[]{str})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0.0f;
         }
         String[] split = str.split(",");
@@ -34,6 +34,6 @@ public class h {
 
     public static int b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{str})).intValue() : (TextUtils.isEmpty(str) || str.toLowerCase().indexOf("bold") == -1) ? 0 : 1;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{str})).intValue() : (StringUtils.isEmpty(str) || str.toLowerCase().indexOf("bold") == -1) ? 0 : 1;
     }
 }

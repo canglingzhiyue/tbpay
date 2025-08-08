@@ -1,7 +1,7 @@
 package com.alibaba.flexa.compat;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitinstall.t;
 import com.alibaba.android.split.j;
 import com.alibaba.android.split.n;
@@ -52,7 +52,7 @@ public class b {
         this.f3102a = z2;
         this.b = z3;
         this.c = z4;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.f = "212200";
         } else {
             this.f = str;

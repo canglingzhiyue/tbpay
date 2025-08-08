@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -48,7 +48,7 @@ public class AlertStore extends LocalEventStore {
                     ipChange2.ipc$dispatch("bd79f2d5", new Object[]{this, str});
                     return;
                 }
-                if (!TextUtils.equals(eventAction.getEventFrom(), "invoke")) {
+                if (!StringUtils.equals(eventAction.getEventFrom(), "invoke")) {
                     if (eventAction.getTemplateClickCallback() != null) {
                         eventAction.getTemplateClickCallback().onClickCallback(str);
                     } else {
@@ -106,7 +106,7 @@ public class AlertStore extends LocalEventStore {
             ArrayList arrayList = new ArrayList();
             JSONObject jSONObject2 = null;
             String str = "0";
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 if (alertStore.g) {
                     jSONObject = new JSONObject();
                     jSONObject.put("index", (Object) str);
@@ -119,7 +119,7 @@ public class AlertStore extends LocalEventStore {
             } else {
                 z = false;
             }
-            if (!TextUtils.isEmpty(string5)) {
+            if (!StringUtils.isEmpty(string5)) {
                 if (alertStore.g) {
                     jSONObject2 = new JSONObject();
                     jSONObject2.put("index", z ? "2" : "1");
@@ -127,7 +127,7 @@ public class AlertStore extends LocalEventStore {
                 }
                 arrayList.add(FlybirdDialogEventDesc.build(string5, jSONObject2, dialogCallback));
             }
-            if (!TextUtils.isEmpty(string4)) {
+            if (!StringUtils.isEmpty(string4)) {
                 JSONObject jSONObject3 = new JSONObject();
                 jSONObject3.put("ok", (Object) "1");
                 if (alertStore.g) {

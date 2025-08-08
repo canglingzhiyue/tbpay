@@ -4,7 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.ext.i;
@@ -38,7 +38,7 @@ public class ian extends i {
         }
         hzy.a("TBOpenUrlV2Subscriber", "onHandleEventChain", "----");
         String string = e(eVar).getString("url");
-        if (!TextUtils.isEmpty(string) && string.toLowerCase().startsWith("tel:")) {
+        if (!StringUtils.isEmpty(string) && string.toLowerCase().startsWith("tel:")) {
             hzy.a("TBOpenUrlV2Subscriber", "onHandleEventChain", "截断 openUrl 并唤醒拨打电话逻辑 tel:" + string);
             a(eVar.a(), string);
             return;
@@ -50,7 +50,7 @@ public class ian extends i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str) || context == null) {
+        } else if (StringUtils.isEmpty(str) || context == null) {
         } else {
             Intent intent = new Intent("android.intent.action.DIAL");
             intent.setData(Uri.parse(str));

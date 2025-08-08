@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
@@ -78,7 +78,7 @@ public class sqg {
             return null;
         }
         for (SectionModel sectionModel : g) {
-            if (TextUtils.equals(sectionModel.getString("sectionBizCode"), "DXSearchBar")) {
+            if (StringUtils.equals(sectionModel.getString("sectionBizCode"), "DXSearchBar")) {
                 return sectionModel;
             }
         }
@@ -133,7 +133,7 @@ public class sqg {
         String l = oqc.a().l();
         ope f = d.f(l);
         if (f != null && (b = e.b(f.g(l))) != null && (jSONObject = b.getJSONObject("ext")) != null) {
-            return TextUtils.equals(jSONObject.getString("categoryTabVersion"), v2.d);
+            return StringUtils.equals(jSONObject.getString("categoryTabVersion"), v2.d);
         }
         return false;
     }
@@ -153,7 +153,7 @@ public class sqg {
             JSONObject jSONObject2 = h.getJSONObject(String.valueOf(i));
             if (jSONObject2 != null && (jSONObject = jSONObject2.getJSONObject(e.KEY_SMART_CONTENT)) != null) {
                 String string = jSONObject.getString("ssrPageUrl");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     arrayList.add(string);
                 }
             }

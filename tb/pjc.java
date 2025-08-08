@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -136,7 +136,7 @@ public class pjc extends pje {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("49bb5dc7", new Object[]{this, str, str2, pkgVar});
         }
-        if (this.f32701a != null && pkgVar != null && !TextUtils.isEmpty(pkgVar.b) && (jSONObject = this.f32701a.getJSONObject(pkgVar.b)) != null && (jSONArray = jSONObject.getJSONArray("invokeConfig")) != null) {
+        if (this.f32701a != null && pkgVar != null && !StringUtils.isEmpty(pkgVar.b) && (jSONObject = this.f32701a.getJSONObject(pkgVar.b)) != null && (jSONArray = jSONObject.getJSONArray("invokeConfig")) != null) {
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 if (jSONObject3 != null && (jSONObject2 = jSONObject3.getJSONObject(str)) != null) {
@@ -156,7 +156,7 @@ public class pjc extends pje {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("2a03be35", new Object[]{this, pkgVar});
         }
-        if (pkgVar != null && !TextUtils.isEmpty(pkgVar.b) && (jSONObject = this.f32701a) != null && (jSONObject2 = jSONObject.getJSONObject(pkgVar.b)) != null && (jSONArray = jSONObject2.getJSONArray("invokeConfig")) != null) {
+        if (pkgVar != null && !StringUtils.isEmpty(pkgVar.b) && (jSONObject = this.f32701a) != null && (jSONObject2 = jSONObject.getJSONObject(pkgVar.b)) != null && (jSONArray = jSONObject2.getJSONArray("invokeConfig")) != null) {
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject4 = jSONArray.getJSONObject(i);
                 if (jSONObject4 != null && (jSONObject3 = jSONObject4.getJSONObject("Create_OpenLiveRoomView")) != null) {
@@ -173,7 +173,7 @@ public class pjc extends pje {
         if (ipChange instanceof IpChange) {
             return (Integer) ipChange.ipc$dispatch("3eec8676", new Object[]{this, pkgVar});
         }
-        if (pkgVar != null && !TextUtils.isEmpty(pkgVar.b) && (jSONObject = this.f32701a.getJSONObject(pkgVar.b)) != null) {
+        if (pkgVar != null && !StringUtils.isEmpty(pkgVar.b) && (jSONObject = this.f32701a.getJSONObject(pkgVar.b)) != null) {
             JSONArray jSONArray = jSONObject.getJSONArray("abilityConfig");
             if (jSONArray == null) {
                 return null;
@@ -271,7 +271,7 @@ public class pjc extends pje {
         String b2 = b(str);
         String customConfig = OrangeConfig.getInstance().getCustomConfig("tbliveOpenConfig", b2);
         String str2 = "AuthConfig_" + str;
-        if (!TextUtils.isEmpty(customConfig) && (b = pqj.b(customConfig)) != null) {
+        if (!StringUtils.isEmpty(customConfig) && (b = pqj.b(customConfig)) != null) {
             JSONObject jSONObject2 = b.getJSONObject(str2);
             if (jSONObject2 != null) {
                 return jSONObject2;
@@ -326,7 +326,7 @@ public class pjc extends pje {
             return;
         }
         String str2 = null;
-        if (pkgVar != null && !TextUtils.isEmpty(pkgVar.b) && TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_OpenWatch.toString().equals(pkgVar.b)) {
+        if (pkgVar != null && !StringUtils.isEmpty(pkgVar.b) && TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_OpenWatch.toString().equals(pkgVar.b)) {
             if (pkgVar.f == null || pkgVar.f.get(d.LIVE_HOME_PAGE_TYPE) == null) {
                 str = null;
             } else if (d.LIVE_HOME_PAGE_TYPE_mixLiveAndTab.equals(String.valueOf(pkgVar.f.get(d.LIVE_HOME_PAGE_TYPE)))) {
@@ -334,11 +334,11 @@ public class pjc extends pje {
             } else {
                 str = b.b("2.1", this.d);
             }
-            if (this.f32701a != null && !TextUtils.isEmpty(str)) {
+            if (this.f32701a != null && !StringUtils.isEmpty(str)) {
                 this.f32701a.put(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_OpenWatch.toString(), (Object) pqj.b(str));
             }
         }
-        if (pkgVar == null || TextUtils.isEmpty(pkgVar.b) || !TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString().equals(pkgVar.b)) {
+        if (pkgVar == null || StringUtils.isEmpty(pkgVar.b) || !TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString().equals(pkgVar.b)) {
             return;
         }
         if (pkgVar.f != null && pkgVar.f.get(d.LIVE_HOME_PAGE_TYPE) != null) {
@@ -348,7 +348,7 @@ public class pjc extends pje {
                 str2 = b.b("2.1", this.i);
             }
         }
-        if (this.f32701a == null || TextUtils.isEmpty(str2)) {
+        if (this.f32701a == null || StringUtils.isEmpty(str2)) {
             return;
         }
         this.f32701a.put(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString(), (Object) pqj.b(str2));

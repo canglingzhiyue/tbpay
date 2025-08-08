@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -231,7 +231,7 @@ public class ope {
         if (this.f == null) {
             this.f = new JSONObject();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.f.put(str, obj);
@@ -241,7 +241,7 @@ public class ope {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (this.f == null || TextUtils.isEmpty(str)) {
+        } else if (this.f == null || StringUtils.isEmpty(str)) {
         } else {
             this.f.remove(str);
         }
@@ -417,7 +417,7 @@ public class ope {
             }
             File file = new File(str, String.format("%s_%s.dat", str2, "base"));
             e.e("RecmdDataSource", "load cache file : " + file.getAbsolutePath() + " , exist: " + file.exists());
-            synchronized (p(!TextUtils.isEmpty(file.getAbsolutePath()) ? file.getAbsolutePath() : "null")) {
+            synchronized (p(!StringUtils.isEmpty(file.getAbsolutePath()) ? file.getAbsolutePath() : "null")) {
                 if (awesomeGetContainerData.base != null) {
                     a2 = awesomeGetContainerData.base;
                 } else {
@@ -492,7 +492,7 @@ public class ope {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4b90afac", new Object[]{this, awesomeGetContainerInnerData, str});
         } else if (awesomeGetContainerInnerData != null && awesomeGetContainerInnerData.sections != null && !awesomeGetContainerInnerData.sections.isEmpty()) {
-            boolean equals = TextUtils.equals(str, "1");
+            boolean equals = StringUtils.equals(str, "1");
             awesomeGetContainerInnerData.isCacheData = equals;
             for (SectionModel sectionModel : awesomeGetContainerInnerData.sections) {
                 JSONObject jSONObject = sectionModel.getJSONObject("args");
@@ -810,13 +810,13 @@ public class ope {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("25cadc0", new Object[]{this, str});
-        } else if (TextUtils.equals(str, oqc.a().m()) || TextUtils.equals(str, oqc.a().l())) {
+        } else if (StringUtils.equals(str, oqc.a().m()) || StringUtils.equals(str, oqc.a().l())) {
         } else {
             String a2 = opb.a(com.taobao.tao.recommend3.util.c.a(0));
-            if (str != null && TextUtils.equals(a2, str)) {
+            if (str != null && StringUtils.equals(a2, str)) {
                 com.taobao.android.ai.b.a().g();
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             com.taobao.android.ai.b.a().b(str);
@@ -884,7 +884,7 @@ public class ope {
                     }
                     ope opeVar = ope.this;
                     String a2 = ope.a(opeVar, ope.a(opeVar));
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         e.e("RecmdDataSource", "cacheFileData path is null");
                         return;
                     }
@@ -924,7 +924,7 @@ public class ope {
                     }
                     ope opeVar = ope.this;
                     String a2 = ope.a(opeVar, ope.a(opeVar));
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         e.e("RecmdDataSource", "cacheParams path is null");
                     } else {
                         gmc.a(new File(a2, String.format("%s_%s.dat", ope.b(ope.this), str)), JSON.toJSONBytes(jSONObject, new SerializerFeature[0]));

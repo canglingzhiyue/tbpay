@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.datapoints.StatisticalDataPoint;
 import com.etao.feimagesearch.model.IrpParamModel;
@@ -34,7 +34,7 @@ public class cpf {
         irpParamModel.setPhotoFrom(photoFrom);
         irpParamModel.updateSessionId();
         d.a(uri, bitmap, i, photoFrom, bVar, irpParamModel.getSessionId(), i2, i3, str);
-        if (!TextUtils.isEmpty(bVar.getSellerId())) {
+        if (!StringUtils.isEmpty(bVar.getSellerId())) {
             cox.b(StatisticalDataPoint.PageName.PHOTO_SEARCH_TAKE.getPageName(), StatisticalDataPoint.DataPoint.SEARCH_FROM_SHOP.name(), new String[0]);
         }
         cou.a(activity, irpParamModel);
@@ -59,7 +59,7 @@ public class cpf {
         } else {
             i2 = i4;
         }
-        if (!TextUtils.isEmpty(bVar.getSellerId())) {
+        if (!StringUtils.isEmpty(bVar.getSellerId())) {
             cox.b(StatisticalDataPoint.PageName.PHOTO_SEARCH_TAKE.getPageName(), StatisticalDataPoint.DataPoint.SEARCH_FROM_SHOP.name(), new String[0]);
         }
         IrpParamModel irpParamModel = new IrpParamModel(bVar);
@@ -68,7 +68,7 @@ public class cpf {
         String a2 = com.etao.feimagesearch.mnn.b.Companion.a().a();
         HashMap hashMap = map == null ? new HashMap() : map;
         cot.a("Dynamic", "prepareForV2SRP", values.getValue());
-        if (com.etao.feimagesearch.config.b.bv() && !TextUtils.isEmpty(a2)) {
+        if (com.etao.feimagesearch.config.b.bv() && !StringUtils.isEmpty(a2)) {
             hashMap.put(com.etao.feimagesearch.mnn.b.EXTRA_INFO_KEY, a2);
         }
         hashMap.put(cpe.KEY_EXTRA_VERIFY, values.getValue());
@@ -84,7 +84,7 @@ public class cpf {
         }
         a.H();
         String a2 = l.a(activity, bitmap, 90);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         IrpParamModel irpParamModel = new IrpParamModel(str);
@@ -92,7 +92,7 @@ public class cpf {
         irpParamModel.updateSessionId();
         String a3 = com.etao.feimagesearch.mnn.b.Companion.a().a();
         HashMap hashMap = new HashMap(10);
-        if (com.etao.feimagesearch.config.b.bv() && !TextUtils.isEmpty(a3)) {
+        if (com.etao.feimagesearch.config.b.bv() && !StringUtils.isEmpty(a3)) {
             hashMap.put(com.etao.feimagesearch.mnn.b.EXTRA_INFO_KEY, a3);
         }
         d.a(bitmap, a2, irpParamModel, irpParamModel.getSessionId(), hashMap);

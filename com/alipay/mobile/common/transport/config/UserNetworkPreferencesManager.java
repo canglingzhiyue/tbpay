@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.mobile.common.transport.httpdns.DnsUtil;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -48,9 +48,9 @@ public class UserNetworkPreferencesManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c53c663", new Object[]{this, str, str2, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn("UserNetworkPreferencesManager", "[bindHost] domain is null.");
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             LogCatUtil.warn("UserNetworkPreferencesManager", "[bindHost] ip is null.");
         } else if (i <= 0) {
             LogCatUtil.warn("UserNetworkPreferencesManager", "[bindHost] port is " + i);
@@ -72,14 +72,14 @@ public class UserNetworkPreferencesManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cb85fd2f", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogCatUtil.warn("UserNetworkPreferencesManager", "[unbindHost] domain is null.");
         } else {
             try {
                 LogCatUtil.info("UserNetworkPreferencesManager", "[unbindHost] domain = " + str);
                 TransportConfigureManager.getInstance().firstUpdateConfig(TransportEnvUtil.getContext());
                 a();
-                if (this.b == null || this.b.isEmpty() || TextUtils.isEmpty(this.b.get(str))) {
+                if (this.b == null || this.b.isEmpty() || StringUtils.isEmpty(this.b.get(str))) {
                     return;
                 }
                 this.b.put(str, "");
@@ -146,7 +146,7 @@ public class UserNetworkPreferencesManager {
         }
         HashMap hashMap = new HashMap();
         for (Map.Entry<String, String> entry : this.b.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey()) && (value = entry.getValue()) != null && (a2 = a(value)) != null) {
+            if (!StringUtils.isEmpty(entry.getKey()) && (value = entry.getValue()) != null && (a2 = a(value)) != null) {
                 hashMap.put(entry.getKey(), a2);
             }
         }
@@ -161,7 +161,7 @@ public class UserNetworkPreferencesManager {
         }
         TransportConfigureManager.getInstance().firstUpdateConfig(TransportEnvUtil.getContext());
         String stringValue = TransportConfigureManager.getInstance().getStringValue("np-bind-host");
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             return;
         }
         try {
@@ -185,7 +185,7 @@ public class UserNetworkPreferencesManager {
         }
         try {
             LogCatUtil.info("UserNetworkPreferencesManager", "[setH2Url] Enter. urlStr = " + str);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 URL url = new URL(str);
                 str = url.getHost() + ":" + MiscUtils.getPortByUrlObj(url);
                 LogCatUtil.info("UserNetworkPreferencesManager", "[setH2Url] urlStr convert to : " + str);

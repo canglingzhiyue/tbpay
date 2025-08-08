@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -20,7 +20,7 @@ public class jri {
             return (Set) ipChange.ipc$dispatch("bf40e8a1", new Object[]{str});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return new HashSet(Arrays.asList(str.split(";")));
             }
         } catch (Throwable th) {

@@ -2,7 +2,7 @@ package com.taobao.tao.powermsg;
 
 import android.os.SystemClock;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -201,13 +201,13 @@ public class PowerMsgServiceImpl implements com.taobao.tao.powermsg.common.d {
             ((BaseMessage) bVar2.f20780a).bizCode = i;
             try {
                 if (olt.a(GlobalClientInfo.getContext()) && fVar != null) {
-                    if (!TextUtils.isEmpty(fVar.f())) {
+                    if (!StringUtils.isEmpty(fVar.f())) {
                         ((BaseMessage) bVar2.f20780a).header.p = fVar.f();
                     }
                     bVar2.m = true;
                     ((BaseMessage) bVar2.f20780a).sysCode = 5;
                     bVar2.b = 5;
-                    if (!TextUtils.isEmpty(Launcher_InitAccs.mUserId)) {
+                    if (!StringUtils.isEmpty(Launcher_InitAccs.mUserId)) {
                         if (((BaseMessage) bVar2.f20780a).header.n == null) {
                             ((BaseMessage) bVar2.f20780a).header.n = new HashMap(2);
                         }
@@ -559,7 +559,7 @@ public class PowerMsgServiceImpl implements com.taobao.tao.powermsg.common.d {
         } else {
             b bVar = new b(new Report(baseMessage, i2, d.b(baseMessage), i3));
             ((BaseMessage) bVar.f20780a).bizCode = i;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 ((BaseMessage) bVar.f20780a).header.f = str;
             }
             tao.reactivex.e.a(bVar).b(com.taobao.tao.messagekit.base.d.a().b());
@@ -665,14 +665,14 @@ public class PowerMsgServiceImpl implements com.taobao.tao.powermsg.common.d {
         b bVar2 = new b(d.a(powerMessage));
         ((BaseMessage) bVar2.f20780a).bizCode = i;
         try {
-            if (!TextUtils.isEmpty(fVar.f())) {
+            if (!StringUtils.isEmpty(fVar.f())) {
                 ((BaseMessage) bVar2.f20780a).header.p = fVar.f();
             }
             bVar2.m = true;
             int i2 = fVar.a() == 2 ? 5 : 1;
             ((BaseMessage) bVar2.f20780a).sysCode = i2;
             bVar2.b = i2;
-            if (!TextUtils.isEmpty(Launcher_InitAccs.mUserId)) {
+            if (!StringUtils.isEmpty(Launcher_InitAccs.mUserId)) {
                 if (((BaseMessage) bVar2.f20780a).header.n == null) {
                     ((BaseMessage) bVar2.f20780a).header.n = new HashMap(2);
                 }
@@ -693,7 +693,7 @@ public class PowerMsgServiceImpl implements com.taobao.tao.powermsg.common.d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("71ce819", new Object[]{this, new Integer(i), textPowerMessage, bVar, objArr});
-        } else if (!TextUtils.isEmpty(textPowerMessage.text) || (textPowerMessage.value != null && textPowerMessage.value.size() > 0)) {
+        } else if (!StringUtils.isEmpty(textPowerMessage.text) || (textPowerMessage.value != null && textPowerMessage.value.size() > 0)) {
             sendMessage(i, textPowerMessage, bVar, objArr);
         } else {
             invoke(-3005, null, bVar, objArr);

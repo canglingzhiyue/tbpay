@@ -6,7 +6,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -56,7 +56,7 @@ public class g implements d {
         if (a2 && (activity instanceof c)) {
             ((c) activity).a();
             String a3 = b.a(intent, true);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 intent.setData(Uri.parse(a3));
             }
         }
@@ -128,7 +128,7 @@ public class g implements d {
         }
         TLog.loge(gve.MODULE, "LinkOptimized", "restoreByStrategy, firstLink=false， pageName=" + str);
         LinkRule b = h.b();
-        if (b != null && b.strategy != null && !TextUtils.isEmpty(b.strategy.ignoredPages) && b.strategy.ignoredPages.contains(str)) {
+        if (b != null && b.strategy != null && !StringUtils.isEmpty(b.strategy.ignoredPages) && b.strategy.ignoredPages.contains(str)) {
             TLog.loge(gve.MODULE, "LinkOptimized", "restoreByStrategy, firstLink=false， ignored pageName=" + str);
             return;
         }
@@ -156,7 +156,7 @@ public class g implements d {
             com.taobao.android.launcher.bootstrap.tao.i.a(activity, intent);
             this.b.callActivityOnNewIntent(activity, intent);
         } else {
-            if (intent != null && !TextUtils.isEmpty(intent.getDataString())) {
+            if (intent != null && !StringUtils.isEmpty(intent.getDataString())) {
                 z = b(activity, intent);
             }
             if (z) {
@@ -177,7 +177,7 @@ public class g implements d {
                     return false;
                 }
                 String b = b.b(intent);
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     intent.setData(Uri.parse(b));
                     a(activity.getIntent(), intent);
                 }
@@ -203,14 +203,14 @@ public class g implements d {
         }
         if (com.taobao.linkmanager.afc.utils.e.a(data)) {
             String queryParameter = data.getQueryParameter("h5Url");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 data = Uri.parse(queryParameter);
             }
         }
         if (data2 == null) {
             return;
         }
-        if (TextUtils.equals(data.getHost(), data2.getHost()) && TextUtils.equals(data.getPath(), data2.getPath())) {
+        if (StringUtils.equals(data.getHost(), data2.getHost()) && StringUtils.equals(data.getPath(), data2.getPath())) {
             return;
         }
         LinkRule b = h.b();
@@ -228,7 +228,7 @@ public class g implements d {
             return;
         }
         String a3 = b.a(intent);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         com.taobao.android.launcher.common.e g = this.f13067a.g();
@@ -263,7 +263,7 @@ public class g implements d {
         if (!"com.taobao.tao.welcome.Welcome".equals(className)) {
             return false;
         }
-        if (z && TextUtils.equals(activity.getClass().getName(), className)) {
+        if (z && StringUtils.equals(activity.getClass().getName(), className)) {
             return false;
         }
         intent.putExtra(b.EXTRA_LINK_HOT_START, true);

@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.change.app.icon.core.Constrant;
 import com.taobao.taolive.sdk.model.message.PowerMsgType;
 import com.xiaomi.push.service.XMPushService;
@@ -170,7 +170,7 @@ public class bf {
 
         public static String a(String str) {
             int lastIndexOf;
-            return (!TextUtils.isEmpty(str) && (lastIndexOf = str.lastIndexOf("/")) != -1) ? str.substring(lastIndexOf + 1) : "";
+            return (!StringUtils.isEmpty(str) && (lastIndexOf = str.lastIndexOf("/")) != -1) ? str.substring(lastIndexOf + 1) : "";
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -329,7 +329,7 @@ public class bf {
     }
 
     private String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int indexOf = str.indexOf("@");

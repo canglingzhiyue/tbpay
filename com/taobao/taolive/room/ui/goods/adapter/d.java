@@ -3,7 +3,7 @@ package com.taobao.taolive.room.ui.goods.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
@@ -73,7 +73,7 @@ public class d implements com.taobao.taolive.sdk.goodlist.e {
             hashMap.put("isDownShelf", liveItem.liveItemStatusData.getString("isDownShelf"));
         }
         com.taobao.taolive.sdk.goodlist.c.a(hashMap, liveItem);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "detail";
         }
         com.taobao.taolive.room.utils.c.b(activity, liveItem, str, hashMap);
@@ -115,15 +115,15 @@ public class d implements com.taobao.taolive.sdk.goodlist.e {
         boolean z2 = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5191177a", new Object[]{this, aVar, rVar, context, liveItem, str, str2});
-        } else if (liveItem == null || TextUtils.isEmpty(str2)) {
+        } else if (liveItem == null || StringUtils.isEmpty(str2)) {
         } else {
             com.taobao.taolive.sdk.controller.e eVar = (com.taobao.taolive.sdk.controller.e) n.b(n.a());
             String str3 = "goodstimemove";
             if (eVar != null) {
-                if (TextUtils.isEmpty(eVar.q)) {
+                if (StringUtils.isEmpty(eVar.q)) {
                     eVar.q = i.a(poz.p(n.b(n.a())));
                 }
-                if (com.taobao.taolive.movehighlight.utils.c.w() && !TextUtils.isEmpty(eVar.q)) {
+                if (com.taobao.taolive.movehighlight.utils.c.w() && !StringUtils.isEmpty(eVar.q)) {
                     str3 = "goodstimemove." + eVar.q;
                 }
                 z = eVar.r();
@@ -145,7 +145,7 @@ public class d implements com.taobao.taolive.sdk.goodlist.e {
                     return;
                 }
                 String str6 = map.get("spm");
-                if (TextUtils.isEmpty(liveItem.liveId) || TextUtils.isEmpty(valueOf)) {
+                if (StringUtils.isEmpty(liveItem.liveId) || StringUtils.isEmpty(valueOf)) {
                     return;
                 }
                 StringBuilder sb = new StringBuilder("https://h5.m.taobao.com/taolive/video.html?forceRefresh=true&productType=timemove&sjsdItemId=");
@@ -186,7 +186,7 @@ public class d implements com.taobao.taolive.sdk.goodlist.e {
                 String string = ((JSONObject) aTaoLiveOpenEntity.params).getString("seller_id");
                 String string2 = ((JSONObject) aTaoLiveOpenEntity.params).getString("shop_id");
                 String string3 = ((JSONObject) aTaoLiveOpenEntity.params).getString("shop_spm");
-                if (TextUtils.isEmpty(liveItem.liveId) || TextUtils.isEmpty(valueOf2) || TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+                if (StringUtils.isEmpty(liveItem.liveId) || StringUtils.isEmpty(valueOf2) || StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
                     return;
                 }
                 s.a(context, "https://m.taobao.com/app/shop-conainer/contentlistpage.html?seller_id=" + string + "&shop_id=" + string2 + "&first_media_id=" + valueOf2 + "&first_media_scene=6671&source=shop&bizScene=livePointTab3&liveId=" + str7 + "&spm=" + string3 + "&livesource=liveshop.shoptab3_live");
@@ -329,7 +329,7 @@ public class d implements com.taobao.taolive.sdk.goodlist.e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bc30e1eb", new Object[]{this, aVar, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         pmt pmtVar = new pmt();
@@ -447,7 +447,7 @@ public class d implements com.taobao.taolive.sdk.goodlist.e {
             return;
         }
         b();
-        if (TextUtils.isEmpty(str) || map == null || h.a("true", str)) {
+        if (StringUtils.isEmpty(str) || map == null || h.a("true", str)) {
             return;
         }
         map.put("bizData", str2);

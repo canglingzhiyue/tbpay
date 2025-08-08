@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -91,7 +91,7 @@ public final class avl extends aso {
             return;
         }
         String string = jSONObject.getString("dataTracks");
-        if (TextUtils.isEmpty(string) || (qVar = this.e) == null) {
+        if (StringUtils.isEmpty(string) || (qVar = this.e) == null) {
             return;
         }
         UTABTest.activateServer(string, qVar.e());

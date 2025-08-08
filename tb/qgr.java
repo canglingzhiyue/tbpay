@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.alibaba.android.icart.core.data.request.e;
@@ -40,11 +40,11 @@ public final class qgr {
             jSONObject.put(d.PARAM_IS_INNER, (Object) String.valueOf(bgd.a()));
         }
         String a2 = ben.a(activity);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             jSONObject.put("shopIdInfoStr", (Object) a2);
         }
         String c = e.c(queryParamsManager.a());
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             jSONObject.put(s.DIVISION_CODE, (Object) c);
         }
         if (queryParamsManager.h()) {
@@ -58,18 +58,18 @@ public final class qgr {
                 jSONObject.put("iCheckedCartIdsForRepeatBuy", (Object) CheckHoldManager.a().e());
             }
         }
-        if (!TextUtils.isEmpty(bcd.a().c())) {
+        if (!StringUtils.isEmpty(bcd.a().c())) {
             jSONObject.put("addressId", (Object) bcd.a().c());
         }
         if (queryParamsManager.b() != null) {
             jSONObject.put("cartSortParams", (Object) queryParamsManager.b());
         }
         String d = queryParamsManager.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             jSONObject.put("cartCustomExParam", (Object) d);
         }
         String n = queryParamsManager.n();
-        if (!TextUtils.isEmpty(n)) {
+        if (!StringUtils.isEmpty(n)) {
             jSONObject.put("holdCustomExParams", (Object) n);
         }
         if (str != null) {

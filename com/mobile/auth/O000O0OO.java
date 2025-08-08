@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -100,7 +100,7 @@ public class O000O0OO {
         String str4 = "";
         try {
             try {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     JSONObject jSONObject = new JSONObject(str2);
                     i = jSONObject.getInt("result");
                     str4 = jSONObject.optString("msg");

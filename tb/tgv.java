@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
@@ -228,13 +228,13 @@ public class tgv {
             ipChange.ipc$dispatch("675e19", new Object[]{this, tgrVar});
         } else if (this.b == null) {
         } else {
-            boolean z = !tgrVar.e() && !TextUtils.isEmpty(FestivalMgr.a().a("global", "actionBarBackgroundColor"));
+            boolean z = !tgrVar.e() && !StringUtils.isEmpty(FestivalMgr.a().a("global", "actionBarBackgroundColor"));
             int d = tgrVar.d();
             String c = tgrVar.c();
             if (a(this.b.getContext())) {
                 this.b.updateCustomBg(null, 0);
                 e.e("SearchBarBgObserver", "开启了深色模式");
-            } else if (TextUtils.isEmpty(c) && d <= 0) {
+            } else if (StringUtils.isEmpty(c) && d <= 0) {
                 this.b.restoreToDefault();
                 ldf.d("SearchBarBgObserver", "没有tab氛围时展示为默认背景");
             } else if (z) {
@@ -280,7 +280,7 @@ public class tgv {
                 break;
             }
             jSONObject = a3.get(i);
-            if (TextUtils.equals(com.taobao.tao.infoflow.multitab.e.l(jSONObject), this.g)) {
+            if (StringUtils.equals(com.taobao.tao.infoflow.multitab.e.l(jSONObject), this.g)) {
                 break;
             }
             i++;

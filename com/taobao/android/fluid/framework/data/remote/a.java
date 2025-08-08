@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.data.remote;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -165,7 +165,7 @@ public final class a {
             if (ipChange instanceof IpChange) {
                 return (C0494a) ipChange.ipc$dispatch("79336cbf", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f12534a.put("type", (Object) str);
             }
             return this;

@@ -1,7 +1,7 @@
 package com.taobao.browser.commonUrlFilter;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -47,7 +47,7 @@ public class a {
             return null;
         }
         String queryParameter = parse.getQueryParameter("wvLoginCallback");
-        return TextUtils.isEmpty(queryParameter) ? parse.getQueryParameter("wvlogoutcallback") : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? parse.getQueryParameter("wvlogoutcallback") : queryParameter;
     }
 
     public String b(String str) {

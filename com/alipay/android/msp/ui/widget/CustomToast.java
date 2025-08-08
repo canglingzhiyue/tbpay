@@ -2,7 +2,7 @@ package com.alipay.android.msp.ui.widget;
 
 import android.app.Activity;
 import android.os.CountDownTimer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +93,7 @@ public class CustomToast {
             ipChange.ipc$dispatch("79a6ec55", new Object[]{activity, str});
             return;
         }
-        if (!TextUtils.isEmpty(str) && str.length() < 10) {
+        if (!StringUtils.isEmpty(str) && str.length() < 10) {
             i = 0;
         }
         Toast makeText = Toast.makeText(activity.getApplicationContext(), str, i);

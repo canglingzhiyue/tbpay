@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.vector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.Grammar;
 import com.alipay.android.msp.framework.statisticsv2.Vector;
 import com.alipay.android.msp.framework.statisticsv2.collector.AppCollector;
@@ -56,9 +56,9 @@ public class VectorData implements IAsyncCollectorCallback {
                     return;
                 }
                 for (String str : VectorData.a(VectorData.this).getAttrs()) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String a2 = VectorData.a(VectorData.this, str);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             VectorData.b(VectorData.this).put(str, a2);
                         }
                     }
@@ -93,7 +93,7 @@ public class VectorData implements IAsyncCollectorCallback {
         for (String str : attrs) {
             if (str != null) {
                 String filter = Grammar.filter(this.c.get(str));
-                if (TextUtils.isEmpty(filter)) {
+                if (StringUtils.isEmpty(filter)) {
                     filter = Grammar.ATTR_DEFAULT_VALUE;
                 }
                 sb.append(filter);
@@ -121,12 +121,12 @@ public class VectorData implements IAsyncCollectorCallback {
         } else if (str == null) {
         } else {
             String str2 = this.c.get(str);
-            if (!TextUtils.isEmpty(str2) && !TextUtils.equals(str2, Grammar.ATTR_DEFAULT_VALUE)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.equals(str2, Grammar.ATTR_DEFAULT_VALUE)) {
                 return;
             }
             String a2 = a(str);
             LogUtil.record(2, "Vector:reCheck", "atr=" + str + " , newAttrValue=" + a2);
-            if (TextUtils.isEmpty(a2) || TextUtils.equals(a2, Grammar.ATTR_DEFAULT_VALUE)) {
+            if (StringUtils.isEmpty(a2) || StringUtils.equals(a2, Grammar.ATTR_DEFAULT_VALUE)) {
                 return;
             }
             this.c.put(str, a2);

@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 
 /* loaded from: classes4.dex */
@@ -32,7 +32,7 @@ public class RequestState {
 
     public boolean checkTokenValied(int i) {
         try {
-            if (this.keyRespone != null && !TextUtils.isEmpty(this.keyRespone.getAk()) && !TextUtils.isEmpty(this.keyRespone.getSk()) && !TextUtils.isEmpty(this.keyRespone.getStsToken())) {
+            if (this.keyRespone != null && !StringUtils.isEmpty(this.keyRespone.getAk()) && !StringUtils.isEmpty(this.keyRespone.getSk()) && !StringUtils.isEmpty(this.keyRespone.getStsToken())) {
                 return this.keyRespone.getExpiredTime() - System.currentTimeMillis() > ((long) ((i * 60) * 1000));
             }
             return false;

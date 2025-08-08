@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.business.containerframe;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.containerframe.frames.a;
 import com.taobao.android.fluid.business.containerframe.frames.d;
@@ -79,7 +79,7 @@ public class ContainerFrameService implements IContainerFrameService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65acf5d7", new Object[]{this, albumData, aVar});
-        } else if (aVar == null || albumData == null || TextUtils.isEmpty(albumData.type) || (a2 = aVar.a()) == null) {
+        } else if (aVar == null || albumData == null || StringUtils.isEmpty(albumData.type) || (a2 = aVar.a()) == null) {
         } else {
             if (this.mAlbumDetailFrame == null) {
                 this.mAlbumDetailFrame = new com.taobao.android.fluid.business.containerframe.frames.a(this.mFluidContext);

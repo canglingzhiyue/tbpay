@@ -1,6 +1,6 @@
 package com.taobao.homepage.pop.viewmodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.pop.protocol.model.pop.IPopData;
 import com.taobao.homepage.pop.protocol.model.pop.IPopPoint;
@@ -41,7 +41,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (IPopData) ipChange.ipc$dispatch("f583f522", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.b.get(str);
         }
         return null;

@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Debug;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.Window;
@@ -198,7 +198,7 @@ public class mox extends mos {
             Intent intent = activity.getIntent();
             if (intent != null) {
                 String stringExtra = intent.getStringExtra("referrer");
-                if (!TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra)) {
                     try {
                         Uri parse = Uri.parse(stringExtra);
                         str = parse.getHost() + parse.getPath();
@@ -220,10 +220,10 @@ public class mox extends mos {
         } else if (map != null) {
             try {
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey()) && N.contains(entry.getKey()) && entry.getValue() != null) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && N.contains(entry.getKey()) && entry.getValue() != null) {
                         this.b.a(entry.getKey(), entry.getValue());
                     }
-                    if (!TextUtils.isEmpty(entry.getKey()) && O.contains(entry.getKey()) && entry.getValue() != null) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && O.contains(entry.getKey()) && entry.getValue() != null) {
                         this.b.a(entry.getKey(), mqe.a(entry.getValue(), -1L));
                     }
                 }
@@ -573,7 +573,7 @@ public class mox extends mos {
         this.b.a("displayDuration", Long.valueOf(j - this.y));
         this.b.a("displayedTime", j);
         this.b.a("firstScreenPaint", j);
-        if (!this.L || TextUtils.isEmpty(moi.b().a())) {
+        if (!this.L || StringUtils.isEmpty(moi.b().a())) {
             return;
         }
         this.b.a("utSession", moi.b().a());

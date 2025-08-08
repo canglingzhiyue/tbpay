@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.pipe;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.security.ccrc.common.keep.IKeep;
 import com.alibaba.security.ccrc.service.build.Ba;
@@ -57,7 +57,7 @@ public class RiskDataPipeManager implements IKeep, Mb {
         String[] split = str.split("_");
         a aVar = new a();
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i])) {
+            if (!StringUtils.isEmpty(split[i])) {
                 if (i == 0) {
                     aVar.c = split[i];
                 } else if (i == 1) {
@@ -79,14 +79,14 @@ public class RiskDataPipeManager implements IKeep, Mb {
 
     public static boolean isDuplicatePipeRegister(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("cf2ef127", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && "2".equals(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("cf2ef127", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && "2".equals(str);
     }
 
     public static void onPipeRegistered(String str) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9fddb7e0", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a callbackResult = getCallbackResult(str);
             trackPipeCallback("1".equals(callbackResult.c) ? Ba.a.t : Ba.a.u, callbackResult, Ob.a().a(callbackResult.d, callbackResult.e));

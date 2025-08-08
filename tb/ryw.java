@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
@@ -664,7 +664,7 @@ public class ryw extends ryu {
         } else {
             try {
                 HashMap<String, Object> hashMap3 = new HashMap<>();
-                if (TextUtils.isEmpty(hashMap.get("ssr-pv"))) {
+                if (StringUtils.isEmpty(hashMap.get("ssr-pv"))) {
                     str4 = a((Map<String, String>) hashMap, str, true).get("INPUT");
                 } else {
                     str4 = a((Map<String, String>) hashMap, str).get("INPUT");
@@ -684,7 +684,7 @@ public class ryw extends ryu {
                 hashMap3.put("mtopBusiness", hashMap.get("mtopBusiness"));
                 try {
                     String str5 = hashMap.get("bizId");
-                    if (!TextUtils.isEmpty(str5)) {
+                    if (!StringUtils.isEmpty(str5)) {
                         hashMap3.put("bizId", Integer.valueOf(Integer.parseInt(str5)));
                     }
                 } catch (Throwable unused) {

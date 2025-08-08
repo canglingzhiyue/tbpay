@@ -1,6 +1,6 @@
 package com.uc.webview.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class UCKnownException extends RuntimeException {
@@ -10,19 +10,19 @@ public class UCKnownException extends RuntimeException {
     private String mMessage;
 
     public UCKnownException(int i, String str, Throwable th) {
-        super(TextUtils.isEmpty(str) ? String.valueOf(i) : str, th);
+        super(StringUtils.isEmpty(str) ? String.valueOf(i) : str, th);
         this.mCode = -1;
         this.mCodeDescription = null;
         this.mMessage = null;
         this.mCode = i;
-        this.mMessage = TextUtils.isEmpty(str) ? String.valueOf(this.mCode) : str;
+        this.mMessage = StringUtils.isEmpty(str) ? String.valueOf(this.mCode) : str;
         if (this.mCode == -1) {
             while (th != null) {
                 if (th instanceof UCKnownException) {
                     UCKnownException uCKnownException = (UCKnownException) th;
                     this.mCode = uCKnownException.mCode;
                     this.mCodeDescription = uCKnownException.mCodeDescription;
-                    if (!TextUtils.isEmpty(this.mMessage)) {
+                    if (!StringUtils.isEmpty(this.mMessage)) {
                         return;
                     }
                     this.mMessage = uCKnownException.mMessage;
@@ -69,7 +69,7 @@ public class UCKnownException extends RuntimeException {
     public final String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.mCode);
-        if (!TextUtils.isEmpty(this.mCodeDescription)) {
+        if (!StringUtils.isEmpty(this.mCodeDescription)) {
             sb.append(":");
             sb.append(this.mCodeDescription);
         }

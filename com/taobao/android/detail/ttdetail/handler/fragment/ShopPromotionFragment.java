@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.handler.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,7 +107,7 @@ public class ShopPromotionFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ea9d0dd1", new Object[]{fragmentActivity, str, list, eyxVar});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || list == null) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || list == null) {
         } else {
             ShopPromotionFragment newInstance = newInstance(str, list);
             newInstance.setDetailContext(eyxVar);
@@ -305,14 +305,14 @@ public class ShopPromotionFragment extends FloatFragment {
                 textView.setText(gVar.c());
             }
             TextView textView2 = (TextView) relativeLayout.findViewById(R.id.period);
-            if (!TextUtils.isEmpty(gVar.a())) {
+            if (!StringUtils.isEmpty(gVar.a())) {
                 textView2.setVisibility(0);
                 textView2.setText(gVar.a());
             } else {
                 textView2.setVisibility(8);
             }
             TextView textView3 = (TextView) relativeLayout.findViewById(R.id.right_icon);
-            if (!TextUtils.isEmpty(gVar.b())) {
+            if (!StringUtils.isEmpty(gVar.b())) {
                 textView3.setVisibility(0);
                 textView3.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.android.detail.ttdetail.handler.fragment.ShopPromotionFragment.ShopPromotionAdapter.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -382,7 +382,7 @@ public class ShopPromotionFragment extends FloatFragment {
             }
             textView.setVisibility(4);
             TextView textView2 = (TextView) relativeLayout.findViewById(R.id.period);
-            if (!TextUtils.isEmpty(gVar.a())) {
+            if (!StringUtils.isEmpty(gVar.a())) {
                 textView2.setVisibility(0);
                 textView2.setText(gVar.a());
             } else {
@@ -471,7 +471,7 @@ public class ShopPromotionFragment extends FloatFragment {
             textView.setMinLines(2);
             textView.setMaxLines(2);
             textView.setLineSpacing(ShopPromotionFragment.access$000(ShopPromotionFragment.this) * 2, 1.0f);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
             textView.setTextColor(context.getResources().getColor(R.color.tt_detail_6));
             textView.setTextSize(12.0f);
             textView.setText(dVar.c());
@@ -507,14 +507,14 @@ public class ShopPromotionFragment extends FloatFragment {
                 textView.setText(gVar.c());
             }
             TextView textView2 = (TextView) inflate.findViewById(R.id.period);
-            if (!TextUtils.isEmpty(gVar.a())) {
+            if (!StringUtils.isEmpty(gVar.a())) {
                 textView2.setVisibility(0);
                 textView2.setText(gVar.a());
             } else {
                 textView2.setVisibility(8);
             }
             TextView textView3 = (TextView) inflate.findViewById(R.id.right_icon);
-            if (!TextUtils.isEmpty(gVar.b())) {
+            if (!StringUtils.isEmpty(gVar.b())) {
                 textView3.setVisibility(0);
                 inflate.setOnClickListener(new AnonymousClass3(gVar));
                 inflate.setClickable(true);

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import tb.kge;
@@ -22,7 +22,7 @@ public class b {
             return str == null;
         }
         for (String str2 : list) {
-            if (TextUtils.equals(str, str2)) {
+            if (StringUtils.equals(str, str2)) {
                 return true;
             }
         }

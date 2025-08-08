@@ -1,6 +1,6 @@
 package com.android.taobao.safeclean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alipay.birdnest.util.UiUtil;
@@ -64,7 +64,7 @@ public class l implements d<String> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (!TextUtils.isEmpty(str3)) {
+        } else if (!StringUtils.isEmpty(str3)) {
             try {
                 AdditionList additionList = (AdditionList) JSON.parseObject(str3, AdditionList.class);
                 Log.e("SimpleAdditioner", additionList.toString());

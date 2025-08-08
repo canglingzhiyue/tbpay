@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.main.dinamic3.view.recycler;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.bd;
@@ -37,7 +37,7 @@ public class a extends o {
         if (ipChange instanceof IpChange) {
             return (DXAbsOnLoadMoreView) ipChange.ipc$dispatch("83838a3e", new Object[]{this, str});
         }
-        if (TextUtils.equals("recyclerContentList", str)) {
+        if (StringUtils.equals("recyclerContentList", str)) {
             return new DXContentLoadMoreView(bd.e());
         }
         return super.getOnLoadMoreView(str);

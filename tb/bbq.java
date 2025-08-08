@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.bindingx.core.c;
 import com.alibaba.android.bindingx.core.d;
@@ -89,7 +89,7 @@ public class bbq {
                 if (ipChange instanceof IpChange) {
                     return (View) ipChange.ipc$dispatch("52a699f6", new Object[]{this, view, str});
                 }
-                if (view != null && !TextUtils.isEmpty(str)) {
+                if (view != null && !StringUtils.isEmpty(str)) {
                     try {
                         identifier = Integer.parseInt(str);
                     } catch (Throwable unused) {

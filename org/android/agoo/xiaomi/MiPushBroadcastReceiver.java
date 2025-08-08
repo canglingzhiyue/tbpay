@@ -2,7 +2,7 @@ package org.android.agoo.xiaomi;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.ALog;
 import com.taobao.android.launcher.bootstrap.tao.f;
@@ -42,7 +42,7 @@ public class MiPushBroadcastReceiver extends PushMessageReceiver {
             str = str2;
         }
         ALog.d(TAG, "onReceiveRegisterResult", "regId", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         NotifManager notifManager = new NotifManager();

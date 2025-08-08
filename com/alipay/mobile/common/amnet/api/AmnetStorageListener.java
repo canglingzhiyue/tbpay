@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.api;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.mobile.common.netsdkextdependapi.security.SecurityUtil;
 import com.alipay.mobile.common.transport.utils.FileUtils;
@@ -67,7 +67,7 @@ public class AmnetStorageListener implements Storage {
         try {
             LogCatUtil.info(TAG, "getCommon.key= " + str);
             String string = AmnetEnvHelper.getAppContext().getSharedPreferences(SHARED_FILE_NAME, 0).getString(str, null);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return Base64.decode(string, 2);
             }
             return null;
@@ -111,7 +111,7 @@ public class AmnetStorageListener implements Storage {
             return;
         }
         LogCatUtil.info(TAG, "put Common,key= " + str + ",val= " + bArr);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             LogCatUtil.error(TAG, "put Common,key= " + str + " ,val is null");
             return;
         }
@@ -296,7 +296,7 @@ public class AmnetStorageListener implements Storage {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.debug(TAG, "removeCommon,key is null");
                 return;
             }
@@ -341,7 +341,7 @@ public class AmnetStorageListener implements Storage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fa2f1a4a", new Object[]{this, str, new Boolean(z), new Integer(i), result});
-        } else if (TextUtils.isEmpty(str) || result == null) {
+        } else if (StringUtils.isEmpty(str) || result == null) {
             LogCatUtil.warn(TAG, "getBigDataAsync error, key is null or callback is null.");
         } else {
             LogCatUtil.info(TAG, "getBigDataAsync key=" + str + ", first=" + System.currentTimeMillis());

@@ -5,7 +5,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.base.Versions;
 import com.taobao.android.nav.Nav;
@@ -140,7 +140,7 @@ public class g implements Nav.i {
             return false;
         }
         String path = data.getPath();
-        if (!TextUtils.isEmpty(path)) {
+        if (!StringUtils.isEmpty(path)) {
             return path.startsWith("/tbopen/index.htm");
         }
         return false;

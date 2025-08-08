@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes2.dex */
@@ -16,7 +16,7 @@ public class bdv {
         if (ipChange instanceof IpChange) {
             return (bdu) ipChange.ipc$dispatch("9bf7bccb", new Object[]{bbzVar, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int i = -1;

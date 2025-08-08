@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.trade.utils.b;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,7 +41,7 @@ public class bmr extends fuf {
             return ipChange.ipc$dispatch("ebd01cf8", new Object[]{this, objArr, dXRuntimeContext});
         }
         String a2 = bmv.a(objArr, 2, new Class[]{null, String.class});
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             throw new RuntimeException(a2);
         }
         Object obj = objArr[0];

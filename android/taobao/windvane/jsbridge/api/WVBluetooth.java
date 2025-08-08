@@ -15,7 +15,7 @@ import android.taobao.windvane.jsbridge.i;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.security.realidentity.ui.webview.jsbridge.entity.WVResultWrapper;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -569,7 +569,7 @@ public class WVBluetooth extends e {
         } else {
             try {
                 String optString = new JSONObject(str).optString("deviceId", "");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     connect(optString);
                     this.mConnectCallback = wVCallBackContext;
                     return;

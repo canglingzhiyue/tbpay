@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.mnn.channel;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.mnn.BaseMnnRunUnit;
@@ -66,7 +66,7 @@ public final class c extends BaseMnnRunUnit<com.etao.feimagesearch.mnn.channel.a
             }
             c cVar2 = c.this;
             com.etao.feimagesearch.mnn.d dVar2 = this.b;
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 a3 = "extraInfo is empty";
             }
             c.a(cVar2, -3, dVar2, a3, SystemClock.elapsedRealtime() - this.c);

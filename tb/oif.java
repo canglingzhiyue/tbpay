@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.d;
 import com.taobao.share.multiapp.ShareBizAdapter;
@@ -56,7 +56,7 @@ public class oif implements nzn {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:29:0x00a6, code lost:
-        if (android.text.TextUtils.equals(r0.getPath(), r1.getPath()) == false) goto L31;
+        if (android.text.StringUtils.equals(r0.getPath(), r1.getPath()) == false) goto L31;
      */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00cb  */
     /*
@@ -105,7 +105,7 @@ public class oif implements nzn {
             com.taobao.share.globalmodel.TBShareContent r0 = r0.a()
             java.lang.String r0 = r0.openMultiTargetUrl
             java.lang.String r1 = "true"
-            boolean r0 = android.text.TextUtils.equals(r1, r0)
+            boolean r0 = android.text.StringUtils.equals(r1, r0)
             if (r0 != 0) goto L64
             goto Lff
         L64:
@@ -115,19 +115,19 @@ public class oif implements nzn {
             com.taobao.share.globalmodel.c r1 = r7.a()     // Catch: java.lang.Throwable -> La9
             com.taobao.share.globalmodel.TBShareContent r1 = r1.a()     // Catch: java.lang.Throwable -> La9
             java.lang.String r1 = r1._initShareUrl     // Catch: java.lang.Throwable -> La9
-            boolean r4 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> La9
+            boolean r4 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> La9
             if (r4 != 0) goto La9
-            boolean r4 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> La9
+            boolean r4 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> La9
             if (r4 != 0) goto La9
             android.net.Uri r0 = android.net.Uri.parse(r0)     // Catch: java.lang.Throwable -> La9
             android.net.Uri r1 = android.net.Uri.parse(r1)     // Catch: java.lang.Throwable -> La9
             java.lang.String r4 = r0.getHost()     // Catch: java.lang.Throwable -> La9
             java.lang.String r5 = r1.getHost()     // Catch: java.lang.Throwable -> La9
-            boolean r4 = android.text.TextUtils.equals(r4, r5)     // Catch: java.lang.Throwable -> La9
+            boolean r4 = android.text.StringUtils.equals(r4, r5)     // Catch: java.lang.Throwable -> La9
             if (r4 == 0) goto Laa
             java.lang.String r0 = r0.getPath()     // Catch: java.lang.Throwable -> La9
             java.lang.String r1 = r1.getPath()     // Catch: java.lang.Throwable -> La9
-            boolean r0 = android.text.TextUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> La9
+            boolean r0 = android.text.StringUtils.equals(r0, r1)     // Catch: java.lang.Throwable -> La9
             if (r0 != 0) goto La9
             goto Laa
         La9:
@@ -152,11 +152,11 @@ public class oif implements nzn {
             java.lang.String r2 = r7.b()
             java.lang.String r4 = "type"
             java.lang.String r4 = r1.getString(r4)
-            boolean r2 = android.text.TextUtils.equals(r2, r4)
+            boolean r2 = android.text.StringUtils.equals(r2, r4)
             if (r2 == 0) goto Lfc
             java.lang.String r2 = "shareUrl"
             java.lang.String r4 = r1.getString(r2)
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             if (r4 != 0) goto Lfc
             com.taobao.share.globalmodel.c r4 = r7.a()
             com.taobao.share.globalmodel.TBShareContent r4 = r4.a()
@@ -179,7 +179,7 @@ public class oif implements nzn {
         } else {
             if (bVar instanceof com.taobao.share.ui.engine.structure.a) {
                 com.taobao.share.ui.engine.structure.a aVar = (com.taobao.share.ui.engine.structure.a) bVar;
-                if (aVar.c != null && TextUtils.equals("program", aVar.c.getString("triggerBy"))) {
+                if (aVar.c != null && StringUtils.equals("program", aVar.c.getString("triggerBy"))) {
                     return;
                 }
             }

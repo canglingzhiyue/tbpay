@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -29,7 +29,7 @@ public class UltronWeex2TinctModule extends MUSModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ab2b3ae5", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             UnifyLog.d("UltronWeex2TinctModule.tinct", "changeType or configType invalid");
         } else {
             bga.c.b(TINCT_BIZ_NAME, str, str2, "default");
@@ -41,7 +41,7 @@ public class UltronWeex2TinctModule extends MUSModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ecb0bded", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             UnifyLog.d("UltronWeex2TinctModule.tinctAsync", "changeType or configType invalid");
         } else {
             a.a().e().a(new Runnable() { // from class: com.alibaba.android.ultron.vfw.weex2.module.UltronWeex2TinctModule.1

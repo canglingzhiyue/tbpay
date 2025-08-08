@@ -3,7 +3,7 @@ package com.taobao.accs.internal;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.IBaseReceiver;
 import com.taobao.accs.client.a;
@@ -31,7 +31,7 @@ public class ReceiverImpl implements IBaseReceiver {
             return;
         }
         ALog.d(TAG, "ReceiverImpl onReceive begin......", new Object[0]);
-        if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+        if (intent == null || StringUtils.isEmpty(intent.getAction())) {
             intent = new Intent();
         }
         try {

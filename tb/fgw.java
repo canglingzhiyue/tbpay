@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
@@ -226,7 +226,7 @@ public class fgw {
         if (c2 == null) {
             return;
         }
-        map.put("loginState", TextUtils.isEmpty(c2.e()) ? "0" : "1");
+        map.put("loginState", StringUtils.isEmpty(c2.e()) ? "0" : "1");
     }
 
     private static String a(b bVar) {

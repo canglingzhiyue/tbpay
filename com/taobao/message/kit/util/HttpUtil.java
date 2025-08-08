@@ -1,7 +1,7 @@
 package com.taobao.message.kit.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -34,7 +34,7 @@ public class HttpUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("46cef7b0", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         TLog.logv(TAG, "url before:" + str);
@@ -70,7 +70,7 @@ public class HttpUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8635b39c", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (str.endsWith(str2)) {
@@ -126,7 +126,7 @@ public class HttpUtil {
             SSLContext sSLContext = SSLContext.getInstance("TLS");
             sSLContext.init(null, new TrustManager[]{new TrustAllManager()}, null);
             HttpsURLConnection httpsURLConnection = (HttpsURLConnection) url.openConnection();
-            if (TextUtils.equals("true", ConfigUtil.getValue("mpm_business_switch", "ignorehttpscheck", "false"))) {
+            if (StringUtils.equals("true", ConfigUtil.getValue("mpm_business_switch", "ignorehttpscheck", "false"))) {
                 httpsURLConnection.setSSLSocketFactory(sSLContext.getSocketFactory());
             }
             httpsURLConnection.setHostnameVerifier(new HostnameVerifier() { // from class: com.taobao.message.kit.util.HttpUtil.1

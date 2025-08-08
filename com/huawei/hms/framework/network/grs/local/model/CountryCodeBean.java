@@ -3,7 +3,7 @@ package com.huawei.hms.framework.network.grs.local.model;
 import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.EmuiUtil;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.common.SystemPropUtils;
@@ -73,9 +73,9 @@ public class CountryCodeBean {
         this.countryCode = SystemPropUtils.getProperty("get", LOCALE_REGION_COUNTRYSYSTEMPROP, ANDRIOD_SYSTEMPROP, "UNKNOWN");
         String str = TAG;
         Logger.i(str, "countryCode by ro.product.locale.region is: " + this.countryCode);
-        if (TextUtils.isEmpty(this.countryCode) || "UNKNOWN".equals(this.countryCode)) {
+        if (StringUtils.isEmpty(this.countryCode) || "UNKNOWN".equals(this.countryCode)) {
             String property = SystemPropUtils.getProperty("get", LOCALE_COUNTRYSYSTEMPROP, ANDRIOD_SYSTEMPROP, "UNKNOWN");
-            if (!TextUtils.isEmpty(property) && (lastIndexOf = property.lastIndexOf("-")) != -1) {
+            if (!StringUtils.isEmpty(property) && (lastIndexOf = property.lastIndexOf("-")) != -1) {
                 this.countryCode = property.substring(lastIndexOf + 1);
                 String str2 = TAG;
                 Logger.i(str2, "countryCode by ro.product.locale is: " + this.countryCode);
@@ -90,7 +90,7 @@ public class CountryCodeBean {
         this.countryCode = Locale.getDefault().getCountry();
         String str = TAG;
         Logger.i(str, "countryCode by system's region setting is: " + this.countryCode);
-        if (TextUtils.isEmpty(this.countryCode)) {
+        if (StringUtils.isEmpty(this.countryCode)) {
             this.countryCode = "UNKNOWN";
         }
     }

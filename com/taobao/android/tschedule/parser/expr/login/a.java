@@ -1,6 +1,6 @@
 package com.taobao.android.tschedule.parser.expr.login;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jku;
 import tb.kge;
@@ -47,7 +47,7 @@ public class a extends jku {
             int r8 = r8.intValue()
             return r8
         L1c:
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             r1 = -1
             if (r0 == 0) goto L24
             return r1
@@ -128,7 +128,7 @@ public class a extends jku {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("797d7d0d", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@login.")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@login.")) {
             return null;
         }
         return new a(str);

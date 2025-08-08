@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -322,7 +322,7 @@ public class h extends com.taobao.android.dinamicx.widget.recycler.a implements 
                 return;
             }
             fuw.d("RLLoadMore", "HitRLLoadMoreGone");
-            if (i == 6 || i == 4 || (i == 5 && TextUtils.isEmpty(this.p))) {
+            if (i == 6 || i == 4 || (i == 5 && StringUtils.isEmpty(this.p))) {
                 this.i.setVisibility(8);
             } else {
                 this.i.setVisibility(0);
@@ -779,7 +779,7 @@ public class h extends com.taobao.android.dinamicx.widget.recycler.a implements 
         DXWidgetNode c = c(i, true);
         if (c instanceof ac) {
             ac acVar = (ac) c;
-            if (!TextUtils.isEmpty(acVar.r())) {
+            if (!StringUtils.isEmpty(acVar.r())) {
                 o = acVar.r();
             } else {
                 o = acVar.o();

@@ -3,7 +3,7 @@ package com.alipay.mobile.common.logging;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.mobilesdk.socketcraft.monitor.MonitorItemConstants;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -129,7 +129,7 @@ public class MdapLogUploadManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return b.contains(str);
         }
         return false;

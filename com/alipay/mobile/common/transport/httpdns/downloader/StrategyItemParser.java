@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.httpdns.downloader;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
@@ -201,7 +201,7 @@ public class StrategyItemParser {
             if (jSONObject2 != null) {
                 String string = jSONObject2.getString(NwSharedSwitchUtil.KEY_NET_SWITCH_TWO);
                 String string2 = jSONObject2.getString("configVersion");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     DnsUtil.putConfigVersion(string2);
                 }
                 str = string2;
@@ -230,7 +230,7 @@ public class StrategyItemParser {
             httpdnsIP.setTime(j);
             httpdnsIP.setTtd(i);
             String string2 = jSONObject.getString("cname");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 httpdnsIP.setCname(string2);
                 map.put(string, httpdnsIP);
             } else {
@@ -259,7 +259,7 @@ public class StrategyItemParser {
             HttpdnsIPEntry httpdnsIPEntry = new HttpdnsIPEntry(jSONObject.getString(c.IP), HttpDns.IP_TYPE_V4, jSONObject.getIntValue("port"));
             if (DnsUtil.isLogicIP(httpdnsIPEntry.ip)) {
                 arrayList.add(httpdnsIPEntry);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = httpdnsIPEntry.ip;
                 }
             }

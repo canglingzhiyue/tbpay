@@ -11,7 +11,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
@@ -262,11 +262,11 @@ public class NewFpFullViewDialog extends IBiometricValidateNewDialog {
                 }
             });
             String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_TITLE);
-            if (!TextUtils.isEmpty(clientText)) {
+            if (!StringUtils.isEmpty(clientText)) {
                 this.mTips.setText(clientText);
             }
             String clientText2 = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_SWITCH);
-            if (!TextUtils.isEmpty(clientText2)) {
+            if (!StringUtils.isEmpty(clientText2)) {
                 this.rightBtn.setText(clientText2);
                 i2 = 1;
             } else if (i2 == 1) {
@@ -319,7 +319,7 @@ public class NewFpFullViewDialog extends IBiometricValidateNewDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.mTips == null || TextUtils.isEmpty(str)) {
+        } else if (this.mTips == null || StringUtils.isEmpty(str)) {
         } else {
             this.mTips.postDelayed(new Runnable() { // from class: com.alipay.android.phone.seauthenticator.iotauth.fingerprint.NewFpFullViewDialog.4
                 public static volatile transient /* synthetic */ IpChange $ipChange;

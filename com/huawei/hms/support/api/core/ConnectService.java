@@ -1,6 +1,6 @@
 package com.huawei.hms.support.api.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.core.aidl.IMessageEntity;
 import com.huawei.hms.support.api.PendingResultImpl;
 import com.huawei.hms.support.api.ResolvePendingResult;
@@ -111,7 +111,7 @@ public final class ConnectService {
         JosGetNoticeReq josGetNoticeReq = new JosGetNoticeReq();
         josGetNoticeReq.setNoticeType(i);
         josGetNoticeReq.setHmsSdkVersionName(str);
-        if (!TextUtils.isEmpty(apiClient.getCpID())) {
+        if (!StringUtils.isEmpty(apiClient.getCpID())) {
             josGetNoticeReq.setCpID(apiClient.getCpID());
         }
         return new c(apiClient, CoreNaming.GETNOTICE, josGetNoticeReq);

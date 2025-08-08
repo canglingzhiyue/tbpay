@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Display;
 import android.view.KeyCharacterMap;
 import android.view.ViewConfiguration;
@@ -51,7 +51,7 @@ public class d {
             return;
         }
         ogg.a("startPreloadGuang");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ogg.b("page url is empty, cancel preload");
         } else if (oeb.bG() && com.taobao.tao.flexbox.layoutmanager.adapter.a.a().b().a() == null) {
             ogg.b("TBMain is null, cancel preload");

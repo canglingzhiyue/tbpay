@@ -1,7 +1,7 @@
 package com.alibaba.android.bindingx.core.internal;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -215,7 +215,7 @@ public final class w {
         if (ipChange instanceof IpChange) {
             return (Pair) ipChange.ipc$dispatch("d36ea5aa", new Object[]{str, view});
         }
-        if (!TextUtils.isEmpty(str) && (indexOf = str.indexOf(32)) != -1) {
+        if (!StringUtils.isEmpty(str) && (indexOf = str.indexOf(32)) != -1) {
             int i = indexOf;
             while (i < str.length() && str.charAt(i) == ' ') {
                 i++;
@@ -258,7 +258,7 @@ public final class w {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1ec66665", new Object[]{map, str, new Double(d)})).doubleValue();
         }
-        if (map == null || TextUtils.isEmpty(str) || (obj = map.get(str)) == null) {
+        if (map == null || StringUtils.isEmpty(str) || (obj = map.get(str)) == null) {
             return d;
         }
         if (obj instanceof Double) {
@@ -284,7 +284,7 @@ public final class w {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1ec6b911", new Object[]{map, str, new Boolean(z)})).booleanValue();
         }
-        if (map == null || TextUtils.isEmpty(str) || (obj = map.get(str)) == null) {
+        if (map == null || StringUtils.isEmpty(str) || (obj = map.get(str)) == null) {
             return z;
         }
         if (obj instanceof Boolean) {
@@ -304,7 +304,7 @@ public final class w {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("e178e55a", new Object[]{map, str});
         }
-        if (map == null || TextUtils.isEmpty(str)) {
+        if (map == null || StringUtils.isEmpty(str)) {
             return Collections.emptyMap();
         }
         Object obj = map.get(str);

@@ -1,0 +1,95 @@
+{
+  "container": {
+    "data": [
+      {
+        "name": "%s",
+        "containerType": "dinamicx",
+        "version": "%s",
+        "url": "%s",
+        "md5": null,
+        "type": [
+          "dinamicx$ol3_orderlisttitle$0$boughtlist"
+        ]
+      },
+      {
+        "name": "%s",
+        "containerType": "dinamicx",
+        "version": "%s",
+        "url": "%s",
+        "md5": null,
+        "type": [
+          "dinamicx$ol3_orderlisttabs$0$25"
+        ]
+      },
+      {
+        "name": "babel_listRefund",
+        "containerType": "weex2",
+        "version": "0",
+        "url": "https://meta.wapa.taobao.com/app/mtb/refund-list/home?wh_weex=true&weex_mode=dom",
+        "md5": null,
+        "type": [
+          "weex2$babel_listRefund"
+        ]
+      }
+    ]
+  },
+  "data": {
+    "orderList": {
+      "tag": "orderList"
+    },
+    "root": {
+      "tag": "root"
+    },
+    "listtitle": {
+      "tag": "listtitle",
+      "type": "dinamicx$ol3_orderlisttitle$0$boughtlist",
+      "position": "header",
+      "fields": {
+        "actionUrl": "https://meta.m.taobao.com/app/dinamic/tb-logistics/home?wh_weex=true&weex_mode=dom",
+        "isNewSearch": "true",
+        "isSearchDowngrade": "false",
+        "isSearchResult": "false",
+        "navToCart": "false",
+        "orderFilter": "true",
+        "url": "%s",
+        "%s": "我的包裹"
+      }
+    },
+    "listtab": {
+      "tag": "listtab",
+      "type": "dinamicx$ol3_orderlisttabs$0$25",
+      "position": "header",
+      "fields": {
+        "isContainRefund": "true"
+      }
+    },
+    "listRefund": {
+      "tag": "weex2",
+      "type": "weex2$babel_listRefund",
+      "position": "body"
+    }
+  },
+  "linkage": {
+    "common": {
+      "compress": "false"
+    }
+  },
+  "hierarchy": {
+    "root": "orderList",
+    "structure": {
+      "orderList": [
+        "root"
+      ],
+      "root": [
+        "listtitle",
+        "listtab",
+        "listRefund"
+      ]
+    }
+  },
+  "endpoint": {
+    "ultronage": "true",
+    "protocolVersion": "3.0"
+  },
+  "reload": "true"
+}

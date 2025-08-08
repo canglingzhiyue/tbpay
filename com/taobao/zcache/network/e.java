@@ -1,6 +1,6 @@
 package com.taobao.zcache.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.zcache.j;
@@ -80,7 +80,7 @@ public class e extends j {
         }
         try {
             InputStream inputStream = this.b.getInputStream();
-            if (!TextUtils.equals("gzip", a(HttpConstant.CONTENT_ENCODING))) {
+            if (!StringUtils.equals("gzip", a(HttpConstant.CONTENT_ENCODING))) {
                 return inputStream;
             }
             try {

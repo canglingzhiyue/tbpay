@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.vessel.utils.b;
@@ -20,7 +20,7 @@ public class pma {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{str, map});
         }
-        if (TextUtils.isEmpty(str) || map == null || map.isEmpty()) {
+        if (StringUtils.isEmpty(str) || map == null || map.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();

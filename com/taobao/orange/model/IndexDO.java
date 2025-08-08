@@ -1,6 +1,6 @@
 package com.taobao.orange.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.util.OLog;
 import java.io.Serializable;
@@ -62,7 +62,7 @@ public class IndexDO implements a, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2b6d1a5f", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.appKey) || TextUtils.isEmpty(this.appVersion) || TextUtils.isEmpty(this.appIndexVersion) || TextUtils.isEmpty(this.versionIndexVersion) || TextUtils.isEmpty(this.id) || TextUtils.isEmpty(this.cdn) || TextUtils.isEmpty(this.version) || (list = this.mergedNamespaces) == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(this.appKey) || StringUtils.isEmpty(this.appVersion) || StringUtils.isEmpty(this.appIndexVersion) || StringUtils.isEmpty(this.versionIndexVersion) || StringUtils.isEmpty(this.id) || StringUtils.isEmpty(this.cdn) || StringUtils.isEmpty(this.version) || (list = this.mergedNamespaces) == null || list.isEmpty()) {
             OLog.w(TAG, "lack param", new Object[0]);
             return false;
         }

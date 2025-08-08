@@ -3,7 +3,7 @@ package com.taobao.android.msoa;
 import android.app.Activity;
 import android.net.Uri;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alibaba.fastjson.JSONArray;
@@ -79,18 +79,18 @@ public class n {
         JSONObject jSONObject2 = (JSONObject) obj2;
         a(jSONObject, (Map<String, Object>) jSONObject2);
         String string = jSONObject2.getString("bizName");
-        if (TextUtils.isEmpty(string) && (obj = map.get("bizName")) != null) {
+        if (StringUtils.isEmpty(string) && (obj = map.get("bizName")) != null) {
             string = obj.toString();
         }
         if (jSONObject != null) {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = jSONObject.getString("bizName");
             }
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = jSONObject.getString(TBPlayerConst.TBPlayerMethodSwitchPlayerScene_SceneName);
             }
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "null";
         }
         jSONObject2.put("bizName", (Object) string);
@@ -176,7 +176,7 @@ public class n {
         } else {
             str = "";
         }
-        return TextUtils.isEmpty(str) ? "WebView_NULL" : str;
+        return StringUtils.isEmpty(str) ? "WebView_NULL" : str;
     }
 
     private static String b(IWVWebView iWVWebView) {
@@ -185,7 +185,7 @@ public class n {
             return (String) ipChange.ipc$dispatch("31c72633", new Object[]{iWVWebView});
         }
         String url = iWVWebView != null ? iWVWebView.getUrl() : "";
-        return TextUtils.isEmpty(url) ? "NULL" : url;
+        return StringUtils.isEmpty(url) ? "NULL" : url;
     }
 
     private static String a() {

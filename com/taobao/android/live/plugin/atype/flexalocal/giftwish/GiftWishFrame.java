@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.giftwish;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -200,7 +200,7 @@ public class GiftWishFrame extends BaseFrame implements Handler.Callback, ddv {
                     return;
                 }
                 String jSONObject = netResponse.getDataJsonObject().toString();
-                if (TextUtils.isEmpty(jSONObject)) {
+                if (StringUtils.isEmpty(jSONObject)) {
                     return;
                 }
                 try {
@@ -312,7 +312,7 @@ public class GiftWishFrame extends BaseFrame implements Handler.Callback, ddv {
             this.mGiftVoteLevel = parseObject.getIntValue("giftVote");
             this.mGiftGalleryLevel = parseObject.getIntValue("giftGallery");
         }
-        if (TextUtils.isEmpty(this.liveId) || tBLiveDataModel.mVideoInfo.activityTypes == null || tBLiveDataModel.mVideoInfo.activityTypes.size() <= 0 || !this.mEnableShowRightBanner) {
+        if (StringUtils.isEmpty(this.liveId) || tBLiveDataModel.mVideoInfo.activityTypes == null || tBLiveDataModel.mVideoInfo.activityTypes.size() <= 0 || !this.mEnableShowRightBanner) {
             return;
         }
         this.activityTypes = tBLiveDataModel.mVideoInfo.activityTypes;
@@ -325,7 +325,7 @@ public class GiftWishFrame extends BaseFrame implements Handler.Callback, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cc874f30", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.liveId) && (list = this.activityTypes) != null && list.size() > 0) {
+        } else if (!StringUtils.isEmpty(this.liveId) && (list = this.activityTypes) != null && list.size() > 0) {
             ArrayList arrayList = new ArrayList();
             for (String str : this.activityTypes) {
                 if ("giftWish".equals(str) || "giftVote".equals(str) || "giftGallery".equals(str)) {
@@ -514,7 +514,7 @@ public class GiftWishFrame extends BaseFrame implements Handler.Callback, ddv {
             for (int i = 0; i < jSONArray2.size(); i++) {
                 JSONObject jSONObject2 = jSONArray2.getJSONObject(i);
                 if (jSONObject2 != null) {
-                    if (!TextUtils.isEmpty(jSONObject2.getString("secretUserId")) && jSONObject2.getString("secretUserId").equals(this.mSecretUserId)) {
+                    if (!StringUtils.isEmpty(jSONObject2.getString("secretUserId")) && jSONObject2.getString("secretUserId").equals(this.mSecretUserId)) {
                         jSONObject2.put("showBoostValue", (Object) true);
                     } else {
                         jSONObject2.put("showBoostValue", (Object) false);
@@ -553,7 +553,7 @@ public class GiftWishFrame extends BaseFrame implements Handler.Callback, ddv {
             return;
         }
         String string = jSONObject2.getString("templateName");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             q.b(GIFT_WISH_TAG, "onEvent: templateName is null!");
             return;
         }
@@ -584,9 +584,9 @@ public class GiftWishFrame extends BaseFrame implements Handler.Callback, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ffa8c219", new Object[]{this, jSONObject});
-        } else if (jSONObject != null && TextUtils.equals("1", jSONObject.getString("activityStatus")) && this.mGiftVoteFinishStatus) {
+        } else if (jSONObject != null && StringUtils.equals("1", jSONObject.getString("activityStatus")) && this.mGiftVoteFinishStatus) {
             q.b(GIFT_WISH_TAG, "checkGiftVoteDataValid giftVote activityStatus is end");
-        } else if (jSONObject != null && this.mPreGiftVoteObject != null && TextUtils.equals(jSONObject.getString("activityId"), this.mPreGiftVoteObject.getString("activityId")) && TextUtils.equals(this.mPreGiftVoteObject.getString("activityStatus"), "0") && TextUtils.equals(jSONObject.getString("activityStatus"), "1")) {
+        } else if (jSONObject != null && this.mPreGiftVoteObject != null && StringUtils.equals(jSONObject.getString("activityId"), this.mPreGiftVoteObject.getString("activityId")) && StringUtils.equals(this.mPreGiftVoteObject.getString("activityStatus"), "0") && StringUtils.equals(jSONObject.getString("activityStatus"), "1")) {
             Handler handler = this.mGiftActivityEndHandler;
             if (handler != null) {
                 handler.removeMessages(10001);
@@ -597,10 +597,10 @@ public class GiftWishFrame extends BaseFrame implements Handler.Callback, ddv {
             renderGiftWishDxView(mergeGiftActivityDataAndBuildDxView());
             q.b(GIFT_WISH_TAG, "mPreGiftVoteObject giftVote activityStatus change end");
         } else {
-            if (jSONObject != null && TextUtils.equals("0", jSONObject.getString("activityStatus"))) {
+            if (jSONObject != null && StringUtils.equals("0", jSONObject.getString("activityStatus"))) {
                 this.mGiftVoteFinishStatus = false;
             }
-            if (jSONObject != null && this.mPreGiftVoteObject != null && !TextUtils.equals(jSONObject.getString("activityId"), this.mPreGiftVoteObject.getString("activityId"))) {
+            if (jSONObject != null && this.mPreGiftVoteObject != null && !StringUtils.equals(jSONObject.getString("activityId"), this.mPreGiftVoteObject.getString("activityId"))) {
                 this.mGiftVoteFinishStatus = false;
                 this.mPreGiftVoteObject = jSONObject;
                 buildDxView(mergeGiftActivityDataAndBuildDxView());

@@ -2,7 +2,7 @@ package com.taobao.android.ucp.bridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -211,7 +211,7 @@ public class NativeBroadcast {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("90698d5e", new Object[]{str, callback});
-        } else if (TextUtils.isEmpty(str) || callback == null) {
+        } else if (StringUtils.isEmpty(str) || callback == null) {
         } else {
             List<Callback> list = mCacheMap.get(str);
             if (list != null) {
@@ -310,7 +310,7 @@ public class NativeBroadcast {
             return;
         }
         try {
-            JSONObject parseObject = TextUtils.isEmpty(str2) ? null : JSON.parseObject(str2);
+            JSONObject parseObject = StringUtils.isEmpty(str2) ? null : JSON.parseObject(str2);
             Callback buildCppCallback = CppCallback.buildCppCallback(j);
             for (Callback callback : list) {
                 callback.callback(parseObject, buildCppCallback);

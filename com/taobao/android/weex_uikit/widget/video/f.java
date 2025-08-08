@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.widget.video;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -75,7 +75,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c57f2546", new Object[]{uINode, str, jSONObject});
-        } else if (!uINode.hasEvent(str) || (uINode2 = uINode.getInstance()) == null || uINode2.isDestroyed() || TextUtils.isEmpty(str)) {
+        } else if (!uINode.hasEvent(str) || (uINode2 = uINode.getInstance()) == null || uINode2.isDestroyed() || StringUtils.isEmpty(str)) {
         } else {
             uINode2.fireEventOnNode(uINode.getNodeId(), str, jSONObject);
         }
@@ -99,14 +99,14 @@ public class f {
             ipChange.ipc$dispatch("abc20e1d", new Object[]{uINode, str, aVar});
         } else if (!a(uINode)) {
         } else {
-            if (TextUtils.equals(str, "play")) {
+            if (StringUtils.equals(str, "play")) {
                 int b2 = b(uINode);
                 if (b2 > 0) {
                     a(uINode, b2);
                 } else {
                     f(uINode);
                 }
-            } else if (!TextUtils.equals(str, "stop")) {
+            } else if (!StringUtils.equals(str, "stop")) {
             } else {
                 i(uINode);
                 if (aVar.f16244a) {
@@ -122,7 +122,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("82939aea", new Object[]{uINode, str});
-        } else if (!TextUtils.equals(str, "appear") || !c(uINode) || a(uINode)) {
+        } else if (!StringUtils.equals(str, "appear") || !c(uINode) || a(uINode)) {
         } else {
             f(uINode);
         }
@@ -245,7 +245,7 @@ public class f {
             return ((Number) ipChange.ipc$dispatch("134606b2", new Object[]{uINode})).intValue();
         }
         String str = (String) uINode.getAttribute("delayTime");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return com.taobao.android.weex_uikit.util.b.a(str, 0);
         }
         return 0;
@@ -571,7 +571,7 @@ public class f {
             return;
         }
         if (a2) {
-            if (TextUtils.equals(nativeState, "play")) {
+            if (StringUtils.equals(nativeState, "play")) {
                 int b2 = b(uINode);
                 if (b2 > 0) {
                     mUSVideoView.postDelayed(new o() { // from class: com.taobao.android.weex_uikit.widget.video.f.3
@@ -609,7 +609,7 @@ public class f {
         }
         boolean a2 = a(uINode);
         String nativeState = uINode.getNativeState("videostatus");
-        if (j(uINode) || !a2 || !TextUtils.equals(nativeState, "play")) {
+        if (j(uINode) || !a2 || !StringUtils.equals(nativeState, "play")) {
             return;
         }
         f(uINode);

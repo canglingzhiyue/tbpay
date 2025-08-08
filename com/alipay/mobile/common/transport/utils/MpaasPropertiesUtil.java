@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.appinfo.AppInfoUtil;
 import com.alipay.mobile.common.transport.http.HttpContextExtend;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class MpaasPropertiesUtil {
             return (String) ipChange.ipc$dispatch("ad2414bb", new Object[]{context, str});
         }
         String appIdFromMetaData = getAppIdFromMetaData(context);
-        return !TextUtils.isEmpty(appIdFromMetaData) ? appIdFromMetaData : !TextUtils.isEmpty(str) ? str : getProductId(context);
+        return !StringUtils.isEmpty(appIdFromMetaData) ? appIdFromMetaData : !StringUtils.isEmpty(str) ? str : getProductId(context);
     }
 
     public static final String getAppIdFromMetaData(Context context) {
@@ -83,7 +83,7 @@ public class MpaasPropertiesUtil {
         try {
             Object obj = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.get("mobilegw.appid");
             String obj2 = obj != null ? obj.toString() : null;
-            if (TextUtils.isEmpty(obj2)) {
+            if (StringUtils.isEmpty(obj2)) {
                 LogCatUtil.info("MpaasPropertiesUtil", "getAppIdFromMetaData. mobilegw.appid is empty.");
                 b = "";
                 return "";
@@ -107,7 +107,7 @@ public class MpaasPropertiesUtil {
             return (String) ipChange.ipc$dispatch("fe011b67", new Object[]{str, new Boolean(z), context});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (MiscUtils.isDebugger(context)) {
                     LogCatUtil.debug("MpaasPropertiesUtil", "[getAppkey] appKey=" + str + ",externalAppKey=" + str + ",isReqOnline=" + z);
                 }
@@ -139,7 +139,7 @@ public class MpaasPropertiesUtil {
         try {
             Object obj = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.get("appkey");
             String obj2 = obj != null ? obj.toString() : null;
-            if (TextUtils.isEmpty(obj2)) {
+            if (StringUtils.isEmpty(obj2)) {
                 return "";
             }
             LogCatUtil.info("MpaasPropertiesUtil", "getAppKeyFromMetaData. appkey=[" + obj2 + riy.ARRAY_END_STR);

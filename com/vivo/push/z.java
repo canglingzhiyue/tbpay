@@ -1,6 +1,6 @@
 package com.vivo.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public final class z implements k {
@@ -31,7 +31,7 @@ public final class z implements k {
             com.vivo.push.util.u.d("SubscribeImpl", "isAppSubscribe parameter = ".concat(String.valueOf(a2)));
             String a3 = com.vivo.push.c.a.a(com.vivo.push.restructure.a.a().b(), a2);
             com.vivo.push.util.u.d("SubscribeImpl", "isAppSubscribe isSubscribe = ".concat(String.valueOf(a3)));
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 i = 1 ^ (Boolean.parseBoolean(g.f24203a.a(a3).b()) ? 1 : 0);
             }
         } catch (Exception e) {
@@ -54,7 +54,7 @@ public final class z implements k {
                 com.vivo.push.util.u.d("SubscribeImpl", "getRegidByCoreSdk parameter = ".concat(String.valueOf(a2)));
                 String a3 = com.vivo.push.c.a.a(com.vivo.push.restructure.a.a().b(), a2);
                 com.vivo.push.util.u.d("SubscribeImpl", "getRegidByCoreSdk isSubscribe = ".concat(String.valueOf(a3)));
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     str = g.f24203a.a(a3).b();
                 }
             } catch (Exception e) {
@@ -101,11 +101,11 @@ public final class z implements k {
 
     @Override // com.vivo.push.k
     public final String b() {
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             return this.d;
         }
         String d = d();
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             d = this.e.f();
             t.c(new aa(this, d));
         }

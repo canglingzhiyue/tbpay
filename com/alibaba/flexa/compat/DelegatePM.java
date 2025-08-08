@@ -2,7 +2,7 @@ package com.alibaba.flexa.compat;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -24,7 +24,7 @@ public class DelegatePM {
             return (PackageInfo) ipChange.ipc$dispatch("55c32fdc", new Object[]{packageManager, str, new Integer(i)});
         }
         PackageInfo packageInfo = packageManager.getPackageInfo(str, i);
-        if (!TextUtils.isEmpty(sProxyVersionName)) {
+        if (!StringUtils.isEmpty(sProxyVersionName)) {
             packageInfo.versionName = sProxyVersionName;
         }
         return packageInfo;

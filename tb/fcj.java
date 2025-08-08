@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitinstall.j;
 import com.alibaba.android.split.core.splitinstall.m;
 import com.alibaba.android.split.core.splitinstall.o;
@@ -171,11 +171,11 @@ public class fcj implements DetailBusinessDetector {
         } else if (bVar == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(this.c) || (e = eqb.e(bVar)) == null) {
+                if (StringUtils.isEmpty(this.c) || (e = eqb.e(bVar)) == null) {
                     return;
                 }
                 String str = e.degradeUrl;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 e.degradeUrl = a(this.c, str);
@@ -196,7 +196,7 @@ public class fcj implements DetailBusinessDetector {
             Uri.Builder buildUpon = parse2.buildUpon();
             for (String str3 : parse.getQueryParameterNames()) {
                 String queryParameter = parse.getQueryParameter(str3);
-                if (!TextUtils.isEmpty(queryParameter) && TextUtils.isEmpty(parse2.getQueryParameter(queryParameter))) {
+                if (!StringUtils.isEmpty(queryParameter) && StringUtils.isEmpty(parse2.getQueryParameter(queryParameter))) {
                     buildUpon.appendQueryParameter(str3, queryParameter);
                 }
             }

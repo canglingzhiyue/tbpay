@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -22,7 +22,7 @@ public class hus {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 hut.b("ItemInfoUtil", " parseTabFromJson failed. tabJsonInfo string is null");
                 return null;
             }
@@ -111,6 +111,6 @@ public class hus {
 
     public static boolean a(f fVar, f fVar2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9a407d0c", new Object[]{fVar, fVar2})).booleanValue() : fVar != null && fVar2 != null && fVar.a() == fVar2.a() && TextUtils.equals(fVar.b(), fVar2.b()) && fVar.d() == fVar2.d() && fVar.c() == fVar2.c() && TextUtils.equals(fVar.h(), fVar2.h()) && fVar.e() == fVar2.e();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9a407d0c", new Object[]{fVar, fVar2})).booleanValue() : fVar != null && fVar2 != null && fVar.a() == fVar2.a() && StringUtils.equals(fVar.b(), fVar2.b()) && fVar.d() == fVar2.d() && fVar.c() == fVar2.c() && StringUtils.equals(fVar.h(), fVar2.h()) && fVar.e() == fVar2.e();
     }
 }

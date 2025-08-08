@@ -3,7 +3,7 @@ package com.taobao.tbpoplayer;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -47,7 +47,7 @@ public class AccsPopLayerService extends TaoBaseService {
         try {
             com.alibaba.poplayer.utils.c.a("BroadcastTrigger.ACCS.onData: serviceId:{%s},userId:{%s},dataId:{%s}.data：{%s}.", str, str2, str3, new String(bArr));
             final String str4 = new String(bArr);
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 return;
             }
             f.a(new Runnable() { // from class: com.taobao.tbpoplayer.-$$Lambda$AccsPopLayerService$t9Whz8SpVO7UvVmdVFDrhmg7TvE
@@ -69,7 +69,7 @@ public class AccsPopLayerService extends TaoBaseService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
@@ -165,7 +165,7 @@ public class AccsPopLayerService extends TaoBaseService {
                 String string = jSONObject.getString("event");
                 String string2 = jSONObject.getString("param");
                 com.alibaba.poplayer.utils.c.b("triggerEvent", "", "BroadcastTrigger.ACCS.onData.sendAccsCacheData.event:{" + string + "},param:{" + string2 + "}.");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     Intent intent = new Intent("com.alibaba.poplayer.PopLayer.action.POP");
                     intent.putExtra("event", string);
                     intent.putExtra("param", string2);

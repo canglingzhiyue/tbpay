@@ -2,7 +2,7 @@ package com.alipay.android.msp.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
@@ -162,12 +162,12 @@ public class FlybirdUtil {
 
     public static boolean isShowResultPage(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("270e148", new Object[]{str})).booleanValue() : TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_RESULT_TPL) || TextUtils.equals(str, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) || TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("270e148", new Object[]{str})).booleanValue() : StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_RESULT_TPL) || StringUtils.equals(str, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) || StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL);
     }
 
     public static boolean isShowNavBar(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("22b8f56c", new Object[]{str})).booleanValue() : TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_RESULT_TPL) || TextUtils.equals(str, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) || TextUtils.equals(str, "QUICKPAY@cashier-activity-default-flex") || TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL) || TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_SETTING_LABORATORY);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("22b8f56c", new Object[]{str})).booleanValue() : StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_RESULT_TPL) || StringUtils.equals(str, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) || StringUtils.equals(str, "QUICKPAY@cashier-activity-default-flex") || StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL) || StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_SETTING_LABORATORY);
     }
 
     public static boolean isFullScreen(View view) {
@@ -230,7 +230,7 @@ public class FlybirdUtil {
                 }
                 i++;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             DnsCache.saveTradeNo(str2);

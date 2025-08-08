@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.filter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -87,7 +87,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2997b416", new Object[]{obj, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !(obj instanceof Map)) {
+        if (StringUtils.isEmpty(str) || !(obj instanceof Map)) {
             return false;
         }
         return ((Map) obj).containsKey(str);
@@ -99,7 +99,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("d73ba3d0", new Object[]{obj, str});
         }
-        if (!TextUtils.isEmpty(str) && (obj instanceof Map)) {
+        if (!StringUtils.isEmpty(str) && (obj instanceof Map)) {
             Map map = (Map) obj;
             if (map.containsKey(str)) {
                 return map.get(str);
@@ -426,7 +426,7 @@ public class Utils {
         } else if (!(obj instanceof String)) {
             return obj != null;
         } else {
-            isEmpty = TextUtils.isEmpty((String) obj);
+            isEmpty = StringUtils.isEmpty((String) obj);
         }
         return !isEmpty;
     }
@@ -630,7 +630,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("4c5a6845", new Object[]{yVar, str, obj});
         }
-        if (yVar != null && !TextUtils.isEmpty(str) && (yVar instanceof b)) {
+        if (yVar != null && !StringUtils.isEmpty(str) && (yVar instanceof b)) {
             b bVar = (b) yVar;
             Object b2 = bVar.b(str);
             if (b2 != null) {
@@ -1057,7 +1057,7 @@ public class Utils {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("8bb6538e", new Object[]{this, str, obj});
-            } else if (TextUtils.isEmpty(str) || obj == null) {
+            } else if (StringUtils.isEmpty(str) || obj == null) {
             } else {
                 if (this.f20397a == null) {
                     this.f20397a = new HashMap();
@@ -1072,7 +1072,7 @@ public class Utils {
             if (ipChange instanceof IpChange) {
                 return ipChange.ipc$dispatch("6e4e661f", new Object[]{this, str});
             }
-            if (this.f20397a != null && !TextUtils.isEmpty(str)) {
+            if (this.f20397a != null && !StringUtils.isEmpty(str)) {
                 return this.f20397a.get(str);
             }
             return null;

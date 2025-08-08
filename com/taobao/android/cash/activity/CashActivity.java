@@ -11,7 +11,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -170,16 +170,16 @@ public class CashActivity extends AppCompatActivity {
                     intent2.setData(Uri.parse(Uri.decode(str)));
                     startActivityForResult(intent2, 20001);
                     overridePendingTransition(0, 0);
-                } else if (!TextUtils.isEmpty(path) && path.contains("go/openCashier")) {
+                } else if (!StringUtils.isEmpty(path) && path.contains("go/openCashier")) {
                     a(data, this.d);
-                } else if (!TextUtils.isEmpty(path) && path.contains("go/simpleCashier")) {
+                } else if (!StringUtils.isEmpty(path) && path.contains("go/simpleCashier")) {
                     a(data, this.e);
-                } else if (!TextUtils.isEmpty(path) && path.contains("go/startPayment")) {
+                } else if (!StringUtils.isEmpty(path) && path.contains("go/startPayment")) {
                     Intent intent3 = new Intent(this, CustomHalfWXActivity.class);
                     String query = data.getQuery();
                     StringBuilder sb3 = new StringBuilder();
                     sb3.append(this.c);
-                    if (!TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(query)) {
+                    if (!StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(query)) {
                         if (this.d.indexOf("?") >= 0) {
                             sb3.append("&");
                             sb3.append(query);
@@ -236,7 +236,7 @@ public class CashActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PopupWXActivity.class);
         StringBuilder sb = new StringBuilder();
         sb.append(str);
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(encodedQuery)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(encodedQuery)) {
             if (this.d.indexOf("?") >= 0) {
                 sb.append("&");
                 sb.append(encodedQuery);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class rmg {
             ipChange.ipc$dispatch("605ad635", new Object[]{this, obj, str, str2, rlwVar, str3});
         } else if (obj != null && rlwVar != null) {
             String str4 = rlz.a().g(str3).get(str2);
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = str2;
             }
             HashMap<String, Object> hashMap = rlz.a().d(str, str3).get(str4);
@@ -27,7 +27,7 @@ public class rmg {
                 return;
             }
             for (Map.Entry<String, Object> entry : hashMap.entrySet()) {
-                if (TextUtils.isEmpty(String.valueOf(entry.getKey()))) {
+                if (StringUtils.isEmpty(String.valueOf(entry.getKey()))) {
                     return;
                 }
                 entry.getValue();
@@ -41,7 +41,7 @@ public class rmg {
             ipChange.ipc$dispatch("dedfb5c2", new Object[]{this, obj, hashMap, rlwVar});
         } else if (obj != null && rlwVar != null && hashMap != null && hashMap.size() != 0) {
             for (Map.Entry<String, Object> entry : hashMap.entrySet()) {
-                if (TextUtils.isEmpty(String.valueOf(entry.getKey()))) {
+                if (StringUtils.isEmpty(String.valueOf(entry.getKey()))) {
                     return;
                 }
                 entry.getValue();

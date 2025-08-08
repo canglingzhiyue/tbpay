@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.DocumentsContract;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes2.dex */
 class DocumentsContractApi19 {
@@ -16,7 +16,7 @@ class DocumentsContractApi19 {
     }
 
     public static boolean canRead(Context context, Uri uri) {
-        return context.checkCallingOrSelfUriPermission(uri, 1) == 0 && !TextUtils.isEmpty(getRawType(context, uri));
+        return context.checkCallingOrSelfUriPermission(uri, 1) == 0 && !StringUtils.isEmpty(getRawType(context, uri));
     }
 
     public static boolean canWrite(Context context, Uri uri) {
@@ -25,7 +25,7 @@ class DocumentsContractApi19 {
         }
         String rawType = getRawType(context, uri);
         int queryForInt = queryForInt(context, uri, "flags", 0);
-        if (TextUtils.isEmpty(rawType)) {
+        if (StringUtils.isEmpty(rawType)) {
             return false;
         }
         if ((queryForInt & 4) != 0) {
@@ -34,7 +34,7 @@ class DocumentsContractApi19 {
         if ("vnd.android.document/directory".equals(rawType) && (queryForInt & 8) != 0) {
             return true;
         }
-        return !TextUtils.isEmpty(rawType) && (queryForInt & 2) != 0;
+        return !StringUtils.isEmpty(rawType) && (queryForInt & 2) != 0;
     }
 
     private static void closeQuietly(AutoCloseable autoCloseable) {
@@ -96,7 +96,7 @@ class DocumentsContractApi19 {
 
     public static boolean isFile(Context context, Uri uri) {
         String rawType = getRawType(context, uri);
-        return !"vnd.android.document/directory".equals(rawType) && !TextUtils.isEmpty(rawType);
+        return !"vnd.android.document/directory".equals(rawType) && !StringUtils.isEmpty(rawType);
     }
 
     public static boolean isVirtual(Context context, Uri uri) {

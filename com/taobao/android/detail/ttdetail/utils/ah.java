@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -24,7 +24,7 @@ public class ah {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8bb65392", new Object[]{str, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (obj instanceof JSONObject) {
@@ -119,7 +119,7 @@ public class ah {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ad15", new Object[]{str, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         int length = str.length();

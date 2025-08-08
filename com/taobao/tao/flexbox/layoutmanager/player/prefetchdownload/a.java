@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mediaplay.d;
 import com.taobao.tao.flexbox.layoutmanager.player.videodecide.c;
@@ -247,7 +247,7 @@ public class a {
             String str2 = mediaInfoBean.videoResourceStr;
             ogg.a("TNodePlayerPrefetchManager_FSVideoPreDownloader", "播控: " + str2);
             JSONObject jSONObject = null;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     JSONObject jSONObject2 = new JSONObject(str2);
                     try {
@@ -272,7 +272,7 @@ public class a {
                 return;
             }
             List<String> list = this.i;
-            if (list != null && list.size() > 0 && !TextUtils.equals(this.i.get(0), str)) {
+            if (list != null && list.size() > 0 && !StringUtils.equals(this.i.get(0), str)) {
                 this.i.clear();
             }
             final Runnable runnable = new Runnable() { // from class: com.taobao.tao.flexbox.layoutmanager.player.prefetchdownload.a.2
@@ -287,14 +287,14 @@ public class a {
                     }
                     ogg.a("TNodePlayerPrefetchManager_FSVideoPreDownloader", "预下载超时了。取消当前视频，下载一下个");
                     ogh.a("VideoPreDownloaderTimeOut");
-                    if (TextUtils.equals(a.c(a.this), str)) {
+                    if (StringUtils.equals(a.c(a.this), str)) {
                         a aVar = a.this;
                         a.a(aVar, a.d(aVar));
                         a.a(a.this, (String) null);
                         a.b(a.this, null);
                         a.a(a.this, (JSONObject) null);
                         if (a.e(a.this) != null) {
-                            if (a.e(a.this).size() <= 0 || !TextUtils.equals((CharSequence) a.e(a.this).get(0), str)) {
+                            if (a.e(a.this).size() <= 0 || !StringUtils.equals((CharSequence) a.e(a.this).get(0), str)) {
                                 a.e(a.this).add(str);
                             } else {
                                 a.f(a.this).remove(mediaInfoBean);
@@ -339,7 +339,7 @@ public class a {
                         a.h(a.this).a(str);
                         a.f(a.this).remove(mediaInfoBean);
                     }
-                    if (TextUtils.equals(a.c(a.this), str)) {
+                    if (StringUtils.equals(a.c(a.this), str)) {
                         a.a(a.this, (String) null);
                         a.b(a.this, null);
                         a.a(a.this, (JSONObject) null);

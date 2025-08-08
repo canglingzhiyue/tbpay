@@ -3,7 +3,7 @@ package com.taobao.taolive.movehighlight.view;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -143,7 +143,7 @@ public class PassEventViewPagerHighlight extends ViewPager {
                 g b = n.b(this.mFrameContext);
                 String str = "timemoveReturn";
                 if ((b instanceof e) && c.w()) {
-                    if (!TextUtils.isEmpty(((e) b).q)) {
+                    if (!StringUtils.isEmpty(((e) b).q)) {
                         str = "timemoveReturn." + eVar.q;
                     }
                 }

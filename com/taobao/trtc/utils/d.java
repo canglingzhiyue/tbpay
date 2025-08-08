@@ -1,6 +1,6 @@
 package com.taobao.trtc.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.status.NetworkStatusHelper;
 import anet.channel.strategy.HttpDnsAdapter;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class d {
         Iterator<HttpDnsAdapter.HttpDnsOrigin> it = b2.iterator();
         while (it.hasNext()) {
             String originIP = it.next().getOriginIP();
-            if (!TextUtils.isEmpty(originIP)) {
+            if (!StringUtils.isEmpty(originIP)) {
                 Iterator it2 = arrayList.iterator();
                 while (true) {
                     if (!it2.hasNext()) {

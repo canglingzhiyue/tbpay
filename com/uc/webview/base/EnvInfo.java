@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.taobao.orange.OConstant;
@@ -44,7 +44,7 @@ public final class EnvInfo {
         }
 
         private static void a(StringBuilder sb, String str, String str2) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             sb.append("\n  ");
@@ -54,8 +54,8 @@ public final class EnvInfo {
         }
 
         static boolean a(String str) {
-            if (TextUtils.isEmpty(Build.HARDWARE) || !Build.HARDWARE.contains(str)) {
-                return !TextUtils.isEmpty(Build.FINGERPRINT) && Build.FINGERPRINT.contains(str);
+            if (StringUtils.isEmpty(Build.HARDWARE) || !Build.HARDWARE.contains(str)) {
+                return !StringUtils.isEmpty(Build.FINGERPRINT) && Build.FINGERPRINT.contains(str);
             }
             return true;
         }
@@ -79,13 +79,13 @@ public final class EnvInfo {
                 r0.<init>()
                 java.lang.String r1 = "os.arch"
                 java.lang.String r1 = java.lang.System.getProperty(r1)
-                boolean r2 = android.text.TextUtils.isEmpty(r1)
+                boolean r2 = android.text.StringUtils.isEmpty(r1)
                 if (r2 != 0) goto L1e
                 java.lang.String r1 = r1.toLowerCase()
                 r0.add(r1)
             L1e:
                 java.lang.String r1 = android.os.Build.CPU_ABI
-                boolean r2 = android.text.TextUtils.isEmpty(r1)
+                boolean r2 = android.text.StringUtils.isEmpty(r1)
                 if (r2 != 0) goto L2d
                 java.lang.String r1 = r1.toLowerCase()
                 r0.add(r1)
@@ -105,7 +105,7 @@ public final class EnvInfo {
             L44:
                 java.lang.String r2 = "ro.product.cpu.abi"
                 java.lang.String r2 = r7.b(r2)
-                boolean r4 = android.text.TextUtils.isEmpty(r2)
+                boolean r4 = android.text.StringUtils.isEmpty(r2)
                 if (r4 != 0) goto L58
                 java.lang.String r2 = r2.toLowerCase()
                 r0.add(r2)
@@ -113,7 +113,7 @@ public final class EnvInfo {
                 if (r1 != 0) goto L71
                 java.lang.String r2 = "ro.product.cpu.abilist"
                 java.lang.String r2 = r7.b(r2)
-                boolean r4 = android.text.TextUtils.isEmpty(r2)
+                boolean r4 = android.text.StringUtils.isEmpty(r2)
                 if (r4 != 0) goto L71
                 java.lang.String r1 = r2.toLowerCase()
                 java.lang.String r2 = ","
@@ -220,11 +220,11 @@ public final class EnvInfo {
         }
 
         public static String a() {
-            if (TextUtils.isEmpty(f23764a) && EnvInfo.b != null) {
+            if (StringUtils.isEmpty(f23764a) && EnvInfo.b != null) {
                 synchronized (c.class) {
-                    if (TextUtils.isEmpty(f23764a)) {
+                    if (StringUtils.isEmpty(f23764a)) {
                         String c = h.c("uuid");
-                        if (TextUtils.isEmpty(c)) {
+                        if (StringUtils.isEmpty(c)) {
                             c = UUID.randomUUID().toString();
                             h.a a2 = h.a();
                             if (a2 != null) {
@@ -249,16 +249,16 @@ public final class EnvInfo {
         }
 
         public static String a() {
-            if (TextUtils.isEmpty(f23765a)) {
+            if (StringUtils.isEmpty(f23765a)) {
                 synchronized (d.class) {
-                    if (TextUtils.isEmpty(f23765a)) {
+                    if (StringUtils.isEmpty(f23765a)) {
                         String stringValue = GlobalSettings.getStringValue(154);
-                        if (!TextUtils.isEmpty(stringValue)) {
+                        if (!StringUtils.isEmpty(stringValue)) {
                             f23765a = stringValue;
                         } else if (EnvInfo.b != null) {
                             long currentTimeMillis = System.currentTimeMillis();
                             String str = (String) g.b(OConstant.REFLECT_UTDID, "getUtdid", new Class[]{Context.class}, new Object[]{EnvInfo.b});
-                            String str2 = TextUtils.isEmpty(str) ? "null" : str;
+                            String str2 = StringUtils.isEmpty(str) ? "null" : str;
                             Log.d("EnvInfo", "initUtdid:" + str2 + " cost:" + (System.currentTimeMillis() - currentTimeMillis));
                             f23765a = str2;
                         }
@@ -285,7 +285,7 @@ public final class EnvInfo {
     }
 
     private static final int[] a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split("\\.");
@@ -327,7 +327,7 @@ public final class EnvInfo {
 
     public static boolean f() {
         String e2 = e();
-        return !TextUtils.isEmpty(e2) && 1855462465 == e2.hashCode();
+        return !StringUtils.isEmpty(e2) && 1855462465 == e2.hashCode();
     }
 
     public static boolean g() {
@@ -356,7 +356,7 @@ public final class EnvInfo {
                                 String[] a2 = aVar.a();
                                 if (a2 != null && a2.length > 0) {
                                     for (String str3 : a2) {
-                                        if (!TextUtils.isEmpty(str3) && str3.contains("x86")) {
+                                        if (!StringUtils.isEmpty(str3) && str3.contains("x86")) {
                                             z = true;
                                             break;
                                         }
@@ -470,12 +470,12 @@ public final class EnvInfo {
 
     public static String j() {
         String str = Build.MODEL;
-        return !TextUtils.isEmpty(str) ? str.trim().replaceAll("[`|=]", "") : str;
+        return !StringUtils.isEmpty(str) ? str.trim().replaceAll("[`|=]", "") : str;
     }
 
     public static String k() {
         String str = Build.BRAND;
-        return !TextUtils.isEmpty(str) ? str.trim().replaceAll("[`|=]", "") : str;
+        return !StringUtils.isEmpty(str) ? str.trim().replaceAll("[`|=]", "") : str;
     }
 
     public static String l() {
@@ -505,6 +505,6 @@ public final class EnvInfo {
             }
         } catch (Throwable unused) {
         }
-        return !TextUtils.isEmpty(Build.CPU_ABI) && Build.CPU_ABI.contains(ils.ARCH_BIT64);
+        return !StringUtils.isEmpty(Build.CPU_ABI) && Build.CPU_ABI.contains(ils.ARCH_BIT64);
     }
 }

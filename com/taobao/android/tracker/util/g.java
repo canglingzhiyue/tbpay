@@ -1,6 +1,6 @@
 package com.taobao.android.tracker.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jjk;
 import tb.kge;
@@ -63,12 +63,12 @@ public class g {
 
     private static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : (!TextUtils.isEmpty(str) && str.indexOf("click") == -1 && str.indexOf(e.INTERCEPT_CONFIG_POINT_TRACKER_TYPE_JUMP) == -1) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : (!StringUtils.isEmpty(str) && str.indexOf("click") == -1 && str.indexOf(e.INTERCEPT_CONFIG_POINT_TRACKER_TYPE_JUMP) == -1) ? false : true;
     }
 
     private static boolean c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || str.indexOf("exposure") != -1;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || str.indexOf("exposure") != -1;
     }
 
     public static int a(String str) {
@@ -76,7 +76,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 2101;
         }
         return (str.indexOf("click") == -1 || str.indexOf(e.INTERCEPT_CONFIG_POINT_TRACKER_TYPE_JUMP) == -1) ? (str.indexOf("click") == -1 && str.indexOf(e.INTERCEPT_CONFIG_POINT_TRACKER_TYPE_JUMP) != -1) ? 2001 : 2101 : e.EVENTID_PAG_AND_CLICK;

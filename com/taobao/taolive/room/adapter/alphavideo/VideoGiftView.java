@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -351,7 +351,7 @@ public class VideoGiftView extends FrameLayout {
                 return;
             }
             String a2 = al.a(tBLiveGiftEntity.mAnimationMp4);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             final a aVar = null;
@@ -391,7 +391,7 @@ public class VideoGiftView extends FrameLayout {
             return (String) ipChange.ipc$dispatch("208dba66", new Object[]{context});
         }
         String a2 = al.a(context);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "";
         }
         if (a2.endsWith(File.separator)) {

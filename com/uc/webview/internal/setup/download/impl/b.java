@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.download.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.uc.webview.base.Log;
 import java.io.InputStream;
@@ -137,7 +137,7 @@ final class b {
             }
             if (z) {
                 String headerField = a2.getHeaderField(HttpConstant.LOCATION);
-                if (TextUtils.isEmpty(headerField)) {
+                if (StringUtils.isEmpty(headerField)) {
                     Log.d("UpdRequest", "startHead failed, location is empty");
                     if (a2 != null) {
                         try {

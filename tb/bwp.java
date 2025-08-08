@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.evo.internal.bucketing.model.a;
 import com.alibaba.ut.abtest.internal.bucketing.c;
@@ -80,7 +80,7 @@ public class bwp extends bwo {
                         return;
                     }
                     String str3 = n.a(cex.a().r()) + a2.f2926a;
-                    if (TextUtils.equals(str3, cex.a().i().f())) {
+                    if (StringUtils.equals(str3, cex.a().i().f())) {
                         h.f("BetaExperimentFileV5DownloadListener", "【Beta实验数据V5】数据未发现变化，本地版本：" + a2.b + "，本地签名：" + str3);
                         return;
                     }

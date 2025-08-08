@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
 import com.taobao.tao.Globals;
@@ -21,7 +21,7 @@ public class mxk {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (context == null) {

@@ -6,7 +6,7 @@ import android.content.Context;
 import android.taobao.windvane.export.network.Request;
 import android.taobao.windvane.export.network.c;
 import android.taobao.windvane.export.network.f;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -62,9 +62,9 @@ public final class mvc {
             String str3 = str;
             if (!(str3 == null || str3.length() == 0)) {
                 String str4 = str2;
-                if (!(str4 == null || str4.length() == 0) && TextUtils.equals(new URL(str).getHost(), new URL(str2).getHost())) {
+                if (!(str4 == null || str4.length() == 0) && StringUtils.equals(new URL(str).getHost(), new URL(str2).getHost())) {
                     String a2 = tbv.INSTANCE.a(str);
-                    if (!TextUtils.equals(str3, str4) && !TextUtils.equals(a2, str4)) {
+                    if (!StringUtils.equals(str3, str4) && !StringUtils.equals(a2, str4)) {
                         tbw.INSTANCE.a("preRequestFailure", "notHitPreRequest", "没有命中预请求,prefetchUrl：$prefetchUrl", mvc.a(mvc.this), mvc.b(mvc.this).name(), str);
                         return false;
                     }
@@ -264,7 +264,7 @@ public final class mvc {
             ldf.d(TAG, "preloadFirstChunk" + e);
             str = "";
         }
-        if (!TextUtils.equals(str, FAST_PAGE)) {
+        if (!StringUtils.equals(str, FAST_PAGE)) {
             ldf.d(TAG, "不是fast请求头链接，不预请求");
             return;
         }
@@ -285,7 +285,7 @@ public final class mvc {
             ldf.d(TAG, "preRequest uc降级不做任何优化");
         } else if (!ldj.a(IS_CAN_PRE_REQUEST, true)) {
             ldf.d(TAG, "orange开关关闭");
-        } else if (!TextUtils.equals(new URL(pageUrl).getHost(), FAST_PAGE)) {
+        } else if (!StringUtils.equals(new URL(pageUrl).getHost(), FAST_PAGE)) {
             ldf.d(TAG, "不是fast请求头链接，不预请求");
         } else {
             Request a2 = new Request.a().a(pageUrl).b("GET").a(new b(solutionType, pageUrl)).a();

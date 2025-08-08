@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -28,12 +28,12 @@ public class sto extends dlg<l> {
             return null;
         }
         String c = dlhVar.c("userId");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             e.e("HRefreshImageAbility", "userId is empty");
             return null;
         }
         String c2 = dlhVar.c("imageUrl");
-        if (TextUtils.isEmpty(c2)) {
+        if (StringUtils.isEmpty(c2)) {
             e.e("HRefreshImageAbility", "imageUrl is empty");
             return null;
         }

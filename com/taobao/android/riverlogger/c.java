@@ -1,6 +1,6 @@
 package com.taobao.android.riverlogger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.LogLevel;
@@ -86,7 +86,7 @@ public class c implements f {
             ipChange.ipc$dispatch("62f250d9", new Object[]{this, dVar});
         } else if (dVar.f14902a.value > this.d.value && !com.taobao.android.riverlogger.internal.b.a()) {
         } else {
-            if (this.f14900a && !TextUtils.isEmpty(dVar.e)) {
+            if (this.f14900a && !StringUtils.isEmpty(dVar.e)) {
                 TTraceLog.event(b(dVar.f14902a), dVar.c, dVar.d, dVar.b, dVar.b, dVar.h, dVar.e, dVar.f, dVar.g, 0, com.taobao.android.riverlogger.inspector.g.RVLModuleName, dVar.i);
             } else if (this.b) {
                 int i = AnonymousClass1.f14901a[dVar.f14902a.ordinal()];

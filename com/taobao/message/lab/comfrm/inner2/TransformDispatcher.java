@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.lab.comfrm.core.Action;
@@ -102,7 +102,7 @@ public class TransformDispatcher implements Transformer {
             if (ipChange instanceof IpChange) {
                 return (T) ipChange.ipc$dispatch("3db65f23", new Object[]{this, str, cls, t});
             }
-            if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 this.dependecy.readPropInstanceKeySet.add(new Pair<>(this.cutTransformer.instance, str));
                 return (T) this.dist.getProp(this.cutTransformer.instance, str, cls, t);
             }
@@ -116,7 +116,7 @@ public class TransformDispatcher implements Transformer {
             if (ipChange instanceof IpChange) {
                 return (T) ipChange.ipc$dispatch("cfda46f0", new Object[]{this, str, cls, t});
             }
-            if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 this.dependecy.readOriginDataInstanceKeySet.add(new Pair<>(this.cutTransformer.instance, str));
                 return (T) this.dist.getOriginData(this.cutTransformer.instance, str, cls, t);
             }
@@ -130,7 +130,7 @@ public class TransformDispatcher implements Transformer {
             if (ipChange instanceof IpChange) {
                 return (T) ipChange.ipc$dispatch("38672df6", new Object[]{this, str, cls, t});
             }
-            if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 this.dependecy.readRuntimeDataInstanceKeySet.add(new Pair<>(this.cutTransformer.instance, str));
                 return (T) this.dist.getRuntimeData(this.cutTransformer.instance, str, cls, t);
             }
@@ -146,7 +146,7 @@ public class TransformDispatcher implements Transformer {
             }
             if (!this.visitJs) {
                 throw new IllegalStateException("visitJsRuntimeData|" + this.cutTransformer.type + "|key|" + str);
-            } else if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            } else if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 this.dependecy.readJsRuntimeDataInstanceKeySet.add(new Pair<>(this.cutTransformer.instance, str));
                 return (T) this.dist.getRuntimeData(this.cutTransformer.instance, str, cls, t);
             } else {
@@ -222,7 +222,7 @@ public class TransformDispatcher implements Transformer {
             if (ipChange instanceof IpChange) {
                 return (SharedState) ipChange.ipc$dispatch("91db0675", new Object[]{this, map});
             }
-            if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
                     this.dependecy.writeRuntimeDataInstanceKeyMap.put(new Pair<>(this.cutTransformer.instance, entry.getKey()), entry.getValue());
                 }
@@ -299,7 +299,7 @@ public class TransformDispatcher implements Transformer {
             if (ipChange instanceof IpChange) {
                 return (DeltaItem) ipChange.ipc$dispatch("8da067fe", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 return this.dist.getOriginalDiff(this.cutTransformer.instance, str);
             }
             return this.dist.getOriginalDiff(str);
@@ -311,7 +311,7 @@ public class TransformDispatcher implements Transformer {
             if (ipChange instanceof IpChange) {
                 return (DeltaItem) ipChange.ipc$dispatch("52033203", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 return this.dist.getRuntimeDiff(this.cutTransformer.instance, str);
             }
             return this.dist.getRuntimeDiff(str);
@@ -323,7 +323,7 @@ public class TransformDispatcher implements Transformer {
             if (ipChange instanceof IpChange) {
                 return (Diff) ipChange.ipc$dispatch("de71bd35", new Object[]{this, map});
             }
-            if (!TextUtils.isEmpty(this.cutTransformer.instance)) {
+            if (!StringUtils.isEmpty(this.cutTransformer.instance)) {
                 return new DiffProxy(this.dist.updateRuntimeDiff(this.cutTransformer.instance, map), this.cutTransformer);
             }
             return new DiffProxy(this.dist.updateRuntimeDiff(map), this.cutTransformer);

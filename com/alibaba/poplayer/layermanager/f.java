@@ -3,7 +3,7 @@ package com.alibaba.poplayer.layermanager;
 import android.app.Activity;
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Window;
 import android.widget.LinearLayout;
 import com.alibaba.poplayer.PopLayer;
@@ -319,7 +319,7 @@ public class f {
             return;
         }
         String d = InternalTriggerController.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             this.f = this.d.a(d);
         }
         if (this.g.isEmpty()) {
@@ -509,7 +509,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (h) ipChange.ipc$dispatch("ede3952b", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str2) && (c2 = c(str)) != null && (bVar = c2.get(b(str2))) != null) {
+        if (!StringUtils.isEmpty(str2) && (c2 = c(str)) != null && (bVar = c2.get(b(str2))) != null) {
             return (h) bVar;
         }
         return null;
@@ -520,7 +520,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("e68dc5e9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (this.h.containsKey(str)) {

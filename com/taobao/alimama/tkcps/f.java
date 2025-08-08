@@ -1,6 +1,6 @@
 package com.taobao.alimama.tkcps;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.muniontaobaosdk.util.TaoLog;
 import com.taobao.orange.OrangeConfig;
@@ -59,7 +59,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b.put("e", new a(str, com.taobao.alimama.services.a.d().b().b()));
             TaoLog.Logi("AlimamaSdk", "update global e : " + str);
@@ -96,7 +96,7 @@ public class f {
         long j = 86400;
         String config = OrangeConfig.getInstance().getConfig("alimama_ad", "taoke_config", "");
         try {
-            JSONObject jSONObject = TextUtils.isEmpty(config) ? null : new JSONObject(config);
+            JSONObject jSONObject = StringUtils.isEmpty(config) ? null : new JSONObject(config);
             if (jSONObject != null) {
                 j = jSONObject.optLong("timeout", 86400L);
             }

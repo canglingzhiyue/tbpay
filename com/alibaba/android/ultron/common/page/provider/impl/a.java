@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.common.page.provider.impl;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.LinearLayout;
 import com.alibaba.android.ultron.common.page.e;
 import com.alibaba.android.ultron.ext.event.e;
@@ -59,7 +59,7 @@ public abstract class a implements com.alibaba.android.ultron.common.page.provid
             return;
         }
         this.c = str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "ultroncommonpage";
         }
         UltronInstanceConfig c = new UltronInstanceConfig().a(true).a(str).c(false);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.taobao.calendar.bridge.model.ScheduleDTOModule;
@@ -41,13 +41,13 @@ public class kfn {
             String string6 = jSONObject.getString("link");
             String string7 = jSONObject.getString(MspFlybirdDefine.FLYBIRD_DIALOG_SUB_TITLE);
             String string8 = jSONObject.getString("repeatDays");
-            if (!TextUtils.isEmpty(string4) && !TextUtils.isEmpty(string5)) {
+            if (!StringUtils.isEmpty(string4) && !StringUtils.isEmpty(string5)) {
                 ScheduleDTOModule scheduleDTOModule = new ScheduleDTOModule();
                 scheduleDTOModule.setBizId(string);
                 scheduleDTOModule.setOutId(string2);
                 scheduleDTOModule.setTitle(string3);
                 scheduleDTOModule.setSubTitle(string7);
-                if (!TextUtils.isEmpty(string8)) {
+                if (!StringUtils.isEmpty(string8)) {
                     try {
                         i = Integer.parseInt(string8);
                     } catch (Exception unused) {
@@ -55,10 +55,10 @@ public class kfn {
                     }
                     scheduleDTOModule.setRepeatDays(i);
                 }
-                if (!TextUtils.isEmpty(string4)) {
+                if (!StringUtils.isEmpty(string4)) {
                     scheduleDTOModule.setStartTime(string4);
                 }
-                if (!TextUtils.isEmpty(string5)) {
+                if (!StringUtils.isEmpty(string5)) {
                     scheduleDTOModule.setEndTime(string5);
                 }
                 scheduleDTOModule.setLink(string6);
@@ -70,7 +70,7 @@ public class kfn {
     }
 
     public static boolean a(ScheduleDTOModule scheduleDTOModule) {
-        return scheduleDTOModule != null && !TextUtils.isEmpty(scheduleDTOModule.getBizId()) && !TextUtils.isEmpty(scheduleDTOModule.getOutId()) && !TextUtils.isEmpty(scheduleDTOModule.getLink());
+        return scheduleDTOModule != null && !StringUtils.isEmpty(scheduleDTOModule.getBizId()) && !StringUtils.isEmpty(scheduleDTOModule.getOutId()) && !StringUtils.isEmpty(scheduleDTOModule.getLink());
     }
 
     public static boolean b(ScheduleDTOModule scheduleDTOModule) {

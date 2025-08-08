@@ -2,7 +2,7 @@ package com.taobao.android.tab2liveroom.liveroom;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -146,7 +146,7 @@ public abstract class c extends p {
         }
         ogg.c(a.TAG, "createMediaPlayer");
         h hVar = new h();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hVar.f21934a = str;
         } else {
             hVar.b = r.a(mediaData, null);

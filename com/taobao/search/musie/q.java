@@ -2,7 +2,7 @@ package com.taobao.search.musie;
 
 import android.app.Activity;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -470,7 +470,7 @@ public class q extends com.taobao.android.xsearchplugin.muise.o implements Gestu
             if (obj instanceof JSONObject) {
                 JSONObject jSONObject = (JSONObject) obj;
                 jSONObject.put("pageName", (Object) currentPageName);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     jSONObject.put("spm", (Object) str);
                 }
                 ResultMainInfoBean mainInfo = baseSearchResult.getMainInfo();
@@ -785,7 +785,7 @@ public class q extends com.taobao.android.xsearchplugin.muise.o implements Gestu
         } else if (jSONObject != null && (a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "keys")) != null) {
             for (int i = 0; i < a2.size(); i++) {
                 String string = a2.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     w().clearParam(string);
                 }
             }

@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public class lsb extends dlg<l> {
         }
         if (dlhVar != null && dllVar != null) {
             String c = dlhVar.c("subscribeType");
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 ldf.d("HRemindSubscribeAbility", "subscribeType is empty");
                 return null;
             }
@@ -91,13 +91,13 @@ public class lsb extends dlg<l> {
                 String string = a2.getString("topicId");
                 String string2 = a2.getString("activityType");
                 String string3 = a2.getString("subFrom");
-                if (TextUtils.equals(c, WVSubscribePlugin.ACTION_QUERY_SUBSCRIBE)) {
+                if (StringUtils.equals(c, WVSubscribePlugin.ACTION_QUERY_SUBSCRIBE)) {
                     ldf.d("HRemindSubscribeAbility", "start query subscribe");
                     c(string, string2, string3, dllVar);
-                } else if (TextUtils.equals(c, WVSubscribePlugin.ACTION_CANCEL_SUBSCRIBE)) {
+                } else if (StringUtils.equals(c, WVSubscribePlugin.ACTION_CANCEL_SUBSCRIBE)) {
                     ldf.d("HRemindSubscribeAbility", "start cancel subscribe");
                     b(string, string2, string3, dllVar);
-                } else if (TextUtils.equals(c, WVSubscribePlugin.ACTION_DO_SUBSCRIBE)) {
+                } else if (StringUtils.equals(c, WVSubscribePlugin.ACTION_DO_SUBSCRIBE)) {
                     ldf.d("HRemindSubscribeAbility", "start do subscribe");
                     a(string, string2, string3, dllVar);
                 }
@@ -359,7 +359,7 @@ public class lsb extends dlg<l> {
             return;
         }
         String status = subScribeTopicList.getStatus();
-        if (TextUtils.equals(status, "1")) {
+        if (StringUtils.equals(status, "1")) {
             dllVar.callback("subscribed", new dla());
         } else {
             dllVar.callback("unsubscribe", new dla());

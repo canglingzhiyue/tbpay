@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.MenuItemCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -181,9 +181,9 @@ public class BaseContainerFragment extends Fragment implements TNodeView.c, ab.c
             ipChange.ipc$dispatch("166a2080", new Object[]{this, context, str, new Integer(i), new Integer(i2)});
         } else if (this.tnodeViewInited) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Uri parse = Uri.parse(str);
-                if (TextUtils.isEmpty(parse.getQueryParameter(ASK_CONST.KEY_TNODE_TIME))) {
+                if (StringUtils.isEmpty(parse.getQueryParameter(ASK_CONST.KEY_TNODE_TIME))) {
                     str = parse.buildUpon().appendQueryParameter(ASK_CONST.KEY_TNODE_TIME, String.valueOf(System.nanoTime())).build().toString();
                 }
             }
@@ -470,7 +470,7 @@ public class BaseContainerFragment extends Fragment implements TNodeView.c, ab.c
             } else {
                 String str = bVar.b;
                 String str2 = bVar.c;
-                if (!TextUtils.isEmpty(str) && str.contains("分享")) {
+                if (!StringUtils.isEmpty(str) && str.contains("分享")) {
                     StringBuilder sb = new StringBuilder();
                     try {
                         sb.append(getString(R.string.uik_icon_share_light));
@@ -480,7 +480,7 @@ public class BaseContainerFragment extends Fragment implements TNodeView.c, ab.c
                         sb.append(str);
                     }
                     add = menu.add(sb.toString());
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         if (RVStartParams.TRANSPARENT_TITLE_ALWAYS.equals(str2)) {
                             MenuItemCompat.setShowAsAction(add, 2);
                         }
@@ -489,19 +489,19 @@ public class BaseContainerFragment extends Fragment implements TNodeView.c, ab.c
                     }
                 } else {
                     StringBuilder sb2 = new StringBuilder();
-                    if (!TextUtils.isEmpty(bVar.f20442a) && bVar.f20442a.startsWith("@icon-")) {
+                    if (!StringUtils.isEmpty(bVar.f20442a) && bVar.f20442a.startsWith("@icon-")) {
                         int d = ohd.d(getContext(), bVar.f20442a);
                         String string = d != 0 ? getString(d) : "";
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             sb2.append((CharSequence) string);
                             sb2.append(":");
                         }
                     }
-                    if (!TextUtils.isEmpty(bVar.b)) {
+                    if (!StringUtils.isEmpty(bVar.b)) {
                         sb2.append(bVar.b);
                     }
                     add = menu.add(sb2.toString());
-                    if (!TextUtils.isEmpty(str2) && RVStartParams.TRANSPARENT_TITLE_ALWAYS.equals(str2)) {
+                    if (!StringUtils.isEmpty(str2) && RVStartParams.TRANSPARENT_TITLE_ALWAYS.equals(str2)) {
                         MenuItemCompat.setShowAsAction(add, 2);
                     }
                 }

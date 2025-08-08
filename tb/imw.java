@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -73,13 +73,13 @@ public class imw extends imv<JsonRpcRequest, JsonRpcResponse> {
     @Override // tb.imv
     public boolean a(JsonRpcRequest jsonRpcRequest, WebSocket webSocket) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8be50d4d", new Object[]{this, jsonRpcRequest, webSocket})).booleanValue() : !TextUtils.isEmpty(jsonRpcRequest.getMethod());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8be50d4d", new Object[]{this, jsonRpcRequest, webSocket})).booleanValue() : !StringUtils.isEmpty(jsonRpcRequest.getMethod());
     }
 
     @Override // tb.imv
     public boolean a(JsonRpcResponse jsonRpcResponse) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("271d859d", new Object[]{this, jsonRpcResponse})).booleanValue() : !TextUtils.isEmpty(jsonRpcResponse.getId());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("271d859d", new Object[]{this, jsonRpcResponse})).booleanValue() : !StringUtils.isEmpty(jsonRpcResponse.getId());
     }
 
     @Override // tb.imv
@@ -97,7 +97,7 @@ public class imw extends imv<JsonRpcRequest, JsonRpcResponse> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a4dc1865", new Object[]{this, jsonRpcRequest, obj, webSocket});
-        } else if (obj == null || TextUtils.isEmpty(jsonRpcRequest.getId())) {
+        } else if (obj == null || StringUtils.isEmpty(jsonRpcRequest.getId())) {
         } else {
             a(webSocket, jsonRpcRequest.getId(), obj);
         }

@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.util;
 
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.adapter.MUSImageQuality;
 import com.taobao.android.weex_framework.adapter.d;
@@ -27,7 +27,7 @@ public final class an {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c6fb01ee", new Object[]{str, new Integer(i), new Integer(i2), new Float(f)});
-        } else if (str == null || TextUtils.isEmpty(str)) {
+        } else if (str == null || StringUtils.isEmpty(str)) {
         } else {
             com.taobao.android.weex_framework.l a2 = com.taobao.android.weex_framework.l.a();
             kotlin.jvm.internal.q.a((Object) a2, "MUSDKManager.getInstance()");

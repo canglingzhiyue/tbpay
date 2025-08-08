@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.trade.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -141,7 +141,7 @@ public class f extends d {
             return false;
         }
         for (String str : jSONObject.keySet()) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             Object obj = jSONObject.get(str);

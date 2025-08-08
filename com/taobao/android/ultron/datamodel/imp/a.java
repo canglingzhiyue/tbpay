@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class a {
             F = bVar.F();
         } catch (Exception e) {
             UnifyLog.a("Ultron-sdk", TAG, "parseComponents exception", e.getMessage());
-            bga.a.a(TextUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "DMComponentUtils.createDMComponent", e);
+            bga.a.a(StringUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "DMComponentUtils.createDMComponent", e);
         }
         if (F != null) {
             z = i.a(new BigInteger(F), i.FEATURE_TAG_ID);
@@ -79,7 +79,7 @@ public class a {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && (value instanceof JSONArray)) {
+            if (!StringUtils.isEmpty(key) && (value instanceof JSONArray)) {
                 JSONArray jSONArray = (JSONArray) value;
                 ArrayList arrayList = new ArrayList(jSONArray.size());
                 Iterator<Object> it = jSONArray.iterator();
@@ -108,7 +108,7 @@ public class a {
         JSONObject jSONObject2 = jSONObject.getJSONObject("fields");
         String string2 = jSONObject2 == null ? "" : jSONObject2.getString("nextRenderRoot");
         c t = bVar.t();
-        if (!TextUtils.isEmpty(string2) && a(t)) {
+        if (!StringUtils.isEmpty(string2) && a(t)) {
             list = a(bVar, string2);
         }
         return new DMEvent(string, jSONObject2, list, jSONObject.getIntValue("option"));
@@ -140,7 +140,7 @@ public class a {
             return (List) ipChange.ipc$dispatch("7417bf7b", new Object[]{bVar, str, dMComponent});
         }
         ExtendBlock extendBlock = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
@@ -159,7 +159,7 @@ public class a {
                 dMComponent2 = a(bVar, jSONObject, str);
             } catch (Throwable th) {
                 UnifyLog.a(bVar.h(), TAG, "createDMComponent error", th.getMessage());
-                bga.a.a(TextUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "DMComponentUtils.resolve", th);
+                bga.a.a(StringUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "DMComponentUtils.resolve", th);
             }
         } else {
             dMComponent2.getChildren().clear();

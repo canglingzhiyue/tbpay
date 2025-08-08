@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.TextureView;
 import android.view.View;
@@ -345,9 +345,9 @@ public class soi {
             i2 = a2.a();
         } else {
             try {
-                int parseInt = !TextUtils.isEmpty(uri.getQueryParameter("videoHeight")) ? Integer.parseInt(uri.getQueryParameter("videoHeight")) : 0;
+                int parseInt = !StringUtils.isEmpty(uri.getQueryParameter("videoHeight")) ? Integer.parseInt(uri.getQueryParameter("videoHeight")) : 0;
                 try {
-                    if (!TextUtils.isEmpty(uri.getQueryParameter("videoWidth"))) {
+                    if (!StringUtils.isEmpty(uri.getQueryParameter("videoWidth"))) {
                         i2 = Integer.parseInt(uri.getQueryParameter("videoWidth"));
                     }
                 } catch (Exception unused) {

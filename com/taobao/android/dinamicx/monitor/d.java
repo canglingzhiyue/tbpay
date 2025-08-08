@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DinamicXEngine;
@@ -86,7 +86,7 @@ public class d {
         } else if (!c()) {
         } else {
             String a2 = dinamicXEngine.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             synchronized (f11898a) {
@@ -105,7 +105,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (!c() || TextUtils.isEmpty(str)) {
+        } else if (!c() || StringUtils.isEmpty(str)) {
         } else {
             synchronized (f11898a) {
                 int[] f = f(str);
@@ -122,7 +122,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (!c() || TextUtils.isEmpty(str)) {
+        } else if (!c() || StringUtils.isEmpty(str)) {
         } else {
             synchronized (f11898a) {
                 int[] f = f(str);
@@ -139,7 +139,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{str});
-        } else if (!c() || TextUtils.isEmpty(str)) {
+        } else if (!c() || StringUtils.isEmpty(str)) {
         } else {
             synchronized (f11898a) {
                 int[] f = f(str);
@@ -165,7 +165,7 @@ public class d {
             for (Map.Entry<String, List<WeakReference<DinamicXEngine>>> entry : f11898a.entrySet()) {
                 String key = entry.getKey();
                 String d2 = d(key);
-                if (!TextUtils.isEmpty(d2)) {
+                if (!StringUtils.isEmpty(d2)) {
                     hashMap.put(e(key), d2);
                 }
             }
@@ -236,7 +236,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         List<WeakReference<DinamicXEngine>> g = g(str);
@@ -264,7 +264,7 @@ public class d {
             return (Map) ipChange.ipc$dispatch("913cde0", new Object[0]);
         }
         String string = c.getString(LOCAL_CACHE_DATA_KEY, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {

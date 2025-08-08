@@ -3,7 +3,7 @@ package com.taobao.tbpoplayer.view;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.factory.view.base.PopLayerBaseView;
@@ -72,7 +72,7 @@ public class PopLayerWVPlugin extends e {
                         try {
                             str6 = parseObject.getString("userResult");
                             try {
-                                if (!TextUtils.isEmpty(string)) {
+                                if (!StringUtils.isEmpty(string)) {
                                     str7 = string;
                                 }
                             } catch (Throwable th2) {
@@ -115,10 +115,10 @@ public class PopLayerWVPlugin extends e {
                     return true;
                 }
                 try {
-                    if (TextUtils.isEmpty(str4)) {
+                    if (StringUtils.isEmpty(str4)) {
                         str4 = null;
                     }
-                    if (TextUtils.isEmpty(str5)) {
+                    if (StringUtils.isEmpty(str5)) {
                         str5 = null;
                     }
                     str3 = parseObject.getString("contentId");
@@ -299,7 +299,7 @@ public class PopLayerWVPlugin extends e {
                     if (wVCallBackContext == null) {
                         return;
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         wVCallBackContext.success();
                     } else {
                         wVCallBackContext.success(str);
@@ -339,7 +339,7 @@ public class PopLayerWVPlugin extends e {
                     if (wVCallBackContext == null) {
                         return;
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         wVCallBackContext.error();
                     } else {
                         wVCallBackContext.error(str);

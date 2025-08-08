@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -502,14 +502,14 @@ public class NavPreRequestManager {
         String str = new fis().a(com.taobao.tao.navigation.a.b()).c;
         JSONObject jSONObject = new JSONObject();
         Map<String, String> a2 = fkw.a(fjy.a(intent.getData()), fkt.GUIDE_PRELOAD_PARAMS_BLACKLIST, fkt.DEFAULT_GUIDE_PRELOAD_PARAMS_BLACKLIST);
-        if (!TextUtils.isEmpty(str) && !"0".equals(str)) {
+        if (!StringUtils.isEmpty(str) && !"0".equals(str)) {
             a2.put(fkw.V, str);
         }
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("queryParams", (Object) a2);
         jSONObject.put("bizParams", (Object) jSONObject2);
         String a3 = fjy.a(intent);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             fjt.a(fjt.TAG_RENDER, "nav阶段预请求构建id为空，直接返回");
             return null;
         }

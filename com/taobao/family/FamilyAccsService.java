@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.TaoBaseService;
@@ -125,7 +125,7 @@ public class FamilyAccsService extends TaoBaseService {
             e.printStackTrace();
             str4 = null;
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -216,7 +216,7 @@ public class FamilyAccsService extends TaoBaseService {
             return;
         }
         final String optString = optJSONObject.optString("token");
-        if (TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString)) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -272,7 +272,7 @@ public class FamilyAccsService extends TaoBaseService {
         String str3 = null;
         if (activity.getClass().getSimpleName().equals("BrowserActivity")) {
             str3 = intent.getDataString();
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 try {
                     str3 = intent.getStringExtra("myBrowserUrl");
                 } catch (Exception e) {
@@ -283,7 +283,7 @@ public class FamilyAccsService extends TaoBaseService {
         if (activity.getClass().getSimpleName().equals("WXActivity")) {
             str3 = intent.getStringExtra(riu.e);
         }
-        return TextUtils.isEmpty(str3) || (b = b(str3)) == null || b.size() == 0 || (str2 = b.get("token")) == null || !str2.equals(str);
+        return StringUtils.isEmpty(str3) || (b = b(str3)) == null || b.size() == 0 || (str2 = b.get("token")) == null || !str2.equals(str);
     }
 
     private Map<String, String> b(String str) {
@@ -293,7 +293,7 @@ public class FamilyAccsService extends TaoBaseService {
             return (Map) ipChange.ipc$dispatch("d2e5f268", new Object[]{this, str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         try {
@@ -323,11 +323,11 @@ public class FamilyAccsService extends TaoBaseService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Intent intent = new Intent("com.alibaba.poplayer.PopLayer.action.POP");
             intent.putExtra("event", str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 intent.putExtra("param", str2);
             }
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent);

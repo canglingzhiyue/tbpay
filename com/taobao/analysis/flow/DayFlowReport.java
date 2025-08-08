@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.util.HttpUrl;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -233,7 +233,7 @@ public class DayFlowReport {
             ipChange.ipc$dispatch("992f5fac", new Object[]{this, str, new Boolean(z), str2, new Long(j), new Long(j2)});
         } else if (j == 0 && j2 == 0) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "other";
             }
             a(false);

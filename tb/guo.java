@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.job.core.task.a;
@@ -84,7 +84,7 @@ public class guo extends a<String, Void> {
         if (!"1".equals(config)) {
             return;
         }
-        if (!TextUtils.isEmpty(config2) && config2.contains(getId())) {
+        if (!StringUtils.isEmpty(config2) && config2.contains(getId())) {
             return;
         }
         gvc.a(LauncherRuntime.g, getId(), th);

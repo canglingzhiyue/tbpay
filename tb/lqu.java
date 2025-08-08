@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class lqu extends fuf {
             return null;
         }
         String obj = objArr[0] == null ? null : objArr[0].toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             c.a("FetchIconLine ", "itemBizCode is empty");
             return null;
         }
@@ -61,7 +61,7 @@ public class lqu extends fuf {
                     if (it2.hasNext()) {
                         String next2 = it2.next();
                         JSONObject jSONObject3 = jSONObject.getJSONObject(next2);
-                        if (jSONObject3 != null && TextUtils.equals(obj, jSONObject3.getString("itemBizCode"))) {
+                        if (jSONObject3 != null && StringUtils.equals(obj, jSONObject3.getString("itemBizCode"))) {
                             i2 = a(next2);
                             break;
                         }
@@ -89,7 +89,7 @@ public class lqu extends fuf {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         try {

@@ -1,7 +1,7 @@
 package com.taobao.themis.open.packages.parser;
 
 import android.taobao.windvane.jsbridge.api.WVFile;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVConstants;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.open.resource.b;
@@ -95,7 +95,7 @@ public class PackageParseUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c2205eb7", new Object[]{parseContext, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (parseContext.ignorePatterns != null) {
@@ -105,7 +105,7 @@ public class PackageParseUtils {
                 }
             }
         }
-        return TextUtils.equals(str, "CERT.json") || TextUtils.equals(str, "SIGN.json") || str.startsWith(RVConstants.PKG_EXT_PREFIX) || str.startsWith(RVConstants.SUB_PACKAGE_DIR_PREFIX) || str.contains("ios") || str.contains("hpmfile.json");
+        return StringUtils.equals(str, "CERT.json") || StringUtils.equals(str, "SIGN.json") || str.startsWith(RVConstants.PKG_EXT_PREFIX) || str.startsWith(RVConstants.SUB_PACKAGE_DIR_PREFIX) || str.contains("ios") || str.contains("hpmfile.json");
     }
 
     public static void fastReadTarIntoMemory(Map<String, c> map, String str, ParseContext parseContext) throws IOException {
@@ -126,7 +126,7 @@ public class PackageParseUtils {
                         tod a4 = toeVar.a();
                         if (a4 != null) {
                             String a5 = a4.a();
-                            if (!a4.c() && !TextUtils.isEmpty(a5) && !inBlackList(parseContext, a5)) {
+                            if (!a4.c() && !StringUtils.isEmpty(a5) && !inBlackList(parseContext, a5)) {
                                 j jVar = new j();
                                 while (true) {
                                     int a6 = toeVar.a(a3);
@@ -189,7 +189,7 @@ public class PackageParseUtils {
                     return;
                 }
                 String a4 = a3.a();
-                if (!a3.c() && !TextUtils.isEmpty(a4) && !inBlackList(parseContext, a4)) {
+                if (!a3.c() && !StringUtils.isEmpty(a4) && !inBlackList(parseContext, a4)) {
                     j jVar = new j();
                     while (true) {
                         int read = togVar.read(a2);

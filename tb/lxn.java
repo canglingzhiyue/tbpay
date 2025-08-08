@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.h;
@@ -130,7 +130,7 @@ public class lxn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f2bf4cf4", new Object[]{str, str2, jSONObject});
-        } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("ext")) == null || !TextUtils.equals(jSONObject2.getString("sectionType"), "windvaneCard") || (b2 = b(str)) == null) {
+        } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("ext")) == null || !StringUtils.equals(jSONObject2.getString("sectionType"), "windvaneCard") || (b2 = b(str)) == null) {
         } else {
             h.put(str, Long.valueOf(System.currentTimeMillis()));
             b2.add(str2);
@@ -141,7 +141,7 @@ public class lxn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str2) || !TextUtils.equals(c.get(str), str2)) {
+        } else if (StringUtils.isEmpty(str2) || !StringUtils.equals(c.get(str), str2)) {
         } else {
             c.remove(str);
             d.remove(str);

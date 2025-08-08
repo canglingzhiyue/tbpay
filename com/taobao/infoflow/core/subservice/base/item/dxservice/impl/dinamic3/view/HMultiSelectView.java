@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -258,16 +258,16 @@ public class HMultiSelectView extends LinearLayout {
             String a2 = lfq.a(baseSectionModel, KEY_MULTI_SELECT_TEXT);
             if (bool.booleanValue()) {
                 setTextStyle(textView, false);
-                addSelectItem = TextUtils.isEmpty(a2) ? "" : removeSelectItem(a2, textView.getText().toString());
+                addSelectItem = StringUtils.isEmpty(a2) ? "" : removeSelectItem(a2, textView.getText().toString());
             } else {
                 setTextStyle(textView, true);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     addSelectItem = textView.getText().toString();
                 } else {
                     addSelectItem = addSelectItem(a2, textView.getText().toString());
                 }
             }
-            if (TextUtils.isEmpty(addSelectItem)) {
+            if (StringUtils.isEmpty(addSelectItem)) {
                 lfq.a(baseSectionModel, KEY_IS_SELECT_ITEM, "false");
             } else {
                 lfq.a(baseSectionModel, KEY_IS_SELECT_ITEM, "true");
@@ -307,7 +307,7 @@ public class HMultiSelectView extends LinearLayout {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e35c4c35", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         return str + ";" + str2;

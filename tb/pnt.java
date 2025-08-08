@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.message.TLiveMsg;
 import java.util.Map;
@@ -81,7 +81,7 @@ public class pnt implements pns {
         if (pnsVar == null) {
             return;
         }
-        pnsVar.a(i, str, TextUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new pnq() { // from class: tb.pnt.1
+        pnsVar.a(i, str, StringUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new pnq() { // from class: tb.pnt.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // tb.pnq
@@ -114,7 +114,7 @@ public class pnt implements pns {
         if (pnsVar == null) {
             return;
         }
-        pnsVar.a(i, str, TextUtils.isEmpty(str2) ? "" : str2, str3, str4, null, new pnq() { // from class: tb.pnt.2
+        pnsVar.a(i, str, StringUtils.isEmpty(str2) ? "" : str2, str3, str4, null, new pnq() { // from class: tb.pnt.2
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // tb.pnq
@@ -180,7 +180,7 @@ public class pnt implements pns {
         if (pnsVar == null) {
             return;
         }
-        pnsVar.b(i, str, TextUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new pnq() { // from class: tb.pnt.4
+        pnsVar.b(i, str, StringUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new pnq() { // from class: tb.pnt.4
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // tb.pnq
@@ -213,7 +213,7 @@ public class pnt implements pns {
         if (pnsVar == null) {
             return;
         }
-        pnsVar.b(i, str, TextUtils.isEmpty(str2) ? "" : str2, str3, str4, null, new pnq() { // from class: tb.pnt.5
+        pnsVar.b(i, str, StringUtils.isEmpty(str2) ? "" : str2, str3, str4, null, new pnq() { // from class: tb.pnt.5
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // tb.pnq

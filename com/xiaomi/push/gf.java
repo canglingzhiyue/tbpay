@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.em;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -71,7 +71,7 @@ public class gf {
         gfVar.a("XMLMSG", (String) null);
         try {
             gfVar.a(hhVar.m2007a().getBytes("utf8"), str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 gfVar.a((short) 3);
             } else {
                 gfVar.a((short) 2);
@@ -162,10 +162,10 @@ public class gf {
         if (j != 0) {
             this.f403a.a(j);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f403a.a(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.f403a.b(str2);
         }
     }
@@ -175,10 +175,10 @@ public class gf {
     }
 
     public void a(String str, String str2) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f403a.c(str);
             this.f403a.mo1910a();
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             this.f403a.d(str2);
@@ -192,7 +192,7 @@ public class gf {
     }
 
     public void a(byte[] bArr, String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f403a.c(1);
             this.f407b = com.xiaomi.push.service.bo.a(com.xiaomi.push.service.bo.a(str, e()), bArr);
             return;
@@ -269,7 +269,7 @@ public class gf {
     }
 
     public void c(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             int indexOf = str.indexOf("@");
             try {
                 long parseLong = Long.parseLong(str.substring(0, indexOf));

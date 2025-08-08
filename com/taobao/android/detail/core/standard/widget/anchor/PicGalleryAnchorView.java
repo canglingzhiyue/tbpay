@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.standard.widget.anchor;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,7 +117,7 @@ public class PicGalleryAnchorView extends LinearLayout implements AbsPicGalleryA
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20bf0ea2", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.mScrollAnchorModels.isEmpty()) {
+        } else if (StringUtils.isEmpty(str) || this.mScrollAnchorModels.isEmpty()) {
         } else {
             b anchorModel = getAnchorModel(str);
             if (anchorModel == null) {

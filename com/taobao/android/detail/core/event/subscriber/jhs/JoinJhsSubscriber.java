@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.event.subscriber.jhs;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.event.params.JoinJhsParams;
@@ -143,7 +143,7 @@ public class JoinJhsSubscriber implements j<edu> {
             try {
                 JoinJhsResponseData joinJhsResponseData = (JoinJhsResponseData) MtopConvert.jsonToOutputDO(mtopResponse.getBytedata(), JoinJhsResult.class).mo2429getData();
                 if (joinJhsResponseData != null && !joinJhsResponseData.isSuccess) {
-                    if (TextUtils.isEmpty(joinJhsResponseData.errorMessage)) {
+                    if (StringUtils.isEmpty(joinJhsResponseData.errorMessage)) {
                         return;
                     }
                     epo.a(joinJhsResponseData.errorMessage);
@@ -152,7 +152,7 @@ public class JoinJhsSubscriber implements j<edu> {
                 c cVar = new c(this.b, false);
                 if (joinJhsResponseData != null && joinJhsResponseData.params != null) {
                     String str = joinJhsResponseData.params.get("tgKey");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         try {
                             joinJhsResponseData.params.put("tgKey", URLDecoder.decode(str, "utf-8"));
                         } catch (Throwable unused) {

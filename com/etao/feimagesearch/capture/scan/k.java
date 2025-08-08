@@ -2,7 +2,7 @@ package com.etao.feimagesearch.capture.scan;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.intelli.ClientModelType;
 import com.etao.feimagesearch.structure.capture.CaptureManager;
@@ -40,7 +40,7 @@ public class k {
             return;
         }
         HashMap hashMap = new HashMap(8);
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             hashMap.put(ClientModelType.KEY_CLIENT_MODEL_TYPE, this.c);
         }
         if (this.d.t()) {

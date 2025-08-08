@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.ut.abtest.Variation;
@@ -47,12 +47,12 @@ public class tmx implements opz {
         }
         HashMap<String, String> hashMap = new HashMap<>();
         String a2 = c.a.a("performanceAbTestInfo", "Home_Page_ExperimentBucketId", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("bucketId", a2);
             s.f18233a.d().a("bucketId", a2);
         }
         String a3 = c.a.a("performanceAbTestInfo", "Home_Page_ExperimentId", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             hashMap.put("testId", a3);
         }
         return hashMap;

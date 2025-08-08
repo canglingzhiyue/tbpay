@@ -6,7 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.aop.a;
 import tb.iao;
@@ -65,7 +65,7 @@ public class AliveReceiver extends BroadcastReceiver {
             return;
         }
         String action = intent == null ? null : intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             rty.f33380a.d("AliveReceiver", "empty action", new Object[0]);
             return;
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.alibaba.wireless.security.open.middletier.fc.FCAction;
@@ -249,10 +249,10 @@ public class rye implements rxm, rxn {
             Map<String, List<String>> headerFields = aVar.c.getHeaderFields();
             String singleHeaderFieldByKey = HeaderHandlerUtil.getSingleHeaderFieldByKey(headerFields, HttpHeaderConstant.BX_ACTION);
             String singleHeaderFieldByKey2 = HeaderHandlerUtil.getSingleHeaderFieldByKey(headerFields, "location");
-            if (!TextUtils.isEmpty(singleHeaderFieldByKey)) {
+            if (!StringUtils.isEmpty(singleHeaderFieldByKey)) {
                 aVar.g.bxAction = singleHeaderFieldByKey;
             }
-            if (!TextUtils.isEmpty(singleHeaderFieldByKey2)) {
+            if (!StringUtils.isEmpty(singleHeaderFieldByKey2)) {
                 aVar.g.location = singleHeaderFieldByKey2;
             }
         }

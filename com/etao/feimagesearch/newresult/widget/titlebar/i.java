@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -676,7 +676,7 @@ public final class i extends c implements View.OnClickListener {
         }
         irp2024SearchBarWidget.setHintQuery(str);
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TextView textView = this.f;
             if (textView == null) {
                 q.b("mTvQueryText");

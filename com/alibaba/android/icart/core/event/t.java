@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.datamodel.imp.DMComponent;
@@ -38,14 +38,14 @@ public class t extends bca {
         String string = b.getFields().getString("calculatePopGroupName");
         for (DMComponent dMComponent : ((com.taobao.android.ultron.datamodel.imp.b) this.f25791a.H()).u().values()) {
             if (a2) {
-                if (TextUtils.equals(dMComponent.getFields().getString("calculatePopGroupName"), string)) {
+                if (StringUtils.equals(dMComponent.getFields().getString("calculatePopGroupName"), string)) {
                     if (booleanValue) {
                         bei.e(dMComponent);
                     } else {
                         bei.d(dMComponent);
                     }
                 }
-            } else if (TextUtils.equals(dMComponent.getFields().getString("calculatePopGroupName"), string)) {
+            } else if (StringUtils.equals(dMComponent.getFields().getString("calculatePopGroupName"), string)) {
                 bei.f(dMComponent);
             }
         }

@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Map;
 
 /* loaded from: classes9.dex */
@@ -52,19 +52,19 @@ public class ax implements ar {
             return;
         }
         String b = b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             map.put("udid", b);
         }
         String mo1730a = mo1730a();
-        if (!TextUtils.isEmpty(mo1730a)) {
+        if (!StringUtils.isEmpty(mo1730a)) {
             map.put("oaid", mo1730a);
         }
         String c = c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             map.put("vaid", c);
         }
         String d = d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             map.put("aaid", d);
         }
         map.put("oaid_type", String.valueOf(this.f121a));

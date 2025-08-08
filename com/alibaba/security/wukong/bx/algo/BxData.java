@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.bx.algo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.security.ccrc.common.keep.IKeep;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
@@ -121,7 +121,7 @@ public class BxData {
             return null;
         }
         for (List<String> list2 : list) {
-            if (list2 != null && list2.size() > 0 && TextUtils.equals(list2.get(0), str)) {
+            if (list2 != null && list2.size() > 0 && StringUtils.equals(list2.get(0), str)) {
                 return list2;
             }
         }
@@ -168,9 +168,9 @@ public class BxData {
             String str4 = null;
             String str5 = null;
             for (int i = 0; i < split2.length; i++) {
-                if (TextUtils.equals(OP_CONF, split2[i])) {
+                if (StringUtils.equals(OP_CONF, split2[i])) {
                     str5 = getSafelyString(split, i);
-                } else if (TextUtils.equals(WORK_CONF, split2[i])) {
+                } else if (StringUtils.equals(WORK_CONF, split2[i])) {
                     str4 = getSafelyString(split, i);
                 } else {
                     hashMap.put(split2[i], getSafelyString(split, i));
@@ -256,7 +256,7 @@ public class BxData {
             return (a) ipChange.ipc$dispatch("ad5e8945", new Object[]{str, str2});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return a.a("parseByBroadcastFeature feature is null", "");
             }
             Map<String, Object> map = JsonUtils.toMap(str);
@@ -287,7 +287,7 @@ public class BxData {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("e68f86da", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return a.a("ori feature is null", str);
         }
         BxData bxData = (BxData) JsonUtils.parseObject(str, (Class<Object>) BxData.class);

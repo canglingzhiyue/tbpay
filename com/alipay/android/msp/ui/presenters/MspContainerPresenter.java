@@ -1,6 +1,6 @@
 package com.alipay.android.msp.ui.presenters;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.constants.MspNetConstants;
 import com.alipay.android.msp.core.MspNetHandler;
@@ -45,8 +45,8 @@ public class MspContainerPresenter extends MspBasePresenter<MspMainContract.View
             if (th instanceof NetErrorException) {
                 mspContextByBizId.getMspNetHandler().setNetError(true);
                 String message = th.getMessage();
-                if (TextUtils.isEmpty(message) || TextUtils.equals(message, MspNetConstants.NET_SHUTDOWN_TIP)) {
-                    if (TextUtils.equals(mspContextByBizId.getMspNetHandler().getErrorCode(), String.valueOf(ResultStatus.PAY_NETWORK_ERROR.getStatus()))) {
+                if (StringUtils.isEmpty(message) || StringUtils.equals(message, MspNetConstants.NET_SHUTDOWN_TIP)) {
+                    if (StringUtils.equals(mspContextByBizId.getMspNetHandler().getErrorCode(), String.valueOf(ResultStatus.PAY_NETWORK_ERROR.getStatus()))) {
                         message = LanguageHelper.localizedStringForKey("mini_net_error", getActivity().getString(R.string.mini_net_error), new Object[0]);
                     } else {
                         if (((NetErrorException) th).isClientError()) {
@@ -100,7 +100,7 @@ public class MspContainerPresenter extends MspBasePresenter<MspMainContract.View
         }
         String curTplId = mo545getIView().getCurTplId();
         MspContext mspContextByBizId2 = MspContextManager.getInstance().getMspContextByBizId(getBizId());
-        long delayDisposeTime = ((TextUtils.equals(curTplId, MspFlybirdDefine.FLYBIRD_RESULT_TPL) || TextUtils.equals(curTplId, MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || TextUtils.equals(curTplId, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) && mspContextByBizId2 != null) ? mspContextByBizId2.getDelayDisposeTime() : 0L;
+        long delayDisposeTime = ((StringUtils.equals(curTplId, MspFlybirdDefine.FLYBIRD_RESULT_TPL) || StringUtils.equals(curTplId, MspFlybirdDefine.FLYBIRD_PAYEND_TPL) || StringUtils.equals(curTplId, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) && mspContextByBizId2 != null) ? mspContextByBizId2.getDelayDisposeTime() : 0L;
         if (delayDisposeTime > 0) {
             TaskHelper.runOnUIThread(new Runnable() { // from class: com.alipay.android.msp.ui.presenters.MspContainerPresenter.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

@@ -3,7 +3,7 @@ package com.taobao.search.m3.icons;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -208,7 +208,7 @@ public final class e extends com.taobao.search.m3.icons.a {
             }
             this.l = z;
             float f2 = 0.0f;
-            this.c = TextUtils.isEmpty(i().e()) ? 0.0f : i.Companion.a(i().e(), this.e);
+            this.c = StringUtils.isEmpty(i().e()) ? 0.0f : i.Companion.a(i().e(), this.e);
             float f3 = this.c;
             float f4 = f3 + 0.0f;
             if (f3 > f) {
@@ -218,7 +218,7 @@ public final class e extends com.taobao.search.m3.icons.a {
                 }
             }
             float f5 = f4 + this.b;
-            if (!TextUtils.isEmpty(i().d())) {
+            if (!StringUtils.isEmpty(i().d())) {
                 f2 = i.Companion.a(i().d(), this.e);
             }
             this.d = f2;

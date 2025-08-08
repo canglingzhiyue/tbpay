@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -98,9 +98,9 @@ public class sjs {
         IPreloadWeexService iPreloadWeexService = (IPreloadWeexService) fluidContext.getService(IPreloadWeexService.class);
         if (iPreloadWeexService != null && iPreloadWeexService.getPreloadWeexData() != null && (preloadWeexData = iPreloadWeexService.getPreloadWeexData()) != null) {
             String e = preloadWeexData.e();
-            if (TextUtils.equals(e, PreloadWeexData.OUTSIDE_PRELOAD)) {
+            if (StringUtils.equals(e, PreloadWeexData.OUTSIDE_PRELOAD)) {
                 i = 120;
-            } else if (TextUtils.equals(e, PreloadWeexData.INNER_PRELOAD)) {
+            } else if (StringUtils.equals(e, PreloadWeexData.INNER_PRELOAD)) {
                 i = 112;
             }
         }

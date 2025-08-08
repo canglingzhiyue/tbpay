@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -125,7 +125,7 @@ public class tjj {
         if (e != null && e.size() != 0 && e.containsKey("dxTemplateName")) {
             String string = e.getString("dxTemplateName");
             stv.a("RenderManager", "isUseDX dxTemplateName = " + string);
-            return !TextUtils.isEmpty(string);
+            return !StringUtils.isEmpty(string);
         }
         stv.a("RenderManager", "isUseDX bizData not valid, splashData=" + tiqVar.d().d());
         return false;

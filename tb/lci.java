@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.data.model.d;
@@ -26,7 +26,7 @@ public class lci {
         }
         try {
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put("lottieUrl", (Object) str);
             }
             jSONObject.put("duration", (Object) String.valueOf(f));
@@ -51,7 +51,7 @@ public class lci {
         }
         try {
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put("lottieUrl", (Object) str);
             }
             jSONObject.put("duration", (Object) String.valueOf(f));
@@ -59,7 +59,7 @@ public class lci {
             jSONObject.put("lottieHeight", (Object) String.valueOf(i2));
             jSONObject.put(d.KEY_NEW_DETAIL_VISIBLE_BLOCK_WIDTH, (Object) String.valueOf(i3));
             jSONObject.put("screenHeight", (Object) String.valueOf(i4));
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.put("errMsg", (Object) str2);
             }
             a("Page_Home_TXAD", "Lottie_Load_Fail", null, null, jSONObject);

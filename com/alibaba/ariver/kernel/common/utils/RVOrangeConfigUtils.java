@@ -1,6 +1,6 @@
 package com.alibaba.ariver.kernel.common.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.service.RVConfigService;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -22,7 +22,7 @@ public class RVOrangeConfigUtils {
         boolean booleanValue = bool.booleanValue();
         try {
             String config = ((RVConfigService) RVProxy.get(RVConfigService.class)).getConfig(str, bool.toString());
-            return (!TextUtils.isEmpty(config) && !bool.toString().equals(config)) ? !bool.booleanValue() : booleanValue;
+            return (!StringUtils.isEmpty(config) && !bool.toString().equals(config)) ? !bool.booleanValue() : booleanValue;
         } catch (Exception e) {
             e.printStackTrace();
             return booleanValue;

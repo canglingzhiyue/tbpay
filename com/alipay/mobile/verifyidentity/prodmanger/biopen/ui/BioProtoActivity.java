@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.prodmanger.biopen.ui;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -113,7 +113,7 @@ public class BioProtoActivity extends BaseVerifyActivity {
             settings.setLoadWithOverviewMode(true);
             settings.setUseWideViewPort(true);
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             this.d = this.f;
         } else if (CommonConstant.FINGERPRINT_PAY.equalsIgnoreCase(this.c)) {
             a(getString(R.string.finger_proto));
@@ -155,10 +155,10 @@ public class BioProtoActivity extends BaseVerifyActivity {
                 }
                 super.onPageFinished(webView2, str);
                 String title = webView2.getTitle();
-                if (TextUtils.isEmpty(title)) {
+                if (StringUtils.isEmpty(title)) {
                     return;
                 }
-                if (!TextUtils.isEmpty(BioProtoActivity.a(BioProtoActivity.this))) {
+                if (!StringUtils.isEmpty(BioProtoActivity.a(BioProtoActivity.this))) {
                     BioProtoActivity.a(BioProtoActivity.this, title);
                 }
                 if (!CommonConstant.FACELOGIN.equalsIgnoreCase(BioProtoActivity.b(BioProtoActivity.this))) {
@@ -176,7 +176,7 @@ public class BioProtoActivity extends BaseVerifyActivity {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str) && (str.contains(k.HTTPS_PREFIX) || str.contains(k.HTTP_PREFIX))) {
+        if (!StringUtils.isEmpty(str) && (str.contains(k.HTTPS_PREFIX) || str.contains(k.HTTP_PREFIX))) {
             VerifyLogCat.i(f6038a, "标题含有http url，不显示");
             str = "";
         }

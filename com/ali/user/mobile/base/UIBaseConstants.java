@@ -1,6 +1,6 @@
 package com.ali.user.mobile.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -38,6 +38,6 @@ public class UIBaseConstants {
 
     public static boolean isHalfPage(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1f21e41", new Object[]{str})).booleanValue() : TextUtils.equals(LoginPage.HALF_PAGE_GUIDE_LOGIN, str) || TextUtils.equals(LoginPage.HALF_PAGE_ONEKEY_LOGIN, str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1f21e41", new Object[]{str})).booleanValue() : StringUtils.equals(LoginPage.HALF_PAGE_GUIDE_LOGIN, str) || StringUtils.equals(LoginPage.HALF_PAGE_ONEKEY_LOGIN, str);
     }
 }

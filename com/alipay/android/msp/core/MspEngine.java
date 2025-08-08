@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Binder;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.birdnest.api.MspBNPlugin;
@@ -46,7 +46,7 @@ public class MspEngine {
         }
         LogUtil.i("MspEngine", "createMspView", "loadListener ".concat(String.valueOf(mspWindowLoadListener)));
         String str2 = MspContext.CONTEXT_TYPE_RENDER;
-        if (TextUtils.equals(str, "H5NBComp") || TextUtils.equals(str, "BNFrame")) {
+        if (StringUtils.equals(str, "H5NBComp") || StringUtils.equals(str, "BNFrame")) {
             str2 = MspContext.CONTEXT_TYPE_BNFRAME;
         }
         if (jSONObject2.containsKey("type") && "PluginBN".equalsIgnoreCase(jSONObject2.getString("type"))) {
@@ -127,7 +127,7 @@ public class MspEngine {
             return (MspContainerResult) ipChange.ipc$dispatch("98d6510c", new Object[]{jSONObject, str, new Boolean(z), context});
         }
         MspContainerResult mspContainerResult = new MspContainerResult();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             mspContainerResult.setErrorCode("101");
             return mspContainerResult;
         } else if (jSONObject == null) {
@@ -165,7 +165,7 @@ public class MspEngine {
             return (MspContainerResult) ipChange.ipc$dispatch("41376921", new Object[]{str, str2, new Boolean(z), context});
         }
         MspContainerResult mspContainerResult = new MspContainerResult();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             mspContainerResult.setErrorCode("101");
             return mspContainerResult;
         }
@@ -208,7 +208,7 @@ public class MspEngine {
         LogUtil.i("MspEngine", a.BRIDGE_ACTION_STARTPAYMENT, bizId + " " + mspPaySession);
         CashierSceneDictionary.MspSchemePayContext mspSchemePayContext = CashierSceneDictionary.getInstance().getMspSchemePayContext(orderSuffix);
         if (orderSuffix != null && orderSuffix.contains("com.alipay.account.auth")) {
-            if (!mspPaySession.isFromEntranceActivity() || TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_degrade_auth_from_ent_activity"), "true")) {
+            if (!mspPaySession.isFromEntranceActivity() || StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_degrade_auth_from_ent_activity"), "true")) {
                 IWalletEngine mspWallet = PhoneCashierMspEngine.getMspWallet();
                 if (mspSchemePayContext != null) {
                     z = true;
@@ -260,12 +260,12 @@ public class MspEngine {
             mspPaySession.setCallingPid(callingPid);
             if (mspContext != null) {
                 String apLinkTokenOrLogTraceId = mspContext.getApLinkTokenOrLogTraceId();
-                if (!TextUtils.isEmpty(apLinkTokenOrLogTraceId)) {
+                if (!StringUtils.isEmpty(apLinkTokenOrLogTraceId)) {
                     mspPaySession.setApLinkToken(apLinkTokenOrLogTraceId);
                 }
             }
             tradeContextByBizId = new MspTradeContext(mspPaySession);
-            if (mspContext != null && !TextUtils.isEmpty(mspContext.getTradeNo())) {
+            if (mspContext != null && !StringUtils.isEmpty(mspContext.getTradeNo())) {
                 tradeContextByBizId.getStatisticInfo().updateAttr(Vector.Trade, "tradeNo", mspContext.getTradeNo());
             }
             LogUtil.i("MspEngine", "startForkCashier", "new MspTradeContext created ".concat(String.valueOf(i)));

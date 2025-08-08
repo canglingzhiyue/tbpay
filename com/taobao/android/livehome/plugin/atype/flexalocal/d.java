@@ -17,7 +17,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.embed.BaseEmbedView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -301,7 +301,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                 sqtVar4.g = sqtVar4.d.getQueryParameter("tabSpm");
                 sqt sqtVar5 = this.w;
                 sqtVar5.F = sqtVar5.d.getQueryParameter("selectedSingleLiveTab");
-                if (TextUtils.isEmpty(this.w.g)) {
+                if (StringUtils.isEmpty(this.w.g)) {
                     this.w.g = "a2141.28646552";
                 }
             }
@@ -1127,7 +1127,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
             if (tabBottom != null && !tabBottom.isSelected) {
                 LiveNewTabView.b bVar = new LiveNewTabView.b();
                 bVar.a(tabBottom.name);
-                if (TextUtils.isEmpty(tabBottom.androidNormalColor)) {
+                if (StringUtils.isEmpty(tabBottom.androidNormalColor)) {
                     tabBottom.androidNormalColor = "#000000";
                 }
                 try {
@@ -1136,7 +1136,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                     bVar.a(Color.parseColor("#000000"));
                 }
                 bVar.b(tabBottom.androidNormalIcon);
-                if (TextUtils.isEmpty(tabBottom.androidPressedColor)) {
+                if (StringUtils.isEmpty(tabBottom.androidPressedColor)) {
                     tabBottom.androidPressedColor = "#FF3344";
                 }
                 try {
@@ -1174,7 +1174,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                     String format = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance(Locale.CHINA).getTime());
                     int intValue = tabBottom.subscriptInfo.getInteger("exposeTimes").intValue();
                     String string = tabBottom.subscriptInfo.getString("id");
-                    if (!TextUtils.isEmpty(j.a("tabCornerIdList"))) {
+                    if (!StringUtils.isEmpty(j.a("tabCornerIdList"))) {
                         String[] split = j.a("tabCornerIdList").split(",");
                         int i3 = 0;
                         while (true) {
@@ -1247,7 +1247,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
             Map<String, String> b2 = b(this.w.B.tabUT.getString("spm"));
             if (this.w.B.subscriptInfo != null) {
                 String string = this.w.B.subscriptInfo.getString("id");
-                if (!TextUtils.isEmpty(j.a(string))) {
+                if (!StringUtils.isEmpty(j.a(string))) {
                     if (Integer.parseInt(j.a(string).split("_")[1]) > this.w.B.subscriptInfo.getInteger("exposeTimes").intValue()) {
                         b2.put("isCorner", "2");
                     } else {
@@ -1336,7 +1336,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                     e.printStackTrace();
                 }
             }
-            if (!TextUtils.isEmpty(this.B.androidBackGroundPic)) {
+            if (!StringUtils.isEmpty(this.B.androidBackGroundPic)) {
                 this.C = true;
                 if (com.taobao.android.livehome.plugin.atype.flexalocal.utils.d.TAB_SINGLELIVE.equals(this.k)) {
                     this.h.setVisibility(8);
@@ -1359,7 +1359,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                    } else if (d.i(d.this) == null || d.j(d.this) == null || d.k(d.this) == null || !d.k(d.this).jumpOut || TextUtils.isEmpty(d.k(d.this).jumpUrl)) {
+                    } else if (d.i(d.this) == null || d.j(d.this) == null || d.k(d.this) == null || !d.k(d.this).jumpOut || StringUtils.isEmpty(d.k(d.this).jumpUrl)) {
                     } else {
                         Nav.from(Globals.getApplication()).toUri(d.k(d.this).jumpUrl);
                         if (d.k(d.this).tabUT == null) {
@@ -1396,7 +1396,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                 TabManager.TabBottom tabBottom = list.get(i);
                 LiveNewTabView.b bVar = new LiveNewTabView.b();
                 bVar.a(tabBottom.name);
-                if (TextUtils.isEmpty(tabBottom.androidNormalColor)) {
+                if (StringUtils.isEmpty(tabBottom.androidNormalColor)) {
                     tabBottom.androidNormalColor = "#000000";
                 }
                 try {
@@ -1405,7 +1405,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                     bVar.a(Color.parseColor("#000000"));
                 }
                 bVar.b(tabBottom.androidNormalIcon);
-                if (TextUtils.isEmpty(tabBottom.androidPressedColor)) {
+                if (StringUtils.isEmpty(tabBottom.androidPressedColor)) {
                     tabBottom.androidPressedColor = "#FF3344";
                 }
                 try {
@@ -1476,7 +1476,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                 if (tabBottom.subscriptInfo != null) {
                     String format = new SimpleDateFormat("yyyyMMdd").format(Calendar.getInstance(Locale.CHINA).getTime());
                     String string = tabBottom.subscriptInfo.getString("id");
-                    if (!TextUtils.isEmpty(j.a(string))) {
+                    if (!StringUtils.isEmpty(j.a(string))) {
                         String[] split = j.a(string).split("_");
                         String str = split[0];
                         int parseInt = Integer.parseInt(split[1]);
@@ -1660,16 +1660,16 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
                 String str2 = this.f14145a.get(homeBaseFragment2.getPosition()).name;
                 String str3 = this.f14145a.get(homeBaseFragment2.getPosition()).androidNormalIcon;
                 String str4 = this.f14145a.get(homeBaseFragment2.getPosition()).androidPressedIcon;
-                if (!TextUtils.isEmpty(str) && !str.equals(homeBaseFragment2.getJumpUrl())) {
+                if (!StringUtils.isEmpty(str) && !str.equals(homeBaseFragment2.getJumpUrl())) {
                     return -2;
                 }
-                if (!TextUtils.isEmpty(str2) && !str2.equals(homeBaseFragment2.getTabTitleName())) {
+                if (!StringUtils.isEmpty(str2) && !str2.equals(homeBaseFragment2.getTabTitleName())) {
                     return -2;
                 }
-                if (!TextUtils.isEmpty(str3) && !str3.equals(homeBaseFragment2.getAndroidNormalIcon())) {
+                if (!StringUtils.isEmpty(str3) && !str3.equals(homeBaseFragment2.getAndroidNormalIcon())) {
                     return -2;
                 }
-                if (!TextUtils.isEmpty(str4) && !str4.equals(homeBaseFragment2.getAndroidPressedIcon())) {
+                if (!StringUtils.isEmpty(str4) && !str4.equals(homeBaseFragment2.getAndroidPressedIcon())) {
                     return -2;
                 }
             }
@@ -1714,7 +1714,7 @@ public class d extends com.taobao.android.live.plugin.proxy.livehome.d implement
             }
             if (this.f != null) {
                 this.f.reLayout();
-                if (this.B != null && !TextUtils.isEmpty(this.B.androidBackGroundPic)) {
+                if (this.B != null && !StringUtils.isEmpty(this.B.androidBackGroundPic)) {
                     this.f.reLayoutAdaptiveMarketing();
                 }
             }

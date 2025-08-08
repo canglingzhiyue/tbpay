@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.ace.b;
@@ -26,7 +26,7 @@ public class ini extends ink {
         String string = jSONObject.getString("id");
         String string2 = jSONObject.getString("type");
         String string3 = jSONObject.getString("requestAlias");
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3)) {
             AceSubStrategy aceSubStrategy = new AceSubStrategy();
             aceSubStrategy.setId(string);
             aceSubStrategy.setStrategyType(string2);

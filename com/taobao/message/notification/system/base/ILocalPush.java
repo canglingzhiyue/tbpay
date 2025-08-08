@@ -4,7 +4,7 @@ import android.app.NotificationChannel;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -90,7 +90,7 @@ public interface ILocalPush {
             } else {
                 charSequence = charSequence3;
             }
-            if (!TextUtils.isEmpty(this.mTicker)) {
+            if (!StringUtils.isEmpty(this.mTicker)) {
                 charSequence3 = this.mTicker;
             }
             builder.setTicker(charSequence3);

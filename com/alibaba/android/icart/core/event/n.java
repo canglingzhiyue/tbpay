@@ -2,7 +2,7 @@ package com.alibaba.android.icart.core.event;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import com.alibaba.android.icart.core.data.DataBizContext;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -108,14 +108,14 @@ public class n extends bca {
             DataBizContext.CartGroupContext cartGroupContext = new DataBizContext.CartGroupContext();
             o.a(cartGroupContext);
             for (com.taobao.android.ultron.common.model.b bVar : (List) bmzVar.b("events")) {
-                if (TextUtils.equals(bVar.getType(), "popupQuery")) {
+                if (StringUtils.equals(bVar.getType(), "popupQuery")) {
                     cartGroupContext.setDefaultFilterItem(bVar.getFields().getString("filterItem"));
-                } else if (TextUtils.equals(bVar.getType(), "openPopupWindow")) {
+                } else if (StringUtils.equals(bVar.getType(), "openPopupWindow")) {
                     for (IDMComponent iDMComponent : bei.a(this.b, bVar)) {
-                        if (TextUtils.equals("groupRecommendTab", iDMComponent.getTag())) {
+                        if (StringUtils.equals("groupRecommendTab", iDMComponent.getTag())) {
                             o.a(iDMComponent.getKey()).a(0);
                             iDMComponent.getData().put("status", (Object) "hidden");
-                        } else if (TextUtils.equals("groupExtendBody", iDMComponent.getTag())) {
+                        } else if (StringUtils.equals("groupExtendBody", iDMComponent.getTag())) {
                             iDMComponent.getFields().clear();
                         }
                     }

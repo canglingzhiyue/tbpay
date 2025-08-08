@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -84,7 +84,7 @@ public final class jpp extends jpn {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("23c7e201", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         UltronPerformanceFlowModel c = c(str);
@@ -560,14 +560,14 @@ public final class jpp extends jpn {
         }
         String a2 = jSTrackerModel.a();
         String b = jSTrackerModel.b();
-        if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(b)) {
             return;
         }
         String str = ultronPerformanceFlowModel.mBizCode;
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = "27659-tracker";
         }
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             b = "http://taobao.com/jstracker/android/ultron.html";
         }
         fgf fgfVar = new fgf(str, a2, b);
@@ -576,7 +576,7 @@ public final class jpp extends jpn {
             return;
         }
         String d = jSTrackerModel.d();
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             d = ultronPerformanceFlowModel.mFlowCode;
         }
         fgfVar.a(d);

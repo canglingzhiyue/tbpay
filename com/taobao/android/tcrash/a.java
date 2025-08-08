@@ -1,6 +1,6 @@
 package com.taobao.android.tcrash;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.a;
 import java.io.File;
@@ -65,7 +65,7 @@ public class a implements jej {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d93484bd", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             jfj.b("AnrCompletedAction", "path is null");
         } else {
             File file = new File(str);

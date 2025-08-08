@@ -1,6 +1,6 @@
 package com.taobao.android.detail.provider;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import mtopsdk.mtop.domain.EnvModeEnum;
@@ -21,7 +21,7 @@ public class f implements com.taobao.android.detail.protocol.adapter.optional.e 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             Log.e(str, str2);
         }
@@ -32,9 +32,9 @@ public class f implements com.taobao.android.detail.protocol.adapter.optional.e 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            TextUtils.isEmpty(str2);
+            StringUtils.isEmpty(str2);
         }
     }
 
@@ -43,9 +43,9 @@ public class f implements com.taobao.android.detail.protocol.adapter.optional.e 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            TextUtils.isEmpty(str2);
+            StringUtils.isEmpty(str2);
         }
     }
 

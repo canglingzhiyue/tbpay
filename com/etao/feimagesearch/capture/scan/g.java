@@ -3,7 +3,7 @@ package com.etao.feimagesearch.capture.scan;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.scancode.common.object.ScancodeType;
 import com.taobao.taolive.room.utils.aw;
@@ -63,19 +63,19 @@ public class g extends com.taobao.taobao.scancode.gateway.activity.a {
             this.d = oyf.f32480a;
             if (!com.etao.feimagesearch.config.b.ai()) {
                 this.f = com.etao.feimagesearch.config.b.a("android_scancode_client", "dm_target_url", "");
-                if (!TextUtils.isEmpty(this.f) && !"false".equals(this.f)) {
+                if (!StringUtils.isEmpty(this.f) && !"false".equals(this.f)) {
                     this.d.b(ScancodeType.DM);
                 }
                 String a2 = com.etao.feimagesearch.config.b.a("android_scancode_client", "ma_4g_switch", "");
-                if (!TextUtils.isEmpty(a2) && TextUtils.equals("false", a2)) {
+                if (!StringUtils.isEmpty(a2) && StringUtils.equals("false", a2)) {
                     this.d.a(ScancodeType.TB_4G);
                 }
                 String a3 = com.etao.feimagesearch.config.b.a("android_scancode_client", "enable_gen3", "");
-                if (!TextUtils.isEmpty(a3) && TextUtils.equals("false", a3)) {
+                if (!StringUtils.isEmpty(a3) && StringUtils.equals("false", a3)) {
                     this.d.a(ScancodeType.GEN3);
                 }
                 String a4 = com.etao.feimagesearch.config.b.a("android_scancode_client", "enable_dm_goodsbarcode", "true");
-                if (!TextUtils.isEmpty(a4) && "true".equals(a4)) {
+                if (!StringUtils.isEmpty(a4) && "true".equals(a4)) {
                     this.d.b(ScancodeType.DM);
                     l = true;
                 }

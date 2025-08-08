@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ultronengine.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -88,7 +88,7 @@ public class e extends com.alibaba.android.ultron.event.q {
             return;
         }
         String g = g();
-        if (TextUtils.isEmpty(g) || eVar == null) {
+        if (StringUtils.isEmpty(g) || eVar == null) {
             return;
         }
         com.taobao.android.detail.datasdk.protocol.adapter.core.d c = epj.c();
@@ -110,7 +110,7 @@ public class e extends com.alibaba.android.ultron.event.q {
             return null;
         }
         String string = fields.getString("itemId");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         return null;
@@ -218,7 +218,7 @@ public class e extends com.alibaba.android.ultron.event.q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b80d809", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str) || context == null) {
+        } else if (StringUtils.isEmpty(str) || context == null) {
         } else {
             Toast.makeText(context, str, 0).show();
         }

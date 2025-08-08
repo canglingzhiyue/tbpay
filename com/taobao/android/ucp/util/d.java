@@ -1,6 +1,6 @@
 package com.taobao.android.ucp.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.aqf;
 import tb.kge;
@@ -23,10 +23,10 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("56c6c5c", new Object[0])).longValue();
         }
-        if (TextUtils.isEmpty(f15713a)) {
+        if (StringUtils.isEmpty(f15713a)) {
             f15713a = b();
         }
-        if (TextUtils.isEmpty(f15713a)) {
+        if (StringUtils.isEmpty(f15713a)) {
             return 0L;
         }
         if (b == null) {
@@ -41,7 +41,7 @@ public class d {
             return ((Number) ipChange.ipc$dispatch("f3a64c26", new Object[]{str})).longValue();
         }
         long j = 0;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         int length = str.length();

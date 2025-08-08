@@ -1,6 +1,6 @@
 package com.taobao.android.preload.core.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.preload.f;
 import tb.icj;
@@ -68,7 +68,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.c.bizName)) {
+        } else if (StringUtils.isEmpty(this.c.bizName)) {
             a(this.c, (Exception) null);
             f.b(com.taobao.android.preload.e.a("PreloadTask"), "acquire preloadTaskEntity bizName is null");
         } else {

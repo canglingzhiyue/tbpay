@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.eventchain;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -188,7 +188,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("8650a6a6", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             fuw.d("DXEventChainContext", "getEventChain : eventchain name is null");
             return null;
         }
@@ -204,7 +204,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("2d9de07d", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             fuw.d("DXEventChainContext", "getAtomicNode : eventchain name  or atomic name is null");
         }
         b a2 = a(str);
@@ -347,7 +347,7 @@ public class d {
 
     public String t() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("abe3bf05", new Object[]{this}) : TextUtils.isEmpty(this.k) ? "" : this.k;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("abe3bf05", new Object[]{this}) : StringUtils.isEmpty(this.k) ? "" : this.k;
     }
 
     public void b(String str) {

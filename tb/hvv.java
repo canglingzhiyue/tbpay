@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.eventchain.l;
@@ -30,14 +30,14 @@ public class hvv extends dlg<l> {
             String string = c.getString("height");
             String string2 = c.getString("nodeUserId");
             String string3 = c.getString("showLabel");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return new dla(null);
             }
             try {
                 DXWidgetNode queryWidgetNodeByUserId = lVar.h().s().getFlattenWidgetNode().queryWidgetNodeByUserId(string2);
                 if (queryWidgetNodeByUserId instanceof bwy) {
                     try {
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             int a2 = gbg.a(lVar.a(), Float.parseFloat(string));
                             if (a2 > 0) {
                                 ((bwy) queryWidgetNodeByUserId).a(a2);

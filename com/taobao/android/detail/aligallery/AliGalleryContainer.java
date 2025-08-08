@@ -1,7 +1,7 @@
 package com.taobao.android.detail.aligallery;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -138,7 +138,7 @@ public class AliGalleryContainer {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f9637024", new Object[]{this, str});
-        } else if (TextUtils.equals(this.mCurrentPropPath, str)) {
+        } else if (StringUtils.equals(this.mCurrentPropPath, str)) {
         } else {
             this.mCurrentPropPath = str;
             this.mContainer.a().b().a(new Runnable() { // from class: com.taobao.android.detail.aligallery.AliGalleryContainer.3

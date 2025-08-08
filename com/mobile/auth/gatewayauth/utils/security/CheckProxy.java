@@ -3,7 +3,7 @@ package com.mobile.auth.gatewayauth.utils.security;
 import android.content.Context;
 import android.net.Proxy;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 
 /* loaded from: classes4.dex */
@@ -24,7 +24,7 @@ public class CheckProxy {
                 port = Proxy.getPort(context);
                 str = host;
             }
-            return !TextUtils.isEmpty(str) && port != -1;
+            return !StringUtils.isEmpty(str) && port != -1;
         } catch (Throwable th) {
             try {
                 ExceptionProcessor.processException(th);

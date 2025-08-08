@@ -1,7 +1,7 @@
 package com.taobao.search.sf;
 
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class g {
         this.d = u.s();
         this.e = new HashSet();
         DowngradeStrategy downgradeStrategy = Downgrade.getInstance().getDowngradeStrategy("search");
-        if (downgradeStrategy != null && TextUtils.equals("degrade", downgradeStrategy.getTacticsPerformance())) {
+        if (downgradeStrategy != null && StringUtils.equals("degrade", downgradeStrategy.getTacticsPerformance())) {
             this.c = 1.0f / r.at();
         }
         this.e.add("ms_tb-webb-widget_tbs_widget_m3");
@@ -111,7 +111,7 @@ public class g {
             return;
         }
         int wfRatio = (int) (i / m3CellBean.getWfRatio());
-        if (!TextUtils.isEmpty(m3CellBean.getUprightImage())) {
+        if (!StringUtils.isEmpty(m3CellBean.getUprightImage())) {
             picPath = m3CellBean.getUprightImage();
         } else {
             picPath = m3CellBean.getPicPath();
@@ -138,7 +138,7 @@ public class g {
         }
         double d = 0.6666666666666666d;
         String string2 = jSONObject.getString("uprightImgAspectRatio");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             try {
                 d = Double.parseDouble(string2);
             } catch (Throwable unused) {
@@ -147,14 +147,14 @@ public class g {
         JSONArray jSONArray = jSONObject.getJSONArray("imageInfo");
         if (jSONArray != null && jSONArray.size() > 0) {
             string = jSONArray.getJSONObject(0).getString("uprightImgImage");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = jSONObject.getString("imageUrl");
                 i2 = i;
             }
             i2 = (int) (i / d);
         } else {
             string = jSONObject.getString(nog.PRD_WF_PICURL);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = jSONObject.getString(nog.PRD_PICURL);
                 i2 = i;
             }
@@ -176,7 +176,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c6fb4d02", new Object[]{this, str, new Integer(i), new Integer(i2), new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             com.taobao.android.weex_framework.adapter.d f = com.taobao.android.weex_framework.l.a().f();
             if ((f instanceof com.taobao.search.musie.e) && this.b) {

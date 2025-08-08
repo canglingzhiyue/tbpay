@@ -16,7 +16,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -245,7 +245,7 @@ public class CartWebFragment extends TBBaseFragment {
         }
         this.progressBar.setProgress(0);
         this.mUrl = extractCustomParamsInfo(getContext(), "downGradeUrl");
-        if (TextUtils.isEmpty(this.mUrl)) {
+        if (StringUtils.isEmpty(this.mUrl)) {
             this.mUrl = jjn.b(getActivity().getIntent());
             if (CartFrom.TAOBAO_CLIENT.equals(jjn.a(getActivity().getIntent()))) {
                 addParams(TEXT_URL_PARAMS_WITHOUT_NATIVE_BAR);
@@ -259,7 +259,7 @@ public class CartWebFragment extends TBBaseFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("acc6ecd8", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(this.mUrl)) {
+        } else if (StringUtils.isEmpty(this.mUrl)) {
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append(this.mUrl);
@@ -506,7 +506,7 @@ public class CartWebFragment extends TBBaseFragment {
             return (String) ipChange.ipc$dispatch("4e9f1b9b", new Object[]{this, context, str});
         }
         Intent intent = context instanceof Activity ? ((Activity) context).getIntent() : null;
-        if (intent == null || TextUtils.isEmpty(str) || (data = intent.getData()) == null) {
+        if (intent == null || StringUtils.isEmpty(str) || (data = intent.getData()) == null) {
             return null;
         }
         try {

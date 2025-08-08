@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -256,9 +256,9 @@ public class n implements com.taobao.tao.flexbox.layoutmanager.adapter.interface
             ipChange.ipc$dispatch("1059b339", new Object[]{this, new Integer(i), str, str2, str3});
             return;
         }
-        boolean z = !TextUtils.isEmpty(str);
-        boolean z2 = !TextUtils.isEmpty(str2);
-        boolean isEmpty = true ^ TextUtils.isEmpty(str3);
+        boolean z = !StringUtils.isEmpty(str);
+        boolean z2 = !StringUtils.isEmpty(str2);
+        boolean isEmpty = true ^ StringUtils.isEmpty(str3);
         if (!z && !z2 && !isEmpty) {
             return;
         }
@@ -405,7 +405,7 @@ public class n implements com.taobao.tao.flexbox.layoutmanager.adapter.interface
             return ((Boolean) ipChange.ipc$dispatch("b6e7fbda", new Object[]{this, str, context})).booleanValue();
         }
         boolean b = b(context);
-        return (b || str == null) ? b : TextUtils.equals(Uri.parse(str).getQueryParameter(gvw.CONFIG_LAUNCH), "0");
+        return (b || str == null) ? b : StringUtils.equals(Uri.parse(str).getQueryParameter(gvw.CONFIG_LAUNCH), "0");
     }
 
     public int h() {

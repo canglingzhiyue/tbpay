@@ -7,7 +7,7 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.taobao.util.g;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.client.isv.config.manager.a;
@@ -246,28 +246,28 @@ public class DelegatePersionConfigProcessor {
         }
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this.c);
         for (String str : a2) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String str2 = null;
                 String string = defaultSharedPreferences.getString("lbs_cfg_person_config_md5_" + str, null);
                 if (map != null && map.containsKey(str)) {
                     str2 = c.a(map.get(str).toString());
                 }
-                if (TextUtils.isEmpty(str2) && TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(str2) && StringUtils.isEmpty(string)) {
                     nea.d("lbs_config_log_DelegatePersionConfigProcessor", "[configHandle] md5 null groupName: " + str);
                 } else {
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         SharedPreferences.Editor edit = defaultSharedPreferences.edit();
                         edit.remove("lbs_cfg_person_config_md5_" + str);
                         edit.commit();
                         map.get(str);
                     }
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         SharedPreferences.Editor edit2 = defaultSharedPreferences.edit();
                         edit2.putString("lbs_cfg_person_config_md5_" + str, str2);
                         edit2.commit();
                         map.get(str);
                     }
-                    if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(string)) {
                         if (string.equals(str2)) {
                             nea.d("lbs_config_log_DelegatePersionConfigProcessor", "[configHandle] md5 equals groupName: " + str + ",md5=" + str2);
                         } else {

@@ -2,7 +2,7 @@ package com.taobao.pha.core.manifest;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -127,9 +127,9 @@ public class e {
             return null;
         }
         final String o = this.d.o();
-        final boolean z = !TextUtils.isEmpty(o) && !o.equals(this.e);
+        final boolean z = !StringUtils.isEmpty(o) && !o.equals(this.e);
         final String a2 = this.d.a("manifest_prefetches_v2");
-        final boolean z2 = !TextUtils.isEmpty(a2) && !a2.equals(this.f);
+        final boolean z2 = !StringUtils.isEmpty(a2) && !a2.equals(this.f);
         if (!z && !z2) {
             return null;
         }
@@ -341,7 +341,7 @@ public class e {
             return;
         }
         String string = jSONObject.getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             ngr.b(f18749a, "url is empty");
             return;
         }
@@ -547,7 +547,7 @@ public class e {
                 return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
             }
             String a2 = p.c().a("__accept_header__");
-            return TextUtils.isEmpty(a2) ? "application/x-pha-manifest+json,text/html;q=0.8" : a2;
+            return StringUtils.isEmpty(a2) ? "application/x-pha-manifest+json,text/html;q=0.8" : a2;
         }
     }
 

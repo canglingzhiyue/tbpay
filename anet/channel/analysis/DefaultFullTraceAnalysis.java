@@ -1,6 +1,6 @@
 package anet.channel.analysis;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.fulltrace.IFullTraceAnalysis;
 import anet.channel.fulltrace.SceneInfo;
@@ -74,7 +74,7 @@ public class DefaultFullTraceAnalysis implements IFullTraceAnalysis {
             return;
         }
         if (this.isAnalysisValid) {
-            if (requestStatistic == null || TextUtils.isEmpty(str)) {
+            if (requestStatistic == null || StringUtils.isEmpty(str)) {
                 return;
             }
             com.taobao.analysis.fulltrace.b bVar = new com.taobao.analysis.fulltrace.b();

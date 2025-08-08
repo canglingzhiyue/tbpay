@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.jsbridge.AliFestivalWVPlugin;
@@ -186,7 +186,7 @@ public final class tek {
         }
         q.d(bizScene, "bizScene");
         String config = OrangeConfig.getInstance().getConfig("umipublish", "open_record_directly_biz_scene_v2", "guangguang,x_ask_everyone");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return false;
         }
         List<String> a2 = at.a(config, ",");
@@ -251,7 +251,7 @@ public final class tek {
         String config = OrangeConfig.getInstance().getConfig("umipublish", "need_degrade_warning_errors", "");
         q.b(config, "OrangeConfig.getInstance…rade_warning_errors\", \"\")");
         String str2 = config;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         List<String> split = new Regex(",").split(str2, 0);
@@ -275,7 +275,7 @@ public final class tek {
         Object[] array = a2.toArray(new String[0]);
         if (array != null) {
             for (String str3 : (String[]) array) {
-                if (TextUtils.equals(str3, str)) {
+                if (StringUtils.equals(str3, str)) {
                     return true;
                 }
             }

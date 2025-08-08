@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.request.params;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,7 +68,7 @@ public class PreloadRequestParams implements MtopRequestParams {
         }
         for (c cVar : this.mItemList) {
             if (cVar != null) {
-                return TextUtils.equals("nav", cVar.c);
+                return StringUtils.equals("nav", cVar.c);
             }
         }
         return true;
@@ -80,7 +80,7 @@ public class PreloadRequestParams implements MtopRequestParams {
             return ((Boolean) ipChange.ipc$dispatch("401ab552", new Object[]{this, str})).booleanValue();
         }
         for (c cVar : this.mItemList) {
-            if (TextUtils.equals(str, cVar.b)) {
+            if (StringUtils.equals(str, cVar.b)) {
                 return true;
             }
         }

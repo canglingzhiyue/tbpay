@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -55,7 +55,7 @@ public final class bah extends arv {
                 return;
             }
             String string = c.getString("instanceId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 arc.a().b("innerHandleEvent:instanceId is empty", arc.a.a().b("AURAWeex2FireEvent").a("AURA/core").b());
                 return;
             }

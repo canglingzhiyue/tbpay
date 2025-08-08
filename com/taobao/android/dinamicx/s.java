@@ -1,11 +1,11 @@
 package com.taobao.android.dinamicx;
 
-import android.text.TextUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.template.download.DXTemplateItem;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import mtopsdk.common.util.StringUtils;
 import tb.kge;
 
 /* loaded from: classes.dex */
@@ -264,7 +264,7 @@ public class s {
     }
 
     public s(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f11919a = str;
         } else {
             this.f11919a = "NULL";

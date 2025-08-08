@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -110,7 +110,7 @@ public class u extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         }
         this.m = z;
         this.i.setBackgroundResource(this.m ? this.n : this.o);
-        if (TextUtils.isEmpty(this.l)) {
+        if (StringUtils.isEmpty(this.l)) {
             return;
         }
         StringBuilder sb = new StringBuilder();
@@ -133,7 +133,7 @@ public class u extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-        } else if (TextUtils.isEmpty(this.k)) {
+        } else if (StringUtils.isEmpty(this.k)) {
         } else {
             a(this.k, !this.m);
             com.taobao.android.detail.ttdetail.communication.c.a(this.f10821a, new szi());
@@ -165,7 +165,7 @@ public class u extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("3dba3d91", new Object[]{this, uVar});
         }
-        if (TextUtils.isEmpty(uVar.f10896a)) {
+        if (StringUtils.isEmpty(uVar.f10896a)) {
             this.i.setVisibility(8);
             return new View(this.f10821a);
         }
@@ -223,11 +223,11 @@ public class u extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String a2 = szh.a(str);
-        return !TextUtils.isEmpty(a2) && !com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure.a.a(p) && p.containsKey(a2) && p.get(a2).equals(str);
+        return !StringUtils.isEmpty(a2) && !com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure.a.a(p) && p.containsKey(a2) && p.get(a2).equals(str);
     }
 
     public boolean c(String str) {
@@ -235,7 +235,7 @@ public class u extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         a(szh.a(str), str);
@@ -246,7 +246,7 @@ public class u extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure.a.a(p) || TextUtils.isEmpty(str) || !p.containsKey(str) || !com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure.a.a(str2, p.get(str))) {
+        } else if (com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure.a.a(p) || StringUtils.isEmpty(str) || !p.containsKey(str) || !com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure.a.a(str2, p.get(str))) {
         } else {
             p.remove(str);
         }

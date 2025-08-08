@@ -5,7 +5,7 @@ import android.taobao.windvane.extra.jsbridge.WVACCS;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSClient;
@@ -264,7 +264,7 @@ public class TBACCS extends WVACCS {
         r rVar = new r();
         try {
             String optString = new JSONObject(str).optString("tag", "");
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 rVar.a(nog.PRICE_UNIT, ACCSClient.getAccsClient(optString).getConnectionUnitInfo());
             }
         } catch (Throwable th) {
@@ -287,7 +287,7 @@ public class TBACCS extends WVACCS {
             ALog.e(TAG, "bindService json err", new Object[0]);
             wVCallBackContext.error(new r("HY_PARAM_ERR"));
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             ALog.e(TAG, "bindService id empty", new Object[0]);
             wVCallBackContext.error(new r("HY_PARAM_ERR"));
             return;

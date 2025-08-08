@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSAppMonitor;
@@ -127,7 +127,7 @@ public class ken {
         HashMap hashMap = new HashMap();
         try {
             String str = bootImageInfo.actionResponse;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if ("2".equals(str)) {
                     hashMap.put("actionResponse", bootImageInfo.actionResponse);
                     hashMap.put("actionResult", bootImageInfo.actionResult);
@@ -155,7 +155,7 @@ public class ken {
                 hashMap.put("gestureSwitch", bootImageInfo.gestureSwitch);
                 hashMap.put("interactImage", bootImageInfo.interactImage);
                 hashMap.put("gestureImage", bootImageInfo.gestureImage);
-            } else if (!TextUtils.isEmpty(bootImageInfo.animationType)) {
+            } else if (!StringUtils.isEmpty(bootImageInfo.animationType)) {
                 hashMap.put("animationType", bootImageInfo.animationType);
                 hashMap.put("animationLottie", bootImageInfo.animationLottie);
             }
@@ -229,7 +229,7 @@ public class ken {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             arrayList.add(String.format("%s=%s", entry.getKey(), entry.getValue()));
         }
-        return TextUtils.join(",", arrayList);
+        return StringUtils.join(",", arrayList);
     }
 
     public static String a(JSONObject jSONObject) {
@@ -242,11 +242,11 @@ public class ken {
         }
         ArrayList arrayList = new ArrayList(jSONObject.size());
         for (String str : jSONObject.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 arrayList.add(String.format("%s=%s", str, jSONObject.getString(str)));
             }
         }
-        return TextUtils.join(",", arrayList);
+        return StringUtils.join(",", arrayList);
     }
 
     public static JSONObject a(JSONObject jSONObject, Map<String, String> map) {

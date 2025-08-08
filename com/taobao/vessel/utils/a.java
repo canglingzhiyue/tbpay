@@ -1,6 +1,6 @@
 package com.taobao.vessel.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import tb.kge;
@@ -20,7 +20,7 @@ public class a {
 
     public static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : TextUtils.equals("true", OrangeConfig.getInstance().getConfig("android_detail", "enable_hybrid_webView", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : StringUtils.equals("true", OrangeConfig.getInstance().getConfig("android_detail", "enable_hybrid_webView", "true"));
     }
 
     public static boolean c() {

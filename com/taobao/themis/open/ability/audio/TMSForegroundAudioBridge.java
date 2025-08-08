@@ -3,7 +3,7 @@ package com.taobao.themis.open.ability.audio;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONObject;
@@ -170,7 +170,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             TMSLogger.d("TMSForegroundAudioBridge", "startMonitorForegroundAudio page is null");
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str = "DEFAULT_PLAYER";
         }
         d dVar = this.f22614a.get(str);
@@ -211,7 +211,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             TMSLogger.d("TMSForegroundAudioBridge", "stopMonitorForegroundAudio page is null");
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str = "DEFAULT_PLAYER";
         }
         d dVar = this.f22614a.get(str);
@@ -258,7 +258,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             TMSLogger.d("TMSForegroundAudioBridge", "getForegroundAudioOption optionName is null or empty");
             return;
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str = "DEFAULT_PLAYER";
         }
         d dVar = this.f22614a.get(str);
@@ -400,7 +400,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
                 TMSLogger.d("TMSForegroundAudioBridge", "stopMonitorForegroundAudio kv is null");
                 return;
             }
-            String str5 = TextUtils.isEmpty(str4) ? "DEFAULT_PLAYER" : str;
+            String str5 = StringUtils.isEmpty(str4) ? "DEFAULT_PLAYER" : str;
             d dVar = this.f22614a.get(str5);
             if (dVar == null) {
                 dVar = new d(str5);
@@ -460,7 +460,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             TMSLogger.d("TMSForegroundAudioBridge", "playForegroundAudio page is null");
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str = "DEFAULT_PLAYER";
         }
         d dVar = this.f22614a.get(str);
@@ -502,7 +502,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             TMSLogger.d("TMSForegroundAudioBridge", "pauseForegroundAudio page is null");
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str = "DEFAULT_PLAYER";
         }
         d dVar = this.f22614a.get(str);
@@ -543,7 +543,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             TMSLogger.d("TMSForegroundAudioBridge", "stopForegroundAudio page is null");
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str = "DEFAULT_PLAYER";
         }
         d dVar = this.f22614a.get(str);
@@ -584,7 +584,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             TMSLogger.d("TMSForegroundAudioBridge", "stopForegroundAudio page is null");
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str = "DEFAULT_PLAYER";
         }
         d dVar = this.f22614a.get(str);
@@ -618,7 +618,7 @@ public final class TMSForegroundAudioBridge implements com.taobao.themis.kernel.
             callback.sendBridgeResponse(BridgeResponse.FORBIDDEN_ERROR);
             TMSLogger.d("TMSForegroundAudioBridge", "stopForegroundAudio page is null");
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str = "DEFAULT_PLAYER";
             }
             d dVar = this.f22614a.get(str);

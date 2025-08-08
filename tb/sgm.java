@@ -6,7 +6,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.util.n;
 import android.taobao.windvane.webview.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -49,7 +49,7 @@ public class sgm extends Component<ViewGroup, b> implements s {
                 ipChange.ipc$dispatch("f78ac81a", new Object[]{this, fVar, viewGroup, bVar, dVar});
             } else if (viewGroup == null || bVar == null) {
             } else {
-                if (!TextUtils.isEmpty(bVar.f33559a) && !TextUtils.equals(sgm.a(sgm.this), bVar.f33559a)) {
+                if (!StringUtils.isEmpty(bVar.f33559a) && !StringUtils.equals(sgm.a(sgm.this), bVar.f33559a)) {
                     sgm.a(sgm.this, bVar.f33559a);
                     ogg.b(WindvanePluginRegister.WVTNodeWebViewJSBridge.TAG, "loadUrl url: " + sgm.a(sgm.this));
                     sgm.b(sgm.this).loadUrl(sgm.a(sgm.this));
@@ -305,7 +305,7 @@ public class sgm extends Component<ViewGroup, b> implements s {
             int i = this.b;
             if (2 == i) {
                 a(str, JSON.parseObject(JSON.toJSONString(eVar.d)));
-            } else if (3 == i && this.h != null && !TextUtils.isEmpty(this.d)) {
+            } else if (3 == i && this.h != null && !StringUtils.isEmpty(this.d)) {
                 ogg.a(WindvanePluginRegister.WVTNodeWebViewJSBridge.TAG, "onHandleMessage  try reload");
                 this.h.loadUrl(this.d);
             }
@@ -661,7 +661,7 @@ public class sgm extends Component<ViewGroup, b> implements s {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("56c6c68", new Object[]{this});
-                    } else if (sgm.b(sgm.this) == null || TextUtils.isEmpty(sgm.a(sgm.this))) {
+                    } else if (sgm.b(sgm.this) == null || StringUtils.isEmpty(sgm.a(sgm.this))) {
                     } else {
                         sgm.b(sgm.this).reload();
                         a.this.hideErrorPage();

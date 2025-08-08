@@ -1,7 +1,7 @@
 package com.taobao.android.diagnose.scene.engine.config;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.c;
@@ -91,7 +91,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             long currentTimeMillis = System.currentTimeMillis();
             List<ActionsExecuteRecord> list = f11720a.rulesRecordList.get(str);
             if (list == null || list.isEmpty()) {
@@ -227,7 +227,7 @@ public class a {
             return;
         }
         String a2 = d.a(b);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 f11720a = (SceneRunningRecord) JSON.parseObject(a2, SceneRunningRecord.class);
                 return;

@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp.delta;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ad023781", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (indexOf = str.indexOf("_")) <= 0 || indexOf >= str.length() - 1) {
+        if (StringUtils.isEmpty(str) || (indexOf = str.indexOf("_")) <= 0 || indexOf >= str.length() - 1) {
             return null;
         }
         return new String[]{str.substring(0, indexOf), str.substring(indexOf + 1, str.length())};
@@ -41,7 +41,7 @@ public class i {
         if (iDMComponent != null && iDMComponent.getFields() != null && iDMComponent.getPosition() != null) {
             str = iDMComponent.getPosition();
         }
-        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get("PositionTag") == null || TextUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get("PositionTag")))) ? str : (String) iDMComponent2.getExtMap().get("PositionTag");
+        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get("PositionTag") == null || StringUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get("PositionTag")))) ? str : (String) iDMComponent2.getExtMap().get("PositionTag");
     }
 
     public static String b(IDMComponent iDMComponent, IDMComponent iDMComponent2) {
@@ -53,7 +53,7 @@ public class i {
         if (iDMComponent != null && iDMComponent.getFields() != null && "true".equals(iDMComponent.getCardGroup())) {
             str = iDMComponent.getKey();
         }
-        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get("CardGroupTag") == null || TextUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get("CardGroupTag")))) ? str : (String) iDMComponent2.getExtMap().get("CardGroupTag");
+        return (iDMComponent2 == null || iDMComponent2.getExtMap() == null || iDMComponent2.getExtMap().get("CardGroupTag") == null || StringUtils.isEmpty(String.valueOf(iDMComponent2.getExtMap().get("CardGroupTag")))) ? str : (String) iDMComponent2.getExtMap().get("CardGroupTag");
     }
 
     public static void a(List<IDMComponent> list) {
@@ -110,7 +110,7 @@ public class i {
         if (1 != i3) {
             i = 16;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         iDMComponent.setCornerTypeFields(i);

@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.entity.ConnType;
 import anet.channel.security.SecurityHelper;
@@ -197,7 +197,7 @@ public class StrategyResultParser {
                 }
             }
             String optString = jSONObject.optString(DispatchConstants.AB_STRATEGY);
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 this.abStrategy = null;
                 return;
             }

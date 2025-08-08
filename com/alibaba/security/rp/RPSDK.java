@@ -1,7 +1,7 @@
 package com.alibaba.security.rp;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.RPEnv;
 import com.alibaba.security.realidentity.RPEventListener;
 import com.alibaba.security.realidentity.RPResult;
@@ -185,7 +185,7 @@ public class RPSDK {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7d285651", new Object[]{str, context, rPCompletedListener});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             RPVerify.startWithUrl(context, str, new RPEventListener() { // from class: com.alibaba.security.rp.RPSDK.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;

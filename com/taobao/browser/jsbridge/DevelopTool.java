@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
 import android.taobao.windvane.webview.j;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.config.NetworkConfigCenter;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -228,7 +228,7 @@ public class DevelopTool extends WVDevelopTool {
             com.alibaba.fastjson.JSONObject parseObject = com.alibaba.fastjson.JSONObject.parseObject(str);
             if (parseObject != null) {
                 String string = parseObject.getString("urlList");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     BrowserActivityProcessor.TMS_WHITE_LIST = string;
                     wVCallBackContext.success();
                     return;

@@ -1,6 +1,6 @@
 package com.ali.user.number.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.CommonDataCallback;
 import com.ali.user.mobile.log.UserTrackAdapter;
@@ -111,7 +111,7 @@ public class NumAuthComponent implements NumberAuthService {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("8a6edd1a", new Object[]{this, str});
-                    } else if (!TextUtils.isEmpty(str)) {
+                    } else if (!StringUtils.isEmpty(str)) {
                         try {
                             TokenRet tokenRet = (TokenRet) JSON.parseObject(str, TokenRet.class);
                             if (tokenRet == null || numAuthTokenCallback == null) {
@@ -189,14 +189,14 @@ public class NumAuthComponent implements NumberAuthService {
                         NumAuthComponent.access$100(NumAuthComponent.this).put("number", loginPhoneInfo.getPhoneNumber());
                         NumAuthComponent.access$100(NumAuthComponent.this).put("protocolName", loginPhoneInfo.getProtocolName());
                         NumAuthComponent.access$100(NumAuthComponent.this).put("protocolURL", loginPhoneInfo.getProtocolUrl());
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             NumAuthComponent.access$100(NumAuthComponent.this).put("scene", str);
                         }
                         NumAuthComponent.this.hasPreFecthMaskPhone = true;
                         Properties properties2 = new Properties();
                         properties2.setProperty("scene", str + "");
                         try {
-                            properties2.setProperty("newUser", TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
+                            properties2.setProperty("newUser", StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
                         } catch (Throwable unused) {
                         }
                         properties2.setProperty("monitor", "NONE");
@@ -227,7 +227,7 @@ public class NumAuthComponent implements NumberAuthService {
                         }
                         properties2.setProperty("scene", str + "");
                         try {
-                            properties2.setProperty("newUser", TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
+                            properties2.setProperty("newUser", StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
                         } catch (Throwable unused2) {
                         }
                         UserTrackAdapter.sendUT("get_login_number_fail", properties2);
@@ -241,7 +241,7 @@ public class NumAuthComponent implements NumberAuthService {
             properties2.setProperty("cause", NumAuthCallback.INIT_ERROR_MSG);
             properties2.setProperty("scene", str + "");
             try {
-                properties2.setProperty("newUser", TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
+                properties2.setProperty("newUser", StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
             } catch (Throwable unused) {
             }
             UserTrackAdapter.sendUT("get_login_number_fail", properties2);
@@ -325,7 +325,7 @@ public class NumAuthComponent implements NumberAuthService {
                     properties2.setProperty("scene", str);
                     properties2.setProperty("wait_time", String.valueOf(i));
                     try {
-                        properties2.setProperty("newUser", TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
+                        properties2.setProperty("newUser", StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
                     } catch (Throwable unused) {
                     }
                     UserTrackAdapter.sendUT("get_login_number_success", properties2);
@@ -359,7 +359,7 @@ public class NumAuthComponent implements NumberAuthService {
                         }
                         properties2.setProperty("scene", str);
                         try {
-                            properties2.setProperty("newUser", TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
+                            properties2.setProperty("newUser", StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId()) ? "true" : "false");
                         } catch (Throwable unused2) {
                         }
                         UserTrackAdapter.sendUT("get_login_number_fail", properties2);
@@ -395,7 +395,7 @@ public class NumAuthComponent implements NumberAuthService {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("8a6edd1a", new Object[]{this, str2});
-                    } else if (!TextUtils.isEmpty(str2)) {
+                    } else if (!StringUtils.isEmpty(str2)) {
                         try {
                             TokenRet tokenRet = (TokenRet) JSON.parseObject(str2, TokenRet.class);
                             if (tokenRet != null && numAuthTokenCallback != null) {
@@ -544,7 +544,7 @@ public class NumAuthComponent implements NumberAuthService {
                             }
                             try {
                                 Properties properties2 = new Properties();
-                                if (!TextUtils.isEmpty(str)) {
+                                if (!StringUtils.isEmpty(str)) {
                                     properties2.put("auth", str);
                                 }
                                 UserTrackAdapter.sendUT("AuthSDK", properties2);

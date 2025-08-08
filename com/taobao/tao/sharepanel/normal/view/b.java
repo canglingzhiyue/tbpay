@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.support.v7.widget.CardView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -244,7 +244,7 @@ public class b implements View.OnClickListener, com.taobao.share.ui.engine.rende
             return;
         }
         Activity activity = this.j.get();
-        if (fVar == null || TextUtils.isEmpty(fVar.b)) {
+        if (fVar == null || StringUtils.isEmpty(fVar.b)) {
             this.e.clear();
             this.e.setVisibility(8);
             return;
@@ -341,7 +341,7 @@ public class b implements View.OnClickListener, com.taobao.share.ui.engine.rende
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (SpUtils.getGuide(com.taobao.tao.config.a.a(), SpUtils.START_GUIDE_NEW) || TextUtils.equals("common", str)) {
+        if (SpUtils.getGuide(com.taobao.tao.config.a.a(), SpUtils.START_GUIDE_NEW) || StringUtils.equals("common", str)) {
             z = false;
         }
         if (!z) {
@@ -351,7 +351,7 @@ public class b implements View.OnClickListener, com.taobao.share.ui.engine.rende
         TUrlImageView tUrlImageView = (TUrlImageView) this.d.findViewById(R.id.share_new_menu_guide_img_view_new);
         ((LinearLayout) this.d.findViewById(R.id.share_ll_guide)).setVisibility(0);
         String e = obi.b.e();
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             e = com.taobao.tao.config.a.a().getString(R.string.share_guide_tips);
         }
         tUrlImageView.setImageUrl(e);
@@ -385,7 +385,7 @@ public class b implements View.OnClickListener, com.taobao.share.ui.engine.rende
         layoutParams.setMargins(nyq.a(a2, 30.0f), 0, nyq.a(a2, 50.0f), nyq.a(a2, 40.0f));
         tUrlImageView.setLayoutParams(layoutParams);
         String d = obi.b.d();
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             d = "https://img.alicdn.com/tfs/TB1SKoBUG6qK1RjSZFmXXX0PFXa-879-482.png";
         }
         tUrlImageView.setImageUrl(d);

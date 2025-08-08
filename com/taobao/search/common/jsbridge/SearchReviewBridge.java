@@ -3,7 +3,7 @@ package com.taobao.search.common.jsbridge;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -47,7 +47,7 @@ public final class SearchReviewBridge extends e {
         q.c(action, "action");
         q.c(params, "params");
         q.c(callback, "callback");
-        if (!TextUtils.equals(action, ACTION_NAME)) {
+        if (!StringUtils.equals(action, ACTION_NAME)) {
             return false;
         }
         try {
@@ -56,7 +56,7 @@ public final class SearchReviewBridge extends e {
                 return false;
             }
             String srpKey = parseObject.getString("srpKey");
-            if (TextUtils.isEmpty(srpKey)) {
+            if (StringUtils.isEmpty(srpKey)) {
                 return false;
             }
             r rVar = new r();

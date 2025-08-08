@@ -2,7 +2,7 @@ package com.taobao.taolive.movehighlight.dx.widget.scrollerLayout;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.analytics.core.sync.q;
 import com.alibaba.fastjson.JSONArray;
@@ -430,7 +430,7 @@ public class DXHighlightScrollableLayoutWidgetNode extends x {
                     } else if (MSG_METHOD_change_selected_data.equalsIgnoreCase(method)) {
                         String string2 = params.getString("itemId");
                         int intValue2 = params.getInteger("subDataIndex").intValue();
-                        if (!TextUtils.isEmpty(string2) && intValue2 >= 0) {
+                        if (!StringUtils.isEmpty(string2) && intValue2 >= 0) {
                             a(string2, intValue2);
                         }
                     } else if (MSG_METHOD_UPDATE_SELETED_DATA.equalsIgnoreCase(method) && (intValue = params.getInteger("subDataIndex").intValue()) >= 0) {

@@ -1,7 +1,7 @@
 package com.taobao.pha.core.rescache;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.p;
 import java.io.ByteArrayInputStream;
@@ -55,7 +55,7 @@ public class f implements c {
         }
         try {
             String a2 = p.c().a("disk_size_limit");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return 52428800;
             }
             int parseInt = Integer.parseInt(a2);
@@ -113,7 +113,7 @@ public class f implements c {
         String uri = a2.toString();
         if (this.b.a(uri)) {
             String a3 = a(uri);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 ngm ngmVar = new ngm(a(a2), null, new ByteArrayInputStream(a3.getBytes()));
                 HashMap hashMap = new HashMap(2);
                 hashMap.put(c.RESPONSE_HEADER_PHA_PACKAGE_RESOURCE, "hit");

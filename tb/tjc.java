@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -70,7 +70,7 @@ public class tjc {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             stv.a("ConfigCenter", "launchCnt isCrossOneDay: spStorageStrVal is null");
             return true;
         }
@@ -136,7 +136,7 @@ public class tjc {
         }
         int i = 1;
         String a2 = tjm.a("app_launch_count", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             stv.a("ConfigCenter", " getLaunchCountNum appLaunchCountJSONObjStr is empty");
             return 1;
         }

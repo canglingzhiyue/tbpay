@@ -1,6 +1,6 @@
 package com.taobao.tao.shop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
 import com.taobao.tao.shop.fetcher.adapter.b;
@@ -47,7 +47,7 @@ public class f {
         List<String> s = b.a().s();
         if (s != null && !s.isEmpty()) {
             String nick = Login.getNick();
-            if (!TextUtils.isEmpty(nick) && s.contains(nick)) {
+            if (!StringUtils.isEmpty(nick) && s.contains(nick)) {
                 return true;
             }
         }

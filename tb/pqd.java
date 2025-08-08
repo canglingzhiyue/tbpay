@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.common.MUSConstants;
@@ -45,7 +45,7 @@ public class pqd {
             }
             List<LiveAPMBean.SceneData> list = liveAPMBean.sceneDataList;
             for (LiveAPMBean.SceneData sceneData : list) {
-                if (!TextUtils.equals(sceneData.scenePoint, "start")) {
+                if (!StringUtils.equals(sceneData.scenePoint, "start")) {
                     hashMap.put(sceneData.scenePoint, JSON.toJSONString(sceneData.performanceData));
                 }
             }
@@ -80,7 +80,7 @@ public class pqd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5d33b7ee", new Object[]{this, str, liveAPMBean});
-        } else if (liveAPMBean != null && u.aL() && !TextUtils.isEmpty(str) && str.contains("LIVE_CODE_BOOT_STAGE")) {
+        } else if (liveAPMBean != null && u.aL() && !StringUtils.isEmpty(str) && str.contains("LIVE_CODE_BOOT_STAGE")) {
             List<LiveAPMBean.SceneData> list = liveAPMBean.sceneDataList;
             HashMap hashMap = new HashMap();
             if (liveAPMBean.extParams != null) {
@@ -89,15 +89,15 @@ public class pqd {
             a aVar = new a();
             aVar.f21865a = new ArrayList();
             for (LiveAPMBean.SceneData sceneData : list) {
-                if (TextUtils.equals(sceneData.scenePoint, "start")) {
+                if (StringUtils.equals(sceneData.scenePoint, "start")) {
                     a.C0909a a2 = a(sceneData);
                     a2.c = "start";
                     aVar.f21865a.add(a2);
-                } else if (TextUtils.equals(sceneData.scenePoint, pqe.STAGE_T2)) {
+                } else if (StringUtils.equals(sceneData.scenePoint, pqe.STAGE_T2)) {
                     a.C0909a a3 = a(sceneData);
                     a3.c = "request";
                     aVar.f21865a.add(a3);
-                } else if (TextUtils.equals(sceneData.scenePoint, pqe.STAGE_INTERACTIVE)) {
+                } else if (StringUtils.equals(sceneData.scenePoint, pqe.STAGE_INTERACTIVE)) {
                     a.C0909a a4 = a(sceneData);
                     a4.c = "end";
                     aVar.f21865a.add(a4);
@@ -143,13 +143,13 @@ public class pqd {
         LiveAPMBean.SceneData sceneData3 = null;
         LiveAPMBean.SceneData sceneData4 = null;
         for (LiveAPMBean.SceneData sceneData5 : list) {
-            if (TextUtils.equals(sceneData5.scenePoint, "start")) {
+            if (StringUtils.equals(sceneData5.scenePoint, "start")) {
                 sceneData2 = sceneData5;
-            } else if (TextUtils.equals(sceneData5.scenePoint, pqe.STAGE_T1)) {
+            } else if (StringUtils.equals(sceneData5.scenePoint, pqe.STAGE_T1)) {
                 sceneData = sceneData5;
-            } else if (TextUtils.equals(sceneData5.scenePoint, pqe.STAGE_T2)) {
+            } else if (StringUtils.equals(sceneData5.scenePoint, pqe.STAGE_T2)) {
                 sceneData3 = sceneData5;
-            } else if (TextUtils.equals(sceneData5.scenePoint, pqe.STAGE_INTERACTIVE)) {
+            } else if (StringUtils.equals(sceneData5.scenePoint, pqe.STAGE_INTERACTIVE)) {
                 sceneData4 = sceneData5;
             }
         }

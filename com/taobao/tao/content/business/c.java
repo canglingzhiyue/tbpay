@@ -1,7 +1,7 @@
 package com.taobao.tao.content.business;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.net.URLEncoder;
@@ -58,17 +58,17 @@ public class c {
         String[] split = (fragment == null || !fragment.contains("?")) ? null : fragment.split("\\?");
         if (split != null && split.length > 0) {
             fragment = split[0];
-            str = !TextUtils.isEmpty(str) ? str + "&" + split[1] : split[1];
+            str = !StringUtils.isEmpty(str) ? str + "&" + split[1] : split[1];
         }
         if (fragment != null && fragment.contains("&")) {
             int indexOf = fragment.indexOf("&");
             if (indexOf > 0) {
-                str = !TextUtils.isEmpty(str) ? str + "&" + fragment.substring(indexOf + 1) : fragment.substring(indexOf + 1);
+                str = !StringUtils.isEmpty(str) ? str + "&" + fragment.substring(indexOf + 1) : fragment.substring(indexOf + 1);
                 fragment = fragment.substring(0, indexOf);
             }
             aVar.b = fragment;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             strArr = str.split("&");
         }
         if (strArr != null && strArr.length > 0) {
@@ -81,7 +81,7 @@ public class c {
         }
         for (String str3 : uri.getQueryParameterNames()) {
             String queryParameter = uri.getQueryParameter(str3);
-            if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(queryParameter)) {
                 hashMap.put(str3, queryParameter);
             }
         }

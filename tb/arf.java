@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -95,7 +95,7 @@ public class arf {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("666b162a", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return (String) this.f25527a.get(str);
         }
         return null;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.performance.n;
@@ -129,7 +129,7 @@ public class dyo {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("a3543ddc", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f27115a.get(str);
         }
         return null;
@@ -142,7 +142,7 @@ public class dyo {
             return ((Boolean) ipChange.ipc$dispatch("68a25be", new Object[]{activity})).booleanValue();
         }
         String b3 = b(activity);
-        if (TextUtils.isEmpty(b3) || (b2 = b(b3)) == null) {
+        if (StringUtils.isEmpty(b3) || (b2 = b(b3)) == null) {
             return false;
         }
         return b2.b;

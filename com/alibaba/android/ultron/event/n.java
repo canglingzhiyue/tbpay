@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -28,7 +28,7 @@ public class n extends q {
                 return;
             }
             String string = fields.getString("message");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             com.alibaba.android.ultron.vfw.widget.a.a(eVar.a(), string);

@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.application.common.c;
 import com.taobao.tao.TBMainHost;
@@ -18,7 +18,7 @@ public class ker {
 
     public static boolean a(Activity activity) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("68a25be", new Object[]{activity})).booleanValue() : TBMainHost.fromActivity(activity) == null && TextUtils.equals(activity.getLocalClassName(), Welcome.class.getName());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("68a25be", new Object[]{activity})).booleanValue() : TBMainHost.fromActivity(activity) == null && StringUtils.equals(activity.getLocalClassName(), Welcome.class.getName());
     }
 
     public static boolean b(Activity activity) {
@@ -30,7 +30,7 @@ public class ker {
             return false;
         }
         Fragment currentFragment = TBMainHost.a().getCurrentFragment();
-        return currentFragment == null || TextUtils.equals(currentFragment.getClass().getName(), "com.taobao.tao.homepage.HomepageFragment");
+        return currentFragment == null || StringUtils.equals(currentFragment.getClass().getName(), "com.taobao.tao.homepage.HomepageFragment");
     }
 
     public static boolean a() {

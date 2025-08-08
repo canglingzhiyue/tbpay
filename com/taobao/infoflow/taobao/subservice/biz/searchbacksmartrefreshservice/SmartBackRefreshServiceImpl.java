@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
@@ -523,7 +523,7 @@ public class SmartBackRefreshServiceImpl implements ISmartBackRefreshService {
                     ipChange2.ipc$dispatch("d905f556", new Object[]{this, lliVar, iContainerDataModel, str});
                     return;
                 }
-                if (SmartBackRefreshServiceImpl.access$800(SmartBackRefreshServiceImpl.this, iContainerDataModel) && !TextUtils.equals(str, Constant.KEY_PAGEBACK)) {
+                if (SmartBackRefreshServiceImpl.access$800(SmartBackRefreshServiceImpl.this, iContainerDataModel) && !StringUtils.equals(str, Constant.KEY_PAGEBACK)) {
                     SmartBackRefreshServiceImpl.access$602(SmartBackRefreshServiceImpl.this, null);
                 }
                 SmartBackRefreshServiceImpl.access$900(SmartBackRefreshServiceImpl.this, iContainerDataModel);

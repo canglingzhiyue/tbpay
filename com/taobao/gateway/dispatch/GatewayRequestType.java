@@ -1,6 +1,6 @@
 package com.taobao.gateway.dispatch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.taobao.android.editionswitcher.core.b;
@@ -62,7 +62,7 @@ public enum GatewayRequestType {
     public static GatewayRequestType getGatewayRequestType(RequestTypeEnum requestTypeEnum) {
         GatewayRequestType[] values;
         for (GatewayRequestType gatewayRequestType : values()) {
-            if (TextUtils.equals(requestTypeEnum.behaviorName, gatewayRequestType.behavior)) {
+            if (StringUtils.equals(requestTypeEnum.behaviorName, gatewayRequestType.behavior)) {
                 return gatewayRequestType;
             }
         }

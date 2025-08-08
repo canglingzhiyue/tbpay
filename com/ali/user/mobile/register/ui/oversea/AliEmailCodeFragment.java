@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -243,7 +243,7 @@ public class AliEmailCodeFragment extends AliUserRegisterSMSVerificationFragment
             this.mSendSMSCodeBtn.startCountDown(60000L, 1000L);
             if ("voice".equals(smsApplyResult.sendType)) {
                 this.mVideoUrl = null;
-            } else if (smsApplyResult == null || TextUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
+            } else if (smsApplyResult == null || StringUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
             } else {
                 this.mVideoUrl = smsApplyResult.helpVideoUrl;
             }
@@ -255,7 +255,7 @@ public class AliEmailCodeFragment extends AliUserRegisterSMSVerificationFragment
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("652b6bb2", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mVideoUrl)) {
+        } else if (StringUtils.isEmpty(this.mVideoUrl)) {
             addControl("Button-Help");
             if (!isActivityAvaiable()) {
                 return;

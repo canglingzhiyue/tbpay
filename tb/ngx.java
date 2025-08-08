@@ -3,7 +3,7 @@ package tb;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pha.core.IImageLoader;
@@ -90,12 +90,12 @@ public class ngx implements IImageLoader {
                     if (imageView2.getTag() instanceof c) {
                         ((c) imageView.getTag()).b();
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         imageView.setImageDrawable(null);
                         return;
                     }
                     String a2 = ngx.a(ngx.this, imageView, str, imageQuality, bVar);
-                    if (!TextUtils.isEmpty(bVar.b)) {
+                    if (!StringUtils.isEmpty(bVar.b)) {
                         com.taobao.phenix.intf.b.h().a(bVar.b).fetch();
                     }
                     PhenixCreator addLoaderExtra = com.taobao.phenix.intf.b.h().a(a2).secondary(bVar.b).limitSize(imageView).releasableDrawable(true).addLoaderExtra(esr.BUNDLE_BIZ_CODE, Integer.toString(100));
@@ -109,7 +109,7 @@ public class ngx implements IImageLoader {
 
     private String b(ImageView imageView, String str, IImageLoader.ImageQuality imageQuality, IImageLoader.b bVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("49fea683", new Object[]{this, imageView, str, imageQuality, bVar}) : (imageView == null || TextUtils.isEmpty(str) || imageQuality == IImageLoader.ImageQuality.ORIGINAL) ? str : a(imageView, str, bVar.f18706a, imageQuality);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("49fea683", new Object[]{this, imageView, str, imageQuality, bVar}) : (imageView == null || StringUtils.isEmpty(str) || imageQuality == IImageLoader.ImageQuality.ORIGINAL) ? str : a(imageView, str, bVar.f18706a, imageQuality);
     }
 
     private String a(ImageView imageView, String str, boolean z, IImageLoader.ImageQuality imageQuality) {

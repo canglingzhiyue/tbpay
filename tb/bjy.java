@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -21,7 +21,7 @@ public class bjy extends bjx {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("type", "mtopV2");
         jSONObject2.put("fields", (Object) bkg.a(jSONObject));
-        if ((jSONObject.get("reloadType") instanceof String) && !TextUtils.equals("none", jSONObject.getString("reloadType"))) {
+        if ((jSONObject.get("reloadType") instanceof String) && !StringUtils.equals("none", jSONObject.getString("reloadType"))) {
             a(jSONObject2, "success", "refreshPageV2", (JSONObject) null);
         }
         if (jSONObject.get("nextUrl") instanceof String) {

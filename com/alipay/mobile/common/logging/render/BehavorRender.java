@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.render;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.DeviceInfo;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -32,7 +32,7 @@ public class BehavorRender extends BaseRender {
         if (behavor.getExtParams() != null) {
             str2 = behavor.getExtParams().get("header");
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "D-VM";
         }
         sb.append(str2);
@@ -43,12 +43,12 @@ public class BehavorRender extends BaseRender {
         LoggingUtil.appendParam(sb, this.b.getClientId());
         LoggingUtil.appendParam(sb, this.b.getSessionId());
         LoggingUtil.appendParam(sb, this.b.getUserId());
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "event";
         }
         LoggingUtil.appendParam(sb, str);
         LoggingUtil.appendParam(sb, behavor.getAbTestInfo());
-        LoggingUtil.appendParam(sb, !TextUtils.isEmpty(behavor.getRefer()) ? behavor.getRefer() : pendingRender.h);
+        LoggingUtil.appendParam(sb, !StringUtils.isEmpty(behavor.getRefer()) ? behavor.getRefer() : pendingRender.h);
         LoggingUtil.appendParam(sb, behavor.getAppID() != null ? behavor.getAppID() : pendingRender.g);
         LoggingUtil.appendParam(sb, behavor.getAppVersion());
         LoggingUtil.appendParam(sb, behavor.getxPath());

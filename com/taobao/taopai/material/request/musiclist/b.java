@@ -1,6 +1,6 @@
 package com.taobao.taopai.material.request.musiclist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -69,7 +69,7 @@ public class b extends com.taobao.taopai.material.request.base.a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6aaa74cf", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             return "";
         }
         HashMap hashMap = new HashMap();

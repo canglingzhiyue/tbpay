@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.topmultitab.protocol.IHomeSubTabController;
@@ -91,10 +91,10 @@ public class nwq {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("e0e36ce9", new Object[]{this, str, jSONObject, interfaceC1153a});
-                } else if (TextUtils.equals("popLayerPassParams", str)) {
+                } else if (StringUtils.equals("popLayerPassParams", str)) {
                     nwq.a(nwq.this, interfaceC1153a);
                     nwq.a(nwq.this, (JSONObject) null);
-                } else if (!TextUtils.equals("tabPassParams", str)) {
+                } else if (!StringUtils.equals("tabPassParams", str)) {
                 } else {
                     nwq.b(nwq.this, interfaceC1153a);
                 }

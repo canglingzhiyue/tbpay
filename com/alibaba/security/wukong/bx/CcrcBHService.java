@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
 import com.alibaba.security.ccrc.manager.CcrcContextImpl;
@@ -112,7 +112,7 @@ public class CcrcBHService {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return (CcrcBHService) ipChange.ipc$dispatch("89bfcff0", new Object[]{str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 Logging.e(TAG, "ccrcCode is null");
                 return null;
             } else if (CcrcContextImpl.getContext() == null) {
@@ -176,7 +176,7 @@ public class CcrcBHService {
             jSONString = "features over limit size";
         }
         TrackLog.Builder operation = TrackLog.newBuilder().setpId(this.mService.getPid()).setCcrcCode(this.mCcrcCode).setPhase(Ba.b.e).setOperation(Ba.a.r);
-        if (TextUtils.isEmpty(jSONString)) {
+        if (StringUtils.isEmpty(jSONString)) {
             i = -1;
         }
         TrackManager.track(operation.setStatus(i).addParam("features", jSONString).addParam("isActivate", Boolean.valueOf(z)).build());

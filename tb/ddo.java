@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.client.GlobalClientInfo;
 import com.taobao.accs.common.Constants;
@@ -70,7 +70,7 @@ public class ddo extends ddm {
             th = th;
             ddoVar = null;
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(deviceId) && !TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(deviceId) && !StringUtils.isEmpty(str3)) {
             ddoVar = new ddo();
             try {
                 ddoVar.e = "register";

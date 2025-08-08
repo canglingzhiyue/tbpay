@@ -2,7 +2,7 @@ package com.taobao.search.m3.widget;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.ScaleAnimation;
 import com.alibaba.fastjson.JSON;
@@ -864,7 +864,7 @@ public class b extends itd<M3CellBean, iru<com.taobao.search.sf.datasource.c>> i
         com.taobao.search.m3.widget.a aVar = new com.taobao.search.m3.widget.a(m3CellBean, this, m(), c(m3CellBean), d(m3CellBean), b(m3CellBean));
         Map<String, String> e2 = aVar.e();
         Map<String, String> f = aVar.f();
-        if (!TextUtils.isEmpty(tag.j())) {
+        if (!StringUtils.isEmpty(tag.j())) {
             if (interactiveInfo.c()) {
                 try {
                     String j = tag.j();
@@ -906,7 +906,7 @@ public class b extends itd<M3CellBean, iru<com.taobao.search.sf.datasource.c>> i
         List<com.taobao.search.m3.interactive.c> a2 = bVar.a();
         StringBuilder sb = new StringBuilder();
         for (com.taobao.search.m3.interactive.c cVar : a2) {
-            if (!TextUtils.isEmpty(cVar.j())) {
+            if (!StringUtils.isEmpty(cVar.j())) {
                 if (sb.length() > 0) {
                     sb.append(";");
                 }
@@ -950,7 +950,7 @@ public class b extends itd<M3CellBean, iru<com.taobao.search.sf.datasource.c>> i
         if (m3CellBean == null) {
             return;
         }
-        if (TextUtils.isEmpty(info.a())) {
+        if (StringUtils.isEmpty(info.a())) {
             a2 = "https://shop.m.taobao.com/shop/shop_index.htm";
         } else {
             a2 = info.a();
@@ -1168,7 +1168,7 @@ public class b extends itd<M3CellBean, iru<com.taobao.search.sf.datasource.c>> i
         }
         q.c(from, "from");
         M3CellBean m3CellBean = this.e;
-        if (m3CellBean == null || TextUtils.isEmpty(m3CellBean.getPltSimilarUrl())) {
+        if (m3CellBean == null || StringUtils.isEmpty(m3CellBean.getPltSimilarUrl())) {
             return;
         }
         com.taobao.search.m3.widget.a aVar = new com.taobao.search.m3.widget.a(m3CellBean, this, m(), c(m3CellBean), d(m3CellBean), b(m3CellBean));
@@ -1187,7 +1187,7 @@ public class b extends itd<M3CellBean, iru<com.taobao.search.sf.datasource.c>> i
         iru<com.taobao.search.sf.datasource.c> model = j();
         q.a((Object) model, "model");
         String paramValueIncludingGlobal = model.d().getParamValueIncludingGlobal("channelSrp");
-        String str2 = TextUtils.isEmpty(paramValueIncludingGlobal) ? from : from + '-' + paramValueIncludingGlobal;
+        String str2 = StringUtils.isEmpty(paramValueIncludingGlobal) ? from : from + '-' + paramValueIncludingGlobal;
         try {
             HashMap hashMap = new HashMap();
             Uri uri = Uri.parse(m3CellBean.getPltSimilarUrl());
@@ -1500,7 +1500,7 @@ public class b extends itd<M3CellBean, iru<com.taobao.search.sf.datasource.c>> i
             hashSet.remove(str2);
         }
         if (hashSet.isEmpty()) {
-            if (!TextUtils.isEmpty(discountInfo.g())) {
+            if (!StringUtils.isEmpty(discountInfo.g())) {
                 str = discountInfo.g();
             }
             discountInfo.a(str);

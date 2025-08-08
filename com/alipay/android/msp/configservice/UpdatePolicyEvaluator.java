@@ -1,7 +1,7 @@
 package com.alipay.android.msp.configservice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.drm.DrmManager;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -42,7 +42,7 @@ public class UpdatePolicyEvaluator {
             return;
         }
         String rawDrmValueFromKey = DrmManager.getInstance(context).getRawDrmValueFromKey("gray_alipay_config_10560");
-        if (TextUtils.isEmpty(rawDrmValueFromKey)) {
+        if (StringUtils.isEmpty(rawDrmValueFromKey)) {
             return;
         }
         try {

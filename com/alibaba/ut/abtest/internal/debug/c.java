@@ -2,7 +2,7 @@ package com.alibaba.ut.abtest.internal.debug;
 
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.ut.abtest.internal.bucketing.HighPriorityExperimentStorage;
 import com.alibaba.ut.abtest.internal.util.g;
@@ -70,7 +70,7 @@ public class c implements b {
             q.a(DebugWindVanePlugin.API_SERVER_NAME, (Class<? extends e>) DebugWindVanePlugin.class);
             b();
             String a2 = k.b().a("ab_mock_switches", "");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             this.g = g.a(a2);
@@ -88,14 +88,14 @@ public class c implements b {
             if (h.a()) {
                 h.a("DebugServiceImpl", "【白名单数据】本设备白名单实验分组(缓存)：" + a2);
             }
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             String[] split = a2.split(",");
             try {
                 synchronized (this.e) {
                     for (String str : split) {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             this.d.add(Long.valueOf(Long.parseLong(str)));
                         }
                     }

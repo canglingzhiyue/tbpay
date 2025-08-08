@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.taopai.charge.data.TpChargeBean;
@@ -79,7 +79,7 @@ public class izd {
             return;
         }
         String str = "sendCount Data = " + tpChargeBean.toString();
-        if (TextUtils.isEmpty(tpChargeBean.getBizScene()) || TextUtils.isEmpty(tpChargeBean.getBizLine())) {
+        if (StringUtils.isEmpty(tpChargeBean.getBizScene()) || StringUtils.isEmpty(tpChargeBean.getBizLine())) {
             Log.e("TaopaiCharge", "bizLine || bizScene is empty");
         } else if (!izg.a()) {
         } else {

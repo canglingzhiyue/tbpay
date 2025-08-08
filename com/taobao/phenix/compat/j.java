@@ -100,7 +100,7 @@ public class j extends qom {
             if (r0 <= r1) goto L54
         L3c:
             java.lang.String r0 = com.taobao.tlog.adapter.AdapterForTLog.getLogLevel()
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L48
             r0 = 6
             goto L50

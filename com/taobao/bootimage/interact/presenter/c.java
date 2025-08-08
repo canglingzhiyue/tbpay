@@ -1,7 +1,7 @@
 package com.taobao.bootimage.interact.presenter;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -138,7 +138,7 @@ public class c extends b {
                     return;
                 }
                 String optString = dataJsonObject.optString("failure");
-                if (mtopResponse.isApiSuccess() && !TextUtils.isEmpty(optString) && "false".equals(optString)) {
+                if (mtopResponse.isApiSuccess() && !StringUtils.isEmpty(optString) && "false".equals(optString)) {
                     a();
                     Toast.makeText(this.f16703a, com.alibaba.ability.localization.b.a(R.string.taobao_app_1000_1_17006), 0).show();
                     if (c() || this.d == null) {

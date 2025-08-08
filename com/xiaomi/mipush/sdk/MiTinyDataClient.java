@@ -2,7 +2,7 @@ package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ic;
 import com.xiaomi.push.ig;
 import com.xiaomi.push.ip;
@@ -149,7 +149,7 @@ public class MiTinyDataClient {
         }
 
         public synchronized void a(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("channel is null, MiTinyDataClientImp.setChannel(String) failed.");
                 return;
             }
@@ -198,7 +198,7 @@ public class MiTinyDataClient {
             return;
         }
         a.a().m1636a(context);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("channel is null or empty, MiTinyDataClient.init(Context, String) failed.");
         } else {
             a.a().a(str);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.parse.AURAParseIO;
 import com.alibaba.android.umf.datamodel.protocol.ultron.Hierarchy;
 import com.alibaba.android.umf.datamodel.protocol.ultron.UltronDeltaProtocol;
@@ -53,7 +53,7 @@ public abstract class avc {
         if (ipChange instanceof IpChange) {
             return (UltronDeltaProtocol) ipChange.ipc$dispatch("66c76acd", new Object[]{this, aVar, jSONObject, aqqVar});
         }
-        if (TextUtils.isEmpty(aVar.b)) {
+        if (StringUtils.isEmpty(aVar.b)) {
             return null;
         }
         this.f25627a = jSONObject;

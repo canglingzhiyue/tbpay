@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -84,7 +84,7 @@ public class nha implements nfc {
                 }
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
                     String key = entry.getKey();
-                    if (!TextUtils.isEmpty(key) && (value = entry.getValue()) != null) {
+                    if (!StringUtils.isEmpty(key) && (value = entry.getValue()) != null) {
                         a2.a(key, value);
                     }
                 }

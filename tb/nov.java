@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.y;
 import com.taobao.vessel.utils.b;
@@ -27,9 +27,9 @@ public class nov {
         String a3 = y.a(str, b.WX_TPL);
         String a4 = y.a(str, "_mus_tpl");
         String a5 = y.a(str, "wh_muise");
-        if ("true".equals(a2) || !TextUtils.isEmpty(a3)) {
+        if ("true".equals(a2) || !StringUtils.isEmpty(a3)) {
             return 3;
         }
-        return (!TextUtils.isEmpty(a4) || !TextUtils.isEmpty(a5)) ? 6 : 0;
+        return (!StringUtils.isEmpty(a4) || !StringUtils.isEmpty(a5)) ? 6 : 0;
     }
 }

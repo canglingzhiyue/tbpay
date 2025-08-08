@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -459,7 +459,7 @@ public class ac extends o {
         DXTemplateItem dXTemplateItem = new DXTemplateItem();
         dXTemplateItem.f11925a = this.e;
         try {
-            if (!TextUtils.isEmpty(this.i)) {
+            if (!StringUtils.isEmpty(this.i)) {
                 dXTemplateItem.b = Long.valueOf(this.i).longValue();
             }
         } catch (NumberFormatException e) {
@@ -589,13 +589,13 @@ public class ac extends o {
         }
         try {
             if (j() && getChildrenCount() <= 0) {
-                if (!TextUtils.isEmpty(this.o)) {
+                if (!StringUtils.isEmpty(this.o)) {
                     b();
                 }
                 removeAllChild();
                 DXTemplateItem dXTemplateItem = new DXTemplateItem();
                 dXTemplateItem.f11925a = f();
-                if (!TextUtils.isEmpty(h())) {
+                if (!StringUtils.isEmpty(h())) {
                     dXTemplateItem.b = Long.parseLong(h());
                 }
                 dXTemplateItem.c = g();
@@ -780,7 +780,7 @@ public class ac extends o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("410f1b9c", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.userId)) {
+        } else if (StringUtils.isEmpty(this.userId)) {
         } else {
             DXWidgetNode queryRootWidgetNode = queryRootWidgetNode();
             if (!(queryRootWidgetNode instanceof m)) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.core.aa;
@@ -37,7 +37,7 @@ public class jcj extends ptk {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cabd9b23", new Object[]{this, spyVar})).booleanValue();
         }
-        if (TextUtils.equals(spyVar.c, "VSMSG_registerFilter")) {
+        if (StringUtils.equals(spyVar.c, "VSMSG_registerFilter")) {
             return spy.BIZ_TNODE_HOME.equals(spyVar.f33836a);
         }
         if (!this.j.isEmpty()) {
@@ -51,7 +51,7 @@ public class jcj extends ptk {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ff34879c", new Object[]{this, spyVar});
-        } else if (spy.BIZ_TNODE_HOME.equals(spyVar.f33836a) && TextUtils.equals(spyVar.c, "VSMSG_registerFilter")) {
+        } else if (spy.BIZ_TNODE_HOME.equals(spyVar.f33836a) && StringUtils.equals(spyVar.c, "VSMSG_registerFilter")) {
             a(c(spyVar));
         } else {
             b(spyVar);

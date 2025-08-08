@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
@@ -1591,7 +1591,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
         if (this.mTBMultiMediaModel == null) {
             return com.taobao.android.trade.event.i.SUCCESS;
         }
-        if ((this.mTBMultiMediaModel.childModels.get(0) instanceof NormalImageModel) && TextUtils.isEmpty(((NormalImageModel) this.mTBMultiMediaModel.childModels.get(0)).imageUrl)) {
+        if ((this.mTBMultiMediaModel.childModels.get(0) instanceof NormalImageModel) && StringUtils.isEmpty(((NormalImageModel) this.mTBMultiMediaModel.childModels.get(0)).imageUrl)) {
             return com.taobao.android.trade.event.i.SUCCESS;
         }
         if (event instanceof DetailEvent) {
@@ -2332,7 +2332,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
                 return;
             }
             String string = jSONObject3.getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             try {
@@ -2410,7 +2410,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("videoAction");
         JSONObject jSONObject3 = jSONObject.getJSONObject("imageAction");
-        if (jSONObject2 != null && !TextUtils.isEmpty(jSONObject2.getString("url"))) {
+        if (jSONObject2 != null && !StringUtils.isEmpty(jSONObject2.getString("url"))) {
             SubItemModel videoModel = getVideoModel();
             String str = videoModel instanceof VideoModel ? ((VideoModel) videoModel).spatialVideoDimension : emh.sDefaultDimension;
             String string = jSONObject2.getString("url");
@@ -2420,7 +2420,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
             galleryVideoModel.setIndex(hasVideo() ? this.mInsertIndex : this.mInsertIndex - 1);
             this.galleryUtils.b(galleryVideoModel);
             this.mVideoModelCache.add(galleryVideoModel);
-        } else if (jSONObject3 == null || TextUtils.isEmpty(jSONObject3.getString("url"))) {
+        } else if (jSONObject3 == null || StringUtils.isEmpty(jSONObject3.getString("url"))) {
         } else {
             NormalImageModel normalImageModel = new NormalImageModel();
             normalImageModel.imageUrl = jSONObject3.getString("url");
@@ -2459,7 +2459,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
                 return;
             }
             this.mCollorateWeexUrl = jSONObject.getString("url");
-            if (TextUtils.isEmpty(this.mCollorateWeexUrl)) {
+            if (StringUtils.isEmpty(this.mCollorateWeexUrl)) {
                 return;
             }
             int intValue = jSONObject.getIntValue("index");
@@ -2492,7 +2492,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fbcd460e", new Object[]{this});
-        } else if (this.mVesselView == null || TextUtils.isEmpty(this.mCollorateWeexUrl)) {
+        } else if (this.mVesselView == null || StringUtils.isEmpty(this.mCollorateWeexUrl)) {
         } else {
             this.mVesselView.loadUrl(this.mCollorateWeexUrl);
             this.mVesselView.setOnLoadListener(new rgu() { // from class: com.taobao.android.detail.wrapper.ext.component.main.viewholder.galleryheader.biz.GalleryViewModelEx.5
@@ -2570,12 +2570,12 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
                         uTCustomHitBuilder.setEventPage("Page_Detail");
                         uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_EVENT_ID, "2101");
                         String str = eqb.c(GalleryViewModelEx.access$14800(GalleryViewModelEx.this).nodeBundle).itemId;
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             str = "";
                         }
                         uTCustomHitBuilder.setProperty("item_id", str);
                         String str2 = eqb.d(GalleryViewModelEx.access$14900(GalleryViewModelEx.this).nodeBundle).userId;
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = "";
                         }
                         uTCustomHitBuilder.setProperty("seller_id", str2);
@@ -2714,7 +2714,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
 
     private boolean needShowTimeTunnel() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83942733", new Object[]{this})).booleanValue() : this.mTBMultiMediaModel.currentIndex == 0 && this.mTBMultiMediaModel.timeTunnel != null && !TextUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f10001a) && !TextUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83942733", new Object[]{this})).booleanValue() : this.mTBMultiMediaModel.currentIndex == 0 && this.mTBMultiMediaModel.timeTunnel != null && !StringUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f10001a) && !StringUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.c);
     }
 
     private void setEventListenerToVideoViewModle() {
@@ -2740,7 +2740,7 @@ public class GalleryViewModelEx extends MultiMediaViewModel implements d.b, j {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("trackPage", "Page_Detail_Show_Detail");
         hashMap.put("spm", this.mTBMultiMediaModel.timeTunnel.e != null ? this.mTBMultiMediaModel.timeTunnel.e : "a2141.7631564.1999020712");
-        if (!TextUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f)) {
+        if (!StringUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f)) {
             hashMap.put("scm", this.mTBMultiMediaModel.timeTunnel.f);
         }
         hashMap.put("trackId", "2201");

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.rxm.request.a;
@@ -141,7 +141,7 @@ public class nnc<OUT extends nmq, CONTEXT extends c> extends nmx<OUT, OUT, CONTE
                 i = 4;
             }
             if (fVar.b) {
-                if (!TextUtils.isEmpty(o)) {
+                if (!StringUtils.isEmpty(o)) {
                     this.b.remove(o);
                 }
                 this.c.remove(Integer.valueOf(e.H()));

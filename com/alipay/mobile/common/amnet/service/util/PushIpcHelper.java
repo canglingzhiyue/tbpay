@@ -2,7 +2,7 @@ package com.alipay.mobile.common.amnet.service.util;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.amnet.biz.AmnetSwitchManagerImpl;
 import com.alipay.mobile.common.amnet.ipcapi.pushproc.AmnetClientService;
@@ -74,7 +74,7 @@ public class PushIpcHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f7b96f8f", new Object[]{str, obj});
-        } else if (obj == null || TextUtils.isEmpty(str)) {
+        } else if (obj == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 getServiceBeanManager().register(str, obj);

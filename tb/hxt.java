@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -110,7 +110,7 @@ public class hxt extends b implements View.OnClickListener {
             a.a("SearchHistory", (Map<String, String>) null);
             String charSequence = ((TextView) view).getText().toString();
             d.b(this.f14568a, charSequence, null);
-            if (!TextUtils.isEmpty(charSequence)) {
+            if (!StringUtils.isEmpty(charSequence)) {
                 hya a2 = hya.a(this.f14568a);
                 if (charSequence.length() > 4) {
                     charSequence = charSequence.substring(0, 4);

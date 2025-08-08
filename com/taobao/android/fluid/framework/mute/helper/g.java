@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.mute.helper;
 
 import android.os.CountDownTimer;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
@@ -89,14 +89,14 @@ public class g extends e implements d {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[0]);
         }
         String b = occ.b(obu.e(), "common_mute_storage", (String) null);
-        return TextUtils.isEmpty(b) ? "false" : b;
+        return StringUtils.isEmpty(b) ? "false" : b;
     }
 
     private static void a(Map map, boolean z) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ee00e457", new Object[]{map, new Boolean(z)});
-        } else if (!TextUtils.equals(String.valueOf(map.get("isCommonMuteSet")), "true")) {
+        } else if (!StringUtils.equals(String.valueOf(map.get("isCommonMuteSet")), "true")) {
         } else {
             occ.a(obu.e(), "common_mute_storage", String.valueOf(z));
         }
@@ -110,7 +110,7 @@ public class g extends e implements d {
         }
         if ("false".equals(e()) && (j = ((IDataService) fluidContext.getService(IDataService.class)).getConfig().j()) != null) {
             String str = j.ac;
-            if (!TextUtils.isEmpty(j.ab) && !TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(j.ab) && !StringUtils.isEmpty(str)) {
                 return true;
             }
         }
@@ -167,7 +167,7 @@ public class g extends e implements d {
         HashMap hashMap = new HashMap();
         skl j = ((IDataService) fluidContext.getService(IDataService.class)).getConfig().j();
         if (j != null) {
-            if (!TextUtils.equals(j.ac, "true")) {
+            if (!StringUtils.equals(j.ac, "true")) {
                 hashMap.put(MusLiveVideo.ATTR_MUTE, "false");
                 return hashMap;
             } else if (l(fluidContext)) {
@@ -213,9 +213,9 @@ public class g extends e implements d {
             com.taobao.global.setting.c.a(obu.e(), this.e).b().a("muteCountDown", false);
         } else if (!m(fluidContext)) {
         } else {
-            if (TextUtils.equals(e(), "true")) {
+            if (StringUtils.equals(e(), "true")) {
                 o(fluidContext);
-            } else if (!l(fluidContext) || !TextUtils.equals(((IDataService) fluidContext.getService(IDataService.class)).getConfig().j().ac, "true")) {
+            } else if (!l(fluidContext) || !StringUtils.equals(((IDataService) fluidContext.getService(IDataService.class)).getConfig().j().ac, "true")) {
             } else {
                 o(fluidContext);
             }
@@ -233,9 +233,9 @@ public class g extends e implements d {
         g(fluidContext);
         if (!m(fluidContext) || this.g) {
             spz.c("ShopVideoMuteImpl", "走了降级的策略到直接打开声音");
-        } else if (TextUtils.equals(e(), "true") && !this.g) {
+        } else if (StringUtils.equals(e(), "true") && !this.g) {
             h(fluidContext);
-        } else if (!l(fluidContext) || this.g || !TextUtils.equals(((IDataService) fluidContext.getService(IDataService.class)).getConfig().j().ac, "true")) {
+        } else if (!l(fluidContext) || this.g || !StringUtils.equals(((IDataService) fluidContext.getService(IDataService.class)).getConfig().j().ac, "true")) {
         } else {
             h(fluidContext);
         }

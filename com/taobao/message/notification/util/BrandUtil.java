@@ -1,7 +1,7 @@
 package com.taobao.message.notification.util;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import tb.kge;
@@ -42,7 +42,7 @@ public class BrandUtil {
             return (String) ipChange.ipc$dispatch("9a3a22", new Object[]{this});
         }
         TLog.loge(TAG, "BRAND=" + mBrand + ", MODEL=" + mModel + ", mRelease=" + mRelease);
-        if (!TextUtils.isEmpty(mBrand) && !TextUtils.isEmpty(mModel) && !TextUtils.isEmpty(mRelease) && BrandList.mBrandMap.get(mBrand) != null && BrandList.mBrandMap.get(mBrand).get(mModel) != null && BrandList.mBrandMap.get(mBrand).get(mModel).get(mRelease) != null) {
+        if (!StringUtils.isEmpty(mBrand) && !StringUtils.isEmpty(mModel) && !StringUtils.isEmpty(mRelease) && BrandList.mBrandMap.get(mBrand) != null && BrandList.mBrandMap.get(mBrand).get(mModel) != null && BrandList.mBrandMap.get(mBrand).get(mModel).get(mRelease) != null) {
             return BrandList.mBrandMap.get(mBrand).get(mModel).get(mRelease);
         }
         return null;
@@ -58,7 +58,7 @@ public class BrandUtil {
             return DEFAULT_COLOR.substring(DEFAULT_COLOR.indexOf("#"), DEFAULT_COLOR.indexOf("$"));
         }
         String usefulColor = getUsefulColor();
-        if (TextUtils.isEmpty(usefulColor)) {
+        if (StringUtils.isEmpty(usefulColor)) {
             return null;
         }
         return usefulColor.substring(usefulColor.indexOf("#"), usefulColor.indexOf("$"));
@@ -70,7 +70,7 @@ public class BrandUtil {
             return (String) ipChange.ipc$dispatch("73519e11", new Object[]{this});
         }
         String usefulColor = getUsefulColor();
-        if (!TextUtils.isEmpty(usefulColor) && !"default".equals(usefulColor)) {
+        if (!StringUtils.isEmpty(usefulColor) && !"default".equals(usefulColor)) {
             return usefulColor.substring(usefulColor.indexOf("@") + 1);
         }
         return null;
@@ -86,7 +86,7 @@ public class BrandUtil {
             return DEFAULT_COLOR.substring(DEFAULT_COLOR.indexOf("$") + 1, DEFAULT_COLOR.indexOf("@"));
         }
         String usefulColor = getUsefulColor();
-        if (TextUtils.isEmpty(usefulColor)) {
+        if (StringUtils.isEmpty(usefulColor)) {
             return null;
         }
         return usefulColor.substring(usefulColor.indexOf("$") + 1, usefulColor.indexOf("@"));

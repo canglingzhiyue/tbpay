@@ -17,7 +17,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.res.ResourcesCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -675,7 +675,7 @@ public class TBFragmentTabHost extends TabHost implements TabHost.OnTabChangeLis
             }
             if (savedState.fromLogin && this.mLoginCallback != null && gVar.s() && !this.mLoginCallback.checkLogin()) {
                 if (gVar2 != null && !gVar2.s()) {
-                    if (TextUtils.isEmpty(savedState.preTab)) {
+                    if (StringUtils.isEmpty(savedState.preTab)) {
                         return;
                     }
                     setCurrentTabByTag(savedState.preTab);
@@ -763,7 +763,7 @@ public class TBFragmentTabHost extends TabHost implements TabHost.OnTabChangeLis
             if (tabInfoForTag != null) {
                 if (tabInfoForTag.e == null) {
                     long uptimeMillis = SystemClock.uptimeMillis();
-                    tabInfoForTag.e = Fragment.instantiate(this.mContext, TextUtils.isEmpty(tabInfoForTag.c) ? tabInfoForTag.b.getName() : tabInfoForTag.c, tabInfoForTag.d);
+                    tabInfoForTag.e = Fragment.instantiate(this.mContext, StringUtils.isEmpty(tabInfoForTag.c) ? tabInfoForTag.b.getName() : tabInfoForTag.c, tabInfoForTag.d);
                     com.taobao.tao.navigation.a.a(tabInfoForTag.e, "CONSTRUCT_PAGE_TIME", uptimeMillis);
                     if (this.mFragments == null) {
                         this.mFragments = new HashMap<>();
@@ -938,7 +938,7 @@ public class TBFragmentTabHost extends TabHost implements TabHost.OnTabChangeLis
             ipChange.ipc$dispatch("3be86428", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(i.b)) {
+        if (!StringUtils.isEmpty(i.b)) {
             com.taobao.phenix.intf.b.h().a(getContext()).a(i.b).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.navigation.TBFragmentTabHost.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

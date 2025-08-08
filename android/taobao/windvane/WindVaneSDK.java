@@ -14,7 +14,7 @@ import android.taobao.windvane.config.q;
 import android.taobao.windvane.config.s;
 import android.taobao.windvane.jsbridge.n;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidRuntimeException;
 import android.webkit.WebView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class WindVaneSDK {
         if (application == null) {
             throw new IllegalArgumentException("init error, context should be Application or its subclass");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "caches";
         }
         android.taobao.windvane.cache.a.a().a(context, str, 0);
@@ -125,7 +125,7 @@ public class WindVaneSDK {
                 return;
             }
             String c = android.taobao.windvane.util.a.c(context);
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 return;
             }
             WebView.setDataDirectorySuffix(c);

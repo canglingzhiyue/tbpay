@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.transformer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.datasdk.facade.message.newmsgbody.NewVideoMsgBody;
 import com.taobao.message.datasdk.facade.model.ResultData;
@@ -36,10 +36,10 @@ public class SimpleVideoMessageVOTransform implements IteratorTransformer<Result
             map.put("previewUrl", newVideoMsgBody.getPic());
             map.put("width", Integer.valueOf(newVideoMsgBody.getWidth()));
             map.put("height", Integer.valueOf(newVideoMsgBody.getHeight()));
-            if (TextUtils.isEmpty(newVideoMsgBody.getUrl())) {
+            if (StringUtils.isEmpty(newVideoMsgBody.getUrl())) {
                 map.put("videoUrl", newVideoMsgBody.getLocalVideoPath());
             }
-            if (TextUtils.isEmpty(newVideoMsgBody.getPic())) {
+            if (StringUtils.isEmpty(newVideoMsgBody.getPic())) {
                 map.put("previewUrl", newVideoMsgBody.getLocalPicPath());
             }
             map.put("fileSize", Long.valueOf(newVideoMsgBody.getSize()));

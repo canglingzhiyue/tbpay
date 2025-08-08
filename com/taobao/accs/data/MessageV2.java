@@ -2,7 +2,7 @@ package com.taobao.accs.data;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,7 +63,7 @@ public class MessageV2 extends Message {
         } else {
             Context context = GlobalClientInfo.getContext();
             String q = l.q(context);
-            if (TextUtils.isEmpty(q)) {
+            if (StringUtils.isEmpty(q)) {
                 this.regId = null;
                 this.version = "1";
                 ALog.e(TAG, "regid null, degrade to V1", new Object[0]);

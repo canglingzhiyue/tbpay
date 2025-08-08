@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +82,7 @@ public class h extends o<ezc> implements com.taobao.android.detail.ttdetail.comm
             z = true;
         }
         String m = m();
-        if (!z && !TextUtils.isEmpty(m)) {
+        if (!z && !StringUtils.isEmpty(m)) {
             this.e = m;
         }
         this.i = com.taobao.android.detail.ttdetail.utils.f.a(c());
@@ -201,7 +201,7 @@ public class h extends o<ezc> implements com.taobao.android.detail.ttdetail.comm
         int n = n();
         for (int i2 = 0; i2 < n; i2++) {
             String a2 = bq.a(a(i2));
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.taobao.android.detail.ttdetail.behavior.b.a(this.mContext, a2, i);
                 com.taobao.android.detail.ttdetail.behavior.b.a(this.mContext, a2, "isGalleryContent", "true");
             }
@@ -276,10 +276,10 @@ public class h extends o<ezc> implements com.taobao.android.detail.ttdetail.comm
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             return this.h;
         }
-        if (!TextUtils.isEmpty(this.e) && k()) {
+        if (!StringUtils.isEmpty(this.e) && k()) {
             return this.e;
         }
         return ((ezc) this.mComponentData).k();

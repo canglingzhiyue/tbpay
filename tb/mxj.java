@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -94,7 +94,7 @@ public class mxj {
         String config = OrangeConfig.getInstance().getConfig(GROUP_NAME, str, "");
         TLog.loge("mytaobao.ConfigUtil", "key = " + str + ", value=" + config);
         try {
-            return TextUtils.isEmpty(config) ? jSONObject : JSONObject.parseObject(config);
+            return StringUtils.isEmpty(config) ? jSONObject : JSONObject.parseObject(config);
         } catch (Exception unused) {
             return jSONObject;
         }

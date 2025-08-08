@@ -86,7 +86,7 @@ public class niq extends nms<e, b> {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0041, code lost:
-        if (android.text.TextUtils.isEmpty(r0) != false) goto L18;
+        if (android.text.StringUtils.isEmpty(r0) != false) goto L18;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -124,7 +124,7 @@ public class niq extends nms<e, b> {
             if (r5 == 0) goto L43
             com.taobao.phenix.intf.PhenixCreator r0 = r9.c
             java.lang.String r0 = r5.getRetryUrl(r0, r11)
-            boolean r5 = android.text.TextUtils.isEmpty(r0)
+            boolean r5 = android.text.StringUtils.isEmpty(r0)
             if (r5 == 0) goto Laa
         L43:
             boolean r5 = r11 instanceof com.taobao.phenix.decode.DecodeException
@@ -144,7 +144,7 @@ public class niq extends nms<e, b> {
             r10.d()
             r0 = r1
         L6c:
-            boolean r5 = android.text.TextUtils.isEmpty(r0)
+            boolean r5 = android.text.StringUtils.isEmpty(r0)
             java.lang.String r6 = "_.avif"
             if (r5 != 0) goto L7a
             boolean r5 = r0.endsWith(r6)
@@ -170,7 +170,7 @@ public class niq extends nms<e, b> {
             java.lang.String r8 = "willRetry degrade avif loadingUrl=%s"
             tb.niw.d(r7, r5, r8, r6)
         Laa:
-            boolean r5 = android.text.TextUtils.isEmpty(r0)
+            boolean r5 = android.text.StringUtils.isEmpty(r0)
             if (r5 == 0) goto Lb1
             return r4
         Lb1:

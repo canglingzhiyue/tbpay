@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -51,13 +51,13 @@ public class loc extends h {
             return;
         }
         BaseSectionModel<?> b = lfq.b(dXRuntimeContext);
-        if (b == null || !TextUtils.equals(String.valueOf(objArr[0]), b.getSectionBizCode())) {
+        if (b == null || !StringUtils.equals(String.valueOf(objArr[0]), b.getSectionBizCode())) {
             ldf.d("DXHRefreshWidgetNodeEventHandler", "not current widget!");
             return;
         }
         DXRootView s = dXRuntimeContext.s();
         String valueOf = String.valueOf(objArr[1]);
-        if (s == null || TextUtils.isEmpty(valueOf)) {
+        if (s == null || StringUtils.isEmpty(valueOf)) {
             ldf.d("DXHRefreshWidgetNodeEventHandler", "rootView not found!");
             return;
         }

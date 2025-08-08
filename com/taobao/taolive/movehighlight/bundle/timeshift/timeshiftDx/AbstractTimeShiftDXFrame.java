@@ -1,7 +1,7 @@
 package com.taobao.taolive.movehighlight.bundle.timeshift.timeshiftDx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.BaseFrame;
@@ -109,7 +109,7 @@ public abstract class AbstractTimeShiftDXFrame extends BaseFrame implements sgr 
                                 IpChange ipChange3 = $ipChange;
                                 if (ipChange3 instanceof IpChange) {
                                     ipChange3.ipc$dispatch("59a5515c", new Object[]{this, liveCommonIssueInteractResponseData});
-                                } else if (AbstractTimeShiftDXFrame.this.mContext == null || liveCommonIssueInteractResponseData.benefitVO == null || TextUtils.isEmpty(liveCommonIssueInteractResponseData.benefitVO.toastTips)) {
+                                } else if (AbstractTimeShiftDXFrame.this.mContext == null || liveCommonIssueInteractResponseData.benefitVO == null || StringUtils.isEmpty(liveCommonIssueInteractResponseData.benefitVO.toastTips)) {
                                 } else {
                                     m.a(AbstractTimeShiftDXFrame.this.mContext, liveCommonIssueInteractResponseData.benefitVO.toastTips);
                                     com.taobao.taolive.movehighlight.utils.a.a(liveTimemovingModel, AbstractTimeShiftDXFrame.this.mContext, AbstractTimeShiftDXFrame.this.mFrameContext);
@@ -143,10 +143,10 @@ public abstract class AbstractTimeShiftDXFrame extends BaseFrame implements sgr 
                         String string = liveTimemovingModel.personalityData.getString("subscribeStatus");
                         String str = liveTimemovingModel.extendVal.liveId;
                         String str2 = liveTimemovingModel.itemId;
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             string = "0";
                         }
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             return;
                         }
                         if ("1".equals(string)) {

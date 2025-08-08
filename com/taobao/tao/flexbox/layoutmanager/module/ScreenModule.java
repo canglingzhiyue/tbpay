@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.module;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import com.alibaba.fastjson.JSONObject;
@@ -54,7 +54,7 @@ public class ScreenModule {
         } else {
             JSONObject jSONObject = new JSONObject();
             String string = ((JSONObject) cVar.b).getString("orientation");
-            if (TextUtils.isEmpty(string) || !(cVar.a() instanceof Activity)) {
+            if (StringUtils.isEmpty(string) || !(cVar.a() instanceof Activity)) {
                 return;
             }
             Activity activity = (Activity) cVar.a();

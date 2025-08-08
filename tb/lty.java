@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class lty extends ltp {
             boolean z = true;
             for (int size = totalData.size() - 1; size >= 0 && size >= totalData.size() - 100; size--) {
                 String a2 = a(totalData.get(size));
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     if (!z) {
                         sb.append(",");
                     }
@@ -70,7 +70,7 @@ public class lty extends ltp {
             str2 = a(totalData);
             Integer b = b(jSONObject2);
             if (b != null) {
-                while (TextUtils.isEmpty(str3)) {
+                while (StringUtils.isEmpty(str3)) {
                     int i2 = i + 1;
                     if (i >= 4 || b.intValue() <= 0 || b.intValue() >= totalData.size() - 1) {
                         break;
@@ -103,7 +103,7 @@ public class lty extends ltp {
         if (list != null && !list.isEmpty()) {
             for (SectionModel sectionModel : list) {
                 str = sectionModel.getJSONObject("args").getString(aw.PARAM_PVID);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     break;
                 }
             }

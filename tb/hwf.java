@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.taobao.TBActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -124,13 +124,13 @@ public class hwf extends DXWidgetNode {
         }
         tBActionView.setTitle(context.getString(R.string.actionBar_uikit_title));
         String a3 = FestivalMgr.a().a("global", nom.KEY_NAVI_STYLE);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             tBActionView.setIconColor(this.b);
             tBActionView.setMessageNumColor(this.c);
             tBActionView.setMessageBackgroundColor(this.f28827a);
             return;
         }
-        boolean equals = TextUtils.equals("1", a3);
+        boolean equals = StringUtils.equals("1", a3);
         hyn.a("DXNaviBarMoreViewWidget", "onRenderView", "isDark = " + equals);
         if (equals) {
             tBActionView.switchActionStyle(TBActionBar.ActionBarStyle.NORMAL);

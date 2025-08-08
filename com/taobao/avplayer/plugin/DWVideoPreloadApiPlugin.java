@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.aa;
@@ -95,13 +95,13 @@ public class DWVideoPreloadApiPlugin extends e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d52f5b28", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("token", str);
-            if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                 jSONObject.put(str2, str3);
             }
         } catch (JSONException e) {
@@ -115,16 +115,16 @@ public class DWVideoPreloadApiPlugin extends e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bf4fcc94", new Object[]{this, str, str2, str3, str4, str5});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("token", str);
-            if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                 jSONObject.put(str2, str3);
             }
-            if (!TextUtils.isEmpty(str4) && !TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str4) && !StringUtils.isEmpty(str5)) {
                 jSONObject.put(str4, str5);
             }
         } catch (JSONException e) {
@@ -201,7 +201,7 @@ public class DWVideoPreloadApiPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("ed324d34", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWVideoPreloadApiPlugin);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
             return false;
         }
@@ -235,7 +235,7 @@ public class DWVideoPreloadApiPlugin extends e {
         if (hashMap.get("PCResult") != null) {
             str2 = hashMap.get("PCResult").toString();
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 z = aa.a(this.mContext, new JSONObject(str2), hashMap2, b, new a(obj, b));
             } catch (JSONException unused) {
@@ -259,7 +259,7 @@ public class DWVideoPreloadApiPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b469394c", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
             return false;
         }
@@ -274,7 +274,7 @@ public class DWVideoPreloadApiPlugin extends e {
                 str2 = preloadLoadMap.get(obj);
                 preloadLoadMap.remove(obj);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 AVSDKLog.e(c.MODULE_SDK_PAGE, "DWVideoPreloadApiPlugin cancel url=" + str2);
                 i a2 = oyw.a(this.mContext);
                 if (a2 != null) {

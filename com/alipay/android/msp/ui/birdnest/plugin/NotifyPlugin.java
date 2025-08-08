@@ -1,7 +1,7 @@
 package com.alipay.android.msp.ui.birdnest.plugin;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.template.AbsFBPlugin;
@@ -105,10 +105,10 @@ public class NotifyPlugin extends AbsFBPlugin implements IEventSubscriber {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3897928", new Object[]{this, str, obj});
-        } else if (TextUtils.equals(MspGlobalDefine.EVENT_NOTIFY_TPL, str)) {
+        } else if (StringUtils.equals(MspGlobalDefine.EVENT_NOTIFY_TPL, str)) {
             LogUtil.record(2, "NotifyPlugin:onEvent", "name=" + str + " object=" + obj);
             JSONObject jSONObject = (JSONObject) obj;
-            if (TextUtils.isEmpty(this.mCallbackName)) {
+            if (StringUtils.isEmpty(this.mCallbackName)) {
                 return;
             }
             String str2 = this.mCallbackName + "&&" + this.mCallbackName + "('" + Utils.toJsJsonString(jSONObject.toString()) + "')";
@@ -120,7 +120,7 @@ public class NotifyPlugin extends AbsFBPlugin implements IEventSubscriber {
                 LogUtil.record(2, "NotifyPlugin", "nativeExecuteJs:result =".concat(String.valueOf(this.mPluginCtx.nativeExecuteJs(str2))));
             }
             LogUtil.record(2, "checkEbank", "Js exec" + System.currentTimeMillis());
-        } else if (!TextUtils.equals(MspGlobalDefine.EVENT_CONTAINER_FINISH, str) || ((Integer) obj).intValue() != this.mBizId) {
+        } else if (!StringUtils.equals(MspGlobalDefine.EVENT_CONTAINER_FINISH, str) || ((Integer) obj).intValue() != this.mBizId) {
         } else {
             unregisterEventBus();
         }

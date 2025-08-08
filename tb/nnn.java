@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.ace.b;
@@ -41,7 +41,7 @@ public class nnn {
         }
         if (j.f19452a != null) {
             String a2 = j.f19452a.k().a(nnlVar.i);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return a(a2, nnlVar);
             }
         }
@@ -64,7 +64,7 @@ public class nnn {
         if (nnlVar.h != null && !nnlVar.h.isEmpty()) {
             hashMap.putAll(nnlVar.h);
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             hashMap.put("errCode", "-1");
             hashMap.put("errMsg", "api or version is null");
             nul.b(nulVar, "Request", hashMap);
@@ -77,7 +77,7 @@ public class nnn {
         if (nnlVar.j) {
             build.mo1335useWua();
         }
-        if (!TextUtils.isEmpty(nnlVar.l)) {
+        if (!StringUtils.isEmpty(nnlVar.l)) {
             build.mo1310setBizTopic(nnlVar.l).mo1319setPageIndex(nnlVar.m.intValue());
         }
         if (nnlVar.k != null) {
@@ -143,7 +143,7 @@ public class nnn {
         if (bArr != null && bArr.length != 0) {
             try {
                 String str = new String(bArr, "UTF-8");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return null;
                 }
                 try {
@@ -179,7 +179,7 @@ public class nnn {
         if (ipChange instanceof IpChange) {
             return (nnk) ipChange.ipc$dispatch("5c2ec605", new Object[]{str, nnlVar});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new nnk();
         }
         HashMap hashMap = new HashMap();

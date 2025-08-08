@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.meizu.cloud.pushsdk.notification.model.AdvertisementOption;
@@ -24,7 +24,7 @@ public class bta {
         if (k != null) {
             if (!f26119a.containsKey(AdvertisementOption.PRIORITY_VALID_TIME)) {
                 String a2 = a(k, "package_type");
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     f26119a.put(AdvertisementOption.PRIORITY_VALID_TIME, a2);
                 } else {
                     f26119a.put(AdvertisementOption.PRIORITY_VALID_TIME, "");
@@ -32,7 +32,7 @@ public class bta {
             }
             if (!f26119a.containsKey(MspDBHelper.BizEntry.COLUMN_NAME_PID)) {
                 String a3 = a(k, "project_id");
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     f26119a.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, a3);
                 } else {
                     f26119a.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, "");
@@ -40,7 +40,7 @@ public class bta {
             }
             if (!f26119a.containsKey("bid")) {
                 String a4 = a(k, "build_id");
-                if (!TextUtils.isEmpty(a4)) {
+                if (!StringUtils.isEmpty(a4)) {
                     f26119a.put("bid", a4);
                 } else {
                     f26119a.put("bid", "");
@@ -48,7 +48,7 @@ public class bta {
             }
             if (!f26119a.containsKey("bv")) {
                 String a5 = a(k, "base_version");
-                if (!TextUtils.isEmpty(a5)) {
+                if (!StringUtils.isEmpty(a5)) {
                     f26119a.put("bv", a5);
                 } else {
                     f26119a.put("bv", "");
@@ -56,7 +56,7 @@ public class bta {
             }
         }
         String b = b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             f26119a.put("hv", b);
         } else {
             f26119a.put("hv", "");

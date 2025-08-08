@@ -1,7 +1,7 @@
 package com.taobao.orange.aidl;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.orange.aidl.ParcelableCandidateCompare;
 import com.taobao.orange.b;
 import tb.kge;
@@ -20,7 +20,7 @@ public class OrangeCandidateCompareStub extends ParcelableCandidateCompare.Stub 
 
     public String getName() {
         String simpleName = this.mCompare.getClass().getSimpleName();
-        return TextUtils.isEmpty(simpleName) ? this.mCompare.getClass().getName() : simpleName;
+        return StringUtils.isEmpty(simpleName) ? this.mCompare.getClass().getName() : simpleName;
     }
 
     public Class getRealClass() {

@@ -1,6 +1,6 @@
 package com.taobao.android.gateway.msgcenter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,7 +54,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1be9bf6b", new Object[]{this, message})).booleanValue();
         }
-        if (message == null || TextUtils.isEmpty(message.getChannelId()) || (aVar = this.f12705a.get(message.getChannelId())) == null) {
+        if (message == null || StringUtils.isEmpty(message.getChannelId()) || (aVar = this.f12705a.get(message.getChannelId())) == null) {
             return false;
         }
         aVar.a(message);

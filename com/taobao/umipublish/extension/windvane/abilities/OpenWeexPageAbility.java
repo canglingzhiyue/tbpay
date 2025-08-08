@@ -2,7 +2,7 @@ package com.taobao.umipublish.extension.windvane.abilities;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.e;
@@ -27,7 +27,7 @@ public class OpenWeexPageAbility extends BaseAbility {
             errorCallback("1", "Params is null");
         } else {
             String string = jSONObject.getString("weexUrl");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 errorCallback("2", "WeexUrl is null");
                 return;
             }

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class nef implements f {
         }
         String string = jSONObject.getString("pageUrl");
         String string2 = jSONObject.getString("pageId");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             ngr.b(f31381a, "PopLayer param is null.");
             return;
         }

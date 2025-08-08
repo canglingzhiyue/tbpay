@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.download;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.TransportCallback;
 import com.alipay.mobile.common.transport.http.AndroidHttpClient;
 import com.alipay.mobile.common.transport.http.HttpManager;
@@ -46,7 +46,7 @@ public class DownloadManager extends HttpManager {
         if (downloadRequest == null) {
             throw new IllegalArgumentException("downloadRequest may not be null");
         }
-        if (TextUtils.isEmpty(downloadRequest.getUrl())) {
+        if (StringUtils.isEmpty(downloadRequest.getUrl())) {
             throw new IllegalArgumentException("downloadRequest#url may not be null");
         }
         if (downloadRequest.getHeaders() == null) {

@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.handler.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +71,7 @@ public class ProductInfoFragment extends GeneralFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d60a2df6", new Object[]{fragmentActivity, str, arrayList});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || arrayList == null || arrayList.size() == 0) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || arrayList == null || arrayList.size() == 0) {
         } else {
             FloatFragment.startFragment(fragmentActivity, newInstance(str, arrayList));
         }

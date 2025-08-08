@@ -1,6 +1,6 @@
 package com.taobao.tao.log.logger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.LogCategory;
@@ -80,7 +80,7 @@ public class PageLogger extends a implements Serializable {
         if (ipChange instanceof IpChange) {
             return (PageLogger) ipChange.ipc$dispatch("4c72a8a3", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.pageUrl = null;
         } else if (str.length() > 20480) {
             this.pageUrl = str.substring(0, 20480);

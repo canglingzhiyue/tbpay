@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
@@ -21,7 +21,7 @@ public class f extends a<MessageV3> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.meizu.cloud.pushsdk.handler.e.a
     public void a(MessageV3 messageV3, com.meizu.cloud.pushsdk.notification.c cVar) {
-        if (b() == null || messageV3 == null || TextUtils.isEmpty(messageV3.getThroughMessage())) {
+        if (b() == null || messageV3 == null || StringUtils.isEmpty(messageV3.getThroughMessage())) {
             return;
         }
         b().a(c(), messageV3.getThroughMessage());
@@ -38,9 +38,9 @@ public class f extends a<MessageV3> {
             if ("message".equals(e(intent))) {
                 return true;
             }
-            if (TextUtils.isEmpty(e(intent))) {
+            if (StringUtils.isEmpty(e(intent))) {
                 String stringExtra = intent.getStringExtra("message");
-                if (!TextUtils.isEmpty(stringExtra) && !b(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra) && !b(stringExtra)) {
                     return true;
                 }
             }
@@ -51,11 +51,11 @@ public class f extends a<MessageV3> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.meizu.cloud.pushsdk.handler.e.a
     public void d(MessageV3 messageV3) {
-        if (messageV3 == null || TextUtils.isEmpty(messageV3.getDeviceId()) || TextUtils.isEmpty(messageV3.getTaskId())) {
+        if (messageV3 == null || StringUtils.isEmpty(messageV3.getDeviceId()) || StringUtils.isEmpty(messageV3.getTaskId())) {
             return;
         }
         String a2 = a(messageV3.getThroughMessage());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             com.meizu.cloud.pushsdk.util.d.h(c(), a2, messageV3.getDeviceId(), messageV3.getTaskId(), messageV3.getSeqId(), messageV3.getPushTimestamp());
         } else {
             com.meizu.cloud.pushsdk.util.d.h(c(), messageV3.getUploadDataPackageName(), messageV3.getDeviceId(), messageV3.getTaskId(), messageV3.getSeqId(), messageV3.getPushTimestamp());

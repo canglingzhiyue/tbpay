@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
 import com.alibaba.fastjson.JSON;
@@ -94,7 +94,7 @@ public class dwp {
         HashMap hashMap = new HashMap();
         for (IDMComponent iDMComponent : list) {
             String key = iDMComponent.getKey();
-            if (!TextUtils.isEmpty(key)) {
+            if (!StringUtils.isEmpty(key)) {
                 hashMap.put(a(key), 1);
             }
         }
@@ -186,7 +186,7 @@ public class dwp {
         }
         ArrayList arrayList = new ArrayList();
         for (AURARenderComponent aURARenderComponent : list) {
-            if (!TextUtils.isEmpty(aURARenderComponent.key) && !dwm.c().contains(aURARenderComponent.key)) {
+            if (!StringUtils.isEmpty(aURARenderComponent.key) && !dwm.c().contains(aURARenderComponent.key)) {
                 arrayList.add(aURARenderComponent);
             }
         }
@@ -218,7 +218,7 @@ public class dwp {
         ArrayList arrayList = new ArrayList();
         for (IDMComponent iDMComponent : list) {
             String key = iDMComponent.getKey();
-            if (!TextUtils.isEmpty(key) && !dwm.c().contains(a(key))) {
+            if (!StringUtils.isEmpty(key) && !dwm.c().contains(a(key))) {
                 arrayList.add(iDMComponent);
             }
         }

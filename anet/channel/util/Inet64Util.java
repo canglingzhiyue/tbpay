@@ -1,6 +1,6 @@
 package anet.channel.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -116,7 +116,7 @@ public class Inet64Util {
         }
         if (networkStatus.isWifi()) {
             String wifiBSSID = NetworkStatusHelper.getWifiBSSID();
-            if (TextUtils.isEmpty(wifiBSSID)) {
+            if (StringUtils.isEmpty(wifiBSSID)) {
                 wifiBSSID = "";
             }
             return "WIFI$" + wifiBSSID;

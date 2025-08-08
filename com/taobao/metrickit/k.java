@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.context.MetricContext;
 import com.taobao.metrickit.context.MetricKitPlugin;
@@ -122,7 +122,7 @@ public class k {
         }
         mlz.a((Context) application).edit().clear().commit();
         String str = "from";
-        if (TextUtils.equals(com.taobao.metrickit.context.c.a(com.taobao.metrickit.context.c.CONFIG_SP_AREA, str), str)) {
+        if (StringUtils.equals(com.taobao.metrickit.context.c.a(com.taobao.metrickit.context.c.CONFIG_SP_AREA, str), str)) {
             str = "to";
         }
         Map<String, ?> all = application.getSharedPreferences(mlz.SP_NAME_PREFIX + str, 0).getAll();

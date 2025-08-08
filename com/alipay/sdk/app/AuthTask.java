@@ -2,7 +2,7 @@ package com.alipay.sdk.app;
 
 import android.app.Activity;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.sdk.app.statistic.StatisticRecord;
 import com.alipay.sdk.sys.BizContext;
 import com.alipay.sdk.util.LogUtils;
@@ -101,8 +101,8 @@ public class AuthTask {
                         }
                     }
                 }).pay4Client(format);
-                if (!TextUtils.equals(notInstalled, "failed") && !TextUtils.equals(notInstalled, PayHelper.SCHEME_FAILED)) {
-                    if (TextUtils.isEmpty(notInstalled)) {
+                if (!StringUtils.equals(notInstalled, "failed") && !StringUtils.equals(notInstalled, PayHelper.SCHEME_FAILED)) {
+                    if (StringUtils.isEmpty(notInstalled)) {
                         notInstalled = Result.getCancel();
                     }
                 }

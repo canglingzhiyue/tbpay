@@ -1,7 +1,7 @@
 package anet.channel;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.entity.ConnInfo;
 import anet.channel.entity.ConnType;
 import anet.channel.entity.Event;
@@ -527,7 +527,7 @@ public abstract class Session implements Comparable<Session> {
                 return;
             }
             String singleHeaderFieldByKey = HttpHelper.getSingleHeaderFieldByKey(map, HttpConstant.X_SWITCH_UNIT);
-            if (TextUtils.isEmpty(singleHeaderFieldByKey)) {
+            if (StringUtils.isEmpty(singleHeaderFieldByKey)) {
                 singleHeaderFieldByKey = null;
             }
             if (StringUtils.isStringEqual(this.unit, singleHeaderFieldByKey)) {

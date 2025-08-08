@@ -1,6 +1,6 @@
 package com.taobao.android.linkback;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public class d {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.equals(str, this.f13300a)) {
+        if (!StringUtils.equals(str, this.f13300a)) {
             f.a(str);
         }
         this.f13300a = str;

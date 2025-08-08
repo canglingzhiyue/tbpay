@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -44,7 +44,7 @@ public abstract class g {
         }
         if (map != null && map.size() > 0) {
             String remove = map.remove(f2059a);
-            if (!TextUtils.isEmpty(remove)) {
+            if (!StringUtils.isEmpty(remove)) {
                 long longValue = Long.valueOf(remove).longValue();
                 long b2 = aoc.a().b(str);
                 apr.b("UTBaseConfMgr", "updateAndDispatch namespace", str, "inputTimestampLong", String.valueOf(longValue), "configTimeStamp", String.valueOf(b2));

@@ -1,0 +1,6 @@
+{
+  "loading_ability_ui": {
+    "version": 1,
+    "main.dx": "template/megability/loading_ability_ui/1/main.dx"
+  }
+}

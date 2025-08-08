@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes5.dex */
@@ -43,7 +43,7 @@ public class gwi {
         if (mtyVar == null) {
             return false;
         }
-        f28538a = TextUtils.isEmpty(mtyVar.f31262a) ? DEFAULT_TTID : mtyVar.f31262a;
+        f28538a = StringUtils.isEmpty(mtyVar.f31262a) ? DEFAULT_TTID : mtyVar.f31262a;
         b = mtyVar.b;
         c = mtyVar.c;
         d = mtyVar.d;

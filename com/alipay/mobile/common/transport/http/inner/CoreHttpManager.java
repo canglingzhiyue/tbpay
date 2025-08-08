@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.http.inner;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.Request;
 import com.alipay.mobile.common.transport.Response;
 import com.alipay.mobile.common.transport.TransportStrategy;
@@ -250,7 +250,7 @@ public class CoreHttpManager {
             return 4;
         }
         String tag = httpUrlRequest.getTag("operationType");
-        if (TextUtils.equals(tag, DownloadRequest.OPERATION_TYPE)) {
+        if (StringUtils.equals(tag, DownloadRequest.OPERATION_TYPE)) {
             try {
                 URL url = new URL(httpUrlRequest.getUrl());
                 if (!url.getPath().endsWith(".amr") && !url.getPath().endsWith(".jar")) {
@@ -260,7 +260,7 @@ public class CoreHttpManager {
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }
-        } else if (TextUtils.equals(tag, H5HttpUrlRequest.OPERATION_TYPE)) {
+        } else if (StringUtils.equals(tag, H5HttpUrlRequest.OPERATION_TYPE)) {
             return 6;
         } else {
             return b(httpUrlRequest) ? 1 : 0;
@@ -273,7 +273,7 @@ public class CoreHttpManager {
             return ((Boolean) ipChange.ipc$dispatch("d9943821", new Object[]{this, httpUrlRequest})).booleanValue();
         }
         String tag = httpUrlRequest.getTag("operationType");
-        if (TextUtils.isEmpty(tag)) {
+        if (StringUtils.isEmpty(tag)) {
             return true;
         }
         if (httpUrlRequest.isBgRpc()) {
@@ -298,7 +298,7 @@ public class CoreHttpManager {
             LogCatUtil.debug("HttpManager", "Request is Urgent RPC: " + urgentFlag);
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.USE_URGENT_RPC_POOL);
-        if (!TextUtils.isEmpty(stringValue) && stringValue.startsWith("T")) {
+        if (!StringUtils.isEmpty(stringValue) && stringValue.startsWith("T")) {
             return urgentFlag;
         }
         return false;

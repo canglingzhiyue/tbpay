@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorType;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.base.d;
@@ -94,7 +94,7 @@ public abstract class olu<T, R> {
             return (String) ipChange.ipc$dispatch("e82ee6c4", new Object[]{str, new Integer(i), new Integer(i2), str2});
         }
         String str3 = "sys:" + i + "biz:" + i2 + "t:" + str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str3;
         }
         return "ip:" + str + str3;

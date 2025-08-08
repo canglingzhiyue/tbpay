@@ -2,7 +2,7 @@ package com.alibaba.analytics.core.sync;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.UploadLog;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ScheduledFuture;
@@ -171,7 +171,7 @@ public class p implements aqg.a {
             return;
         }
         String a2 = apg.a(aob.a().k(), "UTANALYTICS_UPLOAD_ALLOWED_NETWORK_STATUS");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         if ("ALL".equalsIgnoreCase(a2)) {

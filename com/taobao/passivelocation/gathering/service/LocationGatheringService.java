@@ -4,7 +4,7 @@ import android.app.IntentService;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.location.Location;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -114,7 +114,7 @@ public class LocationGatheringService extends IntentService {
         }
         nea.d("lbs_passive.loc_LGS", "[onStart] begin");
         super.onStart(intent, i);
-        if (intent == null || TextUtils.isEmpty(intent.getAction()) || !LOCATION_GATHERING_START_ACTION.equals(intent.getAction())) {
+        if (intent == null || StringUtils.isEmpty(intent.getAction()) || !LOCATION_GATHERING_START_ACTION.equals(intent.getAction())) {
             return;
         }
         nea.d("lbs_passive.loc_LGS", "[onStart] invoke GatheringCommand.startGathering");
@@ -130,7 +130,7 @@ public class LocationGatheringService extends IntentService {
             nea.a("lbs_passive.loc_LGS", "LocationGather降级");
         } else {
             nea.d("lbs_passive.loc_LGS", "[onHandleIntent] begin");
-            if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+            if (intent == null || StringUtils.isEmpty(intent.getAction())) {
                 nea.d("lbs_passive.loc_LGS", "[onHandleIntent] intent null or action null");
             } else {
                 a(intent);

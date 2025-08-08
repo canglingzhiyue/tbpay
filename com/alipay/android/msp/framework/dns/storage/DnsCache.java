@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.dns.storage;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dns.model.CashierDns;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -130,7 +130,7 @@ public class DnsCache {
         f4693a = new HashMap();
         String string = DnsPreference.getString(DnsPreference.KEY_IPS, null);
         LogUtil.record(2, "", "DnsCache::initializeIps", "dnsList:".concat(String.valueOf(string)));
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         JSONArray jSONArray = new JSONArray(string);
@@ -144,11 +144,11 @@ public class DnsCache {
             JSONArray optJSONArray = jSONObject.optJSONArray(DnsPreference.KEY_IPS);
             for (int i2 = 0; i2 < optJSONArray.length(); i2++) {
                 String optString2 = optJSONArray.optString(i2, null);
-                if (!TextUtils.isEmpty(optString2)) {
+                if (!StringUtils.isEmpty(optString2)) {
                     cashierDns.addIp(optString2);
                 }
             }
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 f4693a.put(optString, cashierDns);
             }
         }

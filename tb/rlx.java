@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -246,7 +246,7 @@ public class rlx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str) || (lruCache = this.k) == null) {
+        } else if (StringUtils.isEmpty(str) || (lruCache = this.k) == null) {
         } else {
             lruCache.put(str, Integer.valueOf(i));
         }
@@ -257,7 +257,7 @@ public class rlx {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (this.k != null && !TextUtils.isEmpty(str) && this.k.get(str) != null) {
+        if (this.k != null && !StringUtils.isEmpty(str) && this.k.get(str) != null) {
             return this.k.get(str).intValue();
         }
         return 0;

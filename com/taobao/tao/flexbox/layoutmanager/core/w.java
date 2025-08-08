@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.core;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.session.dns.DnsNavConfigTask;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -196,10 +196,10 @@ public class w {
                         String str5 = "unknown page url";
                         if (A != null) {
                             aa.b W = A.W();
-                            if (!TextUtils.isEmpty(W.f20296a)) {
+                            if (!StringUtils.isEmpty(W.f20296a)) {
                                 str4 = W.f20296a;
                             }
-                            if (!TextUtils.isEmpty(W.b)) {
+                            if (!StringUtils.isEmpty(W.b)) {
                                 str5 = W.b;
                             }
                             String str6 = W.d;
@@ -328,10 +328,10 @@ public class w {
                     r0.putAll(r3)
                 L93:
                     java.lang.String r3 = r0.getString(r5)
-                    boolean r3 = android.text.TextUtils.isEmpty(r3)
+                    boolean r3 = android.text.StringUtils.isEmpty(r3)
                     if (r3 == 0) goto Laa
                     java.lang.String r3 = r7
-                    boolean r3 = android.text.TextUtils.isEmpty(r3)
+                    boolean r3 = android.text.StringUtils.isEmpty(r3)
                     if (r3 != 0) goto Laa
                     java.lang.String r3 = r7
                     r0.put(r5, r3)

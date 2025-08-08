@@ -11,7 +11,7 @@ import android.support.v4.view.OnApplyWindowInsetsListener;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
 import android.support.v7.app.h;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -314,7 +314,7 @@ public class ezs extends h implements f<d, Boolean>, g<com.taobao.android.detail
         this.o.setText(String.valueOf(this.i + 1));
         this.p.setText(String.valueOf(a(list)));
         String a3 = k.a(list, this.i);
-        this.q.setVisibility((this.z || TextUtils.isEmpty(a3)) ? 8 : 0);
+        this.q.setVisibility((this.z || StringUtils.isEmpty(a3)) ? 8 : 0);
         this.q.setText(a3);
         this.l = new eyu();
         this.l.a(list);
@@ -466,7 +466,7 @@ public class ezs extends h implements f<d, Boolean>, g<com.taobao.android.detail
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3c6e0ed6", new Object[]{this, list, str})).intValue();
         }
-        if (list != null && !list.isEmpty() && !TextUtils.isEmpty(str)) {
+        if (list != null && !list.isEmpty() && !StringUtils.isEmpty(str)) {
             for (int i = 0; i < list.size(); i++) {
                 if (str.equals(((ezc) list.get(i).getComponentData()).b())) {
                     return i;
@@ -650,7 +650,7 @@ public class ezs extends h implements f<d, Boolean>, g<com.taobao.android.detail
         } else if (this.g) {
         } else {
             this.g = true;
-            if (TextUtils.equals(this.h, ((ezc) iVar.getComponentData()).b())) {
+            if (StringUtils.equals(this.h, ((ezc) iVar.getComponentData()).b())) {
                 iVar.a(this.d);
                 iVar.l();
                 return;
@@ -679,7 +679,7 @@ public class ezs extends h implements f<d, Boolean>, g<com.taobao.android.detail
             b(iVar);
             final String a2 = k.a(this.c, this.e);
             TextView textView = this.q;
-            if (this.z || TextUtils.isEmpty(a2)) {
+            if (this.z || StringUtils.isEmpty(a2)) {
                 i3 = 8;
             }
             textView.setVisibility(i3);
@@ -712,10 +712,10 @@ public class ezs extends h implements f<d, Boolean>, g<com.taobao.android.detail
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.equals(str, com.taobao.android.detail.ttdetail.utils.a.a(this.l.a(this.k.getCurrentItem())))) {
+        } else if (!StringUtils.equals(str, com.taobao.android.detail.ttdetail.utils.a.a(this.l.a(this.k.getCurrentItem())))) {
             int count = this.l.getCount();
             for (int i = 0; i < count; i++) {
-                if (TextUtils.equals(com.taobao.android.detail.ttdetail.utils.a.a(this.l.a(i)), str) && i != this.k.getCurrentItem()) {
+                if (StringUtils.equals(com.taobao.android.detail.ttdetail.utils.a.a(this.l.a(i)), str) && i != this.k.getCurrentItem()) {
                     this.k.setCurrentItem(i, false);
                     return;
                 }

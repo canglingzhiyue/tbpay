@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -71,7 +71,7 @@ public class cze {
         }
         try {
             String a2 = a("mtop_detect_enable", (String) null);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 f26611a = Boolean.valueOf(a2).booleanValue();
                 a("mtop_detect_enable", Boolean.valueOf(f26611a));
             }
@@ -79,7 +79,7 @@ public class cze {
         }
         try {
             String a3 = a("slow_server_threshold", (String) null);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 c = Integer.valueOf(a3).intValue();
                 a("slow_server_threshold", Integer.valueOf(c));
             }
@@ -87,7 +87,7 @@ public class cze {
         }
         try {
             String a4 = a("server_exception_list", (String) null);
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 HashSet hashSet = new HashSet();
                 JSONArray jSONArray = new JSONArray(a4);
                 for (int i = 0; i < jSONArray.length(); i++) {
@@ -100,7 +100,7 @@ public class cze {
         }
         try {
             String a5 = a("mp_quic_setting_enable", (String) null);
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 b = Boolean.parseBoolean(a5);
                 a("mp_quic_setting_enable", Boolean.valueOf(b));
             }
@@ -108,7 +108,7 @@ public class cze {
         }
         try {
             String a6 = a("diagnosis_v2_enable", (String) null);
-            if (!TextUtils.isEmpty(a6)) {
+            if (!StringUtils.isEmpty(a6)) {
                 f = Boolean.parseBoolean(a6);
                 a("diagnosis_v2_enable", Boolean.valueOf(Boolean.parseBoolean(a6)));
             }
@@ -116,7 +116,7 @@ public class cze {
         }
         try {
             String a7 = a("error_view_v2_enable", (String) null);
-            if (TextUtils.isEmpty(a7)) {
+            if (StringUtils.isEmpty(a7)) {
                 return;
             }
             a("error_view_v2_enable", Boolean.valueOf(Boolean.parseBoolean(a7)));

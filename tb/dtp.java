@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -45,7 +45,7 @@ public final class dtp implements awg {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String str = (String) this.f26970a.a(PAGE_NAME, String.class);
-        return TextUtils.isEmpty(str) ? "Page_ConfirmOrder" : str;
+        return StringUtils.isEmpty(str) ? "Page_ConfirmOrder" : str;
     }
 
     @Override // tb.arl

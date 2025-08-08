@@ -2,7 +2,7 @@ package com.taobao.accs.connection;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.AccsClientConfig;
@@ -167,7 +167,7 @@ public class ConnectionServiceManager {
                 if (isDual()) {
                     bVar = new c();
                 } else {
-                    bVar = getConnServiceByType(!TextUtils.isEmpty(configByTag.getConnType()) ? configByTag.getConnType() : this.serviceType);
+                    bVar = getConnServiceByType(!StringUtils.isEmpty(configByTag.getConnType()) ? configByTag.getConnType() : this.serviceType);
                 }
                 this.connServiceMap.put(str, bVar);
             }
@@ -215,7 +215,7 @@ public class ConnectionServiceManager {
             String l = l.l(GlobalClientInfo.getContext());
             ALog.e(TAG, "getServiceType by orange " + l, new Object[0]);
             String a2 = dco.a(GlobalClientInfo.getContext(), dco.FILE_CONN_SERVICES_V1, l);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = l;
             }
             this.serviceType = a2;

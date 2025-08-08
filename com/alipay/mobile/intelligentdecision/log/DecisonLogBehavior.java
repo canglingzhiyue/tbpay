@@ -2,7 +2,7 @@ package com.alipay.mobile.intelligentdecision.log;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.intelligentdecision.DecisionContext;
@@ -197,7 +197,7 @@ public class DecisonLogBehavior {
                                     if (aVar.g != null) {
                                         str = aVar.g.get("needReport");
                                     }
-                                    if (TextUtils.isEmpty(str) || !"N".equalsIgnoreCase(str)) {
+                                    if (StringUtils.isEmpty(str) || !"N".equalsIgnoreCase(str)) {
                                         LogReportManager.a().a(stringBuffer2);
                                     }
                                     DecisonLogBehavior a3 = DecisonLogBehavior.a();
@@ -206,7 +206,7 @@ public class DecisonLogBehavior {
                                     Map<String, String> map = aVar.g;
                                     if (map != null) {
                                         String str2 = map.get("strategy_version");
-                                        if (!TextUtils.isEmpty(str2)) {
+                                        if (!StringUtils.isEmpty(str2)) {
                                             DecisonLogBehavior decisonLogBehavior4 = DecisonLogBehavior.this;
                                             DecisonLogBehavior.b(decisonLogBehavior4, aVar.f + "_" + aVar.c, str2);
                                         }
@@ -303,7 +303,7 @@ public class DecisonLogBehavior {
 
     private static String c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.replace("&", "＆").replace("=", "＝").replace(riy.ARRAY_START_STR, "［").replace(riy.ARRAY_END_STR, "］").replace(";", "；").replace(",", "，").replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace("\r", " ").replace("\n", " ") : "-";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.replace("&", "＆").replace("=", "＝").replace(riy.ARRAY_START_STR, "［").replace(riy.ARRAY_END_STR, "］").replace(";", "；").replace(",", "，").replace(riy.BRACKET_START_STR, "（").replace(riy.BRACKET_END_STR, "）").replace("\r", " ").replace("\n", " ") : "-";
     }
 
     private static String a(Map<String, String> map) {
@@ -319,11 +319,11 @@ public class DecisonLogBehavior {
         for (int i = 0; i < arrayList.size(); i++) {
             String str = (String) arrayList.get(i);
             String str2 = map.get(str);
-            if (i == arrayList.size() - 1 && !TextUtils.isEmpty(str2)) {
+            if (i == arrayList.size() - 1 && !StringUtils.isEmpty(str2)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(c(str2));
-            } else if (!TextUtils.isEmpty(str2)) {
+            } else if (!StringUtils.isEmpty(str2)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(c(str2));
@@ -338,7 +338,7 @@ public class DecisonLogBehavior {
 
     private static String d(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str}) : TextUtils.isEmpty(str) ? "-" : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str}) : StringUtils.isEmpty(str) ? "-" : str;
     }
 
     private static String d() {
@@ -378,7 +378,7 @@ public class DecisonLogBehavior {
                     }
                 }
                 JSONArray jSONArray2 = jSONObject2.getJSONArray("scene_whitelist");
-                if (jSONArray2 != null && jSONArray2.size() > 0 && !TextUtils.isEmpty(str2)) {
+                if (jSONArray2 != null && jSONArray2.size() > 0 && !StringUtils.isEmpty(str2)) {
                     String str4 = f5728a;
                     DecisionLogcat.b(str4, "startCollectClientData 6: " + jSONArray2.toJSONString());
                     if (!jSONArray2.contains(str2)) {
@@ -607,7 +607,7 @@ public class DecisonLogBehavior {
         }
         String str7 = str.equalsIgnoreCase("behavior") ? ")]" : riy.BRACKET_END_STR;
         StringBuilder sb = new StringBuilder();
-        String str8 = TextUtils.isEmpty(str6) ? "DEFAULT_VERSION" : str6;
+        String str8 = StringUtils.isEmpty(str6) ? "DEFAULT_VERSION" : str6;
         sb.append("[(" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss:SSS").format(new Date()) + ";" + DecisionEngine.a() + ";" + IDeviceInfoUtil.a() + ";" + IDeviceInfoUtil.b() + ";" + IDeviceInfoUtil.c() + ";" + IDeviceInfoUtil.d() + ";" + d(FrameworkUtils.getUserId()) + ";" + d(str3) + ";" + d(IDeviceInfoUtil.e()) + ";" + d(IDeviceInfoUtil.f()) + ";" + d(str8) + ";" + str4 + riy.BRACKET_END_STR);
         sb.append(",(");
         sb.append(str2);

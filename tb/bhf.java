@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.Executor;
 import tb.bhc;
@@ -149,7 +149,7 @@ public class bhf extends bhc<Object> {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-            } else if (TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.b)) {
                 throw new IllegalArgumentException("className can not be empty!");
             } else {
                 if (this.e != null && this.d == null) {

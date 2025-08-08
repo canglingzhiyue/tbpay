@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import android.taobao.windvane.config.j;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
@@ -35,7 +35,7 @@ public class FontResourceInterceptor {
         if (ipChange instanceof IpChange) {
             return (WebResourceResponse) ipChange.ipc$dispatch("b98c1e89", new Object[]{webView, str});
         }
-        if (!j.commonConfig.cj || TextUtils.isEmpty(str)) {
+        if (!j.commonConfig.cj || StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -58,7 +58,7 @@ public class FontResourceInterceptor {
             return null;
         }
         String host = parse.getHost();
-        if (TextUtils.isEmpty(host) || (context = webView.getContext()) == null) {
+        if (StringUtils.isEmpty(host) || (context = webView.getContext()) == null) {
             return null;
         }
         AssetManager assets = context.getResources().getAssets();

@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.icart.core.widget.a;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class bep {
         } else if (mtopResponse == null || mtopResponse.getRet() == null || mtopResponse.getRet().length <= 0) {
         } else {
             String str = mtopResponse.getRet()[0];
-            if (TextUtils.isEmpty(str) || !str.contains("CART_PRESALE_TIMEOUT")) {
+            if (StringUtils.isEmpty(str) || !str.contains("CART_PRESALE_TIMEOUT")) {
                 return;
             }
             a(context);

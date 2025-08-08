@@ -6,7 +6,7 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -311,7 +311,7 @@ public class TbFilter extends Div implements View.OnTouchListener, ViewTreeObser
             ipChange.ipc$dispatch("f9f1845c", new Object[]{this, str, jSONObject, str2, str3, new Boolean(z)});
         } else if (jSONObject == null) {
             q.c(TAG, com.taobao.vessel.utils.c.LOAD_DATA_NULL);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.c(TAG, "tItemType is null");
         } else {
             ObjectAnimator objectAnimator = this.maskAnimation;
@@ -320,7 +320,7 @@ public class TbFilter extends Div implements View.OnTouchListener, ViewTreeObser
                 return;
             }
             b bVar = this.holder;
-            if (bVar != null && TextUtils.equals(bVar.b(), str2)) {
+            if (bVar != null && StringUtils.equals(bVar.b(), str2)) {
                 hideDropFilter(true, true);
                 return;
             }

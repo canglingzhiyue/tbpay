@@ -7,7 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.alipay.mobile.common.transport.utils.ConnectionUtil;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -152,7 +152,7 @@ public class NetworkStateReceiver extends BroadcastReceiver {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase(Locale.US);
             if (lowerCase.contains("cmwap")) {
                 return "cmwap";

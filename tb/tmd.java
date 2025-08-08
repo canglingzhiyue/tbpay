@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import com.taobao.taolive.room.pre.LiveDetailPreRequestParams;
@@ -37,7 +37,7 @@ public class tmd implements tnm {
                 return;
             }
             LiveDetailPreRequestParams a2 = u.a(parse);
-            if (TextUtils.isEmpty(a2.liveSource)) {
+            if (StringUtils.isEmpty(a2.liveSource)) {
                 a2.liveSource = str2;
             }
             if (!Boolean.parseBoolean(a2.needRecommend)) {

@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.app.ApplicationExitInfo;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.adaemon.g;
 import com.taobao.atools.StaticHook;
@@ -28,7 +28,7 @@ public class n {
         int reason = c.getReason();
         int a2 = a(c);
         String description = c.getDescription();
-        if (TextUtils.isEmpty(description)) {
+        if (StringUtils.isEmpty(description)) {
             return 0L;
         }
         if (description.contains("remove task")) {
@@ -87,7 +87,7 @@ public class n {
         if (c == null) {
             return null;
         }
-        String replaceAll = TextUtils.isEmpty(c.getDescription()) ? "" : c.getDescription().replaceAll(SymbolExpUtil.SYMBOL_VERTICALBAR, Constants.WAVE_SEPARATOR);
+        String replaceAll = StringUtils.isEmpty(c.getDescription()) ? "" : c.getDescription().replaceAll(SymbolExpUtil.SYMBOL_VERTICALBAR, Constants.WAVE_SEPARATOR);
         if (l.l(context)) {
             bVar = g.b().o();
         }

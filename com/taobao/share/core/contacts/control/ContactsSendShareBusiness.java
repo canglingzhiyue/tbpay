@@ -1,7 +1,7 @@
 package com.taobao.share.core.contacts.control;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -159,18 +159,18 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
                 break;
             }
             ContactMember contactMember = arrayList.get(i);
-            if (!TextUtils.isEmpty(contactMember.getUserId())) {
+            if (!StringUtils.isEmpty(contactMember.getUserId())) {
                 arrayList2.add(contactMember.getUserId());
                 this.sendMap.put(contactMember.getUserId(), contactMember);
-            } else if (!TextUtils.isEmpty(contactMember.getUniqueId())) {
+            } else if (!StringUtils.isEmpty(contactMember.getUniqueId())) {
                 arrayList2.add(contactMember.getUniqueId());
                 this.sendMap.put(contactMember.getUniqueId(), contactMember);
             }
-            if (!TextUtils.isEmpty(contactMember.getCcode())) {
+            if (!StringUtils.isEmpty(contactMember.getCcode())) {
                 arrayList3.add(contactMember.getCcode());
                 this.sendMap.put(contactMember.getCcode(), contactMember);
             }
-            if (!TextUtils.isEmpty(contactMember.getNumber())) {
+            if (!StringUtils.isEmpty(contactMember.getNumber())) {
                 ShareResultMember shareResultMember = new ShareResultMember();
                 shareResultMember.setName(contactMember.getName());
                 shareResultMember.setPhone(Pattern.compile("[^0-9]").matcher(contactMember.getNumber()).replaceAll(str4).trim());
@@ -247,7 +247,7 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
                     ipChange2.ipc$dispatch("7aa9dc19", new Object[]{this, new Integer(i), mtopResponse, baseOutDo, obj});
                 } else if (baseOutDo != null && baseOutDo.mo2429getData() != null && (baseOutDo.mo2429getData() instanceof ShareCheckResponse.ShareCheckResponseData)) {
                     ShareCheckResponse.ShareCheckResponseData shareCheckResponseData = (ShareCheckResponse.ShareCheckResponseData) baseOutDo.mo2429getData();
-                    if (!TextUtils.isEmpty(shareCheckResponseData.sendUrl)) {
+                    if (!StringUtils.isEmpty(shareCheckResponseData.sendUrl)) {
                         ContactsSendShareBusiness.access$102(ContactsSendShareBusiness.this, shareCheckResponseData.sendUrl);
                         j.url = ContactsSendShareBusiness.access$100(ContactsSendShareBusiness.this);
                     }
@@ -268,11 +268,11 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
                             ContactsSendShareBusiness.access$000(ContactsSendShareBusiness.this, str, list, list2, list3, j);
                             nyy.c(ContactsSendShareBusiness.TAG, "SendMsgBridge#sendShareToMsgClient :msg send fail use aris api err:" + e.getMessage());
                         }
-                    } else if (TextUtils.isEmpty(shareCheckResponseData.noSendMsg)) {
+                    } else if (StringUtils.isEmpty(shareCheckResponseData.noSendMsg)) {
                         ContactsSendShareBusiness.access$000(ContactsSendShareBusiness.this, str, list, list2, list3, j);
                         nyy.c(ContactsSendShareBusiness.TAG, "SendMsgBridge#sendShareToMsgClient :canSend false other");
                     } else if (OrangeConfig.getInstance().getConfig("android_share", "checkMessageCode", "").contains(shareCheckResponseData.noSendCode)) {
-                        if (!TextUtils.isEmpty(shareCheckResponseData.noSendMsg)) {
+                        if (!StringUtils.isEmpty(shareCheckResponseData.noSendMsg)) {
                             nyu.a(ContactsSendShareBusiness.access$500(ContactsSendShareBusiness.this), shareCheckResponseData.noSendMsg);
                         }
                         if (ContactsSendShareBusiness.access$400(ContactsSendShareBusiness.this) != null) {
@@ -280,7 +280,7 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
                         }
                         nyy.c(ContactsSendShareBusiness.TAG, "SendMsgBridge#sendShareToMsgClient :canSend false :" + shareCheckResponseData.noSendCode);
                     } else if ("SAFEHANDER".equals(shareCheckResponseData.noSendCode) || "TIREDNESS_CONTROL_OVER".equals(shareCheckResponseData.noSendCode)) {
-                        if (!TextUtils.isEmpty(shareCheckResponseData.noSendMsg)) {
+                        if (!StringUtils.isEmpty(shareCheckResponseData.noSendMsg)) {
                             nyu.a(ContactsSendShareBusiness.access$500(ContactsSendShareBusiness.this), shareCheckResponseData.noSendMsg);
                         }
                         if (ContactsSendShareBusiness.access$400(ContactsSendShareBusiness.this) != null) {
@@ -355,7 +355,7 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
         newShareFriendsApi.setActivityId(tBShareContent.businessId);
         newShareFriendsApi.setShareRequestId(tBShareContent.shareId);
         newShareFriendsApi.setShareDesc(tBShareContent.description);
-        newShareFriendsApi.setShareUrl(TextUtils.isEmpty(this.sendUrl) ? this.itemUrl : this.sendUrl);
+        newShareFriendsApi.setShareUrl(StringUtils.isEmpty(this.sendUrl) ? this.itemUrl : this.sendUrl);
         newShareFriendsApi.setShareType(tBShareContent.shareScene);
         this.msgType = "1";
         newShareFriendsApi.setMsgType(this.msgType);
@@ -364,15 +364,15 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
         this.toMobile = jSONString;
         StringBuilder sb = new StringBuilder();
         if (list2 != null && !list2.isEmpty()) {
-            sb.append(TextUtils.join(",", list2.toArray()));
-            newShareFriendsApi.setTaoFriends(TextUtils.join(",", list2.toArray()));
+            sb.append(StringUtils.join(",", list2.toArray()));
+            newShareFriendsApi.setTaoFriends(StringUtils.join(",", list2.toArray()));
         }
         if (list3 != null && !list3.isEmpty()) {
             if (sb.length() > 0) {
                 sb.append(",");
             }
-            sb.append(TextUtils.join(",", list3.toArray()));
-            newShareFriendsApi.setGroupIds(TextUtils.join(",", list3.toArray()));
+            sb.append(StringUtils.join(",", list3.toArray()));
+            newShareFriendsApi.setGroupIds(StringUtils.join(",", list3.toArray()));
         }
         this.toId = sb.toString();
         HashMap hashMap = new HashMap();
@@ -497,14 +497,14 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("425bcfb5", new Object[]{this, str, str2, str3});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
         } else {
             JSONObject jSONObject = new JSONObject();
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "EMPTY_DATA";
             }
             jSONObject.put("errorCode", (Object) str2);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_18293);
             }
             jSONObject.put("errorMsg", (Object) str3);
@@ -535,15 +535,15 @@ public class ContactsSendShareBusiness implements IRemoteBaseListener {
         this.toMobile = jSONString;
         StringBuilder sb = new StringBuilder();
         if (list2 != null && !list2.isEmpty()) {
-            sb.append(TextUtils.join(",", list2.toArray()));
-            newShareCheckApi.setTaoFriends(TextUtils.join(",", list2.toArray()));
+            sb.append(StringUtils.join(",", list2.toArray()));
+            newShareCheckApi.setTaoFriends(StringUtils.join(",", list2.toArray()));
         }
         if (list3 != null && !list3.isEmpty()) {
             if (sb.length() > 0) {
                 sb.append(",");
             }
-            sb.append(TextUtils.join(",", list3.toArray()));
-            newShareCheckApi.setGroupIds(TextUtils.join(",", list3.toArray()));
+            sb.append(StringUtils.join(",", list3.toArray()));
+            newShareCheckApi.setGroupIds(StringUtils.join(",", list3.toArray()));
         }
         this.toId = sb.toString();
         HashMap hashMap = new HashMap();

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.CrashBridge;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
@@ -29,7 +29,7 @@ public class SubAppStartEvent implements ClientEvent {
         String str = split[0];
         String str2 = split.length > 1 ? split[1] : "";
         logContext.putContextParam(LogContext.STORAGE_APPID, str);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             CrashBridge.d();
         }
         Behavor behavor = new Behavor();

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.appbundle.c;
 import java.util.UUID;
@@ -66,7 +66,7 @@ public class izk {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (TextUtils.isEmpty(f29425a)) {
+        if (StringUtils.isEmpty(f29425a)) {
             f();
         }
         return f29425a;
@@ -74,12 +74,12 @@ public class izk {
 
     public static String b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]) : TextUtils.isEmpty(b) ? "source_blank" : b;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]) : StringUtils.isEmpty(b) ? "source_blank" : b;
     }
 
     public static String c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[0]) : TextUtils.isEmpty(c) ? "source_blank" : c;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[0]) : StringUtils.isEmpty(c) ? "source_blank" : c;
     }
 
     public static boolean d() {

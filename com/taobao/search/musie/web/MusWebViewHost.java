@@ -2,7 +2,7 @@ package com.taobao.search.musie.web;
 
 import android.content.Context;
 import android.taobao.windvane.extra.uc.WVUCWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -75,7 +75,7 @@ public final class MusWebViewHost extends FrameLayout {
             return;
         }
         q.c(url, "url");
-        if (TextUtils.equals(url, this.mCurrentUrl)) {
+        if (StringUtils.equals(url, this.mCurrentUrl)) {
             return;
         }
         createWebViewIfNeeded();

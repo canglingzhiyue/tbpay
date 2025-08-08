@@ -3,7 +3,7 @@ package com.xiaomi.push;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ public class bq {
 
     public static String a(Context context) {
         String a2 = bt.a(context).a("sp_client_report_status", "sp_client_report_key", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             String a3 = bm.a(20);
             bt.a(context).m1749a("sp_client_report_status", "sp_client_report_key", a3);
             return a3;
@@ -54,7 +54,7 @@ public class bq {
             return;
         }
         for (String str : list) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 a(context, str);
             }
         }

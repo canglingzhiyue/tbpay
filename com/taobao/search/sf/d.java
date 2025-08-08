@@ -2,7 +2,7 @@ package com.taobao.search.sf;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -60,7 +60,7 @@ public class d {
             return;
         }
         String remove = map.remove(com.taobao.search.common.util.k.KEY_SEARCH_BAR_TAG);
-        if (TextUtils.isEmpty(remove)) {
+        if (StringUtils.isEmpty(remove)) {
             return;
         }
         try {
@@ -77,7 +77,7 @@ public class d {
                         map.putAll(params);
                     }
                     String q = fromJson.getQ();
-                    if (!TextUtils.isEmpty(q)) {
+                    if (!StringUtils.isEmpty(q)) {
                         sb.append(" ");
                         sb.append(q);
                     }

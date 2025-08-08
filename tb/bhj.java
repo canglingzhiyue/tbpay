@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.SplitFileInfo;
 import com.alibaba.android.split.j;
 import com.alibaba.android.split.service.SplitInstallServiceImpl;
@@ -284,7 +284,7 @@ public class bhj<Param> {
                         return;
                     }
                     for (SplitFileInfo splitFileInfo : list) {
-                        if (!TextUtils.isEmpty(this.i) && this.i.equals(str)) {
+                        if (!StringUtils.isEmpty(this.i) && this.i.equals(str)) {
                             bhj.a(bhj.this).a(splitFileInfo.splitName, false, "download", 0L, Integer.parseInt(map.get("error_code")), map.get(MUSAppMonitor.ERROR_MSG), i2);
                             return;
                         }
@@ -445,7 +445,7 @@ public class bhj<Param> {
                                             Intent intent = new Intent();
                                             intent.putExtra("split_id", splitFileInfo.splitName);
                                             String str = (String) hashMap.get(bhj.a(bhj.this, splitFileInfo.splitName));
-                                            if (!TextUtils.isEmpty(str) && new File(str).exists()) {
+                                            if (!StringUtils.isEmpty(str) && new File(str).exists()) {
                                                 intent.setData(Uri.fromFile(new File(str)));
                                             }
                                             arrayList3.add(intent);
@@ -482,7 +482,7 @@ public class bhj<Param> {
                                                 Intent intent2 = new Intent();
                                                 intent2.putExtra("split_id", splitFileInfo2.splitName);
                                                 String str2 = (String) hashMap.get(bhj.a(bhj.this, splitFileInfo2.splitName));
-                                                if (!TextUtils.isEmpty(str2) && new File(str2).exists()) {
+                                                if (!StringUtils.isEmpty(str2) && new File(str2).exists()) {
                                                     intent2.setData(Uri.fromFile(new File(str2)));
                                                 }
                                                 arrayList5.add(intent2);
@@ -507,7 +507,7 @@ public class bhj<Param> {
                                                 Intent intent3 = new Intent();
                                                 intent3.putExtra("split_id", splitFileInfo3.splitName);
                                                 String str3 = (String) hashMap.get(splitFileInfo3.splitName);
-                                                if (!TextUtils.isEmpty(str3) && new File(str3).exists()) {
+                                                if (!StringUtils.isEmpty(str3) && new File(str3).exists()) {
                                                     intent3.setData(Uri.fromFile(new File(str3)));
                                                 }
                                                 arrayList7.add(intent3);

@@ -1,6 +1,6 @@
 package com.alibaba.ability.impl.websocket;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.ability.e;
 import com.alibaba.ability.result.ErrorResult;
@@ -177,7 +177,7 @@ public final class WebSocketAbility extends alm {
         q.a((Object) a2);
         a(a2);
         String a3 = e.a(map, "url", "");
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             alnVar.a(a$a.Companion.b("url为空"));
             return null;
         }
@@ -185,7 +185,7 @@ public final class WebSocketAbility extends alm {
             URI uri = new URI(hsu.a(a3, (JSONObject) e.a(map, "data")));
             String scheme = uri.getScheme();
             q.b(scheme, "uri.scheme");
-            if (TextUtils.isEmpty(scheme)) {
+            if (StringUtils.isEmpty(scheme)) {
                 alnVar.a((ExecuteResult) a$a.Companion.b("scheme 为空"));
                 return null;
             } else if (!n.a("ws", scheme, true) && !n.a("wss", scheme, true)) {
@@ -220,7 +220,7 @@ public final class WebSocketAbility extends alm {
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         for (Map.Entry<String, ? extends Object> entry : map.entrySet()) {
-            if (TextUtils.isEmpty(entry.getKey()) || entry.getValue() != null) {
+            if (StringUtils.isEmpty(entry.getKey()) || entry.getValue() != null) {
                 linkedHashMap.put(entry.getKey(), entry.getValue());
             }
         }

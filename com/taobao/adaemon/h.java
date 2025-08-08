@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dynfun.TplMsg;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.connection.state.TimeMeter;
@@ -107,7 +107,7 @@ public class h {
                 } else if (this.i && ((KeyguardManager) this.k.getSystemService("keyguard")).isKeyguardLocked()) {
                     e.b("ProcStartStrategy", "require user present", new Object[0]);
                 } else {
-                    if (!TextUtils.isEmpty(this.h)) {
+                    if (!StringUtils.isEmpty(this.h)) {
                         String[] split = this.h.split("-");
                         int parseInt = Integer.parseInt(split[0]);
                         int parseInt2 = Integer.parseInt(split[1]);
@@ -156,7 +156,7 @@ public class h {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
         this.j = j.a().i();
-        String[] split = TextUtils.isEmpty(this.j) ? null : this.j.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
+        String[] split = StringUtils.isEmpty(this.j) ? null : this.j.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
         if (split == null || split.length < 9) {
             e.b("ProcStartStrategy", "parseStrategy error", "strategy", this.j);
             return false;
@@ -183,7 +183,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
-        if (this.f8359a == 0 || TextUtils.isEmpty(this.b) || this.c > this.d || this.e <= 0 || this.g < 0) {
+        if (this.f8359a == 0 || StringUtils.isEmpty(this.b) || this.c > this.d || this.e <= 0 || this.g < 0) {
             return false;
         }
         e.b("ProcStartStrategy", "checkValid true", new Object[0]);

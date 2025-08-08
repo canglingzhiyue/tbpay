@@ -5,7 +5,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.animation.PathInterpolatorCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
@@ -153,8 +153,8 @@ public class fzk {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("21e4b8ad", new Object[]{str, str2, str3, str4, str5});
         }
-        boolean isEmpty = TextUtils.isEmpty(str);
-        boolean isEmpty2 = TextUtils.isEmpty(str2);
+        boolean isEmpty = StringUtils.isEmpty(str);
+        boolean isEmpty2 = StringUtils.isEmpty(str2);
         String[] strArr = null;
         if (isEmpty && isEmpty2) {
             return null;
@@ -170,13 +170,13 @@ public class fzk {
                 linkedList.add(new a(a(split2[0].trim()), 0L, c(split2[1].trim()), b(split2[2].trim())));
             }
             return linkedList;
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
             return null;
         } else {
             String[] split3 = str2.split(",");
             String[] split4 = str3.split(",");
-            String[] split5 = TextUtils.isEmpty(str4) ? null : str4.split(",");
-            String[] split6 = TextUtils.isEmpty(str5) ? null : str5.split(",");
+            String[] split5 = StringUtils.isEmpty(str4) ? null : str4.split(",");
+            String[] split6 = StringUtils.isEmpty(str5) ? null : str5.split(",");
             if (split4.length != 1 && split4.length != split3.length) {
                 return null;
             }

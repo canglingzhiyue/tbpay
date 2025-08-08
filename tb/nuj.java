@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -49,7 +49,7 @@ public final class nuj implements d {
             return;
         }
         String str2 = args.get("configVersion");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         k.d("TemplatePreLoaderListener", "receive config, currentVersion:" + this.b + ", newVersion:" + str2, new Object[0]);
@@ -81,7 +81,7 @@ public final class nuj implements d {
                 String url = jSONObject.getString("url");
                 String md5 = jSONObject.getString("md5");
                 String name = jSONObject.getString("name");
-                if (!TextUtils.isEmpty(url) && !TextUtils.isEmpty(md5) && !TextUtils.isEmpty(name)) {
+                if (!StringUtils.isEmpty(url) && !StringUtils.isEmpty(md5) && !StringUtils.isEmpty(name)) {
                     nuk nukVar = this.d.get(name);
                     if (nukVar != null && q.a((Object) nukVar.a(), (Object) url)) {
                         k.d("TemplatePreLoaderListener", "模板" + name + "未发生变化，不触发预加载", new Object[0]);

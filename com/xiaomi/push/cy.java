@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class cy {
@@ -23,12 +23,12 @@ public class cy {
                 f24411a = false;
             }
             String m2361a = com.xiaomi.push.service.v.m2361a(context);
-            if (TextUtils.isEmpty(m2361a) || m2361a.length() < 3) {
+            if (StringUtils.isEmpty(m2361a) || m2361a.length() < 3) {
                 z = false;
             } else {
                 String substring = m2361a.substring(m2361a.length() - 3);
                 a("shouldSampling uuid suffix = " + substring);
-                z = Boolean.valueOf(TextUtils.equals(substring, "001"));
+                z = Boolean.valueOf(StringUtils.equals(substring, "001"));
             }
             f24411a = z;
             a("shouldSampling = " + f24411a);

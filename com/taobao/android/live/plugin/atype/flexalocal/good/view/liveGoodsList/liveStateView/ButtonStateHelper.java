@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.common.LiveItem;
@@ -72,7 +72,7 @@ public class ButtonStateHelper {
         }
         if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().h(cVar) != 0 && !com.taobao.android.live.plugin.atype.flexalocal.good.a.a().f(cVar) && z2 && (jSONObject2 = jSONObject.getJSONObject("extendVal")) != null) {
             String string = jSONObject2.getString("liveItemBizTags");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (!string.contains("vipFirst") && !string.contains("vipBuyGift")) {
                     z3 = false;
                 }
@@ -83,14 +83,14 @@ public class ButtonStateHelper {
         }
         JSONObject jSONObject4 = jSONObject.getJSONObject("itemExtData");
         if (jSONObject4 != null) {
-            if (TextUtils.equals("0", jSONObject4.getString("timingUpShelfStatus")) && hir.d()) {
+            if (StringUtils.equals("0", jSONObject4.getString("timingUpShelfStatus")) && hir.d()) {
                 return ButtonState.TIME_SHELF.value;
             }
             String string2 = jSONObject4.getString("preSaleStatus");
-            if (TextUtils.equals("0", string2)) {
+            if (StringUtils.equals("0", string2)) {
                 return ButtonState.PRE_SALE_PREHEATING.value;
             }
-            if (TextUtils.equals("1", string2)) {
+            if (StringUtils.equals("1", string2)) {
                 return ButtonState.PRE_SALE_DEPOSIT.value;
             }
         }
@@ -118,14 +118,14 @@ public class ButtonStateHelper {
             }
         }
         if (liveItem.itemExtData != null) {
-            if (TextUtils.equals("0", liveItem.itemExtData.getString("timingUpShelfStatus")) && hir.d()) {
+            if (StringUtils.equals("0", liveItem.itemExtData.getString("timingUpShelfStatus")) && hir.d()) {
                 return ButtonState.TIME_SHELF.value;
             }
             String string = liveItem.itemExtData.getString("preSaleStatus");
-            if (TextUtils.equals("0", string)) {
+            if (StringUtils.equals("0", string)) {
                 return ButtonState.PRE_SALE_PREHEATING.value;
             }
-            if (TextUtils.equals("1", string)) {
+            if (StringUtils.equals("1", string)) {
                 return ButtonState.PRE_SALE_DEPOSIT.value;
             }
         }
@@ -137,9 +137,9 @@ public class ButtonStateHelper {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        return TextUtils.equals("nbButton", str) || TextUtils.equals("twoButton", str);
+        return StringUtils.equals("nbButton", str) || StringUtils.equals("twoButton", str);
     }
 }

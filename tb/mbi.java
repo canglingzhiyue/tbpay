@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.utils.c;
 import com.taobao.linkmanager.AfcLifeCycleCenter;
@@ -108,7 +108,7 @@ public class mbi implements kfa {
             return;
         }
         c.a("linkx", String.format("BrowserPageTouchListener.onRedirectUrl.activityCode=%s === originUrl=%s === targetUrl=%s", str, str2, str3));
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return;
         }
         if (!str3.startsWith(k.HTTP_PREFIX) && !str3.startsWith(k.HTTPS_PREFIX)) {
@@ -125,13 +125,13 @@ public class mbi implements kfa {
             return;
         }
         c.a("linkx", String.format("BrowserPageTouchListener.onDestroy.activityCode=%s === url=%s === isFinishing=%s", str, str2, Boolean.valueOf(z)));
-        if (!z || TextUtils.isEmpty(str)) {
+        if (!z || StringUtils.isEmpty(str)) {
             return;
         }
         Iterator<Map.Entry<String, Boolean>> it = this.f31014a.entrySet().iterator();
         while (it.hasNext()) {
             String key = it.next().getKey();
-            if (!TextUtils.isEmpty(key) && key.equals(str)) {
+            if (!StringUtils.isEmpty(key) && key.equals(str)) {
                 it.remove();
             }
         }

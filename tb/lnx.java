@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -229,7 +229,7 @@ public class lnx {
         }
         List totalData = containerData.getTotalData();
         for (int i = 0; i < totalData.size(); i++) {
-            if (TextUtils.equals(str, ((SectionModel) totalData.get(i)).getSectionBizCode()) && (findItemViewByPosition = this.f30758a.findItemViewByPosition(i)) != null && findItemViewByPosition.getVisibility() == 0 && (a2 = a(findItemViewByPosition)) != null) {
+            if (StringUtils.equals(str, ((SectionModel) totalData.get(i)).getSectionBizCode()) && (findItemViewByPosition = this.f30758a.findItemViewByPosition(i)) != null && findItemViewByPosition.getVisibility() == 0 && (a2 = a(findItemViewByPosition)) != null) {
                 return a2;
             }
         }
@@ -279,7 +279,7 @@ public class lnx {
             return -1;
         }
         for (BaseSectionModel<?> baseSectionModel : containerData.getTotalData()) {
-            if (TextUtils.equals(str, baseSectionModel.getSectionBizCode())) {
+            if (StringUtils.equals(str, baseSectionModel.getSectionBizCode())) {
                 return a(str2, baseSectionModel);
             }
         }
@@ -309,7 +309,7 @@ public class lnx {
                     if (it2.hasNext()) {
                         String next2 = it2.next();
                         JSONObject jSONObject2 = mo1097getItem.getJSONObject(next2);
-                        if (jSONObject2 != null && jSONObject2.containsKey("content") && (jSONObject = jSONObject2.getJSONObject("content")) != null && TextUtils.equals(str, jSONObject.getString("miniAppId"))) {
+                        if (jSONObject2 != null && jSONObject2.containsKey("content") && (jSONObject = jSONObject2.getJSONObject("content")) != null && StringUtils.equals(str, jSONObject.getString("miniAppId"))) {
                             i2 = b(next2);
                             break;
                         }
@@ -334,7 +334,7 @@ public class lnx {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         try {

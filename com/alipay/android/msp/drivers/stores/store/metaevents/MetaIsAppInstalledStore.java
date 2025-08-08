@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.metaevents;
 
 import android.content.pm.PackageInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -53,7 +53,7 @@ public class MetaIsAppInstalledStore extends LocalEventStore {
             str = LanguageHelper.localizedStringForKey("ebank_errormsg_low_version", this.d.getString(R.string.ebank_errormsg_low_version), new Object[0]);
             statisticInfo = this.f4584a.getStatisticInfo();
             stEvent = new StEvent(this.f4584a.getCurrentWinTpName(), CountValue.T_EBANK, "EbankLowVersion|pkg:".concat(String.valueOf(string)));
-        } else if (TextUtils.isEmpty(string2) || TextUtils.equals(string2, PkgTools.getPkgSHA256FingerPrint(this.d, string))) {
+        } else if (StringUtils.isEmpty(string2) || StringUtils.equals(string2, PkgTools.getPkgSHA256FingerPrint(this.d, string))) {
             z = true;
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("success", (Object) Boolean.valueOf(z));

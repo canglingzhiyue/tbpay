@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.hardwarepay.old.dialog.impl;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -193,7 +193,7 @@ public class HardwarePayValidateDialog implements IHardwarePayDialog {
             });
             if (i == 1) {
                 this.f.setBackgroundResource(R.drawable.alipay_msp_mini_finger);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     this.f4757a.setText(LanguageHelper.localizedStringForKey("flybird_fp_tips", activity.getString(R.string.flybird_fp_tips), new Object[0]));
                 } else {
                     this.f4757a.setText(str);
@@ -205,7 +205,7 @@ public class HardwarePayValidateDialog implements IHardwarePayDialog {
                 this.g.setVisibility(0);
                 this.g.spin();
                 this.g.start();
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     this.f4757a.setText(LanguageHelper.localizedStringForKey("flybird_bl_tips", activity.getString(R.string.flybird_bl_tips), new Object[0]));
                 } else {
                     this.f4757a.setText(str);
@@ -214,7 +214,7 @@ public class HardwarePayValidateDialog implements IHardwarePayDialog {
                 this.f.setBackgroundResource(R.drawable.alipay_msp_mini_finger);
                 this.h.setVisibility(8);
                 this.k.setVisibility(8);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     this.f4757a.setText(LanguageHelper.localizedStringForKey("flybird_fp_open", activity.getString(R.string.flybird_fp_open), new Object[0]));
                 } else {
                     this.f4757a.setText(str);
@@ -274,7 +274,7 @@ public class HardwarePayValidateDialog implements IHardwarePayDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.f4757a == null || TextUtils.isEmpty(str)) {
+        } else if (this.f4757a == null || StringUtils.isEmpty(str)) {
         } else {
             this.f4757a.postDelayed(new Runnable() { // from class: com.alipay.android.msp.framework.hardwarepay.old.dialog.impl.HardwarePayValidateDialog.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;

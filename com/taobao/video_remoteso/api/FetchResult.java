@@ -1,6 +1,6 @@
 package com.taobao.video_remoteso.api;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -41,7 +41,7 @@ public class FetchResult {
 
     public boolean isLoadSuccess() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7f4973be", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.mLibName) && !TextUtils.isEmpty(this.mLibPath);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7f4973be", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.mLibName) && !StringUtils.isEmpty(this.mLibPath);
     }
 
     public String getLibName() {

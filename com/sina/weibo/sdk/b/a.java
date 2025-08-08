@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.Signature;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +34,7 @@ public final class a {
     }
 
     private static C0307a a(Context context, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -108,9 +108,9 @@ public final class a {
             intent.addCategory("android.intent.category.DEFAULT");
             if (context != null && (queryIntentServices = context.getPackageManager().queryIntentServices(intent, 0)) != null && !queryIntentServices.isEmpty()) {
                 for (ResolveInfo resolveInfo : queryIntentServices) {
-                    if (resolveInfo.serviceInfo != null && resolveInfo.serviceInfo.applicationInfo != null && !TextUtils.isEmpty(resolveInfo.serviceInfo.packageName)) {
+                    if (resolveInfo.serviceInfo != null && resolveInfo.serviceInfo.applicationInfo != null && !StringUtils.isEmpty(resolveInfo.serviceInfo.packageName)) {
                         String str2 = resolveInfo.serviceInfo.packageName;
-                        if (TextUtils.equals(str, str2) && (a2 = a(context, str2)) != null) {
+                        if (StringUtils.equals(str, str2) && (a2 = a(context, str2)) != null) {
                             return a2;
                         }
                     }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.bio.api.BioDetector;
@@ -136,7 +136,7 @@ public class lqk extends lqi {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("6635bcfe", new Object[]{this, str, jSONObject});
-                } else if (!TextUtils.equals(str, "ViewAppear")) {
+                } else if (!StringUtils.equals(str, "ViewAppear")) {
                 } else {
                     lqk.a(lqk.this, jSONObject.getIntValue("index"));
                 }
@@ -180,7 +180,7 @@ public class lqk extends lqi {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("552c8b59", new Object[]{this, lliVar, str});
-                } else if (!TextUtils.equals(str, "scrollNextPage")) {
+                } else if (!StringUtils.equals(str, "scrollNextPage")) {
                 } else {
                     lqk.b(lqk.this).d();
                 }
@@ -191,7 +191,7 @@ public class lqk extends lqi {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("d905f556", new Object[]{this, lliVar, iContainerDataModel, str});
-                } else if (!TextUtils.equals(str, "scrollNextPage")) {
+                } else if (!StringUtils.equals(str, "scrollNextPage")) {
                 } else {
                     lqk.b(lqk.this).e();
                 }
@@ -202,7 +202,7 @@ public class lqk extends lqi {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("74bec7ed", new Object[]{this, lliVar, str, str2, str3});
-                } else if (!TextUtils.equals(str3, "scrollNextPage")) {
+                } else if (!StringUtils.equals(str3, "scrollNextPage")) {
                 } else {
                     lqk.b(lqk.this).e();
                 }

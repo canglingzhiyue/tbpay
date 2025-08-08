@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.config.t;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -49,7 +49,7 @@ public class n {
             }
             String scheme = uri.getScheme();
             String host = uri.getHost();
-            if (!TextUtils.isEmpty(scheme) && !TextUtils.isEmpty(host) && ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme))) {
+            if (!StringUtils.isEmpty(scheme) && !StringUtils.isEmpty(host) && ("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme))) {
                 if (t.a().g(str)) {
                     if (context instanceof MutableContextWrapper) {
                         context = ((MutableContextWrapper) context).getBaseContext();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.ag;
 import com.ut.mini.UTAnalytics;
@@ -27,7 +27,7 @@ public class rqq {
             return;
         }
         apr.b("UTSceneTracker", "beginScene", str, "properties", map, "propertiesRule", map2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (this.f33326a.containsKey(str)) {
@@ -45,7 +45,7 @@ public class rqq {
             return;
         }
         apr.b("UTSceneTracker", "beginScene", str, "properties", map, "propertiesRule", map2, "tmpProperties", map3);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (this.f33326a.containsKey(str)) {
@@ -66,7 +66,7 @@ public class rqq {
             return;
         }
         apr.b("UTSceneTracker", "updateScene", str, "properties", map);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (!this.f33326a.containsKey(str)) {
@@ -88,7 +88,7 @@ public class rqq {
             return;
         }
         apr.b("UTSceneTracker", "updateTmpScene", str, "tmpProperties", map);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (!this.f33326a.containsKey(str)) {
@@ -111,7 +111,7 @@ public class rqq {
         }
         apr.b("UTSceneTracker", "endScene", str);
         HashMap hashMap = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         rqo rqoVar = this.f33326a.get(str);

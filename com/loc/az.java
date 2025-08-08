@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -121,7 +121,7 @@ public final class az {
     private static <T> void a(SQLiteDatabase sQLiteDatabase, T t) {
         ba b = b((Class) t.getClass());
         String a2 = a(b);
-        if (TextUtils.isEmpty(a2) || t == null || sQLiteDatabase == null) {
+        if (StringUtils.isEmpty(a2) || t == null || sQLiteDatabase == null) {
             return;
         }
         sQLiteDatabase.insert(a2, null, a(t, b));
@@ -175,7 +175,7 @@ public final class az {
             }
             ba b = b((Class) obj.getClass());
             String a2 = a(b);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             ContentValues a3 = a(obj, b);
@@ -231,7 +231,7 @@ public final class az {
             if (this.b == null) {
                 this.b = a();
             }
-            if (this.b == null || TextUtils.isEmpty(a2) || str == null) {
+            if (this.b == null || StringUtils.isEmpty(a2) || str == null) {
                 return arrayList;
             }
             try {

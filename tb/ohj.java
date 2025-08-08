@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -26,19 +26,19 @@ public class ohj {
             return (Typeface) ipChange.ipc$dispatch("5b336dea", new Object[]{context, str, str2, new Boolean(z), new Boolean(z2)});
         }
         int a2 = a(str2);
-        if (a2 != 0 || TextUtils.isEmpty(str2) || "normal".equals(str2)) {
+        if (a2 != 0 || StringUtils.isEmpty(str2) || "normal".equals(str2)) {
             str2 = null;
         }
         if (z2) {
             a2 = 1;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = str2;
         }
         if (z) {
             str = "uik_iconfont.ttf";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (a2 == 1) {
                 return Typeface.SANS_SERIF;
             }
@@ -64,7 +64,7 @@ public class ohj {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         boolean z = false;

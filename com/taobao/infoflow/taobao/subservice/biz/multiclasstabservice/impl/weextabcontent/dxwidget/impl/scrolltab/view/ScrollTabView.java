@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.subservice.biz.multiclasstabservice.impl.weex
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -299,7 +299,7 @@ public class ScrollTabView extends HorizontalScrollView {
         } else if (list == null) {
         } else {
             String a2 = this.mDataParse.a(i, list);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             textView.setText(a2);

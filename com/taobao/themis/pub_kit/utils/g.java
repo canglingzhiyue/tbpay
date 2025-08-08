@@ -1,7 +1,7 @@
 package com.taobao.themis.pub_kit.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -173,7 +173,7 @@ public class g {
                 if (bVar == null || jSONObject2 == null || !jSONObject2.containsKey(MtopModule.KEY_PAGE_INDEX)) {
                     return;
                 }
-                if (!TextUtils.equals(jSONObject2.getString(MtopModule.KEY_PAGE_INDEX), "0")) {
+                if (!StringUtils.equals(jSONObject2.getString(MtopModule.KEY_PAGE_INDEX), "0")) {
                     bVar.onResult(true);
                 } else {
                     bVar.onResult(false);
@@ -193,7 +193,7 @@ public class g {
                 if (bVar == null) {
                     return;
                 }
-                if (TextUtils.equals("-3", str2)) {
+                if (StringUtils.equals("-3", str2)) {
                     bVar.onResult(true);
                 } else {
                     bVar.onResult(false);

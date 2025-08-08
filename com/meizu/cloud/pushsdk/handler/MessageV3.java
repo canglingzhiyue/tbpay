@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.f.g.e;
@@ -167,7 +167,7 @@ public class MessageV3 implements Parcelable {
         messageV3.setParamsMap(mPushMessage.getParams());
         String jSONObject = e.a((Map) mPushMessage.getExtra()).toString();
         DebugLogger.e(TAG, "MessageV2 extra json is " + jSONObject);
-        if (!TextUtils.isEmpty(jSONObject)) {
+        if (!StringUtils.isEmpty(jSONObject)) {
             messageV3.setNotificationMessage(jSONObject);
         }
         DebugLogger.i(TAG, "parse V2 message to V3 message " + messageV3);
@@ -249,7 +249,7 @@ public class MessageV3 implements Parcelable {
                 if (!jSONObject2.isNull("url")) {
                     messageV3.setWebUrl(jSONObject2.getString("url"));
                 }
-                if (!jSONObject2.isNull("task_id") && TextUtils.isEmpty(str5)) {
+                if (!jSONObject2.isNull("task_id") && StringUtils.isEmpty(str5)) {
                     DebugLogger.e(TAG, "Flyme 4 notification message by through message or taskId is null");
                     messageV3.setTaskId(jSONObject2.getString("task_id"));
                 }

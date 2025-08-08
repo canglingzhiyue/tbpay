@@ -1,6 +1,6 @@
 package com.taobao.android.artry.resource;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -173,7 +173,7 @@ public class e implements i {
         }
 
         public a(String str, String str2) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 throw new IllegalArgumentException("the bisType of the upload file task must not be null...");
             }
             e.a(this.f9077a, str);
@@ -194,7 +194,7 @@ public class e implements i {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("64b012d4", new Object[]{this, str, str2});
             }
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 if (e.a(this.f9077a) == null) {
                     e.a(this.f9077a, new HashMap());
                 }

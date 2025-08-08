@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.capture.dynamic.templates;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.sf.util.tlog.TLogTracker;
 import java.util.Map;
@@ -35,7 +35,7 @@ public final class PltTemplatesManager$fetchTemplatesInfoFromCloud$1$1 extends L
         q.c(templatesMap, "templatesMap");
         for (Map.Entry<String, a> entry : templatesMap.entrySet()) {
             a value = entry.getValue();
-            if (!TextUtils.isEmpty(value.b())) {
+            if (!StringUtils.isEmpty(value.b())) {
                 TLogTracker.b("PltTemplateManager", "fetch success", "key:" + value.a() + ", template: " + value.b());
                 b.a(b.INSTANCE, value.b(), value.c());
             }

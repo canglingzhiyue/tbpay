@@ -1,6 +1,6 @@
 package com.taobao.mrt;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.task.g;
 import com.taobao.orange.OrangeConfig;
@@ -58,7 +58,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && (split = str.split(",")) != null) {
+        if (!StringUtils.isEmpty(str) && (split = str.split(",")) != null) {
             return Arrays.asList(split);
         }
         return null;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.application.common.c;
 import java.util.Map;
@@ -54,7 +54,7 @@ public class mlx {
         }
         if (obj instanceof String) {
             String str2 = (String) obj;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 return str2;
             }
         }

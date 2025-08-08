@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.async.d;
 import com.taobao.android.detail.wrapper.ext.preload.DetailPreloadRequester;
@@ -151,7 +151,7 @@ public class a {
             return com.taobao.android.detail.ttdetail.constant.a.UN_KNOW;
         }
         String queryParameter = data.getQueryParameter("from");
-        return TextUtils.isEmpty(queryParameter) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? com.taobao.android.detail.ttdetail.constant.a.UN_KNOW : queryParameter;
     }
 
     /* renamed from: com.taobao.android.detail.wrapper.nav.a$a  reason: collision with other inner class name */

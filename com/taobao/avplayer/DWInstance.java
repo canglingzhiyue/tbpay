@@ -2,7 +2,7 @@ package com.taobao.avplayer;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1082,10 +1082,10 @@ public class DWInstance implements aw, ax, com.taobao.avplayer.common.b, com.tao
         if (this.mDWContext.mUserId != -1) {
             hashMap.put("userId", String.valueOf(this.mDWContext.mUserId));
         }
-        if (!TextUtils.isEmpty(this.mDWContext.mFrom)) {
+        if (!StringUtils.isEmpty(this.mDWContext.mFrom)) {
             hashMap.put("page", this.mDWContext.mFrom.toLowerCase());
         }
-        if (!TextUtils.isEmpty(this.mDWContext.mContentId)) {
+        if (!StringUtils.isEmpty(this.mDWContext.mContentId)) {
             hashMap.put("contentId", this.mDWContext.mContentId);
         }
         hashMap.put(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID, this.mDWContext.mVideoId + "");
@@ -2128,18 +2128,18 @@ public class DWInstance implements aw, ax, com.taobao.avplayer.common.b, com.tao
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("63bd6239", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mDWContext.mFrom) || TextUtils.isEmpty(this.mDWContext.mVideoSource) || TextUtils.isEmpty(this.mDWContext.mVideoId)) {
+        if (StringUtils.isEmpty(this.mDWContext.mFrom) || StringUtils.isEmpty(this.mDWContext.mVideoSource) || StringUtils.isEmpty(this.mDWContext.mVideoId)) {
             com.taobao.taobaoavsdk.util.c.b("TBDWInstance", "缺少必填参数 bizCode、videoSource、videoId！！");
         }
-        if (TextUtils.isEmpty(this.mDWContext.mFrom)) {
+        if (StringUtils.isEmpty(this.mDWContext.mFrom)) {
             this.mDWContext.mFrom = "default";
         }
-        if (TextUtils.isEmpty(this.mDWContext.mVideoSource)) {
+        if (StringUtils.isEmpty(this.mDWContext.mVideoSource)) {
             DWContext dWContext = this.mDWContext;
             dWContext.mPlayContext.mVideoSource = "TBVideo";
             dWContext.mVideoSource = "TBVideo";
         }
-        if (!TextUtils.isEmpty(this.mDWContext.mPlayContext.getVideoUrl()) && TextUtils.isEmpty(this.mDWContext.getVideoId()) && "TBVideo".equals(this.mDWContext.getVideoSource())) {
+        if (!StringUtils.isEmpty(this.mDWContext.mPlayContext.getVideoUrl()) && StringUtils.isEmpty(this.mDWContext.getVideoId()) && "TBVideo".equals(this.mDWContext.getVideoSource())) {
             try {
                 String rawPath = new URI(this.mDWContext.mPlayContext.getVideoUrl()).getRawPath();
                 int lastIndexOf = rawPath.lastIndexOf(47);
@@ -2154,7 +2154,7 @@ public class DWInstance implements aw, ax, com.taobao.avplayer.common.b, com.tao
             } catch (Exception unused) {
             }
         }
-        return !TextUtils.isEmpty(this.mDWContext.mVideoId);
+        return !StringUtils.isEmpty(this.mDWContext.mVideoId);
     }
 
     public void setInteractiveIdAndRefresh(long j) {
@@ -2959,7 +2959,7 @@ public class DWInstance implements aw, ax, com.taobao.avplayer.common.b, com.tao
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-            } else if (TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.b)) {
             } else {
                 d dVar = this.f16413a;
                 dVar.aS = this.b + "." + this.f16413a.aS;
@@ -3351,7 +3351,7 @@ public class DWInstance implements aw, ax, com.taobao.avplayer.common.b, com.tao
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (obw.KEY_VIDEO_UPDATE_PARAMS.equals(key) && !TextUtils.isEmpty(value)) {
+            if (obw.KEY_VIDEO_UPDATE_PARAMS.equals(key) && !StringUtils.isEmpty(value)) {
                 this.mDWContext.mDynamicPlayEx = value;
             } else if ("enterFloating".equals(key)) {
                 this.mDWContext.mIsFloat = "1".equals(value);

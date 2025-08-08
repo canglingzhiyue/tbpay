@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import com.taobao.android.live.plugin.atype.flexalocal.profile.LiveAvatarNewFrame;
@@ -87,7 +87,7 @@ public class lmx implements ddv {
         hashMap.put(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID, str);
         hashMap.put("itemId", str2);
         hashMap.put("alimamaLiveId", a2);
-        hashMap.put("isSame", TextUtils.equals(str, a2) ? "true" : "false");
+        hashMap.put("isSame", StringUtils.equals(str, a2) ? "true" : "false");
         if (pmd.a().e() == null) {
             return;
         }

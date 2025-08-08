@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.INetDataObject;
@@ -287,7 +287,7 @@ public class k {
 
     public static boolean d(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || b.containsKey(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || b.containsKey(str);
     }
 
     public static boolean e(String str) {

@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.sf.widgets.suggest.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.location.common.TBLocationDTO;
 import com.taobao.search.common.util.i;
@@ -41,11 +41,11 @@ public class c extends nqa {
             return "10650";
         }
         String a2 = noo.a(map, "channelSrp");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return "10650";
         }
         String str = b.get(a2);
-        return TextUtils.isEmpty(str) ? "10650" : str;
+        return StringUtils.isEmpty(str) ? "10650" : str;
     }
 
     public c(String str, String str2, String str3, Map<String, String> map, MethodEnum methodEnum) {
@@ -60,22 +60,22 @@ public class c extends nqa {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     b(key, value);
                 }
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             b("q", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             b("tab", str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             b("searchdoorFrom", str3);
         }
         String d = g.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             b(noa.KEY_EDITION_CODE, d);
         }
         if (!this.f31631a.h.containsKey(noa.KEY_GOOD_PRICE)) {
@@ -88,7 +88,7 @@ public class c extends nqa {
             b(noa.KEY_CITY_CODE, a2.cityCode);
         }
         String c = o.INSTANCE.c(Globals.getApplication());
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             b(noa.KEY_GLOBAL_LBS, c);
         }
         b("area", "wireless_gbdt_newoutput");

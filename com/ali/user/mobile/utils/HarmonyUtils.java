@@ -1,7 +1,7 @@
 package com.ali.user.mobile.utils;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.harmony.HarmonyLoginBackupImpl;
 import com.ali.user.mobile.log.UserTrackAdapter;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,7 +62,7 @@ public class HarmonyUtils {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             String str3 = (String) cls.getDeclaredMethod("get", String.class).invoke(cls, str);
-            return TextUtils.isEmpty(str3) ? str2 : str3;
+            return StringUtils.isEmpty(str3) ? str2 : str3;
         } catch (Throwable th) {
             th.printStackTrace();
             return str2;

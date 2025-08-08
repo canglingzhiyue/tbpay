@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -44,7 +44,7 @@ public class mqx {
         Object[] a3 = af.a(runtimeAbilityParamArr);
         if (z) {
             String c = c(a3);
-            if (!TextUtils.isEmpty(c) && aVar != null && aVar.b() != null) {
+            if (!StringUtils.isEmpty(c) && aVar != null && aVar.b() != null) {
                 aVar.b().put("feedId", (Object) c);
             }
         }
@@ -172,31 +172,31 @@ public class mqx {
             String f = keywords.f();
             String g2 = keywords.g();
             RateKeyword rateKeyword = new RateKeyword();
-            if (TextUtils.isEmpty(b3)) {
+            if (StringUtils.isEmpty(b3)) {
                 b3 = "";
             }
             rateKeyword.count = b3;
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 c = "";
             }
             rateKeyword.attribute = c;
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = "";
             }
             rateKeyword.word = a2;
             rateKeyword.type = keywords.d().ordinal();
             rateKeyword.status = keywords.i();
-            if (TextUtils.isEmpty(f)) {
+            if (StringUtils.isEmpty(f)) {
                 f = "";
             }
             rateKeyword.level = f;
-            if (TextUtils.isEmpty(g2)) {
+            if (StringUtils.isEmpty(g2)) {
                 g2 = "";
             }
             rateKeyword.attributeId = g2;
             rateKeyword.subImprList = keywords.e();
             String h = keywords.h();
-            if (!TextUtils.isEmpty(h)) {
+            if (!StringUtils.isEmpty(h)) {
                 rateKeyword.setRateType(Integer.parseInt(h));
             }
             arrayList.add(rateKeyword);
@@ -205,7 +205,7 @@ public class mqx {
         Rate.Keywords a3 = mqwVar.a();
         if (a3 != null) {
             String c2 = a3.c();
-            if (TextUtils.isEmpty(c2)) {
+            if (StringUtils.isEmpty(c2)) {
                 c2 = "";
             }
             g.c(c2);
@@ -213,7 +213,7 @@ public class mqx {
         g.a(a(rate, mqwVar));
         g.j(mqwVar.l());
         String a4 = a3 == null ? null : a3.a();
-        if (TextUtils.isEmpty(a4)) {
+        if (StringUtils.isEmpty(a4)) {
             a4 = "";
         }
         g.f(a4);
@@ -244,15 +244,15 @@ public class mqx {
             String itemId = item.getItemId();
             String title = item.getTitle();
             String firstImageUrl = item.getFirstImageUrl();
-            if (TextUtils.isEmpty(itemId)) {
+            if (StringUtils.isEmpty(itemId)) {
                 itemId = "";
             }
             jSONObject.put("itemId", (Object) itemId);
-            if (TextUtils.isEmpty(title)) {
+            if (StringUtils.isEmpty(title)) {
                 title = "";
             }
             jSONObject.put("title", (Object) title);
-            if (TextUtils.isEmpty(firstImageUrl)) {
+            if (StringUtils.isEmpty(firstImageUrl)) {
                 firstImageUrl = "";
             }
             jSONObject.put("image", (Object) firstImageUrl);
@@ -316,7 +316,7 @@ public class mqx {
                 rateKeyword.attributeId = keywords.g();
                 rateKeyword.subImprList = keywords.e();
                 String h = keywords.h();
-                if (!TextUtils.isEmpty(h)) {
+                if (!StringUtils.isEmpty(h)) {
                     rateKeyword.setRateType(Integer.parseInt(h));
                 }
                 jSONArray.add(rateKeyword);
@@ -325,14 +325,14 @@ public class mqx {
             Rate.Keywords a2 = mqwVar.a();
             if (a2 != null) {
                 String c = a2.c();
-                if (TextUtils.isEmpty(c)) {
+                if (StringUtils.isEmpty(c)) {
                     c = "";
                 }
                 path.appendQueryParameter("expression", c);
             }
             path.appendQueryParameter("rateExtParams", a(rate, mqwVar).toJSONString());
             String a3 = a2 == null ? null : a2.a();
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 a3 = "";
             }
             path.appendQueryParameter("selectTag", a3);

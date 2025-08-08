@@ -19,7 +19,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSClient;
@@ -883,13 +883,13 @@ public class g {
                 }
                 j(l.e()).edit().putInt("dead_pid", Process.myPid()).putString("invoke_first_bg_info", o).putLong("app_launch_time", ADaemon.appLaunchTimeInMill).remove("fore_time_first").remove("background_time_first").remove("background_page_first").remove("background_page_url").commit();
             } else if (bool.booleanValue()) {
-                if (!TextUtils.isEmpty(this.I) && this.I.equals(o)) {
+                if (!StringUtils.isEmpty(this.I) && this.I.equals(o)) {
                     return;
                 }
                 e.b("LocalProcM", "fore afcId changed", "afcId", o);
                 this.K = currentTimeMillis;
                 this.I = o;
-            } else if (!TextUtils.isEmpty(this.J) && this.J.equals(o)) {
+            } else if (!StringUtils.isEmpty(this.J) && this.J.equals(o)) {
             } else {
                 e.b("LocalProcM", "background afcId changed", "backPage", str, "pageUrl", str2, "afcId", o);
                 j(l.e()).edit().putInt("dead_pid", Process.myPid()).putString("invoke_first_bg_info", o).putLong("app_launch_time", ADaemon.appLaunchTimeInMill).putLong("fore_time_first", this.K).putLong("background_time_first", currentTimeMillis).putString("background_page_first", str).putString("background_page_url", str2).commit();
@@ -1051,7 +1051,7 @@ public class g {
             }
             String A = j.a().A();
             String str = null;
-            if (TextUtils.isEmpty(A) || g.d(g.this).size() != 1) {
+            if (StringUtils.isEmpty(A) || g.d(g.this).size() != 1) {
                 e.a("LocalProcM", "isBgFromHomePage:", null, "homepage", A, "size", Integer.valueOf(g.d(g.this).size()));
                 return false;
             }
@@ -1134,7 +1134,7 @@ public class g {
             return;
         }
         ProcessController.b.a(this.f8346a, this.x);
-        ProcessController.b.a(this.f8346a, this.h, TextUtils.isEmpty(this.g) ? "init" : this.g);
+        ProcessController.b.a(this.f8346a, this.h, StringUtils.isEmpty(this.g) ? "init" : this.g);
         this.n.set(true);
     }
 
@@ -1622,7 +1622,7 @@ public class g {
         }
         SharedPreferences sharedPreferences = this.b;
         String string = sharedPreferences.getString(this.f8346a + "_lifecycleLiveStat", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         k.a aVar = new k.a(this.f8346a);
@@ -1667,7 +1667,7 @@ public class g {
         } else {
             try {
                 String b2 = n.b(context, com.taobao.aranger.utils.c.a());
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     new k.b().a(b2);
                 } else {
                     e.b("LocalProcM", "empty dead info", new Object[0]);

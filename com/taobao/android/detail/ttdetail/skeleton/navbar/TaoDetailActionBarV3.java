@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.View;
@@ -336,7 +336,7 @@ public class TaoDetailActionBarV3 extends LinearLayout implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3058722e", new Object[]{this, str});
-        } else if (this.isNewNav || TextUtils.isEmpty(str)) {
+        } else if (this.isNewNav || StringUtils.isEmpty(str)) {
         } else {
             this.mActionBarTitle = str;
             if (this.mActionBarTitleView == null) {
@@ -359,7 +359,7 @@ public class TaoDetailActionBarV3 extends LinearLayout implements d {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2f4a7375", new Object[]{this, new Boolean(z)});
         } else if (this.mActionBarTitleView != null && (view = this.vSearchView) != null && view.getParent() != null) {
-            if (z && TextUtils.isEmpty(this.mActionBarTitle)) {
+            if (z && StringUtils.isEmpty(this.mActionBarTitle)) {
                 return;
             }
             int i = 8;
@@ -556,7 +556,7 @@ public class TaoDetailActionBarV3 extends LinearLayout implements d {
             textView.setSelected(false);
             textView.setText(str2);
             this.mElevatorContainer.addView(textView, new LinearLayout.LayoutParams(0, -1, 1.0f));
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.mElevatorItems.put(str, textView);
@@ -1274,7 +1274,7 @@ public class TaoDetailActionBarV3 extends LinearLayout implements d {
             return;
         }
         i.a("[highlightTab]TaoDetailActionBarV3", str);
-        if (TextUtils.isEmpty(str) || TextUtils.equals(str, this.lastHighlightElevatorLocatorId)) {
+        if (StringUtils.isEmpty(str) || StringUtils.equals(str, this.lastHighlightElevatorLocatorId)) {
             return;
         }
         String str2 = this.lastHighlightElevatorLocatorId;
@@ -1293,7 +1293,7 @@ public class TaoDetailActionBarV3 extends LinearLayout implements d {
         if (ipChange instanceof IpChange) {
             return (int[]) ipChange.ipc$dispatch("10c223f8", new Object[]{this, str, iArr});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.length() < 6) {
@@ -1312,7 +1312,7 @@ public class TaoDetailActionBarV3 extends LinearLayout implements d {
 
     private int getColorFromString(String str, int i, int i2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("276dbc8c", new Object[]{this, str, new Integer(i), new Integer(i2)})).intValue() : TextUtils.isEmpty(str) ? i : parseColor(str, i2);
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("276dbc8c", new Object[]{this, str, new Integer(i), new Integer(i2)})).intValue() : StringUtils.isEmpty(str) ? i : parseColor(str, i2);
     }
 
     private int parseColor(String str, int i) {
@@ -1336,7 +1336,7 @@ public class TaoDetailActionBarV3 extends LinearLayout implements d {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("6bbb307e", new Object[]{this, str, new Float(f)})).floatValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return f;
         }
         try {

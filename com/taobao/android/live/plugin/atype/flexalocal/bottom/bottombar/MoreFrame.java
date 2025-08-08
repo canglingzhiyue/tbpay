@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alilive.adapter.uikit.AliUrlImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -180,7 +180,7 @@ public class MoreFrame extends BaseFrame implements ddv {
         } else {
             String str = hashMap.get("componentName");
             String str2 = hashMap.get("panelIconUrl");
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 updatePanelBtnIcon(str2);
                 if ("@ali/alivemodx-live-game-entrance".equals(str)) {
                     if (phg.a() != null) {
@@ -206,7 +206,7 @@ public class MoreFrame extends BaseFrame implements ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56db1ccb", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             this.mAliUrlImageView.setVisibility(0);
             this.mDefaultIconView.setVisibility(8);
             this.mAliUrlImageView.setSkipAutoSize(true);

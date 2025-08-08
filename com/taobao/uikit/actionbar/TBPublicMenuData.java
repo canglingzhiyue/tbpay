@@ -2,7 +2,7 @@ package com.taobao.uikit.actionbar;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
@@ -215,7 +215,7 @@ public class TBPublicMenuData {
             return (TBPublicMenuItem) ipChange.ipc$dispatch("664d7a91", new Object[]{this, str});
         }
         for (TBPublicMenuItem tBPublicMenuItem : sDefaultExtraMenus) {
-            if (tBPublicMenuItem != null && TextUtils.equals(tBPublicMenuItem.getName(), str)) {
+            if (tBPublicMenuItem != null && StringUtils.equals(tBPublicMenuItem.getName(), str)) {
                 return tBPublicMenuItem;
             }
         }
@@ -301,7 +301,7 @@ public class TBPublicMenuData {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("263c4a40", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Iterator<TBPublicMenuItem> it = this.mCustomMenus.iterator();
             while (it.hasNext()) {
@@ -321,7 +321,7 @@ public class TBPublicMenuData {
         }
         for (TBPublicMenuItem tBPublicMenuItem : this.mDefaultPublicMenus) {
             String str = sDefaultMenuUrls.get(tBPublicMenuItem.getId());
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 tBPublicMenuItem.setNavUrl(str);
             }
         }

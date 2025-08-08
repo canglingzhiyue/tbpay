@@ -1,6 +1,6 @@
 package com.taobao.android.cachecleaner.autoclear.biz;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.tao.log.TLog;
@@ -22,7 +22,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || "*".equals(str) || "-".equals(str)) {
+        if (StringUtils.isEmpty(str) || "*".equals(str) || "-".equals(str)) {
             return true;
         }
         try {
@@ -35,7 +35,7 @@ public class c {
                     String[] split = substring2.split(",");
                     if (split.length > 0) {
                         for (String str4 : split) {
-                            if (!TextUtils.isEmpty(str4)) {
+                            if (!StringUtils.isEmpty(str4)) {
                                 try {
                                     if (new a(str4).equals(aVar)) {
                                         return false;
@@ -55,7 +55,7 @@ public class c {
             } else {
                 substring = str;
             }
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 return true;
             }
             if (!substring.contains("-")) {

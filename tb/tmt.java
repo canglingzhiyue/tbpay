@@ -6,7 +6,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
 import java.util.List;
@@ -59,13 +59,13 @@ public class tmt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("31400281", new Object[]{context});
         }
-        if (TextUtils.isEmpty(f34225a)) {
+        if (StringUtils.isEmpty(f34225a)) {
             if (Build.VERSION.SDK_INT >= 28) {
                 f34225a = Application.getProcessName();
             } else {
                 f34225a = ActivityThread.currentProcessName();
             }
-            if (TextUtils.isEmpty(f34225a)) {
+            if (StringUtils.isEmpty(f34225a)) {
                 f34225a = a(context, Process.myPid());
             }
         }

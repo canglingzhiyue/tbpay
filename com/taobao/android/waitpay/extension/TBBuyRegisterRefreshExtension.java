@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.f;
 import com.alibaba.android.aura.q;
@@ -82,7 +82,7 @@ public final class TBBuyRegisterRefreshExtension extends arv {
             return;
         }
         String string = c.getString("eventName");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         a(b().e(), string);

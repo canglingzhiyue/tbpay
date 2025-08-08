@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.nav.detail;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
@@ -44,7 +44,7 @@ public class b extends com.taobao.android.order.bundle.nav.a<Intent> {
             return false;
         }
         String i = hyk.i();
-        if (TextUtils.isEmpty(i)) {
+        if (StringUtils.isEmpty(i)) {
             return false;
         }
         this.f14561a = i;
@@ -58,7 +58,7 @@ public class b extends com.taobao.android.order.bundle.nav.a<Intent> {
         }
         String a2 = hxd.a(intent);
         String b = hxd.b(intent);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         a.a(7, intent);
@@ -76,7 +76,7 @@ public class b extends com.taobao.android.order.bundle.nav.a<Intent> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return "true".equals(Uri.parse(str).getQueryParameter("hybrid"));

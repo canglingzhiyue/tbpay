@@ -1,6 +1,6 @@
 package com.taobao.orange.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.bytes.ByteArray;
 import anet.channel.request.Request;
 import anetwork.channel.aidl.DefaultFinishEvent;
@@ -38,7 +38,7 @@ public class d implements Interceptor {
         }
         Request request = chain.request();
         Callback callback = chain.callback();
-        if (com.taobao.orange.a.v != OConstant.UPDMODE.O_EVENT && !TextUtils.isEmpty(request.getHost()) && !com.taobao.orange.a.u.isEmpty()) {
+        if (com.taobao.orange.a.v != OConstant.UPDMODE.O_EVENT && !StringUtils.isEmpty(request.getHost()) && !com.taobao.orange.a.u.isEmpty()) {
             for (String str : com.taobao.orange.a.u) {
                 if (request.getHost().contains(str)) {
                     z = true;
@@ -61,28 +61,28 @@ public class d implements Interceptor {
                 Request.Builder a2 = a(newBuilder);
                 int i = com.taobao.orange.a.y;
                 if (i == 1) {
-                    if (!TextUtils.isEmpty(com.taobao.orange.a.n)) {
+                    if (!StringUtils.isEmpty(com.taobao.orange.a.n)) {
                         a2.addHeader("a-orange-q", com.taobao.orange.a.n);
                     }
-                    if (!TextUtils.isEmpty(com.taobao.orange.a.o)) {
+                    if (!StringUtils.isEmpty(com.taobao.orange.a.o)) {
                         a2.addHeader("a-orange-dq", com.taobao.orange.a.o);
                     }
                     request = a2.build();
                 } else if (i == 2) {
-                    if (!TextUtils.isEmpty(com.taobao.orange.a.o)) {
+                    if (!StringUtils.isEmpty(com.taobao.orange.a.o)) {
                         a2.addHeader("a-orange-dq", com.taobao.orange.a.o);
                     }
-                    if (com.taobao.orange.a.I && !TextUtils.isEmpty(com.taobao.orange.a.n)) {
+                    if (com.taobao.orange.a.I && !StringUtils.isEmpty(com.taobao.orange.a.n)) {
                         a2.addHeader("a-orange-q", com.taobao.orange.a.n);
                     }
                     request = a2.build();
                 } else {
-                    if (!TextUtils.isEmpty(com.taobao.orange.a.n)) {
+                    if (!StringUtils.isEmpty(com.taobao.orange.a.n)) {
                         a2.addHeader("a-orange-q", com.taobao.orange.a.n);
                     }
                     request = a2.build();
                 }
-            } else if (!TextUtils.isEmpty(com.taobao.orange.a.n)) {
+            } else if (!StringUtils.isEmpty(com.taobao.orange.a.n)) {
                 Request.Builder a3 = a(chain.request().newBuilder());
                 if (z2) {
                     request = a3.setAllowRequestInBg(true).addHeader("a-orange-q", com.taobao.orange.a.n).build();

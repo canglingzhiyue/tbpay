@@ -2,7 +2,7 @@ package com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic2.wi
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -63,7 +63,7 @@ public class RIconTextViewConstructor extends DTextViewConstructor {
             return;
         }
         rIconTextView.setIcon(null);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         lfw.a(str, rIconTextView.getContext(), new lfw.a() { // from class: com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic2.widget.RIconTextViewConstructor.1

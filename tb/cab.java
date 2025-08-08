@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.track.module.ActionLineModule;
@@ -40,12 +40,12 @@ public class cab {
         } else if (th == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 HashMap hashMap = new HashMap();
                 hashMap.put("ErrorCatch", str);
-                hashMap.put("ErrorMessage", TextUtils.isEmpty(th.getMessage()) ? "empty" : th.getMessage());
+                hashMap.put("ErrorMessage", StringUtils.isEmpty(th.getMessage()) ? "empty" : th.getMessage());
                 cac.a().a("other", "PopProgramError", null, hashMap);
             } catch (Throwable th2) {
                 c.a("UserTrackCommon.trackProgramErrorCatch.error.", th2);
@@ -60,7 +60,7 @@ public class cab {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             HashMap hashMap = new HashMap();
@@ -100,7 +100,7 @@ public class cab {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "";
             }
             String str3 = str2;
@@ -246,7 +246,7 @@ public class cab {
             hashMap.put("renderType", onePopModule.ab);
             hashMap.put("augePlanId", onePopModule.au);
             hashMap.put("traceId", onePopModule.j);
-            hashMap.put("traceInfo", !TextUtils.isEmpty(onePopModule.ay) ? onePopModule.ay : "");
+            hashMap.put("traceInfo", !StringUtils.isEmpty(onePopModule.ay) ? onePopModule.ay : "");
             hashMap.put("countTire", z + "");
             cac.a().a(i, "PopMonitor", str, onePopModule.f3203a, onePopModule.c, hashMap);
         } catch (Throwable th) {
@@ -277,19 +277,19 @@ public class cab {
         try {
             HashMap hashMap = new HashMap();
             String str6 = "";
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = str6;
             }
             hashMap.put("traceId", str);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = str6;
             }
             hashMap.put("traceInfo", str2);
-            hashMap.put("stateId", !TextUtils.isEmpty(actionLineModule.f3200a) ? actionLineModule.f3200a : str6);
-            hashMap.put("stateVer", !TextUtils.isEmpty(actionLineModule.b) ? actionLineModule.b : str6);
+            hashMap.put("stateId", !StringUtils.isEmpty(actionLineModule.f3200a) ? actionLineModule.f3200a : str6);
+            hashMap.put("stateVer", !StringUtils.isEmpty(actionLineModule.b) ? actionLineModule.b : str6);
             hashMap.put("stateIndex", actionLineModule.c + str6);
             hashMap.put("countTire", actionLineModule.d + str6);
-            hashMap.put(suq.REFRESH_BROWSER_BADGE_DATA_ARGS_TRIGGER_TYPE, !TextUtils.isEmpty(actionLineModule.e) ? actionLineModule.e : str6);
+            hashMap.put(suq.REFRESH_BROWSER_BADGE_DATA_ARGS_TRIGGER_TYPE, !StringUtils.isEmpty(actionLineModule.e) ? actionLineModule.e : str6);
             hashMap.put(b.KEY_ACTIONS, actionLineModule.f != null ? URLEncoder.encode(JSON.toJSONString(actionLineModule.f), "UTF-8") : str6);
             if (actionLineModule.g != null) {
                 str6 = URLEncoder.encode(JSON.toJSONString(actionLineModule.g), "UTF-8");

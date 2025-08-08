@@ -1,7 +1,7 @@
 package com.huawei.hms.opendevice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.encrypt.PushEncrypter;
 import com.huawei.hms.aaid.utils.PushPreferences;
 import com.huawei.hms.support.log.HMSLog;
@@ -22,7 +22,7 @@ public class i extends PushPreferences {
     }
 
     public String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -47,7 +47,7 @@ public class i extends PushPreferences {
     }
 
     public boolean a(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -61,7 +61,7 @@ public class i extends PushPreferences {
 
     public String b(String str) {
         try {
-            return TextUtils.isEmpty(str) ? a("token_info_v2") : a(str);
+            return StringUtils.isEmpty(str) ? a("token_info_v2") : a(str);
         } catch (Exception e) {
             String str2 = c;
             HMSLog.e(str2, "getSecureData" + e.getMessage());
@@ -71,7 +71,7 @@ public class i extends PushPreferences {
 
     public boolean b(String str, String str2) {
         try {
-            return TextUtils.isEmpty(str) ? a("token_info_v2", str2) : a(str, str2);
+            return StringUtils.isEmpty(str) ? a("token_info_v2", str2) : a(str, str2);
         } catch (Exception e) {
             String str3 = c;
             HMSLog.e(str3, "saveSecureData" + e.getMessage());
@@ -81,7 +81,7 @@ public class i extends PushPreferences {
 
     public boolean c(String str) {
         try {
-            return TextUtils.isEmpty(str) ? removeKey("token_info_v2") : removeKey(str);
+            return StringUtils.isEmpty(str) ? removeKey("token_info_v2") : removeKey(str);
         } catch (Exception e) {
             String str2 = c;
             HMSLog.e(str2, "removeToken" + e.getMessage());

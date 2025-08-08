@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.service.event.AURAEventKey;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -195,7 +195,7 @@ public class tao extends d {
         String[] split = str.split(";");
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).booleanValue()) {
-                if (!TextUtils.isEmpty(stringBuffer)) {
+                if (!StringUtils.isEmpty(stringBuffer)) {
                     stringBuffer.append(";");
                 }
                 stringBuffer.append(split[i]);

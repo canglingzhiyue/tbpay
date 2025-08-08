@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.mnn;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.nn.NetConfig;
 import java.util.HashMap;
@@ -24,7 +24,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (e) ipChange.ipc$dispatch("e1347497", new Object[]{netConfig});
         }
-        if (netConfig != null && !TextUtils.isEmpty(netConfig.type) && (fVar = f6780a.get(netConfig.type)) != null) {
+        if (netConfig != null && !StringUtils.isEmpty(netConfig.type) && (fVar = f6780a.get(netConfig.type)) != null) {
             return fVar.a(netConfig);
         }
         return null;

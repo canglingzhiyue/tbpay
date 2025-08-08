@@ -1,7 +1,7 @@
 package com.taobao.zcache.core;
 
 import android.content.res.AssetManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
@@ -216,7 +216,7 @@ public class ZCacheCoreProxy implements IZCacheCore {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1f88ac94", new Object[]{this, str, hashMap, hashMap2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             b.a(str, hashMap, hashMap2);
         }

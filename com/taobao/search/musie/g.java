@@ -15,7 +15,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -437,7 +437,7 @@ public class g extends MSHCNavAdapter {
                 add.setTitle(j().getString(cVar.b) + ":" + cVar.d);
             } else if (cVar.c != null && !cVar.c.isRecycled()) {
                 add.setIcon(a(new BitmapDrawable(j(), cVar.c)));
-            } else if (!TextUtils.isEmpty(cVar.e)) {
+            } else if (!StringUtils.isEmpty(cVar.e)) {
                 com.taobao.android.weex_framework.l.a().f().a(this.g, cVar.e, new s() { // from class: com.taobao.search.musie.g.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -525,7 +525,7 @@ public class g extends MSHCNavAdapter {
         if (b == null || (supportActionBar = this.g.getSupportActionBar()) == null) {
             return;
         }
-        if (TextUtils.isEmpty(b.d)) {
+        if (StringUtils.isEmpty(b.d)) {
             supportActionBar.d(false);
             final ImageView imageView = new ImageView(this.g);
             if (b.g) {
@@ -537,7 +537,7 @@ public class g extends MSHCNavAdapter {
                 imageView.setImageDrawable(a(a(this.g, b.b)));
             } else if (b.c != null && !b.c.isRecycled()) {
                 imageView.setImageDrawable(a(new BitmapDrawable(j(), b.c)));
-            } else if (!TextUtils.isEmpty(b.e)) {
+            } else if (!StringUtils.isEmpty(b.e)) {
                 com.taobao.android.weex_framework.l.a().f().a(this.g, b.e, new s() { // from class: com.taobao.search.musie.g.5
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -598,7 +598,7 @@ public class g extends MSHCNavAdapter {
             return;
         }
         final MenuItem add = menu.add(0, R.id.navigation_bar_right_id, 0, "");
-        if (!TextUtils.isEmpty(a2.d)) {
+        if (!StringUtils.isEmpty(a2.d)) {
             add.setTitle(a2.d);
         } else if (a2.f15963a > 0) {
             add.setIcon(a2.f15963a);
@@ -606,7 +606,7 @@ public class g extends MSHCNavAdapter {
             add.setTitle(AppcompatUtils.getMenuTitle("", a2.b));
         } else if (a2.c != null && !a2.c.isRecycled()) {
             add.setIcon(a(new BitmapDrawable(j(), a2.c)));
-        } else if (!TextUtils.isEmpty(a2.e)) {
+        } else if (!StringUtils.isEmpty(a2.e)) {
             com.taobao.android.weex_framework.l.a().f().a(this.g, a2.e, new s() { // from class: com.taobao.search.musie.g.7
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -701,9 +701,9 @@ public class g extends MSHCNavAdapter {
             return true;
         }
         String a2 = c.a("group_weex_hc", "weex_main_hc_domain", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             for (String str : a2.split(",")) {
-                if (!TextUtils.isEmpty(this.f) && this.f.contains(str)) {
+                if (!StringUtils.isEmpty(this.f) && this.f.contains(str)) {
                     return false;
                 }
             }

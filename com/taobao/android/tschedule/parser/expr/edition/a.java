@@ -1,6 +1,6 @@
 package com.taobao.android.tschedule.parser.expr.edition;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jku;
 import tb.kge;
@@ -47,7 +47,7 @@ public class a extends jku {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("13c9e358", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@edition.")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@edition.")) {
             return null;
         }
         return new a(str);

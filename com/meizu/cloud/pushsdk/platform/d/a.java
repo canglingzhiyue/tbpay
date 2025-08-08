@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.platform.d;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
 import com.meizu.cloud.pushsdk.util.MinSdkChecker;
@@ -54,7 +54,7 @@ public class a extends c {
     protected boolean d() {
         int[] iArr;
         int i = this.k;
-        return i == 0 || ((iArr = this.j) != null && iArr.length > 0 && i == 1) || (i == 2 && !TextUtils.isEmpty(this.l));
+        return i == 0 || ((iArr = this.j) != null && iArr.length > 0 && i == 1) || (i == 2 && !StringUtils.isEmpty(this.l));
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c

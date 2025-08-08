@@ -1,7 +1,7 @@
 package com.taobao.search.m3;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -64,7 +64,7 @@ public final class e {
                 JSONObject jSONObject = (JSONObject) obj;
                 String string = jSONObject.getString("info");
                 String code = jSONObject.getString("code");
-                if (TextUtils.isEmpty(code) || (b = e.b(e.this)) == null) {
+                if (StringUtils.isEmpty(code) || (b = e.b(e.this)) == null) {
                     return;
                 }
                 q.a((Object) code, "code");

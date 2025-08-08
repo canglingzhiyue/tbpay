@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login.ui;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
@@ -185,7 +185,7 @@ public class AliUserAlipayHistoryFragment extends AliUserAlipayFragment {
         } else {
             this.mCurrentSelectedAccount = historyAccount.userInputName;
             String dataMasking = StringUtil.dataMasking(this.mCurrentSelectedAccount, true);
-            if (TextUtils.isEmpty(dataMasking)) {
+            if (StringUtils.isEmpty(dataMasking)) {
                 return;
             }
             this.mShowIdTextView.setText(dataMasking);

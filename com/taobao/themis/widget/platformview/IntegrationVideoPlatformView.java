@@ -1,7 +1,7 @@
 package com.taobao.themis.widget.platformview;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.ability.excutor.BaseExecutor;
 import com.alibaba.fastjson.JSON;
@@ -338,7 +338,7 @@ public final class IntegrationVideoPlatformView extends WeexPlatformView impleme
         }
         q.d(eventName, "eventName");
         String str = eventName;
-        if (TextUtils.equals("onChangeState", str)) {
+        if (StringUtils.equals("onChangeState", str)) {
             Integer valueOf = jSONObject != null ? Integer.valueOf(jSONObject.getIntValue("state")) : null;
             if (valueOf != null && valueOf.intValue() == 0) {
                 doSendEvent("stop", null);
@@ -354,7 +354,7 @@ public final class IntegrationVideoPlatformView extends WeexPlatformView impleme
             } else {
                 doSendEvent("renderstart", null);
             }
-        } else if (TextUtils.equals("onTimeUpdate", str)) {
+        } else if (StringUtils.equals("onTimeUpdate", str)) {
             doSendEvent("timeupdate", jSONObject);
         } else {
             doSendEvent(eventName, jSONObject);

@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.usertrack;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.DAICallback;
 import com.tmall.android.dai.internal.util.f;
@@ -72,7 +72,7 @@ public class UserTrackDO {
         treeMap.put("arg2", this.arg2);
         treeMap.put("arg3", this.arg3);
         treeMap.put("args", f.a(this.args, "=", ",", rkq.d().k()));
-        if (TextUtils.isEmpty(this.ownerId)) {
+        if (StringUtils.isEmpty(this.ownerId)) {
             treeMap.put("owner_id", "0");
         } else {
             treeMap.put("owner_id", this.ownerId);

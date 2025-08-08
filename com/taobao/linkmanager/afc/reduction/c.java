@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 import com.alibaba.fastjson.JSON;
@@ -150,7 +150,7 @@ public class c {
         hashMap.put("isActivation", String.valueOf(AfcUtils.c(context)));
         hashMap.put("mediaType", Build.BRAND);
         String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-        if (!TextUtils.isEmpty(globalProperty)) {
+        if (!StringUtils.isEmpty(globalProperty)) {
             hashMap.put("afcId", globalProperty);
         }
         HashMap hashMap2 = new HashMap();
@@ -224,7 +224,7 @@ public class c {
                         return;
                     }
                     String url = afcReductResult.getUrl();
-                    if (!TextUtils.equals("2200803434242", channel) || TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.equals("2200803434242", channel) || StringUtils.isEmpty(str2)) {
                         str2 = url;
                     }
                     c.a(c.this, context, str2, channel, c.a(c.this, context, str2));
@@ -293,7 +293,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{this, context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "LoginReductionManager === reductionNav === 还原URL为空，不导航");
             return false;
         }
@@ -325,20 +325,20 @@ public class c {
         }
         try {
             String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-            if (TextUtils.isEmpty(globalProperty)) {
+            if (StringUtils.isEmpty(globalProperty)) {
                 return;
             }
             String[] split = globalProperty.split(mly.UNESCAPED_SEPARATOR);
             if (split.length < 4) {
                 return;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 split[1] = str2;
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (str.contains("bc_fl_src")) {
                     String queryParameter = Uri.parse(str).getQueryParameter("bc_fl_src");
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         split[2] = queryParameter;
                     }
                 } else {
@@ -376,7 +376,7 @@ public class c {
                     return;
                 }
                 com.taobao.flowcustoms.afc.utils.c.a("linkx", "LoginReductionManager === loginWithToken === 获取到的免登信息：" + str3);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     LoginResultBean a2 = c.this.a(str3);
                     str4 = a2.landingUrl;
                     c.a(c.this, context, a2, str, str2, z, z2);
@@ -406,7 +406,7 @@ public class c {
             }
             if (jSONObject.has("h5Data")) {
                 String str2 = (String) jSONObject.get("h5Data");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     loginResultBean.landingUrl = (String) new JSONObject(str2).get("url");
                 }
             }

@@ -19,7 +19,7 @@ import android.os.Parcelable;
 import android.os.Process;
 import android.os.SystemClock;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.weex.common.Constants;
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.push.ah;
@@ -188,7 +188,7 @@ public class XMPushService extends Service implements gt {
             if (!bj.q.equals(intent.getAction())) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("[Alarm] cancel the old ping timer");
                 fj.a();
-            } else if (!TextUtils.equals(context.getPackageName(), intent.getPackage())) {
+            } else if (!StringUtils.equals(context.getPackageName(), intent.getPackage())) {
             } else {
                 com.xiaomi.channel.commonutils.logger.b.c("[Alarm] Ping XMChannelService on timer");
                 try {
@@ -277,7 +277,7 @@ public class XMPushService extends Service implements gt {
             if (!(obj instanceof c)) {
                 return false;
             }
-            return TextUtils.equals(((c) obj).f24611a.g, this.f24611a.g);
+            return StringUtils.equals(((c) obj).f24611a.g, this.f24611a.g);
         }
 
         public int hashCode() {
@@ -684,7 +684,7 @@ public class XMPushService extends Service implements gt {
         } else {
             hhVar.o(str);
             str = hhVar.k();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = m2304a.get(0);
                 hhVar.l(str);
             }
@@ -693,7 +693,7 @@ public class XMPushService extends Service implements gt {
                 sb = new StringBuilder();
                 str3 = "drop a packet as the channel is not connected, chid=";
             } else if (a3 != null && a3.f955a == bf.c.binded) {
-                if (TextUtils.equals(str2, a3.i)) {
+                if (StringUtils.equals(str2, a3.i)) {
                     return hhVar;
                 }
                 sb = new StringBuilder();
@@ -736,7 +736,7 @@ public class XMPushService extends Service implements gt {
 
     private String a() {
         String m2115a = com.xiaomi.push.j.m2115a("ro.miui.region");
-        return TextUtils.isEmpty(m2115a) ? com.xiaomi.push.j.m2115a("ro.product.locale.region") : m2115a;
+        return StringUtils.isEmpty(m2115a) ? com.xiaomi.push.j.m2115a("ro.product.locale.region") : m2115a;
     }
 
     private void a(BroadcastReceiver broadcastReceiver) {
@@ -824,7 +824,7 @@ public class XMPushService extends Service implements gt {
         }
         String stringExtra = intent.getStringExtra(bj.I);
         String stringExtra2 = intent.getStringExtra(bj.A);
-        if (!TextUtils.isEmpty(a2.i) && !TextUtils.equals(stringExtra, a2.i)) {
+        if (!StringUtils.isEmpty(a2.i) && !StringUtils.equals(stringExtra, a2.i)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("session changed. old session=" + a2.i + ", new session=" + stringExtra + " chid = " + str);
             z = true;
         }
@@ -839,7 +839,7 @@ public class XMPushService extends Service implements gt {
     private int[] m2228a() {
         String[] split;
         String a2 = az.a(getApplicationContext()).a(ih.FallDownTimeRange.a(), "");
-        if (!TextUtils.isEmpty(a2) && (split = a2.split(",")) != null && split.length >= 2) {
+        if (!StringUtils.isEmpty(a2) && (split = a2.split(",")) != null && split.length >= 2) {
             int[] iArr = new int[2];
             try {
                 iArr[0] = Integer.valueOf(split[0]).intValue();
@@ -866,10 +866,10 @@ public class XMPushService extends Service implements gt {
             bm a2 = bm.a(this);
             String str2 = null;
             while (true) {
-                if (!TextUtils.isEmpty(str2) && a2.a() != 0) {
+                if (!StringUtils.isEmpty(str2) && a2.a() != 0) {
                     break;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = a();
                 }
                 try {
@@ -925,7 +925,7 @@ public class XMPushService extends Service implements gt {
                     } catch (NumberFormatException unused2) {
                     }
                     gfVar2.a("SECMSG", (String) null);
-                    if (TextUtils.isEmpty(stringExtra3)) {
+                    if (StringUtils.isEmpty(stringExtra3)) {
                         stringExtra3 = "xiaomi.com";
                     }
                     gfVar2.a(j2, stringExtra3, stringExtra4);
@@ -961,18 +961,18 @@ public class XMPushService extends Service implements gt {
         com.xiaomi.push.service.a a2 = com.xiaomi.push.service.a.a(getApplicationContext());
         String a3 = a2.a();
         com.xiaomi.channel.commonutils.logger.b.m1617a("XMPushService", "region of cache is " + a3);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             String b2 = b();
             str = b2;
             a3 = com.xiaomi.push.j.a(b2).name();
         } else {
             str = "";
         }
-        if (!TextUtils.isEmpty(a3) && com.xiaomi.push.m.China.name().equals(a3)) {
+        if (!StringUtils.isEmpty(a3) && com.xiaomi.push.m.China.name().equals(a3)) {
             a2.a(a3, true);
             a2.b("CN", true);
             str = "CN";
-        } else if (!TextUtils.isEmpty(a3)) {
+        } else if (!StringUtils.isEmpty(a3)) {
             if ("com.xiaomi.xmsf".equals(getPackageName())) {
                 a3 = "";
                 str = a3;
@@ -1135,7 +1135,7 @@ public class XMPushService extends Service implements gt {
             }
             String str = m2129a.get("extra_help_aw_info");
             String str2 = m2129a.get("extra_aw_app_online_cmd");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             try {
@@ -1143,7 +1143,7 @@ public class XMPushService extends Service implements gt {
             } catch (NumberFormatException unused) {
                 i2 = 0;
             }
-            if (TextUtils.isEmpty(stringExtra) || TextUtils.isEmpty(b2) || TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(stringExtra) || StringUtils.isEmpty(b2) || StringUtils.isEmpty(str)) {
                 return;
             }
             es.a(getApplicationContext()).a(this, str, i2, stringExtra, b2);
@@ -1250,7 +1250,7 @@ public class XMPushService extends Service implements gt {
     }
 
     private boolean k() {
-        if (TextUtils.equals(getPackageName(), "com.xiaomi.xmsf")) {
+        if (StringUtils.equals(getPackageName(), "com.xiaomi.xmsf")) {
             return false;
         }
         return az.a(this).a(ih.ForegroundServiceSwitch.a(), false);
@@ -1603,7 +1603,7 @@ public class XMPushService extends Service implements gt {
         String str = "";
         if (m2360a != null) {
             try {
-                if (!TextUtils.isEmpty(m2360a.f1028a) && (split = m2360a.f1028a.split("@")) != null && split.length > 0) {
+                if (!StringUtils.isEmpty(m2360a.f1028a) && (split = m2360a.f1028a.split("@")) != null && split.length > 0) {
                     str = split[0];
                 }
             } catch (Exception unused) {

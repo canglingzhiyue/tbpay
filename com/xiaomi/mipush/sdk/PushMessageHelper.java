@@ -3,7 +3,7 @@ package com.xiaomi.mipush.sdk;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ip;
 import com.xiaomi.push.jf;
 import java.util.List;
@@ -39,13 +39,13 @@ public class PushMessageHelper {
     public static MiPushMessage generateMessage(jf jfVar, ip ipVar, boolean z) {
         MiPushMessage miPushMessage = new MiPushMessage();
         miPushMessage.setMessageId(jfVar.m2151a());
-        if (!TextUtils.isEmpty(jfVar.d())) {
+        if (!StringUtils.isEmpty(jfVar.d())) {
             miPushMessage.setMessageType(1);
             miPushMessage.setAlias(jfVar.d());
-        } else if (!TextUtils.isEmpty(jfVar.c())) {
+        } else if (!StringUtils.isEmpty(jfVar.c())) {
             miPushMessage.setMessageType(2);
             miPushMessage.setTopic(jfVar.c());
-        } else if (!TextUtils.isEmpty(jfVar.f())) {
+        } else if (!StringUtils.isEmpty(jfVar.f())) {
             miPushMessage.setMessageType(3);
             miPushMessage.setUserAccount(jfVar.f());
         } else {
@@ -56,10 +56,10 @@ public class PushMessageHelper {
             miPushMessage.setContent(jfVar.a().c());
         }
         if (ipVar != null) {
-            if (TextUtils.isEmpty(miPushMessage.getMessageId())) {
+            if (StringUtils.isEmpty(miPushMessage.getMessageId())) {
                 miPushMessage.setMessageId(ipVar.m2068a());
             }
-            if (TextUtils.isEmpty(miPushMessage.getTopic())) {
+            if (StringUtils.isEmpty(miPushMessage.getTopic())) {
                 miPushMessage.setTopic(ipVar.m2073b());
             }
             miPushMessage.setDescription(ipVar.d());

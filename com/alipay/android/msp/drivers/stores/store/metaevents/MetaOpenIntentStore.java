@@ -3,7 +3,7 @@ package com.alipay.android.msp.drivers.stores.store.metaevents;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -55,7 +55,7 @@ public class MetaOpenIntentStore extends LocalEventStore {
             Intent intent = new Intent();
             intent.setPackage(str);
             intent.setAction("android.intent.action.VIEW");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 intent.setData(Uri.parse(str2));
             }
             JSONObject parseObject = JSONObject.parseObject(str3);

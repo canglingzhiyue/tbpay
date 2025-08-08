@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -166,7 +166,7 @@ public class lhm {
         }
         IContainerInnerDataModel<BaseSectionModel<?>> base = iContainerDataModel.getBase();
         if (base != null && (sections = base.getSections()) != null && sections.size() > 1 && (baseSectionModel = sections.get(0)) != null && (args = baseSectionModel.getArgs()) != null) {
-            return TextUtils.equals(args.getString(tim.S_ARGS_IS_CLIENT_CACHE), "1");
+            return StringUtils.equals(args.getString(tim.S_ARGS_IS_CLIENT_CACHE), "1");
         }
         return false;
     }

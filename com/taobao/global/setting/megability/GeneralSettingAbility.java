@@ -61,7 +61,7 @@ public class GeneralSettingAbility extends AbsGeneralSettingAbility {
             java.lang.String r0 = "url"
             java.lang.Object r0 = r5.c(r0)
             java.lang.String r0 = (java.lang.String) r0
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             r2 = 0
             if (r1 != 0) goto L48
             java.net.URL r1 = new java.net.URL     // Catch: java.lang.Exception -> L48
@@ -77,14 +77,14 @@ public class GeneralSettingAbility extends AbsGeneralSettingAbility {
         L48:
             r0 = r2
         L49:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L5d
             tb.alt r1 = r5.b()
             if (r1 == 0) goto L5d
             tb.alt r5 = r5.b()
             java.lang.String r0 = r5.d()
         L5d:
-            boolean r5 = android.text.TextUtils.isEmpty(r0)
+            boolean r5 = android.text.StringUtils.isEmpty(r0)
             java.lang.String r1 = "mtbSettings"
             if (r5 == 0) goto L7a
             java.lang.String r5 = "GeneralSettingAbility user data url is null and env.getBusinessID is null"
@@ -99,7 +99,7 @@ public class GeneralSettingAbility extends AbsGeneralSettingAbility {
         L7a:
             java.lang.String r5 = r6.f8794a
             java.lang.String r3 = "tbGlobalMuteSetting"
-            boolean r5 = android.text.TextUtils.equals(r5, r3)
+            boolean r5 = android.text.StringUtils.equals(r5, r3)
             if (r5 == 0) goto Lb5
             tb.ksx r5 = r4.f17216a
             java.lang.String r0 = r6.f8794a

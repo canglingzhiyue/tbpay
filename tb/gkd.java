@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.util.a;
@@ -32,7 +32,7 @@ public class gkd implements gke {
             a.b("BizContextRecordAction", "gatewayPageContext == null");
         } else {
             String string = jSONObject.getString("_bizId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 a.b("BizContextRecordAction", "bizId isEmpty");
                 return;
             }

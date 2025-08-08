@@ -3,7 +3,7 @@ package com.vivo.push.util;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 
 /* loaded from: classes9.dex */
@@ -18,7 +18,7 @@ public final class l implements BaseNotifyDataAdapter {
     private String d;
 
     private int a(String str, String str2) {
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             String[] split = str.split("\\.");
             if (split != null && split.length > 0) {
                 str = split[0];
@@ -48,7 +48,7 @@ public final class l implements BaseNotifyDataAdapter {
         if (Build.VERSION.SDK_INT < 26) {
             return false;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return true;
         }
         u.d("DefaultNotifyDataAdapter", "systemVersion is not suit ");
@@ -66,7 +66,7 @@ public final class l implements BaseNotifyDataAdapter {
         if (a(a2)) {
             return e;
         }
-        for (String str2 = this.c; !TextUtils.isEmpty(str2); str2 = str2.substring(0, str2.length() - 1)) {
+        for (String str2 = this.c; !StringUtils.isEmpty(str2); str2 = str2.substring(0, str2.length() - 1)) {
             Resources resources = this.f24263a;
             int identifier = resources.getIdentifier("vivo_push_rom" + str2 + "_notifyicon", com.taobao.share.ui.engine.friend.a.CONTACTS_INFO_NOT_EMPTY_STATUS, this.b);
             if (identifier > 0) {
@@ -87,7 +87,7 @@ public final class l implements BaseNotifyDataAdapter {
         if (a(a2)) {
             return f;
         }
-        for (String str2 = this.c; !TextUtils.isEmpty(str2); str2 = str2.substring(0, str2.length() - 1)) {
+        for (String str2 = this.c; !StringUtils.isEmpty(str2); str2 = str2.substring(0, str2.length() - 1)) {
             Resources resources = this.f24263a;
             int identifier = resources.getIdentifier("vivo_push_rom" + str2 + "_icon", com.taobao.share.ui.engine.friend.a.CONTACTS_INFO_NOT_EMPTY_STATUS, this.b);
             if (identifier > 0) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.nodemodel.branch.c;
 import com.alibaba.android.aura.s;
@@ -30,7 +30,7 @@ public class avv extends avx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fcc341cf", new Object[]{this, renderComponent});
-        } else if (renderComponent != null && renderComponent.component != null && renderComponent.component.getEvents() != null && !TextUtils.isEmpty(renderComponent.key)) {
+        } else if (renderComponent != null && renderComponent.component != null && renderComponent.component.getEvents() != null && !StringUtils.isEmpty(renderComponent.key)) {
             String str = renderComponent.key;
             List<Event> list = renderComponent.component.getEvents().get(b.EVENT_LIST_NAME);
             if (list == null || list.isEmpty()) {
@@ -57,7 +57,7 @@ public class avv extends avx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca7f23d3", new Object[]{this, aURARenderComponent});
-        } else if (aURARenderComponent == null || TextUtils.isEmpty(aURARenderComponent.key)) {
+        } else if (aURARenderComponent == null || StringUtils.isEmpty(aURARenderComponent.key)) {
         } else {
             String str = aURARenderComponent.key;
             if (this.f25644a.a(str) != null) {

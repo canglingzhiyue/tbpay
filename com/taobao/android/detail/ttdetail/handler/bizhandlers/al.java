@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliUserTrackerInterface;
@@ -43,7 +43,7 @@ public class al implements ezm {
             return false;
         }
         String string = b.getString("trackPage");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         JSONObject a3 = com.taobao.android.detail.ttdetail.utils.m.a(this.b.a());

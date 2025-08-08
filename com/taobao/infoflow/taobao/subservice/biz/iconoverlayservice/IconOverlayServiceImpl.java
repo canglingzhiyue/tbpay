@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.iconoverlayservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -120,11 +120,11 @@ public class IconOverlayServiceImpl implements IIconOverlayService {
         } else if (baseSectionModel == null) {
         } else {
             try {
-                if (!TextUtils.equals(getClientCache(baseSectionModel, "iconOverylayVisibility"), "visible")) {
+                if (!StringUtils.equals(getClientCache(baseSectionModel, "iconOverylayVisibility"), "visible")) {
                     return;
                 }
                 String clientCache = getClientCache(baseSectionModel, "iconOverylayUserId");
-                if ((view instanceof ViewGroup) && !TextUtils.isEmpty(clientCache)) {
+                if ((view instanceof ViewGroup) && !StringUtils.isEmpty(clientCache)) {
                     setClientCache(baseSectionModel, "iconOverylayVisibility", "gone");
                     refreshWidgetNode((ViewGroup) view, clientCache);
                 }

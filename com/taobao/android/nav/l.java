@@ -1,7 +1,7 @@
 package com.taobao.android.nav;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import tb.kge;
@@ -189,7 +189,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b63135c9", new Object[]{this, objArr});
-        } else if (!TextUtils.isEmpty(this.d)) {
+        } else if (!StringUtils.isEmpty(this.d)) {
             StringBuilder sb = new StringBuilder();
             sb.append(this.d);
             sb.append(" ");

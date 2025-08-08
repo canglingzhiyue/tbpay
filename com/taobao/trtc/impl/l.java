@@ -2,7 +2,7 @@ package com.taobao.trtc.impl;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.trtc.api.ITrtcInputStream;
 import com.taobao.trtc.api.ITrtcObserver;
@@ -582,7 +582,7 @@ public class l implements TrtcVideoDevice {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("28c76540", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (surfaceViewRenderer = this.f.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (surfaceViewRenderer = this.f.get(str)) == null) {
             return null;
         }
         return surfaceViewRenderer.takeSnapshot();

@@ -2,7 +2,7 @@ package com.taobao.unit.center.mdc.dinamicx.widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.view.View;
 import android.widget.ImageView;
@@ -177,7 +177,7 @@ public class DXMPCacheImageViewWidgetNode extends DXImageWidgetNode {
         if (ipChange instanceof IpChange) {
             return (c) ipChange.ipc$dispatch("5a05b95b", new Object[]{str, aVar, aVar2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (isSmallPicture) {
@@ -217,10 +217,10 @@ public class DXMPCacheImageViewWidgetNode extends DXImageWidgetNode {
                         if (succPhenixEvent.getDrawable() instanceof f) {
                             f fVar = (f) succPhenixEvent.getDrawable();
                             fVar.a();
-                            if (TextUtils.isEmpty(DXMPCacheImageViewWidgetNode.access$000(DXMPCacheImageViewWidgetNode.this))) {
+                            if (StringUtils.isEmpty(DXMPCacheImageViewWidgetNode.access$000(DXMPCacheImageViewWidgetNode.this))) {
                                 DXMPCacheImageViewWidgetNode.access$100().put(str, fVar.getBitmap());
                             }
-                        } else if ((succPhenixEvent.getDrawable() instanceof e) && TextUtils.isEmpty(DXMPCacheImageViewWidgetNode.access$000(DXMPCacheImageViewWidgetNode.this))) {
+                        } else if ((succPhenixEvent.getDrawable() instanceof e) && StringUtils.isEmpty(DXMPCacheImageViewWidgetNode.access$000(DXMPCacheImageViewWidgetNode.this))) {
                             DXMPCacheImageViewWidgetNode.access$100().put(str, succPhenixEvent.getDrawable().getBitmap());
                         }
                         return false;

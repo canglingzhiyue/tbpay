@@ -2,7 +2,7 @@ package com.taobao.android.home.component.utils;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -61,7 +61,7 @@ public class k {
             JSONObject jSONObject3 = jSONObject2.getJSONObject("args");
             try {
                 TBS.Ext.commitEvent(string, Integer.parseInt(string2), string3, string4, string5, a(jSONObject3));
-                if (TextUtils.equals("2101", string2)) {
+                if (StringUtils.equals("2101", string2)) {
                     com.taobao.android.behavix.h.a(string, string3 + "_BehaviX_UT", (String) null, (String) null, com.taobao.android.behavix.j.b(jSONObject3));
                 }
                 return true;
@@ -87,7 +87,7 @@ public class k {
             JSONObject jSONObject2 = a2.getJSONObject("args");
             TBS.Ext.commitEvent(string, Integer.parseInt(string2), string3, string4, string5, a(jSONObject2));
             try {
-                if (!TextUtils.equals("2101", string2)) {
+                if (!StringUtils.equals("2101", string2)) {
                     return;
                 }
                 com.taobao.android.behavix.h.a(string, string3 + "_BehaviX_UT", (String) null, (String) null, com.taobao.android.behavix.j.b(jSONObject2));
@@ -108,7 +108,7 @@ public class k {
         StringBuilder sb = new StringBuilder(600);
         for (String str : jSONObject.keySet()) {
             String string = jSONObject.getString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(string);
@@ -128,7 +128,7 @@ public class k {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6f32d068", new Object[]{jSONObject, jSONObject2});
-        } else if (jSONObject == null || jSONObject2 == null || (jSONObject3 = jSONObject.getJSONObject("args")) == null || !TextUtils.equals("1", jSONObject3.getString(tim.S_ARGS_IS_CLIENT_CACHE)) || (jSONObject4 = jSONObject2.getJSONObject("clickParam")) == null) {
+        } else if (jSONObject == null || jSONObject2 == null || (jSONObject3 = jSONObject.getJSONObject("args")) == null || !StringUtils.equals("1", jSONObject3.getString(tim.S_ARGS_IS_CLIENT_CACHE)) || (jSONObject4 = jSONObject2.getJSONObject("clickParam")) == null) {
         } else {
             JSONObject jSONObject5 = jSONObject4.getJSONObject("args");
             if (jSONObject5 == null) {

@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.mnn.autodetect;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -256,10 +256,10 @@ public final class c extends BaseMnnRunUnit<com.etao.feimagesearch.mnn.autodetec
             return;
         }
         q.c(args, "args");
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             args.put(com.etao.feimagesearch.mnn.utils.a.KEY_CONFIG_STRING, this.d);
         }
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             return;
         }
         args.put(com.etao.feimagesearch.mnn.utils.a.KEY_CLIENT_EXP_CONFIG_STRING, this.e);

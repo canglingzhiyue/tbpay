@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -129,7 +129,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("cb3c4ac9", new Object[]{jSONObject, jSONObject2});
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("_mergedFlag_"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("_mergedFlag_"))) {
             return jSONObject;
         }
         jSONObject.put("_mergedFlag_", (Object) Long.valueOf(System.currentTimeMillis()));

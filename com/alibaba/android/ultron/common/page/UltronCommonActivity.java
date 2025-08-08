@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.taobao.TBActionBar;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -310,7 +310,7 @@ public class UltronCommonActivity extends AppCompatActivity implements View.OnCl
             JSONObject jSONObject3 = jSONObject2 != null ? jSONObject2.getJSONObject(bip.KEY_ACTIONBAR_RIGHT_INFO) : null;
             JSONObject jSONObject4 = jSONObject3 != null ? jSONObject3.getJSONObject("fields") : null;
             String string = jSONObject4 != null ? jSONObject4.getString("title") : null;
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.f.setText(string);
                 this.f.setVisibility(0);
                 return;
@@ -340,7 +340,7 @@ public class UltronCommonActivity extends AppCompatActivity implements View.OnCl
                     return;
                 }
                 String a3 = bit.a(queryParameter, (String) null);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     Nav.from(Globals.getApplication()).toUri(a3);
                     finish();
                     return;
@@ -350,7 +350,7 @@ public class UltronCommonActivity extends AppCompatActivity implements View.OnCl
                     this.p = jSONObject.getString(bip.a.q);
                 }
                 String string = a2.getString(bip.a.k);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.e.setText(string);
                 }
                 this.j.a(a2, this.o, a(data));
@@ -400,11 +400,11 @@ public class UltronCommonActivity extends AppCompatActivity implements View.OnCl
             return;
         }
         super.onResume();
-        if (!TextUtils.isEmpty(this.o)) {
+        if (!StringUtils.isEmpty(this.o)) {
             UTAnalytics.getInstance().getDefaultTracker().updatePageName(this, this.o);
             UTAnalytics.getInstance().getDefaultTracker().pageAppear(this, this.o);
         }
-        if (!TextUtils.isEmpty(this.p)) {
+        if (!StringUtils.isEmpty(this.p)) {
             HashMap hashMap = new HashMap();
             hashMap.put("spm-cnt", this.p);
             UTAnalytics.getInstance().getDefaultTracker().updatePageProperties(this, hashMap);
@@ -419,7 +419,7 @@ public class UltronCommonActivity extends AppCompatActivity implements View.OnCl
                 hashMap2.put(bip.KEY_UMBRELLA_URL, getIntent().getData().toString());
             }
             String pageSpmUrl = UTAnalytics.getInstance().getDefaultTracker().getPageSpmUrl(this);
-            if (!TextUtils.isEmpty(pageSpmUrl)) {
+            if (!StringUtils.isEmpty(pageSpmUrl)) {
                 hashMap2.put(bip.KEY_UMBRELLA_SPM_PRE, pageSpmUrl);
             }
             bix.a(this.o, bip.KEY_UMBRELLA_FEATURE_SHOW, str, str, "", hashMap2);

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.UIBaseConstants;
@@ -172,7 +172,7 @@ public class NavigatorManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("836555a6", new Object[]{this, bundle})).booleanValue();
         }
-        return bundle == null || ((TextUtils.isEmpty(bundle != null ? bundle.getString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE) : "") || TextUtils.equals(bundle.getString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.PAGE_ONEKEY_LOGIN) || TextUtils.equals(bundle.getString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.HALF_PAGE_ONEKEY_LOGIN)) && ServiceFactory.getService(NumberAuthService.class) != null);
+        return bundle == null || ((StringUtils.isEmpty(bundle != null ? bundle.getString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE) : "") || StringUtils.equals(bundle.getString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.PAGE_ONEKEY_LOGIN) || StringUtils.equals(bundle.getString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE), UIBaseConstants.LoginPage.HALF_PAGE_ONEKEY_LOGIN)) && ServiceFactory.getService(NumberAuthService.class) != null);
     }
 
     private void loginDispatchForCheckOneKeyLogin(Context context, Intent intent, String str) {
@@ -198,7 +198,7 @@ public class NavigatorManager {
         try {
             if (ServiceFactory.getService(NumberAuthService.class) != null) {
                 Map<String, String> authInfoMap = ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).getAuthInfoMap();
-                if (authInfoMap != null && !TextUtils.isEmpty(authInfoMap.get("number"))) {
+                if (authInfoMap != null && !StringUtils.isEmpty(authInfoMap.get("number"))) {
                     transmitMap(authInfoMap, intent, context, z);
                     return;
                 } else {
@@ -304,7 +304,7 @@ public class NavigatorManager {
                     if (ServiceFactory.getService(NumberAuthService.class) != null) {
                         Properties properties = LoginComponent.getProperties();
                         Map<String, String> authInfoMap = ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).getAuthInfoMap();
-                        if (authInfoMap != null && !TextUtils.isEmpty(authInfoMap.get("number"))) {
+                        if (authInfoMap != null && !StringUtils.isEmpty(authInfoMap.get("number"))) {
                             for (Map.Entry<String, String> entry : authInfoMap.entrySet()) {
                                 callingIntent.putExtra(entry.getKey(), entry.getValue());
                             }

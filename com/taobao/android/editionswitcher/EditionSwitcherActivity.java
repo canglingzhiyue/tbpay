@@ -2,7 +2,7 @@ package com.taobao.android.editionswitcher;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -129,7 +129,7 @@ public class EditionSwitcherActivity extends CustomBaseActivity {
         LinkedHashMap<String, PositionInfo> a2 = d.a();
         ArrayList arrayList = new ArrayList();
         for (String str : a2.keySet()) {
-            if (!TextUtils.equals(str, "CUN") && !TextUtils.equals(str, "OLD")) {
+            if (!StringUtils.equals(str, "CUN") && !StringUtils.equals(str, "OLD")) {
                 arrayList.add(str);
             }
         }
@@ -155,7 +155,7 @@ public class EditionSwitcherActivity extends CustomBaseActivity {
             while (true) {
                 int i3 = i + 1;
                 aVar = (com.taobao.android.editionswitcher.homepage.a) arrayList2.get(i);
-                if (!TextUtils.isEmpty(aVar.f12297a)) {
+                if (!StringUtils.isEmpty(aVar.f12297a)) {
                     break;
                 }
                 i = i3;

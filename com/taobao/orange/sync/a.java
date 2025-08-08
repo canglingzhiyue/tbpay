@@ -1,6 +1,6 @@
 package com.taobao.orange.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,7 +53,7 @@ public abstract class a<T> extends c<T> {
         this.f18589a = this.c ? com.taobao.orange.a.M : com.taobao.orange.a.K;
         this.g = str2;
         g();
-        if (TextUtils.isEmpty(com.taobao.orange.a.i)) {
+        if (StringUtils.isEmpty(com.taobao.orange.a.i)) {
             this.k = new mzy();
         } else {
             this.k = new mzw();
@@ -78,7 +78,7 @@ public abstract class a<T> extends c<T> {
         if (OLog.isPrintLog(1)) {
             OLog.d("AuthRequest", "syncRequest start", "isAckReq", Boolean.valueOf(this.c), "reqType", this.g);
         }
-        if (TextUtils.isEmpty(com.taobao.orange.a.k)) {
+        if (StringUtils.isEmpty(com.taobao.orange.a.k)) {
             this.d = -6;
             this.e = "utdid is null";
             OLog.e("AuthRequest", "syncRequest fail", "code", Integer.valueOf(this.d), "message", this.e);
@@ -136,12 +136,12 @@ public abstract class a<T> extends c<T> {
             if (this.c) {
                 return null;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 this.d = -2;
                 this.e = "content is empty";
                 OLog.e("AuthRequest", "syncRequest fail", "code", Integer.valueOf(this.d), "message", this.e);
                 return null;
-            } else if (!TextUtils.isEmpty(this.b) && !this.b.equals(com.taobao.orange.util.c.a(str2))) {
+            } else if (!StringUtils.isEmpty(this.b) && !this.b.equals(com.taobao.orange.util.c.a(str2))) {
                 this.d = -3;
                 this.e = "content is broken";
                 OLog.e("AuthRequest", "syncRequest fail", "code", Integer.valueOf(this.d), "message", this.e);
@@ -190,13 +190,13 @@ public abstract class a<T> extends c<T> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         StringBuilder sb = new StringBuilder(com.taobao.orange.a.J == OConstant.ENV.ONLINE ? "https" : "http");
         sb.append(HttpConstant.SCHEME_SPLIT);
         sb.append(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(str2);
         }
         return sb.toString();
@@ -213,7 +213,7 @@ public abstract class a<T> extends c<T> {
         String b3 = f.b(com.taobao.orange.a.k);
         String b4 = b();
         String b5 = f.b(a(b4));
-        if (TextUtils.isEmpty(b) || TextUtils.isEmpty(b3) || TextUtils.isEmpty(b2) || TextUtils.isEmpty(b5)) {
+        if (StringUtils.isEmpty(b) || StringUtils.isEmpty(b3) || StringUtils.isEmpty(b2) || StringUtils.isEmpty(b5)) {
             OLog.e("AuthRequest", "getRequestImpl error", "signInfo", b5, "appKey", b, "appVersion", b2, "deviceId", b3);
             return;
         }
@@ -233,11 +233,11 @@ public abstract class a<T> extends c<T> {
             naaVar.a("f-refer", "orange");
         }
         String str2 = com.taobao.orange.a.l;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             naaVar.a("o-user-info", str2);
         }
         naaVar.a("host", f.b(this.f18589a));
-        if (!TextUtils.isEmpty(b4)) {
+        if (!StringUtils.isEmpty(b4)) {
             naaVar.b("POST");
             naaVar.a(b4.getBytes());
         } else {
@@ -263,7 +263,7 @@ public abstract class a<T> extends c<T> {
         if (this.c) {
             sb.append("&");
             sb.append(this.j);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 sb.append("&");
                 sb.append(str);
             }

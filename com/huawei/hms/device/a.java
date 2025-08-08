@@ -1,7 +1,7 @@
 package com.huawei.hms.device;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.log.HMSLog;
 import com.huawei.hms.support.log.common.Base64;
 import com.huawei.hms.utils.HMSPackageManager;
@@ -51,7 +51,7 @@ public class a {
         KeyStore keyStore;
         if (context != null) {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     try {
                         keyStore = KeyStore.getInstance("bks");
                         inputStream = context.getAssets().open(g.d);
@@ -132,7 +132,7 @@ public class a {
     }
 
     public static X509Certificate a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -238,7 +238,7 @@ public class a {
     }
 
     public static boolean b(X509Certificate x509Certificate, String str, String str2) {
-        if (x509Certificate == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (x509Certificate == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         return str2.equals(a(x509Certificate.getSubjectDN().getName(), str));

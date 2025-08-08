@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -132,11 +132,11 @@ public class I18nAppExecutor implements IShareExecutor {
         } else if (isAppAvailable(context, LINE_PACKAGE)) {
             try {
                 String str = "";
-                if (!TextUtils.isEmpty(shareData.getText())) {
+                if (!StringUtils.isEmpty(shareData.getText())) {
                     str = shareData.getText();
                 }
-                if (!TextUtils.isEmpty(shareData.getLink())) {
-                    if (TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(shareData.getLink())) {
+                    if (StringUtils.isEmpty(str)) {
                         str = shareData.getLink();
                     } else {
                         str = str.concat(" ").concat(shareData.getLink());
@@ -230,11 +230,11 @@ public class I18nAppExecutor implements IShareExecutor {
         } else {
             try {
                 String str2 = "";
-                if (!TextUtils.isEmpty(shareData.getText())) {
+                if (!StringUtils.isEmpty(shareData.getText())) {
                     str2 = shareData.getText();
                 }
-                if (!TextUtils.isEmpty(shareData.getLink())) {
-                    if (TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(shareData.getLink())) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = shareData.getLink();
                     } else {
                         str2 = str2.concat(" ").concat(shareData.getLink());
@@ -255,7 +255,7 @@ public class I18nAppExecutor implements IShareExecutor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ccd073db", new Object[]{this, context, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             Toast toast = sToast;
             if (toast == null) {

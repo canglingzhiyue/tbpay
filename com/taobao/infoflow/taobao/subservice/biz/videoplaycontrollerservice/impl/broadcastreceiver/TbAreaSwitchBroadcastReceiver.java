@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.subservice.biz.videoplaycontrollerservice.imp
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.ldf;
@@ -26,7 +26,7 @@ public class TbAreaSwitchBroadcastReceiver extends BroadcastReceiver {
         } else {
             String action = intent.getAction();
             ldf.d("TbAreaSwitchBroadcastReceiver", "areaChangeReceiver : " + action);
-            if (!TextUtils.equals(action, "EDITON_SWITCHER_EDITTION_CODE_CHANGED")) {
+            if (!StringUtils.equals(action, "EDITON_SWITCHER_EDITTION_CODE_CHANGED")) {
                 return;
             }
             lme.a().b(context);

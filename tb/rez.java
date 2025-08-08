@@ -5,7 +5,7 @@ import android.app.Application;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class rez implements rer {
 
     private String a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : TextUtils.isEmpty(str) ? str2 : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : StringUtils.isEmpty(str) ? str2 : str;
     }
 
     @Override // tb.rer

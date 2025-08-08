@@ -1,7 +1,7 @@
 package com.taobao.alimama;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.click.applink.ApplinkClickBuilder;
 import com.taobao.alimama.click.cpc.CpcClickBuilder;
@@ -52,7 +52,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         Uri parse = Uri.parse(str);
@@ -69,12 +69,12 @@ public class b {
         }
         String queryParameter2 = uri2.getQueryParameter(c.E_URL);
         String queryParameter3 = uri2.getQueryParameter("etype");
-        if (!TextUtils.isEmpty(queryParameter2) && !TextUtils.isEmpty(queryParameter3)) {
+        if (!StringUtils.isEmpty(queryParameter2) && !StringUtils.isEmpty(queryParameter3)) {
             Uri parse2 = Uri.parse(queryParameter2);
             String queryParameter4 = (!com.taobao.alimama.utils.c.e() || !parse2.isHierarchical()) ? "" : parse2.getQueryParameter("eadt");
             try {
                 String queryParameter5 = uri2.getQueryParameter("acttype");
-                if (!TextUtils.isEmpty(queryParameter5) && parse2.isHierarchical()) {
+                if (!StringUtils.isEmpty(queryParameter5) && parse2.isHierarchical()) {
                     queryParameter2 = parse2.buildUpon().appendQueryParameter("atype", queryParameter5).toString();
                     e.a("append_eurl_acttype", "eurl = " + queryParameter2 + ", url = " + str);
                 }
@@ -96,7 +96,7 @@ public class b {
                     uri2 = new CpcEventCommitter(Global.getApplication(), true).setEadt(queryParameter4).commitEvent(queryParameter2, uri2);
                 }
             } else if ("2".equals(queryParameter3)) {
-                if (!TextUtils.equals("on", OrangeConfig.getInstance().getConfig("alimama_ad", "tk_cps_url_track_switch", "on"))) {
+                if (!StringUtils.equals("on", OrangeConfig.getInstance().getConfig("alimama_ad", "tk_cps_url_track_switch", "on"))) {
                     return str;
                 }
                 uri2 = new CpsClickBuilder().commitAndAppendClickid(queryParameter2, uri2);
@@ -126,7 +126,7 @@ public class b {
             if (com.taobao.alimama.utils.c.a("externalFlowIntercept")) {
                 String queryParameter6 = uri2.getQueryParameter(kuh.ALI_TRACK_ID);
                 String queryParameter7 = uri2.getQueryParameter("clickid");
-                if (!TextUtils.isEmpty(queryParameter6) && TextUtils.isEmpty(queryParameter7)) {
+                if (!StringUtils.isEmpty(queryParameter6) && StringUtils.isEmpty(queryParameter7)) {
                     uri = Uri.parse(new ApplinkClickBuilder(uri2.toString()).withArgIsOpenPage(true).commitAndAppendClickid(uri2.toString()));
                 }
             }

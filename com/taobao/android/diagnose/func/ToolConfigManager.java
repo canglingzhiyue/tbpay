@@ -1,6 +1,6 @@
 package com.taobao.android.diagnose.func;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -45,7 +45,7 @@ public class ToolConfigManager {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             v.a("ToolConfigManager", String.format("addToolConfig: %s_%d", str, Long.valueOf(j)));
@@ -119,7 +119,7 @@ public class ToolConfigManager {
     private static void a(boolean z, ToolConfigData toolConfigData, String str) {
         Method declaredMethod;
         try {
-            if (TextUtils.isEmpty(toolConfigData.className)) {
+            if (StringUtils.isEmpty(toolConfigData.className)) {
                 v.a("ToolConfigManager", "The class name is null");
                 return;
             }
@@ -234,7 +234,7 @@ public class ToolConfigManager {
         }
         try {
             String a2 = d.a(new File(c.a().g(), "tool.config"));
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             f11709a = (Map) JSON.parseObject(a2, new TypeReference<ConcurrentHashMap<String, ToolConfigInfo>>() { // from class: com.taobao.android.diagnose.func.ToolConfigManager.2

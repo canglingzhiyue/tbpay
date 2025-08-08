@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
@@ -185,7 +185,7 @@ public class dva extends duz {
             }
             String str = bizActionData.bizId;
             long j = -1;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 TLog.loge(CacheCleaner.MODULE, "BizClearTask", "doAction: bizId is empty.");
                 return -1L;
             }

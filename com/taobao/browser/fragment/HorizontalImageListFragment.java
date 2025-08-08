@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +72,7 @@ public class HorizontalImageListFragment extends Fragment {
             }
         }
         this.index = arguments.getString("image_position");
-        if (!TextUtils.isEmpty(this.index)) {
+        if (!StringUtils.isEmpty(this.index)) {
             return;
         }
         this.index = "0";

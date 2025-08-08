@@ -3,7 +3,7 @@ package com.taobao.android.detail.industry.hourlydelivery;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.ext.m;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class b {
             return (DXTemplateItem) ipChange.ipc$dispatch("5703255f", new Object[]{this, context});
         }
         String string = PreferenceManager.getDefaultSharedPreferences(context).getString("hourDeliveryDXTemplateItemData", "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         b(string);
@@ -132,12 +132,12 @@ public class b {
             ipChange.ipc$dispatch("d298d99c", new Object[]{this, context, str, aVar});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a(context, str);
         }
         b(str);
         DXTemplateItem a2 = a(str);
-        if (a2 != null && !TextUtils.isEmpty(a2.c)) {
+        if (a2 != null && !StringUtils.isEmpty(a2.c)) {
             aVar.a(a2);
         } else if (this.b) {
         } else {
@@ -207,7 +207,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = "/Page_xsdshouye";
         }
         return this.c;
@@ -241,7 +241,7 @@ public class b {
         }
         try {
             String string = PreferenceManager.getDefaultSharedPreferences(context).getString("hourDeliverySearchBoxData", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return c(context);
             }
             return JSONObject.parseObject(string);
@@ -280,7 +280,7 @@ public class b {
                     com.taobao.android.detail.industry.tool.a.a("TBHourDeliveryHelper", "requestSearchBoxData onSuccess : mtopResponse == null");
                 } else {
                     String str = new String(mtopResponse.getBytedata());
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return;
                     }
                     try {

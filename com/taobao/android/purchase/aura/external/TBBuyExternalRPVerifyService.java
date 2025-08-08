@@ -1,7 +1,7 @@
 package com.taobao.android.purchase.aura.external;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.security.realidentity.RPEventListener;
 import com.alibaba.security.realidentity.RPResult;
@@ -46,15 +46,15 @@ public class TBBuyExternalRPVerifyService implements icx.a {
                     ard a2 = arc.a();
                     StringBuilder sb = new StringBuilder();
                     sb.append("code:");
-                    sb.append(TextUtils.isEmpty(str2) ? "" : str2);
+                    sb.append(StringUtils.isEmpty(str2) ? "" : str2);
                     sb.append(",msg:");
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "";
                     }
                     sb.append(str3);
                     a2.c("TBBuyExternalRPVerifyService", "verify", sb.toString());
-                    boolean equals = TextUtils.equals(str2, String.valueOf(RPResult.AUDIT_PASS.code));
-                    bVar.a(equals, str2, b.a(equals ? R.string.purchase_taobao_app_1029_1_19080 : TextUtils.equals(TBBuyExternalRPVerifyService.VERIFY_CODE_NETWORK_ERROR, str2) ? R.string.purchase_taobao_app_1029_1_19067 : R.string.purchase_taobao_app_1029_1_19079));
+                    boolean equals = StringUtils.equals(str2, String.valueOf(RPResult.AUDIT_PASS.code));
+                    bVar.a(equals, str2, b.a(equals ? R.string.purchase_taobao_app_1029_1_19080 : StringUtils.equals(TBBuyExternalRPVerifyService.VERIFY_CODE_NETWORK_ERROR, str2) ? R.string.purchase_taobao_app_1029_1_19067 : R.string.purchase_taobao_app_1029_1_19079));
                 }
             });
         }

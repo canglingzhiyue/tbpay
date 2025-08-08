@@ -1,6 +1,6 @@
 package com.taobao.informationflowdataservice.dataservice.core.datasource.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.model.request.AwesomeGetContainerParams;
@@ -59,11 +59,11 @@ public class c {
             return lxu.f30977a;
         }
         String string = jSONObject.getString("containerId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return lxu.f30977a;
         }
         lwc a2 = lwc.a(string);
-        if (a2 != null && !TextUtils.isEmpty(a2.c)) {
+        if (a2 != null && !StringUtils.isEmpty(a2.c)) {
             return a2.c;
         }
         return lxu.f30977a;

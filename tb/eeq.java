@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,12 +98,12 @@ public class eeq implements j<p> {
             hashMap.put("addressId", pVar.b);
         }
         if (pVar.h) {
-            if (!TextUtils.isEmpty(pVar.i)) {
+            if (!StringUtils.isEmpty(pVar.i)) {
                 hashMap.put(DetailCoreActivity.DETAIL_ITEM_ID, pVar.i);
                 hashMap.put("id", pVar.i);
                 hashMap.put("item_id", pVar.i);
             }
-            if (!TextUtils.isEmpty(pVar.j)) {
+            if (!StringUtils.isEmpty(pVar.j)) {
                 hashMap.put("skuId", pVar.j);
             }
         }

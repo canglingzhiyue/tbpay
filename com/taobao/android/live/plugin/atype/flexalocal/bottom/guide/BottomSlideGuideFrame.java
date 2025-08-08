@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.bottom.guide;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.ali.user.mobile.login.model.LoginConstant;
@@ -348,7 +348,7 @@ public class BottomSlideGuideFrame extends BaseFrame implements ddv {
                     return;
                 }
                 String str2 = this.b.mVideoInfo.broadCaster.accountId;
-                if (TextUtils.isEmpty(obj.toString()) || (b = pqj.b(obj.toString())) == null) {
+                if (StringUtils.isEmpty(obj.toString()) || (b = pqj.b(obj.toString())) == null) {
                     return;
                 }
                 JSONArray jSONArray = b.getJSONArray("anchorBlacklist");

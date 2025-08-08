@@ -3,7 +3,7 @@ package com.alipay.mobile.common.transport.utils;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URL;
 import tb.riy;
@@ -111,7 +111,7 @@ public class ReadSettingServerUrl {
                     return;
                 }
                 String a2 = a(context, "");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 this.f = a2;
@@ -128,12 +128,12 @@ public class ReadSettingServerUrl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2075be6e", new Object[]{this, context});
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             if (MiscUtils.isDebugger(context)) {
                 LogCatUtil.info("ReadSettingServerUrl", "[getGWFURL] Hit cust gw url = " + this.h);
             }
             return this.h;
-        } else if (!TextUtils.isEmpty(this.f)) {
+        } else if (!StringUtils.isEmpty(this.f)) {
             if (MiscUtils.isDebugger(context)) {
                 LogCatUtil.info("ReadSettingServerUrl", "[getGWFURL] Hit current gw url = " + this.f);
             }
@@ -141,7 +141,7 @@ public class ReadSettingServerUrl {
         } else {
             try {
                 String string = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getString("mobilegw.url");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.f = string;
                     LogCatUtil.info("ReadSettingServerUrl", "[getGWFURL] Hit meta-data, url = " + this.f);
                     return this.f;
@@ -151,7 +151,7 @@ public class ReadSettingServerUrl {
             }
             if (isDebug(context)) {
                 String a2 = a(context);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     this.f = a2;
                     LogCatUtil.info("ReadSettingServerUrl", "[getGWFURL] Hit set tool, url = " + this.f);
                 }
@@ -186,7 +186,7 @@ public class ReadSettingServerUrl {
                 String string = query.getString(0);
                 query.close();
                 LogCatUtil.printInfo("ReadSettingServerUrl", "getValue.  cursor exist.  uri=[" + str + "]  ret=[" + string + riy.ARRAY_END_STR);
-                return TextUtils.isEmpty(string) ? str2 : string;
+                return StringUtils.isEmpty(string) ? str2 : string;
             }
             if (query != null && !query.isClosed()) {
                 query.close();
@@ -229,16 +229,16 @@ public class ReadSettingServerUrl {
         try {
             if (isDebug(context)) {
                 LogCatUtil.info("ReadSettingServerUrl", "getAmnetDnsSetting. debug is true");
-                if (!TextUtils.isEmpty(this.j)) {
+                if (!StringUtils.isEmpty(this.j)) {
                     return this.j;
                 }
                 String value = getValue(context, "content://com.alipay.setting/amnet_dns_conf", null);
                 StringBuilder sb = new StringBuilder();
                 sb.append("getAmnetDnsSetting.  amnetDns=[");
-                sb.append(TextUtils.isEmpty(value) ? " is null " : value);
+                sb.append(StringUtils.isEmpty(value) ? " is null " : value);
                 sb.append(riy.ARRAY_END_STR);
                 LogCatUtil.info("ReadSettingServerUrl", sb.toString());
-                if (!TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(value)) {
                     this.j = value;
                 }
                 return this.j;
@@ -265,11 +265,11 @@ public class ReadSettingServerUrl {
             String value = getValue(context, "content://com.alipay.setting/nbnet_download_switch", null);
             StringBuilder sb = new StringBuilder();
             sb.append("isEnabledNbnetDownloadSwitch.  enable=[");
-            sb.append(TextUtils.isEmpty(value) ? " is null " : value);
+            sb.append(StringUtils.isEmpty(value) ? " is null " : value);
             sb.append(riy.ARRAY_END_STR);
             LogCatUtil.info("ReadSettingServerUrl", sb.toString());
             if (value != null) {
-                return Boolean.valueOf(TextUtils.equals(value, "1"));
+                return Boolean.valueOf(StringUtils.equals(value, "1"));
             }
             return null;
         } catch (Throwable th) {

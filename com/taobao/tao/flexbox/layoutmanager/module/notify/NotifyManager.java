@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.user.UserAbility;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -334,7 +334,7 @@ public class NotifyManager {
                     }
                     String action = intent.getAction();
                     for (b bVar : NotifyManager.b().values()) {
-                        if (TextUtils.equals(bVar.f20455a, action) && bVar.b != null) {
+                        if (StringUtils.equals(bVar.f20455a, action) && bVar.b != null) {
                             jSONObject = bVar.b.a(jSONObject);
                         }
                     }

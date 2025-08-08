@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVConstants;
 import com.alibaba.ariver.resource.api.models.AppModel;
 import com.alibaba.ariver.resource.api.models.PluginModel;
@@ -129,7 +129,7 @@ public class DefaultDBAdapter implements TMSDBAdapter {
                         appInfoDao.version = cursor.getString(cursor.getColumnIndex("version"));
                         appInfoDao.templateId = cursor.getString(cursor.getColumnIndex("templateId"));
                         String string = cursor.getString(cursor.getColumnIndex(RVConstants.EXTRA_APPINFO));
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             try {
                                 SecurityGuardManager securityGuardManager = SecurityGuardManager.getInstance(((IEnvironmentService) qpt.b(IEnvironmentService.class)).getApplicationContext());
                                 if (securityGuardManager != null && (dynamicDataEncryptComp = securityGuardManager.getDynamicDataEncryptComp()) != null) {
@@ -224,7 +224,7 @@ public class DefaultDBAdapter implements TMSDBAdapter {
                         appManifestDao.setLastRequestTimeStamp(cursor.getLong(cursor.getColumnIndex("lastRequestTimeStamp")));
                         appManifestDao.setVersion(cursor.getString(cursor.getColumnIndex("version")));
                         String string = cursor.getString(cursor.getColumnIndex("appManifest"));
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             try {
                                 SecurityGuardManager securityGuardManager = SecurityGuardManager.getInstance(((IEnvironmentService) qpt.b(IEnvironmentService.class)).getApplicationContext());
                                 if (securityGuardManager != null && (dynamicDataEncryptComp = securityGuardManager.getDynamicDataEncryptComp()) != null) {
@@ -316,7 +316,7 @@ public class DefaultDBAdapter implements TMSDBAdapter {
                         pluginInfoDao.lastRequestTimeStamp = cursor.getLong(cursor.getColumnIndex("lastRequestTimeStamp"));
                         pluginInfoDao.version = cursor.getString(cursor.getColumnIndex("version"));
                         String string = cursor.getString(cursor.getColumnIndex("pluginInfo"));
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             pluginInfoDao.pluginInfo = (PluginModel) JSONObject.parseObject(string, PluginModel.class);
                         }
                         pluginInfoDao.type = cursor.getString(cursor.getColumnIndex("type"));

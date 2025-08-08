@@ -1,7 +1,7 @@
 package com.taobao.login4android.uti;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.common.api.AliUserLogin;
@@ -69,7 +69,7 @@ public class PrivacyUtil {
         }
         String str = showPrivacy.get("entranceName");
         final String str2 = showPrivacy.get("h5Url");
-        if (!"true".equals(showPrivacy.get("isShow")) || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || list == null || bottomMenuFragment == null || baseLoginFragment == null) {
+        if (!"true".equals(showPrivacy.get("isShow")) || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || list == null || bottomMenuFragment == null || baseLoginFragment == null) {
             return;
         }
         MenuItem menuItem = new MenuItem();

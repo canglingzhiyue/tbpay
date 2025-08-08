@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +30,7 @@ public class O00O00o0 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (!"0".equals(b) && !TextUtils.isEmpty(b)) {
+        if (!"0".equals(b) && !StringUtils.isEmpty(b)) {
             str2 = strArr[Integer.parseInt(b)];
             jSONObject.put("operatorType", str2);
             return jSONObject;

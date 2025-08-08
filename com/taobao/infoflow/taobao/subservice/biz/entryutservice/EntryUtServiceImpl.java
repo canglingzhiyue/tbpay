@@ -2,7 +2,7 @@ package com.taobao.infoflow.taobao.subservice.biz.entryutservice;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -58,7 +58,7 @@ public class EntryUtServiceImpl implements IEntryUtService {
                 }
                 try {
                     Uri parse = Uri.parse(str);
-                    if (!TextUtils.equals("true", parse.getQueryParameter("useEntryUtparam"))) {
+                    if (!StringUtils.equals("true", parse.getQueryParameter("useEntryUtparam"))) {
                         return;
                     }
                     bundle.putString("entryUtParam", parse.getQueryParameter(aw.PARAM_UT_PARAMS));

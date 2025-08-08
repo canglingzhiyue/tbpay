@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -120,7 +120,7 @@ public class NotifyJumpActivity extends AppCompatActivity {
         TLog.loge("PushLaunch", " pushId " + str2);
         HashMap<String, String> createUTData = EnvUtil.createUTData("agoo^0^" + str2, str2, null, "0", str3, null, null);
         EnvUtil.UTClick(createUTData, 0, str);
-        if (TextUtils.isEmpty(str) || !str.contains("spm=")) {
+        if (StringUtils.isEmpty(str) || !str.contains("spm=")) {
             createUTData.put("spm-cnt", "a2103.11111292.0.0");
         }
         UTAnalytics.getInstance().getDefaultTracker().updateNextPageProperties(createUTData);
@@ -132,7 +132,7 @@ public class NotifyJumpActivity extends AppCompatActivity {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("9f169b7b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap hashMap = new HashMap();
@@ -140,22 +140,22 @@ public class NotifyJumpActivity extends AppCompatActivity {
             JSONObject parseObject = JSONObject.parseObject(str);
             try {
                 String string = parseObject.getString("title");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return null;
                 }
                 hashMap.put("title", string);
                 String string2 = parseObject.getString(RemoteMessageConst.Notification.TICKER);
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     string2 = string;
                 }
                 hashMap.put(RemoteMessageConst.Notification.TICKER, string2);
                 String string3 = parseObject.getString("text");
-                if (TextUtils.isEmpty(string3)) {
+                if (StringUtils.isEmpty(string3)) {
                     string3 = string;
                 }
                 hashMap.put("text", string3);
                 String string4 = parseObject.getString(RemoteMessageConst.Notification.SOUND);
-                if (!TextUtils.isEmpty(string4)) {
+                if (!StringUtils.isEmpty(string4)) {
                     hashMap.put(RemoteMessageConst.Notification.SOUND, string4);
                 }
                 hashMap.put("url", parseObject.getString("url"));
@@ -166,27 +166,27 @@ public class NotifyJumpActivity extends AppCompatActivity {
                     hashMap.put(Constants.KEY_EXTS, jSONObject.toString());
                     hashMap.put("m-icon", jSONObject.getString("m-icon"));
                     String string5 = jSONObject.getString("wmc_source_id");
-                    if (!TextUtils.isEmpty(string5)) {
+                    if (!StringUtils.isEmpty(string5)) {
                         hashMap.put("wmc_source_id", string5);
                     }
                     String string6 = jSONObject.getString("nav_source_id");
-                    if (!TextUtils.isEmpty(string6)) {
+                    if (!StringUtils.isEmpty(string6)) {
                         hashMap.put("nav_source_id", string6);
                     }
                     String string7 = jSONObject.getString(d.BUNDLE_BUSINESS_JUMP_URL);
-                    if (!TextUtils.isEmpty(string7)) {
+                    if (!StringUtils.isEmpty(string7)) {
                         hashMap.put(d.BUNDLE_BUSINESS_JUMP_URL, string7);
                     }
                     String string8 = jSONObject.getString("msg_type_id");
-                    if (!TextUtils.isEmpty(string8)) {
+                    if (!StringUtils.isEmpty(string8)) {
                         hashMap.put("msg_type_id", string8);
                     }
                     String string9 = jSONObject.getString(MarketingInnerNotificationAdapter.KEY_PUSHUTARGS);
-                    if (!TextUtils.isEmpty(string9)) {
+                    if (!StringUtils.isEmpty(string9)) {
                         hashMap.put(MarketingInnerNotificationAdapter.KEY_PUSHUTARGS, string9);
                     }
                     String string10 = jSONObject.getString("messageId");
-                    if (!TextUtils.isEmpty(string10)) {
+                    if (!StringUtils.isEmpty(string10)) {
                         hashMap.put("messageId", string10);
                     }
                 }

@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.config.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.text.NumberFormat;
@@ -80,7 +80,7 @@ public class ImageRule implements Serializable {
         this.maxSize = 640;
         qualityMap.get(str);
         this.quality = getQuality(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             String[] split = str2.split(",");
             if (split.length != 3) {
                 return;

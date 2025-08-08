@@ -1,6 +1,6 @@
 package com.taobao.android.weex_uikit.widget.video;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.p;
@@ -31,7 +31,7 @@ public class a implements p.b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d63f0e06", new Object[]{this, str, str2});
-        } else if (TextUtils.equals(str, "visibility")) {
+        } else if (StringUtils.equals(str, "visibility")) {
             if ("disappear".equals(str2)) {
                 f.i(this.f16237a);
                 if (this.b.f16244a) {

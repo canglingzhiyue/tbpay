@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -253,12 +253,12 @@ public class juk implements h, juh {
             return;
         }
         String v = f.v();
-        if (TextUtils.isEmpty(v) || this.g == null || this.f == null) {
+        if (StringUtils.isEmpty(v) || this.g == null || this.f == null) {
             return;
         }
         String[] split = v.split(",");
         String bundleUrl = this.g.getBundleUrl();
-        if (!TextUtils.isEmpty(bundleUrl)) {
+        if (!StringUtils.isEmpty(bundleUrl)) {
             int length = split.length;
             int i = 0;
             while (true) {
@@ -295,7 +295,7 @@ public class juk implements h, juh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6b088ff", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.g.getBundleUrl())) {
+        } else if (StringUtils.isEmpty(this.g.getBundleUrl())) {
         } else {
             Uri parse = Uri.parse(this.g.getBundleUrl());
             if (!parse.isHierarchical() || !"true".equals(parse.getQueryParameter("wx_limit_raster_cache"))) {
@@ -778,7 +778,7 @@ public class juk implements h, juh {
             final String str4 = hashMap.get("end_time_stamp_opt");
             final String str5 = hashMap.get("raster_end_time_stamp_opt");
             Long l = null;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     l = Long.valueOf(str2);
                 } catch (NumberFormatException e) {
@@ -846,7 +846,7 @@ public class juk implements h, juh {
         int instanceId = this.g.getInstanceId();
         a z2 = z();
         String str3 = "";
-        boolean isEmpty = TextUtils.isEmpty(str);
+        boolean isEmpty = StringUtils.isEmpty(str);
         double d7 = mto.a.GEO_NOT_SUPPORT;
         if (isEmpty) {
             return mto.a.GEO_NOT_SUPPORT;
@@ -977,7 +977,7 @@ public class juk implements h, juh {
             int instanceId = this.g.getInstanceId();
             String str = hashMap.get("end_time_interval");
             long j6 = -1;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     j = Long.valueOf(str).longValue();
                 } catch (NumberFormatException unused) {
@@ -989,7 +989,7 @@ public class juk implements h, juh {
                 }
             }
             String str2 = hashMap.get("end_time_interval_opt");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     j2 = Long.parseLong(str2);
                 } catch (NumberFormatException unused2) {
@@ -1001,7 +1001,7 @@ public class juk implements h, juh {
                 }
             }
             String str3 = hashMap.get("end_time_interval_screen_ratio");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 try {
                     j3 = Long.parseLong(str3);
                 } catch (NumberFormatException unused3) {
@@ -1013,7 +1013,7 @@ public class juk implements h, juh {
                 }
             }
             String str4 = hashMap.get("raster_end_time_interval_screen_ratio");
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 try {
                     j4 = Long.parseLong(str4);
                 } catch (NumberFormatException unused4) {
@@ -1025,7 +1025,7 @@ public class juk implements h, juh {
                 }
             }
             String str5 = hashMap.get("raster_end_time_interval_opt");
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 try {
                     j5 = Long.parseLong(str5);
                 } catch (NumberFormatException unused5) {
@@ -1038,7 +1038,7 @@ public class juk implements h, juh {
             }
             String str6 = hashMap.get("area_coverage");
             Long l = null;
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 try {
                     l = Long.valueOf(str6);
                 } catch (NumberFormatException e) {
@@ -1051,7 +1051,7 @@ public class juk implements h, juh {
                 }
             }
             String str7 = hashMap.get("raster_end_time_interval");
-            if (!TextUtils.isEmpty(str7)) {
+            if (!StringUtils.isEmpty(str7)) {
                 try {
                     j6 = Long.valueOf(str7).longValue();
                 } catch (NumberFormatException unused6) {
@@ -1062,7 +1062,7 @@ public class juk implements h, juh {
                 }
             }
             String str8 = hashMap.get(TimeCalculator.TIMELINE_TAG);
-            if (TextUtils.isEmpty(str8) || TextUtils.isEmpty(str8)) {
+            if (StringUtils.isEmpty(str8) || StringUtils.isEmpty(str8)) {
                 return;
             }
             try {

@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.os.Process;
 import android.preference.PreferenceManager;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.utils.a;
 import com.taobao.taolive.room.utils.aw;
@@ -146,7 +146,7 @@ public class d {
             }
             if (defaultSharedPreferences.contains("tlog_slice_config")) {
                 String string2 = defaultSharedPreferences.getString("tlog_slice_config", "");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     String[] split = string2.split(":");
                     if (split.length == 5) {
                         try {
@@ -234,7 +234,7 @@ public class d {
 
     public static boolean f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : TextUtils.equals(c, d);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : StringUtils.equals(c, d);
     }
 
     public static boolean g() {

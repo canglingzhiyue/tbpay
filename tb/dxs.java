@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -412,26 +412,26 @@ public final class dxs extends dxr {
         } else {
             String str = hintBanner.text;
             String str2 = hintBanner.subText;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = str + str2;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.g.setVisibility(8);
                 return;
             }
             this.g.setVisibility(0);
             this.h.setText(str);
-            if (!TextUtils.isEmpty(hintBanner.bgColor)) {
+            if (!StringUtils.isEmpty(hintBanner.bgColor)) {
                 try {
                     this.g.setBackgroundColor(com.taobao.android.detail.core.utils.c.a(hintBanner.bgColor));
                 } catch (Exception e) {
                     arc.a().c("AliDetailAuraBottomBarPage", "setupHintBanner", e.toString());
                 }
             }
-            if (TextUtils.isEmpty(hintBanner.buttonText)) {
+            if (StringUtils.isEmpty(hintBanner.buttonText)) {
                 return;
             }
             this.h.setGravity(16);
@@ -451,7 +451,7 @@ public final class dxs extends dxr {
                     }
                     ActionModel actionModel = new ActionModel(new JSONObject());
                     actionModel.type = hintBanner.eventId;
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("url", (Object) str3);
                         actionModel.params = new JSONObject(jSONObject);

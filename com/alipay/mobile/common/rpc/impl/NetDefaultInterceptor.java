@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.rpc.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dns.DnsValue;
 import com.alipay.android.msp.network.DispatchType;
 import com.alipay.mobile.common.rpc.RpcException;
@@ -165,7 +165,7 @@ public class NetDefaultInterceptor extends RpcInterceptorAdaptor {
             }
             String operationTypeValue = RpcInvokerUtil.getOperationTypeValue(method, objArr);
             URL url = new URL(((InnerRpcInvokeContext) ((RpcInvocationHandler) Proxy.getInvocationHandler(obj)).getRpcInvokeContext()).getGwUrl());
-            if (TextUtils.equals(url.getHost(), DnsValue.DOMAIN_MOBILE_GW) || TextUtils.equals(url.getHost(), "mgwapi-tb.alipay.com")) {
+            if (StringUtils.equals(url.getHost(), DnsValue.DOMAIN_MOBILE_GW) || StringUtils.equals(url.getHost(), "mgwapi-tb.alipay.com")) {
                 return operationTypeValue.contains(DispatchType.PB_V1_CASHIER);
             }
             String str = f5503a;

@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -59,9 +59,9 @@ public class AppendRateActivity extends AppCompatActivity {
                     AppendRateActivity.this.finish();
                     return;
                 }
-                if (TextUtils.equals(action, "taobao.rate.newAppend")) {
+                if (StringUtils.equals(action, "taobao.rate.newAppend")) {
                     String stringExtra = intent.getStringExtra("suc_url_params");
-                    if (!TextUtils.isEmpty(stringExtra)) {
+                    if (!StringUtils.isEmpty(stringExtra)) {
                         jSONObject = JSON.parseObject(stringExtra);
                     }
                     if (b.d().booleanValue()) {
@@ -230,7 +230,7 @@ public class AppendRateActivity extends AppCompatActivity {
             return;
         }
         String config = OrangeConfig.getInstance().getConfig("tb_ratedisplay_Android", "rateSucessPage", "false");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             this.f20890a = Boolean.valueOf(config).booleanValue();
         }
         IntentFilter intentFilter = new IntentFilter();
@@ -257,7 +257,7 @@ public class AppendRateActivity extends AppCompatActivity {
                     return;
                 }
                 String a2 = z.a();
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     Nav.from(AppendRateActivity.this).toUri(ax.a(a2, q.a(AppendRateActivity.this.getIntent().getData())));
                     AppendRateActivity.this.finish();
                     return;
@@ -296,22 +296,22 @@ public class AppendRateActivity extends AppCompatActivity {
             return false;
         }
         Uri parse = Uri.parse(data.toString().replace("html#!", "html?"));
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = parse.getQueryParameter(ORDERID);
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             HashMap hashMap3 = new HashMap();
             hashMap3.put("errorMessages", "orderId = null");
             onu.a(a(), "Report-Error", hashMap3);
             return false;
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             this.d = parse.getQueryParameter(ISARCHIVE);
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             this.d = "0";
         }
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             this.e = parse.getQueryParameter("channel");
         }
         return true;
@@ -330,7 +330,7 @@ public class AppendRateActivity extends AppCompatActivity {
         jSONObject2.put("pageType", (Object) "publishAppendRate");
         jSONObject2.put(CoreConstants.IN_PARAM_ARCHIVE, (Object) Boolean.valueOf("1".equals(this.d)));
         jSONObject2.put("platformType", (Object) "wireless");
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             jSONObject2.put("channel", (Object) this.e);
         }
         jSONObject.put("params", (Object) jSONObject2.toJSONString());

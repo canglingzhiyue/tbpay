@@ -3,7 +3,7 @@ package com.etao.feimagesearch.history;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -99,7 +99,7 @@ public class a {
         if (i <= 0) {
             i = 50;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "all";
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
@@ -118,16 +118,16 @@ public class a {
             }
             if (auctionItemVO != null && auctionItemVO.mSource != null && auctionItemVO.mSource.intValue() != AuctionItemVO.ItemSource.REMOTE_TFS.getValue()) {
                 if (auctionItemVO.mSource.intValue() == AuctionItemVO.ItemSource.LOCAL_ALBUM.getValue()) {
-                    String uri = TextUtils.isEmpty(auctionItemVO.fileUrl) ? auctionItemVO.picPath.toString() : auctionItemVO.fileUrl;
+                    String uri = StringUtils.isEmpty(auctionItemVO.fileUrl) ? auctionItemVO.picPath.toString() : auctionItemVO.fileUrl;
                     if (auctionItemVO.picPath != null) {
                         if (!i.c(uri)) {
                         }
                     }
                 }
                 AuctionItemVO deepClone = auctionItemVO.deepClone();
-                if (TextUtils.equals("image", str) && !deepClone.isVideo) {
+                if (StringUtils.equals("image", str) && !deepClone.isVideo) {
                     linkedHashMap.put(l, deepClone);
-                } else if (TextUtils.equals("video", str) && deepClone.isVideo) {
+                } else if (StringUtils.equals("video", str) && deepClone.isVideo) {
                     linkedHashMap.put(l, deepClone);
                 } else {
                     linkedHashMap.put(l, deepClone);
@@ -195,7 +195,7 @@ public class a {
                         return;
                     }
                     a.a(a.this, jSONString);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return;
                     }
                     a.a(a.this, new File(str));
@@ -210,7 +210,7 @@ public class a {
             return (AuctionItemVO) ipChange.ipc$dispatch("588745ff", new Object[]{this, context, str, bitmap, map});
         }
         String a2 = l.a(context, bitmap, 90);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         AuctionItemVO auctionItemVO = new AuctionItemVO();
@@ -231,7 +231,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (AuctionItemVO) ipChange.ipc$dispatch("4d50a837", new Object[]{this, str, str2, map});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         AuctionItemVO auctionItemVO = new AuctionItemVO();
@@ -252,7 +252,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (AuctionItemVO) ipChange.ipc$dispatch("7e43d9f9", new Object[]{this, context, str, str2, str3, map});
         }
-        if (context == null || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str2)) {
             return null;
         }
         AuctionItemVO auctionItemVO = new AuctionItemVO();
@@ -272,7 +272,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2f3f1e3e", new Object[]{this, context, str, str2, str3});
-        } else if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {
+        } else if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str3)) {
         } else {
             AuctionItemVO auctionItemVO = new AuctionItemVO();
             auctionItemVO.picPath = Uri.parse(str3);
@@ -368,7 +368,7 @@ public class a {
         this.b = new HistoryResult();
         this.b.resultData = new HashMap();
         String b = cuj.b(com.b(), "history_data", "");
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             cug.b("HistoryModel", "history not exist");
             return;
         }

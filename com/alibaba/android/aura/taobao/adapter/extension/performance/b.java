@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.taobao.adapter.extension.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.f;
@@ -101,7 +101,7 @@ public final class b extends asf {
         try {
             for (azl azlVar : bVar.f2209a.b(azl.class)) {
                 HashMap<String, String> a3 = bVar.a(a2, c, d, b);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     a3.put("purchaseFrom", str2);
                 }
                 String str4 = a2;
@@ -111,7 +111,7 @@ public final class b extends asf {
                 sb.append("");
                 a3.put("isI18n", sb.toString());
                 a3.put("isHitMTopStreamJson", i != null ? String.valueOf(i.d()) : "none");
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     a3.put("bucket", str3);
                 }
                 if (i == null || i.j() <= 0) {

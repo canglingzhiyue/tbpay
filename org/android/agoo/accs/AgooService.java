@@ -2,7 +2,7 @@ package org.android.agoo.accs;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.TaoBaseService;
@@ -175,16 +175,16 @@ public class AgooService extends TaoBaseService {
                     c = 0;
                 }
                 d.a("accs", BaseMonitor.COUNT_AGOO_SUCCESS_ACK, "8/9", mto.a.GEO_NOT_SUPPORT);
-                if (!TextUtils.isEmpty(str) && TextUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK) && Long.parseLong(str2) > 300000000 && Long.parseLong(str2) < 600000000) {
+                if (!StringUtils.isEmpty(str) && StringUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK) && Long.parseLong(str2) > 300000000 && Long.parseLong(str2) < 600000000) {
                     if (!ALog.isPrintLog(ALog.Level.I)) {
                         return;
                     }
                     ALog.i(TAG, "onSendData,AckData=" + str2 + ",serviceId=" + str, new Object[0]);
-                } else if (TextUtils.isEmpty(str) || !TextUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK) || Long.parseLong(str2) <= 600000000 || !ALog.isPrintLog(ALog.Level.I)) {
+                } else if (StringUtils.isEmpty(str) || !StringUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK) || Long.parseLong(str2) <= 600000000 || !ALog.isPrintLog(ALog.Level.I)) {
                 } else {
                     ALog.i(TAG, "onSendData,reportData=" + str2 + ",serviceId=" + str, new Object[0]);
                 }
-            } else if (!TextUtils.equals(AgooConstants.AGOO_SERVICE_AGOOACK, str)) {
+            } else if (!StringUtils.equals(AgooConstants.AGOO_SERVICE_AGOOACK, str)) {
             } else {
                 Config.setReportTimes(getApplicationContext(), 1);
                 d.a("accs", BaseMonitor.COUNT_AGOO_FAIL_ACK, String.valueOf(i), mto.a.GEO_NOT_SUPPORT);
@@ -217,12 +217,12 @@ public class AgooService extends TaoBaseService {
         if (ALog.isPrintLog(ALog.Level.D)) {
             ALog.d(TAG, "onResponse,message=" + str3, new Object[0]);
         }
-        if (i == 200 && TextUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK)) {
+        if (i == 200 && StringUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK)) {
             if (ALog.isPrintLog(ALog.Level.E)) {
                 ALog.e(TAG, "request is success", "dataId", str2);
             }
             this.agooFactory.updateMsg(bArr, true);
-        } else if (i != 200 && TextUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK)) {
+        } else if (i != 200 && StringUtils.equals(str, AgooConstants.AGOO_SERVICE_AGOOACK)) {
             if (ALog.isPrintLog(ALog.Level.E)) {
                 ALog.e(TAG, "request is error", "dataId", str2, "errorid", Integer.valueOf(i));
             }

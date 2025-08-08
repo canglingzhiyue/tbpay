@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.asp.APreferencesManager;
 import com.taobao.accs.client.GlobalClientInfo;
@@ -172,7 +172,7 @@ public class f implements Application.ActivityLifecycleCallbacks {
         try {
             Intent intent = activity.getIntent();
             String stringExtra = intent.getStringExtra("AliAgooMsgID");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 return;
             }
             ALog.i(c, "onActivityStarted isFromAgoo", new Object[0]);

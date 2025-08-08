@@ -2,7 +2,7 @@ package anet.channel.security;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -101,7 +101,7 @@ public class SecurityGuardImpl implements ISecurity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5a1d97e", new Object[]{this, context, str, str2, str3});
         }
-        if (mSecurityGuardValid && context != null && !TextUtils.isEmpty(str2) && algorithMap.containsKey(str)) {
+        if (mSecurityGuardValid && context != null && !StringUtils.isEmpty(str2) && algorithMap.containsKey(str)) {
             try {
                 ISecureSignatureComponent secureSignatureComp = SecurityGuardManager.getInstance(context).getSecureSignatureComp();
                 if (secureSignatureComp != null) {
@@ -126,7 +126,7 @@ public class SecurityGuardImpl implements ISecurity {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("dc83da2e", new Object[]{this, context, str, str2, bArr});
         }
-        if (!mSecurityGuardValid || context == null || bArr == null || TextUtils.isEmpty(str2) || !algorithMap.containsKey(str) || (num = algorithMap.get(str)) == null) {
+        if (!mSecurityGuardValid || context == null || bArr == null || StringUtils.isEmpty(str2) || !algorithMap.containsKey(str) || (num = algorithMap.get(str)) == null) {
             return null;
         }
         try {
@@ -151,7 +151,7 @@ public class SecurityGuardImpl implements ISecurity {
         if (AwcnConfig.isTicketStoreUpgrade()) {
             return putSSLMeta(context, str, bArr);
         }
-        if (context == null || bArr == null || TextUtils.isEmpty(str)) {
+        if (context == null || bArr == null || StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -187,7 +187,7 @@ public class SecurityGuardImpl implements ISecurity {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("1bee77ba", new Object[]{this, context, str});
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -289,7 +289,7 @@ public class SecurityGuardImpl implements ISecurity {
             return (String) ipChange.ipc$dispatch("4951748a", new Object[]{this, str, str2});
         }
         long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         try {
@@ -314,7 +314,7 @@ public class SecurityGuardImpl implements ISecurity {
             return (String) ipChange.ipc$dispatch("b1e42fb2", new Object[]{this, str, str2});
         }
         long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         try {

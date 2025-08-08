@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender.dsl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -27,6 +27,6 @@ public class PreLoadModel implements INativeModel {
     @Override // com.taobao.tbpoplayer.nativerender.dsl.INativeModel
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.enable && (!TextUtils.isEmpty(this.url) || !TextUtils.isEmpty(this.ERTestUrl));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.enable && (!StringUtils.isEmpty(this.url) || !StringUtils.isEmpty(this.ERTestUrl));
     }
 }

@@ -1,6 +1,6 @@
 package com.taobao.android.a11y.ability.ocr;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
@@ -274,7 +274,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6198cb60", new Object[]{this, str, view});
-        } else if (TextUtils.isEmpty(str) || view == null || !djt.a(view.getContext())) {
+        } else if (StringUtils.isEmpty(str) || view == null || !djt.a(view.getContext())) {
         } else {
             b(str, view);
             if (this.b && eta.b()) {
@@ -312,7 +312,7 @@ public class a {
             ipChange.ipc$dispatch("c7052959", new Object[]{this, list});
         } else if (list != null && !list.isEmpty()) {
             for (String str : new ArrayList(list)) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     if (!a(str)) {
                         list.remove(str);
                     } else {
@@ -367,7 +367,7 @@ public class a {
                                 a aVar2 = a.this;
                                 a.a(aVar2, d, new OCRResultData(a.a(aVar2), OCRResultData.ResultType.FAIL));
                             } else {
-                                if (!TextUtils.isEmpty(value.content)) {
+                                if (!StringUtils.isEmpty(value.content)) {
                                     oCRResultData = new OCRResultData(value.content, OCRResultData.ResultType.SUCCESS);
                                     oCRResultData.a(value.tableReco);
                                 } else {

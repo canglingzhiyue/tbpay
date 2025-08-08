@@ -3,7 +3,7 @@ package com.taobao.tao.alipay.export;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.tao.util.NavUrls;
@@ -49,7 +49,7 @@ public class Cashdesk {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 buildUpon = buildUpon.appendQueryParameter(key, value);
             }
         }

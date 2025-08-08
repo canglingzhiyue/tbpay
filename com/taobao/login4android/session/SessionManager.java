@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -129,14 +129,14 @@ public class SessionManager implements ISession {
                     final String curProcessName = LoginThreadHelper.getCurProcessName(SessionManager.access$000(SessionManager.this));
                     if (intent != null) {
                         try {
-                            if (TextUtils.equals(intent.getAction(), SessionManager.CLEAR_SESSION_ACTION)) {
+                            if (StringUtils.equals(intent.getAction(), SessionManager.CLEAR_SESSION_ACTION)) {
                                 LoginTLogAdapter.e(SessionManager.TAG, "receive CLEAR_SESSION_ACTION in" + curProcessName);
-                                if (TextUtils.equals(curProcessName, intent.getStringExtra(SessionManager.CURRENT_PROCESS))) {
+                                if (StringUtils.equals(curProcessName, intent.getStringExtra(SessionManager.CURRENT_PROCESS))) {
                                     return;
                                 }
                                 String stringExtra = intent.getStringExtra(MspGlobalDefine.SESSION);
                                 SessionManager.access$300(SessionManager.this);
-                                if (!TextUtils.isEmpty(stringExtra)) {
+                                if (!StringUtils.isEmpty(stringExtra)) {
                                     SessionManager.access$400(SessionManager.this, (SessionParams) JSON.parseObject(stringExtra, SessionParams.class));
                                 }
                                 new Thread("init-session-data") { // from class: com.taobao.login4android.session.SessionManager.1.1.1
@@ -147,7 +147,7 @@ public class SessionManager implements ISession {
                                         IpChange ipChange3 = $ipChange;
                                         if (ipChange3 instanceof IpChange) {
                                             ipChange3.ipc$dispatch("5c510192", new Object[]{this});
-                                        } else if (TextUtils.isEmpty(curProcessName) || curProcessName.contains(SessionManager.this.CHANNEL_PROCESS)) {
+                                        } else if (StringUtils.isEmpty(curProcessName) || curProcessName.contains(SessionManager.this.CHANNEL_PROCESS)) {
                                         } else {
                                             LoginTLogAdapter.e(SessionManager.TAG, "recoverCookie");
                                             SessionManager.this.recoverCookie();
@@ -162,17 +162,17 @@ public class SessionManager implements ISession {
                             return;
                         }
                     }
-                    if (intent == null || !TextUtils.equals(intent.getAction(), SessionManager.CLEAR_SESSION_COOKIES_ACTION)) {
+                    if (intent == null || !StringUtils.equals(intent.getAction(), SessionManager.CLEAR_SESSION_COOKIES_ACTION)) {
                         return;
                     }
                     LoginTLogAdapter.e(SessionManager.TAG, "receive CLEAR_SESSION_COOKIES_ACTION in" + curProcessName);
-                    if (TextUtils.equals(curProcessName, intent.getStringExtra(SessionManager.CURRENT_PROCESS))) {
+                    if (StringUtils.equals(curProcessName, intent.getStringExtra(SessionManager.CURRENT_PROCESS))) {
                         return;
                     }
                     LoginTLogAdapter.e(SessionManager.TAG, "CLEAR_SESSION_COOKIES_ACTION");
                     SessionManager.access$300(SessionManager.this);
                     SessionManager.this.getSsoDomainList();
-                    if (!TextUtils.isEmpty(curProcessName) && !curProcessName.contains(SessionManager.this.CHANNEL_PROCESS)) {
+                    if (!StringUtils.isEmpty(curProcessName) && !curProcessName.contains(SessionManager.this.CHANNEL_PROCESS)) {
                         SessionManager.access$500(SessionManager.this);
                         return;
                     }
@@ -204,10 +204,10 @@ public class SessionManager implements ISession {
             }
             try {
                 HashMap hashMap = new HashMap();
-                boolean z2 = !TextUtils.isEmpty(SessionManager.this.getLoginToken());
+                boolean z2 = !StringUtils.isEmpty(SessionManager.this.getLoginToken());
                 hashMap.put("isValidLogin", String.valueOf(checkSessionValid));
                 hashMap.put("canAutoLogin", String.valueOf(z2));
-                if (!TextUtils.isEmpty(SessionManager.this.getOldUserId())) {
+                if (!StringUtils.isEmpty(SessionManager.this.getOldUserId())) {
                     z = true;
                 }
                 hashMap.put("onceLogined", String.valueOf(z));
@@ -429,7 +429,7 @@ public class SessionManager implements ISession {
                     }
                     try {
                         String readFileData = FileUtils.readFileData(SessionManager.access$000(SessionManager.this), SessionConstants.INJECT_COOKIE_OLD);
-                        if (TextUtils.isEmpty(readFileData)) {
+                        if (StringUtils.isEmpty(readFileData)) {
                             return;
                         }
                         SessionManager.access$700(SessionManager.this).addAll(JSON.parseArray(SessionManager.this.decrypt(readFileData), LoginCookie.class));
@@ -449,7 +449,7 @@ public class SessionManager implements ISession {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str) || !str.contains(riy.MOD)) {
+            if (StringUtils.isEmpty(str) || !str.contains(riy.MOD)) {
                 return;
             }
             clearMemoryData();
@@ -489,7 +489,7 @@ public class SessionManager implements ISession {
     @Override // com.taobao.login4android.session.ISession
     public boolean checkSessionValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("edaaf5b9", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(getSid()) && System.currentTimeMillis() / 1000 < getSessionExpiredTime() && !TextUtils.isEmpty(getUserId());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("edaaf5b9", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(getSid()) && System.currentTimeMillis() / 1000 < getSessionExpiredTime() && !StringUtils.isEmpty(getUserId());
     }
 
     public boolean checkHavanaExpired() {
@@ -508,11 +508,11 @@ public class SessionManager implements ISession {
             return (String) ipChange.ipc$dispatch("f8a2591d", new Object[]{this, str});
         }
         initStorage();
-        if (this.storage == null || !TextUtils.isEmpty(str)) {
+        if (this.storage == null || !StringUtils.isEmpty(str)) {
             return "";
         }
         String string = this.storage.getString(str, "");
-        return !TextUtils.isEmpty(string) ? decrypt(string) : "";
+        return !StringUtils.isEmpty(string) ? decrypt(string) : "";
     }
 
     @Override // com.taobao.login4android.session.ISession
@@ -523,14 +523,14 @@ public class SessionManager implements ISession {
             return (String) ipChange.ipc$dispatch("169fb061", new Object[]{this});
         }
         LoginTLogAdapter.e(GET_TAG, "getSid");
-        if (!TextUtils.isEmpty(this.mSid)) {
+        if (!StringUtils.isEmpty(this.mSid)) {
             LoginTLogAdapter.e(GET_TAG, "after_getSid_cache");
             return this.mSid;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mSid) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mSid) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString("sid", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 LoginTLogAdapter.e(GET_TAG, "after_getSid_empty");
                 return null;
             }
@@ -547,13 +547,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1f2fb415", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mSubSid)) {
+        if (!StringUtils.isEmpty(this.mSubSid)) {
             return this.mSubSid;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mSubSid) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mSubSid) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.SUBSID, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mSubSid = decrypt(string);
@@ -591,13 +591,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("31a81efc", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mOldSid)) {
+        if (!StringUtils.isEmpty(this.mOldSid)) {
             return this.mOldSid;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mOldSid) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mOldSid) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.OLDSID, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mOldSid = decrypt(string);
@@ -622,14 +622,14 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("42b43e5d", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mEcode)) {
+        if (!StringUtils.isEmpty(this.mEcode)) {
             return this.mEcode;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mEcode) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mEcode) && (sharedPreferences = this.storage) != null) {
             try {
                 String string = sharedPreferences.getString(SessionConstants.ECODE, "");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return null;
                 }
                 this.mEcode = decrypt(string);
@@ -658,13 +658,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9d48c0c0", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mNick)) {
+        if (!StringUtils.isEmpty(this.mNick)) {
             return this.mNick;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mNick) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mNick) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString("nick", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mNick = string;
@@ -681,7 +681,7 @@ public class SessionManager implements ISession {
         }
         this.mNick = str;
         saveStorage("nick", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         setOldNick(str);
@@ -694,13 +694,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e34e2585", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mOldNick)) {
+        if (!StringUtils.isEmpty(this.mOldNick)) {
             return this.mOldNick;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mOldNick) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mOldNick) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.OLDNICK, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mOldNick = string;
@@ -725,13 +725,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d328f00d", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mUserName)) {
+        if (!StringUtils.isEmpty(this.mUserName)) {
             return this.mUserName;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mUserName) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mUserName) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString("username", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mUserName = string;
@@ -757,13 +757,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1aa7244a", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mShowNick)) {
+        if (!StringUtils.isEmpty(this.mShowNick)) {
             return this.mShowNick;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mShowNick) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mShowNick) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.SHOW_NICK, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mShowNick = string;
@@ -789,13 +789,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aaf4a63b", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mUidDigest)) {
+        if (!StringUtils.isEmpty(this.mUidDigest)) {
             return this.mUidDigest;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mUidDigest) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mUidDigest) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.SESSION_KEY, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mUidDigest = string;
@@ -821,13 +821,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("74ced221", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mSessionDisastergrd)) {
+        if (!StringUtils.isEmpty(this.mSessionDisastergrd)) {
             return this.mSessionDisastergrd;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mSessionDisastergrd) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mSessionDisastergrd) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.SESSION_DISASTERGRD, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mSessionDisastergrd = string;
@@ -854,14 +854,14 @@ public class SessionManager implements ISession {
             return (String) ipChange.ipc$dispatch("58ad3b3d", new Object[]{this});
         }
         LoginTLogAdapter.e(GET_TAG, "getUserId");
-        if (!TextUtils.isEmpty(this.mUserId)) {
+        if (!StringUtils.isEmpty(this.mUserId)) {
             LoginTLogAdapter.e(GET_TAG, "after_getUserId_cache");
             return this.mUserId;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mUserId) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mUserId) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString("userId", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 LoginTLogAdapter.e(GET_TAG, "after_getUserId_empty");
                 return null;
             }
@@ -894,7 +894,7 @@ public class SessionManager implements ISession {
         }
         this.mUserId = str;
         saveStorage("userId", encode(str));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         setOldUserId(str);
@@ -907,13 +907,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("32ec82c2", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mOldUserId)) {
+        if (!StringUtils.isEmpty(this.mOldUserId)) {
             return this.mOldUserId;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mOldUserId) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mOldUserId) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.OLDUSERID, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mOldUserId = decrypt(string);
@@ -940,9 +940,9 @@ public class SessionManager implements ISession {
         }
         LoginTLogAdapter.e(GET_TAG, "getOldEncryptedUserId");
         initStorage();
-        if (TextUtils.isEmpty(this.mOldEncryptedUserId) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mOldEncryptedUserId) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.OLD_ENCRYPTED_USERID, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mOldEncryptedUserId = decrypt(string);
@@ -970,14 +970,14 @@ public class SessionManager implements ISession {
             return (String) ipChange.ipc$dispatch("84ac42b3", new Object[]{this});
         }
         LoginTLogAdapter.e(TAG, "getLoginToken");
-        if (!TextUtils.isEmpty(this.mAutoLoginToken)) {
+        if (!StringUtils.isEmpty(this.mAutoLoginToken)) {
             LoginTLogAdapter.e(TAG, "after_getLoginToken_cache");
             return this.mAutoLoginToken;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mAutoLoginToken) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mAutoLoginToken) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.AUTO_LOGIN_STR, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 LoginTLogAdapter.e(TAG, "after_getLoginToken_empty");
                 return null;
             }
@@ -1009,7 +1009,7 @@ public class SessionManager implements ISession {
             return null;
         }
         String string = sharedPreferences.getString("ssoToken", "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         return decrypt(string);
@@ -1023,9 +1023,9 @@ public class SessionManager implements ISession {
             return (String) ipChange.ipc$dispatch("1db89666", new Object[]{this});
         }
         initStorage();
-        if (TextUtils.isEmpty(this.extJson) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.extJson) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.EXT_JSON, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.extJson = decrypt(string);
@@ -1061,13 +1061,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c52188d3", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mEmail)) {
+        if (!StringUtils.isEmpty(this.mEmail)) {
             return this.mEmail;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mEmail) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mEmail) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString("email", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mEmail = decrypt(string);
@@ -1092,13 +1092,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fc5d285c", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mBiometricId)) {
+        if (!StringUtils.isEmpty(this.mBiometricId)) {
             return this.mBiometricId;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mBiometricId) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mBiometricId) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.BIOMETRIC, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mBiometricId = decrypt(string);
@@ -1129,7 +1129,7 @@ public class SessionManager implements ISession {
         try {
             initStorage();
             String string = this.storage.getString(SessionConstants.OneTimeTOKEN, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             return decrypt(string);
@@ -1335,7 +1335,7 @@ public class SessionManager implements ISession {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("18ff4a56", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String str2 = getEventTrace() + str;
             int length = str2.length();
@@ -1367,7 +1367,7 @@ public class SessionManager implements ISession {
             return (String[]) ipChange.ipc$dispatch("cb713d91", new Object[]{this});
         }
         try {
-            if (!TextUtils.isEmpty(this.mDomainListStr)) {
+            if (!StringUtils.isEmpty(this.mDomainListStr)) {
                 return (String[]) JSONArray.parseArray(this.mDomainListStr).toArray(new String[0]);
             }
             initStorage();
@@ -1375,7 +1375,7 @@ public class SessionManager implements ISession {
                 return null;
             }
             this.mDomainListStr = this.storage.getString(SessionConstants.SSO_DOMAIN_LIST, "");
-            if (TextUtils.isEmpty(this.mDomainListStr)) {
+            if (StringUtils.isEmpty(this.mDomainListStr)) {
                 return null;
             }
             return (String[]) JSONArray.parseArray(this.mDomainListStr).toArray(new String[0]);
@@ -1401,11 +1401,11 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5ea1ca4b", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mHeadPicLink)) {
+        if (!StringUtils.isEmpty(this.mHeadPicLink)) {
             return this.mHeadPicLink;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mHeadPicLink) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mHeadPicLink) && (sharedPreferences = this.storage) != null) {
             this.mHeadPicLink = sharedPreferences.getString(SessionConstants.HEAD_PIC_LINK, "");
         }
         return this.mHeadPicLink;
@@ -1428,13 +1428,13 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b105ea5e", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mLoginPhone)) {
+        if (!StringUtils.isEmpty(this.mLoginPhone)) {
             return this.mLoginPhone;
         }
         initStorage();
-        if (TextUtils.isEmpty(this.mLoginPhone) && (sharedPreferences = this.storage) != null) {
+        if (StringUtils.isEmpty(this.mLoginPhone) && (sharedPreferences = this.storage) != null) {
             String string = sharedPreferences.getString(SessionConstants.LOGIN_PHONE, "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             this.mLoginPhone = decrypt(string);
@@ -1553,7 +1553,7 @@ public class SessionManager implements ISession {
         SharedPreferences sharedPreferences = this.storage;
         if (sharedPreferences != null) {
             SharedPreferences.Editor edit = sharedPreferences.edit();
-            if (!TextUtils.isEmpty(str5) || !TextUtils.equals(getOldNick(), str3)) {
+            if (!StringUtils.isEmpty(str5) || !StringUtils.equals(getOldNick(), str3)) {
                 this.mHeadPicLink = str5;
                 edit.putString(SessionConstants.HEAD_PIC_LINK, str5);
             }
@@ -1566,9 +1566,9 @@ public class SessionManager implements ISession {
                 stringBuffer.append(", userId=");
                 stringBuffer.append(str4);
                 stringBuffer.append(", autologintoken:");
-                stringBuffer.append(!TextUtils.isEmpty(str6));
+                stringBuffer.append(!StringUtils.isEmpty(str6));
                 stringBuffer.append(", ssotoken:");
-                stringBuffer.append(!TextUtils.isEmpty(str7));
+                stringBuffer.append(!StringUtils.isEmpty(str7));
                 stringBuffer.append(", expiresTime=");
                 j4 = j2;
                 stringBuffer.append(j4);
@@ -1600,7 +1600,7 @@ public class SessionManager implements ISession {
             this.mLoginPhone = str9;
             edit.putString(SessionConstants.LOGIN_PHONE, encode(this.mLoginPhone));
             try {
-                if (!TextUtils.isEmpty(str6)) {
+                if (!StringUtils.isEmpty(str6)) {
                     this.mAutoLoginToken = str6;
                     edit.putString(SessionConstants.AUTO_LOGIN_STR, encode(str6));
                 }
@@ -1608,7 +1608,7 @@ public class SessionManager implements ISession {
                 e.printStackTrace();
             }
             edit.putString("ssoToken", encode(str7));
-            if (!TextUtils.isEmpty(str8)) {
+            if (!StringUtils.isEmpty(str8)) {
                 edit.putString(SessionConstants.OneTimeTOKEN, encode(str8));
             }
             if (j == 0) {
@@ -1748,7 +1748,7 @@ public class SessionManager implements ISession {
         if (!z2) {
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             HashMap hashMap = new HashMap();
             hashMap.put("arg2", str2);
             hashMap.put(UTHitBuilders.a.FIELD_ARG2, str2);
@@ -1826,7 +1826,7 @@ public class SessionManager implements ISession {
                 this.mCookie = new CopyOnWriteArrayList();
             }
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str) && (parseCookie = LoginCookieUtils.parseCookie(str)) != null) {
+                if (!StringUtils.isEmpty(str) && (parseCookie = LoginCookieUtils.parseCookie(str)) != null) {
                     setCookie(LoginCookieUtils.getHttpDomin(parseCookie, z2), parseCookie.toString());
                     if (this.mCookie != null) {
                         Iterator<LoginCookie> it = this.mCookie.iterator();
@@ -1836,7 +1836,7 @@ public class SessionManager implements ISession {
                                 break;
                             }
                             LoginCookie next = it.next();
-                            if (next != null && TextUtils.equals(next.domain, parseCookie.domain) && TextUtils.equals(next.name, parseCookie.name)) {
+                            if (next != null && StringUtils.equals(next.domain, parseCookie.domain) && StringUtils.equals(next.name, parseCookie.name)) {
                                 next.value = parseCookie.value;
                                 next.expires = parseCookie.expires;
                                 z3 = true;
@@ -1889,9 +1889,9 @@ public class SessionManager implements ISession {
                 LoginTLogAdapter.e(TAG, "injectCookie cookies  size=" + strArr.length);
                 ArrayList<LoginCookie> arrayList = new ArrayList();
                 for (String str : strArr) {
-                    if (!TextUtils.isEmpty(str) && (parseCookie = LoginCookieUtils.parseCookie(str)) != null) {
+                    if (!StringUtils.isEmpty(str) && (parseCookie = LoginCookieUtils.parseCookie(str)) != null) {
                         setCookie(LoginCookieUtils.getHttpDomin(parseCookie), parseCookie.toString());
-                        if (TextUtils.equals(parseCookie.domain, ".taobao.com")) {
+                        if (StringUtils.equals(parseCookie.domain, ".taobao.com")) {
                             arrayList.add(parseCookie);
                         }
                         if (this.mCookie != null) {
@@ -1991,11 +1991,11 @@ public class SessionManager implements ISession {
         }
         for (int i = 0; i < this.mCookie.size(); i++) {
             LoginCookie loginCookie = this.mCookie.get(i);
-            if (loginCookie != null && !TextUtils.isEmpty(loginCookie.domain) && (!z || !LoginSwitch.SGCOOKIE.equals(loginCookie.name))) {
+            if (loginCookie != null && !StringUtils.isEmpty(loginCookie.domain) && (!z || !LoginSwitch.SGCOOKIE.equals(loginCookie.name))) {
                 String httpDomin = LoginCookieUtils.getHttpDomin(loginCookie);
                 LoginCookieUtils.expiresCookies(loginCookie);
                 setCookie(httpDomin, loginCookie.toString());
-                if (TextUtils.equals(loginCookie.domain, ".taobao.com")) {
+                if (StringUtils.equals(loginCookie.domain, ".taobao.com")) {
                     arrayList.add(loginCookie);
                 }
             }
@@ -2051,7 +2051,7 @@ public class SessionManager implements ISession {
         }
         try {
             CookieManager.getInstance().setCookie(str, str2);
-            if (TextUtils.isEmpty(str2) || !str2.contains("cookie2")) {
+            if (StringUtils.isEmpty(str2) || !str2.contains("cookie2")) {
                 return;
             }
             LoginTLogAdapter.e(TAG, "setCookie time:" + System.currentTimeMillis() + " cookie2:" + str2);
@@ -2276,14 +2276,14 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f52dc359", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
             initSecurityGuardManager();
             if (securityGuardManager != null && (dynamicDataEncryptComp = securityGuardManager.getDynamicDataEncryptComp()) != null) {
                 String dynamicEncryptDDp = dynamicDataEncryptComp.dynamicEncryptDDp(str);
-                return TextUtils.isEmpty(dynamicEncryptDDp) ? str : dynamicEncryptDDp;
+                return StringUtils.isEmpty(dynamicEncryptDDp) ? str : dynamicEncryptDDp;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -2297,7 +2297,7 @@ public class SessionManager implements ISession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("72c54002", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {

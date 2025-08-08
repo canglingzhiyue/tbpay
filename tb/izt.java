@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class izt extends izq {
             return a("RecyclerInsertItemsByOffsetAbility param check error", true);
         }
         String c = dlhVar.c("targetNodeId");
-        DXWidgetNode j = TextUtils.isEmpty(c) ? lVar.j() : dXWidgetNode.queryWidgetNodeByUserId(c);
+        DXWidgetNode j = StringUtils.isEmpty(c) ? lVar.j() : dXWidgetNode.queryWidgetNodeByUserId(c);
         if (j == null) {
             return a("RecyclerInsertItemsByOffsetAbility 当前widgetNode为空", true);
         }

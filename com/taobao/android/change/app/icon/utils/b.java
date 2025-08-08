@@ -1,6 +1,6 @@
 package com.taobao.android.change.app.icon.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.change.app.icon.mtop.ChangeAppIconMtopRequest;
@@ -71,7 +71,7 @@ public class b {
                         return;
                     }
                     HashMap hashMap = new HashMap();
-                    if (!TextUtils.isEmpty(changeAppIconRequest.errorMsg)) {
+                    if (!StringUtils.isEmpty(changeAppIconRequest.errorMsg)) {
                         String str = changeAppIconRequest.errorMsg;
                         changeAppIconRequest.errorMsg = h.a(str, c.a(c.ORANGE_KEY_CHANGE_APP_ICON_ERROR_MSG_MTOP_MAX_LENGTH, 20));
                         hashMap.put("error", h.a(str));
@@ -137,7 +137,7 @@ public class b {
         }
         try {
             MtopBusiness build = MtopBusiness.build(a(changeAppIconMtopRequest));
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 build.mo1325setReqUserId(str);
             }
             build.mo1305reqMethod(MethodEnum.POST);

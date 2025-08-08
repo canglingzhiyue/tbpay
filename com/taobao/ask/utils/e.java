@@ -2,7 +2,7 @@ package com.taobao.ask.utils;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.intf.PhenixCreator;
 import com.taobao.phenix.intf.b;
@@ -32,7 +32,7 @@ public class e {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("77c8a37e", new Object[]{context, str, new Integer(i), new Integer(i2), aVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.endsWith(".gif") || str.endsWith(".apng") || str.endsWith("apng.png") || str.endsWith("9.png")) {
                 z = false;

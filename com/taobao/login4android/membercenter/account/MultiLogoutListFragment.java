@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.callback.LoginTasksCallback;
 import com.ali.user.mobile.exception.LoginException;
@@ -181,13 +181,13 @@ public class MultiLogoutListFragment extends NewMultiAccountFragment {
             return;
         }
         sendControl("Button_Change", sessionModel.userId);
-        if (!TextUtils.isEmpty(sessionModel.autoLoginToken) && !TextUtils.isEmpty(sessionModel.userId)) {
+        if (!StringUtils.isEmpty(sessionModel.autoLoginToken) && !StringUtils.isEmpty(sessionModel.userId)) {
             showProgress(getResources().getString(R.string.con_ali_multi_account_login));
             autologinTarget(sessionModel);
         } else if (cacheOneKeyAndCompareSuccess(sessionModel)) {
             LoginParam loginParam = new LoginParam();
             loginParam.loginId = sessionModel.showLoginId;
-            if (!TextUtils.isEmpty(sessionModel.userId)) {
+            if (!StringUtils.isEmpty(sessionModel.userId)) {
                 try {
                     loginParam.hid = Long.parseLong(sessionModel.userId);
                     loginParam.isFromAccount = true;
@@ -257,12 +257,12 @@ public class MultiLogoutListFragment extends NewMultiAccountFragment {
             return false;
         }
         String str = authInfoMap.get("number");
-        if (!TextUtils.isEmpty(str) && str.length() > 7) {
+        if (!StringUtils.isEmpty(str) && str.length() > 7) {
             String substring = str.substring(str.lastIndexOf("*") + 1);
-            if (!TextUtils.isEmpty(sessionModel.loginPhone) && sessionModel.loginPhone.endsWith(substring)) {
+            if (!StringUtils.isEmpty(sessionModel.loginPhone) && sessionModel.loginPhone.endsWith(substring)) {
                 return true;
             }
-            if (!TextUtils.isEmpty(sessionModel.mobile)) {
+            if (!StringUtils.isEmpty(sessionModel.mobile)) {
                 if (sessionModel.mobile.endsWith(substring)) {
                     return true;
                 }

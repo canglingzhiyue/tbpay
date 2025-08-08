@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.uikit.screentype.ScreenType;
 import com.taobao.search.common.util.q;
@@ -33,11 +33,11 @@ public class nps extends npq {
             q.c("TppRxMtopRequest", "获取utdid失败", th);
             str3 = "";
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             b("utd_id", str3);
         }
         String d = g.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             b(noa.KEY_EDITION_CODE, d);
         }
         b("elderHome", String.valueOf(j.INSTANCE.a()));
@@ -51,7 +51,7 @@ public class nps extends npq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a("appId", str);
         }

@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.track.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tbpoplayer.util.e;
 import tb.kge;
@@ -23,7 +23,7 @@ public class TrackAppMonitorConfig extends TrackUTConfig {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("79248f08", new Object[]{this, str, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (!z) {

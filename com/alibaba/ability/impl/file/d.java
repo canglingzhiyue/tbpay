@@ -1,6 +1,6 @@
 package com.alibaba.ability.impl.file;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.util.Date;
@@ -25,10 +25,10 @@ public final class d {
             return false;
         }
         try {
-            if (TextUtils.equals(deleteSafely.getCanonicalPath(), "/")) {
+            if (StringUtils.equals(deleteSafely.getCanonicalPath(), "/")) {
                 return false;
             }
-            if (!TextUtils.equals(deleteSafely.getAbsolutePath(), "/")) {
+            if (!StringUtils.equals(deleteSafely.getAbsolutePath(), "/")) {
                 return deleteSafely.delete();
             }
             return false;

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.request.AttachedResponse;
 import com.alibaba.android.nextrpc.stream.internal.response.StreamOtherResponse;
 import com.alibaba.android.nextrpc.stream.internal.response.StreamRemoteMainResponse;
@@ -777,10 +777,10 @@ public class j implements jod {
         if (str != null) {
             mtopBusiness.mo1309setBizId(str);
         }
-        if (!TextUtils.isEmpty(this.v)) {
+        if (!StringUtils.isEmpty(this.v)) {
             mtopBusiness.mo1310setBizTopic(this.v);
         }
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             mtopBusiness.mo1328setUnitStrategy(this.i);
         }
         Map<String, String> map = this.l;

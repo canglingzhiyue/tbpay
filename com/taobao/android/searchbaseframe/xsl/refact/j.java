@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.xsl.refact;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -88,7 +88,7 @@ public final class j implements com.taobao.android.meta.logic.b<htg, XslSearchRe
             String string = jSONObject2.getString("type");
             String string2 = jSONObject2.getString("url");
             boolean booleanValue = jSONObject2.getBooleanValue("animate");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                 result.setAtmosphereType(string);
                 result.setAtmosphereUrl(string2);
                 result.setAtmosphereAnim(booleanValue);

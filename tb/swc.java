@@ -27,7 +27,7 @@ public class swc {
         } else if (context instanceof a) {
             context2 = ((a) context).a();
         } else {
-            ldf.d("ContextUtils", "getRealActivityContext in else, activityContext is null");
+            ldf.d("ConStringUtils", "getRealActivityContext in else, activityContext is null");
             context2 = null;
         }
         if (!(context2 instanceof Activity)) {

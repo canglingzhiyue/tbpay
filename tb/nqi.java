@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.view.ViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -120,7 +120,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
                 a(activateCellBean.activateItems, String.valueOf(activateCellBean.rownnum));
                 d(activateCellBean.name);
             }
-            if (!TextUtils.isEmpty(activateCellBean.name)) {
+            if (!StringUtils.isEmpty(activateCellBean.name)) {
                 this.f31662a.setText(activateCellBean.name);
             }
             this.itemView.setVisibility(0);
@@ -138,7 +138,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
         if (list == null) {
             return;
         }
-        this.f.setMaxLines(TextUtils.isEmpty(str) ? Integer.MAX_VALUE : Integer.parseInt(str));
+        this.f.setMaxLines(StringUtils.isEmpty(str) ? Integer.MAX_VALUE : Integer.parseInt(str));
         for (ActivateBean activateBean : list) {
             if (activateBean != null) {
                 View a2 = a(activateBean);
@@ -164,7 +164,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
         linearLayout.setBackgroundDrawable(this.b.getResources().getDrawable(R.drawable.tbsearch_activate_tag_background));
         TextView textView = new TextView(this.b);
         textView.setLines(1);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
         layoutParams.rightMargin = n;
         textView.setLayoutParams(layoutParams);
@@ -173,7 +173,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         linearLayout.addView(textView);
-        if (!TextUtils.isEmpty(activateBean.tagText)) {
+        if (!StringUtils.isEmpty(activateBean.tagText)) {
             TextView textView2 = new TextView(this.b);
             textView2.setTextSize(1, 10.0f);
             textView2.setTextColor(d.a(activateBean.tagColor, -1));
@@ -199,7 +199,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
         }
         this.f.setVisibility(8);
         this.e.setText(R.string.uik_icon_attention_forbid);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             TextView textView = this.g;
             textView.setText("当前" + str + "已隐藏");
             TIconFontTextView tIconFontTextView = this.e;
@@ -231,7 +231,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
         }
         this.f.setVisibility(0);
         this.e.setText(R.string.uik_icon_attention);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.e.setContentDescription("隐藏当前内容");
         } else {
             TIconFontTextView tIconFontTextView = this.e;
@@ -283,7 +283,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
             ipChange.ipc$dispatch("7d87ba35", new Object[]{this, activateCellBean});
         } else if (activateCellBean == null) {
             Log.e("ActivateGroupWidget", "activate group is null");
-        } else if (TextUtils.isEmpty(activateCellBean.type)) {
+        } else if (StringUtils.isEmpty(activateCellBean.type)) {
             Log.e("ActivateGroupWidget", "activate group type is empty");
         } else {
             String f = f(activateCellBean.type);
@@ -307,7 +307,7 @@ public class nqi extends nqj<ActivateCellBean, e> implements View.OnClickListene
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "activate_closed_";
         }
         return "activate_closed_" + str;

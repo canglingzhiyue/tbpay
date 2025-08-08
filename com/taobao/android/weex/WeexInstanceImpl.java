@@ -11,7 +11,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import android.view.View;
@@ -682,7 +682,7 @@ public abstract class WeexInstanceImpl implements WeexInstance, jud {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("51e316fd", new Object[]{this, str, cls});
-        } else if (TextUtils.isEmpty(str) || cls == null) {
+        } else if (StringUtils.isEmpty(str) || cls == null) {
             com.taobao.android.weex_framework.util.g.d("register module illegal");
         } else {
             if (this.mModuleFactoryMap.containsKey(str)) {
@@ -700,7 +700,7 @@ public abstract class WeexInstanceImpl implements WeexInstance, jud {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e53d79d2", new Object[]{this, str, cls, strArr});
-        } else if (TextUtils.isEmpty(str) || cls == null) {
+        } else if (StringUtils.isEmpty(str) || cls == null) {
             com.taobao.android.weex_framework.util.g.d("register module illegal");
         } else {
             if (this.mModuleFactoryMap.containsKey(str)) {
@@ -956,7 +956,7 @@ public abstract class WeexInstanceImpl implements WeexInstance, jud {
             return str;
         }
         String bundleUrl = getBundleUrl();
-        if (TextUtils.isEmpty(bundleUrl)) {
+        if (StringUtils.isEmpty(bundleUrl)) {
             this.mOriginUrl = "";
             return "";
         }

@@ -1,6 +1,6 @@
 package com.taobao.umipublish.extension.windvane.abilities.hander;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,8 +44,8 @@ public class DownloadFileHandler extends BaseHandler {
         for (int i = 0; i < a2.size(); i++) {
             JSONObject jSONObject3 = a2.getJSONObject(i);
             String a3 = m.a(jSONObject3, "type", "");
-            String str = TextUtils.equals("video", a3) ? "video" : "image";
-            String str2 = TextUtils.equals("video", a3) ? keu.SUFFIX_MP4 : ".jpg";
+            String str = StringUtils.equals("video", a3) ? "video" : "image";
+            String str2 = StringUtils.equals("video", a3) ? keu.SUFFIX_MP4 : ".jpg";
             JSONObject jSONObject4 = new JSONObject();
             jSONObject4.put("url", (Object) m.a(jSONObject3, "url", ""));
             jSONObject4.put("type", (Object) str);

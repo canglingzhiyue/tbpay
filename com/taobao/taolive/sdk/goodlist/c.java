@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.goodlist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.common.LiveItem;
@@ -37,7 +37,7 @@ public class c {
 
     public static boolean a(String str, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : TextUtils.equals("1", str) && !z;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : StringUtils.equals("1", str) && !z;
     }
 
     public static void a(Map<String, String> map, JSONObject jSONObject) {
@@ -49,7 +49,7 @@ public class c {
         } else {
             map.put("pre", jSONObject2.getString("preSaleStatus"));
             String str = "1";
-            if (!TextUtils.equals(str, jSONObject2.getString("subscribeStatus"))) {
+            if (!StringUtils.equals(str, jSONObject2.getString("subscribeStatus"))) {
                 str = "2";
             }
             map.put("preset", str);
@@ -64,7 +64,7 @@ public class c {
         } else {
             map.put("pre", liveItem.itemExtData.getString("preSaleStatus"));
             String str = "1";
-            if (!TextUtils.equals(str, liveItem.itemExtData.getString("subscribeStatus"))) {
+            if (!StringUtils.equals(str, liveItem.itemExtData.getString("subscribeStatus"))) {
                 str = "2";
             }
             map.put("preset", str);
@@ -77,7 +77,7 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("34ae4648", new Object[]{liveItem})).booleanValue();
         }
         if (liveItem != null && liveItem.extendVal != null) {
-            return TextUtils.equals(liveItem.extendVal.itemSourceType, "1");
+            return StringUtils.equals(liveItem.extendVal.itemSourceType, "1");
         }
         return false;
     }

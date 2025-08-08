@@ -2,7 +2,7 @@ package com.taobao.taolive.room.mediaplatform;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.business.common.GoodItem;
@@ -54,7 +54,7 @@ public class a {
         String str6 = "switchRoom";
         aq.a(str6);
         String a3 = com.taobao.taolive.room.utils.c.a(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             a3 = (a3 + "&timePointPlayUrl=" + str2) + "&forceRefresh=true";
             z2 = true;
         }
@@ -62,11 +62,11 @@ public class a {
             a3 = a3 + "&" + aw.PARAM_FORCE_REFRESH + "=true";
             z2 = true;
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str6 = str3;
         }
         String str7 = a3 + "&livesource=" + str6;
-        if (!TextUtils.isEmpty(str4) && (a2 = q.a(str4)) != null) {
+        if (!StringUtils.isEmpty(str4) && (a2 = q.a(str4)) != null) {
             GoodItem goodItem = new GoodItem();
             goodItem.itemId = a2.getString("itemId");
             goodItem.itemImg = a2.getString("itemImg");
@@ -77,14 +77,14 @@ public class a {
             goodItem.extendVal = a2.getString("extendVal");
             String jSONString = JSONObject.toJSONString(goodItem);
             str7 = str7 + "&bubbleGoodInfoJson=" + Uri.encode(jSONString);
-            if (!TextUtils.isEmpty(goodItem.itemId)) {
+            if (!StringUtils.isEmpty(goodItem.itemId)) {
                 str7 = str7 + "&sjsdItemId=" + goodItem.itemId + "&productType=timemove";
                 if (!z2) {
                     str7 = str7 + "&forceRefresh=true";
                 }
             }
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             str7 = str7 + "&timeMovingSpfPlayVideo=" + Uri.encode(str5);
         }
         if (com.taobao.taolive.movehighlight.utils.c.p()) {
@@ -94,7 +94,7 @@ public class a {
         hashMap.put("url", str7);
         if (pfa.a(n.a()).b() != null) {
             String a4 = pfa.a(n.a()).b().a();
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 hashMap.put(aw.HIGHLIGHT_TRANSPARENT_PARAMS, a4);
             }
         }

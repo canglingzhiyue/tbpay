@@ -2,7 +2,7 @@ package com.taobao.android.detail.provider;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.protocol.adapter.core.IShareAdapter;
 import com.taobao.android.detail.protocol.model.share.ShareModel;
@@ -33,12 +33,12 @@ public class TBShareProvider implements IShareAdapter {
             return;
         }
         ShareContent shareContent = new ShareContent();
-        if (!TextUtils.isEmpty(shareModel.businessId)) {
+        if (!StringUtils.isEmpty(shareModel.businessId)) {
             shareContent.businessId = shareModel.businessId;
         } else {
             shareContent.businessId = "1";
         }
-        if (!TextUtils.isEmpty(shareModel.isActivity)) {
+        if (!StringUtils.isEmpty(shareModel.isActivity)) {
             shareContent.isActivity = shareModel.isActivity;
         }
         shareContent.description = shareModel.msg;

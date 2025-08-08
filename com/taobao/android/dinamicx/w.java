@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -43,7 +43,7 @@ public class w implements com.taobao.android.dinamicx.template.download.h {
                 sb.append(syncSend.getDesc());
                 aVar.e = sb.toString();
                 list = sVar.c;
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 aVar = new s.a(DXMonitorConstant.DX_MONITOR_DOWNLOADER, DXMonitorConstant.DX_MONITOR_DOWNLOADER_DOWNLOAD, s.DX_TEMPLATE_DOWNLOAD_ERROR_60023);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append("下载链接为空" + str);

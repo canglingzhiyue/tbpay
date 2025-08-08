@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.a;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -171,13 +171,13 @@ public class bdo {
             a2.put(SFMuiseSDK.MUISE_BUNDLE_TYPE, a(iDMComponent));
             if (i == 2101) {
                 String b2 = b(iDMComponent);
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     a2.put("checkedItemIds", b2);
                 }
             }
         } else if ("shop".equals(iDMComponent.getTag()) && i == 2101) {
             String b3 = b(iDMComponent);
-            if (!TextUtils.isEmpty(b3)) {
+            if (!StringUtils.isEmpty(b3)) {
                 a2.put("checkedItemIds", b3);
             }
         }

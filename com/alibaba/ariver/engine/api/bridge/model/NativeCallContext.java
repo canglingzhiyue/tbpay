@@ -3,7 +3,7 @@ package com.alibaba.ariver.engine.api.bridge.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.Render;
 import com.alibaba.ariver.kernel.api.node.Node;
 import com.alibaba.ariver.kernel.common.utils.JSONUtils;
@@ -159,13 +159,13 @@ public class NativeCallContext<T extends Node> implements Parcelable {
         this.source = builder.source;
         this.originalData = builder.originalData;
         String string = JSONUtils.getString(this.params, "__appxDomain");
-        if (RVOrangeConfigUtils.enableCanalDomain() && TextUtils.isEmpty(string)) {
+        if (RVOrangeConfigUtils.enableCanalDomain() && StringUtils.isEmpty(string)) {
             String string2 = JSONUtils.getString(this.params, TMSJSAPIHandler.DOMAIN_KEY);
-            if (TextUtils.equals("widgetFramework", string2) || TextUtils.equals(DOMAIN_MINIAPP_FRAMEWORK, string2)) {
+            if (StringUtils.equals("widgetFramework", string2) || StringUtils.equals(DOMAIN_MINIAPP_FRAMEWORK, string2)) {
                 string = string2;
             }
         }
-        if (!TextUtils.isEmpty(string) && FROM_WORKER.equalsIgnoreCase(this.source)) {
+        if (!StringUtils.isEmpty(string) && FROM_WORKER.equalsIgnoreCase(this.source)) {
             if (!"app".equalsIgnoreCase(string) && !DOMAIN_GM_BIZ.equalsIgnoreCase(string) && !DOMAIN_WIDGET_BIZ.equalsIgnoreCase(string) && !DOMAIN_APPX.equalsIgnoreCase(string) && !"widget".equalsIgnoreCase(string) && !"widgetFramework".equalsIgnoreCase(string) && !DOMAIN_MINIAPP_FRAMEWORK.equalsIgnoreCase(string)) {
                 this.pluginId = string;
             }

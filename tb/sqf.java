@@ -2,7 +2,7 @@ package tb;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -34,13 +34,13 @@ public class sqf implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("77d86ebd", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "addTrackProperties")) {
+        if (StringUtils.equals(str, "addTrackProperties")) {
             return a(str2, wVCallBackContext);
         }
-        if (TextUtils.equals(str, "removeTrackProperties")) {
+        if (StringUtils.equals(str, "removeTrackProperties")) {
             return b(str2, wVCallBackContext);
         }
-        if (!TextUtils.equals(str, "getTrackProperties")) {
+        if (!StringUtils.equals(str, "getTrackProperties")) {
             return false;
         }
         return c(str2, wVCallBackContext);
@@ -91,7 +91,7 @@ public class sqf implements b {
             wVCallBackContext.error();
             lap.a("Bridge", "removeTrackProperties", "homepage.HomePageWVPlugin.removeTrackProperties;error: dataSource=null;");
             return true;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             a2.b();
             wVCallBackContext.success();
             return true;

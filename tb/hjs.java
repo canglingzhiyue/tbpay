@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
@@ -33,7 +33,7 @@ public class hjs {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f099715a", new Object[]{enterGoodsData})).longValue();
         }
-        if (enterGoodsData == null || TextUtils.isEmpty(enterGoodsData.holdItemIds)) {
+        if (enterGoodsData == null || StringUtils.isEmpty(enterGoodsData.holdItemIds)) {
             return -1L;
         }
         String[] split = enterGoodsData.holdItemIds.split(Character.toString(','));
@@ -49,9 +49,9 @@ public class hjs {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3f6e4080", new Object[]{aVar, activity, videoInfo, enterGoodsData})).booleanValue();
         }
-        if (videoInfo != null && enterGoodsData != null && TextUtils.equals("insideDetail", enterGoodsData.itemHoldType) && enterGoodsData.curItemList != null && !enterGoodsData.curItemList.isEmpty() && !TextUtils.isEmpty(enterGoodsData.holdItemIds)) {
+        if (videoInfo != null && enterGoodsData != null && StringUtils.equals("insideDetail", enterGoodsData.itemHoldType) && enterGoodsData.curItemList != null && !enterGoodsData.curItemList.isEmpty() && !StringUtils.isEmpty(enterGoodsData.holdItemIds)) {
             String[] split = enterGoodsData.holdItemIds.split(Character.toString(','));
-            if (split == null || split.length == 0 || TextUtils.isEmpty(split[0])) {
+            if (split == null || split.length == 0 || StringUtils.isEmpty(split[0])) {
                 his.b("GoodsUnderTakeHelper", "checkInsideDetailTakeItemId | id parse failed. holdItemIds=" + enterGoodsData.holdItemIds);
             } else {
                 Iterator<LiveItem> it = enterGoodsData.curItemList.iterator();
@@ -61,7 +61,7 @@ public class hjs {
                         break;
                     }
                     LiveItem next = it.next();
-                    if (TextUtils.equals(Long.toString(next.itemId), split[0])) {
+                    if (StringUtils.equals(Long.toString(next.itemId), split[0])) {
                         liveItem = next;
                         break;
                     }
@@ -85,7 +85,7 @@ public class hjs {
                     videoInfo.itemHoldType = UNDER_TAKE_GOODS_LIST;
                     return false;
                 }
-                if (TextUtils.isEmpty(liveItem.cpsClickPos)) {
+                if (StringUtils.isEmpty(liveItem.cpsClickPos)) {
                     liveItem.cpsClickPos = "insidedetail";
                 }
                 his.a("GoodsUnderTakeHelper", "checkInsideDetailTakeItemId | inside take , goodIndex=" + liveItem.goodsIndex + "  itemId=" + liveItem.itemId);
@@ -112,6 +112,6 @@ public class hjs {
     public static boolean a(c cVar, String str) {
         b a2;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a5eb679d", new Object[]{cVar, str})).booleanValue() : !TextUtils.isEmpty(str) && (a2 = com.taobao.android.live.plugin.atype.flexalocal.good.a.a().a(cVar, str)) != null && a2.c() != null && !a2.c().isEmpty();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a5eb679d", new Object[]{cVar, str})).booleanValue() : !StringUtils.isEmpty(str) && (a2 = com.taobao.android.live.plugin.atype.flexalocal.good.a.a().a(cVar, str)) != null && a2.c() != null && !a2.c().isEmpty();
     }
 }

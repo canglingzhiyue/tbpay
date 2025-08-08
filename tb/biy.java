@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -29,7 +29,7 @@ public class biy {
 
     public static boolean a(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9e1d6464", new Object[]{context})).booleanValue() : f25935a && context != null && TextUtils.equals("com.taobao.android.detail.wrapper.activity.DetailActivity", context.getClass().getName());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9e1d6464", new Object[]{context})).booleanValue() : f25935a && context != null && StringUtils.equals("com.taobao.android.detail.wrapper.activity.DetailActivity", context.getClass().getName());
     }
 
     public static boolean a(String str) {
@@ -37,7 +37,7 @@ public class biy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (str.startsWith("@")) {
@@ -52,7 +52,7 @@ public class biy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8bb65392", new Object[]{str, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (obj instanceof JSONObject) {
@@ -147,7 +147,7 @@ public class biy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ad15", new Object[]{str, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         int length = str.length();

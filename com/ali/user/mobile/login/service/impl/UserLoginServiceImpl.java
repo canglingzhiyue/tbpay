@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login.service.impl;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
@@ -123,10 +123,10 @@ public class UserLoginServiceImpl {
             ipChange.ipc$dispatch("545f61a1", new Object[]{this, loginBaseParam, passwordLoginRequest});
             return;
         }
-        if (!TextUtils.isEmpty(loginBaseParam.password)) {
+        if (!StringUtils.isEmpty(loginBaseParam.password)) {
             try {
                 String rsaPubkey = RSAKey.getRsaPubkey();
-                if (TextUtils.isEmpty(rsaPubkey)) {
+                if (StringUtils.isEmpty(rsaPubkey)) {
                     LoginTLogAdapter.e(TAG, "RSAKey == null");
                     throw new RpcException("getRsaKeyResult is null");
                 }
@@ -162,7 +162,7 @@ public class UserLoginServiceImpl {
         if (loginBaseParam.h5QueryString != null) {
             map.put(ApiConstants.ApiField.H5_QUERY_STRING, loginBaseParam.h5QueryString);
         }
-        if (!TextUtils.isEmpty(loginBaseParam.snsTrustLoginToken)) {
+        if (!StringUtils.isEmpty(loginBaseParam.snsTrustLoginToken)) {
             map.put(ApiConstants.ApiField.SNS_TRUST_LOGIN_TOKEN, loginBaseParam.snsTrustLoginToken);
         }
         addOuterExt(loginBaseParam, map);
@@ -213,7 +213,7 @@ public class UserLoginServiceImpl {
         buildBaseRequest(loginBaseParam, simLoginRequest);
         simLoginRequest.deviceId = DataProviderFactory.getDataProvider().getDeviceId();
         simLoginRequest.accessCode = loginBaseParam.token;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             simLoginRequest.loginId = loginBaseParam.loginId;
         }
         simLoginRequest.hid = loginBaseParam.hid + "";
@@ -239,7 +239,7 @@ public class UserLoginServiceImpl {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (!TextUtils.isEmpty(loginBaseParam.snsTrustLoginToken)) {
+        if (!StringUtils.isEmpty(loginBaseParam.snsTrustLoginToken)) {
             map2.put(ApiConstants.ApiField.SNS_TRUST_LOGIN_TOKEN, loginBaseParam.snsTrustLoginToken);
         }
         addOuterExt(loginBaseParam, map2);
@@ -259,12 +259,12 @@ public class UserLoginServiceImpl {
             if (memberRequestBase.ext == null) {
                 memberRequestBase.ext = new HashMap();
             }
-            LoginStatus.firstLogin = TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId());
+            LoginStatus.firstLogin = StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getOldUserId());
             memberRequestBase.ext.put("firstLogin", String.valueOf(LoginStatus.firstLogin));
             String apiRefer = ApiReferer.getApiRefer();
-            if (!TextUtils.isEmpty(LoginContext.mFrom)) {
+            if (!StringUtils.isEmpty(LoginContext.mFrom)) {
                 memberRequestBase.ext.put("aFrom", LoginContext.mFrom);
-            } else if (!TextUtils.isEmpty(apiRefer)) {
+            } else if (!StringUtils.isEmpty(apiRefer)) {
                 memberRequestBase.ext.put("aFrom", apiRefer);
             }
             if (DataProviderFactory.getDataProvider().getExternalData() != null) {
@@ -274,7 +274,7 @@ public class UserLoginServiceImpl {
                 return;
             }
             String value = LoginCookieUtils.getValue("miid");
-            if (!TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(value)) {
                 memberRequestBase.ext.put("miid", value);
                 LoginTLogAdapter.e("Ext", "miid =" + value);
                 return;
@@ -401,7 +401,7 @@ public class UserLoginServiceImpl {
         if (rpcResponse != null) {
             try {
                 if (rpcResponse.actionType != null) {
-                    if (loginBaseParam != null && !TextUtils.isEmpty(loginBaseParam.utPageName)) {
+                    if (loginBaseParam != null && !StringUtils.isEmpty(loginBaseParam.utPageName)) {
                         str = loginBaseParam.utPageName;
                     } else {
                         str = (loginBaseParam == null || !loginBaseParam.isFromAccount) ? UTConstant.PageName.UT_PAGE_FIRST_LOGIN : UTConstant.PageName.UT_PAGE_HISTORY_LOGIN;
@@ -409,10 +409,10 @@ public class UserLoginServiceImpl {
                     if ("SUCCESS".equals(rpcResponse.actionType)) {
                         Properties properties = LoginComponent.getProperties(loginBaseParam);
                         properties.setProperty(UTConstant.Args.UT_PROPERTY_SUCCESS, "T");
-                        if (!TextUtils.isEmpty(loginBaseParam.source)) {
-                            if (TextUtils.equals("Page_Login5-Reg", loginBaseParam.source)) {
+                        if (!StringUtils.isEmpty(loginBaseParam.source)) {
+                            if (StringUtils.equals("Page_Login5-Reg", loginBaseParam.source)) {
                                 properties.setProperty("source", "Page_Login5-RegistSuc");
-                            } else if (TextUtils.equals("Page_Login5-Login", loginBaseParam.source)) {
+                            } else if (StringUtils.equals("Page_Login5-Login", loginBaseParam.source)) {
                                 properties.setProperty("source", "Page_Login5-LoginSuc");
                             }
                         }
@@ -460,7 +460,7 @@ public class UserLoginServiceImpl {
         Properties properties = LoginComponent.getProperties(loginBaseParam);
         properties.setProperty(UTConstant.Args.UT_PROPERTY_SUCCESS, UTConstant.Args.UT_SUCCESS_F);
         String valueOf = rpcResponse != null ? String.valueOf(rpcResponse.code) : UTConstant.CustomEvent.UT_NETWORK_FAIL;
-        if (loginBaseParam != null && !TextUtils.isEmpty(loginBaseParam.utPageName)) {
+        if (loginBaseParam != null && !StringUtils.isEmpty(loginBaseParam.utPageName)) {
             str = loginBaseParam.utPageName;
         } else if (loginBaseParam != null && loginBaseParam.isFromAccount) {
             properties.setProperty("type", "NoFirstLoginFailure");
@@ -486,10 +486,10 @@ public class UserLoginServiceImpl {
                     if ("SUCCESS".equals(rpcResponse.actionType)) {
                         Properties properties = LoginComponent.getProperties(loginBaseParam);
                         properties.setProperty(UTConstant.Args.UT_PROPERTY_SUCCESS, "T");
-                        if (!TextUtils.isEmpty(loginBaseParam.source)) {
-                            if (TextUtils.equals("Page_Login5-Reg", loginBaseParam.source)) {
+                        if (!StringUtils.isEmpty(loginBaseParam.source)) {
+                            if (StringUtils.equals("Page_Login5-Reg", loginBaseParam.source)) {
                                 properties.setProperty("source", "Page_Login5-RegistSuc");
-                            } else if (TextUtils.equals("Page_Login5-Login", loginBaseParam.source)) {
+                            } else if (StringUtils.equals("Page_Login5-Login", loginBaseParam.source)) {
                                 properties.setProperty("source", "Page_Login5-LoginSuc");
                             }
                         }
@@ -575,7 +575,7 @@ public class UserLoginServiceImpl {
         }
         rpcRequest.API_NAME = ApiConstants.ApiName.TOKEN_LOGIN;
         rpcRequest.VERSION = "1.0";
-        if (!TextUtils.isEmpty(loginBaseParam.snsTrustLoginToken)) {
+        if (!StringUtils.isEmpty(loginBaseParam.snsTrustLoginToken)) {
             map.put(ApiConstants.ApiField.SNS_TRUST_LOGIN_TOKEN, loginBaseParam.snsTrustLoginToken);
         }
         addOuterExt(loginBaseParam, map);
@@ -605,7 +605,7 @@ public class UserLoginServiceImpl {
             }
         }
         String str = UTConstant.PageName.UT_PAGE_EXTEND;
-        if (!TextUtils.isEmpty(loginBaseParam.utPageName)) {
+        if (!StringUtils.isEmpty(loginBaseParam.utPageName)) {
             str = loginBaseParam.utPageName;
         }
         if (rpcResponse != null && rpcResponse.actionType != null) {
@@ -615,10 +615,10 @@ public class UserLoginServiceImpl {
                 Properties properties = new Properties();
                 properties.setProperty(UTConstant.Args.UT_PROPERTY_SUCCESS, "T");
                 properties.setProperty("type", "ContinueLoginSuccess");
-                if (!TextUtils.isEmpty(loginBaseParam.source)) {
-                    if (TextUtils.equals("Page_Login5-Reg", loginBaseParam.source)) {
+                if (!StringUtils.isEmpty(loginBaseParam.source)) {
+                    if (StringUtils.equals("Page_Login5-Reg", loginBaseParam.source)) {
                         properties.setProperty("source", "Page_Login5-RegistSuc");
-                    } else if (TextUtils.equals("Page_Login5-Login", loginBaseParam.source)) {
+                    } else if (StringUtils.equals("Page_Login5-Login", loginBaseParam.source)) {
                         properties.setProperty("source", "Page_Login5-LoginSuc");
                     }
                 }
@@ -628,7 +628,7 @@ public class UserLoginServiceImpl {
                 }
                 properties.setProperty("continueLogin", str2);
                 String loginTypeByTraceId = UTConstant.getLoginTypeByTraceId(loginBaseParam.sdkTraceId);
-                if (TextUtils.isEmpty(loginTypeByTraceId)) {
+                if (StringUtils.isEmpty(loginTypeByTraceId)) {
                     loginTypeByTraceId = UTConstant.getLoginTypeByTokenType(loginBaseParam.tokenType);
                 }
                 properties.setProperty("loginId", loginBaseParam.loginId + "");
@@ -645,7 +645,7 @@ public class UserLoginServiceImpl {
                 }
                 properties2.setProperty("continueLogin", str2);
                 String loginTypeByTraceId2 = UTConstant.getLoginTypeByTraceId(loginBaseParam.sdkTraceId);
-                if (TextUtils.isEmpty(loginTypeByTraceId2)) {
+                if (StringUtils.isEmpty(loginTypeByTraceId2)) {
                     loginTypeByTraceId2 = UTConstant.getLoginTypeByTokenType(loginBaseParam.tokenType);
                 }
                 UserTrackAdapter.sendUT(str, UTConstant.CustomEvent.UT_LOGIN_FAIL, rpcResponse.code + "", loginTypeByTraceId2, properties2);
@@ -677,7 +677,7 @@ public class UserLoginServiceImpl {
         }
         if (loginBaseParam != null) {
             str2 = UTConstant.getLoginTypeByTraceId(loginBaseParam.sdkTraceId);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = UTConstant.getLoginTypeByTokenType(loginBaseParam.tokenType);
             }
         } else {
@@ -745,17 +745,17 @@ public class UserLoginServiceImpl {
         applyTokenRequest.appVersion = AppInfo.getInstance().getAndroidAppVersion();
         applyTokenRequest.sdkVersion = AppInfo.getInstance().getSdkVersion();
         applyTokenRequest.site = i;
-        if (!TextUtils.isEmpty(str) && (findHistoryAccount = SecurityGuardManagerWraper.findHistoryAccount(Long.parseLong(str))) != null) {
+        if (!StringUtils.isEmpty(str) && (findHistoryAccount = SecurityGuardManagerWraper.findHistoryAccount(Long.parseLong(str))) != null) {
             applyTokenRequest.deviceTokenKey = findHistoryAccount.tokenKey;
             DeviceTokenSignParam deviceTokenSignParam = new DeviceTokenSignParam();
-            if (!TextUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
+            if (!StringUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
                 deviceTokenSignParam.addAppKey(DataProviderFactory.getDataProvider().getAppkey());
             }
             deviceTokenSignParam.addAppVersion(AppInfo.getInstance().getAndroidAppVersion());
             deviceTokenSignParam.addHavanaId(str);
             deviceTokenSignParam.addTimestamp(String.valueOf(applyTokenRequest.t));
             deviceTokenSignParam.addSDKVersion(AppInfo.getInstance().getSdkVersion());
-            if (!TextUtils.isEmpty(findHistoryAccount.tokenKey)) {
+            if (!StringUtils.isEmpty(findHistoryAccount.tokenKey)) {
                 applyTokenRequest.deviceTokenSign = AlibabaSecurityTokenService.sign(findHistoryAccount.tokenKey, deviceTokenSignParam.build());
             }
         }
@@ -950,7 +950,7 @@ public class UserLoginServiceImpl {
         loginRequestBase.site = DataProviderFactory.getDataProvider().getSite();
         loginRequestBase.locale = ResourceUtil.getLocaleStr();
         loginRequestBase.t = System.currentTimeMillis();
-        if (z && loginBaseParam != null && loginBaseParam.hid != 0 && !TextUtils.isEmpty(loginBaseParam.deviceTokenKey)) {
+        if (z && loginBaseParam != null && loginBaseParam.hid != 0 && !StringUtils.isEmpty(loginBaseParam.deviceTokenKey)) {
             loginRequestBase.deviceTokenKey = loginBaseParam.deviceTokenKey;
             DeviceTokenSignParam deviceTokenSignParam = new DeviceTokenSignParam();
             deviceTokenSignParam.addAppKey(DataProviderFactory.getDataProvider().getAppkey());
@@ -995,7 +995,7 @@ public class UserLoginServiceImpl {
             if (loginRequestBase.ext == null) {
                 loginRequestBase.ext = new HashMap();
             }
-            if (TextUtils.isEmpty(LoginContext.mFrom)) {
+            if (StringUtils.isEmpty(LoginContext.mFrom)) {
                 return;
             }
             loginRequestBase.ext.put("aFrom", LoginContext.mFrom);
@@ -1006,9 +1006,9 @@ public class UserLoginServiceImpl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("677aac6e", new Object[]{properties});
-        } else if (!TextUtils.isEmpty(LoginContext.mFrom)) {
+        } else if (!StringUtils.isEmpty(LoginContext.mFrom)) {
             properties.setProperty("aFrom", LoginContext.mFrom);
-        } else if (TextUtils.isEmpty(ApiReferer.getApiRefer())) {
+        } else if (StringUtils.isEmpty(ApiReferer.getApiRefer())) {
         } else {
             properties.setProperty("aFrom", ApiReferer.getApiRefer());
         }

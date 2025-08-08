@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.security.realidentity.h;
 import com.alibaba.security.realidentity.i3;
@@ -52,7 +52,7 @@ public class TakePhotoApi extends BaseJsExecutor {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fdc78937", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.startsWith(k.HTTP_PREFIX)) {
+        if (StringUtils.isEmpty(str) || str.startsWith(k.HTTP_PREFIX)) {
             return str;
         }
         if (str.startsWith(ado.URL_SEPARATOR)) {
@@ -121,7 +121,7 @@ public class TakePhotoApi extends BaseJsExecutor {
                     JSONObject jSONObject = new JSONObject();
                     try {
                         jSONObject.put(BaseJsExecutor.NAME_PHOTO_TYPE, String.valueOf(imageData.d()));
-                        if (!TextUtils.isEmpty(a4)) {
+                        if (!StringUtils.isEmpty(a4)) {
                             jSONObject.put(BaseJsExecutor.NAME_GESTURE_URL, a4);
                         }
                         if (a3 != null && !"0".equals(a3.first)) {
@@ -208,7 +208,7 @@ public class TakePhotoApi extends BaseJsExecutor {
             }
             Intent intent = new Intent();
             intent.setClass(this.mContext, RPTakePhotoActivity.class);
-            intent.putExtra(BaseJsExecutor.NAME_USE_ALBUM, TextUtils.equals(optString, "1"));
+            intent.putExtra(BaseJsExecutor.NAME_USE_ALBUM, StringUtils.equals(optString, "1"));
             intent.putExtra(BaseJsExecutor.NAME_URL_ARRAY, strArr);
             intent.putExtra("token", this.mRPBizConfig.getBasicsConfig().verifyToken);
             intent.putExtra(BaseJsExecutor.NAME_TYPE_ARRAY, iArr);

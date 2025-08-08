@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.pre;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.core.impl.TBLiveDataProvider;
 import com.taobao.taolive.sdk.utils.n;
@@ -114,7 +114,7 @@ public class a {
             ipChange.ipc$dispatch("82582d00", new Object[]{this, new Boolean(z), liveDetailPreRequestParams});
         } else if (liveDetailPreRequestParams == null) {
             n.b(TAG, "params null");
-        } else if (!z && TextUtils.isEmpty(liveDetailPreRequestParams.feedId)) {
+        } else if (!z && StringUtils.isEmpty(liveDetailPreRequestParams.feedId)) {
             n.b(TAG, "params feedid null");
         } else {
             PreRequestInfo preRequestInfo = new PreRequestInfo();
@@ -149,7 +149,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("15bed232", new Object[]{this, str, aVar, bVar});
-        } else if (TextUtils.isEmpty(str) || !this.f21672a.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.f21672a.containsKey(str)) {
         } else {
             PreRequestInfo preRequestInfo = this.f21672a.get(str);
             if (preRequestInfo.preRequest == null) {
@@ -163,7 +163,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !this.f21672a.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.f21672a.containsKey(str)) {
         } else {
             PreRequestInfo preRequestInfo = this.f21672a.get(str);
             if (preRequestInfo.preRequest != null) {
@@ -175,6 +175,6 @@ public class a {
 
     public boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && this.f21672a.containsKey(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && this.f21672a.containsKey(str);
     }
 }

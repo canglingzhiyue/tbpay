@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.util.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.trace.TraceLogger;
@@ -26,7 +26,7 @@ public class GrayScaleUtils {
             return ((Boolean) ipChange.ipc$dispatch("cdbc5442", new Object[]{str, new Boolean(z)})).booleanValue();
         }
         String a2 = a(str);
-        return !TextUtils.isEmpty(a2) ? grayscaleUtdid(LoggerFactory.getLogContext().getDeviceId(), a2) : z;
+        return !StringUtils.isEmpty(a2) ? grayscaleUtdid(LoggerFactory.getLogContext().getDeviceId(), a2) : z;
     }
 
     public static int getIntSwitch(String str, int i) {
@@ -35,7 +35,7 @@ public class GrayScaleUtils {
             return ((Number) ipChange.ipc$dispatch("d72c2698", new Object[]{str, new Integer(i)})).intValue();
         }
         String a2 = a(str);
-        return TextUtils.isEmpty(a2) ? i : Integer.valueOf(a2).intValue();
+        return StringUtils.isEmpty(a2) ? i : Integer.valueOf(a2).intValue();
     }
 
     public static String getStringSwitch(String str, String str2) {
@@ -44,7 +44,7 @@ public class GrayScaleUtils {
             return (String) ipChange.ipc$dispatch("b69c572a", new Object[]{str, str2});
         }
         String a2 = a(str);
-        return TextUtils.isEmpty(a2) ? str2 : a2;
+        return StringUtils.isEmpty(a2) ? str2 : a2;
     }
 
     private static String a(String str) {
@@ -67,7 +67,7 @@ public class GrayScaleUtils {
         }
         b = currentTimeMillis;
         String string = LoggerFactory.getLogContext().getApplicationContext().getSharedPreferences("LOG_SWITCH_MDAP_CORE", 4).getString(LogContext.LOG_SWITCH_MDAP_CORE, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {
@@ -89,7 +89,7 @@ public class GrayScaleUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("73978218", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.equals(str2, "0") && !TextUtils.equals(str2, "-1")) {
+        if (!StringUtils.equals(str2, "0") && !StringUtils.equals(str2, "-1")) {
             try {
                 String[] split = str2.split(",");
                 int[] iArr = new int[split.length];

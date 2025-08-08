@@ -2,7 +2,7 @@ package mtopsdk.mtop.util;
 
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ExecutorService;
@@ -426,7 +426,7 @@ public class MtopSDKThreadPoolExecutorFactory {
             return ((Number) ipChange.ipc$dispatch("ce2db479", new Object[0])).intValue();
         }
         if (sKeepLiveTime == 0) {
-            if (SwitchConfig.getInstance().isOptThreadAliveTime() || TextUtils.equals(Build.BRAND, "HUAWEI") || TextUtils.equals(Build.BRAND, "HONOR")) {
+            if (SwitchConfig.getInstance().isOptThreadAliveTime() || StringUtils.equals(Build.BRAND, "HUAWEI") || StringUtils.equals(Build.BRAND, "HONOR")) {
                 sKeepLiveTime = 5;
             } else {
                 sKeepLiveTime = 120;

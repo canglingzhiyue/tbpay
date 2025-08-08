@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.share.multiapp.ShareBizAdapter;
@@ -165,7 +165,7 @@ public class obi {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
         String a2 = a(str, null);
-        if (TextUtils.isEmpty(a2) || a2.charAt(0) != '#') {
+        if (StringUtils.isEmpty(a2) || a2.charAt(0) != '#') {
             return -1;
         }
         try {
@@ -181,14 +181,14 @@ public class obi {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
         String config = OrangeConfig.getInstance().getConfig("shareui_theme", str, str2);
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             return config;
         }
         try {
             Context applicationContext = ShareBizAdapter.getInstance().getAppEnv().b().getApplicationContext();
             Resources resources = applicationContext.getResources();
             String string = resources.getString(resources.getIdentifier(str, "string", applicationContext.getPackageName()));
-            return TextUtils.isEmpty(string) ? str2 : string;
+            return StringUtils.isEmpty(string) ? str2 : string;
         } catch (Exception unused) {
             return str2;
         }

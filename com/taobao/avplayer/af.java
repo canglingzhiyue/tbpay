@@ -1,7 +1,7 @@
 package com.taobao.avplayer;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.CodeUsageCounter;
 import com.ut.share.business.ShareBusiness;
@@ -32,7 +32,7 @@ public class af implements com.taobao.avplayer.common.ac {
         shareContent.businessId = str5;
         shareContent.description = "剁手党无法抵抗的视频，你还不来看吗？";
         shareContent.imageUrl = str3;
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             shareContent.url = str4;
         }
         shareContent.wwMsgType = WWMessageType.WWMessageTypeDefault;

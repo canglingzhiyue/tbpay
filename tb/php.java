@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aa;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class php {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         String a2 = aa.a(b());
-        return !TextUtils.isEmpty(a2) && a2.contains(str);
+        return !StringUtils.isEmpty(a2) && a2.contains(str);
     }
 
     private String b() {

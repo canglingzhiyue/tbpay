@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.MotionEvent;
 import android.view.View;
@@ -453,19 +453,19 @@ public class b extends Dialog {
         d();
         e();
         FetchComponentData.FetchModel.ComponentData componentData = this.s;
-        if (componentData != null && !TextUtils.isEmpty(componentData.areaName)) {
+        if (componentData != null && !StringUtils.isEmpty(componentData.areaName)) {
             this.j.setText(this.s.areaName);
         }
         FetchComponentData.FetchModel.ComponentData componentData2 = this.s;
-        if (componentData2 != null && !TextUtils.isEmpty(componentData2.planLiteName)) {
+        if (componentData2 != null && !StringUtils.isEmpty(componentData2.planLiteName)) {
             this.k.setText(this.s.planLiteName);
         }
         FetchComponentData.FetchModel.ComponentData componentData3 = this.s;
-        if (componentData3 != null && !TextUtils.isEmpty(componentData3.planName)) {
+        if (componentData3 != null && !StringUtils.isEmpty(componentData3.planName)) {
             this.k.setText(this.s.planName);
         }
         FetchComponentData.FetchModel.ComponentData componentData4 = this.s;
-        if (componentData4 != null && !TextUtils.isEmpty(componentData4.networkName)) {
+        if (componentData4 != null && !StringUtils.isEmpty(componentData4.networkName)) {
             this.l.setText(this.s.networkName);
         }
         FetchComponentData.FetchModel.ComponentData componentData5 = this.s;
@@ -473,12 +473,12 @@ public class b extends Dialog {
             this.e.setVisibility(8);
         } else {
             this.e.setVisibility(0);
-            if (!TextUtils.isEmpty(this.s.phoneNumberName)) {
+            if (!StringUtils.isEmpty(this.s.phoneNumberName)) {
                 this.m.setText(this.s.phoneNumberName);
             }
         }
         ContractNode.Version version = this.u;
-        if (version != null && !TextUtils.isEmpty(version.secondJumpTitle)) {
+        if (version != null && !StringUtils.isEmpty(version.secondJumpTitle)) {
             this.p.setText(this.u.secondJumpTitle);
         }
         k();
@@ -623,16 +623,16 @@ public class b extends Dialog {
         if (contractSelectedRet == null || this.u == null || contractSelectedRet.versionCode == null || !this.t.versionCode.equals(this.u.versionCode)) {
             return;
         }
-        if (!TextUtils.isEmpty(this.t.cityName) && this.t.selectedCity != null) {
+        if (!StringUtils.isEmpty(this.t.cityName) && this.t.selectedCity != null) {
             a((ContractCityInfo) JSON.parseObject(this.t.selectedCity, ContractCityInfo.class));
         }
-        if (!TextUtils.isEmpty(this.t.planName) && this.t.selectedPlan != null) {
+        if (!StringUtils.isEmpty(this.t.planName) && this.t.selectedPlan != null) {
             a((FetchComponentData.FetchModel.ComponentData.Plan) JSON.parseObject(this.t.selectedPlan, FetchComponentData.FetchModel.ComponentData.Plan.class));
         }
-        if (!TextUtils.isEmpty(this.t.networkName) && this.t.selectedNetwork != null) {
+        if (!StringUtils.isEmpty(this.t.networkName) && this.t.selectedNetwork != null) {
             a((FetchComponentData.FetchModel.ComponentData.Network) JSON.parseObject(this.t.selectedNetwork, FetchComponentData.FetchModel.ComponentData.Network.class));
         }
-        if (!TextUtils.isEmpty(this.t.phoneNumber) && !"号码随机".equals(this.t.phoneNumber)) {
+        if (!StringUtils.isEmpty(this.t.phoneNumber) && !"号码随机".equals(this.t.phoneNumber)) {
             a(this.t.phoneNumber);
         }
         this.J = this.t.isSelectedComplete;
@@ -729,7 +729,7 @@ public class b extends Dialog {
         } else {
             this.J = false;
             this.E = str;
-            if (!TextUtils.isEmpty(this.E)) {
+            if (!StringUtils.isEmpty(this.E)) {
                 this.i.setText(dwf.a(this.E));
                 this.i.setTextColor(-16777216);
             }
@@ -815,7 +815,7 @@ public class b extends Dialog {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[]{this})).booleanValue();
         }
-        if ((this.b.getVisibility() == 0 && this.B == null) || ((this.c.getVisibility() == 0 && this.C == null) || ((this.d.getVisibility() == 0 && this.D == null) || (this.e.getVisibility() == 0 && TextUtils.isEmpty(this.E))))) {
+        if ((this.b.getVisibility() == 0 && this.B == null) || ((this.c.getVisibility() == 0 && this.C == null) || ((this.d.getVisibility() == 0 && this.D == null) || (this.e.getVisibility() == 0 && StringUtils.isEmpty(this.E))))) {
             this.n.setClickable(false);
             this.n.setBackgroundResource(R.drawable.detail_contractphone_gray_corners_bg);
             return false;
@@ -854,7 +854,7 @@ public class b extends Dialog {
         } else {
             str2 = str + "_0_0";
         }
-        if (!TextUtils.isEmpty(this.E) && !"号码随机".equals(this.E)) {
+        if (!StringUtils.isEmpty(this.E) && !"号码随机".equals(this.E)) {
             str3 = str2 + "_" + this.E;
             contractSelectedRet.phoneNumber = this.E;
         } else {
@@ -938,7 +938,7 @@ public class b extends Dialog {
                         if (PreholdingPhoneNumberData.PRE_SUCCESS.equals(mo2429getData.errorCode)) {
                             b.a(b.this, true);
                             b.this.onBackPressed();
-                        } else if (!TextUtils.isEmpty(mo2429getData.errorMsg)) {
+                        } else if (!StringUtils.isEmpty(mo2429getData.errorMsg)) {
                             Toast.makeText(b.this.getContext(), mo2429getData.errorMsg, 0).show();
                         } else {
                             Toast.makeText(b.this.getContext(), "预占号码失败~", 0).show();
@@ -1068,7 +1068,7 @@ public class b extends Dialog {
             this.e = (TextView) findViewById(R.id.detail_phonenumber_area_letter_text);
             this.f = (PhonenumSideBar) findViewById(R.id.detail_phonenumber_area_letter_sidebar);
             this.g = (ImageView) findViewById(R.id.detail_phonenumber_area_back_iv);
-            if (!TextUtils.isEmpty(this.l)) {
+            if (!StringUtils.isEmpty(this.l)) {
                 this.c.setText(this.l);
             }
             View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.taobao.android.detail.alicom.widget.b.a.1
@@ -1102,7 +1102,7 @@ public class b extends Dialog {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                    } else if (a.a(a.this) == null || TextUtils.isEmpty(str) || (positionForSection = a.a(a.this).getPositionForSection(str.charAt(0))) == -1) {
+                    } else if (a.a(a.this) == null || StringUtils.isEmpty(str) || (positionForSection = a.a(a.this).getPositionForSection(str.charAt(0))) == -1) {
                     } else {
                         a.b(a.this).setSelection(positionForSection);
                     }
@@ -1211,7 +1211,7 @@ public class b extends Dialog {
             this.e = (ListView) findViewById(R.id.detail_phonenumber_plan_list);
             this.f = (ImageView) findViewById(R.id.detail_phonenumber_plan_back_iv);
             this.g = (TextView) findViewById(R.id.detail_phonenumber_plan_descrip_tv);
-            if (!TextUtils.isEmpty(this.j)) {
+            if (!StringUtils.isEmpty(this.j)) {
                 this.d.setText(this.j);
             }
             View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.taobao.android.detail.alicom.widget.b.d.1
@@ -1257,7 +1257,7 @@ public class b extends Dialog {
             this.h.setSelectItem(i);
             this.h.notifyDataSetChanged();
             List<FetchComponentData.FetchModel.ComponentData.Plan> list = this.c;
-            if (list != null && list.get(this.i) != null && !TextUtils.isEmpty(this.c.get(this.i).contractDesc)) {
+            if (list != null && list.get(this.i) != null && !StringUtils.isEmpty(this.c.get(this.i).contractDesc)) {
                 TextView textView = this.g;
                 textView.setText("温馨提示：" + this.c.get(this.i).contractDesc);
                 return;
@@ -1337,7 +1337,7 @@ public class b extends Dialog {
             this.c = (TextView) findViewById(R.id.detail_phonenumber_network_dialog_title_tv);
             this.d = (ImageView) findViewById(R.id.detail_phonenumber_network_back_iv);
             this.e = (ListView) findViewById(R.id.detail_phonenumber_network_list);
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 this.c.setText(this.h);
             }
             View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.taobao.android.detail.alicom.widget.b.b.1
@@ -1543,7 +1543,7 @@ public class b extends Dialog {
             this.i = (TextView) findViewById(R.id.detail_phonenumber_number_search_bn);
             this.j = findViewById(R.id.detail_phonenumber_number_mask);
             this.k = (TBCircularProgress) findViewById(R.id.detail_phonenumber_number_query_progressBar);
-            if (!TextUtils.isEmpty(this.o)) {
+            if (!StringUtils.isEmpty(this.o)) {
                 this.c.setText(this.o);
             }
             View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.taobao.android.detail.alicom.widget.b.c.1
@@ -1569,7 +1569,7 @@ public class b extends Dialog {
                     } else {
                         String str = "关闭";
                         if (!str.equals(c.c(c.this).getText().toString())) {
-                            if (!TextUtils.isEmpty(c.b(c.this).getText())) {
+                            if (!StringUtils.isEmpty(c.b(c.this).getText())) {
                                 c = c.c(c.this);
                             }
                             c.a(c.this);
@@ -1597,7 +1597,7 @@ public class b extends Dialog {
                         return;
                     }
                     String str = b.c.d(b.c.this).mo841getItem(i) != null ? b.c.d(b.c.this).mo841getItem(i).phoneNum : "";
-                    if (b.c.d(b.c.this) != null && !TextUtils.isEmpty(str)) {
+                    if (b.c.d(b.c.this) != null && !StringUtils.isEmpty(str)) {
                         b.b(b.this, str);
                         b.c.this.onBackPressed();
                     }
@@ -1778,7 +1778,7 @@ public class b extends Dialog {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("3c6e0ed6", new Object[]{this, list, str})).intValue();
             }
-            if (list == null || TextUtils.isEmpty(str)) {
+            if (list == null || StringUtils.isEmpty(str)) {
                 return -1;
             }
             for (int i = 0; i < list.size(); i++) {
@@ -1813,7 +1813,7 @@ public class b extends Dialog {
                             QueryContractPhoneNumberData mo2429getData = ((QueryContractPhoneNumberResult) baseOutDo).mo2429getData();
                             b.c.f(b.c.this);
                             if (mo2429getData != null) {
-                                if (mo2429getData.module != null && mo2429getData.module.size() > 0 && mo2429getData.module.get(0) != null && !TextUtils.isEmpty(mo2429getData.module.get(0).phoneNum)) {
+                                if (mo2429getData.module != null && mo2429getData.module.size() > 0 && mo2429getData.module.get(0) != null && !StringUtils.isEmpty(mo2429getData.module.get(0).phoneNum)) {
                                     if (mo2429getData.module.size() < 20) {
                                         b.c.g(b.c.this).setVisibility(8);
                                     } else {
@@ -1823,9 +1823,9 @@ public class b extends Dialog {
                                 } else {
                                     b.c.g(b.c.this).setVisibility(8);
                                     b.c.d(b.c.this).update(null);
-                                    if (!TextUtils.isEmpty(mo2429getData.errorMsg)) {
+                                    if (!StringUtils.isEmpty(mo2429getData.errorMsg)) {
                                         b.c.h(b.c.this).setText(mo2429getData.errorMsg);
-                                    } else if (!TextUtils.isEmpty(b.c.b(b.c.this).getText().toString())) {
+                                    } else if (!StringUtils.isEmpty(b.c.b(b.c.this).getText().toString())) {
                                         b.c.h(b.c.this).setText("亲！好可惜，没有找到匹配的号码噢");
                                     } else {
                                         b.c.h(b.c.this).setText("号码被抢光了，请尝试更换套餐、制式或者地区再查找号码吧。");

@@ -2,7 +2,7 @@ package com.vivo.push.f;
 
 import android.content.Context;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 import com.vivo.push.model.NotifyArriveCallbackByUser;
 import com.vivo.push.sdk.PushMessageCallback;
@@ -44,7 +44,7 @@ final class v implements Runnable {
             HashMap hashMap = new HashMap();
             hashMap.put("messageID", String.valueOf(this.b.f()));
             String a3 = com.vivo.push.restructure.a.a().e().a();
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 hashMap.put("remoteAppId", a3);
             }
             context9 = this.c.f24241a;
@@ -66,7 +66,7 @@ final class v implements Runnable {
             HashMap hashMap2 = new HashMap();
             hashMap2.put("messageID", String.valueOf(this.b.f()));
             String a4 = com.vivo.push.restructure.a.a().e().a();
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 hashMap2.put("remoteAppId", a4);
             }
             com.vivo.push.util.f.a(b, hashMap2);
@@ -80,10 +80,10 @@ final class v implements Runnable {
         com.vivo.push.util.p pVar = new com.vivo.push.util.p(context2, insideNotificationItem, f, pushMessageCallback2.isAllowNet(context3), new w(this), onNotificationMessageArrived);
         boolean isShowBigPicOnMobileNet = this.f24200a.isShowBigPicOnMobileNet();
         String purePicUrl = this.f24200a.getPurePicUrl();
-        if (TextUtils.isEmpty(purePicUrl)) {
+        if (StringUtils.isEmpty(purePicUrl)) {
             purePicUrl = this.f24200a.getCoverUrl();
         }
-        if (!TextUtils.isEmpty(purePicUrl)) {
+        if (!StringUtils.isEmpty(purePicUrl)) {
             com.vivo.push.util.u.c("OnNotificationArrivedTask", "showCode=".concat(String.valueOf(isShowBigPicOnMobileNet)));
             if (!isShowBigPicOnMobileNet) {
                 context5 = this.c.f24241a;

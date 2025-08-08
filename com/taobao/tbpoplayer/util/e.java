@@ -8,7 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.track.module.OnePopModule;
@@ -56,7 +56,7 @@ public class e {
             return ((Number) ipChange.ipc$dispatch("3dd7e567", new Object[]{str})).longValue();
         }
         long j = 0;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         int length = str.length();
@@ -78,7 +78,7 @@ public class e {
         }
         try {
             for (String str2 : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     Object obj = jSONObject.get(str2);
                     if (str2.equals(str)) {
                         if (obj != null) {
@@ -124,7 +124,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 return Uri.parse(str).getQueryParameter(str2);
             } catch (Throwable th) {
@@ -184,11 +184,11 @@ public class e {
         }
         try {
             String packageName = context.getPackageName();
-            String str2 = !TextUtils.isEmpty(packageName) ? "market://details?id=" + packageName : "";
-            if (TextUtils.isEmpty(str)) {
+            String str2 = !StringUtils.isEmpty(packageName) ? "market://details?id=" + packageName : "";
+            if (StringUtils.isEmpty(str)) {
                 str = str2;
             }
-            if (!TextUtils.isEmpty(str) && (queryIntentActivities = context.getPackageManager().queryIntentActivities((intent = new Intent("android.intent.action.VIEW", Uri.parse(str))), 65536)) != null) {
+            if (!StringUtils.isEmpty(str) && (queryIntentActivities = context.getPackageManager().queryIntentActivities((intent = new Intent("android.intent.action.VIEW", Uri.parse(str))), 65536)) != null) {
                 for (ResolveInfo resolveInfo : queryIntentActivities) {
                     if ((resolveInfo.activityInfo.applicationInfo.flags & 1) != 0) {
                         intent.setComponent(new ComponentName(resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.name));

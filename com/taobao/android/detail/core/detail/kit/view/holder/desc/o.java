@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,23 +74,23 @@ public class o extends b<com.taobao.android.detail.core.model.viewmodel.desc.l> 
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("1c8de2f7", new Object[]{this, lVar});
         }
-        if (!TextUtils.isEmpty(lVar.f9760a)) {
+        if (!StringUtils.isEmpty(lVar.f9760a)) {
             com.taobao.android.detail.core.detail.kit.utils.f.a(this.g).a(this.l, lVar.f9760a);
         }
-        if (!TextUtils.isEmpty(lVar.b)) {
+        if (!StringUtils.isEmpty(lVar.b)) {
             this.m.setText(lVar.b);
         } else {
             this.m.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(lVar.c)) {
+        if (!StringUtils.isEmpty(lVar.c)) {
             this.n.setText(lVar.c);
         } else {
             this.n.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(lVar.d)) {
+        if (!StringUtils.isEmpty(lVar.d)) {
             this.o.setText(lVar.d);
         }
-        if (!TextUtils.isEmpty(lVar.e)) {
+        if (!StringUtils.isEmpty(lVar.e)) {
             final String str = lVar.e;
             this.k.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.android.detail.core.detail.kit.view.holder.desc.o.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

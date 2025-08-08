@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.data.remote;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -74,7 +74,7 @@ public class d {
             ipChange.ipc$dispatch("d52e819e", new Object[]{str, str2, new Boolean(z), iRemoteBaseListener});
             return;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             c = d();
         } else {
             c = c();
@@ -100,7 +100,7 @@ public class d {
         jSONObject.put("v", (Object) "3.0");
         jSONObject.put(MspGlobalDefine.SESSION, (Object) 1);
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("videoId", str);
         } else {
             hashMap.put("videoId", "0");
@@ -127,7 +127,7 @@ public class d {
         jSONObject.put("v", (Object) str2);
         jSONObject.put(MspGlobalDefine.SESSION, (Object) 1);
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("videoId", str3);
         } else {
             hashMap.put("videoId", "0");
@@ -136,7 +136,7 @@ public class d {
         hashMap.put("source", "guangguang_pick");
         HashMap hashMap2 = new HashMap(1);
         hashMap2.put(c.KEY_ENABLE_SERVER_ABR, "true");
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap2.put("itemId", str4);
         }
         hashMap.put(a.KEY_EXTEND_PARAMETERS, JSON.toJSONString(hashMap2));
@@ -181,7 +181,7 @@ public class d {
             sb.append("https://market.m.taobao.com/app/tb-source-app/video-fullpage/pages/index2?");
             sb.append("id=88888888&type=guangguang_pick&source=guangguang_pick&detailParameters={\"switchMode\":\"default\"}");
             sb.append("&extParams=");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             sb.append(URLEncoder.encode(str, "utf-8"));
@@ -199,7 +199,7 @@ public class d {
             return;
         }
         String a2 = oeb.a("ShortVideo.globalH5InteractMtopConfig", (String) null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         JSONObject parseObject = JSON.parseObject(a2);
@@ -215,7 +215,7 @@ public class d {
             jSONObject = new JSONObject();
         }
         JSONObject jSONObject3 = new JSONObject();
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         jSONObject3.put("api", (Object) string);

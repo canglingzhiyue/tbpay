@@ -1,6 +1,6 @@
 package com.taobao.tao.powermsg.outter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Pair;
 import com.alibaba.ability.e;
@@ -128,7 +128,7 @@ public class PowerMsgAbility extends alm {
                 }
                 MsgLog.c("PowerMsgAbility", th, "postStreamMessage err");
             }
-            if (TextUtils.isEmpty(this.e) || !this.e.equals(powerMessage.streamId)) {
+            if (StringUtils.isEmpty(this.e) || !this.e.equals(powerMessage.streamId)) {
                 this.e = powerMessage.streamId;
                 this.f = powerMessage.seqNum;
             } else if (powerMessage.seqNum < this.f || powerMessage.seqNum - this.f > 1) {
@@ -174,7 +174,7 @@ public class PowerMsgAbility extends alm {
                 jSONObject.put("errorCode", (Object) 5000);
                 jSONObject.put("msg", "msg = NULL");
                 a(jSONObject, "onError");
-            } else if (TextUtils.isEmpty(powerMessage.streamId)) {
+            } else if (StringUtils.isEmpty(powerMessage.streamId)) {
             } else {
                 Pair<AtomicInteger, PriorityQueue<PowerMessage>> pair = this.d.get(powerMessage.streamId);
                 if (pair == null) {
@@ -493,7 +493,7 @@ public class PowerMsgAbility extends alm {
             fVar.a(e.a((Map<String, ? extends Object>) map, PowerMsg4WW.KEY_REENTRANT, (Boolean) false).booleanValue());
             try {
                 Object obj = map.get(PowerMsg4WW.KEY_SYNC_TIMEOUT);
-                if (obj != null && !TextUtils.isEmpty(String.valueOf(obj))) {
+                if (obj != null && !StringUtils.isEmpty(String.valueOf(obj))) {
                     j = Long.parseLong(String.valueOf(obj));
                     fVar.a(j);
                     a(intValue, a2, e.a((Map<String, ? extends Object>) map, "from", (String) null), a3, fVar, alnVar);
@@ -526,7 +526,7 @@ public class PowerMsgAbility extends alm {
                 return new ErrorResult("500", "unLogin or unSubscribe");
             }
             String a5 = e.a((Map<String, ? extends Object>) map, "streamId", (String) null);
-            if (TextUtils.isEmpty(a5)) {
+            if (StringUtils.isEmpty(a5)) {
                 return a$a.b("streamId is empty");
             }
             f fVar3 = new f();

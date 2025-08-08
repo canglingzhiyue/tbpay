@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Color;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridInstanceRenderMode;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -47,7 +47,7 @@ public class ohs {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {
@@ -92,7 +92,7 @@ public class ohs {
             return jSONObject;
         }
         for (JSONObject jSONObject2 : settingNewConfigResult.getSections()) {
-            if (TextUtils.equals("Page_SecondFloor", jSONObject2.getString("sectionBizCode"))) {
+            if (StringUtils.equals("Page_SecondFloor", jSONObject2.getString("sectionBizCode"))) {
                 return jSONObject2;
             }
         }
@@ -123,10 +123,10 @@ public class ohs {
         }
         e.e("SecondFloorConfigParseUtil", "parseWeexUrl targetUrl: " + str);
         String configUrl = TBWXConfigManger.getInstance().getConfigUrl(str);
-        if (TextUtils.isEmpty(configUrl) && com.taobao.homepage.page.weexv2.a.a(str)) {
+        if (StringUtils.isEmpty(configUrl) && com.taobao.homepage.page.weexv2.a.a(str)) {
             configUrl = str;
         }
-        if (TextUtils.isEmpty(configUrl)) {
+        if (StringUtils.isEmpty(configUrl)) {
             AppMonitor.Alarm.commitFail("Page_Home", ssm.MONITOR_POINT, null, "parseWeexUrlEmpty", "targetUrl: " + str);
             return str;
         }
@@ -140,7 +140,7 @@ public class ohs {
         }
         Uri parse = Uri.parse(str);
         String queryParameter = parse.isHierarchical() ? parse.getQueryParameter("_mus_tpl") : "";
-        return TextUtils.isEmpty(queryParameter) ? str : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? str : queryParameter;
     }
 
     public static double c() {
@@ -168,7 +168,7 @@ public class ohs {
             return mto.a.GEO_NOT_SUPPORT;
         }
         String string = f.getString(str);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return mto.a.GEO_NOT_SUPPORT;
         }
         try {

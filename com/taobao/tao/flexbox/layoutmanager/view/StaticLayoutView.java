@@ -11,7 +11,7 @@ import android.os.Message;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewCompat;
 import android.text.Layout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ReplacementSpan;
 import android.view.MotionEvent;
 import android.view.View;
@@ -346,8 +346,8 @@ public class StaticLayoutView extends View implements tds {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("59696304", new Object[]{this, new Boolean(z)})).booleanValue();
         }
-        if (this.textLayout != null && (!z || ((eVar = this.helper) != null && eVar.b() == TextUtils.TruncateAt.MARQUEE))) {
-            if (!TextUtils.equals(this.marquee.b, "right") && !TextUtils.equals(this.marquee.b, "left")) {
+        if (this.textLayout != null && (!z || ((eVar = this.helper) != null && eVar.b() == StringUtils.TruncateAt.MARQUEE))) {
+            if (!StringUtils.equals(this.marquee.b, "right") && !StringUtils.equals(this.marquee.b, "left")) {
                 return getDisplayHeight() < this.textLayout.getHeight();
             } else if (getDisplayWidth() < this.textLayout.getWidth()) {
                 return true;
@@ -962,7 +962,7 @@ public class StaticLayoutView extends View implements tds {
                 c();
                 Layout textLayout = StaticLayoutView.this.getTextLayout();
                 if (textLayout != null) {
-                    if (TextUtils.equals(this.b, "right") || TextUtils.equals(this.b, "left")) {
+                    if (StringUtils.equals(this.b, "right") || StringUtils.equals(this.b, "left")) {
                         if (StaticLayoutView.access$000(StaticLayoutView.this) < textLayout.getWidth()) {
                             this.j.sendEmptyMessage(0);
                         }
@@ -1060,7 +1060,7 @@ public class StaticLayoutView extends View implements tds {
             }
             c();
             Layout textLayout = StaticLayoutView.this.getTextLayout();
-            if (textLayout == null || StaticLayoutView.access$200(StaticLayoutView.this) == null || StaticLayoutView.access$200(StaticLayoutView.this).b() != TextUtils.TruncateAt.MARQUEE || StaticLayoutView.access$000(StaticLayoutView.this) >= textLayout.getWidth()) {
+            if (textLayout == null || StaticLayoutView.access$200(StaticLayoutView.this) == null || StaticLayoutView.access$200(StaticLayoutView.this).b() != StringUtils.TruncateAt.MARQUEE || StaticLayoutView.access$000(StaticLayoutView.this) >= textLayout.getWidth()) {
                 z = false;
             } else {
                 this.j.sendEmptyMessageDelayed(0, 1000L);

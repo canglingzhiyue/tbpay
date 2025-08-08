@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.sentry;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.alertsentry.Sentry;
 import com.alipay.mobile.alertsentry.trace.TraceFactory;
@@ -66,7 +66,7 @@ public class SentryHelper {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("88097ea7", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         try {

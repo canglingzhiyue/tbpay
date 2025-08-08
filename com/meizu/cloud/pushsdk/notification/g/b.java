@@ -6,7 +6,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import java.lang.reflect.Field;
@@ -77,7 +77,7 @@ public class b {
     public static void a(Context context, String str) {
         Set<String> set;
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(RemoteMessageConst.NOTIFICATION);
-        if (notificationManager == null || TextUtils.isEmpty(str) || (set = e.get(str)) == null) {
+        if (notificationManager == null || StringUtils.isEmpty(str) || (set = e.get(str)) == null) {
             return;
         }
         for (String str2 : set) {
@@ -102,7 +102,7 @@ public class b {
 
     public static boolean a(Context context, String str, String str2) {
         synchronized (d) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return false;
             }
             int c2 = com.meizu.cloud.pushsdk.util.b.c(context, str, str2);
@@ -113,7 +113,7 @@ public class b {
     }
 
     public static Uri b(Context context, String str) {
-        if (context == null || TextUtils.isEmpty(str) || RingtoneManager.getActualDefaultRingtoneUri(context, 2) == null) {
+        if (context == null || StringUtils.isEmpty(str) || RingtoneManager.getActualDefaultRingtoneUri(context, 2) == null) {
             return null;
         }
         if (f == null) {
@@ -169,7 +169,7 @@ public class b {
             r4 = 0
             long r4 = r1.getLong(r4)     // Catch: java.lang.Throwable -> L5d java.lang.Exception -> L5f
             android.net.Uri r3 = android.content.ContentUris.withAppendedId(r3, r4)     // Catch: java.lang.Throwable -> L5d java.lang.Exception -> L5f
-            boolean r4 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L5d java.lang.Exception -> L5f
+            boolean r4 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L5d java.lang.Exception -> L5f
             if (r4 != 0) goto L58
             if (r3 == 0) goto L58
             java.util.Map<java.lang.String, android.net.Uri> r4 = com.meizu.cloud.pushsdk.notification.g.b.f     // Catch: java.lang.Throwable -> L5d java.lang.Exception -> L5f

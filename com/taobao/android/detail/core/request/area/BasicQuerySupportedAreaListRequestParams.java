@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.request.area;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.request.a;
 import com.taobao.android.trade.boost.request.mtop.b;
@@ -41,13 +41,13 @@ public class BasicQuerySupportedAreaListRequestParams extends a implements b, Se
         if (map != null && map.size() > 0) {
             hashMap.putAll(this.extParam);
         }
-        if (!TextUtils.isEmpty(this.id)) {
+        if (!StringUtils.isEmpty(this.id)) {
             hashMap.put("id", this.id);
         }
-        if (!TextUtils.isEmpty(this.areaId)) {
+        if (!StringUtils.isEmpty(this.areaId)) {
             hashMap.put(mrm.KEY_AREA_ID, this.areaId);
         }
-        if (!TextUtils.isEmpty(this.detail_v)) {
+        if (!StringUtils.isEmpty(this.detail_v)) {
             hashMap.put("detail_v", this.detail_v);
         }
         return hashMap;

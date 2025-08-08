@@ -6,7 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ComponentInfo;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ServiceNode;
@@ -118,7 +118,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue();
         }
         String config = OrangeConfig.getInstance().getConfig("tblocationcommon", "enable_limit_times", "3");
-        if (TextUtils.isEmpty(config) || "*".equals(config)) {
+        if (StringUtils.isEmpty(config) || "*".equals(config)) {
             return false;
         }
         return Integer.parseInt(config) <= f17829a.get();
@@ -147,7 +147,7 @@ public class a {
         }
         String config = OrangeConfig.getInstance().getConfig("tblocationcommon", "enable_component_config", "");
         try {
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 JSONObject parseObject = JSONObject.parseObject(config);
                 String string = parseObject != null ? parseObject.getString(str) : null;
                 return string != null ? string.split(",") : new String[0];

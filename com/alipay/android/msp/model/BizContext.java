@@ -2,7 +2,7 @@ package com.alipay.android.msp.model;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
@@ -45,7 +45,7 @@ public class BizContext {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("27a69e58", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || str.startsWith("new_external_info==")) {
+        if (StringUtils.isEmpty(str) || str.startsWith("new_external_info==")) {
             return str;
         }
         if (!str.contains("\"&")) {
@@ -61,7 +61,7 @@ public class BizContext {
         }
         try {
             String a2 = a(str, "&", "bizcontext=");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 str = str + "&" + a("bizcontext=", "");
             } else {
                 int indexOf = str.indexOf(a2);
@@ -79,7 +79,7 @@ public class BizContext {
         }
         try {
             String a2 = a(str, "\"&", "bizcontext=\"");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return str + "&" + a("bizcontext=\"", "\"");
             }
             if (!a2.endsWith("\"")) {
@@ -97,12 +97,12 @@ public class BizContext {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(str2);
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i]) && split[i].startsWith(str3)) {
+            if (!StringUtils.isEmpty(split[i]) && split[i].startsWith(str3)) {
                 return split[i];
             }
         }
@@ -129,7 +129,7 @@ public class BizContext {
             jSONObject.put("ty", "and_lite");
             jSONObject.put("av", this.f4913a);
             jSONObject.put("sdk_start_time", System.currentTimeMillis());
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put(str, str2);
             }
             return jSONObject.toString();

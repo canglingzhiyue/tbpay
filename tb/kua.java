@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes.dex */
@@ -72,7 +72,7 @@ public class kua {
 
     public boolean f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(this.f30318a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(this.f30318a);
     }
 
     public String toString() {

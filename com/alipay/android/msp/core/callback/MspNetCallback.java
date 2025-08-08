@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core.callback;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.biz.substitute.SpmHelper;
@@ -62,7 +62,7 @@ public class MspNetCallback extends CustomCallback {
         this.b = requestConfig;
         MspTradeContext mspTradeContext2 = this.f4503a;
         if (mspTradeContext2 != null && mspTradeContext2.isUpgradePreRendTpl()) {
-            if (TextUtils.equals("cashier", requestConfig.getType()) && TextUtils.equals("main", requestConfig.getMethod()) && this.f4503a.getContext() != null) {
+            if (StringUtils.equals("cashier", requestConfig.getType()) && StringUtils.equals("main", requestConfig.getMethod()) && this.f4503a.getContext() != null) {
                 MspRender.triggerPreRenderQUICKPAY(MspFlybirdDefine.FLYBIRD_HOME_TPL, this.f4503a.getContext().getApplicationContext());
             }
         } else {
@@ -95,7 +95,7 @@ public class MspNetCallback extends CustomCallback {
             if (requestConfig != null) {
                 if (requestConfig.isFirstRequest()) {
                     str = "/cashier/main";
-                } else if (!TextUtils.isEmpty(this.b.getActionJson())) {
+                } else if (!StringUtils.isEmpty(this.b.getActionJson())) {
                     try {
                         str = JSON.parseObject(this.b.getActionJson()).getString("name");
                     } catch (Throwable th2) {
@@ -162,7 +162,7 @@ public class MspNetCallback extends CustomCallback {
         }
         if (jSONObject.containsKey("resultStatus")) {
             String string = jSONObject.getString("resultStatus");
-            if (TextUtils.equals(string, "1002") || TextUtils.equals(string, "1003")) {
+            if (StringUtils.equals(string, "1002") || StringUtils.equals(string, "1003")) {
                 ExceptionUtils.sendUiMsgWhenException(this.f4503a.getBizId(), new AppErrorException(ExceptionUtils.createExceptionMsg(LanguageHelper.localizedStringForKey("flybird_mobilegwerror_tips", this.f4503a.getContext().getString(R.string.flybird_mobilegwerror_tips), new Object[0]), 303)));
             }
         }
@@ -172,7 +172,7 @@ public class MspNetCallback extends CustomCallback {
             }
         } else if (config.isPbV1()) {
             String parsePbV1DataToRendData = HandleResponseDataUtil.parsePbV1DataToRendData(jSONObject, this.f4503a);
-            if (!TextUtils.isEmpty(parsePbV1DataToRendData)) {
+            if (!StringUtils.isEmpty(parsePbV1DataToRendData)) {
                 ActionsCreator.get(this.f4503a).createUIShowAction(JSON.parseObject(parsePbV1DataToRendData), false, stEvent);
             } else {
                 throw new AppErrorException(ExceptionUtils.createExceptionMsg(206));
@@ -182,7 +182,7 @@ public class MspNetCallback extends CustomCallback {
         if (requestConfig != null) {
             if (requestConfig.isFirstRequest()) {
                 str = "/cashier/main";
-            } else if (!TextUtils.isEmpty(this.b.getActionJson())) {
+            } else if (!StringUtils.isEmpty(this.b.getActionJson())) {
                 try {
                     str = JSON.parseObject(this.b.getActionJson()).getString("name");
                 } catch (Throwable th) {

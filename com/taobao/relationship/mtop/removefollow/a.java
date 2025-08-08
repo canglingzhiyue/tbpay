@@ -2,7 +2,7 @@ package com.taobao.relationship.mtop.removefollow;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class a implements a.InterfaceC0830a {
         jSONObject.put("originPage", (Object) bVar.g);
         jSONObject.put("originFlag", (Object) bVar.h);
         jSONObject.put("type", (Object) Integer.valueOf(bVar.d));
-        if (!TextUtils.isEmpty(bVar.i)) {
+        if (!StringUtils.isEmpty(bVar.i)) {
             jSONObject.put("extra", (Object) bVar.i);
         }
         JSONObject jSONObject2 = new JSONObject();
@@ -77,21 +77,21 @@ public class a implements a.InterfaceC0830a {
             RemoveFollowResponse.RemoveFollowData removeFollowData = (RemoveFollowResponse.RemoveFollowData) JSON.parseObject(obj.toString(), RemoveFollowResponse.RemoveFollowData.class);
             if (this.f18976a != null) {
                 HashMap<String, Object> hashMap = new HashMap<>();
-                if (!TextUtils.isEmpty(removeFollowData.toastMsg)) {
+                if (!StringUtils.isEmpty(removeFollowData.toastMsg)) {
                     hashMap.put("toast", removeFollowData.toastMsg);
                 }
-                if (!TextUtils.isEmpty(removeFollowData.followExtra)) {
+                if (!StringUtils.isEmpty(removeFollowData.followExtra)) {
                     hashMap.put(nmf.PARAMS_MTOP_RESULT_EXTRA, removeFollowData.followExtra);
                 }
                 this.f18976a.onBusSuccess(nmf.MTOP_REMOVEFOLLOW, bVar2.b, bVar2.c, hashMap);
             }
             if (this.b != null) {
                 r rVar = new r();
-                if (!TextUtils.isEmpty(removeFollowData.followExtra)) {
+                if (!StringUtils.isEmpty(removeFollowData.followExtra)) {
                     rVar.a(nmf.PARAMS_MTOP_RESULT_EXTRA, removeFollowData.followExtra);
                 }
                 if (bVar2.m) {
-                    if (TextUtils.isEmpty(removeFollowData.toastMsg)) {
+                    if (StringUtils.isEmpty(removeFollowData.toastMsg)) {
                         nmj.a("已取消关注");
                     } else {
                         nmj.a(removeFollowData.toastMsg);
@@ -103,11 +103,11 @@ public class a implements a.InterfaceC0830a {
                 return;
             }
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(removeFollowData.followExtra)) {
+            if (!StringUtils.isEmpty(removeFollowData.followExtra)) {
                 jSONObject.put(nmf.PARAMS_MTOP_RESULT_EXTRA, (Object) removeFollowData.followExtra);
             }
             if (bVar2.m) {
-                if (TextUtils.isEmpty(removeFollowData.toastMsg)) {
+                if (StringUtils.isEmpty(removeFollowData.toastMsg)) {
                     nmj.a("已取消关注");
                 } else {
                     nmj.a(removeFollowData.toastMsg);

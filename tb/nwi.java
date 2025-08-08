@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Map;
 import kotlin.jvm.internal.o;
 
@@ -30,7 +30,7 @@ public final class nwi extends nps {
             for (Map.Entry<String, String> entry : map2.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     b(key, value);
                 }
             }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -233,11 +233,11 @@ public class ngo {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("e68dc5e9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String cookie = CookieManager.getInstance().getCookie(str);
-        if (TextUtils.isEmpty(cookie)) {
+        if (StringUtils.isEmpty(cookie)) {
             return null;
         }
         String[] split = cookie.replace("\"", "\\\\\"").split(";");

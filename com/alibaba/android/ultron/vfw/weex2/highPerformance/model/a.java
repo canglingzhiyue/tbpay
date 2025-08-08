@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.vfw.weex2.highPerformance.model;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import tb.kge;
@@ -51,7 +51,7 @@ public class a {
         }
         Uri parse = Uri.parse(str);
         Uri parse2 = Uri.parse(str2);
-        return TextUtils.equals(parse.getHost(), parse2.getHost()) && TextUtils.equals(parse.getPath(), parse2.getPath());
+        return StringUtils.equals(parse.getHost(), parse2.getHost()) && StringUtils.equals(parse.getPath(), parse2.getPath());
     }
 
     public static boolean a(a aVar, a aVar2) {

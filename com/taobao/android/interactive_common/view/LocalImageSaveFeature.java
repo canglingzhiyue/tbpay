@@ -22,7 +22,7 @@ import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -211,7 +211,7 @@ public class LocalImageSaveFeature extends AbsFeature<ImageView> implements Imag
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("83f7c622", new Object[]{this, imageView2});
-                } else if (TextUtils.isEmpty(LocalImageSaveFeature.access$000(LocalImageSaveFeature.this))) {
+                } else if (StringUtils.isEmpty(LocalImageSaveFeature.access$000(LocalImageSaveFeature.this))) {
                     LocalImageSaveFeature.access$200(LocalImageSaveFeature.this, imageView2);
                 } else {
                     LocalImageSaveFeature localImageSaveFeature = LocalImageSaveFeature.this;
@@ -742,7 +742,7 @@ public class LocalImageSaveFeature extends AbsFeature<ImageView> implements Imag
             paint.setShadowLayer(getSize(width, 1), 0.0f, getSize(width, 1), 2130706432);
             canvas.drawBitmap(this.mWaterMarkBitmap, rect, rect2, paint);
         }
-        if (!TextUtils.isEmpty(this.mWaterMarkText)) {
+        if (!StringUtils.isEmpty(this.mWaterMarkText)) {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setColor(-460552);
             textPaint.setTextSize(getSize(width, 20));

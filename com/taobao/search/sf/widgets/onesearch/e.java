@@ -2,7 +2,7 @@ package com.taobao.search.sf.widgets.onesearch;
 
 import android.app.Activity;
 import android.taobao.windvane.extra.uc.WVUCWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -125,7 +125,7 @@ public class e extends ius<Void, FrameLayout, com.taobao.search.sf.a> {
         if (this.f19558a == null) {
             g();
         }
-        if (TextUtils.equals(y.a(str, "_xDisableInterception"), nom.VALUE_YES)) {
+        if (StringUtils.equals(y.a(str, "_xDisableInterception"), nom.VALUE_YES)) {
             q.i("SFUCWebViewWidget", "_xDisableInterception=YES");
             this.f19558a.setIntercept(false);
         } else {

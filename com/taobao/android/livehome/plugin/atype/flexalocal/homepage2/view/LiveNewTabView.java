@@ -3,7 +3,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.homepage2.view;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -435,7 +435,7 @@ public class LiveNewTabView extends LinearLayout implements View.OnClickListener
             ipChange.ipc$dispatch("9771736b", new Object[]{this, new Integer(i), tabBottom});
         } else if ((this.mTabViews == null && tabBottom == null) || tabBottom.subscriptInfo == null || i >= this.mTabViews.size() || (view = this.mTabViews.get(i)) == null) {
         } else {
-            if (!TextUtils.isEmpty(tabBottom.subscriptInfo.getString("backgroundPicUrl"))) {
+            if (!StringUtils.isEmpty(tabBottom.subscriptInfo.getString("backgroundPicUrl"))) {
                 TUrlImageView tUrlImageView = (TUrlImageView) view.findViewById(R.id.live_tab_corner_mark_img);
                 if (tUrlImageView == null) {
                     return;

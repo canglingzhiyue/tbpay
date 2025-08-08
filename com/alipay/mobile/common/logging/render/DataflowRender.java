@@ -2,7 +2,7 @@ package com.alipay.mobile.common.logging.render;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -35,19 +35,19 @@ public class DataflowRender extends BaseRender {
         }
         StringBuilder sb = new StringBuilder();
         String processAlias = LoggerFactory.getProcessInfo().getProcessAlias();
-        if (dataflowModel.type == DataflowID.MDAP_LOG && !TextUtils.isEmpty(VariableStoreInToolsProcess.d)) {
+        if (dataflowModel.type == DataflowID.MDAP_LOG && !StringUtils.isEmpty(VariableStoreInToolsProcess.d)) {
             processAlias = VariableStoreInToolsProcess.d;
         }
         boolean isMonitorBackground = TianyanLoggingStatus.isMonitorBackground();
-        if (dataflowModel.type == DataflowID.MDAP_LOG && !TextUtils.isEmpty(VariableStoreInToolsProcess.d)) {
+        if (dataflowModel.type == DataflowID.MDAP_LOG && !StringUtils.isEmpty(VariableStoreInToolsProcess.d)) {
             isMonitorBackground = VariableStoreInToolsProcess.f5448a;
         }
         boolean isStrictBackground = TianyanLoggingStatus.isStrictBackground();
-        if (dataflowModel.type == DataflowID.MDAP_LOG && !TextUtils.isEmpty(VariableStoreInToolsProcess.d)) {
+        if (dataflowModel.type == DataflowID.MDAP_LOG && !StringUtils.isEmpty(VariableStoreInToolsProcess.d)) {
             isStrictBackground = VariableStoreInToolsProcess.b;
         }
         boolean isRelaxedBackground = TianyanLoggingStatus.isRelaxedBackground();
-        if (dataflowModel.type == DataflowID.MDAP_LOG && !TextUtils.isEmpty(VariableStoreInToolsProcess.d)) {
+        if (dataflowModel.type == DataflowID.MDAP_LOG && !StringUtils.isEmpty(VariableStoreInToolsProcess.d)) {
             isRelaxedBackground = VariableStoreInToolsProcess.c;
         }
         sb.append("DF");

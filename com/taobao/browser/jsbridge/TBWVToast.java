@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.uikit.extend.component.unify.Toast.TBToast;
@@ -49,7 +49,7 @@ public class TBWVToast extends e {
                     String string = ((JSONObject) parse).getString("message");
                     String string2 = ((JSONObject) parse).getString("duration");
                     TBToast makeText = TBToast.makeText(this.mContext, string);
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         long longValue = Long.valueOf(string2).longValue() * 1000;
                         if (longValue > 1000) {
                             makeText.setDuration(longValue);

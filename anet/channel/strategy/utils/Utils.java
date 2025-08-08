@@ -1,6 +1,6 @@
 package anet.channel.strategy.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
@@ -27,7 +27,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8b508b9a", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         char[] charArray = str.toCharArray();
@@ -59,7 +59,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8ca9e2d8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         char[] charArray = str.toCharArray();
@@ -110,7 +110,7 @@ public class Utils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9abe2c44", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         char[] charArray = str.toCharArray();

@@ -3,7 +3,7 @@ package com.taobao.weex.performance;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXEnvironment;
 import com.taobao.weex.WXSDKInstance;
@@ -352,7 +352,7 @@ public class f {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str) && (wXSDKInstance = WXSDKManager.getInstance().getAllInstanceMap().get(this.l)) != null) {
+        if (StringUtils.isEmpty(str) && (wXSDKInstance = WXSDKManager.getInstance().getAllInstanceMap().get(this.l)) != null) {
             str = wXSDKInstance.F().get("wxContainerName");
         }
         c cVar = this.m;
@@ -360,7 +360,7 @@ public class f {
             str = cVar.b(str);
         }
         this.e = str;
-        this.e = TextUtils.isEmpty(this.e) ? "emptyPageName" : this.e;
+        this.e = StringUtils.isEmpty(this.e) ? "emptyPageName" : this.e;
         a("wxBizID", this.e);
     }
 

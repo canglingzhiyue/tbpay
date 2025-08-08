@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.sync;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.amnet.api.AmnetListenerAdpter;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
@@ -107,12 +107,12 @@ public class SyncGeneralListenerImpl extends AmnetListenerAdpter {
             return;
         }
         LogCatUtil.debug("amnet_SyncGeneralListenerImpl", "notifyGift,key:" + str + ",val:" + str2);
-        if (!TextUtils.equals(str, Baggage.Linkage.GIFT_SHORTCUT)) {
+        if (!StringUtils.equals(str, Baggage.Linkage.GIFT_SHORTCUT)) {
             return;
         }
-        if (TextUtils.equals(str2, "start")) {
+        if (StringUtils.equals(str2, "start")) {
             SyncManager.notifyShortLinkStart();
-        } else if (!TextUtils.equals(str2, "stop")) {
+        } else if (!StringUtils.equals(str2, "stop")) {
         } else {
             SyncManager.notifyShortLinkStop();
         }

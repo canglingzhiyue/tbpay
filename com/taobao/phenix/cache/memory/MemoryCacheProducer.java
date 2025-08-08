@@ -2,7 +2,7 @@ package com.taobao.phenix.cache.memory;
 
 import android.graphics.Bitmap;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.cache.memory.h;
@@ -168,7 +168,7 @@ public class MemoryCacheProducer extends nmx<e, njb, com.taobao.phenix.request.b
                 }
                 String str = strArr[i];
                 int i2 = length;
-                if (TextUtils.equals(e.b().b, str)) {
+                if (StringUtils.equals(e.b().b, str)) {
                     niw.d("MemoryCache", e, "read from fuzzy memcache, biz=%s, key=%s", str, u);
                     k = true;
                     break;
@@ -179,14 +179,14 @@ public class MemoryCacheProducer extends nmx<e, njb, com.taobao.phenix.request.b
         }
         if (!z && com.taobao.phenix.intf.b.h().C() && k) {
             String v = e.v();
-            if (!TextUtils.isEmpty(v)) {
+            if (!StringUtils.isEmpty(v)) {
                 Iterator<String> it = this.c.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
                     }
                     String next = it.next();
-                    if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(v) && next.contains(v)) {
+                    if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(v) && next.contains(v)) {
                         e b = b(this.b, next, e2);
                         if (b != null) {
                             if (com.taobao.phenix.intf.b.h().M() && !e.S() && !e.T()) {

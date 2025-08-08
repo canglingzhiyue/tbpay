@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ut.abtest.Variation;
@@ -38,15 +38,15 @@ public class ore implements opz {
         }
         JSONObject jSONObject = new JSONObject();
         String a2 = c.a.a("performanceAbTestInfo", "tb_start_bucket_id", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             jSONObject.put("bucketId", (Object) a2);
         }
         String a3 = c.a.a("performanceAbTestInfo", "tb_bucket_type", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             jSONObject.put("bucketType", (Object) a3);
         }
         String a4 = c.a.a("performanceAbTestInfo", "tb_start_test_id", "");
-        if (!TextUtils.isEmpty(a4)) {
+        if (!StringUtils.isEmpty(a4)) {
             jSONObject.put("testId", (Object) a4);
         }
         if (!jSONObject.isEmpty()) {

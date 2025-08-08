@@ -1,7 +1,7 @@
 package com.taobao.search.searchdoor.activate.hotspot;
 
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.birdnest.api.BirdNestEngine;
@@ -177,7 +177,7 @@ public final class b extends nqr<HotSpots, com.taobao.search.searchdoor.sf.widge
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3526812", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (TextUtils.isEmpty(str) || p.a(this.b, str)) {
+        } else if (StringUtils.isEmpty(str) || p.a(this.b, str)) {
         } else {
             HashSet<String> hashSet = this.b;
             if (str == null) {

@@ -2,7 +2,7 @@ package com.taobao.android.fluid.framework.preload.task;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -93,7 +93,7 @@ public class c extends a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b4139c2f", new Object[]{this, aVar});
-        } else if (TextUtils.isEmpty(this.e) || (buildPreloadVideoIfCacheData = ((IPreloadService) this.c.getService(IPreloadService.class)).getPreRenderDWInstance().buildPreloadVideoIfCacheData(this.b, null, true, Uri.parse(this.e))) == null) {
+        } else if (StringUtils.isEmpty(this.e) || (buildPreloadVideoIfCacheData = ((IPreloadService) this.c.getService(IPreloadService.class)).getPreRenderDWInstance().buildPreloadVideoIfCacheData(this.b, null, true, Uri.parse(this.e))) == null) {
         } else {
             a(buildPreloadVideoIfCacheData, (Map) null, (String) null, (DetailCacheData) null, aVar);
         }

@@ -1,6 +1,6 @@
 package com.taobao.android.sku.bizevent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sku.utils.j;
@@ -78,8 +78,8 @@ public class h implements iyd {
         String string3 = jSONObject.getString("arg2");
         String string4 = jSONObject.getString("arg3");
         String str = "";
-        String str2 = TextUtils.isEmpty(string3) ? str : string3;
-        if (!TextUtils.isEmpty(string4)) {
+        String str2 = StringUtils.isEmpty(string3) ? str : string3;
+        if (!StringUtils.isEmpty(string4)) {
             str = string4;
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("args");
@@ -88,17 +88,17 @@ public class h implements iyd {
             for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     hashMap.put(key, String.valueOf(value));
                 }
             }
         }
         String f = iybVar.f();
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             hashMap.put("skuUT", f);
         }
         String g = iybVar.g();
-        if (!TextUtils.isEmpty(g)) {
+        if (!StringUtils.isEmpty(g)) {
             hashMap.put("skuParams", g);
         }
         try {

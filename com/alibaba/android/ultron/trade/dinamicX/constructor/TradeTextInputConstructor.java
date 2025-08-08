@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -217,7 +217,7 @@ public class TradeTextInputConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d2ca35e0", new Object[]{this, editText, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             editText.setTypeface(Typeface.defaultFromStyle(0));
         } else {
             int intValue = Integer.valueOf(str).intValue();
@@ -272,12 +272,12 @@ public class TradeTextInputConstructor extends h {
         if (intValue == 0) {
             editText.setEllipsize(null);
         } else if (intValue == 1) {
-            editText.setEllipsize(TextUtils.TruncateAt.START);
+            editText.setEllipsize(StringUtils.TruncateAt.START);
         } else if (intValue == 2) {
-            editText.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+            editText.setEllipsize(StringUtils.TruncateAt.MIDDLE);
         } else if (intValue != 3) {
         } else {
-            editText.setEllipsize(TextUtils.TruncateAt.END);
+            editText.setEllipsize(StringUtils.TruncateAt.END);
         }
     }
 
@@ -350,7 +350,7 @@ public class TradeTextInputConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a8868001", new Object[]{this, editText, str});
-        } else if (!TextUtils.equals(PromotionFilterBean.SINGLE, str)) {
+        } else if (!StringUtils.equals(PromotionFilterBean.SINGLE, str)) {
         } else {
             editText.getPaint().setFlags(16);
         }
@@ -448,7 +448,7 @@ public class TradeTextInputConstructor extends h {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("cba71273", new Object[]{this, view, fpdVar, fpqVar, str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 ArrayList arrayList = new ArrayList(5);
                 arrayList.add("dialog");
@@ -515,7 +515,7 @@ public class TradeTextInputConstructor extends h {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("67397830", new Object[]{this, charSequence, new Integer(i), new Integer(i2), new Integer(i3)});
-            } else if (!this.d.isFocusable() || TextUtils.isEmpty(this.c)) {
+            } else if (!this.d.isFocusable() || StringUtils.isEmpty(this.c)) {
             } else {
                 ArrayList arrayList = new ArrayList(5);
                 arrayList.add("input");

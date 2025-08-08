@@ -1,6 +1,6 @@
 package com.alipay.mobile.beehive.eventbus;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -33,7 +33,7 @@ public class SubscribeFinder {
                     throw new IllegalArgumentException("method:" + method + "@Subscribe方法参数不能超过1个");
                 }
                 Subscribe subscribe = (Subscribe) method.getAnnotation(Subscribe.class);
-                if (TextUtils.isEmpty(subscribe.name())) {
+                if (StringUtils.isEmpty(subscribe.name())) {
                     if (parameterTypes.length <= 0) {
                         throw new IllegalArgumentException("method:" + method + "@Subscribe方法无参数的时候, 注解参数name不能为空");
                     }
@@ -75,7 +75,7 @@ public class SubscribeFinder {
                 for (Method method : entry.getValue()) {
                     Subscribe subscribe = (Subscribe) method.getAnnotation(Subscribe.class);
                     String threadMode = subscribe.threadMode();
-                    if (TextUtils.isEmpty(threadMode)) {
+                    if (StringUtils.isEmpty(threadMode)) {
                         threadMode = ThreadMode.CURRENT.name();
                     }
                     EventHandler eventHandler = new EventHandler(entry.getKey(), obj, method, ThreadMode.fromString(threadMode), subscriberConfig);

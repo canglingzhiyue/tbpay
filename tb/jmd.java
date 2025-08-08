@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import java.io.BufferedReader;
@@ -36,7 +36,7 @@ public class jmd {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
         String a2 = jmg.a("tschedule", "cpuCores", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         d();
@@ -60,7 +60,7 @@ public class jmd {
                     }
                     try {
                         String readLine = new BufferedReader(new InputStreamReader(new ProcessBuilder("/system/bin/cat", "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq").start().getInputStream())).readLine();
-                        if (TextUtils.isEmpty(readLine)) {
+                        if (StringUtils.isEmpty(readLine)) {
                             return;
                         }
                         jmg.b("tschedule", "cupMaxHz", readLine);

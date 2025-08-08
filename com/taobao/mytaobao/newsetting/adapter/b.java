@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -162,7 +162,7 @@ public class b extends RecyclerView.Adapter<mvm> {
                 mvmVar.f.setVisibility(0);
             } else {
                 String b = b(str2);
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     mvmVar.f.setText(str3);
                     mvmVar.f.setVisibility(0);
                 } else {
@@ -178,13 +178,13 @@ public class b extends RecyclerView.Adapter<mvm> {
             mvmVar.f.setVisibility(8);
         }
         String str4 = dynamicSettingItem.descIcon;
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             mvmVar.g.setImageUrl(str4);
             mvmVar.g.setVisibility(0);
         } else {
             mvmVar.g.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(dynamicSettingItem.hrefUrl)) {
+        if (!StringUtils.isEmpty(dynamicSettingItem.hrefUrl)) {
             mvmVar.h.setVisibility(0);
             mvmVar.c.setTag(dynamicSettingItem.menuName);
             mvmVar.c.setOnClickListener(new a(dynamicSettingItem));
@@ -245,18 +245,18 @@ public class b extends RecyclerView.Adapter<mvm> {
                 ipChange.ipc$dispatch("8dfcefe2", new Object[]{this, view});
                 return;
             }
-            if (TextUtils.isEmpty(this.e)) {
+            if (StringUtils.isEmpty(this.e)) {
                 str = this.c;
                 z = false;
             } else {
                 str = this.e;
                 z = true;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             String str2 = this.b.menuDesc;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 b.a(b.this, this.b.menuName, this.b.menuName + str2);
             }
             if (view.getTag() != null) {
@@ -281,7 +281,7 @@ public class b extends RecyclerView.Adapter<mvm> {
                         }
                         switch (message.what) {
                             case 911101:
-                                if (!TextUtils.isEmpty(str)) {
+                                if (!StringUtils.isEmpty(str)) {
                                     if (str.contains("modify_password")) {
                                         a2 = b.a(b.this);
                                         str3 = LoginSceneConstants.SCENE_CHANGEPASSWORD;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.bizmessage.h;
@@ -28,7 +28,7 @@ public class syu {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("6f2404e2", new Object[]{actionModel, jSONObject});
         }
-        if (actionModel == null || TextUtils.isEmpty(actionModel.type)) {
+        if (actionModel == null || StringUtils.isEmpty(actionModel.type)) {
             return null;
         }
         String str = actionModel.type;

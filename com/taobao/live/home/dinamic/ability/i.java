@@ -1,6 +1,6 @@
 package com.taobao.live.home.dinamic.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.log.LogAbility;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class i extends dlg {
         String string2 = c.getString("level");
         String string3 = c.getString("tag");
         String string4 = c.getString("content");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
             return new dky();
         }
         if ("error".equals(string2)) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
 import com.taobao.infoflow.protocol.view.item.a;
@@ -51,7 +51,7 @@ public class lid {
             return ((Boolean) ipChange.ipc$dispatch("c705295d", new Object[]{this, list})).booleanValue();
         }
         if (list != null && !list.isEmpty()) {
-            return TextUtils.equals(list.get(0).getSectionBizCode(), "error");
+            return StringUtils.equals(list.get(0).getSectionBizCode(), "error");
         }
         return false;
     }

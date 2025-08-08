@@ -1,7 +1,7 @@
 package com.taobao.avplayer;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
 import com.taobao.mediaplay.model.MediaVideoResponse;
@@ -26,7 +26,7 @@ public class aa {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("547a5133", new Object[]{context, str, hashMap, new Integer(i), dVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || hashMap == null || hashMap.size() == 0) {
+        if (StringUtils.isEmpty(str) || hashMap == null || hashMap.size() == 0) {
             return false;
         }
         final HashMap hashMap2 = new HashMap(hashMap);

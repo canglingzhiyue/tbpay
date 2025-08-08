@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.standard.mainpic.weex;
 
 import android.support.v7.widget.RecyclerView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -78,7 +78,7 @@ public class PicGalleryLightOffWindvaneApiPlugin extends AbsPicGalleryWindvaneAp
                 break;
         }
         if (c == 0) {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("getLightOffData,token is invalid");
                 return true;
             }
@@ -90,7 +90,7 @@ public class PicGalleryLightOffWindvaneApiPlugin extends AbsPicGalleryWindvaneAp
             }
             return true;
         } else if (c == 1) {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("closeLightOff,token is invalid");
                 return true;
             }
@@ -98,7 +98,7 @@ public class PicGalleryLightOffWindvaneApiPlugin extends AbsPicGalleryWindvaneAp
             wVCallBackContext.success(makeSuccessResponse());
             return true;
         } else if (c == 2) {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("locatorTo,token is invalid");
                 return true;
             }
@@ -108,7 +108,7 @@ public class PicGalleryLightOffWindvaneApiPlugin extends AbsPicGalleryWindvaneAp
         } else if (c != 3) {
             return false;
         } else {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("videoSeekTo,token is invalid");
                 return true;
             }
@@ -177,7 +177,7 @@ public class PicGalleryLightOffWindvaneApiPlugin extends AbsPicGalleryWindvaneAp
             return;
         }
         String string = jSONObject.getString("code");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             arc.a().c("PicGalleryLightOffWindvaneApiPlugin", "locatorTo", "code is empty");
         } else if (!(a2.b() instanceof RecyclerView)) {
             arc.a().c("PicGalleryLightOffWindvaneApiPlugin", "locatorTo", "presenter's view is not RecyclerView");

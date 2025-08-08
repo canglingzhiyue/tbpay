@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -124,7 +124,7 @@ public class a implements com.taobao.taobao.internal.a {
         f.setPackage(this.d.getPackageName());
         f.setAction(CashdeskConstants.ALIPAY_ACTION);
         String a2 = a(this.d.getIntent().getData(), j(map));
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             f.putExtra(CashdeskConstants.ALIPAY_SIGN_STR, a2);
         }
         a(f, map);
@@ -169,11 +169,11 @@ public class a implements com.taobao.taobao.internal.a {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("user_token_type", (Object) "tbsid");
         String str = map.get("agednessVersion");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("agednessVersion", (Object) str);
         }
         String sid = Login.getSid();
-        if (!TextUtils.isEmpty(sid)) {
+        if (!StringUtils.isEmpty(sid)) {
             jSONObject.put("user_token", (Object) sid);
         }
         return jSONObject;
@@ -204,7 +204,7 @@ public class a implements com.taobao.taobao.internal.a {
             return;
         }
         String a2 = com.taobao.taobao.internal.helper.b.a((Context) this.d, true);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         JSONObject a3 = a(intent.getStringExtra("extend_params"), new JSONObject());
@@ -217,7 +217,7 @@ public class a implements com.taobao.taobao.internal.a {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("9490f01e", new Object[]{this, str, jSONObject});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return jSONObject;
         }
         try {
@@ -258,7 +258,7 @@ public class a implements com.taobao.taobao.internal.a {
 
     private boolean k(Map<String, String> map) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669471d7", new Object[]{this, map})).booleanValue() : !TextUtils.isEmpty(map.get("alipayURL"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669471d7", new Object[]{this, map})).booleanValue() : !StringUtils.isEmpty(map.get("alipayURL"));
     }
 
     private void a(Intent intent, Map<String, String> map) {
@@ -413,7 +413,7 @@ public class a implements com.taobao.taobao.internal.a {
             r0.appendQueryParameter(r3, r11)
             com.taobao.taobao.internal.PayResultInfo$SharePayData r11 = r10.sharePayData
             java.lang.String r11 = r11.amount
-            boolean r11 = android.text.TextUtils.isEmpty(r11)
+            boolean r11 = android.text.StringUtils.isEmpty(r11)
             if (r11 != 0) goto Ld8
             com.taobao.taobao.internal.PayResultInfo$SharePayData r11 = r10.sharePayData
             java.lang.String r11 = r11.amount
@@ -432,7 +432,7 @@ public class a implements com.taobao.taobao.internal.a {
             r0.appendQueryParameter(r11, r10)
             r0.toString()
         Lf3:
-            android.text.TextUtils.isEmpty(r1)
+            android.text.StringUtils.isEmpty(r1)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.taobao.taobao.alipayapi.a.a(com.taobao.taobao.internal.PayResultInfo, java.util.Map):void");
@@ -446,10 +446,10 @@ public class a implements com.taobao.taobao.internal.a {
         }
         LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(this.d);
         Intent intent = new Intent(CashdeskConstants.CASHDESK_BROADCAST_RESULT_ACTION);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent.putExtra("action", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             intent.putExtra("result", str2);
         }
         localBroadcastManager.sendBroadcast(intent);

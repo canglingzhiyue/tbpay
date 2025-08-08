@@ -1,6 +1,6 @@
 package com.taobao.android.msoa.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.utdid2.device.UTDevice;
 import com.taobao.avplayer.TBPlayerConst;
@@ -20,28 +20,28 @@ public class d {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("serviceId", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("version", str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put("bizName", str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put(TBPlayerConst.TBPlayerMethodSwitchPlayerScene_SceneName, str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             hashMap.put("token", str5);
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             hashMap.put("cost", str6);
         }
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             hashMap.put("errorCode", str7);
         }
-        if (!TextUtils.isEmpty(str8)) {
+        if (!StringUtils.isEmpty(str8)) {
             hashMap.put("errorMsg", str8);
         }
         TBS.Ext.commitEvent(2201, str9, (Object) null, (Object) null, a(hashMap));

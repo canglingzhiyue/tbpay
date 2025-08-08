@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.wireless.link.assistant.display.AssistantView;
 import com.taobao.wireless.link.controller.b;
@@ -57,7 +57,7 @@ public class rka extends b {
             rjw.a(a2, messageData);
             rjw.b(a2, messageData);
             rkg.a("link_tag", "MessageCenter === execute === 锁屏状态不处理消息，亮屏回到桌面再处理");
-        } else if (TextUtils.equals(com.taobao.wireless.link.controller.a.a().f23587a.assistant_type, "close")) {
+        } else if (StringUtils.equals(com.taobao.wireless.link.controller.a.a().f23587a.assistant_type, "close")) {
             rkg.a("link_tag", "MessageCenter === execute === 推送开关，关闭小助手");
             rjw.c(a2);
             rjw.a(context, a2, messageData.activity_id);
@@ -77,13 +77,13 @@ public class rka extends b {
                     }
                 }
             }, 8000L);
-        } else if (!TextUtils.equals(com.taobao.wireless.link.controller.a.a().f23587a.assistant_type, "msg") || !rjw.f(context)) {
+        } else if (!StringUtils.equals(com.taobao.wireless.link.controller.a.a().f23587a.assistant_type, "msg") || !rjw.f(context)) {
         } else {
             rjw.a(a2, messageData);
             rjw.b(a2, messageData);
             String a3 = rjw.a(context);
             rjv a4 = rjw.a(context, a2, a3, messageData.activity_id);
-            if (!TextUtils.isEmpty(messageData.assistant_logo_url)) {
+            if (!StringUtils.isEmpty(messageData.assistant_logo_url)) {
                 a4.c = messageData.assistant_logo_url;
             }
             a4.d = rkj.a();

@@ -2,7 +2,7 @@ package com.mobile.auth.gatewayauth.network;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.mobile.auth.gatewayauth.model.ConfigRule;
 import com.mobile.auth.gatewayauth.model.MonitorStruct;
@@ -267,7 +267,7 @@ public class UTSharedPreferencesHelper {
             try {
                 String str3 = (String) get(context, AUTH_UT_DATA, str, "");
                 Map<String, Integer> map = null;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     map = a.a(str3);
                 }
                 if (map == null || map.isEmpty() || !map.containsKey(str2)) {
@@ -345,7 +345,7 @@ public class UTSharedPreferencesHelper {
         synchronized (UTSharedPreferencesHelper.class) {
             configRule = null;
             String str = (String) get(context, AUTH_UT_DATA, AUTH_SDK_CONFIG_KEY, "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     configRule = ConfigRule.fromJson(str);
                 } catch (Exception unused) {
@@ -413,7 +413,7 @@ public class UTSharedPreferencesHelper {
     public static List<MonitorStruct> readUTInfo(Context context) {
         try {
             String str = (String) get(context, AUTH_UT_DATA, AUTH_UT_DATA_KEY, "");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             return a.a(str, new d<MonitorStruct>() { // from class: com.mobile.auth.gatewayauth.network.UTSharedPreferencesHelper.1
@@ -495,7 +495,7 @@ public class UTSharedPreferencesHelper {
             try {
                 String str3 = (String) get(context, AUTH_UT_DATA, str, "");
                 Map<String, Integer> map = null;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     map = a.a(str3);
                 }
                 if (map == null || map.isEmpty() || !map.containsKey(str2)) {

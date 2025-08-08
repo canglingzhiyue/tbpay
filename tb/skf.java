@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -383,7 +383,7 @@ public class skf implements View.OnClickListener {
             } else if (i == 2) {
                 this.r.setVisibility(8);
                 this.t.setVisibility(8);
-                string = (!(obj instanceof String) || TextUtils.isEmpty((String) obj)) ? "由于作者设置，原分享内容暂时没有权限查看哦~" : (String) obj;
+                string = (!(obj instanceof String) || StringUtils.isEmpty((String) obj)) ? "由于作者设置，原分享内容暂时没有权限查看哦~" : (String) obj;
                 string2 = str;
             } else {
                 string = a.g.getString(R.string.fluid_sdk_error_default_title);
@@ -477,7 +477,7 @@ public class skf implements View.OnClickListener {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
         } else if (this.m == null) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.m.setImageDrawable(null);
                 this.m.setImageUrl(str);
                 this.m.setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -515,7 +515,7 @@ public class skf implements View.OnClickListener {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 textView2.setText(str);
                 return;
             }
@@ -687,7 +687,7 @@ public class skf implements View.OnClickListener {
             }
             y();
             final int a2 = obx.a(a.g, 18.0f);
-            final CharSequence ellipsize = TextUtils.ellipsize(M.title, this.v.getPaint(), obx.a(a.g, 216.0f), TextUtils.TruncateAt.END);
+            final CharSequence ellipsize = StringUtils.ellipsize(M.title, this.v.getPaint(), obx.a(a.g, 216.0f), StringUtils.TruncateAt.END);
             FluidSDK.getImageAdapter().load(M.iconUrl, new com.taobao.android.fluid.framework.adapter.mtop.a<String, BitmapDrawable>() { // from class: tb.skf.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

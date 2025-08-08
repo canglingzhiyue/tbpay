@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.StatusBarNotification;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
 import com.xiaomi.push.ah;
 import com.xiaomi.push.ff;
@@ -77,7 +77,7 @@ public class cd {
     /* renamed from: a  reason: collision with other method in class */
     private static boolean m2330a(Map<String, String> map) {
         String str = map.get("notification_top_repeat");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             boolean parseBoolean = Boolean.parseBoolean(str);
             com.xiaomi.channel.commonutils.logger.b.c("top notification' repeat is " + parseBoolean);
             return parseBoolean;
@@ -98,7 +98,7 @@ public class cd {
     public static void c(Context context, String str, int i, String str2, Notification notification) {
         aw a2;
         Notification a3;
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || Build.VERSION.SDK_INT < 26 || (a3 = a(notification, i, str2, (a2 = aw.a(context, str)))) == null) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || Build.VERSION.SDK_INT < 26 || (a3 = a(notification, i, str2, (a2 = aw.a(context, str)))) == null) {
             return;
         }
         boolean z = notification != null;

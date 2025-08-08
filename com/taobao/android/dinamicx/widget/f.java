@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
@@ -104,7 +104,7 @@ public class f extends DXWidgetNode {
             if (calendar != null) {
                 dXOnCalendarMonthUIRangeChangeEvent.setData("selectedDate", calendar.getDateString());
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 dXOnCalendarMonthUIRangeChangeEvent.setData("anchorDate", str);
             }
             if (pair == null) {
@@ -467,7 +467,7 @@ public class f extends DXWidgetNode {
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < this.m.size(); i++) {
             String string = this.m.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 String[] split = string.split(",");
                 if (split.length == 2 && (a2 = a(split[0])) != null && (a3 = a(split[1])) != null) {
                     arrayList.add(new Pair(a2, a3));
@@ -527,7 +527,7 @@ public class f extends DXWidgetNode {
 
     private boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && Pattern.matches("(\\d{4})-((0[1-9])|(1[0-2]))-(([0-2][1-9])|3[0-1]|([1-2]0))", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && Pattern.matches("(\\d{4})-((0[1-9])|(1[0-2]))-(([0-2][1-9])|3[0-1]|([1-2]0))", str);
     }
 
     /* loaded from: classes5.dex */

@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.factory.view.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.config.model.base.IModel;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -25,6 +25,6 @@ public class ClickableAreaParam implements IModel {
     @Override // com.alibaba.poplayer.config.model.base.IModel
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.left >= 0 && this.top >= 0 && this.right >= 0 && this.bottom >= 0 && this.width > 0 && this.height > 0 && !TextUtils.isEmpty(this.layoutX) && !TextUtils.isEmpty(this.layoutY);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.left >= 0 && this.top >= 0 && this.right >= 0 && this.bottom >= 0 && this.width > 0 && this.height > 0 && !StringUtils.isEmpty(this.layoutX) && !StringUtils.isEmpty(this.layoutY);
     }
 }

@@ -1,6 +1,6 @@
 package com.tmall.android.dai.trigger.protocol;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -87,7 +87,7 @@ public class Cep {
         }
         String string = jSONObject.getString("type");
         JSONObject jSONObject2 = jSONObject.getJSONObject("config");
-        if (!TextUtils.equals(dqy.TYPE, string)) {
+        if (!StringUtils.equals(dqy.TYPE, string)) {
             return null;
         }
         if (jSONObject2 == null) {

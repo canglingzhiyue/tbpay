@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -36,7 +36,7 @@ public class au {
         }
         try {
             String v = bx.v();
-            if (TextUtils.isEmpty(v)) {
+            if (StringUtils.isEmpty(v)) {
                 return;
             }
             JSONObject parseObject = JSONObject.parseObject(v);
@@ -65,14 +65,14 @@ public class au {
         if (b) {
             return c.containsKey(str);
         }
-        if (!fqi.aA() || TextUtils.isEmpty(str) || (ajVar = f11810a) == null || (a2 = ajVar.a("DXPerform", str)) == null) {
+        if (!fqi.aA() || StringUtils.isEmpty(str) || (ajVar = f11810a) == null || (a2 = ajVar.a("DXPerform", str)) == null) {
             return false;
         }
         Object obj = a2.get(str + "TemplateWhiteList");
         if (obj == null) {
             return false;
         }
-        if (!TextUtils.isEmpty(obj.toString())) {
+        if (!StringUtils.isEmpty(obj.toString())) {
             c.put(str, Arrays.asList(obj.toString().trim().split(",")));
         }
         return true;

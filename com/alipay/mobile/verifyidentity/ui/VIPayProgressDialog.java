@@ -8,7 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -78,7 +78,7 @@ public class VIPayProgressDialog extends Dialog {
         if (ipChange instanceof IpChange) {
             return (VIPayProgressDialog) ipChange.ipc$dispatch("81fcbed0", new Object[]{this, charSequence});
         }
-        if (!TextUtils.isEmpty(charSequence) && !TextUtils.equals(charSequence, this.c)) {
+        if (!StringUtils.isEmpty(charSequence) && !StringUtils.equals(charSequence, this.c)) {
             this.c = charSequence;
             TextView textView = this.b;
             if (textView != null) {
@@ -135,7 +135,7 @@ public class VIPayProgressDialog extends Dialog {
         linearLayout.addView(imageView);
         linearLayout.addView(textView2);
         linearLayout.addView(vILoopView);
-        if (!TextUtils.isEmpty(this.c) && (textView = this.b) != null) {
+        if (!StringUtils.isEmpty(this.c) && (textView = this.b) != null) {
             textView.setText(this.c);
         }
         if (getWindow() == null) {

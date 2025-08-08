@@ -2,7 +2,7 @@ package com.taobao.themis.taobao.container;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
@@ -143,12 +143,12 @@ public final class TMSErrorPage implements com.taobao.themis.container.splash.er
         q.d(instance, "instance");
         this.f22817a.setTitle(errorInfo.f22390a);
         if (NetUtil.isNetworkConnected(this.b)) {
-            if (TextUtils.isEmpty(errorInfo.b)) {
+            if (StringUtils.isEmpty(errorInfo.b)) {
                 errorInfo.b = com.taobao.themis.container.utils.a.a(this.b, R.string.tms_kit_refresh_tip);
             }
             this.f22817a.setSubTitle(errorInfo.b);
         }
-        if (!TextUtils.isEmpty(errorInfo.e)) {
+        if (!StringUtils.isEmpty(errorInfo.e)) {
             this.f22817a.setIconUrl(errorInfo.e);
         } else {
             this.f22817a.setIconUrl("https://gw.alicdn.com/tfs/TB1a.purYr1gK0jSZFDXXb9yVXa-416-416.png");
@@ -161,7 +161,7 @@ public final class TMSErrorPage implements com.taobao.themis.container.splash.er
         hashMap.put("appType", "tms");
         hashMap.put("templateId", k.g(instance));
         String openModel = instance.q().getOpenModel();
-        if (TextUtils.equals(openModel, i.KEY_AFC_OPEN_LINK) || TextUtils.equals(openModel, i.KEY_BROWSER_LINK)) {
+        if (StringUtils.equals(openModel, i.KEY_AFC_OPEN_LINK) || StringUtils.equals(openModel, i.KEY_BROWSER_LINK)) {
             hashMap.put("isFromOuter", "true");
         }
         newError.extras = hashMap;
@@ -179,14 +179,14 @@ public final class TMSErrorPage implements com.taobao.themis.container.splash.er
             this.f22817a.setButtonVisibility(TBErrorView.ButtonType.BUTTON_RIGHT, 8);
         }
         String str = b2;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(instance.h())) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(instance.h())) {
             String h = instance.h();
             q.b(h, "instance.appId");
             if (n.b((CharSequence) str, (CharSequence) h, false, 2, (Object) null)) {
                 this.f22817a.setButtonVisibility(TBErrorView.ButtonType.BUTTON_RIGHT, 8);
             }
         }
-        if (!TextUtils.isEmpty(errorInfo.f) && !TextUtils.isEmpty(errorInfo.g)) {
+        if (!StringUtils.isEmpty(errorInfo.f) && !StringUtils.isEmpty(errorInfo.g)) {
             this.f22817a.setButtonVisibility(TBErrorView.ButtonType.BUTTON_LEFT, 0);
             this.f22817a.setButton(TBErrorView.ButtonType.BUTTON_LEFT, errorInfo.f, new a(errorInfo));
         } else if (com.taobao.themis.kernel.utils.n.INSTANCE.aF() && (instance.i() == TMSContainerType.EMBEDDED || instance.j() == TMSSolutionType.WEB_SINGLE_PAGE || (instance.j() == TMSSolutionType.UNIAPP && com.taobao.themis.kernel.utils.n.INSTANCE.r()))) {

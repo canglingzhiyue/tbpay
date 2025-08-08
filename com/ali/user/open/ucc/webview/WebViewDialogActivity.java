@@ -3,7 +3,7 @@ package com.ali.user.open.ucc.webview;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -124,7 +124,7 @@ public class WebViewDialogActivity extends UccWebViewActivity {
             });
         }
         TextView textView = (TextView) findViewById(R.id.ali_ucc_bind_title);
-        if (!TextUtils.isEmpty(ConfigManager.getInstance().getBindTitle()) && textView != null) {
+        if (!StringUtils.isEmpty(ConfigManager.getInstance().getBindTitle()) && textView != null) {
             textView.setText(ConfigManager.getInstance().getBindTitle());
         }
         SDKLogger.d("ucc.webdialog", "onCreate url=" + str);

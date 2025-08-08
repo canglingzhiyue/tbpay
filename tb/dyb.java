@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -185,10 +185,10 @@ public class dyb implements dyh {
         } else {
             dyaVar.f27083a.f();
             String str = a2.f;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 map.put("preload_v", str);
             }
-            if (!TextUtils.isEmpty(a2.i)) {
+            if (!StringUtils.isEmpty(a2.i)) {
                 map.put("industryFailReason", a2.i);
             }
             if (com.taobao.android.detail.core.performance.preload.c.FINAL_ULTRON.equals(str) || "industry".equals(str)) {
@@ -225,7 +225,7 @@ public class dyb implements dyh {
         if (ipChange instanceof IpChange) {
             return (h) ipChange.ipc$dispatch("3fac816b", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             String a2 = l.a("DetailControllerPreloadHandleCallback");
             com.taobao.android.detail.core.utils.i.a(a2, "预加载缓存获取本：fromSource:" + str + "itemId:" + str2);
             return null;
@@ -313,7 +313,7 @@ public class dyb implements dyh {
             }
             com.taobao.android.detail.core.utils.i.c(l.a("DetailControllerPreloadHandleCallback"), "controller.detailRequest start");
             dym dymVar = new dym(this.f27094a);
-            if (TextUtils.isEmpty(this.b.get("preload_v"))) {
+            if (StringUtils.isEmpty(this.b.get("preload_v"))) {
                 this.b.put("preload_v", "industry");
             }
             this.f27094a.a(dymVar, this.b);

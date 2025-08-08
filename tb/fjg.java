@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.ext.m;
@@ -149,7 +149,7 @@ public class fjg {
 
     private String a(d dVar, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1174d798", new Object[]{this, dVar, str}) : (dVar == null || dVar.J() == null || TextUtils.isEmpty(dVar.J().pageName)) ? str : dVar.J().pageName;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1174d798", new Object[]{this, dVar, str}) : (dVar == null || dVar.J() == null || StringUtils.isEmpty(dVar.J().pageName)) ? str : dVar.J().pageName;
     }
 
     private void a(Activity activity, d dVar) {
@@ -164,7 +164,7 @@ public class fjg {
             return;
         }
         String uri = data.toString();
-        if (TextUtils.isEmpty(uri)) {
+        if (StringUtils.isEmpty(uri)) {
             return;
         }
         String replaceAll = uri.replaceAll("(scm=[^&]*)", "");
@@ -243,7 +243,7 @@ public class fjg {
             map = new HashMap<>();
         }
         String a2 = fjh.a(dVar, "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             map.put("spm-cnt", a2);
         }
         Map<String, String> c = c(aVar, fkrVar, map, dVar);
@@ -271,7 +271,7 @@ public class fjg {
             return;
         }
         String I = R.I();
-        if (TextUtils.isEmpty(I)) {
+        if (StringUtils.isEmpty(I)) {
             return;
         }
         map.put("pre_seller_id", I);

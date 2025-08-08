@@ -1,6 +1,6 @@
 package com.taobao.linkmanager.afc.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
 import com.taobao.flowcustoms.afc.utils.c;
@@ -30,7 +30,7 @@ public class a extends TBLinkRequest {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("27d15340", new Object[]{this, str, str2, map, new Boolean(z), koeVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || map == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || map == null) {
         } else {
             addCheckParams(map);
             MtopRequest mtopRequest = new MtopRequest();

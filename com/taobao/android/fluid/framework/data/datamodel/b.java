@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.data.datamodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,7 +50,7 @@ public final class b {
             a2.putAll(c);
         }
         a2.put("page", (Object) spsVar.c);
-        if (!TextUtils.isEmpty(spsVar.J)) {
+        if (!StringUtils.isEmpty(spsVar.J)) {
             a2.put(aw.PARAM_UT_PARAMS, (Object) spsVar.J);
         }
         a2.put("tbvs_version", (Object) 31);
@@ -142,7 +142,7 @@ public final class b {
             if (jcs.a()) {
                 String a2 = sll.a();
                 spz.c("RecommendParams", "cflog bxFeatures " + a2);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     this.b.put("bxFeature", (Object) a2);
                 }
             }
@@ -223,7 +223,7 @@ public final class b {
             if (jcs.f()) {
                 String b = sll.b();
                 spz.c("RecommendParams", "cflog ggBxFeatures " + b);
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     this.b.put("bxFeature", (Object) b);
                 }
             }

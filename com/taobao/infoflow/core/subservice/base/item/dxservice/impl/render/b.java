@@ -1,6 +1,6 @@
 package com.taobao.infoflow.core.subservice.base.item.dxservice.impl.render;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.tempate.DTemplateManager;
@@ -62,7 +62,7 @@ public class b {
         ldz a2 = leb.a(jSONObject);
         String b = a2.b();
         String c = a2.c();
-        if (TextUtils.isEmpty(b) || TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(b) || StringUtils.isEmpty(c)) {
             num = -1;
             a(a2);
         } else {
@@ -78,7 +78,7 @@ public class b {
                     if (a4 == null) {
                         num = -1;
                     } else {
-                        if (!TextUtils.equals(a4.f11925a, b) || !TextUtils.equals(String.valueOf(a4.b), c)) {
+                        if (!StringUtils.equals(a4.f11925a, b) || !StringUtils.equals(String.valueOf(a4.b), c)) {
                             String str = a4.f11925a;
                             a3 = a(str, a4.b + "", baseSectionModel);
                         }
@@ -98,7 +98,7 @@ public class b {
                         num = -1;
                         ldf.d("InfoFlowViewTypeGenerator", "exactTemplate is null");
                     } else {
-                        if (!TextUtils.equals(d.name, b) || !TextUtils.equals(d.version, c)) {
+                        if (!StringUtils.equals(d.name, b) || !StringUtils.equals(d.version, c)) {
                             String str2 = d.name;
                             a3 = a(str2, d.version + "", baseSectionModel);
                         }

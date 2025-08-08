@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.BootImageDataMgr;
 import com.taobao.bootimage.activity.BootImageActivity;
@@ -111,7 +111,7 @@ public class ked {
 
     private boolean c(Activity activity) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("792c4740", new Object[]{this, activity})).booleanValue() : TextUtils.equals(activity.getLocalClassName(), this.b) || TextUtils.equals(BootImageActivity.class.getCanonicalName(), this.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("792c4740", new Object[]{this, activity})).booleanValue() : StringUtils.equals(activity.getLocalClassName(), this.b) || StringUtils.equals(BootImageActivity.class.getCanonicalName(), this.b);
     }
 
     public void a(Activity activity) {
@@ -222,6 +222,6 @@ public class ked {
         }
         kej.a("PageStateService", "PageStateService isFromWelcome frontActivityName：" + this.f);
         String str = this.f;
-        return str == null || (TextUtils.equals(str, Welcome.class.getSimpleName()) && !this.g);
+        return str == null || (StringUtils.equals(str, Welcome.class.getSimpleName()) && !this.g);
     }
 }

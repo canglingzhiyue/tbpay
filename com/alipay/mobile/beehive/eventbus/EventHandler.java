@@ -1,6 +1,6 @@
 package com.alipay.mobile.beehive.eventbus;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.InvocationTargetException;
@@ -168,7 +168,7 @@ public class EventHandler {
             return ((Boolean) ipChange.ipc$dispatch("6cd8d2e5", new Object[]{this, eventHandler})).booleanValue();
         }
         String uniqueId = getUniqueId();
-        return !TextUtils.isEmpty(uniqueId) && TextUtils.equals(uniqueId, eventHandler.getUniqueId());
+        return !StringUtils.isEmpty(uniqueId) && StringUtils.equals(uniqueId, eventHandler.getUniqueId());
     }
 
     public void handleEvent(Object obj) throws InvocationTargetException {

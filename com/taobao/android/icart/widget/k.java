@@ -2,7 +2,7 @@ package com.taobao.android.icart.widget;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -134,7 +134,7 @@ public final class k extends bm {
         } else if (hasAspectRatioAttribute() || getLayoutWidth() > 0 || getLayoutWidth() == -1) {
         } else {
             String imageUrl = getImageUrl();
-            if (TextUtils.isEmpty(imageUrl)) {
+            if (StringUtils.isEmpty(imageUrl)) {
                 return;
             }
             Matcher matcher = g.b.matcher(imageUrl);

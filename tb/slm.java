@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,12 +43,12 @@ public final class slm {
 
     public static int a(String str, int i) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue() : (!TextUtils.isEmpty(str) && TextUtils.isDigitsOnly(str)) ? Integer.valueOf(str).intValue() : i;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue() : (!StringUtils.isEmpty(str) && StringUtils.isDigitsOnly(str)) ? Integer.valueOf(str).intValue() : i;
     }
 
     public static boolean a(String str, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : TextUtils.isEmpty(str) ? z : TextUtils.isDigitsOnly(str) ? Integer.valueOf(str).intValue() != 0 : TextUtils.isEmpty(str) ? z : "true".equalsIgnoreCase(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : StringUtils.isEmpty(str) ? z : StringUtils.isDigitsOnly(str) ? Integer.valueOf(str).intValue() != 0 : StringUtils.isEmpty(str) ? z : "true".equalsIgnoreCase(str);
     }
 
     public static boolean a(String... strArr) {
@@ -60,7 +60,7 @@ public final class slm {
             return false;
         }
         for (String str : strArr) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
         }

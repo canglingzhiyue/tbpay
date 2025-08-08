@@ -3,7 +3,7 @@ package com.taobao.avplayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.monitor.track.spm.merge.MergeUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -319,11 +319,11 @@ public class g {
             if (this.b.mInteractiveParms != null && this.b.mInteractiveParms.size() > 0) {
                 hashMap.putAll(this.b.mInteractiveParms);
             }
-            if (!TextUtils.isEmpty(this.b.getSourcePageName())) {
+            if (!StringUtils.isEmpty(this.b.getSourcePageName())) {
                 hashMap.put("sourcePageName", this.b.getSourcePageName());
             }
             dWRequest.paramMap.put("extendParamsStr", JSON.toJSONString(hashMap));
-            if (!TextUtils.isEmpty(this.b.mFrom)) {
+            if (!StringUtils.isEmpty(this.b.mFrom)) {
                 dWRequest.paramMap.put("from", this.b.mFrom);
             }
             this.l = true;
@@ -370,8 +370,8 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("54c4a4d5", new Object[]{this, wVar, new Boolean(z)});
-        } else if (Thread.currentThread().getId() != Looper.getMainLooper().getThread().getId() || this.u || TextUtils.isEmpty(this.b.mCid)) {
-            if (kck.a() && TextUtils.isEmpty(this.b.mCid)) {
+        } else if (Thread.currentThread().getId() != Looper.getMainLooper().getThread().getId() || this.u || StringUtils.isEmpty(this.b.mCid)) {
+            if (kck.a() && StringUtils.isEmpty(this.b.mCid)) {
                 throw new RuntimeException("queryInteractiveData error");
             }
             DWResponse dWResponse = new DWResponse();
@@ -455,7 +455,7 @@ public class g {
             dWRequest.paramMap.put("expectedCodec", this.b.mPlayContext.isH265() ? "h265" : "h264");
             dWRequest.paramMap.put("expectedDefPriority", this.b.mPlayContext.getRateAdaptePriority());
             dWRequest.paramMap.put("netSpeed", String.valueOf(this.b.mPlayContext.getNetSpeed()));
-            if (!TextUtils.isEmpty(this.b.getPanoTyeStr())) {
+            if (!StringUtils.isEmpty(this.b.getPanoTyeStr())) {
                 dWRequest.paramMap.put("panoType", this.b.getPanoTyeStr());
             }
             this.i = true;
@@ -619,13 +619,13 @@ public class g {
         dWRequest.paramMap.put("sdkVersion", h.f16513a);
         dWRequest.paramMap.put("videoId", this.b.getVideoId());
         dWRequest.paramMap.put(MergeUtil.KEY_RID, this.b.getRID());
-        if (!TextUtils.isEmpty(this.b.mFrom)) {
+        if (!StringUtils.isEmpty(this.b.mFrom)) {
             dWRequest.paramMap.put("from", this.b.mFrom);
         }
         Map<String, String> uTParams = this.b.getUTParams();
         if (uTParams != null) {
             String str = uTParams.get("product_type");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 dWRequest.paramMap.put("videoChannel", str);
             }
         }
@@ -758,7 +758,7 @@ public class g {
             dWRequest.paramMap.put("includeVideoSize", "1");
             dWRequest.paramMap.put("sysOS", "Android");
             dWRequest.paramMap.put("videoId", this.b.getVideoId());
-            if (!TextUtils.isEmpty(this.b.mFrom)) {
+            if (!StringUtils.isEmpty(this.b.mFrom)) {
                 dWRequest.paramMap.put("from", this.b.mFrom);
             }
             this.k = true;
@@ -841,7 +841,7 @@ public class g {
             if (map != null) {
                 dWRequest.paramMap.putAll(map);
             }
-            if (!TextUtils.isEmpty(this.b.mFrom)) {
+            if (!StringUtils.isEmpty(this.b.mFrom)) {
                 dWRequest.paramMap.put("from", this.b.mFrom);
             }
             this.n = true;

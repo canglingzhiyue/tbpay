@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.aura.broadcast;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.umf.datamodel.service.rule.UMFRuleIO;
@@ -56,7 +56,7 @@ public class AliDetailSKURefreshBroadcastReceiver extends AbsAliDetailUIRefreshB
             return null;
         }
         DetailCoreActivity detailCoreActivity = (DetailCoreActivity) this.f9383a;
-        if (!TextUtils.equals(detailCoreActivity.h, stringExtra)) {
+        if (!StringUtils.equals(detailCoreActivity.h, stringExtra)) {
             return null;
         }
         if (detailCoreActivity.R()) {
@@ -64,11 +64,11 @@ public class AliDetailSKURefreshBroadcastReceiver extends AbsAliDetailUIRefreshB
             return null;
         }
         String stringExtra2 = intent.getStringExtra("selectedTextMap");
-        if (TextUtils.isEmpty(stringExtra2) || (parseObject = JSON.parseObject(stringExtra2)) == null) {
+        if (StringUtils.isEmpty(stringExtra2) || (parseObject = JSON.parseObject(stringExtra2)) == null) {
             return null;
         }
         String a3 = a(parseObject);
-        if (TextUtils.isEmpty(a3) || (a2 = a(a3, parseObject.getBoolean("selectedSkuId").booleanValue())) == null) {
+        if (StringUtils.isEmpty(a3) || (a2 = a(a3, parseObject.getBoolean("selectedSkuId").booleanValue())) == null) {
             return null;
         }
         return new UMFRuleIO(Arrays.asList(a2));
@@ -117,7 +117,7 @@ public class AliDetailSKURefreshBroadcastReceiver extends AbsAliDetailUIRefreshB
             Object next = it.next();
             if (next instanceof AURARenderComponent) {
                 aURARenderComponent = (AURARenderComponent) next;
-                if (TextUtils.equals(aURARenderComponent.key, "detailSku")) {
+                if (StringUtils.equals(aURARenderComponent.key, "detailSku")) {
                     break;
                 }
             }

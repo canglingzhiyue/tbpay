@@ -29,7 +29,7 @@ import android.support.v7.widget.FitWindowsViewGroup;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.VectorEnabledTintResources;
 import android.support.v7.widget.ViewUtils;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidRuntimeException;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -719,7 +719,7 @@ public class AppCompatDelegateImplV9 extends d implements e.a, LayoutInflater.Fa
         if (!this.x) {
             this.y = y();
             CharSequence s = s();
-            if (!TextUtils.isEmpty(s)) {
+            if (!StringUtils.isEmpty(s)) {
                 b(s);
             }
             z();

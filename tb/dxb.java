@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -66,7 +66,7 @@ public final class dxb extends arv {
             a3.c(str2, "AliDetailSKUItemEvent", "getArgs or getEventFields is null,eventType=" + aURAEventIO.getEventType());
         } else {
             String a4 = a(aURAEventIO.getEventModel().e());
-            if (TextUtils.isEmpty(a4)) {
+            if (StringUtils.isEmpty(a4)) {
                 return;
             }
             a(d, a4);
@@ -91,7 +91,7 @@ public final class dxb extends arv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1a501edd", new Object[]{this, aURARenderComponent, str});
-        } else if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && !TextUtils.isEmpty(str)) {
+        } else if (aURARenderComponent != null && aURARenderComponent.data != null && aURARenderComponent.data.fields != null && !StringUtils.isEmpty(str)) {
             Object obj = aURARenderComponent.data.fields.get("items");
             JSONArray jSONArray2 = obj instanceof JSONArray ? (JSONArray) obj : null;
             if (jSONArray2 == null || jSONArray2.isEmpty()) {
@@ -103,7 +103,7 @@ public final class dxb extends arv {
                     for (int i2 = 0; i2 < jSONArray.size(); i2++) {
                         JSONObject jSONObject2 = jSONArray.getJSONObject(i2);
                         if (jSONObject2 != null) {
-                            if (TextUtils.equals(jSONObject2.getString(a.KEY_PROP_PATH), str)) {
+                            if (StringUtils.equals(jSONObject2.getString(a.KEY_PROP_PATH), str)) {
                                 jSONObject2.put("isSelected", (Object) true);
                             } else {
                                 jSONObject2.put("isSelected", (Object) false);
@@ -121,7 +121,7 @@ public final class dxb extends arv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("48075352", new Object[]{this, jSONObject, str});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             Object obj = b().a().get("token");
             if (!(obj instanceof String) || (a2 = elr.a((String) obj)) == null || !(a2.b() instanceof RecyclerView)) {
@@ -145,7 +145,7 @@ public final class dxb extends arv {
                 }
                 AURARenderComponent aURARenderComponent2 = a3.get(i);
                 if (aURARenderComponent2 != null && aURARenderComponent2.data != null && aURARenderComponent2.data.fields != null) {
-                    if (TextUtils.equals(string, aURARenderComponent2.data.fields.get("code") instanceof String ? (String) aURARenderComponent2.data.fields.get("code") : "")) {
+                    if (StringUtils.equals(string, aURARenderComponent2.data.fields.get("code") instanceof String ? (String) aURARenderComponent2.data.fields.get("code") : "")) {
                         aURARenderComponent = atqVar.a(i);
                         b(aURARenderComponent, str);
                         break;
@@ -175,7 +175,7 @@ public final class dxb extends arv {
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject = jSONArray.getJSONObject(i);
                 if (jSONObject != null) {
-                    if (TextUtils.equals(jSONObject.getString("id"), str)) {
+                    if (StringUtils.equals(jSONObject.getString("id"), str)) {
                         jSONObject.put("isSelected", (Object) true);
                         map.put("mainImageUrl", jSONObject.getString("bgImage"));
                     } else {

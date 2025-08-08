@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.asp.APreferencesManager;
 import com.taobao.accs.client.b;
@@ -67,7 +67,7 @@ public class ddj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.b = str;
         }
@@ -99,7 +99,7 @@ public class ddj {
         }
         try {
             String string = APreferencesManager.getSharedPreferences(this.d, "AGOO_BIND", 0).getString("bind_status", null);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 ALog.w("AgooBindCache", "restoreAgooClients packs null return", new Object[0]);
                 return;
             }

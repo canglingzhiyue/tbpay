@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.fragment;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,7 +109,7 @@ public class JhsMarketingFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6b8cd8fe", new Object[]{fragmentActivity, str, str2});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             startFragment(fragmentActivity, newInstance(str, str2));
         }
@@ -288,7 +288,7 @@ public class JhsMarketingFragment extends FloatFragment {
                 if (jhsMarketingItem.button == null) {
                     return;
                 }
-                if (TextUtils.isEmpty(jhsMarketingItem.button.link)) {
+                if (StringUtils.isEmpty(jhsMarketingItem.button.link)) {
                     if (jhsMarketingItem.button.action == null) {
                         return;
                     }
@@ -372,22 +372,22 @@ public class JhsMarketingFragment extends FloatFragment {
             if (jhsMarketingItem == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(jhsMarketingItem.marketingDescForPlugin)) {
+            if (!StringUtils.isEmpty(jhsMarketingItem.marketingDescForPlugin)) {
                 aVar.c.setText(jhsMarketingItem.marketingDescForPlugin);
             } else {
                 aVar.c.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(jhsMarketingItem.marketingTypeForPlugin)) {
+            if (!StringUtils.isEmpty(jhsMarketingItem.marketingTypeForPlugin)) {
                 aVar.f9520a.setText(jhsMarketingItem.marketingTypeForPlugin);
             } else {
                 aVar.f9520a.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(jhsMarketingItem.marketingTaskDescForPlugin)) {
+            if (!StringUtils.isEmpty(jhsMarketingItem.marketingTaskDescForPlugin)) {
                 aVar.b.setText(jhsMarketingItem.marketingTaskDescForPlugin);
             } else {
                 aVar.b.setVisibility(8);
             }
-            if (!TextUtils.isEmpty(jhsMarketingItem.marketingExtendDescForPlugin)) {
+            if (!StringUtils.isEmpty(jhsMarketingItem.marketingExtendDescForPlugin)) {
                 aVar.d.setText(jhsMarketingItem.marketingExtendDescForPlugin);
             } else {
                 aVar.d.setVisibility(8);
@@ -465,7 +465,7 @@ public class JhsMarketingFragment extends FloatFragment {
                                 break;
                             }
                             JhsMarkegingResult.JhsMarketingItem jhsMarketingItem = (JhsMarkegingResult.JhsMarketingItem) JhsMarketingFragment.access$000(JhsMarketingFragment.this).get(i);
-                            if (jhsMarketingItem == null || jhsMarketingItem.button == null || TextUtils.isEmpty(jhsMarkegingActionResult.id) || !TextUtils.equals(jhsMarkegingActionResult.id, jhsMarketingItem.id)) {
+                            if (jhsMarketingItem == null || jhsMarketingItem.button == null || StringUtils.isEmpty(jhsMarkegingActionResult.id) || !StringUtils.equals(jhsMarkegingActionResult.id, jhsMarketingItem.id)) {
                                 i++;
                             } else {
                                 jhsMarketingItem.button.status = jhsMarkegingActionResult.isEnabled;
@@ -475,7 +475,7 @@ public class JhsMarketingFragment extends FloatFragment {
                                 }
                             }
                         }
-                        if (TextUtils.isEmpty(jhsMarkegingActionResult.popUpText) || JhsMarketingFragment.this.getActivity() == null) {
+                        if (StringUtils.isEmpty(jhsMarkegingActionResult.popUpText) || JhsMarketingFragment.this.getActivity() == null) {
                             return;
                         }
                         Toast.makeText(JhsMarketingFragment.this.getActivity(), jhsMarkegingActionResult.popUpText, 1).show();

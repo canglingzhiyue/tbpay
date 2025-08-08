@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.search;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.INetDataObject;
 import java.util.Objects;
@@ -32,7 +32,7 @@ public class SearchHistory implements INetDataObject {
             return true;
         }
         if (obj instanceof SearchHistory) {
-            return TextUtils.equals(this.key, ((SearchHistory) obj).key);
+            return StringUtils.equals(this.key, ((SearchHistory) obj).key);
         }
         return false;
     }

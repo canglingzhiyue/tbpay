@@ -12,7 +12,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
@@ -380,7 +380,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
                 return;
             }
             final String a2 = com.etao.feimagesearch.util.l.a(f.b(f.this).g(), f.b(f.this).m().e(), 90);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             f.a(f.this).post(new Runnable() { // from class: com.etao.feimagesearch.newresult.base.f.q.1
@@ -1021,7 +1021,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
                     str2 = com.taobao.android.searchbaseframe.util.a.a(b3, "price", str2);
                 }
                 ((com.etao.feimagesearch.newresult.base.i) arrayList.get(a5)).a(b2);
-                if (!TextUtils.isEmpty(a6) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(a6) && !StringUtils.isEmpty(str2)) {
                     String str3 = a6 + "_" + str2;
                     if (linkedHashSet.contains(str3)) {
                         ((com.etao.feimagesearch.newresult.base.i) arrayList.get(a5)).a(false);
@@ -1457,7 +1457,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
                 kotlin.jvm.internal.q.b("irpWidget");
             }
             String f2 = hVar11.m().f("queryFromMainSearch");
-            if (!TextUtils.isEmpty(f2)) {
+            if (!StringUtils.isEmpty(f2)) {
                 com.etao.feimagesearch.newresult.base.h hVar12 = this.c;
                 if (hVar12 == null) {
                     kotlin.jvm.internal.q.b("irpWidget");
@@ -1506,7 +1506,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
             }
             com.etao.feimagesearch.newresult.base.c i3 = hVar18.m().i();
             String f3 = i3 != null ? i3.f() : null;
-            if (f3 != null && !TextUtils.isEmpty(f3)) {
+            if (f3 != null && !StringUtils.isEmpty(f3)) {
                 com.etao.feimagesearch.newresult.base.h hVar19 = this.c;
                 if (hVar19 == null) {
                     kotlin.jvm.internal.q.b("irpWidget");
@@ -1604,7 +1604,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
         if (i10 != null) {
             str3 = i10.k();
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             com.etao.feimagesearch.newresult.base.h hVar35 = this.c;
             if (hVar35 == null) {
                 kotlin.jvm.internal.q.b("irpWidget");
@@ -2282,7 +2282,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
             return null;
         }
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         List b2 = kotlin.text.n.b((CharSequence) str2, new String[]{","}, false, 0, 6, (Object) null);
@@ -2482,7 +2482,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
             throw new TypeCastException("null cannot be cast to non-null type com.etao.feimagesearch.newresult.base.IrpNetResultModel");
         }
         Map<String, String> a2 = ((com.etao.feimagesearch.newresult.base.c) c2).a();
-        if ((a2 != null && a2.containsKey("imgExtractInfo")) || TextUtils.isEmpty(com.etao.feimagesearch.config.b.bu())) {
+        if ((a2 != null && a2.containsKey("imgExtractInfo")) || StringUtils.isEmpty(com.etao.feimagesearch.config.b.bu())) {
             return false;
         }
         com.etao.feimagesearch.newresult.base.h hVar = this.c;
@@ -2671,7 +2671,7 @@ public final class f extends com.etao.feimagesearch.newresult.base.b implements 
             if (b2 == null || (str = b2.toString()) == null) {
                 str = "";
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.etao.feimagesearch.history.a a3 = com.etao.feimagesearch.history.a.a();
                 com.etao.feimagesearch.newresult.base.h hVar9 = this.c;
                 if (hVar9 == null) {

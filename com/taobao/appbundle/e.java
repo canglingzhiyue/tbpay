@@ -1,6 +1,6 @@
 package com.taobao.appbundle;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.ab;
 import com.alibaba.android.split.scene.f;
 import com.alibaba.android.split.scene.l;
@@ -76,7 +76,7 @@ public abstract class e implements ab.a, ab.b {
             ipChange.ipc$dispatch("18625fbb", new Object[]{this, str});
             return;
         }
-        if (str.startsWith("com.taobao.tao.welcome") || TextUtils.equals(str, lsk.BIZ_NAME)) {
+        if (str.startsWith("com.taobao.tao.welcome") || StringUtils.equals(str, lsk.BIZ_NAME)) {
             this.m = lsk.BIZ_NAME;
             this.n = "首页";
         } else {

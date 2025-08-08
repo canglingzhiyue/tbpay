@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -641,7 +641,7 @@ public class htx implements AudioManager.OnAudioFocusChangeListener, TaoLiveVide
         k kVar = this.b;
         if (kVar != null) {
             kVar.p();
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 try {
                     this.b.h(this.d);
                 } catch (Throwable th) {

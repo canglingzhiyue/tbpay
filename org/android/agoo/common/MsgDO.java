@@ -1,6 +1,6 @@
 package org.android.agoo.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.sp.framework.model.SimpleMessageListData;
 import java.util.HashMap;
@@ -56,13 +56,13 @@ public class MsgDO {
         hashMap.put("dataId", this.dataId);
         hashMap.put("pack", this.pack);
         hashMap.put(SimpleMessageListData.SOURCE_NAME_MESSAGE, this.messageSource);
-        if (!TextUtils.isEmpty(this.removePacks)) {
+        if (!StringUtils.isEmpty(this.removePacks)) {
             hashMap.put("removePacks", this.removePacks);
         }
-        if (!TextUtils.isEmpty(this.errorCode)) {
+        if (!StringUtils.isEmpty(this.errorCode)) {
             hashMap.put("errorCode", this.errorCode);
         }
-        if (!TextUtils.isEmpty(this.type)) {
+        if (!StringUtils.isEmpty(this.type)) {
             hashMap.put("type", this.type);
         }
         return new JSONObject(hashMap).toString();

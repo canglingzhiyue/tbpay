@@ -13,7 +13,7 @@ import android.net.Uri;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alipay.android.phone.mobilesdk.socketcraft.monitor.MonitorItemConstants;
@@ -426,7 +426,7 @@ public class jzv {
             }
             if (intent != null && intent.getComponent() != null) {
                 String className = intent.getComponent().getClassName();
-                if (!TextUtils.isEmpty(className)) {
+                if (!StringUtils.isEmpty(className)) {
                     try {
                         final Uri uri = f.get(className);
                         if (uri == null) {

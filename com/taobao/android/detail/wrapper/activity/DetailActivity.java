@@ -15,7 +15,7 @@ import android.os.MessageQueue;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.KeyEvent;
@@ -458,11 +458,11 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
         PriceNode.PriceData extraPriceByType = eqb.m(bVar).getExtraPriceByType(2);
         String str2 = e.NAV_URL_DETAIL_BASE + i + ".htm";
         String b = fgp.b(bVar);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             str2 = b;
         }
         Uri.Builder buildUpon = Uri.parse(str2).buildUpon();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             buildUpon.appendQueryParameter("price", str);
         }
         if (extraPriceByType != null) {
@@ -471,7 +471,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
         buildUpon.appendQueryParameter("sourceType", "item");
         shareContent.url = buildUpon.toString();
         String a2 = fgp.a(bVar);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             shareContent.businessId = a2;
         }
         if (cVar.d()) {
@@ -480,7 +480,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
         shareContent.description = k;
         try {
             String str3 = eqb.l(bVar).share.c.get("bizId");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 shareContent.businessId = str3;
             }
         } catch (Exception unused) {
@@ -658,12 +658,12 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             } else if (!DetailActivity.this.h.equals(intent.getStringExtra("uniqueId"))) {
             } else {
                 String stringExtra = intent.getStringExtra("selectedTextMap");
-                if (TextUtils.isEmpty(stringExtra) || (parseObject = JSONObject.parseObject(stringExtra)) == null) {
+                if (StringUtils.isEmpty(stringExtra) || (parseObject = JSONObject.parseObject(stringExtra)) == null) {
                     return;
                 }
                 eog eogVar = new eog(null);
                 eogVar.b = "%new_sku%" + parseObject.getString("finalText");
-                if (!TextUtils.isEmpty(parseObject.getString("finalText"))) {
+                if (!StringUtils.isEmpty(parseObject.getString("finalText"))) {
                     com.taobao.android.trade.event.f.a(DetailActivity.this).a(eogVar);
                 }
                 dya y = DetailActivity.this.y();
@@ -672,7 +672,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
                 }
                 d c = f.c();
                 String a2 = DetailActivity.a(DetailActivity.this, parseObject);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 try {
@@ -864,7 +864,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
                 return;
             }
             String string = jSONObject.getString("actionFrom");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "NULL";
             }
             char c = 65535;
@@ -940,7 +940,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
                 return false;
             }
             ShareContent shareContent = (ShareContent) queryShareParameters;
-            if (!TextUtils.isEmpty(jSONObject.getString("bizId"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("bizId"))) {
                 shareContent.businessId = jSONObject.getString("bizId");
             } else {
                 shareContent.businessId = fgr.a("sku_lightoff_share_id", "skublacklight");
@@ -950,10 +950,10 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             if (jSONObject2 != null) {
                 str = jSONObject2.getString("url");
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = jSONObject2.getString("icon");
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 shareContent.imageUrl = str;
             } else {
                 StringBuilder sb = new StringBuilder();
@@ -1001,16 +1001,16 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             return (Map) ipChange.ipc$dispatch("f612a99a", new Object[]{this, intent});
         }
         String stringExtra = intent.getStringExtra(fgl.ORIGINALITEMID);
-        if (this.b == null || this.b.i() == null || TextUtils.isEmpty(this.b.i().i()) || !this.b.i().i().equals(stringExtra)) {
+        if (this.b == null || this.b.i() == null || StringUtils.isEmpty(this.b.i().i()) || !this.b.i().i().equals(stringExtra)) {
             return null;
         }
         String stringExtra2 = intent.getStringExtra(fgl.TARGETITEMID);
         String stringExtra3 = intent.getStringExtra("areaChangedByUser");
         com.taobao.android.detail.datasdk.model.datamodel.node.c i = this.b.i();
         boolean b = i.b();
-        if (!TextUtils.isEmpty(stringExtra3) && b) {
+        if (!StringUtils.isEmpty(stringExtra3) && b) {
             String j = i.j();
-            if (!TextUtils.isEmpty(j)) {
+            if (!StringUtils.isEmpty(j)) {
                 stringExtra2 = j;
             }
         }
@@ -1018,7 +1018,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             FeatureNode f = eqb.f(i.f10055a);
             ItemNode c = eqb.c(i.f10055a);
             String j2 = i.j();
-            if (f != null && c != null && !f.oneProductMMDegrade && !TextUtils.equals(c.itemId, j2)) {
+            if (f != null && c != null && !f.oneProductMMDegrade && !StringUtils.equals(c.itemId, j2)) {
                 stringExtra2 = j2;
             }
         }
@@ -1029,7 +1029,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
         this.N = stringExtra5;
         HashMap hashMap = new HashMap();
         hashMap.put(DetailCoreActivity.DETAIL_ITEM_ID, stringExtra2);
-        if (!TextUtils.isEmpty(stringExtra4)) {
+        if (!StringUtils.isEmpty(stringExtra4)) {
             hashMap.put(mrm.KEY_AREA_ID, stringExtra4);
         }
         if (stringExtra5 != null) {
@@ -1379,7 +1379,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
                 return new String[]{"intentDataUrl=uriNull"};
             }
             String uri = data.toString();
-            if (TextUtils.isEmpty(uri)) {
+            if (StringUtils.isEmpty(uri)) {
                 return new String[]{"intentDataUrl=empty"};
             }
             String queryParameter = data.getQueryParameter("hybrid");
@@ -1388,7 +1388,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             strArr[0] = "intentDataUrl=" + URLEncoder.encode(uri);
             StringBuilder sb = new StringBuilder();
             sb.append("hostPath=");
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 b = "empty";
             }
             sb.append(URLEncoder.encode(b));
@@ -1417,7 +1417,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
         if (intent == null) {
             return false;
         }
-        return !TextUtils.isEmpty(intent.getStringExtra(TTDetailPageManager.DOWNGRADE_DATA_ID));
+        return !StringUtils.isEmpty(intent.getStringExtra(TTDetailPageManager.DOWNGRADE_DATA_ID));
     }
 
     private boolean bf() {
@@ -1590,7 +1590,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             if (getIntent() != null && getIntent().getData() != null) {
                 hashMap.put("url", getIntent().getData().toString());
             }
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 eps.a("Page_Detail", 19999, "Page_Detail_EnterOldStructure_PreHit", hashMap, null, new String[0]);
                 ae.a(hashMap, -100021, "前置降级打开老容器");
                 com.taobao.android.detail.core.utils.i.a(com.taobao.android.detail.core.performance.d.a("DetailCoreActivity"), "downgradeDataId is null:前置降级进入老框架");
@@ -1640,7 +1640,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             String a2 = ecp.a(getIntent(), com.taobao.android.detail.wrapper.nav.c.KEY_DETAIL_NAV);
             String a3 = com.taobao.android.detail.core.performance.d.a("DetailCoreActivity");
             com.taobao.android.detail.core.utils.i.c(a3, "DetailActivity onCreate, intent中detail_nav参数为: " + a2);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 eip.a();
                 eip.c();
                 try {
@@ -2021,7 +2021,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a992350e", new Object[]{this});
-        } else if (this.f9411a == null || TextUtils.isEmpty(this.f9411a.f27180a)) {
+        } else if (this.f9411a == null || StringUtils.isEmpty(this.f9411a.f27180a)) {
             com.taobao.android.detail.core.utils.i.a("DetailCoreActivity", "queryParams.itemId is empty");
         } else {
             Intent intent = new Intent();
@@ -2331,7 +2331,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
                 ((com.taobao.android.detail.core.detail.kit.view.holder.c) aVar2).b((ehi) epeVar);
                 return;
             }
-            if (ecu.v && !TextUtils.isEmpty(aM())) {
+            if (ecu.v && !StringUtils.isEmpty(aM())) {
                 com.taobao.android.detail.wrapper.ext.component.actionbar.b bVar = new com.taobao.android.detail.wrapper.ext.component.actionbar.b(this);
                 boolean an2 = an();
                 boolean A2 = this.e.A();
@@ -2426,20 +2426,20 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             if (c != null) {
                 str = c.containerDimension;
             }
-            if (TextUtils.isEmpty(str) && c != null && c.videos != null && c.videos.size() > 0) {
+            if (StringUtils.isEmpty(str) && c != null && c.videos != null && c.videos.size() > 0) {
                 str = c.videos.get(0).spatialVideoDimension;
             }
-            if (TextUtils.isEmpty(str) && b != null && b.right != null && b.right.size() > 0) {
+            if (StringUtils.isEmpty(str) && b != null && b.right != null && b.right.size() > 0) {
                 for (GalleryNode.GalleryItemNode galleryItemNode : b.right) {
                     if (galleryItemNode.getContentType() == 2 && galleryItemNode.content != null && (videoContentData = galleryItemNode.content.getVideoContentData()) != null) {
                         str = videoContentData.videoRatio;
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             break;
                         }
                     }
                 }
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] split = str.split(":");
                 try {
                     return Integer.valueOf(split[0]).intValue() / Integer.valueOf(split[1]).intValue();
@@ -2460,7 +2460,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             return null;
         }
         String url = a2.mSearchData.getUrl();
-        if (!TextUtils.isEmpty(url)) {
+        if (!StringUtils.isEmpty(url)) {
             return url;
         }
         return null;
@@ -2476,7 +2476,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
             return "";
         }
         String utParams = a2.mSearchData.getUtParams();
-        return TextUtils.isEmpty(utParams) ? "" : utParams;
+        return StringUtils.isEmpty(utParams) ? "" : utParams;
     }
 
     private List<b.C0438b> aO() {
@@ -2556,7 +2556,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
         Bundle bundle = new Bundle();
         Bundle bundle2 = new Bundle();
         bundle2.putString(getString(R.string.detail_zzb_key_page), "Page_Detail");
-        if (this.f9411a != null && !TextUtils.isEmpty(this.f9411a.f27180a)) {
+        if (this.f9411a != null && !StringUtils.isEmpty(this.f9411a.f27180a)) {
             bundle2.putString(getString(R.string.detail_zzb_key_id), this.f9411a.f27180a);
         }
         Map<String, String> B = B();
@@ -2618,7 +2618,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
                         return hashMap;
                     }
                     String i = C.i();
-                    if (TextUtils.isEmpty(i)) {
+                    if (StringUtils.isEmpty(i)) {
                         return hashMap;
                     }
                     hashMap.put("token", DetailActivity.this.h);
@@ -2773,7 +2773,7 @@ public class DetailActivity extends DetailCoreActivity implements com.taobao.and
                     com.taobao.android.detail.core.utils.i.a("DetailCoreActivity", "BottomBarCartUpdateReceiver onReceive parse error", e);
                     str = "";
                 }
-                if (!TextUtils.equals("true", str) || intent == null || (G = DetailActivity.this.G()) == null) {
+                if (!StringUtils.equals("true", str) || intent == null || (G = DetailActivity.this.G()) == null) {
                     return;
                 }
                 G.a(intent.getIntExtra("itemCount", 0));

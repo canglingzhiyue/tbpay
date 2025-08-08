@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -81,7 +81,7 @@ public class e implements com.taobao.taolive.sdk.core.c, ddv {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
             } else if (intent == null || intent.getExtras() == null) {
             } else {
-                if (TextUtils.equals(intent.getExtras().getString("from"), "buyCreateOrder")) {
+                if (StringUtils.equals(intent.getExtras().getString("from"), "buyCreateOrder")) {
                     e.a(e.this).p();
                 }
                 his.b("LiveGoodDataCenter", "onReceive | data=" + intent.getExtras());
@@ -541,7 +541,7 @@ public class e implements com.taobao.taolive.sdk.core.c, ddv {
             Map map = (Map) obj;
             String str3 = (String) map.get("itemId");
             his.a("LiveGoodDataCenter", "onEvent | update item, itemId=" + str3 + "   from=" + ((String) map.get("from")));
-            if (!TextUtils.equals(this.e, (String) map.get(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID))) {
+            if (!StringUtils.equals(this.e, (String) map.get(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID))) {
                 return;
             }
             a(str3, (String) null, (String) null);
@@ -561,7 +561,7 @@ public class e implements com.taobao.taolive.sdk.core.c, ddv {
         } else {
             JSONObject jSONObject = (JSONObject) obj;
             String str4 = (String) jSONObject.get("itemId");
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 android.taobao.windvane.util.m.e("openInsideDetailPage", "itemId is null");
                 hit.a("fail", jSONObject);
                 return;
@@ -599,7 +599,7 @@ public class e implements com.taobao.taolive.sdk.core.c, ddv {
         int i = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (this.j == null || TextUtils.isEmpty(str)) {
+        } else if (this.j == null || StringUtils.isEmpty(str)) {
         } else {
             com.taobao.taolive.sdk.goodlist.a aVar = this.j.get(str);
             com.taobao.android.live.plugin.atype.flexalocal.good.business.e eVar = new com.taobao.android.live.plugin.atype.flexalocal.good.business.e(new com.taobao.taolive.sdk.adapter.network.d() { // from class: com.taobao.android.live.plugin.atype.flexalocal.good.showcase.e.6
@@ -1274,12 +1274,12 @@ public class e implements com.taobao.taolive.sdk.core.c, ddv {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("acceleratorCode");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Iterator<b> it = this.k.iterator();
             while (it.hasNext()) {
-                if (TextUtils.equals(it.next().d, string)) {
+                if (StringUtils.equals(it.next().d, string)) {
                     it.remove();
                     return;
                 }

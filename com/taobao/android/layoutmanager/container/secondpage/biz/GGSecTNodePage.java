@@ -3,7 +3,7 @@ package com.taobao.android.layoutmanager.container.secondpage.biz;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -141,7 +141,7 @@ public class GGSecTNodePage extends ofz {
                     ((ogb) context).setSecondPageUTObject(this.f);
                 }
             }
-            if (TextUtils.equals(a3, this.d)) {
+            if (StringUtils.equals(a3, this.d)) {
                 a(a4);
                 return;
             }
@@ -327,7 +327,7 @@ public class GGSecTNodePage extends ofz {
                 jSONObject2.put("spm-cnt", (Object) (string2 + "." + string3 + ".0.0"));
             } catch (Exception unused) {
             }
-            if (TextUtils.isEmpty(string) || jSONObject2 == null) {
+            if (StringUtils.isEmpty(string) || jSONObject2 == null) {
                 a(cVar);
                 return;
             }
@@ -336,7 +336,7 @@ public class GGSecTNodePage extends ofz {
             if (cVar.f19938a != null) {
                 str = oec.a(cVar.f19938a.c(R.id.layout_manager_engine_utparams_tag), (String) null);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 UTAnalytics.getInstance().getDefaultTracker().updateNextPageUtparam(str);
             }
             UTAnalytics.getInstance().getDefaultTracker().pageAppear(uTObjectWithContext, string);

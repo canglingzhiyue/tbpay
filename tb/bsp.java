@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.o;
@@ -63,7 +63,7 @@ public class bsp implements bsm {
         if (eVar == null) {
             bsnVar.a(new b(0, "NUTFloatView", "render-exception", "请设置UMFInstance参数到params中，key为：NUTFloatViewConstants.RenderParam.KEY_UMF_INSTANCE"));
             return false;
-        } else if (TextUtils.isEmpty(a(map, "startPointWorkflow", (String) null))) {
+        } else if (StringUtils.isEmpty(a(map, "startPointWorkflow", (String) null))) {
             bsnVar.a(new b(0, "NUTFloatView", "render-exception", "param: startPointWorkflow is empty"));
             return false;
         } else {

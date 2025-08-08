@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.i;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.utils.FileUtil;
 import java.io.File;
@@ -76,7 +76,7 @@ public class WVScreen extends e {
         }
         r rVar = new r();
         int i = 50;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 optString = jSONObject.optString("inAlbum", "false");
@@ -142,7 +142,7 @@ public class WVScreen extends e {
         }
         new r();
         String str2 = "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str2 = new JSONObject(str).optString("orientation", str2);
             } catch (Exception unused) {

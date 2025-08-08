@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.app.template.FBContext;
 import com.alipay.android.app.template.FBResourceClient;
@@ -50,11 +50,11 @@ public class ResUtils {
                 return null;
             }
             String substring = str.substring(0, indexOf);
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 substring = context.getPackageName();
             }
             String substring2 = str.substring(indexOf + 1);
-            if (TextUtils.isEmpty(substring2) || TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring2) || StringUtils.isEmpty(substring)) {
                 return null;
             }
             int indexOf2 = substring2.indexOf(".");
@@ -81,7 +81,7 @@ public class ResUtils {
         }
         try {
             if (GlobalSdkConstant.getSdkType()) {
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = GlobalHelper.getInstance().getContext().getPackageName();
                 }
                 Resources resources = PhoneCashierMspEngine.getMspBase().getResources(null);
@@ -90,7 +90,7 @@ public class ResUtils {
                 }
                 return resources.getIdentifier(str, str2, GlobalHelper.getInstance().getContext().getPackageName());
             }
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = "com.alipay.android.app";
             }
             return PhoneCashierMspEngine.getMspBase().getResources(null).getIdentifier(str, str2, str3);
@@ -189,7 +189,7 @@ public class ResUtils {
         Object obj = "null";
         sb.append(fBDocument == null ? obj : Integer.valueOf(fBDocument.hashCode()));
         sb.append(" url: ");
-        sb.append(TextUtils.isEmpty(str) ? obj : str);
+        sb.append(StringUtils.isEmpty(str) ? obj : str);
         sb.append(" imageView: ");
         Object obj2 = obj;
         if (view != null) {
@@ -197,7 +197,7 @@ public class ResUtils {
         }
         sb.append(obj2);
         LogUtil.record(2, "ResUtils:loadImage", sb.toString());
-        if (fBDocument == null || TextUtils.isEmpty(str) || view == null) {
+        if (fBDocument == null || StringUtils.isEmpty(str) || view == null) {
             return;
         }
         if (Looper.myLooper() == Looper.getMainLooper()) {

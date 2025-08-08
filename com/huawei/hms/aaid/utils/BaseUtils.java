@@ -1,7 +1,7 @@
 package com.huawei.hms.aaid.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.opendevice.d;
 import com.huawei.hms.opendevice.g;
 import com.huawei.hms.opendevice.i;
@@ -50,7 +50,7 @@ public class BaseUtils {
 
     public static String[] getSubjectIds(Context context) {
         String string = i.a(context).getString("subjectId");
-        return TextUtils.isEmpty(string) ? new String[0] : string.split(",");
+        return StringUtils.isEmpty(string) ? new String[0] : string.split(",");
     }
 
     public static void initSecret(Context context) {

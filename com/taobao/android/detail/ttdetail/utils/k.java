@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -69,7 +69,7 @@ public class k {
                 }
                 k.a(SkuCore.a.this);
                 k.a(aVar2);
-                if (TextUtils.isEmpty(b) || (jSONObject2 = jSONObject) == null) {
+                if (StringUtils.isEmpty(b) || (jSONObject2 = jSONObject) == null) {
                     return;
                 }
                 final JSONObject a2 = com.taobao.android.sku.utils.g.a(JSON.toJSONString(jSONObject2, SerializerFeature.DisableCircularReferenceDetect));
@@ -111,7 +111,7 @@ public class k {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                } else if (TextUtils.isEmpty(f) || (jSONObject2 = jSONObject) == null) {
+                } else if (StringUtils.isEmpty(f) || (jSONObject2 = jSONObject) == null) {
                 } else {
                     final JSONObject a2 = com.taobao.android.sku.utils.g.a(JSON.toJSONString(jSONObject2, SerializerFeature.DisableCircularReferenceDetect));
                     myQueue.addIdleHandler(new MessageQueue.IdleHandler() { // from class: com.taobao.android.detail.ttdetail.utils.k.2.1
@@ -148,21 +148,21 @@ public class k {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         String[] split2 = str2.split(":");
-        if (split2.length != 2 || TextUtils.isEmpty(split2[0])) {
+        if (split2.length != 2 || StringUtils.isEmpty(split2[0])) {
             return null;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         StringBuilder sb = new StringBuilder();
         for (String str3 : str.split(";")) {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 String[] split3 = str3.split(":");
-                if (split3.length == 2 && TextUtils.equals(split3[0], split2[0])) {
+                if (split3.length == 2 && StringUtils.equals(split3[0], split2[0])) {
                     str3 = str2;
                 }
                 sb.append(";");
@@ -203,7 +203,7 @@ public class k {
     public static boolean a(SkuCore skuCore) {
         SkuCore.b skuItem;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4aff0c97", new Object[]{skuCore})).booleanValue() : (skuCore == null || (skuItem = skuCore.getSkuItem()) == null || TextUtils.isEmpty(skuItem.a())) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4aff0c97", new Object[]{skuCore})).booleanValue() : (skuCore == null || (skuItem = skuCore.getSkuItem()) == null || StringUtils.isEmpty(skuItem.a())) ? false : true;
     }
 
     public static boolean a(Feature feature) {

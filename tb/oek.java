@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.PointF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -135,7 +135,7 @@ public class oek {
             return (oei) ipChange.ipc$dispatch("7c734b21", new Object[]{str});
         }
         oei oeiVar = new oei();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "linear";
         }
         for (String str2 : str.split(SymbolExpUtil.SYMBOL_VERTICALBAR)) {
@@ -247,15 +247,15 @@ public class oek {
             oehVar.f = odx.a(context, 2, obj);
         }
         String string = jSONObject.getString("borderRadius");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             oehVar.g = ohd.a(aaVar, context, string);
         }
         String string2 = jSONObject.getString("width");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             oehVar.f31971a = ohd.a(aaVar, context, string2);
         }
         String string3 = jSONObject.getString("height");
-        if (!TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string3)) {
             oehVar.b = ohd.a(aaVar, context, string3);
         }
         Object obj2 = jSONObject.get("transform");
@@ -327,26 +327,26 @@ public class oek {
                 ofgVar.b = jSONObject.getFloatValue("rotateY");
             }
             String string = jSONObject.getString("scale");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 ofgVar.d = a(aaVar, context, string, false, ',');
             }
             String string2 = jSONObject.getString("translate");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 ofgVar.e = a(aaVar, context, string2, true, ',');
             }
             String string3 = jSONObject.getString("translation");
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 ofgVar.e = a(aaVar, context, string3, true, ',');
             }
             String string4 = jSONObject.getString("translation.x");
-            if (!TextUtils.isEmpty(string4)) {
+            if (!StringUtils.isEmpty(string4)) {
                 if (ofgVar.e == null) {
                     ofgVar.e = new PointF();
                 }
                 ofgVar.e.x = ohd.a(aaVar, context, string4);
             }
             String string5 = jSONObject.getString("translation.y");
-            if (!TextUtils.isEmpty(string5)) {
+            if (!StringUtils.isEmpty(string5)) {
                 if (ofgVar.e == null) {
                     ofgVar.e = new PointF();
                 }
@@ -362,7 +362,7 @@ public class oek {
         if (ipChange instanceof IpChange) {
             return (PointF) ipChange.ipc$dispatch("8a78d022", new Object[]{aaVar, context, str, new Boolean(z), new Character(c)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

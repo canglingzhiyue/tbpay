@@ -1,7 +1,7 @@
 package com.taobao.runtimepermission;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.homepage.a;
@@ -34,7 +34,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("efbd22f7", new Object[]{this, context, strArr, str});
         }
-        if (!"com.taobao.taobao".equals(context.getPackageName()) || !TextUtils.isEmpty(str)) {
+        if (!"com.taobao.taobao".equals(context.getPackageName()) || !StringUtils.isEmpty(str)) {
             return str;
         }
         StringBuilder sb = new StringBuilder();

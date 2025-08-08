@@ -15,7 +15,7 @@ import android.os.Bundle;
 import android.os.Process;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
@@ -363,7 +363,7 @@ public class Nav {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("27e4e8c6", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return toUri(Uri.parse(str));
         }
         return false;
@@ -374,7 +374,7 @@ public class Nav {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9aca9274", new Object[]{this, str, aVar})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return toUri(Uri.parse(str), aVar);
         }
         return false;
@@ -634,7 +634,7 @@ public class Nav {
         if (ipChange instanceof IpChange) {
             return (Intent) ipChange.ipc$dispatch("17d4e823", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return intentForUri(Uri.parse(str));
         }
         return null;
@@ -989,7 +989,7 @@ public class Nav {
         }
         ArrayList arrayList = new ArrayList();
         for (ResolveInfo resolveInfo : list) {
-            if (!TextUtils.isEmpty(resolveInfo.activityInfo.packageName)) {
+            if (!StringUtils.isEmpty(resolveInfo.activityInfo.packageName)) {
                 if (resolveInfo.activityInfo.packageName.endsWith(context.getPackageName())) {
                     arrayList.add(new l(resolveInfo, resolveInfo.priority, 1));
                 } else {

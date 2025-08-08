@@ -1,6 +1,6 @@
 package com.taobao.update.apk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import com.taobao.update.framework.UpdateRuntime;
@@ -81,7 +81,7 @@ public class c {
             this.f23372a.add("apefficiency", apkUpdateContext.success, "notifyinstall", String.valueOf(apkUpdateContext.errorCode), apkUpdateContext.errorMsg, str, str2, 0L, 0L);
         }
         UpdateRuntime.log("UpdateFlowController apk upgrade execute result is " + apkUpdateContext);
-        if (!apkUpdateContext.success && TextUtils.isEmpty(apkUpdateContext.errorMsg)) {
+        if (!apkUpdateContext.success && StringUtils.isEmpty(apkUpdateContext.errorMsg)) {
             apkUpdateContext.errorMsg = rgq.getAppNameString(R.string.notice_errorupdate, UpdateRuntime.sAppName);
         }
         UpdateRuntime.log("UpdateFlowController update finished with result " + apkUpdateContext);

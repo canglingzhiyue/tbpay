@@ -1,6 +1,6 @@
 package com.nirvana.tools.jsoner;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.reflect.Field;
 
 /* loaded from: classes4.dex */
@@ -17,7 +17,7 @@ final class g {
             this.f8090a = jsonerTag.keyName();
             this.c = jsonerTag.isExcluded();
         }
-        if (TextUtils.isEmpty(this.f8090a)) {
+        if (StringUtils.isEmpty(this.f8090a)) {
             this.f8090a = field.getName();
         }
         this.b = field.getType();

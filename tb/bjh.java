@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.engine.model.Block;
 import com.alibaba.android.ultron.engine.model.TemplateComponent;
 import com.alibaba.android.ultron.engine.model.TemplateHierarchy;
@@ -103,7 +103,7 @@ public class bjh implements Cloneable {
         bjiVar.d = new JSONObject();
         bjiVar.d.putAll(templateComponent.data);
         String str = templateComponent.filter;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             bjiVar.d.put("filter", (Object) str);
             bjiVar.k = true;
         }
@@ -119,7 +119,7 @@ public class bjh implements Cloneable {
         Map<String, String> map2 = templateComponent.frontComponentMD5;
         if (map != null && map2 != null) {
             String str2 = map.get("android");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = map.get("resource");
             }
             componentView.url = str2;

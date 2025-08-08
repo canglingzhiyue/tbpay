@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.adapter.e;
@@ -61,7 +61,7 @@ public class WXUtils {
             return Float.NaN;
         }
         String trim = obj.toString().trim();
-        if (!"auto".equals(trim) && !"undefined".equals(trim) && !TextUtils.isEmpty(trim)) {
+        if (!"auto".equals(trim) && !"undefined".equals(trim) && !StringUtils.isEmpty(trim)) {
             if (trim.endsWith("wx")) {
                 try {
                     return a(trim, i);
@@ -105,7 +105,7 @@ public class WXUtils {
             return f;
         }
         String trim = obj.toString().trim();
-        if (!"auto".equals(trim) && !"undefined".equals(trim) && !TextUtils.isEmpty(trim)) {
+        if (!"auto".equals(trim) && !"undefined".equals(trim) && !StringUtils.isEmpty(trim)) {
             if (trim.endsWith("wx")) {
                 try {
                     return Float.valueOf(a(trim, 750));
@@ -175,7 +175,7 @@ public class WXUtils {
             float r10 = r10.floatValue()
             return r10
         L21:
-            boolean r0 = android.text.TextUtils.isEmpty(r10)
+            boolean r0 = android.text.StringUtils.isEmpty(r10)
             r1 = 0
             if (r0 != 0) goto L90
             char r0 = r10.charAt(r2)
@@ -255,7 +255,7 @@ public class WXUtils {
             return ((Number) ipChange.ipc$dispatch("19d449c0", new Object[]{str})).intValue();
         }
         try {
-            if (!TextUtils.isEmpty(str) && !str.contains(".")) {
+            if (!StringUtils.isEmpty(str) && !str.contains(".")) {
                 return Integer.parseInt(str);
             }
         } catch (NumberFormatException e) {
@@ -282,7 +282,7 @@ public class WXUtils {
             return ((Number) ipChange.ipc$dispatch("1646a52a", new Object[]{str})).floatValue();
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.equals(str, "null")) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.equals(str, "null")) {
                 return Float.parseFloat(str);
             }
             if (!WXEnvironment.isApkDebugable()) {
@@ -326,7 +326,7 @@ public class WXUtils {
             return num2;
         }
         String substring = trim.length() >= 2 ? trim.substring(trim.length() - 2, trim.length()) : "";
-        if (TextUtils.equals("wx", substring)) {
+        if (StringUtils.equals("wx", substring)) {
             if (WXEnvironment.isApkDebugable()) {
                 WXLogUtils.w("the value of " + obj + " use wx unit, which will be not supported soon after.");
             }
@@ -337,10 +337,10 @@ public class WXUtils {
             } catch (Exception e2) {
                 WXLogUtils.e("Argument error! value is " + obj, e2);
             }
-        } else if (TextUtils.equals("px", substring)) {
+        } else if (StringUtils.equals("px", substring)) {
             try {
                 String substring2 = trim.substring(0, trim.length() - 2);
-                if (!TextUtils.isEmpty(substring2) && substring2.contains(".")) {
+                if (!StringUtils.isEmpty(substring2) && substring2.contains(".")) {
                     obj = Integer.valueOf((int) parseFloat(substring2));
                 } else {
                     obj = Integer.valueOf(Integer.parseInt(substring2));
@@ -359,7 +359,7 @@ public class WXUtils {
             } catch (Exception e6) {
                 WXLogUtils.e("Argument error! value is " + obj, e6);
             }
-            if (!TextUtils.isEmpty(trim)) {
+            if (!StringUtils.isEmpty(trim)) {
                 if (trim.contains(".")) {
                     obj = Integer.valueOf((int) parseFloat(trim));
                 } else {
@@ -474,10 +474,10 @@ public class WXUtils {
         if (obj == null) {
             return bool;
         }
-        if (TextUtils.equals("false", obj.toString())) {
+        if (StringUtils.equals("false", obj.toString())) {
             return false;
         }
-        if (!TextUtils.equals("true", obj.toString())) {
+        if (!StringUtils.equals("true", obj.toString())) {
             return bool;
         }
         return true;
@@ -654,7 +654,7 @@ public class WXUtils {
         HashMap hashMap = new HashMap();
         hashMap.put("containerType", "weex");
         hashMap.put("component", str);
-        if (!TextUtils.isEmpty(wXSDKInstance.ak())) {
+        if (!StringUtils.isEmpty(wXSDKInstance.ak())) {
             Uri parse = Uri.parse(wXSDKInstance.ak());
             if (parse != null) {
                 try {
@@ -723,7 +723,7 @@ public class WXUtils {
         if (!b() || d > a().intValue()) {
             return false;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         try {

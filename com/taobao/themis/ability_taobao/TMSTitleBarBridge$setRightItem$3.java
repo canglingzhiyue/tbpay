@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import com.alibaba.fastjson.JSONObject;
@@ -105,7 +105,7 @@ public final class TMSTitleBarBridge$setRightItem$3 extends Lambda implements ru
             objectRef.element = TMSTitleBarBridge.$ipChange;
             this.$countDownLatch.countDown();
         }
-        if (!TextUtils.isEmpty(this.$icon)) {
+        if (!StringUtils.isEmpty(this.$icon)) {
             String str = this.$icon;
             q.a((Object) str);
             TMSResourceUtils.ResourceType a3 = TMSResourceUtils.a(str);

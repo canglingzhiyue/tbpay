@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -352,7 +352,7 @@ public class elq extends a implements elp {
             return ((Boolean) ipChange.ipc$dispatch("6076ef7", new Object[]{this})).booleanValue();
         }
         JSONObject jSONObject4 = this.g;
-        return jSONObject4 != null && !jSONObject4.isEmpty() && (jSONObject = this.g.getJSONObject("data")) != null && !jSONObject.isEmpty() && (jSONObject2 = this.g.getJSONObject("hierarchy")) != null && !jSONObject2.isEmpty() && !TextUtils.isEmpty(jSONObject2.getString("root")) && (jSONObject3 = jSONObject2.getJSONObject("structure")) != null && !jSONObject3.isEmpty();
+        return jSONObject4 != null && !jSONObject4.isEmpty() && (jSONObject = this.g.getJSONObject("data")) != null && !jSONObject.isEmpty() && (jSONObject2 = this.g.getJSONObject("hierarchy")) != null && !jSONObject2.isEmpty() && !StringUtils.isEmpty(jSONObject2.getString("root")) && (jSONObject3 = jSONObject2.getJSONObject("structure")) != null && !jSONObject3.isEmpty();
     }
 
     private void m() {
@@ -374,7 +374,7 @@ public class elq extends a implements elp {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("videoId", (Object) absPicGalleryVideoPlayer.n().a());
             jSONObject.put("videoProgress", (Object) String.valueOf(absPicGalleryVideoPlayer.q()));
-            jSONObject.put(iyx.PARAM_VIDEO_AUTO_PLAY, (Object) String.valueOf(TextUtils.equals(absPicGalleryVideoPlayer.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PAUSING)));
+            jSONObject.put(iyx.PARAM_VIDEO_AUTO_PLAY, (Object) String.valueOf(StringUtils.equals(absPicGalleryVideoPlayer.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PAUSING)));
             jSONObject.put("videoMute", (Object) "false");
             jSONArray.add(jSONObject);
         }
@@ -406,7 +406,7 @@ public class elq extends a implements elp {
             return null;
         }
         String string = jSONObject3.getString("root");
-        if (TextUtils.isEmpty(string) || (jSONObject2 = jSONObject3.getJSONObject("structure")) == null || (jSONArray = jSONObject2.getJSONArray(string)) == null || jSONArray.isEmpty()) {
+        if (StringUtils.isEmpty(string) || (jSONObject2 = jSONObject3.getJSONObject("structure")) == null || (jSONArray = jSONObject2.getJSONArray(string)) == null || jSONArray.isEmpty()) {
             return null;
         }
         return bst.a(jSONObject, jSONArray.getString(0));
@@ -436,7 +436,7 @@ public class elq extends a implements elp {
                 for (TreeNode<RenderComponent> treeNode : multiTreeNode.subtrees()) {
                     if (treeNode != null && treeNode.data() != null && treeNode.data().component != null) {
                         Component component = treeNode.data().component;
-                        if (TextUtils.equals(treeNode.data().key, "lightoffpage")) {
+                        if (StringUtils.equals(treeNode.data().key, "lightoffpage")) {
                             if (component.fields == null || !(component.fields.get("url") instanceof String)) {
                                 return;
                             }

@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.bd;
 import com.taobao.android.live.plugin.proxy.f;
@@ -91,7 +91,7 @@ public class TaoLiveHomePageX implements ITaoLiveHomePageProxy {
         TLog.loge("TaoLiveHomepage", "TaoLiveHomepageProcessor process start");
         if (intent.getData() != null) {
             String uri = intent.getData().toString();
-            if (TextUtils.isEmpty(uri)) {
+            if (StringUtils.isEmpty(uri)) {
                 return true;
             }
             boolean z = dVar.a() instanceof AppCompatActivity;
@@ -157,7 +157,7 @@ public class TaoLiveHomePageX implements ITaoLiveHomePageProxy {
         } else {
             Uri data = intent.getData();
             String queryParameter = data.getQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 parse = data.buildUpon().appendQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY, "fullscreen").build();
             } else {
                 String uri = data.toString();
@@ -172,11 +172,11 @@ public class TaoLiveHomePageX implements ITaoLiveHomePageProxy {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ba9fc222", new Object[]{str});
         }
-        if (c.j() && !TextUtils.isEmpty(str)) {
+        if (c.j() && !StringUtils.isEmpty(str)) {
             return str;
         }
         String b = com.taobao.android.livehome.plugin.atype.flexalocal.utils.a.b();
-        if (!"normal".equals(b) && !TextUtils.isEmpty(b)) {
+        if (!"normal".equals(b) && !StringUtils.isEmpty(b)) {
             String[] split = b.split(",");
             if (split.length >= 2) {
                 if (sdt.e().equals(split[1])) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.interact.pop.d;
 import com.taobao.homepage.page.weexv2.a;
@@ -77,7 +77,7 @@ public class kqo implements kqm {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[]{this})).booleanValue();
         }
-        boolean isEmpty = TextUtils.isEmpty(d.d());
+        boolean isEmpty = StringUtils.isEmpty(d.d());
         ldf.d(lsk.SPLASH_BUSINESS_TAG, "isHasPop->：" + isEmpty);
         return isEmpty;
     }

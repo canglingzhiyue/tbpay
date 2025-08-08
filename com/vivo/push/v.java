@@ -2,7 +2,7 @@ package com.vivo.push;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public abstract class v {
@@ -78,7 +78,7 @@ public abstract class v {
 
     public final void b(d dVar) {
         String a2 = dVar.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = dVar.a("client_pkgname");
         }
         this.b = a2;

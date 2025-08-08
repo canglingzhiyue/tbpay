@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.common.expection.WXExceptionConfig;
 import com.taobao.android.weex_framework.l;
@@ -506,7 +506,7 @@ public class k implements ExternalAdapterImageProvider {
                     return;
                 }
                 String str2 = bVar.e().get("instance_id");
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 l.a().i().a(10020, WXExceptionConfig.KEY_IMAGE, str, String.valueOf(i), b.c(bVar), b.d(bVar), Integer.parseInt(str2));

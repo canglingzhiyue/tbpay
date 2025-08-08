@@ -8,7 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.taobao.util.i;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -479,7 +479,7 @@ public abstract class h implements Handler.Callback, e, com.taobao.weex.d {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3202a441", new Object[]{this, str, hashMap});
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
             }
         }
     }

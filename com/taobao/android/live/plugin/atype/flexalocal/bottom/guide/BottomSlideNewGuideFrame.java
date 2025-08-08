@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -350,7 +350,7 @@ public class BottomSlideNewGuideFrame extends BaseFrame implements a, ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3897928", new Object[]{this, str, obj});
-        } else if (TextUtils.equals(str, xkw.b)) {
+        } else if (StringUtils.equals(str, xkw.b)) {
             q.b(TAG, "通过前序校验，开始渲染下滑引导");
             inflateViewOnNeed();
             if (obj instanceof Map) {
@@ -370,7 +370,7 @@ public class BottomSlideNewGuideFrame extends BaseFrame implements a, ddv {
                 return;
             }
             ddw.a().a(xkw.c, obj, observeUniqueIdentification());
-        } else if (TextUtils.equals(str, xkw.c)) {
+        } else if (StringUtils.equals(str, xkw.c)) {
             q.b(TAG, "下滑引导DX模板渲染成功，准备展示");
             if (this.mContainer == null) {
                 return;
@@ -389,7 +389,7 @@ public class BottomSlideNewGuideFrame extends BaseFrame implements a, ddv {
             showUT();
             LiveDetailMessinfoResponseData.RecommendCardInfo recommendCardInfo = this.bottomInfo;
             String string = (recommendCardInfo == null || recommendCardInfo.dxData == null) ? null : this.bottomInfo.dxData.getString("bizType");
-            if (!TextUtils.equals(string, "1") && !TextUtils.equals(string, "2")) {
+            if (!StringUtils.equals(string, "1") && !StringUtils.equals(string, "2")) {
                 return;
             }
             new com.taobao.android.live.plugin.atype.flexalocal.bottom.guide.expose.a(null).a(this.popId);
@@ -405,7 +405,7 @@ public class BottomSlideNewGuideFrame extends BaseFrame implements a, ddv {
             }
             jSONObject2.put("name", (Object) this.actionData.getString("actionEvent"));
             b.F.a(true, this.popId, false, jSONObject2);
-        } else if (TextUtils.equals(str, xkw.d)) {
+        } else if (StringUtils.equals(str, xkw.d)) {
             if (obj instanceof LiveItem) {
                 this.sabAtmosphereLiveItem = (LiveItem) obj;
             }
@@ -424,19 +424,19 @@ public class BottomSlideNewGuideFrame extends BaseFrame implements a, ddv {
             String str2 = (String) obj;
             sb.append(str2);
             q.b(TAG, sb.toString());
-            if (TextUtils.equals(str2, xjr.ACTION_BOTTOM_CARD_SWITCH)) {
+            if (StringUtils.equals(str2, xjr.ACTION_BOTTOM_CARD_SWITCH)) {
                 ddw.a().a(VideoFrameErrorController.EVENT_AUTO_DOWN, this.mLiveDataModel.mVideoInfo.liveId, observeUniqueIdentification());
                 clickUT();
-            } else if (TextUtils.equals(str2, xjr.ACTION_BOTTOM_CARD_HIDE)) {
+            } else if (StringUtils.equals(str2, xjr.ACTION_BOTTOM_CARD_HIDE)) {
                 closeUT("retract");
-            } else if (TextUtils.equals(str2, xjr.ACTION_TRAIN_BOTTOM_CARD_CLICK)) {
+            } else if (StringUtils.equals(str2, xjr.ACTION_TRAIN_BOTTOM_CARD_CLICK)) {
                 clickUT();
-            } else if (TextUtils.equals(str2, "videoViewUp")) {
+            } else if (StringUtils.equals(str2, "videoViewUp")) {
                 closeUT("assembly");
             } else {
                 closeUT(str2);
             }
-        } else if (!TextUtils.equals(str, xkw.e)) {
+        } else if (!StringUtils.equals(str, xkw.e)) {
         } else {
             q.b(TAG, "下滑引导取消自动收起");
             f fVar2 = this.mHandler;

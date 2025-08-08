@@ -8,7 +8,7 @@ import android.content.Context;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.taobao.adaemon.TriggerService;
@@ -121,7 +121,7 @@ public class AfcUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (!TextUtils.equals("ali.open.nav", str)) {
+        if (!StringUtils.equals("ali.open.nav", str)) {
             return str;
         }
         return str + "." + str2;
@@ -209,7 +209,7 @@ public class AfcUtils {
             r4 = 22
             if (r2 < r4) goto L3e
             java.lang.String r7 = c(r7)     // Catch: java.lang.Exception -> L7c
-            boolean r2 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Exception -> L7c
+            boolean r2 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Exception -> L7c
             if (r2 != 0) goto L95
             com.taobao.flowcustoms.afc.AfcCustomSdk r2 = com.taobao.flowcustoms.afc.AfcCustomSdk.a()     // Catch: java.lang.Exception -> L7c
             android.app.Application r2 = r2.f17167a     // Catch: java.lang.Exception -> L7c
@@ -257,7 +257,7 @@ public class AfcUtils {
         L95:
             r7 = r1
         L96:
-            boolean r1 = android.text.TextUtils.isEmpty(r7)
+            boolean r1 = android.text.StringUtils.isEmpty(r7)
             if (r1 != 0) goto Lb0
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
             r1.<init>()
@@ -416,7 +416,7 @@ public class AfcUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d71944f2", new Object[0]);
         }
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             return c;
         }
         try {
@@ -441,7 +441,7 @@ public class AfcUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5d9eff91", new Object[0]);
         }
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             return d;
         }
         try {

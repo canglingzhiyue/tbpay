@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.view.NewDetailMaskFrameLayout;
 import tb.ctu;
@@ -132,7 +132,7 @@ public class b {
             return null;
         }
         String stringExtra = intent.getStringExtra(NAV_TOKEN);
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             return fko.a(stringExtra);
         }
         return null;

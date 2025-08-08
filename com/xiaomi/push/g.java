@@ -11,7 +11,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.alipay.mobile.common.transportext.amnet.Baggage;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -138,7 +138,7 @@ public class g {
     public static b a(Context context, String str, boolean z) {
         ApplicationInfo applicationInfo;
         b a2;
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return b.UNKNOWN;
         }
         try {
@@ -172,7 +172,7 @@ public class g {
 
     public static String a() {
         String processName = Build.VERSION.SDK_INT >= 28 ? Application.getProcessName() : (String) bh.a(ProcessUtils.ACTIVITY_THREAD, "currentProcessName", new Object[0]);
-        return !TextUtils.isEmpty(processName) ? processName : "";
+        return !StringUtils.isEmpty(processName) ? processName : "";
     }
 
     /* renamed from: a  reason: collision with other method in class */
@@ -198,7 +198,7 @@ public class g {
     /* renamed from: a  reason: collision with other method in class */
     public static boolean m1948a(Context context) {
         String a2 = a();
-        if (TextUtils.isEmpty(a2) || context == null) {
+        if (StringUtils.isEmpty(a2) || context == null) {
             return false;
         }
         return a2.equals(context.getPackageName());
@@ -206,7 +206,7 @@ public class g {
 
     /* renamed from: a  reason: collision with other method in class */
     public static boolean m1949a(Context context, String str) {
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             if (!j.m2117a()) {
                 return context.getPackageName().equals(str);
             }
@@ -260,7 +260,7 @@ public class g {
     }
 
     public static boolean e(Context context, String str) {
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return false;
         }
         try {

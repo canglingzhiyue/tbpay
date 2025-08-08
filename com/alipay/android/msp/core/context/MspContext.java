@@ -2,7 +2,7 @@ package com.alipay.android.msp.core.context;
 
 import android.content.Context;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.content.MspContextLifecycleCallbacks;
@@ -295,7 +295,7 @@ public abstract class MspContext implements MspContextLifecycleCallbacks {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("47512979", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.h)) {
+        if (StringUtils.isEmpty(this.h)) {
             this.h = getServerFoundUserId() + System.currentTimeMillis();
             this.h += "_-";
         }
@@ -322,10 +322,10 @@ public abstract class MspContext implements MspContextLifecycleCallbacks {
             return (String) ipChange.ipc$dispatch("4f770260", new Object[]{this});
         }
         String apLinkToken = getApLinkToken();
-        if (TextUtils.isEmpty(apLinkToken)) {
+        if (StringUtils.isEmpty(apLinkToken)) {
             apLinkToken = getStatisticInfo().getAttr(Vector.Time, "traceId");
         }
-        return (TextUtils.isEmpty(apLinkToken) || TextUtils.equals(apLinkToken, "-")) ? "" : apLinkToken;
+        return (StringUtils.isEmpty(apLinkToken) || StringUtils.equals(apLinkToken, "-")) ? "" : apLinkToken;
     }
 
     public MspNetHandler getMspNetHandler() {
@@ -356,7 +356,7 @@ public abstract class MspContext implements MspContextLifecycleCallbacks {
         JSONObject jSONObject = new JSONObject();
         if (list != null && list.size() > 0) {
             for (String str : list) {
-                if (!TextUtils.isEmpty(str) && this.y.containsKey(str)) {
+                if (!StringUtils.isEmpty(str) && this.y.containsKey(str)) {
                     jSONObject.put(str, (Object) this.y.getString(str));
                 }
             }
@@ -573,7 +573,7 @@ public abstract class MspContext implements MspContextLifecycleCallbacks {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8adb01e4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.equals("null")) {
                 this.o = "";
@@ -601,13 +601,13 @@ public abstract class MspContext implements MspContextLifecycleCallbacks {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("43223050", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             for (String str2 : str.split(";")) {
                 String[] split = str2.split("=");
                 if (split.length == 2) {
                     String str3 = split[0];
                     String str4 = split[1];
-                    if (TextUtils.equals(str3, "ndpt")) {
+                    if (StringUtils.equals(str3, "ndpt")) {
                         this.r = str4;
                     }
                 }
@@ -625,10 +625,10 @@ public abstract class MspContext implements MspContextLifecycleCallbacks {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8dc1a662", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.q)) {
+        if (StringUtils.isEmpty(this.q)) {
             this.q = this.g + GlobalHelper.getInstance().getUtdid(this.b);
         }
-        if (TextUtils.isEmpty(this.r)) {
+        if (StringUtils.isEmpty(this.r)) {
             this.r = "null";
         }
         return "dpCheck_" + this.q + "_" + this.r;

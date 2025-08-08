@@ -4,7 +4,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -111,10 +111,10 @@ public class TopSelectCommentFrame extends BaseFrame implements a {
                     }
                     final JSONObject b = pqj.b((String) obj);
                     String string = b.getString("bizType");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
-                    if (!TextUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_SELECT_COMMENT) && !TextUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
+                    if (!StringUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_SELECT_COMMENT) && !StringUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
                         return;
                     }
                     TopSelectCommentFrame.access$200(TopSelectCommentFrame.this).post(new Runnable() { // from class: com.taobao.android.live.plugin.atype.flexalocal.comments.topinfo.TopSelectCommentFrame.1.1
@@ -156,10 +156,10 @@ public class TopSelectCommentFrame extends BaseFrame implements a {
                     }
                     final JSONObject b = pqj.b((String) obj);
                     String string = b.getString("bizType");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
-                    if (!TextUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_SELECT_COMMENT) && !TextUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
+                    if (!StringUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_SELECT_COMMENT) && !StringUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
                         return;
                     }
                     TopSelectCommentFrame.access$200(TopSelectCommentFrame.this).post(new Runnable() { // from class: com.taobao.android.live.plugin.atype.flexalocal.comments.topinfo.TopSelectCommentFrame.1.1
@@ -201,10 +201,10 @@ public class TopSelectCommentFrame extends BaseFrame implements a {
                     }
                     final JSONObject b = pqj.b((String) obj);
                     String string = b.getString("bizType");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         return;
                     }
-                    if (!TextUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_SELECT_COMMENT) && !TextUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
+                    if (!StringUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_SELECT_COMMENT) && !StringUtils.equals(string, TopSelectCommentFrame.BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
                         return;
                     }
                     TopSelectCommentFrame.access$200(TopSelectCommentFrame.this).post(new Runnable() { // from class: com.taobao.android.live.plugin.atype.flexalocal.comments.topinfo.TopSelectCommentFrame.1.1
@@ -268,9 +268,9 @@ public class TopSelectCommentFrame extends BaseFrame implements a {
             ipChange.ipc$dispatch("917c253", new Object[]{this, topSelectCommentData});
         } else if (phg.a() == null) {
         } else {
-            if (TextUtils.equals(topSelectCommentData.bizType, BIZ_TYPE_TOP_SELECT_COMMENT)) {
+            if (StringUtils.equals(topSelectCommentData.bizType, BIZ_TYPE_TOP_SELECT_COMMENT)) {
                 phg.a().a(this.mFrameContext, "Show-topcomment", new HashMap<>());
-            } else if (!TextUtils.equals(topSelectCommentData.bizType, BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
+            } else if (!StringUtils.equals(topSelectCommentData.bizType, BIZ_TYPE_TOP_ANCHOR_RESPONSE)) {
             } else {
                 phg.a().a(this.mFrameContext, "Show-topcommentreply", new HashMap<>());
             }

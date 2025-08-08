@@ -1,6 +1,6 @@
 package com.taobao.search.jarvis.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -119,10 +119,10 @@ public final class SearchFetchAction extends a {
             return (String) ipChange.ipc$dispatch("28da03e6", new Object[]{this, str, str2});
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if (sb.length() <= 0) {
                 z = false;
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
 import com.taobao.homepage.utils.n;
@@ -39,7 +39,7 @@ public class lgq implements IMultiTabPerformanceListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fa210a1c", new Object[]{this, str, new Long(j), str2});
-        } else if (TextUtils.equals(str2, IMultiTabPerformanceListener.TAB_SCROLL_SELECT)) {
+        } else if (StringUtils.equals(str2, IMultiTabPerformanceListener.TAB_SCROLL_SELECT)) {
         } else {
             this.f30578a = d(str);
             if (!e("onPageCreateStart")) {
@@ -56,7 +56,7 @@ public class lgq implements IMultiTabPerformanceListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1863f3b", new Object[]{this, str, new Long(j), str2});
-        } else if (TextUtils.equals(str2, IMultiTabPerformanceListener.TAB_SCROLL_SELECT)) {
+        } else if (StringUtils.equals(str2, IMultiTabPerformanceListener.TAB_SCROLL_SELECT)) {
         } else {
             this.f30578a = d(str);
             if (!e("onPageCreateEnd")) {
@@ -71,7 +71,7 @@ public class lgq implements IMultiTabPerformanceListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7d253fb1", new Object[]{this, str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             g.a("MultiTabPerformance", "MultiTabPerformance onRenderState ApmBuilder or stage null");
         } else if (!e("onRenderState")) {
         } else {
@@ -138,7 +138,7 @@ public class lgq implements IMultiTabPerformanceListener {
         } else if (!e("setTechStack")) {
         } else {
             String b = this.b.b(i);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 g.a("MultiTabPerformance", "MultiTabPerformance setTechStack containerType null position:" + i);
                 return;
             }
@@ -286,7 +286,7 @@ public class lgq implements IMultiTabPerformanceListener {
                     g.a("MultiTabPerformance", "MultiTabPerformance labelOnTabUnSelect touchStartTime get error:", e);
                 }
             }
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 return;
             }
             this.e = str + "_" + i;

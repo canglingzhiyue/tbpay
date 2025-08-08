@@ -1,6 +1,6 @@
 package com.alibaba.appmonitor.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.db.annotation.Column;
 import com.alibaba.analytics.core.db.annotation.Ingore;
 import com.alibaba.analytics.core.db.annotation.TableName;
@@ -109,7 +109,7 @@ public class a extends aof implements com.alibaba.appmonitor.pool.b {
         if (ipChange instanceof IpChange) {
             return (DimensionSet) ipChange.ipc$dispatch("664dde90", new Object[]{this});
         }
-        if (this.h == null && !TextUtils.isEmpty(this.d)) {
+        if (this.h == null && !StringUtils.isEmpty(this.d)) {
             this.h = (DimensionSet) JSON.parseObject(this.d, DimensionSet.class);
         }
         return this.h;
@@ -120,7 +120,7 @@ public class a extends aof implements com.alibaba.appmonitor.pool.b {
         if (ipChange instanceof IpChange) {
             return (MeasureSet) ipChange.ipc$dispatch("17d570cb", new Object[]{this});
         }
-        if (this.i == null && !TextUtils.isEmpty(this.e)) {
+        if (this.i == null && !StringUtils.isEmpty(this.e)) {
             this.i = (MeasureSet) JSON.parseObject(this.e, MeasureSet.class);
         }
         return this.i;

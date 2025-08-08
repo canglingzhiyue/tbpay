@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -65,7 +65,7 @@ public class mvx extends fuf {
         if (!a(str) && (obj instanceof JSONArray)) {
             JSONArray jSONArray = (JSONArray) obj;
             String string = jSONArray.getJSONObject(jSONArray.size() - 1).getString("text");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return false;
             }
             for (String str2 : str.split(",")) {
@@ -175,7 +175,7 @@ public class mvx extends fuf {
             return (JSONArray) ipChange.ipc$dispatch("ad3f9221", new Object[]{this, str, str2});
         }
         JSONArray jSONArray = new JSONArray();
-        if (".".equals(str) || TextUtils.isEmpty(str2)) {
+        if (".".equals(str) || StringUtils.isEmpty(str2)) {
             jSONArray.add(c(str));
         } else {
             try {
@@ -260,6 +260,6 @@ public class mvx extends fuf {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || "null".equals(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || "null".equals(str);
     }
 }

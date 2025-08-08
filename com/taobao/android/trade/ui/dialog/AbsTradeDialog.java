@@ -2,7 +2,7 @@ package com.taobao.android.trade.ui.dialog;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,13 +84,13 @@ public abstract class AbsTradeDialog extends DialogFragment {
         if (i > 0) {
             this.d.setText(i);
         }
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             this.b.setText(this.h);
         }
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             this.c.setText(this.i);
         }
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             this.d.setText(this.j);
         }
         this.b.setOnClickListener(this.k);

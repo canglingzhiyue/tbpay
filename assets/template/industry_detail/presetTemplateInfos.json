@@ -1,0 +1,98 @@
+{
+  "detail_v3_price": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_price/1/main.dx"
+  },
+  "tb_detail_toolbar_v2": {
+    "version": 1,
+    "main.dx": "template/industry_detail/tb_detail_toolbar_v2/1/main.dx"
+  },
+  "detail_v2_title": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v2_title/1/main.dx"
+  },
+  "detail_v3_sku_info": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_sku_info/1/main.dx"
+  },
+  "detail_v3_guarantee": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_guarantee/1/main.dx"
+  },
+  "detail_v2_presale": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v2_presale/1/main.dx"
+  },
+  "detail_v3_bottom_bar": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_bottom_bar/1/main.dx"
+  },
+  "detail_v3_title": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_title/1/main.dx"
+  },
+  "detail_v2_right_belt": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v2_right_belt/1/main.dx"
+  },
+  "detail_v3_atmosphere": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_atmosphere/1/main.dx"
+  },
+  "detail_v2_price_new": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v2_price_new/1/main.dx"
+  },
+  "tb_detail_toolbar_v2_pad": {
+    "version": 1,
+    "main.dx": "template/industry_detail/tb_detail_toolbar_v2_pad/1/main.dx"
+  },
+  "detail_v3_title_new": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_title_new/1/main.dx"
+  },
+  "detail_99temai_bottom_bar": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_99temai_bottom_bar/1/main.dx"
+  },
+  "tbovs_pdp_v3_bottom_bar_i18n": {
+    "version": 1,
+    "main.dx": "template/industry_detail/tbovs_pdp_v3_bottom_bar_i18n/1/main.dx"
+  },
+  "detail_v3_tmcs_special_bottom_bar": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_tmcs_special_bottom_bar/1/main.dx"
+  },
+  "detail_v3_tmcs_bottom_bar": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_tmcs_bottom_bar/1/main.dx"
+  },
+  "fd_detail_bottom_bar": {
+    "version": 1,
+    "main.dx": "template/industry_detail/fd_detail_bottom_bar/1/main.dx"
+  },
+  "detail_v2_promote_belt_new": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v2_promote_belt_new/1/main.dx"
+  },
+  "detail_v3_logistic": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_logistic/1/main.dx"
+  },
+  "detail_v3_title_tags": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v3_title_tags/1/main.dx"
+  },
+  "detail_v2_super_promote_price_new": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v2_super_promote_price_new/1/main.dx"
+  },
+  "detail_v2_bottom_bar": {
+    "version": 1,
+    "main.dx": "template/industry_detail/detail_v2_bottom_bar/1/main.dx"
+  },
+  "dt_shop_bottom_bar": {
+    "version": 1,
+    "main.dx": "template/industry_detail/dt_shop_bottom_bar/1/main.dx"
+  }
+}

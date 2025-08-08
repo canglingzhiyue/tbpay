@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uploader.export.c;
 import com.uploader.export.i;
@@ -396,7 +396,7 @@ public class rot {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     jSONObject.put(key, value);
                 }
             }
@@ -414,7 +414,7 @@ public class rot {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{this, str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         try {

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.performance.preload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.qrcode.data.QrCodeData;
@@ -32,7 +32,7 @@ public class h {
         this.c = a.c(aVar);
         this.d = a.d(aVar);
         this.e = a.e(aVar) == 0 ? System.currentTimeMillis() : a.e(aVar);
-        this.f = TextUtils.isEmpty(a.f(aVar)) ? "" : a.f(aVar);
+        this.f = StringUtils.isEmpty(a.f(aVar)) ? "" : a.f(aVar);
         this.g = a.g(aVar);
         this.h = a.h(aVar);
         this.i = a.i(aVar);
@@ -186,7 +186,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.f9800a)) {
+        if (StringUtils.isEmpty(this.f9800a)) {
             return false;
         }
         long currentTimeMillis = System.currentTimeMillis();
@@ -198,7 +198,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             return c.a(this.f);
         }
         return false;
@@ -209,7 +209,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.h)) {
+        if (StringUtils.isEmpty(this.h)) {
             return false;
         }
         return com.taobao.android.detail.core.performance.e.c(this.h) || !"refresh".equals(this.f9800a);

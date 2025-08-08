@@ -1,6 +1,6 @@
 package com.taobao.taobaoavsdk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.ArrayMap;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.VariationSet;
@@ -71,7 +71,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return null;
         }
         Matcher matcher = Pattern.compile(str2).matcher(str);

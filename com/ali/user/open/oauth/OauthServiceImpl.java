@@ -3,7 +3,7 @@ package com.ali.user.open.oauth;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.device.DeviceInfo;
 import com.ali.user.open.core.service.UserTrackerService;
@@ -51,7 +51,7 @@ public class OauthServiceImpl implements OauthService {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("oauthsite", str);
-        if (map != null && !TextUtils.isEmpty(map.get("traceId"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("traceId"))) {
             hashMap.put("traceId", map.get("traceId"));
         } else {
             String str2 = "oauth" + DeviceInfo.deviceId + (System.currentTimeMillis() / 1000);

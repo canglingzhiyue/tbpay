@@ -1,6 +1,6 @@
 package com.alipay.zoloz.hardware.log;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,7 @@ public class MonitorLogger {
             return;
         }
         if (f6256a.containsKey(str)) {
-            Log.v("MonitorLogger", android.util.Log.getStackTraceString(new RuntimeException("MonitorLogger already contains key: " + str + ", value=[" + TextUtils.join(",", f6256a.entrySet()) + riy.ARRAY_END_STR)));
+            Log.v("MonitorLogger", android.util.Log.getStackTraceString(new RuntimeException("MonitorLogger already contains key: " + str + ", value=[" + StringUtils.join(",", f6256a.entrySet()) + riy.ARRAY_END_STR)));
         }
         Log.d("MonitorLogger", "MonitorLogger.performance(" + str + "): " + str2);
         f6256a.put(str, str2);

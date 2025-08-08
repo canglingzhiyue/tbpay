@@ -1,0 +1,794 @@
+[
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_yangtao/6/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_baiyibutie/9/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/m_h_icon_customized_float/3/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_slide_card_2021/2/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/home_m_r_multi_tab/10/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_6in1_main_entrance/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_6in1_main_entrance/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_marketing_channel/5/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_v3_live_2021/6/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_m_h_v5_scroll_icons_tag_bindingx_2021_d3/6/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_daydaysell/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/m_h_newfacepluspro_icon_replace_d3/8/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_overlay_guide/20/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_m_r_v5_newface_promotetab/5/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_mini_2in1_loop_entrance/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_2in1_loop_entrance/5/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_v3_youhaohuo_biz_2021/10/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_live/8/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_m_newbie_cloud_theme_edler_home/11/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_haodian/6/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_v3_baiyibutie_2021/3/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_youhaohuo/5/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_v3_juhuasuan_2021/3/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/informationFlow/recommend_new_face_gongge_juhuasuan/9/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "weex-rax-extra-api.js",
+    "pv": 0
+  },
+  {
+    "uri": "main.js",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacuact_resources/9/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacum_h_v5_scroll_icons_tag_bindingx_d3/69/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacuact_resources4/9/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacuact_item_presell/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacunew_face_slide_card_ad/26/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacunew_face_plus_pro_gongge_bigcard_v1/49/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacuact_item_prehot/8/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/infoFlow_campaign/recommend_dacunewface_main_sub_separator/4/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "video_weex.msoac",
+    "pv": 0
+  },
+  {
+    "uri": "dinamic/buy_bundle_line.xml",
+    "pv": 0
+  },
+  {
+    "uri": "dinamic/buy_verification_code_left_alignment.xml",
+    "pv": 0
+  },
+  {
+    "uri": "dinamic/buy_recommend_product_sale_android.xml",
+    "pv": 0
+  },
+  {
+    "uri": "dinamic/buy_popup_image_text.xml",
+    "pv": 0
+  },
+  {
+    "uri": "favorite.msoap",
+    "pv": 0
+  },
+  {
+    "uri": "addbag.msoap",
+    "pv": 0
+  },
+  {
+    "uri": "template/homepage/m_bface_searchbar/43/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/homepage/home_m_h_v7_searchbar_live_2021/10/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "tt-detail-configuration-bottom.dx",
+    "pv": 0
+  },
+  {
+    "uri": "tt-detail-configuration-holder.dx",
+    "pv": 0
+  },
+  {
+    "uri": "tt-detail-configuration-price.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_pop_submit/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_group_recommend_tab/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_shop/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_group_pop_header/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_group_rename/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_group_recommend_items/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_drag_folder/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_pop_footer/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/iCart/icart_group_selected_items/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/ultroncommonpage/tb_wallet_grid/10/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/ultroncommonpage/tb_wallet_recharge_button/8/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/ultroncommonpage/wallet_user_list/13/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/ultroncommonpage/new_user_small_wallet_cash_out/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/ultroncommonpage/new_user_small_wallet_card_top/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/ultroncommonpage/new_user_small_wallet_card_title/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/ultroncommonpage/tb_wallet_assit_recharge_entrance/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_detail_shopcard/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_title_normal/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_title_tmall_market/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_brand_info_v3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/tb_detail_comment_tags_v3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_sku_transform_v3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_title_xinxuan/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_guarantee_v3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_handprice_coupon2_v3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/price_super_promote_new/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/xdetail/detail_promote_belt_2020new/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/industry_detail/industry_detail_event_chain/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/industry_detail/detail_v2_promote_belt/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/industry_detail/detail_v2_super_promote_price/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/industry_detail/detail_v2_price/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/detail2/detail_multimain_with_subinfo/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/mytaobao/mtb_2022_equity/11/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/mtbmylife/mtb_mylife_place_2_1/5/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/mtbmylife/mtb_mylife_cell_single_button_card_2_2/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/mtbmylife/mtb_mylife_place_2_2/5/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "tbshortvideo_bginteract.png",
+    "pv": 0
+  },
+  {
+    "uri": "template/livehomepagetab/timemove_loading.png",
+    "pv": 0
+  },
+  {
+    "uri": "template/livehomepagetab/taobao_timemove_bubble_card/27/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/livehomepagetab/taolive_home_page_live_room_info/52/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/livehomepagetab/taobao_channel_livetab_updown_guide_card_20230315/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/livehomepagetab/taobao_channel_single_stream_timemove_container_card_20230315/26/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/livehomepagetab/taobao_channel_livetab_timemove_bubble_card_202303/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/livehomepagetab/taolive_channel_livetab_timemove_room_info_202303/22/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/taobao_sku/sku_buy_types_shop/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/taobao_sku/sku_atmosphere/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/taobao_sku/sku_buy_types_credit/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "encrypt_key/rsa_public_key.pem",
+    "pv": 0
+  },
+  {
+    "uri": "simplest_graph.graph",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/buy_alihealth_inst/3/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/buy_oversea_image_shipcard/8/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/buy_info_with_backgroud/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/tg_recommend_product_sale/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/buy_alihealth_shop/6/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/buy_dialog_title_simple/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/tb_buy_v2_sub_address_chooser/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/buy_dialog_title/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/purchase/buy_right/6/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "serviceDefinition.msoap",
+    "pv": 0
+  },
+  {
+    "uri": "serviceInvoke.msoac",
+    "pv": 0
+  },
+  {
+    "uri": "serviceInvoke2.msoac",
+    "pv": 0
+  },
+  {
+    "uri": "template/live_channel/taolive_marking_banner/24/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/live_channel/taolive_channel_follow_live/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/live_channel/taolive_activity_card/4/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "imgPreview.msoac",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderlist/bael_orderlistgallery/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderlist/tborder_dialog_cart_d3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderlist/babel_orderlist_share_logistics/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_ordermap_annotation_startend/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_orderdetail_multiservice/4/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_ordermap_distancetip/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_orderpaydetail_v3/7/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_logisticsinfo_selfhelp/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_orderdetailorderinfo_v3/6/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_orderdetail_logistics_rate/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_orderdetailcontactdelivery_v3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/tborder_dialog_cart_d3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_ordermap_annotation_rider/12/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/pop_recommend_subscription/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_ordermap/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_orderdetaillease_v3/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/babel_orderpaydetail_fold/5/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/orderdetail/pop_cancel_subscription/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "cart.msoac",
+    "pv": 0
+  },
+  {
+    "uri": "cart.msoap",
+    "pv": 0
+  },
+  {
+    "uri": "template/live_highlight/highlight_goods_list_h/21/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "SE.bin",
+    "pv": 0
+  },
+  {
+    "uri": "tixel/fx/beautifier/external_copy.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "tixel/fx/beautifier/blend_sharpen_lighten.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "tixel/fx/beautifier/mean_blur.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "tixel/fx/beautifier/mean_blur_variance.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "tixel/default.properties",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/bilateral.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/sketch.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/fragbase.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/sobel.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/sobel2.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/fragmentbase.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/fragment70s.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/gray.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/facebeauty.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/blackmagic.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/vertex70s.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/verbase.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/alibeautyfacetransform.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/shake.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/soul.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/alimedia/shader/gauss.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/YCbCrPlanar.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/Gray.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/Color.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/Graffiti.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/YCbCrAPlanar.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/Color.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/SplitColorGlitch.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/SplitColorGlitch.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x1ToY4x1.fsh3",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/ColorPoint.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x1ToY4x1.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/YCbCrPlanar.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/ColorPaletteGrid3D.glsl",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x2ToCbCr2x1.fsh3",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x2ToCbCr2x1.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/Texture2DAlpha.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x1To4x1.vsh3",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x2To2x1.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x2To2x1.vsh3",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/YCbCrAPlanar.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/YCrCbSemiPlanar.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/Graffiti.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/TextureExternal.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x1To4x1.vsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x1ToY4x1External.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/4x2ToCbCr2x1External.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/shader/YCrCbSemiPlanar.fsh",
+    "pv": 0
+  },
+  {
+    "uri": "taopai/stage/scene/graffiti/model.bin",
+    "pv": 0
+  },
+  {
+    "uri": "addbag.msoac",
+    "pv": 0
+  },
+  {
+    "uri": "TBWeiTao.bundle/add.png",
+    "pv": 0
+  },
+  {
+    "uri": "TBWeiTao.bundle/searchlight.png",
+    "pv": 0
+  },
+  {
+    "uri": "TBWeiTao.bundle/lottie/like/images/img_0.png",
+    "pv": 0
+  },
+  {
+    "uri": "TBWeiTao.bundle/cameralight.png",
+    "pv": 0
+  },
+  {
+    "uri": "TBWeiTao.bundle/camera.png",
+    "pv": 0
+  },
+  {
+    "uri": "TBWeiTao.bundle/publishfail.png",
+    "pv": 0
+  },
+  {
+    "uri": "template/detail_main_pic/detaill_ihome_sampleroom/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/detail_main_pic/mainpic_recommd/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "template/detail_main_pic/detail_ihome_diy_sample_room/1/main.dx",
+    "pv": 0
+  },
+  {
+    "uri": "search.msoac",
+    "pv": 0
+  },
+  {
+    "uri": "wetaofollow.js",
+    "pv": 0
+  },
+  {
+    "uri": "rax14.js",
+    "pv": 0
+  },
+  {
+    "uri": "framework_slice/images/framework_slice_light.png",
+    "pv": 0
+  },
+  {
+    "uri": "decision_slice/images/decision_slice_img_0.png",
+    "pv": 0
+  },
+  {
+    "uri": "voice_thinking/images/voice_thinking_image_0.png",
+    "pv": 0
+  }
+]

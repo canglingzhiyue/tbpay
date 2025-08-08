@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -117,7 +117,7 @@ public class ShortVideoWeexV2ModuleProxy implements Serializable {
             ipChange.ipc$dispatch("54d380e0", new Object[]{this, jSONObject});
         } else if (isFluidArchitecture()) {
             String string = jSONObject.getString("name");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 Intent intent = new Intent(string);
                 JSONObject jSONObject2 = jSONObject.getJSONObject("args");
                 if (oec.a(jSONObject.get("appear"), false) && !checkNotifyValid(this.mMUSModule.getInstance())) {
@@ -141,7 +141,7 @@ public class ShortVideoWeexV2ModuleProxy implements Serializable {
         } else if (!isFluidArchitecture()) {
         } else {
             String string = jSONObject.getString("name");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a.C0495a c0495a = new a.C0495a(bVar);
                 if (oec.a((Object) Integer.valueOf(jSONObject.getIntValue("cnt")), 0) > 0) {
                     c0495a.a(jSONObject.getIntValue("cnt"));
@@ -159,7 +159,7 @@ public class ShortVideoWeexV2ModuleProxy implements Serializable {
         } else if (!isFluidArchitecture()) {
         } else {
             String string = jSONObject.getString("name");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a.a().a(this.mMUSModule.getInstance(), string);
             }
             spz.c(TAG, "新架构 Weex 2 页面解注册通知 offNotify : " + string);

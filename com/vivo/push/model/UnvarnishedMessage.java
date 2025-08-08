@@ -1,6 +1,6 @@
 package com.vivo.push.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.r;
 import com.vivo.push.util.u;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ public class UnvarnishedMessage {
 
     private void packToObj(String str) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 u.a(TAG, "unvarnishedMsg pack to obj is null");
                 return;
             }

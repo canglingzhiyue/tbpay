@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -110,7 +110,7 @@ public class ai implements ezm {
                             com.taobao.android.detail.ttdetail.utils.al.a(ai.a(ai.this));
                             com.taobao.android.detail.ttdetail.utils.al.a(ai.a(ai.this), ai.b(ai.this));
                             HashMap hashMap2 = new HashMap();
-                            hashMap2.put("item_id", !TextUtils.isEmpty(string) ? string : "");
+                            hashMap2.put("item_id", !StringUtils.isEmpty(string) ? string : "");
                             hashMap2.put("seller_id", com.taobao.android.detail.ttdetail.utils.d.a((Seller) ai.c(ai.this).a().a(Seller.class), ""));
                             hashMap2.put("spm", "a2141.7631564");
                             com.taobao.android.detail.ttdetail.utils.al.a(ai.a(ai.this), hashMap2);
@@ -130,7 +130,7 @@ public class ai implements ezm {
         }
         b bVar = this.d;
         String a2 = bVar != null ? bVar.a() : null;
-        return !TextUtils.isEmpty(a2) ? a2 : "Page_Detail";
+        return !StringUtils.isEmpty(a2) ? a2 : "Page_Detail";
     }
 
     private Map<String, String> b() {

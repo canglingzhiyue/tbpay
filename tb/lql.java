@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.security.bio.api.BioDetector;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.action.IUiRefreshActionModel;
@@ -25,9 +25,9 @@ public class lql {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4935db30", new Object[]{this, iUiRefreshActionModel});
-        } else if (!TextUtils.equals(iUiRefreshActionModel.getRequestType(), "scrollNextPage")) {
+        } else if (!StringUtils.equals(iUiRefreshActionModel.getRequestType(), "scrollNextPage")) {
         } else {
-            this.b = !TextUtils.isEmpty(iUiRefreshActionModel.getDataChangeType());
+            this.b = !StringUtils.isEmpty(iUiRefreshActionModel.getDataChangeType());
             if (this.b || (aVar = this.f30833a) == null) {
                 return;
             }
@@ -123,7 +123,7 @@ public class lql {
         }
         a aVar = this.f30833a;
         if (aVar != null) {
-            if (TextUtils.equals(aVar.b(), "error")) {
+            if (StringUtils.equals(aVar.b(), "error")) {
                 return;
             }
             a();

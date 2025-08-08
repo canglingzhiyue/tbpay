@@ -5,7 +5,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.q;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.fastjson.JSONObject;
@@ -443,7 +443,7 @@ public final class d implements MediaPlayer.OnBufferingUpdateListener, MediaPlay
             return;
         }
         kotlin.jvm.internal.q.d(callback, "callback");
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             a("src is null , can not play");
             e(callback);
         } else if (e()) {
@@ -989,7 +989,7 @@ public final class d implements MediaPlayer.OnBufferingUpdateListener, MediaPlay
         kotlin.jvm.internal.q.d(c2, "c");
         kotlin.jvm.internal.q.d(page, "page");
         TMSLogger.b("TMSPlayerInstance", "setSrc: " + src + " id=" + this.z);
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             a("src can not change after setting");
             e(c2);
             return;
@@ -1064,7 +1064,7 @@ public final class d implements MediaPlayer.OnBufferingUpdateListener, MediaPlay
             return (String) ipChange.ipc$dispatch("5c4eaa63", new Object[]{this, str, iTMSPage});
         }
         String str3 = str;
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return str;
         }
         ITMSPage iTMSPage2 = this.b;

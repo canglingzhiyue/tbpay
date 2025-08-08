@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.db.MspDBHelper;
@@ -128,13 +128,13 @@ public class xpk extends dlg {
             a7.c(str5);
             a7.b(a5);
             a7.a(a6);
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 a7.b(a(str6, 0.001f));
             }
             JSONObject jSONObject2 = a4.getJSONObject("dimensions");
             if (jSONObject2 != null && !jSONObject2.isEmpty()) {
                 for (String str7 : jSONObject2.keySet()) {
-                    if (!TextUtils.isEmpty(str7)) {
+                    if (!StringUtils.isEmpty(str7)) {
                         a7.a(str7, jSONObject2.getString(str7));
                     }
                 }
@@ -142,7 +142,7 @@ public class xpk extends dlg {
             JSONObject jSONObject3 = a4.getJSONObject("indicators");
             if (jSONObject3 != null && !jSONObject3.isEmpty()) {
                 for (String str8 : jSONObject3.keySet()) {
-                    if (!TextUtils.isEmpty(str8)) {
+                    if (!StringUtils.isEmpty(str8)) {
                         a7.b(str8, jSONObject3.getString(str8));
                     }
                 }
@@ -158,7 +158,7 @@ public class xpk extends dlg {
             boolean booleanValue2 = fxr.a("success", a8, (Boolean) false).booleanValue();
             String a10 = fxr.a("traceId", a8, "");
             xpo xpoVar = new xpo(str3, str2, str4, string4, booleanValue2);
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 xpoVar.b(a(str6, 0.001f));
             }
             xpoVar.d(str5);
@@ -172,14 +172,14 @@ public class xpk extends dlg {
         } else if (c == 3) {
             xpp xppVar = new xpp(str3, str2, str4);
             xppVar.c(str5);
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 xppVar.b(a(str6, 0.001f));
             }
             com.taobao.trade.common.kit.tracker.a.a(xppVar);
         } else if (c == 4) {
             xpq xpqVar = new xpq(str3, str2, str4);
             xpqVar.a(str5);
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 xpqVar.a(a(str6, 0.001f));
             }
             JSONObject a11 = dlhVar.a("perfParams");
@@ -192,13 +192,13 @@ public class xpk extends dlg {
                 JSONObject jSONObject5 = a11.getJSONObject("dimensions");
                 if (jSONObject5 != null && !jSONObject5.isEmpty()) {
                     for (String str9 : jSONObject5.keySet()) {
-                        if (!TextUtils.isEmpty(str9)) {
+                        if (!StringUtils.isEmpty(str9)) {
                             xpqVar.a(str9, jSONObject5.getString(str9));
                         }
                     }
                 }
                 JSONArray jSONArray = a11.getJSONArray(NWFullTracePlugin.FullTraceJSParam.STAGES);
-                if (!TextUtils.isEmpty(string5) && jSONArray != null && !jSONArray.isEmpty()) {
+                if (!StringUtils.isEmpty(string5) && jSONArray != null && !jSONArray.isEmpty()) {
                     for (int i = 0; i < jSONArray.size(); i++) {
                         JSONObject jSONObject6 = jSONArray.getJSONObject(i);
                         String string6 = jSONObject6.getString("stageCode");

@@ -2,7 +2,7 @@ package com.taobao.phenix.compat;
 
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import tb.riy;
@@ -78,6 +78,6 @@ public class i implements com.taobao.rxm.schedule.j {
         if (Build.VERSION.SDK_INT >= 23 && !Process.is64Bit()) {
             return true;
         }
-        return (TextUtils.equals(Build.BRAND, "HUAWEI") || TextUtils.equals(Build.BRAND, "HONOR")) && Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 27;
+        return (StringUtils.equals(Build.BRAND, "HUAWEI") || StringUtils.equals(Build.BRAND, "HONOR")) && Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 27;
     }
 }

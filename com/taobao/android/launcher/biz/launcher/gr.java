@@ -1,7 +1,7 @@
 package com.taobao.android.launcher.biz.launcher;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -46,7 +46,7 @@ public class gr extends com.taobao.android.launcher.biz.task.j {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.equals(LauncherRuntime.b, LauncherRuntime.c)) {
+        if (!StringUtils.equals(LauncherRuntime.b, LauncherRuntime.c)) {
             return true;
         }
         gvk a2 = gvk.a();

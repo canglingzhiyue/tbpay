@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -56,7 +56,7 @@ public class inj extends ink {
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
             String string = jSONObject.getString("requestAlias");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 String string2 = jSONObject.getString("id");
                 Map<String, String> a2 = inr.a(jSONObject.getJSONObject("requestParams"));
                 AceSubStrategy aceSubStrategy = new AceSubStrategy();

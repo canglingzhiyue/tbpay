@@ -2,7 +2,7 @@ package com.taobao.android.behavix;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.performance.PerformanceAbility;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -74,7 +74,7 @@ public class BehaviRWVPlugin extends android.taobao.windvane.jsbridge.e {
             dsb.a("runComputeByName_Exception", null, hashMap, e);
             wVCallBackContext.error();
         }
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
             HashMap hashMap2 = string3 == null ? null : (HashMap) JSONObject.parseObject(string3, new TypeReference<HashMap<String, Object>>() { // from class: com.taobao.android.behavix.BehaviRWVPlugin.1
             }, new Feature[0]);
             HashMap hashMap3 = new HashMap();
@@ -127,7 +127,7 @@ public class BehaviRWVPlugin extends android.taobao.windvane.jsbridge.e {
             dsb.a("runComputeByAlias_Exception", null, hashMap, th);
             wVCallBackContext.error();
         }
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
             HashMap hashMap2 = string3 == null ? null : (HashMap) JSONObject.parseObject(string3, new TypeReference<HashMap<String, Object>>() { // from class: com.taobao.android.behavix.BehaviRWVPlugin.3
             }, new Feature[0]);
             HashMap hashMap3 = new HashMap();
@@ -176,7 +176,7 @@ public class BehaviRWVPlugin extends android.taobao.windvane.jsbridge.e {
             dsb.a("getModelInfo_Exception", null, null, th);
             wVCallBackContext.error();
         }
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
             rVar.a("modelInfoResult", f.a(string, string2));
             wVCallBackContext.success(rVar);
             return true;

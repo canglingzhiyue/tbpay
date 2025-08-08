@@ -1,7 +1,7 @@
 package com.taobao.live.home.dinamic.ability;
 
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.dkx;
@@ -29,7 +29,7 @@ public class f extends dlg {
         }
         String string = c.getString("name");
         String string2 = c.getString("param");
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
             WVStandardEventCenter.postNotificationToJS(string, string2);
         }
         return new dky();

@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.info;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -89,7 +89,7 @@ public class EnvInfoUtil {
         jSONObject.put("tid", (Object) AppInfo.getInstance().getMspTid());
         TimeCostLog.log("EnvInfoUtil", "AppInfo拼接耗时：", elapsedRealtime);
         String a2 = a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             jSONObject.put("idp", (Object) a2);
         }
         long elapsedRealtime2 = SystemClock.elapsedRealtime();
@@ -97,7 +97,7 @@ public class EnvInfoUtil {
         jSONObject.put("manufacturer", (Object) DeviceInfo.getMobileManufacturer());
         jSONObject.put("osVersion", (Object) DeviceInfo.getOsVersion());
         TimeCostLog.log("EnvInfoUtil", "DeviceInfo拼接耗时：", elapsedRealtime2);
-        if (!TextUtils.isEmpty(f5872a) && !TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(f5872a) && !StringUtils.isEmpty(b)) {
             jSONObject.put("bit", (Object) f5872a);
             jSONObject.put(d.BUNDLE_BUSINESS_ID, (Object) b);
         } else {
@@ -133,7 +133,7 @@ public class EnvInfoUtil {
             baseEnvInfo.put("secData", (Object) fpSecdataJO);
         }
         String string = bundle.getString("USER_ID", "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             bioMetaInfo = getBioMetaInfo(string);
         } else {
             bioMetaInfo = getBioMetaInfo();
@@ -188,7 +188,7 @@ public class EnvInfoUtil {
             return (JSONObject) ipChange.ipc$dispatch("225b1b2d", new Object[]{new Boolean(z)});
         }
         String a2 = a(z);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         try {
@@ -208,7 +208,7 @@ public class EnvInfoUtil {
             return null;
         }
         String decisionVersion = IDecisionHelper.getDecisionVersion();
-        if (TextUtils.isEmpty(decisionVersion)) {
+        if (StringUtils.isEmpty(decisionVersion)) {
             return null;
         }
         return "a;" + decisionVersion;
@@ -367,29 +367,29 @@ public class EnvInfoUtil {
         if ("Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.collectSecCam))) {
             jSONObject.put("secCamData", (Object) getSecCamData());
         }
-        if (!TextUtils.isEmpty(isSupportFP)) {
+        if (!StringUtils.isEmpty(isSupportFP)) {
             jSONObject.put("sfp", (Object) isSupportFP);
         }
-        if (!TextUtils.isEmpty(bioMetaInfo)) {
+        if (!StringUtils.isEmpty(bioMetaInfo)) {
             jSONObject.put("bmi", (Object) bioMetaInfo);
         }
-        if (!TextUtils.isEmpty(mobileModel)) {
+        if (!StringUtils.isEmpty(mobileModel)) {
             jSONObject.put("dm", (Object) mobileModel);
         }
-        if (!TextUtils.isEmpty(installedCert)) {
+        if (!StringUtils.isEmpty(installedCert)) {
             jSONObject.put(MspGlobalDefine.CERTSN, (Object) installedCert);
         }
-        if (!TextUtils.isEmpty(viSdkVersion)) {
+        if (!StringUtils.isEmpty(viSdkVersion)) {
             jSONObject.put("viv", (Object) viSdkVersion);
         }
-        if (!TextUtils.isEmpty(mspTid)) {
+        if (!StringUtils.isEmpty(mspTid)) {
             jSONObject.put("tid", (Object) mspTid);
         }
         String a2 = a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             jSONObject.put("idp", (Object) a2);
         }
-        if (!TextUtils.isEmpty(f5872a) && !TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(f5872a) && !StringUtils.isEmpty(b)) {
             jSONObject.put("bit", (Object) f5872a);
             jSONObject.put(d.BUNDLE_BUSINESS_ID, (Object) b);
         } else {
@@ -453,7 +453,7 @@ public class EnvInfoUtil {
         hashMap.put("viSdkVersion", AppInfo.getInstance().getViSdkVersion());
         hashMap.put(ChangeAppIconBridge.KEY_DEVICEMODEL, DeviceInfo.getMobileModel());
         hashMap.put("deviceName", DeviceInfo.getMobileManufacturer());
-        if (!TextUtils.isEmpty(f5872a) && !TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(f5872a) && !StringUtils.isEmpty(b)) {
             hashMap.put("bit", f5872a);
             hashMap.put(d.BUNDLE_BUSINESS_ID, b);
         } else {
@@ -478,7 +478,7 @@ public class EnvInfoUtil {
         VerifyLogCat.i("EnvInfoUtil", "getInterFpSecdata: " + invokeMethod);
         TimeCostLog.log("EnvInfoUtil", "getInterFpSecdata耗时：", elapsedRealtime);
         String valueOf = invokeMethod != null ? String.valueOf(invokeMethod) : "";
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             return null;
         }
         try {

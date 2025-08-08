@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.model.PhotoFrom;
 import com.etao.feimagesearch.model.d;
@@ -289,7 +289,7 @@ public final class crq {
         if (bool2 != null) {
             return bool2.booleanValue();
         }
-        if (this.c == null || TextUtils.isEmpty(String.valueOf(this.c))) {
+        if (this.c == null || StringUtils.isEmpty(String.valueOf(this.c))) {
             bool = false;
         } else {
             try {

@@ -1,7 +1,7 @@
 package com.taobao.tao.recommend4.manager.weex2;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorCode;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
@@ -230,7 +230,7 @@ public class RecommendWeex2ContainerView extends WeexPlatformView {
             return;
         }
         ldf.d(TAG, "setBottomOffset : " + str);
-        if (this.mAbstractWeexRecommendContainer == null || TextUtils.isEmpty(str)) {
+        if (this.mAbstractWeexRecommendContainer == null || StringUtils.isEmpty(str)) {
             return;
         }
         try {
@@ -250,7 +250,7 @@ public class RecommendWeex2ContainerView extends WeexPlatformView {
             return;
         }
         ldf.d(TAG, "setBizParams ： " + str);
-        if (TextUtils.isEmpty(str) && Debuggable.isDebug()) {
+        if (StringUtils.isEmpty(str) && Debuggable.isDebug()) {
             TBToast.makeText(getContext(), "bizParams为空").show();
             return;
         }
@@ -283,7 +283,7 @@ public class RecommendWeex2ContainerView extends WeexPlatformView {
             return;
         }
         ldf.d(TAG, "setFlyDuration ： " + str);
-        if (TextUtils.isEmpty(str) || (otkVar = this.mAbstractWeexRecommendContainer) == null) {
+        if (StringUtils.isEmpty(str) || (otkVar = this.mAbstractWeexRecommendContainer) == null) {
             return;
         }
         otkVar.b(Integer.parseInt(str));
@@ -297,7 +297,7 @@ public class RecommendWeex2ContainerView extends WeexPlatformView {
             return;
         }
         ldf.d(TAG, "setSwitchScrollClose ： " + str);
-        if (TextUtils.isEmpty(str) || (otkVar = this.mAbstractWeexRecommendContainer) == null) {
+        if (StringUtils.isEmpty(str) || (otkVar = this.mAbstractWeexRecommendContainer) == null) {
             return;
         }
         otkVar.a(Boolean.parseBoolean(str));
@@ -311,7 +311,7 @@ public class RecommendWeex2ContainerView extends WeexPlatformView {
             return;
         }
         ldf.d(TAG, "setPageRenderStartTime ： " + str);
-        if (TextUtils.isEmpty(str) || (otkVar = this.mAbstractWeexRecommendContainer) == null) {
+        if (StringUtils.isEmpty(str) || (otkVar = this.mAbstractWeexRecommendContainer) == null) {
             return;
         }
         otkVar.a(Long.parseLong(str));
@@ -324,7 +324,7 @@ public class RecommendWeex2ContainerView extends WeexPlatformView {
             return;
         }
         ldf.d(TAG, "setInfoFlowWidth ： " + str);
-        if (TextUtils.isEmpty(str) || !j.a(ORANGE_KEY_ENABLE_AFTER_BUY_CUSTOM_INFO_FLOW_WIDTH, true)) {
+        if (StringUtils.isEmpty(str) || !j.a(ORANGE_KEY_ENABLE_AFTER_BUY_CUSTOM_INFO_FLOW_WIDTH, true)) {
             return;
         }
         try {

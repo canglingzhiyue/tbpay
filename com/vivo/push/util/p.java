@@ -79,7 +79,7 @@ public final class p extends AsyncTask<String, Void, List<Bitmap>> {
             r6.append(r4)
             java.lang.String r6 = r6.toString()
             com.vivo.push.util.u.d(r2, r6)
-            boolean r6 = android.text.TextUtils.isEmpty(r5)
+            boolean r6 = android.text.StringUtils.isEmpty(r5)
             if (r6 != 0) goto La4
             java.net.URL r6 = new java.net.URL     // Catch: java.lang.Throwable -> L80 java.io.IOException -> L82 java.net.MalformedURLException -> L8e
             r6.<init>(r5)     // Catch: java.lang.Throwable -> L80 java.io.IOException -> L82 java.net.MalformedURLException -> L8e

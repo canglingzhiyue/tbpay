@@ -1,6 +1,6 @@
 package com.taobao.mediaplay.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public class MediaConfig implements Serializable {
             Iterator<MediaConfigInfo> it = this.mediaConfigInfoList.iterator();
             while (it.hasNext()) {
                 MediaConfigInfo next = it.next();
-                if (next != null && next.config != null && !TextUtils.isEmpty(str) && str.toLowerCase().equalsIgnoreCase(next.biz)) {
+                if (next != null && next.config != null && !StringUtils.isEmpty(str) && str.toLowerCase().equalsIgnoreCase(next.biz)) {
                     if (i == 1) {
                         return next.config.svc;
                     }
@@ -88,7 +88,7 @@ public class MediaConfig implements Serializable {
         Iterator<MediaConfigInfo> it = this.mediaConfigInfoList.iterator();
         while (it.hasNext()) {
             MediaConfigInfo next = it.next();
-            if (next != null && next.config != null && !TextUtils.isEmpty(str) && str.toLowerCase().equalsIgnoreCase(next.biz)) {
+            if (next != null && next.config != null && !StringUtils.isEmpty(str) && str.toLowerCase().equalsIgnoreCase(next.biz)) {
                 return next.config.playerBuffer;
             }
         }

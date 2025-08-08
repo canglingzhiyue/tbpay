@@ -1,0 +1,1080 @@
+{
+  "newface_home_main": {
+    "OnlyUiRefresh": [
+      {
+        "actionName": "newface.uiRefresh",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "dataSourceType": "remote",
+          "requestType": "OnlyUiRefresh"
+        }
+      }
+    ],
+    "PullToRefresh": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "pullRefresh",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "pullRefresh"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "pullRefresh"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "LoadCache": [
+      {
+        "actionName": "newface.loadCache",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "needSync": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            },
+            {
+              "actionName": "newface.scrollToTop",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ],
+          "fail": [
+          ]
+        }
+      }],
+    "ColdStart": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "coldStart",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "coldStart"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "coldStart"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "HotStart": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "hotStart",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "hotStart"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "hotStart"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "PageBack": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "forceRequest": "@eventParam{forceRequest}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "pageBack",
+          "checkDeltaExpire": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "itemId": "@eventParam{bizParam.itemId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "switch.string",
+                    "actionParam": {
+                      "value": "@callbackParam{dataChangeType}"
+                    },
+                    "callback": {
+                      "base": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "pageBack"
+                          }
+                        },
+                        {
+                          "actionName": "newface.scrollToTop",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "pageBack"
+                          }
+                        }
+                      ],
+                      "delta": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "pageBack"
+                          }
+
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "PageSwitch": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "pageEnter",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "pageEnter"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "pageEnter"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "PageEnter": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "pageEnter",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "pageEnter"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "pageEnter"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "LocationChanged": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "locationChanged",
+          "checkDeltaExpire": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "itemId": "@eventParam{bizParam.itemId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "switch.string",
+                    "actionParam": {
+                      "value": "@callbackParam{dataChangeType}"
+                    },
+                    "callback": {
+                      "base": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "locationChanged"
+                          }
+                        },
+                        {
+                          "actionName": "newface.scrollToTop",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "locationChanged"
+                          }
+                        }
+                      ],
+                      "delta": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "locationChanged"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ChangeCity": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "changeCity",
+          "checkDeltaExpire": "true",
+          "strategy":"cancelOther"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "itemId": "@eventParam{bizParam.itemId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "switch.string",
+                    "actionParam": {
+                      "value": "@callbackParam{dataChangeType}"
+                    },
+                    "callback": {
+                      "base": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "changeCity"
+                          }
+                        },
+                        {
+                          "actionName": "newface.scrollToTop",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "changeCity"
+                          }
+                        }
+                      ],
+                      "delta": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "changeCity"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "UserLogin": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "userLogin",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "userLogin",
+                      "success": "true"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "userLogin",
+                "success": "false"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "Preview": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "preview",
+          "forceRequest": "true",
+          "previewParam": "@eventParam{previewParam}"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "preview",
+                      "success": "true"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "preview",
+                "success": "false"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "HomeTabAppear": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "forceRequest": "@eventParam{forceRequest}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "homeTabAppear",
+          "checkDeltaExpire": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "itemId": "@eventParam{bizParam.itemId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "switch.string",
+                    "actionParam": {
+                      "value": "@callbackParam{dataChangeType}"
+                    },
+                    "callback": {
+                      "base": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "homeTabAppear"
+                          }
+                        },
+                        {
+                          "actionName": "newface.scrollToTop",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "animated": "false",
+                            "requestType": "homeTabAppear"
+                          }
+                        }
+                      ],
+                      "delta": [
+                        {
+                          "actionName": "newface.uiRefresh",
+                          "actionParam": {
+                            "containers": "@eventParam{containers}",
+                            "requestType": "homeTabAppear"
+                          }
+
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "EditionSwitch": [
+      {
+        "actionName": "newface.loadCache",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "needSync": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "editionSwitch",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}",
+                      "requestType": "editionSwitch",
+                      "success": "true"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "requestType": "editionSwitch",
+                "success": "false"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "OnlyRequest": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "@eventParam{requestType}",
+          "forceRequest": "true"
+        },
+        "callback": {
+          "success": [
+          ],
+          "fail": [
+          ]
+        }
+      }
+    ]
+  },
+  "newface_home_main.loading": {
+    "ViewClick": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "isNextPage": "true",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "scrollNextPage"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewAppear": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "isNextPage": "true",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "scrollNextPage"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "newface_home_main.error": {
+    "ViewClick": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "errorRetry"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  },
+                  {
+                    "actionName": "newface.scrollToTop",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "newface_home_main.*.overlay": {
+    "DeleteOperation": [
+      {
+        "actionName": "newface.dataDelete",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "deleteModel": "@eventParam{deleteModel}"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "dataChangeType": "delta"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "newface_home_main.*.video": {
+    "ViewAppear": [
+      {
+        "actionName": "newface.playerQueue",
+        "actionParam": {
+          "_operation": "enqueue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "newface.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewDisappear": [
+      {
+        "actionName": "newface.playerQueue",
+        "actionParam": {
+          "_operation": "dequeue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "newface.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "actionName": "newface.widgetPostMsg",
+        "actionParam": {
+          "widgetNode": "@eventParam{widgetNode}",
+          "widgetParams": {
+            "type": "MSG",
+            "params": {
+              "videoOperation": "pause"
+            }
+          }
+        }
+      }
+    ],
+    "VideoEndPlaying": [
+      {
+        "actionName": "newface.playerQueue",
+        "actionParam": {
+          "_operation": "dequeue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "newface.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "actionName": "newface.playerQueue",
+        "actionParam": {
+          "_operation": "enqueue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "newface.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "VideoErrorPlaying": [
+      {
+        "actionName": "newface.playerQueue",
+        "actionParam": {
+          "_operation": "dequeue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "newface.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "newface_home_main.*": {
+    "ViewAppear": [
+      {
+        "actionName": "newface.request",
+        "actionParam": {
+          "containers": "@eventParam{containers}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "isNextPage": "true",
+          "apiName": "mtop.taobao.wireless.home.newface.awesome.get",
+          "apiVersion": "1.0",
+          "requestType": "scrollNextPage"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "newface.dataProcess",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "newface.uiRefresh",
+                    "actionParam": {
+                      "containers": "@eventParam{containers}"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

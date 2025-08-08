@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.render;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.DeviceInfo;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -65,7 +65,7 @@ public class AntEventRender extends BaseRender {
         LoggingUtil.appendParam(sb, a());
         GlobalLogConfigService.a();
         String b = GlobalLogConfigService.b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             this.b.putBizExternParams("groupTag", b);
         }
         LoggingUtil.appendExtParam(sb, this.b.getBizExternParams());

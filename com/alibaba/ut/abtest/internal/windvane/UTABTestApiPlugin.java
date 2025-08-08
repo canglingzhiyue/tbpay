@@ -3,7 +3,7 @@ package com.alibaba.ut.abtest.internal.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -54,20 +54,20 @@ public class UTABTestApiPlugin extends e {
                 }
             }
         }
-        if (TextUtils.equals(nrh.TYPE_ACTIVATE, str)) {
+        if (StringUtils.equals(nrh.TYPE_ACTIVATE, str)) {
             activate(str2, wVCallBackContext);
             return true;
-        } else if (TextUtils.equals("getVariations", str)) {
+        } else if (StringUtils.equals("getVariations", str)) {
             getVariations(str2, wVCallBackContext);
             return true;
-        } else if (TextUtils.equals(b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER, str)) {
+        } else if (StringUtils.equals(b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER, str)) {
             activateServer(str2, wVCallBackContext);
             return true;
-        } else if (TextUtils.equals("mockSwitches", str)) {
+        } else if (StringUtils.equals("mockSwitches", str)) {
             mockSwitches(str2, wVCallBackContext);
             return true;
         } else {
-            if (TextUtils.equals("isSwitchOpened", str)) {
+            if (StringUtils.equals("isSwitchOpened", str)) {
                 isSwitchOpened(str2, wVCallBackContext);
                 return true;
             }
@@ -103,7 +103,7 @@ public class UTABTestApiPlugin extends e {
         JSONObject jSONObject = new JSONObject(str);
         String optString = jSONObject.optString("component");
         String optString2 = jSONObject.optString("module");
-        if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2)) {
+        if (StringUtils.isEmpty(optString) || StringUtils.isEmpty(optString2)) {
             if (wVCallBackContext == null) {
                 return;
             }

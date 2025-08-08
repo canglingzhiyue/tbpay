@@ -1,6 +1,6 @@
 package com.taobao.phenix.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.pexode.PexodeOptions;
@@ -124,7 +124,7 @@ public class b extends com.taobao.rxm.request.c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.w == null) {
                 this.w = str;
@@ -232,7 +232,7 @@ public class b extends com.taobao.rxm.request.c {
         for (nia niaVar : niaVarArr) {
             str = str + "#PROCESSOR_" + niaVar.getClass().hashCode();
             String id = niaVar.getId();
-            if (!TextUtils.isEmpty(id)) {
+            if (!StringUtils.isEmpty(id)) {
                 str = str + "$" + id;
             }
         }
@@ -631,7 +631,7 @@ public class b extends com.taobao.rxm.request.c {
         }
         String str2 = this.e != null ? this.e.f18937a : "";
         this.e = new ImageStatistics(this.c, true);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.e.f18937a = str2;
         }
         nhx.a(this.e);

@@ -1,7 +1,7 @@
 package com.meizu.cloud.pushsdk.platform.c;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
@@ -91,7 +91,7 @@ public class a {
     public c a(String str, String str2, String str3, String str4) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         linkedHashMap.put("appId", str);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             linkedHashMap.put("fdId", str4);
         } else {
             linkedHashMap.put("deviceId", str3);
@@ -105,14 +105,14 @@ public class a {
     public c<String> a(String str, String str2, String str3, String str4, File file) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         linkedHashMap.put(RemoteMessageConst.MSGID, str);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             linkedHashMap.put("fdId", str3);
         } else {
             linkedHashMap.put("deviceId", str2);
         }
         LinkedHashMap linkedHashMap2 = new LinkedHashMap(linkedHashMap);
         linkedHashMap2.put("sign", com.meizu.cloud.pushsdk.platform.b.a(linkedHashMap, "4a2ca769d79f4856bb3bd982d30de790"));
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             linkedHashMap2.put("errorMsg", str4);
         }
         DebugLogger.i("PushAPI", "uploadLogFile post map " + linkedHashMap2);
@@ -176,7 +176,7 @@ public class a {
     public c d(String str, String str2, String str3, String str4) {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         linkedHashMap.put("appId", str);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             linkedHashMap.put("fdId", str4);
         } else {
             linkedHashMap.put("deviceId", str3);

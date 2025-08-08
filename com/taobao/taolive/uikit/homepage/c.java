@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
 import com.taobao.mediaplay.k;
@@ -191,7 +191,7 @@ public class c implements pqu {
             this.c.a(0);
             this.c.e(bVar.e);
             k kVar = this.c;
-            if (kVar == null || kVar.q() == null || TextUtils.isEmpty(bVar.c) || bVar.b <= 0) {
+            if (kVar == null || kVar.q() == null || StringUtils.isEmpty(bVar.c) || bVar.b <= 0) {
                 return;
             }
             this.c.q().setVisibility(0);

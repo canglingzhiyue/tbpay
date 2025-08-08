@@ -7,7 +7,7 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -83,7 +83,7 @@ public class e {
                 size = Math.min(((int) Math.ceil(Layout.getDesiredWidth(charSequence, 0, charSequence.length(), this.b))) + (this.g << 1), size);
             }
         }
-        if (size != 0 && !TextUtils.isEmpty(charSequence)) {
+        if (size != 0 && !StringUtils.isEmpty(charSequence)) {
             int max = size - (Math.max(this.g, 0) << 1);
             Layout layout = this.f12901a;
             if (layout != null) {
@@ -99,7 +99,7 @@ public class e {
             int size2 = View.MeasureSpec.getSize(i2);
             if (mode == 1073741824) {
                 i3 = size2;
-            } else if (!TextUtils.isEmpty(charSequence)) {
+            } else if (!StringUtils.isEmpty(charSequence)) {
                 i3 = Math.min(this.f12901a.getHeight() + (this.g << 1), size2);
             }
             return new a(size, i3);

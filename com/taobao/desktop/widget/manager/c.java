@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.intf.event.SuccPhenixEvent;
@@ -65,7 +65,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("83f30853", new Object[]{this, remoteViews, new Integer(i), str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             a(remoteViews, i);
             remoteViews.setTextViewText(i, str);
         } else {
@@ -77,7 +77,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b1cba2b2", new Object[]{this, remoteViews, new Integer(i), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 remoteViews.setTextColor(i, Color.parseColor(str));
@@ -93,7 +93,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dfa43d11", new Object[]{this, remoteViews, new Integer(i), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Intent intent = new Intent();
             intent.setData(Uri.parse(str));

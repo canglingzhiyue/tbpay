@@ -1,7 +1,7 @@
 package com.taobao.android.home.component.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -28,7 +28,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bbc5dc40", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(f12726a)) {
+        if (!StringUtils.isEmpty(f12726a)) {
             return f12726a;
         }
         File filesDir = context.getFilesDir();

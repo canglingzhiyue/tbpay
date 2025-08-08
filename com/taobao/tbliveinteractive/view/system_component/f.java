@@ -1,7 +1,7 @@
 package com.taobao.tbliveinteractive.view.system_component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -358,13 +358,13 @@ public class f implements com.taobao.tbliveinteractive.componentlist.c, ddv {
                 break;
         }
         if (c == 0 || c == 1) {
-            if (!(obj instanceof String) || !TextUtils.equals(this.r, (String) obj)) {
+            if (!(obj instanceof String) || !StringUtils.equals(this.r, (String) obj)) {
                 return;
             }
             this.q = true;
             a(true);
         } else if (c == 2) {
-            if (!(obj instanceof String) || !TextUtils.equals(this.r, (String) obj)) {
+            if (!(obj instanceof String) || !StringUtils.equals(this.r, (String) obj)) {
                 return;
             }
             this.q = false;

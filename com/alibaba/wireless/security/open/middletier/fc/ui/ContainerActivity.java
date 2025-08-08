@@ -19,7 +19,7 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.webkit.MimeTypeMap;
 import android.webkit.URLUtil;
@@ -108,7 +108,7 @@ public class ContainerActivity extends Activity {
                 if (query2 != null) {
                     if (query2.moveToFirst()) {
                         String string = query2.getString(query2.getColumnIndex("local_uri"));
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             file = new File(Uri.parse(string).getPath());
                         }
                     }
@@ -140,7 +140,7 @@ public class ContainerActivity extends Activity {
                         } else if (ContainerActivity.this.u) {
                             DownloadManager downloadManager = (DownloadManager) context.getSystemService("download");
                             String mimeTypeForDownloadedFile = downloadManager.getMimeTypeForDownloadedFile(longExtra);
-                            if (TextUtils.isEmpty(mimeTypeForDownloadedFile)) {
+                            if (StringUtils.isEmpty(mimeTypeForDownloadedFile)) {
                                 mimeTypeForDownloadedFile = "*/*";
                             }
                             Intent intent2 = new Intent("android.intent.action.VIEW");
@@ -333,7 +333,7 @@ public class ContainerActivity extends Activity {
         }
         String query = new URL(str).getQuery();
         StringBuilder sb = new StringBuilder();
-        if (TextUtils.isEmpty(query)) {
+        if (StringUtils.isEmpty(query)) {
             sb.append(str);
             if (!str.endsWith("?")) {
                 sb.append("?");
@@ -431,7 +431,7 @@ public class ContainerActivity extends Activity {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "null";
         }
         hashMap.put("url", str);

@@ -1,6 +1,6 @@
 package com.alipay.module.face.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.security.zim.api.ZIMCallback;
 import com.alipay.mobile.security.zim.api.ZIMFacade;
 import com.alipay.mobile.security.zim.api.ZIMResponse;
@@ -85,7 +85,7 @@ public class VIZIMCallback implements ZIMCallback {
                     HashMap<String, Object> hashMap2 = new HashMap<>();
                     hashMap2.put("faceResult", Integer.valueOf(i));
                     hashMap2.put("faceMemo", FaceDetectUtils.a(i));
-                    if (!TextUtils.isEmpty(faceCertHelper.g)) {
+                    if (!StringUtils.isEmpty(faceCertHelper.g)) {
                         hashMap2.put("desensName", faceCertHelper.g);
                     }
                     if (zIMResponse.extInfo != null) {

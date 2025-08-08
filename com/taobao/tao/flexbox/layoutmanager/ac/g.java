@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -670,7 +670,7 @@ public class g {
         e.a a2 = this.f.a(str);
         if (a2.d != null) {
             a(a2.d, str2, cVar);
-        } else if (!TextUtils.isEmpty(a2.c)) {
+        } else if (!StringUtils.isEmpty(a2.c)) {
             a(a2.c, str2, getClass().getClassLoader(), cVar);
         } else if (cVar == null || cVar.c == null) {
         } else {
@@ -847,10 +847,10 @@ public class g {
             a aVar = new a("AC_ERR_FAILED", "module execute failed", obj);
             if (obj instanceof JSONObject) {
                 JSONObject jSONObject = (JSONObject) obj;
-                if (!TextUtils.isEmpty(jSONObject.getString("errorCode"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("errorCode"))) {
                     aVar.f19936a = jSONObject.getString("errorCode");
                 }
-                if (!TextUtils.isEmpty(jSONObject.getString("errorMsg"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("errorMsg"))) {
                     aVar.b = jSONObject.getString("errorMsg");
                 }
                 if (jSONObject.containsKey("result")) {

@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
@@ -151,7 +151,7 @@ public class h implements ezm {
                                 ipChange3.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                                 return;
                             }
-                            if (ErrorConstant.isSessionInvalid(str) || TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+                            if (ErrorConstant.isSessionInvalid(str) || StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                                 Toast.makeText(h.a(h.this), h.c(h.this), 0).show();
                             } else if (odg.o().a()) {
                                 Toast.makeText(h.a(h.this), odg.o().a(R.string.tt_detail_cancel_collet_failed), 0).show();
@@ -192,7 +192,7 @@ public class h implements ezm {
                                 ipChange3.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                                 return;
                             }
-                            if (ErrorConstant.isSessionInvalid(str) || TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+                            if (ErrorConstant.isSessionInvalid(str) || StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                                 Toast.makeText(h.a(h.this), h.c(h.this), 0).show();
                             } else if (odg.o().a()) {
                                 Toast.makeText(h.a(h.this), odg.o().a(R.string.tt_detail_collet_failed), 0).show();
@@ -315,7 +315,7 @@ public class h implements ezm {
                     return;
                 }
                 String str2 = (map == null || !(map.get(aw.PARAM_ACTIVITY_URL) instanceof String)) ? "" : (String) map.get(aw.PARAM_ACTIVITY_URL);
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 if ((h.a(h.this) instanceof Activity) && !((Activity) h.a(h.this)).hasWindowFocus()) {

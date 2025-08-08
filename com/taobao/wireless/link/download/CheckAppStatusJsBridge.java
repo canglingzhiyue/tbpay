@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,7 +36,7 @@ public class CheckAppStatusJsBridge extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.equals("checkStatus", str)) {
+            if (StringUtils.equals("checkStatus", str)) {
                 JSONObject jSONObject = new JSONObject(str2);
                 String string = jSONObject.getString("packageName");
                 int i = jSONObject.getInt(BaseFBPlugin.ACT_CONF.supportVersion);

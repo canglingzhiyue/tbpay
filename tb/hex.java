@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class hex extends hew {
 
     private boolean bv_() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ecec596", new Object[]{this})).booleanValue() : TextUtils.equals(Resource.TYPE_TEMPLATE_LITE, e.e(this.r));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ecec596", new Object[]{this})).booleanValue() : StringUtils.equals(Resource.TYPE_TEMPLATE_LITE, e.e(this.r));
     }
 
     @Override // tb.hew

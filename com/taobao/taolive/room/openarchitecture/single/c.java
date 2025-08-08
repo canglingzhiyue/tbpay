@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.openarchitecture.single;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import com.taobao.taolive.room.utils.t;
@@ -25,7 +25,7 @@ public class c {
         }
         if (context != null && videoInfo != null && (j2 > j || z)) {
             try {
-                return (!ply.X() || TextUtils.isEmpty(str)) ? plz.a(videoInfo) ? context.getString(R.string.taolive_topbar_online_number_for_taolive_flexalocal, t.a(j2)) : context.getString(R.string.taolive_topbar_online_number_flexalocal, t.a(j2)) : str;
+                return (!ply.X() || StringUtils.isEmpty(str)) ? plz.a(videoInfo) ? context.getString(R.string.taolive_topbar_online_number_for_taolive_flexalocal, t.a(j2)) : context.getString(R.string.taolive_topbar_online_number_flexalocal, t.a(j2)) : str;
             } catch (Exception unused) {
             }
         }

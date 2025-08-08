@@ -5,7 +5,7 @@ import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
@@ -173,7 +173,7 @@ public class dwj {
             AURARenderComponent aURARenderComponent = this.e.get(i);
             if (aURARenderComponent != null && (aURARenderComponentData = aURARenderComponent.data) != null && (map = aURARenderComponentData.fields) != null) {
                 String str = (String) bbc.a(map, "locatorId", String.class, null);
-                if (!TextUtils.isEmpty(str) && !this.f.containsKey(str)) {
+                if (!StringUtils.isEmpty(str) && !this.f.containsKey(str)) {
                     this.f.put(str, new a(aURARenderComponent.key, i));
                 }
             }

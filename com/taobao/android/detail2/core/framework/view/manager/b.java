@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.view.manager;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.data.DetailDataManager;
@@ -100,7 +100,7 @@ public class b {
             if (!b.c(b.this).h().m()) {
                 fjt.a(fjt.TAG_REARRANGE, "服务端重排开关或orange开关关闭，不符合触发重排条件判断");
                 return false;
-            } else if (!TextUtils.equals(str, b.c(b.this).h().y())) {
+            } else if (!StringUtils.equals(str, b.c(b.this).h().y())) {
                 fjt.a(fjt.TAG_REARRANGE, "instanceId不一致，不符合触发重排条件判断");
                 return false;
             } else if (b.d(b.this).contains(str2)) {
@@ -109,7 +109,7 @@ public class b {
             } else {
                 d d = b.b(b.this).d();
                 String str3 = d == null ? "" : d.k;
-                if (!TextUtils.equals(str2, str3)) {
+                if (!StringUtils.equals(str2, str3)) {
                     fjt.a(fjt.TAG_REARRANGE, "nid " + str2 + " 与当前正在展示的nid " + str3 + " 不一致已发生过滑动，不符合触发重排条件判断");
                     return false;
                 }
@@ -169,7 +169,7 @@ public class b {
                 d d = b.b(b.this).d();
                 String str2 = "";
                 String str3 = d == null ? str2 : d.k;
-                if (!TextUtils.equals(b.g(b.this), str3)) {
+                if (!StringUtils.equals(b.g(b.this), str3)) {
                     fjt.a(fjt.TAG_REARRANGE, "端智能返回成功结果，nid " + b.g(b.this) + " 与当前正在展示的nid " + str3 + " 不一致已发生过滑动，重排结果不生效");
                 } else if (dVar == null) {
                 } else {
@@ -178,7 +178,7 @@ public class b {
                     if (f != null) {
                         str2 = f.k;
                     }
-                    if (!TextUtils.equals(str4, str2)) {
+                    if (!StringUtils.equals(str4, str2)) {
                         fjt.a(fjt.TAG_REARRANGE, "端智能返回成功结果，之前最大曝光nid " + str4 + " 与当前最大曝光的nid " + str2 + " 不一致已发生过滑动，重排结果不生效");
                     } else if (b.f(b.this)) {
                         fjt.a(fjt.TAG_REARRANGE, "端智能返回成功结果，但当前页面不在前台展示，重排结果不生效");
@@ -312,7 +312,7 @@ public class b {
             return;
         }
         this.h = false;
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             return;
         }
         String str = this.i;

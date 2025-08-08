@@ -6,7 +6,7 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alipay.mobile.common.transport.utils.ConnectionUtil;
 import java.io.BufferedReader;
@@ -132,7 +132,7 @@ public class bg {
                     } else {
                         z = false;
                     }
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         m1733a.setDoOutput(true);
                         byte[] bytes = str3.getBytes();
                         OutputStream gZIPOutputStream = z ? new GZIPOutputStream(m1733a.getOutputStream()) : m1733a.getOutputStream();
@@ -215,7 +215,7 @@ public class bg {
                 HttpURLConnection m1733a = m1733a(context, url2);
                 m1733a.setConnectTimeout(10000);
                 m1733a.setReadTimeout(15000);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     m1733a.setRequestProperty(HttpConstant.USER_AGENT, str);
                 }
                 if (str2 != null) {
@@ -238,7 +238,7 @@ public class bg {
                         if (headerFieldKey == null && headerField == null) {
                             break;
                         }
-                        if (!TextUtils.isEmpty(headerFieldKey) && !TextUtils.isEmpty(headerField)) {
+                        if (!StringUtils.isEmpty(headerFieldKey) && !StringUtils.isEmpty(headerField)) {
                             bVar.f135a.put(headerFieldKey, headerField);
                         }
                         i++;
@@ -306,7 +306,7 @@ public class bg {
     }
 
     public static String a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             new String();
             return String.format("%s&key=%s", str, bl.a(String.format("%sbe988a6134bc8254465424e5a70ef037", str)));
         }
@@ -456,7 +456,7 @@ public class bg {
             return false;
         }
         String extraInfo = activeNetworkInfo.getExtraInfo();
-        return !TextUtils.isEmpty(extraInfo) && extraInfo.length() >= 3 && extraInfo.contains(ConnectionUtil.TYPE_CTWAP);
+        return !StringUtils.isEmpty(extraInfo) && extraInfo.length() >= 3 && extraInfo.contains(ConnectionUtil.TYPE_CTWAP);
     }
 
     public static boolean b(Context context) {

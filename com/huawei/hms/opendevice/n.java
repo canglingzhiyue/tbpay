@@ -1,6 +1,6 @@
 package com.huawei.hms.opendevice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.log.HMSLog;
 import com.huawei.hms.utils.HEX;
 import java.io.UnsupportedEncodingException;
@@ -13,7 +13,7 @@ public final class n {
         String str3;
         try {
             byte[] bytes = str.getBytes("UTF-8");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "SHA-256";
             }
             MessageDigest messageDigest = MessageDigest.getInstance(str2);

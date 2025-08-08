@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -85,13 +85,13 @@ public class BootImageInteractAddCartView extends BootImageInteractNaitveSlideVi
             if (this.mBootImageInfo == null) {
                 return;
             }
-            if (this.mInteractTitle != null && !TextUtils.isEmpty(this.mBootImageInfo.cardTitle)) {
+            if (this.mInteractTitle != null && !StringUtils.isEmpty(this.mBootImageInfo.cardTitle)) {
                 this.mInteractTitle.setText(this.mBootImageInfo.cardTitle);
             }
-            if (this.mInteractContent != null && !TextUtils.isEmpty(this.mBootImageInfo.cardDesc)) {
+            if (this.mInteractContent != null && !StringUtils.isEmpty(this.mBootImageInfo.cardDesc)) {
                 this.mInteractContent.setText(this.mBootImageInfo.cardDesc);
             }
-            if (this.mInteractAdvName != null && !TextUtils.isEmpty(this.mBootImageInfo.advName) && !TextUtils.isEmpty(this.mBootImageInfo.advColor)) {
+            if (this.mInteractAdvName != null && !StringUtils.isEmpty(this.mBootImageInfo.advName) && !StringUtils.isEmpty(this.mBootImageInfo.advColor)) {
                 this.mInteractAdvName.setVisibility(0);
                 this.mInteractAdvName.setText(this.mBootImageInfo.advName);
                 try {
@@ -106,8 +106,8 @@ public class BootImageInteractAddCartView extends BootImageInteractNaitveSlideVi
             } else if (this.mInteractAdvName != null) {
                 this.mInteractAdvName.setVisibility(8);
             }
-            String str = TextUtils.isEmpty(this.mBootImageInfo.cardImageUrl) ? BootImageInteractBaseView.BOOTIMAGE_INTERACT_ITEM_DEFAULT_IMAGE : this.mBootImageInfo.cardImageUrl;
-            if (TextUtils.isEmpty(str)) {
+            String str = StringUtils.isEmpty(this.mBootImageInfo.cardImageUrl) ? BootImageInteractBaseView.BOOTIMAGE_INTERACT_ITEM_DEFAULT_IMAGE : this.mBootImageInfo.cardImageUrl;
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             b.h().a(BootImageDataMgr.IMAGE_MODULE_NAME, str).into(this.mImageIcon);
@@ -124,7 +124,7 @@ public class BootImageInteractAddCartView extends BootImageInteractNaitveSlideVi
         }
         try {
             String slideActionText = super.getSlideActionText();
-            return TextUtils.isEmpty(slideActionText) ? this.mContext.getResources().getString(R.string.bootimage_slide_cart_text) : slideActionText;
+            return StringUtils.isEmpty(slideActionText) ? this.mContext.getResources().getString(R.string.bootimage_slide_cart_text) : slideActionText;
         } catch (Throwable unused) {
             return "";
         }

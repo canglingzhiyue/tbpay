@@ -7,7 +7,7 @@ import android.media.AudioAttributes;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -131,7 +131,7 @@ public class NotificationIniter {
             ipChange.ipc$dispatch("9f8cc6b5", new Object[]{notificationChannel, audioAttributes, context});
         } else if (Build.VERSION.SDK_INT >= 26 && context != null) {
             String string = Globals.getApplication().getSharedPreferences(Config.PREFERENCES, 4).getString("app_notification_custom_sound", null);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 notificationChannel.setSound(Uri.parse(string), audioAttributes);
             } else {
                 notificationChannel.setSound(Uri.parse("android.resource://" + Globals.getApplication().getPackageName() + "/" + R.raw.sound_push), audioAttributes);
@@ -203,13 +203,13 @@ public class NotificationIniter {
             return ((Boolean) ipChange.ipc$dispatch("53329b62", new Object[]{hashMap})).booleanValue();
         }
         String config = OrangeConfig.getInstance().getConfig("mpm_business_switch", "isPermissionSingleTime", "");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             hashMap.put("useOrange", config);
             return "true".equals(config);
         }
         String loadABStatusFromAB = loadABStatusFromAB("AB_", "202312141543_5034", "status");
         hashMap.put("useAbtest", loadABStatusFromAB);
-        return !TextUtils.isEmpty(loadABStatusFromAB) && loadABStatusFromAB.contains("open");
+        return !StringUtils.isEmpty(loadABStatusFromAB) && loadABStatusFromAB.contains("open");
     }
 
     public static String loadABStatusFromAB(String str, String str2, String str3) {

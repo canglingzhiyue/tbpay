@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.adapt.api.AliAdaptServiceManager;
 import com.ali.adapt.api.AliServiceFindedCallback;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,26 +48,26 @@ public class nnd {
         if (map == null) {
             return "mtop.taobao.wsearch.appsearch";
         }
-        if (!TextUtils.isEmpty(map.get("appId"))) {
+        if (!StringUtils.isEmpty(map.get("appId"))) {
             return WSEARCH_TPP_API_NAME_VALUE;
         }
         String b2 = b(map);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             map.put("appId", b2);
             return WSEARCH_TPP_API_NAME_VALUE;
         }
         String str = map.get("m");
-        if (TextUtils.equals(map.get("m"), noa.VALUE_MODULE_INSHOP)) {
+        if (StringUtils.equals(map.get("m"), noa.VALUE_MODULE_INSHOP)) {
             map.put("appId", noa.VALUE_TPP_IN_SHOP_APP_ID);
             return WSEARCH_TPP_API_NAME_VALUE;
-        } else if (TextUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR_SHOP, str) || TextUtils.equals(noa.VALUE_SIMILAR_SHOP_NEW, str) || TextUtils.equals("shop", map.get("tab"))) {
+        } else if (StringUtils.equals(noa.VALUE_SHOWTYPE_SIMILAR_SHOP, str) || StringUtils.equals(noa.VALUE_SIMILAR_SHOP_NEW, str) || StringUtils.equals("shop", map.get("tab"))) {
             return "mtop.taobao.wsearch.appsearch";
         } else {
             String str2 = map.get("tab");
-            if (TextUtils.isEmpty(str2) || TextUtils.equals(str2, "all")) {
+            if (StringUtils.isEmpty(str2) || StringUtils.equals(str2, "all")) {
                 if ("dingyue".equals(map.get("mainChannel"))) {
                     map.put("appId", noa.VALUE_TPP_SUBSCRIBE_SEARCH_APP_ID);
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                     map.put("appId", noa.VALUE_TPP_MAIN_SEARCH_APP_ID);
                 } else {
                     map.put("appId", noa.VALUE_TPP_ROUTER_APP_ID);
@@ -88,7 +88,7 @@ public class nnd {
             return null;
         }
         String str = map.get("channelSrp");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = map.get(nde.G_CHANNELSRP);
         }
         return f31585a.get(str);

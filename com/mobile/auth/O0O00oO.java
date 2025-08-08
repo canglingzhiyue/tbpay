@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.security.KeyPairGeneratorSpec;
 import android.security.keystore.KeyGenParameterSpec;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.ali.user.mobile.rpc.safe.AES;
 import java.math.BigInteger;
@@ -90,7 +90,7 @@ public class O0O00oO {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String O00000Oo(Context context, String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             byte[] O00000Oo = O00000Oo(context);
             if (O00000Oo != null) {
                 return ooooooo.O00000Oo(O00000Oo, str, O000000o);
@@ -116,7 +116,7 @@ public class O0O00oO {
                     return null;
                 }
                 String O00000Oo = O00000Oo();
-                if (TextUtils.isEmpty(O00000Oo)) {
+                if (StringUtils.isEmpty(O00000Oo)) {
                     doFinal = O0OO0Oo.O000000o();
                     O000000o = O0OO0Oo.O000000o();
                     Key key = keyStore.getKey("CMCC_SDK_V1", null);
@@ -163,7 +163,7 @@ public class O0O00oO {
                     doFinal = cipher.doFinal(decode);
                     StringBuilder sb = new StringBuilder();
                     sb.append("是否解密出秘钥：");
-                    if (!TextUtils.isEmpty(Base64.encodeToString(doFinal, 0))) {
+                    if (!StringUtils.isEmpty(Base64.encodeToString(doFinal, 0))) {
                         z = true;
                     }
                     sb.append(z);

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.utils.Debuggable;
@@ -80,7 +80,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str});
         }
-        if ((context instanceof DetailCoreActivity) && !TextUtils.isEmpty(str)) {
+        if ((context instanceof DetailCoreActivity) && !StringUtils.isEmpty(str)) {
             return ((DetailCoreActivity) context).getIntent().getData().getQueryParameter(str);
         }
         return null;
@@ -141,10 +141,10 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("38873cb1", new Object[]{map, str, str2});
-        } else if (!Debuggable.isDebug() || map == null || map.isEmpty() || TextUtils.isEmpty(map.get("pairUuid"))) {
+        } else if (!Debuggable.isDebug() || map == null || map.isEmpty() || StringUtils.isEmpty(map.get("pairUuid"))) {
         } else {
             String str3 = map.get("uuid");
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return;
             }
             try {
@@ -247,6 +247,6 @@ public class b {
             return (String) ipChange.ipc$dispatch("31400281", new Object[]{context});
         }
         String queryParameter = (!(context instanceof Activity) || (intent = ((Activity) context).getIntent()) == null || (data = intent.getData()) == null) ? "" : data.getQueryParameter("uuid");
-        return TextUtils.isEmpty(queryParameter) ? "" : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? "" : queryParameter;
     }
 }

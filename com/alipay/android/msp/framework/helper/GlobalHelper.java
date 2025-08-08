@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.helper;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorType;
 import com.alipay.android.msp.pay.GlobalSdkConstant;
@@ -73,7 +73,7 @@ public class GlobalHelper {
             UserLocation.locationInit(context, false);
             this.d = context.getPackageName();
             LogUtil.record(2, "GlobalHelper::Init", "Initialization complete");
-            if (!GlobalSdkConstant.getSdkType() || !TextUtils.isEmpty(this.h) || a()) {
+            if (!GlobalSdkConstant.getSdkType() || !StringUtils.isEmpty(this.h) || a()) {
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
@@ -86,9 +86,9 @@ public class GlobalHelper {
             String[] strArr = new String[6];
             strArr[0] = "appName";
             String str = "-";
-            strArr[1] = TextUtils.isEmpty(this.d) ? str : this.d;
+            strArr[1] = StringUtils.isEmpty(this.d) ? str : this.d;
             strArr[2] = "appId";
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 str = this.h;
             }
             strArr[3] = str;
@@ -106,7 +106,7 @@ public class GlobalHelper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5150addf", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.h) && !a()) {
+        if (StringUtils.isEmpty(this.h) && !a()) {
             StatisticCollector.addError(StatisticCollector.GLOBAL_AGENT, ErrorType.WARNING, "SDKAppIdEmpty", "");
         }
         LogUtil.record(8, "GlobalHelper:getConfigSDKAppId", "appId=" + this.h);
@@ -157,7 +157,7 @@ public class GlobalHelper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8f7eefe9", new Object[]{this, context});
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             return this.f;
         }
         this.b = context;
@@ -167,7 +167,7 @@ public class GlobalHelper {
 
     public String getPackageName() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b4fb6b1e", new Object[]{this}) : TextUtils.isEmpty(this.d) ? "unknown" : this.d;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b4fb6b1e", new Object[]{this}) : StringUtils.isEmpty(this.d) ? "unknown" : this.d;
     }
 
     public String getPackageVersion() {
@@ -176,17 +176,17 @@ public class GlobalHelper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bc3cd551", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             return "-1.-1";
         }
-        if (TextUtils.isEmpty(this.e) && (context = this.b) != null) {
+        if (StringUtils.isEmpty(this.e) && (context = this.b) != null) {
             try {
                 this.e = context.getPackageManager().getPackageInfo(this.d, 64).versionName;
             } catch (PackageManager.NameNotFoundException e) {
                 LogUtil.printExceptionStackTrace(e);
             }
         }
-        return TextUtils.isEmpty(this.e) ? "-1.-1" : this.e;
+        return StringUtils.isEmpty(this.e) ? "-1.-1" : this.e;
     }
 
     public PackageInfo getPackageInfo() {
@@ -195,7 +195,7 @@ public class GlobalHelper {
         if (ipChange instanceof IpChange) {
             return (PackageInfo) ipChange.ipc$dispatch("4454a4a8", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             return null;
         }
         if (this.g == null && (context = this.b) != null) {

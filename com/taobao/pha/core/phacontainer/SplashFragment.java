@@ -3,7 +3,7 @@ package com.taobao.pha.core.phacontainer;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,7 +84,7 @@ public class SplashFragment extends Fragment {
         long j = arguments.getLong("AppControllerInstanceId");
         String string = arguments.getString(FRAGMENT_ARGS_SPLASH_VIEW_URL);
         String string2 = arguments.getString(FRAGMENT_ARGS_SPLASH_VIEW_HTML);
-        if (TextUtils.isEmpty(string) && TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) && StringUtils.isEmpty(string2)) {
             View inflate = layoutInflater.inflate(R.layout.splash_view, viewGroup, false);
             initNonWebViewSplashView(arguments.getSerializable(FRAGMENT_ARGS_SPLASH_VIEW_ICONS), arguments.getString(FRAGMENT_ARGS_SPLASH_VIEW_NAME), inflate);
             return inflate;
@@ -124,13 +124,13 @@ public class SplashFragment extends Fragment {
                 if (obj2 instanceof SplashViewIconModel) {
                     SplashViewIconModel splashViewIconModel = (SplashViewIconModel) obj2;
                     IImageLoader t = p.b().t();
-                    if (t != null && !TextUtils.isEmpty(splashViewIconModel.src)) {
+                    if (t != null && !StringUtils.isEmpty(splashViewIconModel.src)) {
                         t.a(imageView, splashViewIconModel.src);
                     }
                 }
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (textView != null) {
                 textView.setText(str);
             }

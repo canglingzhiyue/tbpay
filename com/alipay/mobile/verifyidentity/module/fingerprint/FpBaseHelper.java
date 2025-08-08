@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.module.fingerprint;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.login.model.LoginConstant;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
@@ -84,7 +84,7 @@ public class FpBaseHelper {
         }
         DataHelper dataHelper = this.f5900a;
         dataHelper.mulitiSourceTo = "fp2" + this.f5900a.getNextBioType();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             DataHelper dataHelper2 = this.f5900a;
             dataHelper2.logMultiBioBehavior(str, "fp", dataHelper2.getNextBioType());
         }
@@ -121,7 +121,7 @@ public class FpBaseHelper {
         }
         this.f5900a.logBehavior("fpbasestart", "UC-MobileIC-20190426-6", null);
         this.mSafepayChecker.init(this.b, 1);
-        if (!TextUtils.isEmpty(this.f5900a.userId)) {
+        if (!StringUtils.isEmpty(this.f5900a.userId)) {
             int checkUserStatus = this.mSafepayChecker.checkUserStatus(this.f5900a.userId);
             if (checkUserStatus == 2) {
                 VerifyLogCat.i(this.d, "用户本地指纹状态正常");
@@ -202,9 +202,9 @@ public class FpBaseHelper {
         }
         JSONObject jSONObject = new JSONObject();
         jSONObject.put(Constants.STRING_AUTH_SWITCH, (Object) string);
-        if (!TextUtils.isEmpty(fpBaseHelper.f5900a.mDecisionTip)) {
+        if (!StringUtils.isEmpty(fpBaseHelper.f5900a.mDecisionTip)) {
             jSONObject.put(Constants.STRING_AUTH_TITLE, (Object) fpBaseHelper.f5900a.mDecisionTip);
-        } else if (!TextUtils.isEmpty(fpBaseHelper.f5900a.errorForFp)) {
+        } else if (!StringUtils.isEmpty(fpBaseHelper.f5900a.errorForFp)) {
             jSONObject.put(Constants.STRING_AUTH_TITLE, (Object) fpBaseHelper.f5900a.errorForFp);
         } else {
             jSONObject.put(Constants.STRING_AUTH_TITLE, (Object) fpBaseHelper.b.getResources().getString(R.string.vi_verify_fp_please));
@@ -243,7 +243,7 @@ public class FpBaseHelper {
                     } else if (102 == result) {
                         VerifyLogCat.i(FpBaseHelper.access$100(FpBaseHelper.this), "getOnFingerResult 指纹校验【取消】");
                         if (!"Y".equalsIgnoreCase(ReportHelper.getReportFlag(ReportHelper.openOldAlert)) && FpBaseHelper.access$200(FpBaseHelper.this).isPluginMode) {
-                            if (TextUtils.equals(FpBaseHelper.access$200(FpBaseHelper.this).mPlugin.getActConf("supportEmbedVi"), "Y")) {
+                            if (StringUtils.equals(FpBaseHelper.access$200(FpBaseHelper.this).mPlugin.getActConf("supportEmbedVi"), "Y")) {
                                 VerifyLogCat.i(FpBaseHelper.access$100(FpBaseHelper.this), "supportEmbedVi CANCLE_TO_PWD");
                                 FpBaseHelper.access$200(FpBaseHelper.this).logFpResBehavior("CANCLE_TO_PWD", "fpbase_newinterface_client");
                                 FpBaseHelper.access$000(FpBaseHelper.this).updateVerifyStatusNew("end");
@@ -251,7 +251,7 @@ public class FpBaseHelper {
                                 return;
                             }
                             String actConf = FpBaseHelper.access$200(FpBaseHelper.this).mPlugin.getActConf(BaseFBPlugin.ACT_CONF.supportRetain);
-                            if (!TextUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf)) {
+                            if (!StringUtils.isEmpty(actConf) && "Y".equalsIgnoreCase(actConf)) {
                                 FpBaseHelper.access$200(FpBaseHelper.this).logFpResBehavior("RESULT_USER_CANCEL", "REMOVE_ALERT");
                                 FpBaseHelper.access$000(FpBaseHelper.this).updateStatuesWithSecne(BaseFBPlugin.VERIFY_STATUS.abort, LoginConstant.FETCH_IV_FAIL_CANCEL);
                                 FpBaseHelper.access$200(FpBaseHelper.this).notifyResult(new DefaultModuleResult("1003"));
@@ -304,7 +304,7 @@ public class FpBaseHelper {
                                 return;
                             } else {
                                 String string2 = FpBaseHelper.access$000(FpBaseHelper.this).getResources().getString(R.string.vi_fp_tip_sys_fingerprint_error_retry);
-                                if (!TextUtils.isEmpty(string2)) {
+                                if (!StringUtils.isEmpty(string2)) {
                                     FpBaseHelper.access$000(FpBaseHelper.this).toast(string2, 0);
                                 }
                                 FpBaseHelper.access$200(FpBaseHelper.this).logMultiBioBehavior("FAIL_TO_BIO", "fp", FpBaseHelper.access$200(FpBaseHelper.this).predata_type);
@@ -315,7 +315,7 @@ public class FpBaseHelper {
                             FpBaseHelper.access$200(FpBaseHelper.this).logFpResBehavior("RESULT_FALLBACK", "fpbase_newinterface_client");
                         } else if (result == 138) {
                             String string3 = FpBaseHelper.access$000(FpBaseHelper.this).getResources().getString(R.string.vi_fp_tip_sys_fingerprint_error_retry);
-                            if (!TextUtils.isEmpty(string3)) {
+                            if (!StringUtils.isEmpty(string3)) {
                                 FpBaseHelper.access$200(FpBaseHelper.this).updateTipToPwd(string3);
                             }
                             DataHelper access$200 = FpBaseHelper.access$200(FpBaseHelper.this);

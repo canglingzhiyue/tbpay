@@ -1,7 +1,7 @@
 package com.taobao.unit.center.mdc.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -218,7 +218,7 @@ public class DXBooleanTriggerWidgetNode extends DXWidgetNode {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("e48bb97c", new Object[]{this});
-                    } else if (TextUtils.isEmpty(DXBooleanTriggerWidgetNode.access$000(DXBooleanTriggerWidgetNode.this))) {
+                    } else if (StringUtils.isEmpty(DXBooleanTriggerWidgetNode.access$000(DXBooleanTriggerWidgetNode.this))) {
                         DXBooleanTriggerWidgetNode.access$100(DXBooleanTriggerWidgetNode.this, new DXEvent(DXBooleanTriggerWidgetNode.DXBOOLEANTRIGGER_ONHITDELAY));
                     } else {
                         int visibility = view.getVisibility();

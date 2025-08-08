@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -47,7 +47,7 @@ public abstract class lna {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(this.f30732a) || TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(this.f30732a) || StringUtils.isEmpty(str)) {
             ldf.d("AbsReqParamSaveModeHandler", "save error");
         } else {
             if (this.b == null) {

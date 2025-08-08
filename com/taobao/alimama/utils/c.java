@@ -1,6 +1,6 @@
 package com.taobao.alimama.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -201,7 +201,7 @@ public final class c {
         } else if (list.isEmpty()) {
             SharedPreferencesUtils.removeKey("bucket");
         } else {
-            SharedPreferencesUtils.putString("bucket", TextUtils.join("&", list));
+            SharedPreferencesUtils.putString("bucket", StringUtils.join("&", list));
         }
     }
 
@@ -211,7 +211,7 @@ public final class c {
             return (List) ipChange.ipc$dispatch("f4f19870", new Object[0]);
         }
         String string = SharedPreferencesUtils.getString("bucket", "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return Collections.emptyList();
         }
         return Arrays.asList(string.split("&"));
@@ -226,7 +226,7 @@ public final class c {
         }
         long j = -1;
         ILoginInfoGetter a2 = LoginManager.a();
-        if (a2 != null && (lastLoginUserInfo = a2.getLastLoginUserInfo()) != null && !TextUtils.isEmpty(lastLoginUserInfo.userId)) {
+        if (a2 != null && (lastLoginUserInfo = a2.getLastLoginUserInfo()) != null && !StringUtils.isEmpty(lastLoginUserInfo.userId)) {
             try {
                 j = Long.parseLong(lastLoginUserInfo.userId);
             } catch (NumberFormatException unused) {

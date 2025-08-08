@@ -6,7 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.lang.reflect.Method;
 import java.net.Inet4Address;
@@ -231,7 +231,7 @@ public final class OOOO00O {
                 if (activeNetworkInfo.getType() == 0) {
                     OOO0o0.O00000o0("Only Data");
                     String extraInfo = activeNetworkInfo.getExtraInfo();
-                    if (TextUtils.isEmpty(extraInfo)) {
+                    if (StringUtils.isEmpty(extraInfo)) {
                         return 0;
                     }
                     OOO.O00000oO(extraInfo);

@@ -1,6 +1,6 @@
 package com.taobao.update.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -43,14 +43,14 @@ public class c {
         } else if (updateAlarmData == null) {
         } else {
             a(str);
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 try {
                     this.b = UpdateRuntime.getContext().getPackageManager().getPackageInfo(UpdateRuntime.getContext().getPackageName(), 0).versionName;
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-            AppMonitor.Stat.commit("update", str, DimensionValueSet.create().setValue("fromVersion", TextUtils.isEmpty(updateAlarmData.fromVersion) ? this.b : updateAlarmData.fromVersion).setValue("toVersion", updateAlarmData.toVersion).setValue("stage", updateAlarmData.arg).setValue("success", updateAlarmData.success ? "true" : "false").setValue("error_code", updateAlarmData.errorCode).setValue(MUSAppMonitor.ERROR_MSG, updateAlarmData.errorMsg).setValue("url", updateAlarmData.url).setValue("disk_size", updateAlarmData.disk_size), MeasureValueSet.create().setValue("elapsed_time", updateAlarmData.elapsed_time));
+            AppMonitor.Stat.commit("update", str, DimensionValueSet.create().setValue("fromVersion", StringUtils.isEmpty(updateAlarmData.fromVersion) ? this.b : updateAlarmData.fromVersion).setValue("toVersion", updateAlarmData.toVersion).setValue("stage", updateAlarmData.arg).setValue("success", updateAlarmData.success ? "true" : "false").setValue("error_code", updateAlarmData.errorCode).setValue(MUSAppMonitor.ERROR_MSG, updateAlarmData.errorMsg).setValue("url", updateAlarmData.url).setValue("disk_size", updateAlarmData.disk_size), MeasureValueSet.create().setValue("elapsed_time", updateAlarmData.elapsed_time));
         }
     }
 }

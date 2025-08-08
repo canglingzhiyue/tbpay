@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
@@ -179,12 +179,12 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
         try {
             if (dvVar == null) {
                 gmlVar.a(com.alibaba.ability.result.a$a.b("setPropertiesParamsNull"));
-            } else if (TextUtils.isEmpty(dvVar.f8827a)) {
+            } else if (StringUtils.isEmpty(dvVar.f8827a)) {
                 gmlVar.a(com.alibaba.ability.result.a$a.b("setPropertiesParamsCodeNull"));
             } else {
                 this.f22272a = dvVar.f8827a;
                 this.b = dvVar.c;
-                this.c = !TextUtils.isEmpty(dvVar.d) ? dvVar.d : "";
+                this.c = !StringUtils.isEmpty(dvVar.d) ? dvVar.d : "";
                 if (this.b == null) {
                     z = false;
                 }
@@ -233,7 +233,7 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
             List<String> r = com.taobao.tbpoplayer.info.a.a().r();
             List<String> z = com.taobao.tbpoplayer.info.a.a().z();
             for (String str : list) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     if (c == i2) {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("checkResult", (Object) true);
@@ -303,14 +303,14 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
             clVar.a(com.alibaba.ability.result.a$a.b("alreadyTriggered"));
         } else {
             this.j = true;
-            if (TextUtils.isEmpty(this.f22272a)) {
+            if (StringUtils.isEmpty(this.f22272a)) {
                 clVar.a(com.alibaba.ability.result.a$a.b("triggerParamsCodeNull"));
                 return;
             }
             this.d = SystemClock.elapsedRealtime();
             a("triggerStart", (Map<String, String>) null);
             Pair<BaseConfigItem, String> a2 = a();
-            if (!TextUtils.isEmpty((CharSequence) a2.second)) {
+            if (!StringUtils.isEmpty((CharSequence) a2.second)) {
                 a("triggerFail", (String) a2.second);
                 clVar.a(com.alibaba.ability.result.a$a.b((String) a2.second));
                 return;
@@ -630,7 +630,7 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
                 ckVar.a(new ErrorResult("notTemplateRender"));
             } else if (this.l) {
                 ckVar.a(new ErrorResult("alreadyClosed"));
-            } else if (TextUtils.isEmpty(this.f22272a)) {
+            } else if (StringUtils.isEmpty(this.f22272a)) {
                 ckVar.a(new ErrorResult("codeIsEmpty"));
             } else {
                 com.alibaba.poplayer.utils.c.c("triggerEvent", "", "TBPopHubAbility.close.");
@@ -672,7 +672,7 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
             com.alibaba.poplayer.utils.c.c("triggerEvent", "", "TBPopHubAbility.recordPopAction.action=" + dtVar.f8825a);
             if (this.g) {
                 gmlVar.a(new ErrorResult("TemplateRender"));
-            } else if (TextUtils.isEmpty(this.f22272a)) {
+            } else if (StringUtils.isEmpty(this.f22272a)) {
                 gmlVar.a(new ErrorResult("codeIsEmpty"));
             } else if (this.l) {
                 gmlVar.a(new ErrorResult("alreadyClosed"));
@@ -712,10 +712,10 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
         if (!this.g) {
             return new Pair<>(null, "");
         }
-        if (TextUtils.isEmpty(this.b.f8828a)) {
+        if (StringUtils.isEmpty(this.b.f8828a)) {
             return new Pair<>(null, "configTypeIsEmpty");
         }
-        if (TextUtils.isEmpty(this.b.b)) {
+        if (StringUtils.isEmpty(this.b.b)) {
             return new Pair<>(null, "configLayerTypeIsEmpty");
         }
         try {
@@ -737,14 +737,14 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
                     String str = this.f22272a;
                     com.alibaba.poplayer.utils.c.c("triggerEvent", str, "transConfig.currentEnvIndex=" + a2);
                     if (z) {
-                        if (!TextUtils.isEmpty(this.b.d)) {
+                        if (!StringUtils.isEmpty(this.b.d)) {
                             jSONObject.put("cdnId", (Object) this.b.d);
                         } else {
                             return new Pair<>(null, "configCdnIdIsEmpty");
                         }
-                    } else if (!TextUtils.isEmpty(this.b.e)) {
+                    } else if (!StringUtils.isEmpty(this.b.e)) {
                         jSONObject.put("pageId", (Object) this.b.e);
-                    } else if (!TextUtils.isEmpty(this.b.d)) {
+                    } else if (!StringUtils.isEmpty(this.b.d)) {
                         jSONObject.put("cdnId", (Object) this.b.d);
                     } else {
                         return new Pair<>(null, "configCdnIdAndPageIdIsEmpty");
@@ -754,7 +754,7 @@ public class TBPopCenterAbility extends AbsPopCenterAbility {
                 com.alibaba.poplayer.utils.c.c("triggerEvent", this.f22272a, "transConfig.done");
                 return new Pair<>(baseConfigItem, "");
             }
-            if (TextUtils.isEmpty(this.b.f)) {
+            if (StringUtils.isEmpty(this.b.f)) {
                 return new Pair<>(null, "configUrlIsEmpty");
             }
             jSONObject.put("url", (Object) this.b.f);

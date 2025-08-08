@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.preload.dwinstance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.monitor.track.spm.merge.MergeUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.usertrack.track.ut.videotracker.VideoTracker;
@@ -213,7 +213,7 @@ public class b {
         snv dWInstance = ((ISharePlayerService) fluidContext.getService(ISharePlayerService.class)).getDWInstance();
         if (dWInstance != null) {
             String h = dWInstance.h();
-            if (TextUtils.isEmpty(h)) {
+            if (StringUtils.isEmpty(h)) {
                 h = "";
             }
             hashMap.put("pre_playerid", h);

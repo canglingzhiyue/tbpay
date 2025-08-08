@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.service.a;
 import com.taobao.mrt.task.d;
@@ -54,7 +54,7 @@ public class msm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9a7b8b7c", new Object[]{this, mRTPythonLibDescription});
-        } else if (mRTPythonLibDescription == null || TextUtils.isEmpty(mRTPythonLibDescription.resourceName)) {
+        } else if (mRTPythonLibDescription == null || StringUtils.isEmpty(mRTPythonLibDescription.resourceName)) {
             a.c("MRTPythonLibSyncer", "registerPythonLib error!!!, description or name null!");
         } else {
             a.a("MRTPythonLibSyncer", "registerPythonLib: " + mRTPythonLibDescription.resourceName + " success!!!");
@@ -117,10 +117,10 @@ public class msm {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c4d2b3cd", new Object[]{this, str, mRTResourceDescription})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.mrt.utils.a.c("MRTPythonLibSyncer", "zipFilePath is null");
             return false;
-        } else if (TextUtils.isEmpty(mRTResourceDescription.resourceRootDirectory)) {
+        } else if (StringUtils.isEmpty(mRTResourceDescription.resourceRootDirectory)) {
             com.taobao.mrt.utils.a.c("MRTPythonLibSyncer", "resourceRootDirectory is null");
             return false;
         } else {

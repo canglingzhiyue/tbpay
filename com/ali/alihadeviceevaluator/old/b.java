@@ -1,7 +1,7 @@
 package com.ali.alihadeviceevaluator.old;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.DeviceProperty;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -15,7 +15,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("5aea3420", new Object[]{this, hardWareInfo})).intValue();
         }
         String lowerCase = Build.BRAND.toLowerCase();
-        if (TextUtils.isEmpty(lowerCase)) {
+        if (StringUtils.isEmpty(lowerCase)) {
             return 1;
         }
         if (lowerCase.contains("samsung") || lowerCase.contains("google")) {

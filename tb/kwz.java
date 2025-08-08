@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
 import com.taobao.android.trade.event.ThreadMode;
@@ -52,7 +52,7 @@ public class kwz implements j<kwy> {
             return i.FAILURE;
         }
         String a2 = com.taobao.android.home.component.utils.i.a();
-        if (!TextUtils.equals(a2, kwyVar.c())) {
+        if (!StringUtils.equals(a2, kwyVar.c())) {
             return i.FAILURE;
         }
         e.b("Home.DSRSubscriber", "Receive data source refreshed event: ", kwyVar.a().toString());

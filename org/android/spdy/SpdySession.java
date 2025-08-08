@@ -1,6 +1,6 @@
 package org.android.spdy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.biz.inner.AmnetMonitorLoggerListener;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
@@ -242,7 +242,7 @@ public final class SpdySession {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("eac5f67a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.seq)) {
+        if (StringUtils.isEmpty(this.seq)) {
             this.seq = Integer.toHexString(hashCode());
         }
         return this.seq;

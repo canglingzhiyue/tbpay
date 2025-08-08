@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.PluginModel;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -113,11 +113,11 @@ public class tln extends TMSBaseLaunchStep {
                 String d = k.d(this.f22538a);
                 if (n.P()) {
                     String g = k.g(this.f22538a);
-                    if (!TextUtils.isEmpty(g)) {
+                    if (!StringUtils.isEmpty(g)) {
                         h = g;
                     }
                     String i = k.i(this.f22538a);
-                    if (!TextUtils.isEmpty(i)) {
+                    if (!StringUtils.isEmpty(i)) {
                         d = i;
                     }
                 }

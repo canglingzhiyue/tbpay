@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -75,7 +75,7 @@ public class efp extends eei<efw> {
         } else {
             String x = this.f27282a.y().t.x();
             String i = this.f27282a.y().t.i();
-            if (!TextUtils.isEmpty(x) && !TextUtils.isEmpty(i) && a(i)) {
+            if (!StringUtils.isEmpty(x) && !StringUtils.isEmpty(i) && a(i)) {
                 this.f27282a.y().o.a(this.b, this.c, this.d, x);
             }
             return i.SUCCESS;

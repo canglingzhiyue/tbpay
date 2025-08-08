@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -383,7 +383,7 @@ public class ShareFrame extends BaseFrame implements b.a, ddv {
         } else if (map == null) {
         } else {
             String str = map.get(KEY_BUSINESS_ID);
-            if (TextUtils.isEmpty(str) || (map2 = this.mShareConfigOrderMap) == null || !map2.containsKey(str)) {
+            if (StringUtils.isEmpty(str) || (map2 = this.mShareConfigOrderMap) == null || !map2.containsKey(str)) {
                 return;
             }
             if (this.mShareConfigList == null) {
@@ -398,7 +398,7 @@ public class ShareFrame extends BaseFrame implements b.a, ddv {
 
                     public int a(com.taobao.android.live.plugin.atype.flexalocal.bottom.control.share.a aVar, com.taobao.android.live.plugin.atype.flexalocal.bottom.control.share.a aVar2) {
                         IpChange ipChange2 = $ipChange;
-                        return ipChange2 instanceof IpChange ? ((Number) ipChange2.ipc$dispatch("200c926b", new Object[]{this, aVar, aVar2})).intValue() : TextUtils.equals(aVar.b, aVar2.b) ? 0 : -1;
+                        return ipChange2 instanceof IpChange ? ((Number) ipChange2.ipc$dispatch("200c926b", new Object[]{this, aVar, aVar2})).intValue() : StringUtils.equals(aVar.b, aVar2.b) ? 0 : -1;
                     }
                 }, new Comparator<com.taobao.android.live.plugin.atype.flexalocal.bottom.control.share.a>() { // from class: com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar.ShareFrame.4
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -464,7 +464,7 @@ public class ShareFrame extends BaseFrame implements b.a, ddv {
             ipChange.ipc$dispatch("ca841354", new Object[]{this, str, new Boolean(z)});
         } else if (this.entranceHidden) {
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.mDefaultShareIcon.setVisibility(8);
                 this.mAliUrlImageView.setVisibility(0);
                 if (z) {
@@ -521,7 +521,7 @@ public class ShareFrame extends BaseFrame implements b.a, ddv {
             hashMap.put("spm-cnt", "a2141.23201685");
         } else if (this.mFrameContext.m()) {
             String liveAndHomeMixSpm = hkl.a().b() != null ? hkl.a().b().getLiveAndHomeMixSpm() : null;
-            if (TextUtils.isEmpty(liveAndHomeMixSpm)) {
+            if (StringUtils.isEmpty(liveAndHomeMixSpm)) {
                 hashMap.put("spm-cnt", "a2141.8001249.1.1");
             } else {
                 hashMap.put("spm-cnt", liveAndHomeMixSpm);

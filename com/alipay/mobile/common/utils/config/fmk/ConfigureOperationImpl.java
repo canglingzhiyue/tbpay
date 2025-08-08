@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.utils.config.fmk;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transport.utils.NwSharedSwitchUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -35,7 +35,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
             return ((Number) ipChange.ipc$dispatch("d644b9a1", new Object[]{this, configureItem, new Integer(i)})).intValue();
         }
         String str = this.f5708a.get(configureItem.getConfigName());
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {
@@ -58,7 +58,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
             return ((Number) ipChange.ipc$dispatch("8ee6488a", new Object[]{this, configureItem, new Long(j)})).longValue();
         }
         String str = this.f5708a.get(configureItem.getConfigName());
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return j;
         }
         try {
@@ -81,7 +81,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
             return ((Number) ipChange.ipc$dispatch("10ca5e09", new Object[]{this, configureItem, new Double(d)})).doubleValue();
         }
         String str = this.f5708a.get(configureItem.getConfigName());
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return d;
         }
         try {
@@ -110,7 +110,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
             return (List) ipChange.ipc$dispatch("f14f1ece", new Object[]{this, configureItem, str, str2});
         }
         String stringValue = getStringValue(configureItem, str);
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             return Collections.emptyList();
         }
         return a(stringValue, str2);
@@ -123,7 +123,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
             return (String) ipChange.ipc$dispatch("32fa6273", new Object[]{this, configureItem, str});
         }
         String str2 = this.f5708a.get(configureItem.getConfigName());
-        return !TextUtils.isEmpty(str2) ? str2 : str;
+        return !StringUtils.isEmpty(str2) ? str2 : str;
     }
 
     @Override // com.alipay.mobile.common.utils.config.fmk.ConfigureOperation
@@ -158,7 +158,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
                     String sharedSwitch = NwSharedSwitchUtil.getSharedSwitch(context, str, str2);
                     LogCatUtil.verbose("Conf_ConfigureOperation", "Before PartialUpdate:" + sharedSwitch);
                     Map<String, String> hashMap = new HashMap<>();
-                    if (!TextUtils.isEmpty(sharedSwitch)) {
+                    if (!StringUtils.isEmpty(sharedSwitch)) {
                         hashMap = parseObject(sharedSwitch);
                     }
                     hashMap.putAll(map);
@@ -184,7 +184,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
             return ((Boolean) ipChange.ipc$dispatch("48094505", new Object[]{this, context, str, str2, str3})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogCatUtil.warn("Conf_ConfigureOperation", "json value is empty!!");
                 return false;
             }
@@ -208,7 +208,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
         }
         try {
             String sharedSwitch = NwSharedSwitchUtil.getSharedSwitch(context, str, str2);
-            if (TextUtils.isEmpty(sharedSwitch)) {
+            if (StringUtils.isEmpty(sharedSwitch)) {
                 LogCatUtil.info("Conf_ConfigureOperation", "No config at sharedPref. sharedPrefName=[" + str + "] sharedPerf=[" + str2 + "] !");
                 return false;
             }
@@ -233,7 +233,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
     @Override // com.alipay.mobile.common.utils.config.fmk.ConfigureOperation
     public boolean equalsString(ConfigureItem configureItem, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aefd130b", new Object[]{this, configureItem, str})).booleanValue() : TextUtils.equals(getStringValue(configureItem), str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aefd130b", new Object[]{this, configureItem, str})).booleanValue() : StringUtils.equals(getStringValue(configureItem), str);
     }
 
     @Override // com.alipay.mobile.common.utils.config.fmk.ConfigureOperation
@@ -309,7 +309,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
         }
         try {
             ArrayList arrayList = new ArrayList();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 StringTokenizer stringTokenizer = new StringTokenizer(str, str2);
                 while (stringTokenizer.hasMoreElements()) {
                     arrayList.add(String.valueOf(stringTokenizer.nextElement()));
@@ -349,7 +349,7 @@ public class ConfigureOperationImpl implements ConfigureOperation {
             return (String) ipChange.ipc$dispatch("9f60d845", new Object[]{this, str});
         }
         String str2 = this.f5708a.get(str);
-        return !TextUtils.isEmpty(str2) ? str2 : "";
+        return !StringUtils.isEmpty(str2) ? str2 : "";
     }
 
     public Map<String, String> getAllConfig() {

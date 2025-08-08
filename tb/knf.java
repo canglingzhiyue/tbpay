@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -91,7 +91,7 @@ public class knf implements kms {
         HashMap<String, Long> hashMap = this.f;
         if (hashMap != null && hashMap.size() > 0) {
             for (Map.Entry<String, Long> entry : this.f.entrySet()) {
-                if (TextUtils.equals(str, entry.getKey())) {
+                if (StringUtils.equals(str, entry.getKey())) {
                     entry.setValue(Long.valueOf(j));
                 }
                 j2 += entry.getValue().longValue();

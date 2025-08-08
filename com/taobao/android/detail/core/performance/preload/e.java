@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.performance.preload;
 
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class e {
         }
         String str = hVar.f9800a;
         String str2 = hVar.b;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return this.b;
         }
         return a(str, str2);

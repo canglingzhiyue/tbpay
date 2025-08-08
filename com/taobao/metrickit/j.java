@@ -1,6 +1,6 @@
 package com.taobao.metrickit;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes7.dex */
@@ -20,7 +20,7 @@ public class j {
         }
         synchronized (b) {
             f18091a = nVar;
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 f18091a.a("utABTest", c);
             }
         }

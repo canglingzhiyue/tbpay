@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender.dsl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.framework.data.remote.c;
@@ -48,9 +48,9 @@ public class PreFetchModel implements INativeModel {
         if (!"mtop".equals(this.dataSource) && !"windvane".equals(this.dataSource)) {
             return false;
         }
-        if ("mtop".equals(this.dataSource) && ((TextUtils.isEmpty(this.requestVer) && TextUtils.isEmpty(this.version)) || TextUtils.isEmpty(this.requestAddress) || TextUtils.isEmpty(this.requestParams))) {
+        if ("mtop".equals(this.dataSource) && ((StringUtils.isEmpty(this.requestVer) && StringUtils.isEmpty(this.version)) || StringUtils.isEmpty(this.requestAddress) || StringUtils.isEmpty(this.requestParams))) {
             return false;
         }
-        return (!"windvane".equals(this.dataSource) || (!TextUtils.isEmpty(this.requestMethodName) && !TextUtils.isEmpty(this.requestParams))) && !TextUtils.isEmpty(this.dataId);
+        return (!"windvane".equals(this.dataSource) || (!StringUtils.isEmpty(this.requestMethodName) && !StringUtils.isEmpty(this.requestParams))) && !StringUtils.isEmpty(this.dataId);
     }
 }

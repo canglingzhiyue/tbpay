@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.request.preload;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.UUID;
 import tb.kge;
@@ -58,6 +58,6 @@ public class g {
             return String.valueOf(UUID.randomUUID().hashCode());
         }
         String stringExtra = intent.getStringExtra(com.taobao.android.detail.ttdetail.constant.a.KEY_NAV);
-        return TextUtils.isEmpty(stringExtra) ? String.valueOf(UUID.randomUUID().hashCode()) : stringExtra;
+        return StringUtils.isEmpty(stringExtra) ? String.valueOf(UUID.randomUUID().hashCode()) : stringExtra;
     }
 }

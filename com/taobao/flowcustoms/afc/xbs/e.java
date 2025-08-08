@@ -2,7 +2,7 @@ package com.taobao.flowcustoms.afc.xbs;
 
 import android.app.Activity;
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
 import com.taobao.flowcustoms.afc.model.AfcXbsData;
@@ -82,9 +82,9 @@ public class e implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ec062c11", new Object[]{this, aVar, afcXbsData});
-        } else if (TextUtils.equals(aVar.f, "sku")) {
+        } else if (StringUtils.equals(aVar.f, "sku")) {
         } else {
-            if (!TextUtils.isEmpty(aVar.h)) {
+            if (!StringUtils.isEmpty(aVar.h)) {
                 a(afcXbsData);
                 this.f17200a = true;
                 c();
@@ -196,7 +196,7 @@ public class e implements d {
             return;
         }
         String str = this.h.c;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = activity.getResources().getString(R.string.open_oauth_back);
         }
         TipsView.a().a(str).a(activity);

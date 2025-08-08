@@ -2,7 +2,7 @@ package com.taobao.tao.adapter.biz.friends;
 
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -317,13 +317,13 @@ public class b implements nzh {
                 recentContactsModel.setGroupId(contacts.getGroupId() == null ? str : contacts.getGroupId());
                 recentContactsModel.setBizType(contacts.getBizType());
                 String entityType = contacts.getEntityType();
-                if (TextUtils.equals("U", entityType)) {
+                if (StringUtils.equals("U", entityType)) {
                     recentContactsModel.setContactType("1");
                     if (contacts.getUserId() != null) {
                         str = contacts.getUserId();
                     }
                     recentContactsModel.setCcode(str);
-                } else if (TextUtils.equals("G", entityType)) {
+                } else if (StringUtils.equals("G", entityType)) {
                     if (contacts.getGroupId() != null) {
                         str = contacts.getGroupId();
                     }

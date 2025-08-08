@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class c extends q {
             return;
         }
         Object obj = fields.get("value");
-        if (obj != null && ((!(obj instanceof String) || !TextUtils.isEmpty(obj.toString())) && ((!(obj instanceof Map) || !((Map) obj).isEmpty()) && (!(obj instanceof List) || !((List) obj).isEmpty())))) {
+        if (obj != null && ((!(obj instanceof String) || !StringUtils.isEmpty(obj.toString())) && ((!(obj instanceof Map) || !((Map) obj).isEmpty()) && (!(obj instanceof List) || !((List) obj).isEmpty())))) {
             z = false;
         }
         if (z) {

@@ -1,7 +1,7 @@
 package com.alipay.tianyan.mobilesdk.coco;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.behavor.Behavor;
@@ -123,7 +123,7 @@ public class OreoServiceUnlimitedTracker {
             return;
         }
         OreoServiceUnlimitedTracker a2 = a();
-        if (!a2.c || TextUtils.isEmpty(str)) {
+        if (!a2.c || StringUtils.isEmpty(str)) {
             return;
         }
         a2.b.execute(new TranceRunnable(str, 0, SystemClock.uptimeMillis()));
@@ -136,7 +136,7 @@ public class OreoServiceUnlimitedTracker {
             return;
         }
         OreoServiceUnlimitedTracker a2 = a();
-        if (!a2.c || TextUtils.isEmpty(str)) {
+        if (!a2.c || StringUtils.isEmpty(str)) {
             return;
         }
         a2.b.execute(new TranceRunnable(str, 1, SystemClock.uptimeMillis()));

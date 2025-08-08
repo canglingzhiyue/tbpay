@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -205,7 +205,7 @@ public class dyy {
                 i.a(a3, "onClick post event:" + actionModel.type + ", floatActionData:" + b.b());
                 String e = com.taobao.android.detail.core.utils.d.e(c);
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(e)) {
+                if (!StringUtils.isEmpty(e)) {
                     hashMap.put("url", e);
                 }
                 ecf.c(dyy.a(dyy.this), hashMap);

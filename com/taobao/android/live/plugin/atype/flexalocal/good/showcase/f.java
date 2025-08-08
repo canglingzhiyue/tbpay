@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.showcase;
 
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -81,7 +81,7 @@ public class f extends a {
             return;
         }
         String str = this.f.c.h;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             his.b("PcgGoodPlayer", "initConfig ｜ config is null.");
             return;
         }

@@ -1,7 +1,7 @@
 package com.taobao.taobao;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -43,7 +43,7 @@ public class CashDeskPayStatusQuery implements IRemoteBaseListener {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95a46f1", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             jqg.b(TAG, "orderIds is null");
         } else {
             com.taobao.taobao.internal.helper.c.a(this.mMegaInstance, this.mContext);
@@ -147,7 +147,7 @@ public class CashDeskPayStatusQuery implements IRemoteBaseListener {
             return "1";
         }
         String string = jSONObject.getString("payStatus");
-        return TextUtils.isEmpty(string) ? "1" : string;
+        return StringUtils.isEmpty(string) ? "1" : string;
     }
 
     private JSONObject getBody(MtopResponse mtopResponse) {

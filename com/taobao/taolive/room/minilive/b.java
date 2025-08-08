@@ -3,7 +3,7 @@ package com.taobao.taolive.room.minilive;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewStub;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -249,10 +249,10 @@ public class b implements a.b {
         }
         for (int i = 0; i < arrayList.size(); i++) {
             ConventionItem conventionItem = arrayList.get(i);
-            if (!TextUtils.isEmpty(conventionItem.content) && !TextUtils.isEmpty(conventionItem.mockNick)) {
+            if (!StringUtils.isEmpty(conventionItem.content) && !StringUtils.isEmpty(conventionItem.mockNick)) {
                 ChatMessage createConventionMessage = ChatTopMessage.createConventionMessage(conventionItem.mockNick, conventionItem.content, R.color.taolive_chat_color2);
                 createConventionMessage.isAnchor = true;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     createConventionMessage.mUserIcon = str;
                 }
                 c(createConventionMessage);

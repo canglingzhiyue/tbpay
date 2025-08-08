@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Window;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -250,24 +250,24 @@ public final class PubIconChangeGuide {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5a2c888b", new Object[]{this, str, str2, str3, new Integer(i), str4, str5, str6, jSONObject});
         }
-        if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
+        if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
             return null;
         }
         Uri.Builder buildUpon = parse.buildUpon();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             buildUpon = buildUpon.appendQueryParameter("appName", str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             buildUpon = buildUpon.appendQueryParameter("miniappId", str3);
         }
         Uri.Builder appendQueryParameter = buildUpon.appendQueryParameter("guideType", String.valueOf(i));
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             appendQueryParameter = appendQueryParameter.appendQueryParameter("icon", str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             appendQueryParameter = appendQueryParameter.appendQueryParameter("strongGuidePopTitle", str5);
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             appendQueryParameter = appendQueryParameter.appendQueryParameter("strongGuidePopDesc", str6);
         }
         if (jSONObject != null) {

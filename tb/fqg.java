@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -37,7 +37,7 @@ public class fqg implements bbp {
         if (b2 != null && b2.getDXRuntimeContext() != null && (b = b2.getDXRuntimeContext().C().b()) != null && b.B() != null && b.B().a(view, str, obj, bVar, map)) {
             return;
         }
-        if (!TextUtils.isEmpty(str) && view != null) {
+        if (!StringUtils.isEmpty(str) && view != null) {
             char c = 65535;
             int hashCode = str.hashCode();
             if (hashCode != -1221029593) {

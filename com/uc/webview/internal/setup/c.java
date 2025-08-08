@@ -1,7 +1,7 @@
 package com.uc.webview.internal.setup;
 
 import android.support.media.ExifInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.etao.feimagesearch.ui.coordinatorcard.FactoryType;
 import com.uc.webview.base.EnvInfo;
@@ -127,7 +127,7 @@ public final class c {
                     sb.append("!!runningCore:\n");
                     sb.append(e != null ? e.toString() : "null");
                     sb.append("\n!!nativeLibsInfo:\n");
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         a2 = "null";
                     }
                     sb.append(a2);
@@ -147,7 +147,7 @@ public final class c {
     }
 
     private static boolean b(String str) {
-        return !TextUtils.isEmpty(str) && str.contains("webviewuc");
+        return !StringUtils.isEmpty(str) && str.contains("webviewuc");
     }
 
     public final void a(final int i, final boolean z) {

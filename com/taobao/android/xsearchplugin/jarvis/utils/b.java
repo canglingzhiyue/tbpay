@@ -1,6 +1,6 @@
 package com.taobao.android.xsearchplugin.jarvis.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseTypedBean;
@@ -34,7 +34,7 @@ public class b {
         if (map != null && !map.isEmpty()) {
             for (String str : map.keySet()) {
                 Object obj = map.get(str);
-                if (!TextUtils.isEmpty(str) && obj != null) {
+                if (!StringUtils.isEmpty(str) && obj != null) {
                     arrayList.add(str + "=" + obj);
                 }
             }
@@ -85,7 +85,7 @@ public class b {
 
     public static jxt a(String str, jxs jxsVar) {
         Class<? extends jxt> a2;
-        if (!TextUtils.isEmpty(str) && (a2 = ((jxp) jxsVar.getCore().c().g()).f().a(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (a2 = ((jxp) jxsVar.getCore().c().g()).f().a(str)) != null) {
             try {
                 return a2.newInstance();
             } catch (Throwable unused) {

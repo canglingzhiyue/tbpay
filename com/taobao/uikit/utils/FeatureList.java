@@ -2,7 +2,7 @@ package com.taobao.uikit.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -49,7 +49,7 @@ public class FeatureList<T extends View> extends ArrayList<AbsFeature<? super T>
         int size = size();
         for (int i = 0; i < size; i++) {
             AbsFeature absFeature2 = get(i);
-            if (TextUtils.equals(absFeature2.getClass().getName(), absFeature.getClass().getName())) {
+            if (StringUtils.equals(absFeature2.getClass().getName(), absFeature.getClass().getName())) {
                 throw new RuntimeException(absFeature2.getClass().getName() + " already add to this view");
             }
         }

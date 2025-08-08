@@ -1,7 +1,7 @@
 package com.xiaomi.clientreport.data;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.bq;
 
 /* loaded from: classes9.dex */
@@ -93,7 +93,7 @@ public class Config {
             int unused = builder.mEventEncrypted;
             this.mEventEncrypted = true;
         }
-        this.mAESKey = !TextUtils.isEmpty(builder.mAESKey) ? builder.mAESKey : bq.a(context);
+        this.mAESKey = !StringUtils.isEmpty(builder.mAESKey) ? builder.mAESKey : bq.a(context);
         this.mMaxFileLength = builder.mMaxFileLength > -1 ? builder.mMaxFileLength : j;
         if (builder.mEventUploadFrequency > -1) {
             this.mEventUploadFrequency = builder.mEventUploadFrequency;

@@ -1,6 +1,6 @@
 package com.taobao.android.fcanvas.integration;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
@@ -33,7 +33,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("30cb146b", new Object[]{this, str, textureView});
-        } else if (textureView == null || TextUtils.isEmpty(str)) {
+        } else if (textureView == null || StringUtils.isEmpty(str)) {
         } else {
             this.f12325a.put(str, new WeakReference<>(textureView));
         }

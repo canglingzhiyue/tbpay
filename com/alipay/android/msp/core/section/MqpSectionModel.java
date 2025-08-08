@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core.section;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.section.MqpSectionModel.BaseParams;
@@ -80,7 +80,7 @@ public class MqpSectionModel<P extends BaseParams> {
 
     public boolean dataReady() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("53550424", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f4558a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("53550424", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f4558a);
     }
 
     public JSONObject buildJson() {
@@ -137,7 +137,7 @@ public class MqpSectionModel<P extends BaseParams> {
                 return (JsonModelBuilder) ipChange.ipc$dispatch("6836b54b", new Object[]{this, str, obj});
             }
             try {
-                if (!TextUtils.isEmpty(str) && obj != null) {
+                if (!StringUtils.isEmpty(str) && obj != null) {
                     putOpt(str, obj);
                 }
             } catch (JSONException unused) {
@@ -166,7 +166,7 @@ public class MqpSectionModel<P extends BaseParams> {
                 return (PageInfo) ipChange.ipc$dispatch("7a5d325d", new Object[]{this, str, str2});
             }
             add("tplId", str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     JSONObject jSONObject = new JSONObject(str2);
                     if (jSONObject.length() > 0) {

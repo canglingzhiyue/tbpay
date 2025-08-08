@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -245,7 +245,7 @@ public class TRWidgetMiniAppEmbedView extends BaseEmbedView implements AppDestro
             return null;
         }
         a(map);
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             a();
         } else {
             a(this.i);
@@ -370,7 +370,7 @@ public class TRWidgetMiniAppEmbedView extends BaseEmbedView implements AppDestro
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("af2eb696", new Object[]{this, aVar, map});
-                    } else if (TextUtils.equals(TRWidgetConstant.CL_TRIVER_INITING.f3640a, aVar.f3640a) || TRWidgetMiniAppEmbedView.this.getOuterPage() == null) {
+                    } else if (StringUtils.equals(TRWidgetConstant.CL_TRIVER_INITING.f3640a, aVar.f3640a) || TRWidgetMiniAppEmbedView.this.getOuterPage() == null) {
                     } else {
                         JSONObject jSONObject2 = new JSONObject();
                         jSONObject2.put("errorCode", (Object) aVar.f3640a);

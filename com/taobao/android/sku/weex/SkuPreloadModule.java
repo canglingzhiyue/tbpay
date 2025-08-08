@@ -1,6 +1,6 @@
 package com.taobao.android.sku.weex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sku.utils.o;
@@ -50,7 +50,7 @@ public class SkuPreloadModule extends MUSModule {
         o.c(MODULE_NAME, "notifyMessage" + jSONObject);
         String b = c.b(jSONObject.getString("url"), jSONObject.getString("_sku_token_"));
         boolean parseBoolean = Boolean.parseBoolean(jSONObject.getString("success"));
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             sPreloadReadyMap.put(b, Boolean.valueOf(parseBoolean));
         }
         if (!parseBoolean) {
@@ -67,7 +67,7 @@ public class SkuPreloadModule extends MUSModule {
     public static boolean isInstanceReady(String str) {
         Boolean bool;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d6252099", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && (bool = sPreloadReadyMap.get(str)) != null && bool.booleanValue();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d6252099", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && (bool = sPreloadReadyMap.get(str)) != null && bool.booleanValue();
     }
 
     public static void clearPreloadInstanceStatus() {

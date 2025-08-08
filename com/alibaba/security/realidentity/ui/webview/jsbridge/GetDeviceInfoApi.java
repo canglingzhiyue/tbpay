@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity.ui.webview.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.b;
 import com.alibaba.security.realidentity.biz.entity.ClientInfo;
 import com.alibaba.security.realidentity.c;
@@ -31,7 +31,7 @@ public class GetDeviceInfoApi extends BaseJsExecutor {
             return;
         }
         WVResultWrapper wVResultWrapper = new WVResultWrapper();
-        if (jSONObject != null && !TextUtils.isEmpty(jSONObject.toString())) {
+        if (jSONObject != null && !StringUtils.isEmpty(jSONObject.toString())) {
             wVResultWrapper.setSuccess();
             wVResultWrapper.addData("clientInfo", jSONObject);
             this.mWVCallbackContext.success(wVResultWrapper);
@@ -66,7 +66,7 @@ public class GetDeviceInfoApi extends BaseJsExecutor {
             return false;
         }
         String optString = jSONObject.optString(BaseJsExecutor.NAME_VERIFY_TOKEN, "");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             setVerifyToken(optString);
         }
         String a2 = c.a(r.a().a(this.mContext, optString));

@@ -1,7 +1,7 @@
 package com.alibaba.android.aura.taobao.adapter.extension.event.openUrl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.aura.service.event.d;
 import com.alibaba.fastjson.JSONObject;
@@ -49,7 +49,7 @@ public class AURAJsStandardEventListener implements aek {
                 return null;
             }
             String string = jSONObject.getString("type");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 arc.a().a("AURAJsStandardEvent eventType is null");
                 return null;
             }

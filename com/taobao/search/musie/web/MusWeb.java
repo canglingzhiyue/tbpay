@@ -1,7 +1,7 @@
 package com.taobao.search.musie.web;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -163,7 +163,7 @@ public final class MusWeb extends UINode {
             return;
         }
         String str = (String) getAttribute("src");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (!(obj instanceof MusWebViewHost)) {

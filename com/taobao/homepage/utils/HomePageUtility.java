@@ -3,7 +3,7 @@ package com.taobao.homepage.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -145,7 +145,7 @@ public class HomePageUtility {
         if (g != null) {
             c.a(AbsListWidgetInstance.SLOT_SECTION, "is not null");
             for (SectionModel sectionModel : g) {
-                if (TextUtils.equals(sectionModel.getString("sectionBizCode"), "DXSearchBar")) {
+                if (StringUtils.equals(sectionModel.getString("sectionBizCode"), "DXSearchBar")) {
                     c.a("sectionBizCode", "DXSearchBar").b();
                     return sectionModel;
                 }
@@ -183,9 +183,9 @@ public class HomePageUtility {
             SystemBarDecorator systemBarDecorator = new SystemBarDecorator((Activity) context);
             Map<String, String> j = FestivalMgr.a().j();
             String str = j.get("navStyle");
-            if (TextUtils.equals(j.get("isFestivalOn"), "1")) {
-                if (!TextUtils.equals(str, "0") && !TextUtils.equals(str, "1")) {
-                    if (TextUtils.equals(str, "2")) {
+            if (StringUtils.equals(j.get("isFestivalOn"), "1")) {
+                if (!StringUtils.equals(str, "0") && !StringUtils.equals(str, "1")) {
+                    if (StringUtils.equals(str, "2")) {
                         systemBarDecorator.enableImmersiveStatusBar(true);
                     }
                 }
@@ -271,10 +271,10 @@ public class HomePageUtility {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = Globals.getApplication().getResources().getString(R.string.homepage_recommend);
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         return str + "-" + str2;
@@ -356,7 +356,7 @@ public class HomePageUtility {
             return null;
         }
         for (String str2 : set) {
-            if (!TextUtils.equals(str2, oqc.a().l())) {
+            if (!StringUtils.equals(str2, oqc.a().l())) {
                 if (str2 != null) {
                     return str2;
                 }
@@ -371,7 +371,7 @@ public class HomePageUtility {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("805a9220", new Object[]{jSONObject, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return jSONObject;
         }
         StringTokenizer stringTokenizer = new StringTokenizer(str, dmp.DELIMITER, false);
@@ -387,7 +387,7 @@ public class HomePageUtility {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("a12221e4", new Object[]{obj, str});
         }
-        if (obj != null && !TextUtils.isEmpty(str)) {
+        if (obj != null && !StringUtils.isEmpty(str)) {
             if (obj instanceof JSONObject) {
                 return ((JSONObject) obj).get(str);
             }

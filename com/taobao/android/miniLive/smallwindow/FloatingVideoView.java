@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -325,7 +325,7 @@ public class FloatingVideoView extends FrameLayout {
                 if (simpleLiveInfo != null) {
                     if (p && simpleLiveInfo.benefits != null && simpleLiveInfo.benefits.get(0) != null) {
                         com.taobao.android.miniLive.model.b bVar2 = simpleLiveInfo.benefits.get(0);
-                        if (!TextUtils.isEmpty(bVar2.f14331a) && bVar2.b > 0) {
+                        if (!StringUtils.isEmpty(bVar2.f14331a) && bVar2.b > 0) {
                             this.benefitImageView.setImageUrl(bVar2.f14331a);
                             if (this.mHandler == null) {
                                 this.mHandler = new Handler(Looper.getMainLooper());
@@ -337,9 +337,9 @@ public class FloatingVideoView extends FrameLayout {
                                 }
                             }, bVar2.b * 1000);
                         }
-                    } else if (!TextUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
+                    } else if (!StringUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
                         this.benefitImageView.setImageUrl(simpleLiveInfo.defaultImageUrl);
-                    } else if (TextUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
+                    } else if (StringUtils.isEmpty(simpleLiveInfo.defaultImageUrl)) {
                         this.benefitImageView.setImageUrl("https://gw.alicdn.com/tfs/TB10l6bbz39YK4jSZPcXXXrUFXa-324-96.png");
                     }
                     this.benefitImageView.setVisibility(0);
@@ -560,7 +560,7 @@ public class FloatingVideoView extends FrameLayout {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("94b8c75a", new Object[]{this, context, iMediaPlayer, simpleLiveInfo});
-            } else if (!FloatingVideoView.access$300(FloatingVideoView.this) && !TextUtils.equals(FloatingVideoView.access$400(FloatingVideoView.this), "zoom") && !hud.c(context) && !FloatingVideoView.access$500(FloatingVideoView.this)) {
+            } else if (!FloatingVideoView.access$300(FloatingVideoView.this) && !StringUtils.equals(FloatingVideoView.access$400(FloatingVideoView.this), "zoom") && !hud.c(context) && !FloatingVideoView.access$500(FloatingVideoView.this)) {
                 if (iMediaPlayer == null) {
                     return;
                 }

@@ -2,7 +2,7 @@ package com.taobao.android.fluid;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.layoutmanager.a;
 import java.lang.reflect.InvocationTargetException;
@@ -54,7 +54,7 @@ public final class c {
     public static com.taobao.tao.flexbox.layoutmanager.container.f a(Context context, com.taobao.tao.flexbox.layoutmanager.container.e eVar, String str, boolean z, Bundle bundle) {
         boolean z2;
         spz.c("FluidInitializeReflect", "FluidSDK 创建视频流二跳页实例：" + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

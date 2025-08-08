@@ -3,7 +3,7 @@ package com.taobao.themis.web.utils;
 import android.taobao.windvane.export.network.Request;
 import android.taobao.windvane.export.network.c;
 import android.taobao.windvane.export.network.f;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.kernel.basic.TMSLogger;
 import com.taobao.themis.kernel.i;
@@ -82,7 +82,7 @@ public final class HTMLPrefetchJob implements Serializable {
         }
         q.d(h5Url, "h5Url");
         String bt = n.bt();
-        if (TextUtils.isEmpty(bt)) {
+        if (StringUtils.isEmpty(bt)) {
             return false;
         }
         ArrayList arrayList = new ArrayList();

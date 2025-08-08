@@ -3,7 +3,7 @@ package com.xiaomi.push.service.receivers;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.channel.commonutils.logger.b;
 import com.xiaomi.push.fj;
 import com.xiaomi.push.service.ServiceClient;
@@ -21,7 +21,7 @@ public class PingReceiver extends BroadcastReceiver {
         if (!bj.q.equals(intent.getAction())) {
             b.m1616a("cancel the old ping timer");
             fj.a();
-        } else if (!TextUtils.equals(context.getPackageName(), intent.getPackage())) {
+        } else if (!StringUtils.equals(context.getPackageName(), intent.getPackage())) {
         } else {
             b.c("Ping XMChannelService on timer");
             try {

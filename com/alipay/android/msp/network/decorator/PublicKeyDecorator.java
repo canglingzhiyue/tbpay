@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.decorator;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -61,7 +61,7 @@ public class PublicKeyDecorator extends BaseDecorator {
                 } else {
                     string = jSONObject3.getString(MspFlybirdDefine.FLYBIRD_PKEY);
                 }
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     MspConfig.getInstance().setRsaPublicKey(string);
                     throw new PublicKeyException();
                 }

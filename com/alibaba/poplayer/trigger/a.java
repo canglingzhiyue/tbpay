@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -210,7 +210,7 @@ public abstract class a implements PopRequest.c {
         if (list != null && !list.isEmpty() && dVar != null) {
             for (d dVar2 : list) {
                 BaseConfigItem x = dVar2.x();
-                if (!TextUtils.isEmpty(x.indexID)) {
+                if (!StringUtils.isEmpty(x.indexID)) {
                     if (x.indexID.equals(dVar.x().indexID)) {
                         return dVar2;
                     }
@@ -226,11 +226,11 @@ public abstract class a implements PopRequest.c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("9e864ff4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             return null;
         } else {
             String b = InternalTriggerController.b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return null;
             }
             List<d> list = this.b.get(b);
@@ -239,7 +239,7 @@ public abstract class a implements PopRequest.c {
             }
             for (d dVar : list) {
                 BaseConfigItem x = dVar.x();
-                if (!TextUtils.isEmpty(x.indexID) && x.indexID.equals(str) && !dVar.f()) {
+                if (!StringUtils.isEmpty(x.indexID) && x.indexID.equals(str) && !dVar.f()) {
                     return dVar;
                 }
             }
@@ -258,7 +258,7 @@ public abstract class a implements PopRequest.c {
         try {
             JSONObject jSONObject2 = new JSONObject();
             String b = InternalTriggerController.b();
-            if (!TextUtils.isEmpty(b) && (list = this.b.get(b)) != null) {
+            if (!StringUtils.isEmpty(b) && (list = this.b.get(b)) != null) {
                 for (d dVar : list) {
                     if (dVar != null && dVar.e() == PopRequest.Status.SHOWING) {
                         i++;
@@ -287,7 +287,7 @@ public abstract class a implements PopRequest.c {
         } catch (Throwable th) {
             com.alibaba.poplayer.utils.c.a("getPageSwitchOriginRequestConfigs.fail.", th);
         }
-        if (event.source != 2 || TextUtils.isEmpty(event.attachKeyCode) || (list = this.b.get(event.attachKeyCode)) == null) {
+        if (event.source != 2 || StringUtils.isEmpty(event.attachKeyCode) || (list = this.b.get(event.attachKeyCode)) == null) {
             return arrayList;
         }
         for (d dVar : list) {
@@ -316,7 +316,7 @@ public abstract class a implements PopRequest.c {
         }
         ArrayList arrayList = new ArrayList();
         String b = InternalTriggerController.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return arrayList;
         }
         List<d> list = this.b.get(b);
@@ -336,7 +336,7 @@ public abstract class a implements PopRequest.c {
             return (List) ipChange.ipc$dispatch("8c4a1d4b", new Object[]{this, str, str2});
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 List<d> list = this.b.get(str);
                 if (list != null) {
@@ -359,7 +359,7 @@ public abstract class a implements PopRequest.c {
             return (List) ipChange.ipc$dispatch("8d80702a", new Object[]{this, str, str2});
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 List<d> list = this.b.get(str);
                 if (list != null) {
@@ -558,7 +558,7 @@ public abstract class a implements PopRequest.c {
             try {
                 OnePopModule t = popRequest.t();
                 t.o = "true";
-                if (t.ae > 0 && TextUtils.isEmpty(t.y)) {
+                if (t.ae > 0 && StringUtils.isEmpty(t.y)) {
                     t.y = String.valueOf(SystemClock.elapsedRealtime() - t.ae);
                 }
                 t.T = null;
@@ -642,7 +642,7 @@ public abstract class a implements PopRequest.c {
             return;
         }
         for (String str : this.b.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.alibaba.poplayer.layermanager.f.a().b(new ArrayList<>(this.b.get(str)));
             }
         }
@@ -662,7 +662,7 @@ public abstract class a implements PopRequest.c {
         } catch (Throwable th) {
             com.alibaba.poplayer.utils.c.a("startPopCheckRequest.preparePopCheckRequest.error", th);
         }
-        if (TextUtils.isEmpty(dVar.x().popPreCheckParams)) {
+        if (StringUtils.isEmpty(dVar.x().popPreCheckParams)) {
             dVar.t().v = com.taobao.bootimage.d.CLOSE_TYPE_SKIP;
             dVar.t().q = "true";
             g(dVar);
@@ -787,7 +787,7 @@ public abstract class a implements PopRequest.c {
             return (ArrayList) ipChange.ipc$dispatch("569491cd", new Object[]{this, str});
         }
         ArrayList<d> arrayList = new ArrayList<>();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return arrayList;
         }
         for (String str2 : this.b.keySet()) {
@@ -810,9 +810,9 @@ public abstract class a implements PopRequest.c {
                     return;
                 }
                 if (z) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         for (String str3 : this.b.keySet()) {
-                            if (!TextUtils.isEmpty(str3)) {
+                            if (!StringUtils.isEmpty(str3)) {
                                 List<d> list2 = this.b.get(str3);
                                 if (str3.equals(str)) {
                                     if (list2 != null) {
@@ -828,7 +828,7 @@ public abstract class a implements PopRequest.c {
                         }
                     } else {
                         for (String str4 : this.b.keySet()) {
-                            if (!TextUtils.isEmpty(str4)) {
+                            if (!StringUtils.isEmpty(str4)) {
                                 List<d> list3 = this.b.get(str4);
                                 if (list3 != null) {
                                     list3.removeAll(list);
@@ -839,7 +839,7 @@ public abstract class a implements PopRequest.c {
                             }
                         }
                     }
-                } else if (!TextUtils.isEmpty(str2)) {
+                } else if (!StringUtils.isEmpty(str2)) {
                     List<d> list4 = this.b.get(str2);
                     if (list4 != null) {
                         list4.removeAll(list);
@@ -851,7 +851,7 @@ public abstract class a implements PopRequest.c {
                 for (d dVar : list) {
                     if (dVar != null && (dVar.E() || dVar.D())) {
                         for (String str5 : this.b.keySet()) {
-                            if (!TextUtils.isEmpty(str5)) {
+                            if (!StringUtils.isEmpty(str5)) {
                                 this.b.get(str5).remove(dVar);
                             }
                         }
@@ -883,13 +883,13 @@ public abstract class a implements PopRequest.c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("944578e9", new Object[]{this, event})).booleanValue();
         }
-        if (event != null && !TextUtils.isEmpty(event.originUri) && Event.a.a(event.source) && event.originUri.contains("__popPageUris") && event.originUri.contains("__popEndTime")) {
+        if (event != null && !StringUtils.isEmpty(event.originUri) && Event.a.a(event.source) && event.originUri.contains("__popPageUris") && event.originUri.contains("__popEndTime")) {
             try {
                 Uri parse = Uri.parse(event.originUri);
                 String queryParameter = parse.getQueryParameter("__popPageUris");
                 String queryParameter2 = parse.getQueryParameter("__popPageParamContains");
                 String queryParameter3 = parse.getQueryParameter("__popEndTime");
-                if (!TextUtils.isEmpty(queryParameter) && !TextUtils.isEmpty(queryParameter3)) {
+                if (!StringUtils.isEmpty(queryParameter) && !StringUtils.isEmpty(queryParameter3)) {
                     try {
                         long parseLong = Long.parseLong(queryParameter3) * 1000;
                         if (PopLayer.getReference().getCurrentTimeStamp() > parseLong) {
@@ -942,7 +942,7 @@ public abstract class a implements PopRequest.c {
                         while (true) {
                             if (i < length) {
                                 String str = popPageUris[i];
-                                if (!TextUtils.isEmpty(str) && str.equals(InternalTriggerController.d()) && com.alibaba.poplayer.config.manager.d.a(futureEvent.getParam(), futureEvent.getPopPageParamContains())) {
+                                if (!StringUtils.isEmpty(str) && str.equals(InternalTriggerController.d()) && com.alibaba.poplayer.config.manager.d.a(futureEvent.getParam(), futureEvent.getPopPageParamContains())) {
                                     intent.removeExtra("event");
                                     intent.removeExtra("param");
                                     intent.removeExtra(PopLayer.EXTRA_KEY_TRIGGER_SROUCE);

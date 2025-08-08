@@ -3,7 +3,7 @@ package com.etao.feimagesearch.result;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.export.UMLLCons;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
@@ -95,16 +95,16 @@ public class IrpMuiseModule extends MUSModule {
             String optString = jSONObject2.optString(UMLLCons.FEATURE_TYPE_PAGE);
             String optString2 = jSONObject2.optString("Ctrl");
             org.json.JSONObject optJSONObject = jSONObject2.optJSONObject("Args");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 optString = StatisticalDataPoint.PageName.PHOTO_SEARCH_RESULT.getPageName();
             }
-            if (TextUtils.isEmpty(optString2)) {
+            if (StringUtils.isEmpty(optString2)) {
                 optString2 = "unknown";
             }
             String parseUTArgs = parseUTArgs(optJSONObject);
             if ("ItemClick".equals(optString2) && (getInstance().getUIContext() instanceof b)) {
                 utItemClick("," + parseUTArgs, "ItemClick", ((b) getInstance().getContext()).d());
-            } else if (!TextUtils.isEmpty(parseUTArgs)) {
+            } else if (!StringUtils.isEmpty(parseUTArgs)) {
                 cox.d(optString, optString2, parseUTArgs);
             } else {
                 cox.d(optString, optString2, new String[0]);
@@ -125,7 +125,7 @@ public class IrpMuiseModule extends MUSModule {
             String string = jSONObject.getString("group");
             String string2 = jSONObject.getString("config");
             String string3 = jSONObject.getString("default");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                 String a2 = com.etao.feimagesearch.config.b.a(string, string2, string3);
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("result", (Object) a2);
@@ -157,7 +157,7 @@ public class IrpMuiseModule extends MUSModule {
             sb.append(optString);
         }
         String sb2 = sb.toString();
-        return (TextUtils.isEmpty(sb2) || sb2.length() <= 1) ? "" : sb2.substring(1);
+        return (StringUtils.isEmpty(sb2) || sb2.length() <= 1) ? "" : sb2.substring(1);
     }
 
     private void utItemClick(String str, String str2, String str3) {
@@ -168,7 +168,7 @@ public class IrpMuiseModule extends MUSModule {
         }
         StringBuilder sb = new StringBuilder("pssource=" + str3);
         sb.append(",utdid=" + UTDevice.getUtdid(getInstance().getUIContext()));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
         }
         cox.d(StatisticalDataPoint.PageName.PHOTO_SEARCH_RESULT.getPageName(), str2, sb.toString());
@@ -310,20 +310,20 @@ public class IrpMuiseModule extends MUSModule {
             return;
         }
         String a2 = a.a(jSONObject, "action", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             String a3 = a.a(jSONObject, "style", "");
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             c.b(a3);
         }
-        if (TextUtils.equals("showListHeaderBg", a2)) {
+        if (StringUtils.equals("showListHeaderBg", a2)) {
             String a4 = a.a(a.b(jSONObject, "config"), "bgImgUrl", "");
-            if (TextUtils.isEmpty(a4)) {
+            if (StringUtils.isEmpty(a4)) {
                 return;
             }
             c.a(true, a4);
-        } else if (!TextUtils.equals("hideListHeaderBg", a2)) {
+        } else if (!StringUtils.equals("hideListHeaderBg", a2)) {
         } else {
             c.a(false, "");
         }
@@ -345,7 +345,7 @@ public class IrpMuiseModule extends MUSModule {
         if (ipChange instanceof IpChange) {
             return (RectF) ipChange.ipc$dispatch("f6b117a9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(",");
@@ -365,7 +365,7 @@ public class IrpMuiseModule extends MUSModule {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("2b5811ea", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(";");
@@ -564,7 +564,7 @@ public class IrpMuiseModule extends MUSModule {
             return;
         }
         com.etao.feimagesearch.newresult.base.b c = c();
-        if (c == null || TextUtils.isEmpty(a.a(jSONObject, "popLayerUrl", ""))) {
+        if (c == null || StringUtils.isEmpty(a.a(jSONObject, "popLayerUrl", ""))) {
             return;
         }
         c.a(jSONObject);
@@ -592,7 +592,7 @@ public class IrpMuiseModule extends MUSModule {
         } else if (c() == null) {
         } else {
             String a2 = a.a(jSONObject, "params", "");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             k.a(com.b(), KEY_IRP_USER_DATA, a2);

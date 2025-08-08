@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.task.desc.MRTFilesDescription;
@@ -89,7 +89,7 @@ public final class h {
             ipChange.ipc$dispatch("feaf5d6b", new Object[]{str, str2, map, new Boolean(z)});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.mrt.utils.a.e("Util", "Intent广播发送！broadcastName=" + str2 + ",modelName=" + str2);
             str = str2;
         }

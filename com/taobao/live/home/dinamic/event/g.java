@@ -1,7 +1,7 @@
 package com.taobao.live.home.dinamic.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
@@ -142,7 +142,7 @@ public class g extends h {
                 return;
             }
             JSONObject jSONObject2 = jSONObject.getJSONObject(d.CLICK_MAIDIAN);
-            if (string != null && !TextUtils.isEmpty(string)) {
+            if (string != null && !StringUtils.isEmpty(string)) {
                 String string2 = jSONObject2.getString("name");
                 prl.a(string2, jSONObject2.getString("params") + ",trackInfo=" + string);
                 return;

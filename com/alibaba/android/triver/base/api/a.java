@@ -1,6 +1,6 @@
 package com.alibaba.android.triver.base.api;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.service.RVConfigService;
 import com.alibaba.fastjson.JSONArray;
@@ -36,7 +36,7 @@ public class a {
         }
         try {
             String config = ((RVConfigService) RVProxy.get(RVConfigService.class)).getConfig(str, String.valueOf(z));
-            return TextUtils.isEmpty(config) ? z : "true".equals(config);
+            return StringUtils.isEmpty(config) ? z : "true".equals(config);
         } catch (Exception e) {
             e.printStackTrace();
             return z;
@@ -64,7 +64,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
         String config = ((RVConfigService) RVProxy.get(RVConfigService.class)).getConfig("widgetPreviewPageUrl", "https://market.m.taobao.com/app/weex-canal/widget-preview/main?wh_weex=true&wx_navbar_hidden=true");
-        return (TextUtils.isEmpty(config) || "null".equals(config)) ? "https://market.m.taobao.com/app/weex-canal/widget-preview/main?wh_weex=true&wx_navbar_hidden=true" : config;
+        return (StringUtils.isEmpty(config) || "null".equals(config)) ? "https://market.m.taobao.com/app/weex-canal/widget-preview/main?wh_weex=true&wx_navbar_hidden=true" : config;
     }
 
     public static int a(int i) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.livehome.plugin.atype.flexalocal.utils.d;
 import com.taobao.downloader.sync.b;
@@ -62,7 +62,7 @@ public class kkz implements klb {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f15fd91c", new Object[]{this, kmqVar})).intValue();
         }
-        if (kmqVar == null || TextUtils.isEmpty(kmqVar.f30169a)) {
+        if (kmqVar == null || StringUtils.isEmpty(kmqVar.f30169a)) {
             throw new RuntimeException("request's bizId is Needed");
         }
         return a(kmqVar.f30169a);
@@ -98,7 +98,7 @@ public class kkz implements klb {
         if (num == null) {
             OrangeConfig orangeConfig = OrangeConfig.getInstance();
             String config = orangeConfig.getConfig(b.GROUP, "BIZ_" + str, "");
-            if (!TextUtils.isEmpty(config) && TextUtils.isDigitsOnly(config)) {
+            if (!StringUtils.isEmpty(config) && StringUtils.isDigitsOnly(config)) {
                 num = Integer.valueOf(config);
             }
         }

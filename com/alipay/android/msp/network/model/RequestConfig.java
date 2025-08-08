@@ -3,7 +3,7 @@ package com.alipay.android.msp.network.model;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -277,7 +277,7 @@ public class RequestConfig implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.k)) {
+        } else if (!StringUtils.isEmpty(this.k)) {
         } else {
             String str = MspSwitchUtil.isPbv3Enabled() ? "https://mobilegw.alipay.com/mgw.htm" : "http://mobilegw.alipay.com/mgw.htm";
             if (GlobalConstant.DEBUG && (context = GlobalHelper.getInstance().getContext()) != null) {
@@ -286,7 +286,7 @@ public class RequestConfig implements Cloneable {
                     if (query != null && query.getCount() > 0) {
                         if (query.moveToFirst()) {
                             String string = query.getString(query.getColumnIndex("url"));
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 str = string;
                             }
                         }
@@ -330,7 +330,7 @@ public class RequestConfig implements Cloneable {
         if (sdkInstance != null && (channelInfo2 = sdkInstance.getChannelInfo()) != null) {
             this.h = channelInfo2.getApiName();
         }
-        if (TextUtils.isEmpty(this.l)) {
+        if (StringUtils.isEmpty(this.l)) {
             return;
         }
         try {
@@ -343,10 +343,10 @@ public class RequestConfig implements Cloneable {
             }
             if (parseObject.containsKey("name")) {
                 String a2 = a(parseObject.getString("name"));
-                if (!TextUtils.isEmpty(a2) && a2.startsWith("js://") && (actionParams = Utils.getActionParams(a2)) != null && actionParams.length > 1) {
+                if (!StringUtils.isEmpty(a2) && a2.startsWith("js://") && (actionParams = Utils.getActionParams(a2)) != null && actionParams.length > 1) {
                     a2 = actionParams[1];
                 }
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     String[] split = a2.split("/");
                     if (split.length > 2) {
                         setType(split[1]);
@@ -356,7 +356,7 @@ public class RequestConfig implements Cloneable {
             }
             if (parseObject.containsKey("apiName")) {
                 String string = parseObject.getString("apiName");
-                if (TextUtils.isEmpty(string) && sdkInstance != null && (channelInfo = sdkInstance.getChannelInfo()) != null) {
+                if (StringUtils.isEmpty(string) && sdkInstance != null && (channelInfo = sdkInstance.getChannelInfo()) != null) {
                     string = channelInfo.getApiName();
                 }
                 setApiName(string);
@@ -366,7 +366,7 @@ public class RequestConfig implements Cloneable {
             }
             if (parseObject.containsKey("host")) {
                 String string2 = parseObject.getString("host");
-                if (!TextUtils.isEmpty(string2) && string2.startsWith("http")) {
+                if (!StringUtils.isEmpty(string2) && string2.startsWith("http")) {
                     setHost(string2);
                 }
                 if (string2 != null && z) {
@@ -407,7 +407,7 @@ public class RequestConfig implements Cloneable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("79c37174", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f)) {
+        if (StringUtils.isEmpty(this.f)) {
             this.f = "com.alipay.mobilecashier";
         }
         return this.f;
@@ -417,7 +417,7 @@ public class RequestConfig implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("40e878ea", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f = str;
         }
@@ -432,7 +432,7 @@ public class RequestConfig implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("26589b54", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.h = str;
         }
@@ -447,7 +447,7 @@ public class RequestConfig implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fd56044d", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.e = str;
         }
@@ -462,7 +462,7 @@ public class RequestConfig implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dc10634", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.i = str;
         }
@@ -477,7 +477,7 @@ public class RequestConfig implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca4201f1", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.c = str;
         }
@@ -524,7 +524,7 @@ public class RequestConfig implements Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a2fc43b", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.k = str;
         }
@@ -549,7 +549,7 @@ public class RequestConfig implements Cloneable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("20ea5097", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.n)) {
+        if (StringUtils.isEmpty(this.n)) {
             this.n = Utils.getTriDesKey();
         }
         return this.n;
@@ -569,7 +569,7 @@ public class RequestConfig implements Cloneable {
             this.p = HeaderConstant.HEADER_VALUE_PB_TYPE;
         } else if (this.f4936a == RequestChannel.JSON_CASHIER) {
             this.p = "application/json";
-        } else if (TextUtils.isEmpty(this.p)) {
+        } else if (StringUtils.isEmpty(this.p)) {
             this.p = MspNetConstants.Request.DEFAULT_CONTENT_TYPE;
         }
         return this.p;

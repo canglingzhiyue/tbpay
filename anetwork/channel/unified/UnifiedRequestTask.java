@@ -2,7 +2,7 @@ package anetwork.channel.unified;
 
 import android.os.Looper;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -334,7 +334,7 @@ public class UnifiedRequestTask {
             v3Instance.log(createRequest, "netReqStart", "url=" + this.rc.config.getUrlString());
         }
         String requestProperty = this.rc.config.getRequestProperty(RequestConstant.KEY_TRACE_ID);
-        if (!TextUtils.isEmpty(requestProperty)) {
+        if (!StringUtils.isEmpty(requestProperty)) {
             this.rc.config.rs.falcoId = requestProperty;
         }
         String requestProperty2 = this.rc.config.getRequestProperty(RequestConstant.KEY_REQ_PROCESS);

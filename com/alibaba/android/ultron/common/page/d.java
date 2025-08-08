@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.common.page;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import com.alibaba.android.ultron.vfw.widget.a;
@@ -91,7 +91,7 @@ public class d {
             }
             this.c.setError(Error.Factory.fromMtopResponse(-1, "-1", "-1", "unknow error"));
         } else {
-            a.a(context, (bimVar == null || TextUtils.isEmpty(bimVar.e())) ? "亲，您的网络状况不太好哦!" : bimVar.e());
+            a.a(context, (bimVar == null || StringUtils.isEmpty(bimVar.e())) ? "亲，您的网络状况不太好哦!" : bimVar.e());
         }
     }
 }

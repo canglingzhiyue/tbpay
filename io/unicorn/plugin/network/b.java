@@ -1,6 +1,6 @@
 package io.unicorn.plugin.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.weex_framework.adapter.c;
 import io.unicorn.plugin.network.ExternalAdapterNetworkProvider;
 import java.util.List;
@@ -51,7 +51,7 @@ public class b implements ExternalAdapterNetworkProvider {
             @Override // com.taobao.android.weex_framework.adapter.c.a
             public void a(com.taobao.android.weex_framework.common.b bVar) {
                 int parseInt;
-                if (!TextUtils.isEmpty(bVar.f15987a)) {
+                if (!StringUtils.isEmpty(bVar.f15987a)) {
                     try {
                         parseInt = Integer.parseInt(bVar.f15987a);
                     } catch (NumberFormatException unused) {

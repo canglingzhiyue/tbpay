@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.comments.chat;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -61,7 +61,7 @@ public class a implements c {
             return true;
         }
         for (String str2 : this.c) {
-            if (TextUtils.equals(str, str2)) {
+            if (StringUtils.equals(str, str2)) {
                 return true;
             }
             if (this.b.get(str2) == Boolean.TRUE) {

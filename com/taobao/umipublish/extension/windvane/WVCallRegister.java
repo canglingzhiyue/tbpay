@@ -2,7 +2,7 @@ package com.taobao.umipublish.extension.windvane;
 
 import android.content.Context;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.av;
@@ -97,7 +97,7 @@ public final class WVCallRegister {
                 Class c;
                 T t;
                 WindvaneCall windvaneCall;
-                if (!TextUtils.isEmpty(Item.this.a())) {
+                if (!StringUtils.isEmpty(Item.this.a())) {
                     String a2 = Item.this.a();
                     c = a2 != null ? Class.forName(a2) : null;
                 } else {

@@ -1,6 +1,6 @@
 package com.huawei.hms.hatool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
@@ -98,7 +98,7 @@ public abstract class w {
     }
 
     private static HttpURLConnection a(String str, int i, Map<String, String> map, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             v.b("hmsSdk", "CreateConnection: invalid urlPath.");
             return null;
         }
@@ -114,7 +114,7 @@ public abstract class w {
         if (map != null && map.size() > 0) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
-                if (key != null && !TextUtils.isEmpty(key)) {
+                if (key != null && !StringUtils.isEmpty(key)) {
                     httpURLConnection.setRequestProperty(key, entry.getValue());
                 }
             }

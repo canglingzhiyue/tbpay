@@ -4,7 +4,7 @@ import android.os.Looper;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Printer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -215,7 +215,7 @@ public class LooperMonitor implements Printer {
         public void run() {
             String substring;
             Integer num;
-            if (TextUtils.isEmpty(this.mBeginLog)) {
+            if (StringUtils.isEmpty(this.mBeginLog)) {
                 return;
             }
             try {

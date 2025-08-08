@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.text.SpannableString;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
@@ -116,7 +116,7 @@ public class DXMsgTextViewWidgetNode extends af {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("42764d9f", new Object[]{this, new Long(j), str});
         } else if (38178040921L == j) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.text = str;
@@ -206,7 +206,7 @@ public class DXMsgTextViewWidgetNode extends af {
                                     return;
                                 }
                                 String string = jSONObject.getString("url");
-                                if (TextUtils.isEmpty(string)) {
+                                if (StringUtils.isEmpty(string)) {
                                     return;
                                 }
                                 if (!string.startsWith(k.HTTP_PREFIX) && !string.startsWith(k.HTTPS_PREFIX)) {
@@ -263,7 +263,7 @@ public class DXMsgTextViewWidgetNode extends af {
         Matcher matcher = PatternsUtil.getWebUrlPattern().matcher(spannableString.toString());
         while (matcher.find()) {
             final String group = matcher.group();
-            if (!TextUtils.isEmpty(group) && !TextUtils.isEmpty(group)) {
+            if (!StringUtils.isEmpty(group) && !StringUtils.isEmpty(group)) {
                 DXClickableSpan dXClickableSpan = new DXClickableSpan() { // from class: com.taobao.unit.center.mdc.dinamicx.widget.DXMsgTextViewWidgetNode.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -305,7 +305,7 @@ public class DXMsgTextViewWidgetNode extends af {
         Matcher matcher = PatternsUtil.getEmailPattern().matcher(spannableString.toString());
         while (matcher.find()) {
             final String group = matcher.group();
-            if (!TextUtils.isEmpty(group)) {
+            if (!StringUtils.isEmpty(group)) {
                 DXClickableSpan dXClickableSpan = new DXClickableSpan() { // from class: com.taobao.unit.center.mdc.dinamicx.widget.DXMsgTextViewWidgetNode.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -339,7 +339,7 @@ public class DXMsgTextViewWidgetNode extends af {
             return (List) ipChange.ipc$dispatch("7678994b", new Object[]{str});
         }
         ArrayList arrayList = new ArrayList();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return arrayList;
         }
         Matcher matcher = sNumberPattern.matcher(str);

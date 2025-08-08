@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -153,7 +153,7 @@ public class k extends ius<com.taobao.search.mmd.datasource.bean.a, LinearLayout
             } else {
                 k.c(k.this).setVisibility(0);
                 int i = q.a((Object) "promotion", (Object) this.b.l) ? 20 : 10;
-                if (!TextUtils.isEmpty(this.b.e)) {
+                if (!StringUtils.isEmpty(this.b.e)) {
                     k.d(k.this).setVisibility(0);
                     k.d(k.this).setImageUrl(this.b.e);
                     e = k.e(k.this);
@@ -601,7 +601,7 @@ public class k extends ius<com.taobao.search.mmd.datasource.bean.a, LinearLayout
                 q.b("mNormalFloatButton");
             }
             tUrlImageView3.setImageUrl(bean.b);
-            if (!a2 || TextUtils.isEmpty(bean.c)) {
+            if (!a2 || StringUtils.isEmpty(bean.c)) {
                 d();
             }
             com.taobao.search.sf.a model = getModel();
@@ -709,11 +709,11 @@ public class k extends ius<com.taobao.search.mmd.datasource.bean.a, LinearLayout
             aVar.u = true;
             return false;
         }
-        if (!TextUtils.isEmpty(aVar.d) || !TextUtils.isEmpty(aVar.e)) {
+        if (!StringUtils.isEmpty(aVar.d) || !StringUtils.isEmpty(aVar.e)) {
             b(aVar);
             z = true;
         }
-        if (!TextUtils.isEmpty(aVar.c)) {
+        if (!StringUtils.isEmpty(aVar.c)) {
             c(aVar);
             z = true;
         } else {
@@ -845,7 +845,7 @@ public class k extends ius<com.taobao.search.mmd.datasource.bean.a, LinearLayout
         if (aVar == null) {
             q.b("mPushButtonBean");
         }
-        if (TextUtils.equals(aVar.q, "openPk")) {
+        if (StringUtils.equals(aVar.q, "openPk")) {
             g();
         } else {
             h();
@@ -958,7 +958,7 @@ public class k extends ius<com.taobao.search.mmd.datasource.bean.a, LinearLayout
         if (aVar == null) {
             q.b("mPushButtonBean");
         }
-        if (TextUtils.isEmpty(aVar.o)) {
+        if (StringUtils.isEmpty(aVar.o)) {
             return;
         }
         com.taobao.search.sf.a model = getModel();

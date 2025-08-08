@@ -3,7 +3,7 @@ package com.taobao.tbliveinteractive.jsbridge;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public class f implements b {
                         Object a2 = pmd.a().k().a(context, str);
                         String str2 = a2 instanceof String ? (String) a2 : null;
                         JSONObject jSONObject = new JSONObject();
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             z = true;
                         }
                         jSONObject.put("succ", (Object) Boolean.valueOf(z));
@@ -238,7 +238,7 @@ public class f implements b {
             return "";
         }
         String str = map.get("name");
-        return !TextUtils.isEmpty(str) ? eVar.h().d(str, map) : "";
+        return !StringUtils.isEmpty(str) ? eVar.h().d(str, map) : "";
     }
 
     @Override // com.taobao.tbliveinteractive.jsbridge.b
@@ -249,7 +249,7 @@ public class f implements b {
         } else if (eVar == null || eVar.h() == null) {
         } else {
             String str = map.get("componentName");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             eVar.h().e(str, map);
@@ -264,7 +264,7 @@ public class f implements b {
         } else if (eVar == null || eVar.h() == null) {
         } else {
             String str = map.get("componentName");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             eVar.h().f(str, map);
@@ -279,7 +279,7 @@ public class f implements b {
         } else if (eVar == null || eVar.h() == null) {
         } else {
             String str = map.get("componentName");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             eVar.h().c(str, map);
@@ -357,7 +357,7 @@ public class f implements b {
             ipChange.ipc$dispatch("742b47b3", new Object[]{this, eVar, strArr});
         } else if (eVar != null && eVar.d() != null && strArr != null) {
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     eVar.d().a(l.a(str));
                 }
             }
@@ -382,7 +382,7 @@ public class f implements b {
             ipChange.ipc$dispatch("75619a92", new Object[]{this, eVar, strArr});
         } else if (eVar != null && eVar.d() != null && strArr != null) {
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     eVar.d().b(l.a(str));
                 }
             }

@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.ability.result.ErrorResult;
@@ -38,7 +38,7 @@ public class qnu {
 
     public static boolean a(String str, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : TextUtils.isEmpty(str) ? z : !str.contains("null") && !str.contains("undefined");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : StringUtils.isEmpty(str) ? z : !str.contains("null") && !str.contains("undefined");
     }
 
     public static void a(final e eVar, final String str) {

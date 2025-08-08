@@ -13,7 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -291,26 +291,26 @@ public class WeexPageFragment extends Fragment {
             return (Fragment) ipChange.ipc$dispatch("1e78c910", new Object[]{fragmentActivity, cls, str, str2, str3, hashMap, str4, new Integer(i), str5, serializable});
         }
         FragmentManager supportFragmentManager = fragmentActivity.getSupportFragmentManager();
-        String str6 = TextUtils.isEmpty(str5) ? FRAGMENT_TAG : str5;
+        String str6 = StringUtils.isEmpty(str5) ? FRAGMENT_TAG : str5;
         Fragment findFragmentByTag = supportFragmentManager.findFragmentByTag(str6);
         if (findFragmentByTag != null) {
             return findFragmentByTag;
         }
         Bundle bundle = new Bundle();
         bundle.putString(FRAGMENT_ARG_TAG, str6);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             bundle.putString(FRAGMENT_ARG_TEMPLATE, str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             bundle.putString(FRAGMENT_ARG_BUNDLE_URL, str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             bundle.putString(FRAGMENT_ARG_RENDER_URL, str3);
         }
         if (hashMap != null) {
             bundle.putSerializable(FRAGMENT_ARG_CUSTOM_OPT, hashMap);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             bundle.putString(FRAGMENT_ARG_INIT_DATA, str4);
         }
         if (serializable != null) {
@@ -318,7 +318,7 @@ public class WeexPageFragment extends Fragment {
         }
         Fragment instantiate = Fragment.instantiate(fragmentActivity, cls.getName(), bundle);
         FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = FRAGMENT_TAG;
         }
         beginTransaction.add(i, instantiate, str5);
@@ -1059,13 +1059,13 @@ public class WeexPageFragment extends Fragment {
         String string = arguments.getString(FRAGMENT_ARG_URI);
         String string2 = arguments.getString(FRAGMENT_ARG_BUNDLE_URL);
         String string3 = arguments.getString(FRAGMENT_ARG_RENDER_URL);
-        if (!TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3)) {
+        if (!StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3)) {
             k.e eVar2 = this.mRenderPresenter;
             if (eVar2 == null) {
                 return;
             }
             eVar2.b(string2, string3);
-        } else if (TextUtils.isEmpty(string) || (eVar = this.mRenderPresenter) == null) {
+        } else if (StringUtils.isEmpty(string) || (eVar = this.mRenderPresenter) == null) {
         } else {
             eVar.b(string, string);
         }
@@ -1176,7 +1176,7 @@ public class WeexPageFragment extends Fragment {
         }
         Map map = (Map) serializable;
         String str = (String) map.get("orientation");
-        if (!TextUtils.isEmpty(str) && str.equalsIgnoreCase("landscape") && getActivity() != null) {
+        if (!StringUtils.isEmpty(str) && str.equalsIgnoreCase("landscape") && getActivity() != null) {
             String str2 = (String) map.get("preferredOrientation");
             if ("landscapeRight".equalsIgnoreCase(str2)) {
                 getActivity().setRequestedOrientation(0);
@@ -1225,41 +1225,41 @@ public class WeexPageFragment extends Fragment {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("983359fc", new Object[]{wXSDKInstance, str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && str.contains("|")) {
-            return TextUtils.equals("1", str.substring(0, str.indexOf("|")));
+        if (!StringUtils.isEmpty(str) && str.contains("|")) {
+            return StringUtils.equals("1", str.substring(0, str.indexOf("|")));
         }
-        if (TextUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_INSTANCE_CREATE_FAILED.getErrorCode()) && !TextUtils.isEmpty(str2) && str2.contains("createInstance fail")) {
+        if (StringUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_INSTANCE_CREATE_FAILED.getErrorCode()) && !StringUtils.isEmpty(str2) && str2.contains("createInstance fail")) {
             String N = wXSDKInstance.N();
             WXErrorCode wXErrorCode = WXErrorCode.WX_DEGRAD_ERR_INSTANCE_CREATE_FAILED;
             WXExceptionUtils.commitCriticalExceptionRT(N, wXErrorCode, "shouldDegrade", WXErrorCode.WX_DEGRAD_ERR_INSTANCE_CREATE_FAILED.getErrorMsg() + " -- " + str2, null);
             return true;
-        } else if (TextUtils.equals(str, WXErrorCode.WX_DEGRAD_EAGLE_RENDER_ERROR.getErrorCode()) && !TextUtils.isEmpty(str2) && str2.contains("eagleRenderErr")) {
+        } else if (StringUtils.equals(str, WXErrorCode.WX_DEGRAD_EAGLE_RENDER_ERROR.getErrorCode()) && !StringUtils.isEmpty(str2) && str2.contains("eagleRenderErr")) {
             String N2 = wXSDKInstance.N();
             WXErrorCode wXErrorCode2 = WXErrorCode.WX_DEGRAD_EAGLE_RENDER_ERROR;
             WXExceptionUtils.commitCriticalExceptionRT(N2, wXErrorCode2, "shouldDegrade", WXErrorCode.WX_DEGRAD_EAGLE_RENDER_ERROR.getErrorMsg() + " -- " + str2, null);
             return true;
-        } else if (TextUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_BUNDLE_CONTENTTYPE_ERROR.getErrorCode()) && !TextUtils.isEmpty(str2) && str2.contains("degradeToH5")) {
+        } else if (StringUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_BUNDLE_CONTENTTYPE_ERROR.getErrorCode()) && !StringUtils.isEmpty(str2) && str2.contains("degradeToH5")) {
             String N3 = wXSDKInstance.N();
             WXErrorCode wXErrorCode3 = WXErrorCode.WX_DEGRAD_ERR_BUNDLE_CONTENTTYPE_ERROR;
             WXExceptionUtils.commitCriticalExceptionRT(N3, wXErrorCode3, "shouldDegrade", WXErrorCode.WX_DEGRAD_ERR_BUNDLE_CONTENTTYPE_ERROR.getErrorMsg() + " -- " + str2, null);
             return true;
-        } else if (TextUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_CHECK_CONTENT_LENGTH_FAILED.getErrorCode()) && !TextUtils.isEmpty(str2) && str2.contains("degradeToH5")) {
+        } else if (StringUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_CHECK_CONTENT_LENGTH_FAILED.getErrorCode()) && !StringUtils.isEmpty(str2) && str2.contains("degradeToH5")) {
             String N4 = wXSDKInstance.N();
             WXErrorCode wXErrorCode4 = WXErrorCode.WX_DEGRAD_ERR_NETWORK_CHECK_CONTENT_LENGTH_FAILED;
             WXExceptionUtils.commitCriticalExceptionRT(N4, wXErrorCode4, "shouldDegrade", WXErrorCode.WX_DEGRAD_ERR_NETWORK_CHECK_CONTENT_LENGTH_FAILED.getErrorMsg() + "-- " + str2, null);
             return true;
-        } else if (TextUtils.equals(str, WXErrorCode.WX_ERR_JSC_CRASH.getErrorCode()) && !TextUtils.isEmpty(str2) && str2.contains("degradeToH5")) {
+        } else if (StringUtils.equals(str, WXErrorCode.WX_ERR_JSC_CRASH.getErrorCode()) && !StringUtils.isEmpty(str2) && str2.contains("degradeToH5")) {
             String N5 = wXSDKInstance.N();
             WXErrorCode wXErrorCode5 = WXErrorCode.WX_ERR_JSC_CRASH;
             WXExceptionUtils.commitCriticalExceptionRT(N5, wXErrorCode5, "shouldDegrade", WXErrorCode.WX_ERR_JSC_CRASH.getErrorMsg() + "-- " + str2, null);
             return true;
-        } else if (TextUtils.equals(str, WXErrorCode.WX_DEGRAD_WAIT_INIT_TIMEOUT.getErrorCode())) {
+        } else if (StringUtils.equals(str, WXErrorCode.WX_DEGRAD_WAIT_INIT_TIMEOUT.getErrorCode())) {
             String N6 = wXSDKInstance.N();
             WXErrorCode wXErrorCode6 = WXErrorCode.WX_DEGRAD_WAIT_INIT_TIMEOUT;
             WXExceptionUtils.commitCriticalExceptionRT(N6, wXErrorCode6, "shouldDegrade", WXErrorCode.WX_DEGRAD_WAIT_INIT_TIMEOUT.getErrorMsg() + "-- " + str2, null);
             return true;
-        } else if (!TextUtils.equals(str, WXErrorCode.WX_FORCEQJS_DEGRADE.getErrorCode())) {
-            return TextUtils.equals(str, WXErrorCode.WX_ERR_LOAD_SO.getErrorCode());
+        } else if (!StringUtils.equals(str, WXErrorCode.WX_FORCEQJS_DEGRADE.getErrorCode())) {
+            return StringUtils.equals(str, WXErrorCode.WX_ERR_LOAD_SO.getErrorCode());
         } else {
             String N7 = wXSDKInstance.N();
             WXErrorCode wXErrorCode7 = WXErrorCode.WX_FORCEQJS_DEGRADE;

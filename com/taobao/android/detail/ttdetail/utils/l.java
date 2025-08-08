@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
 import java.util.HashMap;
@@ -43,7 +43,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.startsWith(com.taobao.search.common.util.k.HTTP_PREFIX) || str.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX)) {
@@ -60,7 +60,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -104,7 +104,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d8033c25", new Object[]{intent});
-        } else if (intent == null || (component = intent.getComponent()) == null || TextUtils.equals("com.taobao.android.detail.alittdetail.TTDetailActivity", component.getClassName())) {
+        } else if (intent == null || (component = intent.getComponent()) == null || StringUtils.equals("com.taobao.android.detail.alittdetail.TTDetailActivity", component.getClassName())) {
         } else {
             intent.setComponent(new ComponentName(component.getPackageName(), "com.taobao.android.detail.alittdetail.TTDetailActivity"));
         }
@@ -121,14 +121,14 @@ public class l {
         ComponentName component = intent.getComponent();
         Uri data = intent.getData();
         if (component != null && data != null) {
-            return TextUtils.equals("com.taobao.android.detail.alittdetail.TTDetailActivity", component.getClassName()) && TextUtils.equals(TT_DETAIL_TMP_HOST, data.getAuthority());
+            return StringUtils.equals("com.taobao.android.detail.alittdetail.TTDetailActivity", component.getClassName()) && StringUtils.equals(TT_DETAIL_TMP_HOST, data.getAuthority());
         } else if (component != null) {
-            return TextUtils.equals("com.taobao.android.detail.alittdetail.TTDetailActivity", component.getClassName());
+            return StringUtils.equals("com.taobao.android.detail.alittdetail.TTDetailActivity", component.getClassName());
         } else {
             if (data == null) {
                 return false;
             }
-            return TextUtils.equals(TT_DETAIL_TMP_HOST, data.getAuthority());
+            return StringUtils.equals(TT_DETAIL_TMP_HOST, data.getAuthority());
         }
     }
 
@@ -161,7 +161,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3a002a9f", new Object[]{str, map, new Boolean(z)});
         }
-        if (!TextUtils.isEmpty(str) && map != null && !map.isEmpty()) {
+        if (!StringUtils.isEmpty(str) && map != null && !map.isEmpty()) {
             try {
                 HashMap hashMap = new HashMap();
                 Uri parse = Uri.parse(str);

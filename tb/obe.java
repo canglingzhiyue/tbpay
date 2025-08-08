@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,7 +24,7 @@ public class obe {
         try {
             String a2 = obc.a(context);
             String str2 = "isValidCache value= " + a2 + "  text=" + str;
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 if (a2.equals(str)) {
                     return true;
                 }

@@ -3,7 +3,7 @@ package com.taobao.bootimage.interact.pop;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -310,17 +310,17 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
                     z = false;
                 }
                 this.canInteract = z;
-                if (TextUtils.isEmpty(this.imageUrl) || !this.canInteract) {
+                if (StringUtils.isEmpty(this.imageUrl) || !this.canInteract) {
                     this.canInteract = false;
                     this.imageUrl = com.taobao.tbpoplayer.util.c.a(parseObject, "item.render.smartContent.icon");
-                    if (TextUtils.isEmpty(this.imageUrl)) {
+                    if (StringUtils.isEmpty(this.imageUrl)) {
                         this.imageUrl = com.taobao.tbpoplayer.util.c.a(parseObject, "item.render.smartContent.imgUrl");
                     }
                 }
                 this.adSwitch = com.taobao.tbpoplayer.util.c.a(parseObject, "item.render.smartContent.adSwitch");
                 try {
                     kej.a(TAG, "BootImagePopMamaCommercialView.parseData.success");
-                    if (!TextUtils.isEmpty(this.imageUrl) && this.width != null && this.height != null && this.right != null && this.tabBarBottom != null) {
+                    if (!StringUtils.isEmpty(this.imageUrl) && this.width != null && this.height != null && this.right != null && this.tabBarBottom != null) {
                         if (this.mHandler == null) {
                             return;
                         }
@@ -403,7 +403,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
         this.mImageView.setContentDescription("广告浮层图片");
         imageView.setContentDescription("浮层关闭按钮");
         imageView2.setContentDescription("广告浮层标签");
-        imageView2.setVisibility(TextUtils.equals("1", this.adSwitch) ? 8 : 0);
+        imageView2.setVisibility(StringUtils.equals("1", this.adSwitch) ? 8 : 0);
         loadImg(this.imageUrl, false);
         this.mImageView.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.bootimage.interact.pop.BootImagePopMamaCommercialView.3
             public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -416,7 +416,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
                     return;
                 }
                 try {
-                    if (!TextUtils.isEmpty(BootImagePopMamaCommercialView.access$200(BootImagePopMamaCommercialView.this))) {
+                    if (!StringUtils.isEmpty(BootImagePopMamaCommercialView.access$200(BootImagePopMamaCommercialView.this))) {
                         AlimamaAdvertising.instance().buildTanxClickTracking(PopLayer.getReference().getApp(), BootImagePopMamaCommercialView.access$200(BootImagePopMamaCommercialView.this)).a("tb_splash").b(BootImagePopMamaCommercialView.access$400(BootImagePopMamaCommercialView.this)).a(BootImagePopMamaCommercialView.access$300(BootImagePopMamaCommercialView.this)).a();
                     }
                 } catch (Throwable th2) {
@@ -444,7 +444,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
                 }
                 BootImagePopMamaCommercialView.this.close(OnePopModule.OnePopLoseReasonCode.OnViewJSClose, "clickCloseBtn", "", "");
                 try {
-                    if (!TextUtils.isEmpty(BootImagePopMamaCommercialView.access$800(BootImagePopMamaCommercialView.this))) {
+                    if (!StringUtils.isEmpty(BootImagePopMamaCommercialView.access$800(BootImagePopMamaCommercialView.this))) {
                         AlimamaAdvertising.instance().buildTanxEventTracking(PopLayer.getReference().getApp(), BootImagePopMamaCommercialView.access$800(BootImagePopMamaCommercialView.this)).a("tb_splash").b(BootImagePopMamaCommercialView.access$400(BootImagePopMamaCommercialView.this)).a(BootImagePopMamaCommercialView.access$300(BootImagePopMamaCommercialView.this)).a();
                     }
                 } catch (Throwable th2) {
@@ -529,7 +529,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
                             return;
                         }
                         BootImagePopMamaCommercialView.this.displayMe();
-                        if (!TextUtils.isEmpty(BootImagePopMamaCommercialView.access$1100(BootImagePopMamaCommercialView.this))) {
+                        if (!StringUtils.isEmpty(BootImagePopMamaCommercialView.access$1100(BootImagePopMamaCommercialView.this))) {
                             AlimamaAdvertising.instance().buildTanxImpTracking(PopLayer.getReference().getApp(), BootImagePopMamaCommercialView.access$1100(BootImagePopMamaCommercialView.this)).a("tb_splash").b(BootImagePopMamaCommercialView.access$400(BootImagePopMamaCommercialView.this)).a(BootImagePopMamaCommercialView.access$300(BootImagePopMamaCommercialView.this)).a();
                         }
                         BootImagePopMamaCommercialView.this.trackUT(BootImagePopMamaCommercialView.access$1200(BootImagePopMamaCommercialView.this));
@@ -572,7 +572,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
             JSONObject jSONObject2 = jSONObject.getJSONObject("args");
             HashMap hashMap = new HashMap();
             for (String str : jSONObject2.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put(str, jSONObject2.getString(str));
                 }
             }
@@ -623,7 +623,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
             JSONObject b = com.taobao.tbpoplayer.util.c.b(jSONObject, "item.render.smartContent.content");
             if (b != null && !b.isEmpty()) {
                 this.actionResponse = com.taobao.tbpoplayer.util.c.a(jSONObject, "item.render.smartContent.content.actionResponse");
-                if (!TextUtils.isEmpty(this.actionResponse) && !this.actionResponse.equals("0")) {
+                if (!StringUtils.isEmpty(this.actionResponse) && !this.actionResponse.equals("0")) {
                     if (this.mBootImageInfo == null) {
                         this.mBootImageInfo = new BootImageInfo();
                     }
@@ -666,7 +666,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
             if (!this.canInteract) {
                 kej.a(TAG, "BootImagePopMamaCommercialView.changeImg.failed canInteract = false");
                 return false;
-            } else if (TextUtils.isEmpty(this.icon)) {
+            } else if (StringUtils.isEmpty(this.icon)) {
                 kej.a(TAG, "BootImagePopMamaCommercialView.changeImg.failed icon2 = null");
                 return false;
             } else {
@@ -686,7 +686,7 @@ public class BootImagePopMamaCommercialView extends PopCustomNativeBaseView {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 kej.a(TAG, "BootImagePopMamaCommercialView.loadImg.failed url = null");
             } else {
                 com.taobao.phenix.intf.b.h().a(str).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.bootimage.interact.pop.BootImagePopMamaCommercialView.8

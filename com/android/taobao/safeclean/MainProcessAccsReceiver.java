@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -25,7 +25,7 @@ public class MainProcessAccsReceiver extends BroadcastReceiver {
         }
         String stringExtra = intent.getStringExtra("command");
         a aVar = new a((Application) context.getApplicationContext(), false);
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return;
         }
         if (stringExtra.contains("additionDataList")) {

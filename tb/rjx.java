@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alipay.mobile.common.logging.util.perf.Constants;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class rjx {
         } else {
             MessageData b2 = rjw.b(rkk.a(context));
             boolean b3 = rjw.b(context, b2);
-            if (TextUtils.isEmpty(b2.activity_id)) {
+            if (StringUtils.isEmpty(b2.activity_id)) {
                 b2.activity_id = rju.a().a(context);
             }
             if (b3) {
@@ -74,7 +74,7 @@ public class rjx {
             return (String) ipChange.ipc$dispatch("fc35a1ac", new Object[]{context, str, str2});
         }
         rjv a2 = rjw.a(context, rkk.a(context), rjw.a(context), str2);
-        return (a2 == null || TextUtils.isEmpty(a2.f33193a)) ? str : a2.f33193a;
+        return (a2 == null || StringUtils.isEmpty(a2.f33193a)) ? str : a2.f33193a;
     }
 
     private static void a(final Context context, final String str) {

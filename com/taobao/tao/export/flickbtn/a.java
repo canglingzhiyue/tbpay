@@ -2,7 +2,7 @@ package com.taobao.tao.export.flickbtn;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -139,7 +139,7 @@ public class a extends DXWidgetNode {
         FlickingShareButton flickingShareButton = new FlickingShareButton(context);
         flickingShareButton.setIconSize(this.e, this.d);
         flickingShareButton.setIconColor(this.c);
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             flickingShareButton.setIconFont(this.h);
         }
         if (this.b == 0) {

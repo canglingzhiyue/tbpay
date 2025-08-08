@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -42,7 +42,7 @@ public interface lnv {
 
         public boolean a() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(this.f30757a) && !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d) && this.e > 0;
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(this.f30757a) && !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d) && this.e > 0;
         }
 
         public String toString() {

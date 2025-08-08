@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson2.time.e;
 import com.alipay.mobile.common.logging.util.LoggingUtil;
 import com.alipay.mobile.framework.MpaasClassInfo;
@@ -27,7 +27,7 @@ public class SimplingUtils {
         if (i == 0) {
             return false;
         }
-        if (TextUtils.isEmpty(str) || str.length() < 2) {
+        if (StringUtils.isEmpty(str) || str.length() < 2) {
             i2 = 999;
         } else {
             try {

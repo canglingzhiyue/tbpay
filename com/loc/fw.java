@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
 import com.amap.api.location.AMapLocation;
@@ -280,10 +280,10 @@ public final class fw {
                     return;
                 }
                 JSONObject jSONObject = new JSONObject();
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     jSONObject.put("param_string_first", str2);
                 }
-                if (!TextUtils.isEmpty(null)) {
+                if (!StringUtils.isEmpty(null)) {
                     jSONObject.put("param_string_second", (Object) null);
                 }
                 if (i2 != Integer.MAX_VALUE) {
@@ -303,10 +303,10 @@ public final class fw {
                     return;
                 }
                 JSONObject jSONObject = new JSONObject();
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     jSONObject.put("param_string_first", str2);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     jSONObject.put("param_string_second", str3);
                 }
                 if (i2 != Integer.MAX_VALUE) {
@@ -316,22 +316,22 @@ public final class fw {
                     jSONObject.put("param_int_second", i3);
                 }
                 if (eqVar != null) {
-                    if (!TextUtils.isEmpty(eqVar.d())) {
+                    if (!StringUtils.isEmpty(eqVar.d())) {
                         jSONObject.put("dns", eqVar.d());
                     }
-                    if (!TextUtils.isEmpty(eqVar.e())) {
+                    if (!StringUtils.isEmpty(eqVar.e())) {
                         jSONObject.put("domain", eqVar.e());
                     }
-                    if (!TextUtils.isEmpty(eqVar.f())) {
+                    if (!StringUtils.isEmpty(eqVar.f())) {
                         jSONObject.put("type", eqVar.f());
                     }
-                    if (!TextUtils.isEmpty(eqVar.g())) {
+                    if (!StringUtils.isEmpty(eqVar.g())) {
                         jSONObject.put("reason", eqVar.g());
                     }
-                    if (!TextUtils.isEmpty(eqVar.c())) {
+                    if (!StringUtils.isEmpty(eqVar.c())) {
                         jSONObject.put(com.network.diagnosis.c.IP, eqVar.c());
                     }
-                    if (!TextUtils.isEmpty(eqVar.b())) {
+                    if (!StringUtils.isEmpty(eqVar.b())) {
                         jSONObject.put(com.taobao.android.weex_framework.util.a.ATOM_stack, eqVar.b());
                     }
                     if (eqVar.h() > 0) {

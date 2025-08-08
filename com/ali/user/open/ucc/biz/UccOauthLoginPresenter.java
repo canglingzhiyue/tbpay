@@ -2,7 +2,7 @@ package com.ali.user.open.ucc.biz;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.model.RpcRequestCallbackWithCode;
 import com.ali.user.open.core.model.RpcResponse;
 import com.ali.user.open.core.util.ParamsConstants;
@@ -61,7 +61,7 @@ public class UccOauthLoginPresenter {
                     } else if (rpcResponse == null) {
                     } else {
                         rpcResultHit(rpcResponse.code + "", rpcResponse.actionType, "");
-                        if (rpcResponse.code == 3000 || TextUtils.equals("SUCCESS", rpcResponse.actionType)) {
+                        if (rpcResponse.code == 3000 || StringUtils.equals("SUCCESS", rpcResponse.actionType)) {
                             UccBizContants.mBusyControlMap.put(uccParams.bindSite, Long.valueOf(System.currentTimeMillis()));
                             String str = (String) rpcResponse.returnValue;
                             UccServiceProviderFactory.getInstance().getUccServiceProvider(uccParams.bindSite).refreshWhenLogin(uccParams.bindSite, str, UccOauthLoginPresenter.isCookieOnly(map));
@@ -113,7 +113,7 @@ public class UccOauthLoginPresenter {
                     }
                     int buidErrorCode = Utils.buidErrorCode(rpcResponse, 1005);
                     String str3 = "";
-                    if (TextUtils.equals("NEED_BIND", rpcResponse.actionType)) {
+                    if (StringUtils.equals("NEED_BIND", rpcResponse.actionType)) {
                         rpcResultHit(buidErrorCode + str3, rpcResponse.actionType, str3);
                         JSONObject parseObject = JSON.parseObject((String) rpcResponse.returnValue);
                         if (parseObject != null) {
@@ -126,14 +126,14 @@ public class UccOauthLoginPresenter {
                         if (map2 == null) {
                             map2 = new HashMap();
                         }
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             map2.put(UccConstants.PARAM_BIND_URL, str3);
                         }
                         map2.put("needSession", "1");
                         map2.put("needToast", "0");
                         map2.put(ParamsConstants.Key.PARAM_H5_TYPE, str2);
                         UccH5Presenter.showH5BindPage(activity, uccParams, map2, false, uccCallback);
-                    } else if (TextUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
+                    } else if (StringUtils.equals("H5", rpcResponse.actionType) && rpcResponse.returnValue != 0) {
                         JSONObject parseObject2 = JSON.parseObject((String) rpcResponse.returnValue);
                         if (parseObject2 != null) {
                             JSONObject parseObject3 = JSON.parseObject(parseObject2.getString("authorizationResponse"));

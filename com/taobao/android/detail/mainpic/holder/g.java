@@ -1,7 +1,7 @@
 package com.taobao.android.detail.mainpic.holder;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -97,7 +97,7 @@ public class g extends com.alibaba.android.ultron.vfw.viewholder.b {
         }
         try {
             String string = fields.getString(com.taobao.tao.infoflow.multitab.e.KEY_BG_COLOR);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             this.j.setBackgroundColor(Color.parseColor(string));

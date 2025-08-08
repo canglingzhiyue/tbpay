@@ -1,7 +1,7 @@
 package com.huawei.hms.opendevice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.log.HMSLog;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -80,7 +80,7 @@ public abstract class g {
         String str4 = null;
         r2 = 0;
         r2 = 0;
-        if (str2 == 0 || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (str2 == 0 || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         int i = -1;
@@ -348,7 +348,7 @@ public abstract class g {
                 if (map != null && map.size() > 0) {
                     for (Map.Entry<String, String> entry : map.entrySet()) {
                         String key = entry.getKey();
-                        if (!TextUtils.isEmpty(key)) {
+                        if (!StringUtils.isEmpty(key)) {
                             httpsURLConnection.setRequestProperty(key, URLEncoder.encode(entry.getValue() == null ? "" : entry.getValue(), "UTF-8"));
                         }
                     }

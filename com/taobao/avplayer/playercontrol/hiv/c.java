@@ -3,7 +3,7 @@ package com.taobao.avplayer.playercontrol.hiv;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ImageSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -147,7 +147,7 @@ public class c extends RecyclerView.Adapter<a> {
         }
         final ContentDetailData.RelatedItem relatedItem = this.d.get(i);
         if (this.b.mDWImageAdapter != null) {
-            if (!TextUtils.isEmpty(relatedItem.picUrl)) {
+            if (!StringUtils.isEmpty(relatedItem.picUrl)) {
                 this.b.mDWImageAdapter.a(relatedItem.picUrl, aVar.f16582a);
                 aVar.f16582a.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.avplayer.playercontrol.hiv.c.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -165,12 +165,12 @@ public class c extends RecyclerView.Adapter<a> {
                     }
                 });
             }
-            if (relatedItem.promotionPic != null && !TextUtils.isEmpty(relatedItem.promotionPic.pic)) {
+            if (relatedItem.promotionPic != null && !StringUtils.isEmpty(relatedItem.promotionPic.pic)) {
                 this.b.mDWImageAdapter.a(relatedItem.promotionPic.pic, aVar.e);
             }
         }
-        if (TextUtils.isEmpty(relatedItem.promotionPrice)) {
-            if (!TextUtils.isEmpty(relatedItem.price)) {
+        if (StringUtils.isEmpty(relatedItem.promotionPrice)) {
+            if (!StringUtils.isEmpty(relatedItem.price)) {
                 TextView textView = aVar.c;
                 textView.setText("￥" + relatedItem.price);
             }
@@ -178,17 +178,17 @@ public class c extends RecyclerView.Adapter<a> {
             TextView textView2 = aVar.c;
             textView2.setText("￥" + relatedItem.promotionPrice);
         }
-        if (!TextUtils.isEmpty(relatedItem.title)) {
+        if (!StringUtils.isEmpty(relatedItem.title)) {
             aVar.b.setMaxWidth(kcl.a(this.b.getActivity(), 218.0f));
             aVar.b.setText(relatedItem.title);
         }
         if (relatedItem.promotionInfo != null) {
-            if (!TextUtils.isEmpty(relatedItem.promotionInfo.promotionTitle)) {
+            if (!StringUtils.isEmpty(relatedItem.promotionInfo.promotionTitle)) {
                 aVar.f.setText(relatedItem.promotionInfo.promotionTitle);
             }
             if (aVar != null) {
                 final TextView textView3 = aVar.b;
-                if (relatedItem.promotionInfo != null && !TextUtils.isEmpty(relatedItem.promotionInfo.pic)) {
+                if (relatedItem.promotionInfo != null && !StringUtils.isEmpty(relatedItem.promotionInfo.pic)) {
                     View view = new View(this.b.getActivity());
                     if (relatedItem.promotionInfo.picHeight == 0) {
                         relatedItem.promotionInfo.picHeight = 26;
@@ -219,7 +219,7 @@ public class c extends RecyclerView.Adapter<a> {
                 }
             }
         }
-        if (!TextUtils.isEmpty(relatedItem.title) && aVar != null && aVar.b != null) {
+        if (!StringUtils.isEmpty(relatedItem.title) && aVar != null && aVar.b != null) {
             aVar.b.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.avplayer.playercontrol.hiv.c.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

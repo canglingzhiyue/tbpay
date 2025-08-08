@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -227,7 +227,7 @@ public class lwk implements gke {
 
     private boolean a(String str, lwz lwzVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("339029f7", new Object[]{this, str, lwzVar})).booleanValue() : TextUtils.equals(str, lwzVar.g());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("339029f7", new Object[]{this, str, lwzVar})).booleanValue() : StringUtils.equals(str, lwzVar.g());
     }
 
     /* JADX WARN: Type inference failed for: r5v1, types: [com.taobao.informationflowdataservice.dataservice.core.datasource.model.response.AwesomeGetContainerInnerData] */
@@ -333,7 +333,7 @@ public class lwk implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("de5cc834", new Object[]{this, str, list, gkcVar});
-        } else if (list == null || list.isEmpty() || str == null || TextUtils.isEmpty(str) || (a2 = this.b.a(str)) == null) {
+        } else if (list == null || list.isEmpty() || str == null || StringUtils.isEmpty(str) || (a2 = this.b.a(str)) == null) {
         } else {
             a2.a(list, new lwh() { // from class: tb.lwk.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;

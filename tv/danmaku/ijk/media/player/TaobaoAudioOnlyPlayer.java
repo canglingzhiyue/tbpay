@@ -579,7 +579,7 @@ public final class TaobaoAudioOnlyPlayer extends MonitorMediaPlayer implements a
             java.lang.String r0 = r0.toString()
             java.lang.String r1 = "AVSDK"
             com.taobao.taobaoavsdk.AVSDKLog.e(r1, r0)
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 == 0) goto L28
             java.lang.String r7 = ""
             return r7
@@ -628,7 +628,7 @@ public final class TaobaoAudioOnlyPlayer extends MonitorMediaPlayer implements a
             r4.append(r3)
             java.lang.String r4 = r4.toString()
             com.taobao.taobaoavsdk.AVSDKLog.e(r1, r4)
-            boolean r4 = android.text.TextUtils.isEmpty(r3)
+            boolean r4 = android.text.StringUtils.isEmpty(r3)
             if (r4 == 0) goto Lcf
             com.taobao.taobaoavsdk.cache.library.i r0 = tb.oyw.a(r0)
             java.lang.String r3 = r0.c(r8)

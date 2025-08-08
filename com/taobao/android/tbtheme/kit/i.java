@@ -1,6 +1,6 @@
 package com.taobao.android.tbtheme.kit;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.phenix.intf.event.SuccPhenixEvent;
@@ -39,7 +39,7 @@ public class i {
             return (ThemeData) ipChange.ipc$dispatch("325e6660", new Object[]{this, str});
         }
         ThemeData b = b();
-        if (!TextUtils.isEmpty(str) && this.f15439a.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && this.f15439a.containsKey(str)) {
             if (b == null) {
                 b = new ThemeData();
             }
@@ -54,7 +54,7 @@ public class i {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
         String str3 = null;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         ThemeData a2 = a(str);
@@ -102,7 +102,7 @@ public class i {
                 a(themeData, "1");
             }
         }
-        if (themeData != null && (!TextUtils.isEmpty(themeData.skinPic) || !TextUtils.isEmpty(themeData.skinColor))) {
+        if (themeData != null && (!StringUtils.isEmpty(themeData.skinPic) || !StringUtils.isEmpty(themeData.skinColor))) {
             return themeData;
         }
         ThemeData e = e();
@@ -141,7 +141,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c9b1c9ae", new Object[]{this, str, themeData});
-        } else if (TextUtils.isEmpty(str) || themeData == null) {
+        } else if (StringUtils.isEmpty(str) || themeData == null) {
         } else {
             this.f15439a.put(str, themeData);
         }
@@ -151,7 +151,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f15439a.remove(str);
         }
@@ -276,7 +276,7 @@ public class i {
             if (this.c == null) {
                 this.c = new ThemeData();
             }
-            if (TextUtils.isEmpty(this.c.skinColor) && TextUtils.isEmpty(this.c.skinPic)) {
+            if (StringUtils.isEmpty(this.c.skinColor) && StringUtils.isEmpty(this.c.skinPic)) {
                 ThemeData themeData = this.c;
                 themeData.actionbarTextColor = "#111111";
                 themeData.actionBarBackgroundColor = "#ffffff";

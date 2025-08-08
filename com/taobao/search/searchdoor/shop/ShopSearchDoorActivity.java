@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -281,7 +281,7 @@ public class ShopSearchDoorActivity extends SearchBaseActivity implements ium {
             return;
         }
         String stringExtra = intent.getStringExtra("q");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return;
         }
         this.f19406a.postEvent(nrk.a.a(stringExtra, ""));

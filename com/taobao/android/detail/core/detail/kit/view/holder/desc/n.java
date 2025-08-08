@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -196,7 +196,7 @@ public class n extends b<com.taobao.android.detail.core.model.viewmodel.desc.k> 
         while (it.hasNext()) {
             g(it.next());
         }
-        if (!TextUtils.isEmpty(kVar.f9759a)) {
+        if (!StringUtils.isEmpty(kVar.f9759a)) {
             TextView textView = new TextView(this.g);
             textView.setText(kVar.f9759a);
             textView.setGravity(17);

@@ -3,7 +3,7 @@ package com.taobao.themis.kernel;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.kernel.adapter.IInstanceLifecycleAdapter;
@@ -175,7 +175,7 @@ public class f extends j implements com.taobao.themis.kernel.d {
             return (String) ipChange.ipc$dispatch("abe3bf05", new Object[]{this});
         }
         String utdid = ((IUserTrackerAdapter) qpt.a(IUserTrackerAdapter.class)).getUtdid(this.h);
-        if (TextUtils.isEmpty(utdid)) {
+        if (StringUtils.isEmpty(utdid)) {
             utdid = String.valueOf(Math.random() * 100000.0d);
         }
         return com.taobao.themis.utils.f.d(utdid + this.j + System.currentTimeMillis());

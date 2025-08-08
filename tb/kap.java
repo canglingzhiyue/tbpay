@@ -3,7 +3,7 @@ package tb;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
 import java.io.File;
@@ -61,7 +61,7 @@ public class kap {
             return bool.booleanValue();
         }
         String c2 = c();
-        if (!TextUtils.isEmpty(c2) && c2.split("\\.").length <= 3) {
+        if (!StringUtils.isEmpty(c2) && c2.split("\\.").length <= 3) {
             z = true;
         }
         Boolean valueOf = Boolean.valueOf(z);
@@ -74,7 +74,7 @@ public class kap {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[0]);
         }
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             try {
                 Context a2 = kaq.a();
                 c = a2.getPackageManager().getPackageInfo(a2.getPackageName(), 0).versionName;
@@ -193,7 +193,7 @@ public class kap {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("31400281", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             return e;
         }
         List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) context.getSystemService("activity")).getRunningAppProcesses();
@@ -212,7 +212,7 @@ public class kap {
                 BufferedReader bufferedReader2 = new BufferedReader(new FileReader("/proc/" + Process.myPid() + "/cmdline"));
                 try {
                     String readLine = bufferedReader2.readLine();
-                    if (!TextUtils.isEmpty(readLine)) {
+                    if (!StringUtils.isEmpty(readLine)) {
                         readLine = readLine.trim();
                     }
                     e = readLine;

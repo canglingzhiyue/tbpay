@@ -2,7 +2,7 @@ package com.etao.feimagesearch.util;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.common.ShopConstants;
@@ -28,7 +28,7 @@ public class l {
                 return (String) ipChange.ipc$dispatch("674524b", new Object[]{context, bitmap, new Integer(i)});
             }
             String a2 = a(context, bitmap, Bitmap.CompressFormat.JPEG, i, "imagesearch_tmp" + System.currentTimeMillis() + ".jpg");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.etao.feimagesearch.g.a().a(a2);
             }
             return a2;
@@ -41,7 +41,7 @@ public class l {
             return ((Boolean) ipChange.ipc$dispatch("8a979fe3", new Object[]{file})).booleanValue();
         }
         String name = file.getName();
-        if (TextUtils.isEmpty(name) || !name.startsWith("imagesearch_tmp")) {
+        if (StringUtils.isEmpty(name) || !name.startsWith("imagesearch_tmp")) {
             return false;
         }
         return i.a(file.getAbsolutePath());

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -59,7 +59,7 @@ public final class nvt implements ash {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig("cash4android", "nextRpcOpen", "true");
-            if (!TextUtils.isEmpty(config) && "false".equals(config)) {
+            if (!StringUtils.isEmpty(config) && "false".equals(config)) {
                 return false;
             }
             long currentTimeMillis = System.currentTimeMillis();
@@ -67,7 +67,7 @@ public final class nvt implements ash {
                 JSONObject a2 = aVar.a();
                 if (a2 != null && a2.containsKey("data") && (jSONObject = a2.getJSONObject("data")) != null && jSONObject.containsKey("overseaPaymentMethod") && (jSONObject2 = jSONObject.getJSONObject("overseaPaymentMethod")) != null && jSONObject2.containsKey(str5) && (jSONObject3 = jSONObject2.getJSONObject(str5)) != null && jSONObject3.containsKey(str4)) {
                     String string = jSONObject3.getString(str4);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         try {
                             long parseLong = Long.parseLong(string);
                             z = currentTimeMillis - nsr.b <= parseLong;

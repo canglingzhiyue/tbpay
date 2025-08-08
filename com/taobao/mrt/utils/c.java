@@ -1,6 +1,6 @@
 package com.taobao.mrt.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -238,7 +238,7 @@ public class c {
         create.setValue("deploy_id", str5);
         create.setValue("extend_arg1", str5);
         create.setValue("error_code", i + str5);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str5 = str3;
         }
         create.setValue("cid", str5);

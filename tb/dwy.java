@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.fastjson.JSONObject;
@@ -96,10 +96,10 @@ public class dwy {
                     if (cVar2 == null) {
                         return;
                     }
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         str2 = "unknown";
                     }
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = "unknown";
                     }
                     cVar2.a(str2, str3);
@@ -143,10 +143,10 @@ public class dwy {
                         ipChange2.ipc$dispatch("684c28e9", new Object[]{this, str2, str3, new Boolean(z), map});
                     } else if (a.this == null) {
                     } else {
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = "unknown";
                         }
-                        if (TextUtils.isEmpty(str3) || !z) {
+                        if (StringUtils.isEmpty(str3) || !z) {
                             str3 = dwy.a();
                         }
                         a.this.a(str2, str3);
@@ -191,10 +191,10 @@ public class dwy {
                         ipChange2.ipc$dispatch("684c28e9", new Object[]{this, str2, str3, new Boolean(z), map});
                     } else if (b.this == null) {
                     } else {
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = "unknown";
                         }
-                        if (TextUtils.isEmpty(str3) || !z) {
+                        if (StringUtils.isEmpty(str3) || !z) {
                             str3 = dwy.a();
                         }
                         b.this.a(str2, str3);
@@ -294,10 +294,10 @@ public class dwy {
                         aVar2.a(str2, dwy.a());
                         return;
                     }
-                    if (!TextUtils.isEmpty(errorResult.a())) {
+                    if (!StringUtils.isEmpty(errorResult.a())) {
                         str2 = errorResult.a();
                     }
-                    a.this.a(str2, TextUtils.isEmpty(errorResult.b()) ? dwy.a() : errorResult.b());
+                    a.this.a(str2, StringUtils.isEmpty(errorResult.b()) ? dwy.a() : errorResult.b());
                 }
             });
         }
@@ -341,10 +341,10 @@ public class dwy {
                         bVar2.a(str2, dwy.a());
                         return;
                     }
-                    if (!TextUtils.isEmpty(errorResult.a())) {
+                    if (!StringUtils.isEmpty(errorResult.a())) {
                         str2 = errorResult.a();
                     }
-                    b.this.a(str2, TextUtils.isEmpty(errorResult.b()) ? dwy.a() : errorResult.b());
+                    b.this.a(str2, StringUtils.isEmpty(errorResult.b()) ? dwy.a() : errorResult.b());
                 }
             });
         }
@@ -388,10 +388,10 @@ public class dwy {
                         cVar2.a(str2, dwy.a());
                         return;
                     }
-                    if (!TextUtils.isEmpty(errorResult.a())) {
+                    if (!StringUtils.isEmpty(errorResult.a())) {
                         str2 = errorResult.a();
                     }
-                    c.this.a(str2, TextUtils.isEmpty(errorResult.b()) ? dwy.a() : errorResult.b());
+                    c.this.a(str2, StringUtils.isEmpty(errorResult.b()) ? dwy.a() : errorResult.b());
                 }
             });
         }

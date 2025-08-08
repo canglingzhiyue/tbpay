@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -97,7 +97,7 @@ public class hfn implements krc {
         this.h = this.e.getLongValue("showDelay");
         this.i = this.e.getString("templateName");
         his.b("GoodsBtnGuide", "init | type=" + this.f + "  mShowTime=" + this.g + " mShowDelay=" + this.h + " mTemplateName=" + this.i + " data=" + this.e.getJSONObject("data"));
-        if (TextUtils.isEmpty(this.f) || TextUtils.isEmpty(this.i) || this.g <= 0 || this.h < 0) {
+        if (StringUtils.isEmpty(this.f) || StringUtils.isEmpty(this.i) || this.g <= 0 || this.h < 0) {
             return;
         }
         this.j = true;

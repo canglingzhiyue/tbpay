@@ -1,6 +1,6 @@
 package mtopsdk.mtop.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.statist.StatisticData;
 import com.alipay.android.msp.framework.statisticsv2.model.StEvent;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -602,7 +602,7 @@ public class MtopStatistics implements Cloneable {
                 hashMap.put(MtopModule.KEY_MTOP_BIZ_TOPIC, this.bizTopic);
                 hashMap.put(MtopModule.KEY_PAGE_INDEX, String.valueOf(this.pageIndex));
                 hashMap.put("isJsTimeoutEnable", String.valueOf(this.isJsTimeoutEnable ? 1 : 0));
-                hashMap.put("bizId", !TextUtils.isEmpty(this.bizIdStr) ? this.bizIdStr : String.valueOf(this.bizId));
+                hashMap.put("bizId", !StringUtils.isEmpty(this.bizIdStr) ? this.bizIdStr : String.valueOf(this.bizId));
                 hashMap.put(b.REQUEST_TYPE_STREAM, this.streamRequest ? "1" : "0");
                 hashMap.put("streamResponse", this.streamResponse ? "1" : "0");
                 hashMap.put("supportStreamJson", this.supportStreamJson ? "1" : "0");
@@ -638,12 +638,12 @@ public class MtopStatistics implements Cloneable {
                         hashMap.put("sinceLastLaunchInternal", String.valueOf((int) (SceneIdentifier.getAppLaunchTime() - SceneIdentifier.getLastLaunchTime())));
                     }
                     String tBSpeedBucket = ABTestCenter.getTBSpeedBucket();
-                    if (TextUtils.isEmpty(tBSpeedBucket)) {
+                    if (StringUtils.isEmpty(tBSpeedBucket)) {
                         tBSpeedBucket = "0";
                     }
                     hashMap.put("speedBucket", tBSpeedBucket);
                     String uTABTestBucketId = ABTestCenter.getUTABTestBucketId("mtopsdk");
-                    if (TextUtils.isEmpty(uTABTestBucketId)) {
+                    if (StringUtils.isEmpty(uTABTestBucketId)) {
                         uTABTestBucketId = "0";
                     }
                     hashMap.put("speedBucketId", uTABTestBucketId);
@@ -751,7 +751,7 @@ public class MtopStatistics implements Cloneable {
                 }
                 if (this.statusCode == 419 || this.statusCode == 420) {
                     HashMap hashMap4 = new HashMap();
-                    hashMap4.put("bizId", !TextUtils.isEmpty(this.bizIdStr) ? this.bizIdStr : String.valueOf(this.bizId));
+                    hashMap4.put("bizId", !StringUtils.isEmpty(this.bizIdStr) ? this.bizIdStr : String.valueOf(this.bizId));
                     hashMap4.put("pTraceId", this.pTraceId);
                     hashMap4.put("api", this.apiKey);
                     hashMap4.put("version", this.apiKey);

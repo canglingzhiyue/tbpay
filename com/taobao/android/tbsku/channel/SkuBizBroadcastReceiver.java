@@ -3,7 +3,7 @@ package com.taobao.android.tbsku.channel;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -41,7 +41,7 @@ public class SkuBizBroadcastReceiver extends BroadcastReceiver {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-        } else if (TextUtils.isEmpty(this.f15406a)) {
+        } else if (StringUtils.isEmpty(this.f15406a)) {
         } else {
             try {
                 JSONObject parseObject = JSONObject.parseObject(intent.getStringExtra("stringifyData"));
@@ -51,7 +51,7 @@ public class SkuBizBroadcastReceiver extends BroadcastReceiver {
                 String string = parseObject.getString("action");
                 if ("biz_maccolor".equalsIgnoreCase(string)) {
                     a(parseObject);
-                } else if (TextUtils.isEmpty(string)) {
+                } else if (StringUtils.isEmpty(string)) {
                 } else {
                     b(parseObject);
                 }

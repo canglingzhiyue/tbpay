@@ -1,6 +1,6 @@
 package com.taobao.trtc.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -596,7 +596,7 @@ public class e {
         } else if (map == null) {
         } else {
             String str = map.get("channelId");
-            if (this.b == null || TextUtils.isEmpty(str)) {
+            if (this.b == null || StringUtils.isEmpty(str)) {
                 return;
             }
             this.b.e(str);

@@ -3,7 +3,7 @@ package com.taobao.message.sp.chat.widget;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -84,7 +84,7 @@ public class TextMessageWidget extends WidgetInstance<JSONObject> {
         } else {
             String string = jSONObject.getJSONObject("props").getString("userId");
             JSONObject jSONObject2 = jSONObject.getJSONObject("message").getJSONObject("sender");
-            if (!TextUtils.equals(string, jSONObject2.getString("targetId")) || !TextUtils.equals("3", jSONObject2.getString("type"))) {
+            if (!StringUtils.equals(string, jSONObject2.getString("targetId")) || !StringUtils.equals("3", jSONObject2.getString("type"))) {
                 this.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
             } else {
                 this.itemView.setBackgroundColor(Color.parseColor("#FFF8EB"));
@@ -99,7 +99,7 @@ public class TextMessageWidget extends WidgetInstance<JSONObject> {
                 this.textView.getLayoutParams().width = -2;
             }
             String string2 = jSONObject.getString("text");
-            String trim = TextUtils.isEmpty(string2) ? "" : string2.trim();
+            String trim = StringUtils.isEmpty(string2) ? "" : string2.trim();
             this.textView.setContentDescription(ExpressionTable.convertExpression(string2));
             if (this.spans.containsKey(trim)) {
                 this.textView.setText(this.spans.get(trim));
@@ -131,7 +131,7 @@ public class TextMessageWidget extends WidgetInstance<JSONObject> {
         Matcher matcher = PatternsUtil.getWebUrlPattern().matcher(spannableString.toString());
         while (matcher.find()) {
             final String group = matcher.group();
-            if (!TextUtils.isEmpty(group) && !TextUtils.isEmpty(group)) {
+            if (!StringUtils.isEmpty(group) && !StringUtils.isEmpty(group)) {
                 LongClickableSpan longClickableSpan = new LongClickableSpan() { // from class: com.taobao.message.sp.chat.widget.TextMessageWidget.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -184,7 +184,7 @@ public class TextMessageWidget extends WidgetInstance<JSONObject> {
         Matcher matcher = PatternsUtil.getEmailPattern().matcher(spannableString.toString());
         while (matcher.find()) {
             final String group = matcher.group();
-            if (!TextUtils.isEmpty(group)) {
+            if (!StringUtils.isEmpty(group)) {
                 LongClickableSpan longClickableSpan = new LongClickableSpan() { // from class: com.taobao.message.sp.chat.widget.TextMessageWidget.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

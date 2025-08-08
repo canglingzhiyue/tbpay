@@ -1,6 +1,6 @@
 package com.taobao.message.sp.framework.implement;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -86,7 +86,7 @@ public abstract class SimpleBaseConversationService implements ISimpleConversati
         boolean isFeatureOpened = ABGlobal.isFeatureOpened(ApplicationUtil.getApplication(), "msgTabSimpleOpenCache");
         if (isFeatureOpened) {
             String msgSimpleTab = SharedPreferencesUtil.getStringSharedPreference("msgSimpleTab");
-            if (!TextUtils.isEmpty(msgSimpleTab)) {
+            if (!StringUtils.isEmpty(msgSimpleTab)) {
                 q.a((Object) msgSimpleTab, "msgSimpleTab");
                 List<SimpleConversation> parseConversationList = parseConversationList(msgSimpleTab);
                 StringBuilder sb = new StringBuilder();
@@ -138,7 +138,7 @@ public abstract class SimpleBaseConversationService implements ISimpleConversati
             q.a((Object) conversationContent4, "conversation.conversationContent");
             SimpleMessageSummary lastMessageSummary3 = conversationContent4.getLastMessageSummary();
             q.a((Object) lastMessageSummary3, "conversation.conversatio…ontent.lastMessageSummary");
-            if (TextUtils.isEmpty(lastMessageSummary3.getContent())) {
+            if (StringUtils.isEmpty(lastMessageSummary3.getContent())) {
                 SimpleConversationContent conversationContent5 = simpleConversation.getConversationContent();
                 q.a((Object) conversationContent5, "conversation.conversationContent");
                 SimpleMessageSummary lastMessageSummary4 = conversationContent5.getLastMessageSummary();
@@ -179,7 +179,7 @@ public abstract class SimpleBaseConversationService implements ISimpleConversati
             return (List) ipChange.ipc$dispatch("e83bef82", new Object[]{this, str});
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str) && (parseArray = JSON.parseArray(str)) != null && parseArray.size() > 0) {
+        if (!StringUtils.isEmpty(str) && (parseArray = JSON.parseArray(str)) != null && parseArray.size() > 0) {
             int size = parseArray.size();
             for (int i = 0; i < size; i++) {
                 JSONObject jSONObject = parseArray.getJSONObject(i);

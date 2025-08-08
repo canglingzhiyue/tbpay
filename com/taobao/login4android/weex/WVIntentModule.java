@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.log.UserTrackAdapter;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,7 +41,7 @@ public class WVIntentModule extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 UserTrackAdapter.sendUT(str);
             }
         } catch (Exception e) {
@@ -71,16 +71,16 @@ public class WVIntentModule extends e {
         r rVar = new r();
         if (context instanceof Activity) {
             Activity activity = (Activity) context;
-            if (!TextUtils.isEmpty(a.h)) {
+            if (!StringUtils.isEmpty(a.h)) {
                 try {
                     JSONObject jSONObject = new JSONObject(a.h);
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("imei", "");
-                    if (!TextUtils.isEmpty(WVUserModule.url)) {
+                    if (!StringUtils.isEmpty(WVUserModule.url)) {
                         jSONObject2.put("url", URLEncoder.encode(WVUserModule.url));
                     }
                     WVUserModule.url = "";
-                    if (!TextUtils.isEmpty(WVUserModule.authCodeCallerUrl)) {
+                    if (!StringUtils.isEmpty(WVUserModule.authCodeCallerUrl)) {
                         jSONObject2.put("url", URLEncoder.encode(WVUserModule.authCodeCallerUrl));
                     }
                     WVUserModule.authCodeCallerUrl = "";
@@ -91,7 +91,7 @@ public class WVIntentModule extends e {
                 } catch (Throwable unused) {
                 }
             }
-            if (activity.getIntent() != null && !TextUtils.isEmpty(activity.getIntent().getStringExtra("referrer"))) {
+            if (activity.getIntent() != null && !StringUtils.isEmpty(activity.getIntent().getStringExtra("referrer"))) {
                 rVar.a(bundleToJSON(Uri.parse(activity.getIntent().getStringExtra("referrer")).getQuery()));
                 wVCallBackContext.success(rVar);
                 return;
@@ -129,7 +129,7 @@ public class WVIntentModule extends e {
             return;
         }
         Context context = wVCallBackContext.getWebview().getContext();
-        if ((context instanceof Activity) && !TextUtils.isEmpty(str)) {
+        if ((context instanceof Activity) && !StringUtils.isEmpty(str)) {
             b.a(str, (Activity) context);
         }
     }

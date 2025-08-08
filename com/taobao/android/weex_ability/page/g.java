@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class g implements com.taobao.android.weex_framework.adapter.h {
             return;
         }
         String instanceEnv = mUSDKInstance.getInstanceEnv("bundleUrl");
-        if (TextUtils.isEmpty(instanceEnv) || !instanceEnv.contains("wx_popId")) {
+        if (StringUtils.isEmpty(instanceEnv) || !instanceEnv.contains("wx_popId")) {
             return;
         }
         a(mUSDKInstance.getUIContext(), instanceEnv);
@@ -56,11 +56,11 @@ public class g implements com.taobao.android.weex_framework.adapter.h {
         MUSDKInstance mUSDKInstance = (MUSDKInstance) mUSModule.getInstance();
         if (mUSDKInstance != null) {
             String instanceEnv = mUSDKInstance.getInstanceEnv("bundleUrl");
-            if (!TextUtils.isEmpty(instanceEnv) && instanceEnv.contains("wx_popId")) {
+            if (!StringUtils.isEmpty(instanceEnv) && instanceEnv.contains("wx_popId")) {
                 a(mUSDKInstance.getUIContext(), instanceEnv);
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (mUSDKInstance.getActivityNav() != null) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("url", (Object) str);
@@ -74,13 +74,13 @@ public class g implements com.taobao.android.weex_framework.adapter.h {
             }
             try {
                 String string = JSON.parseObject(str).getString("url");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 Uri parse = Uri.parse(string);
                 String scheme = parse.getScheme();
                 Uri.Builder buildUpon = parse.buildUpon();
-                if (TextUtils.isEmpty(scheme)) {
+                if (StringUtils.isEmpty(scheme)) {
                     buildUpon.scheme("http");
                 }
                 Intent intent = new Intent("android.intent.action.VIEW", buildUpon.build());
@@ -105,11 +105,11 @@ public class g implements com.taobao.android.weex_framework.adapter.h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Uri parse = Uri.parse(str);
             String queryParameter = (parse == null || !parse.isHierarchical() || parse.getQueryParameter("wx_popId") == null) ? "" : parse.getQueryParameter("wx_popId");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return;
             }
             dlr dlrVar = new dlr();

@@ -1,6 +1,6 @@
 package com.taobao.informationflowdataservice.dataservice.utils.baseutils.linklog;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.export.UMDimKey;
 import com.alibaba.android.umbrella.link.i;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9b9da5a", new Object[]{str, str2, str3, str4, str5});
-        } else if (f17588a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4) || TextUtils.isEmpty(str5)) {
+        } else if (f17588a == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4) || StringUtils.isEmpty(str5)) {
         } else {
             a(str, str2, str3, (i) null, (Map<UMDimKey, Object>) null, com.alibaba.android.umbrella.link.export.a.a(str4, str5));
         }
@@ -94,10 +94,10 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("54b86a6e", new Object[]{str, str2, str3, str4, str5, str6, str7});
-        } else if (f17588a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4) || TextUtils.isEmpty(str5)) {
+        } else if (f17588a == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4) || StringUtils.isEmpty(str5)) {
         } else {
             com.alibaba.android.umbrella.link.export.a aVar = null;
-            if (!TextUtils.isEmpty(str6) && !TextUtils.isEmpty(str7)) {
+            if (!StringUtils.isEmpty(str6) && !StringUtils.isEmpty(str7)) {
                 aVar = com.alibaba.android.umbrella.link.export.a.a(str6, str7);
             }
             a(str, str2, str3, (i) null, (Map<UMDimKey, Object>) null, aVar);

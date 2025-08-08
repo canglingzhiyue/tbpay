@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.mytaobao.pagev2.dataservice.a;
@@ -32,7 +32,7 @@ public class mwc extends fuf {
         if (this.f31294a) {
             equals = !a.b();
         } else {
-            equals = TextUtils.equals(b.a().d, "normal");
+            equals = StringUtils.equals(b.a().d, "normal");
         }
         if (equals && !mxw.b()) {
             return true;

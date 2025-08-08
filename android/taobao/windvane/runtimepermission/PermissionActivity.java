@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -154,7 +154,7 @@ public class PermissionActivity extends Activity implements ActivityCompat.OnReq
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b4c2554b", new Object[]{this, strArr, str, str2});
-        } else if (a(strArr) && (!TextUtils.isEmpty(str) || !TextUtils.isEmpty(str2))) {
+        } else if (a(strArr) && (!StringUtils.isEmpty(str) || !StringUtils.isEmpty(str2))) {
             new AlertDialog.Builder(this).setPositiveButton("我知道了", new DialogInterface.OnClickListener() { // from class: android.taobao.windvane.runtimepermission.PermissionActivity.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

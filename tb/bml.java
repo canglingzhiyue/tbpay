@@ -83,7 +83,7 @@ public class bml extends fnl {
             if (r8 == 0) goto L75
             return r8
         L75:
-            boolean r8 = android.text.TextUtils.isEmpty(r7)
+            boolean r8 = android.text.StringUtils.isEmpty(r7)
             if (r8 != 0) goto Lde
             java.lang.String r8 = "\\|"
             java.lang.String[] r7 = r7.split(r8)

@@ -1,7 +1,7 @@
 package com.alibaba.wireless.aliprivacyext.recommendation;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.aliprivacyext.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -64,7 +64,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b80d809", new Object[]{this, context, str});
-        } else if (context == null || context.getApplicationContext() == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || context.getApplicationContext() == null || StringUtils.isEmpty(str)) {
         } else {
             cfz.p(context, str);
         }
@@ -75,7 +75,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d18de978", new Object[]{context, str, str2})).booleanValue();
         }
-        if (context == null || context.getApplicationContext() == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || context.getApplicationContext() == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         return cfz.a(context, str, str2);
@@ -89,13 +89,13 @@ public class b {
         }
         a aVar = new a(context);
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap(2);
             hashMap.put("tagSource", "internalTag");
             hashMap.put("tagValue", str);
             arrayList.add(hashMap);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             HashMap hashMap2 = new HashMap(2);
             hashMap2.put("tagSource", "externalTag");
             hashMap2.put("tagValue", str2);
@@ -112,7 +112,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str});
         }
-        if (context != null && context.getApplicationContext() != null && !TextUtils.isEmpty(str)) {
+        if (context != null && context.getApplicationContext() != null && !StringUtils.isEmpty(str)) {
             return cfz.o(context, str);
         }
         return null;
@@ -127,7 +127,7 @@ public class b {
         String a2 = a(context, "innerAd");
         String a3 = a(context, "outerAd");
         com.alibaba.wireless.aliprivacy.c.a("PrivacyProfileManager", "privacyProfileConsume innerAdResult: " + a2 + " outerAdResult: " + a3);
-        if (!TextUtils.isEmpty(a2) || !TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a2) || !StringUtils.isEmpty(a3)) {
             b(context, a2, a3);
         }
         String a4 = a(context, "recommend");

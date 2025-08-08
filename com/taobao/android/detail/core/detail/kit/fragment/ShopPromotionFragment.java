@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +88,7 @@ public class ShopPromotionFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0807925", new Object[]{fragmentActivity, str, list});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || list == null) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || list == null) {
         } else {
             startFragment(fragmentActivity, newInstance(str, list));
         }
@@ -239,14 +239,14 @@ public class ShopPromotionFragment extends FloatFragment {
                 textView.setText(jVar.f);
             }
             TextView textView2 = (TextView) relativeLayout.findViewById(R.id.period);
-            if (!TextUtils.isEmpty(jVar.b)) {
+            if (!StringUtils.isEmpty(jVar.b)) {
                 textView2.setVisibility(0);
                 textView2.setText(jVar.b);
             } else {
                 textView2.setVisibility(8);
             }
             TextView textView3 = (TextView) relativeLayout.findViewById(R.id.right_icon);
-            if (!TextUtils.isEmpty(jVar.e)) {
+            if (!StringUtils.isEmpty(jVar.e)) {
                 if (!c.b()) {
                     textView3.setText(ShopPromotionFragment.RIGHT_ARROW_ICON);
                 }
@@ -320,7 +320,7 @@ public class ShopPromotionFragment extends FloatFragment {
             }
             textView.setVisibility(4);
             TextView textView2 = (TextView) relativeLayout.findViewById(R.id.period);
-            if (!TextUtils.isEmpty(jVar.b)) {
+            if (!StringUtils.isEmpty(jVar.b)) {
                 textView2.setVisibility(0);
                 textView2.setText(jVar.b);
             } else {
@@ -411,7 +411,7 @@ public class ShopPromotionFragment extends FloatFragment {
             textView.setMinLines(2);
             textView.setMaxLines(2);
             textView.setLineSpacing(ShopPromotionFragment.access$000(ShopPromotionFragment.this) * 2, 1.0f);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
             textView.setTextColor(context.getResources().getColor(R.color.detail_6));
             textView.setTextSize(12.0f);
             textView.setText(cVar.c);
@@ -447,14 +447,14 @@ public class ShopPromotionFragment extends FloatFragment {
                 textView.setText(jVar.f);
             }
             TextView textView2 = (TextView) inflate.findViewById(R.id.period);
-            if (!TextUtils.isEmpty(jVar.b)) {
+            if (!StringUtils.isEmpty(jVar.b)) {
                 textView2.setVisibility(0);
                 textView2.setText(jVar.b);
             } else {
                 textView2.setVisibility(8);
             }
             TextView textView3 = (TextView) inflate.findViewById(R.id.right_icon);
-            if (!TextUtils.isEmpty(jVar.e)) {
+            if (!StringUtils.isEmpty(jVar.e)) {
                 textView3.setVisibility(0);
                 if (!c.b()) {
                     textView3.setText(ShopPromotionFragment.RIGHT_ARROW_ICON);

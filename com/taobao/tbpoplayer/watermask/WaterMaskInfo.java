@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.watermask;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.List;
@@ -34,6 +34,6 @@ public class WaterMaskInfo implements Serializable {
     public boolean isValid() {
         List<Scene> list;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.enable && !TextUtils.isEmpty(this.imgUrl) && !TextUtils.isEmpty(this.imgCode) && (list = this.whitePageList) != null && !list.isEmpty();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.enable && !StringUtils.isEmpty(this.imgUrl) && !StringUtils.isEmpty(this.imgCode) && (list = this.whitePageList) != null && !list.isEmpty();
     }
 }

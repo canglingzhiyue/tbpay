@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class ca extends cc {
@@ -12,7 +12,7 @@ public class ca extends cc {
     public static ca a(Context context, String str, int i) {
         com.xiaomi.channel.commonutils.logger.b.b("delete  messages when db size is too bigger");
         String m1775a = cg.a(context).m1775a(str);
-        if (TextUtils.isEmpty(m1775a)) {
+        if (StringUtils.isEmpty(m1775a)) {
             return null;
         }
         StringBuilder sb = new StringBuilder();

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.PatchSplitFileInfo;
 import com.alibaba.android.split.SplitFileInfo;
 import com.alibaba.android.split.d;
@@ -127,7 +127,7 @@ public class cam implements bgi<kmq> {
         kmmVar.f30166a = new ArrayList();
         for (int i = 0; i < list.size(); i++) {
             SplitFileInfo splitFileInfo = list.get(i);
-            if (!TextUtils.isEmpty(splitFileInfo.url)) {
+            if (!StringUtils.isEmpty(splitFileInfo.url)) {
                 kmo kmoVar = new kmo(splitFileInfo.url);
                 kmoVar.c = splitFileInfo.md5;
                 if (splitFileInfo instanceof PatchSplitFileInfo) {

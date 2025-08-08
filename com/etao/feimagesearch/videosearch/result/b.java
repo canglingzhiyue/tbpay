@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.ui.CornerImageView;
@@ -136,7 +136,7 @@ public final class b extends com.etao.feimagesearch.videosearch.b<cud> {
             return;
         }
         q.c(data, "data");
-        if (com.etao.feimagesearch.config.b.p() || TextUtils.isEmpty(data.k)) {
+        if (com.etao.feimagesearch.config.b.p() || StringUtils.isEmpty(data.k)) {
             this.b.setImageUrl(data.e);
         } else {
             this.b.setImageUrl(data.k);

@@ -12,7 +12,7 @@ import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import android.util.Size;
@@ -49,7 +49,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Bitmap decodeFile = BitmapFactory.decodeFile(str);
@@ -365,7 +365,7 @@ public class c {
             return (String) ipChange.ipc$dispatch("802ce401", new Object[]{activity, str, new Integer(i)});
         }
         String c = n.c(activity);
-        if (activity == null || TextUtils.isEmpty(c)) {
+        if (activity == null || StringUtils.isEmpty(c)) {
             return "";
         }
         String file = new File(c).getAbsoluteFile().toString();

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.event.basic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.VerticalNode;
@@ -54,6 +54,6 @@ public class l extends eoc {
             return "税费说明";
         }
         String str = eqb.g(bVar).hkNode.taxDescTittle;
-        return TextUtils.isEmpty(str) ? "税费说明" : str;
+        return StringUtils.isEmpty(str) ? "税费说明" : str;
     }
 }

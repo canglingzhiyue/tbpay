@@ -14,7 +14,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.KeyEvent;
@@ -691,7 +691,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
             ipChange.ipc$dispatch("ab1cc72a", new Object[]{this});
             return;
         }
-        if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_main_layout_use_frame_layout"), "10000") && (this.mMspContext instanceof MspContainerContext)) {
+        if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_main_layout_use_frame_layout"), "10000") && (this.mMspContext instanceof MspContainerContext)) {
             z = true;
         }
         this.nU = z;
@@ -753,7 +753,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
             return;
         }
         LogUtil.i("MspContainerActivity", "finishSelfOnEx", toString());
-        if ((this instanceof MspUniRenderActivity) && TextUtils.equals(getPackageName(), "com.eg.android.AlipayGphone")) {
+        if ((this instanceof MspUniRenderActivity) && StringUtils.equals(getPackageName(), "com.eg.android.AlipayGphone")) {
             PhoneCashierMspEngine.getMspJump().processScheme(GlobalConstant.SCHEME_TO_WALLET_HOME);
         }
         finish();
@@ -1080,12 +1080,12 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
         LogUtil.i("MspContainerActivity", "disposeActivity", "ctx=" + this.mMspContext);
         try {
             if ((this.mMspContext instanceof MspTradeContext) && Build.VERSION.SDK_INT >= 21) {
-                if (!TextUtils.isEmpty(((MspTradeContext) this.mMspContext).getSchemeTraceId())) {
+                if (!StringUtils.isEmpty(((MspTradeContext) this.mMspContext).getSchemeTraceId())) {
                     setResult(-3);
                     finishAndRemoveTask();
                     ag();
                     return;
-                } else if (TextUtils.equals(this.mMspContext.getStatisticInfo().getAttr(Vector.Trade, "bizType"), "pay_and_deduct")) {
+                } else if (StringUtils.equals(this.mMspContext.getStatisticInfo().getAttr(Vector.Trade, "bizType"), "pay_and_deduct")) {
                     setResult(-3);
                     finishAndRemoveTask();
                     ag();
@@ -1123,9 +1123,9 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                         return;
                     }
                     try {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             JSONObject parseObject = JSON.parseObject(str);
-                            if (parseObject.containsKey("type") && TextUtils.equals(parseObject.getString("type"), "text")) {
+                            if (parseObject.containsKey("type") && StringUtils.equals(parseObject.getString("type"), "text")) {
                                 MspContainerActivity.access$202(MspContainerActivity.this, true);
                                 String string = parseObject.getString("text");
                                 try {
@@ -1159,7 +1159,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                                 });
                             }
                         }
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             JSONObject parseObject2 = JSON.parseObject(str2);
                             String string2 = parseObject2.getString("text");
                             MspContainerActivity.access$402(MspContainerActivity.this, true);
@@ -1193,7 +1193,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                                 }
                             });
                         }
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             JSONObject parseObject3 = JSON.parseObject(str3);
                             String string3 = parseObject3.getString("text");
                             String string4 = parseObject3.getString("image");
@@ -1209,7 +1209,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                             } catch (Exception e5) {
                                 LogUtil.printExceptionStackTrace(e5);
                             }
-                            if (!TextUtils.isEmpty(string4) && (drawableId = ResUtils.getDrawableId(MspContainerActivity.this, string4)) != null) {
+                            if (!StringUtils.isEmpty(string4) && (drawableId = ResUtils.getDrawableId(MspContainerActivity.this, string4)) != null) {
                                 MspContainerActivity.access$802(MspContainerActivity.this, true);
                                 MspContainerActivity.access$900(MspContainerActivity.this).setImageDrawable(drawableId);
                             }
@@ -1313,7 +1313,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                                 org.json.JSONObject optJSONObject = jSONObject.optJSONObject("navi");
                                 if (optJSONObject != null && optJSONObject.has("statusColor")) {
                                     String optString = optJSONObject.optString("statusColor", "");
-                                    if (!TextUtils.isEmpty(optString)) {
+                                    if (!StringUtils.isEmpty(optString)) {
                                         try {
                                             StatusBarUtil.setColor(MspContainerActivity.this, Color.parseColor(optString), 0);
                                         } catch (Exception e) {
@@ -1362,7 +1362,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                         org.json.JSONObject optJSONObject = jSONObject.optJSONObject("navi");
                         if (optJSONObject != null && optJSONObject.has("statusColor")) {
                             String optString = optJSONObject.optString("statusColor", "");
-                            if (!TextUtils.isEmpty(optString)) {
+                            if (!StringUtils.isEmpty(optString)) {
                                 try {
                                     StatusBarUtil.setColor(MspContainerActivity.this, Color.parseColor(optString), 0);
                                 } catch (Exception e) {
@@ -1405,7 +1405,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                 }
                 getWindow().setBackgroundDrawableResource(R.color.flybird_out_trade_bg);
                 String str3 = this.nF;
-                if (view != null && !TextUtils.isEmpty(str3)) {
+                if (view != null && !StringUtils.isEmpty(str3)) {
                     view.addOnLayoutChangeListener(this.heightChangeListener);
                 } else {
                     LogUtil.i("MspContainerActivity", "adjustBackgroundUserInfo", "missing view" + view + " or tplid " + str3);
@@ -1427,14 +1427,14 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
         }
         if (FlybirdUtil.isFullScreen(view)) {
             view.setBackgroundColor(getResources().getColor(R.color.flybird_fullscreen_bg));
-        } else if (!TextUtils.isEmpty(this.nr)) {
+        } else if (!StringUtils.isEmpty(this.nr)) {
             LogUtil.i("MspContainerActivity", "showContentView", "halfScreenBackgroundColor:" + this.nr);
             view.setBackgroundColor(Color.parseColor(this.nr));
         } else {
             view.setBackgroundColor(-1);
         }
         final String str4 = (String) view.getTag(R.id.view_title_id);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             runOnUiThread(new Runnable() { // from class: com.alipay.android.msp.ui.views.MspContainerActivity.6
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1650,7 +1650,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
             this.nu = new View(this);
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setColor(-1);
-            if (!TextUtils.isEmpty(this.nq)) {
+            if (!StringUtils.isEmpty(this.nq)) {
                 try {
                     LogUtil.record(1, AlipaySDKJSBridge.LOG_TAG, "MspContainerActivity::createAnimationBackView", "underGroundColor:" + this.nq);
                     gradientDrawable.setColor(Color.parseColor(this.nq));
@@ -1809,7 +1809,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
             ah();
         }
         showUserInfo();
-        if (TextUtils.isEmpty(this.ns)) {
+        if (StringUtils.isEmpty(this.ns)) {
             parseColor = getResources().getColor(R.color.flybird_half_screen_bg);
         } else {
             parseColor = Color.parseColor(this.ns);
@@ -1847,7 +1847,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
         this.nl = view;
         if (FlybirdUtil.isFullScreen(view)) {
             view.setBackgroundColor(getResources().getColor(R.color.flybird_fullscreen_bg));
-        } else if (!TextUtils.isEmpty(this.nr)) {
+        } else if (!StringUtils.isEmpty(this.nr)) {
             LogUtil.record(1, AlipaySDKJSBridge.LOG_TAG, "MspContainerActivity::doInAnimationFinished", "halfScreenBackgroundColor:" + this.nr);
             view.setBackgroundColor(Color.parseColor(this.nr));
         } else {
@@ -1861,7 +1861,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
         if (mspContext4 != null && mspContext4.getMspUIClient() != null && this.mMspContext.getMspUIClient().getFrameStack() != null) {
             this.mMspContext.getMspUIClient().getFrameStack().clearWin();
         }
-        if (TextUtils.equals(MspFlybirdDefine.FLYBIRD_RESULT_TPL, mspWindowFrame.getTplId()) || TextUtils.equals(MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL, mspWindowFrame.getTplId())) {
+        if (StringUtils.equals(MspFlybirdDefine.FLYBIRD_RESULT_TPL, mspWindowFrame.getTplId()) || StringUtils.equals(MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL, mspWindowFrame.getTplId())) {
             MspContext mspContext5 = this.mMspContext;
             if (mspContext5 != null && mspContext5.isUseSafeJsExecute()) {
                 PluginManager.getRender().safeCallExecuteJs(view, "mqpOnDisplay && mqpOnDisplay();");
@@ -2144,18 +2144,18 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
         }
         this.nK = onPadAdaptMode;
         if (this.mMspContext.getGrayUnifiedReadPadConfig()) {
-            if (this.mMspContext.getGrayOnPadAdaptMode() && this.nJ && !mspWindowFrame.getRerendStatus() && !TextUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI) && mspWindowFrame.getInPrevStack() && mspExtSceneManager != null && mspExtSceneManager.isAutoRotatingTpl(mspWindowFrame.getTplId())) {
+            if (this.mMspContext.getGrayOnPadAdaptMode() && this.nJ && !mspWindowFrame.getRerendStatus() && !StringUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI) && mspWindowFrame.getInPrevStack() && mspExtSceneManager != null && mspExtSceneManager.isAutoRotatingTpl(mspWindowFrame.getTplId())) {
                 e(view);
                 LogUtil.record(2, "MspContainerActivity:addViewToMainLayout", "Rerend view curTplId=" + mspWindowFrame.getTplId() + " activity=" + this);
                 return;
             }
-        } else if (this.mMspContext.getGrayOnPadAdaptMode() && this.nJ && !TextUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI) && mspWindowFrame.getInPrevStack() && MspExtSceneManager.isAutoRotatingTpl(mspWindowFrame.getTplId(), this)) {
+        } else if (this.mMspContext.getGrayOnPadAdaptMode() && this.nJ && !StringUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI) && mspWindowFrame.getInPrevStack() && MspExtSceneManager.isAutoRotatingTpl(mspWindowFrame.getTplId(), this)) {
             e(view);
             LogUtil.record(2, "MspContainerActivity:addViewToMainLayout", "Rerend view curTplId=" + mspWindowFrame.getTplId() + " activity=" + this);
             return;
         }
         if (onPadAdaptMode) {
-            if (this.nJ && !TextUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI)) {
+            if (this.nJ && !StringUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI)) {
                 e(view);
             }
             if (!FlybirdUtil.isFullScreen(view)) {
@@ -2237,7 +2237,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                 relativeLayout.addView(this.nD, layoutParams5);
             } else {
                 if (this.mMspContext.getGrayUnifiedReadPadConfig()) {
-                    if (this.nJ && (mspExtSceneManager == null || !mspExtSceneManager.isAutoRotatingTpl(this.nF) || TextUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI))) {
+                    if (this.nJ && (mspExtSceneManager == null || !mspExtSceneManager.isAutoRotatingTpl(this.nF) || StringUtils.equals(mspWindowFrame.getActivityConfiguration(), this.nI))) {
                         e(view);
                     }
                 } else if (this.nJ) {
@@ -2353,7 +2353,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c3897928", new Object[]{this, str, obj});
         } else {
-            if (TextUtils.equals(str, MspGlobalDefine.EVENT_H5_ITEM)) {
+            if (StringUtils.equals(str, MspGlobalDefine.EVENT_H5_ITEM)) {
             }
         }
     }
@@ -2664,7 +2664,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                                         jSONObject.put("clickPoint", (Object) (rawX + "*" + rawY));
                                         if (this.nS > 0 && (findConsumingViewContentDescription = UIUtil.findConsumingViewContentDescription(rawX, rawY, (ViewGroup) view, this.nS)) != null) {
                                             String string = findConsumingViewContentDescription.getString("label");
-                                            if (!TextUtils.isEmpty(string)) {
+                                            if (!StringUtils.isEmpty(string)) {
                                                 if (string.length() > 50) {
                                                     string = string.substring(0, 50);
                                                 }
@@ -2673,7 +2673,7 @@ public class MspContainerActivity extends MspBaseActivity<MspMainContract.Presen
                                             jSONObject.put("clickTextSearchDeep", (Object) findConsumingViewContentDescription.getString("deep"));
                                         }
                                         MspTrackInfo.SpmInfo spmInfo = MspTrackInfo.getInstance().getSpmInfo(topTplOrNativeFrame2);
-                                        if (spmInfo != null && !TextUtils.isEmpty(spmInfo.spmId)) {
+                                        if (spmInfo != null && !StringUtils.isEmpty(spmInfo.spmId)) {
                                             jSONObject.put("pageSpmId", (Object) spmInfo.spmId);
                                         }
                                         StringBuilder sb = new StringBuilder();

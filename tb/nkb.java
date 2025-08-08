@@ -2,7 +2,7 @@ package tb;
 
 import android.app.ActivityManager;
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.wireless.security.aopsdk.Invocation;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -224,12 +224,12 @@ public class nkb {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         Application b = com.taobao.privacyguard.a.a().b();
-        if (!TextUtils.isEmpty(str) && b != null) {
+        if (!StringUtils.isEmpty(str) && b != null) {
             try {
                 List<ActivityManager.RunningTaskInfo> runningTasks = ((ActivityManager) b.getSystemService("activity")).getRunningTasks(1);
                 if (runningTasks != null && runningTasks.size() > 0) {
                     String packageName = runningTasks.get(0).topActivity.getPackageName();
-                    if (!TextUtils.isEmpty(packageName)) {
+                    if (!StringUtils.isEmpty(packageName)) {
                         if (packageName.equals(str)) {
                             return true;
                         }

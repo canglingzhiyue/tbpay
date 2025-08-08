@@ -2,7 +2,7 @@ package com.taobao.informationflowdataservice.dataservice.utils.environment;
 
 import android.app.Application;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.informationflowdataservice.dataservice.manager.protocol.adapter.core.IAppAdapter;
 import com.taobao.tao.Globals;
@@ -34,7 +34,7 @@ public class AppAdapter implements IAppAdapter {
             return (String) ipChange.ipc$dispatch("22b9b56f", new Object[]{this});
         }
         String str = (String) com.taobao.android.launcher.common.c.a("deviceId", null);
-        return TextUtils.isEmpty(str) ? UTDevice.getUtdid(getApplication().getApplicationContext()) : str;
+        return StringUtils.isEmpty(str) ? UTDevice.getUtdid(getApplication().getApplicationContext()) : str;
     }
 
     @Override // com.taobao.informationflowdataservice.dataservice.manager.protocol.adapter.core.IAppAdapter
@@ -44,7 +44,7 @@ public class AppAdapter implements IAppAdapter {
             return (String) ipChange.ipc$dispatch("2e0d7a8", new Object[]{this});
         }
         String str = (String) com.taobao.android.launcher.common.c.a("ttid", null);
-        return TextUtils.isEmpty(str) ? TaoHelper.getTTID() : str;
+        return StringUtils.isEmpty(str) ? TaoHelper.getTTID() : str;
     }
 
     @Override // com.taobao.informationflowdataservice.dataservice.manager.protocol.adapter.core.IAppAdapter

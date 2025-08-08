@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.bootstrap.tao.LoginBroadcastRegister;
@@ -62,7 +62,7 @@ public class n implements com.taobao.android.launcher.bootstrap.tao.ability.l, c
         }
         f.b();
         com.taobao.android.launcher.biz.task.k.a(xjp.a("QoScheduleTask"));
-        if (!TextUtils.isEmpty(this.e.b) && this.e.b.endsWith(":channel")) {
+        if (!StringUtils.isEmpty(this.e.b) && this.e.b.endsWith(":channel")) {
             Process.setThreadPriority(5);
         }
         Application application = this.d;

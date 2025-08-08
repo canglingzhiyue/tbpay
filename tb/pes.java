@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -50,7 +50,7 @@ public class pes {
         if (num == null) {
             num = this.b.get(Integer.valueOf(i));
         }
-        if (num != null && !TextUtils.isEmpty(str)) {
+        if (num != null && !StringUtils.isEmpty(str)) {
             if (Math.abs((str2 + str).hashCode()) % 100000 < num.intValue()) {
                 return true;
             }

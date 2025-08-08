@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
 import com.alipay.android.msp.pay.results.MspPayResult;
@@ -28,7 +28,7 @@ public class SetResultStore extends LocalEventStore {
         }
         mspPayResult.setEndCode(actionParamsArray[1]);
         mspPayResult.setMemo(actionParamsArray[0]);
-        mspPayResult.setResult(!TextUtils.isEmpty(actionParamsArray[2]) ? Utils.urlDecode(actionParamsArray[2]) : "");
+        mspPayResult.setResult(!StringUtils.isEmpty(actionParamsArray[2]) ? Utils.urlDecode(actionParamsArray[2]) : "");
         return mspPayResult.toString();
     }
 }

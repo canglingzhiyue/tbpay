@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.system.Os;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.taobao.taobao.R;
@@ -177,7 +177,7 @@ public class WXEnvironment {
                 return (String) ipChange.ipc$dispatch("8a37e2b9", new Object[]{str, str2});
             }
             a wXDefaultSettings = getWXDefaultSettings();
-            if (wXDefaultSettings != null && !TextUtils.isEmpty(str)) {
+            if (wXDefaultSettings != null && !StringUtils.isEmpty(str)) {
                 return wXDefaultSettings.a(str, str2);
             }
             return str2;
@@ -192,7 +192,7 @@ public class WXEnvironment {
                 return;
             }
             a wXDefaultSettings = getWXDefaultSettings();
-            if (wXDefaultSettings != null && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (wXDefaultSettings != null && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 wXDefaultSettings.b(str, str2);
             }
         }
@@ -297,13 +297,13 @@ public class WXEnvironment {
             return (String) ipChange.ipc$dispatch("51ea574d", new Object[0]);
         }
         try {
-            if (TextUtils.isEmpty(COPY_SO_DES_DIR)) {
+            if (StringUtils.isEmpty(COPY_SO_DES_DIR)) {
                 if (sApplication == null) {
                     WXLogUtils.e("sApplication is null, so copy path will be null");
                     return null;
                 }
                 String path = getApplication().getApplicationContext().getCacheDir().getPath();
-                if (!TextUtils.isEmpty(path)) {
+                if (!StringUtils.isEmpty(path)) {
                     file = new File(path, "/cache/weex/libs");
                 } else {
                     String packageName = sApplication.getPackageName();
@@ -370,14 +370,14 @@ public class WXEnvironment {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1d9c9f16", new Object[0]);
         }
-        if (TextUtils.isEmpty(mAbi)) {
+        if (StringUtils.isEmpty(mAbi)) {
             try {
                 mAbi = Build.CPU_ABI;
             } catch (Throwable th) {
                 th.printStackTrace();
                 mAbi = ARMEABI;
             }
-            if (TextUtils.isEmpty(mAbi)) {
+            if (StringUtils.isEmpty(mAbi)) {
                 mAbi = ARMEABI;
             }
             mAbi = mAbi.toLowerCase(Locale.ROOT);
@@ -403,7 +403,7 @@ public class WXEnvironment {
         }
         try {
             String str = getCustomOptions().get(WXConfig.debugMode);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 isApkDebug = (application.getApplicationInfo().flags & 2) != 0;
             } else {
                 isApkDebug = Boolean.valueOf(str).booleanValue();
@@ -503,7 +503,7 @@ public class WXEnvironment {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4a7e412b", new Object[0]);
         }
-        if (TextUtils.isEmpty(CORE_JSC_SO_PATH)) {
+        if (StringUtils.isEmpty(CORE_JSC_SO_PATH)) {
             CORE_JSC_SO_PATH = ifq.a(CORE_JSC_SO_NAME);
             WXLogUtils.e("findLibJscRealPath " + CORE_JSC_SO_PATH);
         }
@@ -515,7 +515,7 @@ public class WXEnvironment {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f262033b", new Object[0]);
         }
-        if (TextUtils.isEmpty(CORE_JSB_SO_INNER_PATH)) {
+        if (StringUtils.isEmpty(CORE_JSB_SO_INNER_PATH)) {
             CORE_JSB_SO_INNER_PATH = ifq.a(Build.VERSION.SDK_INT < 16 ? CORE_JST_SO_NAME : CORE_JSB_SO_NAME);
             WXLogUtils.d("test-> findLibJssRealPath " + CORE_JSB_SO_INNER_PATH);
         }
@@ -527,14 +527,14 @@ public class WXEnvironment {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a2ded9b4", new Object[0]);
         }
-        if (TextUtils.isEmpty(CORE_JSS_ICU_PATH)) {
+        if (StringUtils.isEmpty(CORE_JSS_ICU_PATH)) {
             CORE_JSS_ICU_PATH = ifq.a();
         }
         return CORE_JSS_ICU_PATH;
     }
 
     public static String getLibLdPath() {
-        if (!TextUtils.isEmpty(LIB_LD_PATH)) {
+        if (!StringUtils.isEmpty(LIB_LD_PATH)) {
             return LIB_LD_PATH;
         }
         ClassLoader classLoader = WXEnvironment.class.getClassLoader();
@@ -547,18 +547,18 @@ public class WXEnvironment {
         } catch (InvocationTargetException e3) {
             e3.printStackTrace();
         }
-        if (TextUtils.isEmpty(LIB_LD_PATH)) {
+        if (StringUtils.isEmpty(LIB_LD_PATH)) {
             try {
                 String property = System.getProperty("java.library.path");
                 String libJScRealPath = getLibJScRealPath();
-                if (!TextUtils.isEmpty(libJScRealPath)) {
+                if (!StringUtils.isEmpty(libJScRealPath)) {
                     LIB_LD_PATH = new File(libJScRealPath).getParent() + ":" + property;
                 }
             } catch (Exception e4) {
                 e4.printStackTrace();
             }
         }
-        if (!TextUtils.isEmpty(CORE_SO_COPY_PATH) && !LIB_LD_PATH.contains(CORE_SO_COPY_PATH)) {
+        if (!StringUtils.isEmpty(CORE_SO_COPY_PATH) && !LIB_LD_PATH.contains(CORE_SO_COPY_PATH)) {
             LIB_LD_PATH = CORE_SO_COPY_PATH + ":" + LIB_LD_PATH;
         }
         WXLogUtils.d("getLibLdPath is " + LIB_LD_PATH);
@@ -589,7 +589,7 @@ public class WXEnvironment {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
             }
-            if (this.b != null && !TextUtils.isEmpty(str)) {
+            if (this.b != null && !StringUtils.isEmpty(str)) {
                 String string = this.b.getString(str, str2);
                 WXLogUtils.i("get default settings " + str + " : " + string);
                 return string;
@@ -604,7 +604,7 @@ public class WXEnvironment {
                 ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
                 return;
             }
-            if (this.b != null && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (this.b != null && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 WXLogUtils.i("save default settings " + str + ":" + str2);
                 SharedPreferences.Editor edit = this.b.edit();
                 edit.putString(str, str2);

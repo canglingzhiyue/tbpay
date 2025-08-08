@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -156,7 +156,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("8cb07cbf", new Object[]{this, charSequence});
         }
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             this.l.setText(charSequence);
             this.l.setVisibility(0);
         } else {
@@ -170,7 +170,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("7e020c40", new Object[]{this, charSequence});
         }
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             this.m.setText(charSequence);
             this.m.setVisibility(0);
         } else {

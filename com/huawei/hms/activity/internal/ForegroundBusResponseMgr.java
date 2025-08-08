@@ -1,6 +1,6 @@
 package com.huawei.hms.activity.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +17,7 @@ public class ForegroundBusResponseMgr {
 
     public BusResponseCallback get(String str) {
         BusResponseCallback busResponseCallback;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (this.f7323a) {
@@ -27,7 +27,7 @@ public class ForegroundBusResponseMgr {
     }
 
     public void registerObserver(String str, BusResponseCallback busResponseCallback) {
-        if (TextUtils.isEmpty(str) || busResponseCallback == null) {
+        if (StringUtils.isEmpty(str) || busResponseCallback == null) {
             return;
         }
         synchronized (this.f7323a) {
@@ -38,7 +38,7 @@ public class ForegroundBusResponseMgr {
     }
 
     public void unRegisterObserver(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         synchronized (this.f7323a) {

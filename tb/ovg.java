@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 
@@ -22,7 +22,7 @@ public class ovg {
             String valueOf2 = String.valueOf(map.get("request_key"));
             if ("taobaolive_msoa".equals(valueOf)) {
                 map.put("openFrom", "tblive");
-                if (TextUtils.isEmpty(valueOf2)) {
+                if (StringUtils.isEmpty(valueOf2)) {
                     map.put("request_key", "tblive");
                 } else {
                     map.put("request_key", valueOf2 + ",tblive");
@@ -44,17 +44,17 @@ public class ovg {
             return null;
         }
         String valueOf = String.valueOf(obj);
-        if (!TextUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
             String str = "";
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
                     String obj3 = obj2.toString();
-                    if (!TextUtils.isEmpty(obj3)) {
+                    if (!StringUtils.isEmpty(obj3)) {
                         str = str + "&" + str2 + "=" + obj3;
                     }
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             return str + "&request_key=" + valueOf;
@@ -74,17 +74,17 @@ public class ovg {
             return null;
         }
         String valueOf = String.valueOf(obj);
-        if (!TextUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
             String str = "";
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
                     String obj3 = obj2.toString();
-                    if (!TextUtils.isEmpty(obj3)) {
+                    if (!StringUtils.isEmpty(obj3)) {
                         str = str + "&" + str2 + "=" + obj3;
                     }
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             return str + "&transparent_key=" + valueOf;

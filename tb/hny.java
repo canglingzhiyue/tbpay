@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.searchdoor.searchbar.data.a;
 import com.taobao.search.searchdoor.searchbar.data.b;
@@ -23,7 +23,7 @@ public class hny {
         }
         if (aVar instanceof c) {
             c cVar = (c) aVar;
-            if (TextUtils.isEmpty(cVar.a())) {
+            if (StringUtils.isEmpty(cVar.a())) {
                 return null;
             }
             return new hmw(cVar, z);

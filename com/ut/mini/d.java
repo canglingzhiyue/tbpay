@@ -1,6 +1,6 @@
 package com.ut.mini;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.l;
 import java.util.Comparator;
@@ -167,11 +167,11 @@ public class d implements Runnable {
             StringBuilder sb = new StringBuilder();
             for (Map.Entry<String, String> entry : this.g.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     sb.append(key);
                 }
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(value)) {
                     sb.append(value);
                 }
             }

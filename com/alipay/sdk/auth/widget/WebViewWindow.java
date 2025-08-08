@@ -8,7 +8,7 @@ import android.net.http.SslError;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.webkit.DownloadListener;
@@ -465,7 +465,7 @@ public class WebViewWindow extends LinearLayout {
         textView.setTextColor(CollectionTabLayout.SELECTED_TEXT_COLOR);
         this.b.setTextSize(17.0f);
         this.b.setMaxLines(1);
-        this.b.setEllipsize(TextUtils.TruncateAt.END);
+        this.b.setEllipsize(StringUtils.TruncateAt.END);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
         layoutParams.setMargins(a(17), 0, 0, 0);
         layoutParams.weight = 1.0f;

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.nextrpc.AURANextRPCEndpoint;
 import com.alibaba.android.aura.datamodel.nextrpc.b;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,7 +98,7 @@ public class duq {
                     }
                     String string = AliBuyPerfSwitcher.getString("prefetchCompareWhiteList", "websiteLanguage,bcflsrc,lng,ua,areaDivisionCode,lat");
                     ArrayList arrayList = new ArrayList();
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         arrayList = new ArrayList(Arrays.asList(string.split(",")));
                     }
                     arrayList.add("cartTraceId");
@@ -113,7 +113,7 @@ public class duq {
                         return (MtopPrefetch.CompareResult) ipChange2.ipc$dispatch("d373501", new Object[]{this, mtopRequest, mtopRequest2, list});
                     }
                     MtopPrefetch.CompareResult compareResult = new MtopPrefetch.CompareResult();
-                    if (TextUtils.isEmpty(mtopRequest2.getKey()) || !mtopRequest2.getKey().equals(mtopRequest.getKey())) {
+                    if (StringUtils.isEmpty(mtopRequest2.getKey()) || !mtopRequest2.getKey().equals(mtopRequest.getKey())) {
                         compareResult.getData().put("missKey", "apiKey");
                         compareResult.getData().put("missMsg", "missApi");
                         compareResult.getData().put("prefetchValue", mtopRequest.getKey());

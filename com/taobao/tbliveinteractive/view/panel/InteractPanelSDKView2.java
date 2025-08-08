@@ -512,11 +512,11 @@ public class InteractPanelSDKView2 extends BasePopupView implements com.taobao.t
             com.taobao.tbliveinteractive.InteractiveComponent r1 = (com.taobao.tbliveinteractive.InteractiveComponent) r1
             java.lang.String r4 = r7.name
             java.lang.String r5 = r1.name
-            boolean r4 = android.text.TextUtils.equals(r4, r5)
+            boolean r4 = android.text.StringUtils.equals(r4, r5)
             if (r4 != 0) goto L43
             java.lang.String r4 = r7.fedName
             java.lang.String r5 = r1.fedName
-            boolean r4 = android.text.TextUtils.equals(r4, r5)
+            boolean r4 = android.text.StringUtils.equals(r4, r5)
             if (r4 == 0) goto L23
         L43:
             java.util.List<com.taobao.tbliveinteractive.InteractiveComponent> r0 = r6.mInteractiveNativeComponents

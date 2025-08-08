@@ -3,7 +3,7 @@ package com.taobao.mediaplay;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.AVSDKLog;
 import java.util.HashMap;
@@ -107,7 +107,7 @@ public class m {
             ipChange.ipc$dispatch("7926cacf", new Object[]{this, str, new Integer(i)});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (this.c.containsKey(str)) {
                 for (d dVar : this.c.get(str)) {
                     dVar.a(i);
@@ -125,7 +125,7 @@ public class m {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && this.c.containsKey(str)) {
+            if (!StringUtils.isEmpty(str) && this.c.containsKey(str)) {
                 for (d dVar : this.c.get(str)) {
                     dVar.b(i);
                 }
@@ -141,7 +141,7 @@ public class m {
             ipChange.ipc$dispatch("c55903d1", new Object[]{this, str, str2, dVar});
             return;
         }
-        if (!TextUtils.isEmpty(str) && dVar != null) {
+        if (!StringUtils.isEmpty(str) && dVar != null) {
             List<d> list = this.c.get(str);
             if (list == null) {
                 list = new LinkedList<>();
@@ -157,7 +157,7 @@ public class m {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !this.d.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.d.containsKey(str)) {
             return null;
         } else {
             return this.d.get(str);
@@ -170,10 +170,10 @@ public class m {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str) && this.d.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && this.d.containsKey(str)) {
             String str2 = this.d.get(str);
             this.d.remove(str);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.e.remove(str2);
             }
         }
@@ -185,10 +185,10 @@ public class m {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str) && this.e.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && this.e.containsKey(str)) {
             String str2 = this.e.get(str);
             this.e.remove(str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.d.remove(str2);
             }
         }

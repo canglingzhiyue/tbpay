@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -174,7 +174,7 @@ public class ipl {
         String b2 = s.b("sort_url", "");
         String b3 = s.b("sort_name", "");
         String b4 = s.b("sort_md5", "");
-        if (TextUtils.isEmpty(b) || TextUtils.isEmpty(b2) || TextUtils.isEmpty(b3) || TextUtils.isEmpty(b4)) {
+        if (StringUtils.isEmpty(b) || StringUtils.isEmpty(b2) || StringUtils.isEmpty(b3) || StringUtils.isEmpty(b4)) {
             return;
         }
         final jvm.c a2 = jvm.c.a(dpm.a().c(b2), b2);
@@ -213,7 +213,7 @@ public class ipl {
         String b2 = s.b("m3_url", "");
         String b3 = s.b("m3_name", "");
         String b4 = s.b("m3_md5", "");
-        if (TextUtils.isEmpty(b) || TextUtils.isEmpty(b2) || TextUtils.isEmpty(b3) || TextUtils.isEmpty(b4)) {
+        if (StringUtils.isEmpty(b) || StringUtils.isEmpty(b2) || StringUtils.isEmpty(b3) || StringUtils.isEmpty(b4)) {
             return;
         }
         final jvm.c a2 = jvm.c.a(dpm.a().c(b2), b2);

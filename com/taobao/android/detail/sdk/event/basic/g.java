@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.event.basic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.event.Event;
@@ -39,12 +39,12 @@ public class g implements Event {
     }
 
     public g(JSONObject jSONObject) {
-        if (!TextUtils.isEmpty(jSONObject.getString("url"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("url"))) {
             this.f10223a = jSONObject.getString("url");
         } else {
             this.f10223a = "";
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("params"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("params"))) {
             this.b = jSONObject.getJSONObject("params");
         } else {
             this.b = new JSONObject();

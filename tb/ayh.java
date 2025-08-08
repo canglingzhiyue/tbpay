@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.linkage.UMFLinkageTrigger;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
@@ -57,7 +57,7 @@ public final class ayh extends ayp {
         }
         for (AURARenderComponent aURARenderComponent : list) {
             String str = aURARenderComponent.key;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject a2 = a(jSONObject, str);
                 JSONObject a3 = a(jSONObject2, str);
                 if (a2 == null || a3 == null || a(a2, a3, d())) {

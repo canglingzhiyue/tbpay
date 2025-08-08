@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -192,7 +192,7 @@ public final class axo extends arv {
         HashMap hashMap = new HashMap();
         if (jSONObject != null && jSONObject2 != null) {
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     Object obj = jSONObject.get(str);
                     if (obj instanceof String) {
                         hashMap.put(str, String.valueOf(axt.a(jSONObject2, obj)));

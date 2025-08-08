@@ -1,6 +1,6 @@
 package com.taobao.android.order.core.dinamicX.parser;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class b extends fuf {
             return -1;
         }
         JSONArray jSONArray = (JSONArray) objArr[2];
-        if (TextUtils.isEmpty(valueOf) || TextUtils.isEmpty(valueOf2)) {
+        if (StringUtils.isEmpty(valueOf) || StringUtils.isEmpty(valueOf2)) {
             return -1;
         }
         for (int i = 0; i < jSONArray.size(); i++) {

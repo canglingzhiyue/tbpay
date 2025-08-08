@@ -1,6 +1,6 @@
 package com.taobao.tao.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.image.ImageStrategyConfig;
 import com.taobao.tao.image.c;
@@ -53,7 +53,7 @@ public class ImageStrategyDecider {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("648bc91d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         String[] h5HeifWhiteList = TaobaoImageUrlStrategy.getInstance().getH5HeifWhiteList();
@@ -67,7 +67,7 @@ public class ImageStrategyDecider {
         }
         if (h5HeifSourceWhiteList != null && h5HeifSourceWhiteList.length > 0) {
             for (String str3 : h5HeifSourceWhiteList) {
-                if ((str.contains(str3) || TextUtils.equals("*", str3)) && str.contains("O1CN")) {
+                if ((str.contains(str3) || StringUtils.equals("*", str3)) && str.contains("O1CN")) {
                     return doStrictConvergeAndHeif(str);
                 }
             }
@@ -90,7 +90,7 @@ public class ImageStrategyDecider {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("df82268f", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         TaobaoImageUrlStrategy.UriCDNInfo uriCDNInfo = new TaobaoImageUrlStrategy.UriCDNInfo(str);
@@ -100,7 +100,7 @@ public class ImageStrategyDecider {
             }
             ImageStrategyExtra.ImageUrlInfo baseUrlInfo = ImageStrategyExtra.getBaseUrlInfo(str);
             String str2 = baseUrlInfo.base;
-            if (TextUtils.isEmpty(str2) || str2.indexOf(64) <= 0) {
+            if (StringUtils.isEmpty(str2) || str2.indexOf(64) <= 0) {
                 return str;
             }
             if (!".jpg".equals(baseUrlInfo.ext) && !".png".equals(baseUrlInfo.ext)) {
@@ -115,7 +115,7 @@ public class ImageStrategyDecider {
             }
             ImageStrategyExtra.ImageUrlInfo baseUrlInfo2 = ImageStrategyExtra.getBaseUrlInfo(str);
             String str3 = baseUrlInfo2.base;
-            if (TextUtils.isEmpty(str3) || str3.endsWith("_.webp")) {
+            if (StringUtils.isEmpty(str3) || str3.endsWith("_.webp")) {
                 return str;
             }
             return str3 + "_.webp" + baseUrlInfo2.suffix;
@@ -127,7 +127,7 @@ public class ImageStrategyDecider {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c5a08971", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         TaobaoImageUrlStrategy.UriCDNInfo uriCDNInfo = new TaobaoImageUrlStrategy.UriCDNInfo(str);
@@ -138,12 +138,12 @@ public class ImageStrategyDecider {
             return str;
         }
         String heifImageDomain = TaobaoImageUrlStrategy.getInstance().getHeifImageDomain();
-        if (TaobaoImageUrlStrategy.getInstance().isDomainSwitch() && !TextUtils.isEmpty(heifImageDomain)) {
+        if (TaobaoImageUrlStrategy.getInstance().isDomainSwitch() && !StringUtils.isEmpty(heifImageDomain)) {
             str = TaobaoImageUrlStrategy.getInstance().strictConvergenceUrl(uriCDNInfo, heifImageDomain, false);
         }
         ImageStrategyExtra.ImageUrlInfo baseUrlInfo = ImageStrategyExtra.getBaseUrlInfo(str);
         String str2 = baseUrlInfo.base;
-        if (TextUtils.isEmpty(str2) || str2.endsWith("_.heic")) {
+        if (StringUtils.isEmpty(str2) || str2.endsWith("_.heic")) {
             return str;
         }
         if (str2.endsWith("_.webp")) {

@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spanned;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,7 +169,7 @@ public class APNoticePopDialog extends Dialog {
             this.f.setLayoutParams(layoutParams2);
         }
         setCanceledOnTouchOutside(this.p);
-        if (!TextUtils.isEmpty(this.m) && !TextUtils.isEmpty(this.l)) {
+        if (!StringUtils.isEmpty(this.m) && !StringUtils.isEmpty(this.l)) {
             TextPaint textPaint = new TextPaint();
             textPaint.setTextSize(getContext().getResources().getDimensionPixelSize(R.dimen.vi_model_footer_frontsize));
             float measureText = textPaint.measureText(this.m);
@@ -180,13 +180,13 @@ public class APNoticePopDialog extends Dialog {
             }
         }
         if (z) {
-            if (TextUtils.isEmpty(this.m) && TextUtils.isEmpty(this.l)) {
+            if (StringUtils.isEmpty(this.m) && StringUtils.isEmpty(this.l)) {
                 this.n.setVisibility(8);
                 return;
             }
             this.n.setVisibility(0);
             this.d.setText(this.m);
-            if (TextUtils.isEmpty(this.m)) {
+            if (StringUtils.isEmpty(this.m)) {
                 this.d.setVisibility(8);
             }
             this.d.setOnClickListener(new View.OnClickListener() { // from class: com.alipay.mobile.verifyidentity.ui.APNoticePopDialog.2
@@ -207,7 +207,7 @@ public class APNoticePopDialog extends Dialog {
                 }
             });
             this.e.setText(this.l);
-            if (TextUtils.isEmpty(this.l)) {
+            if (StringUtils.isEmpty(this.l)) {
                 this.e.setVisibility(8);
             }
             this.e.setOnClickListener(new View.OnClickListener() { // from class: com.alipay.mobile.verifyidentity.ui.APNoticePopDialog.3
@@ -299,7 +299,7 @@ public class APNoticePopDialog extends Dialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("610cbce1", new Object[]{aPTextView, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
             aPTextView.setVisibility(8);
         } else {
             aPTextView.setVisibility(0);

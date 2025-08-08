@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -98,7 +98,7 @@ public class VideoEditInfo extends AbsEditInfo implements Serializable {
             return ((Boolean) ipChange.ipc$dispatch("ee84ab1f", new Object[]{this})).booleanValue();
         }
         Template template = this.template;
-        return template != null && !TextUtils.isEmpty(template.tid);
+        return template != null && !StringUtils.isEmpty(template.tid);
     }
 
     public boolean isOnlyTimeRangeChange() {

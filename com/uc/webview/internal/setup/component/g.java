@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.tao.shop.common.ShopConstants;
 import com.uc.webview.base.GlobalSettings;
 import java.util.Random;
@@ -28,7 +28,7 @@ public final class g {
                 i++;
             }
             String str = GlobalSettings.get((int) com.alibaba.triver.triver_shop.shop2023.nativeview.a.bottomBarHeightWithBottomMarginRpxValue, "");
-            if (TextUtils.isEmpty(str) || (split = str.split(",")) == null || split.length == 0) {
+            if (StringUtils.isEmpty(str) || (split = str.split(",")) == null || split.length == 0) {
                 return;
             }
             for (String str2 : split) {

@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.nirvana.tools.jsoner.a;
 import java.lang.reflect.Field;
@@ -22,7 +22,7 @@ public class TokenRet {
         try {
             TokenRet tokenRet = new TokenRet();
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     a.a(new JSONObject(str), tokenRet, (List<Field>) null);
                 }
             } catch (JSONException e) {
@@ -140,7 +140,7 @@ public class TokenRet {
 
     public void setCarrierFailedResultData(String str) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.carrierFailedResultData = str;

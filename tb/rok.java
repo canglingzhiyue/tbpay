@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uploader.implement.d;
@@ -21,7 +21,7 @@ public class rok extends rod {
     public rok(String str, int i, boolean z, boolean z2, String str2) {
         super(str, i, null, 0, z);
         this.f = z2;
-        this.g = TextUtils.isEmpty(str2) ? "tcp" : str2;
+        this.g = StringUtils.isEmpty(str2) ? "tcp" : str2;
     }
 
     @Override // tb.rod

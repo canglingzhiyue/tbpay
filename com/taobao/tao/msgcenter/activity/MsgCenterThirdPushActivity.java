@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
@@ -148,7 +148,7 @@ public class MsgCenterThirdPushActivity extends BaseNotifyClickActivity {
             }
             if (ActivityUtil.onlyOneActivity(this, getClass().getName())) {
                 String config = OrangeConfig.getInstance().getConfig("mpm_business_switch", IDefaultConfig.AGOO_PUSH_BACK_TO_URL, getDefaultConfig(IDefaultConfig.AGOO_PUSH_BACK_TO_URL, ""));
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     TLog.loge(TAG, " back jump to :" + config);
                     Nav.from(this).toUri(config);
                 } else {
@@ -189,14 +189,14 @@ public class MsgCenterThirdPushActivity extends BaseNotifyClickActivity {
                 UTAnalytics.getInstance().getDefaultTracker().updateNextPageProperties(createUTData);
                 if (convertMsgExtras != null) {
                     TLog.loge(TAG, " body " + convertMsgExtras.getString(AgooConstants.MESSAGE_BODY));
-                    if (!TextUtils.isEmpty(targetUrl)) {
+                    if (!StringUtils.isEmpty(targetUrl)) {
                         TLog.loge(TAG, targetUrl);
                         Bundle bundle = new Bundle();
                         bundle.putString(NOTIFY_CONTENT_INTENT_BODY, convertMsgExtras.getString(AgooConstants.MESSAGE_BODY));
                         JSONObject parseObject = JSON.parseObject(convertMsgExtras.getString(AgooConstants.MESSAGE_BODY));
                         if (parseObject != null) {
                             String string = parseObject.getJSONObject(Constants.KEY_EXTS).getString("messageId");
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 bundle.putString("messageId", string);
                             }
                         }
@@ -292,7 +292,7 @@ public class MsgCenterThirdPushActivity extends BaseNotifyClickActivity {
             str = null;
         }
         TLog.loge(TAG, " onStart agooId " + str2 + "|" + str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return;
         }
         TLog.loge(TAG, "agooId is null");

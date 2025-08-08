@@ -5,7 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.biz.scheme.MspSchemeActivity;
 import com.alipay.android.msp.biz.thirdpay.ThirdPayManager;
@@ -59,7 +59,7 @@ public class SchemeThirdPayImpl implements ThirdPayManager.ThirdPayImpl {
                 return;
             }
             String queryParameter = data.getQueryParameter("callBackParams");
-            if (SchemeThirdPayImpl.access$000(SchemeThirdPayImpl.this) && TextUtils.isEmpty(queryParameter)) {
+            if (SchemeThirdPayImpl.access$000(SchemeThirdPayImpl.this) && StringUtils.isEmpty(queryParameter)) {
                 thirdPayFinishCallback = SchemeThirdPayImpl.access$200(SchemeThirdPayImpl.this);
             } else {
                 thirdPayFinishCallback = (ThirdPayManager.ThirdPayFinishCallback) SchemeThirdPayImpl.access$100(SchemeThirdPayImpl.this).remove(queryParameter);
@@ -148,7 +148,7 @@ public class SchemeThirdPayImpl implements ThirdPayManager.ThirdPayImpl {
             return;
         }
         String string = jSONObject != null ? jSONObject.getString("order") : "";
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             LogUtil.record(8, LOG_TAG, "do: error - missing args ".concat(String.valueOf(string)));
             thirdPayFinishCallback.finish(ThirdPayManager.ThirdPayInvokeResult.makeErr("failed"));
             return;
@@ -212,7 +212,7 @@ public class SchemeThirdPayImpl implements ThirdPayManager.ThirdPayImpl {
             return;
         }
         if (this.isSupportDCEP) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.schemeCallbacks.put(str, thirdPayFinishCallback);
             }
             this.latestSchemeCallback = thirdPayFinishCallback;
@@ -280,7 +280,7 @@ public class SchemeThirdPayImpl implements ThirdPayManager.ThirdPayImpl {
                     Uri data = intent.getData();
                     LogUtil.record(2, SchemeThirdPayImpl.LOG_TAG, "result uri " + data.toString());
                     String queryParameter = data.getQueryParameter("callBackParams");
-                    if (TextUtils.equals(queryParameter, str)) {
+                    if (StringUtils.equals(queryParameter, str)) {
                         SchemeThirdPayImpl.access$300(SchemeThirdPayImpl.this, data, thirdPayFinishCallback);
                         ActivityResultManager.unregisterActivityResultHandler(this);
                         return;

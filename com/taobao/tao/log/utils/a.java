@@ -1,7 +1,7 @@
 package com.taobao.tao.log.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -314,7 +314,7 @@ public class a {
                 a2 = a(g.a(aVar.c.intValue()));
             }
             if (a2 != null) {
-                if (!TextUtils.isEmpty(aVar.f15568a)) {
+                if (!StringUtils.isEmpty(aVar.f15568a)) {
                     for (String str : a2) {
                         if (str.startsWith(aVar.f15568a + "_")) {
                             arrayList.add(str);

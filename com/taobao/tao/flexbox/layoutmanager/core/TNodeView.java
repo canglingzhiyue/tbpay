@@ -11,7 +11,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -445,7 +445,7 @@ public class TNodeView extends FrameLayout {
                     return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
                 }
                 String a2 = TNodeView.access$100(TNodeView.this) != null ? TNodeView.access$100(TNodeView.this).a() : null;
-                return (!TextUtils.isEmpty(a2) || TNodeView.access$200(TNodeView.this) == null) ? a2 : TNodeView.access$200(TNodeView.this).a();
+                return (!StringUtils.isEmpty(a2) || TNodeView.access$200(TNodeView.this) == null) ? a2 : TNodeView.access$200(TNodeView.this).a();
             }
 
             private String b() {
@@ -454,10 +454,10 @@ public class TNodeView extends FrameLayout {
                     return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
                 }
                 String access$300 = TNodeView.access$300(TNodeView.this);
-                if (TextUtils.isEmpty(access$300) && TNodeView.access$100(TNodeView.this) != null) {
+                if (StringUtils.isEmpty(access$300) && TNodeView.access$100(TNodeView.this) != null) {
                     access$300 = TNodeView.access$100(TNodeView.this).c;
                 }
-                return (!TextUtils.isEmpty(access$300) || !(TNodeView.this.getContext() instanceof Activity) || ((Activity) TNodeView.this.getContext()).getIntent() == null) ? access$300 : ((Activity) TNodeView.this.getContext()).getIntent().getDataString();
+                return (!StringUtils.isEmpty(access$300) || !(TNodeView.this.getContext() instanceof Activity) || ((Activity) TNodeView.this.getContext()).getIntent() == null) ? access$300 : ((Activity) TNodeView.this.getContext()).getIntent().getDataString();
             }
 
             private void c() {
@@ -1157,7 +1157,7 @@ public class TNodeView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("339e1c08", new Object[]{this, bVar});
-        } else if (bVar == null || bVar.g || TextUtils.isEmpty(bVar.h) || this.oConfigListener != null) {
+        } else if (bVar == null || bVar.g || StringUtils.isEmpty(bVar.h) || this.oConfigListener != null) {
         } else {
             this.shortLinkName = bVar.h;
             this.oConfigListener = new ohg.a() { // from class: com.taobao.tao.flexbox.layoutmanager.core.TNodeView.7
@@ -1168,7 +1168,7 @@ public class TNodeView extends FrameLayout {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-                    } else if (TextUtils.isEmpty(str3) || TNodeView.access$2400(TNodeView.this)) {
+                    } else if (StringUtils.isEmpty(str3) || TNodeView.access$2400(TNodeView.this)) {
                     } else {
                         TNodeView.access$2402(TNodeView.this, true);
                         TNodeView.access$000(TNodeView.this);

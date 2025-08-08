@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -66,8 +66,8 @@ public class kvj extends h {
         if (a2.getTag(R.id.tag_recommend_datasource) == null) {
             Object tag = a2.getTag(R.id.tag_recommend_containerId);
             String obj = tag == null ? null : tag.toString();
-            String substring = !TextUtils.isEmpty(obj) ? obj.substring(obj.lastIndexOf(95) + 1) : null;
-            if (TextUtils.isEmpty(substring)) {
+            String substring = !StringUtils.isEmpty(obj) ? obj.substring(obj.lastIndexOf(95) + 1) : null;
+            if (StringUtils.isEmpty(substring)) {
                 return;
             }
             a(sectionModel, view, null, null, substring, dinamicXEngine, obj);
@@ -78,7 +78,7 @@ public class kvj extends h {
                 return;
             }
             JSONObject jSONObject2 = jSONObject.getJSONObject("content");
-            boolean z = !TextUtils.isEmpty(jSONObject2.getString("deleteId"));
+            boolean z = !StringUtils.isEmpty(jSONObject2.getString("deleteId"));
             if (z) {
                 orxVar = new orx(this.b, sectionModel, jSONObject);
                 this.b.a();
@@ -86,7 +86,7 @@ public class kvj extends h {
                 orxVar = null;
             }
             this.b.a(z);
-            this.b.a(view.getContext(), a(view), orxVar, TextUtils.isEmpty(jSONObject2.getString("similarUrl")) ^ true ? new orw(this.b, jSONObject) : null, sectionModel);
+            this.b.a(view.getContext(), a(view), orxVar, StringUtils.isEmpty(jSONObject2.getString("similarUrl")) ^ true ? new orw(this.b, jSONObject) : null, sectionModel);
         }
     }
 
@@ -100,7 +100,7 @@ public class kvj extends h {
             return;
         }
         String str3 = this.f30339a;
-        if (str3 != null && !TextUtils.equals(str3, str)) {
+        if (str3 != null && !StringUtils.equals(str3, str)) {
             this.c.a();
             this.c = new orv();
             this.f30339a = str;

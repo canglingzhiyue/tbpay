@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -530,7 +530,7 @@ public class oji extends a {
         } else if (intent == null || (data = intent.getData()) == null) {
         } else {
             String queryParameter = data.getQueryParameter("categoryTabId");
-            if (str == null || !TextUtils.isEmpty(queryParameter)) {
+            if (str == null || !StringUtils.isEmpty(queryParameter)) {
                 ldf.d("HomeMainLandInfoFlowController", "非法入参，不处理外链");
                 return;
             }

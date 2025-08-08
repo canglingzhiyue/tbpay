@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.data.remote;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.f;
@@ -83,12 +83,12 @@ public final class c {
             HashMap hashMap = new HashMap();
             hashMap.put("sourcePageName", this.b.w);
             this.f12536a.put("echoParam", hashMap);
-            if (!TextUtils.isEmpty(this.b.i)) {
+            if (!StringUtils.isEmpty(this.b.i)) {
                 this.f12536a.put(com.taobao.android.fluid.framework.data.remote.a.KEY_DETAIL_PARAMETERS, this.b.i);
             }
             this.f12536a.put("scene", this.b.x);
             this.f12536a.put("miniAppId", this.b.y);
-            if (!TextUtils.isEmpty(this.b.J)) {
+            if (!StringUtils.isEmpty(this.b.J)) {
                 this.f12536a.put(aw.PARAM_UT_PARAMS, this.b.J);
             }
             this.f12536a.put("tbvs_version", 31);

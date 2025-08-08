@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.analytics.AnalyticsMgr;
@@ -127,7 +127,7 @@ public class gvw extends i {
             str = bVar.d.getQueryParameter("tabid");
         }
         if (this.b) {
-            i.a(str, !TextUtils.equals(bVar.d.getPath(), "/guangguang/index.htm"));
+            i.a(str, !StringUtils.equals(bVar.d.getPath(), "/guangguang/index.htm"));
             this.f28525a = a(bVar.d, "video", true);
             if (!this.e || this.d) {
                 return;
@@ -159,7 +159,7 @@ public class gvw extends i {
                 return;
             }
             ogg.a("Tab2RenderIntercept", "[preloadvideo] startRender...");
-            JSONObject a4 = a(context, tNodeView, bVar.d, !TextUtils.isEmpty(str) ? str : d(i2), false);
+            JSONObject a4 = a(context, tNodeView, bVar.d, !StringUtils.isEmpty(str) ? str : d(i2), false);
             if (a4 == null) {
                 return;
             }
@@ -277,7 +277,7 @@ public class gvw extends i {
             for (Object obj : a2) {
                 if (obj instanceof Map) {
                     Map map = (Map) obj;
-                    if (TextUtils.equals(oec.a(map.get("id"), (String) null), str)) {
+                    if (StringUtils.equals(oec.a(map.get("id"), (String) null), str)) {
                         return new String[]{oec.a(map.get("pageName"), (String) null), oec.a(map.get("spm"), (String) null)};
                     }
                 }
@@ -362,7 +362,7 @@ public class gvw extends i {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("spm-cnt", str2);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             hashMap.put("spm-url", queryParameter);
         }
         a.a().k().a(a2, hashMap);
@@ -523,7 +523,7 @@ public class gvw extends i {
             if (super.a(tNodeView) && this.f != null) {
                 if (!this.f.f()) {
                     if (this.f28525a) {
-                        if (TextUtils.equals(this.f.d.getQueryParameter("source"), "outside")) {
+                        if (StringUtils.equals(this.f.d.getQueryParameter("source"), "outside")) {
                         }
                     }
                 }
@@ -540,7 +540,7 @@ public class gvw extends i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("41dc10a9", new Object[]{this, context, aaVar, str, str2, map});
-        } else if ((!TextUtils.equals(str, "Page_videointeract") && (str2 == null || !str2.startsWith("a310p.13800399"))) || (a2 = com.taobao.tao.flexbox.layoutmanager.usertracker.a.a().a((String) null)) == null || a2.size() <= 0) {
+        } else if ((!StringUtils.equals(str, "Page_videointeract") && (str2 == null || !str2.startsWith("a310p.13800399"))) || (a2 = com.taobao.tao.flexbox.layoutmanager.usertracker.a.a().a((String) null)) == null || a2.size() <= 0) {
         } else {
             try {
                 map.put("subtasks", a2.toJSONString());
@@ -651,12 +651,12 @@ public class gvw extends i {
 
     private boolean a(Map map, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d7b3ceab", new Object[]{this, map, str})).booleanValue() : map != null && TextUtils.equals(oec.a(map.get("id"), (String) null), str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d7b3ceab", new Object[]{this, map, str})).booleanValue() : map != null && StringUtils.equals(oec.a(map.get("id"), (String) null), str);
     }
 
     private static boolean a(String str, String str2, String str3) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{str, str2, str3})).booleanValue() : TextUtils.equals(str, "0") && TextUtils.equals(str2, str3);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{str, str2, str3})).booleanValue() : StringUtils.equals(str, "0") && StringUtils.equals(str2, str3);
     }
 
     private static boolean a(String str) {
@@ -664,7 +664,7 @@ public class gvw extends i {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         for (String str2 : ohg.a().a("weitao_switch", "invalidSymbols", "__GUANG_CONTENT_ID__,__ITEMID__").split(",")) {
@@ -682,9 +682,9 @@ public class gvw extends i {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8e9584e1", new Object[]{str, str2, yVar, jSONObject})).booleanValue();
         }
-        if (oeb.bB() && TextUtils.equals(str, "mtop") && TextUtils.equals(str2, com.taobao.android.layoutmanager.container.f.GUANGGUANG_DSL_KEY) && (yVar instanceof h.a)) {
+        if (oeb.bB() && StringUtils.equals(str, "mtop") && StringUtils.equals(str2, com.taobao.android.layoutmanager.container.f.GUANGGUANG_DSL_KEY) && (yVar instanceof h.a)) {
             Map a2 = ((h.a) yVar).a();
-            if (a(oec.a(a2.get(CONFIG_LAUNCH), (String) null), oec.a(a2.get("tabid"), (String) null), "video") && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null && (jSONObject3 = jSONObject2.getJSONObject("data")) != null && TextUtils.equals(jSONObject3.getString("entityId"), "31331")) {
+            if (a(oec.a(a2.get(CONFIG_LAUNCH), (String) null), oec.a(a2.get("tabid"), (String) null), "video") && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null && (jSONObject3 = jSONObject2.getJSONObject("data")) != null && StringUtils.equals(jSONObject3.getString("entityId"), "31331")) {
                 ogg.a("Tab2RenderIntercept", "intercept Mtop Prefetch");
                 return false;
             }
@@ -694,7 +694,7 @@ public class gvw extends i {
 
     private boolean f(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue() : TextUtils.equals(str, "video") || TextUtils.equals(str, "newFollow");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{this, str})).booleanValue() : StringUtils.equals(str, "video") || StringUtils.equals(str, "newFollow");
     }
 
     private JSONObject a(Context context, TNodeView tNodeView, Uri uri, String str, boolean z) {
@@ -712,7 +712,7 @@ public class gvw extends i {
                 ogg.a("Tab2RenderIntercept", "预创建失败:" + th.getMessage());
                 return null;
             }
-        } else if (!TextUtils.equals(str, TABID_INNERLIVE) || !z) {
+        } else if (!StringUtils.equals(str, TABID_INNERLIVE) || !z) {
             return null;
         } else {
             a(tNodeView, uri);
@@ -763,12 +763,12 @@ public class gvw extends i {
             return false;
         }
         String queryParameter = uri.getQueryParameter("tabid");
-        if (TextUtils.equals(queryParameter, str)) {
+        if (StringUtils.equals(queryParameter, str)) {
             return true;
         }
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             String d = d(i());
-            if (oeb.a("enableCompareDefaultTab", true) && TextUtils.equals(d, str)) {
+            if (oeb.a("enableCompareDefaultTab", true) && StringUtils.equals(d, str)) {
                 return true;
             }
         }
@@ -782,7 +782,7 @@ public class gvw extends i {
         }
         if (uri != null) {
             String queryParameter = uri.getQueryParameter(CONFIG_LAUNCH);
-            if (d(uri) && TextUtils.equals(queryParameter, "0")) {
+            if (d(uri) && StringUtils.equals(queryParameter, "0")) {
                 return true;
             }
         }
@@ -868,7 +868,7 @@ public class gvw extends i {
         String queryParameter3 = uri.getQueryParameter("extParams");
         ogg.a("Tab2RenderIntercept", "path:" + path + " sLaunch:" + queryParameter + " tabId:" + queryParameter2 + " extParams:" + queryParameter3);
         if (a(uri)) {
-            i.a(queryParameter2, !TextUtils.equals(path, "/guangguang/index.htm"));
+            i.a(queryParameter2, !StringUtils.equals(path, "/guangguang/index.htm"));
         }
         boolean a2 = a(uri, "video", true);
         boolean a3 = a(uri, TABID_INNERLIVE, true);
@@ -930,8 +930,8 @@ public class gvw extends i {
         }
         if (uri != null) {
             String queryParameter = uri.getQueryParameter("tnode");
-            if (!TextUtils.isEmpty(queryParameter)) {
-                return TextUtils.equals("guangguang", Uri.parse(queryParameter).getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_INIT_DATA_KEY));
+            if (!StringUtils.isEmpty(queryParameter)) {
+                return StringUtils.equals("guangguang", Uri.parse(queryParameter).getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_INIT_DATA_KEY));
             }
         }
         return false;
@@ -944,14 +944,14 @@ public class gvw extends i {
         }
         if (uri != null) {
             String path = uri.getPath();
-            if (TextUtils.equals(path, "/guangguang/index.htm")) {
+            if (StringUtils.equals(path, "/guangguang/index.htm")) {
                 return true;
             }
             if (com.taobao.android.layoutmanager.a.c(path)) {
                 String queryParameter = uri.getQueryParameter("tnode");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     String path2 = Uri.parse(queryParameter).getPath();
-                    return TextUtils.equals(com.taobao.tao.flexbox.layoutmanager.container.g.GUANGGUANG_SHORT_LINK, path2) || (path2 != null && path2.contains("/guangguang/"));
+                    return StringUtils.equals(com.taobao.tao.flexbox.layoutmanager.container.g.GUANGGUANG_SHORT_LINK, path2) || (path2 != null && path2.contains("/guangguang/"));
                 }
             }
         }
@@ -976,11 +976,11 @@ public class gvw extends i {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("ed7d2392", new Object[]{uri});
         }
-        if (uri == null || !TextUtils.equals(uri.getPath(), "/guangguang/index.htm")) {
+        if (uri == null || !StringUtils.equals(uri.getPath(), "/guangguang/index.htm")) {
             return uri;
         }
         String query = uri.getQuery();
-        if (!TextUtils.isEmpty(query)) {
+        if (!StringUtils.isEmpty(query)) {
             str = query + "&source=outside&tnode=page_guangguang%3FnavbarHide%3Dtrue%26initDataKey%3Dguangguang%26immersive%3Dtrue%26pageTrack%3Dfalse";
         } else {
             str = "source=outside&tnode=page_guangguang%3FnavbarHide%3Dtrue%26initDataKey%3Dguangguang%26immersive%3Dtrue%26pageTrack%3Dfalse";
@@ -998,7 +998,7 @@ public class gvw extends i {
             return uri;
         }
         String queryParameter2 = uri.getQueryParameter("itemIds");
-        return !TextUtils.isEmpty(queryParameter2) ? oec.a(uri, "extParams", queryParameter.replace(ITEM_ID_PLACE_HOLDER, queryParameter2)) : uri;
+        return !StringUtils.isEmpty(queryParameter2) ? oec.a(uri, "extParams", queryParameter.replace(ITEM_ID_PLACE_HOLDER, queryParameter2)) : uri;
     }
 
     public static boolean a(String str, String str2) {
@@ -1022,7 +1022,7 @@ public class gvw extends i {
         String queryParameter4 = parse2.getQueryParameter("extParams");
         String queryParameter5 = parse.getQueryParameter("tabid");
         String queryParameter6 = parse2.getQueryParameter("tabid");
-        if (!TextUtils.equals(queryParameter, queryParameter2) || !TextUtils.equals(queryParameter3, queryParameter4) || !TextUtils.equals(queryParameter5, queryParameter6)) {
+        if (!StringUtils.equals(queryParameter, queryParameter2) || !StringUtils.equals(queryParameter3, queryParameter4) || !StringUtils.equals(queryParameter5, queryParameter6)) {
             z = false;
         }
         StringBuilder sb = new StringBuilder();

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.ultron.event.base.f;
 import com.alibaba.android.ultron.vfw.viewholder.d;
@@ -77,7 +77,7 @@ public class boh extends h {
             return ((Boolean) ipChange.ipc$dispatch("a050eeba", new Object[]{this, iDMComponent, str})).booleanValue();
         }
         ArrayMap<String, Object> onceExtMap = iDMComponent.getOnceExtMap();
-        if (onceExtMap != null && !TextUtils.isEmpty(str)) {
+        if (onceExtMap != null && !StringUtils.isEmpty(str)) {
             Object obj = onceExtMap.get(str);
             if ((obj instanceof Boolean) && ((Boolean) obj).booleanValue()) {
                 return true;

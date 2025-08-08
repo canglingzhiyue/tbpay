@@ -2,7 +2,7 @@ package com.android.taobao.safeclean;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.birdnest.util.UiUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -223,7 +223,7 @@ public final class b {
             ipChange.ipc$dispatch("205ce6b4", new Object[]{this, file, str, str2});
         } else if (file.exists()) {
             String str3 = str;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 files = file.listFiles(new C0205b(str));
                 if (files == null) {
                     return;
@@ -244,7 +244,7 @@ public final class b {
                     files[i].delete();
                 }
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 return;
             }
             file.delete();

@@ -1,6 +1,6 @@
 package com.taobao.search.mmd.datasource.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,7 +43,7 @@ public class c {
             if (a2 != null && !a2.isEmpty()) {
                 for (int i = 0; i < a2.size(); i++) {
                     String string3 = a2.getString(i);
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         cVar.c.add(string3);
                     }
                 }
@@ -51,7 +51,7 @@ public class c {
                     return null;
                 }
                 String string4 = jSONObject.getString("url");
-                if (TextUtils.isEmpty(string4)) {
+                if (StringUtils.isEmpty(string4)) {
                     return null;
                 }
                 cVar.d = string4;

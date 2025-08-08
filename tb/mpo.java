@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
 import java.io.File;
@@ -93,7 +93,7 @@ public class mpo {
             return (String) ipChange.ipc$dispatch("36082ea1", new Object[]{this, file});
         }
         String name = file.getName();
-        if (TextUtils.isEmpty(name)) {
+        if (StringUtils.isEmpty(name)) {
             return this.b + "/error";
         }
         return this.b + "/" + name.split("_")[0];

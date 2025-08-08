@@ -3,7 +3,7 @@ package com.taobao.tbpoplayer.nativerender;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.track.module.ActionLineModule;
@@ -87,7 +87,7 @@ public class l {
             String string = jSONObject.getString("sourceName");
             String string2 = jSONObject.getString("event");
             JSONObject jSONObject2 = jSONObject.getJSONObject("content");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || jSONObject2 == null) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || jSONObject2 == null) {
                 return;
             }
             if (com.taobao.tbpoplayer.view.c.PAGE_EVENT_SCROLL_STATE_CHANGED.equals(string2)) {
@@ -119,7 +119,7 @@ public class l {
             String string = jSONObject.getString(str2);
             String string2 = jSONObject.getString("event");
             JSONObject jSONObject2 = jSONObject.getJSONObject("content");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || jSONObject2 == null) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || jSONObject2 == null) {
                 return;
             }
             com.alibaba.poplayer.utils.c.a("executePageEventAnimate.sourceName=%s.event=%s.scrollInstances=%s.", string, string2, this.f22235a);
@@ -141,7 +141,7 @@ public class l {
                     JSONObject jSONObject3 = animationModel2.trigger;
                     if (TRIGGER_NAME_SCROLL_STATUS.equals(jSONObject3.getString("name"))) {
                         String string3 = jSONObject3.getString(str2);
-                        if (!TextUtils.isEmpty(string3) && string3.equals(string)) {
+                        if (!StringUtils.isEmpty(string3) && string3.equals(string)) {
                             if ("vertical".equals(jSONObject3.getString("direction"))) {
                                 long longValue = jSONObject3.getLongValue("listenTimes");
                                 if (longValue <= 0) {
@@ -217,7 +217,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("52616028", new Object[]{this, eVar, str, list, view, componentBaseModel, bVar});
-        } else if (TextUtils.isEmpty(str) || list == null || list.isEmpty() || view == null) {
+        } else if (StringUtils.isEmpty(str) || list == null || list.isEmpty() || view == null) {
             if (bVar == null) {
                 return;
             }
@@ -664,7 +664,7 @@ public class l {
             android.animation.TimeInterpolator r6 = (android.animation.TimeInterpolator) r6
             return r6
         L18:
-            boolean r0 = android.text.TextUtils.isEmpty(r6)
+            boolean r0 = android.text.StringUtils.isEmpty(r6)
             if (r0 == 0) goto L24
             android.view.animation.LinearInterpolator r6 = new android.view.animation.LinearInterpolator
             r6.<init>()

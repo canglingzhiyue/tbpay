@@ -1,7 +1,7 @@
 package com.alibaba.aliweex.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.aliweex.d;
 import com.alibaba.aliweex.e;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         boolean booleanValue = a(TBWXConfigManger.WX_COMMON_CONFIG, "waitInitDefaultValue", false).booleanValue();
-        return TextUtils.isEmpty(str) ? booleanValue : Uri.parse(str).getBooleanQueryParameter(com.alibaba.aliweex.bundle.d.e, booleanValue);
+        return StringUtils.isEmpty(str) ? booleanValue : Uri.parse(str).getBooleanQueryParameter(com.alibaba.aliweex.bundle.d.e, booleanValue);
     }
 
     public static boolean d() {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
@@ -151,7 +151,7 @@ public final class ary extends arv {
             return (String) ipChange.ipc$dispatch("b73f8d72", new Object[]{this, dVar});
         }
         String a2 = a(dVar.c());
-        return TextUtils.isEmpty(a2) ? a(dVar.e()) : a2;
+        return StringUtils.isEmpty(a2) ? a(dVar.e()) : a2;
     }
 
     private String a(Object[] objArr) {

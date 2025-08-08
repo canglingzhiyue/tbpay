@@ -183,7 +183,7 @@ public class UTAnalyticsHelper {
             return r5
         L2d:
             java.lang.String r0 = r5.d
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L38
             java.lang.String r5 = "Page_Share_Contact_NullBizSubType"
             return r5

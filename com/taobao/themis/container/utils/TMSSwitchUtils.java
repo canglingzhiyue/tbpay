@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public final class TMSSwitchUtils {
             return m.c(uri);
         }
         String queryParameter = uri.getQueryParameter(i.APP_ID);
-        if (!TextUtils.isEmpty(n.E()) && kotlin.text.n.b((CharSequence) n.E(), (CharSequence) String.valueOf(queryParameter), false, 2, (Object) null)) {
+        if (!StringUtils.isEmpty(n.E()) && kotlin.text.n.b((CharSequence) n.E(), (CharSequence) String.valueOf(queryParameter), false, 2, (Object) null)) {
             return false;
         }
         return p.a((Iterable<? extends String>) INNER_SWITCH_LIST, queryParameter) || INSTANCE.isHD(uri) || TMSSolutionType.getType(uri) == TMSSolutionType.MINIGAME || t.a(queryParameter);
@@ -111,7 +111,7 @@ public final class TMSSwitchUtils {
             return ((Boolean) ipChange.ipc$dispatch("9e99bef1", new Object[]{uri})).booleanValue();
         }
         q.d(uri, "uri");
-        return Build.VERSION.SDK_INT >= 23 && !Process.is64Bit() && TextUtils.equals(uri.getQueryParameter("downgradeOn32"), "true");
+        return Build.VERSION.SDK_INT >= 23 && !Process.is64Bit() && StringUtils.equals(uri.getQueryParameter("downgradeOn32"), "true");
     }
 
     @JvmStatic

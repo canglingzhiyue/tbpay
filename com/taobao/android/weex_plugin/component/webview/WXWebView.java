@@ -10,7 +10,7 @@ import android.os.Message;
 import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
@@ -473,8 +473,8 @@ public class WXWebView implements com.taobao.android.weex_plugin.component.webvi
                     return ((Boolean) ipChange2.ipc$dispatch("d21149c", new Object[]{this, webView, str, str2, str3, jsPromptResult})).booleanValue();
                 }
                 Uri parse = Uri.parse(str2);
-                if (TextUtils.equals(parse.getScheme(), "__WEEX_WEB_VIEW_BRIDGE")) {
-                    if (TextUtils.equals(parse.getAuthority(), "postMessage")) {
+                if (StringUtils.equals(parse.getScheme(), "__WEEX_WEB_VIEW_BRIDGE")) {
+                    if (StringUtils.equals(parse.getAuthority(), "postMessage")) {
                         WXWebView.a(WXWebView.this, parse.getQueryParameter("message"), parse.getQueryParameter("targetOrigin"));
                         jsPromptResult.confirm("success");
                     } else {

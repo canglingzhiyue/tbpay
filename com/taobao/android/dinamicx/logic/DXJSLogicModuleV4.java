@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.logic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -79,7 +79,7 @@ public class DXJSLogicModuleV4 extends MUSModule {
     public DXJSLogicModuleV4(String str, MUSDKInstance mUSDKInstance) {
         super(str, mUSDKInstance);
         this.needRefreshStateProtocolMap = new HashMap();
-        alr alrVar = new alr(TextUtils.isEmpty(mUSDKInstance.getOriginURLString()) ? mUSDKInstance.getOriginURLString() : "default", "DX");
+        alr alrVar = new alr(StringUtils.isEmpty(mUSDKInstance.getOriginURLString()) ? mUSDKInstance.getOriginURLString() : "default", "DX");
         this.mAdapter = new alu(alrVar);
         alrVar.a(mUSDKInstance.getContext().a());
     }

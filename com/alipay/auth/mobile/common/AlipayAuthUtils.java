@@ -1,7 +1,7 @@
 package com.alipay.auth.mobile.common;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecException;
 import com.alibaba.wireless.security.open.SecurityGuardParamContext;
 import com.alibaba.wireless.security.open.securesignature.ISecureSignatureComponent;
@@ -37,7 +37,7 @@ public class AlipayAuthUtils {
             }
             str2 = sb.substring(0, sb.lastIndexOf("&"));
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str2 = str + "&" + str2;
         }
         LoggerUtils.d("AlipayAuthUtils", str2);

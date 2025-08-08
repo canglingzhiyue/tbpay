@@ -1,6 +1,6 @@
 package com.taobao.unit.center.mdc.dinamicx.dataParse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import mtopsdk.common.util.SymbolExpUtil;
@@ -38,9 +38,9 @@ public class DXDataParserMpSplitAndGetSubString extends fuf {
             }
             int a2 = fqr.a((String) obj3);
             String str = (String) obj2;
-            if (TextUtils.equals(".", str)) {
+            if (StringUtils.equals(".", str)) {
                 obj2 = "\\.";
-            } else if (TextUtils.equals("|", str)) {
+            } else if (StringUtils.equals("|", str)) {
                 obj2 = SymbolExpUtil.SYMBOL_VERTICALBAR;
             }
             String[] split = ((String) obj).split((String) obj2);

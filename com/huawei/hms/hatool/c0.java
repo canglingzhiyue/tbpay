@@ -2,7 +2,7 @@ package com.huawei.hms.hatool;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.File;
 
 /* loaded from: classes4.dex */
@@ -40,7 +40,7 @@ public class c0 {
     }
 
     public static boolean a(String str, long j, long j2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         try {

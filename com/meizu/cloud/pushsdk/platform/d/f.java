@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.platform.d;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
@@ -97,24 +97,24 @@ public class f extends c<PushSwitchStatus> {
     }
 
     private void d(boolean z) {
-        com.meizu.cloud.pushsdk.util.b.b(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
-        com.meizu.cloud.pushsdk.util.b.c(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
+        com.meizu.cloud.pushsdk.util.b.b(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
+        com.meizu.cloud.pushsdk.util.b.c(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
     }
 
     private void e(boolean z) {
-        com.meizu.cloud.pushsdk.util.b.b(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
+        com.meizu.cloud.pushsdk.util.b.b(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
     }
 
     private void f(boolean z) {
-        com.meizu.cloud.pushsdk.util.b.c(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
+        com.meizu.cloud.pushsdk.util.b.c(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), z);
     }
 
     private boolean n() {
-        return com.meizu.cloud.pushsdk.util.b.l(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
+        return com.meizu.cloud.pushsdk.util.b.l(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
     }
 
     private boolean o() {
-        return com.meizu.cloud.pushsdk.util.b.m(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
+        return com.meizu.cloud.pushsdk.util.b.m(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
     }
 
     private boolean p() {
@@ -126,7 +126,7 @@ public class f extends c<PushSwitchStatus> {
     }
 
     private boolean s() {
-        return com.meizu.cloud.pushsdk.util.b.f(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
+        return com.meizu.cloud.pushsdk.util.b.f(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
     }
 
     private void t() {
@@ -141,7 +141,7 @@ public class f extends c<PushSwitchStatus> {
     }
 
     private boolean u() {
-        return com.meizu.cloud.pushsdk.util.b.k(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
+        return com.meizu.cloud.pushsdk.util.b.k(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName());
     }
 
     public void b(int i) {
@@ -151,7 +151,7 @@ public class f extends c<PushSwitchStatus> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     public void b(PushSwitchStatus pushSwitchStatus) {
-        PlatformMessageSender.a(this.b, !TextUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), pushSwitchStatus);
+        PlatformMessageSender.a(this.b, !StringUtils.isEmpty(this.e) ? this.e : this.b.getPackageName(), pushSwitchStatus);
     }
 
     public void c(boolean z) {
@@ -164,7 +164,7 @@ public class f extends c<PushSwitchStatus> {
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
     protected boolean d() {
-        return !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.j);
+        return !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.j);
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.d.c
@@ -192,10 +192,10 @@ public class f extends c<PushSwitchStatus> {
         String str;
         PushSwitchStatus pushSwitchStatus = new PushSwitchStatus();
         pushSwitchStatus.setCode("20001");
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             str = "appId not empty";
-        } else if (!TextUtils.isEmpty(this.d)) {
-            if (TextUtils.isEmpty(this.j)) {
+        } else if (!StringUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.j)) {
                 str = "pushId not empty";
             }
             return pushSwitchStatus;

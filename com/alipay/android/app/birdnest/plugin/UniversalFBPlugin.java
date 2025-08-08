@@ -2,7 +2,7 @@ package com.alipay.android.app.birdnest.plugin;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -138,7 +138,7 @@ public class UniversalFBPlugin extends AbsFBPlugin {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9e8e885", new Object[]{this, new Integer(i)});
-        } else if (TextUtils.isEmpty(this.pluginId) || this.mResultViewService == null || this.mPluginCtx == null) {
+        } else if (StringUtils.isEmpty(this.pluginId) || this.mResultViewService == null || this.mPluginCtx == null) {
         } else {
             LogUtil.d(TAG, "callJsUpdateHeight", "callJsUpdateHeight height = ".concat(String.valueOf(i)));
             JSONObject jSONObject = new JSONObject();
@@ -180,7 +180,7 @@ public class UniversalFBPlugin extends AbsFBPlugin {
 
     private String toJsJsonString(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8070a032", new Object[]{this, str}) : TextUtils.isEmpty(str) ? "" : str.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8070a032", new Object[]{this, str}) : StringUtils.isEmpty(str) ? "" : str.replace("\\", "\\\\").replace("\"", "\\\"").replace("'", "\\'").replace("\n", "\\n").replace("\r", "\\r").replace("\f", "\\f").replace("\u2028", "\\u2028").replace("\u2029", "\\u2029");
     }
 
     private static int convertPixelsToDp(float f, Context context) {

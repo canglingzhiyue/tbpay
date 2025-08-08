@@ -1,6 +1,6 @@
 package com.taobao.weex.dom;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.Enum;
 import java.util.Arrays;
@@ -127,6 +127,6 @@ public class CSSShorthand<T extends Enum<? extends CSSProperty>> implements Clon
 
     public String toString() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8126d80d", new Object[]{this}) : TextUtils.isEmpty(this.values.toString()) ? "" : Arrays.toString(this.values);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8126d80d", new Object[]{this}) : StringUtils.isEmpty(this.values.toString()) ? "" : Arrays.toString(this.values);
     }
 }

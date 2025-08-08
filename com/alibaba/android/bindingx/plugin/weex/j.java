@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.text.Layout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.TextView;
@@ -671,7 +671,7 @@ public final class j {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("915d8f7", new Object[]{this, wXComponent, view, obj, bVar, map});
-            } else if (!(obj instanceof Double) || TextUtils.isEmpty(this.f2285a)) {
+            } else if (!(obj instanceof Double) || StringUtils.isEmpty(this.f2285a)) {
             } else {
                 double doubleValue = ((Double) obj).doubleValue();
                 String str = this.f2285a;
@@ -785,7 +785,7 @@ public final class j {
                         str2 = null;
                         break;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 WXTransition.asynchronouslyUpdateLayout(wXComponent, str2, (float) j.a(doubleValue, bVar));

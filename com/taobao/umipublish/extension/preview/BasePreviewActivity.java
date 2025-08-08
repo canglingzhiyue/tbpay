@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -78,14 +78,14 @@ public abstract class BasePreviewActivity extends AppCompatActivity {
         this.b = rcx.a().a(ios.KEY_ONIOLN_FITTING_ROOM_SCENE);
         Intent intent = getIntent();
         if (intent != null && intent.getBooleanExtra("useIntent", false)) {
-            if (TextUtils.isEmpty(this.f23243a)) {
+            if (StringUtils.isEmpty(this.f23243a)) {
                 this.f23243a = intent.getStringExtra("biz_scene");
             }
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 this.b = intent.getStringExtra(ios.KEY_ONIOLN_FITTING_ROOM_SCENE);
             }
             String stringExtra = intent.getStringExtra("track_common_args");
-            if (!TextUtils.isEmpty(stringExtra)) {
+            if (!StringUtils.isEmpty(stringExtra)) {
                 this.k = (Map) JSONObject.parseObject(stringExtra, new TypeReference<Map<String, String>>() { // from class: com.taobao.umipublish.extension.preview.BasePreviewActivity.1
                 }, new Feature[0]);
             }

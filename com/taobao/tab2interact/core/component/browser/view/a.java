@@ -8,7 +8,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.view.GravityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -295,7 +295,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
                 String str = browserBadgeViewModel.b.e.f19731a;
                 int a2 = e.INSTANCE.a(browserBadgeViewModel.b.e.b);
                 if (str != null) {
-                    if (TextUtils.isEmpty(this.k.getText())) {
+                    if (StringUtils.isEmpty(this.k.getText())) {
                         b(this.k, str, a2);
                         a(this.k);
                     } else {
@@ -312,7 +312,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
                 String str2 = browserBadgeViewModel.b.f.f19731a;
                 int a3 = e.INSTANCE.a(browserBadgeViewModel.b.f.b);
                 if (str2 != null) {
-                    if (TextUtils.isEmpty(this.x.getText())) {
+                    if (StringUtils.isEmpty(this.x.getText())) {
                         b(this.x, str2, a3);
                         a(this.x);
                     } else {
@@ -333,7 +333,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
                     int a4 = e.INSTANCE.a(browserBadgeViewModel.b.h.b);
                     a(this.A, s(), a4);
                     this.B.setTextColor(a4);
-                    if (TextUtils.isEmpty(browserBadgeViewModel.b.h.d)) {
+                    if (StringUtils.isEmpty(browserBadgeViewModel.b.h.d)) {
                         t();
                     }
                 }
@@ -466,7 +466,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
             ipChange.ipc$dispatch("f16a3b07", new Object[]{this, browserBadgeViewModel});
         } else if (!this.J) {
         } else {
-            if (browserBadgeViewModel == null || browserBadgeViewModel.d == null || TextUtils.isEmpty(browserBadgeViewModel.d.f19734a) || TextUtils.isEmpty(browserBadgeViewModel.d.b)) {
+            if (browserBadgeViewModel == null || browserBadgeViewModel.d == null || StringUtils.isEmpty(browserBadgeViewModel.d.f19734a) || StringUtils.isEmpty(browserBadgeViewModel.d.b)) {
                 z = false;
             }
             if (z) {
@@ -537,7 +537,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
             return;
         }
         BrowserBadgeModel.BrowserBadgeViewModel browserBadgeViewModel = this.s;
-        if (browserBadgeViewModel == null || browserBadgeViewModel.b == null || this.s.b.h == null || !TextUtils.equals(this.s.b.h.d, "BROWSE_WITHDRAW_BUBBLE_HIDDEN")) {
+        if (browserBadgeViewModel == null || browserBadgeViewModel.b == null || this.s.b.h == null || !StringUtils.equals(this.s.b.h.d, "BROWSE_WITHDRAW_BUBBLE_HIDDEN")) {
             return;
         }
         t();
@@ -1132,7 +1132,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
             if (textSwitcher != null) {
                 TextView textView = (TextView) textSwitcher.getCurrentView();
                 String substring = str.substring(i, i + 1);
-                if (textView != null && !TextUtils.equals(textView.getText(), substring)) {
+                if (textView != null && !StringUtils.equals(textView.getText(), substring)) {
                     TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 1.0f, 1, 0.0f);
                     TranslateAnimation translateAnimation2 = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 0.0f, 1, -1.0f);
                     translateAnimation.setDuration(1000L);
@@ -1224,7 +1224,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
         this.w.setVisibility(4);
         this.i.setVisibility(0);
         a(this.i, str2, str3, 17);
-        if (TextUtils.equals(this.i.getImageUrl(), str)) {
+        if (StringUtils.equals(this.i.getImageUrl(), str)) {
             b bVar = this.j;
             if (bVar == null) {
                 return;
@@ -1245,7 +1245,7 @@ public class a implements AmountRollView.a, CircleProgressView.a {
             return;
         }
         com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadgeViewController", "设置中部组件静图");
-        if (TextUtils.equals(this.w.getImageUrl(), str) && (bVar = this.j) != null && bVar.c()) {
+        if (StringUtils.equals(this.w.getImageUrl(), str) && (bVar = this.j) != null && bVar.c()) {
             return;
         }
         this.i.setVisibility(4);

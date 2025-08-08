@@ -3,7 +3,7 @@ package com.taobao.phenix.compat;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfigLocal;
 import java.util.ArrayList;
@@ -197,28 +197,28 @@ public class e {
             String a8 = a(b(bVar.f18895a, "_model_whitelist"));
             String a9 = a(b(bVar.f18895a, "_vendor_whitelist"));
             niw.a("CloudConfig", "update configs from local cache, fid=%d, coverage=%s, permanent=%s, modelBlacks=%s, vendorBlacks=%s, apiBlacks=%s, cpuBlacks=%s", Integer.valueOf(bVar.f18895a), a2, a3, a4, a5, a6, a7);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 bVar.b = Math.min(100, Math.max(0, a(a2, bVar.b)));
             }
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 bVar.c = "1".equals(a3);
             }
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 bVar.f = f(a4);
             }
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 bVar.g = f(a5);
             }
-            if (!TextUtils.isEmpty(a6)) {
+            if (!StringUtils.isEmpty(a6)) {
                 bVar.i = b(a6, 0);
             }
-            if (!TextUtils.isEmpty(a7)) {
+            if (!StringUtils.isEmpty(a7)) {
                 bVar.h = f(a7);
             }
-            if (!TextUtils.isEmpty(a8)) {
+            if (!StringUtils.isEmpty(a8)) {
                 bVar.d = f(a8);
             }
-            if (TextUtils.isEmpty(a9)) {
+            if (StringUtils.isEmpty(a9)) {
                 return;
             }
             bVar.e = f(a9);

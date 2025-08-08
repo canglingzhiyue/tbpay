@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
@@ -32,7 +32,7 @@ public class pld {
             if (jSONArray != null && jSONArray.size() > 0) {
                 for (int i = 0; i < jSONArray.size(); i++) {
                     String a2 = oec.a(jSONArray.get(i), "");
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         this.f32747a.add(a2);
                     }
                 }

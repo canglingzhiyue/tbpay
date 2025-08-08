@@ -1,6 +1,6 @@
 package com.taobao.infoflow.core.subservice.biz.experiencecheck.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -88,7 +88,7 @@ public class UserExperienceCheck {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d11bf77a", new Object[]{this, baseSectionModel, checkOccasion});
-        } else if (baseSectionModel == null || (bVar = this.b) == null || !bVar.a() || (ext = baseSectionModel.getExt()) == null || TextUtils.equals("true", ext.getString("isCardChecked"))) {
+        } else if (baseSectionModel == null || (bVar = this.b) == null || !bVar.a() || (ext = baseSectionModel.getExt()) == null || StringUtils.equals("true", ext.getString("isCardChecked"))) {
         } else {
             ext.put("isCardChecked", (Object) "true");
             if (this.c == null) {

@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ah;
 import com.xiaomi.push.cg;
 
@@ -85,7 +85,7 @@ public class bu {
     }
 
     public void a(String str) {
-        if (a() && !TextUtils.isEmpty(str)) {
+        if (a() && !StringUtils.isEmpty(str)) {
             a(cl.a(this.f144a, str));
         }
     }

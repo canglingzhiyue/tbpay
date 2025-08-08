@@ -1,6 +1,6 @@
 package com.taobao.taobaoavsdk.cache.library;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.MimeTypeMap;
 import anetwork.channel.aidl.ParcelableInputStream;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -29,7 +29,7 @@ public class p {
         }
         MimeTypeMap singleton = MimeTypeMap.getSingleton();
         String b = b(str);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return singleton.getMimeTypeFromExtension(b);
         }
         return null;
@@ -41,7 +41,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int lastIndexOf2 = str.lastIndexOf(35);

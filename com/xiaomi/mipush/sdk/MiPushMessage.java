@@ -1,7 +1,7 @@
 package com.xiaomi.mipush.sdk;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.mipush.sdk.PushMessageHandler;
 import java.util.HashMap;
 import java.util.Map;
@@ -191,26 +191,26 @@ public class MiPushMessage implements PushMessageHandler.a {
         bundle.putString("messageId", this.messageId);
         bundle.putInt(KEY_PASS_THROUGH, this.passThrough);
         bundle.putInt(KEY_MESSAGE_TYPE, this.messageType);
-        if (!TextUtils.isEmpty(this.alias)) {
+        if (!StringUtils.isEmpty(this.alias)) {
             bundle.putString("alias", this.alias);
         }
-        if (!TextUtils.isEmpty(this.userAccount)) {
+        if (!StringUtils.isEmpty(this.userAccount)) {
             bundle.putString(KEY_USER_ACCOUNT, this.userAccount);
         }
-        if (!TextUtils.isEmpty(this.topic)) {
+        if (!StringUtils.isEmpty(this.topic)) {
             bundle.putString("topic", this.topic);
         }
         bundle.putString("content", this.content);
-        if (!TextUtils.isEmpty(this.description)) {
+        if (!StringUtils.isEmpty(this.description)) {
             bundle.putString("description", this.description);
         }
-        if (!TextUtils.isEmpty(this.title)) {
+        if (!StringUtils.isEmpty(this.title)) {
             bundle.putString("title", this.title);
         }
         bundle.putBoolean(KEY_NOTIFIED, this.isNotified);
         bundle.putInt("notifyId", this.notifyId);
         bundle.putInt(KEY_NOTIFY_TYPE, this.notifyType);
-        if (!TextUtils.isEmpty(this.category)) {
+        if (!StringUtils.isEmpty(this.category)) {
             bundle.putString("category", this.category);
         }
         HashMap<String, String> hashMap = this.extra;

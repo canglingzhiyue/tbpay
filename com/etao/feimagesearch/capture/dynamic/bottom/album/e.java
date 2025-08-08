@@ -3,7 +3,7 @@ package com.etao.feimagesearch.capture.dynamic.bottom.album;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,7 +98,7 @@ public class e extends RecyclerView.ViewHolder {
             sb.append("，");
         }
         String a2 = com.etao.feimagesearch.util.b.a(com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_1_19906), Long.valueOf(oVar.f()));
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             sb.append(com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_unknown_time));
         } else {
             sb.append(a2);

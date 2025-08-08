@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
 import java.util.List;
@@ -51,6 +51,6 @@ public class ab {
         if (list == null || list.size() <= 0) {
             return MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264;
         }
-        return riy.ARRAY_START_STR + TextUtils.join(",", list) + riy.ARRAY_END_STR;
+        return riy.ARRAY_START_STR + StringUtils.join(",", list) + riy.ARRAY_END_STR;
     }
 }

@@ -3,7 +3,7 @@ package com.taobao.search.mmd.uikit.shopinfo;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.g;
@@ -63,15 +63,15 @@ public class a {
         String string = jSONObject.getString("radius");
         String string2 = jSONObject.getString("paddingLeft");
         String string3 = jSONObject.getString("paddingRight");
-        int a3 = TextUtils.isEmpty(string2) ? 0 : (int) i.a(string2);
-        int a4 = TextUtils.isEmpty(string3) ? 0 : (int) i.a(string3);
-        if (TextUtils.isEmpty(string)) {
+        int a3 = StringUtils.isEmpty(string2) ? 0 : (int) i.a(string2);
+        int a4 = StringUtils.isEmpty(string3) ? 0 : (int) i.a(string3);
+        if (StringUtils.isEmpty(string)) {
             aVar = new a(a2, 0, a3, a4);
         } else {
             aVar = new a(a2, (int) i.a(string), a3, a4);
         }
         String string4 = jSONObject.getString("opacity");
-        if (!TextUtils.isEmpty(string4)) {
+        if (!StringUtils.isEmpty(string4)) {
             aVar.a(g.a(string4, 1.0f));
         }
         return aVar;

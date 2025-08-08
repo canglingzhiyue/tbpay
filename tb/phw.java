@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.alilive.adapter.uikit.AliUrlImageView;
@@ -290,7 +290,7 @@ public class phw {
         }
         e(videoInfo);
         if (this.c != null) {
-            int a2 = this.o.a(videoInfo, !TextUtils.isEmpty(str));
+            int a2 = this.o.a(videoInfo, !StringUtils.isEmpty(str));
             String a3 = this.o.a(videoInfo, a2);
             this.o.a(false);
             if (videoInfo.status == 0) {
@@ -306,7 +306,7 @@ public class phw {
                             com.taobao.alilive.aliliveframework.frame.a aVar = this.s;
                             if (aVar instanceof com.taobao.taolive.sdk.core.e) {
                                 String t = ((com.taobao.taolive.sdk.core.e) aVar).y().aJ_().b().t();
-                                if (!TextUtils.isEmpty(t) && TextUtils.equals(videoInfo.liveId, t)) {
+                                if (!StringUtils.isEmpty(t) && StringUtils.equals(videoInfo.liveId, t)) {
                                     this.l.e("detailPre");
                                 } else {
                                     this.l.e("mtopLiveUrlList");
@@ -327,7 +327,7 @@ public class phw {
                     try {
                         Object[] objArr = new Object[4];
                         objArr[0] = videoInfo.broadCaster.accountId;
-                        objArr[1] = !TextUtils.isEmpty(a3) ? URLEncoder.encode(a3, "UTF-8") : "";
+                        objArr[1] = !StringUtils.isEmpty(a3) ? URLEncoder.encode(a3, "UTF-8") : "";
                         objArr[2] = videoInfo.liveId;
                         objArr[3] = videoInfo.topic;
                         str4 = String.format("C-Common-%s-%s-%s-%s", objArr);
@@ -408,7 +408,7 @@ public class phw {
         if (videoInfo != null && (tBLiveDataModel = this.e) != null) {
             LiveItem.SpfPlayVideo a2 = j.a(tBLiveDataModel.mInitParams);
             VideoFrame2 videoFrame2 = this.c;
-            if (videoFrame2 != null && videoFrame2.hasPreloaded() && a2 != null && !TextUtils.isEmpty(a2.playInfo) && com.taobao.taolive.movehighlight.utils.c.j() && !TextUtils.isEmpty(videoInfo.liveUrl) && !TextUtils.isEmpty(this.c.highlightCurrentPlay)) {
+            if (videoFrame2 != null && videoFrame2.hasPreloaded() && a2 != null && !StringUtils.isEmpty(a2.playInfo) && com.taobao.taolive.movehighlight.utils.c.j() && !StringUtils.isEmpty(videoInfo.liveUrl) && !StringUtils.isEmpty(this.c.highlightCurrentPlay)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID, videoInfo.liveId);
                 ai.a(19999, "compitableHighlightPreload", hashMap);
@@ -485,7 +485,7 @@ public class phw {
         } else if (this.c == null || videoInfo == null) {
         } else {
             ImageView imageView = null;
-            if (!TextUtils.isEmpty(videoInfo.coverImg169)) {
+            if (!StringUtils.isEmpty(videoInfo.coverImg169)) {
                 imageView = new ImageView(this.d);
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
@@ -528,7 +528,7 @@ public class phw {
         if (this.c != null) {
             a(this.d.getString(R.string.taolive_replay_video_error_hint), videoInfo);
             this.c.changeStatus(2);
-            if (TextUtils.isEmpty(this.c.getVideoViewToken())) {
+            if (StringUtils.isEmpty(this.c.getVideoViewToken())) {
                 pkm pkmVar = this.l;
                 if (pkmVar != null) {
                     pkmVar.e("mtopReplayUrl");
@@ -619,11 +619,11 @@ public class phw {
             return;
         }
         b(ag.CALC_PRELIVE_ENTER, videoInfo);
-        if (videoInfo == null || videoInfo.broadCaster == null || TextUtils.isEmpty(videoInfo.broadCaster.accountId)) {
+        if (videoInfo == null || videoInfo.broadCaster == null || StringUtils.isEmpty(videoInfo.broadCaster.accountId)) {
             return;
         }
         String b = com.taobao.taolive.room.utils.c.b(videoInfo.broadCaster.accountId);
-        if (!TextUtils.isEmpty(videoInfo.broadCaster.accountInfoNewUrl)) {
+        if (!StringUtils.isEmpty(videoInfo.broadCaster.accountInfoNewUrl)) {
             b = videoInfo.broadCaster.accountInfoNewUrl;
         }
         ai.c(this.s);
@@ -676,7 +676,7 @@ public class phw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (aliUrlImageView = this.m) == null) {
+        } else if (StringUtils.isEmpty(str) || (aliUrlImageView = this.m) == null) {
         } else {
             aliUrlImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             this.m.setImageUrl(str);
@@ -688,16 +688,16 @@ public class phw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Uri parse = Uri.parse(str);
             String str2 = null;
             if (parse != null) {
                 str2 = parse.getQueryParameter(CommandID.seekTo);
             }
-            if (!TextUtils.isEmpty(str2) && str2.contains(".")) {
+            if (!StringUtils.isEmpty(str2) && str2.contains(".")) {
                 this.c.seekTo(((int) Float.parseFloat(str2)) * 1000);
-            } else if (TextUtils.isEmpty(str2) || !TextUtils.isDigitsOnly(str2)) {
+            } else if (StringUtils.isEmpty(str2) || !StringUtils.isDigitsOnly(str2)) {
             } else {
                 this.c.seekTo(v.a(str2, 0) * 1000);
             }
@@ -850,12 +850,12 @@ public class phw {
             return;
         }
         String str = a2.playModePortrait;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = aa.cd();
         }
         if (y.a() && y.b(this.d)) {
             str = a2.playModeLandscape;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = aa.cc();
             }
         }
@@ -949,7 +949,7 @@ public class phw {
             return;
         }
         String str = a2.playModeLandscape;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = aa.cc();
         }
         this.c.getTaoVideoView().a(ac.a().a(str));

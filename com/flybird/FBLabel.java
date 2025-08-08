@@ -9,7 +9,7 @@ import android.text.Selection;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
 import android.view.View;
@@ -229,14 +229,14 @@ public class FBLabel extends FBView implements HtmlLite.UrlSpanFactory, FBLabelS
         } else if (!this.D.equals("hidden")) {
         } else {
             if (this.C.equals("ellipsis")) {
-                this.A.setEllipsize(TextUtils.TruncateAt.END);
+                this.A.setEllipsize(StringUtils.TruncateAt.END);
             } else if (!this.C.equals("marquee")) {
             } else {
                 TextView textView = this.A;
                 if (textView instanceof FBBorderText) {
                     ((FBBorderText) textView).setForceFocus(true);
                 }
-                this.A.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                this.A.setEllipsize(StringUtils.TruncateAt.MARQUEE);
                 this.A.setSelected(true);
                 this.A.setFocusable(true);
                 this.A.setGravity(19);
@@ -255,7 +255,7 @@ public class FBLabel extends FBView implements HtmlLite.UrlSpanFactory, FBLabelS
         } else {
             if (this.E.length() > 0) {
                 this.A.setMaxLines(Integer.parseInt(this.E));
-                this.A.setEllipsize(TextUtils.TruncateAt.END);
+                this.A.setEllipsize(StringUtils.TruncateAt.END);
                 return;
             }
             this.A.setMaxLines(100000);
@@ -296,7 +296,7 @@ public class FBLabel extends FBView implements HtmlLite.UrlSpanFactory, FBLabelS
                         if (textView instanceof FBBorderText) {
                             ((FBBorderText) textView).setForceFocus(true);
                         }
-                        FBLabel.this.A.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+                        FBLabel.this.A.setEllipsize(StringUtils.TruncateAt.MARQUEE);
                         FBLabel.this.A.setSelected(true);
                         FBLabel.this.A.setFocusable(true);
                         FBLabel.this.A.setGravity(19);
@@ -347,7 +347,7 @@ public class FBLabel extends FBView implements HtmlLite.UrlSpanFactory, FBLabelS
         } else if (c != 2) {
         } else {
             putThemeModeAssociatedActions(FBView.THEME_ASSOCIATED_TYPE_PROP, str, str2);
-            if (this.A == null || TextUtils.isEmpty(str2)) {
+            if (this.A == null || StringUtils.isEmpty(str2)) {
                 return;
             }
             try {
@@ -482,7 +482,7 @@ public class FBLabel extends FBView implements HtmlLite.UrlSpanFactory, FBLabelS
                     this.A.setSingleLine(false);
                     return;
                 case 1:
-                    if (!(this.A instanceof FBBorderText) || !TextUtils.equals("true", str2)) {
+                    if (!(this.A instanceof FBBorderText) || !StringUtils.equals("true", str2)) {
                         return;
                     }
                     ((FBBorderText) this.A).h = true;

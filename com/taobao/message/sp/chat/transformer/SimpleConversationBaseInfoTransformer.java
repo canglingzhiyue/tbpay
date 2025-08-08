@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.transformer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.lab.comfrm.core.Action;
@@ -29,7 +29,7 @@ public class SimpleConversationBaseInfoTransformer implements Transformer {
         }
         SimpleProfile simpleProfile = (SimpleProfile) sharedState.getProp("targetProfile", SimpleProfile.class, null);
         String displayName = simpleProfile != null ? simpleProfile.getDisplayName() : "";
-        if (TextUtils.isEmpty(displayName) && (simpleConversation = (SimpleConversation) sharedState.getProp("conversation", SimpleConversation.class, null)) != null) {
+        if (StringUtils.isEmpty(displayName) && (simpleConversation = (SimpleConversation) sharedState.getProp("conversation", SimpleConversation.class, null)) != null) {
             displayName = simpleConversation.getConversationContent().getConversationName();
         }
         JSONObject jSONObject = new JSONObject();

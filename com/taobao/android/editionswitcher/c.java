@@ -2,7 +2,7 @@ package com.taobao.android.editionswitcher;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -156,7 +156,7 @@ public class c implements njr {
 
     private void a(TBMaterialDialog tBMaterialDialog) {
         HomeLocationResult homeLocationResult;
-        if (!l.g(tBMaterialDialog.getContext()) || this.b != 0 || (homeLocationResult = this.e) == null || !TextUtils.equals(homeLocationResult.isNewVillageDialog, "y") || !TextUtils.equals(this.e.villageForceSwitch, "y")) {
+        if (!l.g(tBMaterialDialog.getContext()) || this.b != 0 || (homeLocationResult = this.e) == null || !StringUtils.equals(homeLocationResult.isNewVillageDialog, "y") || !StringUtils.equals(this.e.villageForceSwitch, "y")) {
             return;
         }
         try {

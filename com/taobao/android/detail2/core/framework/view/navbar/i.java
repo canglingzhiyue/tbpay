@@ -1,6 +1,6 @@
 package com.taobao.android.detail2.core.framework.view.navbar;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class i extends f {
             } else if (i.this.c == null || i.this.c.d() == null) {
             } else {
                 String string = i.this.c.d().getString("url");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 if (i.this.c.g() != null) {

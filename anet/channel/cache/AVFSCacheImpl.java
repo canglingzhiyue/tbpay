@@ -1,7 +1,7 @@
 package anet.channel.cache;
 
 import android.taobao.windvane.jsbridge.api.WVFile;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import anet.channel.util.StringUtils;
 import anetwork.channel.cache.Cache;
@@ -86,7 +86,7 @@ public class AVFSCacheImpl implements Cache {
     public AVFSCacheImpl(CacheConfig cacheConfig) {
         this.cacheConfig = cacheConfig == null ? CacheConfig.create("", WVFile.FILE_MAX_SIZE) : cacheConfig;
         String str = "networksdk.httpcache";
-        this.moduleName = !TextUtils.isEmpty(this.cacheConfig.getBizName()) ? StringUtils.concatString(str, ".", this.cacheConfig.getBizName()) : str;
+        this.moduleName = !StringUtils.isEmpty(this.cacheConfig.getBizName()) ? StringUtils.concatString(str, ".", this.cacheConfig.getBizName()) : str;
     }
 
     public void initialize() {

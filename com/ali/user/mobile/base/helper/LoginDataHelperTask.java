@@ -1,7 +1,7 @@
 package com.ali.user.mobile.base.helper;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.log.UserTrackAdapter;
@@ -72,10 +72,10 @@ public class LoginDataHelperTask extends AsyncTask {
             return (Void) ipChange.ipc$dispatch("6d120651", new Object[]{this, objArr});
         }
         try {
-            if (this.ext != null && !TextUtils.isEmpty(this.ext.get(LoginConstants.LOGIN_TYPE))) {
+            if (this.ext != null && !StringUtils.isEmpty(this.ext.get(LoginConstants.LOGIN_TYPE))) {
                 this.loginType = this.ext.get(LoginConstants.LOGIN_TYPE);
             }
-            if (this.ext != null && !TextUtils.isEmpty(this.ext.get(LoginConstants.LOGIN_ACCOUNT))) {
+            if (this.ext != null && !StringUtils.isEmpty(this.ext.get(LoginConstants.LOGIN_ACCOUNT))) {
                 this.loginAccount = this.ext.get(LoginConstants.LOGIN_ACCOUNT);
             }
             if (this.data == null) {
@@ -132,7 +132,7 @@ public class LoginDataHelperTask extends AsyncTask {
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        if (!TextUtils.isEmpty(cookie)) {
+        if (!StringUtils.isEmpty(cookie)) {
             String[] split = cookie.split(";");
             int length = split.length;
             int i = 0;
@@ -142,13 +142,13 @@ public class LoginDataHelperTask extends AsyncTask {
                     break;
                 }
                 String str2 = split[i];
-                if (!TextUtils.isEmpty(str2) && str2.trim().startsWith("cookie2=")) {
+                if (!StringUtils.isEmpty(str2) && str2.trim().startsWith("cookie2=")) {
                     str = str2.split("=")[1];
                     break;
                 }
                 i++;
             }
-            if (TextUtils.equals(this.session.getSid(), str)) {
+            if (StringUtils.equals(this.session.getSid(), str)) {
                 z = true;
             }
         }

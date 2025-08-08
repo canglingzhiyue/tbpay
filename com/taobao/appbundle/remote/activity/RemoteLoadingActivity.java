@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -278,7 +278,7 @@ public class RemoteLoadingActivity extends BaseFeatureDownloadActivity {
             overridePendingTransition(R.anim.fragment_in_bottom, R.anim.fragment_out_bottom);
         } else if (!this.m.isToastEnable()) {
         } else {
-            if (TextUtils.isEmpty(this.m.getFailToastText())) {
+            if (StringUtils.isEmpty(this.m.getFailToastText())) {
                 Toast.makeText(getApplicationContext(), this.m.getFailToastText(), 1).show();
             } else {
                 Toast.makeText(getApplicationContext(), "模块加载失败，请稍后重试", 1).show();
@@ -318,7 +318,7 @@ public class RemoteLoadingActivity extends BaseFeatureDownloadActivity {
                 super.finish();
                 return;
             }
-            if (this.m.isToastEnable() && !TextUtils.isEmpty(this.m.getSuccessToastText())) {
+            if (this.m.isToastEnable() && !StringUtils.isEmpty(this.m.getSuccessToastText())) {
                 Toast.makeText(getApplicationContext(), this.m.getSuccessToastText(), 0).show();
             }
             super.d();

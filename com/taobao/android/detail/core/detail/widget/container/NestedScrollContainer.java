@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.widget.container;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -704,7 +704,7 @@ public class NestedScrollContainer extends ScrollView {
                 this.mCurrentIndex = i2;
                 if (this.mScrollIndexListener != null && this.mCurrentIndex < this.mNestedScrollChildList.size()) {
                     String f = this.mNestedScrollChildList.get(this.mCurrentIndex).f();
-                    if (TextUtils.isEmpty(f) && (i = this.mCurrentIndex) > 0) {
+                    if (StringUtils.isEmpty(f) && (i = this.mCurrentIndex) > 0) {
                         f = this.mNestedScrollChildList.get(i - 1).f();
                     }
                     this.mScrollIndexListener.a(this.mCurrentIndex, f, getScrollY());
@@ -733,7 +733,7 @@ public class NestedScrollContainer extends ScrollView {
                         return;
                     }
                     String f = cVar.f();
-                    if (TextUtils.isEmpty(f) && (i = this.mCurrentIndex) > 0) {
+                    if (StringUtils.isEmpty(f) && (i = this.mCurrentIndex) > 0) {
                         f = this.mNestedScrollChildList.get(i - 1).f();
                     }
                     for (d dVar : this.mScrollIndexListeners) {

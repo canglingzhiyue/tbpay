@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.Header;
 import anetwork.channel.Request;
@@ -53,12 +53,12 @@ public final class ryr {
         requestImpl.setRetryTime(request.j);
         requestImpl.setConnectTimeout(request.f);
         requestImpl.setReadTimeout(request.g);
-        if (!TextUtils.isEmpty(request.l)) {
+        if (!StringUtils.isEmpty(request.l)) {
             requestImpl.setBizId(request.l);
         } else {
             requestImpl.setBizId(request.k);
         }
-        if (!TextUtils.isEmpty(request.B)) {
+        if (!StringUtils.isEmpty(request.B)) {
             requestImpl.setExtProperty("biz-topic", request.B);
         }
         requestImpl.setExtProperty(RequestConstant.KEY_PARENT_TRACE_ID, request.n);
@@ -67,7 +67,7 @@ public final class ryr {
         requestImpl.setExtProperty(RequestConstant.APPKEY, request.m);
         requestImpl.setExtProperty(RequestConstant.AUTH_CODE, request.o);
         requestImpl.setFollowRedirects(request.u);
-        if (!TextUtils.isEmpty(request.s)) {
+        if (!StringUtils.isEmpty(request.s)) {
             requestImpl.setExtProperty(RequestConstant.KEY_TRACE_ID, request.s);
         }
         if (request.t != null && !request.t.isEmpty()) {

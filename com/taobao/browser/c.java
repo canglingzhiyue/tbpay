@@ -19,7 +19,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.preRender.BasePreInitManager;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import anet.channel.util.HttpConstant;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -189,7 +189,7 @@ public class c extends com.taobao.browser.webview.a {
         if (urlFilter != null) {
             urlFilter.notifyParent(obtain);
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             TBS.Ext.commitEvent("Page_Webview", Constants.EventID_H5_APPCACHE, str, this.d, "" + this.c, "" + this.e);
             this.d = null;
             this.c = 0;
@@ -207,7 +207,7 @@ public class c extends com.taobao.browser.webview.a {
                 }
                 JSONObject jSONObject = null;
                 try {
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         if (str2.startsWith("\"") && str2.endsWith("\"")) {
                             str2 = str2.substring(1, str2.length() - 1);
                         }
@@ -226,7 +226,7 @@ public class c extends com.taobao.browser.webview.a {
         try {
             String queryParameter = Uri.parse(str).getQueryParameter("mt_scripts");
             URLDecoder.decode(queryParameter, "UTF-8");
-            if (!TextUtils.isEmpty(queryParameter) && a(Uri.parse(queryParameter))) {
+            if (!StringUtils.isEmpty(queryParameter) && a(Uri.parse(queryParameter))) {
                 ((WVUCWebView) webView).evaluateJavascript("(function(){const script=document.createElement('script');script.src='" + queryParameter + "';script.crossOrigin = 'anonymous';document.body.appendChild(script);})()");
             }
         } catch (Throwable unused) {
@@ -343,7 +343,7 @@ public class c extends com.taobao.browser.webview.a {
         try {
             if (parse.isHierarchical()) {
                 String queryParameter = parse.getQueryParameter("hybrid");
-                if ((TextUtils.isEmpty(queryParameter) || !"true".equals(queryParameter)) && ((this.f16759a != null && this.f16759a.filtrate(str)) || (com.taobao.browser.config.a.commonConfig.u && webView != null && new ShopUrlFilter().a(str, webView.getContext())))) {
+                if ((StringUtils.isEmpty(queryParameter) || !"true".equals(queryParameter)) && ((this.f16759a != null && this.f16759a.filtrate(str)) || (com.taobao.browser.config.a.commonConfig.u && webView != null && new ShopUrlFilter().a(str, webView.getContext())))) {
                     StringBuilder sb = new StringBuilder();
                     for (StackTraceElement stackTraceElement : Looper.getMainLooper().getThread().getStackTrace()) {
                         sb.append(stackTraceElement.toString());
@@ -355,7 +355,7 @@ public class c extends com.taobao.browser.webview.a {
             }
             String scheme = parse.getScheme();
             String host = parse.getHost();
-            if (("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) & (!TextUtils.isEmpty(scheme)) & (!TextUtils.isEmpty(host))) {
+            if (("http".equalsIgnoreCase(scheme) || "https".equalsIgnoreCase(scheme)) & (!StringUtils.isEmpty(scheme)) & (!StringUtils.isEmpty(host))) {
                 if (webView instanceof BrowserHybridWebView) {
                     BrowserHybridWebView browserHybridWebView = (BrowserHybridWebView) webView;
                     if (k.b(this.h, str)) {
@@ -370,7 +370,7 @@ public class c extends com.taobao.browser.webview.a {
                     return super.shouldOverrideUrlLoading(webView, str);
                 } else if (!j.commonConfig.ac && p.c(str, (android.taobao.windvane.webview.g) webView)) {
                     String b = n.a().b();
-                    if (TextUtils.isEmpty(b)) {
+                    if (StringUtils.isEmpty(b)) {
                         wVUCWebView.onMessage(402, str);
                     } else {
                         webView.loadUrl(b);
@@ -454,7 +454,7 @@ public class c extends com.taobao.browser.webview.a {
                                         }
                                         ((WVUCWebView) webView).fireEvent("nativePayDealt", jSONObject2.toString());
                                         final String returnUrl = h5PayResultModel.getReturnUrl();
-                                        if (TextUtils.isEmpty(returnUrl)) {
+                                        if (StringUtils.isEmpty(returnUrl)) {
                                             return;
                                         }
                                         ((Activity) currentContext).runOnUiThread(new Runnable() { // from class: com.taobao.browser.c.5.1
@@ -489,7 +489,7 @@ public class c extends com.taobao.browser.webview.a {
                     jSONObject.put("reason", com.taobao.android.weex_framework.util.a.ATOM_super);
                     return shouldOverrideUrlLoading;
                 }
-            } else if (TextUtils.isEmpty(scheme)) {
+            } else if (StringUtils.isEmpty(scheme)) {
                 return true;
             } else {
                 jSONObject.put("reason", "nonHttp");
@@ -528,7 +528,7 @@ public class c extends com.taobao.browser.webview.a {
         if (str.contains(".manifest")) {
             this.d = str;
             this.c++;
-        } else if (!TextUtils.isEmpty(this.d)) {
+        } else if (!StringUtils.isEmpty(this.d)) {
             this.e++;
         }
         super.onLoadResource(webView, str);
@@ -573,7 +573,7 @@ public class c extends com.taobao.browser.webview.a {
         }
         boolean z = false;
         for (String str2 : split) {
-            if (TextUtils.equals(str2, parse.getHost())) {
+            if (StringUtils.equals(str2, parse.getHost())) {
                 z = true;
             }
         }

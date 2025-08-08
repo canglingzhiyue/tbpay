@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.smartlanding.business;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.INetDataObject;
@@ -84,7 +84,7 @@ public class SmartLandingTask implements INetDataObject {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("bf9a01c2", new Object[]{this, str})).booleanValue();
             }
-            if (!TextUtils.isEmpty(str) && (hashMap = this.mValues) != null && hashMap.containsKey(str) && (bool = this.mValues.get(str)) != null) {
+            if (!StringUtils.isEmpty(str) && (hashMap = this.mValues) != null && hashMap.containsKey(str) && (bool = this.mValues.get(str)) != null) {
                 return bool.booleanValue();
             }
             return this.mCanShow;
@@ -94,7 +94,7 @@ public class SmartLandingTask implements INetDataObject {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f855c3d", new Object[]{this, str, new Boolean(z)});
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 this.mValues.put(str, Boolean.valueOf(z));
             } else {
                 this.mCanShow = z;

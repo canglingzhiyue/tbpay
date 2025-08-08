@@ -12,7 +12,7 @@ import android.os.Handler;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -466,7 +466,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4990bd9", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.p) || !r.cL()) {
+        } else if (!StringUtils.isEmpty(this.p) || !r.cL()) {
         } else {
             if (this.q == null) {
                 this.q = new HashMap();
@@ -534,15 +534,15 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         } else {
             HashMap hashMap = new HashMap();
             String param = this.c.getParam("entryUtparam");
-            if (!TextUtils.isEmpty(param)) {
+            if (!StringUtils.isEmpty(param)) {
                 hashMap.put("entryUtparam", param);
             }
             String param2 = this.c.getParam(pqq.KEY_ENTRY_SCM);
-            if (!TextUtils.isEmpty(param2)) {
+            if (!StringUtils.isEmpty(param2)) {
                 hashMap.put(pqq.KEY_ENTRY_SCM, param2);
             }
             String param3 = this.c.getParam("entrySpm");
-            if (!TextUtils.isEmpty(param3)) {
+            if (!StringUtils.isEmpty(param3)) {
                 hashMap.put("entrySpm", param3);
             }
             if (hashMap.isEmpty()) {
@@ -563,7 +563,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return;
         }
         String param = commonSearchContext.getParam(kuh.ALI_TRACK_ID);
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             return;
         }
         UTAnalytics.getInstance().getDefaultTracker().addTPKCache(kuh.ALI_TRACK_ID, param);
@@ -586,7 +586,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return false;
         }
         String string = bundle.getString(com.taobao.search.mmd.rebuild.e.EXTRA_REBUILD_TOKEN, "");
-        if (!TextUtils.isEmpty(string) && (a2 = com.taobao.search.mmd.rebuild.e.a(string)) != null && a2.a() != null) {
+        if (!StringUtils.isEmpty(string) && (a2 = com.taobao.search.mmd.rebuild.e.a(string)) != null && a2.a() != null) {
             this.c = a2.a();
             if (a2.d()) {
                 this.o = new com.taobao.search.refactor.j(a2.b(), true, getCore(), new nng(new nul("PageRebuild")));
@@ -642,7 +642,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         } else {
             this.c = CommonSearchContext.fromMap(map);
         }
-        if (TextUtils.isEmpty(this.c.getParam(noa.KEY_SEARCH_ELDER_HOME_OPEN))) {
+        if (StringUtils.isEmpty(this.c.getParam(noa.KEY_SEARCH_ELDER_HOME_OPEN))) {
             this.c.setParam(noa.KEY_SEARCH_ELDER_HOME_OPEN, String.valueOf(com.taobao.search.mmd.util.j.INSTANCE.b()));
             this.c.setParam(noa.KEY_GRAY_HAIR, String.valueOf(com.taobao.search.mmd.util.j.INSTANCE.b()));
         }
@@ -729,7 +729,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return;
         }
         String remove = map.remove(com.taobao.search.common.util.k.KEY_SEARCH_BAR_TAG);
-        if (TextUtils.isEmpty(remove)) {
+        if (StringUtils.isEmpty(remove)) {
             return;
         }
         try {
@@ -747,7 +747,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
                         map.putAll(params);
                     }
                     String q = fromJson.getQ();
-                    if (!TextUtils.isEmpty(q)) {
+                    if (!StringUtils.isEmpty(q)) {
                         sb.append(" ");
                         sb.append(q);
                     }
@@ -823,7 +823,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return;
         }
         Intent intent = getIntent();
-        if (intent == null || (data = intent.getData()) == null || !TextUtils.isEmpty(data.getQueryParameter(noa.KEY_MONITOR_COUNTRY))) {
+        if (intent == null || (data = intent.getData()) == null || !StringUtils.isEmpty(data.getQueryParameter(noa.KEY_MONITOR_COUNTRY))) {
             return;
         }
         Uri.Builder buildUpon = data.buildUpon();
@@ -857,7 +857,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             String stringExtra = intent.getStringExtra("android.intent.extra.TEXT");
             String stringExtra2 = intent.getStringExtra("android.intent.extra.TITLE");
             com.taobao.android.searchbaseframe.util.k.e("BaseResultActivity", "send: text=" + stringExtra + ", title=" + stringExtra2);
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 return;
             }
             intent.putExtra("q", stringExtra);
@@ -901,7 +901,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return ((Boolean) ipChange.ipc$dispatch("15320aa", new Object[]{this, intent})).booleanValue();
         }
         Intent intentForUri = Nav.from(this).intentForUri(intent.getData());
-        return (intentForUri == null || (component = intentForUri.getComponent()) == null || TextUtils.equals(component.getClassName(), MainSearchResultActivity.class.getName())) ? false : true;
+        return (intentForUri == null || (component = intentForUri.getComponent()) == null || StringUtils.equals(component.getClassName(), MainSearchResultActivity.class.getName())) ? false : true;
     }
 
     private void d() {
@@ -948,7 +948,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             if (asList.contains("g_jump")) {
                 this.u = false;
             } else {
-                this.u = TextUtils.equals(this.c.getParam("g_jump"), "true");
+                this.u = StringUtils.equals(this.c.getParam("g_jump"), "true");
                 cVar.getCurrentParam().setParam(k.a.a(k.a.PARAM_KEY_IS_NEW_SEARCH_JUMP), String.valueOf(this.u));
             }
             if (!this.u) {
@@ -986,8 +986,8 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             ipChange.ipc$dispatch("64de478", new Object[]{this});
             return;
         }
-        this.u = TextUtils.equals(this.c.getParam("g_jump"), "true");
-        this.z = !TextUtils.equals(this.c.getParam(noa.KEY_JARVIS_DISABLED, ""), "true");
+        this.u = StringUtils.equals(this.c.getParam("g_jump"), "true");
+        this.z = !StringUtils.equals(this.c.getParam(noa.KEY_JARVIS_DISABLED, ""), "true");
         this.d = new irt<>(this.o, this.c);
         final com.taobao.search.refactor.j jVar = (com.taobao.search.refactor.j) this.o;
         jVar.h().d = this.c;
@@ -1172,13 +1172,13 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return;
         }
         CommonSearchContext commonSearchContext = this.c;
-        if (commonSearchContext == null || !(this instanceof MainSearchResultActivity) || !TextUtils.isEmpty(commonSearchContext.getKeyword()) || getIntent() == null) {
+        if (commonSearchContext == null || !(this instanceof MainSearchResultActivity) || !StringUtils.isEmpty(commonSearchContext.getKeyword()) || getIntent() == null) {
             return;
         }
         String param = this.c.getParam("from");
         StringBuilder sb = new StringBuilder();
         String dataString = getIntent().getDataString();
-        if (!TextUtils.isEmpty(dataString)) {
+        if (!StringUtils.isEmpty(dataString)) {
             try {
                 dataString = URLEncoder.encode(dataString, "utf-8");
             } catch (Exception e) {
@@ -1218,7 +1218,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         L15:
             if (r7 == 0) goto Lb8
             java.lang.String r0 = r7.f29283a
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L21
             goto Lb8
         L21:
@@ -1384,7 +1384,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return;
         }
         String string = jSONObject.getString("tab");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         JSONObject b = com.taobao.android.searchbaseframe.util.a.b(jSONObject, "params");
@@ -1406,7 +1406,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             ipChange.ipc$dispatch("c50c34c6", new Object[]{this, jSONObject});
         } else if (jSONObject != null) {
             String obj = jSONObject.remove("id").toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 return;
             }
             com.taobao.search.sf.datasource.c cVar = (com.taobao.search.sf.datasource.c) ((iru) this.b.getModel()).b();
@@ -1419,7 +1419,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String key = entry.getKey();
                 String obj2 = entry.getValue().toString();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(obj2)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(obj2)) {
                     arrayMap.put(key, obj2);
                 }
             }
@@ -1537,15 +1537,15 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
                 map.put(noa.KEY_POP_UP, this.c.getParam(noa.KEY_POP_UP));
             }
             String tab = cVar.getTab();
-            if (!TextUtils.isEmpty(tab)) {
+            if (!StringUtils.isEmpty(tab)) {
                 map.put("tab", tab);
             }
             String paramValue = cVar.getParamValue("m");
-            if (!TextUtils.isEmpty(paramValue)) {
+            if (!StringUtils.isEmpty(paramValue)) {
                 map.put("m", paramValue);
             }
             String paramValue2 = cVar.getParamValue(noa.KEY_HAS_TAB);
-            if (TextUtils.isEmpty(paramValue2)) {
+            if (StringUtils.isEmpty(paramValue2)) {
                 return;
             }
             map.put(noa.KEY_HAS_TAB, paramValue2);
@@ -1587,14 +1587,14 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             ipChange.ipc$dispatch("f0147f6e", new Object[]{this, searchBarTagBean});
         } else if (searchBarTagBean == null || this.e == null) {
         } else {
-            if (TextUtils.equals(searchBarTagBean.getType(), "append")) {
+            if (StringUtils.equals(searchBarTagBean.getType(), "append")) {
                 this.e.add(searchBarTagBean);
-            } else if (TextUtils.equals(searchBarTagBean.getType(), "update")) {
+            } else if (StringUtils.equals(searchBarTagBean.getType(), "update")) {
                 while (true) {
                     if (i >= this.e.size()) {
                         i = -1;
                         break;
-                    } else if (TextUtils.equals(this.e.get(i).getType(), "update")) {
+                    } else if (StringUtils.equals(this.e.get(i).getType(), "update")) {
                         break;
                     } else {
                         i++;
@@ -1628,7 +1628,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
                 ntpVar.putAll(params);
             }
             String q = next.getQ();
-            if (!TextUtils.isEmpty(q)) {
+            if (!StringUtils.isEmpty(q)) {
                 sb.append(" ");
                 sb.append(q);
             }
@@ -1667,11 +1667,11 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return;
         }
         String str = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.searchbaseframe.util.k.e("BaseResultActivity", "currentPageName is null ");
             str = "Page_SearchItemList";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         setUTPageName(str);
@@ -1690,7 +1690,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         }
         HashMap hashMap = new HashMap(map);
         String str = (String) hashMap.remove("utparam-cnt");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             UTAnalytics.getInstance().getDefaultTracker().updatePageUtparam(this, str);
         }
         UTAnalytics.getInstance().getDefaultTracker().updatePageProperties(this, hashMap);
@@ -1713,14 +1713,14 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return;
         }
         String str = pVar.f29237a;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.searchbaseframe.util.k.a("BaseResultActivity", "pageName为空，不更新2001埋点");
-        } else if (TextUtils.equals(str, this.p)) {
+        } else if (StringUtils.equals(str, this.p)) {
             com.taobao.android.searchbaseframe.util.k.e("BaseResultActivity", "pageName没有变化，不更新2001埋点，只更新properties");
             this.q = pVar.c;
             I();
         } else {
-            if (!TextUtils.isEmpty(this.p)) {
+            if (!StringUtils.isEmpty(this.p)) {
                 UTAnalytics.getInstance().getDefaultTracker().pageDisAppear(this);
                 String str2 = this.p;
                 Map<String, String> map = this.q;
@@ -1759,11 +1759,11 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         this.H = 1;
         WXSDKEngine.setActivityNavBarSetter(new nyc(this));
         L();
-        if (!TextUtils.isEmpty(this.p)) {
+        if (!StringUtils.isEmpty(this.p)) {
             UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(this);
         }
         N();
-        if (!TextUtils.isEmpty(this.p)) {
+        if (!StringUtils.isEmpty(this.p)) {
             com.taobao.search.jarvis.c.a(this.p, (String) null, K(), this);
         }
         com.taobao.search.m3.e.Companion.b(this);
@@ -1777,7 +1777,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         HashMap hashMap = new HashMap();
         hashMap.put("query", e());
         String param = this.c.getParam("lastQ");
-        if (!TextUtils.isEmpty(param)) {
+        if (!StringUtils.isEmpty(param)) {
             hashMap.put("lastQuery", param);
         }
         return hashMap;
@@ -1818,11 +1818,11 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         this.H = 2;
         WXSDKEngine.setActivityNavBarSetter(null);
         O();
-        if (!TextUtils.isEmpty(this.p)) {
+        if (!StringUtils.isEmpty(this.p)) {
             UTAnalytics.getInstance().getDefaultTracker().pageDisAppear(this);
         } else {
             CommonSearchContext commonSearchContext = this.c;
-            if (commonSearchContext != null && !TextUtils.isEmpty(commonSearchContext.getChannelSrp())) {
+            if (commonSearchContext != null && !StringUtils.isEmpty(commonSearchContext.getChannelSrp())) {
                 UTTracker defaultTracker = UTAnalytics.getInstance().getDefaultTracker();
                 defaultTracker.pageAppearDonotSkip(this);
                 defaultTracker.updatePageName(this, "Page_SearchItemList");
@@ -1844,7 +1844,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
             return (String) ipChange.ipc$dispatch("54a6b086", new Object[]{this});
         }
         String param = this.c.getParam("fallbackSpm");
-        return TextUtils.isEmpty(param) ? "a2141.7631557.0.0" : param;
+        return StringUtils.isEmpty(param) ? "a2141.7631557.0.0" : param;
     }
 
     private void P() {
@@ -2115,7 +2115,7 @@ public abstract class BaseResultActivity extends CustomBaseActivity implements c
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("5c99a0f1", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, "connectivity") && r.bV()) {
+        if (StringUtils.equals(str, "connectivity") && r.bV()) {
             return getApplicationContext().getSystemService(str);
         }
         return super.getSystemService(str);

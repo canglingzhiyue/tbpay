@@ -2,7 +2,7 @@ package com.taobao.taolive.movehighlight.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.movehighlight.bundle.timeshift.model.LiveTimemovingModel;
 import com.taobao.taolive.room.utils.ag;
@@ -66,7 +66,7 @@ public class a {
         LiveItem liveItem = new LiveItem();
         liveItem.extendVal = liveTimemovingModel.extendVal;
         liveItem.itemH5TaokeUrl = liveTimemovingModel.itemH5TaokeUrl;
-        if (TextUtils.isDigitsOnly(liveTimemovingModel.itemId)) {
+        if (StringUtils.isDigitsOnly(liveTimemovingModel.itemId)) {
             liveItem.itemId = com.taobao.taolive.sdk.utils.l.b(liveTimemovingModel.itemId);
         }
         liveItem.itemPic = liveTimemovingModel.itemPic;
@@ -115,7 +115,7 @@ public class a {
         LiveItem liveItem = new LiveItem();
         liveItem.extendVal = liveTimemovingModel.extendVal;
         liveItem.itemH5TaokeUrl = liveTimemovingModel.itemH5TaokeUrl;
-        if (TextUtils.isDigitsOnly(liveTimemovingModel.itemId)) {
+        if (StringUtils.isDigitsOnly(liveTimemovingModel.itemId)) {
             liveItem.itemId = com.taobao.taolive.sdk.utils.l.b(liveTimemovingModel.itemId);
         }
         liveItem.itemPic = liveTimemovingModel.itemPic;

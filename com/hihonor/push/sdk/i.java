@@ -1,7 +1,7 @@
 package com.hihonor.push.sdk;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
@@ -76,7 +76,7 @@ public class i {
         L4f:
             byte[] r1 = android.util.Base64.decode(r1, r3)     // Catch: java.lang.Throwable -> Ld8
             java.lang.String r2 = ""
-            boolean r4 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Ld8
+            boolean r4 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Ld8
             if (r4 != 0) goto Lb9
             if (r1 == 0) goto Lb9
             int r4 = r1.length     // Catch: java.lang.Throwable -> Ld8
@@ -90,9 +90,9 @@ public class i {
             r5 = 24
             java.lang.String r3 = r0.substring(r3, r5)     // Catch: java.lang.Exception -> La4 java.lang.Throwable -> Ld8
             java.lang.String r0 = r0.substring(r5)     // Catch: java.lang.Exception -> La4 java.lang.Throwable -> Ld8
-            boolean r5 = android.text.TextUtils.isEmpty(r3)     // Catch: java.lang.Exception -> La4 java.lang.Throwable -> Ld8
+            boolean r5 = android.text.StringUtils.isEmpty(r3)     // Catch: java.lang.Exception -> La4 java.lang.Throwable -> Ld8
             if (r5 != 0) goto Lb9
-            boolean r5 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Exception -> La4 java.lang.Throwable -> Ld8
+            boolean r5 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Exception -> La4 java.lang.Throwable -> Ld8
             if (r5 != 0) goto Lb9
             javax.crypto.spec.GCMParameterSpec r5 = new javax.crypto.spec.GCMParameterSpec     // Catch: java.lang.Exception -> La4 java.lang.Throwable -> Ld8
             r6 = 128(0x80, float:1.794E-43)
@@ -118,7 +118,7 @@ public class i {
         Lb9:
             r1 = r2
         Lba:
-            boolean r0 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Ld8
+            boolean r0 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Ld8
             if (r0 == 0) goto Lcf
             com.hihonor.push.sdk.ak r0 = com.hihonor.push.sdk.i.f7275a     // Catch: java.lang.Throwable -> Ld8
             java.lang.String r1 = "key_aes_gcm"
@@ -150,7 +150,7 @@ public class i {
         byte[] bArr;
         byte[] bArr2;
         b(context);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             f7275a.a("key_push_token");
             return;
         }
@@ -167,7 +167,7 @@ public class i {
         boolean a5 = f7275a.a("key_aes_gcm", encodeToString);
         byte[] decode = Base64.decode(encodeToString, 0);
         String str2 = "";
-        if (!TextUtils.isEmpty(str) && decode != null && decode.length >= 16) {
+        if (!StringUtils.isEmpty(str) && decode != null && decode.length >= 16) {
             try {
                 try {
                     bArr2 = new byte[12];
@@ -187,7 +187,7 @@ public class i {
                 String str3 = "GCM encrypt data error" + e.getMessage();
             }
         }
-        if (a5 && !TextUtils.isEmpty(str2)) {
+        if (a5 && !StringUtils.isEmpty(str2)) {
             f7275a.a("key_push_token", str2);
         }
     }

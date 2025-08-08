@@ -1,7 +1,7 @@
 package com.ali.user.open.core.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.context.KernelContext;
 import com.ali.user.open.core.trace.SDKLogger;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -38,7 +38,7 @@ public class ResourceUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d93fce9", new Object[]{context, str, str2})).intValue();
         }
-        if (!TextUtils.isEmpty(KernelContext.packageName)) {
+        if (!StringUtils.isEmpty(KernelContext.packageName)) {
             packageName = KernelContext.packageName;
         } else {
             packageName = context.getPackageName();

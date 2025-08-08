@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.Serializable;
 
 /* loaded from: classes6.dex */
@@ -19,7 +19,7 @@ public enum ListStyle implements Serializable {
     }
 
     public static ListStyle fromNumString(String str) {
-        return TextUtils.equals("0", str) ? LIST : WATERFALL;
+        return StringUtils.equals("0", str) ? LIST : WATERFALL;
     }
 
     public static ListStyle fromString(String str) {

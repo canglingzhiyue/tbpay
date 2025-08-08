@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -392,7 +392,7 @@ public final class a extends com.taobao.tao.topmultitab.protocol.a {
             b2 = com.taobao.share.taopassword.busniess.model.g.TAO;
         }
         ldf.d(TAG, "isOnRocketState，当前的小火箭状态是：" + b2);
-        return TextUtils.equals(b2, NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET);
+        return StringUtils.equals(b2, NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET);
     }
 
     @Override // com.taobao.tao.topmultitab.protocol.a, com.taobao.tao.topmultitab.protocol.IHomeSubTabController
@@ -539,7 +539,7 @@ public final class a extends com.taobao.tao.topmultitab.protocol.a {
         }
         String a2 = tbv.INSTANCE.a(b2);
         String str3 = str;
-        if (TextUtils.equals(str3, str2) || TextUtils.equals(a2, str3)) {
+        if (StringUtils.equals(str3, str2) || StringUtils.equals(a2, str3)) {
             ldf.d(TAG, "链接没变化，不预请求了");
             return;
         }

@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Message;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.media.MediaConstant;
 import com.taobao.taolive.uikit.homepage.d;
@@ -249,7 +249,7 @@ public class psg implements pqu {
             return false;
         }
         if (this.c.l == null) {
-            if (TextUtils.isEmpty(this.c.b)) {
+            if (StringUtils.isEmpty(this.c.b)) {
                 return false;
             }
             this.b.a(null, this.c.b);

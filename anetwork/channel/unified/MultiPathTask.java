@@ -1,7 +1,7 @@
 package anetwork.channel.unified;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.NoAvailStrategyException;
@@ -136,10 +136,10 @@ public class MultiPathTask implements IUnifiedTask {
         long currentTimeMillis = System.currentTimeMillis();
         if (this.rc.config.isRequestCookieEnabled() && !AwcnConfig.isAllowNoCookieList(this.rc.config.getUrlString())) {
             String cookie = CookieManager.getCookie(this.rc.config.getUrlString());
-            if (!TextUtils.isEmpty(cookie)) {
+            if (!StringUtils.isEmpty(cookie)) {
                 builder = request.newBuilder();
                 String str2 = request.getHeaders().get("Cookie");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     cookie = StringUtils.concatString(str2, "; ", cookie);
                 }
                 if (AwcnConfig.isHostInCookiePrintLogWhiteList(request.getHost())) {
@@ -154,7 +154,7 @@ public class MultiPathTask implements IUnifiedTask {
             if (builder == null) {
                 builder = request.newBuilder();
             }
-            if (TextUtils.isEmpty(request.getHeaders().get("Accept-Encoding")) || AwcnConfig.isHostInAcceptEncodeWhiteList(request.getHost())) {
+            if (StringUtils.isEmpty(request.getHeaders().get("Accept-Encoding")) || AwcnConfig.isHostInAcceptEncodeWhiteList(request.getHost())) {
                 this.rc.config.dueToAcceptEncode(builder);
             }
         }
@@ -439,6 +439,6 @@ public class MultiPathTask implements IUnifiedTask {
             return (HttpUrl) ipChange.ipc$dispatch("489847f3", new Object[]{httpUrl, requestContext});
         }
         String str = requestContext.config.getHeaders().get(HttpConstant.X_HOST_CNAME);
-        return (TextUtils.isEmpty(str) || (parse = HttpUrl.parse(httpUrl.urlString().replaceFirst(httpUrl.host(), str))) == null) ? httpUrl : parse;
+        return (StringUtils.isEmpty(str) || (parse = HttpUrl.parse(httpUrl.urlString().replaceFirst(httpUrl.host(), str))) == null) ? httpUrl : parse;
     }
 }

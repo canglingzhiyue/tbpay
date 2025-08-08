@@ -1,7 +1,7 @@
 package com.alipay.zoloz.hardware.camera.utils;
 
 import android.hardware.Camera;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.zoloz.hardware.camera.abs.AbsCamera;
 import com.alipay.zoloz.hardware.log.Log;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -415,6 +415,6 @@ public class AndroidCameraUtil {
             Log.v(AbsCamera.TAG, "supportedPreviewFormat[" + i2 + "] = " + imageFormatToString(intValue));
         }
         parameters.getPreviewFpsRange(new int[2]);
-        Log.d(AbsCamera.TAG, "previewFpsRange=[" + TextUtils.join(" - ", supportedPreviewFormats) + riy.ARRAY_END_STR);
+        Log.d(AbsCamera.TAG, "previewFpsRange=[" + StringUtils.join(" - ", supportedPreviewFormats) + riy.ARRAY_END_STR);
     }
 }

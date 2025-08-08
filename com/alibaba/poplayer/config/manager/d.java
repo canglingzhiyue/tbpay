@@ -39,14 +39,14 @@ public class d {
             boolean r7 = r7.booleanValue()
             return r7
         L1c:
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 == 0) goto L2a
             java.lang.Object[] r7 = new java.lang.Object[r2]
             java.lang.String r8 = "SceneMatcher.paramFilter is empty,check success."
             com.alibaba.poplayer.utils.c.a(r8, r7)
             return r3
         L2a:
-            boolean r0 = android.text.TextUtils.isEmpty(r7)
+            boolean r0 = android.text.StringUtils.isEmpty(r7)
             java.lang.String r1 = "}"
             java.lang.String r4 = ""
             java.lang.String r5 = "configCheck"
@@ -66,7 +66,7 @@ public class d {
             android.util.LruCache<java.lang.String, java.lang.String> r6 = com.alibaba.poplayer.config.manager.d.f3177a     // Catch: java.lang.Throwable -> L6e
             java.lang.Object r6 = r6.get(r7)     // Catch: java.lang.Throwable -> L6e
             java.lang.String r6 = (java.lang.String) r6     // Catch: java.lang.Throwable -> L6e
-            boolean r0 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L6d
+            boolean r0 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L6d
             if (r0 == 0) goto L6b
             java.lang.String r0 = "utf-8"
             java.lang.String r0 = java.net.URLDecoder.decode(r7, r0)     // Catch: java.lang.Throwable -> L6d

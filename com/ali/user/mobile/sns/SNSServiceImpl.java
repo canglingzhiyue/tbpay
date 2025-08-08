@@ -3,7 +3,7 @@ package com.ali.user.mobile.sns;
 import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 import android.text.Html;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.base.helper.LoginDataHelper;
 import com.ali.user.mobile.base.ui.BaseActivity;
@@ -113,10 +113,10 @@ public class SNSServiceImpl implements SNSService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b3ab75a", new Object[]{activity, loginReturnData, map});
-        } else if (activity != null && (activity instanceof FragmentActivity) && loginReturnData != null && loginReturnData.extMap != null && !TextUtils.isEmpty(loginReturnData.extMap.get("loginPostUrl"))) {
+        } else if (activity != null && (activity instanceof FragmentActivity) && loginReturnData != null && loginReturnData.extMap != null && !StringUtils.isEmpty(loginReturnData.extMap.get("loginPostUrl"))) {
             final String str = loginReturnData.extMap.get("dialogTitle");
             String str2 = loginReturnData.extMap.get("dialogContent");
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                 UserTrackAdapter.sendUT("", "after_login_handle_commit", loginReturnData.loginType, str, null);
                 LoginPostHandler.openPostPage(activity, loginReturnData.extMap.get("loginPostUrl"), "true".equals(loginReturnData.extMap.get(g.KEY_IS_TRANSPARENT)), new LoginFilterCallback() { // from class: com.ali.user.mobile.sns.SNSServiceImpl.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -220,10 +220,10 @@ public class SNSServiceImpl implements SNSService {
                     SNSServiceImpl.doSuccess(loginReturnData, map);
                 }
             });
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 aliUserBindMobileDialog.setTitle(str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 aliUserBindMobileDialog.setContent(Html.fromHtml(str2));
             }
             aliUserBindMobileDialog.show(fragmentActivity.getSupportFragmentManager(), UTConstans.PageName.UT_PAGE_RECOMMEND_LOGIN);
@@ -247,7 +247,7 @@ public class SNSServiceImpl implements SNSService {
             return;
         }
         String str = rpcResponse.returnValue.h5Url;
-        if (activity == null || TextUtils.isEmpty(str)) {
+        if (activity == null || StringUtils.isEmpty(str)) {
             return;
         }
         LoginParam loginParam = new LoginParam();

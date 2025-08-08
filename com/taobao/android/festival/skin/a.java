@@ -1,7 +1,7 @@
 package com.taobao.android.festival.skin;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -88,7 +88,7 @@ public class a extends AsyncTask<Void, Void, Void> {
                 } else {
                     gjd gjdVar = new gjd();
                     C0485a c0485a = new C0485a(a2, a3);
-                    if (!TextUtils.isEmpty(this.f12357a.skinZipUrl)) {
+                    if (!StringUtils.isEmpty(this.f12357a.skinZipUrl)) {
                         gjdVar.a(this.f12357a.skinCode, this.f12357a.skinZipUrl, c0485a);
                     } else {
                         gjdVar.a(a3, c0485a);

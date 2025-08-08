@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,13 +53,13 @@ public class ntm {
                 hashMap.put("sessionid", commonSearchResult.getMainInfo().rn);
                 if (commonSearchResult.getMainInfo().pageTraceArgs != null) {
                     String str = commonSearchResult.getMainInfo().pageTraceArgs.get("spm-cnt");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String replace = str.replace(".0.0", "");
                         hashMap.put("spm", replace + ".itemlist." + i);
                     }
                 }
             }
-            if (!TextUtils.isEmpty(auctionBaseBean.videoId)) {
+            if (!StringUtils.isEmpty(auctionBaseBean.videoId)) {
                 hashMap.put(b.PROPERTY_VIDEO_ID, auctionBaseBean.videoId);
             }
             BaseCellBean baseCellBean2 = auctionBaseBean.mOutterBean;
@@ -84,7 +84,7 @@ public class ntm {
                     for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                         String key = entry.getKey();
                         Object value = entry.getValue();
-                        if (!TextUtils.equals(key, "pageName") && !TextUtils.equals(key, "spm") && !TextUtils.isEmpty(key) && value != null) {
+                        if (!StringUtils.equals(key, "pageName") && !StringUtils.equals(key, "spm") && !StringUtils.isEmpty(key) && value != null) {
                             map3.put(key, value.toString());
                         }
                     }
@@ -96,7 +96,7 @@ public class ntm {
                 hashMap.put("longPicture", String.valueOf(false));
             } else {
                 hashMap.put("style", "waterfall");
-                hashMap.put("longPicture", String.valueOf(!TextUtils.isEmpty(auctionBaseBean.wfPicUrl)));
+                hashMap.put("longPicture", String.valueOf(!StringUtils.isEmpty(auctionBaseBean.wfPicUrl)));
             }
             if (auctionBaseBean.trace != null && !auctionBaseBean.trace.isEmpty()) {
                 for (String str2 : auctionBaseBean.trace.keySet()) {
@@ -121,7 +121,7 @@ public class ntm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("abe470c9", new Object[]{auctionBaseBean});
-        } else if (!com.taobao.search.common.util.r.ae() || TextUtils.isEmpty(auctionBaseBean.ifsUrl) || TextUtils.isEmpty(auctionBaseBean.p4pPid)) {
+        } else if (!com.taobao.search.common.util.r.ae() || StringUtils.isEmpty(auctionBaseBean.ifsUrl) || StringUtils.isEmpty(auctionBaseBean.p4pPid)) {
         } else {
             AlimamaAdvertising.instance().buildIfsExposure(Globals.getApplication(), auctionBaseBean.ifsUrl).withArgNamespace("KGB").withArgPid(auctionBaseBean.p4pPid).commit();
         }

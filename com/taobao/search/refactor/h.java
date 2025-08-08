@@ -1,6 +1,6 @@
 package com.taobao.search.refactor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -157,7 +157,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
                 int size = jSONArray.size();
                 for (int i = 0; i < size; i++) {
                     String string = jSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         mSearchResult.clearParams.add(string);
                     }
                 }
@@ -268,7 +268,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
             for (Map.Entry<String, Object> entry : b.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     kotlin.jvm.internal.q.a((Object) key, "key");
                     hashMap.put(key, value.toString());
                 }
@@ -296,7 +296,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
         }
         try {
             String string = jSONObject.getString(JarvisConstant.KEY_JARVIS_CONFIG);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 mSearchResult.addExtMod(JarvisConstant.KEY_JARVIS_CONFIG, string);
             }
             JSONObject jSONObject2 = jSONObject.getJSONObject(JarvisConstant.KEY_JARVIS_CONTEXT);
@@ -358,7 +358,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
                 mSearchResult.addExtMod("filterMod", string);
             }
             String string2 = jSONObject.getString("sideMod");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return;
             }
             mSearchResult.addExtMod("sideMod", string2);
@@ -478,7 +478,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
             String tab = b2.getString("param");
             String string = b.getString("name");
             String string2 = b.getString("version");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(tab)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(tab)) {
                 return;
             }
             HashMap hashMap = null;
@@ -488,7 +488,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
                 for (Map.Entry<String, Object> entry : b3.entrySet()) {
                     String key = entry.getKey();
                     Object value = entry.getValue();
-                    if (!TextUtils.isEmpty(key) && value != null) {
+                    if (!StringUtils.isEmpty(key) && value != null) {
                         kotlin.jvm.internal.q.a((Object) key, "key");
                         hashMap.put(key, value.toString());
                     }
@@ -668,7 +668,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
         JSONObject jSONObject2 = new JSONObject();
         for (String str : list) {
             String string = jSONObject.getString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jSONObject2.put((JSONObject) str, string);
             }
         }
@@ -703,7 +703,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
                 int size = a2.size();
                 for (int i = 0; i < size; i++) {
                     String key = a2.getString(i);
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         kotlin.jvm.internal.q.a((Object) key, "key");
                         arrayList.add(key);
                     }
@@ -875,7 +875,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
             }
             JSONObject jSONObject2 = (JSONObject) obj;
             String string = jSONObject2.getString("tItemType");
-            if (TextUtils.equals(string, "nt_prepose_filter") || TextUtils.equals(string, "nt_prepose_filter_new")) {
+            if (StringUtils.equals(string, "nt_prepose_filter") || StringUtils.equals(string, "nt_prepose_filter_new")) {
                 jSONObject = jSONObject2;
             }
         }
@@ -962,8 +962,8 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
             return "";
         }
         String topBarItemType = jSONObject2.getString("tItemType");
-        if (TextUtils.isEmpty(topBarItemType)) {
-            topBarItemType = TextUtils.equals(nne.PAGE_NAME_INSHOP, str) ? "nt_inshop_topbar" : "nt_topbar";
+        if (StringUtils.isEmpty(topBarItemType)) {
+            topBarItemType = StringUtils.equals(nne.PAGE_NAME_INSHOP, str) ? "nt_inshop_topbar" : "nt_topbar";
             jSONObject2.put((JSONObject) "tItemType", topBarItemType);
             mSearchResult.setUseNativeTopBar(true);
         }
@@ -1045,7 +1045,7 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
             return;
         }
         String string = jSONObject3.getString("enableSlide");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         mSearchResult.addExtMod("enableSlide", string);
@@ -1108,10 +1108,10 @@ public final class h implements com.taobao.android.meta.logic.b<e, MSearchResult
             for (int i = 0; i < size; i++) {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                 String string = jSONObject2.getString("type");
-                if (!TextUtils.isEmpty(string) && (obj = jSONObject2.get("data")) != null) {
+                if (!StringUtils.isEmpty(string) && (obj = jSONObject2.get("data")) != null) {
                     kotlin.jvm.internal.q.a(obj, "obj[\"data\"] ?: continue");
                     String key = jSONObject2.getString("key");
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         Object obj2 = jSONObject.get(key);
                         if (obj2 == null) {
                             jSONObject.put((JSONObject) key, (String) obj);

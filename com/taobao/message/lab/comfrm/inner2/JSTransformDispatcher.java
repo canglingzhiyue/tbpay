@@ -2,7 +2,7 @@ package com.taobao.message.lab.comfrm.inner2;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -100,7 +100,7 @@ public class JSTransformDispatcher implements Transformer {
 
     public boolean hasInit() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bb429e55", new Object[]{this})).booleanValue() : this.isLoadFile || TextUtils.isEmpty(this.mFile);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bb429e55", new Object[]{this})).booleanValue() : this.isLoadFile || StringUtils.isEmpty(this.mFile);
     }
 
     public void init() {
@@ -122,14 +122,14 @@ public class JSTransformDispatcher implements Transformer {
             long currentTimeMillis = System.currentTimeMillis();
             String fetchResource = this.mResourceManager.fetchResource(this.mFile);
             Logger.e(Constants.Monitor.POINT_JSTRANSFORME_TIME, "time|" + (System.currentTimeMillis() - currentTimeMillis));
-            if (!TextUtils.isEmpty(fetchResource)) {
+            if (!StringUtils.isEmpty(fetchResource)) {
                 this.mJSFacade = new JSIImpl();
                 JSFacade jSFacade = this.mJSFacade;
                 Context context = this.mApplication;
                 jSFacade.initJS(context, "state|" + this.mContaienrKey, this.mTrans);
                 if (ApplicationUtil.isDebug()) {
                     String fetchResource2 = this.mResourceManager.fetchResource("jsiRemoteInspect");
-                    if (!TextUtils.isEmpty(fetchResource2)) {
+                    if (!StringUtils.isEmpty(fetchResource2)) {
                         this.mJSFacade.startRemoteInspect(fetchResource2);
                     }
                 }

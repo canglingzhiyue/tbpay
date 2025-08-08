@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class kvp extends fuf {
             try {
                 if (objArr.length > 0 && (objArr[0] instanceof String)) {
                     String str = (String) objArr[0];
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return null;
                     }
                     String str2 = ksk.NEW_FACE_PARENT.f30287a;
@@ -64,7 +64,7 @@ public class kvp extends fuf {
             return null;
         }
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (obj instanceof AwesomeGetContainerData) {
                     obj = a((AwesomeGetContainerData) obj, str);
                 } else if (obj instanceof AwesomeGetContainerInnerData) {

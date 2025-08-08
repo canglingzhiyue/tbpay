@@ -2,7 +2,7 @@ package com.taobao.uikit.actionbar;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,7 +95,7 @@ public class TBLiteProgramAdapter extends RecyclerView.Adapter<ViewHolder> imple
         if (tBPublicMenuItem == null) {
             return;
         }
-        if (!TextUtils.isEmpty(tBPublicMenuItem.getIconUrl())) {
+        if (!StringUtils.isEmpty(tBPublicMenuItem.getIconUrl())) {
             viewHolder.mIconView.setImageDrawable(null);
             viewHolder.mIconView.setImageUrl(tBPublicMenuItem.getIconUrl());
         } else if (tBPublicMenuItem.getIconDrawable() != null) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -212,7 +212,7 @@ public class oys {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put(str2, str3);
         }
         a(str, hashMap);
@@ -222,7 +222,7 @@ public class oys {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (!d.get()) {
                 if (e.size() > 10) {
@@ -238,7 +238,7 @@ public class oys {
                 }
             } else if (!b) {
             } else {
-                if (!TextUtils.isEmpty(f32494a) && f32494a.contains(str)) {
+                if (!StringUtils.isEmpty(f32494a) && f32494a.contains(str)) {
                     o.a("CodeMarkerUtils:ignore:" + str, new Object[0]);
                     return;
                 }

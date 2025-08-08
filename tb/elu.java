@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.q;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -37,7 +37,7 @@ public class elu {
         if (ipChange instanceof IpChange) {
             return (elt) ipChange.ipc$dispatch("7c6edb07", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return f27422a.get(str);
         }
         return null;
@@ -47,7 +47,7 @@ public class elu {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f27422a.remove(str);
         }

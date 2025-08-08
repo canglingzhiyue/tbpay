@@ -11,7 +11,7 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.Menu;
 import android.view.View;
@@ -2102,7 +2102,7 @@ public class WXSDKInstance implements View.OnLayoutChangeListener, l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f180e7f", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             List<String> list = this.aQ.get(str);
             if (list == null) {
@@ -2118,7 +2118,7 @@ public class WXSDKInstance implements View.OnLayoutChangeListener, l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bb83980", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (list = this.aQ.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (list = this.aQ.get(str)) == null) {
         } else {
             list.remove(str2);
         }
@@ -2128,7 +2128,7 @@ public class WXSDKInstance implements View.OnLayoutChangeListener, l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8f64af7b", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.aQ.remove(str);
         }
@@ -2180,7 +2180,7 @@ public class WXSDKInstance implements View.OnLayoutChangeListener, l {
         String ax = ax();
         if (ax == null) {
             return " template md5 null ,httpHeader:" + JSONObject.toJSONString(this.q);
-        } else if (TextUtils.isEmpty(ax)) {
+        } else if (StringUtils.isEmpty(ax)) {
             return " template md5  length 0 ,httpHeader" + JSONObject.toJSONString(this.q);
         } else {
             try {
@@ -2351,7 +2351,7 @@ public class WXSDKInstance implements View.OnLayoutChangeListener, l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8c1f121b", new Object[]{this, str, eVar});
-        } else if (TextUtils.isEmpty(str) || eVar == null) {
+        } else if (StringUtils.isEmpty(str) || eVar == null) {
         } else {
             this.aR.put(str, new d(str, eVar));
         }

@@ -5,7 +5,7 @@ import android.content.BroadcastReceiver;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -263,7 +263,7 @@ public class ARTryJSFlowForMiniApp implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b02cd3c4", new Object[]{this, str, jSONObject, dpvVar});
-        } else if (!TextUtils.equals(str, "applyEffect")) {
+        } else if (!StringUtils.equals(str, "applyEffect")) {
         } else {
             b(jSONObject.getString("apiName"), jSONObject.getJSONObject("apiParam"), dpvVar);
         }
@@ -273,24 +273,24 @@ public class ARTryJSFlowForMiniApp implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2e8dd7a3", new Object[]{this, str, jSONObject, dpvVar});
-        } else if (TextUtils.equals(str, "setupOrUpdateAREngine")) {
+        } else if (StringUtils.equals(str, "setupOrUpdateAREngine")) {
             c(jSONObject, dpvVar);
-        } else if (TextUtils.equals(str, "fetchPageUrl")) {
+        } else if (StringUtils.equals(str, "fetchPageUrl")) {
             if (dpvVar == null) {
                 return;
             }
             dpvVar.a("pageUrl", this.j);
             com.taobao.android.artry.common.c.a(true, (com.taobao.android.artry.common.a) dpvVar);
-        } else if (TextUtils.equals(str, "fetchFps")) {
+        } else if (StringUtils.equals(str, "fetchFps")) {
             i(jSONObject, dpvVar);
-        } else if (TextUtils.equals(str, "downloadResources")) {
+        } else if (StringUtils.equals(str, "downloadResources")) {
             b(jSONObject, dpvVar);
-        } else if (TextUtils.equals(str, "pauseOrResumeARFoundation")) {
+        } else if (StringUtils.equals(str, "pauseOrResumeARFoundation")) {
             jSONObject.getBooleanValue("active");
-        } else if (TextUtils.equals(str, "updateARFrameConfig")) {
+        } else if (StringUtils.equals(str, "updateARFrameConfig")) {
             f(jSONObject, dpvVar);
             g(jSONObject, dpvVar);
-        } else if (!TextUtils.equals(str, "takeARTryFrameSnapshot")) {
+        } else if (!StringUtils.equals(str, "takeARTryFrameSnapshot")) {
         } else {
             h(jSONObject, dpvVar);
         }
@@ -326,7 +326,7 @@ public class ARTryJSFlowForMiniApp implements d {
                 return;
             }
             this.s = string;
-            if (TextUtils.isEmpty(this.s)) {
+            if (StringUtils.isEmpty(this.s)) {
                 return;
             }
             com.taobao.android.artry.common.c.a(true, (com.taobao.android.artry.common.a) dpvVar);
@@ -334,12 +334,12 @@ public class ARTryJSFlowForMiniApp implements d {
                 tryShoeView.updateNNRPathWithUrl(this.s);
                 return;
             } else if ("AR_GLASS".equals(this.l) && this.f != null) {
-                if (TextUtils.isEmpty(this.s)) {
+                if (StringUtils.isEmpty(this.s)) {
                     return;
                 }
                 this.f.loadModel(this.s, b(a(this.s)));
                 return;
-            } else if (!"AR_WATCH".equals(this.l) || this.e == null || TextUtils.isEmpty(this.s)) {
+            } else if (!"AR_WATCH".equals(this.l) || this.e == null || StringUtils.isEmpty(this.s)) {
                 return;
             } else {
                 this.e.loadModel(this.s, b(a(this.s)));
@@ -358,7 +358,7 @@ public class ARTryJSFlowForMiniApp implements d {
         try {
             List createGraphParamsByJson = ArTryJSFlowMiniAppBundleImpl.createGraphParamsByJson(jSONObject, this.d);
             String string = jSONObject.getString(FluidInstanceAnalysis.KEY_SOURCE);
-            if (!TextUtils.equals(string, this.k)) {
+            if (!StringUtils.equals(string, this.k)) {
                 this.k = string;
             }
             if (com.taobao.android.artry.utils.d.a(createGraphParamsByJson)) {
@@ -696,10 +696,10 @@ public class ARTryJSFlowForMiniApp implements d {
         if (dpvVar != null) {
             dpvVar.a("supportedDataNameArrayInFrame", jSONArray).a("currentGraphType", "AR_SHOE_2").a("isDownload", "false").a("walleTime", "100").a("sourceDuration", "100").a(jyx.c.POINT_NAME, "100");
         }
-        if (!TextUtils.isEmpty("5") && TextUtils.isDigitsOnly("5") && dpvVar != null) {
+        if (!StringUtils.isEmpty("5") && StringUtils.isDigitsOnly("5") && dpvVar != null) {
             dpvVar.a("graphVersion", Integer.valueOf("5"));
         }
-        if (!TextUtils.isEmpty(this.g) && dpvVar != null) {
+        if (!StringUtils.isEmpty(this.g) && dpvVar != null) {
             dpvVar.a("monitorSessionId", this.g);
         }
         com.taobao.android.artry.common.c.a(true, (com.taobao.android.artry.common.a) dpvVar);
@@ -861,7 +861,7 @@ public class ARTryJSFlowForMiniApp implements d {
                 L9c:
                     com.taobao.android.artry.arflow.ARTryJSFlowForMiniApp r0 = com.taobao.android.artry.arflow.ARTryJSFlowForMiniApp.this
                     java.lang.String r0 = com.taobao.android.artry.arflow.ARTryJSFlowForMiniApp.e(r0)
-                    boolean r0 = android.text.TextUtils.isEmpty(r0)
+                    boolean r0 = android.text.StringUtils.isEmpty(r0)
                     if (r0 != 0) goto Lc7
                     com.taobao.android.artry.arflow.ARTryJSFlowForMiniApp r0 = com.taobao.android.artry.arflow.ARTryJSFlowForMiniApp.this
                     java.lang.String r1 = com.taobao.android.artry.arflow.ARTryJSFlowForMiniApp.e(r0)
@@ -1043,7 +1043,7 @@ public class ARTryJSFlowForMiniApp implements d {
             r5.a(r1, r0)
         L71:
             java.lang.String r0 = r4.s
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 != 0) goto L8a
             java.lang.String r0 = r4.s
             java.lang.String r0 = r4.a(r0)

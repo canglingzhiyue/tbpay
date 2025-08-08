@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
 import com.alipay.mobile.common.transport.TransportCallback;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -148,9 +148,9 @@ public class DownloadUtils {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DOWNGRADE_HOSTS);
-        if (!TextUtils.isEmpty(stringValue)) {
+        if (!StringUtils.isEmpty(stringValue)) {
             for (String str2 : stringValue.split(",")) {
-                if (TextUtils.equals(str2, str)) {
+                if (StringUtils.equals(str2, str)) {
                     LogCatUtil.info("DownloadUtils", "isInDowngradeHosts. " + str + " in downgradeHosts , may need downgrade.");
                     return true;
                 }
@@ -167,7 +167,7 @@ public class DownloadUtils {
             return ((Boolean) ipChange.ipc$dispatch("dcab8f90", new Object[]{httpUriRequest})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty((String) httpUriRequest.getParams().getParameter(TransportConstants.KEY_DOWNGRADE_HTTPS_HOST))) {
+            if (StringUtils.isEmpty((String) httpUriRequest.getParams().getParameter(TransportConstants.KEY_DOWNGRADE_HTTPS_HOST))) {
                 z = false;
             }
             LogCatUtil.debug("DownloadUtils", "isContainDowngradeHost return:" + z);
@@ -197,10 +197,10 @@ public class DownloadUtils {
             return (URI) ipChange.ipc$dispatch("7df0cb0b", new Object[]{uri, str, str2, new Integer(i)});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return uri;
             }
-            return new URI(str, uri.getUserInfo(), str2, ((!TextUtils.equals(str, "https") || i == 443) && (!TextUtils.equals(str, "http") || i == 80)) ? -1 : i, uri.getPath(), uri.getQuery(), uri.getFragment());
+            return new URI(str, uri.getUserInfo(), str2, ((!StringUtils.equals(str, "https") || i == 443) && (!StringUtils.equals(str, "http") || i == 80)) ? -1 : i, uri.getPath(), uri.getQuery(), uri.getFragment());
         } catch (Exception unused) {
             return uri;
         }
@@ -242,7 +242,7 @@ public class DownloadUtils {
         }
         URI uri = httpUriRequest.getURI();
         String e = e(httpUriRequest);
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             URI changeUriByParams = changeUriByParams(uri, "https", e, 443);
             LogCatUtil.debug("DownloadUtils", "oriURI:" + httpUriRequest.getURI().toString() + ",newURI:" + changeUriByParams.toString());
             return changeUriByParams;
@@ -256,10 +256,10 @@ public class DownloadUtils {
             return (HttpUriRequest) ipChange.ipc$dispatch("72c69036", new Object[]{httpUriRequest, uri});
         }
         String method = httpUriRequest.getMethod();
-        if (TextUtils.equals(method, "GET")) {
+        if (StringUtils.equals(method, "GET")) {
             return new HttpGet(uri);
         }
-        if (TextUtils.equals(method, "POST")) {
+        if (StringUtils.equals(method, "POST")) {
             HttpEntityEnclosingRequestBase httpPost = new HttpPost(uri);
             HttpEntity entity = ((HttpEntityEnclosingRequestBase) httpUriRequest).getEntity();
             if (entity != null && entity.isRepeatable()) {
@@ -321,21 +321,21 @@ public class DownloadUtils {
         }
         String host = httpUriRequest.getURI().toURL().getHost();
         TransportConfigureManager transportConfigureManager = TransportConfigureManager.getInstance();
-        if (TextUtils.equals(host, f5622a)) {
+        if (StringUtils.equals(host, f5622a)) {
             return transportConfigureManager.getStringValue(TransportConfigureItem.DOWN_TFS_HOST);
         }
-        if (TextUtils.equals(host, b)) {
+        if (StringUtils.equals(host, b)) {
             return transportConfigureManager.getStringValue(TransportConfigureItem.DOWN_PIC_HOST);
         }
-        if (TextUtils.equals(host, c)) {
+        if (StringUtils.equals(host, c)) {
             return transportConfigureManager.getStringValue(TransportConfigureItem.DOWN_APIDJG_HOST);
         }
-        if (TextUtils.equals(host, d)) {
+        if (StringUtils.equals(host, d)) {
             return transportConfigureManager.getStringValue(TransportConfigureItem.DOWN_DLDJG_HOST);
         }
         try {
             String str = (String) httpUriRequest.getParams().getParameter(TransportConstants.KEY_DOWNGRADE_HTTPS_HOST);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             LogCatUtil.debug("DownloadUtils", "downgradeHost:" + str);

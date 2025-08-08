@@ -1,7 +1,7 @@
 package com.ta.utdid2.android.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Random;
 import tb.kge;
@@ -82,10 +82,10 @@ public class PhoneInfoUtils {
             return (String) ipChange.ipc$dispatch("79c6c57e", new Object[0]);
         }
         String str = SystemProperties.get("ro.aliyun.clouduuid", "");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = SystemProperties.get("ro.sys.aliyun.clouduuid", "");
         }
-        return TextUtils.isEmpty(str) ? getYunOSTVUuid() : str;
+        return StringUtils.isEmpty(str) ? getYunOSTVUuid() : str;
     }
 
     private static String getYunOSTVUuid() {

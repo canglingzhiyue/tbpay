@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.cew;
 import tb.kge;
@@ -26,7 +26,7 @@ public final class q {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ad023781", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.split("\\.");
         }
         return null;

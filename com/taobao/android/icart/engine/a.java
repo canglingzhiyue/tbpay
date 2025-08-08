@@ -14,7 +14,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerViewAccessibilityDelegate;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -924,7 +924,7 @@ public class a implements b.a, aat, adz {
         } else {
             q = v.q();
         }
-        if (!TextUtils.isEmpty(q)) {
+        if (!StringUtils.isEmpty(q)) {
             hashMap.put("spm-cnt", q);
         }
         if (com.taobao.android.tbelder.b.c()) {

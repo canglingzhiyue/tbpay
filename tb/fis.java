@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.location.client.TBLocationClient;
 import com.taobao.location.common.TBLocationDTO;
@@ -165,15 +165,15 @@ public class fis {
                         str = str3;
                         str2 = str;
                     } else {
-                        str = !TextUtils.isEmpty(b2.getLongitude()) ? b2.getLongitude() : str3;
+                        str = !StringUtils.isEmpty(b2.getLongitude()) ? b2.getLongitude() : str3;
                         try {
-                            str2 = !TextUtils.isEmpty(b2.getLatitude()) ? b2.getLatitude() : str3;
+                            str2 = !StringUtils.isEmpty(b2.getLatitude()) ? b2.getLatitude() : str3;
                         } catch (Throwable th2) {
                             th = th2;
                             str2 = str3;
                         }
                         try {
-                            if (!TextUtils.isEmpty(b2.cityCode)) {
+                            if (!StringUtils.isEmpty(b2.cityCode)) {
                                 str3 = b2.cityCode;
                             }
                         } catch (Throwable th3) {

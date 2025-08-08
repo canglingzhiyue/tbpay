@@ -2,7 +2,7 @@ package org.android.agoo.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSManager;
 import com.taobao.accs.asp.APreferencesManager;
@@ -61,7 +61,7 @@ public class Config {
         } catch (Throwable th) {
             ALog.e(TAG, "setAgooAppKey", th, new Object[0]);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ALog.e(TAG, "setAgooAppKey appkey null", new Object[0]);
             return;
         }
@@ -83,7 +83,7 @@ public class Config {
         } catch (Throwable th) {
             ALog.e(TAG, "getAgooAppKey", th, new Object[0]);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ALog.e(TAG, "getAgooAppKey null!!", new Object[0]);
         }
         ALog.d(TAG, "getAgooAppKey", "appkey", str);
@@ -95,7 +95,7 @@ public class Config {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("224aeef", new Object[]{context});
         }
-        if (TextUtils.isEmpty(mAccsConfigTag)) {
+        if (StringUtils.isEmpty(mAccsConfigTag)) {
             return ACCSManager.getDefaultConfig(context);
         }
         return mAccsConfigTag;
@@ -205,7 +205,7 @@ public class Config {
         }
         boolean s = l.s(context);
         ALog.i(TAG, "setDeviceToken", "token", str, "isRegIdValid", Boolean.valueOf(s));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (s) {
@@ -259,7 +259,7 @@ public class Config {
         }
         try {
             SharedPreferences.Editor edit = getAgooPreferences(context).edit();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 edit.putString(PROPERTY_PUSH_USER_TOKEN, str);
             }
             edit.apply();

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.base.IJsBridgeService;
@@ -75,7 +75,7 @@ public class loa implements lns {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c6cddef", new Object[]{this, str, intent});
-        } else if (TextUtils.isEmpty(str) || this.f == null) {
+        } else if (StringUtils.isEmpty(str) || this.f == null) {
             ldf.d("UpgradeIconBackGuideAnimeProcess", "onOutLinkTrigger params == null");
         } else {
             if (this.g != null) {

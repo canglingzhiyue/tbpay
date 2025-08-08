@@ -2,7 +2,7 @@ package com.xiaomi.push.service;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.register.RegistConstants;
 import com.xiaomi.push.BuildConfig;
 import com.xiaomi.push.s;
@@ -35,11 +35,11 @@ public class u {
 
     private static String a(Context context) {
         if ("com.xiaomi.xmsf".equals(context)) {
-            if (!TextUtils.isEmpty(null)) {
+            if (!StringUtils.isEmpty(null)) {
                 return null;
             }
             String m2115a = com.xiaomi.push.j.m2115a("ro.miui.region");
-            return TextUtils.isEmpty(m2115a) ? com.xiaomi.push.j.m2115a("ro.product.locale.region") : m2115a;
+            return StringUtils.isEmpty(m2115a) ? com.xiaomi.push.j.m2115a("ro.product.locale.region") : m2115a;
         }
         return com.xiaomi.push.j.b();
     }
@@ -78,15 +78,15 @@ public class u {
         s.a aVar = new s.a();
         aVar.a("sdk_ver", 48).a("cpvn", BuildConfig.VERSION_NAME).a("cpvc", Integer.valueOf((int) BuildConfig.VERSION_CODE)).a(RegistConstants.REGISTER_COUNTRY_CODE, a.a(context).b()).a("region", a.a(context).a()).a("miui_vn", com.xiaomi.push.j.c()).a("miui_vc", Integer.valueOf(com.xiaomi.push.j.a(context))).a("xmsf_vc", Integer.valueOf(com.xiaomi.push.g.a(context, "com.xiaomi.xmsf"))).a("android_ver", Integer.valueOf(Build.VERSION.SDK_INT)).a("n_belong_to_app", Boolean.valueOf(aw.m2289a(context))).a("systemui_vc", Integer.valueOf(com.xiaomi.push.g.a(context)));
         String a2 = a(context);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             aVar.a("latest_country_code", a2);
         }
         String d = com.xiaomi.push.j.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             aVar.a("device_ch", d);
         }
         String e = com.xiaomi.push.j.e();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             aVar.a("device_mfr", e);
         }
         bVar.e = aVar.toString();

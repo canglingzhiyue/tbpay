@@ -1,7 +1,7 @@
 package com.taobao.tao.recommend3.gateway.request;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.security.bio.api.BioDetector;
 import com.alipay.mobile.security.zim.msgchannel.ZimMessageChannel;
@@ -125,9 +125,9 @@ public class StreamRequestTask extends RequestTask {
             return;
         }
         this.f = a(b().iterator().next());
-        if (!z && TextUtils.equals(this.f, "coldStart")) {
+        if (!z && StringUtils.equals(this.f, "coldStart")) {
             String a2 = a(true);
-            if (TextUtils.equals(a2, "code_sign_free")) {
+            if (StringUtils.equals(a2, "code_sign_free")) {
                 this.c.API_NAME = "mtop.taobao.wireless.home.newface.stream.newget";
             } else {
                 com.taobao.android.home.component.utils.e.e("gateway.StreamRequestTask", "SignFree code value:" + a2);
@@ -156,7 +156,7 @@ public class StreamRequestTask extends RequestTask {
         if (j.a("mtopStreamParse", true)) {
             this.b.mo1330supportStreamJson(true);
         }
-        if (TextUtils.equals(this.f, "coldStart")) {
+        if (StringUtils.equals(this.f, "coldStart")) {
             this.f20907a.b("mtopRequestParams");
             this.f20907a.a("mtopRequest", 1);
         }
@@ -320,7 +320,7 @@ public class StreamRequestTask extends RequestTask {
             hashMap.put(ZimMessageChannel.K_RPC_RES_CODE, String.valueOf(bVar.f));
             a(bVar.f21112a, hashMap);
         }
-        if ((this.l != null || ((dVar != null && TextUtils.equals(dVar.f, "2")) || (bVar != null && bVar.d == 1))) && (b = oqc.a().b().b(oqc.j().f30287a)) != null && b.getPageParams() != null && b.getBase() != null) {
+        if ((this.l != null || ((dVar != null && StringUtils.equals(dVar.f, "2")) || (bVar != null && bVar.d == 1))) && (b = oqc.a().b().b(oqc.j().f30287a)) != null && b.getPageParams() != null && b.getBase() != null) {
             b.getPageParams().firstRequestInAdvance = -1;
             b.getBase().initCacheRequestInAdvance();
         }
@@ -361,7 +361,7 @@ public class StreamRequestTask extends RequestTask {
             return (String) ipChange.ipc$dispatch("2210e6fc", new Object[]{this, dVar});
         }
         String str2 = dVar.f21113a;
-        if (!TextUtils.equals("SUCCESS", str2)) {
+        if (!StringUtils.equals("SUCCESS", str2)) {
             return str2;
         }
         String[] strArr = dVar.h;
@@ -378,7 +378,7 @@ public class StreamRequestTask extends RequestTask {
             return false;
         }
         String str = dVar.f;
-        if (TextUtils.equals(str, "1")) {
+        if (StringUtils.equals(str, "1")) {
             if (a(baseOutDo, true)) {
                 a(false, true, dVar, (com.taobao.tao.stream.b) null);
                 return false;
@@ -393,7 +393,7 @@ public class StreamRequestTask extends RequestTask {
                 a(awesomeGetResponse.mo2429getData());
                 m.a().a(awesomeGetResponse.mo2429getData().getExt());
             }
-        } else if (TextUtils.equals(str, "2")) {
+        } else if (StringUtils.equals(str, "2")) {
             if (this.l == null) {
                 com.taobao.tao.stream.b bVar = new com.taobao.tao.stream.b();
                 bVar.c = "lastData is Null";
@@ -436,7 +436,7 @@ public class StreamRequestTask extends RequestTask {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
-        } else if (!TextUtils.equals(this.f, "coldStart")) {
+        } else if (!StringUtils.equals(this.f, "coldStart")) {
         } else {
             this.f20907a.b("mtopRequest");
             this.f20907a.a("homeDataProcess", 1);
@@ -474,13 +474,13 @@ public class StreamRequestTask extends RequestTask {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a1edc8e0", new Object[]{this, str, bVar})).booleanValue();
         }
-        if (bVar != null && TextUtils.equals(str, "coldStart") && TextUtils.equals(this.c.API_NAME, "mtop.taobao.wireless.home.newface.stream.newget")) {
-            if (TextUtils.equals(bVar.b, "FAIL_SYS_USER_VALIDATE")) {
+        if (bVar != null && StringUtils.equals(str, "coldStart") && StringUtils.equals(this.c.API_NAME, "mtop.taobao.wireless.home.newface.stream.newget")) {
+            if (StringUtils.equals(bVar.b, "FAIL_SYS_USER_VALIDATE")) {
                 return true;
             }
             if (bVar.f == 200 && (map = bVar.f21112a) != null && !map.isEmpty() && map.containsKey("bx-signwl-retry-ts") && (list = map.get("bx-signwl-retry-ts")) != null && list.size() > 0) {
                 String str2 = list.get(0);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     long j2 = 0;
                     try {
                         j = Long.parseLong(str2) * 1000;
@@ -515,12 +515,12 @@ public class StreamRequestTask extends RequestTask {
         }
         HashMap hashMap = null;
         String str3 = oqd.MTOP_STAGE_NETWORKREQUEST;
-        if (TextUtils.equals(str, "1")) {
+        if (StringUtils.equals(str, "1")) {
             hashMap = new HashMap();
             a(map, hashMap);
             hashMap.put("falcoId", str2);
             hashMap.put("homeApi", this.c.API_NAME);
-            if (TextUtils.equals(this.f, "coldStart")) {
+            if (StringUtils.equals(this.f, "coldStart")) {
                 s.f18233a.d().a("homeApi", this.c.API_NAME);
             }
         } else {

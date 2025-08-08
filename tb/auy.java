@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAInputData;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.c;
@@ -50,7 +50,7 @@ public final class auy extends arj<UMFRuleIO, AURAParseIO> {
         this.f25625a = new aux(aURAInputData, getExtensionManager());
         UMFRuleIO data = aURAInputData.getData();
         String type = data.getType();
-        if (TextUtils.isEmpty(type)) {
+        if (StringUtils.isEmpty(type)) {
             baw.a("ruleType is NULL!!");
             aqqVar.a(new b(1, "AURARulesServiceDomain", "-1000_EMPTY_ACTION", "规则服务type为null"));
         } else if ("rollback".equals(type)) {

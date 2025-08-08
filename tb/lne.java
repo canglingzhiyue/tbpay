@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.response.IContainerDataModel;
@@ -123,7 +123,7 @@ public class lne {
                     ipChange2.ipc$dispatch("30b7ed6b", new Object[]{this, lliVar, iContainerDataModel});
                     return;
                 }
-                if (lliVar == null || !TextUtils.equals(c.a(), lliVar.a())) {
+                if (lliVar == null || !StringUtils.equals(c.a(), lliVar.a())) {
                     z = false;
                 }
                 if (!z) {
@@ -187,7 +187,7 @@ public class lne {
         }
         String string2 = containerData.getBase().getExt().getString("clickBackOffset");
         this.d = 2;
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return;
         }
         try {

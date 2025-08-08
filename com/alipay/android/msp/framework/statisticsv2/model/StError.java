@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylog.utils.LogMessage;
 import com.alipay.android.msp.utils.ThreadSafeDateFormat;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,9 +36,9 @@ public class StError implements IModel {
         this.b = str;
         this.c = str2;
         this.d = str3;
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = ThreadSafeDateFormat.format(new Date(), "HH:mm:ss.SSS");
-        } else if (TextUtils.isDigitsOnly(str4)) {
+        } else if (StringUtils.isDigitsOnly(str4)) {
             try {
                 str4 = ThreadSafeDateFormat.format(Long.parseLong(str4), "HH:mm:ss.SSS");
             } catch (Throwable unused) {

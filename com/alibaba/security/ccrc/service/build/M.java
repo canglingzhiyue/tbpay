@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.enums.InitState;
 import com.alibaba.security.ccrc.enums.RunState;
@@ -365,7 +365,7 @@ public class M implements A, F.b, InterfaceC1260wb {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4a2f16ae", new Object[]{this, config, onCcrcCallback, new Long(j)})).booleanValue();
         }
-        if (config != null && !TextUtils.isEmpty(config.getPid())) {
+        if (config != null && !StringUtils.isEmpty(config.getPid())) {
             if (CcrcContextImpl.getContext() == null) {
                 this.g.a(config, InitState.INIT_FAIL, InitResult.createResult(X.a.c, config.getPid()), o(), onCcrcCallback, j);
                 return false;

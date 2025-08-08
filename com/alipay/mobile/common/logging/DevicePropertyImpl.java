@@ -2,7 +2,7 @@ package com.alipay.mobile.common.logging;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.m;
 import com.alipay.mobile.common.logging.api.DeviceProperty;
 import com.alipay.mobile.common.logging.util.LoggingUtil;
@@ -236,9 +236,9 @@ public class DevicePropertyImpl implements DeviceProperty {
             } else if (!isCoolpadDevice() && !isLenovoDevice() && !isMeizuDevice()) {
                 isSamsungDevice();
             }
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 this.b = getDisplayID();
-                if (TextUtils.isEmpty(this.b)) {
+                if (StringUtils.isEmpty(this.b)) {
                     this.b = "unknown";
                 }
             }
@@ -258,7 +258,7 @@ public class DevicePropertyImpl implements DeviceProperty {
                 this.c = Build.MANUFACTURER.toLowerCase();
             } catch (Throwable unused) {
             }
-            if (TextUtils.isEmpty(this.c)) {
+            if (StringUtils.isEmpty(this.c)) {
                 this.c = "unknown";
             }
         }
@@ -276,7 +276,7 @@ public class DevicePropertyImpl implements DeviceProperty {
                 this.d = Build.BRAND.toLowerCase();
             } catch (Throwable unused) {
             }
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 this.d = "unknown";
             }
         }
@@ -294,7 +294,7 @@ public class DevicePropertyImpl implements DeviceProperty {
                 this.e = Build.DISPLAY.toLowerCase();
             } catch (Throwable unused) {
             }
-            if (TextUtils.isEmpty(this.e)) {
+            if (StringUtils.isEmpty(this.e)) {
                 this.e = "unknown";
             }
         }
@@ -312,7 +312,7 @@ public class DevicePropertyImpl implements DeviceProperty {
                 this.f = Build.FINGERPRINT.toLowerCase();
             } catch (Throwable unused) {
             }
-            if (TextUtils.isEmpty(this.f)) {
+            if (StringUtils.isEmpty(this.f)) {
                 this.f = "unknown";
             }
         }

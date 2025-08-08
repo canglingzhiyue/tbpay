@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -181,7 +181,7 @@ public class skr {
             return (Map) ipChange.ipc$dispatch("b3a04afb", new Object[]{map, str});
         }
         HashMap hashMap = null;
-        if (TextUtils.isEmpty(str) && map == null) {
+        if (StringUtils.isEmpty(str) && map == null) {
             z = false;
         }
         if (z) {
@@ -190,7 +190,7 @@ public class skr {
         if (hashMap != null && map != null) {
             hashMap.putAll(map);
         }
-        if (hashMap != null && !TextUtils.isEmpty(str)) {
+        if (hashMap != null && !StringUtils.isEmpty(str)) {
             hashMap.put("_errorMsg_", str);
         }
         return hashMap;

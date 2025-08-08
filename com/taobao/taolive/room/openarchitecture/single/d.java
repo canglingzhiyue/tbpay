@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +70,7 @@ public class d implements a, ddv {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (!TextUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
+            } else if (!StringUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
             } else {
                 long intExtra = intent.getIntExtra("seqId", -1);
                 if (intExtra == -1 || intExtra == d.a(d.this)) {
@@ -206,7 +206,7 @@ public class d implements a, ddv {
             ipChange.ipc$dispatch("f1778d55", new Object[]{this, openBizcodeTranslateBean});
         } else if (openBizcodeTranslateBean == null) {
         } else {
-            if (!TextUtils.isEmpty(openBizcodeTranslateBean.t)) {
+            if (!StringUtils.isEmpty(openBizcodeTranslateBean.t)) {
                 poz.Y(openBizcodeTranslateBean.t, this.c);
                 this.c.n = openBizcodeTranslateBean.t;
             }
@@ -523,7 +523,7 @@ public class d implements a, ddv {
         recModel.initParams.put("timeMoveId", openBizcodeTranslateBean.r);
         recModel.initParams.put("livePointTab3", openBizcodeTranslateBean.u);
         recModel.initParams.put("shop2fSkipTab3Url", openBizcodeTranslateBean.v);
-        if (TextUtils.isEmpty(openBizcodeTranslateBean.m)) {
+        if (StringUtils.isEmpty(openBizcodeTranslateBean.m)) {
             openBizcodeTranslateBean.m = "a2141.b49677444";
         }
         recModel.initParams.put("spm", openBizcodeTranslateBean.m);
@@ -647,7 +647,7 @@ public class d implements a, ddv {
             }
             Map map = (Map) obj;
             String str2 = (String) map.get("url");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             Map<String, String> b = ak.b(Uri.parse(str2));
@@ -691,7 +691,7 @@ public class d implements a, ddv {
         if (j.d(this.g)) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             c = b(this.h);
         } else {
             c = c(str);

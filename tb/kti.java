@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.data_highway.jni.DataHighwayNative;
@@ -59,7 +59,7 @@ public class kti implements kth {
             ipChange.ipc$dispatch("3fa63331", new Object[]{this, str, new Boolean(z), jSONObject, str2, str3});
         } else if (!a.a().c() || !a.a().d()) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 Log.e("HighwayClientImpl", "sendEvent: name is empty");
             } else if (jSONObject == null) {
                 Log.e("HighwayClientImpl", "sendEvent: param is null");
@@ -89,7 +89,7 @@ public class kti implements kth {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
         } else if (!a.a().c() || !a.a().d()) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 Log.e("HighwayClientImpl", "sendEvent: name is empty");
             } else {
                 DataHighwayNative.a(str);
@@ -131,7 +131,7 @@ public class kti implements kth {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
         } else if (!a.a().c() || !a.a().d()) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 Log.e("HighwayClientImpl", "sendEvent: name is empty");
             } else {
                 DataHighwayNative.a(str, str2);

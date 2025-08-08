@@ -2,7 +2,7 @@ package com.taobao.android.tschedule;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,17 +62,17 @@ public class TScheduleWVPlugin extends android.taobao.windvane.jsbridge.e {
         r rVar = new r();
         try {
             String string = new JSONObject(str).getString("biz");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jme a2 = jme.a();
                 String b = a2.b(string + jme.CDN_SUFFIX);
                 jkq.a(TAG, "getPreRenderModules biz = " + string + ";dataCDN = " + b);
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     rVar.a("errMsg", "预渲染task里没有配置静态数据的cdn地址");
                     wVCallBackContext.error(rVar);
                     return false;
                 }
                 String b2 = jme.a().b(b);
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     rVar.a("result", new JSONObject(b2));
                     wVCallBackContext.success(rVar);
                     jkq.a(TAG, "getPreRenderModules success biz = " + string);
@@ -128,14 +128,14 @@ public class TScheduleWVPlugin extends android.taobao.windvane.jsbridge.e {
             return ((Boolean) ipChange.ipc$dispatch("dcd50559", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         r rVar = new r();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
             com.alibaba.fastjson.JSONObject parseObject = JSON.parseObject(str);
             String string = parseObject.getString("key");
             String string2 = parseObject.getString("value");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 boolean a2 = jme.a().a(string, string2);
                 jkq.a(TAG, "jsBridge saveData.key = " + string + ";isSuccess = " + a2);
                 StringBuilder sb = new StringBuilder();
@@ -162,7 +162,7 @@ public class TScheduleWVPlugin extends android.taobao.windvane.jsbridge.e {
         r rVar = new r();
         try {
             String optString = new JSONObject(str).optString("key");
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 String b = jme.a().b(optString);
                 if (b != null) {
                     rVar.a("result", b);

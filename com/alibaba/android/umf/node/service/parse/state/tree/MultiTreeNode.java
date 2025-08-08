@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.node.service.parse.state.tree;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umf.node.service.parse.state.RenderComponent;
 import com.alibaba.android.umf.node.service.parse.state.tree.TreeNode;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -62,7 +62,7 @@ public class MultiTreeNode extends TreeNode<RenderComponent> {
 
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.data != 0 && !TextUtils.isEmpty(((RenderComponent) this.data).key);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.data != 0 && !StringUtils.isEmpty(((RenderComponent) this.data).key);
     }
 
     @Override // com.alibaba.android.umf.node.service.parse.state.tree.TreeNode

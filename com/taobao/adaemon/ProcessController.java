@@ -5,7 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.adaemon.ProcessController;
@@ -246,7 +246,7 @@ public class ProcessController implements IpcChannel {
                                                 return;
                                             }
                                             String stringExtra = intent.getStringExtra("processName");
-                                            if (TextUtils.isEmpty(stringExtra) || !stringExtra.equals(l.j(jzv.a()))) {
+                                            if (StringUtils.isEmpty(stringExtra) || !stringExtra.equals(l.j(jzv.a()))) {
                                                 return;
                                             }
                                             try {

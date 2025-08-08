@@ -2,7 +2,7 @@ package com.alibaba.aliweex.bundle;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.aliweex.bundle.k;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,10 +68,10 @@ public class e implements k.f {
         if (l == null) {
             return;
         }
-        if (TextUtils.equals("false", l.getConfig("android_weex_common_config", "enableSkipFast2001", "true"))) {
+        if (StringUtils.equals("false", l.getConfig("android_weex_common_config", "enableSkipFast2001", "true"))) {
             this.e = false;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.e = false;
         }
         Uri parse = Uri.parse(str);
@@ -88,7 +88,7 @@ public class e implements k.f {
         }
         UTAnalytics.getInstance().getDefaultTracker().pageDisAppear(e());
         UTAnalytics.getInstance().getDefaultTracker().pageAppearDonotSkip(e());
-        if (TextUtils.isEmpty(str) || parse == null) {
+        if (StringUtils.isEmpty(str) || parse == null) {
             return;
         }
         UTAnalytics.getInstance().getDefaultTracker().updatePageUrl(e(), parse);
@@ -152,7 +152,7 @@ public class e implements k.f {
         } else if (!a() || (z = wXSDKInstance.z()) == null) {
         } else {
             String str = (String) z.getAttrs().get("spmId");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             HashMap hashMap = new HashMap();
@@ -166,7 +166,7 @@ public class e implements k.f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (!a() || e() == null || TextUtils.isEmpty(str)) {
+        } else if (!a() || e() == null || StringUtils.isEmpty(str)) {
         } else {
             UTAnalytics.getInstance().getDefaultTracker().updatePageName(e(), Uri.parse(str).buildUpon().clearQuery().build().toString());
         }

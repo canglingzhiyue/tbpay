@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.officialLive;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.openarchitecture.entity.TaoliveOpenBizCodeEnum;
 import com.taobao.taolive.sdk.model.TBLiveDataModel;
@@ -45,7 +45,7 @@ public class b {
     public boolean a(VideoInfo videoInfo) {
         VideoInfo.OfficialLiveInfo officialLiveInfo;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ead9f969", new Object[]{this, videoInfo})).booleanValue() : videoInfo != null && (officialLiveInfo = videoInfo.officialLiveInfo) != null && !TextUtils.isEmpty(officialLiveInfo.officialLive) && "1".equals(videoInfo.roomStatus);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ead9f969", new Object[]{this, videoInfo})).booleanValue() : videoInfo != null && (officialLiveInfo = videoInfo.officialLiveInfo) != null && !StringUtils.isEmpty(officialLiveInfo.officialLive) && "1".equals(videoInfo.roomStatus);
     }
 
     public boolean b(TBLiveDataModel tBLiveDataModel) {

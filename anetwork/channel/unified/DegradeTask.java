@@ -1,6 +1,6 @@
 package anetwork.channel.unified;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.RequestCb;
 import anet.channel.bytes.ByteArray;
@@ -101,10 +101,10 @@ public class DegradeTask implements IUnifiedTask {
         } else {
             if (this.rc.config.isRequestCookieEnabled()) {
                 String cookie = CookieManager.getCookie(this.rc.config.getUrlString());
-                if (!TextUtils.isEmpty(cookie)) {
+                if (!StringUtils.isEmpty(cookie)) {
                     Request.Builder newBuilder = this.request.newBuilder();
                     String str = this.request.getHeaders().get("Cookie");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         cookie = StringUtils.concatString(str, "; ", cookie);
                     }
                     if (AwcnConfig.isHostInCookiePrintLogWhiteList(this.request.getHost())) {

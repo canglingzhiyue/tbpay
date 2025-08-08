@@ -1,7 +1,7 @@
 package com.alibaba.ariver.kernel.common.multiinstance;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.service.RVEnvironmentService;
@@ -30,7 +30,7 @@ public class MultiInstanceUtils {
             return null;
         }
         String string = jSONObject.getString("platformType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         for (InstanceType instanceType : InstanceType.values()) {
@@ -51,7 +51,7 @@ public class MultiInstanceUtils {
             return getDefaultInstanceType();
         }
         String string = bundle.getString(RVStartParams.KEY_INSTANCE_TYPE);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return getDefaultInstanceType();
         }
         for (InstanceType instanceType : InstanceType.values()) {

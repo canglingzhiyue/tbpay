@@ -1,6 +1,6 @@
 package com.taobao.uikit.extend.component.error;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.zim.msgchannel.ZimMessageChannel;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -30,9 +30,9 @@ public class Error {
 
     private Error(int i, String str, String str2, String str3) {
         this.responseCode = i;
-        this.mappingCode = TextUtils.isEmpty(str) ? "" : str;
-        this.errorCode = TextUtils.isEmpty(str2) ? "" : str2;
-        this.errorMsg = TextUtils.isEmpty(str3) ? "" : str3;
+        this.mappingCode = StringUtils.isEmpty(str) ? "" : str;
+        this.errorCode = StringUtils.isEmpty(str2) ? "" : str2;
+        this.errorMsg = StringUtils.isEmpty(str3) ? "" : str3;
     }
 
     private Error(String str, int i, String str2, String str3, String str4) {

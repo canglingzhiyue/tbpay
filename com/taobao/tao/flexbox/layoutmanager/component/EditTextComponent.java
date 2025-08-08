@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -102,7 +102,7 @@ public class EditTextComponent extends TextComponent implements TextWatcher, com
                 android.view.View r0 = com.taobao.tao.flexbox.layoutmanager.component.EditTextComponent.access$300(r0)
                 android.widget.EditText r0 = (android.widget.EditText) r0
                 android.text.Editable r0 = r0.getText()
-                boolean r1 = android.text.TextUtils.isEmpty(r0)
+                boolean r1 = android.text.StringUtils.isEmpty(r0)
                 if (r1 != 0) goto L6a
                 r4 = r0
             L6a:
@@ -336,7 +336,7 @@ public class EditTextComponent extends TextComponent implements TextWatcher, com
             return;
         }
         super.updateNeedLayoutOrRender(str);
-        if (!"placeholder".equals(str) || this.view == 0 || !TextUtils.isEmpty(((EditText) this.view).getText())) {
+        if (!"placeholder".equals(str) || this.view == 0 || !StringUtils.isEmpty(((EditText) this.view).getText())) {
             return;
         }
         this.node.m();
@@ -374,7 +374,7 @@ public class EditTextComponent extends TextComponent implements TextWatcher, com
             EditText editText = (EditText) view;
             a aVar = (a) ogkVar;
             editText.setImeOptions(aVar.h);
-            if (aVar.h > 0 && !TextUtils.isEmpty(((a) this.viewParams).i)) {
+            if (aVar.h > 0 && !StringUtils.isEmpty(((a) this.viewParams).i)) {
                 editText.setInputType(1);
                 editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.taobao.tao.flexbox.layoutmanager.component.EditTextComponent.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -397,7 +397,7 @@ public class EditTextComponent extends TextComponent implements TextWatcher, com
         }
         EditText editText2 = (EditText) view;
         a aVar2 = (a) ogkVar;
-        if (TextUtils.equals(editText2.getHint(), aVar2.e)) {
+        if (StringUtils.equals(editText2.getHint(), aVar2.e)) {
             return;
         }
         editText2.setHint(aVar2.e);
@@ -617,7 +617,7 @@ public class EditTextComponent extends TextComponent implements TextWatcher, com
                 if (str != null) {
                     Editable text2 = tNodeEditText.getText();
                     charSequence = ogf.a(this.f20003a.getNode().N(), str, (int) this.m);
-                    if (oeb.ck() && TextUtils.equals(text2, str)) {
+                    if (oeb.ck() && StringUtils.equals(text2, str)) {
                         return text2;
                     }
                 }

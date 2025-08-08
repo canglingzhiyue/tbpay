@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.good.view.search;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             SearchHistory searchHistory = new SearchHistory(str);
             this.f13889a.remove(searchHistory);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.TBPlayerConst;
@@ -27,28 +27,28 @@ public class hum {
             ipChange.ipc$dispatch("b2906c3", new Object[]{str, str2, str3, str4, str5, str6, str7, str8, str9, map});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "null";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "null";
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "null";
         }
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = "null";
         }
-        if (TextUtils.isEmpty(str6)) {
+        if (StringUtils.isEmpty(str6)) {
             str6 = "null";
         }
-        if (TextUtils.isEmpty(str7)) {
+        if (StringUtils.isEmpty(str7)) {
             str7 = "null";
         }
-        if (TextUtils.isEmpty(str8)) {
+        if (StringUtils.isEmpty(str8)) {
             str8 = "null";
         }
-        if (TextUtils.isEmpty(str9)) {
+        if (StringUtils.isEmpty(str9)) {
             str9 = "2.0";
         }
         double a3 = a(str2, str3, str8, 0.05000000074505806d);
@@ -69,7 +69,7 @@ public class hum {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     jSONObject.put(key, (Object) value);
                 }
             }
@@ -108,34 +108,34 @@ public class hum {
             ipChange.ipc$dispatch("ee66402f", new Object[]{str, str2, str3, str4, str5, str6, str7, str8, str9, str10, str11, map});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "null";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "null";
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "null";
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "null";
         }
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = "null";
         }
-        if (TextUtils.isEmpty(str7)) {
+        if (StringUtils.isEmpty(str7)) {
             str7 = "null";
         }
-        if (TextUtils.isEmpty(str8)) {
+        if (StringUtils.isEmpty(str8)) {
             str8 = "null";
         }
-        if (TextUtils.isEmpty(str9)) {
+        if (StringUtils.isEmpty(str9)) {
             str9 = "null";
         }
-        if (TextUtils.isEmpty(str10)) {
+        if (StringUtils.isEmpty(str10)) {
             str10 = "null";
         }
-        if (TextUtils.isEmpty(str11)) {
+        if (StringUtils.isEmpty(str11)) {
             str11 = "2.0";
         }
         JSONObject jSONObject = new JSONObject();
@@ -154,7 +154,7 @@ public class hum {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     jSONObject.put(key, (Object) value);
                 }
             }
@@ -204,11 +204,11 @@ public class hum {
             double r8 = r8.doubleValue()
             return r8
         L27:
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 != 0) goto Lde
-            boolean r0 = android.text.TextUtils.isEmpty(r9)
+            boolean r0 = android.text.StringUtils.isEmpty(r9)
             if (r0 != 0) goto Lde
-            boolean r0 = android.text.TextUtils.isEmpty(r10)
+            boolean r0 = android.text.StringUtils.isEmpty(r10)
             if (r0 == 0) goto L3b
             goto Lde
         L3b:
@@ -217,7 +217,7 @@ public class hum {
             java.lang.String r2 = "umbrella_switch"
             java.lang.String r3 = ""
             java.lang.String r0 = r0.getConfig(r2, r1, r3)
-            boolean r2 = android.text.TextUtils.isEmpty(r0)
+            boolean r2 = android.text.StringUtils.isEmpty(r0)
             if (r2 == 0) goto L51
             return r11
         L51:
@@ -325,12 +325,12 @@ public class hum {
             com.alibaba.fastjson.JSONObject r7 = (com.alibaba.fastjson.JSONObject) r7
             return r7
         L1b:
-            boolean r0 = android.text.TextUtils.isEmpty(r7)
+            boolean r0 = android.text.StringUtils.isEmpty(r7)
             r1 = 0
             if (r0 != 0) goto Lb4
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 != 0) goto Lb4
-            boolean r0 = android.text.TextUtils.isEmpty(r9)
+            boolean r0 = android.text.StringUtils.isEmpty(r9)
             if (r0 == 0) goto L30
             goto Lb4
         L30:
@@ -339,7 +339,7 @@ public class hum {
             java.lang.String r3 = "umbrella_switch"
             java.lang.String r4 = ""
             java.lang.String r0 = r0.getConfig(r3, r2, r4)
-            boolean r3 = android.text.TextUtils.isEmpty(r0)
+            boolean r3 = android.text.StringUtils.isEmpty(r0)
             if (r3 == 0) goto L46
             return r1
         L46:

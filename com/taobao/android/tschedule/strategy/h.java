@@ -1,7 +1,7 @@
 package com.taobao.android.tschedule.strategy;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.d;
@@ -220,7 +220,7 @@ public class h implements d.a, b.a, com.taobao.android.tscheduleprotocol.b {
         } else {
             a2 = a(a3);
         }
-        if (a2 != null && !TextUtils.isEmpty(a2.b)) {
+        if (a2 != null && !StringUtils.isEmpty(a2.b)) {
             this.i.a(a2);
         }
         String a5 = d.a(a2);

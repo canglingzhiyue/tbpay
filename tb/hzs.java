@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,14 +34,14 @@ public class hzs extends dlg<l> {
             return new dla();
         }
         String c = dlhVar.c("height");
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             try {
                 layoutParams.height = Integer.parseInt(a(c));
             } catch (NumberFormatException unused) {
             }
         }
         String c2 = dlhVar.c("width");
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             try {
                 layoutParams.width = Integer.parseInt(a(c2));
             } catch (NumberFormatException unused2) {

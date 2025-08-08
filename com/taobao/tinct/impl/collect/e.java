@@ -1,6 +1,6 @@
 package com.taobao.tinct.impl.collect;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public class e {
             return;
         }
         try {
-            if (TextUtils.isEmpty(instantPatchChangeInfo.getVersion()) || !com.taobao.tinct.impl.config.a.a(instantPatchChangeInfo)) {
+            if (StringUtils.isEmpty(instantPatchChangeInfo.getVersion()) || !com.taobao.tinct.impl.config.a.a(instantPatchChangeInfo)) {
                 return;
             }
             a(b(instantPatchChangeInfo, str));
@@ -91,7 +91,7 @@ public class e {
             return;
         }
         try {
-            if (TextUtils.isEmpty(bVar.getVersion()) || !com.taobao.tinct.impl.config.a.a(bVar)) {
+            if (StringUtils.isEmpty(bVar.getVersion()) || !com.taobao.tinct.impl.config.a.a(bVar)) {
                 return;
             }
             a(b((InstantPatchChangeInfo) bVar, str));
@@ -107,7 +107,7 @@ public class e {
             return;
         }
         try {
-            if (TextUtils.isEmpty(cVar.a()) || !com.taobao.tinct.impl.config.a.g()) {
+            if (StringUtils.isEmpty(cVar.a()) || !com.taobao.tinct.impl.config.a.g()) {
                 return;
             }
             a(b(cVar, str));
@@ -210,7 +210,7 @@ public class e {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("type", (Object) str);
             jSONObject.put("changeType", (Object) changeType);
-            if (!TextUtils.isEmpty(baseChangeInfo.getBizName())) {
+            if (!StringUtils.isEmpty(baseChangeInfo.getBizName())) {
                 jSONObject.put("bizName", (Object) baseChangeInfo.getBizName());
             }
             jSONObject.put(com.alibaba.android.umbrella.link.a.PARAM_TINCT_TAG, (Object) baseChangeInfo.getTinctTag());

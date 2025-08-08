@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.kit.utils.f;
@@ -66,7 +66,7 @@ public class fal extends b<fbc> implements View.OnClickListener {
     /* renamed from: c  reason: avoid collision after fix types in other method */
     public boolean c2(fbc fbcVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c53c4b57", new Object[]{this, fbcVar})).booleanValue() : TextUtils.isEmpty(fbcVar.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c53c4b57", new Object[]{this, fbcVar})).booleanValue() : StringUtils.isEmpty(fbcVar.c);
     }
 
     @Override // android.view.View.OnClickListener
@@ -74,7 +74,7 @@ public class fal extends b<fbc> implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-        } else if (TextUtils.isEmpty(((fbc) this.c).d)) {
+        } else if (StringUtils.isEmpty(((fbc) this.c).d)) {
         } else {
             com.taobao.android.trade.event.f.a(this.g, new enu(((fbc) this.c).d));
             dzh.a(this.g, ((fbc) this.c).t);

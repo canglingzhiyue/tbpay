@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSONArray;
@@ -320,47 +320,47 @@ public class ebg extends af {
         } else if (view == null) {
         } else {
             final XRichTextViewByCategoryCouponV3 xRichTextViewByCategoryCouponV3 = (XRichTextViewByCategoryCouponV3) view;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 xRichTextViewByCategoryCouponV3.setXIconHeight(Float.parseFloat(str));
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 xRichTextViewByCategoryCouponV3.setTextBgPaddingV(Float.parseFloat(str2));
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 xRichTextViewByCategoryCouponV3.setVIPTextColor(str3);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 xRichTextViewByCategoryCouponV3.setTextLeftGap(Float.parseFloat(str4));
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 xRichTextViewByCategoryCouponV3.setVIPTextLeftGap(Float.parseFloat(str5));
             }
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 xRichTextViewByCategoryCouponV3.setVIPTextRightGap(Float.parseFloat(str6));
             }
-            if (!TextUtils.isEmpty(str7)) {
+            if (!StringUtils.isEmpty(str7)) {
                 xRichTextViewByCategoryCouponV3.setCouponGap(Float.parseFloat(str7));
             }
-            if (!TextUtils.isEmpty(str9)) {
+            if (!StringUtils.isEmpty(str9)) {
                 xRichTextViewByCategoryCouponV3.setSplitLineColor(str9);
             }
-            if (!TextUtils.isEmpty(str10)) {
+            if (!StringUtils.isEmpty(str10)) {
                 xRichTextViewByCategoryCouponV3.setSplitLineWidth(Float.parseFloat(str10));
             }
-            if (!TextUtils.isEmpty(str11)) {
+            if (!StringUtils.isEmpty(str11)) {
                 xRichTextViewByCategoryCouponV3.setSplitLineGap(Float.parseFloat(str11));
             }
-            if (!TextUtils.isEmpty(str13)) {
+            if (!StringUtils.isEmpty(str13)) {
                 xRichTextViewByCategoryCouponV3.setEllipsisSize(Integer.parseInt(str13));
             }
             if (jSONArray != null) {
                 xRichTextViewByCategoryCouponV3.setBonusList(jSONArray);
             }
-            if (!TextUtils.isEmpty(str12)) {
+            if (!StringUtils.isEmpty(str12)) {
                 xRichTextViewByCategoryCouponV3.setEllipsis(str12);
             }
             xRichTextViewByCategoryCouponV3.setIcon(null);
-            if (TextUtils.isEmpty(str8)) {
+            if (StringUtils.isEmpty(str8)) {
                 return;
             }
             dzv.a(str8, xRichTextViewByCategoryCouponV3.getContext(), new c.a() { // from class: tb.ebg.1

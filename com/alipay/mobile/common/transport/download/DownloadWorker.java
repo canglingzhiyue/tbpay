@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.download;
 
 import android.os.SystemClock;
 import android.taobao.windvane.connect.HttpConnector;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.netsdkextdependapi.appinfo.AppInfoUtil;
@@ -163,7 +163,7 @@ public class DownloadWorker extends ResourceHttpWorker {
         super.copyHeaders();
         addCookie2Header();
         String alipayLocaleDes = DeviceInfoUtil.getAlipayLocaleDes();
-        if (!TextUtils.isEmpty(alipayLocaleDes)) {
+        if (!StringUtils.isEmpty(alipayLocaleDes)) {
             getTargetHttpUriRequest().addHeader(HeaderConstant.HEADER_KEY_ACCEPT_LANGUAGE, alipayLocaleDes);
         }
         AndroidHttpClient.modifyRequestToAcceptGzipResponse(getTargetHttpUriRequest());
@@ -196,7 +196,7 @@ public class DownloadWorker extends ResourceHttpWorker {
             arrayList.add(new BasicHeader(HttpConstant.USER_AGENT, "pid=" + AppInfoUtil.getProductId() + "; pv=" + AppInfoUtil.getProductVersion() + "; uuid=" + str));
             this.mTransportContext.rpcUUID = str;
             if (this.c.exists()) {
-                if (!TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RSRC_WITH_CACHE), "T")) {
+                if (!StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RSRC_WITH_CACHE), "T")) {
                     return;
                 }
                 long lastModified = this.c.lastModified();
@@ -276,7 +276,7 @@ public class DownloadWorker extends ResourceHttpWorker {
         }
         httpUriRequest.removeHeaders(HttpConstant.RANGE);
         httpUriRequest.removeHeaders("If-Range");
-        if (!TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RSRC_RETRY_WITH_RANGE), "T") || !this.d.exists()) {
+        if (!StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RSRC_RETRY_WITH_RANGE), "T") || !this.d.exists()) {
             return;
         }
         long length = this.d.length();
@@ -303,7 +303,7 @@ public class DownloadWorker extends ResourceHttpWorker {
         } else if (!canRetryException(exc)) {
             LogCatUtil.debug("DownloadWorker", "canRetryException return false");
             throw exc;
-        } else if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DOWNLOAD_EXT_TIMEOUT), "T")) {
+        } else if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DOWNLOAD_EXT_TIMEOUT), "T")) {
             long currentTimeMillis = System.currentTimeMillis() - this.i;
             int i = this.f;
             if (i < this.h && (i <= 3 || currentTimeMillis <= 60000)) {
@@ -404,7 +404,7 @@ public class DownloadWorker extends ResourceHttpWorker {
             ipChange.ipc$dispatch("8770e52a", new Object[]{this, str, new Long(j2), new Long(j3), header, responseSizeModel});
             return;
         }
-        if (header == null || TextUtils.isEmpty(header.getValue()) || !header.getValue().contains("gzip")) {
+        if (header == null || StringUtils.isEmpty(header.getValue()) || !header.getValue().contains("gzip")) {
             z = false;
         } else {
             DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.DWN_GZIP, "T");
@@ -418,12 +418,12 @@ public class DownloadWorker extends ResourceHttpWorker {
             throw new DownloadIOException(20, str, this.d.getAbsolutePath(), str2 + ",cache was cleaned");
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DOWNLOAD_GZIP_CHECK);
-        if (TextUtils.equals(stringValue, "T") && z) {
+        if (StringUtils.equals(stringValue, "T") && z) {
             if (responseSizeModel.compressedSize == j2) {
                 return;
             }
             throw new DownloadIOException(22, str, this.d.getAbsolutePath(), str2 + ",compressedSize not equal contentLength");
-        } else if (!TextUtils.equals(stringValue, "T") && z) {
+        } else if (!StringUtils.equals(stringValue, "T") && z) {
             LogCatUtil.debug("DownloadWorker", "gzip check is off");
         } else {
             long length = this.d.length() - j3;
@@ -452,7 +452,7 @@ public class DownloadWorker extends ResourceHttpWorker {
             throw new DownloadFileIOException(17, str, this.d.getAbsolutePath(), "cache dir create fail");
         } else {
             b(str, j3);
-            if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DOWN_CHECK_SD_PERMISSION), "T") && !this.c.getParentFile().canWrite()) {
+            if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.DOWN_CHECK_SD_PERMISSION), "T") && !this.c.getParentFile().canWrite()) {
                 throw new DownloadIOException(21, str, this.c.getAbsolutePath(), "sdcard write fail");
             }
             if (j.contains(str)) {

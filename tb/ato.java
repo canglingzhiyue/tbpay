@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
@@ -42,7 +42,7 @@ public class ato {
         }
         for (atc atcVar : b) {
             String a2 = atcVar.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 ard a3 = arc.a();
                 String str = this.f25592a;
                 a3.c(str, "", "componentType of " + atcVar + " is empty!!!");
@@ -91,7 +91,7 @@ public class ato {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.d.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || this.d.containsKey(str)) {
         } else {
             this.d.put(str, Integer.valueOf(this.b));
             this.b++;
@@ -115,7 +115,7 @@ public class ato {
                 this.c.put(i, -2147483644);
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 ard a2 = arc.a();
                 String str2 = this.f25592a;
                 a2.c(str2, "processPosition2ViewType", "the itemViewType generated from componentCreator[" + b2 + "] is empty");
@@ -221,7 +221,7 @@ public class ato {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20962012", new Object[]{this, str, atcVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             arc.a().c(this.f25592a, "setComponentCreator", "containerType is empty");
         } else if (atcVar == null) {
             ard a2 = arc.a();

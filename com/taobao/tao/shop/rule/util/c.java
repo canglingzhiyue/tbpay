@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.rule.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -40,7 +40,7 @@ public class c {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && Boolean.TRUE.toString().equals(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && Boolean.TRUE.toString().equals(str);
     }
 
     public static boolean b(String str) {
@@ -49,7 +49,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (c = c(str)) == null || !c.containsKey("wh_weex")) {
+        if (StringUtils.isEmpty(str) || (c = c(str)) == null || !c.containsKey("wh_weex")) {
             return false;
         }
         return Boolean.TRUE.toString().equals(c.get("wh_weex"));
@@ -60,7 +60,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("e68dc5e9", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a(Uri.parse(str));
         }
         return null;
@@ -83,14 +83,14 @@ public class c {
         if (split != null && split.length > 0) {
             encodedFragment = split[0];
             if (split.length > 1) {
-                encodedQuery = !TextUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + split[1] : split[1];
+                encodedQuery = !StringUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + split[1] : split[1];
             }
         }
         if (encodedFragment != null && encodedFragment.contains("&") && (indexOf = encodedFragment.indexOf("&")) > 0) {
-            encodedQuery = !TextUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + encodedFragment.substring(indexOf + 1) : encodedFragment.substring(indexOf + 1);
+            encodedQuery = !StringUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + encodedFragment.substring(indexOf + 1) : encodedFragment.substring(indexOf + 1);
             encodedFragment.substring(0, indexOf);
         }
-        String[] split2 = !TextUtils.isEmpty(encodedQuery) ? encodedQuery.split("&") : null;
+        String[] split2 = !StringUtils.isEmpty(encodedQuery) ? encodedQuery.split("&") : null;
         if (split2 != null && split2.length > 0) {
             for (String str : split2) {
                 String[] split3 = str.split("=");
@@ -105,7 +105,7 @@ public class c {
         }
         if (matcher != null && matcher.find()) {
             String group = matcher.group(1);
-            if (!TextUtils.isEmpty(group)) {
+            if (!StringUtils.isEmpty(group)) {
                 hashMap.put("shop_id", group);
             }
         }
@@ -258,7 +258,7 @@ public class c {
                     } catch (IOException e) {
                         outputStreamWriter2 = outputStreamWriter;
                         e = e;
-                        Log.e("ShopRule", "saveRuleFile error," + e + ",rule null? " + TextUtils.isEmpty(str));
+                        Log.e("ShopRule", "saveRuleFile error," + e + ",rule null? " + StringUtils.isEmpty(str));
                         if (outputStreamWriter2 != null) {
                             try {
                                 outputStreamWriter2.close();
@@ -324,7 +324,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 JSONArray parseArray = JSON.parseArray(str2);
                 if (parseArray == null) {
@@ -335,7 +335,7 @@ public class c {
                     Object obj = parseArray.get(i);
                     if (obj != null && (obj instanceof String)) {
                         String str3 = (String) obj;
-                        if (!TextUtils.isEmpty(str3) && str3.equals(str)) {
+                        if (!StringUtils.isEmpty(str3) && str3.equals(str)) {
                             return true;
                         }
                     }
@@ -353,13 +353,13 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7974943e", new Object[]{str, str2, new Boolean(z), str3});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 Uri parse = Uri.parse(str2);
                 try {
                     Uri parse2 = Uri.parse(str);
                     StringBuilder sb = new StringBuilder();
-                    if (TextUtils.isEmpty(parse.getScheme())) {
+                    if (StringUtils.isEmpty(parse.getScheme())) {
                         if (str2.startsWith(ado.URL_SEPARATOR)) {
                             sb.append(com.taobao.vessel.utils.b.HTTPS_SCHEMA);
                         } else {
@@ -378,16 +378,16 @@ public class c {
                         indexOf = str2.length();
                     }
                     String substring = str2.substring(0, indexOf);
-                    if (!TextUtils.isEmpty(substring)) {
+                    if (!StringUtils.isEmpty(substring)) {
                         sb.append(substring);
                     }
                     String a2 = a(parse2, parse, z, str3);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         sb.append("?");
                         sb.append(a2);
                     }
                     String encodedFragment = parse.getEncodedFragment();
-                    if (!TextUtils.isEmpty(encodedFragment)) {
+                    if (!StringUtils.isEmpty(encodedFragment)) {
                         sb.append("#");
                         sb.append(encodedFragment);
                     }
@@ -453,7 +453,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return "shop_id".equals(str) ? "shopId" : ("uid".equals(str) || "seller_id".equals(str) || "user_id".equals(str) || "userId".equals(str)) ? "sellerId" : "nick".equals(str) ? "sellerNick" : str;
@@ -465,7 +465,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("666b162a", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -490,7 +490,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d0668d9", new Object[]{map, str});
         }
-        if (map != null && !TextUtils.isEmpty(str)) {
+        if (map != null && !StringUtils.isEmpty(str)) {
             return map.get(str);
         }
         return null;

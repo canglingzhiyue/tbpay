@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -223,7 +223,7 @@ public class a {
         if (d == null) {
             return false;
         }
-        return TextUtils.equals("success", d.getString("asyncStatus"));
+        return StringUtils.equals("success", d.getString("asyncStatus"));
     }
 
     public static boolean d(eyy eyyVar) {

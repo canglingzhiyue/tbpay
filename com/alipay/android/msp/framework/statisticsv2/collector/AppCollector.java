@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.collector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -84,7 +84,7 @@ public class AppCollector {
             }
             String orderInfo = tradeContextByBizId.getOrderInfo();
             String str2 = null;
-            if (TextUtils.isEmpty(orderInfo)) {
+            if (StringUtils.isEmpty(orderInfo)) {
                 return str;
             }
             String[] split = orderInfo.split("&");
@@ -94,7 +94,7 @@ public class AppCollector {
                     break;
                 }
                 String str3 = split[i2];
-                if (!TextUtils.isEmpty(str3) && str3.startsWith("bizcontext=")) {
+                if (!StringUtils.isEmpty(str3) && str3.startsWith("bizcontext=")) {
                     str2 = str3;
                     break;
                 }
@@ -113,11 +113,11 @@ public class AppCollector {
             }
             String string = parseObject.getString("an");
             String string2 = parseObject.getString("av");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return str;
             }
             try {
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     return string;
                 }
                 return string + "|" + string2;

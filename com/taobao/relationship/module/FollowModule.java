@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -175,10 +175,10 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
             ipChange.ipc$dispatch("5a4ca6c", new Object[]{this});
         } else if (this.d == null || !nmg.a()) {
         } else {
-            if (!TextUtils.isEmpty(this.d.g)) {
+            if (!StringUtils.isEmpty(this.d.g)) {
                 b.h().a(this.d.g);
             }
-            if (TextUtils.isEmpty(this.d.h)) {
+            if (StringUtils.isEmpty(this.d.h)) {
                 return;
             }
             b.h().a(this.d.h);
@@ -410,7 +410,7 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
         if (nmbVar != null) {
             nmbVar.a(str, j, j2, hashMap);
         }
-        if (TextUtils.equals(nmf.MTOP_ISFOLLOW, str)) {
+        if (StringUtils.equals(nmf.MTOP_ISFOLLOW, str)) {
             if (hashMap == null || (obj = hashMap.get(nmf.PARAMS_MTOP_RESULT_ISFOLLOW)) == null) {
                 return;
             }
@@ -422,7 +422,7 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
                 this.h.onCheckedState(parseBoolean, j, j2);
             }
             nly.a().a(j, j2, parseBoolean);
-        } else if (TextUtils.equals(nmf.MTOP_ADDFOLLOW, str)) {
+        } else if (StringUtils.equals(nmf.MTOP_ADDFOLLOW, str)) {
             if (this.h != null) {
                 String str5 = "beforeStateChangedRefreshView, follow = true, accountId = " + j + ", accountType = " + j2;
                 hashMap2 = hashMap;
@@ -435,7 +435,7 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
                 return;
             }
             a(j, j2, (hashMap2 == null || !hashMap2.containsKey("toast") || hashMap2.get("toast") == null) ? "" : hashMap2.get("toast").toString());
-        } else if (!TextUtils.equals(nmf.MTOP_REMOVEFOLLOW, str)) {
+        } else if (!StringUtils.equals(nmf.MTOP_REMOVEFOLLOW, str)) {
         } else {
             if (this.h != null) {
                 String str6 = "beforeStateChangedRefreshView, follow = false, accountId = " + j + ", accountType = " + j2;
@@ -458,7 +458,7 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
         b(true);
         nme nmeVar = this.c;
         if (nmeVar != null && !nmeVar.x) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 nmj.a(str);
             } else {
                 nmj.a("关注成功，可以在微淘查看TA的动态啦~");
@@ -498,7 +498,7 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
         b(false);
         nme nmeVar = this.c;
         if (nmeVar != null && !nmeVar.x) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 nmj.a("已取消关注");
             } else {
                 nmj.a(str);
@@ -524,12 +524,12 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
         if (nmbVar != null) {
             nmbVar.b(str, j, j2, hashMap);
         }
-        if (TextUtils.equals(nmf.MTOP_ISFOLLOW, str)) {
+        if (StringUtils.equals(nmf.MTOP_ISFOLLOW, str)) {
             return;
         }
-        if (TextUtils.equals(nmf.MTOP_ADDFOLLOW, str)) {
+        if (StringUtils.equals(nmf.MTOP_ADDFOLLOW, str)) {
             a(true, hashMap);
-        } else if (!TextUtils.equals(nmf.MTOP_REMOVEFOLLOW, str)) {
+        } else if (!StringUtils.equals(nmf.MTOP_REMOVEFOLLOW, str)) {
         } else {
             a(false, hashMap);
         }
@@ -546,7 +546,7 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
             Object obj = hashMap.get("errorMsg");
             Object obj2 = hashMap.get("errorCode");
             if (obj != null) {
-                if ((!nmi.a() && obj2 != null && TextUtils.equals(obj2.toString(), "ANDROID_SYS_LOGIN_CANCEL")) || (nmeVar = this.c) == null || nmeVar.x) {
+                if ((!nmi.a() && obj2 != null && StringUtils.equals(obj2.toString(), "ANDROID_SYS_LOGIN_CANCEL")) || (nmeVar = this.c) == null || nmeVar.x) {
                     return;
                 }
                 nmj.a(obj.toString());
@@ -663,9 +663,9 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
         if (aVar == null) {
             return str;
         }
-        String str2 = !TextUtils.isEmpty(aVar.c) ? this.e.c : str;
-        String str3 = !TextUtils.isEmpty(this.e.d) ? this.e.d : str;
-        if (!TextUtils.isEmpty(this.e.e)) {
+        String str2 = !StringUtils.isEmpty(aVar.c) ? this.e.c : str;
+        String str3 = !StringUtils.isEmpty(this.e.d) ? this.e.d : str;
+        if (!StringUtils.isEmpty(this.e.e)) {
             str = this.e.e;
         }
         StringBuilder sb = new StringBuilder();
@@ -686,9 +686,9 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
             return null;
         }
         String str = "";
-        String str2 = !TextUtils.isEmpty(aVar.c) ? this.e.c : str;
-        String str3 = !TextUtils.isEmpty(this.e.d) ? this.e.d : str;
-        if (!TextUtils.isEmpty(this.e.e)) {
+        String str2 = !StringUtils.isEmpty(aVar.c) ? this.e.c : str;
+        String str3 = !StringUtils.isEmpty(this.e.d) ? this.e.d : str;
+        if (!StringUtils.isEmpty(this.e.e)) {
             str = this.e.e;
         }
         Properties properties = new Properties();
@@ -785,14 +785,14 @@ public class FollowModule implements View.OnClickListener, com.taobao.relationsh
             } else if (FollowModule.c(this.b.get()) == null) {
             } else {
                 try {
-                    if (!TextUtils.equals(intent.getAction(), nmf.ACTION_UPDATA_FOLLOW_STATE)) {
+                    if (!StringUtils.equals(intent.getAction(), nmf.ACTION_UPDATA_FOLLOW_STATE)) {
                         return;
                     }
                     int intExtra = intent.getIntExtra("accountType", -1);
                     long longExtra = intent.getLongExtra("accountId", -1L);
                     if (longExtra == -1) {
                         String stringExtra = intent.getStringExtra("accountId");
-                        if (!TextUtils.isEmpty(stringExtra)) {
+                        if (!StringUtils.isEmpty(stringExtra)) {
                             try {
                                 longExtra = Long.parseLong(stringExtra);
                             } catch (NumberFormatException e) {

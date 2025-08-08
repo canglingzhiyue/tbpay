@@ -5,7 +5,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -170,7 +170,7 @@ public class irb extends iuf<TabLayout, ird> implements TabLayout.b, ire {
         }
         aVar.a(tabBean.showText, tabBean.isSelected ? this.d : this.c);
         String str = tabBean.isSelected ? tabBean.activeImage : tabBean.normalImage;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         aVar.a(str);
@@ -190,7 +190,7 @@ public class irb extends iuf<TabLayout, ird> implements TabLayout.b, ire {
         }
         a2.isSelected = true;
         this.f29244a = a2.param;
-        TextUtils.isEmpty(a2.bizName);
+        StringUtils.isEmpty(a2.bizName);
         a aVar = (a) dVar.a();
         if (aVar == null) {
             return;

@@ -1,6 +1,6 @@
 package com.taobao.avplayer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.CT;
 import com.taobao.taobaoavsdk.CodeUsageCounter;
@@ -62,7 +62,7 @@ public class ak implements as {
             return;
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWUserTrackAdapter);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         HashMap hashMap = new HashMap();

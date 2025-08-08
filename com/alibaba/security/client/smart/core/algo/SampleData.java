@@ -1,6 +1,6 @@
 package com.alibaba.security.client.smart.core.algo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.security.wukong.model.CCRCRiskSample;
 import com.alibaba.security.wukong.model.meta.Data;
@@ -73,7 +73,7 @@ public class SampleData implements Serializable {
         hashMap.put("dataId", this.sampleId);
         hashMap.put("metaId", this.metaId);
         hashMap.put("extras", this.extras);
-        if (!TextUtils.isEmpty(this.riskId)) {
+        if (!StringUtils.isEmpty(this.riskId)) {
             hashMap.put("riskId", this.riskId);
         }
         return hashMap;

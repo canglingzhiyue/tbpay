@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.a$a;
@@ -135,7 +135,7 @@ public final class crh implements com.alibaba.ability.b {
         q.c(context, "context");
         q.c(params, "params");
         q.c(callback, "callback");
-        if (TextUtils.isEmpty(api)) {
+        if (StringUtils.isEmpty(api)) {
             return a$a.Companion.a("api empty");
         }
         if (q.a((Object) API_SHOW_IRP, (Object) api)) {

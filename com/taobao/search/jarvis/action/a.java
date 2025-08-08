@@ -1,7 +1,7 @@
 package com.taobao.search.jarvis.action;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -120,7 +120,7 @@ public abstract class a implements jxt {
         for (int i = 0; i < size; i++) {
             JSONObject jSONObject2 = a2.getJSONObject(i);
             String string = jSONObject2.getString("action");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jxs jxsVar = this.mJarvisKit;
                 if (jxsVar == null) {
                     q.b("mJarvisKit");

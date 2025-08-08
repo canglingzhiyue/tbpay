@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.configurable;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import java.io.Serializable;
@@ -280,9 +280,9 @@ public class ComponentGroupConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (ITaoLiveComponentConfig) ipChange.ipc$dispatch("123e37c7", new Object[]{str, list});
         }
-        if (!TextUtils.isEmpty(str) && list != null && !list.isEmpty()) {
+        if (!StringUtils.isEmpty(str) && list != null && !list.isEmpty()) {
             for (ITaoLiveComponentConfig iTaoLiveComponentConfig : list) {
-                if (iTaoLiveComponentConfig != null && TextUtils.equals(str, iTaoLiveComponentConfig.cName)) {
+                if (iTaoLiveComponentConfig != null && StringUtils.equals(str, iTaoLiveComponentConfig.cName)) {
                     return iTaoLiveComponentConfig;
                 }
             }
@@ -298,7 +298,7 @@ public class ComponentGroupConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (ITaoLiveComponentConfig) ipChange.ipc$dispatch("9d01fd6d", new Object[]{str, str2, aVar});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && aVar != null && (n = aVar.n()) != null && n.configurableConfig.getConfigMap() != null && (configMap = n.configurableConfig.getConfigMap()) != null && !configMap.isEmpty() && (iTaoLiveComponentConfig = configMap.get(str)) != null) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && aVar != null && (n = aVar.n()) != null && n.configurableConfig.getConfigMap() != null && (configMap = n.configurableConfig.getConfigMap()) != null && !configMap.isEmpty() && (iTaoLiveComponentConfig = configMap.get(str)) != null) {
             return findITaoLiveComponentConfig(str2, iTaoLiveComponentConfig.cList);
         }
         return null;
@@ -328,7 +328,7 @@ public class ComponentGroupConfig implements Serializable {
         } else if (aVar != null && (n = aVar.n()) != null && n.configurableConfig.getConfigMap() != null && (configMap = n.configurableConfig.getConfigMap()) != null && !configMap.isEmpty() && iTaoLiveComponentConfig != null && iTaoLiveComponentConfig.cList != null && !iTaoLiveComponentConfig.cList.isEmpty()) {
             ArrayList arrayList = new ArrayList();
             for (ITaoLiveComponentConfig iTaoLiveComponentConfig2 : iTaoLiveComponentConfig.cList) {
-                if (iTaoLiveComponentConfig2 != null && !TextUtils.isEmpty(iTaoLiveComponentConfig2.cName)) {
+                if (iTaoLiveComponentConfig2 != null && !StringUtils.isEmpty(iTaoLiveComponentConfig2.cName)) {
                     if (iTaoLiveComponentConfig2.cName.contains("Group")) {
                         if (iTaoLiveComponentConfig2.cList != null && !iTaoLiveComponentConfig2.cList.isEmpty()) {
                             for (ITaoLiveComponentConfig iTaoLiveComponentConfig3 : iTaoLiveComponentConfig2.cList) {
@@ -336,12 +336,12 @@ public class ComponentGroupConfig implements Serializable {
                                     if (iTaoLiveComponentConfig3.cName.contains("Group")) {
                                         if (iTaoLiveComponentConfig3.cList != null && !iTaoLiveComponentConfig3.cList.isEmpty()) {
                                             for (ITaoLiveComponentConfig iTaoLiveComponentConfig4 : iTaoLiveComponentConfig3.cList) {
-                                                if (iTaoLiveComponentConfig4 != null && !TextUtils.isEmpty(iTaoLiveComponentConfig4.cName) && !iTaoLiveComponentConfig4.cName.contains("Group")) {
+                                                if (iTaoLiveComponentConfig4 != null && !StringUtils.isEmpty(iTaoLiveComponentConfig4.cName) && !iTaoLiveComponentConfig4.cName.contains("Group")) {
                                                     arrayList.add(iTaoLiveComponentConfig4.cName);
                                                 }
                                             }
                                         }
-                                    } else if (!TextUtils.isEmpty(iTaoLiveComponentConfig3.cName) && !iTaoLiveComponentConfig3.cName.contains("Group")) {
+                                    } else if (!StringUtils.isEmpty(iTaoLiveComponentConfig3.cName) && !iTaoLiveComponentConfig3.cName.contains("Group")) {
                                         arrayList.add(iTaoLiveComponentConfig3.cName);
                                     }
                                 }
@@ -358,7 +358,7 @@ public class ComponentGroupConfig implements Serializable {
             for (Map.Entry<String, ITaoLiveComponentConfig> entry : configMap.entrySet()) {
                 if (entry != null && entry.getValue() != null && entry.getValue().cList != null && !entry.getValue().cList.isEmpty()) {
                     for (ITaoLiveComponentConfig iTaoLiveComponentConfig5 : entry.getValue().cList) {
-                        if (iTaoLiveComponentConfig5 != null && !TextUtils.isEmpty(iTaoLiveComponentConfig5.cName)) {
+                        if (iTaoLiveComponentConfig5 != null && !StringUtils.isEmpty(iTaoLiveComponentConfig5.cName)) {
                             if (arrayList.contains(iTaoLiveComponentConfig5.cName)) {
                                 iTaoLiveComponentConfig5.entranceHidden = false;
                             } else {

@@ -3,7 +3,7 @@ package com.taobao.taobao.scancode.encode.api;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.base.Versions;
 import com.taobao.android.task.Coordinator;
@@ -128,13 +128,13 @@ public class a {
             ipChange.ipc$dispatch("16314541", new Object[]{this, str, str2, new Integer(i), maSizeType, new Boolean(z), encodeCallback});
         } else if (encodeCallback == null) {
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 try {
                     encodeCallback.onError(new EncodeError(-3));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            } else if (!TextUtils.isEmpty(str) && (a2 = oyb.a(str, str2)) != null) {
+            } else if (!StringUtils.isEmpty(str) && (a2 = oyb.a(str, str2)) != null) {
                 try {
                     encodeCallback.onSuccess(new BitmapHolder(a2));
                 } catch (Exception e2) {
@@ -265,12 +265,12 @@ public class a {
                                 return;
                             }
                             ComTaobaoXcodeQrcodeCreateResponseData mo2429getData = ((ComTaobaoXcodeQrcodeCreateResponse) baseOutDo).mo2429getData();
-                            if (!TextUtils.isEmpty(mo2429getData.shortUrl)) {
+                            if (!StringUtils.isEmpty(mo2429getData.shortUrl)) {
                                 a.b(a.this, true);
                                 a.a(a.this, mo2429getData.shortUrl);
                                 a.b(a.this, mo2429getData.shortUrl);
                             }
-                            if (!TextUtils.isEmpty(mo2429getData.shortName) && i == 3) {
+                            if (!StringUtils.isEmpty(mo2429getData.shortName) && i == 3) {
                                 a.a(a.this, mo2429getData.shortName);
                             }
                             if (Versions.isDebug()) {
@@ -353,7 +353,7 @@ public class a {
                                     e7.printStackTrace();
                                 }
                                 char c = '0';
-                                if (!TextUtils.isEmpty(a.c(a.this))) {
+                                if (!StringUtils.isEmpty(a.c(a.this))) {
                                     c = a.c(a.this).charAt(0);
                                 }
                                 if (i == 3) {

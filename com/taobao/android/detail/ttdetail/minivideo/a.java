@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.minivideo;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -274,7 +274,7 @@ public class a implements f<e, Boolean> {
         List<ezc> list = this.c;
         if (list != null && !list.isEmpty()) {
             for (ezc ezcVar : this.c) {
-                if (TextUtils.equals(str, ezcVar.b())) {
+                if (StringUtils.equals(str, ezcVar.b())) {
                     return true;
                 }
             }

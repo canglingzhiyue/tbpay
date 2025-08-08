@@ -2,7 +2,7 @@ package com.taobao.themis.open.permission.sendmtop;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.alibaba.fastjson.JSONObject;
@@ -111,7 +111,7 @@ public final class a {
         }
         final long currentTimeMillis = System.currentTimeMillis();
         final SendMtopResponse sendMtopResponse = new SendMtopResponse();
-        if (sendMtopParams == null || TextUtils.isEmpty(sendMtopParams.getApi())) {
+        if (sendMtopParams == null || StringUtils.isEmpty(sendMtopParams.getApi())) {
             sendMtopResponse.setErrorMsg(String.valueOf(2));
             sendMtopResponse.setErrorCode("invalid parameter!");
             interfaceC0967a.a(sendMtopResponse);
@@ -221,28 +221,28 @@ public final class a {
         } catch (Throwable th) {
             TMSLogger.c(f22716a, Log.getStackTraceString(th));
         }
-        if (TextUtils.isEmpty(str)) {
-            if (!TextUtils.isEmpty(sendMtopParams.getAccountSite())) {
+        if (StringUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(sendMtopParams.getAccountSite())) {
                 return null;
             }
             str = Mtop.Id.INNER;
         }
         Mtop a2 = a(fVar, str);
-        if (TextUtils.isEmpty(sendMtopParams.getAccountSite())) {
+        if (StringUtils.isEmpty(sendMtopParams.getAccountSite())) {
             String q = k.q(fVar);
-            if (!TextUtils.isEmpty(q)) {
+            if (!StringUtils.isEmpty(q)) {
                 q.a((Object) q);
                 sendMtopParams.setAccountSite(q);
             }
         }
-        if (!TextUtils.isEmpty(sendMtopParams.getAccountSite())) {
+        if (!StringUtils.isEmpty(sendMtopParams.getAccountSite())) {
             String instanceId = MtopAccountSiteUtils.getInstanceId(sendMtopParams.getAccountSite());
-            if (!TextUtils.isEmpty(instanceId)) {
+            if (!StringUtils.isEmpty(instanceId)) {
                 a2 = a(fVar, instanceId);
             }
         }
         String str2 = a2.getMtopConfig().ttid;
-        if (!TextUtils.isEmpty(sendMtopParams.getTtid())) {
+        if (!StringUtils.isEmpty(sendMtopParams.getTtid())) {
             str2 = sendMtopParams.getTtid();
         }
         MtopBusiness remoteBusiness = MtopBusiness.build(a2, mtopRequest, str2);
@@ -261,7 +261,7 @@ public final class a {
             ipChange.ipc$dispatch("c6e99df2", new Object[]{this, fVar, mtopBusiness, sendMtopParams});
             return;
         }
-        if (TextUtils.isEmpty(sendMtopParams.getAccountSite()) || n.a("taobao", sendMtopParams.getAccountSite(), true)) {
+        if (StringUtils.isEmpty(sendMtopParams.getAccountSite()) || n.a("taobao", sendMtopParams.getAccountSite(), true)) {
             mtopBusiness.mo1314setCustomDomain(a(EnvModeEnum.ONLINE, mtopBusiness.getMtopInstance()), a(EnvModeEnum.PREPARE, mtopBusiness.getMtopInstance()), a(EnvModeEnum.TEST, mtopBusiness.getMtopInstance()));
         }
         String str = f22716a;
@@ -269,14 +269,14 @@ public final class a {
         for (Map.Entry<String, String> entry : sendMtopParams.getParameterMap().entrySet()) {
             mtopBusiness.mo1289addHttpQueryParameter(entry.getKey(), entry.getValue());
         }
-        if (!TextUtils.isEmpty(sendMtopParams.getMpHost())) {
+        if (!StringUtils.isEmpty(sendMtopParams.getMpHost())) {
             mtopBusiness.mo1313setCustomDomain(sendMtopParams.getMpHost());
         }
         String dataType = sendMtopParams.getDataType();
         if (dataType == null || dataType.length() == 0) {
             z = true;
         }
-        if (!z && (TextUtils.equals("json", sendMtopParams.getDataType()) || TextUtils.equals("originaljson", sendMtopParams.getDataType()))) {
+        if (!z && (StringUtils.equals("json", sendMtopParams.getDataType()) || StringUtils.equals("originaljson", sendMtopParams.getDataType()))) {
             String dataType2 = sendMtopParams.getDataType();
             if (dataType2 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type java.lang.String");
@@ -296,13 +296,13 @@ public final class a {
         }
         String str2 = sendMtopParams.getHeaders().get(HttpHeaderConstant.X_MINI_APPKEY);
         mtopBusiness.setOpenBiz("mini-app");
-        mtopBusiness.mo1305reqMethod(TextUtils.equals(MethodEnum.GET.getMethod(), sendMtopParams.getMethod()) ? MethodEnum.GET : MethodEnum.POST);
+        mtopBusiness.mo1305reqMethod(StringUtils.equals(MethodEnum.GET.getMethod(), sendMtopParams.getMethod()) ? MethodEnum.GET : MethodEnum.POST);
         mtopBusiness.setMiniAppKey(str2);
         mtopBusiness.setRequestSourceAppKey(sendMtopParams.getHeaders().get(e));
         mtopBusiness.setOpenBizData(sendMtopParams.getHeaders().get(f));
         mtopBusiness.mo1297headers(sendMtopParams.getHeaders());
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(sendMtopParams.getUserAgent())) {
+        if (StringUtils.isEmpty(sendMtopParams.getUserAgent())) {
             hashMap.put("x-ua", com.taobao.themis.kernel.utils.a.a());
         } else {
             hashMap.put("x-ua", sendMtopParams.getUserAgent());
@@ -312,7 +312,7 @@ public final class a {
         if (sendMtopParams.isAddISVHeader()) {
             mtopBusiness.mtopProp.apiType = ApiTypeEnum.ISV_OPEN_API;
             mtopBusiness.mtopProp.isInnerOpen = true;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 mtopBusiness.mtopProp.openAppKey = str2;
             }
             mtopBusiness.mtopProp.accessToken = "";
@@ -445,7 +445,7 @@ public final class a {
         }
         String[] strArr = null;
         try {
-            if (TextUtils.isEmpty("sellerId,shopId,_ariver_appid")) {
+            if (StringUtils.isEmpty("sellerId,shopId,_ariver_appid")) {
                 return strArr;
             }
             List<String> split = new Regex(",").split("sellerId,shopId,_ariver_appid", 0);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -89,7 +89,7 @@ public class now implements b<e, MSearchResult> {
             ipChange.ipc$dispatch("f198cc55", new Object[]{this, mSearchResult, jSONObject, eVar});
         } else if (mSearchResult.isNew() && (b = a.b(jSONObject, "updateParams")) != null && !b.isEmpty()) {
             for (Map.Entry<String, Object> entry : b.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+                if (!StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                     mSearchResult.updateParams.put(entry.getKey(), entry.getValue().toString());
                     eVar.D().put(entry.getKey(), entry.getValue().toString());
                 }
@@ -297,7 +297,7 @@ public class now implements b<e, MSearchResult> {
             StringBuilder sb = new StringBuilder();
             for (int i3 = 0; i3 < jSONArray3.size(); i3++) {
                 String string = jSONArray3.getString(i3);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     sb.append(string);
                     sb.append(",");
                 }
@@ -330,7 +330,7 @@ public class now implements b<e, MSearchResult> {
                     a(a2, "negFeedbackActions", jSONObject2);
                     a2.comboType = "item";
                     a(mSearchResult, jSONObject3, a2, nozVar.R());
-                    if (TextUtils.equals(jSONObject3.getString(fjp.BIZ_CONTEXT_KEY_CARD_TYPE), "item")) {
+                    if (StringUtils.equals(jSONObject3.getString(fjp.BIZ_CONTEXT_KEY_CARD_TYPE), "item")) {
                         String string2 = jSONObject3.getString("item_id");
                         if (jSONObject3.getBooleanValue(nog.PRD_IS_P4P)) {
                             i7++;
@@ -347,7 +347,7 @@ public class now implements b<e, MSearchResult> {
             i4++;
             jSONArray2 = jSONArray;
         }
-        if (!TextUtils.isEmpty(nozVar.W())) {
+        if (!StringUtils.isEmpty(nozVar.W())) {
             return i6;
         }
         if (i5 > 0) {
@@ -421,10 +421,10 @@ public class now implements b<e, MSearchResult> {
             jSONObject2 = null;
             str = null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = nnd.WSEARCH_TPP_API_NAME_VALUE;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "1.0";
         }
         nozVar.a(new itt.a(str2, str, "wsearch"));

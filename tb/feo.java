@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.debug.a;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -139,7 +139,7 @@ public final class feo implements fel {
         } else {
             if (!this.f27864a && (context instanceof DetailCoreActivity)) {
                 z = true ^ ((DetailCoreActivity) context).H();
-            } else if (TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.b)) {
                 i.c(k.a("BizParamsAppender"), "没有预加载，finalUltron默认true");
             } else {
                 if (!c.FINAL_ULTRON.equals(this.b) && !"industry".equals(this.b)) {
@@ -174,7 +174,7 @@ public final class feo implements fel {
         if (this.f27864a) {
             map.put("lastItemId", str);
             i.c(k.a("BizParamsAppender"), "预请求lastItemId为空");
-        } else if (!(context instanceof DetailCoreActivity) || !TextUtils.isEmpty(this.b)) {
+        } else if (!(context instanceof DetailCoreActivity) || !StringUtils.isEmpty(this.b)) {
             map.put("lastItemId", str);
             i.c(k.a("BizParamsAppender"), "进入详情页，命中预加载的第一次主请求lastItemId为空");
         } else {

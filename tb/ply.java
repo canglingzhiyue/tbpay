@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.intelligentdecision.model.IDecisionResult;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.proxy.comments.CommentsProxy;
@@ -240,14 +240,14 @@ public class ply {
             return ((Boolean) ipChange.ipc$dispatch("48af45c", new Object[0])).booleanValue();
         }
         String a2 = pmd.a().d().a("tblive", "LinkLiveUnsupportDevice", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = a2.split(";");
-        if (split != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+        if (split != null && split.length > 0 && !StringUtils.isEmpty(str)) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                     return true;
                 }
             }

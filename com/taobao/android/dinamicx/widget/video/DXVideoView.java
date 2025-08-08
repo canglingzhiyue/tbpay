@@ -8,7 +8,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -469,7 +469,7 @@ public class DXVideoView extends FrameLayout implements Application.ActivityLife
             ipChange.ipc$dispatch("a4945f87", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(this.mVideoUrl) && !this.mVideoUrl.equals(str) && this.manualPause) {
+        if (!StringUtils.isEmpty(this.mVideoUrl) && !this.mVideoUrl.equals(str) && this.manualPause) {
             this.manualPause = false;
         }
         this.mVideoUrl = str;
@@ -629,7 +629,7 @@ public class DXVideoView extends FrameLayout implements Application.ActivityLife
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fc11d5b", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.mVideoId)) {
+        } else if (!StringUtils.isEmpty(this.mVideoId)) {
             this.instanceIdentifier = this.mVideoId;
         } else {
             String str = this.mVideoUrl;
@@ -657,7 +657,7 @@ public class DXVideoView extends FrameLayout implements Application.ActivityLife
         }
         this.startTime = System.currentTimeMillis();
         validateInstanceIdentifier();
-        if (!this.mCanPlay || TextUtils.isEmpty(this.instanceIdentifier) || this.manualPause) {
+        if (!this.mCanPlay || StringUtils.isEmpty(this.instanceIdentifier) || this.manualPause) {
             showPlayerBtn();
             showCoverImageView();
             pauseVideo();
@@ -887,7 +887,7 @@ public class DXVideoView extends FrameLayout implements Application.ActivityLife
             return;
         }
         if (this.mContext != activity) {
-            if (!TextUtils.equals(TBMainHost.a().getSimpleName(), activity.getLocalClassName())) {
+            if (!StringUtils.equals(TBMainHost.a().getSimpleName(), activity.getLocalClassName())) {
                 return;
             }
             Context context = this.mContext;

@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class a implements ixt {
         } else {
             c(jSONObject);
             String string = jSONObject.getString("actionFrom");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "NULL";
             }
             char c = 65535;
@@ -123,7 +123,7 @@ public class a implements ixt {
         }
         Intent intent = new Intent();
         intent.setAction("cartRefreshData");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         intent.putExtra("stringifyAddCartResult", str);
@@ -142,14 +142,14 @@ public class a implements ixt {
             return false;
         }
         final String string = afterAddToCartAction.getString("type");
-        if (TextUtils.isEmpty(string) || (jSONObject = afterAddToCartAction.getJSONObject("fields")) == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(string) || (jSONObject = afterAddToCartAction.getJSONObject("fields")) == null || jSONObject.isEmpty()) {
             return false;
         }
         String string2 = jSONObject.getString("url");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return false;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("url", (Object) (string2 + "&skuInfo=" + str));
         }
         this.f10513a.c().a(new com.taobao.android.detail.ttdetail.handler.event.a(new JSONObject() { // from class: com.taobao.android.detail.ttdetail.broadcast.SkuActionCallback$1

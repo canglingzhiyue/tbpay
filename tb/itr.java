@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.entity.RequestImpl;
 import anetwork.channel.http.HttpNetwork;
@@ -59,7 +59,7 @@ public class itr implements c<a, e> {
             requestImpl.setConnectTimeout(this.f29312a.c().k().b);
             requestImpl.setReadTimeout(this.f29312a.c().k().c);
             requestImpl.setRetryTime(0);
-            if (TextUtils.equals(aVar.f14989a, "POST")) {
+            if (StringUtils.equals(aVar.f14989a, "POST")) {
                 requestImpl.setMethod("POST");
                 requestImpl.setParams(b.a((Map) aVar.c));
             }

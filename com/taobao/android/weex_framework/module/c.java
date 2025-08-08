@@ -1,6 +1,6 @@
 package com.taobao.android.weex_framework.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -61,7 +61,7 @@ public class c<T extends MUSModule> implements b<T> {
                 if (annotation != null && (annotation instanceof MUSMethod)) {
                     MUSMethod mUSMethod = (MUSMethod) annotation;
                     String alias = mUSMethod.alias();
-                    if (TextUtils.equals(mUSMethod.alias(), "_")) {
+                    if (StringUtils.equals(mUSMethod.alias(), "_")) {
                         alias = method.getName();
                     }
                     map.put(alias, new d(method, mUSMethod.uiThread() ? MUSThreadStrategy.UI : MUSThreadStrategy.JS));

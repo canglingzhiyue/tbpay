@@ -1,7 +1,7 @@
 package mtopsdk.ssrcore.util;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import mtopsdk.common.util.HeaderHandlerUtil;
 import mtopsdk.common.util.HttpHeaderConstant;
@@ -53,9 +53,9 @@ public class b {
                     mtopsdk.ssrcore.c.this.d.K = HeaderHandlerUtil.getSingleHeaderFieldByKey(mtopsdk.ssrcore.c.this.f.d, HttpHeaderConstant.SERVER_TRACE_ID);
                     mtopsdk.ssrcore.c.this.d.L = HeaderHandlerUtil.getSingleHeaderFieldByKey(mtopsdk.ssrcore.c.this.f.d, "eagleeye-traceid");
                     mtopsdk.ssrcore.c.this.d.q = mtkVar.f31246a;
-                    if (TextUtils.isEmpty(mtkVar.b)) {
+                    if (StringUtils.isEmpty(mtkVar.b)) {
                         String singleHeaderFieldByKey = HeaderHandlerUtil.getSingleHeaderFieldByKey(mtkVar.d, "x-sec-reason");
-                        if (!TextUtils.isEmpty(singleHeaderFieldByKey)) {
+                        if (!StringUtils.isEmpty(singleHeaderFieldByKey)) {
                             mtopsdk.ssrcore.c.this.d.r = singleHeaderFieldByKey;
                         }
                     } else {

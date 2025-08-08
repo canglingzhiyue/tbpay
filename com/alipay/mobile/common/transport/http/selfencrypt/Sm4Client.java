@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http.selfencrypt;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.mpaas_crypto.Client;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
@@ -42,7 +42,7 @@ public class Sm4Client {
 
     private static boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.SM4_ENCRYPT), "T");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.SM4_ENCRYPT), "T");
     }
 
     public byte[] encryptSm4(byte[] bArr, byte[] bArr2) {

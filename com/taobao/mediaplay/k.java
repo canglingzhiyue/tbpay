@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -512,7 +512,7 @@ public class k implements com.taobao.mediaplay.player.e {
                 mediaLiveInfo.updateLiveUrlList(mediaLiveInfo.liveUrlListJson);
             }
             this.c.updateLiveMediaInfoData(mediaLiveInfo);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.c.updateLiveMediaInfoData(null);
             this.c.setMediaUrl(str);
@@ -941,14 +941,14 @@ public class k implements com.taobao.mediaplay.player.e {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("63fccf7", new Object[]{this});
         } else if (!this.d) {
-            if (TextUtils.isEmpty(this.l)) {
+            if (StringUtils.isEmpty(this.l)) {
                 this.c.setUsingInterface("avproxy");
             } else {
                 MediaPlayCenter mediaPlayCenter = this.c;
                 mediaPlayCenter.setUsingInterface(this.l + ".avproxy");
             }
             this.c.setup();
-        } else if (!TextUtils.isEmpty(this.l)) {
+        } else if (!StringUtils.isEmpty(this.l)) {
         } else {
             this.b.setUsingInterface(this.l);
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -27,7 +27,7 @@ public class jiu {
             if (str4 == null) {
                 str4 = "null";
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str2 = str2 + ":appVersion=2.0";
             }
             AppMonitor.Alarm.commitFail("Dymanic_tracker", str, str2, str3, str4);

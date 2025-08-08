@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.context.TransportContext;
 import com.alipay.mobile.common.transport.httpdns.AlipayHttpDnsClient;
 import com.alipay.mobile.common.transport.httpdns.HttpDns;
@@ -140,11 +140,11 @@ public class ZHttpRequestRetryHandler implements HttpRequestRetryHandler {
             return null;
         }
         String tag = httpUrlRequest.getTag("operationType");
-        if (TextUtils.isEmpty(tag) || (httpUriRequest = httpUrlRequest.getHttpUriRequest()) == null) {
+        if (StringUtils.isEmpty(tag) || (httpUriRequest = httpUrlRequest.getHttpUriRequest()) == null) {
             return null;
         }
         Header firstHeader = httpUriRequest.getFirstHeader(HeaderConstant.HEADER_KEY_RETRYABLE_2);
-        if (firstHeader != null && TextUtils.equals("1", firstHeader.getValue())) {
+        if (firstHeader != null && StringUtils.equals("1", firstHeader.getValue())) {
             LogCatUtil.debug("ZHttpRequestRetryHandler", "opeType: " + tag + " ,rpc allow retry");
             return Boolean.TRUE;
         }
@@ -162,7 +162,7 @@ public class ZHttpRequestRetryHandler implements HttpRequestRetryHandler {
             return false;
         }
         String th = rootCause.toString();
-        return !TextUtils.isEmpty(th) && th.contains("Connection already shutdown");
+        return !StringUtils.isEmpty(th) && th.contains("Connection already shutdown");
     }
 
     private void a(HttpUrlRequest httpUrlRequest) {
@@ -242,7 +242,7 @@ public class ZHttpRequestRetryHandler implements HttpRequestRetryHandler {
             return true;
         }
         String requestMethod = httpUrlRequest.getRequestMethod();
-        if (TextUtils.equals(requestMethod, "GET") || TextUtils.equals(requestMethod, "PUT") || TextUtils.equals(requestMethod, "HEAD")) {
+        if (StringUtils.equals(requestMethod, "GET") || StringUtils.equals(requestMethod, "PUT") || StringUtils.equals(requestMethod, "HEAD")) {
             return true;
         }
         LogCatUtil.verbose("ZHttpRequestRetryHandler", "UseHttpStdRetryStrategy model, " + requestMethod + " request method don't support retry!");

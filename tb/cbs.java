@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.service.RVEnvironmentService;
 import com.alibaba.ariver.kernel.common.utils.RVLogger;
@@ -82,7 +82,7 @@ public class cbs {
         }
         JSONObject jSONObject = null;
         String sceneParams = widgetStartParams.getSceneParams();
-        if (!TextUtils.isEmpty(sceneParams)) {
+        if (!StringUtils.isEmpty(sceneParams)) {
             try {
                 jSONObject = JSON.parseObject(sceneParams);
             } catch (Exception e) {

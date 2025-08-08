@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.utils;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.AlimamaAdvertising;
@@ -35,7 +35,7 @@ public class al {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{context, str});
-        } else if (TextUtils.isEmpty(str) || context == null || (a2 = com.taobao.android.u.a()) == null) {
+        } else if (StringUtils.isEmpty(str) || context == null || (a2 = com.taobao.android.u.a()) == null) {
         } else {
             a2.a(context, str);
             a2.b(context, str);
@@ -230,7 +230,7 @@ public class al {
         Params params = (Params) aj.a(jSONObject, Params.class);
         if (params != null) {
             final String cpsParams = params.getCpsParams();
-            if (!TextUtils.isEmpty(cpsParams)) {
+            if (!StringUtils.isEmpty(cpsParams)) {
                 aVar.a(new HashMap<String, String>() { // from class: com.taobao.android.detail.ttdetail.utils.IpvUtils$1
                     {
                         put("cpsParams", cpsParams);
@@ -265,7 +265,7 @@ public class al {
         Params params = (Params) eyzVar.a(Params.class);
         if (params != null) {
             final String cpsParams = params.getCpsParams();
-            if (!TextUtils.isEmpty(cpsParams)) {
+            if (!StringUtils.isEmpty(cpsParams)) {
                 aVar.a(new HashMap<String, String>() { // from class: com.taobao.android.detail.ttdetail.utils.IpvUtils$2
                     {
                         put("cpsParams", cpsParams);
@@ -289,7 +289,7 @@ public class al {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("66ef26e0", new Object[]{aVar});
-        } else if (TextUtils.isEmpty(aVar.c)) {
+        } else if (StringUtils.isEmpty(aVar.c)) {
         } else {
             i.a("IpvUtils", "sendDuJuanInfo() itemId = " + aVar.f10957a + " ,shopId = " + aVar.b + " ,sellerId = " + aVar.c + " ,isTmall = " + aVar.d + " ,url = " + aVar.e);
             HashMap hashMap = new HashMap();
@@ -299,7 +299,7 @@ public class al {
             hashMap.put(com.taobao.flowcustoms.afc.utils.b.AFC_ID, "");
             try {
                 String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-                if (!TextUtils.isEmpty(globalProperty)) {
+                if (!StringUtils.isEmpty(globalProperty)) {
                     hashMap.put(com.taobao.flowcustoms.afc.utils.b.AFC_ID, globalProperty);
                 }
             } catch (Throwable unused) {

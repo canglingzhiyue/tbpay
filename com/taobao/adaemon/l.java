@@ -18,7 +18,7 @@ import android.os.SystemClock;
 import android.service.notification.StatusBarNotification;
 import android.system.Os;
 import android.system.OsConstants;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import android.view.Choreographer;
@@ -79,13 +79,13 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bbc5dc40", new Object[]{context});
         }
-        if (TextUtils.isEmpty(f8375a)) {
+        if (StringUtils.isEmpty(f8375a)) {
             if (Build.VERSION.SDK_INT >= 28) {
                 f8375a = Application.getProcessName();
             } else {
                 f8375a = ActivityThread.currentProcessName();
             }
-            if (TextUtils.isEmpty(f8375a)) {
+            if (StringUtils.isEmpty(f8375a)) {
                 f8375a = b(context, Process.myPid());
             }
         }
@@ -251,7 +251,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a2296a1e", new Object[]{context})).booleanValue();
         }
-        if (!TextUtils.isEmpty(a(context))) {
+        if (!StringUtils.isEmpty(a(context))) {
             return a(context).equals(j(context));
         }
         return false;
@@ -320,7 +320,7 @@ public class l {
             return ((Boolean) ipChange.ipc$dispatch("a382c15c", new Object[]{context})).booleanValue();
         }
         String j2 = j(context);
-        if (TextUtils.isEmpty(j2)) {
+        if (StringUtils.isEmpty(j2)) {
             return false;
         }
         if (c == null) {
@@ -408,7 +408,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("43881515", new Object[0]);
         }
-        if (TextUtils.isEmpty(f)) {
+        if (StringUtils.isEmpty(f)) {
             Context context = GlobalClientInfo.getContext();
             try {
                 f = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
@@ -635,7 +635,7 @@ public class l {
         }
         try {
             String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-            return !TextUtils.isEmpty(globalProperty) ? globalProperty.replaceAll(SymbolExpUtil.SYMBOL_VERTICALBAR, Constants.WAVE_SEPARATOR) : "";
+            return !StringUtils.isEmpty(globalProperty) ? globalProperty.replaceAll(SymbolExpUtil.SYMBOL_VERTICALBAR, Constants.WAVE_SEPARATOR) : "";
         } catch (Throwable unused) {
             return "";
         }

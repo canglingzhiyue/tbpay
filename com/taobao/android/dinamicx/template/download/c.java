@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.template.download;
 
 import android.content.res.AssetManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -72,7 +72,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("81233aeb", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.startsWith(fxb.ASSET_DIR)) {
@@ -338,7 +338,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4df6ed2a", new Object[]{dXTemplateItem, bArr, str, iVar, sVar})).booleanValue();
         }
-        if (dXTemplateItem == null || bArr == null || iVar == null || TextUtils.isEmpty(str)) {
+        if (dXTemplateItem == null || bArr == null || iVar == null || StringUtils.isEmpty(str)) {
             sVar.c.add(new s.a(DXMonitorConstant.DX_MONITOR_DOWNLOADER, DXMonitorConstant.DX_MONITOR_DOWNLOADER_DOWNLOAD, 60002));
             return false;
         }
@@ -393,7 +393,7 @@ public class c {
             z = false;
         }
         if (z) {
-            if (dXTemplateItem.g == null || TextUtils.isEmpty(dXTemplateItem.g.f11934a)) {
+            if (dXTemplateItem.g == null || StringUtils.isEmpty(dXTemplateItem.g.f11934a)) {
                 s.a aVar2 = new s.a(DXMonitorConstant.DX_MONITOR_DOWNLOADER, DXMonitorConstant.DX_MONITOR_DOWNLOADER_DOWNLOAD, s.DX_TEMPLATE_UNZIP_ERROR);
                 aVar2.e = "模板zip中缺少main.dx";
                 sVar.c.add(aVar2);
@@ -415,7 +415,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("52e2b884", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (assets = DinamicXEngine.i().getAssets()) == null) {
+        if (StringUtils.isEmpty(str) || (assets = DinamicXEngine.i().getAssets()) == null) {
             return null;
         }
         try {

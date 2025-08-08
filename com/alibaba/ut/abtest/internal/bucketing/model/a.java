@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.bucketing.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.ut.abtest.internal.util.q;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -38,7 +38,7 @@ public class a {
         this.d = new ConcurrentHashMap<>();
         this.e = new ArrayList();
         String a2 = q.a(bVar.b(), bVar.d());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             a(a2);
             this.c.put(a2, Long.valueOf(bVar.c()));
             this.d.put(a2, Long.valueOf(bVar.d()));
@@ -68,7 +68,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.b == null) {
                 this.b = new LinkedHashSet();
@@ -93,7 +93,7 @@ public class a {
         }
         this.e.add(experimentV5);
         String a2 = q.a(experimentV5.getReleaseId(), experimentV5.getGroups().get(0).getId());
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         a(a2);

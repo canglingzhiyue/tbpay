@@ -2,7 +2,7 @@ package com.taobao.android.litecreator.sdk.framework.container;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -77,10 +77,10 @@ public abstract class i extends hez implements d {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("75f87684", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, "undefine")) {
+        if (StringUtils.equals(str, "undefine")) {
             return null;
         }
-        if (TextUtils.equals(str, o())) {
+        if (StringUtils.equals(str, o())) {
             return this;
         }
         for (j jVar : this.c) {
@@ -164,7 +164,7 @@ public abstract class i extends hez implements d {
         UGCVideo g = com.taobao.android.litecreator.base.workflow.e.g(this.r);
         if (g != null && g.getMeta("mediaStatInfo") != null) {
             MediaStatInfo mediaStatInfo = (MediaStatInfo) g.getMeta("mediaStatInfo");
-            if (!TextUtils.isEmpty(mediaStatInfo.album_film_template)) {
+            if (!StringUtils.isEmpty(mediaStatInfo.album_film_template)) {
                 hashMap = new HashMap();
                 hashMap.put("t_id", mediaStatInfo.album_film_template);
             }

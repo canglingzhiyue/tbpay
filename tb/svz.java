@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Rect;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class svz implements b {
             return false;
         }
         String string = jSONObject.getString("homePageViewId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             wVCallBackContext.error(rVar);
             return false;
         }
@@ -71,7 +71,7 @@ public class svz implements b {
             }
             string = str3;
         }
-        if (TextUtils.equals(string, "DXSearchBar")) {
+        if (StringUtils.equals(string, "DXSearchBar")) {
             return a(a(str2, rVar), rVar, wVCallBackContext);
         }
         IHomeSubTabController z = c.a().z();
@@ -81,7 +81,7 @@ public class svz implements b {
             return false;
         }
         View viewBySectionBizCodeAndItemBizCode = z.getViewBySectionBizCodeAndItemBizCode(string, str2);
-        if (TextUtils.equals(string, com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE)) {
+        if (StringUtils.equals(string, com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE)) {
             return a(viewBySectionBizCodeAndItemBizCode, rVar, wVCallBackContext);
         }
         if (!a(viewBySectionBizCodeAndItemBizCode)) {

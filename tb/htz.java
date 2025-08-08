@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.profile.LiveAvatarNewFrame;
@@ -141,8 +141,8 @@ public class htz extends hua {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1bdf0661", new Object[]{this, tLiveMsg});
-        } else if (TextUtils.isEmpty(tLiveMsg.topic) || !TextUtils.equals(tLiveMsg.topic, this.i) || this.m) {
-            if (TextUtils.equals(tLiveMsg.topic, this.i)) {
+        } else if (StringUtils.isEmpty(tLiveMsg.topic) || !StringUtils.equals(tLiveMsg.topic, this.i) || this.m) {
+            if (StringUtils.equals(tLiveMsg.topic, this.i)) {
                 return;
             }
             pmd.a().h().a(1, tLiveMsg, 502);
@@ -189,7 +189,7 @@ public class htz extends hua {
                 obtainMessage.sendToTarget();
             }
         };
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             pmd.a().h().a(1, this.i, this.j, b, "tb", pnqVar, new Object[0]);
         } else {
             pmd.a().h().a(1, this.i, b, "tb", pnqVar, new Object[0]);
@@ -245,7 +245,7 @@ public class htz extends hua {
                 obtainMessage.sendToTarget();
             }
         };
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             pmd.a().h().b(1, this.i, this.j, b, "tb", pnqVar, new Object[0]);
         } else {
             pmd.a().h().b(1, this.i, b, "tb", pnqVar, new Object[0]);
@@ -295,7 +295,7 @@ public class htz extends hua {
         if (!u.t()) {
             return;
         }
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             pmd.a().h().a(1, this.j, this.q);
         } else {
             pmd.a().h().a(1, (String) null, this.q);
@@ -313,7 +313,7 @@ public class htz extends hua {
         if (!u.t()) {
             return;
         }
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             if (!u.q()) {
                 return;
             }

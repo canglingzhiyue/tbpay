@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -158,7 +158,7 @@ public class sgd {
         if (ipChange instanceof IpChange) {
             return (h) ipChange.ipc$dispatch("3f27a0e3", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "new_detail";
         }
         return i.a(str);

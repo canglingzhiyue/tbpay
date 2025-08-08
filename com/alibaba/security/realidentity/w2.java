@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.remoteso.api.RSoException;
 import com.taobao.login4android.qrcode.result.Result;
@@ -73,7 +73,7 @@ public class w2 {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
         if (b()) {
-            return !TextUtils.isEmpty(ihq.b().a("ALBiometricsJni").b());
+            return !StringUtils.isEmpty(ihq.b().a("ALBiometricsJni").b());
         }
         return false;
     }

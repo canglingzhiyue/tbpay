@@ -1,7 +1,7 @@
 package com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic3.view.rolling;
 
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Calendar;
@@ -69,7 +69,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f2888b42", new Object[]{textView, new Boolean(z), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             textView.setTypeface(Typeface.defaultFromStyle(a(z)));
         } else {
             Typeface typeface = null;

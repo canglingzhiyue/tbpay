@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.FinishResult;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
@@ -45,7 +45,7 @@ public final class dti extends dtj {
         }
         String string = e.getString("id");
         String a2 = a(e, string);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             arc.a().a("循环导航，未找到目标组件");
             alnVar.a(new FinishResult(new HashMap(jSONObject), "failure"));
         } else {
@@ -111,7 +111,7 @@ public final class dti extends dtj {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject a2 = a(b());
             if (a2 == null) {
@@ -146,7 +146,7 @@ public final class dti extends dtj {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("b824aaf", new Object[]{this, list, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return list.get(0);
         }
         int size = list.size();

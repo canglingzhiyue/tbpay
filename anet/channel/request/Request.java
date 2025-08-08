@@ -1,6 +1,6 @@
 package anet.channel.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.AwcnConfig;
 import anet.channel.encode.EncodingHelper;
@@ -370,7 +370,7 @@ public class Request {
             return;
         }
         String encodeQueryParams = Utils.encodeQueryParams(this.params, getContentEncoding());
-        if (!TextUtils.isEmpty(encodeQueryParams)) {
+        if (!StringUtils.isEmpty(encodeQueryParams)) {
             if (!Method.requiresRequestBody(this.method) || this.body != null) {
                 String urlString = this.originUrl.urlString();
                 StringBuilder sb = new StringBuilder(urlString);
@@ -690,7 +690,7 @@ public class Request {
             if (ipChange instanceof IpChange) {
                 return (Builder) ipChange.ipc$dispatch("f9f337ea", new Object[]{this, str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 throw new IllegalArgumentException("method is null or empty");
             }
             if ("GET".equalsIgnoreCase(str)) {

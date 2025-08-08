@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.pipline.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.pipline.NodeType;
 import com.etao.feimagesearch.util.w;
@@ -76,7 +76,7 @@ public final class f extends crj {
             linkedHashMap.put(com.etao.feimagesearch.util.o.KEY_IMG, pipLineDS.h());
             linkedHashMap.put("full_region_size", pipLineDS.p());
         }
-        if (!TextUtils.isEmpty(pipLineDS.e())) {
+        if (!StringUtils.isEmpty(pipLineDS.e())) {
             linkedHashMap.put("region", pipLineDS.e());
         }
         com.etao.feimagesearch.util.o.a(linkedHashMap);

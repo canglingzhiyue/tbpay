@@ -3,7 +3,7 @@ package com.alibaba.android.icart.core.event;
 import android.app.Activity;
 import android.os.Build;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -105,18 +105,18 @@ public class q extends bca {
             String string = c2.getString("itemId");
             String string2 = c2.getString("skuId");
             String string3 = c2.getString("quantity");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 bga.a.b("iCart", "CartShare", "SHARE_EVENT_FIELD_ITEM_ID_EMPTY", "eventFields.itemId为空");
                 bed.a("eventFields.itemId为空");
                 return null;
             }
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("itemId", (Object) string);
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 string2 = "";
             }
             jSONObject.put("skuId", (Object) string2);
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 string3 = "";
             }
             jSONObject.put("count", (Object) string3);
@@ -142,7 +142,7 @@ public class q extends bca {
                 return null;
             }
             for (IDMComponent iDMComponent2 : i) {
-                if (iDMComponent2 != null && TextUtils.equals(iDMComponent2.getTag(), "item")) {
+                if (iDMComponent2 != null && StringUtils.equals(iDMComponent2.getTag(), "item")) {
                     jSONArray.add(a(iDMComponent2));
                 }
             }
@@ -163,16 +163,16 @@ public class q extends bca {
         String string2 = fields.getString("quantity");
         JSONObject jSONObject = fields.getJSONObject("sku");
         String string3 = jSONObject != null ? jSONObject.getString("skuId") : "";
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("itemId", (Object) string);
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             string3 = "";
         }
         jSONObject2.put("skuId", (Object) string3);
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "";
         }
         jSONObject2.put("count", (Object) string2);
@@ -218,7 +218,7 @@ public class q extends bca {
                 }
                 try {
                     String string = mtopResponse.getDataJsonObject().getString("shareIdStr");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         q.a(q.this, com.alibaba.ability.localization.b.a(R.string.taobao_app_1028_1_21666));
                         bga.a.b("iCart", "CartShare", "SHARE_ID_EMPTY", "获取ShareId为空");
                         return;

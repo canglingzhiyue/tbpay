@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.i;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class ezv {
     public ezv(Context context, eyx eyxVar, String... strArr) {
         this.f27703a = context;
         this.b = eyxVar;
-        if (strArr != null && strArr.length > 0 && !TextUtils.isEmpty(strArr[0])) {
+        if (strArr != null && strArr.length > 0 && !StringUtils.isEmpty(strArr[0])) {
             this.c = strArr[0];
             return;
         }

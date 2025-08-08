@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URL;
 import java.util.ArrayList;
@@ -138,13 +138,13 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -177,13 +177,13 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -210,13 +210,13 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -233,7 +233,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (copyOnWriteArrayList = e) == null) {
+        if (StringUtils.isEmpty(str) || (copyOnWriteArrayList = e) == null) {
             return false;
         }
         if (!copyOnWriteArrayList.contains("*")) {
@@ -246,13 +246,13 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("669e4a77", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -269,7 +269,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (copyOnWriteArrayList = i) == null) {
+        if (StringUtils.isEmpty(str) || (copyOnWriteArrayList = i) == null) {
             return false;
         }
         if (!copyOnWriteArrayList.contains("*")) {
@@ -374,7 +374,7 @@ public class sad {
         int i2 = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fb017cf9", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q = null;
             t = null;
         } else {
@@ -385,7 +385,7 @@ public class sad {
                     ConcurrentHashMap<String, List<String>> concurrentHashMap = new ConcurrentHashMap<>();
                     JSONObject jSONObject = jSONArray3.getJSONObject(i3);
                     String string = jSONObject.getString("type");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         long optLong = jSONObject.optLong("request_idle_time");
                         long optLong2 = jSONObject.optLong("body_idle_time");
                         JSONObject optJSONObject = jSONObject.optJSONObject("url");
@@ -467,7 +467,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e9ad35f5", new Object[]{url, str})).booleanValue();
         }
-        if (url != null && str != null && !TextUtils.isEmpty(str)) {
+        if (url != null && str != null && !StringUtils.isEmpty(str)) {
             ConcurrentHashMap<String, List<String>> concurrentHashMap = null;
             try {
                 if ("fast".equalsIgnoreCase(str)) {
@@ -496,7 +496,7 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ad732412", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             d = null;
         } else {
             ConcurrentHashMap<String, List<String>> concurrentHashMap = new ConcurrentHashMap<>();
@@ -577,7 +577,7 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("327e438b", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
@@ -687,7 +687,7 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4533163a", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
@@ -804,7 +804,7 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d99648bc", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             v = null;
         } else {
             try {
@@ -812,7 +812,7 @@ public class sad {
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -829,7 +829,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("23c7e201", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (copyOnWriteArrayList = v) == null) {
+        if (StringUtils.isEmpty(str) || (copyOnWriteArrayList = v) == null) {
             return false;
         }
         if (!copyOnWriteArrayList.contains("*")) {
@@ -946,7 +946,7 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e0f17983", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             G = null;
         } else {
             try {
@@ -954,7 +954,7 @@ public class sad {
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -971,7 +971,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2b2312c8", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (copyOnWriteArrayList = G) != null) {
+        if (!StringUtils.isEmpty(str) && (copyOnWriteArrayList = G) != null) {
             return copyOnWriteArrayList.contains(str);
         }
         return false;
@@ -981,7 +981,7 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7554ac05", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             S = null;
         } else {
             try {
@@ -991,11 +991,11 @@ public class sad {
                     String string = jSONObject.getString("type");
                     String optString = jSONObject.optString("connect_option");
                     JSONArray optJSONArray = jSONObject.optJSONArray("host");
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(optString) && optJSONArray != null) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(optString) && optJSONArray != null) {
                         CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                         for (int i3 = 0; i3 < optJSONArray.length(); i3++) {
                             String string2 = optJSONArray.getString(i3);
-                            if (!TextUtils.isEmpty(string2)) {
+                            if (!StringUtils.isEmpty(string2)) {
                                 copyOnWriteArrayList.add(string2);
                             }
                         }
@@ -1019,7 +1019,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d84a241a", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && (!TextUtils.isEmpty(U) || S != null)) {
+        if (!StringUtils.isEmpty(str) && (!StringUtils.isEmpty(U) || S != null)) {
             try {
                 if (G() && S.contains(str)) {
                     return U;
@@ -1059,7 +1059,7 @@ public class sad {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -1076,7 +1076,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9b7de8b", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (copyOnWriteArrayList = Y) != null) {
+        if (!StringUtils.isEmpty(str) && (copyOnWriteArrayList = Y) != null) {
             return copyOnWriteArrayList.contains(str);
         }
         return false;
@@ -1086,7 +1086,7 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("53e977c8", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
@@ -1135,13 +1135,13 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9e1b1109", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -1158,7 +1158,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e84caa4e", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (copyOnWriteArrayList = Z) == null) {
+        if (StringUtils.isEmpty(str) || (copyOnWriteArrayList = Z) == null) {
             return false;
         }
         if (!copyOnWriteArrayList.contains("*")) {
@@ -1191,13 +1191,13 @@ public class sad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f7a4bd53", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 JSONArray jSONArray = new JSONArray(str);
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -1214,7 +1214,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("41d65698", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (copyOnWriteArrayList = h) != null) {
+        if (!StringUtils.isEmpty(str) && (copyOnWriteArrayList = h) != null) {
             return copyOnWriteArrayList.contains(str);
         }
         return false;
@@ -1229,7 +1229,7 @@ public class sad {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -1247,7 +1247,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8f64af7f", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (copyOnWriteArrayList = w) != null) {
+        if (!StringUtils.isEmpty(str) && (copyOnWriteArrayList = w) != null) {
             return copyOnWriteArrayList.contains(str);
         }
         return false;
@@ -1262,7 +1262,7 @@ public class sad {
                 CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
                 for (int i2 = 0; i2 < jSONArray.length(); i2++) {
                     String string = jSONArray.getString(i2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 }
@@ -1280,7 +1280,7 @@ public class sad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6df97b42", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (copyOnWriteArrayList = N) != null) {
+        if (!StringUtils.isEmpty(str) && (copyOnWriteArrayList = N) != null) {
             return copyOnWriteArrayList.contains(str);
         }
         return false;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -199,7 +199,7 @@ public class PicGalleryLightOffVideoComponent extends WXComponent<View> {
             return;
         }
         float f = 1.0f;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 String[] split = str.split(":");
                 f = Float.parseFloat(split[0]) / Float.parseFloat(split[1]);
@@ -391,7 +391,7 @@ public class PicGalleryLightOffVideoComponent extends WXComponent<View> {
         if (ipChange instanceof IpChange) {
             return (com.taobao.android.detail.core.standard.video.d) ipChange.ipc$dispatch("3268a6a0", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mLightOffToken) || TextUtils.isEmpty(this.mVideoId)) {
+        if (StringUtils.isEmpty(this.mLightOffToken) || StringUtils.isEmpty(this.mVideoId)) {
             arc.a().c("PicGalleryLightOffVideoComponent", "findVideoManager", "mLightOffToken or mVideoId is empty");
             return null;
         }
@@ -560,7 +560,7 @@ public class PicGalleryLightOffVideoComponent extends WXComponent<View> {
             absPicGalleryVideoPlayer.f();
             absPicGalleryVideoPlayer.l();
             this.mLightOffVideoControllerProgressBar.setVideoTime(absPicGalleryVideoPlayer.r());
-            if (TextUtils.equals(absPicGalleryVideoPlayer.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+            if (StringUtils.equals(absPicGalleryVideoPlayer.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
                 this.mLightOffVideoPlayBtn.setImageResource(R.drawable.pic_gallery_video_player_pause_bg);
             } else {
                 this.mLightOffVideoPlayBtn.setImageResource(R.drawable.pic_gallery_video_player_play_bg);
@@ -658,7 +658,7 @@ public class PicGalleryLightOffVideoComponent extends WXComponent<View> {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("85bc85f", new Object[]{this, absPicGalleryVideoPlayer, mVar, new Float(f)});
-            } else if (!TextUtils.equals(mVar.a(), PicGalleryLightOffVideoComponent.access$600(PicGalleryLightOffVideoComponent.this))) {
+            } else if (!StringUtils.equals(mVar.a(), PicGalleryLightOffVideoComponent.access$600(PicGalleryLightOffVideoComponent.this))) {
             } else {
                 if (PicGalleryLightOffVideoComponent.access$700(PicGalleryLightOffVideoComponent.this).getVideoTime() <= 0) {
                     PicGalleryLightOffVideoComponent.access$700(PicGalleryLightOffVideoComponent.this).setVideoTime(absPicGalleryVideoPlayer.r());
@@ -702,7 +702,7 @@ public class PicGalleryLightOffVideoComponent extends WXComponent<View> {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("b9a88720", new Object[]{this, absPicGalleryVideoPlayer, mVar});
-            } else if (!TextUtils.equals(mVar.a(), PicGalleryLightOffVideoComponent.access$600(PicGalleryLightOffVideoComponent.this))) {
+            } else if (!StringUtils.equals(mVar.a(), PicGalleryLightOffVideoComponent.access$600(PicGalleryLightOffVideoComponent.this))) {
             } else {
                 if (PicGalleryLightOffVideoComponent.access$900(PicGalleryLightOffVideoComponent.this).getVisibility() == 0) {
                     PicGalleryLightOffVideoComponent.access$200(PicGalleryLightOffVideoComponent.this);
@@ -737,7 +737,7 @@ public class PicGalleryLightOffVideoComponent extends WXComponent<View> {
                 arc.a().c("PicGalleryLightOffVideoComponent", "InnerVideoPlayBtnClickListener.onClick", "videoPlayer is null");
                 return;
             }
-            if (TextUtils.equals(access$1100.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+            if (StringUtils.equals(access$1100.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
                 access$1100.b();
             } else {
                 access$1100.a();
@@ -771,7 +771,7 @@ public class PicGalleryLightOffVideoComponent extends WXComponent<View> {
                 arc.a().c("PicGalleryLightOffVideoComponent", "InnerVideoControllerProgressBarSlideListener.onProgressBarSlideStart", "videoPlayer is null");
                 return;
             }
-            if (TextUtils.equals(access$1100.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+            if (StringUtils.equals(access$1100.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
                 access$1100.b();
             }
             this.b = -1.0f;

@@ -3,7 +3,7 @@ package com.alipay.android.msp.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -58,7 +58,7 @@ public class SdkFlavor {
                     JSONObject parseObject = JSON.parseObject((String) objArr[0]);
                     String string = parseObject.getString("event");
                     JSONObject jSONObject = parseObject.getJSONObject("param");
-                    if (!TextUtils.isEmpty(this.mNotifyName) && string.contains(this.mNotifyName)) {
+                    if (!StringUtils.isEmpty(this.mNotifyName) && string.contains(this.mNotifyName)) {
                         SdkFlavor.access$302(true);
                         SdkFlavor.access$102(jSONObject.getBooleanValue("isFollowAction"));
                         LogUtil.record(1, SdkFlavor.TAG, "JsEventListener isFollowAction:" + SdkFlavor.access$100());
@@ -226,7 +226,7 @@ public class SdkFlavor {
         StringBuilder sb = new StringBuilder("MQPWVOnAction");
         sb.append((str + SystemClock.elapsedRealtime()).hashCode());
         String sb2 = sb.toString();
-        if (!TextUtils.equals(str2, "true")) {
+        if (!StringUtils.equals(str2, "true")) {
             str = str + "&cashierNotifyName=" + sb2;
         }
         mJsEventListener = new JsEventListener(sb2, i);

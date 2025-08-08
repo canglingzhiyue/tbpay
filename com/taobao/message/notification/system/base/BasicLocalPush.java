@@ -12,7 +12,7 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import android.widget.RemoteViews;
@@ -183,7 +183,7 @@ public abstract class BasicLocalPush implements ILocalPush {
                 builder.setFullScreenIntent(null, true);
             }
             String category = getCategory();
-            if (!TextUtils.isEmpty(category)) {
+            if (!StringUtils.isEmpty(category)) {
                 builder.setCategory(category);
             }
             ArrayList arrayList = new ArrayList();
@@ -230,7 +230,7 @@ public abstract class BasicLocalPush implements ILocalPush {
         }
         builder.setSmallIcon(getSmallIcon());
         Pair<String, nia> largeIconURL = getLargeIconURL();
-        if (largeIconURL != null && !TextUtils.isEmpty((CharSequence) largeIconURL.first)) {
+        if (largeIconURL != null && !StringUtils.isEmpty((CharSequence) largeIconURL.first)) {
             b.h().a((String) largeIconURL.first).bitmapProcessors((nia) largeIconURL.second).succListener(new a<SuccPhenixEvent>() { // from class: com.taobao.message.notification.system.base.BasicLocalPush.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

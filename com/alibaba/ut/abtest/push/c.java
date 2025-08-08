@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.event.EventType;
 import com.alibaba.ut.abtest.event.a;
 import com.alibaba.ut.abtest.internal.util.g;
@@ -115,7 +115,7 @@ public class c implements com.taobao.orange.d {
                         return;
                     }
                     String str2 = configs.get("abtest_config");
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         h.d("ABOrangeService", "【实验数据】数据文件配置为空。");
                         if (c.a(c.this) == null) {
                             return;
@@ -163,7 +163,7 @@ public class c implements com.taobao.orange.d {
             return;
         }
         h.a("ABOrangeService", "onConfigUpdate. namespace=" + str + ", map=" + map);
-        if (!TextUtils.equals(str, "v4_abtest_config")) {
+        if (!StringUtils.equals(str, "v4_abtest_config")) {
             return;
         }
         a("notify_v5");

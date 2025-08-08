@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.application.common.a;
 import com.taobao.tao.welcome.Welcome;
@@ -161,6 +161,6 @@ public class ony implements a.InterfaceC0630a {
             return ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue();
         }
         String str = this.f32221a;
-        return str == null || (TextUtils.equals(str, Welcome.class.getSimpleName()) && !this.b);
+        return str == null || (StringUtils.equals(str, Welcome.class.getSimpleName()) && !this.b);
     }
 }

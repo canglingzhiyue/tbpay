@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class duk {
         this.e.c(this.b.a());
         this.e.b(this.b.c());
         this.e.a(this.f26990a);
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             duh duhVar = this.e;
             duhVar.e("order_" + this.j);
         }
@@ -145,7 +145,7 @@ public class duk {
         this.j = this.f26990a.remove("itemNum");
         this.c = a(intent);
         this.b = new duj(this.f26990a);
-        if (!TextUtils.isEmpty(this.b.a())) {
+        if (!StringUtils.isEmpty(this.b.a())) {
             return;
         }
         this.d = "UNIT_TRADE";
@@ -169,7 +169,7 @@ public class duk {
         } else {
             str = (String) map.get("itemId");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap hashMap = new HashMap();
@@ -199,7 +199,7 @@ public class duk {
         }
         if (map != null && !map.isEmpty()) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey())) {
+                if (!StringUtils.isEmpty(entry.getKey())) {
                     String key = entry.getKey();
                     if ("exParams".equals(key)) {
                         a(this.f26990a, entry.getValue());
@@ -220,7 +220,7 @@ public class duk {
         } else if (map == null || str == null) {
         } else {
             String str2 = map.get("exParams");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 map.put("exParams", str);
                 return;
             }

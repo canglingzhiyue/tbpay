@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.filter;
 
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.birdnest.util.UiUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.text.SimpleDateFormat;
@@ -33,7 +33,7 @@ public class DateFilters {
         long j2 = (a2 % 86400000) / 3600000;
         long j3 = (a2 % 3600000) / 60000;
         long j4 = (a2 % 60000) / 1000;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "dd HH:mm:ss";
         }
         if (str.indexOf("dd") >= 0) {

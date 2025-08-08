@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import android.text.Layout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.core.GlobalContainer;
@@ -112,7 +112,7 @@ public class UiUtils {
         }
         Object tag = tUrlImageView.getTag(R.id.tv_chatimg);
         String str2 = tag instanceof String ? (String) tag : "";
-        if (!TextUtils.isEmpty(str2) && str2.equals(str)) {
+        if (!StringUtils.isEmpty(str2) && str2.equals(str)) {
             if (ApplicationUtil.isDebug()) {
                 TLog.logd(TAG, "setImageUrl return false 2");
             }
@@ -283,7 +283,7 @@ public class UiUtils {
             return;
         }
         A11yOCRProvider a11yOCRProvider = (A11yOCRProvider) GlobalContainer.getInstance().get(A11yOCRProvider.class);
-        if (a11yOCRProvider == null || TextUtils.isEmpty(str)) {
+        if (a11yOCRProvider == null || StringUtils.isEmpty(str)) {
             return;
         }
         a11yOCRProvider.fetchAndSetA11yDescription(str, view);

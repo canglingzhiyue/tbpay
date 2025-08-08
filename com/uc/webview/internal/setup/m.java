@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.GlobalSettings;
 import com.uc.webview.base.UCKnownException;
@@ -132,7 +132,7 @@ public final class m {
     public static boolean b(final j jVar) {
         if (jVar != null && jVar.j != null) {
             String str = jVar.e() + "." + jVar.f();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 boolean isAccessible = GlobalSettings.isAccessible(224, str);
                 if (isAccessible) {
                     com.uc.webview.internal.setup.component.l.c("U4Patch", "core(%s) is in black list, delete it, dir: %s", str, com.uc.webview.internal.setup.component.l.a(jVar.j.getAbsolutePath()));

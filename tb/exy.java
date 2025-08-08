@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.event.basic.f;
 import com.taobao.android.detail.sdk.model.node.NodeBundle;
@@ -58,7 +58,7 @@ public class exy extends exl {
             if (nodeBundle.resourceNode != null && nodeBundle.resourceNode.salePromotion != null) {
                 this.f27642a = nodeBundle.resourceNode.salePromotion.naviIconUrl;
                 this.d = nodeBundle.resourceNode.salePromotion.navBgPic;
-                if (!TextUtils.isEmpty(nodeBundle.resourceNode.salePromotion.navBgColor)) {
+                if (!StringUtils.isEmpty(nodeBundle.resourceNode.salePromotion.navBgColor)) {
                     this.c = true;
                     try {
                         this.b = b.a(nodeBundle.resourceNode.salePromotion.navBgColor);

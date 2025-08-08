@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.TBS;
@@ -20,7 +20,7 @@ public class lcj {
         StringBuilder sb = new StringBuilder(600);
         for (String str : jSONObject.keySet()) {
             String string = jSONObject.getString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(string);

@@ -2,7 +2,7 @@ package com.alipay.mobile.monitor.track.spm;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alipay.mobile.common.logging.api.LogDAUTracker;
@@ -69,11 +69,11 @@ public class SpmTrackIntegrator {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("edc84883", new Object[]{this, str, obj});
-        } else if (obj == null || TextUtils.isEmpty(str)) {
+        } else if (obj == null || StringUtils.isEmpty(str)) {
             LoggerFactory.getTraceLogger().info(b, "Start_view is null or spm is null");
         } else {
             final String viewKey = SpmUtils.getViewKey(obj);
-            if (TextUtils.isEmpty(viewKey)) {
+            if (StringUtils.isEmpty(viewKey)) {
                 LoggerFactory.getTraceLogger().info(b, "Start_view.toString() is null");
                 return;
             }
@@ -153,12 +153,12 @@ public class SpmTrackIntegrator {
         if (ipChange instanceof IpChange) {
             return (PageInfo) ipChange.ipc$dispatch("aff0615b", new Object[]{this, str, obj, str2, hashMap});
         }
-        if (obj == null || TextUtils.isEmpty(str)) {
+        if (obj == null || StringUtils.isEmpty(str)) {
             LoggerFactory.getTraceLogger().info(b, "End_View is null or spm is null");
             return null;
         }
         String viewKey = SpmUtils.getViewKey(obj);
-        if (TextUtils.isEmpty(viewKey)) {
+        if (StringUtils.isEmpty(viewKey)) {
             LoggerFactory.getTraceLogger().info(b, "End_view.toString() is null");
             return null;
         }
@@ -301,7 +301,7 @@ public class SpmTrackIntegrator {
             return null;
         }
         String viewKey = SpmUtils.getViewKey(obj);
-        if (TextUtils.isEmpty(viewKey)) {
+        if (StringUtils.isEmpty(viewKey)) {
             LoggerFactory.getTraceLogger().info(b, "getPageInfoByView() is null");
             return null;
         }
@@ -336,7 +336,7 @@ public class SpmTrackIntegrator {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("64432556", new Object[]{pageInfo, str});
-        } else if (pageInfo == null || TextUtils.isEmpty(str)) {
+        } else if (pageInfo == null || StringUtils.isEmpty(str)) {
             LoggerFactory.getTraceLogger().info(b, "updateLastInfoSpm spm or lastInfo is null");
         } else {
             pageInfo.spm = str;

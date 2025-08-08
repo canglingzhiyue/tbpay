@@ -1,6 +1,6 @@
 package com.taobao.search.jarvis.rcmd;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -48,7 +48,7 @@ public class e extends com.taobao.android.searchbaseframe.xsl.module.f {
             xslSearchResult.addExtMod(JarvisConstant.KEY_JARVIS_CONFIG, jSONObject3.toString());
         }
         String string = jSONObject2.getString(JarvisConstant.KEY_JARVIS_CONTEXT);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             xslSearchResult.addExtMod(JarvisConstant.KEY_JARVIS_CONTEXT, string);
         } else {
             xslSearchResult.popExtMod(JarvisConstant.KEY_JARVIS_CONTEXT);

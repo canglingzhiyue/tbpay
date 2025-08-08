@@ -1,7 +1,7 @@
 package com.taobao.android.order.bundle.helper;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -26,7 +26,7 @@ public class TBRefreshOrder extends android.taobao.windvane.jsbridge.e {
             return false;
         }
         try {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 z = "true".equals(JSONObject.parseObject(str2).get("isImmediatelyRefresh"));
             }
         } catch (Exception unused) {

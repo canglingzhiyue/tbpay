@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +32,7 @@ public class odo {
                 if (jSONObject == null) {
                     try {
                         String a2 = a(context.getPackageManager().getPackageInfo(context.getPackageName(), 128).applicationInfo.sourceDir);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             jSONObject = new JSONObject(a2);
                         }
                     } catch (Exception e) {

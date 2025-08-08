@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -73,7 +73,7 @@ public class eze extends ezg {
                     String string = jSONObject5.getString("type");
                     JSONObject jSONObject6 = jSONObject5.getJSONObject("data");
                     if (jSONObject6 != null) {
-                        if (TextUtils.equals("detailVideo", string)) {
+                        if (StringUtils.equals("detailVideo", string)) {
                             a(new ezc(jSONObject6, ezoVar));
                         } else {
                             a(new lfn(jSONObject5, ezoVar));

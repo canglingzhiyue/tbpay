@@ -1,6 +1,6 @@
 package com.alipay.android.msp.utils.net;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspNetConstants;
@@ -50,13 +50,13 @@ public class LdcUtils {
                 }
             }
             String sb2 = sb.toString();
-            if (!TextUtils.isEmpty(sb2)) {
+            if (!StringUtils.isEmpty(sb2)) {
                 return sb2;
             }
             if (str != null && str.contains("out_trade_no")) {
                 LogUtil.record(4, "LdcUtils", "getMspParams", "use last msp params: ".concat(String.valueOf(sb2)));
                 String lastMspParams = MspConfig.getInstance().getLastMspParams();
-                if (!TextUtils.isEmpty(lastMspParams)) {
+                if (!StringUtils.isEmpty(lastMspParams)) {
                     return lastMspParams;
                 }
             }

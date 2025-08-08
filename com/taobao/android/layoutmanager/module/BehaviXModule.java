@@ -1,6 +1,6 @@
 package com.taobao.android.layoutmanager.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.b;
@@ -162,7 +162,7 @@ public class BehaviXModule implements e {
         com.taobao.android.behavir.a a2 = b.a();
         String a3 = oec.a(map.get("solutionName"), (String) null);
         int a4 = oec.a(map.get(RateNode.TAG), 0);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         l lVar = f13230a.get(cVar.f19938a);

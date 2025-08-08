@@ -5,7 +5,7 @@ import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class b {
             return;
         }
         String str4 = appIconComponentName.clzPath;
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             String str5 = "expectClzPath is null,iconName:" + str;
             AdapterForTLog.loge(TAG, str5);
             g.c(g.PAGE_NAME, TAG, "changeAppIcon", str5, hashMap);
@@ -164,7 +164,7 @@ public class b {
                 packageManager.setComponentEnabledSetting(new ComponentName(this.g, value.clzPath), 2, 1);
             }
         }
-        if (TextUtils.equals(changeAppIconJSModel.changeType, Constrant.ChangeType.SILENT)) {
+        if (StringUtils.equals(changeAppIconJSModel.changeType, Constrant.ChangeType.SILENT)) {
             e.a().a(0L);
             e.a().a(0);
             AdapterForTLog.loge(igc.TAG, "autoRepairMoreAppIconsInBg more enable icon repair，reset autoRepairMoreIconsInBgLastTime");

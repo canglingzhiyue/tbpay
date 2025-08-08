@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -122,7 +122,7 @@ public class oqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d0034b19", new Object[]{this, aVar, strArr, str})).booleanValue();
         }
-        if (strArr != null && !TextUtils.isEmpty(str)) {
+        if (strArr != null && !StringUtils.isEmpty(str)) {
             return false;
         }
         com.taobao.tao.linklog.a.b("netRequest", "param_error", "网关2.0网络请求，参数异常", "RecmdRequestController", "containerId or requestType is empty");
@@ -194,15 +194,15 @@ public class oqi {
         String string = jSONObject.getString(i.CDN_REQUEST_TYPE);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         String a4 = a(string, awesomeGetRequestParams, jSONObject);
-        if (TextUtils.equals(string, "coldStart")) {
+        if (StringUtils.equals(string, "coldStart")) {
             s.f18233a.d().a("CommonBizParams", Long.valueOf(SystemClock.elapsedRealtime() - elapsedRealtime));
         }
-        if (!TextUtils.isEmpty(a4)) {
+        if (!StringUtils.isEmpty(a4)) {
             awesomeGetRequestParams.commonBizParams = a4;
         }
         if (!j.a("delGlobalLBS", true)) {
             String a5 = orc.a();
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 awesomeGetRequestParams.globalLbs = a5;
             }
         }
@@ -245,7 +245,7 @@ public class oqi {
             awesomeGetRequestParams.countryCode = b.countryCode;
         }
         String b2 = com.taobao.homepage.utils.d.b("Preview", oqn.KEY_PREVIEW_PARAM, false);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             awesomeGetRequestParams.previewParam = b2;
         }
         if (jSONObject.containsKey("apiName")) {

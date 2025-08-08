@@ -1,7 +1,7 @@
 package com.alibaba.ut.abtest;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.ut.abtest.c;
 import com.alibaba.ut.abtest.internal.bucketing.DefaultVariationSet;
@@ -116,7 +116,7 @@ public final class UTABTest {
                 h.d(TAG, "【运行实验】一休已禁止使用。");
                 return EMPTY_VARIATION_SET;
             } else {
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     h.g(TAG, "【运行实验】获取实验变量。命名空间：" + str + "，实验标识：" + str2);
                     VariationSet a2 = cex.a().q().a(str, str2, map, false, null);
                     if (a2 == null) {
@@ -192,7 +192,7 @@ public final class UTABTest {
             long nanoTime = System.nanoTime();
             if (!cex.a().j().c()) {
                 h.d(TAG, "【服务端实验】一休已禁止使用。");
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 h.d(TAG, "【服务端实验】添加埋点规则失败，埋点规则不合法。");
             } else {
                 if (z) {
@@ -218,12 +218,12 @@ public final class UTABTest {
                 }
                 long nanoTime2 = System.nanoTime();
                 if (z) {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         z2 = false;
                     }
                     b.a(b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER_SYNC, z2, nanoTime2 - nanoTime);
                 } else {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         z2 = false;
                     }
                     b.a(b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER, z2, nanoTime2 - nanoTime);
@@ -247,7 +247,7 @@ public final class UTABTest {
                 h.c(TAG, "请先调用 UTABTest.initialize() 方法初始化SDK。");
                 return;
             }
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && dVar != null) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && dVar != null) {
                 h.a(TAG, "addDataListener. component=" + str + ", module=" + str2 + ", listener=" + dVar);
                 cex.a().i().a(str, str2, dVar);
                 return;
@@ -280,7 +280,7 @@ public final class UTABTest {
                 h.c(TAG, "请先调用 UTABTest.initialize() 方法初始化SDK。");
                 return;
             }
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 h.a(TAG, "removeDataListener. component=" + str + ", module=" + str2 + ", listener=" + dVar);
                 cex.a().i().b(str, str2, dVar);
                 return;

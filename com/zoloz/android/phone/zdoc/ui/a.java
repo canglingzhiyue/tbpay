@@ -1,7 +1,7 @@
 package com.zoloz.android.phone.zdoc.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -44,7 +44,7 @@ public class a {
         } else {
             byte[] assetsData = FileUtil.getAssetsData(context.getApplicationContext().getResources(), "special_ui_type.json");
             String str = assetsData != null ? new String(assetsData) : "";
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 f24760a = (HashMap) JSON.parseObject(str, new TypeReference<HashMap<String, SpecialUiTypeInfo>>() { // from class: com.zoloz.android.phone.zdoc.ui.a.1
                 }, new Feature[0]);
             }
@@ -117,7 +117,7 @@ public class a {
             str2 = "zdoc_confirm_";
         }
         String b2 = b(context, str2 + str + "_" + i2);
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             return b2;
         }
         if (i == 0) {
@@ -168,7 +168,7 @@ public class a {
             return ((Number) ipChange.ipc$dispatch("3bbd7186", new Object[]{context, str, str2})).intValue();
         }
         String str3 = b;
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = context.getPackageName();
         }
         return context.getResources().getIdentifier(str, str2, str3);

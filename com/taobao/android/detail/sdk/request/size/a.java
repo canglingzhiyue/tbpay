@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.request.size;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.boost.request.mtop.b;
@@ -44,13 +44,13 @@ public class a implements b {
             return (HashMap) ipChange.ipc$dispatch("be7c57cb", new Object[]{this});
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(this.f10325a)) {
+        if (!StringUtils.isEmpty(this.f10325a)) {
             hashMap.put("userId", this.f10325a);
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             hashMap.put("roleId", this.b);
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             hashMap.put("sizeType", this.c);
         }
         HashMap<String, String> hashMap2 = this.d;

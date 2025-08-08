@@ -1,6 +1,6 @@
 package com.taobao.weex.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXEnvironment;
@@ -77,7 +77,7 @@ public class WXLogUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ccf82472", new Object[]{str, str2, logLevel});
-        } else if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str) || logLevel == null || TextUtils.isEmpty(logLevel.getName())) {
+        } else if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str) || logLevel == null || StringUtils.isEmpty(logLevel.getName())) {
         } else {
             if (!str.toLowerCase().startsWith(WEEX_TAG)) {
                 str = "weex1_" + str;
@@ -202,7 +202,7 @@ public class WXLogUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f180e7f", new Object[]{str, str2});
-        } else if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             a(str, str2, LogLevel.DEBUG);
             if (!WXEnvironment.isApkDebugable() || !"jsLog".equals(str) || (list = c) == null || list.size() <= 0) {
                 return;

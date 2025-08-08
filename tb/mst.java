@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -222,7 +222,7 @@ public class mst extends mss {
         }
         String str2 = "contentView end...getPackageName()=" + str;
         String bgColor = BrandUtil.getInstance().getBgColor();
-        if (!TextUtils.isEmpty(bgColor) && !msgNotficationDTO.isMultiContent) {
+        if (!StringUtils.isEmpty(bgColor) && !msgNotficationDTO.isMultiContent) {
             if (com.taobao.android.weex_framework.util.a.ATOM_EXT_white.equals(bgColor)) {
                 remoteViews.setViewVisibility(R.id.notificationWhiteBackground, 0);
             } else if (com.taobao.android.weex_framework.util.a.ATOM_EXT_black.equals(bgColor)) {
@@ -236,17 +236,17 @@ public class mst extends mss {
             remoteViews.setViewVisibility(R.id.notificationWhiteBackground, 8);
         }
         remoteViews.setTextViewText(R.id.notificationTitle, msgNotficationDTO.title);
-        if (!TextUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
+        if (!StringUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
             remoteViews.setTextColor(R.id.notificationTitle, Color.parseColor(BrandUtil.getInstance().getTitleColor()));
         }
         remoteViews.setTextViewText(R.id.notificationText, msgNotficationDTO.text);
-        if (!TextUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
+        if (!StringUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
             remoteViews.setTextColor(R.id.notificationText, Color.parseColor(BrandUtil.getInstance().getContentColor()));
         }
         String a2 = a(System.currentTimeMillis());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             remoteViews.setTextViewText(R.id.custom_time, a2.split("-")[3]);
-            if (!TextUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
+            if (!StringUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
                 remoteViews.setTextColor(R.id.custom_time, Color.parseColor(BrandUtil.getInstance().getTitleColor()));
             }
         }

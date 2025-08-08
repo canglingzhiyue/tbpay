@@ -1,7 +1,7 @@
 package com.alipay.android.msp.utils;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -108,7 +108,7 @@ public class JsonUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4e49b397", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -125,7 +125,7 @@ public class JsonUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("adbbe3cd", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -145,7 +145,7 @@ public class JsonUtil {
         JSONObject parseObject = JSONObject.parseObject(str);
         HashMap hashMap = new HashMap();
         for (Map.Entry<String, Object> entry : parseObject.entrySet()) {
-            if (entry.getValue() != null && !TextUtils.isEmpty(String.valueOf(entry.getValue()))) {
+            if (entry.getValue() != null && !StringUtils.isEmpty(String.valueOf(entry.getValue()))) {
                 hashMap.put(entry.getKey(), String.valueOf(entry.getValue()));
             }
         }
@@ -158,7 +158,7 @@ public class JsonUtil {
             return (JSONObject) ipChange.ipc$dispatch("95646041", new Object[]{str, strArr});
         }
         try {
-            if (!TextUtils.isEmpty(str) && isJsonObjectString(str)) {
+            if (!StringUtils.isEmpty(str) && isJsonObjectString(str)) {
                 return pickAsNew(JSONObject.parseObject(str), strArr);
             }
         } catch (Throwable th) {

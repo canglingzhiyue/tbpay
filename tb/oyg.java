@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -103,7 +103,7 @@ public class oyg {
         acv.a(application);
         String string = application.getSharedPreferences("ScanHistoryListDataPersistCacheKey", 0).getString("ScanHistoryListDataPersistCacheKey", "");
         ScanList scanList = null;
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             scanList = (ScanList) JSON.parseObject(string, ScanList.class);
         } else {
             k.a(oxy.TAG, "load Cache cache data not exist");
@@ -240,7 +240,7 @@ public class oyg {
             Product product = scanDo.getProduct();
             String link = scanDo.getLink();
             Application application = activity.getApplication();
-            if (!TextUtils.isEmpty(link) && !z && (scanDo.getType() == 1 || link.startsWith(com.taobao.search.common.util.k.HTTP_PREFIX) || link.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX) || link.startsWith("www.") || link.startsWith("wap."))) {
+            if (!StringUtils.isEmpty(link) && !z && (scanDo.getType() == 1 || link.startsWith(com.taobao.search.common.util.k.HTTP_PREFIX) || link.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX) || link.startsWith("www.") || link.startsWith("wap."))) {
                 p.a(activity.getLayoutInflater(), application, application.getString(R.string.scancode_no_network));
             } else {
                 a(activity, link, product, scanDo, cssVar);
@@ -272,7 +272,7 @@ public class oyg {
                             IpChange ipChange3 = $ipChange;
                             if (ipChange3 instanceof IpChange) {
                                 ipChange3.ipc$dispatch("5c510192", new Object[]{this});
-                            } else if (str == null || str.equals(str2) || TextUtils.isEmpty(str2) || str2.startsWith("alipays://")) {
+                            } else if (str == null || str.equals(str2) || StringUtils.isEmpty(str2) || str2.startsWith("alipays://")) {
                                 oyg.a(str, product, scanDo, activity, cssVar);
                             } else {
                                 try {
@@ -339,7 +339,7 @@ public class oyg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1cf2bb84", new Object[]{new Integer(i), str});
-        } else if (i < 0 || TextUtils.isEmpty(str)) {
+        } else if (i < 0 || StringUtils.isEmpty(str)) {
         } else {
             if (i == 1) {
                 if (com.taobao.android.scancode.common.util.a.b(str)) {
@@ -363,7 +363,7 @@ public class oyg {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f1ee42bf", new Object[]{scancodeType, str});
-        } else if (scancodeType == null || TextUtils.isEmpty(str)) {
+        } else if (scancodeType == null || StringUtils.isEmpty(str)) {
         } else {
             CT ct = CT.Button;
             TBS.Adv.ctrlClickedOnPage("HuoyanHistory", ct, "HistoryClick", "content=" + str, "type=" + scancodeType.name().toLowerCase(Locale.getDefault()));
@@ -379,7 +379,7 @@ public class oyg {
         } else if (activity == null) {
         } else {
             final oyc oycVar = new oyc(activity, cssVar);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             b(scanDo.getType(), str);
@@ -424,7 +424,7 @@ public class oyg {
             } else if (str.startsWith(com.taobao.search.common.util.k.HTTP_PREFIX) || str.startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX) || str.startsWith("www.") || str.startsWith("wap.")) {
                 try {
                     String config = OrangeConfig.getInstance().getConfig("android_scancode_client", "host_switch_list", "");
-                    if (!TextUtils.isEmpty(config)) {
+                    if (!StringUtils.isEmpty(config)) {
                         String host = new URL(str).getHost();
                         String[] split = config.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
                         int length = split.length;

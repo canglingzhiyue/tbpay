@@ -1,6 +1,6 @@
 package com.taobao.android.order.core.dinamicX.parser;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import tb.fuf;
@@ -26,7 +26,7 @@ public class q extends fuf {
             return null;
         }
         String str = (String) objArr[0];
-        if (!TextUtils.isEmpty(str) && (split = str.split("::")) != null && split.length > 1) {
+        if (!StringUtils.isEmpty(str) && (split = str.split("::")) != null && split.length > 1) {
             return split[split.length - 1];
         }
         return null;

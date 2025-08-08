@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
@@ -218,14 +218,14 @@ public class UserHeaderBgLayout extends FrameLayout {
             String str = skinData.skinColor;
             String str2 = skinData.skinPic;
             if ("normal".equals(skinData.vipType) && mxo.d()) {
-                if (!TextUtils.isEmpty(skinData.whiteSkinColor)) {
+                if (!StringUtils.isEmpty(skinData.whiteSkinColor)) {
                     str = skinData.whiteSkinColor;
                 }
-                if (!TextUtils.isEmpty(skinData.whiteSkinPic)) {
+                if (!StringUtils.isEmpty(skinData.whiteSkinPic)) {
                     str2 = skinData.whiteSkinPic;
                 }
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 ColorDrawable colorDrawable = new ColorDrawable(mxq.b(str));
                 this.mImageHeaderBg.setBackgroundDrawable(colorDrawable);
                 this.mImageHeaderBg.setPlaceHoldForeground(colorDrawable);

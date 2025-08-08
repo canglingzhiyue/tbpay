@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -86,7 +86,7 @@ public class TBEditionSwitcherElderHomePopBridge extends android.taobao.windvane
             return r4
         L32:
             java.lang.String r0 = "unknown"
-            boolean r1 = android.text.TextUtils.isEmpty(r9)
+            boolean r1 = android.text.StringUtils.isEmpty(r9)
             if (r1 != 0) goto L5d
             com.alibaba.fastjson.JSONObject r9 = com.alibaba.fastjson.JSONObject.parseObject(r9)     // Catch: java.lang.Exception -> L5d
             java.lang.String r1 = "backHome"
@@ -95,7 +95,7 @@ public class TBEditionSwitcherElderHomePopBridge extends android.taobao.windvane
             boolean r1 = r5.equals(r1)     // Catch: java.lang.Exception -> L5d
             java.lang.String r5 = "source"
             java.lang.String r9 = r9.getString(r5)     // Catch: java.lang.Exception -> L5b
-            boolean r5 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Exception -> L5b
+            boolean r5 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Exception -> L5b
             if (r5 != 0) goto L5e
             r0 = r9
             goto L5e
@@ -161,10 +161,10 @@ public class TBEditionSwitcherElderHomePopBridge extends android.taobao.windvane
             return true;
         }
         String str2 = "unknown";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 String string = JSONObject.parseObject(str).getString("source");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str2 = string;
                 }
             } catch (Exception unused) {

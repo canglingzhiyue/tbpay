@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.biz.multiclasstab.IMulticlassTabService;
@@ -118,7 +118,7 @@ public class loh {
             this.f30771a = b(context, str);
             return this.f30771a;
         }
-        if (!TextUtils.equals(str, lomVar.a())) {
+        if (!StringUtils.equals(str, lomVar.a())) {
             this.f30771a.e();
             this.f30771a = b(context, str);
         }

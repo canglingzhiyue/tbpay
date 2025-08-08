@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -260,7 +260,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                     if (obj != null) {
                         str2 = (String) obj;
                     }
-                    if (!TextUtils.isEmpty(str2) && TaoLiveSingleRoomController.access$1800(TaoLiveSingleRoomController.this)) {
+                    if (!StringUtils.isEmpty(str2) && TaoLiveSingleRoomController.access$1800(TaoLiveSingleRoomController.this)) {
                         if (pmd.a().m() != null) {
                             pmd.a().m().b(TaoLiveSingleRoomController.access$1000(), "MEDIA_INFO_SEI_USERDEFINED_STRUCT seiData = " + str2);
                         }
@@ -635,11 +635,11 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
             this.mFrameContext.a(this.mRecModel);
             TBLiveRecEngineV2.RecModel recModel2 = this.mRecModel;
             if (recModel2 != null) {
-                if (recModel2.initParams != null && TextUtils.isEmpty(this.mRecModel.imageUrl)) {
+                if (recModel2.initParams != null && StringUtils.isEmpty(this.mRecModel.imageUrl)) {
                     TBLiveRecEngineV2.RecModel recModel3 = this.mRecModel;
                     recModel3.imageUrl = recModel3.initParams.get("coverImage");
                 }
-                if (this.mRecModel.initParams == null && !TextUtils.isEmpty(this.mRecModel.actionUrl)) {
+                if (this.mRecModel.initParams == null && !StringUtils.isEmpty(this.mRecModel.actionUrl)) {
                     this.mRecModel.initParams = ak.b(Uri.parse(this.mRecModel.actionUrl));
                 }
                 if (aa.aG() && this.mRecModel.initParams != null && this.mRecModel.feedType != null && this.mRecModel.feedType.equals("Kandian")) {
@@ -649,7 +649,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                     this.mRecModel.initParams.put("timeMovingSpfPlayVideo", this.mRecModel.timeMovingSpfPlayVideo);
                 }
                 String str = this.mRecModel.initParams != null ? this.mRecModel.initParams.get(aw.PARAM_PLAY_VIEW_TOKEN) : null;
-                if (!TextUtils.isEmpty(str) && !com.taobao.taolive.sdk.ui.media.g.a().d(str)) {
+                if (!StringUtils.isEmpty(str) && !com.taobao.taolive.sdk.ui.media.g.a().d(str)) {
                     str = null;
                 }
                 VideoFrame2 videoFrame2 = this.mVideoFrame;
@@ -702,7 +702,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         if (this.mPerfomenceTrackManager != null) {
             TBLiveRecEngineV2.RecModel recModel2 = this.mRecModel;
             if (recModel2 != null) {
-                this.mTrackId = TextUtils.isEmpty(recModel2.liveId) ? this.mRecModel.accountId : this.mRecModel.liveId;
+                this.mTrackId = StringUtils.isEmpty(recModel2.liveId) ? this.mRecModel.accountId : this.mRecModel.liveId;
                 if (this.mRecModel.initParams != null) {
                     str = this.mRecModel.initParams.get("livesource");
                     this.mFirstFrameRendered = false;
@@ -761,7 +761,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                         TaoLiveSingleRoomController.access$100(TaoLiveSingleRoomController.this, simpleVideoInfo);
                         TaoLiveSingleRoomController.this.mRecModel.initParams.put(aw.PARAM_ITEM_IDS, simpleVideoInfo.holdItemIds);
                         TaoLiveSingleRoomController.this.mRecModel.initParams.put(aw.PARAM_ITEM_HOLD_TYPE, simpleVideoInfo.itemHoldType);
-                        if (!TextUtils.isEmpty(simpleVideoInfo.timeMovingId) && v.c(simpleVideoInfo.timeMovingId) != 0) {
+                        if (!StringUtils.isEmpty(simpleVideoInfo.timeMovingId) && v.c(simpleVideoInfo.timeMovingId) != 0) {
                             TaoLiveSingleRoomController.this.mRecModel.initParams.put(aw.PARAM_TIMEMOVE_KEYPOINTID, simpleVideoInfo.timeMovingId);
                             TaoLiveSingleRoomController.this.mRecModel.initParams.put(aw.PARAM_TIMEMOVING_ITEM_ID, "customizeView".equals(simpleVideoInfo.itemHoldType) ? simpleVideoInfo.dispatchItemID : simpleVideoInfo.holdItemIds);
                             TaoLiveSingleRoomController.this.mRecModel.initParams.put(aw.PARAM_PRODUCT_TYPE, RecModel.MEDIA_TYPE_TIMEMOVE);
@@ -781,12 +781,12 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                         StringBuilder sb = new StringBuilder();
                         sb.append("极简启动 提前加载simple数据 ");
                         String str2 = "直播态";
-                        sb.append(TextUtils.isEmpty(simpleVideoInfo.timeMovingId) ? str2 : "看点态");
+                        sb.append(StringUtils.isEmpty(simpleVideoInfo.timeMovingId) ? str2 : "看点态");
                         com.taobao.taolive.room.utils.m.b(sb.toString());
                         Context context = TaoLiveSingleRoomController.this.mContext;
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append("极简启动 提前加载simple数据 ");
-                        if (!TextUtils.isEmpty(simpleVideoInfo.timeMovingId)) {
+                        if (!StringUtils.isEmpty(simpleVideoInfo.timeMovingId)) {
                             str2 = "看点态";
                         }
                         sb2.append(str2);
@@ -828,10 +828,10 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         } else if (simpleVideoInfo == null || !aa.bE()) {
         } else {
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(simpleVideoInfo.liveId)) {
+            if (!StringUtils.isEmpty(simpleVideoInfo.liveId)) {
                 hashMap.put("feed_id", simpleVideoInfo.liveId);
             }
-            if (!TextUtils.isEmpty(simpleVideoInfo.accountId)) {
+            if (!StringUtils.isEmpty(simpleVideoInfo.accountId)) {
                 hashMap.put("account_id", simpleVideoInfo.accountId);
             }
             com.taobao.taolive.sdk.core.a.a(this.mFrameContext, ai.e(this.mFrameContext, this.mContext), hashMap);
@@ -1245,9 +1245,9 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                     this.mVideoFrame.toFullscreen();
                 }
             }
-            if (!TextUtils.isEmpty(this.mVideoFrame.getVideoViewToken())) {
+            if (!StringUtils.isEmpty(this.mVideoFrame.getVideoViewToken())) {
                 if (this.mPerfomenceTrackManager != null) {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = "playerViewToken";
                     }
                     this.mPerfomenceTrackManager.e(str);
@@ -1268,7 +1268,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                     String str2 = this.mRecModel.initParams.get(aw.PARAM_LIVE_URL_TYPE);
                     if (("rtcLive".equals(str2) && u.F()) || (("bfrtc".equals(str2) && u.E()) || (("artp".equals(str2) && u.D()) || "flv".equals(str2)))) {
                         String str3 = this.mRecModel.initParams.get(aw.PARAM_LIVE_PLAY_URL);
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             pkm pkmVar = this.mPerfomenceTrackManager;
                             if (pkmVar != null) {
                                 pkmVar.e(aw.PARAM_LIVE_PLAY_URL);
@@ -1346,7 +1346,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                 pkmVar.e("liveUrlList");
                 this.mPerfomenceTrackManager.f(this.mTrackId);
             }
-            if (!TextUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
+            if (!StringUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
                 t.a(mediaData.dataTracks, this.mContext);
             }
             this.mVideoFrame.preloadVideo(mediaData, z);
@@ -1361,7 +1361,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
             ipChange.ipc$dispatch("5ea83a6a", new Object[]{this, spfPlayVideo});
         } else if (spfPlayVideo == null) {
         } else {
-            if (!TextUtils.isEmpty(spfPlayVideo.playInfo)) {
+            if (!StringUtils.isEmpty(spfPlayVideo.playInfo)) {
                 com.taobao.taolive.sdk.playcontrol.c.a(this.mFrameContext, VideoStatus.VIDEO_TIMESHIFT_STATUS);
                 if (com.taobao.android.litecreator.comprehension.f.FILE_TYPE_VIDEO_MP4.equals(spfPlayVideo.videoType)) {
                     com.taobao.taolive.movehighlight.utils.f.a().a(com.taobao.android.litecreator.comprehension.f.FILE_TYPE_VIDEO_MP4);
@@ -1383,7 +1383,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9bc50baf", new Object[]{this, str});
-        } else if (this.mGlobalContext == null || TextUtils.isEmpty(str)) {
+        } else if (this.mGlobalContext == null || StringUtils.isEmpty(str)) {
         } else {
             this.mGlobalContext.k = "true".equals(str);
         }
@@ -1464,9 +1464,9 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         if (recModel.isFirst && recModel.initParams != null) {
             String str = recModel.initParams.get(aw.PARAM_CUSTOM_PLAY_CTRL);
             String str2 = recModel.initParams.get(aw.PARAM_QUICK_LIVE_URL);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 mediaData = com.taobao.taolive.sdk.model.common.a.a(com.taobao.taolive.room.utils.q.a(str));
-            } else if (!TextUtils.isEmpty(str2) && aa.aT() && (a2 = com.taobao.taolive.room.utils.q.a(str2)) != null) {
+            } else if (!StringUtils.isEmpty(str2) && aa.aT() && (a2 = com.taobao.taolive.room.utils.q.a(str2)) != null) {
                 mediaData = new MediaData();
                 mediaData.liveUrlList = new ArrayList<>();
                 MediaData.QualityLiveItem qualityLiveItem = new MediaData.QualityLiveItem();
@@ -1488,7 +1488,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                 mediaData.liveUrlList.add(qualityLiveItem);
             }
             String str3 = recModel.initParams.get(aw.PARAM_PLAYER_TOKEN);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return mediaData;
             }
             this.mVideoFrame.setToken(str3);
@@ -1523,10 +1523,10 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6cb65f4", new Object[]{this});
-        } else if (!aa.ax() || (recModel = this.mRecModel) == null || recModel.initParams == null || TextUtils.isEmpty(this.mRecModel.liveId) || (videoFrame2 = this.mVideoFrame) == null || videoFrame2.hasPreloaded()) {
+        } else if (!aa.ax() || (recModel = this.mRecModel) == null || recModel.initParams == null || StringUtils.isEmpty(this.mRecModel.liveId) || (videoFrame2 = this.mVideoFrame) == null || videoFrame2.hasPreloaded()) {
         } else {
             String str = this.mRecModel.initParams.get(aw.PARAM_TIMEMOVING_ITEM_ID);
-            if (!TextUtils.isEmpty(this.mRecModel.initParams.get(aw.PARAM_SJSD_ITEM_ID)) || !TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(this.mRecModel.initParams.get(aw.PARAM_SJSD_ITEM_ID)) || !StringUtils.isEmpty(str)) {
                 return;
             }
             if (this.mCDNFetchBusiness == null) {
@@ -1654,7 +1654,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         String str2 = TAG;
         ab.c(str2, "setVideoCoverImage imageUrl = " + str);
         this.mVideoFrame.setCoverImg(this.mContext.getResources().getDrawable(R.drawable.taolive_slice_scroll_common), true);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (aa.aM()) {
@@ -2055,7 +2055,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         if (poy.i(this.mFrameContext)) {
             String O = poy.O(this.mFrameContext);
             String k = poy.k(this.mFrameContext);
-            if (!TextUtils.isEmpty(k)) {
+            if (!StringUtils.isEmpty(k)) {
                 O = k;
             }
             poz.m(O, this.mGlobalContext);
@@ -2117,7 +2117,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
             return;
         }
         String p = poz.p(com.taobao.taolive.room.utils.n.b(this.mFrameContext));
-        if (!u.aD() || TextUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
+        if (!u.aD() || StringUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
             return;
         }
         com.taobao.taolive.sdk.monitor.b.b().a("LIVE_CODE_BOOT_STAGE", SceneStage.SCENE_STAGE_T1);
@@ -2168,7 +2168,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
             return;
         }
         SimpleLiveInfo simpleLiveInfo = (SimpleLiveInfo) pqj.a((String) obj, SimpleLiveInfo.class);
-        if (this.mVideoFrame == null || simpleLiveInfo == null || TextUtils.isEmpty(this.mRequestLiveId) || !this.mRequestLiveId.equals(simpleLiveInfo.liveId) || simpleLiveInfo.roomStatus != 1 || simpleLiveInfo.liveUrlList == null || simpleLiveInfo.liveUrlList.isEmpty()) {
+        if (this.mVideoFrame == null || simpleLiveInfo == null || StringUtils.isEmpty(this.mRequestLiveId) || !this.mRequestLiveId.equals(simpleLiveInfo.liveId) || simpleLiveInfo.roomStatus != 1 || simpleLiveInfo.liveUrlList == null || simpleLiveInfo.liveUrlList.isEmpty()) {
             return;
         }
         MediaData mediaData = new MediaData();
@@ -2213,7 +2213,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
             pkmVar.e("cdnLiveUrlList");
             this.mPerfomenceTrackManager.f(this.mTrackId);
         }
-        if (!TextUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
+        if (!StringUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
             t.a(mediaData.dataTracks, this.mContext);
         }
         if (com.taobao.taolive.sdk.utils.o.t()) {
@@ -2283,8 +2283,8 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         if (pibVar != null) {
             pibVar.a(videoInfo.status == 0);
         }
-        if (videoInfo.status == 1 && TextUtils.isEmpty(videoInfo.replayUrl)) {
-            if (TextUtils.isEmpty(videoInfo.broadCaster.accountInfoUrl)) {
+        if (videoInfo.status == 1 && StringUtils.isEmpty(videoInfo.replayUrl)) {
+            if (StringUtils.isEmpty(videoInfo.broadCaster.accountInfoUrl)) {
                 return;
             }
             pmd.a().r().a(this.mContext, videoInfo.broadCaster.accountInfoUrl, null);
@@ -2301,18 +2301,18 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
             poy.a(this.mFrameContext, videoInfo.liveId);
         }
         updateDisPatchTrackInfo(videoInfo.disPatchTrackInfo);
-        if (TextUtils.isEmpty(this.mRecModel.liveId)) {
+        if (StringUtils.isEmpty(this.mRecModel.liveId)) {
             this.mRecModel.liveId = videoInfo.liveId;
         }
-        if (TextUtils.isEmpty(this.mRecModel.accountId)) {
+        if (StringUtils.isEmpty(this.mRecModel.accountId)) {
             this.mRecModel.accountId = videoInfo.broadCaster.accountId;
         }
-        if (TextUtils.isEmpty(this.mRecModel.actionUrl)) {
+        if (StringUtils.isEmpty(this.mRecModel.actionUrl)) {
             this.mRecModel.actionUrl = com.taobao.taolive.room.utils.c.d(videoInfo.nativeFeedDetailUrl, ag.SOURCE_UPDOWNSWITCH);
             String O = poy.O(this.mFrameContext);
-            if (!TextUtils.isEmpty(O)) {
+            if (!StringUtils.isEmpty(O)) {
                 String queryParameter = Uri.parse(O).getQueryParameter("liveAdParams");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
                     recModel.actionUrl = this.mRecModel.actionUrl + "&liveAdParams=" + Uri.encode(queryParameter);
                 }
@@ -2563,11 +2563,11 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
             ipChange.ipc$dispatch("2a0295a7", new Object[]{this, str});
             return;
         }
-        if (aa.bh() && TextUtils.isEmpty(poz.b(com.taobao.taolive.room.utils.n.b(this.mFrameContext))) && !TextUtils.isEmpty(str)) {
+        if (aa.bh() && StringUtils.isEmpty(poz.b(com.taobao.taolive.room.utils.n.b(this.mFrameContext))) && !StringUtils.isEmpty(str)) {
             poz.b(str, com.taobao.taolive.room.utils.n.b(this.mFrameContext));
         }
         TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
-        if (recModel == null || recModel.initParams == null || !TextUtils.isEmpty(this.mRecModel.initParams.get("trackInfo")) || TextUtils.isEmpty(str)) {
+        if (recModel == null || recModel.initParams == null || !StringUtils.isEmpty(this.mRecModel.initParams.get("trackInfo")) || StringUtils.isEmpty(str)) {
             return;
         }
         this.mRecModel.initParams.put("trackInfo", str);
@@ -2593,16 +2593,16 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         }
         com.taobao.taolive.room.utils.a.a(this.mContext, this.mFrameContext);
         com.taobao.taolive.room.pre.a.a().a(com.taobao.taolive.room.utils.m.b() ? com.taobao.taolive.room.pre.a.ISAFCCOLDCONTEXT_KEY : this.mRequestLiveId);
-        if (this.mIsDestroyed || fandomInfo == null || TextUtils.isEmpty(fandomInfo.bbQJumpH5) || !(this.mContext instanceof Activity)) {
+        if (this.mIsDestroyed || fandomInfo == null || StringUtils.isEmpty(fandomInfo.bbQJumpH5) || !(this.mContext instanceof Activity)) {
             return;
         }
         String c = poz.c(this.mGlobalContext);
         String str2 = null;
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             str2 = Uri.parse(c).getQuery();
         }
         String str3 = fandomInfo.bbQJumpH5;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if (str3.contains("?")) {
                 str3 = str3 + "&" + str2;
             } else {
@@ -2623,7 +2623,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6a2e5b6a", new Object[]{this, videoInfo})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mRequestAccountId) || videoInfo.broadCaster == null) {
+        if (StringUtils.isEmpty(this.mRequestAccountId) || videoInfo.broadCaster == null) {
             return false;
         }
         return isOfficialType(videoInfo) ? this.mRequestAccountId.equals(videoInfo.officialLiveInfo.accountId) : this.mRequestAccountId.equals(videoInfo.broadCaster.accountId);
@@ -2634,7 +2634,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8be7c4bb", new Object[]{this, videoInfo})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mRequestLiveId) || videoInfo == null) {
+        if (StringUtils.isEmpty(this.mRequestLiveId) || videoInfo == null) {
             return false;
         }
         return isOfficialType(videoInfo) ? this.mRequestLiveId.equals(videoInfo.officialLiveInfo.officialLiveId) : this.mRequestLiveId.equals(videoInfo.liveId);
@@ -2647,7 +2647,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
 
     private boolean checkTopic(VideoInfo videoInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4a5ab703", new Object[]{this, videoInfo})).booleanValue() : !TextUtils.isEmpty(this.mRequestLiveId) && this.mRequestLiveId.equals(videoInfo.topic);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4a5ab703", new Object[]{this, videoInfo})).booleanValue() : !StringUtils.isEmpty(this.mRequestLiveId) && this.mRequestLiveId.equals(videoInfo.topic);
     }
 
     public void onGetVideoInfoFail(String str) {
@@ -2894,7 +2894,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         com.taobao.taolive.sdk.controller.e eVar = this.mGlobalContext;
         String i = eVar != null ? eVar.i() : "";
         String b = this.mRecModel != null ? ppn.a().b(this.mRecModel.liveId) : "unknown";
-        if (!TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(i)) {
             b = i + "_" + b;
         }
         g gVar = this.mFrameContext;
@@ -2922,7 +2922,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         int J = this.mVideoFrame.getTaoVideoView().J();
         if (J == 0) {
             TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
-            this.mPerfomenceTrackManager.e((recModel == null || recModel.initParams == null || TextUtils.isEmpty(this.mRecModel.initParams.get(aw.PARAM_PLAY_MODE))) ? "playerViewToken" : this.mRecModel.initParams.get(aw.PARAM_PLAY_MODE));
+            this.mPerfomenceTrackManager.e((recModel == null || recModel.initParams == null || StringUtils.isEmpty(this.mRecModel.initParams.get(aw.PARAM_PLAY_MODE))) ? "playerViewToken" : this.mRecModel.initParams.get(aw.PARAM_PLAY_MODE));
         } else if (J == 1) {
             this.mPerfomenceTrackManager.e("autoPlayerViewToken");
         } else if (J == 2) {
@@ -2977,7 +2977,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
                 return;
             }
             String str = videoInfo.playModeLandscape;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = aa.cc();
             }
             IMediaPlayer.AspectRatio a2 = ac.a().a(str);
@@ -2987,7 +2987,7 @@ public class TaoLiveSingleRoomController implements IRemoteExtendListener, com.t
         } else if (!aa.cb() || (videoFrame22 = this.mVideoFrame) == null || videoFrame22.getTaoVideoView() == null) {
         } else {
             String str3 = videoInfo.playModePortrait;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = aa.cd();
             }
             IMediaPlayer.AspectRatio b = ac.a().b(str3);

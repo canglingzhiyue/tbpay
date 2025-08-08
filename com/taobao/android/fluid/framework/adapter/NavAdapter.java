@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
 import com.taobao.android.fluid.framework.media.IMediaService;
@@ -132,7 +132,7 @@ public class NavAdapter implements INavAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2047c4c3", new Object[]{this, fluidContext, context, str});
-        } else if (TextUtils.isEmpty(str) || !(context instanceof Activity) || !Boolean.parseBoolean(Uri.parse(str).getQueryParameter("miniwindow"))) {
+        } else if (StringUtils.isEmpty(str) || !(context instanceof Activity) || !Boolean.parseBoolean(Uri.parse(str).getQueryParameter("miniwindow"))) {
         } else {
             ((IMediaService) fluidContext.getService(IMediaService.class)).setNeedFloatWindow(true);
         }

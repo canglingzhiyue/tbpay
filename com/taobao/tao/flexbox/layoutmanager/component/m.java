@@ -15,7 +15,7 @@ import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.SparseIntArray;
 import android.view.View;
@@ -1129,7 +1129,7 @@ public class m extends Component<TNodeRecyclerView, b> implements RecyclerView.R
             java.util.Map r2 = r8.d
             r7.a(r1, r2, r3, r0)
             java.lang.String r8 = r8.c
-            boolean r8 = android.text.TextUtils.equals(r8, r6)
+            boolean r8 = android.text.StringUtils.equals(r8, r6)
             if (r8 == 0) goto Lb1
             r7.q()
             tb.sjx r8 = r7.J
@@ -1384,7 +1384,7 @@ public class m extends Component<TNodeRecyclerView, b> implements RecyclerView.R
                         if (((b) m.g(m.this)).s) {
                             viewHolder.itemView.setAlpha(0.9f);
                         }
-                    } else if (i2 == 0 && m.h(m.this) != m.i(m.this) && !TextUtils.isEmpty(((b) m.j(m.this)).q)) {
+                    } else if (i2 == 0 && m.h(m.this) != m.i(m.this) && !StringUtils.isEmpty(((b) m.j(m.this)).q)) {
                         HashMap hashMap = new HashMap();
                         hashMap.put("source", Integer.valueOf(m.h(m.this)));
                         hashMap.put("dest", Integer.valueOf(m.i(m.this)));
@@ -1967,7 +1967,7 @@ public class m extends Component<TNodeRecyclerView, b> implements RecyclerView.R
             if (a2) {
                 if (((b) this.viewParams).c > 0 || ((b) this.viewParams).d == null) {
                     i2 = ((b) this.viewParams).c + m;
-                } else if (TextUtils.equals(((b) this.viewParams).d, "average")) {
+                } else if (StringUtils.equals(((b) this.viewParams).d, "average")) {
                     i2 = m - ((b) this.viewParams).c;
                 }
                 ((b) this.viewParams).f20158a = Math.min(i2 / (((b) this.viewParams).O + ((b) this.viewParams).c), ((b) this.viewParams).P);
@@ -1977,7 +1977,7 @@ public class m extends Component<TNodeRecyclerView, b> implements RecyclerView.R
         }
         if (((b) this.viewParams).c > 0 || ((b) this.viewParams).d == null) {
             i = (m - ((((b) this.viewParams).f20158a - 1) * ((b) this.viewParams).c)) / ((b) this.viewParams).f20158a;
-        } else if (!TextUtils.equals(((b) this.viewParams).d, "average")) {
+        } else if (!StringUtils.equals(((b) this.viewParams).d, "average")) {
             return Float.NaN;
         } else {
             i = (m - ((((b) this.viewParams).f20158a + 1) * ((b) this.viewParams).c)) / ((b) this.viewParams).f20158a;
@@ -3744,7 +3744,7 @@ public class m extends Component<TNodeRecyclerView, b> implements RecyclerView.R
             this.J = oec.a(hashMap.get("ignore-item-animator"), false);
             this.M = oec.a(hashMap.get("scroll"), true);
             String a5 = oec.a(hashMap.get("placeholder"), (String) null);
-            if (TextUtils.isEmpty(a5) || oeb.U() <= 0) {
+            if (StringUtils.isEmpty(a5) || oeb.U() <= 0) {
                 return;
             }
             try {

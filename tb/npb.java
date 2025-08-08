@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -237,7 +237,7 @@ public class npb extends p<j, e, CommonSearchResult> {
         q.c(incoming, "incoming");
         q.c(config, "config");
         Map<String, String> e = config.e();
-        if (e != null && TextUtils.equals(e.get("searchType"), "all")) {
+        if (e != null && StringUtils.equals(e.get("searchType"), "all")) {
             ((noz) src).b((noz) incoming);
         }
         src.b(incoming);
@@ -256,7 +256,7 @@ public class npb extends p<j, e, CommonSearchResult> {
         q.c(config, "config");
         Map<String, String> e = config.e();
         if (e != null && (str = e.get("searchType")) != null) {
-            if (!TextUtils.equals(str, "preload")) {
+            if (!StringUtils.equals(str, "preload")) {
                 return;
             }
             ((noz) src).a((noz) incoming);
@@ -406,7 +406,7 @@ public class npb extends p<j, e, CommonSearchResult> {
                     if (tabs3 == null) {
                         q.a();
                     }
-                    if (TextUtils.equals(tabs3.get(i).bizName, combo.Q())) {
+                    if (StringUtils.equals(tabs3.get(i).bizName, combo.Q())) {
                         return i;
                     }
                 }
@@ -717,7 +717,7 @@ public class npb extends p<j, e, CommonSearchResult> {
             map.put("itemIds", W);
         }
         if (nozVar.F() == null) {
-            if (!TextUtils.equals("preload", (eVar == null || (e = eVar.e()) == null) ? null : e.get("searchType"))) {
+            if (!StringUtils.equals("preload", (eVar == null || (e = eVar.e()) == null) ? null : e.get("searchType"))) {
                 return;
             }
         }

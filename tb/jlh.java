@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
 
@@ -36,7 +36,7 @@ public class jlh extends jku {
         if (ipChange instanceof IpChange) {
             return (jlh) ipChange.ipc$dispatch("e2617f42", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@intent.")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@intent.")) {
             return null;
         }
         return new jlh(str);
@@ -50,7 +50,7 @@ public class jlh extends jku {
         }
         try {
             Intent d = aVar.d();
-            if (!TextUtils.isEmpty(this.b) && d != null && (extras = d.getExtras()) != null) {
+            if (!StringUtils.isEmpty(this.b) && d != null && (extras = d.getExtras()) != null) {
                 return extras.getString(this.b);
             }
         } catch (Throwable th) {

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -62,7 +62,7 @@ public class kvl extends h {
         } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("clickParam")) == null) {
         } else {
             String string = jSONObject2.getString("page");
-            if (TextUtils.isEmpty(string) || !string.equals("Page_Home")) {
+            if (StringUtils.isEmpty(string) || !string.equals("Page_Home")) {
                 return;
             }
             gmq.a("Page_Home", "track_center_action", "rec_list_item_click_count");
@@ -121,11 +121,11 @@ public class kvl extends h {
             return (String) ipChange.ipc$dispatch("c40f7f22", new Object[]{this, context, bundle, str});
         }
         try {
-            if (TextUtils.isEmpty(str) || !TextUtils.equals("ContentDetailPage", Uri.parse(str).getQueryParameter("currentChannel"))) {
+            if (StringUtils.isEmpty(str) || !StringUtils.equals("ContentDetailPage", Uri.parse(str).getQueryParameter("currentChannel"))) {
                 return str;
             }
             Map<String, String> pageProperties = UTAnalytics.getInstance().getDefaultTracker().getPageProperties(context);
-            if (!TextUtils.equals("true", pageProperties.get("useEntryUtparam"))) {
+            if (!StringUtils.equals("true", pageProperties.get("useEntryUtparam"))) {
                 return str;
             }
             str = str + "&useEntryUtparam=true";
@@ -213,7 +213,7 @@ public class kvl extends h {
             } else {
                 String string = jSONObject4.getString("utLogMap");
                 try {
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         jSONObject3.put(kox.X_OBJECT_ID, (Object) JSONObject.parseObject(URLDecoder.decode(string, "utf-8")).getString(kox.X_OBJECT_ID));
                     }
                 } catch (UnsupportedEncodingException e) {

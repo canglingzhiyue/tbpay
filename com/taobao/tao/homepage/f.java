@@ -1,7 +1,7 @@
 package com.taobao.tao.homepage;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.tempate.DTemplateManager;
@@ -228,7 +228,7 @@ public class f {
                 });
             }
             if (!arrayList2.isEmpty()) {
-                if (!TextUtils.equals("homepage", str)) {
+                if (!StringUtils.equals("homepage", str)) {
                     com.taobao.android.home.component.utils.e.e("HomepageDinamicXCenter", "current homePageEngine modulename is homepage, cannot handle module : " + str);
                 } else {
                     this.b.a(arrayList2);
@@ -281,7 +281,7 @@ public class f {
                 b(jSONObject3, list, list2);
             }
             JSONObject jSONObject4 = jSONObject.getJSONObject("ext");
-            if (jSONObject4 == null || !TextUtils.equals("true", jSONObject4.getString("downloadSubSectionTemplates")) || (jSONObject2 = jSONObject.getJSONObject("subSection")) == null) {
+            if (jSONObject4 == null || !StringUtils.equals("true", jSONObject4.getString("downloadSubSectionTemplates")) || (jSONObject2 = jSONObject.getJSONObject("subSection")) == null) {
                 return;
             }
             for (int i = 0; jSONObject2.containsKey(String.valueOf(i)); i++) {

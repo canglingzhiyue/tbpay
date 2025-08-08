@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.config.NetworkConfigCenter;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -136,7 +136,7 @@ public class mxr {
 
     public static boolean j() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5eb3ff5", new Object[0])).booleanValue() : TextUtils.equals("1", TBRevisionSwitchManager.i().c("elderHome"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5eb3ff5", new Object[0])).booleanValue() : StringUtils.equals("1", TBRevisionSwitchManager.i().c("elderHome"));
     }
 
     public static boolean k() {

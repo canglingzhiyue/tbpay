@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender.dsl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.common.Constants;
@@ -24,6 +24,6 @@ public class WidgetAnimModel implements INativeModel {
     @Override // com.taobao.tbpoplayer.nativerender.dsl.INativeModel
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.times > 0 && this.interval > 0 && TextUtils.isEmpty(this.imgSrcList);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : this.times > 0 && this.interval > 0 && StringUtils.isEmpty(this.imgSrcList);
     }
 }

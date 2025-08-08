@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -22,7 +22,7 @@ public class gfc {
         if (ipChange instanceof IpChange) {
             return (ggk) ipChange.ipc$dispatch("7c6fafe9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (ggkVar = this.f28304a.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (ggkVar = this.f28304a.get(str)) == null) {
             return null;
         }
         return ggkVar;

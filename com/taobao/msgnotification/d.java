@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -78,11 +78,11 @@ public class d extends msp {
         if (i == 1) {
             remoteViews = new RemoteViews(str, R.layout.personal_msg_custom);
             remoteViews.setTextViewText(R.id.title, msgNotficationDTO.title);
-            if (!TextUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
+            if (!StringUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
                 remoteViews.setTextColor(R.id.title, Color.parseColor(BrandUtil.getInstance().getTitleColor()));
             }
             remoteViews.setTextViewText(R.id.content, msgNotficationDTO.text);
-            if (!TextUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
+            if (!StringUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
                 remoteViews.setTextColor(R.id.content, Color.parseColor(BrandUtil.getInstance().getContentColor()));
             }
         } else if (i == 2) {
@@ -90,28 +90,28 @@ public class d extends msp {
         } else {
             remoteViews = new RemoteViews(str, R.layout.personal_msg_custom);
             remoteViews.setTextViewText(R.id.title, msgNotficationDTO.title);
-            if (!TextUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
+            if (!StringUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
                 remoteViews.setTextColor(R.id.title, Color.parseColor(BrandUtil.getInstance().getTitleColor()));
             }
             remoteViews.setTextViewText(R.id.content, msgNotficationDTO.text);
-            if (!TextUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
+            if (!StringUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
                 remoteViews.setTextColor(R.id.content, Color.parseColor(BrandUtil.getInstance().getContentColor()));
             }
         }
         RemoteViews remoteViews2 = new RemoteViews(str, R.layout.personal_msg_normal);
         remoteViews2.setTextViewText(R.id.normalTitle, msgNotficationDTO.title);
-        if (!TextUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
+        if (!StringUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
             remoteViews2.setTextColor(R.id.normalTitle, Color.parseColor(BrandUtil.getInstance().getTitleColor()));
         }
         remoteViews2.setTextViewText(R.id.normalContent, msgNotficationDTO.text);
-        if (!TextUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
+        if (!StringUtils.isEmpty(BrandUtil.getInstance().getContentColor())) {
             remoteViews2.setTextColor(R.id.normalContent, Color.parseColor(BrandUtil.getInstance().getContentColor()));
         }
         remoteViews2.setImageViewResource(R.id.normalSmallImageIcon, R.drawable.notify_small_icon);
         String a2 = a(System.currentTimeMillis());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             remoteViews2.setTextViewText(R.id.normalTime, a2.split("-")[3]);
-            if (!TextUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
+            if (!StringUtils.isEmpty(BrandUtil.getInstance().getTitleColor())) {
                 remoteViews2.setTextColor(R.id.normalTime, Color.parseColor(BrandUtil.getInstance().getTitleColor()));
             }
         }

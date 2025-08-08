@@ -2,7 +2,7 @@ package com.alipay.android.msp.biz.substitute;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.clients.MspWindowClient;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -147,30 +147,30 @@ public class SpmHelper {
                         if (i2 != 3) {
                             if (i2 != 4) {
                                 if (i2 == 5) {
-                                    if (TextUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
+                                    if (StringUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
                                         str = "a283.b4031.c12990.d23816";
-                                    } else if (TextUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
+                                    } else if (StringUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
                                         str = "a283.b4037.c12991.d23821";
                                     }
                                 }
-                            } else if (TextUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
+                            } else if (StringUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
                                 str = "a283.b4031.c12990.d23819";
-                            } else if (TextUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
+                            } else if (StringUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
                                 str = "a283.b4037.c12991.d23824";
                             }
-                        } else if (TextUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
+                        } else if (StringUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
                             str = "a283.b4031.c12990.d23818";
-                        } else if (TextUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
+                        } else if (StringUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
                             str = "a283.b4037.c12991.d23823";
                         }
-                    } else if (TextUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
+                    } else if (StringUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
                         str = "a283.b4031.c12990.d23817";
-                    } else if (TextUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
+                    } else if (StringUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
                         str = "a283.b4037.c12991.d23822";
                     }
-                } else if (TextUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
+                } else if (StringUtils.equals(spmInfo.spmId, NEW_BIE_SPM_ID)) {
                     str = "a283.b4031.c12990.d23820";
-                } else if (TextUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
+                } else if (StringUtils.equals(spmInfo.spmId, SWITCH_CHANNEL_SPM_ID)) {
                     str = "a283.b4037.c12991.d23825";
                 }
                 if (action == Action.Clicked) {
@@ -261,10 +261,10 @@ public class SpmHelper {
                     context = GlobalHelper.getInstance().getContext();
                 }
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     hashMap.put("ap_link_token", apLinkToken);
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put("rpcMethod", str);
                 }
                 SpmTracker.expose(context, AP_LINK_SPM_SUBMIT_REQUEST, mspContext.getBizCodeForKeySpm(), 1, hashMap);
@@ -289,16 +289,16 @@ public class SpmHelper {
                     context = GlobalHelper.getInstance().getContext();
                 }
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     hashMap.put("ap_link_token", apLinkToken);
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put("rpcMethod", str);
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     hashMap.put("rpcNetErr", str2);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     hashMap.put("resultEndCode", str3);
                 }
                 hashMap.put("isSync", String.valueOf(z));
@@ -307,7 +307,7 @@ public class SpmHelper {
                 if (FastStartActivityHelper.getBoolConfig(context, DrmKey.DEGRADE_SPM_REPORT_USE_PAYIMP_PAY_SUC)) {
                     return;
                 }
-                if (TextUtils.equals(str3, "9000") || TextUtils.equals(str3, Constant.CODE_GET_TOKEN_SUCCESS) || TextUtils.equals(str3, "6004")) {
+                if (StringUtils.equals(str3, "9000") || StringUtils.equals(str3, Constant.CODE_GET_TOKEN_SUCCESS) || StringUtils.equals(str3, "6004")) {
                     z2 = true;
                 }
                 if (!z2) {
@@ -333,13 +333,13 @@ public class SpmHelper {
                     context = GlobalHelper.getInstance().getContext();
                 }
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     hashMap.put("ap_link_token", apLinkToken);
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put("resultEndCode", str);
                 }
-                if (!TextUtils.isEmpty("inner")) {
+                if (!StringUtils.isEmpty("inner")) {
                     hashMap.put("resultBackType", "inner");
                 }
                 SpmTracker.expose(context, AP_LINK_SPM_PAY_ACTION_END, mspContext.getBizCodeForKeySpm(), 1, hashMap);
@@ -364,10 +364,10 @@ public class SpmHelper {
                     context = GlobalHelper.getInstance().getContext();
                 }
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     hashMap.put("ap_link_token", apLinkToken);
                 }
-                if (!TextUtils.isEmpty(encode)) {
+                if (!StringUtils.isEmpty(encode)) {
                     hashMap.put("orderStr", encode);
                 }
                 SpmTracker.click(context, AP_LINK_SPM_RESIGN_ACTIVE, mspTradeContext.getBizCodeForKeySpm(), 1, hashMap);
@@ -391,7 +391,7 @@ public class SpmHelper {
                     context = GlobalHelper.getInstance().getContext();
                 }
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     hashMap.put("ap_link_token", apLinkToken);
                 }
                 SpmTracker.click(context, AP_LINK_SPM_BECOME_ACTIVE, mspTradeContext.getBizCodeForKeySpm(), 1, hashMap);
@@ -452,17 +452,17 @@ public class SpmHelper {
         L48:
             java.util.HashMap r6 = new java.util.HashMap     // Catch: java.lang.Throwable -> Laa
             r6.<init>()     // Catch: java.lang.Throwable -> Laa
-            boolean r7 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> Laa
+            boolean r7 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> Laa
             if (r7 != 0) goto L58
             java.lang.String r7 = "ap_link_token"
             r6.put(r7, r4)     // Catch: java.lang.Throwable -> Laa
         L58:
-            boolean r4 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Laa
+            boolean r4 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Laa
             if (r4 != 0) goto L64
             java.lang.String r4 = "orderStr"
             r6.put(r4, r1)     // Catch: java.lang.Throwable -> Laa
         L64:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Laa
+            boolean r1 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Laa
             if (r1 != 0) goto L6f
             java.lang.String r1 = "clientBizType"
             r6.put(r1, r0)     // Catch: java.lang.Throwable -> Laa
@@ -511,18 +511,18 @@ public class SpmHelper {
                     context = GlobalHelper.getInstance().getContext();
                 }
                 HashMap hashMap = new HashMap();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     hashMap.put("ap_link_token", apLinkToken);
                 }
                 String str = "";
                 if (mspContext.getMspUIClient() != null) {
                     MspWindowClient mspWindowClient = (MspWindowClient) mspContext.getMspUIClient();
                     MspWindowFrame currentWindowFrame = mspWindowClient != null ? mspWindowClient.getCurrentWindowFrame() : null;
-                    if (currentWindowFrame != null && TextUtils.isEmpty(str)) {
+                    if (currentWindowFrame != null && StringUtils.isEmpty(str)) {
                         str = currentWindowFrame.getTplId();
                     }
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put("currentPage", str);
                 }
                 SpmTracker.click(context, AP_LINK_SPM_ON_BACK_KEY_DOWN, mspContext.getBizCodeForKeySpm(), 1, hashMap);
@@ -547,13 +547,13 @@ public class SpmHelper {
                 HashMap hashMap = new HashMap();
                 String apLinkToken = mspContext.getApLinkToken();
                 String globalSession = mspContext.getGlobalSession();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     hashMap.put("apLinkToken", apLinkToken);
                 }
-                if (!TextUtils.isEmpty(globalSession)) {
+                if (!StringUtils.isEmpty(globalSession)) {
                     hashMap.put("sessionId", globalSession);
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put("actionName", str);
                 }
                 SpmTracker.click(context, AP_LINK_SPM_RPC_REQUEST, "", 1, hashMap);

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.xsearchplugin.jarvis.utils.JarvisConstant;
@@ -32,7 +32,7 @@ public class pph {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f2bf4cf8", new Object[]{this, str, str2, jSONObject})).booleanValue();
         }
-        if (this.f32798a == null || this.b == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (this.f32798a == null || this.b == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         Bundle bundle = new Bundle();
@@ -49,7 +49,7 @@ public class pph {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (this.f32798a == null || this.b == null || TextUtils.isEmpty(str)) {
+        if (this.f32798a == null || this.b == null || StringUtils.isEmpty(str)) {
             return false;
         }
         Bundle bundle = new Bundle();
@@ -65,7 +65,7 @@ public class pph {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (this.f32798a == null || this.b == null || TextUtils.isEmpty(str)) {
+        if (this.f32798a == null || this.b == null || StringUtils.isEmpty(str)) {
             return false;
         }
         Bundle bundle = new Bundle();

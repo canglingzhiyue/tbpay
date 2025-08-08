@@ -2,7 +2,7 @@ package com.taobao.android.mnncv.mtop;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.task.MRTRuntimeException;
 import com.taobao.orange.OrangeConfig;
@@ -232,11 +232,11 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (b2 = com.taobao.mrt.c.b()) == null || (sharedPreferences = b2.getSharedPreferences(com.tmall.android.dai.internal.config.d.DAI_ORANGE_SWITCH, 0)) == null) {
+        if (StringUtils.isEmpty(str) || (b2 = com.taobao.mrt.c.b()) == null || (sharedPreferences = b2.getSharedPreferences(com.tmall.android.dai.internal.config.d.DAI_ORANGE_SWITCH, 0)) == null) {
             return false;
         }
         String string = sharedPreferences.getString("walleConfigVersion", null);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             z = true ^ str.equalsIgnoreCase(string);
         }
         if (z && (edit = b2.getSharedPreferences(com.tmall.android.dai.internal.config.d.DAI_ORANGE_SWITCH, 0).edit()) != null) {

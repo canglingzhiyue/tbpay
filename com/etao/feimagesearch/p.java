@@ -1,6 +1,6 @@
 package com.etao.feimagesearch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.com;
 import tb.kge;
@@ -25,7 +25,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (TextUtils.isEmpty(f6928a)) {
+        if (StringUtils.isEmpty(f6928a)) {
             f6928a = com.s() ? "foldingmobile" : com.r() ? "pad" : "mobile";
         }
         return f6928a;

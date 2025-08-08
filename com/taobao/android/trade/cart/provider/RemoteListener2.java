@@ -1,6 +1,6 @@
 package com.taobao.android.trade.cart.provider;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.msoa.c;
@@ -66,10 +66,10 @@ public class RemoteListener2 implements IRemoteBaseListener {
         String a2 = b.a(R.string.taobao_app_1028_1_21682);
         String str2 = "";
         if (mtopResponse != null) {
-            if (!TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+            if (!StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                 a2 = mtopResponse.getRetMsg();
             }
-            if (!TextUtils.isEmpty(mtopResponse.getRetCode())) {
+            if (!StringUtils.isEmpty(mtopResponse.getRetCode())) {
                 str2 = mtopResponse.getRetCode();
             }
         }

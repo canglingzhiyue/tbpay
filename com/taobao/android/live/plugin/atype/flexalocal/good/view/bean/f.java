@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRootView;
@@ -77,7 +77,7 @@ public class f {
                 }
                 ArrayList arrayList = new ArrayList();
                 for (DXTemplateItem dXTemplateItem : list) {
-                    if (dXTemplateItem != null && !TextUtils.isEmpty(dXTemplateItem.f11925a) && dXTemplateItem.b != 0) {
+                    if (dXTemplateItem != null && !StringUtils.isEmpty(dXTemplateItem.f11925a) && dXTemplateItem.b != 0) {
                         f.a(f.this, dXTemplateItem, arrayList);
                     }
                 }
@@ -286,7 +286,7 @@ public class f {
         Iterator<com.alibaba.android.ultron.vfw.viewholder.h> it = this.e.iterator();
         while (it.hasNext()) {
             com.alibaba.android.ultron.vfw.viewholder.h next = it.next();
-            if (TextUtils.equals(dXTemplateItem.f11925a, a(next))) {
+            if (StringUtils.equals(dXTemplateItem.f11925a, a(next))) {
                 it.remove();
                 afs afsVar = this.n;
                 if (afsVar == null) {
@@ -304,7 +304,7 @@ public class f {
             Iterator<String> it3 = list2.iterator();
             while (true) {
                 if (it3.hasNext()) {
-                    if (TextUtils.equals(it3.next(), dXTemplateItem.f11925a)) {
+                    if (StringUtils.equals(it3.next(), dXTemplateItem.f11925a)) {
                         it3.remove();
                         break;
                     }

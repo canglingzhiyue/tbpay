@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.change.app.icon.core.Constrant;
@@ -147,7 +147,7 @@ public class igc {
                     String string = e.a().b().getString(e.SP_KEY_ORANGE_LAST_VERSION, "");
                     String str2 = map.get("configVersion");
                     AdapterForTLog.loge(igc.TAG, "updateOrange namespace:" + str + " fromCache:" + map.get("fromCache") + " lastV:" + string + " newVersion:" + str2 + " infos:" + OrangeConfig.getInstance().getConfigs(str));
-                    if (TextUtils.equals(str2, string)) {
+                    if (StringUtils.equals(str2, string)) {
                         return;
                     }
                     boolean a2 = c.a(c.ORANGE_KEY_CHANGE_APP_ICON_CAN_INIT, "true");
@@ -248,7 +248,7 @@ public class igc {
         String d = e.a().d();
         AdapterForTLog.loge(TAG, "checkChangeAppIconIsRestart open:" + z + " infos:" + d);
         ChangeAppIconJSModel changeAppIconJSModel = (ChangeAppIconJSModel) h.a(d, ChangeAppIconJSModel.class);
-        if (!z || changeAppIconJSModel == null || TextUtils.isEmpty(changeAppIconJSModel.iconName)) {
+        if (!z || changeAppIconJSModel == null || StringUtils.isEmpty(changeAppIconJSModel.iconName)) {
             return;
         }
         ChangeAppIconRequest changeAppIconRequest = new ChangeAppIconRequest(changeAppIconJSModel.iconName, "TIMEOUT", i);
@@ -494,7 +494,7 @@ public class igc {
             if (r2 == 0) goto L5a
             java.lang.String r5 = r4.iconName     // Catch: java.lang.Exception -> L77
             java.lang.String r6 = r2.iconName     // Catch: java.lang.Exception -> L77
-            boolean r5 = android.text.TextUtils.equals(r5, r6)     // Catch: java.lang.Exception -> L77
+            boolean r5 = android.text.StringUtils.equals(r5, r6)     // Catch: java.lang.Exception -> L77
             if (r5 == 0) goto L5a
             java.lang.StringBuilder r7 = new java.lang.StringBuilder     // Catch: java.lang.Exception -> L57
             r7.<init>()     // Catch: java.lang.Exception -> L57

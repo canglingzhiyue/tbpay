@@ -1,6 +1,6 @@
 package com.alibaba.ability.impl.downloader.downloadcenter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.file.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -402,7 +402,7 @@ public final class DownloadCenter {
                                     }
                                 }
                                 String str4 = next.e() + File.separator + next.d();
-                                if (TextUtils.equals(str2, str4)) {
+                                if (StringUtils.equals(str2, str4)) {
                                     z = true;
                                 } else if (!f.INSTANCE.b(str2, str4)) {
                                     c h3 = next.h();

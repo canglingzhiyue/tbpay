@@ -1,6 +1,6 @@
 package com.taobao.tbliveinteractive;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -169,13 +169,13 @@ public class InteractiveComponent implements INetDataObject {
         Object a2 = pqj.a(interactiveShowInfo.viewParams);
         this.viewParams = a2 instanceof JSON ? (JSON) a2 : null;
         this.extraParams = pqj.b(interactiveShowInfo.extraParams);
-        if (!TextUtils.isEmpty(interactiveShowInfo.iconAction)) {
+        if (!StringUtils.isEmpty(interactiveShowInfo.iconAction)) {
             this.iconAction = interactiveShowInfo.iconAction;
         }
-        if (!TextUtils.isEmpty(interactiveShowInfo.actionUrl)) {
+        if (!StringUtils.isEmpty(interactiveShowInfo.actionUrl)) {
             this.actionUrl = interactiveShowInfo.actionUrl;
         }
-        if (TextUtils.isEmpty(interactiveShowInfo.iconViewStyle)) {
+        if (StringUtils.isEmpty(interactiveShowInfo.iconViewStyle)) {
             return;
         }
         this.iconViewStyle = interactiveShowInfo.iconViewStyle;

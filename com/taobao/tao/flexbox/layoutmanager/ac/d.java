@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.ac;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.ac.a;
 import com.taobao.tao.flexbox.layoutmanager.ac.e;
@@ -46,7 +46,7 @@ public class d {
         } else if (c.f19926a.startsWith("file://")) {
             String[] split = c.f19926a.split("/");
             String a2 = oec.a(split[split.length - 1], ab.a());
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 c.b = a2;
                 aVar.a(c);
                 return;

@@ -1,7 +1,7 @@
 package com.taobao.agoo;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSClient;
 import com.taobao.accs.ACCSManager;
@@ -116,7 +116,7 @@ public final class TaobaoRegister {
             Config.setAgooAppKey(context, configByTag.getAppKey());
             String appSecret = configByTag.getAppSecret();
             c.b = appSecret;
-            if (!TextUtils.isEmpty(appSecret)) {
+            if (!StringUtils.isEmpty(appSecret)) {
                 com.taobao.accs.client.a.f8207a = 2;
             }
         }
@@ -141,7 +141,7 @@ public final class TaobaoRegister {
                 ipChange.ipc$dispatch("db8b32c5", new Object[]{context, str, str2, str3, str4, iRegister});
                 return;
             }
-            if (context != null && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+            if (context != null && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
                 if ((context.getApplicationInfo().flags & 2) != 0) {
                     ALog.isUseTlog = false;
                     anet.channel.util.ALog.setUseTlog(false);
@@ -151,7 +151,7 @@ public final class TaobaoRegister {
                 Config.mAccsConfigTag = str;
                 Config.setAgooAppKey(context, str2);
                 c.b = str3;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     com.taobao.accs.client.a.f8207a = 2;
                 }
                 AccsClientConfig configByTag = AccsClientConfig.getConfigByTag(str);
@@ -245,7 +245,7 @@ public final class TaobaoRegister {
                                 }
                                 GlobalClientInfo.getInstance(context).registerListener(NotifManager.getServiceId(context, TaobaoConstants.SERVICE_ID_DEVICECMD), TaobaoRegister.a());
                                 if (l.s(context)) {
-                                    if (TextUtils.isEmpty(str5)) {
+                                    if (StringUtils.isEmpty(str5)) {
                                         iRegister.onFailure(TaobaoConstants.REGISTER_ERROR, "agoo server error deviceid null");
                                         return;
                                     }
@@ -271,7 +271,7 @@ public final class TaobaoRegister {
                                         return;
                                     }
                                     String sendRequest = accsInstance.sendRequest(applicationContext, new ACCSManager.AccsRequest(null, TaobaoConstants.SERVICE_ID_DEVICECMD, a2, null));
-                                    if (TextUtils.isEmpty(sendRequest)) {
+                                    if (StringUtils.isEmpty(sendRequest)) {
                                         if (iRegister == null) {
                                             return;
                                         }
@@ -323,7 +323,7 @@ public final class TaobaoRegister {
             ALog.i("TaobaoRegister", ddl.JSON_CMD_SETALIAS, "alias", str);
             String deviceToken = Config.getDeviceToken(context);
             String agooAppKey = Config.getAgooAppKey(context);
-            if (TextUtils.isEmpty(agooAppKey) || TextUtils.isEmpty(deviceToken) || context == null || TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(agooAppKey) || StringUtils.isEmpty(deviceToken) || context == null || StringUtils.isEmpty(str)) {
                 bVar.onFailure(TaobaoConstants.ALIAS_ERROR, "input params null!!");
                 ALog.e("TaobaoRegister", "setAlias param null", "appkey", agooAppKey, "deviceId", deviceToken, "alias", str, "context", context);
                 return;
@@ -344,7 +344,7 @@ public final class TaobaoRegister {
             String serviceId = NotifManager.getServiceId(context, TaobaoConstants.SERVICE_ID_DEVICECMD);
             GlobalClientInfo.getInstance(context).registerListener(serviceId, f8381a);
             String sendRequest = accsInstance.sendRequest(context, new ACCSManager.AccsRequest(null, NotifManager.getServiceId(context, serviceId), ddl.a(agooAppKey, deviceToken, str), null));
-            if (TextUtils.isEmpty(sendRequest)) {
+            if (StringUtils.isEmpty(sendRequest)) {
                 bVar.onFailure(TaobaoConstants.ALIAS_ERROR, "accs channel disabled!");
                 return;
             }
@@ -364,7 +364,7 @@ public final class TaobaoRegister {
             ALog.i("TaobaoRegister", ddl.JSON_CMD_REMOVEALIAS, new Object[0]);
             String deviceToken = Config.getDeviceToken(context);
             String agooAppKey = Config.getAgooAppKey(context);
-            if (!TextUtils.isEmpty(agooAppKey) && !TextUtils.isEmpty(deviceToken) && context != null && !TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(agooAppKey) && !StringUtils.isEmpty(deviceToken) && context != null && !StringUtils.isEmpty(str)) {
                 com.taobao.accs.a accsInstance = ACCSManager.getAccsInstance(context, agooAppKey, Config.getAccsConfigTag(context));
                 if (f8381a == null) {
                     f8381a = new ddk(context.getApplicationContext());
@@ -372,7 +372,7 @@ public final class TaobaoRegister {
                 String serviceId = NotifManager.getServiceId(context, TaobaoConstants.SERVICE_ID_DEVICECMD);
                 GlobalClientInfo.getInstance(context).registerListener(serviceId, f8381a);
                 String sendRequest = accsInstance.sendRequest(context, new ACCSManager.AccsRequest(null, serviceId, ddl.c(agooAppKey, deviceToken, str), null));
-                if (TextUtils.isEmpty(sendRequest)) {
+                if (StringUtils.isEmpty(sendRequest)) {
                     aVar.onFailure(TaobaoConstants.ALIAS_ERROR, "accs channel disabled!");
                     return;
                 } else {
@@ -417,12 +417,12 @@ public final class TaobaoRegister {
             java.lang.String r1 = org.android.agoo.common.Config.getDeviceToken(r10)     // Catch: java.lang.Throwable -> Lc9
             java.lang.String r2 = org.android.agoo.common.Config.getPushAliasToken(r10)     // Catch: java.lang.Throwable -> Lc9
             java.lang.String r6 = org.android.agoo.common.Config.getAgooAppKey(r10)     // Catch: java.lang.Throwable -> Lc9
-            boolean r7 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> Lc9
+            boolean r7 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> Lc9
             if (r7 != 0) goto L93
-            boolean r7 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Lc9
+            boolean r7 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> Lc9
             if (r7 != 0) goto L93
             if (r10 == 0) goto L93
-            boolean r7 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> Lc9
+            boolean r7 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> Lc9
             if (r7 == 0) goto L44
             goto L93
         L44:
@@ -445,7 +445,7 @@ public final class TaobaoRegister {
             r6 = 0
             r2.<init>(r6, r4, r1, r6)     // Catch: java.lang.Throwable -> Lc9
             java.lang.String r10 = r3.sendRequest(r10, r2)     // Catch: java.lang.Throwable -> Lc9
-            boolean r1 = android.text.TextUtils.isEmpty(r10)     // Catch: java.lang.Throwable -> Lc9
+            boolean r1 = android.text.StringUtils.isEmpty(r10)     // Catch: java.lang.Throwable -> Lc9
             if (r1 == 0) goto L88
             if (r11 == 0) goto L91
             java.lang.String r10 = "504.1"
@@ -535,10 +535,10 @@ public final class TaobaoRegister {
             com.taobao.accs.utl.ALog.i(r5, r1, r0)
             java.lang.String r0 = org.android.agoo.common.Config.getDeviceToken(r10)     // Catch: java.lang.Throwable -> Lab
             java.lang.String r6 = org.android.agoo.common.Config.getAgooAppKey(r10)     // Catch: java.lang.Throwable -> Lab
-            boolean r7 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> Lab
+            boolean r7 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> Lab
             java.lang.String r8 = "504.1"
             if (r7 != 0) goto L84
-            boolean r7 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Lab
+            boolean r7 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> Lab
             if (r7 != 0) goto L84
             if (r10 != 0) goto L38
             goto L84
@@ -562,7 +562,7 @@ public final class TaobaoRegister {
             r7 = 0
             r6.<init>(r7, r3, r0, r7)     // Catch: java.lang.Throwable -> Lab
             java.lang.String r10 = r2.sendRequest(r10, r6)     // Catch: java.lang.Throwable -> Lab
-            boolean r0 = android.text.TextUtils.isEmpty(r10)     // Catch: java.lang.Throwable -> Lab
+            boolean r0 = android.text.StringUtils.isEmpty(r10)     // Catch: java.lang.Throwable -> Lab
             if (r0 == 0) goto L7a
             if (r11 == 0) goto L83
             java.lang.String r10 = "accs channel disabled!"
@@ -719,7 +719,7 @@ public final class TaobaoRegister {
             if (ALog.isPrintLog(ALog.Level.I)) {
                 ALog.i("TaobaoRegister", "dismissMessage", "msgid", str, AgooConstants.MESSAGE_EXT, str2);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 ALog.d("TaobaoRegister", "messageId == null", new Object[0]);
                 return;
             }
@@ -762,7 +762,7 @@ public final class TaobaoRegister {
             if (ALog.isPrintLog(ALog.Level.I)) {
                 ALog.i("TaobaoRegister", "exposureMessage", "msgid", str, AgooConstants.MESSAGE_EXT, str2);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 ALog.d("TaobaoRegister", "messageId == null", new Object[0]);
                 return;
             }

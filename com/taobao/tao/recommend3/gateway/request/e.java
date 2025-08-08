@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend3.gateway.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.recommend3.gateway.model.request.AwesomeGetContainerParams;
@@ -59,11 +59,11 @@ public class e {
             return kss.f30292a;
         }
         String string = jSONObject.getString("containerId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return kss.f30292a;
         }
         ksk a2 = ksk.a(string);
-        if (a2 != null && !TextUtils.isEmpty(a2.c)) {
+        if (a2 != null && !StringUtils.isEmpty(a2.c)) {
             return a2.c;
         }
         return kss.f30292a;

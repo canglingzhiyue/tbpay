@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -101,7 +101,7 @@ public abstract class hfy extends RecyclerView.ViewHolder implements View.OnClic
                 a("commentItemCLick data is null.");
             } else if (!u.admireInfo.contributionEnabled) {
                 a("commentItemCLick data admireInfo contributionEnabled is false.");
-            } else if (this.b.renders == null || this.b.renders.isEmpty() || TextUtils.isEmpty(this.b.renders.get("guangGuangJumpUrl"))) {
+            } else if (this.b.renders == null || this.b.renders.isEmpty() || StringUtils.isEmpty(this.b.renders.get("guangGuangJumpUrl"))) {
             } else {
                 Nav.from(this.d).toUri(this.b.renders.get("guangGuangJumpUrl"));
             }

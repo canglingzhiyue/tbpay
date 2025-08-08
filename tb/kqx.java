@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.h;
 import com.taobao.android.detail.ttdetail.utils.j;
@@ -33,7 +33,7 @@ public class kqx extends fuf {
 
     private static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && a(h.a(h.a()).trim(), str.trim()) >= 0;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && a(h.a(h.a()).trim(), str.trim()) >= 0;
     }
 
     public static int a(String str, String str2) {

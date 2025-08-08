@@ -1,7 +1,7 @@
 package com.uc.webview.export.extension;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.uc.webview.base.IExtender;
 import com.uc.webview.base.Log;
@@ -33,7 +33,7 @@ public class ExtImageDecoder {
         public int sniffOffset = 0;
 
         public boolean isValid() {
-            return !TextUtils.isEmpty(this.format) && !TextUtils.isEmpty(this.mime) && !TextUtils.isEmpty(this.filenameExtension);
+            return !StringUtils.isEmpty(this.format) && !StringUtils.isEmpty(this.mime) && !StringUtils.isEmpty(this.filenameExtension);
         }
 
         public String toString() {

@@ -1,6 +1,6 @@
 package com.ali.user.mobile.eventbus;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.log.LoginTLogAdapter;
 import java.util.Collections;
@@ -41,7 +41,7 @@ public class EventBus {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88045422", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             sendEvent(Event.newEvent(str, map));
         }

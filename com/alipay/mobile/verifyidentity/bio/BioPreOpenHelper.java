@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.bio;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.common.Constants;
 import com.alipay.mobile.verifyidentity.log.BehaviourIdEnum;
 import com.alipay.mobile.verifyidentity.log.VerifyBehavorLogger;
@@ -37,13 +37,13 @@ public class BioPreOpenHelper {
             return ((Number) ipChange.ipc$dispatch("d9378d6f", new Object[]{str, str2})).intValue();
         }
         VerifyLogCat.i("Verifyidentity", "预开通启动.......");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i("Verifyidentity", "bizId为空，预开通启动失败");
             return 1;
         } else if (c.equals(str)) {
             VerifyLogCat.i("Verifyidentity", "bizId和上次传入一致，不做重复预开通");
             return 2;
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             VerifyLogCat.i("Verifyidentity", "userId为空，预开通失败");
             return 1;
         } else {
@@ -92,7 +92,7 @@ public class BioPreOpenHelper {
             return (Boolean) ipChange.ipc$dispatch("5a4bcb31", new Object[]{str});
         }
         d = str;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(c)) {
             return Boolean.valueOf(d.equals(c));
         }
         return false;
@@ -107,20 +107,20 @@ public class BioPreOpenHelper {
         if (!b.get()) {
             VerifyLogCat.e("Verifyidentity", "开通条件不满足：开关关闭");
             return false;
-        } else if (TextUtils.isEmpty(c)) {
+        } else if (StringUtils.isEmpty(c)) {
             VerifyLogCat.e("Verifyidentity", "开通条件不满足：bizId为空");
             return false;
-        } else if (TextUtils.isEmpty(d)) {
+        } else if (StringUtils.isEmpty(d)) {
             VerifyLogCat.e("Verifyidentity", "开通条件不满足：验证阶段bizId为空");
             return false;
         } else if (!d.equalsIgnoreCase(c)) {
             VerifyLogCat.e("Verifyidentity", "开通条件不满足：verifyBizId与bizId不一致");
             return false;
-        } else if (TextUtils.isEmpty(f5857a.toString())) {
+        } else if (StringUtils.isEmpty(f5857a.toString())) {
             VerifyBehavorLogger.logBehavor(BehaviourIdEnum.EVENT, "UC-MobileIC-240620-7", Constants.VI_ENGINE_APPID, "obfp", "", "", null, new HashMap());
             VerifyLogCat.e("Verifyidentity", "开通条件不满足：本地生物预开通信息为空,可能是由于超时导致的");
             return false;
-        } else if (TextUtils.isEmpty(e)) {
+        } else if (StringUtils.isEmpty(e)) {
             VerifyLogCat.e("Verifyidentity", "开通条件不满足：用户2088为空");
             return false;
         } else {

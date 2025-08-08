@@ -1,6 +1,6 @@
 package com.taobao.wireless.link.pop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class PopMessageReceiver extends TaoBaseService {
                 return;
             }
             com.taobao.wireless.link.controller.a.a().b.messageId = str3;
-            if (com.taobao.wireless.link.controller.a.a().b.messageType == 0 && TextUtils.equals("true", com.taobao.wireless.link.common.b.a(rjt.a().f33186a, "is_push_alive_open", "true"))) {
+            if (com.taobao.wireless.link.controller.a.a().b.messageType == 0 && StringUtils.equals("true", com.taobao.wireless.link.common.b.a(rjt.a().f33186a, "is_push_alive_open", "true"))) {
                 rjt.a().e = true;
                 rkg.a("link_tag", "PopMessageReceiver === onData == 空消息拉活：" + str4);
                 HashMap hashMap = new HashMap();

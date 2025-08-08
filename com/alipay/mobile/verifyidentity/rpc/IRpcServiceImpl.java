@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.rpc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
 import com.alibaba.wireless.security.open.SecurityGuardParamContext;
 import com.alibaba.wireless.security.open.securesignature.ISecureSignatureComponent;
@@ -57,12 +57,12 @@ public class IRpcServiceImpl implements IRpcService {
         }
         this.c = a();
         final RpcParams rpcParams = new RpcParams();
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             str = this.e;
         } else {
             str = ReadSettingServerUrl.getInstance().getGWFURL(a());
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.d;
         }
         rpcParams.setGwUrl(str);
@@ -146,7 +146,7 @@ public class IRpcServiceImpl implements IRpcService {
                     securityGuardParamContext.paramMap = hashMap;
                     securityGuardParamContext.requestType = 4;
                     String signRequest = secureSignatureComp.signRequest(securityGuardParamContext, "");
-                    TextUtils.isEmpty(signRequest);
+                    StringUtils.isEmpty(signRequest);
                     IRpcServiceImpl.access$100(IRpcServiceImpl.this);
                     StringBuilder sb = new StringBuilder("GET Params: appKey:");
                     sb.append(str2);
@@ -173,7 +173,7 @@ public class IRpcServiceImpl implements IRpcService {
             return;
         }
         this.e = str;
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             return;
         }
         if (!this.e.equals(this.h) && !this.e.equals(this.i)) {
@@ -186,7 +186,7 @@ public class IRpcServiceImpl implements IRpcService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aa17ffb2", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.f = "";
         } else if (str.equals("dispatch")) {
             this.f = "alipay.mobile.ic.dispatch.tb";

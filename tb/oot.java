@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ai.b;
@@ -137,7 +137,7 @@ public class oot implements gke {
                             str2 = a2.c;
                         }
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         b.a().a(str2, awesomeGetContainerData);
                     }
                     b.a().f();
@@ -248,9 +248,9 @@ public class oot implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ed3cf120", new Object[]{this, str, list, gkcVar, new Boolean(z)});
-        } else if (list == null || list.isEmpty() || str == null || TextUtils.isEmpty(str)) {
+        } else if (list == null || list.isEmpty() || str == null || StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.equals(str.startsWith("recommend_") ? "guess" : "homepage", "homepage")) {
+            if (StringUtils.equals(str.startsWith("recommend_") ? "guess" : "homepage", "homepage")) {
                 f.a().a(list, "homepage", new f.b() { // from class: tb.oot.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

@@ -3,7 +3,7 @@ package com.taobao.android.icart.shake;
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Vibrator;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.model.CartGlobal;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class b {
                 return;
             }
             String d = b.this.d();
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 return;
             }
             bbz a2 = b.a(b.this);
@@ -100,7 +100,7 @@ public class b {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : b() && this.f12852a != null && this.f12852a.isEnable() && !TextUtils.isEmpty(this.f12852a.getUrl()) && h();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : b() && this.f12852a != null && this.f12852a.isEnable() && !StringUtils.isEmpty(this.f12852a.getUrl()) && h();
     }
 
     public String d() {

@@ -3,7 +3,7 @@ package com.taobao.android.litecreator.widgets;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.v7.app.b;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,7 +90,7 @@ public class e extends android.support.v7.app.b {
             if (ipChange instanceof IpChange) {
                 return (b.a) ipChange.ipc$dispatch("a9b70135", new Object[]{this, charSequence});
             }
-            if (!TextUtils.isEmpty(charSequence)) {
+            if (!StringUtils.isEmpty(charSequence)) {
                 this.b.setText(charSequence);
                 this.b.setVisibility(0);
             }
@@ -102,7 +102,7 @@ public class e extends android.support.v7.app.b {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("d5b19bf9", new Object[]{this, charSequence});
             }
-            if (!TextUtils.isEmpty(charSequence)) {
+            if (!StringUtils.isEmpty(charSequence)) {
                 this.c.setText(charSequence);
                 this.c.setVisibility(0);
             }
@@ -123,7 +123,7 @@ public class e extends android.support.v7.app.b {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("57fc50d8", new Object[]{this, charSequence});
             }
-            if (!TextUtils.isEmpty(charSequence)) {
+            if (!StringUtils.isEmpty(charSequence)) {
                 this.d.setText(charSequence);
                 this.d.setVisibility(0);
                 this.d.setMovementMethod(LinkMovementMethod.getInstance());
@@ -145,7 +145,7 @@ public class e extends android.support.v7.app.b {
                 return (b.a) ipChange.ipc$dispatch("d8be2801", new Object[]{this, charSequence, onClickListener});
             }
             TextView textView = this.g;
-            if (TextUtils.isEmpty(charSequence)) {
+            if (StringUtils.isEmpty(charSequence)) {
                 i = 8;
             }
             textView.setVisibility(i);
@@ -168,7 +168,7 @@ public class e extends android.support.v7.app.b {
                 return (b.a) ipChange.ipc$dispatch("dc45cb02", new Object[]{this, charSequence, onClickListener});
             }
             TextView textView = this.f;
-            if (TextUtils.isEmpty(charSequence)) {
+            if (StringUtils.isEmpty(charSequence)) {
                 i = 8;
             }
             textView.setVisibility(i);
@@ -211,7 +211,7 @@ public class e extends android.support.v7.app.b {
                 return (android.support.v7.app.b) ipChange.ipc$dispatch("d9aaa136", new Object[]{this});
             }
             final android.support.v7.app.b b = super.b();
-            if (TextUtils.isEmpty(this.k)) {
+            if (StringUtils.isEmpty(this.k)) {
                 this.e.setVisibility(8);
             } else {
                 this.e.setVisibility(0);

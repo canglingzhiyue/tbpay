@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.autoclear.biz.data.BizTaskData;
 
@@ -40,7 +40,7 @@ public class ara extends aqz {
 
     public boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.k) && !TextUtils.isEmpty(this.p) && !TextUtils.isEmpty(this.l) && !TextUtils.isEmpty(this.n);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.k) && !StringUtils.isEmpty(this.p) && !StringUtils.isEmpty(this.l) && !StringUtils.isEmpty(this.n);
     }
 
     /* loaded from: classes2.dex */

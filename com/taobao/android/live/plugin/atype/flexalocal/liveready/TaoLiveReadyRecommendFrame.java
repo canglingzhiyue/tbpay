@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.liveready;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -170,7 +170,7 @@ public class TaoLiveReadyRecommendFrame extends BaseFrame implements d {
             str = str2;
         }
         String str3 = videoInfo.liveId;
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             return new pmt();
         }
         pmt pmtVar = new pmt();

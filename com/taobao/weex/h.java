@@ -1,6 +1,6 @@
 package com.taobao.weex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -53,6 +53,6 @@ public class h {
     public boolean d() {
         byte[] bArr;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : TextUtils.isEmpty(this.f23507a) && ((bArr = this.b) == null || bArr.length == 0);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : StringUtils.isEmpty(this.f23507a) && ((bArr = this.b) == null || bArr.length == 0);
     }
 }

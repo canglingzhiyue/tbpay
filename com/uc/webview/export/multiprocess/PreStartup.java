@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transportext.biz.diagnose.network.Configuration;
 import com.uc.webview.export.multiprocess.b;
 import com.uc.webview.export.multiprocess.helper.e;
@@ -356,7 +356,7 @@ public class PreStartup implements com.uc.webview.export.multiprocess.b {
             return;
         }
         String b2 = e.b(context);
-        if (TextUtils.isEmpty(b2) || b2.contains(":")) {
+        if (StringUtils.isEmpty(b2) || b2.contains(":")) {
             return;
         }
         synchronized (PreStartup.class) {

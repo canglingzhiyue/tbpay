@@ -3,7 +3,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.homepage2.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.LinearLayout;
@@ -164,9 +164,9 @@ public class e {
             String str2 = taoliveSearchHotWords.word;
             String str3 = taoliveSearchHotWords.type;
             String str4 = taoliveSearchHotWords.url;
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 Nav.from(context).toUri(str4);
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 Bundle bundle = new Bundle();
                 bundle.putString("word", str2);
@@ -188,10 +188,10 @@ public class e {
                         }
                     }
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str = str + "&keyword=" + Uri.encode(str2);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     str = str + "&type=" + Uri.encode(str3);
                 }
                 if (taoliveSearchHotWords.rightInfo != null) {

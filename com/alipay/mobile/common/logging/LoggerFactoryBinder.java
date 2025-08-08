@@ -2,7 +2,7 @@ package com.alipay.mobile.common.logging;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
@@ -76,11 +76,11 @@ public class LoggerFactoryBinder {
             String.valueOf(ClientEventHelper.a().f5430a);
             CrashBridge.d();
             String brandName = LoggerFactory.getDeviceProperty().getBrandName();
-            if (!TextUtils.isEmpty(brandName)) {
+            if (!StringUtils.isEmpty(brandName)) {
                 LoggerFactory.getLogContext().putBizExternParams("brand", brandName);
             }
             String romVersion = LoggerFactory.getDeviceProperty().getRomVersion();
-            if (!TextUtils.isEmpty(romVersion)) {
+            if (!StringUtils.isEmpty(romVersion)) {
                 LoggerFactory.getLogContext().putBizExternParams("romVersion", romVersion);
             }
             Judge.getInstance(context);
@@ -121,7 +121,7 @@ public class LoggerFactoryBinder {
                         return;
                     }
                     LoggerFactory.getLogContext().notifyClientEvent(LogContext.CLIENT_ENVENT_CLIENTLAUNCH, null);
-                    if (!TextUtils.isEmpty(LoggerFactory.getLogContext().getDeviceId())) {
+                    if (!StringUtils.isEmpty(LoggerFactory.getLogContext().getDeviceId())) {
                         return;
                     }
                     LoggerFactory.getLogContext().setDeviceId(DeviceUtil.getUtdid(context));

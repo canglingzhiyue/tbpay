@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -243,7 +243,7 @@ public class XSimpleRichTextView extends TextView {
         int i2 = 1;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bd69fddb", new Object[]{this, canvas});
-        } else if (TextUtils.isEmpty(getText()) && ((arrayList = this.drawableArrayList) == null || arrayList.size() == 0)) {
+        } else if (StringUtils.isEmpty(getText()) && ((arrayList = this.drawableArrayList) == null || arrayList.size() == 0)) {
         } else {
             this.ascent = (int) this.textPaint.ascent();
             CharSequence text = getText();
@@ -353,7 +353,7 @@ public class XSimpleRichTextView extends TextView {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5e8b764b", new Object[]{this, textPaint, str, new Integer(i)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         while (getTextViewLength(textPaint, str) > i) {
@@ -367,7 +367,7 @@ public class XSimpleRichTextView extends TextView {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("11758fef", new Object[]{this, textPaint, str})).floatValue();
         }
-        if (textPaint != null && !TextUtils.isEmpty(str) && textPaint != null) {
+        if (textPaint != null && !StringUtils.isEmpty(str) && textPaint != null) {
             return textPaint.measureText(str);
         }
         return -1.0f;
@@ -378,7 +378,7 @@ public class XSimpleRichTextView extends TextView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cecd31cd", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str) || (hashMap = this.indexMap) == null || hashMap.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || (hashMap = this.indexMap) == null || hashMap.containsKey(str)) {
         } else {
             this.indexMap.put(str, Integer.valueOf(i));
         }

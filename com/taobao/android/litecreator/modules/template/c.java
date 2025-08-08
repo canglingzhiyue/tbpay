@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Looper;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.modules.template.d;
 import com.taobao.android.litecreator.util.an;
@@ -61,7 +61,7 @@ public class c {
             ipChange.ipc$dispatch("3a974c1b", new Object[]{this, context, str, map});
         } else if (map == null) {
         } else {
-            if (map.containsKey("key") && TextUtils.equals("avatar", map.get("key"))) {
+            if (map.containsKey("key") && StringUtils.equals("avatar", map.get("key"))) {
                 this.d = true;
             } else if (!map.containsKey("biz")) {
             } else {
@@ -185,13 +185,13 @@ public class c {
             ipChange.ipc$dispatch("5a42121d", new Object[]{map});
         } else if (map == null) {
         } else {
-            if (map.containsKey("key") && TextUtils.equals("avatar", map.get("key"))) {
+            if (map.containsKey("key") && StringUtils.equals("avatar", map.get("key"))) {
                 String b = an.b("user_avatar_path");
                 if (!k.a(b)) {
                     return;
                 }
                 map.put("result", b);
-            } else if (map.containsKey("key") && TextUtils.equals(map.get("key"), "user_name")) {
+            } else if (map.containsKey("key") && StringUtils.equals(map.get("key"), "user_name")) {
                 map.put("result", Login.getDisplayNick());
             } else if (!map.containsValue("city") && !map.containsValue("longitude") && !map.containsValue("latitude")) {
             } else {
@@ -243,13 +243,13 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("15117d2d", new Object[]{map, tBLocationDTO});
-        } else if (!map.containsKey("biz") || !TextUtils.equals(map.get("biz"), "str_value")) {
+        } else if (!map.containsKey("biz") || !StringUtils.equals(map.get("biz"), "str_value")) {
         } else {
-            if (map.containsKey("key") && TextUtils.equals(map.get("key"), "city")) {
+            if (map.containsKey("key") && StringUtils.equals(map.get("key"), "city")) {
                 map.put("result", tBLocationDTO.getCityName());
-            } else if (map.containsKey("key") && TextUtils.equals(map.get("key"), "longitude")) {
+            } else if (map.containsKey("key") && StringUtils.equals(map.get("key"), "longitude")) {
                 map.put("result", tBLocationDTO.getLongitude());
-            } else if (!map.containsKey("key") || !TextUtils.equals(map.get("key"), "latitude")) {
+            } else if (!map.containsKey("key") || !StringUtils.equals(map.get("key"), "latitude")) {
             } else {
                 map.put("result", tBLocationDTO.getLatitude());
             }

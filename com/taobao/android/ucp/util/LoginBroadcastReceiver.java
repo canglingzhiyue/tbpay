@@ -3,7 +3,7 @@ package com.taobao.android.ucp.util;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.util.g;
 import com.taobao.android.behavir.util.i;
@@ -38,7 +38,7 @@ public class LoginBroadcastReceiver extends BroadcastReceiver {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("56c6c68", new Object[]{this});
-                    } else if (TextUtils.equals(action, LoginBroadcastReceiver.NOTIFY_LOGIN_SUCCESS)) {
+                    } else if (StringUtils.equals(action, LoginBroadcastReceiver.NOTIFY_LOGIN_SUCCESS)) {
                         dro.l();
                         dsj.f26943a = intent.getStringExtra("uid");
                         NativeBroadcast.sendMessageFromJava(NativeBroadcast.USER_LOGIN_IN_CHANGE, g.a("userId", dsj.f26943a), null);

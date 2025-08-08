@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -142,7 +142,7 @@ public class PwdCommonHandler {
         }
         try {
             String str2 = "";
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str2 = "&loginId=" + str;
             }
             Uri parse = Uri.parse("alipays://platformapi/startApp?appId=20000013&pwdType=phonePassword" + str2 + "&bizScene=mobilecashier_sdk_pay");
@@ -295,7 +295,7 @@ public class PwdCommonHandler {
             MicroModuleContext.getInstance().alert("", mICRpcResponse.verifyMessage, str, onClickListener, str2, onClickListener2);
         } else {
             VerifyLogCat.d(f5934a, "unhandled error " + mICRpcResponse.verifyCode);
-            MicroModuleContext.getInstance().toast(TextUtils.isEmpty(mICRpcResponse.verifyMessage) ? this.b.getResources().getString(R.string.verifyidentity_wrong_data) : mICRpcResponse.verifyMessage, 0);
+            MicroModuleContext.getInstance().toast(StringUtils.isEmpty(mICRpcResponse.verifyMessage) ? this.b.getResources().getString(R.string.verifyidentity_wrong_data) : mICRpcResponse.verifyMessage, 0);
             if (z && (baseFBPlugin = this.mPlugin) != null) {
                 baseFBPlugin.updateVerifyStatusFotQuit(BaseFBPlugin.VERIFY_STATUS.abort, VerifyResponseConstants.PPW_LOCK);
             } else {
@@ -439,7 +439,7 @@ public class PwdCommonHandler {
             baseVerifyActivity.alert("", mICRpcResponse.verifyMessage, str2, onClickListener, str3, onClickListener2);
         } else {
             VerifyLogCat.d(f5934a, "unhandled error " + mICRpcResponse.verifyCode);
-            MicroModuleContext.getInstance().toast(TextUtils.isEmpty(mICRpcResponse.verifyMessage) ? this.b.getResources().getString(R.string.verifyidentity_wrong_data) : mICRpcResponse.verifyMessage, 0);
+            MicroModuleContext.getInstance().toast(StringUtils.isEmpty(mICRpcResponse.verifyMessage) ? this.b.getResources().getString(R.string.verifyidentity_wrong_data) : mICRpcResponse.verifyMessage, 0);
             BaseFBPlugin baseFBPlugin = this.mPlugin;
             if (baseFBPlugin != null) {
                 baseFBPlugin.updateVerifyStatusFotQuit(BaseFBPlugin.VERIFY_STATUS.abort, VerifyResponseConstants.PPW_LOCK);
@@ -453,7 +453,7 @@ public class PwdCommonHandler {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a9f4487a", new Object[]{this, mICRpcResponse})).booleanValue();
         }
-        if (mICRpcResponse == null || TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (mICRpcResponse == null || StringUtils.isEmpty(mICRpcResponse.data)) {
             return false;
         }
         JSONObject jSONObject = null;
@@ -478,7 +478,7 @@ public class PwdCommonHandler {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("857c37", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.otherVerifyPayText)) {
+        if (StringUtils.isEmpty(this.otherVerifyPayText)) {
             VerifyLogCat.i(f5934a, "getOtherVerifyPayText 用兜底文案");
             return this.b.getResources().getString(R.string.other_way_to_pay);
         }
@@ -553,7 +553,7 @@ public class PwdCommonHandler {
         String str2 = f5934a;
         VerifyLogCat.i(str2, "cancel [subcode]: " + str);
         DefaultModuleResult defaultModuleResult = new DefaultModuleResult("1003");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (defaultModuleResult.getExtInfo() == null) {
                 defaultModuleResult.setExtInfo(new HashMap<>());
             }
@@ -604,7 +604,7 @@ public class PwdCommonHandler {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fcbf817a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.sourceToPwd)) {
+        if (StringUtils.isEmpty(this.sourceToPwd)) {
             return this.mModule.getModuleName();
         }
         return this.sourceToPwd;
@@ -658,7 +658,7 @@ public class PwdCommonHandler {
                         verifyRequestModel.setIsSimplePPW(PwdCommonHandler.this.mModule.getVerifyId(), z);
                         verifyRequestModel.encryptPwd = str;
                         verifyRequestModel.needOtherVerifyPay = str2;
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             verifyRequestModel.from = str3;
                         }
                         if (z2) {

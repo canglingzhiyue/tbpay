@@ -3,7 +3,7 @@ package com.alipay.android.app.hardwarepay.bracelet.impl;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -137,7 +137,7 @@ public class BraceletPayHelperImpl extends BraceletPayHelper {
             }
         };
         String str2 = null;
-        if (!TextUtils.isEmpty(str) && str.contains("[extraPara:")) {
+        if (!StringUtils.isEmpty(str) && str.contains("[extraPara:")) {
             str2 = str.substring(str.indexOf("[extraPara:") + 11, str.length() - 1);
             str = str.substring(0, str.indexOf("[extraPara:"));
         }

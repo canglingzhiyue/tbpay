@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.rxm.request.c;
 import com.taobao.rxm.schedule.f;
@@ -47,7 +47,7 @@ public abstract class nmy<OUT, NEXT_OUT extends nmq, CONTEXT extends c> implemen
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String name = getClass().getName();

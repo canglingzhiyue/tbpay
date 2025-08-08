@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import com.alibaba.analytics.core.model.LogField;
@@ -153,7 +153,7 @@ public class aqf {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue();
         }
-        if ((System.getProperty("java.vm.name") != null && System.getProperty("java.vm.name").toLowerCase().contains("lemur")) || !TextUtils.isEmpty(System.getProperty("ro.yunos.version")) || !TextUtils.isEmpty(aqd.a("ro.yunos.build.version"))) {
+        if ((System.getProperty("java.vm.name") != null && System.getProperty("java.vm.name").toLowerCase().contains("lemur")) || !StringUtils.isEmpty(System.getProperty("ro.yunos.version")) || !StringUtils.isEmpty(aqd.a("ro.yunos.build.version"))) {
             return true;
         }
         return b();
@@ -161,7 +161,7 @@ public class aqf {
 
     private static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : !TextUtils.isEmpty(aqd.a("ro.yunos.product.chip")) || !TextUtils.isEmpty(aqd.a("ro.yunos.hardware"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : !StringUtils.isEmpty(aqd.a("ro.yunos.product.chip")) || !StringUtils.isEmpty(aqd.a("ro.yunos.hardware"));
     }
 
     private static String c() {

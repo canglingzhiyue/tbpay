@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.request.preload;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class PreloadTaskBroadcastReceiver extends BroadcastReceiver {
             if (com.taobao.android.detail.ttdetail.utils.j.l() && z && !odg.o().a()) {
                 if (!a(context, intent)) {
                     com.taobao.android.detail.ttdetail.utils.i.a("PreloadTaskBroadcastReceiver", "intent参数合法校验");
-                } else if (TextUtils.isEmpty(intent.getStringExtra(START_PRELOAD_TASKS))) {
+                } else if (StringUtils.isEmpty(intent.getStringExtra(START_PRELOAD_TASKS))) {
                 } else {
                     com.taobao.android.detail.ttdetail.utils.i.a("PreloadTaskBroadcastReceiver", "开始发送预加载请求");
                     com.taobao.android.detail.ttdetail.request.b.a(intent);

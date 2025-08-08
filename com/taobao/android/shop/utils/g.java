@@ -1,6 +1,6 @@
 package com.taobao.android.shop.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.shop.activity.ShopRenderActivity;
@@ -25,7 +25,7 @@ public class g {
             return (Map) ipChange.ipc$dispatch("573ccb97", new Object[]{str, new Boolean(z)});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         if (z) {
@@ -84,10 +84,10 @@ public class g {
             if (b.containsKey(ShopRenderActivity.SHOP_NAVI)) {
                 str2 = b.get(ShopRenderActivity.SHOP_NAVI);
             }
-            if (!TextUtils.isEmpty(str2) && !com.alibaba.triver.triver_shop.newShop.ext.g.KEY_SHOP_INDEX.equals(str2)) {
+            if (!StringUtils.isEmpty(str2) && !com.alibaba.triver.triver_shop.newShop.ext.g.KEY_SHOP_INDEX.equals(str2)) {
                 z = false;
             }
-            if (!TextUtils.isEmpty(str3) || !TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str3) || !StringUtils.isEmpty(str4)) {
                 if (!com.alibaba.triver.triver_shop.newShop.ext.g.KEY_SHOP_INDEX_BAR.equals(str4)) {
                     return false;
                 }

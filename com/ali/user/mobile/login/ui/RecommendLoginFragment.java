@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.SpannableString;
 import android.text.SpannedString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -347,7 +347,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                 this.mPreviousChecked = arguments.getBoolean("check");
                 String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
                 arguments.remove(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.mLoginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
                 }
                 this.supportOverseaSimLogin = arguments.getBoolean("supportOverseaSimLogin", false);
@@ -416,7 +416,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             AppLaunchInfo appLaunchInfo = (AppLaunchInfo) this.mUserLoginActivity.fireAppLaunchRes.returnValue;
             if (appLaunchInfo.fromOversea) {
                 this.fromOversea = true;
-                if (TextUtils.equals(this.mCurrentLoginModeState.name(), LoginModeState.SMS_LOGIN.name())) {
+                if (StringUtils.equals(this.mCurrentLoginModeState.name(), LoginModeState.SMS_LOGIN.name())) {
                     UserTrackAdapter.control(getPageName(), UTConstant.CustomEvent.UT_OVERSEA_LOGIN_SHOW, String.valueOf(appLaunchInfo.supportOverseaSimLogin), null);
                 }
             }
@@ -480,11 +480,11 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                     ipChange2.ipc$dispatch("67397830", new Object[]{this, charSequence, new Integer(i), new Integer(i2), new Integer(i3)});
                     return;
                 }
-                if (!TextUtils.isEmpty(charSequence) && RecommendLoginFragment.this.mRecommendLoginNextBtn != null) {
+                if (!StringUtils.isEmpty(charSequence) && RecommendLoginFragment.this.mRecommendLoginNextBtn != null) {
                     RecommendLoginFragment.this.mRecommendLoginNextBtn.setEnabled(true);
                 }
                 RecommendLoginFragment.access$002(RecommendLoginFragment.this, true);
-                if (RecommendLoginFragment.access$100(RecommendLoginFragment.this) && !TextUtils.isEmpty(charSequence)) {
+                if (RecommendLoginFragment.access$100(RecommendLoginFragment.this) && !StringUtils.isEmpty(charSequence)) {
                     RecommendLoginFragment.access$102(RecommendLoginFragment.this, false);
                     UserTrackAdapter.sendUT(RecommendLoginFragment.this.getPageName(), "Input");
                 }
@@ -642,7 +642,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                                     ipChange3.ipc$dispatch("93e51c7a", new Object[]{this, map});
                                     return;
                                 }
-                                if (RecommendLoginFragment.this.mLoginAccountET != null && !TextUtils.isEmpty(RecommendLoginFragment.this.mLoginAccountET.getText().toString())) {
+                                if (RecommendLoginFragment.this.mLoginAccountET != null && !StringUtils.isEmpty(RecommendLoginFragment.this.mLoginAccountET.getText().toString())) {
                                     RecommendLoginFragment.this.interact = true;
                                 }
                                 if (!RecommendLoginFragment.this.isActive() || RecommendLoginFragment.access$300(RecommendLoginFragment.this) == null || !(RecommendLoginFragment.access$400(RecommendLoginFragment.this) instanceof UserLoginActivity) || RecommendLoginFragment.this.interact) {
@@ -811,7 +811,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         String str = "";
         sb.append(str);
         hashMap.put("sdkTraceId", sb.toString());
-        if (TextUtils.equals(this.mRecommendLoginType, LoginModeState.LOCATION.name())) {
+        if (StringUtils.equals(this.mRecommendLoginType, LoginModeState.LOCATION.name())) {
             UserTrackAdapter.control(getPageName(), UTConstant.CustomEvent.UT_LOGIN_ACTION, "recommendLoginFlow", LoginType.LocalLoginType.ASO_LOGIN, hashMap);
         } else {
             String pageName = getPageName();
@@ -832,7 +832,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         }
         switch (this.mCurrentLoginModeState) {
             case LOCATION:
-                if (TextUtils.isEmpty(getAccountName())) {
+                if (StringUtils.isEmpty(getAccountName())) {
                     toast(getString(R.string.aliuser_taobao_recommend_login_hint), 0);
                     return;
                 }
@@ -863,7 +863,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                 return;
             case PASSWORD:
                 String trim = this.mPasswordET.getText().toString().trim();
-                if (TextUtils.isEmpty(trim)) {
+                if (StringUtils.isEmpty(trim)) {
                     toast(getString(R.string.aliuser_sign_in_please_enter_password), 0);
                     return;
                 }
@@ -881,7 +881,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                 this.mUserLoginPresenter.getLoginParam().sdkTraceId = ApiReferer.generateTraceId(LoginType.LocalLoginType.PWD_LOGIN, getPageName(), this.mLoginFlowId);
                 this.mUserLoginPresenter.getLoginParam().loginSourceType = LoginType.LocalLoginType.PWD_LOGIN;
                 this.mUserLoginPresenter.getLoginParam().utPageName = getPageName();
-                if (TextUtils.equals(this.paramModeState, LoginModeState.LOCATION.name())) {
+                if (StringUtils.equals(this.paramModeState, LoginModeState.LOCATION.name())) {
                     this.mUserLoginPresenter.getLoginParam().fromRecommendLogin = true;
                 } else {
                     this.mUserLoginPresenter.getLoginParam().fromRecommendLogin = false;
@@ -969,7 +969,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                         RecommendLoginFragment.this.onGetAccessTokenFail();
                         return;
                     case CommonUICallback.ACTION_ONEKEY_SEND_SMS /* 5007 */:
-                        if (!RecommendLoginFragment.this.isActive() || map == null || TextUtils.isEmpty((String) map.get("mobile"))) {
+                        if (!RecommendLoginFragment.this.isActive() || map == null || StringUtils.isEmpty((String) map.get("mobile"))) {
                             return;
                         }
                         RecommendLoginFragment.this.onNeedVerifyMobile("", (String) map.get("mobile"));
@@ -1026,7 +1026,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             return;
         }
         LoginFlowReturnData loginFlowReturnData = this.mLoginFlowReturnData;
-        if (loginFlowReturnData != null && !TextUtils.isEmpty(loginFlowReturnData.maskMobile)) {
+        if (loginFlowReturnData != null && !StringUtils.isEmpty(loginFlowReturnData.maskMobile)) {
             this.mSMSNickLoginPresenter.buildSMSLoginParam(getAccountName(), null, false);
             this.mSMSNickLoginPresenter.getLoginParam().resendAlert = this.mUserLoginActivity.isNeedSMSCheck();
             this.mSMSNickLoginPresenter.getLoginParam().whatsAppInstalled = this.whatsApp;
@@ -1161,20 +1161,20 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
 
     public String getAccountNameForPassword(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("7d6cffed", new Object[]{this, str}) : TextUtils.isEmpty(str) ? "" : str.trim().replaceAll(" ", "");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("7d6cffed", new Object[]{this, str}) : StringUtils.isEmpty(str) ? "" : str.trim().replaceAll(" ", "");
     }
 
     public void editLoginAccount() {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6cedbb35", new Object[]{this});
-        } else if (this.degradeToSMS || !TextUtils.equals(this.paramModeState, LoginModeState.LOCATION.name()) || this.supportOverseaSimLogin) {
+        } else if (this.degradeToSMS || !StringUtils.equals(this.paramModeState, LoginModeState.LOCATION.name()) || this.supportOverseaSimLogin) {
         } else {
             if (this.mCurrentLoginModeState != LoginModeState.LOCATION) {
                 updateLoginModeState(LoginModeState.LOCATION);
                 resetLoginAccountETPadding();
                 LoginParam loginParam = this.mLoginParam;
-                if (loginParam != null && !TextUtils.isEmpty(loginParam.phoneCode)) {
+                if (loginParam != null && !StringUtils.isEmpty(loginParam.phoneCode)) {
                     addControl("sms_input");
                 } else {
                     addControl("change_nick");
@@ -1251,7 +1251,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             LoginTLogAdapter.e(getPageName(), "degradeToSMS");
         } else {
             LoginApprearanceExtensions appreanceExtentions = AliUserLogin.getAppreanceExtentions();
-            if ((appreanceExtentions != null && !appreanceExtentions.needCountryModule()) || ((loginFlowReturnData = this.mLoginFlowReturnData) != null && !TextUtils.isEmpty(loginFlowReturnData.maskMobile))) {
+            if ((appreanceExtentions != null && !appreanceExtentions.needCountryModule()) || ((loginFlowReturnData = this.mLoginFlowReturnData) != null && !StringUtils.isEmpty(loginFlowReturnData.maskMobile))) {
                 this.mRegionTV.setVisibility(8);
                 return;
             }
@@ -1262,10 +1262,10 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             } else {
                 currentRegion = DataProviderFactory.getDataProvider().getCurrentRegion();
             }
-            if (currentRegion == null || TextUtils.isEmpty(currentRegion.domain)) {
+            if (currentRegion == null || StringUtils.isEmpty(currentRegion.domain)) {
                 currentRegion = DataProviderFactory.getDataProvider().getCurrentRegion();
             }
-            if (currentRegion == null || TextUtils.isEmpty(currentRegion.domain) || TextUtils.isEmpty(currentRegion.code)) {
+            if (currentRegion == null || StringUtils.isEmpty(currentRegion.domain) || StringUtils.isEmpty(currentRegion.code)) {
                 currentRegion = CountryUtil.matchRegionFromLocal(getContext(), currentRegion == null ? "" : currentRegion.domain);
             }
             if (currentRegion == null) {
@@ -1331,7 +1331,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             }
             RegionInfo regionInfo = (RegionInfo) intent.getParcelableExtra("region");
             this.supportOverseaSimLogin = CountryUtil.supportOverseaSimLogin(this.mUserLoginActivity.fireAppLaunchRes, regionInfo, false);
-            if (regionInfo != null && this.mRegionInfo != null && !TextUtils.equals(regionInfo.code, this.mRegionInfo.code)) {
+            if (regionInfo != null && this.mRegionInfo != null && !StringUtils.equals(regionInfo.code, this.mRegionInfo.code)) {
                 this.degradeToSMS = true;
                 this.mAvailableLoginModes.remove(LoginModeState.SCAN_FACE.name());
                 this.mAvailableLoginModes.remove(LoginModeState.SIM_LOGIN.name());
@@ -1405,7 +1405,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         this.mRegionTV.setVisibility(loginModeState.regionTVVisibility);
         String str2 = "";
         if (loginModeState == LoginModeState.LOCATION) {
-            if (!TextUtils.isEmpty(this.mOriginUserInput)) {
+            if (!StringUtils.isEmpty(this.mOriginUserInput)) {
                 this.mLoginAccountET.setText(this.mOriginUserInput);
                 this.mLoginAccountET.setSelection(this.mOriginUserInput.length());
             }
@@ -1424,7 +1424,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                 this.mLoginAccountET.setInputType(1);
             }
             LoginFlowReturnData loginFlowReturnData = this.mLoginFlowReturnData;
-            if (loginFlowReturnData != null && !TextUtils.isEmpty(loginFlowReturnData.maskMobile) && (textView = this.mTipsTV) != null) {
+            if (loginFlowReturnData != null && !StringUtils.isEmpty(loginFlowReturnData.maskMobile) && (textView = this.mTipsTV) != null) {
                 textView.setVisibility(0);
                 this.mRegionTV.setVisibility(8);
                 TextView textView4 = this.mTipsTV;
@@ -1438,7 +1438,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             initRegionInfo(this.mLoginParam);
         } else if (loginModeState == LoginModeState.PASSWORD) {
             LoginFlowReturnData loginFlowReturnData2 = this.mLoginFlowReturnData;
-            if (loginFlowReturnData2 != null && !TextUtils.isEmpty(loginFlowReturnData2.countryCode)) {
+            if (loginFlowReturnData2 != null && !StringUtils.isEmpty(loginFlowReturnData2.countryCode)) {
                 this.mRegionTV.setVisibility(0);
                 initRegionInfo(this.mLoginParam);
             } else {
@@ -1466,7 +1466,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         }
         this.mRecommendLoginNextBtn.setText(loginModeState.loginBtnText);
         if (this.supportOverseaSimLogin || LoginModeState.SMS_LOGIN.name().equals(this.paramModeState) || LoginModeState.PASSWORD.name().equals(this.paramModeState)) {
-            if (TextUtils.equals(LoginModeState.SMS_LOGIN.name(), loginModeState.name())) {
+            if (StringUtils.equals(LoginModeState.SMS_LOGIN.name(), loginModeState.name())) {
                 this.mRecommendLoginNextBtn.setText(R.string.aliuser_confirm);
             }
             ArrayList arrayList = new ArrayList();
@@ -1493,11 +1493,11 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         } else if (this.mAvailableLoginModes.size() == 2) {
             if (loginModeState != LoginModeState.LOCATION) {
                 for (String str : this.mAvailableLoginModes) {
-                    if (!TextUtils.equals(loginModeState.name(), str)) {
+                    if (!StringUtils.equals(loginModeState.name(), str)) {
                         final LoginModeState valueOf = LoginModeState.valueOf(str);
                         if (valueOf.loginModeName > 0) {
                             this.mLeftFuncTV.setVisibility(0);
-                            if (this.fromOversea && TextUtils.equals(valueOf.name(), LoginModeState.SMS_LOGIN.name())) {
+                            if (this.fromOversea && StringUtils.equals(valueOf.name(), LoginModeState.SMS_LOGIN.name())) {
                                 this.mLeftFuncTV.setText(R.string.aliuser_login_sms_login_oversea);
                             } else {
                                 this.mLeftFuncTV.setText(valueOf.loginModeName);
@@ -1564,7 +1564,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         BottomMenuFragment bottomMenuFragment = getBottomMenuFragment();
         ArrayList arrayList = new ArrayList();
         for (final String str : this.mAvailableLoginModes) {
-            if (!TextUtils.equals(loginModeState.name(), str)) {
+            if (!StringUtils.equals(loginModeState.name(), str)) {
                 MenuItem menuItem = new MenuItem();
                 final LoginModeState valueOf = LoginModeState.valueOf(str);
                 if (valueOf.loginModeName > 0) {
@@ -1580,15 +1580,15 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                             } else if (!RecommendLoginFragment.this.isActive()) {
                             } else {
                                 RecommendLoginFragment.this.switchLoginModeHit(valueOf);
-                                if (TextUtils.equals(str, LoginModeState.SCAN_FACE.name())) {
+                                if (StringUtils.equals(str, LoginModeState.SCAN_FACE.name())) {
                                     RecommendLoginFragment.this.addCheckAction(LoginClickAction.ACTION_FACE);
-                                } else if (TextUtils.equals(str, LoginModeState.SMS_LOGIN.name()) && !TextUtils.isEmpty(RecommendLoginFragment.this.mLoginParam.phoneCode)) {
+                                } else if (StringUtils.equals(str, LoginModeState.SMS_LOGIN.name()) && !StringUtils.isEmpty(RecommendLoginFragment.this.mLoginParam.phoneCode)) {
                                     RecommendLoginFragment.this.addCheckAction(LoginClickAction.ACTION_SEND_SMS);
-                                } else if (TextUtils.equals(str, LoginModeState.BIOMETRIC.name())) {
+                                } else if (StringUtils.equals(str, LoginModeState.BIOMETRIC.name())) {
                                     RecommendLoginFragment.this.addCheckAction(LoginClickAction.ACTION_FINGER);
-                                } else if (TextUtils.equals(str, LoginModeState.EMAIL_CODE_LOGIN.name())) {
+                                } else if (StringUtils.equals(str, LoginModeState.EMAIL_CODE_LOGIN.name())) {
                                     RecommendLoginFragment.this.addCheckAction(LoginClickAction.ACTION_EMAIL_SEND);
-                                } else if (TextUtils.equals(str, LoginModeState.SIM_LOGIN.name())) {
+                                } else if (StringUtils.equals(str, LoginModeState.SIM_LOGIN.name())) {
                                     RecommendLoginFragment.this.addCheckAction(LoginClickAction.ACTION_SIM_VERIFY);
                                 } else {
                                     RecommendLoginFragment.this.updateLoginModeState(valueOf);
@@ -1602,15 +1602,15 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         }
         bottomMenuFragment.setMenuItems(arrayList);
         bottomMenuFragment.setMenuTitle(getString(R.string.aliuser_more_login_mode_title));
-        if (TextUtils.equals(this.mRecommendLoginType, LoginModeState.SMS_LOGIN.name())) {
+        if (StringUtils.equals(this.mRecommendLoginType, LoginModeState.SMS_LOGIN.name())) {
             bottomMenuFragment.setControlHitPrefix("sms_chooseother");
-        } else if (TextUtils.equals(this.mRecommendLoginType, LoginModeState.PASSWORD.name())) {
+        } else if (StringUtils.equals(this.mRecommendLoginType, LoginModeState.PASSWORD.name())) {
             bottomMenuFragment.setControlHitPrefix("pwd_chooseother");
-        } else if (TextUtils.equals(this.mRecommendLoginType, LoginModeState.SIM_LOGIN.name())) {
+        } else if (StringUtils.equals(this.mRecommendLoginType, LoginModeState.SIM_LOGIN.name())) {
             bottomMenuFragment.setControlHitPrefix("onekey_chooseother");
-        } else if (TextUtils.equals(this.mRecommendLoginType, LoginModeState.SCAN_FACE.name())) {
+        } else if (StringUtils.equals(this.mRecommendLoginType, LoginModeState.SCAN_FACE.name())) {
             bottomMenuFragment.setControlHitPrefix("face_chooseother");
-        } else if (TextUtils.equals(this.mRecommendLoginType, LoginModeState.BIOMETRIC.name())) {
+        } else if (StringUtils.equals(this.mRecommendLoginType, LoginModeState.BIOMETRIC.name())) {
             bottomMenuFragment.setControlHitPrefix("bio_chooseother");
         }
         bottomMenuFragment.show(getFragmentManager(), getPageName());
@@ -1669,7 +1669,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
                 updateLoginParamWhenRecommend(str, loginParam);
             }
             updateLoginModeState(LoginModeState.PASSWORD);
-            if (LoginSwitch.isInABTestRegion("pwdShowRegion", 10000) && !TextUtils.isEmpty(loginParam.countryCode)) {
+            if (LoginSwitch.isInABTestRegion("pwdShowRegion", 10000) && !StringUtils.isEmpty(loginParam.countryCode)) {
                 this.mRegionTV.setVisibility(0);
                 initRegionInfo(loginParam);
             } else {
@@ -1835,7 +1835,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d6912462", new Object[]{this, loginParam, rpcResponse});
-        } else if (rpcResponse == null || TextUtils.isEmpty(rpcResponse.codeGroup) || !"mobileNeedCheck".equals(rpcResponse.codeGroup)) {
+        } else if (rpcResponse == null || StringUtils.isEmpty(rpcResponse.codeGroup) || !"mobileNeedCheck".equals(rpcResponse.codeGroup)) {
         } else {
             if (rpcResponse.returnValue == null || rpcResponse.returnValue.ext == null) {
                 str = "";
@@ -1941,7 +1941,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         } else {
             Intent intent = new Intent();
             LoginFlowReturnData loginFlowReturnData = this.mLoginFlowReturnData;
-            if (loginFlowReturnData != null && !TextUtils.isEmpty(loginFlowReturnData.maskMobile)) {
+            if (loginFlowReturnData != null && !StringUtils.isEmpty(loginFlowReturnData.maskMobile)) {
                 intent.putExtra("maskMobile", this.mLoginFlowReturnData.maskMobile);
                 intent.putExtra(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, JSON.toJSONString(this.mSMSNickLoginPresenter.mLoginParam));
             } else {
@@ -2040,7 +2040,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a71e97ba", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.replaceAll(" ", "").matches("^{0,1}1\\d{10}$");
         }
         return false;
@@ -2053,7 +2053,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             return (String) ipChange.ipc$dispatch("7094bfac", new Object[]{this});
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        return (regionInfo == null || TextUtils.isEmpty(regionInfo.domain)) ? "CN" : this.mRegionInfo.domain;
+        return (regionInfo == null || StringUtils.isEmpty(regionInfo.domain)) ? "CN" : this.mRegionInfo.domain;
     }
 
     @Override // com.ali.user.mobile.login.ui.UserMobileLoginView
@@ -2063,7 +2063,7 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
             return (String) ipChange.ipc$dispatch("3daf0254", new Object[]{this});
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        return (regionInfo == null || TextUtils.isEmpty(regionInfo.code)) ? "86" : this.mRegionInfo.code.replace(riy.PLUS, "");
+        return (regionInfo == null || StringUtils.isEmpty(regionInfo.code)) ? "86" : this.mRegionInfo.code.replace(riy.PLUS, "");
     }
 
     public boolean isMobileValid(String str) {
@@ -2071,11 +2071,11 @@ public class RecommendLoginFragment extends BaseLoginFragment implements ILoginM
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2ae9a785", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         RegionInfo regionInfo = this.mRegionInfo;
-        if (regionInfo == null || TextUtils.isEmpty(regionInfo.checkPattern)) {
+        if (regionInfo == null || StringUtils.isEmpty(regionInfo.checkPattern)) {
             return str.length() >= 6 && str.length() <= 20;
         }
         String replaceAll = str.replaceAll(" ", "");

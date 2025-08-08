@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.global.setting.c;
 import com.taobao.infoflow.protocol.subservice.base.IConfigService;
@@ -123,7 +123,7 @@ public class lmn {
             return false;
         }
         String string = iConfigService.getString("DX3LiveEnableLevel", "LevelHighMid");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         String a2 = ldc.a();
@@ -164,10 +164,10 @@ public class lmn {
         if (c != 0) {
             if (c != 1) {
                 if (c == 2) {
-                    return TextUtils.equals("h", a2);
+                    return StringUtils.equals("h", a2);
                 }
                 return false;
-            } else if (!TextUtils.equals("h", a2) && !TextUtils.equals("m", a2)) {
+            } else if (!StringUtils.equals("h", a2) && !StringUtils.equals("m", a2)) {
                 return false;
             }
         }

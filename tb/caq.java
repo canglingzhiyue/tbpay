@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.a;
 import com.alibaba.android.split.s;
 import com.alibaba.evo.EVO;
@@ -82,7 +82,7 @@ public class caq implements cap {
             return ((Boolean) ipChange.ipc$dispatch("2fbe2fed", new Object[]{this, file, str})).booleanValue();
         }
         String str2 = ((s) a.a((Class<? extends Object>) s.class, new Object[0])).a(str).md5;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         return str2.equals(this.b.a(file.getAbsolutePath()));

@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,7 +54,7 @@ public class d extends h {
                 String str = (String) objArr[1];
                 JSONArray jSONArray = (JSONArray) objArr[2];
                 String str2 = objArr.length > 3 ? (String) objArr[3] : "0";
-                if (dXRuntimeContext == null || parseInt <= 0 || jSONArray == null || jSONArray.size() <= 0 || TextUtils.isEmpty(str)) {
+                if (dXRuntimeContext == null || parseInt <= 0 || jSONArray == null || jSONArray.size() <= 0 || StringUtils.isEmpty(str)) {
                     return;
                 }
                 float b = gbg.b(dXRuntimeContext.m(), Float.valueOf(str).floatValue());

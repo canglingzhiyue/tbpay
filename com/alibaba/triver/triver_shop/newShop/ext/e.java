@@ -2,7 +2,7 @@ package com.alibaba.triver.triver_shop.newShop.ext;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.extension.dianmicX.a;
@@ -159,7 +159,7 @@ public final class e {
         q.d(data, "data");
         q.d(createViewCallback, "createViewCallback");
         DXTemplateItem a2 = this.c.a(f.a(dxJsonConfig));
-        if (a2 != null && TextUtils.equals(dxJsonConfig.getString("version"), String.valueOf(a2.b))) {
+        if (a2 != null && StringUtils.equals(dxJsonConfig.getString("version"), String.valueOf(a2.b))) {
             createViewCallback.mo2421invoke(a(a2, data, z));
             ceg.Companion.b(q.a("dx template fetch success : ", (Object) a2.toString()));
             return;

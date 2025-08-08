@@ -2,7 +2,7 @@ package tb;
 
 import a.a.a.a.a.a.b.a.c.a;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -29,7 +29,7 @@ public class ifh {
     }
 
     public static DIDResult a(Context context, String str, DecentralizedID decentralizedID) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new DIDResult(DIDResult.a.WRONG_PARAMS).setMessage("数据异常，无法解密");
         }
         DigitalEnvelopeModel digitalEnvelopeModel = (DigitalEnvelopeModel) JSON.parseObject(str, DigitalEnvelopeModel.class);
@@ -67,14 +67,14 @@ public class ifh {
             String k = k(a2.f1044a);
             g("genDIDKeyInfo, 公钥 Der2：" + k);
             String n = n(k);
-            if (TextUtils.isEmpty(n)) {
+            if (StringUtils.isEmpty(n)) {
                 return new DIDResult(DIDResult.a.FAILED_OPT_CRYPTO).setMessage("公钥Hash异常");
             }
             g("genDIDKeyInfo, 秘钥索引：" + n);
             ifk ifkVar = ifj.a().c;
             StringBuilder sb = new StringBuilder();
             sb.append(a2.b);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str3 = "";
             } else {
                 str3 = "_" + str2;
@@ -150,11 +150,11 @@ public class ifh {
     public static List<VerifiableCredentialBasicInfo> a(String str, List<String> list, String str2) {
         ArrayList arrayList = new ArrayList();
         String a2 = ((ifj.a) ifj.a().c).a("my_did_appid", a(str));
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return arrayList;
         }
         List<VerifiableCredentialBasicInfo> parseArray = JSONObject.parseArray(a2, VerifiableCredentialBasicInfo.class);
-        if ((list == null || list.size() == 0) && TextUtils.isEmpty(str2)) {
+        if ((list == null || list.size() == 0) && StringUtils.isEmpty(str2)) {
             return parseArray;
         }
         if (list != null && list.size() != 0) {
@@ -168,7 +168,7 @@ public class ifh {
             }
             parseArray = arrayList2;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return parseArray;
         }
         ArrayList arrayList3 = new ArrayList();
@@ -182,7 +182,7 @@ public class ifh {
 
     public static boolean a(String... strArr) {
         for (String str : strArr) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return true;
             }
         }
@@ -229,7 +229,7 @@ public class ifh {
 
     public static DecentralizedID e(String str) {
         DocumentSignData h = h(str);
-        if (h == null || TextUtils.isEmpty(h.getDocument())) {
+        if (h == null || StringUtils.isEmpty(h.getDocument())) {
             g("getDIDModel,本地对应DID Document数据");
             return null;
         }
@@ -265,7 +265,7 @@ public class ifh {
 
     public static DocumentSignData h(String str) {
         String a2 = ((ifj.a) ifj.a().c).a("my_did_appid", str);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return (DocumentSignData) JSONObject.parseObject(a2, DocumentSignData.class);
         }
         return null;
@@ -273,19 +273,19 @@ public class ifh {
 
     public static DIDResult i(String str) {
         DocumentSignData documentSignData = (DocumentSignData) JSONObject.parseObject(str, DocumentSignData.class);
-        if (documentSignData == null || TextUtils.isEmpty(documentSignData.getDocument())) {
+        if (documentSignData == null || StringUtils.isEmpty(documentSignData.getDocument())) {
             g("importDID, DocumentSignData 格式异常");
             return new DIDResult(DIDResult.a.FAILED_PARSE_DATA).setMessage("did Document 格式异常");
         }
         DecentralizedID fromJson = DecentralizedID.fromJson(documentSignData.getDocument());
-        if (fromJson == null || TextUtils.isEmpty(fromJson.getId())) {
+        if (fromJson == null || StringUtils.isEmpty(fromJson.getId())) {
             g("importDID, did Document 格式异常");
             return new DIDResult(DIDResult.a.FAILED_PARSE_DATA).setMessage("did Document 格式异常");
         }
         for (VerificationMethod verificationMethod : fromJson.getVerificationMethods()) {
-            if (TextUtils.isEmpty(((ifj.a) ifj.a().c).a("my_did_appid", b(verificationMethod.getId())))) {
+            if (StringUtils.isEmpty(((ifj.a) ifj.a().c).a("my_did_appid", b(verificationMethod.getId())))) {
                 String derPubKey = VerificationMethod.getDerPubKey(verificationMethod);
-                if (TextUtils.isEmpty(derPubKey)) {
+                if (StringUtils.isEmpty(derPubKey)) {
                     g("importDID, 计算临时索引时，公钥解析异常");
                     return new DIDResult(DIDResult.a.FAILED_PARSE_DATA).setMessage("公钥解析异常");
                 }
@@ -294,7 +294,7 @@ public class ifh {
                 g("importDID,VM ID：" + verificationMethod.getId());
                 g("importDID,临时秘钥索引：" + n);
                 ((ifj.a) ifj.a().c).b("my_did_appid", n);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     g("importDID, 本地秘钥查询异常");
                     return new DIDResult(DIDResult.a.FAILED_READ_FILE).setMessage("本地秘钥查询异常");
                 }

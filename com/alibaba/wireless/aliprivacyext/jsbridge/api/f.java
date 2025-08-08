@@ -1,7 +1,7 @@
 package com.alibaba.wireless.aliprivacyext.jsbridge.api;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.wireless.aliprivacyext.track.model.TrackLog;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -30,7 +30,7 @@ public class f extends com.alibaba.wireless.aliprivacyext.jsbridge.a {
             return true;
         }
         String string = a2.getString("fromSource");
-        if (TextUtils.isEmpty(string) && "queryRecommendSwitch".equals(str)) {
+        if (StringUtils.isEmpty(string) && "queryRecommendSwitch".equals(str)) {
             b(bVar, "缺少fromSource参数,请联系业务方分配", null);
             return true;
         } else if (com.alibaba.wireless.aliprivacyext.recommendation.a.b(context)) {

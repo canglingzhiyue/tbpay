@@ -1,7 +1,7 @@
 package com.taobao.android.detail.industry.scene.weex2;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.fastjson.JSONObject;
@@ -75,7 +75,7 @@ public class b {
             Object obj = dIComponentProtocol.bizData.get("weexUrl");
             if (obj instanceof String) {
                 String str = (String) obj;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return str;
                 }
             }
@@ -85,7 +85,7 @@ public class b {
             return null;
         }
         String str2 = (String) obj2;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         return str2;

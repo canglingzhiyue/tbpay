@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.p;
 import com.alibaba.analytics.core.logbuilder.d;
 import com.alibaba.analytics.core.model.LogField;
@@ -34,7 +34,7 @@ public class aoa {
         }
         String remove = map.containsKey("_priority") ? map.remove("_priority") : "3";
         String b = d.a().b(str);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             remove = b;
         }
         if (map.containsKey("_sls")) {

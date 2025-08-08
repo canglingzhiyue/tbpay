@@ -2,7 +2,7 @@ package com.taobao.phenix.intf;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.cache.memory.MemoryCacheProducer;
 import com.taobao.rxm.schedule.k;
@@ -302,7 +302,7 @@ public class b implements nif {
             return (njk) ipChange.ipc$dispatch("7e78eca2", new Object[]{this, str});
         }
         if (this.s != null) {
-            if (!L() && TextUtils.equals("trade-module", str)) {
+            if (!L() && StringUtils.equals("trade-module", str)) {
                 a2 = this.s.a("common");
             } else {
                 a2 = this.s.a(str);

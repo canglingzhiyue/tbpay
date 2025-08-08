@@ -1,6 +1,6 @@
 package com.taobao.search.sf.util.tlog;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.k;
@@ -79,7 +79,7 @@ public final class TLogTracker {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
             return;
         }
-        if (str == null || TextUtils.isEmpty(str)) {
+        if (str == null || StringUtils.isEmpty(str)) {
             str = "unknown";
         }
         c = str;
@@ -278,7 +278,7 @@ public final class TLogTracker {
         sb.append(str2);
         sb.append("|");
         sb.append(str3);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             sb.append("|");
             sb.append(str4);
         }

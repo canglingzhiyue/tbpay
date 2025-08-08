@@ -7,7 +7,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.PowerManager;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public abstract class orn {
         try {
             String str = fVar.c;
             b bVar = new b(fVar);
-            if (!TextUtils.isEmpty(str) && !d.a().a(bVar)) {
+            if (!StringUtils.isEmpty(str) && !d.a().a(bVar)) {
                 kgz.a("popUpWindow.addNewRequestFailed.sameBizCode.AlreadyPopping.cancel.bizCode=%s", str);
                 a(fVar, e.FUNNEL_STEP_LAUNCH_WIDGET, "triggerFailed.trigger.AlreadyPopping", "");
                 return;
@@ -153,7 +153,7 @@ public abstract class orn {
                     return;
                 }
                 kgz.b("requestData.onSuccess.response=%s", str);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     orn.this.a(bVar, e.FUNNEL_STEP_AFTER_REQUEST, "mtopFailed.NoResponse", "");
                     return;
                 }

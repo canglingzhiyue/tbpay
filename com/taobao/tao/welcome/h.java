@@ -1,7 +1,7 @@
 package com.taobao.tao.welcome;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.welcome.d;
 import tb.kge;
@@ -18,6 +18,6 @@ public class h {
 
     public static e a(String str, Activity activity, d.a aVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (e) ipChange.ipc$dispatch("5d32b22e", new Object[]{str, activity, aVar}) : TextUtils.equals("launch", str) ? new f(activity, aVar) : new g(activity, aVar);
+        return ipChange instanceof IpChange ? (e) ipChange.ipc$dispatch("5d32b22e", new Object[]{str, activity, aVar}) : StringUtils.equals("launch", str) ? new f(activity, aVar) : new g(activity, aVar);
     }
 }

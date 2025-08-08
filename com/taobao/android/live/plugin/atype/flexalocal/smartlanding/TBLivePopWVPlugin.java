@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.smartlanding;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -70,7 +70,7 @@ public class TBLivePopWVPlugin extends e {
         if (jSONObject != null) {
             str3 = jSONObject.getString("exParams");
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             new com.taobao.android.live.plugin.atype.flexalocal.smartlanding.business.a(new com.taobao.taolive.sdk.adapter.network.d() { // from class: com.taobao.android.live.plugin.atype.flexalocal.smartlanding.TBLivePopWVPlugin.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

@@ -1,0 +1,64 @@
+{
+  "exposureParam": {
+    "args": {
+      "spm": "/hourly_arrv.a21xl4.xsd-shouye.searchbar",
+      "entry_from": "tb_xsd"
+    },
+    "eventId": "2201",
+    "arg1": "/hourly_arrv.a21xl4.xsd-shouye.searchbar",
+    "page": "/Page_xsdshouye"
+  },
+  "subSection": {
+    "0": {
+      "item": {
+        "0": {
+          "clickParam": {
+            "args": {
+              "spm": "/hourly_arrv.a21xl4.xsd-shouye.searchbox",
+              "entry_from": "tb_xsd",
+              "display_text": "牛奶",
+              "search_text": "牛奶"
+            },
+            "eventId": "2101",
+            "arg1": "/hourly_arrv.a21xl4.xsd-shouye.searchbox",
+            "page": "/Page_xsdshouye"
+          },
+          "content": {
+            "searchTextConfig": "{\"displayText\":\"牛奶\",\"searchText\":\"牛奶\"}",
+            "displayText": "牛奶"
+          },
+          "targetUrl": "https://web.m.taobao.com/app/tb-xsd/xsd-app-search/search_middle?wh_weex=true&weex_mode=dom&wx_use_layoutng=true&wx_navbar_hidden=true&wx_statusbar_hidden=true&entry_from=tb_xsd&placeholder=%E7%89%9B%E5%A5%B6&latitude&longitude"
+        },
+        "1": {
+          "clickParam": {
+            "args": {
+              "spm": "/hourly_arrv.a21xl4.xsd-shouye.searchbutton",
+              "entry_from": "tb_xsd",
+              "display_text": "牛奶",
+              "search_text": "牛奶"
+            },
+            "eventId": "2101",
+            "arg1": "/hourly_arrv.a21xl4.xsd-shouye.searchbutton",
+            "page": "/Page_xsdshouye"
+          },
+          "content": {
+            "searchTextConfig": "{\"displayText\":\"牛奶\",\"searchText\":\"牛奶\"}",
+            "displayText": "牛奶"
+          },
+          "targetUrl": "https://web.m.taobao.com/app/tb-xsd/xsd-app-search/search_result?wh_weex=true&weex_mode=dom&wx_use_layoutng=true&wx_navbar_hidden=true&wx_statusbar_hidden=true&q=%E7%89%9B%E5%A5%B6&entry_from=tb_xsd&placeholder=%E7%89%9B%E5%A5%B6&latitude&longitude"
+        }
+      },
+      "exposureParam": {
+        "args": {
+          "spm": "/hourly_arrv.xsd-shouye.diwenquery",
+          "entry_from": "tb_xsd",
+          "display_text": "牛奶",
+          "search_text": "牛奶"
+        },
+        "eventId": "2201",
+        "arg1": "/hourly_arrv.xsd-shouye.diwenquery",
+        "page": "/Page_xsdshouye"
+      }
+    }
+  }
+}

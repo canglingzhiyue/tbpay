@@ -1,6 +1,6 @@
 package com.taobao.message.notification.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import java.io.BufferedReader;
@@ -42,7 +42,7 @@ public class EmuiAdapter {
             return (String) ipChange.ipc$dispatch("fd31e191", new Object[0]);
         }
         String rawVersion = getRawVersion();
-        if (!TextUtils.isEmpty(rawVersion)) {
+        if (!StringUtils.isEmpty(rawVersion)) {
             String[] split = rawVersion.split("_");
             if (split.length > 1) {
                 str = split[1];
@@ -61,7 +61,7 @@ public class EmuiAdapter {
             return ((Boolean) ipChange.ipc$dispatch("ebba7cb4", new Object[0])).booleanValue();
         }
         String numVersion = getNumVersion();
-        return !TextUtils.isEmpty(numVersion) && versionCompare("3.1", numVersion) <= 0 && versionCompare("5.0", numVersion) > 0;
+        return !StringUtils.isEmpty(numVersion) && versionCompare("3.1", numVersion) <= 0 && versionCompare("5.0", numVersion) > 0;
     }
 
     public static int versionCompare(String str, String str2) {

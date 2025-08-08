@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.amap.api.location.AMapLocationClientOption;
 import com.taobao.media.MediaConstant;
 import org.json.JSONObject;
@@ -16,26 +16,26 @@ public final class fo {
 
     private void a(ew ewVar, String str, String str2, String str3, String str4, String str5, String str6, String str7) {
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
             sb.append(" ");
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             a(str, str2, sb);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             sb.append(str3);
             sb.append(" ");
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             sb.append(str4);
             sb.append(" ");
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             sb.append(str5);
             sb.append(" ");
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             a(str7, str6, sb, ewVar);
         }
         Bundle bundle = new Bundle();
@@ -80,7 +80,7 @@ public final class fo {
 
     private void a(String str, String str2, StringBuilder sb, ew ewVar) {
         String concat;
-        if (TextUtils.isEmpty(str) || this.b.getGeoLanguage() == AMapLocationClientOption.GeoLanguage.EN) {
+        if (StringUtils.isEmpty(str) || this.b.getGeoLanguage() == AMapLocationClientOption.GeoLanguage.EN) {
             sb.append("Near ".concat(String.valueOf(str2)));
             concat = "Near ".concat(String.valueOf(str2));
         } else {
@@ -182,7 +182,7 @@ public final class fo {
         L7c:
             r2 = r4
         L7d:
-            boolean r4 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L10b
+            boolean r4 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L10b
             if (r4 == 0) goto L88
             r10.setCity(r3)     // Catch: java.lang.Throwable -> L10b
             r4 = r3
@@ -252,12 +252,12 @@ public final class fo {
             stringBuffer.append("#SHA1AndPackage#");
             stringBuffer.append(l.e(context));
             String str2 = buVar.b.get("gsid").get(0);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 stringBuffer.append("#gsid#");
                 stringBuffer.append(str2);
             }
             String str3 = buVar.c;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 stringBuffer.append("#csid#".concat(String.valueOf(str3)));
             }
         } catch (Throwable unused) {

@@ -8,7 +8,7 @@ import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.security.realidentity.biz.config.RPBizConfig;
@@ -55,7 +55,7 @@ public class ALBiometricsActivity extends BaseBioNavigatorActivity {
                 return;
             }
             String action = intent.getAction();
-            if (TextUtils.isEmpty(action)) {
+            if (StringUtils.isEmpty(action)) {
                 return;
             }
             ALBiometricsActivity.a(ALBiometricsActivity.this, action);

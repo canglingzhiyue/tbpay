@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.nirvana.tools.requestqueue.strategy.CallbackStrategy;
 import com.nirvana.tools.requestqueue.strategy.ExecuteStrategy;
 import com.nirvana.tools.requestqueue.strategy.ThreadStrategy;
@@ -48,7 +48,7 @@ public abstract class day<T extends dbb> {
     }
 
     public String getID() {
-        if (TextUtils.isEmpty(this.mID)) {
+        if (StringUtils.isEmpty(this.mID)) {
             this.mID = getKey() + this.mResponseType;
         }
         return this.mID;

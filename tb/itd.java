@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -293,7 +293,7 @@ public abstract class itd<BEAN, MODEL> extends RecyclerView.ViewHolder implement
             return (iul) ipChange.ipc$dispatch("7c70cd54", new Object[]{this, str});
         }
         itd<BEAN, MODEL> itdVar = this;
-        while (!TextUtils.equals(itdVar.getScopeTag(), str)) {
+        while (!StringUtils.equals(itdVar.getScopeTag(), str)) {
             ium parent = itdVar.getParent();
             if (parent instanceof iul) {
                 itdVar = (iul) parent;

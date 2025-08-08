@@ -2,7 +2,7 @@ package com.taobao.weex.ui.animation;
 
 import android.animation.PropertyValuesHolder;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.Property;
 import android.view.View;
@@ -112,7 +112,7 @@ public class WXAnimationBean {
             if (ipChange instanceof IpChange) {
                 return (Pair) ipChange.ipc$dispatch("6ab942cb", new Object[]{wXSDKInstance, str, new Integer(i), new Integer(i2), new Integer(i3)});
             }
-            if (TextUtils.isEmpty(str) || (indexOf = str.indexOf(32)) == -1) {
+            if (StringUtils.isEmpty(str) || (indexOf = str.indexOf(32)) == -1) {
                 return null;
             }
             int i4 = indexOf;
@@ -237,7 +237,7 @@ public class WXAnimationBean {
             for (Map.Entry<Property<View, Float>, Float> entry : this.transformMap.entrySet()) {
                 this.holders.add(PropertyValuesHolder.ofFloat(entry.getKey(), entry.getValue().floatValue()));
             }
-            if (TextUtils.isEmpty(this.opacity)) {
+            if (StringUtils.isEmpty(this.opacity)) {
                 return;
             }
             this.holders.add(PropertyValuesHolder.ofFloat(View.ALPHA, WXUtils.fastGetFloat(this.opacity, 3)));

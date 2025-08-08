@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend4.recyclerview;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.tempate.DTemplateManager;
@@ -50,7 +50,7 @@ public class l {
         o.a a2 = com.taobao.homepage.utils.o.a(jSONObject);
         String b = a2.b();
         String c = a2.c();
-        if (TextUtils.isEmpty(b) || TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(b) || StringUtils.isEmpty(c)) {
             num = -1;
         } else {
             String str = b + "_" + c;
@@ -65,7 +65,7 @@ public class l {
                     if (a3 == null) {
                         num = -1;
                     } else {
-                        if (!TextUtils.equals(a3.f11925a, b) || !TextUtils.equals(String.valueOf(a3.b), c)) {
+                        if (!StringUtils.equals(a3.f11925a, b) || !StringUtils.equals(String.valueOf(a3.b), c)) {
                             str = a3.f11925a + "_" + a3.b;
                         }
                         num2 = this.c.get(str);
@@ -83,7 +83,7 @@ public class l {
                     if (d == null) {
                         num = -1;
                     } else {
-                        if (!TextUtils.equals(d.name, b) || !TextUtils.equals(d.version, c)) {
+                        if (!StringUtils.equals(d.name, b) || !StringUtils.equals(d.version, c)) {
                             str = d.name + "_" + d.version;
                         }
                         num2 = this.c.get(str);

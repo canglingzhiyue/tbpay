@@ -2,7 +2,7 @@ package com.taobao.android.themis.graphics;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -332,7 +332,7 @@ public class JNIBridge {
             return false;
         }
         int i = engineType == IRiverBackend.EngineType.Qking ? 0 : 1;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         this.mNativeInstancePtr = Long.valueOf(nativeAttach(this, str, i, str2, z));
@@ -375,7 +375,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b09b3fac", new Object[]{this, str, str2});
-        } else if (!isAttached() || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!isAttached() || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             nativeExecuteScriptInMainContext(this.mNativeInstancePtr.longValue(), str, str2);
         }
@@ -385,7 +385,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("89226bf", new Object[]{this, bArr, str});
-        } else if (!isAttached() || bArr == null || bArr.length <= 0 || TextUtils.isEmpty(str)) {
+        } else if (!isAttached() || bArr == null || bArr.length <= 0 || StringUtils.isEmpty(str)) {
         } else {
             nativeExecuteByteCodeInMainContext(this.mNativeInstancePtr.longValue(), bArr, str);
         }
@@ -395,7 +395,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7222b578", new Object[]{this, str, str2, str3});
-        } else if (!isAttached() || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!isAttached() || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             nativeExecuteScriptInAppContext(this.mNativeInstancePtr.longValue(), str, str2, str3);
         }
@@ -405,7 +405,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c8b63f5f", new Object[]{this, bArr, str, str2});
-        } else if (!isAttached() || bArr == null || bArr.length <= 0 || TextUtils.isEmpty(str)) {
+        } else if (!isAttached() || bArr == null || bArr.length <= 0 || StringUtils.isEmpty(str)) {
         } else {
             nativeExecuteByteCodeInAppContext(this.mNativeInstancePtr.longValue(), bArr, str, str2);
         }
@@ -415,7 +415,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("719e1ca3", new Object[]{this, str, str2, str3});
-        } else if (!isAttached() || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!isAttached() || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             nativeExecuteScriptInCurrentThread(this.mNativeInstancePtr.longValue(), str, str2, str3);
         }
@@ -425,7 +425,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a383d156", new Object[]{this, bArr, str, str2});
-        } else if (!isAttached() || bArr == null || bArr.length <= 0 || TextUtils.isEmpty(str)) {
+        } else if (!isAttached() || bArr == null || bArr.length <= 0 || StringUtils.isEmpty(str)) {
         } else {
             nativeExecuteByteCodeInCurrentThread(this.mNativeInstancePtr.longValue(), bArr, str, str2);
         }
@@ -435,7 +435,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("709b180e", new Object[]{this, str, jSParamArr});
-        } else if (!isAttached() || TextUtils.isEmpty(str) || jSParamArr == null) {
+        } else if (!isAttached() || StringUtils.isEmpty(str) || jSParamArr == null) {
         } else {
             nativeInvokeJSMethodInMainContext(this.mNativeInstancePtr.longValue(), str, jSParamArr);
         }
@@ -445,7 +445,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1c1f5048", new Object[]{this, str, jSParamArr});
-        } else if (!isAttached() || TextUtils.isEmpty(str) || jSParamArr == null) {
+        } else if (!isAttached() || StringUtils.isEmpty(str) || jSParamArr == null) {
         } else {
             nativeInvokeJSMethodInAppContext(this.mNativeInstancePtr.longValue(), str, jSParamArr);
         }
@@ -455,7 +455,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("361bb065", new Object[]{this, str, jSONObject, new Boolean(z)});
-        } else if (!isAttached() || TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (!isAttached() || StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             try {
                 nativeFireGlobalEventInMainContext(this.mNativeInstancePtr.longValue(), str, jSONObject.toString(), z);
@@ -471,7 +471,7 @@ public class JNIBridge {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f43d3ac", new Object[]{this, str})).booleanValue();
         }
-        if (isAttached() && !TextUtils.isEmpty(str)) {
+        if (isAttached() && !StringUtils.isEmpty(str)) {
             try {
                 return nativeHasRegisterGlobalEventInMainContext(this.mNativeInstancePtr.longValue(), str);
             } catch (Throwable th) {
@@ -496,7 +496,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1ccf82b", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject.parse(str);
@@ -525,7 +525,7 @@ public class JNIBridge {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("33627422", new Object[]{this, str, new Long(j)});
-        } else if (this.mAPIDispatcher == null || TextUtils.isEmpty(str)) {
+        } else if (this.mAPIDispatcher == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 Long.toString(j);
@@ -570,7 +570,7 @@ public class JNIBridge {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6dae9b63", new Object[]{this, str});
         }
-        if (this.mAPIDispatcher == null || TextUtils.isEmpty(str)) {
+        if (this.mAPIDispatcher == null || StringUtils.isEmpty(str)) {
             return "";
         }
         try {

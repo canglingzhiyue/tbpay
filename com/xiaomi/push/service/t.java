@@ -1,6 +1,6 @@
 package com.xiaomi.push.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ic;
 import com.xiaomi.push.ip;
 import com.xiaomi.push.iy;
@@ -56,7 +56,7 @@ class t extends XMPushService.j {
             jb next = it.next();
             next.a("uploadWay", "longXMPushService");
             iy a4 = ai.a(this.f1026a, a2, next, ic.Notification);
-            if (!TextUtils.isEmpty(this.b) && !TextUtils.equals(this.f1026a, this.b)) {
+            if (!StringUtils.isEmpty(this.b) && !StringUtils.equals(this.f1026a, this.b)) {
                 if (a4.m2102a() == null) {
                     ip ipVar = new ip();
                     ipVar.a("-1");

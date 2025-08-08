@@ -3,7 +3,7 @@ package com.taobao.android.layoutmanager.adapter.impl;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.NetworkEvent;
 import anetwork.channel.aidl.ParcelableInputStream;
 import anetwork.channel.degrade.DegradableNetwork;
@@ -36,7 +36,7 @@ public class q extends com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.i
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d3ea9365", new Object[]{this, str, new Boolean(z), aVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             aVar.a("download url is empty!");
         } else {
             DegradableNetwork degradableNetwork = new DegradableNetwork(ab.a());

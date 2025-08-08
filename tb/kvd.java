@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -51,7 +51,7 @@ public class kvd extends h {
                 String str2 = (String) objArr[1];
                 String str3 = (String) objArr[2];
                 ksp.c("DXHSetReqBizParamEventHandler", "handleEvent containerId : " + str + ",key : " + str2 + ",value : " + str3);
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                     c.a(str, str2, str3);
                 }
             } catch (Throwable th) {

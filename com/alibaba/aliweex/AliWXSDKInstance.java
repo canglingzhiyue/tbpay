@@ -1,7 +1,7 @@
 package com.alibaba.aliweex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.aliweex.bundle.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -121,7 +121,7 @@ public class AliWXSDKInstance extends WXSDKInstance implements EmbedManager {
             return;
         }
         e l = d.a().l();
-        if (l == null || !TextUtils.equals(l.getConfig(this.v, "reset_mtop_pagename_and_pageurl", "true"), "true")) {
+        if (l == null || !StringUtils.equals(l.getConfig(this.v, "reset_mtop_pagename_and_pageurl", "true"), "true")) {
             return;
         }
         a.c("PageName", "");
@@ -170,7 +170,7 @@ public class AliWXSDKInstance extends WXSDKInstance implements EmbedManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c83a756e", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str) || obj == null) {
+        } else if (StringUtils.isEmpty(str) || obj == null) {
         } else {
             this.x.put(str, obj);
         }
@@ -180,7 +180,7 @@ public class AliWXSDKInstance extends WXSDKInstance implements EmbedManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("67551f7d", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.x.remove(str);
         }
@@ -198,7 +198,7 @@ public class AliWXSDKInstance extends WXSDKInstance implements EmbedManager {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("91ec6527", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (map = this.x) == null) {
+        if (StringUtils.isEmpty(str) || (map = this.x) == null) {
             return null;
         }
         return map.get(str);

@@ -3,7 +3,7 @@ package com.taobao.tbhudong;
 import android.content.Context;
 import android.os.Environment;
 import android.os.StatFs;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -62,7 +62,7 @@ public class StorageMonitor {
                 }
                 String str = a2.get("innerTotalUsedSize");
                 long j = 0;
-                long parseLong = (!TextUtils.isEmpty(str) ? Long.parseLong(str) : 0L) + 0;
+                long parseLong = (!StringUtils.isEmpty(str) ? Long.parseLong(str) : 0L) + 0;
                 qif.a("StorageMonitor.trackJson.innerTrackMap === %s", a2.toString());
                 HashMap hashMap = new HashMap(a2);
                 if (a()) {
@@ -71,7 +71,7 @@ public class StorageMonitor {
                         return;
                     }
                     String str2 = a3.get("externalCacheTotalUsedSize");
-                    long parseLong2 = parseLong + (!TextUtils.isEmpty(str2) ? Long.parseLong(str2) : 0L);
+                    long parseLong2 = parseLong + (!StringUtils.isEmpty(str2) ? Long.parseLong(str2) : 0L);
                     qif.a("StorageMonitor.trackJson.externalCacheTrackMap === %s", a3.toString());
                     hashMap.putAll(a3);
                     Map<String, String> a4 = a(context, context.getExternalFilesDir(null), "externalFiles", "/ExternalFilesDir");
@@ -79,7 +79,7 @@ public class StorageMonitor {
                         return;
                     }
                     String str3 = a4.get("externalFilesTotalUsedSize");
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         j = Long.parseLong(str3);
                     }
                     parseLong = parseLong2 + j;
@@ -303,7 +303,7 @@ public class StorageMonitor {
         if (file2 != null && file2.exists()) {
             str2 = file2.getAbsolutePath();
         }
-        if (TextUtils.isEmpty(absolutePath) || TextUtils.isEmpty(str2) || !absolutePath.startsWith(str2)) {
+        if (StringUtils.isEmpty(absolutePath) || StringUtils.isEmpty(str2) || !absolutePath.startsWith(str2)) {
             return absolutePath;
         }
         return str + absolutePath.substring(str2.length());

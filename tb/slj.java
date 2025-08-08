@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -393,7 +393,7 @@ public class slj implements slh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2bb0ec57", new Object[]{this, aVar, str});
-        } else if (aVar == null || aVar.c() || TextUtils.isEmpty(str)) {
+        } else if (aVar == null || aVar.c() || StringUtils.isEmpty(str)) {
         } else {
             int i = 0;
             while (true) {
@@ -579,7 +579,7 @@ public class slj implements slh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d59e7615", new Object[]{this, str});
-        } else if (this.c.size() <= 0 || TextUtils.isEmpty(str)) {
+        } else if (this.c.size() <= 0 || StringUtils.isEmpty(str)) {
         } else {
             Iterator<a> it = this.c.iterator();
             while (it.hasNext()) {

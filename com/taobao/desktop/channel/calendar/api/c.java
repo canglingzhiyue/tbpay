@@ -1,7 +1,7 @@
 package com.taobao.desktop.channel.calendar.api;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.desktop.channel.calendar.CalendarInsertData;
 import com.taobao.runtimepermission.f;
@@ -79,7 +79,7 @@ public class c {
         } catch (Throwable th) {
             khu.a("CalendarServiceProtocol addCalendarEvent error: " + th.getMessage());
         }
-        return TextUtils.isEmpty(a2);
+        return StringUtils.isEmpty(a2);
     }
 
     public static boolean a(Context context, String str, long j, long j2) {
@@ -109,6 +109,6 @@ public class c {
         } catch (Exception e) {
             khu.a("CalendarServiceProtocol delCalendarEvent error: " + e.getMessage());
         }
-        return TextUtils.isEmpty(b);
+        return StringUtils.isEmpty(b);
     }
 }

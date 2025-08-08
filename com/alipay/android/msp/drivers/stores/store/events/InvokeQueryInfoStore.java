@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -39,7 +39,7 @@ public class InvokeQueryInfoStore extends LocalEventStore {
         JSONObject jSONObject = new JSONObject();
         JSONObject actionParamsJson = mspEvent.getActionParamsJson();
         String string = actionParamsJson.getString("queryKey");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             char c = 65535;
             switch (string.hashCode()) {
                 case -909043551:
@@ -80,7 +80,7 @@ public class InvokeQueryInfoStore extends LocalEventStore {
                         String string2 = actionParamsJson.getString(OConstant.DIMEN_CONFIG_KEY);
                         boolean isDegrade = DrmManager.getInstance(this.d).isDegrade(string2, false, this.d);
                         jSONObject.put(string, (Object) Boolean.valueOf(isDegrade));
-                        if (TextUtils.isEmpty(string2) && this.f != null) {
+                        if (StringUtils.isEmpty(string2) && this.f != null) {
                             stEvent = this.f;
                             str2 = "queryInfo|" + string2 + "=" + isDegrade;
                         }
@@ -92,7 +92,7 @@ public class InvokeQueryInfoStore extends LocalEventStore {
                             jSONObject.put("value", (Object) jSONObject2);
                         } catch (Throwable unused) {
                         }
-                        if (!TextUtils.isEmpty(string3) && this.f != null) {
+                        if (!StringUtils.isEmpty(string3) && this.f != null) {
                             if (jSONObject2 != null) {
                                 this.f.onStatistic("action", "queryInfo|" + string3 + "=" + Utils.truncateString(jSONObject2.toJSONString(), 30));
                             } else {

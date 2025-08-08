@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -137,7 +137,7 @@ public abstract class e<T extends com.taobao.android.detail.ttdetail.skeleton.de
         if (dVar == null) {
             dVar = new d.a().a();
         }
-        if (detailImageView == null || TextUtils.isEmpty(str)) {
+        if (detailImageView == null || StringUtils.isEmpty(str)) {
             return;
         }
         com.taobao.android.detail.ttdetail.widget.desc.image.d dVar2 = null;

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.bhc;
 
@@ -98,7 +98,7 @@ public class bhd extends bhc<Fragment> {
             } else if (this.f25896a == null || !(this.f25896a instanceof Activity)) {
                 throw new IllegalArgumentException("context can not be null and must be activity context!");
             } else {
-                if (this.b != null && !TextUtils.isEmpty(this.b)) {
+                if (this.b != null && !StringUtils.isEmpty(this.b)) {
                     return;
                 }
                 throw new IllegalArgumentException("className can not be null");

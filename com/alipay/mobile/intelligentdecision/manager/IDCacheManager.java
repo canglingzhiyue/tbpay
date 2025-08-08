@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.ConcurrentHashMap;
@@ -58,7 +58,7 @@ public class IDCacheManager {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (lruCache = this.f) == null) {
+        if (StringUtils.isEmpty(str) || (lruCache = this.f) == null) {
             return null;
         }
         return lruCache.get(str);

@@ -2,7 +2,7 @@ package com.etao.feimagesearch.pipline.node;
 
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.bean.ImageRule;
@@ -82,7 +82,7 @@ public final class d extends crj {
             d();
             com.etao.feimagesearch.newresult.perf.a.a(Long.valueOf(SystemClock.elapsedRealtime() - b()));
             return a(c);
-        } else if (pipLineDS.a() == null || TextUtils.isEmpty(String.valueOf(pipLineDS.a()))) {
+        } else if (pipLineDS.a() == null || StringUtils.isEmpty(String.valueOf(pipLineDS.a()))) {
             a(-2, "无图片资源");
             return a(-2, "无图片资源", this.f6943a);
         } else {

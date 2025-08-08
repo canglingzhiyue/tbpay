@@ -2,7 +2,7 @@ package com.taobao.tao.shop;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.tao.shop.fetcher.adapter.b;
@@ -30,7 +30,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a25e61d3", new Object[]{application, str, new Integer(i), collection});
-        } else if (f21073a || application == null || TextUtils.isEmpty(str) || i < 0) {
+        } else if (f21073a || application == null || StringUtils.isEmpty(str) || i < 0) {
             ouu.c("ShopRule init error");
         } else {
             b = application;

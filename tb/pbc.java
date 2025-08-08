@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aa;
 
@@ -20,6 +20,6 @@ public class pbc implements cha {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String T = aa.T();
-        return TextUtils.isEmpty(T) ? "https://h5.m.taobao.com/taolive/main.html" : T;
+        return StringUtils.isEmpty(T) ? "https://h5.m.taobao.com/taolive/main.html" : T;
     }
 }

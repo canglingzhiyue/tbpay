@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.dns;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -196,7 +196,7 @@ public class DnsManager {
         if (!MspSwitchUtil.isDnsEnabled()) {
             LogUtil.record(2, "", "CashierDns::needUpdate", "dns switch disabled, don't need update dns");
             return false;
-        } else if (TextUtils.isEmpty(DnsCache.getTradeNo())) {
+        } else if (StringUtils.isEmpty(DnsCache.getTradeNo())) {
             LogUtil.record(2, "", "DnsManager::needUpdate", "tradeNo is empty, don't update dns");
             return false;
         } else {

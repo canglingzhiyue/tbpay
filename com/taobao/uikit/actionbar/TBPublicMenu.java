@@ -10,7 +10,7 @@ import android.support.v7.view.menu.g;
 import android.taobao.mulitenv.EnvironmentSwitcher;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -304,7 +304,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
             }
             if (!pageInfoBundle.isEmpty()) {
                 String assembledUrl = getAssembledUrl(extraMenuById.getNavUrl());
-                if (TextUtils.isEmpty(assembledUrl)) {
+                if (StringUtils.isEmpty(assembledUrl)) {
                     MenuMonitor.countFailed("nav_failed", "feedback_url_is_empty");
                     return true;
                 }
@@ -313,7 +313,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                     if (bundle != null && bundle.getBundle(hyt.ZZB_BUNDLE_KEY) != null) {
                         str2 = bundle.getBundle(hyt.ZZB_BUNDLE_KEY).getString("_f");
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         if (assembledUrl.contains("?")) {
                             assembledUrl = assembledUrl + "&_f=" + URLEncoder.encode(str2, "utf-8");
                         } else {
@@ -588,7 +588,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                                     return;
                                 }
                                 String access$5002 = TBPublicMenu.access$500(TBPublicMenu.this, publicMenu4.getNavUrl());
-                                if (TextUtils.isEmpty(access$5002)) {
+                                if (StringUtils.isEmpty(access$5002)) {
                                     return;
                                 }
                                 try {
@@ -596,7 +596,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                                     if (bundle != null && bundle.getBundle(hyt.ZZB_BUNDLE_KEY) != null) {
                                         str = bundle.getBundle(hyt.ZZB_BUNDLE_KEY).getString("_f");
                                     }
-                                    if (!TextUtils.isEmpty(str)) {
+                                    if (!StringUtils.isEmpty(str)) {
                                         if (access$5002.contains("?")) {
                                             sb2 = new StringBuilder(access$5002);
                                             sb2.append("&_f=");
@@ -697,12 +697,12 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                                     TBPublicMenu.access$700().onPublicMenuItemClicked(tBPublicMenuItem);
                                 }
                                 for (int i = 0; i < TBPublicMenu.access$800(TBPublicMenu.this).size(); i++) {
-                                    if (TBPublicMenu.access$800(TBPublicMenu.this).get(i) != null && id == ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getItemId() && TextUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getTitle()) && !((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).a()) {
+                                    if (TBPublicMenu.access$800(TBPublicMenu.this).get(i) != null && id == ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getItemId() && StringUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getTitle()) && !((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).a()) {
                                         activity.onOptionsItemSelected((MenuItem) TBPublicMenu.access$800(TBPublicMenu.this).get(i));
                                     }
                                 }
                                 for (int i2 = 0; i2 < TBPublicMenu.access$900(TBPublicMenu.this).size(); i2++) {
-                                    if (TBPublicMenu.access$900(TBPublicMenu.this).get(i2) != null && id == ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getItemId() && TextUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getTitle())) {
+                                    if (TBPublicMenu.access$900(TBPublicMenu.this).get(i2) != null && id == ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getItemId() && StringUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getTitle())) {
                                         if (!((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).a()) {
                                             activity.onOptionsItemSelected((MenuItem) TBPublicMenu.access$900(TBPublicMenu.this).get(i2));
                                         }
@@ -782,12 +782,12 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                         TBPublicMenu.access$700().onPublicMenuItemClicked(tBPublicMenuItem);
                     }
                     for (int i = 0; i < TBPublicMenu.access$800(TBPublicMenu.this).size(); i++) {
-                        if (TBPublicMenu.access$800(TBPublicMenu.this).get(i) != null && id == ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getItemId() && TextUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getTitle()) && !((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).a()) {
+                        if (TBPublicMenu.access$800(TBPublicMenu.this).get(i) != null && id == ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getItemId() && StringUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).getTitle()) && !((g) TBPublicMenu.access$800(TBPublicMenu.this).get(i)).a()) {
                             activity.onOptionsItemSelected((MenuItem) TBPublicMenu.access$800(TBPublicMenu.this).get(i));
                         }
                     }
                     for (int i2 = 0; i2 < TBPublicMenu.access$900(TBPublicMenu.this).size(); i2++) {
-                        if (TBPublicMenu.access$900(TBPublicMenu.this).get(i2) != null && id == ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getItemId() && TextUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getTitle())) {
+                        if (TBPublicMenu.access$900(TBPublicMenu.this).get(i2) != null && id == ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getItemId() && StringUtils.equals(tBPublicMenuItem.getTitle(), ((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).getTitle())) {
                             if (((g) TBPublicMenu.access$900(TBPublicMenu.this).get(i2)).a()) {
                                 return;
                             }
@@ -1025,7 +1025,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                         });
                         this.mMenuItems.add(gVar);
                     } else {
-                        if (MenuItemCompat.getActionProvider(gVar) == null && gVar.getActionView() == null && gVar.getIcon() == null && !TextUtils.isEmpty(gVar.getTitle())) {
+                        if (MenuItemCompat.getActionProvider(gVar) == null && gVar.getActionView() == null && gVar.getIcon() == null && !StringUtils.isEmpty(gVar.getTitle())) {
                             TBActionView tBActionView2 = new TBActionView(activity);
                             tBActionView2.setTitle(charSequence);
                             tBActionView2.setIconColor(this.mMenuIconColor);
@@ -1054,7 +1054,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                     TBPublicMenuItem.Builder builder3 = new TBPublicMenuItem.Builder();
                     builder3.setId(gVar.getItemId()).setTitle(gVar.getTitle().toString()).setIcon(gVar.getIcon());
                     this.mExtraMenus.add(builder3.build());
-                    if (!TextUtils.isEmpty(gVar.getTitle().toString()) && gVar.getTitle().toString().contains(b.a(R.string.app_share))) {
+                    if (!StringUtils.isEmpty(gVar.getTitle().toString()) && gVar.getTitle().toString().contains(b.a(R.string.app_share))) {
                         gVar.setTitle("ꄪ:" + b.a(R.string.app_share));
                         builder3.setTitle("ꄪ:" + b.a(R.string.app_share));
                     }
@@ -1423,7 +1423,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                 }
                 if (!pageInfoBundle.isEmpty()) {
                     String assembledUrl = getAssembledUrl(publicMenu4.getNavUrl());
-                    if (TextUtils.isEmpty(assembledUrl)) {
+                    if (StringUtils.isEmpty(assembledUrl)) {
                         return;
                     }
                     String str2 = null;
@@ -1432,7 +1432,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                         if (bundle != null && bundle.getBundle(hyt.ZZB_BUNDLE_KEY) != null) {
                             str2 = bundle.getBundle(hyt.ZZB_BUNDLE_KEY).getString("_f");
                         }
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             assembledUrl = assembledUrl.indexOf("?") != -1 ? assembledUrl + "&_f=" + URLEncoder.encode(str2, "utf-8") : assembledUrl + "?_f=" + URLEncoder.encode(str2, "utf-8");
                         }
                         Intent intent = activity.getIntent();
@@ -1487,7 +1487,7 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
             } else {
                 ArrayList<TBPublicMenuItem> arrayList = this.mExtensionMenu;
                 if (arrayList != null && arrayList.contains(tBPublicMenuItem)) {
-                    if (TextUtils.isEmpty(tBPublicMenuItem.getNavUrl())) {
+                    if (StringUtils.isEmpty(tBPublicMenuItem.getNavUrl())) {
                         return;
                     }
                     Nav.from(activity).toUri(tBPublicMenuItem.getNavUrl());
@@ -1499,12 +1499,12 @@ public class TBPublicMenu implements MenuItem.OnMenuItemClickListener, LoginCall
                     tBOnPublicMenuClickListener6.onPublicMenuItemClicked(tBPublicMenuItem);
                 }
                 for (int i = 0; i < this.mMenuItems.size(); i++) {
-                    if (this.mMenuItems.get(i) != null && id == this.mMenuItems.get(i).getItemId() && TextUtils.equals(tBPublicMenuItem.getTitle(), this.mMenuItems.get(i).getTitle()) && !this.mMenuItems.get(i).a()) {
+                    if (this.mMenuItems.get(i) != null && id == this.mMenuItems.get(i).getItemId() && StringUtils.equals(tBPublicMenuItem.getTitle(), this.mMenuItems.get(i).getTitle()) && !this.mMenuItems.get(i).a()) {
                         activity.onOptionsItemSelected(this.mMenuItems.get(i));
                     }
                 }
                 for (int i2 = 0; i2 < this.mFilteredMenus.size(); i2++) {
-                    if (this.mFilteredMenus.get(i2) != null && id == this.mFilteredMenus.get(i2).getItemId() && TextUtils.equals(tBPublicMenuItem.getTitle(), this.mFilteredMenus.get(i2).getTitle())) {
+                    if (this.mFilteredMenus.get(i2) != null && id == this.mFilteredMenus.get(i2).getItemId() && StringUtils.equals(tBPublicMenuItem.getTitle(), this.mFilteredMenus.get(i2).getTitle())) {
                         if (this.mFilteredMenus.get(i2).a()) {
                             return;
                         }

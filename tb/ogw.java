@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.ImageLoader;
 import com.taobao.tao.flexbox.layoutmanager.core.aa;
@@ -67,7 +67,7 @@ public class ogw {
         }
         final Context context = l;
         if (obj instanceof String) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 String str3 = (String) obj;
                 if (rect == null) {
                     z3 = false;
@@ -76,7 +76,7 @@ public class ogw {
             } else {
                 str2 = str;
             }
-            if (str2 != null && str2.startsWith(BASE64_TAG) && !TextUtils.equals(aVar.d, "apng")) {
+            if (str2 != null && str2.startsWith(BASE64_TAG) && !StringUtils.equals(aVar.d, "apng")) {
                 Bitmap a2 = ohd.a(str2);
                 b(aVar2, obj, a2 != null ? b(context, aVar, new BitmapDrawable(context.getResources(), a2), rect, i, i2) : null, 0);
                 return null;
@@ -142,7 +142,7 @@ public class ogw {
             return (Drawable) ipChange.ipc$dispatch("593af3c8", new Object[]{context, aVar, drawable, rect, new Integer(i), new Integer(i2)});
         }
         if (drawable instanceof oee) {
-            if (aVar != null && TextUtils.equals(aVar.d, "png")) {
+            if (aVar != null && StringUtils.equals(aVar.d, "png")) {
                 ((oee) drawable).b();
             } else {
                 ((oee) drawable).a();

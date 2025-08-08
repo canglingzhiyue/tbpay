@@ -3,7 +3,7 @@ package com.taobao.android.sns4android;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.base.helper.BroadCastHelper;
@@ -107,12 +107,12 @@ public class c {
 
     public static boolean b(SNSPlatform sNSPlatform) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b73ec240", new Object[]{sNSPlatform})).booleanValue() : TextUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_FACEBOOK.getPlatform());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b73ec240", new Object[]{sNSPlatform})).booleanValue() : StringUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_FACEBOOK.getPlatform());
     }
 
     public static boolean c(SNSPlatform sNSPlatform) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b6c85c41", new Object[]{sNSPlatform})).booleanValue() : TextUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_GOOGLE.getPlatform());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b6c85c41", new Object[]{sNSPlatform})).booleanValue() : StringUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_GOOGLE.getPlatform());
     }
 
     public static void a(SNSPlatform sNSPlatform, Activity activity) {
@@ -211,7 +211,7 @@ public class c {
             if (activity != null) {
                 ((SNSService) ServiceFactory.getService(SNSService.class)).showLoading(activity);
             }
-            String str = TextUtils.isEmpty(sNSSignInAccount.utPageName) ? UTConstant.PageName.UT_PAGE_EXTEND : sNSSignInAccount.utPageName;
+            String str = StringUtils.isEmpty(sNSSignInAccount.utPageName) ? UTConstant.PageName.UT_PAGE_EXTEND : sNSSignInAccount.utPageName;
             if (sNSSignInAccount != null) {
                 Properties properties = LoginComponent.getProperties();
                 UserTrackAdapter.sendUT(str, "snsAuthCode_success", "", b.a(sNSSignInAccount.snsType), properties);
@@ -252,7 +252,7 @@ public class c {
                 ((SNSService) ServiceFactory.getService(SNSService.class)).dismissLoading(activity);
             }
             try {
-                final String str = TextUtils.isEmpty(sNSSignInAccount.utPageName) ? UTConstant.PageName.UT_PAGE_EXTEND : sNSSignInAccount.utPageName;
+                final String str = StringUtils.isEmpty(sNSSignInAccount.utPageName) ? UTConstant.PageName.UT_PAGE_EXTEND : sNSSignInAccount.utPageName;
                 b.b(sNSSignInAccount.snsType);
                 if (rpcResponse == null) {
                     c.a(rpcResponse, str, "Other");
@@ -266,7 +266,7 @@ public class c {
                 }
                 String str2 = rpcResponse.actionType;
                 String str3 = rpcResponse.message;
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = ResourceUtil.getNetworkError();
                 }
                 if ("SUCCESS".equals(str2) && rpcResponse.returnValue != null) {
@@ -348,10 +348,10 @@ public class c {
                             } else if (map != null) {
                                 UserTrackAdapter.sendUT(str5, UTConstant.CustomEvent.UT_SINGLE_LOGIN_SUCCESS, "", b.a(sNSSignInAccount.snsType), LoginComponent.getProperties());
                                 String str6 = map.get(UccConstants.PARAM_LOGIN_DATA);
-                                if (!TextUtils.isEmpty(str6)) {
+                                if (!StringUtils.isEmpty(str6)) {
                                     HashMap hashMap = new HashMap();
                                     LoginTLogAdapter.e(LoginThreadHelper.TAG, "loginType=" + urlParam2.loginType);
-                                    if (!TextUtils.isEmpty(urlParam2.loginType)) {
+                                    if (!StringUtils.isEmpty(urlParam2.loginType)) {
                                         hashMap.put(LoginConstants.LOGIN_TYPE, urlParam2.loginType);
                                     }
                                     LoginDataHelper.processLoginReturnData(true, (LoginReturnData) JSON.parseObject(str6, LoginReturnData.class), hashMap);
@@ -434,7 +434,7 @@ public class c {
                 return;
             }
             Properties properties = LoginComponent.getProperties();
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = UTConstant.PageName.UT_PAGE_EXTEND;
             }
             UserTrackAdapter.sendUT(str2, "snsAuthCode_cancel", "", b.a(str), properties);
@@ -449,7 +449,7 @@ public class c {
                 return;
             }
             Properties properties = LoginComponent.getProperties();
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = UTConstant.PageName.UT_PAGE_EXTEND;
             }
             UserTrackAdapter.sendUT(str3, "snsAuthCode_failure", i + "", b.a(str), properties);
@@ -473,11 +473,11 @@ public class c {
 
     private static boolean a(SNSPlatform sNSPlatform) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b7b5283f", new Object[]{sNSPlatform})).booleanValue() : TextUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_ALIPAY.getPlatform());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b7b5283f", new Object[]{sNSPlatform})).booleanValue() : StringUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_ALIPAY.getPlatform());
     }
 
     private static boolean d(SNSPlatform sNSPlatform) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b651f642", new Object[]{sNSPlatform})).booleanValue() : TextUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_ALIPAYHK.getPlatform());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b651f642", new Object[]{sNSPlatform})).booleanValue() : StringUtils.equals(sNSPlatform.getPlatform(), SNSPlatform.PLATFORM_ALIPAYHK.getPlatform());
     }
 }

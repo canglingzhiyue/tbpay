@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.res.Configuration;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -711,7 +711,7 @@ public class fmd implements j<fir> {
         if (ipChange instanceof IpChange) {
             return (com.taobao.android.detail2.core.framework.data.model.d) ipChange.ipc$dispatch("d0e39419", new Object[]{this, str});
         }
-        if (this.e != null && !TextUtils.isEmpty(str)) {
+        if (this.e != null && !StringUtils.isEmpty(str)) {
             return this.e.c(str);
         }
         return null;
@@ -766,7 +766,7 @@ public class fmd implements j<fir> {
         }
         String string = jSONObject.getString("type");
         boolean booleanValue = jSONObject.getBooleanValue("currentInclude");
-        boolean equals = TextUtils.equals("pre", string);
+        boolean equals = StringUtils.equals("pre", string);
         if (equals) {
             i2 = booleanValue ? (i - intValue) + 1 : i - intValue;
             if (!booleanValue) {

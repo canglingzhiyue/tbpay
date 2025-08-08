@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.view.tabbar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import com.alibaba.ability.impl.user.UserAbility;
@@ -185,7 +185,7 @@ public class a {
             Iterator<Map.Entry<String, Object>> it = jSONObject.entrySet().iterator();
             while (it.hasNext()) {
                 Object value = it.next().getValue();
-                if (value == null || ((value instanceof String) && TextUtils.isEmpty((CharSequence) value))) {
+                if (value == null || ((value instanceof String) && StringUtils.isEmpty((CharSequence) value))) {
                     it.remove();
                 }
             }
@@ -482,7 +482,7 @@ public class a {
         ab.h.a aVar2 = new ab.h.a(this.f20553a);
         aVar2.a(this.e);
         aVar2.b(this.k);
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             aVar2.d(this.j);
         }
         aVar2.a(this.h);

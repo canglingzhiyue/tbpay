@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.view.View;
 import com.airbnb.lottie.e;
@@ -26,7 +26,7 @@ public class ahy {
     private final Map<String, i> e;
 
     public ahy(Drawable.Callback callback, String str, e eVar, Map<String, i> map) {
-        if (!TextUtils.isEmpty(str) && str.charAt(str.length() - 1) != '/') {
+        if (!StringUtils.isEmpty(str) && str.charAt(str.length() - 1) != '/') {
             str = str + fxb.DIR;
         }
         this.c = str;
@@ -78,7 +78,7 @@ public class ahy {
                 akh.b("data URL did not have correct base64 format.", e2);
                 return null;
             }
-        } else if (TextUtils.isEmpty(this.c)) {
+        } else if (StringUtils.isEmpty(this.c)) {
             akh.c("You must set an images folder before loading an image. Set it with LottieComposition#setImagesFolder or LottieDrawable#setImagesFolder");
             return null;
         } else {

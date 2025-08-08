@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.GravityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -38,7 +38,7 @@ public class thw implements a {
                 return;
             }
             thw.a(thw.this).i();
-            if (!TextUtils.equals("editTvTag", String.valueOf(view.getTag()))) {
+            if (!StringUtils.equals("editTvTag", String.valueOf(view.getTag()))) {
                 g.a("PanelBaseViewProvider", "onClose click:");
                 thw.c(thw.this);
             } else if (thw.b(thw.this)) {

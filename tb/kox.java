@@ -3,7 +3,7 @@ package tb;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -46,7 +46,7 @@ public class kox {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : b.e() && !TextUtils.isEmpty(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : b.e() && !StringUtils.isEmpty(str);
     }
 
     /* JADX WARN: Type inference failed for: r12v1 */
@@ -243,11 +243,11 @@ public class kox {
                     } else if (mtopResponse == null || mtopResponse.getDataJsonObject() == null) {
                     } else {
                         RelatedCollectionResult relatedCollectionResult = (RelatedCollectionResult) JSON.toJavaObject((JSONObject) JSONObject.parse(mtopResponse.getDataJsonObject().toString()), RelatedCollectionResult.class);
-                        if (TextUtils.equals(str, "type")) {
+                        if (StringUtils.equals(str, "type")) {
                             aVar.b(relatedCollectionResult);
                             aVar.b(true);
                         }
-                        if (TextUtils.equals(str, "content")) {
+                        if (StringUtils.equals(str, "content")) {
                             aVar.a(relatedCollectionResult);
                             aVar.a(true);
                         }

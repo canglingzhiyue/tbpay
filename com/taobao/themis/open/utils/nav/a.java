@@ -3,7 +3,7 @@ package com.taobao.themis.open.utils.nav;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.Metadata;
@@ -49,10 +49,10 @@ public final class a {
         if (task.b() != null) {
             intent.putExtra("navOptions", task.b());
         }
-        if (!TextUtils.isEmpty(task.e())) {
+        if (!StringUtils.isEmpty(task.e())) {
             intent.putExtra("navUri", task.e());
         }
-        if (!TextUtils.isEmpty(task.c())) {
+        if (!StringUtils.isEmpty(task.c())) {
             intent.putExtra("navCategory", task.c());
         }
         if (task.d() != -1) {

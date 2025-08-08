@@ -1,7 +1,7 @@
 package com.taobao.android.litecreator.base.workflow;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.data.IUGCMedia;
 import com.taobao.android.litecreator.base.data.UGCImage;
@@ -93,7 +93,7 @@ public class e {
             return (String) ipChange.ipc$dispatch("99a65cfa", new Object[]{iUGCMedia});
         }
         String str = (iUGCMedia == null || iUGCMedia.getBiz() == null) ? "" : iUGCMedia.getBiz().bizLine;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String str2 = b;
@@ -107,7 +107,7 @@ public class e {
             return (String) ipChange.ipc$dispatch("b4175619", new Object[]{iUGCMedia});
         }
         String str = (iUGCMedia == null || iUGCMedia.getBiz() == null) ? "" : iUGCMedia.getBiz().bizScene;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String str2 = b;
@@ -215,7 +215,7 @@ public class e {
             return ((Boolean) ipChange.ipc$dispatch("a382c15c", new Object[]{context})).booleanValue();
         }
         EditorInfo f = f(context);
-        return (f == null || f.resource == null || f.resource.type == null || (!TextUtils.equals(f.resource.type, Resource.TYPE_DEFAULT_MULTI) && !TextUtils.equals(f.resource.type, Resource.TYPE_RECORD_MULTI))) ? false : true;
+        return (f == null || f.resource == null || f.resource.type == null || (!StringUtils.equals(f.resource.type, Resource.TYPE_DEFAULT_MULTI) && !StringUtils.equals(f.resource.type, Resource.TYPE_RECORD_MULTI))) ? false : true;
     }
 
     public static boolean j(Context context) {
@@ -228,10 +228,10 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        return TextUtils.equals(str, "template") || TextUtils.equals(str, Resource.TYPE_TEMPLATE_TIMELINE) || TextUtils.equals(str, Resource.TYPE_TEMPLATE_ALBUM_AI_EDIT) || TextUtils.equals(str, Resource.TYPE_TEMPLATE_IN_MULTI);
+        return StringUtils.equals(str, "template") || StringUtils.equals(str, Resource.TYPE_TEMPLATE_TIMELINE) || StringUtils.equals(str, Resource.TYPE_TEMPLATE_ALBUM_AI_EDIT) || StringUtils.equals(str, Resource.TYPE_TEMPLATE_IN_MULTI);
     }
 
     public static boolean b(String str) {
@@ -239,8 +239,8 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
-            return TextUtils.equals(str, Resource.TYPE_TEMPLATE_IMG);
+        if (!StringUtils.isEmpty(str)) {
+            return StringUtils.equals(str, Resource.TYPE_TEMPLATE_IMG);
         }
         return false;
     }
@@ -259,7 +259,7 @@ public class e {
             return false;
         }
         String b2 = b((a) context);
-        if (TextUtils.equals(b2, c) || TextUtils.equals(b2, e) || TextUtils.equals(e(context), Resource.TYPE_TEMPLATE_LITE)) {
+        if (StringUtils.equals(b2, c) || StringUtils.equals(b2, e) || StringUtils.equals(e(context), Resource.TYPE_TEMPLATE_LITE)) {
             return false;
         }
         ios.a b3 = b(context);

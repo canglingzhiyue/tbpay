@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.dx.hanlerimpl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -104,7 +104,7 @@ public class ExpansionRPGetter {
                     } else if ((netBaseOutDo instanceof ExpansionRPResponse) && netBaseOutDo.mo1437getData() != null) {
                         final ExpansionRPData mo1437getData = ((ExpansionRPResponse) netBaseOutDo).mo1437getData();
                         his.b("ExpandAwardGetter", "getExpansionRP | success. msg=" + mo1437getData.msgInfo + " result=" + mo1437getData.result);
-                        if (!TextUtils.isEmpty(mo1437getData.msgInfo)) {
+                        if (!StringUtils.isEmpty(mo1437getData.msgInfo)) {
                             hix.a(cVar.f(), mo1437getData.msgInfo);
                         }
                         if (mo1437getData.expansionRedPacketList != null) {
@@ -226,8 +226,8 @@ public class ExpansionRPGetter {
         if (jSONObject != null && jSONObject2 != null) {
             String string = jSONObject.getString("acceleratorCode");
             String string2 = jSONObject2.getString("acceleratorCode");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
-                return TextUtils.equals(string, string2);
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
+                return StringUtils.equals(string, string2);
             }
         }
         return false;

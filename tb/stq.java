@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.eventchain.l;
@@ -58,10 +58,10 @@ public class stq extends dlg<l> {
                         IPopData<PopSectionModel> a4 = e.a(obj);
                         if (a4 == null) {
                             c.a("HShowPopAbility", "pop data invalid");
-                        } else if (!TextUtils.equals(a4.getBusinessID(), businessID)) {
+                        } else if (!StringUtils.equals(a4.getBusinessID(), businessID)) {
                         } else {
                             c.a("HShowPopAbility", "receive message: " + str);
-                            if (!TextUtils.equals(str, "sourceCallback") || jSONObject == null) {
+                            if (!StringUtils.equals(str, "sourceCallback") || jSONObject == null) {
                                 if (!g.a(str)) {
                                     return;
                                 }
@@ -70,7 +70,7 @@ public class stq extends dlg<l> {
                                 return;
                             }
                             String string = jSONObject.getString("sourceMethod");
-                            if (TextUtils.isEmpty(string)) {
+                            if (StringUtils.isEmpty(string)) {
                                 return;
                             }
                             dllVar.callback(string, new dla());

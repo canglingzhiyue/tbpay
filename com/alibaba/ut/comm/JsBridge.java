@@ -1,7 +1,7 @@
 package com.alibaba.ut.comm;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
@@ -73,7 +73,7 @@ public class JsBridge {
             return;
         }
         cfi.c(TAG, "CALL JavascriptInterface", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             cfi.c(TAG, "p is null");
             return;
         }
@@ -93,7 +93,7 @@ public class JsBridge {
                 str3 = e.toString();
                 cfi.a(TAG, e, new Object[0]);
             }
-            if (TextUtils.isEmpty(optString3)) {
+            if (StringUtils.isEmpty(optString3)) {
                 return;
             }
             JSONObject jSONObject2 = new JSONObject();

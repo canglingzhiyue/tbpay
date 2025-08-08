@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -599,12 +599,12 @@ public final class skg {
         if (G != null && !G.S && (skfVar2 = this.s) != null) {
             skfVar2.a(G.ak);
         }
-        if (G != null && !TextUtils.isEmpty(G.t) && (skfVar = this.s) != null) {
+        if (G != null && !StringUtils.isEmpty(G.t) && (skfVar = this.s) != null) {
             skfVar.p();
         }
         R();
         this.j.a(this.f33647a, list, z);
-        if (G != null && !TextUtils.isEmpty(G.m) && !sjv.c(this.f33647a)) {
+        if (G != null && !StringUtils.isEmpty(G.m) && !sjv.c(this.f33647a)) {
             ((IInteractionService) this.f33647a.getService(IInteractionService.class)).initGlobalH5MessageHandler(a2);
         }
         b(a2);
@@ -887,7 +887,7 @@ public final class skg {
             return ((Boolean) ipChange.ipc$dispatch("4529658", new Object[]{this})).booleanValue();
         }
         String F = F();
-        return !TextUtils.isEmpty(F) && (a2 = ody.a().a(F)) != null && a2.d() != null && a2.d().startsWith("file://");
+        return !StringUtils.isEmpty(F) && (a2 = ody.a().a(F)) != null && a2.d() != null && a2.d().startsWith("file://");
     }
 
     private spc N() {
@@ -898,7 +898,7 @@ public final class skg {
         }
         String F = F();
         boolean z2 = oeb.bc() && b.a().l(F) && !spj.d(this.f33647a);
-        boolean z3 = iqw.f() && b.a().j(F) != null && !TextUtils.isEmpty(oec.a(b.a().j(this.f33647a.getInstanceConfig().getPreCoverKey()).get("openWeexDSLV2"), (String) null));
+        boolean z3 = iqw.f() && b.a().j(F) != null && !StringUtils.isEmpty(oec.a(b.a().j(this.f33647a.getInstanceConfig().getPreCoverKey()).get("openWeexDSLV2"), (String) null));
         IQuickOpenService iQuickOpenService = (IQuickOpenService) this.f33647a.getService(IQuickOpenService.class);
         if (z2 && !z3) {
             z = true;
@@ -1032,7 +1032,7 @@ public final class skg {
                 if (a2.a() != null) {
                     str = a2.a().g();
                 }
-                z2 = !TextUtils.equals(str, i.b);
+                z2 = !StringUtils.equals(str, i.b);
                 snv snvVar = i.f33778a;
                 spz.c("ContainerRenderManager", "PickPreloadControllerNew,tryUsePreDWInstanceFromLauncher:" + snvVar + ",needDestoryDW:" + z2);
                 if (!z2 && snvVar != null) {

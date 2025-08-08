@@ -3,7 +3,7 @@ package com.taobao.login4android.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.jsbridge.SDKJSBridgeService;
@@ -21,11 +21,11 @@ public class LoginTestBroadcastReceiver extends BroadcastReceiver {
         }
         try {
             String action = intent.getAction();
-            if (TextUtils.isEmpty(action) || !"com.ali.user.sdk.login.TEST_ACCOUNT_SSO".equals(action)) {
+            if (StringUtils.isEmpty(action) || !"com.ali.user.sdk.login.TEST_ACCOUNT_SSO".equals(action)) {
                 return;
             }
             String stringExtra = intent.getStringExtra("token");
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 return;
             }
             JSONObject jSONObject = new JSONObject();

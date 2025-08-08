@@ -1,7 +1,7 @@
 package com.taobao.android.festival;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.tao.Globals;
@@ -52,7 +52,7 @@ public class d {
             return ((Number) ipChange.ipc$dispatch("56c6c5c", new Object[0])).longValue();
         }
         String b2 = b("festivalRequestInterval", "-1");
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return -1L;
         }
         try {
@@ -68,7 +68,7 @@ public class d {
             return ((Number) ipChange.ipc$dispatch("a821938e", new Object[]{new Integer(i)})).intValue();
         }
         String b2 = b("skinMaxSize", String.valueOf(i));
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return i;
         }
         try {
@@ -88,7 +88,7 @@ public class d {
             return (String[]) ipChange.ipc$dispatch("5bd428b9", new Object[0]);
         }
         String b2 = b("skinBlackList", "");
-        if (!TextUtils.isEmpty(b2)) {
+        if (!StringUtils.isEmpty(b2)) {
             return b2.split(",");
         }
         return null;

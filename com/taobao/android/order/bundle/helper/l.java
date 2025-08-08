@@ -1,6 +1,6 @@
 package com.taobao.android.order.bundle.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class l {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             obj = ipChange.ipc$dispatch("582938df", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || !b.containsKey(str)) {
+        } else if (StringUtils.isEmpty(str) || !b.containsKey(str)) {
             return null;
         } else {
             obj = b.get(str);

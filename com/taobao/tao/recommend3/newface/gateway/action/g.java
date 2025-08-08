@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend3.newface.gateway.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -48,10 +48,10 @@ public class g implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c96ae738", new Object[]{this, jSONObject, gkcVar});
-        } else if (jSONObject == null || TextUtils.equals("download", jSONObject.getString("dataSourceType"))) {
+        } else if (jSONObject == null || StringUtils.equals("download", jSONObject.getString("dataSourceType"))) {
         } else {
             String string = jSONObject.getString("containerId");
-            if (!TextUtils.equals(oqc.a().m(), string)) {
+            if (!StringUtils.equals(oqc.a().m(), string)) {
                 return;
             }
             jSONObject.put("_msgType", "scrollToTop");

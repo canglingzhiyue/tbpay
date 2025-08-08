@@ -6,7 +6,7 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Looper;
 import android.taobao.safemode.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -133,13 +133,13 @@ public class TFCCommonUtils {
             return (String) ipChange.ipc$dispatch("5227edc3", new Object[]{flowType, str, map});
         }
         AfcUtils.FlowType flowType2 = AfcUtils.FlowType.LINK;
-        if (TextUtils.equals("afc_share", flowType.descs)) {
+        if (StringUtils.equals("afc_share", flowType.descs)) {
             flowType2 = AfcUtils.FlowType.SHARE;
-        } else if (TextUtils.equals("afc_message", flowType.descs)) {
+        } else if (StringUtils.equals("afc_message", flowType.descs)) {
             flowType2 = AfcUtils.FlowType.MESSAGE;
-        } else if (TextUtils.equals("afc_link", flowType.descs)) {
+        } else if (StringUtils.equals("afc_link", flowType.descs)) {
             flowType2 = AfcUtils.FlowType.LINK;
-        } else if (TextUtils.equals("afc_launch", flowType.descs)) {
+        } else if (StringUtils.equals("afc_launch", flowType.descs)) {
             flowType2 = AfcUtils.FlowType.LAUNCH;
         }
         com.taobao.flowcustoms.afc.utils.c.a("linkx", "TFCCommonUtils === handleFlowParams === 调用类型：" + flowType2);
@@ -171,7 +171,7 @@ public class TFCCommonUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "TFCCommonUtils === isH5Landing: 传入URL为空，返回false");
             return false;
         }
@@ -179,7 +179,7 @@ public class TFCCommonUtils {
         Map<String, String> a2 = com.taobao.flowcustoms.afc.utils.f.a(context).a("flow_customs_in_local");
         if (a2.size() != 0 && a2.containsKey("isH5Land")) {
             String str2 = a2.get("isH5Land");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 for (String str3 : Arrays.asList(str2.split(","))) {
                     if (decode.contains(str3)) {
                         com.taobao.flowcustoms.afc.utils.c.a("linkx", "TFCCommonUtils === isH5Landing: 当前URL是h5落地页，匹配到URL为：" + str3);
@@ -199,13 +199,13 @@ public class TFCCommonUtils {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             Uri parse = Uri.parse(str);
             String queryParameter = parse.getQueryParameter("h5Url");
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "TFCCommonUtils === getH5URL === h5Url=" + queryParameter);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return "";
             }
             Uri parse2 = Uri.parse(queryParameter);
@@ -240,7 +240,7 @@ public class TFCCommonUtils {
         }
         String str = (String) com.taobao.flowcustoms.afc.utils.f.a(context).b("afc_oaid", "");
         c = str;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Thread thread = new Thread(new Runnable() { // from class: com.taobao.linkmanager.afc.utils.TFCCommonUtils.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -252,7 +252,7 @@ public class TFCCommonUtils {
                         return;
                     }
                     String d = TFCCommonUtils.d(context);
-                    if (TextUtils.isEmpty(d) || TextUtils.equals(d, TFCCommonUtils.b())) {
+                    if (StringUtils.isEmpty(d) || StringUtils.equals(d, TFCCommonUtils.b())) {
                         return;
                     }
                     com.taobao.flowcustoms.afc.utils.c.a("linkx", "TFCCommonUtils === 异步获取到的oaid和本地不一致，缓存最新的到本地 " + d);
@@ -301,7 +301,7 @@ public class TFCCommonUtils {
         }
         try {
             String a2 = bzj.a(context);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return "";
             }
             com.taobao.flowcustoms.afc.utils.f.a(context).a("afc_oaid", a2);
@@ -317,10 +317,10 @@ public class TFCCommonUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str.trim();
         }
         HashMap hashMap = new HashMap();
@@ -333,7 +333,7 @@ public class TFCCommonUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (map == null || map.size() == 0) {
@@ -350,7 +350,7 @@ public class TFCCommonUtils {
             try {
                 StringBuilder sb = new StringBuilder();
                 for (String str2 : map.keySet()) {
-                    if (!TextUtils.isEmpty(map.get(str2))) {
+                    if (!StringUtils.isEmpty(map.get(str2))) {
                         sb.append(str2);
                         sb.append("=");
                         sb.append(map.get(str2));
@@ -392,7 +392,7 @@ public class TFCCommonUtils {
 
     public static boolean b(Application application) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("76721b1a", new Object[]{application})).booleanValue() : application != null && !TextUtils.isEmpty(Login.getEncryptLoginToken(application));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("76721b1a", new Object[]{application})).booleanValue() : application != null && !StringUtils.isEmpty(Login.getEncryptLoginToken(application));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0035, code lost:
@@ -489,7 +489,7 @@ public class TFCCommonUtils {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
         try {
-            return TextUtils.isEmpty(Login.getLoginToken()) ^ true ? Login.checkSessionValid() ? "login" : "sessionInvalid" : "unLogin";
+            return StringUtils.isEmpty(Login.getLoginToken()) ^ true ? Login.checkSessionValid() ? "login" : "sessionInvalid" : "unLogin";
         } catch (Throwable unused) {
             com.taobao.flowcustoms.afc.utils.c.b("linkx", "TFCCommonUtils.getLoginStatus.error.");
             return "error";

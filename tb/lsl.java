@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.h;
@@ -223,7 +223,7 @@ public class lsl implements b, kqn {
         this.c = this.f30895a.getLinkedData("searchText");
         l();
         boolean j = j();
-        boolean isEmpty = TextUtils.isEmpty(d.d());
+        boolean isEmpty = StringUtils.isEmpty(d.d());
         boolean z2 = z && !j && !isEmpty;
         HashMap hashMap = new HashMap();
         hashMap.put("name", "ShouldShow");
@@ -243,7 +243,7 @@ public class lsl implements b, kqn {
             ipChange.ipc$dispatch("5f95772", new Object[]{this});
             return;
         }
-        boolean isEmpty = TextUtils.isEmpty(d.d());
+        boolean isEmpty = StringUtils.isEmpty(d.d());
         boolean j = j();
         if (this.f30895a != null && !j && this.e && !isEmpty) {
             if (this.h) {

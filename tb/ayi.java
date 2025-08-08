@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.AURAInputData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -59,7 +59,7 @@ public final class ayi extends arn {
             return;
         }
         String rootKey = aURAParseIO.getRootKey();
-        if (TextUtils.isEmpty(rootKey) || (a2 = data2.get(0).a()) == null) {
+        if (StringUtils.isEmpty(rootKey) || (a2 = data2.get(0).a()) == null) {
             return;
         }
         a(a2, rootKey);

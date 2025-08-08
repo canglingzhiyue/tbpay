@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.android.phone.mobilesdk.socketcraft.monitor.MonitorItemConstants;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
@@ -48,7 +48,7 @@ public class RPCDataParser {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("49cc4d50", new Object[]{transportContext});
-        } else if (TextUtils.isEmpty(transportContext.api)) {
+        } else if (StringUtils.isEmpty(transportContext.api)) {
             buildAndWriteLog(transportContext, "https");
         } else {
             a(transportContext);
@@ -93,7 +93,7 @@ public class RPCDataParser {
         f(transportContext, monitorLoggerModel);
         monitorLoggerModel.setParam1(MonitorLoggerUtils.getLogBizType(monitorLoggerModel.getSubType()));
         monitorLoggerModel.setParam2("INFO");
-        if ("https".equals(str) && !TextUtils.isEmpty(transportContext.url)) {
+        if ("https".equals(str) && !StringUtils.isEmpty(transportContext.url)) {
             try {
                 str = new URL(transportContext.url).getProtocol();
             } catch (Throwable th) {
@@ -113,7 +113,7 @@ public class RPCDataParser {
         if (transportContext.bizType == 2 || transportContext.bizType == 3 || transportContext.bizType == 4 || transportContext.bizType == 5 || transportContext.bizType == 1) {
             monitorLoggerModel.getExtPramas().put("API", transportContext.api);
             d(transportContext, monitorLoggerModel);
-        } else if (!TextUtils.isEmpty(transportContext.api)) {
+        } else if (!StringUtils.isEmpty(transportContext.api)) {
             monitorLoggerModel.getExtPramas().put("API", transportContext.api);
             if (MiscUtils.isMdapApi(transportContext.api)) {
                 monitorLoggerModel.setSubType("LOG");
@@ -121,7 +121,7 @@ public class RPCDataParser {
         } else {
             d(transportContext, monitorLoggerModel);
         }
-        if (TextUtils.isEmpty(dataContainer.getDataItem("ERROR"))) {
+        if (StringUtils.isEmpty(dataContainer.getDataItem("ERROR"))) {
             monitorLoggerModel.getExtPramas().put("RESULT", "T");
             a(dataContainer, monitorLoggerModel);
         } else {
@@ -129,7 +129,7 @@ public class RPCDataParser {
             monitorLoggerModel.setParam2("FATAL");
         }
         a(monitorLoggerModel.getExtPramas(), "ERROR", dataContainer, false);
-        if (TextUtils.isEmpty(dataContainer.getDataItem(RPCDataItems.DOWN))) {
+        if (StringUtils.isEmpty(dataContainer.getDataItem(RPCDataItems.DOWN))) {
             monitorLoggerModel.getExtPramas().put("EXT1", UTConstant.Args.UT_SUCCESS_F);
         } else {
             monitorLoggerModel.getExtPramas().put("EXT1", "T");
@@ -145,7 +145,7 @@ public class RPCDataParser {
         a(monitorLoggerModel.getExtPramas(), RPCDataItems.READ_TIME, dataContainer, true);
         a(monitorLoggerModel.getExtPramas(), RPCDataItems.SA_TIME, dataContainer, true);
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.ADVANCED_NET_PERF_PROFILING);
-        if (TextUtils.isEmpty(stringValue) || !stringValue.startsWith("T")) {
+        if (StringUtils.isEmpty(stringValue) || !stringValue.startsWith("T")) {
             LogCatUtil.debug("RPCDataParser", "Advanced NetPerf Profiling is off");
         } else {
             a(monitorLoggerModel.getExtPramas(), RPCDataItems.IPC_TIME1, dataContainer, true);
@@ -155,10 +155,10 @@ public class RPCDataParser {
             a(monitorLoggerModel.getExtPramas(), RPCDataItems.AIR_TIME, dataContainer, true);
             a(monitorLoggerModel.getExtPramas(), RPCDataItems.UTC_TIME, dataContainer, true);
         }
-        if (!TextUtils.isEmpty(dataContainer.getDataItem("RETRY"))) {
+        if (!StringUtils.isEmpty(dataContainer.getDataItem("RETRY"))) {
             monitorLoggerModel.getExtPramas().put("RETRY", "T");
         }
-        if (TextUtils.equals(dataContainer.getDataItem(RPCDataItems.ORIGHC), "T")) {
+        if (StringUtils.equals(dataContainer.getDataItem(RPCDataItems.ORIGHC), "T")) {
             monitorLoggerModel.getExtPramas().put(RPCDataItems.ORIGHC, "T");
         }
         a(monitorLoggerModel.getExtPramas(), RPCDataItems.HRC, dataContainer, false);
@@ -235,7 +235,7 @@ public class RPCDataParser {
         e(transportContext, monitorLoggerModel);
         a(transportContext, dataContainer, monitorLoggerModel);
         c(transportContext, monitorLoggerModel);
-        if (!TextUtils.isEmpty(transportContext.targetSpi)) {
+        if (!StringUtils.isEmpty(transportContext.targetSpi)) {
             monitorLoggerModel.getExtPramas().put(RPCDataItems.TARGET_SPI, transportContext.targetSpi);
         }
         if (transportContext.tcpCount > 1) {
@@ -248,7 +248,7 @@ public class RPCDataParser {
         a(transportContext, monitorLoggerModel);
         String str2 = monitorLoggerModel.getSubType() + "_PERF";
         String dataItem = dataContainer.getDataItem("ERROR");
-        if (TextUtils.isEmpty(dataContainer.getDataItem(RPCDataItems.IGN_ERR)) || TextUtils.isEmpty(dataItem)) {
+        if (StringUtils.isEmpty(dataContainer.getDataItem(RPCDataItems.IGN_ERR)) || StringUtils.isEmpty(dataItem)) {
             z = false;
         } else {
             LogCatUtil.debug(str2, "ignErr don't upload");
@@ -276,7 +276,7 @@ public class RPCDataParser {
             ipChange.ipc$dispatch("e6bc6e31", new Object[]{transportContext, monitorLoggerModel});
         } else if (transportContext == null) {
             LogCatUtil.warn("RPCDataParser", "[putBizLog] TransportContext is null.");
-        } else if (TextUtils.isEmpty(transportContext.bizLog)) {
+        } else if (StringUtils.isEmpty(transportContext.bizLog)) {
         } else {
             if (transportContext.bizLog.length() <= 128) {
                 monitorLoggerModel.getExtPramas().put(RPCDataItems.BIZ_LOG, transportContext.bizLog);
@@ -308,7 +308,7 @@ public class RPCDataParser {
             try {
                 StringBuilder sb = new StringBuilder("Attachment logs: {");
                 for (Map.Entry<String, String> entry : transportContext.logAttachmentMap.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                         monitorLoggerModel.getExtPramas().put(entry.getKey(), entry.getValue());
                         sb.append(entry.getKey());
                         sb.append("=");
@@ -349,7 +349,7 @@ public class RPCDataParser {
         } else if (!transportContext.printUrlToMonitorLog) {
         } else {
             String str = transportContext.url;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 monitorLoggerModel.getExtPramas().put(MonitorItemConstants.KEY_URL, "None");
             } else if (str.length() <= 2048) {
                 monitorLoggerModel.getExtPramas().put(MonitorItemConstants.KEY_URL, str);
@@ -372,7 +372,7 @@ public class RPCDataParser {
         } else if (!ExtTransportStrategy.EXT_PROTO_MRPC.equals(str)) {
         } else {
             String dataItem = dataContainer.getDataItem(MonitorLoggerUtils.LIB_VERSION);
-            if (TextUtils.isEmpty(dataItem)) {
+            if (StringUtils.isEmpty(dataItem)) {
                 return;
             }
             monitorLoggerModel.getExtPramas().put(MonitorLoggerUtils.LIB_VERSION, dataItem);
@@ -387,7 +387,7 @@ public class RPCDataParser {
         }
         try {
             String reportLBSInfo = LBSManager.getInstance().getReportLBSInfo();
-            if (TextUtils.isEmpty(reportLBSInfo)) {
+            if (StringUtils.isEmpty(reportLBSInfo)) {
                 return;
             }
             monitorLoggerModel.getExtPramas().put("LBS", reportLBSInfo);
@@ -432,7 +432,7 @@ public class RPCDataParser {
             monitorLoggerModel.setSubType(NetworkServiceTracer.REPORT_SUB_NAME_RSRC);
         } else if (transportContext.bizType == 5) {
             monitorLoggerModel.setSubType("LOG");
-        } else if (!TextUtils.isEmpty(transportContext.api)) {
+        } else if (!StringUtils.isEmpty(transportContext.api)) {
             monitorLoggerModel.setSubType(NetworkServiceTracer.REPORT_SUB_NAME_RPC);
         } else {
             monitorLoggerModel.setSubType(NetworkServiceTracer.REPORT_SUB_NAME_RSRC);
@@ -448,13 +448,13 @@ public class RPCDataParser {
         try {
             String dataItem = dataContainer.getDataItem("ALL_TIME");
             String dataItem2 = dataContainer.getDataItem(RPCDataItems.STALLED_TIME);
-            if (!TextUtils.isEmpty(dataItem) && !TextUtils.isEmpty(dataItem2)) {
+            if (!StringUtils.isEmpty(dataItem) && !StringUtils.isEmpty(dataItem2)) {
                 long parseLong = Long.parseLong(dataItem) + Long.parseLong(dataItem2);
                 Map<String, String> extPramas = monitorLoggerModel.getExtPramas();
                 extPramas.put(RPCDataItems.OLD_RPC_ALL_TIME, parseLong + "ms");
             }
             String dataItem3 = dataContainer.getDataItem(RPCDataItems.RPC_ALL_TIME);
-            if (TextUtils.isEmpty(dataItem3) || TextUtils.isEmpty(dataItem2)) {
+            if (StringUtils.isEmpty(dataItem3) || StringUtils.isEmpty(dataItem2)) {
                 return;
             }
             long j = transportContext.taskFinishedTimeMillis;
@@ -478,18 +478,18 @@ public class RPCDataParser {
         double d = -1.0d;
         try {
             String dataItem = dataContainer.getDataItem(RPCDataItems.REQ_SIZE);
-            if (!TextUtils.isEmpty(dataItem)) {
+            if (!StringUtils.isEmpty(dataItem)) {
                 d = Double.valueOf(dataItem).doubleValue();
             }
             String dataItem2 = dataContainer.getDataItem(RPCDataItems.RES_SIZE);
-            if (!TextUtils.isEmpty(dataItem2)) {
+            if (!StringUtils.isEmpty(dataItem2)) {
                 d += Double.valueOf(dataItem2).doubleValue();
             }
             if (d <= mto.a.GEO_NOT_SUPPORT) {
                 return;
             }
             String dataItem3 = dataContainer.getDataItem("ALL_TIME");
-            if (TextUtils.isEmpty(dataItem3)) {
+            if (StringUtils.isEmpty(dataItem3)) {
                 return;
             }
             Double valueOf = Double.valueOf(dataItem3);
@@ -509,7 +509,7 @@ public class RPCDataParser {
             return;
         }
         String dataItem = dataContainer.getDataItem(str);
-        if (TextUtils.isEmpty(dataItem)) {
+        if (StringUtils.isEmpty(dataItem)) {
             return;
         }
         if (z) {
@@ -522,7 +522,7 @@ public class RPCDataParser {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d8610c43", new Object[]{map, str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             if (z) {
                 str2 = str2 + "ms";

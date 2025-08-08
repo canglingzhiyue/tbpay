@@ -3,7 +3,7 @@ package com.alibaba.security.realidentity;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -309,32 +309,32 @@ public class z4 {
         textView3.setTextColor(c.i(cVar));
         button.setTextColor(c.j(cVar));
         button2.setTextColor(c.k(cVar));
-        if (TextUtils.isEmpty(c.l(cVar))) {
+        if (StringUtils.isEmpty(c.l(cVar))) {
             textView.setVisibility(8);
         } else {
             textView.setVisibility(0);
             textView.setText(c.l(cVar));
         }
-        if (TextUtils.isEmpty(c.m(cVar))) {
+        if (StringUtils.isEmpty(c.m(cVar))) {
             textView2.setVisibility(8);
         } else {
             textView2.setVisibility(0);
             textView2.setText(c.m(cVar));
         }
-        if (TextUtils.isEmpty(c.n(cVar))) {
+        if (StringUtils.isEmpty(c.n(cVar))) {
             textView3.setVisibility(8);
         } else {
             textView3.setVisibility(0);
             textView3.setText(c.n(cVar));
         }
-        if (TextUtils.isEmpty(c.o(cVar))) {
+        if (StringUtils.isEmpty(c.o(cVar))) {
             button.setVisibility(8);
         } else {
             button.setVisibility(0);
             button.setText(c.o(cVar));
             button.setOnClickListener(new a(cVar));
         }
-        if (TextUtils.isEmpty(c.d(cVar))) {
+        if (StringUtils.isEmpty(c.d(cVar))) {
             button2.setVisibility(8);
         } else {
             button2.setVisibility(0);

@@ -2,7 +2,7 @@ package com.taobao.avplayer;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -846,7 +846,7 @@ public class u {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-            } else if (TextUtils.isEmpty(this.b)) {
+            } else if (StringUtils.isEmpty(this.b)) {
             } else {
                 b bVar = this.f16618a;
                 bVar.v = this.b + "." + this.f16618a.v;
@@ -1164,7 +1164,7 @@ public class u {
                 Uri data = this.f16617a.getActivity().getIntent().getData();
                 if (data != null) {
                     String queryParameter = data.getQueryParameter("spm");
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         hashMap.put("spm-url", queryParameter);
                     }
                 }
@@ -1191,7 +1191,7 @@ public class u {
             Uri data = this.f16617a.getActivity().getIntent().getData();
             if (data != null) {
                 String queryParameter = data.getQueryParameter("spm");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     map.put("spm-url", queryParameter);
                 }
             }

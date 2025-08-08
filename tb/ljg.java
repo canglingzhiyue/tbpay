@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -137,7 +137,7 @@ public class ljg {
             JSONObject jSONObject2 = b.getJSONObject("args");
             ldl.a(string, Integer.parseInt(string2), string3, string4, string5, ljh.a(string, jSONObject2));
             try {
-                if (!TextUtils.equals("2101", string2)) {
+                if (!StringUtils.equals("2101", string2)) {
                     return;
                 }
                 liw.a(string, string3 + "_BehaviX_UT", (String) null, jSONObject2);

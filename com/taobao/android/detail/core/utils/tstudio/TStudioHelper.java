@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.utils.tstudio;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -277,10 +277,10 @@ public class TStudioHelper implements TStudioInterface.a {
             try {
                 String type = iDMComponent.getType();
                 String id = iDMComponent.getId();
-                if (!TextUtils.isEmpty(type)) {
+                if (!StringUtils.isEmpty(type)) {
                     sb.append(type);
                 }
-                if (!TextUtils.isEmpty(id)) {
+                if (!StringUtils.isEmpty(id)) {
                     sb.append("_");
                     sb.append(id);
                 }

@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.datasource.impl.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -133,7 +133,7 @@ public class TabBean implements Serializable {
             if (jSONObject != null) {
                 String string = jSONObject.getString("key");
                 String string2 = jSONObject.getString("value");
-                if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                     hashMap.put(string, string2);
                 }
             }

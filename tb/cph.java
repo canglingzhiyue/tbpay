@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -921,7 +921,7 @@ public final class cph extends ctc<cpg, com.etao.feimagesearch.model.b, CaptureM
             return;
         }
         q.c(albumBean, "albumBean");
-        if (TextUtils.isEmpty(albumBean.getImgKey())) {
+        if (StringUtils.isEmpty(albumBean.getImgKey())) {
             return;
         }
         if (albumBean.getRemote()) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.core.OrderConfigs;
 import com.taobao.orange.OrangeConfig;
@@ -101,7 +101,7 @@ public class ibl {
             return ((Boolean) ipChange.ipc$dispatch("6945a01", new Object[0])).booleanValue();
         }
         String str = Mtop.instance(null).getMtopConfig().appVersion;
-        return !TextUtils.isEmpty(str) && str.split("\\.").length >= 4;
+        return !StringUtils.isEmpty(str) && str.split("\\.").length >= 4;
     }
 
     public static boolean q() {
@@ -127,7 +127,7 @@ public class ibl {
 
     public static boolean t() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6782aff", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("babelorder", "enableOrderWeex2Prefetch", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6782aff", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("babelorder", "enableOrderWeex2Prefetch", "false"), "true");
     }
 
     public static boolean u() {
@@ -137,7 +137,7 @@ public class ibl {
 
     public static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("babelorder", "enableOrderPreloadBackground", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("babelorder", "enableOrderPreloadBackground", "false"), "true");
     }
 
     public static int h() {
@@ -190,7 +190,7 @@ public class ibl {
 
     public static boolean w() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6a27182", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("babelorder", "enableTouchMaskLayout", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6a27182", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("babelorder", "enableTouchMaskLayout", "false"), "true");
     }
 
     public static boolean x() {

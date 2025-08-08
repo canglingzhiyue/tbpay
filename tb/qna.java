@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -105,7 +105,7 @@ public class qna {
     public static String a(LiveItem liveItem) {
         JSONObject jSONObject;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("c472827d", new Object[]{liveItem}) : (liveItem == null || liveItem.itemExtData == null || (jSONObject = liveItem.itemExtData.getJSONObject("itemListTrackData")) == null || TextUtils.isEmpty(jSONObject.getString("smallCardItemType"))) ? "" : jSONObject.getString("smallCardItemType");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("c472827d", new Object[]{liveItem}) : (liveItem == null || liveItem.itemExtData == null || (jSONObject = liveItem.itemExtData.getJSONObject("itemListTrackData")) == null || StringUtils.isEmpty(jSONObject.getString("smallCardItemType"))) ? "" : jSONObject.getString("smallCardItemType");
     }
 
     public static JSONArray a(JSONArray jSONArray) {

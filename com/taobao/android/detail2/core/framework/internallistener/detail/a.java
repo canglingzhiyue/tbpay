@@ -3,7 +3,7 @@ package com.taobao.android.detail2.core.framework.internallistener.detail;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.e;
 import com.taobao.android.detail2.core.framework.floatwindow.c;
@@ -121,7 +121,7 @@ public class a implements egl {
         }
         fjt.a(fjt.TAG_INSIDE_DETAIL, "NewDetailInsideLifecycleObserver onInsideStart " + h());
         fmd fmdVar = this.b;
-        if (fmdVar == null || fmdVar.a() == null || TextUtils.isEmpty(this.b.a().h().b().ag())) {
+        if (fmdVar == null || fmdVar.a() == null || StringUtils.isEmpty(this.b.a().h().b().ag())) {
             return;
         }
         fjt.a(fjt.TAG_INSIDE_DETAIL, "NewDetailInsideLifecycleObserver onInsideStart " + h() + " >> resumeMedia");

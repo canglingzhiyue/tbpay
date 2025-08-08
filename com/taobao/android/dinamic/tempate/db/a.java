@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteStatement;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.tempate.db.Entry;
@@ -284,7 +284,7 @@ public final class a {
                 sb.append(c0471a.f11763a);
                 sb.append(' ');
                 sb.append(f11762a[c0471a.b]);
-                if (!TextUtils.isEmpty(c0471a.e)) {
+                if (!StringUtils.isEmpty(c0471a.e)) {
                     sb.append(" DEFAULT ");
                     sb.append(c0471a.e);
                 }

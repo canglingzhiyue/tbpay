@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 
@@ -50,7 +50,7 @@ public class dks {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2548ee00", new Object[]{this, str, dlnVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || dlb.f26823a.containsKey(str)) {
+        if (StringUtils.isEmpty(str) || dlb.f26823a.containsKey(str)) {
             return false;
         }
         this.b.put(str, dlnVar);

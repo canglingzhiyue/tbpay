@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.Editable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.ActionMode;
@@ -203,7 +203,7 @@ public class PasteEditText extends EditText {
         ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
         if (clipboardManager != null && clipboardManager.getText() != null) {
             String charSequence = clipboardManager.getText().toString();
-            if (!TextUtils.isEmpty(charSequence)) {
+            if (!StringUtils.isEmpty(charSequence)) {
                 generateSticker(charSequence);
                 setSelection(getText().length());
             }

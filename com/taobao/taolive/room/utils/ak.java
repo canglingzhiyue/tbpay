@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -34,16 +34,16 @@ public abstract class ak {
             return null;
         }
         String queryParameter = uri.getQueryParameter(aw.PARAM_TRANSPARENT_KEY);
-        if (TextUtils.isEmpty(queryParameter) || (c = pqj.c(queryParameter)) == null || c.size() == 0) {
+        if (StringUtils.isEmpty(queryParameter) || (c = pqj.c(queryParameter)) == null || c.size() == 0) {
             return null;
         }
         HashMap hashMap = new HashMap();
         int size = c.size();
         for (int i = 0; i < size; i++) {
             String string = c.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 String queryParameter2 = uri.getQueryParameter(string);
-                if (!TextUtils.isEmpty(queryParameter2)) {
+                if (!StringUtils.isEmpty(queryParameter2)) {
                     hashMap.put(string, queryParameter2);
                 }
             }
@@ -67,7 +67,7 @@ public abstract class ak {
                 hashMap.put("id", uri.getQueryParameter(aw.PARAM_ELEVEN_LIVE_ID));
             } else {
                 String queryParameter = uri.getQueryParameter("id");
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     queryParameter = uri.getQueryParameter(aw.PARAM_ELEVEN_LIVE_ID);
                 }
                 String a2 = a(uri);
@@ -120,7 +120,7 @@ public abstract class ak {
                 hashMap.put(aw.PARAM_ITEM_HOLD_TYPE, uri.getQueryParameter(aw.PARAM_ITEM_HOLD_TYPE));
                 hashMap.put(aw.PARAM_LIVE_IS_AD, uri.getQueryParameter(aw.PARAM_LIVE_IS_AD));
                 String shareFissionLiveShareActionInfoParams = com.taobao.android.live.plugin.proxy.f.k().getShareFissionLiveShareActionInfoParams();
-                if (!TextUtils.isEmpty(shareFissionLiveShareActionInfoParams)) {
+                if (!StringUtils.isEmpty(shareFissionLiveShareActionInfoParams)) {
                     hashMap.put(shareFissionLiveShareActionInfoParams, uri.getQueryParameter(shareFissionLiveShareActionInfoParams));
                 }
                 hashMap.put("content", uri.getQueryParameter("content"));
@@ -162,7 +162,7 @@ public abstract class ak {
             if (arrayList.get(1).rtcLiveUrl != null) {
                 str = arrayList.get(1).rtcLiveUrl;
             }
-            if (TextUtils.isEmpty(str) && arrayList.get(1).flvUrl != null) {
+            if (StringUtils.isEmpty(str) && arrayList.get(1).flvUrl != null) {
                 str = arrayList.get(1).flvUrl;
             }
         }
@@ -175,7 +175,7 @@ public abstract class ak {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -201,17 +201,17 @@ public abstract class ak {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2) || (parse = Uri.parse(str2)) == null) {
+        if (StringUtils.isEmpty(str2) || (parse = Uri.parse(str2)) == null) {
             return "";
         }
-        JSONObject b = TextUtils.isEmpty(str) ? null : pqj.b(str);
+        JSONObject b = StringUtils.isEmpty(str) ? null : pqj.b(str);
         if (b == null) {
             b = new JSONObject();
         }
         String queryParameter = parse.getQueryParameter("huanduanParams");
-        if (!TextUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
+        if (!StringUtils.isEmpty(queryParameter) && (split = queryParameter.split(",")) != null) {
             for (String str3 : split) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     b.put(str3, (Object) parse.getQueryParameter(str3));
                 }
             }

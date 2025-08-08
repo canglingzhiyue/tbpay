@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.v4.content.FileProvider;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.util.concurrent.ConcurrentHashMap;
@@ -122,7 +122,7 @@ public class DownloadCenter {
         }
         a aVar2 = null;
         rki.a(rki.ARG1_START_APK_DOWNLOAD, str, str4, null);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             rkg.a("link_tag", "DownloadCenter === startDownload === 下载URL为空，不下载");
             return -1;
         }
@@ -272,7 +272,7 @@ public class DownloadCenter {
         }
         rkg.a("link_tag", "DownloadCenter === cancelDownLoad === 取消下载：" + i);
         com.taobao.downloader.b.a().a(i);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         LinkDownloadItem b2 = b(str);
@@ -302,7 +302,7 @@ public class DownloadCenter {
         }
         rkg.a("link_tag", "DownloadCenter === pauseDownLoad === 暂停下载：" + i);
         com.taobao.downloader.b.a().b(i);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         LinkDownloadItem b2 = b(str);
@@ -333,7 +333,7 @@ public class DownloadCenter {
         }
         rkg.a("link_tag", "DownloadCenter === resumeDownLoad === 恢复下载：" + i);
         com.taobao.downloader.b.a().c(i);
-        if (TextUtils.isEmpty(str) || (b2 = b(str)) == null) {
+        if (StringUtils.isEmpty(str) || (b2 = b(str)) == null) {
             return;
         }
         rki.a(rki.ARG1_RESUME_APK_DOWNLOAD, b2);
@@ -389,7 +389,7 @@ public class DownloadCenter {
                             return;
                         }
                         for (File file : listFiles) {
-                            if (TextUtils.equals(file.getName(), b2.fileName)) {
+                            if (StringUtils.equals(file.getName(), b2.fileName)) {
                                 file.delete();
                                 rkg.a("link_tag", "DownloadCenter === deleteApk === 删除文件：" + file.getName());
                                 rki.a(rki.ARG1_DELETE_APK_DOWNLOAD, b2);
@@ -436,7 +436,7 @@ public class DownloadCenter {
         if (ipChange instanceof IpChange) {
             return (LinkDownloadItem) ipChange.ipc$dispatch("8c3b40d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         LinkDownloadItem linkDownloadItem2 = this.b.get(str);
@@ -446,7 +446,7 @@ public class DownloadCenter {
         } else {
             linkDownloadItem = linkDownloadItem2;
         }
-        if (linkDownloadItem != null && TextUtils.isEmpty(linkDownloadItem.packageName)) {
+        if (linkDownloadItem != null && StringUtils.isEmpty(linkDownloadItem.packageName)) {
             return null;
         }
         return linkDownloadItem;
@@ -478,7 +478,7 @@ public class DownloadCenter {
         }
         long j = 86400000;
         String a2 = com.taobao.wireless.link.common.b.a(this.d, "downloadApkFileExpirationTime", (String) null);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 long parseLong = Long.parseLong(a2);
                 if (parseLong > 0) {

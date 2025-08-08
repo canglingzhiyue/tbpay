@@ -2,7 +2,7 @@ package com.xiaomi.mipush.sdk;
 
 import android.content.ComponentName;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.bh;
 
 /* loaded from: classes9.dex */
@@ -18,7 +18,7 @@ public class n {
     private static boolean a() {
         try {
             String str = (String) bh.a("android.os.SystemProperties", "get", "ro.build.hw_emui_api_level", "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (Integer.parseInt(str) >= 9) {
                     return true;
                 }

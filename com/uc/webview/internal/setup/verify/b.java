@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.verify;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.ErrorCode;
 import com.uc.webview.base.GlobalSettings;
@@ -51,7 +51,7 @@ final class b {
                 break;
             }
             String str4 = strArr2[c2];
-            if (TextUtils.isEmpty(name) || name.equals(str4)) {
+            if (StringUtils.isEmpty(name) || name.equals(str4)) {
                 z3 |= true;
                 long j = 0;
                 try {
@@ -96,7 +96,7 @@ final class b {
                     a.b b = intValue != 2 ? intValue != 4 ? a.b.b() : new a.b("SHA-256", "%064x") : a.b.a();
                     b.b = file4;
                     String c3 = b.c();
-                    boolean z5 = !TextUtils.isEmpty(c3) && c3.equals(str5);
+                    boolean z5 = !StringUtils.isEmpty(c3) && c3.equals(str5);
                     StringBuilder sb3 = new StringBuilder("content ");
                     if (z5) {
                         str3 = str;

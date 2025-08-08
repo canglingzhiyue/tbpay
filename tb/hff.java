@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.marvel.MeEditor;
 import com.alibaba.marvel.Project;
@@ -202,7 +202,7 @@ public class hff {
             ipChange.ipc$dispatch("6df55fcb", new Object[]{meEditor, str});
         } else if (meEditor == null || meEditor.getCoreEditor() == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = s.q();
             }
             meEditor.getCoreEditor().setDefaultFontFile(str);

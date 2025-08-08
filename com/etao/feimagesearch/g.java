@@ -2,7 +2,7 @@ package com.etao.feimagesearch;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
 import com.taobao.android.task.Coordinator;
@@ -83,7 +83,7 @@ public class g {
                         ipChange2.ipc$dispatch("56c6c68", new Object[]{this});
                         return;
                     }
-                    if (TextUtils.isEmpty(g.a(g.this))) {
+                    if (StringUtils.isEmpty(g.a(g.this))) {
                         gVar = g.this;
                         str2 = str;
                     } else {
@@ -106,7 +106,7 @@ public class g {
             final String str = this.b;
             this.b = "";
             k.a(com.b(), "plt_cache", this.b);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             Coordinator.execute(new com.taobao.android.weex_framework.util.o() { // from class: com.etao.feimagesearch.g.2

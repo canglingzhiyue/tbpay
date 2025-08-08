@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx;
 
 import android.content.Context;
 import android.os.Trace;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -117,7 +117,7 @@ public class ac extends fpx {
         } catch (Throwable th) {
             if (c != null) {
                 try {
-                    if (!TextUtils.isEmpty(c.L().d)) {
+                    if (!StringUtils.isEmpty(c.L().d)) {
                         com.taobao.android.dinamicx.monitor.b.a(c.L().d, c.c(), DXMonitorConstant.DX_MONITOR_ASYNC_RENDER, DXMonitorConstant.PRE_RENDER_3_0_CRASH, s.V3_PRE_RENDER_CRASH, com.taobao.android.dinamicx.exception.a.a(th));
                     }
                 } finally {

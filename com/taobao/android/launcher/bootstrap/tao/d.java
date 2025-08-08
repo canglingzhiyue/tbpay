@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseIntArray;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -183,7 +183,7 @@ public class d implements Handler.Callback {
             ComponentName component = intent.getComponent();
             if ((!jqm.a() || !component.getClassName().startsWith("android.taobao.mulitenv.")) && (launchIntentForPackage = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName())) != null && launchIntentForPackage.getComponent() != null) {
                 ComponentName component2 = launchIntentForPackage.getComponent();
-                if (TextUtils.equals(component.getClassName(), component2.getClassName())) {
+                if (StringUtils.equals(component.getClassName(), component2.getClassName())) {
                     h.a("ATmHPrivacy", "class name is equal, discard: " + component.getClassName());
                     return false;
                 }
@@ -291,7 +291,7 @@ public class d implements Handler.Callback {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7d07c9c9", new Object[]{context, gtxVar})).booleanValue();
         }
-        if (TextUtils.equals(gtxVar.f28453a, gtxVar.b)) {
+        if (StringUtils.equals(gtxVar.f28453a, gtxVar.b)) {
             return jzk.a(new jzk.a() { // from class: com.taobao.android.launcher.bootstrap.tao.d.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

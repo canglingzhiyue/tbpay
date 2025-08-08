@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.adapter.interfaces;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -57,7 +57,7 @@ public abstract class ILogin {
             if (!(obj instanceof a)) {
                 return false;
             }
-            return TextUtils.equals(this.f19967a, ((a) obj).f19967a);
+            return StringUtils.equals(this.f19967a, ((a) obj).f19967a);
         }
 
         public static boolean a(a aVar, a aVar2) {

@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service.build;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.client.smart.core.core.WuKongNativeManager;
 import com.alibaba.security.client.smart.core.model.InferContext;
@@ -34,7 +34,7 @@ public class Ha {
                 Logging.e(Ha.f3243a, "infer context params is null");
             } else {
                 String str6 = inferContext.ccrcCode;
-                if (TextUtils.isEmpty(str6)) {
+                if (StringUtils.isEmpty(str6)) {
                     Logging.e(Ha.f3243a, "ccrcCode is empty,can not dispatch action correctly");
                     return;
                 }
@@ -43,7 +43,7 @@ public class Ha {
                     return;
                 }
                 for (BaseActionPerform baseActionPerform : a2.a()) {
-                    if (TextUtils.equals(str2, baseActionPerform.actionPerformCode())) {
+                    if (StringUtils.equals(str2, baseActionPerform.actionPerformCode())) {
                         baseActionPerform.accept(str, inferContext, str3, str4, str5);
                     }
                 }

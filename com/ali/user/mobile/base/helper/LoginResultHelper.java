@@ -2,7 +2,7 @@ package com.ali.user.mobile.base.helper;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.model.LoginParam;
 import com.ali.user.mobile.model.UrlParam;
 import com.ali.user.mobile.rpc.login.model.LoginReturnData;
@@ -27,7 +27,7 @@ public class LoginResultHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("89ad761b", new Object[]{context, loginReturnData, loginParam});
-        } else if (context != null && !TextUtils.isEmpty(loginReturnData.h5Url)) {
+        } else if (context != null && !StringUtils.isEmpty(loginReturnData.h5Url)) {
             if (loginParam == null) {
                 loginParam = new LoginParam();
             }

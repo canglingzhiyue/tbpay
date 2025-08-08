@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.comprehension;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -148,7 +148,7 @@ public final class b {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("8f19a9e0", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "single_session";
         }
         if (!f13323a.containsKey(str)) {
@@ -382,7 +382,7 @@ public final class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9a11f0d6", new Object[]{this, str, jSONArray, jSONObject});
-        } else if (!a() && !TextUtils.equals("rateTitle", str)) {
+        } else if (!a() && !StringUtils.equals("rateTitle", str)) {
         } else {
             if (jSONArray == null) {
                 jSONArray = new JSONArray();
@@ -395,7 +395,7 @@ public final class b {
             u.b("LCCOM.Tool", "submit.");
             e(str);
             this.k = jSONArray;
-            if (TextUtils.equals(str, "recognizeVideoMusic")) {
+            if (StringUtils.equals(str, "recognizeVideoMusic")) {
                 this.h = true;
                 this.c.b(new Runnable() { // from class: com.taobao.android.litecreator.comprehension.b.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -500,7 +500,7 @@ public final class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             MtopBusiness.build(Mtop.instance((String) null, Globals.getApplication()), new RecognizeVideoMusicMTopRequest(ios.a(this.b).c(), this.b, str2)).registerListener((IRemoteListener) new IRemoteBaseListener() { // from class: com.taobao.android.litecreator.comprehension.ContentComprehensionTool$4
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -568,7 +568,7 @@ public final class b {
         final JSONObject a2 = this.c.a(jSONArray, jSONObject);
         final ios.a a3 = ios.a(this.b);
         a2.put("ugcScene", (Object) a3.c());
-        a2.put("contentType", (Object) (TextUtils.equals("image", this.e.b) ? "article" : "video"));
+        a2.put("contentType", (Object) (StringUtils.equals("image", this.e.b) ? "article" : "video"));
         av.a(new Runnable() { // from class: com.taobao.android.litecreator.comprehension.b.4
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -586,7 +586,7 @@ public final class b {
                 }
             }
         });
-        boolean z = this.c.c() || (TextUtils.equals(str, "music") || TextUtils.equals(str, "videoEditSticker") || TextUtils.equals(str, "picEditSticker"));
+        boolean z = this.c.c() || (StringUtils.equals(str, "music") || StringUtils.equals(str, "videoEditSticker") || StringUtils.equals(str, "picEditSticker"));
         u.b("LCCOM.Tool", "submit.afterDataReady.Start. data is valid:" + z + ", data:" + a2.toJSONString());
         if (!z) {
             this.g = false;
@@ -595,7 +595,7 @@ public final class b {
         }
         ComprehensionMTopRequest comprehensionMTopRequest = new ComprehensionMTopRequest();
         String str2 = n.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = DEFAULT_API_NAME;
         }
         comprehensionMTopRequest.setAPI_NAME(str2);
@@ -706,7 +706,7 @@ public final class b {
             ipChange.ipc$dispatch("aea0d12c", new Object[]{this, str, dVar});
         } else if (dVar == null) {
         } else {
-            if (TextUtils.equals(str, "recognizeVideoMusic")) {
+            if (StringUtils.equals(str, "recognizeVideoMusic")) {
                 b(str, dVar);
                 return;
             }

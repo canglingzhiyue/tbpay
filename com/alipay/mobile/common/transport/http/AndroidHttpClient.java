@@ -3,7 +3,7 @@ package com.alipay.mobile.common.transport.http;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import com.alipay.mobile.common.netsdkextdependapi.appinfo.AppInfoUtil;
@@ -460,7 +460,7 @@ public final class AndroidHttpClient implements HttpClient {
         StringBuilder sb = new StringBuilder();
         sb.append("curl ");
         for (Header header : httpUriRequest.getAllHeaders()) {
-            if (z || (!TextUtils.equals(header.getName(), "Authorization") && !TextUtils.equals(header.getName(), "Cookie"))) {
+            if (z || (!StringUtils.equals(header.getName(), "Authorization") && !StringUtils.equals(header.getName(), "Cookie"))) {
                 sb.append("--header \"");
                 sb.append(header.toString().trim());
                 sb.append("\" ");

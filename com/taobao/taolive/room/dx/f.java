@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.dx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.login.model.LoginConstant;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -76,7 +76,7 @@ public class f extends com.taobao.android.dinamicx.h {
             } else {
                 JSONObject jSONObject = (JSONObject) objArr[1];
                 String string = jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     ddw.a().a(VideoFrameErrorController.EVENT_AUTO_DOWN, string);
                 }
                 a(jSONObject, "click");
@@ -94,13 +94,13 @@ public class f extends com.taobao.android.dinamicx.h {
             HashMap hashMap = new HashMap();
             hashMap.put("recommendType", sideGudieInfo.recommendType);
             hashMap.put("text", pqj.a(sideGudieInfo.recommendTextList));
-            if (!TextUtils.isEmpty(jSONObject.getString(LoginConstant.ACCOUNT))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(LoginConstant.ACCOUNT))) {
                 hashMap.put(LoginConstant.ACCOUNT, jSONObject.getString(LoginConstant.ACCOUNT));
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("residenceTime"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("residenceTime"))) {
                 hashMap.put("showtime", jSONObject.getString("residenceTime"));
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("delaytime"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("delaytime"))) {
                 hashMap.put("delaytime", jSONObject.getString("delaytime"));
             }
             hashMap.put("action", str);

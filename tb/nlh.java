@@ -8,7 +8,7 @@ import android.os.Looper;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import anet.channel.status.NetworkStatusHelper;
 import anetwork.channel.NetworkCallBack;
@@ -204,15 +204,15 @@ public class nlh implements d {
             if (queryOperatorRealResponse.model == null || queryOperatorRealResponse.model.urlMap == null) {
                 return;
             }
-            if (TextUtils.equals(this.f, Constant.CMCC)) {
+            if (StringUtils.equals(this.f, Constant.CMCC)) {
                 str = queryOperatorRealResponse.model.urlMap.CMCC;
-            } else if (TextUtils.equals(this.f, "CUC")) {
+            } else if (StringUtils.equals(this.f, "CUC")) {
                 str = queryOperatorRealResponse.model.urlMap.CUC;
             } else {
-                str = TextUtils.equals(queryOperatorRealResponse.model.urlMap.CTC, "CTC") ? queryOperatorRealResponse.model.urlMap.CTC : "";
+                str = StringUtils.equals(queryOperatorRealResponse.model.urlMap.CTC, "CTC") ? queryOperatorRealResponse.model.urlMap.CTC : "";
             }
             q.b("TrafficCardManager", "QueryOperatorRealResponse url :" + str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             a(str);
@@ -242,7 +242,7 @@ public class nlh implements d {
             q.b("TrafficCardManager", "start processTrafficCardData:" + trafficCardModel.state);
         }
         final long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.equals(trafficCardModel.state, "CAN_APPLY")) {
+        if (StringUtils.equals(trafficCardModel.state, "CAN_APPLY")) {
             long currentTimeMillis2 = System.currentTimeMillis();
             long c2 = ae.c("traffic_card_fatigue_key");
             long k = hkk.k();
@@ -265,7 +265,7 @@ public class nlh implements d {
                     ae.a("traffic_card_fatigue_key", currentTimeMillis);
                 }
             });
-        } else if (TextUtils.equals(trafficCardModel.state, "CAN_NOT_APPLY") || TextUtils.equals(trafficCardModel.state, "UNKNOWN")) {
+        } else if (StringUtils.equals(trafficCardModel.state, "CAN_NOT_APPLY") || StringUtils.equals(trafficCardModel.state, "UNKNOWN")) {
             long currentTimeMillis3 = System.currentTimeMillis();
             long c3 = ae.c("traffic_card_fatigue_key");
             long k2 = hkk.k();
@@ -288,7 +288,7 @@ public class nlh implements d {
                     ae.a("traffic_card_fatigue_key", currentTimeMillis);
                 }
             });
-        } else if (!TextUtils.equals(trafficCardModel.state, "SUBSCRIBING")) {
+        } else if (!StringUtils.equals(trafficCardModel.state, "SUBSCRIBING")) {
             return;
         } else {
             l.post(new Runnable() { // from class: tb.nlh.3
@@ -471,7 +471,7 @@ public class nlh implements d {
         } else if (context == null) {
         } else {
             c(context);
-            if (TextUtils.isEmpty(this.f)) {
+            if (StringUtils.isEmpty(this.f)) {
                 q.b("TrafficCardManager", "startRequestCarrier isp null");
                 return;
             }
@@ -517,7 +517,7 @@ public class nlh implements d {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                    } else if (TextUtils.isEmpty(trafficCardModel.jumpUrl) || nlh.a(nlh.this) == null) {
+                    } else if (StringUtils.isEmpty(trafficCardModel.jumpUrl) || nlh.a(nlh.this) == null) {
                     } else {
                         phg.a().a(nlh.c(nlh.this) == null ? null : (com.taobao.alilive.aliliveframework.frame.a) nlh.c(nlh.this).get(), "taolive_traffic_card", (Map<String, String>) new HashMap());
                         Nav.from(nlh.a(nlh.this)).toUri(trafficCardModel.jumpUrl);

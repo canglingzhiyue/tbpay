@@ -3,7 +3,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.homepage2.fragment.s
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -281,7 +281,7 @@ public class HomeFollowDXFragment extends HomeSelectedBaseFragment implements mf
             }
             String string = jSONObject.getString("chainName");
             JSONObject jSONObject2 = this.loginChainObject.getJSONObject("params");
-            if (TextUtils.isEmpty(string) || jSONObject2 == null || this.mLiveHomeContext == null || this.mLiveHomeContext.a() == null) {
+            if (StringUtils.isEmpty(string) || jSONObject2 == null || this.mLiveHomeContext == null || this.mLiveHomeContext.a() == null) {
                 return;
             }
             this.mLiveHomeContext.a().getDinamicSdkManager().getDinamicEngine().a(string, this.mDxRootView, jSONObject2, (String) null, (g) null);

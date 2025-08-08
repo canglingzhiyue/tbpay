@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.ArrayList;
@@ -63,6 +63,6 @@ public final class q {
     @JvmStatic
     public static final boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue() : TextUtils.equals("true", OrangeConfig.getInstance().getConfig(com.taobao.search.common.util.r.SEARCH_BIZ_NAME, "reportBxGesture", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue() : StringUtils.equals("true", OrangeConfig.getInstance().getConfig(com.taobao.search.common.util.r.SEARCH_BIZ_NAME, "reportBxGesture", "true"));
     }
 }

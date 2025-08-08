@@ -3,7 +3,7 @@ package com.taobao.android.editionswitcher.homepage;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -78,7 +78,7 @@ public class c {
         }
         if (f12306a == null) {
             String string = Globals.getApplication().getSharedPreferences("homepage_location_sp", 0).getString("editionTipsIsShown", "");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 f12306a = JSON.parseObject(string);
             }
         }

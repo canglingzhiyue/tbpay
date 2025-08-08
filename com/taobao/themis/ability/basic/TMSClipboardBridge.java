@@ -1,7 +1,7 @@
 package com.taobao.themis.ability.basic;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONObject;
@@ -48,7 +48,7 @@ public class TMSClipboardBridge implements a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca3883b7", new Object[]{this, str, bridgeCallback});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.INVALID_PARAM);
         } else {
             Application applicationContext = ((IEnvironmentService) qpt.a(IEnvironmentService.class)).getApplicationContext();

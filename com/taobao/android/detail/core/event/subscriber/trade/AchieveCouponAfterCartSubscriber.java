@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.event.subscriber.trade;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -60,7 +60,7 @@ public class AchieveCouponAfterCartSubscriber extends eei<edc> implements Serial
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("803fb5aa", new Object[]{this, edcVar});
         }
-        if (edcVar == null || edcVar.f27205a == null || TextUtils.isEmpty(edcVar.f27205a.c) || TextUtils.isEmpty(edcVar.f27205a.f9714a)) {
+        if (edcVar == null || edcVar.f27205a == null || StringUtils.isEmpty(edcVar.f27205a.c) || StringUtils.isEmpty(edcVar.f27205a.f9714a)) {
             return com.taobao.android.detail.core.event.a.FAILURE;
         }
         achieveCoupon(edcVar.f27205a);

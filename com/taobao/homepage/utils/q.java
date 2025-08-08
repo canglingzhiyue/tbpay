@@ -1,6 +1,6 @@
 package com.taobao.homepage.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.image.ImageStrategyConfig;
@@ -53,13 +53,13 @@ public class q {
         sb.append(z);
         strArr[0] = sb.toString();
         com.taobao.android.home.component.utils.e.e(str3, strArr);
-        if (TextUtils.equals(str, "loadCache")) {
+        if (StringUtils.equals(str, "loadCache")) {
             a();
             a(true);
             onq.a();
             onq.a("homepage-ads");
             onq.a(onq.IMAGE_FIRST_SCREEN_STRATEGY_CONFIG);
-        } else if (TextUtils.equals(str2, "base") && z) {
+        } else if (StringUtils.equals(str2, "base") && z) {
             a();
             onq.a();
             onq.a("homepage-ads");

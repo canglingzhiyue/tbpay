@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.track;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.frame.MspWindowFrame;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
 import com.alipay.android.msp.log.PageInfo;
@@ -103,7 +103,7 @@ public class MspTrackInfo {
             LogUtil.record(8, "TrackInfo:logPageStartWithSpmId", "tplId is null");
             return false;
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = mspWindowFrame.getTplId();
                 LogUtil.record(8, "TrackInfo:logPageStartWithSpmId", "spm is empty");
             }
@@ -115,7 +115,7 @@ public class MspTrackInfo {
                 return false;
             }
             PageInfo pageInfo2 = this.pageInfos.get(mspWindowFrame);
-            if (pageInfo2 == null || !TextUtils.equals(pageInfo2.spm, str)) {
+            if (pageInfo2 == null || !StringUtils.equals(pageInfo2.spm, str)) {
                 pageInfo2 = new PageInfo();
             }
             pageInfo2.isEnd = false;
@@ -141,7 +141,7 @@ public class MspTrackInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4cf950dd", new Object[]{this, pageInfo, str});
-        } else if (pageInfo == null || TextUtils.isEmpty(str)) {
+        } else if (pageInfo == null || StringUtils.isEmpty(str)) {
             LogUtil.record(2, "TrackInfo:updateLastInfoSpm", "updateLastInfoSpm spm or lastInfo is null");
         } else {
             pageInfo.spm = str;
@@ -165,7 +165,7 @@ public class MspTrackInfo {
         } else if (mspWindowFrame == null) {
             LogUtil.record(2, "TrackInfo:logPageEndWithSpmId", "End_View is null");
             return null;
-        } else if (TextUtils.isEmpty(getViewTag(mspWindowFrame.getTplId()))) {
+        } else if (StringUtils.isEmpty(getViewTag(mspWindowFrame.getTplId()))) {
             LogUtil.record(2, "TrackInfo:logPageEndWithSpmId", " spm is null");
             return null;
         } else {
@@ -244,7 +244,7 @@ public class MspTrackInfo {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogUtil.record(4, "TrackInfo:tagViewSpm", "tplId is empty");
             } else if (str2 == null) {
                 LogUtil.record(4, "TrackInfo:tagViewSpm", "spm is null");

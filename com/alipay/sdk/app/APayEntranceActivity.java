@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorType;
 import com.alipay.sdk.app.statistic.StatisticManager;
@@ -82,7 +82,7 @@ public class APayEntranceActivity extends Activity {
             String string2 = extras.getString(TARGET_PACKAGENAME);
             this.b = extras.getString(AP_SESSION);
             String string3 = extras.getString(AP_LOCAL_INFO, "{}");
-            if (!TextUtils.isEmpty(this.b)) {
+            if (!StringUtils.isEmpty(this.b)) {
                 this.c = BizContext.HolderForAct.getWithStringToken(this.b);
                 BizContext bizContext = this.c;
                 StatisticManager.putAction(bizContext, "biz", "BSAEntryCreate", this.b + "|" + SystemClock.elapsedRealtime());
@@ -116,8 +116,8 @@ public class APayEntranceActivity extends Activity {
         }
         String str = this.b;
         BizContext bizContext = this.c;
-        StatisticManager.putAction(bizContext, "biz", "BSAFinish", str + "|" + TextUtils.isEmpty(this.f6132a));
-        if (TextUtils.isEmpty(this.f6132a)) {
+        StatisticManager.putAction(bizContext, "biz", "BSAFinish", str + "|" + StringUtils.isEmpty(this.f6132a));
+        if (StringUtils.isEmpty(this.f6132a)) {
             this.f6132a = Result.getCancel();
             BizContext bizContext2 = this.c;
             if (bizContext2 != null) {

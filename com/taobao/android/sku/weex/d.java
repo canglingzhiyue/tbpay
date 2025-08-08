@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -386,7 +386,7 @@ public class d {
             return false;
         }
         String valueOf = String.valueOf(map.get("nodePath"));
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             o.d("getNodeData", "nodePath is empty");
             a(aVar, "nodeStr", h.toJSONString());
         } else {
@@ -400,7 +400,7 @@ public class d {
             JSONObject jSONObject = h;
             for (int i = 0; i < length; i++) {
                 String str = split[i];
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     String str2 = "nodePath: " + valueOf + " split with an empty node at index: " + i;
                     o.d("getNodeData", str2);
                     a(aVar2, "errorMsg", str2);
@@ -459,7 +459,7 @@ public class d {
 
     public boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && this.i.get(str) != null;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && this.i.get(str) != null;
     }
 
     private boolean c(Map<String, Object> map, com.taobao.android.sku.weex.a aVar, com.taobao.android.sku.weex.a aVar2) {
@@ -484,7 +484,7 @@ public class d {
         String valueOf4 = String.valueOf(map.get("addressId"));
         String valueOf5 = String.valueOf(map.get("params"));
         String valueOf6 = String.valueOf(map.get("forbidLoading"));
-        if (TextUtils.isEmpty(valueOf) || TextUtils.isEmpty(valueOf2)) {
+        if (StringUtils.isEmpty(valueOf) || StringUtils.isEmpty(valueOf2)) {
             a(aVar2, "errorMsg", "originalItemId or targetItemId is empty");
             return false;
         }
@@ -512,7 +512,7 @@ public class d {
         JSONObject parseObject = JSONObject.parseObject(valueOf);
         String string = parseObject.getString("apiName");
         String string2 = parseObject.getString("apiVersion");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             a(aVar2, "errorMsg", "apiName or apiVersion is empty");
             return false;
         }
@@ -567,14 +567,14 @@ public class d {
         String valueOf3 = String.valueOf(map.get("serviceUniqueId"));
         String valueOf4 = String.valueOf(map.get("itemId"));
         String valueOf5 = String.valueOf(map.get("skuId"));
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             str = "serviceLink is empty";
-        } else if (TextUtils.isEmpty(valueOf2)) {
+        } else if (StringUtils.isEmpty(valueOf2)) {
             str = "serviceId is empty";
         } else {
-            str = TextUtils.isEmpty(valueOf4) ? "itemId is empty" : "";
+            str = StringUtils.isEmpty(valueOf4) ? "itemId is empty" : "";
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a(aVar2, "errorMsg", str);
             return false;
         }
@@ -601,7 +601,7 @@ public class d {
         } else if (jSONObject == null || jSONObject.isEmpty() || (jSONObject2 = jSONObject.getJSONObject("params")) == null || jSONObject2.isEmpty()) {
         } else {
             String string = jSONObject2.getString("serviceId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             a(this.g.remove(string), "serviceStrData", jSONObject.toJSONString());
@@ -619,8 +619,8 @@ public class d {
         String valueOf4 = String.valueOf(map.get(fgl.ORIGINALITEMID));
         String valueOf5 = String.valueOf(map.get("sellerId"));
         boolean parseBoolean = Boolean.parseBoolean(String.valueOf(map.get("needCallback")));
-        String str = TextUtils.isEmpty(valueOf) ? "chartLink is empty" : "";
-        if (!TextUtils.isEmpty(str)) {
+        String str = StringUtils.isEmpty(valueOf) ? "chartLink is empty" : "";
+        if (!StringUtils.isEmpty(str)) {
             a(aVar2, "errorMsg", str);
             return false;
         }
@@ -669,7 +669,7 @@ public class d {
         } else {
             str = (parseObject == null || parseObject.isEmpty()) ? "currentImage is empty" : "";
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a(aVar2, "errorMsg", str);
             return false;
         }

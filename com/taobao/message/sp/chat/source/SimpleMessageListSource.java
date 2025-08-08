@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.source;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.p1;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorCode;
@@ -229,7 +229,7 @@ public final class SimpleMessageListSource implements Source<SimpleMessageListDa
         final String string3 = ValueUtil.getString(map, "accountId");
         final String string4 = ValueUtil.getString(map, "entityType");
         String string5 = ValueUtil.getString(map, "ccode");
-        boolean z = !TextUtils.isEmpty(string);
+        boolean z = !StringUtils.isEmpty(string);
         String id = z ? string : string2;
         if (map == null) {
             q.a();
@@ -413,7 +413,7 @@ public final class SimpleMessageListSource implements Source<SimpleMessageListDa
         simpleMessageListData.list = new ArrayList();
         simpleMessageListData.oldHasMore = simpleMessageListResult.hasMore;
         simpleMessageListData.reason = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i = 0;
         }
         simpleMessageListData.changeType = i;

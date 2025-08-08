@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.framework.data.remote.newmodel.a;
@@ -28,7 +28,7 @@ public class joo {
         }
         try {
             String key = iDMComponent.getKey();
-            if (TextUtils.isEmpty(key)) {
+            if (StringUtils.isEmpty(key)) {
                 return jSONObject2;
             }
             int indexOf = key.indexOf("_" + iDMComponent.getId());
@@ -36,7 +36,7 @@ public class joo {
                 return jSONObject2;
             }
             String substring = key.substring(0, indexOf);
-            if (TextUtils.isEmpty(substring) || (jSONObject3 = jSONObject.getJSONObject(substring)) == null) {
+            if (StringUtils.isEmpty(substring) || (jSONObject3 = jSONObject.getJSONObject(substring)) == null) {
                 return jSONObject2;
             }
             JSONObject jSONObject4 = new JSONObject();
@@ -74,7 +74,7 @@ public class joo {
             return obj;
         }
         String triggerEvent = dMComponent.getTriggerEvent();
-        if (TextUtils.isEmpty(triggerEvent)) {
+        if (StringUtils.isEmpty(triggerEvent)) {
             return obj;
         }
         String[] split = triggerEvent.split("\\.");

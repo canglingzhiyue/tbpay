@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class dlh {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("cac6299b", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (jSONObject = this.f26831a) != null) {
+        if (!StringUtils.isEmpty(str) && (jSONObject = this.f26831a) != null) {
             try {
                 if (!jSONObject.containsKey(str)) {
                     return null;

@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -304,7 +304,7 @@ public class mue implements View.OnClickListener, a {
         if (id == this.b.getId() || ((tUrlImageView = this.j) != null && id == tUrlImageView.getId())) {
             c.b("Page_MyTaobao", "Page_MyTaobao_Button-MyNickName", c.a("a2141.7631743.1.25", (String) null, (String) null, (Map<String, String>) null));
             String e = this.e.e();
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 return;
             }
             Bundle bundle = new Bundle();
@@ -313,7 +313,7 @@ public class mue implements View.OnClickListener, a {
             com.taobao.mytaobao.base.c.x = e;
         } else if (id == this.c.getId() || ((tUrlImageView2 = this.i) != null && id == tUrlImageView2.getId())) {
             String d = this.e.d();
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 return;
             }
             Nav.from(Globals.getApplication()).toUri(d);
@@ -325,7 +325,7 @@ public class mue implements View.OnClickListener, a {
             }
             c.b("Page_MyTaobao", "Page_MyTaobao_Button-Message", c.a("a2141.7631743.1.101", (String) null, (String) null, (Map<String, String>) null));
             String f = this.e.f();
-            if (TextUtils.isEmpty(f)) {
+            if (StringUtils.isEmpty(f)) {
                 return;
             }
             Nav.from(Globals.getApplication()).toUri(f);

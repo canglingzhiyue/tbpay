@@ -36,7 +36,7 @@ public class HonorApiAvailability {
             r2.append(r3)
             r2.append(r1)
             r2.toString()
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             if (r2 == 0) goto L23
         L20:
             com.hihonor.push.sdk.ipc.HonorApiAvailability$PackageStates r4 = com.hihonor.push.sdk.ipc.HonorApiAvailability.PackageStates.NOT_INSTALLED
@@ -65,10 +65,10 @@ public class HonorApiAvailability {
             return r4
         L4d:
             java.lang.String r4 = "android"
-            boolean r4 = android.text.TextUtils.equals(r1, r4)
+            boolean r4 = android.text.StringUtils.equals(r1, r4)
             if (r4 == 0) goto L64
             java.lang.String r4 = r0.b()
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             if (r4 != 0) goto L64
             com.hihonor.push.sdk.internal.HonorPushErrorEnum r4 = com.hihonor.push.sdk.internal.HonorPushErrorEnum.SUCCESS
             int r4 = r4.statusCode

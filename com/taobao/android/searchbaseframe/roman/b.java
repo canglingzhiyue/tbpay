@@ -1,7 +1,7 @@
 package com.taobao.android.searchbaseframe.roman;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -77,12 +77,12 @@ public class b implements com.taobao.orange.d {
             return;
         }
         String str2 = map.get("configVersion");
-        if (TextUtils.equals(str2, this.b)) {
+        if (StringUtils.equals(str2, this.b)) {
             return;
         }
         String customConfig = OrangeConfig.getInstance().getCustomConfig("search_roman_page", "");
         k.a("RomanOrangeMatcher", "onConfigUpdate: config=" + customConfig);
-        if (TextUtils.isEmpty(customConfig)) {
+        if (StringUtils.isEmpty(customConfig)) {
             return;
         }
         Map<String, List<RomanPage>> map2 = this.f14997a;
@@ -96,7 +96,7 @@ public class b implements com.taobao.orange.d {
         if (this.c == null) {
             this.c = b.getString("cacheVersion", "");
         }
-        if (!TextUtils.equals(this.b, this.c)) {
+        if (!StringUtils.equals(this.b, this.c)) {
             b.edit().putString("cacheVersion", this.b).putString("cacheContent", customConfig).apply();
             this.c = this.b;
         }
@@ -244,11 +244,11 @@ public class b implements com.taobao.orange.d {
         }
         SharedPreferences b = b();
         this.c = b.getString("cacheVersion", "");
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             return;
         }
         String string = b.getString("cacheContent", "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         try {

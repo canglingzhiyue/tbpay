@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -54,7 +54,7 @@ public class TPVideoWvPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (ACTION.equals(str) && !TextUtils.isEmpty(str2)) {
+        if (ACTION.equals(str) && !StringUtils.isEmpty(str2)) {
             this.mWVCallBackContext = wVCallBackContext;
             HashMap hashMap = (HashMap) JSONObject.parseObject(str2, new TypeReference<HashMap<String, String>>() { // from class: com.taobao.taopai.windvane.TPVideoWvPlugin.1
             }, new Feature[0]);
@@ -67,7 +67,7 @@ public class TPVideoWvPlugin extends e {
                 TLog.loge(TAG, "input params error, " + str2);
             } else {
                 this.mBizScene = (String) hashMap.get("biz_scene");
-                if (TextUtils.isEmpty(this.mBizScene)) {
+                if (StringUtils.isEmpty(this.mBizScene)) {
                     this.mBizScene = (String) hashMap.get(ag.KEY_TAOKE_BIZSCENE);
                 }
                 a.a(this.mBizScene);
@@ -83,7 +83,7 @@ public class TPVideoWvPlugin extends e {
                     builder = new Uri.Builder().scheme("http").authority("h5.m.taobao.com").path("/taopai/record.html");
                 }
                 for (Map.Entry entry : hashMap.entrySet()) {
-                    if (!TextUtils.isEmpty((CharSequence) entry.getKey())) {
+                    if (!StringUtils.isEmpty((CharSequence) entry.getKey())) {
                         builder.appendQueryParameter((String) entry.getKey(), (String) entry.getValue());
                     }
                 }

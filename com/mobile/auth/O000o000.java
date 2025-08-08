@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
 import com.cmic.sso.sdk.a;
 import com.mobile.auth.O00O0Oo;
@@ -52,7 +52,7 @@ public class O000o000 {
             }
             i++;
         }
-        return !TextUtils.isEmpty(str3) ? str3.substring(str3.lastIndexOf("=") + 1) : str3;
+        return !StringUtils.isEmpty(str3) ? str3.substring(str3.lastIndexOf("=") + 1) : str3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,19 +68,19 @@ public class O000o000 {
                     String string = jSONObject2.getString("CHANGE_HOST");
                     if (string.contains("M007")) {
                         String O000000o2 = O000000o(string, "M007");
-                        if (!TextUtils.isEmpty(O000000o2)) {
+                        if (!StringUtils.isEmpty(O000000o2)) {
                             O00000Oo.O000000o(LoggingSPCache.STORAGE_LOGHOST, O000000o2);
                         }
                     }
                     if (string.contains("M008")) {
                         String O000000o3 = O000000o(string, "M008");
-                        if (!TextUtils.isEmpty(O000000o3)) {
+                        if (!StringUtils.isEmpty(O000000o3)) {
                             O00000Oo.O000000o("https_get_phone_scrip_host", O000000o3);
                         }
                     }
                     if (string.contains("M009")) {
                         String O000000o4 = O000000o(string, "M009");
-                        if (!TextUtils.isEmpty(O000000o4)) {
+                        if (!StringUtils.isEmpty(O000000o4)) {
                             O00000Oo.O000000o("config_host", O000000o4);
                         }
                     }
@@ -97,7 +97,7 @@ public class O000o000 {
                 O000000o(jSONObject2, "CLOSE_M008_APPID_LIST", "0", O00000Oo);
                 if (jSONObject2.has("LOGS_CONTROL")) {
                     String[] split = jSONObject2.getString("LOGS_CONTROL").replace("h", "").split("&");
-                    if (split.length == 2 && !TextUtils.isEmpty(split[0]) && !TextUtils.isEmpty(split[1])) {
+                    if (split.length == 2 && !StringUtils.isEmpty(split[0]) && !StringUtils.isEmpty(split[1])) {
                         try {
                             int parseInt = Integer.parseInt(split[0]);
                             int parseInt2 = Integer.parseInt(split[1]);
@@ -129,7 +129,7 @@ public class O000o000 {
             if (!"0".equals(optString) && !"1".equals(optString)) {
                 return;
             }
-        } else if (TextUtils.isEmpty(optString)) {
+        } else if (StringUtils.isEmpty(optString)) {
             return;
         } else {
             if (!optString.contains("CU") && !optString.contains("CT") && !optString.contains("CM")) {

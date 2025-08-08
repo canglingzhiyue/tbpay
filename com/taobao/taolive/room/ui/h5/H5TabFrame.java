@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.ui.h5;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -149,7 +149,7 @@ public class H5TabFrame extends BaseFrame implements i.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("60dc73a1", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ab.a(TAG, "[init] url empty");
         } else {
             ab.d(TAG, "[init] url: " + str);

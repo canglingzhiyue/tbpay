@@ -2,7 +2,7 @@ package com.vivo.push.restructure.a;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 import com.vivo.push.model.UnvarnishedMessage;
 import com.vivo.push.util.u;
@@ -63,7 +63,7 @@ public final class b implements a {
         if (intent != null) {
             try {
                 String stringExtra = intent.getStringExtra("msg_v1");
-                if (!TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra)) {
                     UnvarnishedMessage unvarnishedMessage3 = new UnvarnishedMessage(stringExtra);
                     try {
                         unvarnishedMessage3.setMsgId(Long.parseLong(a()));
@@ -99,7 +99,7 @@ public final class b implements a {
 
     @Override // com.vivo.push.restructure.a.a
     public final String c() {
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = this.f24227a.getStringExtra("req_id");
         }
         return this.b;
@@ -158,7 +158,7 @@ public final class b implements a {
 
     @Override // com.vivo.push.restructure.a.a
     public final String i() {
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             this.d = this.f24227a.getStringExtra("content");
         }
         return this.d;

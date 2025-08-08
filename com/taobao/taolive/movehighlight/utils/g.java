@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class g {
         if (c.m()) {
             JSONObject parseObject = JSON.parseObject(Uri.parse(str).getQueryParameter("params"));
             String l = c.l();
-            if (TextUtils.isEmpty(l)) {
+            if (StringUtils.isEmpty(l)) {
                 return;
             }
             HashMap hashMap = new HashMap();

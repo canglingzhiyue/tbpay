@@ -1,6 +1,6 @@
 package com.taobao.tao.export.flickbtn;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.tao.export.flickbtn.mtop.MtopTaobaoSharepasswordQueryEntryRequest;
@@ -58,19 +58,19 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f19919a) || this.f == null) {
+        } else if (StringUtils.isEmpty(this.f19919a) || this.f == null) {
         } else {
             HashMap hashMap = new HashMap();
             String shareIconType = this.f.getShareIconType();
-            if (!TextUtils.isEmpty(shareIconType)) {
+            if (!StringUtils.isEmpty(shareIconType)) {
                 hashMap.put("shareIconType", shareIconType);
             }
             String shareChannel = this.f.getShareChannel();
-            if (!TextUtils.isEmpty(shareChannel)) {
+            if (!StringUtils.isEmpty(shareChannel)) {
                 hashMap.put("shareChannel", shareChannel);
             }
             String shareUid = this.f.getShareUid();
-            if (!TextUtils.isEmpty(shareUid)) {
+            if (!StringUtils.isEmpty(shareUid)) {
                 hashMap.put("shareUid", shareUid);
             }
             ShareMemoryCache.put(this.f19919a, hashMap, 1000L);
@@ -81,7 +81,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f19919a)) {
+        } else if (StringUtils.isEmpty(this.f19919a)) {
         } else {
             MtopTaobaoSharepasswordQueryEntryResponseData mtopTaobaoSharepasswordQueryEntryResponseData = this.f;
             ShareBusiness.traceShareBtnClick(this.f19919a, this.b, mtopTaobaoSharepasswordQueryEntryResponseData == null ? null : mtopTaobaoSharepasswordQueryEntryResponseData.getExtendMap());
@@ -92,7 +92,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f19919a)) {
+        } else if (StringUtils.isEmpty(this.f19919a)) {
         } else {
             MtopTaobaoSharepasswordQueryEntryResponseData mtopTaobaoSharepasswordQueryEntryResponseData = this.f;
             ShareBusiness.traceShareBtnExpose(this.f19919a, this.b, mtopTaobaoSharepasswordQueryEntryResponseData == null ? null : mtopTaobaoSharepasswordQueryEntryResponseData.getExtendMap());
@@ -101,7 +101,7 @@ public class b {
 
     public boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : !f() && !TextUtils.isEmpty(this.f19919a) && !TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.c) && !this.e;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : !f() && !StringUtils.isEmpty(this.f19919a) && !StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.c) && !this.e;
     }
 
     public void e() {
@@ -140,7 +140,7 @@ public class b {
                                     return;
                                 }
                                 MtopTaobaoSharepasswordQueryEntryResponseData mtopTaobaoSharepasswordQueryEntryResponseData = mo2429getData;
-                                if (mtopTaobaoSharepasswordQueryEntryResponseData == null || TextUtils.equals(mtopTaobaoSharepasswordQueryEntryResponseData.getShareIconType(), "commonIconType")) {
+                                if (mtopTaobaoSharepasswordQueryEntryResponseData == null || StringUtils.equals(mtopTaobaoSharepasswordQueryEntryResponseData.getShareIconType(), "commonIconType")) {
                                     return;
                                 }
                                 b bVar = b.this;

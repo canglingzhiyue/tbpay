@@ -8,7 +8,7 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.TypedValue;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -99,8 +99,8 @@ public class a implements b {
                     throw new IOException("Phenix.with(Context) hasn't been called before FileLoader(thumbnail) loading");
                 }
                 String a2 = a(n4, str2, dVar.m, false);
-                str2 = TextUtils.isEmpty(a2) ? a(n4, str2, dVar.m, true) : a2;
-                if (TextUtils.isEmpty(str2) || !new File(str2).exists()) {
+                str2 = StringUtils.isEmpty(a2) ? a(n4, str2, dVar.m, true) : a2;
+                if (StringUtils.isEmpty(str2) || !new File(str2).exists()) {
                     if (dVar.n) {
                         str2 = dVar.i;
                     } else {

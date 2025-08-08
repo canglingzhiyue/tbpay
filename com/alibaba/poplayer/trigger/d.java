@@ -1,7 +1,7 @@
 package com.alibaba.poplayer.trigger;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.poplayer.config.model.keep.KeepModel;
 import com.alibaba.poplayer.config.model.predeal.PreDealCustomEventParams;
@@ -280,11 +280,11 @@ public class d extends PopRequest {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8ce7abb1", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.n)) {
+        if (!StringUtils.isEmpty(this.n)) {
             return this.n;
         }
         BaseConfigItem baseConfigItem = this.e;
-        if (baseConfigItem != null && !TextUtils.isEmpty(baseConfigItem.extra)) {
+        if (baseConfigItem != null && !StringUtils.isEmpty(baseConfigItem.extra)) {
             try {
                 this.n = JSON.parseObject(this.e.extra).getString("augeCode");
             } catch (Throwable th) {
@@ -302,7 +302,7 @@ public class d extends PopRequest {
             return ((Boolean) ipChange.ipc$dispatch("41a3854", new Object[]{this})).booleanValue();
         }
         Event event = this.f;
-        return (event != null && event.source == 5) || !TextUtils.isEmpty(H());
+        return (event != null && event.source == 5) || !StringUtils.isEmpty(H());
     }
 
     public boolean F() {
@@ -322,10 +322,10 @@ public class d extends PopRequest {
         if (obj instanceof d) {
             d dVar = (d) obj;
             if (dVar.F()) {
-                return !TextUtils.isEmpty(this.e.uuid) && this.f.equals(dVar.f) && this.e.uuid.equals(dVar.e.uuid);
-            } else if (!TextUtils.isEmpty(this.e.indexID)) {
+                return !StringUtils.isEmpty(this.e.uuid) && this.f.equals(dVar.f) && this.e.uuid.equals(dVar.e.uuid);
+            } else if (!StringUtils.isEmpty(this.e.indexID)) {
                 return this.f.equals(dVar.f) && this.e.indexID.equals(dVar.e.indexID);
-            } else if (TextUtils.isEmpty(this.e.uuid)) {
+            } else if (StringUtils.isEmpty(this.e.uuid)) {
                 return super.equals(obj);
             } else {
                 return this.f.equals(dVar.f) && this.e.uuid.equals(dVar.e.uuid);

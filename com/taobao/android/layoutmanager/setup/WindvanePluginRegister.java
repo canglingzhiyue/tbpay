@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -97,7 +97,7 @@ public class WindvanePluginRegister {
                     JSONObject parseObject3 = JSON.parseObject(str2);
                     String string3 = parseObject3.getString("name");
                     Object obj2 = parseObject3.get("args");
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         try {
                             JSONObject jSONObject = new JSONObject();
                             jSONObject.put("name", (Object) string3);

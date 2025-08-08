@@ -1,6 +1,6 @@
 package com.vivo.push.f;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
 import com.vivo.push.f.u;
 import java.util.HashMap;
@@ -27,7 +27,7 @@ final class w implements u.a {
         hashMap.put("srt", "1");
         hashMap.put(Constant.PROP_MESSAGE_ID, String.valueOf(this.f24201a.b.f()));
         String a2 = com.vivo.push.restructure.a.a().e().a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("app_id", a2);
         }
         hashMap.put("type", "1");
@@ -40,7 +40,7 @@ final class w implements u.a {
         HashMap hashMap = new HashMap();
         hashMap.put("messageID", String.valueOf(this.f24201a.b.f()));
         String a2 = com.vivo.push.restructure.a.a().e().a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("remoteAppId", a2);
         }
         com.vivo.push.util.f.a(2122L, hashMap);

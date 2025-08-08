@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uploader.implement.b;
@@ -172,11 +172,11 @@ public class ror {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
         } else if (b.c() && c() && (b = roz.b(this.f33272a)) != null && b.isConnected()) {
-            final String extraInfo = !TextUtils.isEmpty(b.getExtraInfo()) ? b.getExtraInfo() : "default";
+            final String extraInfo = !StringUtils.isEmpty(b.getExtraInfo()) ? b.getExtraInfo() : "default";
             if (this.e == null) {
                 this.e = new HashMap<>();
                 String string = this.b.getString("aus_quic_history_record", null);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     try {
                         JSONArray jSONArray = new JSONArray(string);
                         for (int i = 0; i < jSONArray.length(); i++) {

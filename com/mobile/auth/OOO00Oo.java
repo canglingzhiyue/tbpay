@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -30,7 +30,7 @@ public final class OOO00Oo {
         @Override // javax.net.ssl.HostnameVerifier
         public final boolean verify(String str, SSLSession sSLSession) {
             try {
-                if (!TextUtils.isEmpty(str) && sSLSession != null && OOO.O000000o(str)) {
+                if (!StringUtils.isEmpty(str) && sSLSession != null && OOO.O000000o(str)) {
                     try {
                         String name = ((X509Certificate) sSLSession.getPeerCertificates()[0]).getSubjectDN().getName();
                         OOO0o0.O00000o0("subjectName = ".concat(String.valueOf(name)));

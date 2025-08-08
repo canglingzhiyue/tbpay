@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -108,11 +108,11 @@ public class ouh extends oud<a> {
             return;
         }
         b i3 = aVar.i();
-        if (!TextUtils.isEmpty(i3.b) && !i3.b.startsWith("http")) {
+        if (!StringUtils.isEmpty(i3.b) && !i3.b.startsWith("http")) {
             i3.b = k.HTTP_PREFIX + i3.b;
         }
         this.c.setImageUrl(i3.b);
-        if (TextUtils.isEmpty(i3.f20558a)) {
+        if (StringUtils.isEmpty(i3.f20558a)) {
             this.d.setVisibility(8);
         } else {
             if (this.d.getVisibility() != 0) {

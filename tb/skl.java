@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.container.g;
@@ -144,13 +144,13 @@ public final class skl {
             return (Map) ipChange.ipc$dispatch("3b696c1f", new Object[]{this});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(this.H)) {
+        if (!StringUtils.isEmpty(this.H)) {
             try {
                 hashMap.put(this.H, f.a(this.H, "version"));
             } catch (Throwable unused) {
             }
         }
-        if (!TextUtils.isEmpty(this.I)) {
+        if (!StringUtils.isEmpty(this.I)) {
             try {
                 hashMap.put(this.I, f.a(this.I, "version"));
             } catch (Throwable unused2) {

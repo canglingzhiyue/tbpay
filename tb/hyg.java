@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.ext.p;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a;
@@ -43,7 +43,7 @@ public class hyg extends p {
             try {
                 JSONObject jSONObject = e(eVar).getJSONObject("doPay").getJSONObject("data");
                 if (jSONObject != null) {
-                    if (!TextUtils.isEmpty(jSONObject.getString("actionUrl"))) {
+                    if (!StringUtils.isEmpty(jSONObject.getString("actionUrl"))) {
                         c(eVar, "openUrl", a(jSONObject.getString("actionUrl")));
                     } else {
                         a(eVar, hye.SUBSCRIBER_ID, (JSONObject) null, jSONObject);
@@ -75,7 +75,7 @@ public class hyg extends p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5d9eff91", new Object[]{this});
         }
-        if (this.e != null && !TextUtils.isEmpty(this.e.g())) {
+        if (this.e != null && !StringUtils.isEmpty(this.e.g())) {
             if (this.e.g().equalsIgnoreCase(alz.BizKeyOrderList)) {
                 return alz.BizKeyOrderList;
             }

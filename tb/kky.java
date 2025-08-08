@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -67,12 +67,12 @@ public class kky implements klh {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (TextUtils.equals(str, "stat")) {
+        if (StringUtils.equals(str, "stat")) {
             if (f30134a) {
                 return;
             }
             f30134a = true;
-        } else if (TextUtils.equals(str, "download_task")) {
+        } else if (StringUtils.equals(str, "download_task")) {
             if (b) {
                 return;
             }

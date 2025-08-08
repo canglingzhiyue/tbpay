@@ -1,7 +1,7 @@
 package com.taobao.login4android.uninstall;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.callback.CommonDataCallback;
 import com.ali.user.mobile.log.UserTrackAdapter;
 import com.ali.user.mobile.utils.BackgroundExecutor;
@@ -189,7 +189,7 @@ public class OppoKeyChain {
         } else {
             HashMap hashMap = new HashMap();
             hashMap.put("key", str);
-            if (!TextUtils.isEmpty(LoginStatus.savedOppo)) {
+            if (!StringUtils.isEmpty(LoginStatus.savedOppo)) {
                 MainThreadExecutor.execute(new Runnable() { // from class: com.taobao.login4android.uninstall.OppoKeyChain.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

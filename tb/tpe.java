@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.res.AssetManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -102,10 +102,10 @@ public class tpe implements Runnable {
         kxt.a("DXLanguageLoaderOpt extractLanguageConfig ");
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key) && key.contains(str)) {
+            if (!StringUtils.isEmpty(key) && key.contains(str)) {
                 JSONObject parseObject = JSONObject.parseObject(new String(fwn.a().a(entry.getValue(), dXWidgetNode.getDXRuntimeContext())));
                 String replace = new String(key.getBytes()).replace(str, "");
-                if (!TextUtils.isEmpty(replace)) {
+                if (!StringUtils.isEmpty(replace)) {
                     dXWidgetNode.addLanguageConfigSync(replace.replace(".json", ""), parseObject);
                 }
                 z = true;
@@ -123,10 +123,10 @@ public class tpe implements Runnable {
         boolean z = false;
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key) && key.indexOf(str) == 0) {
+            if (!StringUtils.isEmpty(key) && key.indexOf(str) == 0) {
                 JSONObject parseObject = JSONObject.parseObject(new String(fwn.a().a(entry.getValue(), dXWidgetNode.getDXRuntimeContext())));
                 String substring = key.substring(str.length());
-                if (!TextUtils.isEmpty(substring) && substring.length() > 5) {
+                if (!StringUtils.isEmpty(substring) && substring.length() > 5) {
                     dXWidgetNode.addLanguageConfigSync(substring.substring(0, substring.length() - 5), parseObject);
                 }
                 z = true;
@@ -144,7 +144,7 @@ public class tpe implements Runnable {
         boolean z = false;
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key) && key.indexOf(str) == 0) {
+            if (!StringUtils.isEmpty(key) && key.indexOf(str) == 0) {
                 JSONObject parseObject = JSONObject.parseObject(new String(fwn.a().a(entry.getValue(), dXWidgetNode.getDXRuntimeContext())));
                 int length = key.length();
                 char[] cArr = new char[5];
@@ -169,7 +169,7 @@ public class tpe implements Runnable {
         kxt.a("DXLanguageLoaderOpt extractLanguageConfigPerfOpt ");
         String a2 = u.k().a();
         String str2 = map.get(str + a2 + ".json");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         dXWidgetNode.addLanguageConfigSync(a2, JSONObject.parseObject(new String(fwn.a().a(str2, dXWidgetNode.getDXRuntimeContext()))));

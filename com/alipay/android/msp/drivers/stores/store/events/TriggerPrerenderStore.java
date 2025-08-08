@@ -1,7 +1,7 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -52,7 +52,7 @@ public class TriggerPrerenderStore extends LocalEventStore {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("9fb79ff9", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         if (str.startsWith("QUICKPAY@")) {
                             str = str.substring(9);
@@ -72,9 +72,9 @@ public class TriggerPrerenderStore extends LocalEventStore {
                     TriggerPrerenderStore.b(TriggerPrerenderStore.this).getStatisticInfo().addError("tpl", "triggerPrerenderFail", ag.ARG_ERROR_CODE.concat(String.valueOf(i)));
                 }
             };
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 PreRendManager.getInstance().doPreloadTpl(activity, string, this.e, onTplPreRendListener, "event");
-            } else if (!TextUtils.isEmpty(string2)) {
+            } else if (!StringUtils.isEmpty(string2)) {
                 PreRendManager.getInstance().preRendTpl(activity, this.f4584a.getBizId(), string2, onTplPreRendListener, "event");
             }
             return "{\"result\":true}";

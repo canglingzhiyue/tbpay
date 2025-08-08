@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
@@ -211,7 +211,7 @@ public class FalconCardNativeActivityNew extends BioFragmentContainer implements
         hashMap.put("sdkVersion", "3.0");
         hashMap.put(rrv.BISTOKEN, this.e.getBistoken());
         String staticApDidToken = ApSecurityService.getStaticApDidToken();
-        if (TextUtils.isEmpty(staticApDidToken) && (apSecurityService = (ApSecurityService) BioServiceManager.getCurrentInstance().getBioService(ApSecurityService.class)) != null) {
+        if (StringUtils.isEmpty(staticApDidToken) && (apSecurityService = (ApSecurityService) BioServiceManager.getCurrentInstance().getBioService(ApSecurityService.class)) != null) {
             staticApDidToken = apSecurityService.getApDidToken();
         }
         hashMap.put(rrv.APDIDTOKEN, staticApDidToken);

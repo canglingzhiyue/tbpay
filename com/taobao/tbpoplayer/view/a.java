@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.view;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -46,7 +46,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{this, str, str2, str3})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         Map<String, String> map = this.f22263a.get(str);
@@ -64,10 +64,10 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("87942679", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (map = this.f22263a.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (map = this.f22263a.get(str)) == null) {
             return "";
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return map.get(str2);
         }
         return map.get(str3);
@@ -77,7 +77,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f22263a.remove(str);
         }

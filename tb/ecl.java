@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.utils.i;
 import java.io.BufferedReader;
@@ -77,7 +77,7 @@ public class ecl {
                     } catch (Throwable th) {
                         i.a("CpuInfoUtils", "initCpuFrequenceToPreference", th);
                     }
-                    if (TextUtils.isEmpty(readLine)) {
+                    if (StringUtils.isEmpty(readLine)) {
                         return null;
                     }
                     SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(context).edit();

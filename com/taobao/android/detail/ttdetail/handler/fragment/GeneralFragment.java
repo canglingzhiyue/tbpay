@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.handler.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,7 +90,7 @@ public class GeneralFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4a829e5d", new Object[]{fragmentActivity, str, arrayList, aVar});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || arrayList == null || arrayList.size() == 0) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || arrayList == null || arrayList.size() == 0) {
         } else {
             FloatFragment.startFragment(fragmentActivity, newInstance(str, arrayList, aVar));
         }
@@ -218,7 +218,7 @@ public class GeneralFragment extends FloatFragment {
             if (pair == null) {
                 return;
             }
-            if (pair.first != null && !TextUtils.isEmpty((CharSequence) pair.first)) {
+            if (pair.first != null && !StringUtils.isEmpty((CharSequence) pair.first)) {
                 bVar.f10748a.setText((CharSequence) pair.first);
             } else {
                 bVar.c.setVisibility(8);

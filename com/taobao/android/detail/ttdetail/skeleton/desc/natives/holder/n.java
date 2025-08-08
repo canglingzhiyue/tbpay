@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -265,7 +265,7 @@ public class n extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("daf50b49", new Object[]{this, str, onClickListener});
         }
-        if (TextUtils.isEmpty(str) || onClickListener == null) {
+        if (StringUtils.isEmpty(str) || onClickListener == null) {
             return new View(this.f10821a);
         }
         if (this.n == null) {

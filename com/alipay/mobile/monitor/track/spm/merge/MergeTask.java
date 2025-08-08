@@ -1,6 +1,6 @@
 package com.alipay.mobile.monitor.track.spm.merge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.alipay.mobile.common.logging.api.behavor.Behavor;
 import com.alipay.mobile.framework.MpaasClassInfo;
@@ -70,7 +70,7 @@ public class MergeTask {
             return;
         }
         String str = this.b.build().getExtParams().get(MergeUtil.KEY_EXPOSED);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             b(behavor);
             return;
         }
@@ -152,7 +152,7 @@ public class MergeTask {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("rid|");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         sb.append(str);

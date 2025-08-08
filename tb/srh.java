@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.alibaba.fastjson.JSON;
@@ -61,10 +61,10 @@ public class srh implements sre {
                 try {
                     BootImageInfo bootImageInfo = (BootImageInfo) JSON.parseObject(a2.toJSONString(), BootImageInfo.class);
                     if (bootImageInfo != null) {
-                        if (!TextUtils.isEmpty(bootImageInfo.imgUrl)) {
+                        if (!StringUtils.isEmpty(bootImageInfo.imgUrl)) {
                             arrayList.add(new sru(bootImageInfo.imgUrl, 1, bootImageInfo.enable4G));
                         }
-                        if (!TextUtils.isEmpty(bootImageInfo.videoUrl)) {
+                        if (!StringUtils.isEmpty(bootImageInfo.videoUrl)) {
                             arrayList.add(new sru(bootImageInfo.videoUrl, 0, bootImageInfo.enable4G));
                         }
                         arrayList2.add(bootImageInfo);
@@ -183,7 +183,7 @@ public class srh implements sre {
             return ((Boolean) ipChange.ipc$dispatch("75806d92", new Object[]{this, bootImageInfo})).booleanValue();
         }
         long b = keo.b();
-        return b >= bootImageInfo.gmtStartMs && b <= bootImageInfo.gmtEndMs && !TextUtils.isEmpty(bootImageInfo.itemId);
+        return b >= bootImageInfo.gmtStartMs && b <= bootImageInfo.gmtEndMs && !StringUtils.isEmpty(bootImageInfo.itemId);
     }
 
     private boolean b(BootImageInfo bootImageInfo, int i) {
@@ -196,7 +196,7 @@ public class srh implements sre {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("258203bb", new Object[]{this, bootImageInfo, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.equals("image", bootImageInfo.bizType)) {
+        if (StringUtils.equals("image", bootImageInfo.bizType)) {
             return true;
         }
         if (i == 1000) {

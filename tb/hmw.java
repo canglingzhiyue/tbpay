@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.g;
 import com.taobao.search.common.util.l;
@@ -31,15 +31,15 @@ public class hmw extends hme<c> {
         this.e = new TextPaint();
         this.e.setAntiAlias(true);
         this.e.setTextSize(l.a(((c) this.c).d()));
-        this.e.setColor(g.a((!this.d || TextUtils.isEmpty(((c) this.c).e())) ? ((c) this.c).b() : ((c) this.c).e(), -1));
+        this.e.setColor(g.a((!this.d || StringUtils.isEmpty(((c) this.c).e())) ? ((c) this.c).b() : ((c) this.c).e(), -1));
         this.e.setAlpha((int) (this.g * 255.0f));
         this.e.setFakeBoldText(((c) this.c).c());
-        if (TextUtils.isEmpty(((c) this.c).g()) && TextUtils.isEmpty(((c) this.c).f())) {
+        if (StringUtils.isEmpty(((c) this.c).g()) && StringUtils.isEmpty(((c) this.c).f())) {
             return;
         }
         this.f = new Paint();
         this.f.setAntiAlias(true);
-        this.f.setColor(g.a((!this.d || TextUtils.isEmpty(((c) this.c).g())) ? ((c) this.c).f() : ((c) this.c).g(), 0));
+        this.f.setColor(g.a((!this.d || StringUtils.isEmpty(((c) this.c).g())) ? ((c) this.c).f() : ((c) this.c).g(), 0));
         this.f.setStyle(Paint.Style.FILL);
         this.f.setAlpha((int) (this.g * 255.0f));
     }

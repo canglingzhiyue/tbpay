@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAInputData;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.c;
@@ -144,7 +144,7 @@ public final class ays extends arj<UMFLinkageTrigger, AURANextRPCIO> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str) || !(context instanceof Activity)) {
+        } else if (StringUtils.isEmpty(str) || !(context instanceof Activity)) {
         } else {
             bat.a((Activity) context, str);
         }
@@ -158,7 +158,7 @@ public final class ays extends arj<UMFLinkageTrigger, AURANextRPCIO> {
         } else if (renderComponent == null) {
         } else {
             String key = renderComponent.getKey();
-            if (TextUtils.isEmpty(key)) {
+            if (StringUtils.isEmpty(key)) {
                 return;
             }
             RecyclerView.Adapter adapter = recyclerView.getAdapter();
@@ -174,7 +174,7 @@ public final class ays extends arj<UMFLinkageTrigger, AURANextRPCIO> {
             while (true) {
                 if (i2 < a2.size()) {
                     AURARenderComponent aURARenderComponent2 = a2.get(i2);
-                    if (aURARenderComponent2 != null && !TextUtils.isEmpty(aURARenderComponent2.key) && aURARenderComponent2.key.equals(key)) {
+                    if (aURARenderComponent2 != null && !StringUtils.isEmpty(aURARenderComponent2.key) && aURARenderComponent2.key.equals(key)) {
                         aURARenderComponent = aURARenderComponent2;
                         break;
                     }

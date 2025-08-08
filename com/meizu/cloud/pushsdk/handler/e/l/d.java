@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e.l;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.message.SubAliasStatus;
@@ -42,7 +42,7 @@ public class d extends com.meizu.cloud.pushsdk.handler.e.a<SubAliasStatus> {
     /* renamed from: l */
     public SubAliasStatus f(Intent intent) {
         String stringExtra = intent.getStringExtra(PushConstants.MZ_MESSAGE_VALUE);
-        SubAliasStatus c = !TextUtils.isEmpty(stringExtra) ? com.meizu.cloud.pushsdk.platform.message.a.c(stringExtra) : (SubAliasStatus) intent.getSerializableExtra(PushConstants.EXTRA_APP_PUSH_SUBALIAS_STATUS);
+        SubAliasStatus c = !StringUtils.isEmpty(stringExtra) ? com.meizu.cloud.pushsdk.platform.message.a.c(stringExtra) : (SubAliasStatus) intent.getSerializableExtra(PushConstants.EXTRA_APP_PUSH_SUBALIAS_STATUS);
         if ("200".equals(c.getCode())) {
             c(c.getAlias());
         }

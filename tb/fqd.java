@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.i;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -24,7 +24,7 @@ public class fqd implements i.c {
         if (ipChange instanceof IpChange) {
             return (i.f) ipChange.ipc$dispatch("c5461a4d", new Object[]{this, str});
         }
-        if (this.f28114a != null && !TextUtils.isEmpty(str)) {
+        if (this.f28114a != null && !StringUtils.isEmpty(str)) {
             return this.f28114a.get(str);
         }
         return null;
@@ -46,7 +46,7 @@ public class fqd implements i.c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (this.f28114a == null || TextUtils.isEmpty(str)) {
+        } else if (this.f28114a == null || StringUtils.isEmpty(str)) {
         } else {
             this.f28114a.remove(str);
         }

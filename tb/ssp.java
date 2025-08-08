@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -143,9 +143,9 @@ public class ssp {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1aa3523", new Object[]{str, list});
-        } else if (TextUtils.equals(str, "scrollStatusEnd")) {
+        } else if (StringUtils.equals(str, "scrollStatusEnd")) {
             h.a("Page_Home", (List<BHXVisualCenterItem>) list, false);
-        } else if (!TextUtils.equals(str, "statusFirstScreen")) {
+        } else if (!StringUtils.equals(str, "statusFirstScreen")) {
         } else {
             h.a("Page_Home", (List<BHXVisualCenterItem>) list, true);
         }

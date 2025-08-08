@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.view.holder.main.dinamic3.view
 
 import android.content.Context;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import com.alibaba.fastjson.JSONArray;
@@ -61,7 +61,7 @@ public class XAdaptiveTextViewV3 extends DXNativeTextView {
         } else if (jSONArray == null) {
         } else {
             this.separator = str4;
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 this.xEllipsis = str6;
             }
             this.data.clear();
@@ -90,11 +90,11 @@ public class XAdaptiveTextViewV3 extends DXNativeTextView {
         Iterator<Object> it = jSONArray.iterator();
         while (it.hasNext()) {
             JSONObject jSONObject = (JSONObject) it.next();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Object obj = jSONObject.get(str);
                 if (obj != null) {
                     String obj2 = obj.toString();
-                    if (!TextUtils.isEmpty(obj2)) {
+                    if (!StringUtils.isEmpty(obj2)) {
                         arrayList.add(obj2);
                         i++;
                     }
@@ -110,7 +110,7 @@ public class XAdaptiveTextViewV3 extends DXNativeTextView {
                     if (isMaxLen(i, this.maxLen)) {
                         this.hasMore = true;
                         return;
-                    } else if (!TextUtils.isEmpty(str2)) {
+                    } else if (!StringUtils.isEmpty(str2)) {
                         arrayList.add(str2);
                         i++;
                     }
@@ -169,7 +169,7 @@ public class XAdaptiveTextViewV3 extends DXNativeTextView {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("ac5a8669", new Object[]{this, textView, str})).floatValue();
         }
-        if (textView != null && !TextUtils.isEmpty(str) && (paint = textView.getPaint()) != null) {
+        if (textView != null && !StringUtils.isEmpty(str) && (paint = textView.getPaint()) != null) {
             return paint.measureText(str);
         }
         return -1.0f;

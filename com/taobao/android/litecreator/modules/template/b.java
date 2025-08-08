@@ -3,7 +3,7 @@ package com.taobao.android.litecreator.modules.template;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.marvel.Marvel;
 import com.alibaba.marvel.Project;
 import com.alibaba.marvel.TemplateEditor;
@@ -148,7 +148,7 @@ public class b {
             return;
         }
         u.d(TAG, "export: itemId=" + templateInfo.itemId);
-        if (TextUtils.isEmpty(templateInfo.templateRootPath) || !k.a(templateInfo.templateRootPath)) {
+        if (StringUtils.isEmpty(templateInfo.templateRootPath) || !k.a(templateInfo.templateRootPath)) {
             aVar.a(new TemplateResult("guideMarvelExport", Constant.CODE_ERROR_PHONE_UNSAFE_FAIL, "marvelJsonDirNotExist"), "", "templateRootPath null!");
         } else if (this.f13364a.a(templateInfo.templateRootPath)) {
             this.f13364a.a(context, new c.a() { // from class: com.taobao.android.litecreator.modules.template.b.2

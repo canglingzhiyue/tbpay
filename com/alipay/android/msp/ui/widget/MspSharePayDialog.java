@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,7 +90,7 @@ public class MspSharePayDialog {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -109,18 +109,18 @@ public class MspSharePayDialog {
             return;
         }
         String string = jSONObject.getString("channel");
-        if (!TextUtils.equals(string, "code") && !a(context, "com.eg.android.AlipayGphone")) {
+        if (!StringUtils.equals(string, "code") && !a(context, "com.eg.android.AlipayGphone")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("failact");
             if (jSONObject2 == null || (createMspEvent = MspEventCreator.get().createMspEvent("MspSharePayDialog.processSel", jSONObject2)) == null) {
                 return;
             }
             createMspEvent.setFromLocalEvent(true);
             ActionsCreator.get(mspTradeContext).createEventAction(createMspEvent);
-        } else if (TextUtils.equals(string, SubstituteConstants.KEY_CHANNEL_FRIENDS)) {
+        } else if (StringUtils.equals(string, SubstituteConstants.KEY_CHANNEL_FRIENDS)) {
             c(jSONObject, mspTradeContext, false);
-        } else if (TextUtils.equals(string, "code")) {
+        } else if (StringUtils.equals(string, "code")) {
             b(jSONObject, mspTradeContext, false);
-        } else if (!TextUtils.equals(string, "phone")) {
+        } else if (!StringUtils.equals(string, "phone")) {
         } else {
             d(jSONObject, mspTradeContext, false);
         }
@@ -133,7 +133,7 @@ public class MspSharePayDialog {
         } else if (jSONObject != null) {
             try {
                 String string = jSONObject.getString("params");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     jSONObject.remove("params");
                     JSONObject parseObject = JSON.parseObject(string);
                     for (String str : parseObject.keySet()) {
@@ -144,13 +144,13 @@ public class MspSharePayDialog {
                 List parseArray = JSONObject.parseArray(JSONObject.toJSONString(jSONArray), String.class);
                 int size = parseArray.size();
                 if (size == 1) {
-                    if (TextUtils.equals(jSONArray.getString(0), SubstituteConstants.KEY_CHANNEL_FRIENDS)) {
+                    if (StringUtils.equals(jSONArray.getString(0), SubstituteConstants.KEY_CHANNEL_FRIENDS)) {
                         c(jSONObject, mspTradeContext, false);
-                    } else if (TextUtils.equals(jSONArray.getString(0), "code")) {
+                    } else if (StringUtils.equals(jSONArray.getString(0), "code")) {
                         b(jSONObject, mspTradeContext, true);
-                    } else if (TextUtils.equals(jSONArray.getString(0), "phone")) {
+                    } else if (StringUtils.equals(jSONArray.getString(0), "phone")) {
                         d(jSONObject, mspTradeContext, false);
-                    } else if (TextUtils.equals(jSONArray.getString(0), "shareToken")) {
+                    } else if (StringUtils.equals(jSONArray.getString(0), "shareToken")) {
                         b("/shareppay/shareToken", "{}", mspTradeContext);
                     }
                 } else {
@@ -175,7 +175,7 @@ public class MspSharePayDialog {
         } else {
             try {
                 String string = jSONObject.getString("channel");
-                if (!TextUtils.isEmpty(string) && (parseObject = JSON.parseObject(string)) != null && parseObject.size() > 0) {
+                if (!StringUtils.isEmpty(string) && (parseObject = JSON.parseObject(string)) != null && parseObject.size() > 0) {
                     ArrayList arrayList = new ArrayList(parseObject.keySet());
                     int size = parseObject.size();
                     if (size != 1) {
@@ -183,19 +183,19 @@ public class MspSharePayDialog {
                             return;
                         }
                         a(context, arrayList, jSONObject, mspTradeContext);
-                    } else if (TextUtils.equals((CharSequence) arrayList.get(0), SubstituteConstants.KEY_CHANNEL_FRIENDS)) {
+                    } else if (StringUtils.equals((CharSequence) arrayList.get(0), SubstituteConstants.KEY_CHANNEL_FRIENDS)) {
                         if (mspTradeContext.isFromWallet()) {
                             z = false;
                         }
                         c(jSONObject, mspTradeContext, z);
-                    } else if (TextUtils.equals((CharSequence) arrayList.get(0), "code")) {
+                    } else if (StringUtils.equals((CharSequence) arrayList.get(0), "code")) {
                         b(jSONObject, mspTradeContext, false);
-                    } else if (TextUtils.equals((CharSequence) arrayList.get(0), "phone")) {
+                    } else if (StringUtils.equals((CharSequence) arrayList.get(0), "phone")) {
                         if (mspTradeContext.isFromWallet()) {
                             z = false;
                         }
                         d(jSONObject, mspTradeContext, z);
-                    } else if (!TextUtils.equals((CharSequence) arrayList.get(0), "shareToken")) {
+                    } else if (!StringUtils.equals((CharSequence) arrayList.get(0), "shareToken")) {
                     } else {
                         b("/shareppay/shareToken", "{}", mspTradeContext);
                     }
@@ -272,7 +272,7 @@ public class MspSharePayDialog {
                 findViewById.setVisibility(8);
                 if (i < list.size()) {
                     String str = list2.get(i);
-                    if (TextUtils.equals(str, SubstituteConstants.KEY_CHANNEL_FRIENDS) && hasAlipayWallet) {
+                    if (StringUtils.equals(str, SubstituteConstants.KEY_CHANNEL_FRIENDS) && hasAlipayWallet) {
                         textView.setText("发送给支付宝好友");
                         textView2.setText("指定一位好友，让TA帮你付款");
                         imageView.setImageResource(R.drawable.sharepay_channel_friend);
@@ -292,7 +292,7 @@ public class MspSharePayDialog {
                             }
                         });
                         findViewById.setVisibility(0);
-                    } else if (TextUtils.equals(str, "code")) {
+                    } else if (StringUtils.equals(str, "code")) {
                         textView.setText("面对面扫码");
                         textView2.setText("朋友就在身边，快让TA打开扫一扫");
                         imageView.setImageResource(R.drawable.sharepay_channel_paycode);
@@ -312,7 +312,7 @@ public class MspSharePayDialog {
                             }
                         });
                         findViewById.setVisibility(0);
-                    } else if (TextUtils.equals(str, "phone") && hasAlipayWallet) {
+                    } else if (StringUtils.equals(str, "phone") && hasAlipayWallet) {
                         textView.setText("发送给通讯录好友");
                         textView2.setText("还没加TA好友，不要错过这个机会");
                         imageView.setImageResource(R.drawable.sharepay_channel_phone);
@@ -332,7 +332,7 @@ public class MspSharePayDialog {
                             }
                         });
                         findViewById.setVisibility(0);
-                    } else if (TextUtils.equals(str, "shareToken")) {
+                    } else if (StringUtils.equals(str, "shareToken")) {
                         textView.setText("发送给微信好友");
                         textView2.setText("找微信好友，让TA出手相助");
                         imageView.setImageResource(R.drawable.sharepay_channel_sharetoken);
@@ -543,7 +543,7 @@ public class MspSharePayDialog {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {

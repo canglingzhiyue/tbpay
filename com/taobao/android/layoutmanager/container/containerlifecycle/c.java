@@ -3,7 +3,7 @@ package com.taobao.android.layoutmanager.container.containerlifecycle;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -144,7 +144,7 @@ public class c implements e {
         if (bundle != null) {
             z |= bundle.getBoolean("has_share_element", false);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         a(str);
@@ -417,10 +417,10 @@ public class c implements e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String queryParameter = Uri.parse(str).getQueryParameter(aw.PARAM_UT_PARAMS);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return;
             }
             UTAnalytics.getInstance().getDefaultTracker().updateNextPageUtparam(queryParameter);

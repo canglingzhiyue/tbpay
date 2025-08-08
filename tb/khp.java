@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.d;
@@ -49,7 +49,7 @@ public class khp {
             if (f30079a == null || f30079a.isEmpty()) {
                 f30079a = khw.a(khm.a().c()).a(SP_ORANGE_MANUFACTURER_REACH);
             }
-            if (!TextUtils.isEmpty(f30079a.get(str))) {
+            if (!StringUtils.isEmpty(f30079a.get(str))) {
                 return f30079a.get(str);
             }
         } catch (Exception e) {
@@ -60,7 +60,7 @@ public class khp {
 
     public static boolean a(String str, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : TextUtils.equals("true", a(str, String.valueOf(z)));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8123ece6", new Object[]{str, new Boolean(z)})).booleanValue() : StringUtils.equals("true", a(str, String.valueOf(z)));
     }
 
     public static boolean a() {
@@ -86,7 +86,7 @@ public class khp {
         try {
             String str = f30079a.get("process_sp_enable");
             khu.a("processSpEnable: " + str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return true;
             }
             return Boolean.parseBoolean(str);

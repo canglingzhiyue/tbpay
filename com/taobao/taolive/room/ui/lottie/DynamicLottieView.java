@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.ui.lottie;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public class DynamicLottieView extends MALottieView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6da15c92", new Object[]{this, str, jSONArray, jSONArray2, jSONArray3, dVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a a2 = a.Builder.c(str).a();
             if (jSONArray != null) {

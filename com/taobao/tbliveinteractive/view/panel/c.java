@@ -3,7 +3,7 @@ package com.taobao.tbliveinteractive.view.panel;
 import android.content.Context;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
@@ -97,7 +97,7 @@ public class c extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 if (i2 < 0 && ((interactiveComponent.showOrder > 0 && interactiveComponent2.showOrder > interactiveComponent.showOrder) || (interactiveComponent.showOrder > 0 && interactiveComponent2.showOrder < 0))) {
                     i2 = i3;
                 }
-                if (TextUtils.equals(interactiveComponent.fedName, interactiveComponent2.fedName) || TextUtils.equals(interactiveComponent.name, interactiveComponent2.name)) {
+                if (StringUtils.equals(interactiveComponent.fedName, interactiveComponent2.fedName) || StringUtils.equals(interactiveComponent.name, interactiveComponent2.name)) {
                     i = i3;
                     break;
                 }
@@ -131,7 +131,7 @@ public class c extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
         for (int i = 0; i < this.b.size(); i++) {
             InteractiveComponent interactiveComponent2 = this.b.get(i);
-            if (TextUtils.equals(interactiveComponent.fedName, interactiveComponent2.fedName) || TextUtils.equals(interactiveComponent.name, interactiveComponent2.name)) {
+            if (StringUtils.equals(interactiveComponent.fedName, interactiveComponent2.fedName) || StringUtils.equals(interactiveComponent.name, interactiveComponent2.name)) {
                 this.b.remove(i);
                 notifyItemRemoved(i);
                 return;
@@ -141,7 +141,7 @@ public class c extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private boolean c(InteractiveComponent interactiveComponent) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8690da06", new Object[]{this, interactiveComponent})).booleanValue() : interactiveComponent != null && interactiveComponent.migrationFlag && !TextUtils.isEmpty(interactiveComponent.panelTitle) && qne.a(interactiveComponent.fedName);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("8690da06", new Object[]{this, interactiveComponent})).booleanValue() : interactiveComponent != null && interactiveComponent.migrationFlag && !StringUtils.isEmpty(interactiveComponent.panelTitle) && qne.a(interactiveComponent.fedName);
     }
 
     @Override // android.support.v7.widget.RecyclerView.Adapter

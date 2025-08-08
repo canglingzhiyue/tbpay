@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.player;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.bl;
@@ -187,10 +187,10 @@ public class b {
         if (n == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(n.o())) {
+        if (!StringUtils.isEmpty(n.o())) {
             return n.o();
         }
-        if (TextUtils.isEmpty(n.n())) {
+        if (StringUtils.isEmpty(n.n())) {
             return null;
         }
         return n.n();
@@ -242,7 +242,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (odz) ipChange.ipc$dispatch("85380082", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return h(str);
         }
         return null;

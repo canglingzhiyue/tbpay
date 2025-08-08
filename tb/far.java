@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -91,10 +91,10 @@ public class far extends b<fbh> {
         if (fbhVar.b != null) {
             f.a(this.g).a(this.l, fbhVar.b);
         }
-        if (TextUtils.isEmpty(fbhVar.h) && TextUtils.isEmpty(fbhVar.i)) {
+        if (StringUtils.isEmpty(fbhVar.h) && StringUtils.isEmpty(fbhVar.i)) {
             this.r.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(fbhVar.h)) {
+        if (!StringUtils.isEmpty(fbhVar.h)) {
             this.q.setVisibility(0);
             f.a(this.g).a(this.q, fbhVar.h);
         }
@@ -104,6 +104,6 @@ public class far extends b<fbh> {
     /* renamed from: c  reason: avoid collision after fix types in other method */
     public boolean c2(fbh fbhVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c53e9132", new Object[]{this, fbhVar})).booleanValue() : TextUtils.isEmpty(fbhVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c53e9132", new Object[]{this, fbhVar})).booleanValue() : StringUtils.isEmpty(fbhVar.b);
     }
 }

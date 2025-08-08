@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.Constant;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.mobile.auth.gatewayauth.ResultCode;
@@ -98,7 +98,7 @@ public class O0o0000 extends com.mobile.auth.gatewayauth.manager.O000000o {
                     try {
                         monitorStruct.setCarrierReturnTime(System.currentTimeMillis());
                         O0o0000.O00000o(O0o0000.this).O000000o("ctcc：", "getLoginInfo:", str2);
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             O0o0000.O000000o(O0o0000.this, requestCallback, Constant.CODE_ERROR_UNKNOWN_FAIL, "CTCC 获得的手机授权码结果为空", "", Constant.VENDOR_CTCC, monitorStruct, str);
                             return;
                         }
@@ -115,7 +115,7 @@ public class O0o0000 extends com.mobile.auth.gatewayauth.manager.O000000o {
                             Data data = fromJson.getData();
                             String number = data.getNumber();
                             String accessCode = data.getAccessCode();
-                            if (TextUtils.isEmpty(number)) {
+                            if (StringUtils.isEmpty(number)) {
                                 O0o0000.O00000o0(O0o0000.this, requestCallback, String.valueOf(fromJson.getResult()), fromJson.getMsg(), str2, Constant.VENDOR_CTCC, monitorStruct, str);
                                 return;
                             }
@@ -332,7 +332,7 @@ public class O0o0000 extends com.mobile.auth.gatewayauth.manager.O000000o {
     @Override // com.mobile.auth.gatewayauth.manager.O000000o
     protected String O00000Oo(String str, String str2) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             try {
@@ -496,7 +496,7 @@ public class O0o0000 extends com.mobile.auth.gatewayauth.manager.O000000o {
                     try {
                         monitorStruct.setCarrierReturnTime(System.currentTimeMillis());
                         O0o0000.O00000oo(O0o0000.this).O000000o("ctcc：", "getVerifyInfo:", str);
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             O0o0000.O00000oO(O0o0000.this, requestCallback, Constant.CODE_ERROR_UNKNOWN_FAIL, "CTCC 获得认证Token结果为空", "", Constant.VENDOR_CTCC, monitorStruct, ResultCode.CODE_GET_TOKEN_FAIL);
                             return;
                         }
@@ -512,7 +512,7 @@ public class O0o0000 extends com.mobile.auth.gatewayauth.manager.O000000o {
                             }
                             Data data = fromJson.getData();
                             String accessCode = data.getAccessCode();
-                            if (TextUtils.isEmpty(accessCode)) {
+                            if (StringUtils.isEmpty(accessCode)) {
                                 O0o0000.O0000O0o(O0o0000.this, requestCallback, String.valueOf(fromJson.getResult()), fromJson.getMsg(), str, Constant.VENDOR_CTCC, monitorStruct, ResultCode.CODE_GET_TOKEN_FAIL);
                                 return;
                             }

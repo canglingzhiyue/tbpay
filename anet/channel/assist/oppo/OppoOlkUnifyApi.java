@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import anet.channel.util.ALog;
@@ -175,7 +175,7 @@ public class OppoOlkUnifyApi {
             Network activeNetwork = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetwork();
             Bundle bundle = new Bundle();
             bundle.putString(a.ATOM_function, "getNetworkQuality");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 bundle.putParcelable("network", activeNetwork);
             } else {
                 int parseInt = Integer.parseInt(str);

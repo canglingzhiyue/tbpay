@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -132,7 +132,7 @@ public class BaseQrLoginFragment extends BaseLoginFragment implements Handler.Ca
         if (arguments != null) {
             String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
             arguments.putString(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.loginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
             }
         }
@@ -249,7 +249,7 @@ public class BaseQrLoginFragment extends BaseLoginFragment implements Handler.Ca
                 } else if (rpcResponse == null) {
                 } else {
                     GenQrResponse genQrResponse = (GenQrResponse) rpcResponse;
-                    if (genQrResponse != null && genQrResponse.returnValue != 0 && !TextUtils.isEmpty(((GenQrData) genQrResponse.returnValue).qrCodeImgUrl)) {
+                    if (genQrResponse != null && genQrResponse.returnValue != 0 && !StringUtils.isEmpty(((GenQrData) genQrResponse.returnValue).qrCodeImgUrl)) {
                         BaseQrLoginFragment.this.mQrCodeData = new QrCodeData();
                         BaseQrLoginFragment.this.mQrCodeData.qrCode = ((GenQrData) genQrResponse.returnValue).token;
                         BaseQrLoginFragment.this.mQrCodeData.qrCodeUrl = ((GenQrData) genQrResponse.returnValue).qrCodeUrl;
@@ -276,7 +276,7 @@ public class BaseQrLoginFragment extends BaseLoginFragment implements Handler.Ca
                 }
                 LoginTLogAdapter.e(BaseQrLoginFragment.TAG, "reqFail" + rpcResponse.message);
                 String stringById = ResourceUtil.getStringById("passport_sdk_network_error");
-                if (!TextUtils.isEmpty(rpcResponse.message)) {
+                if (!StringUtils.isEmpty(rpcResponse.message)) {
                     stringById = rpcResponse.message;
                 }
                 BaseQrLoginFragment.this.toast(stringById, 0);
@@ -391,7 +391,7 @@ public class BaseQrLoginFragment extends BaseLoginFragment implements Handler.Ca
             ipChange.ipc$dispatch("eeaa2826", new Object[]{this, str, str2});
         } else if (this.mQrCodeView == null) {
             LoginTLogAdapter.w(TAG, "showQrCode fail");
-        } else if (TextUtils.isEmpty(str) || str.equals(this.mQrCodeView.getTag()) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || str.equals(this.mQrCodeView.getTag()) || StringUtils.isEmpty(str2)) {
             LoginTLogAdapter.e(TAG, "showQrCode failed, aQrCodeStr = " + str + ",tag=" + this.mQrCodeView.getTag() + ", qrCodeImgUrl= " + str2);
         } else {
             if (this.mQrCodeSize <= 0) {

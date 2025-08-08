@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.nn.f;
 import com.etao.feimagesearch.util.ac;
@@ -63,7 +63,7 @@ public final class f {
             }
             DAIConfiguration create = DAI.newConfigurationBuilder(b).setUserAdapter(com.alibaba.analytics.h.class).setDebugMode(false).create();
             String c = com.c();
-            if (TextUtils.isEmpty(c)) {
+            if (StringUtils.isEmpty(c)) {
                 return;
             }
             try {
@@ -259,7 +259,7 @@ public final class f {
         if (this.f6898a.get()) {
             return true;
         }
-        return TextUtils.isEmpty(str) ? MNNCV.isAvailable() && MNNCV.isTaskRunnable("plt_autodetect") : MNNCV.isAvailable() && MNNCV.isTaskRunnable(str);
+        return StringUtils.isEmpty(str) ? MNNCV.isAvailable() && MNNCV.isTaskRunnable("plt_autodetect") : MNNCV.isAvailable() && MNNCV.isTaskRunnable(str);
     }
 
     private final void a(boolean z) {

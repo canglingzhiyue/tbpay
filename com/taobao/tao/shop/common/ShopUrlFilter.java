@@ -2,7 +2,7 @@ package com.taobao.tao.shop.common;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.evo.EVO;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -28,7 +28,7 @@ public class ShopUrlFilter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b6e7fbda", new Object[]{this, str, context})).booleanValue();
         }
-        if (!com.taobao.tao.shop.rule.a.a() || TextUtils.isEmpty(str) || a(str)) {
+        if (!com.taobao.tao.shop.rule.a.a() || StringUtils.isEmpty(str) || a(str)) {
             return false;
         }
         boolean a2 = g.a().a(com.taobao.tao.shop.rule.b.f21093a, str, e.b);
@@ -45,7 +45,7 @@ public class ShopUrlFilter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9c70d3b2", new Object[]{this, str, context, bVar})).booleanValue();
         }
-        if (!com.taobao.tao.shop.rule.a.a() || TextUtils.isEmpty(str) || a(str)) {
+        if (!com.taobao.tao.shop.rule.a.a() || StringUtils.isEmpty(str) || a(str)) {
             return false;
         }
         try {

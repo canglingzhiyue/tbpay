@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -155,7 +155,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (this.f9659a.getParent() == null || this.g == null || this.f == null || TextUtils.isEmpty(str) || str.equals(this.f.getString("selectedLocationId"))) {
+        } else if (this.f9659a.getParent() == null || this.g == null || this.f == null || StringUtils.isEmpty(str) || str.equals(this.f.getString("selectedLocationId"))) {
         } else {
             String a2 = i.a("TTElevator", BTags.TTFloat);
             com.taobao.android.detail.core.utils.i.d(a2, "highlightElevator:" + str);

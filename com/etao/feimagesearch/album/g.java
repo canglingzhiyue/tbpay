@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.album;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.jvm.JvmStatic;
 import tb.com;
@@ -26,7 +26,7 @@ public final class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (str == null || TextUtils.isEmpty(str)) {
+        } else if (str == null || StringUtils.isEmpty(str)) {
         } else {
             cuj.a(com.b(), "PltLastAlbumPicTime", str);
         }
@@ -44,7 +44,7 @@ public final class g {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
         String a2 = a();
-        if (a2 == null || TextUtils.isEmpty(a2)) {
+        if (a2 == null || StringUtils.isEmpty(a2)) {
             return "InvalidValue";
         }
         long currentTimeMillis = (System.currentTimeMillis() / 1000) - cov.a(a2, -1L);

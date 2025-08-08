@@ -1,6 +1,6 @@
 package com.taobao.android.weex_ability.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_ability.mtop.a;
@@ -51,7 +51,7 @@ public class MUSMtopModule extends MUSModule {
         } else {
             if (getInstance() instanceof MUSDKInstance) {
                 String instanceEnv = ((MUSDKInstance) getInstance()).getInstanceEnv("bundleUrl");
-                if (!TextUtils.isEmpty(instanceEnv) && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("data")) != null && jyx.MODULE_NAME.equals(jSONObject2.getString("__prefetch")) && (a2 = a.a().a(instanceEnv, jSONObject)) != null) {
+                if (!StringUtils.isEmpty(instanceEnv) && jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("data")) != null && jyx.MODULE_NAME.equals(jSONObject2.getString("__prefetch")) && (a2 = a.a().a(instanceEnv, jSONObject)) != null) {
                     if (a2.f15946a != null) {
                         bVar.a(a2.f15946a);
                         return;

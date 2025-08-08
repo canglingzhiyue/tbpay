@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import tb.kge;
@@ -17,9 +17,9 @@ public class ac {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d8610c43", new Object[]{map, str, str2, new Boolean(z)});
-        } else if ((TextUtils.isEmpty(str2) && !z) || map == null) {
+        } else if ((StringUtils.isEmpty(str2) && !z) || map == null) {
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "";
             }
             map.put(str, str2);
@@ -40,7 +40,7 @@ public class ac {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1ec6792f", new Object[]{map, str, new Integer(i)})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && map != null && map.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && map != null && map.containsKey(str)) {
             try {
                 return Integer.parseInt(String.valueOf(map.get(str)));
             } catch (Throwable unused) {
@@ -54,7 +54,7 @@ public class ac {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1ec67cf1", new Object[]{map, str, new Long(j)})).longValue();
         }
-        if (!TextUtils.isEmpty(str) && map != null && map.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && map != null && map.containsKey(str)) {
             try {
                 return Long.parseLong(String.valueOf(map.get(str)));
             } catch (Throwable unused) {
@@ -68,7 +68,7 @@ public class ac {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1ec66de9", new Object[]{map, str, new Float(f)})).floatValue();
         }
-        if (!TextUtils.isEmpty(str) && map != null && map.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && map != null && map.containsKey(str)) {
             try {
                 return Float.parseFloat(String.valueOf(map.get(str)));
             } catch (Throwable unused) {
@@ -82,7 +82,7 @@ public class ac {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1ec6b911", new Object[]{map, str, new Boolean(z)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && map != null && map.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && map != null && map.containsKey(str)) {
             try {
                 return Boolean.parseBoolean(String.valueOf(map.get(str)));
             } catch (Throwable unused) {
@@ -96,7 +96,7 @@ public class ac {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("307b7710", new Object[]{map, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && map != null && map.containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && map != null && map.containsKey(str)) {
             try {
                 return String.valueOf(map.get(str));
             } catch (Throwable unused) {

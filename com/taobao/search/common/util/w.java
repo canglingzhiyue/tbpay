@@ -2,7 +2,7 @@ package com.taobao.search.common.util;
 
 import android.content.Context;
 import android.support.v4.view.GravityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class w {
                 Log.e(f19047a, "set icon error");
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             makeText.setText2(str2);
         }
         makeText.setGravity(GravityCompat.START, 0, -500);

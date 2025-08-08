@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import org.json.JSONObject;
 
@@ -48,7 +48,7 @@ public final class O000000o {
                 O000000o = null;
                 return;
             }
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 if (!O000OOOo.O00000Oo(context)) {
                     o00000Oo.O000000o("{\"result\":80003,\"msg\":\"网络无连接\"}");
                     O000000o = null;

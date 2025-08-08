@@ -1,6 +1,6 @@
 package com.taobao.android.ucp.bridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -69,7 +69,7 @@ public class a {
                 String string = jSONObject3.getString("bizCode");
                 String string2 = jSONObject3.getString("materialType");
                 String string3 = jSONObject3.getString("materialSubType");
-                if (TextUtils.equals(string, str) && TextUtils.equals(string2, str2) && TextUtils.equals(string3, str3)) {
+                if (StringUtils.equals(string, str) && StringUtils.equals(string2, str2) && StringUtils.equals(string3, str3)) {
                     break;
                 }
             }
@@ -110,7 +110,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             TLog.loge("UCP", "policiesStr is null");
         } else {
             f15708a = JSON.parseArray(str);
@@ -125,7 +125,7 @@ public class a {
         }
         if (b == null) {
             String a2 = com.taobao.android.behavix.behavixswitch.a.a("enableTabbarControl", "");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = "[{\"bizCode\":\"homePage\",\"block\":\"bottomBar\",\"materialType\":\"alienEffect\",\"materialSubType\":\"rocket\",\"display\":true,\"trackInfo\":{\"bizType\":\"2\",\"bizCode\":\"homePage\",\"block\":\"bottomBar\",\"materialType\":\"alienEffect\",\"materialSubType\":\"rocket\"}},{\"bizCode\":\"message\",\"block\":\"bottomBar\",\"materialType\":\"commonMark\",\"materialSubType\":\"num\",\"display\":true,\"trackInfo\":{\"bizType\":\"1\",\"bizCode\":\"message\",\"block\":\"bottomBar\",\"materialType\":\"commonMark\",\"materialSubType\":\"num\"}},{\"bizCode\":\"message\",\"block\":\"bottomBar\",\"materialType\":\"commonMark\",\"materialSubType\":\"text\",\"display\":true,\"trackInfo\":{\"bizType\":\"1\",\"bizCode\":\"message\",\"block\":\"bottomBar\",\"materialType\":\"commonMark\",\"materialSubType\":\"text\"}},{\"bizCode\":\"cart\",\"block\":\"bottomBar\",\"materialType\":\"commonMark\",\"materialSubType\":\"num\",\"display\":true,\"trackInfo\":{\"bizType\":\"1\",\"bizCode\":\"cart\",\"block\":\"bottomBar\",\"materialType\":\"commonMark\",\"materialSubType\":\"num\"}}]";
             }
             b = JSON.parseArray(a2);

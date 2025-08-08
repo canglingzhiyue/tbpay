@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.address.wrapper.weex.AddressKinshipBridge;
@@ -178,7 +178,7 @@ public class olh {
             String str = oko.h;
             String str2 = this.f32154a.g;
             h.a(str, str2, "[UploadFile] Start to upload file. Count: " + this.k);
-            if (TextUtils.isEmpty(this.f32154a.g)) {
+            if (StringUtils.isEmpty(this.f32154a.g)) {
                 this.i = new File(com.taobao.tao.log.utils.a.c(), jhz.a());
             } else {
                 this.i = new File(com.taobao.tao.log.utils.a.c(), this.f32154a.g);
@@ -349,7 +349,7 @@ public class olh {
         if (this.g == null) {
             this.g = new ArrayList();
         }
-        if (TextUtils.isEmpty(str) || this.g.contains(str)) {
+        if (StringUtils.isEmpty(str) || this.g.contains(str)) {
             return;
         }
         this.g.add(str);

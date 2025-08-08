@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
@@ -73,9 +73,9 @@ public class SettingStateWVApiPlugin extends e {
             boolean r8 = r8.booleanValue()
             return r8
         L22:
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 != 0) goto Lb0
-            boolean r0 = android.text.TextUtils.isEmpty(r9)
+            boolean r0 = android.text.StringUtils.isEmpty(r9)
             if (r0 != 0) goto Lb0
             if (r10 != 0) goto L32
             goto Lb0
@@ -228,7 +228,7 @@ public class SettingStateWVApiPlugin extends e {
         }
         String str2 = (String) getParam("bizName", str);
         String str3 = (String) getParam("key", str);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             wVCallBackContext.error("key is null");
             return;
         }
@@ -256,7 +256,7 @@ public class SettingStateWVApiPlugin extends e {
         if (bool == null) {
             bool = false;
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             wVCallBackContext.error("type is null");
             return;
         }
@@ -330,7 +330,7 @@ public class SettingStateWVApiPlugin extends e {
         }
         String str2 = (String) getParam("bizName", str);
         String str3 = (String) getParam("type", str);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             wVCallBackContext.error("type is null");
             return;
         }

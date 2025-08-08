@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class fkw {
         this.m = nyk.KEY_SHARE_CONFIG_WANGXIN.equals(fjo.a(intent, a.ATOM_caller));
         this.f28020a = fjy.b(intent);
         String dataString = intent.getDataString();
-        if (!TextUtils.isEmpty(dataString)) {
+        if (!StringUtils.isEmpty(dataString)) {
             if (dataString.contains(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID)) {
                 this.o = d(dataString);
             }
@@ -141,7 +141,7 @@ public class fkw {
             return this;
         }
         this.g = data.getQueryParameter("clickid");
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             this.g = fjo.a(intent, "clickid");
         }
         this.b = data.getQueryParameter("skuId");
@@ -161,7 +161,7 @@ public class fkw {
         } catch (Throwable unused) {
         }
         ctu.a("uriParam2KVS");
-        if (!TextUtils.isEmpty(data.getQuery()) && (queryParameterNames = data.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
+        if (!StringUtils.isEmpty(data.getQuery()) && (queryParameterNames = data.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
             for (String str2 : queryParameterNames) {
                 if (!"referrer".equals(str2)) {
                     this.s.put(str2, data.getQueryParameter(str2));
@@ -173,7 +173,7 @@ public class fkw {
             AliLoginInterface a2 = o.a();
             if (a2 != null) {
                 String d = a2.d();
-                if (!TextUtils.isEmpty(d)) {
+                if (!StringUtils.isEmpty(d)) {
                     this.s.put("nick", d);
                 }
             }
@@ -208,7 +208,7 @@ public class fkw {
         hashMap.put(P, this.O.a(this.N).f27981a);
         hashMap.put(Q, this.O.a(this.N).b);
         String str4 = this.O.a(this.N).c;
-        if (!TextUtils.isEmpty(str4) && !"0".equals(str4)) {
+        if (!StringUtils.isEmpty(str4) && !"0".equals(str4)) {
             hashMap.put(V, str4);
         }
         a(hashMap);
@@ -250,7 +250,7 @@ public class fkw {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         if ("all".equals(str)) {
@@ -269,7 +269,7 @@ public class fkw {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("1c6cb129", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         try {
@@ -307,7 +307,7 @@ public class fkw {
             return;
         }
         String string = extras.getString("targetParams");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         try {
@@ -346,9 +346,9 @@ public class fkw {
         }
         HashMap hashMap = new HashMap(map);
         String config = OrangeConfig.getInstance().getConfig("android_detail", str, str2);
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             for (String str3 : config.split(",")) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     hashMap.remove(str3);
                 }
             }
@@ -380,7 +380,7 @@ public class fkw {
                 }
             }
             String str3 = this.s.get("track_params");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 JSONObject jSONObject = null;
                 try {
                     jSONObject = JSON.parseObject(str3);
@@ -422,7 +422,7 @@ public class fkw {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (String str2 : new String[]{"[?|&]liveId=(\\d+)"}) {

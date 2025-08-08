@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import com.alibaba.android.umbrella.trace.UmbrellaInfo;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
@@ -36,7 +36,7 @@ public class jmc {
             }
             UmbrellaInfo.a aVar = new UmbrellaInfo.a(str2, str3, str, str4, str5);
             aVar.a(str3).a(map);
-            if (TextUtils.isEmpty(str6) || (a2 = aVar.a()) == null) {
+            if (StringUtils.isEmpty(str6) || (a2 = aVar.a()) == null) {
                 return;
             }
             String str8 = UmbrellaTracker.PURCHASE_POINT_PRE + a2.mainBizName + UmbrellaTracker.PURCHASE_POINT_POST;
@@ -63,7 +63,7 @@ public class jmc {
             UmbrellaInfo.a aVar = new UmbrellaInfo.a(str2, str3, str, str4, str5);
             aVar.a(str3).a(map);
             UmbrellaInfo a2 = aVar.a();
-            if (a2 == null || TextUtils.isEmpty(a2.mainBizName)) {
+            if (a2 == null || StringUtils.isEmpty(a2.mainBizName)) {
                 return;
             }
             String str6 = UmbrellaTracker.PURCHASE_POINT_PRE + a2.mainBizName + UmbrellaTracker.PURCHASE_POINT_POST;
@@ -79,7 +79,7 @@ public class jmc {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         double a2 = jmh.a(jmg.CONFIG_KEY_SAMPLE_RATIO, 5.0E-4d);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a2 = jmh.a("sample_ratio_" + str, a2);
         }
         return a2 > Math.random();

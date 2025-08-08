@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -62,7 +62,7 @@ public abstract class ex<T> {
             return;
         }
         this.e = handler;
-        this.f7776a = TextUtils.isEmpty(str) ? "unknow" : str;
+        this.f7776a = StringUtils.isEmpty(str) ? "unknow" : str;
         this.f = fy.l(context);
         try {
             this.b = new File(context.getFilesDir().getPath(), this.f7776a);
@@ -156,7 +156,7 @@ public abstract class ex<T> {
             }
         }
         String sb2 = sb.toString();
-        if (!TextUtils.isEmpty(sb2)) {
+        if (!StringUtils.isEmpty(sb2)) {
             fy.a(this.b, sb2);
         }
     }

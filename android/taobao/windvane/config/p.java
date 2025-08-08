@@ -1,6 +1,6 @@
 package android.taobao.windvane.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
@@ -66,7 +66,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (j.commonConfig.ad) {
@@ -81,7 +81,7 @@ public class p {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
         if (f == null) {
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 e = "^https?:\\/\\/(([^/\\?#]+\\.)*((mp\\.dfkhgj|mp\\.iuynfg|mp\\.edcdfg|mp\\.asczwa|taobao|tmall|juhuasuan|xiami|amap|taobaocdn|alipay|etao|alibaba|aliyun|alimama|weibo|tanx|laiwang|alicdn|mmstat|yunos|alibaba-inc|alitrip|aliloan|kanbox|wirlesshare|dingtalk|alimei|cnzz|kuaidadi|autonavi|m\\.yintai|polyinno|spdyidea|h5util|h5tool|5945i|miaostreet|1688|cainiao-inc|cainiao|taohua|m\\.jiaoyimao|m\\.dfkhgj|m\\.edcdfg|liangxinyao|taopiaopiao|fliggy|feizhu|mashangfangxin|youku|im\\.alisoft|100x100w|koubei|alibabausercontent|hemaos|alihive|(jishi|cdn)\\.rantu|ishuqi|jishi\\.aligames|aligames|h5\\.shyhhema|duanqu|y\\.xevddy|l\\.xevddy|portalpro\\.hemaos)\\.com|(tb|tbcdn|weibo|mashort|mybank|uc|feizhu|alihealth|alios|xixi\\.fullspeed|image\\.9game|pass\\.alios|damai|portal-h5\\.hemayx)\\.cn|(fastidea|juzone)\\.(me|cc)|(lemon\\.faas\\.ele|marketing-feast\\.faas\\.ele|lemon\\.ele|tb\\.ele|h5\\.ele|juhs|t-series-act\\.faas\\.ele|2018-bill\\.faas\\.ele)\\.me|lwurl\\.to|(taobao|alipay|cnzz|fliggy|feizhu|tmall)\\.net|tdd\\.la|yao\\.95095\\.com|(tmall|alipay|fliggy)\\.hk|ahd\\.so|atb\\.so|mshare\\.cc|xianyu\\.mobi|ynuf\\.aliapp\\.org|doctoryou\\.ai|m\\.10010\\.com\\/queen\\/alitrip\\/alipay\\.html|gseller\\.cn-shanghai\\.oss\\.aliyun-inc\\.com|gw\\.alipayobjects\\.com\\/as\\/g\\/memberAsset\\/zfb-tbcard|wegame-web-daily\\.uc\\.test)([\\?|#|/].*)?|go(/.*)?)$";
             }
             try {
@@ -116,7 +116,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (j.commonConfig.ad) {
@@ -131,7 +131,7 @@ public class p {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue();
         }
         if (j == null) {
-            if (TextUtils.isEmpty(i)) {
+            if (StringUtils.isEmpty(i)) {
                 i = "^((https?:)?\\/\\/([^/\\?#]+\\.)*((5317wan|guahao|wap\\.wandafilm|wrating|alipayobjects|(hft|\\w+app)\\.evergrande|jmt\\.wxcsgd|mpay\\.cx580|mt\\.locojoy|cpa1\\.locojoy|miiee|imaijia)\\.com|(h5\\.edaijia|beta\\.library\\.sh|web\\.chelaile\\.net|app3\\.shmzj\\.gov|bsfw\\.qingdao\\.gov|www\\.hzpolice\\.gov|www\\.sxgajj\\.gov|service\\.zjzwfw\\.gov|people\\.com|hbjg\\.premier-tech)\\.cn|(aliplay|ali\\.hk515)\\.net|tmall\\.pp\\.cc|ele\\.me)([\\?|#|/|:].*)?)$";
             }
             try {
@@ -168,7 +168,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (j.commonConfig.ad) {
@@ -183,7 +183,7 @@ public class p {
             return ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue();
         }
         if (h == null) {
-            if (TextUtils.isEmpty(g)) {
+            if (StringUtils.isEmpty(g)) {
                 g = "";
             }
             try {
@@ -194,7 +194,7 @@ public class p {
             }
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return h.matcher(str).matches();
             }
         } catch (Exception unused) {
@@ -207,11 +207,11 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (l == null) {
-            if (TextUtils.isEmpty(k)) {
+            if (StringUtils.isEmpty(k)) {
                 k = "";
             }
             try {
@@ -222,7 +222,7 @@ public class p {
             }
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return l.matcher(str).matches();
             }
         } catch (Exception unused) {
@@ -235,11 +235,11 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fb017cfd", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (n == null) {
-            if (TextUtils.isEmpty(m)) {
+            if (StringUtils.isEmpty(m)) {
                 m = "";
             }
             try {
@@ -250,7 +250,7 @@ public class p {
             }
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return n.matcher(str).matches();
             }
         } catch (Exception unused) {
@@ -260,6 +260,6 @@ public class p {
 
     public static boolean i(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str);
     }
 }

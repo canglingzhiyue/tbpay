@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.safe.AES;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
@@ -16,7 +16,7 @@ import javax.crypto.spec.SecretKeySpec;
 /* loaded from: classes4.dex */
 public final class cyc {
     private static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -29,9 +29,9 @@ public final class cyc {
 
     public static String a(String str, String str2) {
         String str3;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str3 = "encrypt 1 content is null";
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             str3 = "encrypt 1 key is null";
         } else {
             byte[] a2 = cyi.a(str2);
@@ -46,7 +46,7 @@ public final class cyc {
 
     public static String a(String str, byte[] bArr) {
         String str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str2 = "encrypt 2 content is null";
         } else if (bArr == null) {
             str2 = "encrypt 2 key is null";
@@ -63,7 +63,7 @@ public final class cyc {
 
     public static String a(String str, byte[] bArr, byte[] bArr2) {
         String str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str2 = "decrypt 4 content is null";
         } else if (bArr == null) {
             str2 = "decrypt 4 key is null";
@@ -160,7 +160,7 @@ public final class cyc {
     }
 
     private static String b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -173,9 +173,9 @@ public final class cyc {
 
     public static String b(String str, String str2) {
         String str3;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str3 = "decrypt 1 content is null";
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             str3 = "decrypt 1 key is null";
         } else {
             byte[] a2 = cyi.a(str2);
@@ -190,7 +190,7 @@ public final class cyc {
 
     public static String b(String str, byte[] bArr) {
         String str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str2 = "decrypt 2 content is null";
         } else if (bArr == null) {
             str2 = "decrypt 2 key is null";
@@ -199,9 +199,9 @@ public final class cyc {
         } else {
             String a2 = a(str);
             String b = b(str);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 str2 = "decrypt 2 iv is null";
-            } else if (!TextUtils.isEmpty(b)) {
+            } else if (!StringUtils.isEmpty(b)) {
                 return a(b, bArr, cyi.a(a2));
             } else {
                 str2 = "decrypt 2 encrypt content is null";
@@ -213,7 +213,7 @@ public final class cyc {
 
     private static byte[] b(String str, byte[] bArr, byte[] bArr2) {
         String str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str2 = "encrypt 5 content is null";
         } else if (bArr == null) {
             str2 = "encrypt 5 key is null";
@@ -316,7 +316,7 @@ public final class cyc {
     }
 
     private static String c(String str, String str2) {
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 return str2.substring(0, 6) + str.substring(0, 6) + str2.substring(6, 10) + str.substring(6, 16) + str2.substring(10, 16) + str.substring(16) + str2.substring(16);
             } catch (Exception e) {

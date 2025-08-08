@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.triver.base.api.ITriverRemoteProxy;
 import com.alibaba.android.triver.base.api.a;
@@ -235,10 +235,10 @@ public class TriverNavProcessor implements com.taobao.android.nav.e, Serializabl
             if (uri.getQueryParameterNames().contains("_wml_code") && !uri.getQueryParameterNames().contains("processByTRiver")) {
                 String decodeWML = decodeWML(context, uri);
                 String queryParameter = uri.getQueryParameter(i.APP_ID);
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     decodeWML = queryParameter;
                 }
-                if (a.a(decodeWML) && !TextUtils.isEmpty(decodeWML)) {
+                if (a.a(decodeWML) && !StringUtils.isEmpty(decodeWML)) {
                     Uri.Builder appendQueryParameter = Uri.parse("https://m.duanqu.com").buildUpon().appendQueryParameter(i.APP_ID, decodeWML);
                     for (String str : uri.getQueryParameterNames()) {
                         if (!"_wml_code".equals(str)) {

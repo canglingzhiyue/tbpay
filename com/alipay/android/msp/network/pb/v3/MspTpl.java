@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.pb.v3;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.wire.Message;
@@ -149,17 +149,17 @@ public final class MspTpl extends Message {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("27a69e58", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(this.time)) {
+        if (StringUtils.isEmpty(this.time)) {
             return "";
         }
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("platform", (Object) (!TextUtils.isEmpty(this.platform) ? this.platform : "common"));
-        jSONObject.put("format", (Object) (!TextUtils.isEmpty(this.format) ? this.format : "JSON"));
-        jSONObject.put("tag", (Object) (!TextUtils.isEmpty(this.tag) ? this.tag : "QUICKPAY"));
+        jSONObject.put("platform", (Object) (!StringUtils.isEmpty(this.platform) ? this.platform : "common"));
+        jSONObject.put("format", (Object) (!StringUtils.isEmpty(this.format) ? this.format : "JSON"));
+        jSONObject.put("tag", (Object) (!StringUtils.isEmpty(this.tag) ? this.tag : "QUICKPAY"));
         jSONObject.put("publishVersion", (Object) this.publishVersion);
         jSONObject.put("tplVersion", (Object) this.tplVersion);
         jSONObject.put("time", (Object) this.time);
-        if (!TextUtils.isEmpty(this.tplId)) {
+        if (!StringUtils.isEmpty(this.tplId)) {
             str = this.tplId;
         } else if (str == null) {
             str = "";

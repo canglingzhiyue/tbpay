@@ -2,7 +2,7 @@ package com.taobao.cus;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -126,7 +126,7 @@ public class a {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         com.alibaba.poplayer.utils.c.a("PreDownloadCenter.requestUpdateInfo.onResponseSuccess=%s", str);
                         CusModel cusModel = (CusModel) JSONObject.parseObject(str).getJSONObject("contentMap").getObject("promote_update", CusModel.class);
@@ -268,7 +268,7 @@ public class a {
                 nks.b("PreDownloadInstallApkFail", null, hashMap);
                 com.alibaba.poplayer.utils.c.a("PreDownloadCenter.installApk.lastDownloadContext=null", new Object[0]);
                 return false;
-            } else if (TextUtils.isEmpty(d.filePath)) {
+            } else if (StringUtils.isEmpty(d.filePath)) {
                 hashMap.put("errorCode", "filePathIsNull");
                 hashMap.put("success", "false");
                 nks.a(nks.MONITOR_POINT_INSTALL_APK, d, hashMap);
@@ -355,7 +355,7 @@ public class a {
                     return;
                 }
                 String d = d();
-                if (!TextUtils.isEmpty(d)) {
+                if (!StringUtils.isEmpty(d)) {
                     hashMap.put("errorCode", "AlreadyExist");
                     hashMap.put("success", "false");
                     nks.a(nks.MONITOR_POINT_START, b, hashMap);
@@ -583,7 +583,7 @@ public class a {
         }
         try {
             String l = l();
-            if (TextUtils.isEmpty(l)) {
+            if (StringUtils.isEmpty(l)) {
                 return -1;
             }
             kmo kmoVar = new kmo();
@@ -651,11 +651,11 @@ public class a {
                     Object[] objArr = new Object[i];
                     objArr[0] = name;
                     com.alibaba.poplayer.utils.c.a("BaseDownloadCenter.clearApkFiles.fileName=%s.", objArr);
-                    if (!TextUtils.isEmpty(name) && name.endsWith(bgy.APK_EXTENSION)) {
+                    if (!StringUtils.isEmpty(name) && name.endsWith(bgy.APK_EXTENSION)) {
                         String substring = name.substring(0, name.indexOf(bgy.APK_EXTENSION));
                         String versionName = Globals.getVersionName();
                         boolean z = nkt.b(versionName, substring) >= 0;
-                        if (!z && !TextUtils.isEmpty(str)) {
+                        if (!z && !StringUtils.isEmpty(str)) {
                             z = nkt.b(str, substring) != 0;
                         }
                         if (z) {

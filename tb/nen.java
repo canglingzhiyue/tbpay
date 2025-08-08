@@ -183,7 +183,7 @@ public class nen implements neq {
             if (r0 == 0) goto L24
             goto Ld1
         L24:
-            boolean r0 = android.text.TextUtils.isEmpty(r6)
+            boolean r0 = android.text.StringUtils.isEmpty(r6)
             if (r0 != 0) goto Ld1
             java.lang.String r0 = "\\."
             java.lang.String[] r6 = r6.split(r0)

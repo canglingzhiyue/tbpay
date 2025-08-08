@@ -3,7 +3,7 @@ package com.taobao.avplayer;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.change.app.icon.biz.ChangeAppIconBridge;
 import com.taobao.avplayer.core.model.DWRequest;
@@ -57,7 +57,7 @@ public class y implements mjz {
     }
 
     public y(String str, HashMap<String, String> hashMap) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.d = str;
         }
         if (hashMap != null) {
@@ -237,7 +237,7 @@ public class y implements mjz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f4a61575", new Object[]{this, mkaVar});
-        } else if (mkaVar == null || this.b == null || TextUtils.isEmpty(this.d)) {
+        } else if (mkaVar == null || this.b == null || StringUtils.isEmpty(this.d)) {
         } else {
             this.i = mkaVar;
             if (!e) {

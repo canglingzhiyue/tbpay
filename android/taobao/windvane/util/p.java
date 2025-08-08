@@ -1,7 +1,7 @@
 package android.taobao.windvane.util;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (str != null && !TextUtils.isEmpty(str2)) {
+        if (str != null && !StringUtils.isEmpty(str2)) {
             try {
                 Uri parse = Uri.parse(str);
                 if (!parse.isHierarchical() || parse.getQueryParameter(str2) != null) {
@@ -60,7 +60,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return str.toLowerCase().startsWith(com.taobao.search.common.util.k.HTTP_PREFIX) || str.toLowerCase().startsWith(com.taobao.search.common.util.k.HTTPS_PREFIX);
@@ -68,7 +68,7 @@ public class p {
 
     public static String c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str}) : TextUtils.isEmpty(str) ? "" : str.replaceAll("^((?i)https:)?//", com.taobao.search.common.util.k.HTTP_PREFIX);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str}) : StringUtils.isEmpty(str) ? "" : str.replaceAll("^((?i)https:)?//", com.taobao.search.common.util.k.HTTP_PREFIX);
     }
 
     public static String d(String str) {
@@ -76,7 +76,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int f = f(str);
@@ -118,7 +118,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("14a6f7e8", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         String str2 = null;
@@ -128,12 +128,12 @@ public class p {
         if (str.startsWith(com.taobao.vessel.utils.b.HTTPS_SCHEMA)) {
             str2 = str.replace(com.taobao.vessel.utils.b.HTTPS_SCHEMA, "");
         }
-        return TextUtils.isEmpty(str2) ? str : str2;
+        return StringUtils.isEmpty(str2) ? str : str2;
     }
 
     public static String h(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6bc4e8c7", new Object[]{str}) : (!TextUtils.isEmpty(str) && str.indexOf("#") != -1) ? str.substring(0, str.indexOf("#")) : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6bc4e8c7", new Object[]{str}) : (!StringUtils.isEmpty(str) && str.indexOf("#") != -1) ? str.substring(0, str.indexOf("#")) : str;
     }
 
     public static String i(String str) {
@@ -141,7 +141,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c2e2d9a6", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 Uri parse = Uri.parse(str);
                 if (parse.isHierarchical()) {
@@ -153,7 +153,7 @@ public class p {
             if (indexOf != -1) {
                 str = str.substring(0, indexOf);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         }

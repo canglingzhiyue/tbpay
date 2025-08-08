@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class iub {
         templateBean.isGray = jSONObject.getString("isGray");
         String string = jSONObject.getString("url");
         String string2 = jSONObject.getString("lt_url");
-        boolean z2 = TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2);
+        boolean z2 = StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2);
         if (imnVar.c().j().c) {
             templateBean.forceDownload = true;
         }
@@ -90,7 +90,7 @@ public class iub {
             z = true;
         }
         templateBean.binary = z;
-        if (TextUtils.equals("1", a2.get("__cell_for_layout"))) {
+        if (StringUtils.equals("1", a2.get("__cell_for_layout"))) {
             templateBean.cellBinary = true;
         }
         iua iuaVar = imnVar.c().j().v;

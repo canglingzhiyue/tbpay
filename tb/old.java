@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.f;
 import com.taobao.tao.log.statistics.ErrorCode;
@@ -45,7 +45,7 @@ public class old implements okv {
             TLogEventHelper.a(UploadFileType.UDF, UploadReason.SERVER_PULL, UploadStage.STAGE_REQ, value, str3, a2);
             f.a().h().a(oko.c, a2, e);
         }
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str) && "USER_UPLOAD".equals(str)) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str) && "USER_UPLOAD".equals(str)) {
             final olo oloVar = f.a().f.get(str2);
             if (oloVar != null && str2.equals(oloVar.getBizCode())) {
                 f.a().h().a(oko.c, a2, "[UDF] Execute upload task for: " + str2);
@@ -61,7 +61,7 @@ public class old implements okv {
                         if (ipChange2 instanceof IpChange) {
                             return (Boolean) ipChange2.ipc$dispatch("e532f4a1", new Object[]{this, olqVar});
                         }
-                        if (olqVar == null || TextUtils.isEmpty(olqVar.b) || olqVar.f32158a == null || olqVar.f32158a.isEmpty()) {
+                        if (olqVar == null || StringUtils.isEmpty(olqVar.b) || olqVar.f32158a == null || olqVar.f32158a.isEmpty()) {
                             String value2 = ErrorCode.DATA_EMPTY.getValue();
                             if (olqVar != null) {
                                 value2 = olqVar.d;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.ConditionVariable;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.IRemoteServiceCallback;
@@ -296,7 +296,7 @@ public class MspTradeContext extends MspContext {
         statisticInfo.updateAttr(vector, "clientEndCode", sb.toString());
         getAlertIntelligenceId();
         String tryUseLinkTokenAsLogTrace = ApLinkTokenUtils.tryUseLinkTokenAsLogTrace(this);
-        if (!TextUtils.isEmpty(tryUseLinkTokenAsLogTrace) && tryUseLinkTokenAsLogTrace.length() > 2) {
+        if (!StringUtils.isEmpty(tryUseLinkTokenAsLogTrace) && tryUseLinkTokenAsLogTrace.length() > 2) {
             this.h = this.h.substring(0, this.h.length() - 2) + "_" + tryUseLinkTokenAsLogTrace;
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -345,10 +345,10 @@ public class MspTradeContext extends MspContext {
         }
         Map<String, String> map2 = this.D;
         if (map2 != null && map2.containsKey("msp_bg_opaque")) {
-            setMspBgTransparent(TextUtils.equals("1", this.D.get("msp_bg_opaque")));
+            setMspBgTransparent(StringUtils.equals("1", this.D.get("msp_bg_opaque")));
         }
         this.s.read().hashCode();
-        if (this.Y.getSchemePayModel() != null && !TextUtils.isEmpty(this.Y.getSchemePayModel().packageName)) {
+        if (this.Y.getSchemePayModel() != null && !StringUtils.isEmpty(this.Y.getSchemePayModel().packageName)) {
             this.c = true;
         }
         c();
@@ -392,7 +392,7 @@ public class MspTradeContext extends MspContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f33c7552", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 if (parseObject != null) {
@@ -567,7 +567,7 @@ public class MspTradeContext extends MspContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5a4ca6c", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.n)) {
+        } else if (!StringUtils.isEmpty(this.n)) {
             try {
                 JSONObject parseObject = JSON.parseObject(this.n);
                 for (String str : parseObject.keySet()) {
@@ -584,7 +584,7 @@ public class MspTradeContext extends MspContext {
 
     public boolean isRenderLocal() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83256ef6", new Object[]{this})).booleanValue() : TextUtils.equals(getExtendParamByKey(MspGlobalDefine.EXT_RENDER_LOCAL), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83256ef6", new Object[]{this})).booleanValue() : StringUtils.equals(getExtendParamByKey(MspGlobalDefine.EXT_RENDER_LOCAL), "true");
     }
 
     private void c() {
@@ -595,7 +595,7 @@ public class MspTradeContext extends MspContext {
             return;
         }
         try {
-            if (TextUtils.isEmpty(this.s.read())) {
+            if (StringUtils.isEmpty(this.s.read())) {
                 return;
             }
             String[] split = this.s.read().split("&");
@@ -606,7 +606,7 @@ public class MspTradeContext extends MspContext {
                     break;
                 }
                 String str2 = split[i];
-                if (!TextUtils.isEmpty(str2) && str2.startsWith("bizcontext=")) {
+                if (!StringUtils.isEmpty(str2) && str2.startsWith("bizcontext=")) {
                     str = str2;
                     break;
                 }
@@ -876,16 +876,16 @@ public class MspTradeContext extends MspContext {
             MspCacheManager mspCacheManager = MspCacheManager.getInstance();
             mspCacheManager.setTwoLevelCache(true);
             String readCache = mspCacheManager.readCache("sos", new String[]{"needDelay"}, false);
-            if (!TextUtils.isEmpty(readCache) && readCache.contains("\"needDelay\":\"N\"")) {
+            if (!StringUtils.isEmpty(readCache) && readCache.contains("\"needDelay\":\"N\"")) {
                 LogUtil.record(4, "Trade:getDelayDisposeTime", "needDelay: N");
                 return 0L;
             }
         } catch (Exception e) {
             LogUtil.printExceptionStackTrace(e);
         }
-        if (TextUtils.equals(this.B, "2") || TextUtils.equals(this.z, "tqrcode")) {
+        if (StringUtils.equals(this.B, "2") || StringUtils.equals(this.z, "tqrcode")) {
             j = 350;
-        } else if (TextUtils.equals(this.B, "3")) {
+        } else if (StringUtils.equals(this.B, "3")) {
             j = 480;
         }
         LogUtil.record(4, "Trade:getDelayDisposeTime", "delay:" + j + " mode:" + this.B);
@@ -925,7 +925,7 @@ public class MspTradeContext extends MspContext {
             return ((Boolean) ipChange.ipc$dispatch("684fd65", new Object[]{this})).booleanValue();
         }
         LogUtil.record(1, "MspTradeContext:scene" + this.z, "mIsThirdDomain:" + this.H + " mDomain:" + this.E);
-        return TextUtils.equals(this.z, nfc.PHA_MONITOR_MODULE_POINT_JS_API) && this.H;
+        return StringUtils.equals(this.z, nfc.PHA_MONITOR_MODULE_POINT_JS_API) && this.H;
     }
 
     public String getScene() {
@@ -950,25 +950,25 @@ public class MspTradeContext extends MspContext {
         if (mspPayResult == null) {
             return;
         }
-        if (mspPayResult.isSuccess() && !TextUtils.equals(str, String.valueOf(ResultStatus.SUCCEEDED.getStatus()))) {
+        if (mspPayResult.isSuccess() && !StringUtils.equals(str, String.valueOf(ResultStatus.SUCCEEDED.getStatus()))) {
             LogUtil.i("MspTradeContext", "updateResult", "pay result is already success, don't set.");
             getStatisticInfo().addEvent(new StEvent(getCurrentWinTpName(), "PayResultAlreadySuccess", str));
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             mspPayResult.setEndCode(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             mspPayResult.setMemo(str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             mspPayResult.setResult(str3);
         }
         if (jSONObject != null) {
             mspPayResult.addExtendInfo(jSONObject);
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             getStatisticInfo().updateResult(str, getCurrentWinTpName());
@@ -1070,7 +1070,7 @@ public class MspTradeContext extends MspContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6cea32cd", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.D.put("trade_no", str);
         }
@@ -1097,7 +1097,7 @@ public class MspTradeContext extends MspContext {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ccf201dd", new Object[]{this, str, str2, map});
-        } else if (TextUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("DegradeMspSendDataToSdk"), "Y")) {
+        } else if (StringUtils.equals(PhoneCashierMspEngine.getMspWallet().getWalletConfig("DegradeMspSendDataToSdk"), "Y")) {
         } else {
             IRemoteServiceCallback remoteCallback = getRemoteCallback();
             if (remoteCallback != null) {
@@ -1187,7 +1187,7 @@ public class MspTradeContext extends MspContext {
             return ((Boolean) ipChange.ipc$dispatch("5a714818", new Object[]{this})).booleanValue();
         }
         if (this.X == null) {
-            this.X = Boolean.valueOf(TextUtils.equals(nom.VALUE_YES, PhoneCashierMspEngine.getMspWallet().getWalletConfig(DrmKey.GRAY_PAY_RESULT_CALLBACK_LOCK)));
+            this.X = Boolean.valueOf(StringUtils.equals(nom.VALUE_YES, PhoneCashierMspEngine.getMspWallet().getWalletConfig(DrmKey.GRAY_PAY_RESULT_CALLBACK_LOCK)));
         }
         return this.X.booleanValue();
     }
@@ -1230,20 +1230,20 @@ public class MspTradeContext extends MspContext {
             env.setInvokeFromAppName(paySession.getInvokeFromAppName());
             env.setInvokeFromAppSign(paySession.getInvokeFromAppSign());
             env.setFromWallet(isFromWallet() && !isFromOutScheme());
-            env.setSupported3rdPay(TextUtils.join("|", FwUtils.concatMultiList(ThirdPayManager.getAvailableThirdPayTypes(GlobalHelper.getInstance().getContext()), ThirdPayManager.getExternalProvidedThirdPayTypes(this), paySession.getInstalled3rdAppList(), ThirdPayManager.getListCupDirectApps())));
+            env.setSupported3rdPay(StringUtils.join("|", FwUtils.concatMultiList(ThirdPayManager.getAvailableThirdPayTypes(GlobalHelper.getInstance().getContext()), ThirdPayManager.getExternalProvidedThirdPayTypes(this), paySession.getInstalled3rdAppList(), ThirdPayManager.getListCupDirectApps())));
             env.setAlipayTopAppId(PhoneCashierMspEngine.getMspWallet().getAlipayTopAppid());
             MspExtInfoModel mspExtInfoModel = new MspExtInfoModel();
             mspExtInfoModel.setEnv(env);
             mspExtInfoModel.setDevice(device);
             mspExtInfoModel.setContext(context);
             mspExtInfoModel.setAp_link_token(getApLinkToken());
-            if (!TextUtils.isEmpty(getAllExtendParamsMap().get("user_token"))) {
+            if (!StringUtils.isEmpty(getAllExtendParamsMap().get("user_token"))) {
                 mspExtInfoModel.setUserToken(getAllExtendParamsMap().get("user_token"));
             }
-            if (!TextUtils.isEmpty(getAllExtendParamsMap().get("user_token_type"))) {
+            if (!StringUtils.isEmpty(getAllExtendParamsMap().get("user_token_type"))) {
                 mspExtInfoModel.setUserTokenType(getAllExtendParamsMap().get("user_token_type"));
             }
-            if (!TextUtils.isEmpty(getAllExtendParamsMap().get(MspGlobalDefine.EXT_INSIDE_ENV))) {
+            if (!StringUtils.isEmpty(getAllExtendParamsMap().get(MspGlobalDefine.EXT_INSIDE_ENV))) {
                 mspExtInfoModel.setInsideEnv(getAllExtendParamsMap().get(MspGlobalDefine.EXT_INSIDE_ENV));
             }
             if (GlobalSdkConstant.getSdkType()) {

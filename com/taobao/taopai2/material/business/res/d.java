@@ -1,7 +1,7 @@
 package com.taobao.taopai2.material.business.res;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import tb.kge;
@@ -97,7 +97,7 @@ public class d implements rsj {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
         } else if (this.c.a()) {
-            if (!TextUtils.isEmpty(this.c.n())) {
+            if (!StringUtils.isEmpty(this.c.n())) {
                 a2 = new File(this.c.n());
             } else {
                 a2 = this.f22091a.a(this.c.j(), this.c.i(), this.c.k());
@@ -140,7 +140,7 @@ public class d implements rsj {
         if (this.f22091a == null) {
             this.f22091a = new qbq(this.c.h(), this.b);
         }
-        if (!TextUtils.isEmpty(this.c.n())) {
+        if (!StringUtils.isEmpty(this.c.n())) {
             this.f22091a.a(this.c.n(), this.c.k());
         } else {
             this.f22091a.a(this.c.b(), String.valueOf(this.c.j()), this.c.k(), this.c.i(), this.d);
@@ -154,7 +154,7 @@ public class d implements rsj {
         }
         if (file != null) {
             String absolutePath = file.getAbsolutePath();
-            if (!TextUtils.isEmpty(absolutePath)) {
+            if (!StringUtils.isEmpty(absolutePath)) {
                 File file2 = new File(absolutePath);
                 if (file2.exists() && System.currentTimeMillis() - file2.lastModified() <= b()) {
                     return false;

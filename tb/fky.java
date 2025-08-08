@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.b;
@@ -111,7 +111,7 @@ public class fky {
                 return new ctv();
             }
             String string = e2.getString(Login.getUserId(), "");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return new ctv(JSONObject.parseObject(string));
             }
             return new ctv();
@@ -153,12 +153,12 @@ public class fky {
         } else if (bVar == null) {
         } else {
             String m2 = fhiVar.m();
-            if (TextUtils.isEmpty(m2) || (e2 = e(bVar.g(), SP_NAME)) == null) {
+            if (StringUtils.isEmpty(m2) || (e2 = e(bVar.g(), SP_NAME)) == null) {
                 return;
             }
             SharedPreferences.Editor edit = e2.edit();
             String str = bVar.h().k().F;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             edit.putString(fhiVar.g + str + SP_KEY_MAIN_PIC_URL, m2);
@@ -176,7 +176,7 @@ public class fky {
             SharedPreferences.Editor edit = e2.edit();
             edit.putString(SP_KEY_FIRST_CARD_TYPE, fhiVar.g);
             String str = bVar.h().k().F;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             edit.putString(SP_KEY_ENTRY_EXP, str);
@@ -229,7 +229,7 @@ public class fky {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d18de967", new Object[]{context, str, str2})).intValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return -1;
         }
         SharedPreferences e2 = e(context, SP_NAME);
@@ -522,7 +522,7 @@ public class fky {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("54b92b3b", new Object[]{context, str, aVar});
-        } else if (aVar == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(aVar.b()) || TextUtils.isEmpty(aVar.a()) || TextUtils.isEmpty(aVar.c()) || (e2 = e(context, SP_NAME)) == null) {
+        } else if (aVar == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(aVar.b()) || StringUtils.isEmpty(aVar.a()) || StringUtils.isEmpty(aVar.c()) || (e2 = e(context, SP_NAME)) == null) {
         } else {
             SharedPreferences.Editor edit = e2.edit();
             edit.putString(str + SP_KEY_BX_IDENTIFIER, aVar.b());
@@ -539,7 +539,7 @@ public class fky {
             return (a) ipChange.ipc$dispatch("f832785c", new Object[]{context, str});
         }
         a aVar = new a();
-        if (TextUtils.isEmpty(str) || (e2 = e(context, SP_NAME)) == null) {
+        if (StringUtils.isEmpty(str) || (e2 = e(context, SP_NAME)) == null) {
             return aVar;
         }
         aVar.c(e2.getString(str + SP_KEY_BX_CURRENT_SCENE, ""));

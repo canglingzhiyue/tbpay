@@ -1,6 +1,6 @@
 package com.taobao.tbliveinteractive.business.tradetrack;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.NetBaseOutDo;
@@ -50,10 +50,10 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ed1816cf", new Object[]{this, aVar})).booleanValue();
         }
-        if (aVar == null || TextUtils.isEmpty(this.f22105a)) {
+        if (aVar == null || StringUtils.isEmpty(this.f22105a)) {
             return false;
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             aVar.a(this.b);
         } else {
             new com.taobao.tbliveinteractive.business.tradetrack.sign.a(new d() { // from class: com.taobao.tbliveinteractive.business.tradetrack.b.1

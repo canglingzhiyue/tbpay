@@ -2,7 +2,7 @@ package com.etao.feimagesearch.model;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -60,7 +60,7 @@ public class c extends e {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("31cb88a3", new Object[]{this});
         }
-        if (TextUtils.isEmpty(sActivityUrl)) {
+        if (StringUtils.isEmpty(sActivityUrl)) {
             return null;
         }
         Uri.Builder buildUpon = b().buildUpon();
@@ -110,10 +110,10 @@ public class c extends e {
             ipChange.ipc$dispatch("b0b8a4a8", new Object[]{this, builder});
             return;
         }
-        if (!TextUtils.isEmpty(getSellerId())) {
+        if (!StringUtils.isEmpty(getSellerId())) {
             builder.appendQueryParameter("sellerId", getSellerId());
         }
-        if (!TextUtils.isEmpty(getShopId())) {
+        if (!StringUtils.isEmpty(getShopId())) {
             builder.appendQueryParameter("shopId", getShopId());
         }
         builder.appendQueryParameter(d.KEY_FROM_SYS, String.valueOf(this.b));

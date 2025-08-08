@@ -1,7 +1,7 @@
 package com.alipay.android.app.render.birdnest.utils;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alipay.android.app.safepaylog.utils.LogUtils;
 import com.alipay.android.app.template.FBContext;
@@ -24,9 +24,9 @@ public final class Compatibility {
         try {
             String lowerCase = Build.MANUFACTURER.toLowerCase();
             String str = Build.VERSION.RELEASE;
-            boolean z2 = lowerCase.equals("samsung") && Build.MODEL.equals("GT-N7100") && !TextUtils.equals(str, "4.4.2") && !TextUtils.equals(str, "4.4.4");
+            boolean z2 = lowerCase.equals("samsung") && Build.MODEL.equals("GT-N7100") && !StringUtils.equals(str, "4.4.2") && !StringUtils.equals(str, "4.4.4");
             boolean equals = Build.MODEL.equals("K-Touch E806");
-            if (Build.MODEL.equals("SM-G9350") && TextUtils.equals(str, "6.0.1")) {
+            if (Build.MODEL.equals("SM-G9350") && StringUtils.equals(str, "6.0.1")) {
                 z = true;
             }
             View contentView = fBContext.getContentView();

@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.cache.library.p;
 
@@ -21,6 +21,6 @@ public class ozd implements oza {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String queryParameter = Uri.parse(str).getQueryParameter(oyw.VIDEO_CACHE_ID);
-        return TextUtils.isEmpty(queryParameter) ? p.e(str) : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? p.e(str) : queryParameter;
     }
 }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -41,7 +41,7 @@ public class lfa extends fuf {
             try {
                 if (objArr.length > 0 && (objArr[0] instanceof String)) {
                     String str = (String) objArr[0];
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         ldf.d("home.hContainerData", "key is empty");
                         return null;
                     }
@@ -127,7 +127,7 @@ public class lfa extends fuf {
             return null;
         }
         for (String str : strArr) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (obj instanceof IContainerDataModel) {
                     obj = a((IContainerDataModel) obj, str);
                 } else if (obj instanceof IContainerInnerDataModel) {

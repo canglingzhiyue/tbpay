@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.utils;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public class bp {
         boolean z2 = j.T() && a(f10963a, S) && a(S, scheme);
         List<String> U = j.U();
         if (j.V() && a(b, U)) {
-            if (TextUtils.isEmpty(authority) || TextUtils.isEmpty(path)) {
+            if (StringUtils.isEmpty(authority) || StringUtils.isEmpty(path)) {
                 str = null;
             } else {
                 str = authority + path;
@@ -84,12 +84,12 @@ public class bp {
                 z = true;
             }
         }
-        if (!TextUtils.isEmpty(authority) && !TextUtils.isEmpty(path)) {
+        if (!StringUtils.isEmpty(authority) && !StringUtils.isEmpty(path)) {
             if (b.contains(authority + path) && z) {
                 return true;
             }
         }
-        if (!TextUtils.isEmpty(scheme) && f10963a.contains(scheme) && z2) {
+        if (!StringUtils.isEmpty(scheme) && f10963a.contains(scheme) && z2) {
             return true;
         }
         return j.W();
@@ -103,7 +103,7 @@ public class bp {
         if (list != null && !list.isEmpty() && list2 != null && !list2.isEmpty()) {
             for (String str : list2) {
                 for (String str2 : list) {
-                    if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str) && TextUtils.equals(str2, str)) {
+                    if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str) && StringUtils.equals(str2, str)) {
                         return true;
                     }
                 }
@@ -117,7 +117,7 @@ public class bp {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3c6e0ee7", new Object[]{list, str})).booleanValue();
         }
-        if (list != null && !list.isEmpty() && !TextUtils.isEmpty(str)) {
+        if (list != null && !list.isEmpty() && !StringUtils.isEmpty(str)) {
             return list.contains(str);
         }
         return false;
@@ -131,10 +131,10 @@ public class bp {
         if (jSONObject != null) {
             String string = jSONObject.getString("blackConditions");
             String string2 = jSONObject.getString("eventBlackConditions");
-            if (!TextUtils.isEmpty(string) && b(string, jSONObject2)) {
+            if (!StringUtils.isEmpty(string) && b(string, jSONObject2)) {
                 return true;
             }
-            if (!TextUtils.isEmpty(string2) && a(string2, jSONObject2)) {
+            if (!StringUtils.isEmpty(string2) && a(string2, jSONObject2)) {
                 return true;
             }
         }
@@ -186,11 +186,11 @@ public class bp {
                         JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                         if (jSONObject3 != null) {
                             String string = jSONObject3.getString("type");
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 set.add(string);
                             }
                             for (String str2 : strArr) {
-                                if (!TextUtils.isEmpty(str2) && TextUtils.equals(str2, string)) {
+                                if (!StringUtils.isEmpty(str2) && StringUtils.equals(str2, string)) {
                                     return true;
                                 }
                             }
@@ -235,7 +235,7 @@ public class bp {
                 return false;
             }
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && c(str2, jSONObject)) {
+                if (!StringUtils.isEmpty(str2) && c(str2, jSONObject)) {
                     return true;
                 }
             }
@@ -250,10 +250,10 @@ public class bp {
             return ((Boolean) ipChange.ipc$dispatch("68a262c0", new Object[]{str, jSONObject})).booleanValue();
         }
         String[] split = str.split("\\.");
-        if (split.length < 2 || !TextUtils.equals("data", split[0])) {
+        if (split.length < 2 || !StringUtils.equals("data", split[0])) {
             return false;
         }
-        if (TextUtils.equals("apiStack[]", split[1])) {
+        if (StringUtils.equals("apiStack[]", split[1])) {
             a2 = au.b.a((String[]) Arrays.copyOfRange(split, 2, split.length), g.e(jSONObject));
         } else {
             a2 = au.b.a((String[]) Arrays.copyOfRange(split, 1, split.length), jSONObject);

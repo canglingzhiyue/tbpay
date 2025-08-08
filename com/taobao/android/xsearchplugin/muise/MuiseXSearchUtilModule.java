@@ -1,6 +1,6 @@
 package com.taobao.android.xsearchplugin.muise;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -92,7 +92,7 @@ public class MuiseXSearchUtilModule extends MUSModule {
         String b = sConstantAdapter.b();
         String a2 = sConstantAdapter.a();
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             jSONObject.put("sversion", (Object) e);
             jSONObject.put("utd_id", (Object) b);
             jSONObject.put("ttid", (Object) a2);
@@ -133,11 +133,11 @@ public class MuiseXSearchUtilModule extends MUSModule {
             return;
         }
         String string = jSONObject.getString("url");
-        if (TextUtils.isEmpty(string) || (jSONObject2 = jSONObject.getJSONObject(InputFrame3.TYPE_RESPONSE)) == null) {
+        if (StringUtils.isEmpty(string) || (jSONObject2 = jSONObject.getJSONObject(InputFrame3.TYPE_RESPONSE)) == null) {
             return;
         }
         String string2 = jSONObject.getString("alias");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "xsl";
         }
         b.k().a(string, jSONObject2.toString().getBytes(), string2, true);
@@ -248,7 +248,7 @@ public class MuiseXSearchUtilModule extends MUSModule {
             return (String) ipChange.ipc$dispatch("b21ceb19", new Object[]{this, jSONObject});
         }
         String string = jSONObject.getString("alias");
-        return TextUtils.isEmpty(string) ? "muise" : string;
+        return StringUtils.isEmpty(string) ? "muise" : string;
     }
 
     private void performAction(String str, JSONObject jSONObject, isr.c.a aVar, isr.c.a aVar2) {

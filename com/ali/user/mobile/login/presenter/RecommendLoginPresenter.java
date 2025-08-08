@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login.presenter;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.info.AppInfo;
@@ -101,7 +101,7 @@ public class RecommendLoginPresenter extends BaseLoginPresenter {
                         return;
                     }
                     RecommendLoginPresenter.this.mViewer.dismissLoading();
-                    if (rpcResponse != null && TextUtils.equals(rpcResponse.actionType, ApiConstants.ResultActionType.FORCE_TOAST)) {
+                    if (rpcResponse != null && StringUtils.equals(rpcResponse.actionType, ApiConstants.ResultActionType.FORCE_TOAST)) {
                         RecommendLoginPresenter.this.mViewer.toast(rpcResponse.message, 1);
                     } else if (rpcResponse != null && "mobileNeedCheck".equals(rpcResponse.codeGroup) && ApiConstants.ResultActionType.TOAST.equals(rpcResponse.actionType)) {
                         ((RecommendLoginView) RecommendLoginPresenter.this.mViewer).onNeedAlert(RecommendLoginPresenter.this.mLoginParam, rpcResponse);
@@ -121,15 +121,15 @@ public class RecommendLoginPresenter extends BaseLoginPresenter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1ff475eb", new Object[]{this, loginFlowReturnData, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || loginFlowReturnData == null) {
+        if (StringUtils.isEmpty(str) || loginFlowReturnData == null) {
             return false;
         }
-        if (!TextUtils.equals(str, LoginModeState.SIM_LOGIN.name())) {
+        if (!StringUtils.equals(str, LoginModeState.SIM_LOGIN.name())) {
             return true;
         }
         String maskMobile = UserLoginActivity.getMaskMobile();
-        if (!TextUtils.isEmpty(maskMobile)) {
-            if (TextUtils.isEmpty(loginFlowReturnData.countryCode)) {
+        if (!StringUtils.isEmpty(maskMobile)) {
+            if (StringUtils.isEmpty(loginFlowReturnData.countryCode)) {
                 return true;
             }
             if ("CN".equals(loginFlowReturnData.countryCode) && UserLoginActivity.isCompareSuccess(loginFlowReturnData.loginId, maskMobile)) {
@@ -160,7 +160,7 @@ public class RecommendLoginPresenter extends BaseLoginPresenter {
                 return;
             }
             String str2 = rpcResponse != null ? rpcResponse.message : "";
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = ResourceUtil.getNetworkError();
             }
             this.mViewer.toast(str2, 0);
@@ -185,28 +185,28 @@ public class RecommendLoginPresenter extends BaseLoginPresenter {
         appLaunchRequest.ext = new HashMap();
         appLaunchRequest.ext.put("lastLoginType", getLastLoginType());
         appLaunchRequest.ext.put("expandRecommendPage", "true");
-        if (!TextUtils.isEmpty(loginParam.scene)) {
+        if (!StringUtils.isEmpty(loginParam.scene)) {
             appLaunchRequest.ext.put("scene", loginParam.scene);
         }
         if (historyAccount != null) {
             appLaunchRequest.deviceTokenKey = historyAccount.tokenKey;
             appLaunchRequest.hid = String.valueOf(historyAccount.userId);
             DeviceTokenSignParam deviceTokenSignParam = new DeviceTokenSignParam();
-            if (!TextUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
+            if (!StringUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
                 deviceTokenSignParam.addAppKey(DataProviderFactory.getDataProvider().getAppkey());
             }
             deviceTokenSignParam.addAppVersion(AppInfo.getInstance().getAndroidAppVersion());
             deviceTokenSignParam.addHavanaId(String.valueOf(historyAccount.userId));
             deviceTokenSignParam.addTimestamp(String.valueOf(appLaunchRequest.t));
             deviceTokenSignParam.addSDKVersion(AppInfo.getInstance().getSdkVersion());
-            if (!TextUtils.isEmpty(historyAccount.tokenKey)) {
+            if (!StringUtils.isEmpty(historyAccount.tokenKey)) {
                 appLaunchRequest.deviceTokenSign = AlibabaSecurityTokenService.sign(historyAccount.tokenKey, deviceTokenSignParam.build());
             }
         } else {
             appLaunchRequest.firstLogin = true;
         }
         appLaunchRequest.alipayInstalled = loginParam.alipayInstalled;
-        appLaunchRequest.onceLogined = !TextUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getDataProvider().getContext()).getOldUserId());
+        appLaunchRequest.onceLogined = !StringUtils.isEmpty(SessionManager.getInstance(DataProviderFactory.getDataProvider().getContext()).getOldUserId());
         if (ServiceFactory.getService(NumberAuthService.class) != null && LoginSwitch.getSwitch("getloginflow_take_maskmobile", "true")) {
             appLaunchRequest.maskMobile = ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).getAuthInfoMap().get("number");
         }
@@ -249,7 +249,7 @@ public class RecommendLoginPresenter extends BaseLoginPresenter {
         hashMap.put("sdkTraceId", loginParam.sdkTraceId);
         if (ServiceFactory.getService(NumberAuthService.class) != null && LoginSwitch.getSwitch("getloginflow_take_maskmobile", "true")) {
             String str = ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).getAuthInfoMap().get("number");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("maskMobile", str);
             }
         }

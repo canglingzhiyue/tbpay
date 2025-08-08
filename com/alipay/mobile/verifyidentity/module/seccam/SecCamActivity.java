@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -239,7 +239,7 @@ public class SecCamActivity extends BaseVerifyActivity {
                         SecCamActivity.access$700(SecCamActivity.this, dispatch);
                     } else {
                         String str2 = dispatch.verifyMessage;
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             str2 = SecCamActivity.this.getResources().getString(R.string.verifyidentity_wrong_data);
                         }
                         SecCamActivity.this.toast(str2, 0);

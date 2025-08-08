@@ -3,7 +3,7 @@ package com.ali.user.mobile.base.helper;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.log.UserTrackAdapter;
@@ -71,7 +71,7 @@ public class AliuserActionReceiver extends BroadcastReceiver {
                     hashMap.put(LoginConstants.LOGIN_ACCOUNT, intent.getStringExtra(LoginConstants.LOGIN_ACCOUNT));
                 }
                 LoginStatus.resetLoginFlag();
-                if (!TextUtils.equals(LoginType.ServerLoginType.AutoLogin.getType(), intent.getStringExtra(LoginConstants.LOGIN_TYPE))) {
+                if (!StringUtils.equals(LoginType.ServerLoginType.AutoLogin.getType(), intent.getStringExtra(LoginConstants.LOGIN_TYPE))) {
                     hashMap.put(LoginConstants.LOGIN_EXT_DATA, "true");
                 }
                 LoginContext.uninstallResponse = null;
@@ -141,7 +141,7 @@ public class AliuserActionReceiver extends BroadcastReceiver {
                     sendBroadcast(LoginAction.NOTIFY_H5_CANCEL_SITE_ACCOUNT_SUCCESS);
                 } else if (LoginSceneConstants.SCENE_CANCEL_ACCOUNT.equals(stringExtra2)) {
                     sendBroadcast(LoginAction.NOTIFY_H5_CANCEL_ACCOUNT_SUCCESS);
-                } else if (TextUtils.isEmpty(stringExtra2)) {
+                } else if (StringUtils.isEmpty(stringExtra2)) {
                 } else {
                     sendBroadcast(stringExtra2);
                 }

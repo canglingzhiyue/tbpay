@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transportext.biz.mmtp.mrpc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.transport.TransportStrategy;
 import com.alipay.mobile.common.transport.context.TransportContext;
@@ -102,19 +102,19 @@ public class MRpcClient implements ExtTransportClient {
             return a3;
         } catch (Exception e) {
             String targetHost = mRpcTransport.getTargetHost();
-            if (!TextUtils.isEmpty(targetHost)) {
+            if (!StringUtils.isEmpty(targetHost)) {
                 transportContext.getCurrentDataContainer().putDataItem("TARGET_HOST", targetHost);
             }
             String str = mRpcTransport.getMRpcConneciton().getMrpcConnContext().get(MonitorLoggerUtils.LIB_VERSION);
-            if (!TextUtils.isEmpty(str)) {
-                if (TextUtils.equals(MonitorLoggerUtils.LIB_VERSION_BIFROST_HTTP2, str)) {
+            if (!StringUtils.isEmpty(str)) {
+                if (StringUtils.equals(MonitorLoggerUtils.LIB_VERSION_BIFROST_HTTP2, str)) {
                     transportContext.getCurrentDataContainer().putDataItem("NETTUNNEL", MonitorLoggerUtils.NETTUNNEL_ULib_h2);
                 }
                 transportContext.getCurrentDataContainer().putDataItem(MonitorLoggerUtils.LIB_VERSION, str);
             }
             transportContext.getCurrentDataContainer().putDataItem("ERROR", e.getMessage());
             String str2 = mRpcTransport.getMRpcConneciton().getMrpcConnContext().get(RPCDataItems.IP_STACK);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.IP_STACK, str2);
             }
             throw e;
@@ -135,7 +135,7 @@ public class MRpcClient implements ExtTransportClient {
         }
         LogCatUtil.printInfo("MRpcClient", "fillLogDataItem start.");
         try {
-            if (!TextUtils.isEmpty(mRpcResponse.targetHost)) {
+            if (!StringUtils.isEmpty(mRpcResponse.targetHost)) {
                 transportContext.getCurrentDataContainer().putDataItem("TARGET_HOST", mRpcResponse.targetHost);
             }
             if (mRpcResponse.dnsTiming > 0) {
@@ -197,13 +197,13 @@ public class MRpcClient implements ExtTransportClient {
             } else if (mRpcResponse.useShort) {
                 transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.ONSHORT, UTConstant.Args.UT_SUCCESS_F);
             }
-            if (!TextUtils.isEmpty(mRpcResponse.targetHostShort)) {
+            if (!StringUtils.isEmpty(mRpcResponse.targetHostShort)) {
                 transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.TARGET_HOST_SHORT, mRpcResponse.targetHostShort);
             }
             if (mRpcResponse.qoeCur >= 0) {
                 transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.QOE_CUR, String.valueOf(mRpcResponse.qoeCur));
             }
-            if (!TextUtils.isEmpty(mRpcResponse.queneStorage)) {
+            if (!StringUtils.isEmpty(mRpcResponse.queneStorage)) {
                 b(transportContext, mRpcResponse);
             }
             if (mRpcResponse.isFlexible) {
@@ -211,7 +211,7 @@ public class MRpcClient implements ExtTransportClient {
             }
             if (mRpcResponse.headers != null) {
                 String str = mRpcResponse.headers.get("cps");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     LogCatUtil.printInfo("MRpcClient", "cps:" + str);
                     transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.CPS, str);
                 }
@@ -235,7 +235,7 @@ public class MRpcClient implements ExtTransportClient {
                 transportContext.getCurrentDataContainer().putDataItem(RPCDataItems.AMNET_ALL_TIME, Integer.toString(mRpcResponse.amnetAllTime));
             }
             transportContext.getCurrentDataContainer().putDataItem("CID", Long.toString(mRpcResponse.cid));
-            if (!TextUtils.isEmpty(mRpcResponse.clientIp)) {
+            if (!StringUtils.isEmpty(mRpcResponse.clientIp)) {
                 transportContext.getCurrentDataContainer().putDataItem("CIP", mRpcResponse.clientIp);
             }
             if (mRpcResponse.reqZipType >= 0) {
@@ -278,7 +278,7 @@ public class MRpcClient implements ExtTransportClient {
             Map<String, String> headers = mRpcResponse.getHeaders();
             if (headers != null && headers.size() != 0) {
                 String str = headers.get(this.c);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 headers.remove(this.c);
@@ -318,7 +318,7 @@ public class MRpcClient implements ExtTransportClient {
         Map<String, String> headers = mRpcResponse.getHeaders();
         if (headers != null && !headers.isEmpty()) {
             for (Map.Entry<String, String> entry : headers.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey())) {
+                if (!StringUtils.isEmpty(entry.getKey())) {
                     b.addHeader(entry.getKey(), entry.getValue());
                 }
             }
@@ -337,7 +337,7 @@ public class MRpcClient implements ExtTransportClient {
         }
         int i = 200;
         Map<String, String> headers = mRpcResponse.getHeaders();
-        if (headers == null || !TextUtils.equals(headers.get(HeaderConstant.HEADER_KEY_RESULT_STATUS), "8001")) {
+        if (headers == null || !StringUtils.equals(headers.get(HeaderConstant.HEADER_KEY_RESULT_STATUS), "8001")) {
             str = icf.a.CONTROL_NAME_OK;
         } else {
             i = 304;
@@ -355,12 +355,12 @@ public class MRpcClient implements ExtTransportClient {
         }
         for (Header header : httpRequest.getAllHeaders()) {
             String value = header.getValue();
-            if (!TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(value)) {
                 mRpcRequest.addHeader(header.getName(), value);
             }
         }
         TransportContext transportContext = (TransportContext) httpContext.getAttribute(TransportConstants.KEY_NET_CONTEXT);
-        if (!TextUtils.isEmpty(transportContext.rpcUUID)) {
+        if (!StringUtils.isEmpty(transportContext.rpcUUID)) {
             mRpcRequest.addHeader(HeaderConstant.HEADER_KEY_PARAM_TRACEID, transportContext.rpcUUID);
         }
         mRpcRequest.localAmnet = transportContext.transportByLocalAmnet;
@@ -374,13 +374,13 @@ public class MRpcClient implements ExtTransportClient {
         }
         mRpcRequest.connTimeout = TransportStrategy.getConnTimeout(ExtTransportEnv.getAppContext());
         mRpcRequest.sslTimeout = TransportStrategy.getHandshakTimeout();
-        if (TextUtils.equals(httpUrlRequest.getTag(TransportConstants.KEY_IS_CUST_GW_URL), "true")) {
+        if (StringUtils.equals(httpUrlRequest.getTag(TransportConstants.KEY_IS_CUST_GW_URL), "true")) {
             mRpcRequest.isCustGwUrl = true;
         }
         if (RetryService.getInstance().isSupportResend(mRpcRequest.getHeaders().get(HeaderConstant.HEADER_KEY_OPERATION_TYPE), httpUrlRequest.allowRetry)) {
             mRpcRequest.important = true;
         }
-        if (TextUtils.equals(mRpcRequest.getHeaders().get(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK), "1")) {
+        if (StringUtils.equals(mRpcRequest.getHeaders().get(HeaderConstant.HEADER_KEY_PARAM_USE_MULTIPLEXLINK), "1")) {
             mRpcRequest.isMultiLink = true;
         }
         if (!MiscUtils.isDebugger(this.b)) {
@@ -410,7 +410,7 @@ public class MRpcClient implements ExtTransportClient {
             return (CookieSpec) ipChange.ipc$dispatch("b15a4695", new Object[]{this, httpResponse});
         }
         Header firstHeader = httpResponse.getFirstHeader("Set-Cookie");
-        if (firstHeader != null && !TextUtils.isEmpty(firstHeader.getValue()) && (firstHeader.getValue().contains("Version=1") || firstHeader.getValue().contains("version=1"))) {
+        if (firstHeader != null && !StringUtils.isEmpty(firstHeader.getValue()) && (firstHeader.getValue().contains("Version=1") || firstHeader.getValue().contains("version=1"))) {
             RFC2109Spec rFC2109Spec = new RFC2109Spec();
             rFC2109Spec.registerAttribHandler("domain", new MRFC2109DomainHandler());
             return rFC2109Spec;

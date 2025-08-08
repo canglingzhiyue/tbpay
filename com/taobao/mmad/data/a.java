@@ -1,6 +1,6 @@
 package com.taobao.mmad.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -88,7 +88,7 @@ public class a {
         int c = tjc.c();
         String string = jSONObject.getString("launchCnt");
         stv.a("DataEngine", " launchCnt contain json launchCountStr =" + string + ", applaunchCount=" + c);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             stv.a("DataEngine", " launchCnt parse: launchCountStr is null");
             return false;
         } else if (!string.contains(String.valueOf(c))) {

@@ -1,6 +1,6 @@
 package com.taobao.search.musie.videoscroll;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_uikit.ui.UINode;
 import tb.kge;
@@ -56,7 +56,7 @@ public class VideoScrollNodeRTL extends VideoScrollNode {
             ipChange.ipc$dispatch("bd87f0f6", new Object[]{this, str});
             return;
         }
-        if (TextUtils.equals(str, "finish")) {
+        if (StringUtils.equals(str, "finish")) {
             UINode uINode = this.lastPlayingVideo;
             this.lastPlayingVideo = null;
             int y = getNodeInfo().y();

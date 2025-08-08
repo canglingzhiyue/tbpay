@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mediaplay.d;
 import com.taobao.tao.flexbox.layoutmanager.player.videodecide.c;
@@ -36,7 +36,7 @@ public class sos {
         }
         int a2 = a(j);
         JSONObject jSONObject2 = null;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             try {
                 jSONObject = new JSONObject(str2);
             } catch (Exception e) {

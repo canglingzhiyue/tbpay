@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.SkuCoreNode;
@@ -62,13 +62,13 @@ public class jdj {
         if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject(SkuCoreNode.TAG)) == null || (jSONObject3 = jSONObject2.getJSONObject("skuItem")) == null) {
             return false;
         }
-        return !TextUtils.isEmpty(jSONObject3.getString("optionalSkuH5Url")) || a(jSONObject);
+        return !StringUtils.isEmpty(jSONObject3.getString("optionalSkuH5Url")) || a(jSONObject);
     }
 
     public static boolean a(JSONObject jSONObject) {
         JSONObject jSONObject2;
         JSONObject jSONObject3;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{jSONObject})).booleanValue() : (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject(SkuCoreNode.TAG)) == null || (jSONObject3 = jSONObject2.getJSONObject("skuItem")) == null || TextUtils.isEmpty(jSONObject3.getString("skuH5Url"))) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{jSONObject})).booleanValue() : (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject(SkuCoreNode.TAG)) == null || (jSONObject3 = jSONObject2.getJSONObject("skuItem")) == null || StringUtils.isEmpty(jSONObject3.getString("skuH5Url"))) ? false : true;
     }
 }

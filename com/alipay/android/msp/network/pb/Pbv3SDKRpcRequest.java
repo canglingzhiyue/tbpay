@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -114,7 +114,7 @@ public class Pbv3SDKRpcRequest {
         }
         if (APNetSwitchUtil.shouldIUseAPNetwork(context2)) {
             String configSDKAppId = GlobalHelper.getInstance().getConfigSDKAppId();
-            if (!TextUtils.isEmpty(configSDKAppId)) {
+            if (!StringUtils.isEmpty(configSDKAppId)) {
                 rpcInvokeContext.setAppId(configSDKAppId);
                 rpcInvokeContext.setAppKey(configSDKAppId);
             }
@@ -207,13 +207,13 @@ public class Pbv3SDKRpcRequest {
                 hashMap.put(MspFlybirdDefine.EXTINFO, dispatchTbV3.extinfo);
                 JsonUtil.addExtInfo(dispatchTbV3.extinfo, hashMap);
                 String str3 = dispatchTbV3.tplid;
-                if (TextUtils.equals(str3, "0")) {
+                if (StringUtils.equals(str3, "0")) {
                     str3 = "QUICKPAY@cashier-pre-confirm-flex";
-                } else if (TextUtils.equals(str3, "1")) {
+                } else if (StringUtils.equals(str3, "1")) {
                     str3 = MspFlybirdDefine.CASHIER_CHANNEL_LOGO_TPL;
-                } else if (TextUtils.equals(str3, "2")) {
+                } else if (StringUtils.equals(str3, "2")) {
                     str3 = "QUICKPAY@frontpay-channel-logo-flex";
-                } else if (TextUtils.equals(str3, "3")) {
+                } else if (StringUtils.equals(str3, "3")) {
                     str3 = MspFlybirdDefine.FLYBIRD_RESULT_TPL;
                 }
                 hashMap.put(MspFlybirdDefine.FLYBIRD_TEMPLATE_ID, str3);
@@ -230,18 +230,18 @@ public class Pbv3SDKRpcRequest {
                 try {
                     String str4 = resData.mData.get("trade_no");
                     String tradeNo = OrderInfoUtil.getTradeNo(mspContextByBizId);
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         if (mspContextByBizId != null) {
                             mspContextByBizId.getStatisticInfo().updateAttr(Vector.Trade, "tradeNo", str4);
                         }
                         DnsEnv.getInstance().setTradeNo(str4);
-                    } else if (!TextUtils.isEmpty(tradeNo)) {
+                    } else if (!StringUtils.isEmpty(tradeNo)) {
                         if (mspContextByBizId != null) {
                             mspContextByBizId.getStatisticInfo().updateAttr(Vector.Trade, "tradeNo", tradeNo);
                         }
                         DnsEnv.getInstance().setTradeNo(tradeNo);
                     }
-                    if (!TextUtils.isEmpty(str4) && (tradeContextByBizId = MspContextManager.getInstance().getTradeContextByBizId(i)) != null) {
+                    if (!StringUtils.isEmpty(str4) && (tradeContextByBizId = MspContextManager.getInstance().getTradeContextByBizId(i)) != null) {
                         tradeContextByBizId.updateTradeNo(str4);
                     }
                 } catch (Throwable th4) {
@@ -279,12 +279,12 @@ public class Pbv3SDKRpcRequest {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{str, new Integer(i)});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 for (String str2 : str.split(";")) {
                     if (str2.startsWith("user_id=")) {
                         String substring = str2.substring(8);
-                        if (TextUtils.isEmpty(substring)) {
+                        if (StringUtils.isEmpty(substring)) {
                             return;
                         }
                         MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i);
@@ -317,24 +317,24 @@ public class Pbv3SDKRpcRequest {
         mspReqExV3.session = map.get(MspGlobalDefine.SESSION);
         mspReqExV3.trid = map.get(MspGlobalDefine.TRID);
         try {
-            if (!TextUtils.isEmpty(map.get(MspFlybirdDefine.TRDFROM))) {
+            if (!StringUtils.isEmpty(map.get(MspFlybirdDefine.TRDFROM))) {
                 mspReqExV3.trdfrom = Integer.valueOf(Integer.parseInt(map.get(MspFlybirdDefine.TRDFROM)));
             }
         } catch (NumberFormatException e) {
             LogUtil.printExceptionStackTrace(e);
         }
         try {
-            if (!TextUtils.isEmpty(map.get(MspFlybirdDefine.FLYBIRD_LOGIN))) {
+            if (!StringUtils.isEmpty(map.get(MspFlybirdDefine.FLYBIRD_LOGIN))) {
                 mspReqExV3.locLoginOnce = Integer.valueOf(Integer.parseInt(map.get(MspFlybirdDefine.FLYBIRD_LOGIN)));
             }
         } catch (NumberFormatException e2) {
             LogUtil.printExceptionStackTrace(e2);
         }
         try {
-            if (!TextUtils.isEmpty(map.get("hasAlipay"))) {
+            if (!StringUtils.isEmpty(map.get("hasAlipay"))) {
                 mspReqExV3.hasAlipay = Integer.valueOf(Integer.parseInt(map.get("hasAlipay")));
             }
-            if (!TextUtils.isEmpty(map.get(MspGlobalDefine.CERTPAY))) {
+            if (!StringUtils.isEmpty(map.get(MspGlobalDefine.CERTPAY))) {
                 mspReqExV3.certpay = Integer.valueOf(Integer.parseInt(map.get(MspGlobalDefine.CERTPAY)));
             }
         } catch (NumberFormatException e3) {
@@ -362,13 +362,13 @@ public class Pbv3SDKRpcRequest {
             if (query != null && query.getCount() > 0) {
                 if (query.moveToFirst()) {
                     String string = query.getString(query.getColumnIndex("url"));
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         str = string;
                     }
                 }
                 query.close();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 TaskHelper.runOnUIThread(new Runnable() { // from class: com.alipay.android.msp.network.pb.Pbv3SDKRpcRequest.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

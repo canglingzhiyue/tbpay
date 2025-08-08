@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend3.newface.gateway.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -129,9 +129,9 @@ public class c implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f4c45f3e", new Object[]{this, str, list, jSONObject, gkcVar});
-        } else if (list == null || list.isEmpty() || str == null || TextUtils.isEmpty(str)) {
+        } else if (list == null || list.isEmpty() || str == null || StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.equals(oqc.a().c(str) ? "guess" : "homepage", "homepage")) {
+            if (StringUtils.equals(oqc.a().c(str) ? "guess" : "homepage", "homepage")) {
                 com.taobao.tao.homepage.f.a().a(list, "homepage", new f.b() { // from class: com.taobao.tao.recommend3.newface.gateway.action.c.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

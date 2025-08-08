@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatImageView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
@@ -334,7 +334,7 @@ public final class M3ImageView extends AppCompatImageView {
         }
         releaseImage(f4);
         this.lastTarget = new b();
-        if (TextUtils.isEmpty(url)) {
+        if (StringUtils.isEmpty(url)) {
             setTag(v.APM_VIEW_TOKEN, v.APM_VIEW_VALID);
             return;
         }
@@ -451,7 +451,7 @@ public final class M3ImageView extends AppCompatImageView {
             ipChange.ipc$dispatch("84e011c2", new Object[]{this});
         } else if (!this.hasRightBottomIcon) {
         } else {
-            this.rightBottomIcon.a(TextUtils.isEmpty(this.p4pIconUrl) ? rightBottomP4pImg : this.p4pIconUrl, this.p4pIconWidth, this.p4pIconHeight);
+            this.rightBottomIcon.a(StringUtils.isEmpty(this.p4pIconUrl) ? rightBottomP4pImg : this.p4pIconUrl, this.p4pIconWidth, this.p4pIconHeight);
         }
     }
 
@@ -466,7 +466,7 @@ public final class M3ImageView extends AppCompatImageView {
         String str = defP4pIcon;
         i iVar = this.lastP4pIcon;
         if (iVar != null) {
-            if (!TextUtils.isEmpty(iVar.a()) && (str = iVar.a()) == null) {
+            if (!StringUtils.isEmpty(iVar.a()) && (str = iVar.a()) == null) {
                 q.a();
             }
             int a2 = iVar.b() > 0 ? l.a(iVar.b()) : i2;
@@ -490,7 +490,7 @@ public final class M3ImageView extends AppCompatImageView {
         }
         q.c(canvas, "canvas");
         super.onDraw(canvas);
-        if (!TextUtils.isEmpty(this.lastUrl)) {
+        if (!StringUtils.isEmpty(this.lastUrl)) {
             canvas.drawColor(maskColOr);
         }
         if (this.lastP4pIcon != null) {
@@ -554,7 +554,7 @@ public final class M3ImageView extends AppCompatImageView {
             return;
         }
         super.onAttachedToWindow();
-        if (getMeasuredWidth() > 0 && getMeasuredHeight() > 0 && !TextUtils.isEmpty(this.lastUrl)) {
+        if (getMeasuredWidth() > 0 && getMeasuredHeight() > 0 && !StringUtils.isEmpty(this.lastUrl)) {
             String str = this.lastUrl;
             if (str == null) {
                 q.a();

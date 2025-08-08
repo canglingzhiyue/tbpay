@@ -3,7 +3,7 @@ package com.taobao.android.msoa;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.msoa.callback.MSOAServiceListener;
@@ -92,7 +92,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("39d259ba", new Object[]{this, gVar, mSOAServiceListener});
-        } else if (gVar == null || TextUtils.isEmpty(gVar.b) || TextUtils.isEmpty(gVar.c) || TextUtils.isEmpty(gVar.d)) {
+        } else if (gVar == null || StringUtils.isEmpty(gVar.b) || StringUtils.isEmpty(gVar.c) || StringUtils.isEmpty(gVar.d)) {
             if (mSOAServiceListener == null) {
                 return;
             }

@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.player.prefetchdownload;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -185,7 +185,7 @@ public class b {
         } else if (this.f20475a != null) {
         } else {
             String av = oeb.av();
-            if (!TextUtils.isEmpty(av)) {
+            if (!StringUtils.isEmpty(av)) {
                 try {
                     this.f20475a = (PrefetchDownloadConfigBean) JSONObject.parseObject(av, PrefetchDownloadConfigBean.class);
                     return;
@@ -280,7 +280,7 @@ public class b {
         for (TBVideoComponent tBVideoComponent : this.e) {
             TBVideoComponent.c viewParams = tBVideoComponent.getViewParams();
             if (viewParams != null) {
-                if (TextUtils.isEmpty(viewParams.f) || (TextUtils.isEmpty(viewParams.E) && TextUtils.isEmpty(viewParams.F))) {
+                if (StringUtils.isEmpty(viewParams.f) || (StringUtils.isEmpty(viewParams.E) && StringUtils.isEmpty(viewParams.F))) {
                     ogg.d("TNodePlayerPrefetchManager", "videoId或者播控为空");
                 } else if (c.a().d(tBVideoComponent.f())) {
                     ogg.d("TNodePlayerPrefetchManager", "正在播放的视频，不使用预下载,预下载list去除");
@@ -340,9 +340,9 @@ public class b {
                 if (com.taobao.tao.flexbox.layoutmanager.player.videodecide.c.a(viewParams)) {
                     str = viewParams.F;
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     ogg.d("TNodePlayerPrefetchManager", "没有播控数据");
-                } else if (!TextUtils.isEmpty(viewParams.f)) {
+                } else if (!StringUtils.isEmpty(viewParams.f)) {
                     this.e.add((TBVideoComponent) aaVar.I());
                 }
             }

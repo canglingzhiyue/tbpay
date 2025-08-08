@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.render;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -20,7 +20,7 @@ public abstract class BaseRender {
 
     public String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : TextUtils.isEmpty(str) ? str : str.replaceAll("\\$\\$", "**");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : StringUtils.isEmpty(str) ? str : str.replaceAll("\\$\\$", "**");
     }
 
     public static String a() {

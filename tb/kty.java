@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.service.BUFS;
 import com.taobao.android.home.component.utils.j;
@@ -37,7 +37,7 @@ public class kty {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (d || TextUtils.equals(this.e, "coldStart")) {
+        } else if (d || StringUtils.equals(this.e, "coldStart")) {
         } else {
             c();
             d();
@@ -69,7 +69,7 @@ public class kty {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.equals(this.e, "coldStart")) {
+        if (StringUtils.equals(this.e, "coldStart")) {
             return null;
         }
         kua kuaVar = this.f;
@@ -113,7 +113,7 @@ public class kty {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         int length = str.toCharArray().length;

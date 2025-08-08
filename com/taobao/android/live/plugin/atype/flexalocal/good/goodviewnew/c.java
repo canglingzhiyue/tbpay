@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -247,12 +247,12 @@ public class c extends a<e> implements f, o {
                 his.a("GoodsView", "realShow | showPackage.");
                 goodsLiveStateMutitabView.showPackage();
             }
-        } else if (TextUtils.equals("weex", b.tabType)) {
+        } else if (StringUtils.equals("weex", b.tabType)) {
             if ((b instanceof GoodsMultiTabManager.WeexTabBundle) && ((GoodsMultiTabManager.WeexTabBundle) b).baseFrame != null && com.taobao.android.live.plugin.atype.flexalocal.good.a.a().l() != null) {
                 com.taobao.android.live.plugin.atype.flexalocal.good.a.a().l();
             }
         } else {
-            TextUtils.equals("h5", b.tabType);
+            StringUtils.equals("h5", b.tabType);
         }
         ((e) this.d).b();
     }
@@ -316,7 +316,7 @@ public class c extends a<e> implements f, o {
             return false;
         }
         for (JSONObject jSONObject : list) {
-            if (TextUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject.getString("type"))) {
+            if (StringUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject.getString("type"))) {
                 this.e.c(jSONObject);
                 return true;
             }
@@ -554,9 +554,9 @@ public class c extends a<e> implements f, o {
                                             break;
                                         }
                                         JSONObject jSONObject2 = jSONArray.getJSONObject(i);
-                                        if (TextUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject2.getString("type"))) {
+                                        if (StringUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject2.getString("type"))) {
                                             String string = jSONObject2.getString("realCount");
-                                            if (!TextUtils.isEmpty(string)) {
+                                            if (!StringUtils.isEmpty(string)) {
                                                 jSONObject2.put("count", (Object) string);
                                             }
                                             jSONObject2.put("animatedIcon", (Object) true);
@@ -665,7 +665,7 @@ public class c extends a<e> implements f, o {
         }
         UltronInstanceViewModel a2 = hiq.a((ViewModelStoreOwner) this.c.f());
         String str = a2.f13834a;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             his.b("VMUltronInstance", "奥创配置配置没有拉取成功！");
             return;
         }

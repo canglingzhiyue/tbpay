@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.actions;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.template.ITemplateClickCallback;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -134,11 +134,11 @@ public class EventAction implements Action {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c856ad92", new Object[]{this, str, str2, str3});
-        } else if (!TextUtils.equals(str, MspEventTypes.ACTION_INVOKE_LOC)) {
+        } else if (!StringUtils.equals(str, MspEventTypes.ACTION_INVOKE_LOC)) {
         } else {
             this.l = new MspEvent[1];
             this.l[0] = new MspEvent(str2);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return;
             }
             this.l[0].setActionParamsJson(JSONObject.parseObject(str3));
@@ -335,7 +335,7 @@ public class EventAction implements Action {
             return ((Boolean) ipChange.ipc$dispatch("fba75986", new Object[]{this})).booleanValue();
         }
         MspEvent[] mspEventArr = this.l;
-        return mspEventArr != null && mspEventArr.length == 1 && TextUtils.equals(mspEventArr[0].getActionName(), "auth");
+        return mspEventArr != null && mspEventArr.length == 1 && StringUtils.equals(mspEventArr[0].getActionName(), "auth");
     }
 
     public void setBizId(int i) {
@@ -377,7 +377,7 @@ public class EventAction implements Action {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5c024634", new Object[]{this, str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 if (str.startsWith("loc:")) {
                     str = str.substring(4);

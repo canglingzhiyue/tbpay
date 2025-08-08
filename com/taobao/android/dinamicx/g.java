@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -20,7 +20,7 @@ public class g implements com.taobao.android.dinamicx.widget.aj {
             return (Map) ipChange.ipc$dispatch("c27656b1", new Object[]{this, str, str2});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (activate = UTABTest.activate(str, str2)) != null && (r4 = activate.iterator()) != null) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (activate = UTABTest.activate(str, str2)) != null && (r4 = activate.iterator()) != null) {
             for (Variation variation : activate) {
                 hashMap.put(variation.getName(), variation.getValue(null));
             }

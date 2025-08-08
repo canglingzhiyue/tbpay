@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ut;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.TBS;
@@ -64,12 +64,12 @@ public class c {
             ipChange.ipc$dispatch("d9b9da5a", new Object[]{str, str2, str3, str4, str5});
             return;
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             str6 = "spm=" + str3 + ",scm=" + str4;
         } else {
             str6 = "spm=" + str3;
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             str6 = str6 + ",extra=" + str5;
         }
         b(str, str2, str6);
@@ -88,20 +88,20 @@ public class c {
             return;
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             sb.append("spm=" + str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             sb.append(",scm=" + str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             sb.append(",extra=" + str5);
         }
         if (map != null && map.size() > 0) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     sb.append("," + key + "=" + value);
                 }
             }
@@ -124,20 +124,20 @@ public class c {
             return (String) ipChange.ipc$dispatch("e59c2c01", new Object[]{str, str2, str3, map});
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append("spm=" + str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(",scm=" + str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             sb.append(",extra=" + str3);
         }
         if (map != null && map.size() > 0) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     sb.append("," + key + "=" + value);
                 }
             }
@@ -174,7 +174,7 @@ public class c {
         StringBuilder sb = new StringBuilder(600);
         for (String str : jSONObject.keySet()) {
             String string = jSONObject.getString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(string);
@@ -204,10 +204,10 @@ public class c {
             return;
         }
         JSONObject jSONObject2 = new JSONObject();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             jSONObject2.put("spm", (Object) str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             jSONObject2.put("scm", (Object) str4);
         }
         if (jSONObject != null) {
@@ -233,8 +233,8 @@ public class c {
         } else {
             a aVar = f18534a.get(obj.getClass().getName());
             if (aVar != null) {
-                TextUtils.isEmpty(str);
-                if (TextUtils.isEmpty(str2)) {
+                StringUtils.isEmpty(str);
+                if (StringUtils.isEmpty(str2)) {
                     str2 = aVar.c;
                 }
             }

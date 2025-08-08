@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -436,7 +436,7 @@ public abstract class a {
             }
             if (jzg.a(this.f16253a)) {
                 String a2 = jzg.a(muiseBean.type);
-                if (!TextUtils.isEmpty(a2) && a2.startsWith("http")) {
+                if (!StringUtils.isEmpty(a2) && a2.startsWith("http")) {
                     b().b().d("AbsMuiseRender", "使用测试模板进行");
                     return a(muiseBean, map, a2);
                 }

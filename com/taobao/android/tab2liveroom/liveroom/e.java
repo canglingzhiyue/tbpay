@@ -2,7 +2,7 @@ package com.taobao.android.tab2liveroom.liveroom;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,9 +45,9 @@ public class e {
         String[] split = oeb.a("tab2liveRoomExtraKeys", "").split(",");
         if (split != null) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     String queryParameter = uri.getQueryParameter(str2);
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         hashMap.put(str2, queryParameter);
                     }
                 }
@@ -66,7 +66,7 @@ public class e {
         String str = null;
         if (uri != null) {
             String queryParameter = uri.getQueryParameter("extParams");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 try {
                     str = JSON.parseObject(queryParameter).getString("livesource");
                 } catch (Throwable unused) {
@@ -74,7 +74,7 @@ public class e {
                 }
             }
         }
-        return TextUtils.isEmpty(str) ? "tb_tab2.guangguang_newlivetab" : str;
+        return StringUtils.isEmpty(str) ? "tb_tab2.guangguang_newlivetab" : str;
     }
 
     public static void a(Context context, m.b bVar) {
@@ -92,14 +92,14 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("972ca8b0", new Object[]{str, livePreloadData});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Uri parse = Uri.parse(str);
-        if (parse != null && TextUtils.isEmpty(parse.getQueryParameter(aw.PARAM_CUSTOM_PLAY_CTRL))) {
+        if (parse != null && StringUtils.isEmpty(parse.getQueryParameter(aw.PARAM_CUSTOM_PLAY_CTRL))) {
             if (livePreloadData != null && livePreloadData.canComposeQuickOpenParams()) {
                 String str2 = livePreloadData.customPlayCtrlParams;
-                ogg.a(a.TAG, "拼接秒开参数,id:" + livePreloadData.id + ",customPlayCtrlParams:" + (true ^ TextUtils.isEmpty(str2)));
+                ogg.a(a.TAG, "拼接秒开参数,id:" + livePreloadData.id + ",customPlayCtrlParams:" + (true ^ StringUtils.isEmpty(str2)));
                 return parse.buildUpon().appendQueryParameter(aw.PARAM_CUSTOM_PLAY_CTRL, str2).appendQueryParameter("id", livePreloadData.id).appendQueryParameter("trackInfo", livePreloadData.trackInfo).build().toString();
             }
             ogg.a(a.TAG, "没有秒开参数,pageUrl:" + str);
@@ -116,6 +116,6 @@ public class e {
             return false;
         }
         String str = uri.getHost() + uri.getPath();
-        return TextUtils.equals(str, "market.m.taobao.com/app/mtb/app-live-h5-room/home/index.html") || TextUtils.equals(str, "h5.m.taobao.com/taolive/video.html") || TextUtils.equals(str, "huodong.m.taobao.com/act/talent/live.html");
+        return StringUtils.equals(str, "market.m.taobao.com/app/mtb/app-live-h5-room/home/index.html") || StringUtils.equals(str, "h5.m.taobao.com/taolive/video.html") || StringUtils.equals(str, "huodong.m.taobao.com/act/talent/live.html");
     }
 }

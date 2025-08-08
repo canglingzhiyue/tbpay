@@ -2,7 +2,7 @@ package com.taobao.update.apk.history;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.update.framework.UpdateRuntime;
@@ -35,7 +35,7 @@ public class ApkUpdateHistory {
             return (Data) ipChange.ipc$dispatch("e8f96c3a", new Object[0]);
         }
         String string = PreferenceManager.getDefaultSharedPreferences(UpdateRuntime.getContext()).getString("update_history", "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {

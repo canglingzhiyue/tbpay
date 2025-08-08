@@ -2,7 +2,7 @@ package com.taobao.aranger.core.entity;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.aranger.core.wrapper.ParameterWrapper;
 import com.taobao.aranger.utils.e;
@@ -66,7 +66,7 @@ public class Reply implements Parcelable {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeByte((byte) this.mErrorCode);
-        if (!TextUtils.isEmpty(this.mErrorMessage)) {
+        if (!StringUtils.isEmpty(this.mErrorMessage)) {
             parcel.writeByte((byte) 0);
             parcel.writeString(this.mErrorMessage);
         } else {

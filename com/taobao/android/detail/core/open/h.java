@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.open;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.event.Event;
@@ -63,7 +63,7 @@ public class h implements g {
     }
 
     public h(Context context, a aVar) {
-        if (context == null || aVar == null || TextUtils.isEmpty(aVar.a())) {
+        if (context == null || aVar == null || StringUtils.isEmpty(aVar.a())) {
             throw new IllegalArgumentException("传参异常");
         }
         this.f9776a = context;

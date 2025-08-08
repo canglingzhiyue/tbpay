@@ -2,7 +2,7 @@ package com.taobao.android.litecreator.sdk.editor;
 
 import android.content.res.Resources;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Size;
 import android.view.SurfaceView;
 import android.view.TextureView;
@@ -397,7 +397,7 @@ public class ak extends a implements hek {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4a7235a", new Object[]{this});
-        } else if (this.o == null || !TextUtils.equals(this.o.resourceType, Resource.TYPE_TEMPLATE_TEXT_IMAGE)) {
+        } else if (this.o == null || !StringUtils.equals(this.o.resourceType, Resource.TYPE_TEMPLATE_TEXT_IMAGE)) {
         } else {
             T();
             g().width = this.t.getCanvasWidth();
@@ -582,7 +582,7 @@ public class ak extends a implements hek {
                 return;
             }
             if (d(filter)) {
-                if (!TextUtils.isEmpty(this.C)) {
+                if (!StringUtils.isEmpty(this.C)) {
                     this.t.deleteClip(this.C);
                 }
                 this.C = this.t.addLookupClip("", filter.srcDirPath, 0L, I());
@@ -718,7 +718,7 @@ public class ak extends a implements hek {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4990bd9", new Object[]{this});
-        } else if (this.o == null || TextUtils.isEmpty(this.o.singleHolderPath)) {
+        } else if (this.o == null || StringUtils.isEmpty(this.o.singleHolderPath)) {
         } else {
             ImageBean a2 = com.taobao.android.litecreator.base.data.g.a(this.o.singleHolderPath);
             this.b.width = a2.width;
@@ -735,7 +735,7 @@ public class ak extends a implements hek {
         } else if (crop == null || crop.rect == null) {
         } else {
             String N = N();
-            if (TextUtils.isEmpty(N)) {
+            if (StringUtils.isEmpty(N)) {
                 return;
             }
             if (c(crop)) {
@@ -795,7 +795,7 @@ public class ak extends a implements hek {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("edda674f", new Object[]{this, music});
-        } else if (music != null && !TextUtils.isEmpty(music.path)) {
+        } else if (music != null && !StringUtils.isEmpty(music.path)) {
             this.k.a(music.path);
         } else {
             this.k.a("");

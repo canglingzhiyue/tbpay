@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.rp.RPSDK;
@@ -76,7 +76,7 @@ public class VITaoBaoJSAPIAdapter extends e {
                 String string = parseObject2.getString("uid");
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(EnvInfoUtil.KEY_IS_IPAY, booleanValue);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     bundle.putString("USER_ID", string);
                 }
                 String envData = VerifyIdentityEngine.getInstance(this.mContext).getEnvData(bundle);

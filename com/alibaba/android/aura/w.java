@@ -1,6 +1,6 @@
 package com.alibaba.android.aura;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collection;
 import java.util.Map;
@@ -161,10 +161,10 @@ public class w {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-            } else if (TextUtils.isEmpty(this.f2219a)) {
+            } else if (StringUtils.isEmpty(this.f2219a)) {
                 throw new IllegalArgumentException("bizName not null");
             } else {
-                if (TextUtils.isEmpty(this.b)) {
+                if (StringUtils.isEmpty(this.b)) {
                     throw new IllegalArgumentException("configAssetFileName not null");
                 }
             }

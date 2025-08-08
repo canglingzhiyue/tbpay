@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.ArrayMap;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.ir.runtime.e;
@@ -53,7 +53,7 @@ public class ren {
             List<WeakReference<Activity>> list = this.f33086a;
             str2 = list.get(list.size() - 1).get().getClass().getName();
         }
-        if (TextUtils.equals(str2, str) && (i2 == 1 || (i & UCCore.VERIFY_POLICY_PAK_QUICK) == 536870912)) {
+        if (StringUtils.equals(str2, str) && (i2 == 1 || (i & UCCore.VERIFY_POLICY_PAK_QUICK) == 536870912)) {
             intent.addFlags(UCCore.VERIFY_POLICY_PAK_QUICK);
         } else if (i2 == 2 || i2 == 3 || (i & 67108864) == 67108864) {
             int i3 = 0;

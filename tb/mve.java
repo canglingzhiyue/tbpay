@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -83,7 +83,7 @@ public class mve extends RecyclerView.Adapter<mvf> implements mvg {
         if (newGeneralSettingDataModel.isShowDividerWithoutTitle) {
             mvfVar.c.setVisibility(8);
             mvfVar.f31278a.setVisibility(0);
-        } else if (!TextUtils.isEmpty(newGeneralSettingDataModel.showDividerWithTitle)) {
+        } else if (!StringUtils.isEmpty(newGeneralSettingDataModel.showDividerWithTitle)) {
             mvfVar.c.setVisibility(8);
             mvfVar.b.setVisibility(0);
             mvfVar.b.setText(newGeneralSettingDataModel.showDividerWithTitle);
@@ -93,7 +93,7 @@ public class mve extends RecyclerView.Adapter<mvf> implements mvg {
             mvfVar.b.setVisibility(8);
         }
         mvfVar.d.setText(newGeneralSettingDataModel.title);
-        if (!TextUtils.isEmpty(newGeneralSettingDataModel.desc)) {
+        if (!StringUtils.isEmpty(newGeneralSettingDataModel.desc)) {
             mvfVar.e.setVisibility(0);
             mvfVar.e.setText(newGeneralSettingDataModel.desc);
         }

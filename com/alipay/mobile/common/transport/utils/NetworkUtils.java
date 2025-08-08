@@ -8,7 +8,7 @@ import android.net.NetworkInfo;
 import android.net.Proxy;
 import android.net.wifi.WifiManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.format.Formatter;
 import com.alipay.mobile.common.transport.TransportStrategy;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -152,7 +152,7 @@ public class NetworkUtils {
         }
         String defaultHost = Proxy.getDefaultHost();
         int defaultPort = Proxy.getDefaultPort();
-        if (!TextUtils.isEmpty(defaultHost) && defaultPort > 0 && defaultPort < 65535) {
+        if (!StringUtils.isEmpty(defaultHost) && defaultPort > 0 && defaultPort < 65535) {
             return new HttpHost(defaultHost, defaultPort);
         }
         return null;
@@ -267,7 +267,7 @@ public class NetworkUtils {
             NetworkInterface nextElement = networkInterfaces.nextElement();
             if (nextElement.isUp() && nextElement.getInterfaceAddresses().size() != 0) {
                 String name = nextElement.getName();
-                if (!TextUtils.isEmpty(name) && (name.startsWith("tun") || name.startsWith(shc.SCENE_TAP) || name.startsWith("ppp"))) {
+                if (!StringUtils.isEmpty(name) && (name.startsWith("tun") || name.startsWith(shc.SCENE_TAP) || name.startsWith("ppp"))) {
                     LogCatUtil.debug("NetworkUtils", "isVpnUsed. Used vpn, name: " + nextElement.getName());
                     return nextElement;
                 }
@@ -298,7 +298,7 @@ public class NetworkUtils {
         int length = strArr.length;
         for (int i2 = 0; i2 < length; i2++) {
             String str = (String) method.invoke(null, strArr[i2]);
-            if (!TextUtils.isEmpty(str) && !arrayList.contains(str)) {
+            if (!StringUtils.isEmpty(str) && !arrayList.contains(str)) {
                 arrayList.add(str);
             }
         }

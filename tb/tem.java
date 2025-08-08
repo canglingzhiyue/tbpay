@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -49,12 +49,12 @@ public class tem {
                 sb.append(m.a(jSONArray2.getJSONObject(i), "tid", ""));
                 i++;
             }
-            if (!TextUtils.isEmpty(sb)) {
-                if (TextUtils.equals(a2, AgooConstants.REPORT_ENCRYPT_FAIL)) {
+            if (!StringUtils.isEmpty(sb)) {
+                if (StringUtils.equals(a2, AgooConstants.REPORT_ENCRYPT_FAIL)) {
                     mediaStatInfoV2.source = "ai_portrait";
-                } else if (TextUtils.equals(a2, AgooConstants.REPORT_DUPLICATE_FAIL)) {
+                } else if (StringUtils.equals(a2, AgooConstants.REPORT_DUPLICATE_FAIL)) {
                     mediaStatInfoV2.source = "ai_create";
-                } else if (TextUtils.equals(a2, "25")) {
+                } else if (StringUtils.equals(a2, "25")) {
                     mediaStatInfoV2.source = "ai_outfit";
                 } else {
                     mediaStatInfoV2.source = "template";
@@ -103,7 +103,7 @@ public class tem {
                 str = a4;
                 j = -1;
             }
-            if (TextUtils.isEmpty(a2) && TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(a2) && StringUtils.isEmpty(str)) {
                 return;
             }
             AudioBean audioBean = new AudioBean();

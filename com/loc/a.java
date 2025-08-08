@@ -10,7 +10,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.amap.api.fence.GeoFence;
 import com.amap.api.fence.GeoFenceListener;
 import com.amap.api.location.AMapLocation;
@@ -353,7 +353,7 @@ public final class a {
     }
 
     private static boolean a(int i, String str, String str2, DPoint dPoint) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (i != 1) {
@@ -366,7 +366,7 @@ public final class a {
                     return false;
                 }
             }
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             return false;
         }
         return true;
@@ -1233,7 +1233,7 @@ public final class a {
                     return;
                 }
                 String string = bundle.getString("fid");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 boolean z = bundle.getBoolean("ab", true);

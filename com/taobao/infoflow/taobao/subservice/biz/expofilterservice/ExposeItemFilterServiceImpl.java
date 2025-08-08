@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.expofilterservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.action.IUiRefreshActionModel;
 import com.taobao.infoflow.protocol.model.datamodel.response.IContainerDataModel;
@@ -42,7 +42,7 @@ public class ExposeItemFilterServiceImpl implements IExposeItemFilterService {
             return;
         }
         ldf.a(TAG, "onCreateService:" + ljsVar.a().a());
-        if (!TextUtils.equals(ljsVar.a().a(), "newface_home_sub")) {
+        if (!StringUtils.equals(ljsVar.a().a(), "newface_home_sub")) {
             return;
         }
         this.mInfoFlowContext = ljsVar;

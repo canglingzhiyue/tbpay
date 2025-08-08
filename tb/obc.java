@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.taopassword.constants.TPTargetType;
 import java.util.HashMap;
@@ -49,10 +49,10 @@ public class obc {
         String[] split = (fragment == null || !fragment.contains("?")) ? null : fragment.split("\\?");
         if (split != null && split.length > 0) {
             fragment = split[0];
-            query = !TextUtils.isEmpty(query) ? query + "&" + split[1] : split[1];
+            query = !StringUtils.isEmpty(query) ? query + "&" + split[1] : split[1];
         }
         if (fragment != null && fragment.contains("&") && (indexOf = fragment.indexOf("&")) > 0) {
-            if (!TextUtils.isEmpty(query)) {
+            if (!StringUtils.isEmpty(query)) {
                 String str = query + "&" + fragment.substring(indexOf + 1);
             } else {
                 fragment.substring(indexOf + 1);
@@ -93,7 +93,7 @@ public class obc {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d18de974", new Object[]{context, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             SharedPreferences.Editor edit = context.getApplicationContext().getSharedPreferences("tb_share_copy_content", 0).edit();
             edit.putString(str, str2);
@@ -131,7 +131,7 @@ public class obc {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d54b79ec", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

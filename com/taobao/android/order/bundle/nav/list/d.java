@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.nav.list;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
@@ -45,7 +45,7 @@ public class d extends com.taobao.android.order.bundle.nav.a<Intent> {
             return false;
         }
         String g = hyk.g();
-        if (TextUtils.isEmpty(g)) {
+        if (StringUtils.isEmpty(g)) {
             c.a(10, intent, "degradeUrl is empty");
             return false;
         }

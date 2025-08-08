@@ -7,7 +7,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alilive.adapter.uikit.h;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.ab;
@@ -40,7 +40,7 @@ public class pag implements nia {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("81e05888", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             return "W" + this.f32527a + "$H" + this.b;
         }
         return "W" + this.f32527a + "$H" + this.b + "url" + this.d;

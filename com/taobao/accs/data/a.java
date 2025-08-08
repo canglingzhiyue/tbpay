@@ -1,6 +1,6 @@
 package com.taobao.accs.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ut.monitor.AssembleMonitor;
@@ -155,7 +155,7 @@ public class a {
                                 bArr2 = bArr4;
                             }
                         }
-                        if (!TextUtils.isEmpty(this.d)) {
+                        if (!StringUtils.isEmpty(this.d)) {
                             String str = new String(a(EncryptUtil.md5(bArr2)));
                             if (!this.d.equals(str)) {
                                 ALog.w("AssembleMessage", "putBurst fail", "dataId", this.b, "dataMd5", this.d, "finalDataMd5", str);

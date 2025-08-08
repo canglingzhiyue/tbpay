@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.application.common.a;
@@ -120,7 +120,7 @@ public class kaw {
         List<GroupData> b = kax.b(kbb.GROUP_DATA);
         if (!kay.a().b()) {
             kbd.a(LOG_TAG, "prepareData，本地数据为空，并且过期，请求接口");
-            if (TextUtils.isEmpty(kbc.a(a().f29925a))) {
+            if (StringUtils.isEmpty(kbc.a(a().f29925a))) {
                 return;
             }
             f();

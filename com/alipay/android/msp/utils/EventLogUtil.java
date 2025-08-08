@@ -2,7 +2,7 @@ package com.alipay.android.msp.utils;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -102,7 +102,7 @@ public class EventLogUtil {
         hashMap.put("ts_scheme_invoked", String.valueOf(SystemClock.elapsedRealtime()));
         try {
             String string = bundle.getString("mqpLoc");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 JSONObject parseObject = JSON.parseObject(string);
                 for (String str : parseObject.keySet()) {
                     hashMap.put(str, parseObject.getString(str));
@@ -149,7 +149,7 @@ public class EventLogUtil {
             r0.ipc$dispatch(r6, r1)
             return
         L24:
-            boolean r9 = android.text.TextUtils.isEmpty(r8)
+            boolean r9 = android.text.StringUtils.isEmpty(r8)
             if (r9 != 0) goto L33
             int r8 = java.lang.Integer.parseInt(r8)     // Catch: java.lang.NumberFormatException -> L2f
             goto L34

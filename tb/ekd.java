@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -192,7 +192,7 @@ public class ekd extends ejx {
             ViewGroup viewGroup = (ViewGroup) a2;
             for (int i = 0; i < viewGroup.getChildCount(); i++) {
                 View childAt = viewGroup.getChildAt(i);
-                if ((childAt.getTag() instanceof String) && TextUtils.equals((CharSequence) childAt.getTag(), ekb.EVENT_TYPE)) {
+                if ((childAt.getTag() instanceof String) && StringUtils.equals((CharSequence) childAt.getTag(), ekb.EVENT_TYPE)) {
                     viewGroup.removeView(childAt);
                     return;
                 }
@@ -223,7 +223,7 @@ public class ekd extends ejx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1a501edd", new Object[]{this, aURARenderComponent, str});
-        } else if (this.d == null || aURARenderComponent == null || aURARenderComponent.parent == null || TextUtils.isEmpty(str)) {
+        } else if (this.d == null || aURARenderComponent == null || aURARenderComponent.parent == null || StringUtils.isEmpty(str)) {
             arc.a().b("adjustRulesForPicGallerySize:component is invalid");
         } else {
             AURARenderComponent aURARenderComponent2 = aURARenderComponent.parent;
@@ -251,7 +251,7 @@ public class ekd extends ejx {
                 break;
             }
             Object obj = this.e.get(i);
-            if ((obj instanceof AURARenderComponent) && TextUtils.equals(((AURARenderComponent) obj).key, aURARenderComponent.key)) {
+            if ((obj instanceof AURARenderComponent) && StringUtils.equals(((AURARenderComponent) obj).key, aURARenderComponent.key)) {
                 i2 = i;
                 break;
             }

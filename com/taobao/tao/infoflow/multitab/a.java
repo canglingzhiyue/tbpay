@@ -1,6 +1,6 @@
 package com.taobao.tao.infoflow.multitab;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -30,7 +30,7 @@ public class a {
         }
         String b2 = e.b(jSONObject);
         String c = e.c(jSONObject);
-        if (!TextUtils.isEmpty(b2) && !TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(b2) && !StringUtils.isEmpty(c)) {
             String str = b2 + "_" + c;
             b bVar = f20634a.get(str);
             if (bVar != null) {

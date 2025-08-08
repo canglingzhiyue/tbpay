@@ -3,7 +3,7 @@ package com.taobao.downloader;
 import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.monitor.DXMonitorConstant;
@@ -93,7 +93,7 @@ public class b {
                 return -100;
             }
         }
-        if (kmmVar != null && TextUtils.isEmpty(kmmVar.b.h) && a.h != null) {
+        if (kmmVar != null && StringUtils.isEmpty(kmmVar.b.h) && a.h != null) {
             kmmVar.b.h = a.h.a();
         }
         if (kmmVar == null || !kmmVar.a()) {
@@ -170,7 +170,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("31d06055", new Object[]{this, str, str2, kmlVar})).intValue();
         }
         kmm kmmVar = a.l == null ? new kmm(str) : a.l.a(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             kmmVar.b.f30169a = str2;
         }
         return a(kmmVar, kmlVar);

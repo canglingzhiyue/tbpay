@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class dwo {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             Object obj = jSONObject.get(key);
-            if (((obj instanceof String) && TextUtils.isEmpty((String) obj)) || (((obj instanceof JSONObject) && bau.a((JSONObject) obj)) || ((obj instanceof JSONArray) && ((JSONArray) obj).size() == 0))) {
+            if (((obj instanceof String) && StringUtils.isEmpty((String) obj)) || (((obj instanceof JSONObject) && bau.a((JSONObject) obj)) || ((obj instanceof JSONArray) && ((JSONArray) obj).size() == 0))) {
                 arrayList.add(key);
             }
         }

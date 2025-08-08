@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.android.split.core.splitinstall.g;
@@ -47,11 +47,11 @@ public class a implements e {
         ComponentName component = intent.getComponent();
         if (component != null && component.getClassName() != null) {
             String className = component.getClassName();
-            if (!TextUtils.isEmpty(className)) {
+            if (!StringUtils.isEmpty(className)) {
                 boolean o = com.android.tools.bundleInfo.b.a().o(className);
                 BundleListing.a l = com.android.tools.bundleInfo.b.a().l(className);
                 ArrayList arrayList = new ArrayList();
-                if (o && !TextUtils.isEmpty(l.d)) {
+                if (o && !StringUtils.isEmpty(l.d)) {
                     arrayList.add(l.d);
                     arrayList.addAll(ModuleDependencyUtils.getDependencies(l.d));
                     com.taobao.appbundle.remote.a.b(l.d, intent.getDataString());
@@ -96,7 +96,7 @@ public class a implements e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c6cddef", new Object[]{str, intent});
-        } else if (TextUtils.isEmpty(c.Companion.a().b(str))) {
+        } else if (StringUtils.isEmpty(c.Companion.a().b(str))) {
         } else {
             Intent intent2 = new Intent();
             intent2.setAction("android.intent.action.VIEW");

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -103,7 +103,7 @@ public class kww extends DXWidgetNode implements fym {
                 return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue();
             }
             String a2 = j.a("DX3LiveEnableLevel", "LevelHighMid");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return false;
             }
             String b = g.b();
@@ -144,10 +144,10 @@ public class kww extends DXWidgetNode implements fym {
             if (c != 0) {
                 if (c != 1) {
                     if (c == 2) {
-                        return TextUtils.equals("h", b);
+                        return StringUtils.equals("h", b);
                     }
                     return false;
-                } else if (!TextUtils.equals("h", b) && !TextUtils.equals("m", b)) {
+                } else if (!StringUtils.equals("h", b) && !StringUtils.equals("m", b)) {
                     return false;
                 }
             }
@@ -418,13 +418,13 @@ public class kww extends DXWidgetNode implements fym {
         if (obj != null) {
             hTBLiveImageView.setTag(obj);
         }
-        if (!TextUtils.isEmpty(this.b) && -1 != (a4 = pbh.a(this.b))) {
+        if (!StringUtils.isEmpty(this.b) && -1 != (a4 = pbh.a(this.b))) {
             hTBLiveImageView.setBackgroundResource(a4);
         }
-        if (!TextUtils.isEmpty(this.n) && -1 != (a3 = pbh.a(this.n))) {
+        if (!StringUtils.isEmpty(this.n) && -1 != (a3 = pbh.a(this.n))) {
             hTBLiveImageView.setPlaceHoldImageResId(a3);
         }
-        if (!TextUtils.isEmpty(this.m) && -1 != (a2 = pbh.a(this.m))) {
+        if (!StringUtils.isEmpty(this.m) && -1 != (a2 = pbh.a(this.m))) {
             hTBLiveImageView.setColorFilter(a2);
         }
         JSONObject jSONObject = this.q;
@@ -438,7 +438,7 @@ public class kww extends DXWidgetNode implements fym {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88f6ba31", new Object[]{this, hTBLiveImageView});
-        } else if (TextUtils.isEmpty(this.u) || hTBLiveImageView == null) {
+        } else if (StringUtils.isEmpty(this.u) || hTBLiveImageView == null) {
         } else {
             int a2 = pbh.a(this.u);
             if (a2 != -1) {
@@ -460,7 +460,7 @@ public class kww extends DXWidgetNode implements fym {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("64b835f2", new Object[]{this, hTBLiveImageView});
-        } else if (TextUtils.isEmpty(this.w) || TextUtils.isEmpty(this.c)) {
+        } else if (StringUtils.isEmpty(this.w) || StringUtils.isEmpty(this.c)) {
         } else {
             if (this.w.equals(this.c)) {
                 hTBLiveImageView.setVisibility(0);
@@ -476,7 +476,7 @@ public class kww extends DXWidgetNode implements fym {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4079b1b3", new Object[]{this, hTBLiveImageView});
-        } else if (TextUtils.isEmpty(this.h)) {
+        } else if (StringUtils.isEmpty(this.h)) {
         } else {
             AbsFeature<? super ImageView> findFeature = hTBLiveImageView.findFeature(ImageShapeFeature.class);
             if (findFeature != null) {
@@ -488,7 +488,7 @@ public class kww extends DXWidgetNode implements fym {
             }
             int d = pbh.d(this.h);
             imageShapeFeature.setShape(d);
-            if (d != 1 || TextUtils.isEmpty(this.f)) {
+            if (d != 1 || StringUtils.isEmpty(this.f)) {
                 return;
             }
             if (this.f.endsWith("ap") || this.f.endsWith("np")) {
@@ -534,7 +534,7 @@ public class kww extends DXWidgetNode implements fym {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f7fca935", new Object[]{this, hTBLiveImageView});
-        } else if (TextUtils.isEmpty(this.k) && TextUtils.isEmpty(this.j) && TextUtils.isEmpty(this.s) && TextUtils.isEmpty(this.r)) {
+        } else if (StringUtils.isEmpty(this.k) && StringUtils.isEmpty(this.j) && StringUtils.isEmpty(this.s) && StringUtils.isEmpty(this.r)) {
         } else {
             float a2 = pbh.a(hTBLiveImageView.getContext(), this.k);
             float a3 = pbh.a(hTBLiveImageView.getContext(), this.j);
@@ -767,7 +767,7 @@ public class kww extends DXWidgetNode implements fym {
         if (!this.p) {
             ksp.c("DXHTBLImageViewWidgetNode", "tbPlayVideo attr is false");
             return false;
-        } else if (this.q != null || !TextUtils.isEmpty(this.o)) {
+        } else if (this.q != null || !StringUtils.isEmpty(this.o)) {
             return b.a();
         } else {
             ksp.c("DXHTBLImageViewWidgetNode", "tbPlayerData and tbPlayUrl is both empty");

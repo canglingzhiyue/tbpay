@@ -6,7 +6,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,7 +91,7 @@ public class LiveAvatarAdapter extends RecyclerView.Adapter {
                 b.a(2201, "Show-Tab2MoreLive", jSONObject);
                 return;
             }
-            jSONObject.put("is_reddot", (Object) (TextUtils.isEmpty(this.f15307a.get(i).topParams) ? "0" : "1"));
+            jSONObject.put("is_reddot", (Object) (StringUtils.isEmpty(this.f15307a.get(i).topParams) ? "0" : "1"));
             if (this.f15307a.get(i).accountLiveTag != null) {
                 jSONObject.put("pushReason", (Object) this.f15307a.get(i).accountLiveTag.pushReason);
             }

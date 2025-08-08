@@ -1,6 +1,6 @@
 package com.alipay.android.msp.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.pay.GlobalConstant;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -95,7 +95,7 @@ public class LogUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("81cd7ace", new Object[]{str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.length() > MAX_LOG_LENGTH) {
                 str = str.substring(0, MAX_LOG_LENGTH);
@@ -140,12 +140,12 @@ public class LogUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7fe93314", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str) && str.contains("RPC_PERF")) {
+        if (!StringUtils.isEmpty(str) && str.contains("RPC_PERF")) {
             str = str.substring(0, str.indexOf("RPC_PERF"));
         }
-        if (!TextUtils.isEmpty(str) && str.contains("errorCode")) {
+        if (!StringUtils.isEmpty(str) && str.contains("errorCode")) {
             str = str.substring(str.indexOf("errorCode"));
         }
-        return !TextUtils.isEmpty(str) ? str.trim() : str;
+        return !StringUtils.isEmpty(str) ? str.trim() : str;
     }
 }

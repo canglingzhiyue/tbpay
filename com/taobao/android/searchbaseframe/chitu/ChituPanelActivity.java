@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
@@ -86,7 +86,7 @@ public class ChituPanelActivity extends Activity implements imm {
         Uri.Builder buildUpon = Uri.parse(f14955a.n().f14963a).buildUpon();
         buildUpon.appendQueryParameter("utdid", UTDevice.getUtdid(this));
         String b = b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             buildUpon.appendQueryParameter("chituBiz", b);
         }
         buildUpon.appendQueryParameter("chituSubBiz", "nativeSearch");

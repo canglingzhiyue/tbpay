@@ -1,6 +1,6 @@
 package com.taobao.weex.ui.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXEnvironment;
 import com.taobao.weex.WXSDKInstance;
@@ -49,7 +49,7 @@ public abstract class BasicGraphicAction implements IExecutable, Runnable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1dd43c07", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mInstance.N())) {
+        } else if (StringUtils.isEmpty(this.mInstance.N())) {
             WXLogUtils.e("[BasicGraphicAction] pageId can not be null");
             if (!WXEnvironment.isApkDebugable()) {
                 return;

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.internal.util.b;
 import com.alibaba.ut.abtest.internal.util.h;
 import com.alibaba.ut.abtest.internal.util.hash.e;
@@ -221,7 +221,7 @@ public class cey implements d {
             return;
         }
         h.a("OrangeConfigService", "onConfigUpdate. namespace=" + str + ", map=" + map);
-        if (!TextUtils.equals(str, NS_SDK_CONFIG)) {
+        if (!StringUtils.equals(str, NS_SDK_CONFIG)) {
             return;
         }
         c(this.b);
@@ -431,7 +431,7 @@ public class cey implements d {
         try {
             if (this.m) {
                 String str4 = configs.get("nav_ignores");
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     synchronized (this.o) {
                         this.n.clear();
                     }
@@ -593,7 +593,7 @@ public class cey implements d {
             h.a("OrangeConfigService", "checkTrack1022DisabledExperimentsUpdate. value=" + str);
             synchronized (this.d) {
                 this.c.clear();
-                if (!TextUtils.isEmpty(str) && (b = s.b(str)) != null && b.length > 0) {
+                if (!StringUtils.isEmpty(str) && (b = s.b(str)) != null && b.length > 0) {
                     for (long j : b) {
                         this.c.add(Long.valueOf(j));
                     }
@@ -634,7 +634,7 @@ public class cey implements d {
             h.a("OrangeConfigService", "checkTrack1022DisabledGroupsUpdate. value=" + str);
             synchronized (this.f) {
                 this.e.clear();
-                if (!TextUtils.isEmpty(str) && (b = s.b(str)) != null && b.length > 0) {
+                if (!StringUtils.isEmpty(str) && (b = s.b(str)) != null && b.length > 0) {
                     for (long j : b) {
                         this.e.add(Long.valueOf(j));
                     }
@@ -675,7 +675,7 @@ public class cey implements d {
             h.a("OrangeConfigService", "checkTrack1022EnabledExperimentsUpdate. value=" + str);
             synchronized (this.h) {
                 this.g.clear();
-                if (!TextUtils.isEmpty(str) && (b = s.b(str)) != null && b.length > 0) {
+                if (!StringUtils.isEmpty(str) && (b = s.b(str)) != null && b.length > 0) {
                     for (long j : b) {
                         this.g.add(Long.valueOf(j));
                     }
@@ -741,7 +741,7 @@ public class cey implements d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

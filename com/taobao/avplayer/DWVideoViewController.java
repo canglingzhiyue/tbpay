@@ -7,7 +7,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -586,7 +586,7 @@ public class DWVideoViewController implements at, aw, com.taobao.avplayer.common
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_sdk_DWVideoViewController);
         this.p = new Handler();
         this.d = dWContext;
-        if (!this.d.needAD() && !TextUtils.isEmpty(this.d.getVideoToken())) {
+        if (!this.d.needAD() && !StringUtils.isEmpty(this.d.getVideoToken())) {
             DWContext dWContext2 = this.d;
             this.e = new com.taobao.avplayer.player.c(dWContext2, true, dWContext2.getVideoToken());
         } else {
@@ -707,9 +707,9 @@ public class DWVideoViewController implements at, aw, com.taobao.avplayer.common
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5dd2870", new Object[]{this});
-        } else if ((this.e.f() == 1 || this.e.f() == 2) && TextUtils.isEmpty(this.d.getVideoToken())) {
+        } else if ((this.e.f() == 1 || this.e.f() == 2) && StringUtils.isEmpty(this.d.getVideoToken())) {
         } else {
-            if (!TextUtils.isEmpty(this.d.getVideoToken()) && this.e.f() == 1) {
+            if (!StringUtils.isEmpty(this.d.getVideoToken()) && this.e.f() == 1) {
                 return;
             }
             this.i.a();
@@ -761,7 +761,7 @@ public class DWVideoViewController implements at, aw, com.taobao.avplayer.common
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6bea080", new Object[]{this});
-        } else if (this.e.f() == 5 || this.e.f() == 8 || !TextUtils.isEmpty(this.d.getVideoToken())) {
+        } else if (this.e.f() == 5 || this.e.f() == 8 || !StringUtils.isEmpty(this.d.getVideoToken())) {
             this.e.p();
         } else if (this.e.f() == 4 || (this.e.g() && this.e.h() == 4)) {
             if (this.e.g()) {
@@ -815,7 +815,7 @@ public class DWVideoViewController implements at, aw, com.taobao.avplayer.common
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ece2", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             DWContext dWContext = this.d;
             if (dWContext == null) {
                 return;
@@ -859,16 +859,16 @@ public class DWVideoViewController implements at, aw, com.taobao.avplayer.common
         StringBuilder sb = new StringBuilder(50);
         sb.append("SOS=Android");
         String a2 = com.taobao.taobaoavsdk.util.f.a(this.d.mNetworkUtilsAdapter, this.d.getActivity());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             sb.append("&SNet=");
             sb.append(a2);
         }
-        if (!TextUtils.isEmpty(this.d.mFrom)) {
+        if (!StringUtils.isEmpty(this.d.mFrom)) {
             sb.append("&SBizCode=");
             sb.append(this.d.mFrom);
         }
         String a3 = this.d.mConfigParamsAdapter.a(this.d.getActivity());
-        if (this.d.mConfigParamsAdapter != null && !TextUtils.isEmpty(a3)) {
+        if (this.d.mConfigParamsAdapter != null && !StringUtils.isEmpty(a3)) {
             sb.append("&SRid=");
             sb.append(System.currentTimeMillis());
             sb.append(a3);
@@ -1154,7 +1154,7 @@ public class DWVideoViewController implements at, aw, com.taobao.avplayer.common
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("69459fd", new Object[]{this});
-        } else if (this.e.f() != 3 && ((!TextUtils.isEmpty(this.d.mPlayContext.getVideoUrl()) || !TextUtils.isEmpty(this.d.getVideoToken())) && (!this.e.g() || this.e.h() != 3))) {
+        } else if (this.e.f() != 3 && ((!StringUtils.isEmpty(this.d.mPlayContext.getVideoUrl()) || !StringUtils.isEmpty(this.d.getVideoToken())) && (!this.e.g() || this.e.h() != 3))) {
         } else {
             b bVar = this.H;
             if (bVar != null) {

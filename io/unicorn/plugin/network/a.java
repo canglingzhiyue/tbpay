@@ -1,6 +1,6 @@
 package io.unicorn.plugin.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import io.unicorn.plugin.network.ExternalAdapterNetworkProvider;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -83,7 +83,7 @@ public class a implements ExternalAdapterNetworkProvider {
                 dataOutputStream.close();
             }
         } else {
-            a2.setRequestMethod(!TextUtils.isEmpty(request.method) ? request.method : "GET");
+            a2.setRequestMethod(!StringUtils.isEmpty(request.method) ? request.method : "GET");
         }
         return a2;
     }

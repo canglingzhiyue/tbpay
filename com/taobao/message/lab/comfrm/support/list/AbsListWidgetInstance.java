@@ -9,7 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.MPGapWorker;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
@@ -844,7 +844,7 @@ public abstract class AbsListWidgetInstance extends WidgetInstance<JSONObject> {
                 return str;
             }
             JSONObject jSONObject = (JSONObject) viewObject.data;
-            if (!jSONObject.containsKey("reuseId") || TextUtils.isEmpty(jSONObject.getString("reuseId"))) {
+            if (!jSONObject.containsKey("reuseId") || StringUtils.isEmpty(jSONObject.getString("reuseId"))) {
                 return str;
             }
             return jSONObject.getString("reuseId") + "|" + renderTemplate.name;

@@ -3,7 +3,7 @@ package com.taobao.tbpoplayer.filter;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -106,12 +106,12 @@ public class b {
                 return null;
             }
             String str = ((d) popRequest).x().popPreCheckParams;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 popRequest.t().v = com.taobao.bootimage.d.CLOSE_TYPE_SKIP;
                 return null;
             }
             JSONObject parseObject = JSONObject.parseObject(str);
-            if (!TextUtils.isEmpty(parseObject.containsKey("name") ? parseObject.getString("name") : "")) {
+            if (!StringUtils.isEmpty(parseObject.containsKey("name") ? parseObject.getString("name") : "")) {
                 return parseObject;
             }
             popRequest.t().v = com.taobao.bootimage.d.CLOSE_TYPE_SKIP;
@@ -229,14 +229,14 @@ public class b {
         }
         try {
             try {
-                if (!TextUtils.isEmpty(str) && jSONObject != null && dVar != null && this.f22213a.containsKey(dVar)) {
+                if (!StringUtils.isEmpty(str) && jSONObject != null && dVar != null && this.f22213a.containsKey(dVar)) {
                     String string = jSONObject.containsKey("version") ? jSONObject.getString("version") : "1.0";
                     String string2 = jSONObject.containsKey("requestParams") ? jSONObject.getString("requestParams") : "";
                     int intValue = jSONObject.containsKey("timeoutMs") ? jSONObject.getInteger("timeoutMs").intValue() : 3000;
                     final String string3 = jSONObject.getString("falseAction");
                     boolean booleanValue = jSONObject.getBooleanValue("login");
                     boolean booleanValue2 = jSONObject.getBooleanValue("wua");
-                    if (booleanValue && TextUtils.isEmpty(Login.getUserId())) {
+                    if (booleanValue && StringUtils.isEmpty(Login.getUserId())) {
                         HashMap hashMap = new HashMap();
                         HashMap hashMap2 = new HashMap();
                         hashMap2.put("reason", "userIdEmpty");
@@ -258,7 +258,7 @@ public class b {
                     jSONObject2.put("triggerParam", (Object) dVar.y().param);
                     jSONObject2.put("uuid", (Object) a2);
                     JSONObject jSONObject3 = new JSONObject();
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         jSONObject3 = JSON.parseObject(string2);
                     }
                     if (jSONObject3 == null) {
@@ -454,7 +454,7 @@ public class b {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (!TextUtils.isDigitsOnly(str)) {
+            if (!StringUtils.isDigitsOnly(str)) {
                 return Boolean.parseBoolean(str);
             }
             return !str.equals("0");
@@ -489,7 +489,7 @@ public class b {
             return;
         }
         String a2 = d.a(popRequest);
-        if (TextUtils.isEmpty(str) || popRequest == null || TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(str) || popRequest == null || StringUtils.isEmpty(a2)) {
             return;
         }
         if (str.equals("increaseTime")) {
@@ -525,7 +525,7 @@ public class b {
                 JSONObject jSONObject = null;
                 if (mtopResponse.getBytedata() != null) {
                     String str = new String(mtopResponse.getBytedata(), "UTF-8");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         jSONObject = JSON.parseObject(str);
                     }
                 }

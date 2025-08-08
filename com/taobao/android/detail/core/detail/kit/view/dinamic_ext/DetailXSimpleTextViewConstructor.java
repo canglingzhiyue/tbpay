@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.view.dinamic_ext;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
@@ -126,7 +126,7 @@ public class DetailXSimpleTextViewConstructor extends DTextViewConstructor imple
 
     @DinamicAttr(attrSet = {"dTextColor"})
     public void setTextColor(XSimpleRichTextView xSimpleRichTextView, String str) {
-        if (xSimpleRichTextView == null || TextUtils.isEmpty(str)) {
+        if (xSimpleRichTextView == null || StringUtils.isEmpty(str)) {
             return;
         }
         try {

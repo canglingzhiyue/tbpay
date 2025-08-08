@@ -2,7 +2,7 @@ package com.taobao.desktop.widget.template.standard;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -144,10 +144,10 @@ public class b extends c {
         b(remoteViews, R.id.iv_widget_standard_mark_tag_bg);
         d(remoteViews, R.id.iv_widget_standard_mark_tag_bg, containersData.getTagBgUrl());
         Bitmap bitmap = null;
-        if (!TextUtils.isEmpty(containersData.getTagBgGradient()) && containersData.getTagBgGradient().contains("-")) {
+        if (!StringUtils.isEmpty(containersData.getTagBgGradient()) && containersData.getTagBgGradient().contains("-")) {
             String[] split = containersData.getTagBgGradient().split("-");
             bitmap = a(split[0], split[1], containersData.getTag(), false);
-        } else if (!TextUtils.isEmpty(containersData.getTagBgColor())) {
+        } else if (!StringUtils.isEmpty(containersData.getTagBgColor())) {
             bitmap = a(containersData.getTagBgColor(), containersData.getTagBgColor(), containersData.getTag(), false);
         }
         if (bitmap != null) {
@@ -166,7 +166,7 @@ public class b extends c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d7cd770", new Object[]{this, remoteViews, new Integer(i), str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             if (!this.c.containsKey(Integer.valueOf(i)) || !str.equals(this.c.get(Integer.valueOf(i)))) {
                 this.c.put(Integer.valueOf(i), str);
             }

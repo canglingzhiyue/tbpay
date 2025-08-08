@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -101,7 +101,7 @@ public class gkj {
             return a(bVar, bVar.e());
         }
         String a2 = (bVar == null || bVar.c() == null) ? null : bVar.c().a();
-        if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(bVar.b()) || (jSONObject = this.d.getJSONObject(a2)) == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(bVar.b()) || (jSONObject = this.d.getJSONObject(a2)) == null || jSONObject.isEmpty()) {
             return null;
         }
         LinkedList linkedList = new LinkedList();
@@ -114,7 +114,7 @@ public class gkj {
         JSONArray jSONArray = null;
         while (it.hasNext()) {
             String b = ((b) it.next()).b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return null;
             }
             if (jSONArray != null && !jSONArray.isEmpty()) {
@@ -163,10 +163,10 @@ public class gkj {
             return (JSONObject) ipChange.ipc$dispatch("84474b09", new Object[]{this});
         }
         JSONObject jSONObject = null;
-        if (!TextUtils.isEmpty(this.f28366a)) {
+        if (!StringUtils.isEmpty(this.f28366a)) {
             jSONObject = a(this.f28366a);
         }
-        if (jSONObject == null && !TextUtils.isEmpty(this.b)) {
+        if (jSONObject == null && !StringUtils.isEmpty(this.b)) {
             jSONObject = b(this.b);
         }
         if (jSONObject != null && !jSONObject.isEmpty()) {
@@ -226,7 +226,7 @@ public class gkj {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("97ef1e8a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             return null;
         }
         try {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -110,7 +110,7 @@ public class slc implements sla {
         }
         String str2 = str + "_" + FluidSDK.getRemoteConfigAdapter().getOrangeStringConfig("detailCdnToken", "");
         String b = slt.b(fluidContext);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             b = "";
         }
         return "fs_detail_" + b + oca.a(str2);
@@ -149,7 +149,7 @@ public class slc implements sla {
                     } else if (!slc.a(slc.this, mtopResponse, currentTimeMillis, z, aVar)) {
                     } else {
                         String str = d;
-                        if (skv.ERROR_CODE_I_008.equalsIgnoreCase(mtopResponse.getRetCode()) && !TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+                        if (skv.ERROR_CODE_I_008.equalsIgnoreCase(mtopResponse.getRetCode()) && !StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                             str = mtopResponse.getRetMsg();
                         }
                         slc.a(slc.this, str, aVar);

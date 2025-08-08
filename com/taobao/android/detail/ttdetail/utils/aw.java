@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -40,7 +40,7 @@ public class aw {
     private static int a(boolean z, String str) {
         String[] split;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("f7197a29", new Object[]{new Boolean(z), str})).intValue() : (!z || TextUtils.isEmpty(str) || (split = str.split(":")) == null || split.length < 2 || TextUtils.equals(split[0], split[1])) ? 1 : 2;
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("f7197a29", new Object[]{new Boolean(z), str})).intValue() : (!z || StringUtils.isEmpty(str) || (split = str.split(":")) == null || split.length < 2 || StringUtils.equals(split[0], split[1])) ? 1 : 2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x006d A[Catch: Throwable -> 0x00e2, TryCatch #0 {Throwable -> 0x00e2, blocks: (B:7:0x0016, B:10:0x0023, B:13:0x002c, B:16:0x0035, B:18:0x003d, B:21:0x0045, B:23:0x004b, B:28:0x005f, B:30:0x006d, B:32:0x007f, B:35:0x00a0, B:36:0x00a4, B:38:0x00ac, B:42:0x00d2, B:39:0x00bb, B:41:0x00c4), top: B:52:0x0016 }] */
@@ -190,7 +190,7 @@ public class aw {
                 JSONObject jSONObject4 = jSONArray.getJSONObject(i);
                 if (jSONObject4 != null && !jSONObject4.isEmpty()) {
                     String string = jSONObject4.getString("type");
-                    if (!TextUtils.isEmpty(string) && TextUtils.equals("detailVideo", string)) {
+                    if (!StringUtils.isEmpty(string) && StringUtils.equals("detailVideo", string)) {
                         JSONObject jSONObject5 = jSONObject4.getJSONObject("data").getJSONObject("content").getJSONObject("fields");
                         if (jSONObject5 != null) {
                             return l.a(jSONObject5.getString("thumbnailUrl"));

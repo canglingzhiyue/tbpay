@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Display;
 import android.view.WindowManager;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -437,7 +437,7 @@ public class pqc implements com.taobao.taolive.sdk.monitor.a {
                 }
                 liveAPMBean.endPerformanceData.allFrameNums = 0L;
                 liveAPMBean.isWholeSession = true;
-                if (u.aF() && TextUtils.equals("LIVE_CODE_BOOT_STAGE", str)) {
+                if (u.aF() && StringUtils.equals("LIVE_CODE_BOOT_STAGE", str)) {
                     a(liveAPMBean, false, str, str2);
                     a(str, str2, liveAPMBean);
                     return;

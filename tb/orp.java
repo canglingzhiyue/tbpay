@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import com.taobao.tao.recommend3.tracelog.TraceModel;
@@ -53,7 +53,7 @@ public class orp extends org {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4efe027c", new Object[]{this, traceModel, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.equals(traceModel.getName(), "homeFirstTouch")) {
+        if (StringUtils.equals(traceModel.getName(), "homeFirstTouch")) {
             return false;
         }
         String str = traceModel.isLaunchStage() ? "launchStage[" : z ? "start[" : "end[";

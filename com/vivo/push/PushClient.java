@@ -1,7 +1,7 @@
 package com.vivo.push;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.listener.IPushQueryActionListener;
 import com.vivo.push.restructure.request.IPushRequestCallback;
 import com.vivo.push.util.ContextDelegate;
@@ -41,11 +41,11 @@ public class PushClient extends a implements com.vivo.push.d.a {
     }
 
     private String getAppId(String str) {
-        return !TextUtils.isEmpty(str) ? str : com.vivo.push.restructure.a.a().e().a();
+        return !StringUtils.isEmpty(str) ? str : com.vivo.push.restructure.a.a().e().a();
     }
 
     private String getAppKey(String str) {
-        return !TextUtils.isEmpty(str) ? str : com.vivo.push.restructure.a.a().e().c();
+        return !StringUtils.isEmpty(str) ? str : com.vivo.push.restructure.a.a().e().c();
     }
 
     public static synchronized PushClient getInstance(Context context) {

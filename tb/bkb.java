@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
@@ -29,11 +29,11 @@ public class bkb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f0bcbef5", new Object[]{this, activity, bkfVar, str, str2, str3, str4});
-        } else if (activity == null || TextUtils.isEmpty(str2)) {
+        } else if (activity == null || StringUtils.isEmpty(str2)) {
         } else {
             this.b = activity;
             AlertDialog.Builder a2 = a(str, str2, str3, activity);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 a2.setNegativeButton(str3, new DialogInterface.OnClickListener() { // from class: tb.bkb.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -52,7 +52,7 @@ public class bkb {
                     }
                 });
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = b.a(R.string.order_biz_sure);
             }
             a2.setPositiveButton(str4, new DialogInterface.OnClickListener() { // from class: tb.bkb.3
@@ -71,7 +71,7 @@ public class bkb {
                     }
                     bkfVar2.a(true);
                 }
-            }).setCancelable(!TextUtils.isEmpty(str3)).setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: tb.bkb.2
+            }).setCancelable(!StringUtils.isEmpty(str3)).setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: tb.bkb.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 @Override // android.content.DialogInterface.OnCancelListener
@@ -115,10 +115,10 @@ public class bkb {
             i = 5;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context, i);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             builder.setTitle(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             builder.setMessage(str2);
         }
         return builder;

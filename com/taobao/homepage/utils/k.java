@@ -1,6 +1,6 @@
 package com.taobao.homepage.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -32,7 +32,7 @@ public class k {
             if (jSONObject != null) {
                 boolean booleanValue = jSONObject.getBooleanValue("refreshSearchText");
                 String string = jSONObject.getString("type");
-                if (booleanValue && TextUtils.equals(string, str)) {
+                if (booleanValue && StringUtils.equals(string, str)) {
                     oqc.a().r();
                     return;
                 }

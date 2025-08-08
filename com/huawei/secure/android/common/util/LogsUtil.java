@@ -1,6 +1,6 @@
 package com.huawei.secure.android.common.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import java.util.regex.Pattern;
 import mtopsdk.network.impl.ResponseProtocolType;
@@ -65,7 +65,7 @@ public class LogsUtil {
     }
 
     private static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int length = str.length();
@@ -89,7 +89,7 @@ public class LogsUtil {
 
     private static String a(String str, boolean z) {
         StringBuilder sb = new StringBuilder(512);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (z) {
                 str = a(str);
             }
@@ -99,20 +99,20 @@ public class LogsUtil {
     }
 
     public static void a(String str, String str2) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         a(str2, false);
     }
 
     public static void a(String str, String str2, String str3) {
-        if (!TextUtils.isEmpty(str2) || !TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str2) || !StringUtils.isEmpty(str3)) {
             Log.e(str, c(str2, str3));
         }
     }
 
     public static void b(String str, String str2) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         Log.e(str, a(str2, false));
@@ -120,10 +120,10 @@ public class LogsUtil {
 
     private static String c(String str, String str2) {
         StringBuilder sb = new StringBuilder(512);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(a(str2));
         }
         return sb.toString();

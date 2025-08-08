@@ -6,7 +6,7 @@ import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.LinearLayout;
@@ -259,7 +259,7 @@ public class FollowFrame extends BaseFrame implements View.OnClickListener, b, d
         this.mUnFollowView.setOnClickListener(this);
         this.mUnFollowView.setImportantForAccessibility(1);
         TextView textView = (TextView) view.findViewById(R.id.taolive_unfollow_text);
-        if (!TextUtils.isEmpty(textView.getText())) {
+        if (!StringUtils.isEmpty(textView.getText())) {
             this.mUnFollowView.setContentDescription(textView.getText());
         }
         hki.a(this.mUnFollowView);
@@ -326,7 +326,7 @@ public class FollowFrame extends BaseFrame implements View.OnClickListener, b, d
         } else if (this.mLiveDataModel == null || this.mLiveDataModel.mVideoInfo == null || this.mLiveDataModel.mVideoInfo.broadCaster == null || phg.a() == null) {
         } else {
             if (com.taobao.android.live.plugin.atype.flexalocal.officialLive.b.a().b(this.mLiveDataModel)) {
-                z = TextUtils.equals(this.mLiveDataModel.mVideoInfo.officialLiveInfo.follow, "true");
+                z = StringUtils.equals(this.mLiveDataModel.mVideoInfo.officialLiveInfo.follow, "true");
             } else {
                 z = this.mLiveDataModel.mVideoInfo.broadCaster.follow;
             }
@@ -1088,7 +1088,7 @@ public class FollowFrame extends BaseFrame implements View.OnClickListener, b, d
             hkgVar.dismiss();
         } else if (xkw.EVENT_JOIN_FANS_CLUB_NOTIFY_EVENT.equals(str)) {
             updateFansClubData();
-        } else if (TextUtils.equals("com.taobao.taolive.room.install_widget_success", str)) {
+        } else if (StringUtils.equals("com.taobao.taolive.room.install_widget_success", str)) {
             if (!kpj.b(this.mFrameContext, this.mLiveDataModel) || !(obj instanceof String)) {
                 return;
             }

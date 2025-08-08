@@ -3,7 +3,7 @@ package com.taobao.android.order.core.dinamicX.view;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -49,7 +49,7 @@ public class g extends DXImageWidgetNode {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ede516ab", new Object[]{this, context, view});
-        } else if (TextUtils.isEmpty(getImageUrl())) {
+        } else if (StringUtils.isEmpty(getImageUrl())) {
             super.onRenderView(context, view);
         } else {
             Drawable a2 = com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a.a().a(alz.BizKeyOrderList, getImageUrl());
@@ -71,7 +71,7 @@ public class g extends DXImageWidgetNode {
                 z = false;
             }
             jpo.b(context).a("d4", "imagePrefetched", String.valueOf(z));
-            if (TextUtils.equals("orderlist_001", getImageBiztype())) {
+            if (StringUtils.equals("orderlist_001", getImageBiztype())) {
                 bxb.a(bxb.a.b(OrderBizCode.orderList, "firstScreenImgCacheHitRatio").a(z).a(z ? "hit cache!" : "cache miss!").a(0.001f));
                 jqg.b(TAG, z + " - olist img load，imgUrl: " + getImageUrl());
             }

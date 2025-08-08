@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.strategy;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.biz.AmnetTunnelManager;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
 import com.alipay.mobile.common.transport.TransportStrategy;
@@ -378,7 +378,7 @@ public class NetworkTunnelStrategy {
             return ((Boolean) ipChange.ipc$dispatch("6158678", new Object[]{this})).booleanValue();
         }
         String stringValue = getConfigureManager().getStringValue(TransportConfigureItem.SPDY_SWITCH);
-        return !TextUtils.isEmpty(stringValue) && stringValue.startsWith("T");
+        return !StringUtils.isEmpty(stringValue) && stringValue.startsWith("T");
     }
 
     public final TransportConfigureManager getConfigureManager() {

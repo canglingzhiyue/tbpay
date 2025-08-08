@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.model.pns_vendor_query;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.nirvana.tools.jsoner.e;
 import org.json.JSONException;
@@ -14,7 +14,7 @@ public class UploadRB implements e {
         try {
             UploadRB uploadRB = new UploadRB();
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     uploadRB.fromJson(new JSONObject(str));
                 }
             } catch (JSONException e) {

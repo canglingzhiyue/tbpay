@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
@@ -89,7 +89,7 @@ public class UCNetworkDelegate implements Handler.Callback {
             Hashtable hashtable = new Hashtable();
             hashtable.put("url", str);
             String str2 = map.get(HttpConstant.REFERER);
-            hashtable.put("referrer", TextUtils.isEmpty(str2) ? "" : str2);
+            hashtable.put("referrer", StringUtils.isEmpty(str2) ? "" : str2);
             hashtable.put("start", String.valueOf(System.currentTimeMillis()));
             obtainMessage.obj = hashtable;
             m.b(TAG, "onSendRequest : " + str + " Referer: " + str2);
@@ -192,7 +192,7 @@ public class UCNetworkDelegate implements Handler.Callback {
             Hashtable<String, String> hashtable = (Hashtable) obj;
             String h = p.h(p.g(hashtable.get("url")));
             String g = p.g(hashtable.get("referrer"));
-            if (!TextUtils.isEmpty(g)) {
+            if (!StringUtils.isEmpty(g)) {
                 if (this.mWebViewsInfoMap.containsValue(g)) {
                     Enumeration<WeakReference<WVUCWebView>> keys = this.mWebViewsInfoMap.keys();
                     while (keys.hasMoreElements()) {
@@ -237,8 +237,8 @@ public class UCNetworkDelegate implements Handler.Callback {
         if (wVUCWebView == null) {
             return;
         }
-        wVUCWebView.insertH5MonitorData(str, "url", TextUtils.isEmpty(str) ? "" : str);
-        if (TextUtils.isEmpty(str2)) {
+        wVUCWebView.insertH5MonitorData(str, "url", StringUtils.isEmpty(str) ? "" : str);
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         wVUCWebView.insertH5MonitorData(str, "referrer", str2);
@@ -293,7 +293,7 @@ public class UCNetworkDelegate implements Handler.Callback {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4c8e1c21", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         Enumeration<WeakReference<WVUCWebView>> keys = this.mWebViewsInfoMap.keys();

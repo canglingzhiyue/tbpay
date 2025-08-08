@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.track;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.layermanager.PopRequest;
 import com.alibaba.poplayer.trigger.d;
@@ -38,7 +38,7 @@ public class UserResultTrack {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bdd2e65a", new Object[]{popRequest, str, new Boolean(z), jSONObject});
-        } else if (popRequest == null || TextUtils.isEmpty(str)) {
+        } else if (popRequest == null || StringUtils.isEmpty(str)) {
         } else {
             if (bzl.a().b().isUseNewActionLine()) {
                 if ("Cancel".equals(str) || "Click".equals(str)) {
@@ -95,7 +95,7 @@ public class UserResultTrack {
             r0.ipc$dispatch(r6, r1)
             return
         L20:
-            boolean r0 = android.text.TextUtils.isEmpty(r7)
+            boolean r0 = android.text.StringUtils.isEmpty(r7)
             if (r0 != 0) goto La7
             boolean r0 = r6 instanceof com.alibaba.poplayer.trigger.d
             if (r0 == 0) goto La7

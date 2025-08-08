@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -144,9 +144,9 @@ public class mqu extends af {
             return;
         }
         super.onBeforeMeasure(textView);
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             textView.setText(this.g);
-        } else if (TextUtils.isEmpty(this.h)) {
+        } else if (StringUtils.isEmpty(this.h)) {
         } else {
             this.h = b(this.h);
             textView.setText(this.h);
@@ -165,9 +165,9 @@ public class mqu extends af {
             return;
         }
         TextView textView = (TextView) view;
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             textView.setText(this.g);
-        } else if (TextUtils.isEmpty(this.h)) {
+        } else if (StringUtils.isEmpty(this.h)) {
         } else {
             this.h = b(this.h);
             textView.setText(this.h);
@@ -214,7 +214,7 @@ public class mqu extends af {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         char[] charArray = str.toCharArray();

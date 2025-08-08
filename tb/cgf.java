@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.Kb;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -43,7 +43,7 @@ public class cgf {
             return ((Boolean) ipChange.ipc$dispatch("9f76bba2", new Object[]{context})).booleanValue();
         }
         String k = k(context);
-        if (!TextUtils.isEmpty(k)) {
+        if (!StringUtils.isEmpty(k)) {
             return "1".equals(k);
         }
         return false;
@@ -55,7 +55,7 @@ public class cgf {
             return (String) ipChange.ipc$dispatch("1c344f03", new Object[]{context});
         }
         String config = OrangeConfig.getInstance().getConfig("aliprivacy_config_switch", "recommend_entrance_name", null);
-        return TextUtils.isEmpty(config) ? cfz.j(context) : config;
+        return StringUtils.isEmpty(config) ? cfz.j(context) : config;
     }
 
     public static String e(Context context) {
@@ -64,7 +64,7 @@ public class cgf {
             return (String) ipChange.ipc$dispatch("91ae7544", new Object[]{context});
         }
         String config = OrangeConfig.getInstance().getConfig("aliprivacy_config_switch", "recommend_linked_h5_url", null);
-        return TextUtils.isEmpty(config) ? cfz.k(context) : config;
+        return StringUtils.isEmpty(config) ? cfz.k(context) : config;
     }
 
     public static String f(Context context) {
@@ -73,7 +73,7 @@ public class cgf {
             return (String) ipChange.ipc$dispatch("7289b85", new Object[]{context});
         }
         String config = OrangeConfig.getInstance().getConfig("aliprivacy_config_switch", "recommend_ttid_list", null);
-        return TextUtils.isEmpty(config) ? cfz.l(context) : config;
+        return StringUtils.isEmpty(config) ? cfz.l(context) : config;
     }
 
     public static String g(Context context) {
@@ -82,7 +82,7 @@ public class cgf {
             return (String) ipChange.ipc$dispatch("7ca2c1c6", new Object[]{context});
         }
         String config = OrangeConfig.getInstance().getConfig("aliprivacy_config_switch", "recommend_gray_scope", null);
-        return TextUtils.isEmpty(config) ? cfz.m(context) : config;
+        return StringUtils.isEmpty(config) ? cfz.m(context) : config;
     }
 
     public static String h(Context context) {

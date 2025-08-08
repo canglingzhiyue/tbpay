@@ -1,7 +1,7 @@
 package com.taobao.android.miniLive.model;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.utils.l;
 import tb.kge;
@@ -38,14 +38,14 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[0])).booleanValue();
         }
         String a2 = pmd.a().d().a("tblive", "BFRTCDeviceBlackist", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = a2.split(";");
-        if (split != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+        if (split != null && split.length > 0 && !StringUtils.isEmpty(str)) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                     return true;
                 }
             }
@@ -71,14 +71,14 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue();
         }
         String a2 = pmd.a().d().a("tblive", "ARTPDeviceBlackist", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String str = Build.MODEL;
         String[] split = a2.split(";");
-        if (split != null && split.length > 0 && !TextUtils.isEmpty(str)) {
+        if (split != null && split.length > 0 && !StringUtils.isEmpty(str)) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
+                if (!StringUtils.isEmpty(str2) && str.equalsIgnoreCase(str2)) {
                     return true;
                 }
             }

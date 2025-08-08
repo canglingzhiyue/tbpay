@@ -3,7 +3,7 @@ package com.taobao.pha.core.manifest;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -89,7 +89,7 @@ public class c {
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             String string = jSONArray.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 String queryParameter = uri.getQueryParameter(string);
                 if (queryParameter == null) {
                     queryParameter = "";
@@ -318,7 +318,7 @@ public class c {
             return false;
         }
         String string = jSONObject.getString("manifestFile");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         e.remove(str);

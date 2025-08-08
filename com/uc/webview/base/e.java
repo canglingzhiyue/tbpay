@@ -1,7 +1,7 @@
 package com.uc.webview.base;
 
 import android.os.StrictMode;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.SdkGlobalSettings;
 import java.util.BitSet;
 import java.util.HashMap;
@@ -85,7 +85,7 @@ final class e implements SdkGlobalSettings.Interface {
     public final boolean set(int i, String str) {
         try {
             this.f23778a.writeLock().lock();
-            if (TextUtils.equals(str, k.f23790a[i])) {
+            if (StringUtils.equals(str, k.f23790a[i])) {
                 this.f23778a.writeLock().unlock();
                 return false;
             }

@@ -3,7 +3,7 @@ package com.taobao.vividsocial.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -45,7 +45,7 @@ public class j {
         if (uri != null) {
             for (String str : uri.getQueryParameterNames()) {
                 String queryParameter = uri.getQueryParameter(str);
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     hashMap.put(str, queryParameter);
                 }
             }

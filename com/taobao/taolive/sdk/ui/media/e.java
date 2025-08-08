@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -120,7 +120,7 @@ public class e extends d {
             return;
         }
         k("releaseByToken");
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             if (this.i) {
                 g.a().a(this.h);
                 this.i = false;
@@ -156,7 +156,7 @@ public class e extends d {
             return;
         }
         k("releaseAndDestroy");
-        if (!TextUtils.isEmpty(this.h)) {
+        if (!StringUtils.isEmpty(this.h)) {
             if (this.i) {
                 g.a().b(this.h);
                 this.i = false;
@@ -176,7 +176,7 @@ public class e extends d {
             return;
         }
         super.c();
-        if (TextUtils.isEmpty(this.h)) {
+        if (StringUtils.isEmpty(this.h)) {
             return;
         }
         g.a().c(this.h);

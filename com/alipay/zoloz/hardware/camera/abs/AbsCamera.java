@@ -5,7 +5,7 @@ import android.opengl.GLES20;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.zoloz.hardware.camera.CameraCallback;
 import com.alipay.zoloz.hardware.camera.data.CameraData;
 import com.alipay.zoloz.hardware.camera.fps.FpsCallback;
@@ -162,7 +162,7 @@ public abstract class AbsCamera<Param extends AbsCameraParam, Data extends Camer
         }
         synchronized (this.b) {
             if (this.b.contains(onFrameAvailableListener)) {
-                Log.w(TAG, getClass().getSimpleName() + ".addOnFrameAvailableListener(" + onFrameAvailableListener + ") repeat : mListeners=" + TextUtils.join("_", this.b));
+                Log.w(TAG, getClass().getSimpleName() + ".addOnFrameAvailableListener(" + onFrameAvailableListener + ") repeat : mListeners=" + StringUtils.join("_", this.b));
             } else {
                 Log.d(TAG, getClass().getSimpleName() + ".addOnFrameAvailableListener(" + onFrameAvailableListener + riy.BRACKET_END_STR);
                 this.b.add(onFrameAvailableListener);
@@ -182,7 +182,7 @@ public abstract class AbsCamera<Param extends AbsCameraParam, Data extends Camer
                 Log.d(TAG, getClass().getSimpleName() + ".removeOnFrameAvailableListener(" + onFrameAvailableListener + riy.BRACKET_END_STR);
                 this.b.remove(onFrameAvailableListener);
             } else {
-                Log.w(TAG, getClass().getSimpleName() + ".removeOnFrameAvailableListener(" + onFrameAvailableListener + ") not exist : mListeners=" + TextUtils.join("_", this.b));
+                Log.w(TAG, getClass().getSimpleName() + ".removeOnFrameAvailableListener(" + onFrameAvailableListener + ") not exist : mListeners=" + StringUtils.join("_", this.b));
             }
         }
     }
@@ -196,7 +196,7 @@ public abstract class AbsCamera<Param extends AbsCameraParam, Data extends Camer
         Log.w(TAG, "addCallback called for " + cameraCallback + " at stack " + android.util.Log.getStackTraceString(new Throwable()));
         synchronized (this.f6231a) {
             if (this.f6231a.contains(cameraCallback)) {
-                Log.w(TAG, getClass().getSimpleName() + ".addCallback(" + cameraCallback + ") repeat : mCallbacks=" + TextUtils.join("_", this.f6231a));
+                Log.w(TAG, getClass().getSimpleName() + ".addCallback(" + cameraCallback + ") repeat : mCallbacks=" + StringUtils.join("_", this.f6231a));
             } else {
                 Log.d(TAG, getClass().getSimpleName() + ".addCallback(" + cameraCallback + riy.BRACKET_END_STR);
                 this.f6231a.add(cameraCallback);
@@ -216,7 +216,7 @@ public abstract class AbsCamera<Param extends AbsCameraParam, Data extends Camer
                 Log.d(TAG, getClass().getSimpleName() + ".removeCallback(" + cameraCallback + riy.BRACKET_END_STR);
                 this.f6231a.remove(cameraCallback);
             } else {
-                Log.v(TAG, getClass().getSimpleName() + ".removeCallback(" + cameraCallback + ") not exist : mCallbacks=" + TextUtils.join("_", this.f6231a));
+                Log.v(TAG, getClass().getSimpleName() + ".removeCallback(" + cameraCallback + ") not exist : mCallbacks=" + StringUtils.join("_", this.f6231a));
             }
         }
     }

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.BuildConfig;
 import com.mobile.auth.OO00Oo0;
 import com.mobile.auth.OO0oO;
@@ -191,7 +191,7 @@ public class PhoneNumberAuthHelperProxy {
     private void O000000o(Context context, boolean z) {
         try {
             OO00Oo0 privateKey = RequestUtil.getPrivateKey(context, this.O00000oO.O00000o0(), this.O0000O0o.O0000Oo());
-            if (!privateKey.O00000Oo() || TextUtils.isEmpty(privateKey.O000000o())) {
+            if (!privateKey.O00000Oo() || StringUtils.isEmpty(privateKey.O000000o())) {
                 return;
             }
             try {
@@ -480,7 +480,7 @@ public class PhoneNumberAuthHelperProxy {
     private boolean O000000o(boolean z, String str, TokenResultListener tokenResultListener, ResultCodeProcessor resultCodeProcessor, String str2, MonitorStruct monitorStruct, String str3) {
         try {
             this.O0000O0o.O0000OOo();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 O000000o(str2, str, monitorStruct, resultCodeProcessor, tokenResultListener);
                 return true;
             }
@@ -504,7 +504,7 @@ public class PhoneNumberAuthHelperProxy {
     private boolean O000000o(boolean z, String str, ResultCodeProcessor resultCodeProcessor, MonitorStruct monitorStruct, String str2, TokenResultListener tokenResultListener, String str3) {
         try {
             this.O0000O0o.O0000Oo0();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 O000000o(str2, str, monitorStruct, resultCodeProcessor, tokenResultListener);
                 return true;
             }
@@ -570,7 +570,7 @@ public class PhoneNumberAuthHelperProxy {
     private boolean O00000Oo(final Context context) {
         try {
             String readAuthSDKPrivateKey = UTSharedPreferencesHelper.readAuthSDKPrivateKey(context);
-            if (TextUtils.isEmpty(readAuthSDKPrivateKey)) {
+            if (StringUtils.isEmpty(readAuthSDKPrivateKey)) {
                 this.O0000Oo.O000000o("local pritekey is empty");
                 RequestState.getInstance().setUseRequest(true);
                 czp.a().a(new Runnable() { // from class: com.mobile.auth.gatewayauth.PhoneNumberAuthHelperProxy.23
@@ -783,7 +783,7 @@ public class PhoneNumberAuthHelperProxy {
     private boolean O00000o0(Context context) {
         try {
             String readAuthSDKPrivateKey = UTSharedPreferencesHelper.readAuthSDKPrivateKey(context);
-            if (!TextUtils.isEmpty(readAuthSDKPrivateKey)) {
+            if (!StringUtils.isEmpty(readAuthSDKPrivateKey)) {
                 try {
                     PrivateKeyRespone privateKeyRespone = (PrivateKeyRespone) a.a(new JSONObject(new String(com.mobile.auth.gatewayauth.utils.security.O000000o.O000000o(readAuthSDKPrivateKey))), (d<Object>) new d<PrivateKeyRespone>() { // from class: com.mobile.auth.gatewayauth.PhoneNumberAuthHelperProxy.32
                     }, (List<Field>) null);
@@ -1861,7 +1861,7 @@ public class PhoneNumberAuthHelperProxy {
     public boolean O00000o0() {
         try {
             LoginPhoneInfo O000000o2 = this.O00000oo.O000000o(this.O00000o0.getSimCacheKey(false, this.O00000o0.O00000o0()));
-            if (O000000o2 == null || TextUtils.isEmpty(O000000o2.getPhoneNumber())) {
+            if (O000000o2 == null || StringUtils.isEmpty(O000000o2.getPhoneNumber())) {
                 return true;
             }
             return !O000000o2.getPhoneNumber().equals(this.O0000o00);

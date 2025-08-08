@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes4.dex */
@@ -30,7 +30,7 @@ public class doc {
         if (ipChange instanceof IpChange) {
             return (Double) ipChange.ipc$dispatch("9dc64e50", new Object[]{str, str2, str3, str4});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str4)) {
             try {
                 return Double.valueOf(a(Double.parseDouble(str), Double.parseDouble(str2), Double.parseDouble(str3), Double.parseDouble(str4)));
             } catch (Throwable th) {

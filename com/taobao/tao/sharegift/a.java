@@ -1,6 +1,6 @@
 package com.taobao.tao.sharegift;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
@@ -23,7 +23,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
         String a2 = nyl.a("shareGiftConfig", null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         try {
@@ -33,7 +33,7 @@ public class a {
                 return null;
             }
             for (SharePasteImageConfig sharePasteImageConfig : parseArray) {
-                if (TextUtils.equals(sharePasteImageConfig.bizID, j.businessId)) {
+                if (StringUtils.equals(sharePasteImageConfig.bizID, j.businessId)) {
                     return sharePasteImageConfig.sharepasteimage;
                 }
             }

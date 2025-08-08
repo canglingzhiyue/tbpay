@@ -13,7 +13,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.RemoteException;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -199,7 +199,7 @@ public class ShareQRCodeScanView implements PopupWindow.OnDismissListener {
         }
         String sourceType = shareData.getSourceType();
         String text = shareData.getText();
-        if (!TextUtils.isEmpty(text)) {
+        if (!StringUtils.isEmpty(text)) {
             if ("shop".equals(sourceType)) {
                 TextView textView = (TextView) this.mView.findViewById(R.id.snapshot_title_shop);
                 textView.setText(text);
@@ -247,7 +247,7 @@ public class ShareQRCodeScanView implements PopupWindow.OnDismissListener {
             return;
         }
         String j = obi.b.j();
-        if (TextUtils.isEmpty(j)) {
+        if (StringUtils.isEmpty(j)) {
             this.mView.findViewById(R.id.share_bottom_layout).setVisibility(0);
             return;
         }
@@ -325,7 +325,7 @@ public class ShareQRCodeScanView implements PopupWindow.OnDismissListener {
         if (a2 != -1) {
             i = a2;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             nyu.a(this.mContext, b.a(R.string.taobao_app_1010_1_23569));
             onLoadingFinish();
             this.mGetBitmapFinish = true;
@@ -396,7 +396,7 @@ public class ShareQRCodeScanView implements PopupWindow.OnDismissListener {
             return;
         }
         String i2 = obi.b.i();
-        if (!TextUtils.isEmpty(i2)) {
+        if (!StringUtils.isEmpty(i2)) {
             com.taobao.phenix.intf.b.h().a(i2).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.scancode.ShareQRCodeScanView.8
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -446,7 +446,7 @@ public class ShareQRCodeScanView implements PopupWindow.OnDismissListener {
             return;
         }
         String a2 = obi.a(obi.b.PIIIC_QRCODE_URL, "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             doMergerBitmap(i, null);
         } else {
             com.taobao.phenix.intf.b.h().a(a2).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.scancode.ShareQRCodeScanView.10

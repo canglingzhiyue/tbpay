@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.context.c;
 
@@ -39,6 +39,6 @@ public class mkx {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a8219760", new Object[]{this, new Long(j)})).booleanValue();
         }
-        return !TextUtils.isEmpty(this.f31080a) && this.f31080a.contains("Slide") && (((double) this.c) * 1.0d) / ((double) j) < ((double) (((float) c.a(c.CONFIG_OPERATION_SCROLL_JUDGE_RATE, 70L)) / 100.0f));
+        return !StringUtils.isEmpty(this.f31080a) && this.f31080a.contains("Slide") && (((double) this.c) * 1.0d) / ((double) j) < ((double) (((float) c.a(c.CONFIG_OPERATION_SCROLL_JUDGE_RATE, 70L)) / 100.0f));
     }
 }

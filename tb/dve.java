@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
 import com.taobao.tao.log.TLog;
@@ -79,7 +79,7 @@ public class dve {
         if (split.length != 6) {
             TLog.loge(CacheCleaner.MODULE, "ProcessMapsHelper", "parse: maps item len is wrong, item length " + split.length);
             return false;
-        } else if (TextUtils.isEmpty(split[0])) {
+        } else if (StringUtils.isEmpty(split[0])) {
             TLog.loge(CacheCleaner.MODULE, "ProcessMapsHelper", "parse: maps address is wrong, addresses is " + split[0]);
             return false;
         } else {

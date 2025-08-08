@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.layermanager.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -51,7 +51,7 @@ public class a {
             return null;
         }
         for (String str2 : this.b.keySet()) {
-            if (!TextUtils.isEmpty(str2) && str2.equals(str)) {
+            if (!StringUtils.isEmpty(str2) && str2.equals(str)) {
                 return this.b.get(str2);
             }
         }
@@ -99,11 +99,11 @@ public class a {
         }
         b bVar = new b();
         String a2 = this.c.a("layer_manager_config");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return bVar;
         }
         for (String str : a2.split(",")) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String trim = str.trim();
                 String a3 = this.c.a(trim);
                 try {
@@ -134,9 +134,9 @@ public class a {
         }
         try {
             String a4 = this.c.a("directlyBlackList");
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 for (String str3 : JSON.parseArray(a4, String.class)) {
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         b.b(bVar).add(str3);
                     }
                 }

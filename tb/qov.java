@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -72,7 +72,7 @@ public final class qov extends com.taobao.themis.kernel.container.ui.titlebar.a 
         if (imageView == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             imageView.setVisibility(0);
             IImageAdapter iImageAdapter = (IImageAdapter) qpt.b(IImageAdapter.class);
             if (iImageAdapter != null) {

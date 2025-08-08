@@ -10,7 +10,7 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
 import android.os.Parcel;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.trace.TraceLogger;
 import com.alipay.mobile.framework.MpaasClassInfo;
@@ -259,7 +259,7 @@ public class OreoServiceUnlimited {
             if (resolveService == null) {
                 LoggerFactory.getTraceLogger().error(TAG, "Can't find target service");
                 return null;
-            } else if (!TextUtils.equals(resolveService.serviceInfo.packageName, applicationContext.getPackageName())) {
+            } else if (!StringUtils.equals(resolveService.serviceInfo.packageName, applicationContext.getPackageName())) {
                 LoggerFactory.getTraceLogger().error(TAG, "Can't support outer package");
                 return null;
             } else if (!IOreoServiceUnlimited.class.isAssignableFrom(Class.forName(resolveService.serviceInfo.name))) {

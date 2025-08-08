@@ -7,7 +7,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.webview.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -364,7 +364,7 @@ public class DetailHybridWebView extends WVUCWebView {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("eda1d580", new Object[]{webView, str})).booleanValue();
             }
-            if (TextUtils.isEmpty(str) || str.contains("innerWebview")) {
+            if (StringUtils.isEmpty(str) || str.contains("innerWebview")) {
                 return false;
             }
             t.a().a(y.a(webView).getApplicationContext()).a(str);
@@ -377,21 +377,21 @@ public class DetailHybridWebView extends WVUCWebView {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("7bd541f", new Object[]{webView, str})).booleanValue();
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return true;
             }
             String trim = str.trim();
-            if (TextUtils.isEmpty(trim)) {
+            if (StringUtils.isEmpty(trim)) {
                 return true;
             }
             if (!trim.startsWith("tel:") && !trim.startsWith("mailto:")) {
                 for (String str2 : com.taobao.android.detail.ttdetail.skeleton.desc.web.b.NAV_URL_DETAIL) {
-                    if (!TextUtils.isEmpty(str2) && trim.startsWith(str2)) {
+                    if (!StringUtils.isEmpty(str2) && trim.startsWith(str2)) {
                         t.a().a(y.a(webView).getApplicationContext()).a(trim);
                         return true;
                     }
                 }
-                if (!TextUtils.isEmpty("https://shop.m.taobao.com/shop/shop_index.htm") && trim.startsWith("https://shop.m.taobao.com/shop/shop_index.htm")) {
+                if (!StringUtils.isEmpty("https://shop.m.taobao.com/shop/shop_index.htm") && trim.startsWith("https://shop.m.taobao.com/shop/shop_index.htm")) {
                     t.a().a(y.a(webView).getApplicationContext()).a(trim);
                     return true;
                 }

@@ -1,7 +1,7 @@
 package com.alipay.android.msp.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -66,7 +66,7 @@ public class ExceptionUtils {
             return (String) ipChange.ipc$dispatch("a247de1c", new Object[]{str, new Integer(i)});
         }
         StringBuilder sb = new StringBuilder();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Context context = GlobalHelper.getInstance().getContext();
             str = context != null ? LanguageHelper.localizedStringForKey("mini_app_error", context.getString(R.string.mini_app_error), new Object[0]) : "人气太旺啦，稍候再试试。";
         }
@@ -106,7 +106,7 @@ public class ExceptionUtils {
                 }
             } else if (th instanceof AppErrorException) {
                 String message = th.getMessage();
-                if (!TextUtils.isEmpty(message) && !message.contains("(6)")) {
+                if (!StringUtils.isEmpty(message) && !message.contains("(6)")) {
                     logForExceptionUI(mspContextByBizId, th, false);
                 }
             } else {

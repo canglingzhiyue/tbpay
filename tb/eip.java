@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.aura.utils.f;
 import com.taobao.android.detail.core.performance.a;
@@ -270,7 +270,7 @@ public class eip {
         } catch (Exception e2) {
             i.a(k.a("DetailClientOptOrangeConfig"), "prefetch_request_whiteList", e2);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "NAV_START_ACTIVITY_TIME,NAV_START_ACTIVITY_UPTIME,prefetch_v,cpuCore,cpuMaxHz,wx_options,clientCachedTemplateKeys,longitude,latitude,NAV_TO_URL_START_TIME,screenWidth,screenHeight,supportV7,stdPopModal,stdPopShowWithCode,stdPopRecreateOnSysChanged,largescreenstyle,URL_REFERER_ORIGIN";
         }
         List<String> asList = Arrays.asList(str.split(","));

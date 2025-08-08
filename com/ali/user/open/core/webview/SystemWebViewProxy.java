@@ -2,7 +2,7 @@ package com.ali.user.open.core.webview;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewParent;
 import com.ali.user.open.core.config.ConfigManager;
@@ -35,7 +35,7 @@ public class SystemWebViewProxy implements IWebViewProxy {
     public SystemWebViewProxy(Context context, String str) {
         try {
             this.mWebView = new MemberWebView(context);
-            if (this.mWebView == null || !CommonUtils.getDarkModeStatus(KernelContext.getApplicationContext()) || TextUtils.isEmpty(str)) {
+            if (this.mWebView == null || !CommonUtils.getDarkModeStatus(KernelContext.getApplicationContext()) || StringUtils.isEmpty(str)) {
                 return;
             }
             this.mWebView.setBackgroundColor(Color.parseColor(str));

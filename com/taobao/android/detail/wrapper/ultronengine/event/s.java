@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ultronengine.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -129,7 +129,7 @@ public class s extends com.alibaba.android.ultron.event.q implements com.taobao.
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("31ed3f0c", new Object[]{this, marketBagPrice});
-        } else if (marketBagPrice == null || marketBagPrice.model == null || TextUtils.isEmpty(marketBagPrice.model.price)) {
+        } else if (marketBagPrice == null || marketBagPrice.model == null || StringUtils.isEmpty(marketBagPrice.model.price)) {
             JSONObject c = c();
             if (c == null) {
                 return;

@@ -1,6 +1,6 @@
 package com.taobao.android.riverlogger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.inspector.m;
 import org.json.JSONException;
@@ -20,7 +20,7 @@ public class j {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str3)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str3);
@@ -29,7 +29,7 @@ public class j {
                     return;
                 }
                 String optString = jSONObject.optString("event");
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     return;
                 }
                 d dVar = new d(parse, str, System.currentTimeMillis());
@@ -37,14 +37,14 @@ public class j {
                 dVar.c(optString);
                 dVar.a(jSONObject.optString("id"));
                 String optString2 = jSONObject.optString("parentId");
-                if (TextUtils.isEmpty(optString2)) {
+                if (StringUtils.isEmpty(optString2)) {
                     dVar.b(str2);
                 } else {
                     dVar.b(optString2);
                 }
                 if (dVar.a(jSONObject.opt("errorCode"))) {
                     String optString3 = jSONObject.optString("errorMsg");
-                    if (!TextUtils.isEmpty(optString3)) {
+                    if (!StringUtils.isEmpty(optString3)) {
                         dVar.g = optString3;
                     }
                 }

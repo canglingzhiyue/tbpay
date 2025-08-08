@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.festival.FestivalMgr;
@@ -26,7 +26,7 @@ public class rhm extends fuf {
                 String obj2 = objArr[1].toString();
                 String obj3 = objArr.length > 2 ? objArr[2].toString() : null;
                 String a2 = FestivalMgr.a().a(obj, obj2);
-                return TextUtils.isEmpty(a2) ? obj3 : a2;
+                return StringUtils.isEmpty(a2) ? obj3 : a2;
             } catch (Throwable unused) {
             }
         }

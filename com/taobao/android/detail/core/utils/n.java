@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.common.expection.WXExceptionConfig;
@@ -131,15 +131,15 @@ public class n {
             ipChange.ipc$dispatch("26b7c575", new Object[]{str, egoVar});
         } else if (egoVar != null) {
             StringBuilder sb = new StringBuilder(String.format("error=%s,type=%s", egoVar.d, egoVar.e));
-            if (!TextUtils.isEmpty(egoVar.f)) {
+            if (!StringUtils.isEmpty(egoVar.f)) {
                 sb.append(",itemId=");
                 sb.append(egoVar.f);
             }
-            if (!TextUtils.isEmpty(egoVar.g)) {
+            if (!StringUtils.isEmpty(egoVar.g)) {
                 sb.append(",ttid=");
                 sb.append(egoVar.g);
             }
-            if (!TextUtils.isEmpty(egoVar.h)) {
+            if (!StringUtils.isEmpty(egoVar.h)) {
                 sb.append(",detail_v=");
                 sb.append(egoVar.h);
             }
@@ -151,7 +151,7 @@ public class n {
                     sb.append(entry.getValue());
                 }
             }
-            if (!TextUtils.isEmpty(egoVar.f27293a)) {
+            if (!StringUtils.isEmpty(egoVar.f27293a)) {
                 str = egoVar.f27293a;
             }
             epn.a(str, egoVar.b, egoVar.c, sb.toString());
@@ -220,7 +220,7 @@ public class n {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "null";
         }
         hashMap.put("mtopTag", str);
@@ -235,11 +235,11 @@ public class n {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "null";
         }
         hashMap.put("mtopListener", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "null";
         }
         hashMap.put("delegateListener", str2);

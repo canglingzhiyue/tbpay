@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,12 +43,12 @@ public class dyg {
             i.c(l.a("DetailResponseDataHelper"), "处理主接口返回的数据不成功：该数据为预加载的数据");
         } else {
             String str2 = detailCoreActivity.f9411a.f27180a;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 i.c(l.a("DetailResponseDataHelper"), "处理主接口返回的数据不成功：itemId为空");
                 return;
             }
             String str3 = detailCoreActivity.f9411a.q;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 i.c(l.a("DetailResponseDataHelper"), "处理主接口返回的数据不成功：渠道来源为空");
             } else if (jSONObject == null) {
                 i.c(l.a("DetailResponseDataHelper"), "处理主接口返回的数据不成功：dataJson 为空");
@@ -147,7 +147,7 @@ public class dyg {
                 } else {
                     a4 = a(jSONObject, "detailPromoteBeltNew", "fields", com.taobao.tao.infoflow.multitab.e.KEY_BG_IMG);
                 }
-                if (TextUtils.isEmpty(a4)) {
+                if (StringUtils.isEmpty(a4)) {
                     return;
                 }
                 com.taobao.phenix.intf.b.h().a(a4).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: tb.dyg.2
@@ -215,7 +215,7 @@ public class dyg {
             if (!"newDetail".equals(detailCoreActivity.f9411a.q)) {
                 return;
             }
-            if ((TextUtils.isEmpty(detailCoreActivity.f9411a.D) && TextUtils.isEmpty(detailCoreActivity.f9411a.E)) || (a2 = a.a(cVar, enhVar)) == null) {
+            if ((StringUtils.isEmpty(detailCoreActivity.f9411a.D) && StringUtils.isEmpty(detailCoreActivity.f9411a.E)) || (a2 = a.a(cVar, enhVar)) == null) {
                 return;
             }
             i.c("DetailResponseDataHelper", "mainPicInfo:" + a2.f27103a + "|" + a2.c + "|" + a2.b);

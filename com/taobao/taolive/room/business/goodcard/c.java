@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.business.goodcard;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.NetBaseOutDo;
 import com.taobao.taolive.sdk.adapter.network.NetResponse;
@@ -108,7 +108,7 @@ public class c {
         }
         String string = jSONObject.getString("anchorName");
         String string2 = jSONObject.getString("itemName");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             return "您淘宝直播预约的宝贝马上开抢！";
         }
         return "你预约的" + string + string2 + "可以用补贴抢购啦～";

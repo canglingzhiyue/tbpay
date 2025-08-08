@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.favorite.FavoriteConstants;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class fjy {
             return "";
         }
         String queryParameter = data.getQueryParameter("entryNDNid");
-        return !TextUtils.isEmpty(queryParameter) ? queryParameter : b(intent);
+        return !StringUtils.isEmpty(queryParameter) ? queryParameter : b(intent);
     }
 
     public static String a(String str) {
@@ -37,11 +37,11 @@ public class fjy {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String queryParameter = Uri.parse(str).getQueryParameter("entryNDNid");
-        return !TextUtils.isEmpty(queryParameter) ? queryParameter : b(str);
+        return !StringUtils.isEmpty(queryParameter) ? queryParameter : b(str);
     }
 
     public static String b(Intent intent) {
@@ -50,11 +50,11 @@ public class fjy {
             return (String) ipChange.ipc$dispatch("6b2374ba", new Object[]{intent});
         }
         String a2 = fjo.a(intent, "id");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         String a3 = fjo.a(intent, "item_id");
-        return !TextUtils.isEmpty(a3) ? a3 : c(intent);
+        return !StringUtils.isEmpty(a3) ? a3 : c(intent);
     }
 
     private static String c(Intent intent) {
@@ -65,7 +65,7 @@ public class fjy {
         }
         String str2 = "";
         String str3 = null;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str = fjo.a(intent, FavoriteConstants.DetailConstants_DETAIL_URL);
             } catch (Exception unused) {
@@ -75,7 +75,7 @@ public class fjy {
                 str2 = b(str);
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str3 = intent.getDataString();
             } catch (Exception unused2) {
@@ -85,7 +85,7 @@ public class fjy {
             }
         }
         try {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 intent.putExtra("item_id", str2);
             }
         } catch (Exception unused3) {
@@ -139,7 +139,7 @@ public class fjy {
             return (Map) ipChange.ipc$dispatch("e82965d4", new Object[]{uri});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(uri.getQuery()) && (queryParameterNames = uri.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
+        if (!StringUtils.isEmpty(uri.getQuery()) && (queryParameterNames = uri.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
             for (String str : queryParameterNames) {
                 hashMap.put(str, uri.getQueryParameter(str));
             }

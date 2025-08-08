@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.MspEngine;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.core.model.MspPaySession;
@@ -102,7 +102,7 @@ public class AuthTask extends MspAsyncTask<Object, Void, MspResult> {
             return null;
         }
         String obj = objArr[0].toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             return null;
         }
         String paramsError = Result.getParamsError();
@@ -130,7 +130,7 @@ public class AuthTask extends MspAsyncTask<Object, Void, MspResult> {
         if (this.g == null) {
             return;
         }
-        if (mspResult != null && TextUtils.equals(mspResult.resultStatus, "9000")) {
+        if (mspResult != null && StringUtils.equals(mspResult.resultStatus, "9000")) {
             this.g.onAuthSuccess(this.activity, mspResult.resultStatus, mspResult.memo, mspResult.result);
             return;
         }

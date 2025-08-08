@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.option;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.c;
 import java.util.HashMap;
@@ -97,7 +97,7 @@ public class a {
             return;
         }
         for (String str : map.keySet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] strArr = C0101a.MODULE_KEYS;
                 int length = strArr.length;
                 int i = 0;
@@ -120,7 +120,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String b2 = b(str, str2);

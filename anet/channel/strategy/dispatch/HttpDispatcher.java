@@ -1,6 +1,6 @@
 package anet.channel.strategy.dispatch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.util.ALog;
@@ -208,7 +208,7 @@ public class HttpDispatcher {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cdeded38", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         boolean contains = this.uniqueIdSet.contains(str);

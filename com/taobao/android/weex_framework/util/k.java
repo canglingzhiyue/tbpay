@@ -3,7 +3,7 @@ package com.taobao.android.weex_framework.util;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -249,7 +249,7 @@ public class k {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Uri parse = Uri.parse(str);
@@ -260,6 +260,6 @@ public class k {
         if (!"dom".equals(queryParameter) && !com.taobao.homepage.page.weexv2.a.KEY_MUS.equals(queryParameter) && !"xr".equals(queryParameter)) {
             return false;
         }
-        return "true".equals(parse.getQueryParameter("wh_weex")) || !TextUtils.isEmpty(parse.getQueryParameter(com.taobao.vessel.utils.b.WX_TPL)) || !TextUtils.isEmpty(parse.getQueryParameter("_mus_tpl"));
+        return "true".equals(parse.getQueryParameter("wh_weex")) || !StringUtils.isEmpty(parse.getQueryParameter(com.taobao.vessel.utils.b.WX_TPL)) || !StringUtils.isEmpty(parse.getQueryParameter("_mus_tpl"));
     }
 }

@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.marvel.MeEditor;
 import com.alibaba.marvel.TemplateEditor;
 import com.alibaba.marvel.java.TemplateTag;
@@ -82,7 +82,7 @@ public class ap {
                     TemplateEditor templateEditor = this.c;
                     if (templateEditor != null) {
                         for (TemplateTag templateTag : templateEditor.getAllTemplateTags()) {
-                            if (TextUtils.equals("mediasPlaceHolder", templateTag.type)) {
+                            if (StringUtils.equals("mediasPlaceHolder", templateTag.type)) {
                                 this.d.add(templateTag.target);
                                 String clipLinkProject = this.b.getClipLinkProject(templateTag.target);
                                 String clipLinkTargetClip = this.b.getClipLinkTargetClip(templateTag.target);

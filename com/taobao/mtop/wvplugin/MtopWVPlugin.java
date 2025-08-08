@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.fulltrace.FullTraceAnalysis;
 import com.taobao.tao.remotebusiness.js.MtopJSBridge;
@@ -70,13 +70,13 @@ public class MtopWVPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e1f25705", new Object[]{this, wVCallBackContext, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString = jSONObject.optString("falcoId");
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     wVCallBackContext.error("falcoId is null.");
                     return;
                 }
@@ -118,7 +118,7 @@ public class MtopWVPlugin extends e {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 wVCallBackContext.error();
             } else if (this.mtopBridge.a((String) new JSONObject(str).get(MtopJSBridge.MtopJSParam.ACCOUNT_SITE))) {
                 wVCallBackContext.success();

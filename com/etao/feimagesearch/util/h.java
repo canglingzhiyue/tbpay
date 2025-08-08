@@ -3,7 +3,7 @@ package com.etao.feimagesearch.util;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -104,7 +104,7 @@ public class h extends cuf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2e75f687", new Object[]{this, str, handler, str2, hashMap});
-        } else if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
         } else {
             final String path = parse.getPath();
             com.uploader.export.i iVar = new com.uploader.export.i() { // from class: com.etao.feimagesearch.util.h.2
@@ -196,7 +196,7 @@ public class h extends cuf {
                     HashMap hashMap3 = hashMap;
                     if (hashMap3 != null && !hashMap3.isEmpty()) {
                         hashMap2.putAll(hashMap);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             hashMap2.put("tfskey", a2);
                         }
                     }
@@ -260,7 +260,7 @@ public class h extends cuf {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String[] split = str.split("/");

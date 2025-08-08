@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.rpc.RpcException;
 import com.alipay.mobile.security.bio.api.BioDetector;
@@ -139,7 +139,7 @@ public class FaceRpcRunnable implements Runnable {
                 string = MicroModuleContext.getInstance().getContext().getResources().getString(R.string.face_res_net_error);
                 str = "";
             }
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 if ("NOT_SAME_PERSON".equalsIgnoreCase(str)) {
                     string = MicroModuleContext.getInstance().getContext().getResources().getString(R.string.not_same_person);
                 } else {
@@ -250,14 +250,14 @@ public class FaceRpcRunnable implements Runnable {
                 jSONObject.put("useZim", (Object) this.h.getString("useZim"));
                 String string = this.h.getString(ZIMFacade.KEY_CERT_NAME);
                 String string2 = this.h.getString(ZIMFacade.KEY_CERT_NO);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     jSONObject.put(ZIMFacade.KEY_CERT_NAME, (Object) string);
                 }
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     jSONObject.put(ZIMFacade.KEY_CERT_NO, (Object) string2);
                 }
             }
-            if (this.h != null && !TextUtils.isEmpty(this.h.getString(ZimMessageChannel.K_RPC_RES_CODE)) && !TextUtils.isEmpty(this.h.getString(ZIMFacade.KEY_BIO_ACTION))) {
+            if (this.h != null && !StringUtils.isEmpty(this.h.getString(ZimMessageChannel.K_RPC_RES_CODE)) && !StringUtils.isEmpty(this.h.getString(ZIMFacade.KEY_BIO_ACTION))) {
                 jSONObject.put(ZimMessageChannel.K_RPC_RES_CODE, (Object) this.h.getString(ZimMessageChannel.K_RPC_RES_CODE));
                 jSONObject.put(ZIMFacade.KEY_BIO_ACTION, (Object) this.h.getString(ZIMFacade.KEY_BIO_ACTION));
             }
@@ -301,7 +301,7 @@ public class FaceRpcRunnable implements Runnable {
         }
         if (this.n && (bundle = this.h) != null) {
             String string = bundle.getString("desensName");
-            if (!TextUtils.isEmpty(string) && moduleExecuteResult != null) {
+            if (!StringUtils.isEmpty(string) && moduleExecuteResult != null) {
                 if (moduleExecuteResult.getExtInfo() != null) {
                     moduleExecuteResult.getExtInfo().put("desensName", string);
                 } else {

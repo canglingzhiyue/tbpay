@@ -7,7 +7,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -438,7 +438,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                     }
                     ab.d(OpenNormalRoomController.access$000(), "render finish");
                     OpenNormalRoomController.access$200(OpenNormalRoomController.this).k(OpenNormalRoomController.access$100(OpenNormalRoomController.this));
-                    if (!TextUtils.equals(ag.SOURCE_UPDOWNSWITCH, poz.p(com.taobao.taolive.room.utils.n.b(OpenNormalRoomController.this.mFrameContext)))) {
+                    if (!StringUtils.equals(ag.SOURCE_UPDOWNSWITCH, poz.p(com.taobao.taolive.room.utils.n.b(OpenNormalRoomController.this.mFrameContext)))) {
                         com.taobao.taolive.sdk.monitor.b.b().a("LIVE_CODE_BOOT_STAGE");
                     }
                     ddw.a().b(OpenNormalRoomController.access$300(OpenNormalRoomController.this));
@@ -623,7 +623,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
             }
             initFrameInstaller();
             String p = poz.p(com.taobao.taolive.room.utils.n.b(this.mFrameContext));
-            if (u.aD() && !TextUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
+            if (u.aD() && !StringUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
                 com.taobao.taolive.sdk.monitor.b.b().a("LIVE_CODE_BOOT_STAGE", SceneStage.SCENE_STAGE_T2);
                 ab.d("LIVE_CODE_BOOT_STAGE", "stage:t2");
             }
@@ -660,10 +660,10 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                     if (d != null) {
                         hashMap.putAll(d);
                     }
-                    if (aa.ak() && (OpenNormalRoomController.this.mFrameContext instanceof g) && ((g) OpenNormalRoomController.this.mFrameContext).w() != null && ((g) OpenNormalRoomController.this.mFrameContext).w().isFirst && (OpenNormalRoomController.this.mFrameContext.z() instanceof com.taobao.taolive.sdk.controller.e) && !TextUtils.isEmpty(((com.taobao.taolive.sdk.controller.e) OpenNormalRoomController.this.mFrameContext.z()).v())) {
+                    if (aa.ak() && (OpenNormalRoomController.this.mFrameContext instanceof g) && ((g) OpenNormalRoomController.this.mFrameContext).w() != null && ((g) OpenNormalRoomController.this.mFrameContext).w().isFirst && (OpenNormalRoomController.this.mFrameContext.z() instanceof com.taobao.taolive.sdk.controller.e) && !StringUtils.isEmpty(((com.taobao.taolive.sdk.controller.e) OpenNormalRoomController.this.mFrameContext.z()).v())) {
                         hashMap.put(aw.PARAM_PM_PARAMS, ((com.taobao.taolive.sdk.controller.e) OpenNormalRoomController.this.mFrameContext.z()).v());
                     }
-                    if (tBLiveDataModel.mInitParams != null && !TextUtils.isEmpty(tBLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV))) {
+                    if (tBLiveDataModel.mInitParams != null && !StringUtils.isEmpty(tBLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV))) {
                         hashMap.put(aw.PARAM_IGNORE_PV, tBLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV));
                     }
                     if (tBLiveDataModel.mVideoInfo != null && tBLiveDataModel.mVideoInfo.pmContext != null) {
@@ -690,7 +690,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                         hashMap.put("pmSession", OpenNormalRoomController.this.mFrameContext.j());
                     }
                     String L = poy.L(OpenNormalRoomController.this.mFrameContext);
-                    if (aa.az() && "tpp_88".equals(poz.p(com.taobao.taolive.room.utils.n.b(OpenNormalRoomController.this.mFrameContext))) && !TextUtils.isEmpty(poy.Y(OpenNormalRoomController.this.mFrameContext)) && (b = pqj.b(Uri.decode(poy.Y(OpenNormalRoomController.this.mFrameContext)))) != null && b.getString("trackInfo") != null) {
+                    if (aa.az() && "tpp_88".equals(poz.p(com.taobao.taolive.room.utils.n.b(OpenNormalRoomController.this.mFrameContext))) && !StringUtils.isEmpty(poy.Y(OpenNormalRoomController.this.mFrameContext)) && (b = pqj.b(Uri.decode(poy.Y(OpenNormalRoomController.this.mFrameContext)))) != null && b.getString("trackInfo") != null) {
                         L = b.getString("trackInfo");
                     }
                     hashMap.put("trackInfo", L);
@@ -698,7 +698,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                     hashMap.put("clickid", poy.m(OpenNormalRoomController.this.mFrameContext));
                     hashMap.put("livesource", poz.p(com.taobao.taolive.room.utils.n.b(OpenNormalRoomController.this.mFrameContext)));
                     hashMap.put("entry_source", poy.R(OpenNormalRoomController.this.mFrameContext));
-                    if ((!hashMap.containsKey("spm-url") || TextUtils.isEmpty((CharSequence) hashMap.get("spm-url"))) && (OpenNormalRoomController.this.mFrameContext instanceof com.taobao.taolive.sdk.core.e)) {
+                    if ((!hashMap.containsKey("spm-url") || StringUtils.isEmpty((CharSequence) hashMap.get("spm-url"))) && (OpenNormalRoomController.this.mFrameContext instanceof com.taobao.taolive.sdk.core.e)) {
                         hashMap.put("spm-url", poy.K(OpenNormalRoomController.this.mFrameContext));
                     }
                     hashMap.put("isAD", String.valueOf(poy.w(OpenNormalRoomController.this.mFrameContext) ? 1 : 0));
@@ -708,7 +708,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                     }
                     hashMap.put("isAdTransParams", String.valueOf(i2));
                     hashMap.put("isChatRoom", String.valueOf(poy.b(tBLiveDataModel, OpenNormalRoomController.this.mFrameContext) ? 1 : 0));
-                    hashMap.put("scene", !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayUrl) ? "smartpoint" : "default");
+                    hashMap.put("scene", !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayUrl) ? "smartpoint" : "default");
                     hashMap.put("kandianid", poy.ay(OpenNormalRoomController.this.mFrameContext) + "_" + poy.C(OpenNormalRoomController.this.mFrameContext));
                     hashMap.put("watchid", poy.z(OpenNormalRoomController.this.mFrameContext));
                     if (OpenNormalRoomController.this.mFrameContext instanceof com.taobao.taolive.sdk.core.e) {
@@ -793,7 +793,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                 if (pkgVar != null && pkgVar.f != null) {
                     Object obj2 = pkgVar.f.get("aliveChanel");
                     String valueOf = obj2 != null ? String.valueOf(obj2) : null;
-                    if (!TextUtils.isEmpty(valueOf)) {
+                    if (!StringUtils.isEmpty(valueOf)) {
                         hashMap.put("channel", valueOf);
                     }
                 }
@@ -1098,7 +1098,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
             this.mSjsdItemId = tBLiveDataModel.mInitParams.get(aw.PARAM_SJSD_ITEM_ID);
             this.mTimeMovingItemId = tBLiveDataModel.mInitParams.get(aw.PARAM_TIMEMOVING_ITEM_ID);
             String str = tBLiveDataModel.mInitParams.get("landScapeVideo");
-            if (TextUtils.isEmpty(str) || !Boolean.parseBoolean(str)) {
+            if (StringUtils.isEmpty(str) || !Boolean.parseBoolean(str)) {
                 z = false;
             }
             this.mLandscapeVideo = z;
@@ -1111,7 +1111,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
             this.mMediaInfo = null;
             try {
                 String str2 = tBLiveDataModel.mInitParams.get(aw.PARAM_CUSTOM_PLAY_CTRL);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     this.mMediaInfo = com.taobao.taolive.room.utils.q.a(str2);
                 }
                 this.mDirectPlayUrl = x.a(this.mMediaInfo);
@@ -1166,14 +1166,14 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
 
     private boolean hasLiveUrlListChanged(ArrayList<QualitySelectItem> arrayList, ArrayList<QualitySelectItem> arrayList2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3f8fcad8", new Object[]{this, arrayList, arrayList2})).booleanValue() : (arrayList == null || arrayList2 == null || arrayList.isEmpty() || arrayList2.isEmpty() || arrayList.get(0) == null || arrayList2.get(0) == null || TextUtils.equals(arrayList.get(0).flvUrl, arrayList2.get(0).flvUrl)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3f8fcad8", new Object[]{this, arrayList, arrayList2})).booleanValue() : (arrayList == null || arrayList2 == null || arrayList.isEmpty() || arrayList2.isEmpty() || arrayList.get(0) == null || arrayList2.get(0) == null || StringUtils.equals(arrayList.get(0).flvUrl, arrayList2.get(0).flvUrl)) ? false : true;
     }
 
     private void showGoodListsIfNeed() {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4215ef15", new Object[]{this});
-        } else if (!aa.ab() || TextUtils.isEmpty(this.mShareItemId) || !aa.ac()) {
+        } else if (!aa.ab() || StringUtils.isEmpty(this.mShareItemId) || !aa.ac()) {
         } else {
             ddw.a().a(xkw.EVENT_SHOW_GOODSPACKAGE, null, this.frameContextUnique);
         }
@@ -1183,7 +1183,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2b9ec222", new Object[]{this, str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             showSwitchTVProgramTransitionView(str, str2, z);
         }
@@ -1211,7 +1211,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
         } else {
             this.mSwitchTVProgramNormalView.setVisibility(8);
             this.mSwitchTVProgramNewView.setVisibility(0);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.mSwitchTVProgramTitle.setVisibility(0);
                 this.mSwitchTVProgramTransitionView.findViewById(R.id.taolive_room_switch_tv_program_secant_line).setVisibility(0);
                 TextView textView = this.mSwitchTVProgramTitle;
@@ -1331,7 +1331,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                     OpenNormalRoomController.access$900(OpenNormalRoomController.this).cancel();
                 }
                 OpenNormalRoomController.access$700(OpenNormalRoomController.this);
-                if (OpenNormalRoomController.this.mLiveDataModel == null || TextUtils.isEmpty(OpenNormalRoomController.this.mLiveDataModel.mActionUrl)) {
+                if (OpenNormalRoomController.this.mLiveDataModel == null || StringUtils.isEmpty(OpenNormalRoomController.this.mLiveDataModel.mActionUrl)) {
                     return;
                 }
                 String str = OpenNormalRoomController.this.mLiveDataModel.mActionUrl;
@@ -1428,7 +1428,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
             return;
         }
         VideoInfo a2 = com.taobao.taolive.sdk.controller.k.a(this.mLiveDataModel);
-        if (a2 == null || tBLiveSwitchMsg == null || TextUtils.isEmpty(tBLiveSwitchMsg.targetLiveId) || (tBLiveSwitchMsg.newRoomType & 256) != 256 || TextUtils.isEmpty(tBLiveSwitchMsg.targetUrl) || this.mInSwitchTaoLiveRoom || this.mIsPaused || j.c()) {
+        if (a2 == null || tBLiveSwitchMsg == null || StringUtils.isEmpty(tBLiveSwitchMsg.targetLiveId) || (tBLiveSwitchMsg.newRoomType & 256) != 256 || StringUtils.isEmpty(tBLiveSwitchMsg.targetUrl) || this.mInSwitchTaoLiveRoom || this.mIsPaused || j.c()) {
             return;
         }
         if ((!tBLiveSwitchMsg.targetLiveId.equals(this.mId) || poy.b(a2, this.mFrameContext)) && (tBLiveSwitchMsg.targetLiveId.equals(this.mId) || !poy.b(a2, this.mFrameContext))) {
@@ -1475,7 +1475,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
                 return;
             }
             TBTVProgramMessage tBTVProgramMessage = (TBTVProgramMessage) obj;
-            if (tBTVProgramMessage.liveDO == null || TextUtils.isEmpty(tBTVProgramMessage.liveDO.backgroundImageURL) || (phvVar = this.mTaoliveShowByStatus) == null) {
+            if (tBTVProgramMessage.liveDO == null || StringUtils.isEmpty(tBTVProgramMessage.liveDO.backgroundImageURL) || (phvVar = this.mTaoliveShowByStatus) == null) {
                 return;
             }
             phvVar.a(tBTVProgramMessage.liveDO.backgroundImageURL);
@@ -1573,7 +1573,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
             return false;
         }
         String str = videoInfo.degradeInfo.degradeUrl;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = aa.P();
         }
         com.taobao.taolive.room.utils.s.a(this.mContext, str);
@@ -1600,7 +1600,7 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
             return;
         }
         VideoInfo a2 = com.taobao.taolive.sdk.controller.k.a(this.mLiveDataModel);
-        if (a2 == null || !a2.isOfficialType() || officialLiveEndMessage == null || TextUtils.isEmpty(officialLiveEndMessage.officialLiveId) || !officialLiveEndMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId)) {
+        if (a2 == null || !a2.isOfficialType() || officialLiveEndMessage == null || StringUtils.isEmpty(officialLiveEndMessage.officialLiveId) || !officialLiveEndMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId)) {
             return;
         }
         Toast makeText = Toast.makeText(this.mContext, com.taobao.taolive.sdk.utils.p.g(), 1);
@@ -1634,11 +1634,11 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
             return;
         }
         VideoInfo a2 = com.taobao.taolive.sdk.controller.k.a(this.mLiveDataModel);
-        if (a2 == null || !a2.isOfficialType() || officialLiveSwitchNextMessage == null || TextUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveId) || TextUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveDetailUrl) || officialLiveSwitchNextMessage.targetLiveId.equals(a2.liveId) || !officialLiveSwitchNextMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId) || this.mInSwitchTaoLiveRoom || this.mIsPaused) {
+        if (a2 == null || !a2.isOfficialType() || officialLiveSwitchNextMessage == null || StringUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveId) || StringUtils.isEmpty(officialLiveSwitchNextMessage.targetLiveDetailUrl) || officialLiveSwitchNextMessage.targetLiveId.equals(a2.liveId) || !officialLiveSwitchNextMessage.officialLiveId.equals(a2.officialLiveInfo.officialLiveId) || this.mInSwitchTaoLiveRoom || this.mIsPaused) {
             return;
         }
         if ("true".equals(officialLiveSwitchNextMessage.gapPeriod)) {
-            e = String.format(com.taobao.taolive.sdk.utils.p.f(), TextUtils.isEmpty(officialLiveSwitchNextMessage.nextPlanStartTime) ? "" : officialLiveSwitchNextMessage.nextPlanStartTime);
+            e = String.format(com.taobao.taolive.sdk.utils.p.f(), StringUtils.isEmpty(officialLiveSwitchNextMessage.nextPlanStartTime) ? "" : officialLiveSwitchNextMessage.nextPlanStartTime);
         } else {
             e = com.taobao.taolive.sdk.utils.p.e();
         }
@@ -1667,6 +1667,6 @@ public class OpenNormalRoomController extends BaseFrame implements com.taobao.ta
     private boolean isTab2(com.taobao.alilive.aliliveframework.frame.a aVar) {
         ATaoLiveOpenEntity o;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f97aeefb", new Object[]{this, aVar})).booleanValue() : (aVar == null || (o = aVar.o()) == null || !TextUtils.equals(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString(), o.bizCode)) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f97aeefb", new Object[]{this, aVar})).booleanValue() : (aVar == null || (o = aVar.o()) == null || !StringUtils.equals(TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString(), o.bizCode)) ? false : true;
     }
 }

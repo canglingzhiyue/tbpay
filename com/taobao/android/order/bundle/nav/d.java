@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.nav;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import tb.hyk;
@@ -46,7 +46,7 @@ public class d implements com.taobao.android.nav.e {
             return true;
         }
         String queryParameter = data.getQueryParameter("directTo");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return true;
         }
         if (hyk.N()) {

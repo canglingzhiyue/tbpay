@@ -1,7 +1,7 @@
 package com.taobao.android.festival.festival;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import tb.kge;
@@ -51,7 +51,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("4dba94fa", new Object[]{this, str, str2, new Integer(i)})).intValue();
         }
         String c = c(str, str2);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return i;
         }
         try {
@@ -67,7 +67,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
         String c = c(str, str2);
-        return TextUtils.isEmpty(c) ? "" : c;
+        return StringUtils.isEmpty(c) ? "" : c;
     }
 
     public int a(String str, int i) {
@@ -76,7 +76,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{this, str, new Integer(i)})).intValue();
         }
         String c = c("global", str);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return i;
         }
         try {
@@ -103,7 +103,7 @@ public class b {
 
     public boolean b(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(c(str, str2));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(c(str, str2));
     }
 
     public boolean a(String str) {

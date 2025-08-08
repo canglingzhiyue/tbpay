@@ -1,6 +1,6 @@
 package com.alipay.android.msp.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.storage.PrefUtils;
 import com.alipay.android.msp.settings.base.SettingsConstants;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,21 +27,21 @@ public class RedDotUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c991d879", new Object[]{str, new Integer(i), str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || (jSONObject = sSettingsRedDot) == null) {
+        if (StringUtils.isEmpty(str2) || (jSONObject = sSettingsRedDot) == null) {
             return false;
         }
         try {
         } catch (Exception e) {
             LogUtil.printExceptionStackTrace(e);
         }
-        return !TextUtils.equals(jSONObject.getJSONArray(str).getString(i), str2);
+        return !StringUtils.equals(jSONObject.getJSONArray(str).getString(i), str2);
     }
 
     public static void setRedDotToken(String str, int i, String str2) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e2da829d", new Object[]{str, new Integer(i), str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             if (sSettingsRedDot == null) {
                 sSettingsRedDot = new JSONObject();

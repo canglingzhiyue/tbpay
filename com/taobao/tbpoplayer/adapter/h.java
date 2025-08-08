@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.adapter;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.norm.ITrackLogAdapter;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -49,7 +49,7 @@ public class h implements ITrackLogAdapter {
             ipChange.ipc$dispatch("fb13311", new Object[]{str, str2, str3, str4});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = f22205a;
         }
         TLog.loge("PopLayer", str, com.alibaba.poplayer.utils.c.d(str2, str3, str4));
@@ -88,7 +88,7 @@ public class h implements ITrackLogAdapter {
         } else if (!z) {
         } else {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = f22205a;
                 }
                 TLog.loge("PopLayer", str, com.alibaba.poplayer.utils.c.d(str2, str3, str4));
@@ -104,7 +104,7 @@ public class h implements ITrackLogAdapter {
             ipChange.ipc$dispatch("ee2b490", new Object[]{str, str2, str3, str4});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = f22205a;
         }
         TLog.loge("PopLayer", str, com.alibaba.poplayer.utils.c.d(str2, str3, str4));

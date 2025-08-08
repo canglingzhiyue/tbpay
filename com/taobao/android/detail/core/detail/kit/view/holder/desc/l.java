@@ -90,7 +90,7 @@ public class l extends b<com.taobao.android.detail.core.model.viewmodel.desc.i> 
         L15:
             int r0 = tb.epo.b
             java.lang.String r1 = r6.d
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 != 0) goto L36
             java.lang.String r1 = r6.d     // Catch: java.lang.Exception -> L36
             float r1 = java.lang.Float.parseFloat(r1)     // Catch: java.lang.Exception -> L36
@@ -109,7 +109,7 @@ public class l extends b<com.taobao.android.detail.core.model.viewmodel.desc.i> 
             r1 = 0
         L37:
             java.lang.String r3 = r6.c
-            boolean r3 = android.text.TextUtils.isEmpty(r3)
+            boolean r3 = android.text.StringUtils.isEmpty(r3)
             if (r3 != 0) goto L49
             java.lang.String r6 = r6.c     // Catch: java.lang.Exception -> L49
             float r6 = java.lang.Float.parseFloat(r6)     // Catch: java.lang.Exception -> L49

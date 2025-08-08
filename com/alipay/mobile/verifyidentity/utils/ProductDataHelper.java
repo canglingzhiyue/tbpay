@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -123,7 +123,7 @@ public class ProductDataHelper {
         }
         try {
             VerifyLogCat.i("ProductDataHelper", "write key: " + str + ", value: " + obj);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (this.e == null) {

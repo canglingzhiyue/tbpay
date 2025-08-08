@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -51,7 +51,7 @@ public class RatioFrameLayout extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d4e539a9", new Object[]{this, str});
-        } else if (TextUtils.equals(this.mWHRatio, str)) {
+        } else if (StringUtils.equals(this.mWHRatio, str)) {
         } else {
             this.mWHRatio = str;
             parseWHRatio();

@@ -1,6 +1,6 @@
 package com.taobao.avplayer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class c implements ap {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
         String a2 = a("videoCacheEnable2");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return true;
         }
         try {
@@ -46,7 +46,7 @@ public class c implements ap {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         String a2 = a("httpsSchemeForVideoUrl");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return true;
         }
         try {
@@ -64,7 +64,7 @@ public class c implements ap {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig("DWInteractive", "newPlayerEnable", "true");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 if (Boolean.parseBoolean(config)) {
                     return true;
                 }
@@ -85,7 +85,7 @@ public class c implements ap {
             List<String> h = h();
             if (h != null && h.size() != 0) {
                 for (String str2 : h) {
-                    if (!TextUtils.isEmpty(str2) && ("ALL_BIZCODE".equalsIgnoreCase(str2) || str2.equalsIgnoreCase(str))) {
+                    if (!StringUtils.isEmpty(str2) && ("ALL_BIZCODE".equalsIgnoreCase(str2) || str2.equalsIgnoreCase(str))) {
                         return true;
                     }
                 }
@@ -105,7 +105,7 @@ public class c implements ap {
             List<String> i = i();
             if (i != null && i.size() != 0) {
                 for (String str2 : i) {
-                    if (!TextUtils.isEmpty(str2) && ("ALL_BIZCODE".equalsIgnoreCase(str2) || str2.equalsIgnoreCase(str))) {
+                    if (!StringUtils.isEmpty(str2) && ("ALL_BIZCODE".equalsIgnoreCase(str2) || str2.equalsIgnoreCase(str))) {
                         return true;
                     }
                 }
@@ -122,7 +122,7 @@ public class c implements ap {
             return ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue();
         }
         String a2 = a("enableInstantSeek");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         try {
@@ -139,7 +139,7 @@ public class c implements ap {
             return ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue();
         }
         String a2 = a("videoLengthEnable");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         try {
@@ -156,7 +156,7 @@ public class c implements ap {
             return ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[]{this})).booleanValue();
         }
         String a2 = a("PlayRateBtnEnable");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         try {
@@ -172,7 +172,7 @@ public class c implements ap {
             return ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[]{this})).booleanValue();
         }
         String a2 = a("tbNetEnable");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         try {
@@ -188,7 +188,7 @@ public class c implements ap {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("611c4ee3", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return OrangeConfig.getInstance().getConfig("DWInteractive", str2, str3);
         }
         return OrangeConfig.getInstance().getConfig(str, str2, str3);
@@ -207,7 +207,7 @@ public class c implements ap {
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < jSONArray.length(); i++) {
                 try {
-                    if (!TextUtils.isEmpty(jSONArray.optString(i))) {
+                    if (!StringUtils.isEmpty(jSONArray.optString(i))) {
                         arrayList.add(jSONArray.optString(i));
                     }
                 } catch (Throwable unused) {
@@ -233,7 +233,7 @@ public class c implements ap {
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < jSONArray.length(); i++) {
                 try {
-                    if (!TextUtils.isEmpty(jSONArray.optString(i))) {
+                    if (!StringUtils.isEmpty(jSONArray.optString(i))) {
                         arrayList.add(jSONArray.optString(i));
                     }
                 } catch (Throwable unused) {

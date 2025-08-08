@@ -1,7 +1,7 @@
 package com.alibaba.analytics.core.logbuilder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.AnalyticsImp;
 import com.alibaba.analytics.core.config.m;
 import com.alibaba.analytics.core.config.v;
@@ -172,7 +172,7 @@ public class b {
                             sb.append("_glat=0");
                         }
                         String a3 = a2.a();
-                        if (!TextUtils.isEmpty(a3)) {
+                        if (!StringUtils.isEmpty(a3)) {
                             if (sb.length() > 0) {
                                 sb.append(",gps_adid=");
                                 sb.append(a3);
@@ -209,7 +209,7 @@ public class b {
                 }
                 if (aob.a().J()) {
                     String K = aob.a().K();
-                    if (!TextUtils.isEmpty(K)) {
+                    if (!StringUtils.isEmpty(K)) {
                         if (sb.length() > 0) {
                             sb.append(",_buildid=");
                             sb.append(K);
@@ -229,7 +229,7 @@ public class b {
                 }
                 String str6 = map.get(LogField.APPKEY.toString());
                 String l = aob.a().l();
-                if (!TextUtils.isEmpty(str6) && !TextUtils.isEmpty(l) && !l.equalsIgnoreCase(str6)) {
+                if (!StringUtils.isEmpty(str6) && !StringUtils.isEmpty(l) && !l.equalsIgnoreCase(str6)) {
                     if (sb.length() > 0) {
                         sb.append(",_mak=");
                         sb.append(l);
@@ -252,7 +252,7 @@ public class b {
                 }
                 String d = apg.d(k);
                 apr.a("LogAssemble", "channel2", d);
-                if (!TextUtils.isEmpty(d)) {
+                if (!StringUtils.isEmpty(d)) {
                     if (sb.length() > 0) {
                         sb.append(",_channel2=");
                         sb.append(d);
@@ -272,7 +272,7 @@ public class b {
                     }
                 }
                 String str7 = map.get("UTPVID_T");
-                if (!TextUtils.isEmpty(str7)) {
+                if (!StringUtils.isEmpty(str7)) {
                     if (sb.length() > 0) {
                         sb.append(",_t=");
                         sb.append(str7);
@@ -283,7 +283,7 @@ public class b {
                     map.remove("UTPVID_T");
                 }
                 String v = aob.a().v();
-                if (!TextUtils.isEmpty(v)) {
+                if (!StringUtils.isEmpty(v)) {
                     if (sb.length() > 0) {
                         sb.append(",_ut_site=");
                         sb.append(v);
@@ -293,7 +293,7 @@ public class b {
                     }
                 }
                 String r = aob.a().r();
-                if (!TextUtils.isEmpty(r)) {
+                if (!StringUtils.isEmpty(r)) {
                     if (sb.length() > 0) {
                         sb.append(",_ut_lsite=");
                         sb.append(r);
@@ -520,7 +520,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("d7b3ceab", new Object[]{map, str})).booleanValue();
         }
         String str2 = map.get(str);
-        if (TextUtils.isEmpty(str2) || str2.length() <= 40960) {
+        if (StringUtils.isEmpty(str2) || str2.length() <= 40960) {
             return false;
         }
         apr.e("LogAssemble truncLog", "field", str, com.taobao.android.weex_framework.util.a.ATOM_length, Integer.valueOf(str2.length()));

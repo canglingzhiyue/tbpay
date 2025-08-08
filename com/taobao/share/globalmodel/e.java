@@ -3,7 +3,7 @@ package com.taobao.share.globalmodel;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -170,7 +170,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (this.b == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (this.b == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             if (this.b.extraParams == null) {
                 this.b.extraParams = new HashMap();
@@ -203,23 +203,23 @@ public class e {
             return;
         }
         TBShareContent tBShareContent = this.b;
-        if (tBShareContent == null || TextUtils.isEmpty(tBShareContent.url) || !TextUtils.equals("item", this.b.shareScene)) {
+        if (tBShareContent == null || StringUtils.isEmpty(tBShareContent.url) || !StringUtils.equals("item", this.b.shareScene)) {
             return;
         }
         if (this.b.url.startsWith(NAV_URL_DETAIL_BASE)) {
             this.d = this.b.url.substring(24, this.b.url.indexOf(".htm"));
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             try {
                 this.d = this.b.url.substring(this.b.url.indexOf("/i") + 2, this.b.url.indexOf(".htm"));
             } catch (Exception e) {
                 TLog.loge("taobao_contacts", e.getMessage());
             }
         }
-        if (TextUtils.isEmpty(this.d) && (a2 = obc.a(this.b.url)) != null && a2.size() > 0) {
+        if (StringUtils.isEmpty(this.d) && (a2 = obc.a(this.b.url)) != null && a2.size() > 0) {
             this.d = a2.get("id");
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             return;
         }
         this.b.shareScene = "other";
@@ -233,10 +233,10 @@ public class e {
         }
         this.b = tBShareContent;
         this.b.setDefault();
-        if (TextUtils.isEmpty(tBShareContent.businessId)) {
+        if (StringUtils.isEmpty(tBShareContent.businessId)) {
             TLog.logw("TBShareContentContainer", "警告：BusinessId 为空，无法完成数据统计和对应业务的管理，请务必传入！");
         }
-        if (!TextUtils.isEmpty(this.b.weixinAppId)) {
+        if (!StringUtils.isEmpty(this.b.weixinAppId)) {
             this.f19631a = true;
         }
         o();
@@ -249,13 +249,13 @@ public class e {
             ipChange.ipc$dispatch("631b576", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.b.imageUrl) && !this.b.imageUrl.startsWith("http") && this.b.imageUrl.startsWith(ado.URL_SEPARATOR)) {
+        if (!StringUtils.isEmpty(this.b.imageUrl) && !this.b.imageUrl.startsWith("http") && this.b.imageUrl.startsWith(ado.URL_SEPARATOR)) {
             this.b.imageUrl = "http:" + this.b.imageUrl;
         }
-        if (!TextUtils.isEmpty(this.b.url) && !this.b.url.startsWith("http")) {
+        if (!StringUtils.isEmpty(this.b.url) && !this.b.url.startsWith("http")) {
             this.b.url = "http:" + this.b.url;
         }
-        if (TextUtils.isEmpty(this.b.url)) {
+        if (StringUtils.isEmpty(this.b.url)) {
             return;
         }
         this.b.suId = ShareBusiness.getInstance().generateShareId();
@@ -292,7 +292,7 @@ public class e {
             if (this.b.activityParams.get("activityId") != null) {
                 str = this.b.activityParams.get("activityId").toString();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 TBShareContent tBShareContent = this.b;
                 tBShareContent.businessId = str;
                 tBShareContent.isActivity = "true";
@@ -329,7 +329,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             this.j.put(str, str2);
             TBShareContent tBShareContent = this.b;

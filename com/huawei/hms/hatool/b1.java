@@ -1,6 +1,6 @@
 package com.huawei.hms.hatool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONObject;
 
 /* loaded from: classes4.dex */
@@ -22,7 +22,7 @@ public class b1 implements o1 {
         jSONObject.put("event", this.b);
         jSONObject.put("event_session_name", this.e);
         jSONObject.put("first_session_event", this.f);
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             return null;
         }
         jSONObject.put("properties", new JSONObject(this.c));

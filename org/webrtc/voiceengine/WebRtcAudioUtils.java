@@ -7,7 +7,7 @@ import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import java.util.List;
 import mtopsdk.network.impl.ResponseProtocolType;
-import org.webrtc.ContextUtils;
+import org.webrtc.ConStringUtils;
 import org.webrtc.Logging;
 import tb.kge;
 import tb.riy;
@@ -301,7 +301,7 @@ public final class WebRtcAudioUtils {
             return;
         }
         logDeviceInfo(str);
-        AudioManager audioManager = (AudioManager) ContextUtils.getApplicationContext().getSystemService("audio");
+        AudioManager audioManager = (AudioManager) ConStringUtils.getApplicationContext().getSystemService("audio");
         logAudioStateBasic(str, audioManager);
         logAudioStateVolume(str, audioManager);
         logAudioDeviceInfo(str, audioManager);
@@ -396,6 +396,6 @@ public final class WebRtcAudioUtils {
 
     private static boolean hasMicrophone() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("544641ef", new Object[0])).booleanValue() : ContextUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.microphone");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("544641ef", new Object[0])).booleanValue() : ConStringUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.microphone");
     }
 }

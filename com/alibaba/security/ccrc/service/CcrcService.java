@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.enums.Mode;
 import com.alibaba.security.ccrc.interfaces.OnAlgoResultCallback;
@@ -116,7 +116,7 @@ public class CcrcService {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return (CcrcService) ipChange.ipc$dispatch("78168fe7", new Object[]{str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 Logging.e(TAG, "ccrcCode is null");
                 return null;
             } else if (CcrcContextImpl.getContext() == null) {

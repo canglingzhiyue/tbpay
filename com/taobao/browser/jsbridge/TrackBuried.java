@@ -1,6 +1,6 @@
 package com.taobao.browser.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.CT;
 import com.taobao.statistic.TBS;
@@ -64,11 +64,11 @@ public class TrackBuried {
         String str2 = "";
         for (String str3 : map.keySet()) {
             String str4 = map.get(str3);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 str2 = str2 + str3 + "=" + str4 + ",";
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str2 = str2.substring(0, str2.length() - 1);
         }
         String str5 = "TrackBuried args:" + str2;
@@ -103,7 +103,7 @@ public class TrackBuried {
         }
         Properties properties = new Properties();
         for (String str2 : map.keySet()) {
-            if (!TextUtils.isEmpty(map.get(str2))) {
+            if (!StringUtils.isEmpty(map.get(str2))) {
                 properties.put(str2, map.get(str2));
             }
         }
@@ -113,6 +113,6 @@ public class TrackBuried {
 
     public static boolean needEffectParam() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("561f5891", new Object[0])).booleanValue() : !TextUtils.isEmpty(list_Type) || !TextUtils.isEmpty(carrier);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("561f5891", new Object[0])).booleanValue() : !StringUtils.isEmpty(list_Type) || !StringUtils.isEmpty(carrier);
     }
 }

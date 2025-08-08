@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.ext.event.util.h;
 import com.alibaba.android.ultron.vfw.instance.b;
@@ -148,7 +148,7 @@ public class bkz implements blb {
                     com.taobao.android.ultron.common.model.b bVar2 = list.get(i);
                     if (bVar2 != null) {
                         String type = bVar2.getType();
-                        if (!TextUtils.isEmpty(type)) {
+                        if (!StringUtils.isEmpty(type)) {
                             e a2 = this.f25957a.d().a().a(type);
                             a2.a(iDMComponent);
                             a2.e("pageback");

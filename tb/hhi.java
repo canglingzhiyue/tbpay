@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class hhi extends iot {
             hiq.a(cVar, liveItem);
             if (liveItem.itemActionData != null && liveItem.itemActionData.containsKey("userBehaviorEvents")) {
                 String string = liveItem.itemActionData.getString("userBehaviorEvents");
-                if (!TextUtils.isEmpty(string) && hhf.a(string, '@', "userbuy")) {
+                if (!StringUtils.isEmpty(string) && hhf.a(string, '@', "userbuy")) {
                     new sql().a(cVar, liveItem, new pox<Boolean>() { // from class: tb.hhi.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -146,7 +146,7 @@ public class hhi extends iot {
         a(cVar, liveItem, str2, string);
         if (a.a().f(cVar) && a.a().i() != null) {
             a.a().i().a(cVar == null ? null : cVar.C(), (Activity) context, liveItem, "detail", hashMap);
-        } else if (!a.a().f(cVar) && !TextUtils.isEmpty(str2) && "shopVipEntrance".equals(str2)) {
+        } else if (!a.a().f(cVar) && !StringUtils.isEmpty(str2) && "shopVipEntrance".equals(str2)) {
             a.a().a(cVar, false);
             ddw.a().a("com.taobao.taolive.room.hide_goods_list.out", null, c.a(cVar));
             ddw.a().a("com.taobao.taolive.hide.member.identification.inner", null, c.a(cVar));
@@ -174,7 +174,7 @@ public class hhi extends iot {
                         return;
                     }
                     com.taobao.alilive.aliliveframework.frame.a aVar = null;
-                    if (mo1437getData != null && !TextUtils.isEmpty(mo1437getData.shopMember) && "false".equalsIgnoreCase(mo1437getData.shopMember)) {
+                    if (mo1437getData != null && !StringUtils.isEmpty(mo1437getData.shopMember) && "false".equalsIgnoreCase(mo1437getData.shopMember)) {
                         e i2 = a.a().i();
                         c cVar2 = cVar;
                         if (cVar2 != null) {

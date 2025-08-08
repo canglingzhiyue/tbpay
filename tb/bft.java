@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.internal.utils.UnifyLog;
 import com.alibaba.android.nextrpc.request.AttachedResponse;
 import com.alibaba.android.nextrpc.stream.internal.response.StreamRemoteMainResponse;
@@ -102,7 +102,7 @@ public class bft implements bfu {
             try {
                 try {
                     String obj = this.f25861a.get(bizName) == null ? "" : this.f25861a.get(bizName).toString();
-                    if (TextUtils.isEmpty(obj)) {
+                    if (StringUtils.isEmpty(obj)) {
                         if (!this.f25861a.isEmpty()) {
                             return;
                         }

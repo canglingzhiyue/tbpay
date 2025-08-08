@@ -6,7 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -306,7 +306,7 @@ public class y extends bca {
             return null;
         }
         String string = fields.getString("title");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         DataBizContext.CartGroupContext d = this.b.o().d();
@@ -325,7 +325,7 @@ public class y extends bca {
         JSONObject c = c();
         String c2 = c(str);
         String g = bei.g(this.h);
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             c.put("from", (Object) c2);
         }
         c.put("fromBundleId", (Object) g);
@@ -625,7 +625,7 @@ public class y extends bca {
                     if (i != 4) {
                         return false;
                     }
-                    if (TextUtils.isEmpty(textView.getText().toString().trim())) {
+                    if (StringUtils.isEmpty(textView.getText().toString().trim())) {
                         com.alibaba.android.icart.core.widget.d.a(y.a.this.getContext(), y.l());
                         bed.a(y.l());
                         return true;
@@ -693,7 +693,7 @@ public class y extends bca {
                 ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
             } else if (this.f2352a == null) {
             } else {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.f2352a.setText(str);
                     this.f2352a.setSelection(str.length());
                     return;

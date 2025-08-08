@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.newSettingV2.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.global.setting.c;
 import com.taobao.tao.Globals;
@@ -53,7 +53,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String str2 = f18391a.get(str);
-        return TextUtils.isEmpty(str2) ? str : str2;
+        return StringUtils.isEmpty(str2) ? str : str2;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -26,6 +26,6 @@ public class fft extends lhc {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String a2 = super.a();
-        return TextUtils.isEmpty(a2) ? "Page_TMGDynamic" : a2;
+        return StringUtils.isEmpty(a2) ? "Page_TMGDynamic" : a2;
     }
 }

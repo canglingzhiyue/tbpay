@@ -2,7 +2,7 @@ package com.taobao.message.lab.comfrm.inner2.event;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.message.kit.util.URLUtil;
@@ -74,7 +74,7 @@ public class NavEventHandler implements EventHandler, WeakDependence, UserIdenti
             for (int i = 0; i < 9; i++) {
                 hashMap.put(ValueUtil.getString(map, "argKey" + i), ValueUtil.getString(map, "argValue" + i));
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             Uri parse = Uri.parse(str);
@@ -84,9 +84,9 @@ public class NavEventHandler implements EventHandler, WeakDependence, UserIdenti
             }
             if (z && Arrays.asList("market.m.taobao.com", ONLINE_HOST_WEB).contains(parse.getHost())) {
                 builder = parse.buildUpon();
-                if (TextUtils.equals("market.m.taobao.com", parse.getHost())) {
+                if (StringUtils.equals("market.m.taobao.com", parse.getHost())) {
                     builder.authority("market.wapa.taobao.com");
-                } else if (TextUtils.equals(ONLINE_HOST_WEB, parse.getHost())) {
+                } else if (StringUtils.equals(ONLINE_HOST_WEB, parse.getHost())) {
                     builder.authority(PREPARE_HOST_WEB);
                 }
             }

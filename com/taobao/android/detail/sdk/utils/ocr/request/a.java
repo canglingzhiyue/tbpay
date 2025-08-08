@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.utils.ocr.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aw;
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class a {
                         sb.append(c0396a.b + "\n");
                     }
                     String sb2 = sb.toString();
-                    if (TextUtils.isEmpty(sb2) || TextUtils.isEmpty(sb2.replace(" ", ""))) {
+                    if (StringUtils.isEmpty(sb2) || StringUtils.isEmpty(sb2.replace(" ", ""))) {
                         sb2 = "无文字或识别失败了";
                     }
                     this.d.put(next, sb2);

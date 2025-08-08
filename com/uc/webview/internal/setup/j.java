@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.ErrorCode;
 import com.uc.webview.base.Log;
@@ -108,7 +108,7 @@ public class j extends IRunningCoreInfo {
                 return;
             }
             ErrorCode.INVALID_DECOMPRESSED_DIR.report();
-        } else if (!TextUtils.isEmpty(kVar.g)) {
+        } else if (!StringUtils.isEmpty(kVar.g)) {
             String str = kVar.g;
             Log.i("RCI", "configUpdateCore: ".concat(String.valueOf(str)));
             this.f = true;
@@ -135,7 +135,7 @@ public class j extends IRunningCoreInfo {
     }
 
     private static void a(StringBuilder sb, String str, String str2) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         sb.append("\n  ");
@@ -177,7 +177,7 @@ public class j extends IRunningCoreInfo {
             this.l = file;
             this.j = file2;
             a(this.j);
-            if (TextUtils.isEmpty(this.o)) {
+            if (StringUtils.isEmpty(this.o)) {
                 return;
             }
             com.uc.webview.base.io.d.b("upd", new File(this.j, PathUtils.b(this.o)));

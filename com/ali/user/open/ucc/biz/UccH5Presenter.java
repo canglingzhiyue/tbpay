@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.callback.CallbackManager;
 import com.ali.user.open.core.config.WebViewOption;
@@ -62,8 +62,8 @@ public class UccH5Presenter {
         }
         String str3 = "0";
         if (map != null) {
-            String str4 = TextUtils.isEmpty(map.get("needSession")) ? str3 : map.get("needSession");
-            if (!TextUtils.isEmpty(map.get("needToast"))) {
+            String str4 = StringUtils.isEmpty(map.get("needSession")) ? str3 : map.get("needSession");
+            if (!StringUtils.isEmpty(map.get("needToast"))) {
                 str3 = map.get("needToast");
             }
             uccParams.targetPackageName = map.get(ParamsConstants.Key.PARAM_TARGET_PACKAGE_NAME);
@@ -73,12 +73,12 @@ public class UccH5Presenter {
             str = str3;
             str2 = str;
         }
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams.site = map.get("site");
         } else {
             uccParams.site = AliMemberSDK.getMasterSite();
         }
-        if (map != null && !TextUtils.isEmpty(map.get("scene"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("scene"))) {
             uccParams.scene = map.get("scene");
         }
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_GetLocalSiteUrl", uccParams, null);
@@ -97,7 +97,7 @@ public class UccH5Presenter {
                 }
                 UccH5Presenter.access$000(context);
                 FetchBindPageUrlResult fetchBindPageUrlResult = (FetchBindPageUrlResult) rpcResponse.returnValue;
-                if (fetchBindPageUrlResult != null && !TextUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
+                if (fetchBindPageUrlResult != null && !StringUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
                     rpcResultHit(rpcResponse.code + "", fetchBindPageUrlResult.h5Type);
                     HashMap hashMap = new HashMap();
                     hashMap.put(ParamsConstants.Key.PARAM_H5_TYPE, fetchBindPageUrlResult.h5Type);
@@ -113,7 +113,7 @@ public class UccH5Presenter {
                         bundle.putString(ParamsConstants.Key.PRAMA_TRANSPARENT_H5, (String) map.get(ParamsConstants.Key.PRAMA_TRANSPARENT_H5));
                     }
                     Map map2 = map;
-                    if (map2 != null && TextUtils.equals((CharSequence) map2.get(InputFrame3.CALLBACK_TYPE), "pageClose")) {
+                    if (map2 != null && StringUtils.equals((CharSequence) map2.get(InputFrame3.CALLBACK_TYPE), "pageClose")) {
                         UccH5Presenter.openUrl(context, bundle, uccCallback);
                         return;
                     }
@@ -186,8 +186,8 @@ public class UccH5Presenter {
         }
         String str3 = "0";
         if (map != null) {
-            String str4 = TextUtils.isEmpty(map.get("needSession")) ? str3 : map.get("needSession");
-            if (!TextUtils.isEmpty(map.get("needToast"))) {
+            String str4 = StringUtils.isEmpty(map.get("needSession")) ? str3 : map.get("needSession");
+            if (!StringUtils.isEmpty(map.get("needToast"))) {
                 str3 = map.get("needToast");
             }
             str2 = str3;
@@ -196,15 +196,15 @@ public class UccH5Presenter {
             str = str3;
             str2 = str;
         }
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams.site = map.get("site");
         } else {
             uccParams.site = AliMemberSDK.getMasterSite();
         }
-        if (map != null && !TextUtils.isEmpty(map.get("scene"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("scene"))) {
             uccParams.scene = map.get("scene");
         }
-        if (map != null && !TextUtils.isEmpty(map.get("mobile"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("mobile"))) {
             uccParams.maskMobile = map.get("mobile");
         }
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_GetLocalSiteUrl", uccParams, null);
@@ -223,7 +223,7 @@ public class UccH5Presenter {
                 }
                 UccH5Presenter.access$000(context);
                 FetchBindPageUrlResult fetchBindPageUrlResult = (FetchBindPageUrlResult) rpcResponse.returnValue;
-                if (fetchBindPageUrlResult != null && !TextUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
+                if (fetchBindPageUrlResult != null && !StringUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
                     rpcResultHit(rpcResponse.code + "", fetchBindPageUrlResult.h5Type);
                     HashMap hashMap = new HashMap();
                     hashMap.put(ParamsConstants.Key.PARAM_H5_TYPE, fetchBindPageUrlResult.h5Type);
@@ -318,8 +318,8 @@ public class UccH5Presenter {
         }
         String str3 = "0";
         if (map != null) {
-            str = TextUtils.isEmpty(map.get("needSession")) ? str3 : map.get("needSession");
-            if (!TextUtils.isEmpty(map.get("needToast"))) {
+            str = StringUtils.isEmpty(map.get("needSession")) ? str3 : map.get("needSession");
+            if (!StringUtils.isEmpty(map.get("needToast"))) {
                 str3 = map.get("needToast");
             }
             str2 = str3;
@@ -327,7 +327,7 @@ public class UccH5Presenter {
             str = str3;
             str2 = str;
         }
-        if (map != null && !TextUtils.isEmpty(map.get(UccConstants.PARAM_BIND_URL))) {
+        if (map != null && !StringUtils.isEmpty(map.get(UccConstants.PARAM_BIND_URL))) {
             HashMap hashMap = new HashMap();
             hashMap.put(ParamsConstants.Key.PARAM_H5_TYPE, map.get(ParamsConstants.Key.PARAM_H5_TYPE));
             UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_GoH5BindAction", uccParams, hashMap);
@@ -343,15 +343,15 @@ public class UccH5Presenter {
             openUrl(activity, bundle, uccCallback);
             return;
         }
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams.site = map.get("site");
         } else {
             uccParams.site = AliMemberSDK.getMasterSite();
         }
-        if (map != null && !TextUtils.isEmpty(map.get("scene"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("scene"))) {
             uccParams.scene = map.get("scene");
         }
-        uccParams.createBindSiteSession = TextUtils.equals("1", str);
+        uccParams.createBindSiteSession = StringUtils.equals("1", str);
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBind_GetLocalSiteUrl", uccParams, null);
         final String str4 = str;
         final String str5 = str2;
@@ -376,7 +376,7 @@ public class UccH5Presenter {
                         map.put(ParamsConstants.Key.PARAM_FORCE_NATIVE, "1");
                     }
                     UccServiceProviderFactory.getInstance().getUccServiceProvider(uccParams.bindSite).bind(activity, uccParams, oauthConfigByPlatform, map, uccCallback);
-                } else if (fetchBindPageUrlResult != null && !TextUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
+                } else if (fetchBindPageUrlResult != null && !StringUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
                     rpcResultHit(rpcResponse.code + "", fetchBindPageUrlResult.h5Type);
                     HashMap hashMap2 = new HashMap();
                     hashMap2.put(ParamsConstants.Key.PARAM_H5_TYPE, fetchBindPageUrlResult.h5Type);
@@ -537,8 +537,8 @@ public class UccH5Presenter {
         }
         String str4 = "0";
         if (map != null) {
-            String str5 = TextUtils.isEmpty(map.get("needSession")) ? str4 : map.get("needSession");
-            if (!TextUtils.isEmpty(map.get("needToast"))) {
+            String str5 = StringUtils.isEmpty(map.get("needSession")) ? str4 : map.get("needSession");
+            if (!StringUtils.isEmpty(map.get("needToast"))) {
                 str4 = map.get("needToast");
             }
             str3 = str4;
@@ -548,17 +548,17 @@ public class UccH5Presenter {
             str3 = str2;
         }
         UccParams uccParams2 = new UccParams();
-        if (map != null && !TextUtils.isEmpty(map.get("site"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("site"))) {
             uccParams2.site = map.get("site");
         } else {
             uccParams2.site = AliMemberSDK.getMasterSite();
         }
         uccParams2.bindSite = uccParams.bindSite;
         uccParams2.userToken = uccParams.userToken;
-        if (map != null && !TextUtils.isEmpty(map.get("scene"))) {
+        if (map != null && !StringUtils.isEmpty(map.get("scene"))) {
             uccParams2.scene = map.get("scene");
         }
-        uccParams2.createBindSiteSession = TextUtils.equals("1", str2);
+        uccParams2.createBindSiteSession = StringUtils.equals("1", str2);
         UTHitUtils.send(UTHitConstants.PageUccBind, "UccBindWithIbb_GetLocalSiteUrl", uccParams, null);
         DataRepository.fetchNewBindPageUrl(uccParams2, str, new RpcRequestCallbackWithCode() { // from class: com.ali.user.open.ucc.biz.UccH5Presenter.4
             public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -571,7 +571,7 @@ public class UccH5Presenter {
                     return;
                 }
                 FetchBindPageUrlResult fetchBindPageUrlResult = (FetchBindPageUrlResult) rpcResponse.returnValue;
-                if (fetchBindPageUrlResult != null && !TextUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
+                if (fetchBindPageUrlResult != null && !StringUtils.isEmpty(fetchBindPageUrlResult.returnUrl)) {
                     rpcResultHit(rpcResponse.code + "", fetchBindPageUrlResult.h5Type);
                     HashMap hashMap = new HashMap();
                     hashMap.put(ParamsConstants.Key.PARAM_H5_TYPE, fetchBindPageUrlResult.h5Type);

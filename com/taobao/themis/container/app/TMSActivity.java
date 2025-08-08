@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -227,7 +227,7 @@ public final class TMSActivity extends TMSBaseActivity implements c, g, ITBPubli
             return;
         }
         super.onDestroy();
-        if (n.Q() || TextUtils.isEmpty(e())) {
+        if (n.Q() || StringUtils.isEmpty(e())) {
             return;
         }
         com.taobao.android.linkback.f.a(Uri.parse(e()), this);
@@ -261,20 +261,20 @@ public final class TMSActivity extends TMSBaseActivity implements c, g, ITBPubli
             return;
         }
         String str2 = dataString;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             TMSLogger.d("TMSActivity 极简链路", "targetUrl is: " + dataString);
         } else {
             TMSLogger.d("TMSActivity 极简链路", "targetUrl is empty!");
         }
         if (n.K() && TMSSolutionType.WEB_SINGLE_PAGE == TMSSolutionType.getType(Uri.parse(dataString))) {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             com.taobao.themis.container.app.a d2 = d();
             if (d2 != null && (a4 = d2.a()) != null) {
                 str = a4.g();
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Uri parse = Uri.parse(str);
                 Uri targetUri = Uri.parse(dataString);
                 if (!m.a(this, targetUri)) {
@@ -297,7 +297,7 @@ public final class TMSActivity extends TMSBaseActivity implements c, g, ITBPubli
                             break;
                         }
                         String next = it.next();
-                        if (!b2.contains(next) && !TextUtils.equals(targetUri.getQueryParameter(next), parse.getQueryParameter(next))) {
+                        if (!b2.contains(next) && !StringUtils.equals(targetUri.getQueryParameter(next), parse.getQueryParameter(next))) {
                             break;
                         }
                     }
@@ -337,7 +337,7 @@ public final class TMSActivity extends TMSBaseActivity implements c, g, ITBPubli
             ipChange.ipc$dispatch("44908f9a", new Object[]{this});
             return;
         }
-        if (n.Q() && !this.b && !TextUtils.isEmpty(e())) {
+        if (n.Q() && !this.b && !StringUtils.isEmpty(e())) {
             com.taobao.android.linkback.f.a(Uri.parse(e()), this);
         }
         super.finish();

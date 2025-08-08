@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class pil {
         } else {
             String str3 = f32687a;
             spz.a(str3, "【onSubTaskBegin】context: " + context + ", name: " + str2);
-            if (TextUtils.equals(str2, pio.GG_VIDEOTAB_VIDEO_PLAY)) {
+            if (StringUtils.equals(str2, pio.GG_VIDEOTAB_VIDEO_PLAY)) {
                 b = System.currentTimeMillis();
             }
             if (context instanceof Activity) {
@@ -65,7 +65,7 @@ public class pil {
                 String str3 = f32687a;
                 spz.a(str3, "【onSubTaskSuccess】context: " + context + ", name: " + str2 + ", subProperties: " + JSON.toJSONString(hashMap));
             }
-            if (TextUtils.equals(str2, pio.GG_VIDEOTAB_VIDEO_PLAY)) {
+            if (StringUtils.equals(str2, pio.GG_VIDEOTAB_VIDEO_PLAY)) {
                 c = System.currentTimeMillis();
             }
             if (context instanceof Activity) {

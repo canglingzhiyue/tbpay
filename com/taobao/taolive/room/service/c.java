@@ -2,7 +2,7 @@ package com.taobao.taolive.room.service;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -781,7 +781,7 @@ public class c {
         } catch (Exception e2) {
             q.b(aF, "getOtherInteractiveParams catch exception:" + e2.getMessage());
         }
-        if (TextUtils.isEmpty(m)) {
+        if (StringUtils.isEmpty(m)) {
             return hashMap;
         }
         Uri parse = Uri.parse(m);

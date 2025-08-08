@@ -23,7 +23,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
@@ -468,7 +468,7 @@ public class UmiWvPlugin extends e {
         if (CLOSE_WEEX_ACTION.equals(str)) {
             return closeWeex();
         }
-        if (TextUtils.isEmpty(str2) || (parseObject = JSONObject.parseObject(str2)) == null) {
+        if (StringUtils.isEmpty(str2) || (parseObject = JSONObject.parseObject(str2)) == null) {
             notifyError("参数为空");
             return true;
         }
@@ -717,7 +717,7 @@ public class UmiWvPlugin extends e {
                                 }
                                 super.a(str5, str6);
                                 u.d(UmiWvPlugin.TAG, "onFailed: " + str5 + str6);
-                                if (TextUtils.equals(str5, "-2")) {
+                                if (StringUtils.equals(str5, "-2")) {
                                     UmiPublishMonitor.a().a(str4, "preview_cancel_by_user", parseObject);
                                 } else {
                                     UmiPublishMonitor.a().a(str4, str5, str6, "quick_preview_error", parseObject.toJSONString());
@@ -726,16 +726,16 @@ public class UmiWvPlugin extends e {
                         });
                         quickPreviewAbility.execute(parseObject);
                         return true;
-                    } else if (TextUtils.equals(str, OPEN_NEW_WINDOW_ACTION)) {
+                    } else if (StringUtils.equals(str, OPEN_NEW_WINDOW_ACTION)) {
                         openNewWebWindow(this.mContext, parseObject);
                         return true;
-                    } else if (TextUtils.equals(str, IMAGE_CUTOUT_STROKE)) {
+                    } else if (StringUtils.equals(str, IMAGE_CUTOUT_STROKE)) {
                         ImageStokeAbility imageStokeAbility = new ImageStokeAbility();
                         imageStokeAbility.setContext(getContext());
                         imageStokeAbility.setListener(new WVListener(this.mWVCallBackContext));
                         imageStokeAbility.execute(parseObject);
                         return true;
-                    } else if (TextUtils.equals(str, "shareContentToGG")) {
+                    } else if (StringUtils.equals(str, "shareContentToGG")) {
                         Context a3 = acg.a();
                         if (a3 == null) {
                             a3 = this.mContext;
@@ -762,7 +762,7 @@ public class UmiWvPlugin extends e {
                             }
                         });
                         return true;
-                    } else if (!TextUtils.equals(str, OPEN_SIMPLE_RECORD)) {
+                    } else if (!StringUtils.equals(str, OPEN_SIMPLE_RECORD)) {
                         return false;
                     } else {
                         openSimpleRecord(parseObject, wVCallBackContext);
@@ -786,7 +786,7 @@ public class UmiWvPlugin extends e {
             wVCallBackContext.error(reh.a("-1", "noSuchTab"));
         } else {
             String string = jSONObject.getString("targetTab");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error(reh.a("-1", "noSuchTab"));
             } else {
                 ((ILCTabSwitcher) b.a(ILCTabSwitcher.class, new Object[0])).switchTargetTab(this.mContext, string, new ILCTabSwitcher.OnSwitchResult() { // from class: com.taobao.umipublish.extension.windvane.UmiWvPlugin.7
@@ -817,7 +817,7 @@ public class UmiWvPlugin extends e {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x003d, code lost:
-        if (android.text.TextUtils.isEmpty(r5) == false) goto L15;
+        if (android.text.StringUtils.isEmpty(r5) == false) goto L15;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -855,7 +855,7 @@ public class UmiWvPlugin extends e {
             if (r0 <= 0) goto L40
             java.lang.String r0 = "targetTab"
             java.lang.String r5 = r5.getString(r0)
-            boolean r0 = android.text.TextUtils.isEmpty(r5)
+            boolean r0 = android.text.StringUtils.isEmpty(r5)
             if (r0 != 0) goto L40
             goto L42
         L40:
@@ -908,11 +908,11 @@ public class UmiWvPlugin extends e {
         } else {
             final String string = jSONObject.getString("url");
             String string2 = jSONObject.getString("type");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 string2 = "base64";
             }
             u.d(TAG, "saveImage: type=" + string2);
-            if (!TextUtils.equals(string2, "base64")) {
+            if (!StringUtils.equals(string2, "base64")) {
                 notifyError(wVCallBackContext, com.alibaba.ability.localization.b.a(R.string.gg_pub_format_not_supported));
                 return;
             }
@@ -940,7 +940,7 @@ public class UmiWvPlugin extends e {
                         return;
                     }
                     r rVar = new r();
-                    if (TextUtils.isEmpty(strArr[0])) {
+                    if (StringUtils.isEmpty(strArr[0])) {
                         UmiWvPlugin.access$1100(UmiWvPlugin.this, wVCallBackContext, com.alibaba.ability.localization.b.a(R.string.gg_pub_save_photo_failed_retry));
                         return;
                     }
@@ -1047,7 +1047,7 @@ public class UmiWvPlugin extends e {
             return;
         }
         final String string = jSONObject.getString("url");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             if (m.a(jSONObject, "popBeforeOpen", false) && (context instanceof Activity)) {
                 ((Activity) context).finish();
             }
@@ -1080,7 +1080,7 @@ public class UmiWvPlugin extends e {
             int intValue = jSONObject.getInteger("width").intValue();
             int intValue2 = jSONObject.getInteger("height").intValue();
             String string2 = jSONObject.getString("mode");
-            if (!TextUtils.isEmpty(string) && intValue != 0 && intValue2 != 0) {
+            if (!StringUtils.isEmpty(string) && intValue != 0 && intValue2 != 0) {
                 if (!k.e(string)) {
                     rVar.a("errorCode", "1001");
                     this.mWVCallBackContext.error(rVar);
@@ -1144,7 +1144,7 @@ public class UmiWvPlugin extends e {
                     if (parseObject == null) {
                         hfj.a(context, com.alibaba.ability.localization.b.a(R.string.gg_pub_opening_failed_try_later));
                         rdzVar.a(null);
-                    } else if (!TextUtils.equals(parseObject.getString("status"), "0") && !TextUtils.isEmpty(parseObject.getString("actionUrl"))) {
+                    } else if (!StringUtils.equals(parseObject.getString("status"), "0") && !StringUtils.isEmpty(parseObject.getString("actionUrl"))) {
                         Nav.from(context).toUri(parseObject.getString("actionUrl"));
                         rdzVar.a(null);
                     } else {
@@ -1282,7 +1282,7 @@ public class UmiWvPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("2ae334c2", new Object[]{this, jSONObject})).booleanValue();
         }
         String string = jSONObject.getString("weexUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             notifyError("weex页面链接无效");
             return false;
         }
@@ -1346,7 +1346,7 @@ public class UmiWvPlugin extends e {
 
     private static boolean isTopActivityEntry(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b0624f8d", new Object[]{context})).booleanValue() : TextUtils.equals(getTopActivityName(context), ENTRY_CLASS_NAME);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b0624f8d", new Object[]{context})).booleanValue() : StringUtils.equals(getTopActivityName(context), ENTRY_CLASS_NAME);
     }
 
     private boolean openRecord(final JSONObject jSONObject) {
@@ -1491,7 +1491,7 @@ public class UmiWvPlugin extends e {
                     icc.a(intent, rVar);
                     UmiWvPlugin.access$1500(UmiWvPlugin.this, intent, rVar);
                     UmiWvPlugin.access$400(UmiWvPlugin.this).success(rVar);
-                } else if (!TextUtils.equals("x_ask_everyone", str)) {
+                } else if (!StringUtils.equals("x_ask_everyone", str)) {
                     UmiWvPlugin.access$1600(UmiWvPlugin.this, com.alibaba.ability.localization.b.a(R.string.gg_pub_error_occurred_retry));
                 }
                 LocalBroadcastManager.getInstance(UmiWvPlugin.access$1700(UmiWvPlugin.this)).unregisterReceiver(this);
@@ -1645,7 +1645,7 @@ public class UmiWvPlugin extends e {
         UGCMedia uGCMedia = new UGCMedia();
         for (int i = 0; i < jSONArray.size(); i++) {
             String string = jSONArray.getString(i);
-            if (!TextUtils.isEmpty(string) && (createUGCImage = createUGCImage(string)) != null) {
+            if (!StringUtils.isEmpty(string) && (createUGCImage = createUGCImage(string)) != null) {
                 uGCMedia.appendImage(createUGCImage);
             }
         }
@@ -1655,7 +1655,7 @@ public class UmiWvPlugin extends e {
         }
         Uri.Builder buildUpon = Uri.parse(NEW_PUBLISH_PATH).buildUpon();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey())) {
+            if (!StringUtils.isEmpty(entry.getKey())) {
                 buildUpon.appendQueryParameter(entry.getKey(), entry.getValue().toString());
             }
         }
@@ -1858,8 +1858,8 @@ public class UmiWvPlugin extends e {
             try {
                 org.json.JSONArray jSONArray = new org.json.JSONArray();
                 for (DraftModel draftModel : collection) {
-                    if (!TextUtils.equals(com.taobao.umipublish.ayscpublish.c.a().f23232a, draftModel.draftId) && (draftModel.meta == null || !TextUtils.equals(draftModel.meta.mode, "lite") || tek.k())) {
-                        if (draftModel.meta == null || !TextUtils.equals(draftModel.meta.mode, "quick") || s.u()) {
+                    if (!StringUtils.equals(com.taobao.umipublish.ayscpublish.c.a().f23232a, draftModel.draftId) && (draftModel.meta == null || !StringUtils.equals(draftModel.meta.mode, "lite") || tek.k())) {
+                        if (draftModel.meta == null || !StringUtils.equals(draftModel.meta.mode, "quick") || s.u()) {
                             org.json.JSONObject jSONObject2 = new org.json.JSONObject(JSON.toJSONString(draftModel.meta));
                             jSONObject2.put("biz", draftModel.biz);
                             jSONObject2.put("draftId", draftModel.draftId);
@@ -1980,9 +1980,9 @@ public class UmiWvPlugin extends e {
                                     return;
                                 }
                                 String str3 = a2.meta != null ? a2.meta.mode : "";
-                                if (TextUtils.equals(str3, "lite")) {
+                                if (StringUtils.equals(str3, "lite")) {
                                     UmiWvPlugin.access$2900(UmiWvPlugin.this, a2, runnable, runnable2);
-                                } else if (TextUtils.equals(str3, "quick")) {
+                                } else if (StringUtils.equals(str3, "quick")) {
                                     UmiWvPlugin.access$3000(UmiWvPlugin.this, a2, runnable, runnable2);
                                 } else {
                                     UmiWvPlugin.access$3100(UmiWvPlugin.this, a2);
@@ -2088,7 +2088,7 @@ public class UmiWvPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3a55719", new Object[]{this, draftModel, runnable, runnable2});
-        } else if (draftModel == null || draftModel.urlParams == null || TextUtils.isEmpty(draftModel.rawJson)) {
+        } else if (draftModel == null || draftModel.urlParams == null || StringUtils.isEmpty(draftModel.rawJson)) {
             runnable2.run();
         } else {
             Uri a2 = ax.a(VIDEO_EDIT_PATH, draftModel.urlParams);
@@ -2183,7 +2183,7 @@ public class UmiWvPlugin extends e {
             return;
         }
         String stringExtra = intent.getStringExtra("UGCMediaData");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             wVCallBackContext.error();
             u.d(TAG, "handleAskEveryoneData fail, UGCMediaData is empty");
             return;

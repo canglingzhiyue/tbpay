@@ -1,6 +1,6 @@
 package com.alipay.vi.android.phone.mrpc.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.alipay.vi.mobile.common.rpc.RpcException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -42,7 +42,7 @@ public class HttpCaller extends AbstractRpcCaller {
         httpUrlRequest.addHeader(new BasicHeader("uuid", UUID.randomUUID().toString()));
         if (this.mRpcHeaders != null && this.mRpcHeaders.size() > 0) {
             for (String str : this.mRpcHeaders.keySet()) {
-                if (TextUtils.equals(str, HeaderConstant.HEADER_KEY_APPID)) {
+                if (StringUtils.equals(str, HeaderConstant.HEADER_KEY_APPID)) {
                     z = true;
                 }
                 httpUrlRequest.addHeader(new BasicHeader(str, this.mRpcHeaders.get(str)));
@@ -51,7 +51,7 @@ public class HttpCaller extends AbstractRpcCaller {
         List<Header> headers = this.f6198a.getRpcParams().getHeaders();
         if (headers != null && !headers.isEmpty()) {
             for (Header header : headers) {
-                if (!TextUtils.equals(header.getName(), HeaderConstant.HEADER_KEY_APPID) || !z) {
+                if (!StringUtils.equals(header.getName(), HeaderConstant.HEADER_KEY_APPID) || !z) {
                     httpUrlRequest.addHeader(header);
                 }
             }

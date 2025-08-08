@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.View;
@@ -293,7 +293,7 @@ public class TaoDetailActionBar extends RelativeLayout implements ehv {
         addView(this.mNavHeadBar, layoutParams);
         this.showWwRunnable = new a(this);
         String config = OrangeConfig.getInstance().getConfig("android_detail", "ww_guide_remain_time", "3000");
-        this.remainTime = TextUtils.isEmpty(config) ? 3000L : Long.valueOf(config).longValue();
+        this.remainTime = StringUtils.isEmpty(config) ? 3000L : Long.valueOf(config).longValue();
     }
 
     public void initialize() {
@@ -406,7 +406,7 @@ public class TaoDetailActionBar extends RelativeLayout implements ehv {
             return;
         }
         String appID = MiniAppEntranceView.getAppID(fpz.c(getContext()).getIntent());
-        if (TextUtils.isEmpty(appID)) {
+        if (StringUtils.isEmpty(appID)) {
             return;
         }
         this.miniAppEntranceView = new MiniAppEntranceView(getContext());
@@ -812,7 +812,7 @@ public class TaoDetailActionBar extends RelativeLayout implements ehv {
         for (Event event : list) {
             if (eno.a(com.taobao.android.detail.core.event.basic.a.class) == event.getEventId() && (hashMap = (HashMap) event.getParam()) != null) {
                 String str = (String) hashMap.get("locatorId");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.locatorToTabIndexMap.put(str, Integer.valueOf(size));
                     this.clickableTabRefs.add(new Pair<>(textView, view));
                 }

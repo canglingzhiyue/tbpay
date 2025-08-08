@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.scroller;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
 import com.taobao.android.weex_framework.util.g;
@@ -107,7 +107,7 @@ public class a {
         if (c == 0) {
             return 2;
         }
-        if (c != 1 && !TextUtils.isEmpty(str) && g.a()) {
+        if (c != 1 && !StringUtils.isEmpty(str) && g.a()) {
             g.d("Scroller", "input scrollDirection is not valid: " + str);
         }
         return 1;

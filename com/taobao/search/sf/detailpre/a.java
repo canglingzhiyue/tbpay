@@ -1,7 +1,7 @@
 package com.taobao.search.sf.detailpre;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -321,7 +321,7 @@ public final class a {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("98d2a67f", new Object[]{this, muiseCellBean});
         }
-        if (TextUtils.isEmpty(muiseCellBean.ndPreviewUrl)) {
+        if (StringUtils.isEmpty(muiseCellBean.ndPreviewUrl)) {
             return null;
         }
         JSONObject jSONObject = new JSONObject();
@@ -346,7 +346,7 @@ public final class a {
             JSONObject jSONObject3 = ((MuiseCellBean) baseTypedBean).mMuiseBean.model;
             q.a((Object) jSONObject3, "cellBean.mMuiseBean.model");
             jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 obj2 = "title";
                 JSONObject jSONObject4 = jSONObject;
                 jSONObject4.put((JSONObject) Constants.KEY_SEARCH_KEYWORD, str);
@@ -381,7 +381,7 @@ public final class a {
                 return null;
             }
             jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 obj = "title";
                 JSONObject jSONObject6 = jSONObject;
                 jSONObject6.put((JSONObject) Constants.KEY_SEARCH_KEYWORD, str);
@@ -405,14 +405,14 @@ public final class a {
                 for (Map.Entry<String, String> entry : map.entrySet()) {
                     String key = entry.getKey();
                     String value = entry.getValue();
-                    if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                    if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                         jSONObject7.put((JSONObject) key, value);
                     }
                 }
             }
         } else if (baseTypedBean instanceof M3CellBean) {
             JSONObject jSONObject8 = new JSONObject();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject jSONObject9 = jSONObject8;
                 jSONObject9.put((JSONObject) Constants.KEY_SEARCH_KEYWORD, str);
                 jSONObject9.put((JSONObject) "list_param", str + "_" + baseTypedBean.abtest + "_" + baseTypedBean.rn);

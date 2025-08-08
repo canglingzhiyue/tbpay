@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -507,12 +507,12 @@ public class TrackerFrameLayout extends FrameLayout implements GestureDetector.O
                     if (tag instanceof Map) {
                         String str6 = (String) ((Map) tag).get("x-spm-c");
                         String str7 = (String) ((Map) tag).get("x-spm-d");
-                        if (!TextUtils.isEmpty(str6) && !TextUtils.isEmpty(str7)) {
+                        if (!StringUtils.isEmpty(str6) && !StringUtils.isEmpty(str7)) {
                             Object rootViewTag = getRootViewTag(view, c.ut_exposure_root_spm);
                             if (rootViewTag instanceof Map) {
                                 String str8 = (String) ((Map) rootViewTag).get("x-spm-a");
                                 String str9 = (String) ((Map) rootViewTag).get("x-spm-b");
-                                if (!TextUtils.isEmpty(str8) && !TextUtils.isEmpty(str9)) {
+                                if (!StringUtils.isEmpty(str8) && !StringUtils.isEmpty(str9)) {
                                     str4 = str8 + "." + str9 + "." + str6 + "." + str7;
                                 }
                             }
@@ -526,9 +526,9 @@ public class TrackerFrameLayout extends FrameLayout implements GestureDetector.O
                     if (tag2 instanceof Map) {
                         String str10 = (String) ((Map) tag2).get("x-spm-c");
                         String str11 = (String) ((Map) tag2).get("x-spm-d");
-                        if (!TextUtils.isEmpty(str10) && !TextUtils.isEmpty(str11)) {
+                        if (!StringUtils.isEmpty(str10) && !StringUtils.isEmpty(str11)) {
                             String str12 = ((ExposureEntity) arrayList.get(0)).spm;
-                            if (!TextUtils.isEmpty(str12)) {
+                            if (!StringUtils.isEmpty(str12)) {
                                 strArr = str12.split("\\.");
                             }
                             if (strArr != null && strArr.length == 4) {
@@ -761,7 +761,7 @@ public class TrackerFrameLayout extends FrameLayout implements GestureDetector.O
             return;
         }
         com.ut.mini.exposure.a.a(TAG, "[refreshExposureData]block", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         mHasExposureSet.remove(str);
@@ -772,7 +772,7 @@ public class TrackerFrameLayout extends FrameLayout implements GestureDetector.O
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f455a0de", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (hashSet = mHasExposureSet.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (hashSet = mHasExposureSet.get(str)) == null) {
         } else {
             hashSet.remove(str2);
         }

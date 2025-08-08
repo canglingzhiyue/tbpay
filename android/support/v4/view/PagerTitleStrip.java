@@ -6,7 +6,7 @@ import android.database.DataSetObserver;
 import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.TextViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.SingleLineTransformationMethod;
 import android.util.AttributeSet;
 import android.view.View;
@@ -150,9 +150,9 @@ public class PagerTitleStrip extends ViewGroup {
         obtainStyledAttributes.recycle();
         this.mTextColor = this.mCurrText.getTextColors().getDefaultColor();
         setNonPrimaryAlpha(0.6f);
-        this.mPrevText.setEllipsize(TextUtils.TruncateAt.END);
-        this.mCurrText.setEllipsize(TextUtils.TruncateAt.END);
-        this.mNextText.setEllipsize(TextUtils.TruncateAt.END);
+        this.mPrevText.setEllipsize(StringUtils.TruncateAt.END);
+        this.mCurrText.setEllipsize(StringUtils.TruncateAt.END);
+        this.mNextText.setEllipsize(StringUtils.TruncateAt.END);
         if (resourceId != 0) {
             TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(resourceId, TEXT_ATTRS);
             z = obtainStyledAttributes2.getBoolean(0, false);

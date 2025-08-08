@@ -16,7 +16,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -270,7 +270,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (intent == null || !TextUtils.equals("com.alipay.android.app.pay.ACTION_PAY_SUCCESS", intent.getAction()) || context == null) {
+            } else if (intent == null || !StringUtils.equals("com.alipay.android.app.pay.ACTION_PAY_SUCCESS", intent.getAction()) || context == null) {
                 bxb.a(bxb.a.b(OrderBizCode.orderList, "payResultOfList").a(1.0f).a("支付失败").a(false));
             } else {
                 TBOrderListFragment.access$100(TBOrderListFragment.this);
@@ -1107,7 +1107,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             this.mViewModel.a(str);
         }
         this.mViewModel.h().l().put("tabCode", this.mViewModel.j());
-        this.currentRefreshLayout.enablePullRefresh(!TextUtils.equals(this.mViewModel.j(), TabType.REFUND.getValue()));
+        this.currentRefreshLayout.enablePullRefresh(!StringUtils.equals(this.mViewModel.j(), TabType.REFUND.getValue()));
         enableOrDisableOrderListScrollable();
         if (TabType.REFUND.getValue().equals(str) && a2) {
             hzc e = this.mOrderCoreEngine.e();
@@ -1122,7 +1122,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                 return;
             }
             TBRefundInstanceManager.startPreRequestOnIdle();
-            if (!TextUtils.isEmpty(this.mOrderConfigs.i())) {
+            if (!StringUtils.isEmpty(this.mOrderConfigs.i())) {
                 str2 = this.mOrderConfigs.i();
             }
             FrameLayout frameLayout = new FrameLayout(getActivity());
@@ -1273,7 +1273,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             resetRequestConfig();
             this.mOrderCoreEngine.b();
             this.requestStartTime = System.currentTimeMillis();
-            if (!TextUtils.isEmpty(this.mViewModel.m()) && presetResponse.get(this.mViewModel.m()) != null) {
+            if (!StringUtils.isEmpty(this.mViewModel.m()) && presetResponse.get(this.mViewModel.m()) != null) {
                 this.mOrderCoreEngine.a(presetResponse.get(this.mViewModel.m()), this);
                 presetResponse.remove(this.mViewModel.m());
                 this.mViewModel.b((String) null);
@@ -1338,7 +1338,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
         if (this.mViewModel.q() != null) {
             this.mViewModel.q().remove(CoreConstants.KEY_PAGE_CONTEXT);
             String a2 = com.taobao.android.purchase.aura.helper.a.a(this.mFragmentActivity, false);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.mViewModel.q().put("installApp", (Object) a2);
             }
             updateFoldedParam(this.mViewModel.q());
@@ -1481,7 +1481,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             }
             String optString = optJSONObject2.optString(jjj.SPM_A);
             String optString2 = optJSONObject2.optString(jjj.SPM_B);
-            if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString2)) {
+            if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString2)) {
                 updatePageSpmCnt(String.format("%s.%s.0.0", optString, optString2));
                 return true;
             }
@@ -1496,7 +1496,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("22323282", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 UTTracker defaultTracker = UTAnalytics.getInstance().getDefaultTracker();
@@ -1521,24 +1521,24 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             HashMap hashMap = new HashMap();
             hashMap.put("searchKey", this.mViewModel.g());
             String optString = jSONObject.optString(CoreConstants.IN_PARAM_ORDER_SEARCH_ID);
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 return;
             }
             this.mOrderConfigs.b(optString);
             hashMap.put(CoreConstants.IN_PARAM_ORDER_SEARCH_ID, optString);
             hashMap.put("isSearchResult", "true");
-            hashMap.put("recommend", TextUtils.equals(this.mViewModel.z(), this.mViewModel.g()) ? "1" : "0");
+            hashMap.put("recommend", StringUtils.equals(this.mViewModel.z(), this.mViewModel.g()) ? "1" : "0");
             String b = com.taobao.android.order.bundle.helper.g.b(this.mInIntent, "utLogMap");
             String b2 = com.taobao.android.order.bundle.helper.g.b(this.mInIntent, "utArgs");
             String b3 = com.taobao.android.order.bundle.helper.g.b(this.mInIntent, "utParam");
             try {
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     hashMap.put("utLogMap", URLEncoder.encode(b, "UTF-8"));
                 }
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     hashMap.put("utArgs", URLEncoder.encode(b2, "UTF-8"));
                 }
-                if (!TextUtils.isEmpty(b3)) {
+                if (!StringUtils.isEmpty(b3)) {
                     hashMap.put("utParam", URLEncoder.encode(b3, "UTF-8"));
                 }
             } catch (Throwable unused) {
@@ -1571,7 +1571,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                     updateSearchPageProperties(optJSONObject2);
                 }
                 String str = "false";
-                if (TextUtils.isEmpty(this.mViewModel.C())) {
+                if (StringUtils.isEmpty(this.mViewModel.C())) {
                     if ("true".equals(optJSONObject.optString("isBought4"))) {
                         this.mViewModel.d("true");
                         this.mViewModel.h().l().put("forceBoughtlist4", "true");
@@ -1591,20 +1591,20 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                 }
                 org.json.JSONObject optJSONObject3 = optJSONObject.optJSONObject("tocDegradeInfo");
                 if (optJSONObject3 != null) {
-                    this.batchODetailDegrade = TextUtils.equals("true", optJSONObject3.optString("isCloseTradeItemDetailTimeout"));
+                    this.batchODetailDegrade = StringUtils.equals("true", optJSONObject3.optString("isCloseTradeItemDetailTimeout"));
                 }
                 if (orderRecyclerView != null) {
                     orderRecyclerView.resetScroll();
                 }
                 if (optJSONObject.optJSONObject("routeControl") != null) {
                     String optString = optJSONObject.optJSONObject("routeControl").optString("taoTmRoute");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         JSONObject parseObject = JSONObject.parseObject(this.mViewModel.h().l().get("condition"));
                         parseObject.put("taoTmRoute", (Object) optString);
                         this.mViewModel.h().l().put("condition", parseObject.toJSONString());
                     }
                 }
-                if (TextUtils.isEmpty(this.mViewModel.C())) {
+                if (StringUtils.isEmpty(this.mViewModel.C())) {
                     if ("true".equals(optJSONObject.optString("isBought4"))) {
                         str = "true";
                     }
@@ -1643,7 +1643,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             JSONObject jSONObject2 = jSONObject.getJSONObject("data");
             JSONObject jSONObject3 = jSONObject.getJSONObject("global");
             if (jSONObject2 != null && jSONObject3 != null) {
-                if (TextUtils.equals("true", OrangeConfig.getInstance().getConfig("babelorder", "orderDetailFilterEnablePreRender", "true"))) {
+                if (StringUtils.equals("true", OrangeConfig.getInstance().getConfig("babelorder", "orderDetailFilterEnablePreRender", "true"))) {
                     this.mViewModel.a(this.mFragmentActivity, jSONObject, this.mViewModel.c(orderRecyclerView));
                 }
                 if (jSONObject3.getJSONObject("pageControl") != null) {
@@ -1698,10 +1698,10 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                     orderRecyclerView.removeAllEndViews();
                 }
                 JSONObject jSONObject = new JSONObject();
-                if (!TextUtils.isEmpty(this.mViewModel.z()) && TextUtils.equals(this.mViewModel.z(), this.mViewModel.g())) {
+                if (!StringUtils.isEmpty(this.mViewModel.z()) && StringUtils.equals(this.mViewModel.z(), this.mViewModel.g())) {
                     jSONObject.put(com.taobao.android.order.bundle.helper.rec.c.PARAM_REC_QUERY, (Object) this.mViewModel.z());
                     jSONObject.put("channelSrp", (Object) "gouhou_searchfg");
-                } else if (!TextUtils.isEmpty(this.mViewModel.g())) {
+                } else if (!StringUtils.isEmpty(this.mViewModel.g())) {
                     jSONObject.put(com.taobao.android.order.bundle.helper.rec.c.PARAM_REC_QUERY, (Object) this.mViewModel.g());
                 }
                 this.recommendHelper = new OrderRecommendWrapper(orderRecyclerView, this.mFragmentActivity, this.mViewModel.B() ? OrderRecommendWrapper.RecType.MAIN_SEARCH : OrderRecommendWrapper.RecType.GUESS, jSONObject);
@@ -1785,7 +1785,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             JSONArray optJSONArray = optJSONObject.optJSONArray("boughtlist");
             int i = 0;
             for (int i2 = 0; i2 < optJSONArray.length(); i2++) {
-                if (!TextUtils.isEmpty(optJSONArray.optString(i2)) && optJSONArray.optString(i2).startsWith("MainGroup")) {
+                if (!StringUtils.isEmpty(optJSONArray.optString(i2)) && optJSONArray.optString(i2).startsWith("MainGroup")) {
                     i++;
                 }
             }
@@ -1861,7 +1861,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
         if (getArguments() != null) {
             z = getArguments().getBoolean(KEY_NEED_HIDE_BACK_BTN);
         }
-        if (TextUtils.isEmpty(this.mViewModel.g())) {
+        if (StringUtils.isEmpty(this.mViewModel.g())) {
             this.mViewModel.a(hyj.a(z));
         } else {
             this.mViewModel.a(hyj.b(z));
@@ -1903,7 +1903,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             hyq.a(fragmentActivity2, TAG, "OrderList", str + "-" + this.mViewModel.j(), this.mViewModel.j(), mtopResponse);
             str2 = str;
         }
-        if (TextUtils.isEmpty(com.taobao.android.order.bundle.helper.g.c(this.mInIntent))) {
+        if (StringUtils.isEmpty(com.taobao.android.order.bundle.helper.g.c(this.mInIntent))) {
             d.a(this.mFragmentActivity, this.mViewModel.j(), str2);
         } else {
             d.b(this.mFragmentActivity, this.mViewModel.g(), str2);
@@ -2061,9 +2061,9 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                 bundle.putString("tabCode", this.mViewModel.j());
                 JSONObject jSONObject4 = (JSONObject) obj;
                 String string = jSONObject4.getString("url");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     Object obj2 = jSONObject4.get("queryParams");
-                    if (!TextUtils.isEmpty(str) && (obj2 instanceof JSONObject)) {
+                    if (!StringUtils.isEmpty(str) && (obj2 instanceof JSONObject)) {
                         JSONObject jSONObject5 = (JSONObject) obj2;
                         jSONObject5.put(CoreConstants.PRESETRES_KEY, (Object) str);
                         for (String str2 : jSONObject5.keySet()) {
@@ -2197,7 +2197,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
         long longExtra2 = this.mInIntent.getLongExtra("NAV_TO_URL_START_UPTIME", 0L);
         long longExtra3 = this.mInIntent.getLongExtra("NAV_START_ACTIVITY_TIME", 0L);
         this.mDetailClickTime = com.taobao.android.order.bundle.helper.g.b(this.mInIntent, CoreConstants.IN_PARAMS_DETAILCLICK);
-        boolean z = !TextUtils.isEmpty(this.mDetailClickTime);
+        boolean z = !StringUtils.isEmpty(this.mDetailClickTime);
         long parseLong = z ? Long.parseLong(this.mDetailClickTime) : 0L;
         if (parseLong <= 0) {
             j = currentTimeMillis;
@@ -2273,7 +2273,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
         if (orderConfigs == null || (d = orderConfigs.d()) == null) {
             return;
         }
-        if (TextUtils.equals(this.mViewModel.j(), "reFund")) {
+        if (StringUtils.equals(this.mViewModel.j(), "reFund")) {
             d.a(this.currentContainView, false);
         } else {
             d.a(this.currentContainView, true);
@@ -2429,7 +2429,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             for (IDMComponent iDMComponent : b) {
                 if (arrayList.size() >= n) {
                     break;
-                } else if (iDMComponent != null && TextUtils.equals(iDMComponent.getTag(), "item")) {
+                } else if (iDMComponent != null && StringUtils.equals(iDMComponent.getTag(), "item")) {
                     arrayList.add(iDMComponent);
                 }
             }
@@ -2516,11 +2516,11 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                 Map<String, String> pageAllProperties = UTAnalytics.getInstance().getDefaultTracker().getPageAllProperties(TBOrderListFragment.this.getActivity());
                 if (pageAllProperties != null && !pageAllProperties.isEmpty()) {
                     String str = "";
-                    this.b = TextUtils.isEmpty(pageAllProperties.get("spm-cnt")) ? str : pageAllProperties.get("spm-cnt");
-                    this.c = TextUtils.isEmpty(pageAllProperties.get("spm-url")) ? str : pageAllProperties.get("spm-url");
-                    this.d = TextUtils.isEmpty(pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE)) ? str : pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE);
-                    this.e = TextUtils.isEmpty(pageAllProperties.get(ag.KEY_UTPARAM_URL)) ? str : pageAllProperties.get(ag.KEY_UTPARAM_URL);
-                    if (!TextUtils.isEmpty(pageAllProperties.get("utparam-pre"))) {
+                    this.b = StringUtils.isEmpty(pageAllProperties.get("spm-cnt")) ? str : pageAllProperties.get("spm-cnt");
+                    this.c = StringUtils.isEmpty(pageAllProperties.get("spm-url")) ? str : pageAllProperties.get("spm-url");
+                    this.d = StringUtils.isEmpty(pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE)) ? str : pageAllProperties.get(bip.KEY_UMBRELLA_SPM_PRE);
+                    this.e = StringUtils.isEmpty(pageAllProperties.get(ag.KEY_UTPARAM_URL)) ? str : pageAllProperties.get(ag.KEY_UTPARAM_URL);
+                    if (!StringUtils.isEmpty(pageAllProperties.get("utparam-pre"))) {
                         str = pageAllProperties.get("utparam-pre");
                     }
                     this.f = str;
@@ -2587,7 +2587,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             L4d:
                 r6.mSpmCnt = r7     // Catch: java.lang.Throwable -> L83
                 java.lang.String r7 = r5.b     // Catch: java.lang.Throwable -> L83
-                boolean r7 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L83
+                boolean r7 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L83
                 if (r7 != 0) goto L61
                 com.taobao.android.order.bundle.base.parallelbiz.ParallelBizValueHelper$PageType r7 = r5.i     // Catch: java.lang.Throwable -> L83
                 com.taobao.android.order.bundle.base.parallelbiz.ParallelBizValueHelper$PageType r1 = com.taobao.android.order.bundle.base.parallelbiz.ParallelBizValueHelper.PageType.logistics_detail     // Catch: java.lang.Throwable -> L83
@@ -2601,7 +2601,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             L62:
                 r6.mSpmUrl = r7     // Catch: java.lang.Throwable -> L83
                 java.lang.String r7 = r5.c     // Catch: java.lang.Throwable -> L83
-                boolean r7 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L83
+                boolean r7 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L83
                 if (r7 == 0) goto L6e
                 r7 = r0
                 goto L70
@@ -2610,7 +2610,7 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
             L70:
                 r6.mSpmPre = r7     // Catch: java.lang.Throwable -> L83
                 java.lang.String r7 = r5.e     // Catch: java.lang.Throwable -> L83
-                boolean r7 = android.text.TextUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L83
+                boolean r7 = android.text.StringUtils.isEmpty(r7)     // Catch: java.lang.Throwable -> L83
                 if (r7 == 0) goto L7c
                 r7 = r0
                 goto L7e
@@ -2644,11 +2644,11 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                 String str = "";
                 if (this.h) {
                     HashMap hashMap = new HashMap();
-                    hashMap.put("spm-cnt", !TextUtils.isEmpty(this.b) ? this.b : str);
-                    hashMap.put("spm-url", !TextUtils.isEmpty(this.c) ? this.c : str);
-                    hashMap.put(bip.KEY_UMBRELLA_SPM_PRE, !TextUtils.isEmpty(this.d) ? this.d : str);
-                    hashMap.put("utparam-pre", !TextUtils.isEmpty(this.f) ? this.f : str);
-                    if (!TextUtils.isEmpty(this.e)) {
+                    hashMap.put("spm-cnt", !StringUtils.isEmpty(this.b) ? this.b : str);
+                    hashMap.put("spm-url", !StringUtils.isEmpty(this.c) ? this.c : str);
+                    hashMap.put(bip.KEY_UMBRELLA_SPM_PRE, !StringUtils.isEmpty(this.d) ? this.d : str);
+                    hashMap.put("utparam-pre", !StringUtils.isEmpty(this.f) ? this.f : str);
+                    if (!StringUtils.isEmpty(this.e)) {
                         str = this.e;
                     }
                     hashMap.put(ag.KEY_UTPARAM_URL, str);
@@ -2659,11 +2659,11 @@ public class TBOrderListFragment extends SupportSecondaryBaseFragment implements
                 if (orNewUTPageStateObject == null) {
                     return;
                 }
-                orNewUTPageStateObject.mSpmCnt = !TextUtils.isEmpty(this.b) ? this.b : str;
-                orNewUTPageStateObject.mSpmUrl = !TextUtils.isEmpty(this.c) ? this.c : str;
-                orNewUTPageStateObject.mSpmPre = !TextUtils.isEmpty(this.d) ? this.d : str;
-                orNewUTPageStateObject.mUtparamPre = !TextUtils.isEmpty(this.f) ? this.f : str;
-                if (!TextUtils.isEmpty(this.e)) {
+                orNewUTPageStateObject.mSpmCnt = !StringUtils.isEmpty(this.b) ? this.b : str;
+                orNewUTPageStateObject.mSpmUrl = !StringUtils.isEmpty(this.c) ? this.c : str;
+                orNewUTPageStateObject.mSpmPre = !StringUtils.isEmpty(this.d) ? this.d : str;
+                orNewUTPageStateObject.mUtparamPre = !StringUtils.isEmpty(this.f) ? this.f : str;
+                if (!StringUtils.isEmpty(this.e)) {
                     str = this.e;
                 }
                 orNewUTPageStateObject.mUtparamUrl = str;

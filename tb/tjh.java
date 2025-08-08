@@ -5,7 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -137,7 +137,7 @@ public class tjh {
             j2 = baseMmAdModel.scaleAnimationDuration;
             j = baseMmAdModel.alphaAnimationDuration;
         }
-        if (TextUtils.equals(baseMmAdModel.getDataType(), "feeds")) {
+        if (StringUtils.equals(baseMmAdModel.getDataType(), "feeds")) {
             j = 100;
             j2 = 500;
         }

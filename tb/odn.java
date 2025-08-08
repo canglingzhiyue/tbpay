@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 
@@ -34,7 +34,7 @@ public class odn {
             }
             String str = "zipTtid  json" + a2.toString();
             String optString = odo.a(context).optString("t");
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 String a3 = odl.a(optString, "Y9RxCqWwTJeLK3n7DkLoR5JcDonJfYsr");
                 b = a3;
                 if (a3 != null) {

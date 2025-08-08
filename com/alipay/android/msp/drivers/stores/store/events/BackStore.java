@@ -40,9 +40,9 @@ public class BackStore extends LocalEventStore {
                         this.f4584a.exit(0);
                         LogUtil.record(1, "BackStore:onMspAction", "checkpoint1:old", "");
                     }
-                    EditTextUtil editTextUtils = EditTextManager.getEditTextUtils();
-                    if (editTextUtils != null) {
-                        editTextUtils.clear(this.e);
+                    EditTextUtil editStringUtils = EditTextManager.getEditStringUtils();
+                    if (editStringUtils != null) {
+                        editStringUtils.clear(this.e);
                     }
                     return "";
                 } catch (Exception e) {

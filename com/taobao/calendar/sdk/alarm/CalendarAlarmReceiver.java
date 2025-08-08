@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.taobao.calendar.sdk.TBCalendar;
 import com.taobao.calendar.sdk.TBCalendarBase;
@@ -109,7 +109,7 @@ public class CalendarAlarmReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, final Intent intent) {
         final String action = intent.getAction();
         TBCalendarBase.init(context);
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         if (action.equals("android.intent.action.BOOT_COMPLETED") || action.equals("android.intent.action.TIMEZONE_CHANGED") || action.equals("android.intent.action.TIME_SET") || action.equals(CalendarAlarm.INTENT_RESET)) {

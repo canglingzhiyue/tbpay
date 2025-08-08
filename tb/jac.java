@@ -4,7 +4,7 @@ import android.content.Context;
 import android.location.LocationManager;
 import android.os.Build;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -91,7 +91,7 @@ public final class jac extends dlg<dlr> {
                         throw new NullPointerException("null cannot be cast to non-null type android.content.Context");
                     }
                     Context context = (Context) obj;
-                    return Build.VERSION.SDK_INT == 19 ? Settings.Secure.getInt(context.getContentResolver(), "location_mode", 0) != 0 : !TextUtils.isEmpty(Settings.Secure.getString(context.getContentResolver(), "location_providers_allowed"));
+                    return Build.VERSION.SDK_INT == 19 ? Settings.Secure.getInt(context.getContentResolver(), "location_mode", 0) != 0 : !StringUtils.isEmpty(Settings.Secure.getString(context.getContentResolver(), "location_providers_allowed"));
                 }
             } catch (Throwable unused) {
             }

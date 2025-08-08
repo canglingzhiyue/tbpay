@@ -2,7 +2,7 @@ package com.alipay.android.msp.network;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
@@ -276,12 +276,12 @@ public final class PackUtils {
         String str2 = doVar.subua3;
         String clientKey = MspConfig.getInstance().getClientKey();
         String vimeiAndVimsi = MspConfig.getInstance().getVimeiAndVimsi();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = str.replace("(a)", clientKey).replace("(b)", vimeiAndVimsi).replace("(c)", str2);
         }
         preposeCashierReqModel.setUa(str);
         try {
-            if (!TextUtils.isEmpty(doVar.hasAlipay)) {
+            if (!StringUtils.isEmpty(doVar.hasAlipay)) {
                 preposeCashierReqModel.setHas_alipay(Integer.parseInt(doVar.hasAlipay));
             }
         } catch (Throwable th2) {
@@ -291,11 +291,11 @@ public final class PackUtils {
         preposeCashierReqModel.setUtdid(GlobalHelper.getInstance().getUtdid(context));
         Object json = JSON.toJSON(preposeCashierReqModel);
         long elapsedRealtime2 = SystemClock.elapsedRealtime();
-        boolean z2 = !TextUtils.isEmpty(preposeCashierReqModel.getPa());
+        boolean z2 = !StringUtils.isEmpty(preposeCashierReqModel.getPa());
         int i2 = preposeCashierReqModel.getHas_alipay() == 1 ? 1 : 0;
-        boolean z3 = !TextUtils.isEmpty(preposeCashierReqModel.getTid());
-        boolean z4 = !TextUtils.isEmpty(preposeCashierReqModel.getUa());
-        boolean z5 = !TextUtils.isEmpty(preposeCashierReqModel.getUtdid());
+        boolean z3 = !StringUtils.isEmpty(preposeCashierReqModel.getTid());
+        boolean z4 = !StringUtils.isEmpty(preposeCashierReqModel.getUa());
+        boolean z5 = !StringUtils.isEmpty(preposeCashierReqModel.getUtdid());
         if (z) {
             Locale locale = Locale.getDefault();
             Object[] objArr = new Object[11];

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import com.taobao.android.riverlogger.b;
@@ -95,25 +95,25 @@ public class aza implements are {
                 e.a(rVLLevel, "MyModule", str);
                 return;
             }
-            b a2 = e.a(rVLLevel, TextUtils.isEmpty(arfVar.a()) ? "AURA/other" : arfVar.a()).a(RVLLevel.Error);
+            b a2 = e.a(rVLLevel, StringUtils.isEmpty(arfVar.a()) ? "AURA/other" : arfVar.a()).a(RVLLevel.Error);
             String e = arfVar.e("traceId");
             String e2 = arfVar.e("event");
-            if (!TextUtils.isEmpty(e)) {
+            if (!StringUtils.isEmpty(e)) {
                 a2.a(e2, e);
             } else {
                 a2.a(e2);
             }
             String e3 = arfVar.e("parentId");
-            if (!TextUtils.isEmpty(e3)) {
+            if (!StringUtils.isEmpty(e3)) {
                 a2.b(e3);
             }
             String e4 = arfVar.e("errorCode");
             String e5 = arfVar.e("errorMsg");
-            if (!TextUtils.isEmpty(e4) && !TextUtils.isEmpty(e5)) {
+            if (!StringUtils.isEmpty(e4) && !StringUtils.isEmpty(e5)) {
                 a2.b(e4, e5);
             }
             String e6 = arfVar.e("timestamp");
-            if (!TextUtils.isEmpty(e6)) {
+            if (!StringUtils.isEmpty(e6)) {
                 a2.a(Long.parseLong(e6));
             }
             HashMap hashMap = new HashMap(arfVar.b());

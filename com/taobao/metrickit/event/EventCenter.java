@@ -2,7 +2,7 @@ package com.taobao.metrickit.event;
 
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.context.MetricContext;
 import com.taobao.metrickit.h;
@@ -314,7 +314,7 @@ public final class EventCenter implements d {
         Iterator it = new HashSet(this.e.values()).iterator();
         while (it.hasNext()) {
             c cVar = (c) it.next();
-            if (!(cVar.c() instanceof mle) && TextUtils.equals(String.valueOf(map.get(cVar.a())), "off")) {
+            if (!(cVar.c() instanceof mle) && StringUtils.equals(String.valueOf(map.get(cVar.a())), "off")) {
                 cVar.b();
                 it.remove();
             }

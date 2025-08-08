@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.event;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.model.OpenUrlEventModel;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -45,7 +45,7 @@ public class o extends q {
         } else {
             int intValue = ((Integer) b("activityResultCode")).intValue();
             String pageType = ((OpenUrlEventModel) JSON.parseObject(this.b.getFields().toJSONString(), OpenUrlEventModel.class)).getPageType();
-            if (TextUtils.isEmpty(pageType)) {
+            if (StringUtils.isEmpty(pageType)) {
                 return;
             }
             char c = 65535;
@@ -167,7 +167,7 @@ public class o extends q {
         JSONObject jSONObject = new JSONObject();
         if (keySet != null) {
             for (String str : keySet) {
-                if (!TextUtils.isEmpty(str) && (obj = extras.get(str)) != null) {
+                if (!StringUtils.isEmpty(str) && (obj = extras.get(str)) != null) {
                     jSONObject.put(str, (Object) String.valueOf(obj));
                 }
             }

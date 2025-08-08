@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -120,7 +120,7 @@ public class StartShareMenuJsBrige extends e {
         try {
             Map map = (Map) JSON.parseObject(str, Map.class);
             String obj = map.get("packageName") != null ? map.get("packageName").toString() : null;
-            if (!TextUtils.isEmpty(obj) && openApp(this.mContext, obj)) {
+            if (!StringUtils.isEmpty(obj) && openApp(this.mContext, obj)) {
                 wVCallBackContext.success();
             } else {
                 wVCallBackContext.error();
@@ -140,7 +140,7 @@ public class StartShareMenuJsBrige extends e {
         try {
             Map map = (Map) JSON.parseObject(str, Map.class);
             String obj = map.get("packageName") != null ? map.get("packageName").toString() : null;
-            if (!TextUtils.isEmpty(obj) && installedApp(this.mContext, obj)) {
+            if (!StringUtils.isEmpty(obj) && installedApp(this.mContext, obj)) {
                 wVCallBackContext.success();
             } else {
                 wVCallBackContext.error();
@@ -164,7 +164,7 @@ public class StartShareMenuJsBrige extends e {
             return;
         }
         String obj = parseParam.get("packageName") != null ? parseParam.get("packageName").toString() : null;
-        if (!TextUtils.isEmpty(obj)) {
+        if (!StringUtils.isEmpty(obj)) {
             startPackage(wVCallBackContext, obj);
         } else if (this.mContext == null) {
         } else {
@@ -214,28 +214,28 @@ public class StartShareMenuJsBrige extends e {
                             HashMap hashMap = new HashMap();
                             hashMap.put("target", str2);
                             hashMap.put("shareTarget", str2);
-                            if (TextUtils.equals("success", map.get(a.RESULT_KEY))) {
+                            if (StringUtils.equals("success", map.get(a.RESULT_KEY))) {
                                 WVCallBackContext wVCallBackContext2 = wVCallBackContext;
                                 if (wVCallBackContext2 == null) {
                                     return;
                                 }
                                 wVCallBackContext2.success(JSON.toJSONString(map));
                                 wVCallBackContext.fireEvent("wvShareSuccessEvent", new JSONObject(hashMap).toJSONString());
-                            } else if (TextUtils.equals("fail", map.get(a.RESULT_KEY))) {
+                            } else if (StringUtils.equals("fail", map.get(a.RESULT_KEY))) {
                                 WVCallBackContext wVCallBackContext3 = wVCallBackContext;
                                 if (wVCallBackContext3 == null) {
                                     return;
                                 }
                                 wVCallBackContext3.error(JSON.toJSONString(map));
                                 wVCallBackContext.fireEvent("wvShareFailedEvent", new JSONObject(hashMap).toJSONString());
-                            } else if (TextUtils.equals("cancel", map.get(a.RESULT_KEY))) {
+                            } else if (StringUtils.equals("cancel", map.get(a.RESULT_KEY))) {
                                 WVCallBackContext wVCallBackContext4 = wVCallBackContext;
                                 if (wVCallBackContext4 == null) {
                                     return;
                                 }
                                 wVCallBackContext4.error(JSON.toJSONString(map));
                                 wVCallBackContext.fireEvent("wvShareCancelEvent", new JSONObject(hashMap).toJSONString());
-                            } else if (!TextUtils.equals("close", map.get(a.RESULT_KEY)) || wVCallBackContext == null) {
+                            } else if (!StringUtils.equals("close", map.get(a.RESULT_KEY)) || wVCallBackContext == null) {
                             } else {
                                 String jSONString = JSON.toJSONString(map);
                                 wVCallBackContext.success(jSONString);
@@ -267,10 +267,10 @@ public class StartShareMenuJsBrige extends e {
         }
         try {
             shareContent.contentType = map.get("contentType") == null ? null : map.get("contentType").toString();
-            if (TextUtils.isEmpty(shareContent.contentType)) {
+            if (StringUtils.isEmpty(shareContent.contentType)) {
                 shareContent.contentType = map.get("scene") == null ? null : map.get("scene").toString();
             }
-            if (TextUtils.isEmpty(shareContent.contentType)) {
+            if (StringUtils.isEmpty(shareContent.contentType)) {
                 shareContent.contentType = "other";
             }
             shareContent.shareScene = shareContent.contentType;
@@ -435,7 +435,7 @@ public class StartShareMenuJsBrige extends e {
                     if (wVCallBackContext2 == null) {
                         return;
                     }
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         wVCallBackContext2.error();
                         return;
                     }
@@ -455,7 +455,7 @@ public class StartShareMenuJsBrige extends e {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("720e7ba0", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -471,7 +471,7 @@ public class StartShareMenuJsBrige extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7d87e588", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

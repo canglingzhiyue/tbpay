@@ -2,7 +2,7 @@ package com.taobao.tao.recommend3.newface.gateway.action;
 
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.utils.n;
@@ -185,7 +185,7 @@ public class l extends oqk {
             return;
         }
         com.taobao.android.home.component.utils.e.e("NewFaceUIRefreshInterceptor", "onNavigationTabChanged index: " + i + " , name: " + str);
-        if (TextUtils.equals(str, NavigationTabConstraints.TAB_BIZ_HOMEPAGE)) {
+        if (StringUtils.equals(str, NavigationTabConstraints.TAB_BIZ_HOMEPAGE)) {
             return;
         }
         this.b.set(false);

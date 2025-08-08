@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.
 import android.app.Activity;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -271,7 +271,7 @@ public class d extends iou {
             } else {
                 for (int i2 = 0; i2 < jSONArray.size(); i2++) {
                     JSONObject jSONObject2 = jSONArray.getJSONObject(i2);
-                    if (TextUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject2.getString("type"))) {
+                    if (StringUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject2.getString("type"))) {
                         String string = jSONObject2.getString("count");
                         int a2 = l.a(string, 0);
                         if (a2 <= 0 || a2 <= i || !z) {
@@ -301,7 +301,7 @@ public class d extends iou {
         if (liveItemCategoriesResponseData != null && liveItemCategoriesResponseData.topRightEntranceList != null && !liveItemCategoriesResponseData.topRightEntranceList.isEmpty()) {
             for (int i = 0; i < liveItemCategoriesResponseData.topRightEntranceList.size(); i++) {
                 JSONObject jSONObject = liveItemCategoriesResponseData.topRightEntranceList.get(i);
-                if (jSONObject != null && TextUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject.getString("type"))) {
+                if (jSONObject != null && StringUtils.equals(hhw.ENTRY_TYPE_LIVE_CART, jSONObject.getString("type"))) {
                     return l.a(jSONObject.getString("count"), 0);
                 }
             }

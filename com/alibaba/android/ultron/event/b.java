@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.CustomLoadRenderParser;
 import com.alibaba.android.ultron.vfw.instance.UltronInstanceConfig;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -102,7 +102,7 @@ public class b extends q {
         final JSONArray jSONArray = fields.getJSONArray(KEY_TARGET_COMPONENTS);
         final String string = fields.getString("parseKey");
         String string2 = fields.getString("repeatRequest");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             string2 = "none";
         }
         C0088b c0088b = this.f2581a.get(this.g.getKey());
@@ -146,7 +146,7 @@ public class b extends q {
         boolean booleanValue = jSONObject.getBooleanValue("isNeedWua");
         boolean booleanValue2 = jSONObject.getBooleanValue("usePost");
         this.b = jSONObject.getString("unitStrategy");
-        if (TextUtils.isEmpty(string3) || TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string3) || StringUtils.isEmpty(string4)) {
             UnifyLog.a(this.f.h(), TAG, "error: apiMethod or apiVersion is null", new String[0]);
             return;
         }

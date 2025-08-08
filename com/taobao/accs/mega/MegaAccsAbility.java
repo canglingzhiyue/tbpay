@@ -1,6 +1,6 @@
 package com.taobao.accs.mega;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.g;
 import com.alibaba.fastjson.JSON;
@@ -75,11 +75,11 @@ public class MegaAccsAbility extends AbsAccsAbility {
             return;
         }
         final String str = hVar.f8883a;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             bcVar.a(new ErrorResult("SERVICEID_EMPTY_ERR", "bindService: serviceId empty"));
             return;
         }
-        final String str2 = TextUtils.isEmpty(hVar.b) ? "default" : hVar.b;
+        final String str2 = StringUtils.isEmpty(hVar.b) ? "default" : hVar.b;
         com.taobao.accs.common.a.f().execute(new Runnable() { // from class: com.taobao.accs.mega.MegaAccsAbility.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -116,7 +116,7 @@ public class MegaAccsAbility extends AbsAccsAbility {
         }
         try {
             final String str = hVar.f8883a;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return new g<>(null, new ErrorResult("SERVICEID_EMPTY_ERR", "unBindService serviceId empty err"));
             }
             final ACCSClient accsClient = ACCSClient.getAccsClient(hVar.b);
@@ -147,7 +147,7 @@ public class MegaAccsAbility extends AbsAccsAbility {
             return (g) ipChange.ipc$dispatch("1660cbcd", new Object[]{this, alsVar, gVar});
         }
         final String str = gVar.f8880a;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new g<>(null, new ErrorResult("SERVICEID_EMPTY_ERR", "send: serviceId empty err"));
         }
         Map<String, ? extends Object> map = gVar.b;
@@ -231,7 +231,7 @@ public class MegaAccsAbility extends AbsAccsAbility {
             return;
         }
         try {
-            String str = TextUtils.isEmpty(eVar.f8832a) ? "default" : eVar.f8832a;
+            String str = StringUtils.isEmpty(eVar.f8832a) ? "default" : eVar.f8832a;
             final b bVar = new b(str);
             bVar.a(bdVar);
             final String valueOf = String.valueOf(System.currentTimeMillis());
@@ -266,7 +266,7 @@ public class MegaAccsAbility extends AbsAccsAbility {
         }
         try {
             String str = fVar.b;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return new g<>(null, new ErrorResult("LISTENERKEY_EMPTY_ERR", "removeConnectionListener listenerKey empty err"));
             }
             final b remove = this.b.remove(str);

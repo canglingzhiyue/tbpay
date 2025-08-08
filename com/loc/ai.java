@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.security.mobile.alipayauthenticatorservice.message.Result;
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -77,7 +77,7 @@ public final class ai {
                     ContentResolver contentResolver2;
                     String str3;
                     String b = ao.b(str);
-                    if (!TextUtils.isEmpty(b)) {
+                    if (!StringUtils.isEmpty(b)) {
                         if ((i & 1) > 0) {
                             try {
                                 if (Build.VERSION.SDK_INT < 23) {
@@ -110,7 +110,7 @@ public final class ai {
             return;
         }
         String b = ao.b(str);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             if ((i & 1) > 0) {
                 try {
                     if (Build.VERSION.SDK_INT >= 23) {

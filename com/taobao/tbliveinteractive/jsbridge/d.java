@@ -1,6 +1,6 @@
 package com.taobao.tbliveinteractive.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.d;
@@ -117,7 +117,7 @@ public class d implements com.taobao.taolive.sdk.core.d, d.a {
         if (i == 1036 && obj != null) {
             JSONObject jSONObject = null;
             String str = (String) obj;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             try {

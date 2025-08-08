@@ -2,7 +2,7 @@ package com.taobao.android.interactive_common.component;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -143,7 +143,7 @@ public class CXPhotoViewComponent extends WXComponent<FrameLayout> implements Pa
         if (ipChange instanceof IpChange) {
             return (ImageView.ScaleType) ipChange.ipc$dispatch("1ae55066", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return ImageView.ScaleType.FIT_XY;
         }
         char c = 65535;

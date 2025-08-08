@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.base.IJsBridgeService;
@@ -36,7 +36,7 @@ public class lnt extends lrr {
             try {
                 String string = jSONObject.getString("bitmapSession");
                 Bitmap bitmap = (Bitmap) jSONObject.getObject("bitmapValue", Bitmap.class);
-                if (!TextUtils.isEmpty(string) && bitmap != null) {
+                if (!StringUtils.isEmpty(string) && bitmap != null) {
                     a.a(this.f30750a, string);
                     a.a(this.f30750a, bitmap);
                     interfaceC0670a.a((Map<String, Object>) null);
@@ -56,7 +56,7 @@ public class lnt extends lrr {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("30dda510", new Object[]{this, str});
         }
-        if (!TextUtils.equals(str, a.a(this.f30750a))) {
+        if (!StringUtils.equals(str, a.a(this.f30750a))) {
             return null;
         }
         return a.b(this.f30750a);
@@ -66,7 +66,7 @@ public class lnt extends lrr {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!TextUtils.equals(str, a.a(this.f30750a))) {
+        } else if (!StringUtils.equals(str, a.a(this.f30750a))) {
         } else {
             a.c(this.f30750a);
         }

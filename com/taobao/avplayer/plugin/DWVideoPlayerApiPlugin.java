@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import anet.channel.util.HttpConstant;
@@ -175,7 +175,7 @@ public class DWVideoPlayerApiPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("3e8b3e53", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWVideoPlayerApiPlugin);
-        if (TextUtils.isEmpty(str) || wVCallBackContext == null || this.mContext == null) {
+        if (StringUtils.isEmpty(str) || wVCallBackContext == null || this.mContext == null) {
             wVCallBackContext.error();
             return false;
         }
@@ -183,7 +183,7 @@ public class DWVideoPlayerApiPlugin extends e {
             HashMap hashMap = (HashMap) JSONObject.parseObject(str, HashMap.class);
             String str2 = null;
             String obj = hashMap.get("videoUrl") == null ? null : hashMap.get("videoUrl").toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 wVCallBackContext.error("video url is empty");
                 return false;
             }
@@ -193,14 +193,14 @@ public class DWVideoPlayerApiPlugin extends e {
             c cVar = new c("DWVideo_H5");
             com.taobao.avplayer.c cVar2 = new com.taobao.avplayer.c();
             cVar.o = cVar2.g() && MediaAdapteManager.mABTestAdapter != null && "useTBNet".equals(MediaAdapteManager.mABTestAdapter.getBucket("dwinstance_proxynet_component", "dwinstance_proxynet_module"));
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = p.e(obj);
             }
             cVar.r = str2;
             cVar.t = kcj.a(new ai().b());
-            if (cVar2.a() && !obj.contains(".m3u8") && !TextUtils.isEmpty(cVar.r) && obj.startsWith("http") && "h5UseCache".equals(MediaAdapteManager.mABTestAdapter.getBucket("h5UseCacheComponent", "h5UseCacheModule"))) {
+            if (cVar2.a() && !obj.contains(".m3u8") && !StringUtils.isEmpty(cVar.r) && obj.startsWith("http") && "h5UseCache".equals(MediaAdapteManager.mABTestAdapter.getBucket("h5UseCacheComponent", "h5UseCacheModule"))) {
                 String proxyVideoUrl = MonitorMediaPlayer.getProxyVideoUrl(this.mContext, cVar, obj);
-                if (TextUtils.isEmpty(proxyVideoUrl)) {
+                if (StringUtils.isEmpty(proxyVideoUrl)) {
                     wVCallBackContext.error("getProxyUrl error");
                     return false;
                 }
@@ -225,7 +225,7 @@ public class DWVideoPlayerApiPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("3e9a7198", new Object[]{this, str})).booleanValue();
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWVideoPlayerApiPlugin);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String str2 = null;
@@ -242,7 +242,7 @@ public class DWVideoPlayerApiPlugin extends e {
             }
         } catch (Exception unused) {
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder(str2);
@@ -258,7 +258,7 @@ public class DWVideoPlayerApiPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("ea685b6d", new Object[]{this, str})).booleanValue();
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWVideoPlayerApiPlugin);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (this.mWebView instanceof DWWVUCWebView) {
@@ -277,7 +277,7 @@ public class DWVideoPlayerApiPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("30e109ba", new Object[]{this, str})).booleanValue();
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWVideoPlayerApiPlugin);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (this.mWebView instanceof DWWVUCWebView) {
@@ -443,7 +443,7 @@ public class DWVideoPlayerApiPlugin extends e {
             return ((Boolean) ipChange.ipc$dispatch("a3d0af64", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWVideoPlayerApiPlugin);
-        if (TextUtils.isEmpty(str) || this.mDWInstance != null || this.mContext == null) {
+        if (StringUtils.isEmpty(str) || this.mDWInstance != null || this.mContext == null) {
             wVCallBackContext.error();
             return false;
         }
@@ -453,7 +453,7 @@ public class DWVideoPlayerApiPlugin extends e {
         String obj3 = hashMap.get("interactiveVideoId") == null ? str2 : hashMap.get("interactiveVideoId").toString();
         int b = kcl.b();
         Object obj4 = hashMap.get("height");
-        if (obj4 != null && (obj4 instanceof String) && !TextUtils.isEmpty(String.valueOf(obj4))) {
+        if (obj4 != null && (obj4 instanceof String) && !StringUtils.isEmpty(String.valueOf(obj4))) {
             b = (int) Float.parseFloat(String.valueOf(obj4));
             if ((this.mContext instanceof Activity) && b >= kcl.a((Activity) this.mContext)) {
                 b = kcl.a((Activity) this.mContext);
@@ -463,11 +463,11 @@ public class DWVideoPlayerApiPlugin extends e {
         }
         int screenWidth = WXViewUtils.getScreenWidth();
         Object obj5 = hashMap.get("width");
-        if (obj5 != null && (obj5 instanceof String) && !TextUtils.isEmpty(String.valueOf(obj5)) && (screenWidth = (int) Float.parseFloat(String.valueOf(obj5))) >= kcl.a()) {
+        if (obj5 != null && (obj5 instanceof String) && !StringUtils.isEmpty(String.valueOf(obj5)) && (screenWidth = (int) Float.parseFloat(String.valueOf(obj5))) >= kcl.a()) {
             screenWidth = kcl.a();
         }
         Object obj6 = hashMap.get("topMargin");
-        int parseFloat = (obj6 == null || !(obj6 instanceof String) || TextUtils.isEmpty(String.valueOf(obj6))) ? 0 : (int) Float.parseFloat(String.valueOf(obj6));
+        int parseFloat = (obj6 == null || !(obj6 instanceof String) || StringUtils.isEmpty(String.valueOf(obj6))) ? 0 : (int) Float.parseFloat(String.valueOf(obj6));
         String obj7 = hashMap.get("from") == null ? "DWVideo" : hashMap.get("from").toString();
         String obj8 = hashMap.get("thumbnailSrc") == null ? str2 : hashMap.get("thumbnailSrc").toString();
         if (hashMap.get("userId") != null) {
@@ -495,7 +495,7 @@ public class DWVideoPlayerApiPlugin extends e {
         hashMap2.put("videoUrl", obj2);
         hashMap2.put("height", String.valueOf(b));
         hashMap2.put("width", String.valueOf(screenWidth));
-        if (!TextUtils.isEmpty(obj7)) {
+        if (!StringUtils.isEmpty(obj7)) {
             hashMap2.put("page", obj7.toLowerCase());
         }
         try {
@@ -504,11 +504,11 @@ public class DWVideoPlayerApiPlugin extends e {
         }
         bk.a aVar = new bk.a((Activity) this.mContext);
         aVar.a(obj2);
-        if (TextUtils.isEmpty(obj3)) {
+        if (StringUtils.isEmpty(obj3)) {
             obj3 = "0";
         }
         aVar.a(Long.parseLong(obj3));
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             aVar.b(Long.parseLong(str2));
         }
         aVar.e(obj7);
@@ -527,7 +527,7 @@ public class DWVideoPlayerApiPlugin extends e {
         aVar.G(equals3);
         aVar.F(equals2);
         aVar.p(z);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             aVar.i(true);
             a aVar2 = new a();
             aVar2.a(new DWFrontCoverBean(0L, null, str3));
@@ -707,7 +707,7 @@ public class DWVideoPlayerApiPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ab4666f", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

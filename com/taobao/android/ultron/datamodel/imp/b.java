@@ -1,7 +1,7 @@
 package com.taobao.android.ultron.datamodel.imp;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -445,7 +445,7 @@ public class b implements jny {
         Set<String> keySet = this.s.keySet();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
-            if (entry != null && !TextUtils.isEmpty(key)) {
+            if (entry != null && !StringUtils.isEmpty(key)) {
                 if (keySet.contains(key)) {
                     keySet.remove(key);
                 }
@@ -818,7 +818,7 @@ public class b implements jny {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (jSONObject = this.k) == null || !jSONObject.containsKey(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (jSONObject = this.k) == null || !jSONObject.containsKey(str2)) {
             return false;
         }
         JSONArray jSONArray = this.k.getJSONArray(str2);
@@ -836,7 +836,7 @@ public class b implements jny {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (map = this.s) == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (map = this.s) == null) {
         } else {
             map.remove(str);
             if (!this.s.containsKey(str2) || (extendBlock = this.s.get(str2)) == null) {
@@ -855,14 +855,14 @@ public class b implements jny {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONObject jSONObject2 = this.l;
         if (jSONObject2 != null && jSONObject2.containsKey(str)) {
             this.l.remove(str);
         }
-        if (!TextUtils.isEmpty(str2) && (jSONObject = this.k) != null && jSONObject.containsKey(str2) && (jSONArray = this.k.getJSONArray(str2)) != null) {
+        if (!StringUtils.isEmpty(str2) && (jSONObject = this.k) != null && jSONObject.containsKey(str2) && (jSONArray = this.k.getJSONArray(str2)) != null) {
             jSONArray.remove(str);
         }
         Map<String, ExtendBlock> map = this.s;
@@ -887,7 +887,7 @@ public class b implements jny {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("24773cd6", new Object[]{this, str, dMComponent});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.E == null) {
                 this.E = new HashMap();
@@ -914,7 +914,7 @@ public class b implements jny {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
         } else if (str != null && str2 != null && (jSONObject = this.j.getJSONObject("structure")) != null && (jSONArray = jSONObject.getJSONArray(str2)) != null && !jSONArray.contains(str)) {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 jSONArray.add(0, str);
                 return;
             }

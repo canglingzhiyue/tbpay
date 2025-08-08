@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
@@ -39,7 +39,7 @@ public class opn implements a.b {
             return false;
         }
         String a2 = ops.a(intent.getData());
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             lap.a("recmdPrefetch", "OrderListRecmdPrefetchParser", "没有解析到对应的tab");
             return false;
         }

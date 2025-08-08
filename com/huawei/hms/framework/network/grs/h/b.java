@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.network.grs.h;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -49,7 +49,7 @@ public class b {
     }
 
     public static String b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int i = 1;

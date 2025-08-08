@@ -1,6 +1,6 @@
 package com.taobao.android.behavir.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
@@ -104,7 +104,7 @@ public class b {
             return;
         }
         String a2 = com.taobao.android.behavix.behavixswitch.a.a(j.a.K_UT_EVENT_FILTERS, "");
-        if (TextUtils.equals(this.e, a2)) {
+        if (StringUtils.equals(this.e, a2)) {
             return;
         }
         try {
@@ -126,7 +126,7 @@ public class b {
             return;
         }
         String a2 = com.taobao.android.behavix.behavixswitch.a.a("uppConfig", "");
-        if (TextUtils.equals(this.d, a2)) {
+        if (StringUtils.equals(this.d, a2)) {
             return;
         }
         try {
@@ -152,7 +152,7 @@ public class b {
             return;
         }
         String a2 = com.taobao.android.behavix.behavixswitch.a.a("uppPlanConfig", "");
-        if (TextUtils.equals(this.f, a2)) {
+        if (StringUtils.equals(this.f, a2)) {
             return;
         }
         try {

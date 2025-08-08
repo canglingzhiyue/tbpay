@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.msoa.c;
@@ -21,9 +21,9 @@ public class tdj extends dlg {
             return (dkx) ipChange.ipc$dispatch("1c5b757e", new Object[]{this, dlhVar, dleVar, dllVar});
         }
         String c = dlhVar.c("itemId");
-        boolean equals = TextUtils.equals("true", dlhVar.c("disableAddToCart"));
-        boolean equals2 = TextUtils.equals("true", dlhVar.c("disableToast"));
-        if (TextUtils.isEmpty(c) || equals) {
+        boolean equals = StringUtils.equals("true", dlhVar.c("disableAddToCart"));
+        boolean equals2 = StringUtils.equals("true", dlhVar.c("disableToast"));
+        if (StringUtils.isEmpty(c) || equals) {
             lch.a("DXAddToCartAbility", "onExecuteWithData: itemId=" + c + ", disableAddToCart=" + dlhVar.c("disableAddToCart"));
             return null;
         }

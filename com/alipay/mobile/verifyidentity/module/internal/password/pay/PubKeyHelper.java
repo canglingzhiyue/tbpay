@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.internal.password.pay;
 
 import android.content.Context;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -41,7 +41,7 @@ public class PubKeyHelper {
             String str = f5904a;
             VerifyLogCat.e(str, "json fail " + mICRpcResponse.data, e);
         }
-        if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("pubKey"))) {
+        if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("pubKey"))) {
             return "";
         }
         String string = jSONObject.getString("pubKey");

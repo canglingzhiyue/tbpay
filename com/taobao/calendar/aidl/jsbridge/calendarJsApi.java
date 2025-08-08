@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.calendar.aidl.business.CalendarAidlAdapter;
@@ -31,22 +31,22 @@ public class calendarJsApi extends e {
             String string6 = jSONObject.getString("link");
             String string7 = jSONObject.getString("remind");
             String string8 = jSONObject.getString("description");
-            if (!TextUtils.isEmpty(string4) && !TextUtils.isEmpty(string5)) {
+            if (!StringUtils.isEmpty(string4) && !StringUtils.isEmpty(string5)) {
                 String string9 = jSONObject.getString("isAllDay");
                 ScheduleDTO scheduleDTO = new ScheduleDTO();
                 scheduleDTO.setEventId(string);
                 scheduleDTO.setSourceId(Integer.valueOf(string2).intValue());
                 scheduleDTO.setTitle(string3);
-                if (!TextUtils.isEmpty(string4)) {
+                if (!StringUtils.isEmpty(string4)) {
                     scheduleDTO.setStartTime(string4);
                 }
-                if (!TextUtils.isEmpty(string5)) {
+                if (!StringUtils.isEmpty(string5)) {
                     scheduleDTO.setEndTime(string5);
                 }
                 scheduleDTO.setLink(string6);
                 scheduleDTO.setDescription(string8);
                 setRemindTime(scheduleDTO, string7);
-                if (!TextUtils.isEmpty(string9) && !TextUtils.equals("0", string9)) {
+                if (!StringUtils.isEmpty(string9) && !StringUtils.equals("0", string9)) {
                     scheduleDTO.setIsallday(1);
                     return scheduleDTO;
                 }
@@ -60,7 +60,7 @@ public class calendarJsApi extends e {
 
     private void setRemindTime(ScheduleDTO scheduleDTO, String str) {
         int i;
-        if (TextUtils.isEmpty(str) || !TextUtils.isDigitsOnly(str)) {
+        if (StringUtils.isEmpty(str) || !StringUtils.isDigitsOnly(str)) {
             scheduleDTO.setRemind(600);
             return;
         }
@@ -77,7 +77,7 @@ public class calendarJsApi extends e {
     }
 
     private boolean validateSchedule(ScheduleDTO scheduleDTO) {
-        return scheduleDTO != null && !TextUtils.isEmpty(scheduleDTO.getEventId()) && scheduleDTO.getSourceId() > 0 && !TextUtils.isEmpty(scheduleDTO.getLink());
+        return scheduleDTO != null && !StringUtils.isEmpty(scheduleDTO.getEventId()) && scheduleDTO.getSourceId() > 0 && !StringUtils.isEmpty(scheduleDTO.getLink());
     }
 
     @WindVaneInterface
@@ -108,7 +108,7 @@ public class calendarJsApi extends e {
 
     @WindVaneInterface
     public void addCalendarPlanByBatch(WVCallBackContext wVCallBackContext, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
         }
         try {
@@ -199,7 +199,7 @@ public class calendarJsApi extends e {
 
     @WindVaneInterface
     public void cancelCalendarPlanByBatch(WVCallBackContext wVCallBackContext, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
         }
         try {
@@ -288,7 +288,7 @@ public class calendarJsApi extends e {
 
     @WindVaneInterface
     public void checkCalendarPlanIsExistByBatch(WVCallBackContext wVCallBackContext, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
         }
         try {

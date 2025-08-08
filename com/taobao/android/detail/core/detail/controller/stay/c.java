@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.controller.stay;
 import android.content.Context;
 import android.os.SystemClock;
 import android.support.v7.widget.LinearLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ListView;
@@ -112,7 +112,7 @@ public class c implements DetailListView.a, DetailListView.b {
         } else if (list != null && this.m != null) {
             ArrayList arrayList = new ArrayList();
             for (com.taobao.android.detail.datasdk.model.viewmodel.main.b bVar : list) {
-                if (bVar != null && !TextUtils.isEmpty(bVar.stayType)) {
+                if (bVar != null && !StringUtils.isEmpty(bVar.stayType)) {
                     arrayList.add(bVar);
                 }
             }
@@ -198,7 +198,7 @@ public class c implements DetailListView.a, DetailListView.b {
             }
             try {
                 List<IDMComponent> f = this.g.c().k().f();
-                if (i < 0 || i >= f.size() || TextUtils.isEmpty(a(f.get(i)))) {
+                if (i < 0 || i >= f.size() || StringUtils.isEmpty(a(f.get(i)))) {
                     return;
                 }
                 DetailRecyclerView detailRecyclerView2 = this.f;
@@ -214,7 +214,7 @@ public class c implements DetailListView.a, DetailListView.b {
             }
         }
         ListView listView = this.e;
-        if (listView == null || listView.getAdapter() == null || (item = this.e.getAdapter().getItem(i)) == null || !(item instanceof com.taobao.android.detail.datasdk.model.viewmodel.main.b) || (bVar = (com.taobao.android.detail.datasdk.model.viewmodel.main.b) item) == null || TextUtils.isEmpty(bVar.stayType)) {
+        if (listView == null || listView.getAdapter() == null || (item = this.e.getAdapter().getItem(i)) == null || !(item instanceof com.taobao.android.detail.datasdk.model.viewmodel.main.b) || (bVar = (com.taobao.android.detail.datasdk.model.viewmodel.main.b) item) == null || StringUtils.isEmpty(bVar.stayType)) {
             return;
         }
         try {

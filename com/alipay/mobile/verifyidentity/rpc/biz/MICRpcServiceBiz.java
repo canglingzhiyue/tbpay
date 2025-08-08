@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.rpc.biz;
 
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.alipay.mobile.verifyidentity.common.Constants;
@@ -118,7 +118,7 @@ public class MICRpcServiceBiz {
             DebugViewer.getInstance().sendRpc(valueOf, mICRpcRequest);
             if (a2 != null && a2.getVIMessageChannel() != null && !a2.canNotUseRpcChannel && !mICRpcRequest.canNotUseRpcChannel) {
                 dispatch = a(a2.getVIMessageChannel(), mICRpcRequest);
-                if (dispatch != null && !TextUtils.isEmpty(dispatch.channelError)) {
+                if (dispatch != null && !StringUtils.isEmpty(dispatch.channelError)) {
                     hashMap.put("channelError", dispatch.channelError);
                 }
             } else {
@@ -311,7 +311,7 @@ public class MICRpcServiceBiz {
         MICRpcResponse mICRpcResponse = this.d;
         if (mICRpcResponse != null) {
             String str2 = mICRpcResponse.channelError;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.d = null;
                 String str3 = f6049a;
                 VerifyLogCat.i(str3, "rpc代理模式出现 channelError: " + str2);
@@ -369,7 +369,7 @@ public class MICRpcServiceBiz {
             return;
         }
         String name = exc.getClass().getName();
-        if (TextUtils.isEmpty(name) || !name.contains("RpcException")) {
+        if (StringUtils.isEmpty(name) || !name.contains("RpcException")) {
             return;
         }
         VerifyLogCat.i(f6049a, "出现RPC异常");
@@ -480,7 +480,7 @@ public class MICRpcServiceBiz {
             map2.put(ModuleConstants.VI_TASK_VERIFYCODE, mICRpcResponse.verifyCode);
             map2.put("verifySuccess", String.valueOf(mICRpcResponse.verifySuccess));
             map2.put("useBird", mICRpcResponse.useBird);
-            if (!TextUtils.isEmpty(mICRpcResponse.channelError)) {
+            if (!StringUtils.isEmpty(mICRpcResponse.channelError)) {
                 map2.put("channelError", mICRpcResponse.channelError);
             }
         } else {

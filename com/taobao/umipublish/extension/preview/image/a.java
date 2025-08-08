@@ -2,7 +2,7 @@ package com.taobao.umipublish.extension.preview.image;
 
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,9 +107,9 @@ public class a implements com.taobao.umipublish.extension.preview.a {
                                 labelData.posY = next.posY;
                                 labelData.labelStyle = a2;
                                 labelData.content = next.tagName;
-                                if (TextUtils.equals("left", next.direction)) {
+                                if (StringUtils.equals("left", next.direction)) {
                                     labelData.direction = 0;
-                                } else if (TextUtils.equals("right", next.direction)) {
+                                } else if (StringUtils.equals("right", next.direction)) {
                                     labelData.direction = 1;
                                 } else {
                                     labelData.direction = at.a(next.direction, 0);

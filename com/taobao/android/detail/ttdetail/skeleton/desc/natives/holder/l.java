@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -183,7 +183,7 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         }
         int a2 = com.taobao.android.detail.ttdetail.utils.f.a(this.f10821a);
         ImageView imageView = this.i;
-        if (!TextUtils.isEmpty(kVar.h)) {
+        if (!StringUtils.isEmpty(kVar.h)) {
             try {
                 float parseFloat = Float.parseFloat(kVar.h);
                 i = ((int) (a2 * parseFloat)) - ((int) (((1.0f / parseFloat) - 1.0f) * com.taobao.android.detail.ttdetail.utils.f.a(3.0f)));
@@ -235,7 +235,7 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             return;
         }
         String str = kVar.w;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             imageView.setVisibility(8);
             return;
         }
@@ -255,7 +255,7 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             if (a2 != null) {
                 this.m.addView(a2);
             }
-        } else if (!TextUtils.isEmpty(this.n)) {
+        } else if (!StringUtils.isEmpty(this.n)) {
             String[] split = this.n.split(",");
             if (arrayList == null) {
                 arrayList = new ArrayList<>();
@@ -286,7 +286,7 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return (k.a) ipChange.ipc$dispatch("2f938578", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new k.a(str, 0, 0);
         }
         return null;
@@ -297,7 +297,7 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("a428e67e", new Object[]{this, aVar});
         }
-        if (aVar == null || TextUtils.isEmpty(aVar.f10879a)) {
+        if (aVar == null || StringUtils.isEmpty(aVar.f10879a)) {
             return null;
         }
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, com.taobao.android.detail.ttdetail.utils.f.a(12.0f));
@@ -329,7 +329,7 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         this.p = kVar.e;
         this.o = kVar.f;
         this.n = kVar.y;
-        if (!TextUtils.isEmpty(this.p) || !TextUtils.isEmpty(this.o)) {
+        if (!StringUtils.isEmpty(this.p) || !StringUtils.isEmpty(this.o)) {
             this.h.setClickable(true);
         } else {
             this.h.setClickable(false);
@@ -354,13 +354,13 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         layoutParams2.addRule(5, imageView.getId());
         layoutParams2.addRule(3, this.j.getId());
         this.m.setLayoutParams(layoutParams2);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             String str5 = "¥ " + str2;
             int indexOf = str5.indexOf(".");
             if (indexOf > 0) {
                 String substring = str5.substring(indexOf + 1);
                 try {
-                    if (!TextUtils.isEmpty(substring) && Integer.parseInt(substring) <= 0) {
+                    if (!StringUtils.isEmpty(substring) && Integer.parseInt(substring) <= 0) {
                         str5 = str5.substring(0, indexOf);
                         indexOf = -1;
                     }
@@ -377,10 +377,10 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             }
             this.k.setText(spannableString);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.j.setText(str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             this.l.setText(str4);
         }
         a(kVar.x);
@@ -424,7 +424,7 @@ public class l extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9ca8ca61", new Object[]{this, kVar})).booleanValue();
         }
-        if (!c() || TextUtils.isEmpty(kVar.A)) {
+        if (!c() || StringUtils.isEmpty(kVar.A)) {
             return false;
         }
         kVar.a(new k.b() { // from class: com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder.l.1

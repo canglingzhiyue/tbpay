@@ -23,7 +23,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -278,7 +278,7 @@ public class RPTakePhotoActivity extends Activity implements DialogInterface.OnC
                 return (Void) ipChange.ipc$dispatch("8da1c66", new Object[]{this, strArr});
             }
             String a2 = com.alibaba.security.realidentity.g.a(strArr[0], RPTakePhotoActivity.this);
-            if (TextUtils.isEmpty(a2) || RPTakePhotoActivity.a(RPTakePhotoActivity.this) == null) {
+            if (StringUtils.isEmpty(a2) || RPTakePhotoActivity.a(RPTakePhotoActivity.this) == null) {
                 return null;
             }
             RPTakePhotoActivity.a(RPTakePhotoActivity.this).put(strArr[0], a2);
@@ -706,7 +706,7 @@ public class RPTakePhotoActivity extends Activity implements DialogInterface.OnC
                 return;
             }
             String str = this.v.get(strArr[i2]);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.I.setImageURI(Uri.fromFile(new File(str)));
                 this.I.setBackgroundColor(getResources().getColor(R.color.rpsdk_transparency_65));
                 this.I.setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -819,7 +819,7 @@ public class RPTakePhotoActivity extends Activity implements DialogInterface.OnC
         }
         while (it.hasNext()) {
             String str = this.v.get(this.s[this.q]);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.I.setImageURI(Uri.fromFile(new File(str)));
                 int i3 = this.q;
                 this.r = i3;

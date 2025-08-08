@@ -3,7 +3,7 @@ package com.alibaba.ability.impl.contacts;
 import android.content.Context;
 import android.database.Cursor;
 import android.provider.ContactsContract;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilityidl.ability.bh;
@@ -44,13 +44,13 @@ public final class b {
         ArrayList arrayList = new ArrayList();
         Cursor cursor = null;
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] strArr3 = new String[1];
                 strArr3[0] = str == null ? "" : str;
                 str4 = "_id= ?";
                 strArr2 = strArr3;
-            } else if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
-                if (!TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str2)) {
                     strArr = new String[]{WXUtils.PERCENT + str2 + WXUtils.PERCENT};
                     str4 = "display_name like ?";
                 } else {
@@ -75,7 +75,7 @@ public final class b {
             while (query.moveToNext()) {
                 String string = query.getString(0);
                 String string2 = query.getString(1);
-                if (!TextUtils.isEmpty(string) || !TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string) || !StringUtils.isEmpty(string2)) {
                     a aVar = new a();
                     aVar.f1873a = string;
                     aVar.b = string2;

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.provider.core;
 
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliImageCreatorInterface;
@@ -66,7 +66,7 @@ public class c implements com.taobao.android.detail.datasdk.protocol.image.c {
             ipChange.ipc$dispatch("b61b34d0", new Object[]{this, str, detailImageView, eplVar, bVar});
         } else if (detailImageView == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 detailImageView.setImageDrawable(null);
             } else if (eplVar == null || eplVar.c == 0) {
                 throw new IllegalArgumentException("option is invalid");

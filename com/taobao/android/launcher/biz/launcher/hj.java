@@ -2,7 +2,7 @@ package com.taobao.android.launcher.biz.launcher;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -66,15 +66,15 @@ public class hj extends com.taobao.android.launcher.biz.task.j {
             return false;
         }
         String queryParameter = data.getQueryParameter("h5Url");
-        if (TextUtils.isEmpty(queryParameter) || com.taobao.android.launcher.bootstrap.tao.ability.h.c(queryParameter) == null || (parse = Uri.parse(queryParameter)) == null) {
+        if (StringUtils.isEmpty(queryParameter) || com.taobao.android.launcher.bootstrap.tao.ability.h.c(queryParameter) == null || (parse = Uri.parse(queryParameter)) == null) {
             return false;
         }
         String path = parse.getPath();
         TLog.loge(gve.MODULE, getId(), "path:" + path);
-        if (TextUtils.equals(path, "/taolive/video.html")) {
+        if (StringUtils.equals(path, "/taolive/video.html")) {
             return true;
         }
-        if (TextUtils.equals(path, "/taolive/main.html")) {
+        if (StringUtils.equals(path, "/taolive/main.html")) {
             String queryParameter2 = parse.getQueryParameter("channelType");
             String queryParameter3 = parse.getQueryParameter(com.taobao.android.livehome.plugin.atype.flexalocal.utils.d.LIVE_HOME_PAGE_TYPE);
             if ("jingxuan,singleLiveTab".equals(queryParameter2) && (com.taobao.android.livehome.plugin.atype.flexalocal.utils.d.LIVE_HOME_PAGE_TYPE_mixLiveAndTab.equals(queryParameter3) || com.taobao.android.livehome.plugin.atype.flexalocal.utils.d.LIVE_HOME_PAGE_TYPE_mixLive.equals(queryParameter3))) {

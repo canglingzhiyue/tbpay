@@ -1,6 +1,6 @@
 package com.taobao.android.dinamicx.expression.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.expression.expr_v2.f;
 import com.taobao.android.dinamicx.widget.DXWidgetNode;
@@ -151,7 +151,7 @@ public class DXRecyclerEvent extends DXEvent {
         args.put("deltaX", f.a(this.deltaX));
         args.put("offsetX", f.a(this.offsetX));
         args.put("offsetY", f.a(this.offsetY));
-        if (!TextUtils.isEmpty(this.userId)) {
+        if (!StringUtils.isEmpty(this.userId)) {
             args.put("userId", f.a(this.userId));
         }
         args.put("direction", f.a(this.deltaY > 0 ? "up" : "down"));

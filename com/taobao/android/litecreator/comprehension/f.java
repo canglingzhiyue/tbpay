@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.comprehension;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uploader.export.i;
 import java.io.File;
@@ -35,7 +35,7 @@ public class f implements i {
             return;
         }
         this.f13332a = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.d = new File(str).length();

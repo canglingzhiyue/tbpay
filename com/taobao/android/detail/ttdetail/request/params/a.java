@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,7 +62,7 @@ public class a {
             ipChange.ipc$dispatch("d8033c25", new Object[]{this, intent});
         } else if (intent != null) {
             this.g = intent.getStringExtra(com.taobao.android.detail.ttdetail.constant.a.KEY_NAV);
-            if (TextUtils.isEmpty(this.g)) {
+            if (StringUtils.isEmpty(this.g)) {
                 this.g = String.valueOf(UUID.randomUUID().hashCode());
             }
             this.d = intent;
@@ -71,7 +71,7 @@ public class a {
             this.l = str;
             this.f = str;
             this.b.put("item_id", this.l);
-            if (TextUtils.isEmpty(this.l)) {
+            if (StringUtils.isEmpty(this.l)) {
                 i.a("itemId为空， url=" + this.d.getDataString());
             }
             this.j = intent.getLongExtra("NAV_TO_URL_START_UPTIME", 0L);
@@ -81,7 +81,7 @@ public class a {
                 return;
             }
             this.h = data.getQueryParameter("clickid");
-            if (TextUtils.isEmpty(this.h)) {
+            if (StringUtils.isEmpty(this.h)) {
                 this.h = intent.getStringExtra("clickid");
             }
             this.i = "true".equals(data.getQueryParameter(ecd.V_EFFECT_ACTION_SECKILL));
@@ -97,7 +97,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b1a285df", new Object[]{this, uri});
-        } else if (!TextUtils.isEmpty(uri.getQuery()) && (queryParameterNames = uri.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
+        } else if (!StringUtils.isEmpty(uri.getQuery()) && (queryParameterNames = uri.getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
             for (String str : queryParameterNames) {
                 if (!"referrer".equals(str)) {
                     this.b.put(str, uri.getQueryParameter(str));
@@ -128,7 +128,7 @@ public class a {
         String[] j = j.j();
         if (j != null) {
             for (String str : j) {
-                if (!TextUtils.isEmpty(str) && !b(str)) {
+                if (!StringUtils.isEmpty(str) && !b(str)) {
                     hashMap.remove(str);
                 }
             }
@@ -138,7 +138,7 @@ public class a {
 
     private boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : j.aa() && TextUtils.equals(this.b.get("list_type"), "search") && TextUtils.equals(str, "list_param");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : j.aa() && StringUtils.equals(this.b.get("list_type"), "search") && StringUtils.equals(str, "list_param");
     }
 
     public void a(eyz eyzVar) {
@@ -170,7 +170,7 @@ public class a {
             this.c.put("shop_id", (Object) d.b(seller, ""));
             this.c.put("seller_id", (Object) d.a(seller, ""));
             String string = PreferenceManager.getDefaultSharedPreferences(f.a()).getString("appGuide", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             this.c.put("appGuide", (Object) string);
@@ -191,7 +191,7 @@ public class a {
                 }
             }
             String str3 = this.b.get("track_params");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 try {
                     this.c.putAll(aq.a(JSON.parseObject(str3)));
                 } catch (Throwable unused) {
@@ -225,7 +225,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f = str;
             i.a("updateRequestItemId=" + this.f);
@@ -254,7 +254,7 @@ public class a {
         }
         Uri data = this.d.getData();
         if (data != null) {
-            return TextUtils.equals("true", data.getQueryParameter("99tm"));
+            return StringUtils.equals("true", data.getQueryParameter("99tm"));
         }
         return false;
     }

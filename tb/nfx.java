@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.webkit.URLUtil;
 import com.alibaba.fastjson.JSONArray;
@@ -283,7 +283,7 @@ public class nfx implements ngg {
         }
         HashMap hashMap = new HashMap();
         for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-            hashMap.put(entry.getKey(), TextUtils.join(", ", entry.getValue()));
+            hashMap.put(entry.getKey(), StringUtils.join(", ", entry.getValue()));
         }
         if (!hashMap.containsKey(com.taobao.pha.core.rescache.c.HEADER_ACAO) && !hashMap.containsKey(com.taobao.pha.core.rescache.c.HEADER_ACAO.toLowerCase(Locale.ROOT))) {
             hashMap.put(com.taobao.pha.core.rescache.c.HEADER_ACAO, "*");
@@ -299,7 +299,7 @@ public class nfx implements ngg {
         } else if (ngfVar == null || ngeVar == null || ngdVar.a() == null) {
         } else {
             String uri = ngdVar.a().toString();
-            if (!TextUtils.equals(uri, ngfVar.e()) || c(ngfVar, uri)) {
+            if (!StringUtils.equals(uri, ngfVar.e()) || c(ngfVar, uri)) {
             }
         }
     }
@@ -323,7 +323,7 @@ public class nfx implements ngg {
             ArrayList<String> arrayList2 = null;
             ngfVar.a("about:blank", (Map<String, String>) null);
             String str2 = this.c.downgradeUrl;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 Uri t = this.b.t();
                 ManifestModel u = this.b.u();
                 if (u != null) {

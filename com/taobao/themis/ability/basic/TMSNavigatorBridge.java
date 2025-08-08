@@ -3,7 +3,7 @@ package com.taobao.themis.ability.basic;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONObject;
@@ -142,7 +142,7 @@ public class TMSNavigatorBridge implements a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3a61f027", new Object[]{this, apiContext, bridgeCallback, str, jSONObject});
-        } else if (apiContext == null || apiContext.a() == null || TextUtils.isEmpty(str)) {
+        } else if (apiContext == null || apiContext.a() == null || StringUtils.isEmpty(str)) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.UNKNOWN_ERROR);
         } else {
             if (n.bb()) {
@@ -203,7 +203,7 @@ public class TMSNavigatorBridge implements a {
             return;
         }
         String string = jSONObject2.getString("referrerInfo");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         JSONObject jSONObject3 = null;
@@ -242,7 +242,7 @@ public class TMSNavigatorBridge implements a {
         Uri.Builder appendQueryParameter = o.b("https://m.duanqu.com").buildUpon().appendQueryParameter(com.taobao.themis.kernel.i.APP_ID, str).appendQueryParameter("page", str2);
         if (jSONObject != null && !jSONObject.isEmpty()) {
             String string = jSONObject.getString("envVersion");
-            if (!TextUtils.isEmpty(string) && !fVar.q().isMiniAppDebug()) {
+            if (!StringUtils.isEmpty(string) && !fVar.q().isMiniAppDebug()) {
                 if ("develop".equals(string)) {
                     str4 = "DEBUG";
                 } else if ("trial".equals(string)) {
@@ -265,7 +265,7 @@ public class TMSNavigatorBridge implements a {
             JSONObject c = c(jSONObject);
             if (c != null) {
                 for (Map.Entry<String, Object> entry : c.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey()) && (entry.getValue() instanceof String)) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && (entry.getValue() instanceof String)) {
                         if (sb.length() != 0) {
                             sb.append("&");
                         }
@@ -312,7 +312,7 @@ public class TMSNavigatorBridge implements a {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.UNKNOWN_ERROR);
             } else if (c.j() == TMSSolutionType.UNIAPP) {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.FORBIDDEN_ERROR);
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                 bridgeCallback.sendBridgeResponse(new BridgeResponse.Error(2, "params invalid"));
             } else {
                 bridgeCallback.sendBridgeResponse(BridgeResponse.SUCCESS);

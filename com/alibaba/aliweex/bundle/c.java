@@ -1,6 +1,6 @@
 package com.alibaba.aliweex.bundle;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.aliweex.bundle.k;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -22,7 +22,7 @@ public class c implements k.c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             b(str, str2);
         }
@@ -84,12 +84,12 @@ public class c implements k.c {
 
         public String a() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this}) : TextUtils.isEmpty(this.b) ? this.f2011a : this.b;
+            return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this}) : StringUtils.isEmpty(this.b) ? this.f2011a : this.b;
         }
 
         public String b() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this}) : TextUtils.isEmpty(this.d) ? this.c : this.d;
+            return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this}) : StringUtils.isEmpty(this.d) ? this.c : this.d;
         }
 
         public void c() {

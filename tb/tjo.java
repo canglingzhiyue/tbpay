@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSAppMonitor;
@@ -158,7 +158,7 @@ public class tjo {
         }
         try {
             String str = baseMmAdModel.actionResponse;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if ("2".equals(str)) {
                     hashMap.put("actionResponse", baseMmAdModel.actionResponse);
                     hashMap.put("actionResult", baseMmAdModel.actionResult);
@@ -186,7 +186,7 @@ public class tjo {
                 hashMap.put("gestureSwitch", baseMmAdModel.gestureSwitch);
                 hashMap.put("interactImage", baseMmAdModel.interactImage);
                 hashMap.put("gestureImage", baseMmAdModel.gestureImage);
-            } else if (!TextUtils.isEmpty(baseMmAdModel.animationType)) {
+            } else if (!StringUtils.isEmpty(baseMmAdModel.animationType)) {
                 hashMap.put("animationType", baseMmAdModel.animationType);
                 hashMap.put("animationLottie", baseMmAdModel.animationLottie);
             }
@@ -246,7 +246,7 @@ public class tjo {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             arrayList.add(String.format("%s=%s", entry.getKey(), entry.getValue()));
         }
-        return TextUtils.join(",", arrayList);
+        return StringUtils.join(",", arrayList);
     }
 
     public static Map<String, String> a(JSONObject jSONObject, Map<String, String> map) {

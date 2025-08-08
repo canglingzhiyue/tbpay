@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -47,7 +47,7 @@ public class kzh extends kyx {
         }
         if (objArr != null && objArr.length != 0) {
             String obj = objArr[0] == null ? null : objArr[0].toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 return -1;
             }
             try {

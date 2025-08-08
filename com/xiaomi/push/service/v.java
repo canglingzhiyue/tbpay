@@ -2,7 +2,7 @@ package com.xiaomi.push.service;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transportext.amnet.Baggage;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 
@@ -39,15 +39,15 @@ public class v {
             String string6 = sharedPreferences.getString("package_name", null);
             String string7 = sharedPreferences.getString(PushConstants.DEVICE_ID, null);
             int i = sharedPreferences.getInt("env_type", 1);
-            if (!TextUtils.isEmpty(string7) && com.xiaomi.push.i.a(string7)) {
+            if (!StringUtils.isEmpty(string7) && com.xiaomi.push.i.a(string7)) {
                 string7 = com.xiaomi.push.i.g(context);
                 sharedPreferences.edit().putString(PushConstants.DEVICE_ID, string7).commit();
             }
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
                 return null;
             }
             String g = com.xiaomi.push.i.g(context);
-            if (!"com.xiaomi.xmsf".equals(context.getPackageName()) && !TextUtils.isEmpty(g) && !TextUtils.isEmpty(string7) && !string7.equals(g)) {
+            if (!"com.xiaomi.xmsf".equals(context.getPackageName()) && !StringUtils.isEmpty(g) && !StringUtils.isEmpty(string7) && !string7.equals(g)) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("read_phone_state permission changes.");
             }
             u uVar = new u(string, string2, string3, string4, string5, string6, i);
@@ -93,7 +93,7 @@ public class v {
     /* renamed from: a  reason: collision with other method in class */
     public static String m2361a(Context context) {
         u m2360a = m2360a(context);
-        if (m2360a != null && !TextUtils.isEmpty(m2360a.f1028a)) {
+        if (m2360a != null && !StringUtils.isEmpty(m2360a.f1028a)) {
             String[] split = m2360a.f1028a.split("@");
             if (split.length > 0) {
                 return split[0];

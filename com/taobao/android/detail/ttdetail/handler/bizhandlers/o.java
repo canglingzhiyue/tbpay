@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.data.meta.Vertical;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -44,7 +44,7 @@ public class o implements ezm {
             return false;
         }
         String b = hk.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return false;
         }
         try {

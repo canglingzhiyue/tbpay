@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.t;
 import com.taobao.taolive.sdk.adapter.network.b;
@@ -365,7 +365,7 @@ public final class pmd {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && a().c() != null && a().c().a() != null && a().c().a().containsKey(str)) {
+        if (!StringUtils.isEmpty(str) && a().c() != null && a().c().a() != null && a().c().a().containsKey(str)) {
             return a().c().a().get(str).booleanValue();
         }
         return true;

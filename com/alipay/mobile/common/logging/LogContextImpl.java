@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.wallet.spmtracker.ISpmMonitor;
 import com.alipay.mobile.common.logging.api.LogAppenderistener;
 import com.alipay.mobile.common.logging.api.LogCategory;
@@ -216,11 +216,11 @@ public class LogContextImpl implements LogContext {
         this.e = context;
         this.p = new ContextInfo(context);
         String str = this.p.n;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             putBizExternParams(LoggingSPCache.STORAGE_HOTPATCHDESC, str);
         }
         String str2 = this.p.o;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             putBizExternParams(LoggingSPCache.STORAGE_HOTPATCHBUNDLEVERSION, str2);
         }
         LogStrategyManager.createInstance(context, this.p);
@@ -821,7 +821,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.b = str;
@@ -837,7 +837,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.c = str;
@@ -853,7 +853,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.d = str;
@@ -870,7 +870,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.e = str;
@@ -886,7 +886,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.f = str;
@@ -900,7 +900,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.g = str;
@@ -916,7 +916,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.h = str;
@@ -932,7 +932,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.i = str;
@@ -948,7 +948,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.k = str;
@@ -984,7 +984,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.m = str;
@@ -1001,7 +1001,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.n = str;
@@ -1019,7 +1019,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.o = str;
@@ -1037,7 +1037,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.r = str;
@@ -1054,7 +1054,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.s = str;
@@ -1071,7 +1071,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.p = str;
@@ -1101,7 +1101,7 @@ public class LogContextImpl implements LogContext {
         }
         this.f = str;
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.u = str;
@@ -1118,7 +1118,7 @@ public class LogContextImpl implements LogContext {
         }
         this.f = str;
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.u = str;
@@ -1144,7 +1144,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.b = str;
@@ -1160,7 +1160,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.c = str;
@@ -1176,7 +1176,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.d = str;
@@ -1193,7 +1193,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.e = str;
@@ -1209,7 +1209,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.f = str;
@@ -1223,7 +1223,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.g = str;
@@ -1239,7 +1239,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.h = str;
@@ -1255,7 +1255,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.i = str;
@@ -1271,7 +1271,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.k = str;
@@ -1287,7 +1287,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.m = str;
@@ -1304,7 +1304,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.n = str;
@@ -1322,7 +1322,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.o = str;
@@ -1340,7 +1340,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.r = str;
@@ -1357,7 +1357,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.s = str;
@@ -1374,7 +1374,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.p = str;
@@ -1414,7 +1414,7 @@ public class LogContextImpl implements LogContext {
             return;
         }
         ContextInfo contextInfo = this.p;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         contextInfo.t = str;
@@ -1492,7 +1492,7 @@ public class LogContextImpl implements LogContext {
         traceLogger.error("LogContext", "traceNativeCrash, filePath:" + str + ", isBoot:" + z + ", process: " + processAlias);
         if (LoggerFactory.getProcessInfo().isMainProcess() || LoggerFactory.getProcessInfo().isExtProcess() || LoggerFactory.getProcessInfo().isLiteProcess() || LoggerFactory.getProcessInfo().isSandboxProcess()) {
             String a2 = a(str, str2, z);
-            if (LoggerFactory.getProcessInfo().isMainProcess() && z && TextUtils.isEmpty(a2)) {
+            if (LoggerFactory.getProcessInfo().isMainProcess() && z && StringUtils.isEmpty(a2)) {
                 File file = null;
                 try {
                     file = new File(this.e.getApplicationInfo().dataDir + File.separator + "app_crash");
@@ -1537,7 +1537,7 @@ public class LogContextImpl implements LogContext {
         }
         StringBuilder sb = null;
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 sb = new StringBuilder();
                 sb.append("file path is empty");
             } else {
@@ -1639,10 +1639,10 @@ public class LogContextImpl implements LogContext {
                 this.j = "";
             }
         }
-        if (LoggingUtil.isDebuggable(this.e) && TextUtils.isEmpty(null)) {
+        if (LoggingUtil.isDebuggable(this.e) && StringUtils.isEmpty(null)) {
             str = this.j;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = !c() ? LogContext.LOG_HOST_HTTPS_RELEASE_METDS_EX : LogContext.LOG_HOST_HTTPS_RELEASE_METDS;
         }
         this.i = str;
@@ -1669,7 +1669,7 @@ public class LogContextImpl implements LogContext {
         LoggerFactory.getTraceLogger().info("LogContext", "getClientStatus: , now: " + currentTimeMillis + ", gotoBackgroundTimestamp: " + ClientEventHelper.a().c + ", clientLaunchTimestamp: " + ClientEventHelper.a().b + ", processSetupTimestamp: " + ClientEventHelper.a().f5430a);
         if (z2) {
             String g = CrashBridge.g();
-            if (!TextUtils.isEmpty(g)) {
+            if (!StringUtils.isEmpty(g)) {
                 return g;
             }
             if (z) {
@@ -1697,7 +1697,7 @@ public class LogContextImpl implements LogContext {
                 str2 = null;
             }
             boolean i = CrashBridge.i();
-            if (TextUtils.isEmpty(str3) && TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str3) && StringUtils.isEmpty(str2)) {
                 z3 = CrashBridge.j();
             }
             return (i || z3) ? "background" : "foreground";

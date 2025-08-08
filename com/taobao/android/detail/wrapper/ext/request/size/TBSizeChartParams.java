@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.request.size;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.request.MtopRequestParams;
 import com.taobao.android.detail.core.request.b;
@@ -37,13 +37,13 @@ public class TBSizeChartParams implements MtopRequestParams {
             return (HashMap) ipChange.ipc$dispatch("1c79404b", new Object[]{this});
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(this.userId)) {
+        if (!StringUtils.isEmpty(this.userId)) {
             hashMap.put("userId", this.userId);
         }
-        if (!TextUtils.isEmpty(this.itemId)) {
+        if (!StringUtils.isEmpty(this.itemId)) {
             hashMap.put("itemId", this.itemId);
         }
-        if (!TextUtils.isEmpty(this.sellerId)) {
+        if (!StringUtils.isEmpty(this.sellerId)) {
             hashMap.put("sellerId", this.sellerId);
         }
         hashMap.put("detail_v", b.b);

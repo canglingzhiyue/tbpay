@@ -3,7 +3,7 @@ package tb;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
@@ -20,11 +20,11 @@ public class dbn {
 
     public static String a() {
         String str = null;
-        if (TextUtils.isEmpty(null)) {
+        if (StringUtils.isEmpty(null)) {
             try {
                 BufferedReader bufferedReader = new BufferedReader(new FileReader("/proc/" + Process.myPid() + "/cmdline"));
                 str = bufferedReader.readLine();
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     str = str.trim();
                 }
                 bufferedReader.close();
@@ -44,7 +44,7 @@ public class dbn {
     public static java.lang.String a(android.content.Context r5) {
         /*
             java.lang.String r0 = tb.dbn.f26663a     // Catch: java.lang.Throwable -> L62
-            boolean r0 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L62
+            boolean r0 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L62
             if (r0 == 0) goto L63
             r0 = 0
             int r1 = android.os.Build.VERSION.SDK_INT     // Catch: java.lang.Throwable -> L14
@@ -56,7 +56,7 @@ public class dbn {
             r1 = r0
         L15:
             tb.dbn.f26663a = r1     // Catch: java.lang.Throwable -> L62
-            boolean r1 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L62
+            boolean r1 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> L62
             if (r1 == 0) goto L45
             java.lang.String r1 = "android.app.ActivityThread"
             java.lang.Class<android.app.Application> r2 = android.app.Application.class
@@ -78,13 +78,13 @@ public class dbn {
             tb.dbn.f26663a = r0     // Catch: java.lang.Throwable -> L62
         L45:
             java.lang.String r0 = tb.dbn.f26663a     // Catch: java.lang.Throwable -> L62
-            boolean r0 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L62
+            boolean r0 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L62
             if (r0 == 0) goto L53
             java.lang.String r0 = a()     // Catch: java.lang.Throwable -> L62
             tb.dbn.f26663a = r0     // Catch: java.lang.Throwable -> L62
         L53:
             java.lang.String r0 = tb.dbn.f26663a     // Catch: java.lang.Throwable -> L62
-            boolean r0 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L62
+            boolean r0 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L62
             if (r0 == 0) goto L63
             java.lang.String r5 = b(r5)     // Catch: java.lang.Throwable -> L62
             tb.dbn.f26663a = r5     // Catch: java.lang.Throwable -> L62

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -208,7 +208,7 @@ public class LiveCustomToast extends PopupWindow implements a {
         if (textView != null) {
             textView.setText(charSequence);
         }
-        if (TextUtils.isEmpty(charSequence)) {
+        if (StringUtils.isEmpty(charSequence)) {
             this.mLinearLayout2.setVisibility(8);
             LinearLayout linearLayout = this.mLinearLayout1;
             if (linearLayout != null) {

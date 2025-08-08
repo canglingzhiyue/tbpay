@@ -1,7 +1,7 @@
 package com.taobao.message.chatv2.viewcenter;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class MessageFlowPreLoad implements IInstancePreLoad {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("300c4856", new Object[]{this, context, obj, dinamicXEngine, str, map});
-        } else if (!ABGlobal.isFeatureOpened(ApplicationUtil.getApplication(), "msgDxInstancePreRender") || !TextUtils.equals(str, "messageFlow") || map == null || !(obj instanceof IViewCenterService) || (jSONArray = (JSONArray) map.get("messageViewObjects")) == null || jSONArray.size() == 0) {
+        } else if (!ABGlobal.isFeatureOpened(ApplicationUtil.getApplication(), "msgDxInstancePreRender") || !StringUtils.equals(str, "messageFlow") || map == null || !(obj instanceof IViewCenterService) || (jSONArray = (JSONArray) map.get("messageViewObjects")) == null || jSONArray.size() == 0) {
         } else {
             if (this.isLoad) {
                 TLog.loge(TAG, "preloading");

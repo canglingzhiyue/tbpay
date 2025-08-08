@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.bucketing.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.triver.triver_shop.newShop.event.broadcast.c;
 import com.alibaba.ut.abtest.internal.bucketing.ExperimentRoutingType;
@@ -241,11 +241,11 @@ public class ExperimentCognation implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("15328013", new Object[]{this, str})).booleanValue();
         }
-        if ((this.type == ExperimentCognationType.Domain || this.type == ExperimentCognationType.RootDomain) && TextUtils.equals(str, getCode())) {
+        if ((this.type == ExperimentCognationType.Domain || this.type == ExperimentCognationType.RootDomain) && StringUtils.equals(str, getCode())) {
             return true;
         }
         for (ExperimentCognation child = getChild(); child != null; child = child.getChild()) {
-            if ((child.getType() == ExperimentCognationType.Domain || child.getType() == ExperimentCognationType.RootDomain) && TextUtils.equals(str, child.getCode())) {
+            if ((child.getType() == ExperimentCognationType.Domain || child.getType() == ExperimentCognationType.RootDomain) && StringUtils.equals(str, child.getCode())) {
                 return true;
             }
         }

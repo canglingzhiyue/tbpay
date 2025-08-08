@@ -1,7 +1,7 @@
 package com.taobao.android.dinamic.tempate;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayDeque;
@@ -220,7 +220,7 @@ public class c {
             }
             HashSet hashSet = new HashSet();
             for (DinamicTemplate dinamicTemplate : this.b) {
-                if (dinamicTemplate == null || TextUtils.isEmpty(dinamicTemplate.templateUrl) || TextUtils.isEmpty(dinamicTemplate.name) || TextUtils.isEmpty(dinamicTemplate.version)) {
+                if (dinamicTemplate == null || StringUtils.isEmpty(dinamicTemplate.templateUrl) || StringUtils.isEmpty(dinamicTemplate.name) || StringUtils.isEmpty(dinamicTemplate.version)) {
                     this.j.add(dinamicTemplate);
                     this.l.add(dinamicTemplate);
                 } else {
@@ -302,7 +302,7 @@ public class c {
                 return (C0470c) ipChange.ipc$dispatch("946224d4", new Object[]{this, dinamicTemplate});
             }
             String a2 = a(dinamicTemplate);
-            if (TextUtils.isEmpty(a2) || this.d.c(a2) != null) {
+            if (StringUtils.isEmpty(a2) || this.d.c(a2) != null) {
                 return null;
             }
             C0470c c0470c = new C0470c();
@@ -344,7 +344,7 @@ public class c {
                 return true;
             }
             if (obj != null && getClass() == obj.getClass()) {
-                return TextUtils.equals(this.f11760a, ((C0470c) obj).f11760a);
+                return StringUtils.equals(this.f11760a, ((C0470c) obj).f11760a);
             }
             return false;
         }

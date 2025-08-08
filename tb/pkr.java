@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewStub;
@@ -551,7 +551,7 @@ public class pkr implements f, c, pqf {
                     return;
                 }
                 String a2 = cgl.r().a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 if (pkr.a(pkr.this) != null) {
@@ -723,7 +723,7 @@ public class pkr implements f, c, pqf {
             }
             c("cdn onSuccess");
             SimpleLiveInfo simpleLiveInfo = (SimpleLiveInfo) pqj.a((String) obj, SimpleLiveInfo.class);
-            if (this.j == null || simpleLiveInfo == null || TextUtils.isEmpty(this.b) || !this.b.equals(simpleLiveInfo.liveId) || simpleLiveInfo.roomStatus != 1 || simpleLiveInfo.liveUrlList == null || simpleLiveInfo.liveUrlList.isEmpty()) {
+            if (this.j == null || simpleLiveInfo == null || StringUtils.isEmpty(this.b) || !this.b.equals(simpleLiveInfo.liveId) || simpleLiveInfo.roomStatus != 1 || simpleLiveInfo.liveUrlList == null || simpleLiveInfo.liveUrlList.isEmpty()) {
                 return;
             }
             MediaData mediaData = new MediaData();
@@ -768,7 +768,7 @@ public class pkr implements f, c, pqf {
                 pkmVar.e("cdnLiveUrlList");
                 this.l.f(this.m);
             }
-            if (!TextUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
+            if (!StringUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
                 t.a(mediaData.dataTracks, this.f);
             }
             if (o.t()) {
@@ -931,7 +931,7 @@ public class pkr implements f, c, pqf {
             if (this.w == null) {
                 this.w = new x(this.j, (Activity) this.f, false, this.g);
             }
-            int a2 = this.w.a(videoInfo, !TextUtils.isEmpty(str));
+            int a2 = this.w.a(videoInfo, !StringUtils.isEmpty(str));
             String a3 = this.w.a(videoInfo, a2);
             this.w.a(false);
             if (videoInfo.status == 0) {
@@ -953,7 +953,7 @@ public class pkr implements f, c, pqf {
                                 g gVar2 = this.g;
                                 if (gVar2 != null) {
                                     String t = gVar2.y().aJ_().b().t();
-                                    if (!TextUtils.isEmpty(t) && TextUtils.equals(videoInfo.liveId, t)) {
+                                    if (!StringUtils.isEmpty(t) && StringUtils.equals(videoInfo.liveId, t)) {
                                         this.l.e("detailPre");
                                     } else {
                                         this.l.e("mtopLiveUrlList");
@@ -977,7 +977,7 @@ public class pkr implements f, c, pqf {
                     try {
                         Object[] objArr = new Object[4];
                         objArr[0] = videoInfo.broadCaster.accountId;
-                        objArr[1] = !TextUtils.isEmpty(a3) ? URLEncoder.encode(a3, "UTF-8") : "";
+                        objArr[1] = !StringUtils.isEmpty(a3) ? URLEncoder.encode(a3, "UTF-8") : "";
                         objArr[2] = videoInfo.liveId;
                         objArr[3] = videoInfo.topic;
                         str4 = String.format("C-Common-%s-%s-%s-%s", objArr);
@@ -1070,7 +1070,7 @@ public class pkr implements f, c, pqf {
             }
             a(this.f.getString(R.string.taolive_replay_video_error_hint), videoInfo);
             this.j.changeStatus(2);
-            if (!TextUtils.isEmpty(this.j.getVideoViewToken())) {
+            if (!StringUtils.isEmpty(this.j.getVideoViewToken())) {
                 return;
             }
             pkm pkmVar = this.l;
@@ -1179,12 +1179,12 @@ public class pkr implements f, c, pqf {
                 return;
             }
             String str = videoInfo.playModePortrait;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = aa.cd();
             }
             if (y.a() && y.b(this.f)) {
                 str = videoInfo.playModeLandscape;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = aa.cc();
                 }
             }
@@ -1206,7 +1206,7 @@ public class pkr implements f, c, pqf {
                 return;
             }
             String str = videoInfo.playModeLandscape;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = aa.cc();
             }
             this.j.getTaoVideoView().a(com.taobao.taolive.room.utils.ac.a().a(str));
@@ -1396,7 +1396,7 @@ public class pkr implements f, c, pqf {
             return;
         }
         String str = w.initParams != null ? w.initParams.get(aw.PARAM_PLAY_VIEW_TOKEN) : null;
-        if (!TextUtils.isEmpty(str) && !com.taobao.taolive.sdk.ui.media.g.a().d(str)) {
+        if (!StringUtils.isEmpty(str) && !com.taobao.taolive.sdk.ui.media.g.a().d(str)) {
             str = null;
         }
         VideoFrame2 videoFrame2 = this.j;
@@ -1478,7 +1478,7 @@ public class pkr implements f, c, pqf {
                     pkr.l(pkr.this).setCoverImg(pkr.a(pkr.this).getResources().getDrawable(R.drawable.taolive_slice_scroll_common), true);
                 }
             }).a();
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (aa.aM()) {
                 TBLiveRecEngineV2.RecModel recModel = this.i;
@@ -1551,9 +1551,9 @@ public class pkr implements f, c, pqf {
         } else if (this.i == null || this.j == null) {
         } else {
             A();
-            if (!TextUtils.isEmpty(as.m()) && !"null".equals(as.m())) {
+            if (!StringUtils.isEmpty(as.m()) && !"null".equals(as.m())) {
                 String m = as.m();
-                if (!TextUtils.isEmpty(m)) {
+                if (!StringUtils.isEmpty(m)) {
                     pkm pkmVar = this.l;
                     if (pkmVar != null) {
                         pkmVar.e(aw.PARAM_LIVE_PLAY_URL);
@@ -1562,9 +1562,9 @@ public class pkr implements f, c, pqf {
                     this.j.preloadVideoByUrl(m);
                     onLiveStartPlay(false);
                 }
-            } else if (!TextUtils.isEmpty(this.j.getVideoViewToken())) {
+            } else if (!StringUtils.isEmpty(this.j.getVideoViewToken())) {
                 if (this.l != null) {
-                    this.l.e((this.i.initParams == null || TextUtils.isEmpty(this.i.initParams.get(aw.PARAM_PLAY_MODE))) ? "playerViewToken" : this.i.initParams.get(aw.PARAM_PLAY_MODE));
+                    this.l.e((this.i.initParams == null || StringUtils.isEmpty(this.i.initParams.get(aw.PARAM_PLAY_MODE))) ? "playerViewToken" : this.i.initParams.get(aw.PARAM_PLAY_MODE));
                     this.l.f(this.m);
                     this.l.a(this.m, 0L);
                 }
@@ -1579,7 +1579,7 @@ public class pkr implements f, c, pqf {
                     String str = this.i.initParams.get(aw.PARAM_LIVE_URL_TYPE);
                     if (("rtcLive".equals(str) && u.F()) || (("bfrtc".equals(str) && u.E()) || (("artp".equals(str) && u.D()) || "flv".equals(str)))) {
                         String str2 = this.i.initParams.get(aw.PARAM_LIVE_PLAY_URL);
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             pkm pkmVar2 = this.l;
                             if (pkmVar2 != null) {
                                 pkmVar2.e(aw.PARAM_LIVE_PLAY_URL);
@@ -1654,7 +1654,7 @@ public class pkr implements f, c, pqf {
                 pkmVar.e("liveUrlList");
                 this.l.f(this.m);
             }
-            if (!TextUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
+            if (!StringUtils.isEmpty(mediaData.dataTracks) && (t = pmd.a().t()) != null) {
                 t.a(mediaData.dataTracks, this.f);
             }
             this.j.preloadVideo(mediaData, z);
@@ -1669,7 +1669,7 @@ public class pkr implements f, c, pqf {
             ipChange.ipc$dispatch("13019d6b", new Object[]{this, spfPlayVideo});
         } else if (spfPlayVideo == null) {
         } else {
-            if (!TextUtils.isEmpty(spfPlayVideo.playInfo)) {
+            if (!StringUtils.isEmpty(spfPlayVideo.playInfo)) {
                 com.taobao.taolive.sdk.playcontrol.c.a(this.g, VideoStatus.VIDEO_TIMESHIFT_STATUS);
                 if (com.taobao.android.litecreator.comprehension.f.FILE_TYPE_VIDEO_MP4.equals(spfPlayVideo.videoType)) {
                     com.taobao.taolive.movehighlight.utils.f.a().a(com.taobao.android.litecreator.comprehension.f.FILE_TYPE_VIDEO_MP4);
@@ -1722,7 +1722,7 @@ public class pkr implements f, c, pqf {
         int J = this.j.getTaoVideoView().J();
         if (J == 0) {
             TBLiveRecEngineV2.RecModel recModel = this.i;
-            String str = (recModel == null || recModel.initParams == null || TextUtils.isEmpty(this.i.initParams.get(aw.PARAM_PLAY_MODE))) ? "playerViewToken" : this.i.initParams.get(aw.PARAM_PLAY_MODE);
+            String str = (recModel == null || recModel.initParams == null || StringUtils.isEmpty(this.i.initParams.get(aw.PARAM_PLAY_MODE))) ? "playerViewToken" : this.i.initParams.get(aw.PARAM_PLAY_MODE);
             if (this.j.getTaoVideoView().h() == IMediaPlayer.WarmState.WARMED) {
                 this.l.o("warmuped");
             } else if (this.j.getTaoVideoView().h() == IMediaPlayer.WarmState.WARMING) {
@@ -1761,9 +1761,9 @@ public class pkr implements f, c, pqf {
         if (recModel.isFirst && recModel.initParams != null) {
             String str = recModel.initParams.get(aw.PARAM_CUSTOM_PLAY_CTRL);
             String str2 = recModel.initParams.get(aw.PARAM_QUICK_LIVE_URL);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 mediaData = com.taobao.taolive.sdk.model.common.a.a(q.a(str));
-            } else if (!TextUtils.isEmpty(str2) && aa.aT() && (a2 = q.a(str2)) != null) {
+            } else if (!StringUtils.isEmpty(str2) && aa.aT() && (a2 = q.a(str2)) != null) {
                 mediaData = new MediaData();
                 mediaData.liveUrlList = new ArrayList<>();
                 MediaData.QualityLiveItem qualityLiveItem = new MediaData.QualityLiveItem();
@@ -1785,7 +1785,7 @@ public class pkr implements f, c, pqf {
                 mediaData.liveUrlList.add(qualityLiveItem);
             }
             String str3 = recModel.initParams.get(aw.PARAM_PLAYER_TOKEN);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return mediaData;
             }
             this.j.setToken(str3);
@@ -1834,13 +1834,13 @@ public class pkr implements f, c, pqf {
             return;
         }
         TBLiveRecEngineV2.RecModel recModel = this.i;
-        if (recModel == null || recModel.initParams == null || TextUtils.isEmpty(this.i.liveId) || (videoFrame2 = this.j) == null || videoFrame2.hasPreloaded()) {
+        if (recModel == null || recModel.initParams == null || StringUtils.isEmpty(this.i.liveId) || (videoFrame2 = this.j) == null || videoFrame2.hasPreloaded()) {
             return;
         }
         this.b = this.i.liveId;
         this.c = this.i.accountId;
         String str = this.i.initParams.get(aw.PARAM_TIMEMOVING_ITEM_ID);
-        if (!TextUtils.isEmpty(this.i.initParams.get(aw.PARAM_SJSD_ITEM_ID)) || !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(this.i.initParams.get(aw.PARAM_SJSD_ITEM_ID)) || !StringUtils.isEmpty(str)) {
             return;
         }
         if (this.n == null) {
@@ -1936,7 +1936,7 @@ public class pkr implements f, c, pqf {
         if (videoInfo != null && (tBLiveBizDataModel = this.h) != null) {
             LiveItem.SpfPlayVideo a2 = j.a(tBLiveBizDataModel.mInitParams);
             VideoFrame2 videoFrame2 = this.j;
-            if (videoFrame2 != null && videoFrame2.hasPreloaded() && a2 != null && !TextUtils.isEmpty(a2.playInfo) && com.taobao.taolive.movehighlight.utils.c.j() && !TextUtils.isEmpty(videoInfo.liveUrl) && !TextUtils.isEmpty(this.j.highlightCurrentPlay)) {
+            if (videoFrame2 != null && videoFrame2.hasPreloaded() && a2 != null && !StringUtils.isEmpty(a2.playInfo) && com.taobao.taolive.movehighlight.utils.c.j() && !StringUtils.isEmpty(videoInfo.liveUrl) && !StringUtils.isEmpty(this.j.highlightCurrentPlay)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID, videoInfo.liveId);
                 ai.a(19999, "compitableHighlightPreload", hashMap);
@@ -1988,7 +1988,7 @@ public class pkr implements f, c, pqf {
                 return;
             }
             String str = videoInfo.playModeLandscape;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = aa.cc();
             }
             IMediaPlayer.AspectRatio a2 = com.taobao.taolive.room.utils.ac.a().a(str);
@@ -1997,7 +1997,7 @@ public class pkr implements f, c, pqf {
         } else if (!aa.cb() || (videoFrame22 = this.j) == null || videoFrame22.getTaoVideoView() == null) {
         } else {
             String str2 = videoInfo.playModePortrait;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = aa.cd();
             }
             IMediaPlayer.AspectRatio b = com.taobao.taolive.room.utils.ac.a().b(str2);
@@ -2013,7 +2013,7 @@ public class pkr implements f, c, pqf {
         } else if (this.j == null || videoInfo == null) {
         } else {
             ImageView imageView = null;
-            if (!TextUtils.isEmpty(videoInfo.coverImg169)) {
+            if (!StringUtils.isEmpty(videoInfo.coverImg169)) {
                 imageView = new ImageView(this.f);
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             }
@@ -2064,16 +2064,16 @@ public class pkr implements f, c, pqf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Uri parse = Uri.parse(str);
             String str2 = null;
             if (parse != null) {
                 str2 = parse.getQueryParameter(CommandID.seekTo);
             }
-            if (!TextUtils.isEmpty(str2) && str2.contains(".")) {
+            if (!StringUtils.isEmpty(str2) && str2.contains(".")) {
                 this.j.seekTo(((int) Float.parseFloat(str2)) * 1000);
-            } else if (TextUtils.isEmpty(str2) || !TextUtils.isDigitsOnly(str2)) {
+            } else if (StringUtils.isEmpty(str2) || !StringUtils.isDigitsOnly(str2)) {
             } else {
                 this.j.seekTo(Integer.parseInt(str2) * 1000);
             }
@@ -2104,7 +2104,7 @@ public class pkr implements f, c, pqf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (this.g.y() == null || TextUtils.isEmpty(str)) {
+        } else if (this.g.y() == null || StringUtils.isEmpty(str)) {
         } else {
             this.g.y().k = "true".equals(str);
         }
@@ -2117,10 +2117,10 @@ public class pkr implements f, c, pqf {
         } else if (simpleVideoInfo == null || !aa.bE()) {
         } else {
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(simpleVideoInfo.liveId)) {
+            if (!StringUtils.isEmpty(simpleVideoInfo.liveId)) {
                 hashMap.put("feed_id", simpleVideoInfo.liveId);
             }
-            if (!TextUtils.isEmpty(simpleVideoInfo.accountId)) {
+            if (!StringUtils.isEmpty(simpleVideoInfo.accountId)) {
                 hashMap.put("account_id", simpleVideoInfo.accountId);
             }
             com.taobao.taolive.sdk.core.a.a(this.g, ai.e(this.g, this.f), hashMap);

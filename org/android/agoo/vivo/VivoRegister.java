@@ -3,7 +3,7 @@ package org.android.agoo.vivo;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
 import com.taobao.accs.utl.ALog;
@@ -123,7 +123,7 @@ public class VivoRegister {
                                             return;
                                         }
                                         ALog.e(VivoRegister.TAG, "getRegId onSuccess", "regId", str);
-                                        if (TextUtils.isEmpty(str)) {
+                                        if (StringUtils.isEmpty(str)) {
                                             return;
                                         }
                                         NotifManager notifManager = new NotifManager();
@@ -230,7 +230,7 @@ public class VivoRegister {
                         return;
                     }
                     ALog.e(VivoRegister.TAG, "getRegId onSuccess", "regId", str);
-                    if (VivoRegister.access$100() || TextUtils.isEmpty(str)) {
+                    if (VivoRegister.access$100() || StringUtils.isEmpty(str)) {
                         return;
                     }
                     VivoRegister.access$102(true);

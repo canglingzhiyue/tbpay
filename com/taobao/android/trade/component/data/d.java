@@ -1,6 +1,6 @@
 package com.taobao.android.trade.component.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -56,7 +56,7 @@ public class d {
         JSONObject jSONObject2 = jSONObject.getJSONObject("linkage");
         if (jSONObject2 != null) {
             for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
-                if (TextUtils.equals(entry.getKey(), "common")) {
+                if (StringUtils.equals(entry.getKey(), "common")) {
                     JSONObject jSONObject3 = (JSONObject) entry.getValue();
                     if (jSONObject3 != null) {
                         JSONObject jSONObject4 = cVar.f;

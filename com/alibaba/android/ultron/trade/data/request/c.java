@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.trade.data.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,7 +85,7 @@ public class c implements Cloneable {
         }
         if (this.k != null && map != null && !map.isEmpty()) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey())) {
+                if (!StringUtils.isEmpty(entry.getKey())) {
                     String key = entry.getKey();
                     if ("exParams".equals(key)) {
                         a(this.k, entry.getValue());
@@ -108,7 +108,7 @@ public class c implements Cloneable {
         } else if (map == null || str == null) {
         } else {
             String str2 = map.get("exParams");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 map.put("exParams", str);
                 return;
             }

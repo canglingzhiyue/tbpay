@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -284,7 +284,7 @@ public class ModuleFlowController {
             MICRpcRequest mICRpcRequest = new MICRpcRequest();
             mICRpcRequest.verifyId = str;
             mICRpcRequest.token = str2;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 mICRpcRequest.module = "INIT";
             } else {
                 mICRpcRequest.module = ModuleConstants.VI_MODULE_VERIFY_INIT;
@@ -353,7 +353,7 @@ public class ModuleFlowController {
         }
         String str5 = f5863a;
         VerifyLogCat.i(str5, "nextStep: " + str3);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             final Bundle bundle = new Bundle();
             if (verifyIdentityTask.getExtParams() != null) {
                 bundle.putAll(verifyIdentityTask.getExtParams());
@@ -363,10 +363,10 @@ public class ModuleFlowController {
             if (verifyIdentityTask.isIPay) {
                 bundle.putBoolean(PayPwdModule.IS_IPAY, true);
             }
-            if (!TextUtils.isEmpty(str4) && (parseObject = JSON.parseObject(str4)) != null && !z) {
+            if (!StringUtils.isEmpty(str4) && (parseObject = JSON.parseObject(str4)) != null && !z) {
                 try {
                     String string = parseObject.getString("userId");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         string = "";
                     }
                     UserIdCache.uid = string;
@@ -378,7 +378,7 @@ public class ModuleFlowController {
                 String string2 = parseObject.getString("needGuideDialog");
                 String string3 = parseObject.getString("dialogMainText");
                 String string4 = parseObject.getString("sceneId");
-                if (TextUtils.isEmpty(verifyIdentityTask.sceneId)) {
+                if (StringUtils.isEmpty(verifyIdentityTask.sceneId)) {
                     verifyIdentityTask.sceneId = string4;
                 }
                 if ("Y".equalsIgnoreCase(string2)) {
@@ -506,7 +506,7 @@ public class ModuleFlowController {
         } catch (Exception e) {
             VerifyLogCat.e(f5863a, e.getMessage());
         }
-        if (!TextUtils.isEmpty(mICRpcResponse.verifyCode)) {
+        if (!StringUtils.isEmpty(mICRpcResponse.verifyCode)) {
             hashMap.put(ModuleConstants.VI_TASK_VERIFYCODE, mICRpcResponse.verifyCode);
         }
         verifyIdentityResult.setExtInfo(hashMap);
@@ -536,7 +536,7 @@ public class ModuleFlowController {
                 }
                 if (moduleExecuteResult != null && !moduleExecuteResult.isLocalTrans()) {
                     HashMap access$1000 = ModuleFlowController.access$1000(ModuleFlowController.this, moduleExecuteResult, verifyIdentityTask2);
-                    if (!TextUtils.isEmpty(moduleExecuteResult.getLogicModuleName())) {
+                    if (!StringUtils.isEmpty(moduleExecuteResult.getLogicModuleName())) {
                         access$1000.put("module", moduleExecuteResult.getLogicModuleName());
                     } else {
                         access$1000.put("module", str7);
@@ -547,7 +547,7 @@ public class ModuleFlowController {
                     String str9 = moduleExecuteResult.getMICRpcResponse().finishCode;
                     if (moduleExecuteResult.isFindPay()) {
                         str9 = "1003";
-                    } else if (TextUtils.isEmpty(moduleExecuteResult.getMICRpcResponse().finishCode)) {
+                    } else if (StringUtils.isEmpty(moduleExecuteResult.getMICRpcResponse().finishCode)) {
                         str9 = String.valueOf(moduleExecuteResult.getMICRpcResponse().verifySuccess);
                     }
                     String str10 = str9;
@@ -563,10 +563,10 @@ public class ModuleFlowController {
                         VerifyLogCat.i(ModuleFlowController.access$400(), "getmcSalesProd error");
                         str8 = "";
                     }
-                    if (verifyIdentityTask2 != null && verifyIdentityTask2.getPluginOrProxyMode() && TextUtils.isEmpty(verifyIdentityTask2.sceneId)) {
+                    if (verifyIdentityTask2 != null && verifyIdentityTask2.getPluginOrProxyMode() && StringUtils.isEmpty(verifyIdentityTask2.sceneId)) {
                         verifyIdentityTask2.sceneId = "mobilecashier_mobile_cashier_mobile_cashier_payment_app";
                     }
-                    if (TextUtils.isEmpty(str8)) {
+                    if (StringUtils.isEmpty(str8)) {
                         str8 = verifyIdentityTask2.sceneId;
                     }
                     new IDecisionHelper().saveFeature(SystemClock.elapsedRealtime() - elapsedRealtime, str10, "MODULE_END", str5, (String) access$1000.get(CommonConstant.PRO_VERIFY_TYPE), (String) access$1000.get("module"), str12, str8);
@@ -708,19 +708,19 @@ public class ModuleFlowController {
         ReportHelper.updateConfig(null, mICRpcResponse);
         if (mICRpcResponse != null && mICRpcResponse.success) {
             VerifyIdentityTask.TASK_TIMEOUT = mICRpcResponse.expireTime * 1000;
-            if (TextUtils.isEmpty(str)) {
-                if (!TextUtils.isEmpty(mICRpcResponse.token)) {
+            if (StringUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(mICRpcResponse.token)) {
                     str2 = mICRpcResponse.token;
                 }
             } else {
-                if (!TextUtils.isEmpty(mICRpcResponse.verifyId)) {
+                if (!StringUtils.isEmpty(mICRpcResponse.verifyId)) {
                     str = mICRpcResponse.verifyId;
                 }
-                if (!TextUtils.isEmpty(mICRpcResponse.token)) {
+                if (!StringUtils.isEmpty(mICRpcResponse.token)) {
                     str2 = mICRpcResponse.token;
                 }
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (str.endsWith("_site")) {
                     verifyIdentityTask.isIPay = true;
                 } else {
@@ -816,13 +816,13 @@ public class ModuleFlowController {
         }
         String str7 = f5863a;
         VerifyLogCat.d(str7, str3 + " execute finishCode: " + mICRpcResponse.finishCode);
-        if (TextUtils.isEmpty(str)) {
-            if (!TextUtils.isEmpty(mICRpcResponse.token)) {
+        if (StringUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(mICRpcResponse.token)) {
                 str5 = mICRpcResponse.token;
             }
         } else {
-            String str8 = !TextUtils.isEmpty(mICRpcResponse.verifyId) ? mICRpcResponse.verifyId : str4;
-            if (!TextUtils.isEmpty(mICRpcResponse.token)) {
+            String str8 = !StringUtils.isEmpty(mICRpcResponse.verifyId) ? mICRpcResponse.verifyId : str4;
+            if (!StringUtils.isEmpty(mICRpcResponse.token)) {
                 str5 = mICRpcResponse.token;
             }
             str4 = str8;
@@ -847,7 +847,7 @@ public class ModuleFlowController {
                 if (parseObject != null) {
                     String string = parseObject.getString("nextVerifyId");
                     String string2 = parseObject.getString("nextModuleData");
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.putAll(parseObject);
                         TaskManager.getInstance().addSlientModule(jSONObject);
@@ -867,7 +867,7 @@ public class ModuleFlowController {
         } catch (Exception e2) {
             VerifyLogCat.e(f5863a, e2.getMessage());
         }
-        if (!TextUtils.isEmpty(mICRpcResponse.verifyCode)) {
+        if (!StringUtils.isEmpty(mICRpcResponse.verifyCode)) {
             hashMap.put(ModuleConstants.VI_TASK_VERIFYCODE, mICRpcResponse.verifyCode);
         }
         verifyIdentityResult2.setExtInfo(hashMap);

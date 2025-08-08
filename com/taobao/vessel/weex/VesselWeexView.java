@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -208,10 +208,10 @@ public class VesselWeexView extends VesselBaseView implements d, WXScrollView.WX
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1a612d42", new Object[]{this, obj})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.mOriginUrl)) {
+        if (!StringUtils.isEmpty(this.mOriginUrl)) {
             loadUrl(this.mOriginUrl, this.mOriginParams);
             return true;
-        } else if (TextUtils.isEmpty(this.mOriginJsBundleData)) {
+        } else if (StringUtils.isEmpty(this.mOriginJsBundleData)) {
             return false;
         } else {
             loadData(this.mOriginJsBundleData);
@@ -256,7 +256,7 @@ public class VesselWeexView extends VesselBaseView implements d, WXScrollView.WX
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("37e8ca1b", new Object[]{this, str, map});
-        } else if (TextUtils.isEmpty(str) || (handler = this.mHandler) == null) {
+        } else if (StringUtils.isEmpty(str) || (handler = this.mHandler) == null) {
         } else {
             handler.post(new b(str, map));
         }
@@ -519,7 +519,7 @@ public class VesselWeexView extends VesselBaseView implements d, WXScrollView.WX
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5c510192", new Object[]{this});
-            } else if (com.taobao.vessel.utils.b.a(VesselWeexView.this.getContext()) || VesselWeexView.access$100(VesselWeexView.this) == null || TextUtils.isEmpty(this.b)) {
+            } else if (com.taobao.vessel.utils.b.a(VesselWeexView.this.getContext()) || VesselWeexView.access$100(VesselWeexView.this) == null || StringUtils.isEmpty(this.b)) {
             } else {
                 VesselWeexView.access$100(VesselWeexView.this).c(VesselWeexView.access$200(VesselWeexView.this), this.b, this.c, null, WXRenderStrategy.APPEND_ASYNC);
             }
@@ -547,7 +547,7 @@ public class VesselWeexView extends VesselBaseView implements d, WXScrollView.WX
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5c510192", new Object[]{this});
-            } else if (com.taobao.vessel.utils.b.a(VesselWeexView.this.getContext()) || VesselWeexView.access$100(VesselWeexView.this) == null || TextUtils.isEmpty(this.b)) {
+            } else if (com.taobao.vessel.utils.b.a(VesselWeexView.this.getContext()) || VesselWeexView.access$100(VesselWeexView.this) == null || StringUtils.isEmpty(this.b)) {
             } else {
                 VesselWeexView.access$100(VesselWeexView.this).a(com.taobao.vessel.utils.b.a(this.c), this.b, this.c, (String) null, WXRenderStrategy.APPEND_ASYNC);
             }

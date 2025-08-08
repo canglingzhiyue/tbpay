@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cash.activity.CustomBrowserActivity;
 import com.taobao.android.cash.activity.TMGWeex2Activity;
@@ -23,7 +23,7 @@ public class dwa {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && str.contains("renderType=2")) {
+        if (!StringUtils.isEmpty(str) && str.contains("renderType=2")) {
             Intent intent = new Intent(context, TMGWeex2Activity.class);
             intent.setData(Uri.parse(Uri.decode(str)));
             context.startActivity(intent);

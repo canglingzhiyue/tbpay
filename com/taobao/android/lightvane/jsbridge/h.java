@@ -1,7 +1,7 @@
 package com.taobao.android.lightvane.jsbridge;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -33,7 +33,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fc13657c", new Object[]{str, cls, new Boolean(z), map});
-        } else if (TextUtils.isEmpty(str) || cls == null) {
+        } else if (StringUtils.isEmpty(str) || cls == null) {
         } else {
             ClassLoader classLoader = null;
             if (z) {

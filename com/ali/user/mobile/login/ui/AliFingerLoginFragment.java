@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login.ui;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -98,7 +98,7 @@ public class AliFingerLoginFragment extends BaseHistoryFragment implements BaseL
                 this.mPreviousChecked = arguments.getBoolean("check");
                 String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
                 arguments.putString(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, "");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.loginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
                     if (this.loginParam != null) {
                         this.mSource = this.loginParam.source;

@@ -1,6 +1,6 @@
 package com.taobao.android.cachecleaner.autoclear.biz;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.CacheCleaner;
@@ -38,9 +38,9 @@ public class b {
             return true;
         }
         if (f9278a.contains(bizOpConditionData.operation)) {
-            if (TextUtils.equals(bizOpConditionData.operation, "&&")) {
+            if (StringUtils.equals(bizOpConditionData.operation, "&&")) {
                 return a(bizOpConditionData.leftCondition, map) && a(bizOpConditionData.rightCondition, map);
-            } else if (TextUtils.equals(bizOpConditionData.operation, "||")) {
+            } else if (StringUtils.equals(bizOpConditionData.operation, "||")) {
                 return a(bizOpConditionData.leftCondition, map) || a(bizOpConditionData.rightCondition, map);
             }
         }
@@ -97,9 +97,9 @@ public class b {
         while (true) {
             String str = riy.PLUS;
             for (String str2 : list) {
-                if (TextUtils.equals(str2, riy.PLUS)) {
+                if (StringUtils.equals(str2, riy.PLUS)) {
                     break;
-                } else if (TextUtils.equals(str2, "-")) {
+                } else if (StringUtils.equals(str2, "-")) {
                     str = "-";
                 } else {
                     if (a(str2)) {

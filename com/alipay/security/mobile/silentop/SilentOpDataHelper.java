@@ -1,6 +1,6 @@
 package com.alipay.security.mobile.silentop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,7 +53,7 @@ public class SilentOpDataHelper {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e7b0efd2", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         this.model = (SilentOpModel) JSON.parseObject(str, SilentOpModel.class);

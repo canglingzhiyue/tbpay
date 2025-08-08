@@ -15,7 +15,7 @@ import android.support.v4.text.TextDirectionHeuristicsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.TintTypedArray;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.Interpolator;
 import com.taobao.taobao.R;
@@ -216,8 +216,8 @@ final class e {
             z3 = false;
         }
         textPaint.setLinearText(z3);
-        CharSequence ellipsize = TextUtils.ellipsize(this.x, this.J, width, TextUtils.TruncateAt.END);
-        if (TextUtils.equals(ellipsize, this.y)) {
+        CharSequence ellipsize = StringUtils.ellipsize(this.x, this.J, width, StringUtils.TruncateAt.END);
+        if (StringUtils.equals(ellipsize, this.y)) {
             return;
         }
         this.y = ellipsize;
@@ -258,7 +258,7 @@ final class e {
     }
 
     private void p() {
-        if (this.B != null || this.f.isEmpty() || TextUtils.isEmpty(this.y)) {
+        if (this.B != null || this.f.isEmpty() || StringUtils.isEmpty(this.y)) {
             return;
         }
         c(0.0f);

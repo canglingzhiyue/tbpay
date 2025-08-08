@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.config.model.style;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.poplayer.config.model.base.IModel;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,6 +66,6 @@ public class StyleModel implements IModel {
     @Override // com.alibaba.poplayer.config.model.base.IModel
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.layout) && !TextUtils.isEmpty(this.width) && !TextUtils.isEmpty(this.height);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.layout) && !StringUtils.isEmpty(this.width) && !StringUtils.isEmpty(this.height);
     }
 }

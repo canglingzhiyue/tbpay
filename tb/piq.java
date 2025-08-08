@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -323,7 +323,7 @@ public class piq extends pgm<a> implements a.InterfaceC0818a {
             this.f32692a.b(j, j2, k);
         } else if (l() || k < 50) {
         } else {
-            if (skq.m() && TextUtils.equals(m(), com.taobao.tab2interact.core.component.browser.a.PAUSE_ANIMATE_SCENE_VIDEO_PAUSED)) {
+            if (skq.m() && StringUtils.equals(m(), com.taobao.tab2interact.core.component.browser.a.PAUSE_ANIMATE_SCENE_VIDEO_PAUSED)) {
                 this.f32692a.a(j, j2, k, skq.n());
             } else {
                 this.f32692a.b(j, j2, k);
@@ -458,9 +458,9 @@ public class piq extends pgm<a> implements a.InterfaceC0818a {
         }
         HashMap hashMap = new HashMap();
         String d = g().d();
-        if (TextUtils.equals(d, "video")) {
+        if (StringUtils.equals(d, "video")) {
             hashMap.put("x_tab_source", "recommend");
-        } else if (TextUtils.equals(d, "newFollow")) {
+        } else if (StringUtils.equals(d, "newFollow")) {
             hashMap.put("x_tab_source", "follow");
         }
         a e = e();
@@ -501,7 +501,7 @@ public class piq extends pgm<a> implements a.InterfaceC0818a {
             return ((Boolean) ipChange.ipc$dispatch("8f64af7f", new Object[]{this, str})).booleanValue();
         }
         String d = g().d();
-        return d != null && TextUtils.equals(str, d);
+        return d != null && StringUtils.equals(str, d);
     }
 
     public a i() {

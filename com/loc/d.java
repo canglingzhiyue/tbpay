@@ -15,7 +15,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.webkit.WebView;
 import com.alibaba.security.ccrc.service.build.Ta;
@@ -453,7 +453,7 @@ public final class d {
                 return;
             }
         }
-        if (TextUtils.isEmpty(this.v)) {
+        if (StringUtils.isEmpty(this.v)) {
             this.v = fr.b(this.C);
         }
         bundle.putString(com.taobao.android.msoa.c.TAG, this.v);
@@ -536,7 +536,7 @@ public final class d {
                     try {
                         if (aMapLocation.getErrorCode() == 0 && this.d != null) {
                             this.d.c();
-                            if (!TextUtils.isEmpty(aMapLocation.getAdCode())) {
+                            if (!StringUtils.isEmpty(aMapLocation.getAdCode())) {
                                 h.y = aMapLocation;
                             }
                         }
@@ -713,11 +713,11 @@ public final class d {
         try {
             eqVar.c(fy.b());
             String apikey = AMapLocationClientOption.getAPIKEY();
-            if (!TextUtils.isEmpty(apikey)) {
+            if (!StringUtils.isEmpty(apikey)) {
                 m.a(this.C, apikey);
             }
             String umidtoken = UmidtokenInfo.getUmidtoken();
-            if (!TextUtils.isEmpty(umidtoken)) {
+            if (!StringUtils.isEmpty(umidtoken)) {
                 o.a(umidtoken);
             }
             a(erVar, eqVar);
@@ -894,7 +894,7 @@ public final class d {
         if (aMapLocation != null) {
             try {
                 String locationDetail = aMapLocation.getLocationDetail();
-                StringBuilder sb = TextUtils.isEmpty(locationDetail) ? new StringBuilder() : new StringBuilder(locationDetail);
+                StringBuilder sb = StringUtils.isEmpty(locationDetail) ? new StringBuilder() : new StringBuilder(locationDetail);
                 boolean c2 = fy.c(this.C, "EYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19XSUZJX1NUQVRF");
                 boolean c3 = fy.c(this.C, "WYW5kcm9pZC5wZXJtaXNzaW9uLkNIQU5HRV9XSUZJX1NUQVRF");
                 boolean c4 = fy.c(this.C, "WYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19MT0NBVElPTl9FWFRSQV9DT01NQU5EUw==");
@@ -1261,7 +1261,7 @@ public final class d {
             this.m = new Intent(this.C, APSService.class);
         }
         try {
-            str = !TextUtils.isEmpty(AMapLocationClientOption.getAPIKEY()) ? AMapLocationClientOption.getAPIKEY() : l.f(this.C);
+            str = !StringUtils.isEmpty(AMapLocationClientOption.getAPIKEY()) ? AMapLocationClientOption.getAPIKEY() : l.f(this.C);
         } catch (Throwable th) {
             fr.a(th, "ALManager", "startServiceImpl p2");
             str = "";

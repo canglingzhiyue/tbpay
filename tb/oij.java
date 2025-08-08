@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -63,7 +63,7 @@ public class oij implements oiq {
         }
         String str2 = j.description;
         f g = e.b().g();
-        if (g != null && !TextUtils.isEmpty(g.f19632a)) {
+        if (g != null && !StringUtils.isEmpty(g.f19632a)) {
             str2 = g.f19632a + " " + str2;
         }
         if (map == null || map.size() == 0) {
@@ -100,7 +100,7 @@ public class oij implements oiq {
         bundle.putString("shareId", j.shareId);
         bundle.putString("suId", j.suId);
         String config = OrangeConfig.getInstance().getConfig("android_share", "moreContactsWeexUrl", "https://market.m.taobao.com/apps/market/msgrax/share_address_book.html?wh_weex=true");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             config = "http://m.taobao.com/go/importcontacts.html";
         } else {
             bundle.putString(a.SHARE_CONTENT_KEY, JSON.toJSONString(j));
@@ -131,10 +131,10 @@ public class oij implements oiq {
                         ArrayList arrayList = new ArrayList();
                         arrayList.addAll(Arrays.asList(comTaobaoMclContactsSendshareResponseData.getSendSuccessList()));
                         String str3 = (String) map.get("ccode");
-                        if (TextUtils.isEmpty(str3)) {
+                        if (StringUtils.isEmpty(str3)) {
                             str3 = ((ShareResultMember) arrayList.get(0)).getUserId();
                         }
-                        if (TextUtils.isEmpty(str3)) {
+                        if (StringUtils.isEmpty(str3)) {
                             str3 = (String) map.get("userId");
                         }
                         oij.a(oij.this, str, str3, map, comTaobaoMclContactsSendshareResponseData.intercept);
@@ -189,7 +189,7 @@ public class oij implements oiq {
             ipChange.ipc$dispatch("c80c2013", new Object[]{this, str, str2, map, str3});
             return;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             TBS.Page.ctrlClicked(CT.Button, "GotoChat");
             Bundle bundle = new Bundle();
             HashMap hashMap = new HashMap();
@@ -235,7 +235,7 @@ public class oij implements oiq {
         }
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getValue())) {
+            if (!StringUtils.isEmpty(entry.getValue())) {
                 if (sb.length() > 0) {
                     sb.append("&");
                 }
@@ -251,7 +251,7 @@ public class oij implements oiq {
             return ((Number) ipChange.ipc$dispatch("8123b0c6", new Object[]{this, str, new Long(j)})).longValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? j : Long.parseLong(str);
+            return StringUtils.isEmpty(str) ? j : Long.parseLong(str);
         } catch (Exception unused) {
             return j;
         }

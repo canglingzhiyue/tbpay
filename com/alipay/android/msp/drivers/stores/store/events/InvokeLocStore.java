@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.actions.MspEventCreator;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -26,6 +26,6 @@ public class InvokeLocStore extends LocalEventStore {
             return null;
         }
         String handleAction = this.f4584a.getStoreCenter().handleAction(MspEventCreator.get().createMspEvent("InvokeLocStore", mspEvent.getActionParamsJson()));
-        return TextUtils.isEmpty(handleAction) ? "{}" : handleAction;
+        return StringUtils.isEmpty(handleAction) ? "{}" : handleAction;
     }
 }

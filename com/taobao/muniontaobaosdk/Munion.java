@@ -2,7 +2,7 @@ package com.taobao.muniontaobaosdk;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.utils.UserTrackLogs;
 import com.taobao.muniontaobaosdk.cpm.CpmBusiness;
@@ -50,7 +50,7 @@ public class Munion {
         }
         try {
             String str2 = "A1_" + b.a();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 p4pClick(str, str2);
             }
             return str2;
@@ -67,7 +67,7 @@ public class Munion {
         }
         try {
             String str2 = "A17_" + b.a();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 cpmClick(str, str2);
             }
             return str2;

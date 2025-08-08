@@ -1,6 +1,6 @@
 package com.taobao.android.order.core.dinamicX.parser;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -142,11 +142,11 @@ public class l extends fuf {
             JSONObject jSONObject = e.getJSONObject("fields");
             if (jSONObject == null) {
                 UnifyLog.d("DXDataParserTabInfo.setupTabArray", "fields is null");
-            } else if (!TextUtils.equals(jSONObject.getString("isContainRefund"), "true")) {
+            } else if (!StringUtils.equals(jSONObject.getString("isContainRefund"), "true")) {
                 while (i < this.f14613a.size()) {
                     JSONObject jSONObject2 = this.f14613a.getJSONObject(i);
-                    if (jSONObject2 != null && TextUtils.equals("reFund", jSONObject2.getString("tabCode"))) {
-                        this.c = TextUtils.equals(jSONObject2.getString("isSelected"), "true");
+                    if (jSONObject2 != null && StringUtils.equals("reFund", jSONObject2.getString("tabCode"))) {
+                        this.c = StringUtils.equals(jSONObject2.getString("isSelected"), "true");
                         this.f14613a.mo1572remove(i);
                         return;
                     }
@@ -160,7 +160,7 @@ public class l extends fuf {
                         break;
                     }
                     JSONObject jSONObject3 = this.f14613a.getJSONObject(i2);
-                    if (jSONObject3 != null && TextUtils.equals("reFund", jSONObject3.getString("tabCode"))) {
+                    if (jSONObject3 != null && StringUtils.equals("reFund", jSONObject3.getString("tabCode"))) {
                         z = true;
                         break;
                     }

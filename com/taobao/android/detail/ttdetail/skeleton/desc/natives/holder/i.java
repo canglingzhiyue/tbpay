@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -144,7 +144,7 @@ public class i extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
                 ((Integer) tag).intValue();
             }
             String obj = view.getTag().toString();
-            if (TextUtils.isEmpty(obj)) {
+            if (StringUtils.isEmpty(obj)) {
                 return;
             }
             com.taobao.android.t.a().a(this.f10821a).a(obj);
@@ -167,7 +167,7 @@ public class i extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             this.h.setLayoutParams(layoutParams);
         }
         a(this.h, iVar.b, new com.taobao.android.detail.ttdetail.widget.desc.image.g(this.l, this.m), null, new d.a().b(R.drawable.tt_detail_img_load_fail).a(R.drawable.tt_detail_img_load_fail).c(this.h.getScaleType()).a());
-        if (TextUtils.isEmpty(iVar.f10874a)) {
+        if (StringUtils.isEmpty(iVar.f10874a)) {
             this.j.setVisibility(8);
         } else {
             this.j.setText(iVar.f10874a);

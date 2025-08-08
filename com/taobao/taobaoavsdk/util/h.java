@@ -1,6 +1,6 @@
 package com.taobao.taobaoavsdk.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -26,7 +26,7 @@ public class h {
             return null;
         }
         String valueAsString = variation.getValueAsString(null);
-        if (TextUtils.isEmpty(valueAsString)) {
+        if (StringUtils.isEmpty(valueAsString)) {
             return null;
         }
         try {

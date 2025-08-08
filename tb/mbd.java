@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.a;
 import com.taobao.flowcustoms.afc.utils.b;
@@ -34,7 +34,7 @@ public class mbd implements kob {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                    } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+                    } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                     } else {
                         alj.a().a(str, str2);
                         c.a("linkx", "TfcStageDataImp === onDataHub === key:" + str + " value:" + str2);
@@ -61,7 +61,7 @@ public class mbd implements kob {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                } else if (TextUtils.isEmpty(str) || (hashMap2 = hashMap) == null) {
+                } else if (StringUtils.isEmpty(str) || (hashMap2 = hashMap) == null) {
                 } else {
                     hashMap2.put("afc_apm_time", SystemClock.uptimeMillis() + "");
                     HashMap hashMap3 = hashMap;

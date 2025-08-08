@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -171,7 +171,7 @@ public class nxj extends NxTabLayout.a {
         if (cVar != null && !cVar.a()) {
             this.f.b();
         }
-        if (!TextUtils.isEmpty(str2) && (imageView = this.c) != null) {
+        if (!StringUtils.isEmpty(str2) && (imageView = this.c) != null) {
             imageView.setContentDescription(str2);
         }
         if (i2 > 0) {

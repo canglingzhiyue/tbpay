@@ -1,7 +1,7 @@
 package com.taobao.android.shop.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABTest;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.shop.activity.ShopRenderActivity;
@@ -37,7 +37,7 @@ public class ShopReportModule extends WXModule {
         Context O = this.mWXSDKInstance.O();
         if (O instanceof ShopRenderActivity) {
             String str3 = "";
-            if (!TextUtils.isEmpty(str) && str.contains("will")) {
+            if (!StringUtils.isEmpty(str) && str.contains("will")) {
                 ((ShopRenderActivity) O).recordCostTime(str.replace("will", com.taobao.tao.messagekit.base.network.a.KEY_DID), l.longValue());
             } else {
                 ShopRenderActivity shopRenderActivity = (ShopRenderActivity) O;

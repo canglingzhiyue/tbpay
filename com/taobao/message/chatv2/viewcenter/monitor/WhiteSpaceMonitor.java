@@ -3,7 +3,7 @@ package com.taobao.message.chatv2.viewcenter.monitor;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.DrawableWrapper;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -66,7 +66,7 @@ public class WhiteSpaceMonitor {
             whiteMonitorResult.addValidChildView();
         } else if (view instanceof TextView) {
             TextView textView = (TextView) view;
-            if (textView.getVisibility() == 0 && TextUtils.isEmpty(textView.getText())) {
+            if (textView.getVisibility() == 0 && StringUtils.isEmpty(textView.getText())) {
                 whiteMonitorResult.addChildViewError(new WhiteMonitorError(textView.getClass().getSimpleName(), 1, "text 为空"));
                 return;
             }
@@ -74,7 +74,7 @@ public class WhiteSpaceMonitor {
             whiteMonitorResult.addValidContent(textView.getText().toString());
         } else if (view instanceof DXNativeFastText) {
             DXNativeFastText dXNativeFastText = (DXNativeFastText) view;
-            if (dXNativeFastText.getVisibility() == 0 && TextUtils.isEmpty(dXNativeFastText.getContentDescription())) {
+            if (dXNativeFastText.getVisibility() == 0 && StringUtils.isEmpty(dXNativeFastText.getContentDescription())) {
                 whiteMonitorResult.addChildViewError(new WhiteMonitorError(dXNativeFastText.getClass().getSimpleName(), 1, "text 为空"));
                 return;
             }
@@ -82,7 +82,7 @@ public class WhiteSpaceMonitor {
             whiteMonitorResult.addValidContent(dXNativeFastText.getContentDescription().toString());
         } else if (view instanceof DXNativeRichText) {
             DXNativeRichText dXNativeRichText = (DXNativeRichText) view;
-            if (dXNativeRichText.getVisibility() == 0 && dXNativeRichText.getRichTextRender() != null && TextUtils.isEmpty(dXNativeRichText.getRichTextRender().a().originText())) {
+            if (dXNativeRichText.getVisibility() == 0 && dXNativeRichText.getRichTextRender() != null && StringUtils.isEmpty(dXNativeRichText.getRichTextRender().a().originText())) {
                 whiteMonitorResult.addChildViewError(new WhiteMonitorError(dXNativeRichText.getClass().getSimpleName(), 1, "richText 为空"));
                 return;
             }
@@ -193,7 +193,7 @@ public class WhiteSpaceMonitor {
         if (ipChange instanceof IpChange) {
             return (AvailabilityError) ipChange.ipc$dispatch("45d54132", new Object[]{obj, list, str});
         }
-        if (!TextUtils.isEmpty(str) && !str.contains("actionUrl") && !str.contains("actionValue") && !str.contains("ActionValue") && !str.contains("ActionUrl") && !str.equals("title") && !str.contains("price") && !str.contains("Price")) {
+        if (!StringUtils.isEmpty(str) && !str.contains("actionUrl") && !str.contains("actionValue") && !str.contains("ActionValue") && !str.contains("ActionUrl") && !str.equals("title") && !str.contains("price") && !str.contains("Price")) {
             if (obj == null) {
                 return new AvailabilityError(str, -103, str + " :data is null");
             } else if (obj instanceof String) {

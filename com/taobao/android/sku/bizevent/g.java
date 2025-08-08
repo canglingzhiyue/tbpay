@@ -2,7 +2,7 @@ package com.taobao.android.sku.bizevent;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sku.utils.j;
@@ -55,7 +55,7 @@ public class g implements iyd {
         String string4 = jSONObject.getString("addressId");
         Object obj2 = jSONObject.get("params");
         Object obj3 = jSONObject.get("relatedAuctionParams");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             return;
         }
         iybVar.d();

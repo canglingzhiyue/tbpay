@@ -1,7 +1,7 @@
 package com.taobao.android.cachecleaner.autoclear.biz;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -32,7 +32,7 @@ public class ConfigCenter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("740abee8", new Object[]{context, str})).booleanValue();
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             return EVO.isSwitchOpened(context, str);
         }
         return false;
@@ -80,7 +80,7 @@ public class ConfigCenter {
             java.lang.Object r3 = r0.next()
             com.taobao.android.cachecleaner.autoclear.biz.data.BizQuotaData r3 = (com.taobao.android.cachecleaner.autoclear.biz.data.BizQuotaData) r3
             java.lang.String r4 = r3.abKey
-            boolean r4 = android.text.TextUtils.isEmpty(r4)
+            boolean r4 = android.text.StringUtils.isEmpty(r4)
             if (r4 != 0) goto L5e
             boolean r4 = com.alibaba.evo.EVO.isSwitchOpened(r5, r6)
             if (r4 == 0) goto L44

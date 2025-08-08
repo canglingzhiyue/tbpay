@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +52,7 @@ public class eca {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = ecg.g(context).f27185a;
         }
         hashMap.put("itemId", str);
@@ -67,7 +67,7 @@ public class eca {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = ecg.g(context).f27185a;
         }
         hashMap.put("itemId", str);

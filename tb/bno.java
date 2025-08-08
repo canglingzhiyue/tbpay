@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
 import java.util.List;
@@ -70,7 +70,7 @@ public final class bno extends acj.a {
             z = false;
         }
         if (!z2 && !z) {
-            return TextUtils.equals(iDMComponent.getKey(), iDMComponent2.getKey());
+            return StringUtils.equals(iDMComponent.getKey(), iDMComponent2.getKey());
         }
         return false;
     }

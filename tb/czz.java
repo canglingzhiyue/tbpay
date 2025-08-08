@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -116,7 +116,7 @@ public class czz {
                         if (a.a().f(cVar)) {
                             a.a().i().a(cVar.C(), (Activity) f, liveItem, "detail", hashMap);
                             return;
-                        } else if (!TextUtils.isEmpty(str) && "shopVipEntrance".equals(str)) {
+                        } else if (!StringUtils.isEmpty(str) && "shopVipEntrance".equals(str)) {
                             a.a().a(cVar, false);
                             ddw.a().a("com.taobao.taolive.room.hide_goods_list.out", null, c.a(cVar));
                             ddw.a().a("com.taobao.taolive.hide.member.identification.inner", null, c.a(cVar));
@@ -144,7 +144,7 @@ public class czz {
                                     if (a.a().i() == null) {
                                         return;
                                     }
-                                    if (mo1437getData != null && !TextUtils.isEmpty(mo1437getData.shopMember) && "false".equalsIgnoreCase(mo1437getData.shopMember)) {
+                                    if (mo1437getData != null && !StringUtils.isEmpty(mo1437getData.shopMember) && "false".equalsIgnoreCase(mo1437getData.shopMember)) {
                                         a.a().i().a(cVar.C(), liveItem2);
                                     } else if (liveItem2.extendVal == null) {
                                     } else {
@@ -175,14 +175,14 @@ public class czz {
                             }).a(liveItem.extendVal.anchorId, liveItem.liveId);
                             return;
                         } else if (hiq.a(liveItem)) {
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 hashMap.put("bottomMode", str2);
                             }
                             his.a("AddCartHelper", "handleEvent | addCart, bottomMode=" + ((String) hashMap.get("bottomMode")) + "    liveId=" + liveItem.liveId + "   itemId=" + liveItem.itemId);
                             a.a().i().a(cVar.C(), (Activity) f, 10000, liveItem, hashMap);
                             return;
                         } else if (hiq.b(liveItem) && hiw.h()) {
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 hashMap.put("bottomMode", str2);
                             }
                             his.a("AddCartHelper", "handleEvent liveShop good | addCart, bottomMode=" + ((String) hashMap.get("bottomMode")) + "    liveId=" + liveItem.liveId + "   itemId=" + liveItem.itemId);

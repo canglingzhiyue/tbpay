@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.gf;
 import com.xiaomi.push.hf;
 import com.xiaomi.push.hg;
@@ -57,7 +57,7 @@ public class k {
         String g = gfVar.g();
         while (it.hasNext()) {
             bf.b next = it.next();
-            if (TextUtils.equals(g, next.f960b)) {
+            if (StringUtils.equals(g, next.f960b)) {
                 return next;
             }
         }
@@ -96,10 +96,10 @@ public class k {
             java.lang.Object r3 = r1.next()
             com.xiaomi.push.service.bf$b r3 = (com.xiaomi.push.service.bf.b) r3
             java.lang.String r4 = r3.f960b
-            boolean r4 = android.text.TextUtils.equals(r0, r4)
+            boolean r4 = android.text.StringUtils.equals(r0, r4)
             if (r4 != 0) goto L4a
             java.lang.String r4 = r3.f960b
-            boolean r4 = android.text.TextUtils.equals(r6, r4)
+            boolean r4 = android.text.StringUtils.equals(r6, r4)
             if (r4 == 0) goto L2e
         L4a:
             return r3
@@ -173,7 +173,7 @@ public class k {
         if (!z) {
             intent.putExtra("ext_reason", i);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent.putExtra("ext_reason_msg", str);
         }
         intent.putExtra("ext_chid", bVar.g);

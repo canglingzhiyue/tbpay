@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.e;
 import com.taobao.android.detail.core.performance.l;
@@ -99,7 +99,7 @@ public final class feq implements fel {
         if (ipChange instanceof IpChange) {
             return (h) ipChange.ipc$dispatch("3fac816b", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             String a2 = l.a("PreloadParamsAppender");
             i.a(a2, "预加载缓存获取本：fromSource:" + str + "itemId:" + str2);
             return null;

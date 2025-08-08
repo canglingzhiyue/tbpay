@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,11 +57,11 @@ public class kwq extends DXImageWidgetNode {
             HImageView hImageView = (HImageView) view;
             onq.a(hImageView, getImageUrl(), "homepage-ads", h.IMAGE_STRATEGY_CONFIG);
             setImageScaleType(hImageView, getScaleType());
-            if (!TextUtils.isEmpty(getImageUrl())) {
+            if (!StringUtils.isEmpty(getImageUrl())) {
                 hImageView.setImageUrl(getImageUrl());
             } else if (getLocalImageDrawable() != null) {
                 setLocalImage(hImageView, getLocalImageDrawable());
-            } else if (!TextUtils.isEmpty(getImageName())) {
+            } else if (!StringUtils.isEmpty(getImageName())) {
                 setLocalRes(hImageView, getImageName());
             } else {
                 hImageView.setImageUrl(null);

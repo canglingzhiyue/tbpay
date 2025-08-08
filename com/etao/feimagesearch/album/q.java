@@ -4,7 +4,7 @@ import android.database.Cursor;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.ac;
@@ -243,7 +243,7 @@ public class q extends ac {
                 String string = cursor.getString(cursor.getColumnIndex("_data"));
                 long j2 = cursor.getLong(cursor.getColumnIndex("date_modified"));
                 long j3 = cursor.getLong(cursor.getColumnIndex("duration"));
-                if (!TextUtils.isEmpty(string) && string.endsWith(com.taobao.android.litecreator.comprehension.f.FILE_TYPE_VIDEO_MP4)) {
+                if (!StringUtils.isEmpty(string) && string.endsWith(com.taobao.android.litecreator.comprehension.f.FILE_TYPE_VIDEO_MP4)) {
                     File file = new File(string);
                     if (file.exists()) {
                         o oVar = new o(j, string, "", j2, j3, true);

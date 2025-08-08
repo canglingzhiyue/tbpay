@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
@@ -45,7 +45,7 @@ public class jlm extends jku {
         if (ipChange instanceof IpChange) {
             return (jlm) ipChange.ipc$dispatch("e2617fdd", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@wvCookie(")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@wvCookie(")) {
             return null;
         }
         return new jlm(str);
@@ -58,7 +58,7 @@ public class jlm extends jku {
         }
         try {
             String c2 = aVar.c();
-            if (!TextUtils.isEmpty(this.b) && !TextUtils.isEmpty(c2)) {
+            if (!StringUtils.isEmpty(this.b) && !StringUtils.isEmpty(c2)) {
                 String[] split = this.b.split(",");
                 Map<String, String> a2 = a(c2);
                 StringBuilder sb = new StringBuilder();
@@ -93,7 +93,7 @@ public class jlm extends jku {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{this, str});
         }
         String a2 = android.taobao.windvane.a.a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         try {

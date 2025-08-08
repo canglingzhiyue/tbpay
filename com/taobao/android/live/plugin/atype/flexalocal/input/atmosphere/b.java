@@ -109,7 +109,7 @@ public class b extends AsyncTask<Void, Void, List<EffectResConfig>> {
             java.lang.Object r3 = r2.next()     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
             com.taobao.alilive.aliliveframework.context.atmo.bean.EffectResConfig r3 = (com.taobao.alilive.aliliveframework.context.atmo.bean.EffectResConfig) r3     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
             java.lang.String r4 = r3.effectRes     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
-            boolean r4 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
+            boolean r4 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
             if (r4 != 0) goto L73
             java.io.File r4 = new java.io.File     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
             com.taobao.alilive.aliliveframework.context.atmo.bean.AtmosphereResListResponseData$AtmosphereResItem r5 = r8.f13915a     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
@@ -120,7 +120,7 @@ public class b extends AsyncTask<Void, Void, List<EffectResConfig>> {
             r3.effectRes = r4     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
         L73:
             java.lang.String r4 = r3.thumbnail     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
-            boolean r4 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
+            boolean r4 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
             if (r4 != 0) goto L4e
             java.io.File r4 = new java.io.File     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f
             com.taobao.alilive.aliliveframework.context.atmo.bean.AtmosphereResListResponseData$AtmosphereResItem r5 = r8.f13915a     // Catch: java.lang.Throwable -> L9d java.lang.Exception -> L9f

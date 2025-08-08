@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.base.configservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.core.exception.InfoFlowRuntimeException;
 import com.taobao.infoflow.protocol.subservice.base.IConfigService;
@@ -43,7 +43,7 @@ public class TbHomeConfigService implements IConfigService {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("611c4ee3", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.equals(str, "homepage_switch")) {
+        if (StringUtils.equals(str, "homepage_switch")) {
             return ldj.a(str2, str3);
         }
         try {
@@ -82,7 +82,7 @@ public class TbHomeConfigService implements IConfigService {
             return ((Boolean) ipChange.ipc$dispatch("221a66e8", new Object[]{this, str, new Boolean(z)})).booleanValue();
         }
         String config = getConfig("homepage_switch", str, z + "");
-        return TextUtils.isEmpty(config) ? z : Boolean.parseBoolean(config);
+        return StringUtils.isEmpty(config) ? z : Boolean.parseBoolean(config);
     }
 
     @Override // com.taobao.infoflow.protocol.subservice.base.IConfigService

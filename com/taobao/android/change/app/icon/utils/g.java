@@ -1,7 +1,7 @@
 package com.taobao.android.change.app.icon.utils;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.change.app.icon.biz.ChangeAppIconBridge;
 import com.taobao.android.change.app.icon.model.AppIconComponentName;
@@ -108,7 +108,7 @@ public class g {
         map.put("currentAppIcon", d.toString());
         AppIconComponentName a2 = igc.a();
         map.put("expectAppIcon", a2.toString());
-        map.put("current_eq_expect", String.valueOf(TextUtils.equals(d.clzPath, a2.clzPath)));
+        map.put("current_eq_expect", String.valueOf(StringUtils.equals(d.clzPath, a2.clzPath)));
         map.put("deviceBrand", Build.BRAND);
         map.put(ChangeAppIconBridge.KEY_DEVICEMODEL, Build.MODEL);
         map.put("osVersion", Build.VERSION.RELEASE);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.alibaba.android.umf.node.service.parse.state.RenderComponent;
 import com.alibaba.fastjson.JSONArray;
@@ -25,7 +25,7 @@ public class idp implements awi.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88b8ae41", new Object[]{this, str, jSONArray, renderComponent});
-        } else if (TextUtils.isEmpty(str) || jSONArray == null || renderComponent == null || renderComponent.component == null || renderComponent.component.getFields() == null) {
+        } else if (StringUtils.isEmpty(str) || jSONArray == null || renderComponent == null || renderComponent.component == null || renderComponent.component.getFields() == null) {
         } else {
             Map<String, Object> fields = renderComponent.component.getFields();
             Iterator<Object> it = jSONArray.iterator();

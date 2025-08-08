@@ -1,6 +1,6 @@
 package com.taobao.themis.utils.io;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import kotlin.Metadata;
@@ -31,7 +31,7 @@ public final class c {
         }
         q.d(path, "path");
         String str = path;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return n.b(path, "../", false, 2, (Object) null) || n.c(path, "/..", false, 2, (Object) null) || n.b((CharSequence) str, (CharSequence) "/../", false, 2, (Object) null);

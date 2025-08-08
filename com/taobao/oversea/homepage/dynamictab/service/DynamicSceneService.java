@@ -3,7 +3,7 @@ package com.taobao.oversea.homepage.dynamictab.service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -221,7 +221,7 @@ public class DynamicSceneService extends SceneServiceImpl {
         super.onPageSelected();
         this.isPageSelected = true;
         dataProcess();
-        if (!TextUtils.isEmpty(this.currentUrl) && this.themisIns != null) {
+        if (!StringUtils.isEmpty(this.currentUrl) && this.themisIns != null) {
             if (this.rootView.findViewById(999) != null) {
                 this.themisIns.h();
                 return;
@@ -345,7 +345,7 @@ public class DynamicSceneService extends SceneServiceImpl {
         JSONObject jSONObject = c.getJSONObject("ext");
         String string = jSONObject.getString("innerPageUrl");
         String string2 = jSONObject.getString("tabType");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         if ((!TMSCalendarBridge.namespace.equals(string2) && !b.PROTOCOL_BIZ_CODE_PHA.equals(string2)) || string.equals(this.currentUrl)) {
@@ -381,7 +381,7 @@ public class DynamicSceneService extends SceneServiceImpl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2e22444f", new Object[]{this});
-        } else if (this.themisIns == null || TextUtils.isEmpty(this.currentUrl)) {
+        } else if (this.themisIns == null || StringUtils.isEmpty(this.currentUrl)) {
         } else {
             WebStartParams webStartParams = new WebStartParams();
             webStartParams.setUrl(this.currentUrl);

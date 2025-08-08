@@ -1,7 +1,7 @@
 package com.taobao.share.taopassword;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
 import com.taobao.share.globalmodel.e;
@@ -61,7 +61,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (SharePlatform) ipChange.ipc$dispatch("7f357d32", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return SharePlatform.Other;
         }
         if (ShareTargetType.Share2Alipay.getValue().equals(str)) {
@@ -203,7 +203,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
         String str2 = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int indexOf = str.indexOf("http");
@@ -223,7 +223,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || str.indexOf("http") < 0) {
+        if (StringUtils.isEmpty(str) || str.indexOf("http") < 0) {
             return str;
         }
         int indexOf = str.indexOf("http");

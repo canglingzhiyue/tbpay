@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public final class dxq extends h {
         String obj = (objArr == null || objArr.length <= 0 || objArr[0] == null) ? "" : objArr[0].toString();
         String str2 = f27068a;
         i.d(str2, "mCurrentStatus： " + this.b + "," + obj);
-        if (TextUtils.equals(this.b, obj)) {
+        if (StringUtils.equals(this.b, obj)) {
             return;
         }
         this.b = obj;
@@ -140,10 +140,10 @@ public final class dxq extends h {
             return false;
         }
         String p = g.p();
-        if (z && TextUtils.equals(p, "init")) {
+        if (z && StringUtils.equals(p, "init")) {
             return true;
         }
-        return TextUtils.equals(p, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING);
+        return StringUtils.equals(p, AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING);
     }
 
     private boolean a() {

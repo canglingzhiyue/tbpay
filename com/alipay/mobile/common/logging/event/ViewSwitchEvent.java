@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.CrashBridge;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -26,11 +26,11 @@ public class ViewSwitchEvent implements ClientEvent {
         }
         String contextParam = logContext.getContextParam(LogContext.STORAGE_VIEWID);
         logContext.putContextParam(LogContext.STORAGE_REFVIEWID, contextParam);
-        if (!TextUtils.isEmpty(contextParam)) {
+        if (!StringUtils.isEmpty(contextParam)) {
             CrashBridge.d();
         }
         logContext.putContextParam(LogContext.STORAGE_VIEWID, str);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             CrashBridge.d();
         }
         logContext.putContextParam(LogContext.STORAGE_PAGESERIAL, logContext.getSessionId() + '_' + System.currentTimeMillis());

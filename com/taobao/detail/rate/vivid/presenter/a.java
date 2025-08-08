@@ -1,6 +1,6 @@
 package com.taobao.detail.rate.vivid.presenter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -184,7 +184,7 @@ public final class a {
                     throw new NullPointerException("null cannot be cast to non-null type com.alibaba.fastjson.JSONObject");
                 }
                 String a3 = fxr.a("thumbnail", (JSONObject) obj, "");
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     JSONObject jSONObject2 = new JSONObject();
                     JSONObject jSONObject3 = jSONObject2;
                     jSONObject3.put((JSONObject) "imageUrl", a3);
@@ -197,7 +197,7 @@ public final class a {
         JSONObject a4 = fxr.a("video", jSONObject, (JSONObject) null);
         if (a4 != null && a4.size() > 0) {
             String a5 = fxr.a("coverUrl", a4, "");
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 String a6 = fxr.a("cloudVideoUrl", a4, "");
                 JSONObject jSONObject4 = new JSONObject();
                 JSONObject jSONObject5 = jSONObject4;
@@ -245,6 +245,6 @@ public final class a {
         }
         q.d(url, "url");
         q.d(id, "id");
-        return (!this.f17048a.containsKey(id) || (str = this.f17048a.get(id)) == null || TextUtils.isEmpty(str)) ? url : str;
+        return (!this.f17048a.containsKey(id) || (str = this.f17048a.get(id)) == null || StringUtils.isEmpty(str)) ? url : str;
     }
 }

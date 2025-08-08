@@ -1,7 +1,7 @@
 package com.taobao.search.sf.widgets.searchbar;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -100,25 +100,25 @@ public class SearchBarTagBean implements Serializable {
             return null;
         }
         String string = jSONObject.getString("showKeyword");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         JSONObject b = com.taobao.android.searchbaseframe.util.a.b(jSONObject, "params");
         String string2 = jSONObject.getString("q");
-        if ((b == null || b.isEmpty()) && TextUtils.isEmpty(string2)) {
+        if ((b == null || b.isEmpty()) && StringUtils.isEmpty(string2)) {
             return null;
         }
         ArrayMap arrayMap = new ArrayMap();
         if (b != null) {
             for (String str : b.keySet()) {
                 String string3 = b.getString(str);
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     arrayMap.put(str, string3);
                 }
             }
         }
         String string4 = jSONObject.getString("type");
-        if (!TextUtils.equals(string4, "update")) {
+        if (!StringUtils.equals(string4, "update")) {
             string4 = "append";
         }
         return new SearchBarTagBean(string, string2, arrayMap, jSONObject.getString("description"), string4);

@@ -2,7 +2,7 @@ package com.taobao.android.launcher.bootstrap.tao.ability.dispatch;
 
 import android.os.Message;
 import android.taobao.safemode.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.bootstrap.tao.h;
 import com.taobao.android.launcher.common.LauncherRuntime;
@@ -40,7 +40,7 @@ public class Dispatchers {
             return (xmf) ipChange.ipc$dispatch("6361a40b", new Object[]{message, str, gtxVar, kVar});
         }
         h.b("Dispatchers", "create Dispatcher with type=" + str + ", msg.what=" + message.what + ", process=" + gtxVar.b);
-        if (TextUtils.equals(gtxVar.f28453a, gtxVar.b) || TextUtils.equals(LauncherRuntime.PROCESS_SAFEMODE, gtxVar.b)) {
+        if (StringUtils.equals(gtxVar.f28453a, gtxVar.b) || StringUtils.equals(LauncherRuntime.PROCESS_SAFEMODE, gtxVar.b)) {
             return a(message, str, kVar);
         }
         if (!guc.a(null, "ngActivityThread")) {

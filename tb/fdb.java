@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -120,7 +120,7 @@ public class fdb implements j<eoh> {
                     }
                     String m = enhVar.c.f27459a.m();
                     String a2 = eohVar.a();
-                    if (!TextUtils.isEmpty(m)) {
+                    if (!StringUtils.isEmpty(m)) {
                         dyaVar.a(a2, eqf.a(m, "spm", "a2141.7631564"));
                         return;
                     }

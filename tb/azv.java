@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.framework.data.remote.newmodel.a;
@@ -23,7 +23,7 @@ public final class azv {
             return (JSONObject) ipChange.ipc$dispatch("828fd7e6", new Object[]{str, str2, str3, jSONObject, jSONObject2});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return jSONObject2;
             }
             String[] split = str.split("_");
@@ -32,7 +32,7 @@ public final class azv {
                 return jSONObject2;
             }
             String str4 = split[0];
-            if (TextUtils.isEmpty(str4) || (jSONObject3 = jSONObject.getJSONObject(str4)) == null) {
+            if (StringUtils.isEmpty(str4) || (jSONObject3 = jSONObject.getJSONObject(str4)) == null) {
                 return jSONObject2;
             }
             JSONObject jSONObject4 = new JSONObject();
@@ -64,7 +64,7 @@ public final class azv {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("f298fc01", new Object[]{str, str2, str3, jSONObject, obj, entry});
         }
-        if (!"events".equals(entry.getKey()) || !str.equals(str3) || TextUtils.isEmpty(str2)) {
+        if (!"events".equals(entry.getKey()) || !str.equals(str3) || StringUtils.isEmpty(str2)) {
             return obj;
         }
         String[] split = str2.split("\\.");

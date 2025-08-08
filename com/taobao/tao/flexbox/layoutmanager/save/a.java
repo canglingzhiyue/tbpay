@@ -19,7 +19,7 @@ import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.intf.event.FailPhenixEvent;
@@ -121,7 +121,7 @@ public class a {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
         } else if (this.f20484a == null) {
         } else {
-            if (TextUtils.isEmpty(this.e)) {
+            if (StringUtils.isEmpty(this.e)) {
                 Toast.makeText(this.f20484a.getApplicationContext(), R.string.uik_save_image_fail_get, 0).show();
             } else {
                 a(this.e, new InterfaceC0854a() { // from class: com.taobao.tao.flexbox.layoutmanager.save.a.1
@@ -147,7 +147,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("acc0f2c6", new Object[]{this, bitmap});
-        } else if (!TextUtils.isEmpty(this.g)) {
+        } else if (!StringUtils.isEmpty(this.g)) {
             a(this.g, new InterfaceC0854a() { // from class: com.taobao.tao.flexbox.layoutmanager.save.a.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -577,7 +577,7 @@ public class a {
                     paint.setShadowLayer(a(width, 1), 0.0f, a(width, 1), 2130706432);
                     canvas.drawBitmap(this.h, rect, rect2, paint);
                 }
-                if (!TextUtils.isEmpty(this.f)) {
+                if (!StringUtils.isEmpty(this.f)) {
                     TextPaint textPaint = new TextPaint(1);
                     textPaint.setColor(-460552);
                     textPaint.setTextSize(a(width, 20));

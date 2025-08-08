@@ -1,6 +1,6 @@
 package com.taobao.wireless.link.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.utils.i;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -30,7 +30,7 @@ public class b extends a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("862e53c3", new Object[]{this, str, str2, map, new Boolean(z), new Boolean(z2), new Boolean(z3), cVar});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || map == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || map == null) {
         } else {
             a(map);
             MtopRequest mtopRequest = new MtopRequest();

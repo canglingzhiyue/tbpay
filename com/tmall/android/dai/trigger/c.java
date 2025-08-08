@@ -1,6 +1,6 @@
 package com.tmall.android.dai.trigger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.internal.usertrack.UserTrackDO;
 import java.util.ArrayList;
@@ -104,7 +104,7 @@ public class c {
             for (Map.Entry<String, List<com.tmall.android.dai.trigger.protocol.a<?, ?, ?>>> entry : this.f23729a.entrySet()) {
                 Iterator<com.tmall.android.dai.trigger.protocol.a<?, ?, ?>> it = entry.getValue().iterator();
                 while (it.hasNext()) {
-                    if (TextUtils.equals(it.next().a(), str)) {
+                    if (StringUtils.equals(it.next().a(), str)) {
                         it.remove();
                     }
                 }

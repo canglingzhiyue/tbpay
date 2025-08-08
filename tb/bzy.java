@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.utils.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -77,7 +77,7 @@ public class bzy {
             return;
         }
         try {
-            if (this.f26215a != null && !TextUtils.isEmpty(str)) {
+            if (this.f26215a != null && !StringUtils.isEmpty(str)) {
                 for (cad cadVar : this.f26215a) {
                     if (cadVar != null) {
                         cadVar.a(str, map, map2);

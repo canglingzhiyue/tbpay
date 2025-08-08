@@ -1,6 +1,6 @@
 package com.taobao.tao.topmultitab;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.l;
@@ -143,7 +143,7 @@ public class d {
         int size = list2.size();
         for (int i = 0; i < size; i++) {
             String a2 = com.taobao.tao.topmultitab.view.a.a(list2.get(i));
-            if (TextUtils.equals("campaign", a2)) {
+            if (StringUtils.equals("campaign", a2)) {
                 a(a2);
                 b(a2);
                 com.taobao.android.home.component.utils.e.e("TabChangeObserver", "tab变化了，其中还有会场，需要重新创建会场");
@@ -180,7 +180,7 @@ public class d {
         int size = list.size();
         for (int i = 0; i < size; i++) {
             String a2 = com.taobao.tao.topmultitab.view.a.a(list.get(i));
-            if (!TextUtils.isEmpty(a2) && !concurrentMap.containsKey(a2)) {
+            if (!StringUtils.isEmpty(a2) && !concurrentMap.containsKey(a2)) {
                 com.taobao.android.home.component.utils.e.e("TabChangeObserver", "准备注册新的tab: " + a2);
                 b(a2);
             }
@@ -200,7 +200,7 @@ public class d {
         int size = list.size();
         for (int i = 0; i < size; i++) {
             String a2 = com.taobao.tao.topmultitab.view.a.a(list.get(i));
-            if (!TextUtils.isEmpty(a2) && concurrentMap.containsKey(a2)) {
+            if (!StringUtils.isEmpty(a2) && concurrentMap.containsKey(a2)) {
                 arrayList.remove(a2);
             }
         }
@@ -221,7 +221,7 @@ public class d {
         for (int i = 0; i < size; i++) {
             String a2 = com.taobao.tao.topmultitab.view.a.a(list.get(i));
             String a3 = com.taobao.tao.topmultitab.view.a.a(list2.get(i));
-            if (!TextUtils.equals(a2, a3)) {
+            if (!StringUtils.equals(a2, a3)) {
                 com.taobao.android.home.component.utils.e.e("TabChangeObserver", "准备替换新的tab: " + a2);
                 b(a2);
                 a(a3);
@@ -291,7 +291,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !this.b.contains(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.b.contains(str)) {
             com.taobao.android.home.component.utils.e.e("TabChangeObserver", "不是动态创建的容器，不销毁");
         } else {
             IHomeSubTabController c = c.a().c(str);
@@ -308,7 +308,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !this.b.contains(str)) {
+        } else if (StringUtils.isEmpty(str) || !this.b.contains(str)) {
             com.taobao.android.home.component.utils.e.e("TabChangeObserver", "不是动态创建的容器，不重建");
         } else {
             IHomeSubTabController c = c(str);
@@ -328,7 +328,7 @@ public class d {
         HashMap hashMap = new HashMap();
         int size = list2.size();
         for (int i = 0; i < size; i++) {
-            if (!TextUtils.equals(c(list2.get(i)), c(list.get(i)))) {
+            if (!StringUtils.equals(c(list2.get(i)), c(list.get(i)))) {
                 hashMap.put(Integer.valueOf(i), com.taobao.tao.topmultitab.view.a.a(list2.get(i)));
             }
         }
@@ -388,7 +388,7 @@ public class d {
         }
         int size = list2.size();
         for (int i = 0; i < size; i++) {
-            if (!TextUtils.equals(com.taobao.tao.topmultitab.view.a.a(list2.get(i)), com.taobao.tao.topmultitab.view.a.a(list.get(i)))) {
+            if (!StringUtils.equals(com.taobao.tao.topmultitab.view.a.a(list2.get(i)), com.taobao.tao.topmultitab.view.a.a(list.get(i)))) {
                 return true;
             }
         }
@@ -409,7 +409,7 @@ public class d {
         for (JSONObject jSONObject : list) {
             String a2 = com.taobao.tao.topmultitab.view.a.a(jSONObject);
             JSONObject e = e(jSONObject);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.taobao.homepage.utils.c.a(a2, e);
             }
         }

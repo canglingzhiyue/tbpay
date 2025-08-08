@@ -1,6 +1,6 @@
 package com.taobao.analysis.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpUrl;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.monitor.JankChecker;
@@ -141,7 +141,7 @@ public class JankContinuousMonitor {
                     }
                     String str2 = (fullTraceStatistic.ret != 0 || JankContinuousMonitor.c(JankContinuousMonitor.this).contains(fullTraceStatistic.bizErrorCode)) ? fullTraceStatistic.bizRspCbEnd - fullTraceStatistic.bizReqStart > 3000 ? JankChecker.JankStatus.SLOW : "normal" : "failed";
                     String path = HttpUrl.parse(fullTraceStatistic.url).path();
-                    if (!TextUtils.isEmpty(path)) {
+                    if (!StringUtils.isEmpty(path)) {
                         String[] split = path.split("/");
                         if (split.length > 2) {
                             path = split[2];
@@ -160,7 +160,7 @@ public class JankContinuousMonitor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             ArrayList arrayList = new ArrayList();
             try {
                 JSONArray jSONArray = new JSONArray(str);
@@ -177,7 +177,7 @@ public class JankContinuousMonitor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             ArrayList arrayList = new ArrayList();
             try {
                 JSONArray jSONArray = new JSONArray(str);

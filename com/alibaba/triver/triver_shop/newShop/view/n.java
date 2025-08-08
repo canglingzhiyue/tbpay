@@ -1,7 +1,7 @@
 package com.alibaba.triver.triver_shop.newShop.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -61,13 +61,13 @@ public final class n extends com.alibaba.triver.triver_shop.newShop.view.b {
             } else if (!(obj instanceof String)) {
             } else {
                 JSONObject parseObject = JSON.parseObject((String) obj);
-                if (!TextUtils.equals(com.alibaba.triver.triver_shop.newShop.event.broadcast.c.MSG_SHOP_FOLLOW_SETSTATUS, parseObject.getString("_msg_name"))) {
+                if (!StringUtils.equals(com.alibaba.triver.triver_shop.newShop.event.broadcast.c.MSG_SHOP_FOLLOW_SETSTATUS, parseObject.getString("_msg_name"))) {
                     return;
                 }
                 String string = parseObject.getString("status");
-                if (TextUtils.equals("followed", string)) {
+                if (StringUtils.equals("followed", string)) {
                     n.a(n.this).a((Object) null);
-                } else if (!TextUtils.equals(com.alibaba.triver.triver_shop.newShop.event.broadcast.c.MSG_UNFOLLOWED, string)) {
+                } else if (!StringUtils.equals(com.alibaba.triver.triver_shop.newShop.event.broadcast.c.MSG_UNFOLLOWED, string)) {
                 } else {
                     n.a(n.this).a((Object) null);
                 }
@@ -314,7 +314,7 @@ public final class n extends com.alibaba.triver.triver_shop.newShop.view.b {
 
     private final String q() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("18528f28", new Object[]{this}) : TextUtils.isEmpty(this.f) ? "Page_DingYueShopIndexAll" : this.f;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("18528f28", new Object[]{this}) : StringUtils.isEmpty(this.f) ? "Page_DingYueShopIndexAll" : this.f;
     }
 
     @Override // com.alibaba.triver.triver_shop.newShop.view.h

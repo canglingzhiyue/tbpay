@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -323,7 +323,7 @@ public class soe implements IMediaPlayer.g, ddv {
             String a3 = ad.a(pou.NEW_DEFINITION);
             if (b == 1) {
                 a(this.f, "auto");
-            } else if (!TextUtils.isEmpty(a3)) {
+            } else if (!StringUtils.isEmpty(a3)) {
                 a(this.f, a3);
             }
             this.f.d(u.D());

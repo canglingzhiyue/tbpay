@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.fi;
 import com.xiaomi.push.he;
 import com.xiaomi.push.hf;
@@ -159,7 +159,7 @@ public class ServiceClient {
         intent.putExtra(bj.M, this.f862a);
         if (map != null && map.size() > 0) {
             String a2 = a(map);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 intent.putExtra(bj.C, a2);
             }
         }
@@ -167,7 +167,7 @@ public class ServiceClient {
             return;
         }
         String a3 = a(map2);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         intent.putExtra(bj.D, a3);
@@ -216,7 +216,7 @@ public class ServiceClient {
         Bundle[] bundleArr = new Bundle[hgVarArr.length];
         for (int i = 0; i < hgVarArr.length; i++) {
             String a3 = fi.a();
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 String[] strArr = null;
                 he heVar = new he("pf", null, strArr, strArr);
                 he heVar2 = new he("sent", null, strArr, strArr);
@@ -281,7 +281,7 @@ public class ServiceClient {
     }
 
     public boolean notifyMessage(Bundle bundle, String str, String str2) {
-        if (bundle == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (bundle == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("Failed to notify message: bundle|userId|chid may be empty");
             return false;
         }
@@ -342,7 +342,7 @@ public class ServiceClient {
         }
         Intent a2 = a();
         String a3 = fi.a();
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             String[] strArr = null;
             he heVar = new he("pf", null, strArr, strArr);
             he heVar2 = new he("sent", null, strArr, strArr);
@@ -364,7 +364,7 @@ public class ServiceClient {
 
     public boolean sendMessage(byte[] bArr, String str, String str2) {
         String str3;
-        if (!com.xiaomi.push.bg.b(this.f861a) || bArr == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (!com.xiaomi.push.bg.b(this.f861a) || bArr == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("Failed to send message: message|userId|chid may be empty, or the network is unavailable.");
             return false;
         }
@@ -444,13 +444,13 @@ public class ServiceClient {
         a2.setAction(bj.l);
         if (map != null) {
             String a3 = a(map);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 a2.putExtra(bj.C, a3);
             }
         }
         if (map2 != null) {
             String a4 = a(map2);
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 a2.putExtra(bj.D, a4);
             }
         }

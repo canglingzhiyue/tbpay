@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.q;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -245,7 +245,7 @@ public final class xos {
             return;
         }
         String uid = Login.getUserId();
-        if (TextUtils.isEmpty(uid)) {
+        if (StringUtils.isEmpty(uid)) {
             if (Versions.isDebug()) {
                 throw new RuntimeException("uid为空");
             }
@@ -439,7 +439,7 @@ public final class xos {
         }
         String string = global.getString("mytaobaoVersion");
         com.taobao.mytaobao.base.c.a(string);
-        if (TextUtils.equals(string, "stark_s_mytaobao_24")) {
+        if (StringUtils.equals(string, "stark_s_mytaobao_24")) {
             string = "v24";
         }
         com.taobao.mytaobao.pagev2.a aVar = this.f34440a;

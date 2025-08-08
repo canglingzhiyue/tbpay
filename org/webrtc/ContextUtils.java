@@ -5,9 +5,9 @@ import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
 /* loaded from: classes9.dex */
-public class ContextUtils {
+public class ConStringUtils {
     public static volatile transient /* synthetic */ IpChange $ipChange = null;
-    private static final String TAG = "ContextUtils";
+    private static final String TAG = "ConStringUtils";
     private static Context applicationContext;
 
     static {
@@ -19,7 +19,7 @@ public class ContextUtils {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e1dcfb91", new Object[]{context});
         } else if (context == null) {
-            throw new IllegalArgumentException("Application context cannot be null for ContextUtils.initialize.");
+            throw new IllegalArgumentException("Application context cannot be null for ConStringUtils.initialize.");
         } else {
             applicationContext = context;
         }

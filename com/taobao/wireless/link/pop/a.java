@@ -2,7 +2,7 @@ package com.taobao.wireless.link.pop;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.WindowManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.agoo.TaobaoRegister;
@@ -82,7 +82,7 @@ public class a {
             } else {
                 a2 = c2.messageType == 2 ? com.taobao.wireless.link.common.b.a(context, "openPopMessageDispose", "true") : "true";
             }
-            if (TextUtils.equals(a2, "false")) {
+            if (StringUtils.equals(a2, "false")) {
                 rkg.a("link_tag", "PopManager === showMessage == 开关关闭，不展示pop消息");
                 return;
             }

@@ -1,6 +1,6 @@
 package com.taobao.zcache.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.InputStream;
 import java.util.HashMap;
@@ -30,9 +30,9 @@ public class ZCacheResourceResponse {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1ad5aaae", new Object[]{this, str, new Long(j), str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "0";
             }
             if (this.headers == null) {

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.dynfun;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspTradeContext;
 import com.alipay.android.msp.framework.dynfun.DynConstants;
@@ -64,7 +64,7 @@ public class NativeDynFunTest {
                             }
                         });
                         LogUtil.record(1, "DynFunVerify", "result: append_val_to_str(a, b) => ".concat(String.valueOf(str2)));
-                        if (!TextUtils.equals(str2, "TPL-a-b-12")) {
+                        if (!StringUtils.equals(str2, "TPL-a-b-12")) {
                             str = String.valueOf(str2);
                         }
                         NativeDynFunManager.antEvent(NativeDynFunManager.EventId.EV_ID_ANS, "biz1", null, null, null, str, Integer.valueOf(bizId));

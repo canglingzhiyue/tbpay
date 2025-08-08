@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -20,7 +20,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4477c749", new Object[]{context, str, hashMap});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             com.taobao.android.detail.ttdetail.communication.c.a(context, new com.taobao.android.detail.ttdetail.bizmessage.h("userTrack", new JSONObject() { // from class: com.taobao.android.detail.ttdetail.skeleton.desc.natives.GalleryTracker$1
                 {

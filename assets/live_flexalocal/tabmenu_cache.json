@@ -1,0 +1,168 @@
+{
+  "api": "mtop.tblive.recommend.videolist.tabmenu",
+  "data": {
+    "bottomTab": [
+      {
+        "androidNormalColor": "#000000",
+        "androidNormalIcon": "https://gw.alicdn.com/imgextra/i4/O1CN012lweWx26V5AnMSo2u_!!6000000007666-2-tps-208-126.png",
+        "androidPressedColor": "#FF3344",
+        "androidPressedIcon": "https://gw.alicdn.com/imgextra/i4/O1CN01BQJI9c1oLm2VkIJDL_!!6000000005209-2-tps-208-126.png",
+        "channelId": "0",
+        "channelType": "jingxuan",
+        "firstAnchored": "true",
+        "groupTopTabSign": "jingxuan",
+        "hideTextOnPressed": "false",
+        "isDefault": "true",
+        "jumpUrl": "",
+        "name": "首页",
+        "pageName": "",
+        "pageType": "dx",
+        "spm": "",
+        "tabUT": {
+          "button": "Bottom_HomePageTab",
+          "show": "Page_TaobaoLive_Show-Bottom_HomePageTab",
+          "spm": "a2141.8001240.bottom.homepagetab"
+        },
+        "topTab": [
+          {
+            "bottomTabRela": "jingxuan",
+            "broadcastEntrance": "false",
+            "channelId": "0",
+            "channelType": "followTab",
+            "container": {
+              "name": "taolive_follow_tab_container_2024",
+              "span": "2"
+            },
+            "firstAnchored": "false",
+            "name": "关注",
+            "pageName": "Page_TaobaoLive_follow",
+            "pageType": "dx",
+            "spm": "a2141.taolive_follow",
+            "tabId": "0",
+            "tabUT": {
+              "button": "Followtab",
+              "show": "Page_TaobaoLive_Show-Followtab",
+              "spm": "a2141.8001240.topbar.followtab"
+            }
+          },
+          {
+            "bottomTabRela": "jingxuan",
+            "broadcastEntrance": "false",
+            "channelId": "0",
+            "channelType": "jingxuan",
+            "container": {
+              "name": "taolive_discover_tab_container_2024",
+              "span": "2"
+            },
+            "firstAnchored": "true",
+            "name": "发现",
+            "pageName": "Page_TaobaoLive_jingxuan",
+            "pageType": "dx",
+            "spm": "a2141.8001240",
+            "tabId": "1",
+            "tabUT": {
+              "button": "Hometab",
+              "show": "Page_TaobaoLive_Show-Hometab",
+              "spm": "a2141.8001240.topbar.hometab"
+            }
+          },
+          {
+            "bottomTabRela": "jingxuan",
+            "broadcastEntrance": "false",
+            "channelId": "0",
+            "channelType": "singleLiveTab",
+            "firstAnchored": "false",
+            "name": "好看",
+            "pageName": "Page_TaobaoLiveWatch",
+            "pageType": "singleStream",
+            "spm": "a2141.66668888",
+            "tabId": "2",
+            "tabMiddle": {
+              "animation": "false",
+              "iconUrl": "https://gw.alicdn.com/imgextra/i1/O1CN01fbAoUv1gyEN1zgoPr_!!6000000004210-2-tps-84-84.png",
+              "isOpen": "true",
+              "title": "直播间"
+            },
+            "tabUT": {
+              "button": "LiveAnchotab",
+              "show": "Page_TaobaoLive_Show-LiveAnchortab",
+              "spm": "a2141.8001240.topbar.liveanchortab"
+            }
+          }
+        ]
+      },
+      {
+        "androidNormalColor": "#000000",
+        "androidNormalIcon": "https://gw.alicdn.com/imgextra/i1/O1CN01VwNKa61xOpDgucwY7_!!6000000006434-2-tps-208-126.png",
+        "androidPressedColor": "#FF3344",
+        "androidPressedIcon": "https://gw.alicdn.com/imgextra/i3/O1CN01tlmzu51OaGYwhvXOA_!!6000000001721-2-tps-208-126.png",
+        "channelId": "0",
+        "channelType": "goodPrice",
+        "firstAnchored": "false",
+        "groupTopTabSign": "goodPrice",
+        "hideTextOnPressed": "false",
+        "isDefault": "false",
+        "jumpUrl": "https://web.m.taobao.com/app/mtb/live-good-price-normal/home?disableNav=YES&tl-x-prerender=true&channelType=goodPrice&livesource=homepage.tab2shop",
+        "name": "好价",
+        "pageName": "Page_TaobaoLiveTabShop",
+        "pageType": "h5",
+        "spm": "a2141.12222222",
+        "tabUT": {
+          "button": "Bottom_ShopTab",
+          "show": "Page_TaobaoLive_Show-Bottom_ShopTab",
+          "spm": "a2141.8001240.bottom.shoptab"
+        }
+      },
+      {
+        "androidNormalColor": "#000000",
+        "androidNormalIcon": "https://img.alicdn.com/imgextra/i3/O1CN01uomR9R1g9qoxPf4sy_!!6000000004100-2-tps-208-126.png",
+        "androidPressedColor": "#FF3344",
+        "androidPressedIcon": "https://img.alicdn.com/imgextra/i1/O1CN01KbPFZ61zFKFsP8rCn_!!6000000006684-2-tps-208-126.png",
+        "channelId": "0",
+        "channelType": "shoppingCar",
+        "darkNormalIcon": "https://img.alicdn.com/imgextra/i1/O1CN01sijdBm1EoKaM7dXOH_!!6000000000398-2-tps-132-132.png",
+        "firstAnchored": "false",
+        "groupTopTabSign": "flashDown",
+        "hideTextOnPressed": "false",
+        "isDefault": "false",
+        "jumpUrl": "https://huodong.taobao.com/wow/a/act/tao/dailygroup/17255/17718/wupr?wh_pid=daily-531588&disableNav=YES&status_bar_transparent=true&livesource=shoppingCar&channelType=shoppingCar&tl-x-prerender=true&spm-cnt=a21tn.29147869",
+        "name": "活动日历",
+        "pageName": "Page_Taolive_Channel_tab4",
+        "pageType": "h5",
+        "spm": "a21tn.29147869",
+        "tabUT": {
+          "button": "Bottom_FlashDownTab",
+          "show": "Page_TaobaoLive_Show-Bottom_FlashDownTab",
+          "spm": "a2141.8001240.bottom.flashdown"
+        }
+      },
+      {
+        "androidNormalColor": "#000000",
+        "androidNormalIcon": "https://gw.alicdn.com/imgextra/i4/O1CN01lA6RWJ22OtM9jrBzk_!!6000000007111-2-tps-208-126.png",
+        "androidPressedColor": "#FF3344",
+        "androidPressedIcon": "https://gw.alicdn.com/imgextra/i2/O1CN01kL2prB1I7yOvwTt3W_!!6000000000847-2-tps-208-126.png",
+        "channelId": "0",
+        "channelType": "mine",
+        "firstAnchored": "false",
+        "groupTopTabSign": "mine",
+        "hideTextOnPressed": "false",
+        "isDefault": "false",
+        "jumpUrl": "https://pages-fast.m.taobao.com/wow/z/app/mtb/channel-my-new/home?x-ssr=true&tl-x-prerender=true&channelType=mine&livesource=homepage.tab4mine",
+        "name": "我的",
+        "pageName": "Page_TaobaoLiveTabMine",
+        "pageType": "h5",
+        "spm": "a2141.44444444",
+        "tabUT": {
+          "button": "Bottom_MineTab",
+          "show": "Page_TaobaoLive_Show-Bottom_MineTab",
+          "spm": "a2141.8001240.bottom.mine"
+        }
+      }
+    ],
+    "hideBottomNavigation": "false"
+  },
+  "ret": [
+    "SUCCESS::调用成功"
+  ],
+  "v": "2.0"
+}

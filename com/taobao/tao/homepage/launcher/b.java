@@ -1,7 +1,7 @@
 package com.taobao.tao.homepage.launcher;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.kge;
@@ -51,7 +51,7 @@ public class b {
         String str = (String) hashMap.get(LAUNCHER_TYPE);
         com.taobao.android.home.component.utils.e.e("HomeBaseLauncher", ((String) hashMap.get(LAUNCHER_NAME)) + " enableLoadLauncher : " + f + " ,launcherType: " + str);
         if (f) {
-            if (!TextUtils.equals(str, LAUNCHER_TRIGGER)) {
+            if (!StringUtils.equals(str, LAUNCHER_TRIGGER)) {
                 return true;
             }
         }

@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.JsPromptResult;
@@ -211,7 +211,7 @@ public class UltronWebViewJsEngine implements c<JSONObject> {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
         } else if (this.c != null) {
         } else {
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                 UltronError ultronError = new UltronError("webview engine js file or md5 is empty");
                 ultronError.code = bpk.ERROR_ENGINE_JS_FILE_ERROR_JSI;
                 a(ultronError);
@@ -234,12 +234,12 @@ public class UltronWebViewJsEngine implements c<JSONObject> {
                     a(ultronError2);
                     return;
                 }
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     j.put(str, b);
                 }
                 str3 = b;
             }
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return;
             }
             this.c = new WebView(this.f2548a);
@@ -489,12 +489,12 @@ public class UltronWebViewJsEngine implements c<JSONObject> {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !"null".equalsIgnoreCase(str)) {
+            if (!StringUtils.isEmpty(str) && !"null".equalsIgnoreCase(str)) {
                 JSONObject parseObject = JSONObject.parseObject(JSONObject.parseObject("{\"data\":" + str + riy.BLOCK_END_STR).getString("data"));
                 if (parseObject != null && !parseObject.isEmpty()) {
                     String string = parseObject.getString("method");
                     JSONObject jSONObject = parseObject.getJSONObject("methodReturn");
-                    if (TextUtils.isEmpty(string) || jSONObject == null || jSONObject.isEmpty()) {
+                    if (StringUtils.isEmpty(string) || jSONObject == null || jSONObject.isEmpty()) {
                         return;
                     }
                     if (dVar != null) {

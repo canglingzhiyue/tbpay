@@ -5,7 +5,7 @@ import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.extra.IPerformanceListener;
 import android.taobao.windvane.extra.WVPerformanceListenerManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.diagnose.collector.b;
 import com.taobao.android.diagnose.model.AbnormalInfo;
@@ -180,7 +180,7 @@ public class b {
         } else {
             try {
                 String str = (String) map.get("api");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 AbnormalInfo addInfo = new AbnormalInfo(12).addInfo("api", str).addInfo("retType", (String) map.get("retType")).addInfo(com.taobao.mtop.wvplugin.a.RESULT_KEY, (String) map.get(com.taobao.mtop.wvplugin.a.RESULT_KEY)).addInfo(arz.KEY_MAPPING_CODE, (String) map.get(arz.KEY_MAPPING_CODE)).addInfo("httpResponseStatus", (String) map.get("httpResponseStatus"));
@@ -240,7 +240,7 @@ public class b {
             return;
         }
         String str = (String) com.taobao.android.diagnose.common.d.a(myrVar.j(), "apiName", "");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         long l = myrVar.l() - myrVar.k();

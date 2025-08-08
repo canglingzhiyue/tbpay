@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.vfw.weex2.highPerformance.pre.request;
 
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -53,7 +53,7 @@ public class b {
         if (bVar.d) {
             this.b.mo1335useWua();
         }
-        if (!TextUtils.isEmpty(bVar.g)) {
+        if (!StringUtils.isEmpty(bVar.g)) {
             this.b.mo1328setUnitStrategy(bVar.g);
         }
         this.b.registerListener((IRemoteListener) new IRemoteBaseListener() { // from class: com.alibaba.android.ultron.vfw.weex2.highPerformance.pre.request.UltronTradeHybridPreRequest$1
@@ -71,8 +71,8 @@ public class b {
                     dsm.a(false, mtopResponse, "onSystemError: mtopResponse is null");
                 } else {
                     String str2 = "unknown";
-                    String retCode = TextUtils.isEmpty(mtopResponse.getRetCode()) ? str2 : mtopResponse.getRetCode();
-                    if (!TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+                    String retCode = StringUtils.isEmpty(mtopResponse.getRetCode()) ? str2 : mtopResponse.getRetCode();
+                    if (!StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                         str2 = mtopResponse.getRetMsg();
                     }
                     if (b.this.c != null) {
@@ -128,8 +128,8 @@ public class b {
                     dsm.a(false, mtopResponse, "onError: mtopResponse is null");
                 } else {
                     String str2 = "unknown";
-                    String retCode = TextUtils.isEmpty(mtopResponse.getRetCode()) ? str2 : mtopResponse.getRetCode();
-                    if (!TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+                    String retCode = StringUtils.isEmpty(mtopResponse.getRetCode()) ? str2 : mtopResponse.getRetCode();
+                    if (!StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                         str2 = mtopResponse.getRetMsg();
                     }
                     if (b.this.c != null) {
@@ -192,7 +192,7 @@ public class b {
             ipChange.ipc$dispatch("6f32d068", new Object[]{this, jSONObject, jSONObject2});
         } else if (jSONObject != null) {
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str) && (obj = jSONObject.get(str)) != null) {
+                if (!StringUtils.isEmpty(str) && (obj = jSONObject.get(str)) != null) {
                     if (obj instanceof String) {
                         String str2 = (String) obj;
                         if (adh.a(str2)) {

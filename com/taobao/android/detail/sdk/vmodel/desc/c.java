@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.desc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.template.ComponentModel;
@@ -56,7 +56,7 @@ public class c extends e {
         this.c = jSONObject.getString("tips");
         this.d = jSONObject.getString("title");
         String string = jSONObject.getString("getCouponApi");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             this.e = null;
             return;
         }

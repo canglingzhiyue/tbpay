@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.ipc.biz;
 
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.ipc.api.LocalCallManager;
 import com.alipay.mobile.common.ipc.api.LocalCallRetryHandler;
 import com.alipay.mobile.common.ipc.api.ServiceBeanManager;
@@ -62,7 +62,7 @@ public class LocalCallManagerImpl implements LocalCallManager {
             return iPCResult2;
         }
         LogCatUtil.info("IPC_LocalCallManager", "serviceBean=[" + serviceBean.getClass().getName() + "],method=[" + a2.getName() + riy.ARRAY_END_STR);
-        if (!TextUtils.equals(iPCParameter.returnType, a2.getReturnType().getName())) {
+        if (!StringUtils.equals(iPCParameter.returnType, a2.getReturnType().getName())) {
             LogCatUtil.info("IPC_LocalCallManager", "Not the same returnType, peer returnType=[" + iPCParameter.returnType + "] local returnType=[" + a2.getReturnType().getName() + riy.ARRAY_END_STR);
             IPCResult iPCResult3 = new IPCResult();
             iPCResult3.resultCode = 105;
@@ -140,7 +140,7 @@ public class LocalCallManagerImpl implements LocalCallManager {
             return (Method) ipChange.ipc$dispatch("1294d781", new Object[]{this, iPCParameter, obj});
         }
         for (Method method : obj.getClass().getMethods()) {
-            if (TextUtils.equals(iPCParameter.methodName, method.getName())) {
+            if (StringUtils.equals(iPCParameter.methodName, method.getName())) {
                 Class<?>[] parameterTypes = method.getParameterTypes();
                 String[] strArr = iPCParameter.paramTypes;
                 if (parameterTypes.length == strArr.length && a(parameterTypes, strArr)) {
@@ -157,7 +157,7 @@ public class LocalCallManagerImpl implements LocalCallManager {
             return ((Boolean) ipChange.ipc$dispatch("f73f2773", new Object[]{this, clsArr, strArr})).booleanValue();
         }
         for (int i = 0; i < clsArr.length; i++) {
-            if (!TextUtils.equals(clsArr[i].getName(), strArr[i])) {
+            if (!StringUtils.equals(clsArr[i].getName(), strArr[i])) {
                 return false;
             }
         }

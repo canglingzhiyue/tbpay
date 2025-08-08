@@ -3,7 +3,7 @@ package com.taobao.search.mmd.util;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.mobilesdk.socketcraft.monitor.MonitorItemConstants;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -26,7 +26,7 @@ public class a {
         }
         HashMap hashMap = new HashMap();
         String stringExtra = intent.getStringExtra("url");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             hashMap.putAll(c.a(Uri.parse(stringExtra)));
             ArrayMap arrayMap = new ArrayMap();
             arrayMap.put("Type", "url");
@@ -39,10 +39,10 @@ public class a {
             TLog.logd("InShopParamsParser", "解析店内url锚点参数异常");
         }
         c.a(intent, hashMap);
-        if (TextUtils.equals((CharSequence) hashMap.remove("isSoldCount"), "true")) {
+        if (StringUtils.equals((CharSequence) hashMap.remove("isSoldCount"), "true")) {
             hashMap.put("sort", "_sale");
         }
-        if (TextUtils.equals((CharSequence) hashMap.remove("isNew"), "true")) {
+        if (StringUtils.equals((CharSequence) hashMap.remove("isNew"), "true")) {
             hashMap.put("sort", "first_new");
         }
         hashMap.remove(com.taobao.browser.utils.i.URL_REFERER_ORIGIN);
@@ -60,7 +60,7 @@ public class a {
             return map;
         }
         String encodedFragment = uri.getEncodedFragment();
-        if (!TextUtils.isEmpty(encodedFragment)) {
+        if (!StringUtils.isEmpty(encodedFragment)) {
             ArrayMap arrayMap = new ArrayMap();
             arrayMap.put("Type", "FRAGMENT_URL");
             arrayMap.put(MonitorItemConstants.KEY_URL, uri.toString());
@@ -71,13 +71,13 @@ public class a {
         String[] split = (encodedFragment == null || !encodedFragment.contains("?")) ? null : encodedFragment.split("\\?");
         if (split != null && split.length > 0) {
             encodedFragment = split[0];
-            encodedQuery = !TextUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + split[1] : split[1];
+            encodedQuery = !StringUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + split[1] : split[1];
         }
         if (encodedFragment != null && encodedFragment.contains("&") && (indexOf = encodedFragment.indexOf("&")) > 0) {
-            encodedQuery = !TextUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + encodedFragment.substring(indexOf + 1) : encodedFragment.substring(indexOf + 1);
+            encodedQuery = !StringUtils.isEmpty(encodedQuery) ? encodedQuery + "&" + encodedFragment.substring(indexOf + 1) : encodedFragment.substring(indexOf + 1);
             encodedFragment.substring(0, indexOf);
         }
-        if (!TextUtils.isEmpty(encodedQuery)) {
+        if (!StringUtils.isEmpty(encodedQuery)) {
             strArr = encodedQuery.split("&");
         }
         if (strArr != null && strArr.length > 0) {

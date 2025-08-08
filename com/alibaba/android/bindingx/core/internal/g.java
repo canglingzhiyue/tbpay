@@ -1,7 +1,7 @@
 package com.alibaba.android.bindingx.core.internal;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.AnimationUtils;
 import com.alibaba.android.bindingx.core.d;
 import com.alibaba.android.bindingx.core.internal.b;
@@ -166,7 +166,7 @@ public class g extends AbstractEventHandler implements b.a {
             bVar.b();
         }
         this.n = 0L;
-        if (this.j == null || TextUtils.isEmpty(this.g)) {
+        if (this.j == null || StringUtils.isEmpty(this.g)) {
             return;
         }
         this.j.a(this.g);

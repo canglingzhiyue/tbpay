@@ -1,6 +1,6 @@
 package com.taobao.avplayer.interactivelifecycle.frontcover.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.DWContext;
 import com.taobao.avplayer.common.w;
@@ -29,7 +29,7 @@ public class b implements w, c {
             return;
         }
         this.f16520a = yVar;
-        if (dWContext == null || TextUtils.isEmpty(dWContext.mFrom) || dWContext.mInteractiveId <= 0 || dWContext.mNetworkAdapter == null) {
+        if (dWContext == null || StringUtils.isEmpty(dWContext.mFrom) || dWContext.mInteractiveId <= 0 || dWContext.mNetworkAdapter == null) {
             this.f16520a.a(-1, null);
         } else {
             dWContext.queryConfigData(this, false);

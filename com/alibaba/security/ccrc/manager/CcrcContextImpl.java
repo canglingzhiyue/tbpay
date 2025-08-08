@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.manager;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.C1209fa;
 import com.alibaba.security.ccrc.service.build.C1238p;
 import com.alibaba.security.ccrc.service.build.Kb;
@@ -83,7 +83,7 @@ public class CcrcContextImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("49079005", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mAppKey)) {
+        if (StringUtils.isEmpty(this.mAppKey)) {
             this.mAppKey = getAppKeyFromSecurityGuard(this.mContext);
         }
         return this.mAppKey;
@@ -94,7 +94,7 @@ public class CcrcContextImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("92150ca3", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mAppName)) {
+        if (StringUtils.isEmpty(this.mAppName)) {
             this.mAppName = C1238p.b(this.mContext);
         }
         return this.mAppName;
@@ -105,7 +105,7 @@ public class CcrcContextImpl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("65f009ac", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mAppVersion)) {
+        if (StringUtils.isEmpty(this.mAppVersion)) {
             this.mAppVersion = C1238p.a(this.mContext);
         }
         return this.mAppVersion;

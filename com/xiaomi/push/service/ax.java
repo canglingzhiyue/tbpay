@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -78,12 +78,12 @@ public class ax {
     }
 
     private static Bundle a(Context context, String str, String str2, String str3, Bundle bundle) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             throw new IllegalArgumentException("call notification provider failed!");
         }
         Bundle bundle2 = new Bundle();
         bundle2.putString("package", str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             bundle2.putString(com.taobao.android.livehome.plugin.atype.flexalocal.utils.d.BUNDLE_BUSINESS_ID, str3);
         }
         if (bundle != null) {
@@ -126,10 +126,10 @@ public class ax {
         CharSequence charSequence;
         if (notification.extras != null) {
             charSequence = notification.extras.getCharSequence(NotificationCompat.EXTRA_TITLE);
-            if (TextUtils.isEmpty(charSequence)) {
+            if (StringUtils.isEmpty(charSequence)) {
                 charSequence = notification.extras.getCharSequence(NotificationCompat.EXTRA_TITLE_BIG);
             }
-            if (TextUtils.isEmpty(charSequence)) {
+            if (StringUtils.isEmpty(charSequence)) {
                 charSequence = notification.extras.getCharSequence("mipush.customTitle");
             }
         } else {
@@ -205,14 +205,14 @@ public class ax {
             return;
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             arrayList.add(str);
         }
         arrayList.addAll(Arrays.asList(f941a));
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
             String str2 = (String) arrayList.get(i);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 Intent intent2 = new Intent(intent);
                 intent2.setPackage(str2);
                 try {
@@ -230,9 +230,9 @@ public class ax {
     }
 
     public static void a(Map<String, String> map, Bundle bundle, String str) {
-        if (map == null || bundle == null || TextUtils.isEmpty(str)) {
+        if (map == null || bundle == null || StringUtils.isEmpty(str)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("cp map to b fail:" + str);
-        } else if (TextUtils.isEmpty(map.get(str))) {
+        } else if (StringUtils.isEmpty(map.get(str))) {
             bundle.remove(str);
         } else {
             bundle.putString(str, map.get(str));
@@ -287,10 +287,10 @@ public class ax {
         CharSequence charSequence;
         if (notification.extras != null) {
             charSequence = notification.extras.getCharSequence(NotificationCompat.EXTRA_TEXT);
-            if (TextUtils.isEmpty(charSequence) && Build.VERSION.SDK_INT >= 21) {
+            if (StringUtils.isEmpty(charSequence) && Build.VERSION.SDK_INT >= 21) {
                 charSequence = notification.extras.getCharSequence(NotificationCompat.EXTRA_BIG_TEXT);
             }
-            if (TextUtils.isEmpty(charSequence)) {
+            if (StringUtils.isEmpty(charSequence)) {
                 charSequence = notification.extras.getCharSequence("mipush.customContent");
             }
         } else {
@@ -320,7 +320,7 @@ public class ax {
             if (notification.extras != null) {
                 str = notification.extras.getString(HiAnalyticsConstant.BI_KEY_TARGET_PACKAGE);
             }
-            if (TextUtils.isEmpty(str) && (a2 = com.xiaomi.push.bh.a(notification, "extraNotification")) != null) {
+            if (StringUtils.isEmpty(str) && (a2 = com.xiaomi.push.bh.a(notification, "extraNotification")) != null) {
                 return (String) com.xiaomi.push.bh.a(a2, "getTargetPkg", new Object[0]);
             }
         } catch (Exception unused) {

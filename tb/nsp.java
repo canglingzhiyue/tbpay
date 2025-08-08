@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -237,7 +237,7 @@ public class nsp extends c implements nsn {
         for (Map.Entry entry : hashMap.entrySet()) {
             String str2 = (String) entry.getKey();
             String str3 = (String) entry.getValue();
-            if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                 sb.append(str2);
                 sb.append(":");
                 sb.append(str3);
@@ -284,7 +284,7 @@ public class nsp extends c implements nsn {
         JSONObject jSONObject2 = commonSearchResult.copyPageInfo;
         for (String str : r.Y()) {
             String d = d(str);
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 jSONObject.put(str, (Object) d);
                 if (jSONObject2 != null) {
                     jSONObject2.put(str, (Object) d);
@@ -352,7 +352,7 @@ public class nsp extends c implements nsn {
 
     public boolean T() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4b53adf", new Object[]{this})).booleanValue() : TextUtils.equals(noa.VALUE_SEARCH_ACTION_ZD, getParamValue("search_action"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4b53adf", new Object[]{this})).booleanValue() : StringUtils.equals(noa.VALUE_SEARCH_ACTION_ZD, getParamValue("search_action"));
     }
 
     @Override // com.taobao.search.sf.datasource.c
@@ -408,7 +408,7 @@ public class nsp extends c implements nsn {
             JSONObject jSONObject = commonSearchResult.pageInfo;
             if (jSONObject != null) {
                 String string = jSONObject.getString("for_bts");
-                if (!TextUtils.isEmpty(string) && (split = string.split(";")) != null) {
+                if (!StringUtils.isEmpty(string) && (split = string.split(";")) != null) {
                     for (String str : split) {
                         if (str.startsWith("search_native")) {
                             return str;
@@ -432,7 +432,7 @@ public class nsp extends c implements nsn {
         if (imp.a().c()) {
             StringBuilder sb = new StringBuilder();
             for (BaseCellBean baseCellBean : commonSearchResult.getCells()) {
-                if (TextUtils.equals(baseCellBean.cardType, "item")) {
+                if (StringUtils.equals(baseCellBean.cardType, "item")) {
                     sb.append(baseCellBean.itemId);
                     sb.append(',');
                 }
@@ -492,7 +492,7 @@ public class nsp extends c implements nsn {
         }
         String a2 = k.a.a(k.a.PARAM_KEY_FIRST_RN);
         String paramStr = getParamStr(a2);
-        if (TextUtils.isEmpty(paramStr)) {
+        if (StringUtils.isEmpty(paramStr)) {
             return;
         }
         clearParam(a2);
@@ -519,7 +519,7 @@ public class nsp extends c implements nsn {
         }
         Map<String, String> buildSearchParams = super.buildSearchParams(searchParamImpl);
         String str = buildSearchParams.get(noa.KEY_TAG_SEARCH_KEYWORD);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             buildSearchParams.put("q", str);
         }
         Map<String, String> map = this.l;
@@ -541,7 +541,7 @@ public class nsp extends c implements nsn {
         i(map);
         map.put("newSortBar", String.valueOf(r.ci()));
         String a2 = com.taobao.search.common.util.a.a().a(getTab());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             map.put("behavior", a2);
         }
         if (!T()) {
@@ -575,7 +575,7 @@ public class nsp extends c implements nsn {
             return;
         }
         String str = map.get("tab");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String str2 = map.get("appId");
@@ -586,7 +586,7 @@ public class nsp extends c implements nsn {
         } else if (a2 != null && (params = a2.getParams()) != null) {
             map.putAll(params);
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         map.put("appId", str2);
@@ -626,19 +626,19 @@ public class nsp extends c implements nsn {
         } else if (!r.as() || !com.taobao.search.common.util.b.c().a()) {
         } else {
             String paramValue = getParamValue("tab");
-            if (!z() && !TextUtils.isEmpty(paramValue) && !TextUtils.equals(paramValue, "all")) {
+            if (!z() && !StringUtils.isEmpty(paramValue) && !StringUtils.equals(paramValue, "all")) {
                 return;
             }
             int aM = r.aM();
             String paramValue2 = getParamValue("bxConfigInvokeId");
             String paramValue3 = getParamValue("bxConfigBizId");
             String paramValue4 = getParamValue("bxConfigCurScene");
-            if (TextUtils.isEmpty(paramValue3) || TextUtils.isEmpty(paramValue2)) {
+            if (StringUtils.isEmpty(paramValue3) || StringUtils.isEmpty(paramValue2)) {
                 a2 = com.taobao.search.common.util.b.c().a(Integer.valueOf(aM));
             } else {
                 a2 = com.taobao.search.common.util.b.c().a(paramValue3, paramValue2, paramValue4, Integer.valueOf(aM));
             }
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             map.put("bxFeature", a2);
@@ -663,7 +663,7 @@ public class nsp extends c implements nsn {
         c.guideSearchNative = this.c;
         String c2 = c("m");
         String c3 = c("channelSrp");
-        if (TextUtils.isEmpty(c2) && TextUtils.isEmpty(c3)) {
+        if (StringUtils.isEmpty(c2) && StringUtils.isEmpty(c3)) {
             z2 = true;
         }
         c.mainSearch = z2;
@@ -709,11 +709,11 @@ public class nsp extends c implements nsn {
             ipChange.ipc$dispatch("8d794299", new Object[]{this, new Boolean(z), map});
         } else if (map != null && !map.isEmpty()) {
             for (String str : new HashSet(map.keySet())) {
-                if (!TextUtils.isEmpty(str) && str.startsWith(noa.PAGE_PROTECTED_PARAM_PREFIX) && 3 < str.length()) {
+                if (!StringUtils.isEmpty(str) && str.startsWith(noa.PAGE_PROTECTED_PARAM_PREFIX) && 3 < str.length()) {
                     String substring = str.substring(3);
-                    if (!TextUtils.isEmpty(substring)) {
+                    if (!StringUtils.isEmpty(substring)) {
                         String remove = map.remove(str);
-                        if (!TextUtils.isEmpty(remove) && !z) {
+                        if (!StringUtils.isEmpty(remove) && !z) {
                             map.put(substring, remove);
                         }
                     }
@@ -757,7 +757,7 @@ public class nsp extends c implements nsn {
         while (i3 < commonSearchResult.getCellsCount()) {
             BaseCellBean cell = commonSearchResult.getCell(i3);
             CommonSearchResult commonSearchResult2 = commonSearchResult;
-            if (TextUtils.equals(cell.cardType, "item")) {
+            if (StringUtils.equals(cell.cardType, "item")) {
                 if (cell.isP4p) {
                     sb4.append("p,");
                     sb2.append(cell.itemId);
@@ -774,7 +774,7 @@ public class nsp extends c implements nsn {
                     sb.append(',');
                     i5++;
                 }
-            } else if (TextUtils.equals(cell.cardType, "multi_item")) {
+            } else if (StringUtils.equals(cell.cardType, "multi_item")) {
                 if (cell.curItemIds != null) {
                     String[] strArr2 = cell.curItemIds;
                     int length = strArr2.length;
@@ -802,7 +802,7 @@ public class nsp extends c implements nsn {
                     }
                 }
                 i5 = i2;
-            } else if (!TextUtils.isEmpty(cell.cardType) && !TextUtils.isEmpty(cell.bizItemId)) {
+            } else if (!StringUtils.isEmpty(cell.cardType) && !StringUtils.isEmpty(cell.bizItemId)) {
                 sb5.append(cell.cardType);
                 sb5.append(":");
                 sb5.append(cell.bizItemId);
@@ -888,7 +888,7 @@ public class nsp extends c implements nsn {
                 break;
             }
             BaseCellBean next = it.next();
-            if (TextUtils.equals(next.cardType, "item")) {
+            if (StringUtils.equals(next.cardType, "item")) {
                 if (next instanceof SFAuctionBaseCellBean) {
                     map = ((SFAuctionBaseCellBean) next).auctionBaseBean.jarvisData;
                 } else if (next instanceof MuiseCellBean) {

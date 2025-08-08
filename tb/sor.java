@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.usertrack.track.b;
@@ -90,7 +90,7 @@ public class sor {
             return false;
         }
         String a2 = oeb.a("ShortVideo.videoAttachScenario", "huitui");
-        if (!TextUtils.equals(a2, "all") && (!this.t || !TextUtils.equals(a2, "huitui"))) {
+        if (!StringUtils.equals(a2, "all") && (!this.t || !StringUtils.equals(a2, "huitui"))) {
             return b(context);
         }
         return true;
@@ -209,17 +209,17 @@ public class sor {
         sb.append(ogv.a(this.h) ? str : "true");
         sb.append('\'');
         sb.append(", firstFrameUrl=");
-        sb.append(TextUtils.isEmpty(this.m) ? str : "true");
+        sb.append(StringUtils.isEmpty(this.m) ? str : "true");
         sb.append('\'');
         sb.append(", cacheTime=");
         sb.append(this.d);
         sb.append(", videoResourceStr='");
-        sb.append(TextUtils.isEmpty(this.j) ? str : "true");
+        sb.append(StringUtils.isEmpty(this.j) ? str : "true");
         sb.append('\'');
         sb.append(", isLocalVideo=");
         sb.append(this.k);
         sb.append(", localVideoStr='");
-        sb.append(TextUtils.isEmpty(this.l) ? str : "true");
+        sb.append(StringUtils.isEmpty(this.l) ? str : "true");
         sb.append('\'');
         sb.append(", isExposed=");
         sb.append(this.p);

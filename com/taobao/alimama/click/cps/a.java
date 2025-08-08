@@ -3,7 +3,7 @@ package com.taobao.alimama.click.cps;
 import android.app.Application;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -106,7 +106,7 @@ public class a extends MunionRemoteBusiness {
                 this.f8417a = this.f8417a == null ? "" : this.f8417a;
                 this.g = uri.getQueryParameter(kuh.ALI_TRACK_ID);
                 String queryParameter = uri.getQueryParameter("eads");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     this.f = queryParameter;
                 }
                 this.c = com.taobao.utils.a.a(uri.toString(), "e");

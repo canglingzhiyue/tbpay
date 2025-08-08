@@ -1,7 +1,7 @@
 package android.taobao.windvane.prerender;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import java.util.Collection;
@@ -57,12 +57,12 @@ public final class b implements c {
                     List<String> list2 = list;
                     if (!(list2 instanceof Collection) || !list2.isEmpty()) {
                         for (String str : list2) {
-                            if (TextUtils.equals(str, "*")) {
+                            if (StringUtils.equals(str, "*")) {
                                 equals = true;
                                 continue;
                             } else {
                                 if (b != null && b.size() >= 2) {
-                                    equals = TextUtils.equals(str, (String) b.get(1));
+                                    equals = StringUtils.equals(str, (String) b.get(1));
                                     continue;
                                 }
                                 equals = false;

@@ -6,7 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -38,7 +38,7 @@ public class k extends g {
             return (ComponentName) ipChange.ipc$dispatch("8654ec07", new Object[]{this});
         }
         String b = com.taobao.android.autosize.api.a.b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             com.taobao.android.launcher.bootstrap.tao.h.b("EasyGoLifeCycleManagerImpl", " getTargetComponentName targetUrl is null");
             return null;
         }
@@ -59,7 +59,7 @@ public class k extends g {
         }
         String packageName = component.getPackageName();
         String className = component.getClassName();
-        if (!TextUtils.isEmpty(packageName) && !TextUtils.isEmpty(className)) {
+        if (!StringUtils.isEmpty(packageName) && !StringUtils.isEmpty(className)) {
             return component;
         }
         com.taobao.android.launcher.bootstrap.tao.h.b("EasyGoLifeCycleManagerImpl", " getTargetComponentName packageName or className is null packageName: " + packageName + " className: " + className);
@@ -72,7 +72,7 @@ public class k extends g {
         if (ipChange instanceof IpChange) {
             return (Activity) ipChange.ipc$dispatch("2817fc3f", new Object[]{this, classLoader, str, intent});
         }
-        if (!TextUtils.equals(com.taobao.android.autosize.api.a.c(), str)) {
+        if (!StringUtils.equals(com.taobao.android.autosize.api.a.c(), str)) {
             return super.a(classLoader, str, intent);
         }
         if (intent == null) {

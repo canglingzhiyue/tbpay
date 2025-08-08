@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.v;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -77,7 +77,7 @@ public class bht implements bhu, bhv {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         for (bhv bhvVar : this.b) {
-            if (bhvVar.a(str) && !TextUtils.isEmpty(bhvVar.b(str))) {
+            if (bhvVar.a(str) && !StringUtils.isEmpty(bhvVar.b(str))) {
                 return bhvVar.b(str);
             }
         }

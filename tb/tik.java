@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
 import com.alibaba.fastjson.JSONObject;
@@ -284,7 +284,7 @@ public class tik {
                     return;
                 }
                 String f = tik.f(tik.this);
-                boolean z = !TextUtils.isEmpty(f);
+                boolean z = !StringUtils.isEmpty(f);
                 if (tik.a(tik.this) == null) {
                     return;
                 }

@@ -1,7 +1,7 @@
 package com.alibaba.triver.kit.api.common;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.kernel.i;
 import tb.kge;
@@ -27,7 +27,7 @@ public class e {
 
     public static boolean a(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1a285e3", new Object[]{uri})).booleanValue() : uri != null && uri.isHierarchical() && TextUtils.equals(uri.getQueryParameter(i.KEY_AFC_LINK), "1");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b1a285e3", new Object[]{uri})).booleanValue() : uri != null && uri.isHierarchical() && StringUtils.equals(uri.getQueryParameter(i.KEY_AFC_LINK), "1");
     }
 
     public static Uri b(Uri uri) {

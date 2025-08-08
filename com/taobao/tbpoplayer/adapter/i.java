@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.adapter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -95,7 +95,7 @@ public class i implements INewConfigAdapter {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String F = com.taobao.tbpoplayer.info.a.a().F();
-        return TextUtils.isEmpty(F) ? "https://poplayer.template.alibaba.com/popcdn/1/config.json" : F;
+        return StringUtils.isEmpty(F) ? "https://poplayer.template.alibaba.com/popcdn/1/config.json" : F;
     }
 
     @Override // com.alibaba.poplayer.norm.INewConfigAdapter

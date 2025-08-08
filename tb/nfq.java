@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.util.Constants;
@@ -100,7 +100,7 @@ public class nfq extends ContentObserver {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f61ca741", new Object[]{this, nfsVar})).booleanValue();
         }
-        if (nfsVar.c > ngn.b() || TextUtils.isEmpty(nfsVar.f31430a)) {
+        if (nfsVar.c > ngn.b() || StringUtils.isEmpty(nfsVar.f31430a)) {
             return false;
         }
         String lowerCase = nfsVar.f31430a.toLowerCase();

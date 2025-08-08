@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -232,14 +232,14 @@ public class b extends ius<SFPromotionFilterBean, LinearLayout, com.taobao.searc
         textView.setTextColor(bVar.f);
         textView3.setTextColor(bVar.f);
         textView2.setTextColor(bVar.g);
-        if (TextUtils.isEmpty(bVar.f19159a)) {
+        if (StringUtils.isEmpty(bVar.f19159a)) {
             textView.setVisibility(8);
             textView2.setVisibility(8);
             textView3.setVisibility(8);
             a(dip2px, tUrlImageView, bVar, (View) null);
             return view;
         }
-        boolean z = !TextUtils.isEmpty(bVar.b);
+        boolean z = !StringUtils.isEmpty(bVar.b);
         int indexOf = z ? bVar.f19159a.indexOf(bVar.b) : -1;
         if (indexOf == -1) {
             z = false;
@@ -259,7 +259,7 @@ public class b extends ius<SFPromotionFilterBean, LinearLayout, com.taobao.searc
         } else {
             textView.setText(bVar.f19159a);
         }
-        if (!TextUtils.isEmpty(bVar.f19159a)) {
+        if (!StringUtils.isEmpty(bVar.f19159a)) {
             StringBuilder sb = new StringBuilder();
             sb.append(bVar.f19159a);
             sb.append(aVar.f19158a ? "，已选中" : com.alibaba.ability.localization.b.a(R.string.taobao_app_1005_1_16660));
@@ -274,7 +274,7 @@ public class b extends ius<SFPromotionFilterBean, LinearLayout, com.taobao.searc
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6ca4a1c5", new Object[]{this, aVar});
-        } else if (!r.bE() || !aVar.f19158a || TextUtils.isEmpty(aVar.b) || TextUtils.isEmpty(aVar.c)) {
+        } else if (!r.bE() || !aVar.f19158a || StringUtils.isEmpty(aVar.b) || StringUtils.isEmpty(aVar.c)) {
         } else {
             getModel().d().setParam(aVar.b, aVar.c);
         }
@@ -366,7 +366,7 @@ public class b extends ius<SFPromotionFilterBean, LinearLayout, com.taobao.searc
         }
         aVar.f19158a = !z;
         c(aVar);
-        if (TextUtils.equals(aVar.g, "research")) {
+        if (StringUtils.equals(aVar.g, "research")) {
             HashMap hashMap = new HashMap();
             hashMap.put(aVar.b, aVar.c);
             hashMap.put("q", d.getKeyword());
@@ -380,7 +380,7 @@ public class b extends ius<SFPromotionFilterBean, LinearLayout, com.taobao.searc
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ff0e8c7", new Object[]{this, new Integer(i), tUrlImageView, bVar, view});
-        } else if (TextUtils.isEmpty(bVar.c) || bVar.k == 0 || bVar.j == 0) {
+        } else if (StringUtils.isEmpty(bVar.c) || bVar.k == 0 || bVar.j == 0) {
         } else {
             ViewGroup.LayoutParams layoutParams = tUrlImageView.getLayoutParams();
             layoutParams.height = i;
@@ -428,7 +428,7 @@ public class b extends ius<SFPromotionFilterBean, LinearLayout, com.taobao.searc
                 }
             });
             String imageUrl = tUrlImageView.getImageUrl();
-            if (!TextUtils.isEmpty(imageUrl) && TextUtils.equals(imageUrl, bVar.c) && tUrlImageView.getTag() != null && ((Boolean) tUrlImageView.getTag()).booleanValue() && view != null) {
+            if (!StringUtils.isEmpty(imageUrl) && StringUtils.equals(imageUrl, bVar.c) && tUrlImageView.getTag() != null && ((Boolean) tUrlImageView.getTag()).booleanValue() && view != null) {
                 view.setVisibility(8);
             }
             tUrlImageView.setImageUrl(bVar.c);

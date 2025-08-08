@@ -3,7 +3,7 @@ package com.taobao.desktop.channel.calendar.api;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -200,7 +200,7 @@ public class WVCalendarPlugin extends e {
         }
         try {
             String userId = Login.getUserId();
-            if (TextUtils.isEmpty(userId)) {
+            if (StringUtils.isEmpty(userId)) {
                 userId = "";
             }
             map.put("userId", userId);

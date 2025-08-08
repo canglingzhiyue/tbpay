@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -87,7 +87,7 @@ public abstract class eox extends AbsFactoryManager<eov> {
         }
         if (iDMComponent.getFields() != null) {
             String string = iDMComponent.getFields().getString("filter");
-            if (!TextUtils.isEmpty(string) && eni.a(epo.a(), string, bVar.a())) {
+            if (!StringUtils.isEmpty(string) && eni.a(epo.a(), string, bVar.a())) {
                 return null;
             }
         }

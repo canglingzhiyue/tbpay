@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.webkit.CookieManager;
 import com.ali.user.mobile.ability.ExecutorJSBridge;
@@ -239,7 +239,7 @@ public class LoginController {
             String string6 = bundle.getString("login_type", "");
             Context applicationContext = DataProviderFactory.getApplicationContext();
             i = defaultLoginSite;
-            if ("umidIv".equals(string6) && !TextUtils.isEmpty(string5)) {
+            if ("umidIv".equals(string6) && !StringUtils.isEmpty(string5)) {
                 LoginTLogAdapter.e(TAG, "umidTokenLogin start");
                 if (LoginSwitch.getSwitch("loginBarAgreement", "false")) {
                     ((NavigatorService) ServiceFactory.getService(NavigatorService.class)).navToAgreement(applicationContext, new LoginFilterCallback() { // from class: com.taobao.login4android.login.LoginController.1
@@ -303,11 +303,11 @@ public class LoginController {
                     simLogin(bundle);
                     return;
                 }
-            } else if (!TextUtils.isEmpty(string2)) {
+            } else if (!StringUtils.isEmpty(string2)) {
                 LoginTLogAdapter.e(TAG, "autoLogin tokenLogin");
                 UnifySsoLogin.tokenLogin(bundle.getInt(LoginConstant.ALIUSER_LOGIN_SITE, 0), string2, bundle.getBoolean("isSilent"), Login.session);
                 return;
-            } else if (!TextUtils.isEmpty(string) && DataProviderFactory.getDataProvider().enableAlipaySSO()) {
+            } else if (!StringUtils.isEmpty(string) && DataProviderFactory.getDataProvider().enableAlipaySSO()) {
                 alipaySsoLogin(bundle);
                 LoginTLogAdapter.e(TAG, "autoLogin alipaySsoLogin");
                 return;
@@ -324,7 +324,7 @@ public class LoginController {
                     Login.session.appendEventTrace(JSON.toJSONString(refer));
                     z2 = z;
                     i = i2;
-                } else if (!TextUtils.isEmpty(string3)) {
+                } else if (!StringUtils.isEmpty(string3)) {
                     old2NewAutoLogin(string3, string4, DataProviderFactory.getDataProvider().getSite(), z, bundle);
                     return;
                 } else if (z3) {
@@ -340,7 +340,7 @@ public class LoginController {
                 LoginTLogAdapter.e(TAG, "autologin with bundle. browserRefUrl = " + this.browserRefUrl);
                 String string7 = bundle.getString("apiReferer");
                 apiReferUT(string7);
-                if (!TextUtils.isEmpty(string7)) {
+                if (!StringUtils.isEmpty(string7)) {
                     try {
                         Login.session.appendEventTrace(string7);
                     } catch (Throwable unused) {
@@ -350,7 +350,7 @@ public class LoginController {
                     }
                 }
                 UserTrackAdapter.sendUT("apiReferer", string7);
-                if (!TextUtils.isEmpty(this.browserRefUrl)) {
+                if (!StringUtils.isEmpty(this.browserRefUrl)) {
                     ApiReferer.Refer refer3 = new ApiReferer.Refer();
                     refer3.eventName = this.browserRefUrl;
                     Login.session.appendEventTrace(JSON.toJSONString(refer3));
@@ -363,19 +363,19 @@ public class LoginController {
             str2 = loginToken;
         }
         int i3 = i;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             ApiReferer.Refer refer4 = new ApiReferer.Refer();
             refer4.eventName = "autoLoginToken=null|trySdkLogin";
             Login.session.appendEventTrace(JSON.toJSONString(refer4));
             try {
                 Properties properties = new Properties();
                 properties.put("action", "autologin token null trySdkLogin");
-                properties.put("logintoken", TextUtils.isEmpty(str2) + "");
-                properties.put("userid", TextUtils.isEmpty(str) + "");
+                properties.put("logintoken", StringUtils.isEmpty(str2) + "");
+                properties.put("userid", StringUtils.isEmpty(str) + "");
                 UserTrackAdapter.sendUT("NullAutoLoginToken", properties);
             } catch (Exception unused2) {
             }
-            if (!TextUtils.isEmpty(str2) && LoginSwitch.getSwitch("autologin_only", "false")) {
+            if (!StringUtils.isEmpty(str2) && LoginSwitch.getSwitch("autologin_only", "false")) {
                 LoginTLogAdapter.e(TAG, "autoLogin autoLoginTargetAccount 1");
                 autoLoginTargetAccount(str, str2, i3, z, bundle);
                 return;
@@ -556,7 +556,7 @@ public class LoginController {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("4b349f7d", new Object[]{this, rpcResponse});
-                } else if (rpcResponse != null && rpcResponse.returnValue != 0 && (rpcResponse instanceof DefaultLoginResponseData) && TextUtils.equals(rpcResponse.actionType, "H5")) {
+                } else if (rpcResponse != null && rpcResponse.returnValue != 0 && (rpcResponse instanceof DefaultLoginResponseData) && StringUtils.equals(rpcResponse.actionType, "H5")) {
                     DefaultLoginResponseData defaultLoginResponseData = (DefaultLoginResponseData) rpcResponse;
                     boolean equals = "true".equals(((LoginReturnData) defaultLoginResponseData.returnValue).extMap.get(g.KEY_IS_TRANSPARENT));
                     String str2 = ((LoginReturnData) defaultLoginResponseData.returnValue).h5Url;
@@ -618,7 +618,7 @@ public class LoginController {
         HashMap hashMap = new HashMap();
         if (bundle != null) {
             String string = bundle.getString(LoginConstant.UMID_TOKEN, "");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 hashMap.put(LoginConstant.UMID_TOKEN, string);
             }
         }
@@ -653,18 +653,18 @@ public class LoginController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8f340476", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString = jSONObject.optString("apiName");
                 UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder(jSONObject.optString("eventName", "NO_SESSION"));
                 uTCustomHitBuilder.setEventPage(UTConstant.PageName.UT_PAGE_EXTEND);
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     uTCustomHitBuilder.setProperty("apiName", optString);
                 }
                 String optString2 = jSONObject.optString("msgCode");
-                if (!TextUtils.isEmpty(optString2)) {
+                if (!StringUtils.isEmpty(optString2)) {
                     uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_ARG2, optString2);
                 }
                 UTAnalytics.getInstance().getDefaultTracker().send(uTCustomHitBuilder.build());
@@ -681,7 +681,7 @@ public class LoginController {
         }
         try {
             String str3 = "autoLoginTargetAccount() called with: userid = [" + str + "], loginToken = [" + str2 + "], targetSite = [" + i + "], showUI = [" + z + "], data = [" + bundle + riy.ARRAY_END_STR;
-            if (TextUtils.isEmpty(AppInfo.getInstance().getUmidToken())) {
+            if (StringUtils.isEmpty(AppInfo.getInstance().getUmidToken())) {
                 AppInfo.getInstance().getUmidToken(new DataCallback<String>() { // from class: com.taobao.login4android.login.LoginController.7
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -690,7 +690,7 @@ public class LoginController {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("dec15eee", new Object[]{this, str4});
-                        } else if (!TextUtils.isEmpty(str4)) {
+                        } else if (!StringUtils.isEmpty(str4)) {
                             LoginController.this.autoLoginTargetAccount(str, str2, i, z, bundle);
                         } else {
                             boolean z2 = z;
@@ -717,7 +717,7 @@ public class LoginController {
             }
             processAutoLoginResponse(new AutoLoginBusiness().autoLogin(str2, str, i, z, ApiReferer.generateApiReferer()), z, true, bundle);
         } catch (Throwable th) {
-            if (TextUtils.equals(Login.getUserId(), str)) {
+            if (StringUtils.equals(Login.getUserId(), str)) {
                 ApiReferer.Refer refer = new ApiReferer.Refer();
                 refer.eventName = "autoLoginFailed";
                 refer.errorMessage = th.getMessage();
@@ -765,7 +765,7 @@ public class LoginController {
         hashMap2.put(AlipayConstant.LOGIN_ALIPAY_AUTH_CODE_KEY, bundle.getString(AlipayConstant.LOGIN_ALIPAY_AUTH_CODE_KEY, ""));
         hashMap2.put(AlipayConstant.LOGIN_ALIPAY_CLIENT_VERSION_KEY, bundle.getString(AlipayConstant.LOGIN_ALIPAY_CLIENT_VERSION_KEY, ""));
         hashMap2.put(AlipayConstant.LOGIN_ALIPAY_USER_ID_KEY, bundle.getString(AlipayConstant.LOGIN_ALIPAY_USER_ID_KEY, ""));
-        if ((Login.checkSessionValid() || !TextUtils.isEmpty(Login.getLoginToken())) && LoginApprearanceExtensions.AsoLoginFlow.getAsoLoginCallback() != null) {
+        if ((Login.checkSessionValid() || !StringUtils.isEmpty(Login.getLoginToken())) && LoginApprearanceExtensions.AsoLoginFlow.getAsoLoginCallback() != null) {
             hashMap2.put(AlipayConstant.LOGIN_ALIPAY_ACCOUNT_CHECK_KEY, String.valueOf(true));
             hashMap2.put(AlipayConstant.LOGIN_ALIPAY_HAVANA_ID_KEY, Login.getUserId());
         }
@@ -1093,7 +1093,7 @@ public class LoginController {
                         context2 = DataProviderFactory.getApplicationContext();
                     }
                     MtopAccountCenterUrlResponseData mtopAccountCenterUrlResponseData = (MtopAccountCenterUrlResponseData) rpcResponse;
-                    if (!TextUtils.isEmpty(mtopAccountCenterUrlResponseData.h5Url)) {
+                    if (!StringUtils.isEmpty(mtopAccountCenterUrlResponseData.h5Url)) {
                         AppMonitorAdapter.commitSuccess("Page_Member_Account", "Account_" + str + "_URL");
                         UrlParam urlParam = new UrlParam();
                         urlParam.scene = str;
@@ -1185,7 +1185,7 @@ public class LoginController {
                             return;
                         }
                         String str3 = ((GetVerifyUrlReturnData) getVerifyUrlResponse.returnValue).token;
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             HashMap hashMap = new HashMap();
                             hashMap.put("token", str3);
                             hashMap.put("scene", str);
@@ -1300,9 +1300,9 @@ public class LoginController {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5af1a379", new Object[]{this, context, str, new Integer(i), str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             BroadCastHelper.sendBroadcast(LoginAction.NOTIFY_IV_FAIL, false, -3, LoginConstant.FETCH_IV_FAIL_INVALID_SCENE, "");
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             BroadCastHelper.sendBroadcast(LoginAction.NOTIFY_IV_FAIL, false, -2, LoginConstant.FETCH_IV_FAIL_INVALID_USERID, "");
         } else {
             new CoordinatorWrapper().execute(new AsyncTask<Object, Void, GetVerifyUrlResponse>() { // from class: com.taobao.login4android.login.LoginController.12
@@ -1340,7 +1340,7 @@ public class LoginController {
                     } else if (getVerifyUrlResponse.code != 3000) {
                         BroadCastHelper.sendBroadcast(LoginAction.NOTIFY_IV_FAIL, false, getVerifyUrlResponse.code, getVerifyUrlResponse.message, "");
                     } else if (getVerifyUrlResponse.returnValue != 0) {
-                        if (TextUtils.isEmpty(((GetVerifyUrlReturnData) getVerifyUrlResponse.returnValue).url)) {
+                        if (StringUtils.isEmpty(((GetVerifyUrlReturnData) getVerifyUrlResponse.returnValue).url)) {
                             return;
                         }
                         UrlParam urlParam = new UrlParam();
@@ -1365,7 +1365,7 @@ public class LoginController {
         if (context == null) {
             context = DataProviderFactory.getApplicationContext();
         }
-        if (urlParam != null && !TextUtils.isEmpty(urlParam.url)) {
+        if (urlParam != null && !StringUtils.isEmpty(urlParam.url)) {
             ((NavigatorService) ServiceFactory.getService(NavigatorService.class)).openWebViewPage(context, urlParam);
             return;
         }
@@ -1381,7 +1381,7 @@ public class LoginController {
         if (context == null) {
             context = DataProviderFactory.getApplicationContext();
         }
-        if (urlParam != null && !TextUtils.isEmpty(urlParam.url)) {
+        if (urlParam != null && !StringUtils.isEmpty(urlParam.url)) {
             Intent intent = new Intent();
             intent.setData(Uri.parse(urlParam.url));
             if (!(context instanceof Activity)) {
@@ -1436,7 +1436,7 @@ public class LoginController {
                     } else {
                         String loginToken = Login.getLoginToken();
                         String userId = Login.getUserId();
-                        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(loginToken) || TextUtils.isEmpty(userId)) {
+                        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(loginToken) || StringUtils.isEmpty(userId)) {
                             return;
                         }
                         LoginController.getInstance().doAutoLoginWithCallback(loginToken, userId, SiteUtil.getDefaultLoginSite(), "", true, new AutoLoginCallback() { // from class: com.taobao.login4android.login.LoginController.13.1
@@ -1492,7 +1492,7 @@ public class LoginController {
                 String cookie = cookieManager.getCookie("https://.taobao.com");
                 LoginTLogAdapter.e(TAG, "https.Cookie=" + cookie);
                 Log.e(TAG, "https.Cookie=" + cookie);
-                if (TextUtils.isEmpty(cookie)) {
+                if (StringUtils.isEmpty(cookie)) {
                     z = false;
                 } else {
                     String[] split = cookie.split(";");
@@ -1500,7 +1500,7 @@ public class LoginController {
                     String str2 = str;
                     for (int length = split.length; i2 < length; length = i) {
                         String str3 = split[i2];
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             strArr = split;
                             i = length;
                             if (str3.trim().startsWith("unb")) {
@@ -1512,7 +1512,7 @@ public class LoginController {
                             strArr = split;
                             i = length;
                         }
-                        if (!TextUtils.isEmpty(str3) && str3.trim().startsWith("munb")) {
+                        if (!StringUtils.isEmpty(str3) && str3.trim().startsWith("munb")) {
                             str2 = str3.split("=")[1];
                             i2++;
                             split = strArr;
@@ -1525,8 +1525,8 @@ public class LoginController {
                     Log.e(TAG, "https.unb=" + str);
                     LoginTLogAdapter.e(TAG, "https.munb=" + str2);
                     Log.e(TAG, "https.munb=" + str2);
-                    if (!TextUtils.equals(sessionManager.getUserId(), str) && (!TextUtils.isEmpty(str) || !TextUtils.equals(sessionManager.getUserId(), str2))) {
-                        if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.equals(sessionManager.getUserId(), str) && (!StringUtils.isEmpty(str) || !StringUtils.equals(sessionManager.getUserId(), str2))) {
+                        if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
                             if (!sessionManager.recoverCookie()) {
                                 sessionManager.setSessionExpiredTime(1L);
                             }
@@ -1683,7 +1683,7 @@ public class LoginController {
                                         }
                                     }
                                 });
-                            } else if (TextUtils.isEmpty(Login.session.getUserId())) {
+                            } else if (StringUtils.isEmpty(Login.session.getUserId())) {
                                 MainThreadExecutor.execute(new Runnable() { // from class: com.taobao.login4android.login.LoginController.15.2
                                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1877,17 +1877,17 @@ public class LoginController {
             applyTokenRequest.sdkVersion = AppInfo.getInstance().getSdkVersion();
             applyTokenRequest.site = i;
             rpcRequest.requestSite = i;
-            if (!TextUtils.isEmpty(str) && (findHistoryAccount = SecurityGuardManagerWraper.findHistoryAccount(Long.parseLong(str))) != null) {
+            if (!StringUtils.isEmpty(str) && (findHistoryAccount = SecurityGuardManagerWraper.findHistoryAccount(Long.parseLong(str))) != null) {
                 applyTokenRequest.deviceTokenKey = findHistoryAccount.tokenKey;
                 DeviceTokenSignParam deviceTokenSignParam = new DeviceTokenSignParam();
-                if (!TextUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
+                if (!StringUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
                     deviceTokenSignParam.addAppKey(DataProviderFactory.getDataProvider().getAppkey());
                 }
                 deviceTokenSignParam.addAppVersion(AppInfo.getInstance().getAndroidAppVersion());
                 deviceTokenSignParam.addHavanaId(str);
                 deviceTokenSignParam.addTimestamp(String.valueOf(applyTokenRequest.t));
                 deviceTokenSignParam.addSDKVersion(AppInfo.getInstance().getSdkVersion());
-                if (!TextUtils.isEmpty(findHistoryAccount.tokenKey)) {
+                if (!StringUtils.isEmpty(findHistoryAccount.tokenKey)) {
                     applyTokenRequest.deviceTokenSign = AlibabaSecurityTokenService.sign(findHistoryAccount.tokenKey, deviceTokenSignParam.build());
                 }
             }
@@ -1993,7 +1993,7 @@ public class LoginController {
                         e.printStackTrace();
                     }
                     intent.setData(Uri.parse(((str5 + "&resultCode=500") + "&ssoToken=" + ((String) sSOV2ApplySsoTokenResponseData.returnValue)) + "&sourceAppKey=" + sSOMasterParam.appKey + "&ssoVersion=" + sSOMasterParam.ssoVersion + "&" + SSOIPCConstants.IPC_MASTER_T + "=" + sSOMasterParam.t + "&userId=" + sSOMasterParam.userId + "&sign=" + sSOMasterParam.sign + "&" + SSOIPCConstants.IPC_JUMP_URL + "=" + Uri.encode(str3)));
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         intent.setAction(str4);
                     } else {
                         intent.setAction("android.intent.action.VIEW");
@@ -2004,7 +2004,7 @@ public class LoginController {
                         for (ResolveInfo resolveInfo2 : queryIntentActivities) {
                             String str6 = resolveInfo2.activityInfo.packageName;
                             String config = LoginSwitch.getConfig(LoginSwitch.SUPPORT_MINI_PROGRAME, "");
-                            if (!TextUtils.isEmpty(config)) {
+                            if (!StringUtils.isEmpty(config)) {
                                 try {
                                 } catch (JSONException e2) {
                                     e2.printStackTrace();

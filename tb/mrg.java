@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.utils.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -92,7 +92,7 @@ public class mrg {
             a(CHECK_GP_MARKET, true);
             if (map != null && map.containsKey("configVersion")) {
                 str2 = (String) map.get("configVersion");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     c.b("configUpdate", "", "configGroup=update_managerconfigVersion=" + str2);
                 }
             }
@@ -111,7 +111,7 @@ public class mrg {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig("update_manager", str, "");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 mre.a().a(str, Boolean.parseBoolean(config));
             } else {
                 mre.a().a(str, z);
@@ -129,7 +129,7 @@ public class mrg {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig("update_manager", str, "");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 mre.a().a(str, Long.parseLong(config));
             } else {
                 mre.a().a(str, j);

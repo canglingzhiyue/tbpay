@@ -1,6 +1,6 @@
 package com.taobao.android.detail.mainpic.holder;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -176,7 +176,7 @@ public class i extends j implements b {
         int a3 = euu.a(euq.a(iDMComponent), this.l);
         this.j.setLayoutParams(new LinearLayout.LayoutParams(-1, a3));
         JSONObject fields = this.c.getFields();
-        if (fields != null && TextUtils.equals(fields.getString("imageType"), "apng")) {
+        if (fields != null && StringUtils.equals(fields.getString("imageType"), "apng")) {
             this.j.setSkipAutoSize(true);
         }
         if (com.taobao.android.weex_framework.util.a.ATOM_EXT_fill.equals(iDMComponent.getFields().getString("contentMode"))) {

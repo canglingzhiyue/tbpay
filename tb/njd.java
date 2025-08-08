@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -79,7 +79,7 @@ public class njd extends njc {
         if (ipChange instanceof IpChange) {
             return (nec) ipChange.ipc$dispatch("7c72d608", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.indexOf(46) == 0) {

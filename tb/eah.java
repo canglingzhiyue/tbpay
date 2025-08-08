@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -74,7 +74,7 @@ public class eah extends c<a> {
                 this.k.setVisibility(8);
                 RelativeLayout relativeLayout = (RelativeLayout) d.b(this.f9568a, R.layout.x_detail_divider_with_text_and_icon);
                 DetailImageView detailImageView = (DetailImageView) relativeLayout.findViewById(R.id.divider_logo);
-                if (!TextUtils.isEmpty(aVar.f)) {
+                if (!StringUtils.isEmpty(aVar.f)) {
                     epj.b().a(aVar.f, detailImageView, new epl.a().a(true).a());
                     detailImageView.setVisibility(0);
                 } else {
@@ -86,7 +86,7 @@ public class eah extends c<a> {
                 }
                 TextView textView = (TextView) relativeLayout.findViewById(R.id.divider_text);
                 textView.setText(str);
-                if (!TextUtils.isEmpty(aVar.g)) {
+                if (!StringUtils.isEmpty(aVar.g)) {
                     textView.setTextColor(com.taobao.android.detail.core.utils.c.a(aVar.g));
                 }
             } else if (aVar.f10065a == 4) {
@@ -115,7 +115,7 @@ public class eah extends c<a> {
                 this.k.setVisibility(8);
                 View inflate = View.inflate(this.f9568a, R.layout.x_detail_highlight_divider, null);
                 DetailImageView detailImageView2 = (DetailImageView) inflate.findViewById(R.id.divider_logo);
-                if (!TextUtils.isEmpty(aVar.f)) {
+                if (!StringUtils.isEmpty(aVar.f)) {
                     epj.b().a(aVar.f, detailImageView2, new epl.a().a(true).a());
                     detailImageView2.setVisibility(0);
                 } else {
@@ -129,7 +129,7 @@ public class eah extends c<a> {
                 textView2.setText(str);
                 View findViewById = inflate.findViewById(R.id.left_line);
                 View findViewById2 = inflate.findViewById(R.id.right_line);
-                if (!TextUtils.isEmpty(aVar.g)) {
+                if (!StringUtils.isEmpty(aVar.g)) {
                     int a2 = com.taobao.android.detail.core.utils.c.a(aVar.g);
                     textView2.setTextColor(a2);
                     findViewById.setBackgroundColor(a2);

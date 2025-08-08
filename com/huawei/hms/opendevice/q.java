@@ -1,12 +1,12 @@
 package com.huawei.hms.opendevice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public class q {
     public static boolean a(String... strArr) {
         for (String str : strArr) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
         }

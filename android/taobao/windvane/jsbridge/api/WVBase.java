@@ -18,7 +18,7 @@ import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.WVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -430,7 +430,7 @@ public class WVBase extends e {
         }
         String str2 = "HY_PARAM_ERR";
         r rVar = new r(str2);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 if (jSONObject.has("text")) {
@@ -510,7 +510,7 @@ public class WVBase extends e {
         } else {
             try {
                 String string = new JSONObject(str).getString("url");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.mContext.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(string)));
                     wVCallBackContext.success();
                     return;

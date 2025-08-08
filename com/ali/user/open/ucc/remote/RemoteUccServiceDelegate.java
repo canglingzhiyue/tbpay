@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.config.ConfigManager;
 import com.ali.user.open.core.context.KernelContext;
@@ -67,7 +67,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
                         return;
                     }
                     try {
-                        if (TextUtils.equals(OrangeConfig.getInstance().getConfig("login4android", "rebind_ucc_service_when_death", "false"), "true")) {
+                        if (StringUtils.equals(OrangeConfig.getInstance().getConfig("login4android", "rebind_ucc_service_when_death", "false"), "true")) {
                             RemoteUccServiceDelegate.access$200(RemoteUccServiceDelegate.this);
                         }
                         OrangeConfig.getInstance().unregisterListener(new String[]{"login4android"}, this);
@@ -171,7 +171,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
     }
 
     public RemoteUccServiceDelegate() {
-        if (!ConfigManager.getInstance().isMultiProcessEnable || TextUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
+        if (!ConfigManager.getInstance().isMultiProcessEnable || StringUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
             return;
         }
         bindService();
@@ -210,7 +210,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
             if (map != null) {
                 map.remove("site");
             }
-            if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(activity.getApplicationContext()), activity.getPackageName())) {
+            if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(activity.getApplicationContext()), activity.getPackageName())) {
                 bind(str, str2, map, uccCallback);
                 return;
             }
@@ -230,7 +230,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
         if (map != null) {
             map.remove("site");
         }
-        if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
+        if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
             bind(str2, map, uccCallback);
             return;
         }
@@ -259,7 +259,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
             if (map != null) {
                 map.remove("site");
             }
-            if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(activity.getApplicationContext()), activity.getPackageName())) {
+            if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(activity.getApplicationContext()), activity.getPackageName())) {
                 bind(str, map, uccCallback);
                 return;
             }
@@ -278,7 +278,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
         if (map != null) {
             map.remove("site");
         }
-        if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
+        if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
             if (map == null) {
                 try {
                     map = new HashMap<>();
@@ -312,7 +312,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
                             public void onSuccess(String str2, Map map2) throws RemoteException {
                                 if (map2 != null) {
                                     String str3 = (String) map2.get(UccConstants.PARAM_LOGIN_DATA);
-                                    if (!TextUtils.isEmpty(str3)) {
+                                    if (!StringUtils.isEmpty(str3)) {
                                         ((SessionService) AliMemberSDK.getService(SessionService.class)).refreshCookie(str2, (LoginReturnData) JSON.parseObject(str3, LoginReturnData.class));
                                     }
                                 }
@@ -360,7 +360,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
         if (map != null) {
             map.remove("site");
         }
-        if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
+        if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
             if (map == null) {
                 try {
                     map = new HashMap<>();
@@ -435,7 +435,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
             if (map != null) {
                 map.remove("site");
             }
-            if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
+            if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
                 trustLogin(str, map, uccCallback);
                 return;
             }
@@ -454,7 +454,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
         if (map != null) {
             map.remove("site");
         }
-        if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
+        if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
             if (map == null) {
                 try {
                     map = new HashMap<>();
@@ -488,7 +488,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
                             public void onSuccess(String str2, Map map2) throws RemoteException {
                                 if (map2 != null) {
                                     String str3 = (String) map2.get(UccConstants.PARAM_LOGIN_DATA);
-                                    if (!TextUtils.isEmpty(str3)) {
+                                    if (!StringUtils.isEmpty(str3)) {
                                         ((SessionService) AliMemberSDK.getService(SessionService.class)).refreshCookie(str2, (LoginReturnData) JSON.parseObject(str3, LoginReturnData.class));
                                     }
                                 }
@@ -525,7 +525,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e0d96de1", new Object[]{this, context, str});
-        } else if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(context.getApplicationContext()), context.getPackageName())) {
+        } else if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(context.getApplicationContext()), context.getPackageName())) {
             try {
                 if (this.mIRemoteUccService == null) {
                     bindService();
@@ -546,7 +546,7 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f34ce4ca", new Object[]{this, context});
-        } else if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(context.getApplicationContext()), context.getPackageName())) {
+        } else if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(context.getApplicationContext()), context.getPackageName())) {
             try {
                 if (this.mIRemoteUccService == null) {
                     bindService();
@@ -578,14 +578,14 @@ public class RemoteUccServiceDelegate extends UccServiceImpl {
         if (ipChange instanceof IpChange) {
             return (Session) ipChange.ipc$dispatch("a5d69a45", new Object[]{this, str});
         }
-        if (ConfigManager.getInstance().isMultiProcessEnable && !TextUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
+        if (ConfigManager.getInstance().isMultiProcessEnable && !StringUtils.equals(CommonUtils.getProcessName(KernelContext.getApplicationContext()), KernelContext.getApplicationContext().getPackageName())) {
             try {
                 if (this.mIRemoteUccService == null) {
                     bindService();
                     return null;
                 }
                 String session = this.mIRemoteUccService.getSession(str);
-                if (!TextUtils.isEmpty(session)) {
+                if (!StringUtils.isEmpty(session)) {
                     return (Session) JSON.parseObject(session, Session.class);
                 }
                 return null;

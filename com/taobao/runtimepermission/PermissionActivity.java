@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.animation.TranslateAnimation;
@@ -280,7 +280,7 @@ public class PermissionActivity extends Activity implements ActivityCompat.OnReq
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3574c8", new Object[]{this, str, new Boolean(z), new Long(j2), strArr, strArr2, str2, new Boolean(z2)});
-        } else if (z && !TextUtils.isEmpty(str2)) {
+        } else if (z && !StringUtils.isEmpty(str2)) {
             boolean exists = new File("/data/local/tmp/permission_silence_off").exists();
             if (j2 < 0) {
                 j2 = a.a().b().permissionReqSilenceInterval;
@@ -296,7 +296,7 @@ public class PermissionActivity extends Activity implements ActivityCompat.OnReq
                 b(strArr2, str2, false);
             }
             b(this.p, strArr, strArr2);
-        } else if (a(strArr) && !TextUtils.isEmpty(str2)) {
+        } else if (a(strArr) && !StringUtils.isEmpty(str2)) {
             this.k.setTranslucent();
             new TBMaterialDialog.Builder(this).positiveText(b.a(R.string.app_i_know)).content(str2).theme(Theme.LIGHT).cancelable(false).onPositive(new TBMaterialDialog.SingleButtonCallback() { // from class: com.taobao.runtimepermission.PermissionActivity.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

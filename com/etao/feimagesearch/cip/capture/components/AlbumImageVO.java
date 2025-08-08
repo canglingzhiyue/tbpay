@@ -2,7 +2,7 @@ package com.etao.feimagesearch.cip.capture.components;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -32,7 +32,7 @@ public class AlbumImageVO implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("ad9ae414", new Object[]{this})).intValue();
         }
-        if (TextUtils.isEmpty(this.orientation)) {
+        if (StringUtils.isEmpty(this.orientation)) {
             return 0;
         }
         try {

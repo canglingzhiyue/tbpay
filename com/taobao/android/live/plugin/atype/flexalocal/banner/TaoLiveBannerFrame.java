@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.banner;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alilive.adapter.uikit.AliUrlImageView;
@@ -64,7 +64,7 @@ public class TaoLiveBannerFrame extends BaseFrame {
                     return;
                 }
                 VideoInfo videoInfo = TaoLiveBannerFrame.this.mLiveDataModel.mVideoInfo;
-                if (videoInfo == null || videoInfo.taoLiveAtmosphereInfo == null || TextUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIconJumpUrl)) {
+                if (videoInfo == null || videoInfo.taoLiveAtmosphereInfo == null || StringUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIconJumpUrl)) {
                     return;
                 }
                 s.a(TaoLiveBannerFrame.this.mContext, videoInfo.taoLiveAtmosphereInfo.taoLiveIconJumpUrl);
@@ -84,7 +84,7 @@ public class TaoLiveBannerFrame extends BaseFrame {
             return;
         }
         String bannerUrl = getBannerUrl(tBLiveDataModel);
-        if (!TextUtils.isEmpty(bannerUrl)) {
+        if (!StringUtils.isEmpty(bannerUrl)) {
             this.imageView.setVisibility(0);
             this.imageView.setImageUrl(bannerUrl);
             ViewGroup.LayoutParams layoutParams = this.imageView.getLayoutParams();
@@ -102,10 +102,10 @@ public class TaoLiveBannerFrame extends BaseFrame {
         }
         VideoInfo videoInfo = tBLiveDataModel.mVideoInfo;
         if (plz.a(videoInfo) && videoInfo.taoLiveAtmosphereInfo != null) {
-            if (!TextUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIcon)) {
+            if (!StringUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIcon)) {
                 return videoInfo.taoLiveAtmosphereInfo.taoLiveIcon;
             }
-            if (!TextUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveHideMenuPic)) {
+            if (!StringUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveHideMenuPic)) {
                 return videoInfo.taoLiveAtmosphereInfo.taoLiveHideMenuPic;
             }
         }

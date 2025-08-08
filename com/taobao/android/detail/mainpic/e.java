@@ -1,6 +1,6 @@
 package com.taobao.android.detail.mainpic;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.aura.service.event.AURAEventKey;
 import com.alibaba.android.ultron.engine.utils.a;
@@ -194,7 +194,7 @@ public class e {
             return null;
         }
         com.taobao.android.detail.mainpic.model.d dVar2 = eVar.d;
-        if (dVar2 != null && TextUtils.equals(eVar.a(dVar2), a(dVar)) && eVar.w == jSONObject) {
+        if (dVar2 != null && StringUtils.equals(eVar.a(dVar2), a(dVar)) && eVar.w == jSONObject) {
             return null;
         }
         eVar.d = dVar;
@@ -258,10 +258,10 @@ public class e {
         JSONObject jSONObject6 = d;
         float f = 1.0f;
         String a3 = eVar.a(jSONObject6);
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             str = a3;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (com.taobao.android.detail2.core.framework.base.media.frame.b.VALUE_THREE_FOUR_RATIO.equals(str)) {
                 f = 0.75f;
             } else {
@@ -284,7 +284,7 @@ public class e {
                 Object next2 = it2.next();
                 if (next2 instanceof String) {
                     String str6 = (String) next2;
-                    if (!TextUtils.isEmpty(str6)) {
+                    if (!StringUtils.isEmpty(str6)) {
                         a(eVar.E, eVar.e, eVar.a("image"), eVar.B, eVar.A);
                         a(eVar.F, eVar.g, str4, str6, "", b, c, a2, eVar.e, eVar.B, eVar.A, "normal", null);
                         eVar.a(eVar.M, eVar.e, eVar.B, eVar.A);
@@ -515,7 +515,7 @@ public class e {
                     a(eVar.E, eVar.e, f2, eVar.B, eVar.A);
                     a(eVar.F, eVar.g, string8, string6, string7, h(), k(), d(), eVar.e, eVar.B, eVar.A, "detailInsert", g2);
                     eVar.a(c2, d2, eVar.e);
-                    if (bVar.h() && !TextUtils.equals(string7, "apng")) {
+                    if (bVar.h() && !StringUtils.equals(string7, "apng")) {
                         eVar.a(eVar.M, eVar.e, eVar.B, eVar.A);
                         a(eVar.N, eVar.g, string6, string7, h(), k(), d(), eVar.e, eVar.B, eVar.A, "detailInsert");
                     }
@@ -591,7 +591,7 @@ public class e {
                 String string2 = jSONObject.getString("apiVersion");
                 boolean equals = "true".equals(jSONObject.getString("usePost"));
                 JSONObject jSONObject2 = jSONObject.getJSONObject("data");
-                if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                     UnifyLog.d("MainPicDataManager", "error: apiMethod or apiVersion is null");
                 } else {
                     MtopRequest mtopRequest = new MtopRequest();
@@ -1139,7 +1139,7 @@ public class e {
             }
             JSONObject jSONObject6 = jSONObject.getJSONObject("data");
             String string = jSONObject.getString(TBDetailPicGalleryBridge.TOKEN_KEY_VO_NAME);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = s();
                 jSONObject.put(TBDetailPicGalleryBridge.TOKEN_KEY_VO_NAME, (Object) string);
             }
@@ -1226,7 +1226,7 @@ public class e {
         hashMap.put(TBDetailPicGalleryBridge.TOKEN_KEY_VO_NAME, string2);
         hashMap.put("forceNaviAlpha", a2);
         String a3 = euq.a(string, hashMap);
-        return TextUtils.isEmpty(a3) ? string : a3;
+        return StringUtils.isEmpty(a3) ? string : a3;
     }
 
     private void a(JSONObject jSONObject, String str, String str2, String str3, String str4, String str5) {

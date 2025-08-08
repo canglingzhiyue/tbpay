@@ -2,7 +2,7 @@ package com.taobao.search.musie.web;
 
 import android.content.Context;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -36,7 +36,7 @@ public final class a extends WVUCWebViewClient {
             return ((Boolean) ipChange.ipc$dispatch("dacf25f5", new Object[]{this, view, str})).booleanValue();
         }
         q.c(view, "view");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return super.shouldOverrideUrlLoading(view, str);
         }
         Nav.from(view.getContext()).toUri(str);

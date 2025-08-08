@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -80,7 +80,7 @@ public class RetryService {
                     }
                     int size = RetryService.access$000(RetryService.this).size();
                     for (Map.Entry entry : RetryService.access$000(RetryService.this).entrySet()) {
-                        if (TextUtils.equals((CharSequence) entry.getValue(), "1")) {
+                        if (StringUtils.equals((CharSequence) entry.getValue(), "1")) {
                             i++;
                         }
                     }
@@ -119,7 +119,7 @@ public class RetryService {
             return ((Boolean) ipChange.ipc$dispatch("e210f687", new Object[]{this, str, new Boolean(z)})).booleanValue();
         }
         try {
-            if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RETRY_CAPTAIN), "T")) {
+            if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RETRY_CAPTAIN), "T")) {
                 return StrategyUtil.isSwitchRpc(str) || MiscUtils.isLoginRpc(str) || this.b.contains(str) || isOperationTypeInRetryList(str, z);
             }
             LogCatUtil.debug("RetryService", "captain don't allow retry");
@@ -135,10 +135,10 @@ public class RetryService {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ef56b41d", new Object[]{this, str, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.equals(this.f5633a.get(str), "1")) {
+        if (StringUtils.equals(this.f5633a.get(str), "1")) {
             return true;
         }
-        return !TextUtils.equals(this.f5633a.get(str), "0") && z;
+        return !StringUtils.equals(this.f5633a.get(str), "0") && z;
     }
 
     private Map<String, String> c() {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.base.data.IUGCMedia;
 import com.taobao.android.litecreator.base.workflow.e;
@@ -55,7 +55,7 @@ public final class xpu {
                 return ((Boolean) ipChange.ipc$dispatch("5a421221", new Object[]{this, params})).booleanValue();
             }
             q.d(params, "params");
-            return TextUtils.equals(params.get(ios.KEY_IS_USE_NEW_PUBLISHER), "1");
+            return StringUtils.equals(params.get(ios.KEY_IS_USE_NEW_PUBLISHER), "1");
         }
     }
 }

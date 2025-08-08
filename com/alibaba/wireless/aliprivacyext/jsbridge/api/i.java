@@ -1,7 +1,7 @@
 package com.alibaba.wireless.aliprivacyext.jsbridge.api;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -56,7 +56,7 @@ public class i extends com.alibaba.wireless.aliprivacyext.jsbridge.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b709cffc", new Object[]{this, context, str, str2, bVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             b(bVar, "参数异常", null);
             return true;
         }

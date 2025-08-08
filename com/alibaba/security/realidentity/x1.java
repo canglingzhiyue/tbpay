@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.common.http.model.HttpRequest;
 import com.alibaba.security.common.http.model.HttpResponse;
 import com.alibaba.security.realidentity.biz.bucket.BucketParams;
@@ -64,7 +64,7 @@ public class x1 extends o1 {
             } catch (Exception unused) {
                 return new BucketParams.ErrorCode(RPResult.AUDIT_FAIL, String.valueOf(status), this.g.getDisplayMsg(), status);
             }
-        } else if (!TextUtils.isEmpty(this.g.retCode)) {
+        } else if (!StringUtils.isEmpty(this.g.retCode)) {
             return new BucketParams.ErrorCode(RPResult.AUDIT_NOT, String.valueOf((int) e2.C), this.g.retMsg, e2.C);
         } else {
             return new BucketParams.ErrorCode(RPResult.AUDIT_NOT, String.valueOf((int) e2.C), b.a(this.g), e2.C);

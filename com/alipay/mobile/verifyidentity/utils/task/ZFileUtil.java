@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.utils.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.util.List;
@@ -98,7 +98,7 @@ public class ZFileUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ea815e00", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return delete(new File(str));
         }
         return false;
@@ -129,7 +129,7 @@ public class ZFileUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("35bddc86", new Object[]{str, list})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         File file = new File(str);

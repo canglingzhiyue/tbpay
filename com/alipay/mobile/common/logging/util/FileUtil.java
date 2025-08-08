@@ -2,7 +2,7 @@ package com.alipay.mobile.common.logging.util;
 
 import android.os.Environment;
 import android.os.StatFs;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedInputStream;
@@ -100,7 +100,7 @@ public class FileUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("25587414", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             deleteFileNotDir(new File(str));
         }
@@ -141,7 +141,7 @@ public class FileUtil {
         L18:
             r0 = 0
             if (r6 == 0) goto L70
-            boolean r1 = android.text.TextUtils.isEmpty(r7)
+            boolean r1 = android.text.StringUtils.isEmpty(r7)
             if (r1 == 0) goto L22
             goto L70
         L22:

@@ -14,7 +14,7 @@ import android.support.v7.view.menu.e;
 import android.support.v7.view.menu.j;
 import android.support.v7.widget.ActionMenuView;
 import android.text.Layout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ContextThemeWrapper;
 import android.view.Menu;
@@ -393,11 +393,11 @@ public class Toolbar extends ViewGroup {
         this.mCollapseIcon = obtainStyledAttributes.getDrawable(R.styleable.Toolbar_collapseIcon);
         this.mCollapseDescription = obtainStyledAttributes.getText(R.styleable.Toolbar_collapseContentDescription);
         CharSequence text = obtainStyledAttributes.getText(R.styleable.Toolbar_title);
-        if (!TextUtils.isEmpty(text)) {
+        if (!StringUtils.isEmpty(text)) {
             setTitle(text);
         }
         CharSequence text2 = obtainStyledAttributes.getText(R.styleable.Toolbar_subtitle);
-        if (!TextUtils.isEmpty(text2)) {
+        if (!StringUtils.isEmpty(text2)) {
             setSubtitle(text2);
         }
         this.mPopupContext = getContext();
@@ -407,7 +407,7 @@ public class Toolbar extends ViewGroup {
             setNavigationIcon(drawable);
         }
         CharSequence text3 = obtainStyledAttributes.getText(R.styleable.Toolbar_navigationContentDescription);
-        if (!TextUtils.isEmpty(text3)) {
+        if (!StringUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
         Drawable drawable2 = obtainStyledAttributes.getDrawable(R.styleable.Toolbar_logo);
@@ -415,7 +415,7 @@ public class Toolbar extends ViewGroup {
             setLogo(drawable2);
         }
         CharSequence text4 = obtainStyledAttributes.getText(R.styleable.Toolbar_logoDescription);
-        if (!TextUtils.isEmpty(text4)) {
+        if (!StringUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
         if (obtainStyledAttributes.hasValue(R.styleable.Toolbar_titleTextColor)) {
@@ -1217,7 +1217,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setLogoDescription(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             ensureLogoView();
         }
         ImageView imageView = this.mLogoView;
@@ -1271,7 +1271,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setNavigationContentDescription(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             ensureNavButtonView();
         }
         ImageButton imageButton = this.mNavButtonView;
@@ -1333,12 +1333,12 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setSubtitle(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             if (this.mSubtitleTextView == null) {
                 Context context = getContext();
                 this.mSubtitleTextView = new AppCompatTextView(context);
                 this.mSubtitleTextView.setSingleLine();
-                this.mSubtitleTextView.setEllipsize(TextUtils.TruncateAt.END);
+                this.mSubtitleTextView.setEllipsize(StringUtils.TruncateAt.END);
                 int i = this.mSubtitleTextAppearance;
                 if (i != 0) {
                     this.mSubtitleTextView.setTextAppearance(context, i);
@@ -1386,12 +1386,12 @@ public class Toolbar extends ViewGroup {
     }
 
     public void setTitle(CharSequence charSequence) {
-        if (!TextUtils.isEmpty(charSequence)) {
+        if (!StringUtils.isEmpty(charSequence)) {
             if (this.mTitleTextView == null) {
                 Context context = getContext();
                 this.mTitleTextView = new AppCompatTextView(context);
                 this.mTitleTextView.setSingleLine();
-                this.mTitleTextView.setEllipsize(TextUtils.TruncateAt.END);
+                this.mTitleTextView.setEllipsize(StringUtils.TruncateAt.END);
                 int i = this.mTitleTextAppearance;
                 if (i != 0) {
                     this.mTitleTextView.setTextAppearance(context, i);

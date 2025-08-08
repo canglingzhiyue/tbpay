@@ -1,6 +1,6 @@
 package com.vivo.push.b;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
 import java.util.HashMap;
 import tb.riy;
@@ -40,7 +40,7 @@ public final class x extends com.vivo.push.v {
             sb2.append(this.b);
             sb2.append(",msgId:");
             String str = this.f24171a.get("messageID");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.f24171a.get(Constant.PROP_MESSAGE_ID);
             }
             sb2.append(str);

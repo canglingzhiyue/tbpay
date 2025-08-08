@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -51,7 +51,7 @@ public class l implements ezm {
         }
         String string = b.getString("itemId");
         String a2 = a(b);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return true;
         }
         com.taobao.android.detail.ttdetail.utils.i.a("OpenCommonDialogImplementor", a2);

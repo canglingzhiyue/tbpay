@@ -2,7 +2,7 @@ package com.taobao.uikit.actionbar;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -285,7 +285,7 @@ public class PublicMenuPresenter implements MenuContract.ActionBarBasePresenter 
                     return;
                 }
                 String currentPageName = l.getInstance().getCurrentPageName();
-                if (TextUtils.isEmpty(currentPageName)) {
+                if (StringUtils.isEmpty(currentPageName)) {
                     return;
                 }
                 UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder("Page_Access_toolslide");
@@ -319,7 +319,7 @@ public class PublicMenuPresenter implements MenuContract.ActionBarBasePresenter 
                     return;
                 }
                 String currentPageName = l.getInstance().getCurrentPageName();
-                if (TextUtils.isEmpty(currentPageName)) {
+                if (StringUtils.isEmpty(currentPageName)) {
                     return;
                 }
                 UTHitBuilders.UTCustomHitBuilder uTCustomHitBuilder = new UTHitBuilders.UTCustomHitBuilder("Page_Access_shareslide");
@@ -359,7 +359,7 @@ public class PublicMenuPresenter implements MenuContract.ActionBarBasePresenter 
             return ((Boolean) ipChange.ipc$dispatch("63114fbb", new Object[]{this, tBPublicMenuItem})).booleanValue();
         }
         String title = tBPublicMenuItem.getTitle();
-        return !TextUtils.isEmpty(title) && title.contains(b.a(R.string.app_share));
+        return !StringUtils.isEmpty(title) && title.contains(b.a(R.string.app_share));
     }
 
     private void dealWithMenuData() {
@@ -392,7 +392,7 @@ public class PublicMenuPresenter implements MenuContract.ActionBarBasePresenter 
                     }
                 }
                 String replaceAll = title.replaceAll(TITLE_REG, "");
-                if (!TextUtils.isEmpty(replaceAll) && replaceAll.equals(b.a(R.string.taobao_app_1012_1_16460))) {
+                if (!StringUtils.isEmpty(replaceAll) && replaceAll.equals(b.a(R.string.taobao_app_1012_1_16460))) {
                     it.remove();
                 }
             }
@@ -447,7 +447,7 @@ public class PublicMenuPresenter implements MenuContract.ActionBarBasePresenter 
         Iterator<TBPublicMenuItem> it = defaultPublicMenus.iterator();
         while (it.hasNext()) {
             String title = it.next().getTitle();
-            if (!TextUtils.isEmpty(title) && title.contains(b.a(R.string.app_share))) {
+            if (!StringUtils.isEmpty(title) && title.contains(b.a(R.string.app_share))) {
                 it.remove();
             }
         }

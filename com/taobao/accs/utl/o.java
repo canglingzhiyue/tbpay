@@ -3,7 +3,7 @@ package com.taobao.accs.utl;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.asp.APreferencesManager;
 import com.taobao.accs.client.AccsConfig;
@@ -177,7 +177,7 @@ public class o {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d18de974", new Object[]{context, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             ALog.e("Utils", "setSpValue null", new Object[0]);
         } else {
             try {
@@ -197,7 +197,7 @@ public class o {
         com.taobao.accs.utl.ALog.i("Utils", "getSpValue", "value", r6);
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x003f, code lost:
-        if (android.text.TextUtils.isEmpty(r6) == false) goto L21;
+        if (android.text.StringUtils.isEmpty(r6) == false) goto L21;
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0041, code lost:
         com.taobao.accs.utl.ALog.e("Utils", "getSpValue use default!", new java.lang.Object[0]);
@@ -253,7 +253,7 @@ public class o {
             r1[r4] = r2     // Catch: java.lang.Throwable -> L4d
             r1[r3] = r6     // Catch: java.lang.Throwable -> L4d
             com.taobao.accs.utl.ALog.i(r7, r0, r1)     // Catch: java.lang.Throwable -> L4d
-            boolean r7 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L4d
+            boolean r7 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L4d
             if (r7 == 0) goto L61
             java.lang.String r7 = "Utils"
             java.lang.String r0 = "getSpValue use default!"

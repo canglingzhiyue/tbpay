@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -55,7 +55,7 @@ public class taj extends h {
         } else if (this.f33986a == null || dXRuntimeContext == null || dXRuntimeContext.m() == null || objArr == null || objArr.length <= 0 || objArr[0] == null) {
         } else {
             String obj = objArr[0].toString();
-            if (TextUtils.isEmpty(obj) || !(dXEvent instanceof DXScrollEvent)) {
+            if (StringUtils.isEmpty(obj) || !(dXEvent instanceof DXScrollEvent)) {
                 return;
             }
             this.f33986a.put(obj, Integer.valueOf(gbg.c(dXRuntimeContext.m(), ((DXScrollEvent) dXEvent).getOffsetX())));

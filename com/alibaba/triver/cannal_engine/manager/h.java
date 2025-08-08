@@ -1,7 +1,7 @@
 package com.alibaba.triver.cannal_engine.manager;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.triver.base.api.a;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.utils.RVLogger;
@@ -90,7 +90,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (map = b.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (map = b.get(str)) == null) {
         } else {
             try {
                 Iterator<Map.Entry<String, WeakReference<TRWidgetInstance>>> it = map.entrySet().iterator();
@@ -122,7 +122,7 @@ public class h {
             return;
         }
         RVLogger.e("TRWidgetInstanceManager", "onPause");
-        if (TextUtils.isEmpty(str) || (map = b.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (map = b.get(str)) == null) {
             return;
         }
         try {
@@ -168,7 +168,7 @@ public class h {
             return;
         }
         RVLogger.e("TRWidgetInstanceManager", MessageID.onDestroy);
-        if (TextUtils.isEmpty(str) || (map = b.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (map = b.get(str)) == null) {
             return;
         }
         try {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -124,7 +124,7 @@ public final class ljm {
             return ((Boolean) ipChange.ipc$dispatch("8ab43ee8", new Object[]{fluidContext, str})).booleanValue();
         }
         try {
-            if (((IContainerService) fluidContext.getService(IContainerService.class)).isFirstCardFromRefresh() && !TextUtils.equals(str, "normal")) {
+            if (((IContainerService) fluidContext.getService(IContainerService.class)).isFirstCardFromRefresh() && !StringUtils.equals(str, "normal")) {
                 ((IContainerService) fluidContext.getService(IContainerService.class)).setFirstCardFromRefresh(false);
                 return true;
             }
@@ -153,7 +153,7 @@ public final class ljm {
         hashMap.put("isFromLauncher", String.valueOf(spj.f(fluidContext)));
         hashMap.put("processLauncherFlag", juo.a(fluidContext) ? "1" : "0");
         String c = ((ISceneConfigService) fluidContext.getService(ISceneConfigService.class)).getSessionExtParams().c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             hashMap.put("launcherNodeUrl", c);
         }
         t trackTint = ((ITrackService) fluidContext.getService(ITrackService.class)).getTrackTint();
@@ -162,7 +162,7 @@ public final class ljm {
         }
         hashMap.put(snv.EXP_KEY_COMMON_PRELOAD_PLAY, String.valueOf(false));
         String e = tdg.e();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             hashMap.put(snv.EXP_KEY_GG_LIVE_WARMUP_BUCKET_ID, e);
         }
         if (cVar.N()) {
@@ -261,13 +261,13 @@ public final class ljm {
         noi.a(hashMap, hashMap2);
         hashMap.put("spm", obw.f31903a);
         hashMap.put(b.PROPERTY_VIDEO_ID, dVar.l());
-        if (TextUtils.isEmpty(dVar.f12530a.e())) {
+        if (StringUtils.isEmpty(dVar.f12530a.e())) {
             hashMap.put("taoke_accountId", dVar.f12530a.c());
         } else {
             hashMap.put("taoke_accountId", dVar.f12530a.d());
             hashMap.put("keyname", dVar.f12530a.e());
         }
-        if (j != null && !TextUtils.isEmpty(j.w)) {
+        if (j != null && !StringUtils.isEmpty(j.w)) {
             hashMap.put(com.taobao.tao.content.business.b.BIZ_TYPE, j.w);
         }
         Map<String, String> c = sessionParams.c();
@@ -287,7 +287,7 @@ public final class ljm {
         hashMap.put("isFromLauncher", String.valueOf(spj.f(this.f30683a)));
         hashMap.put("processLauncherFlag", juo.a(this.f30683a) ? "1" : "0");
         String c2 = ((ISceneConfigService) this.f30683a.getService(ISceneConfigService.class)).getSessionExtParams().c();
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             hashMap.put("launcherNodeUrl", c2);
         }
         if (dVar.f12530a.N()) {

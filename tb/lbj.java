@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.view.manager.lifecycle.listener.IPageLifeCycle;
@@ -179,7 +179,7 @@ public class lbj implements IPageLifeCycle, a, b, tgs {
         String uri2 = uri == null ? "" : uri.toString();
         JSONObject d = d("coldStart");
         ksp.c("PopLayer_And_ucp_trigger", "onLazyInit，当前的tab是：" + e + "当前的uri是：" + uri2);
-        this.f30451a.a(TextUtils.equals(RECOMMEND_SCENE, e) ? HomepageFragment.class.getSimpleName() : e);
+        this.f30451a.a(StringUtils.equals(RECOMMEND_SCENE, e) ? HomepageFragment.class.getSimpleName() : e);
         this.f30451a.a(e, uri2, d);
         if (!b(this.e)) {
             return;
@@ -200,7 +200,7 @@ public class lbj implements IPageLifeCycle, a, b, tgs {
         ksp.c("PopLayer_And_ucp_trigger", "当前的tab是:" + e + " uri:" + uri2 + " actionType：" + str);
         this.f30451a.a(e, uri2, d);
         lbi lbiVar = this.f30451a;
-        if (TextUtils.equals(RECOMMEND_SCENE, e)) {
+        if (StringUtils.equals(RECOMMEND_SCENE, e)) {
             e = lbi.POP_LAYER_RECOMMEND_TAB_NAME;
         }
         lbiVar.b(e);
@@ -245,6 +245,6 @@ public class lbj implements IPageLifeCycle, a, b, tgs {
 
     private boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : TextUtils.equals("home", str) || TextUtils.equals("recommend_recommend", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : StringUtils.equals("home", str) || StringUtils.equals("recommend_recommend", str);
     }
 }

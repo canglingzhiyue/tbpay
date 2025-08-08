@@ -2,7 +2,7 @@ package com.taobao.accs.asp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.Constants;
 import com.taobao.accs.utl.UtilityImpl;
@@ -48,12 +48,12 @@ public class APreferencesManager {
         if (ipChange instanceof IpChange) {
             return (SharedPreferences) ipChange.ipc$dispatch("1dec50da", new Object[]{context, str, sharedPreferences});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("SharedPreferences name can not be empty");
         }
         if (context != null && !UtilityImpl.isDualApp(context)) {
             init(context);
-            if (l.c(context) && !TextUtils.isEmpty(f.a()) && PrefsIPCChannel.getInstance().isCoreProcessReady()) {
+            if (l.c(context) && !StringUtils.isEmpty(f.a()) && PrefsIPCChannel.getInstance().isCoreProcessReady()) {
                 synchronized (APreferencesManager.class) {
                     sharedPreferences2 = sSharedPrefsCache.get(str);
                     if (sharedPreferences2 == null) {

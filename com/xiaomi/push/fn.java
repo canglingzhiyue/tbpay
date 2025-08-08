@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.mipush.sdk.MiPushClient;
 
 /* loaded from: classes9.dex */
@@ -27,7 +27,7 @@ public enum fn {
     public static int a(String str) {
         fn[] values;
         int i = -1;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         for (fn fnVar : values()) {

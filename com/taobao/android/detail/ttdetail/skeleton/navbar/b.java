@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.navbar;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -117,7 +117,7 @@ public class b {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                 return;
             }
-            if (!ErrorConstant.isSessionInvalid(str) && !TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+            if (!ErrorConstant.isSessionInvalid(str) && !StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                 if (odg.o().a()) {
                     b.a(b.this, odg.o().a(R.string.tt_detail_collet_failed));
                 } else {
@@ -160,7 +160,7 @@ public class b {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                 return;
             }
-            if (!ErrorConstant.isSessionInvalid(str) && !TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+            if (!ErrorConstant.isSessionInvalid(str) && !StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                 if (odg.o().a()) {
                     b.a(b.this, odg.o().a(R.string.tt_detail_cancel_collet_failed));
                 } else {
@@ -263,7 +263,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f = str;
         }

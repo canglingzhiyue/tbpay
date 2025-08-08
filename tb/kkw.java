@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.virtual_thread.face.VExecutors;
@@ -45,7 +45,7 @@ public class kkw implements klj {
             }
             StringBuilder sb = new StringBuilder(32);
             sb.append("DownloadSDK ");
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 sb.append(this.c);
                 str = " ";
             } else {
@@ -193,6 +193,6 @@ public class kkw implements klj {
         if (Build.VERSION.SDK_INT >= 23 && !Process.is64Bit()) {
             return true;
         }
-        return (TextUtils.equals(Build.BRAND, "HUAWEI") || TextUtils.equals(Build.BRAND, "HONOR")) && Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 27;
+        return (StringUtils.equals(Build.BRAND, "HUAWEI") || StringUtils.equals(Build.BRAND, "HONOR")) && Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 27;
     }
 }

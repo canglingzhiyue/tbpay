@@ -7,7 +7,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
@@ -214,9 +214,9 @@ public class MspDialogHelper {
         dismissWalletLoading();
         removeMaskView(1500);
         LogUtil.record(2, "MspDialogHelper:showToast ", str + " icon : " + str2);
-        if (!TextUtils.isEmpty(str2) && str2.contains("succ")) {
+        if (!StringUtils.isEmpty(str2) && str2.contains("succ")) {
             CustomToast.showToast(this.f5048a, R.drawable.mini_icon_ok, str, j);
-        } else if (!TextUtils.isEmpty(str2) && str2.contains("fail")) {
+        } else if (!StringUtils.isEmpty(str2) && str2.contains("fail")) {
             CustomToast.showToast(this.f5048a, R.drawable.mini_icon_fail, str, j);
         } else {
             CustomToast.showTextToastCenter(this.f5048a, str);
@@ -415,7 +415,7 @@ public class MspDialogHelper {
                 if (MspDialogHelper.e(MspDialogHelper.this) == null) {
                     MspDialogHelper.a(MspDialogHelper.this, new Dialog(context, 16973948));
                     MspDialogHelper.e(MspDialogHelper.this).setContentView(R.layout.mini_local_progress_dialog);
-                    ((TextView) MspDialogHelper.e(MspDialogHelper.this).findViewById(R.id.progress_message)).setText(TextUtils.isEmpty(str) ? localizedStringForKey : str);
+                    ((TextView) MspDialogHelper.e(MspDialogHelper.this).findViewById(R.id.progress_message)).setText(StringUtils.isEmpty(str) ? localizedStringForKey : str);
                 }
                 MspDialogHelper.e(MspDialogHelper.this).setCanceledOnTouchOutside(false);
                 try {
@@ -459,7 +459,7 @@ public class MspDialogHelper {
         MspLoadingWrapper mspLoadingWrapper = mspDialogHelper.d;
         if (mspLoadingWrapper != null && mspLoadingWrapper.isShowing()) {
             LogUtil.record(2, "MspDialogHelper:doShowDefaultLoading", "mProgress isShowing =" + mspDialogHelper.d);
-            if (TextUtils.equals(mspDialogHelper.d.getLoadingsMessage(), str)) {
+            if (StringUtils.equals(mspDialogHelper.d.getLoadingsMessage(), str)) {
                 return;
             }
             mspDialogHelper.d.setLoadingMessage(str);
@@ -498,7 +498,7 @@ public class MspDialogHelper {
         if (ipChange instanceof IpChange) {
             return (FlybirdDialogEventDesc) ipChange.ipc$dispatch("19898ed5", new Object[]{mspDialogHelper, str, eventAction});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new FlybirdDialogEventDesc(str, new DialogInterface.OnClickListener() { // from class: com.alipay.android.msp.ui.widget.MspDialogHelper.4
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

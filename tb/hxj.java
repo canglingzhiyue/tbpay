@@ -5,7 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.EditText;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -140,7 +140,7 @@ public class hxj implements View.OnClickListener {
         } else {
             String c = c();
             hyn.a("OrderSearchViewBuilder", "onClick", "searchKey:" + c);
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 hya.a(this.f28831a).a(c.length() > 4 ? c.substring(0, 4).trim() : c.trim());
             }
             d.b(this.f28831a, c, null);

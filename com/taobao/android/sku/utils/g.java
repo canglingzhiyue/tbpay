@@ -1,6 +1,6 @@
 package com.taobao.android.sku.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -23,7 +23,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(str) || (parseObject = JSONObject.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null || jSONObject.isEmpty()) {
             return null;
         }
         return a(a(jSONObject, b(jSONObject)));

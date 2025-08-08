@@ -2,7 +2,7 @@ package com.taobao.android.detail.industry.tool.monitor;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -67,7 +67,7 @@ public class a {
         Object obj = bVar.c().get("AuraComponentKey");
         if (obj instanceof String) {
             String str = (String) obj;
-            if (!TextUtils.isEmpty(str) && (a2 = a(context, str)) != null) {
+            if (!StringUtils.isEmpty(str) && (a2 = a(context, str)) != null) {
                 a2.a(bVar);
                 return;
             }

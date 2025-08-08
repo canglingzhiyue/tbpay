@@ -1,6 +1,6 @@
 package com.taobao.update.instantpatch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import tb.kge;
@@ -24,7 +24,7 @@ public class d extends com.taobao.update.framework.c {
         if (this.context == null) {
             return null;
         }
-        if (TextUtils.isEmpty(this.workDir)) {
+        if (StringUtils.isEmpty(this.workDir)) {
             this.workDir = new File(this.context.getExternalCacheDir(), rfx.HOTPATCH).getAbsolutePath();
         }
         return this.workDir;

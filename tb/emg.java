@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -44,6 +44,6 @@ public class emg {
 
     public static boolean b(ekk ekkVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d586e2b8", new Object[]{ekkVar})).booleanValue() : a(ekkVar) && !TextUtils.equals(ekkVar.b(), "video") && ekkVar.h().size() > 1;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d586e2b8", new Object[]{ekkVar})).booleanValue() : a(ekkVar) && !StringUtils.equals(ekkVar.b(), "video") && ekkVar.h().size() > 1;
     }
 }

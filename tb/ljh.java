@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -118,7 +118,7 @@ public class ljh {
                 StringBuilder sb = new StringBuilder(600);
                 for (String str2 : jSONObject2.keySet()) {
                     String string = jSONObject2.getString(str2);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         if (string.length() > 2048) {
                             ldf.d("UserTrackUtils", "toTrackString super_long_args value.length() > 2048 : " + string.length());
                         }
@@ -210,11 +210,11 @@ public class ljh {
             ldl.a(b, Integer.parseInt(b2), b3, b4, b5, a(b, a2));
             String string = a2 == null ? "" : a2.getString("ifs");
             JSONObject jSONObject3 = jSONObject.getJSONObject("args");
-            if (jSONObject3 != null && TextUtils.equals(jSONObject3.getString("brandAd"), "1")) {
+            if (jSONObject3 != null && StringUtils.equals(jSONObject3.getString("brandAd"), "1")) {
                 return;
             }
             Application a3 = lcz.a();
-            if (TextUtils.isEmpty(string) || a3 == null) {
+            if (StringUtils.isEmpty(string) || a3 == null) {
                 return;
             }
             lcy.a(a3, string, null, null, null);
@@ -228,7 +228,7 @@ public class ljh {
             ipChange.ipc$dispatch("fd4f7d7e", new Object[]{baseSectionModel, jSONObject});
         } else if (jSONObject == null) {
             ldf.c("UserTrackUtils", "commitExposureAd exposureParamArgs == null");
-        } else if (!TextUtils.equals(jSONObject.getString("brandAd"), "1")) {
+        } else if (!StringUtils.equals(jSONObject.getString("brandAd"), "1")) {
         } else {
             Application a2 = lcz.a();
             String string = jSONObject.getString("ifs");
@@ -236,11 +236,11 @@ public class ljh {
             String string3 = jSONObject.getString(MspDBHelper.BizEntry.COLUMN_NAME_PID);
             String string4 = baseSectionModel.getString("adNamespace");
             String page = baseSectionModel.mo1096getExposureParam() != null ? baseSectionModel.mo1096getExposureParam().getPage() : null;
-            if (a2 != null && !TextUtils.isEmpty(string)) {
+            if (a2 != null && !StringUtils.isEmpty(string)) {
                 ldf.d("UserTrackUtils", "commitExposureAd ifsUrl");
                 lcy.a(a2, string, string3, string4, null);
                 ldl.a("Page_Extend", 19999, "info_flow_commit_ifs", "microservice", page, "1");
-            } else if (!TextUtils.isEmpty(string2)) {
+            } else if (!StringUtils.isEmpty(string2)) {
                 ldf.d("UserTrackUtils", "commitExposureAd ifsArr");
                 lcy.a(string2, string3, string4, null);
                 ldl.a("Page_Extend", 19999, "info_flow_commit_ifs_ifsArr", "microservice", page, "1");
@@ -262,13 +262,13 @@ public class ljh {
             JSONObject a2 = a(jSONObject, jSONObject2, "args");
             if (a2 == null) {
                 ldf.c("UserTrackUtils", "commitClickAd args == null");
-            } else if (!TextUtils.equals(a2.getString("brandAd"), "1")) {
+            } else if (!StringUtils.equals(a2.getString("brandAd"), "1")) {
             } else {
                 String string = a2.getString("clkArr");
                 String string2 = a2.getString(MspDBHelper.BizEntry.COLUMN_NAME_PID);
                 String string3 = baseSectionModel.getString("adNamespace");
                 String b = b(jSONObject, null, "page");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     ldf.d("UserTrackUtils", "commitExposureAd clkArr");
                     lcy.b(string, string2, string3, null);
                     ldl.a("Page_Extend", 19999, "info_flow_commit_ifs_clkArr", "microservice", b, "1");
@@ -287,7 +287,7 @@ public class ljh {
         } else {
             JSONObject jSONObject2 = baseSectionModel.getJSONObject("args");
             String string = jSONObject2.getString("utLogMap");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             try {
@@ -296,12 +296,12 @@ public class ljh {
                 ljf.a(hashMap, baseSectionModel.getExt());
                 HashMap hashMap2 = new HashMap(hashMap);
                 String string2 = jSONObject2.getString("realExposeIndex");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     hashMap2.put("realExposeIndex", string2);
                 }
                 ldl.a(hashMap2);
                 String string3 = jSONObject2.getString("recIndex");
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     hashMap.put("recIndex", string3);
                 }
                 xko.a(ljsVar, baseSectionModel, jSONObject, hashMap);
@@ -327,7 +327,7 @@ public class ljh {
             return (String) ipChange.ipc$dispatch("b9df2bcd", new Object[]{jSONObject, jSONObject2, str});
         }
         String string = jSONObject2 == null ? null : jSONObject2.getString(str);
-        return !TextUtils.isEmpty(string) ? string : jSONObject.getString(str);
+        return !StringUtils.isEmpty(string) ? string : jSONObject.getString(str);
     }
 
     private static JSONObject d(JSONObject jSONObject, JSONObject jSONObject2) {
@@ -405,7 +405,7 @@ public class ljh {
             return;
         }
         JSONObject args = baseSectionModel.getArgs();
-        if (args == null || !TextUtils.equals("1", args.getString(tim.S_ARGS_IS_CLIENT_CACHE)) || (jSONObject2 = jSONObject.getJSONObject(str)) == null || (jSONObject3 = jSONObject2.getJSONObject("args")) == null) {
+        if (args == null || !StringUtils.equals("1", args.getString(tim.S_ARGS_IS_CLIENT_CACHE)) || (jSONObject2 = jSONObject.getJSONObject(str)) == null || (jSONObject3 = jSONObject2.getJSONObject("args")) == null) {
             return;
         }
         jSONObject3.put(tim.S_ARGS_IS_CLIENT_CACHE, "1");
@@ -448,7 +448,7 @@ public class ljh {
             return;
         }
         String a2 = ldj.a(fky.SP_KEY_ORANGE_CONFIG_VERSION, "0");
-        if (TextUtils.equals(a2, "0")) {
+        if (StringUtils.equals(a2, "0")) {
             ldf.d("UserTrackUtils", "Orange版本获取失败");
         }
         jSONObject.put(fky.SP_KEY_ORANGE_CONFIG_VERSION, (Object) a2);

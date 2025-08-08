@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class lpe {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("61b6362a", new Object[]{this, context, str});
-        } else if (TextUtils.isEmpty(str) || (weakReference = this.c) == null) {
+        } else if (StringUtils.isEmpty(str) || (weakReference = this.c) == null) {
         } else {
             ViewGroup viewGroup = weakReference.get();
             if (context == null) {

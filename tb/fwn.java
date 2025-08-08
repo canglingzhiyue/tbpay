@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -113,7 +113,7 @@ public class fwn {
             return (byte[]) ipChange.ipc$dispatch("40a9e11a", new Object[]{this, str, dXRuntimeContext});
         }
         long nanoTime = System.nanoTime();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -166,7 +166,7 @@ public class fwn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("278ac97a", new Object[]{this, str, bArr});
-        } else if (TextUtils.isEmpty(str) || bArr == null) {
+        } else if (StringUtils.isEmpty(str) || bArr == null) {
         } else {
             synchronized (this.f28165a) {
                 if (this.f28165a.get(str) != null) {
@@ -186,7 +186,7 @@ public class fwn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (this.f28165a) {
                 this.f28165a.remove(str);

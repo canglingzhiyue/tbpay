@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.rule;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.data.TBBundleUrlRuleInfo;
@@ -68,7 +68,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (TBUrlRuleResponse) ipChange.ipc$dispatch("7fd7f970", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ouu.b("bundleName  is  empty");
             return null;
         }
@@ -178,7 +178,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             new AsyncTask<Object, Object, TBUrlRuleResponse>() { // from class: com.taobao.tao.shop.rule.f.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;

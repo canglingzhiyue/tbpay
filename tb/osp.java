@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -173,7 +173,7 @@ public class osp implements osm {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-            } else if (!TextUtils.equals(str, osp.d(osp.this).f30287a)) {
+            } else if (!StringUtils.equals(str, osp.d(osp.this).f30287a)) {
             } else {
                 com.taobao.android.ai.b.a().d();
             }
@@ -424,7 +424,7 @@ public class osp implements osm {
         if (kskVar == null) {
             return null;
         }
-        if (TextUtils.equals("tmallhk_ds_native_taobao", str)) {
+        if (StringUtils.equals("tmallhk_ds_native_taobao", str)) {
             return new osp(ksk.REC_DIRECT_SALE_CART);
         }
         return new osp(kskVar);
@@ -1357,7 +1357,7 @@ public class osp implements osm {
             return str2;
         }
         String string = jSONObject.getString(str);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         e.e("RecommendManagerImpl", "value == null");
@@ -1406,7 +1406,7 @@ public class osp implements osm {
             return ((Boolean) ipChange.ipc$dispatch("631b57a", new Object[]{this})).booleanValue();
         }
         ksk kskVar = this.g;
-        if (kskVar != null && !TextUtils.isEmpty(kskVar.f30287a)) {
+        if (kskVar != null && !StringUtils.isEmpty(kskVar.f30287a)) {
             return com.taobao.homepage.utils.b.a(this.g.f30287a);
         }
         return false;
@@ -1790,7 +1790,7 @@ public class osp implements osm {
         List<SectionModel> j = j();
         if (j != null && !j.isEmpty()) {
             String string = j.get(0).getString("sectionBizCode");
-            if (!TextUtils.isEmpty(string) && (string.endsWith("_head") || string.endsWith("_tabs"))) {
+            if (!StringUtils.isEmpty(string) && (string.endsWith("_head") || string.endsWith("_tabs"))) {
                 return true;
             }
         }
@@ -1823,7 +1823,7 @@ public class osp implements osm {
                 return;
             }
             String string = a2.getString("sectionBizCode");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             int a3 = opb.a(string, this.s.e(str));
@@ -1964,12 +1964,12 @@ public class osp implements osm {
         String string = ext.getString("channelBgColor");
         if (string != null) {
             this.j.a(b(string), 0);
-        } else if (!TextUtils.equals(ext.getString("removeBannerTitle"), "true")) {
+        } else if (!StringUtils.equals(ext.getString("removeBannerTitle"), "true")) {
         } else {
             String str = this.Y;
             if (str != null) {
                 this.j.a(b(str), d(8));
-            } else if (!TextUtils.equals(ext.getString("openPostBuyLabStyle"), "true")) {
+            } else if (!StringUtils.equals(ext.getString("openPostBuyLabStyle"), "true")) {
             } else {
                 String string2 = ext.getString("backgroundColor");
                 String string3 = ext.getString("marginTop");

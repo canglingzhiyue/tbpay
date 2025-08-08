@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.newSettingV2.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
@@ -63,7 +63,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d66eec80", new Object[]{this, newGeneralSettingDataModel})).booleanValue();
         }
-        if (TextUtils.isEmpty(newGeneralSettingDataModel.nativeKey)) {
+        if (StringUtils.isEmpty(newGeneralSettingDataModel.nativeKey)) {
             return true;
         }
         Boolean b = this.c.b(newGeneralSettingDataModel.nativeKey);
@@ -115,7 +115,7 @@ public class b {
                 } else if (!"elderly".equals(key)) {
                     continue;
                 } else {
-                    if (!z && !String.valueOf(TextUtils.equals("1", TBRevisionSwitchManager.i().c("elderHome"))).equals(obj)) {
+                    if (!z && !String.valueOf(StringUtils.equals("1", TBRevisionSwitchManager.i().c("elderHome"))).equals(obj)) {
                         break;
                     }
                     z = true;
@@ -133,7 +133,7 @@ public class b {
             return;
         }
         String a2 = com.taobao.mytaobao.newSettingV2.a.INSTANCE.a("mtbGeneralSettingsPage");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 parseObject = JSONObject.parseObject(a2, Feature.OrderedField);
             } catch (Throwable unused) {
@@ -141,7 +141,7 @@ public class b {
             }
         } else {
             String a3 = mxk.a(Globals.getApplication(), "mtbsettings/mtb_generalsettings_default.json");
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             try {
@@ -182,7 +182,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("a5543672", new Object[]{this, jSONObject, str});
         }
-        if (jSONObject != null && !TextUtils.isEmpty(str) && (jSONObject2 = jSONObject.getJSONObject("data")) != null) {
+        if (jSONObject != null && !StringUtils.isEmpty(str) && (jSONObject2 = jSONObject.getJSONObject("data")) != null) {
             return jSONObject2.getJSONObject(str);
         }
         return null;
@@ -193,7 +193,7 @@ public class b {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("15c36f36", new Object[]{this, jSONObject, arrayList, str, str2});
-        } else if (jSONObject == null || arrayList == null || TextUtils.isEmpty(str)) {
+        } else if (jSONObject == null || arrayList == null || StringUtils.isEmpty(str)) {
         } else {
             Object obj = jSONObject.get(str);
             if (!(obj instanceof JSONArray)) {
@@ -205,7 +205,7 @@ public class b {
                 if (next instanceof JSONObject) {
                     JSONObject jSONObject2 = (JSONObject) next;
                     NewGeneralSettingDataModel newGeneralSettingDataModel = (NewGeneralSettingDataModel) JSONObject.toJavaObject(jSONObject2, NewGeneralSettingDataModel.class);
-                    if (!TextUtils.isEmpty(newGeneralSettingDataModel.key)) {
+                    if (!StringUtils.isEmpty(newGeneralSettingDataModel.key)) {
                         newGeneralSettingDataModel.nativeKey = this.c.a(newGeneralSettingDataModel.key);
                         if (a(newGeneralSettingDataModel)) {
                             if (z) {
@@ -229,12 +229,12 @@ public class b {
         } else {
             String str = newGeneralSettingDataModel.style;
             String str2 = newGeneralSettingDataModel.nativeKey;
-            if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
                 return;
             }
             if ("normal".equals(str)) {
                 String a2 = this.c.a(str2, newGeneralSettingDataModel);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     a2 = (String) mxr.b(str2, a(str2, ""));
                 }
                 newGeneralSettingDataModel.rightTip = a2;
@@ -280,7 +280,7 @@ public class b {
             ipChange.ipc$dispatch("ede0e2be", new Object[]{this, newGeneralSettingDataModel, jSONObject, str});
         } else if (newGeneralSettingDataModel == null || jSONObject == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 newGeneralSettingDataModel.isShowDividerWithoutTitle = true;
             } else {
                 newGeneralSettingDataModel.showDividerWithTitle = str;

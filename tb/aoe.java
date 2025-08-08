@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.db.annotation.Column;
 import com.alibaba.analytics.core.db.annotation.Ingore;
 import com.alibaba.analytics.core.db.annotation.TableName;
@@ -54,8 +54,8 @@ public class aoe {
         StringBuilder sb = new StringBuilder();
         sb.append("SELECT * FROM ");
         sb.append(a2);
-        sb.append(TextUtils.isEmpty(str) ? "" : " WHERE " + str);
-        sb.append(TextUtils.isEmpty(str2) ? "" : " ORDER BY " + str2);
+        sb.append(StringUtils.isEmpty(str) ? "" : " WHERE " + str);
+        sb.append(StringUtils.isEmpty(str2) ? "" : " ORDER BY " + str2);
         sb.append(i <= 0 ? "" : " LIMIT " + i);
         String sb2 = sb.toString();
         apr.a("DBMgr", g.CACHE_SQL, sb2);
@@ -423,7 +423,7 @@ public class aoe {
             return this.f.get(cls);
         } else {
             TableName tableName = (TableName) cls.getAnnotation(TableName.class);
-            if (tableName != null && !TextUtils.isEmpty(tableName.value())) {
+            if (tableName != null && !StringUtils.isEmpty(tableName.value())) {
                 replace = tableName.value();
             } else {
                 replace = cls.getName().replace(".", "_");
@@ -626,7 +626,7 @@ public class aoe {
             return this.e.get(field);
         }
         Column column = (Column) field.getAnnotation(Column.class);
-        if (column != null && !TextUtils.isEmpty(column.value())) {
+        if (column != null && !StringUtils.isEmpty(column.value())) {
             name = column.value();
         } else {
             name = field.getName();

@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -65,7 +65,7 @@ public class r implements ezm {
         if (a2 != null && !a2.isEmpty() && this.b) {
             try {
                 String str = this.h;
-                if (!TextUtils.isEmpty(this.c)) {
+                if (!StringUtils.isEmpty(this.c)) {
                     str = this.c;
                 }
                 ProductInfoFragment.startFragment(this.e, str, a2);
@@ -141,7 +141,7 @@ public class r implements ezm {
             Iterator<Object> it2 = this.g.getJSONArray(this.f10722a).iterator();
             while (it2.hasNext()) {
                 JSONObject jSONObject2 = (JSONObject) it2.next();
-                if (TextUtils.isEmpty(this.c) && (keySet = jSONObject2.keySet()) != null) {
+                if (StringUtils.isEmpty(this.c) && (keySet = jSONObject2.keySet()) != null) {
                     Iterator<String> it3 = keySet.iterator();
                     if (it3.hasNext()) {
                         this.c = it3.next();
@@ -154,7 +154,7 @@ public class r implements ezm {
                         JSONObject jSONObject3 = (JSONObject) it5.next();
                         for (String str : jSONObject3.keySet()) {
                             String string = jSONObject3.getString(str);
-                            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(string)) {
                                 arrayList.add(new Pair<>(str, string));
                             }
                         }

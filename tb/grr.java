@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.net.Uri;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.TBS;
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ public class grr {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             ArrayList arrayList = new ArrayList();

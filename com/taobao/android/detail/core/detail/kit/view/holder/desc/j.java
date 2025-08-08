@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 import android.app.Activity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -304,7 +304,7 @@ public class j extends b<com.taobao.android.detail.core.model.viewmodel.desc.f> 
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("daf50b49", new Object[]{this, str, onClickListener});
         }
-        if (TextUtils.isEmpty(str) || onClickListener == null) {
+        if (StringUtils.isEmpty(str) || onClickListener == null) {
             return new View(this.g);
         }
         if (this.r == null) {

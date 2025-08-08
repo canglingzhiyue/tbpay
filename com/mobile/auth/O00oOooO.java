@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -188,7 +188,7 @@ public class O00oOooO {
                         try {
                             bufferedWriter = new BufferedWriter(fileWriter);
                             try {
-                                if (TextUtils.isEmpty(str)) {
+                                if (StringUtils.isEmpty(str)) {
                                     str = "";
                                 }
                                 bufferedWriter.write(str);

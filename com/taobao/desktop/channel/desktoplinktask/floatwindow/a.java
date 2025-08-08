@@ -4,7 +4,7 @@ import android.app.Application;
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.os.PowerManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -70,7 +70,7 @@ public class a {
             return;
         }
         f fVar = bVar.f16946a;
-        if (fVar == null || TextUtils.isEmpty(fVar.c)) {
+        if (fVar == null || StringUtils.isEmpty(fVar.c)) {
             return;
         }
         kgu kguVar = new kgu(khm.a().b(), bVar, str, str2, null, new AnonymousClass1(interfaceC0651a, windowStyleModel));

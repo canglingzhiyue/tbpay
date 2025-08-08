@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.j;
 import com.taobao.tao.topmultitab.c;
@@ -51,7 +51,7 @@ public class kug {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a36a63c7", new Object[]{this, lbqVar, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             HashMap hashMap = new HashMap();
             hashMap.put(kuh.ALI_TRACK_ID, str);
@@ -90,7 +90,7 @@ public class kug {
 
     private boolean a(List<String> list, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3c6e0ee7", new Object[]{this, list, str})).booleanValue() : !TextUtils.isEmpty(str) && list.contains(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3c6e0ee7", new Object[]{this, list, str})).booleanValue() : !StringUtils.isEmpty(str) && list.contains(str);
     }
 
     private void a(kuh kuhVar) {
@@ -104,7 +104,7 @@ public class kug {
             return;
         }
         String a2 = c.a().a(z);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         c.a().a(a2, kuhVar.d, kuhVar.b);
@@ -116,6 +116,6 @@ public class kug {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         String a2 = j.a("outLinkToSubscribeEnable", "true");
-        return !TextUtils.isEmpty(a2) && a2.equalsIgnoreCase("true");
+        return !StringUtils.isEmpty(a2) && a2.equalsIgnoreCase("true");
     }
 }

@@ -2,7 +2,7 @@ package com.taobao.search.sf.datasource;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.LocalDataManager;
 import com.taobao.search.sf.widgets.preposefilter.PreposeFilterBean;
@@ -54,14 +54,14 @@ public class CommonLocalManager implements LocalDataManager {
     }
 
     public PreposeFilterBean getCurrentPreposeFilterBean(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "all";
         }
         return this.preposeFilterCache.get(str);
     }
 
     public void setCurrentPreposeFilterBean(String str, PreposeFilterBean preposeFilterBean) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "all";
         }
         this.preposeFilterCache.put(str, preposeFilterBean);

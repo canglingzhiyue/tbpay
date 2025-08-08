@@ -2,7 +2,7 @@ package com.taobao.accs.init;
 
 import android.app.Application;
 import android.content.ComponentName;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.AppLifecycle;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSClient;
@@ -34,7 +34,7 @@ public class Launcher_CrossActivityStarted implements Serializable {
         try {
             ALog.e("Launcher_CrossActivityStarted", "onStarted", new Object[0]);
             AppLifecycle.onForeground();
-            if (!TextUtils.isEmpty(Launcher_InitAccs.mAppkey) && Launcher_InitAccs.mContext != null) {
+            if (!StringUtils.isEmpty(Launcher_InitAccs.mAppkey) && Launcher_InitAccs.mContext != null) {
                 if (!Launcher_InitAccs.mIsInited) {
                     return;
                 }

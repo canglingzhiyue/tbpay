@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.mute.helper;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
 import com.taobao.android.fluid.framework.data.IDataService;
@@ -139,7 +139,7 @@ public abstract class e implements d {
         if (fluidContext == null) {
             return false;
         }
-        return !TextUtils.isEmpty(this.c);
+        return !StringUtils.isEmpty(this.c);
     }
 
     public void h(FluidContext fluidContext) {
@@ -170,7 +170,7 @@ public abstract class e implements d {
         }
         ((IMuteService) fluidContext.getService(IMuteService.class)).setMuteABTestForSettings(false);
         spz.c("MuteBase", "走了降级的策略");
-        if (TextUtils.equals(b(), "true")) {
+        if (StringUtils.equals(b(), "true")) {
             h(fluidContext);
         } else if (!m(fluidContext)) {
         } else {
@@ -178,7 +178,7 @@ public abstract class e implements d {
             String str = j.ac;
             spz.c("MuteBase", "1.静音逻升级初始化-native，疲劳度满足，音量正常，commonShowMuteTips：" + str);
             int i = j.ad;
-            if (!TextUtils.equals(str, "true") || i < 0) {
+            if (!StringUtils.equals(str, "true") || i < 0) {
                 return;
             }
             h(fluidContext);
@@ -192,7 +192,7 @@ public abstract class e implements d {
         }
         String b = occ.b(obu.e(), this.f, (String) null);
         spz.c("MuteBase", "1.静音getMuteStorage key：" + this.f + "-result:" + b);
-        return TextUtils.isEmpty(b) ? "none" : b;
+        return StringUtils.isEmpty(b) ? "none" : b;
     }
 
     private void a(boolean z) {
@@ -220,14 +220,14 @@ public abstract class e implements d {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.c);
     }
 
     private void k(FluidContext fluidContext) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8b240ba4", new Object[]{this, fluidContext});
-        } else if (TextUtils.equals(b(), "true")) {
+        } else if (StringUtils.equals(b(), "true")) {
             h(fluidContext);
         } else if (!m(fluidContext)) {
         } else {
@@ -235,7 +235,7 @@ public abstract class e implements d {
             String str = j.ac;
             spz.c("MuteBase", "1.静音逻升级初始化-native，疲劳度满足，音量正常，commonShowMuteTips：" + str);
             int i = j.ad;
-            if (!TextUtils.equals(str, "true") || i < 0) {
+            if (!StringUtils.equals(str, "true") || i < 0) {
                 return;
             }
             h(fluidContext);

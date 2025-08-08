@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -30,7 +30,7 @@ public class IrpPageConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (IrpPageConfig) ipChange.ipc$dispatch("7ab4e4c3", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -62,10 +62,10 @@ public class IrpPageConfig implements Serializable {
         }
         try {
             JSONObject jSONObject = new JSONObject();
-            if (!TextUtils.isEmpty(this.weexUrl)) {
+            if (!StringUtils.isEmpty(this.weexUrl)) {
                 jSONObject.put("weexUrl", this.weexUrl);
             }
-            if (!TextUtils.isEmpty(this.h5Url)) {
+            if (!StringUtils.isEmpty(this.h5Url)) {
                 jSONObject.put("h5Url", this.h5Url);
             }
             jSONObject.put("degrade", this.degrade);

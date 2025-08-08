@@ -2,7 +2,7 @@ package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -49,7 +49,7 @@ public class C1238p {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.length() > 102400;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.length() > 102400;
     }
 
     public static boolean a() {

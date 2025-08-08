@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -106,7 +106,7 @@ public class ecs {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("babab215", new Object[]{detailCoreActivity, str, jSONObject});
-        } else if (detailCoreActivity == null || TextUtils.isEmpty(str)) {
+        } else if (detailCoreActivity == null || StringUtils.isEmpty(str)) {
         } else {
             final String str2 = detailCoreActivity.h;
             final WeakReference weakReference = new WeakReference(detailCoreActivity);

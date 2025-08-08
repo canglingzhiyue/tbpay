@@ -2,7 +2,7 @@ package com.unionpay;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONObject;
 
 /* loaded from: classes9.dex */
@@ -24,7 +24,7 @@ final class p implements z {
         try {
             this.f24031a.i = aaVar;
             String optString = new JSONObject(str).optString("scheme");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 if (aaVar == null) {
                     return;
                 }

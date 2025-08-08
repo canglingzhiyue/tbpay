@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 
@@ -27,7 +27,7 @@ public class ffy extends fuf {
             return 0;
         }
         String str = objArr[0] instanceof String ? (String) objArr[0] : "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return Float.valueOf(dxi.a(str));
         }
         return 0;

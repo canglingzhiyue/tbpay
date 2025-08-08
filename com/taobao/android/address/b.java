@@ -2,7 +2,7 @@ package com.taobao.android.address;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.address.model.RecommendedAddress;
 import com.taobao.android.nav.Nav;
@@ -134,7 +134,7 @@ public class b {
                 return;
             }
             aVar3.a(intent.getStringExtra("data"));
-        } else if (TextUtils.isEmpty(f8967a)) {
+        } else if (StringUtils.isEmpty(f8967a)) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject(f8967a);

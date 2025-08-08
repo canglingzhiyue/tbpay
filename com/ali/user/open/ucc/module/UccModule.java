@@ -1,6 +1,6 @@
 package com.ali.user.open.ucc.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.config.ConfigManager;
 import com.ali.user.open.core.context.KernelContext;
 import com.ali.user.open.core.util.CommonUtils;
@@ -40,7 +40,7 @@ public class UccModule {
             return ((Boolean) ipChange.ipc$dispatch("ce6af0a7", new Object[0])).booleanValue();
         }
         try {
-            return TextUtils.equals("true", OrangeConfig.getInstance().getConfig("login4android", "handleWebviewDir", "true"));
+            return StringUtils.equals("true", OrangeConfig.getInstance().getConfig("login4android", "handleWebviewDir", "true"));
         } catch (Throwable unused) {
             return true;
         }

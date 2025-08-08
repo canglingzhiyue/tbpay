@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tracker.page.page.data.AttrArg;
@@ -88,7 +88,7 @@ public class jjl {
             str = point.getSpmD();
         }
         String a2 = i.a(view, "index", true);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = i.a(view, i.ATTR_KEY_DATA_POINT_INDEX, true);
         }
         return d.a(str, a2);
@@ -107,7 +107,7 @@ public class jjl {
                 if (attrArg != null) {
                     String a2 = a(view, attrArg);
                     String commitKey = attrArg.getCommitKey();
-                    if (!TextUtils.isEmpty(commitKey) && !TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(commitKey) && !StringUtils.isEmpty(a2)) {
                         hashMap.put(commitKey, a2);
                     }
                 }
@@ -230,10 +230,10 @@ public class jjl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9c9bd0f2", new Object[]{this, point, str});
         }
-        if (!TextUtils.isEmpty(this.m)) {
+        if (!StringUtils.isEmpty(this.m)) {
             return this.m;
         }
-        if (point != null && !TextUtils.isEmpty(point.getSpmB())) {
+        if (point != null && !StringUtils.isEmpty(point.getSpmB())) {
             return point.getSpmB();
         }
         return this.c;
@@ -244,7 +244,7 @@ public class jjl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.l)) {
+        if (!StringUtils.isEmpty(this.l)) {
             return this.l;
         }
         return this.b;
@@ -295,15 +295,15 @@ public class jjl {
         }
         String str2 = null;
         if (point != null) {
-            if (!TextUtils.isEmpty(point.getArg1())) {
+            if (!StringUtils.isEmpty(point.getArg1())) {
                 str2 = point.getArg1();
-            } else if (!TextUtils.isEmpty(point.getLogkey())) {
+            } else if (!StringUtils.isEmpty(point.getLogkey())) {
                 str2 = point.getLogkey();
             } else {
                 str2 = f();
             }
         }
-        return TextUtils.isEmpty(str2) ? d.a(e(), a(point, str), a(point, view), "") : str2;
+        return StringUtils.isEmpty(str2) ? d.a(e(), a(point, str), a(point, view), "") : str2;
     }
 
     private void c(Point point) {
@@ -316,7 +316,7 @@ public class jjl {
             String[] a3 = a(point.getSelector(), ":");
             if (a3 != null && a3.length > 0) {
                 if (a3.length > 1) {
-                    if (!TextUtils.isEmpty(a3[0]) && !TextUtils.isEmpty(a3[1])) {
+                    if (!StringUtils.isEmpty(a3[0]) && !StringUtils.isEmpty(a3[1])) {
                         if (this.i.get(a3[1]) != null) {
                             this.i.get(a3[1]).put(a3[0], point);
                         } else {
@@ -325,7 +325,7 @@ public class jjl {
                             this.i.put(a3[1], hashMap);
                         }
                     }
-                } else if (!TextUtils.isEmpty(a3[0])) {
+                } else if (!StringUtils.isEmpty(a3[0])) {
                     this.h.put(a3[0], point);
                 }
             }
@@ -334,7 +334,7 @@ public class jjl {
                 return;
             }
             String selector = point.getSelector();
-            if (TextUtils.isEmpty(selector)) {
+            if (StringUtils.isEmpty(selector)) {
                 return;
             }
             if (selector.startsWith("#") && selector.length() > 1) {
@@ -394,7 +394,7 @@ public class jjl {
         }
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < strArr.length; i++) {
-            if (!TextUtils.isEmpty(strArr[i])) {
+            if (!StringUtils.isEmpty(strArr[i])) {
                 arrayList.add("." + strArr[i]);
             }
         }
@@ -445,9 +445,9 @@ public class jjl {
             if (c != null) {
                 hashMap.putAll(c);
             }
-            String jumpSpmKey = (trackerType == null || trackerType != TrackerType.TrackerType_Click || TextUtils.isEmpty(a2.getJumpSpmKey())) ? "spm" : a2.getJumpSpmKey();
+            String jumpSpmKey = (trackerType == null || trackerType != TrackerType.TrackerType_Click || StringUtils.isEmpty(a2.getJumpSpmKey())) ? "spm" : a2.getJumpSpmKey();
             String a4 = d.a(jjkVar);
-            if (!TextUtils.isEmpty(a4) && !TextUtils.isEmpty(jumpSpmKey)) {
+            if (!StringUtils.isEmpty(a4) && !StringUtils.isEmpty(jumpSpmKey)) {
                 hashMap.put(jumpSpmKey, a4);
             }
             jjkVar.g = hashMap;
@@ -466,7 +466,7 @@ public class jjl {
             return null;
         }
         String a2 = i.a(view, i.ATTR_KEY_DATA_TRACKER);
-        if (!TextUtils.isEmpty(a2) && (point2 = this.h.get(a2)) != null && g.a(trackerType, point2.getTrackerType())) {
+        if (!StringUtils.isEmpty(a2) && (point2 = this.h.get(a2)) != null && g.a(trackerType, point2.getTrackerType())) {
             return point2;
         }
         Point a3 = a(view, a2, i.ATTR_KEY_DATA_TRACKER, this.i);
@@ -476,7 +476,7 @@ public class jjl {
         Object tag = view.getTag(jjj.TAG_DYNAMIC_TRACKER_VIEW_ENABLE_MATCH_KEY);
         if ((tag instanceof Boolean) && ((Boolean) tag).booleanValue()) {
             String a4 = i.a(view, "id");
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 Map<String, Point> map = this.g;
                 Point point3 = map.get("#" + a4);
                 if (point3 != null && g.a(trackerType, point3.getTrackerType())) {
@@ -538,7 +538,7 @@ public class jjl {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a325b9c5", new Object[]{this, strArr, str})).booleanValue();
         }
-        if (strArr != null && !TextUtils.isEmpty(str)) {
+        if (strArr != null && !StringUtils.isEmpty(str)) {
             for (String str2 : strArr) {
                 if (('.' + str2).equals(str)) {
                     return true;
@@ -553,7 +553,7 @@ public class jjl {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("66657a4b", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return str.split(str2);
         }
         return null;
@@ -564,7 +564,7 @@ public class jjl {
         if (ipChange instanceof IpChange) {
             return (Point) ipChange.ipc$dispatch("1c70bb83", new Object[]{this, view, str, str2, map});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || map == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || map == null) {
             return null;
         }
         Map<String, Point> map2 = map.get(str);
@@ -574,7 +574,7 @@ public class jjl {
         for (WXComponent b = i.b(view); b != null; b = b.getParent()) {
             WXAttr a2 = i.a(b);
             String a3 = a2 != null ? i.a(a2, str2) : null;
-            if (!TextUtils.isEmpty(a3) && map2.containsKey(a3)) {
+            if (!StringUtils.isEmpty(a3) && map2.containsKey(a3)) {
                 return map2.get(a3);
             }
         }
@@ -586,7 +586,7 @@ public class jjl {
         if (ipChange instanceof IpChange) {
             return (Point) ipChange.ipc$dispatch("9606fee2", new Object[]{this, view, strArr, str, map});
         }
-        if (strArr != null && !TextUtils.isEmpty(str) && map != null) {
+        if (strArr != null && !StringUtils.isEmpty(str) && map != null) {
             WXComponent b = i.b(view);
             Map map2 = (Map) b(strArr, map);
             if (map2 != null && map2.size() != 0) {
@@ -623,7 +623,7 @@ public class jjl {
         } else {
             if (map.containsKey("url")) {
                 String str = map.get("url");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.o = a.b(str);
                 }
             }
@@ -646,7 +646,7 @@ public class jjl {
             return (String) ipChange.ipc$dispatch("a1ecdfbd", new Object[]{this, point});
         }
         String g = g();
-        return (TextUtils.isEmpty(g) && point != null && !TextUtils.isEmpty(point.getPageName())) ? point.getPageName() : g;
+        return (StringUtils.isEmpty(g) && point != null && !StringUtils.isEmpty(point.getPageName())) ? point.getPageName() : g;
     }
 
     public String b(Point point, String str, View view) {
@@ -665,7 +665,7 @@ public class jjl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b8a95cb2", new Object[]{this, point, view});
         }
-        if (point != null && !TextUtils.isEmpty(point.getSpmC())) {
+        if (point != null && !StringUtils.isEmpty(point.getSpmC())) {
             return point.getSpmC();
         }
         return i.b(view, i.ATTR_KEY_DATA_SPM);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.db.annotation.Column;
 import com.alibaba.analytics.core.db.annotation.TableName;
 import com.alibaba.fastjson.JSON;
@@ -37,7 +37,7 @@ public class btg extends bte {
         if (ipChange instanceof IpChange) {
             return (MeasureValueSet) ipChange.ipc$dispatch("267e3d5f", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return null;
         }
         return (MeasureValueSet) JSON.parseObject(this.b, MeasureValueSet.class);
@@ -48,7 +48,7 @@ public class btg extends bte {
         if (ipChange instanceof IpChange) {
             return (DimensionValueSet) ipChange.ipc$dispatch("268a2076", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f26127a)) {
+        if (StringUtils.isEmpty(this.f26127a)) {
             return null;
         }
         return (DimensionValueSet) JSON.parseObject(this.f26127a, DimensionValueSet.class);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.kernel.basic.TMSLogger;
@@ -40,7 +40,7 @@ public class m {
 
     public static boolean b(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("38284082", new Object[]{uri})).booleanValue() : uri != null && !TextUtils.isEmpty(a(uri));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("38284082", new Object[]{uri})).booleanValue() : uri != null && !StringUtils.isEmpty(a(uri));
     }
 
     public static boolean c(Uri uri) {
@@ -49,7 +49,7 @@ public class m {
             return ((Boolean) ipChange.ipc$dispatch("beadfb21", new Object[]{uri})).booleanValue();
         }
         if (uri != null && uri.isHierarchical()) {
-            return TextUtils.equals("true", uri.getQueryParameter("isThemis"));
+            return StringUtils.equals("true", uri.getQueryParameter("isThemis"));
         }
         return false;
     }
@@ -64,7 +64,7 @@ public class m {
         } catch (Exception e) {
             TMSLogger.b("TMSUrlUtils", "isAboutPage error", e);
         }
-        if (TextUtils.isEmpty(str) || (b = com.taobao.themis.utils.o.b(str)) == null) {
+        if (StringUtils.isEmpty(str) || (b = com.taobao.themis.utils.o.b(str)) == null) {
             return false;
         }
         return n.e().contains(b.buildUpon().clearQuery().build().toString());
@@ -75,10 +75,10 @@ public class m {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        return str.startsWith(a()) || TextUtils.equals(a(), com.taobao.themis.utils.o.c(str));
+        return str.startsWith(a()) || StringUtils.equals(a(), com.taobao.themis.utils.o.c(str));
     }
 
     public static Uri a(ITMSPage iTMSPage, com.taobao.themis.kernel.f fVar, String str, JSONObject jSONObject) {
@@ -91,7 +91,7 @@ public class m {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put(com.taobao.themis.kernel.i.APP_ID, (Object) fVar.h());
         jSONObject2.put("_ariver_ua", (Object) k.j(fVar));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject2.put("page", (Object) str);
         }
         Uri build = path.build();
@@ -132,7 +132,7 @@ public class m {
 
     public static boolean e(Uri uri) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("cbb9705f", new Object[]{uri})).booleanValue() : uri != null && uri.isHierarchical() && TextUtils.equals(uri.getQueryParameter(com.taobao.themis.kernel.i.KEY_AFC_LINK), "1");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("cbb9705f", new Object[]{uri})).booleanValue() : uri != null && uri.isHierarchical() && StringUtils.equals(uri.getQueryParameter(com.taobao.themis.kernel.i.KEY_AFC_LINK), "1");
     }
 
     public static Uri f(Uri uri) {

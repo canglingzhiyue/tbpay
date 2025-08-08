@@ -2,7 +2,7 @@ package com.android.tools.bundleInfo;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashSet;
 import java.util.Map;
@@ -55,7 +55,7 @@ public class d {
                 this.c = context2.getSharedPreferences("dynamicdeploy_features_" + this.f6425a, 0);
                 Context context3 = this.b;
                 this.d = context3.getSharedPreferences("dynamicdeploy_features_bak-" + this.f6425a, 0);
-                if (!TextUtils.isEmpty(cjd.a()) && context.getPackageName().equals(cjd.a())) {
+                if (!StringUtils.isEmpty(cjd.a()) && context.getPackageName().equals(cjd.a())) {
                     e(this.f6425a);
                 }
                 this.e = true;
@@ -115,7 +115,7 @@ public class d {
         }
         d();
         String string = this.c.getString(str, "");
-        return (TextUtils.isEmpty(string) || !this.c.getStringSet("deploy_versions", new HashSet()).contains(string)) ? "" : string;
+        return (StringUtils.isEmpty(string) || !this.c.getStringSet("deploy_versions", new HashSet()).contains(string)) ? "" : string;
     }
 
     public Set<String> f(String str) {

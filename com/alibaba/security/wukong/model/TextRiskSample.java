@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.wukong.model.meta.Data;
 import com.alibaba.security.wukong.model.meta.Text;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -46,7 +46,7 @@ public class TextRiskSample extends CCRCRiskSample {
             return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
         }
         Text text = this.mText;
-        return text != null && !TextUtils.isEmpty(text.getContent());
+        return text != null && !StringUtils.isEmpty(text.getContent());
     }
 
     public void setText(Text text) {

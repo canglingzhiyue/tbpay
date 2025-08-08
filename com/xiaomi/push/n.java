@@ -3,7 +3,7 @@ package com.xiaomi.push;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,8 +38,8 @@ public class n {
     }
 
     private synchronized String a(String str, String str2) {
-        if (this.f851a != null && !TextUtils.isEmpty(str)) {
-            if (!TextUtils.isEmpty(str2)) {
+        if (this.f851a != null && !StringUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     Map<String, String> map = this.f851a.get(str);
                     if (map == null) {
@@ -68,7 +68,7 @@ public class n {
 
     public synchronized String a(String str, String str2, String str3) {
         String a2 = a(str, str2);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return a2;
         }
         return this.f849a.getSharedPreferences(str, 4).getString(str2, str3);

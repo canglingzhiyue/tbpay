@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.taobao.util.i;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -215,7 +215,7 @@ public class d implements Handler.Callback {
             return false;
         }
         kej.a(kem.TAG, "init 黑名单校验");
-        if (!this.p && !TextUtils.isEmpty(this.e) && (a2 = keo.a(kem.a().a(KeepModel.STRATEGY_BLACK_LIST, (String) null))) != null && a2.size() > 0 && a2.contains(this.e)) {
+        if (!this.p && !StringUtils.isEmpty(this.e) && (a2 = keo.a(kem.a().a(KeepModel.STRATEGY_BLACK_LIST, (String) null))) != null && a2.size() > 0 && a2.contains(this.e)) {
             kej.a("BootImageMgr", "BootImageMgr init block_by_black_white_list");
             return false;
         }
@@ -628,7 +628,7 @@ public class d implements Handler.Callback {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("3dd7e573", new Object[]{this, str});
-                        } else if (TextUtils.isEmpty(str)) {
+                        } else if (StringUtils.isEmpty(str)) {
                         } else {
                             TBS.Ext.commitEvent(str, d.g(d.this));
                         }

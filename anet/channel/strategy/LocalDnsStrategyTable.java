@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.Config;
 import anet.channel.GlobalAppRuntimeInfo;
@@ -57,7 +57,7 @@ public class LocalDnsStrategyTable {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("f68c7a6f", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !Utils.checkHostValidAndNotIp(str)) {
+        if (StringUtils.isEmpty(str) || !Utils.checkHostValidAndNotIp(str)) {
             return Collections.EMPTY_LIST;
         }
         if (ALog.isPrintLog(1)) {
@@ -79,7 +79,7 @@ public class LocalDnsStrategyTable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c73a41b6", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !Utils.checkHostValidAndNotIp(str) || DispatchConstants.getAmdcServerDomain().equalsIgnoreCase(str)) {
+        } else if (StringUtils.isEmpty(str) || !Utils.checkHostValidAndNotIp(str) || DispatchConstants.getAmdcServerDomain().equalsIgnoreCase(str)) {
         } else {
             if (this.localStrategyMap.containsKey(str)) {
                 ALog.e(TAG, "[queryLocalDnsByHost] localStrategyMap contains host", null, "strategyList", this.localStrategyMap.get(str));
@@ -145,7 +145,7 @@ public class LocalDnsStrategyTable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f46e0d0", new Object[]{this, str, iConnStrategy, connEvent});
-        } else if (connEvent.isSuccess || TextUtils.isEmpty(str) || connEvent.isAccs || (list = this.localStrategyMap.get(str)) == null || list == Collections.EMPTY_LIST) {
+        } else if (connEvent.isSuccess || StringUtils.isEmpty(str) || connEvent.isAccs || (list = this.localStrategyMap.get(str)) == null || list == Collections.EMPTY_LIST) {
         } else {
             Iterator<IPConnStrategy> it = list.iterator();
             while (it.hasNext()) {
@@ -167,7 +167,7 @@ public class LocalDnsStrategyTable {
             return;
         }
         boolean z2 = !Utils.checkHostValidAndNotIp(str);
-        if (TextUtils.isEmpty(str) || z2) {
+        if (StringUtils.isEmpty(str) || z2) {
             ALog.e(TAG, "[Ipv6_H3] localDnsLookupByHost executeNowStartLocalDns isEmpty or checkHostValidAndNotIp", null, "host", str, "checkHostValidAndNotIp", Boolean.valueOf(z2));
         } else if (this.localStrategyMap.containsKey(str)) {
         } else {
@@ -413,7 +413,7 @@ public class LocalDnsStrategyTable {
 
     private boolean isSSL(ConnProtocol connProtocol) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("428b953b", new Object[]{this, connProtocol})).booleanValue() : connProtocol.protocol.equalsIgnoreCase("https") || connProtocol.protocol.equalsIgnoreCase(ConnType.H2S) || !TextUtils.isEmpty(connProtocol.publicKey);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("428b953b", new Object[]{this, connProtocol})).booleanValue() : connProtocol.protocol.equalsIgnoreCase("https") || connProtocol.protocol.equalsIgnoreCase(ConnType.H2S) || !StringUtils.isEmpty(connProtocol.publicKey);
     }
 
     public List<IConnStrategy> queryWithoutWait(String str) {

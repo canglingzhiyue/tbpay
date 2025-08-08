@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.util;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.TypedValue;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSValue;
@@ -29,7 +29,7 @@ public class b {
             return (jwx) ipChange.ipc$dispatch("9c8d666", new Object[]{mUSValue});
         }
         String stringValue = mUSValue.getStringValue();
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             throw new IllegalArgumentException("backgroundImage is empty string");
         }
         List<String> e = e(stringValue);
@@ -138,7 +138,7 @@ public class b {
             return (float[]) ipChange.ipc$dispatch("c6cef76f", new Object[]{str, new Float(f), new Float(f2)});
         }
         float[] fArr = {0.0f, 0.0f, 0.0f, 0.0f};
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = str.replaceAll("\\s*", "").toLowerCase(Locale.ROOT);
         }
         char c = 65535;

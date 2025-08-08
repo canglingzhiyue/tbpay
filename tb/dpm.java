@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import com.taobao.alivfssdk.cache.b;
@@ -75,7 +75,7 @@ public class dpm {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         try {
-            if (com.taobao.android.weex.inspector.b.a() || TextUtils.isEmpty(str)) {
+            if (com.taobao.android.weex.inspector.b.a() || StringUtils.isEmpty(str)) {
                 return false;
             }
             if (this.b == null) {
@@ -110,7 +110,7 @@ public class dpm {
             return (byte[]) ipChange.ipc$dispatch("792658a9", new Object[]{this, str});
         }
         try {
-            if (com.taobao.android.weex.inspector.b.a() || TextUtils.isEmpty(str)) {
+            if (com.taobao.android.weex.inspector.b.a() || StringUtils.isEmpty(str)) {
                 return null;
             }
             if (this.b == null) {
@@ -129,7 +129,7 @@ public class dpm {
             return ((Boolean) ipChange.ipc$dispatch("a35a7c7d", new Object[]{this, str, bArr})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str) || bArr == null) {
+            if (StringUtils.isEmpty(str) || bArr == null) {
                 return false;
             }
             if (this.b == null) {
@@ -148,7 +148,7 @@ public class dpm {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str) || str2 == null) {
+            if (StringUtils.isEmpty(str) || str2 == null) {
                 return false;
             }
             if (this.b == null) {
@@ -167,7 +167,7 @@ public class dpm {
             return (String) ipChange.ipc$dispatch("f4d254b", new Object[]{this, str});
         }
         try {
-            if (com.taobao.android.weex.inspector.b.a() || TextUtils.isEmpty(str)) {
+            if (com.taobao.android.weex.inspector.b.a() || StringUtils.isEmpty(str)) {
                 return null;
             }
             if (this.b == null) {

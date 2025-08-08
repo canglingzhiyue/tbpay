@@ -1,7 +1,7 @@
 package com.taobao.ask;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,7 +60,7 @@ public class AskToast extends Toast {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("23d56709", new Object[]{context, str, str2, charSequence, new Float(f), new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "1";
         }
         if (f < 0.0f) {
@@ -85,7 +85,7 @@ public class AskToast extends Toast {
                 textView.setText(ExpressionTable.getExpressionString(Globals.getApplication(), charSequence.toString(), true, (int) (textView.getLineHeight() / context.getResources().getDisplayMetrics().density)));
                 View findViewById = inflate.findViewById(R.id.iconContainer);
                 AskImageView askImageView = (AskImageView) inflate.findViewById(R.id.icon);
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     findViewById.setVisibility(8);
                 } else {
                     findViewById.setVisibility(0);
@@ -108,7 +108,7 @@ public class AskToast extends Toast {
                 TextView textView2 = (TextView) inflate2.findViewById(R.id.title);
                 textView2.setText(ExpressionTable.getExpressionString(Globals.getApplication(), charSequence.toString(), true, (int) (textView2.getLineHeight() / context.getResources().getDisplayMetrics().density)));
                 AskImageView askImageView2 = (AskImageView) inflate2.findViewById(R.id.icon);
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     askImageView2.setVisibility(8);
                 } else {
                     askImageView2.setVisibility(0);

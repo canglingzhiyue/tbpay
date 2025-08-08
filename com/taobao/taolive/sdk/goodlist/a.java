@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.goodlist;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.common.LiveItem;
@@ -49,7 +49,7 @@ public class a {
             this.g = map;
             String str = "1";
             if (liveItem.personalityData != null) {
-                z = TextUtils.equals(liveItem.personalityData.getString("subscribeStatus"), str);
+                z = StringUtils.equals(liveItem.personalityData.getString("subscribeStatus"), str);
             }
             Map<String, String> map2 = this.g;
             StringBuilder sb = new StringBuilder();

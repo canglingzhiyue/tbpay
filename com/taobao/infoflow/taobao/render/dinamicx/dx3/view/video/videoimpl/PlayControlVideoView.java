@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.render.dinamicx.dx3.view.video.videoimpl;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
@@ -367,7 +367,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(PlayControlVideoView.access$800(PlayControlVideoView.this))) {
+                } else if (StringUtils.isEmpty(PlayControlVideoView.access$800(PlayControlVideoView.this))) {
                 } else {
                     PlayControlVideoView.access$1200(PlayControlVideoView.this, 5, null, null, true);
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, PlayControlVideoView.access$800(PlayControlVideoView.this), null, null, PlayControlVideoView.access$1600(PlayControlVideoView.this));
@@ -802,7 +802,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
                 if (a2 != null) {
                     this.isPlayButPreDownload = false;
                     String mediaPlayUrl = this.mVideoView.getMediaPlayUrl();
-                    if (!TextUtils.equals(mediaPlayUrl, a2)) {
+                    if (!StringUtils.equals(mediaPlayUrl, a2)) {
                         this.mVideoView.release();
                         ldf.d(TAG, "playVideo do release, : " + this.mVideoView);
                         this.mVideoView.setVideoPath(a2);
@@ -813,7 +813,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
                         }
                     }
                     ldf.d(TAG, "playVideo  selfId:" + hashCode() + " localPath:" + a2 + " lastPath:" + mediaPlayUrl + " videoUrl:" + this.mVideoUrl);
-                    if (this.mVideoView.isPlaying() || !TextUtils.equals(a2, this.mVideoView.getMediaPlayUrl())) {
+                    if (this.mVideoView.isPlaying() || !StringUtils.equals(a2, this.mVideoView.getMediaPlayUrl())) {
                         return;
                     }
                     innerPlayVideo();
@@ -855,7 +855,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
             return ((Boolean) ipChange.ipc$dispatch("67e06a0a", new Object[]{this})).booleanValue();
         }
         boolean a2 = i.a(getContext());
-        if (this.mCanPlay && !TextUtils.isEmpty(this.mVideoUrl) && a2) {
+        if (this.mCanPlay && !StringUtils.isEmpty(this.mVideoUrl) && a2) {
             return true;
         }
         showCoverImageView();
@@ -898,7 +898,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
                 HashMap hashMap = new HashMap(2);
                 hashMap.put("cost", String.valueOf(System.currentTimeMillis() - currentTimeMillis));
                 ldk.a("video", "video_fetchCost", "", "Page_Home_VideoPlayer_Count", "", hashMap);
-                if (this.f17426a != PlayControlVideoView.access$1700(PlayControlVideoView.this) || !TextUtils.equals(PlayControlVideoView.access$1100(PlayControlVideoView.this), str)) {
+                if (this.f17426a != PlayControlVideoView.access$1700(PlayControlVideoView.this) || !StringUtils.equals(PlayControlVideoView.access$1100(PlayControlVideoView.this), str)) {
                     return;
                 }
                 ldf.d(PlayControlVideoView.TAG, "downLoadFinish playVideo  data == currentData;");
@@ -979,7 +979,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1429a872", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mScm) && (jSONObject = this.mCurrentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
+        if (StringUtils.isEmpty(this.mScm) && (jSONObject = this.mCurrentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
             this.mScm = jSONObject2.getString("scm");
         }
         return this.mScm;
@@ -991,7 +991,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("edfaa715", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mItemId) && (jSONObject = this.mCurrentData) != null) {
+        if (StringUtils.isEmpty(this.mItemId) && (jSONObject = this.mCurrentData) != null) {
             Object a2 = lja.a("item.0.clickParam.itemId", jSONObject);
             if (a2 instanceof String) {
                 this.mItemId = (String) a2;
@@ -1017,7 +1017,7 @@ public class PlayControlVideoView extends FrameLayout implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f364f581", new Object[]{this, str});
-        } else if (!ldj.a(OPEN_PRE_DOWNLOAD_VIDEO, true) || TextUtils.isEmpty(str)) {
+        } else if (!ldj.a(OPEN_PRE_DOWNLOAD_VIDEO, true) || StringUtils.isEmpty(str)) {
         } else {
             final long currentTimeMillis = System.currentTimeMillis();
             this.mPreVideoDownLoadListener = new e() { // from class: com.taobao.infoflow.taobao.render.dinamicx.dx3.view.video.videoimpl.PlayControlVideoView.9

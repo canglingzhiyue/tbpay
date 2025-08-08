@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -76,7 +76,7 @@ public class bo extends af {
             ipChange.ipc$dispatch("5d7bfe8b", new Object[]{this, new Integer(i), new Integer(i2)});
             return;
         }
-        if (TextUtils.isEmpty(getText()) && getLayoutHeight() == -2) {
+        if (StringUtils.isEmpty(getText()) && getLayoutHeight() == -2) {
             this.f12086a.measure(i, View.MeasureSpec.makeMeasureSpec(0, 1073741824));
         } else {
             this.f12086a.measure(i, i2);
@@ -170,7 +170,7 @@ public class bo extends af {
             ipChange.ipc$dispatch("ede516ab", new Object[]{this, context, view});
             return;
         }
-        if (!TextUtils.isEmpty(getFont())) {
+        if (!StringUtils.isEmpty(getFont())) {
             setNativeTextFont(this.f12086a, getFont(), getTextStyle());
         } else if (getTextStyle() != -1) {
             setNativeTextStyle(this.f12086a, getTextStyle());

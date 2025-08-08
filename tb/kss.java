@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -66,10 +66,10 @@ public class kss {
             jSONObject.put("isTracked", (Object) true);
             if (jSONObject3 != null) {
                 String string = d.getString("page");
-                if (!TextUtils.isEmpty(jSONObject3.getString("feedbackURL"))) {
+                if (!StringUtils.isEmpty(jSONObject3.getString("feedbackURL"))) {
                     onw.a(string);
                 }
-                if (TextUtils.equals(jSONObject3.getString("match_type"), "AD")) {
+                if (StringUtils.equals(jSONObject3.getString("match_type"), "AD")) {
                     onw.b(string);
                 }
             }
@@ -207,7 +207,7 @@ public class kss {
         } else if (jSONObject == null || jSONObject.getJSONObject("args") == null) {
         } else {
             String string = jSONObject.getJSONObject("args").getString("utLogMap");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             try {
@@ -216,7 +216,7 @@ public class kss {
                 ljf.a(hashMap, jSONObject.getJSONObject("ext"));
                 HashMap hashMap2 = new HashMap(hashMap);
                 String string2 = jSONObject.getJSONObject("args").getString("realExposeIndex");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     hashMap2.put("realExposeIndex", string2);
                     hashMap.put("realExposeIndex", string2);
                 }
@@ -244,7 +244,7 @@ public class kss {
                 TBS.Ext.commitEvent(b, Integer.parseInt(b2), b3, b4, b5, a(b, b6));
                 String string = b6 == null ? "" : b6.getString("ifs");
                 JSONObject jSONObject3 = jSONObject.getJSONObject("args");
-                if ((jSONObject3 != null && TextUtils.equals(jSONObject3.getString("brandAd"), "1")) || TextUtils.isEmpty(string)) {
+                if ((jSONObject3 != null && StringUtils.equals(jSONObject3.getString("brandAd"), "1")) || StringUtils.isEmpty(string)) {
                     return;
                 }
                 MunionCommitterFactory.createIfsCommitter(g.a(), CpmIfsCommitter.class).commitEvent(string);
@@ -274,7 +274,7 @@ public class kss {
             return jSONObject.getString(str);
         }
         String string = jSONObject2.getString(str);
-        return TextUtils.isEmpty(string) ? jSONObject.getString(str) : string;
+        return StringUtils.isEmpty(string) ? jSONObject.getString(str) : string;
     }
 
     private static String a(String str, JSONObject jSONObject) {
@@ -288,7 +288,7 @@ public class kss {
         StringBuilder sb = new StringBuilder(600);
         for (String str2 : jSONObject.keySet()) {
             String string = jSONObject.getString(str2);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (string.length() > 2048) {
                     TBS.Ext.commitEvent(str, 19999, "super_long_args", str2);
                 }
@@ -357,15 +357,15 @@ public class kss {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fbe19d6c", new Object[]{jSONObject, jSONObject2});
-        } else if (jSONObject2 == null || !TextUtils.equals(jSONObject2.getString("brandAd"), "1")) {
+        } else if (jSONObject2 == null || !StringUtils.equals(jSONObject2.getString("brandAd"), "1")) {
         } else {
             try {
                 String string = jSONObject2.getString("ifs");
                 String string2 = jSONObject2.getString("ifsArr");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     ldf.d("GatewayUTUtils", "commitExposureAd ifs");
                     AlimamaAdvertising.instance().buildIfsExposure(g.a(), string).withArgPid(jSONObject2.getString(MspDBHelper.BizEntry.COLUMN_NAME_PID)).withArgNamespace(jSONObject.getString("adNamespace")).commit();
-                } else if (!TextUtils.isEmpty(string2)) {
+                } else if (!StringUtils.isEmpty(string2)) {
                     ldf.d("GatewayUTUtils", "commitExposureAd ifsArr");
                     AlimamaAdvertising.instance().commitIfsArrayExposure(string2, jSONObject2.getString(MspDBHelper.BizEntry.COLUMN_NAME_PID), jSONObject.getString("adNamespace"), null);
                 } else {
@@ -389,12 +389,12 @@ public class kss {
             JSONObject a2 = a(jSONObject2, jSONObject3, "args");
             if (a2 == null) {
                 ldf.c("GatewayUTUtils", "commitClickAd args == null");
-            } else if (!TextUtils.equals(a2.getString("brandAd"), "1")) {
+            } else if (!StringUtils.equals(a2.getString("brandAd"), "1")) {
             } else {
                 String string = a2.getString("clkArr");
                 String string2 = a2.getString(MspDBHelper.BizEntry.COLUMN_NAME_PID);
                 String string3 = jSONObject.getString("adNamespace");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     ldf.d("GatewayUTUtils", "commitExposureAd clkArr");
                     AlimamaAdvertising.instance().buildTanxClickArrayTracking(string).a(string2).b(string3).a();
                     return;

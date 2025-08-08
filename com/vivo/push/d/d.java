@@ -1,7 +1,7 @@
 package com.vivo.push.d;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.restructure.request.IPushRequestCallback;
 import com.vivo.push.util.u;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ public final class d implements a {
         }
         Context b = com.vivo.push.restructure.a.a().b();
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             arrayList.add(new b(str));
         }
         com.vivo.push.restructure.request.d.a().a(new com.vivo.push.restructure.request.b(new com.vivo.push.d.a.a(new com.vivo.push.d.a.b(b.getPackageName(), arrayList, i)), new j(dVar, iPushRequestCallback, i), (byte) 0));

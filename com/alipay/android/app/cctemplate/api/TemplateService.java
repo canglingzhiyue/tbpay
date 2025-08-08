@@ -3,7 +3,7 @@ package com.alipay.android.app.cctemplate.api;
 import android.content.Context;
 import android.os.ConditionVariable;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.android.app.base.SPTaskHelper;
 import com.alipay.android.app.cctemplate.model.Template;
@@ -238,7 +238,7 @@ public class TemplateService {
             LogUtils.record(2, "TemplateService", "fb_v2:收银台：本次预渲染，已经取出了本地模板来触发更新, tplToPrerender=" + a3);
             fBFullTplInfo = FBTemplateContent.asFullTplInfo(a3);
         } else {
-            if (!TextUtils.isEmpty(str2) && str2.charAt(0) == '{') {
+            if (!StringUtils.isEmpty(str2) && str2.charAt(0) == '{') {
                 asFullTplInfo = FBFullTplInfo.fromJSONString(str2);
             } else {
                 LogUtils.record(2, "TemplateService", "fb_v2:收银台：Desc 是空的，特殊处理");
@@ -247,7 +247,7 @@ public class TemplateService {
             LogUtils.record(2, "TemplateService", "fb_v2:收银台：本次真实渲染，提交给鸟巢的 tplDesc = " + str2 + " info=" + asFullTplInfo);
             fBFullTplInfo = asFullTplInfo;
         }
-        if (!TextUtils.isEmpty(str) && fBFullTplInfo != null && !TextUtils.equals(fBFullTplInfo.getTplId(), str)) {
+        if (!StringUtils.isEmpty(str) && fBFullTplInfo != null && !StringUtils.equals(fBFullTplInfo.getTplId(), str)) {
             LogUtils.record(2, "TemplateService", "fb_v2:收银台：本次渲染发现 tplId 不同，兼容处理");
             try {
                 JSONObject jSONObject = FBFullTplInfo.toJSONObject(fBFullTplInfo);
@@ -371,7 +371,7 @@ public class TemplateService {
         }
         TemplateManager templateManager = this.b;
         LogUtils.record(2, "CdynamicTemplateEngine:birdParams", "id=" + str);
-        if (!TextUtils.isEmpty(str) && (localTemplate = getLocalTemplate(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (localTemplate = getLocalTemplate(str)) != null) {
             str3 = this.b.createBirdParamsFromTemplate(localTemplate);
         } else {
             str3 = "{\"tplVersion\":\"" + getBirdNestVersion() + "\", \"platform\":\"android\"}";

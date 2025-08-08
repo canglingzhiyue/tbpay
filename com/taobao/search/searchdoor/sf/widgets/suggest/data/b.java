@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.sf.widgets.suggest.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -90,7 +90,7 @@ public class b extends npp<com.taobao.search.searchdoor.sf.widgets.activate.data
                     e.printStackTrace();
                     str = "";
                 }
-                if (!TextUtils.isEmpty(str) && (split = str.split("::")) != null && split.length > 1) {
+                if (!StringUtils.isEmpty(str) && (split = str.split("::")) != null && split.length > 1) {
                     bVar.a(split[0]);
                     bVar.b(split[1]);
                     if (!bVar.a()) {
@@ -194,7 +194,7 @@ public class b extends npp<com.taobao.search.searchdoor.sf.widgets.activate.data
             return (Map) ipChange.ipc$dispatch("47d99ce7", new Object[]{this, jSONObject, iozVar});
         }
         String optString = jSONObject.optString("templates");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             return iub.a(com.alibaba.fastjson.JSONArray.parseArray(optString), iozVar, j.f19452a);
         }
         return null;

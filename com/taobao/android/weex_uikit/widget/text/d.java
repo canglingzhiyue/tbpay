@@ -5,7 +5,7 @@ import android.support.v4.text.TextDirectionHeuristicCompat;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -17,7 +17,7 @@ public class d {
         kge.a(1974603381);
     }
 
-    private static StaticLayout a(CharSequence charSequence, int i, int i2, TextPaint textPaint, int i3, Layout.Alignment alignment, float f, float f2, boolean z, TextUtils.TruncateAt truncateAt, int i4, int i5, TextDirectionHeuristicCompat textDirectionHeuristicCompat) {
+    private static StaticLayout a(CharSequence charSequence, int i, int i2, TextPaint textPaint, int i3, Layout.Alignment alignment, float f, float f2, boolean z, StringUtils.TruncateAt truncateAt, int i4, int i5, TextDirectionHeuristicCompat textDirectionHeuristicCompat) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             return (StaticLayout) ipChange.ipc$dispatch("4d73c8ac", new Object[]{charSequence, new Integer(i), new Integer(i2), textPaint, new Integer(i3), alignment, new Float(f), new Float(f2), new Boolean(z), truncateAt, new Integer(i4), new Integer(i5), textDirectionHeuristicCompat});
@@ -29,12 +29,12 @@ public class d {
         }
     }
 
-    private static StaticLayout a(CharSequence charSequence, int i, int i2, TextPaint textPaint, int i3, Layout.Alignment alignment, float f, float f2, boolean z, TextUtils.TruncateAt truncateAt, int i4) {
+    private static StaticLayout a(CharSequence charSequence, int i, int i2, TextPaint textPaint, int i3, Layout.Alignment alignment, float f, float f2, boolean z, StringUtils.TruncateAt truncateAt, int i4) {
         IpChange ipChange = $ipChange;
         return ipChange instanceof IpChange ? (StaticLayout) ipChange.ipc$dispatch("ade0af89", new Object[]{charSequence, new Integer(i), new Integer(i2), textPaint, new Integer(i3), alignment, new Float(f), new Float(f2), new Boolean(z), truncateAt, new Integer(i4)}) : new StaticLayout(charSequence, i, i2, textPaint, i3, alignment, f, f2, z, truncateAt, i4);
     }
 
-    public static StaticLayout a(CharSequence charSequence, int i, int i2, TextPaint textPaint, int i3, Layout.Alignment alignment, float f, float f2, boolean z, TextUtils.TruncateAt truncateAt, int i4, int i5, TextDirectionHeuristicCompat textDirectionHeuristicCompat, int i6, int i7, int i8, int[] iArr, int[] iArr2) {
+    public static StaticLayout a(CharSequence charSequence, int i, int i2, TextPaint textPaint, int i3, Layout.Alignment alignment, float f, float f2, boolean z, StringUtils.TruncateAt truncateAt, int i4, int i5, TextDirectionHeuristicCompat textDirectionHeuristicCompat, int i6, int i7, int i8, int[] iArr, int[] iArr2) {
         int lineStart;
         CharSequence charSequence2 = charSequence;
         int i9 = i5;

@@ -7,7 +7,7 @@ import android.taobao.util.a;
 import android.taobao.util.b;
 import android.taobao.util.h;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.android.virtual_thread.CarrierCachedPoolImpl;
@@ -169,7 +169,7 @@ public class TTIDChangeTrend {
             return;
         }
         String tTIDSaveFileName = getTTIDSaveFileName();
-        if (TextUtils.isEmpty(tTIDSaveFileName)) {
+        if (StringUtils.isEmpty(tTIDSaveFileName)) {
             return;
         }
         File file = new File(tTIDSaveFileName);
@@ -226,7 +226,7 @@ public class TTIDChangeTrend {
             return;
         }
         String tTIDSaveFileName = getTTIDSaveFileName();
-        if (TextUtils.isEmpty(tTIDSaveFileName)) {
+        if (StringUtils.isEmpty(tTIDSaveFileName)) {
             return;
         }
         File file = new File(tTIDSaveFileName);

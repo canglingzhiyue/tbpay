@@ -2,7 +2,7 @@ package com.xiaomi.push.service;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.xiaomi.push.iy;
 import com.xiaomi.push.jd;
@@ -29,7 +29,7 @@ public class o {
         }
         String stringExtra = intent.getStringExtra("ext_fcm_container_buffer");
         String stringExtra2 = intent.getStringExtra("mipush_app_package");
-        if (TextUtils.isEmpty(stringExtra) || TextUtils.isEmpty(stringExtra2)) {
+        if (StringUtils.isEmpty(stringExtra) || StringUtils.isEmpty(stringExtra2)) {
             return;
         }
         try {
@@ -45,14 +45,14 @@ public class o {
     }
 
     public static void a(Context context, String str, String str2) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         context.getSharedPreferences("mipush_apps_scrt", 0).edit().putString(str, str2).apply();
     }
 
     public static byte[] a(byte[] bArr, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("secret is empty, return null");
             return null;
         }
@@ -65,7 +65,7 @@ public class o {
     }
 
     public static byte[] b(byte[] bArr, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.xiaomi.channel.commonutils.logger.b.m1616a("secret is empty, return null");
             return null;
         }

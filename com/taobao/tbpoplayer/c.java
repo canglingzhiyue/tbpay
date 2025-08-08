@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer;
 
 import android.app.Activity;
 import android.app.ActivityGroup;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
@@ -94,7 +94,7 @@ public class c extends PopLayer {
             return;
         }
         super.onSwitchedNewPage(str, str2);
-        if (TextUtils.isEmpty(str) || str.equals(str2)) {
+        if (StringUtils.isEmpty(str) || str.equals(str2)) {
             return;
         }
         MtopGroupPreCheckManager.a().a(str);

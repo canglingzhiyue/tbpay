@@ -22,7 +22,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.taobao.TBActionBar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -248,7 +248,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (!TextUtils.equals(intent.getAction(), ShopRenderActivity.ACTION_DEGRADE_TO_WINDVANE)) {
+            } else if (!StringUtils.equals(intent.getAction(), ShopRenderActivity.ACTION_DEGRADE_TO_WINDVANE)) {
             } else {
                 ShopRenderActivity shopRenderActivity = ShopRenderActivity.this;
                 ShopRenderActivity.access$2000(shopRenderActivity, shopRenderActivity.getIntent());
@@ -676,10 +676,10 @@ public class ShopRenderActivity extends CustomBaseActivity {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !this.mHasCommitPageTime) {
+            if (!StringUtils.isEmpty(str) && !this.mHasCommitPageTime) {
                 this.mHasCommitPageTime = true;
                 ContainerMonitor monitor = ContainerMonitor.monitor();
-                if (TextUtils.isEmpty(str) || this.mTimeNavStart <= 0 || j <= 0 || j - this.mTimeNavStart <= 0) {
+                if (StringUtils.isEmpty(str) || this.mTimeNavStart <= 0 || j <= 0 || j - this.mTimeNavStart <= 0) {
                     return;
                 }
                 monitor.fsTime(str, j - this.mTimeNavStart);
@@ -870,7 +870,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             showCostTime("main-cost", "after navFetchData setFetchDataListener");
             processPreVisitCdnDowngrade();
             showCostTime("main-cost", "after processPreVisitCdnDowngrade async");
-            if (TextUtils.isEmpty(this.mShopNavi)) {
+            if (StringUtils.isEmpty(this.mShopNavi)) {
                 UTAnalytics.getInstance().getDefaultTracker().updatePageName(this, ShopConstants.PAGE_SHOP);
             } else if ("allitems".equals(this.mShopNavi) && "true".equals(OrangeConfig.getInstance().getConfig("shop_render", "data_prefetch_page_allitems", "true"))) {
                 try {
@@ -912,7 +912,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             }
             this.mFrameJSRenderCostStart = System.currentTimeMillis();
             this.mTracker.f("frameJSRender");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 extraOption.put("bundleUrl", this.mBundleUrl);
                 synchronized (ShopRenderActivity.class) {
                     this.mPageFragment = (WeexPageFragment) WeexPageFragment.newInstanceWithTemplate(this, WeexPageFragment.class, str, this.mBundleUrl, extraOption, (String) null, R.id.shop_render_root_layout);
@@ -1029,7 +1029,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
         Map<String, String> map = this.mQueryMap;
         if (map != null) {
             for (String str3 : map.keySet()) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     if (!config.contains("|" + str3 + "|")) {
                         sb.append("&");
                         sb.append(str3);
@@ -1041,7 +1041,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                 }
             }
         }
-        if (TextUtils.isEmpty(this.mShopNavi)) {
+        if (StringUtils.isEmpty(this.mShopNavi)) {
             sb.append("&_useless2=2&parallelEmbed=true&_inNestedEmbed=true&inWeexShop=true&weexShopTabId=0.0&weexShopTransparentBG=true");
         } else if ("allitems".equals(this.mShopNavi)) {
             sb.append("&_useless3=3&parallelEmbed=true&_inNestedEmbed=true&inWeexShop=true&weexShopTabId=0.1");
@@ -1079,7 +1079,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             }
             extraOption.put("extraOption", hashMap);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             extraOption.put("bundleUrl", sb2);
             synchronized (ShopRenderActivity.class) {
                 WeexPageFragment weexPageFragment = (WeexPageFragment) prepareFragment(this, str2, sb2, extraOption, "weex_page_shop_home", null);
@@ -1278,7 +1278,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             return (Fragment) ipChange.ipc$dispatch("5fe63eda", new Object[]{this, fragmentActivity, str, str2, hashMap, str3, serializable});
         }
         FragmentManager supportFragmentManager = fragmentActivity.getSupportFragmentManager();
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = WeexPageFragment.FRAGMENT_TAG;
         }
         if (supportFragmentManager.findFragmentByTag(str3) != null) {
@@ -1286,13 +1286,13 @@ public class ShopRenderActivity extends CustomBaseActivity {
         }
         Bundle bundle = new Bundle();
         bundle.putString(WeexPageFragment.FRAGMENT_ARG_TAG, str3);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             bundle.putString(WeexPageFragment.FRAGMENT_ARG_TEMPLATE, str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             bundle.putString(WeexPageFragment.FRAGMENT_ARG_BUNDLE_URL, str2);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             bundle.putString(WeexPageFragment.FRAGMENT_ARG_RENDER_URL, str2);
         } else {
             com.taobao.android.shop.utils.a.a("-60002", "inner bundle url empty.", this.mParamForLog, this.mBundleUrl);
@@ -1314,7 +1314,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             return;
         }
         FragmentTransaction beginTransaction = fragmentActivity.getSupportFragmentManager().beginTransaction();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = WeexPageFragment.FRAGMENT_TAG;
         }
         beginTransaction.add(i, weexPageFragment, str);
@@ -1352,7 +1352,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                 if (ipChange2 instanceof IpChange) {
                     return (WindowInsetsCompat) ipChange2.ipc$dispatch("eac8c0", new Object[]{this, view, windowInsetsCompat});
                 }
-                if (TextUtils.equals(WXEnvironment.getCustomOptions().get(ShopRenderActivity.STATUSBAR_HEIGHT), "-1")) {
+                if (StringUtils.equals(WXEnvironment.getCustomOptions().get(ShopRenderActivity.STATUSBAR_HEIGHT), "-1")) {
                     WXEnvironment.addCustomOptions(ShopRenderActivity.STATUSBAR_HEIGHT, Integer.toString(windowInsetsCompat.getSystemWindowInsetTop()));
                 }
                 return windowInsetsCompat.consumeSystemWindowInsets();
@@ -1388,7 +1388,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
         }
         this.mBundleUrl = intent.getStringExtra(riu.c);
         this.mWeexUrl = intent.getStringExtra(riu.e);
-        if (TextUtils.isEmpty(this.mBundleUrl) || TextUtils.isEmpty(this.mWeexUrl)) {
+        if (StringUtils.isEmpty(this.mBundleUrl) || StringUtils.isEmpty(this.mWeexUrl)) {
             return false;
         }
         try {
@@ -1399,7 +1399,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             }
             this.mUseLocalJS = isParamTrue("_enable_local_js", true);
             this.mUseParallelRender = isParamTrue("_parallel_render", true);
-            if (this.mUseParallelRender && TextUtils.isEmpty(this.mShopNavi)) {
+            if (this.mUseParallelRender && StringUtils.isEmpty(this.mShopNavi)) {
                 this.mUseParallelRender = "true".equals(OrangeConfig.getInstance().getConfig("shop_render", "parallelrender_page_home", "true"));
             } else if (this.mUseParallelRender && "allitems".equals(this.mShopNavi)) {
                 this.mUseParallelRender = "true".equals(OrangeConfig.getInstance().getConfig("shop_render", "parallelrender_page_allitems", "true"));
@@ -1423,10 +1423,10 @@ public class ShopRenderActivity extends CustomBaseActivity {
                 this.mTracker.e(this.mShopId);
                 this.mSellerId = getQuery("sellerId");
                 this.mShopNavi = getQuery(SHOP_NAVI);
-                if (TextUtils.isEmpty(this.mShopNavi)) {
+                if (StringUtils.isEmpty(this.mShopNavi)) {
                     this.mShopNavi = getQuery("shopNavi");
                 }
-                if (!TextUtils.isEmpty(this.mShopNavi)) {
+                if (!StringUtils.isEmpty(this.mShopNavi)) {
                     this.mShopNaviForLog = this.mShopNavi;
                 } else if (this.mBundleUrl.contains("/apps/market/shop/weex_2.html?")) {
                     this.mShopNaviForLog = "home";
@@ -1436,13 +1436,13 @@ public class ShopRenderActivity extends CustomBaseActivity {
                 this.mTracker.c(this.mShopNaviForLog);
                 this.mIsWapa = this.mBundleUrl.contains("market.wapa.taobao.com/");
                 StringBuilder sb = new StringBuilder();
-                if (!TextUtils.isEmpty(this.mShopId)) {
+                if (!StringUtils.isEmpty(this.mShopId)) {
                     sb.append("Shop:");
                     sb.append(this.mShopId);
-                } else if (!TextUtils.isEmpty(this.mShopId)) {
+                } else if (!StringUtils.isEmpty(this.mShopId)) {
                     sb.append("Seller:");
                     sb.append(this.mSellerId);
-                } else if (!TextUtils.isEmpty(this.mShopId)) {
+                } else if (!StringUtils.isEmpty(this.mShopId)) {
                     sb.append("Navi:");
                     sb.append(this.mShopNavi);
                 } else {
@@ -1454,7 +1454,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                 this.mTracker.a(this.mParamForLog);
             }
             String query = getQuery("currentClickTime");
-            if (!TextUtils.isEmpty(query)) {
+            if (!StringUtils.isEmpty(query)) {
                 try {
                     long parseLong = Long.parseLong(query);
                     this.mCurrentClickTime = parseLong;
@@ -1567,7 +1567,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
         Uri parse = Uri.parse(str);
         if (parse != null && parse.isHierarchical()) {
             for (String str2 : parse.getQueryParameterNames()) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     hashMap.put(str2, parse.getQueryParameter(str2));
                 }
             }
@@ -1667,15 +1667,15 @@ public class ShopRenderActivity extends CustomBaseActivity {
         if (Build.VERSION.SDK_INT >= 19) {
             try {
                 String queryParameter = Uri.parse(this.mWeexUrl).getQueryParameter(WX_STATUSBAR_HIDDEN);
-                if (TextUtils.equals(queryParameter, Boolean.toString(true))) {
+                if (StringUtils.equals(queryParameter, Boolean.toString(true))) {
                     return new Pair<>(true, StatusBarTextColor.Undefine);
                 }
-                if (TextUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_DARK_TEXT)) {
+                if (StringUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_DARK_TEXT)) {
                     if (Build.VERSION.SDK_INT >= 23) {
                         return new Pair<>(true, StatusBarTextColor.Dark);
                     }
                     return new Pair<>(false, StatusBarTextColor.Dark);
-                } else if (TextUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_LIGHT_TEXT)) {
+                } else if (StringUtils.equals(queryParameter, HIDDEN_STATUS_BAR_WITH_LIGHT_TEXT)) {
                     if (Build.VERSION.SDK_INT >= 23) {
                         return new Pair<>(true, StatusBarTextColor.Light);
                     }
@@ -1774,7 +1774,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             return (String) ipChange.ipc$dispatch("d39fa303", new Object[]{this, str});
         }
         try {
-            return !TextUtils.isEmpty(str) ? Uri.parse(str).buildUpon().clearQuery().build().toString() : str;
+            return !StringUtils.isEmpty(str) ? Uri.parse(str).buildUpon().clearQuery().build().toString() : str;
         } catch (Throwable unused) {
             return str;
         }
@@ -1920,7 +1920,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                         if (this.f15095a > 0) {
                             hashMap.put(pqe.STAGE_INTERACTIVE, Long.valueOf(this.c - this.f15095a));
                         }
-                        hashMap.put("page", TextUtils.isEmpty(ShopRenderActivity.access$1800(ShopRenderActivity.this)) ? "home" : ShopRenderActivity.access$1800(ShopRenderActivity.this));
+                        hashMap.put("page", StringUtils.isEmpty(ShopRenderActivity.access$1800(ShopRenderActivity.this)) ? "home" : ShopRenderActivity.access$1800(ShopRenderActivity.this));
                         if (str != null && "com.taobao.android.shop.activity.ShopRenderActivity$WeexInnerPageFragment".equals(str)) {
                             ShopRenderActivity.this.showTotalCostLog("apm_render_finish", ShopRenderActivity.this.mApmInteractiveCost, null);
                             this.e.set(true);
@@ -1928,7 +1928,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                             ShopRenderActivity.this.showTotalCostLog("apm_render_finish", ShopRenderActivity.this.mApmInteractiveCost, hashMap);
                             this.e.set(true);
                         }
-                        if (ShopRenderActivity.access$1900(ShopRenderActivity.this) == null || TextUtils.isEmpty(ShopRenderActivity.access$1900(ShopRenderActivity.this).getRenderUrl()) || ShopRenderActivity.access$1900(ShopRenderActivity.this).getWXSDKInstance() == null || !this.d.compareAndSet(false, true)) {
+                        if (ShopRenderActivity.access$1900(ShopRenderActivity.this) == null || StringUtils.isEmpty(ShopRenderActivity.access$1900(ShopRenderActivity.this).getRenderUrl()) || ShopRenderActivity.access$1900(ShopRenderActivity.this).getWXSDKInstance() == null || !this.d.compareAndSet(false, true)) {
                             return;
                         }
                         ShopRenderActivity.access$1900(ShopRenderActivity.this).getWXSDKInstance().a("native_apm", (Map<String, Object>) hashMap);
@@ -2189,7 +2189,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             if (z) {
                 ShopRenderActivity.access$1600(ShopRenderActivity.this, str, str2);
             }
-            if (!TextUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_BUNDLE_DOWNLOAD_FAILED.getErrorCode())) {
+            if (!StringUtils.equals(str, WXErrorCode.WX_DEGRAD_ERR_NETWORK_BUNDLE_DOWNLOAD_FAILED.getErrorCode())) {
                 return;
             }
             try {
@@ -2205,7 +2205,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                        } else if (ShopRenderActivity.access$2300(ShopRenderActivity.this) == null || TextUtils.isEmpty(ShopRenderActivity.access$2300(ShopRenderActivity.this).getOriginalRenderUrl()) || TextUtils.isEmpty(ShopRenderActivity.access$2300(ShopRenderActivity.this).getOriginalUrl())) {
+                        } else if (ShopRenderActivity.access$2300(ShopRenderActivity.this) == null || StringUtils.isEmpty(ShopRenderActivity.access$2300(ShopRenderActivity.this).getOriginalRenderUrl()) || StringUtils.isEmpty(ShopRenderActivity.access$2300(ShopRenderActivity.this).getOriginalUrl())) {
                         } else {
                             ShopRenderActivity.access$2300(ShopRenderActivity.this).replace(ShopRenderActivity.access$2300(ShopRenderActivity.this).getOriginalUrl(), ShopRenderActivity.access$2300(ShopRenderActivity.this).getOriginalRenderUrl());
                         }
@@ -2264,9 +2264,9 @@ public class ShopRenderActivity extends CustomBaseActivity {
             return (Map) ipChange.ipc$dispatch("605b8c4d", new Object[]{this});
         }
         HashMap hashMap = new HashMap();
-        hashMap.put("url", TextUtils.isEmpty(this.mBundleUrl) ? getIntent().getStringExtra(riu.c) : this.mBundleUrl);
-        hashMap.put("bundleUrl", TextUtils.isEmpty(this.mBundleUrl) ? getIntent().getStringExtra(riu.c) : this.mBundleUrl);
-        hashMap.put("pageName", TextUtils.isEmpty(this.mPageName) ? assemblePageName(getIntent().getStringExtra(riu.c)) : this.mPageName);
+        hashMap.put("url", StringUtils.isEmpty(this.mBundleUrl) ? getIntent().getStringExtra(riu.c) : this.mBundleUrl);
+        hashMap.put("bundleUrl", StringUtils.isEmpty(this.mBundleUrl) ? getIntent().getStringExtra(riu.c) : this.mBundleUrl);
+        hashMap.put("pageName", StringUtils.isEmpty(this.mPageName) ? assemblePageName(getIntent().getStringExtra(riu.c)) : this.mPageName);
         return hashMap;
     }
 
@@ -2303,7 +2303,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
             return (String) ipChange.ipc$dispatch("a52fe761", new Object[]{this});
         }
         String str = this.mShopId;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         Uri parse = Uri.parse(getIntent().getStringExtra(riu.c));
@@ -2434,7 +2434,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
         ArrayList arrayList = new ArrayList();
         if (list != null) {
             for (e eVar : list) {
-                if (!TextUtils.isEmpty(eVar.b)) {
+                if (!StringUtils.isEmpty(eVar.b)) {
                     arrayList.add(eVar.f15094a + eVar.b);
                 } else if (eVar.d) {
                     arrayList.add(eVar.f15094a);
@@ -2486,7 +2486,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                     Object obj = jSONObject.get(str);
                     if (obj instanceof String) {
                         String str2 = (String) obj;
-                        if (!TextUtils.isEmpty(str2) && (str2.contains(".png") || str2.contains(".jpg"))) {
+                        if (!StringUtils.isEmpty(str2) && (str2.contains(".png") || str2.contains(".jpg"))) {
                             if (str2.contains("gw.alicdn.com") || str2.contains("img.alicdn.com")) {
                                 try {
                                     Float f2 = null;
@@ -2500,7 +2500,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
                                         eVar2.f15094a = str2;
                                         eVar2.b = "_200x200q90.jpg";
                                         list.add(eVar2);
-                                    } else if (jSONObject.containsKey("height") && !TextUtils.isEmpty(jSONObject.getString("height")) && jSONObject.getFloat("height").floatValue() >= 200.0f) {
+                                    } else if (jSONObject.containsKey("height") && !StringUtils.isEmpty(jSONObject.getString("height")) && jSONObject.getFloat("height").floatValue() >= 200.0f) {
                                         e eVar3 = new e();
                                         eVar3.f15094a = str2;
                                         if (jSONObject.containsKey("width")) {
@@ -2672,7 +2672,7 @@ public class ShopRenderActivity extends CustomBaseActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e96a8d97", new Object[]{this, map, str});
         }
-        if (map != null && (map.get("data") instanceof JSONObject) && !TextUtils.isEmpty(((JSONObject) map.get("data")).getString("parallelRenderUrl"))) {
+        if (map != null && (map.get("data") instanceof JSONObject) && !StringUtils.isEmpty(((JSONObject) map.get("data")).getString("parallelRenderUrl"))) {
             return ((JSONObject) map.get("data")).getString("parallelRenderUrl");
         }
         if (map == null || !(map.get("data") instanceof JSONObject)) {

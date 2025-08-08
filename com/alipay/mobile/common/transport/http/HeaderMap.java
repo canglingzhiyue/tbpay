@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.String;
@@ -59,7 +59,7 @@ public class HeaderMap<K extends String, V> extends LinkedHashMap<K, V> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("56b01c55", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         return str.toLowerCase();

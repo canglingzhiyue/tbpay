@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.platformization.business;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -133,12 +133,12 @@ public class a extends nup {
         JSONObject c = g.c(jSONObject);
         Trade trade = (Trade) aj.a(c, Trade.class);
         String redirectUrl = trade != null ? trade.getRedirectUrl() : null;
-        boolean isEmpty = TextUtils.isEmpty(redirectUrl);
+        boolean isEmpty = StringUtils.isEmpty(redirectUrl);
         String str = BIZ_TYPE_FLIGGY;
         if (isEmpty || !com.taobao.android.detail.ttdetail.utils.b.a(l.b(redirectUrl), i)) {
             Item item = (Item) aj.a(c, Item.class);
             String businessId = item != null ? item.getBusinessId() : null;
-            if (TextUtils.isEmpty(businessId) ? !bo.a(item) : !TextUtils.equals(str, businessId)) {
+            if (StringUtils.isEmpty(businessId) ? !bo.a(item) : !StringUtils.equals(str, businessId)) {
                 str = null;
             }
         } else {
@@ -152,18 +152,18 @@ public class a extends nup {
 
     private BizContext c(JSONObject jSONObject) {
         String b = b(jSONObject);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             i.a("BizLifecycle", "not findBizIdFromServer");
             return null;
         }
         String str = this.g.get(b);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i.a("BizLifecycle", "bizId: " + b + " not registered by framework");
             return null;
         }
         try {
             BizContext bizContext = (BizContext) Class.forName(str).getConstructor(new Class[0]).newInstance(new Object[0]);
-            if (TextUtils.equals(b, bizContext.bizId())) {
+            if (StringUtils.equals(b, bizContext.bizId())) {
                 i.a("BizLifecycle", "instance BizContext success with bizId: " + b + ", classPath: " + str);
                 return bizContext;
             }

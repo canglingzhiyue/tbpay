@@ -1,6 +1,6 @@
 package com.taobao.cus;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -50,7 +50,7 @@ public class CusDataController {
         }
         if (this.f16933a == null) {
             String b = mrh.b(mrh.SP_KEY_UPDATE_MODEL, "");
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 CusContentModel cusContentModel = (CusContentModel) JSONObject.parseObject(b, CusContentModel.class);
                 if (!b(cusContentModel)) {
                     com.alibaba.poplayer.utils.c.a("UpdateDataController.getApkUpdateModel.updateContentModel.Invalid.return.null.", new Object[0]);
@@ -117,7 +117,7 @@ public class CusDataController {
         long currentTimeStamp = PopLayer.getReference().getCurrentTimeStamp(false);
         boolean z = cusContentModel.serverTimestamp + (1000 * i) < currentTimeStamp;
         com.alibaba.poplayer.utils.c.a("UpdateDataController.isUpdateContentValid.dataOutOfTime=%s.updateDataValidInterval=%s.curTime=%s.serverTimestamp=%s.", Boolean.valueOf(z), Long.valueOf(i), Long.valueOf(currentTimeStamp), Long.valueOf(cusContentModel.serverTimestamp));
-        if (z || TextUtils.isEmpty(cusContentModel.localAppVersion)) {
+        if (z || StringUtils.isEmpty(cusContentModel.localAppVersion)) {
             return false;
         }
         String versionName = Globals.getVersionName();
@@ -133,7 +133,7 @@ public class CusDataController {
         }
         if (this.c == null) {
             String b = mrh.b(mrh.SP_KEY_LAST_DOWNLOAD_CONTEXT_PRE, "");
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 this.c = (ApkDownloadContext) JSONObject.parseObject(b, ApkDownloadContext.class);
             }
         }

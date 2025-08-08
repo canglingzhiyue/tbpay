@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.HttpDnsAdapter;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.sync.b;
@@ -20,7 +20,7 @@ public class kkx implements kld {
 
     public kkx() {
         String config = OrangeConfig.getInstance().getConfig(b.GROUP, "httpdns_hosts", "appdownload.alicdn.com");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return;
         }
         List asList = Arrays.asList(config.split(","));

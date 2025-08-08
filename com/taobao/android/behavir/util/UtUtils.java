@@ -1,7 +1,7 @@
 package com.taobao.android.behavir.util;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -51,7 +51,7 @@ public class UtUtils {
         }
         if (j == 100) {
             a(str, a(), UPP_ARG_1, str2, str3, jSONObject);
-        } else if (TextUtils.isEmpty(dsj.f26943a)) {
+        } else if (StringUtils.isEmpty(dsj.f26943a)) {
         } else {
             if (f9148a == null) {
                 try {
@@ -92,7 +92,7 @@ public class UtUtils {
             return;
         }
         JSONObject jSONObject = null;
-        if (!TextUtils.isEmpty(str5) && !"null".equals(str5)) {
+        if (!StringUtils.isEmpty(str5) && !"null".equals(str5)) {
             try {
                 jSONObject = JSON.parseObject(str5);
             } catch (Throwable unused) {
@@ -146,7 +146,7 @@ public class UtUtils {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
         } else if (Build.VERSION.SDK_INT <= 28 || !com.taobao.android.behavix.behavixswitch.a.a("enableCasuallyLog", true)) {
         } else {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 str3 = "args=" + str3;
             }
             a("UCP", 19999, TLogTracker.SCENE_EXCEPTION, str, str2, str3);
@@ -164,7 +164,7 @@ public class UtUtils {
         StringBuilder sb = new StringBuilder(600);
         for (String str : jSONObject.keySet()) {
             String string = jSONObject.getString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 sb.append(str);
                 sb.append("=");
                 sb.append(string);
@@ -183,7 +183,7 @@ public class UtUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || Build.VERSION.SDK_INT < 19 || str.length() < 3000) {
+        if (StringUtils.isEmpty(str) || Build.VERSION.SDK_INT < 19 || str.length() < 3000) {
             return str;
         }
         try {

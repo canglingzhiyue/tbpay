@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -32,7 +32,7 @@ public class bcn extends bcj {
         } else if (this.f25799a.w() == null || this.f25799a.w().e()) {
         } else {
             final String b = bem.b(this.f25799a);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             final bcf bcfVar = new bcf(this.f25799a.n());

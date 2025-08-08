@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.android.aura.AURAGlobalData;
@@ -304,7 +304,7 @@ public class bag {
             arc.a().b("renderByModel:renderModel is null", arc.a.a().b("Weex2InstanceWrapper").a("AURA/core").b());
         } else {
             String a2 = aVar.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 arc.a().b("renderByModel:url isEmpty", arc.a.a().b("Weex2InstanceWrapper").a("AURA/core").b());
                 return;
             }
@@ -378,7 +378,7 @@ public class bag {
             return;
         }
         b bVar = new b(1, "Weex2", "weex2#bizError", str);
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             if (map == null) {
                 map = new HashMap<>();
             }

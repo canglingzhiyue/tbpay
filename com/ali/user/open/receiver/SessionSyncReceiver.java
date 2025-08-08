@@ -3,7 +3,7 @@ package com.ali.user.open.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes2.dex */
@@ -18,7 +18,7 @@ public class SessionSyncReceiver extends BroadcastReceiver {
         } else if (intent == null) {
         } else {
             try {
-                if (!TextUtils.equals(intent.getAction(), "aliuser_sync_session")) {
+                if (!StringUtils.equals(intent.getAction(), "aliuser_sync_session")) {
                     return;
                 }
                 intent.getStringExtra("from");

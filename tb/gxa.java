@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.s;
 import com.taobao.android.litecreator.util.u;
@@ -147,7 +147,7 @@ public abstract class gxa<IN, OUT> {
         if (ipChange instanceof IpChange) {
             return (OUT) ipChange.ipc$dispatch("9798556e", new Object[]{this, in});
         }
-        if (TextUtils.isEmpty(a())) {
+        if (StringUtils.isEmpty(a())) {
             u.d("LCMNN.MNNCVExecutor", "!!!getName() should be config first");
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();

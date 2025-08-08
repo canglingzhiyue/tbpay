@@ -1,6 +1,6 @@
 package com.tmall.android.dai.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.internal.usertrack.UserTrackDO;
 import com.tmall.android.dai.trigger.TriggerMatchResult;
@@ -47,7 +47,7 @@ public abstract class g implements e {
         public a(String str) {
             this.f23724a = str;
             this.d = str;
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 this.b = false;
                 this.c = false;
                 return;
@@ -118,12 +118,12 @@ public abstract class g implements e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
-        if (TextUtils.equals(str.toLowerCase(), "${empty}")) {
-            return TextUtils.isEmpty(str2);
+        if (StringUtils.equals(str.toLowerCase(), "${empty}")) {
+            return StringUtils.isEmpty(str2);
         }
-        return TextUtils.equals(str.toLowerCase(), "${!empty}") && !TextUtils.isEmpty(str2);
+        return StringUtils.equals(str.toLowerCase(), "${!empty}") && !StringUtils.isEmpty(str2);
     }
 }

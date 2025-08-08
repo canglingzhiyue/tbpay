@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -21,7 +21,7 @@ public class PerformanceEngine {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b4783b55", new Object[]{processEntity});
-        } else if (processEntity == null || TextUtils.isEmpty(processEntity.bizName) || com.alibaba.android.umbrella.trace.b.f()) {
+        } else if (processEntity == null || StringUtils.isEmpty(processEntity.bizName) || com.alibaba.android.umbrella.trace.b.f()) {
         } else {
             TLog.loge("PerformanceEngine", processEntity.toJsonString());
             AppMonitor.Alarm.commitSuccess("Page_Umbrella_Performance_Govern", "Monitor_Page_Load_Service", processEntity.toJsonString());

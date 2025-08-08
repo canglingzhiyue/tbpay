@@ -3,7 +3,7 @@ package com.taobao.share.picturepassword;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -174,7 +174,7 @@ public class c {
             if (cacheDir != null && cacheDir.isDirectory() && (listFiles = cacheDir.listFiles()) != null) {
                 for (File file : listFiles) {
                     String name = file.getName();
-                    if (!TextUtils.isEmpty(name) && name.split("\\.").length > 0) {
+                    if (!StringUtils.isEmpty(name) && name.split("\\.").length > 0) {
                         String str = name.split("\\.")[0];
                         if (str.length() == 13) {
                             try {
@@ -251,7 +251,7 @@ public class c {
                     return;
                 }
                 String optString = mtopResponse.getDataJsonObject().optString("shortUrl");
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     TLog.loge("TBShare#ShareCopyAlbumChecker", "err: get short url success --> 1");
                     c.a.this.a();
                     return;
@@ -279,11 +279,11 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f0b29db9", new Object[]{str, context})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String b2 = com.taobao.share.picturepassword.a.a(context).b("latest_pic_add_date", null);
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return true;
         }
         try {
@@ -299,7 +299,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return (System.currentTimeMillis() / 1000) - Long.valueOf(Long.parseLong(str)).longValue() < Long.valueOf((Long.parseLong(nyg.a("checkPicOutTime", AgooConstants.REPORT_NOT_ENCRYPT)) * 60) * 60).longValue();
@@ -311,7 +311,7 @@ public class c {
             ipChange.ipc$dispatch("9e1d6460", new Object[]{context});
             return;
         }
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             com.taobao.share.picturepassword.a.a(context).a("latest_pic_add_date", b);
         }
         b = null;

@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.assist;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
@@ -134,9 +134,9 @@ public class MspLogImpl implements ILogEngine {
                                 sb.append(string);
                             }
                         }
-                        if (TextUtils.equals("SHOW", str3)) {
+                        if (StringUtils.equals("SHOW", str3)) {
                             SpmWrapper.onPageExposure(mspWindowFrame2, str4, "", "", createSpmSessionId, sb.toString(), i);
-                        } else if (TextUtils.equals("CLICK", str3)) {
+                        } else if (StringUtils.equals("CLICK", str3)) {
                             SpmWrapper.onPageClick(mspWindowFrame2, str4, "", createSpmSessionId, sb.toString(), i);
                         }
                     } catch (Throwable th) {
@@ -149,7 +149,7 @@ public class MspLogImpl implements ILogEngine {
 
     private String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : TextUtils.equals("SHOW", str) ? "AdShow" : TextUtils.equals("CLICK", str) ? "AdClick" : TextUtils.equals(Constrant.ChangeStatus.CLOSE, str) ? "AdClose" : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str}) : StringUtils.equals("SHOW", str) ? "AdShow" : StringUtils.equals("CLICK", str) ? "AdClick" : StringUtils.equals(Constrant.ChangeStatus.CLOSE, str) ? "AdClose" : str;
     }
 
     @Override // com.alipay.android.msp.plugin.engine.ILogEngine

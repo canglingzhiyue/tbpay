@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.l;
@@ -66,7 +66,7 @@ public class ovr {
 
     public static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : !TextUtils.equals("home", str) ? str : g();
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : !StringUtils.equals("home", str) ? str : g();
     }
 
     public static String a(String str, JSONObject jSONObject) {
@@ -74,7 +74,7 @@ public class ovr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9e721362", new Object[]{str, jSONObject});
         }
-        if (TextUtils.equals("home", str) && jSONObject != null) {
+        if (StringUtils.equals("home", str) && jSONObject != null) {
             return g();
         }
         ldf.d("MicroservicesRecommendTabAdapter", "getTransformSubTabType subTabType : " + str);

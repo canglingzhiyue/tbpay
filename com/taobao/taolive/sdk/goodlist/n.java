@@ -2,7 +2,7 @@ package com.taobao.taolive.sdk.goodlist;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,15 +81,15 @@ public class n {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("642db4f9", new Object[]{context, str, str2, list, str3, str4});
         } else if (d(str4)) {
-            if (!TextUtils.isEmpty(str) && g().contains(str)) {
+            if (!StringUtils.isEmpty(str) && g().contains(str)) {
                 return;
             }
-            if ((!TextUtils.isEmpty(str2) && e().contains(str2)) || !c(str3) || list == null || list.isEmpty()) {
+            if ((!StringUtils.isEmpty(str2) && e().contains(str2)) || !c(str3) || list == null || list.isEmpty()) {
                 return;
             }
             JSONArray jSONArray = new JSONArray();
             for (String str5 : list) {
-                if (!TextUtils.isEmpty(str5) && !f().contains(str5)) {
+                if (!StringUtils.isEmpty(str5) && !f().contains(str5)) {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("itemId", (Object) str5);
                     jSONArray.add(jSONObject);
@@ -120,10 +120,10 @@ public class n {
             if (d.a() && "secKill".equals(liveItem.extendVal.itemBizType)) {
                 str = jSONObject.getString("itemJumpUrl2");
             }
-            return TextUtils.isEmpty(str) ? jSONObject.getString("itemJumpUrl") : str;
+            return StringUtils.isEmpty(str) ? jSONObject.getString("itemJumpUrl") : str;
         }
         String str2 = liveItem.itemUrl;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "http://a.m.taobao.com/i" + liveItem.itemId + ".htm";
         }
         if (str2.startsWith(ado.URL_SEPARATOR)) {
@@ -141,7 +141,7 @@ public class n {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (f21832a.size() >= 30) {
                 f21832a.pop();
@@ -155,7 +155,7 @@ public class n {
 
     public static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && f21832a.contains(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && f21832a.contains(str);
     }
 
     public static boolean c(String str) {
@@ -163,7 +163,7 @@ public class n {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a(str, b());
         }
         return false;
@@ -174,7 +174,7 @@ public class n {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a(str, c());
         }
         return false;
@@ -185,7 +185,7 @@ public class n {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             return false;
         }
         for (String str3 : str2.split(",")) {

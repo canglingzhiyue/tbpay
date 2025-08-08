@@ -5,7 +5,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -206,7 +206,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (htx) ipChange.ipc$dispatch("af7ee1", new Object[]{this, context, str, new Integer(i)});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.e = str;
         }
         this.m = i;
@@ -241,7 +241,7 @@ public class e {
         if (q != null) {
             this.d.e(q.a());
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             this.d.d(this.e);
         }
         htx htxVar = this.d;

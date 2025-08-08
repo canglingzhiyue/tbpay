@@ -3,7 +3,7 @@ package com.loc;
 import android.content.Context;
 import android.location.Location;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -91,7 +91,7 @@ public final class fd {
             }
         }
         String sb2 = sb.toString();
-        if (!TextUtils.isEmpty(sb2)) {
+        if (!StringUtils.isEmpty(sb2)) {
             fy.a(this.b, sb2);
         }
     }

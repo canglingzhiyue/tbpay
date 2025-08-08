@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.taobao.adapter.extension.linkage.service.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.linkage.UMFLinkageTrigger;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.android.umf.datamodel.protocol.ultron.UltronProtocol;
@@ -60,13 +60,13 @@ public class LinkageUtils {
             if (bst.a(stateTree, triggerComponentKey) != null) {
                 a2.putAll(a((TreeNode<RenderComponent>) stateTree, true, true));
             }
-            if (!TextUtils.isEmpty(triggerComponentKey)) {
+            if (!StringUtils.isEmpty(triggerComponentKey)) {
                 jSONObject.put("operator", (Object) triggerComponentKey);
             }
-            if (!TextUtils.isEmpty(eventKey)) {
+            if (!StringUtils.isEmpty(eventKey)) {
                 jSONObject.put("operatorEvent", (Object) eventKey);
             }
-            if (!TextUtils.isEmpty(action)) {
+            if (!StringUtils.isEmpty(action)) {
                 jSONObject.put("operatorAction", (Object) action);
             }
         }
@@ -88,7 +88,7 @@ public class LinkageUtils {
             if (data != null && (component = data.getComponent()) != null) {
                 Component m149clone = component.m149clone();
                 Object features = m149clone.getFeatures();
-                if ((features instanceof JSONObject) && (jSONObject = ((JSONObject) features).getJSONObject("linkage")) != null && jSONObject.getBooleanValue(str) && !TextUtils.isEmpty(data.getKey())) {
+                if ((features instanceof JSONObject) && (jSONObject = ((JSONObject) features).getJSONObject("linkage")) != null && jSONObject.getBooleanValue(str) && !StringUtils.isEmpty(data.getKey())) {
                     jSONObject2.put(data.getKey(), (Object) m149clone);
                 }
             }
@@ -118,7 +118,7 @@ public class LinkageUtils {
             return;
         }
         String string = jSONObject.getString(z ? "adjustPolicy" : "submitPolicy");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         char c = 65535;
@@ -155,7 +155,7 @@ public class LinkageUtils {
         for (TreeNode<RenderComponent> treeNode2 : treeNode.preOrdered()) {
             if (treeNode2 != null && (data = treeNode2.data()) != null && (component = data.getComponent()) != null) {
                 String key = data.getKey();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     if (z2) {
                         Object features = component.getFeatures();
                         if ((features instanceof JSONObject) && (jSONObject = ((JSONObject) features).getJSONObject("linkage")) != null && jSONObject.getString("ref") != null) {

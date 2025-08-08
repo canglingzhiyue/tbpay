@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.monitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.mobilesdk.socketcraft.monitor.MonitorItemConstants;
 import com.alipay.mobile.common.amnet.biz.AmnetTunnelManager;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
@@ -36,16 +36,16 @@ public class MonitorLoggerUtils {
             return (String) ipChange.ipc$dispatch("8efc4650", new Object[]{str});
         }
         try {
-            if (TextUtils.equals(str, NetworkServiceTracer.REPORT_SUB_NAME_RPC)) {
+            if (StringUtils.equals(str, NetworkServiceTracer.REPORT_SUB_NAME_RPC)) {
                 return NetworkServiceTracer.REPORT_SUB_NAME_RPC;
             }
-            if (!TextUtils.equals(str, "MMTP") && !TextUtils.equals(str, "TCP_STACK")) {
-                if (!TextUtils.equals(str, "MASS") && !TextUtils.equals(str, NetworkServiceTracer.REPORT_SUB_NAME_DJG) && !TextUtils.equals(str, NetworkServiceTracer.REPORT_SUB_NAME_RSRC)) {
-                    if (TextUtils.equals(str, "H5")) {
+            if (!StringUtils.equals(str, "MMTP") && !StringUtils.equals(str, "TCP_STACK")) {
+                if (!StringUtils.equals(str, "MASS") && !StringUtils.equals(str, NetworkServiceTracer.REPORT_SUB_NAME_DJG) && !StringUtils.equals(str, NetworkServiceTracer.REPORT_SUB_NAME_RSRC)) {
+                    if (StringUtils.equals(str, "H5")) {
                         return MonitorItemConstants.PARTITION_NAME;
                     }
-                    if (!TextUtils.equals(str, "HTTPDNS") && !TextUtils.equals(str, "SignalState") && !TextUtils.equals(str, "NetDiago") && !TextUtils.equals(str, AmnetTunnelManager.LOG_SUBTYPE) && !TextUtils.equals(str, "NETQOS") && !TextUtils.equals(str, "NetChange")) {
-                        return TextUtils.equals(str, "LOG") ? "mdaplog" : "network";
+                    if (!StringUtils.equals(str, "HTTPDNS") && !StringUtils.equals(str, "SignalState") && !StringUtils.equals(str, "NetDiago") && !StringUtils.equals(str, AmnetTunnelManager.LOG_SUBTYPE) && !StringUtils.equals(str, "NETQOS") && !StringUtils.equals(str, "NetChange")) {
+                        return StringUtils.equals(str, "LOG") ? "mdaplog" : "network";
                     }
                     return "MISC";
                 }
@@ -95,7 +95,7 @@ public class MonitorLoggerUtils {
         } else if (transportContext == null) {
             a(monitorLoggerModel);
         } else {
-            if (transportContext != null && !TextUtils.isEmpty(transportContext.loggerLevel)) {
+            if (transportContext != null && !StringUtils.isEmpty(transportContext.loggerLevel)) {
                 try {
                     monitorLoggerModel.setLoggerLevel(Integer.parseInt(transportContext.loggerLevel));
                     LogCatUtil.info("MonitorLoggerUtils", "[setLogLevel] loggerLevel = " + transportContext.loggerLevel);
@@ -115,11 +115,11 @@ public class MonitorLoggerUtils {
             return;
         }
         String param2 = monitorLoggerModel.getParam2();
-        if (TextUtils.equals(param2, "DEBUG")) {
+        if (StringUtils.equals(param2, "DEBUG")) {
             monitorLoggerModel.setLoggerLevel(3);
-        } else if (TextUtils.equals(param2, "INFO")) {
+        } else if (StringUtils.equals(param2, "INFO")) {
             monitorLoggerModel.setLoggerLevel(2);
-        } else if (!TextUtils.equals(param2, "FATAL")) {
+        } else if (!StringUtils.equals(param2, "FATAL")) {
         } else {
             monitorLoggerModel.setLoggerLevel(1);
         }
@@ -187,11 +187,11 @@ public class MonitorLoggerUtils {
         try {
             String str = monitorLoggerModel.getExtPramas().get(LIB_VERSION);
             if (TransportStrategy.isEnableBifrost()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return;
                 }
                 monitorLoggerModel.getExtPramas().put(LIB_VERSION, LIB_VERSION_OLD);
-            } else if (TextUtils.isEmpty(str) || !TextUtils.equals(str, LIB_VERSION_OLD)) {
+            } else if (StringUtils.isEmpty(str) || !StringUtils.equals(str, LIB_VERSION_OLD)) {
             } else {
                 monitorLoggerModel.getExtPramas().remove(LIB_VERSION);
             }
@@ -208,16 +208,16 @@ public class MonitorLoggerUtils {
         }
         try {
             String str = monitorLoggerModel.getExtPramas().get(LIB_VERSION);
-            if (TextUtils.isEmpty(str) || !TransportStrategy.isDisableBifrostRpcDowngrade()) {
+            if (StringUtils.isEmpty(str) || !TransportStrategy.isDisableBifrostRpcDowngrade()) {
                 return;
             }
-            if (TextUtils.equals(LIB_VERSION_OLD, str)) {
+            if (StringUtils.equals(LIB_VERSION_OLD, str)) {
                 monitorLoggerModel.getExtPramas().remove(LIB_VERSION);
                 monitorLoggerModel.getExtPramas().put(LIB_VERSION, LIB_VERSION_OLD_BDRD);
-            } else if (TextUtils.equals(LIB_VERSION_BIFROST, str)) {
+            } else if (StringUtils.equals(LIB_VERSION_BIFROST, str)) {
                 monitorLoggerModel.getExtPramas().remove(LIB_VERSION);
                 monitorLoggerModel.getExtPramas().put(LIB_VERSION, LIB_VERSION_BIFROST_BDRD);
-            } else if (!TextUtils.equals(LIB_VERSION_BIFROST_HTTP2, str)) {
+            } else if (!StringUtils.equals(LIB_VERSION_BIFROST_HTTP2, str)) {
             } else {
                 monitorLoggerModel.getExtPramas().remove(LIB_VERSION);
                 monitorLoggerModel.getExtPramas().put(LIB_VERSION, LIB_VERSION_BIFROST_HTTP2_BDRD);
@@ -229,7 +229,7 @@ public class MonitorLoggerUtils {
 
     private static boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.UPLOAD_ATONCE), "T");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.UPLOAD_ATONCE), "T");
     }
 
     private static int b() {

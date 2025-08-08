@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.print.PrintDocumentAdapter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -69,7 +69,7 @@ public class WebViewAndroid extends WebView implements IWebView {
     public static WebViewAndroid create(Context context, AttributeSet attributeSet, com.uc.webview.export.WebView webView) {
         if (!sFirstCreate) {
             String d = EnvInfo.d();
-            if (Build.VERSION.SDK_INT >= 28 && !TextUtils.isEmpty(d)) {
+            if (Build.VERSION.SDK_INT >= 28 && !StringUtils.isEmpty(d)) {
                 com.uc.webview.base.g.a("android.webkit.WebView", "setDataDirectorySuffix", new Class[]{String.class}, new Object[]{d});
             }
             sFirstCreate = true;

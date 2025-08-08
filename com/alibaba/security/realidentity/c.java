@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.UUID;
@@ -14,7 +14,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (byte[]) ipChange.ipc$dispatch("81233aeb", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return Base64.decode(str, 2);
         }
         return null;

@@ -1,6 +1,6 @@
 package com.taobao.android.weex_uikit.ui;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.internal.BindingXConstants;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.common.MUSConstants;
@@ -174,7 +174,7 @@ public class k {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("34ec9ab9", new Object[]{str, new Float(f)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int length = str.length();
@@ -228,7 +228,7 @@ public class k {
             z = true;
         }
         LinkedList linkedList2 = linkedList.isEmpty() ? null : linkedList;
-        if (linkedList2 != null || TextUtils.isEmpty(str.trim())) {
+        if (linkedList2 != null || StringUtils.isEmpty(str.trim())) {
             return linkedList2;
         }
         throw new IllegalArgumentException("Invalid Transform format: " + str);

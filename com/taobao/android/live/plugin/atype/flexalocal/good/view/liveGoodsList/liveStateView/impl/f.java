@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -303,7 +303,7 @@ public abstract class f<T extends h> extends com.taobao.android.live.plugin.atyp
         if (a2.size() > 0) {
             for (int i = 0; i < a2.size(); i++) {
                 com.taobao.taolive.sdk.goodlist.a a3 = ((h) this.f13751a).getAdapter().a(i);
-                if (a3 != null && TextUtils.equals(a3.e, str)) {
+                if (a3 != null && StringUtils.equals(a3.e, str)) {
                     a2.remove(i);
                     if (((h) this.f13751a).getRecyclerView().getAdapter() != null) {
                         ((h) this.f13751a).getRecyclerView().getAdapter().notifyDataSetChanged();

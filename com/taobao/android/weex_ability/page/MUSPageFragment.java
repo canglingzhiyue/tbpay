@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,7 +102,7 @@ public class MUSPageFragment extends Fragment implements com.taobao.android.weex
             return (String) ipChange.ipc$dispatch("89ca9934", new Object[]{str});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Uri.parse(str).getPath();
             }
             return null;
@@ -262,7 +262,7 @@ public class MUSPageFragment extends Fragment implements com.taobao.android.weex
             return;
         }
         String string = arguments.getString("wlmUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         String string2 = arguments.getString("bundleUrl");
@@ -272,9 +272,9 @@ public class MUSPageFragment extends Fragment implements com.taobao.android.weex
         } catch (Throwable unused) {
             str = null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             Uri parse = Uri.parse(str);
-            string = (!parse.isHierarchical() || TextUtils.isEmpty(parse.getQueryParameter("_mus_tpl"))) ? str : parse.getQueryParameter("_mus_tpl");
+            string = (!parse.isHierarchical() || StringUtils.isEmpty(parse.getQueryParameter("_mus_tpl"))) ? str : parse.getQueryParameter("_mus_tpl");
         } else {
             str = string2;
         }
@@ -321,11 +321,11 @@ public class MUSPageFragment extends Fragment implements com.taobao.android.weex
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b921d638", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !"true".equals(l.a().s().a("weex_v2_config", "enable", "false"))) {
+        if (StringUtils.isEmpty(str) || !"true".equals(l.a().s().a("weex_v2_config", "enable", "false"))) {
             return null;
         }
         String a2 = l.a().s().a("weex_v2_config", "url_map", "");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             Uri parse = Uri.parse(str);
             Uri.Builder clearQuery = parse.buildUpon().clearQuery();
             String uri = clearQuery.build().toString();

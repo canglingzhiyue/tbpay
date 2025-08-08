@@ -1,7 +1,7 @@
 package com.taobao.share.taopassword.genpassword.mtop;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.taopassword.busniess.model.e;
@@ -123,9 +123,9 @@ public class ITaoPasswordGenerateRequest implements IRemoteBaseListener, nzw {
             eVar.b = mtopTaobaoWirelessSharePasswordGetpasswordshareinfoResponseData.getContent();
             eVar.d = mtopTaobaoWirelessSharePasswordGetpasswordshareinfoResponseData.getUrl();
             String str = "request success 1: resultContent.passwordKey=" + eVar.c + " resultContent.passwordText=" + eVar.b + "  passwordUrl=" + eVar.d;
-            if (this.inputContent.h != null && !TextUtils.isEmpty(this.inputContent.h.f19663a)) {
+            if (this.inputContent.h != null && !StringUtils.isEmpty(this.inputContent.h.f19663a)) {
                 String str2 = this.inputContent.h.b;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     eVar.b = str2.replace(this.inputContent.h.f19663a, eVar.c);
                 }
             }

@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.groupcharge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
 import com.taobao.taobao.R;
@@ -49,7 +49,7 @@ public class a {
         if (this.b.size() == 1) {
             IDMComponent next = this.b.iterator().next();
             String str = (String) bei.a(next, (Class<Object>) String.class, "shopName");
-            return TextUtils.isEmpty(str) ? (String) bei.a(next, (Class<Object>) String.class, "title") : str;
+            return StringUtils.isEmpty(str) ? (String) bei.a(next, (Class<Object>) String.class, "title") : str;
         }
         c cVar = this.f2357a;
         return cVar == null ? "" : cVar.a();
@@ -106,7 +106,7 @@ public class a {
             return "￥";
         }
         String str = (String) bei.a(this.f.get(0), (Class<Object>) String.class, "pay", "currencySymbol");
-        return TextUtils.isEmpty(str) ? "￥" : str;
+        return StringUtils.isEmpty(str) ? "￥" : str;
     }
 
     private int h() {

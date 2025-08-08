@@ -3,7 +3,7 @@ package com.etao.feimagesearch.util;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import tb.kge;
@@ -26,14 +26,14 @@ public class ab {
             return (AlertDialog) ipChange.ipc$dispatch("8d387049", new Object[]{activity, str, str2, str3, onClickListener, str4, onClickListener2});
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             builder.setTitle(str);
         }
         builder.setMessage(str2);
-        if (!TextUtils.isEmpty(str3) && onClickListener != null) {
+        if (!StringUtils.isEmpty(str3) && onClickListener != null) {
             builder.setPositiveButton(str3, onClickListener);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             builder.setNegativeButton(str4, onClickListener2);
         }
         builder.setCancelable(false);

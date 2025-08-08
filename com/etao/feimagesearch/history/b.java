@@ -3,7 +3,7 @@ package com.etao.feimagesearch.history;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.model.IrpParamModel;
 import com.etao.feimagesearch.model.PhotoFrom;
@@ -91,7 +91,7 @@ public class b {
             }
             cou.a(activity, Uri.parse("https://m.taobao.com/video_imagesearch").buildUpon().appendQueryParameter("videoUrl", URLEncoder.encode(auctionItemVO.fileUrl)).build().toString());
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "unknown";
         }
         if (photoFrom == null) {

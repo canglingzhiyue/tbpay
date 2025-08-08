@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.huawei.hms.framework.common.ExecutorsUtils;
 import com.huawei.hms.framework.common.Logger;
@@ -71,7 +71,7 @@ public class c {
             Logger.v(str, "scan serviceSet is: " + c);
             String a2 = c.this.f.a(ServiceNode.TAG, "");
             String a3 = i.a(a2, c);
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 c.this.f.b(ServiceNode.TAG, a3);
                 String str2 = c.i;
                 Logger.i(str2, "postList is:" + StringUtils.anonymizeMessage(a3));
@@ -125,7 +125,7 @@ public class c {
             if (str.endsWith("time")) {
                 String a2 = this.e.a(str, "");
                 long j2 = 0;
-                if (!TextUtils.isEmpty(a2) && a2.matches("\\d+")) {
+                if (!StringUtils.isEmpty(a2) && a2.matches("\\d+")) {
                     try {
                         j2 = Long.parseLong(a2);
                     } catch (NumberFormatException e) {

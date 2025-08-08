@@ -1,6 +1,6 @@
 package com.alibaba.android.icart.core.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class ak extends bca {
         boolean booleanValue = jSONObject.getBooleanValue("isNeedWua");
         boolean booleanValue2 = jSONObject.getBooleanValue("usePost");
         String string3 = jSONObject.getString("unitStrategy");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             return;
         }
         MtopRequest mtopRequest = new MtopRequest();

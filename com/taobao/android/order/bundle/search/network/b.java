@@ -1,6 +1,6 @@
 package com.taobao.android.order.bundle.search.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (MtopRequest) ipChange.ipc$dispatch("6be5c6b4", new Object[]{str, str2, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             hyn.a(f14569a, "getMtopRequest empty", "apiName is null");
             return null;
         }

@@ -1,6 +1,6 @@
 package com.alibaba.ariver.engine.api.bridge.extension;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.sp.framework.model.SimpleProfile;
@@ -118,7 +118,7 @@ public class BridgeResponse {
             jSONObject.put("error", (Object) Integer.valueOf(this.errorCode));
             jSONObject.put("message", (Object) this.errorMessage);
             jSONObject.put("errorMessage", (Object) this.errorMessage);
-            if (!TextUtils.isEmpty(this.signature)) {
+            if (!StringUtils.isEmpty(this.signature)) {
                 jSONObject.put(SimpleProfile.KEY_SIGNATURE, (Object) this.signature);
             }
             return jSONObject;

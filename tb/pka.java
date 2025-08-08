@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class pka implements pjp {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || (aVar = this.f32710a) == null || aVar.getRecModel() == null || TextUtils.isEmpty(this.f32710a.getRecModel().accountId) || !str.equals(this.f32710a.getRecModel().accountId)) {
+        } else if (StringUtils.isEmpty(str) || (aVar = this.f32710a) == null || aVar.getRecModel() == null || StringUtils.isEmpty(this.f32710a.getRecModel().accountId) || !str.equals(this.f32710a.getRecModel().accountId)) {
         } else {
             final pmt pmtVar = new pmt();
             pmtVar.f32764a = this.f32710a.getRecModel().accountId;
@@ -103,7 +103,7 @@ public class pka implements pjp {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3509d07", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || (aVar = this.f32710a) == null || aVar.getRecModel() == null || TextUtils.isEmpty(this.f32710a.getRecModel().accountId) || !str.equals(this.f32710a.getRecModel().accountId)) {
+        } else if (StringUtils.isEmpty(str) || (aVar = this.f32710a) == null || aVar.getRecModel() == null || StringUtils.isEmpty(this.f32710a.getRecModel().accountId) || !str.equals(this.f32710a.getRecModel().accountId)) {
         } else {
             final pmt pmtVar = new pmt();
             pmtVar.f32764a = this.f32710a.getRecModel().accountId;

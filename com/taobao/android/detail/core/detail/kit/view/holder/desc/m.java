@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 import android.app.Activity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -89,10 +89,10 @@ public class m extends b<QualityViewModel> {
             ipChange.ipc$dispatch("3c139dcb", new Object[]{this, qualityViewModel});
             return;
         }
-        if (!TextUtils.isEmpty(qualityViewModel.c)) {
+        if (!StringUtils.isEmpty(qualityViewModel.c)) {
             this.n.setText(qualityViewModel.c);
         }
-        if (!TextUtils.isEmpty(qualityViewModel.d)) {
+        if (!StringUtils.isEmpty(qualityViewModel.d)) {
             this.n.setTextColor(com.taobao.android.detail.core.utils.c.a(qualityViewModel.d));
         }
         List<String> list = qualityViewModel.f9742a;

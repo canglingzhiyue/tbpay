@@ -1,7 +1,7 @@
 package com.ali.user.open.oauth.alipay3;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.Site;
@@ -121,7 +121,7 @@ public class AlipayRpcPresenter {
             jSONObject2.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, signRequest.pid);
             jSONObject2.put("app_id", signRequest.app_id);
             jSONObject2.put("sign_type", signRequest.sign_type);
-            jSONObject2.put(Constants.Name.SCOPE, TextUtils.isEmpty(signRequest.scope) ? "auth_user" : signRequest.scope);
+            jSONObject2.put(Constants.Name.SCOPE, StringUtils.isEmpty(signRequest.scope) ? "auth_user" : signRequest.scope);
             jSONObject2.put("apiVersion", "2.0");
             try {
                 jSONObject2.put("deviceName", Build.MODEL);

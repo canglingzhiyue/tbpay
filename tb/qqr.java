@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.network.diagnosis.model.NetworkAbility;
@@ -72,7 +72,7 @@ public final class qqr extends d.a {
         boolean z = false;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.isEmpty(b().h())) {
+        } else if (StringUtils.isEmpty(b().h())) {
         } else {
             Uri build = o.b(n.e()).buildUpon().appendQueryParameter("appId", b().h()).appendQueryParameter("newContainer", String.valueOf(m.b(o.b(b().q().getStartUrl())))).appendQueryParameter("isThemis", "true").appendQueryParameter("frameTempType", "pubArea").appendQueryParameter("developerVersion", k.d(b())).build();
             if (b().j() == TMSSolutionType.MINIGAME) {

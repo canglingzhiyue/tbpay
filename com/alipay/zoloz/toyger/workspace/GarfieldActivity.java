@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alipay.mobile.security.bio.common.record.MetaRecord;
@@ -184,7 +184,7 @@ public class GarfieldActivity extends BioFragmentContainer implements ToygerCall
                     if (GarfieldActivity.this.mFaceRemoteConfig != null && GarfieldActivity.this.mFaceRemoteConfig.getUpload() != null) {
                         str = GarfieldActivity.this.mFaceRemoteConfig.getUpload().getString("log_classifier");
                     }
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = MetaRecord.DEFAULT_LOG_CLASSIFIERS;
                     }
                     zimRecordService.setLogClassifier(new HashSet(Arrays.asList(str.split("#"))));
@@ -501,7 +501,7 @@ public class GarfieldActivity extends BioFragmentContainer implements ToygerCall
             hashMap.put("uiVersion", this.mFaceRemoteConfig.getUi() + "");
             hashMap.put(Constants.VI_ENGINE_VERIFYID, this.e.getExtProperty().get("verifyid"));
             String staticApDidToken = ApSecurityService.getStaticApDidToken();
-            if (TextUtils.isEmpty(staticApDidToken) && (apSecurityService = (ApSecurityService) BioServiceManager.getCurrentInstance().getBioService(ApSecurityService.class)) != null) {
+            if (StringUtils.isEmpty(staticApDidToken) && (apSecurityService = (ApSecurityService) BioServiceManager.getCurrentInstance().getBioService(ApSecurityService.class)) != null) {
                 staticApDidToken = apSecurityService.getApDidToken();
             }
             hashMap.put("APDIDTOKEN", staticApDidToken);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.p1;
 import com.alibaba.triver.triver_shop.newShop.ext.m;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -222,7 +222,7 @@ public final class ozu implements e, c, pmg, pmj, pno, pom {
         HashMap set = new HashMap();
         for (String str3 : strings) {
             String str4 = str3;
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 if (str3 == null || (split = new Regex("=").split(str4, 0)) == null) {
                     strArr = null;
                 } else {

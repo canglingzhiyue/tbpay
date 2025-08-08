@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.cip.capture.components.AlbumMediaItem;
 import com.huawei.hms.adapter.internal.CommonCode;
@@ -136,7 +136,7 @@ public final class t {
             return false;
         }
         String h = oVar.h();
-        if (!TextUtils.isEmpty(h)) {
+        if (!StringUtils.isEmpty(h)) {
             return new File(h).exists();
         }
         return false;
@@ -187,7 +187,7 @@ public final class t {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (str != null && !TextUtils.isEmpty(str)) {
+        if (str != null && !StringUtils.isEmpty(str)) {
             Locale locale = Locale.getDefault();
             kotlin.jvm.internal.q.a((Object) locale, "Locale.getDefault()");
             String lowerCase = str.toLowerCase(locale);
@@ -214,7 +214,7 @@ public final class t {
         } catch (Exception unused) {
             str = null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str == null) {
                 kotlin.jvm.internal.q.a();
             }
@@ -255,7 +255,7 @@ public final class t {
         } catch (Exception unused) {
             str = null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str == null) {
                 kotlin.jvm.internal.q.a();
             }
@@ -290,7 +290,7 @@ public final class t {
         } catch (Exception unused) {
             str = null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str == null) {
                 kotlin.jvm.internal.q.a();
             }

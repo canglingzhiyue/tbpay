@@ -1,7 +1,7 @@
 package tb;
 
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -61,12 +61,12 @@ public class hgg extends hfy {
                 this.f28613a.append(" ");
             }
         }
-        String str2 = (chatMessage.renders != null && TextUtils.equals(chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE), "rewardAutoComment")) ? chatMessage.mUserNick + " " : chatMessage.mUserNick + ResponseProtocolType.COMMENT;
+        String str2 = (chatMessage.renders != null && StringUtils.equals(chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE), "rewardAutoComment")) ? chatMessage.mUserNick + " " : chatMessage.mUserNick + ResponseProtocolType.COMMENT;
         SpannableString spannableString2 = new SpannableString(str2);
         chatMessage.mNickColor = R.color.taolive_room_chat_color6;
         spannableString2.setSpan(new ForegroundColorSpan(cgl.g().a().getResources().getColor(chatMessage.mNickColor)), 0, str2.length(), 33);
         this.f28613a.append(spannableString2);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str = str + str2;
         }
         if (chatMessage.mSpannableContent != null) {
@@ -76,7 +76,7 @@ public class hgg extends hfy {
         } else {
             this.f28613a.append(chatMessage.mContent);
         }
-        if (!TextUtils.isEmpty(chatMessage.mContent)) {
+        if (!StringUtils.isEmpty(chatMessage.mContent)) {
             str = str + chatMessage.mContent;
         }
         this.f28613a.setContentDescription(str);
@@ -84,7 +84,7 @@ public class hgg extends hfy {
             return;
         }
         String str3 = chatMessage.renders.get("repliedEncryptUserId");
-        if (TextUtils.isEmpty(str3) || tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || !TextUtils.equals(str3, tBLiveDataModel.mVideoInfo.secretUserId)) {
+        if (StringUtils.isEmpty(str3) || tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || !StringUtils.equals(str3, tBLiveDataModel.mVideoInfo.secretUserId)) {
             return;
         }
         this.itemView.setBackground(this.itemView.getResources().getDrawable(R.drawable.taolive_comment_bg_audience_answer_flexalocal));

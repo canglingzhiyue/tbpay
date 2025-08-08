@@ -1,6 +1,6 @@
 package com.taobao.desktop.widget.action;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -38,7 +38,7 @@ public class e extends f {
         }
         try {
             String b = b(this.e);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             CopyOnWriteArrayList<JSONObject> c = g.a(this.c).c();
@@ -51,7 +51,7 @@ public class e extends f {
                 }
             }
             String d = g.a(this.c).d(b);
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 return;
             }
             String a2 = a(d);

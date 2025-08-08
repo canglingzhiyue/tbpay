@@ -1,7 +1,7 @@
 package com.taobao.tao.recommend3;
 
 import android.support.v4.util.LongSparseArray;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -244,7 +244,7 @@ public class a {
                 });
             }
             if (!arrayList2.isEmpty()) {
-                if (!TextUtils.equals("guess", str)) {
+                if (!StringUtils.equals("guess", str)) {
                     e.e("RecommendDinamicXCenter", "current rmdEngine modulename is guess, cannot handle module : " + str);
                     com.taobao.tao.linklog.a.b(bdx.F_TEMPLATE_DOWNLOAD, "process_error", "不是猜你喜欢dinamic模块", "RecommendDinamicXCenter", "current rmdEngine modulename is guess, cannot handle module  : " + str + ", list3:" + JSON.toJSONString(arrayList2));
                     return;

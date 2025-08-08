@@ -2,7 +2,7 @@ package com.taobao.search.weex.component;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.Space;
@@ -134,7 +134,7 @@ public class InShopSearchComponent extends WXVContainer<ViewGroup> implements WX
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("37e85f46", new Object[]{this, str});
-        } else if (!TextUtils.equals(str, "true")) {
+        } else if (!StringUtils.equals(str, "true")) {
         } else {
             registerPullDownEvent();
         }
@@ -190,7 +190,7 @@ public class InShopSearchComponent extends WXVContainer<ViewGroup> implements WX
             return (Map) ipChange.ipc$dispatch("7736e627", new Object[]{this, str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         try {
@@ -215,7 +215,7 @@ public class InShopSearchComponent extends WXVContainer<ViewGroup> implements WX
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c78d5d76", new Object[]{this, str});
-        } else if (TextUtils.equals(str, "transparent")) {
+        } else if (StringUtils.equals(str, "transparent")) {
             this.mShopAuctionModule.a(2);
         } else {
             this.mShopAuctionModule.a(1);
@@ -233,10 +233,10 @@ public class InShopSearchComponent extends WXVContainer<ViewGroup> implements WX
         if (this.mShopAuctionModule == null) {
             return;
         }
-        if (TextUtils.equals(str, "appear")) {
+        if (StringUtils.equals(str, "appear")) {
             this.mShopAuctionModule.f();
         } else {
-            TextUtils.equals(str, "disappear");
+            StringUtils.equals(str, "disappear");
         }
     }
 
@@ -395,7 +395,7 @@ public class InShopSearchComponent extends WXVContainer<ViewGroup> implements WX
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("339a1496", new Object[]{this});
-        } else if (this.mShopAuctionModule == null || !TextUtils.equals(this.mViewState, "appear")) {
+        } else if (this.mShopAuctionModule == null || !StringUtils.equals(this.mViewState, "appear")) {
         } else {
             this.mShopAuctionModule.j();
         }

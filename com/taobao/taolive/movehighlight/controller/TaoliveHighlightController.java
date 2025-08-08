@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -269,10 +269,10 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
                         return (Map) ipChange2.ipc$dispatch("ab918d32", new Object[]{this});
                     }
                     HashMap hashMap = new HashMap();
-                    if ((TaoliveHighlightController.access$000(TaoliveHighlightController.this).z() instanceof com.taobao.taolive.sdk.controller.e) && !TextUtils.isEmpty(((com.taobao.taolive.sdk.controller.e) TaoliveHighlightController.access$000(TaoliveHighlightController.this).z()).v())) {
+                    if ((TaoliveHighlightController.access$000(TaoliveHighlightController.this).z() instanceof com.taobao.taolive.sdk.controller.e) && !StringUtils.isEmpty(((com.taobao.taolive.sdk.controller.e) TaoliveHighlightController.access$000(TaoliveHighlightController.this).z()).v())) {
                         hashMap.put(aw.PARAM_PM_PARAMS, ((com.taobao.taolive.sdk.controller.e) TaoliveHighlightController.access$000(TaoliveHighlightController.this).z()).v());
                     }
-                    if (tBLiveDataModel.mInitParams != null && !TextUtils.isEmpty(tBLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV))) {
+                    if (tBLiveDataModel.mInitParams != null && !StringUtils.isEmpty(tBLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV))) {
                         hashMap.put(aw.PARAM_IGNORE_PV, tBLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV));
                     }
                     if (tBLiveDataModel.mVideoInfo != null && tBLiveDataModel.mVideoInfo.pmContext != null) {
@@ -299,14 +299,14 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
                         hashMap.put("pmSession", TaoliveHighlightController.access$000(TaoliveHighlightController.this).j());
                     }
                     String L = poy.L(TaoliveHighlightController.access$000(TaoliveHighlightController.this));
-                    if ("tpp_88".equals(poz.p(n.b(TaoliveHighlightController.access$000(TaoliveHighlightController.this)))) && !TextUtils.isEmpty(poy.Y(TaoliveHighlightController.access$000(TaoliveHighlightController.this))) && (b = pqj.b(Uri.decode(poy.Y(TaoliveHighlightController.access$000(TaoliveHighlightController.this))))) != null && b.getString("trackInfo") != null) {
+                    if ("tpp_88".equals(poz.p(n.b(TaoliveHighlightController.access$000(TaoliveHighlightController.this)))) && !StringUtils.isEmpty(poy.Y(TaoliveHighlightController.access$000(TaoliveHighlightController.this))) && (b = pqj.b(Uri.decode(poy.Y(TaoliveHighlightController.access$000(TaoliveHighlightController.this))))) != null && b.getString("trackInfo") != null) {
                         L = b.getString("trackInfo");
                     }
                     hashMap.put("trackInfo", L);
                     hashMap.put("clickid", poy.m(TaoliveHighlightController.access$000(TaoliveHighlightController.this)));
                     hashMap.put("livesource", poz.p(n.b(TaoliveHighlightController.access$000(TaoliveHighlightController.this))));
                     hashMap.put("entry_source", poy.R(TaoliveHighlightController.access$000(TaoliveHighlightController.this)));
-                    if ((!hashMap.containsKey("spm-url") || TextUtils.isEmpty((CharSequence) hashMap.get("spm-url"))) && (TaoliveHighlightController.access$000(TaoliveHighlightController.this) instanceof com.taobao.taolive.sdk.core.e)) {
+                    if ((!hashMap.containsKey("spm-url") || StringUtils.isEmpty((CharSequence) hashMap.get("spm-url"))) && (TaoliveHighlightController.access$000(TaoliveHighlightController.this) instanceof com.taobao.taolive.sdk.core.e)) {
                         hashMap.put("spm-url", poy.K(TaoliveHighlightController.access$000(TaoliveHighlightController.this)));
                     }
                     hashMap.put("isAD", String.valueOf(poy.w(TaoliveHighlightController.access$000(TaoliveHighlightController.this)) ? 1 : 0));
@@ -316,7 +316,7 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
                     }
                     hashMap.put("isAdTransParams", String.valueOf(i));
                     hashMap.put("isChatRoom", String.valueOf(poy.b(tBLiveDataModel, TaoliveHighlightController.access$000(TaoliveHighlightController.this)) ? 1 : 0));
-                    hashMap.put("scene", !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayUrl) ? "smartpoint" : "default");
+                    hashMap.put("scene", !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayUrl) ? "smartpoint" : "default");
                     hashMap.put("kandianid", poy.ay(TaoliveHighlightController.access$000(TaoliveHighlightController.this)) + "_" + poy.C(TaoliveHighlightController.access$000(TaoliveHighlightController.this)));
                     hashMap.put("watchid", poy.z(TaoliveHighlightController.access$000(TaoliveHighlightController.this)));
                     if (TaoliveHighlightController.access$000(TaoliveHighlightController.this) instanceof com.taobao.taolive.sdk.core.e) {
@@ -358,12 +358,12 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
                 poz.w(tBLiveDataModel.mVideoInfo.liveId, n.b(this.mFrameContext));
             }
             com.taobao.taolive.movehighlight.bean.a aVar = this.highlightPlayInfo;
-            String str = (aVar == null || TextUtils.isEmpty(aVar.d)) ? null : this.highlightPlayInfo.d;
+            String str = (aVar == null || StringUtils.isEmpty(aVar.d)) ? null : this.highlightPlayInfo.d;
             if (c.s()) {
-                if (TextUtils.isEmpty(str) && tBLiveDataModel.mVideoInfo.timeMovingPlayInfo != null && !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.keyPointId)) {
+                if (StringUtils.isEmpty(str) && tBLiveDataModel.mVideoInfo.timeMovingPlayInfo != null && !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.keyPointId)) {
                     str = tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.keyPointId;
                 }
-                if (TextUtils.isEmpty(this.mSjsdItemId) && tBLiveDataModel.mVideoInfo.timeMovingPlayInfo != null && !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.sjsdItemId)) {
+                if (StringUtils.isEmpty(this.mSjsdItemId) && tBLiveDataModel.mVideoInfo.timeMovingPlayInfo != null && !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.sjsdItemId)) {
                     this.mSjsdItemId = tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.sjsdItemId;
                 }
             }
@@ -379,7 +379,7 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
             boolean z = b instanceof com.taobao.taolive.sdk.controller.e;
             if (z) {
                 com.taobao.taolive.sdk.controller.e eVar = (com.taobao.taolive.sdk.controller.e) b;
-                if (TextUtils.isEmpty(eVar.q)) {
+                if (StringUtils.isEmpty(eVar.q)) {
                     eVar.q = i.a(poz.p(n.b(this.mFrameContext)));
                 }
             }
@@ -393,9 +393,9 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
                 }
                 l.a(this.mVideoFrame, this.mCoverImage, this.mContext, this.mFirstFrameRendered, this.mLandscapeVideo, this.mPerfomenceTrackManager, this.mTrackId, this.mToken, this.highlightPlayInfo, this.mFrameContext);
             }
-            poy.j(!TextUtils.isEmpty(this.mSjsdItemId) ? this.mSjsdItemId : this.mTimeMovingItemId, this.mFrameContext);
+            poy.j(!StringUtils.isEmpty(this.mSjsdItemId) ? this.mSjsdItemId : this.mTimeMovingItemId, this.mFrameContext);
             if (c.t()) {
-                this.mSjsdItemId = !TextUtils.isEmpty(this.mSjsdItemId) ? this.mSjsdItemId : this.mTimeMovingItemId;
+                this.mSjsdItemId = !StringUtils.isEmpty(this.mSjsdItemId) ? this.mSjsdItemId : this.mTimeMovingItemId;
             }
             updateParams(tBLiveDataModel.mVideoInfo);
             if (a2.l() != null) {
@@ -420,7 +420,7 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
                             return;
                         }
                         String a3 = cgl.r().a();
-                        if (TextUtils.isEmpty(a3)) {
+                        if (StringUtils.isEmpty(a3)) {
                             return;
                         }
                         s.a(TaoliveHighlightController.this.mContext, a3);
@@ -433,7 +433,7 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
             }
             initRoomScreenManager();
             this.mTaoliveShowByStatus.a(this.mFrameContext, tBLiveDataModel.mVideoInfo, this.mSjsdItemId, str2, this.mBasePreloadRequest, this.mFrameContext);
-            if (tBLiveDataModel.mVideoInfo.timeMovingPlayInfo != null && !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.timeMovingId)) {
+            if (tBLiveDataModel.mVideoInfo.timeMovingPlayInfo != null && !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.timeMovingId)) {
                 poy.g(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.timeMovingId, this.mFrameContext);
                 if (d.f21479a) {
                     poz.T(tBLiveDataModel.mVideoInfo.timeMovingPlayInfo.timeMovingId, n.b(this.mFrameContext));
@@ -518,12 +518,12 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
         } else if (tBLiveDataModel == null) {
         } else {
             String str = tBLiveDataModel.mInitParams.get(aw.PARAM_HIDE_UI);
-            this.mHideUI = !TextUtils.isEmpty(str) && Boolean.parseBoolean(str);
+            this.mHideUI = !StringUtils.isEmpty(str) && Boolean.parseBoolean(str);
             this.mSjsdItemId = tBLiveDataModel.mInitParams.get(aw.PARAM_SJSD_ITEM_ID);
             poz.V(this.mSjsdItemId, n.b(this.mFrameContext));
             this.mTimeMovingItemId = tBLiveDataModel.mInitParams.get(aw.PARAM_TIMEMOVING_ITEM_ID);
             String str2 = tBLiveDataModel.mInitParams.get("landScapeVideo");
-            if (TextUtils.isEmpty(str2) || !Boolean.parseBoolean(str2)) {
+            if (StringUtils.isEmpty(str2) || !Boolean.parseBoolean(str2)) {
                 z = false;
             }
             this.mLandscapeVideo = z;
@@ -532,7 +532,7 @@ public class TaoliveHighlightController extends BaseFrame implements com.taobao.
             this.mMediaInfo = null;
             try {
                 String str3 = tBLiveDataModel.mInitParams.get(aw.PARAM_CUSTOM_PLAY_CTRL);
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     return;
                 }
                 this.mMediaInfo = pqj.b(str3);

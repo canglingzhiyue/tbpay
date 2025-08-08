@@ -1,7 +1,7 @@
 package com.taobao.android.home.component.constructor;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -85,7 +85,7 @@ public class HVideoViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3811704f", new Object[]{this, hVideoView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             hVideoView.setScaleType(0);
             hVideoView.setCoverScaleType(ImageView.ScaleType.FIT_CENTER);
         } else {

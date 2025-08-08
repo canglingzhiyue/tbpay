@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,7 +78,7 @@ public class b extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
             this.k = str;
         }
         this.m = (LinearLayout) this.g.findViewById(R.id.btnMore);
-        if (TextUtils.isEmpty(this.k)) {
+        if (StringUtils.isEmpty(this.k)) {
             this.k = this.c.getString(R.string.tt_detail_desc_see_more);
         }
         if (this.i.size() <= 0) {
@@ -162,7 +162,7 @@ public class b extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("daf50b49", new Object[]{this, str, onClickListener});
         }
-        if (TextUtils.isEmpty(str) || onClickListener == null) {
+        if (StringUtils.isEmpty(str) || onClickListener == null) {
             return new View(this.f10821a);
         }
         if (this.l == null) {

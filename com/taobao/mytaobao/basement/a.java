@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.basement;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -76,10 +76,10 @@ public class a {
         }
         b(eVar, a(jSONObject));
         mtx.b("解析我淘主接口mTop数据：type=" + f18313a + ",weexUrl=" + b);
-        if (!com.taobao.mytaobao.base.c.e || !TextUtils.equals(str, "action_cache_expired")) {
+        if (!com.taobao.mytaobao.base.c.e || !StringUtils.equals(str, "action_cache_expired")) {
             z = false;
         }
-        if (b() && ((TextUtils.equals(str, "action_pull_refresh") || z) && (iVar = eVar.f18498a) != null)) {
+        if (b() && ((StringUtils.equals(str, "action_pull_refresh") || z) && (iVar = eVar.f18498a) != null)) {
             iVar.a().a(com.taobao.mytaobao.basement.Bridge.a.b, (JSONObject) null);
         }
         i();
@@ -103,7 +103,7 @@ public class a {
                     this.h = false;
                 }
                 if (f18313a == 3) {
-                    if (TextUtils.isEmpty(b)) {
+                    if (StringUtils.isEmpty(b)) {
                         mtx.b("【错误】mTop加载weex，weexUrl=null");
                     }
                     this.e.b(b);
@@ -198,18 +198,18 @@ public class a {
                 String string = jSONObject2.getString("pageType");
                 boolean a2 = mxj.a("disableWeexBasement", false);
                 TLog.loge(BasementConstants.WEEX_TAG, "disableWeexBasement=" + a2);
-                if (!TextUtils.equals(string, "weex") || a2) {
+                if (!StringUtils.equals(string, "weex") || a2) {
                     return;
                 }
                 String str2 = b;
                 int i2 = f18313a;
                 String string2 = jSONObject2.getString("fragmentWeexUrl");
                 b = string2;
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     i = 3;
                 }
                 f18313a = i;
-                if (i != 3 || i2 != 3 || (str = b) == null || str2 == null || TextUtils.equals(str, str2)) {
+                if (i != 3 || i2 != 3 || (str = b) == null || str2 == null || StringUtils.equals(str, str2)) {
                     return;
                 }
                 this.h = true;

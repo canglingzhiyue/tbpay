@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.vfw.viewholder;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.ultron.vfw.instance.UltronError;
@@ -230,7 +230,7 @@ public class d extends a {
         } else if (!ifp.a(this.b.k()) || !bpc.f26032a) {
         } else {
             dXRootView.setImportantForAccessibility(1);
-            if (TextUtils.isEmpty(iDMComponent.getTag())) {
+            if (StringUtils.isEmpty(iDMComponent.getTag())) {
                 key = iDMComponent.getId();
             } else {
                 key = iDMComponent.getKey();

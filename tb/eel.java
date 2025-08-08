@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.event.basic.GetCommonTrackArgsEvent;
@@ -50,7 +50,7 @@ public class eel implements k<GetCommonTrackArgsEvent, f> {
         hashMap.put("item_id", cVar.i());
         hashMap.put("shop_id", cVar.o());
         hashMap.put("seller_id", cVar.h());
-        if (!TextUtils.isEmpty(this.f27236a.f9411a.u)) {
+        if (!StringUtils.isEmpty(this.f27236a.f9411a.u)) {
             hashMap.put("fromtorelation", this.f27236a.f9411a.u);
         }
         Map<String, String> g = cVar.g();

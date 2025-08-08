@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class kuz extends h {
         } else {
             JSONObject jSONObject = (JSONObject) objArr[0];
             String string = jSONObject.getString("popScheme");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 b.c("popScheme is empty").b();
                 return;
             }

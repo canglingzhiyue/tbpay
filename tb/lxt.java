@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
@@ -23,7 +23,7 @@ public class lxt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("266fb88", new Object[]{jSONObject});
-        } else if (jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("monitorCard"))) {
+        } else if (jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("monitorCard"))) {
             f30976a = new HashSet(Arrays.asList(jSONObject.getString("monitorCard").split(",")));
         } else {
             HashSet hashSet = new HashSet(1);

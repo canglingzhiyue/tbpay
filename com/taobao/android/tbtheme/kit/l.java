@@ -2,7 +2,7 @@ package com.taobao.android.tbtheme.kit;
 
 import android.content.res.Configuration;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -76,7 +76,7 @@ public class l {
         if (ipChange instanceof IpChange) {
             return (ThemeData) ipChange.ipc$dispatch("325e6660", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

@@ -2,7 +2,7 @@ package com.taobao.android.icart.widget.touch;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +93,7 @@ public class TipsLineFollower extends FrameLayout implements DragFloatLayer.d {
             this.mShowInCardUp = z;
         }
         move();
-        if (TextUtils.isEmpty(this.mText)) {
+        if (StringUtils.isEmpty(this.mText)) {
             setVisibility(8);
         } else {
             setVisibility(0);

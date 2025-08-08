@@ -3,7 +3,7 @@ package com.taobao.android.tschedule.protocol;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.e;
 import tb.jkq;
@@ -21,7 +21,7 @@ public class MultiProcessor$1 extends BroadcastReceiver {
             return;
         }
         String action = intent.getAction();
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         jkq.a("TS.MultiProcessor", "onReceive, action=" + action + ", process=" + jmi.a());

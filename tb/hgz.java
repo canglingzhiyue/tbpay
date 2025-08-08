@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -24,7 +24,7 @@ public class hgz extends fuf {
         if (objArr != null && objArr.length != 0) {
             try {
                 String str = (String) objArr[0];
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return null;
                 }
                 int parseInt = Integer.parseInt((String) objArr[1]);

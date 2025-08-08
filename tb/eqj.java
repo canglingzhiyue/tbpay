@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ServiceNode;
 import java.util.Iterator;
@@ -20,7 +20,7 @@ public class eqj {
         if (ipChange instanceof IpChange) {
             return (ServiceNode.a.C0386a) ipChange.ipc$dispatch("501532fe", new Object[]{str, list});
         }
-        if (!TextUtils.isEmpty(str) && list != null && !list.isEmpty()) {
+        if (!StringUtils.isEmpty(str) && list != null && !list.isEmpty()) {
             for (ServiceNode.a.C0386a c0386a : list) {
                 if (str.equals(c0386a.b)) {
                     return c0386a;
@@ -35,7 +35,7 @@ public class eqj {
         if (ipChange instanceof IpChange) {
             return (ServiceNode.b) ipChange.ipc$dispatch("c7ad0999", new Object[]{str, list});
         }
-        if (eqg.a(list) || TextUtils.isEmpty(str)) {
+        if (eqg.a(list) || StringUtils.isEmpty(str)) {
             return null;
         }
         for (ServiceNode.b bVar : list) {
@@ -68,7 +68,7 @@ public class eqj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int indexOf = str.indexOf("|");
@@ -84,11 +84,11 @@ public class eqj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (indexOf = str.indexOf("|")) < 0) {
+        if (StringUtils.isEmpty(str) || (indexOf = str.indexOf("|")) < 0) {
             return "0";
         }
         String substring = str.substring(indexOf + 1);
-        return TextUtils.isEmpty(substring) ? "0" : substring;
+        return StringUtils.isEmpty(substring) ? "0" : substring;
     }
 
     public static String a(String str, String str2) {
@@ -96,10 +96,10 @@ public class eqj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str + "|0";
         }
         return str + "|" + str2;
@@ -118,6 +118,6 @@ public class eqj {
         if (eqg.a(str, str2)) {
             return true;
         }
-        return (eqg.a(str, "0") || TextUtils.isEmpty(str)) && (eqg.a(str2, "0") || TextUtils.isEmpty(str2));
+        return (eqg.a(str, "0") || StringUtils.isEmpty(str)) && (eqg.a(str2, "0") || StringUtils.isEmpty(str2));
     }
 }

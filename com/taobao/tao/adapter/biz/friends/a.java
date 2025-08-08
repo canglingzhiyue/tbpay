@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -102,7 +102,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (list = this.f19793a) != null && list.size() != 0) {
+        if (!StringUtils.isEmpty(str) && (list = this.f19793a) != null && list.size() != 0) {
             ArrayList arrayList = new ArrayList();
             for (Contacts contacts : this.f19793a) {
                 if (str.equals(contacts.getUserId())) {
@@ -160,7 +160,7 @@ public class a {
                     str2 = str3;
                 }
                 String f = e.b().f();
-                if (TextUtils.isEmpty(f)) {
+                if (StringUtils.isEmpty(f)) {
                     nyy.a(TAG, "itemId : null");
                     return false;
                 }
@@ -173,7 +173,7 @@ public class a {
                 if (a2 == null) {
                     nyy.a(TAG, "getRecentContactById err: null");
                     return false;
-                } else if (TextUtils.isEmpty(str2)) {
+                } else if (StringUtils.isEmpty(str2)) {
                     nyy.a(TAG, "price : null");
                     return false;
                 } else {
@@ -198,7 +198,7 @@ public class a {
         } else {
             TBS.Page.ctrlClicked(CT.Button, "GotoChat");
             Bundle bundle = new Bundle();
-            if (TextUtils.equals("G", this.b.getEntityType())) {
+            if (StringUtils.equals("G", this.b.getEntityType())) {
                 bundle.putString("conversation_code", AmpUtil.getOldGroupCcodeFromGroupId(this.b.getGroupId()));
             } else {
                 bundle.putLong("amp_uid", Long.valueOf(this.b.getUserId()).longValue());

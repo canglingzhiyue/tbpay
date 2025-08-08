@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.api.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class LoggingUtils {
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key)) {
+            if (!StringUtils.isEmpty(key)) {
                 if (sb.length() != 0) {
                     sb.append("&");
                 }
@@ -61,7 +61,7 @@ public class LoggingUtils {
         if (ipChange instanceof IpChange) {
             return (StringBuilder) ipChange.ipc$dispatch("d01fb523", new Object[]{sb, str, str2, new Boolean(z)});
         }
-        if (sb == null || TextUtils.isEmpty(str)) {
+        if (sb == null || StringUtils.isEmpty(str)) {
             return sb;
         }
         if (z) {

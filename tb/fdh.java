@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.alicom.model.ContractSelectedRet;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -76,7 +76,7 @@ public class fdh implements j<enx> {
         }
         ContractNode contractNode = null;
         String str = enxVar.f27482a instanceof String ? (String) enxVar.f27482a : null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return a();
         }
         for (ContractNode contractNode2 : list) {

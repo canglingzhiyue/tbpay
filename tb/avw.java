@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.nodemodel.branch.c;
 import com.alibaba.android.aura.s;
 import com.alibaba.android.aura.service.event.d;
@@ -45,7 +45,7 @@ public class avw extends avy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("581d4c09", new Object[]{this, str, str2, renderComponent, asyncModule});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || renderComponent == null || asyncModule == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || renderComponent == null || asyncModule == null) {
         } else {
             avy.a aVar = new avy.a();
             aVar.f25646a = str2;
@@ -63,7 +63,7 @@ public class avw extends avy {
         if (ipChange instanceof IpChange) {
             return (AsyncModule) ipChange.ipc$dispatch("5ea110ee", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (aVar = this.f25645a.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (aVar = this.f25645a.get(str)) == null) {
             return null;
         }
         return aVar.d;
@@ -86,7 +86,7 @@ public class avw extends avy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (aVar = this.f25645a.get(str)) == null || aVar.b == null || aVar.b.get() == 1) {
+        } else if (StringUtils.isEmpty(str) || (aVar = this.f25645a.get(str)) == null || aVar.b == null || aVar.b.get() == 1) {
         } else {
             d dVar = new d();
             dVar.a(bst.d(aVar.c));

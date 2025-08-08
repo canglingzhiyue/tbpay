@@ -2,7 +2,7 @@ package com.alibaba.triver.triver_shop.newShop.ext;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.JSONUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -170,7 +170,7 @@ public final class m {
         if (context != null && b.c(context)) {
             z = true;
         }
-        if (z || TextUtils.isEmpty(str)) {
+        if (z || StringUtils.isEmpty(str)) {
             return;
         }
         if (q.a((Object) PAGE_APPEAR, (Object) str)) {

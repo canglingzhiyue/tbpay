@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.taobao.windvane.extra.performance2.WVPageTracker;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.URLUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -212,11 +212,11 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("eb8a50a1", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.f13297a.toString()) && !this.f13297a.toString().contains("_afc_link=1")) {
+        if (!StringUtils.isEmpty(this.f13297a.toString()) && !this.f13297a.toString().contains("_afc_link=1")) {
             return null;
         }
         String b = d.a().b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return null;
         }
         Uri.Builder buildUpon = Uri.parse(b).buildUpon();
@@ -290,7 +290,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !str.contains("isNeedHomeNew") || !this.d.compareAndSet(true, false)) {
+        } else if (StringUtils.isEmpty(str) || !str.contains("isNeedHomeNew") || !this.d.compareAndSet(true, false)) {
         } else {
             TLog.loge("LinkBack", (String) null, "handleBackArrive, url: " + str);
             b.a(1013, "afc_back_url_arrive", str, this.f13297a.toString(), null);

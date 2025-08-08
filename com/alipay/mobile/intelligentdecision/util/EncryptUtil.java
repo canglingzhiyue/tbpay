@@ -1,6 +1,6 @@
 package com.alipay.mobile.intelligentdecision.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.intelligentdecision.DecisionContext;
 import com.alipay.mobile.intelligentdecision.rpc.FrameworkUtils;
@@ -62,7 +62,7 @@ public class EncryptUtil {
                     try {
                         File file = new File(DecisionContext.getInstance().getContext().getFilesDir() + File.separator + EncryptUtil.d() + File.separator + str);
                         String read = file.exists() ? ZFileUtil.read(file) : null;
-                        if (TextUtils.isEmpty(read)) {
+                        if (StringUtils.isEmpty(read)) {
                             FileCallback fileCallback2 = fileCallback;
                             if (fileCallback2 == null) {
                                 return;

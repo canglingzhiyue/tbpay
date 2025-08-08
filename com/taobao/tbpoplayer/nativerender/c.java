@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -63,7 +63,7 @@ public class c {
                     } else {
                         aVar.a("DSLFetcher.fetchDSL.isUnable.");
                     }
-                } else if (TextUtils.isEmpty(hVar.h())) {
+                } else if (StringUtils.isEmpty(hVar.h())) {
                 } else {
                     MtopRequest mtopRequest = new MtopRequest();
                     mtopRequest.setApiName("mtop.taobao.poplayer.xdsl");
@@ -76,7 +76,7 @@ public class c {
                     MtopResponse syncRequest = MtopBusiness.build(Mtop.instance(Mtop.Id.INNER, PopLayer.getReference().getApp()), mtopRequest, TaoPackageInfo.getTTID()).mo1342showLoginUI(false).mo1305reqMethod(MethodEnum.GET).syncRequest();
                     if (syncRequest != null && syncRequest.isApiSuccess() && syncRequest.getBytedata() != null) {
                         String str2 = new String(syncRequest.getBytedata(), "UTF-8");
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             com.alibaba.poplayer.utils.c.a("DSLFetcher.fetchDSL.Mtop.dsl=%s", str2);
                             JSONObject jSONObject2 = JSON.parseObject(str2).getJSONObject("data");
                             if (jSONObject2 != null && jSONObject2.getBooleanValue("success") && (jSONArray = jSONObject2.getJSONArray("data")) != null && !jSONArray.isEmpty() && (dSLModel = (DSLModel) jSONArray.getJSONObject(0).getObject(rrv.PAGE_CONTENT, DSLModel.class)) != null) {

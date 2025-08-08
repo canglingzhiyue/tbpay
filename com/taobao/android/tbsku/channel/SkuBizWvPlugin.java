@@ -5,7 +5,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -104,7 +104,7 @@ public class SkuBizWvPlugin extends e {
         }
         String string = jSONObject.getString("sku_token");
         JSONObject jSONObject2 = jSONObject.getJSONObject("params");
-        if (TextUtils.isEmpty(string) || jSONObject2 == null || jSONObject2.isEmpty()) {
+        if (StringUtils.isEmpty(string) || jSONObject2 == null || jSONObject2.isEmpty()) {
             return false;
         }
         skuTokenFix(jSONObject);
@@ -123,7 +123,7 @@ public class SkuBizWvPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cd35d2b0", new Object[]{this, jSONObject})).booleanValue();
         }
-        if (this.mContext == null || jSONObject == null || jSONObject.isEmpty() || TextUtils.isEmpty(jSONObject.getString("sku_token")) || TextUtils.isEmpty(jSONObject.getString("action"))) {
+        if (this.mContext == null || jSONObject == null || jSONObject.isEmpty() || StringUtils.isEmpty(jSONObject.getString("sku_token")) || StringUtils.isEmpty(jSONObject.getString("action"))) {
             return false;
         }
         JSONObject skuTokenFix = skuTokenFix(jSONObject);

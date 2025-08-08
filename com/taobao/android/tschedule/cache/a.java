@@ -1,6 +1,6 @@
 package com.taobao.android.tschedule.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.task.ScheduleTask;
 import java.util.List;
@@ -30,7 +30,7 @@ public class a {
             return (C0606a) ipChange.ipc$dispatch("bd251139", new Object[]{this, str});
         }
         C0606a c0606a = this.b;
-        if (c0606a != null && str != null && TextUtils.equals(str, c0606a.f15659a)) {
+        if (c0606a != null && str != null && StringUtils.equals(str, c0606a.f15659a)) {
             return c0606a;
         }
         return null;

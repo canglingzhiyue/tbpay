@@ -5,7 +5,7 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SimpleItemAnimator;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -226,7 +226,7 @@ public class onp {
         }
         int itemCount = this.f.getItemCount();
         for (int i2 = 0; i2 < itemCount; i2++) {
-            if (!TextUtils.isEmpty(str) && TextUtils.equals(str, b(this.f.a(i2)))) {
+            if (!StringUtils.isEmpty(str) && StringUtils.equals(str, b(this.f.a(i2)))) {
                 RecyclerView.LayoutManager layoutManager = this.e.getLayoutManager();
                 if (layoutManager instanceof LinearLayoutManager) {
                     ((LinearLayoutManager) layoutManager).scrollToPositionWithOffset(i2, i);
@@ -245,7 +245,7 @@ public class onp {
         for (int i = 0; i < childCount; i++) {
             View childAt = this.e.getChildAt(i);
             com.taobao.android.detail.ttdetail.component.module.d a2 = this.f.a(this.e.getChildAdapterPosition(childAt));
-            if (!TextUtils.isEmpty(str) && TextUtils.equals(str, b(a2))) {
+            if (!StringUtils.isEmpty(str) && StringUtils.equals(str, b(a2))) {
                 return childAt.getTop();
             }
         }
@@ -315,7 +315,7 @@ public class onp {
                     View childAt2 = recyclerView.getChildAt(i4);
                     int childAdapterPosition = recyclerView.getChildAdapterPosition(childAt2);
                     onp onpVar2 = onp.this;
-                    if (!TextUtils.isEmpty(onp.b(onpVar2, onp.e(onpVar2).a(childAdapterPosition)))) {
+                    if (!StringUtils.isEmpty(onp.b(onpVar2, onp.e(onpVar2).a(childAdapterPosition)))) {
                         onp.f(onp.this);
                         childAt2.getTop();
                         break;

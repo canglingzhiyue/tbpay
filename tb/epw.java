@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -26,7 +26,7 @@ public class epw {
 
     public static String a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2}) : TextUtils.isEmpty(str) ? str2 : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2}) : StringUtils.isEmpty(str) ? str2 : str;
     }
 
     public static <T> ArrayList<T> a(JSONArray jSONArray, epy<T> epyVar) {

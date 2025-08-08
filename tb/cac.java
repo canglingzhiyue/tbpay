@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
 import com.alibaba.poplayer.utils.c;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,7 +53,7 @@ public class cac {
 
     public boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && (str.equals("ConfigCheckStart") || str.equals("OnePop") || str.equals("PopProcess") || str.equals("PopError") || str.equals("JumpLose"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && (str.equals("ConfigCheckStart") || str.equals("OnePop") || str.equals("PopProcess") || str.equals("PopError") || str.equals("JumpLose"));
     }
 
     public void a(cae caeVar) {

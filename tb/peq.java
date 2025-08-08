@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.model.message.TLiveMsg;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class peq extends peo implements pnr {
             return;
         }
         pmd.a().j().a(pehVar.f32566a, pehVar.b, this.f32574a.h);
-        pmd.a().j().a(pehVar.f32566a, pehVar.b, TextUtils.isEmpty(pehVar.c) ? null : pehVar.c, pehVar.d, "tb", pehVar.e, pehVar.f, new Object[0]);
+        pmd.a().j().a(pehVar.f32566a, pehVar.b, StringUtils.isEmpty(pehVar.c) ? null : pehVar.c, pehVar.d, "tb", pehVar.e, pehVar.f, new Object[0]);
         pmd.a().j().a(pehVar.f32566a, pehVar.c, this);
     }
 
@@ -31,7 +31,7 @@ public class peq extends peo implements pnr {
             ipChange.ipc$dispatch("e7f64766", new Object[]{this, pehVar});
             return;
         }
-        pmd.a().j().b(this.f32574a.d, this.f32574a.e, TextUtils.isEmpty(this.f32574a.f) ? null : this.f32574a.f, this.f32574a.g, "tb", pehVar.e, pehVar.f, new Object[0]);
+        pmd.a().j().b(this.f32574a.d, this.f32574a.e, StringUtils.isEmpty(this.f32574a.f) ? null : this.f32574a.f, this.f32574a.g, "tb", pehVar.e, pehVar.f, new Object[0]);
         this.b = null;
     }
 

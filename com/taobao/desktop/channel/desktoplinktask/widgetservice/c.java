@@ -1,6 +1,6 @@
 package com.taobao.desktop.channel.desktoplinktask.widgetservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public class c {
         } else if (!jSONObject.getBooleanValue("success") || (jSONObject2 = jSONObject.getJSONObject(b.TAK_ABILITY_MATCH_CONTENT)) == null) {
         } else {
             String string = jSONObject2.getString("bizCode");
-            if (TextUtils.isEmpty(string) || !c(jSONObject2)) {
+            if (StringUtils.isEmpty(string) || !c(jSONObject2)) {
                 return;
             }
             khw.a(khm.a().b()).a(b(string), jSONObject.toJSONString());
@@ -73,13 +73,13 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Object b = khw.a(khm.a().b()).b(b(str), "");
         if (b instanceof String) {
             String str2 = (String) b;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 JSONObject parseObject = JSONObject.parseObject(str2);
                 if (!parseObject.isEmpty()) {
                     return parseObject;

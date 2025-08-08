@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -26,7 +26,7 @@ public class noq {
             return;
         }
         float f = 0.6666667f;
-        if (!TextUtils.isEmpty(auctionBaseBean.uprightImgAspectRatio)) {
+        if (!StringUtils.isEmpty(auctionBaseBean.uprightImgAspectRatio)) {
             f = g.a(auctionBaseBean.uprightImgAspectRatio, 0.6666667f);
         }
         a(searchUrlImageView, auctionBaseBean, listStyle, i, f);
@@ -53,7 +53,7 @@ public class noq {
             ViewGroup.LayoutParams layoutParams = searchUrlImageView.getLayoutParams();
             int a2 = a(layoutParams, i);
             layoutParams.width = a2;
-            if (!TextUtils.isEmpty(auctionBaseBean.wfPicUrl)) {
+            if (!StringUtils.isEmpty(auctionBaseBean.wfPicUrl)) {
                 str = auctionBaseBean.wfPicUrl;
                 layoutParams.height = (int) (a2 / f);
             } else {

@@ -3,7 +3,7 @@ package com.taobao.tao.sharepanel.normal;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.PopupWindow;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -103,7 +103,7 @@ public class NativeSharePanel extends oub implements nzi.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("785fdede", new Object[]{this, tBShareContent, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f fVar = new f();
             fVar.b = str;
@@ -126,13 +126,13 @@ public class NativeSharePanel extends oub implements nzi.a {
             ipChange.ipc$dispatch("f8cf3ad5", new Object[]{this, new Boolean(z)});
             return;
         }
-        if (TextUtils.equals("false", nyl.b())) {
+        if (StringUtils.equals("false", nyl.b())) {
             z = false;
         }
         if (ShareBizAdapter.getInstance().getFriendsProvider() == null) {
             z = false;
         }
-        if (TextUtils.isEmpty(ShareBizAdapter.getInstance().getLogin().a())) {
+        if (StringUtils.isEmpty(ShareBizAdapter.getInstance().getLogin().a())) {
             this.nativePanel.e().a((List<com.taobao.share.globalmodel.b>) null, new BubbleTipsBean());
         } else if (z) {
             try {

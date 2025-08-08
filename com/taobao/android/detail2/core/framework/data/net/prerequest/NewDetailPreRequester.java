@@ -1,6 +1,6 @@
 package com.taobao.android.detail2.core.framework.data.net.prerequest;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -107,7 +107,7 @@ public class NewDetailPreRequester implements icj {
             return "";
         }
         String a2 = fjx.a(aVar.d);
-        return TextUtils.isEmpty(a2) ? "" : a2;
+        return StringUtils.isEmpty(a2) ? "" : a2;
     }
 
     private JSONArray a(ArrayList<PreloadTaskEntity.a> arrayList, HashMap<String, String> hashMap) {
@@ -122,7 +122,7 @@ public class NewDetailPreRequester implements icj {
             PreloadTaskEntity.a next = it.next();
             JSONObject jSONObject = new JSONObject();
             Map<String, String> a2 = fkw.a(next.c, fkt.GUIDE_PRELOAD_PARAMS_BLACKLIST, fkt.DEFAULT_GUIDE_PRELOAD_PARAMS_BLACKLIST);
-            if (!TextUtils.isEmpty(str) && !"0".equals(str)) {
+            if (!StringUtils.isEmpty(str) && !"0".equals(str)) {
                 a2.put(fkw.V, str);
             }
             JSONObject jSONObject2 = new JSONObject();
@@ -306,7 +306,7 @@ public class NewDetailPreRequester implements icj {
             } else {
                 sb.append(riy.ARRAY_START_STR);
                 for (String str : jSONObject.keySet()) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String a3 = fjx.a(this.d, str);
                         sb.append(a3);
                         sb.append(", ");
@@ -384,7 +384,7 @@ public class NewDetailPreRequester implements icj {
                 StringBuilder sb = new StringBuilder("NewDetailPreRequester.dealMtopSuccess调用,缓存");
                 j a2 = k.a("new_detail");
                 for (String str : jSONObject.keySet()) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String a3 = fjx.a(this.d, str);
                         JSONObject jSONObject2 = jSONObject.getJSONObject(str);
                         a2.a(new g.a().a("preload").b("low").c(a3).a((g.a) jSONObject2).d(preloadTaskEntity.sourceFrom).a());

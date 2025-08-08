@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
@@ -139,7 +139,7 @@ public class pou implements d, IMediaPlayer.b, IMediaPlayer.g, pos {
             a(iMediaPlayer, "auto");
             iMediaPlayer.o(true);
         } else {
-            if (!TextUtils.isEmpty(this.b)) {
+            if (!StringUtils.isEmpty(this.b)) {
                 a(iMediaPlayer, this.b);
             }
             iMediaPlayer.o(false);
@@ -567,7 +567,7 @@ public class pou implements d, IMediaPlayer.b, IMediaPlayer.g, pos {
         }
         String str3 = TAG;
         n.a(str3, "handleInfo12001 recomDefinition = " + valueOf + " recomDefinitionName = " + valueOf2 + " currentDefinition = " + valueOf3 + " currentDefinitionName = " + str2 + " isUp = " + z);
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             return;
         }
         a(iMediaPlayer, valueOf, z);
@@ -601,7 +601,7 @@ public class pou implements d, IMediaPlayer.b, IMediaPlayer.g, pos {
         }
         String str3 = TAG;
         n.a(str3, "handleInfo12003 recomDefinition = " + valueOf + " recomDefinitionName = " + valueOf2 + " currentDefinition = " + valueOf3 + " currentDefinitionName = " + str2 + " isUp = " + z);
-        if (TextUtils.isEmpty(valueOf)) {
+        if (StringUtils.isEmpty(valueOf)) {
             return;
         }
         d(valueOf);

@@ -1,6 +1,6 @@
 package com.taobao.desktop.channel.desktoplinktask.trigger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.session.dns.DnsNavConfigTask;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,11 +50,11 @@ public class e {
         }
         HashMap hashMap = new HashMap();
         hashMap.put("closeStep", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("closeReason", str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         hashMap.put("errorMessage", str4);
@@ -86,11 +86,11 @@ public class e {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("actionBehaviour", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("targetUrl", str3);

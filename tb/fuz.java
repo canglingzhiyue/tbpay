@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
@@ -203,7 +203,7 @@ public class fuz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57198885", new Object[]{nVar, str});
-        } else if (nVar == null || TextUtils.isEmpty(str)) {
+        } else if (nVar == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 nVar.a(str);
@@ -241,7 +241,7 @@ public class fuz {
 
     public static boolean a(JSONObject jSONObject) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{jSONObject})).booleanValue() : !TextUtils.isEmpty(dmo.a(jSONObject, "stage", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{jSONObject})).booleanValue() : !StringUtils.isEmpty(dmo.a(jSONObject, "stage", ""));
     }
 
     public static p a(n nVar, JSONObject jSONObject) {

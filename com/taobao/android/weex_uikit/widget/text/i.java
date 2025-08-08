@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.o;
 import com.taobao.android.weex_framework.widget.FontDO;
@@ -94,7 +94,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("27fbef12", new Object[]{this, textPaint, str, new Integer(i), new Integer(i2)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             k.b(textPaint, i2, i, str);
         } else {
             Typeface typeface = textPaint.getTypeface();
@@ -151,7 +151,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (Typeface) ipChange.ipc$dispatch("5e4ad588", new Object[]{this, str, new Integer(i), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return k.a(i, i2, null);
         }
         final b bVar = new b();

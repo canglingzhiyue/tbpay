@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -202,10 +202,10 @@ public class pek {
             try {
                 if (pek.a(pek.this) != null && pmd.a().g() != null) {
                     HashMap hashMap = new HashMap();
-                    if (!TextUtils.isEmpty(pek.b(pek.this))) {
+                    if (!StringUtils.isEmpty(pek.b(pek.this))) {
                         hashMap.put("x-m-biz-live-bizcode", pek.b(pek.this));
                     }
-                    if (!TextUtils.isEmpty(pek.c(pek.this))) {
+                    if (!StringUtils.isEmpty(pek.c(pek.this))) {
                         hashMap.put("x-m-biz-live-biztoken", pek.c(pek.this));
                     }
                     if ("mtop.tblive.live.detail.query".equals(pek.a(pek.this).getApiName()) || "mtop.mediaplatform.live.livedetail".equals(pek.a(pek.this).getApiName())) {

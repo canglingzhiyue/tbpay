@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.p;
@@ -44,7 +44,7 @@ public class c {
         }
         o.d(TAG, "getPreloadedInstance " + str2);
         MUSDKInstance mUSDKInstance = null;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             if (!b(str) || !b) {
                 return null;
             }
@@ -57,7 +57,7 @@ public class c {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("url", (Object) b2);
             String b3 = b(str, str2);
-            if (TextUtils.isEmpty(b3)) {
+            if (StringUtils.isEmpty(b3)) {
                 return null;
             }
             mUSDKInstance = q.a().a(b3, jSONObject);
@@ -120,7 +120,7 @@ public class c {
         }
         long uptimeMillis = SystemClock.uptimeMillis();
         o.c(TAG, "preloadWeexInstance start " + str2 + ",url = " + str);
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || jSONObject == null || !b(str)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || jSONObject == null || !b(str)) {
             return;
         }
         boolean b2 = b();
@@ -129,7 +129,7 @@ public class c {
             return;
         }
         String b3 = b(str, str2);
-        if (TextUtils.isEmpty(b3)) {
+        if (StringUtils.isEmpty(b3)) {
             return;
         }
         if (f15228a.containsKey(b3)) {
@@ -177,7 +177,7 @@ public class c {
             return;
         }
         String b2 = b(str, str2);
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return;
         }
         if (f15228a.containsKey(b2)) {
@@ -193,16 +193,16 @@ public class c {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
         String str3 = "";
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return str3;
         }
         Uri parse = Uri.parse(str);
         String queryParameter = parse.getQueryParameter("id");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return str3;
         }
         String path = parse.getPath();
-        if (TextUtils.isEmpty(path)) {
+        if (StringUtils.isEmpty(path)) {
             return str3;
         }
         boolean equals = "true".equals(parse.getQueryParameter("buy_button"));
@@ -246,11 +246,11 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{str});
-        } else if (TextUtils.isEmpty(str) || (map = f15228a) == null || map.isEmpty()) {
+        } else if (StringUtils.isEmpty(str) || (map = f15228a) == null || map.isEmpty()) {
         } else {
             Iterator<Map.Entry<String, String>> it = f15228a.entrySet().iterator();
             while (it.hasNext()) {
-                if (TextUtils.equals(str, it.next().getValue())) {
+                if (StringUtils.equals(str, it.next().getValue())) {
                     it.remove();
                 }
             }
@@ -262,12 +262,12 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
             String queryParameter = Uri.parse(str).getQueryParameter("enable_sku_preload");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 return Boolean.parseBoolean(queryParameter);
             }
             return false;
@@ -299,7 +299,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a3b17b6d", new Object[]{context, str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();

@@ -1,7 +1,7 @@
 package com.alipay.sdk.m.d;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -46,7 +46,7 @@ public final class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("da7ffcd9", new Object[]{aVar, str});
-        } else if (aVar == null || TextUtils.isEmpty(str)) {
+        } else if (aVar == null || StringUtils.isEmpty(str)) {
         } else {
             b.put(str, aVar);
         }
@@ -57,7 +57,7 @@ public final class b {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("e374e60b", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return b.remove(str);
         }
         return null;

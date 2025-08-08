@@ -20,7 +20,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.CursorAdapter;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.text.style.ImageSpan;
 import android.util.AttributeSet;
@@ -212,7 +212,7 @@ public class SearchView extends LinearLayoutCompat implements aco {
 
         /* JADX INFO: Access modifiers changed from: private */
         public boolean isEmpty() {
-            return TextUtils.getTrimmedLength(getText()) == 0;
+            return StringUtils.getTrimmedLength(getText()) == 0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -832,12 +832,12 @@ public class SearchView extends LinearLayoutCompat implements aco {
 
     private void setQuery(CharSequence charSequence) {
         this.mSearchSrcTextView.setText(charSequence);
-        this.mSearchSrcTextView.setSelection(TextUtils.isEmpty(charSequence) ? 0 : charSequence.length());
+        this.mSearchSrcTextView.setSelection(StringUtils.isEmpty(charSequence) ? 0 : charSequence.length());
     }
 
     private void updateCloseButton() {
         boolean z = true;
-        boolean z2 = !TextUtils.isEmpty(this.mSearchSrcTextView.getText());
+        boolean z2 = !StringUtils.isEmpty(this.mSearchSrcTextView.getText());
         int i = 0;
         if (!z2 && (!this.mIconifiedByDefault || this.mExpandedInActionView)) {
             z = false;
@@ -902,7 +902,7 @@ public class SearchView extends LinearLayoutCompat implements aco {
         int i = 8;
         boolean z2 = false;
         int i2 = z ? 0 : 8;
-        boolean z3 = !TextUtils.isEmpty(this.mSearchSrcTextView.getText());
+        boolean z3 = !StringUtils.isEmpty(this.mSearchSrcTextView.getText());
         this.mSearchButton.setVisibility(i2);
         updateSubmitButton(z3);
         this.mSearchEditFrame.setVisibility(z ? 8 : 0);
@@ -1037,7 +1037,7 @@ public class SearchView extends LinearLayoutCompat implements aco {
     }
 
     void onCloseClicked() {
-        if (!TextUtils.isEmpty(this.mSearchSrcTextView.getText())) {
+        if (!StringUtils.isEmpty(this.mSearchSrcTextView.getText())) {
             this.mSearchSrcTextView.setText("");
             this.mSearchSrcTextView.requestFocus();
             this.mSearchSrcTextView.setImeVisibility(true);
@@ -1200,7 +1200,7 @@ public class SearchView extends LinearLayoutCompat implements aco {
 
     void onSubmitQuery() {
         Editable text = this.mSearchSrcTextView.getText();
-        if (text == null || TextUtils.getTrimmedLength(text) <= 0) {
+        if (text == null || StringUtils.getTrimmedLength(text) <= 0) {
             return;
         }
         OnQueryTextListener onQueryTextListener = this.mOnQueryChangeListener;
@@ -1236,7 +1236,7 @@ public class SearchView extends LinearLayoutCompat implements aco {
         Editable text = this.mSearchSrcTextView.getText();
         this.mUserQuery = text;
         boolean z = true;
-        boolean z2 = !TextUtils.isEmpty(text);
+        boolean z2 = !StringUtils.isEmpty(text);
         updateSubmitButton(z2);
         if (z2) {
             z = false;
@@ -1244,7 +1244,7 @@ public class SearchView extends LinearLayoutCompat implements aco {
         updateVoiceButton(z);
         updateCloseButton();
         updateSubmitArea();
-        if (this.mOnQueryChangeListener != null && !TextUtils.equals(charSequence, this.mOldQueryText)) {
+        if (this.mOnQueryChangeListener != null && !StringUtils.equals(charSequence, this.mOldQueryText)) {
             this.mOnQueryChangeListener.onQueryTextChange(charSequence.toString());
         }
         this.mOldQueryText = charSequence.toString();
@@ -1355,7 +1355,7 @@ public class SearchView extends LinearLayoutCompat implements aco {
             searchAutoComplete.setSelection(searchAutoComplete.length());
             this.mUserQuery = charSequence;
         }
-        if (!z || TextUtils.isEmpty(charSequence)) {
+        if (!z || StringUtils.isEmpty(charSequence)) {
             return;
         }
         onSubmitQuery();

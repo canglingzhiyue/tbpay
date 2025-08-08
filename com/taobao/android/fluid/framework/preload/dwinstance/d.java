@@ -2,7 +2,7 @@ package com.taobao.android.fluid.framework.preload.dwinstance;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.taobao.android.fluid.FluidSDK;
@@ -41,7 +41,7 @@ public class d {
         }
         if (uri != null) {
             String queryParameter = uri.getQueryParameter("videoStrategy");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 char c2 = 65535;
                 switch (queryParameter.hashCode()) {
                     case -1205353033:

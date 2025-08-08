@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -62,7 +62,7 @@ public class iyg {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("7315d092", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (cVar = this.b) != null && (a2 = cVar.a()) != null) {
+        if (!StringUtils.isEmpty(str) && (cVar = this.b) != null && (a2 = cVar.a()) != null) {
             return a(a2.k(), str);
         }
         return null;

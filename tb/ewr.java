@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -36,7 +36,7 @@ public class ewr {
         if (ipChange instanceof IpChange) {
             return (ewq) ipChange.ipc$dispatch("7c6f03f5", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
+        if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
             return null;
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("weexData");
@@ -91,7 +91,7 @@ public class ewr {
         if (ipChange instanceof IpChange) {
             return (ewq) ipChange.ipc$dispatch("7d1baf94", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return this.f27616a;
         }
         JSONObject parseObject = JSON.parseObject(str);

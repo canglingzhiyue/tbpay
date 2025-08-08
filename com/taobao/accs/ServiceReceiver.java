@@ -2,7 +2,7 @@ package com.taobao.accs;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.BaseReceiver;
@@ -38,7 +38,7 @@ public class ServiceReceiver extends BaseReceiver {
         super.onReceive(context, intent);
         String action = intent == null ? "" : intent.getAction();
         ALog.e("ServiceReceiver", "onReceive: " + action, new Object[0]);
-        if (TextUtils.isEmpty(action) || !Constants.ACTION_COMMAND.equals(action) || !m.k()) {
+        if (StringUtils.isEmpty(action) || !Constants.ACTION_COMMAND.equals(action) || !m.k()) {
             return;
         }
         com.taobao.accs.common.a.a(new Runnable() { // from class: com.taobao.accs.ServiceReceiver.1

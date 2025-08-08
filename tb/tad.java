@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -120,10 +120,10 @@ public class tad extends oqk implements b, a.InterfaceC0864a, a.b, a.c, a.Interf
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("77d86ebd", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "tryShowTabTips")) {
+        if (StringUtils.equals(str, "tryShowTabTips")) {
             return a(this.d, wVCallBackContext);
         }
-        if (!TextUtils.equals(str, "showDownPanelTips")) {
+        if (!StringUtils.equals(str, "showDownPanelTips")) {
             return false;
         }
         a("multiTabEditPanelShow", a("userManually"));
@@ -233,7 +233,7 @@ public class tad extends oqk implements b, a.InterfaceC0864a, a.b, a.c, a.Interf
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
         String b = e.b(str);
-        if (TextUtils.isEmpty(b) || (c = e.c(this.d, "3")) == null) {
+        if (StringUtils.isEmpty(b) || (c = e.c(this.d, "3")) == null) {
             return false;
         }
         JSONObject jSONObject = c.getJSONObject("ext");
@@ -272,7 +272,7 @@ public class tad extends oqk implements b, a.InterfaceC0864a, a.b, a.c, a.Interf
             return false;
         }
         String a2 = a(jSONObject, e.KEY_TAB_ID);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             g.a("TabBarGuidePopLayerManager", "renderGuidePopView tabId null");
             return false;
         } else if (!b(jSONObject, a2)) {
@@ -359,9 +359,9 @@ public class tad extends oqk implements b, a.InterfaceC0864a, a.b, a.c, a.Interf
             java.lang.String r0 = r5.a(r6, r0)
             java.lang.String r1 = "endPos"
             java.lang.String r6 = r5.a(r6, r1)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L67
-            boolean r1 = android.text.TextUtils.isEmpty(r6)
+            boolean r1 = android.text.StringUtils.isEmpty(r6)
             if (r1 == 0) goto L39
             goto L67
         L39:
@@ -387,7 +387,7 @@ public class tad extends oqk implements b, a.InterfaceC0864a, a.b, a.c, a.Interf
             if (r0 >= r1) goto L65
             com.taobao.tao.infoflow.multitab.i r1 = r5.c
             java.lang.String r1 = r1.n(r0)
-            boolean r1 = android.text.TextUtils.equals(r1, r7)
+            boolean r1 = android.text.StringUtils.equals(r1, r7)
             if (r1 == 0) goto L62
             goto L66
         L62:
@@ -506,7 +506,7 @@ public class tad extends oqk implements b, a.InterfaceC0864a, a.b, a.c, a.Interf
         JSONObject jSONObject = new JSONObject();
         jSONObject.put(e.KEY_TAB_ID, (Object) n);
         jSONObject.put("tabIndex", (Object) Integer.valueOf(h));
-        jSONObject.put("enterType", (Object) (TextUtils.isEmpty(this.e) ? "click" : this.e));
+        jSONObject.put("enterType", (Object) (StringUtils.isEmpty(this.e) ? "click" : this.e));
         try {
             g.a("TabBarGuidePopLayerManager", "execTriggerPopShow sendUCPEvent:");
             this.f = System.currentTimeMillis();

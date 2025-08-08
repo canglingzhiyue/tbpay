@@ -10,7 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.taobao.TBActionBar;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -584,7 +584,7 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             com.taobao.phenix.intf.b.h().a(str).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.android.detail.wrapper.ext.component.actionbar.c.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -659,17 +659,17 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
                 if (str3 != null) {
                     taoDetailActionBarV3.setExtraDetailTitleColor(str3);
                 }
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     str = str2;
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                     str = "";
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.u.add(str);
                     eps.a(this.f9568a, "Page_Detail", 2201, "Page_Detail_Show_ProductDetail", "detailV3", null, ect.a(d()));
                 }
                 String str4 = (String) ehiVar.k.get("contentTitle");
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     this.u.add(str4);
                     eps.a(this.f9568a, "Page_Detail", 2201, "Page_Detail_Show_Content", "detailV3", null, ect.b(b()));
                 }
@@ -678,7 +678,7 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
                 }
                 String str6 = (String) ehiVar.k.get("shopTitle");
                 String str7 = (String) ehiVar.k.get(g.KEY_APM_SHOP_URL);
-                if (!TextUtils.isEmpty(str6) && !TextUtils.isEmpty(str7)) {
+                if (!StringUtils.isEmpty(str6) && !StringUtils.isEmpty(str7)) {
                     taoDetailActionBarV3.addShopTab(str6);
                 }
                 taoDetailActionBarV3.setTabNum(this.u.size());
@@ -756,7 +756,7 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
                     if (jSONObject != null) {
                         String string = jSONObject.getString("title");
                         String string2 = jSONObject.getString("locationId");
-                        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                             taoDetailActionBarV3.addElevatorItem(string2, string);
                         }
                     }
@@ -906,7 +906,7 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                    } else if (TextUtils.isEmpty(c.h(c.this))) {
+                    } else if (StringUtils.isEmpty(c.h(c.this))) {
                     } else {
                         eps.a(c.i(c.this), ag.SEARCH_ENTRANCE_CLICK, c.j(c.this));
                         if (noa.VALUE_SEARCHDOOR_LAUNCH_MODE_NEW_TASK.equalsIgnoreCase(c.k(c.this))) {
@@ -933,7 +933,7 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         } else if (this.k == null || !l()) {
         } else {
             TextView textView2 = (TextView) this.k.findViewById(R.id.if_action_bar_search_text);
-            if (!TextUtils.isEmpty(str) && (textView = (TextView) this.k.findViewById(R.id.if_action_bar_search_icon)) != null) {
+            if (!StringUtils.isEmpty(str) && (textView = (TextView) this.k.findViewById(R.id.if_action_bar_search_icon)) != null) {
                 textView.setText(str);
                 C = textView.getWidth();
                 D = textView.getRight();
@@ -991,7 +991,7 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         JSONObject f = f(eheVar);
         if (f != null && f.containsKey("jumpUrl")) {
             final String string = f.getString("jumpUrl");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 e.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.android.detail.wrapper.ext.component.actionbar.c.8
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1139,14 +1139,14 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         com.taobao.android.detail.core.detail.kit.utils.d.a(this.f9568a, this.c, tIconFontTextView, eheVar.events);
         if (eheVar.component != null && eheVar.component.mapping != null && eheVar.component.mapping.containsKey("accessHint")) {
             String string = eheVar.component.mapping.getString("accessHint");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 tIconFontTextView.setContentDescription(c(eheVar.e, string));
             }
         }
         JSONObject f = f(eheVar);
         if (f != null && f.containsKey("accessHint")) {
             String string2 = f.getString("accessHint");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 tIconFontTextView.setContentDescription(c(eheVar.e, string2));
             }
         }
@@ -1206,7 +1206,7 @@ public class c extends com.taobao.android.detail.core.detail.kit.view.holder.c<e
         } else if (aVar == null) {
         } else {
             this.j = aVar;
-            if (TextUtils.isEmpty(aVar.b)) {
+            if (StringUtils.isEmpty(aVar.b)) {
                 return;
             }
             this.q = aVar.b;

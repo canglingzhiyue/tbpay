@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -74,10 +74,10 @@ public class q extends e<QualityViewModel> {
             ipChange.ipc$dispatch("51aa1a06", new Object[]{this, qualityViewModel});
             return;
         }
-        if (!TextUtils.isEmpty(qualityViewModel.c)) {
+        if (!StringUtils.isEmpty(qualityViewModel.c)) {
             this.j.setText(qualityViewModel.c);
         }
-        if (!TextUtils.isEmpty(qualityViewModel.d)) {
+        if (!StringUtils.isEmpty(qualityViewModel.d)) {
             this.j.setTextColor(com.taobao.android.detail.ttdetail.utils.w.a(qualityViewModel.d));
         }
         List<String> list = qualityViewModel.f10866a;

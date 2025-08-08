@@ -1,6 +1,6 @@
 package com.taobao.search.refactor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.monitor.NetworkQualityMonitor;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -275,7 +275,7 @@ public class j extends nsp {
         mSearchResult.subTabNewSearch = this.g;
         String c = c("m");
         String c2 = c("channelSrp");
-        if (TextUtils.isEmpty(c) && TextUtils.isEmpty(c2)) {
+        if (StringUtils.isEmpty(c) && StringUtils.isEmpty(c2)) {
             z2 = true;
         }
         mSearchResult.mainSearch = z2;
@@ -372,7 +372,7 @@ public class j extends nsp {
         b(createUrlParams);
         c(createUrlParams);
         String str = createUrlParams.get(noa.KEY_TAG_SEARCH_KEYWORD);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             createUrlParams.put("q", str);
         }
         return createUrlParams;
@@ -396,7 +396,7 @@ public class j extends nsp {
                     return;
                 }
                 String a2 = x.Companion.a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 for (Map.Entry<String, Object> entry : JSON.parseObject(a2).entrySet()) {
@@ -460,7 +460,7 @@ public class j extends nsp {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aaf280a7", new Object[]{this});
-        } else if (r.cf() || this.j == null || !TextUtils.isEmpty(getParamValue("q"))) {
+        } else if (r.cf() || this.j == null || !StringUtils.isEmpty(getParamValue("q"))) {
         } else {
             setParam("q", this.j);
         }
@@ -609,7 +609,7 @@ public class j extends nsp {
         if (str != null && (W = W()) != null) {
             String paramStr = W.getParamStr(str);
             kotlin.jvm.internal.q.a((Object) paramStr, "params.getParamStr(key)");
-            if (!TextUtils.isEmpty(paramStr)) {
+            if (!StringUtils.isEmpty(paramStr)) {
                 return paramStr;
             }
         }
@@ -625,7 +625,7 @@ public class j extends nsp {
         }
         if (str != null && (W = W()) != null) {
             String paramValue = W.getParamValue(str);
-            if (!TextUtils.isEmpty(paramValue)) {
+            if (!StringUtils.isEmpty(paramValue)) {
                 return paramValue;
             }
         }
@@ -851,7 +851,7 @@ public class j extends nsp {
             return;
         }
         kotlin.jvm.internal.q.c(bean, "bean");
-        if (TextUtils.isEmpty(bean.r())) {
+        if (StringUtils.isEmpty(bean.r())) {
             return;
         }
         this.k.put(bean.r(), bean);

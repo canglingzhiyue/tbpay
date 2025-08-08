@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.FrameMetrics;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -617,7 +617,7 @@ public abstract class mos extends mop implements ApplicationBackgroundChangedDis
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("18567e8f", new Object[]{this, str, obj});
-        } else if (TextUtils.isEmpty(str) || obj == null) {
+        } else if (StringUtils.isEmpty(str) || obj == null) {
         } else {
             List<Object> list = this.I.get(str);
             if (list == null) {

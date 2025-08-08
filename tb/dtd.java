@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +94,7 @@ public class dtd {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -116,7 +116,7 @@ public class dtd {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || str.contains("ap") || str.contains("np")) {
+        if (StringUtils.isEmpty(str) || str.contains("ap") || str.contains("np")) {
             return str;
         }
         return str + "np";

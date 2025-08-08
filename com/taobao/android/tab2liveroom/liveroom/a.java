@@ -12,7 +12,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -132,7 +132,7 @@ public class a extends Component<FrameLayout, b> implements s {
                 return ((Boolean) ipChange.ipc$dispatch("5844084e", new Object[]{this, context, str, bundle, new Integer(i), new Integer(i2)})).booleanValue();
             }
             ogg.c(a.TAG, "onNavIntercept, url: " + str + " appear:" + a.c(a.this).o());
-            if (a.d(a.this) && !TextUtils.isEmpty(str)) {
+            if (a.d(a.this) && !StringUtils.isEmpty(str)) {
                 Uri parse = Uri.parse(str);
                 if (a.e(a.this) != null && a.f(a.this).o() && context == a.g(a.this).N() && e.b(parse)) {
                     a.a(a.this, str, parse.getBooleanQueryParameter(aw.PARAM_FORCE_REFRESH, false));
@@ -314,15 +314,15 @@ public class a extends Component<FrameLayout, b> implements s {
             return map;
         }
         String a2 = oec.a(this.node.f("url"), (String) null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return map;
         }
         Uri parse = Uri.parse(a2);
-        if (!TextUtils.equals(parse.getQueryParameter("tabid"), ((b) this.viewParams).i)) {
+        if (!StringUtils.equals(parse.getQueryParameter("tabid"), ((b) this.viewParams).i)) {
             return map;
         }
         String queryParameter = parse.getQueryParameter("extParams");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return map;
         }
         this.l = true;
@@ -415,7 +415,7 @@ public class a extends Component<FrameLayout, b> implements s {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c0bfeb4e", new Object[]{this, str, str2, str3, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || this.e == null) {
+        } else if (StringUtils.isEmpty(str) || this.e == null) {
         } else {
             HashMap hashMap = new HashMap();
             hashMap.put("accountId", str);
@@ -442,7 +442,7 @@ public class a extends Component<FrameLayout, b> implements s {
         Object obj = hashMap.get("id");
         Object obj2 = hashMap.get("userId");
         Object obj3 = hashMap.get(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
-        if (TextUtils.isEmpty(queryParameter) && TextUtils.isEmpty(queryParameter3) && TextUtils.isEmpty(queryParameter2) && ((obj == null || TextUtils.isEmpty(obj.toString())) && ((obj2 == null || TextUtils.isEmpty(obj2.toString())) && (obj3 == null || TextUtils.isEmpty(obj3.toString()))))) {
+        if (StringUtils.isEmpty(queryParameter) && StringUtils.isEmpty(queryParameter3) && StringUtils.isEmpty(queryParameter2) && ((obj == null || StringUtils.isEmpty(obj.toString())) && ((obj2 == null || StringUtils.isEmpty(obj2.toString())) && (obj3 == null || StringUtils.isEmpty(obj3.toString()))))) {
             hashMap.put(aw.PARAM_NEED_RECOMMEND, "true");
         }
         return oec.a(parse, (Map) hashMap).toString();
@@ -460,7 +460,7 @@ public class a extends Component<FrameLayout, b> implements s {
         String queryParameter3 = parse.getQueryParameter(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
         boolean z2 = map != null && oeb.as() && oec.a(map.get(KEY_LIVE_TAB_TOP_ITEM_SWITCH), false);
         ogg.a(TAG, "interceptQuery, isRedPoint2TopAvatar: " + z2);
-        if (!TextUtils.isEmpty(queryParameter) || !TextUtils.isEmpty(queryParameter3) || !TextUtils.isEmpty(queryParameter2)) {
+        if (!StringUtils.isEmpty(queryParameter) || !StringUtils.isEmpty(queryParameter3) || !StringUtils.isEmpty(queryParameter2)) {
             z = false;
         }
         if (!z2 || !z || this.viewParams == 0 || !com.taobao.android.tab2liveroom.liveroom.topAvatar.b.a(((b) this.viewParams).f15288a, ((b) this.viewParams).n, ((b) this.viewParams).k)) {
@@ -595,7 +595,7 @@ public class a extends Component<FrameLayout, b> implements s {
         if (str2 != null) {
             str = Uri.parse(str2).getQueryParameter(com.taobao.android.livehome.plugin.atype.flexalocal.utils.d.LIVE_HOME_PAGE_TYPE);
         }
-        return TextUtils.isEmpty(str) ? ((b) this.viewParams).h : str;
+        return StringUtils.isEmpty(str) ? ((b) this.viewParams).h : str;
     }
 
     private void l() {
@@ -661,7 +661,7 @@ public class a extends Component<FrameLayout, b> implements s {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f67261c", new Object[]{this, cVar, str, jSONObject, dVar})).booleanValue();
         }
-        if (!TextUtils.equals(str, b.c.EVENT_ON_MESSAGE)) {
+        if (!StringUtils.equals(str, b.c.EVENT_ON_MESSAGE)) {
             return super.invoke(cVar, str, jSONObject, dVar);
         }
         if (jSONObject != null) {
@@ -702,7 +702,7 @@ public class a extends Component<FrameLayout, b> implements s {
                 this.l = false;
             } else if (c == 1 || c == 2) {
                 if (jSONObject2 != null) {
-                    a(jSONObject2.getString("accountId"), jSONObject2.getString("accountType"), jSONObject2.getString("followSource"), TextUtils.equals(string, "follow"));
+                    a(jSONObject2.getString("accountId"), jSONObject2.getString("accountType"), jSONObject2.getString("followSource"), StringUtils.equals(string, "follow"));
                 }
             } else if (c == 3) {
                 q();
@@ -742,7 +742,7 @@ public class a extends Component<FrameLayout, b> implements s {
         }
         this.i = videoInfo;
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("id", str);
         }
         if (bool != null) {
@@ -1134,7 +1134,7 @@ public class a extends Component<FrameLayout, b> implements s {
             if (z) {
                 this.e = null;
                 this.f = null;
-            } else if (TextUtils.isEmpty(this.h)) {
+            } else if (StringUtils.isEmpty(this.h)) {
             } else {
                 a(this.i, Uri.parse(this.h).getQueryParameter("id"), (Boolean) null);
             }
@@ -1195,7 +1195,7 @@ public class a extends Component<FrameLayout, b> implements s {
         } else {
             str = null;
         }
-        boolean equals = TextUtils.equals(d, str);
+        boolean equals = StringUtils.equals(d, str);
         return (equals || activity == null || !n.b(activity)) ? equals : com.taobao.application.common.c.b() == activity;
     }
 

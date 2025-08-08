@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.datamodel.protocol.ultron;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.b;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.ComponentView;
 import com.alibaba.fastjson.JSONArray;
@@ -67,7 +67,7 @@ public class Container extends BaseProtocol {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("81e05888", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.id)) {
+        if (StringUtils.isEmpty(this.id)) {
             JSONObject jSONObject = this.mOriginData;
             if (jSONObject == null) {
                 return null;
@@ -82,7 +82,7 @@ public class Container extends BaseProtocol {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2a8fef97", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.version)) {
+        if (StringUtils.isEmpty(this.version)) {
             JSONObject jSONObject = this.mOriginData;
             if (jSONObject == null) {
                 return null;

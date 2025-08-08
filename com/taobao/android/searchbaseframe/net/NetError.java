@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.net;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.uikit.extend.component.error.Error;
 import java.io.Serializable;
@@ -126,7 +126,7 @@ public class NetError implements Serializable {
             return (String) ipChange.ipc$dispatch("8126d80d", new Object[]{this});
         }
         String str = this.mMsg;
-        if (TextUtils.isEmpty(str) && getException() != null) {
+        if (StringUtils.isEmpty(str) && getException() != null) {
             str = getException().getMessage();
         }
         return "NetError(" + this.mCode + "): " + str;

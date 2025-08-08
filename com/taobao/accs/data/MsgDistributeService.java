@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -124,7 +124,7 @@ public class MsgDistributeService extends Service {
                         String stringExtra = intent.getStringExtra("packageName");
                         String stringExtra2 = intent.getStringExtra("appKey");
                         String stringExtra3 = intent.getStringExtra(Constants.KEY_CONFIG_TAG);
-                        if (TextUtils.isEmpty(stringExtra3)) {
+                        if (StringUtils.isEmpty(stringExtra3)) {
                             stringExtra3 = stringExtra2;
                         }
                         ACCSManager.getAccsInstance(GlobalClientInfo.getContext(), stringExtra2, stringExtra3).sendRequest(GlobalClientInfo.getContext(), accsRequest, stringExtra, false);

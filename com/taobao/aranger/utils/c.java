@@ -12,7 +12,7 @@ import android.content.pm.ProviderInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.aranger.constant.Constants;
@@ -63,7 +63,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cdd07311", new Object[]{componentName, str});
-        } else if (componentName == null || TextUtils.isEmpty(str)) {
+        } else if (componentName == null || StringUtils.isEmpty(str)) {
         } else {
             c.put(componentName.toShortString(), b(str));
         }
@@ -153,7 +153,7 @@ public class c {
             }
         } catch (Exception unused) {
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (e == null) {
@@ -233,13 +233,13 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             if (Build.VERSION.SDK_INT >= 28) {
                 d = Application.getProcessName();
             } else if (Build.VERSION.SDK_INT >= 18) {
                 d = ActivityThread.currentProcessName();
             }
-            if (TextUtils.isEmpty(d)) {
+            if (StringUtils.isEmpty(d)) {
                 d = a(Process.myPid());
             }
         }
@@ -276,7 +276,7 @@ public class c {
                 BufferedReader bufferedReader2 = new BufferedReader(new FileReader("/proc/" + i + "/cmdline"));
                 try {
                     String readLine = bufferedReader2.readLine();
-                    if (!TextUtils.isEmpty(readLine)) {
+                    if (!StringUtils.isEmpty(readLine)) {
                         readLine = readLine.trim();
                     }
                     try {

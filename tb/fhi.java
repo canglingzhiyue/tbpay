@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -298,7 +298,7 @@ public class fhi extends d {
         } else if (!fjk.a() || this.f27944a == null) {
         } else {
             String c = fky.c(Global.getApplication(), this.f27944a.containerName);
-            if (fig.k != 1 || TextUtils.isEmpty(c) || this.f27944a.containerInfo == null) {
+            if (fig.k != 1 || StringUtils.isEmpty(c) || this.f27944a.containerInfo == null) {
                 return;
             }
             Uri.Builder buildUpon = Uri.parse(this.f27944a.containerInfo.a()).buildUpon();

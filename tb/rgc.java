@@ -4,7 +4,7 @@ import android.net.http.SslError;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -285,7 +285,7 @@ public class rgc extends ptk implements qqf {
         } else {
             str = null;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             spz.c("CardH5MessageHandler", "init web view, url is empty");
             this.i = 3;
             return;

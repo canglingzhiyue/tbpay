@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.aura.extension.aspect;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.f;
 import com.alibaba.android.aura.q;
@@ -62,7 +62,7 @@ public final class b extends arm {
             arc.a().b("AliDetailEventRedirectErrorExtension.onError:can't find event");
         } else {
             AURAEventIO aURAEventIO = (AURAEventIO) bVar.c().get("event");
-            if (TextUtils.isEmpty(aURAEventIO.getEventType())) {
+            if (StringUtils.isEmpty(aURAEventIO.getEventType())) {
                 arc.a().b("AliDetailEventRedirectErrorExtension.onError:can't find eventType");
             } else {
                 a(aURAEventIO);

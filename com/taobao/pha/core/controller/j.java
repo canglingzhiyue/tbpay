@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -136,7 +136,7 @@ public class j {
         if (ipChange instanceof IpChange) {
             return (k) ipChange.ipc$dispatch("220e4abb", new Object[]{this, pageModel});
         }
-        if (TextUtils.isEmpty(pageModel.backgroundColor) && this.b.u() != null) {
+        if (StringUtils.isEmpty(pageModel.backgroundColor) && this.b.u() != null) {
             pageModel.backgroundColor = this.b.u().backgroundColor;
             ManifestModel.setUpLayoutIndex(this.b.u(), pageModel, this.b.t());
         }
@@ -229,7 +229,7 @@ public class j {
             return false;
         }
         String url = pageModel.getUrl();
-        if (!TextUtils.isEmpty(url) && !this.b.D().isTrustedUrl(url)) {
+        if (!StringUtils.isEmpty(url) && !this.b.D().isTrustedUrl(url)) {
             return false;
         }
         ((AppFragment) r).addSubPageContainer();
@@ -284,7 +284,7 @@ public class j {
             return false;
         }
         String url = pageModel.getUrl();
-        if (!TextUtils.isEmpty(url) && !this.b.D().isTrustedUrl(url)) {
+        if (!StringUtils.isEmpty(url) && !this.b.D().isTrustedUrl(url)) {
             return false;
         }
         if (findFragmentByTag instanceof com.taobao.pha.core.phacontainer.e) {

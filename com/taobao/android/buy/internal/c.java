@@ -1,7 +1,7 @@
 package com.taobao.android.buy.internal;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.IAURAPluginCenter;
 import com.alibaba.android.aura.k;
 import com.alibaba.android.aura.q;
@@ -66,7 +66,7 @@ public class c {
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                 } else {
-                    ifz.a(ifz.a.b("preInitAura").c(z ? "命中aura预热实例" : "未命中aura预热实例").c("c1", TextUtils.isEmpty(str) ? "" : str).a(z).a(0.001f));
+                    ifz.a(ifz.a.b("preInitAura").c(z ? "命中aura预热实例" : "未命中aura预热实例").c("c1", StringUtils.isEmpty(str) ? "" : str).a(z).a(0.001f));
                 }
             }
         });

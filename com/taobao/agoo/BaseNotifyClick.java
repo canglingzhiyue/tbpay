@@ -3,7 +3,7 @@ package com.taobao.agoo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.triver.triver_shop.container.shopLoft.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.common.a;
@@ -130,7 +130,7 @@ public abstract class BaseNotifyClick {
         }
         try {
             String parseMsgByThirdPush = parseMsgByThirdPush(intent);
-            if (TextUtils.isEmpty(parseMsgByThirdPush) || TextUtils.isEmpty(this.msgSource)) {
+            if (StringUtils.isEmpty(parseMsgByThirdPush) || StringUtils.isEmpty(this.msgSource)) {
                 ALog.e(TAG, "parseMsgFromNotifyListener null!!", "source", this.msgSource);
                 return null;
             }
@@ -145,11 +145,11 @@ public abstract class BaseNotifyClick {
                 this.mMsgDOList = new ArrayList();
             }
             Bundle msgReceiverPreHandler = this.agooFactory.msgReceiverPreHandler(parseMsgByThirdPush.getBytes("UTF-8"), this.msgSource, null, false, this.mMsgDOList);
-            if (TextUtils.equals(msgReceiverPreHandler.getString(AgooConstants.MESSAGE_ENCRYPTED), "4")) {
+            if (StringUtils.equals(msgReceiverPreHandler.getString(AgooConstants.MESSAGE_ENCRYPTED), "4")) {
                 String string = msgReceiverPreHandler.getString(AgooConstants.MESSAGE_BODY);
                 ALog.e(TAG, "begin parse EncryptedMsg", new Object[0]);
                 String parseEncryptedMsg = AgooFactory.parseEncryptedMsg(string);
-                if (!TextUtils.isEmpty(parseEncryptedMsg)) {
+                if (!StringUtils.isEmpty(parseEncryptedMsg)) {
                     msgReceiverPreHandler.putString(AgooConstants.MESSAGE_BODY, parseEncryptedMsg);
                 } else {
                     ALog.e(TAG, "parse EncryptedMsg fail, empty", new Object[0]);
@@ -192,7 +192,7 @@ public abstract class BaseNotifyClick {
                         try {
                             if (intent != null) {
                                 String access$000 = BaseNotifyClick.access$000(BaseNotifyClick.this, intent);
-                                if (!TextUtils.isEmpty(access$000) && !TextUtils.isEmpty(BaseNotifyClick.access$100(BaseNotifyClick.this))) {
+                                if (!StringUtils.isEmpty(access$000) && !StringUtils.isEmpty(BaseNotifyClick.access$100(BaseNotifyClick.this))) {
                                     if (BaseNotifyClick.access$200(BaseNotifyClick.this) == null) {
                                         BaseNotifyClick.access$202(BaseNotifyClick.this, new NotifManager());
                                     }
@@ -204,7 +204,7 @@ public abstract class BaseNotifyClick {
                                     String string = msgReceiverPreHandler.getString(AgooConstants.MESSAGE_BODY);
                                     ALog.i(BaseNotifyClick.TAG, "begin parse EncryptedMsg", new Object[0]);
                                     String parseEncryptedMsg = AgooFactory.parseEncryptedMsg(string);
-                                    if (!TextUtils.isEmpty(parseEncryptedMsg)) {
+                                    if (!StringUtils.isEmpty(parseEncryptedMsg)) {
                                         msgReceiverPreHandler.putString(AgooConstants.MESSAGE_BODY, parseEncryptedMsg);
                                     } else {
                                         ALog.e(BaseNotifyClick.TAG, "parse EncryptedMsg fail, empty", new Object[0]);
@@ -305,7 +305,7 @@ public abstract class BaseNotifyClick {
                 }
                 BaseNotifyClickActivity.INotifyListener next = it.next();
                 String parseMsgFromIntent = next.parseMsgFromIntent(intent);
-                if (!TextUtils.isEmpty(parseMsgFromIntent)) {
+                if (!StringUtils.isEmpty(parseMsgFromIntent)) {
                     this.msgSource = next.getMsgSource();
                     str = parseMsgFromIntent;
                     break;
@@ -316,23 +316,23 @@ public abstract class BaseNotifyClick {
             ALog.e(TAG, "no impl, try use default impl to parse intent!", new Object[0]);
             BaseNotifyClickActivity.INotifyListener defaultHuaweiMsgParseImpl = new DefaultHuaweiMsgParseImpl();
             String parseMsgFromIntent2 = defaultHuaweiMsgParseImpl.parseMsgFromIntent(intent);
-            if (TextUtils.isEmpty(parseMsgFromIntent2)) {
+            if (StringUtils.isEmpty(parseMsgFromIntent2)) {
                 defaultHuaweiMsgParseImpl = new DefaultXiaomiMsgParseImpl();
                 parseMsgFromIntent2 = defaultHuaweiMsgParseImpl.parseMsgFromIntent(intent);
             }
-            if (TextUtils.isEmpty(parseMsgFromIntent2)) {
+            if (StringUtils.isEmpty(parseMsgFromIntent2)) {
                 defaultHuaweiMsgParseImpl = new DefaultHonorMsgParseImpl();
                 parseMsgFromIntent2 = defaultHuaweiMsgParseImpl.parseMsgFromIntent(intent);
             }
-            if (TextUtils.isEmpty(parseMsgFromIntent2)) {
+            if (StringUtils.isEmpty(parseMsgFromIntent2)) {
                 defaultHuaweiMsgParseImpl = new DefaultOppoMsgParseImpl();
                 parseMsgFromIntent2 = defaultHuaweiMsgParseImpl.parseMsgFromIntent(intent);
             }
-            if (TextUtils.isEmpty(parseMsgFromIntent2)) {
+            if (StringUtils.isEmpty(parseMsgFromIntent2)) {
                 defaultHuaweiMsgParseImpl = new DefaultVivoMsgParseImpl();
                 parseMsgFromIntent2 = defaultHuaweiMsgParseImpl.parseMsgFromIntent(intent);
             }
-            if (TextUtils.isEmpty(parseMsgFromIntent2)) {
+            if (StringUtils.isEmpty(parseMsgFromIntent2)) {
                 DefaultMeizuMsgParseImpl defaultMeizuMsgParseImpl2 = new DefaultMeizuMsgParseImpl();
                 str = defaultMeizuMsgParseImpl2.parseMsgFromIntent(intent);
                 defaultMeizuMsgParseImpl = defaultMeizuMsgParseImpl2;
@@ -340,7 +340,7 @@ public abstract class BaseNotifyClick {
                 defaultMeizuMsgParseImpl = defaultHuaweiMsgParseImpl;
                 str = parseMsgFromIntent2;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 d.a("accs", "error", "parse 3push error", mto.a.GEO_NOT_SUPPORT);
             } else {
                 this.msgSource = defaultMeizuMsgParseImpl.getMsgSource();

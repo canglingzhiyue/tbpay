@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.bussiness.highlight.contentListModel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.n;
 import com.taobao.taolive.sdk.adapter.network.d;
@@ -25,7 +25,7 @@ public class a extends b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f87cf9b", new Object[]{this, aVar, str, str2, new Integer(i), new Integer(i2), str3});
-        } else if (TextUtils.isEmpty(str) || !TextUtils.isDigitsOnly(str)) {
+        } else if (StringUtils.isEmpty(str) || !StringUtils.isDigitsOnly(str)) {
         } else {
             HighlightContentRequest highlightContentRequest = new HighlightContentRequest();
             highlightContentRequest.liveId = str;

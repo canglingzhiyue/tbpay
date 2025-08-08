@@ -2,7 +2,7 @@ package com.taobao.avplayer.interactivelifecycle.display;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.DWContext;
 import com.taobao.avplayer.DWLifecycleType;
@@ -167,15 +167,15 @@ public class e implements q, w {
             if (jSONObject != null) {
                 HashMap hashMap = new HashMap();
                 String optString = jSONObject.optString("sourceId");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     hashMap.put("taoke_sourceId", optString);
                 }
                 String string = jSONObject.getString("bizType");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     hashMap.put("taoke_bizType", string);
                 }
                 hashMap.put("taoke_accountId", Long.toString(this.f16517a.mUserId));
-                if (!TextUtils.isEmpty(this.f16517a.mContentId)) {
+                if (!StringUtils.isEmpty(this.f16517a.mContentId)) {
                     hashMap.put("taoke_contentId", this.f16517a.mContentId);
                 }
                 this.f16517a.addUtParams(hashMap);

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.component.main.view.size;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -66,13 +66,13 @@ public class RateInfoView extends LinearLayout {
                 return;
             }
             setVisibility(0);
-            if (!TextUtils.isEmpty(rateInfo.title)) {
+            if (!StringUtils.isEmpty(rateInfo.title)) {
                 this.tvTitle.setText(rateInfo.title);
             } else {
                 this.tvTitle.setText("");
             }
             String str = list.get(0);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.tvRateSize.setText(str);
                 this.tvRateSize.setVisibility(0);
             } else {
@@ -102,7 +102,7 @@ public class RateInfoView extends LinearLayout {
         textView.setBackgroundColor(getResources().getColor(R.color.detail_f9));
         textView.setGravity(17);
         textView.setMaxLines(2);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         textView.setText(str);
         return textView;
     }

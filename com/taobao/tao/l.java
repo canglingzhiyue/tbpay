@@ -1,7 +1,7 @@
 package com.taobao.tao;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tcrash.UncaughtCrashManager;
 import com.taobao.login4android.session.SessionManager;
@@ -29,7 +29,7 @@ public abstract class l implements Runnable {
         if (str2.startsWith(":gpu_process") || z) {
             return new g(application, str, str2);
         }
-        if (TextUtils.equals(str, str2)) {
+        if (StringUtils.equals(str, str2)) {
             return new f(application, str, str2);
         }
         return new d(application, str, str2);

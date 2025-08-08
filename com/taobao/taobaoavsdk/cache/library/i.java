@@ -2,7 +2,7 @@ package com.taobao.taobaoavsdk.cache.library;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.VariationSet;
@@ -712,7 +712,7 @@ public class i {
             } catch (ProxyCacheException unused) {
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             String[] split = str2.split(",");
             for (String str3 : split) {
                 String trim = str3.trim();
@@ -733,7 +733,7 @@ public class i {
             return (String) ipChange.ipc$dispatch("cd967ee0", new Object[]{this, str});
         }
         com.taobao.taobaoavsdk.cache.library.c cVar = this.h;
-        if (cVar != null && cVar.b != null && !TextUtils.isEmpty(str)) {
+        if (cVar != null && cVar.b != null && !StringUtils.isEmpty(str)) {
             return this.h.b.a(str);
         }
         return null;
@@ -746,7 +746,7 @@ public class i {
         }
         int i = -1;
         String o = o(str);
-        if (!TextUtils.isEmpty(o)) {
+        if (!StringUtils.isEmpty(o)) {
             synchronized (this) {
                 if (this.j.size() >= 10240) {
                     i = -2;
@@ -770,7 +770,7 @@ public class i {
             return;
         }
         String o = o(str);
-        if (TextUtils.isEmpty(o)) {
+        if (StringUtils.isEmpty(o)) {
             return;
         }
         synchronized (this) {

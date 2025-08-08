@@ -1,6 +1,6 @@
 package com.taobao.search.sf.realtimetag.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aw;
 import java.util.Map;
@@ -21,12 +21,12 @@ public class a extends nps {
         b("vm", "nw");
         b("m", "clicktrace");
         b("rainbow", com.taobao.search.rainbow.a.c());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             b("traceInfo", str);
         }
         if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                     b(entry.getKey(), entry.getValue());
                 }
             }
@@ -51,7 +51,7 @@ public class a extends nps {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             b("insertItems", str);
         }

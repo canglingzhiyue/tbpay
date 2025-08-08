@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -218,7 +218,7 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
                 th.printStackTrace();
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mSessionId = str;
         }
         this.mMobileLoginPresenter = new UserMobileLoginPresenter(this, null);
@@ -295,7 +295,7 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
         setSecondTV(textView);
         this.mSmsCodeView = (AliUserSmsCodeView) view.findViewById(R.id.aliuser_register_sms_code_view);
         this.codeLength = "4";
-        if (this.mSmsCodeView != null && !TextUtils.isEmpty(this.codeLength)) {
+        if (this.mSmsCodeView != null && !StringUtils.isEmpty(this.codeLength)) {
             this.mSmsCodeView.setTextCount(Integer.parseInt(this.codeLength));
         }
         this.mSmsCodeView.setOnCompletedListener(new AliUserSmsCodeView.OnCompletedListener() { // from class: com.ali.user.mobile.register.ui.AliUserRegisterSMSVerificationFragment.2
@@ -337,10 +337,10 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cfe60a25", new Object[]{this, textView});
-        } else if (TextUtils.isEmpty(this.mAreaCode) || TextUtils.isEmpty(this.mMobileNum)) {
+        } else if (StringUtils.isEmpty(this.mAreaCode) || StringUtils.isEmpty(this.mMobileNum)) {
         } else {
             String str = this.mMobileNum;
-            if (TextUtils.equals(this.mAreaCode, "+86") && !TextUtils.isEmpty(this.mMobileNum) && this.mMobileNum.length() == 11) {
+            if (StringUtils.equals(this.mAreaCode, "+86") && !StringUtils.isEmpty(this.mMobileNum) && this.mMobileNum.length() == 11) {
                 int i = R.string.aliuser_sms_code_secondary_title;
                 string = getString(i, " " + (this.mMobileNum.substring(0, 3) + ' ' + this.mMobileNum.substring(3, 7) + ' ' + this.mMobileNum.substring(7, 11)));
             } else {
@@ -390,7 +390,7 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
             countDownButton.startCountDown(j, 1000L);
             if ("voice".equals(smsApplyResult.sendType)) {
                 this.mVideoUrl = null;
-            } else if (smsApplyResult == null || TextUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
+            } else if (smsApplyResult == null || StringUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
             } else {
                 this.mVideoUrl = smsApplyResult.helpVideoUrl;
             }
@@ -417,7 +417,7 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
         } else if (!isActive() || (aliUserSmsCodeView = this.mSmsCodeView) == null) {
         } else {
             aliUserSmsCodeView.clearText();
-            if (rpcResponse != null && !TextUtils.isEmpty(rpcResponse.message)) {
+            if (rpcResponse != null && !StringUtils.isEmpty(rpcResponse.message)) {
                 toast(rpcResponse.message, 0);
             }
             Properties properties = LoginComponent.getProperties();
@@ -443,13 +443,13 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
     @Override // com.ali.user.mobile.login.ui.UserMobileLoginView
     public String getCountryCode() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("7094bfac", new Object[]{this}) : TextUtils.isEmpty(this.mCountryCode) ? "CN" : this.mCountryCode;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("7094bfac", new Object[]{this}) : StringUtils.isEmpty(this.mCountryCode) ? "CN" : this.mCountryCode;
     }
 
     @Override // com.ali.user.mobile.login.ui.UserMobileLoginView
     public String getPhoneCode() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("3daf0254", new Object[]{this}) : TextUtils.isEmpty(this.mAreaCode) ? "86" : this.mAreaCode.replace(riy.PLUS, "");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("3daf0254", new Object[]{this}) : StringUtils.isEmpty(this.mAreaCode) ? "86" : this.mAreaCode.replace(riy.PLUS, "");
     }
 
     public void sendCodeAction() {
@@ -466,7 +466,7 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
         if (textView != null) {
             textView.setVisibility(8);
         }
-        UserTrackAdapter.sendControlUT(getPageName(), "Button-SendSms", TextUtils.isEmpty(this.mMobileNum) ? "" : this.mMobileNum);
+        UserTrackAdapter.sendControlUT(getPageName(), "Button-SendSms", StringUtils.isEmpty(this.mMobileNum) ? "" : this.mMobileNum);
         try {
             onSendSMSAction();
         } catch (Throwable th) {
@@ -537,7 +537,7 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
                     smsApplyResult = (SmsApplyResult) map.get("result");
                     if (smsApplyResult != null) {
                         try {
-                            if (!TextUtils.isEmpty(smsApplyResult.smsSid)) {
+                            if (!StringUtils.isEmpty(smsApplyResult.smsSid)) {
                                 AliUserRegisterSMSVerificationFragment.this.mSessionId = smsApplyResult.smsSid;
                             }
                         } catch (Throwable th3) {
@@ -602,7 +602,7 @@ public class AliUserRegisterSMSVerificationFragment extends BaseFragment impleme
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("652b6bb2", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mVideoUrl)) {
+        } else if (StringUtils.isEmpty(this.mVideoUrl)) {
             addControl("Button-Help");
             if (!(this.mAttachedActivity instanceof AliUserRegisterActivity)) {
                 return;

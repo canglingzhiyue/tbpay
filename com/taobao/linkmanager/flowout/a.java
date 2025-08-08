@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.security.ccrc.service.CcrcContext;
 import com.alibaba.security.ccrc.service.CcrcOffClientService;
@@ -175,7 +175,7 @@ public class a {
         }
         Uri data = intent.getData();
         com.taobao.linkmanager.flowout.data.a aVar2 = this.f17703a;
-        if (aVar2 != null && !TextUtils.isEmpty(aVar2.f17708a) && this.f17703a.c > 0) {
+        if (aVar2 != null && !StringUtils.isEmpty(aVar2.f17708a) && this.f17703a.c > 0) {
             long currentTimeMillis = System.currentTimeMillis();
             long j = currentTimeMillis - this.f17703a.c;
             String dataString = intent.getDataString();
@@ -228,7 +228,7 @@ public class a {
             return mbo.a().a(intent, a2, str);
         }
         String scheme = data.getScheme();
-        if (TextUtils.equals("http", scheme) || TextUtils.equals("https", scheme)) {
+        if (StringUtils.equals("http", scheme) || StringUtils.equals("https", scheme)) {
             com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutCenter === FlowDistribute === 浏览器拦截流程");
             return true;
         }
@@ -251,7 +251,7 @@ public class a {
             String uri2 = uri.toString();
             String queryParameter = uri.getQueryParameter("bc_fl_src");
             String queryParameter2 = uri.getQueryParameter(c.FL_OUT_ID);
-            if (TextUtils.isEmpty(queryParameter) && !TextUtils.isEmpty(queryParameter2)) {
+            if (StringUtils.isEmpty(queryParameter) && !StringUtils.isEmpty(queryParameter2)) {
                 uri2 = TFCCommonUtils.a(uri2, "bc_fl_src", queryParameter2);
             }
             intent.setData(Uri.parse(uri2 + c.LINK_PREFIX));
@@ -269,7 +269,7 @@ public class a {
             return;
         }
         String str = flowOutConfigData.blockTip;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "正在努力尝试跳转，请先逛逛其他内容~";
         }
         Toast.makeText(context, str, 0).show();

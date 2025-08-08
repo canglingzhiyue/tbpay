@@ -2,7 +2,7 @@ package com.taobao.detail.rate.widget;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -155,7 +155,7 @@ public class RateSkuTagLayout extends LinearLayout {
         this.containerView = LayoutInflater.from(this.mContext).inflate(R.layout.rate_sku_select_item_layout, (ViewGroup) null);
         this.tagFlowLayout = (TagFlowLayout) this.containerView.findViewById(R.id.rate_sku_item);
         this.titleView = (TextView) this.containerView.findViewById(R.id.rate_sku_name);
-        if (!TextUtils.isEmpty(this.title)) {
+        if (!StringUtils.isEmpty(this.title)) {
             this.titleView.setText(this.title);
         }
         List<JSONObject> list = this.mLabels;
@@ -183,7 +183,7 @@ public class RateSkuTagLayout extends LinearLayout {
                 rateTagView.setDisabled(z);
                 String string = jSONObject.getString("name");
                 Boolean valueOf = Boolean.valueOf(jSONObject.containsKey(gbk.TYPE_SELECTED) ? jSONObject.getBoolean(gbk.TYPE_SELECTED).booleanValue() : false);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     rateTagView.setText(string, 1);
                 }
                 if (valueOf.booleanValue()) {

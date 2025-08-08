@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -68,7 +68,7 @@ public final class jtq extends jte {
         }
         String a2 = bVar.a();
         Map<String, Object> c = bVar.c();
-        if (TextUtils.isEmpty(a2) || c == null) {
+        if (StringUtils.isEmpty(a2) || c == null) {
             return;
         }
         if ("AURANextRPCServiceDomain".equals(bVar.f())) {

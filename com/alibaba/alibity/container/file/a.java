@@ -1,6 +1,6 @@
 package com.alibaba.alibity.container.file;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import com.alibaba.ability.impl.file.FileAbility;
@@ -781,7 +781,7 @@ public final class a implements com.alibaba.ability.b {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
         String str2 = str;
-        return TextUtils.isEmpty(str2) ? str : (TextUtils.equals(str2, "ucs2") || TextUtils.equals(str2, "ucs-2") || TextUtils.equals(str2, "utf16le") || TextUtils.equals(str2, "utf-16le")) ? "UTF-16LE" : str;
+        return StringUtils.isEmpty(str2) ? str : (StringUtils.equals(str2, "ucs2") || StringUtils.equals(str2, "ucs-2") || StringUtils.equals(str2, "utf16le") || StringUtils.equals(str2, "utf-16le")) ? "UTF-16LE" : str;
     }
 
     private final boolean d(String str) {
@@ -789,7 +789,7 @@ public final class a implements com.alibaba.ability.b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return p.c("ascii", "base64", ogw.BIN_TAG, "hex", "ucs2", "ucs-2", "utf16le", "utf-16le", "utf-8", "utf8", "latin1", "ArrayBuffer", "DirectArrayBuffer").contains(str);
         }
         return false;
@@ -1089,7 +1089,7 @@ public final class a implements com.alibaba.ability.b {
                                 ZipEntry zipEntry = (ZipEntry) a4.next();
                                 String name = zipEntry.getName();
                                 q.b(name, "zipEntry.name");
-                                if (!TextUtils.isEmpty(name) && !kotlin.text.n.b(name, "../", false, 2, (Object) null) && !kotlin.text.n.c(name, "/..", false, 2, (Object) null) && !kotlin.text.n.b((CharSequence) name, (CharSequence) "/../", false, 2, (Object) null)) {
+                                if (!StringUtils.isEmpty(name) && !kotlin.text.n.b(name, "../", false, 2, (Object) null) && !kotlin.text.n.c(name, "/..", false, 2, (Object) null) && !kotlin.text.n.b((CharSequence) name, (CharSequence) "/../", false, 2, (Object) null)) {
                                     File file3 = new File(str4 + name);
                                     if (zipEntry.isDirectory()) {
                                         file3.mkdirs();

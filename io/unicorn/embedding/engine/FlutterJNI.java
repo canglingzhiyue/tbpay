@@ -464,15 +464,15 @@ public class FlutterJNI {
         nativeMarkTextureFrameAvailable(this.nativeShellHolderId.longValue(), j);
     }
 
-    public native boolean nativeFlutterTextUtilsIsEmoji(int i);
+    public native boolean nativeFlutterStringUtilsIsEmoji(int i);
 
-    public native boolean nativeFlutterTextUtilsIsEmojiModifier(int i);
+    public native boolean nativeFlutterStringUtilsIsEmojiModifier(int i);
 
-    public native boolean nativeFlutterTextUtilsIsEmojiModifierBase(int i);
+    public native boolean nativeFlutterStringUtilsIsEmojiModifierBase(int i);
 
-    public native boolean nativeFlutterTextUtilsIsRegionalIndicator(int i);
+    public native boolean nativeFlutterStringUtilsIsRegionalIndicator(int i);
 
-    public native boolean nativeFlutterTextUtilsIsVariationSelector(int i);
+    public native boolean nativeFlutterStringUtilsIsVariationSelector(int i);
 
     public void notifyLowMemoryWarning() {
         ensureRunningOnMainThread();

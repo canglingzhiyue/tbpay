@@ -1,7 +1,7 @@
 package com.alipay.android.msp.ui.web;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +61,7 @@ public class UCWebViewWindow extends LinearLayout implements IWebViewWindow {
             return;
         }
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.tip_container);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || this.mContext == null) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || this.mContext == null) {
             linearLayout.setVisibility(8);
             return;
         }
@@ -109,7 +109,7 @@ public class UCWebViewWindow extends LinearLayout implements IWebViewWindow {
         if (z) {
             WebSettings settings = this.on.getSettings();
             String userAgentString = settings.getUserAgentString();
-            if (!TextUtils.isEmpty(userAgentString) && userAgentString.contains(riy.BRACKET_START_STR)) {
+            if (!StringUtils.isEmpty(userAgentString) && userAgentString.contains(riy.BRACKET_START_STR)) {
                 String substring = userAgentString.substring(0, userAgentString.indexOf(riy.BRACKET_START_STR));
                 settings.setUserAgentString(substring + MspConfig.getInstance().getSdkUserAgent(this.mContext.getApplicationContext()));
                 settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
@@ -133,16 +133,16 @@ public class UCWebViewWindow extends LinearLayout implements IWebViewWindow {
         } catch (Exception e2) {
             LogUtil.printExceptionStackTrace(e2);
         }
-        if (TextUtils.equals("help", this.op)) {
+        if (StringUtils.equals("help", this.op)) {
             this.ol.setVisibility(0);
             this.ok.setVisibility(8);
-        } else if (TextUtils.equals("refresh", this.op)) {
+        } else if (StringUtils.equals("refresh", this.op)) {
             this.ol.setVisibility(8);
             this.ok.setVisibility(0);
-        } else if (TextUtils.equals("none", this.op)) {
+        } else if (StringUtils.equals("none", this.op)) {
             this.ol.setVisibility(8);
             this.ok.setVisibility(8);
-        } else if (!TextUtils.isEmpty(this.om)) {
+        } else if (!StringUtils.isEmpty(this.om)) {
             this.ol.setVisibility(0);
             this.ok.setVisibility(8);
         }
@@ -184,15 +184,15 @@ public class UCWebViewWindow extends LinearLayout implements IWebViewWindow {
             return;
         }
         int i = 8;
-        if (TextUtils.equals(this.op, "refresh")) {
+        if (StringUtils.equals(this.op, "refresh")) {
             ImageView imageView2 = this.ok;
             if (z) {
                 i = 0;
             }
             imageView2.setVisibility(i);
-        } else if (!TextUtils.isEmpty(this.op)) {
+        } else if (!StringUtils.isEmpty(this.op)) {
         } else {
-            if (!TextUtils.isEmpty(this.om)) {
+            if (!StringUtils.isEmpty(this.om)) {
                 imageView = this.ok;
             } else {
                 imageView = this.ok;

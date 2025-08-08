@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Space;
@@ -166,6 +166,6 @@ public final class ezz extends atl implements atd {
 
     private boolean c(AURARenderComponent aURARenderComponent) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("35b1c95", new Object[]{this, aURARenderComponent})).booleanValue() : (aURARenderComponent == null || aURARenderComponent.data == null || aURARenderComponent.data.container == null || aURARenderComponent.data.container.containerType == null || !TextUtils.equals(aURARenderComponent.data.container.containerType.toLowerCase(), "picGallery".toLowerCase())) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("35b1c95", new Object[]{this, aURARenderComponent})).booleanValue() : (aURARenderComponent == null || aURARenderComponent.data == null || aURARenderComponent.data.container == null || aURARenderComponent.data.container.containerType == null || !StringUtils.equals(aURARenderComponent.data.container.containerType.toLowerCase(), "picGallery".toLowerCase())) ? false : true;
     }
 }

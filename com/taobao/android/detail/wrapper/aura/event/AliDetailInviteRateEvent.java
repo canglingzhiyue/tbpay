@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.aura.event;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.service.event.AURAEventIO;
@@ -66,7 +66,7 @@ public final class AliDetailInviteRateEvent extends arv {
             return;
         }
         String string = c2.getString("itemId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         Context e = b().e();

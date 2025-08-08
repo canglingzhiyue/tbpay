@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -77,7 +77,7 @@ public class siq extends pta {
         this.d = (FrameLayout) this.c.B();
         this.e = (VideoRoundCornerLayout) this.d.findViewById(R.id.video_host);
         String str = ((IDataService) this.c.z().getService(IDataService.class)).getConfig().j().B;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         FluidSDK.getImageAdapter().load(str, new com.taobao.android.fluid.framework.adapter.mtop.a<String, BitmapDrawable>() { // from class: tb.siq.1

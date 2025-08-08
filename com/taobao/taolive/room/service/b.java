@@ -4,7 +4,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -88,7 +88,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3cfa538a", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (aVar == null) {
                 return;
             }
@@ -142,7 +142,7 @@ public class b {
         File file = new File(str);
         FileInputStream fileInputStream = null;
         try {
-            if (!TextUtils.isEmpty(str) && !str.endsWith(".zip")) {
+            if (!StringUtils.isEmpty(str) && !str.endsWith(".zip")) {
                 FileInputStream fileInputStream2 = new FileInputStream(new File(str));
                 try {
                     arrayList.add(new BitmapDrawable(BitmapFactory.decodeStream(fileInputStream2)));
@@ -160,7 +160,7 @@ public class b {
             while (entries.hasMoreElements()) {
                 ZipEntry nextElement = entries.nextElement();
                 String name = nextElement.getName();
-                if (!TextUtils.isEmpty(name) && name.endsWith(".png") && !name.contains("../")) {
+                if (!StringUtils.isEmpty(name) && name.endsWith(".png") && !name.contains("../")) {
                     File file2 = new File(a2 + fxb.DIR + l.a(name));
                     if (file2.isHidden()) {
                         file2.delete();
@@ -194,7 +194,7 @@ public class b {
             ipChange.ipc$dispatch("42fe1ee9", new Object[]{this, str, aVar});
             return;
         }
-        if (!TextUtils.isEmpty(str) && !str.startsWith("http")) {
+        if (!StringUtils.isEmpty(str) && !str.startsWith("http")) {
             str = com.taobao.vessel.utils.b.HTTPS_SCHEMA + str;
         }
         HashMap hashMap = new HashMap();

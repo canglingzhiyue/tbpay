@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,7 +53,7 @@ public class tgz extends h {
                 return;
             }
             String a2 = lfq.a(b, HMultiSelectView.KEY_MULTI_SELECT_TEXT);
-            if (TextUtils.isEmpty(a2) || (split = a2.split(",")) == null || split.length == 0) {
+            if (StringUtils.isEmpty(a2) || (split = a2.split(",")) == null || split.length == 0) {
                 return;
             }
             jSONObject2.put("reason", (Object) Arrays.asList(split).toString());

@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.floatviewmonitorservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.interact.pop.d;
 import com.taobao.infoflow.protocol.subservice.biz.IFloatViewDetectService;
@@ -38,7 +38,7 @@ public class FloatViewDetectServiceImpl implements IFloatViewDetectService {
         sb.append("淘口令");
         strArr[0] = sb.toString();
         ldf.d(TAG, strArr);
-        boolean isEmpty = TextUtils.isEmpty(d.d());
+        boolean isEmpty = StringUtils.isEmpty(d.d());
         ldf.d(TAG, "isHasPop->：" + isEmpty);
         String str = hasTaoPassword ? "TaoPwd" : isEmpty ? "PopLayer" : "None";
         Iterator<IFloatViewDetectService.a> it = this.listeners.iterator();

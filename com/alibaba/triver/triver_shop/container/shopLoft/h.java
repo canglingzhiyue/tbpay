@@ -3,7 +3,7 @@ package com.alibaba.triver.triver_shop.container.shopLoft;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -239,7 +239,7 @@ public final class h implements com.alibaba.triver.triver_shop.container.shopLof
             viewGroup.addView(this.b);
             this.d = jSONObject;
             String string = jSONObject == null ? null : jSONObject.getString("coverPicUrl");
-            if (!TextUtils.isEmpty(string) && (tBLiveOpenCardView = this.b) != null) {
+            if (!StringUtils.isEmpty(string) && (tBLiveOpenCardView = this.b) != null) {
                 tBLiveOpenCardView.setImageUrl(string);
             }
             TBLiveOpenCardView tBLiveOpenCardView3 = this.b;

@@ -1,6 +1,6 @@
 package com.taobao.unit.center.mdc.dinamicx.dataParse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -85,7 +85,7 @@ public class DXDataParserMpLongFormatTime extends fuf {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("346fba81", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         int indexOf = str2.indexOf(" ");

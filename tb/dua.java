@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -92,7 +92,7 @@ public final class dua implements IAURANextRPCPrefetchExtension {
             arrayList.add((String) this.f26982a.a("itemCount", String.class));
             arrayList.add((String) this.f26982a.a("bucket", String.class));
             HashMap hashMap = new HashMap();
-            hashMap.put("savaTime", Long.valueOf(TextUtils.isEmpty(str) ? 0L : Long.valueOf(str).longValue()));
+            hashMap.put("savaTime", Long.valueOf(StringUtils.isEmpty(str) ? 0L : Long.valueOf(str).longValue()));
             ifz.a("prefetchSaveTime", hashMap, arrayList, null, 0.001f);
         }
     }
@@ -111,7 +111,7 @@ public final class dua implements IAURANextRPCPrefetchExtension {
         String string = AliBuyPerfSwitcher.getString("prefetchCompareWhiteList", "websiteLanguage");
         List<String> list = null;
         try {
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 list = Arrays.asList(string.split(","));
             }
         } catch (Throwable unused) {
@@ -125,7 +125,7 @@ public final class dua implements IAURANextRPCPrefetchExtension {
             return (asj) ipChange.ipc$dispatch("3c28f00f", new Object[]{this, aURANextRPCEndpoint, aURANextRPCEndpoint2, list});
         }
         asj asjVar = new asj();
-        if (TextUtils.isEmpty(aURANextRPCEndpoint2.getKey()) || !aURANextRPCEndpoint2.getKey().equals(aURANextRPCEndpoint.getKey())) {
+        if (StringUtils.isEmpty(aURANextRPCEndpoint2.getKey()) || !aURANextRPCEndpoint2.getKey().equals(aURANextRPCEndpoint.getKey())) {
             asjVar.b().put("missKey", "apiKey");
             asjVar.b().put("missMsg", "missApi");
             asjVar.b().put("prefetchValue", aURANextRPCEndpoint.getKey());

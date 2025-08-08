@@ -1,6 +1,6 @@
 package com.taobao.bootimage.linked;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.data.BootImageData;
@@ -97,7 +97,7 @@ public class LinkedSplashData implements Serializable {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("2a0e524a", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

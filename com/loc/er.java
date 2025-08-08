@@ -9,7 +9,7 @@ import android.net.ConnectivityManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.Ta;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
@@ -106,7 +106,7 @@ public final class er {
             }
             try {
                 String action = intent.getAction();
-                if (TextUtils.isEmpty(action)) {
+                if (StringUtils.isEmpty(action)) {
                     return;
                 }
                 if (!action.equals("android.net.wifi.SCAN_RESULTS")) {
@@ -478,7 +478,7 @@ public final class er {
         if (this.c.n()) {
             i = 15;
             sb = "networkLocation has been mocked!#1502";
-        } else if (!TextUtils.isEmpty(this.N)) {
+        } else if (!StringUtils.isEmpty(this.N)) {
             ew a2 = this.e.a(this.f7766a, this.N, this.w, true, z);
             if (fy.a(a2)) {
                 d(a2);
@@ -503,7 +503,7 @@ public final class er {
             return a(15, "networkLocation has been mocked!#1502");
         } else {
             b();
-            if (TextUtils.isEmpty(this.N)) {
+            if (StringUtils.isEmpty(this.N)) {
                 return a(this.z, this.o.toString());
             }
             ew b = b(z, eqVar);
@@ -635,7 +635,7 @@ public final class er {
         this.g = this.c.e();
         this.d.a(true, p());
         this.N = c(eqVar);
-        if (!TextUtils.isEmpty(this.N)) {
+        if (!StringUtils.isEmpty(this.N)) {
             this.w = a(this.w);
         }
         this.x = true;

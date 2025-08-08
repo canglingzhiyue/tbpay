@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -999,7 +999,7 @@ public class NormalVideoView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5862e262", new Object[]{this, str, imageView});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             i.a("VideoView", "loadBgMask url is empty");
         } else {
             bf.a(new Runnable() { // from class: com.taobao.android.detail.ttdetail.widget.video.NormalVideoView.2

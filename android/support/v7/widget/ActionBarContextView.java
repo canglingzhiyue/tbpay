@@ -3,7 +3,7 @@ package android.support.v7.widget;
 import android.content.Context;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -63,8 +63,8 @@ public class ActionBarContextView extends AbsActionBarView {
         }
         this.mTitleView.setText(this.mTitle);
         this.mSubtitleView.setText(this.mSubtitle);
-        boolean z = !TextUtils.isEmpty(this.mTitle);
-        boolean z2 = !TextUtils.isEmpty(this.mSubtitle);
+        boolean z = !StringUtils.isEmpty(this.mTitle);
+        boolean z2 = !StringUtils.isEmpty(this.mSubtitle);
         int i = 0;
         this.mSubtitleView.setVisibility(z2 ? 0 : 8);
         LinearLayout linearLayout = this.mTitleLayout;

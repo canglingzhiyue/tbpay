@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.ace;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.k;
@@ -24,7 +24,7 @@ public class AceMultiPortBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "fetchCurrentPort")) {
+        if (StringUtils.equals(str, "fetchCurrentPort")) {
             int g = imp.a().g();
             k.e(PLUGIN_NAME, "ace current port:" + g);
             JSONObject jSONObject = new JSONObject();

@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.slide;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -153,7 +153,7 @@ public class SlideContainer extends FrameLayout {
             this.viewPager.setPageTransformer(false, null);
         } else {
             String string = jSONObject.getString("type");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 this.viewPager.setPageTransformer(false, null);
                 return;
             }

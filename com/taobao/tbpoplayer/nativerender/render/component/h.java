@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.nativerender.render.component;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
@@ -199,7 +199,7 @@ public class h extends c<VideoModel> {
         }
         try {
             s.a aVar = new s.a(PopLayer.getReference().internalGetCurrentActivity());
-            if (!TextUtils.isEmpty(((VideoModel) this.b).videoId)) {
+            if (!StringUtils.isEmpty(((VideoModel) this.b).videoId)) {
                 aVar.c(p.a(this.f22246a, ((VideoModel) this.b).videoId));
             } else {
                 aVar.a(p.a(this.f22246a, ((VideoModel) this.b).url));
@@ -388,7 +388,7 @@ public class h extends c<VideoModel> {
                     h hVar = h.this;
                     h.a(hVar, hVar.c);
                     StyleModel a2 = h.this.a();
-                    if (!TextUtils.isEmpty(a2.opacity)) {
+                    if (!StringUtils.isEmpty(a2.opacity)) {
                         frameLayout.setAlpha(Float.parseFloat(a2.opacity));
                     } else {
                         frameLayout.setAlpha(1.0f);

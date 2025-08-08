@@ -1,6 +1,6 @@
 package com.taobao.android.msoa;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -26,7 +26,7 @@ public class e implements InvocationHandler {
     public Object invoke(Object obj, Method method, Object[] objArr) throws Throwable {
         String str = "msoa.interface." + this.b + "." + method.getName();
         String str2 = this.c;
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             str2 = this.c + "@" + this.d;
         }
         if (!m.a(str, str2)) {

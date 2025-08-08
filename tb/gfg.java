@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -63,7 +63,7 @@ public class gfg implements Runnable {
                 return;
             }
             String substring = c.g.f11934a.substring(0, c.g.f11934a.length() - 7);
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 return;
             }
             String str = substring + "logic";

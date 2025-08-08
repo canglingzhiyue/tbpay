@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.calendar.bridge.model.ScheduleDTOModule;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -39,7 +39,7 @@ public class kfl {
         }
         String bizId = scheduleDTOModule.getBizId();
         String outId = scheduleDTOModule.getOutId();
-        if (TextUtils.isEmpty(bizId) || TextUtils.isEmpty(outId)) {
+        if (StringUtils.isEmpty(bizId) || StringUtils.isEmpty(outId)) {
             return;
         }
         Map<String, ScheduleDTOModule> b = this.b.b();
@@ -56,7 +56,7 @@ public class kfl {
             return;
         }
         for (ScheduleDTOModule scheduleDTOModule : list) {
-            if (scheduleDTOModule != null && !TextUtils.isEmpty(scheduleDTOModule.getOutId()) && !TextUtils.isEmpty(scheduleDTOModule.getBizId())) {
+            if (scheduleDTOModule != null && !StringUtils.isEmpty(scheduleDTOModule.getOutId()) && !StringUtils.isEmpty(scheduleDTOModule.getBizId())) {
                 this.b.a(list);
             }
         }
@@ -68,7 +68,7 @@ public class kfl {
 
     public boolean a(String str, String str2) {
         ScheduleDTOModule a2;
-        return !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (a2 = this.b.a(str, str2)) != null && !TextUtils.isEmpty(a2.getBizId()) && !TextUtils.isEmpty(a2.getOutId());
+        return !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (a2 = this.b.a(str, str2)) != null && !StringUtils.isEmpty(a2.getBizId()) && !StringUtils.isEmpty(a2.getOutId());
     }
 
     public void b() {

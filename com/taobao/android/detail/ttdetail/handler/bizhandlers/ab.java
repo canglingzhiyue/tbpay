@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -82,7 +82,7 @@ public class ab implements ezm {
             JSONObject jSONObject3 = jSONArray.getJSONObject(i);
             if (jSONObject3 != null) {
                 final String string = jSONObject3.getString("type");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     final JSONObject jSONObject4 = jSONObject3.getJSONObject("fields");
                     if (string.equals("adjustState") && jSONObject4 != null) {
                         JSONObject jSONObject5 = new JSONObject();

@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.utils;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -51,7 +51,7 @@ public class IDecisionHelper {
         }
         try {
             String string = jSONObject.getString("userId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "";
             }
             DecisionEngine.a(MicroModuleContext.getInstance().getContext());

@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.nav.detail;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
 import tb.kge;
@@ -38,10 +38,10 @@ public class d extends com.taobao.android.order.bundle.nav.a<Intent> {
         Uri data = intent.getData();
         if (data != null) {
             String queryParameter = data.getQueryParameter("source");
-            if (!TextUtils.isEmpty(queryParameter) && "1".equals(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter) && "1".equals(queryParameter)) {
                 intent.putExtra("from", "OrderListActivity");
                 String queryParameter2 = data.getQueryParameter("pageFrom");
-                if (!TextUtils.isEmpty(queryParameter2)) {
+                if (!StringUtils.isEmpty(queryParameter2)) {
                     intent.putExtra("pageFrom", queryParameter2);
                 }
                 intent.putExtra(CoreConstants.USE_V2, Boolean.valueOf(data.getQueryParameter(CoreConstants.IN_PARAM_SERVER_V2)));

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.recommend3.gateway.model.request.AwesomeGetRequestParams;
 import com.taobao.tao.recommend3.gateway.request.a;
@@ -49,7 +49,7 @@ public class opg {
             return;
         }
         try {
-            long parseLong = TextUtils.isEmpty(aVar.e) ? 5000L : Long.parseLong(aVar.e);
+            long parseLong = StringUtils.isEmpty(aVar.e) ? 5000L : Long.parseLong(aVar.e);
             remoteBusiness.mo1301prefetchComparator((MtopPrefetch.IPrefetchComparator) new jlw());
             remoteBusiness.mo1299prefetch(parseLong, aVar.f, new MtopPrefetch.IPrefetchCallback() { // from class: tb.opg.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

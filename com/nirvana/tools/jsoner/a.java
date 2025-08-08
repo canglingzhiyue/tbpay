@@ -1,6 +1,6 @@
 package com.nirvana.tools.jsoner;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -94,7 +94,7 @@ public class a {
                 ArrayList arrayList = new ArrayList(length);
                 for (int i = 0; i < length; i++) {
                     String string = jSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         JSONObject jSONObject = new JSONObject(string);
                         T newInstance = dVar.newInstance();
                         newInstance.fromJson(jSONObject);
@@ -112,7 +112,7 @@ public class a {
 
     public static Map<String, Integer> a(String str) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             JSONObject jSONObject = new JSONObject(str);

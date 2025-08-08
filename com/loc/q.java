@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public final class q {
@@ -116,7 +116,7 @@ public final class q {
 
     public static String a(String str) {
         Uri.Builder buildUpon;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (!str.startsWith("https")) {
                 try {
                     buildUpon = Uri.parse(str).buildUpon();

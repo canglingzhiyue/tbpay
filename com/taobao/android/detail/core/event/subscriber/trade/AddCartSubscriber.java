@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.event.subscriber.trade;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -96,7 +96,7 @@ public class AddCartSubscriber implements j<efr>, Serializable {
         }
         c cVar = efrVar.c;
         com.taobao.android.detail.datasdk.event.params.a aVar = cVar.f9951a;
-        if (TextUtils.isEmpty(aVar.b)) {
+        if (StringUtils.isEmpty(aVar.b)) {
             return com.taobao.android.detail.core.event.a.FAILURE;
         }
         String str = aVar.b;
@@ -220,7 +220,7 @@ public class AddCartSubscriber implements j<efr>, Serializable {
             str = "小二很忙，系统很累，请稍后重试";
         } else {
             String retMsg = mtopResponse.getRetMsg();
-            if (TextUtils.isEmpty(retMsg)) {
+            if (StringUtils.isEmpty(retMsg)) {
                 retMsg = ADD_CART_FAILED;
             }
             str = retMsg;
@@ -405,8 +405,8 @@ public class AddCartSubscriber implements j<efr>, Serializable {
                 }
                 String string = jSONObject2.getString("type");
                 String string2 = jSONObject.getString("url");
-                if (!TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string)) {
-                    if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(str)) {
                         com.alibaba.fastjson.JSONObject jSONObject3 = jSONObject2.getJSONObject("fields");
                         jSONObject3.put("url", (Object) (string2 + "&skuInfo=" + str));
                         jSONObject2.put("fields", (Object) jSONObject3);
@@ -426,7 +426,7 @@ public class AddCartSubscriber implements j<efr>, Serializable {
             }
             Intent intent = new Intent();
             intent.setAction("cartRefreshData");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             intent.putExtra("stringifyAddCartResult", str);
@@ -449,17 +449,17 @@ public class AddCartSubscriber implements j<efr>, Serializable {
                 }
                 try {
                     String str2 = "";
-                    if (!TextUtils.isEmpty(str) && (parseObject = com.alibaba.fastjson.JSONObject.parseObject(URLDecoder.decode(str, "utf-8"))) != null && parseObject.containsKey("skuId")) {
+                    if (!StringUtils.isEmpty(str) && (parseObject = com.alibaba.fastjson.JSONObject.parseObject(URLDecoder.decode(str, "utf-8"))) != null && parseObject.containsKey("skuId")) {
                         str2 = parseObject.getString("skuId");
                     }
                     if (eqb.j(this.f9733a.y().h.f27459a.f10055a) == null || eqb.j(this.f9733a.y().h.f27459a.f10055a).sku2info == null) {
                         return;
                     }
                     HashMap<String, SkuCoreNode.SkuAttribute> hashMap = eqb.j(this.f9733a.y().h.f27459a.f10055a).sku2info;
-                    if (TextUtils.isEmpty(str2) && hashMap.size() == 1) {
+                    if (StringUtils.isEmpty(str2) && hashMap.size() == 1) {
                         str2 = "0";
                     }
-                    if (TextUtils.isEmpty(str2) || hashMap.get(str2) == null) {
+                    if (StringUtils.isEmpty(str2) || hashMap.get(str2) == null) {
                         return;
                     }
                     emu.a("com.taobao.android.detail.core.event.subscriber.trade.AddCartSubscriber#AchieveCouponAfterSuperMarketAddCart");

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.core.OrderConfigs;
 
@@ -22,7 +22,7 @@ public class hzm {
         if (ipChange instanceof IpChange) {
             return (hzk) ipChange.ipc$dispatch("47cae0c7", new Object[]{this, context, bizNameType, str});
         }
-        if (OrderConfigs.BizNameType.ORDER_LIST == bizNameType && ibl.a() && !TextUtils.isEmpty(str) && str.toLowerCase().startsWith("mtop.taobao.order.queryboughtlistv2")) {
+        if (OrderConfigs.BizNameType.ORDER_LIST == bizNameType && ibl.a() && !StringUtils.isEmpty(str) && str.toLowerCase().startsWith("mtop.taobao.order.queryboughtlistv2")) {
             if (this.b == null) {
                 this.b = new hzn(context, "nextrpc-TM2");
             }

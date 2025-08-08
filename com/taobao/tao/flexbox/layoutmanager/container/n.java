@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.transition.ChangeBounds;
 import android.transition.ChangeClipBounds;
 import android.transition.ChangeTransform;
@@ -69,7 +69,7 @@ public class n {
             return (Pair) ipChange.ipc$dispatch("bb36b1f4", new Object[]{context, str});
         }
         String queryParameter = Uri.parse(str).getQueryParameter("transition");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             try {
                 JSONObject parseObject = JSON.parseObject(queryParameter);
                 JSONArray jSONArray = parseObject.getJSONArray("share");
@@ -102,14 +102,14 @@ public class n {
             HashSet hashSet = new HashSet();
             HashSet hashSet2 = new HashSet();
             if (bundle != null ? oec.a(bundle.get("animated"), true) : true) {
-                if (TextUtils.equals(a.GESTURE_PULLRIGHTEXIT, uri2.getQueryParameter(a.CONFIG_PAN_GESTURE))) {
+                if (StringUtils.equals(a.GESTURE_PULLRIGHTEXIT, uri2.getQueryParameter(a.CONFIG_PAN_GESTURE))) {
                     hashSet2.add("push");
                     hashSet2.add("interact");
                 }
                 if (oec.a((Object) uri2.getQueryParameter(a.CONFIG_SEC_PAGE_ENABLE), false)) {
                     hashSet.add(TRANSITION_TYPE_SECONDPAGE);
                 }
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     try {
                         JSONObject parseObject = JSON.parseObject(queryParameter);
                         str = parseObject.getString("transitionType");
@@ -123,12 +123,12 @@ public class n {
                     } catch (Exception unused) {
                         str = queryParameter;
                     }
-                    if (!TextUtils.isEmpty(str) && (split = str.split(",")) != null && split.length > 0) {
+                    if (!StringUtils.isEmpty(str) && (split = str.split(",")) != null && split.length > 0) {
                         String[] split2 = split[0].split(SymbolExpUtil.SYMBOL_VERTICALBAR);
                         int i2 = 0;
                         for (int length = split2.length; i2 < length; length = i) {
                             String str2 = split2[i2];
-                            if (TextUtils.equals(str2, "share")) {
+                            if (StringUtils.equals(str2, "share")) {
                                 Map map = nVar.g;
                                 if (map != null) {
                                     i = length;
@@ -462,7 +462,7 @@ public class n {
             return ((Boolean) ipChange.ipc$dispatch("a325b9c5", new Object[]{this, strArr, str})).booleanValue();
         }
         for (String str2 : strArr) {
-            if (TextUtils.equals(str2, str)) {
+            if (StringUtils.equals(str2, str)) {
                 return true;
             }
         }
@@ -475,7 +475,7 @@ public class n {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
         Map map = this.g;
-        return oeb.E() && a("push", "interact") && (map != null ? TextUtils.equals("right", oec.a(map.get("direction"), "right")) : true);
+        return oeb.E() && a("push", "interact") && (map != null ? StringUtils.equals("right", oec.a(map.get("direction"), "right")) : true);
     }
 
     public boolean b() {
@@ -484,7 +484,7 @@ public class n {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         Map map = this.g;
-        return a("push", "interact") && (map != null ? TextUtils.equals("bottom", oec.a(map.get("direction"), "right")) : false);
+        return a("push", "interact") && (map != null ? StringUtils.equals("bottom", oec.a(map.get("direction"), "right")) : false);
     }
 
     public boolean a(Context context) {

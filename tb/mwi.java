@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -96,7 +96,7 @@ public class mwi extends DXImageWidgetNode {
         } else {
             TUrlImageView tUrlImageView = (TUrlImageView) view;
             a(tUrlImageView, this.h);
-            if (TextUtils.isEmpty(this.f31300a)) {
+            if (StringUtils.isEmpty(this.f31300a)) {
                 return;
             }
             tUrlImageView.setImageUrl(this.f31300a);

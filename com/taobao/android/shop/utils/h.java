@@ -1,7 +1,7 @@
 package com.taobao.android.shop.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -127,7 +127,7 @@ public final class h {
         if ("WX_ERR_RELOAD_PAGE".equals(str) && str2.contains("jsc reboot")) {
             return;
         }
-        if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
             return;
         }
         try {

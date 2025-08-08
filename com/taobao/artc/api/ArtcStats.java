@@ -1,6 +1,6 @@
 package com.taobao.artc.api;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import tb.kge;
@@ -33,7 +33,7 @@ public class ArtcStats {
             ipChange.ipc$dispatch("b977bd24", new Object[]{map, str});
         } else if (map == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             map.put("user_id", str);

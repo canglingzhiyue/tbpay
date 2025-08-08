@@ -3,7 +3,7 @@ package com.taobao.android.dinamicx.widget;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -466,7 +466,7 @@ public class ab extends o {
             for (Map.Entry<String, Object> entry : this.o.entrySet()) {
                 try {
                     String key = entry.getKey();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         int i = 0;
                         while (true) {
                             if (i >= this.y.size()) {

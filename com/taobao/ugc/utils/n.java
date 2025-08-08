@@ -1,6 +1,6 @@
 package com.taobao.ugc.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.u;
 import java.util.HashMap;
@@ -69,7 +69,7 @@ public class n {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d49d661a", new Object[]{str, map, new Integer(i), str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             HashMap hashMap = new HashMap();
             if (map != null) {
@@ -89,7 +89,7 @@ public class n {
         }
         try {
             String a2 = q.a(map, "=", ",");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return a2.split(",");
             }
         } catch (Throwable unused) {

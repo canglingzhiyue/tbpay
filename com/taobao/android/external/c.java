@@ -1,6 +1,6 @@
 package com.taobao.android.external;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -22,7 +22,7 @@ public class c implements a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4fe4b5af", new Object[]{this, uCPReachViewState});
-        } else if (uCPReachViewState == null || TextUtils.isEmpty(uCPReachViewState.key) || TextUtils.isEmpty(uCPReachViewState.group) || uCPReachViewState.trackInfo == null || (callback = (NativeBroadcast.Callback) uCPReachViewState.trackInfo.get("callback")) == null) {
+        } else if (uCPReachViewState == null || StringUtils.isEmpty(uCPReachViewState.key) || StringUtils.isEmpty(uCPReachViewState.group) || uCPReachViewState.trackInfo == null || (callback = (NativeBroadcast.Callback) uCPReachViewState.trackInfo.get("callback")) == null) {
         } else {
             callback.callback((JSONObject) JSON.toJSON(uCPReachViewState), null);
             if (!com.taobao.homepage.pop.ucp.b.KEY_TERMINAL.equals(uCPReachViewState.key) && !"Error".equals(uCPReachViewState.key)) {

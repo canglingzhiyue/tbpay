@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -123,7 +123,7 @@ public class rno implements rny {
         hashMap.put("x-arup-appkey", rnw.b(str));
         hashMap.put("x-arup-appversion", rnw.b(appVersion));
         hashMap.put("x-arup-device-id", rnw.b(utdid));
-        if (!TextUtils.isEmpty(userId)) {
+        if (!StringUtils.isEmpty(userId)) {
             hashMap.put("x-arup-userinfo", rnw.b(userId));
         }
         hashMap.put("x-arup-timestamp", rnw.b(valueOf));
@@ -141,7 +141,7 @@ public class rno implements rny {
         if (a.a(2)) {
             a.a(2, "DeclareUploadActionRequest", "compute api sign:" + signature + ", input=" + ((Object) sb));
         }
-        if (TextUtils.isEmpty(signature)) {
+        if (StringUtils.isEmpty(signature)) {
             if (a.a(16)) {
                 a.a(16, "DeclareUploadActionRequest", "compute api sign failed.");
             }

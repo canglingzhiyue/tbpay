@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.taobao.android.autosize.l;
@@ -49,7 +49,7 @@ public class saa {
             sb.append(riy.BRACKET_END_STR);
             try {
                 if (SwitchConfig.getInstance().uaAddDeviceType()) {
-                    if (TextUtils.isEmpty(f33448a)) {
+                    if (StringUtils.isEmpty(f33448a)) {
                         if (l.d(context)) {
                             f33448a = "Fold";
                         } else if (l.b(context)) {

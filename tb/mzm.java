@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -149,7 +149,7 @@ public class mzm implements myr {
         if (ipChange instanceof IpChange) {
             return (myr) ipChange.ipc$dispatch("7fd208a9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return this;
         }
         myo dt_ = this.f.dt_();
@@ -172,7 +172,7 @@ public class mzm implements myr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6bc4e8c7", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.c.a(str);
         }
         return null;

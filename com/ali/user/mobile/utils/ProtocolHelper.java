@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
@@ -124,7 +124,7 @@ public class ProtocolHelper {
             sb.append(string);
             hashMap.put(string, getAlipayProtocol(context));
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             sb.append("《");
             sb.append(str);
             sb.append("》");
@@ -187,7 +187,7 @@ public class ProtocolHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("923ead4e", new Object[]{protocolModel, context, textView, str, str2, new Boolean(z)});
-        } else if (textView != null && protocolModel != null && !TextUtils.isEmpty(protocolModel.protocolTitle)) {
+        } else if (textView != null && protocolModel != null && !StringUtils.isEmpty(protocolModel.protocolTitle)) {
             try {
                 final Context applicationContext = context.getApplicationContext();
                 SpannableString spannableString = new SpannableString(protocolModel.protocolTitle);

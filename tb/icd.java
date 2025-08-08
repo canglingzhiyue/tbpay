@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class icd {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a(b("pad_not_full_white_list", "message"), ",").contains(str);
         }
         return false;
@@ -41,7 +41,7 @@ public class icd {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("8c4a1d4b", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new ArrayList();
         }
         return Arrays.asList(str.split(str2));

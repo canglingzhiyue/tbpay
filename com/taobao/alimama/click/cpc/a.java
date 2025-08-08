@@ -2,7 +2,7 @@ package com.taobao.alimama.click.cpc;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.api.ConnectionResult;
@@ -91,7 +91,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String str = "";
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return str;
         }
         Map<String, String> map = this.f8413a;
@@ -111,7 +111,7 @@ public class a {
         Map<String, String> map8 = this.f8413a;
         this.g = b.d(map8 == null ? str : map8.get("path"));
         if (this.c == null) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = str2 + "_";
             }
             this.c = "A1_" + str + b.a();

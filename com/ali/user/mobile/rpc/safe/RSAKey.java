@@ -1,6 +1,6 @@
 package com.ali.user.mobile.rpc.safe;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -20,7 +20,7 @@ public class RSAKey {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1e95448d", new Object[0]);
         }
-        if (TextUtils.isEmpty(rsaPubKey)) {
+        if (StringUtils.isEmpty(rsaPubKey)) {
             rsaPubKey = DEFAULT_RSA_KEY;
         }
         return rsaPubKey;

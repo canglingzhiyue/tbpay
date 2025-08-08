@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -151,7 +151,7 @@ public class flg extends flf {
             return ((Boolean) ipChange.ipc$dispatch("cd576de8", new Object[]{this, new Boolean(z), str, new Integer(i), dVar})).booleanValue();
         }
         if (!z && "0".equals(str) && i == 0) {
-            if (a() && !TextUtils.equals(this.c.h().f(), dVar.k)) {
+            if (a() && !StringUtils.equals(this.c.h().f(), dVar.k)) {
                 dVar.y = true;
                 dVar.D();
                 fjp.b(dVar, "recommend", fjp.ERROR_CODE_RECOMMEND_ITEM_ID_INCONSISTENCY, "推荐数据返回的itemid与入口id不一致, 入口id：" + this.c.h().f() + ", 当前id：" + dVar.k, true);

@@ -1,7 +1,7 @@
 package com.taobao.android.tcrash;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.manager.FeatureManager;
 import java.util.Map;
@@ -38,7 +38,7 @@ public class c {
             ipChange.ipc$dispatch("135f6906", new Object[]{application, str, str2, str3, str4, map});
             return;
         }
-        if (TextUtils.isEmpty(str) || "12278902".equals(str) || "21646297".equals(str)) {
+        if (StringUtils.isEmpty(str) || "12278902".equals(str) || "21646297".equals(str)) {
             str5 = "12278902@android";
             str6 = "21646297";
         } else {

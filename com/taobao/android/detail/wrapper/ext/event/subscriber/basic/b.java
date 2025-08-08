@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.basic;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,12 +63,12 @@ public class b extends eei<fck> {
             return (com.taobao.android.trade.event.i) ipChange.ipc$dispatch("6b085a5", new Object[]{this, fckVar});
         }
         this.f11271a = fckVar.f27802a;
-        if (TextUtils.isEmpty(this.f11271a)) {
+        if (StringUtils.isEmpty(this.f11271a)) {
             return com.taobao.android.detail.core.event.a.FAILURE;
         }
         this.b = fckVar.b;
         JSONObject jSONObject = this.b;
-        if (jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("needLogin"))) {
+        if (jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("needLogin"))) {
             try {
                 if (Boolean.parseBoolean(this.b.getString("needLogin").toLowerCase()) && !epj.c().b()) {
                     epj.c().a(true);
@@ -98,7 +98,7 @@ public class b extends eei<fck> {
         } else if (!(this.c instanceof DetailActivity) || this.b == null || !Boolean.TRUE.toString().equals(this.b.getString("needAddressId"))) {
         } else {
             String aj = ((DetailActivity) this.c).aj();
-            if (TextUtils.isEmpty(aj)) {
+            if (StringUtils.isEmpty(aj)) {
                 return;
             }
             this.f11271a = a(this.f11271a, "addressId", aj);
@@ -116,7 +116,7 @@ public class b extends eei<fck> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str) || map.isEmpty()) {
+        if (StringUtils.isEmpty(str) || map.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();

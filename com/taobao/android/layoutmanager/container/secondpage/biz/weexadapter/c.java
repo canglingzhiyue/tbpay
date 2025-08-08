@@ -2,7 +2,7 @@ package com.taobao.android.layoutmanager.container.secondpage.biz.weexadapter;
 
 import android.net.Uri;
 import android.taobao.mulitenv.EnvironmentSwitcher;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,7 +36,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
-        if (TextUtils.isEmpty(f13222a)) {
+        if (StringUtils.isEmpty(f13222a)) {
             f13222a = oeb.a("weitao_switch.WeexNewProfilePageURL", EnvironmentSwitcher.a() == EnvironmentSwitcher.EnvType.OnLINE.getValue() ? "https://web.m.taobao.com/app/tbvideo/profile/Home?wh_weex=true&weex_mode=dom&wx_navbar_transparent=true&wx_navbar_hidden=true&_wx_statusbar_hidden=true&wx_use_layoutng=true&disableNav=YES" : "https://web.wapa.taobao.com/app/tbvideo/profile/Home?wh_weex=true&weex_mode=dom&wx_navbar_transparent=true&wx_navbar_hidden=true&_wx_statusbar_hidden=true&wx_use_layoutng=true&disableNav=YES");
             ogg.a("ProfileWeexService", "getProfileWeexUrl:" + f13222a);
         }

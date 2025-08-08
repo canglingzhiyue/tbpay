@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -166,7 +166,7 @@ public class psf implements pqu, psi.a {
             eVar.c(false);
         }
         if (pseVar.m == null) {
-            if (!TextUtils.isEmpty(pseVar.c)) {
+            if (!StringUtils.isEmpty(pseVar.c)) {
                 eVar.a((MediaData) null, pseVar.c);
             }
         } else {

@@ -9,7 +9,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.extra.jsi.WVJsi;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.ultron.engine.a;
 import com.alibaba.android.ultron.inter.UltronDebugFetcher;
@@ -733,14 +733,14 @@ public class e implements c<JSONObject> {
                     b = bpg.b(this.e, str);
                 }
                 String a2 = com.alibaba.android.ultron.engine.utils.d.a(b);
-                if (TextUtils.isEmpty(str2) || !str2.equals(a2)) {
+                if (StringUtils.isEmpty(str2) || !str2.equals(a2)) {
                     UltronError ultronError = new UltronError("md5 check failed");
                     ultronError.code = bpk.ERROR_ENGINE_JS_FILE_ERROR_JSI;
                     UnifyLog.a(this.f, "UltronJSIEngine", "js file md5 check failed", new String[0]);
                     a(ultronError);
                     return;
                 }
-                if (!TextUtils.isEmpty(b)) {
+                if (!StringUtils.isEmpty(b)) {
                     r.put(str, b);
                 }
                 str3 = b;

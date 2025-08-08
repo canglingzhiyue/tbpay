@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -27,7 +27,7 @@ public class oaj {
             return null;
         }
         this.f31876a = a(str, "2138079021646297");
-        if (TextUtils.isEmpty(this.f31876a)) {
+        if (StringUtils.isEmpty(this.f31876a)) {
             return null;
         }
         if (str.contains("?")) {
@@ -46,7 +46,7 @@ public class oaj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         try {
@@ -60,7 +60,7 @@ public class oaj {
                 sb.append(Integer.toHexString(i));
             }
             String sb2 = sb.toString();
-            if (!TextUtils.isEmpty(sb2)) {
+            if (!StringUtils.isEmpty(sb2)) {
                 return sb2.substring(0, 6);
             }
             return null;

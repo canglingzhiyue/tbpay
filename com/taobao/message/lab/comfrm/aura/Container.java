@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import com.alibaba.fastjson.JSON;
@@ -701,12 +701,12 @@ public class Container implements IResourceChangePublisher {
         if (snapshot != null) {
             final Snapshot.SnapshotData snapshotData = snapshot.getSnapshotData();
             if (snapshotData != null) {
-                if (!TextUtils.equals(snapshotData.version, this.mVersion) || !TextUtils.equals(snapshotData.viewObject.info.uniqueId, this.mConfigInfo.layout.uniqueId)) {
+                if (!StringUtils.equals(snapshotData.version, this.mVersion) || !StringUtils.equals(snapshotData.viewObject.info.uniqueId, this.mConfigInfo.layout.uniqueId)) {
                     z = false;
                 }
-                if (!TextUtils.equals(snapshotData.appVersion, ApplicationBuildInfo.getAppVersionName())) {
+                if (!StringUtils.equals(snapshotData.appVersion, ApplicationBuildInfo.getAppVersionName())) {
                     String value = ConfigUtil.getValue(Constants.OrangeNS.CONTAINER, "disableSnapshotAppVers", null);
-                    if (!TextUtils.isEmpty(value)) {
+                    if (!StringUtils.isEmpty(value)) {
                         try {
                             parseArray = JSON.parseArray(value);
                         } catch (Throwable unused) {

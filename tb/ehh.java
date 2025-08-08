@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.utils.c;
@@ -86,7 +86,7 @@ public class ehh extends epe {
             if (l != null && l.salePromotion != null) {
                 this.b = l.salePromotion.f;
                 this.e = l.salePromotion.h;
-                if (!TextUtils.isEmpty(l.salePromotion.g)) {
+                if (!StringUtils.isEmpty(l.salePromotion.g)) {
                     this.d = true;
                     try {
                         this.c = c.a(l.salePromotion.g);
@@ -169,7 +169,7 @@ public class ehh extends epe {
             if (l != null && l.salePromotion != null) {
                 this.b = l.salePromotion.f;
                 this.e = l.salePromotion.h;
-                if (!TextUtils.isEmpty(l.salePromotion.g)) {
+                if (!StringUtils.isEmpty(l.salePromotion.g)) {
                     this.d = true;
                     try {
                         this.c = c.a(l.salePromotion.g);

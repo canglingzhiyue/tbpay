@@ -1,6 +1,6 @@
 package com.taobao.taobao.scancode.v2.result;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.kge;
 
 /* loaded from: classes8.dex */
@@ -21,6 +21,6 @@ public class MaTBAntiFakeResult extends MaResult {
     }
 
     public boolean exist() {
-        return !TextUtils.isEmpty(this.hiddenData);
+        return !StringUtils.isEmpty(this.hiddenData);
     }
 }

@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.utils;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.favorite.FavoriteConstants;
 import java.util.regex.Matcher;
@@ -22,7 +22,7 @@ public class ak {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("289186af", new Object[]{intent, str});
-        } else if (intent == null || TextUtils.isEmpty(str) || (data = intent.getData()) == null || !TextUtils.isEmpty(data.getQueryParameter("id"))) {
+        } else if (intent == null || StringUtils.isEmpty(str) || (data = intent.getData()) == null || !StringUtils.isEmpty(data.getQueryParameter("id"))) {
         } else {
             intent.setData(data.buildUpon().appendQueryParameter("id", str).build());
         }
@@ -34,11 +34,11 @@ public class ak {
             return (String) ipChange.ipc$dispatch("b1abe71b", new Object[]{intent});
         }
         String stringExtra = intent.getStringExtra("id");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             return stringExtra;
         }
         String stringExtra2 = intent.getStringExtra("item_id");
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             return stringExtra2;
         }
         String b = b(intent);
@@ -53,13 +53,13 @@ public class ak {
         }
         String stringExtra = intent.getStringExtra(FavoriteConstants.DetailConstants_DETAIL_URL);
         String a2 = stringExtra != null ? a(stringExtra) : "";
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             String dataString = intent.getDataString();
-            if (!TextUtils.isEmpty(dataString)) {
+            if (!StringUtils.isEmpty(dataString)) {
                 a2 = a(dataString);
             }
         }
-        if (TextUtils.isEmpty(a2) && (data = intent.getData()) != null && !TextUtils.isEmpty(data.getPath())) {
+        if (StringUtils.isEmpty(a2) && (data = intent.getData()) != null && !StringUtils.isEmpty(data.getPath())) {
             Matcher matcher = Pattern.compile("/i(\\d+)\\.htm").matcher(data.getPath());
             if (matcher.find()) {
                 return matcher.group(1);

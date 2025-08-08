@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -266,7 +266,7 @@ public class jyx {
             AppMonitor.register(jyx.MODULE_NAME, POINT_NAME, jyx.this.a("code"), jyx.this.f(), true);
             jyx jyxVar = jyx.this;
             AppMonitor.Stat.commit(jyx.MODULE_NAME, POINT_NAME, jyxVar.a(jyxVar.h(), str, str2, str3, str5), jyx.this.a("code", d, mto.a.GEO_NOT_SUPPORT));
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 int indexOf = str6.indexOf("exception function:");
                 if (indexOf > 0) {
                     str6 = str6.substring(indexOf + 19);

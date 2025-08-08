@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.officialLive.b;
@@ -201,7 +201,7 @@ public class hkf extends a {
         final String a2 = a(videoInfo);
         String str = videoInfo.broadCaster.type;
         String str2 = videoInfo.relatedAccountId;
-        if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(str)) {
             return;
         }
         if (!b.a().b(videoInfo)) {
@@ -237,7 +237,7 @@ public class hkf extends a {
                 } else if (hkf.f(hkf.this).a() == null) {
                 } else {
                     String string = hkf.g(hkf.this).a().getString(R.string.taolive_topbar_user_follow_fail_flexalocal);
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         string = str4;
                     }
                     hkf.this.a().showToast(string);
@@ -350,7 +350,7 @@ public class hkf extends a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || "0".equals(str) || str.equals(str2)) {
+        } else if (StringUtils.isEmpty(str) || "0".equals(str) || str.equals(str2)) {
         } else {
             pmt pmtVar = new pmt();
             pmtVar.c = str3;

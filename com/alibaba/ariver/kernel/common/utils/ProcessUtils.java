@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ariver.kernel.common.RVProxy;
 import com.alibaba.ariver.kernel.common.service.RVEnvironmentService;
@@ -103,7 +103,7 @@ public class ProcessUtils {
                 return true;
             }
             String processName = getProcessName();
-            if (context == null || !TextUtils.equals(processName, context.getPackageName())) {
+            if (context == null || !StringUtils.equals(processName, context.getPackageName())) {
                 z = false;
             }
             f2910a = Boolean.valueOf(z);
@@ -125,7 +125,7 @@ public class ProcessUtils {
         }
         if (b == null) {
             String processName = getProcessName();
-            if (!TextUtils.isEmpty(processName) && processName.contains("lite")) {
+            if (!StringUtils.isEmpty(processName) && processName.contains("lite")) {
                 z = true;
             }
             b = Boolean.valueOf(z);

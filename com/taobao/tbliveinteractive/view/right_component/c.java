@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -313,7 +313,7 @@ public class c implements com.taobao.tbliveinteractive.view.right_component.a, d
                 return;
             }
             InteractiveComponent interactiveComponent = (InteractiveComponent) obj;
-            if (!interactiveComponent.migrationFlag || !interactiveComponent.rightShowFlag || TextUtils.isEmpty(interactiveComponent.iconViewStyle) || interactiveComponent.interactivePanelDisplayOnly) {
+            if (!interactiveComponent.migrationFlag || !interactiveComponent.rightShowFlag || StringUtils.isEmpty(interactiveComponent.iconViewStyle) || interactiveComponent.interactivePanelDisplayOnly) {
                 return;
             }
             int f = f();
@@ -327,7 +327,7 @@ public class c implements com.taobao.tbliveinteractive.view.right_component.a, d
                     if (i2 < 0 && ((interactiveComponent.showOrder >= 0 && interactiveComponent2.showOrder > interactiveComponent.showOrder) || (interactiveComponent.showOrder >= 0 && interactiveComponent2.showOrder < 0))) {
                         i2 = i;
                     }
-                    if (!TextUtils.equals(interactiveComponent.fedName, interactiveComponent2.fedName) && !TextUtils.equals(interactiveComponent.name, interactiveComponent2.name)) {
+                    if (!StringUtils.equals(interactiveComponent.fedName, interactiveComponent2.fedName) && !StringUtils.equals(interactiveComponent.name, interactiveComponent2.name)) {
                         i++;
                     }
                 } else {
@@ -524,7 +524,7 @@ public class c implements com.taobao.tbliveinteractive.view.right_component.a, d
         int i = 0;
         while (i < this.l.size()) {
             InteractiveComponent interactiveComponent = this.l.get(i);
-            if (TextUtils.equals(interactiveComponent.fedName, interactiveComponentRightAnim.name) || TextUtils.equals(interactiveComponent.name, interactiveComponentRightAnim.name)) {
+            if (StringUtils.equals(interactiveComponent.fedName, interactiveComponentRightAnim.name) || StringUtils.equals(interactiveComponent.name, interactiveComponentRightAnim.name)) {
                 interactiveComponent.isRightAnimated = i < f && z;
                 a aVar = this.k;
                 if (aVar != null && i < f) {

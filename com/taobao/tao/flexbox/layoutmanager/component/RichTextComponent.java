@@ -6,7 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -263,7 +263,7 @@ public class RichTextComponent extends TextComponent implements r, ogn.a {
                 }
                 RichTextComponent.this.removePerformClickCallback();
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().l().a(RichTextComponent.access$100(RichTextComponent.this).N(), bVar.c, null);
-                if (TextUtils.isEmpty(bVar.g) || (access$200 = RichTextComponent.access$200(RichTextComponent.this, bVar.g)) == null) {
+                if (StringUtils.isEmpty(bVar.g) || (access$200 = RichTextComponent.access$200(RichTextComponent.this, bVar.g)) == null) {
                     return;
                 }
                 HashMap hashMap = new HashMap();
@@ -324,7 +324,7 @@ public class RichTextComponent extends TextComponent implements r, ogn.a {
         Drawable drawable = null;
         int i5 = ogkVar.aa >= 0 ? ogkVar.aa : 0;
         int i6 = ogkVar.ab >= 0 ? ogkVar.ab : 0;
-        if (TextUtils.isEmpty(bVar.b)) {
+        if (StringUtils.isEmpty(bVar.b)) {
             return;
         }
         String str = bVar.b;
@@ -393,7 +393,7 @@ public class RichTextComponent extends TextComponent implements r, ogn.a {
         bVar.e.a(ogkVar.x);
         bVar.e.e(ogkVar.o);
         synchronized (spannableString) {
-            if (!TextUtils.isEmpty(bVar.f)) {
+            if (!StringUtils.isEmpty(bVar.f)) {
                 spannableString.setSpan(new ClickableSpan() { // from class: com.taobao.tao.flexbox.layoutmanager.component.RichTextComponent.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -408,7 +408,7 @@ public class RichTextComponent extends TextComponent implements r, ogn.a {
                         RichTextComponent.this.removePerformClickCallback();
                         RichTextComponent richTextComponent = RichTextComponent.this;
                         richTextComponent.sendMessage(richTextComponent.getNode(), "onclick", bVar.f, null, null);
-                        if (TextUtils.isEmpty(bVar.g) || (access$200 = RichTextComponent.access$200(RichTextComponent.this, bVar.g)) == null) {
+                        if (StringUtils.isEmpty(bVar.g) || (access$200 = RichTextComponent.access$200(RichTextComponent.this, bVar.g)) == null) {
                             return;
                         }
                         HashMap hashMap = new HashMap();
@@ -467,7 +467,7 @@ public class RichTextComponent extends TextComponent implements r, ogn.a {
         if (ogkVar.m > 0.0f && !ohd.a(3)) {
             spannableString.setSpan(new AbsoluteSizeSpan((int) (ogkVar.m * this.node.k().b())), i, i2, 33);
         }
-        if (TextUtils.isEmpty(bVar.f)) {
+        if (StringUtils.isEmpty(bVar.f)) {
             return;
         }
         spannableString.setSpan(new ClickableSpan() { // from class: com.taobao.tao.flexbox.layoutmanager.component.RichTextComponent.4
@@ -484,7 +484,7 @@ public class RichTextComponent extends TextComponent implements r, ogn.a {
                 RichTextComponent.this.removePerformClickCallback();
                 RichTextComponent richTextComponent = RichTextComponent.this;
                 richTextComponent.sendMessage(richTextComponent.getNode(), "onclick", bVar.f, null, null);
-                if (TextUtils.isEmpty(bVar.g) || (access$200 = RichTextComponent.access$200(RichTextComponent.this, bVar.g)) == null) {
+                if (StringUtils.isEmpty(bVar.g) || (access$200 = RichTextComponent.access$200(RichTextComponent.this, bVar.g)) == null) {
                     return;
                 }
                 HashMap hashMap = new HashMap();

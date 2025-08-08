@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.request.jhs;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.request.DetailVRequestParams;
@@ -33,7 +33,7 @@ public class JoinJhsRequestParams extends DetailVRequestParams implements Serial
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("65ce17e9", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.action)) {
+        if (StringUtils.isEmpty(this.action)) {
             return null;
         }
         HashMap hashMap = new HashMap();

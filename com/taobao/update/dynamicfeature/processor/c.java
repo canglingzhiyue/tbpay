@@ -1,6 +1,6 @@
 package com.taobao.update.dynamicfeature.processor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.artc.api.AConstants;
 import com.taobao.update.dynamicfeature.FeatureUpdateData;
@@ -130,7 +130,7 @@ public class c implements com.taobao.update.framework.b<com.taobao.update.dynami
         com.taobao.downloader.b.a().a(kmmVar, kmlVar);
         try {
             countDownLatch.await();
-            if (!bVar.success || TextUtils.isEmpty(bVar.downloadPath) || rgp.isMd5Same(featureUpdateData.md5, bVar.downloadPath)) {
+            if (!bVar.success || StringUtils.isEmpty(bVar.downloadPath) || rgp.isMd5Same(featureUpdateData.md5, bVar.downloadPath)) {
                 return;
             }
             UpdateRuntime.log("check md5 file error");

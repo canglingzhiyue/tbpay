@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,7 +68,7 @@ public final class tbo {
                                         for (JSONObject jSONObject : list) {
                                             if (jSONObject != null) {
                                                 String string = jSONObject.getString("outerUrl");
-                                                if (!TextUtils.isEmpty(string)) {
+                                                if (!StringUtils.isEmpty(string)) {
                                                     JSONObject jSONObject2 = new JSONObject();
                                                     jSONObject2.put("url", (Object) string);
                                                     jSONArray.add(jSONObject2);

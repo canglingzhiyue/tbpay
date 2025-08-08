@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
@@ -79,7 +79,7 @@ public class cfy {
         SharedPreferences f = f();
         if (f != null) {
             String string = f.getString("permission_config", null);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             try {

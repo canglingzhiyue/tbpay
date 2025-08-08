@@ -18,7 +18,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.support.v4.app.ActivityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Size;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -402,7 +402,7 @@ public final class Camera2Wrapper implements cqe {
             if (!com.etao.feimagesearch.cip.camera2.a.Companion.a()) {
                 throw new RuntimeException("camera2 not supported");
             }
-            if (TextUtils.isEmpty(a(this.h, false))) {
+            if (StringUtils.isEmpty(a(this.h, false))) {
                 throw new RuntimeException("cannot get prop cameraId");
             }
             return;
@@ -962,7 +962,7 @@ public final class Camera2Wrapper implements cqe {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
             return;
         }
-        if (TextUtils.isEmpty(this.o)) {
+        if (StringUtils.isEmpty(this.o)) {
             Size l2 = l();
             if (l2 != null) {
                 this.s = l2;
@@ -986,7 +986,7 @@ public final class Camera2Wrapper implements cqe {
                 return;
             } else {
                 this.l = CameraOpenState.OPENING;
-                if (TextUtils.isEmpty(this.o)) {
+                if (StringUtils.isEmpty(this.o)) {
                     a.C0223a c0223a2 = com.etao.feimagesearch.cip.camera2.a.Companion;
                     Context context2 = this.f6636a;
                     kotlin.jvm.internal.q.a((Object) context2, "context");
@@ -1267,7 +1267,7 @@ public final class Camera2Wrapper implements cqe {
             return a2;
         }
         this.o = a(this.h, this.d);
-        if (TextUtils.isEmpty(this.o)) {
+        if (StringUtils.isEmpty(this.o)) {
             return null;
         }
         cot.a("PltCamera", TAG, "realCameraId " + this.o);

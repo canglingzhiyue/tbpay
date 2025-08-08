@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import mtopsdk.mtop.global.SwitchConfig;
 
@@ -57,7 +57,7 @@ public class tok {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || this.f34243a == null || SwitchConfig.getInstance().getUnitCalibrationTTL() <= 0) {
+        } else if (StringUtils.isEmpty(str) || this.f34243a == null || SwitchConfig.getInstance().getUnitCalibrationTTL() <= 0) {
         } else {
             long currentTimeMillis = System.currentTimeMillis();
             SharedPreferences.Editor edit = this.f34243a.edit();
@@ -71,13 +71,13 @@ public class tok {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && this.f34243a != null) {
+        if (!StringUtils.isEmpty(str) && this.f34243a != null) {
             long unitCalibrationTTL = SwitchConfig.getInstance().getUnitCalibrationTTL();
             if (unitCalibrationTTL <= 0) {
                 return null;
             }
             String string = this.f34243a.getString(str, null);
-            if (!TextUtils.isEmpty(string) && (split = string.split(",")) != null && split.length == 2) {
+            if (!StringUtils.isEmpty(string) && (split = string.split(",")) != null && split.length == 2) {
                 String str2 = split[0];
                 if (System.currentTimeMillis() < Long.parseLong(split[1]) + unitCalibrationTTL) {
                     return str2;

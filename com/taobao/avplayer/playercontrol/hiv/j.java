@@ -1,6 +1,6 @@
 package com.taobao.avplayer.playercontrol.hiv;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.avplayer.DWContext;
 import com.taobao.avplayer.interactivelifecycle.hiv.request.ContentDetailData;
@@ -35,13 +35,13 @@ public class j {
         if (dWContext == null) {
             return hashMap;
         }
-        if (!TextUtils.isEmpty(dWContext.mCid)) {
+        if (!StringUtils.isEmpty(dWContext.mCid)) {
             hashMap.put("feed_id", dWContext.mCid);
         }
-        if (!TextUtils.isEmpty(dWContext.mFrom)) {
+        if (!StringUtils.isEmpty(dWContext.mFrom)) {
             hashMap.put("from", dWContext.mFrom);
         }
-        if (!TextUtils.isEmpty(dWContext.getVideoId())) {
+        if (!StringUtils.isEmpty(dWContext.getVideoId())) {
             hashMap.put(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID, dWContext.getVideoId());
         }
         return hashMap;
@@ -56,29 +56,29 @@ public class j {
         if (dWContext == null) {
             return hashMap;
         }
-        if (!TextUtils.isEmpty(dWContext.mContentId)) {
+        if (!StringUtils.isEmpty(dWContext.mContentId)) {
             hashMap.put("feed_id", dWContext.mContentId);
         } else {
             hashMap.put("feed_id", "");
         }
         hashMap.put("interactive_id", String.valueOf(dWContext.mInteractiveId));
-        if (!TextUtils.isEmpty(dWContext.mFrom)) {
+        if (!StringUtils.isEmpty(dWContext.mFrom)) {
             hashMap.put("from", dWContext.mFrom);
             hashMap.put("page", dWContext.mFrom);
         }
         Map<String, String> uTParams = dWContext.getUTParams();
         hashMap.put("feed_type", (uTParams == null || uTParams.get("feed_type") == null) ? "" : uTParams.get("feed_type"));
         if (contentDetailData != null) {
-            if (!TextUtils.isEmpty(contentDetailData.videoId)) {
+            if (!StringUtils.isEmpty(contentDetailData.videoId)) {
                 hashMap.put(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID, contentDetailData.videoId);
             }
-            if (!TextUtils.isEmpty(contentDetailData.mediaId)) {
+            if (!StringUtils.isEmpty(contentDetailData.mediaId)) {
                 hashMap.put("video_uid", contentDetailData.mediaId);
             }
         } else {
             hashMap.put("video_uid", "");
         }
-        if (!hashMap.containsKey(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID) && !TextUtils.isEmpty(dWContext.getVideoId())) {
+        if (!hashMap.containsKey(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID) && !StringUtils.isEmpty(dWContext.getVideoId())) {
             hashMap.put(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID, dWContext.getVideoId());
         }
         return hashMap;

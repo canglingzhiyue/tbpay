@@ -1,6 +1,6 @@
 package com.taobao.android.mnncv;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.s;
 import com.taobao.mrt.task.MRTRuntimeException;
@@ -99,7 +99,7 @@ public class MNNCVExecutor {
     }
 
     public MNNCVExecutor(String str, String str2) {
-        this(str, TextUtils.isEmpty(str2) ? CachePolicy.NoCache : CachePolicy.CacheManually, str2);
+        this(str, StringUtils.isEmpty(str2) ? CachePolicy.NoCache : CachePolicy.CacheManually, str2);
     }
 
     public MNNCVExecutor(String str, CachePolicy cachePolicy, String str2) {

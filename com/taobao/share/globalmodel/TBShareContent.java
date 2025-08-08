@@ -3,7 +3,7 @@ package com.taobao.share.globalmodel;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -103,11 +103,11 @@ public class TBShareContent implements Parcelable {
 
     public void setDefault() {
         String str;
-        if (TextUtils.isEmpty(this.businessId)) {
+        if (StringUtils.isEmpty(this.businessId)) {
             this.businessId = "10000";
         }
-        if (TextUtils.isEmpty(this.title)) {
-            if (!TextUtils.isEmpty(this.templateId)) {
+        if (StringUtils.isEmpty(this.title)) {
+            if (!StringUtils.isEmpty(this.templateId)) {
                 String str2 = this.templateId;
                 char c = 65535;
                 int hashCode = str2.hashCode();
@@ -136,17 +136,17 @@ public class TBShareContent implements Parcelable {
         } else if (com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_18110).equals(this.title)) {
             this.title = com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_18123);
         }
-        if (TextUtils.isEmpty(this.description)) {
+        if (StringUtils.isEmpty(this.description)) {
             String config = OrangeConfig.getInstance().getConfig(NAME_SPACE, DESCRIPTION, null);
-            if (TextUtils.isEmpty(config)) {
+            if (StringUtils.isEmpty(config)) {
                 config = com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_18113);
             }
             this.description = config;
         }
-        if ("1".equals(this.businessId) || TextUtils.equals(this.businessId, "detail") || TextUtils.equals(this.businessId, "tm_detail")) {
+        if ("1".equals(this.businessId) || StringUtils.equals(this.businessId, "detail") || StringUtils.equals(this.businessId, "tm_detail")) {
             this.shareScene = "item";
         }
-        if (TextUtils.isEmpty(this.shareScene)) {
+        if (StringUtils.isEmpty(this.shareScene)) {
             this.shareScene = "other";
         }
     }
@@ -251,13 +251,13 @@ public class TBShareContent implements Parcelable {
     public String originUTArgs() {
         StringBuilder sb = new StringBuilder();
         sb.append("serverDataTrackMap=");
-        sb.append(TextUtils.isEmpty(this.serverDataTrackMap) ? "null" : this.serverDataTrackMap);
+        sb.append(StringUtils.isEmpty(this.serverDataTrackMap) ? "null" : this.serverDataTrackMap);
         String sb2 = sb.toString();
-        if (!TextUtils.isEmpty(this.originBizCode) && !TextUtils.isEmpty(this.detailSharePosition)) {
+        if (!StringUtils.isEmpty(this.originBizCode) && !StringUtils.isEmpty(this.detailSharePosition)) {
             return sb2 + "&originBizCode=" + this.originBizCode + "&detailSharePosition=" + this.detailSharePosition;
-        } else if (!TextUtils.isEmpty(this.originBizCode)) {
+        } else if (!StringUtils.isEmpty(this.originBizCode)) {
             return sb2 + "&originBizCode=" + this.originBizCode;
-        } else if (TextUtils.isEmpty(this.detailSharePosition)) {
+        } else if (StringUtils.isEmpty(this.detailSharePosition)) {
             return sb2;
         } else {
             return sb2 + "&detailSharePosition=" + this.detailSharePosition;
@@ -265,10 +265,10 @@ public class TBShareContent implements Parcelable {
     }
 
     public void fillUTProperties(Properties properties) {
-        if (!TextUtils.isEmpty(this.originBizCode)) {
+        if (!StringUtils.isEmpty(this.originBizCode)) {
             properties.put("originBizCode", this.originBizCode);
         }
-        if (!TextUtils.isEmpty(this.detailSharePosition)) {
+        if (!StringUtils.isEmpty(this.detailSharePosition)) {
             properties.put("detailSharePosition", this.detailSharePosition);
         }
     }

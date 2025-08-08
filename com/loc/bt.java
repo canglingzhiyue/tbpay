@@ -1,6 +1,6 @@
 package com.loc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.loc.bo;
 import com.taobao.umipublish.draft.DraftMediaHelper;
 import java.net.Proxy;
@@ -133,7 +133,7 @@ public abstract class bt {
         String str2;
         String str3 = "";
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] split = str.split("&");
                 if (split.length > 1) {
                     int length = split.length;
@@ -153,11 +153,11 @@ public abstract class bt {
                         }
                         i++;
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         String[] split2 = str2.split("=");
                         if (split2.length > 1) {
                             str3 = split2[1].trim();
-                            if (!TextUtils.isEmpty(str4) && TextUtils.isEmpty(ag.a(str3))) {
+                            if (!StringUtils.isEmpty(str4) && StringUtils.isEmpty(ag.a(str3))) {
                                 String[] split3 = str4.split("=");
                                 if (split3.length > 1) {
                                     ag.a(str3, split3[1].trim());
@@ -312,7 +312,7 @@ public abstract class bt {
             str = "";
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.f7704a ? c(((bp) this).j()) : a(a());
             }
         } catch (Throwable th2) {

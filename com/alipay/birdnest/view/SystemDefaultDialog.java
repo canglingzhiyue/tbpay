@@ -5,7 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -22,16 +22,16 @@ public class SystemDefaultDialog {
             return (AlertDialog.Builder) ipChange.ipc$dispatch("3ebf9d78", new Object[]{context, str, str2, str3, onClickListener, str4, onClickListener2});
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             builder.setTitle(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             builder.setMessage(str2);
         }
-        if (!TextUtils.isEmpty(str3) && onClickListener != null) {
+        if (!StringUtils.isEmpty(str3) && onClickListener != null) {
             builder.setPositiveButton(str3, onClickListener);
         }
-        if (!TextUtils.isEmpty(str4) && onClickListener2 != null) {
+        if (!StringUtils.isEmpty(str4) && onClickListener2 != null) {
             builder.setNegativeButton(str4, onClickListener2);
         }
         return builder;

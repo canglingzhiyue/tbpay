@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -49,7 +49,7 @@ public class BootImageWVBridge extends e {
         if (wVCallBackContext == null) {
             kej.a("BootImageWVBridge", "callback == null, action = " + str);
             return false;
-        } else if (!TextUtils.equals(ACTION_NAME, str)) {
+        } else if (!StringUtils.equals(ACTION_NAME, str)) {
             kej.a("BootImageWVBridge", "unknown action, action = " + str);
             return false;
         } else {

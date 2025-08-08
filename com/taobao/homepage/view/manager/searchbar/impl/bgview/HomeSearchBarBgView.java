@@ -1,7 +1,7 @@
 package com.taobao.homepage.view.manager.searchbar.impl.bgview;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -78,7 +78,7 @@ public class HomeSearchBarBgView extends FrameLayout {
             return;
         }
         onq.a(this.mBgView, str, "homepage-ads", h.IMAGE_STRATEGY_CONFIG);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mBgView.setImageUrl(str);
             return;
         }

@@ -2,7 +2,7 @@ package com.taobao.android.icart.recommend.impl;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -296,7 +296,7 @@ public final class CartMainRecommend extends b {
         JSONObject b = c.b(this.f12847a);
         if (b != null) {
             String string = b.getString("containerId");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return new ksk(string, "cart_" + string, "Page_ShoppingCart");
             }
         }

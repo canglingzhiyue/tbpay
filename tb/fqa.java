@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -60,7 +60,7 @@ public class fqa extends h {
             if (objArr.length >= 2) {
                 JSONArray jSONArray = new JSONArray();
                 if (objArr[0] instanceof String) {
-                    if (!TextUtils.isEmpty((String) objArr[0])) {
+                    if (!StringUtils.isEmpty((String) objArr[0])) {
                         jSONArray.add(objArr[0]);
                     }
                 } else if (objArr[0] instanceof JSONArray) {

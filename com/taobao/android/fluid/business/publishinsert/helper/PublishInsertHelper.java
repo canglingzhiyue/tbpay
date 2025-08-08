@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.IntentFilter;
 import android.os.Vibrator;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -158,7 +158,7 @@ public class PublishInsertHelper implements snd {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2e8ffb51", new Object[]{str, extraParams})).booleanValue();
         }
-        if (!TextUtils.equals("video", str)) {
+        if (!StringUtils.equals("video", str)) {
             return false;
         }
         return extraParams.videoWidth == null || extraParams.videoHeight == null;
@@ -221,7 +221,7 @@ public class PublishInsertHelper implements snd {
             return (Map) ipChange.ipc$dispatch("61c5ad52", new Object[]{fluidContext, aVar, map, str});
         }
         if (aVar != null && aVar.a() != null && aVar.b() != null) {
-            if (TextUtils.equals(aVar.b(), hdx.PAGE_PUBLISH)) {
+            if (StringUtils.equals(aVar.b(), hdx.PAGE_PUBLISH)) {
                 HashMap hashMap = new HashMap();
                 HashMap hashMap2 = new HashMap();
                 aVar.a().c = str;
@@ -232,11 +232,11 @@ public class PublishInsertHelper implements snd {
                 hashMap.put("extraMap", hashMap2);
                 spz.c("PublishInsertHelper", "发送了publish消息");
                 return hashMap;
-            } else if (TextUtils.equals(aVar.b(), "publishSuccess")) {
+            } else if (StringUtils.equals(aVar.b(), "publishSuccess")) {
                 a.c a2 = aVar.a();
                 a2.c = str;
                 Map hashMap3 = a2.o() == null ? new HashMap() : a2.o();
-                if (hashMap3.get("status") != null && (TextUtils.equals("publishSuccess", hashMap3.get("status").toString()) || TextUtils.equals("finish", hashMap3.get("status").toString()))) {
+                if (hashMap3.get("status") != null && (StringUtils.equals("publishSuccess", hashMap3.get("status").toString()) || StringUtils.equals("finish", hashMap3.get("status").toString()))) {
                     hashMap3.put("status", "finish");
                     ((IPublishInsertService) fluidContext.getService(IPublishInsertService.class)).setPublishIInsertEnable(false);
                 } else {
@@ -277,7 +277,7 @@ public class PublishInsertHelper implements snd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cb920272", new Object[]{fluidContext, aVar});
-        } else if (!((IPublishInsertService) fluidContext.getService(IPublishInsertService.class)).isPublishIInsertEnable() || aVar.b() == null || TextUtils.equals("finish", aVar.b()) || TextUtils.equals("publishSuccess", aVar.b())) {
+        } else if (!((IPublishInsertService) fluidContext.getService(IPublishInsertService.class)).isPublishIInsertEnable() || aVar.b() == null || StringUtils.equals("finish", aVar.b()) || StringUtils.equals("publishSuccess", aVar.b())) {
         } else {
             ab sharedTNodeEngine = ((IHostTNodeService) fluidContext.getService(IHostTNodeService.class)).getSharedTNodeEngine();
             JSONObject jSONObject = new JSONObject();
@@ -368,17 +368,17 @@ public class PublishInsertHelper implements snd {
         }
         if (taskList != null && !ogv.a(taskList.tasks) && taskList.tasks.get(0).backParams != null) {
             TaskList.Task task = taskList.tasks.get(0);
-            String str = TextUtils.isEmpty(task.backParams.subId) ? task.backParams.tabId : task.backParams.subId;
+            String str = StringUtils.isEmpty(task.backParams.subId) ? task.backParams.tabId : task.backParams.subId;
             if (c() && task.type != 0) {
                 spz.c("PublishInsertHelper", "异步发布内容不上墙:" + str);
                 return false;
             }
             String a2 = a(str);
             String tab3CardType = this.c.getInstanceConfig().getTab3CardType();
-            if (!TextUtils.equals(a2, tab3CardType)) {
+            if (!StringUtils.equals(a2, tab3CardType)) {
                 spz.c("PublishInsertHelper", "发布跳转到的tab:" + str + "当前的tab" + tab3CardType);
                 return false;
-            } else if (!d() && TextUtils.equals(a2, "campus")) {
+            } else if (!d() && StringUtils.equals(a2, "campus")) {
                 spz.c("PublishInsertHelper", "校园tab上墙关闭:" + a2);
                 return false;
             } else if (task.data == null || task.data.publishInfo == null || task.data.publishInfo.inputInfo == null || task.progress == null) {
@@ -390,10 +390,10 @@ public class PublishInsertHelper implements snd {
                     return false;
                 }
                 String str2 = list.get(0).mediaType;
-                if (!TextUtils.equals("video", str2) && !TextUtils.equals(i.SOURCE_TYPE_PHOTO, str2)) {
+                if (!StringUtils.equals("video", str2) && !StringUtils.equals(i.SOURCE_TYPE_PHOTO, str2)) {
                     spz.c("PublishInsertHelper", " 发布的内容不是视频和图片：" + str2);
                     return false;
-                } else if (!e() && TextUtils.equals(i.SOURCE_TYPE_PHOTO, str2)) {
+                } else if (!e() && StringUtils.equals(i.SOURCE_TYPE_PHOTO, str2)) {
                     spz.c("PublishInsertHelper", "图片发布上墙关闭");
                     return false;
                 } else {
@@ -409,7 +409,7 @@ public class PublishInsertHelper implements snd {
                     } else if (a(str2, extraParams)) {
                         spz.c("PublishInsertHelper", "视频宽高为空");
                         return false;
-                    } else if (!TextUtils.isEmpty(list.get(0).path)) {
+                    } else if (!StringUtils.isEmpty(list.get(0).path)) {
                         return true;
                     } else {
                         spz.c("PublishInsertHelper", "媒体的url 为空");
@@ -497,11 +497,11 @@ public class PublishInsertHelper implements snd {
                         return ((Number) ipChange2.ipc$dispatch("c705294c", new Object[]{this, list})).intValue();
                     }
                     Integer num = (Integer) PublishInsertHelper.d(PublishInsertHelper.this).get(str);
-                    if (list.size() > num.intValue() && TextUtils.equals(hdx.PAGE_PUBLISH, list.get(num.intValue()).b())) {
+                    if (list.size() > num.intValue() && StringUtils.equals(hdx.PAGE_PUBLISH, list.get(num.intValue()).b())) {
                         return num.intValue();
                     }
                     for (int i = 0; i < list.size(); i++) {
-                        if (TextUtils.equals(hdx.PAGE_PUBLISH, list.get(i).b())) {
+                        if (StringUtils.equals(hdx.PAGE_PUBLISH, list.get(i).b())) {
                             return i;
                         }
                     }
@@ -573,9 +573,9 @@ public class PublishInsertHelper implements snd {
             a(this.c, str2, a(this.c, arrayList, str2, str4));
             b();
         }
-        if (TextUtils.equals("success", str3)) {
+        if (StringUtils.equals("success", str3)) {
             a(taskList, str2);
-        } else if (TextUtils.equals("fail", str3)) {
+        } else if (StringUtils.equals("fail", str3)) {
             spz.c("PublishInsertHelper", "发布失败:" + task.data.failedCode);
         }
     }
@@ -602,9 +602,9 @@ public class PublishInsertHelper implements snd {
             a(this.c, str6, a(this.c, str3, str, str2, str4, str6));
             b();
         }
-        if (TextUtils.equals("success", str7)) {
+        if (StringUtils.equals("success", str7)) {
             a(taskList, str6);
-        } else if (!TextUtils.equals("fail", str7)) {
+        } else if (!StringUtils.equals("fail", str7)) {
         } else {
             spz.c("PublishInsertHelper", "发布失败:" + task.data.failedCode);
         }

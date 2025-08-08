@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -93,7 +93,7 @@ public class khd {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("89cdf874", new Object[]{this, str});
         }
-        if (!khp.c() || !TextUtils.equals(str, "widget")) {
+        if (!khp.c() || !StringUtils.equals(str, "widget")) {
             return null;
         }
         try {
@@ -109,7 +109,7 @@ public class khd {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("eb209513", new Object[]{this, str});
         }
-        if (!khp.a("enable_anim_widget", false) || !TextUtils.equals(str, "widget")) {
+        if (!khp.a("enable_anim_widget", false) || !StringUtils.equals(str, "widget")) {
             return null;
         }
         try {

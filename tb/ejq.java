@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.link.export.a;
 import com.alibaba.fastjson.JSONObject;
@@ -38,7 +38,7 @@ public class ejq {
             i.a("SupportItemThroughHelper", "feature is invalid");
             return false;
         }
-        return TextUtils.equals(a2.getString("itemThrough"), "true");
+        return StringUtils.equals(a2.getString("itemThrough"), "true");
     }
 
     public void a(Context context, Map<String, String> map) {

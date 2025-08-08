@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorCode;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -91,7 +91,7 @@ public final class ThemeChangeReceiver extends BroadcastReceiver {
         if (!z) {
             intent = null;
         }
-        if (intent == null || mxq.b(activity) || !mxa.c() || !TextUtils.equals(j.ACTION_THEME_CHANGE, intent.getAction())) {
+        if (intent == null || mxq.b(activity) || !mxa.c() || !StringUtils.equals(j.ACTION_THEME_CHANGE, intent.getAction())) {
             return;
         }
         this.b.k().c();

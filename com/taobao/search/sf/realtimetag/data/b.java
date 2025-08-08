@@ -1,6 +1,6 @@
 package com.taobao.search.sf.realtimetag.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.k;
@@ -54,7 +54,7 @@ public class b extends nps {
         b("vm", "nw");
         b("m", noa.VALUE_MODULE_DYNAMIC_CARD);
         b("ttid", TaoHelper.getTTID());
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             b("traceInfo", str2);
         }
         a(map);
@@ -79,7 +79,7 @@ public class b extends nps {
             ipChange.ipc$dispatch("5a42121d", new Object[]{this, map});
         } else if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                     b(entry.getKey(), entry.getValue());
                 }
             }
@@ -92,7 +92,7 @@ public class b extends nps {
             ipChange.ipc$dispatch("41e3e87c", new Object[]{this, map});
         } else if (map != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                     a(entry.getKey(), entry.getValue());
                 }
             }
@@ -103,7 +103,7 @@ public class b extends nps {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             k.e("DynamicCardRequest", "jarvis status: " + str);
             b(noa.KEY_JARVIS_STATUS, str);
@@ -114,7 +114,7 @@ public class b extends nps {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             b("insertItems", str);
         }
@@ -124,7 +124,7 @@ public class b extends nps {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             k.e("DynamicCardRequest", "jarvis feature: " + str);
             b(noa.KEY_JARVIS_FEATURE, str);

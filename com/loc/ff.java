@@ -7,7 +7,7 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -96,7 +96,7 @@ public final class ff {
     }
 
     public static boolean a(WifiInfo wifiInfo) {
-        return wifiInfo != null && !TextUtils.isEmpty(wifiInfo.getSSID()) && fy.a(wifiInfo.getBSSID());
+        return wifiInfo != null && !StringUtils.isEmpty(wifiInfo.getSSID()) && fy.a(wifiInfo.getBSSID());
     }
 
     public static long b() {
@@ -133,7 +133,7 @@ public final class ff {
                 if (this.s && z) {
                     this.c.add(egVar);
                 }
-                if (!TextUtils.isEmpty(egVar.b)) {
+                if (!StringUtils.isEmpty(egVar.b)) {
                     if (!"<unknown ssid>".equals(egVar.b)) {
                         str = String.valueOf(i);
                     }
@@ -481,7 +481,7 @@ public final class ff {
             if (!this.m && !"<unknown ssid>".equals(this.b.get(i).b)) {
                 z2 = true;
             }
-            if (TextUtils.isEmpty(this.u) || !this.u.equals(a2)) {
+            if (StringUtils.isEmpty(this.u) || !this.u.equals(a2)) {
                 z = z3;
                 str = "nb";
             } else {
@@ -498,7 +498,7 @@ public final class ff {
         if (!this.m && !z2) {
             this.j = true;
         }
-        if (!z3 && !TextUtils.isEmpty(this.u)) {
+        if (!z3 && !StringUtils.isEmpty(this.u)) {
             StringBuilder sb2 = this.k;
             sb2.append("#");
             sb2.append(this.u);

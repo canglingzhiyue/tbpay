@@ -1,6 +1,6 @@
 package com.taobao.unit.center.sync.packer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.unit.center.templatesync.ITemplateSyncService;
 import kotlin.Metadata;
@@ -28,12 +28,12 @@ public final class TemplatePacker {
             return (String) ipChange.ipc$dispatch("77f51d9e", new Object[]{this, layout});
         }
         q.c(layout, "layout");
-        if (TextUtils.isEmpty(layout)) {
+        if (StringUtils.isEmpty(layout)) {
             return ITemplateSyncService.LAYOUT_STYLE_BUBBLE;
         }
         try {
             String optString = new JSONObject(layout).optString("layoutStyle");
-            return TextUtils.equals(ITemplateSyncService.LAYOUT_STYLE_BUBBLE, optString) ? ITemplateSyncService.LAYOUT_STYLE_BUBBLE : TextUtils.equals("card", optString) ? "card" : ITemplateSyncService.LAYOUT_STYLE_BUBBLE;
+            return StringUtils.equals(ITemplateSyncService.LAYOUT_STYLE_BUBBLE, optString) ? ITemplateSyncService.LAYOUT_STYLE_BUBBLE : StringUtils.equals("card", optString) ? "card" : ITemplateSyncService.LAYOUT_STYLE_BUBBLE;
         } catch (Exception e) {
             e.printStackTrace();
             return ITemplateSyncService.LAYOUT_STYLE_BUBBLE;

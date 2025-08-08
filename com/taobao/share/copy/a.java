@@ -13,7 +13,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.poplayer.PopLayer;
@@ -225,7 +225,7 @@ public class a {
                 }
                 String stringExtra = intent.getStringExtra("event");
                 nyy.a("onReceive event value =" + stringExtra);
-                if (TextUtils.isEmpty(stringExtra) || !stringExtra.contains("no_tbSecretOrder")) {
+                if (StringUtils.isEmpty(stringExtra) || !stringExtra.contains("no_tbSecretOrder")) {
                     return;
                 }
                 a.a().c(true);
@@ -273,9 +273,9 @@ public class a {
             return;
         }
         com.taobao.android.share.resource.a.a().a(com.taobao.android.share.resource.a.KEY_SHAREBACKPASSWORDCHECKSTART);
-        if (!TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("android_share", "backFlowAppKeys", ""))) {
+        if (!StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("android_share", "backFlowAppKeys", ""))) {
             String string = nym.a().getSharedPreferences(ShareConstants.SP_SHARE, 0).getString(ShareConstants.KEY_TAO_PASSWORD, "");
-            if (!TextUtils.isEmpty(this.r.f19658a) && TextUtils.equals(string, this.r.f19658a)) {
+            if (!StringUtils.isEmpty(this.r.f19658a) && StringUtils.equals(string, this.r.f19658a)) {
                 nyy.a("ClipUrlWatcherControl", "检测到跟缓存的非当前app的口令一致，直接返回");
                 return;
             }
@@ -285,7 +285,7 @@ public class a {
             oan.a(new nyi());
         }
         final long currentTimeMillis = System.currentTimeMillis();
-        if (!TextUtils.isEmpty(this.r.f19658a)) {
+        if (!StringUtils.isEmpty(this.r.f19658a)) {
             TBS.Ext.commitEvent("Share_Exception", 19999, caa.TRACK_TYPE_BACK_FLOW, "info", "口令检测入口", "cbd=" + this.r.f19658a);
         }
         com.taobao.share.taopassword.a.a().a(nym.a(), this.r, new nzv() { // from class: com.taobao.share.copy.a.1
@@ -391,12 +391,12 @@ public class a {
                 }
                 nyy.a("ClipUrlWatcherControl", " data=null，不显示淘口令 mCurrentState:" + this.k);
             } else if (fVar.F != null) {
-                if (TextUtils.equals("PASSWORD_INVALID", this.f.F)) {
+                if (StringUtils.equals("PASSWORD_INVALID", this.f.F)) {
                     com.taobao.share.clipboard.a.b(this.g);
                 }
                 this.k = 3;
                 if (!this.j) {
-                    if (TextUtils.equals("PASSWORD_INVALID", this.f.F)) {
+                    if (StringUtils.equals("PASSWORD_INVALID", this.f.F)) {
                         a(this.f19604a, 3);
                     }
                 } else if (this.f.F.contains(RequestInterceptor.ResourceSource.NETWORK) || this.f.F.contains(LogStrategyManager.SP_STRATEGY_KEY_NETWORK)) {
@@ -503,7 +503,7 @@ public class a {
         com.taobao.android.share.resource.a a2 = com.taobao.android.share.resource.a.a();
         a2.a(com.taobao.android.share.resource.a.KEY_SHAREBACKPASSWORDVALIDSTART);
         String config = OrangeConfig.getInstance().getConfig("android_share", "backFlowAppKeys", "");
-        if (!TextUtils.isEmpty(config) && (TextUtils.isEmpty(str) || (!TextUtils.isEmpty(str) && !config.contains(str)))) {
+        if (!StringUtils.isEmpty(config) && (StringUtils.isEmpty(str) || (!StringUtils.isEmpty(str) && !config.contains(str)))) {
             SharedPreferences.Editor edit = nym.a().getSharedPreferences(ShareConstants.SP_SHARE, 0).edit();
             edit.putString(ShareConstants.KEY_TAO_PASSWORD, fVar.A);
             edit.apply();
@@ -519,14 +519,14 @@ public class a {
             b(map);
         } else {
             if (fVar != null) {
-                if (TextUtils.equals(fVar.F, "NOSHOW_PASSWORD_FRAME")) {
+                if (StringUtils.equals(fVar.F, "NOSHOW_PASSWORD_FRAME")) {
                     if ("true".equals(OrangeConfig.getInstance().getConfig("android_share", "clear_clipboard_on_security_err", "true"))) {
                         com.taobao.share.clipboard.a.b(this.g);
                     }
                     AppMonitor.Alarm.commitFail("share", "response_not_show_pwd", "0", "NOSHOW_PASSWORD_FRAME");
                     nyy.a("Share->Clip: Error code is NOSHOW_PASSWORD_FRAME, should not show dialog.");
                     return;
-                } else if (!this.j && fVar.F != null && !TextUtils.equals("PASSWORD_INVALID", fVar.F)) {
+                } else if (!this.j && fVar.F != null && !StringUtils.equals("PASSWORD_INVALID", fVar.F)) {
                     nyy.a("不显示异常框");
                     return;
                 } else {
@@ -534,7 +534,7 @@ public class a {
                 }
             }
             if (this.m) {
-                if (TextUtils.isEmpty(this.f.F) || TextUtils.equals("PASSWORD_INVALID", this.f.F)) {
+                if (StringUtils.isEmpty(this.f.F) || StringUtils.equals("PASSWORD_INVALID", this.f.F)) {
                     com.taobao.share.clipboard.a.b(this.g);
                 }
                 nyy.a("红包雨已弹出，不显示淘口令");

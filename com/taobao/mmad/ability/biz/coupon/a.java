@@ -1,6 +1,6 @@
 package com.taobao.mmad.ability.biz.coupon;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -135,7 +135,7 @@ public class a extends tit<b> {
                     return;
                 }
                 String optString = dataJsonObject.optString("failure");
-                if (mtopResponse.isApiSuccess() && !TextUtils.isEmpty(optString) && "false".equals(optString)) {
+                if (mtopResponse.isApiSuccess() && !StringUtils.isEmpty(optString) && "false".equals(optString)) {
                     b();
                     tjn.a("已领取优惠券 可在我的卡券包查看");
                 } else if ("FAIL_BIZ_ACTIVITY_APPLY_PERSON_COUNT_EXCEED".equals(mtopResponse.getRetCode())) {

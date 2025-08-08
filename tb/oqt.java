@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
@@ -175,7 +175,7 @@ public abstract class oqt {
                 ArrayList arrayList = new ArrayList(deltaData.size());
                 for (SectionModel sectionModel : deltaData) {
                     String string = sectionModel.getString("sectionBizCode");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         arrayList.add(string);
                     }
                 }
@@ -186,10 +186,10 @@ public abstract class oqt {
         if (awesomeGetContainerParams.passParams == null) {
             awesomeGetContainerParams.passParams = new JSONObject();
         }
-        if (!TextUtils.isEmpty(TBSpeed.getSubEdition())) {
+        if (!StringUtils.isEmpty(TBSpeed.getSubEdition())) {
             awesomeGetContainerParams.passParams.put("subEdition", (Object) TBSpeed.getSubEdition());
         }
-        if (!TextUtils.isEmpty(TBSpeed.getSpeedPassParams())) {
+        if (!StringUtils.isEmpty(TBSpeed.getSpeedPassParams())) {
             awesomeGetContainerParams.passParams.put("subEditionPassParams", (Object) TBSpeed.getSpeedPassParams());
         }
         JSONObject jSONObject2 = (JSONObject) jSONObject.get("bizParam");
@@ -226,10 +226,10 @@ public abstract class oqt {
             }
         }
         String k = opeVar.k(str);
-        if (!TextUtils.isEmpty(k)) {
+        if (!StringUtils.isEmpty(k)) {
             jSONObject2.put("expireAction", (Object) k);
         }
-        if (TextUtils.equals(awesomeGetContainerParams.requestType, Constant.KEY_PAGEBACK)) {
+        if (StringUtils.equals(awesomeGetContainerParams.requestType, Constant.KEY_PAGEBACK)) {
             oqu.a().a(awesomeGetContainerParams.bizParams);
         }
         awesomeGetContainerParams.bizParams.put(ovr.KEY_TAB_BAR_FRAMEWORK, (Object) ovr.FRAMEWORK_MICROSERVICES);
@@ -262,7 +262,7 @@ public abstract class oqt {
             boolean z = true;
             for (int size = g.size() - 1; size >= 0 && size >= g.size() - c.intValue(); size--) {
                 String a2 = a(g.get(size));
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     if (!z) {
                         sb.append(",");
                     }
@@ -274,7 +274,7 @@ public abstract class oqt {
             str3 = a(g);
             Integer integer = jSONObject.getInteger("index");
             if (integer != null) {
-                while (TextUtils.isEmpty(str5)) {
+                while (StringUtils.isEmpty(str5)) {
                     int i2 = i + 1;
                     if (i >= 4 || integer.intValue() <= 0 || integer.intValue() >= g.size() - 1) {
                         break;
@@ -303,7 +303,7 @@ public abstract class oqt {
         if (list != null && !list.isEmpty()) {
             for (SectionModel sectionModel : list) {
                 str = sectionModel.getJSONObject("args").getString(aw.PARAM_PVID);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     break;
                 }
             }

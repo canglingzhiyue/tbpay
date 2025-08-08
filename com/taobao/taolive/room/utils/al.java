@@ -2,7 +2,7 @@ package com.taobao.taolive.room.utils;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,7 +39,7 @@ public class al {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -62,7 +62,7 @@ public class al {
         if (!file.exists()) {
             return false;
         }
-        if (TextUtils.isEmpty(str2) || str2.equals(b(file))) {
+        if (StringUtils.isEmpty(str2) || str2.equals(b(file))) {
             return true;
         }
         a(file);

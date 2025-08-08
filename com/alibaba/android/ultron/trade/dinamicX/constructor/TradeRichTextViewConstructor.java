@@ -3,7 +3,7 @@ package com.alibaba.android.ultron.trade.dinamicX.constructor;
 import android.content.Context;
 import android.text.SpannableString;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -145,7 +145,7 @@ public class TradeRichTextViewConstructor extends DTextViewConstructor {
                 JSONObject jSONObject = jSONArray.getJSONObject(i);
                 if (jSONObject != null) {
                     String string = jSONObject.getString("text");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         str = str + string;
                         a styleSpan = getStyleSpan(map, jSONObject, str, string);
                         if (styleSpan != null) {
@@ -250,7 +250,7 @@ public class TradeRichTextViewConstructor extends DTextViewConstructor {
             return null;
         }
         String string = jSONObject.getString("openUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         return new b(string, i);

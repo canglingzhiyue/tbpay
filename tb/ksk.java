@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.h;
 import com.taobao.android.order.constants.OrderBizCode;
@@ -108,7 +108,7 @@ public class ksk {
         if (ipChange instanceof IpChange) {
             return (ksk) ipChange.ipc$dispatch("7d1e5a10", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (ksk kskVar : d.values()) {

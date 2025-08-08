@@ -1,6 +1,6 @@
 package com.alipay.vi.android.phone.mrpc.core.gwprotocol;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -84,7 +84,7 @@ public class JsonSerializer extends AbstractSerializer {
         }
         list.add(new BasicNameValuePair("operationType", this.mOperationType));
         list.add(new BasicNameValuePair("id", String.valueOf(this.f6211a)));
-        if (!TextUtils.isEmpty(getScene())) {
+        if (!StringUtils.isEmpty(getScene())) {
             list.add(new BasicNameValuePair("scene", getScene()));
         }
         list.add(buildReqDataNVPair());
@@ -119,7 +119,7 @@ public class JsonSerializer extends AbstractSerializer {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e8af12ae", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mRequestDataJson)) {
+        if (!StringUtils.isEmpty(this.mRequestDataJson)) {
             return this.mRequestDataJson;
         }
         try {

@@ -3,7 +3,7 @@ package com.taobao.themis.open.ability.audio;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
@@ -177,7 +177,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "startMonitorForegroundAudio page is null");
             return;
         }
-        String str3 = TextUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
+        String str3 = StringUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str3);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);
@@ -213,7 +213,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "stopMonitorForegroundAudio page is null");
             return;
         }
-        String str3 = TextUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
+        String str3 = StringUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str3);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);
@@ -251,7 +251,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "getForegroundAudioOption optionName is null or empty");
             return;
         }
-        String str5 = TextUtils.isEmpty(str3) ? "DEFAULT_PLAYER" : str;
+        String str5 = StringUtils.isEmpty(str3) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str5);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);
@@ -377,7 +377,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "playForegroundAudio page is null");
             return;
         }
-        String str3 = TextUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
+        String str3 = StringUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str3);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);
@@ -419,7 +419,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "pauseForegroundAudio page is null");
             return;
         }
-        String str3 = TextUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
+        String str3 = StringUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str3);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);
@@ -458,7 +458,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "stopForegroundAudio page is null");
             return;
         }
-        String str3 = TextUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
+        String str3 = StringUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str3);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);
@@ -497,7 +497,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "stopForegroundAudio page is null");
             return;
         }
-        String str3 = TextUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
+        String str3 = StringUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str3);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);
@@ -536,7 +536,7 @@ public final class TMSNewForegroundAudioBridge implements com.taobao.themis.kern
             TMSLogger.d("TMSForegroundAudioBridge", "stopForegroundAudio page is null");
             return;
         }
-        String str3 = TextUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
+        String str3 = StringUtils.isEmpty(str2) ? "DEFAULT_PLAYER" : str;
         MegaPlayerInstance megaPlayerInstance = this.f22616a.get(str3);
         if (megaPlayerInstance == null) {
             megaPlayerInstance = new MegaPlayerInstance(str, d);

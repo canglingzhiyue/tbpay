@@ -1,6 +1,6 @@
 package com.ta.audid.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,7 +25,7 @@ public class FileUtils {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             File file = new File(str);
@@ -45,7 +45,7 @@ public class FileUtils {
             return ((Boolean) ipChange.ipc$dispatch("9617da54", new Object[]{str})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             return new File(str).exists();

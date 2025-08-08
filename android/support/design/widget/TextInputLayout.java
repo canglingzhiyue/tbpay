@@ -29,7 +29,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.DrawableUtils;
 import android.support.v7.widget.TintTypedArray;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
 import android.util.AttributeSet;
@@ -124,7 +124,7 @@ public class TextInputLayout extends LinearLayout {
 
         SavedState(Parcel parcel, ClassLoader classLoader) {
             super(parcel, classLoader);
-            this.error = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            this.error = (CharSequence) StringUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             this.isPasswordToggledVisible = parcel.readInt() != 1 ? false : true;
         }
 
@@ -139,7 +139,7 @@ public class TextInputLayout extends LinearLayout {
         @Override // android.support.v4.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            TextUtils.writeToParcel(this.error, parcel, i);
+            StringUtils.writeToParcel(this.error, parcel, i);
             parcel.writeInt(this.isPasswordToggledVisible ? 1 : 0);
         }
     }
@@ -160,14 +160,14 @@ public class TextInputLayout extends LinearLayout {
             super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfoCompat);
             accessibilityNodeInfoCompat.setClassName(TextInputLayout.class.getSimpleName());
             CharSequence j = TextInputLayout.this.mCollapsingTextHelper.j();
-            if (!TextUtils.isEmpty(j)) {
+            if (!StringUtils.isEmpty(j)) {
                 accessibilityNodeInfoCompat.setText(j);
             }
             if (TextInputLayout.this.mEditText != null) {
                 accessibilityNodeInfoCompat.setLabelFor(TextInputLayout.this.mEditText);
             }
             CharSequence text = TextInputLayout.this.mErrorView != null ? TextInputLayout.this.mErrorView.getText() : null;
-            if (!TextUtils.isEmpty(text)) {
+            if (!StringUtils.isEmpty(text)) {
                 accessibilityNodeInfoCompat.setContentInvalid(true);
                 accessibilityNodeInfoCompat.setError(text);
             }
@@ -177,7 +177,7 @@ public class TextInputLayout extends LinearLayout {
         public void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
             super.onPopulateAccessibilityEvent(view, accessibilityEvent);
             CharSequence j = TextInputLayout.this.mCollapsingTextHelper.j();
-            if (!TextUtils.isEmpty(j)) {
+            if (!StringUtils.isEmpty(j)) {
                 accessibilityEvent.getText().add(j);
             }
         }
@@ -420,7 +420,7 @@ public class TextInputLayout extends LinearLayout {
             if (this.mDefaultTextColor == null) {
                 this.mDefaultTextColor = this.mEditText.getHintTextColors();
             }
-            if (this.mHintEnabled && TextUtils.isEmpty(this.mHint)) {
+            if (this.mHintEnabled && StringUtils.isEmpty(this.mHint)) {
                 this.mOriginalHint = this.mEditText.getHint();
                 setHint(this.mOriginalHint);
                 this.mEditText.setHint((CharSequence) null);
@@ -442,12 +442,12 @@ public class TextInputLayout extends LinearLayout {
         ViewPropertyAnimator listener;
         this.mError = charSequence;
         if (!this.mErrorEnabled) {
-            if (TextUtils.isEmpty(charSequence)) {
+            if (StringUtils.isEmpty(charSequence)) {
                 return;
             }
             setErrorEnabled(true);
         }
-        this.mErrorShown = !TextUtils.isEmpty(charSequence);
+        this.mErrorShown = !StringUtils.isEmpty(charSequence);
         this.mErrorView.animate().cancel();
         if (!this.mErrorShown) {
             if (this.mErrorView.getVisibility() == 0) {
@@ -831,7 +831,7 @@ public class TextInputLayout extends LinearLayout {
 
     public void setError(CharSequence charSequence) {
         TextView textView;
-        setError(charSequence, ViewCompat.isLaidOut(this) && isEnabled() && ((textView = this.mErrorView) == null || !TextUtils.equals(textView.getText(), charSequence)));
+        setError(charSequence, ViewCompat.isLaidOut(this) && isEnabled() && ((textView = this.mErrorView) == null || !StringUtils.equals(textView.getText(), charSequence)));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
@@ -942,12 +942,12 @@ public class TextInputLayout extends LinearLayout {
             this.mHintEnabled = z;
             CharSequence hint = this.mEditText.getHint();
             if (!this.mHintEnabled) {
-                if (!TextUtils.isEmpty(this.mHint) && TextUtils.isEmpty(hint)) {
+                if (!StringUtils.isEmpty(this.mHint) && StringUtils.isEmpty(hint)) {
                     this.mEditText.setHint(this.mHint);
                 }
                 setHintInternal(null);
-            } else if (!TextUtils.isEmpty(hint)) {
-                if (TextUtils.isEmpty(this.mHint)) {
+            } else if (!StringUtils.isEmpty(hint)) {
+                if (StringUtils.isEmpty(this.mHint)) {
                     setHint(hint);
                 }
                 this.mEditText.setHint((CharSequence) null);
@@ -1064,9 +1064,9 @@ public class TextInputLayout extends LinearLayout {
         TextView textView;
         boolean isEnabled = isEnabled();
         EditText editText = this.mEditText;
-        boolean z3 = editText != null && !TextUtils.isEmpty(editText.getText());
+        boolean z3 = editText != null && !StringUtils.isEmpty(editText.getText());
         boolean arrayContains = arrayContains(getDrawableState(), 16842908);
-        boolean isEmpty = true ^ TextUtils.isEmpty(getError());
+        boolean isEmpty = true ^ StringUtils.isEmpty(getError());
         ColorStateList colorStateList2 = this.mDefaultTextColor;
         if (colorStateList2 != null) {
             this.mCollapsingTextHelper.b(colorStateList2);

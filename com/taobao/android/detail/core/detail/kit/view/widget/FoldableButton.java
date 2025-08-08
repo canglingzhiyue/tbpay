@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -283,7 +283,7 @@ public class FoldableButton extends LinearLayout {
         textView.setTag("content");
         textView.setLayoutParams(layoutParams);
         textView.setPadding(0, 0, 0, 0);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         textView.setLines(1);
         textView.setMaxWidth(epo.b(250));
         textView.setGravity(17);

@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -386,7 +386,7 @@ public class c extends eoz {
                 if (ipChange instanceof IpChange) {
                     return (eoz) ipChange.ipc$dispatch("ed3ce113", new Object[]{this, str});
                 }
-                if (!TextUtils.equals(str, "detail_container_floatweex_container")) {
+                if (!StringUtils.equals(str, "detail_container_floatweex_container")) {
                     return null;
                 }
                 return c.this;
@@ -431,12 +431,12 @@ public class c extends eoz {
             return;
         }
         i.c("floatView.WeexFloatViewController", "start:" + str);
-        if (!c || TextUtils.equals(this.m, str) || !WXEnvironment.isCPUSupport()) {
+        if (!c || StringUtils.equals(this.m, str) || !WXEnvironment.isCPUSupport()) {
             return;
         }
         this.m = str;
         k();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             g();
             try {
                 this.l.loadUrl(str, null);
@@ -470,7 +470,7 @@ public class c extends eoz {
             for (int i = 0; i < this.n.size() && this.o.size() > i; i++) {
                 b bVar = this.o.get(i);
                 if (bVar != null && (jSONObject = this.n.getJSONObject(i)) != null && bVar != null) {
-                    if (!TextUtils.equals("FLOAT_BOTTOM", jSONObject.getString("type")) && jSONObject.getJSONObject("params") != null && jSONObject.getJSONObject("params").getJSONArray("infos") != null) {
+                    if (!StringUtils.equals("FLOAT_BOTTOM", jSONObject.getString("type")) && jSONObject.getJSONObject("params") != null && jSONObject.getJSONObject("params").getJSONArray("infos") != null) {
                         b(bVar.g());
                     }
                     if (!a(jSONObject, i)) {
@@ -781,10 +781,10 @@ public class c extends eoz {
             try {
                 String string = jSONObject.getString("url");
                 i.c("floatView.WeexFloatViewController", "start:" + string);
-                if (c && !TextUtils.equals(this.m, string) && WXEnvironment.isCPUSupport()) {
+                if (c && !StringUtils.equals(this.m, string) && WXEnvironment.isCPUSupport()) {
                     this.m = string;
                     k();
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         g();
                         if (a(jSONObject, -1)) {
                             return;
@@ -814,10 +814,10 @@ public class c extends eoz {
                     return false;
                 }
                 String string = jSONObject.getString("uppConf");
-                if (TextUtils.isEmpty(string) && (jSONObject2 = jSONObject.getJSONObject("params")) != null) {
+                if (StringUtils.isEmpty(string) && (jSONObject2 = jSONObject.getJSONObject("params")) != null) {
                     string = jSONObject2.getString("uppConf");
                 }
-                if (TextUtils.isEmpty(string) || (parseObject = JSON.parseObject(string)) == null || !parseObject.getBooleanValue("isUseUpp")) {
+                if (StringUtils.isEmpty(string) || (parseObject = JSON.parseObject(string)) == null || !parseObject.getBooleanValue("isUseUpp")) {
                     return false;
                 }
                 String string2 = parseObject.getString("schemeId");
@@ -847,7 +847,7 @@ public class c extends eoz {
                                         }
                                         JSONObject jSONObject5 = jSONObject4.getJSONObject("actualResult");
                                         if (jSONObject5 == null) {
-                                            if (!TextUtils.equals(e.UPP_DOWNGRADE, jSONObject4.getString("code"))) {
+                                            if (!StringUtils.equals(e.UPP_DOWNGRADE, jSONObject4.getString("code"))) {
                                                 return;
                                             }
                                             if (-1 != i) {
@@ -860,9 +860,9 @@ public class c extends eoz {
                                             return;
                                         }
                                         String string3 = jSONObject5.getString("url");
-                                        if (!TextUtils.isEmpty(string3)) {
+                                        if (!StringUtils.isEmpty(string3)) {
                                             Uri parse = Uri.parse(string3);
-                                            if (TextUtils.isEmpty(parse.getQueryParameter("algParams"))) {
+                                            if (StringUtils.isEmpty(parse.getQueryParameter("algParams"))) {
                                                 Uri.Builder buildUpon = parse.buildUpon();
                                                 buildUpon.appendQueryParameter("algParams", jSONObject4.getString("algParams"));
                                                 jSONObject5.put("url", (Object) buildUpon.build().toString());
@@ -927,7 +927,7 @@ public class c extends eoz {
                 if (c && WXEnvironment.isCPUSupport()) {
                     this.m = string;
                     k();
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         g();
                         this.l.loadUrl(string, null);
                         a(string);
@@ -1314,13 +1314,13 @@ public class c extends eoz {
                 return;
             }
             String str = (String) obj;
-            if (TextUtils.equals(str, "show")) {
+            if (StringUtils.equals(str, "show")) {
                 n();
-            } else if (TextUtils.equals(str, "dismiss")) {
+            } else if (StringUtils.equals(str, "dismiss")) {
                 o();
-            } else if (TextUtils.equals(str, "destroy")) {
+            } else if (StringUtils.equals(str, "destroy")) {
                 f();
-            } else if (TextUtils.equals(str, "getItemId")) {
+            } else if (StringUtils.equals(str, "getItemId")) {
                 p();
             } else {
                 i.a("floatView.WeexFloatViewController", "无法处理operate_detail_weex_float operate:" + str);
@@ -1342,7 +1342,7 @@ public class c extends eoz {
                 return;
             }
             String str = (String) obj;
-            if (TextUtils.equals(str, "componentLifeCycle")) {
+            if (StringUtils.equals(str, "componentLifeCycle")) {
                 Object obj2 = map.get("componentKey");
                 if (obj2 == null || !(obj2 instanceof String)) {
                     return;

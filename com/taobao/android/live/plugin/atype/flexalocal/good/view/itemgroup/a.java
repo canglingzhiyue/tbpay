@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.itemgroup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.ItemlistV2ResponseData;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.c;
@@ -38,7 +38,7 @@ public class a extends hja<ItemGroupView> implements hjd {
                     }
                     itemListv1.liveItemDO.extraUTParams.put("aggregation_id", pageInfo.id);
                     itemListv1.liveItemDO.extraUTParams.put("aggregation_type", pageInfo.type);
-                    if (!TextUtils.isEmpty(pageInfo.source)) {
+                    if (!StringUtils.isEmpty(pageInfo.source)) {
                         itemListv1.liveItemDO.extraUTParams.put("aggregation_source", pageInfo.source);
                     }
                 }

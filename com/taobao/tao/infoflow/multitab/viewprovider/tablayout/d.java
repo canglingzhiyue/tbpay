@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.SystemClock;
 import android.support.design.widget.TabLayout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -502,7 +502,7 @@ public class d implements a, a.InterfaceC0865a {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("fef0fbf4", new Object[]{this, str});
         }
-        if (this.t && !TextUtils.isEmpty(str)) {
+        if (this.t && !StringUtils.isEmpty(str)) {
             return this.f20654a.getChildTabView(this.s.a(str));
         }
         return null;
@@ -530,7 +530,7 @@ public class d implements a, a.InterfaceC0865a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!this.t || TextUtils.isEmpty(str) || this.f20654a == null || (tabAt = this.f20654a.getTabAt(this.s.a(str))) == null) {
+        } else if (!this.t || StringUtils.isEmpty(str) || this.f20654a == null || (tabAt = this.f20654a.getTabAt(this.s.a(str))) == null) {
         } else {
             tabAt.f();
         }
@@ -541,7 +541,7 @@ public class d implements a, a.InterfaceC0865a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cf2be937", new Object[]{this, str, dVar});
-        } else if (!this.t || TextUtils.isEmpty(str) || this.f20654a == null) {
+        } else if (!this.t || StringUtils.isEmpty(str) || this.f20654a == null) {
         } else {
             final int a2 = this.s.a(str);
             this.f20654a.post(new Runnable() { // from class: com.taobao.tao.infoflow.multitab.viewprovider.tablayout.d.1
@@ -653,7 +653,7 @@ public class d implements a, a.InterfaceC0865a {
         float f = 0.0f;
         if (jSONObject2 != null) {
             String string = jSONObject2.getString("marginTop");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 try {
                     f = Integer.parseInt(string);
                 } catch (NumberFormatException unused) {
@@ -702,7 +702,7 @@ public class d implements a, a.InterfaceC0865a {
         }
         a2.getLocationOnScreen(iArr);
         iArr[0] = iArr[0] + (a2.getWidth() / 2);
-        if (TextUtils.equals(str, this.s.n(0))) {
+        if (StringUtils.equals(str, this.s.n(0))) {
             iArr[0] = iArr[0] + this.i.E;
         }
         iArr[1] = iArr[1] + a2.getHeight();
@@ -831,7 +831,7 @@ public class d implements a, a.InterfaceC0865a {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         g.a("TabLayoutProvider", "refreshTabUi start");
         this.b.setBackgroundColor(this.i.g);
-        if (!TextUtils.isEmpty(this.i.l)) {
+        if (!StringUtils.isEmpty(this.i.l)) {
             onq.a(this.c, this.i.l, "homepage-ads", h.IMAGE_STRATEGY_CONFIG);
             this.c.setImageUrl(this.i.l);
             this.c.setVisibility(0);
@@ -950,7 +950,7 @@ public class d implements a, a.InterfaceC0865a {
                 if (aVar != null) {
                     a(b, i2);
                     String str = aVar.f30723a;
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         StringBuilder sb = new StringBuilder();
                         sb.append(str);
                         sb.append(",");
@@ -1027,7 +1027,7 @@ public class d implements a, a.InterfaceC0865a {
             return;
         }
         String b = this.i.b(true);
-        if (TextUtils.isEmpty(b) || tea.a(tea.MORE_IMAGE, b)) {
+        if (StringUtils.isEmpty(b) || tea.a(tea.MORE_IMAGE, b)) {
             return;
         }
         onq.a(this.d, b, "homepage-ads", h.IMAGE_STRATEGY_CONFIG);

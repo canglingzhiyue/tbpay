@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
@@ -31,7 +31,7 @@ public class jld extends jku {
         if (ipChange instanceof IpChange) {
             return (jld) ipChange.ipc$dispatch("e2617ec6", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@foreachEncodeQuery")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@foreachEncodeQuery")) {
             return null;
         }
         return new jld(str);

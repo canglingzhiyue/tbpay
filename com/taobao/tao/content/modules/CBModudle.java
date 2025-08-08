@@ -1,6 +1,6 @@
 package com.taobao.tao.content.modules;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.content.business.ContentBusinessModel;
 import com.taobao.tao.content.business.b;
@@ -37,7 +37,7 @@ public class CBModudle extends WXModule {
             contentBusinessModel.pageName = hashMap.get("pageName");
             contentBusinessModel.source = "3";
             String str = hashMap.get("sourceType");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 contentBusinessModel.sourceType = str;
             }
             try {
@@ -46,7 +46,7 @@ public class CBModudle extends WXModule {
                 e.printStackTrace();
             }
             contentBusinessModel.tcpBid = hashMap.get(b.TCP_BID);
-            if (!TextUtils.isEmpty(contentBusinessModel.tcpBid)) {
+            if (!StringUtils.isEmpty(contentBusinessModel.tcpBid)) {
                 contentBusinessModel.ct = hashMap.get(b.CT);
                 if (contentBusinessModel.ct.equals("1")) {
                     contentBusinessModel.itemId = hashMap.get("itemId");
@@ -56,22 +56,22 @@ public class CBModudle extends WXModule {
             }
             try {
                 String str2 = hashMap.get("hideSKULayer");
-                if (!TextUtils.isEmpty(str2) && "true".equals(str2)) {
+                if (!StringUtils.isEmpty(str2) && "true".equals(str2)) {
                     contentBusinessModel.source = "2";
                 }
             } catch (Exception unused) {
             }
             if (odt.c()) {
                 String str3 = hashMap.get("actionSource");
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     contentBusinessModel.actionSource = str3;
                 }
                 String str4 = hashMap.get("trackSource");
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     contentBusinessModel.trackSource = str4;
                 }
                 String str5 = hashMap.get("trackSubSource");
-                if (!TextUtils.isEmpty(str5)) {
+                if (!StringUtils.isEmpty(str5)) {
                     contentBusinessModel.trackSubSource = str5;
                 }
             }
@@ -99,7 +99,7 @@ public class CBModudle extends WXModule {
             contentBusinessModel.source = "1";
             contentBusinessModel.tcpBid = hashMap.get(b.TCP_BID);
             String str = hashMap.get("sourceType");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 contentBusinessModel.sourceType = str;
             }
             try {
@@ -107,7 +107,7 @@ public class CBModudle extends WXModule {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            if (!TextUtils.isEmpty(contentBusinessModel.tcpBid)) {
+            if (!StringUtils.isEmpty(contentBusinessModel.tcpBid)) {
                 contentBusinessModel.ct = hashMap.get(b.CT);
                 if (contentBusinessModel.ct.equals("1")) {
                     contentBusinessModel.itemId = hashMap.get("itemId");
@@ -117,15 +117,15 @@ public class CBModudle extends WXModule {
             }
             if (odt.c()) {
                 String str2 = hashMap.get("actionSource");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     contentBusinessModel.actionSource = str2;
                 }
                 String str3 = hashMap.get("trackSource");
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     contentBusinessModel.trackSource = str3;
                 }
                 String str4 = hashMap.get("trackSubSource");
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     contentBusinessModel.trackSubSource = str4;
                 }
             }

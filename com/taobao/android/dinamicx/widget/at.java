@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.widget.bf;
 import com.taobao.phenix.intf.PhenixCreator;
@@ -22,7 +22,7 @@ public final class at extends com.taobao.android.dinamicx.c implements bf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a73137f1", new Object[]{this, context, str, aVar, bVar});
-        } else if (!TextUtils.isEmpty(str) && bVar != null) {
+        } else if (!StringUtils.isEmpty(str) && bVar != null) {
             PhenixCreator succListener = com.taobao.phenix.intf.b.h().a(str).succListener(new a(bVar));
             if (aVar != null && (map = aVar.f12079a) != null) {
                 for (Map.Entry<String, String> entry : map.entrySet()) {

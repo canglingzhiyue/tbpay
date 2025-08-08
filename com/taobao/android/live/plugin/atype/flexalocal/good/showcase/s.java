@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.showcase;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.AlgoGoodsCardConfigData;
@@ -59,7 +59,7 @@ public class s implements r {
                 return;
             }
             String string = videoInfo.itemConfigInfo.getString("itemAlgoRecommendCardParam");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             try {

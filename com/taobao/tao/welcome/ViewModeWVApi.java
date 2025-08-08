@@ -2,7 +2,7 @@ package com.taobao.tao.welcome;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.welcome.d;
@@ -134,10 +134,10 @@ public class ViewModeWVApi extends com.taobao.android.lightvane.jsbridge.c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("cd3390e4", new Object[]{this, str, str2, dVar})).booleanValue();
         }
-        if (TextUtils.equals(str, "requestPermission")) {
+        if (StringUtils.equals(str, "requestPermission")) {
             return requestPermission(dVar);
         }
-        if (TextUtils.equals(str, ACTION_IS_VIEW_MODE)) {
+        if (StringUtils.equals(str, ACTION_IS_VIEW_MODE)) {
             return isViewMode(dVar);
         }
         a aVar = actionExtensions.get(str);

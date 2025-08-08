@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -186,7 +186,7 @@ public class ory {
             JSONArray jSONArray2 = new JSONArray(jSONArray.size());
             for (int i = 0; i < jSONArray.size(); i++) {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
-                if (jSONObject2 != null && !TextUtils.isEmpty(jSONObject2.getString("reasonId")) && !TextUtils.isEmpty(jSONObject2.getString("reason"))) {
+                if (jSONObject2 != null && !StringUtils.isEmpty(jSONObject2.getString("reasonId")) && !StringUtils.isEmpty(jSONObject2.getString("reason"))) {
                     jSONArray2.add(jSONObject2);
                 }
             }

@@ -11,7 +11,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,7 +78,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-            } else if (!TextUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
+            } else if (!StringUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
             } else {
                 long intExtra = intent.getIntExtra("seqId", -1);
                 if (intExtra == -1 || intExtra == TaoLiveShopSingleRoomController.access$000(TaoLiveShopSingleRoomController.this)) {
@@ -225,7 +225,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
         this.mFrameContext.a((ppa) new ppb());
         poz.Y(ai.d(this.mFrameContext), this.mGlobalContext);
         String str = this.mRecModel.initParams != null ? this.mRecModel.initParams.get(aw.PARAM_PLAY_VIEW_TOKEN) : null;
-        if (!TextUtils.isEmpty(str) && !com.taobao.taolive.sdk.ui.media.g.a().d(str)) {
+        if (!StringUtils.isEmpty(str) && !com.taobao.taolive.sdk.ui.media.g.a().d(str)) {
             str = null;
         }
         this.mVideoViewToken = str;
@@ -237,7 +237,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
                 ((FragmentActivity) this.mContext).getLifecycle().addObserver(new ShopLoftLifeCycle((FragmentActivity) this.mContext));
             }
             if (!aa.bK()) {
-                sendLiveBroadCast(this.mContext, !TextUtils.isEmpty(str));
+                sendLiveBroadCast(this.mContext, !StringUtils.isEmpty(str));
             }
             LocalBroadcastManager.getInstance(this.mContext).sendBroadcast(new Intent("action.com.taobao.taolive.room.start"));
             com.taobao.taolive.room.dx.b.c().a(this.mContext);
@@ -258,7 +258,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
         this.mPerfomenceTrackManager = new pkm(true);
         this.mPerfomenceTrackManager.a(this.mFrameContext);
         initVideo();
-        if (!TextUtils.isEmpty(str) && this.mVideoFrame != null) {
+        if (!StringUtils.isEmpty(str) && this.mVideoFrame != null) {
             this.mVideoFrame.setVideoViewToken(str);
         }
         LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(pmd.a().u().c());
@@ -305,7 +305,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("23e54330", new Object[]{this});
         }
-        String valueOf = !TextUtils.isEmpty(this.mRequestLiveId) ? String.valueOf(this.mRequestLiveId.hashCode()) : "";
+        String valueOf = !StringUtils.isEmpty(this.mRequestLiveId) ? String.valueOf(this.mRequestLiveId.hashCode()) : "";
         Random random = new Random();
         return valueOf + "_" + System.currentTimeMillis() + random.nextInt(1000);
     }
@@ -348,13 +348,13 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
                 this.mRecModel.initParams.put(aw.PARAM_IGNORE_PV, jSONObject2.getString(aw.PARAM_IGNORE_PV));
             }
             String string = jSONObject.getString("livesource");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "shop2F";
             }
             this.mRecModel.initParams.put("livesource", string);
             String string2 = jSONObject.getString("roomStatus");
             String string3 = jSONObject.getString("itemId");
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 return;
             }
             if (aa.aC()) {
@@ -382,7 +382,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
             return;
         }
         if (aa.bK() && (jSONObject2 = this.mJsonObject) != null && jSONObject2.getIntValue("nativeIndex") == 0) {
-            sendLiveBroadCast(this.mContext, true ^ TextUtils.isEmpty(this.mVideoViewToken));
+            sendLiveBroadCast(this.mContext, true ^ StringUtils.isEmpty(this.mVideoViewToken));
         }
         if (aa.bm()) {
             this.mIsDestroyed = false;
@@ -424,18 +424,18 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
                     ipChange2.ipc$dispatch("6b9b1c8", new Object[]{this, view, str2, str3, str4});
                     return;
                 }
-                if (TaoLiveShopSingleRoomController.this.mRecModel == null || TextUtils.isEmpty(TaoLiveShopSingleRoomController.this.mRecModel.liveId)) {
+                if (TaoLiveShopSingleRoomController.this.mRecModel == null || StringUtils.isEmpty(TaoLiveShopSingleRoomController.this.mRecModel.liveId)) {
                     str5 = null;
                 } else {
                     str5 = com.taobao.taolive.room.utils.c.a(TaoLiveShopSingleRoomController.this.mRecModel.liveId);
                     if (TaoLiveShopSingleRoomController.this.mRecModel.initParams != null) {
                         String str6 = TaoLiveShopSingleRoomController.this.mRecModel.initParams.get(aw.PARAM_SJSD_ITEM_ID);
-                        if (!TextUtils.isEmpty(str6)) {
+                        if (!StringUtils.isEmpty(str6)) {
                             str5 = str5 + "&" + aw.PARAM_SJSD_ITEM_ID + "=" + str6 + "&productType = timemove";
                         }
                     }
                 }
-                if (!aa.bo() || TextUtils.isEmpty(str5)) {
+                if (!aa.bo() || StringUtils.isEmpty(str5)) {
                     com.taobao.taolive.room.utils.s.a(TaoLiveShopSingleRoomController.this.mContext, com.taobao.taolive.room.utils.c.a(str3), null, 67108864, false);
                 } else {
                     com.taobao.taolive.room.utils.s.a(TaoLiveShopSingleRoomController.this.mContext, str5, null, 67108864, false);
@@ -461,7 +461,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
         JSONObject jSONObject2 = this.mJsonObject;
         if (jSONObject2 != null) {
             String string = jSONObject2.getString("livesource");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = "shop2F";
             }
             if (com.taobao.taolive.sdk.utils.o.l()) {
@@ -664,7 +664,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
             return null;
         }
         String str = videoInfo.broadCaster.accountName;
-        return (ShareContent) pmd.a().p().b((Activity) this.mContext, TextUtils.isEmpty(aa.ae()) ? this.mContext.getString(R.string.taolive_share_live, str, videoInfo.title) : String.format(aa.ae(), str, videoInfo.title), TextUtils.isEmpty(videoInfo.shareUrlDO.bgImgUrl) ? videoInfo.coverImg : videoInfo.shareUrlDO.bgImgUrl, videoInfo.liveId, videoInfo.topic, false, videoInfo.shareUrlDO.shareUrl, videoInfo.shareUrlDO.shareCardUrl, "zhibo", null);
+        return (ShareContent) pmd.a().p().b((Activity) this.mContext, StringUtils.isEmpty(aa.ae()) ? this.mContext.getString(R.string.taolive_share_live, str, videoInfo.title) : String.format(aa.ae(), str, videoInfo.title), StringUtils.isEmpty(videoInfo.shareUrlDO.bgImgUrl) ? videoInfo.coverImg : videoInfo.shareUrlDO.bgImgUrl, videoInfo.liveId, videoInfo.topic, false, videoInfo.shareUrlDO.shareUrl, videoInfo.shareUrlDO.shareCardUrl, "zhibo", null);
     }
 
     @Override // com.taobao.taolive.room.controller2.TaoLiveSingleRoomController, tb.ddv
@@ -710,7 +710,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
             }
             Map map = (Map) obj;
             String str3 = (String) map.get("url");
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 return;
             }
             Map<String, String> b = ak.b(Uri.parse(str3));
@@ -798,7 +798,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
         this.mRecModelOld.liveId = this.mRecModel.liveId;
         this.mRecModelOld.initParams = new HashMap();
         this.mRecModelOld.initParams.putAll(this.mRecModel.initParams);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mRecModel.liveId = str;
         }
         if (this.mRecModel.initParams != null) {
@@ -810,7 +810,7 @@ public class TaoLiveShopSingleRoomController extends TaoLiveSingleRoomController
             this.mRecModel.initParams.remove("timePointPlayUrl");
             this.mRecModel.initParams.remove(aw.PARAM_CUSTOM_PLAY_CTRL);
             this.mRecModel.initParams.remove(aw.PARAM_PLAY_VIEW_TOKEN);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.mRecModel.initParams.put("id", str);
             }
             this.mRecModel.initParams.remove("timeMovingSpfPlayVideo");

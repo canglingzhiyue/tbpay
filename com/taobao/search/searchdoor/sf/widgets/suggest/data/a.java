@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.sf.widgets.suggest.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -67,7 +67,7 @@ public class a extends nqr<SuggestCellBean, com.taobao.search.searchdoor.sf.widg
         suggestCellBean.searchText = jSONObject2.getString("searchtext");
         suggestCellBean.showText = jSONObject2.getString("showtext");
         suggestCellBean.icon = jSONObject2.getString("icon");
-        if (!TextUtils.isEmpty(suggestCellBean.showText) && bVar != null) {
+        if (!StringUtils.isEmpty(suggestCellBean.showText) && bVar != null) {
             if (bVar.h.length() > 0) {
                 bVar.h += ";";
             }
@@ -82,7 +82,7 @@ public class a extends nqr<SuggestCellBean, com.taobao.search.searchdoor.sf.widg
             JSONObject jSONObject4 = jSONArray2.getJSONObject(i);
             String string = jSONObject4.getString("key");
             String string2 = jSONObject4.getString("value");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                 suggestCellBean.params.put(string, string2);
             }
         }

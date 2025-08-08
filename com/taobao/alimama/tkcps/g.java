@@ -1,6 +1,6 @@
 package com.taobao.alimama.tkcps;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -40,7 +40,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (taokeParam = this.b.get(str)) == null || TimeStampManager.instance().getCurrentTimeStamp() > taokeParam.expireTime.longValue()) {
+        if (StringUtils.isEmpty(str) || (taokeParam = this.b.get(str)) == null || TimeStampManager.instance().getCurrentTimeStamp() > taokeParam.expireTime.longValue()) {
             return null;
         }
         return taokeParam.content;
@@ -50,7 +50,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || str2 == null) {
+        } else if (StringUtils.isEmpty(str) || str2 == null) {
         } else {
             TaokeParam taokeParam = new TaokeParam();
             taokeParam.content = str2;
@@ -66,7 +66,7 @@ public class g {
             return;
         }
         String string = SharedPreferencesUtils.getString("tk_cps_param", null);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 ConcurrentHashMap<String, TaokeParam> concurrentHashMap = (ConcurrentHashMap) JSON.parseObject(string, new TypeReference<ConcurrentHashMap<String, TaokeParam>>() { // from class: com.taobao.alimama.tkcps.g.1
                 }, new Feature[0]);

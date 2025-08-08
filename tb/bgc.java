@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.link.a;
@@ -28,9 +28,9 @@ public class bgc {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && mtopResponse != null) {
+            if (!StringUtils.isEmpty(str) && mtopResponse != null) {
                 String tinctInfo = ITinctOperater.getInstance().getTinctInfo(str);
-                if (TextUtils.isEmpty(tinctInfo)) {
+                if (StringUtils.isEmpty(tinctInfo)) {
                     tinctInfo = "empty";
                 }
                 String str2 = tinctInfo;
@@ -56,9 +56,9 @@ public class bgc {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && mtopResponse != null) {
+            if (!StringUtils.isEmpty(str) && mtopResponse != null) {
                 String tinctInfo = ITinctOperater.getInstance().getTinctInfo(str);
-                if (TextUtils.isEmpty(tinctInfo)) {
+                if (StringUtils.isEmpty(tinctInfo)) {
                     tinctInfo = "empty";
                 }
                 String api = mtopResponse.getApi();
@@ -74,7 +74,7 @@ public class bgc {
 
     public static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.isEmpty(str) ? "_EMPTY_" : str.startsWith("ANDROID_SYS_") ? "ERROR_MTOP_APP_SDK" : str.startsWith("FAIL_SYS_") ? "ERROR_MTOP_SERVER" : "ERROR_BIZ_SERVER";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.isEmpty(str) ? "_EMPTY_" : str.startsWith("ANDROID_SYS_") ? "ERROR_MTOP_APP_SDK" : str.startsWith("FAIL_SYS_") ? "ERROR_MTOP_SERVER" : "ERROR_BIZ_SERVER";
     }
 
     public static String a(MtopResponse mtopResponse) {
@@ -134,19 +134,19 @@ public class bgc {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("tinctTag=");
         String str8 = "";
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = str8;
         }
         stringBuffer.append(str2);
         stringBuffer.append(",");
         stringBuffer.append("traceId=");
-        if (TextUtils.isEmpty(str7)) {
+        if (StringUtils.isEmpty(str7)) {
             str7 = str8;
         }
         stringBuffer.append(str7);
         stringBuffer.append(",");
         stringBuffer.append("errorMsg=");
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             str8 = str6;
         }
         stringBuffer.append(str8);

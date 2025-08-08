@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.taobao.TBActionBar;
 import android.support.v7.taobao.TIconFontTextView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -188,7 +188,7 @@ public class TBActionView extends FrameLayout {
             this.mImageView.setVisibility(0);
             this.mIconView.setVisibility(8);
             this.mTextView.setVisibility(8);
-        } else if (!TextUtils.isEmpty(this.mTitle)) {
+        } else if (!StringUtils.isEmpty(this.mTitle)) {
             setTitle(this.mTitle);
         }
         this.mDotOrNumBackground = getContext().getResources().getDrawable(R.drawable.uik_action_message_dot_bg);
@@ -279,7 +279,7 @@ public class TBActionView extends FrameLayout {
                     if (i == 4) {
                         this.mMessageTextView.setVisibility(8);
                     }
-                } else if (!TextUtils.isEmpty(this.mMenuItem.getMessage())) {
+                } else if (!StringUtils.isEmpty(this.mMenuItem.getMessage())) {
                     updateMessageBackground(R.drawable.uik_action_message_more_bg);
                     layoutParams.height = this.mMessageTwoNumHeight;
                     layoutParams.width = -2;
@@ -294,7 +294,7 @@ public class TBActionView extends FrameLayout {
                 } else {
                     this.mMessageTextView.setVisibility(8);
                 }
-            } else if (!TextUtils.isEmpty(this.mMenuItem.getMessage())) {
+            } else if (!StringUtils.isEmpty(this.mMenuItem.getMessage())) {
                 updateMessageBackground(R.drawable.uik_action_message_dot_bg);
                 layoutParams.height = this.mMessageDotHeight;
                 layoutParams.width = this.mMessageDotWidth;
@@ -337,7 +337,7 @@ public class TBActionView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9c820927", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.length() >= 2 && str.charAt(1) == ':') {
                 this.mIconView.setText(str.substring(0, 1));

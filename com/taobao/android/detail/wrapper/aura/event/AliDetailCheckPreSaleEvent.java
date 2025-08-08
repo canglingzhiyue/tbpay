@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.aura.event;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
@@ -97,7 +97,7 @@ public final class AliDetailCheckPreSaleEvent extends arv {
         L3e:
             java.lang.String r5 = "status"
             java.lang.String r5 = r4.getString(r5)
-            boolean r6 = android.text.TextUtils.isEmpty(r5)
+            boolean r6 = android.text.StringUtils.isEmpty(r5)
             if (r6 == 0) goto L4b
             return
         L4b:
@@ -137,9 +137,9 @@ public final class AliDetailCheckPreSaleEvent extends arv {
             com.alibaba.android.aura.s r8 = r1.b()
             com.alibaba.android.aura.service.event.d r12 = r12.getEventModel()
             com.alibaba.android.aura.datamodel.render.AURARenderComponent r9 = r12.d()
-            boolean r12 = android.text.TextUtils.isEmpty(r6)
+            boolean r12 = android.text.StringUtils.isEmpty(r6)
             if (r12 != 0) goto Lac
-            boolean r12 = android.text.TextUtils.isEmpty(r7)
+            boolean r12 = android.text.StringUtils.isEmpty(r7)
             if (r12 != 0) goto Lac
             if (r8 == 0) goto Lac
             if (r9 == 0) goto Lac
@@ -220,12 +220,12 @@ public final class AliDetailCheckPreSaleEvent extends arv {
             ard a2 = arc.a();
             StringBuilder sb = new StringBuilder();
             sb.append("errorCode:");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             sb.append(str);
             sb.append(",eventId:");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "";
             }
             sb.append(str2);

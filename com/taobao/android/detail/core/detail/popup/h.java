@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.detail.popup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.emu;
@@ -25,7 +25,7 @@ public class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9c334e85", new Object[]{this, str, fVar});
-        } else if (TextUtils.isEmpty(str) || fVar == null) {
+        } else if (StringUtils.isEmpty(str) || fVar == null) {
         } else {
             if (this.f9647a == null) {
                 this.f9647a = new HashMap<>();

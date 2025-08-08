@@ -4,7 +4,7 @@ import android.animation.ObjectAnimator;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +38,7 @@ public class sfr {
 
     public static boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : TextUtils.equals("h", ldc.a());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : StringUtils.equals("h", ldc.a());
     }
 
     public static void a(final View view, ppj ppjVar) {

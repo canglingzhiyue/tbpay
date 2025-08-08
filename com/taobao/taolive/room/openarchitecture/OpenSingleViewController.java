@@ -7,7 +7,7 @@ import android.graphics.Outline;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -1083,12 +1083,12 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         } else if (map == null) {
         } else {
             String str = map.get("spm-url");
-            if (!TextUtils.isEmpty(str) && (recModel = this.mRecModel) != null && recModel.initParams != null && this.mFrameContext != null) {
+            if (!StringUtils.isEmpty(str) && (recModel = this.mRecModel) != null && recModel.initParams != null && this.mFrameContext != null) {
                 this.mRecModel.initParams.put("spm", str);
                 poz.a(str, n.b(this.mFrameContext));
             }
             String str2 = map.get("entrySpm");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 poz.s(str2, n.b(this.mFrameContext));
             }
             String d = ai.d(n.a());
@@ -1688,7 +1688,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         if (poy.i(this.mFrameContext)) {
             String O = poy.O(this.mFrameContext);
             String k = poy.k(this.mFrameContext);
-            if (!TextUtils.isEmpty(k)) {
+            if (!StringUtils.isEmpty(k)) {
                 O = k;
             }
             poz.m(O, n.b(this.mFrameContext));
@@ -1706,7 +1706,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
             return;
         }
         String p = poz.p(n.b(this.mFrameContext));
-        if (!u.aD() || TextUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
+        if (!u.aD() || StringUtils.equals(ag.SOURCE_UPDOWNSWITCH, p)) {
             return;
         }
         com.taobao.taolive.sdk.monitor.b.b().a("LIVE_CODE_BOOT_STAGE", SceneStage.SCENE_STAGE_T1);
@@ -1747,7 +1747,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
                         return;
                     }
                     OpenSingleViewController.access$700(OpenSingleViewController.this).accessListener(AccessListenerEnum.onFollowAction, hashMap);
-                    if (TextUtils.isEmpty(pmwVar.f32765a) || OpenSingleViewController.this.mLiveDataModel == null || OpenSingleViewController.this.mLiveDataModel.mVideoInfo == null || OpenSingleViewController.this.mLiveDataModel.mVideoInfo.broadCaster == null || !pmwVar.f32765a.equals(OpenSingleViewController.this.mLiveDataModel.mVideoInfo.broadCaster.accountId) || TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_StandardOpenWatch.name().equals(OpenSingleViewController.access$700(OpenSingleViewController.this).bizCode) || TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Shop2F.name().equals(OpenSingleViewController.access$700(OpenSingleViewController.this).bizCode)) {
+                    if (StringUtils.isEmpty(pmwVar.f32765a) || OpenSingleViewController.this.mLiveDataModel == null || OpenSingleViewController.this.mLiveDataModel.mVideoInfo == null || OpenSingleViewController.this.mLiveDataModel.mVideoInfo.broadCaster == null || !pmwVar.f32765a.equals(OpenSingleViewController.this.mLiveDataModel.mVideoInfo.broadCaster.accountId) || TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_StandardOpenWatch.name().equals(OpenSingleViewController.access$700(OpenSingleViewController.this).bizCode) || TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Shop2F.name().equals(OpenSingleViewController.access$700(OpenSingleViewController.this).bizCode)) {
                         return;
                     }
                     plw.a(OpenSingleViewController.this.mLiveDataModel, OpenSingleViewController.this.mFrameContext, "follow");
@@ -1814,7 +1814,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
             poy.a(this.mFrameContext, videoInfo.liveId);
         }
         updateDisPatchTrackInfo(videoInfo.disPatchTrackInfo);
-        if (TextUtils.isEmpty(this.mRecModel.liveId)) {
+        if (StringUtils.isEmpty(this.mRecModel.liveId)) {
             this.mRecModel.liveId = videoInfo.liveId;
             if (aa.cO() && this.mRecModel.initParams != null && this.mPerfomenceTrackManager != null && this.mVideoFrame != null) {
                 this.mTrackId = videoInfo.liveId;
@@ -1822,15 +1822,15 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
                 this.mVideoFrame.a(this.mPerfomenceTrackManager, videoInfo.liveId);
             }
         }
-        if (TextUtils.isEmpty(this.mRecModel.accountId)) {
+        if (StringUtils.isEmpty(this.mRecModel.accountId)) {
             this.mRecModel.accountId = videoInfo.broadCaster.accountId;
         }
-        if (TextUtils.isEmpty(this.mRecModel.actionUrl)) {
+        if (StringUtils.isEmpty(this.mRecModel.actionUrl)) {
             this.mRecModel.actionUrl = com.taobao.taolive.room.utils.c.d(videoInfo.nativeFeedDetailUrl, ag.SOURCE_UPDOWNSWITCH);
             String O = poy.O(this.mFrameContext);
-            if (!TextUtils.isEmpty(O)) {
+            if (!StringUtils.isEmpty(O)) {
                 String queryParameter = Uri.parse(O).getQueryParameter("liveAdParams");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
                     recModel.actionUrl = this.mRecModel.actionUrl + "&liveAdParams=" + Uri.encode(queryParameter);
                 }
@@ -1918,7 +1918,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         pfb.a(this.mFrameContext).a(new pff());
         pfb.a().a(new pff());
         com.taobao.taolive.movehighlight.bean.a a4 = com.taobao.taolive.movehighlight.utils.l.a(this.mLiveDataModel.mVideoInfo, this.mLiveDataModel.mInitParams.get(aw.PARAM_SJSD_ITEM_ID), this.mLiveDataModel.mInitParams.get(aw.PARAM_TIMEMOVE_KEYPOINTID));
-        if (videoInfo.status == 1 && TextUtils.isEmpty(videoInfo.replayUrl) && ((videoInfo.trialBroadcast == null || !videoInfo.trialBroadcast.booleanValue()) && a4 == null)) {
+        if (videoInfo.status == 1 && StringUtils.isEmpty(videoInfo.replayUrl) && ((videoInfo.trialBroadcast == null || !videoInfo.trialBroadcast.booleanValue()) && a4 == null)) {
             if (this.taoLiveOpenEntity != null && TaoliveOpenBizCodeEnum.TaoLiveOpenBizCode_Tab2.toString().equals(this.taoLiveOpenEntity.bizCode)) {
                 if (this.mRecModel.isFirst) {
                     forceRefresh();
@@ -1942,7 +1942,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
                     a6.a(VideoFrameErrorController.EVENT_AUTO_DOWN, str5, str2);
                     return;
                 }
-            } else if (TextUtils.isEmpty(videoInfo.broadCaster.accountInfoUrl)) {
+            } else if (StringUtils.isEmpty(videoInfo.broadCaster.accountInfoUrl)) {
                 return;
             } else {
                 pmd.a().r().a(this.mContext, videoInfo.broadCaster.accountInfoUrl, null);
@@ -2027,7 +2027,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
                 this.taoLiveOpenEntity.accessListener(AccessListenerEnum.streamPause, new Object[0]);
             }
         }
-        if (TextUtils.isEmpty(videoInfo.toast)) {
+        if (StringUtils.isEmpty(videoInfo.toast)) {
             return;
         }
         plk.a(this.mContext, videoInfo.toast);
@@ -2106,16 +2106,16 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         }
         com.taobao.taolive.room.utils.a.a(this.mContext, this.mFrameContext);
         com.taobao.taolive.room.pre.a.a().a(m.b() ? com.taobao.taolive.room.pre.a.ISAFCCOLDCONTEXT_KEY : this.mRequestLiveId);
-        if (this.mIsDestroyed || fandomInfo == null || TextUtils.isEmpty(fandomInfo.bbQJumpH5) || !(this.mContext instanceof Activity) || (gVar = this.mFrameContext) == null) {
+        if (this.mIsDestroyed || fandomInfo == null || StringUtils.isEmpty(fandomInfo.bbQJumpH5) || !(this.mContext instanceof Activity) || (gVar = this.mFrameContext) == null) {
             return;
         }
         String c = poz.c(gVar.y());
         String str2 = null;
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             str2 = Uri.parse(c).getQuery();
         }
         String str3 = fandomInfo.bbQJumpH5;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if (str3.contains("?")) {
                 str3 = str3 + "&" + str2;
             } else {
@@ -2194,11 +2194,11 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         if (gVar instanceof com.taobao.taolive.sdk.core.e) {
             str2 = gVar.y().aJ_().a().c();
         }
-        if (aa.bh() && TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+        if (aa.bh() && StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
             poz.b(str, n.b(this.mFrameContext));
         }
         TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
-        if (recModel == null || recModel.initParams == null || !TextUtils.isEmpty(this.mRecModel.initParams.get("trackInfo")) || TextUtils.isEmpty(str)) {
+        if (recModel == null || recModel.initParams == null || !StringUtils.isEmpty(this.mRecModel.initParams.get("trackInfo")) || StringUtils.isEmpty(str)) {
             return;
         }
         this.mRecModel.initParams.put("trackInfo", str);
@@ -2209,7 +2209,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6a2e5b6a", new Object[]{this, videoInfo})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mRequestAccountId) || videoInfo.broadCaster == null) {
+        if (StringUtils.isEmpty(this.mRequestAccountId) || videoInfo.broadCaster == null) {
             return false;
         }
         return isOfficialType(videoInfo) ? this.mRequestAccountId.equals(videoInfo.officialLiveInfo.accountId) : this.mRequestAccountId.equals(videoInfo.broadCaster.accountId);
@@ -2220,7 +2220,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8be7c4bb", new Object[]{this, videoInfo})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mRequestLiveId) || videoInfo == null) {
+        if (StringUtils.isEmpty(this.mRequestLiveId) || videoInfo == null) {
             return false;
         }
         return isOfficialType(videoInfo) ? this.mRequestLiveId.equals(videoInfo.officialLiveInfo.officialLiveId) : this.mRequestLiveId.equals(videoInfo.liveId);
@@ -2233,7 +2233,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
 
     private boolean checkTopic(VideoInfo videoInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4a5ab703", new Object[]{this, videoInfo})).booleanValue() : !TextUtils.isEmpty(this.mRequestLiveId) && this.mRequestLiveId.equals(videoInfo.topic);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4a5ab703", new Object[]{this, videoInfo})).booleanValue() : !StringUtils.isEmpty(this.mRequestLiveId) && this.mRequestLiveId.equals(videoInfo.topic);
     }
 
     @Override // tb.ppq.a
@@ -2359,7 +2359,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         }
         for (Map.Entry<String, String> entry : dI_.entrySet()) {
             String key = entry.getKey();
-            if (!TextUtils.isEmpty(key) && pkmVar != null) {
+            if (!StringUtils.isEmpty(key) && pkmVar != null) {
                 pkmVar.a(key, entry.getValue());
             }
         }
@@ -2427,7 +2427,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         }
         TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
         if (recModel != null && recModel.initParams != null) {
-            return TextUtils.equals(this.mRecModel.initParams.get(aw.PARAM_IS_FIRST_ENTER), "true");
+            return StringUtils.equals(this.mRecModel.initParams.get(aw.PARAM_IS_FIRST_ENTER), "true");
         }
         return false;
     }
@@ -2439,7 +2439,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         }
         TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
         if (recModel != null && recModel.initParams != null) {
-            return TextUtils.equals(this.mRecModel.initParams.get(aw.PARAM_IS_NEW_INTENT), "true");
+            return StringUtils.equals(this.mRecModel.initParams.get(aw.PARAM_IS_NEW_INTENT), "true");
         }
         return false;
     }
@@ -2455,7 +2455,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
             if (obj != null) {
                 str = (String) obj;
             }
-            if (TextUtils.isEmpty(str) || !this.mDidAppear) {
+            if (StringUtils.isEmpty(str) || !this.mDidAppear) {
                 return;
             }
             if (pmd.a().m() != null) {
@@ -2524,7 +2524,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         e eVar = this.mGlobalContext;
         String i = eVar != null ? eVar.i() : "";
         String b = this.mRecModel != null ? ppn.a().b(this.mRecModel.liveId) : "unknown";
-        if (!TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(i)) {
             b = i + "_" + b;
         }
         g gVar = this.mFrameContext;
@@ -2545,7 +2545,7 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
             return ((Boolean) ipChange.ipc$dispatch("e3fcf689", new Object[]{this, videoInfo})).booleanValue();
         }
         TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
-        return recModel != null && videoInfo != null && !TextUtils.isEmpty(recModel.liveId) && this.mRecModel.liveId.equals(videoInfo.liveId);
+        return recModel != null && videoInfo != null && !StringUtils.isEmpty(recModel.liveId) && this.mRecModel.liveId.equals(videoInfo.liveId);
     }
 
     private void reportCheckLiveDetailWithBindModelError(String str, String str2, String str3, String str4) {
@@ -2664,10 +2664,10 @@ public class OpenSingleViewController implements a, IRemoteExtendListener, TBLiv
         } else if (simpleVideoInfo == null || !aa.bE()) {
         } else {
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(simpleVideoInfo.liveId)) {
+            if (!StringUtils.isEmpty(simpleVideoInfo.liveId)) {
                 hashMap.put("feed_id", simpleVideoInfo.liveId);
             }
-            if (!TextUtils.isEmpty(simpleVideoInfo.accountId)) {
+            if (!StringUtils.isEmpty(simpleVideoInfo.accountId)) {
                 hashMap.put("account_id", simpleVideoInfo.accountId);
             }
             com.taobao.taolive.sdk.core.a.a(this.mFrameContext, ai.e(this.mFrameContext, this.mContext), hashMap);

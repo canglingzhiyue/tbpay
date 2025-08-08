@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import java.util.Map;
@@ -30,11 +30,11 @@ public class mmu implements mpj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("dee72cc1", new Object[]{this, str, objArr});
         }
-        if (TextUtils.isEmpty(str) && (objArr == null || objArr.length == 0)) {
+        if (StringUtils.isEmpty(str) && (objArr == null || objArr.length == 0)) {
             return "";
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(str);
         }
         if (objArr != null && objArr.length != 0) {

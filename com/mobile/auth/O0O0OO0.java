@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import com.mobile.auth.O0O0o00;
 import com.mobile.auth.O0OO00O;
@@ -15,13 +15,13 @@ public class O0O0OO0 {
 
     private static int O000000o(String str) {
         String O00000Oo2;
-        if (!TextUtils.isEmpty(O00000Oo)) {
+        if (!StringUtils.isEmpty(O00000Oo)) {
             O00000Oo2 = O00000Oo;
         } else {
             O00000Oo2 = O0O0o00.O00000Oo("pre_sim_key", "");
             O00000Oo = O00000Oo2;
         }
-        if (TextUtils.isEmpty(O00000Oo2)) {
+        if (StringUtils.isEmpty(O00000Oo2)) {
             return 0;
         }
         return O00000Oo2.equals(str) ? 1 : 2;
@@ -31,13 +31,13 @@ public class O0O0OO0 {
         long O000000o2;
         long j;
         long currentTimeMillis = System.currentTimeMillis();
-        if (!TextUtils.isEmpty(O000000o)) {
+        if (!StringUtils.isEmpty(O000000o)) {
             O0O000o.O00000Oo("PhoneScripUtils", O00000Oo + " " + O00000o0);
             O000000o2 = O00000o0;
         } else {
             String O00000Oo2 = O0O0o00.O00000Oo("phonescripcache", "");
             O000000o2 = O0O0o00.O000000o("phonescripstarttime", 0L);
-            if (TextUtils.isEmpty(O00000Oo2)) {
+            if (StringUtils.isEmpty(O00000Oo2)) {
                 j = 0;
                 return Math.max(j / 1000, 0L);
             }
@@ -47,9 +47,9 @@ public class O0O0OO0 {
     }
 
     public static String O000000o(Context context) {
-        if (TextUtils.isEmpty(O000000o)) {
+        if (StringUtils.isEmpty(O000000o)) {
             String O00000Oo2 = O0O0o00.O00000Oo("phonescripcache", "");
-            if (TextUtils.isEmpty(O00000Oo2)) {
+            if (StringUtils.isEmpty(O00000Oo2)) {
                 O0O000o.O000000o("PhoneScripUtils", "null");
                 return null;
             }
@@ -64,7 +64,7 @@ public class O0O0OO0 {
     }
 
     public static void O000000o(final Context context, final String str, long j, final String str2, String str3) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || j <= 0) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || j <= 0) {
             return;
         }
         O0O000o.O00000Oo("PhoneScripUtils", "save phone scrip simKey = " + str2);
@@ -141,7 +141,7 @@ public class O0O0OO0 {
     /* JADX INFO: Access modifiers changed from: private */
     public static void O00000Oo(Context context, String str, long j, String str2) {
         String O000000o2 = O0O00oO.O000000o(context, str);
-        if (!TextUtils.isEmpty(O000000o2)) {
+        if (!StringUtils.isEmpty(O000000o2)) {
             O0O0o00.O000000o O000000o3 = O0O0o00.O000000o();
             O000000o3.O000000o("phonescripcache", O000000o2);
             O000000o3.O000000o("phonescripstarttime", j);
@@ -152,8 +152,8 @@ public class O0O0OO0 {
     }
 
     private static boolean O00000o0() {
-        if (TextUtils.isEmpty(O000000o)) {
-            return !TextUtils.isEmpty(O0O0o00.O00000Oo("phonescripcache", "")) && O000000o(O0O0o00.O000000o("phonescripstarttime", 0L));
+        if (StringUtils.isEmpty(O000000o)) {
+            return !StringUtils.isEmpty(O0O0o00.O00000Oo("phonescripcache", "")) && O000000o(O0O0o00.O000000o("phonescripstarttime", 0L));
         }
         O0O000o.O00000Oo("PhoneScripUtils", O00000Oo + " " + O00000o0);
         return O000000o(O00000o0);

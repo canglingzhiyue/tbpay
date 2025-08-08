@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.controller2;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -54,7 +54,7 @@ public class j implements ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.e) || this.c == null || this.d == null || !c()) {
+        } else if (StringUtils.isEmpty(this.e) || this.c == null || this.d == null || !c()) {
         } else {
             this.c.setBackgroundResource(0);
             this.i = com.taobao.taolive.room.dx.b.c().a(this.b, this.e);
@@ -120,7 +120,7 @@ public class j implements ddv {
             return;
         }
         f = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         g = str;
@@ -132,15 +132,15 @@ public class j implements ddv {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[0]);
         }
         String str = f;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = g;
         }
-        return TextUtils.isEmpty(str) ? "a2141.8001249" : str;
+        return StringUtils.isEmpty(str) ? "a2141.8001249" : str;
     }
 
     public static boolean f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : "true".equals(pmd.a().d().a("tblive", "enableLiveAndHomeMixSPMOrange", "true")) && c() && !TextUtils.isEmpty(e());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : "true".equals(pmd.a().d().a("tblive", "enableLiveAndHomeMixSPMOrange", "true")) && c() && !StringUtils.isEmpty(e());
     }
 
     @Override // tb.ddv

@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -129,7 +129,7 @@ public class l extends k implements com.taobao.android.detail.ttdetail.widget.dr
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("84801d6c", new Object[]{this, str, imageView});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             com.taobao.android.detail.ttdetail.utils.i.a("ImageComponent", "loadBgMask url is empty");
         } else {
             bf.a(new Runnable() { // from class: com.taobao.android.detail.ttdetail.component.module.l.3

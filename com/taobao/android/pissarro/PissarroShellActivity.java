@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -148,7 +148,7 @@ public class PissarroShellActivity extends Activity {
         }
         List<Image> list = null;
         String stringExtra = intent.getStringExtra(icf.KEY_IMAGE_PATH);
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             list = a(stringExtra);
         }
         if (list != null && !list.isEmpty()) {
@@ -254,7 +254,7 @@ public class PissarroShellActivity extends Activity {
             }
             Nav.from(this).forResult(100).toUri(str);
         } else if (intExtra == 1) {
-            if (TextUtils.equals(e(), "com.taobao.taopai.business.image.album.ImageGalleryActivity")) {
+            if (StringUtils.equals(e(), "com.taobao.taopai.business.image.album.ImageGalleryActivity")) {
                 TLog.loge("PissarroShellActivity", "jump taopai image gallery activity repeat , return");
             } else {
                 Nav.from(this).forResult(101).toUri(ice.b());

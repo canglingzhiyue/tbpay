@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.xsl.refact;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -275,7 +275,7 @@ public final class i extends hth<XslDataSource, htg, XslSearchResult> {
         }
         b.b(false);
         Map<String, String> e = config.e();
-        if (!TextUtils.equals(e != null ? e.get("searchType") : null, "allSearch")) {
+        if (!StringUtils.equals(e != null ? e.get("searchType") : null, "allSearch")) {
             return;
         }
         b.p();

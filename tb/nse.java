@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -94,11 +94,11 @@ public class nse {
             hashMap.put("photoSearch", i(nsiVar));
             hashMap.put(noa.KEY_SHOP_SEARCH_ELDER, j(nsiVar));
             String g = g(nsiVar);
-            if (!TextUtils.isEmpty(g)) {
+            if (!StringUtils.isEmpty(g)) {
                 hashMap.put("storeId", g);
             }
             String h = h(nsiVar);
-            if (!TextUtils.isEmpty(h)) {
+            if (!StringUtils.isEmpty(h)) {
                 hashMap.put("localInshopId", h);
             }
         } else {
@@ -130,11 +130,11 @@ public class nse {
                 map.put("photoSearch", i(nsiVar));
                 map.put(noa.KEY_SHOP_SEARCH_ELDER, j(nsiVar));
                 String g = g(nsiVar);
-                if (!TextUtils.isEmpty(g)) {
+                if (!StringUtils.isEmpty(g)) {
                     map.put("storeId", g);
                 }
                 String h = h(nsiVar);
-                if (!TextUtils.isEmpty(h)) {
+                if (!StringUtils.isEmpty(h)) {
                     map.put("localInshopId", h);
                 }
             } else {

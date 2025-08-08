@@ -5,7 +5,7 @@ import android.taobao.windvane.config.j;
 import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.monitor.a;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
 import com.uc.webview.export.extension.ExtImageDecoder;
@@ -173,7 +173,7 @@ public class ExtImgDecoder {
                 }
                 m.e(TAG, "mSupportAlphaChannel " + this.mUseAlphaChannelDecoder);
                 String b = ihq.b().a(str).b();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     inited.set(false);
                     m.e(TAG, "so don't exist");
                 } else if (!WVCore.getInstance().isUCSupport()) {

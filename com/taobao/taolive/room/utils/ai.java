@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -112,21 +112,21 @@ public class ai extends ag {
             ibt a2 = aJ_.a();
             ibu b3 = aJ_.b();
             ibv c2 = aJ_.c();
-            if (!TextUtils.isEmpty(b2.c())) {
+            if (!StringUtils.isEmpty(b2.c())) {
                 arrayList.add("pkid=" + b2.c());
             }
-            if (!TextUtils.isEmpty(a2.b())) {
+            if (!StringUtils.isEmpty(a2.b())) {
                 arrayList.add("spm-url=" + a2.b());
             }
-            if (aa.bg() && !TextUtils.isEmpty(a2.b())) {
+            if (aa.bg() && !StringUtils.isEmpty(a2.b())) {
                 arrayList.add("spm=" + a2.b());
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 arrayList.add("trackInfo=" + str2);
-            } else if (!TextUtils.isEmpty(a2.c())) {
+            } else if (!StringUtils.isEmpty(a2.c())) {
                 arrayList.add("trackInfo=" + a2.c());
             }
-            if (!TextUtils.isEmpty(a2.h())) {
+            if (!StringUtils.isEmpty(a2.h())) {
                 arrayList.add("liveoprt_id=" + a2.h());
             }
             if (b3.b() != null) {
@@ -134,7 +134,7 @@ public class ai extends ag {
                 arrayList.add("interactiveurl=" + b.interactiveid);
                 arrayList.add("clickInfo=" + b.clickInfo);
             }
-            if (!TextUtils.isEmpty(y.n)) {
+            if (!StringUtils.isEmpty(y.n)) {
                 arrayList.add("spm-cnt=" + y.n);
             } else if (aa.c() && (a2.R() || a2.Q())) {
                 arrayList.add("spm-cnt=a2141.23201685");
@@ -180,7 +180,7 @@ public class ai extends ag {
                 arrayList.add("session_id=" + m.a());
             }
             arrayList.add("liveAdParams=" + Uri.encode(a2.H()));
-            if (!TextUtils.isEmpty(com.taobao.taolive.room.ui.fanslevel.a.a().d())) {
+            if (!StringUtils.isEmpty(com.taobao.taolive.room.ui.fanslevel.a.a().d())) {
                 arrayList.add(ag.ARG_FANS_LEVEL + com.taobao.taolive.room.ui.fanslevel.a.a().d());
             }
             arrayList.add("feedtype=" + f.type);
@@ -209,7 +209,7 @@ public class ai extends ag {
             arrayList.add("clickid=" + b3.d());
             arrayList.add("room_type=live");
             arrayList.add("singleLiveTabSessionId=" + a2.S());
-            if (!TextUtils.isEmpty(f.tvChannelId)) {
+            if (!StringUtils.isEmpty(f.tvChannelId)) {
                 arrayList.add("officialchannel_id=" + f.tvChannelId);
             }
             if (strArr != null && strArr.length > 0) {
@@ -224,7 +224,7 @@ public class ai extends ag {
             }
             sb4.append(str5);
             arrayList.add(sb4.toString());
-            if (aa.a() && !TextUtils.isEmpty(a2.d())) {
+            if (aa.a() && !StringUtils.isEmpty(a2.d())) {
                 arrayList.add("utparam-url=" + a2.d());
             }
             StringBuilder sb5 = new StringBuilder();
@@ -331,12 +331,12 @@ public class ai extends ag {
                         str3 = f.officialLiveInfo.officialLiveId;
                         str4 = f.officialLiveInfo.accountId;
                     }
-                    if (!TextUtils.isEmpty(a2.b())) {
+                    if (!StringUtils.isEmpty(a2.b())) {
                         map.put("spm-url", a2.b());
                     }
                     map.put("feed_id", str3);
                     map.put("account_id", str4);
-                    if (!TextUtils.isEmpty(f.tvChannelId)) {
+                    if (!StringUtils.isEmpty(f.tvChannelId)) {
                         map.put(ag.KEY_OFFICIAL_CHANNEL_ID, f.tvChannelId);
                     }
                 }
@@ -527,7 +527,7 @@ public class ai extends ag {
             String str5 = f.broadCaster.accountId;
             hashMap2.put("liveAdParams", Uri.encode(a2.H()));
             hashMap2.put("accounttype", com.taobao.taolive.sdk.controller.k.a(f.broadCaster.type) + "");
-            if (!TextUtils.isEmpty(a2.b())) {
+            if (!StringUtils.isEmpty(a2.b())) {
                 hashMap2.put("spm-url", a2.b());
             }
             hashMap2.put("feed_id", str4);
@@ -569,18 +569,18 @@ public class ai extends ag {
             }
             hashMap2.put("isAD", str6);
             hashMap2.put("product_type", com.taobao.taolive.movehighlight.utils.d.b);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 hashMap2.put("trackInfo", str3);
-            } else if (!TextUtils.isEmpty(a2.c())) {
+            } else if (!StringUtils.isEmpty(a2.c())) {
                 hashMap2.put("trackInfo", a2.c());
             }
-            if (!TextUtils.isEmpty(a2.h())) {
+            if (!StringUtils.isEmpty(a2.h())) {
                 hashMap2.put(aw.PARAM_TRACK_LIVEOPRT_ID, a2.h());
             }
-            if (aa.bf() && !TextUtils.isEmpty(a2.b())) {
+            if (aa.bf() && !StringUtils.isEmpty(a2.b())) {
                 hashMap2.put("spm", a2.b());
             }
-            if (!TextUtils.isEmpty(y.n)) {
+            if (!StringUtils.isEmpty(y.n)) {
                 hashMap2.put("spm-cnt", y.n);
             } else if (aa.c() && (a2.R() || a2.Q())) {
                 hashMap2.put("spm-cnt", "a2141.23201685");
@@ -593,7 +593,7 @@ public class ai extends ag {
                 hashMap2.put("session_id", m.a());
             }
             hashMap2.put("timestampT", System.currentTimeMillis() + "");
-            if (!TextUtils.isEmpty(f.tvChannelId)) {
+            if (!StringUtils.isEmpty(f.tvChannelId)) {
                 hashMap2.put(ag.KEY_OFFICIAL_CHANNEL_ID, f.tvChannelId);
             }
             hashMap2.put("content_type", com.taobao.taolive.sdk.goodlist.d.a(f.itemTransferInfo) ? "reward" : "normal");
@@ -876,12 +876,12 @@ public class ai extends ag {
             hashMap.put("former_liveid", str6);
             hashMap.put("login", pmd.a().q().c() ? "1" : "0");
             hashMap.put("feed_id", str10);
-            if (!TextUtils.isEmpty(f.gameId)) {
+            if (!StringUtils.isEmpty(f.gameId)) {
                 hashMap.put("game_id", f.gameId);
             }
             hashMap.put(ag.KEY_LIVE_STATUS, String.valueOf(f.status));
             hashMap.put("feedtype", f.type + "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("scm", str);
                 Log.e("trackPageSCM", str);
             }
@@ -940,19 +940,19 @@ public class ai extends ag {
                 }
             }
             hashMap.put("liveAdParams", Uri.encode(a2.H()));
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put("clickid", str2);
             }
-            if (!TextUtils.isEmpty(a2.c())) {
+            if (!StringUtils.isEmpty(a2.c())) {
                 hashMap.put("trackInfo", a2.c());
             }
-            if (!TextUtils.isEmpty(a2.h())) {
+            if (!StringUtils.isEmpty(a2.h())) {
                 hashMap.put(aw.PARAM_TRACK_LIVEOPRT_ID, a2.h());
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 hashMap.put(aw.PARAM_SEARCH_KEYWORD_POS, str4);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 aVar2 = null;
                 hashMap.put(aw.PARAM_SEARCH_KEYWORD_RN, str3);
             } else {
@@ -967,7 +967,7 @@ public class ai extends ag {
             if (com.taobao.taolive.sdk.playcontrol.c.e(aVar2) != null && com.taobao.taolive.sdk.playcontrol.c.e(aVar2).y() != null) {
                 hashMap.put("play_token", com.taobao.taolive.sdk.playcontrol.c.e(aVar2).y());
             }
-            if (!TextUtils.isEmpty(f.tvChannelId)) {
+            if (!StringUtils.isEmpty(f.tvChannelId)) {
                 hashMap.put(ag.KEY_OFFICIAL_CHANNEL_ID, f.tvChannelId);
             }
             hashMap.put("content_type", com.taobao.taolive.sdk.goodlist.d.a(f.itemTransferInfo) ? "reward" : "normal");
@@ -981,7 +981,7 @@ public class ai extends ag {
         if (m.p()) {
             hashMap.put("session_id", m.a());
         }
-        if (gVar.y() != null && !TextUtils.isEmpty(gVar.y().n)) {
+        if (gVar.y() != null && !StringUtils.isEmpty(gVar.y().n)) {
             hashMap.put("spm-cnt", gVar.y().n);
         } else if (aa.c() && (a2.R() || a2.Q())) {
             hashMap.put("spm-cnt", "a2141.23201685");
@@ -990,7 +990,7 @@ public class ai extends ag {
         } else {
             hashMap.put("spm-cnt", "a2141.8001249.1.1");
         }
-        if (!TextUtils.isEmpty(a2.b())) {
+        if (!StringUtils.isEmpty(a2.b())) {
             hashMap.put("spm-url", a2.b());
         }
         if (aa.bD()) {
@@ -1160,10 +1160,10 @@ public class ai extends ag {
                 if (aa.g()) {
                     hashMap.put("clickid", b.d());
                 }
-                if (aa.aU() && !TextUtils.isEmpty(a2.c())) {
+                if (aa.aU() && !StringUtils.isEmpty(a2.c())) {
                     hashMap.put("trackInfo", a2.c());
                 }
-                if (!TextUtils.isEmpty(a2.h())) {
+                if (!StringUtils.isEmpty(a2.h())) {
                     hashMap.put(aw.PARAM_TRACK_LIVEOPRT_ID, a2.h());
                 }
                 hashMap.put("content_type", com.taobao.taolive.sdk.goodlist.d.a(f.itemTransferInfo) ? "reward" : "normal");
@@ -1287,7 +1287,7 @@ public class ai extends ag {
             ah.a(str, str2, str3, strArr);
         } else {
             List<String> a2 = a(aVar, strArr);
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = e(aVar);
             }
             cgl.s().a("taobaolive", str, str2, str3, (String[]) a2.toArray(new String[0]));
@@ -1302,7 +1302,7 @@ public class ai extends ag {
             ah.a(obj, str, strArr);
         } else {
             List<String> a2 = a(aVar, strArr);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = e(aVar);
             }
             cgl.s().b("taobaolive", str, obj, (String[]) a2.toArray(new String[0]));
@@ -1317,7 +1317,7 @@ public class ai extends ag {
             ah.b(obj, str, strArr);
         } else {
             List<String> a2 = a(aVar, strArr);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = e(aVar);
             }
             cgl.s().a("taobaolive", str, obj, (String[]) a2.toArray(new String[0]));
@@ -1332,7 +1332,7 @@ public class ai extends ag {
             ah.d(str, strArr);
         } else {
             List<String> a2 = a(aVar, strArr);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = e(aVar);
             }
             cgl.s().a("taobaolive", str, (String[]) a2.toArray(new String[0]));
@@ -1419,7 +1419,7 @@ public class ai extends ag {
             arrayList.add("accountId=" + str);
             arrayList.add("roomStatus=" + f.roomStatus);
         }
-        if (!TextUtils.isEmpty(a2.c())) {
+        if (!StringUtils.isEmpty(a2.c())) {
             arrayList.add("trackInfo=" + a2.c());
         }
         arrayList.add("serverParams=" + a2.a());
@@ -1479,7 +1479,7 @@ public class ai extends ag {
                 String queryParameter = data.getQueryParameter("utLogMap");
                 String queryParameter2 = data.getQueryParameter(aw.PARAM_UT_PARAMS);
                 String str2 = "";
-                String string = (TextUtils.isEmpty(queryParameter2) || (b = pqj.b(queryParameter2)) == null) ? str2 : b.getString(aw.PARAMS_LIVE_TRACKINFO);
+                String string = (StringUtils.isEmpty(queryParameter2) || (b = pqj.b(queryParameter2)) == null) ? str2 : b.getString(aw.PARAMS_LIVE_TRACKINFO);
                 String queryParameter3 = data.getQueryParameter("clickid");
                 if (map != null) {
                     str2 = map.get("follow_location");
@@ -1556,7 +1556,7 @@ public class ai extends ag {
         if (a2 == null) {
             return ah.d();
         }
-        if (!TextUtils.isEmpty(y.n)) {
+        if (!StringUtils.isEmpty(y.n)) {
             return y.n;
         }
         return (!aa.c() || (!a2.R() && !a2.Q())) ? a() ? b() : "a2141.8001249.1.1" : "a2141.23201685";

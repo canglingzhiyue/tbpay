@@ -1,6 +1,6 @@
 package com.taobao.android.icart.theme;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class a implements bnl {
         }
         HashMap hashMap = new HashMap();
         final String a2 = a("tradeButtonColor");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("gradientThemeColor", new ArrayList<String>() { // from class: com.taobao.android.icart.theme.ThemeConfiguration$1
                 {
                     a.this = this;
@@ -50,7 +50,7 @@ public class a implements bnl {
             });
         }
         final String d = FestivalMgr.a().d("mytaobao", mxw.KEY_SKIN_PIC);
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             hashMap.put(mxw.KEY_SKIN_PIC, new ArrayList<String>() { // from class: com.taobao.android.icart.theme.ThemeConfiguration$2
                 {
                     a.this = this;
@@ -59,7 +59,7 @@ public class a implements bnl {
             });
         }
         final String d2 = FestivalMgr.a().d("global", "actionBarBackgroundColor");
-        if (!TextUtils.isEmpty(d2)) {
+        if (!StringUtils.isEmpty(d2)) {
             hashMap.put("actionBarColor", new ArrayList<String>() { // from class: com.taobao.android.icart.theme.ThemeConfiguration$3
                 {
                     a.this = this;

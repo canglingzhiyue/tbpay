@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.PagerSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -559,7 +559,7 @@ public class DXRecyclerLayout extends DXAbsContainerBaseLayout implements fyu, f
             ipChange.ipc$dispatch("21cbe38", new Object[]{this, dXWidgetNode, new Integer(i), new Boolean(z)});
         } else if (!(dXWidgetNode instanceof ac)) {
         } else {
-            if (!TextUtils.isEmpty(dXWidgetNode.getUserId())) {
+            if (!StringUtils.isEmpty(dXWidgetNode.getUserId())) {
                 this.w.put(dXWidgetNode.getUserId(), Integer.valueOf(i));
             }
             if (!z) {
@@ -869,7 +869,7 @@ public class DXRecyclerLayout extends DXAbsContainerBaseLayout implements fyu, f
         } else if (adapter == null) {
         } else {
             try {
-                if (!TextUtils.isEmpty(str) && !"all".equals(str) && i >= 0 && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !"all".equals(str) && i >= 0 && !StringUtils.isEmpty(str2)) {
                     if (!str.equals(com.taobao.taolive.sdk.mergeInfo.b.TYPE_PART)) {
                         adapter.notifyDataSetChanged();
                         return;
@@ -959,7 +959,7 @@ public class DXRecyclerLayout extends DXAbsContainerBaseLayout implements fyu, f
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         if (!this.w.containsKey(str)) {
@@ -1486,7 +1486,7 @@ public class DXRecyclerLayout extends DXAbsContainerBaseLayout implements fyu, f
                 if (u == null || !u() || !u.b()) {
                     return;
                 }
-                String str = (TextUtils.isEmpty(dXRuntimeContext.A()) ? "" : dXRuntimeContext.A()) + "_" + (TextUtils.isEmpty(this.userId) ? TAG : this.userId);
+                String str = (StringUtils.isEmpty(dXRuntimeContext.A()) ? "" : dXRuntimeContext.A()) + "_" + (StringUtils.isEmpty(this.userId) ? TAG : this.userId);
                 u.a(recyclerView, (DXVideoControlConfig) this.ac, str);
                 u.a(recyclerView, str);
             } catch (Exception e) {
@@ -2333,7 +2333,7 @@ public class DXRecyclerLayout extends DXAbsContainerBaseLayout implements fyu, f
                     DXWidgetNode n = ((com.taobao.android.dinamicx.widget.recycler.h) DXRecyclerLayout.this.l().getAdapter()).n(i);
                     if (n instanceof ac) {
                         String v = ((ac) n).v();
-                        if (!TextUtils.isEmpty(v)) {
+                        if (!StringUtils.isEmpty(v)) {
                             return v;
                         }
                     }

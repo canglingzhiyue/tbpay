@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.newresult.perf;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.c;
@@ -168,7 +168,7 @@ public final class b {
         }
         map.put(d.KEY_PHOTO_FROM, b2);
         String irpBucketId = cof.b("tbAndroidPltIrpBackSourceOfflineV2");
-        if (TextUtils.isEmpty(irpBucketId)) {
+        if (StringUtils.isEmpty(irpBucketId)) {
             irpBucketId = "-1";
         }
         q.a((Object) irpBucketId, "irpBucketId");
@@ -334,7 +334,7 @@ public final class b {
         map.put(d.KEY_PHOTO_FROM, f);
         map.put("device_level", String.valueOf(c.b()));
         String irpBucketId = cof.b("tbAndroidPltIrpBackSourceOfflineV2");
-        if (TextUtils.isEmpty(irpBucketId)) {
+        if (StringUtils.isEmpty(irpBucketId)) {
             irpBucketId = "-1";
         }
         q.a((Object) irpBucketId, "irpBucketId");

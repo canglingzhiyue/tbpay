@@ -1,6 +1,6 @@
 package com.alipay.bifrost;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mars.sdt.SdtLogic;
 import com.alipay.mars.stn.StnLogic;
 import com.alipay.mobile.common.amnet.util.AmnetLibraryLoadUtils;
@@ -1008,7 +1008,7 @@ public class Bifrost {
         } else if (bifrost.b == null) {
             a("ERROR", f5222a, "[getCfg] instance.target is null. ");
             return new byte[0];
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             a("ERROR", f5222a, "[getCfg] key is null or empty. ");
             return new byte[0];
         } else {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.viewholder.d;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -37,7 +37,7 @@ public class dns extends dlg<l> {
         if (a2 instanceof Map) {
             IDMComponent iDMComponent = (IDMComponent) ((Map) a2).get(d.TAG_DINAMICX_VIEW_COMPONENT);
             String c = dlhVar.c("componentKey");
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 iDMComponent = b.d().a().b(c);
             }
             if (iDMComponent == null || "true".equals(dlhVar.c("noNeedReload"))) {

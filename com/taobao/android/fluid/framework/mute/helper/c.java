@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.mute.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
@@ -71,7 +71,7 @@ public class c extends e implements d {
         if (instanceConfig.isTab3FromLauncher() && !f.b(fluidContext, f.j(fluidContext))) {
             spz.c("tab3MuteUpgrade", "原有逻辑，拉端进入默认静音");
             h(fluidContext);
-        } else if (TextUtils.equals(tab3CardType, obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
+        } else if (StringUtils.equals(tab3CardType, obw.TAB2_CONTAINER_TYPE_LIVE_LARGE)) {
         } else {
             super.j(fluidContext);
         }

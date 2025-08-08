@@ -1,7 +1,7 @@
 package android.taobao.windvane.export.network;
 
 import android.taobao.windvane.extra.uc.WVUCWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
 import com.uc.webview.export.WebResourceResponse;
@@ -26,7 +26,7 @@ public class k {
         if (ipChange instanceof IpChange) {
             return (WebResourceResponse) ipChange.ipc$dispatch("c6e0ed7c", new Object[]{webView, str});
         }
-        if ((webView instanceof WVUCWebView) && webView.getCurrentViewCoreType() != 3 && !TextUtils.isEmpty(str)) {
+        if ((webView instanceof WVUCWebView) && webView.getCurrentViewCoreType() != 3 && !StringUtils.isEmpty(str)) {
             final CountDownLatch countDownLatch = new CountDownLatch(1);
             final a aVar = new a();
             if (f.a(str, new RequestCallback() { // from class: android.taobao.windvane.export.network.k.1
@@ -88,7 +88,7 @@ public class k {
                         if (r10 <= 0) goto L8e
                         java.lang.Object r9 = r9.get(r4)
                         java.lang.String r9 = (java.lang.String) r9
-                        boolean r10 = android.text.TextUtils.isEmpty(r9)
+                        boolean r10 = android.text.StringUtils.isEmpty(r9)
                         if (r10 != 0) goto L8e
                         java.lang.String r10 = ";"
                         java.lang.String[] r9 = r9.split(r10)     // Catch: java.lang.Exception -> L8e

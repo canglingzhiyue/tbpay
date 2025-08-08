@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -128,7 +128,7 @@ public class lgh implements ILoadMoreItemRender {
         if (ipChange instanceof IpChange) {
             return (TBLoadMoreFooter.LoadMoreState) ipChange.ipc$dispatch("9ce86bf1", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return this.f30562a;
         }
         return TBLoadMoreFooter.LoadMoreState.valueOf(str);
@@ -172,11 +172,11 @@ public class lgh implements ILoadMoreItemRender {
         String[] strArr = new String[4];
         strArr[0] = b.a(R.string.taobao_app_1000_1_16712);
         strArr[1] = b.a(R.string.app_release_to_reload);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = b.a(R.string.taobao_app_1000_1_16709);
         }
         strArr[2] = a2;
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             b2 = b.a(R.string.taobao_app_1000_1_16711);
         }
         strArr[3] = b2;

@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,7 +84,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
                 return;
             }
             ab.c(TaoLiveShopCardController.access$000(), iao.NEXT_TAG_RECEIVER);
-            if (!TextUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
+            if (!StringUtils.equals(intent.getAction(), "com.taobao.live.room.init")) {
                 return;
             }
             long intExtra = intent.getIntExtra("seqId", -1);
@@ -214,7 +214,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
         try {
             String string = jSONObject.getString("paddingBottom");
             this.frameLayout = (FrameLayout) this.itemView.findViewById(R.id.taolive_minilive_layout);
-            if (TextUtils.isEmpty(string) || this.frameLayout == null) {
+            if (StringUtils.isEmpty(string) || this.frameLayout == null) {
                 return;
             }
             ((RelativeLayout.LayoutParams) this.frameLayout.getLayoutParams()).setMargins(0, 0, 0, v.a(string, 0));
@@ -313,7 +313,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("23e54330", new Object[]{this});
         }
-        String valueOf = !TextUtils.isEmpty(this.mRequestLiveId) ? String.valueOf(this.mRequestLiveId.hashCode()) : "";
+        String valueOf = !StringUtils.isEmpty(this.mRequestLiveId) ? String.valueOf(this.mRequestLiveId.hashCode()) : "";
         Random random = new Random();
         return valueOf + "_" + System.currentTimeMillis() + random.nextInt(1000);
     }
@@ -393,7 +393,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
             ComponentName componentName = ((Activity) this.mContext).getComponentName();
             if (componentName != null) {
                 String className = componentName.getClassName();
-                if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(className) && !a2.contains(className)) {
+                if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(className) && !a2.contains(className)) {
                     ab.c(TAG, "play not top Activity");
                     return;
                 }
@@ -512,7 +512,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
                 str = this.mGlobalContext.i();
             }
             String str3 = System.currentTimeMillis() + "_" + str2;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str3 = str + "_" + System.currentTimeMillis() + "_" + str2;
             }
             this.mFrameContext.c(str3);
@@ -624,11 +624,11 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
         if (videoInfo.roomType == 13 || poy.b(videoInfo, this.mFrameContext)) {
             z = true;
         }
-        if (!z && (TextUtils.isEmpty(this.mRequestLiveId) || (!TextUtils.isEmpty(videoInfo.liveId) && !videoInfo.liveId.equals(this.mRequestLiveId) && !TextUtils.isEmpty(videoInfo.topic) && !videoInfo.topic.equals(this.mRequestLiveId)))) {
-            if (TextUtils.isEmpty(this.mRequestAccountId)) {
+        if (!z && (StringUtils.isEmpty(this.mRequestLiveId) || (!StringUtils.isEmpty(videoInfo.liveId) && !videoInfo.liveId.equals(this.mRequestLiveId) && !StringUtils.isEmpty(videoInfo.topic) && !videoInfo.topic.equals(this.mRequestLiveId)))) {
+            if (StringUtils.isEmpty(this.mRequestAccountId)) {
                 return;
             }
-            if (!TextUtils.isEmpty(videoInfo.broadCaster.accountId) && !videoInfo.broadCaster.accountId.equals(this.mRequestAccountId)) {
+            if (!StringUtils.isEmpty(videoInfo.broadCaster.accountId) && !videoInfo.broadCaster.accountId.equals(this.mRequestAccountId)) {
                 return;
             }
         }
@@ -636,18 +636,18 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
         this.mRequestLiveId = null;
         this.mRequestAccountId = null;
         this.mFrameContext.a(videoInfo);
-        if (TextUtils.isEmpty(this.mRecModel.liveId)) {
+        if (StringUtils.isEmpty(this.mRecModel.liveId)) {
             this.mRecModel.liveId = videoInfo.liveId;
         }
-        if (TextUtils.isEmpty(this.mRecModel.accountId)) {
+        if (StringUtils.isEmpty(this.mRecModel.accountId)) {
             this.mRecModel.accountId = videoInfo.broadCaster.accountId;
         }
-        if (TextUtils.isEmpty(this.mRecModel.actionUrl)) {
+        if (StringUtils.isEmpty(this.mRecModel.actionUrl)) {
             this.mRecModel.actionUrl = com.taobao.taolive.room.utils.c.d(videoInfo.nativeFeedDetailUrl, ag.SOURCE_UPDOWNSWITCH);
             String O = poy.O(this.mFrameContext);
-            if (!TextUtils.isEmpty(O)) {
+            if (!StringUtils.isEmpty(O)) {
                 String queryParameter = Uri.parse(O).getQueryParameter("liveAdParams");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     TBLiveRecEngineV2.RecModel recModel = this.mRecModel;
                     recModel.actionUrl = this.mRecModel.actionUrl + "&liveAdParams=" + Uri.encode(queryParameter);
                 }
@@ -685,7 +685,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
                 }
                 HashMap hashMap = new HashMap();
                 hashMap.putAll(ai.d(TaoLiveShopCardController.this.mFrameContext, TaoLiveShopCardController.this.mContext));
-                if (TaoLiveShopCardController.this.mLiveDataModel != null && TaoLiveShopCardController.this.mLiveDataModel.mInitParams != null && !TextUtils.isEmpty(TaoLiveShopCardController.this.mLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV))) {
+                if (TaoLiveShopCardController.this.mLiveDataModel != null && TaoLiveShopCardController.this.mLiveDataModel.mInitParams != null && !StringUtils.isEmpty(TaoLiveShopCardController.this.mLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV))) {
                     hashMap.put(aw.PARAM_IGNORE_PV, TaoLiveShopCardController.this.mLiveDataModel.mInitParams.get(aw.PARAM_IGNORE_PV));
                 }
                 if (TaoLiveShopCardController.this.mLiveDataModel != null && TaoLiveShopCardController.this.mLiveDataModel.mVideoInfo != null && TaoLiveShopCardController.this.mLiveDataModel.mVideoInfo.broadCaster != null) {
@@ -701,14 +701,14 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
                 ibt ibtVar2 = ibtVar;
                 String str3 = "";
                 String c = ibtVar2 != null ? ibtVar2.c() : str3;
-                if (aa.az() && "tpp_88".equals(poz.p(com.taobao.taolive.room.utils.n.b(TaoLiveShopCardController.this.mFrameContext))) && !TextUtils.isEmpty(poy.Y(TaoLiveShopCardController.this.mFrameContext)) && (b = pqj.b(Uri.decode(poy.Y(TaoLiveShopCardController.this.mFrameContext)))) != null && b.getString("trackInfo") != null) {
+                if (aa.az() && "tpp_88".equals(poz.p(com.taobao.taolive.room.utils.n.b(TaoLiveShopCardController.this.mFrameContext))) && !StringUtils.isEmpty(poy.Y(TaoLiveShopCardController.this.mFrameContext)) && (b = pqj.b(Uri.decode(poy.Y(TaoLiveShopCardController.this.mFrameContext)))) != null && b.getString("trackInfo") != null) {
                     c = b.getString("trackInfo");
                 }
                 hashMap.put("trackInfo", c);
                 hashMap.put("clickid", poy.m(TaoLiveShopCardController.this.mFrameContext));
                 hashMap.put("livesource", poz.p(com.taobao.taolive.room.utils.n.b(TaoLiveShopCardController.this.mFrameContext)));
                 hashMap.put("entry_source", poy.R(TaoLiveShopCardController.this.mFrameContext));
-                if ((!hashMap.containsKey("spm-url") || TextUtils.isEmpty((CharSequence) hashMap.get("spm-url"))) && (TaoLiveShopCardController.this.mFrameContext instanceof com.taobao.taolive.sdk.core.e)) {
+                if ((!hashMap.containsKey("spm-url") || StringUtils.isEmpty((CharSequence) hashMap.get("spm-url"))) && (TaoLiveShopCardController.this.mFrameContext instanceof com.taobao.taolive.sdk.core.e)) {
                     hashMap.put("spm-url", TaoLiveShopCardController.this.mFrameContext.y().aJ_().a().b());
                 }
                 hashMap.put("isAD", String.valueOf(poy.w(TaoLiveShopCardController.this.mFrameContext) ? 1 : 0));
@@ -719,7 +719,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
                 hashMap.put("isAdTransParams", String.valueOf(i));
                 hashMap.put("isChatRoom", String.valueOf(poy.b(TaoLiveShopCardController.this.mLiveDataModel, TaoLiveShopCardController.this.mFrameContext) ? 1 : 0));
                 if (TaoLiveShopCardController.this.mLiveDataModel != null && TaoLiveShopCardController.this.mLiveDataModel.mVideoInfo != null && TaoLiveShopCardController.this.mLiveDataModel.mVideoInfo.timeMovingPlayUrl != null) {
-                    hashMap.put("scene", !TextUtils.isEmpty(TaoLiveShopCardController.this.mLiveDataModel.mVideoInfo.timeMovingPlayUrl) ? "smartpoint" : "default");
+                    hashMap.put("scene", !StringUtils.isEmpty(TaoLiveShopCardController.this.mLiveDataModel.mVideoInfo.timeMovingPlayUrl) ? "smartpoint" : "default");
                 }
                 hashMap.put("kandianid", poy.ay(TaoLiveShopCardController.this.mFrameContext) + "_" + poy.C(TaoLiveShopCardController.this.mFrameContext));
                 ibt ibtVar3 = ibtVar;
@@ -866,7 +866,7 @@ public class TaoLiveShopCardController extends TaoLiveSingleRoomController imple
             }
             cVar.a("onPlay", null);
             this.videoViewToken = (String) obj;
-            if (TextUtils.isEmpty(this.videoViewToken)) {
+            if (StringUtils.isEmpty(this.videoViewToken)) {
                 return;
             }
             JSONObject jSONObject = new JSONObject();

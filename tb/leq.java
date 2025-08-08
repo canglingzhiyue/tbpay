@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.expression.event.DXEvent;
@@ -29,7 +29,7 @@ public class leq extends h {
                 String str3 = (String) objArr[2];
                 String str4 = objArr.length >= 4 ? (String) objArr[3] : null;
                 ldf.d("DXHSetReqBizParamEventHandler", "handleEvent containerId : " + str + ",key : " + str2 + ",value : " + str3 + ",mode : " + str4);
-                if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                     ljs a2 = lfq.a(dXRuntimeContext);
                     if (a2 == null) {
                         ldf.d("DXHSetReqBizParamEventHandler", "infoFlowContext is null");

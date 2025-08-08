@@ -1,0 +1,957 @@
+{
+  "plugin": {
+    "name": "行业化详情",
+    "bizCode": "industry_detail",
+    "branches": [
+      {
+        "code": "aura.branch.render.layoutDataProcessor.v2",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "useV2LayoutDataProcessor",
+              "default": "true"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.perfOpti",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enable_aura_optimization",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.afterParser",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "aura_detail_ac_trigger_afterParser",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.lowdevicePreload",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "aura_detail_lowdevicePreload_enable",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.idle",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enableIdleTriggerAsyncModule",
+              "default": "true"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.scroll",
+        "conditions": [
+          {
+            "code": "alidetail.condition.asyncmodule.preload"
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.asyncComponent.trigger.lowdeviceScroll",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enableLowDeviceScrollTriggerAsyncModule",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.userTrackEvent.async",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enableAsyncUT",
+              "default": "false"
+            }
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.deviceEvaluation.low",
+        "conditions": [
+          {
+            "code": "aura.condition.deviceEvaluation",
+            "input": {
+              "diff": "equal",
+              "value": "low"
+            }
+          }
+        ]
+      },
+      {
+        "code": "alidetail.condition.asyncmodule.preload",
+        "conditions": [
+          {
+            "code": "alidetail.condition.asyncmodule.preload"
+          }
+        ]
+      },
+      {
+        "code": "alidetail.branch.mainpage",
+        "conditions": [
+          {
+            "code": "alidetail.condition.mainpage"
+          }
+        ]
+      },
+      {
+        "code": "aura.branch.event.redirect",
+        "conditions": [
+          {
+            "code": "aura.condition.orange",
+            "input": {
+              "namespace": "aura_detail_android",
+              "key": "enableEventRedirect",
+              "default": "true"
+            }
+          }
+        ]
+      }
+    ],
+    "flows": [
+      {
+        "code": "aura.workflow.cache",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.cache",
+            "type": "service"
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.detailInfo.build",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "aura.impl.parse.stateTree.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.container.cache",
+                  "type": "extension"
+                },
+                {
+                  "code": "adam.impl.parser.redirect.eventChain",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.scroll": [
+                {
+                  "code": "alidetail.impl.render.scroll.locator",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.picGalleryVideoMiniWindow.scroll",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.scroll.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.picGalleryStructVideo.scroll",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.picGalleryFloatButton.scroll",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.scroll.userMotion",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "alidetail.impl.render.component.creator.headerpic",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.picgallery",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.dx.video.lifecycle": [
+                      {
+                        "code": "alidetail.impl.render.dx.video.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.render.component.creator.weex2",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.component.creator.weex2.lifecycle": [
+                      {
+                        "code": "aura.impl.performance.monitor.weex2.render",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "industryDetail.impl.component.weex2.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "alidetail.impl.render.component.lifecycle",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.exposureItem.strategy": [
+                      {
+                        "code": "alidetail.impl.exposureItem.strategy",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.lifecycle.component.dx",
+                  "type": "extension"
+                },
+                {
+                  "code": "industryDetail.impl.lifecycle.component.industry",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.userMotion",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render": [
+                {
+                  "code": "alidetail.impl.render.containerView",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.headerLayoutFixer",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "alidetail.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  },
+                  {
+                    "code": "adam.impl.dxConfig.redirect.eventChain",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "alidetail.impl.aspect.lifecycle.renderComponents",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.component.lifeCycle.asyncModuleEntry.build",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.parse.stateTree.container.cache",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.protocolCache",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.aspect.lifecycle.mainscreen.resetparse",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.maingallery.switcher",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.lifecycle.component.page",
+              "type": "extension",
+              "extensions": {
+                "alidetail.extension.lifecycle.component.page.ext": [
+                  {
+                    "code": "alidetail.impl.lifecycle.component.page.ext.dx",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "alidetail.impl.lifecycle.component.nestedcontainer",
+              "type": "extension",
+              "extensions": {
+                "alidetail.extension.lifecycle.component.nestedcontainer.ext": [
+                  {
+                    "code": "alidetail.impl.lifecycle.component.nestedcontainer.ext.dx",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.userMotion",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.userMotion.config": [
+                  {
+                    "code": "alidetail.impl.userMotion.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.aspect.error.downgrade",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension"
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.bottomBar.build",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.parse",
+            "type": "service",
+            "extensions": {
+              "aura.extension.parse.stateTree": [
+                {
+                  "code": "aura.impl.parse.stateTree.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.parse.stateTree.container.cache",
+                  "type": "extension"
+                },
+                {
+                  "code": "adam.impl.parser.redirect.eventChain",
+                  "type": "extension"
+                }
+              ]
+            }
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "aura.impl.component.lifeCycle.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.exposureItem.strategy": [
+                      {
+                        "code": "alidetail.impl.exposureItem.strategy",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "industryDetail.impl.lifecycle.component.industry",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.userMotion",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.lifecycle.dxEngine.config": [
+                  {
+                    "code": "alidetail.impl.lifecycle.dxEngine.config",
+                    "type": "extension"
+                  },
+                  {
+                    "code": "adam.impl.dxConfig.redirect.eventChain",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.component.lifeCycle.asyncModuleEntry.build",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.parse.stateTree.container.cache",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.protocolCache",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.aspect.lifecycle.renderComponents",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.aspect.lifecycle.refreshCheckCollect",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.component.userMotion",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.userMotion.config": [
+                  {
+                    "code": "alidetail.impl.userMotion.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.aspect.error.downgrade",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension"
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.request",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.nextrpc",
+            "type": "service"
+          }
+        ]
+      },
+      {
+        "code": "aura.workflow.adjustRules",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.rule",
+            "type": "service"
+          },
+          {
+            "code": "aura.service.parse",
+            "type": "service"
+          },
+          {
+            "code": "aura.service.render",
+            "type": "service",
+            "extensions": {
+              "aura.extension.render.scroll": [
+                {
+                  "code": "alidetail.impl.render.scroll.locator",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.picGalleryVideoMiniWindow.scroll",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.scroll.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.picGalleryStructVideo.scroll",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.render.picGalleryFloatButton.scroll",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainpage",
+                    "default": "true"
+                  }
+                },
+                {
+                  "code": "aura.impl.render.scroll.userMotion",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render.component.creator": [
+                {
+                  "code": "alidetail.impl.render.component.creator.headerpic",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainpage",
+                    "default": "false"
+                  }
+                },
+                {
+                  "code": "alidetail.impl.render.component.creator.picgallery",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.render.component.creator.dx",
+                  "type": "extension",
+                  "branch": {
+                    "code": "aura.brach.asyncDX",
+                    "operator": "NOT",
+                    "default": "false"
+                  },
+                  "extensions": {
+                    "aura.extension.render.dx.video.lifecycle": [
+                      {
+                        "code": "alidetail.impl.render.dx.video.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.render.component.creator.weex2",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.render.component.creator.weex2.lifecycle": [
+                      {
+                        "code": "aura.impl.performance.monitor.weex2.render",
+                        "type": "extension"
+                      },
+                      {
+                        "code": "industryDetail.impl.component.weex2.lifecycle",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "aura.extension.component.lifeCycle": [
+                {
+                  "code": "alidetail.impl.render.component.lifecycle",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.async.component",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.exposureItem",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.exposureItem.strategy": [
+                      {
+                        "code": "alidetail.impl.exposureItem.strategy",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.lifecycle.component.dx",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainpage",
+                    "default": "false"
+                  }
+                },
+                {
+                  "code": "industryDetail.impl.lifecycle.component.industry",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.component.lifeCycle.userMotion",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.render": [
+                {
+                  "code": "alidetail.impl.render.headerLayoutFixer",
+                  "type": "extension",
+                  "branch": {
+                    "code": "alidetail.branch.mainpage",
+                    "default": "false"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.aspect.error.downgrade",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.aspect.lifecycle.dxDownload",
+              "type": "extension"
+            },
+            {
+              "code": "alidetail.impl.lifecycle.component.page",
+              "type": "extension",
+              "branch": {
+                "code": "alidetail.branch.mainpage",
+                "default": "false"
+              },
+              "extensions": {
+                "alidetail.extension.lifecycle.component.page.ext": [
+                  {
+                    "code": "alidetail.impl.lifecycle.component.page.ext.dx",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "alidetail.impl.lifecycle.component.nestedcontainer",
+              "type": "extension",
+              "extensions": {
+                "alidetail.extension.lifecycle.component.nestedcontainer.ext": [
+                  {
+                    "code": "alidetail.impl.lifecycle.component.nestedcontainer.ext.dx",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension"
+            }
+          ]
+        }
+      },
+      {
+        "code": "aura.workflow.event",
+        "type": "serial",
+        "nodes": [
+          {
+            "code": "aura.service.event",
+            "type": "service",
+            "extensions": {
+              "aura.extension.event": [
+                {
+                  "code": "aura.impl.event.asyncMR",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.userTrack",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.event.userTrack.args": [
+                      {
+                        "code": "alidetail.impl.event.userTrack.args",
+                        "type": "extension"
+                      }
+                    ],
+                    "aura.extension.event.userTrack.commit": [
+                      {
+                        "code": "alidetail.impl.event.userTrack.commit",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "aura.impl.event.toast",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.changeSKUImage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.clickContent",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.changeSkuFrameImage",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.switchToMainPic",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.changeSKUTab",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.expandTitle",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.openUrl",
+                  "type": "extension",
+                  "extensions": {
+                    "aura.extension.event.openUrl.native.params": [
+                      {
+                        "code": "alidetail.impl.event.openurl.native.params",
+                        "type": "extension"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "code": "alidetail.impl.event.shopRecommendV2",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.checkCollect",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.collectClick",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.openAddress",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.openSKU",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.addJhsWaiting",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.checkPreSale",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.adjustState",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.setRemind",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.inviteRate",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.querySMBagPrice",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.openRate",
+                  "type": "extension"
+                },
+                {
+                  "code": "alidetail.impl.event.updateSKUQuantity",
+                  "type": "extension"
+                },
+                {
+                  "code": "aura.impl.event.adjustRules",
+                  "type": "extension"
+                }
+              ],
+              "aura.extension.event.redirect": [
+                {
+                  "code": "aura.impl.event.redirect.mega",
+                  "type": "extension"
+                }
+              ]
+            }
+          }
+        ],
+        "aspectExtensions": {
+          "aura.extension.aspect.lifecycle": [
+            {
+              "code": "aura.impl.component.userMotion",
+              "type": "extension",
+              "extensions": {
+                "aura.extension.userMotion.config": [
+                  {
+                    "code": "alidetail.impl.userMotion.config",
+                    "type": "extension"
+                  }
+                ]
+              }
+            },
+            {
+              "code": "aliDetail.impl.aspect.mega.args",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.lifecycle.logger",
+              "type": "extension"
+            }
+          ],
+          "aura.extension.aspect.error": [
+            {
+              "code": "aura.impl.aspect.error.umbrella.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "aldetail.impl.aspect.error.eventRedirectError",
+              "type": "extension"
+            },
+            {
+              "code": "industryDetail.impl.aspect.error.monitor",
+              "type": "extension"
+            },
+            {
+              "code": "adam.impl.aspect.error.eventChain",
+              "type": "extension"
+            },
+            {
+              "code": "aura.impl.aspect.error.logger",
+              "type": "extension"
+            }
+          ]
+        }
+      }
+    ],
+    "systemExtensions": {
+      "aura.extension.log": [
+        {
+          "code": "aura.impl.log.remote",
+          "type": "extension"
+        }
+      ]
+    }
+  }
+}

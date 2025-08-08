@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -888,9 +888,9 @@ public class VideoView extends FrameLayout {
             ipChange.ipc$dispatch("14db0ac1", new Object[]{this, str, str2, str3, str4, hashMap});
             return;
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             a.C0436a a2 = com.taobao.android.detail.ttdetail.widget.video.a.a().a(y.a(this), this.mVideoUrl);
-            if (a2 != null && !TextUtils.equals(str2, this.mVideoUrl)) {
+            if (a2 != null && !StringUtils.equals(str2, this.mVideoUrl)) {
                 a2.b().unregisterVisibilityChangeListener(this.mCoverVisibilityChangeListener);
             }
             this.mVideoId = str;
@@ -900,7 +900,7 @@ public class VideoView extends FrameLayout {
             if (hashMap != null && !hashMap.isEmpty()) {
                 this.mUtArgs.putAll(hashMap);
             }
-            if (!TextUtils.equals(str2, this.mVideoUrl)) {
+            if (!StringUtils.equals(str2, this.mVideoUrl)) {
                 resetDwInstance();
             }
             this.mDwInstanceWrapper = com.taobao.android.detail.ttdetail.widget.video.a.a().a(y.a(this), this.mVideoUrl);

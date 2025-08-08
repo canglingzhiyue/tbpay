@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.lab.comfrm.support.UserIdentifier;
 import com.taobao.message.lab.comfrm.util.Logger;
@@ -69,7 +69,7 @@ public class ClassPool {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("de9b8767", new Object[]{this, str, cls, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             put(str, cls);
         } else {
             ConcurrentHashMap<String, Class> concurrentHashMap = mClassByNameBySpace.get(str2);
@@ -100,7 +100,7 @@ public class ClassPool {
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("367ce814", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return mClassByName.get(str);
         }
         return null;

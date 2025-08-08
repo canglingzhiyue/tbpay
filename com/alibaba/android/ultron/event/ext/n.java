@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event.ext;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.bkd;
 import tb.kge;
@@ -20,7 +20,7 @@ public class n extends p {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c03fdde0", new Object[]{this, eVar});
-        } else if (e(eVar) == null || !(e(eVar).get("message") instanceof String) || TextUtils.isEmpty(e(eVar).getString("message"))) {
+        } else if (e(eVar) == null || !(e(eVar).get("message") instanceof String) || StringUtils.isEmpty(e(eVar).getString("message"))) {
             if (e(eVar) == null) {
                 str = "getEventFields 为空";
             } else {

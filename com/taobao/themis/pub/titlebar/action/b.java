@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -110,7 +110,7 @@ public final class b extends com.taobao.themis.kernel.container.ui.titlebar.a im
             return;
         }
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             textView.setVisibility(8);
             this.e.a();
             return;
@@ -145,7 +145,7 @@ public final class b extends com.taobao.themis.kernel.container.ui.titlebar.a im
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ImageView imageView = this.b;
             if (imageView != null) {

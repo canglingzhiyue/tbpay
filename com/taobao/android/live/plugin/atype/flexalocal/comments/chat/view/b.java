@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.context.atmo.bean.StickerConfig;
@@ -94,7 +94,7 @@ public class b implements Handler.Callback {
             ipChange.ipc$dispatch("86ebc181", new Object[]{this, str, new Integer(i), cVar});
             return;
         }
-        if (TextUtils.isEmpty(str) && cVar != null) {
+        if (StringUtils.isEmpty(str) && cVar != null) {
             cVar.a(null, 0L);
         }
         ArrayList arrayList = new ArrayList();
@@ -262,7 +262,7 @@ public class b implements Handler.Callback {
                 return;
             }
             ChatMessage chatMessage = this.l.get(this.n);
-            if (chatMessage.mType == ChatMessage.MessageType.TXT && !TextUtils.isEmpty(chatMessage.mContent)) {
+            if (chatMessage.mType == ChatMessage.MessageType.TXT && !StringUtils.isEmpty(chatMessage.mContent)) {
                 this.m = chatMessage;
                 this.f13636a = chatMessage.mContent;
                 this.i = chatMessage.renders.get("commentType");
@@ -288,7 +288,7 @@ public class b implements Handler.Callback {
             } else {
                 str = hashMap.get(ChatMessage.KEY_MEDAL_LIST_TB);
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return JSON.parseArray(str, MedalLevelEntity.class);
             }
             return null;
@@ -362,7 +362,7 @@ public class b implements Handler.Callback {
                                 if (r1 == 0) goto Lab
                                 com.taobao.taolive.sdk.model.interact.MedalLevelEntity r1 = r2
                                 java.lang.String r1 = r1.text
-                                boolean r1 = android.text.TextUtils.isEmpty(r1)
+                                boolean r1 = android.text.StringUtils.isEmpty(r1)
                                 if (r1 != 0) goto Lab
                                 com.taobao.taolive.sdk.model.interact.MedalLevelEntity r0 = r2
                                 java.lang.String r0 = r0.text
@@ -560,7 +560,7 @@ public class b implements Handler.Callback {
                 ipChange.ipc$dispatch("57a83e9", new Object[]{this});
             } else if (!u.G()) {
                 a();
-            } else if ("anchor_custom_sticker".equals(this.i) && !TextUtils.equals("2", this.j)) {
+            } else if ("anchor_custom_sticker".equals(this.i) && !StringUtils.equals("2", this.j)) {
                 c();
             } else {
                 this.b = new ArrayList();

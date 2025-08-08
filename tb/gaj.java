@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
@@ -147,7 +147,7 @@ public class gaj extends gai {
         if (this.i == null) {
             return;
         }
-        if (i == 6 || i == 4 || (i == 5 && TextUtils.isEmpty(e()))) {
+        if (i == 6 || i == 4 || (i == 5 && StringUtils.isEmpty(e()))) {
             this.i.setVisibility(8);
             dXRefreshLayout.closeHeaderOrFooter();
             return;

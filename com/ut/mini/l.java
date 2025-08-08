@@ -3,7 +3,7 @@ package com.ut.mini;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.ag;
@@ -263,7 +263,7 @@ public class l {
             if (!g && rqd.bJTrackExtend) {
                 try {
                     String pageName = rqb.getPageName(obj.getClass().getSimpleName());
-                    if (!TextUtils.isEmpty(pageName)) {
+                    if (!StringUtils.isEmpty(pageName)) {
                         if (pageName.toLowerCase().endsWith("activity")) {
                             pageName = pageName.substring(0, pageName.length() - 8);
                         }
@@ -388,11 +388,11 @@ public class l {
         } else if (cVar == null || map == null) {
         } else {
             String str = map.get("force-spm-cnt");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 cVar.mSpmCnt = str;
             }
             String str2 = map.get("force-spm-url");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             cVar.mSpmUrl = str2;
@@ -495,7 +495,7 @@ public class l {
                 str2 = pageProperties.get("utparam-cnt");
             }
             String a2 = a(str, str2);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("utparam-cnt", a2);
                 a(obj, hashMap);
@@ -550,7 +550,7 @@ public class l {
             ipChange.ipc$dispatch("88097eb4", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             apr.b("UTPageHitHelper", "updateNextPageUtparamCnt pageUtparamCnt", str);
             String str2 = "";
             if (this.m != null) {
@@ -559,7 +559,7 @@ public class l {
                 this.m = new HashMap();
             }
             String a2 = a(str, str2);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("utparam-cnt", a2);
                 this.m.putAll(hashMap);
@@ -573,7 +573,7 @@ public class l {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             apr.b("UTPageHitHelper", "updateNextPageUtparam pageUtparam", str);
             String str2 = "";
             if (this.m != null) {
@@ -582,7 +582,7 @@ public class l {
                 this.m = new HashMap();
             }
             String a2 = a(str, str2);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put(ag.KEY_UTPARAM_URL, a2);
                 this.m.putAll(hashMap);
@@ -934,16 +934,16 @@ public class l {
                 return (Map) ipChange.ipc$dispatch("2eebfa1f", new Object[]{this, new Boolean(z)});
             }
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(this.mSpmCnt)) {
+            if (!StringUtils.isEmpty(this.mSpmCnt)) {
                 hashMap.put("spm-cnt", this.mSpmCnt);
             }
-            if (!TextUtils.isEmpty(this.mSpmUrl)) {
+            if (!StringUtils.isEmpty(this.mSpmUrl)) {
                 hashMap.put("spm-url", this.mSpmUrl);
             }
-            if (!TextUtils.isEmpty(this.mSpmPre)) {
+            if (!StringUtils.isEmpty(this.mSpmPre)) {
                 hashMap.put(bip.KEY_UMBRELLA_SPM_PRE, this.mSpmPre);
             }
-            if (!TextUtils.isEmpty(this.mScmPre)) {
+            if (!StringUtils.isEmpty(this.mScmPre)) {
                 hashMap.put("scm-pre", this.mScmPre);
             }
             if (this.mIsSwitchBackground) {
@@ -953,13 +953,13 @@ public class l {
             } else if (this.mIsBack) {
                 hashMap.put("ut_isbk", "1");
             }
-            if (!TextUtils.isEmpty(this.mUtparamCnt)) {
+            if (!StringUtils.isEmpty(this.mUtparamCnt)) {
                 hashMap.put("utparam-cnt", this.mUtparamCnt);
             }
-            if (!TextUtils.isEmpty(this.mUtparamUrl)) {
+            if (!StringUtils.isEmpty(this.mUtparamUrl)) {
                 hashMap.put(ag.KEY_UTPARAM_URL, this.mUtparamUrl);
             }
-            if (!TextUtils.isEmpty(this.mUtparamPre)) {
+            if (!StringUtils.isEmpty(this.mUtparamPre)) {
                 hashMap.put("utparam-pre", this.mUtparamPre);
             }
             return hashMap;
@@ -1439,7 +1439,7 @@ public class l {
         }
         try {
             String str = map.get("utparam-cnt");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 map.put("utparam-cnt", URLEncoder.encode(str));
             }
         } catch (Throwable th) {
@@ -1447,7 +1447,7 @@ public class l {
         }
         try {
             String str2 = map.get(ag.KEY_UTPARAM_URL);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 map.put(ag.KEY_UTPARAM_URL, URLEncoder.encode(str2));
             }
         } catch (Throwable th2) {
@@ -1455,7 +1455,7 @@ public class l {
         }
         try {
             String str3 = map.get("utparam-pre");
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 map.put("utparam-pre", URLEncoder.encode(str3));
             }
         } catch (Throwable th3) {
@@ -1463,7 +1463,7 @@ public class l {
         }
         try {
             String str4 = map.get("ut_seq");
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 map.put("ut_seq", URLEncoder.encode(str4));
             }
         } catch (Throwable th4) {
@@ -1479,8 +1479,8 @@ public class l {
         }
         try {
             Map<String, Object> map = null;
-            Map<String, Object> d2 = !TextUtils.isEmpty(str) ? d(str) : null;
-            if (!TextUtils.isEmpty(str2)) {
+            Map<String, Object> d2 = !StringUtils.isEmpty(str) ? d(str) : null;
+            if (!StringUtils.isEmpty(str2)) {
                 map = d(str2);
             }
             if (!c(d2) && !c(map)) {
@@ -1580,7 +1580,7 @@ public class l {
                 Object value = it.next().getValue();
                 if (value == null) {
                     it.remove();
-                } else if ((value instanceof String) && TextUtils.isEmpty((String) value)) {
+                } else if ((value instanceof String) && StringUtils.isEmpty((String) value)) {
                     it.remove();
                 }
             }
@@ -1645,35 +1645,35 @@ public class l {
             return;
         }
         String str5 = map.get("spm-cnt");
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             cVar.mSpmCnt = str5;
         } else {
             cVar.mSpmCnt = map.get("spm_cnt");
         }
         cVar.mSpmUrl = a(map, str);
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             cVar.mSpmPre = this.d;
         } else {
             cVar.mSpmPre = "";
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             cVar.mScmUrl = str3;
         } else {
             cVar.mScmUrl = map.get("scm");
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             cVar.mScmPre = this.e;
         } else {
             cVar.mScmPre = "";
         }
         String a2 = a(map.get("utparam-cnt"), str4);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             cVar.mUtparamCnt = a2;
         } else {
             cVar.mUtparamCnt = "";
         }
-        cVar.mUtparamUrl = a(str2, a(map.get(ag.KEY_UTPARAM_URL), !TextUtils.isEmpty(this.c) ? this.g : ""));
-        if (!TextUtils.isEmpty(this.c)) {
+        cVar.mUtparamUrl = a(str2, a(map.get(ag.KEY_UTPARAM_URL), !StringUtils.isEmpty(this.c) ? this.g : ""));
+        if (!StringUtils.isEmpty(this.c)) {
             cVar.mUtparamPre = this.f;
         } else {
             cVar.mUtparamPre = "";
@@ -1689,18 +1689,18 @@ public class l {
             return str;
         }
         String str2 = map.get("spm-url");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
         String str3 = map.get("spm_url");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             return str3;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String str4 = map.get("spm");
-        return !TextUtils.isEmpty(str4) ? str4 : "";
+        return !StringUtils.isEmpty(str4) ? str4 : "";
     }
 
     private String b(Uri uri) {

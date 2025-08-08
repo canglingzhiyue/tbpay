@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.proxy.comments.ICommentsProxy;
 import com.taobao.android.live.plugin.proxy.e;
@@ -59,7 +59,7 @@ public class hfv implements ICommentsProxy.a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d4873572", new Object[]{chatMessage})).intValue();
         }
-        if (chatMessage.chatItemCommonData != null && !TextUtils.isEmpty(chatMessage.chatItemCommonData.bizType)) {
+        if (chatMessage.chatItemCommonData != null && !StringUtils.isEmpty(chatMessage.chatItemCommonData.bizType)) {
             return DYNAMIC_COMMON;
         }
         if (chatMessage.renders != null && !chatMessage.renders.isEmpty()) {

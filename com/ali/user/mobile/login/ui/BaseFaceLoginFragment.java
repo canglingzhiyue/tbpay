@@ -2,7 +2,7 @@ package com.ali.user.mobile.login.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -105,7 +105,7 @@ public class BaseFaceLoginFragment extends BaseHistoryFragment implements FaceLo
             this.mPreviousChecked = arguments.getBoolean("check");
             String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
             arguments.putString(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, "");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.loginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
                 LoginParam loginParam = this.loginParam;
                 if (loginParam != null) {

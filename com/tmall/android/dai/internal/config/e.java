@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.config.BHRTaskConfigBase;
 import com.tmall.android.dai.internal.config.Config;
@@ -99,7 +99,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (com.tmall.android.dai.model.c) ipChange.ipc$dispatch("7251e627", new Object[]{modelTrigger});
         }
-        if (TextUtils.equals(BHRTaskConfigBase.TYPE_CONFIG_UT, modelTrigger.type)) {
+        if (StringUtils.equals(BHRTaskConfigBase.TYPE_CONFIG_UT, modelTrigger.type)) {
             if (modelTrigger.dataExtend != null) {
                 com.tmall.android.dai.model.c a2 = a(modelTrigger, modelTrigger.dataExtend, modelTrigger.triId);
                 if (a2 == null) {
@@ -117,16 +117,16 @@ public class e {
                 }
                 return e;
             }
-        } else if (TextUtils.equals("timing", modelTrigger.type)) {
+        } else if (StringUtils.equals("timing", modelTrigger.type)) {
             com.tmall.android.dai.model.c d = d(modelTrigger);
             if (modelTrigger.triId != null) {
                 d.a(modelTrigger.triId);
             }
             return d;
-        } else if (TextUtils.equals("cep", modelTrigger.type)) {
+        } else if (StringUtils.equals("cep", modelTrigger.type)) {
             return b(modelTrigger);
         } else {
-            if (!TextUtils.equals("stream", modelTrigger.type)) {
+            if (!StringUtils.equals("stream", modelTrigger.type)) {
                 return null;
             }
             return c(modelTrigger);

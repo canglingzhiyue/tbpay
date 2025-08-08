@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.decorator;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.biz.thirdpay.ThirdPayManager;
@@ -69,24 +69,24 @@ public final class RpcRequestDecoratorV2 {
         }
         jSONObject.put(MspGlobalDefine.MSP_SWITCH_VERSION, (Object) DrmManager.getInstance(GlobalHelper.getInstance().getContext()).getVersion());
         LogUtil.record(2, "RpcRequestDecoratorV2:getVidataTime", "checkpoint before sourceBundleId");
-        if (!TextUtils.isEmpty(str) && mspTradeContext != null) {
+        if (!StringUtils.isEmpty(str) && mspTradeContext != null) {
             jSONObject.put("sourceBundleId", (Object) str);
             jSONObject.put("sourceBundleSigMd5", (Object) mspTradeContext.getPaySession().getInvokeFromAppSign());
         }
         jSONObject.put("agednessVersion", (Object) Boolean.valueOf(PhoneCashierMspEngine.getMspWallet().isUserAgednessVersion(i)));
         jSONObject.put("isLowDevice", (Object) Boolean.valueOf(MspLowDeviceManager.getInstance().isLowDevice()));
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             jSONObject.put("VIData", (Object) str2);
         }
         String extendParams = requestConfig.getExtendParams(MspGlobalDefine.EXT_INSIDE_ENV);
-        if (!TextUtils.isEmpty(extendParams)) {
+        if (!StringUtils.isEmpty(extendParams)) {
             jSONObject.put(MspGlobalDefine.INSIDE_ENV, (Object) extendParams);
         }
         PhoneCashierMspEngine.getMspWallet().endSpiderSection(MspGlobalDefine.SPIDER_MSP_CASHIER_BIZ_TYPE, "FIRST_BUILD_GET_EXTINFO");
         LogUtil.record(2, "RpcRequestDecoratorV2:getVidataTime", "checkpoint before sourceBundleId");
         Map<String, String> map = null;
-        String join = TextUtils.join("|", FwUtils.concatMultiList(ThirdPayManager.getAvailableThirdPayTypes(GlobalHelper.getInstance().getContext()), ThirdPayManager.getExternalProvidedThirdPayTypes(mspTradeContext), mspTradeContext != null ? mspTradeContext.getPaySession().getInstalled3rdAppList() : null, ThirdPayManager.getListCupDirectApps()));
-        if (!TextUtils.isEmpty(join)) {
+        String join = StringUtils.join("|", FwUtils.concatMultiList(ThirdPayManager.getAvailableThirdPayTypes(GlobalHelper.getInstance().getContext()), ThirdPayManager.getExternalProvidedThirdPayTypes(mspTradeContext), mspTradeContext != null ? mspTradeContext.getPaySession().getInstalled3rdAppList() : null, ThirdPayManager.getListCupDirectApps()));
+        if (!StringUtils.isEmpty(join)) {
             jSONObject.put("supported_3rd_pay", (Object) join);
         }
         LogUtil.record(2, "RpcRequestDecoratorV2:getVidataTime", "checkpoint before getBizInfo");
@@ -99,9 +99,9 @@ public final class RpcRequestDecoratorV2 {
         }
         if (map != null && map.size() > 0) {
             for (String str3 : map.keySet()) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     String str4 = map.get(str3);
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         jSONObject.put(str3, (Object) str4);
                     }
                 }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.taopai.charge.data.TpChargeBean;
@@ -72,7 +72,7 @@ public class ize implements a {
         if (!izk.d()) {
             Log.e("TaopaiCharge", "onFail, error = " + str + " | " + str2);
         }
-        if (!izg.b() || !TextUtils.equals(str, ChargeReportBusiness.CODE_ERROR_SYSTEM) || list.size() >= 50) {
+        if (!izg.b() || !StringUtils.equals(str, ChargeReportBusiness.CODE_ERROR_SYSTEM) || list.size() >= 50) {
             return;
         }
         this.f29420a.a(list);

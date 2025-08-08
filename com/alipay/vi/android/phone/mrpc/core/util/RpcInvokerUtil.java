@@ -1,6 +1,6 @@
 package com.alipay.vi.android.phone.mrpc.core.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.vi.mobile.framework.service.annotation.OperationType;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Method;
@@ -14,12 +14,12 @@ public class RpcInvokerUtil {
 
     public static final boolean isSimpleRpcAnnotation(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fe3c456d", new Object[]{str})).booleanValue() : TextUtils.equals(str, "alipay.client.executerpc");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fe3c456d", new Object[]{str})).booleanValue() : StringUtils.equals(str, "alipay.client.executerpc");
     }
 
     public static final boolean isSimpleRpcBytesAnnotation(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("504bcdc6", new Object[]{str})).booleanValue() : TextUtils.equals(str, "alipay.client.executerpc.bytes");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("504bcdc6", new Object[]{str})).booleanValue() : StringUtils.equals(str, "alipay.client.executerpc.bytes");
     }
 
     public static final String getOperationTypeValue(Method method, Object[] objArr) {

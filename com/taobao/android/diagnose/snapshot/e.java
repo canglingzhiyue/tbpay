@@ -1,7 +1,7 @@
 package com.taobao.android.diagnose.snapshot;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVConstants;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -88,7 +88,7 @@ public class e {
         String str = d2 != null ? d2.i().utdid : "";
         String a2 = g.a();
         String a3 = com.taobao.orange.util.c.a(String.format("%d_%s_%s", Long.valueOf(System.currentTimeMillis()), a2, str));
-        return TextUtils.isEmpty(a3) ? String.format("%d_%s", Long.valueOf(System.currentTimeMillis()), a2) : a3;
+        return StringUtils.isEmpty(a3) ? String.format("%d_%s", Long.valueOf(System.currentTimeMillis()), a2) : a3;
     }
 
     public synchronized void a(String str, DiagnoseType diagnoseType, com.taobao.android.diagnose.model.a aVar, Map<String, String> map) {
@@ -106,7 +106,7 @@ public class e {
         } catch (Exception e) {
             v.a("SnapshotManager", "Failed to uploadDiagnoseInfo: ", e);
         }
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             if (!a(a(str, diagnoseType), b)) {
                 TLog.loge("Diagnose", "SnapshotManager", "Failed to save the diagnose to file.");
                 com.taobao.android.diagnose.common.b.a(str, diagnoseType.getIndex(), 7);
@@ -170,7 +170,7 @@ public class e {
             String str = split[0];
             String str2 = split[1];
             String b = b(file);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 file.delete();
                 TLog.loge("Diagnose", "SnapshotManager", "The snapshot file is empty: " + file.getAbsolutePath());
                 return;
@@ -362,7 +362,7 @@ public class e {
                     }
                     jSONObject2.put("ab", (Object) jSONArray2);
                 }
-                if (g.instantPatchInfo != null && !TextUtils.isEmpty(g.instantPatchInfo.getVersion())) {
+                if (g.instantPatchInfo != null && !StringUtils.isEmpty(g.instantPatchInfo.getVersion())) {
                     JSONArray jSONArray3 = new JSONArray();
                     JSONObject jSONObject5 = new JSONObject();
                     jSONObject5.put("type", (Object) Baggage.Amnet.SECURITY_INSTANT);
@@ -371,7 +371,7 @@ public class e {
                     jSONObject2.put("escort", (Object) jSONArray3);
                 }
                 String customTinctTag = g.getCustomTinctTag();
-                if (!TextUtils.isEmpty(customTinctTag)) {
+                if (!StringUtils.isEmpty(customTinctTag)) {
                     jSONObject2.put("custom", (Object) customTinctTag);
                 }
                 jSONObject.put("changeInfo", (Object) jSONObject2);

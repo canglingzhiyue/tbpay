@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -62,7 +62,7 @@ public class nkh implements nke {
             return ((Boolean) ipChange.ipc$dispatch("5afdd1f5", new Object[]{this, invocation})).booleanValue();
         }
         for (String str : f31531a) {
-            if (TextUtils.equals(invocation.getProxyName(), str)) {
+            if (StringUtils.equals(invocation.getProxyName(), str)) {
                 return true;
             }
         }

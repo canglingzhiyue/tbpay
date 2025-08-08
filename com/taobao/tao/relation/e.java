@@ -1,6 +1,6 @@
 package com.taobao.tao.relation;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
@@ -64,7 +64,7 @@ public class e {
                 String optString = dataJsonObject.optString("targetAccountId");
                 String optString2 = dataJsonObject.optString("targetAccountType");
                 String optString3 = dataJsonObject.optString("bizType");
-                if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2) || TextUtils.isEmpty(optString3)) {
+                if (StringUtils.isEmpty(optString) || StringUtils.isEmpty(optString2) || StringUtils.isEmpty(optString3)) {
                     e.a(e.this, mtopResponse.toString());
                 } else {
                     g.b(optString, optString2, Integer.parseInt(optString3));

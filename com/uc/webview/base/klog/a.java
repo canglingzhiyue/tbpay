@@ -1,7 +1,7 @@
 package com.uc.webview.base.klog;
 
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.analytics.core.sync.q;
 import com.taobao.calendar.sdk.db.schedule.Repeat;
@@ -31,7 +31,7 @@ public final class a {
         this.d = i2;
         this.e = j;
         this.f = i3;
-        this.g = TextUtils.isEmpty(str) ? "u4klog" : "u4klog.".concat(String.valueOf(str));
+        this.g = StringUtils.isEmpty(str) ? "u4klog" : "u4klog.".concat(String.valueOf(str));
         this.h = str2;
         this.i = th;
     }

@@ -3,7 +3,7 @@ package com.taobao.order.downgrade.list;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.jump.JumpAbility;
 import com.taobao.android.order.bundle.TBOrderListFragment;
@@ -64,9 +64,9 @@ public class a implements com.taobao.android.nav.e {
         }
         if (hyk.B()) {
             OrderType orderType = OrderType.ORDERLIST;
-            if (TextUtils.equals("OrderFilter", com.taobao.android.order.bundle.helper.g.b(intent, CoreConstants.USER_ORDER_TYPE))) {
+            if (StringUtils.equals("OrderFilter", com.taobao.android.order.bundle.helper.g.b(intent, CoreConstants.USER_ORDER_TYPE))) {
                 orderType = OrderType.ORDERFILTER;
-            } else if (!TextUtils.isEmpty(com.taobao.android.order.bundle.helper.g.a(intent, "searchKey"))) {
+            } else if (!StringUtils.isEmpty(com.taobao.android.order.bundle.helper.g.a(intent, "searchKey"))) {
                 orderType = OrderType.ORDERSEARCH;
             }
             intent.putExtra("orderType", orderType.getValue());

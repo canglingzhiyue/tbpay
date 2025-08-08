@@ -2,7 +2,7 @@ package tb;
 
 import android.animation.ValueAnimator;
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -356,7 +356,7 @@ public class cpw extends ctc<cpv, b, CaptureManager> implements View.OnClickList
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ece2", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || str.equals(this.t)) {
+        } else if (StringUtils.isEmpty(str) || str.equals(this.t)) {
         } else {
             if (!str.equals("scan") && !str.equals(cpe.a.SCENE_AUTO_DETECT)) {
                 return;
@@ -548,7 +548,7 @@ public class cpw extends ctc<cpv, b, CaptureManager> implements View.OnClickList
                         }
                         k.setVisibility(i);
                         cpw.b(cpw.this, ((c) bVar).d());
-                    } else if (!(bVar2 instanceof TipShowMsg) || TextUtils.isEmpty(((TipShowMsg) bVar2).a())) {
+                    } else if (!(bVar2 instanceof TipShowMsg) || StringUtils.isEmpty(((TipShowMsg) bVar2).a())) {
                     } else {
                         cpw.l(cpw.this).setText(((TipShowMsg) bVar).a());
                         if (((TipShowMsg) bVar).b() != 0) {

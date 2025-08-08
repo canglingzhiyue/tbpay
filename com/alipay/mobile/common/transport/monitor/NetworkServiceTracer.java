@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.monitor;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -134,7 +134,7 @@ public class NetworkServiceTracer {
             return;
         }
         String a2 = a(b);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             LogCatUtil.debug(TAG, "recordError unknown bizType,ignored");
             return;
         }
@@ -162,7 +162,7 @@ public class NetworkServiceTracer {
         }
         try {
             String a2 = a(b);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 LogCatUtil.debug(TAG, "clearErrorByType unknown bizType,ignored");
                 return;
             }
@@ -193,9 +193,9 @@ public class NetworkServiceTracer {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.NETSERVICE_RPC_LIST);
-        if (!TextUtils.isEmpty(stringValue)) {
+        if (!StringUtils.isEmpty(stringValue)) {
             for (String str2 : stringValue.split(",")) {
-                if (TextUtils.equals(str2, str)) {
+                if (StringUtils.equals(str2, str)) {
                     LogCatUtil.info(TAG, "importRpc.opeType: " + str);
                     return true;
                 }
@@ -209,19 +209,19 @@ public class NetworkServiceTracer {
         if (ipChange instanceof IpChange) {
             return (NSTraceItem) ipChange.ipc$dispatch("556b5ed8", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, REPORT_SUB_NAME_RPC)) {
+        if (StringUtils.equals(str, REPORT_SUB_NAME_RPC)) {
             return this.b[TRACE_ITEM_INDEX.TRACE_ITEM_RPC.ordinal()];
         }
-        if (TextUtils.equals(str, "H5")) {
+        if (StringUtils.equals(str, "H5")) {
             return this.b[TRACE_ITEM_INDEX.TRACE_ITEM_H5.ordinal()];
         }
-        if (TextUtils.equals(str, REPORT_SUB_NAME_RSRC)) {
+        if (StringUtils.equals(str, REPORT_SUB_NAME_RSRC)) {
             return this.b[TRACE_ITEM_INDEX.TRACE_ITEM_RSRC.ordinal()];
         }
-        if (TextUtils.equals(str, REPORT_SUB_NAME_DJG)) {
+        if (StringUtils.equals(str, REPORT_SUB_NAME_DJG)) {
             return this.b[TRACE_ITEM_INDEX.TRACE_ITEM_DJG.ordinal()];
         }
-        if (TextUtils.equals(str, REPORT_SUB_NAME_NBNET_UP)) {
+        if (StringUtils.equals(str, REPORT_SUB_NAME_NBNET_UP)) {
             return this.b[TRACE_ITEM_INDEX.TRACE_ITEM_NBNET_UP.ordinal()];
         }
         LogCatUtil.debug(TAG, "getTraceItemByName,networkType unknown error");
@@ -236,7 +236,7 @@ public class NetworkServiceTracer {
         }
         NSTraceItem b = b(str);
         String str2 = map.get(HeaderConstant.HEADER_KEY_OPERATION_TYPE);
-        if (TextUtils.equals(str, REPORT_SUB_NAME_RPC) && a(str2)) {
+        if (StringUtils.equals(str, REPORT_SUB_NAME_RPC) && a(str2)) {
             LogCatUtil.debug(TAG, "import rpc ex,report rignt now");
             a(b);
             c(str);
@@ -244,12 +244,12 @@ public class NetworkServiceTracer {
         }
         if (MiscUtils.grayscaleUtdid(DeviceInfoUtil.getDeviceId(), TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.NETSERVICE_UPERR_REPORT))) {
             map.get("DJG_UP_BIZ");
-            if (TextUtils.equals(str, REPORT_SUB_NAME_DJG)) {
+            if (StringUtils.equals(str, REPORT_SUB_NAME_DJG)) {
                 LogCatUtil.debug(TAG, "DJG up ex,report rignt now");
                 a(b);
                 c(str);
                 return;
-            } else if (TextUtils.equals(str, REPORT_SUB_NAME_NBNET_UP)) {
+            } else if (StringUtils.equals(str, REPORT_SUB_NAME_NBNET_UP)) {
                 LogCatUtil.debug(TAG, "nbnet_up up ex, report rignt now");
                 a(b);
                 c(str);

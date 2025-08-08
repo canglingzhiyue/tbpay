@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -388,7 +388,7 @@ public class gaz extends m {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9625fd55", new Object[]{this, context, view, new Long(j2)});
-        } else if (j2 == 9859228430928305L && !TextUtils.isEmpty(s())) {
+        } else if (j2 == 9859228430928305L && !StringUtils.isEmpty(s())) {
             view.setOnClickListener(new View.OnClickListener() { // from class: tb.gaz.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -402,7 +402,7 @@ public class gaz extends m {
                     }
                 }
             });
-        } else if (j2 == 5176476879387311985L && !TextUtils.isEmpty(this.p)) {
+        } else if (j2 == 5176476879387311985L && !StringUtils.isEmpty(this.p)) {
         } else {
             if (j2 == 18903999933159L) {
                 view.setOnClickListener(new View.OnClickListener() { // from class: tb.gaz.4

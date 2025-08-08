@@ -3,7 +3,7 @@ package tb;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.windvane.config.a;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -74,7 +74,7 @@ public class oil implements oiq {
         }
         Map<String, String> map = e.b().j().extraParams;
         String str = map != null ? map.get("guangShareUrl") : null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Nav.from(nym.a()).toUri(new Uri.Builder().scheme(Uri.parse(a.p()).getHost()).path("guang/publish.html").appendQueryParameter(MspFlybirdDefine.FLYBIRD_MINIWIN, "share").appendQueryParameter("itemId", e.b().f()).build());
         } else {
             Nav.from(nym.a()).toUri(a(a(str, MspFlybirdDefine.FLYBIRD_MINIWIN, "share"), "itemId", e.b().f()));
@@ -86,7 +86,7 @@ public class oil implements oiq {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return str;
         }
         String str4 = str.indexOf("?") >= 0 ? "&" : "?";

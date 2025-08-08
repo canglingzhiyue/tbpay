@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class TBScanCodeAbility extends AbsScanCodeAbility {
         String str = dyVar.f8830a;
         final String str2 = dyVar.b;
         String str3 = "scan called: pssource=" + str + ", type=" + str2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             cmVar.a(new ErrorResult("params invalid"));
             return;
         }
@@ -138,7 +138,7 @@ public class TBScanCodeAbility extends AbsScanCodeAbility {
             return (HashSet) ipChange.ipc$dispatch("c7960cf2", new Object[]{this, str});
         }
         HashSet<ScancodeType> hashSet = new HashSet<>();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             char c = 65535;
             int hashCode = str.hashCode();
             if (hashCode != -1898203250) {

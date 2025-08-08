@@ -2,7 +2,7 @@ package tb;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.login4android.api.Login;
@@ -62,7 +62,7 @@ public class mxp {
                     try {
                         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(Globals.getApplication());
                         String string = defaultSharedPreferences.getString("OrderNumUserId", "null");
-                        if (TextUtils.isEmpty(string) || TextUtils.equals(string, Login.getUserId())) {
+                        if (StringUtils.isEmpty(string) || StringUtils.equals(string, Login.getUserId())) {
                             return;
                         }
                         SharedPreferences.Editor edit = defaultSharedPreferences.edit();

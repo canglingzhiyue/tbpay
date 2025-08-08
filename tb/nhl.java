@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.alibaba.ability.localization.b;
@@ -55,15 +55,15 @@ public class nhl {
             return;
         }
         String string = jSONObject2.getString("fullName");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             textView2.setText(string);
         }
         String string2 = jSONObject2.getString("mobile");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             textView3.setText(string2);
         }
         String string3 = jSONObject2.getString("addressText");
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             return;
         }
         textView.setText(string3);
@@ -82,13 +82,13 @@ public class nhl {
             return;
         }
         String string = jSONObject2.getString("shopIcon");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             tUrlImageView.enableSizeInLayoutParams(true);
             new PhenixOptions().fuzzyMatchCache(true);
             tUrlImageView.setImageUrl(string);
         }
         String string2 = jSONObject2.getString("shopName");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return;
         }
         textView.setText(string2);
@@ -114,25 +114,25 @@ public class nhl {
             return;
         }
         String string = jSONObject2.getString("pic");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             tUrlImageView.enableSizeInLayoutParams(true);
             PhenixOptions phenixOptions = new PhenixOptions();
             phenixOptions.fuzzyMatchCache(true);
             tUrlImageView.setImageUrl(string, phenixOptions);
         }
         String string2 = jSONObject2.getString("title");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             textView.setText(string2);
         }
         JSONObject jSONObject3 = jSONObject2.getJSONObject("sku");
         if (jSONObject3 != null) {
             String string3 = jSONObject3.getString("title");
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 textView2.setText(string3);
             }
         }
         String string4 = jSONObject2.getString("quantity");
-        if (!TextUtils.isEmpty(string4)) {
+        if (!StringUtils.isEmpty(string4)) {
             textView3.setText(string4);
         }
         JSONArray jSONArray = jSONObject2.getJSONArray("label");

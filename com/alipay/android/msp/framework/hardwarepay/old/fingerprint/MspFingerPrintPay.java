@@ -9,7 +9,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.PowerManager;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
@@ -127,7 +127,7 @@ public class MspFingerPrintPay extends AbstractHardwarePay {
             String[] authInfo = this.b.getAuthInfo();
             int registedFingerPrintNumber = this.b.registedFingerPrintNumber();
             LogUtil.record(1, "phonecashiermsp#fingerprint", "MspFingerPrintPay.execute", "当前指纹数量:".concat(String.valueOf(registedFingerPrintNumber)));
-            if ((registedFingerPrintNumber != 0 && registedFingerPrintNumber != -1) || TextUtils.equals(authInfo[4], "1")) {
+            if ((registedFingerPrintNumber != 0 && registedFingerPrintNumber != -1) || StringUtils.equals(authInfo[4], "1")) {
                 PhoneCashierMspEngine.getMspViSec().hardwarePayOpt(this.c, "true");
                 return;
             }
@@ -591,7 +591,7 @@ public class MspFingerPrintPay extends AbstractHardwarePay {
                 }
                 int intExtra = intent.getIntExtra("result", 0);
                 LogUtil.record(1, "phonecashiermsp#fingerprint", "MspFingerPrintPay.receiver.onReceive", "FP_REGISTER_ACTION result:".concat(String.valueOf(intExtra)));
-                if (!TextUtils.equals(intent.getAction(), MspGlobalDefine.FP_REGISTER_ACTION)) {
+                if (!StringUtils.equals(intent.getAction(), MspGlobalDefine.FP_REGISTER_ACTION)) {
                     return;
                 }
                 if (MspFingerPrintPay.access$700(MspFingerPrintPay.this) == 4 || MspFingerPrintPay.access$700(MspFingerPrintPay.this) == 5) {
@@ -660,7 +660,7 @@ public class MspFingerPrintPay extends AbstractHardwarePay {
                         if (MspFingerPrintPay.access$600(MspFingerPrintPay.this) != null) {
                             MspFingerPrintPay.access$600(MspFingerPrintPay.this).showAnimation();
                             MspFingerPrintPay.access$600(MspFingerPrintPay.this).updateMsg(LanguageHelper.localizedStringForKey("flybird_fp_val_failed", context.getString(R.string.flybird_fp_val_failed), new Object[0]), 0, -65536);
-                            MspFingerPrintPay.access$600(MspFingerPrintPay.this).updateMsg(TextUtils.isEmpty(MspFingerPrintPay.access$1300(MspFingerPrintPay.this)) ? LanguageHelper.localizedStringForKey("flybird_fp_open", context.getString(R.string.flybird_fp_open), new Object[0]) : MspFingerPrintPay.access$1300(MspFingerPrintPay.this), 250, -16777216);
+                            MspFingerPrintPay.access$600(MspFingerPrintPay.this).updateMsg(StringUtils.isEmpty(MspFingerPrintPay.access$1300(MspFingerPrintPay.this)) ? LanguageHelper.localizedStringForKey("flybird_fp_open", context.getString(R.string.flybird_fp_open), new Object[0]) : MspFingerPrintPay.access$1300(MspFingerPrintPay.this), 250, -16777216);
                         }
                         fingerprintPayHelper.process(i, 2, MspFingerPrintPay.access$1400(MspFingerPrintPay.this), i2, null, context);
                     } else if (MspFingerPrintPay.access$600(MspFingerPrintPay.this) == null) {
@@ -776,7 +776,7 @@ public class MspFingerPrintPay extends AbstractHardwarePay {
         try {
             jSONObject.put("type", (Object) Integer.valueOf(i));
             jSONObject.put("message", (Object) "");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 jSONObject.put("result", (Object) "");
             } else {
                 jSONObject.put("result", (Object) str);

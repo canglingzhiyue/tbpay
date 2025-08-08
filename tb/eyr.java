@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.m;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -20,7 +20,7 @@ public class eyr {
             cls = Class.forName("android.os.SystemProperties");
         } catch (Exception unused) {
         }
-        return !TextUtils.isEmpty((String) cls.getMethod("get", String.class, String.class).invoke(cls, "ro.build.flyme.version", ""));
+        return !StringUtils.isEmpty((String) cls.getMethod("get", String.class, String.class).invoke(cls, "ro.build.flyme.version", ""));
     }
 
     public static boolean e() {
@@ -37,7 +37,7 @@ public class eyr {
         if (!str.equalsIgnoreCase("huawei") && !str.equalsIgnoreCase("honor") && !str.equalsIgnoreCase("华为")) {
             String a2 = a(m.v);
             String a3 = a("hw_sc.build.platform.version");
-            if (TextUtils.isEmpty(a2) && TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a2) && StringUtils.isEmpty(a3)) {
                 return false;
             }
         }

@@ -1,6 +1,6 @@
 package com.ut.mini.exposure;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -47,7 +47,7 @@ public class d {
         if (obj == null || !(obj instanceof d)) {
             return false;
         }
-        return TextUtils.equals(this.tag, ((d) obj).tag);
+        return StringUtils.equals(this.tag, ((d) obj).tag);
     }
 
     public int hashCode() {
@@ -65,7 +65,7 @@ public class d {
         sb.append(":");
         sb.append(this.tag);
         sb.append(":");
-        sb.append(TextUtils.isEmpty(this.view.getContentDescription()) ? "" : this.view.getContentDescription());
+        sb.append(StringUtils.isEmpty(this.view.getContentDescription()) ? "" : this.view.getContentDescription());
         sb.append(":");
         sb.append(a(this.lastState));
         return sb.toString();

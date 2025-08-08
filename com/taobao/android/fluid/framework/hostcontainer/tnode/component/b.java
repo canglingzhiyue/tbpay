@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.hostcontainer.tnode.component;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public final class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String str2 = null;
@@ -33,7 +33,7 @@ public final class b {
         if (parse != null) {
             str2 = parse.getQueryParameter("extParams");
         }
-        if (TextUtils.isEmpty(str2) || !str2.contains("default")) {
+        if (StringUtils.isEmpty(str2) || !str2.contains("default")) {
             z = false;
         }
         spz.a("TBVideoListComponentUtils", "isDefaultGuangguangtab3WithUrl:" + z);
@@ -74,7 +74,7 @@ public final class b {
             return (List) ipChange.ipc$dispatch("a923a28a", new Object[]{map});
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         String[] split = a2.split(",");

@@ -1,7 +1,7 @@
 package com.taobao.flowcustoms.afc.request.mtop;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -30,7 +30,7 @@ public class a extends b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ad2c5059", new Object[]{this, str, str2, map, new Boolean(z), koeVar, handler, new Integer(i)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || map == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || map == null) {
         } else {
             a(map);
             MtopRequest mtopRequest = new MtopRequest();

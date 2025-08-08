@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -126,7 +126,7 @@ public class PHAFragment extends Fragment implements com.taobao.pha.core.control
             return;
         }
         this.mManifestUrl = arguments.getString(nfc.PHA_MONITOR_DIMENSION_MANIFEST_URL);
-        if (TextUtils.isEmpty(this.mManifestUrl)) {
+        if (StringUtils.isEmpty(this.mManifestUrl)) {
             ngr.b(TAG, "manifestUrl is empty");
             return;
         }

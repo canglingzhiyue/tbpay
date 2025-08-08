@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.open.l;
 import com.taobao.android.detail.core.open.m;
@@ -89,7 +89,7 @@ public class eic {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8bb65392", new Object[]{this, str, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || obj == null || (a2 = a(str)) == null || a2.b == null) {
+        if (StringUtils.isEmpty(str) || obj == null || (a2 = a(str)) == null || a2.b == null) {
             return false;
         }
         a2.b.onMessage(obj);

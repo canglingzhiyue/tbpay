@@ -2,7 +2,7 @@ package com.etao.feimagesearch.model;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.PicParamUtils;
@@ -87,16 +87,16 @@ public class b extends e {
         if (isGarbageTab()) {
             builder.appendQueryParameter(d.KEY_IRP_GARBAGE, String.valueOf(true));
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             builder.appendQueryParameter("spm", this.e);
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             builder.appendQueryParameter("tips", this.d);
         }
-        if (!TextUtils.isEmpty(getSellerId())) {
+        if (!StringUtils.isEmpty(getSellerId())) {
             builder.appendQueryParameter("sellerId", getSellerId());
         }
-        if (!TextUtils.isEmpty(getShopId())) {
+        if (!StringUtils.isEmpty(getShopId())) {
             builder.appendQueryParameter("shopId", getShopId());
         }
         try {
@@ -166,9 +166,9 @@ public class b extends e {
         bVar.h = data.getBooleanQueryParameter("disableAutoDetect", false);
         bVar.m = data.getBooleanQueryParameter("scanOnly", false);
         bVar.a(data);
-        if (TextUtils.isEmpty(bVar.getPssource())) {
+        if (StringUtils.isEmpty(bVar.getPssource())) {
             String queryParameter = data.getQueryParameter("_pssource");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 bVar.setPssource(queryParameter);
             }
         }
@@ -179,7 +179,7 @@ public class b extends e {
         String queryParameter5 = data.getQueryParameter("spm");
         boolean a2 = gtr.a(intent);
         bVar.g = a2;
-        if (a2 && TextUtils.isEmpty(bVar.getPssource())) {
+        if (a2 && StringUtils.isEmpty(bVar.getPssource())) {
             bVar.setPssource(cpe.PsSourceSY_SYS);
         }
         String queryParameter6 = data.getQueryParameter("sellerId");
@@ -190,7 +190,7 @@ public class b extends e {
         bVar.a(queryParameter5);
         bVar.setImageId(queryParameter2);
         String queryParameter8 = data.getQueryParameter("toindex");
-        if (!TextUtils.isEmpty(queryParameter8)) {
+        if (!StringUtils.isEmpty(queryParameter8)) {
             try {
                 bVar.i = Integer.parseInt(queryParameter8);
                 if (!com.etao.feimagesearch.config.b.o() && bVar.i > 2) {
@@ -207,7 +207,7 @@ public class b extends e {
         } else {
             bVar.setArTab(false);
         }
-        if (TextUtils.isEmpty(bVar.getPssource()) && bVar.i == 1) {
+        if (StringUtils.isEmpty(bVar.getPssource()) && bVar.i == 1) {
             bVar.setPssource("saotab");
         }
         try {
@@ -321,7 +321,7 @@ public class b extends e {
 
     public boolean isOtherChannelPhotoSearch() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("53eefe28", new Object[]{this})).booleanValue() : TextUtils.equals(this.j.get("otherChannelPhotoSearch"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("53eefe28", new Object[]{this})).booleanValue() : StringUtils.equals(this.j.get("otherChannelPhotoSearch"), "true");
     }
 
     public int getInitTabIndex() {

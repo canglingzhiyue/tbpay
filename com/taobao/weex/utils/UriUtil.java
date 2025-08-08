@@ -1,7 +1,7 @@
 package com.taobao.weex.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Set;
 import tb.ado;
@@ -21,7 +21,7 @@ public class UriUtil {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("4942af1", new Object[]{uri});
         }
-        if (!TextUtils.isEmpty(uri.getScheme())) {
+        if (!StringUtils.isEmpty(uri.getScheme())) {
             return uri;
         }
         Uri.Builder buildUpon = uri.buildUpon();
@@ -44,13 +44,13 @@ public class UriUtil {
         }
         String queryParameter = uri.getQueryParameter(riu.g);
         WXLogUtils.d("TBWXNavPreProcessor", "origin WX_TPL:" + queryParameter);
-        if (TextUtils.isEmpty(queryParameter) || (parse = Uri.parse(queryParameter)) == null) {
+        if (StringUtils.isEmpty(queryParameter) || (parse = Uri.parse(queryParameter)) == null) {
             return null;
         }
         Set<String> queryParameterNames = uri.getQueryParameterNames();
         Uri.Builder buildUpon = parse.buildUpon();
         for (String str : queryParameterNames) {
-            if (!TextUtils.equals(str, riu.g)) {
+            if (!StringUtils.equals(str, riu.g)) {
                 buildUpon.appendQueryParameter(str, uri.getQueryParameter(str));
             }
         }

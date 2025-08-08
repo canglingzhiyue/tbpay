@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.rule.AURALocalAdjustIO;
 import com.alibaba.android.aura.datamodel.rule.a;
@@ -49,7 +49,7 @@ public final class dty extends ava {
             return null;
         }
         String string = c.getString("shareContextPath");
-        if (TextUtils.isEmpty(string) || (a2 = a()) == null) {
+        if (StringUtils.isEmpty(string) || (a2 = a()) == null) {
             return null;
         }
         JSONObject jSONObject = a2.getJSONObject(string);

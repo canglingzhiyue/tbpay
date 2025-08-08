@@ -5,7 +5,7 @@ import android.content.Context;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.pay.PayTask;
 import com.alipay.android.msp.framework.taskscheduler.TaskHelper;
 import com.alipay.android.msp.utils.LogUtil;
@@ -49,7 +49,7 @@ public class AlipaySDKJSBridge extends e {
                 final String optString = jSONObject.optString("orderStr");
                 jSONObject.optString("scheme");
                 jSONObject.optJSONObject("extParams");
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     wVCallBackContext.error(p("HY_PARAM_ERR", "missing orderStr"));
                     return true;
                 }
@@ -98,7 +98,7 @@ public class AlipaySDKJSBridge extends e {
                 String optString2 = jSONObject2.optString("orderStr");
                 jSONObject2.optString("scheme");
                 JSONObject optJSONObject = jSONObject2.optJSONObject("extParams");
-                if (TextUtils.isEmpty(optString2)) {
+                if (StringUtils.isEmpty(optString2)) {
                     wVCallBackContext.error(p("HY_PARAM_ERR", "missing orderStr"));
                     return true;
                 }

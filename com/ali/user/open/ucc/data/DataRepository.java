@@ -1,7 +1,7 @@
 package com.ali.user.open.ucc.data;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import com.ali.user.mobile.rpc.ApiConstants;
 import com.ali.user.open.core.AliMemberSDK;
@@ -66,7 +66,7 @@ public class DataRepository {
             jSONObject.put("scene", uccParams.scene);
             jSONObject.put("miniAppId", uccParams.miniAppId);
             jSONObject.put("sdkTraceId", uccParams.traceId);
-            if (!TextUtils.isEmpty(uccParams.targetPackageName)) {
+            if (!StringUtils.isEmpty(uccParams.targetPackageName)) {
                 jSONObject.put(ApiConstants.ApiField.TARGET_INSTALLED, SystemUtils.isAppsInstalled(KernelContext.getApplicationContext(), uccParams.targetPackageName));
             } else {
                 jSONObject.put(ApiConstants.ApiField.TARGET_INSTALLED, ((OauthService) AliMemberSDK.getService(OauthService.class)).isAppAuthSurpport(KernelContext.getApplicationContext(), uccParams.bindSite));
@@ -270,7 +270,7 @@ public class DataRepository {
             buildBaseParam(uccParams, jSONObject);
             jSONObject.put("requestToken", uccParams.requestToken);
             jSONObject.put("bindUserToken", uccParams.bindUserToken);
-            if (!TextUtils.isEmpty(uccParams.needUpgrade)) {
+            if (!StringUtils.isEmpty(uccParams.needUpgrade)) {
                 jSONObject.put(ApiConstants.ApiField.BIND_NEED_UPGRADE, uccParams.needUpgrade);
             }
             if (uccParams != null) {
@@ -403,7 +403,7 @@ public class DataRepository {
         rpcRequest.version = "1.0";
         addAuthrizationRequestObject(uccParams, rpcRequest);
         Map<String, String> deviceTokenKey = getDeviceTokenKey();
-        if (!TextUtils.isEmpty(deviceTokenKey.get("deviceTokenKey"))) {
+        if (!StringUtils.isEmpty(deviceTokenKey.get("deviceTokenKey"))) {
             rpcRequest.addParam("deviceTokenKey", deviceTokenKey.get("deviceTokenKey"));
             TreeMap<String, String> treeMap = new TreeMap<>();
             treeMap.put("appKey", ((StorageService) AliMemberSDK.getService(StorageService.class)).getAppKey());
@@ -496,13 +496,13 @@ public class DataRepository {
             try {
                 CookieManager.getInstance().setAcceptCookie(true);
                 String cookie = CookieManager.getInstance().getCookie(".alibaba.com");
-                if (!TextUtils.isEmpty(cookie)) {
+                if (!StringUtils.isEmpty(cookie)) {
                     String[] split = cookie.split(";");
                     if (cookie != null && cookie.length() > 0) {
                         HashMap hashMap3 = new HashMap();
                         for (String str : split) {
                             String trim = str.trim();
-                            if (!TextUtils.isEmpty(trim) && trim.contains("=")) {
+                            if (!StringUtils.isEmpty(trim) && trim.contains("=")) {
                                 int indexOf = trim.indexOf("=");
                                 String substring = trim.substring(0, indexOf);
                                 String substring2 = trim.substring(indexOf + 1);
@@ -667,13 +667,13 @@ public class DataRepository {
         TreeMap treeMap = new TreeMap();
         DeviceTokenAccount deviceToken = DeviceTokenManager.getInstance().getDeviceToken();
         List<HistoryAccount> historyAccounts = AccountHistoryManager.getInstance().getHistoryAccounts();
-        if (deviceToken != null && !TextUtils.isEmpty(deviceToken.tokenKey) && (historyAccounts == null || historyAccounts.size() == 0)) {
+        if (deviceToken != null && !StringUtils.isEmpty(deviceToken.tokenKey) && (historyAccounts == null || historyAccounts.size() == 0)) {
             treeMap.put("deviceTokenKey", deviceToken.tokenKey);
             treeMap.put("userId", deviceToken.hid);
         } else if (deviceToken == null && historyAccounts != null && historyAccounts.size() > 0) {
             treeMap.put("deviceTokenKey", historyAccounts.get(0).tokenKey);
             treeMap.put("userId", historyAccounts.get(0).userId);
-        } else if (deviceToken != null && !TextUtils.isEmpty(deviceToken.tokenKey) && historyAccounts != null && historyAccounts.size() > 0) {
+        } else if (deviceToken != null && !StringUtils.isEmpty(deviceToken.tokenKey) && historyAccounts != null && historyAccounts.size() > 0) {
             if (Long.parseLong(deviceToken.t) < Long.parseLong(historyAccounts.get(0).t)) {
                 treeMap.put("deviceTokenKey", historyAccounts.get(0).tokenKey);
                 treeMap.put("userId", historyAccounts.get(0).userId);
@@ -710,7 +710,7 @@ public class DataRepository {
             jSONObject.put("clientIp", CommonUtils.getLocalIPAddress());
             try {
                 JSONObject jSONObject2 = new JSONObject();
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     jSONObject2.put(ApiConstants.ApiField.H5_QUERY_STRING, str3);
                 }
                 if (ConfigManager.getInstance().isMiniProgram()) {
@@ -778,7 +778,7 @@ public class DataRepository {
             jSONObject.put("appName", ((StorageService) AliMemberSDK.getService(StorageService.class)).getAppKey());
             jSONObject.put("appVersion", CommonUtils.getAndroidAppVersion());
             jSONObject.put("utdid", DeviceInfo.deviceId);
-            jSONObject.put("sdkVersion", TextUtils.isEmpty(uccParams.sdkVersion) ? KernelContext.getSdkVersion() : uccParams.sdkVersion);
+            jSONObject.put("sdkVersion", StringUtils.isEmpty(uccParams.sdkVersion) ? KernelContext.getSdkVersion() : uccParams.sdkVersion);
             jSONObject.put("deviceName", Build.MODEL);
             jSONObject.put("locale", DeviceInfo.getLocale(KernelContext.applicationContext));
         } catch (Throwable unused) {

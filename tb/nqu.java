@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class nqu extends nqr<MuiseActivateCellBean, b> {
         super.a(jSONObject, (JSONObject) muiseActivateCellBean, (MuiseActivateCellBean) bVar);
         MuiseBean muiseBean = new MuiseBean();
         muiseBean.type = jSONObject.getString("tItemType");
-        if (TextUtils.isEmpty(muiseBean.type)) {
+        if (StringUtils.isEmpty(muiseBean.type)) {
             muiseBean.type = jSONObject.getString("type");
         }
         muiseBean.model = jSONObject;

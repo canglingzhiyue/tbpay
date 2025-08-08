@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 import android.net.NetworkInfo;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.logging.ContextInfo;
 import com.alipay.mobile.common.logging.api.LogCategory;
@@ -281,7 +281,7 @@ public class LogStrategyManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1b57da44", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (logStrategyInfo = this.strategyDataMap.get(str)) == null) {
+        if (StringUtils.isEmpty(str) || (logStrategyInfo = this.strategyDataMap.get(str)) == null) {
             return false;
         }
         return logStrategyInfo.isEncrypt;
@@ -384,7 +384,7 @@ public class LogStrategyManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1c349016", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !this.intervalEventMap.containsKey(str2)) {
+        if (StringUtils.isEmpty(str) || !this.intervalEventMap.containsKey(str2)) {
             return true;
         }
         Long l = this.uploadTimeMap.get(str);
@@ -499,7 +499,7 @@ public class LogStrategyManager {
             java.lang.String r1 = "updateSize_"
             java.lang.String r6 = r1.concat(r6)
             java.lang.String r6 = r8.getContextParam(r6)
-            boolean r8 = android.text.TextUtils.isEmpty(r6)
+            boolean r8 = android.text.StringUtils.isEmpty(r6)
             if (r8 != 0) goto Lc5
             int r0 = java.lang.Integer.parseInt(r6)     // Catch: java.lang.Throwable -> Lbb
             goto Lc5
@@ -522,7 +522,7 @@ public class LogStrategyManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("989e0b22", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         readAndParseStrategy();
@@ -538,7 +538,7 @@ public class LogStrategyManager {
         if (ipChange instanceof IpChange) {
             return (LogStrategyInfo) ipChange.ipc$dispatch("a5ff832a", new Object[]{this, str});
         }
-        if (this.strategyDataMap != null && !TextUtils.isEmpty(str)) {
+        if (this.strategyDataMap != null && !StringUtils.isEmpty(str)) {
             return this.strategyDataMap.get(str);
         }
         return null;
@@ -673,7 +673,7 @@ public class LogStrategyManager {
             }
         }
         try {
-            if (TextUtils.isEmpty(LoggerFactory.getLogContext().getLogHost())) {
+            if (StringUtils.isEmpty(LoggerFactory.getLogContext().getLogHost())) {
                 LoggerFactory.getTraceLogger().error(TAG, "syncRequestLogConfig: host is none");
                 return;
             }
@@ -693,7 +693,7 @@ public class LogStrategyManager {
             String responseContent = httpClient.getResponseContent();
             DataflowModel.obtain(DataflowID.MDAP_LOG, str2, httpClient.getRequestLength(), httpClient.getResponseLength(), "strategy").report();
             httpClient.closeStreamForNextExecute();
-            if (responseCode == 200 && !TextUtils.isEmpty(responseContent)) {
+            if (responseCode == 200 && !StringUtils.isEmpty(responseContent)) {
                 syncLogConfig(responseContent);
                 return;
             }
@@ -787,7 +787,7 @@ public class LogStrategyManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ade35be6", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             Intent intent = new Intent();
             intent.setClassName(this.context, str);
@@ -812,7 +812,7 @@ public class LogStrategyManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e8253056", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             try {
                 for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : ((ActivityManager) this.context.getSystemService("activity")).getRunningAppProcesses()) {
@@ -847,7 +847,7 @@ public class LogStrategyManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9faab36c", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             HashMap hashMap = new HashMap();
             for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : ((ActivityManager) this.context.getSystemService("activity")).getRunningAppProcesses()) {
                 hashMap.put(runningAppProcessInfo.processName, runningAppProcessInfo.processName);
@@ -901,7 +901,7 @@ public class LogStrategyManager {
             return;
         }
         readAndParseStrategy();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.context.getSharedPreferences(SP_NAME_LOGSTRATEGY_CONFIG, 4).edit().putString(KEY_STRATEG_CONFIG_CONTENT, str).apply();

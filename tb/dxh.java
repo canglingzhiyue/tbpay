@@ -4,7 +4,7 @@ import android.text.DynamicLayout;
 import android.text.Layout;
 import android.text.SpannableString;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -101,7 +101,7 @@ public class dxh extends fuf {
             if (jSONObject != null) {
                 if ("image".equals(jSONObject.getString("type"))) {
                     String string = jSONObject.getString("imageUrl");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         str = str + string;
                         a a2 = dxi.a(jSONObject.getJSONObject("style"), str, string, dinamicXEngine);
                         if (a2 != null) {
@@ -110,7 +110,7 @@ public class dxh extends fuf {
                     }
                 } else {
                     String string2 = jSONObject.getString("text");
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         str = str + string2;
                         a a3 = dxj.a(jSONObject.getJSONObject("style"), str, string2, dinamicXEngine);
                         if (a3 != null) {

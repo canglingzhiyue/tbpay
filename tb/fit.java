@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -165,7 +165,7 @@ public class fit {
             return ((Boolean) ipChange.ipc$dispatch("438fb72e", new Object[]{this, mainMediaInfo})).booleanValue();
         }
         MainMediaInfo mainMediaInfo2 = this.j;
-        if (mainMediaInfo2 == null || mainMediaInfo == null || mainMediaInfo2.data == null || mainMediaInfo.data == null || TextUtils.equals(this.j.data.videoId, mainMediaInfo.data.videoId) || !this.f27982a.h().b().d()) {
+        if (mainMediaInfo2 == null || mainMediaInfo == null || mainMediaInfo2.data == null || mainMediaInfo.data == null || StringUtils.equals(this.j.data.videoId, mainMediaInfo.data.videoId) || !this.f27982a.h().b().d()) {
             return false;
         }
         fjp.a(fjp.SCENE_MEDIA_PLAYER, fjp.ERROR_CODE_PLAYER_MEDIA_INCONSISTENT, "videoid不一致，old ：" + this.j.data.videoId + ", new: " + mainMediaInfo.data.videoId, (Map<String, String>) null);

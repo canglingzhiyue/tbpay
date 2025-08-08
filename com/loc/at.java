@@ -128,7 +128,7 @@ public final class at {
             if (r2 >= r1) goto L36
             r4 = r7[r2]     // Catch: java.lang.Throwable -> L4a
             java.lang.String r4 = r4.trim()     // Catch: java.lang.Throwable -> L4a
-            boolean r5 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L4a
+            boolean r5 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L4a
             if (r5 != 0) goto L2f
             java.lang.String r5 = "at "
             boolean r5 = r4.startsWith(r5)     // Catch: java.lang.Throwable -> L4a

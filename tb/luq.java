@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Canvas;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
@@ -204,7 +204,7 @@ public class luq {
         if (ipChange instanceof IpChange) {
             return (GlobalThemeConfig) ipChange.ipc$dispatch("6f01aa0f", new Object[]{this, globalThemeConfig});
         }
-        if (!n.n().w() || !TextUtils.equals(globalThemeConfig.separatorImageUrl, "https://gw.alicdn.com/imgextra/i2/O1CN01gGJZH91CMGxw2F5Ru_!!6000000000066-0-tps-1125-180.jpg") || !TextUtils.equals(globalThemeConfig.themeData.skinPic, "https://gw.alicdn.com/imgextra/i4/O1CN018T87Vf1J6syBsDMJA_!!6000000000980-0-tps-1125-1125.jpg")) {
+        if (!n.n().w() || !StringUtils.equals(globalThemeConfig.separatorImageUrl, "https://gw.alicdn.com/imgextra/i2/O1CN01gGJZH91CMGxw2F5Ru_!!6000000000066-0-tps-1125-180.jpg") || !StringUtils.equals(globalThemeConfig.themeData.skinPic, "https://gw.alicdn.com/imgextra/i4/O1CN018T87Vf1J6syBsDMJA_!!6000000000980-0-tps-1125-1125.jpg")) {
             return globalThemeConfig;
         }
         ldf.d("HostGlobalThemeHandler", "discardEmptyTheme");

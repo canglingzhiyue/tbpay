@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.datamodel.cache.db.b;
@@ -341,7 +341,7 @@ public class joi {
             if (ipChange instanceof IpChange) {
                 return (joi) ipChange.ipc$dispatch("f0681da", new Object[]{this});
             }
-            if (this.f29658a == null || TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c)) {
+            if (this.f29658a == null || StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c)) {
                 throw new IllegalArgumentException();
             }
             return new joi(this);

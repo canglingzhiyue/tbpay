@@ -1,6 +1,6 @@
 package com.taobao.android;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import java.util.Arrays;
@@ -40,7 +40,7 @@ public class AliConfigImp implements AliConfigInterface {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{this, str, str2, str3});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             config = this.b.getCustomConfig(str, str3);
         } else {
             config = this.b.getConfig(str, str2, str3);

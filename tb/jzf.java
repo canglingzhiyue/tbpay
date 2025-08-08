@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -117,7 +117,7 @@ public class jzf extends ito implements a.InterfaceC0626a, d.a, h, itm {
         } else if (weexBean == null) {
             c().b().b("WeexModWidget", "bean is null");
         } else {
-            boolean z = this.c != null && !TextUtils.equals(weexBean.type, this.c.type);
+            boolean z = this.c != null && !StringUtils.equals(weexBean.type, this.c.type);
             this.c = weexBean;
             a aVar = this.f29878a;
             if (aVar != null && z) {

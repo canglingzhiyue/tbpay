@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -113,7 +113,7 @@ public class ntd implements a {
             int intValue = jSONObject.getIntValue("type");
             String string = jSONObject.getString("tag");
             String string2 = jSONObject.getString("url");
-            if (TextUtils.isEmpty(string) || this.d.containsKey(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || this.d.containsKey(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             if (intValue == 1) {
@@ -211,7 +211,7 @@ public class ntd implements a {
             return;
         }
         String string = jSONObject.getString("tag");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         iuk remove = this.d.remove(string);

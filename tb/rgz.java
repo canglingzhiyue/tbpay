@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.weex.appfram.navigator.a;
@@ -103,20 +103,20 @@ public class rgz implements a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("68dc3a2f", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
             optString = new JSONObject(str).optString("url", "");
         } catch (Exception unused) {
         }
-        if (TextUtils.isEmpty(optString)) {
+        if (StringUtils.isEmpty(optString)) {
             return false;
         }
         Uri parse = Uri.parse(optString);
         String scheme = parse.getScheme();
         Uri.Builder buildUpon = parse.buildUpon();
-        if (!TextUtils.equals(scheme, "http") && !TextUtils.equals(scheme, "https")) {
+        if (!StringUtils.equals(scheme, "http") && !StringUtils.equals(scheme, "https")) {
             buildUpon.scheme("http");
         }
         return Nav.from(this.f33151a).toUri(buildUpon.toString());

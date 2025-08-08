@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -47,10 +47,10 @@ public class oae {
         String[] split = (fragment == null || !fragment.contains("?")) ? null : fragment.split("\\?");
         if (split != null && split.length > 0) {
             fragment = split[0];
-            query = !TextUtils.isEmpty(query) ? query + "&" + split[1] : split[1];
+            query = !StringUtils.isEmpty(query) ? query + "&" + split[1] : split[1];
         }
         if (fragment != null && fragment.contains("&") && (indexOf = fragment.indexOf("&")) > 0) {
-            if (!TextUtils.isEmpty(query)) {
+            if (!StringUtils.isEmpty(query)) {
                 String str = query + "&" + fragment.substring(indexOf + 1);
             } else {
                 fragment.substring(indexOf + 1);
@@ -76,7 +76,7 @@ public class oae {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("61b6362e", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

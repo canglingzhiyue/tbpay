@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -131,14 +131,14 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a481a3e", new Object[]{this, str, gjgVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             TrackUtils.a.a(TrackUtils.ErrorType.SET_SKIN_PARAMS_ERROR, "no params");
             gjgVar.a(str, "NO_PARAMS", "no params");
         } else {
             try {
                 SkinConfig skinConfig = (SkinConfig) JSON.parseObject(str, SkinConfig.class);
                 if (!skinConfig.isValidConfig()) {
-                    if (TextUtils.isEmpty(skinConfig.skinCode) && TextUtils.isEmpty(skinConfig.skinUrl)) {
+                    if (StringUtils.isEmpty(skinConfig.skinCode) && StringUtils.isEmpty(skinConfig.skinUrl)) {
                         gje.a().g();
                         gjgVar.a(str);
                         d();
@@ -254,7 +254,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3f30e27f", new Object[]{this, str, gjgVar});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             gjgVar.a(str, "NO_PARAMS", "no params");
             TrackUtils.a.a(TrackUtils.ErrorType.DOWNLOAD_SKIN_PARAMS_ERROR, "no params");
         } else {
@@ -291,7 +291,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("91186ac8", new Object[]{this, str, str2, new Boolean(z)});
         }
         String b = gje.a().b(str, str2);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             Log.e("SkinManager", "getText:" + b);
             return b;
         }
@@ -299,7 +299,7 @@ public class b {
         if (z && com.taobao.android.festival.utils.d.b(c)) {
             c = ImageStrategyDecider.decideUrl(c, 960, 960, null);
         }
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return "";
         }
         if (this.b) {
@@ -315,12 +315,12 @@ public class b {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String d = gje.a().d(RemoteMessageConst.Notification.SOUND, str);
-        return !TextUtils.isEmpty(d) ? d : "";
+        return !StringUtils.isEmpty(d) ? d : "";
     }
 
     public boolean b(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(c(str, str2));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(c(str, str2));
     }
 
     public boolean b(String str) {
@@ -339,7 +339,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("7d253be3", new Object[]{this, str, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i;
         }
         try {

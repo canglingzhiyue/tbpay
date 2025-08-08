@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.ultronengine;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.ultron.engine.template.b;
 import com.alibaba.android.ultron.vfw.instance.UltronError;
@@ -161,10 +161,10 @@ public class h {
                 com.taobao.android.detail.datasdk.model.datamodel.node.c cVar = new com.taobao.android.detail.datasdk.model.datamodel.node.c(bVar);
                 String q = cVar.q();
                 String i = cVar.i();
-                if (TextUtils.isEmpty(q)) {
+                if (StringUtils.isEmpty(q)) {
                     q = "";
                 }
-                if (TextUtils.isEmpty(i)) {
+                if (StringUtils.isEmpty(i)) {
                     i = "";
                 }
                 hashMap.put("sellerType", q);

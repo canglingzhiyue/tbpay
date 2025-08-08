@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.utils.i;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ItemNode;
@@ -94,10 +94,10 @@ public class fgu {
             return 1.0f;
         }
         String str = itemNode.containerDimension;
-        if (TextUtils.isEmpty(str) && itemNode.videos != null && itemNode.videos.size() > 0) {
+        if (StringUtils.isEmpty(str) && itemNode.videos != null && itemNode.videos.size() > 0) {
             str = itemNode.videos.get(0).spatialVideoDimension;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 1.0f;
         }
         if (b.VALUE_THREE_FOUR_RATIO.equals(str)) {

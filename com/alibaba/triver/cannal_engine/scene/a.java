@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -229,7 +229,7 @@ public class a extends DXWidgetNode {
             String string = getDXRuntimeContext().e().getString("id");
             view.setTag(R.id.triver_widget_viewId, string);
             TRWidgetInstance tRWidgetInstance = null;
-            if (!TextUtils.isEmpty(string) && (weakReference = h.a().a(this.g).get(string)) != null) {
+            if (!StringUtils.isEmpty(string) && (weakReference = h.a().a(this.g).get(string)) != null) {
                 tRWidgetInstance = weakReference.get();
             }
             if (tRWidgetInstance != null) {
@@ -275,7 +275,7 @@ public class a extends DXWidgetNode {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("9501e36a", new Object[]{this, view});
-                } else if (!(frameLayout.getTag(R.id.triver_widget_viewId) instanceof String) || !TextUtils.equals(str, (String) frameLayout.getTag(R.id.triver_widget_viewId)) || (frameLayout2 = frameLayout) == null) {
+                } else if (!(frameLayout.getTag(R.id.triver_widget_viewId) instanceof String) || !StringUtils.equals(str, (String) frameLayout.getTag(R.id.triver_widget_viewId)) || (frameLayout2 = frameLayout) == null) {
                 } else {
                     frameLayout2.removeAllViews();
                     frameLayout.addView(view);
@@ -302,7 +302,7 @@ public class a extends DXWidgetNode {
                         }
                     }
                 });
-                if (TextUtils.equals(aVar.f3640a, TRWidgetConstant.CL_TRIVER_INITING.f3640a)) {
+                if (StringUtils.equals(aVar.f3640a, TRWidgetConstant.CL_TRIVER_INITING.f3640a)) {
                     return;
                 }
                 RVLogger.e("DXTRWidgetViewWidgetNode", "renderError" + aVar.f3640a + aVar.b);
@@ -341,9 +341,9 @@ public class a extends DXWidgetNode {
         } else {
             this.r = new TUrlImageView(context);
             this.r.setBackgroundColor(Color.parseColor("#F5F5F5"));
-            if (TextUtils.equals(aVar.f3640a, TRWidgetConstant.WIDGET_OFFLINE_ERROR_CODE)) {
+            if (StringUtils.equals(aVar.f3640a, TRWidgetConstant.WIDGET_OFFLINE_ERROR_CODE)) {
                 str = this.d;
-            } else if (TextUtils.equals(aVar.f3640a, TRWidgetConstant.CL_TRIVER_INITING.f3640a)) {
+            } else if (StringUtils.equals(aVar.f3640a, TRWidgetConstant.CL_TRIVER_INITING.f3640a)) {
                 str = this.k;
             } else {
                 String str2 = this.b;
@@ -362,7 +362,7 @@ public class a extends DXWidgetNode {
                 });
                 str = str2;
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.r.setSkipAutoSize(true);
                 this.r.setImageUrl(str);
             }

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -315,13 +315,13 @@ public class e extends com.taobao.android.live.plugin.atype.flexalocal.good.base
             }
             int i = ((c) this.f13751a).i();
             List<VideoInfo.ExtraGoodsTabItem> G = this.d.G();
-            if (G == null || G.size() <= i || (extraGoodsTabItem = G.get(i)) == null || extraGoodsTabItem.showTopBarType == null || TextUtils.equals("nativeDX", extraGoodsTabItem.type)) {
+            if (G == null || G.size() <= i || (extraGoodsTabItem = G.get(i)) == null || extraGoodsTabItem.showTopBarType == null || StringUtils.equals("nativeDX", extraGoodsTabItem.type)) {
                 return;
             }
             Iterator<Object> it = jSONArray.iterator();
             while (it.hasNext()) {
                 String string = ((JSONObject) it.next()).getString("type");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     it.remove();
                 } else if (!extraGoodsTabItem.showTopBarType.contains(string)) {
                     it.remove();

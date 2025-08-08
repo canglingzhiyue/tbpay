@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -108,7 +108,7 @@ public class hta extends f {
             ipChange.ipc$dispatch("f9db7b67", new Object[]{this, dXEvent, objArr, dXRuntimeContext});
         } else if (objArr == null) {
         } else {
-            if ((objArr.length == 0) || objArr[0] == null || TextUtils.isEmpty(String.valueOf(objArr[0]))) {
+            if ((objArr.length == 0) || objArr[0] == null || StringUtils.isEmpty(String.valueOf(objArr[0]))) {
                 return;
             }
             if (objArr.length == 1 || objArr[objArr.length - 1] == null) {

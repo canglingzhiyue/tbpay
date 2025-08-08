@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ut.monitor.DataReceiveMonitor;
@@ -171,12 +171,12 @@ public class mmf extends mmc<mki, mkj> {
         String a5 = mkjVar.a("sensorType");
         mly.a c = a3.c();
         c.a(DataReceiveMonitor.CB_LISTENER, mkjVar.a(DataReceiveMonitor.CB_LISTENER)).a("delay", mkjVar.a("delayUs", -1)).a("maxReportLatencyUs", mkjVar.a("maxReportLatencyUs", 0));
-        if (TextUtils.isEmpty(a4)) {
+        if (StringUtils.isEmpty(a4)) {
             c.a("sensorType", a5);
         } else if (!a4.contains(a5)) {
             c.a("sensorType", a4 + "|" + a5);
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             c.a("handler", a2);
         }
         a(a3, mkjVar.a("startTime", SystemClock.uptimeMillis()));

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.ProcessInfo;
 import com.alipay.mobile.framework.MpaasClassInfo;
@@ -70,7 +70,7 @@ public class Judge {
                 if (judgeSP != null) {
                     try {
                         String string = judgeSP.getString(Constants.KEY_JUDGE_NO_WRITE_STARTUP_TIME, "-1");
-                        if (!TextUtils.isEmpty(string) && !"-1".equals(string)) {
+                        if (!StringUtils.isEmpty(string) && !"-1".equals(string)) {
                             j2 = Long.valueOf(string).longValue();
                         }
                     } catch (Throwable unused) {
@@ -181,12 +181,12 @@ public class Judge {
             return null;
         }
         String string = judgeSP.getString(Constants.KEY_LAUNCH_TIME_LIST, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
         for (String str : string.split("-")) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     j = Long.parseLong(str);
                 } catch (Throwable unused) {

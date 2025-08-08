@@ -1,6 +1,6 @@
 package com.taobao.tao.infoflow.multitab;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.response.IContainerDataModel;
@@ -68,7 +68,7 @@ public class c implements suf.a {
             this.f20635a = 2;
             g.a("MultiTabRequestService", "checkAndRefreshTab 当前onStop wait onStart ");
         } else {
-            boolean equals = TextUtils.equals("base", this.c.getString("dataChangeType"));
+            boolean equals = StringUtils.equals("base", this.c.getString("dataChangeType"));
             g.a("MultiTabRequestService", "onProcess " + equals);
             if (equals) {
                 this.d.a(this.e);

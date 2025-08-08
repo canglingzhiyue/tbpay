@@ -2,7 +2,7 @@ package com.etao.feimagesearch.pipline.node;
 
 import android.os.Environment;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -93,7 +93,7 @@ public final class e extends crj {
                     objectRef.element = readLine;
                     if (readLine == 0) {
                         break;
-                    } else if (!TextUtils.isEmpty((String) objectRef.element)) {
+                    } else if (!StringUtils.isEmpty((String) objectRef.element)) {
                         sb2.append((String) objectRef.element);
                     }
                 }

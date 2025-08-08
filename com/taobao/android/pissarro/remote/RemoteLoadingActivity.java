@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -398,7 +398,7 @@ public class RemoteLoadingActivity extends BaseFeatureDownloadActivity {
             } else if (!this.i.isToastEnable()) {
                 return;
             } else {
-                if (!TextUtils.isEmpty(this.i.getFailToastText())) {
+                if (!StringUtils.isEmpty(this.i.getFailToastText())) {
                     Toast.makeText(getApplicationContext(), this.i.getFailToastText(), 1).show();
                     return;
                 } else {
@@ -461,7 +461,7 @@ public class RemoteLoadingActivity extends BaseFeatureDownloadActivity {
                     overridePendingTransition(R.anim.pissarro_fragment_in_bottom, R.anim.pissarro_fragment_out_bottom);
                 }
             }
-            if (this.i.isToastEnable() && !TextUtils.isEmpty(this.i.getSuccessToastText())) {
+            if (this.i.isToastEnable() && !StringUtils.isEmpty(this.i.getSuccessToastText())) {
                 Toast.makeText(getApplicationContext(), this.i.getSuccessToastText(), 0).show();
             }
             finish();
@@ -517,7 +517,7 @@ public class RemoteLoadingActivity extends BaseFeatureDownloadActivity {
             return;
         }
         TaopaiLoadConfig taopaiLoadConfig = this.i;
-        if (taopaiLoadConfig != null && !TextUtils.isEmpty(taopaiLoadConfig.getBizScene())) {
+        if (taopaiLoadConfig != null && !StringUtils.isEmpty(taopaiLoadConfig.getBizScene())) {
             this.j = this.i.getBizScene();
             Log.e("TaopaiCheck-Download", "bizScene from Config = " + this.j);
             return;

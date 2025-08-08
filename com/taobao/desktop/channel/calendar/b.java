@@ -8,7 +8,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.CalendarContract;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -84,10 +84,10 @@ public class b {
             ipChange.ipc$dispatch("9eca0fff", new Object[]{context});
             return;
         }
-        if (TextUtils.isEmpty(c.a(context))) {
+        if (StringUtils.isEmpty(c.a(context))) {
             b = Uri.parse("content://com.huawei.calendar/events");
         }
-        if (!TextUtils.isEmpty(d.a(context))) {
+        if (!StringUtils.isEmpty(d.a(context))) {
             return;
         }
         f16941a = Uri.parse("content://com.coloros.calendar/calendars");
@@ -187,7 +187,7 @@ public class b {
             return (Pair) ipChange.ipc$dispatch("6c13a663", new Object[]{context, str, new Integer(i), new Long(j), new Long(j2)});
         }
         Cursor cursor = null;
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return Pair.create(-1, null);
         }
         try {
@@ -235,7 +235,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("30b03eed", new Object[]{context, str, new Integer(i)});
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return null;
         }
         Cursor query = context.getContentResolver().query(b, null, "calendar_id=" + i + " and title like '%" + str + "%' ", null, null);
@@ -308,7 +308,7 @@ public class b {
         if (context == null || calendarInsertData == null) {
             return PublishError.CODE_KFC_ERROR;
         }
-        if (TextUtils.isEmpty(calendarInsertData.getTitle()) || TextUtils.isEmpty(calendarInsertData.getContent()) || calendarInsertData.getReminderTime() < 0 || calendarInsertData.getKeepTime() < 0) {
+        if (StringUtils.isEmpty(calendarInsertData.getTitle()) || StringUtils.isEmpty(calendarInsertData.getContent()) || calendarInsertData.getReminderTime() < 0 || calendarInsertData.getKeepTime() < 0) {
             return "PARAM_INVALID";
         }
         if (!a(context)) {
@@ -374,18 +374,18 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4cda2b84", new Object[]{context, contentValues, str, str2, str3, str4});
-        } else if (!TextUtils.isEmpty(c.a(context))) {
+        } else if (!StringUtils.isEmpty(c.a(context))) {
         } else {
             contentValues.put("hwext_service_description", str3);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "Shopping";
             }
             contentValues.put("hwext_service_type", str2);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "tbopen://m.taobao.com/tbopen/index.html?action=&module=&bootImage=&h5Url=&bc_fl_src";
             }
             contentValues.put("hwext_service_cp_bz_uri", str);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 contentValues.put("hwext_alert_type", str4);
             }
             khu.a("CalenderHuaweiManager.serviceEnable true");
@@ -396,7 +396,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f789ce2b", new Object[]{context, contentValues, calendarInsertData});
-        } else if (!TextUtils.isEmpty(d.a(context))) {
+        } else if (!StringUtils.isEmpty(d.a(context))) {
         } else {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("id", (Object) "");
@@ -422,7 +422,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4a874f3c", new Object[]{context, new Long(j6), str, str2, new Long(j2), new Long(j3), new Long(j4), str3, str4, new Long(j5)});
         }
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || j2 < 0 || j3 < 0) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || j2 < 0 || j3 < 0) {
             return "PARAM_INVALID";
         }
         if (!a(context)) {
@@ -499,7 +499,7 @@ public class b {
             return "PARAM_INVALID";
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "PARAM_INVALID";
             }
             if (!a(context)) {
@@ -540,7 +540,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("c5a36293", new Object[]{context, new Integer(i), str});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("rrule", "");
                 ContentResolver contentResolver = context.getContentResolver();
@@ -590,7 +590,7 @@ public class b {
             sb.append(str);
             if ("WEEKLY".equals(str)) {
                 String a2 = a(str2);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return "PARAM_ERR_repeatWeekList";
                 }
                 sb.append(";WKST=SU;BYDAY=");
@@ -610,7 +610,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -659,7 +659,7 @@ public class b {
         }
         try {
             String str2 = (String) khw.a(f).b(a.SP_CALENDER_QUERY_LOCAL, "");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return null;
             }
             CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) JSONObject.parseObject(str2, new TypeReference<CopyOnWriteArrayList<JSONObject>>() { // from class: com.taobao.desktop.channel.calendar.b.1
@@ -690,7 +690,7 @@ public class b {
         try {
             String str3 = (String) khw.a(f).b(a.SP_CALENDER_QUERY_LOCAL, "");
             CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 copyOnWriteArrayList = (CopyOnWriteArrayList) JSONObject.parseObject(str3, new TypeReference<CopyOnWriteArrayList<JSONObject>>() { // from class: com.taobao.desktop.channel.calendar.b.2
                 }, new Feature[0]);
             }
@@ -713,7 +713,7 @@ public class b {
         }
         try {
             String str2 = (String) khw.a(f).b(a.SP_CALENDER_QUERY_LOCAL, "");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) JSONObject.parseObject(str2, new TypeReference<CopyOnWriteArrayList<JSONObject>>() { // from class: com.taobao.desktop.channel.calendar.b.3

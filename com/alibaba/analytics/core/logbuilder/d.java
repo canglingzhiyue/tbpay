@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.logbuilder;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collections;
@@ -47,7 +47,7 @@ public class d implements f.a {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         String b = b(str);
-        return !TextUtils.isEmpty(b) ? b : "3";
+        return !StringUtils.isEmpty(b) ? b : "3";
     }
 
     public String b(String str) {
@@ -63,7 +63,7 @@ public class d implements f.a {
             return;
         }
         this.b.clear();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         try {
@@ -72,7 +72,7 @@ public class d implements f.a {
             while (keys.hasNext()) {
                 String next = keys.next();
                 String optString = jSONObject.optString(next);
-                if (!TextUtils.isEmpty(optString) && !TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString) && !StringUtils.isEmpty(optString)) {
                     this.b.put(next, optString);
                 }
             }

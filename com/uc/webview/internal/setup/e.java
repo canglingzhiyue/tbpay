@@ -1,7 +1,7 @@
 package com.uc.webview.internal.setup;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import com.uc.webview.base.ErrorCode;
 import com.uc.webview.base.GlobalSettings;
@@ -484,7 +484,7 @@ public class e implements U4Engine.Initializer {
                 f.c = false;
                 m.b = true;
             }
-            if (f.d == null && f.f == null && TextUtils.isEmpty(f.g) && (!f.c || !PathUtils.getFileCoreLib(new File(f.f23973a.getApplicationInfo().nativeLibraryDir)).exists())) {
+            if (f.d == null && f.f == null && StringUtils.isEmpty(f.g) && (!f.c || !PathUtils.getFileCoreLib(new File(f.f23973a.getApplicationInfo().nativeLibraryDir)).exists())) {
                 ErrorCode.NEED_AT_LEAST_ONE_LIB_CONFIG.report();
             }
             if (f.d != null && !f.d.exists()) {
@@ -493,7 +493,7 @@ public class e implements U4Engine.Initializer {
             if (f.f != null && !com.uc.webview.base.io.d.a(f.f, f.c)) {
                 ErrorCode.INVALID_DECOMPRESSED_DIR.report();
             }
-            if (!TextUtils.isEmpty(f.g)) {
+            if (!StringUtils.isEmpty(f.g)) {
                 f.h = IDownloadHandle.Instance.create();
                 if (f.h == null) {
                     ErrorCode.UPDATE_FEATURE_DISABLED.report();

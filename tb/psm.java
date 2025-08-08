@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.taolive.room.utils.d;
@@ -126,7 +126,7 @@ public class psm {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4c806420", new Object[0]);
         }
-        if (TextUtils.isEmpty(f32865a)) {
+        if (StringUtils.isEmpty(f32865a)) {
             f32865a = OrangeConfig.getInstance().getConfig("tblive", "liveShareDescriptionImage", "https://gw.alicdn.com/imgextra/i4/O1CN01znUC2I26JdBCZ2PIh_!!6000000007641-2-tps-384-88.png");
         }
         return f32865a;

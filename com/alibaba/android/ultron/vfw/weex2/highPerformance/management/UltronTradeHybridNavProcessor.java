@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.vfw.weex2.highPerformance.management;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.widget.UltronTradeHybridActivity;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.jump.JumpAbility;
@@ -73,7 +73,7 @@ public class UltronTradeHybridNavProcessor implements com.taobao.android.nav.e {
 
     private boolean enableReuseTradeHybridContainer(com.taobao.android.nav.d dVar, String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dbd3c5b", new Object[]{this, dVar, str, str2})).booleanValue() : (dVar.a() instanceof UltronTradeHybridActivity) && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && spk.a(iro.ORANGE_KEY_HYBRID_CONTAINER, "enableReuseTradeHybridContainer", true) && str.contains("reuseTradeHybridContainer=true") && !str.contains("pageType=pop");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dbd3c5b", new Object[]{this, dVar, str, str2})).booleanValue() : (dVar.a() instanceof UltronTradeHybridActivity) && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && spk.a(iro.ORANGE_KEY_HYBRID_CONTAINER, "enableReuseTradeHybridContainer", true) && str.contains("reuseTradeHybridContainer=true") && !str.contains("pageType=pop");
     }
 
     private boolean interceptTMSContainer(com.taobao.android.nav.d dVar, String str, String str2) {
@@ -84,7 +84,7 @@ public class UltronTradeHybridNavProcessor implements com.taobao.android.nav.e {
         if (!iro.c()) {
             jqg.a("UltronTradeHybridNavProcessor", "interceptTMSContainer:", "switcher is off");
             return true;
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             jqg.a("UltronTradeHybridNavProcessor", "interceptTMSContainer:", "url or query is empty");
             return true;
         } else if (dVar == null || !(dVar.a() instanceof FragmentActivity)) {

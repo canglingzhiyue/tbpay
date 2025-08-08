@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -145,13 +145,13 @@ public class sid implements z, TaoLiveVideoView.b, snz, IMediaPlayer.OnErrorList
         noi.a(hashMap2, this.b.v().a());
         noi.a(hashMap, hashMap2);
         hashMap.put("spm", obw.f31903a);
-        if (TextUtils.isEmpty(bVar.f12530a.e())) {
+        if (StringUtils.isEmpty(bVar.f12530a.e())) {
             hashMap.put("taoke_accountId", bVar.f12530a.c());
         } else {
             hashMap.put("taoke_accountId", bVar.f12530a.d());
             hashMap.put("keyname", bVar.f12530a.e());
         }
-        if (j != null && !TextUtils.isEmpty(j.w)) {
+        if (j != null && !StringUtils.isEmpty(j.w)) {
             hashMap.put(b.BIZ_TYPE, j.w);
         }
         String str = sessionParams.c;

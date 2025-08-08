@@ -1,6 +1,6 @@
 package com.taobao.themis.open.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSON;
@@ -215,7 +215,7 @@ public final class TMSSendMtopBridge implements com.taobao.themis.kernel.ability
         if (sendMtopResponse != null) {
             try {
                 if (!sendMtopResponse.getSuccess()) {
-                    jSONObject.put((JSONObject) "error", (String) (TextUtils.isDigitsOnly(sendMtopResponse.getErrorCode()) ? sendMtopResponse.getErrorCode() : 3));
+                    jSONObject.put((JSONObject) "error", (String) (StringUtils.isDigitsOnly(sendMtopResponse.getErrorCode()) ? sendMtopResponse.getErrorCode() : 3));
                     jSONObject.put((JSONObject) "errorCode", sendMtopResponse.getErrorCode());
                     jSONObject.put((JSONObject) "message", sendMtopResponse.getErrorMsg());
                     jSONObject.put((JSONObject) "errorMessage", sendMtopResponse.getErrorMsg());
@@ -225,7 +225,7 @@ public final class TMSSendMtopBridge implements com.taobao.themis.kernel.ability
                     Charset forName = Charset.forName("UTF-8");
                     q.b(forName, "Charset.forName(\"UTF-8\")");
                     String str = new String(data, forName);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         jSONObject.putAll(JSON.parseObject(str));
                         jSONObject.put((JSONObject) "success", (String) Boolean.valueOf(sendMtopResponse.getSuccess()));
                     }

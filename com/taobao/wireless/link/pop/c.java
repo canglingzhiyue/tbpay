@@ -2,7 +2,7 @@ package com.taobao.wireless.link.pop;
 
 import android.content.Context;
 import android.taobao.windvane.util.i;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.device.UTDevice;
 import java.util.HashMap;
@@ -81,7 +81,7 @@ public class c {
         } catch (Exception e) {
             rkg.b("link_tag", "PopMtopRequest === isInRequestPeriod == 异常:" + e);
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String[] split = a2.split("-");

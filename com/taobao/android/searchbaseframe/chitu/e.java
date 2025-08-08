@@ -3,7 +3,7 @@ package com.taobao.android.searchbaseframe.chitu;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -183,7 +183,7 @@ public class e implements View.OnTouchListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.f)) {
+        } else if (StringUtils.isEmpty(this.f)) {
         } else {
             imp.a().a(Globals.getApplication());
             com.taobao.android.searchbaseframe.ace.a.b(this.e);

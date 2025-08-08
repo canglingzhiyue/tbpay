@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.rule.processor;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.data.Result;
 import com.taobao.tao.shop.rule.data.TBUrlRule;
@@ -27,7 +27,7 @@ public class ParameterRuleProcessor implements IRuleProcessor {
         }
         Result result = new Result();
         String query = uri.getQuery();
-        if (TextUtils.isEmpty(query)) {
+        if (StringUtils.isEmpty(query)) {
             return result;
         }
         String lowerCase = query.toLowerCase();

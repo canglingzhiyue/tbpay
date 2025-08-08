@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.security.realidentity.g4;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -213,7 +213,7 @@ public final class OpenAuthTask {
                 str2 = a(elapsedRealtime, a2, bizType, a5);
             } catch (JSONException unused) {
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 this.f.post(new b(this, 4000, "参数错误", null, null));
                 return true;
             }

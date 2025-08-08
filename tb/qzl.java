@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.response.IContainerDataModel;
@@ -49,7 +49,7 @@ public class qzl {
         while (it.hasNext()) {
             it.next();
         }
-        if (!TextUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
+        if (!StringUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
             return;
         }
         b(jSONObject, str);
@@ -73,7 +73,7 @@ public class qzl {
                     for (a aVar : qzl.a(qzl.this)) {
                         aVar.a(jSONObject, iContainerDataModel, str);
                     }
-                    if (!TextUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
+                    if (!StringUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
                         return;
                     }
                     qzl.a(qzl.this, jSONObject, iContainerDataModel, str);
@@ -86,7 +86,7 @@ public class qzl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2f943b42", new Object[]{this, aVar, str});
-        } else if (TextUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
+        } else if (StringUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
             this.b.add(aVar);
         } else {
             this.f33074a.add(aVar);
@@ -97,7 +97,7 @@ public class qzl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ad6bf743", new Object[]{this, aVar, str});
-        } else if (TextUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
+        } else if (StringUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
             this.b.remove(aVar);
         } else {
             this.f33074a.remove(aVar);

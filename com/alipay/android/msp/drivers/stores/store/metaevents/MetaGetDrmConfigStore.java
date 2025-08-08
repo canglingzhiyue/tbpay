@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.metaevents;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -33,11 +33,11 @@ public class MetaGetDrmConfigStore extends LocalEventStore {
         String string = actionParamsJson.getString("key");
         String string2 = actionParamsJson.getString("subkey");
         try {
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 JSONObject drmValueFromKey = DrmManager.getInstance(this.d).getDrmValueFromKey(string);
                 if (drmValueFromKey != null) {
                     String string3 = drmValueFromKey.getString(string2);
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         try {
                             z = DrmManager.getInstance(this.d).procGraySwitchWithRate(this.d, Integer.parseInt(string3));
                             LogUtil.record(2, "PreRendManager:needPreloadTpl", "isEnable=".concat(String.valueOf(z)));

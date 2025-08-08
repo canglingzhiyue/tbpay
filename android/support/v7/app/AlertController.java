@@ -11,7 +11,7 @@ import android.os.Message;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.KeyEvent;
@@ -610,7 +610,7 @@ public class AlertController {
             return;
         }
         this.K = (ImageView) this.r.findViewById(16908294);
-        if (!(!TextUtils.isEmpty(this.t)) || !this.Q) {
+        if (!(!StringUtils.isEmpty(this.t)) || !this.Q) {
             this.r.findViewById(R.id.title_template).setVisibility(8);
             this.K.setVisibility(8);
             viewGroup.setVisibility(8);
@@ -741,7 +741,7 @@ public class AlertController {
         this.c = (Button) viewGroup.findViewById(16908313);
         this.c.setOnClickListener(this.S);
         boolean z2 = true;
-        if (!TextUtils.isEmpty(this.C) || this.D != null) {
+        if (!StringUtils.isEmpty(this.C) || this.D != null) {
             this.c.setText(this.C);
             Drawable drawable = this.D;
             if (drawable != null) {
@@ -757,7 +757,7 @@ public class AlertController {
         }
         this.e = (Button) viewGroup.findViewById(16908314);
         this.e.setOnClickListener(this.S);
-        if (!TextUtils.isEmpty(this.E) || this.F != null) {
+        if (!StringUtils.isEmpty(this.E) || this.F != null) {
             this.e.setText(this.E);
             Drawable drawable2 = this.F;
             if (drawable2 != null) {
@@ -772,7 +772,7 @@ public class AlertController {
         }
         this.g = (Button) viewGroup.findViewById(16908315);
         this.g.setOnClickListener(this.S);
-        if (!TextUtils.isEmpty(this.G) || this.H != null) {
+        if (!StringUtils.isEmpty(this.G) || this.H != null) {
             this.g.setText(this.G);
             Drawable drawable3 = this.D;
             if (drawable3 != null) {

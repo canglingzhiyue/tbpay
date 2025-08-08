@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -235,7 +235,7 @@ public class OO00O0 {
     private static HostnameVerifier O00000Oo(String str) {
         try {
             String O000000o2 = O000000o(str);
-            if (O000000o != null && !TextUtils.isEmpty(O000000o2) && O000000o.containsKey(O000000o2)) {
+            if (O000000o != null && !StringUtils.isEmpty(O000000o2) && O000000o.containsKey(O000000o2)) {
                 return O000000o.get(O000000o2);
             }
             HostnameVerifier hostnameVerifier = new HostnameVerifier() { // from class: com.mobile.auth.OO00O0.1

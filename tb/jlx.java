@@ -2,7 +2,7 @@ package tb;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -34,12 +34,12 @@ public class jlx extends jlv {
     }
 
     public jlx(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.c = "url";
         } else {
             this.c = str;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             this.d = DEFAULT_QUERY_WHITE_LIST_KEY;
         } else {
             this.d = str2;
@@ -75,7 +75,7 @@ public class jlx extends jlv {
             return (MtopPrefetch.CompareResult) ipChange.ipc$dispatch("d373501", new Object[]{this, mtopRequest, mtopRequest2, list});
         }
         MtopPrefetch.CompareResult compareResult = new MtopPrefetch.CompareResult();
-        if (TextUtils.isEmpty(mtopRequest.getKey()) || !mtopRequest.getKey().equals(mtopRequest2.getKey())) {
+        if (StringUtils.isEmpty(mtopRequest.getKey()) || !mtopRequest.getKey().equals(mtopRequest2.getKey())) {
             compareResult.getData().put("missKey", "apiKey");
             compareResult.getData().put("missMsg", "missApi");
             compareResult.getData().put("prefetchValue", mtopRequest2.getKey());
@@ -103,12 +103,12 @@ public class jlx extends jlv {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1b20e93f", new Object[]{this, str, str2, str3, list, compareResult})).booleanValue();
         }
-        if (TextUtils.equals(str2, str3)) {
+        if (StringUtils.equals(str2, str3)) {
             return true;
         }
         String str6 = "missMsg";
         String str7 = "missKey";
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             compareResult.getData().put(str7, str);
             compareResult.getData().put(str6, "emptyValue");
             compareResult.getData().put("prefetchValue", str2);
@@ -121,12 +121,12 @@ public class jlx extends jlv {
             HashMap hashMap = new HashMap();
             HashMap hashMap2 = new HashMap();
             for (String str8 : parseObject.keySet()) {
-                if (!TextUtils.isEmpty(str8) && (list == null || !list.contains(str8))) {
+                if (!StringUtils.isEmpty(str8) && (list == null || !list.contains(str8))) {
                     hashMap.put(str8, parseObject.get(str8));
                 }
             }
             for (String str9 : parseObject2.keySet()) {
-                if (!TextUtils.isEmpty(str9) && (list == null || !list.contains(str9))) {
+                if (!StringUtils.isEmpty(str9) && (list == null || !list.contains(str9))) {
                     hashMap2.put(str9, parseObject2.get(str9));
                 }
             }

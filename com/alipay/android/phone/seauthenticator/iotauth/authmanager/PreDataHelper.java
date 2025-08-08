@@ -1,6 +1,6 @@
 package com.alipay.android.phone.seauthenticator.iotauth.authmanager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.verifyidentity.common.Constants;
 import com.alipay.mobile.verifyidentity.module.utils.DataHelper;
@@ -63,7 +63,7 @@ public class PreDataHelper {
             return ((Number) ipChange.ipc$dispatch("cbfff14c", new Object[]{this, str})).intValue();
         }
         a();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             f = b(str);
         }
         return 0;
@@ -131,7 +131,7 @@ public class PreDataHelper {
         AuthenticatorLOG.fpInfo("clientTestJsonStr: " + str);
         HashMap<String, String> hashMap = null;
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap = (HashMap) JSON.parseObject(str, HashMap.class);
             }
         } catch (Exception unused) {

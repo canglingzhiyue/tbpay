@@ -1,7 +1,7 @@
 package com.taobao.mytaobao.basement.weex;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.muc;
@@ -30,7 +30,7 @@ public class g {
         buildUpon.appendQueryParameter("isLowDevice", String.valueOf(com.taobao.mytaobao.base.c.g()));
         buildUpon.appendQueryParameter("source", "mytaobao_basement");
         String d = mxz.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             buildUpon.appendQueryParameter("wx_js_min_version", d);
         }
         String uri = buildUpon.build().toString();

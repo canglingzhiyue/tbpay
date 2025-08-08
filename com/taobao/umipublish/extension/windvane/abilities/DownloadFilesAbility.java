@@ -1,6 +1,6 @@
 package com.taobao.umipublish.extension.windvane.abilities;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.MimeTypeMap;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -161,7 +161,7 @@ public class DownloadFilesAbility extends BaseAbility {
                     downloadItem2.state = 1;
                     downloadItem2.progress = 100;
                     DownloadFilesAbility.a(DownloadFilesAbility.this);
-                    if (!TextUtils.equals(downloadItem.url, str)) {
+                    if (!StringUtils.equals(downloadItem.url, str)) {
                         return;
                     }
                     downloadItem.path = str2;
@@ -207,9 +207,9 @@ public class DownloadFilesAbility extends BaseAbility {
             if (downloadItem.state == 0) {
                 return;
             }
-            if (TextUtils.isEmpty(downloadItem.path) && !downloadItem.optional) {
+            if (StringUtils.isEmpty(downloadItem.path) && !downloadItem.optional) {
                 z = true;
-            } else if (!TextUtils.isEmpty(downloadItem.path)) {
+            } else if (!StringUtils.isEmpty(downloadItem.path)) {
                 arrayList.add(downloadItem);
             }
         }
@@ -233,8 +233,8 @@ public class DownloadFilesAbility extends BaseAbility {
         }
         String str = downloadItem.url;
         String str2 = downloadItem.md5;
-        String a2 = !TextUtils.isEmpty(downloadItem.suffix) ? downloadItem.suffix : a(str);
-        if (TextUtils.isEmpty(a2)) {
+        String a2 = !StringUtils.isEmpty(downloadItem.suffix) ? downloadItem.suffix : a(str);
+        if (StringUtils.isEmpty(a2)) {
             a2 = "";
         } else if (!a2.startsWith(".")) {
             a2 = "." + a2;
@@ -259,11 +259,11 @@ public class DownloadFilesAbility extends BaseAbility {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String fileExtensionFromUrl = MimeTypeMap.getFileExtensionFromUrl(str);
-        if (!TextUtils.isEmpty(fileExtensionFromUrl)) {
+        if (!StringUtils.isEmpty(fileExtensionFromUrl)) {
             return fileExtensionFromUrl;
         }
         int lastIndexOf = str.lastIndexOf(46);
@@ -276,13 +276,13 @@ public class DownloadFilesAbility extends BaseAbility {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
         StringBuilder sb = new StringBuilder();
-        if (TextUtils.isEmpty(str3) || !str3.contains(ado.URL_SEPARATOR)) {
+        if (StringUtils.isEmpty(str3) || !str3.contains(ado.URL_SEPARATOR)) {
             return str3;
         }
         String[] split = str3.split(ado.URL_SEPARATOR);
         sb.append(split[0]);
         sb.append(ado.URL_SEPARATOR);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             sb.append(str);
         } else {
             sb.append(str);

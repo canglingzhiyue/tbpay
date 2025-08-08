@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.b;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -168,7 +168,7 @@ public class ngl extends b {
         if (a6 == null || (j = a6.j()) == null) {
             return;
         }
-        if (!TextUtils.isEmpty(this.f31441a.e.backgroundColor)) {
+        if (!StringUtils.isEmpty(this.f31441a.e.backgroundColor)) {
             try {
                 ((View) j.getClass().getMethod("getView", new Class[0]).invoke(j, new Object[0])).setBackgroundColor(ngn.f(this.f31441a.e.backgroundColor));
             } catch (Exception unused) {

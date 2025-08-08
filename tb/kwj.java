@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -221,7 +221,7 @@ public class kwj extends x {
             return;
         }
         kwk kwkVar = this.f;
-        if (kwkVar == null || TextUtils.isEmpty(kwkVar.d)) {
+        if (kwkVar == null || StringUtils.isEmpty(kwkVar.d)) {
             return;
         }
         this.g.a(new ksn(this.f.f30351a, this.f.b), this.f.g);

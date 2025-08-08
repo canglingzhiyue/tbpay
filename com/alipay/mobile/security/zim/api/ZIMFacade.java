@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.bis.common.service.facade.gw.zim.ZimInitGwResponse;
 import com.alipay.mobile.security.bio.api.BioDetectorBuilder;
@@ -91,7 +91,7 @@ public abstract class ZIMFacade {
             str = null;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 try {
                     ApplicationInfo applicationInfo = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128);
                     if (applicationInfo != null && applicationInfo.metaData != null) {
@@ -106,7 +106,7 @@ public abstract class ZIMFacade {
                 sb.append(str);
                 BioLog.i(TAG, sb.toString());
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "online";
             }
             BioLog.i(TAG, "initEnv() : env=" + str);
@@ -251,10 +251,10 @@ public abstract class ZIMFacade {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0133, code lost:
-        if (android.text.TextUtils.isEmpty(r7) == false) goto L17;
+        if (android.text.StringUtils.isEmpty(r7) == false) goto L17;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0080, code lost:
-        if (android.text.TextUtils.isEmpty(r7) == false) goto L5;
+        if (android.text.StringUtils.isEmpty(r7) == false) goto L5;
      */
     /* JADX WARN: Removed duplicated region for block: B:24:0x0117  */
     /*

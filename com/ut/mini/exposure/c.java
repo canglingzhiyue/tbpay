@@ -1,6 +1,6 @@
 package com.ut.mini.exposure;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -27,9 +27,9 @@ public class c {
             ipChange.ipc$dispatch("3fd38d6f", new Object[]{view, str, str2, map});
         } else if (view == null) {
             a.b(null, "error,view is null");
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             a.b(null, "error,block is empty");
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             a.b(null, "error,viewId is empty");
         } else {
             HashMap hashMap = new HashMap();
@@ -48,7 +48,7 @@ public class c {
             ipChange.ipc$dispatch("120e43b7", new Object[]{view, str, str2});
         } else if (view == null) {
             a.b(null, "error,view is null");
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             a.b(null, "spmA or spmB is empty");
         } else {
             HashMap hashMap = new HashMap();
@@ -64,7 +64,7 @@ public class c {
             ipChange.ipc$dispatch("93011b77", new Object[]{view, str, str2});
         } else if (view == null) {
             a.b(null, "error,view is null");
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             a.b(null, "spmC or spmD is empty");
         } else {
             HashMap hashMap = new HashMap();

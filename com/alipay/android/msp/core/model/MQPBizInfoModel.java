@@ -1,6 +1,6 @@
 package com.alipay.android.msp.core.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 
@@ -179,7 +179,7 @@ public class MQPBizInfoModel implements Serializable {
             ipChange.ipc$dispatch("b443d89f", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.uid = str;
@@ -191,7 +191,7 @@ public class MQPBizInfoModel implements Serializable {
             ipChange.ipc$dispatch("68ee964f", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.utdid = str;
@@ -221,7 +221,7 @@ public class MQPBizInfoModel implements Serializable {
             ipChange.ipc$dispatch("c30e812", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.ext_app = str;
@@ -305,7 +305,7 @@ public class MQPBizInfoModel implements Serializable {
             ipChange.ipc$dispatch("42a76f77", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.session_id = str;
@@ -317,7 +317,7 @@ public class MQPBizInfoModel implements Serializable {
             ipChange.ipc$dispatch("8e942320", new Object[]{this, str});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         this.out_trade_no = str;

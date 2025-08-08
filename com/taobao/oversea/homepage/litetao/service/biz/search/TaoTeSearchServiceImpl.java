@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitinstall.h;
 import com.alibaba.android.split.core.splitinstall.j;
@@ -255,7 +255,7 @@ public class TaoTeSearchServiceImpl implements ITaoTeSearchService {
         } catch (Throwable unused) {
             str = "";
         }
-        return TextUtils.equals(str, b.b(Globals.getApplication()).editionCode);
+        return StringUtils.equals(str, b.b(Globals.getApplication()).editionCode);
     }
 
     private void requestSearchText() {
@@ -266,7 +266,7 @@ public class TaoTeSearchServiceImpl implements ITaoTeSearchService {
         }
         try {
             String string = getLastSubTabSearchBarData().getJSONObject("subSection").getJSONObject("searchBox").getJSONObject("item").getJSONObject("0").getJSONObject(e.KEY_SMART_CONTENT).getString("channelSrp");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a.f = string;
             }
             if (iqr.a()) {

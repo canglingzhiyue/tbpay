@@ -1,6 +1,6 @@
 package com.uc.webview.internal.stats;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.uc.webview.base.GlobalSettings;
 import com.uc.webview.base.Log;
@@ -47,7 +47,7 @@ public final class b {
             this.c = new HashMap();
             this.d = new HashMap();
             this.e = null;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     for (String str2 : str.split("\\`")) {
                         String[] split = str2.trim().split(mly.UNESCAPED_SEPARATOR);
@@ -101,7 +101,7 @@ public final class b {
         }
 
         public final void a(int i, String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.b.put(Integer.valueOf(i), str);
@@ -160,7 +160,7 @@ public final class b {
         public c(C1045b c1045b) {
             try {
                 String stringValue = GlobalSettings.getStringValue(186);
-                if (!TextUtils.isEmpty(stringValue)) {
+                if (!StringUtils.isEmpty(stringValue)) {
                     long longValue = Long.valueOf(stringValue).longValue();
                     a.c cVar = (a.c) com.uc.webview.base.timing.a.a((int) StartupTimingKeys.START);
                     if (cVar != null) {
@@ -401,7 +401,7 @@ public final class b {
                 @Override // android.webkit.ValueCallback
                 public final /* synthetic */ void onReceiveValue(String str) {
                     String str2 = str;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         b.a(valueCallback, str2);
                         return;
                     }

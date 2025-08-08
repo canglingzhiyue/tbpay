@@ -1,7 +1,7 @@
 package com.alibaba.ut.abtest.internal.bucketing;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.internal.util.g;
@@ -55,7 +55,7 @@ public class HighPriorityExperimentStorage {
         if (ipChange instanceof IpChange) {
             return (HighPriorityExperimentStorage) ipChange.ipc$dispatch("9cffa657", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !f4180a.contains(str)) {
+        if (StringUtils.isEmpty(str) || !f4180a.contains(str)) {
             throw new RuntimeException("Not support file type!");
         }
         this.b = str;
@@ -142,7 +142,7 @@ public class HighPriorityExperimentStorage {
         for (ExperimentV5 experimentV5 : this.c) {
             if (experimentV5.getCognation() == null || experimentV5.getCognation().getRoutingType() != ExperimentRoutingType.UserId) {
                 String[] a2 = com.alibaba.ut.abtest.internal.util.a.a(experimentV5.getKey());
-                if (a2 != null && !TextUtils.equals(UTABTest.COMPONENT_URI, a2[0])) {
+                if (a2 != null && !StringUtils.equals(UTABTest.COMPONENT_URI, a2[0])) {
                     com.alibaba.ut.abtest.internal.bucketing.model.b bVar = new com.alibaba.ut.abtest.internal.bucketing.model.b(experimentV5, cex.a().i().a(experimentV5, (Map<String, Object>) null, new ceq(), true));
                     if (bVar.h()) {
                         edit.putString(experimentV5.getKey(), bVar.f());
@@ -166,7 +166,7 @@ public class HighPriorityExperimentStorage {
         }
         String string = sharedPreferences.getString(d(), "");
         for (String str : string != null ? string.split("###") : new String[0]) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 editor.remove("expKey_" + str);
             }
         }
@@ -181,7 +181,7 @@ public class HighPriorityExperimentStorage {
         }
         String string = sharedPreferences.getString(e(), "");
         for (String str : string != null ? string.split("###") : new String[0]) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 editor.remove("switchName_" + str);
             }
         }
@@ -196,7 +196,7 @@ public class HighPriorityExperimentStorage {
         }
         String string = sharedPreferences.getString(f(), "");
         for (String str : string != null ? string.split("###") : new String[0]) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 editor.remove("layerId_" + str);
             }
         }
@@ -219,9 +219,9 @@ public class HighPriorityExperimentStorage {
                 sb.append(experimentV5.getKey());
                 sb.append("###");
                 for (String str : experimentV5.getSwitchSet()) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String str2 = (String) hashMap2.get(str);
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             hashMap2.put(str, experimentV5.getKey());
                         } else {
                             hashMap2.put(str, str2 + "###" + experimentV5.getKey());
@@ -232,7 +232,7 @@ public class HighPriorityExperimentStorage {
                 }
                 if (experimentV5.isRetain()) {
                     String str3 = (String) hashMap.get(Long.valueOf(experimentV5.getLayerId()));
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         hashMap.put(Long.valueOf(experimentV5.getLayerId()), experimentV5.getKey());
                     } else {
                         Long valueOf = Long.valueOf(experimentV5.getLayerId());
@@ -244,7 +244,7 @@ public class HighPriorityExperimentStorage {
             }
         }
         for (Map.Entry entry : hashMap2.entrySet()) {
-            if (!TextUtils.isEmpty((CharSequence) entry.getKey()) && !TextUtils.isEmpty((CharSequence) entry.getValue())) {
+            if (!StringUtils.isEmpty((CharSequence) entry.getKey()) && !StringUtils.isEmpty((CharSequence) entry.getValue())) {
                 editor.putString("switchName_" + ((String) entry.getKey()), (String) entry.getValue());
             }
         }

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.data.meta;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -56,7 +56,7 @@ public class Props extends Meta {
                         JSONObject jSONObject2 = (JSONObject) it3.next();
                         for (String str : jSONObject2.keySet()) {
                             String string = jSONObject2.getString(str);
-                            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(string)) {
                                 arrayList.add(new Pair<>(str, string));
                             }
                         }

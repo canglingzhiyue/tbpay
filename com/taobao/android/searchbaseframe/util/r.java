@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.util;
 
 import android.net.Uri;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -24,7 +24,7 @@ public class r {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{str, map});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             if (map != null && map.size() != 0) {
@@ -46,7 +46,7 @@ public class r {
             return (String) ipChange.ipc$dispatch("b272507e", new Object[]{str, arrayMap});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
             if (arrayMap != null && arrayMap.size() != 0) {
@@ -57,7 +57,7 @@ public class r {
                 for (int i = 0; i < size; i++) {
                     String keyAt = arrayMap.keyAt(i);
                     String valueAt = arrayMap.valueAt(i);
-                    if (!TextUtils.isEmpty(keyAt) && !TextUtils.isEmpty(valueAt)) {
+                    if (!StringUtils.isEmpty(keyAt) && !StringUtils.isEmpty(valueAt)) {
                         a2.put(keyAt, valueAt);
                     }
                 }
@@ -76,10 +76,10 @@ public class r {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "";
             }
-            if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                 Uri parse = Uri.parse(str);
                 Map<String, String> a2 = a(str);
                 a2.put(str2, str3);
@@ -101,7 +101,7 @@ public class r {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 builder = builder.appendQueryParameter(key, value);
             }
         }
@@ -115,7 +115,7 @@ public class r {
         }
         try {
             HashMap hashMap = new HashMap();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return hashMap;
             }
             Uri parse = Uri.parse(str);
@@ -135,7 +135,7 @@ public class r {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 return Uri.parse(str).getQueryParameter(str2);
             }
             return null;
@@ -151,7 +151,7 @@ public class r {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Uri.parse(str).getPath();
             }
             return null;

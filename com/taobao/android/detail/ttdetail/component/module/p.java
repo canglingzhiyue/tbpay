@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.component.module;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -213,7 +213,7 @@ public class p extends k implements com.taobao.android.detail.ttdetail.widget.dr
             return;
         }
         NormalVideoView normalVideoView = this.f10556a;
-        if (normalVideoView == null || !TextUtils.equals(normalVideoView.getVideoUrl(), NormalVideoView.getVideoUrl(this.mComponentData))) {
+        if (normalVideoView == null || !StringUtils.equals(normalVideoView.getVideoUrl(), NormalVideoView.getVideoUrl(this.mComponentData))) {
             return;
         }
         if (!this.f10556a.isBuildInCoverVisible()) {
@@ -246,11 +246,11 @@ public class p extends k implements com.taobao.android.detail.ttdetail.widget.dr
             return (String) ipChange.ipc$dispatch("9ed849c7", new Object[]{this});
         }
         String q = q();
-        if (!TextUtils.isEmpty(q)) {
+        if (!StringUtils.isEmpty(q)) {
             return q;
         }
         String s = s();
-        return TextUtils.isEmpty(s) ? t() : s;
+        return StringUtils.isEmpty(s) ? t() : s;
     }
 
     public String q() {

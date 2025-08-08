@@ -1,6 +1,6 @@
 package com.alipay.zoloz.hardware.camera.fps;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.zoloz.hardware.log.Log;
 import com.alipay.zoloz.hardware.log.MonitorLogger;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,7 +85,7 @@ public class FpsTask implements Runnable {
         if (z) {
             return;
         }
-        MonitorLogger.performance(this.f6234a, TextUtils.join("|", this.g));
+        MonitorLogger.performance(this.f6234a, StringUtils.join("|", this.g));
         this.g.clear();
     }
 

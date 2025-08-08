@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.scancode.common.object.ScancodeType;
@@ -47,7 +47,7 @@ public class oxy {
 
     public static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_anti_fraud_request", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_anti_fraud_request", ""));
     }
 
     public static boolean c() {
@@ -57,47 +57,47 @@ public class oxy {
 
     public static boolean l() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6076ef7", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_unify_history_processor", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6076ef7", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_unify_history_processor", ""));
     }
 
     public static boolean j() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5eb3ff5", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_express_history", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5eb3ff5", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_express_history", ""));
     }
 
     public static boolean k() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_unknown_code_history", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_unknown_code_history", ""));
     }
 
     public static boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue() : !TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_old_uc_webview", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue() : !StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_old_uc_webview", ""));
     }
 
     public static boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[0])).booleanValue() : !TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_omit_outer_http_code", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[0])).booleanValue() : !StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_omit_outer_http_code", ""));
     }
 
     public static boolean f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_qr_text_dialog", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enable_qr_text_dialog", ""));
     }
 
     public static boolean h() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enableScanUtLogMapParam", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "enableScanUtLogMapParam", ""));
     }
 
     public static boolean g() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "createScanMtopBuilderInNewWay", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "createScanMtopBuilderInNewWay", ""));
     }
 
     private static boolean i() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dd2874", new Object[0])).booleanValue() : TextUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "getScanTtidInNewWay", ""));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dd2874", new Object[0])).booleanValue() : StringUtils.isEmpty(OrangeConfig.getInstance().getConfig("image_search", "getScanTtidInNewWay", ""));
     }
 
     public static String a(Context context) {

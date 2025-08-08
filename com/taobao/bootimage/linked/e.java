@@ -1,7 +1,7 @@
 package com.taobao.bootimage.linked;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -99,7 +99,7 @@ public class e {
         }
         String str = "topview_trace_" + SystemClock.uptimeMillis() + "_" + UTDevice.getUtdid(com.taobao.bootimage.f.b());
         String c = c(jSONObject);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return str;
         }
         return str + "_" + c;

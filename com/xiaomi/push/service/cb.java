@@ -1,7 +1,7 @@
 package com.xiaomi.push.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.ig;
 import com.xiaomi.push.jm;
 import java.io.BufferedOutputStream;
@@ -26,7 +26,7 @@ public class cb {
 
     public static byte[] a(Context context) {
         String a2 = com.xiaomi.push.n.a(context).a("mipush", "td_key", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = com.xiaomi.push.bm.a(20);
             com.xiaomi.push.n.a(context).m2211a("mipush", "td_key", a2);
         }

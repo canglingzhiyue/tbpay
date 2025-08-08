@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import com.ali.adapt.api.AliAdaptServiceManager;
@@ -157,7 +157,7 @@ public class MUSXSearchEventModule extends MUSModule {
         jSONObject.put("client_os_version", (Object) String.valueOf(Build.VERSION.SDK_INT));
         jSONObject.put(noa.KEY_GOOD_PRICE, (Object) String.valueOf(com.taobao.search.mmd.util.j.INSTANCE.c()));
         String c = com.taobao.search.mmd.util.g.c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             jSONObject.put(noa.KEY_COUNTRY_NUM, (Object) c);
         }
         return jSONObject;
@@ -368,14 +368,14 @@ public class MUSXSearchEventModule extends MUSModule {
             com.taobao.android.searchbaseframe.util.k.a(TAG, "options为空");
         } else {
             String string = jSONObject.getString("controlName");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 com.taobao.android.searchbaseframe.util.k.a(TAG, "controlName为空");
                 return;
             }
             String string2 = jSONObject.getString("spm");
             ArrayMap<String, String> a2 = nye.a(jSONObject, "args");
             String string3 = jSONObject.getString("pageName");
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 com.taobao.search.mmd.util.e.a(string, a2, string2);
             } else {
                 com.taobao.search.mmd.util.e.a(string3, string, a2, string2);
@@ -392,7 +392,7 @@ public class MUSXSearchEventModule extends MUSModule {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     nur.a(getInstance().getUIContext(), key, value.toString());
                 }
             }
@@ -649,13 +649,13 @@ public class MUSXSearchEventModule extends MUSModule {
             return;
         }
         String string = jSONObject.getString("behavior");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         String string2 = jSONObject.getString("itemId");
         String string3 = jSONObject.getString("actionName");
         String string4 = jSONObject.getString("pageName");
-        if (TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string4)) {
             string4 = com.ut.mini.l.getInstance().getCurrentPageName();
         }
         String[] a2 = com.taobao.search.jarvis.c.a(com.taobao.android.searchbaseframe.util.a.b(jSONObject, "args"));
@@ -721,7 +721,7 @@ public class MUSXSearchEventModule extends MUSModule {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("56d6c9b8", new Object[]{this, tBLocationDTO});
-                    } else if (tBLocationDTO == null || !tBLocationDTO.isNavSuccess() || TextUtils.isEmpty(tBLocationDTO.getCityName())) {
+                    } else if (tBLocationDTO == null || !tBLocationDTO.isNavSuccess() || StringUtils.isEmpty(tBLocationDTO.getCityName())) {
                         bVar2.a(new Object[0]);
                     } else {
                         JSONObject jSONObject = new JSONObject();
@@ -749,7 +749,7 @@ public class MUSXSearchEventModule extends MUSModule {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("56d6c9b8", new Object[]{this, tBLocationDTO});
-                    } else if (tBLocationDTO == null || !tBLocationDTO.isNavSuccess() || TextUtils.isEmpty(tBLocationDTO.getCityName())) {
+                    } else if (tBLocationDTO == null || !tBLocationDTO.isNavSuccess() || StringUtils.isEmpty(tBLocationDTO.getCityName())) {
                         bVar2.a(new Object[0]);
                     } else {
                         JSONObject jSONObject2 = new JSONObject();
@@ -812,7 +812,7 @@ public class MUSXSearchEventModule extends MUSModule {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && value != null) {
+            if (!StringUtils.isEmpty(key) && value != null) {
                 D.put(key, value.toString());
             }
         }
@@ -843,7 +843,7 @@ public class MUSXSearchEventModule extends MUSModule {
             return;
         }
         String string = jSONObject.getString("query");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             bVar.a(this.mCachedPvFeature);
         }
         long a2 = com.taobao.android.searchbaseframe.util.g.a(jSONObject.getString("timeout"), 50L);
@@ -939,7 +939,7 @@ public class MUSXSearchEventModule extends MUSModule {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             JSONArray jSONArray = jSONObject.getJSONArray("data");

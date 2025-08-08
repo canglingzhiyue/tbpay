@@ -3,7 +3,7 @@ package com.ali.user.mobile.register.ui;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -194,7 +194,7 @@ public class AliUserTwoStepMobileRegisterFragment extends AliUserMobileRegisterF
         if (this.mMobileClearBtn != null) {
             this.mMobileClearBtn.setOnClickListener(this);
         }
-        if (!TextUtils.isEmpty(this.mMobileNum)) {
+        if (!StringUtils.isEmpty(this.mMobileNum)) {
             this.mMobileET.setText(this.mMobileNum);
         }
         TextView textView = (TextView) view.findViewById(R.id.aliuser_reg_func_menu);

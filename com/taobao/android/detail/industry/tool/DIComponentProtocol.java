@@ -1,6 +1,6 @@
 package com.taobao.android.detail.industry.tool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
 import com.alibaba.fastjson.JSONObject;
@@ -53,7 +53,7 @@ public class DIComponentProtocol implements Serializable {
                 if (aURARenderComponent.getContainerType().equals(DIConstants.RenderType.WEEX2.getValue())) {
                     parseWeex2Data(map);
                 }
-                if (!TextUtils.isEmpty(this.bizCode) || aURARenderComponent.data.events == null) {
+                if (!StringUtils.isEmpty(this.bizCode) || aURARenderComponent.data.events == null) {
                     return;
                 }
                 for (Map.Entry<String, List<Event>> entry : aURARenderComponent.data.events.entrySet()) {
@@ -86,10 +86,10 @@ public class DIComponentProtocol implements Serializable {
         this.bizType = (String) jSONObject.get("bizType");
         this.industryCode = (String) jSONObject.get("industryCode");
         this.bizCode = (String) jSONObject.get("bizCode");
-        if (TextUtils.isEmpty(this.bizCode) && jSONObject.getJSONObject("data") != null) {
+        if (StringUtils.isEmpty(this.bizCode) && jSONObject.getJSONObject("data") != null) {
             this.bizCode = (String) jSONObject.getJSONObject("data").get("bizCode");
         }
-        if (TextUtils.isEmpty(this.bizCode)) {
+        if (StringUtils.isEmpty(this.bizCode)) {
             this.bizCode = (String) jSONObject.get("subBizCode");
         }
         this.bizData = jSONObject;
@@ -104,10 +104,10 @@ public class DIComponentProtocol implements Serializable {
         this.bizType = (String) jSONObject.get("bizType");
         this.industryCode = (String) jSONObject.get("industryCode");
         this.bizCode = (String) jSONObject.get("bizCode");
-        if (TextUtils.isEmpty(this.bizCode)) {
+        if (StringUtils.isEmpty(this.bizCode)) {
             this.bizCode = (String) jSONObject.get("subBizCode");
         }
-        if (!TextUtils.isEmpty(this.bizCode) || !TextUtils.isEmpty(this.bizCode)) {
+        if (!StringUtils.isEmpty(this.bizCode) || !StringUtils.isEmpty(this.bizCode)) {
             return;
         }
         this.bizCode = jSONObject.getString("itemKey");

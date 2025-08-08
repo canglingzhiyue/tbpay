@@ -13,7 +13,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.ImageView;
@@ -324,7 +324,7 @@ public class BioListActivity extends BaseVerifyActivity {
             }
         }
         this.s.addAll(this.q);
-        boolean z = !TextUtils.isEmpty(this.e);
+        boolean z = !StringUtils.isEmpty(this.e);
         TitleBarAdapter titleBarAdapter = new TitleBarAdapter();
         titleBarAdapter.a(this, this.d, z);
         titleBarAdapter.f5944a = new TitleBarAdapter.OnLeftButtonClickListener() { // from class: com.alipay.mobile.verifyidentity.prodmanger.biopen.ui.BioListActivity.1
@@ -353,7 +353,7 @@ public class BioListActivity extends BaseVerifyActivity {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("56c6c68", new Object[]{this});
-                    } else if (TextUtils.isEmpty(BioListActivity.b(BioListActivity.this))) {
+                    } else if (StringUtils.isEmpty(BioListActivity.b(BioListActivity.this))) {
                     } else {
                         Bundle bundle3 = new Bundle();
                         bundle3.putString("bicListUrl", BioListActivity.b(BioListActivity.this));
@@ -514,7 +514,7 @@ public class BioListActivity extends BaseVerifyActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 BioPageData bioPageData = (BioPageData) JSON.parseObject(str, BioPageData.class);
@@ -579,7 +579,7 @@ public class BioListActivity extends BaseVerifyActivity {
                     this.A.setVisibility(0);
                     this.D.setVisibility(0);
                     this.y.setVisibility(0);
-                    if (TextUtils.isEmpty(this.h)) {
+                    if (StringUtils.isEmpty(this.h)) {
                         this.h = getResources().getString(R.string.change_sort);
                     }
                     this.A.setText(this.h);
@@ -668,10 +668,10 @@ public class BioListActivity extends BaseVerifyActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
-        } else if (this.q == null || TextUtils.isEmpty(this.o) || TextUtils.isEmpty(this.n)) {
+        } else if (this.q == null || StringUtils.isEmpty(this.o) || StringUtils.isEmpty(this.n)) {
         } else {
             String str = this.o + this.n;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.z.setVisibility(0);
                 int indexOf = str.indexOf(this.n);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
@@ -686,7 +686,7 @@ public class BioListActivity extends BaseVerifyActivity {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                        } else if (TextUtils.isEmpty(BioListActivity.j(BioListActivity.this)) || BioListActivity.this.isDoubleClick()) {
+                        } else if (StringUtils.isEmpty(BioListActivity.j(BioListActivity.this)) || BioListActivity.this.isDoubleClick()) {
                         } else {
                             Bundle bundle = new Bundle();
                             bundle.putString("bicListUrl", BioListActivity.j(BioListActivity.this));
@@ -709,14 +709,14 @@ public class BioListActivity extends BaseVerifyActivity {
             if (this.q.size() <= 0) {
                 this.E.setVisibility(8);
             } else {
-                if (TextUtils.isEmpty(this.i)) {
+                if (StringUtils.isEmpty(this.i)) {
                     if (this.l) {
                         this.i = getResources().getString(R.string.intelligent_title_open);
                     } else {
                         this.i = getResources().getString(R.string.intelligent_title_close);
                     }
                 }
-                if (TextUtils.isEmpty(this.j)) {
+                if (StringUtils.isEmpty(this.j)) {
                     if (this.l) {
                         this.j = getResources().getString(R.string.intelligent_desc_open);
                     } else {
@@ -1024,10 +1024,10 @@ public class BioListActivity extends BaseVerifyActivity {
             bioListActivity.i = map.get("intelligentTitle");
             bioListActivity.j = map.get("intelligentDesc");
         }
-        if (TextUtils.isEmpty(bioListActivity.i)) {
+        if (StringUtils.isEmpty(bioListActivity.i)) {
             bioListActivity.i = "";
         }
-        if (TextUtils.isEmpty(bioListActivity.j)) {
+        if (StringUtils.isEmpty(bioListActivity.j)) {
             bioListActivity.j = "";
         }
         if (z) {
@@ -1121,7 +1121,7 @@ public class BioListActivity extends BaseVerifyActivity {
                             } else {
                                 String message = prodManagerResult.getMessage();
                                 BioListActivity bioListActivity7 = BioListActivity.this;
-                                if (TextUtils.isEmpty(message)) {
+                                if (StringUtils.isEmpty(message)) {
                                     message = BioListActivity.this.getResources().getString(R.string.vi_system_error);
                                 }
                                 BioListActivity.a(bioListActivity7, "", message);

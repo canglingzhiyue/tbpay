@@ -2,7 +2,7 @@ package com.taobao.homepage.utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -50,7 +50,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("461bb032", new Object[]{jSONObject, jSONObject2, str});
-        } else if (jSONObject == null || jSONObject2 == null || (jSONObject3 = jSONObject.getJSONObject("args")) == null || !TextUtils.equals("1", jSONObject3.getString(tim.S_ARGS_IS_CLIENT_CACHE)) || (jSONObject4 = jSONObject2.getJSONObject(str)) == null) {
+        } else if (jSONObject == null || jSONObject2 == null || (jSONObject3 = jSONObject.getJSONObject("args")) == null || !StringUtils.equals("1", jSONObject3.getString(tim.S_ARGS_IS_CLIENT_CACHE)) || (jSONObject4 = jSONObject2.getJSONObject(str)) == null) {
         } else {
             JSONObject jSONObject5 = jSONObject4.getJSONObject("args");
             if (jSONObject5 == null) {

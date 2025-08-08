@@ -1,6 +1,6 @@
 package anet.channel.appmonitor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.statist.AlarmObject;
 import anet.channel.statist.CountObject;
 import anet.channel.statist.Dimension;
@@ -194,7 +194,7 @@ public class DefaultAppMonitor implements IAppMonitor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e5af4398", new Object[]{this, alarmObject});
-        } else if (!mAppMonitorValid || alarmObject == null || TextUtils.isEmpty(alarmObject.module) || TextUtils.isEmpty(alarmObject.modulePoint)) {
+        } else if (!mAppMonitorValid || alarmObject == null || StringUtils.isEmpty(alarmObject.module) || StringUtils.isEmpty(alarmObject.modulePoint)) {
         } else {
             if (!checkAppMonitorInit()) {
                 alarmWaitinglist.add(alarmObject);
@@ -217,7 +217,7 @@ public class DefaultAppMonitor implements IAppMonitor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6908fad8", new Object[]{this, countObject});
-        } else if (!mAppMonitorValid || countObject == null || TextUtils.isEmpty(countObject.module) || TextUtils.isEmpty(countObject.modulePoint)) {
+        } else if (!mAppMonitorValid || countObject == null || StringUtils.isEmpty(countObject.module) || StringUtils.isEmpty(countObject.modulePoint)) {
         } else {
             if (!checkAppMonitorInit()) {
                 countWaitingList.add(countObject);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -94,7 +94,7 @@ public class sgl extends WVUCWebViewClient {
         }
         super.onPageStarted(webView, str, bitmap);
         ogg.b("[webcomponent]-client", "OverrideUrlWebViewClient onPageStarted url: " + str);
-        if (TextUtils.isEmpty(str) || "about:blank".equals(str)) {
+        if (StringUtils.isEmpty(str) || "about:blank".equals(str)) {
             return;
         }
         this.f33551a.a(str);

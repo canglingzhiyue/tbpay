@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -137,7 +137,7 @@ public class orm extends orn {
             if (jSONObject != null) {
                 str = jSONObject.getString(f.PARAM_KEY_TOAST_LOADING);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "悬浮窗正在加载中，请稍等";
             }
             Toast.makeText(khm.a().b(), str, 0).show();
@@ -158,7 +158,7 @@ public class orm extends orn {
             if (jSONObject != null) {
                 str = jSONObject.getString(f.PARAM_KEY_TOAST_LOAD_TIME_OUT);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "悬浮窗未加载成功，请再试一次";
             }
             b(bVar, str);
@@ -184,7 +184,7 @@ public class orm extends orn {
             return;
         }
         String string = jSONObject2.getString("bizCode");
-        if (TextUtils.isEmpty(string) || !string.equals(fVar.c)) {
+        if (StringUtils.isEmpty(string) || !string.equals(fVar.c)) {
             a(bVar, e.FUNNEL_STEP_AFTER_REQUEST, "mtopFailed.bizCodeNotMatch", "");
             return;
         }
@@ -236,7 +236,7 @@ public class orm extends orn {
         } else {
             String string = jSONObject.getString("action");
             String string2 = jSONObject.getString("deepUrl");
-            if ("call".equals(string) && !TextUtils.isEmpty(string2)) {
+            if ("call".equals(string) && !StringUtils.isEmpty(string2)) {
                 Intent intent = new Intent();
                 intent.setData(Uri.parse(string2));
                 intent.setFlags(805339136);
@@ -264,7 +264,7 @@ public class orm extends orn {
         if (jSONObject != null) {
             str4 = jSONObject.getString(f.PARAM_KEY_TOAST_LOAD_FAIL);
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "悬浮窗未加载成功，请再试一次";
         }
         b(bVar, str4);

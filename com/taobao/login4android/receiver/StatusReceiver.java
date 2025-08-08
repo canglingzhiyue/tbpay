@@ -3,7 +3,7 @@ package com.taobao.login4android.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.service.NumberAuthService;
 import com.ali.user.mobile.service.ServiceFactory;
 import com.ali.user.mobile.utils.NetworkUtil;
@@ -29,7 +29,7 @@ public class StatusReceiver extends BroadcastReceiver {
                 return;
             }
             this.mLastHandleTime = System.currentTimeMillis();
-            if (!LoginSwitch.getSwitch("enable_auth_prefetch", "true") || ServiceFactory.getService(NumberAuthService.class) == null || !((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() || !TextUtils.isEmpty(Login.getLoginToken())) {
+            if (!LoginSwitch.getSwitch("enable_auth_prefetch", "true") || ServiceFactory.getService(NumberAuthService.class) == null || !((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() || !StringUtils.isEmpty(Login.getLoginToken())) {
                 return;
             }
             ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).preFecth("networkConnected");

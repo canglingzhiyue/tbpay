@@ -1,7 +1,7 @@
 package com.alipay.android.msp.network;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.helper.Tid;
@@ -45,7 +45,7 @@ public final class MiscRequestUtils {
             requestConfig.setType("cashier");
             requestConfig.setMethod("updateTidInfo");
             requestConfig.setExtendParamsMap(map);
-            return TextUtils.equals(PluginManager.getPbChannel().requestByPbv3(new ReqData<>(RpcRequestDecoratorV2.todo(requestConfig, str, -1, true, false).getKeyValueMap()), requestConfig).toMapData().get("end_code"), "9000");
+            return StringUtils.equals(PluginManager.getPbChannel().requestByPbv3(new ReqData<>(RpcRequestDecoratorV2.todo(requestConfig, str, -1, true, false).getKeyValueMap()), requestConfig).toMapData().get("end_code"), "9000");
         }
     }
 
@@ -87,7 +87,7 @@ public final class MiscRequestUtils {
                 tradeLogicData.setLdcHeaders(mapData.get("mspParam"));
                 LogUtil.record(4, AlipaySDKJSBridge.LOG_TAG, "LogicMessageHandlerAdapter.execute", "mspParam" + mapData.get("mspParam"));
             }
-            if (tradeLogicData != null && !TextUtils.isEmpty(mapData.get(MspGlobalDefine.SESSION))) {
+            if (tradeLogicData != null && !StringUtils.isEmpty(mapData.get(MspGlobalDefine.SESSION))) {
                 tradeLogicData.setSessionId(mapData.get(MspGlobalDefine.SESSION));
             }
             return mapData;
@@ -147,7 +147,7 @@ public final class MiscRequestUtils {
                     String string = parseObject.getString("tid");
                     String string2 = parseObject.getString(MspFlybirdDefine.FLYBIRD_CLIENT_KEY);
                     LogUtil.record(2, "", "TidHelper::requestTidByHttp", "response: tid=" + string + ", clientKey=" + string2);
-                    if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                         TidStorage.getInstance().save(string, string2);
                     }
                     Tid tid = TidStorage.getInstance(context).getTID();

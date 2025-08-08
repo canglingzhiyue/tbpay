@@ -3,7 +3,7 @@ package android.taobao.windvane.extra.uc.preRender;
 import android.content.Context;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.webview.f;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -83,7 +83,7 @@ public class PreRenderWebView extends WVUCWebView implements f {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5b012494", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.realUrl)) {
+        if (StringUtils.isEmpty(this.realUrl)) {
             return "{}";
         }
         return "{ \"url\": \"" + this.realUrl + "\" }";

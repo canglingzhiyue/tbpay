@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.pop.lifecycle;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -48,7 +48,7 @@ public class c implements lkz.a {
             return;
         }
         String a2 = a(baseSectionModel);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         this.f17502a.c().a(i, view, a2);
@@ -62,7 +62,7 @@ public class c implements lkz.a {
             return;
         }
         String a2 = a(baseSectionModel);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         this.f17502a.c().b(i, view, a2);

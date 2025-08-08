@@ -1,6 +1,6 @@
 package com.vivo.push.b;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public final class h extends com.vivo.push.v {
@@ -26,7 +26,7 @@ public final class h extends com.vivo.push.v {
     @Override // com.vivo.push.v
     protected final void c(com.vivo.push.d dVar) {
         dVar.a("MsgArriveCommand.MSG_TAG", this.f24157a);
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             dVar.a("MsgArriveCommand.NODE_INFO", this.b);
         }
     }

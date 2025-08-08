@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.dx.widget;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -28,7 +28,7 @@ public class b extends fuf {
         }
         HashMap hashMap = new HashMap();
         for (int i = 0; i < objArr.length; i++) {
-            if (objArr[i] != null && !TextUtils.isEmpty(String.valueOf(objArr[i]))) {
+            if (objArr[i] != null && !StringUtils.isEmpty(String.valueOf(objArr[i]))) {
                 String[] split = String.valueOf(objArr[i]).split(":");
                 if (split.length == 2) {
                     hashMap.put(split[0], split[1]);

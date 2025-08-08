@@ -1,6 +1,6 @@
 package com.taobao.tao.log;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.statistics.ErrorCode;
@@ -64,7 +64,7 @@ public class c {
         }
         try {
             String a2 = jhc.a().a(str, str2, str3, bArr);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             f.a().h().a(oko.f32142a, "RECEIVE MESSAGE", "成功接收到消息");

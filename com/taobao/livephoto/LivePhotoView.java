@@ -3,7 +3,7 @@ package com.taobao.livephoto;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -350,7 +350,7 @@ public class LivePhotoView extends FrameLayout {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("1261e6f0", new Object[]{this, drawable, str})).booleanValue();
         }
-        if (drawable == null || TextUtils.isEmpty(str)) {
+        if (drawable == null || StringUtils.isEmpty(str)) {
             return false;
         }
         if (!a.a(getContext())) {
@@ -887,7 +887,7 @@ public class LivePhotoView extends FrameLayout {
 
     private boolean isResourcesReady() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9556e2d3", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.mVideoLocalPath) && !TextUtils.isEmpty(this.mCoverLocalPath);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9556e2d3", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.mVideoLocalPath) && !StringUtils.isEmpty(this.mCoverLocalPath);
     }
 
     private nmm getPermissionListener() {

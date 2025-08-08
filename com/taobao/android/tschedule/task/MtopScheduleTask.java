@@ -2,7 +2,7 @@ package com.taobao.android.tschedule.task;
 
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -165,13 +165,13 @@ public class MtopScheduleTask extends ScheduleTask<MtopTaskContext> {
                 }
             }
             MtopBusiness build = MtopBusiness.build(Mtop.instance(Mtop.Id.INNER, e.b()), mtopRequest, e.c());
-            if (!TextUtils.isEmpty(mtopTaskParams.requestType)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.requestType)) {
                 build.mo1305reqMethod("post".equalsIgnoreCase(mtopTaskParams.requestType) ? MethodEnum.POST : MethodEnum.GET);
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.unit)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.unit)) {
                 build.mo1328setUnitStrategy(mtopTaskParams.unit);
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.jsonType) && (jsonType = getJsonType(mtopTaskParams.jsonType)) != null) {
+            if (!StringUtils.isEmpty(mtopTaskParams.jsonType) && (jsonType = getJsonType(mtopTaskParams.jsonType)) != null) {
                 build.mo1315setJsonType(jsonType);
             }
             if (mtopTaskParams.headers != null && !mtopTaskParams.headers.isEmpty()) {
@@ -185,23 +185,23 @@ public class MtopScheduleTask extends ScheduleTask<MtopTaskContext> {
                     build.mo1297headers(parseTaskHeaders(str, mtopTaskParams.headers, mtopTaskParams.queryBlackList, intent3));
                 }
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.openBizCode)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.openBizCode)) {
                 build.setOpenBiz(mtopTaskParams.openBizCode);
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.openBizData)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.openBizData)) {
                 build.setOpenBizData(mtopTaskParams.openBizData);
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.miniAppkey)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.miniAppkey)) {
                 build.setMiniAppKey(mtopTaskParams.miniAppkey);
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.requestAppkey)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.requestAppkey)) {
                 build.mtopProp.requestSourceAppKey = mtopTaskParams.requestAppkey;
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.openAppKey)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.openAppKey)) {
                 build.mtopProp.isInnerOpen = true;
                 build.mo1292addOpenApiParams(mtopTaskParams.openAppKey, mtopTaskParams.authCode);
             }
-            if (!TextUtils.isEmpty(mtopTaskParams.customHost)) {
+            if (!StringUtils.isEmpty(mtopTaskParams.customHost)) {
                 build.mo1313setCustomDomain(mtopTaskParams.customHost);
             }
             if (jmi.b()) {
@@ -274,7 +274,7 @@ public class MtopScheduleTask extends ScheduleTask<MtopTaskContext> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("152894ae", new Object[]{this, str, objArr})).booleanValue();
         }
-        if (this.taskContext == 0 || ((MtopTaskContext) this.taskContext).params == null || !jmh.a(jmg.SWITCH_KEY_ENABLE_TASK_MTOP, false) || TextUtils.isEmpty(((MtopTaskContext) this.taskContext).params.api) || TextUtils.isEmpty(((MtopTaskContext) this.taskContext).params.version) || TextUtils.isEmpty(str) || str.contains("hybrid=true")) {
+        if (this.taskContext == 0 || ((MtopTaskContext) this.taskContext).params == null || !jmh.a(jmg.SWITCH_KEY_ENABLE_TASK_MTOP, false) || StringUtils.isEmpty(((MtopTaskContext) this.taskContext).params.api) || StringUtils.isEmpty(((MtopTaskContext) this.taskContext).params.version) || StringUtils.isEmpty(str) || str.contains("hybrid=true")) {
             z = false;
         }
         HashMap hashMap = new HashMap();
@@ -400,7 +400,7 @@ public class MtopScheduleTask extends ScheduleTask<MtopTaskContext> {
             return (JsonTypeEnum) ipChange.ipc$dispatch("a20c6738", new Object[]{this, str});
         }
         for (JsonTypeEnum jsonTypeEnum : JsonTypeEnum.values()) {
-            if (TextUtils.equals(str, jsonTypeEnum.getJsonType())) {
+            if (StringUtils.equals(str, jsonTypeEnum.getJsonType())) {
                 return jsonTypeEnum;
             }
         }

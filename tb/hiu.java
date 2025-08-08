@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -33,7 +33,7 @@ public class hiu {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4a792850", new Object[]{jSONObject, new Boolean(z)})).booleanValue();
         }
-        if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("extendVal")) != null && TextUtils.equals("secKill", jSONObject2.getString("itemBizType")) && d.a()) {
+        if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("extendVal")) != null && StringUtils.equals("secKill", jSONObject2.getString("itemBizType")) && d.a()) {
             if (!com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.a.f()) {
                 return true;
             }

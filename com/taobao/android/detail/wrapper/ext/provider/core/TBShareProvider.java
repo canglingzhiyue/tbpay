@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.provider.core;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,12 +45,12 @@ public class TBShareProvider implements IShareAdapter {
         ShareContent shareContent = new ShareContent();
         if (com.alibaba.ability.localization.b.c()) {
             shareContent.businessId = "1_" + com.alibaba.ability.localization.b.d();
-        } else if (!TextUtils.isEmpty(shareModel.businessId)) {
+        } else if (!StringUtils.isEmpty(shareModel.businessId)) {
             shareContent.businessId = shareModel.businessId;
         } else {
             shareContent.businessId = "1";
         }
-        if (!TextUtils.isEmpty(shareModel.isActivity)) {
+        if (!StringUtils.isEmpty(shareModel.isActivity)) {
             shareContent.isActivity = shareModel.isActivity;
         }
         shareContent.description = shareModel.msg;
@@ -108,7 +108,7 @@ public class TBShareProvider implements IShareAdapter {
         try {
             if (activity instanceof DetailActivity) {
                 final String str = eqb.c(((DetailActivity) activity).y().t.f10055a).wxShareUrl;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap.put("defineToolParams", new JSONArray() { // from class: com.taobao.android.detail.wrapper.ext.provider.core.TBShareProvider.1
                         {
                             add(new JSONObject() { // from class: com.taobao.android.detail.wrapper.ext.provider.core.TBShareProvider.1.1

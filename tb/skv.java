@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
@@ -94,8 +94,8 @@ public class skv {
         if (c0494a2 != null) {
             str = c0494a2.d();
         }
-        zArr[0] = !TextUtils.isEmpty(d);
-        zArr[1] = !TextUtils.isEmpty(str) && !TextUtils.equals(d, str);
+        zArr[0] = !StringUtils.isEmpty(d);
+        zArr[1] = !StringUtils.isEmpty(str) && !StringUtils.equals(d, str);
         if (zArr[0]) {
             a(c0494a, new a() { // from class: tb.skv.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

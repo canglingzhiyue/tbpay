@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliUserTrackerInterface;
 import com.taobao.android.sku.utils.o;
@@ -29,7 +29,7 @@ public class qrg {
         int i2 = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65420708", new Object[]{new Integer(i), str, obj, obj2, map});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             String[] strArr = new String[map.size()];
             for (Map.Entry<String, Object> entry : map.entrySet()) {
                 strArr[i2] = entry.getKey() + "=" + entry.getValue();

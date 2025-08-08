@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -223,7 +223,7 @@ public class lof implements pqu {
         this.c = pshVar;
         this.d = cVar;
         if (this.c.l == null) {
-            if (!TextUtils.isEmpty(this.c.b)) {
+            if (!StringUtils.isEmpty(this.c.b)) {
                 this.f30768a.a((MediaLiveInfo) null, this.c.b);
             } else {
                 this.c = null;

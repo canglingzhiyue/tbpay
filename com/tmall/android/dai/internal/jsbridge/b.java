@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import tb.kge;
@@ -20,17 +20,17 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("cd6db0cb", new Object[]{str, str2, aVar})).booleanValue();
         }
         com.tmall.android.dai.internal.util.a.a("DAI", 19999, "handleWVDAIHandleEvent", str, str2, null);
-        if (TextUtils.equals("runCompute", str)) {
+        if (StringUtils.equals("runCompute", str)) {
             b(str2, aVar);
             return true;
-        } else if (TextUtils.equals("setKKValue", str) || TextUtils.equals("removeKKValue", str)) {
+        } else if (StringUtils.equals("setKKValue", str) || StringUtils.equals("removeKKValue", str)) {
             try {
                 a(str2);
             } catch (Throwable th) {
                 com.taobao.mrt.utils.a.b("WalleJsEventHandle", "put failed", th);
             }
             return true;
-        } else if (!TextUtils.equals("getKKValue", str)) {
+        } else if (!StringUtils.equals("getKKValue", str)) {
             return false;
         } else {
             try {
@@ -49,7 +49,7 @@ public class b {
             return;
         }
         KKVParams parseStringToKKVParams = KKVParams.parseStringToKKVParams(str);
-        if (parseStringToKKVParams == null || TextUtils.isEmpty(parseStringToKKVParams.key)) {
+        if (parseStringToKKVParams == null || StringUtils.isEmpty(parseStringToKKVParams.key)) {
             if (aVar == null) {
                 return;
             }
@@ -75,7 +75,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         KKVParams parseStringToKKVParams = KKVParams.parseStringToKKVParams(str);
-        if (parseStringToKKVParams != null && !TextUtils.isEmpty(parseStringToKKVParams.key)) {
+        if (parseStringToKKVParams != null && !StringUtils.isEmpty(parseStringToKKVParams.key)) {
             return parseStringToKKVParams.save();
         }
         return true;
@@ -133,7 +133,7 @@ public class b {
             com.taobao.mrt.utils.a.b(r6, r5, r4)
             r4 = r0
         L42:
-            boolean r5 = android.text.TextUtils.isEmpty(r3)
+            boolean r5 = android.text.StringUtils.isEmpty(r3)
             if (r5 == 0) goto L60
             if (r8 == 0) goto L5f
             java.lang.StringBuilder r3 = new java.lang.StringBuilder

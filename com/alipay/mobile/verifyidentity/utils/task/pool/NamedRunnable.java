@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.utils.task.pool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.log.LoggerFactory;
 import com.alipay.mobile.verifyidentity.log.VITraceLogger;
 import com.alipay.mobile.verifyidentity.rpc.RpcException;
@@ -83,7 +83,7 @@ public class NamedRunnable implements Pool.Poolable, Runnable {
             if (ipChange instanceof IpChange) {
                 return (NamedRunnable) ipChange.ipc$dispatch("a1b72983", new Object[]{this, runnable, str, new Integer(i)});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str2 = "NamedRunable_" + this.f6105a.getAndIncrement();
             } else {
                 str2 = "NamedRunable_" + this.f6105a.getAndIncrement() + "_" + str;
@@ -164,7 +164,7 @@ public class NamedRunnable implements Pool.Poolable, Runnable {
             return;
         }
         String str = null;
-        if (!TextUtils.isEmpty(this.mThreadName)) {
+        if (!StringUtils.isEmpty(this.mThreadName)) {
             str = Thread.currentThread().getName();
             VITraceLogger traceLogger = LoggerFactory.getTraceLogger();
             traceLogger.info("AsyncTaskExecutor", "NamedRunable.run(set ThreadName to:" + this.mThreadName + riy.BRACKET_END_STR);
@@ -178,7 +178,7 @@ public class NamedRunnable implements Pool.Poolable, Runnable {
                 long currentTimeMillis2 = System.currentTimeMillis();
                 VITraceLogger traceLogger2 = LoggerFactory.getTraceLogger();
                 traceLogger2.error("AsyncTaskExecutor", riy.ARRAY_START_STR + this.mThreadName + "] cost " + (currentTimeMillis2 - currentTimeMillis) + " ms");
-                if (!TextUtils.isEmpty(this.mThreadName)) {
+                if (!StringUtils.isEmpty(this.mThreadName)) {
                     VITraceLogger traceLogger3 = LoggerFactory.getTraceLogger();
                     traceLogger3.info("AsyncTaskExecutor", "NamedRunable.run(set ThreadName back to:" + str + riy.BRACKET_END_STR);
                     Thread.currentThread().setName(str);
@@ -194,7 +194,7 @@ public class NamedRunnable implements Pool.Poolable, Runnable {
                 long currentTimeMillis3 = System.currentTimeMillis();
                 VITraceLogger traceLogger5 = LoggerFactory.getTraceLogger();
                 traceLogger5.error("AsyncTaskExecutor", riy.ARRAY_START_STR + this.mThreadName + "] cost " + (currentTimeMillis3 - currentTimeMillis) + " ms");
-                if (!TextUtils.isEmpty(this.mThreadName)) {
+                if (!StringUtils.isEmpty(this.mThreadName)) {
                     VITraceLogger traceLogger6 = LoggerFactory.getTraceLogger();
                     traceLogger6.info("AsyncTaskExecutor", "NamedRunable.run(set ThreadName back to:" + str + riy.BRACKET_END_STR);
                     Thread.currentThread().setName(str);
@@ -207,7 +207,7 @@ public class NamedRunnable implements Pool.Poolable, Runnable {
                 long currentTimeMillis4 = System.currentTimeMillis();
                 VITraceLogger traceLogger8 = LoggerFactory.getTraceLogger();
                 traceLogger8.error("AsyncTaskExecutor", riy.ARRAY_START_STR + this.mThreadName + "] cost " + (currentTimeMillis4 - currentTimeMillis) + " ms");
-                if (!TextUtils.isEmpty(this.mThreadName)) {
+                if (!StringUtils.isEmpty(this.mThreadName)) {
                     VITraceLogger traceLogger9 = LoggerFactory.getTraceLogger();
                     traceLogger9.info("AsyncTaskExecutor", "NamedRunable.run(set ThreadName back to:" + str + riy.BRACKET_END_STR);
                     Thread.currentThread().setName(str);
@@ -220,7 +220,7 @@ public class NamedRunnable implements Pool.Poolable, Runnable {
             long currentTimeMillis5 = System.currentTimeMillis();
             VITraceLogger traceLogger11 = LoggerFactory.getTraceLogger();
             traceLogger11.error("AsyncTaskExecutor", riy.ARRAY_START_STR + this.mThreadName + "] cost " + (currentTimeMillis5 - currentTimeMillis) + " ms");
-            if (!TextUtils.isEmpty(this.mThreadName)) {
+            if (!StringUtils.isEmpty(this.mThreadName)) {
                 VITraceLogger traceLogger12 = LoggerFactory.getTraceLogger();
                 traceLogger12.info("AsyncTaskExecutor", "NamedRunable.run(set ThreadName back to:" + str + riy.BRACKET_END_STR);
                 Thread.currentThread().setName(str);

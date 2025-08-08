@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public class pfh implements h {
             return;
         }
         HashMap hashMap2 = new HashMap();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap2.put("glopenfrom", str);
         }
         o.a(this.c, "Goodslist", (Map<String, String>) hashMap2);

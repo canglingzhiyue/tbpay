@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -105,7 +105,7 @@ public class hjw extends h {
             } else {
                 final JSONObject e = dXRuntimeContext.e();
                 final JSONObject jSONObject = (JSONObject) e.clone();
-                if (!TextUtils.equals(e.getString(nmf.MTOP_ISFOLLOW), "false") || pmd.a().B() == null) {
+                if (!StringUtils.equals(e.getString(nmf.MTOP_ISFOLLOW), "false") || pmd.a().B() == null) {
                     return;
                 }
                 pmd.a().B().a(a(), new pmv() { // from class: tb.hjw.1
@@ -151,7 +151,7 @@ public class hjw extends h {
             ipChange.ipc$dispatch("487cd5d9", new Object[]{this, dXRuntimeContext});
         } else if (dXRuntimeContext == null || dXRuntimeContext.e() == null || (jSONObject = (JSONObject) dXRuntimeContext.e().clone()) == null) {
         } else {
-            final boolean equals = TextUtils.equals("true", jSONObject.getString("isPreview"));
+            final boolean equals = StringUtils.equals("true", jSONObject.getString("isPreview"));
             String string = jSONObject.getString("preLiveId");
             if (phg.d().a()) {
                 com.taobao.android.live.plugin.atype.flexalocal.subscribe.a.a(equals, string, "taoLiveStartNotify", null, "tblive_inline", new IObserverX() { // from class: com.taobao.android.live.plugin.atype.flexalocal.liveend.dxhandler.DXTaoLiveEndRecommendActionEventHandler$2
@@ -324,7 +324,7 @@ public class hjw extends h {
             str = str3;
             str2 = str;
         }
-        if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str2)) {
             return new pmt();
         }
         pmt pmtVar = new pmt();

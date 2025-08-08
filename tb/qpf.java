@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.ViewGroup;
@@ -125,7 +125,7 @@ public class qpf {
         if (intent != null) {
             this.s = intent.getStringExtra("orderType");
         }
-        if (TextUtils.isEmpty(this.s)) {
+        if (StringUtils.isEmpty(this.s)) {
             this.s = OrderType.ORDERLIST.getValue();
         }
         this.o = g.g(intent);
@@ -196,7 +196,7 @@ public class qpf {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6a2717e", new Object[]{this});
         } else {
-            this.v = TextUtils.equals(this.o, "reFund");
+            this.v = StringUtils.equals(this.o, "reFund");
         }
     }
 
@@ -228,7 +228,7 @@ public class qpf {
             g.a(hashMap, intent);
             hashMap.put(CoreConstants.USE_V2, "true");
         }
-        if (TextUtils.isEmpty(this.t)) {
+        if (StringUtils.isEmpty(this.t)) {
             this.x = x();
             hashMap.put("condition", this.x.toJSONString());
         } else {
@@ -266,21 +266,21 @@ public class qpf {
             return (JSONObject) ipChange.ipc$dispatch("34b3781f", new Object[]{this});
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(this.F) && TextUtils.equals(this.i, this.G)) {
+        if (!StringUtils.isEmpty(this.F) && StringUtils.equals(this.i, this.G)) {
             jSONObject.put("itemTitle", (Object) this.F);
             jSONObject.put("showText", (Object) this.i);
             jSONObject.put("scene", (Object) "repurchaseDiWen");
-        } else if (!TextUtils.isEmpty(this.i)) {
+        } else if (!StringUtils.isEmpty(this.i)) {
             jSONObject.put("itemTitle", (Object) this.i);
             jSONObject.put("showText", (Object) this.i);
         }
-        if (!TextUtils.isEmpty(this.j)) {
+        if (!StringUtils.isEmpty(this.j)) {
             jSONObject.put(g.WORD_TERM, (Object) this.j);
         }
-        if (!TextUtils.isEmpty(this.k)) {
+        if (!StringUtils.isEmpty(this.k)) {
             jSONObject.put(g.WORD_TYPE, (Object) this.k);
         }
-        if (!TextUtils.isEmpty(this.w)) {
+        if (!StringUtils.isEmpty(this.w)) {
             jSONObject.put(CoreConstants.IN_PARAMS_PRESELL, (Object) this.w);
         }
         if (bgd.a()) {
@@ -332,7 +332,7 @@ public class qpf {
             return;
         }
         final String str = this.o;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             jqg.a("OrderListViewModel", "prefetchImgList", "tabCode is empty");
             return;
         }
@@ -359,7 +359,7 @@ public class qpf {
                                 break;
                             } else if (iDMComponent != null && iDMComponent.getFields() != null && (jSONObject = iDMComponent.getFields().getJSONObject("item")) != null) {
                                 String string = jSONObject.getString("pic");
-                                if (!TextUtils.isEmpty(string)) {
+                                if (!StringUtils.isEmpty(string)) {
                                     arrayList.add(string);
                                 }
                             }
@@ -660,7 +660,7 @@ public class qpf {
 
     public boolean B() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3b793cd", new Object[]{this})).booleanValue() : this.I && !TextUtils.isEmpty(g());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3b793cd", new Object[]{this})).booleanValue() : this.I && !StringUtils.isEmpty(g());
     }
 
     public void a(org.json.JSONObject jSONObject, JSONObject jSONObject2) {
@@ -674,8 +674,8 @@ public class qpf {
             try {
                 org.json.JSONObject optJSONObject = jSONObject.optJSONObject(AntDetector.EXT_KEY_AB_TEST);
                 if (optJSONObject != null) {
-                    this.H = TextUtils.equals("true", optJSONObject.optString("showSearchWeexInfoFlow"));
-                    this.I = TextUtils.equals("true", optJSONObject.optString("showSearchNativeInfoFlow"));
+                    this.H = StringUtils.equals("true", optJSONObject.optString("showSearchWeexInfoFlow"));
+                    this.I = StringUtils.equals("true", optJSONObject.optString("showSearchNativeInfoFlow"));
                 }
             } catch (Throwable unused) {
                 return;
@@ -684,8 +684,8 @@ public class qpf {
         if (jSONObject2 == null || (jSONObject3 = jSONObject2.getJSONObject(AntDetector.EXT_KEY_AB_TEST)) == null) {
             return;
         }
-        this.H |= TextUtils.equals("true", jSONObject3.getString("showSearchWeexInfoFlow"));
-        this.I = TextUtils.equals("true", jSONObject3.getString("showSearchNativeInfoFlow")) | this.I;
+        this.H |= StringUtils.equals("true", jSONObject3.getString("showSearchWeexInfoFlow"));
+        this.I = StringUtils.equals("true", jSONObject3.getString("showSearchNativeInfoFlow")) | this.I;
     }
 
     public void a(hzc hzcVar) {
@@ -828,7 +828,7 @@ public class qpf {
             } else if (!b(context)) {
             } else {
                 String a2 = a(mtopResponse, (JSONObject) null);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     jqg.a("OrderListViewModel", "initOrderDetailByPreRender", "preRenderUrl is empty");
                 } else {
                     a(context, a2, jSONObject);
@@ -851,7 +851,7 @@ public class qpf {
             } else if (!b(context)) {
             } else {
                 String a2 = a((MtopResponse) null, jSONObject);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     jqg.a("OrderListViewModel", "initOrderDetailByLocalPreRender", "preRenderUrl is empty");
                 } else {
                     a(context, a2, jSONObject2);
@@ -937,7 +937,7 @@ public class qpf {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("84edcb9b", new Object[]{this, str2, pVar});
-                    } else if (TextUtils.isEmpty(str2) || pVar == null) {
+                    } else if (StringUtils.isEmpty(str2) || pVar == null) {
                         jqg.a("OrderListViewModel", "onInstanceCreatedInMain", "callback is invalid");
                     } else if (qpf.a(qpf.this) == null) {
                     } else {
@@ -970,11 +970,11 @@ public class qpf {
             JSONObject jSONObject3 = new JSONObject();
             int i = 0;
             for (IDMComponent iDMComponent : b) {
-                if (i < a2 && iDMComponent != null && TextUtils.equals(iDMComponent.getTag(), "item") && (jSONObject2 = (jSONObject = iDMComponent.getData().getJSONObject("fields")).getJSONObject("queryParams")) != null) {
+                if (i < a2 && iDMComponent != null && StringUtils.equals(iDMComponent.getTag(), "item") && (jSONObject2 = (jSONObject = iDMComponent.getData().getJSONObject("fields")).getJSONObject("queryParams")) != null) {
                     String string = jSONObject.getJSONObject("basicInfo").getString("orderId");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         String string2 = jSONObject.getJSONObject("basicInfo").getString("orderLineId");
-                        if (!TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string2)) {
                             jSONObject3.put(string + "_" + string2, (Object) jSONObject2);
                             i++;
                         }
@@ -1082,7 +1082,7 @@ public class qpf {
         if (!(activity instanceof FragmentActivity)) {
             jqg.a("OrderListViewModel", "displayRefundDetailTMSContainer", "activity is not FragmentActivity");
             return false;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             jqg.a("OrderListViewModel", "displayRefundDetailTMSContainer", "invalid pageUrl");
             return false;
         } else {

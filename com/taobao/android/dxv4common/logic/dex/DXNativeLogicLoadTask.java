@@ -1,6 +1,6 @@
 package com.taobao.android.dxv4common.logic.dex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.auth.mobile.common.AlipayAuthConstant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -91,13 +91,13 @@ public class DXNativeLogicLoadTask implements Runnable {
                 return;
             }
             String substring = c.g.f11934a.substring(0, c.g.f11934a.length() - 7);
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 return;
             }
             final String str = substring + PREFIX_LOGIC_FILE;
             String str2 = str + PREFIX_LOGIC_CONFIG;
             File file = new File(str2);
-            if (!TextUtils.isEmpty(str2) && file.exists()) {
+            if (!StringUtils.isEmpty(str2) && file.exists()) {
                 JSONObject b = fwn.a().b(str2, dXWidgetNode.getDXRuntimeContext());
                 if (b == null) {
                     return;

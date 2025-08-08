@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.tanx.TanxArgNames;
 import com.taobao.muniontaobaosdk.util.b;
@@ -30,7 +30,7 @@ public class dhy {
         if (ipChange instanceof IpChange) {
             return (dhy) ipChange.ipc$dispatch("7c6e583f", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f26770a.put("namespace", str);
         }
         return this;

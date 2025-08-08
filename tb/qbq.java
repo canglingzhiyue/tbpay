@@ -2,7 +2,7 @@ package tb;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.b;
 import com.taobao.taopai.material.request.materialfile.a;
@@ -173,7 +173,7 @@ public class qbq implements kml {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6d41d007", new Object[]{this, str, str2, str3, new Integer(i), str4});
         } else {
-            a(str, str2, str3, i, TextUtils.isEmpty(str4), str4);
+            a(str, str2, str3, i, StringUtils.isEmpty(str4), str4);
         }
     }
 
@@ -183,14 +183,14 @@ public class qbq implements kml {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
         } else if (com.taobao.taopai2.material.task.a.a().a(str2)) {
             com.taobao.taopai2.material.task.a.a().a(str2, this.d);
-        } else if (TextUtils.isEmpty(str2) && this.d != null) {
+        } else if (StringUtils.isEmpty(str2) && this.d != null) {
             pzc.a(new Runnable() { // from class: tb.-$$Lambda$qbq$o9nRCDZEKRQZkiES0pi0K_MFDxs
                 @Override // java.lang.Runnable
                 public final void run() {
                     qbq.lambda$o9nRCDZEKRQZkiES0pi0K_MFDxs(qbq.this);
                 }
             });
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             pzc.a(new Runnable() { // from class: tb.-$$Lambda$qbq$93Mj4XFJizIfx94hhn5rCEr9O4g
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -273,7 +273,7 @@ public class qbq implements kml {
         this.h = SystemClock.elapsedRealtime();
         this.c = str;
         this.f32884a = str2;
-        if (TextUtils.isEmpty(str3) && this.d != null) {
+        if (StringUtils.isEmpty(str3) && this.d != null) {
             pzc.a(new Runnable() { // from class: tb.-$$Lambda$qbq$bbftuQe0lWT-cokfFRQOs40myjI
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -284,7 +284,7 @@ public class qbq implements kml {
         }
         this.g = str3;
         String a3 = qbr.a(str2, i, str3, true);
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             a2 = new File(a3 + File.separator + str4);
         } else if (str3.endsWith(".png")) {
             a2 = new File(a3 + File.separator + qcg.e(str3));

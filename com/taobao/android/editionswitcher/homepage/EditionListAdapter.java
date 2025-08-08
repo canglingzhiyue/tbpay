@@ -1,6 +1,6 @@
 package com.taobao.android.editionswitcher.homepage;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,7 +117,7 @@ public class EditionListAdapter extends BaseAdapter implements AdapterView.OnIte
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dafa70", new Object[]{this, adapterView, view, new Integer(i), new Long(j)});
-        } else if (this.mCurrentCheckPosition == i || TextUtils.isEmpty(this.mData.get(i).f12297a)) {
+        } else if (this.mCurrentCheckPosition == i || StringUtils.isEmpty(this.mData.get(i).f12297a)) {
         } else {
             uncheckCurrentRowStatus(this.mAreaItemViews.get(Integer.valueOf(this.mCurrentCheckPosition)), this.mCurrentCheckPosition);
             checkCurrentRowStatus(this.mAreaItemViews.get(Integer.valueOf(i)), i);
@@ -158,7 +158,7 @@ public class EditionListAdapter extends BaseAdapter implements AdapterView.OnIte
         }
         ((TextView) view.findViewById(R.id.item_area_name)).setText(aVar.b);
         if (this.mListType == 2) {
-            if (TextUtils.equals(aVar.f12297a, "CUN")) {
+            if (StringUtils.equals(aVar.f12297a, "CUN")) {
                 view.findViewById(R.id.item_area_desc).setVisibility(0);
             } else {
                 view.findViewById(R.id.item_area_desc).setVisibility(8);

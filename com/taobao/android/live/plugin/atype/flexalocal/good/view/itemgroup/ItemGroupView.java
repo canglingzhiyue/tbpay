@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.good.view.itemgroup;
 
 import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -235,7 +235,7 @@ public class ItemGroupView extends GoodsBaseView<com.taobao.android.live.plugin.
             this.mBackBtn.setVisibility(8);
             this.mCloseBtn.setVisibility(0);
         }
-        if (TextUtils.isEmpty(this.mPageInfo.goodsTips)) {
+        if (StringUtils.isEmpty(this.mPageInfo.goodsTips)) {
             this.mTips.setVisibility(8);
         } else {
             this.mTips.setVisibility(0);
@@ -397,7 +397,7 @@ public class ItemGroupView extends GoodsBaseView<com.taobao.android.live.plugin.
             return;
         }
         ItemGroupPageInfo itemGroupPageInfo = this.mPageInfo;
-        if (itemGroupPageInfo == null || !TextUtils.equals(itemGroupPageInfo.closeAction, hhw.ENTRY_TYPE_LIVE_CART)) {
+        if (itemGroupPageInfo == null || !StringUtils.equals(itemGroupPageInfo.closeAction, hhw.ENTRY_TYPE_LIVE_CART)) {
             return;
         }
         this.mGoodsView.o();

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSManager;
 import com.taobao.accs.client.GlobalClientInfo;
@@ -172,7 +172,7 @@ public class Launcher_InitAgooLifecycle implements Serializable {
         } catch (Throwable th) {
             ALog.e(TAG, "init get param error", th, new Object[0]);
         }
-        if (!TextUtils.isEmpty(this.mAppKey)) {
+        if (!StringUtils.isEmpty(this.mAppKey)) {
             return;
         }
         this.mAppKey = "21646297";

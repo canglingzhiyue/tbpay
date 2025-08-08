@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service.build;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.mnncv.MNNCVExecutor;
@@ -38,7 +38,7 @@ public class zb implements MNNCVExecutor.a {
         }
         this.c.j = true;
         this.b.a(true, null);
-        if (TextUtils.isEmpty(this.c.d())) {
+        if (StringUtils.isEmpty(this.c.d())) {
             return;
         }
         Bb bb2 = this.c;

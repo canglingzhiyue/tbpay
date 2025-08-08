@@ -1,6 +1,6 @@
 package com.taobao.android.weex_ability.modules;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
 import com.taobao.android.weex_framework.module.MUSModule;
@@ -31,7 +31,7 @@ public class WeexZipModule extends MUSModule {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d35701b0", new Object[]{this, str, new Integer(i)});
         }
-        if (!TextUtils.isEmpty(str) && i == 0) {
+        if (!StringUtils.isEmpty(str) && i == 0) {
             try {
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(byteArrayOutputStream);

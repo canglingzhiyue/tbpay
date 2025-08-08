@@ -1,7 +1,7 @@
 package com.taobao.android.remoteso.tbadapter.ext;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import com.taobao.android.remoteso.log.RSoLog;
@@ -49,7 +49,7 @@ public final class n {
             return (ihr) ipChange.ipc$dispatch("f245325c", new Object[]{application});
         }
         ika.a(new p());
-        if (TextUtils.equals(LauncherRuntime.b, LauncherRuntime.c)) {
+        if (StringUtils.equals(LauncherRuntime.b, LauncherRuntime.c)) {
             c.a(application);
         }
         final h hVar = new h(application);

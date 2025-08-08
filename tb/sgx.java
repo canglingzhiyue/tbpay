@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -365,7 +365,7 @@ public class sgx extends ptk implements g {
             ipChange.ipc$dispatch("85077e6b", new Object[]{this, pVar, jSONObject});
         } else if (pVar == null) {
         } else {
-            if (jSONObject != null && TextUtils.equals(spy.MSG_DATA_CHANGE, (String) jSONObject.get("name"))) {
+            if (jSONObject != null && StringUtils.equals(spy.MSG_DATA_CHANGE, (String) jSONObject.get("name"))) {
                 spz.c("CardWeeXV2MessageHandler", "weex预加载dispatchEvent,发送VSMSG_updateMediaData => " + pVar.getInstanceId());
             }
             pVar.dispatchEvent(MUSEventTarget.MUS_BODY_TARGET, "shortvideomessage", jSONObject);
@@ -447,7 +447,7 @@ public class sgx extends ptk implements g {
                 if (j != null) {
                     sgx.this.f33566a = j.g;
                 }
-                if (TextUtils.isEmpty(sgx.this.f33566a)) {
+                if (StringUtils.isEmpty(sgx.this.f33566a)) {
                     sgx.b(sgx.this, 3);
                     if (sgx.p(sgx.this) == null) {
                         return;
@@ -1047,7 +1047,7 @@ public class sgx extends ptk implements g {
         }
         if (!E()) {
             return this.j.contains(spyVar.c) && (spyVar.d.equals(this.g) || "VSMSG_syncPageMap".equals(spyVar.c) || "VSMSG_syncProcessMap".equals(spyVar.c));
-        } else if (!oeb.a("ShortVideo.fixMisMatchWeexId", true) || TextUtils.equals(spyVar.d, this.g)) {
+        } else if (!oeb.a("ShortVideo.fixMisMatchWeexId", true) || StringUtils.equals(spyVar.d, this.g)) {
             return true;
         } else {
             spz.c("CardWeeXV2MessageHandler", "message id not match return, msgId:" + spyVar.d + " currentId:" + this.g);

@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.searchbar.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.jvm.JvmStatic;
@@ -62,7 +62,7 @@ public final class d extends com.taobao.search.searchdoor.searchbar.data.a {
             String a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "tagText", "");
             q.a((Object) a2, "FastJsonParseUtil.parseString(json, \"tagText\", \"\")");
             dVar.a(a2);
-            if (TextUtils.isEmpty(dVar.a())) {
+            if (StringUtils.isEmpty(dVar.a())) {
                 return null;
             }
             dVar.b(com.taobao.android.searchbaseframe.util.a.a(jSONObject, "tagTextColor", ""));

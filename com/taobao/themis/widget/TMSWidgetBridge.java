@@ -3,7 +3,7 @@ package com.taobao.themis.widget;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSON;
@@ -308,7 +308,7 @@ public final class TMSWidgetBridge implements com.taobao.themis.kernel.ability.b
         q.b(queryParameter, "Uri.parse(relationUrl).g…eResponse.FORBIDDEN_ERROR");
         HashMap hashMap = new HashMap();
         String a2 = com.taobao.themis.utils.o.a(relationUrl, "query");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             String query = URLDecoder.decode(a2);
             q.b(query, "query");
             String str = query;

@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import android.view.View;
@@ -142,14 +142,14 @@ public class FBDocumentAssistor {
         fBLabel.c(z2);
         final TextView textView = (TextView) fBLabel.getInnerView();
         textView.setTextSize(Platform.f, f2);
-        if (!TextUtils.isEmpty(str3) && (typeface2 = FontCache.getTypeface(fBDocument.k, str3)) != null) {
+        if (!StringUtils.isEmpty(str3) && (typeface2 = FontCache.getTypeface(fBDocument.k, str3)) != null) {
             textView.setTypeface(typeface2);
         }
         if (i2 > 0) {
             textView.setMaxLines(i2);
         }
         if (z) {
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
         }
         if (str4.equals("bold")) {
             textView.getPaint().setFakeBoldText(true);
@@ -189,14 +189,14 @@ public class FBDocumentAssistor {
         if (z3) {
             TextView textView2 = new TextView(fBDocument.getContext());
             textView2.setTextSize(Platform.f, f2);
-            if (!TextUtils.isEmpty(str3) && (typeface = FontCache.getTypeface(fBDocument.k, str3)) != null) {
+            if (!StringUtils.isEmpty(str3) && (typeface = FontCache.getTypeface(fBDocument.k, str3)) != null) {
                 textView2.setTypeface(typeface);
             }
             if (i2 > 0) {
                 textView2.setMaxLines(i2);
             }
             if (z) {
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
+                textView2.setEllipsize(StringUtils.TruncateAt.END);
             }
             if (str4.equals("bold")) {
                 textView2.getPaint().setFakeBoldText(true);
@@ -378,7 +378,7 @@ public class FBDocumentAssistor {
             return ((Boolean) ipChange.ipc$dispatch("53d49a", new Object[]{str, new Boolean(z)})).booleanValue();
         }
         String globalSwitchRaw = getGlobalSwitchRaw(str);
-        return TextUtils.isEmpty(globalSwitchRaw) ? z : "true".equalsIgnoreCase(globalSwitchRaw);
+        return StringUtils.isEmpty(globalSwitchRaw) ? z : "true".equalsIgnoreCase(globalSwitchRaw);
     }
 
     public static String getGlobalSwitchRaw(String str) {
@@ -388,7 +388,7 @@ public class FBDocumentAssistor {
         }
         String str2 = Platform.f5257a;
         String rawSwitch = getGlobalSettingProvider() != null ? getGlobalSettingProvider().getRawSwitch(str, "") : null;
-        if (!TextUtils.isEmpty(rawSwitch)) {
+        if (!StringUtils.isEmpty(rawSwitch)) {
             return rawSwitch;
         }
         return null;
@@ -406,12 +406,12 @@ public class FBDocumentAssistor {
         e a2 = a(fBDocument);
         float[] fArr = {0.0f, 0.0f};
         try {
-            if (!TextUtils.isEmpty(str2) && !"undefined".equals(str2)) {
+            if (!StringUtils.isEmpty(str2) && !"undefined".equals(str2)) {
                 if (!str2.startsWith("http") && !str2.startsWith("https") && !str2.startsWith("www")) {
                     Context context = fBDocument.k;
                     Drawable drawable = null;
-                    Drawable drawable2 = TextUtils.equals("indicatior", str2) ? context.getResources().getDrawable(ResUtils.getDrawableId(context, "alipay_msp_indicatior_loading")) : null;
-                    if (drawable2 == null && (params = fBDocument.param) != null && (fBResourceClient = params.resourceClient) != null && !TextUtils.isEmpty(str2)) {
+                    Drawable drawable2 = StringUtils.equals("indicatior", str2) ? context.getResources().getDrawable(ResUtils.getDrawableId(context, "alipay_msp_indicatior_loading")) : null;
+                    if (drawable2 == null && (params = fBDocument.param) != null && (fBResourceClient = params.resourceClient) != null && !StringUtils.isEmpty(str2)) {
                         FBLogger.d("FBDocumentAssistor", "offline pkg intercept res(getimagesize) " + str2);
                         Object shouldInterceptResource = fBResourceClient.shouldInterceptResource(str2, FBResourceClient.Type.DRAWABLE);
                         if (shouldInterceptResource != null) {
@@ -468,7 +468,7 @@ public class FBDocumentAssistor {
             return (String) ipChange.ipc$dispatch("731dc098", new Object[]{str});
         }
         FBLogger.d("FBDocumentAssistor", "getQueryExternalLocale#configKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -588,7 +588,7 @@ public class FBDocumentAssistor {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str) || i2 != 0) {
+            if (StringUtils.isEmpty(str) || i2 != 0) {
                 return;
             }
             final AccessibilityEvent obtain = AccessibilityEvent.obtain(16384);
@@ -625,7 +625,7 @@ public class FBDocumentAssistor {
         if (g.containsKey(str)) {
             return g.get(str);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             a(fBDocument, a2, 21, "Ast:readAsset_none");
             return str2;
         }
@@ -640,19 +640,19 @@ public class FBDocumentAssistor {
             Resources resources = fBDocument.j;
             if (resources != null) {
                 String readAssetsFileWithManager = FBTools.readAssetsFileWithManager(str, resources.getAssets());
-                if (!TextUtils.isEmpty(readAssetsFileWithManager)) {
+                if (!StringUtils.isEmpty(readAssetsFileWithManager)) {
                     a(fBDocument, a2, 21, "Ast:readAsset_asset");
                     return readAssetsFileWithManager;
                 }
             }
         }
         FBResourceClient fBResourceClient = fBDocument.param.resourceClient;
-        if (fBResourceClient != null && !TextUtils.isEmpty(str)) {
+        if (fBResourceClient != null && !StringUtils.isEmpty(str)) {
             Object shouldInterceptResource = fBResourceClient.shouldInterceptResource(str, FBResourceClient.Type.STRING);
             if (shouldInterceptResource != null) {
                 str2 = String.valueOf(shouldInterceptResource);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 a(fBDocument, a2, 21, "Ast:readAsset_client");
                 return str2;
             }
@@ -662,8 +662,8 @@ public class FBDocumentAssistor {
         if (resource != null) {
             str3 = String.valueOf(resource);
         }
-        String readAssetsFile = TextUtils.isEmpty(str3) ? FBTools.readAssetsFile(str, fBDocument.k) : str3;
-        if (!TextUtils.isEmpty(readAssetsFile)) {
+        String readAssetsFile = StringUtils.isEmpty(str3) ? FBTools.readAssetsFile(str, fBDocument.k) : str3;
+        if (!StringUtils.isEmpty(readAssetsFile)) {
             g.put(str, readAssetsFile);
         }
         a(fBDocument, a2, 21, "Ast:readAsset_provider");
@@ -856,7 +856,7 @@ public class FBDocumentAssistor {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -913,7 +913,7 @@ public class FBDocumentAssistor {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("41b112a2", new Object[]{dVar, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String str2 = dVar.f7233a.get(str);
@@ -924,9 +924,9 @@ public class FBDocumentAssistor {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("233c3eb4", new Object[]{dVar, str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 if (str.endsWith("*")) {
                     String substring = str.substring(0, str.length() - 1);
                     synchronized (dVar.f7233a) {

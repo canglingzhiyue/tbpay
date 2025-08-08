@@ -11,7 +11,7 @@ import android.content.pm.ServiceInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,7 +29,7 @@ public final class ag {
 
     public static long a(Context context) {
         String a2 = aa.a(context);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             u.a("Utility", "systemPushPkgName is null");
             return -1L;
         }
@@ -169,7 +169,7 @@ public final class ag {
     public static Object a(Context context, String str, String str2) {
         Bundle bundle;
         Bundle bundle2 = null;
-        if (context == null || str2 == null || TextUtils.isEmpty(str)) {
+        if (context == null || str2 == null || StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -212,9 +212,9 @@ public final class ag {
     public static void a(Context context, Intent intent) {
         String a2 = aa.a(context);
         String stringExtra = intent.getStringExtra("client_pkgname");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             u.a("Utility", "illegality abe adapter : push pkg is null");
-        } else if (TextUtils.isEmpty(stringExtra)) {
+        } else if (StringUtils.isEmpty(stringExtra)) {
             u.a("Utility", "illegality abe adapter : src pkg is null");
         } else if (a2.equals(context.getPackageName())) {
             u.a("Utility", "illegality abe adapter : abe is not pushservice");
@@ -400,7 +400,7 @@ public final class ag {
     }
 
     public static int c(Context context, String str) {
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             u.a("Utility", "getClientSdkVersionCode() error, context is null or pkgName is empty");
             return 0;
         }
@@ -522,7 +522,7 @@ public final class ag {
             java.lang.String r0 = "Utility"
             r1 = 0
             if (r3 == 0) goto L47
-            boolean r2 = android.text.TextUtils.isEmpty(r4)
+            boolean r2 = android.text.StringUtils.isEmpty(r4)
             if (r2 == 0) goto Lc
             goto L47
         Lc:

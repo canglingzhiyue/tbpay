@@ -1,6 +1,6 @@
 package com.ali.user.open.mtop.rpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.config.ConfigManager;
@@ -137,7 +137,7 @@ public class MTOPWrapper {
             rpcResponse.message = optJSONObject.optString("message");
             rpcResponse.actionType = optJSONObject.optString("actionType");
             rpcResponse.success = optJSONObject.optBoolean("success");
-            if (!TextUtils.isEmpty(optJSONObject.optString("returnValue"))) {
+            if (!StringUtils.isEmpty(optJSONObject.optString("returnValue"))) {
                 rpcResponse.returnValue = JSONUtils.parseStringValue(optJSONObject.optString("returnValue"), cls);
             }
         }
@@ -152,30 +152,30 @@ public class MTOPWrapper {
         } else {
             try {
                 SDKLogger.e(TAG, "start request=" + rpcRequest.target);
-                MtopBusiness build = MtopBusiness.build(Mtop.instance(TextUtils.isEmpty(rpcRequest.mtopInstanceName) ? Mtop.Id.INNER : rpcRequest.mtopInstanceName, KernelContext.applicationContext, ""), buildMtopRequest(rpcRequest), AliMemberSDK.ttid);
+                MtopBusiness build = MtopBusiness.build(Mtop.instance(StringUtils.isEmpty(rpcRequest.mtopInstanceName) ? Mtop.Id.INNER : rpcRequest.mtopInstanceName, KernelContext.applicationContext, ""), buildMtopRequest(rpcRequest), AliMemberSDK.ttid);
                 boolean z = rpcRequest.NEED_ECODE;
                 String str = MtopUnitStrategy.CENTER_DAILY_DOMAIN;
                 String str2 = MtopUnitStrategy.CENTER_PRE_DOMAIN;
                 String str3 = MtopUnitStrategy.CENTER_ONLINE_DOMAIN;
                 if (z) {
-                    if (!TextUtils.isEmpty(ConfigManager.getInstance().sessionOnlineDomain)) {
+                    if (!StringUtils.isEmpty(ConfigManager.getInstance().sessionOnlineDomain)) {
                         str3 = ConfigManager.getInstance().sessionOnlineDomain;
                     }
-                    if (!TextUtils.isEmpty(ConfigManager.getInstance().sessionPreDomain)) {
+                    if (!StringUtils.isEmpty(ConfigManager.getInstance().sessionPreDomain)) {
                         str2 = ConfigManager.getInstance().sessionPreDomain;
                     }
-                    if (!TextUtils.isEmpty(ConfigManager.getInstance().sessionDailyDomain)) {
+                    if (!StringUtils.isEmpty(ConfigManager.getInstance().sessionDailyDomain)) {
                         str = ConfigManager.getInstance().sessionPreDomain;
                     }
                     build.mo1314setCustomDomain(str3, str2, str);
                 } else {
-                    if (!TextUtils.isEmpty(ConfigManager.getInstance().onlineDomain)) {
+                    if (!StringUtils.isEmpty(ConfigManager.getInstance().onlineDomain)) {
                         str3 = ConfigManager.getInstance().onlineDomain;
                     }
-                    if (!TextUtils.isEmpty(ConfigManager.getInstance().preDomain)) {
+                    if (!StringUtils.isEmpty(ConfigManager.getInstance().preDomain)) {
                         str2 = ConfigManager.getInstance().preDomain;
                     }
-                    if (!TextUtils.isEmpty(ConfigManager.getInstance().dailyDomain)) {
+                    if (!StringUtils.isEmpty(ConfigManager.getInstance().dailyDomain)) {
                         str = ConfigManager.getInstance().dailyDomain;
                     }
                     build.mo1314setCustomDomain(str3, str2, str);

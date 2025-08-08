@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.taobao.windvane.export.network.Request;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public final class e implements com.taobao.android.nav.e {
                 android.taobao.util.k.a("PHANavProcessor", "Exception when switchToThemis: " + th.getMessage());
             }
             ngr.a("PHANavProcessor", "pha start to load");
-            if (TextUtils.equals(data.getQueryParameter("x-preload"), "true")) {
+            if (StringUtils.equals(data.getQueryParameter("x-preload"), "true")) {
                 android.taobao.windvane.export.network.f.a(new Request.a().a(data.toString()).b("GET").a());
                 ngr.a("PHANavProcessor", "pha x-preload start " + (SystemClock.uptimeMillis() - uptimeMillis));
             }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.base.c;
 import com.taobao.tao.messagekit.core.utils.MsgLog;
@@ -54,7 +54,7 @@ public class olt {
                 try {
                     String a2 = c.a(str, str2);
                     MsgLog.a("OrangeAdapter", "getAvailableByNamespace: " + a2);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         for (String str3 : a2.split(",")) {
                             list.add(Integer.valueOf(Integer.parseInt(str3)));
                         }

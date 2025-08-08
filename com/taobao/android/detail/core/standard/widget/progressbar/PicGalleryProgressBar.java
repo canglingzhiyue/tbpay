@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.standard.widget.progressbar;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -179,7 +179,7 @@ public class PicGalleryProgressBar extends FrameLayout {
         }
         this.mFrameDesc.setText(str);
         TextView textView = this.mFrameDesc;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i = 4;
         }
         textView.setVisibility(i);

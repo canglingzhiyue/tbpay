@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 
@@ -34,7 +34,7 @@ public class izh {
         } else {
             absolutePath = context.getCacheDir().getAbsolutePath();
         }
-        if (!TextUtils.isEmpty(absolutePath) && !absolutePath.endsWith(File.separator)) {
+        if (!StringUtils.isEmpty(absolutePath) && !absolutePath.endsWith(File.separator)) {
             absolutePath = absolutePath + File.separator;
         }
         f29424a = absolutePath + "taopai" + File.separator + "charge_file";

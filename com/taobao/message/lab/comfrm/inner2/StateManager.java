@@ -3,7 +3,7 @@ package com.taobao.message.lab.comfrm.inner2;
 import android.content.Context;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.Constants;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -226,11 +226,11 @@ public class StateManager implements ActionDispatcher {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d28cbae7", new Object[]{this, context, iResourceManager, plugin});
-        } else if (ApplicationUtil.isDebug() && !TextUtils.isEmpty(this.mTransformerInfo.jsFile) && (this.mTransformerInfo.jsTransformerList == null || this.mTransformerInfo.jsTransformerList.isEmpty())) {
+        } else if (ApplicationUtil.isDebug() && !StringUtils.isEmpty(this.mTransformerInfo.jsFile) && (this.mTransformerInfo.jsTransformerList == null || this.mTransformerInfo.jsTransformerList.isEmpty())) {
             throw new IllegalStateException("jsTransformerList为空时，不应配置jsFile");
         } else {
             TraceUtil.beginSection("buildJsTransformer");
-            if (!TextUtils.isEmpty(this.mTransformerInfo.jsFile)) {
+            if (!StringUtils.isEmpty(this.mTransformerInfo.jsFile)) {
                 this.mJSTransformDispatcher = new JSTransformDispatcher(context, this.mContainerKey, this.mTransformerInfo, iResourceManager, this.mTrans, this.mUseRemote, plugin, this.mClassNamespace);
             }
             TraceUtil.endTrace();

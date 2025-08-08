@@ -3,7 +3,7 @@ package tb;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e;
 import java.util.HashMap;
@@ -66,7 +66,7 @@ public class ovc {
         HashMap<String, String> hashMap = new HashMap<>();
         if (data != null) {
             String a2 = a(data.toString());
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 ovcVar.d = a2;
             }
             String str = "";
@@ -87,23 +87,23 @@ public class ovc {
                     hashMap.put(str2, queryParameter);
                 }
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 ovcVar.c = str.substring(1);
             }
         }
-        if (TextUtils.isEmpty(ovcVar.d)) {
+        if (StringUtils.isEmpty(ovcVar.d)) {
             ovcVar.d = intent.getStringExtra("id");
-            if (TextUtils.isEmpty(ovcVar.a())) {
+            if (StringUtils.isEmpty(ovcVar.a())) {
                 ovcVar.d = intent.getStringExtra("item_id");
             }
         }
-        if (TextUtils.isEmpty(ovcVar.f32448a)) {
+        if (StringUtils.isEmpty(ovcVar.f32448a)) {
             ovcVar.f32448a = intent.getStringExtra("bizName");
         }
-        if (TextUtils.isEmpty(ovcVar.b)) {
+        if (StringUtils.isEmpty(ovcVar.b)) {
             ovcVar.b = intent.getStringExtra("exParams");
         }
-        if (TextUtils.isEmpty(ovcVar.e)) {
+        if (StringUtils.isEmpty(ovcVar.e)) {
             ovcVar.e = intent.getStringExtra("skuId");
         }
         ovcVar.f = data;

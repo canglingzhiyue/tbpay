@@ -3,7 +3,7 @@ package com.taobao.android.detail.alittdetail.share;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -119,17 +119,17 @@ public class b {
         } else {
             ShareContent a2 = a(eyxVar);
             String string = jSONObject.getString("bizId");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a2.businessId = string;
             } else {
                 a2.businessId = "skublacklight";
             }
             JSONObject jSONObject2 = jSONObject.getJSONObject("image");
             String string2 = jSONObject2 != null ? jSONObject2.getString("url") : "";
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 string2 = jSONObject2.getString("icon");
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 a2.imageUrl = string2;
             }
             Item item = (Item) eyxVar.a().a(Item.class);
@@ -170,10 +170,10 @@ public class b {
         }
         ShareContent a2 = a(eyxVar, c0363b != null ? c0363b.f : null);
         if (c0363b != null) {
-            if (TextUtils.isEmpty(a2.businessId) && !TextUtils.isEmpty(c0363b.b)) {
+            if (StringUtils.isEmpty(a2.businessId) && !StringUtils.isEmpty(c0363b.b)) {
                 a2.businessId = c0363b.b;
             }
-            if (!TextUtils.isEmpty(c0363b.e)) {
+            if (!StringUtils.isEmpty(c0363b.e)) {
                 List list = a2.snapshotImages;
                 if (list == null) {
                     list = new ArrayList();
@@ -183,17 +183,17 @@ public class b {
                 list.add(0, c0363b.e);
                 a2.imageUrl = c0363b.e;
             }
-            if (!TextUtils.isEmpty(c0363b.f9360a)) {
+            if (!StringUtils.isEmpty(c0363b.f9360a)) {
                 a2.isActivity = c0363b.f9360a;
             }
-            if (!TextUtils.isEmpty(c0363b.d)) {
+            if (!StringUtils.isEmpty(c0363b.d)) {
                 a2.description = c0363b.d;
             }
         }
         if (odg.o().a()) {
             a2.businessId = "1_" + odg.o().b();
         }
-        if (TextUtils.isEmpty(a2.businessId)) {
+        if (StringUtils.isEmpty(a2.businessId)) {
             a2.businessId = "1";
         }
         Context g = eyxVar.g();
@@ -203,7 +203,7 @@ public class b {
         if (view != null && (g instanceof a)) {
             ((a) g).onUpdateShareContainer(view);
         }
-        if (c0363b != null && !TextUtils.isEmpty(c0363b.c)) {
+        if (c0363b != null && !StringUtils.isEmpty(c0363b.c)) {
             ShareBusiness.share((Activity) g, c0363b.c, a2);
         } else {
             ShareBusiness.share((Activity) g, a2);
@@ -262,15 +262,15 @@ public class b {
         }
         if (item != null) {
             String shareItemLink = item.getShareItemLink();
-            if (!TextUtils.isEmpty(shareItemLink)) {
+            if (!StringUtils.isEmpty(shareItemLink)) {
                 str3 = shareItemLink;
             }
         }
         Uri.Builder buildUpon = Uri.parse(str3).buildUpon();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             buildUpon.appendQueryParameter("price", str2);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             buildUpon.appendQueryParameter("original_price", str);
         }
         buildUpon.appendQueryParameter("sourceType", "item");
@@ -283,7 +283,7 @@ public class b {
         shareContent.url = buildUpon.toString();
         if (resource != null && (share = resource.getShare()) != null && (a3 = share.a()) != null) {
             String str4 = a3.get("bizId");
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 shareContent.businessId = str4;
             }
         }
@@ -295,7 +295,7 @@ public class b {
         shareContent.description = d;
         if (item != null) {
             String shareBizCode = item.getShareBizCode();
-            if (!TextUtils.isEmpty(shareBizCode)) {
+            if (!StringUtils.isEmpty(shareBizCode)) {
                 shareContent.businessId = shareBizCode;
             }
         }
@@ -316,7 +316,7 @@ public class b {
             }
             if (item != null) {
                 final String wxShareUrl = item.getWxShareUrl();
-                if (!TextUtils.isEmpty(wxShareUrl)) {
+                if (!StringUtils.isEmpty(wxShareUrl)) {
                     hashMap.put("defineToolParams", new JSONArray() { // from class: com.taobao.android.detail.alittdetail.share.ShareUtils$1
                         {
                             add(new JSONObject() { // from class: com.taobao.android.detail.alittdetail.share.ShareUtils$1.1

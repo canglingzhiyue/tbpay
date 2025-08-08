@@ -3,7 +3,7 @@ package com.taobao.mytaobao.ultron.event;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class f {
             Long l = jSONObject.getLong("id");
             String string = jSONObject.getString("jumpUrl");
             a(jSONObject, i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 Nav.from(context).toUri(string);
                 return;
             }
@@ -80,12 +80,12 @@ public class f {
         if (jSONObject.get("clickParam") != null) {
             try {
                 ClickParamBean clickParamBean = (ClickParamBean) JSON.toJavaObject(jSONObject.getJSONObject("clickParam"), ClickParamBean.class);
-                if (!TextUtils.isEmpty(clickParamBean.page)) {
+                if (!StringUtils.isEmpty(clickParamBean.page)) {
                     str = clickParamBean.page;
                 }
                 String str2 = str;
-                String str3 = TextUtils.isEmpty(clickParamBean.eventId) ? "2101" : clickParamBean.eventId;
-                String a2 = TextUtils.isEmpty(clickParamBean.arg1) ? a(i) : clickParamBean.arg1;
+                String str3 = StringUtils.isEmpty(clickParamBean.eventId) ? "2101" : clickParamBean.eventId;
+                String a2 = StringUtils.isEmpty(clickParamBean.arg1) ? a(i) : clickParamBean.arg1;
                 if (clickParamBean.args != null && !clickParamBean.args.isEmpty()) {
                     com.taobao.mytaobao.ut.c.a(str2, Integer.parseInt(str3), a2, clickParamBean.arg2, clickParamBean.arg3, clickParamBean.args);
                     if (clickParamBean.nextPage == null || clickParamBean.nextPage.isEmpty()) {

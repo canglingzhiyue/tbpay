@@ -1,7 +1,7 @@
 package com.alipay.android.msp.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -54,7 +54,7 @@ public class OrderInfoUtil {
         }
         LogUtil.record(1, "phonecashiermsp#ldc", "OrderInfoUtil.parseExternalInfoToMap", str);
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         String[] split = str.replaceAll("\"", "").split("&");
@@ -77,7 +77,7 @@ public class OrderInfoUtil {
             return ((Boolean) ipChange.ipc$dispatch("aac2e39d", new Object[]{str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str) && str.contains("biz_reqdata") && (parseExternalInfoToMap = parseExternalInfoToMap(str)) != null && parseExternalInfoToMap.get("biz_scene") != null && parseExternalInfoToMap.get("biz_scene").contains("reward")) {
+            if (!StringUtils.isEmpty(str) && str.contains("biz_reqdata") && (parseExternalInfoToMap = parseExternalInfoToMap(str)) != null && parseExternalInfoToMap.get("biz_scene") != null && parseExternalInfoToMap.get("biz_scene").contains("reward")) {
                 LogUtil.record(4, "phonecashiermsp#ldc", "ExternalinfoUtil.isRewordRequest", "true");
                 return true;
             }
@@ -357,12 +357,12 @@ public class OrderInfoUtil {
                 str = orderInfoMap.get("currency");
             }
         }
-        if (TextUtils.isEmpty(str) || "CNY".equals(str)) {
+        if (StringUtils.isEmpty(str) || "CNY".equals(str)) {
             orderModel.currency = "￥";
         } else {
             orderModel.currency = str;
         }
-        if (TextUtils.isEmpty(str) && orderInfo.toLowerCase().contains("currency")) {
+        if (StringUtils.isEmpty(str) && orderInfo.toLowerCase().contains("currency")) {
             EventLogUtil.logPayEvent("103618", "orderStr", orderInfo);
         }
         try {

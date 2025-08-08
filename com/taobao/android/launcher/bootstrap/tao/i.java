@@ -9,7 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,7 +63,7 @@ public class i implements g.b, com.taobao.orange.d {
         SharedPreferences sharedPreferences = context.getSharedPreferences("next_launch_link_filter", 0);
         String string = sharedPreferences.getString("__configVersion__", null);
         String str2 = map.get("configVersion");
-        if (TextUtils.equals(string, str2)) {
+        if (StringUtils.equals(string, str2)) {
             TLog.loge(gve.MODULE, "SGLinkFilterAction", "version is not changed, discard it. local=" + string + ", remote=" + str2);
             return;
         }
@@ -76,11 +76,11 @@ public class i implements g.b, com.taobao.orange.d {
             return ((Boolean) ipChange.ipc$dispatch("d13e9f7b", new Object[]{activity, intent})).booleanValue();
         }
         String scheme = intent.getScheme();
-        if (TextUtils.isEmpty(scheme)) {
+        if (StringUtils.isEmpty(scheme)) {
             return false;
         }
         String string = activity.getApplication().getSharedPreferences("next_launch_link_filter", 0).getString("schemes", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         List asList = Arrays.asList(string.split(","));
@@ -91,7 +91,7 @@ public class i implements g.b, com.taobao.orange.d {
         String dataString = intent.getDataString();
         String packageName = activity.getPackageName();
         String a2 = a(activity);
-        if (TextUtils.equals(packageName, a2)) {
+        if (StringUtils.equals(packageName, a2)) {
             return false;
         }
         return a(activity, dataString, a2, intent);
@@ -128,7 +128,7 @@ public class i implements g.b, com.taobao.orange.d {
         boolean z = a2.f26179a;
         String str3 = a2.b;
         a(a2, str, context.getClass().getName(), str2, currentTimeMillis2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return false;
         }
         TLog.loge(gve.MODULE, "SGLinkFilterAction", "SGLinkFilter.checkBlackMarketURL, uri: '" + str + "', result: is { isBlack=" + z + ", url=" + str3 + " }");
@@ -166,7 +166,7 @@ public class i implements g.b, com.taobao.orange.d {
         }
         try {
             for (ActivityManager.RunningTaskInfo runningTaskInfo : activityManager.getRunningTasks(2)) {
-                if (!TextUtils.equals(runningTaskInfo.baseActivity.getPackageName(), activity.getPackageName())) {
+                if (!StringUtils.equals(runningTaskInfo.baseActivity.getPackageName(), activity.getPackageName())) {
                     return runningTaskInfo.baseActivity.getPackageName();
                 }
             }

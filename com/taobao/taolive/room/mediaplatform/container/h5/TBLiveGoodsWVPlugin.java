@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -137,6 +137,6 @@ public class TBLiveGoodsWVPlugin extends e {
     private boolean checkAggregationParam(String str) {
         ItemGroupPageInfo itemGroupPageInfo;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("eb2d0a48", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && (itemGroupPageInfo = (ItemGroupPageInfo) JSON.parseObject(str, ItemGroupPageInfo.class)) != null && itemGroupPageInfo.checkInfo();
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("eb2d0a48", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && (itemGroupPageInfo = (ItemGroupPageInfo) JSON.parseObject(str, ItemGroupPageInfo.class)) != null && itemGroupPageInfo.checkInfo();
     }
 }

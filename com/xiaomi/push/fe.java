@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 
 /* loaded from: classes9.dex */
@@ -36,7 +36,7 @@ public class fe extends fh {
 
     @Override // com.xiaomi.push.ff
     public fe a(String str) {
-        if (b() && !TextUtils.isEmpty(str)) {
+        if (b() && !StringUtils.isEmpty(str)) {
             try {
                 this.f24468a = Color.parseColor(str);
             } catch (Exception unused) {

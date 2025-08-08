@@ -100,7 +100,7 @@ public class o implements Runnable {
             java.io.InputStream r5 = r6.getInputStream()     // Catch: java.lang.Exception -> L8d java.lang.Throwable -> Laf
             java.lang.String r7 = "Content-Encoding"
             java.lang.String r7 = r6.getHeaderField(r7)     // Catch: java.lang.Exception -> L8d java.lang.Throwable -> Laf
-            boolean r0 = android.text.TextUtils.equals(r0, r7)     // Catch: java.lang.Exception -> L8d java.lang.Throwable -> Laf
+            boolean r0 = android.text.StringUtils.equals(r0, r7)     // Catch: java.lang.Exception -> L8d java.lang.Throwable -> Laf
             if (r0 == 0) goto L54
             java.util.zip.GZIPInputStream r0 = new java.util.zip.GZIPInputStream     // Catch: java.lang.Exception -> L8d java.lang.Throwable -> Laf
             r0.<init>(r5)     // Catch: java.lang.Exception -> L8d java.lang.Throwable -> Laf

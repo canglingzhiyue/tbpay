@@ -1,7 +1,7 @@
 package com.taobao.android.livehome.plugin.atype.flexalocal.homepage2.controller;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -27,7 +27,7 @@ public class a {
         }
         com.taobao.phenix.intf.b h = com.taobao.phenix.intf.b.h();
         String string = context.getSharedPreferences("taobao_live_home", 0).getString("jingxuanFirstPageImageSp", "");
-        if (TextUtils.isEmpty(string) || (parseArray = JSON.parseArray(string)) == null || parseArray.size() <= 0) {
+        if (StringUtils.isEmpty(string) || (parseArray = JSON.parseArray(string)) == null || parseArray.size() <= 0) {
             return;
         }
         for (int i = 0; i < parseArray.size(); i++) {
@@ -36,7 +36,7 @@ public class a {
                 String string2 = jSONObject.getString("imageUrl");
                 int intValue = jSONObject.getInteger("width").intValue();
                 int intValue2 = jSONObject.getInteger("height").intValue();
-                if (!TextUtils.isEmpty(string2) && intValue > 0 && intValue2 > 0) {
+                if (!StringUtils.isEmpty(string2) && intValue > 0 && intValue2 > 0) {
                     h.a(ImageStrategyDecider.decideUrl(string2, Integer.valueOf(intValue), Integer.valueOf(intValue2), null)).limitSize(null, intValue, intValue2).fetch();
                 }
             }

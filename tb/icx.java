@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.adapt.api.AliAdaptServiceManager;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
@@ -104,7 +104,7 @@ public final class icx extends arv {
             return;
         }
         JSONObject c = aURAEventIO.getEventModel().c();
-        if (c == null || TextUtils.isEmpty(c.getString(BaseJsExecutor.NAME_VERIFY_TOKEN))) {
+        if (c == null || StringUtils.isEmpty(c.getString(BaseJsExecutor.NAME_VERIFY_TOKEN))) {
             a(e, com.alibaba.ability.localization.b.a(R.string.purchase_taobao_app_1029_1_19077));
             return;
         }

@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.BrowserActivity;
 import com.taobao.browser.exbrowser.BrowserUpperActivity;
@@ -55,13 +55,13 @@ public class H5NavProcess implements com.taobao.android.nav.e {
         }
         String uri2 = uri.toString();
         String a2 = c.a(URL_WHITELIST);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = "";
         }
         if (a2.equals("*")) {
             return true;
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             for (String str : a2.split(",")) {
                 if (uri2.contains(str)) {
                     return true;

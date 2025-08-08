@@ -1,6 +1,6 @@
 package com.taobao.android.behavir.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import com.taobao.tao.remotebusiness.RemoteBusiness;
@@ -31,7 +31,7 @@ public class a {
         if (mtopInstance != null) {
             String multiAccountUserId = mtopInstance.getMultiAccountUserId("DEFAULT");
             String str = dsj.f26943a;
-            if (TextUtils.isEmpty(multiAccountUserId) && !TextUtils.isEmpty(str) && com.taobao.android.behavix.behavixswitch.a.a("enableMTOPUserId", true)) {
+            if (StringUtils.isEmpty(multiAccountUserId) && !StringUtils.isEmpty(str) && com.taobao.android.behavix.behavixswitch.a.a("enableMTOPUserId", true)) {
                 remoteBusiness.mo1325setReqUserId(str);
                 TLog.loge("UCP", "UppMTopRequest", "change mtop userid");
             }

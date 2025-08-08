@@ -2,7 +2,7 @@ package com.taobao.tao.rate.ui.videodetail;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public class VideoDetailActivity extends CustomBaseActivity {
         }
         super.onCreate(bundle);
         tmw.a(getClass().getName());
-        if (getIntent() != null && getIntent().getData() != null && !TextUtils.isEmpty(getIntent().getData().getQueryParameter("rateId"))) {
+        if (getIntent() != null && getIntent().getData() != null && !StringUtils.isEmpty(getIntent().getData().getQueryParameter("rateId"))) {
             Nav from = Nav.from(this);
             from.toUri(b.RATE_DETAIL_V2_PAGE_URL + getIntent().getData().getQueryParameter("rateId"));
         } else {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,11 +85,11 @@ public class dib {
             e.a("tanx_imp_invoke_success", e());
             for (final String str : this.e) {
                 final String a2 = b.a(str);
-                if (TextUtils.isEmpty(str) || TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(str) || StringUtils.isEmpty(a2)) {
                     e.a("tanx_imp_invalid_url", "msg=url_is_empty_or_hash_error", e());
                 } else {
                     String host = Uri.parse(str).getHost();
-                    if (TextUtils.isEmpty(host)) {
+                    if (StringUtils.isEmpty(host)) {
                         e.a("tanx_imp_invalid_url", "msg=domain_not_right", e());
                     } else {
                         final String a3 = a(host, a2);
@@ -182,7 +182,7 @@ public class dib {
             this.b = new HashMap();
         }
         String a2 = h.a(this.d, this.e, this.b);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             e.a("tanx_imp_parse_error", e(), "error_msg=" + a2, "tracking_json=" + Uri.encode(this.d));
             UserTrackLogs.trackAdLog("tanx_imp_parse_error", e(), "error_msg=" + a2, "tracking_json=" + Uri.encode(this.d));
         }
@@ -198,7 +198,7 @@ public class dib {
         if (this.h == null) {
             String format = String.format("json_hash=%s", this.f26775a);
             String a2 = b.a(this.b);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 format = format + "," + a2;
             }
             this.h = format;
@@ -212,11 +212,11 @@ public class dib {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
         StringBuilder sb = new StringBuilder(e());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(",host=");
             sb.append(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(",ifs_hash=");
             sb.append(str2);
         }

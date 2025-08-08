@@ -1,7 +1,7 @@
 package com.huawei.hms.api;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.core.aidl.CodecLookup;
 import com.huawei.hms.core.aidl.DataBuffer;
 import com.huawei.hms.core.aidl.IAIDLCallback;
@@ -26,7 +26,7 @@ public class IPCCallback extends IAIDLCallback.Stub {
     public void call(DataBuffer dataBuffer) throws RemoteException {
         DatagramTransport.a aVar;
         int i;
-        if (dataBuffer == null || TextUtils.isEmpty(dataBuffer.URI)) {
+        if (dataBuffer == null || StringUtils.isEmpty(dataBuffer.URI)) {
             HMSLog.e(TAG, "In call, URI cannot be empty.");
             throw new RemoteException();
         }

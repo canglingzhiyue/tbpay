@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.inside.transfer.IFetchLoginInfo;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -28,7 +28,7 @@ public class LoginFreeService extends Service {
         public String getTokenLoginInfo() {
             rkg.a("link_tag", "LoginFreeService === getTokenLoginInfo === 获取到的免登信息：" + a.a().f23600a);
             String h = rkj.h(LoginFreeService.access$000(LoginFreeService.this));
-            if (!TextUtils.isEmpty(h)) {
+            if (!StringUtils.isEmpty(h)) {
                 a.a().b.put(h, true);
             }
             rkg.a("link_tag", "LoginFreeService === getTokenLoginInfo === 写入免登信息包名集合：" + a.a().b);

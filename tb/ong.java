@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.model.a;
 import com.taobao.tao.messagekit.core.utils.MsgLog;
@@ -39,7 +39,7 @@ public class ong {
         this.c = "";
         this.f32202a = i;
         this.b = str;
-        this.c = TextUtils.isEmpty(str2) ? "" : str2;
+        this.c = StringUtils.isEmpty(str2) ? "" : str2;
         a(i2, i3);
         this.o = new oni(this);
     }

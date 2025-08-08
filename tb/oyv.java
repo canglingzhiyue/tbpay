@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.virtual_thread.face.h;
@@ -109,7 +109,7 @@ public class oyv {
             } else {
                 httpURLConnection.setRequestProperty(HttpConstant.RANGE, "bytes=0-" + (i - 1));
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 httpURLConnection.setRequestProperty(HttpConstant.USER_AGENT, str2);
             }
             int responseCode = httpURLConnection.getResponseCode();

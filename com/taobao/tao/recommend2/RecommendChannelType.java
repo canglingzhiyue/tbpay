@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend2;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.tao.favorite.FavoriteConstants;
 import com.taobao.tao.navigation.model.NavigationTabConstraints;
 import tb.cts;
@@ -57,7 +57,7 @@ public enum RecommendChannelType {
     public static RecommendChannelType getChannelType(String str) {
         RecommendChannelType[] values;
         for (RecommendChannelType recommendChannelType : values()) {
-            if (TextUtils.equals(str, recommendChannelType.awesomeChannel)) {
+            if (StringUtils.equals(str, recommendChannelType.awesomeChannel)) {
                 return recommendChannelType;
             }
         }

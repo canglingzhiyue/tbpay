@@ -13,7 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.connection.state.TimeMeter;
@@ -350,7 +350,7 @@ public class KeepAliveManager {
             String b2 = rtx.b(context, FILE_RECENT_ENTRANCE, "-1");
             if ("-1".equals(b2)) {
                 rty.f33380a.d(TAG, "recentStr err", new Object[0]);
-            } else if (!TextUtils.isEmpty(b2) && Integer.parseInt(b2) == Calendar.getInstance().get(6)) {
+            } else if (!StringUtils.isEmpty(b2) && Integer.parseInt(b2) == Calendar.getInstance().get(6)) {
                 rty.f33380a.c(TAG, "addRecentEntrance, already added today", new Object[0]);
                 kat.a("keepalive", "full_verify", "recent added", mto.a.GEO_NOT_SUPPORT);
             } else {
@@ -388,7 +388,7 @@ public class KeepAliveManager {
                     return;
                 }
                 String b3 = rtx.b(context, FILE_LAUNCH, "");
-                if (!TextUtils.isEmpty(str) && str.equals(b3)) {
+                if (!StringUtils.isEmpty(str) && str.equals(b3)) {
                     rty.f33380a.d(TAG, "addRecentEntrance, activity already started", "mainProcessPid", str, "lastMainPid", b3);
                 } else {
                     addRecentEntranceImpl(context);
@@ -499,7 +499,7 @@ public class KeepAliveManager {
             tb.rty r11 = tb.rty.f33380a     // Catch: java.lang.Throwable -> L5e
             r11.b(r0, r7, r8, r10)     // Catch: java.lang.Throwable -> L5e
         L77:
-            boolean r11 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L5e
+            boolean r11 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Throwable -> L5e
             if (r11 != 0) goto Lab
             boolean r11 = com.taobao.accs.utl.UtilityImpl.isAppKeepAlive()     // Catch: java.lang.Throwable -> L5e
             if (r11 == 0) goto Lab
@@ -613,7 +613,7 @@ public class KeepAliveManager {
         } else if (Build.VERSION.SDK_INT >= 30) {
             long j = 0;
             for (ApplicationExitInfo applicationExitInfo : ((ActivityManager) context.getSystemService("activity")).getHistoricalProcessExitReasons(context.getPackageName(), 0, 16)) {
-                if (!TextUtils.isEmpty(applicationExitInfo.getDescription()) && applicationExitInfo.getDescription().toLowerCase().contains("remove task")) {
+                if (!StringUtils.isEmpty(applicationExitInfo.getDescription()) && applicationExitInfo.getDescription().toLowerCase().contains("remove task")) {
                     j = Math.max(j, applicationExitInfo.getTimestamp());
                 }
             }

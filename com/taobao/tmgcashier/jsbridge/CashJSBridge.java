@@ -3,7 +3,7 @@ package com.taobao.tmgcashier.jsbridge;
 import android.net.Uri;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -45,7 +45,7 @@ public class CashJSBridge extends e {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 TLog.logd("tmgcashier", TAG, "skip2TNGD params 为空！");
                 wVCallBackContext.error("skip2TNGD params 为空！");
                 return;

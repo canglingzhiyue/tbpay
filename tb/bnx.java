@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.triver.triver_shop.container.shopLoft.b;
@@ -81,7 +81,7 @@ public class bnx extends jpk {
                     return;
                 }
                 String string = jSONObject.getString("type");
-                if (TextUtils.isEmpty(string) || (bmbVar = this.c.get(string)) == null) {
+                if (StringUtils.isEmpty(string) || (bmbVar = this.c.get(string)) == null) {
                     return;
                 }
                 bmbVar.a(iDMComponent, iDMComponent2, jSONObject.getJSONObject("fields"));
@@ -96,10 +96,10 @@ public class bnx extends jpk {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca1a8084", new Object[]{this, iDMComponent, jSONObject});
-        } else if (!TextUtils.equals(jSONObject.getString("type"), "updateItem")) {
+        } else if (!StringUtils.equals(jSONObject.getString("type"), "updateItem")) {
         } else {
             String b = f.b(iDMComponent);
-            if (!TextUtils.equals(b, "stickyTop") && !TextUtils.equals(b, "stickyBottom")) {
+            if (!StringUtils.equals(b, "stickyTop") && !StringUtils.equals(b, "stickyBottom")) {
                 return;
             }
             JSONObject jSONObject2 = jSONObject.getJSONObject("message");
@@ -107,9 +107,9 @@ public class bnx extends jpk {
                 data.putAll(jSONObject2);
                 iDMComponent.writeBackData(data, false);
             }
-            if (TextUtils.equals(b, "stickyTop")) {
+            if (StringUtils.equals(b, "stickyTop")) {
                 this.d.b(8);
-            } else if (!TextUtils.equals(b, "stickyBottom")) {
+            } else if (!StringUtils.equals(b, "stickyBottom")) {
             } else {
                 this.d.b(16);
             }

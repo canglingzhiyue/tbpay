@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -329,7 +329,7 @@ public class XRichTextViewByCategoryCouponV3 extends DXNativeTextView {
             return (Rect) ipChange.ipc$dispatch("d28fa410", new Object[]{this, canvas, coupon, new Integer(i), new Integer(i2), new Integer(i3), new Integer(i4)});
         }
         if (coupon.bgDrawable != null) {
-            if (TextUtils.isEmpty(coupon.title) && TextUtils.isEmpty(coupon.content)) {
+            if (StringUtils.isEmpty(coupon.title) && StringUtils.isEmpty(coupon.content)) {
                 Rect rect = new Rect(i, i2, eck.a(getHeight(), coupon.srcRect).width() + i, getHeight() + i2);
                 coupon.bgDrawable.setBounds(rect);
                 coupon.bgDrawable.draw(canvas);
@@ -361,7 +361,7 @@ public class XRichTextViewByCategoryCouponV3 extends DXNativeTextView {
         int i2 = i;
         int i3 = i2 + this.xVIPTextLeftGap;
         int i4 = this.xVIPTextRightGap + i3;
-        if (!TextUtils.isEmpty(coupon.content)) {
+        if (!StringUtils.isEmpty(coupon.content)) {
             i4 = ((int) this.textPaint.measureText(coupon.content, 0, coupon.content.length())) + i3 + this.xVIPTextRightGap;
         }
         int i5 = i4;
@@ -369,7 +369,7 @@ public class XRichTextViewByCategoryCouponV3 extends DXNativeTextView {
             return false;
         }
         drawBgImg(canvas, coupon, i2, 0, i5, this.xVIPTextLeftGap);
-        if (!TextUtils.isEmpty(coupon.content)) {
+        if (!StringUtils.isEmpty(coupon.content)) {
             canvas.drawText(coupon.content, 0, this.textPaint.breakText(coupon.content, true, (getWidth() - this.couponStartX) - this.imageTextSpaceDraw, null), i3, getBaseLineY(this.textPaint), (Paint) this.textPaint);
         }
         this.textPaint.setColor(color);
@@ -389,22 +389,22 @@ public class XRichTextViewByCategoryCouponV3 extends DXNativeTextView {
         }
         int i2 = i;
         int i3 = i2 + this.xTextLeftGap;
-        int measureText = (!TextUtils.isEmpty(coupon.title) ? (int) this.textPaint.measureText(coupon.title, 0, coupon.title.length()) : 0) + i3 + this.xSplitLineGap;
-        int i4 = !TextUtils.isEmpty(coupon.title) ? this.xSplitLineWidth + measureText + this.xSplitLineGap : i3;
-        int measureText2 = (!TextUtils.isEmpty(coupon.content) ? ((int) this.textPaint.measureText(coupon.content, 0, coupon.content.length())) + i4 : i4) + this.xTextLeftGap;
+        int measureText = (!StringUtils.isEmpty(coupon.title) ? (int) this.textPaint.measureText(coupon.title, 0, coupon.title.length()) : 0) + i3 + this.xSplitLineGap;
+        int i4 = !StringUtils.isEmpty(coupon.title) ? this.xSplitLineWidth + measureText + this.xSplitLineGap : i3;
+        int measureText2 = (!StringUtils.isEmpty(coupon.content) ? ((int) this.textPaint.measureText(coupon.content, 0, coupon.content.length())) + i4 : i4) + this.xTextLeftGap;
         if (!judgeEndAndDraw(i2, measureText2, canvas)) {
             return false;
         }
         Rect drawBgImg = drawBgImg(canvas, coupon, i2, 0, measureText2, 0);
-        if (coupon.bgDrawable != null && !TextUtils.isEmpty(coupon.title)) {
+        if (coupon.bgDrawable != null && !StringUtils.isEmpty(coupon.title)) {
             Paint paint = new Paint();
             paint.setColor(this.xSplitLineColor);
             canvas.drawLine(measureText, 0, measureText + this.xSplitLineWidth, drawBgImg.bottom, paint);
         }
-        if (!TextUtils.isEmpty(coupon.title)) {
+        if (!StringUtils.isEmpty(coupon.title)) {
             canvas.drawText(coupon.title, 0, this.textPaint.breakText(coupon.title, true, (getWidth() - this.couponStartX) - this.imageTextSpaceDraw, null), i3, getBaseLineY(this.textPaint), (Paint) this.textPaint);
         }
-        if (!TextUtils.isEmpty(coupon.content)) {
+        if (!StringUtils.isEmpty(coupon.content)) {
             canvas.drawText(coupon.content, 0, this.textPaint.breakText(coupon.content, true, (getWidth() - this.couponStartX) - this.imageTextSpaceDraw, null), i4, getBaseLineY(this.textPaint), (Paint) this.textPaint);
         }
         return true;
@@ -424,7 +424,7 @@ public class XRichTextViewByCategoryCouponV3 extends DXNativeTextView {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8b5f246b", new Object[]{this, new Integer(i), new Integer(i2), canvas})).booleanValue();
         }
-        if (this.ellipsisLen == 0 || TextUtils.isEmpty(this.xEllipsis) || i2 + this.xCouponGap + this.ellipsisLen <= getWidth()) {
+        if (this.ellipsisLen == 0 || StringUtils.isEmpty(this.xEllipsis) || i2 + this.xCouponGap + this.ellipsisLen <= getWidth()) {
             return true;
         }
         float textSize = this.textPaint.getTextSize();

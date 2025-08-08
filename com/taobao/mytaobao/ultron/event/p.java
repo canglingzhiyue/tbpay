@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -35,7 +35,7 @@ public class p extends com.alibaba.android.ultron.event.q {
             return;
         }
         String string = c.getString("identifier");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.f18514a.a(string);

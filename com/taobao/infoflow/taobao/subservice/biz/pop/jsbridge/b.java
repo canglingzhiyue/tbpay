@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.pop.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -43,7 +43,7 @@ public class b implements IJsBridgeService.a {
             interfaceC0670a.a("bridge params is empty");
         } else {
             String string = jSONObject.getString(PopConst.BRIDGE_KEY_BUSINESS_ID);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 interfaceC0670a.a("businessId is empty");
                 return;
             }

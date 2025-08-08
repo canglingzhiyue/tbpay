@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.standard.video;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -107,7 +107,7 @@ public final class l extends a {
             return;
         }
         AbsPicGalleryVideoPlayer g = dVar.g();
-        if (g == null || !TextUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
+        if (g == null || !StringUtils.equals(g.p(), AbsPicGalleryVideoPlayer.PlayStatus.PLAY_STATUS_PLAYING)) {
             return;
         }
         Object a2 = g.a(n.EXT_KEY_IS_STRUCT_VIDEO);

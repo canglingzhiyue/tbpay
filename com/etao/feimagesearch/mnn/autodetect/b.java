@@ -3,7 +3,7 @@ package com.etao.feimagesearch.mnn.autodetect;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Size;
 import android.util.SparseArray;
 import com.alibaba.fastjson.JSON;
@@ -112,7 +112,7 @@ public final class b {
                 String str3 = (String) map.get("result_info");
                 if (str3 != null) {
                     String i4 = bVar.i();
-                    if (!TextUtils.isEmpty(i4) && (q.a((Object) i4, (Object) com.etao.feimagesearch.mnn.c.INVALID_RESULT_CODE) || q.a((Object) i4, (Object) com.etao.feimagesearch.mnn.c.OLD_ALGORITHM_CODE) || q.a((Object) i4, (Object) "A00003"))) {
+                    if (!StringUtils.isEmpty(i4) && (q.a((Object) i4, (Object) com.etao.feimagesearch.mnn.c.INVALID_RESULT_CODE) || q.a((Object) i4, (Object) com.etao.feimagesearch.mnn.c.OLD_ALGORITHM_CODE) || q.a((Object) i4, (Object) "A00003"))) {
                         List b = n.b((CharSequence) str3, new String[]{","}, false, 0, 6, (Object) null);
                         if (b.size() == 4) {
                             try {
@@ -208,7 +208,7 @@ public final class b {
             SparseArray<String> sparseArray = new SparseArray<>();
             String configString = com.etao.feimagesearch.config.b.dp();
             String str = configString;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 sparseArray.put(0, "请对准想搜的物品");
                 sparseArray.put(1, "检测到条码，解码中");
                 sparseArray.put(2, "对准商品正面识别更准");
@@ -498,7 +498,7 @@ public final class b {
         L19:
             java.lang.String r0 = r4.j
             java.lang.CharSequence r0 = (java.lang.CharSequence) r0
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L24
             return r3
         L24:

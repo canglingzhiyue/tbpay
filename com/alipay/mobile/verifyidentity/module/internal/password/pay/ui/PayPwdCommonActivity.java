@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -167,7 +167,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         String string = getIntent().getExtras().getString("pwd_PASS");
         String str = f5910a;
         VerifyLogCat.i(str, "pass_tip:" + string);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.mProgressText.setText(string);
         } else {
             this.mProgressText.setText(getLocaleStringResource(R.string.sg_pwd_verify_success));
@@ -237,7 +237,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
                 }
             });
             String string = getIntent().getExtras().getString("pwd_other");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.mOther.setText(string);
             }
             this.mOther.setVisibility(0);
@@ -245,7 +245,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         } else if (!this.isShowGetBackPwd) {
         } else {
             String string2 = getIntent().getExtras().getString("pwd_action");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 this.mOther.setText(string2);
             } else {
                 this.mOther.setText(getLocaleStringResource(R.string.sg_pwd_forget_in_layout));
@@ -280,7 +280,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         }
         this.mContent = (APTextView) findViewById(R.id.paypwd_content);
         String string = getIntent().getExtras().getString("footRemark");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         this.mContent.setText(string);
@@ -300,7 +300,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         this.mTick = (ImageView) findViewById(R.id.template_pay_success);
         this.mProgressText = (APTextView) findViewById(R.id.paypwd_progress_text);
         String string = getIntent().getExtras().getString("loadingTip");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = getLocaleStringResource(R.string.pwd_verify_ing);
         }
         this.mProgressText.setText(string);
@@ -363,7 +363,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
                 }
                 PayPwdCommonActivity.access$600(PayPwdCommonActivity.this, str2);
                 PayPwdCommonActivity payPwdCommonActivity = PayPwdCommonActivity.this;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     i = str2.length();
                 }
                 payPwdCommonActivity.writePWDSwitchBehavorLog("1", String.valueOf(i));
@@ -404,11 +404,11 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         this.mSafeInputContext.setRsaPublicKey(this.mPubKey);
         this.mSafeInputContext.setEncryptRandomStringAndType(this.mTimestamp, EncryptRandomType.randombefore);
         String localeStringResource = getLocaleStringResource(R.string.sg_please_input_user_pwd);
-        if (!TextUtils.isEmpty(getIntent().getExtras().getString(PayPwdModule.FORM_TIP_PLACEHOLDER))) {
+        if (!StringUtils.isEmpty(getIntent().getExtras().getString(PayPwdModule.FORM_TIP_PLACEHOLDER))) {
             localeStringResource = getIntent().getExtras().getString(PayPwdModule.FORM_TIP_PLACEHOLDER);
         }
         this.mSafeInputContext.setEditTextHint(localeStringResource);
-        if (!TextUtils.isEmpty(getIntent().getExtras().getString(PayPwdModule.FORM_BTN))) {
+        if (!StringUtils.isEmpty(getIntent().getExtras().getString(PayPwdModule.FORM_BTN))) {
             this.mSafeInputContext.setOkButtonText(getIntent().getExtras().getString(PayPwdModule.FORM_BTN));
         } else {
             this.mSafeInputContext.setOkButtonText(getLocaleStringResource(R.string.sg_pwd_page_confirm));
@@ -546,10 +546,10 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         }
         this.mSubtitle = (APTextView) findViewById(R.id.paypwd_subtitle);
         String string = getIntent().getExtras().getString("subtitle");
-        if (z && TextUtils.isEmpty(string)) {
+        if (z && StringUtils.isEmpty(string)) {
             string = getLocaleStringResource(R.string.sg_please_input_user_pwd);
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.mSubtitle.setText(string);
             this.mSubtitle.setVisibility(0);
             return;
@@ -746,7 +746,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
                     if (ModuleConstants.VI_MODULE_NAME_PAYMENT_PASSWORD_PLUS.equalsIgnoreCase(PayPwdCommonActivity.this.sourceToPwd)) {
                         moduleName = ModuleConstants.VI_MODULE_NAME_PAYMENT_PASSWORD_PLUS;
                     }
-                    if (mICRpcResponse.finish || TextUtils.isEmpty(mICRpcResponse.nextStep) || !mICRpcResponse.nextStep.equals(moduleName)) {
+                    if (mICRpcResponse.finish || StringUtils.isEmpty(mICRpcResponse.nextStep) || !mICRpcResponse.nextStep.equals(moduleName)) {
                         PayPwdCommonActivity.this.processError();
                         return;
                     }
@@ -765,7 +765,7 @@ public abstract class PayPwdCommonActivity extends AbsPayPwdActivity {
         }
         String str2 = f5910a;
         VerifyLogCat.i(str2, "updatePubKey: " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             VerifyLogCat.i(f5910a, "服务端没有提供新的公钥，不更新");
             return;
         }

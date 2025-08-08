@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -162,8 +162,8 @@ public class oom extends a {
         } else if (osmVar == null) {
         } else {
             e.e("RTabItemTapEventHandler", "r4ReplaceRequest  refreshType :" + str);
-            if (!TextUtils.equals("all", str)) {
-                i = ((str == null || TextUtils.equals("afterSelf", str)) && (a2 = opb.a(jSONObject.getString("sectionBizCode"), new ArrayList(osmVar.j()))) != -1) ? a2 + 1 : -1;
+            if (!StringUtils.equals("all", str)) {
+                i = ((str == null || StringUtils.equals("afterSelf", str)) && (a2 = opb.a(jSONObject.getString("sectionBizCode"), new ArrayList(osmVar.j()))) != -1) ? a2 + 1 : -1;
             }
             if (i == -1) {
                 return;
@@ -198,8 +198,8 @@ public class oom extends a {
         }
         Object tag = view.getTag(R.id.tag_recommend_containerId);
         String obj = tag == null ? null : tag.toString();
-        if (!TextUtils.equals("all", str)) {
-            i = ((str == null || TextUtils.equals("afterSelf", str)) && (a2 = opb.a(jSONObject.getString("sectionBizCode"), com.taobao.tao.homepage.d.f(obj).g(obj))) != -1) ? a2 + 1 : -1;
+        if (!StringUtils.equals("all", str)) {
+            i = ((str == null || StringUtils.equals("afterSelf", str)) && (a2 = opb.a(jSONObject.getString("sectionBizCode"), com.taobao.tao.homepage.d.f(obj).g(obj))) != -1) ? a2 + 1 : -1;
         }
         if (i == -1) {
             return;
@@ -211,7 +211,7 @@ public class oom extends a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e22cdb15", new Object[]{this, str, ksoVar, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             JSONObject jSONObject2 = new JSONObject();
             if (jSONObject != null) {

@@ -1,7 +1,7 @@
 package com.alibaba.security.realidentity;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.algo.wrapper.entity.result.ALBiometricsResult;
 import com.alibaba.security.realidentity.biz.config.RPBizConfig;
 import com.alibaba.security.realidentity.biz.start.UploadToken;
@@ -137,7 +137,7 @@ public class z1 extends c2 {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("32be7016", new Object[]{this, uploadTokenArr});
         }
-        if (TextUtils.isEmpty(this.s)) {
+        if (StringUtils.isEmpty(this.s)) {
             return null;
         }
         UploadFileModel uploadFileModel = new UploadFileModel();

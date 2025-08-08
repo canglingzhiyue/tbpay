@@ -1,7 +1,7 @@
 package com.taobao.android.purchase.aura.helper;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.apmobilesecuritysdk.face.APSecuritySdk;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,7 +68,7 @@ public class c {
         JSONObject jSONObject2 = new JSONObject();
         try {
             String str = APSecuritySdk.getInstance(context.getApplicationContext()).getTokenResult().apdidToken;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject2.put(rrv.APDIDTOKEN, (Object) str);
             }
         } catch (Exception unused) {
@@ -133,7 +133,7 @@ public class c {
         try {
             PositionInfo b = com.taobao.android.editionswitcher.b.b(context);
             String str = b != null ? b.countryCode : "";
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("countryCode", str);
             }
         } catch (Throwable th) {
@@ -183,7 +183,7 @@ public class c {
             globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
         } catch (Exception unused) {
         }
-        if (TextUtils.isEmpty(globalProperty)) {
+        if (StringUtils.isEmpty(globalProperty)) {
             return jSONObject;
         }
         String[] split = globalProperty.split(mly.UNESCAPED_SEPARATOR);
@@ -206,7 +206,7 @@ public class c {
         final String a2 = a.a(context, false);
         return new JSONObject() { // from class: com.taobao.android.purchase.aura.helper.RequestConfig$1
             {
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     put("installApp", (Object) a2);
                 }
             }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -65,7 +65,7 @@ public class ssm {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("acc619e9", new Object[]{this, dXRootView});
-        } else if (!a() || !TextUtils.equals(oqc.a().l(), ksk.NEW_FACE_PARENT.f30287a)) {
+        } else if (!a() || !StringUtils.equals(oqc.a().l(), ksk.NEW_FACE_PARENT.f30287a)) {
         } else {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             e.e("HomeSearchUiMonitor", "start ui detect");

@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.scancode.common.object.ScancodeResult;
 import com.taobao.android.scancode.common.util.a;
@@ -45,7 +45,7 @@ public class oxw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("adc5244e", new Object[]{activity, str, scancodeResult});
-        } else if (activity == null || scancodeResult == null || TextUtils.isEmpty(str)) {
+        } else if (activity == null || scancodeResult == null || StringUtils.isEmpty(str)) {
         } else {
             Intent intent = new Intent(str);
             intent.putExtra(a.GATEWAY_CALLBACK_RESULT_PARAM, scancodeResult);

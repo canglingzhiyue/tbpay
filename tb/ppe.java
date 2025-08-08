@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import com.taobao.taolive.sdk.utils.q;
@@ -122,7 +122,7 @@ public class ppe {
         try {
             if (this.f != null && this.f.z() != null && this.f.z().aJ_() != null && this.f.z().aJ_().a() != null) {
                 String i = this.f.z().aJ_().a().i();
-                if (TextUtils.isEmpty(i)) {
+                if (StringUtils.isEmpty(i)) {
                     return hashMap;
                 }
                 Uri parse = Uri.parse(i);

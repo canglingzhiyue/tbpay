@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.windvane;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.ut.abtest.internal.util.g;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -107,7 +107,7 @@ public class WVApiResponse<T> implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2d4e3785", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.ret)) {
+        if (StringUtils.isEmpty(this.ret)) {
             this.ret = "HY_SUCCESS";
         }
         return g.a(this);

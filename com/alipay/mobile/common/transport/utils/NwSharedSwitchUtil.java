@@ -2,7 +2,7 @@ package com.alipay.mobile.common.transport.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
@@ -94,7 +94,7 @@ public class NwSharedSwitchUtil {
                 return (String) ipChange.ipc$dispatch("b06a69c4", new Object[]{context, str});
             }
             String configFromDB = getConfigFromDB(str);
-            if (!TextUtils.isEmpty(configFromDB)) {
+            if (!StringUtils.isEmpty(configFromDB)) {
                 return configFromDB;
             }
             return context.getSharedPreferences(SHARED_FILE_NAME, 4).getString(str, null);
@@ -129,7 +129,7 @@ public class NwSharedSwitchUtil {
                 return (Map) ipChange.ipc$dispatch("198d8aa2", new Object[]{context, str, str2, map});
             }
             String sharedSwitch = getSharedSwitch(context, str, str2);
-            if (TextUtils.isEmpty(sharedSwitch)) {
+            if (StringUtils.isEmpty(sharedSwitch)) {
                 return map;
             }
             JSONObject jSONObject = new JSONObject(sharedSwitch);
@@ -154,11 +154,11 @@ public class NwSharedSwitchUtil {
                 return (String) ipChange.ipc$dispatch("473b4c3a", new Object[]{context, str, str2});
             }
             String configFromDB = getConfigFromDB(str2);
-            if (!TextUtils.isEmpty(configFromDB)) {
+            if (!StringUtils.isEmpty(configFromDB)) {
                 return configFromDB;
             }
             String string = context.getSharedPreferences(str, 4).getString(str2, null);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 LogCatUtil.info("NwSharedSwitchUtil", "getSharedSwitch.  Get config from sp. key:" + str2);
                 return string;
             }
@@ -199,7 +199,7 @@ public class NwSharedSwitchUtil {
             } else {
                 LogCatUtil.debug("NwSharedSwitchUtil", "getSharedSwitch,value is null,try get from original");
                 final String switchFromOriginal = ExtTransportOffice.getInstance().getSwitchFromOriginal(str2);
-                if (!TextUtils.isEmpty(switchFromOriginal)) {
+                if (!StringUtils.isEmpty(switchFromOriginal)) {
                     LogCatUtil.debug("NwSharedSwitchUtil", "load config from original");
                     NetworkAsyncTaskExecutor.execute(new Runnable() { // from class: com.alipay.mobile.common.transport.utils.NwSharedSwitchUtil.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -434,7 +434,7 @@ public class NwSharedSwitchUtil {
             ipChange.ipc$dispatch("5711d39f", new Object[]{str});
         } else if (MiscUtils.isEmpty(str)) {
         } else {
-            if (!TextUtils.equals(str, "-1")) {
+            if (!StringUtils.equals(str, "-1")) {
                 z = MiscUtils.grayscaleUtdid(DeviceInfoUtil.getDeviceId(), str);
             }
             NetworkConfigDAO.getInstance().saveOrUpdateConfig(KEY_READ_CONFIG_FROM_DB, String.valueOf(z));

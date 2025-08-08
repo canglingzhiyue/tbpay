@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.metaInfo.appinfo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.AppModel;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.tbmainfragment.i;
@@ -22,11 +22,11 @@ public class b {
         if (appModel != null && appModel.getExtendInfos() != null) {
             try {
                 String string = appModel.getExtendInfos().getString("bizType");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return "";
                 }
                 String string2 = appModel.getExtendInfos().getString(i.SUB_KEY_FRAGMENT_JUMP);
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     return string;
                 }
                 return string + "_" + string2;

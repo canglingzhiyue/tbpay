@@ -1,7 +1,7 @@
 package com.tencent.mm.opensdk.modelbiz;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import tb.kge;
@@ -21,7 +21,7 @@ public class WXQRCodePay {
 
         @Override // com.tencent.mm.opensdk.modelbase.BaseReq
         public boolean checkArgs() {
-            return !TextUtils.isEmpty(this.codeContent);
+            return !StringUtils.isEmpty(this.codeContent);
         }
 
         @Override // com.tencent.mm.opensdk.modelbase.BaseReq

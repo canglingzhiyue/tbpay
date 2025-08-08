@@ -12,7 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -219,13 +219,13 @@ public class TMGWeex2Activity extends AppCompatActivity implements g {
             String queryParameter2 = uri.getQueryParameter("cashierHeight");
             String queryParameter3 = uri.getQueryParameter("fullPage");
             try {
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     this.d = Integer.parseInt(queryParameter);
                 }
-                if (!TextUtils.isEmpty(queryParameter2)) {
+                if (!StringUtils.isEmpty(queryParameter2)) {
                     this.d = Integer.parseInt(queryParameter2);
                 }
-                if (!TextUtils.isEmpty(queryParameter3)) {
+                if (!StringUtils.isEmpty(queryParameter3)) {
                     this.c = Integer.parseInt(queryParameter3);
                 }
                 if (!"false".equals(uri.getQueryParameter("dimEnabled"))) {
@@ -244,12 +244,12 @@ public class TMGWeex2Activity extends AppCompatActivity implements g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a821d36c", new Object[]{this, new Boolean(z)});
-        } else if (TextUtils.isEmpty(this.i)) {
+        } else if (StringUtils.isEmpty(this.i)) {
         } else {
             if (!z && (intent = getIntent()) != null) {
                 this.f = intent.getLongExtra("routerTime", 0L);
                 String stringExtra = intent.getStringExtra("nativeFrom");
-                if (!TextUtils.isEmpty(stringExtra)) {
+                if (!StringUtils.isEmpty(stringExtra)) {
                     this.i += "&nativeFrom=" + stringExtra;
                 }
                 Log.e("TMGWeex2Activity", "weexUrl:" + this.i);

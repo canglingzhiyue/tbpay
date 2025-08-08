@@ -2,7 +2,7 @@ package com.taobao.weex.ui.animation;
 
 import android.animation.PropertyValuesHolder;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.util.Property;
 import android.view.View;
@@ -97,7 +97,7 @@ public class TransformParser {
             return (Map) ipChange.ipc$dispatch("55190080", new Object[]{wXSDKInstance, str, new Integer(i), new Integer(i2), new Integer(i3)});
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return new FunctionParser(str, new FunctionParser.Mapper<Property<View, Float>, Float>() { // from class: com.taobao.weex.ui.animation.TransformParser.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -241,7 +241,7 @@ public class TransformParser {
         if (ipChange instanceof IpChange) {
             return (Pair) ipChange.ipc$dispatch("6ab942cb", new Object[]{wXSDKInstance, str, new Integer(i), new Integer(i2), new Integer(i3)});
         }
-        if (TextUtils.isEmpty(str) || (indexOf = str.indexOf(32)) == -1) {
+        if (StringUtils.isEmpty(str) || (indexOf = str.indexOf(32)) == -1) {
             return null;
         }
         int i4 = indexOf;

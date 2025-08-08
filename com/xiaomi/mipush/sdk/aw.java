@@ -1,7 +1,7 @@
 package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.BuildConfig;
 import com.xiaomi.push.ax;
 import com.xiaomi.push.bm;
@@ -57,10 +57,10 @@ public class aw implements Runnable {
         if (!com.xiaomi.push.j.m2123d()) {
             String a2 = bm.a(com.xiaomi.push.i.c(this.f24320a));
             String e = com.xiaomi.push.i.e(this.f24320a);
-            if (!TextUtils.isEmpty(e)) {
+            if (!StringUtils.isEmpty(e)) {
                 a2 = a2 + "," + e;
             }
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.xiaomi.push.k.a(jbVar.f678a, Constants.EXTRA_KEY_IMEI_MD5, a2);
             }
         }

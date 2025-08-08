@@ -16,7 +16,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.inputmethod.InputMethodManager;
@@ -333,9 +333,9 @@ public class UiUtil {
         boolean z = true;
         for (int i3 = 0; i3 < strArr.length; i3++) {
             String str2 = strArr[i3];
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 Drawable localDrawable = getLocalDrawable(str2, context, i, i2);
-                boolean z2 = TextUtils.equals(str, INPUT_TYPE_VALUE_CHECKBOX) || TextUtils.equals(str, "radio");
+                boolean z2 = StringUtils.equals(str, INPUT_TYPE_VALUE_CHECKBOX) || StringUtils.equals(str, "radio");
                 int i4 = z2 ? 16842912 : 16842919;
                 if (i3 == 0) {
                     if (z2) {
@@ -762,7 +762,7 @@ public class UiUtil {
                 z = true;
                 break;
         }
-        return z && !TextUtils.equals(str2, a.ATOM_EXT_safe);
+        return z && !StringUtils.equals(str2, a.ATOM_EXT_safe);
     }
 
     public static String readAssetsFile(String str, AssetManager assetManager) {
@@ -861,11 +861,11 @@ public class UiUtil {
         if (indexOf > 0) {
             packageName = str.substring(0, indexOf);
         }
-        if (TextUtils.equals("com.alipay.android.app.template", context.getPackageName())) {
+        if (StringUtils.equals("com.alipay.android.app.template", context.getPackageName())) {
             packageName = context.getPackageName();
         }
         String substring = str.substring(indexOf + 1);
-        if (TextUtils.isEmpty(substring)) {
+        if (StringUtils.isEmpty(substring)) {
             return null;
         }
         int indexOf2 = substring.indexOf(".");

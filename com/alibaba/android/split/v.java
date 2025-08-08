@@ -3,7 +3,7 @@ package com.alibaba.android.split;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.util.BundleSplitUtil;
 import java.util.ArrayList;
@@ -124,7 +124,7 @@ public class v {
         HashSet hashSet = new HashSet();
         SharedPreferences i = i(context);
         String string = i.getString("disableFeatures_" + h(context), "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             hashSet.addAll(Arrays.asList(string.split(",")));
         }
         return hashSet;
@@ -137,7 +137,7 @@ public class v {
         }
         SharedPreferences i = i(context);
         String string = i.getString("disableUpdateFeatures_" + h(context), "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         return Arrays.asList(string.split(",")).contains(str);
@@ -158,7 +158,7 @@ public class v {
             return (String) ipChange.ipc$dispatch("f21ce807", new Object[]{context});
         }
         try {
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 return b;
             }
             b = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
@@ -324,7 +324,7 @@ public class v {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("82ab5f89", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (str.endsWith("$ipReplace")) {

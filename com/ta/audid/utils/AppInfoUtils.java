@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -62,6 +62,6 @@ public class AppInfoUtils {
         }
         String curProcessName = getCurProcessName(context);
         String appPackageName = getAppPackageName(context);
-        return TextUtils.isEmpty(curProcessName) || TextUtils.isEmpty(appPackageName) || curProcessName.equals(appPackageName);
+        return StringUtils.isEmpty(curProcessName) || StringUtils.isEmpty(appPackageName) || curProcessName.equals(appPackageName);
     }
 }

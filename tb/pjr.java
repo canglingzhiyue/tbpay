@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -325,7 +325,7 @@ public class pjr extends b implements d {
         if (u != null && u.status == 0 && poy.B(n.a()) == 0) {
             d dVar = this.f32705a;
             String str = "timemoveReturn";
-            if (dVar != null && dVar.j() != null && com.taobao.taolive.movehighlight.utils.c.w() && !TextUtils.isEmpty(this.f32705a.j().q)) {
+            if (dVar != null && dVar.j() != null && com.taobao.taolive.movehighlight.utils.c.w() && !StringUtils.isEmpty(this.f32705a.j().q)) {
                 str = "timemoveReturn." + this.f32705a.j().q;
             }
             if (a2.l() != null) {

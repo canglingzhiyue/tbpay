@@ -1,6 +1,6 @@
 package com.taobao.taolive.dinamicext.view;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mediaplay.model.MediaLiveInfo;
 import com.taobao.mediaplay.model.QualityLiveItem;
@@ -115,7 +115,7 @@ public class a {
         }
         String str = f21429a;
         TLog.loge(str, "handlePlayError  what = " + i + " extra = " + i2);
-        if (TextUtils.isEmpty(this.d) && TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.d) && StringUtils.isEmpty(this.e)) {
             return false;
         }
         a(i);

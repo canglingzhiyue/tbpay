@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -261,16 +261,16 @@ public class qnk extends pig<okd> {
         this.g.setScaleType(a2.h);
         this.g.setLayoutParams(layoutParams);
         String str = "";
-        if (!TextUtils.equals(okdVar.f32136a, this.i)) {
+        if (!StringUtils.equals(okdVar.f32136a, this.i)) {
             ctu.a("mainPicImageFirstBind");
             ctu.a();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = fln.a(this.h.getContext(), okdVar.f32136a);
             }
             com.taobao.phenix.intf.b.h().a(str).addLoaderExtra(esr.BUNDLE_BIZ_CODE, fln.PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).succListener(new a(this.f32680a, this.g, this.h, false, this.d)).failListener(new b(false)).fetch();
         }
-        if (this.c.i().h && !TextUtils.equals(okdVar.f32136a, this.i)) {
-            if (TextUtils.isEmpty(str)) {
+        if (this.c.i().h && !StringUtils.equals(okdVar.f32136a, this.i)) {
+            if (StringUtils.isEmpty(str)) {
                 str = fln.a(this.h.getContext(), okdVar.f32136a);
             }
             fjt.a(fjt.TAG_RENDER, this + "MainPicImageViewHolder.bindGaussian, index: " + ((okd) this.d).d + ", url: " + str);

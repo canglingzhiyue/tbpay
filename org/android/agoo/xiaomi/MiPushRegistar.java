@@ -3,7 +3,7 @@ package org.android.agoo.xiaomi;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.ALog;
 import com.taobao.accs.utl.UtilityImpl;
@@ -22,7 +22,7 @@ public class MiPushRegistar {
     private static final String brand;
 
     static {
-        String str = TextUtils.isEmpty(Build.BRAND) ? Build.MANUFACTURER : Build.BRAND;
+        String str = StringUtils.isEmpty(Build.BRAND) ? Build.MANUFACTURER : Build.BRAND;
         brand = str == null ? "" : str.toLowerCase();
     }
 

@@ -1,6 +1,6 @@
 package com.taobao.android.tschedule.parser.expr.location;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.jku;
 import tb.kge;
@@ -47,7 +47,7 @@ public class a extends jku {
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("35bd4c7", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@location.")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@location.")) {
             return null;
         }
         return new a(str);

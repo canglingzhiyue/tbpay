@@ -2,7 +2,7 @@ package com.taobao.relationship.mtop.addfollow;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class a implements a.InterfaceC0830a {
         jSONObject.put("originFlag", (Object) bVar.h);
         jSONObject.put("type", (Object) Integer.valueOf(bVar.d));
         jSONObject.put("option", (Object) Integer.valueOf(bVar.e));
-        if (!TextUtils.isEmpty(bVar.i)) {
+        if (!StringUtils.isEmpty(bVar.i)) {
             jSONObject.put("extra", (Object) bVar.i);
         }
         JSONObject jSONObject2 = new JSONObject();
@@ -94,21 +94,21 @@ public class a implements a.InterfaceC0830a {
             AddFollowResponse.AddFollowData addFollowData = (AddFollowResponse.AddFollowData) JSON.parseObject(obj.toString(), AddFollowResponse.AddFollowData.class);
             if (this.f18973a != null) {
                 HashMap<String, Object> hashMap = new HashMap<>();
-                if (!TextUtils.isEmpty(addFollowData.toastMsg)) {
+                if (!StringUtils.isEmpty(addFollowData.toastMsg)) {
                     hashMap.put("toast", addFollowData.toastMsg);
                 }
-                if (!TextUtils.isEmpty(addFollowData.followExtra)) {
+                if (!StringUtils.isEmpty(addFollowData.followExtra)) {
                     hashMap.put(nmf.PARAMS_MTOP_RESULT_EXTRA, addFollowData.followExtra);
                 }
                 this.f18973a.onBusSuccess(nmf.MTOP_ADDFOLLOW, bVar2.b, bVar2.c, hashMap);
             }
             if (this.b != null) {
                 r rVar = new r();
-                if (!TextUtils.isEmpty(addFollowData.followExtra)) {
+                if (!StringUtils.isEmpty(addFollowData.followExtra)) {
                     rVar.a(nmf.PARAMS_MTOP_RESULT_EXTRA, addFollowData.followExtra);
                 }
                 if (bVar2.m) {
-                    if (TextUtils.isEmpty(addFollowData.toastMsg)) {
+                    if (StringUtils.isEmpty(addFollowData.toastMsg)) {
                         nmj.a("关注成功，可以在微淘查看TA的动态啦~");
                     } else {
                         nmj.a(addFollowData.toastMsg);
@@ -118,11 +118,11 @@ public class a implements a.InterfaceC0830a {
             }
             if (this.c != null) {
                 JSONObject jSONObject = new JSONObject();
-                if (!TextUtils.isEmpty(addFollowData.followExtra)) {
+                if (!StringUtils.isEmpty(addFollowData.followExtra)) {
                     jSONObject.put(nmf.PARAMS_MTOP_RESULT_EXTRA, (Object) addFollowData.followExtra);
                 }
                 if (bVar2.m) {
-                    if (TextUtils.isEmpty(addFollowData.toastMsg)) {
+                    if (StringUtils.isEmpty(addFollowData.toastMsg)) {
                         nmj.a("关注成功，可以在微淘查看TA的动态啦~");
                     } else {
                         nmj.a(addFollowData.toastMsg);
@@ -130,7 +130,7 @@ public class a implements a.InterfaceC0830a {
                 }
                 this.c.onResult(nlw.a(jSONObject));
             }
-            if (bVar2 != null && bVar2.d == 3 && bVar2.f18974a == null && bVar2.m && !TextUtils.isEmpty(addFollowData.toastMsg)) {
+            if (bVar2 != null && bVar2.d == 3 && bVar2.f18974a == null && bVar2.m && !StringUtils.isEmpty(addFollowData.toastMsg)) {
                 nmj.a(addFollowData.toastMsg);
             }
             TBSoundPlayer.getInstance().playScene(3);
@@ -162,7 +162,7 @@ public class a implements a.InterfaceC0830a {
             }
             if (this.b != null) {
                 if (bVar2.m) {
-                    if (TextUtils.isEmpty(cVar.b)) {
+                    if (StringUtils.isEmpty(cVar.b)) {
                         nmj.a("关注失败");
                     } else {
                         nmj.a(cVar.b);
@@ -176,7 +176,7 @@ public class a implements a.InterfaceC0830a {
                 return;
             }
             if (bVar2.m) {
-                if (TextUtils.isEmpty(cVar.b)) {
+                if (StringUtils.isEmpty(cVar.b)) {
                     nmj.a("关注失败");
                 } else {
                     nmj.a(cVar.b);

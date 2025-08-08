@@ -2,7 +2,7 @@ package com.taobao.tao.log;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.interceptor.RealTimeLogMessageManager;
@@ -137,7 +137,7 @@ public class f {
         d.l = logLevel;
         d.f20685a = str3;
         d.e = str4;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             d.n = str2.replaceAll("[:*?<>|\"\\\\/]", "-");
         }
         return this;

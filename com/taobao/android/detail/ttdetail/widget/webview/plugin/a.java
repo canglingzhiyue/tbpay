@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.widget.webview.plugin;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.utils.i;
 import com.taobao.android.weex_framework.adapter.e;
@@ -32,7 +32,7 @@ public class a {
         try {
             if (fiq.OPERATE_GET_DETAIL_DATA.equals(str)) {
                 String a2 = a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     wVCallBackContext.error();
                 } else {
                     wVCallBackContext.success(a2);

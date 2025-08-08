@@ -9,7 +9,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.Layout;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -148,7 +148,7 @@ public class UserTaskView2 extends FrameLayout implements f {
                 }
                 TextView textView = new TextView(UserTaskView2.this.getContext());
                 try {
-                    textView.setTextColor(Color.parseColor((UserTaskView2.access$000(UserTaskView2.this) == null || TextUtils.isEmpty(UserTaskView2.access$000(UserTaskView2.this).getString("contentColor"))) ? "#ffffff" : UserTaskView2.access$000(UserTaskView2.this).getString("contentColor")));
+                    textView.setTextColor(Color.parseColor((UserTaskView2.access$000(UserTaskView2.this) == null || StringUtils.isEmpty(UserTaskView2.access$000(UserTaskView2.this).getString("contentColor"))) ? "#ffffff" : UserTaskView2.access$000(UserTaskView2.this).getString("contentColor")));
                 } catch (Exception unused) {
                 }
                 textView.setTextSize(0, com.taobao.taolive.sdk.utils.b.a(UserTaskView2.this.getContext(), 10.0f));
@@ -209,7 +209,7 @@ public class UserTaskView2 extends FrameLayout implements f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2335f94e", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             this.mEntryText.setVisibility(0);
             this.mEntryText.setText(str);
         } else {
@@ -224,7 +224,7 @@ public class UserTaskView2 extends FrameLayout implements f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8c2226a5", new Object[]{this, jSONObject});
-        } else if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("durationType"))) {
+        } else if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("durationType"))) {
         } else {
             if (bip.REQUEST_ONCE.equals(jSONObject.getString("durationType")) || "countdown_jump".equals(jSONObject.getString("durationType"))) {
                 resetAtmosphere();
@@ -275,10 +275,10 @@ public class UserTaskView2 extends FrameLayout implements f {
             }
             this.mAtmosphereBanner.setVisibility(0);
             int tipLength = getTipLength(true);
-            if (TextUtils.isEmpty(this.mAtmosphere.getString("durationType")) || "countdown_jump".equals(this.mAtmosphere.getString("durationType")) || bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType")) || (RVStartParams.TRANSPARENT_TITLE_ALWAYS.equals(this.mAtmosphere.getString("durationType")) && this.mAtmosphereShowAnimator != null)) {
+            if (StringUtils.isEmpty(this.mAtmosphere.getString("durationType")) || "countdown_jump".equals(this.mAtmosphere.getString("durationType")) || bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType")) || (RVStartParams.TRANSPARENT_TITLE_ALWAYS.equals(this.mAtmosphere.getString("durationType")) && this.mAtmosphereShowAnimator != null)) {
                 atmosphereBannerShowAnimator(z, tipLength);
             }
-            if (!TextUtils.isEmpty(this.mAtmosphere.getString("durationType")) && !"countdown_jump".equals(this.mAtmosphere.getString("durationType")) && !"close".equals(this.mAtmosphere.getString("durationType")) && !bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType"))) {
+            if (!StringUtils.isEmpty(this.mAtmosphere.getString("durationType")) && !"countdown_jump".equals(this.mAtmosphere.getString("durationType")) && !"close".equals(this.mAtmosphere.getString("durationType")) && !bip.REQUEST_ONCE.equals(this.mAtmosphere.getString("durationType"))) {
                 return;
             }
             atmosphereBannerHideAnimator(z, tipLength, equals, i2);
@@ -565,7 +565,7 @@ public class UserTaskView2 extends FrameLayout implements f {
             if (str2 != null) {
                 str5 = str5 + str2;
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 if (!z) {
                     if (z3) {
                         this.mAtmosphereBanner.setVisibility(4);
@@ -574,19 +574,19 @@ public class UserTaskView2 extends FrameLayout implements f {
                     this.mContentSwitch.setVisibility(8);
                     this.mContentUnit.setVisibility(8);
                     SpannableString spannableString = new SpannableString(str5);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         i = str.length();
                         spannableString.setSpan(new AbsoluteSizeSpan(10, true), 0, i, 17);
                     } else {
                         i = 0;
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         spannableString.setSpan(new AbsoluteSizeSpan(10, true), i, str2.length() + i, 17);
                     }
                     this.mContent.setText(spannableString);
                 } else {
                     this.mContent.setVisibility(8);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         this.mContentSwitch.setVisibility(0);
                         if (this.mShowCashFirst) {
                             this.mContentSwitch.setCurrentText(str);
@@ -595,14 +595,14 @@ public class UserTaskView2 extends FrameLayout implements f {
                         }
                         this.mShowCashFirst = false;
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         this.mContentUnit.setVisibility(0);
                         this.mContentUnit.setText(str2);
                     } else {
                         this.mContentUnit.setVisibility(8);
                     }
                     try {
-                        if (!TextUtils.isEmpty(str4) && (this.mContentSwitch.getCurrentView() instanceof TextView) && (this.mContentSwitch.getNextView() instanceof TextView)) {
+                        if (!StringUtils.isEmpty(str4) && (this.mContentSwitch.getCurrentView() instanceof TextView) && (this.mContentSwitch.getNextView() instanceof TextView)) {
                             ((TextView) this.mContentSwitch.getCurrentView()).setTextColor(Color.parseColor(str4));
                             ((TextView) this.mContentSwitch.getNextView()).setTextColor(Color.parseColor(str4));
                             this.mContentUnit.setTextColor(Color.parseColor(str4));
@@ -621,7 +621,7 @@ public class UserTaskView2 extends FrameLayout implements f {
                 }
             }
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return;
         }
         try {
@@ -642,7 +642,7 @@ public class UserTaskView2 extends FrameLayout implements f {
             ipChange.ipc$dispatch("38e5f6bb", new Object[]{this, str, str2, str3});
             return;
         }
-        if (!TextUtils.isEmpty(str2) && (tUrlImageView = this.mIcon) != null) {
+        if (!StringUtils.isEmpty(str2) && (tUrlImageView = this.mIcon) != null) {
             tUrlImageView.setVisibility(0);
             this.mIcon.setImageUrl(str2);
         } else {
@@ -651,10 +651,10 @@ public class UserTaskView2 extends FrameLayout implements f {
                 tUrlImageView2.setVisibility(8);
             }
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.mTitle.setText(str);
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return;
         }
         try {
@@ -681,11 +681,11 @@ public class UserTaskView2 extends FrameLayout implements f {
             tUrlImageView.setSkipAutoSize(true);
             this.mAliUrlImageView.setWhenNullClearImg(false);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.mAliUrlImageView.getLayoutParams();
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (!str2.equals(this.mAliUrlImageView.getImageUrl())) {
                     this.mAliUrlImageView.setImageUrl(str2);
                 }
-            } else if (!TextUtils.isEmpty(str) && !str.equals(this.mAliUrlImageView.getImageUrl())) {
+            } else if (!StringUtils.isEmpty(str) && !str.equals(this.mAliUrlImageView.getImageUrl())) {
                 this.mAliUrlImageView.setImageUrl(str);
             }
             this.mAliUrlImageView.setLayoutParams(layoutParams);

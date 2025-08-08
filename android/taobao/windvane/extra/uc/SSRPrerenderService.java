@@ -6,7 +6,7 @@ import android.taobao.windvane.config.j;
 import android.taobao.windvane.extra.uc.prefetch.ResourcePrefetch;
 import android.taobao.windvane.extra.uc.prefetch.ResourceRequest;
 import android.taobao.windvane.extra.uc.prefetch.UCDefaultUserAgent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.input.InputFrame3;
@@ -81,7 +81,7 @@ public class SSRPrerenderService implements mtd {
                         List<String> list = map.get("x-s-prerender-assets-length");
                         if (list != null) {
                             String str = list.get(0);
-                            if (!TextUtils.isEmpty(str) && (parseInt = Integer.parseInt(str)) >= 0) {
+                            if (!StringUtils.isEmpty(str) && (parseInt = Integer.parseInt(str)) >= 0) {
                                 atomicInteger.set(parseInt);
                             }
                         }
@@ -164,7 +164,7 @@ public class SSRPrerenderService implements mtd {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4b6ee3f6", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ResourcePrefetch.getInstance().prefetch(new ResourceRequest.Builder().setUrl(str).setMethod("GET").setHeader(HttpConstant.USER_AGENT, UCDefaultUserAgent.VALUE).build());
         }
@@ -183,7 +183,7 @@ public class SSRPrerenderService implements mtd {
                         try {
                             Uri parse = Uri.parse(str3);
                             if (parse != null) {
-                                if (TextUtils.isEmpty(parse.getScheme())) {
+                                if (StringUtils.isEmpty(parse.getScheme())) {
                                     prefetchResource(makeAbsoluteURL(str, str3));
                                 } else {
                                     prefetchResource(str3);
@@ -207,14 +207,14 @@ public class SSRPrerenderService implements mtd {
             return null;
         }
         Uri parse = Uri.parse(str2);
-        if (!TextUtils.isEmpty(parse.getScheme())) {
+        if (!StringUtils.isEmpty(parse.getScheme())) {
             return str2;
         }
         if (str == null) {
             return null;
         }
         Uri parse2 = Uri.parse(str);
-        if (!TextUtils.isEmpty(parse.getAuthority())) {
+        if (!StringUtils.isEmpty(parse.getAuthority())) {
             return parse.buildUpon().scheme(parse2.getScheme()).toString();
         }
         if (str2.startsWith("/")) {

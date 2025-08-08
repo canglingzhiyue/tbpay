@@ -3,7 +3,7 @@ package com.hihonor.push.sdk;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.hihonor.push.framework.aidl.entity.PushTokenResult;
 import com.hihonor.push.sdk.common.data.ApiException;
 import com.hihonor.push.sdk.common.data.DownMsgType;
@@ -28,7 +28,7 @@ public class m {
             ag agVar = new ag(UpMsgType.REQUEST_PUSH_TOKEN, null);
             agVar.e = e.a();
             String pushToken = ((PushTokenResult) e.a(x.c.a(agVar))).getPushToken();
-            if (z && !TextUtils.isEmpty(pushToken)) {
+            if (z && !StringUtils.isEmpty(pushToken)) {
                 Bundle bundle = new Bundle();
                 bundle.putString("event_type", DownMsgType.RECEIVE_TOKEN);
                 bundle.putString("push_token", pushToken);

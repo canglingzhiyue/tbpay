@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -23,7 +23,7 @@ public class mvs implements mvr {
         if (ipChange instanceof IpChange) {
             return (MTBIconLocalIndexProtocol) ipChange.ipc$dispatch("566711df", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -31,7 +31,7 @@ public class mvs implements mvr {
         } catch (Exception unused) {
             mTBIconLocalIndexProtocol = null;
         }
-        if (mTBIconLocalIndexProtocol != null && !TextUtils.isEmpty(mTBIconLocalIndexProtocol.moduleTag)) {
+        if (mTBIconLocalIndexProtocol != null && !StringUtils.isEmpty(mTBIconLocalIndexProtocol.moduleTag)) {
             return mTBIconLocalIndexProtocol;
         }
         return null;

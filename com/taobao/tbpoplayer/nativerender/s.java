@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tbpoplayer.nativerender.dsl.TriggerActionsModel;
 import java.util.List;
@@ -26,7 +26,7 @@ public class s {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c1aa3527", new Object[]{str, list})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         TriggerActionsModel triggerActionsModel = null;
@@ -45,7 +45,7 @@ public class s {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ce5f15d9", new Object[]{eVar, str, new Boolean(z), list})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         TriggerActionsModel triggerActionsModel = null;

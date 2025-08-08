@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.TBS;
@@ -35,7 +35,7 @@ public class quz {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f6689554", new Object[]{bVar});
         } else {
-            TBS.Ext.commitEvent(TextUtils.isEmpty(bVar.f) ? "UNKNOW" : bVar.f, 30001, "do_pay_request_failed", bVar.e);
+            TBS.Ext.commitEvent(StringUtils.isEmpty(bVar.f) ? "UNKNOW" : bVar.f, 30001, "do_pay_request_failed", bVar.e);
         }
     }
 

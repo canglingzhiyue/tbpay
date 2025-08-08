@@ -3,7 +3,7 @@ package com.taobao.accs.client;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.asp.APreferencesManager;
 import com.taobao.accs.utl.ALog;
@@ -121,7 +121,7 @@ public class b {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 Set<String> set = this.d.get(str);
                 if (set == null) {
                     set = new HashSet<>();
@@ -143,7 +143,7 @@ public class b {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.d.remove(str);
@@ -161,7 +161,7 @@ public class b {
             return ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{this, str, str2})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str) && (set = this.d.get(str)) != null) {
+            if (!StringUtils.isEmpty(str) && (set = this.d.get(str)) != null) {
                 if (set.contains(str2)) {
                     return true;
                 }
@@ -183,7 +183,7 @@ public class b {
         try {
             SharedPreferences sharedPreferences = APreferencesManager.getSharedPreferences(this.f8208a, "ACCS_BIND", 0);
             String string = sharedPreferences.getString("bind_status", null);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 Context context = this.f8208a;
                 string = APreferencesManager.getSharedPreferences(context, "ACCS_BIND_" + this.g, 0).getString("bind_status", null);
             } else {
@@ -191,7 +191,7 @@ public class b {
                 edit.clear();
                 edit.apply();
             }
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 ALog.w(f, "restoreClients break as packages null", new Object[0]);
                 return;
             }
@@ -216,7 +216,7 @@ public class b {
             }
             SharedPreferences sharedPreferences2 = APreferencesManager.getSharedPreferences(this.f8208a, "ACCS_BIND_V2", 0);
             String string3 = sharedPreferences2.getString("bind_status", null);
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 Context context2 = this.f8208a;
                 string3 = APreferencesManager.getSharedPreferences(context2, "ACCS_BIND_V2_" + this.g, 0).getString("bind_status", null);
             } else {
@@ -224,7 +224,7 @@ public class b {
                 edit2.clear();
                 edit2.apply();
             }
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 ALog.w(f, "restoreClients V2 break as packages null", new Object[0]);
                 return;
             }

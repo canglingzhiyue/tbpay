@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.internal.utils.UnifyLog;
 import com.alibaba.android.nextrpc.request.AbsResponse;
 import com.alibaba.android.nextrpc.request.AttachedResponse;
@@ -114,7 +114,7 @@ public class bfo implements bfm {
                 }
                 MtopRequest a3 = a(a2);
                 String optString = jSONObject3.optString("userAgent");
-                if (TextUtils.isEmpty(optString)) {
+                if (StringUtils.isEmpty(optString)) {
                     if (jSONObject3.optBoolean(sParamsKeyEnableWeex2UA, false)) {
                         optString = e.a().e();
                     } else {
@@ -187,7 +187,7 @@ public class bfo implements bfm {
             if (!jSONArray.isEmpty()) {
                 jSONObject2.put("attachedResponses", (Object) jSONArray);
             }
-            if (i == 1 && absResponse != null && !TextUtils.isEmpty(absResponse.getBody())) {
+            if (i == 1 && absResponse != null && !StringUtils.isEmpty(absResponse.getBody())) {
                 String body2 = absResponse.getBody();
                 jSONObject2.put("mainResponse", z2 ? body2 : JSONObject.parse(body2));
             } else if (i == -1) {
@@ -266,7 +266,7 @@ public class bfo implements bfm {
             build.mo1315setJsonType(JsonTypeEnum.valueOf(aVar.g.toUpperCase()));
         }
         try {
-            if (!TextUtils.isEmpty(aVar.k)) {
+            if (!StringUtils.isEmpty(aVar.k)) {
                 build.mo1321setPageUrl(aVar.k);
             }
         } catch (Throwable unused) {
@@ -275,7 +275,7 @@ public class bfo implements bfm {
             build.mo1313setCustomDomain(aVar.m);
         }
         try {
-            if (!TextUtils.isEmpty(aVar.l)) {
+            if (!StringUtils.isEmpty(aVar.l)) {
                 build.mo1320setPageName(aVar.l);
             }
         } catch (Throwable unused2) {

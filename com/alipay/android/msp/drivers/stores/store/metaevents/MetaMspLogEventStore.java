@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.metaevents;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.core.frame.MspWindowFrame;
 import com.alipay.android.msp.core.frame.MspWindowFrameStack;
@@ -45,10 +45,10 @@ public class MetaMspLogEventStore extends LocalEventStore {
         actionParamsJson.getLongValue(StEvent.SHOW_TIME);
         actionParamsJson.getLongValue("sendSize");
         actionParamsJson.getLongValue("recvSize");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             return "";
         }
-        if (this.f4584a != null && this.c != null && TextUtils.isEmpty(string3)) {
+        if (this.f4584a != null && this.c != null && StringUtils.isEmpty(string3)) {
             string3 = this.f4584a.getCurrentWinTpName();
             MspWindowFrameStack frameStack = this.c.getFrameStack();
             if (frameStack != null && eventAction.getSender() != null && (findFrameBySender = frameStack.findFrameBySender(eventAction.getSender())) != null) {

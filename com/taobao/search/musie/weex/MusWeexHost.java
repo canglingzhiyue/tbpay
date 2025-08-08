@@ -2,7 +2,7 @@ package com.taobao.search.musie.weex;
 
 import android.content.Context;
 import android.graphics.Point;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -59,11 +59,11 @@ public final class MusWeexHost extends FrameLayout implements d {
         this.mUiNode = uiNode;
         this.mMeasureResult = measureResult;
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         String str3 = null;
-        if (TextUtils.equals(this.mScriptUrl, str2) && (wXSDKInstance = this.mWeexInstance) != null) {
+        if (StringUtils.equals(this.mScriptUrl, str2) && (wXSDKInstance = this.mWeexInstance) != null) {
             if (wXSDKInstance == null) {
                 q.a();
             }

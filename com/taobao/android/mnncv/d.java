@@ -1,6 +1,6 @@
 package com.taobao.android.mnncv;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.mnncv.MNNCVExecutor;
@@ -55,7 +55,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (MRTTaskDescription) ipChange.ipc$dispatch("82dee595", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (this.b.containsKey(str)) {
@@ -81,7 +81,7 @@ public class d {
             return false;
         }
         MRTTaskDescription b2 = b(str);
-        if (b2 != null && TextUtils.equals(b.cid, b2.cid)) {
+        if (b2 != null && StringUtils.equals(b.cid, b2.cid)) {
             return true;
         }
         JSONObject jSONObjet = b.toJSONObjet();
@@ -156,7 +156,7 @@ public class d {
             return null;
         }
         String c = com.taobao.mrt.task.e.c(file2);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return null;
         }
         try {

@@ -6,7 +6,7 @@ import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.OnLifecycleEvent;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -162,7 +162,7 @@ public class SearchInfoFlowImpl implements LifecycleObserver, g, h, a, rir {
         }
         this.f = interfaceC0760a;
         String a2 = a(this.f19055a);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             if (c.a()) {
                 throw new IllegalStateException("无法获取" + this.f19055a + "对应的页面url");
             }
@@ -206,10 +206,10 @@ public class SearchInfoFlowImpl implements LifecycleObserver, g, h, a, rir {
         if (j.f19452a != null) {
             str2 = com.taobao.android.searchbaseframe.chitu.c.a("search_info_flow_url", j.f19452a);
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = com.taobao.android.searchbaseframe.roman.c.a().a(b(str), noa.SERVER_VERSION_VALUE);
         }
-        return TextUtils.isEmpty(str2) ? c.a() ? "https://dev.g.alicdn.com/asr-pages/shopping-item-page/0.0.1/weex/home.v20.wlm" : "https://g.alicdn.com/asr-pages/shopping-item-page/0.0.1/weex/home.v20.wlm" : str2;
+        return StringUtils.isEmpty(str2) ? c.a() ? "https://dev.g.alicdn.com/asr-pages/shopping-item-page/0.0.1/weex/home.v20.wlm" : "https://g.alicdn.com/asr-pages/shopping-item-page/0.0.1/weex/home.v20.wlm" : str2;
     }
 
     private static String b(String str) {

@@ -1,7 +1,7 @@
 package com.taobao.tao.util;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.image.ImageStrategyConfig;
 import com.taobao.tao.image.d;
@@ -94,10 +94,10 @@ public class OssImageUrlStrategy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e1c3d07e", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (TextUtils.equals(str, "ossgw.alicdn.com")) {
+        if (StringUtils.equals(str, "ossgw.alicdn.com")) {
             return true;
         }
         this.mRWLock.readLock().lock();
@@ -122,7 +122,7 @@ public class OssImageUrlStrategy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("98f3fc9f", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (strArr = this.mOssDomains) != null) {
+        if (!StringUtils.isEmpty(str) && (strArr = this.mOssDomains) != null) {
             for (String str2 : strArr) {
                 if (str.contains(str2)) {
                     return true;
@@ -181,7 +181,7 @@ public class OssImageUrlStrategy {
             str2 = "_";
         }
         decideQuality(parseOssRule, imageStrategyConfig);
-        if (!TextUtils.isEmpty(parseOssRule.quality)) {
+        if (!StringUtils.isEmpty(parseOssRule.quality)) {
             sb.append(str2);
             sb.append(parseOssRule.quality);
             str2 = "_";
@@ -199,7 +199,7 @@ public class OssImageUrlStrategy {
         sb.append(str2);
         sb.append(SMALL_THAN_ORIGIN);
         decideExtend(parseOssRule, imageStrategyConfig);
-        if (TextUtils.isEmpty(parseOssRule.ext)) {
+        if (StringUtils.isEmpty(parseOssRule.ext)) {
             sb.append("_");
             sb.append(WHITE_FILL);
             sb.append(JPEG_EXTEND);
@@ -341,13 +341,13 @@ public class OssImageUrlStrategy {
             }
             String group2 = matcher.group(3);
             String group3 = matcher.group(4);
-            if (!TextUtils.isEmpty(group)) {
+            if (!StringUtils.isEmpty(group)) {
                 baseUrlInfo.width = Integer.parseInt(group);
             }
-            if (!TextUtils.isEmpty(group2)) {
+            if (!StringUtils.isEmpty(group2)) {
                 baseUrlInfo.height = Integer.parseInt(group2);
             }
-            if (!TextUtils.isEmpty(group3)) {
+            if (!StringUtils.isEmpty(group3)) {
                 baseUrlInfo.quality = group3;
             }
         } catch (NumberFormatException e) {

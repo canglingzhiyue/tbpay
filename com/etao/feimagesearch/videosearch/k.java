@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -139,7 +139,7 @@ public final class k implements VideoResultList.b, j {
             kotlin.jvm.internal.q.a((Object) str, "result.frameUrl");
             RectF rectF = result.g;
             kotlin.jvm.internal.q.a((Object) rectF, "result.cropRect");
-            if (TextUtils.equals(k.f(k.this), k.a(kVar, str, rectF))) {
+            if (StringUtils.equals(k.f(k.this), k.a(kVar, str, rectF))) {
                 return;
             }
             k.g(k.this).showLoading();

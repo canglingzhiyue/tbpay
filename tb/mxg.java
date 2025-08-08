@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.cache.AVFSCacheManager;
 import com.taobao.alivfssdk.cache.b;
@@ -78,7 +78,7 @@ public class mxg {
             return;
         }
         String packageName = application.getPackageName();
-        if (!TextUtils.isEmpty("taobao")) {
+        if (!StringUtils.isEmpty("taobao")) {
             str = Environment.getExternalStorageState().toString() + "/taobao/" + packageName;
             str2 = application.getExternalCacheDir() + "/taobao/" + packageName;
         } else {

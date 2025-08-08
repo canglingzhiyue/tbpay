@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -262,7 +262,7 @@ public class gfa implements ghc {
                                 dXWidgetNode.setIntAttribute(keyAt, dXWidgetNode.getDefaultValueForIntAttr(keyAt));
                             } else {
                                 String i2 = a2.i();
-                                if (!TextUtils.isEmpty(i2)) {
+                                if (!StringUtils.isEmpty(i2)) {
                                     dXWidgetNode.setIntAttribute(keyAt, Color.parseColor(i2));
                                 } else {
                                     dXWidgetNode.setIntAttribute(keyAt, dXWidgetNode.getDefaultValueForIntAttr(keyAt));

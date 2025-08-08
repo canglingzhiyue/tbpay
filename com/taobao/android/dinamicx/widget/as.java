@@ -6,7 +6,7 @@ import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -336,12 +336,12 @@ public class as extends af {
             if (jSONObject != null) {
                 if ("image".equals(jSONObject.getString("type"))) {
                     String string = jSONObject.getString("description");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         sb.append(string);
                     }
                 } else {
                     String string2 = jSONObject.getString("text");
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         sb.append(string2);
                     }
                 }
@@ -387,7 +387,7 @@ public class as extends af {
             return null;
         }
         String string = jSONObject.getString("openUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         return new d(string, i);

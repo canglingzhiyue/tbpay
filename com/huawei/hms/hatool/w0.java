@@ -1,6 +1,6 @@
 package com.huawei.hms.hatool;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,7 +23,7 @@ public class w0 {
         if (n0Var == null) {
             v.e("GetPublicKey", "get pubKey response is null");
         } else if (n0Var.b() == 200) {
-            if (TextUtils.isEmpty(n0Var.a())) {
+            if (StringUtils.isEmpty(n0Var.a())) {
                 return;
             }
             c(n0Var.a(), str2);
@@ -34,16 +34,16 @@ public class w0 {
 
     public static boolean a() {
         String a2 = q0.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = d.a(q0.i(), "Privacy_MY", "public_key_time_interval", "");
             q0.f(a2);
         }
         String m = q0.m();
-        if (TextUtils.isEmpty(m)) {
+        if (StringUtils.isEmpty(m)) {
             m = d.a(q0.i(), "Privacy_MY", "public_key_time_last", "");
             q0.c(m);
         }
-        if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(m)) {
+        if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(m)) {
             return true;
         }
         try {
@@ -57,24 +57,24 @@ public class w0 {
     public static String b(String str, String str2) {
         String o;
         String c = q0.c();
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             c = d.a(q0.i(), "Privacy_MY", "public_key_version", "");
             q0.g(c);
         }
         if ("maint".equals(str2)) {
             o = q0.n();
-            if (TextUtils.isEmpty(o)) {
+            if (StringUtils.isEmpty(o)) {
                 o = cyf.b("HiAnalytics_Sdk_Public_Sp_Key", d.a(q0.i(), "Privacy_MY", "public_key_maint", ""));
                 q0.d(o);
             }
         } else {
             o = q0.o();
-            if (TextUtils.isEmpty(o)) {
+            if (StringUtils.isEmpty(o)) {
                 o = cyf.b("HiAnalytics_Sdk_Public_Sp_Key", d.a(q0.i(), "Privacy_MY", "public_key_oper", ""));
                 q0.e(o);
             }
         }
-        if (TextUtils.isEmpty(o) || TextUtils.isEmpty(c) || a()) {
+        if (StringUtils.isEmpty(o) || StringUtils.isEmpty(c) || a()) {
             b0.a().a(new j1(str, str2));
             return null;
         }

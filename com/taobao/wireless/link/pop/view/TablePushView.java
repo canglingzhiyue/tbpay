@@ -2,7 +2,7 @@ package com.taobao.wireless.link.pop.view;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -68,22 +68,22 @@ public class TablePushView extends LinearLayout {
             ipChange.ipc$dispatch("e0310859", new Object[]{context, popMessageData});
             return;
         }
-        if (!TextUtils.isEmpty(popMessageData.backgroundColor)) {
+        if (!StringUtils.isEmpty(popMessageData.backgroundColor)) {
             mView.setBackgroundColor(Color.parseColor(popMessageData.backgroundColor));
         }
-        if (!TextUtils.isEmpty(popMessageData.leftLogoUrl)) {
+        if (!StringUtils.isEmpty(popMessageData.leftLogoUrl)) {
             mIvLeftLogo.setStrategyConfig(ImageStrategyConfig.a("1111", "1111").a());
             mIvLeftLogo.setImageUrl(popMessageData.leftLogoUrl);
         } else if (Boolean.parseBoolean(b.a(context, "popMessageTablePushImageCanGone", "true"))) {
             mIvLeftLogo.setVisibility(8);
         }
-        if (!TextUtils.isEmpty(popMessageData.title)) {
+        if (!StringUtils.isEmpty(popMessageData.title)) {
             mTv_title.setText(popMessageData.title);
         }
-        if (!TextUtils.isEmpty(popMessageData.subTitle)) {
+        if (!StringUtils.isEmpty(popMessageData.subTitle)) {
             mTv_sub_title.setText(popMessageData.subTitle);
         }
-        if (!TextUtils.isEmpty(popMessageData.rightButtonText)) {
+        if (!StringUtils.isEmpty(popMessageData.rightButtonText)) {
             mTv_button.setText(popMessageData.rightButtonText);
         }
         View view = mView;

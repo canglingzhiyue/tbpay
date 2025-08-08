@@ -3,7 +3,7 @@ package com.ali.user.mobile.login.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -175,7 +175,7 @@ public class OneKeyLoginFragment extends BaseLoginFragment implements OneKeyLogi
                 this.mPreviousChecked = arguments.getBoolean("check");
                 String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
                 arguments.putString(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, "");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.loginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
                     if (this.loginParam != null) {
                         this.mSource = this.loginParam.source;
@@ -212,7 +212,7 @@ public class OneKeyLoginFragment extends BaseLoginFragment implements OneKeyLogi
         LoginCouponHelper.handleCoupon(view, this.mUserLoginActivity);
         resetActionBar();
         this.mShowIdTextView = (TextView) view.findViewById(R.id.aliuser_onekey_login_account_tv);
-        if (this.mShowIdTextView != null && !TextUtils.isEmpty(this.mMobileNum)) {
+        if (this.mShowIdTextView != null && !StringUtils.isEmpty(this.mMobileNum)) {
             this.mShowIdTextView.setText(this.mMobileNum);
         }
         this.mOneKeyLoginButton = (Button) view.findViewById(R.id.aliuser_onekey_login_btn);

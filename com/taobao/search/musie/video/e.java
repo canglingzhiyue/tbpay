@@ -2,7 +2,7 @@ package com.taobao.search.musie.video;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -245,12 +245,12 @@ public final class e implements d {
         aVar.c(i);
         aVar.d(i2);
         aVar.b(str2);
-        aVar.e(TextUtils.isEmpty(str3) ? noa.DEFAULT_VIDEO_BIZ_CODE : str3);
-        aVar.g(TextUtils.isEmpty(property.m()) ? noa.DEFAULE_VIDEO_PLAY_SCENES : property.m());
-        if (!TextUtils.isEmpty(str4)) {
+        aVar.e(StringUtils.isEmpty(str3) ? noa.DEFAULT_VIDEO_BIZ_CODE : str3);
+        aVar.g(StringUtils.isEmpty(property.m()) ? noa.DEFAULE_VIDEO_PLAY_SCENES : property.m());
+        if (!StringUtils.isEmpty(str4)) {
             aVar.h(str4);
         }
-        if (!TextUtils.isEmpty(property.n())) {
+        if (!StringUtils.isEmpty(property.n())) {
             aVar.c(property.n());
         }
         if (jSONObject != null) {

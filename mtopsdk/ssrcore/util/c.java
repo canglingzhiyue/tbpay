@@ -1,7 +1,7 @@
 package mtopsdk.ssrcore.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.IConnStrategy;
 import anet.channel.strategy.StrategyCenter;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -26,9 +26,9 @@ public class c {
         } else if (context != null && hashMap != null && !hashMap.isEmpty()) {
             for (String str : hashMap.keySet()) {
                 String str2 = hashMap.get(str);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     for (String str3 : str2.split(",")) {
-                        if (TextUtils.isEmpty(a(context, str3))) {
+                        if (StringUtils.isEmpty(a(context, str3))) {
                             a(context, str3, str);
                         }
                     }
@@ -43,7 +43,7 @@ public class c {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         String unitByHost = StrategyCenter.getInstance().getUnitByHost(str);
-        return TextUtils.isEmpty(unitByHost) ? "" : unitByHost;
+        return StringUtils.isEmpty(unitByHost) ? "" : unitByHost;
     }
 
     public static String a(Context context, String str) {
@@ -52,9 +52,9 @@ public class c {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{context, str});
         }
         String str2 = f25041a.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = ConfigStoreManager.getInstance().getConfigItem(context, ConfigStoreManager.SSR_CONFIG_STORE, "SSR_STORE_", str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 f25041a.put(str, str2);
             }
         }
@@ -68,7 +68,7 @@ public class c {
             return;
         }
         String str3 = f25041a.get(str);
-        if (TextUtils.isEmpty(str2) || TextUtils.equals(str3, str2)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.equals(str3, str2)) {
             return;
         }
         f25041a.put(str, str2);
@@ -86,8 +86,8 @@ public class c {
             for (IConnStrategy iConnStrategy : connStrategyListByHost) {
                 if (iConnStrategy != null) {
                     String ip = iConnStrategy.getIp();
-                    if (!TextUtils.isEmpty(ip)) {
-                        str2 = !TextUtils.isEmpty(str2) ? str2 + "," + ip : ip;
+                    if (!StringUtils.isEmpty(ip)) {
+                        str2 = !StringUtils.isEmpty(str2) ? str2 + "," + ip : ip;
                     }
                 }
             }

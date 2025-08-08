@@ -6,7 +6,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AndroidException;
 import android.util.Pair;
 import com.huawei.hms.common.PackageConstants;
@@ -62,7 +62,7 @@ public class HMSPackageManager {
 
         @Override // java.lang.Comparable
         public int compareTo(PackagePriorityInfo packagePriorityInfo) {
-            return TextUtils.equals(this.e, packagePriorityInfo.e) ? this.f.compareTo(packagePriorityInfo.f) : this.e.compareTo(packagePriorityInfo.e);
+            return StringUtils.equals(this.e, packagePriorityInfo.e) ? this.f.compareTo(packagePriorityInfo.f) : this.e.compareTo(packagePriorityInfo.e);
         }
     }
 
@@ -120,7 +120,7 @@ public class HMSPackageManager {
     }
 
     private String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int indexOf = str.indexOf("priority=");
@@ -141,7 +141,7 @@ public class HMSPackageManager {
 
     private boolean a(String str, String str2, String str3) {
         String str4;
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             str4 = "args is invalid";
         } else {
             List<X509Certificate> b = com.huawei.hms.device.a.b(str3);
@@ -168,7 +168,7 @@ public class HMSPackageManager {
 
     private void b(String str) {
         String a2 = a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         this.i = a2.substring(9);
@@ -347,15 +347,15 @@ public class HMSPackageManager {
             } else {
                 String a2 = a(bundle, "hms_app_checker_config");
                 String a3 = a(a2);
-                if (TextUtils.isEmpty(a3)) {
+                if (StringUtils.isEmpty(a3)) {
                     str2 = "get priority fail. hmsCheckerCfg: " + a2;
                 } else {
                     String a4 = a(bundle, "hms_app_signer_v2");
-                    if (TextUtils.isEmpty(a4)) {
+                    if (StringUtils.isEmpty(a4)) {
                         str2 = "get signerV2 fail.";
                     } else {
                         String a5 = a(bundle, "hms_app_cert_chain");
-                        if (TextUtils.isEmpty(a5)) {
+                        if (StringUtils.isEmpty(a5)) {
                             str2 = "get certChain fail.";
                         } else {
                             HMSLog.i("HMSPackageManager", "add: " + str3 + ", " + a2 + ", " + packageFirstInstallTime);
@@ -413,7 +413,7 @@ public class HMSPackageManager {
         } catch (RuntimeException e) {
             HMSLog.e("HMSPackageManager", "In isMinApkVersionEffective, Failed to read meta data for HMSCore API level.", e);
         }
-        if (!TextUtils.isEmpty(this.h) && (this.h.equals(PackageConstants.GENERAL_SERVICES_ACTION) || this.h.equals(PackageConstants.INTERNAL_SERVICES_ACTION))) {
+        if (!StringUtils.isEmpty(this.h) && (this.h.equals(PackageConstants.GENERAL_SERVICES_ACTION) || this.h.equals(PackageConstants.INTERNAL_SERVICES_ACTION))) {
             HMSLog.i("HMSPackageManager", "action = " + this.h + " exist");
             return false;
         }
@@ -518,7 +518,7 @@ public class HMSPackageManager {
     }
 
     public String getServiceAction() {
-        return !TextUtils.isEmpty(this.h) ? this.h : "com.huawei.hms.core.aidlservice";
+        return !StringUtils.isEmpty(this.h) ? this.h : "com.huawei.hms.core.aidlservice";
     }
 
     public boolean hmsVerHigherThan(int i) {
@@ -547,13 +547,13 @@ public class HMSPackageManager {
     }
 
     public void refresh() {
-        if (TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.d)) {
             i();
         }
     }
 
     public void refreshForMultiService() {
-        if (TextUtils.isEmpty(this.f) || TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.f) || StringUtils.isEmpty(this.g)) {
             j();
         }
     }

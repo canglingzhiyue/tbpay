@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.o2o.ad.a;
 import com.taobao.alimama.c;
@@ -35,7 +35,7 @@ public class xjv {
         }
         String a2 = xjx.a(f34342a, uri);
         xjwVar.b = a2;
-        xjwVar.f34343a = !TextUtils.isEmpty(a2);
+        xjwVar.f34343a = !StringUtils.isEmpty(a2);
         return xjwVar;
     }
 }

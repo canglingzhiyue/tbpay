@@ -79,7 +79,7 @@ public class acz {
         L1e:
             com.taobao.orange.OrangeConfig r4 = com.taobao.orange.OrangeConfig.getInstance()     // Catch: java.lang.Exception -> L31
             java.lang.String r4 = r4.getConfig(r2, r1, r3)     // Catch: java.lang.Exception -> L31
-            boolean r5 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Exception -> L31
+            boolean r5 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Exception -> L31
             if (r5 != 0) goto L31
             boolean r4 = r3.equals(r4)     // Catch: java.lang.Exception -> L31
             goto L32
@@ -88,7 +88,7 @@ public class acz {
         L32:
             com.taobao.orange.OrangeConfig r5 = com.taobao.orange.OrangeConfig.getInstance()     // Catch: java.lang.Exception -> L45
             java.lang.String r2 = r5.getConfig(r2, r0, r3)     // Catch: java.lang.Exception -> L45
-            boolean r5 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L45
+            boolean r5 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L45
             if (r5 != 0) goto L45
             boolean r2 = r3.equals(r2)     // Catch: java.lang.Exception -> L45
             goto L46

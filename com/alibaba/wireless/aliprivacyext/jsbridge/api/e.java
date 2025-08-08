@@ -1,7 +1,7 @@
 package com.alibaba.wireless.aliprivacyext.jsbridge.api;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -25,8 +25,8 @@ public class e extends com.alibaba.wireless.aliprivacyext.jsbridge.a {
             return true;
         }
         String string = a2.getString("profile");
-        if (TextUtils.isEmpty(string)) {
-            com.alibaba.wireless.aliprivacy.c.b("GetRecommendSwitchApi", "GetPrivacyProfileApi TextUtils.isEmpty(profile)");
+        if (StringUtils.isEmpty(string)) {
+            com.alibaba.wireless.aliprivacy.c.b("GetRecommendSwitchApi", "GetPrivacyProfileApi StringUtils.isEmpty(profile)");
             b(bVar, "参数异常", null);
             return true;
         }

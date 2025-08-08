@@ -1,6 +1,6 @@
 package com.taobao.mmad.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -104,7 +104,7 @@ public class c {
         String string2 = jSONObject.getString("bizType");
         String string3 = jSONObject.getString("itemId");
         stv.a("RulerVerify", "from=" + string + ", bizType=" + string2 + ", itemId=" + string3);
-        return TextUtils.equals(string, "commercialAd") && (TextUtils.equals(string2, "commercialAdNormal") || TextUtils.equals(string2, "commercialAdVideo")) && (TextUtils.isEmpty(string3) ^ true);
+        return StringUtils.equals(string, "commercialAd") && (StringUtils.equals(string2, "commercialAdNormal") || StringUtils.equals(string2, "commercialAdVideo")) && (StringUtils.isEmpty(string3) ^ true);
     }
 
     private boolean a(long j, long j2) {
@@ -126,11 +126,11 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{this, str, str2, str3})).booleanValue();
         }
-        boolean z = !TextUtils.isEmpty(str);
-        if (!TextUtils.equals(str2, "commercialAdVideo")) {
+        boolean z = !StringUtils.isEmpty(str);
+        if (!StringUtils.equals(str2, "commercialAdVideo")) {
             return z;
         }
-        return z && !TextUtils.isEmpty(ssf.f(str3));
+        return z && !StringUtils.isEmpty(ssf.f(str3));
     }
 
     public com.taobao.mmad.fatigue.a a() {

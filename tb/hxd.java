@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
 
@@ -25,24 +25,24 @@ public class hxd {
         }
         try {
             str = intent.getStringExtra(CoreConstants.IN_PARAM_BIZ_ORDER_ID);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intent.getStringExtra(CoreConstants.IN_PARAM_PAY_ORDER_ID);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = intent.getStringExtra("orderId");
                 }
             }
         } catch (Exception unused) {
         }
         Uri data = intent.getData();
-        if (data == null || !TextUtils.isEmpty(str)) {
+        if (data == null || !StringUtils.isEmpty(str)) {
             return str;
         }
         String queryParameter = data.getQueryParameter(CoreConstants.IN_PARAM_PAY_ORDER_ID);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             queryParameter = data.getQueryParameter(CoreConstants.IN_PARAM_BIZ_ORDER_ID);
         }
         String str2 = queryParameter;
-        return TextUtils.isEmpty(str2) ? data.getQueryParameter("orderId") : str2;
+        return StringUtils.isEmpty(str2) ? data.getQueryParameter("orderId") : str2;
     }
 
     public static String b(Intent intent) {
@@ -56,16 +56,16 @@ public class hxd {
         }
         try {
             str = intent.getStringExtra(CoreConstants.IN_PARAM_ARCHIVE);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = intent.getStringExtra(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER);
             }
         } catch (Exception unused) {
         }
-        if (intent.getData() == null || !TextUtils.isEmpty(str)) {
+        if (intent.getData() == null || !StringUtils.isEmpty(str)) {
             return str;
         }
         String queryParameter = intent.getData().getQueryParameter(CoreConstants.IN_PARAM_ARCHIVE);
-        return TextUtils.isEmpty(queryParameter) ? intent.getData().getQueryParameter(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER) : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? intent.getData().getQueryParameter(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER) : queryParameter;
     }
 
     public static String c(Intent intent) {

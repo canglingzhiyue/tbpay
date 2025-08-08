@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.openarchitecture.opencompontent.ability.OpenAbilityCompontentTypeEnum;
@@ -33,7 +33,7 @@ public class pjt implements a {
         this.f32706a = new pjs().a(pkgVar);
         if (pkgVar != null && pkgVar.f != null && as.i()) {
             String str = CLASS_MAPPING.get(v.a(pkgVar.f.get("OpenWatchType")));
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     this.f32706a = (Map) Class.forName(str).getMethod("customizedPluginMap", Map.class, Map.class).invoke(null, this.f32706a, pkgVar.f);
                 } catch (Exception e) {

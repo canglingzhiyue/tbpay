@@ -9,7 +9,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.v4.content.ContextCompat;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.view.View;
@@ -425,7 +425,7 @@ public class DetectActionWidget extends BaseWidget {
         a();
         b(str);
         String str2 = rPBizConfig.getBiometricsConfig().userName;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.d.setVisibility(0);
             setVerifiedUserName(str2);
             return;
@@ -499,7 +499,7 @@ public class DetectActionWidget extends BaseWidget {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             a();
             c(str);

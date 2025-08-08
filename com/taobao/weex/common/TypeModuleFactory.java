@@ -1,6 +1,6 @@
 package com.taobao.weex.common;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.annotation.JSMethod;
 import com.taobao.weex.bridge.Invoker;
@@ -67,7 +67,7 @@ public class TypeModuleFactory<T extends WXModule> implements ModuleFactory<T> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6ea75b4d", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Boolean bool = this.methodCheckMap.get(str);
@@ -78,7 +78,7 @@ public class TypeModuleFactory<T extends WXModule> implements ModuleFactory<T> {
             z = false;
             for (Method method : this.mClazz.getMethods()) {
                 try {
-                    if (method != null && TextUtils.equals(str, method.getName())) {
+                    if (method != null && StringUtils.equals(str, method.getName())) {
                         boolean z2 = z;
                         for (Annotation annotation : method.getDeclaredAnnotations()) {
                             try {

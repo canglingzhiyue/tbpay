@@ -1,7 +1,7 @@
 package com.taobao.weex.dom;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKInstance;
 import com.taobao.weex.common.Constants;
@@ -105,7 +105,7 @@ public class WXAttr implements Cloneable, Map<String, Object> {
             return wXImageQuality;
         }
         String obj2 = obj.toString();
-        if (TextUtils.isEmpty(obj2)) {
+        if (StringUtils.isEmpty(obj2)) {
             return wXImageQuality;
         }
         try {
@@ -277,7 +277,7 @@ public class WXAttr implements Cloneable, Map<String, Object> {
             return ((Number) ipChange.ipc$dispatch("ad9ae414", new Object[]{this})).intValue();
         }
         String scrollDirection = getScrollDirection();
-        if (!TextUtils.isEmpty(scrollDirection) && scrollDirection.equals(Constants.Value.HORIZONTAL)) {
+        if (!StringUtils.isEmpty(scrollDirection) && scrollDirection.equals(Constants.Value.HORIZONTAL)) {
             return 0;
         }
         Object obj = get("orientation");
@@ -294,7 +294,7 @@ public class WXAttr implements Cloneable, Map<String, Object> {
             return Float.NaN;
         }
         String obj2 = obj.toString();
-        if (TextUtils.isEmpty(obj2)) {
+        if (StringUtils.isEmpty(obj2)) {
             return 0.0f;
         }
         return WXViewInnerUtils.getRealSubPxByWidth(wXSDKInstance, WXUtils.getFloat(obj2), i);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.a;
@@ -62,11 +62,11 @@ public class esg {
                         ipChange2.ipc$dispatch("fb090915", new Object[]{this, new Integer(i), netResponse, netBaseOutDo, obj});
                         return;
                     }
-                    if (!TextUtils.isEmpty(esg.this.f27527a) && esg.this.f27527a.contains("refreshTopRights")) {
+                    if (!StringUtils.isEmpty(esg.this.f27527a) && esg.this.f27527a.contains("refreshTopRights")) {
                         his.b("GetRedPacket", "onSuccess | refreshTopRights.");
                         ddw.a().a("com.taobao.taolive.room.gl.refresh.topright", null, c.a(cVar));
                     }
-                    if (!TextUtils.isEmpty(esg.this.f27527a) && esg.this.f27527a.contains("refreshGoodsList")) {
+                    if (!StringUtils.isEmpty(esg.this.f27527a) && esg.this.f27527a.contains("refreshGoodsList")) {
                         his.b("GetRedPacket", "onSuccess | refreshGoodsList.");
                         ddw.a().a("com.taobao.taolive.room.gl.refresh.showinglist", null, c.a(cVar));
                     }
@@ -77,7 +77,7 @@ public class esg {
                     String optString = dataJsonObject.optString("msgInfo");
                     boolean optBoolean = dataJsonObject.optBoolean("msgCode");
                     his.b("GetRedPacket", "onSuccess | success=" + optBoolean + "    msgInfo=" + optString);
-                    if (TextUtils.isEmpty(optString)) {
+                    if (StringUtils.isEmpty(optString)) {
                         return;
                     }
                     hix.a(cVar.f(), optString);

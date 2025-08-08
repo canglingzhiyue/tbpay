@@ -1,6 +1,6 @@
 package com.taobao.tao.recommend3.tracelog;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.utils.n;
 import com.taobao.tao.log.TLog;
@@ -55,7 +55,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("385f9b3e", new Object[]{this, str, orgVar});
-        } else if (TextUtils.isEmpty(str) || orgVar == null) {
+        } else if (StringUtils.isEmpty(str) || orgVar == null) {
             TLog.loge("home", "GlobalTrace", "register failed, empty key or value");
         } else {
             Map<String, org> a2 = a(orgVar.a());

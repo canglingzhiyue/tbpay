@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -344,7 +344,7 @@ public final class nwd extends ius<t, FrameLayout, a> implements View.OnClickLis
         }
         String str = templateBean.url;
         String b = y.b(str, "_mus_tpl");
-        String str2 = TextUtils.isEmpty(b) ? str : b;
+        String str2 = StringUtils.isEmpty(b) ? str : b;
         pVar.addInstanceEnv("contentHeight", String.valueOf(l.b(this.j)));
         nxz.Companion.a(pVar, str2, this.g, e(), null);
     }
@@ -720,7 +720,7 @@ public final class nwd extends ius<t, FrameLayout, a> implements View.OnClickLis
         int size = a2.size();
         for (int i = 0; i < size; i++) {
             String string = a2.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 a model = getModel();
                 q.a((Object) model, "model");
                 model.d().clearParam(string);

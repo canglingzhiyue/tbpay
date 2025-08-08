@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
 import com.taobao.linkmanager.afc.plugin.c;
@@ -100,7 +100,7 @@ public class c implements koj {
             return;
         }
         this.b = aVar.q;
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             if (knxVar != null) {
                 knxVar.a(true, str);
             }
@@ -111,7 +111,7 @@ public class c implements koj {
         boolean c = c(aVar);
         aVar.J.put("useLoginTokenOptimize", (Object) Boolean.valueOf(c));
         if (c) {
-            if (TextUtils.isEmpty(Login.getLoginToken()) || !Login.checkSessionValid()) {
+            if (StringUtils.isEmpty(Login.getLoginToken()) || !Login.checkSessionValid()) {
                 this.c = true;
                 a(TbFcLinkInit.instance().mApplication, str, knxVar, aVar);
                 b(aVar);

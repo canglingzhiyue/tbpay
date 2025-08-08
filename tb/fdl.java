@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.detail.kit.fragment.CouponFragment;
@@ -42,7 +42,7 @@ public class fdl implements j<enr> {
                 ipChange.ipc$dispatch("a821d36c", new Object[]{this, new Boolean(z)});
             } else if (!z) {
             } else {
-                if (TextUtils.isEmpty(fdl.a(fdl.this))) {
+                if (StringUtils.isEmpty(fdl.a(fdl.this))) {
                     CouponFragment.startFragment(fdl.b(fdl.this), fdl.c(fdl.this), fdl.d(fdl.this), fdl.e(fdl.this), fdl.f(fdl.this));
                 } else {
                     f.a(fdl.b(fdl.this), new enu(fdl.a(fdl.this)));

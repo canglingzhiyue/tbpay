@@ -14,7 +14,7 @@ import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.KeyEvent;
@@ -208,7 +208,7 @@ public class WebViewActivity extends BaseActivity {
         intent.putExtra("token", urlParam.token);
         if (urlParam.loginId != null) {
             intent.putExtra(WebConstant.WEB_LOGIN_ID, urlParam.loginId);
-        } else if (urlParam.loginParam != null && !TextUtils.isEmpty(urlParam.loginParam.loginId)) {
+        } else if (urlParam.loginParam != null && !StringUtils.isEmpty(urlParam.loginParam.loginId)) {
             intent.putExtra(WebConstant.WEB_LOGIN_ID, urlParam.loginParam.loginId);
         }
         intent.putExtra("site", urlParam.site);
@@ -254,12 +254,12 @@ public class WebViewActivity extends BaseActivity {
             this.mRequestCode = intent.getIntExtra("requestCode", 0);
             this.isLoginPost = intent.getBooleanExtra(WebConstant.WEB_POST_LOGIN, false);
             this.needCallback = intent.getBooleanExtra(WebConstant.WEB_CALLBACK, false);
-            if (!TextUtils.isEmpty(this.mOriginalLoginParam) && (loginParam = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class)) != null) {
+            if (!StringUtils.isEmpty(this.mOriginalLoginParam) && (loginParam = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class)) != null) {
                 String loginTypeByTraceId = UTConstant.getLoginTypeByTraceId(loginParam.sdkTraceId + "");
-                if (TextUtils.isEmpty(loginTypeByTraceId)) {
+                if (StringUtils.isEmpty(loginTypeByTraceId)) {
                     loginTypeByTraceId = UTConstant.getLoginTypeByTokenType(loginParam.tokenType);
                 }
-                if (!TextUtils.isEmpty(loginTypeByTraceId)) {
+                if (!StringUtils.isEmpty(loginTypeByTraceId)) {
                     Properties properties = LoginComponent.getProperties();
                     properties.setProperty("h5_code", loginParam.errorCode + "");
                     properties.setProperty("h5_scene", this.mScene + "");
@@ -285,7 +285,7 @@ public class WebViewActivity extends BaseActivity {
         initDataFromIntent();
         if (intent != null) {
             String stringExtra = intent.getStringExtra(WebConstant.WEBURL);
-            if (TextUtils.isEmpty(stringExtra)) {
+            if (StringUtils.isEmpty(stringExtra)) {
                 stringExtra = this.mUrl;
             }
             this.mUrl = stringExtra;
@@ -315,10 +315,10 @@ public class WebViewActivity extends BaseActivity {
             }
             this.mOriginalLoginParam = JSON.toJSONString(this.ssoLoginParam);
             String loginTypeByTraceId = UTConstant.getLoginTypeByTraceId(this.ssoLoginParam.sdkTraceId + "");
-            if (TextUtils.isEmpty(loginTypeByTraceId)) {
+            if (StringUtils.isEmpty(loginTypeByTraceId)) {
                 loginTypeByTraceId = UTConstant.getLoginTypeByTokenType(this.ssoLoginParam.tokenType);
             }
-            if (TextUtils.isEmpty(loginTypeByTraceId)) {
+            if (StringUtils.isEmpty(loginTypeByTraceId)) {
                 return;
             }
             Properties properties = LoginComponent.getProperties();
@@ -350,7 +350,7 @@ public class WebViewActivity extends BaseActivity {
             init();
         } catch (Throwable th) {
             th.printStackTrace();
-            if (!TextUtils.isEmpty(this.eventName)) {
+            if (!StringUtils.isEmpty(this.eventName)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("result", "cancel");
                 EventBus.getDefault().sendEvent(this.eventName, hashMap);
@@ -390,7 +390,7 @@ public class WebViewActivity extends BaseActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("89757c7a", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mWebView.loadUrl(str);
         }
@@ -624,7 +624,7 @@ public class WebViewActivity extends BaseActivity {
             }
             return true;
         } else if (StringUtil.checkWebviewBridge(str)) {
-            if (!TextUtils.isEmpty(this.mSecurityId)) {
+            if (!StringUtils.isEmpty(this.mSecurityId)) {
                 serialBundle.putString("securityId", this.mSecurityId);
             }
             String string2 = serialBundle.getString("action");
@@ -639,7 +639,7 @@ public class WebViewActivity extends BaseActivity {
             if ("open_password_logincheck".equals(string6)) {
                 goLogin(string3, serialBundle.getString("havana_iv_token"), null, true, "open_password_logincheck", parse.getQuery(), false, true, false, this.mTokenType);
                 return true;
-            } else if (TextUtils.isEmpty(string2) || "quit".equals(string2) || "close".equals(string2) || "jumpH5AfterCloseView".equals(string2)) {
+            } else if (StringUtils.isEmpty(string2) || "quit".equals(string2) || "close".equals(string2) || "jumpH5AfterCloseView".equals(string2)) {
                 if (this.isLoginPost && LoginPostHandler.sCallback != null) {
                     LoginPostHandler.sCallback.onSuccess();
                     LoginPostHandler.sCallback = null;
@@ -658,12 +658,12 @@ public class WebViewActivity extends BaseActivity {
                     UserTrackAdapter.sendUT("QuitUrl");
                 }
                 try {
-                    if (!TextUtils.isEmpty(this.mOriginalLoginParam)) {
+                    if (!StringUtils.isEmpty(this.mOriginalLoginParam)) {
                         LoginParam loginParam = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class);
                         if (loginParam != null) {
                             Properties properties = new Properties();
                             properties.setProperty("sdkTraceId", loginParam.sdkTraceId + "");
-                            if (!TextUtils.isEmpty(loginParam.utPageName)) {
+                            if (!StringUtils.isEmpty(loginParam.utPageName)) {
                                 str2 = loginParam.utPageName;
                             }
                             UserTrackAdapter.sendUT(str2, UTConstant.CustomEvent.UT_LOGIN_TO_H5_QUIT, properties);
@@ -695,11 +695,11 @@ public class WebViewActivity extends BaseActivity {
                 return true;
             } else if ("mobile_confirm_login".equals(string2)) {
                 UserTrackAdapter.sendUT(str2, "LoginH5_MobileConfirmLogin");
-                goLogin((TextUtils.isEmpty(string3) || string3.equals("null")) ? this.mLoginId : string3, string4, this.mLoginType, true, "1014", null, false, true, false, this.mTokenType);
+                goLogin((StringUtils.isEmpty(string3) || string3.equals("null")) ? this.mLoginId : string3, string4, this.mLoginType, true, "1014", null, false, true, false, this.mTokenType);
                 return true;
             } else if (ApiConstants.ApiField.TRUST_LOGIN.equals(string2)) {
                 loginHit(UTConstant.CustomEvent.UT_LOGIN_TO_H5_TRUST_LOGIN, UTConstant.CustomEvent.UT_LOGIN_TO_H5_SUCCESS, ApiConstants.ApiField.TRUST_LOGIN);
-                if (this.skipLogin && TextUtils.equals(this.mScene, LoginSceneConstants.SCENE_CHANGEPASSWORD)) {
+                if (this.skipLogin && StringUtils.equals(this.mScene, LoginSceneConstants.SCENE_CHANGEPASSWORD)) {
                     Intent intent2 = new Intent(LoginResActions.WEB_ACTIVITY_RESULT);
                     Bundle bundle = new Bundle();
                     bundle.putString("bizType", LoginSceneConstants.SCENE_CHANGEPASSWORD);
@@ -709,8 +709,8 @@ public class WebViewActivity extends BaseActivity {
                     finish();
                     return true;
                 }
-                String str3 = (TextUtils.isEmpty(string3) || string3.equals("null")) ? this.mLoginId : string3;
-                String str4 = TextUtils.isEmpty(string5) ? this.mScene : string5;
+                String str3 = (StringUtils.isEmpty(string3) || string3.equals("null")) ? this.mLoginId : string3;
+                String str4 = StringUtils.isEmpty(string5) ? this.mScene : string5;
                 if ("true".equals(string7)) {
                     BroadCastHelper.sendBroadcast(LoginAction.NOTIFY_ACCOUNT_MERGERED_SUCCESS);
                     this.mTokenType = TokenType.MERGE_ACCOUNT;
@@ -719,11 +719,11 @@ public class WebViewActivity extends BaseActivity {
                 }
                 goLogin(str3, string4, this.mLoginType, true, true, str4, null, false, true, false, this.mTokenType);
                 return true;
-            } else if (TextUtils.equals("continueLogin", string2)) {
+            } else if (StringUtils.equals("continueLogin", string2)) {
                 loginHit(UTConstant.CustomEvent.UT_LOGIN_TO_H5_CONTINUE_LOGIN, UTConstant.CustomEvent.UT_LOGIN_TO_H5_SUCCESS, "continueLogin");
                 goLogin(this.mLoginId, this.mToken, this.mLoginType, true, true, this.mScene, parse.getQuery(), false, true, false, this.mTokenType);
                 return true;
-            } else if (TextUtils.equals("passIVToken", string2)) {
+            } else if (StringUtils.equals("passIVToken", string2)) {
                 UserTrackAdapter.sendUT(str2, "LoginH5_passIVToken");
                 String string9 = serialBundle.getString("havana_iv_token");
                 HashMap hashMap = new HashMap();
@@ -732,7 +732,7 @@ public class WebViewActivity extends BaseActivity {
                 BroadCastHelper.sendBroadcast(LoginAction.NOTIFY_IV_SUCCESS, false, 0, "", (Map<String, String>) hashMap, "");
                 finish();
                 return true;
-            } else if (TextUtils.equals("consumeIVToken", string2)) {
+            } else if (StringUtils.equals("consumeIVToken", string2)) {
                 VerifyParam verifyParam = new VerifyParam();
                 verifyParam.userId = this.mUserId;
                 verifyParam.actionType = this.mIVScene;
@@ -740,11 +740,11 @@ public class WebViewActivity extends BaseActivity {
                 verifyParam.fromSite = DataProviderFactory.getDataProvider().getSite();
                 goConsumeIV(verifyParam);
                 return true;
-            } else if (TextUtils.equals("testAccountSso", string2)) {
+            } else if (StringUtils.equals("testAccountSso", string2)) {
                 UnifySsoLogin.tokenLogin(DataProviderFactory.getDataProvider().getSite(), string4, SessionManager.getInstance(DataProviderFactory.getApplicationContext()));
                 finish();
                 return true;
-            } else if (TextUtils.equals("unityTrustLogin", string2)) {
+            } else if (StringUtils.equals("unityTrustLogin", string2)) {
                 loginHit(UTConstant.CustomEvent.UT_LOGIN_TO_H5_CONTINUE_LOGIN, UTConstant.CustomEvent.UT_LOGIN_TO_H5_SUCCESS, "unityTrustLogin");
                 UnifySsoLogin.tokenLogin(DataProviderFactory.getDataProvider().getSite(), string4, SessionManager.getInstance(DataProviderFactory.getApplicationContext()));
                 finish();
@@ -795,7 +795,7 @@ public class WebViewActivity extends BaseActivity {
             return ((Boolean) ipChange.ipc$dispatch("83e9206d", new Object[]{this, str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(this.eventName)) {
+            if (!StringUtils.isEmpty(this.eventName)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("token", str);
                 hashMap.put("result", "success");
@@ -816,17 +816,17 @@ public class WebViewActivity extends BaseActivity {
             return;
         }
         try {
-            if (TextUtils.isEmpty(this.mOriginalLoginParam) || (loginParam = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class)) == null) {
+            if (StringUtils.isEmpty(this.mOriginalLoginParam) || (loginParam = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class)) == null) {
                 return;
             }
             Properties properties = new Properties();
             properties.setProperty("sdkTraceId", loginParam.sdkTraceId + "");
-            UserTrackAdapter.sendUT(TextUtils.isEmpty(loginParam.utPageName) ? PAGE_NAME : loginParam.utPageName, str, properties);
+            UserTrackAdapter.sendUT(StringUtils.isEmpty(loginParam.utPageName) ? PAGE_NAME : loginParam.utPageName, str, properties);
             String loginTypeByTraceId = UTConstant.getLoginTypeByTraceId(loginParam.sdkTraceId + "");
-            if (TextUtils.isEmpty(loginTypeByTraceId)) {
+            if (StringUtils.isEmpty(loginTypeByTraceId)) {
                 loginTypeByTraceId = UTConstant.getLoginTypeByTokenType(loginParam.tokenType);
             }
-            if (TextUtils.isEmpty(loginTypeByTraceId)) {
+            if (StringUtils.isEmpty(loginTypeByTraceId)) {
                 return;
             }
             Properties properties2 = LoginComponent.getProperties();
@@ -867,19 +867,19 @@ public class WebViewActivity extends BaseActivity {
         } else {
             setResult(0);
             sendCancelBroadcast();
-            if (!TextUtils.isEmpty(this.eventName)) {
+            if (!StringUtils.isEmpty(this.eventName)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("result", "cancel");
                 EventBus.getDefault().sendEvent(this.eventName, hashMap);
             }
-            if (!TextUtils.isEmpty(this.mOriginalLoginParam) && (loginParam = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class)) != null) {
+            if (!StringUtils.isEmpty(this.mOriginalLoginParam) && (loginParam = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class)) != null) {
                 String loginTypeByTraceId = UTConstant.getLoginTypeByTraceId(loginParam.sdkTraceId + "");
-                if (TextUtils.isEmpty(loginTypeByTraceId)) {
+                if (StringUtils.isEmpty(loginTypeByTraceId)) {
                     loginTypeByTraceId = UTConstant.getLoginTypeByTokenType(loginParam.tokenType);
                 }
-                if (!TextUtils.isEmpty(loginTypeByTraceId)) {
+                if (!StringUtils.isEmpty(loginTypeByTraceId)) {
                     Properties properties = LoginComponent.getProperties(loginParam);
-                    UserTrackAdapter.sendUT(TextUtils.isEmpty(loginParam.utPageName) ? PAGE_NAME : loginParam.utPageName, UTConstant.CustomEvent.UT_SINGLE_LOGIN_CANCEL, "", loginTypeByTraceId, properties);
+                    UserTrackAdapter.sendUT(StringUtils.isEmpty(loginParam.utPageName) ? PAGE_NAME : loginParam.utPageName, UTConstant.CustomEvent.UT_SINGLE_LOGIN_CANCEL, "", loginTypeByTraceId, properties);
                     properties.setProperty("h5_code", loginParam.errorCode + "");
                     properties.setProperty("h5_scene", this.mScene + "");
                     UserTrackAdapter.sendExtendUT(UTConstant.CustomEvent.UT_LOGIN_TO_H5_CANCEL, "", loginTypeByTraceId, properties);
@@ -902,7 +902,7 @@ public class WebViewActivity extends BaseActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("330477c6", new Object[]{this});
-        } else if (!TextUtils.isEmpty(this.mIVScene)) {
+        } else if (!StringUtils.isEmpty(this.mIVScene)) {
             BroadCastHelper.sendBroadcast(LoginAction.NOTIFY_IV_FAIL, false, -5, LoginConstant.FETCH_IV_FAIL_CANCEL, "");
         } else {
             Intent intent = new Intent(LoginResActions.WEB_ACTIVITY_CANCEL);
@@ -931,7 +931,7 @@ public class WebViewActivity extends BaseActivity {
                         ipChange2.ipc$dispatch("138ac29e", new Object[]{this, str});
                     } else if (WebViewActivity.this.mWebView == null) {
                     } else {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             z = !"false".equals(str.replace("\"", "").replace("'", ""));
                         }
                         if (z) {
@@ -1067,18 +1067,18 @@ public class WebViewActivity extends BaseActivity {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(this.mOriginalLoginParam)) {
+            if (!StringUtils.isEmpty(this.mOriginalLoginParam)) {
                 LoginParam loginParam2 = (LoginParam) JSON.parseObject(this.mOriginalLoginParam, LoginParam.class);
                 loginParam.utPageName = loginParam2.utPageName;
                 loginParam.loginSourceType = loginParam2.loginSourceType;
                 loginParam.sdkTraceId = loginParam2.sdkTraceId;
                 loginParam.source = loginParam2.source;
                 String str2 = loginParam2.sdkTraceId + "";
-                if (!TextUtils.isEmpty(str) && TextUtils.equals(LoginType.LocalLoginType.RETRIVE_PWD_LOGIN, UTConstant.getLoginTypeByTraceId(str2))) {
+                if (!StringUtils.isEmpty(str) && StringUtils.equals(LoginType.LocalLoginType.RETRIVE_PWD_LOGIN, UTConstant.getLoginTypeByTraceId(str2))) {
                     UserTrackAdapter.sendUT(loginParam.utPageName, UTConstant.CustomEvent.UT_SINGLE_LOGIN_COMMIT, "", LoginType.LocalLoginType.RETRIVE_PWD_LOGIN, LoginComponent.getProperties(loginParam2));
                 }
             }
-            if (!TextUtils.isEmpty(this.eventName)) {
+            if (!StringUtils.isEmpty(this.eventName)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, JSON.toJSONString(loginParam));
                 hashMap.put("result", "success");
@@ -1115,7 +1115,7 @@ public class WebViewActivity extends BaseActivity {
                         } else if (loginException == null) {
                         } else {
                             String msg = loginException.getMsg();
-                            if (TextUtils.isEmpty(msg)) {
+                            if (StringUtils.isEmpty(msg)) {
                                 msg = ResourceUtil.getNetworkError();
                             }
                             WebViewActivity.this.toast(msg, 0);
@@ -1265,7 +1265,7 @@ public class WebViewActivity extends BaseActivity {
         }
         if (menu != null && menu.findItem(R.id.aliuser_menu_item_more) != null && menu.findItem(R.id.aliuser_menu_item_help) != null) {
             menu.findItem(R.id.aliuser_menu_item_more).setVisible(false);
-            if (this.isShowHelpMenu && !TextUtils.isEmpty(this.mHelpUrl)) {
+            if (this.isShowHelpMenu && !StringUtils.isEmpty(this.mHelpUrl)) {
                 menu.findItem(R.id.aliuser_menu_item_help).setVisible(true);
             } else {
                 menu.findItem(R.id.aliuser_menu_item_help).setVisible(false);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -42,7 +42,7 @@ public class czu {
 
     public String a(Context context, String str, String str2) {
         String a2 = c(context, str, str2).a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         try {

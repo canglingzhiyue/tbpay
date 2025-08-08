@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.framework;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class h implements com.taobao.android.nav.e {
                 return true;
             }
             String queryParameter = data.getQueryParameter("shareNDParams");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return true;
             }
             JSONObject jSONObject = null;

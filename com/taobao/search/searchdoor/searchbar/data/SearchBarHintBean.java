@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.searchbar.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.g;
 import com.taobao.search.searchdoor.sf.widgets.activate.data.bean.ActivateCellBean;
@@ -45,7 +45,7 @@ public class SearchBarHintBean {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4fb8a709", new Object[]{this, nrbVar});
-        } else if (nrbVar == null || nrbVar.a() == null || nrbVar.a().isEmpty() || (nraVar = nrbVar.a().get(0)) == null || TextUtils.isEmpty(nraVar.a())) {
+        } else if (nrbVar == null || nrbVar.a() == null || nrbVar.a().isEmpty() || (nraVar = nrbVar.a().get(0)) == null || StringUtils.isEmpty(nraVar.a())) {
         } else {
             this.displayText = nraVar.a();
             this.searchText = nraVar.b();
@@ -77,7 +77,7 @@ public class SearchBarHintBean {
 
     public String getAtmosImg(boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9fdfb92e", new Object[]{this, new Boolean(z)}) : (!z || TextUtils.isEmpty(this.darkAtmosImg)) ? this.atmosImg : this.darkAtmosImg;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9fdfb92e", new Object[]{this, new Boolean(z)}) : (!z || StringUtils.isEmpty(this.darkAtmosImg)) ? this.atmosImg : this.darkAtmosImg;
     }
 
     public void handleMultiHint() {
@@ -86,12 +86,12 @@ public class SearchBarHintBean {
             ipChange.ipc$dispatch("12e5ba9f", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(this.displayText) && this.displayText.contains(" | ")) {
+        if (!StringUtils.isEmpty(this.displayText) && this.displayText.contains(" | ")) {
             String[] split = this.displayText.split(MULTI_HINT_SPLITTER);
             this.displayText = split[0];
             this.multiDisplayText = split;
         }
-        if (TextUtils.isEmpty(this.searchText) || !this.searchText.contains(" | ")) {
+        if (StringUtils.isEmpty(this.searchText) || !this.searchText.contains(" | ")) {
             return;
         }
         String[] split2 = this.searchText.split(MULTI_HINT_SPLITTER);

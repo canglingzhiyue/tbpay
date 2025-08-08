@@ -1,6 +1,6 @@
 package com.taobao.rxm.schedule;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.PriorityBlockingQueue;
@@ -69,7 +69,7 @@ public class CentralSchedulerQueue extends PriorityBlockingQueue<Runnable> {
             if (size >= this.mPatienceCapacity) {
                 qol.h("RxSysLog", "SOX current size(%d) of central queue exceeded max patience(%d)!", Integer.valueOf(size), Integer.valueOf(this.mPatienceCapacity));
                 String a2 = this.mExecutorStateInspector.a();
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     String replace = a2.replace(riy.MOD, "%%");
                     qol.h("RxSysLog", "SOX detail:" + replace, new Object[0]);
                 }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.pissarro.c;
 import com.taobao.taopai.business.image.external.AspectRatio;
@@ -50,6 +50,6 @@ public class ice {
         Uri.Builder appendQueryParameter2 = appendQueryParameter.appendQueryParameter("image_graffiti_enable", str).appendQueryParameter("photo_max", String.valueOf(b.getMaxSelectCount())).appendQueryParameter("img_bizcode", b.getBizCode());
         Uri.Builder appendQueryParameter3 = appendQueryParameter2.appendQueryParameter("max_import_video_size", b.getMaxVideoSize() + "");
         Uri.Builder appendQueryParameter4 = appendQueryParameter3.appendQueryParameter("max_import_video_duration", b.getMaxVideoDuration() + "").appendQueryParameter(ios.KEY_MEDIA_TYPE, b.getMediaType());
-        return appendQueryParameter4.appendQueryParameter("image_max_size", b.getMaxImageSize() + "").appendQueryParameter(ios.KEY_BIZ_LINE, b.getBizLine()).appendQueryParameter("biz_scene", TextUtils.isEmpty(b.getBizScene()) ? "pissarro" : b.getBizScene()).build().toString();
+        return appendQueryParameter4.appendQueryParameter("image_max_size", b.getMaxImageSize() + "").appendQueryParameter(ios.KEY_BIZ_LINE, b.getBizLine()).appendQueryParameter("biz_scene", StringUtils.isEmpty(b.getBizScene()) ? "pissarro" : b.getBizScene()).build().toString();
     }
 }

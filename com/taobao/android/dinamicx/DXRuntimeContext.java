@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -405,7 +405,7 @@ public class DXRuntimeContext implements Cloneable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("abe3bf05", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.r) && c() != null && e() != null) {
+        if (StringUtils.isEmpty(this.r) && c() != null && e() != null) {
             this.r = c().f11925a + "_" + c().b + "_" + System.identityHashCode(e()) + "w:" + y() + "h:" + z();
         }
         return this.r;
@@ -416,7 +416,7 @@ public class DXRuntimeContext implements Cloneable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("326979a4", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.s) && c() != null && f() != null) {
+        if (StringUtils.isEmpty(this.s) && c() != null && f() != null) {
             this.s = c().f11925a + "_" + c().b + "_" + System.identityHashCode(f()) + "w:" + y() + "h:" + z();
         }
         return this.s;

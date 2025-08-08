@@ -5,7 +5,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 
@@ -132,7 +132,7 @@ public class jdo {
             return 2;
         }
         for (ActivityManager.ProcessErrorStateInfo processErrorStateInfo : processesInErrorState) {
-            if (processErrorStateInfo.pid == Process.myPid() && processErrorStateInfo.condition == 2 && !TextUtils.equals(this.f29478a, processErrorStateInfo.longMsg)) {
+            if (processErrorStateInfo.pid == Process.myPid() && processErrorStateInfo.condition == 2 && !StringUtils.equals(this.f29478a, processErrorStateInfo.longMsg)) {
                 this.f29478a = processErrorStateInfo.longMsg;
                 return 1;
             }

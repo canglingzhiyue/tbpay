@@ -1,6 +1,6 @@
 package com.taobao.tao.powermsg.managers;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c0e2fef5", new Object[]{new Integer(i), str, cVar})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "_default";
         }
         HashMap<String, WeakReference<com.taobao.tao.powermsg.common.c>> hashMap = f20840a.get(Integer.valueOf(i));

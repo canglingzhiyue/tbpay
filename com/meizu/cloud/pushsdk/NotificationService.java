@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.util.d;
@@ -25,7 +25,7 @@ public class NotificationService extends IntentService {
     }
 
     public String a(String str, String str2) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return null;
         }
         Intent intent = new Intent(str2);
@@ -39,7 +39,7 @@ public class NotificationService extends IntentService {
 
     public void a(Intent intent) {
         String a2 = a(getPackageName(), intent.getAction());
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             d.a(this, intent, "reflectReceiver sendbroadcast", 2005);
             DebugLogger.i("NotificationService", " reflectReceiver error: receiver for: " + intent.getAction() + " not found, package: " + getPackageName());
             intent.setPackage(getPackageName());
@@ -79,12 +79,12 @@ public class NotificationService extends IntentService {
             String stringExtra = intent.getStringExtra("command_type");
             boolean z = PushConstants.MZ_PUSH_ON_MESSAGE_ACTION.equals(intent.getAction()) || PushConstants.MZ_PUSH_ON_REGISTER_ACTION.equals(intent.getAction()) || PushConstants.MZ_PUSH_ON_UNREGISTER_ACTION.equals(intent.getAction());
             DebugLogger.d("NotificationService", "-- command_type -- " + stringExtra + " legalAction " + z);
-            if (TextUtils.isEmpty(stringExtra) || !"reflect_receiver".equals(stringExtra) || !z) {
+            if (StringUtils.isEmpty(stringExtra) || !"reflect_receiver".equals(stringExtra) || !z) {
                 return;
             }
             String stringExtra2 = intent.getStringExtra(PushConstants.MZ_PUSH_CONTROL_MESSAGE);
             DebugLogger.i("NotificationService", "control message is " + stringExtra2);
-            if (!TextUtils.isEmpty(stringExtra2)) {
+            if (!StringUtils.isEmpty(stringExtra2)) {
                 com.meizu.cloud.pushsdk.f.a.a(this, new com.meizu.cloud.pushsdk.handler.e.j.b(stringExtra2, null, null).b().b());
             }
             a(intent);

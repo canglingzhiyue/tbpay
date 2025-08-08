@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
@@ -167,13 +167,13 @@ public class e extends h {
                     } else {
                         String k = e.k();
                         String str2 = map.get("configVersion");
-                        if (TextUtils.equals(str2, k)) {
+                        if (StringUtils.equals(str2, k)) {
                             hut.b("NavigationExternSwitch", "configVersion not change for version equals. version: " + str2);
                             return;
                         }
                         huw.b().c().putString("key_cache_tab", OrangeConfig.getInstance().getConfig("uikit_sp_group", "key_cache_tab", "true")).putString("key_change_message_view_color", OrangeConfig.getInstance().getConfig("uikit_sp_group", "key_change_message_view_color", null)).putString("guardian_v2_switch_on", OrangeConfig.getInstance().getConfig("uikit_sp_group", "guardian_v2_switch_on", "false")).putString("load_icon_form_old_cache_offline", OrangeConfig.getInstance().getConfig("uikit_sp_group", "load_icon_form_old_cache_offline", "true")).putString("guardian_v2_clear_by_setting_switch_on", OrangeConfig.getInstance().getConfig("uikit_sp_group", "guardian_v2_clear_by_setting_switch_on", "true")).putString("orange_config_version", str2).commit();
                         String config = OrangeConfig.getInstance().getConfig("uikit_sp_group", "key_clean_cache_tab", "-1");
-                        if (!TextUtils.equals("-1", config)) {
+                        if (!StringUtils.equals("-1", config)) {
                             hur.a().a(config);
                         }
                         hut.b("NavigationExternSwitch", "orange config updated; isCacheTabSwitchOpen:" + e.h() + " isCleanCacheSwitchOpen? " + config);

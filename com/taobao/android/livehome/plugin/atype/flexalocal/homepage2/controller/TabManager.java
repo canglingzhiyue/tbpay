@@ -2,7 +2,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.homepage2.controller
 
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.android.ultron.vfw.weex2.module.UltronWeex2PrefetchCacheModule;
 import com.alibaba.fastjson.JSON;
@@ -478,7 +478,7 @@ public class TabManager {
             jSONObject.put("isPad", (Object) Boolean.valueOf(sqtVar.f()));
             tabMenuRequest.extendParams = jSONObject.toJSONString();
             String a2 = j.a(d.TAO_LIVE_FOLLOW_ICON_SJSD_PARAM);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 JSONArray c = pqj.c(a2);
                 JSONArray jSONArray = new JSONArray();
                 for (int i = 0; i < c.size(); i++) {

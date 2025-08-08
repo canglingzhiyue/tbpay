@@ -9,7 +9,7 @@ import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Choreographer;
 import android.view.KeyEvent;
 import anet.channel.util.ALog;
@@ -815,7 +815,7 @@ public class FalcoLoadActionMonitor implements a.b, a.d, r.a, nkx.a, slx.a, tpr.
         if (rVar == null || this.b.get(Integer.valueOf(i)) != null || this.f17108a.isEmpty()) {
             return;
         }
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             pop = this.f17108a.pop();
         } else {
             this.f17108a.peek();
@@ -832,7 +832,7 @@ public class FalcoLoadActionMonitor implements a.b, a.d, r.a, nkx.a, slx.a, tpr.
         sloVar.d(Long.valueOf(j));
         sloVar.l(str);
         sloVar.a(i);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sloVar.m(str2);
         }
         this.e.add(Integer.valueOf(i));

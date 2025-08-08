@@ -1,7 +1,7 @@
 package com.taobao.themis.mix;
 
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -110,10 +110,10 @@ public final class TMSTinyAppRenderFactory extends qqh implements Serializable {
             }
         }
         if (mixPageInfo != null) {
-            if (TextUtils.equals("h5", mixPageInfo.getPageType())) {
+            if (StringUtils.equals("h5", mixPageInfo.getPageType())) {
                 TMSLogger.d(TAG, "tms h5 renderUrl: " + mixPageInfo.getPageUrl());
                 return new com.taobao.themis.mix.h5_render.a(page, mixPageInfo.getPageUrl());
-            } else if (TextUtils.equals("weex2", mixPageInfo.getPageType())) {
+            } else if (StringUtils.equals("weex2", mixPageInfo.getPageType())) {
                 TMSLogger.d(TAG, "tms weex2 renderUrl: " + mixPageInfo.getPageUrl());
                 String pageUrl = mixPageInfo.getPageUrl();
                 q.a((Object) pageUrl);

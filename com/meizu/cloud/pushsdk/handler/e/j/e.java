@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.handler.e.j;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
@@ -28,7 +28,7 @@ public class e {
         String c;
 
         public a(String str) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     JSONObject jSONObject = new JSONObject(str);
                     if (!jSONObject.isNull("code")) {
@@ -103,7 +103,7 @@ public class e {
         String str = null;
         try {
             try {
-                if (!TextUtils.isEmpty(notificationMessage)) {
+                if (!StringUtils.isEmpty(notificationMessage)) {
                     try {
                         JSONObject jSONObject2 = new JSONObject(notificationMessage).getJSONObject("data");
                         if (!jSONObject2.isNull("extra")) {
@@ -114,7 +114,7 @@ public class e {
                         }
                     } catch (JSONException e) {
                         DebugLogger.e("SecurityMessage", "parse notification message error " + e.getMessage());
-                        if (TextUtils.isEmpty(null)) {
+                        if (StringUtils.isEmpty(null)) {
                             jSONObject = new JSONObject(notificationMessage);
                         }
                     }
@@ -124,7 +124,7 @@ public class e {
                     }
                 }
             } finally {
-                if (TextUtils.isEmpty(null)) {
+                if (StringUtils.isEmpty(null)) {
                     try {
                         new JSONObject(notificationMessage).getString("se");
                     } catch (Exception unused) {

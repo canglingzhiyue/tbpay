@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.nativerender.render.component;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class f extends c<ImageModel> {
         }
         final ImageView imageView = new ImageView(context);
         final String a2 = p.a(this.f22246a, ((ImageModel) this.b).url);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             this.f22246a.a("ImageRenderError", "imageUrlIsEmpty");
             return null;
         }

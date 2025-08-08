@@ -3,7 +3,7 @@ package com.xiaomi.push;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 public class db {
@@ -33,7 +33,7 @@ public class db {
                 return 1;
             } else {
                 String subtypeName = activeNetworkInfo.getSubtypeName();
-                if (TextUtils.isEmpty(subtypeName) || "UNKNOWN".equalsIgnoreCase(subtypeName)) {
+                if (StringUtils.isEmpty(subtypeName) || "UNKNOWN".equalsIgnoreCase(subtypeName)) {
                     str = null;
                 } else {
                     str = "M-" + subtypeName;
@@ -86,7 +86,7 @@ public class db {
             return;
         }
         a("onWifiChanged wifiDigest = " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         b("W-" + str);

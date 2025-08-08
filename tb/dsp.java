@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.j;
@@ -85,7 +85,7 @@ public class dsp {
         if (this.f != null) {
             HashMap hashMap = new HashMap();
             String str = this.f.get("ARGS");
-            if (!TextUtils.isEmpty(str) && (a2 = j.a(str, ",", "=", true)) != null) {
+            if (!StringUtils.isEmpty(str) && (a2 = j.a(str, ",", "=", true)) != null) {
                 hashMap.putAll(a2);
             }
             for (Map.Entry<String, String> entry : this.f.entrySet()) {
@@ -98,10 +98,10 @@ public class dsp {
         if (this.g == null) {
             this.g = new HashMap();
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             this.g.put("bx_arg2", this.d);
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             this.g.put("bx_arg3", this.e);
         }
         return this.g;
@@ -122,12 +122,12 @@ public class dsp {
                 hashMap.put(entry.getKey(), entry.getValue());
             }
             String str = "";
-            if (TextUtils.equals(entry.getKey(), "ARG2")) {
+            if (StringUtils.equals(entry.getKey(), "ARG2")) {
                 if (entry.getValue() != null) {
                     str = entry.getValue();
                 }
                 hashMap.put("bx_arg2", str);
-            } else if (TextUtils.equals(entry.getKey(), "ARG3")) {
+            } else if (StringUtils.equals(entry.getKey(), "ARG3")) {
                 if (entry.getValue() != null) {
                     str = entry.getValue();
                 }

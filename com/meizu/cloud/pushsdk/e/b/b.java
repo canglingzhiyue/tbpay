@@ -1,7 +1,7 @@
 package com.meizu.cloud.pushsdk.e.b;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.meizu.cloud.pushsdk.e.b.b;
 import com.meizu.cloud.pushsdk.e.d.b;
@@ -544,12 +544,12 @@ public class b<T extends b> {
         b.C0279b c0279b = new b.C0279b();
         try {
             for (Map.Entry<String, String> entry : this.l.entrySet()) {
-                if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                     c0279b.a(entry.getKey(), entry.getValue());
                 }
             }
             for (Map.Entry<String, String> entry2 : this.m.entrySet()) {
-                if (!TextUtils.isEmpty(entry2.getKey()) && !TextUtils.isEmpty(entry2.getValue())) {
+                if (!StringUtils.isEmpty(entry2.getKey()) && !StringUtils.isEmpty(entry2.getValue())) {
                     c0279b.b(entry2.getKey(), entry2.getValue());
                 }
             }

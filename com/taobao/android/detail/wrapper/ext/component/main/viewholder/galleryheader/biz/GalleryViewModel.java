@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -338,7 +338,7 @@ public class GalleryViewModel extends MultiMediaViewModel implements j {
         if (this.mTBMultiMediaModel == null) {
             return i.SUCCESS;
         }
-        if ((this.mTBMultiMediaModel.childModels.get(0) instanceof NormalImageModel) && TextUtils.isEmpty(((NormalImageModel) this.mTBMultiMediaModel.childModels.get(0)).imageUrl)) {
+        if ((this.mTBMultiMediaModel.childModels.get(0) instanceof NormalImageModel) && StringUtils.isEmpty(((NormalImageModel) this.mTBMultiMediaModel.childModels.get(0)).imageUrl)) {
             return i.SUCCESS;
         }
         if (eno.a(DetailEvent.class) == event.getEventId()) {
@@ -604,7 +604,7 @@ public class GalleryViewModel extends MultiMediaViewModel implements j {
 
     private boolean needShowTimeTunnel() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83942733", new Object[]{this})).booleanValue() : this.mTBMultiMediaModel.currentIndex == 0 && this.mTBMultiMediaModel.timeTunnel != null && !TextUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f10001a) && !TextUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("83942733", new Object[]{this})).booleanValue() : this.mTBMultiMediaModel.currentIndex == 0 && this.mTBMultiMediaModel.timeTunnel != null && !StringUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f10001a) && !StringUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.c);
     }
 
     public void trackShowTimeTunnel() {
@@ -616,7 +616,7 @@ public class GalleryViewModel extends MultiMediaViewModel implements j {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("trackPage", "Page_Detail_Show_Detail");
         hashMap.put("spm", this.mTBMultiMediaModel.timeTunnel.e != null ? this.mTBMultiMediaModel.timeTunnel.e : "a2141.7631564.1999020712");
-        if (!TextUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f)) {
+        if (!StringUtils.isEmpty(this.mTBMultiMediaModel.timeTunnel.f)) {
             hashMap.put("scm", this.mTBMultiMediaModel.timeTunnel.f);
         }
         hashMap.put("trackId", "2201");

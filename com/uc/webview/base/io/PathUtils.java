@@ -1,7 +1,7 @@
 package com.uc.webview.base.io;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.base.EnvInfo;
 import java.io.File;
 import java.util.HashMap;
@@ -80,7 +80,7 @@ public final class PathUtils {
             return null;
         }
         String name = file.getName();
-        if (!TextUtils.isEmpty(name) && name.endsWith(bgy.SO_EXTENSION)) {
+        if (!StringUtils.isEmpty(name) && name.endsWith(bgy.SO_EXTENSION)) {
             try {
                 File parentFile = file.getParentFile().getParentFile().getParentFile();
                 if (parentFile != null) {

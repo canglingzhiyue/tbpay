@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 
@@ -63,7 +63,7 @@ public class ody {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (this.b == null || TextUtils.isEmpty(str)) {
+        } else if (this.b == null || StringUtils.isEmpty(str)) {
         } else {
             ogg.d("SharePlayer", "清空convertObject，key:" + str);
             this.b.remove(str);

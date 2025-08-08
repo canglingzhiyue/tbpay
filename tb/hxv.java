@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -72,18 +72,18 @@ public class hxv extends b implements View.OnClickListener {
                 TextView textView = this.d.get(i);
                 RecommendItem recommendItem = list.get(i);
                 String str = recommendItem.promotionPrice;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hyc.a(textView, "￥" + str, true);
                     textView.setVisibility(0);
                 }
                 String str2 = recommendItem.pic;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     this.b.get(i).setImageUrl(str2);
                 } else {
                     this.b.get(i).setImageUrl(null);
                     this.b.get(i).setImageDrawable(this.f14568a.getResources().getDrawable(R.drawable.babel_order_default_goods_bg));
                 }
-                if (!TextUtils.isEmpty(recommendItem.itemName)) {
+                if (!StringUtils.isEmpty(recommendItem.itemName)) {
                     this.e.setContentDescription(recommendItem.itemName);
                 }
                 this.c.get(i).setTag(recommendItem.url);

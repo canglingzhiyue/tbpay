@@ -3,7 +3,7 @@ package android.taobao.windvane.jsbridge.api;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -54,7 +54,7 @@ public class WVFile extends e {
             return;
         }
         String str3 = "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 str3 = jSONObject.optString("fileName");
@@ -114,7 +114,7 @@ public class WVFile extends e {
             return;
         }
         String str5 = "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString2 = jSONObject.optString("mode", "write");

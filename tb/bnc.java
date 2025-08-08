@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.trade.event.d;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class bnc extends d {
         }
         String string = fields.getString(fin.EVENT_KEY);
         String string2 = fields.getString("target");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || (H = this.f.H()) == null || (b = H.b(string2)) == null || b.getEventMap() == null || (list = b.getEventMap().get(string)) == null) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || (H = this.f.H()) == null || (b = H.b(string2)) == null || b.getEventMap() == null || (list = b.getEventMap().get(string)) == null) {
             return;
         }
         for (b bVar : list) {

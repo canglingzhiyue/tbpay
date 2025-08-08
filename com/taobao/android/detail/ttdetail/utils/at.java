@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -77,7 +77,7 @@ public class at {
         JSONObject jSONObject3 = jSONObject.getJSONObject("item");
         if (jSONObject2 != null && jSONObject3 != null) {
             String string = jSONObject3.getString("itemId");
-            if (jSONObject2.getBooleanValue("oneProductMM") && jSONObject2.getBooleanValue("oneProductMMDegrade") && !TextUtils.isEmpty(string)) {
+            if (jSONObject2.getBooleanValue("oneProductMM") && jSONObject2.getBooleanValue("oneProductMMDegrade") && !StringUtils.isEmpty(string)) {
                 return true;
             }
         }

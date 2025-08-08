@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.eventchain;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -109,7 +109,7 @@ public class f extends com.taobao.android.dinamicx.h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9aca6737", new Object[]{this, dXEvent, objArr, dXRuntimeContext, dXWidgetNode});
-        } else if (objArr != null && objArr.length != 0 && !TextUtils.isEmpty(objArr[0].toString())) {
+        } else if (objArr != null && objArr.length != 0 && !StringUtils.isEmpty(objArr[0].toString())) {
             if (dXRuntimeContext == null || dXRuntimeContext.C() == null || dXRuntimeContext.C().b() == null || dXRuntimeContext.C().b().g() == null) {
                 fuw.d("DXEventChainEventHandler", "dx evnetchain handle error : Missing the necessary parameters(eventChainManage)");
                 return;

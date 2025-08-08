@@ -1,6 +1,6 @@
 package com.taobao.weex.utils.tools;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Locale;
@@ -46,7 +46,7 @@ public class LogDetail {
         }
         this.time.a();
         this.info.taskName = str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String lowerCase = str.toLowerCase(Locale.ROOT);

@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -132,7 +132,7 @@ public class CXCommonActivity extends CustomBaseActivity {
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-                } else if (!TextUtils.equals(intent.getAction(), "degradeToWindVane")) {
+                } else if (!StringUtils.equals(intent.getAction(), "degradeToWindVane")) {
                 } else {
                     CXCommonActivity cXCommonActivity = CXCommonActivity.this;
                     gry.a(cXCommonActivity, cXCommonActivity.getIntent());
@@ -217,7 +217,7 @@ public class CXCommonActivity extends CustomBaseActivity {
         }
         if (UNITE_VIDEO_FULLPAGE_PATH.equals(uri.getPath())) {
             String queryParameter = uri.getQueryParameter("bizFrom");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 buildUpon.appendQueryParameter("type", queryParameter);
                 buildUpon.appendQueryParameter("source", queryParameter);
             }
@@ -225,7 +225,7 @@ public class CXCommonActivity extends CustomBaseActivity {
         } else if (UNITE_VIDEO_CONTENT_PATH.equals(uri.getPath())) {
             String queryParameter2 = uri.getQueryParameter("id");
             String queryParameter3 = uri.getQueryParameter("bizFrom");
-            if (!TextUtils.isEmpty(queryParameter2) && !TextUtils.isEmpty(queryParameter3)) {
+            if (!StringUtils.isEmpty(queryParameter2) && !StringUtils.isEmpty(queryParameter3)) {
                 buildUpon.appendQueryParameter("contentId", queryParameter2);
                 buildUpon.appendQueryParameter("source", queryParameter3);
             }
@@ -448,7 +448,7 @@ public class CXCommonActivity extends CustomBaseActivity {
         }
         String str = this.f;
         Bundle bundle = new Bundle();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Bundle bundle2 = new Bundle();
             bundle2.putString("pageName", this.h);
             bundle.putParcelable(hyt.ZZB_BUNDLE_KEY, bundle2);

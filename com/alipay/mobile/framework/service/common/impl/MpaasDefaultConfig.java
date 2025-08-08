@@ -1,7 +1,7 @@
 package com.alipay.mobile.framework.service.common.impl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.appinfo.AppInfoUtil;
 import com.alipay.mobile.common.rpc.RpcDefaultConfig;
 import com.alipay.mobile.common.transport.Transport;
@@ -53,7 +53,7 @@ public class MpaasDefaultConfig extends RpcDefaultConfig {
             return (String) ipChange.ipc$dispatch("49079005", new Object[]{this});
         }
         String appKeyForMPaaS = AppInfoUtil.getAppKeyForMPaaS();
-        if (!TextUtils.isEmpty(appKeyForMPaaS)) {
+        if (!StringUtils.isEmpty(appKeyForMPaaS)) {
             LogCatUtil.info("MpaasDefaultConfig", "Get appkey=[" + appKeyForMPaaS + "] from AppInfoUtil");
             return appKeyForMPaaS;
         }
@@ -63,7 +63,7 @@ public class MpaasDefaultConfig extends RpcDefaultConfig {
         } catch (Exception e) {
             LogCatUtil.warn("MpaasDefaultConfig", e);
         }
-        if (!TextUtils.isEmpty(obj)) {
+        if (!StringUtils.isEmpty(obj)) {
             LogCatUtil.info("MpaasDefaultConfig", "Get appkey=[" + obj + "] from metaData.");
             return obj;
         }

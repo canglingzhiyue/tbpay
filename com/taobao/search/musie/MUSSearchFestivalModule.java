@@ -1,7 +1,7 @@
 package com.taobao.search.musie;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -57,7 +57,7 @@ public final class MUSSearchFestivalModule extends MUSModule {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("1635edf5", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || this.miniSearch) {
+        if (StringUtils.isEmpty(str) || this.miniSearch) {
             return new JSONObject();
         }
         Object json = JSON.toJSON(FestivalMgr.a().b(str));

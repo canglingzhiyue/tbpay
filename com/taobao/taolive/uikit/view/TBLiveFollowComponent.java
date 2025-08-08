@@ -2,7 +2,7 @@ package com.taobao.taolive.uikit.view;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
@@ -183,7 +183,7 @@ public class TBLiveFollowComponent extends RelativeLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("239b0bcd", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             CT ct = CT.Button;
             TBS.Adv.ctrlClicked(ct, "follow", "accountId=" + str, "type=" + str2);

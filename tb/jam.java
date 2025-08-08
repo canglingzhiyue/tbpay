@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.core.FluidContext;
@@ -165,7 +165,7 @@ public class jam {
             java.lang.Object r0 = r9.get(r0)
             r1 = 0
             java.lang.String r5 = tb.oec.a(r0, r1)
-            boolean r0 = android.text.TextUtils.isEmpty(r5)
+            boolean r0 = android.text.StringUtils.isEmpty(r5)
             if (r0 == 0) goto L2a
             return
         L2a:
@@ -276,7 +276,7 @@ public class jam {
                     spz.c("LiveSharePlayerUtils", "onRelease: " + str3);
                 }
             });
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 spz.c("LiveSharePlayerUtils", "playViewToken为null 正常跳转，mediaPlayViewProxy：" + n);
                 this.d.d();
                 FluidSDK.getNavAdapter().nav(fluidContext, context, str, bundle);
@@ -297,7 +297,7 @@ public class jam {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return str;
         }
         HashMap hashMap = new HashMap();
@@ -317,7 +317,7 @@ public class jam {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[0])).booleanValue();
         }
-        boolean equals = TextUtils.equals("true", oeb.b("AB_fullscreenpage_video.immersive_live_jump.isSharePlayer", String.valueOf(false)));
+        boolean equals = StringUtils.equals("true", oeb.b("AB_fullscreenpage_video.immersive_live_jump.isSharePlayer", String.valueOf(false)));
         spz.c("LiveSharePlayerUtils", "AB config enable:" + equals);
         return equals;
     }

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.utils.JsonUtil;
 import com.alipay.android.msp.utils.LogUtil;
@@ -55,13 +55,13 @@ public class ResData<R> {
             return null;
         }
         Header[] headerArr = (Header[]) list.toArray(new Header[0]);
-        if (headerArr != null && headerArr.length > 0 && !TextUtils.isEmpty(str)) {
+        if (headerArr != null && headerArr.length > 0 && !StringUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
             int length = headerArr.length;
             for (int i = 0; i < length; i++) {
                 header = headerArr[i];
                 String name = header.getName();
-                if (!TextUtils.isEmpty(name) && TextUtils.equals(name.toLowerCase(), lowerCase)) {
+                if (!StringUtils.isEmpty(name) && StringUtils.equals(name.toLowerCase(), lowerCase)) {
                     break;
                 }
             }

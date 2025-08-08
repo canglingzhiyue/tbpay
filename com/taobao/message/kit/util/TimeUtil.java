@@ -1,6 +1,6 @@
 package com.taobao.message.kit.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.launcher.server_time.AmpTimeStampManager;
@@ -110,7 +110,7 @@ public class TimeUtil {
             if (z) {
                 LruCache<String, String> lruCache = mpFormatTimeCache;
                 String str = lruCache.get(j + "default");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return str;
                 }
                 String formatDate2 = DateFormatUtil.formatDate2(calendar.getTime());
@@ -125,7 +125,7 @@ public class TimeUtil {
             if (z) {
                 LruCache<String, String> lruCache3 = mpFormatTimeCache;
                 String str2 = lruCache3.get(j + eoe.c.KEY_DAY);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     return str2;
                 }
                 String convertHourAndMinus = convertHourAndMinus(calendar.get(11), calendar.get(12));
@@ -141,7 +141,7 @@ public class TimeUtil {
                 if (z) {
                     LruCache<String, String> lruCache5 = mpFormatTimeCache;
                     String str3 = lruCache5.get(j + "week");
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         return str3;
                     }
                     String weekOfTime = getWeekOfTime(j);
@@ -153,7 +153,7 @@ public class TimeUtil {
             } else if (z) {
                 LruCache<String, String> lruCache7 = mpFormatTimeCache;
                 String str4 = lruCache7.get(j + "default");
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     return str4;
                 }
                 String formatDate22 = DateFormatUtil.formatDate2(calendar.getTime());

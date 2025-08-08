@@ -1,6 +1,6 @@
 package com.taobao.tbreachflow.shortcuts.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 
@@ -17,7 +17,7 @@ public class ShortcutConfig implements Serializable {
 
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : (!TextUtils.isEmpty(this.shortTitle) || !TextUtils.isEmpty(this.longTitle)) && !TextUtils.isEmpty(this.disableToast) && !TextUtils.isEmpty(this.iconUrl) && !TextUtils.isEmpty(this.targetUrl);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : (!StringUtils.isEmpty(this.shortTitle) || !StringUtils.isEmpty(this.longTitle)) && !StringUtils.isEmpty(this.disableToast) && !StringUtils.isEmpty(this.iconUrl) && !StringUtils.isEmpty(this.targetUrl);
     }
 
     public String getShortTitle() {

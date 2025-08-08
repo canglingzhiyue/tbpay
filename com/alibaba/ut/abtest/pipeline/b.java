@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.pipeline;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.UTABEnvironment;
 import com.alibaba.ut.abtest.internal.util.f;
 import com.alibaba.ut.abtest.internal.util.g;
@@ -75,7 +75,7 @@ public class b implements a {
             h.a("PipelineServiceImpl", "sendRequest. request=" + cVar + ", requestUrl=" + url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             if (httpURLConnection instanceof HttpsURLConnection) {
-                if (this.f4209a == null && !TextUtils.isEmpty(url.getHost())) {
+                if (this.f4209a == null && !StringUtils.isEmpty(url.getHost())) {
                     this.f4209a = new d(url.getHost());
                 }
                 ((HttpsURLConnection) httpURLConnection).setSSLSocketFactory(this.f4209a);
@@ -131,7 +131,7 @@ public class b implements a {
                 h.a("PipelineServiceImpl", "responseString=" + str2 + ", request=" + cVar);
             }
             JSONObject jSONObject = new JSONObject(str2);
-            if (TextUtils.equals("sm", jSONObject.optString("rgv587_flag"))) {
+            if (StringUtils.equals("sm", jSONObject.optString("rgv587_flag"))) {
                 response.setSuccess(false);
                 response.setCode(20001);
                 response.setMessage("rgv587_flag");

@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -117,7 +117,7 @@ public class kgv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("32b1c3e1", new Object[]{eVar, bVar, componentBaseModel, str, actionModel, list});
-        } else if (eVar == null || componentBaseModel == null || TextUtils.isEmpty(str)) {
+        } else if (eVar == null || componentBaseModel == null || StringUtils.isEmpty(str)) {
         } else {
             eVar.b(new Runnable() { // from class: tb.-$$Lambda$kgv$44u5vH4X9jlOIhG1bNHdrV2f7SM
                 @Override // java.lang.Runnable
@@ -212,7 +212,7 @@ public class kgv {
             HashMap hashMap = new HashMap();
             List<String> list2 = actionsItemModel.startActions;
             for (ActionModel actionModel : actionsItemModel.content) {
-                if (actionModel != null && actionModel.isValid() && !TextUtils.isEmpty(actionModel.id)) {
+                if (actionModel != null && actionModel.isValid() && !StringUtils.isEmpty(actionModel.id)) {
                     hashMap.put(actionModel.id, actionModel);
                 }
             }
@@ -470,7 +470,7 @@ public class kgv {
         ActionModel actionModel = aVar.e;
         e eVar = aVar.f30062a;
         String a2 = p.a(eVar, actionModel.content);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         Intent intent = new Intent();
@@ -541,7 +541,7 @@ public class kgv {
         JSONObject parseObject = JSONObject.parseObject(actionModel.content);
         if (parseObject != null) {
             String string = parseObject.getString("targetGroupStates");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 try {
                     arrayList = (List) JSON.parseObject(string, new TypeReference<List<String>>() { // from class: tb.kgv.4
                     }, new Feature[0]);
@@ -551,7 +551,7 @@ public class kgv {
             }
             if (arrayList2 == null || arrayList2.isEmpty()) {
                 String string2 = parseObject.getString("targetStates");
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     try {
                         arrayList2 = (List) JSON.parseObject(string2, new TypeReference<List<String>>() { // from class: tb.kgv.5
                         }, new Feature[0]);
@@ -641,7 +641,7 @@ public class kgv {
         List<String> arrayList = new ArrayList<>();
         ArrayList arrayList2 = new ArrayList();
         String string = parseObject.getString("targetGroupStates");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 arrayList = (List) JSON.parseObject(string, new TypeReference<List<String>>() { // from class: tb.kgv.6
                 }, new Feature[0]);
@@ -650,7 +650,7 @@ public class kgv {
             }
         }
         String string2 = parseObject.getString("targetStates");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             try {
                 list = (List) JSON.parseObject(string2, new TypeReference<List<String>>() { // from class: tb.kgv.7
                 }, new Feature[0]);

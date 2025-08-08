@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.info;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -42,7 +42,7 @@ public class b {
         String a2 = a("orange_version");
         com.alibaba.poplayer.utils.c.c("sdkLifeCycle", "", "PopConfigLocalManager.updateLocalConfigs.orangeVersion=" + str3 + ".localOrangeVersion=" + a2);
         try {
-            if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(str3)) {
                 boolean equals = str3.equals(a2);
                 com.alibaba.poplayer.utils.c.c("sdkLifeCycle", "", "PopConfigLocalManager.updateLocalConfigs.orangeVersionSame=" + equals);
                 if (equals) {
@@ -69,7 +69,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
         try {
-            return (!TextUtils.isEmpty(str) && (b = b()) != null) ? b.getString(str, "") : "";
+            return (!StringUtils.isEmpty(str) && (b = b()) != null) ? b.getString(str, "") : "";
         } catch (Throwable th) {
             com.alibaba.poplayer.utils.c.a("PopConfigLocalManager.getValueByOrangeKey.error.", th);
             return "";
@@ -98,7 +98,7 @@ public class b {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str) || (b = b()) == null) {
+            if (StringUtils.isEmpty(str) || (b = b()) == null) {
                 return;
             }
             SharedPreferences.Editor edit = b.edit();
@@ -118,7 +118,7 @@ public class b {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (b = b()) == null) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (b = b()) == null) {
                 return;
             }
             b.edit().putString(str, str2).apply();
@@ -139,14 +139,14 @@ public class b {
                 return;
             }
             String string = b.getString("poplayer_config", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             List asList = Arrays.asList(string.split(","));
             Map<String, ?> all = b.getAll();
             SharedPreferences.Editor edit = b.edit();
             for (String str : all.keySet()) {
-                if (!TextUtils.isEmpty(str) && !"poplayer_config".equals(str) && !"orange_version".equals(str) && !asList.contains(str)) {
+                if (!StringUtils.isEmpty(str) && !"poplayer_config".equals(str) && !"orange_version".equals(str) && !asList.contains(str)) {
                     edit.remove(str);
                 }
             }

@@ -3,7 +3,7 @@ package com.taobao.mytaobao.ui;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -452,18 +452,18 @@ public final class b {
         String str2 = skinData.actionBarBackgroundImage;
         String str3 = skinData.actionbarTextColor;
         if (q.a((Object) "normal", (Object) skinData.vipType)) {
-            if (!TextUtils.isEmpty(skinData.whiteActionBarBackgroundColor)) {
+            if (!StringUtils.isEmpty(skinData.whiteActionBarBackgroundColor)) {
                 str = skinData.whiteActionBarBackgroundColor;
             }
-            if (!TextUtils.isEmpty(skinData.whiteActionBarBackgroundImage)) {
+            if (!StringUtils.isEmpty(skinData.whiteActionBarBackgroundImage)) {
                 str2 = skinData.whiteActionBarBackgroundImage;
             }
-            if (!TextUtils.isEmpty(skinData.whiteNaviActionbarTextColor)) {
+            if (!StringUtils.isEmpty(skinData.whiteNaviActionbarTextColor)) {
                 str3 = skinData.whiteNaviActionbarTextColor;
             }
         }
         int b = mxq.b(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             com.taobao.phenix.intf.b.h().a(str2).succListener(new c(a2)).fetch();
         } else if (b != -1) {
             a2.setBackgroundDrawable(new ColorDrawable(b));

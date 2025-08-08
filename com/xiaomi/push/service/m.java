@@ -7,7 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.List;
 
 /* loaded from: classes9.dex */
@@ -19,7 +19,7 @@ public class m {
                 if (resolveActivity == null) {
                     return null;
                 }
-                return new ComponentName(resolveActivity.activityInfo.packageName, TextUtils.isEmpty(resolveActivity.activityInfo.targetActivity) ? resolveActivity.activityInfo.name : resolveActivity.activityInfo.targetActivity);
+                return new ComponentName(resolveActivity.activityInfo.packageName, StringUtils.isEmpty(resolveActivity.activityInfo.targetActivity) ? resolveActivity.activityInfo.name : resolveActivity.activityInfo.targetActivity);
             } catch (Exception unused) {
                 return null;
             }

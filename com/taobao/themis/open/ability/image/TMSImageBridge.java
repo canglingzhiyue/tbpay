@@ -1,6 +1,6 @@
 package com.taobao.themis.open.ability.image;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
@@ -84,7 +84,7 @@ public final class TMSImageBridge implements com.taobao.themis.kernel.ability.ba
         }
         q.d(bridgeCallback, "bridgeCallback");
         q.d(src, "src");
-        if (TextUtils.isEmpty(src)) {
+        if (StringUtils.isEmpty(src)) {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put((JSONObject) "error", "src is empty");
             t tVar = t.INSTANCE;

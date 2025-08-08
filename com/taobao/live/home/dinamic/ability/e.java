@@ -1,6 +1,6 @@
 package com.taobao.live.home.dinamic.ability;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class e extends dlg {
             boolean parseBoolean = Boolean.parseBoolean(c.getString(nmf.MTOP_ISFOLLOW));
             final boolean parseBoolean2 = Boolean.parseBoolean(c.getString("notToast"));
             c.getJSONObject("extParams");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 return new dky();
             }
             if (!Boolean.parseBoolean(string)) {

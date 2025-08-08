@@ -2,7 +2,7 @@ package com.taobao.orange.candidate;
 
 import android.os.Build;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.ConfigCenter;
 import com.taobao.orange.OCandidate;
@@ -86,11 +86,11 @@ public class MultiAnalyze {
         }
         a.R = (String) h.b(a.g, "appVersion", "");
         a.S = (String) h.b(a.g, "osVersion", "");
-        if (TextUtils.isEmpty(a.R)) {
+        if (StringUtils.isEmpty(a.R)) {
             a.R = a.j;
             h.a(a.g, "appVersion", a.R);
         }
-        if (!TextUtils.isEmpty(a.S)) {
+        if (!StringUtils.isEmpty(a.S)) {
             return;
         }
         a.S = String.valueOf(Build.VERSION.SDK_INT);

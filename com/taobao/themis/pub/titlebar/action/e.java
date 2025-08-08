@@ -2,7 +2,7 @@ package com.taobao.themis.pub.titlebar.action;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -261,7 +261,7 @@ public final class e extends com.taobao.themis.kernel.container.ui.titlebar.a im
         if (imageView == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             imageView.setVisibility(0);
             IImageAdapter iImageAdapter = (IImageAdapter) qpt.b(IImageAdapter.class);
             if (iImageAdapter != null) {

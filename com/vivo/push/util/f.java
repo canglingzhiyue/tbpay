@@ -1,6 +1,6 @@
 package com.vivo.push.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 
 /* loaded from: classes9.dex */
@@ -11,7 +11,7 @@ public final class f {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("messageID", String.valueOf(j));
         String a2 = com.vivo.push.restructure.a.a().e().a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("remoteAppId", a2);
         }
         xVar.a(hashMap);

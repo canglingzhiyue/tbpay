@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service.build;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
 import com.alibaba.security.wukong.bx.algo.BxData;
 import com.alibaba.security.wukong.bx.workconf.BaseWorkConfHandler;
@@ -73,7 +73,7 @@ public class C1234nb extends BaseWorkConfHandler {
             if (r2 != r3) goto L6e
             java.lang.String r1 = r9.input
             java.lang.String r0 = r7.a(r0, r1)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L58
             return
         L58:
@@ -82,7 +82,7 @@ public class C1234nb extends BaseWorkConfHandler {
             return
         L5e:
             java.lang.String r0 = r7.b(r0)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L69
             return
         L69:
@@ -121,7 +121,7 @@ public class C1234nb extends BaseWorkConfHandler {
         try {
             for (Object obj2 : BaseWorkConfHandler.a(obj)) {
                 if (obj2 instanceof String) {
-                    if (!TextUtils.isEmpty((String) obj2)) {
+                    if (!StringUtils.isEmpty((String) obj2)) {
                         parseInt = Integer.parseInt((String) obj2);
                         i += parseInt;
                     }
@@ -146,10 +146,10 @@ public class C1234nb extends BaseWorkConfHandler {
             List<String> a2 = a(BaseWorkConfHandler.a(obj));
             Map map = (Map) JsonUtils.parseObject(str, (Class<Object>) Map.class);
             String str2 = map == null ? "" : (String) map.get("sep");
-            if (!TextUtils.isEmpty(str2) && !a2.isEmpty()) {
+            if (!StringUtils.isEmpty(str2) && !a2.isEmpty()) {
                 String str3 = null;
                 for (String str4 : a2) {
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         if (str3 != null) {
                             sb.append(str2);
                         }

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.base.ui.BaseActivity;
@@ -101,7 +101,7 @@ public class LogoutPanelActivity extends BaseActivity {
         super.onCreate(bundle);
         setContentView(R.layout.aliuser_activity_frame_content);
         this.mViewGroup.setBackgroundColor(0);
-        if (LoginSwitch.getSwitch(LoginSwitch.EXTRA_PREFECT, "false") && ServiceFactory.getService(NumberAuthService.class) != null && ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() && TextUtils.isEmpty(Login.getLoginToken())) {
+        if (LoginSwitch.getSwitch(LoginSwitch.EXTRA_PREFECT, "false") && ServiceFactory.getService(NumberAuthService.class) != null && ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).needPrefetch() && StringUtils.isEmpty(Login.getLoginToken())) {
             ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).preFecth("logoutPanel");
         }
         this.activity = this;
@@ -130,9 +130,9 @@ public class LogoutPanelActivity extends BaseActivity {
                 th.printStackTrace();
             }
         }
-        if (TextUtils.equals("logout_panel", this.type)) {
+        if (StringUtils.equals("logout_panel", this.type)) {
             showLogoutPanel();
-        } else if (!TextUtils.equals("agreement", this.type)) {
+        } else if (!StringUtils.equals("agreement", this.type)) {
         } else {
             if (ServiceFactory.getService(NumberAuthService.class) != null && ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).getAuthInfoMap() != null) {
                 this.mProtocolTitle = ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).getAuthInfoMap().get("protocolName");

@@ -5,7 +5,7 @@ import android.taobao.windvane.jsbridge.b;
 import android.taobao.windvane.jsbridge.h;
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.utils.c;
 import com.alibaba.poplayer.utils.f;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class qnw {
             hVar.f1664a = this.b;
             hVar.g = "0";
             hVar.f = str2;
-            if (TextUtils.isEmpty(hVar.f)) {
+            if (StringUtils.isEmpty(hVar.f)) {
                 hVar.f = "{}";
             }
             c.a("nativeRequestWindvane", new Object[0]);
@@ -74,7 +74,7 @@ public class qnw {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str4});
                     } else if (!atomicBoolean.compareAndSet(false, true)) {
                     } else {
-                        if (TextUtils.isEmpty(str4)) {
+                        if (StringUtils.isEmpty(str4)) {
                             str4 = "{}";
                         }
                         c.a("PopWVJsBridge.successAndKeepAlive.ret=%s", str4);
@@ -93,7 +93,7 @@ public class qnw {
                         ipChange2.ipc$dispatch("e5b77b53", new Object[]{this, str4});
                     } else if (!atomicBoolean.compareAndSet(false, true)) {
                     } else {
-                        if (TextUtils.isEmpty(str4)) {
+                        if (StringUtils.isEmpty(str4)) {
                             str4 = "{}";
                         }
                         c.a("PopWVJsBridge.succeed.ret=%s", str4);
@@ -130,7 +130,7 @@ public class qnw {
             ipChange.ipc$dispatch("eb01ee4b", new Object[]{atomicBoolean, aVar, str});
         } else if (!atomicBoolean.compareAndSet(false, true)) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "{}";
             }
             c.a("PopWVJsBridge.onFailed.ret=%s", str);

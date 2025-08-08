@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.trade.event;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -69,7 +69,7 @@ public class o extends d {
         if (jSONObject != null) {
             str3 = jSONObject.getString("__oldComponent");
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "post";
         }
         if (str3 == null || jSONObject == null) {
@@ -106,7 +106,7 @@ public class o extends d {
         Bundle bundle = new Bundle();
         if (jSONObject != null) {
             for (String str2 : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     Object obj = jSONObject.get(str2);
                     if (obj instanceof Boolean) {
                         bundle.putBoolean(str2, ((Boolean) obj).booleanValue());

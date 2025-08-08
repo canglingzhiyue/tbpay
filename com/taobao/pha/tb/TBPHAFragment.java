@@ -9,7 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -167,7 +167,7 @@ public class TBPHAFragment extends TBMainBaseFragment implements com.taobao.pha.
             }
             this.mAppController = AppController.b(bundle2.getLong("AppControllerInstanceId"));
         }
-        if (!TextUtils.isEmpty(this.mManifestUrl)) {
+        if (!StringUtils.isEmpty(this.mManifestUrl)) {
             setNavigationBarParams(Uri.parse(this.mManifestUrl));
         }
         super.onCreate(bundle);
@@ -424,7 +424,7 @@ public class TBPHAFragment extends TBMainBaseFragment implements com.taobao.pha.
             }
             if (z) {
                 String queryParameter = uri.getQueryParameter("status_bar_transparent");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     this.mImmersiveStatus = "true".equals(queryParameter);
                 }
             }

@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -126,8 +126,8 @@ public class efl implements j<efq> {
         if (cVar == null) {
             return a.FAILURE;
         }
-        this.d = TextUtils.isEmpty(efqVar.c) ? eqb.c(cVar.f10055a).title : efqVar.c;
-        this.e = TextUtils.isEmpty(efqVar.b) ? cVar.i() : efqVar.b;
+        this.d = StringUtils.isEmpty(efqVar.c) ? eqb.c(cVar.f10055a).title : efqVar.c;
+        this.e = StringUtils.isEmpty(efqVar.b) ? cVar.i() : efqVar.b;
         try {
             a();
             return a.SUCCESS;
@@ -274,7 +274,7 @@ public class efl implements j<efq> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.d)) {
+        } else if (StringUtils.isEmpty(this.d)) {
         } else {
             l.a(this.f27273a, this.d);
             epo.a(R.string.clipboard_copied);
@@ -289,7 +289,7 @@ public class efl implements j<efq> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.e)) {
+        } else if (StringUtils.isEmpty(this.e)) {
         } else {
             epr.a(this.f27273a, this.d, e.NAV_URL_DETAIL_BASE + this.e + ".htm?sourceType=item&ttid=" + epo.f());
             if (!ecu.I) {

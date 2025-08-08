@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.sku;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -102,7 +102,7 @@ public class e {
             return ((NewSkuModel) skuPageModel.extras).getSkuId();
         }
         DetailCoreActivity detailCoreActivity = this.b;
-        return (detailCoreActivity == null || detailCoreActivity.f9411a == null || TextUtils.isEmpty(this.b.f9411a.b)) ? "" : this.b.f9411a.b;
+        return (detailCoreActivity == null || detailCoreActivity.f9411a == null || StringUtils.isEmpty(this.b.f9411a.b)) ? "" : this.b.f9411a.b;
     }
 
     private void a(final SkuPageModel skuPageModel, JSONObject jSONObject) {
@@ -176,7 +176,7 @@ public class e {
                     } else if (jSONObject2 == null) {
                     } else {
                         String string = jSONObject2.getString("actionFrom");
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             string = "NULL";
                         }
                         if (!"CONFIRM_DISMISS".equals(string)) {
@@ -192,7 +192,7 @@ public class e {
                             return;
                         }
                         String string2 = jSONObject3.getString("skuId");
-                        if (TextUtils.isEmpty(string2) || !(skuPageModel.extras instanceof NewSkuModel)) {
+                        if (StringUtils.isEmpty(string2) || !(skuPageModel.extras instanceof NewSkuModel)) {
                             return;
                         }
                         ((NewSkuModel) skuPageModel.extras).checkSkuId(string2);

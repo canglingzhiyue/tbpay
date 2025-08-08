@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.rpc.protocol.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.rpc.Config;
 import com.alipay.mobile.common.rpc.RpcException;
 import com.alipay.mobile.common.rpc.RpcFactory;
@@ -55,10 +55,10 @@ public class SerializerFactory {
             return false;
         }
         String rpcVersion = RpcInvokerUtil.getRpcVersion();
-        if (TextUtils.equals(rpcVersion, RpcInvokerUtil.RPC_V2)) {
+        if (StringUtils.equals(rpcVersion, RpcInvokerUtil.RPC_V2)) {
             return true;
         }
-        if (TextUtils.equals(rpcVersion, RpcInvokerUtil.RPC_V1) || !a(innerRpcInvokeContext)) {
+        if (StringUtils.equals(rpcVersion, RpcInvokerUtil.RPC_V1) || !a(innerRpcInvokeContext)) {
             return false;
         }
         if (!a(objArr, method)) {
@@ -127,7 +127,7 @@ public class SerializerFactory {
             return ((Boolean) ipChange.ipc$dispatch("2e0e7f9c", new Object[]{this})).booleanValue();
         }
         Config config = this.f5510a.getConfig();
-        if (TextUtils.isEmpty(config.getUrl())) {
+        if (StringUtils.isEmpty(config.getUrl())) {
             LogCatUtil.warn("rpc", "handler.getConfig().getUrl() is null");
             return false;
         }

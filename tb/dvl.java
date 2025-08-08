@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cachecleaner.monitor.info.CacheOverviewInfo;
 import com.taobao.android.cachecleaner.monitor.info.node.a;
@@ -70,7 +70,7 @@ public class dvl extends dvf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8a1c725a", new Object[]{this, file, aVar, new Long(j)});
-        } else if (!TextUtils.equals("DAI", file.getName())) {
+        } else if (!StringUtils.equals("DAI", file.getName())) {
         } else {
             this.f27020a = j / 1024;
         }

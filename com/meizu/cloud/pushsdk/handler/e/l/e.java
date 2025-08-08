@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e.l;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.message.SubTagsStatus;
@@ -38,6 +38,6 @@ public class e extends com.meizu.cloud.pushsdk.handler.e.a<SubTagsStatus> {
     /* renamed from: l */
     public SubTagsStatus f(Intent intent) {
         String stringExtra = intent.getStringExtra(PushConstants.MZ_MESSAGE_VALUE);
-        return !TextUtils.isEmpty(stringExtra) ? com.meizu.cloud.pushsdk.platform.message.a.d(stringExtra) : (SubTagsStatus) intent.getSerializableExtra(PushConstants.EXTRA_APP_PUSH_SUBTAGS_STATUS);
+        return !StringUtils.isEmpty(stringExtra) ? com.meizu.cloud.pushsdk.platform.message.a.d(stringExtra) : (SubTagsStatus) intent.getSerializableExtra(PushConstants.EXTRA_APP_PUSH_SUBTAGS_STATUS);
     }
 }

@@ -1,6 +1,6 @@
 package anet.channel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.entity.ENV;
 import anet.channel.security.ISecurity;
 import anet.channel.security.SecurityManager;
@@ -153,7 +153,7 @@ public final class Config {
         }
         if (this.iSecurity == null) {
             ALog.e(TAG, "lazy load security open! getSecurity!", null, new Object[0]);
-            if (!TextUtils.isEmpty(this.appSecret)) {
+            if (!StringUtils.isEmpty(this.appSecret)) {
                 this.iSecurity = SecurityManager.getSecurityFactory().createNonSecurity(this.appSecret);
             } else {
                 this.iSecurity = SecurityManager.getSecurityFactory().createSecurity(this.authCode);
@@ -230,14 +230,14 @@ public final class Config {
             if (ipChange instanceof IpChange) {
                 return (Config) ipChange.ipc$dispatch("63e98a05", new Object[]{this});
             }
-            if (TextUtils.isEmpty(this.appkey)) {
+            if (StringUtils.isEmpty(this.appkey)) {
                 throw new RuntimeException("appkey can not be null or empty!");
             }
             synchronized (Config.access$000()) {
                 for (Config config : Config.access$000().values()) {
                     if (Config.access$100(config) == this.env && Config.access$200(config).equals(this.appkey)) {
                         ALog.w(Config.TAG, "duplicated config exist!", null, "appkey", this.appkey, "env", this.env);
-                        if (!TextUtils.isEmpty(this.tag)) {
+                        if (!StringUtils.isEmpty(this.tag)) {
                             Config.access$000().put(this.tag, config);
                         }
                         return config;
@@ -246,7 +246,7 @@ public final class Config {
                 Config config2 = new Config();
                 Config.access$202(config2, this.appkey);
                 Config.access$102(config2, this.env);
-                if (TextUtils.isEmpty(this.tag)) {
+                if (StringUtils.isEmpty(this.tag)) {
                     Config.access$302(config2, StringUtils.concatString(this.appkey, "$", this.env.toString()));
                 } else {
                     Config.access$302(config2, this.tag);
@@ -256,7 +256,7 @@ public final class Config {
                 if (AwcnConfig.isSecondRefreshABEnable() && AwcnConfig.isLazyLoadSecurityEnable()) {
                     Config.access$602(config2, null);
                     ALog.e(Config.TAG, "lazy load security open!", null, new Object[0]);
-                } else if (!TextUtils.isEmpty(this.appSecret)) {
+                } else if (!StringUtils.isEmpty(this.appSecret)) {
                     Config.access$602(config2, SecurityManager.getSecurityFactory().createNonSecurity(this.appSecret));
                 } else {
                     Config.access$602(config2, SecurityManager.getSecurityFactory().createSecurity(this.authCode));

@@ -1,7 +1,7 @@
 package com.etao.feimagesearch.pipline.node;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.pipline.NodeType;
@@ -97,7 +97,7 @@ public final class h extends crj {
                 linkedHashMap.put(com.etao.feimagesearch.util.o.KEY_IMG, pipLineDS.h());
                 linkedHashMap.put("full_region_size", pipLineDS.p());
             }
-            if (!TextUtils.isEmpty(pipLineDS.e())) {
+            if (!StringUtils.isEmpty(pipLineDS.e())) {
                 linkedHashMap.put("region", pipLineDS.e());
             }
             com.etao.feimagesearch.util.o.a(linkedHashMap);
@@ -158,13 +158,13 @@ public final class h extends crj {
             return (String) ipChange.ipc$dispatch("d62da4e8", new Object[]{this, crqVar});
         }
         String chituDebugAppId = com.etao.feimagesearch.config.b.k("irpMockAppId");
-        if (!TextUtils.isEmpty(chituDebugAppId)) {
+        if (!StringUtils.isEmpty(chituDebugAppId)) {
             q.a((Object) chituDebugAppId, "chituDebugAppId");
             return chituDebugAppId;
         }
         if (crqVar.d() != null || !crqVar.t()) {
             String str = this.c;
-            if (str == null || TextUtils.isEmpty(str)) {
+            if (str == null || StringUtils.isEmpty(str)) {
                 String u = crqVar.u();
                 if (u == null) {
                     u = "";

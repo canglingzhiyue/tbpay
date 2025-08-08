@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
 import com.taobao.analysis.v3.h;
@@ -36,7 +36,7 @@ public class mmz {
         if (ipChange instanceof IpChange) {
             return (mmz) ipChange.ipc$dispatch("1a98a9da", new Object[]{str, new Long(j)});
         }
-        if (!f31125a || TextUtils.isEmpty(str)) {
+        if (!f31125a || StringUtils.isEmpty(str)) {
             return DEFAULT;
         }
         r rVar = FalcoGlobalTracer.get();
@@ -61,7 +61,7 @@ public class mmz {
         if (ipChange instanceof IpChange) {
             return (mmz) ipChange.ipc$dispatch("2f81721b", new Object[]{this, str, new Long(j)});
         }
-        if (!f31125a || this.b == null || TextUtils.isEmpty(str)) {
+        if (!f31125a || this.b == null || StringUtils.isEmpty(str)) {
             return DEFAULT;
         }
         r rVar = FalcoGlobalTracer.get();

@@ -1,0 +1,62 @@
+{
+  "api": "mtop.order.querydetail",
+  "data": {
+    "container": {
+      "data": [
+        {
+          "containerType": "dinamicx",
+          "md5": null,
+          "name": "babel_orderdetailtitle",
+          "type": [
+            "dinamicx$babel_orderdetailtitle$8772$8"
+          ],
+          "url": "https://ossgw.alicdn.com/rapid-oss-bucket/publish/1593440989860/babel_orderdetailtitle.zip",
+          "version": "8"
+        }
+      ]
+    },
+    "data": {
+      "generalorderdetail": {
+        "tag": "generalorderdetail"
+      },
+      "root": {
+        "tag": "root"
+      },
+      "pageHeader": {
+        "fields": {
+          "title": "订单详情"
+        },
+        "position": "header",
+        "tag": "pageHeader",
+        "type": "dinamicx$babel_orderdetailtitle$8772$8"
+      }
+    },
+    "endpoint": {
+      "protocolVersion": "3.0",
+      "ultronage": true
+    },
+    "global": {
+      "events": {
+      }
+    },
+    "hierarchy": {
+      "root": "generalorderdetail",
+      "structure": {
+        "generalorderdetail": [
+          "root"
+        ],
+        "root": [
+          "pageHeader"
+        ]
+      }
+    },
+    "linkage": {
+    },
+    "reload": true
+  },
+  "ret": [
+    "SUCCESS::调用成功"
+  ],
+  "v": "5.0"
+}
+

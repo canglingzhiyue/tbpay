@@ -1,7 +1,7 @@
 package com.taobao.android.alinnpython;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.analytics.core.sync.q;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
@@ -800,7 +800,7 @@ public class AliNNPython {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f8e0338c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !isNewPythonEngine()) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || !isNewPythonEngine()) {
         } else {
             nativeImportModule(this.instance, str, str2);
         }
@@ -937,7 +937,7 @@ public class AliNNPython {
             return;
         }
         String str = map.get(MODULE_WHITELIST);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         nativeAddToModuleWhiteList(str);

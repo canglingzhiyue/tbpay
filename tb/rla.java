@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.d;
@@ -24,7 +24,7 @@ public class rla implements d {
         }
         String str = map.get("content");
         HashMap hashMap = new HashMap();
-        String b = !TextUtils.isEmpty(str) ? gsi.b(Base64.decode(str, 0)) : "";
+        String b = !StringUtils.isEmpty(str) ? gsi.b(Base64.decode(str, 0)) : "";
         if (b == null) {
             b = "";
         }

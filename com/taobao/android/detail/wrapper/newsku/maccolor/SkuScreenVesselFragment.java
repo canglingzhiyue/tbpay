@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.newsku.maccolor;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -164,7 +164,7 @@ public class SkuScreenVesselFragment extends DialogFragment {
         }
         registerListener();
         try {
-            if (!TextUtils.isEmpty(this.mUri)) {
+            if (!StringUtils.isEmpty(this.mUri)) {
                 this.mVesselView.loadUrl(this.mVesselType, this.mUri, this.mVesselParams);
             } else {
                 this.mVesselView.loadData(this.mVesselType, this.mVesselData);

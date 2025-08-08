@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -217,10 +217,10 @@ public class MspPaycodeChannelActivity extends AbsActivity {
         });
         TextView textView = (TextView) findViewById(R.id.substitute_paycode_user_desc);
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             sb.append(this.b);
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             sb.append(riy.BRACKET_START_STR);
             sb.append(this.c);
             sb.append(riy.BRACKET_END_STR);
@@ -334,7 +334,7 @@ public class MspPaycodeChannelActivity extends AbsActivity {
                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     return;
                 }
-                if (!TextUtils.isEmpty(MspPaycodeChannelActivity.d(MspPaycodeChannelActivity.this))) {
+                if (!StringUtils.isEmpty(MspPaycodeChannelActivity.d(MspPaycodeChannelActivity.this))) {
                     MspPaycodeChannelActivity mspPaycodeChannelActivity = MspPaycodeChannelActivity.this;
                     MspPaycodeChannelActivity.a(mspPaycodeChannelActivity, BitmapUtil.getHttpBitmap(MspPaycodeChannelActivity.d(mspPaycodeChannelActivity)));
                 }

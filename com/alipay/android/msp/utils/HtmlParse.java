@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.Spannable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.URLSpan;
 import android.view.View;
 import com.alipay.android.app.template.HtmlLite;
@@ -58,7 +58,7 @@ public class HtmlParse implements HtmlLite.UrlSpanFactory {
         if (ipChange instanceof IpChange) {
             return (Spannable) ipChange.ipc$dispatch("e229699c", new Object[]{context, str});
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             return HtmlLite.fromHtml(context, context.getResources().getDisplayMetrics().density, str, new HtmlParse(context), null, 0);
         }
         return null;

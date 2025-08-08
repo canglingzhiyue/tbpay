@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.model.CartGlobal;
 import com.alibaba.android.icart.core.data.model.a;
 import com.alibaba.fastjson.JSONObject;
@@ -83,7 +83,7 @@ public class xib {
                 IDMComponent next = it.next();
                 if (next != null) {
                     String str = (String) bei.a(next, (Class<Object>) String.class, "exclude");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String b = b(str, controlParas);
                         String a2 = a(str, controlParas);
                         xia xiaVar3 = new xia();
@@ -148,7 +148,7 @@ public class xib {
         }
         bundle.putSerializable("buildOrderParams", a2);
         bundle.putInt("purchase_from", 1);
-        if (!TextUtils.isEmpty(aVar.d())) {
+        if (!StringUtils.isEmpty(aVar.d())) {
             bundle.putString("PRELOAD", aVar.d());
         }
         if (aVar.a()) {

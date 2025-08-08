@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.event.a;
@@ -72,7 +72,7 @@ public class eej extends eei<b> {
                         hashMap.putAll(fVar.f9701a);
                     }
                     String str = (String) hashMap.get("trackPage");
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return;
                     }
                     eps.b("Page_Detail", 2201, str, null, null, ect.a(hashMap));

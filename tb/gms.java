@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.FestivalMgr;
 
@@ -21,7 +21,7 @@ public class gms extends fnl {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, obj});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return obj;
         }
         String[] split = str.split(":");
@@ -35,6 +35,6 @@ public class gms extends fnl {
             str2 = split[2];
         }
         String a2 = FestivalMgr.a().a(str3, str4);
-        return TextUtils.isEmpty(a2) ? str2 : a2;
+        return StringUtils.isEmpty(a2) ? str2 : a2;
     }
 }

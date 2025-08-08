@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.hostcontainer.triver;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -351,10 +351,10 @@ public class ShopVideoCardComponent implements b {
         odzVar.a(ocb.a(this.data.coverPicWidth));
         odzVar.b(ocb.a(this.data.coverPicHeight));
         String str = this.data.url;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
-        if (!TextUtils.isEmpty(this.data.shareUrl)) {
+        if (!StringUtils.isEmpty(this.data.shareUrl)) {
             try {
                 str = str + "&shareUrl=" + URLEncoder.encode(this.data.shareUrl, "UTF-8");
             } catch (Exception e) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.app.FrameMetricsAggregator;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
@@ -85,7 +85,7 @@ public final class nrc extends npp<nrb> {
                 q.a();
             }
             nra nraVar = a2.get(0);
-            if (nraVar != null && !TextUtils.isEmpty(nraVar.a())) {
+            if (nraVar != null && !StringUtils.isEmpty(nraVar.a())) {
                 hashMap2.put("displayText", nraVar.a());
                 hashMap2.put("searchText", nraVar.b());
             }
@@ -137,7 +137,7 @@ public final class nrc extends npp<nrb> {
                 JSONObject optJSONObject = optJSONArray.optJSONObject(i);
                 if (optJSONObject != null) {
                     String optString = optJSONObject.optString("key");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         String optString2 = optJSONObject.optString("value");
                         Map<String, String> c = nraVar.c();
                         if (c != null) {

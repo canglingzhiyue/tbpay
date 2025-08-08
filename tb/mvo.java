@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -59,14 +59,14 @@ public class mvo {
             } catch (Exception unused) {
             }
             JSONObject jSONObject3 = jSONObject2.getJSONObject("data");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Intent intent = new Intent(string);
             intent.setPackage("com.taobao.taobao");
             if (jSONObject3 != null) {
                 for (Map.Entry<String, Object> entry : jSONObject3.entrySet()) {
-                    if (entry != null && !TextUtils.isEmpty(entry.getKey())) {
+                    if (entry != null && !StringUtils.isEmpty(entry.getKey())) {
                         intent.putExtra(entry.getKey(), String.valueOf(entry.getValue()));
                     }
                 }
@@ -86,7 +86,7 @@ public class mvo {
         } else if (context == null || jSONObject == null || !jSONObject.containsKey("openUrl")) {
         } else {
             String string = jSONObject.getJSONObject("openUrl").getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Nav.from(context).toUri(string);
@@ -147,9 +147,9 @@ public class mvo {
             HashMap hashMap = new HashMap();
             if (jSONObject3 != null) {
                 for (String str : jSONObject3.keySet()) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String string6 = jSONObject3.getString(str);
-                        if (!TextUtils.isEmpty(string6)) {
+                        if (!StringUtils.isEmpty(string6)) {
                             hashMap.put(str, string6);
                         }
                     }

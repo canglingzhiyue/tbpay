@@ -1,7 +1,7 @@
 package com.alipay.android.app.smartpays.fingerprint.impl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.base.SPTaskHelper;
 import com.alipay.android.app.safepaylog.utils.LogUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
@@ -184,7 +184,7 @@ public class FingerprintAuthenticator {
             LogUtils.printExceptionStackTrace(th);
             str = "{\"type\":-1}";
         }
-        return !TextUtils.isEmpty(str) ? str : "{\"type\":-1}";
+        return !StringUtils.isEmpty(str) ? str : "{\"type\":-1}";
     }
 
     private AuthenticatorCallback a(final int i, final IFingerprintCallback iFingerprintCallback) {

@@ -1,7 +1,7 @@
 package com.taobao.android.shop.features.category;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.Globals;
@@ -67,9 +67,9 @@ public class b {
         mtopRequest.setNeedEcode(false);
         mtopRequest.setNeedSession(false);
         JSONObject parseObject = JSONObject.parseObject(mtopRequest.getData());
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             parseObject.put("sellerId", (Object) this.c);
-        } else if (!TextUtils.isEmpty(this.d)) {
+        } else if (!StringUtils.isEmpty(this.d)) {
             parseObject.put("shopId", (Object) this.d);
         }
         parseObject.put(REQ_SUPPORTWEEX, (Object) Boolean.valueOf(WXEnvironment.isCPUSupport()));

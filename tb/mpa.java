@@ -7,7 +7,7 @@ import android.os.Debug;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.alipay.zoloz.hardware.camera.preview.utils.SPManager;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -334,7 +334,7 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
             if (obj2 != null) {
                 this.e.a("blackPage", obj2);
             }
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.e.a("schemaUrl", a2);
             }
             this.e.a("firstPageName", b2);
@@ -346,14 +346,14 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
             this.B = true;
         }
         if (this.v.size() < 10) {
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 this.v.add(b2);
             }
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.w.add(a2);
             }
         }
-        if (!d.I && TextUtils.isEmpty(this.d) && !mpe.c(this.i) && (mpe.a() || mpe.e(this.i))) {
+        if (!d.I && StringUtils.isEmpty(this.d) && !mpe.c(this.i) && (mpe.a() || mpe.e(this.i))) {
             this.d = this.i;
             this.j = a3;
             this.R = this.P.b("apm_startup_target_page", com.taobao.monitor.impl.util.h.b(j));
@@ -381,7 +381,7 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
                     this.i = com.taobao.monitor.impl.util.d.a((Object) activity);
                     this.d = this.i;
                 }
-                if (activity.getIntent() != null && !TextUtils.isEmpty(activity.getIntent().getDataString())) {
+                if (activity.getIntent() != null && !StringUtils.isEmpty(activity.getIntent().getDataString())) {
                     this.e.a("schemaUrl", activity.getIntent().getDataString());
                 }
                 this.e.a("firstPageName", com.taobao.monitor.impl.util.d.a((Object) activity));
@@ -406,13 +406,13 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
         hashMap.put("timestamp", Long.valueOf(j));
         hashMap.put("pageName", com.taobao.monitor.impl.util.d.b(activity));
         this.e.a("onActivityResumed", (Map<String, Object>) hashMap);
-        if (d.I && TextUtils.isEmpty(this.d)) {
+        if (d.I && StringUtils.isEmpty(this.d)) {
             String a2 = com.taobao.monitor.impl.util.d.a((Object) activity);
             if (!mpe.c(a2) && (mpe.a() || mpe.e(a2))) {
                 this.d = a2;
             }
         }
-        if (this.G && !TextUtils.isEmpty(moi.b().a())) {
+        if (this.G && !StringUtils.isEmpty(moi.b().a())) {
             e.a().d().post(new Runnable() { // from class: tb.mpa.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -494,7 +494,7 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                    } else if (TextUtils.isEmpty(mpa.this.d) || (activity2 = activity) == null || !com.taobao.monitor.impl.util.d.a((Object) activity2).equals(mpa.this.d)) {
+                    } else if (StringUtils.isEmpty(mpa.this.d) || (activity2 = activity) == null || !com.taobao.monitor.impl.util.d.a((Object) activity2).equals(mpa.this.d)) {
                     } else {
                         mpa mpaVar = mpa.this;
                         mpaVar.d = null;
@@ -566,10 +566,10 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
             ipChange.ipc$dispatch("fb07419b", new Object[]{this, activity, new Integer(i), new Float(f), new Float(f2), new Long(j)});
         } else if (!this.T || mpe.c(com.taobao.monitor.impl.util.d.a((Object) activity))) {
         } else {
-            if (!d.I && TextUtils.isEmpty(this.d)) {
+            if (!d.I && StringUtils.isEmpty(this.d)) {
                 this.d = com.taobao.monitor.impl.util.d.a((Object) activity);
                 try {
-                    if (!TextUtils.isEmpty(this.d) && this.U.containsKey(this.d)) {
+                    if (!StringUtils.isEmpty(this.d) && this.U.containsKey(this.d)) {
                         long longValue = this.U.get(this.d).longValue();
                         this.e.a("appInitDuration", Long.valueOf(longValue - this.A));
                         this.e.a("renderStartTime", longValue);
@@ -595,7 +595,7 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
         }
         Activity m = mouVar.m();
         String k = mouVar.k();
-        if (TextUtils.isEmpty(k) || m == null || this.U.containsKey(k)) {
+        if (StringUtils.isEmpty(k) || m == null || this.U.containsKey(k)) {
             return;
         }
         this.U.put(mouVar.k(), Long.valueOf(j));
@@ -637,7 +637,7 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
         if (m == null || !this.V) {
             return;
         }
-        if (!mpe.c(this.i) && TextUtils.isEmpty(this.d)) {
+        if (!mpe.c(this.i) && StringUtils.isEmpty(this.d)) {
             this.d = this.i;
         }
         if (!a(m)) {
@@ -736,11 +736,11 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
             if (this.G) {
                 this.e.a("utSession", moi.b().a());
             }
-            if (!TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.d)) {
                 this.e.a("currentPageName", this.d.substring(this.d.lastIndexOf(".") + 1));
                 this.e.a("fullPageName", this.d);
                 try {
-                    if (!TextUtils.isEmpty(this.d) && this.U.containsKey(this.d)) {
+                    if (!StringUtils.isEmpty(this.d) && this.U.containsKey(this.d)) {
                         long longValue = this.U.get(this.d).longValue();
                         this.e.a("appInitDuration", Long.valueOf(longValue - this.A));
                         this.e.a("renderStartTime", longValue);
@@ -878,7 +878,7 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
         if (keyCode != 4 && keyCode != 3) {
             return;
         }
-        if (!d.I && TextUtils.isEmpty(this.d)) {
+        if (!d.I && StringUtils.isEmpty(this.d)) {
             this.d = com.taobao.monitor.impl.util.d.a((Object) activity);
             if (activity != null) {
                 try {
@@ -937,7 +937,7 @@ public class mpa extends mop implements ApplicationBackgroundChangedDispatcher.a
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fa3ca102", new Object[]{this, activity, fragment, str, new Long(j)});
-        } else if (fragment == null || activity == null || !TextUtils.equals(activity.getClass().getName(), this.i)) {
+        } else if (fragment == null || activity == null || !StringUtils.equals(activity.getClass().getName(), this.i)) {
         } else {
             String str2 = fragment.getClass().getSimpleName() + "_" + str;
             Integer num = this.D.get(str2);

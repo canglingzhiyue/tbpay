@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -56,7 +56,7 @@ public class enc implements enf {
         int i = 0;
         for (int i2 = 0; i2 < size; i2++) {
             String string = jSONArray.getString(i2);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return false;
             }
             while (true) {
@@ -152,7 +152,7 @@ public class enc implements enf {
         }
         String string = jSONObject4.getString("root");
         JSONObject jSONObject5 = jSONObject4.getJSONObject("structure");
-        if (TextUtils.isEmpty(string) || jSONObject5 == null || jSONObject5.getJSONArray(string) == null) {
+        if (StringUtils.isEmpty(string) || jSONObject5 == null || jSONObject5.getJSONArray(string) == null) {
             return null;
         }
         ComponentModel componentModel = new ComponentModel(string, this, jSONObject5);
@@ -178,7 +178,7 @@ public class enc implements enf {
         if (ipChange instanceof IpChange) {
             return (RuleModel) ipChange.ipc$dispatch("fc17d351", new Object[]{this, str, str2});
         }
-        if (eqg.a(this.b) || TextUtils.isEmpty(str2)) {
+        if (eqg.a(this.b) || StringUtils.isEmpty(str2)) {
             return null;
         }
         return this.b.get(str2);
@@ -190,7 +190,7 @@ public class enc implements enf {
         if (ipChange instanceof IpChange) {
             return (ActionModel) ipChange.ipc$dispatch("2f654ad5", new Object[]{this, str});
         }
-        if (eqg.a(this.c) || TextUtils.isEmpty(str)) {
+        if (eqg.a(this.c) || StringUtils.isEmpty(str)) {
             return null;
         }
         return new ActionModel(this.c.get(str));
@@ -210,7 +210,7 @@ public class enc implements enf {
             return ((Boolean) ipChange.ipc$dispatch("265ed169", new Object[]{jSONObject})).booleanValue();
         }
         JSONObject jSONObject2 = d;
-        if (jSONObject != null && !TextUtils.isEmpty(jSONObject2.getString("root")) && jSONObject2.getString("root").equals(jSONObject.getString("root")) && jSONObject2.containsKey("structure") && jSONObject.containsKey("structure")) {
+        if (jSONObject != null && !StringUtils.isEmpty(jSONObject2.getString("root")) && jSONObject2.getString("root").equals(jSONObject.getString("root")) && jSONObject2.containsKey("structure") && jSONObject.containsKey("structure")) {
             JSONObject jSONObject3 = jSONObject2.getJSONObject("structure");
             JSONObject jSONObject4 = jSONObject.getJSONObject("structure");
             if (jSONObject4 != null && jSONObject3 != null) {

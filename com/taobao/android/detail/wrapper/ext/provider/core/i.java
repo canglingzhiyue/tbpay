@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.provider.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 import mtopsdk.mtop.domain.EnvModeEnum;
@@ -30,7 +30,7 @@ public class i implements com.taobao.android.detail.datasdk.protocol.adapter.opt
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             TLog.loge(str, str2);
         }
@@ -41,7 +41,7 @@ public class i implements com.taobao.android.detail.datasdk.protocol.adapter.opt
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             TLog.loge(str, str2);
         }
@@ -52,7 +52,7 @@ public class i implements com.taobao.android.detail.datasdk.protocol.adapter.opt
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             TLog.loge(str, str2);
         }
@@ -63,7 +63,7 @@ public class i implements com.taobao.android.detail.datasdk.protocol.adapter.opt
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f180e7f", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             TLog.loge(str, str2);
         }
@@ -74,7 +74,7 @@ public class i implements com.taobao.android.detail.datasdk.protocol.adapter.opt
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c430ebf9", new Object[]{this, str, str2, th});
-        } else if (TextUtils.isEmpty(str2) && th == null) {
+        } else if (StringUtils.isEmpty(str2) && th == null) {
         } else {
             TLog.loge(str, str2, th);
         }
@@ -85,7 +85,7 @@ public class i implements com.taobao.android.detail.datasdk.protocol.adapter.opt
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("586f5b98", new Object[]{this, str, str2, th});
-        } else if (TextUtils.isEmpty(str2) && th == null) {
+        } else if (StringUtils.isEmpty(str2) && th == null) {
         } else {
             TLog.loge(str, str2, th);
         }

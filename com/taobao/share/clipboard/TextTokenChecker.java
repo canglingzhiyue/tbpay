@@ -3,7 +3,7 @@ package com.taobao.share.clipboard;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -111,7 +111,7 @@ public class TextTokenChecker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8256a7ad", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str) || aVar == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null) {
         } else {
             ShareReflowBizConfig shareReflowBizConfig = this.b;
             String str2 = shareReflowBizConfig != null ? shareReflowBizConfig.path : "0";

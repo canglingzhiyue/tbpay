@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewStub;
@@ -154,7 +154,7 @@ public class b implements njr {
                     cTaoEditionSwitchView = cTaoEditionSwitchView2;
                     if (this.g != null) {
                         cTaoEditionSwitchView = cTaoEditionSwitchView2;
-                        if (TextUtils.equals(this.g.isNewVillageDialog, "y")) {
+                        if (StringUtils.equals(this.g.isNewVillageDialog, "y")) {
                             cTaoEditionSwitchView2.setAreaName(this.g.villageTitle);
                             cTaoEditionSwitchView2.setChangeAreaReason(this.g.villageDesc);
                             cTaoEditionSwitchView2.setChangeAreaConfirmText(this.g.villageButtonTitle);
@@ -208,7 +208,7 @@ public class b implements njr {
             return false;
         }
         final PositionInfo b = com.taobao.android.editionswitcher.b.b(activity);
-        if (c.a(TextUtils.equals("CN", b.countryCode) ? b.editionCode : "global") || ((!com.taobao.android.editionswitcher.b.h(activity) && com.taobao.android.editionswitcher.b.f(activity)) || com.taobao.android.editionswitcher.b.d(activity))) {
+        if (c.a(StringUtils.equals("CN", b.countryCode) ? b.editionCode : "global") || ((!com.taobao.android.editionswitcher.b.h(activity) && com.taobao.android.editionswitcher.b.f(activity)) || com.taobao.android.editionswitcher.b.d(activity))) {
             return false;
         }
         final View view = null;
@@ -244,7 +244,7 @@ public class b implements njr {
                     ipChange2.ipc$dispatch("f2d146c4", new Object[]{this, animation});
                     return;
                 }
-                c.a(TextUtils.equals("CN", b.countryCode) ? b.editionCode : "global", true);
+                c.a(StringUtils.equals("CN", b.countryCode) ? b.editionCode : "global", true);
                 view2.setVisibility(0);
             }
 
@@ -344,7 +344,7 @@ public class b implements njr {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("778a7cc8", new Object[]{this, tBMaterialDialog});
-        } else if (!com.taobao.android.editionswitcher.b.g(tBMaterialDialog.getContext()) || this.f12298a != 0 || (homeLocationResult = this.g) == null || !TextUtils.equals(homeLocationResult.isNewVillageDialog, "y") || !TextUtils.equals(this.g.villageForceSwitch, "y")) {
+        } else if (!com.taobao.android.editionswitcher.b.g(tBMaterialDialog.getContext()) || this.f12298a != 0 || (homeLocationResult = this.g) == null || !StringUtils.equals(homeLocationResult.isNewVillageDialog, "y") || !StringUtils.equals(this.g.villageForceSwitch, "y")) {
         } else {
             try {
                 tBMaterialDialog.getView().findViewById(R.id.uik_mdButtonClose).setVisibility(8);

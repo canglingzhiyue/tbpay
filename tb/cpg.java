@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.ImagePopTask;
@@ -141,7 +141,7 @@ public final class cpg extends ctb<cph> implements ImagePopTask.b {
             r0 = 0
         L4a:
             java.lang.CharSequence r0 = (java.lang.CharSequence) r0
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 == 0) goto L5c
             com.etao.feimagesearch.model.b r0 = r5.d
             if (r0 == 0) goto L5c
@@ -168,7 +168,7 @@ public final class cpg extends ctb<cph> implements ImagePopTask.b {
             java.lang.String r0 = "scene"
             java.lang.String r2 = r6.getQueryParameter(r0)
             java.lang.CharSequence r2 = (java.lang.CharSequence) r2
-            boolean r2 = android.text.TextUtils.isEmpty(r2)
+            boolean r2 = android.text.StringUtils.isEmpty(r2)
             if (r2 == 0) goto Lb5
             android.net.Uri$Builder r6 = r6.buildUpon()
             com.etao.feimagesearch.model.b r2 = r5.e()
@@ -265,7 +265,7 @@ public final class cpg extends ctb<cph> implements ImagePopTask.b {
             bVar = b.parseFromIntent(s.getIntent());
             if (!CaptureManager.n) {
                 q.a((Object) bVar, "this");
-                if (TextUtils.isEmpty(bVar.getPssource())) {
+                if (StringUtils.isEmpty(bVar.getPssource())) {
                     bVar.setPssource("sy_hwtab");
                 }
             }
@@ -332,7 +332,7 @@ public final class cpg extends ctb<cph> implements ImagePopTask.b {
             String pssource = ((cph) view).A_().getPssource();
             String blackList = d().E();
             String str = blackList;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 q.a((Object) blackList, "blackList");
                 q.a((Object) pssource, "pssource");
                 if (n.b((CharSequence) str, (CharSequence) pssource, false, 2, (Object) null)) {

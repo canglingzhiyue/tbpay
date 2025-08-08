@@ -2,7 +2,7 @@ package com.etao.feimagesearch.cip.capture.components;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.k;
@@ -93,11 +93,11 @@ public class b extends AsyncTask<Void, Void, List<AlbumMediaItem>> {
         }
         List<AlbumMediaItem> a2 = a(context);
         AlbumMediaItem albumMediaItem = (a2 == null || a2.size() <= 0) ? null : a2.get(0);
-        if (albumMediaItem == null || TextUtils.isEmpty(albumMediaItem.imgFilePath)) {
+        if (albumMediaItem == null || StringUtils.isEmpty(albumMediaItem.imgFilePath)) {
             return null;
         }
         if (!albumMediaItem.imgFilePath.contains("拍立淘")) {
-            if (!TextUtils.isEmpty(albumMediaItem.lastUpdateTime) && !PreviewManager.f7104a.equals(albumMediaItem.id)) {
+            if (!StringUtils.isEmpty(albumMediaItem.lastUpdateTime) && !PreviewManager.f7104a.equals(albumMediaItem.id)) {
                 try {
                     j = Long.parseLong(albumMediaItem.lastUpdateTime) * 1000;
                 } catch (Exception unused) {
@@ -141,7 +141,7 @@ public class b extends AsyncTask<Void, Void, List<AlbumMediaItem>> {
         } else {
             AlbumMediaItem albumMediaItem = list.get(0);
             if (albumMediaItem.canShow) {
-                if (TextUtils.equals(PreviewManager.f7104a, albumMediaItem.id)) {
+                if (StringUtils.equals(PreviewManager.f7104a, albumMediaItem.id)) {
                     albumMediaItem.canShow = false;
                 } else if (this.c) {
                     PreviewManager.f7104a = albumMediaItem.id;

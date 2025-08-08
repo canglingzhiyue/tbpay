@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -49,11 +49,11 @@ public class i {
                 return false;
             }
             Uri parse = Uri.parse(str);
-            if (!TextUtils.equals(parse.getQueryParameter("tbScanOpenType"), "Notification")) {
+            if (!StringUtils.equals(parse.getQueryParameter("tbScanOpenType"), "Notification")) {
                 return false;
             }
             final String queryParameter = parse.getQueryParameter(SOURCE_TYPE_KEY);
-            if (!TextUtils.equals("scanHistory", queryParameter) && !TextUtils.equals(SOURCE_TYPE_PHOTO, queryParameter) && !TextUtils.equals("scan", queryParameter)) {
+            if (!StringUtils.equals("scanHistory", queryParameter) && !StringUtils.equals(SOURCE_TYPE_PHOTO, queryParameter) && !StringUtils.equals("scan", queryParameter)) {
                 Log.e(f21279a, String.format("the url[%s] has been from a unknown source[%s].", str, queryParameter));
                 return false;
             }
@@ -86,11 +86,11 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3bbd7193", new Object[]{context, str, str2});
-        } else if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             try {
                 Intent intent = new Intent("com.taobao.taobao.scancode.login.CheckerBroadcast");
-                if (TextUtils.equals(str2, "scanHistory")) {
+                if (StringUtils.equals(str2, "scanHistory")) {
                     str2 = "history";
                 }
                 intent.putExtra("approach", str2);

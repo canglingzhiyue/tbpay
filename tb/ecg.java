@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.localization.b;
 import com.alipay.mobile.common.rpc.util.RpcInvokerUtil;
@@ -98,15 +98,15 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("from", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("bucketId", str3);
@@ -194,15 +194,15 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("from", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("bucketId", str3);
@@ -216,7 +216,7 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
@@ -230,7 +230,7 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
@@ -244,19 +244,19 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemIds", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "0";
         }
         hashMap.put("itemCount", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("from", str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         hashMap.put("bucketId", str4);
@@ -270,19 +270,19 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemIds", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "0";
         }
         hashMap.put("itemCount", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("from", str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         hashMap.put("bucketId", str4);
@@ -296,19 +296,19 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemIds", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("message", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("from", str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         hashMap.put("bucketId", str4);
@@ -322,11 +322,11 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("from", str2);
@@ -340,11 +340,11 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("from", str2);
@@ -358,11 +358,11 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("from", str2);
@@ -376,16 +376,16 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("from", str2);
         hashMap.put("cache", String.valueOf(z));
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("detailVersion", str3);
@@ -408,11 +408,11 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("from", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put(nfc.PHA_MONITOR_DIMENSION_PRELOAD_TYPE, str2);
@@ -426,19 +426,19 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("message", str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemId", str);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("from", str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         hashMap.put("bucketId", str4);
@@ -452,15 +452,15 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemIds", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("message", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("from", str3);
@@ -510,19 +510,19 @@ public class ecg {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "";
         }
         hashMap.put("itemIds", str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         hashMap.put("message", str2);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "";
         }
         hashMap.put("from", str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         hashMap.put("data", str4);
@@ -577,7 +577,7 @@ public class ecg {
         }
         HashMap hashMap = new HashMap();
         hashMap.put(eby.KEY_PIC_URL, str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap.put("retCode", str2);
         }
         a(context, "dataProcess", "descNativeLoadPic", hashMap, "descNativeLoadPicError", "native宝贝详情图片加载失败");
@@ -789,7 +789,7 @@ public class ecg {
             str = uri.toString();
         }
         hashMap.put("url", str);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("downgradeDataId", a2);
         }
         a(context, PERFORMANCE_BIZ_NAME, "enterDetailActivity", "enterDetailActivity", hashMap, "enterDetailActivity", "ERR_MESSAGE_ENTER_DETAIL_ACTIVITY");
@@ -808,7 +808,7 @@ public class ecg {
             str = uri.toString();
         }
         hashMap.put("url", str);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("downgradeDataId", a2);
         }
         a(context, PERFORMANCE_BIZ_NAME, "enterDetailNav", "enterDetailNav", hashMap, "enterDetailNav", "ERR_MESSAGE_ENTER_DETAIL_NAV");
@@ -827,7 +827,7 @@ public class ecg {
             str = uri.toString();
         }
         hashMap.put("url", str);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("downgradeDataId", a2);
         }
         a(context, PERFORMANCE_BIZ_NAME, "disableDetailNav", "disableDetailNav", hashMap, "disableDetailNav", "ERR_MESSAGE_DISABLE_DETAIL_NAV");

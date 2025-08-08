@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
 import com.taobao.orange.OrangeConfig;
@@ -95,7 +95,7 @@ public class nne {
         searchDomBean.separatorHeight = jSONObject.getIntValue("separatorHeight");
         searchDomBean.separatorWidth = jSONObject.getIntValue("separatorWidth");
         String string = jSONObject.getString(a.ATOM_EXT_UDL_font_size);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = jSONObject.getString("fontSize");
         }
         try {
@@ -116,7 +116,7 @@ public class nne {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return OrangeConfig.getInstance().getConfig(str, str2, "");
         }
         return null;
@@ -253,7 +253,7 @@ public class nne {
         String c = c(str);
         String d = d(str);
         String a3 = a(d, c);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return hashMap;
         }
         try {
@@ -265,7 +265,7 @@ public class nne {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                if (!TextUtils.isEmpty(next) && (a2 = a(jSONObject.optJSONObject(next))) != null) {
+                if (!StringUtils.isEmpty(next) && (a2 = a(jSONObject.optJSONObject(next))) != null) {
                     hashMap.put(next, a2);
                 }
             }
@@ -290,7 +290,7 @@ public class nne {
         }
         HashMap<String, SearchDomBean> hashMap = new HashMap<>();
         for (String str : jSONObject.keySet()) {
-            if (!TextUtils.isEmpty(str) && (b = com.taobao.android.searchbaseframe.util.a.b(jSONObject, str)) != null && !b.isEmpty()) {
+            if (!StringUtils.isEmpty(str) && (b = com.taobao.android.searchbaseframe.util.a.b(jSONObject, str)) != null && !b.isEmpty()) {
                 com.alibaba.fastjson.JSONObject b4 = com.taobao.android.searchbaseframe.util.a.b(b, "dark");
                 if (b4 != null && (b3 = b(b4)) != null) {
                     hashMap.put(DARK_MODE_DOM_PREFIX + str, b3);

@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.parse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.parse.TypedBean;
@@ -36,7 +36,7 @@ public abstract class b<BEAN extends TypedBean, CTX> extends a<BEAN, CTX> {
             return;
         }
         bean.type = jSONObject.getString("tItemType");
-        if (TextUtils.isEmpty(bean.type)) {
+        if (StringUtils.isEmpty(bean.type)) {
             bean.type = jSONObject.getString("type");
         }
         Long l = jSONObject.getLong(KEY_ID);
@@ -50,7 +50,7 @@ public abstract class b<BEAN extends TypedBean, CTX> extends a<BEAN, CTX> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9306b5e5", new Object[]{this, bean, jSONObject, ctx});
-        } else if (!TextUtils.isEmpty(bean.type)) {
+        } else if (!StringUtils.isEmpty(bean.type)) {
         } else {
             bean.type = jSONObject.getString("type");
         }

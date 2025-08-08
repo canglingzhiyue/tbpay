@@ -11,7 +11,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.JSONLexer;
@@ -1039,7 +1039,7 @@ public class e {
                 });
             case 23:
                 String b3 = this.e.b();
-                if (!TextUtils.isEmpty(b3)) {
+                if (!StringUtils.isEmpty(b3)) {
                     eVar.a(b3);
                     return true;
                 }
@@ -1139,7 +1139,7 @@ public class e {
                             return;
                         }
                         String jSONObject7 = jSONObject6.toString();
-                        if (!TextUtils.isEmpty(jSONObject7)) {
+                        if (!StringUtils.isEmpty(jSONObject7)) {
                             eVar.a(jSONObject7);
                         } else {
                             eVar.b();
@@ -1160,7 +1160,7 @@ public class e {
                             eVar.b();
                         } else {
                             String f = e.c(e.this).f();
-                            if (!TextUtils.isEmpty(f)) {
+                            if (!StringUtils.isEmpty(f)) {
                                 eVar.a(f);
                             } else {
                                 eVar.b();
@@ -1295,7 +1295,7 @@ public class e {
             case '2':
                 if (this.e != null && hashMap != null && !hashMap.isEmpty()) {
                     String str5 = hashMap.get("msgTypeList");
-                    if (!TextUtils.isEmpty(str5)) {
+                    if (!StringUtils.isEmpty(str5)) {
                         this.d.a(this.g, str5.split(","));
                         eVar.a();
                         return true;
@@ -1314,7 +1314,7 @@ public class e {
             case '4':
                 if (!hashMap.isEmpty()) {
                     String str6 = hashMap.get("msgTypeList");
-                    if (!TextUtils.isEmpty(str6)) {
+                    if (!StringUtils.isEmpty(str6)) {
                         this.d.b(this.g, str6.split(","));
                         eVar.a();
                         return true;
@@ -1438,7 +1438,7 @@ public class e {
                         return true;
                     }
                     TaoLiveWebBottomFragment taoLiveWebBottomFragment = (TaoLiveWebBottomFragment) findFragmentByTag2;
-                    if (taoLiveWebBottomFragment != null && !TextUtils.isEmpty(str2) && (b = pqj.b(str2)) != null) {
+                    if (taoLiveWebBottomFragment != null && !StringUtils.isEmpty(str2) && (b = pqj.b(str2)) != null) {
                         taoLiveWebBottomFragment.setContainerNeedScroll(b.getBooleanValue("containerNeedScroll"));
                     }
                     eVar.a();
@@ -1453,7 +1453,7 @@ public class e {
                         return true;
                     }
                     TaoLiveWebBottomFragment taoLiveWebBottomFragment2 = (TaoLiveWebBottomFragment) findFragmentByTag3;
-                    if (taoLiveWebBottomFragment2 != null && !TextUtils.isEmpty(str2) && (b2 = pqj.b(str2)) != null) {
+                    if (taoLiveWebBottomFragment2 != null && !StringUtils.isEmpty(str2) && (b2 = pqj.b(str2)) != null) {
                         taoLiveWebBottomFragment2.setContainerExpand(b2.getBooleanValue(AbsListWidgetInstance.KEY_SECTION_EXPAND));
                     }
                     eVar.a();
@@ -1475,7 +1475,7 @@ public class e {
                 eVar.b("半屏容器没有上屏");
                 return true;
             case 'F':
-                if (!TextUtils.isEmpty(str2) && this.e.a(this.g, iWVWebView, pqj.b(str2))) {
+                if (!StringUtils.isEmpty(str2) && this.e.a(this.g, iWVWebView, pqj.b(str2))) {
                     eVar.a();
                     return true;
                 }
@@ -1649,7 +1649,7 @@ public class e {
             return ((Boolean) ipChange.ipc$dispatch("3202a445", new Object[]{this, str, hashMap})).booleanValue();
         }
         if (qne.d(str)) {
-            boolean z = hashMap != null && hashMap.containsKey("token") && TextUtils.equals(hashMap.get("token"), qne.M());
+            boolean z = hashMap != null && hashMap.containsKey("token") && StringUtils.equals(hashMap.get("token"), qne.M());
             if (qne.t() && !z) {
                 return false;
             }
@@ -1664,7 +1664,7 @@ public class e {
             ipChange.ipc$dispatch("b17e4a0d", new Object[]{str, eVar});
             return;
         }
-        if (!TextUtils.equals(i, str) && (eVar2 = h) != null) {
+        if (!StringUtils.equals(i, str) && (eVar2 = h) != null) {
             eVar2.b();
         }
         i = str;
@@ -1681,7 +1681,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (!TextUtils.equals(i, str) || (eVar = h) == null) {
+        } else if (!StringUtils.equals(i, str) || (eVar = h) == null) {
         } else {
             eVar.b();
             h = null;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex.WeexModule;
 import com.taobao.android.weex.module.WeexInnerModule;
@@ -35,7 +35,7 @@ public class jux {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3008783b", new Object[]{str, juvVar})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && juvVar != null) {
+        if (!StringUtils.isEmpty(str) && juvVar != null) {
             if (f29796a != null && f29796a.containsKey(str)) {
                 g.c("register module twice,Module name is  " + str);
             }
@@ -53,7 +53,7 @@ public class jux {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e6b43df4", new Object[]{str, cls, strArr});
-        } else if (TextUtils.isEmpty(str) || cls == null) {
+        } else if (StringUtils.isEmpty(str) || cls == null) {
             g.d("register module illegal");
         } else {
             if (f29796a.containsKey(str)) {

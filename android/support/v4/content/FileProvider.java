@@ -10,7 +10,7 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.MimeTypeMap;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -57,7 +57,7 @@ public class FileProvider extends ContentProvider {
         }
 
         void addRoot(String str, File file) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     this.mRoots.put(str, file.getCanonicalFile());
                     return;

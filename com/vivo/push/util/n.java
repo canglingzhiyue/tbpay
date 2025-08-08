@@ -1,7 +1,7 @@
 package com.vivo.push.util;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.perf.Constants;
 import java.lang.reflect.Method;
 import java.util.regex.Matcher;
@@ -35,11 +35,11 @@ public final class n {
             }
             u.d("Device", "sRomProperty1 : " + g + " ; sRomProperty2 : " + h);
             String a2 = a(g);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return a2;
             }
             String a3 = a(h);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return null;
             }
             return a3;
@@ -47,7 +47,7 @@ public final class n {
     }
 
     private static String a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Matcher matcher = Pattern.compile("rom_([\\d]*).?([\\d]*)", 2).matcher(str);
@@ -56,7 +56,7 @@ public final class n {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(matcher.group(1));
-        sb.append(TextUtils.isEmpty(matcher.group(2)) ? "0" : matcher.group(2).substring(0, 1));
+        sb.append(StringUtils.isEmpty(matcher.group(2)) ? "0" : matcher.group(2).substring(0, 1));
         return sb.toString();
     }
 
@@ -72,7 +72,7 @@ public final class n {
     }
 
     public static boolean b() {
-        if (TextUtils.isEmpty(Build.MANUFACTURER)) {
+        if (StringUtils.isEmpty(Build.MANUFACTURER)) {
             u.d("Device", "Build.MANUFACTURER is null");
             return false;
         }

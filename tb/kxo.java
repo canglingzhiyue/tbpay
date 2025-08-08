@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.ultron.goods.list.a;
@@ -31,7 +31,7 @@ public class kxo {
         this.b.put(10, "taolive_goods_search_entry");
         this.b.put(8, "taolive_goods_top_activity");
         this.b.put(7, "taolive_goods_list_pcg");
-        this.b.put(2, (this.f30383a.e() == null || TextUtils.isEmpty(this.f30383a.e().templateName)) ? "taolive_goodslist_interact_red_packet" : this.f30383a.e().templateName);
+        this.b.put(2, (this.f30383a.e() == null || StringUtils.isEmpty(this.f30383a.e().templateName)) ? "taolive_goodslist_interact_red_packet" : this.f30383a.e().templateName);
     }
 
     public g a(int i) {
@@ -41,9 +41,9 @@ public class kxo {
         }
         kuj kujVar = null;
         String a2 = this.c.a(i);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             kujVar = new lsc(this.f30383a, this.c, a2);
-        } else if (!TextUtils.isEmpty(this.b.get(Integer.valueOf(i)))) {
+        } else if (!StringUtils.isEmpty(this.b.get(Integer.valueOf(i)))) {
             kujVar = new kwp(this.f30383a, this.b.get(Integer.valueOf(i)));
         } else if (i == 9) {
             kujVar = new kuq(this.f30383a);

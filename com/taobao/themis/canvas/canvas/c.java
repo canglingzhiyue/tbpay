@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fcanvas.integration.image.ExternalAdapterImageProvider;
 import com.taobao.phenix.intf.PhenixCreator;
@@ -114,7 +114,7 @@ public class c implements ExternalAdapterImageProvider {
         if (ipChange instanceof IpChange) {
             return (ExternalAdapterImageProvider.b) ipChange.ipc$dispatch("b3b4f2bf", new Object[]{this, str, new Integer(i), new Integer(i2), map, map2, cVar});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             TMSLogger.d("TMSCanvasImageProvider", "fetch image failed because of empty url");
             return null;
         }
@@ -177,7 +177,7 @@ public class c implements ExternalAdapterImageProvider {
         d dVar = new d();
         if (cVar != null && fVar != null && fVar.o() != null) {
             String a2 = toh.a(o.e(fVar), str, apPathType);
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 cVar.a(null);
                 return dVar;
             }
@@ -229,7 +229,7 @@ public class c implements ExternalAdapterImageProvider {
             return (d) ipChange.ipc$dispatch("4b9bd7d4", new Object[]{this, fVar, str, cVar});
         }
         d dVar = new d();
-        if (TextUtils.isEmpty(str) || fVar == null) {
+        if (StringUtils.isEmpty(str) || fVar == null) {
             cVar.a(null);
             dVar.b = false;
             return dVar;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.behavior.b;
@@ -72,7 +72,7 @@ public class ezl {
             ezm ezmVar = this.d.get(a2);
             if (ezmVar != null) {
                 ezmVar.a(aVar, runtimeAbilityParamArr);
-                if (TextUtils.equals(ai.EVENT_TYPE, a2)) {
+                if (StringUtils.equals(ai.EVENT_TYPE, a2)) {
                     return;
                 }
                 b.a(this.b, bq.a(com.taobao.android.detail.ttdetail.utils.a.a(runtimeAbilityParamArr)), a2, a(ezmVar));

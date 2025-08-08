@@ -1,6 +1,6 @@
 package com.alipay.android.msp.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.birdnest.api.MspConstants;
@@ -66,7 +66,7 @@ public class MspNetHandler {
 
     public boolean hasNeecCode() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d8dfcb67", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.mNeecCode);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d8dfcb67", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.mNeecCode);
     }
 
     public void setNeedNeec(boolean z) {
@@ -144,7 +144,7 @@ public class MspNetHandler {
             LogUtil.record(2, "MspNetHandler:onReceiveSyncF2FResult", "sync=".concat(String.valueOf(str)));
             StatisticInfo statisticInfo = new StatisticInfo(-1);
             statisticInfo.updateAttr(Vector.Trade, "bizType", "sync");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogUtil.record(4, "msp", "MspNetHandler:onReceiveSyncF2FResult", sft.LIVE_ALGO_FAILURE_RESULT_ISNULL_ERROR);
                 return;
             }
@@ -210,7 +210,7 @@ public class MspNetHandler {
                 return;
             }
             LogUtil.record(2, "MspNetHandler:onReceiveSyncPayResult", "sync=".concat(String.valueOf(str)));
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 LogUtil.record(4, "msp", "MspNetHandler:onReceiveSyncPayResult", sft.LIVE_ALGO_FAILURE_RESULT_ISNULL_ERROR);
                 return;
             }
@@ -353,7 +353,7 @@ public class MspNetHandler {
         }
         if (!this.mHasGetGraySyncRenderSupport) {
             this.mStringGraySyncRenderSupport = PhoneCashierMspEngine.getMspWallet().getWalletConfig(KEY_GRAY_SYNC_RENDER_SUPPORT);
-            this.mGraySyncRenderSupport = TextUtils.equals(MspExperimentHelper.KEY_TYPE_EXP, MspExperimentHelper.getKeyExpResult(this.mStringGraySyncRenderSupport));
+            this.mGraySyncRenderSupport = StringUtils.equals(MspExperimentHelper.KEY_TYPE_EXP, MspExperimentHelper.getKeyExpResult(this.mStringGraySyncRenderSupport));
             LogUtil.record(2, "MspNetHandler:isGraySyncRenderSupport", "mGraySyncRenderSupport=" + this.mGraySyncRenderSupport);
             this.mHasGetGraySyncRenderSupport = true;
         }

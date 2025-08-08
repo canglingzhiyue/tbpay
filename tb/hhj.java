@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -149,7 +149,7 @@ public class hhj extends iot {
                     hashMap.put("bubbleType", str2);
                     HashMap hashMap3 = new HashMap();
                     if (dXRuntimeContext.c() != null) {
-                        hashMap3.put("explaincard_cardtype", TextUtils.equals("taolive_goods_small_card", dXRuntimeContext.c().f11925a) ? "small" : com.taobao.android.weex_framework.util.a.ATOM_EXT_big);
+                        hashMap3.put("explaincard_cardtype", StringUtils.equals("taolive_goods_small_card", dXRuntimeContext.c().f11925a) ? "small" : com.taobao.android.weex_framework.util.a.ATOM_EXT_big);
                     }
                     liveItem.cpsClickPos = hiq.a(liveItem, false, (String) null);
                     b.a(cVar, liveItem, hashMap3);

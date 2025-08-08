@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.parse.AURAParseIO;
 import com.alibaba.android.umf.datamodel.protocol.ultron.Hierarchy;
@@ -52,7 +52,7 @@ public abstract class bqj implements a {
         if (ipChange instanceof IpChange) {
             return (UltronDeltaProtocol) ipChange.ipc$dispatch("320557ed", new Object[]{this, aVar, aqqVar, bqiVar});
         }
-        if (TextUtils.isEmpty(aVar.b)) {
+        if (StringUtils.isEmpty(aVar.b)) {
             return null;
         }
         this.f26043a = aqqVar;

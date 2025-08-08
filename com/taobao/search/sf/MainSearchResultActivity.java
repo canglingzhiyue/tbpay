@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -331,7 +331,7 @@ public class MainSearchResultActivity extends BaseResultActivity implements com.
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5b2e1ed", new Object[]{this});
-        } else if (!r.bw() || !r.e("preloadInstance") || !TextUtils.isEmpty(((com.taobao.search.refactor.j) ((iru) this.b.getModel()).c()).getTab()) || !ipl.g().e()) {
+        } else if (!r.bw() || !r.e("preloadInstance") || !StringUtils.isEmpty(((com.taobao.search.refactor.j) ((iru) this.b.getModel()).c()).getTab()) || !ipl.g().e()) {
         } else {
             if (!ipl.g().c()) {
                 com.taobao.search.e.a().post(new Runnable() { // from class: com.taobao.search.sf.MainSearchResultActivity.5
@@ -346,7 +346,7 @@ public class MainSearchResultActivity extends BaseResultActivity implements com.
                         }
                         try {
                             String a2 = com.taobao.search.searchdoor.i.a(MainSearchResultActivity.d(MainSearchResultActivity.this));
-                            if (TextUtils.isEmpty(a2)) {
+                            if (StringUtils.isEmpty(a2)) {
                                 return;
                             }
                             JSONObject parseObject = JSON.parseObject(a2);
@@ -518,7 +518,7 @@ public class MainSearchResultActivity extends BaseResultActivity implements com.
                 return;
             }
             String string = extras.getString(MUSXSearchEventModule.KEY_CARRIED_DATA);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             this.q = com.taobao.search.sf.datasource.b.a().a(string);
@@ -649,20 +649,20 @@ public class MainSearchResultActivity extends BaseResultActivity implements com.
         } else if (bVar == null || !bVar.c()) {
         } else {
             String a2 = bVar.a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             HashMap hashMap = new HashMap();
             String c = cVar.c("channelSrp");
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 hashMap.put("channelSrp", c);
             }
             CommonSearchResult commonSearchResult = (CommonSearchResult) cVar.getTotalSearchResult();
-            if (commonSearchResult != null && !TextUtils.isEmpty(commonSearchResult.sessionId)) {
+            if (commonSearchResult != null && !StringUtils.isEmpty(commonSearchResult.sessionId)) {
                 hashMap.put("sessionId", commonSearchResult.sessionId);
             }
             String tab = cVar.getTab();
-            if (!TextUtils.isEmpty(tab)) {
+            if (!StringUtils.isEmpty(tab)) {
                 hashMap.put("tab", tab);
             }
             this.n.a(hashMap);
@@ -742,15 +742,15 @@ public class MainSearchResultActivity extends BaseResultActivity implements com.
         } else {
             HashMap hashMap = new HashMap();
             String c = cVar.c("channelSrp");
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 hashMap.put("channelSrp", c);
             }
             CommonSearchResult commonSearchResult = (CommonSearchResult) cVar.getTotalSearchResult();
-            if (commonSearchResult != null && !TextUtils.isEmpty(commonSearchResult.sessionId)) {
+            if (commonSearchResult != null && !StringUtils.isEmpty(commonSearchResult.sessionId)) {
                 hashMap.put("sessionId", commonSearchResult.sessionId);
             }
             String tab = cVar.getTab();
-            if (!TextUtils.isEmpty(tab)) {
+            if (!StringUtils.isEmpty(tab)) {
                 hashMap.put("tab", tab);
             }
             this.n.c(hashMap);
@@ -765,7 +765,7 @@ public class MainSearchResultActivity extends BaseResultActivity implements com.
             }
             String string = g.getString("jarvisPage");
             String string2 = g.getString("jarvisEvent");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 this.n.i();
                 return;
             }
@@ -1021,7 +1021,7 @@ public class MainSearchResultActivity extends BaseResultActivity implements com.
         shareContent.businessId = this.s.getString("businessId");
         shareContent.title = this.s.getString("title");
         shareContent.imageUrl = this.s.getString("image");
-        if (TextUtils.isEmpty(shareContent.imageUrl)) {
+        if (StringUtils.isEmpty(shareContent.imageUrl)) {
             shareContent.imageUrl = com.taobao.search.sf.widgets.searchbar.g.SHARE_IMAGE_URL;
         }
         shareContent.description = this.s.getString("description");

@@ -2,7 +2,7 @@ package com.taobao.global.setting.util;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
 import com.taobao.tao.Globals;
@@ -26,12 +26,12 @@ public class d {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         String userId = Login.getUserId();
-        return TextUtils.isEmpty(userId) ? str.concat("_NotLogin") : str.concat("_").concat(userId);
+        return StringUtils.isEmpty(userId) ? str.concat("_NotLogin") : str.concat("_").concat(userId);
     }
 
     public static boolean a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2);
     }
 
     public static void a(com.taobao.global.setting.data.c cVar, int i, String str) {

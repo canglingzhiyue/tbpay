@@ -2,7 +2,7 @@ package com.taobao.search.musie;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -102,7 +102,7 @@ public class h implements com.taobao.android.nav.e {
         }
         if (queryParameterNames != null && !queryParameterNames.isEmpty()) {
             String queryParameter = data.getQueryParameter("_xsl_prld_id");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 com.taobao.android.searchbaseframe.util.k.f("[XS.xsl]", "Preload failed, no _xsl_prld_id in url.", new Object[0]);
                 return true;
             }
@@ -113,7 +113,7 @@ public class h implements com.taobao.android.nav.e {
             for (String str : queryParameterNames) {
                 if (!f19251a.contains(str)) {
                     String queryParameter2 = data.getQueryParameter(str);
-                    if (!TextUtils.isEmpty(queryParameter2)) {
+                    if (!StringUtils.isEmpty(queryParameter2)) {
                         if (booleanQueryParameter) {
                             hashMap2.put(str, queryParameter2);
                         } else {

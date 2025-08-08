@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.dynamicFeature.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -33,7 +33,7 @@ public class a {
 
     public static boolean a(a aVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5aac472f", new Object[]{aVar})).booleanValue() : aVar != null && !TextUtils.isEmpty(aVar.f2138a) && !TextUtils.isEmpty(aVar.b) && !TextUtils.isEmpty(aVar.c) && !TextUtils.isEmpty(aVar.d);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5aac472f", new Object[]{aVar})).booleanValue() : aVar != null && !StringUtils.isEmpty(aVar.f2138a) && !StringUtils.isEmpty(aVar.b) && !StringUtils.isEmpty(aVar.c) && !StringUtils.isEmpty(aVar.d);
     }
 
     public static boolean a(a aVar, a aVar2) {
@@ -42,7 +42,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("12fd36cc", new Object[]{aVar, aVar2})).booleanValue();
         }
         if (aVar != null && aVar2 != null) {
-            return TextUtils.equals(aVar.d, aVar2.d);
+            return StringUtils.equals(aVar.d, aVar2.d);
         }
         return false;
     }
@@ -66,7 +66,7 @@ public class a {
             if (ipChange instanceof IpChange) {
                 return (C0067a) ipChange.ipc$dispatch("37481618", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (str.contains("-")) {
                     str.replace("-", "_");
                 }
@@ -80,7 +80,7 @@ public class a {
             if (ipChange instanceof IpChange) {
                 return (C0067a) ipChange.ipc$dispatch("fe53fd19", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b = str;
             }
             return this;
@@ -91,7 +91,7 @@ public class a {
             if (ipChange instanceof IpChange) {
                 return (C0067a) ipChange.ipc$dispatch("c55fe41a", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.c = str;
             }
             return this;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
@@ -78,7 +78,7 @@ public class jgm {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("75f5ebaf", new Object[]{str, new Integer(i)});
         }
-        if (!TextUtils.isEmpty(str) && !f29538a.contains(str)) {
+        if (!StringUtils.isEmpty(str) && !f29538a.contains(str)) {
             str = "main";
         }
         StringBuilder sb = new StringBuilder();
@@ -153,7 +153,7 @@ public class jgm {
         }
         try {
             ProcessBuilder processBuilder = new ProcessBuilder(new String[0]);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 c = b(i);
             } else {
                 c = c(str, i);
@@ -185,7 +185,7 @@ public class jgm {
         ArrayList arrayList = new ArrayList();
         arrayList.add(LogCategory.CATEGORY_LOGCAT);
         arrayList.add("-d");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             arrayList.add("-b");
             arrayList.add(str);
         }

@@ -3,7 +3,7 @@ package com.taobao.browser.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.statistic.TBS;
 import com.taobao.tao.TrackBuried;
@@ -37,33 +37,33 @@ public class m {
             Uri parse = Uri.parse(split[i]);
             if (parse != null && parse.isHierarchical()) {
                 String queryParameter = parse.getQueryParameter("locate");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     str6 = queryParameter;
                 }
                 String queryParameter2 = parse.getQueryParameter("actparam");
-                if (!TextUtils.isEmpty(queryParameter2)) {
+                if (!StringUtils.isEmpty(queryParameter2)) {
                     str4 = queryParameter2;
                 }
                 String queryParameter3 = parse.getQueryParameter("list_param");
-                if (!TextUtils.isEmpty(queryParameter3)) {
+                if (!StringUtils.isEmpty(queryParameter3)) {
                     str5 = queryParameter3;
                 }
                 String queryParameter4 = parse.getQueryParameter("carrier_id");
-                if (!TextUtils.isEmpty(queryParameter4)) {
+                if (!StringUtils.isEmpty(queryParameter4)) {
                     str7 = queryParameter4;
                 }
                 if (str4 != null || str5 != null) {
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         TrackBuried.list_Type = TrackBuried.list_TypeArr[c];
                         TrackBuried.list_Param = str4;
                         Properties properties = new Properties();
-                        if (!TextUtils.isEmpty(str6)) {
+                        if (!StringUtils.isEmpty(str6)) {
                             TrackBuried.list_Param += "_" + str6;
                         }
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             properties.put("url", str3);
                         }
-                        if (!TextUtils.isEmpty(str7)) {
+                        if (!StringUtils.isEmpty(str7)) {
                             properties.put("carrier_id", str7);
                             TrackBuried.carrier = str7;
                         }
@@ -71,14 +71,14 @@ public class m {
                         HashMap hashMap = new HashMap();
                         hashMap.put("action", "kpv");
                         TrackBuried.effectupdatePageProperties(str, hashMap);
-                    } else if (!TextUtils.isEmpty(str5)) {
+                    } else if (!StringUtils.isEmpty(str5)) {
                         TrackBuried.list_Type = TrackBuried.list_TypeArr[0];
                         TrackBuried.list_Param = str5;
                         Properties properties2 = new Properties();
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             properties2.put("url", str3);
                         }
-                        if (!TextUtils.isEmpty(str7)) {
+                        if (!StringUtils.isEmpty(str7)) {
                             properties2.put("carrier_id", str7);
                             TrackBuried.carrier = str7;
                         }
@@ -105,14 +105,14 @@ public class m {
         TBS.Page.create(str, "Webview");
         Uri parse = Uri.parse(str2);
         String stringExtra = intent.getStringExtra("sellerId");
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             Properties properties = new Properties();
             properties.put("seller_id", stringExtra);
             TBS.Page.updatePageProperties(str, properties);
         }
         if (parse != null && parse.isHierarchical()) {
             String queryParameter = parse.getQueryParameter("carrier_id");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 TrackBuried.carrier = queryParameter;
             }
         }

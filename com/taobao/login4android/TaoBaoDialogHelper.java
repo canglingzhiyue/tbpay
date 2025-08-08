@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import anetwork.channel.config.NetworkConfigCenter;
@@ -79,7 +79,7 @@ public class TaoBaoDialogHelper implements IDialogHelper {
         try {
             try {
                 ensureDialogHelper(activity);
-                if (TextUtils.equals(str, activity.getResources().getString(R.string.aliuser_network_error)) && !NetworkUtil.isNetworkConnected()) {
+                if (StringUtils.equals(str, activity.getResources().getString(R.string.aliuser_network_error)) && !NetworkUtil.isNetworkConnected()) {
                     this.mDialogHelper.alert(activity.getResources().getString(R.string.aliuser_network_exception), activity.getResources().getString(R.string.aliuser_network_check), activity.getResources().getString(R.string.aliuser_network_retry), null, activity.getString(R.string.aliuser_need_help), new DialogInterface.OnClickListener() { // from class: com.taobao.login4android.TaoBaoDialogHelper.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -101,7 +101,7 @@ public class TaoBaoDialogHelper implements IDialogHelper {
                             }
                         }
                     });
-                } else if (TextUtils.equals(str, activity.getResources().getString(R.string.aliuser_server_error_msg)) && NetworkConfigCenter.isNetworkDiagnosisOpened()) {
+                } else if (StringUtils.equals(str, activity.getResources().getString(R.string.aliuser_server_error_msg)) && NetworkConfigCenter.isNetworkDiagnosisOpened()) {
                     this.mDialogHelper.alert(activity.getResources().getString(R.string.aliuser_login_server_error_msg), activity.getResources().getString(R.string.aliuser_network_try_title) + System.getProperty("line.separator") + activity.getResources().getString(R.string.aliuser_network_step1) + System.getProperty("line.separator") + activity.getResources().getString(R.string.aliuser_network_step2) + System.getProperty("line.separator") + activity.getResources().getString(R.string.aliuser_network_step3) + System.getProperty("line.separator"), activity.getResources().getString(R.string.aliuser_network_retry), null, activity.getResources().getString(R.string.aliuser_network_diagnosis), new DialogInterface.OnClickListener() { // from class: com.taobao.login4android.TaoBaoDialogHelper.2
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 

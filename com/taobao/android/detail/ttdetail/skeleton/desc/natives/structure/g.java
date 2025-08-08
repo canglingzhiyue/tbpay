@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.structure;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +39,7 @@ public class g extends j<com.taobao.android.detail.ttdetail.skeleton.desc.native
         Iterator<e> it = arrayList.iterator();
         while (it.hasNext()) {
             e next = it.next();
-            if (!TextUtils.isEmpty(next.f10861a)) {
+            if (!StringUtils.isEmpty(next.f10861a)) {
                 this.f10863a.put(next.f10861a, next);
             }
         }

@@ -238,7 +238,7 @@ public class gag extends gaf {
             int r15 = r15 + 1
             goto L30
         Lc2:
-            boolean r0 = android.text.TextUtils.isEmpty(r20)
+            boolean r0 = android.text.StringUtils.isEmpty(r20)
             if (r0 != 0) goto Ld0
             java.lang.String r0 = "all"
             boolean r0 = r0.equals(r12)

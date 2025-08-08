@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.appender;
 
 import android.taobao.windvane.jsbridge.api.WVFile;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LogEvent;
@@ -43,7 +43,7 @@ public class ApplogFileAppender extends ExternalFileAppender {
                 return;
             } else {
                 String logEvent2 = logEvent.toString();
-                if (TextUtils.isEmpty(logEvent2)) {
+                if (StringUtils.isEmpty(logEvent2)) {
                     return;
                 }
                 a(logEvent2);

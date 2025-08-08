@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Build;
 import android.os.Debug;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -509,7 +509,7 @@ public class xmu {
         }
         try {
             String runtimeStat = Debug.getRuntimeStat(str);
-            if (!TextUtils.isEmpty(runtimeStat)) {
+            if (!StringUtils.isEmpty(runtimeStat)) {
                 return Long.parseLong(runtimeStat);
             }
             return -1L;

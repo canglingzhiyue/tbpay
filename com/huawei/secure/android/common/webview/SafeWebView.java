@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -363,7 +363,7 @@ public class SafeWebView extends WebView {
     }
 
     public boolean isWhiteListUrl(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             LogsUtil.b(f, "url is null");
             return false;
         } else if (!URLUtil.isNetworkUrl(str)) {
@@ -382,7 +382,7 @@ public class SafeWebView extends WebView {
             return;
         }
         Log.e(f, "loadDataWithBaseURL: http url , not safe");
-        if (!TextUtils.isEmpty(this.f7617a)) {
+        if (!StringUtils.isEmpty(this.f7617a)) {
             super.loadDataWithBaseURL(this.f7617a, str2, str3, str4, str5);
         } else if (getWebViewLoadCallBack() == null) {
         } else {
@@ -399,7 +399,7 @@ public class SafeWebView extends WebView {
             return;
         }
         Log.e(f, "loadUrl: http url , not safe");
-        if (!TextUtils.isEmpty(this.f7617a)) {
+        if (!StringUtils.isEmpty(this.f7617a)) {
             super.loadUrl(this.f7617a);
         } else if (getWebViewLoadCallBack() == null) {
         } else {
@@ -416,7 +416,7 @@ public class SafeWebView extends WebView {
             return;
         }
         Log.e(f, "loadUrl: http url , not safe");
-        if (!TextUtils.isEmpty(this.f7617a)) {
+        if (!StringUtils.isEmpty(this.f7617a)) {
             super.loadUrl(this.f7617a, map);
         } else if (getWebViewLoadCallBack() == null) {
         } else {
@@ -430,7 +430,7 @@ public class SafeWebView extends WebView {
         LogsUtil.a(f, "onCheckError url is not in white list ", str);
         webView.stopLoading();
         String defaultErrorPage = getDefaultErrorPage();
-        if (!TextUtils.isEmpty(defaultErrorPage)) {
+        if (!StringUtils.isEmpty(defaultErrorPage)) {
             webView.loadUrl(defaultErrorPage);
         } else if (getWebViewLoadCallBack() == null) {
         } else {
@@ -447,7 +447,7 @@ public class SafeWebView extends WebView {
             return;
         }
         Log.e(f, "postUrl: http url , not safe");
-        if (!TextUtils.isEmpty(this.f7617a)) {
+        if (!StringUtils.isEmpty(this.f7617a)) {
             super.postUrl(this.f7617a, bArr);
         } else if (getWebViewLoadCallBack() == null) {
         } else {
@@ -495,7 +495,7 @@ public class SafeWebView extends WebView {
     @Deprecated
     protected final void showNoticeWhenSSLErrorOccurred(String str, String str2, String str3, String str4, SslErrorHandler sslErrorHandler) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             builder.setTitle(str);
         }
         c cVar = new c(sslErrorHandler);

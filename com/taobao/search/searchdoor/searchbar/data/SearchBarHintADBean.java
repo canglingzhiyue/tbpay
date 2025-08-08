@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.searchbar.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -72,12 +72,12 @@ public final class SearchBarHintADBean {
                 SearchBarHintADBean searchBarHintADBean = new SearchBarHintADBean();
                 a aVar = this;
                 String a2 = aVar.a(SearchBarHintADBean.KEY_EXPOSURE_MODULE, SearchBarHintADBean.KEY_EXPOSURE_PARAMS, jSONObject);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     searchBarHintADBean.setExposureParams(a2);
                     z = true;
                 }
                 String a3 = aVar.a(SearchBarHintADBean.KEY_CLICK_MODULE, SearchBarHintADBean.KEY_CLICK_PARAMS, jSONObject);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     searchBarHintADBean.setClickParams(a3);
                     z = true;
                 }

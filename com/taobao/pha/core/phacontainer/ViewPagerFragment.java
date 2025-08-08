@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -188,14 +188,14 @@ public class ViewPagerFragment extends AbstractPageFragment implements c, d {
         pHAViewPager.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         PageModel pageModel2 = this.mPageModel;
         if (pageModel2 != null) {
-            if (!TextUtils.isEmpty(pageModel2.backgroundColor)) {
+            if (!StringUtils.isEmpty(pageModel2.backgroundColor)) {
                 frameLayout.setBackgroundColor(ngn.f(this.mPageModel.backgroundColor));
                 pHAViewPager.setBackgroundColor(ngn.f(this.mPageModel.backgroundColor));
             }
             Iterator<PageModel> it = this.mPageModel.frames.iterator();
             while (it.hasNext()) {
                 PageModel next = it.next();
-                if (TextUtils.isEmpty(next.backgroundColor)) {
+                if (StringUtils.isEmpty(next.backgroundColor)) {
                     next.backgroundColor = this.mPageModel.backgroundColor;
                 }
             }
@@ -240,7 +240,7 @@ public class ViewPagerFragment extends AbstractPageFragment implements c, d {
                         PageModel pageModel3 = ViewPagerFragment.access$200(ViewPagerFragment.this).frames.get(i);
                         AppController appController2 = ViewPagerFragment.this.getAppController();
                         if (pageModel3 != null && appController2 != null) {
-                            if (!TextUtils.isEmpty(pageModel3._type) && pageModel3._type.contains("_video") && ViewPagerFragment.this.enableTabBarControl() && appController2.v() != null) {
+                            if (!StringUtils.isEmpty(pageModel3._type) && pageModel3._type.contains("_video") && ViewPagerFragment.this.enableTabBarControl() && appController2.v() != null) {
                                 appController2.v().b(0, 0);
                             }
                             if (appController2.q() != null) {
@@ -314,7 +314,7 @@ public class ViewPagerFragment extends AbstractPageFragment implements c, d {
             }
             this.mViewPager.setCurrentItem(activeIndex, false);
             this.mPageHeaderIndex = activeIndex;
-            if (activeIndex >= 0 && activeIndex < this.mPageModel.frames.size() && (pageModel = this.mPageModel.frames.get(activeIndex)) != null && !TextUtils.isEmpty(pageModel._type) && pageModel._type.contains("_video") && appController != null && appController.v() != null) {
+            if (activeIndex >= 0 && activeIndex < this.mPageModel.frames.size() && (pageModel = this.mPageModel.frames.get(activeIndex)) != null && !StringUtils.isEmpty(pageModel._type) && pageModel._type.contains("_video") && appController != null && appController.v() != null) {
                 appController.v().b(0, 0);
             }
         }
@@ -490,7 +490,7 @@ public class ViewPagerFragment extends AbstractPageFragment implements c, d {
         Iterator<PageModel> it = this.mPageModel.frames.iterator();
         while (it.hasNext()) {
             PageModel next = it.next();
-            if (TextUtils.isEmpty(next.backgroundColor)) {
+            if (StringUtils.isEmpty(next.backgroundColor)) {
                 next.backgroundColor = pageModel.backgroundColor;
             }
         }
@@ -791,7 +791,7 @@ public class ViewPagerFragment extends AbstractPageFragment implements c, d {
         }
         TabHeaderModel pageHeader = this.mPageModel.getPageHeader();
         pageHeader.setSubPage(this.mPageModel.isSubPage());
-        if (TextUtils.isEmpty(pageHeader.html) && TextUtils.isEmpty(pageHeader.getUrl())) {
+        if (StringUtils.isEmpty(pageHeader.html) && StringUtils.isEmpty(pageHeader.getUrl())) {
             return;
         }
         Fragment findFragmentByTag = getChildFragmentManager().findFragmentByTag(PageHeaderFragment.TAG_FRAGMENT);

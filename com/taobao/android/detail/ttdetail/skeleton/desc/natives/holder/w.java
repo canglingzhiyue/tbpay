@@ -3,7 +3,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.FrameLayout;
@@ -224,7 +224,7 @@ public class w extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
     /* renamed from: c  reason: avoid collision after fix types in other method */
     public boolean c2(com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel.w wVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3551e953", new Object[]{this, wVar})).booleanValue() : TextUtils.isEmpty(wVar.f10897a);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3551e953", new Object[]{this, wVar})).booleanValue() : StringUtils.isEmpty(wVar.f10897a);
     }
 
     public boolean d(com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel.w wVar) {
@@ -341,7 +341,7 @@ public class w extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         }
         this.m.setAlpha(1.0f);
         this.m.setBackgroundColor(-1);
-        if (!TextUtils.isEmpty(this.v.f10897a)) {
+        if (!StringUtils.isEmpty(this.v.f10897a)) {
             this.m.setLayoutParams(new FrameLayout.LayoutParams(-1, this.r));
         }
         this.m.setVesselViewCallback(new rgw() { // from class: com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder.w.1
@@ -628,7 +628,7 @@ public class w extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         StringBuilder sb = new StringBuilder(str);

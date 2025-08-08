@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
@@ -329,7 +329,7 @@ public final class PubFavorAction extends com.taobao.themis.kernel.container.ui.
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("57a83e9", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.b)) {
+        } else if (StringUtils.isEmpty(this.b)) {
         } else {
             com.taobao.themis.pub_kit.favor.a.a(this.b, new e());
         }
@@ -408,7 +408,7 @@ public final class PubFavorAction extends com.taobao.themis.kernel.container.ui.
             }
             q.d(context, "context");
             q.d(intent, "intent");
-            if (!TextUtils.equals(intent.getStringExtra("appId"), PubFavorAction.a(PubFavorAction.this)) || PubFavorAction.b(PubFavorAction.this) == (booleanExtra = intent.getBooleanExtra("isFavored", PubFavorAction.b(PubFavorAction.this)))) {
+            if (!StringUtils.equals(intent.getStringExtra("appId"), PubFavorAction.a(PubFavorAction.this)) || PubFavorAction.b(PubFavorAction.this) == (booleanExtra = intent.getBooleanExtra("isFavored", PubFavorAction.b(PubFavorAction.this)))) {
                 return;
             }
             if (booleanExtra) {

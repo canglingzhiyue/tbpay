@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.b;
@@ -47,7 +47,7 @@ public class tjb {
             return;
         }
         String c = keo.c(str);
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             stv.a("DownloadManager", "downloadUrl: can not parse file name, url: " + str);
             return;
         }
@@ -110,13 +110,13 @@ public class tjb {
                 a(b.getString("imgUrl"), 1, booleanValue, arrayList);
                 a(b.getString(d.FIRST_FRAME_IMAGE_URL), 1, booleanValue, arrayList);
                 a(b.getString("videoUrl"), 0, booleanValue, arrayList);
-                if (!TextUtils.isEmpty(b.getString("animationLottie")) && "1".equals(b.getString("animationType"))) {
+                if (!StringUtils.isEmpty(b.getString("animationLottie")) && "1".equals(b.getString("animationType"))) {
                     a(b.getString("animationLottie"), 2, booleanValue, arrayList);
                 }
-                if (!TextUtils.isEmpty(b.getString("gestureImage"))) {
+                if (!StringUtils.isEmpty(b.getString("gestureImage"))) {
                     a(b.getString("gestureImage"), 1, booleanValue, arrayList);
                 }
-                if (!TextUtils.isEmpty(b.getString("interactImage"))) {
+                if (!StringUtils.isEmpty(b.getString("interactImage"))) {
                     a(b.getString("interactImage"), 1, booleanValue, arrayList);
                 }
             }
@@ -135,13 +135,13 @@ public class tjb {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
         BaseMmAdModel b = this.f34142a.d().b();
-        if (!TextUtils.isEmpty(b.animationLottie) && !(z = stu.c(b.animationLottie))) {
+        if (!StringUtils.isEmpty(b.animationLottie) && !(z = stu.c(b.animationLottie))) {
             stv.a("DownloadManager", "isResourceReady: animationLottie not exist, url: " + b.animationLottie);
             return false;
-        } else if (!TextUtils.isEmpty(b.gestureImage) && !(z = srn.a(b.gestureImage))) {
+        } else if (!StringUtils.isEmpty(b.gestureImage) && !(z = srn.a(b.gestureImage))) {
             stv.a("DownloadManager", "isResourceReady: gestureImage not exist, url: " + b.gestureImage);
             return false;
-        } else if (TextUtils.isEmpty(b.interactImage) || (z = srn.a(b.interactImage))) {
+        } else if (StringUtils.isEmpty(b.interactImage) || (z = srn.a(b.interactImage))) {
             return z;
         } else {
             stv.a("DownloadManager", "isResourceReady: interactImage not exist, url: " + b.interactImage);
@@ -153,7 +153,7 @@ public class tjb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c0b30ed4", new Object[]{this, str, new Integer(i), new Boolean(z), list});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             list.add(new sru(str, i, z));
         }

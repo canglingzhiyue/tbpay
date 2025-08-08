@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.taobao.windvane.fragment.WVWebViewFragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import com.ali.user.mobile.base.ui.BaseActivity;
@@ -64,7 +64,7 @@ public class AliUserWebTransparent extends BaseActivity {
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        if (!TextUtils.isEmpty(this.mUrl)) {
+        if (!StringUtils.isEmpty(this.mUrl)) {
             addWebFragment();
         } else {
             finish();

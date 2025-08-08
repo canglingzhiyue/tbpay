@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -247,7 +247,7 @@ public class ebi extends af {
         } else if (xRichTextViewV3 == null) {
         } else {
             xRichTextViewV3.setIcon(null);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             dzv.a(str, xRichTextViewV3.getContext(), new c.a() { // from class: tb.ebi.1
@@ -270,7 +270,7 @@ public class ebi extends af {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1ccae9a6", new Object[]{this, textView, str});
-        } else if (textView != null && (textView instanceof XRichTextViewV3) && !TextUtils.isEmpty(str)) {
+        } else if (textView != null && (textView instanceof XRichTextViewV3) && !StringUtils.isEmpty(str)) {
             XRichTextViewV3 xRichTextViewV3 = (XRichTextViewV3) textView;
             xRichTextViewV3.setSpannableStringBuilder(a(new SpannableStringBuilder(str), "#", "@", xRichTextViewV3.getSpanColorInt()));
         } else {
@@ -282,7 +282,7 @@ public class ebi extends af {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56958b85", new Object[]{this, textView, str});
-        } else if (textView == null || !(textView instanceof XRichTextViewV3) || TextUtils.isEmpty(str)) {
+        } else if (textView == null || !(textView instanceof XRichTextViewV3) || StringUtils.isEmpty(str)) {
         } else {
             ((XRichTextViewV3) textView).setSpanColor(str);
             a(textView, textView.getText().toString());

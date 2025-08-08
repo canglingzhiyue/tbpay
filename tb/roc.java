@@ -3,7 +3,7 @@ package tb;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -162,7 +162,7 @@ public class roc extends rnn {
                 com.uploader.implement.a.a(4, "UploaderAction", this.f33242a + "breakpoint task:{fileId=" + this.t + ", serverRecvOffset=" + this.f + "} task:" + this.m.hashCode());
             }
         }
-        if (TextUtils.isEmpty(this.t)) {
+        if (StringUtils.isEmpty(this.t)) {
             this.t = i();
         }
         Pair<rov, rnp> a2 = rnw.a(this.m);
@@ -174,7 +174,7 @@ public class roc extends rnn {
             this.l.q = i;
             this.l.o = this.r ? 1 : 0;
         }
-        if (this.r && this.s && !TextUtils.isEmpty(str) && !str.equalsIgnoreCase(this.l.h)) {
+        if (this.r && this.s && !StringUtils.isEmpty(str) && !str.equalsIgnoreCase(this.l.h)) {
             if (com.uploader.implement.a.a(16)) {
                 com.uploader.implement.a.a(16, "UploaderAction", this.f33242a + " task md5 has changed, old:" + str + " new:" + this.l.h);
             }
@@ -709,7 +709,7 @@ public class roc extends rnn {
             com.uploader.implement.a.a(2, "UploaderAction", this.f33242a + " retrieveStatus ,response=" + rnsVar);
         }
         String a2 = rnsVar.a("x-arup-session-status");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             return new Pair<>(null, a2);
         }
         return new Pair<>(null, null);
@@ -733,7 +733,7 @@ public class roc extends rnn {
         } catch (Exception unused) {
         }
         String a4 = rnsVar.a("x-arup-server-timestamp");
-        if (!TextUtils.isEmpty(a4)) {
+        if (!StringUtils.isEmpty(a4)) {
             try {
                 this.q.f24068a.a(Long.parseLong(a4));
             } catch (Exception e) {
@@ -795,7 +795,7 @@ public class roc extends rnn {
         }
         long j = -1;
         try {
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 j = Integer.parseInt(a3);
             }
         } catch (Exception e2) {
@@ -846,7 +846,7 @@ public class roc extends rnn {
             return (Pair) ipChange.ipc$dispatch("878e0b54", new Object[]{this, roxVar, rnyVar, rnsVar});
         }
         String a2 = rnsVar.a("x-arup-offset");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return new Pair<>(new rov("200", "7", "onReceiveOffset:1", true), null);
         }
         int indexOf = a2.indexOf("=");

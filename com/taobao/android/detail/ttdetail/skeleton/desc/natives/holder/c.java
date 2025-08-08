@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
@@ -100,7 +100,7 @@ public class c extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
                         ipChange2.ipc$dispatch("4c98ef35", new Object[]{this, mtopResponse});
                     } else if (mtopResponse != null && mtopResponse.isSessionInvalid()) {
                         ao.a(true);
-                    } else if (mtopResponse != null && !TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+                    } else if (mtopResponse != null && !StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                         c.a(c.this, mtopResponse.getRetMsg());
                     } else {
                         c.a(c.this, "领取失败！");
@@ -124,7 +124,7 @@ public class c extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Toast.makeText(this.f10821a, str, 0).show();
         }
@@ -163,17 +163,17 @@ public class c extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         String str2 = cVar.b;
         this.l = cVar.c;
         this.k = cVar.d;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             SpannableString spannableString = new SpannableString("¥" + str);
             spannableString.setSpan(new AbsoluteSizeSpan((int) (this.f10821a.getResources().getDisplayMetrics().density * 18.0f)), 0, 1, 33);
             spannableString.setSpan(new AbsoluteSizeSpan((int) (this.f10821a.getResources().getDisplayMetrics().density * 34.0f)), 1, str.length() + 1, 33);
             spannableString.setSpan(new StyleSpan(1), 1, str.length() + 1, 33);
             this.i.setText(spannableString);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.h.setText(str2);
         }
-        if (!TextUtils.isEmpty(this.k) || !TextUtils.isEmpty(this.l)) {
+        if (!StringUtils.isEmpty(this.k) || !StringUtils.isEmpty(this.l)) {
             this.j.setTextSize(1, 10.0f);
             this.j.setText(this.l);
         }

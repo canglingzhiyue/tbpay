@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.bhxbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -120,7 +120,7 @@ public class BHXCXXActionBridge extends BHXCXXBaseBridge {
         long currentTimeMillis = System.currentTimeMillis();
         if (!g.a(list)) {
             for (BHXVisualCenterItem bHXVisualCenterItem : list) {
-                if (!TextUtils.isEmpty(bHXVisualCenterItem.f12314a)) {
+                if (!StringUtils.isEmpty(bHXVisualCenterItem.f12314a)) {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("bizId", (Object) bHXVisualCenterItem.f12314a);
                     jSONObject.put("position", (Object) Integer.valueOf(bHXVisualCenterItem.b));
@@ -187,10 +187,10 @@ public class BHXCXXActionBridge extends BHXCXXBaseBridge {
             return null;
         }
         if (dro.m()) {
-            if (commitAction.v != null && TextUtils.equals(String.valueOf(commitAction.v.get("BXUTEventType")), "1")) {
+            if (commitAction.v != null && StringUtils.equals(String.valueOf(commitAction.v.get("BXUTEventType")), "1")) {
                 return commitAction;
             }
-        } else if (commitAction.u != null && TextUtils.equals(commitAction.u.get("BXUTEventType"), "1")) {
+        } else if (commitAction.u != null && StringUtils.equals(commitAction.u.get("BXUTEventType"), "1")) {
             return commitAction;
         }
         String a2 = dro.a(str2, str3, str4, view);
@@ -274,7 +274,7 @@ public class BHXCXXActionBridge extends BHXCXXBaseBridge {
             long currentTimeMillis = System.currentTimeMillis();
             for (com.taobao.android.external.e eVar : list) {
                 JSONObject jSONObject2 = new JSONObject();
-                if (!TextUtils.isEmpty(eVar.f12314a) && eVar.e >= 0) {
+                if (!StringUtils.isEmpty(eVar.f12314a) && eVar.e >= 0) {
                     jSONObject2.put("bizId", (Object) eVar.f12314a);
                     if (eVar.d != null) {
                         jSONObject2.put("cardX", (Object) Integer.valueOf((int) eVar.d.f12313a));
@@ -287,13 +287,13 @@ public class BHXCXXActionBridge extends BHXCXXBaseBridge {
                         jSONObject2.put("cardLastPosition", (Object) dsi.a(f + i5, f2 + i6, true));
                     }
                     JSONObject jSONObject3 = new JSONObject();
-                    if (!TextUtils.isEmpty(eVar.f)) {
+                    if (!StringUtils.isEmpty(eVar.f)) {
                         jSONObject3.put(aw.PARAM_PVID, (Object) eVar.f);
                     }
-                    if (!TextUtils.isEmpty(eVar.g)) {
+                    if (!StringUtils.isEmpty(eVar.g)) {
                         jSONObject3.put(aw.PARAM_SEARCH_KEYWORD_RN, (Object) eVar.g);
                     }
-                    if (!TextUtils.isEmpty(eVar.h)) {
+                    if (!StringUtils.isEmpty(eVar.h)) {
                         jSONObject3.put(k.a.PARAM_KEY_FIRST_RN, (Object) eVar.h);
                     }
                     if (jSONObject3.size() > 0) {
@@ -375,7 +375,7 @@ public class BHXCXXActionBridge extends BHXCXXBaseBridge {
             drq.a().a(a3.l, a3);
         }
         String nativeCommitAction = nativeCommitAction(dsj.f26943a, str, str2, str3, str4, str5, str6, str7, a3.l, a3.c(), b, z, i, i2, str8);
-        if (TextUtils.isEmpty(nativeCommitAction)) {
+        if (StringUtils.isEmpty(nativeCommitAction)) {
             a.b.a(true);
             str9 = str2;
             str10 = "exposeStart";

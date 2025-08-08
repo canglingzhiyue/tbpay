@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.constants.Language;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -40,7 +40,7 @@ public class efe {
         }
         try {
             Variation variation = UTABTest.activate(str, str2).getVariation(str3);
-            if (variation != null && TextUtils.equals(variation.getValueAsString("false"), "true")) {
+            if (variation != null && StringUtils.equals(variation.getValueAsString("false"), "true")) {
                 z = true;
             }
             AdapterForTLog.loge(TAG, "getAddressEVOValue component:" + str + " module=" + str2 + " key=" + str3 + " value=" + z);
@@ -63,7 +63,7 @@ public class efe {
                 String queryParameter = data.getQueryParameter("bizIdentity");
                 AdapterForTLog.loge(TAG, "isBizIdentityUseH5Edit bizIdentity:" + queryParameter);
                 for (String str : b("address_h5edit_support_biz", "onehour_timing").split(";")) {
-                    if (TextUtils.equals(str, queryParameter)) {
+                    if (StringUtils.equals(str, queryParameter)) {
                         return true;
                     }
                 }
@@ -84,7 +84,7 @@ public class efe {
             PositionInfo b = b.b(context);
             AdapterForTLog.loge(TAG, "H5EditWhiteList countryCode = " + b.countryCode);
             for (String str : b("address_h5edit_support_oversea_code", "").split(";")) {
-                if (TextUtils.equals(str, b.countryCode)) {
+                if (StringUtils.equals(str, b.countryCode)) {
                     return true;
                 }
             }
@@ -104,7 +104,7 @@ public class efe {
             PositionInfo c = b.c(context);
             AdapterForTLog.loge(TAG, "H5EditBlacklist countryCode = " + c.countryCode);
             for (String str : b("address_h5edit_unsupport_country_code", "").split(";")) {
-                if (TextUtils.equals(str, c.countryCode)) {
+                if (StringUtils.equals(str, c.countryCode)) {
                     return true;
                 }
             }
@@ -141,7 +141,7 @@ public class efe {
         boolean a2 = b.a(positionInfo.editionCode);
         try {
             for (String str : b("address_exclude_oversea_site", "").split(";")) {
-                if (TextUtils.equals(str, positionInfo.countryCode)) {
+                if (StringUtils.equals(str, positionInfo.countryCode)) {
                     return false;
                 }
             }
@@ -259,7 +259,7 @@ public class efe {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cef1bce2", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         if (str.contains("?")) {
@@ -351,7 +351,7 @@ public class efe {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
         try {
-            return !TextUtils.isEmpty(str) ? URLEncoder.encode(new String(str.getBytes(), "UTF-8"), "UTF-8") : "";
+            return !StringUtils.isEmpty(str) ? URLEncoder.encode(new String(str.getBytes(), "UTF-8"), "UTF-8") : "";
         } catch (Exception e) {
             AdapterForTLog.loge(TAG, "urlEncoded error", e);
             return "";
@@ -464,7 +464,7 @@ public class efe {
         try {
             long hashCode = UTDevice.getUtdid(f.a()).hashCode();
             String userId = Login.getUserId();
-            if (!TextUtils.isEmpty(userId)) {
+            if (!StringUtils.isEmpty(userId)) {
                 hashCode = Long.parseLong(userId);
             }
             int a2 = a(str, i);

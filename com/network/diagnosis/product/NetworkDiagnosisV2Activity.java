@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
@@ -354,7 +354,7 @@ public class NetworkDiagnosisV2Activity extends BaseActivity {
         super.onCreate(bundle);
         setContentView(R.layout.network_diagnosis_v2);
         String dataString = getIntent().getDataString();
-        this.K = !TextUtils.isEmpty(dataString) && dataString.contains("diagnosis_page_mode=half");
+        this.K = !StringUtils.isEmpty(dataString) && dataString.contains("diagnosis_page_mode=half");
         this.B = this;
         this.b = (LinearLayout) findViewById(R.id.layout_diagnosis);
         this.I = (ImageButton) findViewById(R.id.nd_close_button_in_check);

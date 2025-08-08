@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.business.mess;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aw;
@@ -83,7 +83,7 @@ public class e implements com.taobao.taolive.sdk.adapter.network.d, b.a, dds {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (this.f == null) {
                 this.f = new c(this);
@@ -245,7 +245,7 @@ public class e implements com.taobao.taolive.sdk.adapter.network.d, b.a, dds {
             return;
         }
         VideoInfo u = poy.u(this.k);
-        if (u == null || u.broadCaster == null || TextUtils.isEmpty(u.topic) || pmd.a().q() == null) {
+        if (u == null || u.broadCaster == null || StringUtils.isEmpty(u.topic) || pmd.a().q() == null) {
             return;
         }
         UserLevelAvatar userLevelAvatar = new UserLevelAvatar();

@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.utils.EncryptUtils;
 import com.taobao.message.kit.util.Env;
@@ -167,7 +167,7 @@ public class omg {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("43881515", new Object[0]);
         }
-        if (!TextUtils.isEmpty(l)) {
+        if (!StringUtils.isEmpty(l)) {
             return "5.0.0";
         }
         try {
@@ -217,7 +217,7 @@ public class omg {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5cf10ef", new Object[0]);
-            } else if (TextUtils.isEmpty(f32175a) || TextUtils.isEmpty(c) || d == null || e == null) {
+            } else if (StringUtils.isEmpty(f32175a) || StringUtils.isEmpty(c) || d == null || e == null) {
                 throw new Error("deviceID | appKey | application | serviceMap not bind");
             } else {
                 MsgLog.c("MsgEnvironment", "init ing");

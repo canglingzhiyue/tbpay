@@ -2,7 +2,7 @@ package com.alipay.android.phone.seauthenticator.iotauth.fingerprint;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.PreDataHelper;
 import com.alipay.security.mobile.auth.Constants;
@@ -55,7 +55,7 @@ public abstract class IBiometricValidateNewDialog extends Dialog implements Auth
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_TITLE);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.fp_auth_start_title);
         }
         updateMsg(clientText, 0, -16777216);
@@ -68,7 +68,7 @@ public abstract class IBiometricValidateNewDialog extends Dialog implements Auth
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_PROCESSING);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.fp_auth_processing);
         }
         updateMsg(clientText, 0, -16777216);
@@ -82,7 +82,7 @@ public abstract class IBiometricValidateNewDialog extends Dialog implements Auth
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_NOT_MATCH);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.fp_auth_not_match);
         }
         updateMsg(clientText, 0, -65536);
@@ -96,7 +96,7 @@ public abstract class IBiometricValidateNewDialog extends Dialog implements Auth
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_OVER_COUNT);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.fp_auth_over_count);
         }
         updateMsg(clientText, 0, -65536);
@@ -120,7 +120,7 @@ public abstract class IBiometricValidateNewDialog extends Dialog implements Auth
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_FAILURE);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.fp_auth_failure);
         }
         updateMsg(clientText, 0, -65536);
@@ -135,7 +135,7 @@ public abstract class IBiometricValidateNewDialog extends Dialog implements Auth
             return;
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_TIMEOUT);
-        if (TextUtils.isEmpty(clientText)) {
+        if (StringUtils.isEmpty(clientText)) {
             clientText = context.getString(R.string.fp_auth_timeout);
         }
         updateMsg(clientText, 0, -65536);

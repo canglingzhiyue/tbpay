@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.newsetting;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,10 +43,10 @@ public class f {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
         String str3 = f18435a.get(str);
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = mxo.a(str);
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             f18435a.put(str, str2);
             mxo.a(str, str2);
         } else {

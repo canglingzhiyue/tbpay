@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.ConditionVariable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.X;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
 import com.alipay.android.phone.seauthenticator.iotauth.face.FaceAnimationManager;
@@ -514,7 +514,7 @@ public class FaceAuthManager {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e91ee3a8", new Object[]{this, context, str, authenticatorMessage, callback, str2})).intValue();
         }
-        if (authenticatorMessage.getType() == 3 && (TextUtils.isEmpty(str) || this.f5159a.getUserStatusWithToken(str) != 2)) {
+        if (authenticatorMessage.getType() == 3 && (StringUtils.isEmpty(str) || this.f5159a.getUserStatusWithToken(str) != 2)) {
             AuthenticatorLOG.faceInfo("token:" + str + ", face not registed");
             AuthenticatorResponse authenticatorResponse = new AuthenticatorResponse(authenticatorMessage.getType(), authenticatorMessage.getVersion(), null);
             authenticatorResponse.setResult(115);
@@ -545,7 +545,7 @@ public class FaceAuthManager {
         }
         try {
             String deviceId = this.f.getDeviceId();
-            if (TextUtils.isEmpty(deviceId)) {
+            if (StringUtils.isEmpty(deviceId)) {
                 deviceId = "null";
             }
             return new BICDataModel(deviceId, Build.MODEL, IFAAFingerprintManagerAdapter.getInstance(context).getDeviceModel(), 0, Constants.TYPE_FACE, 102, this.f5159a.hasEnroll() ? 1 : 0, 1, 0);

@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.analytics.core.config.s;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -209,7 +209,7 @@ public class cfh {
         cfi.d(null, "params", str);
         try {
             String str2 = e(str).get("pageURL");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             UTAnalytics.getInstance().getDefaultTracker().updatePageUrl(context, Uri.parse(str2));
@@ -297,7 +297,7 @@ public class cfh {
             String remove3 = e.remove("arg2");
             String remove4 = e.remove("arg3");
             String remove5 = e.remove("args");
-            if (!TextUtils.isEmpty(remove5)) {
+            if (!StringUtils.isEmpty(remove5)) {
                 hashMap = e(remove5);
             } else {
                 hashMap = new HashMap();

@@ -109,11 +109,11 @@ public abstract class b extends ac {
             com.taobao.avplayer.DWVideoScreenType r0 = com.taobao.avplayer.DWVideoScreenType.PORTRAIT_FULL_SCREEN
             if (r6 == r0) goto L50
             java.lang.String r0 = r5.getJsTemplateUrl()
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L43
             com.taobao.avplayer.core.protocol.DWInteractiveVideoObject r1 = r4.d
             java.lang.String r1 = r1.getJsTemplateUrl(r0)
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 != 0) goto L43
             com.taobao.avplayer.core.protocol.DWInteractiveVideoObject r1 = r4.d
             java.lang.String r0 = r1.getJsTemplateUrl(r0)

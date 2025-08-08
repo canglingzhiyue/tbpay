@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
@@ -262,7 +262,7 @@ public class sox {
                 this.o = aVar;
                 this.e = false;
                 this.b = this.f33784a.getContext();
-                if (TextUtils.equals(this.r, a(aVar))) {
+                if (StringUtils.equals(this.r, a(aVar))) {
                     a(this.b);
                 }
                 List<com.taobao.android.fluid.framework.data.datamodel.a> unmodifiableMediaSetList = ((IDataService) this.f33784a.getService(IDataService.class)).getUnmodifiableMediaSetList();
@@ -491,7 +491,7 @@ public class sox {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         ogg.a("PreLoadManagerNew", "check isVideoCached videoResourceStr=" + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

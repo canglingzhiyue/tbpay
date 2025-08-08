@@ -1,7 +1,7 @@
 package com.taobao.avplayer;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.AVSDKLog;
@@ -303,7 +303,7 @@ public class p implements at, aw {
 
     public p(DWContext dWContext, boolean z) {
         this.f16549a = dWContext;
-        if (!this.f16549a.needAD() && !TextUtils.isEmpty(this.f16549a.getVideoToken())) {
+        if (!this.f16549a.needAD() && !StringUtils.isEmpty(this.f16549a.getVideoToken())) {
             DWContext dWContext2 = this.f16549a;
             this.b = new com.taobao.avplayer.player.c(dWContext2, true, dWContext2.getVideoToken());
         } else {
@@ -382,9 +382,9 @@ public class p implements at, aw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5dd2870", new Object[]{this});
-        } else if ((this.b.f() == 1 || this.b.f() == 2) && TextUtils.isEmpty(this.f16549a.getVideoToken())) {
+        } else if ((this.b.f() == 1 || this.b.f() == 2) && StringUtils.isEmpty(this.f16549a.getVideoToken())) {
         } else {
-            if (!TextUtils.isEmpty(this.f16549a.getVideoToken()) && this.b.f() == 1) {
+            if (!StringUtils.isEmpty(this.f16549a.getVideoToken()) && this.b.f() == 1) {
                 return;
             }
             f();
@@ -395,7 +395,7 @@ public class p implements at, aw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5b2e1ed", new Object[]{this});
-        } else if (this.b.f() == 5 || this.b.f() == 8 || !TextUtils.isEmpty(this.f16549a.getVideoToken())) {
+        } else if (this.b.f() == 5 || this.b.f() == 8 || !StringUtils.isEmpty(this.f16549a.getVideoToken())) {
             this.b.p();
         } else if (this.b.f() == 4 || (this.b.g() && this.b.h() == 4)) {
             if (this.b.g()) {
@@ -440,7 +440,7 @@ public class p implements at, aw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ece2", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             DWContext dWContext = this.f16549a;
             if (dWContext == null) {
                 return;
@@ -486,20 +486,20 @@ public class p implements at, aw {
         sb.append("=");
         sb.append("Android");
         String a2 = com.taobao.taobaoavsdk.util.f.a(this.f16549a.mNetworkUtilsAdapter, this.f16549a.getActivity());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             sb.append("&");
             sb.append("SNet");
             sb.append("=");
             sb.append(a2);
         }
-        if (!TextUtils.isEmpty(this.f16549a.mFrom)) {
+        if (!StringUtils.isEmpty(this.f16549a.mFrom)) {
             sb.append("&");
             sb.append("SBizCode");
             sb.append("=");
             sb.append(this.f16549a.mFrom);
         }
         String a3 = this.f16549a.mConfigParamsAdapter.a(this.f16549a.getActivity());
-        if (this.f16549a.mConfigParamsAdapter != null && !TextUtils.isEmpty(a3)) {
+        if (this.f16549a.mConfigParamsAdapter != null && !StringUtils.isEmpty(a3)) {
             sb.append("&");
             sb.append("SRid");
             sb.append("=");
@@ -767,7 +767,7 @@ public class p implements at, aw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("69459fd", new Object[]{this});
-        } else if (this.b.f() != 3 && ((!TextUtils.isEmpty(this.f16549a.mPlayContext.getVideoUrl()) || !TextUtils.isEmpty(this.f16549a.getVideoToken())) && (!this.b.g() || this.b.h() != 3))) {
+        } else if (this.b.f() != 3 && ((!StringUtils.isEmpty(this.f16549a.mPlayContext.getVideoUrl()) || !StringUtils.isEmpty(this.f16549a.getVideoToken())) && (!this.b.g() || this.b.h() != 3))) {
         } else {
             a aVar = this.j;
             if (aVar != null) {

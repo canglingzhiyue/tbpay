@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -471,7 +471,7 @@ public class TopshowPreviewActivity extends AppCompatActivity {
         tjo.b("Page_Topshow_Preview", 2001, "show", "", "", hashMap);
         this.f.a().g().a((FrameLayout) this.d.findViewById(R.id.iv_bg_view).getParent());
         this.c.setImageUrl(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         this.g = (pbe) AliAdaptServiceManager.getInstance().findAliAdaptService(pbe.class);
@@ -564,7 +564,7 @@ public class TopshowPreviewActivity extends AppCompatActivity {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             b(str, str2);
         } else {
             this.f18114a.a(str2);
@@ -689,7 +689,7 @@ public class TopshowPreviewActivity extends AppCompatActivity {
             return "";
         }
         String queryParameter = getIntent().getData().getQueryParameter("creativeId");
-        return TextUtils.isEmpty(queryParameter) ? "" : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? "" : queryParameter;
     }
 
     private void c() {

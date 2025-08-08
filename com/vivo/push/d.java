@@ -19,7 +19,7 @@ public final class d {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x001b, code lost:
-        if (android.text.TextUtils.isEmpty(r3) == false) goto L10;
+        if (android.text.StringUtils.isEmpty(r3) == false) goto L10;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -38,19 +38,19 @@ public final class d {
             if (r2 == 0) goto L1e
             java.lang.String r3 = "client_pkgname"
             java.lang.String r3 = r2.getString(r3)
-            boolean r4 = android.text.TextUtils.isEmpty(r3)
+            boolean r4 = android.text.StringUtils.isEmpty(r3)
             if (r4 != 0) goto L1e
             goto L1f
         L1e:
             r3 = r1
         L1f:
-            boolean r4 = android.text.TextUtils.isEmpty(r3)
+            boolean r4 = android.text.StringUtils.isEmpty(r3)
             if (r4 == 0) goto L2a
             java.lang.String r4 = "create warning: pkgName is null"
             com.vivo.push.util.u.b(r0, r4)
         L2a:
             java.lang.String r4 = r6.getPackage()
-            boolean r5 = android.text.TextUtils.isEmpty(r4)
+            boolean r5 = android.text.StringUtils.isEmpty(r4)
             if (r5 == 0) goto L4f
             android.content.ComponentName r4 = r6.getComponent()
             if (r4 != 0) goto L3b
@@ -60,7 +60,7 @@ public final class d {
             java.lang.String r1 = r6.getPackageName()
         L43:
             r4 = r1
-            boolean r6 = android.text.TextUtils.isEmpty(r4)
+            boolean r6 = android.text.StringUtils.isEmpty(r4)
             if (r6 == 0) goto L4f
             java.lang.String r6 = "create warning: targetPkgName is null"
             com.vivo.push.util.u.b(r0, r6)

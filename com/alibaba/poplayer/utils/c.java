@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.norm.ILogAdapter;
@@ -175,14 +175,14 @@ public final class c {
             return (String) ipChange.ipc$dispatch("bc28137", new Object[]{str, str2, str3});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str5;
             }
             StringBuilder sb = new StringBuilder();
             sb.append("[PoplayerSDK_");
             sb.append(str);
             sb.append(riy.ARRAY_END_STR);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str4 = str5;
             } else {
                 str4 = "[popId:" + str2 + riy.ARRAY_END_STR;
@@ -197,7 +197,7 @@ public final class c {
             sb2.append("[PoplayerSDK_");
             sb2.append(str);
             sb2.append(riy.ARRAY_END_STR);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str5 = "[popId:" + str2 + riy.ARRAY_END_STR;
             }
             sb2.append(str5);

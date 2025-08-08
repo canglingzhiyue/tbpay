@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.utils;
 
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.StyleSpan;
 import android.view.View;
@@ -48,7 +48,7 @@ public class a {
             return;
         }
         String b = b(priceData);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             this.b.setVisibility(4);
             return;
         }
@@ -66,7 +66,7 @@ public class a {
         } else if (arrayList == null || arrayList.isEmpty()) {
         } else {
             String str = arrayList.get(0).priceText;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.f9545a.setVisibility(4);
                 return;
             }
@@ -123,7 +123,7 @@ public class a {
             return null;
         }
         String str = priceData.priceText;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         int i = -1;

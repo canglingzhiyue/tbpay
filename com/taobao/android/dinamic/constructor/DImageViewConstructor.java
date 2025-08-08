@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -113,11 +113,11 @@ public class DImageViewConstructor extends h {
         String str2 = (String) map.get("dHeight");
         b bVar = new b();
         bVar.d = fpdVar.b();
-        if (TextUtils.equals(str, "match_content") && !TextUtils.equals(str2, "match_content")) {
+        if (StringUtils.equals(str, "match_content") && !StringUtils.equals(str2, "match_content")) {
             bVar.e = "heightLimit";
             b.a(bVar, true);
             imageView.setAdjustViewBounds(true);
-        } else if (!TextUtils.equals(str, "match_content") && TextUtils.equals(str2, "match_content")) {
+        } else if (!StringUtils.equals(str, "match_content") && StringUtils.equals(str2, "match_content")) {
             bVar.e = "widthLimit";
             b.a(bVar, true);
             imageView.setAdjustViewBounds(true);
@@ -161,13 +161,13 @@ public class DImageViewConstructor extends h {
             ipChange.ipc$dispatch("907947cb", new Object[]{this, imageView, str, str2, str3, bVar});
             return;
         }
-        boolean z = !TextUtils.equals(str, "match_content") && TextUtils.equals(str2, "match_content");
-        if (!z && (!TextUtils.equals(str, "match_content") || TextUtils.equals(str2, "match_content"))) {
+        boolean z = !StringUtils.equals(str, "match_content") && StringUtils.equals(str2, "match_content");
+        if (!z && (!StringUtils.equals(str, "match_content") || StringUtils.equals(str2, "match_content"))) {
             return;
         }
         double d = -1.0d;
         try {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 d = Double.valueOf(str3).doubleValue();
             }
         } catch (Throwable unused) {
@@ -289,7 +289,7 @@ public class DImageViewConstructor extends h {
             if (ipChange instanceof IpChange) {
                 return ((Number) ipChange.ipc$dispatch("61b6361d", new Object[]{this, context, str})).intValue();
             }
-            if (context == null || TextUtils.isEmpty(str)) {
+            if (context == null || StringUtils.isEmpty(str)) {
                 return 0;
             }
             try {
@@ -305,7 +305,7 @@ public class DImageViewConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d5760896", new Object[]{this, imageView, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         } else if (IMAGEVIEW_SCALE_TYPE_FIT_XY.equals(str)) {
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);

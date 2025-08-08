@@ -1,6 +1,6 @@
 package com.taobao.android.xsearchplugin.weex.weex;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseSearchResult;
@@ -25,7 +25,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b8e389e4", new Object[]{jSONObject, str, new Integer(i)})).intValue();
         }
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return i;
         }
         try {

@@ -1,6 +1,6 @@
 package com.ali.user.mobile.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.app.dataprovider.IntOrangeResult;
@@ -106,7 +106,7 @@ public class MTOPWrapper {
         try {
             mtopRequestCommitTrack(rpcRequest);
             MtopBuilder mo1339retryTime = Mtop.instance(DataProviderFactory.getApplicationContext()).build(buildMtopRequest(rpcRequest), DataProviderFactory.getDataProvider().getTTID()).mo1305reqMethod(MethodEnum.POST).mo1340setBizId(94).mo1312setConnectionTimeoutMilliSecond(7000).mo1326setSocketTimeoutMilliSecond(7000).mo1339retryTime(1);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 mo1339retryTime.mo1325setReqUserId(str);
             }
             IntOrangeResult mtopTimeOutMilliSecond = DataProviderFactory.getOrangeConfig().getMtopTimeOutMilliSecond();
@@ -182,7 +182,7 @@ public class MTOPWrapper {
             throw new RpcException(403, ResourceUtil.getNetworkError(), mtopResponse.getRetCode());
         }
         if (mtopResponse.isSystemError()) {
-            if (TextUtils.equals(mtopResponse.getRetMsg(), ResourceUtil.getStringById("aliuser_server_error_msg"))) {
+            if (StringUtils.equals(mtopResponse.getRetMsg(), ResourceUtil.getStringById("aliuser_server_error_msg"))) {
                 throw new RpcException(406, mtopResponse.getRetMsg(), mtopResponse.getRetCode());
             }
             throw new RpcException(406, ResourceUtil.getNetworkError(), mtopResponse.getRetCode());
@@ -250,7 +250,7 @@ public class MTOPWrapper {
                 additionalHeaders.put("login_sdk_version", AppInfo.getInstance().getSdkVersion().replace("android_", ""));
             }
             build.mo1297headers(additionalHeaders);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 build.mo1325setReqUserId(str);
             }
             build.mo1305reqMethod(MethodEnum.POST);
@@ -310,7 +310,7 @@ public class MTOPWrapper {
                     } catch (RpcException e) {
                         RpcResponse rpcResponse = new RpcResponse();
                         rpcResponse.code = e.getCode();
-                        if (TextUtils.equals(e.getMsg(), ResourceUtil.getStringById("aliuser_server_error_msg"))) {
+                        if (StringUtils.equals(e.getMsg(), ResourceUtil.getStringById("aliuser_server_error_msg"))) {
                             rpcResponse.message = e.getMsg();
                         } else {
                             rpcResponse.message = ResourceUtil.getNetworkError();
@@ -351,7 +351,7 @@ public class MTOPWrapper {
                     } catch (RpcException e) {
                         RpcResponse rpcResponse = new RpcResponse();
                         rpcResponse.code = e.getCode();
-                        if (TextUtils.equals(e.getMsg(), ResourceUtil.getStringById("aliuser_server_error_msg"))) {
+                        if (StringUtils.equals(e.getMsg(), ResourceUtil.getStringById("aliuser_server_error_msg"))) {
                             rpcResponse.message = e.getMsg();
                         } else {
                             rpcResponse.message = ResourceUtil.getNetworkError();
@@ -458,7 +458,7 @@ public class MTOPWrapper {
         Properties properties = new Properties();
         properties.setProperty("monitor", "T");
         String str = "-100";
-        if (mtopResponse == null || TextUtils.isEmpty(mtopResponse.getRetCode()) || mtopResponse.getRetCode().startsWith("FAIL_SYS") || mtopResponse.getRetCode().startsWith("ANDROID_SYS")) {
+        if (mtopResponse == null || StringUtils.isEmpty(mtopResponse.getRetCode()) || mtopResponse.getRetCode().startsWith("FAIL_SYS") || mtopResponse.getRetCode().startsWith("ANDROID_SYS")) {
             if (mtopResponse != null) {
                 str = mtopResponse.getRetCode();
             }

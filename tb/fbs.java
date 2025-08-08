@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -87,7 +87,7 @@ public class fbs extends c<fcd> implements d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e844ca31", new Object[]{this, fcdVar});
-        } else if (TextUtils.isEmpty(fcdVar.f27786a)) {
+        } else if (StringUtils.isEmpty(fcdVar.f27786a)) {
         } else {
             this.g.c("WeexViewHolder", fcdVar.f27786a, null, JSONObject.toJSONString(fcdVar.b), WXRenderStrategy.APPEND_ASYNC);
         }

@@ -1,7 +1,7 @@
 package com.taobao.avplayer;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.image.ImageStrategyConfig;
@@ -56,7 +56,7 @@ public class q implements com.taobao.avplayer.common.p {
                     }
                     com.taobao.phenix.intf.c cVar = null;
                     imageView2.setImageDrawable(null);
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         return;
                     }
                     String a2 = q.this.a(imageView, str);
@@ -97,7 +97,7 @@ public class q implements com.taobao.avplayer.common.p {
 
     public String a(ImageView imageView, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d8104eb4", new Object[]{this, imageView, str}) : (imageView == null || TextUtils.isEmpty(str)) ? str : b(imageView, str);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d8104eb4", new Object[]{this, imageView, str}) : (imageView == null || StringUtils.isEmpty(str)) ? str : b(imageView, str);
     }
 
     public String b(ImageView imageView, String str) {

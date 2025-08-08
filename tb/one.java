@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.core.model.Ack;
 import com.taobao.tao.messagekit.core.model.BaseMessage;
@@ -46,7 +46,7 @@ public class one implements olv {
             sb.append(riy.PLUS);
             sb.append(i2);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(riy.PLUS);
             sb.append(str);
         }

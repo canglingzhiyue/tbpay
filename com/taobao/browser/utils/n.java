@@ -1,6 +1,6 @@
 package com.taobao.browser.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -20,7 +20,7 @@ public class n implements android.taobao.windvane.webview.k {
             return (String) ipChange.ipc$dispatch("849ca447", new Object[]{this, str});
         }
         try {
-            if (!TextUtils.isEmpty(str) && !str.startsWith("javascript:")) {
+            if (!StringUtils.isEmpty(str) && !str.startsWith("javascript:")) {
                 return str.replaceAll("^((?i)https:)?//", com.taobao.search.common.util.k.HTTP_PREFIX);
             }
             return str;

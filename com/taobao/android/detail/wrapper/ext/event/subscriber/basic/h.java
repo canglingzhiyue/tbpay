@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.event.subscriber.basic;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -65,7 +65,7 @@ public class h implements j<fcs> {
             return null;
         }
         String string = jSONObject.getString("url");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("queryParams");
@@ -108,12 +108,12 @@ public class h implements j<fcs> {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
         String b = b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             str = b;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             return "";
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         String str3 = str + "&currentAddress=" + str2;

@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.rpc.protocol.json;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.rpc.protocol.Serializer;
 import com.alipay.mobile.common.rpc.transport.InnerRpcInvokeContext;
 import com.alipay.mobile.common.transport.utils.MiscUtils;
@@ -71,7 +71,7 @@ public class SignJsonSerializer implements Serializer {
         }
         this.e = RpcSignUtil.signature(this.b, this.d, this.c, sb.deleteCharAt(sb.length() - 1).toString(), MiscUtils.isAlipayGW(this.f.gwUrl));
         RpcSignUtil.SignData signData = this.e;
-        if (signData == null || TextUtils.isEmpty(signData.sign)) {
+        if (signData == null || StringUtils.isEmpty(signData.sign)) {
             return;
         }
         list.add(new BasicNameValuePair("sign", this.e.sign));

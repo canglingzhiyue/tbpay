@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -94,7 +94,7 @@ public class oos implements gke {
             return remove;
         }
         String string = jSONObject.getString("sectionBizCode");
-        return (TextUtils.isEmpty(string) || (a2 = opb.a(string, list)) == -1) ? remove : list.remove(a2) != null;
+        return (StringUtils.isEmpty(string) || (a2 = opb.a(string, list)) == -1) ? remove : list.remove(a2) != null;
     }
 
     private void a(gkc gkcVar, AwesomeGetContainerData awesomeGetContainerData) {

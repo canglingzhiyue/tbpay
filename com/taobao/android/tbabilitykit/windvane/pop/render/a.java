@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -66,7 +66,7 @@ public class a<PARAMS extends c, CONTEXT extends dlr> extends ActivityLifeCycleC
             return;
         }
         this.b = context;
-        if (this.f8938a == null || TextUtils.isEmpty(this.f8938a.c)) {
+        if (this.f8938a == null || StringUtils.isEmpty(this.f8938a.c)) {
             dVar.a(new dkv(10015, "WindVane url is empty"), null);
             return;
         }

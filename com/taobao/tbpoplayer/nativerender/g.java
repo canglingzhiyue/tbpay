@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tbpoplayer.nativerender.dsl.EventActionModel;
@@ -29,7 +29,7 @@ public class g {
                 String string = jSONObject.getString("sourceName");
                 String string2 = jSONObject.getString("event");
                 JSONObject jSONObject2 = jSONObject.getJSONObject("content");
-                if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && jSONObject2 != null) {
+                if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && jSONObject2 != null) {
                     EventActionModel eventActionModel = null;
                     EventModel eventModel2 = stateBaseModel.event;
                     if (eventModel2 != null && eventModel2.isValid()) {

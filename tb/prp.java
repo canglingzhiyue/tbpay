@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -18,7 +18,7 @@ public class prp {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("f7f4ba2", new Object[]{str, view});
         }
-        if (TextUtils.isEmpty(str) || view == null) {
+        if (StringUtils.isEmpty(str) || view == null) {
             return null;
         }
         if (str.equals(view.getTag())) {
@@ -36,7 +36,7 @@ public class prp {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("f7794073", new Object[]{str, viewGroup});
         }
-        if (!TextUtils.isEmpty(str) && viewGroup != null) {
+        if (!StringUtils.isEmpty(str) && viewGroup != null) {
             int childCount = viewGroup.getChildCount();
             for (int i = 0; i < childCount; i++) {
                 View childAt = viewGroup.getChildAt(i);

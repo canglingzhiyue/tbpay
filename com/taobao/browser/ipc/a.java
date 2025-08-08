@@ -1,7 +1,7 @@
 package com.taobao.browser.ipc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.TaoApplication;
 import tb.kge;
@@ -26,7 +26,7 @@ public class a {
         } else {
             if (f16783a == null) {
                 String processName = TaoApplication.getProcessName(context);
-                if (context != null && TextUtils.equals(processName, context.getPackageName())) {
+                if (context != null && StringUtils.equals(processName, context.getPackageName())) {
                     z = true;
                 }
                 f16783a = Boolean.valueOf(z);

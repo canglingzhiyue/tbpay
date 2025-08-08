@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.trigger;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -217,7 +217,7 @@ public class BaseConfigItem implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("eda79aaf", new Object[]{str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return Long.MAX_VALUE;
         }
         try {
@@ -241,7 +241,7 @@ public class BaseConfigItem implements Serializable {
             return ((Boolean) ipChange.ipc$dispatch("332f5674", new Object[0])).booleanValue();
         }
         String timeZoneFromGMT = PopLayer.getReference().getTimeZoneFromGMT();
-        return TextUtils.isEmpty(timeZoneFromGMT) || timeZoneFromGMT.equals(sTimeZoneId);
+        return StringUtils.isEmpty(timeZoneFromGMT) || timeZoneFromGMT.equals(sTimeZoneId);
     }
 
     private static void updateTimeZone() {
@@ -252,7 +252,7 @@ public class BaseConfigItem implements Serializable {
         }
         try {
             String timeZoneFromGMT = PopLayer.getReference().getTimeZoneFromGMT();
-            if (TextUtils.isEmpty(timeZoneFromGMT)) {
+            if (StringUtils.isEmpty(timeZoneFromGMT)) {
                 return;
             }
             sFormat.setTimeZone(TimeZone.getTimeZone(timeZoneFromGMT));
@@ -269,7 +269,7 @@ public class BaseConfigItem implements Serializable {
             return;
         }
         try {
-            if (this.disableDeviceArray == null && !TextUtils.isEmpty(this.disableDevice)) {
+            if (this.disableDeviceArray == null && !StringUtils.isEmpty(this.disableDevice)) {
                 List parseArray = JSONObject.parseArray(this.disableDevice, String.class);
                 this.disableDeviceArray = (String[]) parseArray.toArray(new String[parseArray.size()]);
             }
@@ -277,14 +277,14 @@ public class BaseConfigItem implements Serializable {
             com.alibaba.poplayer.utils.c.a("BaseConfigItem.parseDisableDevice.error.", th);
         }
         try {
-            if (this.protocolCheckInfo == null && !TextUtils.isEmpty(this.protocolCheck)) {
+            if (this.protocolCheckInfo == null && !StringUtils.isEmpty(this.protocolCheck)) {
                 this.protocolCheckInfo = (ProtocolCheck) JSON.parseObject(this.protocolCheck, ProtocolCheck.class);
             }
         } catch (Throwable unused) {
             com.alibaba.poplayer.utils.c.a("BaseConfigItem.parseProtocolCheck.error:currentIndexId:" + this.indexID);
         }
         try {
-            if (this.disableTimeConfigs == null && !TextUtils.isEmpty(this.disableTime)) {
+            if (this.disableTimeConfigs == null && !StringUtils.isEmpty(this.disableTime)) {
                 List parseArray2 = JSONObject.parseArray(this.disableTime, DisableTimeParam.class);
                 this.disableTimeConfigs = (DisableTimeParam[]) parseArray2.toArray(new DisableTimeParam[parseArray2.size()]);
                 for (DisableTimeParam disableTimeParam : this.disableTimeConfigs) {
@@ -295,28 +295,28 @@ public class BaseConfigItem implements Serializable {
             com.alibaba.poplayer.utils.c.a("BaseConfigItem.parseDisableTimeParams.error:currentIndexId:" + this.indexID);
         }
         try {
-            if (this.freqConfigs == null && !TextUtils.isEmpty(this.freq)) {
+            if (this.freqConfigs == null && !StringUtils.isEmpty(this.freq)) {
                 this.freqConfigs = (FrequencyConfigInfo) JSON.parseObject(this.freq, FrequencyConfigInfo.class);
             }
         } catch (Throwable unused3) {
             com.alibaba.poplayer.utils.c.a("BaseConfigItem.parseFreq.error:currentIndexId:" + this.indexID);
         }
         try {
-            if (this.keepConfigs == null && !TextUtils.isEmpty(this.keep)) {
+            if (this.keepConfigs == null && !StringUtils.isEmpty(this.keep)) {
                 this.keepConfigs = (KeepModel) JSON.parseObject(this.keep, KeepModel.class);
             }
         } catch (Throwable unused4) {
             com.alibaba.poplayer.utils.c.a("BaseConfigItem.parseKeep.error:currentIndexId:" + this.indexID);
         }
         try {
-            if (this.triggerConfigs == null && !TextUtils.isEmpty(this.trigger)) {
+            if (this.triggerConfigs == null && !StringUtils.isEmpty(this.trigger)) {
                 this.triggerConfigs = (TriggerModel) JSON.parseObject(this.trigger, TriggerModel.class);
             }
         } catch (Throwable unused5) {
             com.alibaba.poplayer.utils.c.a("BaseConfigItem.parseTrigger.error:currentIndexId:" + this.indexID);
         }
         try {
-            if (this.styleConfigs != null || TextUtils.isEmpty(this.style)) {
+            if (this.styleConfigs != null || StringUtils.isEmpty(this.style)) {
                 return;
             }
             this.styleConfigs = (StyleModel) JSON.parseObject(this.style, StyleModel.class);
@@ -340,13 +340,13 @@ public class BaseConfigItem implements Serializable {
         UriModel uriModel = new UriModel();
         uriModel.uris = new ArrayList();
         uriModel.filter = this.paramContains;
-        if (!TextUtils.isEmpty(this.uri)) {
+        if (!StringUtils.isEmpty(this.uri)) {
             uriModel.uris.add(this.uri);
         }
         String[] strArr = this.uris;
         if (strArr != null) {
             for (String str : strArr) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     uriModel.uris.add(str);
                 }
             }
@@ -386,11 +386,11 @@ public class BaseConfigItem implements Serializable {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue();
             }
-            boolean z2 = !TextUtils.isEmpty(this.uri);
+            boolean z2 = !StringUtils.isEmpty(this.uri);
             String[] strArr = this.uris;
             if (strArr != null && strArr.length > 0) {
                 for (String str : strArr) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         z = true;
                         break;
                     }
@@ -462,7 +462,7 @@ public class BaseConfigItem implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8126d80d", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.json)) {
+        if (!StringUtils.isEmpty(this.json)) {
             return this.json;
         }
         return "{appear=" + this.appear + ", startTime='" + this.startTime + "', endTime='" + this.endTime + "', enablePercent=" + this.enablePercent + ", appVersions='" + this.appVersions + "', osVersions='" + this.osVersions + "', disableDevice='" + this.disableDevice + "', protocolCheck='" + this.protocolCheck + "', uuid='" + this.uuid + "', times=" + this.times + ", embed=" + this.embed + ", modalThreshold=" + this.modalThreshold + ", showCloseBtn=" + this.showCloseBtn + ", layerType='" + this.layerType + "', type='" + this.type + "', params='" + this.params + "', priority=" + this.priority + ", enqueue=" + this.enqueue + ", bizType='" + this.bizType + "', forcePopRespectingPriority=" + this.forcePopRespectingPriority + ", allShow=" + this.allShow + ", popPreCheckParams='" + this.popPreCheckParams + "', localCrowd='" + this.localCrowd + "', freq='" + this.freq + "', enableSpecialViewTouchIntercept=" + this.enableSpecialViewTouchIntercept + ", enableFullScreenInImmersive=" + this.enableFullScreenInImmersive + ", debugInfo='" + this.debugInfo + "', extra=" + this.extra + '}';

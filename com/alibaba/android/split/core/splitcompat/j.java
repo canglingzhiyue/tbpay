@@ -3,7 +3,7 @@ package com.alibaba.android.split.core.splitcompat;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.alibaba.android.split.SplitFileInfo;
@@ -397,7 +397,7 @@ public class j implements com.alibaba.android.split.i, com.alibaba.android.split
             return ((Boolean) ipChange.ipc$dispatch("a9c1162d", new Object[]{this, str, file})).booleanValue();
         }
         SplitFileInfo a2 = ((s) com.alibaba.android.split.a.a((Class<? extends Object>) s.class, new Object[0])).a(str);
-        return a2 != null && !TextUtils.isEmpty(a2.md5) && a2.md5.equals(bib.a(file));
+        return a2 != null && !StringUtils.isEmpty(a2.md5) && a2.md5.equals(bib.a(file));
     }
 
     private String a(String str, boolean z) {

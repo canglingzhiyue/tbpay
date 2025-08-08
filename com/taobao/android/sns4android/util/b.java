@@ -1,6 +1,6 @@
 package com.taobao.android.sns4android.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.login.LoginFrom;
 import com.ali.user.mobile.model.LoginType;
 import com.ali.user.mobile.model.TokenType;
@@ -21,10 +21,10 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
-        return TextUtils.equals(nyk.KEY_SHARE_CONFIG_WEIXIN, str) ? LoginType.LocalLoginType.LOGIN_TYPE_WEIXIN : TextUtils.equals("qq", str) ? LoginType.LocalLoginType.LOGIN_TYPE_QQ : TextUtils.equals("wangyi_mail", str) ? LoginType.LocalLoginType.LOGIN_TYPE_NETEASE : str.toLowerCase() + TokenType.LOGIN;
+        return StringUtils.equals(nyk.KEY_SHARE_CONFIG_WEIXIN, str) ? LoginType.LocalLoginType.LOGIN_TYPE_WEIXIN : StringUtils.equals("qq", str) ? LoginType.LocalLoginType.LOGIN_TYPE_QQ : StringUtils.equals("wangyi_mail", str) ? LoginType.LocalLoginType.LOGIN_TYPE_NETEASE : str.toLowerCase() + TokenType.LOGIN;
     }
 
     public static void b(String str) {
@@ -50,9 +50,9 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
-        return TextUtils.equals(nyk.KEY_SHARE_CONFIG_WEIXIN, str) ? LoginType.LocalLoginType.LOGIN_TYPE_WEIXIN : TextUtils.equals("qq", str) ? LoginType.LocalLoginType.LOGIN_TYPE_QQ : TextUtils.equals("alipay3", str) ? LoginType.LocalLoginType.LOGIN_TYPE_ALIPAY : str.toLowerCase() + TokenType.LOGIN;
+        return StringUtils.equals(nyk.KEY_SHARE_CONFIG_WEIXIN, str) ? LoginType.LocalLoginType.LOGIN_TYPE_WEIXIN : StringUtils.equals("qq", str) ? LoginType.LocalLoginType.LOGIN_TYPE_QQ : StringUtils.equals("alipay3", str) ? LoginType.LocalLoginType.LOGIN_TYPE_ALIPAY : str.toLowerCase() + TokenType.LOGIN;
     }
 }

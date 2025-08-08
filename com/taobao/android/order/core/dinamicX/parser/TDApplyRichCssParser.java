@@ -2,7 +2,7 @@ package com.taobao.android.order.core.dinamicX.parser;
 
 import android.graphics.Color;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
@@ -85,7 +85,7 @@ public class TDApplyRichCssParser extends fuf {
         }
         List<RichText> list = null;
         String a2 = hzq.a(objArr, 2, new Class[]{String.class, null});
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             throw new RuntimeException(a2);
         }
         String str = (String) objArr[0];
@@ -102,12 +102,12 @@ public class TDApplyRichCssParser extends fuf {
         } catch (Throwable th) {
             iaa.a(dXRuntimeContext.m(), "TDApplyRichCssParser", PARSER_TAG, th.toString(), null);
         }
-        if (TextUtils.isEmpty(str) || list == null || list.size() <= 0) {
+        if (StringUtils.isEmpty(str) || list == null || list.size() <= 0) {
             return str;
         }
         SpannableString spannableString = new SpannableString(str);
         for (RichText richText : list) {
-            if (richText != null && !TextUtils.isEmpty(richText.richStr) && (indexOf = str.indexOf(richText.richStr)) >= 0) {
+            if (richText != null && !StringUtils.isEmpty(richText.richStr) && (indexOf = str.indexOf(richText.richStr)) >= 0) {
                 int length = richText.richStr.length() + indexOf;
                 if (richText.css != null && richText.css.strikeThrough) {
                     spannableString.setSpan(new StrikethroughSpan(), indexOf, length, 33);
@@ -115,7 +115,7 @@ public class TDApplyRichCssParser extends fuf {
                 if (richText.css != null && richText.css.bold) {
                     spannableString.setSpan(new StyleSpan(1), indexOf, length, 33);
                 }
-                if (richText.css != null && !TextUtils.isEmpty(richText.css.color)) {
+                if (richText.css != null && !StringUtils.isEmpty(richText.css.color)) {
                     try {
                         spannableString.setSpan(new ForegroundColorSpan(a(richText.css.color, -16777216)), indexOf, length, 33);
                     } catch (Exception unused) {

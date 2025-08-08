@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -186,7 +186,7 @@ public class tkc {
         layoutParams.gravity = 80;
         tUrlImageView.setLayoutParams(layoutParams);
         String string = jSONObject.getString(e.KEY_BG_IMG);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             tUrlImageView.setImageUrl(string);
         }
         return tUrlImageView;
@@ -202,7 +202,7 @@ public class tkc {
         layoutParams.gravity = 48;
         tUrlImageView.setLayoutParams(layoutParams);
         String string = jSONObject.getString(b.ARROW_IMG);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             tUrlImageView.setImageUrl(string);
         }
         return tUrlImageView;
@@ -215,8 +215,8 @@ public class tkc {
         }
         TextView textView = new TextView(context);
         textView.setText(jSONObject.getString("text"));
-        textView.setTextSize(TextUtils.isEmpty(jSONObject.getString("textSize")) ? 14.0f : Integer.parseInt(jSONObject.getString("textSize")));
-        textView.setTextColor(Color.parseColor(TextUtils.isEmpty(jSONObject.getString("textColor")) ? "#FFFFFF" : jSONObject.getString("textColor")));
+        textView.setTextSize(StringUtils.isEmpty(jSONObject.getString("textSize")) ? 14.0f : Integer.parseInt(jSONObject.getString("textSize")));
+        textView.setTextColor(Color.parseColor(StringUtils.isEmpty(jSONObject.getString("textColor")) ? "#FFFFFF" : jSONObject.getString("textColor")));
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -2);
         layoutParams.gravity = 16;
         layoutParams.leftMargin = gbg.b(context, 16.0f);
@@ -237,7 +237,7 @@ public class tkc {
         layoutParams.rightMargin = gbg.b(context, 16.0f);
         TUrlImageView tUrlImageView = new TUrlImageView(context);
         tUrlImageView.setLayoutParams(layoutParams);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             tUrlImageView.setImageUrl(string);
         }
         return tUrlImageView;

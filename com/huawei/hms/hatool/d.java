@@ -2,13 +2,13 @@ package com.huawei.hms.hatool;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Map;
 
 /* loaded from: classes4.dex */
 public class d {
     public static long a(Context context, String str, String str2, long j) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             v.f("hmsSdk", "context is null or spName empty or spkey is empty");
             return j;
         }
@@ -17,7 +17,7 @@ public class d {
     }
 
     public static String a(Context context, String str, String str2, String str3) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             v.f("hmsSdk", "context is null or spName empty or spkey is empty");
             return str3;
         }
@@ -30,7 +30,7 @@ public class d {
     }
 
     public static void a(Context context, String str, String... strArr) {
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             v.f("hmsSdk", "clearData(): parameter error.context,spname");
         } else if (strArr == null) {
             v.f("hmsSdk", "clearData(): No data need to be deleted,keys is null");
@@ -59,7 +59,7 @@ public class d {
     }
 
     public static void b(Context context, String str, String str2, long j) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             v.f("hmsSdk", "context is null or spName empty or spkey is empty");
             return;
         }
@@ -73,7 +73,7 @@ public class d {
     }
 
     public static void b(Context context, String str, String str2, String str3) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             v.e("hmsSdk", "context is null or spName empty or spkey is empty");
             return;
         }
@@ -89,7 +89,7 @@ public class d {
     public static String c(Context context, String str) {
         String packageName = context.getPackageName();
         String n = a1.n("_hms_config_tag", "oper");
-        if (TextUtils.isEmpty(n)) {
+        if (StringUtils.isEmpty(n)) {
             return "hms_" + str + "_" + packageName;
         }
         return "hms_" + str + "_" + packageName + "_" + n;

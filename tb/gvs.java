@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import java.util.Locale;
@@ -35,7 +35,7 @@ public class gvs implements Runnable {
         int a2 = gvk.a(this.d);
         String d = gvk.d(this.d);
         int b = gvk.b(this.d);
-        f28523a = TextUtils.equals(LauncherRuntime.e, sharedPreferences.getString("version", null));
+        f28523a = StringUtils.equals(LauncherRuntime.e, sharedPreferences.getString("version", null));
         sharedPreferences.edit().putString(this.c, String.format(Locale.US, "%s|%d|%s-%s-%d|", this.c, Integer.valueOf(a2), c, d, Integer.valueOf(b))).putString("version", LauncherRuntime.e).commit();
     }
 }

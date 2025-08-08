@@ -1,7 +1,7 @@
 package com.taobao.android.icart.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -120,7 +120,7 @@ public class c extends m {
                 int measuredHeight = childAt.getMeasuredHeight() + childAt.getMarginTop() + childAt.getMarginBottom();
                 int i17 = i5 + i11;
                 if (i17 > size) {
-                    if (!TextUtils.isEmpty(userId)) {
+                    if (!StringUtils.isEmpty(userId)) {
                         Map<String, Integer> map = this.e;
                         str = userId;
                         map.put(str, Integer.valueOf(map.containsKey(str) ? this.e.get(str).intValue() + i9 : 1));
@@ -190,7 +190,7 @@ public class c extends m {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         return !this.f12873a.containsKey(str) || (this.e.containsKey(str) ? this.e.get(str).intValue() : 0) <= this.f12873a.getInteger(str).intValue();

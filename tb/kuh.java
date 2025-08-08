@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class kuh {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b1a285df", new Object[]{this, uri});
-        } else if (TextUtils.isEmpty(this.b)) {
+        } else if (StringUtils.isEmpty(this.b)) {
             a.a("intentProcess", "PageControlParams", "recmdParams is empty");
         } else {
             try {

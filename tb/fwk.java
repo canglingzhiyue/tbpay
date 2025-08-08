@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -66,7 +66,7 @@ public class fwk {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f8092cfb", new Object[]{str, new Long(j), dXTemplateItem});
-        } else if ((!a(str) && !f(str) && !i().containsKey(str)) || !fqi.bl() || TextUtils.isEmpty(str) || dXTemplateItem == null) {
+        } else if ((!a(str) && !f(str) && !i().containsKey(str)) || !fqi.bl() || StringUtils.isEmpty(str) || dXTemplateItem == null) {
         } else {
             try {
                 if (!fwj.a().b(str, dXTemplateItem)) {
@@ -80,7 +80,7 @@ public class fwk {
                 try {
                     Set<Long> a2 = fwj.a().a(str, j, dXTemplateItem.f11925a);
                     if (a2 != null) {
-                        aVar.e = "templateVersions: " + TextUtils.join(",", a2);
+                        aVar.e = "templateVersions: " + StringUtils.join(",", a2);
                     }
                 } catch (Exception e) {
                     aVar.e = "templateVersions: error " + com.taobao.android.dinamicx.exception.a.a(e);
@@ -117,7 +117,7 @@ public class fwk {
                 for (Map.Entry<String, Map<String, a>> entry : b.entrySet()) {
                     String key = entry.getKey();
                     Map<String, a> value = entry.getValue();
-                    if (!TextUtils.isEmpty(key) && value != null && !value.isEmpty()) {
+                    if (!StringUtils.isEmpty(key) && value != null && !value.isEmpty()) {
                         for (a aVar : value.values()) {
                             j += a(key, aVar);
                         }
@@ -228,7 +228,7 @@ public class fwk {
         HashMap hashMap = new HashMap();
         String b = fwn.a().b();
         Map<String, Set<String>> i = i();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return null;
         }
         File file = new File(b);
@@ -257,7 +257,7 @@ public class fwk {
             return (Map) ipChange.ipc$dispatch("b928ffd4", new Object[]{file});
         }
         String name = file.getName();
-        if (TextUtils.isEmpty(name)) {
+        if (StringUtils.isEmpty(name)) {
             return null;
         }
         HashMap hashMap = new HashMap();
@@ -288,7 +288,7 @@ public class fwk {
             return (a) ipChange.ipc$dispatch("2432aa6", new Object[]{str, file});
         }
         String name = file.getName();
-        if (TextUtils.isEmpty(name)) {
+        if (StringUtils.isEmpty(name)) {
             return null;
         }
         Set<String> set = h().get(str);
@@ -540,7 +540,7 @@ public class fwk {
         public a(String str, List<File> list) {
             for (File file : list) {
                 String name = file.getName();
-                if (!TextUtils.isEmpty(name)) {
+                if (!StringUtils.isEmpty(name)) {
                     long d = fqr.d(name);
                     if (d != 0) {
                         DXTemplateItem dXTemplateItem = new DXTemplateItem();
@@ -626,7 +626,7 @@ public class fwk {
                     hashMap.put("remainCount", String.valueOf(3));
                     hashMap.put(fwk.CONFIG_KEY_DELETE_INTERVAL, String.valueOf(fwk.f()));
                     String b = fwn.a().b();
-                    if (TextUtils.isEmpty(b)) {
+                    if (StringUtils.isEmpty(b)) {
                         return;
                     }
                     File file = new File(b);

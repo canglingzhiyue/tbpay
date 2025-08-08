@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.share.sdk.openapi.APAPIFactory;
 import com.alipay.share.sdk.openapi.APImageObject;
@@ -40,7 +40,7 @@ public class ShareAlipayController {
             synchronized (this) {
                 if (!this.inited) {
                     try {
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             str = APPID;
                         }
                         this.alipayApi = APAPIFactory.createZFBApi(context, str, false);
@@ -98,17 +98,17 @@ public class ShareAlipayController {
                 aPMediaMessage.mediaObject = aPTaobaoGoodsObject;
                 aPMediaMessage.title = shareData.getText();
                 String imageUrl = shareData.getImageUrl();
-                if (TextUtils.isEmpty(imageUrl)) {
+                if (StringUtils.isEmpty(imageUrl)) {
                     imageUrl = shareData.getImagePath();
                 }
-                if (!TextUtils.isEmpty(imageUrl)) {
+                if (!StringUtils.isEmpty(imageUrl)) {
                     aPMediaMessage.thumbUrl = imageUrl;
                 }
                 aPMediaMessage.description = shareData.getText();
             } else {
                 if (shareData.getType() != ShareData.MessageType.TEXT) {
                     if (shareData.getType() == ShareData.MessageType.IMAGE) {
-                        if (!TextUtils.isEmpty(shareData.getImagePath()) && (imageFromPath = ShareUtils.imageFromPath(shareData.getImagePath())) != null) {
+                        if (!StringUtils.isEmpty(shareData.getImagePath()) && (imageFromPath = ShareUtils.imageFromPath(shareData.getImagePath())) != null) {
                             aPMediaMessage.mediaObject = new APImageObject(ShareUtils.imageZoom(imageFromPath, 2048.0d));
                         }
                     } else {
@@ -121,7 +121,7 @@ public class ShareAlipayController {
                 aPMediaMessage.title = shareData.getTitle();
                 aPMediaMessage.description = shareData.getText();
             }
-            if (!TextUtils.isEmpty(shareData.getBizType())) {
+            if (!StringUtils.isEmpty(shareData.getBizType())) {
                 aPMediaMessage.bizType = shareData.getBizType();
             }
             SendMessageToZFB.Req req = new SendMessageToZFB.Req();

@@ -1,6 +1,6 @@
 package com.taobao.taobaoavsdk.Tracer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.Tracer.BaseAnalysis;
 import com.taobao.taobaoavsdk.util.f;
@@ -102,7 +102,7 @@ public class b {
         } else if (baseAnalysis == null) {
         } else {
             baseAnalysis.b(str);
-            if (!TextUtils.equals(str, "VIDEO_STALL")) {
+            if (!StringUtils.equals(str, "VIDEO_STALL")) {
                 return;
             }
             int c = f.c();
@@ -151,7 +151,7 @@ public class b {
             ipChange.ipc$dispatch("e0145c09", new Object[]{baseAnalysis, str, str2});
         } else if (baseAnalysis == null) {
         } else {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = str + "_" + str2;
             }
             baseAnalysis.d(str);

@@ -1,6 +1,6 @@
 package com.sina.weibo.sdk.net;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -24,7 +24,7 @@ public final class h {
                 sb.append("&");
             }
             String str2 = this.q.get(str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     sb.append(URLEncoder.encode(str, "UTF-8"));
                     sb.append("=");

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.revisionswitch.TBRevisionSwitchManager;
 import com.taobao.android.tbtheme.kit.j;
@@ -35,7 +35,7 @@ public class mxa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f9fef851", new Object[]{str, str2, bool});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             SharedPreferences.Editor edit = Globals.getApplication().getSharedPreferences(str, 0).edit();
             if (bool == null) {

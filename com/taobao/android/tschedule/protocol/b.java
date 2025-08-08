@@ -1,6 +1,6 @@
 package com.taobao.android.tschedule.protocol;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.TScheduleStatusService;
 import com.taobao.android.tscheduleprotocol.MultiProcessScheduleProtocol;
@@ -57,13 +57,13 @@ public class b {
         String str2;
         String str3;
         Object obj = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         RenderScheduleProtocol renderScheduleProtocol = this.c.get(str);
         if (renderScheduleProtocol == null) {
             String str4 = this.f15667a.get(str);
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 return null;
             }
             try {
@@ -106,13 +106,13 @@ public class b {
         String str2;
         String str3;
         Object obj = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         MultiProcessScheduleProtocol multiProcessScheduleProtocol = this.d.get(str);
         if (multiProcessScheduleProtocol == null) {
             String str4 = this.b.get(str);
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 return null;
             }
             try {
@@ -155,7 +155,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.equals(this.f15667a.get(str), str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.equals(this.f15667a.get(str), str2)) {
         } else {
             this.f15667a.put(str, str2);
             this.c.remove(str);
@@ -185,7 +185,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.equals(this.b.get(str), str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.equals(this.b.get(str), str2)) {
         } else {
             this.b.put(str, str2);
             this.d.remove(str);

@@ -11,7 +11,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.IAnalytics;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.MeasureSet;
@@ -986,7 +986,7 @@ public class AnalyticsMgr {
         if (i3 >= 0 && i3 <= 30) {
             i2 = i3;
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return i2;
         }
         try {
@@ -1042,10 +1042,10 @@ public class AnalyticsMgr {
             return;
         }
         p = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             q = null;
             y = null;
-        } else if (!TextUtils.isEmpty(str3) || !str2.equals(q)) {
+        } else if (!StringUtils.isEmpty(str3) || !str2.equals(q)) {
             q = str2;
             y = str3;
         }

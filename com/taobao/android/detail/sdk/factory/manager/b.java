@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.factory.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -167,7 +167,7 @@ public class b extends AbsFactoryManager<ewa> {
         if (componentModel == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(componentModel.filter) && h.a(euz.a(), componentModel.filter, nodeBundle.root)) {
+        if (!StringUtils.isEmpty(componentModel.filter) && h.a(euz.a(), componentModel.filter, nodeBundle.root)) {
             return null;
         }
         for (int size = arrayList.size() - 1; size >= 0; size--) {

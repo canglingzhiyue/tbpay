@@ -1,6 +1,6 @@
 package com.taobao.homepage.pop.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.pop.protocol.model.section.BasePopSectionModel;
@@ -84,7 +84,7 @@ public class f {
         StringBuilder sb = new StringBuilder(600);
         for (String str2 : jSONObject.keySet()) {
             String string = jSONObject.getString(str2);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (string.length() > 2048) {
                     c.a("UserTrackUtils", "toTrackString super_long_args value.length() > 2048 : " + string.length());
                 }
@@ -168,7 +168,7 @@ public class f {
             return (String) ipChange.ipc$dispatch("b9df2bcd", new Object[]{jSONObject, jSONObject2, str});
         }
         String string = jSONObject2 == null ? null : jSONObject2.getString(str);
-        return !TextUtils.isEmpty(string) ? string : jSONObject.getString(str);
+        return !StringUtils.isEmpty(string) ? string : jSONObject.getString(str);
     }
 
     private static JSONObject b(JSONObject jSONObject, JSONObject jSONObject2) {
@@ -209,7 +209,7 @@ public class f {
         try {
             HashMap hashMap = new HashMap();
             hashMap.put("ucpSignal", Boolean.valueOf(z));
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = "";
             }
             hashMap.put("businessId", str3);

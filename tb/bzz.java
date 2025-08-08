@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.track.module.OnePopModule;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
@@ -68,7 +68,7 @@ public class bzz {
                 t.k = true;
                 BaseConfigItem x = dVar.x();
                 Event y = dVar.y();
-                if (!dVar.A() && x != null && TextUtils.isEmpty(x.indexID)) {
+                if (!dVar.A() && x != null && StringUtils.isEmpty(x.indexID)) {
                     c.a(tlogTag, "pageLifeCycle", x.indexID, "MonitorTrackCommon.trackOnePop.indexIdIsEmpty.");
                     return;
                 }
@@ -82,7 +82,7 @@ public class bzz {
             } else if ("true".equals(t.r)) {
                 t.k = true;
                 BaseConfigItem x2 = dVar.x();
-                if (!dVar.A() && x2 != null && TextUtils.isEmpty(x2.indexID)) {
+                if (!dVar.A() && x2 != null && StringUtils.isEmpty(x2.indexID)) {
                     c.a(tlogTag, "pageLifeCycle", x2.indexID, "MonitorTrackCommon.trackOnePop.indexIdIsEmpty.");
                     return;
                 }
@@ -114,7 +114,7 @@ public class bzz {
             OnePopModule t = dVar.t();
             t.k = true;
             BaseConfigItem x = dVar.x();
-            if (!dVar.A() && x != null && TextUtils.isEmpty(x.indexID)) {
+            if (!dVar.A() && x != null && StringUtils.isEmpty(x.indexID)) {
                 c.a(tlogTag, "pageLifeCycle", x.indexID, "MonitorTrackCommon.trackPopProcess.indexIdIsEmpty.");
                 return;
             }
@@ -137,7 +137,7 @@ public class bzz {
             OnePopModule t = dVar.t();
             t.l = true;
             BaseConfigItem x = dVar.x();
-            if (!dVar.A() && x != null && TextUtils.isEmpty(x.indexID)) {
+            if (!dVar.A() && x != null && StringUtils.isEmpty(x.indexID)) {
                 c.a(tlogTag, "pageLifeCycle", x.indexID, "MonitorTrackCommon.trackPopDisplay.indexIdIsEmpty.");
                 return;
             }
@@ -156,7 +156,7 @@ public class bzz {
             OnePopModule t = dVar.t();
             t.k = true;
             BaseConfigItem x = dVar.x();
-            if (x == null || TextUtils.isEmpty(x.indexID)) {
+            if (x == null || StringUtils.isEmpty(x.indexID)) {
                 c.a(tlogTag, "pageLifeCycle", x != null ? x.indexID : "", "MonitorTrackCommon.trackConfigCheckFail.indexIdIsEmpty.");
                 return;
             }
@@ -177,7 +177,7 @@ public class bzz {
                 return;
             }
             BaseConfigItem x = dVar.x();
-            if (TextUtils.isEmpty(x.indexID)) {
+            if (StringUtils.isEmpty(x.indexID)) {
                 c.a(tlogTag, "pageLifeCycle", x.indexID, "MonitorTrackCommon.trackPopError.indexIdIsEmpty.");
                 return;
             }
@@ -222,9 +222,9 @@ public class bzz {
             map.put("popTraceId", onePopModule.j);
             map.put("popTimeStamp", String.valueOf(PopLayer.getReference().getCurrentTimeStamp(false)));
             String str = "none_value";
-            map.put("viewRenderType", !TextUtils.isEmpty(onePopModule.ab) ? onePopModule.ab : str);
-            map.put("gradualExposeABBucketId", !TextUtils.isEmpty(onePopModule.aq) ? onePopModule.aq : str);
-            if (!TextUtils.isEmpty(onePopModule.ap)) {
+            map.put("viewRenderType", !StringUtils.isEmpty(onePopModule.ab) ? onePopModule.ab : str);
+            map.put("gradualExposeABBucketId", !StringUtils.isEmpty(onePopModule.aq) ? onePopModule.aq : str);
+            if (!StringUtils.isEmpty(onePopModule.ap)) {
                 str = onePopModule.ap;
             }
             map.put("nativePopABBucketId", str);
@@ -332,7 +332,7 @@ public class bzz {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         return null;

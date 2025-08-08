@@ -1,6 +1,6 @@
 package com.taobao.android.preload.core.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.preload.core.task.PreloadTaskEntity;
 import com.taobao.android.preload.f;
@@ -49,13 +49,13 @@ public class c {
             while (!this.f14680a.isEmpty() && i3 < i) {
                 PreloadTaskEntity.a pop = this.f14680a.pop();
                 arrayList.add(pop);
-                if (TextUtils.isEmpty(preloadTaskEntity.bizName)) {
+                if (StringUtils.isEmpty(preloadTaskEntity.bizName)) {
                     preloadTaskEntity.bizName = pop.f14676a;
                 }
-                if (TextUtils.isEmpty(preloadTaskEntity.sourceFrom)) {
+                if (StringUtils.isEmpty(preloadTaskEntity.sourceFrom)) {
                     preloadTaskEntity.sourceFrom = pop.b;
                 }
-                if (TextUtils.isEmpty(preloadTaskEntity.pageToken)) {
+                if (StringUtils.isEmpty(preloadTaskEntity.pageToken)) {
                     preloadTaskEntity.pageToken = pop.g;
                 }
                 i3++;

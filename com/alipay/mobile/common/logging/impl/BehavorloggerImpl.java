@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LogDAUTracker;
@@ -183,7 +183,7 @@ public class BehavorloggerImpl implements BehavorLogger {
 
     private static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || str.length() == 1;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || str.length() == 1;
     }
 
     private static void a(Behavor behavor) {
@@ -192,9 +192,9 @@ public class BehavorloggerImpl implements BehavorLogger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("104c0a3f", new Object[]{behavor});
-        } else if (behavor != null && TextUtils.isEmpty(behavor.getAbTestInfo()) && LoggerFactory.getLogContext() != null && (abtestInfoGetter = LoggerFactory.getLogContext().getAbtestInfoGetter()) != null) {
+        } else if (behavor != null && StringUtils.isEmpty(behavor.getAbTestInfo()) && LoggerFactory.getLogContext() != null && (abtestInfoGetter = LoggerFactory.getLogContext().getAbtestInfoGetter()) != null) {
             String seedID = behavor.getSeedID();
-            if (TextUtils.isEmpty(seedID) || !seedID.contains(".")) {
+            if (StringUtils.isEmpty(seedID) || !seedID.contains(".")) {
                 return;
             }
             behavor.setAbTestInfo(abtestInfoGetter.getLogForSpmID(seedID));
@@ -212,7 +212,7 @@ public class BehavorloggerImpl implements BehavorLogger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a96989e3", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             TraceLogger traceLogger = LoggerFactory.getTraceLogger();
             traceLogger.warn("BehavorLogger", "bizType or content is empty : " + str + " + " + str2);
         } else {

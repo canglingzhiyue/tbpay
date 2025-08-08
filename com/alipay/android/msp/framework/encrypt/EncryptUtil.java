@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.encrypt;
 import android.content.Context;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -41,7 +41,7 @@ public class EncryptUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d7a3f211", new Object[]{context});
         }
-        if (TextUtils.isEmpty(f4710a)) {
+        if (StringUtils.isEmpty(f4710a)) {
             String str2 = "";
             try {
                 str2 = context.getApplicationContext().getPackageName();
@@ -50,7 +50,7 @@ public class EncryptUtil {
                 LogUtil.printExceptionStackTrace(th);
                 str = str2;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "unknow";
             }
             f4710a = (str + "0000000000000000000000000000").substring(0, 24);
@@ -92,7 +92,7 @@ public class EncryptUtil {
             return false;
         }
         String string = jSONObject.getString(MspFlybirdDefine.FLYBIRD_TEMPLATE_ID);
-        if (!TextUtils.equals(string, MspFlybirdDefine.FLYBIRD_RESULT_TPL) && !TextUtils.equals(string, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) && !TextUtils.equals(string, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) {
+        if (!StringUtils.equals(string, MspFlybirdDefine.FLYBIRD_RESULT_TPL) && !StringUtils.equals(string, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) && !StringUtils.equals(string, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) {
             LogUtil.record(4, "EncryptUtil:verifyTplData", "return true : degrade or not result  tplId = ".concat(String.valueOf(string)));
             return true;
         }
@@ -150,7 +150,7 @@ public class EncryptUtil {
             JSONObject parseObject = JSON.parseObject(str);
             String string = parseObject.getString("payload");
             String string2 = parseObject.getString("ks");
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                 String[] split = string2.split(":");
                 if (split.length <= 0) {
                     LogUtil.record(8, "EncryptUtil:decCashierObfs", "missing type: " + Arrays.toString(split));
@@ -184,7 +184,7 @@ public class EncryptUtil {
         try {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             LogUtil.record(1, "Utils.doCheck", "content= " + str + " sign=" + str2);
-            if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 PublicKey generatePublic = KeyFactory.getInstance(jhy.KEY_ALGORITHM).generatePublic(new X509EncodedKeySpec(Base64.decode(str3, 2)));
                 Signature signature = Signature.getInstance("SHA1withRSA");
                 signature.initVerify(generatePublic);

@@ -1,6 +1,6 @@
 package com.taobao.message.sp.category;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
 import com.taobao.message.SimpleFrameworkModule;
@@ -52,7 +52,7 @@ public class SimpleCategoryModule {
         ClassPool.instance().put("transformer.message.category.simpleList", SimpleConversationViewTransformer.class, SimpleFrameworkModule.SIMPLE_CLASS_NAMESPACE);
         ClassPool.instance().put("transformer.message.category.updateDownloadProgress", UpdateDownloadProgressTransformer.class, SimpleFrameworkModule.SIMPLE_CLASS_NAMESPACE);
         ClassPool.instance().put("source.message.category.simpleList", SimpleConversationListSource.class, SimpleFrameworkModule.SIMPLE_CLASS_NAMESPACE);
-        if (((ISnapshotCenter) GlobalContainer.getInstance().get(ISnapshotCenter.class, str, "")) != null || ABGlobal.isFeatureOpened(ApplicationUtil.getApplication(), "msgTabSimpleCloseSnapshot") || TextUtils.isEmpty(str)) {
+        if (((ISnapshotCenter) GlobalContainer.getInstance().get(ISnapshotCenter.class, str, "")) != null || ABGlobal.isFeatureOpened(ApplicationUtil.getApplication(), "msgTabSimpleCloseSnapshot") || StringUtils.isEmpty(str)) {
             return;
         }
         SnapshotCenter snapshotCenter = new SnapshotCenter();

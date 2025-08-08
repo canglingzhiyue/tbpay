@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -74,7 +74,7 @@ public class goa {
             jSONObject3.put("bizName", (Object) "cart");
             jSONObject3.put("extInput", (Object) jSONObject);
             String c = bcd.a().c();
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 jSONObject3.put("addressId", (Object) c);
                 this.f28402a.i.add("addressId");
             }
@@ -134,7 +134,7 @@ public class goa {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.f28402a.h)) {
+        if (!StringUtils.isEmpty(this.f28402a.h)) {
             return Boolean.valueOf(this.f28402a.h).booleanValue();
         }
         return "true".equals(OrangeConfig.getInstance().getConfig("cart_switch", "forbidH5", "true"));

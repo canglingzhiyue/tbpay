@@ -1,7 +1,7 @@
 package com.ali.user.open.ucc.biz;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.broadcast.LoginAction;
 import com.ali.user.open.core.context.KernelContext;
@@ -94,7 +94,7 @@ public class UccUnbindPresenter {
                     if (rpcResponse == null) {
                         return;
                     }
-                    if (TextUtils.equals("SUCCESS", rpcResponse.actionType)) {
+                    if (StringUtils.equals("SUCCESS", rpcResponse.actionType)) {
                         ((UccService) AliMemberSDK.getService(UccService.class)).logout(KernelContext.getApplicationContext(), str);
                         try {
                             if ("weibo".equals(str)) {

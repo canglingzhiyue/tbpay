@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.editor.data.base.EditableBean;
@@ -75,8 +75,8 @@ public class Paster extends EditableBean<Paster> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5c0aee41", new Object[]{this, paster})).booleanValue();
         }
-        boolean z = this.transform.isSameAs(paster.transform) && this.startTimeUs == paster.startTimeUs && this.endTimeUs == paster.endTimeUs && TextUtils.equals(this.resPath, paster.resPath) && TextUtils.equals(this.path, paster.path) && this.mute == paster.mute;
-        return this.type == 0 ? z : z && TextUtils.equals(this.text, paster.text) && this.textColor == paster.textColor && this.outlineColor == paster.outlineColor && this.shadowColor == paster.shadowColor && TextUtils.equals(this.textFontPath, paster.textFontPath) && this.pasterChildNodes == paster.pasterChildNodes;
+        boolean z = this.transform.isSameAs(paster.transform) && this.startTimeUs == paster.startTimeUs && this.endTimeUs == paster.endTimeUs && StringUtils.equals(this.resPath, paster.resPath) && StringUtils.equals(this.path, paster.path) && this.mute == paster.mute;
+        return this.type == 0 ? z : z && StringUtils.equals(this.text, paster.text) && this.textColor == paster.textColor && this.outlineColor == paster.outlineColor && this.shadowColor == paster.shadowColor && StringUtils.equals(this.textFontPath, paster.textFontPath) && this.pasterChildNodes == paster.pasterChildNodes;
     }
 
     public static Paster text() {

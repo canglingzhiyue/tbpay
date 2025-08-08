@@ -1,6 +1,6 @@
 package org.android.agoo.honor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.hihonor.push.sdk.HonorMessageService;
 import com.hihonor.push.sdk.d;
@@ -43,7 +43,7 @@ public class HonorPushMessageService extends HonorMessageService {
         }
         try {
             ALog.e(TAG, "honor.onNewToken", "token", str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             NotifManager notifManager = new NotifManager();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.bc;
@@ -96,7 +96,7 @@ public class fzx {
                         ggz.a a2 = ggv.a(acVar, acVar.getDxv4Properties().c().get(10297924263834610L).b());
                         if (a2.f28327a) {
                             acVar.setStringAttribute(10297924263834610L, a2.c.m());
-                            if (!TextUtils.isEmpty(acVar.getUserId())) {
+                            if (!StringUtils.isEmpty(acVar.getUserId())) {
                                 ((DXRecyclerLayout) acVar.getParentWidget()).f().put(acVar.getUserId(), Integer.valueOf(i));
                             }
                         }
@@ -114,7 +114,7 @@ public class fzx {
                     if (a3 instanceof String) {
                         acVar.setStringAttribute(10297924263834610L, String.valueOf(a3));
                     }
-                    if (!TextUtils.isEmpty(acVar.getUserId())) {
+                    if (!StringUtils.isEmpty(acVar.getUserId())) {
                         ((DXRecyclerLayout) acVar.getParentWidget()).f().put(acVar.getUserId(), Integer.valueOf(i));
                     }
                 } catch (Exception unused) {
@@ -131,7 +131,7 @@ public class fzx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bae5ebff", new Object[]{acVar});
-        } else if (!TextUtils.isEmpty(acVar.q())) {
+        } else if (!StringUtils.isEmpty(acVar.q())) {
             acVar.b();
         } else if (acVar.getDataParsersExprNode() == null) {
         } else {
@@ -168,7 +168,7 @@ public class fzx {
             f28243a = new bc();
         }
         f28243a.a((DXWidgetNode) acVar, true);
-        if (TextUtils.isEmpty(acVar.q())) {
+        if (StringUtils.isEmpty(acVar.q())) {
             return;
         }
         acVar.b();
@@ -185,7 +185,7 @@ public class fzx {
         }
         b.f(acVar);
         b.a((DXWidgetNode) acVar, true);
-        if (!TextUtils.isEmpty(acVar.q())) {
+        if (!StringUtils.isEmpty(acVar.q())) {
             throw new RuntimeException("slot 相关的还未处理");
         }
     }

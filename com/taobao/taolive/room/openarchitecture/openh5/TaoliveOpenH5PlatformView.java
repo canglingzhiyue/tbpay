@@ -2,7 +2,7 @@ package com.taobao.taolive.room.openarchitecture.openh5;
 
 import android.content.Context;
 import android.taobao.windvane.embed.BaseEmbedView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class TaoliveOpenH5PlatformView extends BaseEmbedView {
         String str = "generateView:  EmbedViewConfig:" + this.params;
         if (this.params != null && this.params.mObjectParam != null && (this.params.mObjectParam.get("bizCode") instanceof String)) {
             String str2 = (String) this.params.mObjectParam.get("bizCode");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 Object initOpenView = initOpenView(context, str2);
                 if (initOpenView instanceof TBLOpenPlatformView) {
                     return (TBLOpenPlatformView) initOpenView;
@@ -85,7 +85,7 @@ public class TaoliveOpenH5PlatformView extends BaseEmbedView {
             return ipChange.ipc$dispatch("33772326", new Object[]{this, context, str});
         }
         String str2 = "initOpenView bizCode:" + str;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (this.openContext == null) {

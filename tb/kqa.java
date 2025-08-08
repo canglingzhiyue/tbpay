@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.detail.rate.RateFeedsFragment;
 import com.taobao.tao.Globals;
@@ -100,7 +100,7 @@ public final class kqa {
                 return (RateFeedsFragment) fragment;
             }
             q.b(fragment, "fragment");
-            if (TextUtils.equals("DetailCommentFragment", fragment.getTag())) {
+            if (StringUtils.equals("DetailCommentFragment", fragment.getTag())) {
                 FragmentManager childFragmentManager = fragment.getChildFragmentManager();
                 q.b(childFragmentManager, "fragment.childFragmentManager");
                 if (childFragmentManager.getFragments().size() > 0) {

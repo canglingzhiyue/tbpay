@@ -3,7 +3,7 @@ package com.taobao.wireless.link.download;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -33,9 +33,9 @@ public class LinkAppJsBridge extends e {
         }
         rkg.b("link_tag", "LinkAppJsBridge === execute === action:" + str + ", params:" + str2);
         try {
-            if (TextUtils.equals(ACTION_LAUNCH_APP, str)) {
+            if (StringUtils.equals(ACTION_LAUNCH_APP, str)) {
                 String string = new JSONObject(str2).getString("packageName");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     boolean a2 = rke.a(this.mContext, string);
                     if (wVCallBackContext != null) {
                         if (a2) {
@@ -50,12 +50,12 @@ public class LinkAppJsBridge extends e {
                     rVar.a("message", "Please provide the required parameter 'packageName'.");
                     wVCallBackContext.error(rVar);
                 }
-            } else if (TextUtils.equals(ACTION_REQUEST_INSTALL_PERMISSION, str)) {
+            } else if (StringUtils.equals(ACTION_REQUEST_INSTALL_PERMISSION, str)) {
                 rjw.b(this.mContext);
                 if (wVCallBackContext != null) {
                     wVCallBackContext.success();
                 }
-            } else if (TextUtils.equals(ACTION_CHECK_INSTALL_PERMISSION, str)) {
+            } else if (StringUtils.equals(ACTION_CHECK_INSTALL_PERMISSION, str)) {
                 boolean c = rkj.c(this.mContext);
                 if (wVCallBackContext != null) {
                     r rVar2 = new r();

@@ -2,7 +2,7 @@ package com.taobao.android.weex_ability;
 
 import android.app.Application;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.g4;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_ability.page.b;
@@ -106,7 +106,7 @@ public class j {
             } else {
                 config = OrangeConfig.getInstance().getConfig("alimuise", "renderNodeDisable", "");
             }
-            return TextUtils.equals(config, "true");
+            return StringUtils.equals(config, "true");
         } catch (Throwable unused) {
             return false;
         }
@@ -151,7 +151,7 @@ public class j {
         if (a.o(aVar) == null) {
             String h = android.taobao.windvane.config.a.a().h();
             String i = android.taobao.windvane.config.a.a().i();
-            if (!TextUtils.isEmpty(h) && !TextUtils.isEmpty(i)) {
+            if (!StringUtils.isEmpty(h) && !StringUtils.isEmpty(i)) {
                 a.a(aVar, " AliApp(" + h + "/" + i + riy.BRACKET_END_STR);
             }
         }

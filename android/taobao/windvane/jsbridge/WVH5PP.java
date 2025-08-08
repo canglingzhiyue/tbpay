@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.taobao.windvane.extra.performance2.IPerformance;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -139,7 +139,7 @@ public class WVH5PP extends e {
                 Map.Entry<String, Object> next = it.next();
                 if (next != null) {
                     String key = next.getKey();
-                    if (!TextUtils.isEmpty(key) && !"id".equals(key)) {
+                    if (!StringUtils.isEmpty(key) && !"id".equals(key)) {
                         Object value = next.getValue();
                         if ((value instanceof Integer) || (value instanceof Long)) {
                             try {

@@ -57,13 +57,13 @@ public class n {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1819755d", new Object[]{aVar});
         } else if (aVar == null) {
-            an.a("FrameContextUtils", "setCurFrameContext null");
+            an.a("FrameConStringUtils", "setCurFrameContext null");
         } else {
             f21773a = new WeakReference<>(aVar);
             if (aVar.z() != null) {
                 aVar.z().a(aVar.j());
             }
-            an.a("FrameContextUtils", "setCurFrameContext liveContextKey = " + aVar.j());
+            an.a("FrameConStringUtils", "setCurFrameContext liveContextKey = " + aVar.j());
         }
     }
 
@@ -73,18 +73,18 @@ public class n {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
         } else if (str == null) {
             pnj m = pmd.a().m();
-            m.a("FrameContextUtils", "setCurFrameContext clear liveContextKey = " + ((Object) null));
+            m.a("FrameConStringUtils", "setCurFrameContext clear liveContextKey = " + ((Object) null));
         } else {
             WeakReference<com.taobao.alilive.aliliveframework.frame.a> weakReference = f21773a;
             if (weakReference == null) {
-                pmd.a().m().a("FrameContextUtils", "setCurFrameContext clear mCurFrameContextWeakReference == null");
+                pmd.a().m().a("FrameConStringUtils", "setCurFrameContext clear mCurFrameContextWeakReference == null");
             } else if (weakReference.get() == null) {
-                an.a("FrameContextUtils", "setCurFrameContext clear mCurFrameContextWeakReference.get() == null");
+                an.a("FrameConStringUtils", "setCurFrameContext clear mCurFrameContextWeakReference.get() == null");
                 f21773a = null;
             } else if (!str.equals(f21773a.get().j())) {
-                an.a("FrameContextUtils", "setCurFrameContext clear equals liveContextKey = " + str);
+                an.a("FrameConStringUtils", "setCurFrameContext clear equals liveContextKey = " + str);
             } else {
-                an.a("FrameContextUtils", "setCurFrameContext clear success liveContextKey = " + str);
+                an.a("FrameConStringUtils", "setCurFrameContext clear success liveContextKey = " + str);
                 f21773a = null;
             }
         }

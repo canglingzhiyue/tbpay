@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -245,7 +245,7 @@ public final class u extends com.taobao.android.weex_framework.util.o {
         String cn2 = com.taobao.search.common.util.r.cn();
         Uri uri = Uri.parse(str);
         kotlin.jvm.internal.q.a((Object) uri, "uri");
-        return TextUtils.equals(uri.getHost(), cn2);
+        return StringUtils.equals(uri.getHost(), cn2);
     }
 
     private final void g() {

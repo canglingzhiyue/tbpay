@@ -3,7 +3,7 @@ package com.ali.user.mobile.register.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -142,7 +142,7 @@ public class AliUserRegisterChoiceRegionActivity extends BaseActivity implements
         this.mLetterView = (AUBladeView) findViewById(R.id.contacts_letters_list);
         this.mListView = (AUPinnedHeaderListView) findViewById(R.id.register_list);
         if (getSupportActionBar() != null) {
-            if (TextUtils.isEmpty(this.mTitle)) {
+            if (StringUtils.isEmpty(this.mTitle)) {
                 this.mTitle = getResources().getString(R.string.aliuser_choose_region);
             }
             getSupportActionBar().a(this.mTitle);
@@ -266,7 +266,7 @@ public class AliUserRegisterChoiceRegionActivity extends BaseActivity implements
             return;
         }
         if (((MtopCountryCodeContextResult) mtopRegisterInitcontextResponseData.returnValue).countrycodes != null) {
-            if (TextUtils.isEmpty(this.mHotCountryTitle)) {
+            if (StringUtils.isEmpty(this.mHotCountryTitle)) {
                 this.mHotCountryTitle = getResources().getString(R.string.aliuser_common_region);
             }
             this.mList = CountryCodeUtil.fillData(this.mHotCountryTitle, ((MtopCountryCodeContextResult) mtopRegisterInitcontextResponseData.returnValue).countrycodes, this.mLetterMap, this.mLetterList);
@@ -274,7 +274,7 @@ public class AliUserRegisterChoiceRegionActivity extends BaseActivity implements
                 setupAdapter();
                 return;
             }
-            if (TextUtils.isEmpty(this.mErrorMessage)) {
+            if (StringUtils.isEmpty(this.mErrorMessage)) {
                 this.mErrorMessage = getResources().getString(R.string.aliuser_network_error);
             }
             toast(this.mErrorMessage, 3000);

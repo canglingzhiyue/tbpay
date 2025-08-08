@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -120,7 +120,7 @@ public class RIconTextView extends TextView {
         int i3 = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bd69fddb", new Object[]{this, canvas});
-        } else if (TextUtils.isEmpty(getText())) {
+        } else if (StringUtils.isEmpty(getText())) {
         } else {
             this.ascent = (int) this.textPaint.ascent();
             CharSequence text = getText();

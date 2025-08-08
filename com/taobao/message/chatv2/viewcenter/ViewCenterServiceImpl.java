@@ -2,7 +2,7 @@ package com.taobao.message.chatv2.viewcenter;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -130,7 +130,7 @@ public class ViewCenterServiceImpl implements IViewCenterService {
         this.eventService = eventServiceImpl;
         this.IS_DEVICE_LEVEL_2 = c.a().a("deviceLevel", -1) != 2 ? false : z;
         String value = ConfigUtil.getValue("tb_message_bubble_stable_probe", "message_bubble_analysis_interval_timeV2", "2000");
-        if (TextUtils.isDigitsOnly(value)) {
+        if (StringUtils.isDigitsOnly(value)) {
             this.delayMonitorTime = Integer.parseInt(value);
         }
     }
@@ -153,7 +153,7 @@ public class ViewCenterServiceImpl implements IViewCenterService {
         }
         this.IS_DEVICE_LEVEL_2 = c.a().a("deviceLevel", -1) != 2 ? false : z;
         String value = ConfigUtil.getValue("tb_message_bubble_stable_probe", "message_bubble_analysis_interval_timeV2", "2000");
-        if (TextUtils.isDigitsOnly(value)) {
+        if (StringUtils.isDigitsOnly(value)) {
             this.delayMonitorTime = Integer.parseInt(value);
         }
     }
@@ -202,7 +202,7 @@ public class ViewCenterServiceImpl implements IViewCenterService {
             return (WidgetInterface) ipChange.ipc$dispatch("5d31bd90", new Object[]{this, layoutInfo});
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (layoutInfo != null && layoutInfo.renderTemplate == null && TextUtils.isDigitsOnly(layoutInfo.layoutId)) {
+        if (layoutInfo != null && layoutInfo.renderTemplate == null && StringUtils.isDigitsOnly(layoutInfo.layoutId)) {
             layoutInfo = this.templateService.getLayoutInfo(Integer.parseInt(layoutInfo.layoutId), null);
         }
         final WidgetInterface createWidget = this.renderService.createWidget(this.context, this.props.identifier, layoutInfo);
@@ -313,12 +313,12 @@ public class ViewCenterServiceImpl implements IViewCenterService {
                                 JSONObject jSONObject2 = new JSONObject();
                                 jSONObject2.putAll((Map) action.getContext().get("originData"));
                                 jSONObject2.putAll((Map) action.getData());
-                                if (TextUtils.isEmpty(string)) {
+                                if (StringUtils.isEmpty(string)) {
                                     TLog.loge("viewcenter", "refresh view with uniqueKey empty");
                                     return;
                                 }
                                 ViewCenterServiceImpl.access$200(ViewCenterServiceImpl.this).put(string, jSONObject2);
-                                if (!TextUtils.equals(string, (String) widgetInterface.getView().getTag(R.id.viewcenterUniqueKey))) {
+                                if (!StringUtils.equals(string, (String) widgetInterface.getView().getTag(R.id.viewcenterUniqueKey))) {
                                     TLog.loge("viewcenter", "refresh view with uniqueKey different");
                                 } else {
                                     ViewCenterServiceImpl.this.renderView(widgetInterface, jSONObject2);

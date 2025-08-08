@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Message;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.bootstrap.tao.h;
 import java.lang.reflect.Field;
@@ -49,7 +49,7 @@ public class xjo {
         if (ipChange instanceof IpChange) {
             return (Field) ipChange.ipc$dispatch("4bb5245c", new Object[]{cls, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

@@ -1,7 +1,7 @@
 package com.alipay.mobile.verifyidentity.engine;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.callback.ModuleListener;
 import com.alipay.mobile.verifyidentity.common.ModuleConstants;
 import com.alipay.mobile.verifyidentity.data.DefaultModuleResult;
@@ -134,13 +134,13 @@ public class ModuleManager {
         String str3 = f5867a;
         VerifyLogCat.d(str3, "finishTask verifyId: " + str + " token: " + str2);
         for (MicroModule microModule : this.c.values()) {
-            if (TextUtils.isEmpty(str)) {
-                if (!TextUtils.isEmpty(str2) && str2.equals(microModule.getToken())) {
+            if (StringUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str2) && str2.equals(microModule.getToken())) {
                     microModule.destroy();
                     String str4 = f5867a;
                     VerifyLogCat.d(str4, "finishModule microModule by token: " + microModule.getModuleName());
                 }
-            } else if (!TextUtils.isEmpty(str) && str.equals(microModule.getVerifyId())) {
+            } else if (!StringUtils.isEmpty(str) && str.equals(microModule.getVerifyId())) {
                 microModule.destroy();
                 String str5 = f5867a;
                 VerifyLogCat.d(str5, "finishModule microModule by verifyId: " + microModule.getVerifyId());
@@ -167,7 +167,7 @@ public class ModuleManager {
             ipChange.ipc$dispatch("6a4cc4e", new Object[]{this, str, str2, str3, str4, bundle, moduleListener, verifyIdentityTask});
             return;
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             VerifyLogCat.e(f5867a, "token or moduleName should not be empty");
         }
         String str5 = f5867a;
@@ -247,7 +247,7 @@ public class ModuleManager {
             return (ModuleDescription) ipChange.ipc$dispatch("6876ba95", new Object[]{this, str});
         }
         ModuleDescription moduleDescription = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Iterator<ModuleDescription> it = this.d.iterator();

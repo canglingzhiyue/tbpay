@@ -3,7 +3,7 @@ package com.taobao.android.tbabilitykit.weex.pop.render;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -91,7 +91,7 @@ public class b<PARAMS extends com.taobao.android.abilitykit.ability.pop.model.c,
             return;
         }
         this.b = context;
-        if (this.f8938a == null || TextUtils.isEmpty(this.f8938a.c)) {
+        if (this.f8938a == null || StringUtils.isEmpty(this.f8938a.c)) {
             dVar.a(new dkv(10015, "url is empty"), null);
             return;
         }
@@ -142,7 +142,7 @@ public class b<PARAMS extends com.taobao.android.abilitykit.ability.pop.model.c,
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("88f82eeb", new Object[]{this, wXSDKInstance, str, str2});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         if (!str.equals(WXErrorCode.WX_DEGRAD_ERR.getErrorCode()) && !str.equals(WXErrorCode.WX_DEGRAD_ERR_INSTANCE_CREATE_FAILED.getErrorCode()) && !str.equals(WXErrorCode.WX_DEGRAD_ERR_NETWORK_BUNDLE_DOWNLOAD_FAILED.getErrorCode()) && !str.equals(WXErrorCode.WX_DEGRAD_ERR_BUNDLE_CONTENTTYPE_ERROR.getErrorCode()) && !str.equals(WXErrorCode.WX_DEGRAD_ERR_NETWORK_CHECK_CONTENT_LENGTH_FAILED.getErrorCode())) {
                             return;

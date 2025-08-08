@@ -2,7 +2,7 @@ package com.uploader.implement;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.g;
@@ -84,21 +84,21 @@ public class b {
         } else {
             try {
                 String a2 = a("breakpoint_resume_enable_switch", (String) null);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     b = Boolean.valueOf(a2).booleanValue();
                 }
             } catch (Exception unused) {
             }
             try {
                 String a3 = a("single_task_db_enable_switch", (String) null);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     c = Boolean.valueOf(a3).booleanValue();
                 }
             } catch (Exception unused2) {
             }
             try {
                 String a4 = a("quic_enable_switch", (String) null);
-                if (!TextUtils.isEmpty(a4)) {
+                if (!StringUtils.isEmpty(a4)) {
                     boolean booleanValue = Boolean.valueOf(a4).booleanValue();
                     d = booleanValue;
                     b("quic_enable_switch", booleanValue);
@@ -107,14 +107,14 @@ public class b {
             }
             try {
                 String a5 = a("quic_cong_control", (String) null);
-                if (!TextUtils.isEmpty(a5)) {
+                if (!StringUtils.isEmpty(a5)) {
                     e = Integer.valueOf(a5).intValue();
                 }
             } catch (Exception unused4) {
             }
             try {
                 String a6 = a("quic_loss_detect_enable_switch", (String) null);
-                if (!TextUtils.isEmpty(a6)) {
+                if (!StringUtils.isEmpty(a6)) {
                     f = Boolean.valueOf(a6).booleanValue();
                 }
             } catch (Exception unused5) {
@@ -132,7 +132,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 HashMap hashMap = new HashMap();
                 JSONObject jSONObject = new JSONObject(str);
@@ -200,7 +200,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return g.get(str);
         }
         return null;
@@ -234,7 +234,7 @@ public class b {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{str, str2});
         } else if (h == null) {
         } else {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 h.edit().remove(str).apply();
             } else {
                 h.edit().putString(str, str2).apply();

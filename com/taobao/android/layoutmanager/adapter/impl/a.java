@@ -1,7 +1,7 @@
 package com.taobao.android.layoutmanager.adapter.impl;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -89,7 +89,7 @@ public class a implements com.taobao.tao.flexbox.layoutmanager.adapter.interface
                 jSONObject.put("experimentReleaseId", (Object) Long.valueOf(experimentReleaseId));
                 jSONObject.put("experimentBucketId", (Object) Long.valueOf(experimentBucketId));
                 return jSONObject;
-            } else if (variation != null && !TextUtils.isEmpty(variation.getValueAsString(""))) {
+            } else if (variation != null && !StringUtils.isEmpty(variation.getValueAsString(""))) {
                 return variation.getValueAsString("");
             }
         }

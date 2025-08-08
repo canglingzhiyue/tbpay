@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -147,11 +147,11 @@ public class UTClientConfigMgr {
                         }
                         try {
                             String packageName = context.getPackageName();
-                            if (TextUtils.isEmpty(packageName)) {
+                            if (StringUtils.isEmpty(packageName)) {
                                 return;
                             }
                             String str = intent.getPackage();
-                            if (!TextUtils.isEmpty(str) && packageName.equalsIgnoreCase(str)) {
+                            if (!StringUtils.isEmpty(str) && packageName.equalsIgnoreCase(str)) {
                                 UTClientConfigMgr.a(UTClientConfigMgr.this, intent.getStringExtra("key"), intent.getStringExtra("value"));
                             }
                         } catch (Throwable th) {
@@ -170,7 +170,7 @@ public class UTClientConfigMgr {
             return;
         }
         apr.b("UTClientConfigMgr", "dispatchConfig key", str, "value", str2);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.b.put(str, str2);

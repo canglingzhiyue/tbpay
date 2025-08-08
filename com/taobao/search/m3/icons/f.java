@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Shader;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -225,7 +225,7 @@ public final class f extends a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
-        } else if (TextUtils.isEmpty(i().e())) {
+        } else if (StringUtils.isEmpty(i().e())) {
         } else {
             this.f19103a.a(i().b().separatorImg, this.m, IconView.Companion.a());
         }
@@ -249,7 +249,7 @@ public final class f extends a {
             this.v = com.taobao.android.searchbaseframe.util.g.a(i().b().textColor, -16777216);
             this.u = com.taobao.android.searchbaseframe.util.g.a(i().b().prefixColor, -16777216);
             float f3 = 0.0f;
-            this.b = !TextUtils.isEmpty(i().e()) ? i.Companion.a(i().e(), this.e) : 0.0f;
+            this.b = !StringUtils.isEmpty(i().e()) ? i.Companion.a(i().e(), this.e) : 0.0f;
             this.m = (i().b().separatorWidth <= 0 || i().b().separatorHeight <= 0) ? 0 : (int) ((IconView.Companion.a() / i().b().separatorHeight) * i().b().separatorWidth);
             this.i = com.taobao.android.searchbaseframe.util.g.a(i().b().backgroundColor, 0);
             this.f.setColor(this.i);
@@ -276,7 +276,7 @@ public final class f extends a {
                 int i3 = this.m;
                 f3 = (i3 > 0 ? i3 / 2.0f : a.Companion.c()) + c2;
             }
-            if (!TextUtils.isEmpty(i().d())) {
+            if (!StringUtils.isEmpty(i().d())) {
                 this.c = i.Companion.a(i().d(), this.e);
                 f3 += this.c;
                 if (this.n) {

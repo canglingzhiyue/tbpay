@@ -1,6 +1,6 @@
 package com.vivo.push.b;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.UnvarnishedMessage;
 
 /* loaded from: classes9.dex */
@@ -33,7 +33,7 @@ public final class o extends v {
     public final void d(com.vivo.push.d dVar) {
         super.d(dVar);
         String a2 = dVar.a("msg_v1");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.f24163a = new UnvarnishedMessage(a2);
             this.f24163a.setMsgId(f());
         }

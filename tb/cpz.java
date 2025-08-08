@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.c;
 import java.util.ArrayList;
@@ -42,11 +42,11 @@ public class cpz {
         }
         this.f26426a = str;
         this.b = false;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "unknown";
         }
         this.c = str2;
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = "unknown";
         }
         this.d = str3;
@@ -115,8 +115,8 @@ public class cpz {
             return;
         }
         String str = "unknown";
-        map.put("err_type", TextUtils.isEmpty(cpzVar.c) ? str : cpzVar.c);
-        if (!TextUtils.isEmpty(cpzVar.d)) {
+        map.put("err_type", StringUtils.isEmpty(cpzVar.c) ? str : cpzVar.c);
+        if (!StringUtils.isEmpty(cpzVar.d)) {
             str = cpzVar.d;
         }
         map.put("err_msg", str);

@@ -1,7 +1,7 @@
 package com.alipay.android.msp.configservice;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -72,7 +72,7 @@ public class ConfigManger {
         JSONObject buildParams = this.e.buildParams(null);
         JSONObject parseObject = JSONObject.parseObject(this.c.getLastEnvParams());
         boolean z = true;
-        if (buildParams != null && parseObject != null && TextUtils.equals(buildParams.getString(rrv.PRODUCT_ID), parseObject.getString(rrv.PRODUCT_ID)) && TextUtils.equals(buildParams.getString("systemType"), parseObject.getString("systemType")) && TextUtils.equals(buildParams.getString("clientVersion"), parseObject.getString("clientVersion")) && TextUtils.equals(buildParams.getString("mobileBrand"), parseObject.getString("mobileBrand")) && TextUtils.equals(buildParams.getString("mobileModel"), parseObject.getString("mobileModel")) && TextUtils.equals(buildParams.getString("osVersion"), parseObject.getString("osVersion")) && TextUtils.equals(buildParams.getString("romVersion"), parseObject.getString("romVersion")) && TextUtils.equals(buildParams.getString("manufacturer"), parseObject.getString("manufacturer")) && TextUtils.equals(buildParams.getString("appName"), parseObject.getString("appName")) && TextUtils.equals(buildParams.getString("utdid"), parseObject.getString("utdid"))) {
+        if (buildParams != null && parseObject != null && StringUtils.equals(buildParams.getString(rrv.PRODUCT_ID), parseObject.getString(rrv.PRODUCT_ID)) && StringUtils.equals(buildParams.getString("systemType"), parseObject.getString("systemType")) && StringUtils.equals(buildParams.getString("clientVersion"), parseObject.getString("clientVersion")) && StringUtils.equals(buildParams.getString("mobileBrand"), parseObject.getString("mobileBrand")) && StringUtils.equals(buildParams.getString("mobileModel"), parseObject.getString("mobileModel")) && StringUtils.equals(buildParams.getString("osVersion"), parseObject.getString("osVersion")) && StringUtils.equals(buildParams.getString("romVersion"), parseObject.getString("romVersion")) && StringUtils.equals(buildParams.getString("manufacturer"), parseObject.getString("manufacturer")) && StringUtils.equals(buildParams.getString("appName"), parseObject.getString("appName")) && StringUtils.equals(buildParams.getString("utdid"), parseObject.getString("utdid"))) {
             z = false;
         }
         if (z) {
@@ -152,7 +152,7 @@ public class ConfigManger {
                                     ConfigManger.c(ConfigManger.this);
                                 }
                                 ConfigManger.b(ConfigManger.this, fetch.getJSONArray("switches"));
-                            } else if (!TextUtils.isEmpty(fetch.getString("error"))) {
+                            } else if (!StringUtils.isEmpty(fetch.getString("error"))) {
                                 ConfigManger.d(ConfigManger.this);
                             }
                         }

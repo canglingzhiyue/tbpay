@@ -6,7 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 import com.vivo.push.model.NotifyArriveCallbackByUser;
 import java.util.List;
@@ -107,7 +107,7 @@ public final class i extends b {
 
     private int b(Intent intent, String str) {
         String sb;
-        if (intent == null || TextUtils.isEmpty(str)) {
+        if (intent == null || StringUtils.isEmpty(str)) {
             StringBuilder sb2 = new StringBuilder("checkSkipContentPackageFit intent = : ");
             Object obj = intent;
             if (intent == null) {
@@ -120,7 +120,7 @@ public final class i extends b {
         } else {
             try {
                 String packageName = intent.getComponent() != null ? intent.getComponent().getPackageName() : intent.getPackage();
-                if (TextUtils.isEmpty(packageName) || TextUtils.equals(str, packageName)) {
+                if (StringUtils.isEmpty(packageName) || StringUtils.equals(str, packageName)) {
                     return 0;
                 }
                 u.d("AndroidTwelveNotifyClickIntentParam", "activity component error : local pkgName is " + str + "; but remote pkgName is " + packageName);

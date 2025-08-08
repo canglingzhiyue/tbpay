@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alipay.android.msp.drivers.actions.MspEventTypes;
 import com.alipay.android.msp.utils.UserLocation;
@@ -132,21 +132,21 @@ public final class fr {
                 aMapLocation.setAltitude(jSONObject.optDouble("altitude", aMapLocation.getAltitude()));
                 try {
                     String optString = jSONObject.optString(UserLocation.KEY_DOUBLE_ACCURACY);
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         aMapLocation.setAccuracy(Float.parseFloat(optString));
                     }
                 } catch (Throwable unused) {
                 }
                 try {
                     String optString2 = jSONObject.optString("speed");
-                    if (!TextUtils.isEmpty(optString2)) {
+                    if (!StringUtils.isEmpty(optString2)) {
                         aMapLocation.setSpeed(Float.parseFloat(optString2));
                     }
                 } catch (Throwable unused2) {
                 }
                 try {
                     String optString3 = jSONObject.optString("bearing");
-                    if (!TextUtils.isEmpty(optString3)) {
+                    if (!StringUtils.isEmpty(optString3)) {
                         aMapLocation.setBearing(Float.parseFloat(optString3));
                     }
                 } catch (Throwable unused3) {

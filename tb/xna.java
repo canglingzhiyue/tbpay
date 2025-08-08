@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -43,7 +43,7 @@ public class xna extends fuf {
             return true;
         }
         String string = jSONObject.getString(str);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return Boolean.valueOf(a(str, string, jSONObject, a2));
         }
         ldf.d("DXDataParserHIFCanActive", "userId：" + str + ",priority == null");
@@ -120,7 +120,7 @@ public class xna extends fuf {
         } else {
             str = "";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ldf.d("DXDataParserHIFCanActive", "lastTimeMillis == null");
             return true;
         } else if (!b.a(Long.parseLong(str))) {

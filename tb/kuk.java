@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -42,7 +42,7 @@ public class kuk {
         if (ipChange instanceof IpChange) {
             return (kuk) ipChange.ipc$dispatch("953c4d69", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return this;
         }
         this.c.put(str, (Object) str2);
@@ -80,7 +80,7 @@ public class kuk {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f30282f0", new Object[]{llhVar});
-        } else if (llhVar == null || TextUtils.isEmpty(llhVar.f30693a) || TextUtils.isEmpty(llhVar.b)) {
+        } else if (llhVar == null || StringUtils.isEmpty(llhVar.f30693a) || StringUtils.isEmpty(llhVar.b)) {
         } else {
             a(llhVar.b).b(llhVar.f30693a).a(llhVar.a()).b();
         }

@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -83,7 +83,7 @@ public class FeedToastView extends TextView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20d609ce", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             setText(str);
             if (this.mShowAnimation == null) {
@@ -101,7 +101,7 @@ public class FeedToastView extends TextView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f9eba6b6", new Object[]{this, str, new Long(j)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             setText(str);
             if (this.mShowAnimation == null) {

@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.showcase;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.showcase.e;
 import com.taobao.taolive.sdk.model.message.GoodMsgNew;
@@ -26,7 +26,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("12f1daa", new Object[]{this, str, new Integer(i), aVar});
-        } else if (TextUtils.isEmpty(str) || aVar == null || i != 10080 || (goodMsgNew = (GoodMsgNew) pqj.a(str, GoodMsgNew.class)) == null || goodMsgNew.liveItemDO == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null || i != 10080 || (goodMsgNew = (GoodMsgNew) pqj.a(str, GoodMsgNew.class)) == null || goodMsgNew.liveItemDO == null) {
         } else {
             his.a("PreheatMsgParser", "onMessageReceived | messagePreheatAddRemove, itemId=" + goodMsgNew.liveItemDO.itemId);
             aVar.e(goodMsgNew);

@@ -2,7 +2,7 @@ package com.alibaba.mtl.appmonitor.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -168,7 +168,7 @@ public class MeasureSet implements Parcelable {
         int size2 = list.size();
         for (int i = 0; i < size; i++) {
             for (int i2 = 0; i2 < size2; i2++) {
-                if (TextUtils.equals(this.measures.get(i).name, list.get(i2).name)) {
+                if (StringUtils.equals(this.measures.get(i).name, list.get(i2).name)) {
                     this.measures.get(i).setRange(list.get(i2).getMin(), list.get(i2).getMax());
                 }
             }
@@ -178,7 +178,7 @@ public class MeasureSet implements Parcelable {
     public void upateMeasure(Measure measure) {
         int size = this.measures.size();
         for (int i = 0; i < size; i++) {
-            if (TextUtils.equals(this.measures.get(i).name, measure.name)) {
+            if (StringUtils.equals(this.measures.get(i).name, measure.name)) {
                 this.measures.get(i).setRange(measure.getMin(), measure.getMax());
                 this.measures.get(i).setConstantValue(measure.getConstantValue());
             }

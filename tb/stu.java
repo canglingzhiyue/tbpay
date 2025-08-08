@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.k;
 import com.taobao.utils.Global;
@@ -23,7 +23,7 @@ public class stu {
             stv.a(k.TAG, "getUrlLocalPathInBootImage url=" + str);
             String c = keo.c(str);
             stv.a(k.TAG, "getUrlLocalPathInBootImage fileName=" + c);
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 File file = new File(keo.d(tiq.BIZ_CODE), c);
                 if (!file.exists()) {
                     stv.a(k.TAG, "getUrlLocalPathInBootImage file not exist, fileName=" + c);
@@ -44,7 +44,7 @@ public class stu {
         }
         try {
             String c = keo.c(str);
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 return new File(keo.d(tiq.BIZ_CODE), c).exists();
             }
         } catch (Throwable th) {
@@ -62,7 +62,7 @@ public class stu {
             stv.a(k.TAG, "getUrlLocalPath url=" + str);
             String c = keo.c(str);
             stv.a(k.TAG, "getUrlLocalPath fileName=" + c);
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 File file = new File(a(), c);
                 if (!file.exists()) {
                     stv.a(k.TAG, "getUrlLocalPath file not exist, fileName=" + c);

@@ -3,7 +3,7 @@ package com.taobao.pha.core.jsbridge;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.JavascriptInterface;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -62,7 +62,7 @@ public class JSBridge implements Handler.Callback, Serializable {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("10d773bb", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new JSONObject();
         }
         try {
@@ -89,7 +89,7 @@ public class JSBridge implements Handler.Callback, Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2feeb30d", new Object[]{this, str, str2, str3, str4});
-        } else if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             ngr.b(TAG, "module or method is empty, refId = [" + str + riy.ARRAY_END_STR);
             evaluateJavaScriptOnTarget("javascript:typeof __pha_native_to_js__!=='undefined'&&__pha_native_to_js__('" + str + "', 'module or method is empty');");
         } else {
@@ -156,7 +156,7 @@ public class JSBridge implements Handler.Callback, Serializable {
             ngr.b(TAG, "target is disposed.");
         } else if (this.mAppController.o()) {
             ngr.b(TAG, "AppController is disposed.");
-        } else if (TextUtils.isEmpty(cVar.b) || TextUtils.isEmpty(cVar.c)) {
+        } else if (StringUtils.isEmpty(cVar.b) || StringUtils.isEmpty(cVar.c)) {
             if (cVar.f == null) {
                 return;
             }

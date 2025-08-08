@@ -2,7 +2,7 @@ package com.taobao.mmad.biz.interact.controller.interact.view;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -122,10 +122,10 @@ public abstract class BootImageInteractNaitveSlideView extends BootImageInteract
                     this.mSlideAnimView = (TUrlImageView) findViewById(R.id.bootimage_slide_anim_view);
                     this.mSlideActionView = (TextView) findViewById(R.id.bootimage_slide_tips);
                     this.mSlideActionView.setText(getSlideActionText());
-                    if (!TextUtils.isEmpty(bootImageInfo.gestureImage)) {
+                    if (!StringUtils.isEmpty(bootImageInfo.gestureImage)) {
                         this.mGuideImageView = (TUrlImageView) findViewById(R.id.bootimage_interact_guide_img);
                         String a2 = stu.a(bootImageInfo.gestureImage);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             kej.a(TAG, "initGuideLayout guidePath = " + a2);
                             setShowInteractGuideImage("1");
                             loadApngImage(a2, this.mGuideImageView, new a<SuccPhenixEvent>() { // from class: com.taobao.mmad.biz.interact.controller.interact.view.BootImageInteractNaitveSlideView.1
@@ -202,11 +202,11 @@ public abstract class BootImageInteractNaitveSlideView extends BootImageInteract
                 kej.a(TAG, "initCardLayout");
                 this.mInteractCardContainer = (FrameLayout) findViewById(R.id.bootimage_interact_card_container);
                 this.mInteractCardContainer.setVisibility(0);
-                if (!TextUtils.isEmpty(bootImageInfo.interactImage)) {
+                if (!StringUtils.isEmpty(bootImageInfo.interactImage)) {
                     this.mCardImageView = (TUrlImageView) findViewById(R.id.bootimage_interact_card_img);
                     String a2 = stu.a(bootImageInfo.interactImage);
                     kej.a(TAG, "initCardLayout cardPath = " + a2);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         setShowInteractCardImage("1");
                         loadApngImage(a2, this.mCardImageView, new a<SuccPhenixEvent>() { // from class: com.taobao.mmad.biz.interact.controller.interact.view.BootImageInteractNaitveSlideView.3
                             public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -300,7 +300,7 @@ public abstract class BootImageInteractNaitveSlideView extends BootImageInteract
             return;
         }
         try {
-            if (TextUtils.isEmpty(str) || tUrlImageView == null) {
+            if (StringUtils.isEmpty(str) || tUrlImageView == null) {
                 return;
             }
             tUrlImageView.setSkipAutoSize(true);
@@ -319,7 +319,7 @@ public abstract class BootImageInteractNaitveSlideView extends BootImageInteract
 
     public String getSlideActionText() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("2b4056db", new Object[]{this}) : (this.mBootImageInfo == null || TextUtils.isEmpty(this.mBootImageInfo.actionText)) ? "" : this.mBootImageInfo.actionText;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("2b4056db", new Object[]{this}) : (this.mBootImageInfo == null || StringUtils.isEmpty(this.mBootImageInfo.actionText)) ? "" : this.mBootImageInfo.actionText;
     }
 
     @Override // com.taobao.mmad.biz.interact.controller.interact.view.BootImageInteractSlideView, com.taobao.bootimage.interact.view.BootImageInteractBaseView
@@ -386,7 +386,7 @@ public abstract class BootImageInteractNaitveSlideView extends BootImageInteract
                 this.mInteractClickContainer.setVisibility(8);
             }
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             kej.a(TAG, "loadAndShowDefaultSlideView path is null");
             setShowInteractGuideImage("");
             if (this.mInteractClickContainer != null) {

@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.config.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.config.model.trigger.TriggerModel;
 import com.alibaba.poplayer.config.model.trigger.UriModel;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
@@ -80,7 +80,7 @@ public class a {
                 if (triggerModel.pages != null && triggerModel.pages.size() > 0) {
                     for (UriModel uriModel : triggerModel.pages) {
                         for (String str : uriModel.uris) {
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 List<BaseConfigItem> list2 = concurrentMap.get(str);
                                 if (list2 == null) {
                                     list2 = new ArrayList<>();
@@ -104,7 +104,7 @@ public class a {
         ConcurrentMap<String, BaseConfigItem> concurrentMap = this.b;
         concurrentMap.clear();
         for (BaseConfigItem baseConfigItem : list) {
-            if (baseConfigItem != null && !TextUtils.isEmpty(baseConfigItem.indexID)) {
+            if (baseConfigItem != null && !StringUtils.isEmpty(baseConfigItem.indexID)) {
                 concurrentMap.put(baseConfigItem.indexID, baseConfigItem);
             }
         }

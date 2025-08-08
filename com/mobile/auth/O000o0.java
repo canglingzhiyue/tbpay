@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
 
 /* loaded from: classes4.dex */
@@ -13,7 +13,7 @@ class O000o0 {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String O000000o(String str) {
         String O000000o = O0O0o00.O000000o("sso_config_xf", "config_host", (String) null);
-        return TextUtils.isEmpty(O000000o) ? str : O000000o;
+        return StringUtils.isEmpty(O000000o) ? str : O000000o;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -34,7 +34,7 @@ class O000o0 {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String O00000Oo(String str) {
         String O000000o = O0O0o00.O000000o("sso_config_xf", "https_get_phone_scrip_host", (String) null);
-        return TextUtils.isEmpty(O000000o) ? str : O000000o;
+        return StringUtils.isEmpty(O000000o) ? str : O000000o;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -50,7 +50,7 @@ class O000o0 {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String O00000o0(String str) {
         String O000000o = O0O0o00.O000000o("sso_config_xf", LoggingSPCache.STORAGE_LOGHOST, "");
-        return TextUtils.isEmpty(O000000o) ? str : O000000o;
+        return StringUtils.isEmpty(O000000o) ? str : O000000o;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

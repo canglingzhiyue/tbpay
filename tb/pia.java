@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -173,7 +173,7 @@ public class pia extends phx {
                 VideoInfo a2 = k.a(this.f);
                 if (a2 != null) {
                     a2.positionForVideo = "0.2";
-                    if (!TextUtils.isEmpty(a2.positionForVideo)) {
+                    if (!StringUtils.isEmpty(a2.positionForVideo)) {
                         int d2 = (int) (d.d() * v.d(a2.positionForVideo));
                         if (d + d2 + poy.aq(this.i) <= d.d()) {
                             dimensionPixelSize = d2;

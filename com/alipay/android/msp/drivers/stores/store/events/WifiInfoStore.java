@@ -3,7 +3,7 @@ package com.alipay.android.msp.drivers.stores.store.events;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -66,7 +66,7 @@ public class WifiInfoStore extends LocalEventStore {
             }
             for (int i2 = 0; i2 < i; i2++) {
                 ScanResult scanResult = scanResults.get(i2);
-                if (!(connectionInfo != null && !TextUtils.isEmpty(connectionInfo.getBSSID()) && connectionInfo.getBSSID().equals(scanResult.BSSID))) {
+                if (!(connectionInfo != null && !StringUtils.isEmpty(connectionInfo.getBSSID()) && connectionInfo.getBSSID().equals(scanResult.BSSID))) {
                     sb.append("|");
                     sb.append(Base64.encodeToString(scanResult.SSID.getBytes(), 2));
                     sb.append("#");

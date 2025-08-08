@@ -116,7 +116,7 @@ public class a extends u {
             if (r9 == 0) goto L49
             java.lang.String r10 = "iconType"
             java.lang.String r10 = r9.getString(r10)
-            boolean r0 = android.text.TextUtils.isEmpty(r10)
+            boolean r0 = android.text.StringUtils.isEmpty(r10)
             if (r0 != 0) goto L49
             int r10 = java.lang.Integer.parseInt(r10)     // Catch: java.lang.Throwable -> L49
             goto L4a
@@ -164,11 +164,11 @@ public class a extends u {
             r9.b(r10)
         Lac:
             java.lang.String r9 = r0.b
-            boolean r9 = android.text.TextUtils.isEmpty(r9)
+            boolean r9 = android.text.StringUtils.isEmpty(r9)
             if (r9 == 0) goto Lc7
-            boolean r9 = android.text.TextUtils.isEmpty(r5)
+            boolean r9 = android.text.StringUtils.isEmpty(r5)
             if (r9 != 0) goto Lc7
-            boolean r9 = android.text.TextUtils.isEmpty(r6)
+            boolean r9 = android.text.StringUtils.isEmpty(r6)
             if (r9 != 0) goto Lc7
             com.taobao.android.detail.alittdetail.share.b$b r9 = r0.b(r5)
             r9.e(r6)

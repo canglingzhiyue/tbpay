@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.umf.node.service.parse.state.RenderComponent;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -33,7 +33,7 @@ public final class ayd extends asn {
             return false;
         }
         String position = renderComponent.component.getPosition();
-        if (TextUtils.isEmpty(position)) {
+        if (StringUtils.isEmpty(position)) {
             return false;
         }
         boolean a2 = a(position);
@@ -63,7 +63,7 @@ public final class ayd extends asn {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         for (ayf ayfVar : a().b(ayf.class)) {
-            if (!TextUtils.isEmpty(str) && str.equals(ayfVar.d())) {
+            if (!StringUtils.isEmpty(str) && str.equals(ayfVar.d())) {
                 return true;
             }
         }

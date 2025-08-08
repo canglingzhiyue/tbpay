@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -77,7 +77,7 @@ public class fbo extends c<fbz> {
             } else {
                 this.i.setPadding(0, 0, 0, 0);
             }
-            if (!TextUtils.isEmpty(fbzVar.f27774a)) {
+            if (!StringUtils.isEmpty(fbzVar.f27774a)) {
                 this.i.setText(fbzVar.f27774a);
                 this.i.setVisibility(0);
                 return;

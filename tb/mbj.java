@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.safemode.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.bootstrap.tao.ability.LinkRule;
@@ -36,7 +36,7 @@ public class mbj extends mbn {
             return ((Boolean) ipChange.ipc$dispatch("62acc361", new Object[]{this, context, aVar, str, bundle})).booleanValue();
         }
         Bundle bundle2 = new Bundle(bundle);
-        if (TextUtils.equals(aVar.f, "h5")) {
+        if (StringUtils.equals(aVar.f, "h5")) {
             if (e.b(Uri.parse(str))) {
                 c.a("linkx", "TbNavCenter === A方案，跳转首页");
                 uri = Nav.from(context).withExtras(bundle2).withFlags(65536).disableTransition().toUri(str);
@@ -91,7 +91,7 @@ public class mbj extends mbn {
         d.e.putExtra(str2, true);
         if (b == null || !b.nonModule) {
             d.e.setData(uri);
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             d.e.setData(Uri.parse(str));
         } else {
             d.e.setData(null);

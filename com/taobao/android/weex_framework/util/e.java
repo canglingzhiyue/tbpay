@@ -1,7 +1,7 @@
 package com.taobao.android.weex_framework.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -62,7 +62,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9c8fd973", new Object[]{str, bArr, context})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || bArr == null || context == null) {
+        if (StringUtils.isEmpty(str) || bArr == null || context == null) {
             return false;
         }
         FileOutputStream fileOutputStream = null;

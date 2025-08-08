@@ -3,7 +3,7 @@ package com.mobile.auth;
 import android.content.Context;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import com.cmic.sso.sdk.c;
 import com.mobile.auth.O0OO00O;
@@ -51,7 +51,7 @@ public class O000o {
             protected void O000000o() {
                 String O00000Oo = O0O0o00.O00000Oo("AID", "");
                 O0O000o.O00000Oo("AuthnHelper", "aid = " + O00000Oo);
-                if (TextUtils.isEmpty(O00000Oo)) {
+                if (StringUtils.isEmpty(O00000Oo)) {
                     O000o.this.O00000Oo();
                 }
                 O0O000o.O00000Oo("AuthnHelper", O0O00oO.O000000o(O000o.this.O00000Oo, true) ? "生成androidkeystore成功" : "生成androidkeystore失败");
@@ -131,11 +131,11 @@ public class O000o {
         aVar.a("operatortype", O000000o5);
         aVar.a("logintype", i);
         O0O000o.O00000Oo("AuthnHelper", "subId = " + O00000Oo);
-        if (!TextUtils.isEmpty(O00000Oo)) {
+        if (!StringUtils.isEmpty(O00000Oo)) {
             O0O000o.O000000o("AuthnHelper", "使用subId作为缓存key = " + O00000Oo);
             aVar.a("scripType", "subid");
             aVar.a("scripKey", O00000Oo);
-        } else if (!TextUtils.isEmpty(O000000o4)) {
+        } else if (!StringUtils.isEmpty(O000000o4)) {
             O0O000o.O000000o("AuthnHelper", "使用operator作为缓存key = " + O000000o4);
             aVar.a("scripType", "operator");
             aVar.a("scripKey", O000000o4);
@@ -153,11 +153,11 @@ public class O000o {
             O000000o("200082", "服务器繁忙，请稍后重试", aVar, null);
             return false;
         } else {
-            if (TextUtils.isEmpty(str == null ? "" : str.trim())) {
+            if (StringUtils.isEmpty(str == null ? "" : str.trim())) {
                 O000000o("102203", "appId 不能为空", aVar, null);
                 return false;
             }
-            if (TextUtils.isEmpty(str2 == null ? "" : str2.trim())) {
+            if (StringUtils.isEmpty(str2 == null ? "" : str2.trim())) {
                 O000000o("102203", "appkey不能为空", aVar, null);
                 return false;
             } else if (O000000o6 == 0) {

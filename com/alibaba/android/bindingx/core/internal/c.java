@@ -1,7 +1,7 @@
 package com.alibaba.android.bindingx.core.internal;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.bindingx.core.d;
 import com.alibaba.android.bindingx.core.internal.o;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -91,11 +91,11 @@ public class c extends AbstractEventHandler implements o.a {
         super.a(str, map, lVar, list, aVar);
         if (map != null) {
             String str3 = (String) map.get(BindingXConstants.KEY_SCENE_TYPE);
-            str2 = TextUtils.isEmpty(str3) ? "2d" : str3.toLowerCase();
+            str2 = StringUtils.isEmpty(str3) ? "2d" : str3.toLowerCase();
         } else {
             str2 = null;
         }
-        if (TextUtils.isEmpty(str2) || (!"2d".equals(str2) && !"3d".equals(str2))) {
+        if (StringUtils.isEmpty(str2) || (!"2d".equals(str2) && !"3d".equals(str2))) {
             str2 = "2d";
         }
         this.y = str2;

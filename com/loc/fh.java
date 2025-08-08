@@ -2,7 +2,7 @@ package com.loc;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.security.mobile.cache.AuthenticatorCache;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
@@ -50,7 +50,7 @@ public final class fh {
         }
 
         public final void a(String str) {
-            this.b = TextUtils.isEmpty(str) ? null : str.replace("##", "#");
+            this.b = StringUtils.isEmpty(str) ? null : str.replace("##", "#");
         }
 
         public final String b() {
@@ -172,7 +172,7 @@ public final class fh {
             String substring = str.substring(str.lastIndexOf("#") + 1);
             if (substring.equals("cgi")) {
                 jSONObject.put("cgi", str.substring(0, str.length() - 12));
-            } else if (!TextUtils.isEmpty(sb) && sb.indexOf(",access") != -1) {
+            } else if (!StringUtils.isEmpty(sb) && sb.indexOf(",access") != -1) {
                 jSONObject.put("cgi", str.substring(0, str.length() - (substring.length() + 9)));
                 String[] split = sb.toString().split(",access");
                 jSONObject.put("mmac", split[0].contains("#") ? split[0].substring(split[0].lastIndexOf("#") + 1) : split[0]);
@@ -253,12 +253,12 @@ public final class fh {
 
     private static void a(String str, Hashtable<String, String> hashtable) {
         String[] split;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         hashtable.clear();
         for (String str2 : str.split("#")) {
-            if (!TextUtils.isEmpty(str2) && !str2.contains("|")) {
+            if (!StringUtils.isEmpty(str2) && !str2.contains("|")) {
                 hashtable.put(str2, "");
             }
         }
@@ -272,19 +272,19 @@ public final class fh {
     }
 
     private static boolean a(String str, ew ewVar) {
-        if (TextUtils.isEmpty(str) || !fy.a(ewVar) || str.startsWith("#")) {
+        if (StringUtils.isEmpty(str) || !fy.a(ewVar) || str.startsWith("#")) {
             return false;
         }
         return str.contains("network");
     }
 
     private static boolean a(String str, StringBuilder sb) {
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(sb) || !str.contains(",access") || sb.indexOf(",access") == -1) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(sb) || !str.contains(",access") || sb.indexOf(",access") == -1) {
             return false;
         }
         String[] split = str.split(",access");
         String substring = split[0].contains("#") ? split[0].substring(split[0].lastIndexOf("#") + 1) : split[0];
-        if (TextUtils.isEmpty(substring)) {
+        if (StringUtils.isEmpty(substring)) {
             return false;
         }
         String sb2 = sb.toString();
@@ -381,7 +381,7 @@ public final class fh {
     }
 
     public final ew a(Context context, String str, StringBuilder sb, boolean z, boolean z2) {
-        if (!TextUtils.isEmpty(str) && fq.e()) {
+        if (!StringUtils.isEmpty(str) && fq.e()) {
             String str2 = str + "&" + this.f + "&" + this.g + "&" + this.h;
             if (str2.contains("gps") || !fq.e() || sb == null) {
                 return null;
@@ -478,7 +478,7 @@ public final class fh {
                 ewVar.a(f);
             }
             if (str2.contains("wifi")) {
-                if (TextUtils.isEmpty(sb)) {
+                if (StringUtils.isEmpty(sb)) {
                     return;
                 }
                 if (ewVar.getAccuracy() >= 300.0f) {
@@ -494,7 +494,7 @@ public final class fh {
                 } else if (ewVar.getAccuracy() <= 3.0f) {
                     return;
                 }
-                if (str2.contains("cgiwifi") && !TextUtils.isEmpty(ewVar.g())) {
+                if (str2.contains("cgiwifi") && !StringUtils.isEmpty(ewVar.g())) {
                     String replace = str2.replace("cgiwifi", "cgi");
                     ew h = ewVar.h();
                     if (fy.a(h)) {
@@ -511,7 +511,7 @@ public final class fh {
             this.i = fy.b();
             a aVar = new a();
             aVar.a(ewVar);
-            aVar.a(TextUtils.isEmpty(sb) ? null : sb.toString());
+            aVar.a(StringUtils.isEmpty(sb) ? null : sb.toString());
             if (this.f7791a.containsKey(str2)) {
                 this.f7791a.get(str2).add(aVar);
             } else {

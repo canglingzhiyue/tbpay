@@ -1,6 +1,6 @@
 package com.taobao.taobaoavsdk.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.AVSDKLog;
 import java.io.IOException;
@@ -43,7 +43,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1687d51b", new Object[]{ddgVar, str});
-        } else if (TextUtils.isEmpty(str) || ddgVar == null) {
+        } else if (StringUtils.isEmpty(str) || ddgVar == null) {
         } else {
             try {
                 ddgVar.c(str);
@@ -56,7 +56,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2b709d5c", new Object[]{ddgVar, str});
-        } else if (TextUtils.isEmpty(str) || ddgVar == null) {
+        } else if (StringUtils.isEmpty(str) || ddgVar == null) {
         } else {
             try {
                 ddgVar.b(str);
@@ -69,7 +69,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4059659d", new Object[]{ddgVar, str});
-        } else if (TextUtils.isEmpty(str) || ddgVar == null) {
+        } else if (StringUtils.isEmpty(str) || ddgVar == null) {
         } else {
             try {
                 ddgVar.a(str);

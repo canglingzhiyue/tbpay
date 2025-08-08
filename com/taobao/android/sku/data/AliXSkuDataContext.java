@@ -1,6 +1,6 @@
 package com.taobao.android.sku.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.SkuCoreNode;
@@ -83,7 +83,7 @@ public class AliXSkuDataContext implements Serializable {
                 return "";
             }
             String string = jSONObject.getString("optionalSkuH5Url");
-            return TextUtils.isEmpty(string) ? getH5Url() : string;
+            return StringUtils.isEmpty(string) ? getH5Url() : string;
         }
         return getH5Url();
     }

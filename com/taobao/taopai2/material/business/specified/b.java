@@ -1,6 +1,6 @@
 package com.taobao.taopai2.material.business.specified;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -137,7 +137,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("26fceb73", new Object[]{this, materialSpecifiedModel, specifiedFilterResultBean});
-        } else if (!TextUtils.isEmpty(materialSpecifiedModel.filterInfoMap)) {
+        } else if (!StringUtils.isEmpty(materialSpecifiedModel.filterInfoMap)) {
             specifiedFilterResultBean.mRuleMap = new HashMap();
             JSONObject parseObject = JSONObject.parseObject(materialSpecifiedModel.filterInfoMap);
             for (String str : parseObject.getInnerMap().keySet()) {

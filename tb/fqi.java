@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -1927,7 +1927,7 @@ public class fqi {
                         fqi.S(Boolean.parseBoolean(fql.this.a(str, "dinamic_enable_open_pipline_cache", "false").trim()));
                         fqi.w(Arrays.asList(fql.this.a(str, "dinamic_new_pipeline_cache_white_list", "").trim().split(",")));
                         String trim = fql.this.a(str, "dinamic_sub_biztype_config", "").trim();
-                        if (TextUtils.isEmpty(trim)) {
+                        if (StringUtils.isEmpty(trim)) {
                             return;
                         }
                         fqi.a(JSONObject.parseObject(trim));
@@ -2096,7 +2096,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("4a43aec7", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -2129,7 +2129,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return (Set) ipChange.ipc$dispatch("5dee4c02", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -2247,7 +2247,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (t == null) {
@@ -2276,7 +2276,7 @@ public class fqi {
     public static boolean e(String str) {
         List<String> list;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || (list = x) == null || list.isEmpty() || !x.contains(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || (list = x) == null || list.isEmpty() || !x.contains(str);
     }
 
     public static boolean f(String str) {
@@ -2284,7 +2284,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         if (y == null) {
@@ -2302,7 +2302,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{str})).booleanValue();
         }
-        if (bx.a() || TextUtils.isEmpty(str)) {
+        if (bx.a() || StringUtils.isEmpty(str)) {
             return true;
         }
         if (B == null) {
@@ -2332,7 +2332,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fb017cfd", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (list = G) == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(str) || (list = G) == null || list.isEmpty()) {
             return false;
         }
         return G.contains(str);
@@ -2378,7 +2378,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4533163e", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (U == null) {
@@ -2432,7 +2432,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8f64af7f", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (W == null) {
@@ -2453,7 +2453,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d99648c0", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (Y == null) {
@@ -2467,7 +2467,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("23c7e201", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (Z == null) {
@@ -2494,7 +2494,7 @@ public class fqi {
         if (Build.VERSION.SDK_INT >= ag) {
             return true;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return ad;
         }
         if (ac == null) {
@@ -2511,7 +2511,7 @@ public class fqi {
         if (Build.VERSION.SDK_INT >= ag) {
             return true;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return af;
         }
         if (ae == null) {
@@ -2525,7 +2525,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4c8e4705", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (aj == null) {
@@ -2556,7 +2556,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("96bfe046", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (al == null) {
@@ -2576,7 +2576,7 @@ public class fqi {
         if (am) {
             return true;
         }
-        if (!TextUtils.isEmpty(str) && (list = an) != null) {
+        if (!StringUtils.isEmpty(str) && (list = an) != null) {
             return list.contains(str);
         }
         return false;
@@ -2588,7 +2588,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("5bc5ade4", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || (jSONObject = ao) == null || !jSONObject.containsKey(str)) {
+        if (StringUtils.isEmpty(str) || (jSONObject = ao) == null || !jSONObject.containsKey(str)) {
             return null;
         }
         try {
@@ -2604,7 +2604,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 JSONObject s2 = s(str);
                 if (s2 != null && s2.containsKey("subBiz") && (jSONObject = s2.getJSONObject("subBiz")) != null) {
@@ -2623,7 +2623,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("c38d2f9d", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 JSONObject s2 = s(str);
                 if (s2 != null && s2.containsKey("subBiz") && (jSONObject = s2.getJSONObject("subBiz")) != null) {
@@ -2708,7 +2708,7 @@ public class fqi {
             if (r4 >= r5) goto L65
             java.lang.Object r4 = r1.get(r4)     // Catch: java.lang.Throwable -> L76
             java.lang.String r4 = (java.lang.String) r4     // Catch: java.lang.Throwable -> L76
-            boolean r5 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L76
+            boolean r5 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> L76
             if (r5 != 0) goto L65
             int r4 = java.lang.Integer.parseInt(r4)     // Catch: java.lang.Throwable -> L76
             java.lang.Integer r4 = java.lang.Integer.valueOf(r4)     // Catch: java.lang.Throwable -> L76
@@ -2716,7 +2716,7 @@ public class fqi {
         L65:
             r4 = r0
         L66:
-            boolean r5 = android.text.TextUtils.isEmpty(r3)     // Catch: java.lang.Throwable -> L76
+            boolean r5 = android.text.StringUtils.isEmpty(r3)     // Catch: java.lang.Throwable -> L76
             if (r5 != 0) goto L71
             java.util.Map<java.lang.String, java.lang.Integer> r5 = tb.fqi.ap     // Catch: java.lang.Throwable -> L76
             r5.put(r3, r4)     // Catch: java.lang.Throwable -> L76
@@ -2746,7 +2746,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7554ac09", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (ar == null) {
@@ -2826,7 +2826,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bf86454a", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (ay == null) {
@@ -2842,7 +2842,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9b7de8b", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (ax == null) {
@@ -2944,7 +2944,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("53e977cc", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (aH == null) {
@@ -3091,7 +3091,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9e1b110d", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (aV == null) {
@@ -3628,7 +3628,7 @@ public class fqi {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (e == null) {

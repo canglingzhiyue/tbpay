@@ -16,7 +16,7 @@ import android.taobao.windvane.jsbridge.i;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.thread.WVThreadPool;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.utils.UserLocation;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -121,7 +121,7 @@ public class WVLocation extends e implements LocationListener, Handler.Callback 
             ipChange.ipc$dispatch("1b991172", new Object[]{this, wVCallBackContext, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 z = jSONObject.optBoolean("enableHighAcuracy");
@@ -302,7 +302,7 @@ public class WVLocation extends e implements LocationListener, Handler.Callback 
                                 jSONObject2.put("road", access$200.getThoroughfare());
                                 StringBuilder sb = new StringBuilder();
                                 for (int i = 1; i <= 2; i++) {
-                                    if (!TextUtils.isEmpty(access$200.getAddressLine(i))) {
+                                    if (!StringUtils.isEmpty(access$200.getAddressLine(i))) {
                                         sb.append(access$200.getAddressLine(i));
                                     }
                                 }

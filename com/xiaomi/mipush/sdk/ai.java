@@ -1,7 +1,7 @@
 package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.push.bj;
 import com.xiaomi.push.ic;
 import com.xiaomi.push.ir;
@@ -39,7 +39,7 @@ public class ai {
             iy iyVar = new iy();
             if (z) {
                 String d = b.m1665a(context).d();
-                if (TextUtils.isEmpty(d)) {
+                if (StringUtils.isEmpty(d)) {
                     str3 = "regSecret is empty, return null";
                 } else {
                     try {

@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.uikit;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e;
 import com.ut.mini.UTAnalytics;
@@ -74,7 +74,7 @@ public class b {
         }
         if (intent != null && intent.getData() != null) {
             String queryParameter = intent.getData().getQueryParameter(i);
-            if (!TextUtils.isEmpty(queryParameter) && context != null) {
+            if (!StringUtils.isEmpty(queryParameter) && context != null) {
                 epj.f().navigateTo(context, queryParameter, null);
                 return true;
             }
@@ -92,9 +92,9 @@ public class b {
             uTCustomHitBuilder.setEventPage("Page_Detail");
             uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_EVENT_ID, "2201");
             for (String str : data.getQueryParameterNames()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String queryParameter = data.getQueryParameter(str);
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         uTCustomHitBuilder.setProperty(str, queryParameter);
                     }
                 }

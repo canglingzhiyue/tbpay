@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -70,25 +70,25 @@ public final class Headers {
         String substringTrimmed2 = charArrayBuffer.substringTrimmed(i, charArrayBuffer.length());
         switch (substringTrimmed.hashCode()) {
             case -1345594014:
-                if (!TextUtils.equals(substringTrimmed, "x-permitted-cross-domain-policies")) {
+                if (!StringUtils.equals(substringTrimmed, "x-permitted-cross-domain-policies")) {
                     return;
                 }
                 this.e[18] = substringTrimmed2;
                 return;
             case -1309235404:
-                if (!TextUtils.equals(substringTrimmed, "expires")) {
+                if (!StringUtils.equals(substringTrimmed, "expires")) {
                     return;
                 }
                 this.e[11] = substringTrimmed2;
                 return;
             case -1267267485:
-                if (!TextUtils.equals(substringTrimmed, "content-disposition")) {
+                if (!StringUtils.equals(substringTrimmed, "content-disposition")) {
                     return;
                 }
                 this.e[9] = substringTrimmed2;
                 return;
             case -1132779846:
-                if (!TextUtils.equals(substringTrimmed, "content-length")) {
+                if (!StringUtils.equals(substringTrimmed, "content-length")) {
                     return;
                 }
                 this.e[1] = substringTrimmed2;
@@ -100,32 +100,32 @@ public final class Headers {
                     return;
                 }
             case -980228804:
-                if (!TextUtils.equals(substringTrimmed, "pragma")) {
+                if (!StringUtils.equals(substringTrimmed, "pragma")) {
                     return;
                 }
                 this.e[16] = substringTrimmed2;
                 return;
             case -775651618:
-                if (!TextUtils.equals(substringTrimmed, "connection")) {
+                if (!StringUtils.equals(substringTrimmed, "connection")) {
                     return;
                 }
                 this.e[4] = substringTrimmed2;
                 a(charArrayBuffer, i);
                 return;
             case -301767724:
-                if (!TextUtils.equals(substringTrimmed, "proxy-authenticate")) {
+                if (!StringUtils.equals(substringTrimmed, "proxy-authenticate")) {
                     return;
                 }
                 this.e[8] = substringTrimmed2;
                 return;
             case -243037365:
-                if (!TextUtils.equals(substringTrimmed, "www-authenticate")) {
+                if (!StringUtils.equals(substringTrimmed, "www-authenticate")) {
                     return;
                 }
                 this.e[7] = substringTrimmed2;
                 return;
             case -208775662:
-                if (!TextUtils.equals(substringTrimmed, "cache-control")) {
+                if (!StringUtils.equals(substringTrimmed, "cache-control")) {
                     return;
                 }
                 String[] strArr = this.e;
@@ -141,45 +141,45 @@ public final class Headers {
                 this.e[12] = substringTrimmed2;
                 return;
             case 3123477:
-                if (!TextUtils.equals(substringTrimmed, "etag")) {
+                if (!StringUtils.equals(substringTrimmed, "etag")) {
                     return;
                 }
                 this.e[14] = substringTrimmed2;
                 return;
             case 150043680:
-                if (!TextUtils.equals(substringTrimmed, "last-modified")) {
+                if (!StringUtils.equals(substringTrimmed, "last-modified")) {
                     return;
                 }
                 this.e[13] = substringTrimmed2;
                 return;
             case 285929373:
-                if (!TextUtils.equals(substringTrimmed, "proxy-connection")) {
+                if (!StringUtils.equals(substringTrimmed, "proxy-connection")) {
                     return;
                 }
                 this.e[6] = substringTrimmed2;
                 a(charArrayBuffer, i);
                 return;
             case 785670158:
-                if (!TextUtils.equals(substringTrimmed, "content-type")) {
+                if (!StringUtils.equals(substringTrimmed, "content-type")) {
                     return;
                 }
                 this.e[2] = substringTrimmed2;
                 return;
             case 1085444827:
-                if (!TextUtils.equals(substringTrimmed, "refresh")) {
+                if (!StringUtils.equals(substringTrimmed, "refresh")) {
                     return;
                 }
                 this.e[17] = substringTrimmed2;
                 return;
             case 1237214767:
-                if (!TextUtils.equals(substringTrimmed, "set-cookie")) {
+                if (!StringUtils.equals(substringTrimmed, "set-cookie")) {
                     return;
                 }
                 this.e[15] = substringTrimmed2;
                 this.d.add(substringTrimmed2);
                 return;
             case 1274458357:
-                if (!TextUtils.equals(substringTrimmed, "transfer-encoding")) {
+                if (!StringUtils.equals(substringTrimmed, "transfer-encoding")) {
                     return;
                 }
                 this.e[0] = substringTrimmed2;
@@ -196,19 +196,19 @@ public final class Headers {
                     return;
                 }
             case 1397189435:
-                if (!TextUtils.equals(substringTrimmed, "accept-ranges")) {
+                if (!StringUtils.equals(substringTrimmed, "accept-ranges")) {
                     return;
                 }
                 this.e[10] = substringTrimmed2;
                 return;
             case 1901043637:
-                if (!TextUtils.equals(substringTrimmed, "location")) {
+                if (!StringUtils.equals(substringTrimmed, "location")) {
                     return;
                 }
                 this.e[5] = substringTrimmed2;
                 return;
             case 2095084583:
-                if (!TextUtils.equals(substringTrimmed, "content-encoding")) {
+                if (!StringUtils.equals(substringTrimmed, "content-encoding")) {
                     return;
                 }
                 this.e[3] = substringTrimmed2;

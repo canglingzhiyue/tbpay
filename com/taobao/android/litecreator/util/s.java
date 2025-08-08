@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.taobao.R;
@@ -23,7 +23,7 @@ public class s {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(NAME_SPACE, str, "");
-            return TextUtils.isEmpty(config) ? str2 : config;
+            return StringUtils.isEmpty(config) ? str2 : config;
         } catch (Throwable unused) {
             return str2;
         }
@@ -36,7 +36,7 @@ public class s {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(NAME_SPACE, str, "");
-            return TextUtils.isEmpty(config) ? z : Boolean.parseBoolean(config);
+            return StringUtils.isEmpty(config) ? z : Boolean.parseBoolean(config);
         } catch (Throwable unused) {
             return z;
         }
@@ -49,7 +49,7 @@ public class s {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(NAME_SPACE, str, "");
-            return TextUtils.isEmpty(config) ? i : Integer.parseInt(config);
+            return StringUtils.isEmpty(config) ? i : Integer.parseInt(config);
         } catch (Throwable unused) {
             return i;
         }
@@ -62,7 +62,7 @@ public class s {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(NAME_SPACE, str, "");
-            return TextUtils.isEmpty(config) ? f : Float.parseFloat(config);
+            return StringUtils.isEmpty(config) ? f : Float.parseFloat(config);
         } catch (Throwable unused) {
             return f;
         }
@@ -75,7 +75,7 @@ public class s {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(NAME_SPACE, str, "");
-            return TextUtils.isEmpty(config) ? j : Long.parseLong(config);
+            return StringUtils.isEmpty(config) ? j : Long.parseLong(config);
         } catch (Throwable unused) {
             return j;
         }
@@ -258,7 +258,7 @@ public class s {
         }
         try {
             String optString = new JSONObject(str3).optString(str);
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 return String.format(optString, str2);
             }
         } catch (Exception e) {

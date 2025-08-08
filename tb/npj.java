@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
@@ -18,7 +18,7 @@ public class npj implements iud<Throwable> {
     }
 
     public npj(String str) {
-        this.f31625a = TextUtils.isEmpty(str) ? "empty" : str;
+        this.f31625a = StringUtils.isEmpty(str) ? "empty" : str;
     }
 
     /* JADX WARN: Can't rename method to resolve collision */

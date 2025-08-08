@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import com.alibaba.fastjson.JSON;
@@ -90,12 +90,12 @@ public class r extends DXImageWidgetNode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9501e36a", new Object[]{this, view});
-        } else if (!TextUtils.isEmpty(this.f12117a)) {
+        } else if (!StringUtils.isEmpty(this.f12117a)) {
             view.setContentDescription(this.f12117a);
         } else {
             JSONObject jSONObject = new JSONObject();
             final String imageUrl = getImageUrl();
-            if (TextUtils.isEmpty(imageUrl)) {
+            if (StringUtils.isEmpty(imageUrl)) {
                 view.setContentDescription("图片识别失败");
                 return;
             }
@@ -162,7 +162,7 @@ public class r extends DXImageWidgetNode {
             return "图片识别失败";
         }
         String string = jSONObject3.getString("content");
-        return TextUtils.isEmpty(string) ? "图片识别失败" : string;
+        return StringUtils.isEmpty(string) ? "图片识别失败" : string;
     }
 
     private boolean a(Context context) throws RuntimeException {

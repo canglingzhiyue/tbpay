@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.intelligentdecision.DecisionContext;
@@ -84,7 +84,7 @@ public class ViTbDecisionReceiver {
                 return;
             }
             String string = bundle.getString("userId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 DecisionLogcat.b("ViTbDecisionReceiver", "uid empty, so return");
                 return;
             }
@@ -111,7 +111,7 @@ public class ViTbDecisionReceiver {
                         if (bundle != null) {
                             String string2 = bundle.getString("clientDecisionConfig");
                             DecisionLogcat.b("ViTbDecisionReceiver", "decisionConfig:" + string2);
-                            if (!TextUtils.isEmpty(string2)) {
+                            if (!StringUtils.isEmpty(string2)) {
                                 SharedPreferences.Editor edit = sharedPreferences.edit();
                                 JSONObject parseObject = JSON.parseObject(string2);
                                 JSONObject jSONObject = parseObject.getJSONObject("extractConfig");

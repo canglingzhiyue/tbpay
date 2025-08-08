@@ -1,7 +1,7 @@
 package tb;
 
 import android.taobao.windvane.thread.d;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.tao.log.TLog;
@@ -72,7 +72,7 @@ public class kfb {
             return;
         }
         if (this.c.compareAndSet(false, true)) {
-            this.b = TextUtils.equals("true", OrangeConfig.getInstance().getConfig("group_common_browser", "useTouchMonitor", "false"));
+            this.b = StringUtils.equals("true", OrangeConfig.getInstance().getConfig("group_common_browser", "useTouchMonitor", "false"));
         }
     }
 

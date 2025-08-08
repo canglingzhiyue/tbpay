@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
 import com.sina.weibo.sdk.auth.AccessTokenHelper;
 import com.sina.weibo.sdk.auth.AuthInfo;
@@ -71,7 +71,7 @@ public final class a implements IWBAPI {
                 String stringExtra = intent.getStringExtra("error");
                 String stringExtra2 = intent.getStringExtra(PushMessageHelper.ERROR_TYPE);
                 String stringExtra3 = intent.getStringExtra("error_description");
-                if (!TextUtils.isEmpty(stringExtra) || !TextUtils.isEmpty(stringExtra2) || !TextUtils.isEmpty(stringExtra3)) {
+                if (!StringUtils.isEmpty(stringExtra) || !StringUtils.isEmpty(stringExtra2) || !StringUtils.isEmpty(stringExtra3)) {
                     if ("access_denied".equals(stringExtra) || "OAuthAccessDeniedException".equals(stringExtra)) {
                         aVar.d.onCancel();
                         return;
@@ -200,7 +200,7 @@ public final class a implements IWBAPI {
             Oauth2AccessToken readAccessToken = AccessTokenHelper.readAccessToken(activity);
             if (readAccessToken != null) {
                 String accessToken = readAccessToken.getAccessToken();
-                if (!TextUtils.isEmpty(readAccessToken.getAccessToken())) {
+                if (!StringUtils.isEmpty(readAccessToken.getAccessToken())) {
                     dVar.ae = accessToken;
                 }
             }

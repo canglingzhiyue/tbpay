@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.data.global.NewDetailScreenConfig;
 import com.taobao.android.detail2.core.framework.data.model.b;
@@ -84,7 +84,7 @@ public class fks {
             return bVar;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 bVar.f11521a = -1;
                 return bVar;
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.impl.common.e;
 import java.io.File;
@@ -31,7 +31,7 @@ public class mor implements mpo.a {
             return str;
         }
         String a2 = a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return str;
         }
         String name = file.getName();

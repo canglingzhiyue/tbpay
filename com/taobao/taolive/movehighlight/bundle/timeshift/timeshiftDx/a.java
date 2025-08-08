@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.bundle.timeshift.timeshiftDx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -126,7 +126,7 @@ public class a {
         this.e = 5;
         this.f21443a = str2;
         Map<String, String> a2 = poz.a(n.b(aVar), this.b);
-        if (a2 != null && !TextUtils.isEmpty(a2.get(aw.PARAM_TIMEMOVING_ITEM_ID)) && TextUtils.isEmpty(str)) {
+        if (a2 != null && !StringUtils.isEmpty(a2.get(aw.PARAM_TIMEMOVING_ITEM_ID)) && StringUtils.isEmpty(str)) {
             str = a2.get(aw.PARAM_TIMEMOVING_ITEM_ID);
         }
         a(str, bVar, pgpVar);
@@ -150,13 +150,13 @@ public class a {
             return;
         }
         pfb a2 = pfb.a(this.g);
-        if (liveTimemovingModel != null && liveTimemovingModel.extendVal != null && !TextUtils.isEmpty(liveTimemovingModel.extendVal.timeMovingPlayInfo) && (timeMovingPlayInfo = (LiveItem.TimeMovingPlayInfo) pqj.a(liveTimemovingModel.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class)) != null) {
+        if (liveTimemovingModel != null && liveTimemovingModel.extendVal != null && !StringUtils.isEmpty(liveTimemovingModel.extendVal.timeMovingPlayInfo) && (timeMovingPlayInfo = (LiveItem.TimeMovingPlayInfo) pqj.a(liveTimemovingModel.extendVal.timeMovingPlayInfo, LiveItem.TimeMovingPlayInfo.class)) != null) {
             HashMap<String, String> a3 = pfk.a(timeMovingPlayInfo, liveTimemovingModel.extendVal.playUrl, this.g);
             if (a2.l() == null) {
                 return;
             }
             a2.l().m(this.g, a3);
-        } else if (liveTimemovingModel == null || liveTimemovingModel.extendVal == null || TextUtils.isEmpty(liveTimemovingModel.extendVal.playUrl)) {
+        } else if (liveTimemovingModel == null || liveTimemovingModel.extendVal == null || StringUtils.isEmpty(liveTimemovingModel.extendVal.playUrl)) {
         } else {
             HashMap hashMap = new HashMap();
             hashMap.put(aw.PARAM_PLAY_URL, liveTimemovingModel.extendVal.playUrl);
@@ -216,9 +216,9 @@ public class a {
             if (videoInfo == null || videoInfo.timeMovingPlayInfo == null) {
                 return;
             }
-            if (!TextUtils.isEmpty(this.f.timeMovingPlayInfo.keyPointId)) {
+            if (!StringUtils.isEmpty(this.f.timeMovingPlayInfo.keyPointId)) {
                 this.e = this.f.timeMovingPlayInfo.keyPointId;
-            } else if (!TextUtils.isEmpty(this.f.timeMovingPlayInfo.timeMovingId)) {
+            } else if (!StringUtils.isEmpty(this.f.timeMovingPlayInfo.timeMovingId)) {
                 this.e = this.f.timeMovingPlayInfo.timeMovingId;
             } else {
                 this.e = null;
@@ -277,7 +277,7 @@ public class a {
         if (this.d != 0) {
             this.i = j.a(this.i);
         }
-        if (a2 == null || TextUtils.isEmpty(a2.liveId)) {
+        if (a2 == null || StringUtils.isEmpty(a2.liveId)) {
             return;
         }
         if (c.r() && this.d == 0 && pgpVar != null) {
@@ -390,7 +390,7 @@ public class a {
             jSONObject.put("hideStructList", (Object) true);
             bVar.a(jSONObject);
             VideoInfo a2 = k.a(this.b);
-            if (a2 == null || TextUtils.isEmpty(a2.replayUrl)) {
+            if (a2 == null || StringUtils.isEmpty(a2.replayUrl)) {
                 return;
             }
             HashMap hashMap = new HashMap();

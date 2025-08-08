@@ -3,7 +3,7 @@ package com.ali.user.mobile.webview;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.filter.LoginFilterCallback;
 import com.ali.user.mobile.model.UrlParam;
 import com.ali.user.mobile.navigation.NavigatorServiceImpl;
@@ -34,10 +34,10 @@ public class LoginH5Handler {
             intent = new Intent(context, WebViewActivity.class);
         }
         NavigatorServiceImpl.addData(urlParam, intent);
-        if (!TextUtils.isEmpty(urlParam.token)) {
+        if (!StringUtils.isEmpty(urlParam.token)) {
             intent.putExtra("token", urlParam.token);
         }
-        if (!TextUtils.isEmpty(urlParam.scene)) {
+        if (!StringUtils.isEmpty(urlParam.scene)) {
             intent.putExtra("scene", urlParam.scene);
         }
         intent.putExtra(WebConstant.WEBURL, urlParam.url);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.core.FluidContext;
@@ -50,7 +50,7 @@ public class iqy {
 
     private boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(Uri.parse(str).getQueryParameter("id"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(Uri.parse(str).getQueryParameter("id"));
     }
 
     public String a(FluidContext fluidContext, String str, JSONObject jSONObject) {
@@ -77,7 +77,7 @@ public class iqy {
         }
         com.taobao.android.fluid.framework.data.datamodel.a currentMediaSetData = ((IDataService) fluidContext.getService(IDataService.class)).getCurrentMediaSetData();
         spz.c(TAG, "添加一跳Detail的key:" + str);
-        if (currentMediaSetData == null || currentMediaSetData.a() == null || !TextUtils.equals(currentMediaSetData.a().I(), str2)) {
+        if (currentMediaSetData == null || currentMediaSetData.a() == null || !StringUtils.equals(currentMediaSetData.a().I(), str2)) {
             return;
         }
         a(str, currentMediaSetData);

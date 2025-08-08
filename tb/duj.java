@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -57,7 +57,7 @@ public class duj {
             }
             if (parseObject.containsKey(K_WDKSGLL)) {
                 String string = parseObject.getString(K_WDKSGLL);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     String[] split = string.split(",");
                     this.h = split[0];
                     this.i = split[1];
@@ -92,7 +92,7 @@ public class duj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             return this.b;
         }
         return b.c() ? "mtop.trade.global.buy.build" : "mtop.trade.order.build";
@@ -103,7 +103,7 @@ public class duj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             return this.c;
         }
         return b.c() ? "1.0" : AfcCustomSdk.SDK_VERSION;
@@ -114,7 +114,7 @@ public class duj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("43881515", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.d)) {
+        if (!StringUtils.isEmpty(this.d)) {
             return this.d;
         }
         return b.c() ? "mtop.trade.global.buy.adjust" : "mtop.trade.order.adjust";
@@ -125,7 +125,7 @@ public class duj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             return this.e;
         }
         return b.c() ? "1.0" : "6.0";
@@ -136,7 +136,7 @@ public class duj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("50938a53", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             return this.f;
         }
         return b.c() ? "mtop.trade.global.buy.create" : "mtop.trade.order.create";
@@ -147,7 +147,7 @@ public class duj {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d71944f2", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.g)) {
+        if (!StringUtils.isEmpty(this.g)) {
             return this.g;
         }
         return b.c() ? "1.0" : "6.0";

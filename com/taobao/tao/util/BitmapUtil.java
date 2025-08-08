@@ -9,7 +9,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -186,7 +186,7 @@ public class BitmapUtil {
             Application a2 = nym.a();
             String config = OrangeConfig.getInstance().getConfig("android_share", "drawWaterMarkAppName", a2.getApplicationInfo().loadLabel(a2.getPackageManager()).toString());
             Object obj = e.b().j().templateParams.get("nick");
-            if (!TextUtils.isEmpty(config) && obj != null && !TextUtils.isEmpty(obj.toString())) {
+            if (!StringUtils.isEmpty(config) && obj != null && !StringUtils.isEmpty(obj.toString())) {
                 String str = config + "@" + obj;
                 Bitmap createBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);

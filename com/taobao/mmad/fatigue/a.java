@@ -1,6 +1,6 @@
 package com.taobao.mmad.fatigue;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -37,7 +37,7 @@ public class a {
         }
         String str = this.f18112a.d().b().itemId;
         int i = this.f18112a.d().b().periodSeconds;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Map<String, FatigueData> map = this.b;
@@ -67,7 +67,7 @@ public class a {
             return;
         }
         String a2 = tjm.a("FatigueManager", null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         try {
@@ -83,7 +83,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123ad15", new Object[]{this, str, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         FatigueData fatigueData = this.b.get(str);

@@ -9,7 +9,7 @@ import android.taobao.windvane.export.network.g;
 import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.extra.uc.WVUCWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.TextureView;
@@ -253,7 +253,7 @@ public class b extends qqn {
                         return false;
                     }
                     String url = a2.getUrl();
-                    if (!TextUtils.isEmpty(url)) {
+                    if (!StringUtils.isEmpty(url)) {
                         try {
                             Uri b2 = o.b(url);
                             if (b2 != null) {
@@ -266,7 +266,7 @@ public class b extends qqn {
                     }
                     boolean back = a2.back();
                     String url2 = a2.getUrl();
-                    if (!back || TextUtils.equals(url2, "about:blank")) {
+                    if (!back || StringUtils.equals(url2, "about:blank")) {
                         z2 = false;
                     }
                     TMSLogger.d("Themis/WebRenderer", "interceptBack ret=" + z2 + ", currentUrl=" + url2);
@@ -275,7 +275,7 @@ public class b extends qqn {
             });
         }
         String str = this.d;
-        if (!n.bu() || TextUtils.isEmpty(str)) {
+        if (!n.bu() || StringUtils.isEmpty(str)) {
             i = 3;
         } else {
             if (str.contains("webview_strategy=system")) {
@@ -461,7 +461,7 @@ public class b extends qqn {
         super.a(qqoVar);
         if (n.I() && this.f33035a.b(tle.class) != null && (o = this.f33035a.o()) != null && (intent = o.getIntent()) != null) {
             String dataString = intent.getDataString();
-            if (!TextUtils.isEmpty(dataString) && !TextUtils.equals(dataString, this.d)) {
+            if (!StringUtils.isEmpty(dataString) && !StringUtils.equals(dataString, this.d)) {
                 TMSLogger.d("极简链路", "use latest url " + dataString);
                 this.f33035a.c(dataString);
                 this.d = dataString;
@@ -486,7 +486,7 @@ public class b extends qqn {
         if (n.aM()) {
             try {
                 String a2 = o.a(qqpVar.f33036a, InstanceStartParams.KEY_PAGE_BG_COLOR, true);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     this.c.setBackgroundColor(Color.parseColor(a2));
                 }
             } catch (Throwable th) {
@@ -502,7 +502,7 @@ public class b extends qqn {
             ipChange.ipc$dispatch("e8c0ac49", new Object[]{this, qqpVar, qqoVar});
         } else if (qqpVar == null) {
             TMSLogger.d("Themis/WebRenderer", "renderOptions is null");
-        } else if (TextUtils.isEmpty(qqpVar.f33036a)) {
+        } else if (StringUtils.isEmpty(qqpVar.f33036a)) {
             TMSLogger.d("Themis/WebRenderer", "fail to render because of empty url");
         } else if (this.c == null) {
             TMSLogger.d("Themis/WebRenderer", "fail to render because of null webView.");
@@ -880,7 +880,7 @@ public class b extends qqn {
             return;
         }
         String a2 = qgo.a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             a(a2);
         }
         a(j.b(this.b));

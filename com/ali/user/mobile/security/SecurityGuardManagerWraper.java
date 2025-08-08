@@ -3,7 +3,7 @@ package com.ali.user.mobile.security;
 import android.content.ContextWrapper;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.app.init.Debuggable;
@@ -95,7 +95,7 @@ public class SecurityGuardManagerWraper {
             String valueOf = String.valueOf(currentTimeMillis);
             String appkey = DataProviderFactory.getDataProvider().getAppkey();
             String securityBodyOpen = getSecurityBodyOpen(currentTimeMillis, appkey);
-            if (TextUtils.isEmpty(securityBodyOpen)) {
+            if (StringUtils.isEmpty(securityBodyOpen)) {
                 securityBodyOpen = securityBodyComp.getSecurityBodyData(valueOf, appkey);
             }
             return new WUAData(DataProviderFactory.getDataProvider().getAppkey(), valueOf, securityBodyOpen);
@@ -297,14 +297,14 @@ public class SecurityGuardManagerWraper {
             }
             List<FingerInfo> arrayList = new ArrayList<>();
             String string = getString(FINGER_LIST);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 UserTrackAdapter.sendUT("readFingerFromFile");
                 string = FileUtils.readFileData(DataProviderFactory.getApplicationContext(), FINGER_LIST);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     UserTrackAdapter.sendUT("readFingerFromFileNotEmpty");
                 }
             }
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (LoginSwitch.getSwitch("fingerLog", "true")) {
                     LoginTLogAdapter.e(TAG, "getFingerString:" + string);
                 }
@@ -319,7 +319,7 @@ public class SecurityGuardManagerWraper {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("ac6f579d", new Object[]{str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 UserTrackAdapter.sendUT("getFingerEmptyId");
                 return "";
             } else {
@@ -328,7 +328,7 @@ public class SecurityGuardManagerWraper {
                     UserTrackAdapter.sendUT("startFindFor_" + fingerList.size());
                     for (int i = 0; i < fingerList.size(); i++) {
                         UserTrackAdapter.sendExtendUT("checkEncryptedUserId", str, fingerList.get(i).key, null);
-                        if (TextUtils.equals(str, fingerList.get(i).key)) {
+                        if (StringUtils.equals(str, fingerList.get(i).key)) {
                             return fingerList.get(i).value;
                         }
                     }
@@ -368,7 +368,7 @@ public class SecurityGuardManagerWraper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("83e7d3be", new Object[]{fingerInfo});
-        } else if (fingerInfo != null && !TextUtils.isEmpty(fingerInfo.key)) {
+        } else if (fingerInfo != null && !StringUtils.isEmpty(fingerInfo.key)) {
             UserTrackAdapter.sendExtendUT("rmFinger", fingerInfo.key);
             List<FingerInfo> fingerList = getFingerList();
             if (fingerList == null || fingerList.size() == 0) {
@@ -377,7 +377,7 @@ public class SecurityGuardManagerWraper {
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < fingerList.size(); i++) {
                 FingerInfo fingerInfo2 = fingerList.get(i);
-                if (!TextUtils.equals(fingerInfo.key, fingerInfo2.key)) {
+                if (!StringUtils.equals(fingerInfo.key, fingerInfo2.key)) {
                     arrayList.add(fingerInfo2);
                 }
             }
@@ -419,7 +419,7 @@ public class SecurityGuardManagerWraper {
         }
         String string = getString(HISTORY_LOGIN_ACCOUNTS);
         try {
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 loginHistory = new LoginHistory();
             } else {
                 loginHistory = (LoginHistory) JSON.parseObject(string, LoginHistory.class);
@@ -441,7 +441,7 @@ public class SecurityGuardManagerWraper {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("ca43d50e", new Object[]{str});
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 try {
                     SessionList sessionListFromFile = getSessionListFromFile();
                     if (sessionListFromFile != null && sessionListFromFile.sessionModels != null && sessionListFromFile.sessionModels.size() != 0) {
@@ -467,7 +467,7 @@ public class SecurityGuardManagerWraper {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("3fc03fe8", new Object[]{str});
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 try {
                     SessionList sessionListFromFile = getSessionListFromFile();
                     if (sessionListFromFile != null && sessionListFromFile.sessionModels != null && sessionListFromFile.sessionModels.size() != 0) {
@@ -495,7 +495,7 @@ public class SecurityGuardManagerWraper {
                 return;
             }
             String decrypt = decrypt(FileUtils.readFileData(DataProviderFactory.getApplicationContext(), SESSION_LIST));
-            if (TextUtils.isEmpty(decrypt)) {
+            if (StringUtils.isEmpty(decrypt)) {
                 sessionList = new SessionList();
             } else {
                 try {
@@ -510,7 +510,7 @@ public class SecurityGuardManagerWraper {
             if (sessionList != null) {
                 if (sessionList.sessionModels != null) {
                     for (SessionModel sessionModel2 : sessionList.sessionModels) {
-                        if (!TextUtils.equals(sessionModel.userId, sessionModel2.userId)) {
+                        if (!StringUtils.equals(sessionModel.userId, sessionModel2.userId)) {
                             arrayList.add(sessionModel2);
                         }
                     }
@@ -612,9 +612,9 @@ public class SecurityGuardManagerWraper {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("77b03023", new Object[]{str});
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 String decrypt = decrypt(FileUtils.readFileData(DataProviderFactory.getApplicationContext(), SESSION_LIST));
-                if (TextUtils.isEmpty(decrypt)) {
+                if (StringUtils.isEmpty(decrypt)) {
                     sessionList = new SessionList();
                 } else {
                     try {
@@ -627,7 +627,7 @@ public class SecurityGuardManagerWraper {
                 ArrayList arrayList = new ArrayList();
                 if (sessionList != null && sessionList.sessionModels != null) {
                     for (SessionModel sessionModel : sessionList.sessionModels) {
-                        if (TextUtils.equals(str, sessionModel.userId)) {
+                        if (StringUtils.equals(str, sessionModel.userId)) {
                             sessionModel.autoLoginToken = "";
                             sessionModel.sid = "";
                         }
@@ -753,7 +753,7 @@ public class SecurityGuardManagerWraper {
         if (ipChange instanceof IpChange) {
             return (HistoryAccount) ipChange.ipc$dispatch("d3d2db71", new Object[]{loginHistory, str});
         }
-        if (!TextUtils.isEmpty(str) && loginHistory != null && loginHistory.accountHistory != null && loginHistory.accountHistory.size() != 0) {
+        if (!StringUtils.isEmpty(str) && loginHistory != null && loginHistory.accountHistory != null && loginHistory.accountHistory.size() != 0) {
             for (HistoryAccount historyAccount : loginHistory.accountHistory) {
                 if (str.equals(String.valueOf(historyAccount.userId))) {
                     return historyAccount;
@@ -787,7 +787,7 @@ public class SecurityGuardManagerWraper {
         }
         try {
             String decrypt = decrypt(FileUtils.readFileData(DataProviderFactory.getApplicationContext(), SESSION_LIST));
-            if (!TextUtils.isEmpty(decrypt)) {
+            if (!StringUtils.isEmpty(decrypt)) {
                 return (SessionList) JSON.parseObject(decrypt, SessionList.class);
             }
             return null;
@@ -855,19 +855,19 @@ public class SecurityGuardManagerWraper {
             java.lang.Object r2 = r0.next()
             com.ali.user.mobile.rpc.HistoryAccount r2 = (com.ali.user.mobile.rpc.HistoryAccount) r2
             java.lang.String r3 = r2.userInputName
-            boolean r3 = android.text.TextUtils.equals(r4, r3)
+            boolean r3 = android.text.StringUtils.equals(r4, r3)
             if (r3 != 0) goto L54
             java.lang.String r3 = r2.nick
-            boolean r3 = android.text.TextUtils.equals(r4, r3)
+            boolean r3 = android.text.StringUtils.equals(r4, r3)
             if (r3 != 0) goto L54
             java.lang.String r3 = r2.mobile
-            boolean r3 = android.text.TextUtils.equals(r4, r3)
+            boolean r3 = android.text.StringUtils.equals(r4, r3)
             if (r3 != 0) goto L54
             java.lang.String r3 = r2.email
-            boolean r3 = android.text.TextUtils.equals(r4, r3)
+            boolean r3 = android.text.StringUtils.equals(r4, r3)
             if (r3 != 0) goto L54
             java.lang.String r3 = r2.autologinToken
-            boolean r3 = android.text.TextUtils.equals(r4, r3)
+            boolean r3 = android.text.StringUtils.equals(r4, r3)
             if (r3 == 0) goto L20
         L54:
             return r2
@@ -911,7 +911,7 @@ public class SecurityGuardManagerWraper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cf1c5528", new Object[]{str});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             try {
                 List<HistoryAccount> historyAccounts = getHistoryAccounts();
                 if (historyAccounts != null && historyAccounts.size() > 0) {
@@ -964,7 +964,7 @@ public class SecurityGuardManagerWraper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ad76ad38", new Object[]{str, new Integer(i), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int length = str.length();
@@ -976,7 +976,7 @@ public class SecurityGuardManagerWraper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ef08fd10", new Object[]{str, new Integer(i), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         int length = str.length();
@@ -1013,7 +1013,7 @@ public class SecurityGuardManagerWraper {
             IDynamicDataEncryptComponent dynamicDataEncryptComp = getSecurityGuardManager().getDynamicDataEncryptComp();
             if (dynamicDataEncryptComp != null) {
                 String dynamicEncryptDDp = dynamicDataEncryptComp.dynamicEncryptDDp(str);
-                return TextUtils.isEmpty(dynamicEncryptDDp) ? str : dynamicEncryptDDp;
+                return StringUtils.isEmpty(dynamicEncryptDDp) ? str : dynamicEncryptDDp;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -1026,7 +1026,7 @@ public class SecurityGuardManagerWraper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("72c54002", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -1048,7 +1048,7 @@ public class SecurityGuardManagerWraper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f59886dd", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 HistoryAccount findHistoryAccount = findHistoryAccount(Long.parseLong(str));
                 if (findHistoryAccount != null) {

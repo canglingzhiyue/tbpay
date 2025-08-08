@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.ParcelFileDescriptor;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.dinamicx.monitor.DXMonitorConstant;
 import com.taobao.android.launcher.bootstrap.tao.ability.dispatch.Dispatchers;
 import com.taobao.search.common.util.i;
@@ -93,11 +93,11 @@ public class SandboxedProcessService extends Service {
         }
         c.f23848a = intent.getBooleanExtra("log.enable", false);
         String stringExtra = intent.getStringExtra("org.chromium.base.process_launcher.proc_type");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             stringExtra = DXMonitorConstant.DX_MONITOR_RENDER;
         }
         String stringExtra2 = intent.getStringExtra("org.chromium.base.process_launcher.browser_proc_name");
-        if (TextUtils.isEmpty(stringExtra2)) {
+        if (StringUtils.isEmpty(stringExtra2)) {
             stringExtra2 = "Unknown";
         }
         c.a(stringExtra, intent.getIntExtra("proc.id", 0), intent.getIntExtra("org.chromium.base.process_launcher.browser_proc_pid", 0));
@@ -158,9 +158,9 @@ public class SandboxedProcessService extends Service {
         arrayList.add(stringExtra4);
         arrayList.add(stringExtra5);
         arrayList.add(stringExtra3);
-        if (!TextUtils.isEmpty(stringExtra3) && !stringExtra3.equals(getApplicationInfo().nativeLibraryDir) && (stringArrayExtra = this.i.getStringArrayExtra("info.core.libs")) != null) {
+        if (!StringUtils.isEmpty(stringExtra3) && !stringExtra3.equals(getApplicationInfo().nativeLibraryDir) && (stringArrayExtra = this.i.getStringArrayExtra("info.core.libs")) != null) {
             for (String str : stringArrayExtra) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     arrayList.add(str.endsWith(bgy.SO_EXTENSION) ? new File(stringExtra3, str).getPath() : new File(stringExtra3, "lib" + str + bgy.SO_EXTENSION).getPath());
                 }
             }

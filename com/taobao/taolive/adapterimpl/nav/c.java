@@ -2,7 +2,7 @@ package com.taobao.taolive.adapterimpl.nav;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.taolive.sdk.adapter.nav.INavInterceptor;
@@ -28,7 +28,7 @@ public class c implements pnw {
             ipChange.ipc$dispatch("2a729a6a", new Object[]{this, context, str, bundle});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = a(str, "fromLiveRoom=1");
         }
         INavInterceptor iNavInterceptor = this.f21396a;
@@ -45,7 +45,7 @@ public class c implements pnw {
             ipChange.ipc$dispatch("23e125d9", new Object[]{this, context, str, bundle, new Integer(i)});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = a(str, "fromLiveRoom=1");
         }
         INavInterceptor iNavInterceptor = this.f21396a;

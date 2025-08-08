@@ -2,7 +2,7 @@ package com.taobao.android.megadesign.dx.view;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -262,7 +262,7 @@ public class b extends af {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6a49cb7a", new Object[]{this, textView, new Integer(i)});
         } else if (i == 5) {
-            textView.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+            textView.setEllipsize(StringUtils.TruncateAt.MARQUEE);
             textView.setFocusable(true);
             textView.setFocusableInTouchMode(true);
             textView.setMarqueeRepeatLimit(this.b);

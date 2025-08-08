@@ -1,6 +1,6 @@
 package com.taobao.accs.client;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.IProcessName;
 import com.taobao.accs.utl.ALog;
@@ -38,7 +38,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             str2 = str + TaobaoConstants.DEFAULT_INTENT_SERVICE_CLASS_NAME;
         } else {
             str2 = b;

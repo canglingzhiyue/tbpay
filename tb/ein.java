@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.l;
@@ -162,6 +162,6 @@ public class ein {
     public String d(String str) {
         DetailOptNode c;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f4d254b", new Object[]{this, str}) : (!TextUtils.isEmpty(str) && (c = a().c(str)) != null) ? c.bucketId : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f4d254b", new Object[]{this, str}) : (!StringUtils.isEmpty(str) && (c = a().c(str)) != null) ? c.bucketId : "";
     }
 }

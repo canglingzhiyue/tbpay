@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
@@ -68,7 +68,7 @@ public class mvt {
         if (ipChange instanceof IpChange) {
             return (MTBIconPixelInfoBean) ipChange.ipc$dispatch("9d781f14", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || this.f31288a == null || (mvrVar = this.b) == null) {
+        if (StringUtils.isEmpty(str) || this.f31288a == null || (mvrVar = this.b) == null) {
             return new MTBIconPixelInfoBean();
         }
         MTBIconLocalIndexProtocol a2 = mvrVar.a(str);
@@ -87,7 +87,7 @@ public class mvt {
             return (MTBIconPixelInfoBean) ipChange.ipc$dispatch("b31ca685", new Object[]{this, mTBIconLocalIndexProtocol});
         }
         String str = mTBIconLocalIndexProtocol.nodeId;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new MTBIconPixelInfoBean();
         }
         DXWidgetNode findWidgetNodeByUserId = this.f31288a.findWidgetNodeByUserId(str);
@@ -110,7 +110,7 @@ public class mvt {
         MTBIconPixelInfoBean mTBIconPixelInfoBean = new MTBIconPixelInfoBean();
         Pair<Rect, Boolean> findBasementLocalInWindow = this.f31288a.findBasementLocalInWindow();
         String str = mTBIconLocalIndexProtocol.nodeId;
-        if (findBasementLocalInWindow == null || TextUtils.isEmpty(str) || (findWeexNodeLocal = this.f31288a.findWeexNodeLocal(mTBIconLocalIndexProtocol.nodeId)) == null) {
+        if (findBasementLocalInWindow == null || StringUtils.isEmpty(str) || (findWeexNodeLocal = this.f31288a.findWeexNodeLocal(mTBIconLocalIndexProtocol.nodeId)) == null) {
             return mTBIconPixelInfoBean;
         }
         Rect rect = (Rect) findBasementLocalInWindow.first;
@@ -142,7 +142,7 @@ public class mvt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.f31288a == null || (mvrVar = this.b) == null || (a2 = mvrVar.a(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || this.f31288a == null || (mvrVar = this.b) == null || (a2 = mvrVar.a(str)) == null) {
         } else {
             this.f31288a.getRootView().postDelayed(new Runnable() { // from class: tb.mvt.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -157,7 +157,7 @@ public class mvt {
                     } else if (mvt.a(mvt.this) == null || mvt.b(mvt.this) == null) {
                     } else {
                         String str2 = a2.nodeId;
-                        if (TextUtils.isEmpty(str2) || (findWidgetNodeByUserId = mvt.a(mvt.this).findWidgetNodeByUserId(str2)) == null || (a3 = mvt.a(mvt.this, findWidgetNodeByUserId)) == null) {
+                        if (StringUtils.isEmpty(str2) || (findWidgetNodeByUserId = mvt.a(mvt.this).findWidgetNodeByUserId(str2)) == null || (a3 = mvt.a(mvt.this, findWidgetNodeByUserId)) == null) {
                             return;
                         }
                         if (a2.moduleTag == null || !a2.moduleTag.contains("basementTip")) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.dinamicx.expression.event.DXEvent;
@@ -72,7 +72,7 @@ public class fqp {
             return (String) ipChange.ipc$dispatch("8126d80d", new Object[]{this});
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(TextUtils.isEmpty(this.e) ? Long.valueOf(this.d) : this.e);
+        sb.append(StringUtils.isEmpty(this.e) ? Long.valueOf(this.d) : this.e);
         sb.append(":");
         String sb2 = sb.toString();
         List<fqp> list = this.c;

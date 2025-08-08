@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.h;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,12 +24,12 @@ public class WVImage extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.equals(str, "saveImage")) {
+        if (!StringUtils.equals(str, "saveImage")) {
             return false;
         }
         try {
             String optString = new JSONObject(str2).optString("url", "");
-            if (!TextUtils.isEmpty(optString)) {
+            if (!StringUtils.isEmpty(optString)) {
                 h.a(this.mContext, optString, new h.a() { // from class: android.taobao.windvane.jsbridge.api.WVImage.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

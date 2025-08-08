@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.aura.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.service.event.AURAEventKey;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -104,11 +104,11 @@ public class e {
             return hashMap;
         }
         String i = C.i();
-        if (!TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(i)) {
             hashMap.put("item_id", i);
         }
         String h = C.h();
-        if (!TextUtils.isEmpty(h)) {
+        if (!StringUtils.isEmpty(h)) {
             hashMap.put("seller_id", h);
         }
         return hashMap;

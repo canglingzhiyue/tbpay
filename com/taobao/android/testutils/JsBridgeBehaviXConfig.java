@@ -2,7 +2,7 @@ package com.taobao.android.testutils;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -129,7 +129,7 @@ public class JsBridgeBehaviXConfig extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Map<String, String> map = (Map) JSONObject.parseObject(str, new TypeReference<Map<String, String>>() { // from class: com.taobao.android.testutils.JsBridgeBehaviXConfig.2
             }, new Feature[0]);
@@ -257,7 +257,7 @@ public class JsBridgeBehaviXConfig extends e {
         String string = parseObject.getString("pageName");
         String string2 = parseObject.getString("scriptName");
         final String string3 = parseObject.getString("operatorName");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             wVCallBackContext.error();
             return true;
         }
@@ -298,13 +298,13 @@ public class JsBridgeBehaviXConfig extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("26c8934", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("params is empty");
             return false;
         }
         try {
             String string = JSONObject.parseObject(str).getString("debugKey");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("debugKey is null");
                 return false;
             }
@@ -326,13 +326,13 @@ public class JsBridgeBehaviXConfig extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("361ab3f5", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("params is empty");
             return false;
         }
         try {
             JSONObject parseObject = JSONObject.parseObject(str);
-            if (TextUtils.equals(parseObject.getString("uploadSource"), "BXLog")) {
+            if (StringUtils.equals(parseObject.getString("uploadSource"), "BXLog")) {
                 parseObject.put("debug_api_url", (Object) "http://service-usertrack.alibaba-inc.com/upload_records_from_client");
                 parseObject.put("debug_sampling_option", (Object) "true");
                 parseObject.put("debug_store", (Object) parseObject.getString("debugKey"));
@@ -355,7 +355,7 @@ public class JsBridgeBehaviXConfig extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("69c8deb6", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("params is empty");
             return false;
         }
@@ -376,7 +376,7 @@ public class JsBridgeBehaviXConfig extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9d770977", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("params is empty");
             return false;
         }
@@ -404,7 +404,7 @@ public class JsBridgeBehaviXConfig extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d1253438", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error("params is empty");
             return false;
         } else if (JSONObject.parseObject(str) == null) {

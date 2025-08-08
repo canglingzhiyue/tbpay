@@ -1,7 +1,7 @@
 package com.taobao.media;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.AVSDKLog;
 import com.taobao.taobaoavsdk.Tracer.c;
@@ -26,7 +26,7 @@ public class MediaDeviceUtils {
             return ((Boolean) ipChange.ipc$dispatch("f2050e03", new Object[]{str})).booleanValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             float parseFloat = Float.parseFloat(str);

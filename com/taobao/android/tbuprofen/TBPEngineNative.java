@@ -1,6 +1,6 @@
 package com.taobao.android.tbuprofen;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.common.b;
 import tb.kge;
@@ -33,7 +33,7 @@ public class TBPEngineNative {
         }
         try {
             String a2 = h.b().a(com.taobao.android.tbuprofen.common.c.ENGINE_LIB_NAME);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 bVar.e.a(f.ERR_LOAD_ENGINE_EXCEPTION, a2);
                 com.taobao.android.tbuprofen.log.c.a("TBPEngineNative", "Failed to load tbp-engine. %s", a2);
                 return false;

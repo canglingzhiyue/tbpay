@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.nav;
 
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -90,13 +90,13 @@ public class b implements Runnable {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String a2 = ebw.a(this.f11419a);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             ecg.d(this.b, "nav");
             com.taobao.android.detail.core.utils.i.c(com.taobao.android.detail.core.performance.l.a("DetailNavPreloadRunnable"), "导航预加载itemId为空");
             return "";
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(a(this.f11419a))) {
+        if (!StringUtils.isEmpty(a(this.f11419a))) {
             jSONObject.put("url", (Object) this.f11419a.getData().toString());
         }
         jSONObject.put("itemId", (Object) a2);

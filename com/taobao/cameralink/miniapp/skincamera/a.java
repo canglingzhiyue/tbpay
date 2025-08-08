@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.hardware.Camera;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -212,7 +212,7 @@ public class a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("514371a1", new Object[]{this, bArr, new Integer(i), new Integer(i2)});
-                } else if (TextUtils.isEmpty(a.a(a.this)) || TextUtils.isEmpty(a.b(a.this)) || a.c(a.this) == null) {
+                } else if (StringUtils.isEmpty(a.a(a.this)) || StringUtils.isEmpty(a.b(a.this)) || a.c(a.this) == null) {
                 } else {
                     if (a.d(a.this) == null) {
                         a.c(a.this).init(a.a(a.this), a.b(a.this));

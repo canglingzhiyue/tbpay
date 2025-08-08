@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.datasource.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -124,7 +124,7 @@ public abstract class b<RESULT extends BaseSearchResult> extends isk<RESULT> {
     @Override // tb.isk
     public boolean a(com.taobao.android.searchbaseframe.net.d dVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("828ba797", new Object[]{this, dVar})).booleanValue() : !TextUtils.isEmpty(b(((itt.a) ((itt) dVar).b).c));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("828ba797", new Object[]{this, dVar})).booleanValue() : !StringUtils.isEmpty(b(((itt.a) ((itt) dVar).b).c));
     }
 
     public com.taobao.android.searchbaseframe.net.a a(Map<String, String> map, com.taobao.android.searchbaseframe.net.d dVar) {
@@ -144,7 +144,7 @@ public abstract class b<RESULT extends BaseSearchResult> extends isk<RESULT> {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         String a2 = com.taobao.android.searchbaseframe.ace.b.a(a(), str);
-        return TextUtils.isEmpty(a2) ? a().k().a(str) : a2;
+        return StringUtils.isEmpty(a2) ? a().k().a(str) : a2;
     }
 
     /* JADX WARN: Type inference failed for: r5v1, types: [OPTIONS, tb.itt$b] */
@@ -178,12 +178,12 @@ public abstract class b<RESULT extends BaseSearchResult> extends isk<RESULT> {
             String[] split = bufferedReader.readLine().split(":");
             String readLine = bufferedReader.readLine();
             String substring = readLine.substring(readLine.indexOf(":"));
-            if (TextUtils.equals(split[1], "data")) {
+            if (StringUtils.equals(split[1], "data")) {
                 a((b<RESULT>) result, JSON.parseObject(substring));
                 a((b<RESULT>) result);
-            } else if (TextUtils.equals(split[1], "complete")) {
+            } else if (StringUtils.equals(split[1], "complete")) {
                 result.setSseFinished(true);
-            } else if (!TextUtils.equals(split[1], "error")) {
+            } else if (!StringUtils.equals(split[1], "error")) {
             } else {
                 result.setSseFinished(true);
                 result.setResultError(new ResultError(6, substring));
@@ -314,7 +314,7 @@ public abstract class b<RESULT extends BaseSearchResult> extends isk<RESULT> {
             return;
         }
         String string = jSONObject.getString("parser");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = this.c;
         }
         a().p().a(string).a(result, jSONObject, this.f29279a);

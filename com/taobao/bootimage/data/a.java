@@ -1,6 +1,6 @@
 package com.taobao.bootimage.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.BootImageDataMgr;
 import java.util.Calendar;
@@ -46,8 +46,8 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.b)) {
-            return TextUtils.equals(d(), this.b);
+        if (!StringUtils.isEmpty(this.b)) {
+            return StringUtils.equals(d(), this.b);
         }
         return false;
     }

@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.ProcessInfo;
@@ -104,7 +104,7 @@ public class ContextInfo {
             ipChange.ipc$dispatch("596b2eb", new Object[]{this});
             return;
         }
-        if (TextUtils.isEmpty(this.x) || Math.abs(System.currentTimeMillis() - this.y) > TimeUnit.MINUTES.toMillis(30L)) {
+        if (StringUtils.isEmpty(this.x) || Math.abs(System.currentTimeMillis() - this.y) > TimeUnit.MINUTES.toMillis(30L)) {
             this.y = System.currentTimeMillis();
             this.x = UUID.randomUUID().toString();
         }
@@ -114,7 +114,7 @@ public class ContextInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || str2 == null) {
+        } else if (StringUtils.isEmpty(str) || str2 == null) {
         } else {
             this.f5401a.putString(str, str2);
             c(str, str2);
@@ -318,7 +318,7 @@ public class ContextInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str2) || str3 == null) {
+        } else if (StringUtils.isEmpty(str2) || str3 == null) {
         } else {
             try {
                 Context context = this.w;
@@ -336,7 +336,7 @@ public class ContextInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5b2e1ed", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.p)) {
+        } else if (StringUtils.isEmpty(this.p)) {
             this.q = this.p;
         } else {
             int lastIndexOf = this.p.lastIndexOf(45);
@@ -352,7 +352,7 @@ public class ContextInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f277e37e", new Object[]{this, str, str2});
-        } else if (!LoggerFactory.getProcessInfo().isPushProcess() || TextUtils.isEmpty(str) || str2 == null) {
+        } else if (!LoggerFactory.getProcessInfo().isPushProcess() || StringUtils.isEmpty(str) || str2 == null) {
         } else {
             if (!LoggingSPCache.STORAGE_USERID.equals(str) && !LoggingSPCache.STORAGE_CLIENTID.equals(str) && !"utdid".equals(str)) {
                 return;

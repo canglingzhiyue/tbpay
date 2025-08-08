@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1007,7 +1007,7 @@ public class TBVideoComponent extends Component<RoundedCornerLayout, c> implemen
             return;
         }
         String r = r();
-        if (TextUtils.isEmpty(r)) {
+        if (StringUtils.isEmpty(r)) {
             return;
         }
         if (oeb.aa()) {
@@ -1065,7 +1065,7 @@ public class TBVideoComponent extends Component<RoundedCornerLayout, c> implemen
                             return;
                         }
                         if (oeb.bg()) {
-                            if (TextUtils.isEmpty(TBVideoComponent.f(TBVideoComponent.this))) {
+                            if (StringUtils.isEmpty(TBVideoComponent.f(TBVideoComponent.this))) {
                                 odzVar.b(TBVideoComponent.g(TBVideoComponent.this));
                             } else {
                                 odzVar.b(TBVideoComponent.f(TBVideoComponent.this));
@@ -1265,8 +1265,8 @@ public class TBVideoComponent extends Component<RoundedCornerLayout, c> implemen
             z = false;
             z2 = false;
         } else {
-            z2 = cVar.C instanceof String ? !TextUtils.isEmpty((String) cVar.C) : true;
-            z = cVar.B instanceof String ? !TextUtils.isEmpty((String) cVar.B) : true;
+            z2 = cVar.C instanceof String ? !StringUtils.isEmpty((String) cVar.C) : true;
+            z = cVar.B instanceof String ? !StringUtils.isEmpty((String) cVar.B) : true;
         }
         return z2 && z;
     }
@@ -1280,11 +1280,11 @@ public class TBVideoComponent extends Component<RoundedCornerLayout, c> implemen
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e26c3707", new Object[]{this, odzVar, str, str2});
-        } else if (!TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             try {
                 final String string = new org.json.JSONObject(str2).getString("coverUrl");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().i().a(this.node.N(), string, -1, -1, new ImageLoader.c() { // from class: com.taobao.tao.flexbox.layoutmanager.component.TBVideoComponent.18

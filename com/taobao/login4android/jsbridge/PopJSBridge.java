@@ -11,7 +11,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -275,7 +275,7 @@ public class PopJSBridge extends e {
             LoginContext.mFrom = this.source;
             Bundle bundle = new Bundle();
             bundle.putString("source", this.source);
-            if (TextUtils.equals(str3, "recommendloginpage")) {
+            if (StringUtils.equals(str3, "recommendloginpage")) {
                 bundle.putBoolean(LoginConstant.LAUNCH_PASS_GUIDE_FRAGMENT, true);
                 bundle.putBoolean(LoginConstant.FORCE_NORMAL_MODE, true);
                 bundle.putString(UIBaseConstants.LoginPage.PAGE_LOGIN_TYPE, UIBaseConstants.LoginPage.PAGE_RECOMMEND_LOGIN);
@@ -481,7 +481,7 @@ public class PopJSBridge extends e {
             }
             String str = this.loginPopInfo.benefitLandingUrl;
             String str2 = "handleLoginSuccess: landingUrl=" + str + ",benefitType=" + this.loginPopInfo.benefitType;
-            if (TextUtils.isEmpty(str) || !"channel".equals(this.loginPopInfo.benefitType)) {
+            if (StringUtils.isEmpty(str) || !"channel".equals(this.loginPopInfo.benefitType)) {
                 return;
             }
             Nav.from(getContext()).toUri(str);
@@ -559,7 +559,7 @@ public class PopJSBridge extends e {
                 }
             } else {
                 if (!markNotShow) {
-                    if (TextUtils.isEmpty(Login.getOldUserId())) {
+                    if (StringUtils.isEmpty(Login.getOldUserId())) {
                         if (Login.checkSessionValid()) {
                         }
                     }
@@ -581,7 +581,7 @@ public class PopJSBridge extends e {
                 final JSONObject jSONObject = new JSONObject();
                 final boolean z2 = homepageFirstResumed != null && homepageFirstResumed.booleanValue();
                 final HashMap hashMap = new HashMap();
-                if (TextUtils.isEmpty(Login.getOldUserId())) {
+                if (StringUtils.isEmpty(Login.getOldUserId())) {
                     z = false;
                 }
                 hashMap.put("onceLogined", String.valueOf(z));
@@ -665,7 +665,7 @@ public class PopJSBridge extends e {
         if (Login.canAutoLogin()) {
             track("login_pop_can_autologin", hashMap);
         } else {
-            hashMap.put("onceLogined", String.valueOf(!TextUtils.isEmpty(Login.getOldUserId())));
+            hashMap.put("onceLogined", String.valueOf(!StringUtils.isEmpty(Login.getOldUserId())));
             track("login_pop_not_can_autologin", hashMap);
         }
         callbackNotShow(wVCallBackContext);
@@ -896,7 +896,7 @@ public class PopJSBridge extends e {
             failCallback(wVCallBackContext, ResourceUtil.getInvalidParam(), String.valueOf(GET_BAR_PARAM_ERROR));
         } else {
             try {
-                if (jSONObject.containsKey("checkLogin") && "true".equals(jSONObject.getString("checkLogin")) && (LoginStatus.isLogining() || com.taobao.login4android.api.Login.checkSessionValid() || !TextUtils.isEmpty(com.taobao.login4android.api.Login.getLoginToken()))) {
+                if (jSONObject.containsKey("checkLogin") && "true".equals(jSONObject.getString("checkLogin")) && (LoginStatus.isLogining() || com.taobao.login4android.api.Login.checkSessionValid() || !StringUtils.isEmpty(com.taobao.login4android.api.Login.getLoginToken()))) {
                     failCallback(wVCallBackContext, ResourceUtil.getNetworkError(), String.valueOf(GET_BAR_INFO_CHECK_LOGIN_FAILED));
                 } else {
                     CoordinatorWrapper.executeSafely(new AsyncTask<Object, Void, AppLaunchInfoResponseData>() { // from class: com.taobao.login4android.jsbridge.PopJSBridge.6

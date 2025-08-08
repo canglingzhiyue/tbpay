@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 
@@ -70,7 +70,7 @@ public class bxd {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue();
         }
         String config = OrangeConfig.getInstance().getConfig("babelorder", str, String.valueOf(i));
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return i;
         }
         try {
@@ -86,7 +86,7 @@ public class bxd {
             return ((Number) ipChange.ipc$dispatch("8123a1be", new Object[]{str, new Float(f)})).floatValue();
         }
         String config = OrangeConfig.getInstance().getConfig("babelorder", str, String.valueOf(f));
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return f;
         }
         try {
@@ -102,7 +102,7 @@ public class bxd {
             return ((Number) ipChange.ipc$dispatch("8123b0c6", new Object[]{str, new Long(j)})).longValue();
         }
         String config = OrangeConfig.getInstance().getConfig("babelorder", str, String.valueOf(j));
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return j;
         }
         try {
@@ -118,6 +118,6 @@ public class bxd {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
         String config = OrangeConfig.getInstance().getConfig("babelorder", str, str2);
-        return TextUtils.isEmpty(config) ? str2 : config;
+        return StringUtils.isEmpty(config) ? str2 : config;
     }
 }

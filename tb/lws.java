@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.informationflowdataservice.dataservice.core.datasource.model.card.SectionModel;
@@ -158,7 +158,7 @@ public class lws {
                     lxl.c("TabProtocolProcess", "服务端数据异常，非常严重 content = null ！！！");
                 } else {
                     String string = jSONObject4.getString(e.KEY_TAB_ID);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         return string;
                     }
                     lxl.c("TabProtocolProcess", "服务端数据异常，非常严重 tabId = null ！！！");
@@ -178,6 +178,6 @@ public class lws {
 
     private boolean a(JSONObject jSONObject) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue() : TextUtils.equals(jSONObject.getString("sectionBizCode"), "sub_tab");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue() : StringUtils.equals(jSONObject.getString("sectionBizCode"), "sub_tab");
     }
 }

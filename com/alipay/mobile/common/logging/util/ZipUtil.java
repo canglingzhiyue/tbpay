@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -51,7 +51,7 @@ public class ZipUtil {
             } catch (Throwable unused) {
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = file2.getName();
         }
         while (true) {
@@ -60,7 +60,7 @@ public class ZipUtil {
                 break;
             }
             String name = file2.getName();
-            if (TextUtils.isEmpty(name)) {
+            if (StringUtils.isEmpty(name)) {
                 break;
             }
             str = name + fxb.DIR + str;

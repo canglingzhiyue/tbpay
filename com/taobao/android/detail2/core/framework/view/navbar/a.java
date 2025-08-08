@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.view.navbar;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.fjp;
 import tb.fkr;
@@ -26,7 +26,7 @@ public class a {
             return ((Number) ipChange.ipc$dispatch("6f0359b4", new Object[]{dVar, bVar})).intValue();
         }
         AtmosParams G = bVar.h().G();
-        if (G != null && G.showAtmos && !TextUtils.isEmpty(G.atmosColor)) {
+        if (G != null && G.showAtmos && !StringUtils.isEmpty(G.atmosColor)) {
             try {
                 return Color.parseColor(G.atmosColor);
             } catch (Exception e) {
@@ -35,7 +35,7 @@ public class a {
                 fjp.a(fjp.SCENE_ENTRANCE_ATMOS, fjp.ERROR_CODE_ATMOS_COLOR_PARSE_ERROR, "atmoscolor解析错误，入口itemid：" + h.e() + ", 入口nid" + h.f() + ", colorStr: " + G.atmosColor, h.T());
             }
         }
-        if (dVar != null && !TextUtils.isEmpty(dVar.O)) {
+        if (dVar != null && !StringUtils.isEmpty(dVar.O)) {
             try {
                 return Color.parseColor(dVar.O);
             } catch (Exception e2) {

@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.utdid2.device.UTDevice;
@@ -738,7 +738,7 @@ public class TBHeapDumper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        return String.format("%s-%s-%s", this.i.f15455a, !TextUtils.isEmpty(this.i.b) ? this.i.b.replaceAll("[:*?<>|\"\\\\/]", "_") : "default", str);
+        return String.format("%s-%s-%s", this.i.f15455a, !StringUtils.isEmpty(this.i.b) ? this.i.b.replaceAll("[:*?<>|\"\\\\/]", "_") : "default", str);
     }
 
     private String i() {
@@ -835,7 +835,7 @@ public class TBHeapDumper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c6fb4d02", new Object[]{this, str, new Integer(i), new Integer(i2), new Boolean(z)});
-        } else if (!TextUtils.isEmpty(str) && str.equals(this.i.b)) {
+        } else if (!StringUtils.isEmpty(str) && str.equals(this.i.b)) {
             File file = new File(this.d.getParentFile(), "tbp-dump-local");
             if (!file.exists()) {
                 file.mkdirs();
@@ -883,7 +883,7 @@ public class TBHeapDumper {
         }
         if (this.b == null) {
             String a2 = h.b().a(DefaultPlugin.PLUGIN_LIB_NAME);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.taobao.android.tbuprofen.log.c.a("TBHeapDumper", "Failed to load plugin lib. %s", a2);
             } else {
                 this.m = true;

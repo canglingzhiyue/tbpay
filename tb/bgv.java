@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -83,7 +83,7 @@ public class bgv implements bgu {
             } catch (IllegalFormatException e) {
                 String valueOf = String.valueOf(str2);
                 Log.e(bgu.MODULE, valueOf.length() != 0 ? "Unable to format ".concat(valueOf) : new String("Unable to format "), e);
-                String join = TextUtils.join(", ", objArr);
+                String join = StringUtils.join(", ", objArr);
                 StringBuilder sb = new StringBuilder(String.valueOf(str2).length() + 3 + String.valueOf(join).length());
                 sb.append(str2);
                 sb.append(" [");

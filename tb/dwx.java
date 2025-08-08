@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Toast;
@@ -75,7 +75,7 @@ public final class dwx extends arv {
             string = C.j();
         }
         String str = string;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             arc.a().c("AliDetailCollectClickEvent", "innerHandleEvent", "itemId is empty");
             return;
         }
@@ -219,7 +219,7 @@ public final class dwx extends arv {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                 return;
             }
-            if (ErrorConstant.isSessionInvalid(str) || TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+            if (ErrorConstant.isSessionInvalid(str) || StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                 epo.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_not_login));
             } else if (com.alibaba.ability.localization.b.c()) {
                 epo.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_collect_fail));
@@ -285,7 +285,7 @@ public final class dwx extends arv {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
                 return;
             }
-            if (ErrorConstant.isSessionInvalid(str) || TextUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
+            if (ErrorConstant.isSessionInvalid(str) || StringUtils.equals(str, "ANDROID_SYS_LOGIN_CANCEL")) {
                 epo.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_not_login));
             } else if (com.alibaba.ability.localization.b.c()) {
                 epo.a(com.alibaba.ability.localization.b.a(R.string.x_detail_app_cancel_collect_fail));
@@ -316,7 +316,7 @@ public final class dwx extends arv {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 if ((this.f27050a instanceof Activity) && !((Activity) this.f27050a).hasWindowFocus()) {
                     return;

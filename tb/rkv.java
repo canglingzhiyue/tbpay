@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.ContentValues;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.DAI;
 import java.util.HashMap;
@@ -125,7 +125,7 @@ public class rkv {
                 objArr[i3] = strArr[i3 - size];
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append(" WHERE ");
             sb.append(str2);
         }

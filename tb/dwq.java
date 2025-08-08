@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.LinearLayout;
 import com.alibaba.android.ultron.engine.template.TemplateInfo;
 import com.alibaba.android.ultron.vfw.dataloader.c;
@@ -236,7 +236,7 @@ public class dwq {
                 JSONObject jSONObject3 = (JSONObject) a2;
                 if (jSONObject3.containsKey("filter")) {
                     String string = jSONObject3.getString("filter");
-                    if (!TextUtils.isEmpty(string) && com.alibaba.android.ultron.engine.utils.h.a(this.b, string, jSONObject2)) {
+                    if (!StringUtils.isEmpty(string) && com.alibaba.android.ultron.engine.utils.h.a(this.b, string, jSONObject2)) {
                         UnifyLog.d(TAG, "filter过滤掉了VO: " + key);
                         arrayList.add(key);
                     }

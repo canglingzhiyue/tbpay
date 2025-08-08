@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.aliweex.bundle.WeexPageFragment;
 import com.alibaba.aliweex.bundle.j;
 import com.alibaba.aliweex.d;
@@ -194,7 +194,7 @@ public abstract class WXHCNavBarAdapter extends j {
         String string = jSONObject.getString("title");
         String string2 = jSONObject.getString("icon");
         this.menuItemTitle = new a();
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             if (!checkScheme(string2)) {
                 f fVar2 = new f();
                 fVar2.f2023a = "WX_FAILED";
@@ -204,7 +204,7 @@ public abstract class WXHCNavBarAdapter extends j {
             this.menuItemTitle.e = string2;
             getFragmentActivity().supportInvalidateOptionsMenu();
             return null;
-        } else if (!TextUtils.isEmpty(string)) {
+        } else if (!StringUtils.isEmpty(string)) {
             this.menuItemTitle.d = string;
             getFragmentActivity().supportInvalidateOptionsMenu();
             return null;
@@ -238,7 +238,7 @@ public abstract class WXHCNavBarAdapter extends j {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("831498d9", new Object[]{this, str, aVar})).booleanValue();
         }
-        if (shouldSetNavigator(NavigatorType.MORE_ITEM) && !TextUtils.isEmpty(str)) {
+        if (shouldSetNavigator(NavigatorType.MORE_ITEM) && !StringUtils.isEmpty(str)) {
             try {
                 if (this.menuItemList == null) {
                     this.menuItemList = new ArrayList();
@@ -261,10 +261,10 @@ public abstract class WXHCNavBarAdapter extends j {
                             aVar2.h = aVar;
                             aVar2.f = new Intent();
                             aVar2.f.putExtra("index", i);
-                            if (!TextUtils.isEmpty(string2)) {
+                            if (!StringUtils.isEmpty(string2)) {
                                 aVar2.e = string2;
                             }
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 aVar2.b(string);
                             }
                             if (!checkScheme(aVar2.e)) {
@@ -278,7 +278,7 @@ public abstract class WXHCNavBarAdapter extends j {
                     a aVar3 = new a();
                     aVar3.h = aVar;
                     String str4 = null;
-                    if (!TextUtils.isEmpty(null) || !TextUtils.isEmpty(null)) {
+                    if (!StringUtils.isEmpty(null) || !StringUtils.isEmpty(null)) {
                         str2 = null;
                         str3 = null;
                     } else {
@@ -286,13 +286,13 @@ public abstract class WXHCNavBarAdapter extends j {
                         str2 = jSONObject.optString("title");
                         str3 = jSONObject.optString("iconFontName");
                     }
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         aVar3.e = str4;
                     }
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         aVar3.a(getFragmentActivity(), str3);
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         aVar3.b(str2);
                     }
                     aVar3.f = new Intent();
@@ -312,7 +312,7 @@ public abstract class WXHCNavBarAdapter extends j {
                         JSONObject jSONObject4 = jSONArray.getJSONObject(i2);
                         a aVar4 = new a();
                         String string3 = jSONObject4.getString("text");
-                        if (!TextUtils.isEmpty(string3)) {
+                        if (!StringUtils.isEmpty(string3)) {
                             aVar4.d = string3;
                             boolean optBoolean = jSONObject4.optBoolean("fromNative", false);
                             boolean optBoolean2 = jSONObject4.optBoolean("iconFont", false);
@@ -359,7 +359,7 @@ public abstract class WXHCNavBarAdapter extends j {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c3c1d02f", new Object[]{this, str})).booleanValue();
         }
-        if (shouldSetNavigator(NavigatorType.MORE_ITEM) && !TextUtils.isEmpty(str)) {
+        if (shouldSetNavigator(NavigatorType.MORE_ITEM) && !StringUtils.isEmpty(str)) {
             try {
                 JSONArray jSONArray = new JSONObject(str).getJSONArray("items");
                 if (jSONArray != null && jSONArray.length() > 0) {
@@ -368,7 +368,7 @@ public abstract class WXHCNavBarAdapter extends j {
                         JSONObject jSONObject = jSONArray.getJSONObject(i);
                         a aVar = new a();
                         String string = jSONObject.getString("text");
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             aVar.d = string;
                             boolean optBoolean = jSONObject.optBoolean("fromNative", false);
                             boolean optBoolean2 = jSONObject.optBoolean("iconFont", false);
@@ -449,7 +449,7 @@ public abstract class WXHCNavBarAdapter extends j {
             if (r1 != 0) goto L27
             return r4
         L27:
-            boolean r1 = android.text.TextUtils.isEmpty(r7)
+            boolean r1 = android.text.StringUtils.isEmpty(r7)
             if (r1 != 0) goto Le9
             java.lang.String r1 = "utf-8"
             java.lang.String r7 = java.net.URLDecoder.decode(r7, r1)     // Catch: java.lang.Exception -> Ldf
@@ -459,7 +459,7 @@ public abstract class WXHCNavBarAdapter extends j {
             r7.<init>()     // Catch: java.lang.Exception -> Ldf
             java.lang.String r2 = "title"
             java.lang.String r2 = r1.optString(r2)     // Catch: java.lang.Exception -> Ldf
-            boolean r5 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Ldf
+            boolean r5 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Ldf
             if (r5 != 0) goto L59
             r7.b(r2)     // Catch: java.lang.Exception -> Ldf
             r6.menuItemTitle = r7     // Catch: java.lang.Exception -> Ldf
@@ -477,9 +477,9 @@ public abstract class WXHCNavBarAdapter extends j {
             java.lang.String r0 = r1.optString(r0)     // Catch: java.lang.Exception -> Ldf
             java.lang.String r2 = "iconType"
             java.lang.String r2 = r1.optString(r2)     // Catch: java.lang.Exception -> Ldf
-            boolean r5 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Ldf
+            boolean r5 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> Ldf
             if (r5 != 0) goto Lde
-            boolean r5 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Exception -> Ldf
+            boolean r5 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Exception -> Ldf
             if (r5 == 0) goto L7e
             goto Lde
         L7e:
@@ -611,10 +611,10 @@ public abstract class WXHCNavBarAdapter extends j {
         }
         try {
             String config = d.a().l().getConfig("group_weex_hc", "weex_main_hc_domain", "");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 for (String str : config.split(",")) {
                     String originalUrl = getWeexPageFragment().getOriginalUrl();
-                    if (!TextUtils.isEmpty(originalUrl) && originalUrl.contains(str)) {
+                    if (!StringUtils.isEmpty(originalUrl) && originalUrl.contains(str)) {
                         return false;
                     }
                 }
@@ -631,7 +631,7 @@ public abstract class WXHCNavBarAdapter extends j {
             return ((Boolean) ipChange.ipc$dispatch("539713a2", new Object[]{this, str})).booleanValue();
         }
         String scheme = Uri.parse(str).getScheme();
-        if (!TextUtils.isEmpty(scheme)) {
+        if (!StringUtils.isEmpty(scheme)) {
             String lowerCase = scheme.toLowerCase();
             if (lowerCase.equals("http") || lowerCase.equals("https") || lowerCase.equals("data") || lowerCase.equals("local")) {
                 return true;

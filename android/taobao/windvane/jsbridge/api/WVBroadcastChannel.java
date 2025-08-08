@@ -3,7 +3,7 @@ package android.taobao.windvane.jsbridge.api;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -65,7 +65,7 @@ public class WVBroadcastChannel extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f973b17f", new Object[]{this, jSONObject, wVCallBackContext});
-        } else if (wVCallBackContext == null || wVCallBackContext.getWebview().getContext() == null || jSONObject == null || TextUtils.isEmpty(jSONObject.getString("name")) || TextUtils.isEmpty(jSONObject.getString("instanceId"))) {
+        } else if (wVCallBackContext == null || wVCallBackContext.getWebview().getContext() == null || jSONObject == null || StringUtils.isEmpty(jSONObject.getString("name")) || StringUtils.isEmpty(jSONObject.getString("instanceId"))) {
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("result", (Object) "-1");
             jSONObject2.put("message", (Object) "channel args error");
@@ -105,7 +105,7 @@ public class WVBroadcastChannel extends e {
         } else if (this.messageTokenChannels == null) {
         } else {
             final String string = jSONObject.getString("instanceId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 if (wVCallBackContext == null) {
                     return;
                 }
@@ -150,7 +150,7 @@ public class WVBroadcastChannel extends e {
             ipChange.ipc$dispatch("eab1429f", new Object[]{this, jSONObject, wVCallBackContext});
         } else if (this.messageTokenChannels == null) {
         } else {
-            if (TextUtils.isEmpty(jSONObject.getString("instanceId")) || !jSONObject.containsKey("message")) {
+            if (StringUtils.isEmpty(jSONObject.getString("instanceId")) || !jSONObject.containsKey("message")) {
                 if (wVCallBackContext == null) {
                     return;
                 }

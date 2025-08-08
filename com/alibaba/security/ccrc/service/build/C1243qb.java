@@ -2,7 +2,7 @@ package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.http.model.VersionInfo;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
 import com.alibaba.security.ccrc.manager.CcrcContextImpl;
@@ -133,7 +133,7 @@ public class C1243qb implements InterfaceC1240pb {
             return null;
         }
         String i = i();
-        if (TextUtils.isEmpty(i) || (wuKongConfigData = (WuKongConfigData) JsonUtils.parseObject(i, (Class<Object>) WuKongConfigData.class)) == null) {
+        if (StringUtils.isEmpty(i) || (wuKongConfigData = (WuKongConfigData) JsonUtils.parseObject(i, (Class<Object>) WuKongConfigData.class)) == null) {
             return null;
         }
         this.h = wuKongConfigData;

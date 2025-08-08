@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import org.json.JSONObject;
@@ -77,7 +77,7 @@ public class dha {
         sb.append(str);
         sb.append("] ");
         for (String str2 : strArr) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 sb.append(str2);
             }
         }

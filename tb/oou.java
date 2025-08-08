@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -42,7 +42,7 @@ public class oou implements gke {
         } catch (Throwable th) {
             e.a("gateway2.expireTabs", th, new String[0]);
         }
-        if (list == null || list.isEmpty() || TextUtils.isEmpty(str)) {
+        if (list == null || list.isEmpty() || StringUtils.isEmpty(str)) {
             return;
         }
         for (Object obj : list) {

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -83,7 +83,7 @@ public class opb {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:60:0x012c, code lost:
-        if (android.text.TextUtils.equals("cover", r5) != false) goto L47;
+        if (android.text.StringUtils.equals("cover", r5) != false) goto L47;
      */
     /* JADX WARN: Removed duplicated region for block: B:98:0x01eb  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x01fe  */
@@ -117,7 +117,7 @@ public class opb {
                     e.e("gw2.GatewayUtils", "refreshPath is not JSONObject");
                 } else {
                     String string = ((JSONObject) next).getString("path");
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         e.e("gw2.GatewayUtils", "path is empty");
                     } else {
                         int lastIndexOf = string.lastIndexOf(".");
@@ -125,7 +125,7 @@ public class opb {
                         String substring2 = string.substring(lastIndexOf + 1);
                         Object a2 = HomePageUtility.a((JSONObject) sectionModel2, substring);
                         Object a3 = HomePageUtility.a((JSONObject) sectionModel, string);
-                        if (TextUtils.isEmpty(substring2) || a2 == null || a3 == null) {
+                        if (StringUtils.isEmpty(substring2) || a2 == null || a3 == null) {
                             e.e("gw2.GatewayUtils", "replaceKey or parentObj or targetObj is null or empty");
                         } else if (a2 instanceof JSONObject) {
                             ((JSONObject) a2).put(substring2, a3);
@@ -162,22 +162,22 @@ public class opb {
             List<SectionModel> deltaData = awesomeGetContainerData.getDeltaData();
             List<SectionModel> deltaData2 = awesomeGetContainerData2.getDeltaData();
             ArrayList arrayList = new ArrayList();
-            if (TextUtils.equals(a2, "deltaRefresh")) {
+            if (StringUtils.equals(a2, "deltaRefresh")) {
                 arrayList.add("baseRefresh");
                 arrayList.add("pageExit");
                 arrayList.add("appExit");
                 arrayList.add("never");
-            } else if (TextUtils.equals(a2, "baseRefresh")) {
+            } else if (StringUtils.equals(a2, "baseRefresh")) {
                 arrayList.add("pageExit");
                 arrayList.add("appExit");
                 arrayList.add("never");
-            } else if (TextUtils.equals(a2, "pageExit")) {
+            } else if (StringUtils.equals(a2, "pageExit")) {
                 arrayList.add("appExit");
                 arrayList.add("never");
-            } else if (TextUtils.equals(a2, "appExit")) {
+            } else if (StringUtils.equals(a2, "appExit")) {
                 arrayList.add("never");
             } else {
-                TextUtils.equals(a2, "never");
+                StringUtils.equals(a2, "never");
             }
             ArrayList arrayList2 = new ArrayList();
             if (!arrayList.isEmpty() && deltaData != null) {
@@ -262,7 +262,7 @@ public class opb {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("c1aa3516", new Object[]{str, list})).intValue();
         }
-        if (TextUtils.isEmpty(str) || list == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(str) || list == null || list.isEmpty()) {
             return -1;
         }
         for (int i2 = 0; i2 < list.size(); i2++) {
@@ -278,9 +278,9 @@ public class opb {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.equals(str, str2)) {
-            if (!TextUtils.equals(str + "_delta", str2)) {
-                if (!TextUtils.equals(str, str2 + "_delta")) {
+        if (!StringUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str + "_delta", str2)) {
+                if (!StringUtils.equals(str, str2 + "_delta")) {
                     return false;
                 }
             }
@@ -298,7 +298,7 @@ public class opb {
         }
         AwesomeGetContainerInnerData m1279clone = awesomeGetContainerData.delta.m1279clone();
         for (SectionModel sectionModel : awesomeGetContainerData.getDeltaData()) {
-            if (!TextUtils.equals(sectionModel.getString("invalidType"), "never")) {
+            if (!StringUtils.equals(sectionModel.getString("invalidType"), "never")) {
                 m1279clone.sections.remove(sectionModel);
             }
         }
@@ -367,25 +367,25 @@ public class opb {
         jSONObject3.put("new2021UIEnable", (Object) Boolean.valueOf(com.taobao.tao.homepage.revision.a.a().e()));
         jSONObject3.put(com.taobao.homepage.view.widgets.bgcontainer.a.IS_COMPLEX_TEXTURE, (Object) Boolean.valueOf(com.taobao.homepage.view.widgets.bgcontainer.a.b()));
         e.b("xingze", "triggerEvent=" + str);
-        if (TextUtils.equals(str, "PageBack")) {
+        if (StringUtils.equals(str, "PageBack")) {
             c.a(a3);
             JSONObject b2 = c.b(a3);
             if (b2 != null) {
                 for (String str3 : b2.keySet()) {
                     String string = b2.getString(str3);
                     jSONObject3.put(str3, (Object) b2.getString(str3));
-                    if (TextUtils.equals("itemId", str3)) {
+                    if (StringUtils.equals("itemId", str3)) {
                         c.a(a3, string);
                     }
                 }
             }
         } else {
             String a4 = ooi.a(a3);
-            if (!TextUtils.isEmpty(a4)) {
+            if (!StringUtils.isEmpty(a4)) {
                 jSONObject3.put("guessModelVersion", (Object) a4);
             }
         }
-        if (TextUtils.equals(str, "modelCompute")) {
+        if (StringUtils.equals(str, "modelCompute")) {
             return jSONObject2;
         }
         com.taobao.android.gateway.datastructure.b bVar = new com.taobao.android.gateway.datastructure.b(str, aVar, jSONObject2);
@@ -428,7 +428,7 @@ public class opb {
             return (JSONObject) ipChange.ipc$dispatch("b5b41035", new Object[]{str, aVar, strArr, jSONObject});
         }
         long uptimeMillis = SystemClock.uptimeMillis();
-        if (!TextUtils.equals("ViewAppear", str)) {
+        if (!StringUtils.equals("ViewAppear", str)) {
             laq.a().a("MTopRequest").b("triggerNewFaceRequest").c("gw2.GatewayUtils.triggerEventByNewFace;").c("触发newFace网络请求;").a(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE, str).b();
         }
         JSONObject jSONObject3 = jSONObject == null ? new JSONObject() : jSONObject;
@@ -453,31 +453,31 @@ public class opb {
         }
         lar.k("guessModelVersion");
         for (String str3 : strArr) {
-            if (TextUtils.equals(str, "PageBack") && oqc.a().c(str3)) {
+            if (StringUtils.equals(str, "PageBack") && oqc.a().c(str3)) {
                 c.a(str3);
                 JSONObject b3 = c.b(str3);
                 if (b3 != null) {
                     for (String str4 : b3.keySet()) {
                         String string = b3.getString(str4);
                         jSONObject2.put(str4, b3.getString(str4));
-                        if (TextUtils.equals("itemId", str4)) {
+                        if (StringUtils.equals("itemId", str4)) {
                             c.a(str3, string);
                         }
                     }
                 }
             } else {
                 String a2 = ooi.a(str3);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     jSONObject2.put("guessModelVersion", a2);
                 }
             }
         }
         lar.l("guessModelVersion");
-        if (TextUtils.equals(str, "modelCompute")) {
+        if (StringUtils.equals(str, "modelCompute")) {
             return jSONObject3;
         }
         jSONObject3.put(oqd.MTOP_STAGE_ASSEMBLEPARAMS_STARTTIME, (Object) Long.valueOf(uptimeMillis));
-        if (TextUtils.equals(str, "ColdStart") && com.taobao.homepage.utils.i.f()) {
+        if (StringUtils.equals(str, "ColdStart") && com.taobao.homepage.utils.i.f()) {
             jSONObject3.put("forceRequest", (Object) true);
             oqc.a().a("ColdStart", strArr, "coldStart", jSONObject3);
             return jSONObject3;
@@ -489,7 +489,7 @@ public class opb {
         if (message != null && (b2 = d.b(oqc.a().m())) != null) {
             b2.a(message);
         }
-        if (TextUtils.equals(str, "LoadCache")) {
+        if (StringUtils.equals(str, "LoadCache")) {
             oqd.b("gateWay", str, String.valueOf(SystemClock.uptimeMillis() - uptimeMillis), null);
         }
         return jSONObject3;

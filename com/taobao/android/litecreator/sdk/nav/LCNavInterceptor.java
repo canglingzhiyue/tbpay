@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -79,7 +79,7 @@ public abstract class LCNavInterceptor implements com.taobao.android.litecreator
                 for (String key : queryParameterNames) {
                     String queryParameter = data.getQueryParameter(key);
                     String str = key;
-                    if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(queryParameter)) {
                         jSONObject.put((JSONObject) key, queryParameter);
                     }
                     q.b(key, "key");
@@ -299,7 +299,7 @@ public abstract class LCNavInterceptor implements com.taobao.android.litecreator
         q.d(intent, "intent");
         q.d(context, "context");
         String a2 = a();
-        if (!TextUtils.isEmpty(a2) && (data = intent.getData()) != null && (path = data.getPath()) != null) {
+        if (!StringUtils.isEmpty(a2) && (data = intent.getData()) != null && (path = data.getPath()) != null) {
             return n.b((CharSequence) path, (CharSequence) a2, false, 2, (Object) null);
         }
         return false;

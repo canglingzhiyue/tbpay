@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.service;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.ag;
 import com.taobao.taolive.room.utils.ai;
@@ -33,7 +33,7 @@ public class e {
         int i = 0;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.startsWith(ado.URL_SEPARATOR)) {
                 str = "http:" + str;
@@ -44,13 +44,13 @@ public class e {
                 String queryParameter2 = parse.getQueryParameter("accountId");
                 String queryParameter3 = parse.getQueryParameter("bizType");
                 String queryParameter4 = parse.getQueryParameter(ag.KEY_TAOKE_BIZSCENE);
-                if (TextUtils.isEmpty(queryParameter) || TextUtils.isEmpty(queryParameter2) || TextUtils.isEmpty(queryParameter3)) {
+                if (StringUtils.isEmpty(queryParameter) || StringUtils.isEmpty(queryParameter2) || StringUtils.isEmpty(queryParameter3)) {
                     if (com.taobao.taolive.room.utils.d.a()) {
                         b("param itemId = " + queryParameter + " or accountId = " + queryParameter2 + " bizType = " + queryParameter3 + " is null !!!");
                     }
                     i = 1;
                 }
-                if (poy.u(n.a()) != null && poy.u(n.a()).broadCaster != null && poy.u(n.a()).broadCaster.accountId != null && !TextUtils.isEmpty(queryParameter2) && !queryParameter2.equals(poy.u(n.a()).broadCaster.accountId)) {
+                if (poy.u(n.a()) != null && poy.u(n.a()).broadCaster != null && poy.u(n.a()).broadCaster.accountId != null && !StringUtils.isEmpty(queryParameter2) && !queryParameter2.equals(poy.u(n.a()).broadCaster.accountId)) {
                     if (com.taobao.taolive.room.utils.d.a()) {
                         b("accountId miss match !!!");
                     }

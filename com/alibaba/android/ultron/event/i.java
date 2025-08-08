@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.ultron.engine.utils.ErrorConstants;
 import com.alibaba.android.ultron.vfw.option.a;
@@ -94,9 +94,9 @@ public class i extends q {
         com.alibaba.android.ultron.vfw.instance.b h = eVar.h();
         String string6 = jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE);
         HashMap hashMap = new HashMap();
-        if (TextUtils.equals(string6, "async")) {
+        if (StringUtils.equals(string6, "async")) {
             hashMap.put("params", a(h.b(), eVar.d()));
-        } else if (TextUtils.equals(string6, "submit")) {
+        } else if (StringUtils.equals(string6, "submit")) {
             hashMap.put("params", a(h.b()));
         }
         JSONObject jSONObject4 = new JSONObject();
@@ -105,7 +105,7 @@ public class i extends q {
             jSONObject4.putAll(jSONObject3);
         }
         a(mtopRequest, jSONObject4);
-        if (TextUtils.isEmpty(string3) || TextUtils.isEmpty(string4)) {
+        if (StringUtils.isEmpty(string3) || StringUtils.isEmpty(string4)) {
             UnifyLog.a(this.f.h(), TAG, "error: apiMethod or apiVersion is null", new String[0]);
             return;
         }

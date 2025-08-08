@@ -2,7 +2,7 @@ package com.taobao.search.musie.pager;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -489,7 +489,7 @@ public final class TbSlide extends UINode implements p.b, TbSlideDelegateNode.a,
             if (tbSlideItem2 == null) {
                 return;
             }
-            tbSlideItem2.setCanPlay(TextUtils.equals(getNativeState("videostatus"), "play"));
+            tbSlideItem2.setCanPlay(StringUtils.equals(getNativeState("videostatus"), "play"));
         }
     }
 
@@ -498,7 +498,7 @@ public final class TbSlide extends UINode implements p.b, TbSlideDelegateNode.a,
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d63f0e06", new Object[]{this, str, str2});
-        } else if (!TextUtils.equals(str, "videostatus")) {
+        } else if (!StringUtils.equals(str, "videostatus")) {
         } else {
             updateCurrentPlayState();
         }

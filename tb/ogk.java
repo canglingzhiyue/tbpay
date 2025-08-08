@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v4.view.GravityCompat;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
@@ -34,7 +34,7 @@ public class ogk extends ogl {
     public int s = 1;
     public int t = 1;
     public int u = Integer.MAX_VALUE;
-    public TextUtils.TruncateAt v = TextUtils.TruncateAt.END;
+    public StringUtils.TruncateAt v = StringUtils.TruncateAt.END;
     public int x = 0;
     public int C = -1;
     public boolean F = false;
@@ -68,8 +68,8 @@ public class ogk extends ogl {
         if (this.v == null && !hashMap.containsKey(a.ATOM_EXT_UDL_text_align) && !hashMap.containsKey(Constants.Name.ALIGN)) {
             this.n = GravityCompat.START;
         }
-        if (this.bt != null && TextUtils.equals(this.bt.K(), "marquee")) {
-            this.v = TextUtils.TruncateAt.MARQUEE;
+        if (this.bt != null && StringUtils.equals(this.bt.K(), "marquee")) {
+            this.v = StringUtils.TruncateAt.MARQUEE;
         }
         this.E = ohj.a(context, this.D, this.q, this.z, this.p);
     }

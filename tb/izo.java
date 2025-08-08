@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -123,7 +123,7 @@ public class izo<PARAMS extends izn, CONTEXT extends dlr> extends com.taobao.and
             dinamicXEngine = (h == null || (C = h.C()) == null) ? null : C.b();
         }
         DinamicXEngine dinamicXEngine2 = dinamicXEngine;
-        String bizId = TextUtils.isEmpty(params.d) ? BIZ_STD_DX_POP : params.d;
+        String bizId = StringUtils.isEmpty(params.d) ? BIZ_STD_DX_POP : params.d;
         dkt e = akCtx.e();
         String str2 = params.g;
         if (str2 != null) {

@@ -1,6 +1,6 @@
 package com.taobao.message.datasdk.facade.message.newmsgbody;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.util.ValueUtil;
@@ -73,7 +73,7 @@ public class SystemMsgBody extends BaseMsgBody {
         }
         if (map != null) {
             try {
-                if (TextUtils.isEmpty(str) || !map.containsKey(str)) {
+                if (StringUtils.isEmpty(str) || !map.containsKey(str)) {
                     return null;
                 }
                 Object obj = map.get(str);

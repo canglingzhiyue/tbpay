@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -124,7 +124,7 @@ public class f {
             com.alibaba.fastjson.JSONObject jSONObject = parseObject.getJSONObject(Constants.KEY_EXTS);
             if (jSONObject != null) {
                 String string = jSONObject.getString(MarketingInnerNotificationAdapter.KEY_PUSHUTARGS);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     com.alibaba.fastjson.JSONObject parseObject2 = JSON.parseObject(string);
                     parseObject2.put(str, (Object) str2);
                     jSONObject.put(MarketingInnerNotificationAdapter.KEY_PUSHUTARGS, (Object) parseObject2.toString());
@@ -186,7 +186,7 @@ public class f {
         if (EnvUtil.isNightMode()) {
             return false;
         }
-        return b() && TextUtils.equals("true", OrangeConfig.getInstance().getConfig("mpm_business_switch", "isEnableSceneTemplate", String.valueOf(EnvService.instance().checkBrand("oppo"))));
+        return b() && StringUtils.equals("true", OrangeConfig.getInstance().getConfig("mpm_business_switch", "isEnableSceneTemplate", String.valueOf(EnvService.instance().checkBrand("oppo"))));
     }
 
     private static boolean b() {

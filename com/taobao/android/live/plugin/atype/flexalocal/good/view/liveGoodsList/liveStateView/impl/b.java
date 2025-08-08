@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -260,7 +260,7 @@ public abstract class b extends f<com.taobao.android.live.plugin.atype.flexaloca
         }
         for (int i = 0; i < l.size(); i++) {
             com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.e eVar = l.get(i);
-            if (aVar.c == eVar.b && TextUtils.equals(eVar.f, aVar.e)) {
+            if (aVar.c == eVar.b && StringUtils.equals(eVar.f, aVar.e)) {
                 ((com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView.f) this.f13751a).getAdapter().notifyItemChanged(i);
                 return;
             }
@@ -293,7 +293,7 @@ public abstract class b extends f<com.taobao.android.live.plugin.atype.flexaloca
         }
         if (a2.b.containsKey("liveItemStatusData")) {
             JSONObject jSONObject3 = a2.b.getJSONObject("liveItemStatusData");
-            if (jSONObject3.containsKey("isSpeaking") && TextUtils.equals(jSONObject3.getString("isSpeaking"), "true")) {
+            if (jSONObject3.containsKey("isSpeaking") && StringUtils.equals(jSONObject3.getString("isSpeaking"), "true")) {
                 his.a("GoodsLiveStatePresenter", "isSpeaking  true");
             }
         }
@@ -375,7 +375,7 @@ public abstract class b extends f<com.taobao.android.live.plugin.atype.flexaloca
             String string2 = jSONObject.getString("type");
             LiveItem liveItem = null;
             List a2 = ((com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView.f) this.f13751a).getAdapter().a();
-            if (!TextUtils.isEmpty(this.d.g()) && a2 != null && a2.size() > 0) {
+            if (!StringUtils.isEmpty(this.d.g()) && a2 != null && a2.size() > 0) {
                 int i = 0;
                 while (true) {
                     if (i >= a2.size()) {

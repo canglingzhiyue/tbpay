@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -41,7 +41,7 @@ public class kyk implements opx.a {
             return;
         }
         String c = c(jSONObject);
-        if (c == null || TextUtils.isEmpty(c)) {
+        if (c == null || StringUtils.isEmpty(c)) {
             ldf.d("DxItemClickListener", "realTimeClickParams == null");
         } else {
             this.f30400a.a(c);

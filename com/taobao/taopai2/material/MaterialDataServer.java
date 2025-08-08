@@ -1,6 +1,6 @@
 package com.taobao.taopai2.material;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -142,7 +142,7 @@ public class MaterialDataServer {
             return (ad) ipChange.ipc$dispatch("216cb723", new Object[]{this, musicListRequestParams});
         }
         a((MaterialBaseRequestParams) musicListRequestParams);
-        if (!TextUtils.isEmpty(musicListRequestParams.searchKey)) {
+        if (!StringUtils.isEmpty(musicListRequestParams.searchKey)) {
             HashMap hashMap = new HashMap();
             hashMap.put("KEYWORD", musicListRequestParams.searchKey);
             musicListRequestParams.searchTerms = JSON.toJSONString(hashMap);

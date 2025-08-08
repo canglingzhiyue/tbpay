@@ -2,7 +2,7 @@ package com.taobao.taolive.sdk.ui.component;
 
 import android.content.Context;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.alilive.adapter.uikit.AliUrlImageView;
@@ -179,7 +179,7 @@ public class VideoFrameErrorController implements com.taobao.taolive.sdk.model.a
         HashMap<String, String> hashMap = new HashMap<>();
         String str = com.taobao.taolive.sdk.playcontrol.c.i(this.k) == VideoStatus.VIDEO_TIMESHIFT_STATUS ? "timeshift" : "live";
         hashMap.put("feed_type", str);
-        if (TextUtils.equals(str, "live")) {
+        if (StringUtils.equals(str, "live")) {
             String i = i();
             hashMap.put("live_status", i);
             q.b("VideoFrameErrorController", "feed_type:" + str + " live_status:" + i);
@@ -350,7 +350,7 @@ public class VideoFrameErrorController implements com.taobao.taolive.sdk.model.a
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (!this.d || (tBLiveDataModel = this.b) == null || tBLiveDataModel.mVideoInfo == null || this.b.mVideoInfo.roomStatus == null || !TextUtils.equals(this.b.mVideoInfo.roomStatus, "2")) {
+        } else if (!this.d || (tBLiveDataModel = this.b) == null || tBLiveDataModel.mVideoInfo == null || this.b.mVideoInfo.roomStatus == null || !StringUtils.equals(this.b.mVideoInfo.roomStatus, "2")) {
         } else {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("feed_type", "live");

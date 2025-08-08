@@ -2,7 +2,7 @@ package com.taobao.alimama.click.applink;
 
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.api.ConnectionResult;
@@ -49,14 +49,14 @@ public class a {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
         String str2 = "";
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             TaoLog.Loge(UserTrackLogs.UT_PAGE_NAME, "广告请求参数或者点击URL为空");
             return str2;
         }
         a(Uri.parse(this.d));
         Map<String, String> map = this.e;
         String str3 = map == null ? null : map.get("eadt");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str2 = str3 + "_";
         }
         if (this.c) {

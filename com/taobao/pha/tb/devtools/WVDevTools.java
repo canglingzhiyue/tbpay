@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -137,25 +137,25 @@ public class WVDevTools extends e {
         }
         try {
             JSONObject parseObject = JSONObject.parseObject(str2);
-            if (TextUtils.equals(str, "open")) {
+            if (StringUtils.equals(str, "open")) {
                 return open(parseObject, wVCallBackContext);
             }
-            if (TextUtils.equals(str, "close")) {
+            if (StringUtils.equals(str, "close")) {
                 return close(wVCallBackContext);
             }
-            if (TextUtils.equals(str, kxd.GET_CONFIG_PREFIX)) {
+            if (StringUtils.equals(str, kxd.GET_CONFIG_PREFIX)) {
                 return getConfig(wVCallBackContext);
             }
-            if (TextUtils.equals(str, "setConfig")) {
+            if (StringUtils.equals(str, "setConfig")) {
                 return setConfig(parseObject, wVCallBackContext);
             }
-            if (TextUtils.equals(str, "setInjectJs")) {
+            if (StringUtils.equals(str, "setInjectJs")) {
                 return setInjectJs(parseObject, wVCallBackContext);
             }
-            if (TextUtils.equals(str, "remoteDebug")) {
+            if (StringUtils.equals(str, "remoteDebug")) {
                 return remoteDebug(str2, wVCallBackContext);
             }
-            if (!TextUtils.equals(str, "clearRemoteDebug")) {
+            if (!StringUtils.equals(str, "clearRemoteDebug")) {
                 return false;
             }
             return clearRemoteDebug(wVCallBackContext);
@@ -335,10 +335,10 @@ public class WVDevTools extends e {
             onCallbackFail(wVCallBackContext, "EXCEPTION::" + th.getMessage());
             m.b(TAG, "remote debug fail", th, new Object[0]);
         }
-        if (TextUtils.isEmpty(optString2)) {
+        if (StringUtils.isEmpty(optString2)) {
             onCallbackFail(wVCallBackContext, "INVALID::WS_URL_IS_NULL");
             return false;
-        } else if (TextUtils.isEmpty(optString3)) {
+        } else if (StringUtils.isEmpty(optString3)) {
             onCallbackFail(wVCallBackContext, "INVALID::DEBUG_ID_IS_NULL");
             return false;
         } else {
@@ -402,10 +402,10 @@ public class WVDevTools extends e {
                 return;
             }
             ngr.b(WVDevTools.TAG, "AppDevTools Logger connection Success ");
-            if (!TextUtils.isEmpty(this.f18811a)) {
+            if (!StringUtils.isEmpty(this.f18811a)) {
                 WVDevTools.access$502(true);
             }
-            if (TextUtils.isEmpty(this.b)) {
+            if (StringUtils.isEmpty(this.b)) {
                 WVDevTools.access$000(WVDevTools.this, this.c, "SUCCESS");
             } else if (Build.VERSION.SDK_INT < 19) {
             } else {
@@ -525,8 +525,8 @@ public class WVDevTools extends e {
             ipChange.ipc$dispatch("c2e25f9a", new Object[]{this, wVCallBackContext, str, str2});
             return;
         }
-        final String str3 = TextUtils.isEmpty(str) ? "5.6.0.7.230905204018" : str;
-        if (TextUtils.isEmpty(str3)) {
+        final String str3 = StringUtils.isEmpty(str) ? "5.6.0.7.230905204018" : str;
+        if (StringUtils.isEmpty(str3)) {
             onCallbackFail(wVCallBackContext, "DOWNLOAD::INVALID_UC_VERSION");
             return;
         }

@@ -2,7 +2,7 @@ package com.taobao.android.detail.provider;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.protocol.adapter.core.INavAdapter;
 import com.taobao.android.nav.Nav;
@@ -22,7 +22,7 @@ public class TBNavProvider implements INavAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cc7d8b15", new Object[]{this, context, str, bundle});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             if (bundle == null) {
                 Nav.from(context).toUri(str);

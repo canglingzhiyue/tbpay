@@ -1,6 +1,6 @@
 package com.taobao.search.musie;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -47,7 +47,7 @@ public final class SearchStdReportModule extends MUSModule {
         } else if (jSONObject == null || jSONObject.isEmpty()) {
         } else {
             String a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "content", "");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             TLogTracker.a("Unknown", a2);

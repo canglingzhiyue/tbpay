@@ -3,7 +3,7 @@ package com.alipay.android.msp.core.context;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.birdnest.api.MspWindowLoadListener;
 import com.alipay.android.app.birdnest.api.MspWindowLoadPoint;
@@ -357,7 +357,7 @@ public class MspContainerContext extends MspContext {
             return;
         }
         final String string = jSONObject.getString(MspFlybirdDefine.FLYBIRD_TEMPLATE_ID);
-        if (!TextUtils.equals(string, MspFlybirdDefine.FLYBIRD_RESULT_TPL) && !TextUtils.equals(string, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) && !TextUtils.equals(string, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) {
+        if (!StringUtils.equals(string, MspFlybirdDefine.FLYBIRD_RESULT_TPL) && !StringUtils.equals(string, MspFlybirdDefine.DEFAULT_RESULT_TPL_ID) && !StringUtils.equals(string, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) {
             LogUtil.record(4, "EncryptUtil:verifyTplData", "return true : degrade or not result  tplId = ".concat(String.valueOf(string)));
             c();
             return;
@@ -394,7 +394,7 @@ public class MspContainerContext extends MspContext {
             if (this.B) {
                 HashSet<MspContainerContext> hashSet = new HashSet();
                 for (MspContainerContext mspContainerContext : q) {
-                    if (mspContainerContext != null && TextUtils.equals(this.y, mspContainerContext.y) && mspContainerContext.B) {
+                    if (mspContainerContext != null && StringUtils.equals(this.y, mspContainerContext.y) && mspContainerContext.B) {
                         hashSet.add(mspContainerContext);
                     }
                 }
@@ -440,7 +440,7 @@ public class MspContainerContext extends MspContext {
 
     public String getStatsBizType() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8d886db5", new Object[]{this}) : TextUtils.isEmpty(this.z) ? "render" : this.z;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("8d886db5", new Object[]{this}) : StringUtils.isEmpty(this.z) ? "render" : this.z;
     }
 
     @Override // com.alipay.android.msp.core.context.MspContext
@@ -472,7 +472,7 @@ public class MspContainerContext extends MspContext {
                 return;
             }
             this.f = true;
-            getStatisticInfo().updateAttr(Vector.Trade, "bizType", TextUtils.isEmpty(this.z) ? "render" : this.z);
+            getStatisticInfo().updateAttr(Vector.Trade, "bizType", StringUtils.isEmpty(this.z) ? "render" : this.z);
             LogUtil.record(2, "MspContainerContext:exit", "this=".concat(String.valueOf(this)));
             MspWindowClient mspWindowClient = this.t;
             if (mspWindowClient != null) {
@@ -647,11 +647,11 @@ public class MspContainerContext extends MspContext {
             ipChange.ipc$dispatch("8bb5f31f", new Object[]{mspContainerContext, str});
         } else if (mspContainerContext.s == null) {
         } else {
-            if ((!TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_RESULT_TPL) && !TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) || (jSONObject = mspContainerContext.s.getJSONObject("data")) == null) {
+            if ((!StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_RESULT_TPL) && !StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_UNIFY_RESULT_TPL)) || (jSONObject = mspContainerContext.s.getJSONObject("data")) == null) {
                 return;
             }
             String string = jSONObject.getString("tradeNo");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 mspContainerContext.updateTradeNo(string);
                 mspContainerContext.getStatisticInfo().updateAttr(Vector.Trade, "tradeNo", string);
             }

@@ -1,6 +1,6 @@
 package com.taobao.android.weex_framework;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -206,7 +206,7 @@ public class MUSAppMonitor {
         } else {
             JSONObject o = rVar.o();
             String n = rVar.n();
-            if (TextUtils.isEmpty(n)) {
+            if (StringUtils.isEmpty(n)) {
                 n = "No activity info";
             }
             o.put(ERROR_MSG, (Object) n);

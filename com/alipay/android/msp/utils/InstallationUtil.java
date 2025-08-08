@@ -3,7 +3,7 @@ package com.alipay.android.msp.utils;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.taskscheduler.ConditionVariableUtil;
 import com.alipay.android.msp.plugin.manager.PhoneCashierMspEngine;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class InstallationUtil {
         long j = 5;
         try {
             String walletConfig = PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_gray_check_dcep_install_timeout_10570");
-            if (!TextUtils.isEmpty(walletConfig)) {
+            if (!StringUtils.isEmpty(walletConfig)) {
                 j = Long.parseLong(walletConfig);
             }
         } catch (Throwable unused) {

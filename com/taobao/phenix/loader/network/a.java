@@ -1,6 +1,6 @@
 package com.taobao.phenix.loader.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.loader.network.b;
 import java.net.HttpURLConnection;
@@ -51,7 +51,7 @@ public class a implements b {
             return (Future) ipChange.ipc$dispatch("a90ab1ca", new Object[]{this, str, map, aVar});
         }
         try {
-            if (!TextUtils.isEmpty(str) && str.startsWith(ado.URL_SEPARATOR)) {
+            if (!StringUtils.isEmpty(str) && str.startsWith(ado.URL_SEPARATOR)) {
                 str = "http:" + str;
             }
             HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();

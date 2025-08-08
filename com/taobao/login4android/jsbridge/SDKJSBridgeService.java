@@ -4,7 +4,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.helper.LoginDataHelper;
 import com.ali.user.mobile.callback.RpcRequestCallback;
@@ -91,12 +91,12 @@ public class SDKJSBridgeService extends e {
             ipChange.ipc$dispatch("792415a", new Object[]{this, wVCallBackContext, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String str2 = (String) jSONObject.get("action");
                 String str3 = (String) jSONObject.get("token");
-                if (!TextUtils.isEmpty(str3) && "testAccountSso".equals(str2)) {
+                if (!StringUtils.isEmpty(str3) && "testAccountSso".equals(str2)) {
                     LoginParam loginParam = new LoginParam();
                     loginParam.token = str3;
                     loginParam.site = DataProviderFactory.getDataProvider().getSite();
@@ -205,7 +205,7 @@ public class SDKJSBridgeService extends e {
         if (wVCallBackContext == null) {
             LoginTLogAdapter.e("Login.SDKJSBridge", "Callback is null");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         try {
@@ -227,7 +227,7 @@ public class SDKJSBridgeService extends e {
         if (wVCallBackContext == null) {
             LoginTLogAdapter.e("Login.SDKJSBridge", "Callback is null");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         try {

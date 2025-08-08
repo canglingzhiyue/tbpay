@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
 import com.taobao.search.m3.BaseItemView;
@@ -65,7 +65,7 @@ public final class PriceBottomView extends BaseItemView {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("503209a1", new Object[]{this, str, num})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         this.bottomText = str;

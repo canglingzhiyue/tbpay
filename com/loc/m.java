@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.utils.MspSwitchUtil;
 import com.alipay.mobile.common.transport.httpdns.DnsUtil;
 import com.etao.feimagesearch.nn.NetConfig;
@@ -129,7 +129,7 @@ public final class m {
 
         private static String a(String str, String str2) {
             try {
-                return !TextUtils.isEmpty(str2) ? Uri.parse(str).buildUpon().encodedAuthority(str2).build().toString() : str;
+                return !StringUtils.isEmpty(str2) ? Uri.parse(str).buildUpon().encodedAuthority(str2).build().toString() : str;
             } catch (Throwable unused) {
                 return str;
             }
@@ -137,7 +137,7 @@ public final class m {
 
         @Override // com.loc.bt
         public final Map<String, String> a() {
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("host", this.h);
                 return hashMap;
@@ -158,11 +158,11 @@ public final class m {
         @Override // com.loc.bp
         public final byte[] b_() {
             String p = o.p(this.f7691a);
-            if (!TextUtils.isEmpty(p)) {
+            if (!StringUtils.isEmpty(p)) {
                 p = s.a(new StringBuilder(p).reverse().toString());
             }
             HashMap hashMap = new HashMap();
-            hashMap.put("authkey", TextUtils.isEmpty(this.d) ? "" : this.d);
+            hashMap.put("authkey", StringUtils.isEmpty(this.d) ? "" : this.d);
             hashMap.put("plattype", "android");
             hashMap.put("ccver", "1");
             hashMap.put(DraftMediaHelper.DraftType.PRODUCT, this.b.a());
@@ -195,7 +195,7 @@ public final class m {
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.loc.bt
         public final String g() {
-            return !TextUtils.isEmpty(this.h) ? this.h : super.g();
+            return !StringUtils.isEmpty(this.h) ? this.h : super.g();
         }
     }
 
@@ -231,7 +231,7 @@ public final class m {
         }
 
         public static e b(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return null;
             }
             try {
@@ -301,7 +301,7 @@ public final class m {
                     return 0L;
                 }
                 String str = list.get(0);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return 0L;
                 }
                 return Long.valueOf(str).longValue();
@@ -320,7 +320,7 @@ public final class m {
     private static synchronized e a(Context context, String str, String str2) {
         e eVar;
         synchronized (m.class) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 for (int i2 = 0; i2 < p.size(); i2++) {
                     eVar = p.get(i2);
                     if (eVar != null && str.equals(eVar.f7831a)) {
@@ -370,7 +370,7 @@ public final class m {
         hashMap.put("amap_sdk_name", wVar.a());
         hashMap.put("amap_sdk_version", wVar.c());
         String jSONObject = new JSONObject(hashMap).toString();
-        if (TextUtils.isEmpty(jSONObject)) {
+        if (StringUtils.isEmpty(jSONObject)) {
             return;
         }
         try {
@@ -391,7 +391,7 @@ public final class m {
                     c = context.getApplicationContext();
                 }
                 String a2 = wVar.a();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 a(wVar);
@@ -624,11 +624,11 @@ public final class m {
     }
 
     private static void a(Context context, String str, String str2, e eVar) {
-        if (eVar == null || TextUtils.isEmpty(eVar.f7831a)) {
+        if (eVar == null || StringUtils.isEmpty(eVar.f7831a)) {
             return;
         }
         String b2 = eVar.b();
-        if (TextUtils.isEmpty(b2) || context == null) {
+        if (StringUtils.isEmpty(b2) || context == null) {
             return;
         }
         SharedPreferences.Editor a2 = bd.a(context, str2);
@@ -656,7 +656,7 @@ public final class m {
         String jSONObject = new JSONObject(hashMap).toString();
         "--埋点--".concat(String.valueOf(jSONObject));
         br.a();
-        if (TextUtils.isEmpty(jSONObject)) {
+        if (StringUtils.isEmpty(jSONObject)) {
             return;
         }
         try {
@@ -670,14 +670,14 @@ public final class m {
     private static void a(w wVar) {
         if (wVar != null) {
             try {
-                if (TextUtils.isEmpty(wVar.a())) {
+                if (StringUtils.isEmpty(wVar.a())) {
                     return;
                 }
                 String c2 = wVar.c();
-                if (TextUtils.isEmpty(c2)) {
+                if (StringUtils.isEmpty(c2)) {
                     c2 = wVar.b();
                 }
-                if (TextUtils.isEmpty(c2)) {
+                if (StringUtils.isEmpty(c2)) {
                     return;
                 }
                 ag.a(wVar.a(), c2);
@@ -721,7 +721,7 @@ public final class m {
     public static synchronized void a(final String str, boolean z2, final String str2, final String str3, final String str4) {
         synchronized (m.class) {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 if (u == null) {
@@ -734,7 +734,7 @@ public final class m {
                 if (!v.containsKey(str)) {
                     return;
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 if (z2) {
@@ -762,7 +762,7 @@ public final class m {
     }
 
     public static void a(String str, boolean z2, boolean z3, boolean z4) {
-        if (TextUtils.isEmpty(str) || c == null) {
+        if (StringUtils.isEmpty(str) || c == null) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -776,7 +776,7 @@ public final class m {
         }
         hashMap.put("status", str2);
         String jSONObject = new JSONObject(hashMap).toString();
-        if (TextUtils.isEmpty(jSONObject)) {
+        if (StringUtils.isEmpty(jSONObject)) {
             return;
         }
         try {
@@ -833,7 +833,7 @@ public final class m {
             if (!f && !z2) {
                 return;
             }
-            if ((!i && z2) || TextUtils.isEmpty(str)) {
+            if ((!i && z2) || StringUtils.isEmpty(str)) {
                 return;
             }
             if (!z2) {
@@ -868,7 +868,7 @@ public final class m {
     public static synchronized boolean a(String str, long j2) {
         synchronized (m.class) {
             boolean z2 = false;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             g f2 = f(str);
@@ -887,7 +887,7 @@ public final class m {
 
     public static boolean a(String str, boolean z2) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return z2;
             }
             String[] split = URLDecoder.decode(str).split("/");
@@ -942,7 +942,7 @@ public final class m {
                     return "";
                 }
                 String str = list.get(0);
-                return !TextUtils.isEmpty(str) ? str : "";
+                return !StringUtils.isEmpty(str) ? str : "";
             } catch (Exception unused) {
                 return "";
             }
@@ -990,11 +990,11 @@ public final class m {
             return false;
         }
         String o2 = o.o(context);
-        return !TextUtils.isEmpty(o2) && (num = q.get(o2.toUpperCase())) != null && num.intValue() == 2;
+        return !StringUtils.isEmpty(o2) && (num = q.get(o2.toUpperCase())) != null && num.intValue() == 2;
     }
 
     public static String c(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str + ";15K;16H;17I;1A4;17S;183";
         }
         return str;
@@ -1030,7 +1030,7 @@ public final class m {
             return false;
         }
         String o2 = o.o(context);
-        return !TextUtils.isEmpty(o2) && (num = q.get(o2.toUpperCase())) != null && num.intValue() >= 2;
+        return !StringUtils.isEmpty(o2) && (num = q.get(o2.toUpperCase())) != null && num.intValue() >= 2;
     }
 
     public static void d() {
@@ -1065,7 +1065,7 @@ public final class m {
             } finally {
                 return false;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             if (v == null) {
@@ -1173,7 +1173,7 @@ public final class m {
     public static boolean g(String str) {
         e a2;
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return true;
             }
             if (!f) {
@@ -1193,7 +1193,7 @@ public final class m {
 
     public static boolean h(String str) {
         e a2;
-        if (!TextUtils.isEmpty(str) && i) {
+        if (!StringUtils.isEmpty(str) && i) {
             if (!(B.get(str) == null)) {
                 return false;
             }
@@ -1212,10 +1212,10 @@ public final class m {
         try {
             if (c != null) {
                 String o2 = o.o(c);
-                if (!TextUtils.isEmpty(r) && !TextUtils.isEmpty(o2) && r.equals(o2) && System.currentTimeMillis() - s < 60000) {
+                if (!StringUtils.isEmpty(r) && !StringUtils.isEmpty(o2) && r.equals(o2) && System.currentTimeMillis() - s < 60000) {
                     return;
                 }
-                if (!TextUtils.isEmpty(o2)) {
+                if (!StringUtils.isEmpty(o2)) {
                     r = o2;
                 }
             } else if (System.currentTimeMillis() - s < 10000) {

@@ -1,6 +1,6 @@
 package com.taobao.tao.adapter.biz;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.sharepanel.normal.NativeSharePanel;
 import java.io.Serializable;
@@ -39,7 +39,7 @@ public class ShareEngine implements Serializable, nzd {
             return (nze) ipChange.ipc$dispatch("2c0ce6eb", new Object[]{this});
         }
         if (obh.a()) {
-            if (TextUtils.equals("1", nys.b(com.taobao.tao.sharepanel.weex.a.CACHE_SHOW_CHANNEL_TYPE_KEY, "2"))) {
+            if (StringUtils.equals("1", nys.b(com.taobao.tao.sharepanel.weex.a.CACHE_SHOW_CHANNEL_TYPE_KEY, "2"))) {
                 c = obh.b();
             } else {
                 c = obh.c();

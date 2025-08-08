@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -116,7 +116,7 @@ public class pgw extends pgu {
                 VideoInfo a3 = k.a(this.f);
                 if (a3 != null) {
                     a3.positionForVideo = "0.2";
-                    if (!TextUtils.isEmpty(a3.positionForVideo)) {
+                    if (!StringUtils.isEmpty(a3.positionForVideo)) {
                         int c = (int) (b.c() * l.c(a3.positionForVideo));
                         if (a2 + c + poy.aq(aVar) <= b.c()) {
                             dimensionPixelSize = c;

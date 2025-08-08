@@ -75,7 +75,7 @@ public class AntiBrush {
             java.lang.Integer r1 = java.lang.Integer.valueOf(r1)     // Catch: java.lang.Throwable -> La5
             java.lang.Object r1 = r9.get(r1)     // Catch: java.lang.Throwable -> La5
             java.lang.String r1 = (java.lang.String) r1     // Catch: java.lang.Throwable -> La5
-            boolean r4 = android.text.TextUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> La5
+            boolean r4 = android.text.StringUtils.isEmpty(r1)     // Catch: java.lang.Throwable -> La5
             if (r4 == 0) goto L43
             r1 = 0
             goto L4b
@@ -90,7 +90,7 @@ public class AntiBrush {
             java.lang.Integer r1 = java.lang.Integer.valueOf(r1)     // Catch: java.lang.Throwable -> La5
             java.lang.Object r9 = r9.get(r1)     // Catch: java.lang.Throwable -> La5
             java.lang.String r9 = (java.lang.String) r9     // Catch: java.lang.Throwable -> La5
-            boolean r1 = android.text.TextUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> La5
+            boolean r1 = android.text.StringUtils.isEmpty(r9)     // Catch: java.lang.Throwable -> La5
             if (r1 != 0) goto La8
             java.lang.StringBuilder r1 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> La5
             r1.<init>()     // Catch: java.lang.Throwable -> La5
@@ -129,11 +129,11 @@ public class AntiBrush {
             r2 = 0
         La9:
             java.lang.String r8 = com.taobao.accs.client.GlobalClientInfo.mCookieSec     // Catch: java.lang.Throwable -> Lca
-            boolean r8 = android.text.TextUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> Lca
+            boolean r8 = android.text.StringUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> Lca
             if (r8 != 0) goto Ld2
             java.lang.String r8 = com.taobao.accs.antibrush.AntiBrush.mHost     // Catch: java.lang.Throwable -> Lca
             java.lang.String r8 = com.taobao.accs.antibrush.a.a(r8)     // Catch: java.lang.Throwable -> Lca
-            boolean r8 = android.text.TextUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> Lca
+            boolean r8 = android.text.StringUtils.isEmpty(r8)     // Catch: java.lang.Throwable -> Lca
             if (r8 == 0) goto Ld2
             java.lang.String r8 = "cookie invalid, clear"
             java.lang.Object[] r9 = new java.lang.Object[r3]     // Catch: java.lang.Throwable -> Lca

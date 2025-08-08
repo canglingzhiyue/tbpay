@@ -3,7 +3,7 @@ package com.vivo.push.restructure.b;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.k;
 import com.vivo.push.util.u;
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public final class f implements b {
                 ResolveInfo resolveInfo = list.get(i);
                 if (resolveInfo != null) {
                     String str = resolveInfo.serviceInfo.packageName;
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         arrayList.add(str);
                     }
                 }

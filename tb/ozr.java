@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobaoavsdk.AVSDKLog;
 import com.taobao.taobaoavsdk.Tracer.c;
@@ -122,7 +122,7 @@ public class ozr {
                     return;
                 }
                 AVSDKLog.e(c.MODULE_SDK_PAGE, this + " fetchSo onFetchFinished " + fetchResult);
-                if (TextUtils.isEmpty(fetchResult.getLibFullPath())) {
+                if (StringUtils.isEmpty(fetchResult.getLibFullPath())) {
                     return;
                 }
                 ozr.a(ozr.i()).set(true);
@@ -141,7 +141,7 @@ public class ozr {
                     return;
                 }
                 AVSDKLog.e(c.MODULE_SDK_PAGE, this + " fetchSo onFetchFinished " + fetchResult);
-                if (TextUtils.isEmpty(fetchResult.getLibFullPath())) {
+                if (StringUtils.isEmpty(fetchResult.getLibFullPath())) {
                     return;
                 }
                 ozr.c(ozr.i()).set(true);
@@ -162,7 +162,7 @@ public class ozr {
                     return;
                 }
                 AVSDKLog.e(c.MODULE_SDK_PAGE, this + " fetchSo onFetchFinished " + fetchResult);
-                if (TextUtils.isEmpty(fetchResult.getLibFullPath())) {
+                if (StringUtils.isEmpty(fetchResult.getLibFullPath())) {
                     return;
                 }
                 ozr.g(ozr.i()).set(true);
@@ -181,7 +181,7 @@ public class ozr {
                     return;
                 }
                 AVSDKLog.e(c.MODULE_SDK_PAGE, this + " fetchSo onFetchFinished " + fetchResult);
-                if (TextUtils.isEmpty(fetchResult.getLibFullPath())) {
+                if (StringUtils.isEmpty(fetchResult.getLibFullPath())) {
                     return;
                 }
                 ozr.i(ozr.i()).set(true);
@@ -376,7 +376,7 @@ public class ozr {
         }
         atomicBoolean.set(z);
         ozs k = k();
-        if (k.f32515a && !TextUtils.isEmpty(k.b)) {
+        if (k.f32515a && !StringUtils.isEmpty(k.b)) {
             Iterator<ozq> it = o().iterator();
             while (it.hasNext()) {
                 it.next().onFetchFinished(k);

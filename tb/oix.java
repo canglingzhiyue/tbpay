@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -52,7 +52,7 @@ public class oix extends oio {
     @Override // tb.oio
     public boolean b(Context context, com.taobao.share.globalmodel.b bVar, int i, com.taobao.share.ui.engine.render.b bVar2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3095705c", new Object[]{this, context, bVar, new Integer(i), bVar2})).booleanValue() : bVar != null && (TextUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) || TextUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b()));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3095705c", new Object[]{this, context, bVar, new Integer(i), bVar2})).booleanValue() : bVar != null && (StringUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) || StringUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b()));
     }
 
     @Override // tb.oio
@@ -69,7 +69,7 @@ public class oix extends oio {
         if (bVar == null) {
             return;
         }
-        if (!TextUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) && !TextUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b())) {
+        if (!StringUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()) && !StringUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b())) {
             return;
         }
         if (nyk.b(j.businessId)) {
@@ -140,7 +140,7 @@ public class oix extends oio {
             oup.a(0);
         }
         if (this.b != null) {
-            if (!TextUtils.equals("common", com.taobao.share.globalmodel.e.b().j().templateId)) {
+            if (!StringUtils.equals("common", com.taobao.share.globalmodel.e.b().j().templateId)) {
                 this.f32103a.a(context, bVar);
             } else {
                 this.f32103a.b(context, bVar);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.performance.UmbrellaPerformanceTracker;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -58,7 +58,7 @@ public class ksr {
             return;
         }
         HashMap hashMap = null;
-        if (!TextUtils.isEmpty(str5) && !TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str5) && !StringUtils.isEmpty(str6)) {
             hashMap = new HashMap();
             hashMap.put(str5, str6);
         }
@@ -87,7 +87,7 @@ public class ksr {
             return;
         }
         HashMap hashMap = null;
-        if (!TextUtils.isEmpty(str6) && !TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str6) && !StringUtils.isEmpty(str7)) {
             hashMap = new HashMap();
             hashMap.put(str6, str7);
         }
@@ -101,7 +101,7 @@ public class ksr {
             return;
         }
         HashMap hashMap = null;
-        if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str4)) {
             hashMap = new HashMap();
             hashMap.put(str3, str4);
         }
@@ -115,7 +115,7 @@ public class ksr {
             return;
         }
         HashMap hashMap = null;
-        if (!TextUtils.isEmpty(str4) && !TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str4) && !StringUtils.isEmpty(str5)) {
             hashMap = new HashMap();
             hashMap.put(str4, str5);
         }
@@ -129,7 +129,7 @@ public class ksr {
             return;
         }
         HashMap hashMap = null;
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             hashMap = new HashMap();
             hashMap.put(str, str2);
             hashMap.put("level", g.b());

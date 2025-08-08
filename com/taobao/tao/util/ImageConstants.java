@@ -1,6 +1,6 @@
 package com.taobao.tao.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.regex.Pattern;
 
@@ -18,7 +18,7 @@ public class ImageConstants {
         if (sCDNPattern == null) {
             sCDNPattern = Pattern.compile(isTaobaocdnPic);
         }
-        if (TextUtils.isEmpty(str) || str.contains("a.tbcdn") || str.contains("b.tbcdn")) {
+        if (StringUtils.isEmpty(str) || str.contains("a.tbcdn") || str.contains("b.tbcdn")) {
             return false;
         }
         return sCDNPattern.matcher(str).matches();

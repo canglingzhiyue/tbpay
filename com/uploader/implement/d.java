@@ -2,7 +2,7 @@ package com.uploader.implement;
 
 import android.content.Context;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import anet.channel.strategy.HttpDnsAdapter;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -51,7 +51,7 @@ public class d {
                     if (a2.f24057a == d.this.d.getEnvironment() && a2.b.equals(d.this.d.getAppKey())) {
                         return a2;
                     }
-                    return new com.uploader.export.b(d.this.d.getEnvironment(), d.this.d.getAppKey(), TextUtils.isEmpty(d.this.d.getDomain()) ? a2.c : d.this.d.getDomain(), a2.d);
+                    return new com.uploader.export.b(d.this.d.getEnvironment(), d.this.d.getAppKey(), StringUtils.isEmpty(d.this.d.getDomain()) ? a2.c : d.this.d.getDomain(), a2.d);
                 }
 
                 @Override // com.uploader.export.m, com.uploader.export.IUploaderEnvironment
@@ -220,7 +220,7 @@ public class d {
                         HttpDnsAdapter.HttpDnsOrigin httpDnsOrigin = originsByHttpDnsNoWait.get(i);
                         if (httpDnsOrigin != null) {
                             String originIP = httpDnsOrigin.getOriginIP();
-                            if (!TextUtils.isEmpty(originIP)) {
+                            if (!StringUtils.isEmpty(originIP)) {
                                 arrayList.add(originIP);
                             }
                         }

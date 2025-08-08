@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -29,19 +29,19 @@ public class fkc {
                     String string = jSONObject.getString(fin.EVENT_KEY);
                     JSONObject jSONObject2 = jSONObject.getJSONObject("params");
                     String string2 = jSONObject.getString("target");
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         for (String str : string2.split(",")) {
-                            if (TextUtils.equals(str, "weexMain")) {
+                            if (StringUtils.equals(str, "weexMain")) {
                                 JSONObject a2 = a(string, jSONObject2);
                                 if (a2 != null) {
                                     arrayList.add(a2);
                                 }
-                            } else if (TextUtils.equals(str, "weexNavi")) {
+                            } else if (StringUtils.equals(str, "weexNavi")) {
                                 JSONObject a3 = a(string, jSONObject2);
                                 if (a3 != null) {
                                     arrayList2.add(a3);
                                 }
-                            } else if (TextUtils.equals(str, "default")) {
+                            } else if (StringUtils.equals(str, "default")) {
                                 JSONObject a4 = a(string, jSONObject2);
                                 if (a4 != null) {
                                     arrayList.add(a4);
@@ -65,7 +65,7 @@ public class fkc {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("9490f01e", new Object[]{str, jSONObject});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         JSONObject jSONObject2 = new JSONObject();

@@ -1,6 +1,6 @@
 package com.taobao.tab2interact.core.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -38,7 +38,7 @@ public class b {
             return;
         }
         if (th != null) {
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = "throwable=" + th.getMessage();
             } else {
                 str4 = str4 + "，throwable=" + th.getMessage();

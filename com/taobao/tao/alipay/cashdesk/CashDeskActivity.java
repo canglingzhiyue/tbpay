@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.android.ultron.ext.event.util.a;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridStage;
@@ -161,14 +161,14 @@ public class CashDeskActivity extends Activity {
         intent.setPackage(getPackageName());
         intent.setAction(CashdeskConstants.ALIPAY_ACTION);
         String a2 = a(getIntent().getData());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             intent.putExtra(CashdeskConstants.ALIPAY_SIGN_STR, a2);
         }
         if (n()) {
             d(intent);
         } else {
             String sid = Login.getSid();
-            if (!TextUtils.isEmpty(sid)) {
+            if (!StringUtils.isEmpty(sid)) {
                 intent.putExtra("extend_params", String.format("{\"user_token\": \"%s\",\"user_token_type\": \"tbsid\"}", sid));
             }
         }
@@ -187,7 +187,7 @@ public class CashDeskActivity extends Activity {
             return "";
         }
         String str = this.f19832a.get("signStr");
-        return !TextUtils.isEmpty(str) ? str : g() ? uri.getQuery() != null ? uri.getQuery().replaceAll("&taobaoCheckPayPasswordAction=true", "").replaceAll("&encodeParams=true", "") : str : uri.getEncodedQuery() != null ? uri.getEncodedQuery().replaceAll("&taobaoCheckPayPasswordAction=true", "") : str;
+        return !StringUtils.isEmpty(str) ? str : g() ? uri.getQuery() != null ? uri.getQuery().replaceAll("&taobaoCheckPayPasswordAction=true", "").replaceAll("&encodeParams=true", "") : str : uri.getEncodedQuery() != null ? uri.getEncodedQuery().replaceAll("&taobaoCheckPayPasswordAction=true", "") : str;
     }
 
     private void c() {
@@ -205,7 +205,7 @@ public class CashDeskActivity extends Activity {
             d(intent);
         } else {
             String sid = Login.getSid();
-            if (!TextUtils.isEmpty(sid)) {
+            if (!StringUtils.isEmpty(sid)) {
                 intent.putExtra("extend_params", String.format("{\"user_token\": \"%s\",\"user_token_type\": \"tbsid\"}", sid));
             }
         }
@@ -226,12 +226,12 @@ public class CashDeskActivity extends Activity {
             return;
         }
         String a2 = com.taobao.taobao.internal.helper.b.a((Context) this, true);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         String stringExtra = intent.getStringExtra("extend_params");
         try {
-            JSONObject jSONObject = TextUtils.isEmpty(stringExtra) ? new JSONObject() : JSONObject.parseObject(stringExtra);
+            JSONObject jSONObject = StringUtils.isEmpty(stringExtra) ? new JSONObject() : JSONObject.parseObject(stringExtra);
             if (jSONObject == null) {
                 jSONObject = new JSONObject();
             }
@@ -278,7 +278,7 @@ public class CashDeskActivity extends Activity {
 
     private boolean h() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f19832a.get("alipayURL"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f19832a.get("alipayURL"));
     }
 
     private void b(Intent intent) {
@@ -345,7 +345,7 @@ public class CashDeskActivity extends Activity {
             a(PayPasswrdValidateBridge.wvCallBack, bVar.f19834a, bVar.b, bVar.d, bVar.c, bVar.g);
             quz.d(bVar.e);
             return true;
-        } else if (TextUtils.equals(action, "com.alipay.android.app.pay.ACTION_PAY_SUCCESS")) {
+        } else if (StringUtils.equals(action, "com.alipay.android.app.pay.ACTION_PAY_SUCCESS")) {
             quz.a();
             if ("9000".equals(bVar.f19834a) && bVar.c != null) {
                 try {
@@ -354,13 +354,13 @@ public class CashDeskActivity extends Activity {
                         return true;
                     }
                     JSONObject parseObject2 = JSON.parseObject(bVar.c);
-                    if (parseObject2.containsKey("biz_type") && TextUtils.equals(parseObject2.getString("biz_type"), "share_pp") && !TextUtils.isEmpty(bVar.g)) {
+                    if (parseObject2.containsKey("biz_type") && StringUtils.equals(parseObject2.getString("biz_type"), "share_pp") && !StringUtils.isEmpty(bVar.g)) {
                         JSONObject parseObject3 = JSON.parseObject(bVar.g);
                         if (parseObject3.containsKey("sharepayData")) {
                             JSONObject parseObject4 = JSON.parseObject(parseObject3.getString("sharepayData"));
                             String string = parseObject4.getString(SubstituteConstants.KEY_SUBSTITUTE_PAY_PAYURL);
                             String string2 = parseObject4.getString("amount");
-                            if (!TextUtils.isEmpty(string)) {
+                            if (!StringUtils.isEmpty(string)) {
                                 Uri parse = Uri.parse(str2);
                                 Uri.Builder buildUpon = parse.buildUpon();
                                 String path = parse.getPath();
@@ -368,7 +368,7 @@ public class CashDeskActivity extends Activity {
                                     buildUpon.appendPath("");
                                 }
                                 buildUpon.appendQueryParameter(SubstituteConstants.KEY_SUBSTITUTE_PAY_PAYURL, Uri.encode(string));
-                                if (!TextUtils.isEmpty(string2)) {
+                                if (!StringUtils.isEmpty(string2)) {
                                     buildUpon.appendQueryParameter("amount", Uri.encode(string2));
                                 }
                                 if (parseObject3.containsKey("payerUserId")) {
@@ -381,15 +381,15 @@ public class CashDeskActivity extends Activity {
                 } catch (Exception unused) {
                 }
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 a(str, str2, null, true);
             }
             return true;
         } else {
-            if (TextUtils.equals(action, "com.alipay.android.app.pay.ACTION_PAY_FAILED")) {
+            if (StringUtils.equals(action, "com.alipay.android.app.pay.ACTION_PAY_FAILED")) {
                 quz.b(bVar);
                 quz.a(bVar);
-                if (TextUtils.isEmpty(str4)) {
+                if (StringUtils.isEmpty(str4)) {
                     a(str, str3, bVar, false);
                 }
                 if (!"6001".equals(bVar.f19834a)) {
@@ -427,7 +427,7 @@ public class CashDeskActivity extends Activity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("dca6a2b3", new Object[]{this, str, str2, bVar, new Boolean(z)});
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             Uri parse = Uri.parse(str2);
             if (bVar != null) {
                 Uri.Builder buildUpon = parse.buildUpon();
@@ -518,10 +518,10 @@ public class CashDeskActivity extends Activity {
         }
         LocalBroadcastManager localBroadcastManager = LocalBroadcastManager.getInstance(this);
         Intent intent = new Intent(CashdeskConstants.CASHDESK_BROADCAST_RESULT_ACTION);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent.putExtra("action", str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             intent.putExtra("result", str2);
         }
         localBroadcastManager.sendBroadcast(intent);
@@ -586,7 +586,7 @@ public class CashDeskActivity extends Activity {
             return ((Boolean) ipChange.ipc$dispatch("6239df9", new Object[]{this})).booleanValue();
         }
         HashMap<String, String> hashMap = this.f19832a;
-        return hashMap != null && !TextUtils.isEmpty(hashMap.get("agednessVersion"));
+        return hashMap != null && !StringUtils.isEmpty(hashMap.get("agednessVersion"));
     }
 
     private void d(Intent intent) {
@@ -597,7 +597,7 @@ public class CashDeskActivity extends Activity {
         } else {
             String sid = Login.getSid();
             String str = this.f19832a.get("agednessVersion");
-            if (TextUtils.isEmpty(sid)) {
+            if (StringUtils.isEmpty(sid)) {
                 intent.putExtra("extend_params", String.format("{\"agednessVersion\":\"%s\"}", str));
             } else {
                 intent.putExtra("extend_params", String.format("{\"user_token\":\"%s\",\"user_token_type\":\"tbsid\",\"agednessVersion\":\"%s\"}", sid, str));
@@ -612,7 +612,7 @@ public class CashDeskActivity extends Activity {
         }
         Uri.Builder appendQueryParameter = Uri.parse(str).buildUpon().appendQueryParameter("tradeHybrid", "true");
         HashMap<String, String> hashMap = this.f19832a;
-        if (hashMap != null && !TextUtils.isEmpty(hashMap.get("orderids"))) {
+        if (hashMap != null && !StringUtils.isEmpty(hashMap.get("orderids"))) {
             appendQueryParameter.appendQueryParameter("preRequestStorageKey", "paySuccessOrderId_" + this.f19832a.get("orderids"));
         }
         return appendQueryParameter.build().toString();

@@ -1,6 +1,6 @@
 package com.taobao.search.mmd.rebuild;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.TypeCastException;
 import kotlin.jvm.JvmStatic;
@@ -43,7 +43,7 @@ public final class e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("49b27c2", new Object[]{str, dVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (dVar == null) {
@@ -68,7 +68,7 @@ public final class e {
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("9e18ca12", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         PageRebuildModelMap<String, d> pageRebuildModelMap = f19180a;
@@ -84,7 +84,7 @@ public final class e {
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("c76d1f53", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         PageRebuildModelMap<String, d> pageRebuildModelMap = f19180a;

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alipay.zoloz.toyger.blob.BlobManager;
@@ -93,7 +93,7 @@ public class nqo extends npp<b> {
         bVar.f19366a = jSONObject2.getString(k.KEY_SUGGEST_RN);
         hashMap.put("suggestRn", bVar.f19366a);
         a(jSONObject2, bVar, (ioz) null);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             bVar.i.put(aw.PARAM_PVID, string);
         }
         return bVar;
@@ -203,7 +203,7 @@ public class nqo extends npp<b> {
         this.c.a(bVar.g);
         hashMap.put("templates", iozVar2.f29197a);
         bVar.j = optJSONObject.optString("searchDoorWeexUrl");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             bVar.i.put(aw.PARAM_PVID, optString);
         }
         JSONObject optJSONObject2 = jSONObject.optJSONObject(JTrackParams.TRACK_PARAMS);
@@ -212,7 +212,7 @@ public class nqo extends npp<b> {
             while (keys.hasNext()) {
                 String next = keys.next();
                 String optString3 = optJSONObject2.optString(next);
-                if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(optString3)) {
+                if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(optString3)) {
                     bVar.i.put(next, optString3);
                 }
             }
@@ -362,7 +362,7 @@ public class nqo extends npp<b> {
             return (Map) ipChange.ipc$dispatch("47d99ce7", new Object[]{this, jSONObject, iozVar});
         }
         String optString = jSONObject.optString("templates");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             return iub.a(JSONArray.parseArray(optString), iozVar, j.f19452a);
         }
         return null;

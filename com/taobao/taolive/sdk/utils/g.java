@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -41,7 +41,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b8e389e4", new Object[]{jSONObject, str, new Integer(i)})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 return jSONObject.getInteger(str).intValue();
             } catch (Throwable th) {
@@ -56,7 +56,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("b8e38da6", new Object[]{jSONObject, str, new Long(j)})).longValue();
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 return jSONObject.getLongValue(str);
             } catch (Throwable th) {
@@ -71,7 +71,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b8e3c9c6", new Object[]{jSONObject, str, new Boolean(z)})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && jSONObject != null) {
+        if (!StringUtils.isEmpty(str) && jSONObject != null) {
             try {
                 return jSONObject.getBooleanValue(str);
             } catch (Throwable th) {

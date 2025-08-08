@@ -3,7 +3,7 @@ package tb;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.i;
 import com.alibaba.android.split.k;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -27,7 +27,7 @@ public class bgw {
             if (a(k.a().b().t())) {
                 k.a().b().v();
                 String a2 = ((i) k.a()).a();
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     new bha(k.a(), a2).run();
                 }
             }

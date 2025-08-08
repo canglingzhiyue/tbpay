@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.business.videocollection.helper.ICollectionService;
@@ -46,12 +46,12 @@ public final class smb {
         hashMap.put("scene", sessionExtParams == null ? null : sessionExtParams.a());
         hashMap.put("isFullScreen", Boolean.valueOf(fluidContext.getInstanceConfig().isTab3Fullscreen()));
         String guangGuangType = fluidContext.getInstanceConfig().getGuangGuangType();
-        if (TextUtils.isEmpty(guangGuangType)) {
+        if (StringUtils.isEmpty(guangGuangType)) {
             guangGuangType = null;
         }
         hashMap.put("ggType", guangGuangType);
         String tab3ComponentSource = fluidContext.getInstanceConfig().getTab3ComponentSource();
-        if (TextUtils.isEmpty(tab3ComponentSource)) {
+        if (StringUtils.isEmpty(tab3ComponentSource)) {
             tab3ComponentSource = null;
         }
         hashMap.put(c.KEY_TAB3COMPONENTSOURCE, tab3ComponentSource);
@@ -60,7 +60,7 @@ public final class smb {
         }
         hashMap.put("isImmersiveVideo", Boolean.valueOf(z));
         String d = sessionExtParams == null ? null : sessionExtParams.d();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             hashMap.put("tab3SceneSource", d);
         }
         if (sessionExtParams != null) {
@@ -68,7 +68,7 @@ public final class smb {
         }
         hashMap.put("tab3ExtParams", map);
         String tab3CardType = fluidContext.getInstanceConfig().getTab3CardType();
-        if (!TextUtils.isEmpty(tab3CardType)) {
+        if (!StringUtils.isEmpty(tab3CardType)) {
             hashMap.put("tab3CardType", tab3CardType);
         }
         if (a(fluidContext)) {

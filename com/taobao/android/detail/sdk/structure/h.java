@@ -1,7 +1,7 @@
 package com.taobao.android.detail.sdk.structure;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -235,14 +235,14 @@ public class h implements IProtocol {
         if (ipChange instanceof IpChange) {
             return (RuleModel) ipChange.ipc$dispatch("c224d7e5", new Object[]{this, str, str2});
         }
-        if (ewu.a(this.i) || TextUtils.isEmpty(str)) {
+        if (ewu.a(this.i) || StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap<String, RuleModel> hashMap = this.i.get(str);
         if (ewu.a(hashMap)) {
             return null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "default";
         }
         return hashMap.get(str2);
@@ -254,7 +254,7 @@ public class h implements IProtocol {
         if (ipChange instanceof IpChange) {
             return (ActionModel) ipChange.ipc$dispatch("ff1c0777", new Object[]{this, str});
         }
-        if (ewu.a(this.j) || TextUtils.isEmpty(str)) {
+        if (ewu.a(this.j) || StringUtils.isEmpty(str)) {
             return null;
         }
         return new ActionModel(this.j.get(str));
@@ -265,7 +265,7 @@ public class h implements IProtocol {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("840caf8a", new Object[]{context, str, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         Object a2 = jjv.a(obj, str);

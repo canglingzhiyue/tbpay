@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.widget.img;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
 import com.taobao.android.weex_framework.common.MUSConstants;
@@ -52,7 +52,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c06760b2", new Object[]{uINode, mUSDKInstance, obj, mVar, aVar});
-        } else if (TextUtils.equals(mUSDKInstance.getNativeState(KEY_IMG_LOAD_FLAG), IMG_DISABLE_FLAG)) {
+        } else if (StringUtils.equals(mUSDKInstance.getNativeState(KEY_IMG_LOAD_FLAG), IMG_DISABLE_FLAG)) {
             mVar.a(new p.b() { // from class: com.taobao.android.weex_uikit.widget.img.b.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -61,7 +61,7 @@ public class b {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("d63f0e06", new Object[]{this, str, str2});
-                    } else if (a.this.f16163a || TextUtils.equals(str2, b.IMG_DISABLE_FLAG)) {
+                    } else if (a.this.f16163a || StringUtils.equals(str2, b.IMG_DISABLE_FLAG)) {
                     } else {
                         b.a(uINode, mUSDKInstance, obj);
                         a.this.f16163a = true;
@@ -126,7 +126,7 @@ public class b {
             return;
         }
         uINode.setAttribute("src", str);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return;
         }
         aVar.a(0, 0);

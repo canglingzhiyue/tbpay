@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -477,7 +477,7 @@ public class MKTHandler {
             ACCSManager.AccsRequest accsRequest = new ACCSManager.AccsRequest(sb.toString(), dataPackage.e, dataPackage.e(), dataPackage.d);
             accsRequest.setTarget(dataPackage.f());
             try {
-                if (!TextUtils.isEmpty(dataPackage.f)) {
+                if (!StringUtils.isEmpty(dataPackage.f)) {
                     accsRequest.setHost(new URL(dataPackage.f));
                 }
             } catch (MalformedURLException e) {
@@ -491,13 +491,13 @@ public class MKTHandler {
                 try {
                     if (dataPackage.a()) {
                         str = ACCSClient.getAccsClient(AccsClientConfig.V2_EXCLUSIVE_CONFIGTAG).sendRequest(accsRequest);
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             MKTHandler.a(MKTHandler.this).put(str, null);
                         }
                     } else {
                         accsRequest.timeout = 5000;
                         str = ACCSClient.getAccsClient(AccsClientConfig.V2_EXCLUSIVE_CONFIGTAG).sendData(accsRequest);
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             MKTHandler.c().put(str, null);
                         }
                     }

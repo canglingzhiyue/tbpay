@@ -1,6 +1,6 @@
 package anet.channel.strategy.dispatch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.strategy.utils.Utils;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class DispatchConstants {
             throw new IllegalArgumentException("domains is null or length < 2");
         } else {
             for (int i = 0; i < strArr.length; i++) {
-                if (TextUtils.isEmpty(strArr[i])) {
+                if (StringUtils.isEmpty(strArr[i])) {
                     throw new IllegalArgumentException("domains[" + i + "] is null or empty");
                 }
             }
@@ -99,7 +99,7 @@ public class DispatchConstants {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("79e04e11", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.equalsIgnoreCase(getAmdcServerDomain());
         }
         return false;
@@ -110,7 +110,7 @@ public class DispatchConstants {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6cdf5a44", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         int i = 0;

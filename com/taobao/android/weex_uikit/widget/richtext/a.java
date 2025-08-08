@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.richtext;
 
 import android.graphics.Paint;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
@@ -343,7 +343,7 @@ public abstract class a implements b {
             ipChange.ipc$dispatch("266fb88", new Object[]{this, jSONObject});
         } else if (jSONObject != null && !jSONObject.isEmpty()) {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-                if (entry.getValue() != null && !TextUtils.isEmpty(entry.getKey())) {
+                if (entry.getValue() != null && !StringUtils.isEmpty(entry.getKey())) {
                     String key = entry.getKey();
                     switch (key.hashCode()) {
                         case -1550943582:
@@ -461,7 +461,7 @@ public abstract class a implements b {
             ipChange.ipc$dispatch("63b99827", new Object[]{this, jSONObject});
         } else if (jSONObject != null && !jSONObject.isEmpty()) {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-                if (entry.getValue() != null && !TextUtils.isEmpty(entry.getKey())) {
+                if (entry.getValue() != null && !StringUtils.isEmpty(entry.getKey())) {
                     b(entry.getKey(), entry.getValue().toString());
                 }
             }
@@ -513,7 +513,7 @@ public abstract class a implements b {
             return (CharSequence) ipChange.ipc$dispatch("20819ec6", new Object[]{this});
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(j())) {
+        if (!StringUtils.isEmpty(j())) {
             sb.append(j());
         }
         List<a> list = this.g;

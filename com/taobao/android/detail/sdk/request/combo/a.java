@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.request.combo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.request.d;
 import java.util.HashMap;
@@ -30,13 +30,13 @@ public class a implements d {
             return (HashMap) ipChange.ipc$dispatch("be7c57cb", new Object[]{this});
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(this.f10313a)) {
+        if (!StringUtils.isEmpty(this.f10313a)) {
             hashMap.put("itemId", this.f10313a);
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             hashMap.put(K_COMBO_ID, this.b);
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             hashMap.put("sellerId", this.c);
         }
         return hashMap;

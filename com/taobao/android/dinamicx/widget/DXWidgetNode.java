@@ -13,7 +13,7 @@ import android.support.v4.view.AccessibilityDelegateCompat;
 import android.support.v4.view.InputDeviceCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -905,7 +905,7 @@ public class DXWidgetNode implements ak, bi {
         }
         JSONObject jSONObject = this.dxNodeConstantProperty.g.get(str);
         String str3 = jSONObject == null ? "" : (String) jSONObject.get(str2);
-        if (!TextUtils.isEmpty(str3) || str.equals("zh_CN")) {
+        if (!StringUtils.isEmpty(str3) || str.equals("zh_CN")) {
             return str3;
         }
         JSONObject jSONObject2 = this.dxNodeConstantProperty.g.get("zh_CN");
@@ -1717,7 +1717,7 @@ public class DXWidgetNode implements ak, bi {
             } else {
                 view.setImportantForAccessibility(2);
             }
-            if (TextUtils.isEmpty(accessibilityRole)) {
+            if (StringUtils.isEmpty(accessibilityRole)) {
                 return;
             }
             ViewCompat.setAccessibilityDelegate(view, new AccessibilityDelegateCompat() { // from class: com.taobao.android.dinamicx.widget.DXWidgetNode.1
@@ -1740,7 +1740,7 @@ public class DXWidgetNode implements ak, bi {
                     }
                     super.onInitializeAccessibilityNodeInfo(view2, accessibilityNodeInfoCompat);
                     String a2 = gbb.a(accessibilityRole);
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         return;
                     }
                     accessibilityNodeInfoCompat.setRoleDescription(a2);
@@ -2836,7 +2836,7 @@ public class DXWidgetNode implements ak, bi {
             }
         } else {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 if (this.dxNodeConstantProperty == null) {
@@ -2967,7 +2967,7 @@ public class DXWidgetNode implements ak, bi {
                 List<fzk.a> a3 = fzk.a(string2, null, null, null, null);
                 float floatValue = jSONObject.getFloatValue("opacity");
                 String string3 = jSONObject.getString("backgroundColor");
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     i = Color.parseColor(string3);
                 }
                 list = fzk.a(a3, view, floatValue, i);
@@ -3341,7 +3341,7 @@ public class DXWidgetNode implements ak, bi {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("534ab9bb", new Object[]{this, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.equals(getUserId())) {
@@ -3374,7 +3374,7 @@ public class DXWidgetNode implements ak, bi {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("45e63272", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (this.isEnableButter) {
@@ -4597,7 +4597,7 @@ public class DXWidgetNode implements ak, bi {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("f72bf070", new Object[]{this});
         }
-        if (TextUtils.isEmpty(getAnimation())) {
+        if (StringUtils.isEmpty(getAnimation())) {
             return null;
         }
         JSONObject jSONObject = this.animationObj;
@@ -4617,7 +4617,7 @@ public class DXWidgetNode implements ak, bi {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a8294a53", new Object[]{this, str});
         } else if (bx.t()) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (this.dxNodeConstantProperty == null) {
@@ -5016,7 +5016,7 @@ public class DXWidgetNode implements ak, bi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a447392f", new Object[]{this, fqeVar});
-        } else if (this.bindingXExecutingMap == null || fqeVar == null || TextUtils.isEmpty(fqeVar.f28115a)) {
+        } else if (this.bindingXExecutingMap == null || fqeVar == null || StringUtils.isEmpty(fqeVar.f28115a)) {
         } else {
             this.bindingXExecutingMap.remove(fqeVar.f28115a);
         }
@@ -5026,7 +5026,7 @@ public class DXWidgetNode implements ak, bi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("98f0f288", new Object[]{this, fqeVar});
-        } else if (fqeVar == null || TextUtils.isEmpty(fqeVar.f28115a)) {
+        } else if (fqeVar == null || StringUtils.isEmpty(fqeVar.f28115a)) {
         } else {
             if (this.bindingXExecutingMap == null) {
                 this.bindingXExecutingMap = new HashMap();
@@ -5064,7 +5064,7 @@ public class DXWidgetNode implements ak, bi {
             return ((Boolean) ipChange.ipc$dispatch("cc3f5e21", new Object[]{this, str})).booleanValue();
         }
         Map<String, fqe> map = this.bindingXExecutingMap;
-        if (map != null && map.size() != 0 && !TextUtils.isEmpty(str)) {
+        if (map != null && map.size() != 0 && !StringUtils.isEmpty(str)) {
             return this.bindingXExecutingMap.containsKey(str);
         }
         return false;
@@ -5334,7 +5334,7 @@ public class DXWidgetNode implements ak, bi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("410f1b9c", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.userId)) {
+        } else if (StringUtils.isEmpty(this.userId)) {
         } else {
             DXWidgetNode queryRootWidgetNode = queryRootWidgetNode();
             if (!(queryRootWidgetNode instanceof m)) {

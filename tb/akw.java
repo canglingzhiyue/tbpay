@@ -3,7 +3,7 @@ package tb;
 import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.alihadeviceevaluator.model.ReportRule;
 import com.ali.alihadeviceevaluator.old.HardWareInfo;
@@ -131,7 +131,7 @@ public class akw {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a3afee25", new Object[]{dimensionValueSet, str, str2});
-        } else if (TextUtils.isEmpty(str2) || dimensionValueSet == null) {
+        } else if (StringUtils.isEmpty(str2) || dimensionValueSet == null) {
         } else {
             dimensionValueSet.setValue(str, str2);
         }
@@ -187,11 +187,11 @@ public class akw {
                         String str2 = null;
                         for (String str3 : list) {
                             str2 = fhyVar.a(str3);
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 break;
                             }
                         }
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             if (dimensionValueSet.containValue(str)) {
                                 dimensionValueSet.setValue(str, str2);
                             } else {

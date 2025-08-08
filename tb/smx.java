@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -56,7 +56,7 @@ public class smx extends snb<MainRequestParams> {
         String str = buildParams.get("itemNumId");
         buildParams.remove("itemNumId");
         buildParams.put("id", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             eZ_();
         }
         return JSONObject.toJSONString(buildParams);

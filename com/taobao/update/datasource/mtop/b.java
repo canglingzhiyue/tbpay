@@ -3,7 +3,7 @@ package com.taobao.update.datasource.mtop;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.tools.bundleInfo.d;
@@ -44,7 +44,7 @@ public class b {
             return (JSONObject) ipChange.ipc$dispatch("78c5b9ae", new Object[]{this, new Boolean(z)});
         }
         UpdateRequest updateRequest = new UpdateRequest(this.mIsOutApk);
-        if (!TextUtils.isEmpty(this.mFrom) && !this.mFrom.equals(rfx.MTOP_SOURCE)) {
+        if (!StringUtils.isEmpty(this.mFrom) && !this.mFrom.equals(rfx.MTOP_SOURCE)) {
             updateRequest.betaSource = this.mFrom;
         }
         updateRequest.brand = Build.MANUFACTURER;

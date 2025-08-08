@@ -1,6 +1,6 @@
 package com.taobao.alivfssdk.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alivfssdk.fresco.cache.disk.DefaultDiskStorage;
@@ -86,7 +86,7 @@ public class b implements Closeable {
                                 try {
                                     for (String str : a4.split(",")) {
                                         String a5 = a2.a("ali_database_es", str + "_ttl");
-                                        if (!TextUtils.isEmpty(a5)) {
+                                        if (!StringUtils.isEmpty(a5)) {
                                             c.put(str, Integer.valueOf(Integer.parseInt(a5)));
                                         } else {
                                             c.put(str, l);
@@ -117,7 +117,7 @@ public class b implements Closeable {
                     }
                 }
             }
-            if (c.containsKey(this.f) && TextUtils.equals(LauncherRuntime.c, LauncherRuntime.b)) {
+            if (c.containsKey(this.f) && StringUtils.equals(LauncherRuntime.c, LauncherRuntime.b)) {
                 Integer num = c.get(this.f);
                 if (num != null) {
                     this.g = i.a(this.f, d, num.intValue());

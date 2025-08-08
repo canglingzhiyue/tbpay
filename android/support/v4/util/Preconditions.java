@@ -1,6 +1,6 @@
 package android.support.v4.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Collection;
 import java.util.Locale;
 import tb.riy;
@@ -185,14 +185,14 @@ public class Preconditions {
     }
 
     public static <T extends CharSequence> T checkStringNotEmpty(T t) {
-        if (!TextUtils.isEmpty(t)) {
+        if (!StringUtils.isEmpty(t)) {
             return t;
         }
         throw new IllegalArgumentException();
     }
 
     public static <T extends CharSequence> T checkStringNotEmpty(T t, Object obj) {
-        if (!TextUtils.isEmpty(t)) {
+        if (!StringUtils.isEmpty(t)) {
             return t;
         }
         throw new IllegalArgumentException(String.valueOf(obj));

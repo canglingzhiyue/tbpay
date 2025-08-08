@@ -1,7 +1,7 @@
 package com.taobao.homepage.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
 import com.taobao.tao.Globals;
@@ -58,7 +58,7 @@ public class n {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : TextUtils.equals(str, "coldStart");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : StringUtils.equals(str, "coldStart");
     }
 
     public static boolean a(Context context) {
@@ -125,6 +125,6 @@ public class n {
         if (!com.taobao.android.home.component.utils.j.a("enableNotCheckLaunchType", true)) {
             return o();
         }
-        return com.taobao.android.editionswitcher.l.f(Globals.getApplication()) && TextUtils.equals(m, oqc.a().m());
+        return com.taobao.android.editionswitcher.l.f(Globals.getApplication()) && StringUtils.equals(m, oqc.a().m());
     }
 }

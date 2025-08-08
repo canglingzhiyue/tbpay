@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.common.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -91,7 +91,7 @@ public class RoundCornerLayout extends BaseRoundCornerLayout implements b {
             } else if (c != 1) {
                 return beenConsume;
             }
-            return beenConsume && (TextUtils.equals(b.PULL_INIT, this.mAcceptGestureType) || str.equals(this.mAcceptGestureType));
+            return beenConsume && (StringUtils.equals(b.PULL_INIT, this.mAcceptGestureType) || str.equals(this.mAcceptGestureType));
         }
         return beenConsume();
     }

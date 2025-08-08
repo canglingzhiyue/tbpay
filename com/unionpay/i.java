@@ -2,7 +2,7 @@ package com.unionpay;
 
 import android.content.Context;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.rnl;
 import tb.rnm;
 
@@ -54,7 +54,7 @@ public final class i implements Runnable {
             String a2 = com.unionpay.utils.b.a(b);
             rnl rnlVar = new rnl(rnmVar, a2);
             str2 = this.b.e;
-            int a3 = TextUtils.isEmpty(str2) ? 22 : rnlVar.a();
+            int a3 = StringUtils.isEmpty(str2) ? 22 : rnlVar.a();
             if (a3 == 0) {
                 String b2 = rnlVar.b();
                 handler12 = this.b.f24023a;

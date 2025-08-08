@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class llr {
 
     public llr() {
         String a2 = ldj.a("messiahMainBizWhiteList", "Page_Home_VideoPlayer_Count,Page_Home_VideoPlayer");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             this.f30698a = null;
             return;
         }
@@ -55,7 +55,7 @@ public class llr {
         String[] strArr = this.f30698a;
         if (strArr != null && strArr.length != 0) {
             for (String str2 : strArr) {
-                if (TextUtils.equals(str2, str)) {
+                if (StringUtils.equals(str2, str)) {
                     return true;
                 }
             }

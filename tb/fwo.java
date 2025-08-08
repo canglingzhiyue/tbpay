@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -59,8 +59,8 @@ public class fwo {
             return (byte[]) ipChange.ipc$dispatch("2365e95b", new Object[]{this, dXTemplateItem, dXRuntimeContext});
         }
         String str = dXTemplateItem.g.f11934a;
-        if (TextUtils.isEmpty(str)) {
-            fux.b("loadBytes TextUtils.isEmpty(mainBinaryPath)");
+        if (StringUtils.isEmpty(str)) {
+            fux.b("loadBytes StringUtils.isEmpty(mainBinaryPath)");
             return null;
         }
         byte[] a2 = fwn.a().a(str, dXRuntimeContext);

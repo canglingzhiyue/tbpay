@@ -2,7 +2,7 @@ package com.alibaba.analytics.core.sync;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.config.BHRTaskConfigBase;
@@ -225,7 +225,7 @@ public class a {
                         String str2 = map.get(str);
                         if (str2 != null) {
                             for (String str3 : str2.split(g)) {
-                                if (!TextUtils.isEmpty(str3) && (a2 = a(str3)) != null && 34 == a2.length) {
+                                if (!StringUtils.isEmpty(str3) && (a2 = a(str3)) != null && 34 == a2.length) {
                                     for (String str4 : a2) {
                                         byteArrayOutputStream2.write(aqi.b(str4));
                                     }

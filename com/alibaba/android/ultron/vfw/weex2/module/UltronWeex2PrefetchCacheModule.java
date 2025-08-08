@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.vfw.weex2.module;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.weex2.UltronWeex2DataPrefetchCache;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class UltronWeex2PrefetchCacheModule extends MUSModule {
         if (!spk.a("babelorder", "enableOrderWeex2Prefetch", false)) {
             UnifyLog.d("UltronWeex2PrefetchCacheModule.removeCacheData", "orange is disable");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             UnifyLog.d("UltronWeex2PrefetchCacheModule.removeCacheData", "key is empty");
             return;
         }
@@ -59,7 +59,7 @@ public class UltronWeex2PrefetchCacheModule extends MUSModule {
             return;
         }
         String[] split = str.split("_");
-        if (split.length <= 0 || TextUtils.isEmpty(split[0])) {
+        if (split.length <= 0 || StringUtils.isEmpty(split[0])) {
             UnifyLog.d("UltronWeex2PrefetchCacheModule.removeCacheData", "PrimaryKey is null");
         } else {
             ((UltronWeex2DataPrefetchCache) tag).b(cts.a.BIZ_ORDER_DETAIL, split[0]);

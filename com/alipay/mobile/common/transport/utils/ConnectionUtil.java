@@ -6,7 +6,7 @@ import android.net.NetworkInfo;
 import android.net.Proxy;
 import android.os.Build;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transportext.biz.util.NetInfoHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
@@ -55,7 +55,7 @@ public class ConnectionUtil {
             return (String) ipChange.ipc$dispatch("c89ee5a8", new Object[]{str});
         }
         for (Map.Entry<String, String> entry : f5620a.entrySet()) {
-            if (TextUtils.equals(str, entry.getValue())) {
+            if (StringUtils.equals(str, entry.getValue())) {
                 return entry.getValue();
             }
         }

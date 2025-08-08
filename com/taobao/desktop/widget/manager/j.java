@@ -1,6 +1,6 @@
 package com.taobao.desktop.widget.manager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Collections;
@@ -46,7 +46,7 @@ public class j {
             return;
         }
         JSONObject jSONObject = new JSONObject();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             jSONObject.put("channel", (Object) str);
         }
         JSONObject jSONObject2 = new JSONObject();

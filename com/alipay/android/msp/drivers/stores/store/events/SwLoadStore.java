@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspTradeContext;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -48,9 +48,9 @@ public class SwLoadStore extends LocalEventStore {
                     if (dialog != null) {
                         dialog.updateMsg(substring, 0, -16777216);
                     }
-                } else if (TextUtils.equals(trim, "status=success") && dialog != null) {
+                } else if (StringUtils.equals(trim, "status=success") && dialog != null) {
                     dialog.showLoadingSuccess();
-                } else if (TextUtils.equals(trim, "status=loading") && dialog != null) {
+                } else if (StringUtils.equals(trim, "status=loading") && dialog != null) {
                     dialog.setAllButtonsGone();
                 }
             }

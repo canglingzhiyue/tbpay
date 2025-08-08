@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.aura.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
@@ -278,7 +278,7 @@ public final class d extends arv {
             jSONObject.put("targetReplacement", (Object) jSONObject2);
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.putAll(jSONObject);
-            if (marketBagPrice == null || marketBagPrice.model == null || TextUtils.isEmpty(marketBagPrice.model.price)) {
+            if (marketBagPrice == null || marketBagPrice.model == null || StringUtils.isEmpty(marketBagPrice.model.price)) {
                 jSONObject3.put("price", "");
                 jSONObject3.put("btnTitle", this.c.getString(com.taobao.android.detail.wrapper.ultronengine.event.s.UNLOGIN_BTN_TITLE));
             } else {

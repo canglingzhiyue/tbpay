@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.datamodel.render;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -52,7 +52,7 @@ public class AURARenderComponentData implements Serializable {
 
     public boolean isDisable() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fc8c8fe9", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.status) && "disable".equals(this.status.toLowerCase());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("fc8c8fe9", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.status) && "disable".equals(this.status.toLowerCase());
     }
 
     public String toString() {

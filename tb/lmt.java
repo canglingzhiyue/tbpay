@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -182,15 +182,15 @@ public class lmt {
             }
             try {
                 String string = jSONObject6.getString("textColor");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.f30721a = Color.parseColor(string);
                 }
                 String string2 = jSONObject6.getString(e.KEY_TEXT_SELECT_COLOR);
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     this.b = Color.parseColor(string2);
                 }
                 String string3 = jSONObject6.getString(e.KEY_BG_COLOR);
-                if (!TextUtils.isEmpty(string3)) {
+                if (!StringUtils.isEmpty(string3)) {
                     this.g = Color.parseColor(string3);
                 }
                 this.h = jSONObject6.getIntValue("textSize");
@@ -200,23 +200,23 @@ public class lmt {
                 this.l = jSONObject6.getString(e.KEY_BG_IMG);
                 this.m = jSONObject6.getBooleanValue(e.KEY_SHOW_TAB_INDICATOR);
                 String string4 = jSONObject6.getString(e.KEY_TAB_INDICATOR_COLOR);
-                if (!TextUtils.isEmpty(string4)) {
+                if (!StringUtils.isEmpty(string4)) {
                     this.e = Color.parseColor(string4);
                 }
                 String string5 = jSONObject6.getString(e.KEY_TAB_INDICATOR_DARK_COLOR);
-                if (!TextUtils.isEmpty(string5)) {
+                if (!StringUtils.isEmpty(string5)) {
                     this.f = Color.parseColor(string5);
                 }
                 String string6 = jSONObject6.getString(e.KEY_TAB_DARK_TEXT_COLOR);
-                if (!TextUtils.isEmpty(string6)) {
+                if (!StringUtils.isEmpty(string6)) {
                     this.c = Color.parseColor(string6);
                 }
                 String string7 = jSONObject6.getString(e.KEY_DARK_TEXT_SELECT_COLOR);
-                if (!TextUtils.isEmpty(string7)) {
+                if (!StringUtils.isEmpty(string7)) {
                     this.d = Color.parseColor(string7);
                 }
                 String string8 = jSONObject6.getString(e.KEY_TAB_SPACE_CONFIG);
-                if (TextUtils.isEmpty(string8)) {
+                if (StringUtils.isEmpty(string8)) {
                     string8 = "{\"min\":\"12\",\"small\":\"17\",\"medium\":\"21\",\"large\":\"38\",\"max\":\"55\"}";
                 }
                 this.E = jSONObject6.getIntValue(e.KEY_TAB_MARGIN_LEFT);
@@ -259,7 +259,7 @@ public class lmt {
         int max = Math.max(Math.min(list.size(), g()), h());
         int a2 = a(context, Math.min(list.size(), max));
         int a3 = f.a(context, b.b() ? 11.0f : this.E);
-        if (!TextUtils.isEmpty(this.q)) {
+        if (!StringUtils.isEmpty(this.q)) {
             i = f.a(context, 33.0f);
         }
         int round = Math.round((((b - a2) - a3) - i) / (b.b() ? max : max - 1));
@@ -322,7 +322,7 @@ public class lmt {
         if (aVar == null) {
             return false;
         }
-        return (!TextUtils.isEmpty(aVar.b) && !TextUtils.isEmpty(aVar.c)) || (!TextUtils.isEmpty(aVar.h) && !TextUtils.isEmpty(aVar.i));
+        return (!StringUtils.isEmpty(aVar.b) && !StringUtils.isEmpty(aVar.c)) || (!StringUtils.isEmpty(aVar.h) && !StringUtils.isEmpty(aVar.i));
     }
 
     public String a(int i, boolean z) {
@@ -335,11 +335,11 @@ public class lmt {
         if (aVar == null) {
             return "";
         }
-        if (!TextUtils.isEmpty(aVar.h) && !TextUtils.equals(com.taobao.tao.homepage.launcher.g.b(), "l")) {
+        if (!StringUtils.isEmpty(aVar.h) && !StringUtils.equals(com.taobao.tao.homepage.launcher.g.b(), "l")) {
             String str = a2 ? aVar.i : aVar.h;
-            return TextUtils.isEmpty(str) ? aVar.h : str;
+            return StringUtils.isEmpty(str) ? aVar.h : str;
         }
-        return a2 ? z ? TextUtils.isEmpty(aVar.e) ? aVar.c : aVar.e : TextUtils.isEmpty(aVar.d) ? aVar.b : aVar.d : z ? TextUtils.isEmpty(aVar.c) ? aVar.b : aVar.c : aVar.b;
+        return a2 ? z ? StringUtils.isEmpty(aVar.e) ? aVar.c : aVar.e : StringUtils.isEmpty(aVar.d) ? aVar.b : aVar.d : z ? StringUtils.isEmpty(aVar.c) ? aVar.b : aVar.c : aVar.b;
     }
 
     public int a(boolean z) {
@@ -358,13 +358,13 @@ public class lmt {
             return false;
         }
         String a2 = FestivalMgr.a().a("global", "actionBarBackgroundColor");
-        if (this.p || TextUtils.isEmpty(a2)) {
+        if (this.p || StringUtils.isEmpty(a2)) {
             z = false;
         }
         if (!z) {
             return aVar.j;
         }
-        return TextUtils.equals(FestivalMgr.a().a("global", nom.KEY_NAVI_STYLE), "0");
+        return StringUtils.equals(FestivalMgr.a().a("global", nom.KEY_NAVI_STYLE), "0");
     }
 
     public int b() {

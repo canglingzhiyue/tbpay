@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.nativerender;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -413,7 +413,7 @@ public class m {
             return;
         }
         try {
-            if (TextUtils.isEmpty(stateBaseModel.focusComponent) && Build.VERSION.SDK_INT >= 19 && this.f != null && this.f.isAttachedToWindow()) {
+            if (StringUtils.isEmpty(stateBaseModel.focusComponent) && Build.VERSION.SDK_INT >= 19 && this.f != null && this.f.isAttachedToWindow()) {
                 this.f.sendAccessibilityEvent(8);
             }
         } catch (Throwable th) {

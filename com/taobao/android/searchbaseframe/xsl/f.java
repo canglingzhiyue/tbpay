@@ -3,7 +3,7 @@ package com.taobao.android.searchbaseframe.xsl;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.k;
@@ -97,7 +97,7 @@ public class f {
             return false;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                 if (map != null && map2 != null) {
                     final String a2 = a(str);
                     if (this.c.containsKey(a2)) {
@@ -179,7 +179,7 @@ public class f {
             return null;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3)) {
                 String a2 = a(str);
                 b bVar = this.c.get(a2);
                 if (bVar == null) {
@@ -233,10 +233,10 @@ public class f {
             return (Map) ipChange.ipc$dispatch("fa32388", new Object[]{this, bVar, str, str2, map, map2});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.equals(str, bVar.c)) {
+        if (!StringUtils.equals(str, bVar.c)) {
             hashMap.put("mtopApi", "diff");
         }
-        if (!TextUtils.equals(str2, bVar.d)) {
+        if (!StringUtils.equals(str2, bVar.d)) {
             hashMap.put("mtopVersion", "diff");
         }
         if (map == null) {
@@ -260,10 +260,10 @@ public class f {
             String key = entry.getKey();
             if (!f15026a.contains(key)) {
                 String str = map.get(key);
-                if (!TextUtils.isEmpty(entry.getValue())) {
-                    if (TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(entry.getValue())) {
+                    if (StringUtils.isEmpty(str)) {
                         map3.put(entry.getKey(), "miss");
-                    } else if (!TextUtils.equals(str, entry.getValue())) {
+                    } else if (!StringUtils.equals(str, entry.getValue())) {
                         map3.put(entry.getKey(), "diff");
                     }
                 }

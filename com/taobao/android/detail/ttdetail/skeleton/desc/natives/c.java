@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -334,7 +334,7 @@ public class c implements View.OnClickListener, com.taobao.android.detail.ttdeta
             return;
         }
         szm.a aVar = this.j;
-        if (aVar == null || TextUtils.isEmpty(aVar.b) || this.g == null) {
+        if (aVar == null || StringUtils.isEmpty(aVar.b) || this.g == null) {
             return;
         }
         if (this.c == null) {
@@ -359,10 +359,10 @@ public class c implements View.OnClickListener, com.taobao.android.detail.ttdeta
             aVar2.L(false);
             aVar2.J(true);
             aVar2.K(false);
-            if (!TextUtils.isEmpty(this.f) && TextUtils.isDigitsOnly(this.f)) {
+            if (!StringUtils.isEmpty(this.f) && StringUtils.isDigitsOnly(this.f)) {
                 aVar2.b(Long.parseLong(this.f));
             }
-            if (!TextUtils.isEmpty(this.j.j)) {
+            if (!StringUtils.isEmpty(this.j.j)) {
                 aVar2.i(true);
                 com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar3 = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
                 aVar3.a(new DWFrontCoverBean(0L, null, this.j.j));

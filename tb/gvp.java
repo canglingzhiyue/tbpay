@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launcher.common.LauncherRuntime;
 import com.taobao.orange.OrangeConfig;
@@ -47,10 +47,10 @@ public class gvp implements Runnable {
                 Object value = entry.getValue();
                 if (value instanceof String) {
                     String key = entry.getKey();
-                    if (!TextUtils.equals(key, "version")) {
+                    if (!StringUtils.equals(key, "version")) {
                         String str = (String) value;
                         TLog.loge(gve.MODULE, gve.TAG, str);
-                        if (TextUtils.equals(key, this.b)) {
+                        if (StringUtils.equals(key, this.b)) {
                             if (a(str)) {
                                 arrayList.add(key);
                             }

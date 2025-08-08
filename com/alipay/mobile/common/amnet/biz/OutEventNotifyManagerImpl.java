@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.amnet.biz;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.api.AmnetEnvHelper;
 import com.alipay.mobile.common.amnet.api.AmnetUserInfo;
 import com.alipay.mobile.common.amnet.api.OutEventNotifyManager;
@@ -111,7 +111,7 @@ public class OutEventNotifyManagerImpl implements OutEventNotifyManager {
         LogCatUtil.debug("OutEventNotifyManager", sb.toString());
         if (!b().isNotifyLoginOut()) {
             LogCatUtil.debug("OutEventNotifyManager", "need't report login|logout event");
-        } else if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             a(1, str, str2, bArr);
         } else {
             a(2, null, null, null);
@@ -316,15 +316,15 @@ public class OutEventNotifyManagerImpl implements OutEventNotifyManager {
         String amnetDnsInfos = ((AmnetOperationManager) NetBeanFactory.getBean(AmnetOperationManager.class)).getAmnetDnsInfos();
         String amnetDnsInfosForShort = ((AmnetOperationManager) NetBeanFactory.getBean(AmnetOperationManager.class)).getAmnetDnsInfosForShort();
         String amnetDnsInfoForMultiplex = ((AmnetOperationManager) NetBeanFactory.getBean(AmnetOperationManager.class)).getAmnetDnsInfoForMultiplex();
-        if (!TextUtils.isEmpty(amnetDnsInfos)) {
+        if (!StringUtils.isEmpty(amnetDnsInfos)) {
             LogCatUtil.debug("OutEventNotifyManager", "notifyNetWorkEvent,ipinfos:" + amnetDnsInfos);
             notifyUpdateDnsInfo((byte) 1, amnetDnsInfos);
         }
-        if (!TextUtils.isEmpty(amnetDnsInfosForShort)) {
+        if (!StringUtils.isEmpty(amnetDnsInfosForShort)) {
             LogCatUtil.debug("OutEventNotifyManager", "notifyNetWorkEvent,ipInfosForShort:" + amnetDnsInfosForShort);
             notifyUpdateDnsInfo((byte) 2, amnetDnsInfosForShort);
         }
-        if (TextUtils.isEmpty(amnetDnsInfoForMultiplex)) {
+        if (StringUtils.isEmpty(amnetDnsInfoForMultiplex)) {
             return;
         }
         LogCatUtil.debug("OutEventNotifyManager", "notifyNetWorkEvent,ipInfosForMultiplex:" + amnetDnsInfoForMultiplex);
@@ -390,7 +390,7 @@ public class OutEventNotifyManagerImpl implements OutEventNotifyManager {
             }
             if (i != 3) {
                 String connTypeName = ConnectionUtil.getConnTypeName(i2);
-                if (!TextUtils.isEmpty(connTypeName)) {
+                if (!StringUtils.isEmpty(connTypeName)) {
                     appEvent.minor = connTypeName;
                 }
             } else {

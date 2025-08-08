@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.taobao.windvane.extra.jsi.WVJsi;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.jsi.standard.JSEngine;
@@ -144,7 +144,7 @@ public class PHAInitializer extends ngy {
                     return (ngf) ipChange2.ipc$dispatch("975c4dec", new Object[]{this, appController, pageModel, str, map});
                 }
                 String url = pageModel.getUrl();
-                if (!TextUtils.isEmpty(url)) {
+                if (!StringUtils.isEmpty(url)) {
                     pHAWVUCWebView = n.a().a(appController.C(), url);
                     if (pHAWVUCWebView == null) {
                         pHAWVUCWebView = i.a().getPreRender(url, appController.C(), map);

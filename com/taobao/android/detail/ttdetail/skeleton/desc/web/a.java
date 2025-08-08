@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.skeleton.desc.web;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -236,7 +236,7 @@ public class a implements g, v {
         }
         com.taobao.android.detail.ttdetail.utils.i.a("DescH5Controller", "desc loadUrl start");
         SystemClock.uptimeMillis();
-        if (this.c == null || TextUtils.isEmpty(this.e) || this.f) {
+        if (this.c == null || StringUtils.isEmpty(this.e) || this.f) {
             return;
         }
         this.f = true;
@@ -345,7 +345,7 @@ public class a implements g, v {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR) || !d()) {
+        if (StringUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR) || !d()) {
             return str;
         }
         return com.taobao.vessel.utils.b.HTTPS_SCHEMA + str;
@@ -491,7 +491,7 @@ public class a implements g, v {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (this.i == null || TextUtils.isEmpty(str)) {
+        } else if (this.i == null || StringUtils.isEmpty(str)) {
         } else {
             boolean z = this.i.h;
             this.e = d.a(str, "newdetail", "1");

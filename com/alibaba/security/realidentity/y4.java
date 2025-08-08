@@ -3,7 +3,7 @@ package com.alibaba.security.realidentity;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -259,20 +259,20 @@ public class y4 {
         textView.setTextColor(c.b(cVar));
         textView2.setTextColor(c.e(cVar));
         textView3.setTextColor(c.f(cVar));
-        if (TextUtils.isEmpty(c.g(cVar))) {
+        if (StringUtils.isEmpty(c.g(cVar))) {
             textView.setVisibility(8);
         } else {
             textView.setVisibility(0);
             textView.setText(c.g(cVar));
         }
-        if (TextUtils.isEmpty(c.h(cVar))) {
+        if (StringUtils.isEmpty(c.h(cVar))) {
             textView2.setVisibility(8);
         } else {
             textView2.setVisibility(0);
             textView2.setText(c.h(cVar));
             textView2.setOnClickListener(new a(cVar));
         }
-        if (TextUtils.isEmpty(c.j(cVar))) {
+        if (StringUtils.isEmpty(c.j(cVar))) {
             textView3.setVisibility(8);
         } else {
             textView3.setVisibility(0);

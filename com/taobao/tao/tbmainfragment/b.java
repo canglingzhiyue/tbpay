@@ -2,7 +2,7 @@ package com.taobao.tao.tbmainfragment;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.navigation.TBFragmentTabHost;
 import com.taobao.tao.navigation.model.NavigationTabConstraints;
@@ -30,11 +30,11 @@ public class b {
                 if (c == null || (currentFragment = c.getCurrentFragment()) == null) {
                     return;
                 }
-                if (d.j() && TextUtils.equals("mytaobao", currentFragment.getTag()) && currentFragment.isAdded()) {
+                if (d.j() && StringUtils.equals("mytaobao", currentFragment.getTag()) && currentFragment.isAdded()) {
                     TBMainLog.tlog("FragmentLifeCycleHelper", "doOnPauseAndOnStop, detach current fragment: " + currentFragment.getClass());
                     fragment.getChildFragmentManager().beginTransaction().setCustomAnimations(R.anim.h_fragment_detach_enter, R.anim.h_fragment_detach_exit).detach(currentFragment).commitNowAllowingStateLoss();
                     return;
-                } else if (!TextUtils.equals(NavigationTabConstraints.TAB_BIZ_HOMEPAGE, currentFragment.getTag())) {
+                } else if (!StringUtils.equals(NavigationTabConstraints.TAB_BIZ_HOMEPAGE, currentFragment.getTag())) {
                     return;
                 } else {
                     fragment = currentFragment;
@@ -95,11 +95,11 @@ public class b {
                 if (c == null || (currentFragment = c.getCurrentFragment()) == null) {
                     return;
                 }
-                if (d.j() && TextUtils.equals("mytaobao", currentFragment.getTag()) && !currentFragment.isAdded()) {
+                if (d.j() && StringUtils.equals("mytaobao", currentFragment.getTag()) && !currentFragment.isAdded()) {
                     TBMainLog.tlog("FragmentLifeCycleHelper", "doOnStartAndOnResume, attach current fragment: " + currentFragment.getClass());
                     fragment.getChildFragmentManager().beginTransaction().attach(currentFragment).commitNowAllowingStateLoss();
                     return;
-                } else if (!TextUtils.equals(NavigationTabConstraints.TAB_BIZ_HOMEPAGE, currentFragment.getTag())) {
+                } else if (!StringUtils.equals(NavigationTabConstraints.TAB_BIZ_HOMEPAGE, currentFragment.getTag())) {
                     return;
                 } else {
                     fragment = currentFragment;

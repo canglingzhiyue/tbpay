@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
 import com.ut.mini.UTHitBuilders;
@@ -21,7 +21,7 @@ public class prl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("20476513", new Object[]{str, map});
-        } else if (TextUtils.isEmpty(str) || pmd.a().e() == null) {
+        } else if (StringUtils.isEmpty(str) || pmd.a().e() == null) {
         } else {
             pmd.a().e().a("Page_TaobaoLive", 19999, str, "", "0", map);
         }
@@ -31,7 +31,7 @@ public class prl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             b(str, a(str2));
         }
@@ -41,7 +41,7 @@ public class prl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("819a01b2", new Object[]{str, map});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = new UTHitBuilders.UTControlHitBuilder("Button-" + str);
             if (map != null) {

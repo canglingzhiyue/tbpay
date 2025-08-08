@@ -509,7 +509,7 @@ public final class TMSWebSocketBridge implements com.taobao.themis.kernel.abilit
             java.lang.Object r1 = r1.getValue()     // Catch: java.lang.Throwable -> La4
             r4 = r2
             java.lang.CharSequence r4 = (java.lang.CharSequence) r4     // Catch: java.lang.Throwable -> La4
-            boolean r4 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> La4
+            boolean r4 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Throwable -> La4
             if (r4 != 0) goto L63
             r0.append(r2)     // Catch: java.lang.Throwable -> La4
             java.lang.String r2 = "="

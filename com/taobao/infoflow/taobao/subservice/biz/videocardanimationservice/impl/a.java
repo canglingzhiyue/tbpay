@@ -9,7 +9,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -96,7 +96,7 @@ public class a extends j {
                 return;
             }
             a aVar = a.this;
-            if (!TextUtils.equals(tiq.BIZ_CODE, str)) {
+            if (!StringUtils.equals(tiq.BIZ_CODE, str)) {
                 i = 1;
             }
             a.a(aVar, i);
@@ -631,7 +631,7 @@ public class a extends j {
         for (DXWidgetNode dXWidgetNode : list) {
             if (dXWidgetNode == null) {
                 ldf.d("VideoAnimationLayoutWidgetNode", "onRenderView:node null:");
-            } else if (!TextUtils.equals(dXWidgetNode.getUserId(), str)) {
+            } else if (!StringUtils.equals(dXWidgetNode.getUserId(), str)) {
                 continue;
             } else {
                 DXRuntimeContext dXRuntimeContext = dXWidgetNode.getDXRuntimeContext();
@@ -852,10 +852,10 @@ public class a extends j {
             ldf.a("VideoAnimationLayoutWidgetNode", "getBootImageState bootImageSceneType error:", e);
         }
         ldf.d("VideoAnimationLayoutWidgetNode", "getBootImageState bootImageSceneType:" + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             i = 0;
         } else {
-            i = TextUtils.equals(str, tiq.BIZ_CODE) ? 2 : 1;
+            i = StringUtils.equals(str, tiq.BIZ_CODE) ? 2 : 1;
         }
         ldf.d("VideoAnimationLayoutWidgetNode", "getBootImageState bootImageState:" + i);
         return i;

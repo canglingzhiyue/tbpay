@@ -1,6 +1,6 @@
 package com.taobao.bootimage.linked.ext;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -145,8 +145,8 @@ public class d implements com.taobao.bootimage.linked.b {
         if (a(b)) {
             kej.a("LinkedSplashPopImpl", "onTerminate return. hasOtherLevelRequestingPop = true");
         }
-        if (TextUtils.isEmpty(b)) {
-            kej.a("LinkedSplashPopImpl", "onTerminate, return, TextUtils.isEmpty(popIndexId), popIndexId = " + b);
+        if (StringUtils.isEmpty(b)) {
+            kej.a("LinkedSplashPopImpl", "onTerminate, return, StringUtils.isEmpty(popIndexId), popIndexId = " + b);
             a("PopOnTerminate", "POP_INDEX_ID_FAIL");
             return;
         }
@@ -181,11 +181,11 @@ public class d implements com.taobao.bootimage.linked.b {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         String b = com.taobao.bootimage.interact.pop.d.b(str);
-        if (TextUtils.equals("NO_OTHER_LAYER_POP", b)) {
+        if (StringUtils.equals("NO_OTHER_LAYER_POP", b)) {
             kej.a("LinkedSplashPopImpl", "hasOtherLevelRequestingPop true, reason:NO_OTHER_LAYER_POP");
             return false;
         }
-        if (TextUtils.equals("", b)) {
+        if (StringUtils.equals("", b)) {
             b = "has other level requesting pop.";
         }
         kej.a("LinkedSplashPopImpl", "hasOtherLevelRequestingPop true, reason:" + b);
@@ -201,7 +201,7 @@ public class d implements com.taobao.bootimage.linked.b {
         this.c = z;
         a("PopShouldShow", "POP_START");
         String b = h.a(lsk.BIZ_NAME).d().b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             kej.a("LinkedSplashPopImpl", "shouldShow popIndexId is null");
             a("PopShouldShow", "POP_INDEX_ID_FAIL");
             return false;

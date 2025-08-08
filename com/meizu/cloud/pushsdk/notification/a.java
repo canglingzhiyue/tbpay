@@ -17,7 +17,7 @@ import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
@@ -77,7 +77,7 @@ public abstract class a implements c {
     }
 
     private void a(int i, String str, MessageV3 messageV3) {
-        if (messageV3 == null || messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
+        if (messageV3 == null || messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
             return;
         }
         DebugLogger.e("AbstractPushNotification", "save ad and recovery package, uploadDataPackageName:" + str);
@@ -98,7 +98,7 @@ public abstract class a implements c {
             return;
         }
         int i = 0;
-        if (advanceSettingEx == null || TextUtils.isEmpty(advanceSettingEx.getSoundTitle())) {
+        if (advanceSettingEx == null || StringUtils.isEmpty(advanceSettingEx.getSoundTitle())) {
             isSound = advanceSetting.getNotifyType().isSound();
         } else {
             Uri b = com.meizu.cloud.pushsdk.notification.g.b.b(this.f8000a, advanceSettingEx.getSoundTitle());
@@ -199,7 +199,7 @@ public abstract class a implements c {
     }
 
     private String b(MessageV3 messageV3) {
-        if (messageV3 == null || messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
+        if (messageV3 == null || messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
             return null;
         }
         String uploadDataPackageName = messageV3.getUploadDataPackageName();
@@ -222,21 +222,21 @@ public abstract class a implements c {
         notification.extras.putString(PushConstants.NOTIFICATION_EXTRA_SEQ_ID, messageV3.getSeqId());
         notification.extras.putString(PushConstants.NOTIFICATION_EXTRA_DEVICE_ID, messageV3.getDeviceId());
         notification.extras.putString(PushConstants.NOTIFICATION_EXTRA_PUSH_TIMESTAMP, messageV3.getPushTimestamp());
-        if (!TextUtils.isEmpty(this.b.getAppLabel())) {
+        if (!StringUtils.isEmpty(this.b.getAppLabel())) {
             DebugLogger.e("AbstractPushNotification", "set app label " + this.b.getAppLabel());
             notification.extras.putString(PushConstants.EXTRA_SUBSTITUTE_APP_NAME, this.b.getAppLabel());
             return;
         }
         String b = b(this.f8000a, messageV3.getUploadDataPackageName());
         DebugLogger.e("AbstractPushNotification", "current package " + messageV3.getUploadDataPackageName() + " label is " + b);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         notification.extras.putString(PushConstants.EXTRA_SUBSTITUTE_APP_NAME, b);
     }
 
     private boolean c(MessageV3 messageV3) {
-        if (messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
+        if (messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
             return messageV3.getWhiteList() && !MzSystemUtils.isExistReceiver(this.f8000a, messageV3.getUploadDataPackageName(), PushConstants.MZ_PUSH_ON_MESSAGE_ACTION);
         }
         return true;
@@ -390,14 +390,14 @@ public abstract class a implements c {
 
     @Override // com.meizu.cloud.pushsdk.notification.c
     public void a(MessageV3 messageV3) {
-        String b = (messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) ? null : b(messageV3);
+        String b = (messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) ? null : b(messageV3);
         Notification a2 = a(messageV3, d(messageV3), f(messageV3), e(messageV3));
         int abs = Math.abs((int) System.currentTimeMillis());
         com.meizu.cloud.pushsdk.notification.model.a b2 = com.meizu.cloud.pushsdk.notification.model.a.b(messageV3);
         if (b2 != null && b2.a() != 0) {
             abs = b2.a();
             DebugLogger.e("AbstractPushNotification", "server notify id " + abs);
-            if (!TextUtils.isEmpty(b2.b())) {
+            if (!StringUtils.isEmpty(b2.b())) {
                 int c = com.meizu.cloud.pushsdk.util.b.c(this.f8000a, messageV3.getUploadDataPackageName(), b2.b());
                 DebugLogger.e("AbstractPushNotification", "notifyKey " + b2.b() + " preference notifyId is " + c);
                 if (c != 0) {
@@ -414,7 +414,7 @@ public abstract class a implements c {
                 com.meizu.cloud.pushsdk.util.b.a(this.f8000a, messageV3.getPackageName(), abs);
                 DebugLogger.i("AbstractPushNotification", "no notification show so put notification id " + abs);
             }
-            if (!TextUtils.isEmpty(messageV3.getTaskId())) {
+            if (!StringUtils.isEmpty(messageV3.getTaskId())) {
                 if (com.meizu.cloud.pushsdk.util.b.c(this.f8000a, messageV3.getPackageName()) == 0) {
                     com.meizu.cloud.pushsdk.util.b.b(this.f8000a, messageV3.getPackageName(), Integer.valueOf(messageV3.getTaskId()).intValue());
                 } else if (Integer.valueOf(messageV3.getTaskId()).intValue() < com.meizu.cloud.pushsdk.util.b.c(this.f8000a, messageV3.getPackageName())) {
@@ -427,7 +427,7 @@ public abstract class a implements c {
             }
             DebugLogger.i("AbstractPushNotification", "current package " + messageV3.getPackageName() + " notificationId=" + abs + " taskId=" + messageV3.getTaskId());
         }
-        if (messageV3.getAdvertisementOption() != null && !TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
+        if (messageV3.getAdvertisementOption() != null && !StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
             a(abs, b, messageV3);
         }
         this.c.notify(abs, a2);
@@ -450,7 +450,7 @@ public abstract class a implements c {
         } catch (Exception e) {
             DebugLogger.e("AbstractPushNotification", "parse flyme notification setting error " + e.getMessage());
         }
-        if (!TextUtils.isEmpty(messageV3.getNotificationMessage())) {
+        if (!StringUtils.isEmpty(messageV3.getNotificationMessage())) {
             str = new JSONObject(messageV3.getNotificationMessage()).getJSONObject("data").getJSONObject("extra").getString("fns");
             DebugLogger.i("AbstractPushNotification", "current FlymeGreen notification setting is " + str);
             return str;

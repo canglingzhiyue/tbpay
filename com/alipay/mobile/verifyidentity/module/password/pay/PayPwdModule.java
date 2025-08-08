@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.password.pay;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -119,13 +119,13 @@ public class PayPwdModule extends MicroModule {
         if (bundle != null) {
             str5 = bundle.getString("supportNoPwdUI");
         }
-        if (TextUtils.isEmpty(initDataModel.sourcePluginName) || (plugin2 = VIFBPluginManager.getPlugin(getVerifyId(), initDataModel.sourcePluginName)) == null) {
+        if (StringUtils.isEmpty(initDataModel.sourcePluginName) || (plugin2 = VIFBPluginManager.getPlugin(getVerifyId(), initDataModel.sourcePluginName)) == null) {
             str4 = str5;
         } else {
             String actConf = plugin2.getActConf(BaseFBPlugin.ACT_CONF.supportVersion);
             string = plugin2.getActConf("supportEmbedVi");
             str4 = plugin2.getActConf("supportNoPwdUI");
-            if (TextUtils.isEmpty(actConf) || !"2.0".equalsIgnoreCase(actConf)) {
+            if (StringUtils.isEmpty(actConf) || !"2.0".equalsIgnoreCase(actConf)) {
                 z2 = false;
             }
             String actConf2 = plugin2.getActConf("usePwd");
@@ -137,7 +137,7 @@ public class PayPwdModule extends MicroModule {
             if (z2) {
                 jSONObject.put("version", (Object) "2.0");
             }
-            if (!TextUtils.isEmpty(actConf2)) {
+            if (!StringUtils.isEmpty(actConf2)) {
                 jSONObject.put("usePwd", (Object) actConf2);
             }
             plugin2.doCommonAction(BaseFBPlugin.PLUGIN_ACTION.viToPWD, jSONObject);
@@ -146,9 +146,9 @@ public class PayPwdModule extends MicroModule {
             }
         }
         if (this.d) {
-            if (TextUtils.equals(str4, "Y")) {
+            if (StringUtils.equals(str4, "Y")) {
                 plugin = VIFBPluginManager.getPlugin(getVerifyId(), "PasswordPluginWithoutUI");
-            } else if (TextUtils.equals(string, "Y")) {
+            } else if (StringUtils.equals(string, "Y")) {
                 plugin = VIFBPluginManager.getPlugin(getVerifyId(), "PasswordUnifiedPluginNew");
             } else {
                 plugin = VIFBPluginManager.getPlugin(getVerifyId(), "PasswordInputUnifiedPlugin");
@@ -165,7 +165,7 @@ public class PayPwdModule extends MicroModule {
         } else {
             this.b = PayPwdDialogActivity.class;
         }
-        if (TextUtils.isEmpty(initDataModel.pubKey)) {
+        if (StringUtils.isEmpty(initDataModel.pubKey)) {
             VerifyLogCat.d(f5918a, "支付密码初始化，服务端没有下发公钥");
         } else {
             VerifyLogCat.d(f5918a, "支付密码初始化，服务端下发了公钥");

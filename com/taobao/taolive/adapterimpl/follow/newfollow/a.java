@@ -1,6 +1,6 @@
 package com.taobao.taolive.adapterimpl.follow.newfollow;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.event.broadcast.c;
@@ -200,7 +200,7 @@ public class a implements pmu {
                     jSONObject.put(str, (Object) f.get(str));
                 }
             }
-            if (TextUtils.isEmpty(cancelFollowRequest.contentId) && f.containsKey("contentId")) {
+            if (StringUtils.isEmpty(cancelFollowRequest.contentId) && f.containsKey("contentId")) {
                 cancelFollowRequest.contentId = f.get("contentId");
             }
         }
@@ -374,10 +374,10 @@ public class a implements pmu {
         } else {
             String str3 = map.get("accountId");
             String str4 = map.get("contentId");
-            if (!TextUtils.isEmpty(str) && !str.equals(str3)) {
+            if (!StringUtils.isEmpty(str) && !str.equals(str3)) {
                 jSONObject.put("accountId", (Object) str);
             }
-            if (TextUtils.isEmpty(str2) || str2.equals(str4)) {
+            if (StringUtils.isEmpty(str2) || str2.equals(str4)) {
                 return;
             }
             jSONObject.put("contentId", (Object) str2);

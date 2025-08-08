@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx;
 
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.ab;
 import java.lang.ref.Reference;
@@ -118,7 +118,7 @@ public class n {
                     LruCache<String, ab.a> b = b(dXRuntimeContext.C(), false);
                     if (b != null) {
                         String t = dXRuntimeContext.t();
-                        if (!TextUtils.isEmpty(t)) {
+                        if (!StringUtils.isEmpty(t)) {
                             b.remove(t);
                         }
                     }

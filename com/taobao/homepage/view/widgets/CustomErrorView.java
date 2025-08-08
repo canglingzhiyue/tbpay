@@ -3,7 +3,7 @@ package com.taobao.homepage.view.widgets;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -174,7 +174,7 @@ public class CustomErrorView extends FrameLayout {
         }
         if (this.mStatus == Status.STATUS_ERROR) {
             if (this.mIconRes < 0) {
-                if (!TextUtils.isEmpty(this.mIconString)) {
+                if (!StringUtils.isEmpty(this.mIconString)) {
                     this.mIconView.setPlaceHoldForeground(null);
                     this.mIconView.setImageUrl(this.mIconString);
                 } else {
@@ -188,7 +188,7 @@ public class CustomErrorView extends FrameLayout {
             }
         } else if (this.mStatus == Status.STATUS_EMPTY) {
             if (this.mIconRes < 0) {
-                if (!TextUtils.isEmpty(this.mIconString)) {
+                if (!StringUtils.isEmpty(this.mIconString)) {
                     this.mIconView.setPlaceHoldForeground(null);
                     this.mIconView.setImageUrl(this.mIconString);
                 } else {
@@ -201,7 +201,7 @@ public class CustomErrorView extends FrameLayout {
                 this.mIconView.setImageUrl(null);
             }
         }
-        if (TextUtils.isEmpty(this.mTitle)) {
+        if (StringUtils.isEmpty(this.mTitle)) {
             if (this.mStatus == Status.STATUS_EMPTY) {
                 this.mTitle = getContext().getString(R.string.uik_default_empty_title);
             } else {
@@ -209,12 +209,12 @@ public class CustomErrorView extends FrameLayout {
             }
         }
         this.mTitleView.setText(this.mTitle);
-        if (TextUtils.isEmpty(this.mSubTitle)) {
+        if (StringUtils.isEmpty(this.mSubTitle)) {
             if (this.mStatus == Status.STATUS_EMPTY) {
                 this.mSubTitle = getContext().getString(R.string.uik_default_empty_subtitle);
             } else {
                 Error error3 = this.mError;
-                if (error3 != null && !TextUtils.isEmpty(error3.errorMsg)) {
+                if (error3 != null && !StringUtils.isEmpty(error3.errorMsg)) {
                     this.mSubTitle = this.mError.errorMsg;
                 } else {
                     this.mSubTitle = getContext().getString(R.string.uik_default_error_subtitle);
@@ -223,9 +223,9 @@ public class CustomErrorView extends FrameLayout {
         }
         this.mSubTitleView.setText(this.mSubTitle);
         if (this.mStatus == Status.STATUS_ERROR && (error2 = this.mError) != null) {
-            if (!TextUtils.isEmpty(error2.errorCode) || !TextUtils.isEmpty(this.mError.mappingCode)) {
+            if (!StringUtils.isEmpty(error2.errorCode) || !StringUtils.isEmpty(this.mError.mappingCode)) {
                 this.mErrorInfoTextView.setVisibility(0);
-                this.mErrorInfoTextView.setText(TextUtils.isEmpty(this.mError.mappingCode) ? this.mError.errorCode : this.mError.mappingCode);
+                this.mErrorInfoTextView.setText(StringUtils.isEmpty(this.mError.mappingCode) ? this.mError.errorCode : this.mError.mappingCode);
             } else {
                 this.mErrorInfoTextView.setVisibility(4);
             }
@@ -340,7 +340,7 @@ public class CustomErrorView extends FrameLayout {
             ipChange.ipc$dispatch("a2e9d017", new Object[]{this});
         } else if (!NetUtil.isNetworkConnected(getContext())) {
             this.mSubTitle = getContext().getString(R.string.uik_network_error_subtitle);
-        } else if (this.mStatus == Status.STATUS_EMPTY && TextUtils.isEmpty(this.mSubTitle)) {
+        } else if (this.mStatus == Status.STATUS_EMPTY && StringUtils.isEmpty(this.mSubTitle)) {
             this.mSubTitle = getContext().getString(R.string.uik_default_empty_subtitle);
         } else if (this.mError == null || this.mStatus != Status.STATUS_ERROR) {
         } else {
@@ -354,7 +354,7 @@ public class CustomErrorView extends FrameLayout {
             ipChange.ipc$dispatch("c2b7647", new Object[]{this});
         } else if (!NetUtil.isNetworkConnected(getContext())) {
             this.mTitle = getContext().getString(R.string.uik_network_error_title);
-        } else if (this.mStatus == Status.STATUS_EMPTY && TextUtils.isEmpty(this.mTitle)) {
+        } else if (this.mStatus == Status.STATUS_EMPTY && StringUtils.isEmpty(this.mTitle)) {
             this.mTitle = getContext().getString(R.string.uik_default_empty_title);
         } else if (this.mError == null || this.mStatus != Status.STATUS_ERROR) {
         } else {
@@ -387,7 +387,7 @@ public class CustomErrorView extends FrameLayout {
                 return;
             }
             String str = "";
-            if (CustomErrorView.access$200(CustomErrorView.this) != null && !TextUtils.isEmpty(CustomErrorView.access$200(CustomErrorView.this).errorCode)) {
+            if (CustomErrorView.access$200(CustomErrorView.this) != null && !StringUtils.isEmpty(CustomErrorView.access$200(CustomErrorView.this).errorCode)) {
                 str = CustomErrorView.access$200(CustomErrorView.this).errorCode;
             }
             String name = CustomErrorView.this.getContext().getClass().getName();
@@ -467,10 +467,10 @@ public class CustomErrorView extends FrameLayout {
             return;
         }
         String str4 = "null";
-        String str5 = (error == null || TextUtils.isEmpty(error.url)) ? str4 : error.url;
-        String str6 = (error == null || TextUtils.isEmpty(error.apiName)) ? str4 : error.apiName;
-        String str7 = (error == null || TextUtils.isEmpty(error.errorCode)) ? str4 : error.errorCode;
-        String str8 = (error == null || TextUtils.isEmpty(error.mappingCode)) ? str4 : error.mappingCode;
+        String str5 = (error == null || StringUtils.isEmpty(error.url)) ? str4 : error.url;
+        String str6 = (error == null || StringUtils.isEmpty(error.apiName)) ? str4 : error.apiName;
+        String str7 = (error == null || StringUtils.isEmpty(error.errorCode)) ? str4 : error.errorCode;
+        String str8 = (error == null || StringUtils.isEmpty(error.mappingCode)) ? str4 : error.mappingCode;
         String valueOf = error != null ? String.valueOf(error.responseCode) : "0";
         if (!isMonitorRegistered) {
             isMonitorRegistered = true;
@@ -485,10 +485,10 @@ public class CustomErrorView extends FrameLayout {
             AppMonitor.register(MODULE_NAME, MONITOR_POINT, create2, create);
         }
         DimensionValueSet create3 = DimensionValueSet.create();
-        create3.setValue("pageName", TextUtils.isEmpty(str3) ? str4 : str3);
+        create3.setValue("pageName", StringUtils.isEmpty(str3) ? str4 : str3);
         create3.setValue("pageURL", str5);
-        create3.setValue("title", TextUtils.isEmpty(str) ? str4 : str);
-        if (!TextUtils.isEmpty(str2)) {
+        create3.setValue("title", StringUtils.isEmpty(str) ? str4 : str);
+        if (!StringUtils.isEmpty(str2)) {
             str4 = str2;
         }
         create3.setValue("subtitle", str4);

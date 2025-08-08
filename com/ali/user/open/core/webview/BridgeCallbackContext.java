@@ -1,7 +1,7 @@
 package com.ali.user.open.core.webview;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.WebView;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.service.MemberExecutorService;
@@ -53,7 +53,7 @@ public class BridgeCallbackContext {
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     } else {
-                        BridgeCallbackContext.access$100(BridgeCallbackContext.this, TextUtils.isEmpty(str) ? String.format("javascript:window.HavanaBridge.onSuccess(%s);", Integer.valueOf(BridgeCallbackContext.this.requestId)) : String.format("javascript:window.HavanaBridge.onSuccess(%s,'%s');", Integer.valueOf(BridgeCallbackContext.this.requestId), BridgeCallbackContext.access$000(str)));
+                        BridgeCallbackContext.access$100(BridgeCallbackContext.this, StringUtils.isEmpty(str) ? String.format("javascript:window.HavanaBridge.onSuccess(%s);", Integer.valueOf(BridgeCallbackContext.this.requestId)) : String.format("javascript:window.HavanaBridge.onSuccess(%s,'%s');", Integer.valueOf(BridgeCallbackContext.this.requestId), BridgeCallbackContext.access$000(str)));
                     }
                 }
             });
@@ -90,7 +90,7 @@ public class BridgeCallbackContext {
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     } else {
-                        BridgeCallbackContext.access$100(BridgeCallbackContext.this, TextUtils.isEmpty(str) ? String.format("javascript:window.HavanaBridge.onFailure(%s,'');", Integer.valueOf(BridgeCallbackContext.this.requestId)) : String.format("javascript:window.HavanaBridge.onFailure(%s,'%s');", Integer.valueOf(BridgeCallbackContext.this.requestId), BridgeCallbackContext.access$000(str)));
+                        BridgeCallbackContext.access$100(BridgeCallbackContext.this, StringUtils.isEmpty(str) ? String.format("javascript:window.HavanaBridge.onFailure(%s,'');", Integer.valueOf(BridgeCallbackContext.this.requestId)) : String.format("javascript:window.HavanaBridge.onFailure(%s,'%s');", Integer.valueOf(BridgeCallbackContext.this.requestId), BridgeCallbackContext.access$000(str)));
                     }
                 }
             });

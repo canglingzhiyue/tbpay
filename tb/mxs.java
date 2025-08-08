@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes7.dex */
@@ -13,7 +13,7 @@ public class mxs {
 
     public static int a(String str, int i) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue() : (TextUtils.isEmpty(str) || !TextUtils.isDigitsOnly(str)) ? i : Integer.parseInt(str);
+        return ipChange instanceof IpChange ? ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue() : (StringUtils.isEmpty(str) || !StringUtils.isDigitsOnly(str)) ? i : Integer.parseInt(str);
     }
 
     public static int a(String str) {

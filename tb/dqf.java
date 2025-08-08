@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.cache.disk.k;
 import com.taobao.phenix.intf.b;
@@ -184,7 +184,7 @@ public class dqf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4c077032", new Object[]{this, str, str2, bitmap});
-        } else if (bitmap == null || TextUtils.isEmpty(str2) || this.g.get()) {
+        } else if (bitmap == null || StringUtils.isEmpty(str2) || this.g.get()) {
         } else {
             try {
                 if (this.e.get() <= 120 && this.d.size() < 40 && "homepage-ads".equals(str)) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.tanx.TanxArgNames;
 import com.taobao.muniontaobaosdk.util.b;
@@ -34,7 +34,7 @@ public class dic {
         if (ipChange instanceof IpChange) {
             return (dic) ipChange.ipc$dispatch("7c6e5956", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f26778a.put("namespace", str);
         }
         return this;

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statistics;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspNetConstants;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -106,7 +106,7 @@ public class NetworkHandler {
             httpGet = new HttpGet(str);
         } else {
             httpGet = new HttpPost(str);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = MspNetConstants.Request.DEFAULT_CONTENT_TYPE;
             }
             ByteArrayEntity byteArrayEntity = new ByteArrayEntity(bArr);

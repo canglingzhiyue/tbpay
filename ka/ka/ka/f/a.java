@@ -3,7 +3,7 @@ package ka.ka.ka.f;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.atools.StaticHook;
 import com.taobao.keepalive.KeepAliveManager;
@@ -61,7 +61,7 @@ public class a extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String action = intent == null ? "" : intent.getAction();
         rty.f33380a.d("PreventKillReceiver", iao.NEXT_TAG_RECEIVER, "action", action);
-        if (TextUtils.isEmpty(action)) {
+        if (StringUtils.isEmpty(action)) {
             return;
         }
         if ("com.taobao.alive.kill.finish_delay".equals(action)) {

@@ -1,0 +1,18 @@
+{
+  "alert_ability_ui": {
+    "main.dx": "template/megaability/alert_ability_ui/1/main.dx",
+    "version": 1
+  },
+  "toast_ability": {
+    "main.dx": "template/megaability/toast_ability/1/main.dx",
+    "version": 1
+  },
+  "loading_ability_ui": {
+    "main.dx": "template/megaability/loading_ability_ui/1/main.dx",
+    "version": 1
+  },
+  "menu_select_pop": {
+    "main.dx": "template/megaability/menu_select_pop/9/main.dx",
+    "version": 9
+  }
+}

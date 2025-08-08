@@ -3,7 +3,7 @@ package com.alipay.android.msp.ui.widget.gifimage;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.WindowManager;
@@ -89,17 +89,17 @@ public class GifImagePlugin extends AbsFBPlugin implements FBFocusable {
             return ((Boolean) ipChange.ipc$dispatch("c310ec99", new Object[]{this, str, str2})).booleanValue();
         }
         this.b.setVisibility(0);
-        if (TextUtils.equals(str, "-webkit-filter") || TextUtils.equals(str, "webkitFilter")) {
+        if (StringUtils.equals(str, "-webkit-filter") || StringUtils.equals(str, "webkitFilter")) {
             int indexOf = str2.indexOf(riy.BRACKET_START_STR);
             String replace = (indexOf > 0 ? str2.substring(indexOf + 1) : str2).replace(riy.BRACKET_END_STR, "");
             if (str2.startsWith(Constants.Event.BLUR)) {
                 a(replace);
             } else if (str2.startsWith("grayscale")) {
-                this.f = TextUtils.equals(replace, "1");
+                this.f = StringUtils.equals(replace, "1");
             }
             str2 = replace;
         }
-        if (TextUtils.equals(str, "visibility-display") && TextUtils.equals(str2, "hidden")) {
+        if (StringUtils.equals(str, "visibility-display") && StringUtils.equals(str2, "hidden")) {
             ((FBBorderImg) this.b).resetWheelHelper("");
             this.b.setVisibility(8);
             LogUtil.record(1, "phonecashier", "GifImagePlugin", "updateCSS");
@@ -137,7 +137,7 @@ public class GifImagePlugin extends AbsFBPlugin implements FBFocusable {
         LogUtil.record(1, "GifImagePlugin:updateAttr", "key=" + str + " value=" + str2);
         if (str.equals("src")) {
             if (!((FBBorderImg) this.b).resetWheelHelper(str2)) {
-                if (TextUtils.equals(str2, "indicatior")) {
+                if (StringUtils.equals(str2, "indicatior")) {
                     this.g = true;
                     str2 = "";
                 } else {
@@ -152,19 +152,19 @@ public class GifImagePlugin extends AbsFBPlugin implements FBFocusable {
             this.d = a(str2);
         } else if (str.equals("srcwidth")) {
             this.e = a(str2);
-        } else if (!TextUtils.equals(str, "defaultvalue") && !TextUtils.equals(str, "failurevalue")) {
-            if (TextUtils.equals("imageGray", str)) {
+        } else if (!StringUtils.equals(str, "defaultvalue") && !StringUtils.equals(str, "failurevalue")) {
+            if (StringUtils.equals("imageGray", str)) {
                 this.f = Boolean.parseBoolean(str2);
-            } else if (TextUtils.equals(str, "contentmode") && !TextUtils.isEmpty(str2)) {
-                if (TextUtils.equals("ScaleToFill", str2)) {
+            } else if (StringUtils.equals(str, "contentmode") && !StringUtils.isEmpty(str2)) {
+                if (StringUtils.equals("ScaleToFill", str2)) {
                     this.b.setScaleType(ImageView.ScaleType.FIT_XY);
-                } else if (TextUtils.equals("ScaleAspectFit", str2)) {
+                } else if (StringUtils.equals("ScaleAspectFit", str2)) {
                     this.b.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                } else if (TextUtils.equals("ScaleAspectFill", str2)) {
+                } else if (StringUtils.equals("ScaleAspectFill", str2)) {
                     this.b.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                } else if (TextUtils.equals("ScaleAspectAuto", str2)) {
+                } else if (StringUtils.equals("ScaleAspectAuto", str2)) {
                     this.b.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                } else if (TextUtils.equals("Center", str2)) {
+                } else if (StringUtils.equals("Center", str2)) {
                     this.b.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
                 }
             }
@@ -222,14 +222,14 @@ public class GifImagePlugin extends AbsFBPlugin implements FBFocusable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("eae3c810", new Object[]{this, str, context, imageView});
-        } else if (TextUtils.isEmpty(str) || (indexOf = str.indexOf("/")) == -1) {
+        } else if (StringUtils.isEmpty(str) || (indexOf = str.indexOf("/")) == -1) {
         } else {
             String substring = str.substring(0, indexOf);
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 substring = context.getPackageName();
             }
             String substring2 = str.substring(indexOf + 1);
-            if (TextUtils.isEmpty(substring2) || TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring2) || StringUtils.isEmpty(substring)) {
                 return;
             }
             int indexOf2 = substring2.indexOf(".");

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -143,12 +143,12 @@ public class jdh {
         String string = jSONObject.getString("pvId");
         String string2 = jSONObject.getString("icon");
         String string3 = jSONObject.getString("url");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             string3 = string2;
-        } else if (TextUtils.isEmpty(string3)) {
+        } else if (StringUtils.isEmpty(string3)) {
             string3 = "";
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             int size = jSONArray.size();
             while (i < size) {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
@@ -158,7 +158,7 @@ public class jdh {
                 }
                 i++;
             }
-        } else if (TextUtils.isEmpty(string3)) {
+        } else if (StringUtils.isEmpty(string3)) {
         } else {
             int size2 = jSONArray.size();
             while (i < size2) {
@@ -346,11 +346,11 @@ public class jdh {
             });
             JSONObject jSONObject3 = this.c.getJSONObject(i);
             String string = jSONObject3.getString("desc");
-            if (TextUtils.isEmpty(string) && (jSONObject2 = this.b) != null) {
+            if (StringUtils.isEmpty(string) && (jSONObject2 = this.b) != null) {
                 string = jSONObject2.getString("title");
             }
             String string2 = jSONObject3.getString("url");
-            if (TextUtils.isEmpty(string2) && (jSONObject = this.b) != null) {
+            if (StringUtils.isEmpty(string2) && (jSONObject = this.b) != null) {
                 string2 = jSONObject.getString("icon");
             }
             a(viewGroup.getContext(), textView, string);
@@ -380,7 +380,7 @@ public class jdh {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("e4cba6ae", new Object[]{this, context, textView, str});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 textView.setVisibility(8);
             } else {
                 textView.setText(str);

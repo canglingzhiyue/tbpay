@@ -3,7 +3,7 @@ package com.taobao.tao;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.orange.OrangeConfig;
@@ -45,7 +45,7 @@ public class UrlNavStartMode {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1812912a", new Object[]{str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             android.taobao.util.k.a(TAG, "startSearchList key error");
         } else {
             String format = String.format(i == 1 ? NavUrls.nav_urls_auction_search[1] : NavUrls.nav_urls_shop_search[1], MyUrlEncoder.encod(str, "UTF-8"));
@@ -72,7 +72,7 @@ public class UrlNavStartMode {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("82d99897", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             android.taobao.util.k.a(TAG, "startDetailActivity detail id error");
             return false;
         }
@@ -91,11 +91,11 @@ public class UrlNavStartMode {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a43ee3a1", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             android.taobao.util.k.a(TAG, "startDetailActivity detail id error");
             return false;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             startDetailActivity(str);
         }
         String format = String.format(NavUrls.nav_urls_detail[4], str, str2);
@@ -173,7 +173,7 @@ public class UrlNavStartMode {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig("client_wswitch_12278902", str, "false");
-            if (TextUtils.isEmpty(config)) {
+            if (StringUtils.isEmpty(config)) {
                 return false;
             }
             return "true".equals(config);

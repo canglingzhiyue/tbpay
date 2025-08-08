@@ -2,7 +2,7 @@ package com.taobao.alimama;
 
 import android.app.Application;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.api.ConnectionResult;
@@ -67,7 +67,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e567", new Object[]{this, str})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -2L;
         }
         try {
@@ -92,7 +92,7 @@ public class d {
             String d = d(parse.getQueryParameter("tkSid"));
             String d2 = d(parse.getQueryParameter("tkSid2"));
             String d3 = d(parse.getQueryParameter(kuh.ALI_TRACK_ID));
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 this.b[0] = d;
                 this.f8434a[0] = b(d);
                 if (this.f8434a[0] != 0) {
@@ -103,7 +103,7 @@ public class d {
                 hashMap.put("tkSidInSDK", d);
                 UserTrackLogs.commitJavaUTEvent(UserTrackLogs.UT_PAGE_NAME, ConnectionResult.SERVICE_UPDATING, "Munion_Url_Handle_TkSid", "", "", hashMap);
             }
-            if (TextUtils.isEmpty(d2)) {
+            if (StringUtils.isEmpty(d2)) {
                 return;
             }
             this.b[1] = d2;
@@ -163,7 +163,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("444bba08", new Object[]{this, str, str2, str3, new Boolean(z), str4});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -178,15 +178,15 @@ public class d {
             jSONObject.put("sellerid", (Object) str2);
             jSONObject.put("ismall", (Object) Integer.valueOf(z ? 1 : 0));
             jSONObject.put("alitrackid", (Object) d3);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 jSONObject.put("ext", (Object) str4);
             }
-            if (!TextUtils.isEmpty(d4) || !TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d4) || !StringUtils.isEmpty(d)) {
                 jSONObject.put("tkSidInUrl", (Object) d);
                 jSONObject.put("tkSidInSDK", (Object) d4);
                 a("mtop.alimama.union.trace", jSONObject, str);
             }
-            if (!TextUtils.isEmpty(d5) || !TextUtils.isEmpty(d2)) {
+            if (!StringUtils.isEmpty(d5) || !StringUtils.isEmpty(d2)) {
                 jSONObject.put("tkSid2InUrl", (Object) d2);
                 jSONObject.put("tkSid2InSDK", (Object) d5);
                 a("mtop.alimama.union.trace2", jSONObject, str);
@@ -200,7 +200,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d490e348", new Object[]{this, str, jSONObject, str2});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             MtopRequest mtopRequest = new MtopRequest();
             mtopRequest.setApiName(str);

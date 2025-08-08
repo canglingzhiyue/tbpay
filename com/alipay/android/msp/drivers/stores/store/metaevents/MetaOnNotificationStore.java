@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -50,7 +50,7 @@ public class MetaOnNotificationStore extends LocalEventStore {
         }
         JSONObject jSONObject = new JSONObject();
         final String string = actionParamsJson.getString("name");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             jSONObject.put("message", (Object) "param name must not null");
             jSONObject.put("success", (Object) Boolean.FALSE);
             return jSONObject.toJSONString();
@@ -63,7 +63,7 @@ public class MetaOnNotificationStore extends LocalEventStore {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-                } else if (intent != null && MetaOnNotificationStore.a(MetaOnNotificationStore.this) != null && !TextUtils.isEmpty(string)) {
+                } else if (intent != null && MetaOnNotificationStore.a(MetaOnNotificationStore.this) != null && !StringUtils.isEmpty(string)) {
                     Bundle bundle = new Bundle();
                     try {
                         bundle = intent.getExtras();
@@ -94,7 +94,7 @@ public class MetaOnNotificationStore extends LocalEventStore {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("c3897928", new Object[]{this, str, obj});
-                } else if (TextUtils.isEmpty(str) || !(obj instanceof JSONObject)) {
+                } else if (StringUtils.isEmpty(str) || !(obj instanceof JSONObject)) {
                 } else {
                     JSONObject jSONObject2 = (JSONObject) obj;
                     String str2 = null;
@@ -118,10 +118,10 @@ public class MetaOnNotificationStore extends LocalEventStore {
             ipChange.ipc$dispatch("1500a754", new Object[]{metaOnNotificationStore, eventAction, str, jSONObject, str2});
         } else if (eventAction == null) {
         } else {
-            if (!TextUtils.isEmpty(str) && metaOnNotificationStore.g.containsKey(str)) {
+            if (!StringUtils.isEmpty(str) && metaOnNotificationStore.g.containsKey(str)) {
                 return;
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 metaOnNotificationStore.g.put(str, str2);
             }
             try {

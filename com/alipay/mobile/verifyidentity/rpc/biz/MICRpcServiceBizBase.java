@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.rpc.biz;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.log.LoggerFactory;
 import com.alipay.mobile.verifyidentity.log.VITraceLogger;
 import com.alipay.mobile.verifyidentity.rpc.IRpcService;
@@ -174,7 +174,7 @@ public class MICRpcServiceBizBase {
         if (ipChange instanceof IpChange) {
             return (MICRpcResponse) ipChange.ipc$dispatch("d8a3b704", new Object[]{mICRpcResponse});
         }
-        if (TextUtils.isEmpty(mICRpcResponse.data)) {
+        if (StringUtils.isEmpty(mICRpcResponse.data)) {
             mICRpcResponse.data = mICRpcResponse.pbData;
             mICRpcResponse.pbData = null;
         }

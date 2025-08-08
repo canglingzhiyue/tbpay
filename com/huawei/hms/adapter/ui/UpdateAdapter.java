@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import com.huawei.hms.activity.BridgeActivity;
 import com.huawei.hms.activity.IBridgeActivityDelegate;
@@ -56,7 +56,7 @@ public class UpdateAdapter implements IBridgeActivityDelegate {
     }
 
     private boolean a(Context context, String str, int i) {
-        if (context != null && !TextUtils.isEmpty(str) && i != 0) {
+        if (context != null && !StringUtils.isEmpty(str) && i != 0) {
             PackageManagerHelper packageManagerHelper = new PackageManagerHelper(context);
             if (PackageManagerHelper.PackageStates.NOT_INSTALLED.equals(packageManagerHelper.getPackageStates(str)) || packageManagerHelper.getPackageVersionCode(str) < i) {
                 return true;

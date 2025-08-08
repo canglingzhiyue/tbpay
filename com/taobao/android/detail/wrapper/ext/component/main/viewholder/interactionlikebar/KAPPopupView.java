@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.component.main.viewholder.interactionlikebar;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -165,7 +165,7 @@ public class KAPPopupView extends PopupLayout {
         this.itemViewGroup.removeAllViews();
         View findViewById = findViewById(R.id.detail_divider);
         ImageView imageView = (ImageView) findViewById(R.id.detail_like_list);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             findViewById(R.id.detail_like_list_layout).setOnClickListener(new View.OnClickListener() { // from class: com.taobao.android.detail.wrapper.ext.component.main.viewholder.interactionlikebar.KAPPopupView.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

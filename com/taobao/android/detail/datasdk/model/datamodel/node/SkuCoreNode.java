@@ -1,7 +1,7 @@
 package com.taobao.android.detail.datasdk.model.datamodel.node;
 
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -86,7 +86,7 @@ public class SkuCoreNode extends DetailNode {
                     this.bizId = epw.a(jSONObject.getString("bizId"));
                     this.buyUrl = epw.a(jSONObject.getString("buyUrl"));
                     this.okBtnText = epw.a(jSONObject.getString("okBtnText"));
-                    if (TextUtils.isEmpty(this.okBtnText)) {
+                    if (StringUtils.isEmpty(this.okBtnText)) {
                         this.okBtnText = ILocalizationService.CONFIRM;
                     }
                     try {

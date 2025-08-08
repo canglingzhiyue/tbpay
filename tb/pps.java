@@ -2,7 +2,7 @@ package tb;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.util.ParamsConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class pps implements b {
             return ((Boolean) ipChange.ipc$dispatch("cebe5e73", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         r rVar = new r();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             rVar.a("errorMessage", "params is empty");
             wVCallBackContext.error(rVar);
             return false;
@@ -55,7 +55,7 @@ public class pps implements b {
         }
         String string = jSONObject.getString(ParamsConstants.Key.PARAM_SCENE_CODE);
         ghp a2 = ghp.a(jSONObject.getJSONObject("targetVersion"));
-        if (a2 == null || TextUtils.isEmpty(a2.c)) {
+        if (a2 == null || StringUtils.isEmpty(a2.c)) {
             rVar.a("errorMessage", "versionCode is null");
             wVCallBackContext.error(rVar);
             return false;

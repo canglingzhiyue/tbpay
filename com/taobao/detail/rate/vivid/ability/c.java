@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.icart.recommend.CartRecommendRefreshScene;
@@ -72,7 +72,7 @@ public final class c extends dlg<com.taobao.android.dinamicx.eventchain.l> {
         q.d(akiAbilityCallback, "akiAbilityCallback");
         this.b = runtimeContext.a();
         String str = null;
-        if (!TextUtils.isEmpty(dlhVar != null ? dlhVar.c("action") : null)) {
+        if (!StringUtils.isEmpty(dlhVar != null ? dlhVar.c("action") : null)) {
             BroadcastReceiver broadcastReceiver = new BroadcastReceiver() { // from class: com.taobao.detail.rate.vivid.ability.RegisterReceiverAbility$onExecuteWithData$mLoginReceiver$1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -86,7 +86,7 @@ public final class c extends dlg<com.taobao.android.dinamicx.eventchain.l> {
                     }
                     q.d(context, "context");
                     q.d(intent, "intent");
-                    if (TextUtils.isEmpty(intent.getAction())) {
+                    if (StringUtils.isEmpty(intent.getAction())) {
                         return;
                     }
                     Bundle extras = intent.getExtras();

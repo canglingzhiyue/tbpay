@@ -1,6 +1,6 @@
 package com.taobao.tao.contact;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.contacts.data.member.RecentMember;
 import com.taobao.share.globalmodel.ComponentType;
@@ -54,19 +54,19 @@ public class ShareToContactHandler implements b.a {
             return null;
         }
         RecentMember recentMember = new RecentMember();
-        if (!TextUtils.isEmpty(contactInfo.getUserId())) {
+        if (!StringUtils.isEmpty(contactInfo.getUserId())) {
             recentMember.setUserId(contactInfo.getUserId());
         }
         int parseInt = Integer.parseInt(contactInfo.getContactType());
         if (parseInt == 1 || parseInt == 3) {
-            if (TextUtils.isEmpty(contactInfo.getUserId())) {
+            if (StringUtils.isEmpty(contactInfo.getUserId())) {
                 TLog.logi(TAG, "convertContactInfoToRecentMember: userId is empty");
                 return null;
             }
             recentMember.setUserId(contactInfo.getUserId());
             recentMember.setTaoFriendName(contactInfo.getDisplayName());
         } else if (parseInt == 2) {
-            if (TextUtils.isEmpty(contactInfo.getGroupId())) {
+            if (StringUtils.isEmpty(contactInfo.getGroupId())) {
                 TLog.logi(TAG, "convertContactInfoToRecentMember: groupId is empty");
                 return null;
             }
@@ -78,7 +78,7 @@ public class ShareToContactHandler implements b.a {
         recentMember.setName(contactInfo.getDisplayName());
         recentMember.setType(Integer.parseInt(contactInfo.getContactType()));
         recentMember.setShareChannel((int) SHARE_CHANNEL);
-        if (TextUtils.isEmpty(contactInfo.getHeadUrl())) {
+        if (StringUtils.isEmpty(contactInfo.getHeadUrl())) {
             recentMember.setHeadUrl("http://gw.alicdn.com/tfscom/TB1R7JxIpXXXXXDXpXXazxJIVXX-144-144.png");
         } else {
             recentMember.setHeadUrl(contactInfo.getHeadUrl());

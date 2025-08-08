@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 
@@ -110,7 +110,7 @@ public class nmr {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{str, new Integer(i2)});
-        } else if (TextUtils.isEmpty(str) || !f.contains(str)) {
+        } else if (StringUtils.isEmpty(str) || !f.contains(str)) {
         } else {
             g = str;
             h = Math.min(Math.max(i2, 2), 10);
@@ -121,7 +121,7 @@ public class nmr {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (!TextUtils.equals(str, g)) {
+        } else if (!StringUtils.equals(str, g)) {
         } else {
             g = null;
             h = 10;
@@ -136,7 +136,7 @@ public class nmr {
         if (f.contains("*")) {
             return 2;
         }
-        if (!TextUtils.isEmpty(g)) {
+        if (!StringUtils.isEmpty(g)) {
             return h;
         }
         return 10;

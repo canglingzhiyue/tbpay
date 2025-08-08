@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.business.videocollection.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.business.globalinteraction.render.a;
 import com.taobao.android.fluid.business.videocollection.poplayer.b;
@@ -93,7 +93,7 @@ public class CollectionService implements ICollectionService {
         if (sessionParams == null) {
             return false;
         }
-        return TextUtils.equals(sessionParams.b, a.GUANGGUANG_COLLECTION);
+        return StringUtils.equals(sessionParams.b, a.GUANGGUANG_COLLECTION);
     }
 
     @Override // com.taobao.android.fluid.business.videocollection.helper.ICollectionService

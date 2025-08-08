@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.Site;
 import com.alibaba.ha.bizerrorreporter.module.AggregationType;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -338,7 +338,7 @@ public class mmm extends mma<mkn, mkm> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d0668d9", new Object[]{map, str});
         }
-        if (map != null && !TextUtils.isEmpty(str)) {
+        if (map != null && !StringUtils.isEmpty(str)) {
             Object obj = map.get(str);
             if (obj instanceof String) {
                 return (String) obj;

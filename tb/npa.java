@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -287,7 +287,7 @@ public final class npa implements b<e, MSearchResult> {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     Map<String, String> D = nozVar.D();
                     q.a((Object) key, "key");
                     D.put(key, value.toString());
@@ -457,7 +457,7 @@ public final class npa implements b<e, MSearchResult> {
                     a(bean, "negFeedbackActions", jSONObject2);
                     bean.comboType = "item";
                     a(mSearchResult, jSONObject3, bean, nozVar.R());
-                    if (TextUtils.equals(jSONObject3.getString(fjp.BIZ_CONTEXT_KEY_CARD_TYPE), "item")) {
+                    if (StringUtils.equals(jSONObject3.getString(fjp.BIZ_CONTEXT_KEY_CARD_TYPE), "item")) {
                         String string = jSONObject3.getString("item_id");
                         if (jSONObject3.getBooleanValue(nog.PRD_IS_P4P)) {
                             i6++;
@@ -474,7 +474,7 @@ public final class npa implements b<e, MSearchResult> {
             i4++;
             jSONArray2 = jSONArray;
         }
-        if (!TextUtils.isEmpty(nozVar.W())) {
+        if (!StringUtils.isEmpty(nozVar.W())) {
             return;
         }
         if (i5 > 0) {

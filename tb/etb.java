@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -76,7 +76,7 @@ public class etb {
                 } else {
                     final String string = jSONObject.getJSONObject("extra").getJSONObject("snapshotInfo").getString("frame_uri");
                     try {
-                        if (TextUtils.isEmpty(string)) {
+                        if (StringUtils.isEmpty(string)) {
                             return;
                         }
                         try {

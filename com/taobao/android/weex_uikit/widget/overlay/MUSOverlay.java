@@ -1,7 +1,7 @@
 package com.taobao.android.weex_uikit.widget.overlay;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -165,7 +165,7 @@ public class MUSOverlay extends UINode {
             return ((Number) ipChange.ipc$dispatch("c805a1e8", new Object[]{this, str})).intValue();
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return -2009976270;
             }
             return b.a(str);

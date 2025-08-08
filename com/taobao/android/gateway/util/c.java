@@ -1,7 +1,7 @@
 package com.taobao.android.gateway.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.speed.TBSpeed;
 import com.taobao.orange.OrangeConfig;
@@ -44,6 +44,6 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("d51141ee", new Object[]{context, str, new Boolean(z)})).booleanValue();
         }
         String a2 = a(context, str, z + "");
-        return TextUtils.isEmpty(a2) ? z : a2.trim().toLowerCase().equals("true");
+        return StringUtils.isEmpty(a2) ? z : a2.trim().toLowerCase().equals("true");
     }
 }

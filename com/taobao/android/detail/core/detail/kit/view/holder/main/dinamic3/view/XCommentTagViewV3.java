@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.util.AttributeSet;
 import android.view.View;
@@ -99,7 +99,7 @@ public class XCommentTagViewV3 extends AutoWrapLineLayoutForDinamic implements V
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("22f8ec1", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 this.mLineNum = Integer.parseInt(str);
@@ -131,7 +131,7 @@ public class XCommentTagViewV3 extends AutoWrapLineLayoutForDinamic implements V
             for (int i = 0; i < arrayList.size(); i++) {
                 String str = arrayList.get(i).f9993a;
                 int a2 = m.a(arrayList.get(i).b);
-                if (!TextUtils.isEmpty(str) && a2 > 0) {
+                if (!StringUtils.isEmpty(str) && a2 > 0) {
                     SpannableString spannableString = new SpannableString(str + riy.BRACKET_START_STR + k.a(a2) + riy.BRACKET_END_STR);
                     spannableString.setSpan(absoluteSizeSpan, str.length(), spannableString.length(), 33);
                     TextView textView = new TextView(this.mContext);
@@ -141,7 +141,7 @@ public class XCommentTagViewV3 extends AutoWrapLineLayoutForDinamic implements V
                     textView.setPadding(i2, 0, i2, 0);
                     textView.setMaxWidth(paddingLeft);
                     textView.setSingleLine(true);
-                    textView.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+                    textView.setEllipsize(StringUtils.TruncateAt.MIDDLE);
                     textView.setIncludeFontPadding(false);
                     textView.setTextSize(1, 12.0f);
                     textView.setText(spannableString);

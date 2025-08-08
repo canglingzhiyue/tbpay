@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.ali.adapt.api.AtlasServiceFinder;
 import com.alibaba.fastjson.JSONArray;
@@ -105,7 +105,7 @@ public final class idt implements nhm {
                     return ipChange2 instanceof IpChange ? (String) ipChange2.ipc$dispatch("ccb2657b", new Object[]{this}) : TBBuyPageMode.fullPageMode;
                 }
             };
-            this.f = TextUtils.isEmpty(this.f) ? TBBuyPageMode.fullPageMode : this.f;
+            this.f = StringUtils.isEmpty(this.f) ? TBBuyPageMode.fullPageMode : this.f;
         } else {
             this.f = ((c) c).bc_();
         }

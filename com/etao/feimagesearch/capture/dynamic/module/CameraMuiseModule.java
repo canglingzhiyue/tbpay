@@ -2,7 +2,7 @@ package com.etao.feimagesearch.capture.dynamic.module;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.capture.dynamic.bean.DynCaptureImgGotConfig;
@@ -369,7 +369,7 @@ public final class CameraMuiseModule extends MUSModule {
             cot.a("PltCameraPai", MODULE_NAME, "cameraChangeMetaSight");
             String a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "state", "close");
             q.a((Object) a2, "FastJsonParseUtil.parseS…params, \"state\", \"close\")");
-            boolean equals = TextUtils.equals("open", a2);
+            boolean equals = StringUtils.equals("open", a2);
             cpe.c cVar = cpe.Companion;
             p instance = getInstance();
             q.a((Object) instance, "instance");

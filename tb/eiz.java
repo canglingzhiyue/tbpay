@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -163,7 +163,7 @@ public class eiz {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("4c6685d0", new Object[]{this, viewGroup, str});
         }
-        if (viewGroup == null || TextUtils.isEmpty(str)) {
+        if (viewGroup == null || StringUtils.isEmpty(str)) {
             return null;
         }
         int childCount = viewGroup.getChildCount();

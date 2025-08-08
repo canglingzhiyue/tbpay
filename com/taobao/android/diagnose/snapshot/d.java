@@ -1,7 +1,7 @@
 package com.taobao.android.diagnose.snapshot;
 
 import android.os.FileObserver;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class d extends FileObserver {
         } else if (this.b == null) {
         } else {
             TLog.loge("NativeCrashFileObserver", "", "The file had been created: " + this.f11728a + File.separator + str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (str.endsWith("jni.log")) {

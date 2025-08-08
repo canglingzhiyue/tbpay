@@ -1,6 +1,6 @@
 package com.taobao.homepage.pop.ucp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.external.UCPReachViewState;
@@ -49,8 +49,8 @@ public class b implements com.taobao.android.external.a {
                     return false;
                 }
                 String string = jSONObject.getString("businessId");
-                if (!TextUtils.isEmpty(string)) {
-                    return TextUtils.equals(iPopData.getBusinessID(), string);
+                if (!StringUtils.isEmpty(string)) {
+                    return StringUtils.equals(iPopData.getBusinessID(), string);
                 }
                 return false;
             } catch (Exception e) {
@@ -68,14 +68,14 @@ public class b implements com.taobao.android.external.a {
         } else if (uCPReachViewState == null) {
         } else {
             com.taobao.homepage.pop.utils.c.a(a.TAG, "synchronizeState, key = " + uCPReachViewState.key + ", code = " + uCPReachViewState.code + ", msg = " + uCPReachViewState.msg);
-            if (TextUtils.equals(uCPReachViewState.key, "Expose")) {
+            if (StringUtils.equals(uCPReachViewState.key, "Expose")) {
                 if (this.e) {
                     com.taobao.homepage.pop.utils.c.a(a.TAG, "synchronizeState, already exposed");
                     return;
                 }
                 this.e = true;
             }
-            if (TextUtils.equals(uCPReachViewState.key, KEY_BIZ_CHECK)) {
+            if (StringUtils.equals(uCPReachViewState.key, KEY_BIZ_CHECK)) {
                 if (this.d) {
                     com.taobao.homepage.pop.utils.c.a(a.TAG, "synchronizeState, already checked");
                     return;

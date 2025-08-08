@@ -3,7 +3,7 @@ package com.taobao.android.dinamicx_v4.animation.util;
 import android.animation.TimeInterpolator;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.view.animation.PathInterpolatorCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.LinearInterpolator;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -75,7 +75,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return (TimeInterpolator) ipChange.ipc$dispatch("39678fd4", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return f();
         }
         char c = 65535;

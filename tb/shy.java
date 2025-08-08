@@ -3,7 +3,7 @@ package tb;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -174,7 +174,7 @@ public class shy {
             return true;
         }
         if (!b()) {
-            return TextUtils.equals("FlutterSplashView", view.getClass().getSimpleName());
+            return StringUtils.equals("FlutterSplashView", view.getClass().getSimpleName());
         }
         return view.getId() == R.id.fluid_sdk_weex_interactive_card;
     }
@@ -192,7 +192,7 @@ public class shy {
                     return;
                 }
                 videoRoundCornerLayout.setCornerRadii(f33592a);
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 videoRoundCornerLayout.setBackgroundColor(Color.parseColor(str));

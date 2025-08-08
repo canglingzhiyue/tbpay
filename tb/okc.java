@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.i;
 import com.taobao.tao.topmultitab.protocol.IHomeSubTabController;
@@ -33,7 +33,7 @@ public class okc {
         ksp.b("HomeMainLandInfoFlowUtProcess", "utWrite");
         las.a((Object) b.getCurActivity());
         String updatePageName = iHomeSubTabController.getUpdatePageName();
-        if (!TextUtils.isEmpty(updatePageName)) {
+        if (!StringUtils.isEmpty(updatePageName)) {
             ksp.b("HomeMainLandInfoFlowUtProcess", "utWrite pageName : " + updatePageName);
             las.a(b.getCurActivity(), updatePageName);
         } else {

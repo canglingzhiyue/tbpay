@@ -2,7 +2,7 @@ package anet.channel.session.dns;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.session.dns.NavigationHelper;
 import anet.channel.util.ALog;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -71,7 +71,7 @@ public class DynamicComponentHandler implements d {
             return;
         }
         String uri = data.toString();
-        if (TextUtils.isEmpty(uri) || instance.blockingResourceListener == null) {
+        if (StringUtils.isEmpty(uri) || instance.blockingResourceListener == null) {
             return;
         }
         if (isMessageURL(uri)) {

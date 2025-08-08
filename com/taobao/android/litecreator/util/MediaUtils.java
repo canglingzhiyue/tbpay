@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.comprehension.d;
 import com.taobao.android.litecreator.comprehension.video.FrameExtractor;
@@ -278,7 +278,7 @@ public final class MediaUtils {
         try {
             mediaMetadataRetriever.setDataSource(str);
             String extractMetadata = mediaMetadataRetriever.extractMetadata(23);
-            if (TextUtils.isEmpty(extractMetadata)) {
+            if (StringUtils.isEmpty(extractMetadata)) {
                 return null;
             }
             a a2 = a.a(extractMetadata);

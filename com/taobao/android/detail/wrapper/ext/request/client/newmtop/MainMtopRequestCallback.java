@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.ext.request.client.newmtop;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alipay.mobile.verifyidentity.ui.fb.plugin.BaseFBPlugin;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -116,7 +116,7 @@ public class MainMtopRequestCallback extends MtopRequestCallback {
         DetailCoreActivity detailCoreActivity = (DetailCoreActivity) this.mContext;
         trackStartPrefetchRequest(detailCoreActivity);
         String a3 = fef.a(map);
-        if (!TextUtils.equals("true", a3)) {
+        if (!StringUtils.equals("true", a3)) {
             return handleHitPrefetchFail(a2, detailCoreActivity, a3);
         }
         return handleHitPrefetch(a2, detailCoreActivity);
@@ -134,12 +134,12 @@ public class MainMtopRequestCallback extends MtopRequestCallback {
         }
         trackHitPrefetchRequestFail(detailCoreActivity, str, bVar.d);
         i.c(k.a(TAG), "命中失败，丢弃预请求，重发请求");
-        if (TextUtils.equals(cVar.d, "finish")) {
+        if (StringUtils.equals(cVar.d, "finish")) {
             fef.b(this.mRequestID);
             i.c(k.a(TAG), "abandon prefetchResponse");
             return false;
         }
-        if (TextUtils.equals(cVar.d, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
+        if (StringUtils.equals(cVar.d, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
             cancelRequest(cVar);
         }
         cVar.d = BaseFBPlugin.VERIFY_STATUS.abort;
@@ -158,15 +158,15 @@ public class MainMtopRequestCallback extends MtopRequestCallback {
             return false;
         }
         h.g(detailCoreActivity, cVar.f, cVar.g);
-        if (TextUtils.equals(cVar.d, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
+        if (StringUtils.equals(cVar.d, com.taobao.android.weex_framework.adapter.e.RECORD_EXECUTE)) {
             i.c(k.a(TAG), "参数对比相同，预请求已经执行，但结果还未返回，等待回调");
             trackHitPrefetchRequest(detailCoreActivity);
             return true;
-        } else if (TextUtils.equals(cVar.d, "default") || TextUtils.equals(cVar.d, "start")) {
+        } else if (StringUtils.equals(cVar.d, "default") || StringUtils.equals(cVar.d, "start")) {
             cVar.d = BaseFBPlugin.VERIFY_STATUS.abort;
             i.c(k.a(TAG), "参数对比相同，预请求还未执行，直接舍弃");
             return false;
-        } else if (!TextUtils.equals(cVar.d, "finish")) {
+        } else if (!StringUtils.equals(cVar.d, "finish")) {
             return false;
         } else {
             return hitPrefetchWhenFinish(bVar, detailCoreActivity);
@@ -184,7 +184,7 @@ public class MainMtopRequestCallback extends MtopRequestCallback {
             return false;
         }
         MtopResponse mtopResponse = dVar.f27852a;
-        if (TextUtils.equals(dVar.b, "success")) {
+        if (StringUtils.equals(dVar.b, "success")) {
             if (mtopResponse != null && mtopResponse.getMtopStat() != null) {
                 o.a(this.mIntentFlag, mtopResponse.getMtopStat());
             }
@@ -198,7 +198,7 @@ public class MainMtopRequestCallback extends MtopRequestCallback {
             }
             i.c(j.a(TAG), "主接口预请求回调，mtop onSuccess end");
             fgx.b(detailCoreActivity);
-        } else if (TextUtils.equals(dVar.b, "error")) {
+        } else if (StringUtils.equals(dVar.b, "error")) {
             mtopError(mtopResponse);
             fgx.a(detailCoreActivity, false);
         } else {

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.MutableContextWrapper;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
@@ -125,10 +125,10 @@ public final class SnapShotPrerenderFactory$createPrerenderItem$1 extends Lambda
             return;
         }
         String str2 = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             this.$callback.mo2421invoke(null);
             RVLLevel rVLLevel = RVLLevel.Error;
-            com.taobao.android.riverlogger.e.a(rVLLevel, "Themis/Performance/Prerender", "readValidSnapshotAsync complete, htmlEmpty: " + TextUtils.isEmpty(str2) + ", url: " + this.$params.a());
+            com.taobao.android.riverlogger.e.a(rVLLevel, "Themis/Performance/Prerender", "readValidSnapshotAsync complete, htmlEmpty: " + StringUtils.isEmpty(str2) + ", url: " + this.$params.a());
             return;
         }
         com.taobao.themis.kernel.utils.a.a(new AnonymousClass1(str));

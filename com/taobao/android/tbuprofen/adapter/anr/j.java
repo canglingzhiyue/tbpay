@@ -1,6 +1,6 @@
 package com.taobao.android.tbuprofen.adapter.anr;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -128,7 +128,7 @@ public class j {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                    } else if (!j.b() || TextUtils.isEmpty(str)) {
+                    } else if (!j.b() || StringUtils.isEmpty(str)) {
                     } else {
                         AppMonitor.Alarm.commitSuccess(com.taobao.android.tbuprofen.adapter.e.MONITOR_MODULE, "anr_dump", String.format("event:ANR_DUMP;%s", str));
                         Log.e("TBAnrStatistic", str);

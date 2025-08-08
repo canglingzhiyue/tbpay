@@ -3,7 +3,7 @@ package com.taobao.android.layoutmanager.container.containerlifecycle;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.container.e;
 import com.taobao.tao.flexbox.layoutmanager.container.f;
@@ -24,7 +24,7 @@ public class a {
             return (f) ipChange.ipc$dispatch("be6a422b", new Object[]{context, eVar, str, new Boolean(z), bundle});
         }
         f fVar = null;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

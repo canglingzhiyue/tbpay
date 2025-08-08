@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.security.mobile.cache.AuthenticatorCache;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -116,7 +116,7 @@ public class olg {
             ipChange.ipc$dispatch("9ffec98b", new Object[]{str, strArr, new Long(j), new Long(j2), str2, str3, map, olfVar});
             return;
         }
-        String a3 = TextUtils.isEmpty(str) ? jhz.a() : str;
+        String a3 = StringUtils.isEmpty(str) ? jhz.a() : str;
         c.a();
         TLogNative.appenderFlushData(false);
         List<String> list2 = null;
@@ -162,7 +162,7 @@ public class olg {
         objArr[3] = str3;
         objArr[4] = map == null ? "null" : map.toString();
         h.a(str5, str, String.format("[FILE_UPLOAD]: Upload reason:%s, fileType:%s, bizType:%s, bizCode:%s, extra:%s", objArr));
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || "exception".equalsIgnoreCase(str2)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || "exception".equalsIgnoreCase(str2)) {
             String value2 = ErrorCode.BIZ_ERROR.getValue();
             TLogEventHelper.a(uploadFileType, uploadReason, str2, str3, uploadStage, value2, "[FILE_UPLOAD] Invalid biz info.", str);
             f.a().h().b(oko.h, str, "[FILE_UPLOAD] Invalid biz info.");
@@ -205,7 +205,7 @@ public class olg {
                 return;
             }
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     f32153a.put(str, uploadEventInfo);
                     if ((uploadEventInfo.flag & 1) == 0) {
                         a(uploadEventInfo);
@@ -224,7 +224,7 @@ public class olg {
                 return (TLogEventHelper.UploadEventInfo) ipChange.ipc$dispatch("ccfee249", new Object[]{str});
             }
             try {
-                if (!TextUtils.isEmpty(str) && f32153a.containsKey(str)) {
+                if (!StringUtils.isEmpty(str) && f32153a.containsKey(str)) {
                     return f32153a.get(str);
                 }
             } catch (Exception e) {
@@ -288,7 +288,7 @@ public class olg {
                         e.b("FileUploadManager", "Ignore the new upload task: " + file.getName());
                     } else {
                         String c = g.c(file.getAbsolutePath());
-                        if (!TextUtils.isEmpty(c)) {
+                        if (!StringUtils.isEmpty(c)) {
                             TLogEventHelper.UploadEventInfo uploadEventInfo = (TLogEventHelper.UploadEventInfo) JSON.parseObject(c, TLogEventHelper.UploadEventInfo.class);
                             if (uploadEventInfo != null && System.currentTimeMillis() - uploadEventInfo.requestTime < AuthenticatorCache.MAX_CACHE_TIME) {
                                 TLogEventHelper.a(uploadEventInfo);

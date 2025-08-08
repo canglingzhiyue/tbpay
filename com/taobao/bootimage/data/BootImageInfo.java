@@ -1,6 +1,6 @@
 package com.taobao.bootimage.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.bootimage.arch.flow.view.SkipStyle;
 import mtopsdk.mtop.domain.IMTOPDataObject;
@@ -101,16 +101,16 @@ public class BootImageInfo implements IMTOPDataObject {
     }
 
     public FromType getFromType() {
-        if (TextUtils.equals(this.from, "brand")) {
+        if (StringUtils.equals(this.from, "brand")) {
             return FromType.BRAND;
         }
-        if (TextUtils.equals(this.from, "market")) {
+        if (StringUtils.equals(this.from, "market")) {
             return FromType.NORMAL;
         }
-        if (TextUtils.equals(this.from, "commercialAd")) {
+        if (StringUtils.equals(this.from, "commercialAd")) {
             return FromType.COMMERCIALAD;
         }
-        if (TextUtils.isEmpty(this.from)) {
+        if (StringUtils.isEmpty(this.from)) {
             return FromType.NORMAL;
         }
         return FromType.UNSUPPORT;

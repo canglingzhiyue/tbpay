@@ -1,6 +1,6 @@
 package com.sina.weibo.sdk.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 import tb.kge;
@@ -40,20 +40,20 @@ public final class b {
     }
 
     public final synchronized WbAuthListener a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return this.e.get(str);
     }
 
     public final synchronized void a(String str, WbAuthListener wbAuthListener) {
-        if (!TextUtils.isEmpty(str) && wbAuthListener != null) {
+        if (!StringUtils.isEmpty(str) && wbAuthListener != null) {
             this.e.put(str, wbAuthListener);
         }
     }
 
     public final synchronized void b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.e.remove(str);

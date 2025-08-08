@@ -1,7 +1,7 @@
 package com.taobao.android.themis.graphics.inspector;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayOutputStream;
@@ -49,7 +49,7 @@ public abstract class InspectorRepository {
                 return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
             }
             byte[] bArr = this.f15564a;
-            return bArr != null && bArr.length > 0 && !TextUtils.isEmpty(this.b) && this.c != null;
+            return bArr != null && bArr.length > 0 && !StringUtils.isEmpty(this.b) && this.c != null;
         }
     }
 

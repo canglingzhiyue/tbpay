@@ -1,6 +1,6 @@
 package com.taobao.phenix.loader.network;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.util.RequestConstant;
 import com.alipay.mobile.common.logging.strategy.LogStrategyManager;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -135,7 +135,7 @@ public class c extends nmx<njd, njf, com.taobao.phenix.request.b> implements com
         }
         e.a(this);
         ImageStatistics b = e.b();
-        if (!TextUtils.isEmpty(b.f18937a)) {
+        if (!StringUtils.isEmpty(b.f18937a)) {
             e.a(RequestConstant.KEY_TRACE_ID, b.f18937a);
         }
         if (b.m() != null && b.m().size() > 0) {

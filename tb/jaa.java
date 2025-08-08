@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.eventchain.l;
@@ -30,11 +30,11 @@ public class jaa extends izq {
             return (dkx) ipChange.ipc$dispatch("7df0f702", new Object[]{this, dlhVar, dXRecyclerLayout, dXWidgetNode, lVar});
         }
         String c = dlhVar.c("type");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return new dkw(new dkv(d(), "type参数为空"), true);
         }
         String c2 = dlhVar.c("state");
-        if (TextUtils.isEmpty(c2)) {
+        if (StringUtils.isEmpty(c2)) {
             return new dkw(new dkv(s.DXError_EngineFetchException, "state参数为空"), true);
         }
         JSONObject jSONObject = new JSONObject();

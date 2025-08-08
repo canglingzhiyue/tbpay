@@ -1,6 +1,6 @@
 package android.support.v4.database;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.riy;
 
 @Deprecated
@@ -22,10 +22,10 @@ public final class DatabaseUtilsCompat {
 
     @Deprecated
     public static String concatenateWhere(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
         return riy.BRACKET_START_STR + str + ") AND (" + str2 + riy.BRACKET_END_STR;

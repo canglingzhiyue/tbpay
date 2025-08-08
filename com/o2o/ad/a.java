@@ -1,7 +1,7 @@
 package com.o2o.ad;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -39,7 +39,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -50,7 +50,7 @@ public class a {
             return str;
         }
         String queryParameter = parse.getQueryParameter(O2O_URL);
-        if (!TextUtils.isEmpty(parse.getQueryParameter("o2oclickid"))) {
+        if (!StringUtils.isEmpty(parse.getQueryParameter("o2oclickid"))) {
             return str;
         }
         String queryParameter2 = parse.getQueryParameter("etype");
@@ -63,7 +63,7 @@ public class a {
 
     public String b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : TextUtils.isEmpty(str) ? str : Uri.parse(a(str)).getQueryParameter("o2oclickid");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str}) : StringUtils.isEmpty(str) ? str : Uri.parse(a(str)).getQueryParameter("o2oclickid");
     }
 
     public String a(String str, String str2) {
@@ -71,7 +71,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return new com.o2o.ad.click.common.a().a(str, str2);
         }
         return null;

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.search.receiver.a;
 import com.taobao.login4android.api.Login;
@@ -107,7 +107,7 @@ public class hya {
             return (hxm) ipChange.ipc$dispatch("1e69061f", new Object[]{this});
         }
         String d = d();
-        if (TextUtils.isEmpty(d) || (split = d.split(f)) == null || split.length == 0 || (split.length == 1 && TextUtils.isEmpty(split[0]))) {
+        if (StringUtils.isEmpty(d) || (split = d.split(f)) == null || split.length == 0 || (split.length == 1 && StringUtils.isEmpty(split[0]))) {
             return null;
         }
         hxm hxmVar = new hxm();
@@ -121,14 +121,14 @@ public class hya {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             hyn.a(f28840a, "search key is null", new String[0]);
             return false;
         }
         hyn.a(f28840a, "search key is:" + str, new String[0]);
         String d = d();
         String str3 = "";
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             str2 = str + f;
         } else {
             if (d.indexOf(str + f) != -1) {

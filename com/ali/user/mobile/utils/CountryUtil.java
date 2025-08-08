@@ -1,7 +1,7 @@
 package com.ali.user.mobile.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.login.model.AppLaunchInfo;
 import com.ali.user.mobile.login.model.AppLaunchInfoResponseData;
@@ -31,7 +31,7 @@ public class CountryUtil {
             return (RegionInfo) ipChange.ipc$dispatch("21c64952", new Object[]{context, str});
         }
         RegionInfo regionInfo = new RegionInfo();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             List list = null;
             try {
                 list = JSON.parseArray(context.getString(R.string.aliuser_hot_region_list), CountryCode.class);
@@ -45,7 +45,7 @@ public class CountryUtil {
                         break;
                     }
                     CountryCode countryCode = (CountryCode) it.next();
-                    if (TextUtils.equals(str.toLowerCase(), countryCode.domain.toLowerCase())) {
+                    if (StringUtils.equals(str.toLowerCase(), countryCode.domain.toLowerCase())) {
                         regionInfo.name = countryCode.name;
                         regionInfo.code = countryCode.code;
                         regionInfo.checkPattern = countryCode.checkPattern;
@@ -55,7 +55,7 @@ public class CountryUtil {
                 }
             }
         }
-        if (TextUtils.isEmpty(regionInfo.name)) {
+        if (StringUtils.isEmpty(regionInfo.name)) {
             regionInfo.name = "中国大陆";
             regionInfo.code = "+86";
             regionInfo.checkPattern = "^(86){0,1}1\\d{10}$";
@@ -79,7 +79,7 @@ public class CountryUtil {
             return false;
         }
         boolean z2 = appLaunchInfoResponseData != null && appLaunchInfoResponseData.returnValue != 0 && ((AppLaunchInfo) appLaunchInfoResponseData.returnValue).supportOverseaSimLogin && ((AppLaunchInfo) appLaunchInfoResponseData.returnValue).fromOversea;
-        boolean z3 = z2 && regionInfo != null && (!z ? TextUtils.equals(regionInfo.code, ((AppLaunchInfo) appLaunchInfoResponseData.returnValue).phoneCode) : TextUtils.equals(regionInfo.code, ((AppLaunchInfo) appLaunchInfoResponseData.returnValue).regPhoneCode));
+        boolean z3 = z2 && regionInfo != null && (!z ? StringUtils.equals(regionInfo.code, ((AppLaunchInfo) appLaunchInfoResponseData.returnValue).phoneCode) : StringUtils.equals(regionInfo.code, ((AppLaunchInfo) appLaunchInfoResponseData.returnValue).regPhoneCode));
         LoginTLogAdapter.e(TAG, "supportOverseaSimLogin:" + z2 + " supportRegionInfo:" + z3);
         return z2 && z3;
     }

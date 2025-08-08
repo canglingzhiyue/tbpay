@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -65,7 +65,7 @@ public class ied {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{str, str2, str3})).booleanValue();
         }
-        if (str != null && !TextUtils.isEmpty(str3)) {
+        if (str != null && !StringUtils.isEmpty(str3)) {
             return new HashSet(Arrays.asList(str.split(str2))).contains(str3);
         }
         return false;

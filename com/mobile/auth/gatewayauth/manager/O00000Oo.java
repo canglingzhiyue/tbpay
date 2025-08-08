@@ -1,7 +1,7 @@
 package com.mobile.auth.gatewayauth.manager;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.O0OOo;
 import com.mobile.auth.O0o00;
 import com.mobile.auth.OO000OO;
@@ -626,7 +626,7 @@ public class O00000Oo {
     public boolean O0000oO0() {
         try {
             String readSDKConfigLimitFlag = UTSharedPreferencesHelper.readSDKConfigLimitFlag(this.O000000o);
-            if ((!TextUtils.isEmpty(readSDKConfigLimitFlag) && com.mobile.auth.gatewayauth.utils.O000000o.O000000o(readSDKConfigLimitFlag)) || UTSharedPreferencesHelper.readSDKConfigCloseFlag(this.O000000o)) {
+            if ((!StringUtils.isEmpty(readSDKConfigLimitFlag) && com.mobile.auth.gatewayauth.utils.O000000o.O000000o(readSDKConfigLimitFlag)) || UTSharedPreferencesHelper.readSDKConfigCloseFlag(this.O000000o)) {
                 return true;
             }
             return O0000o0o();

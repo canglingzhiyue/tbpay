@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.Outline;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -748,7 +748,7 @@ public final class cqs extends igj<ScrollInterceptView, IrpDatasource> {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f7197a36", new Object[]{this, new Boolean(z), str});
         } else if (z) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.n = true;

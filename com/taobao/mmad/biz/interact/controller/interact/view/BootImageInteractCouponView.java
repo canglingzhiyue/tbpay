@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -86,7 +86,7 @@ public class BootImageInteractCouponView extends BootImageInteractNaitveSlideVie
             this.mInteractCouponReceived = (ImageView) findViewById(R.id.interact_card_coupon_received);
             this.mInteractAdvName = (TextView) findViewById(R.id.interact_adv_name);
             this.mWaveAnimView = (BootImageWaveAnimView) findViewById(R.id.interact_card_anim_view);
-            if (this.mInteractAdvName != null && !TextUtils.isEmpty(this.mBootImageInfo.advName) && !TextUtils.isEmpty(this.mBootImageInfo.advColor)) {
+            if (this.mInteractAdvName != null && !StringUtils.isEmpty(this.mBootImageInfo.advName) && !StringUtils.isEmpty(this.mBootImageInfo.advColor)) {
                 this.mInteractAdvName.setVisibility(0);
                 this.mInteractAdvName.setText(this.mBootImageInfo.advName);
                 try {
@@ -104,8 +104,8 @@ public class BootImageInteractCouponView extends BootImageInteractNaitveSlideVie
             this.mInteractTitle.setText(this.mBootImageInfo.benefitTitle);
             this.mInteractMoney.setText(String.valueOf(keo.a(this.mBootImageInfo.benefitAmountCents, "100", 0)));
             this.mInteractCoupon.setText(this.mContext.getString(R.string.bootimage_interact_coupon_discount, String.valueOf(keo.a(this.mBootImageInfo.benefitThreshold, "100", 0)), this.mInteractMoney.getText()));
-            String str = TextUtils.isEmpty(this.mBootImageInfo.benefitImageUrl) ? BootImageInteractBaseView.BOOTIMAGE_INTERACT_COUPON_DEFAULT_IMAGE : this.mBootImageInfo.benefitImageUrl;
-            if (!TextUtils.isEmpty(str)) {
+            String str = StringUtils.isEmpty(this.mBootImageInfo.benefitImageUrl) ? BootImageInteractBaseView.BOOTIMAGE_INTERACT_COUPON_DEFAULT_IMAGE : this.mBootImageInfo.benefitImageUrl;
+            if (!StringUtils.isEmpty(str)) {
                 b.h().a(BootImageDataMgr.IMAGE_MODULE_NAME, str).into(this.mImageIcon);
             }
             b.h().a(BootImageDataMgr.IMAGE_MODULE_NAME, BootImageInteractBaseView.BOOTIAMGE_INTERACT_COUPON_RECEIVED_IMAGE).into(this.mInteractCouponReceived);
@@ -126,7 +126,7 @@ public class BootImageInteractCouponView extends BootImageInteractNaitveSlideVie
         }
         try {
             String slideActionText = super.getSlideActionText();
-            return TextUtils.isEmpty(slideActionText) ? this.mContext.getResources().getString(R.string.bootimage_slide_coupon_text) : slideActionText;
+            return StringUtils.isEmpty(slideActionText) ? this.mContext.getResources().getString(R.string.bootimage_slide_coupon_text) : slideActionText;
         } catch (Throwable unused) {
             return "";
         }

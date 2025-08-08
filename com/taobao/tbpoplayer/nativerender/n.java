@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.nativerender;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
@@ -75,14 +75,14 @@ public class n {
             return;
         }
         this.b = a(preLoadModel);
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return;
         }
         b();
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("type", (Object) tbt.PRE_RENDER);
         jSONObject.put(JarvisConstant.KEY_JARVIS_TRIGGER, (Object) "PopLayer");
-        jSONObject.put("bizCode", (Object) (!TextUtils.isEmpty(preLoadModel.containerType) ? preLoadModel.containerType : "h5"));
+        jSONObject.put("bizCode", (Object) (!StringUtils.isEmpty(preLoadModel.containerType) ? preLoadModel.containerType : "h5"));
         jSONObject.put("version", (Object) "1.0");
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put("url", (Object) this.b);
@@ -133,10 +133,10 @@ public class n {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b36c3eed", new Object[]{this, preLoadModel});
         }
-        if (!TextUtils.isEmpty(preLoadModel.url)) {
+        if (!StringUtils.isEmpty(preLoadModel.url)) {
             str = preLoadModel.url;
         } else {
-            if (!TextUtils.isEmpty(preLoadModel.ERTestUrl)) {
+            if (!StringUtils.isEmpty(preLoadModel.ERTestUrl)) {
                 Response syncSend = new DegradableNetwork(this.f22241a.k().a()).syncSend(new RequestImpl(preLoadModel.ERTestUrl), null);
                 if (syncSend == null) {
                     return "";
@@ -161,7 +161,7 @@ public class n {
             str = "";
             z = false;
         }
-        if (!z || TextUtils.isEmpty(str)) {
+        if (!z || StringUtils.isEmpty(str)) {
             return "";
         }
         this.c = UUID.randomUUID().toString().substring(0, 8);

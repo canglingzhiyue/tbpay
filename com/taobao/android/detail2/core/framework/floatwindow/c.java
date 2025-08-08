@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.floatwindow;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.floatwindow.permission.a;
@@ -373,7 +373,7 @@ public class c {
             return;
         }
         fmd fmdVar = this.d;
-        if (fmdVar == null || (d = fmdVar.d()) == null || TextUtils.isEmpty(str)) {
+        if (fmdVar == null || (d = fmdVar.d()) == null || StringUtils.isEmpty(str)) {
             return;
         }
         if (map == null) {

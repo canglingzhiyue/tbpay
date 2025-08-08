@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.impl;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.CrashBridge;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
@@ -68,7 +68,7 @@ public class MonitorLoggerImpl implements MonitorLogger {
         }
         try {
             String q = CrashBridge.q();
-            if (!TextUtils.isEmpty(q)) {
+            if (!StringUtils.isEmpty(q)) {
                 str = q;
             }
         } catch (Throwable unused) {
@@ -192,7 +192,7 @@ public class MonitorLoggerImpl implements MonitorLogger {
             ipChange.ipc$dispatch("73d38308", new Object[]{this, str, performance});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = LogCategory.CATEGORY_PERFORMANCE;
         }
         String str2 = str;
@@ -309,7 +309,7 @@ public class MonitorLoggerImpl implements MonitorLogger {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("79a5b26e", new Object[]{this, str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str) || i < 0) {
+        } else if (StringUtils.isEmpty(str) || i < 0) {
         } else {
             this.f5446a.putContextParam(LogContext.STORAGE_LOGCATEGORY_UPLOAD_PERFIX.concat(String.valueOf(str)), String.valueOf(i));
         }

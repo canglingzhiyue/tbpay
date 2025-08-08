@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -234,14 +234,14 @@ public class emz {
         String str2 = layoutNode.ruleTemplateId;
         String str3 = layoutNode.actionTemplateId;
         String str4 = layoutNode.themeTemplateId;
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4) || (TextUtils.isEmpty(str) && layoutNode.layoutJson == null)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4) || (StringUtils.isEmpty(str) && layoutNode.layoutJson == null)) {
             str = eni.e;
             str2 = eni.f;
             str3 = eni.g;
             str4 = eni.h;
             z = true;
         }
-        if (layoutNode.layoutJson != null && TextUtils.isEmpty(str)) {
+        if (layoutNode.layoutJson != null && StringUtils.isEmpty(str)) {
             str = eni.e;
         }
         ArrayList<jkn> arrayList = new ArrayList<>();
@@ -373,7 +373,7 @@ public class emz {
             return c;
         }
         String a2 = this.b.a(enc.f27456a);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return c;
         }
         JSONObject parseObject = JSON.parseObject(a2);

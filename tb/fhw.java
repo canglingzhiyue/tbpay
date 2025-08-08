@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.android.trade.event.ThreadMode;
@@ -39,7 +39,7 @@ public class fhw implements j<fhv> {
             return i.FAILURE;
         }
         String str = fhvVar.f27961a;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return i.FAILURE;
         }
         Nav.from(this.f27962a).toUri(str);

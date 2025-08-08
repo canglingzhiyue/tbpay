@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -85,7 +85,7 @@ public abstract class dea implements ded {
         if (ipChange instanceof IpChange) {
             return (ded) ipChange.ipc$dispatch("23a9d45d", new Object[]{this, baseFrame, str, viewStub, decVar});
         }
-        if (!TextUtils.isEmpty(str) && (a2 = this.f26715a.a(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (a2 = this.f26715a.a(str)) != null) {
             if (decVar != null) {
                 decVar.a(a2);
             }
@@ -117,7 +117,7 @@ public abstract class dea implements ded {
         if (ipChange instanceof IpChange) {
             return (ded) ipChange.ipc$dispatch("95b9700f", new Object[]{this, baseFrame, str, view, decVar});
         }
-        if (!TextUtils.isEmpty(str) && (a2 = this.b.a(str)) != null) {
+        if (!StringUtils.isEmpty(str) && (a2 = this.b.a(str)) != null) {
             if (decVar != null) {
                 decVar.a(a2);
             }

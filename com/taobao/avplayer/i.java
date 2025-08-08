@@ -1,6 +1,6 @@
 package com.taobao.avplayer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.taobaoavsdk.CodeUsageCounter;
@@ -25,7 +25,7 @@ public class i implements com.taobao.avplayer.common.f {
             return;
         }
         CodeUsageCounter.a().a(CodeUsageCounter.componentName.dw_adapter_DWEventAdapter);
-        if (TextUtils.isEmpty(str) || kck.f29959a == null) {
+        if (StringUtils.isEmpty(str) || kck.f29959a == null) {
             return;
         }
         Nav.from(kck.f29959a).toUri(str.trim());

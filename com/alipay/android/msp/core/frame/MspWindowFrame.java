@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core.frame;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
@@ -344,7 +344,7 @@ public class MspWindowFrame {
         }
         try {
             Context context = MspContextUtil.getContext();
-            if (context == null || !TextUtils.equals(this.h, MspFlybirdDefine.BIZ_APP_COLLECT_ID) || !isPreloadView()) {
+            if (context == null || !StringUtils.equals(this.h, MspFlybirdDefine.BIZ_APP_COLLECT_ID) || !isPreloadView()) {
                 return;
             }
             PluginManager.getRender().destroy(this.m, context.hashCode(), context);

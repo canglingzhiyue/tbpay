@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.business.usertrack.track.ut.videotracker;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.f;
@@ -117,19 +117,19 @@ public final class c {
                 this.b.put("svm_dsl_md5", this.c.j);
                 this.b.put("svm_p_flag_ggpick_isdefault", String.valueOf(this.c.l));
                 this.b.put("svm_p_flag_ggpick_cachetype", String.valueOf(this.c.k));
-                if (!TextUtils.isEmpty(this.c.m)) {
+                if (!StringUtils.isEmpty(this.c.m)) {
                     this.b.put("svm_p_flag_ggpick_cachescene", this.c.m);
                 }
-                if (!TextUtils.isEmpty(this.c.n)) {
+                if (!StringUtils.isEmpty(this.c.n)) {
                     this.b.put("svm_p_flag_ggpick_iscoldred", this.c.n);
                 }
-                if (!TextUtils.isEmpty(this.c.o)) {
+                if (!StringUtils.isEmpty(this.c.o)) {
                     this.b.put("svm_p_flag_ggpick_usepreloaddw", this.c.o);
                 }
-                if (!TextUtils.isEmpty(this.c.p)) {
+                if (!StringUtils.isEmpty(this.c.p)) {
                     this.b.put("svm_p_flag_ggpick_fromLaun", this.c.p);
                 }
-                if (!TextUtils.isEmpty(this.c.q)) {
+                if (!StringUtils.isEmpty(this.c.q)) {
                     this.b.put("svm_p_flag_ggpick_launUsePre", this.c.q);
                 }
             }
@@ -162,7 +162,7 @@ public final class c {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("9a42c00f", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b.put("svm_reserve1", str);
             }
             return this;
@@ -173,7 +173,7 @@ public final class c {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("7fee1c90", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b.put("svm_reserve2", str);
             }
             return this;
@@ -184,7 +184,7 @@ public final class c {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("65997911", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b.put("svm_reserve3", str);
             }
             return this;
@@ -195,7 +195,7 @@ public final class c {
             if (ipChange instanceof IpChange) {
                 return (a) ipChange.ipc$dispatch("4b44d592", new Object[]{this, str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b.put("svm_reserves", VideoTracker.j(str));
             }
             return this;
@@ -265,7 +265,7 @@ public final class c {
             this.b.put("svm_vv_hit_cache", String.valueOf(this.f12427a.s));
             this.b.put("svm_vv_is_active", String.valueOf(this.f12427a.t));
             this.b.put("svm_vv_flag_predl", String.valueOf(this.f12427a.y));
-            if (!TextUtils.isEmpty(this.f12427a.z)) {
+            if (!StringUtils.isEmpty(this.f12427a.z)) {
                 this.b.put("svm_p_flag_ggpick_hit", this.f12427a.z);
             }
             if (this.f12427a.w > 0) {

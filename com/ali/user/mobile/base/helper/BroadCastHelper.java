@@ -2,7 +2,7 @@ package com.ali.user.mobile.base.helper;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.login.action.LoginResActions;
 import com.ali.user.mobile.model.LoginParam;
@@ -58,7 +58,7 @@ public class BroadCastHelper {
         Intent intent = new Intent(LoginResActions.LOGIN_FAIL_ACTION);
         if (loginParam != null) {
             try {
-                if (!TextUtils.isEmpty(loginParam.loginId)) {
+                if (!StringUtils.isEmpty(loginParam.loginId)) {
                     intent.putExtra("username", loginParam.loginId);
                 }
             } catch (Exception e) {
@@ -143,7 +143,7 @@ public class BroadCastHelper {
             Intent intent = new Intent();
             intent.setAction(str);
             intent.putExtra(LoginConstants.SHOW_TOAST, z);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 intent.putExtra("message", str2);
             }
             intent.putExtra("errorCode", i);

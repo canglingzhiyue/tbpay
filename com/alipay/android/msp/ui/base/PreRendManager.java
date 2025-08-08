@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.view.View;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -254,19 +254,19 @@ public class PreRendManager {
                         if (ipChange2 instanceof IpChange) {
                             return (Void) ipChange2.ipc$dispatch("b898ca78", new Object[]{this});
                         }
-                        if ((!TextUtils.isEmpty(str) && str.contains(MspFlybirdDefine.FLYBIRD_ACTION_CASHIER_PAY)) || str.contains("/card/signFinish")) {
+                        if ((!StringUtils.isEmpty(str) && str.contains(MspFlybirdDefine.FLYBIRD_ACTION_CASHIER_PAY)) || str.contains("/card/signFinish")) {
                             str5 = MspFlybirdDefine.FLYBIRD_RESULT_TPL;
-                        } else if (TextUtils.isEmpty(str) && TextUtils.equals(bizType, "pay_and_deduct")) {
+                        } else if (StringUtils.isEmpty(str) && StringUtils.equals(bizType, "pay_and_deduct")) {
                             str5 = MspFlybirdDefine.MDEDUCT_PAY_AND_SIGN_ID;
-                        } else if ((TextUtils.isEmpty(str) && TextUtils.equals(str3, "switch_channel")) || (!TextUtils.isEmpty(str) && str.contains("/cashier/switchChannel"))) {
+                        } else if ((StringUtils.isEmpty(str) && StringUtils.equals(str3, "switch_channel")) || (!StringUtils.isEmpty(str) && str.contains("/cashier/switchChannel"))) {
                             str5 = MspFlybirdDefine.CASHIER_CHANNEL_LOGO_TPL;
-                        } else if ((!TextUtils.isEmpty(str) || TextUtils.equals(str3, "query_limit") || TextUtils.equals(str3, "switch_channel") || TextUtils.equals(bizType, "bindcardapp") || TextUtils.equals(bizType, MspEventTypes.ACTION_STRING_FORK) || TextUtils.equals(bizType, "confirm_goods")) && (TextUtils.isEmpty(str) || !str.contains("/cashier/main"))) {
-                            str5 = (TextUtils.equals(bizType, "bindcardapp") || (!TextUtils.isEmpty(str) && (str.contains("/card/init") || str.contains("/frontpay/newCard")))) ? MspFlybirdDefine.CASHIER_CARD_NO_UNIFY_TPL : "";
+                        } else if ((!StringUtils.isEmpty(str) || StringUtils.equals(str3, "query_limit") || StringUtils.equals(str3, "switch_channel") || StringUtils.equals(bizType, "bindcardapp") || StringUtils.equals(bizType, MspEventTypes.ACTION_STRING_FORK) || StringUtils.equals(bizType, "confirm_goods")) && (StringUtils.isEmpty(str) || !str.contains("/cashier/main"))) {
+                            str5 = (StringUtils.equals(bizType, "bindcardapp") || (!StringUtils.isEmpty(str) && (str.contains("/card/init") || str.contains("/frontpay/newCard")))) ? MspFlybirdDefine.CASHIER_CARD_NO_UNIFY_TPL : "";
                         } else {
                             str5 = MspFlybirdDefine.FLYBIRD_HOME_TPL;
                         }
                         String str6 = str5;
-                        if (TextUtils.isEmpty(str6)) {
+                        if (StringUtils.isEmpty(str6)) {
                             return null;
                         }
                         PreRendManager.this.doPreloadTpl(context, str6, i, onTplPreRendListener, str2);
@@ -280,7 +280,7 @@ public class PreRendManager {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("cfd30c6d", new Object[]{this, str5});
-                        } else if (TextUtils.isEmpty(str5)) {
+                        } else if (StringUtils.isEmpty(str5)) {
                         } else {
                             PreRendManager.this.doPreloadTpl(context, str5, i, onTplPreRendListener, str2);
                         }
@@ -304,7 +304,7 @@ public class PreRendManager {
                 return;
             }
             onTplPreRendListener.onTplPreRendFail(1);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LogUtil.record(4, "PreRendManager:doPreloadTpl", "context=" + context + " tplId=" + str);
             if (onTplPreRendListener == null) {
                 return;
@@ -321,7 +321,7 @@ public class PreRendManager {
                 return;
             }
             LogUtil.record(4, "PreRendManager:doPreloadTpl", "try doPreloadTpl");
-            if (TextUtils.equals(MspFlybirdDefine.BIZ_APP_COLLECT_ID, str) && !TaskHelper.isMainThread()) {
+            if (StringUtils.equals(MspFlybirdDefine.BIZ_APP_COLLECT_ID, str) && !TaskHelper.isMainThread()) {
                 a(str, context, i, onTplPreRendListener, str2);
             } else {
                 TaskHelper.execute(new Runnable() { // from class: com.alipay.android.msp.ui.base.PreRendManager.5
@@ -387,7 +387,7 @@ public class PreRendManager {
                         LogUtil.record(2, "PreRendManager:onAsyncEvent", "mspContext=".concat(String.valueOf(mspContextByBizId)));
                         if (mspContextByBizId != null) {
                             ActionsCreator.get(mspContextByBizId).createEventAction(createMspEventWithJsonString);
-                        } else if (TextUtils.equals(str, MspFlybirdDefine.BIZ_APP_COLLECT_ID)) {
+                        } else if (StringUtils.equals(str, MspFlybirdDefine.BIZ_APP_COLLECT_ID)) {
                             if ((obj instanceof FBDocument) && (params = ((FBDocument) obj).param) != null) {
                                 int i2 = -1;
                                 try {
@@ -466,10 +466,10 @@ public class PreRendManager {
                     FBContext fbContextFromView = PluginManager.getRender().getFbContextFromView(b);
                     if (fbContextFromView instanceof FBDocument) {
                         FBDocument fBDocument = (FBDocument) fbContextFromView;
-                        if (fBDocument.getContext() != context && !TextUtils.equals(str, MspFlybirdDefine.BIZ_APP_COLLECT_ID)) {
+                        if (fBDocument.getContext() != context && !StringUtils.equals(str, MspFlybirdDefine.BIZ_APP_COLLECT_ID)) {
                             LogUtil.record(4, "PreRendManager:getPreloadedTpl", "document.getContext()" + fBDocument.getContext() + " context=" + context);
                             return null;
-                        } else if (!TextUtils.equals(str, MspFlybirdDefine.BIZ_APP_COLLECT_ID) && (params = fBDocument.param) != null && (mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(Integer.parseInt(params.businessId))) != mspContext) {
+                        } else if (!StringUtils.equals(str, MspFlybirdDefine.BIZ_APP_COLLECT_ID) && (params = fBDocument.param) != null && (mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(Integer.parseInt(params.businessId))) != mspContext) {
                             LogUtil.record(4, "PreRendManager:getPreloadedTpl", "bizmspContext" + mspContextByBizId + " mspContext=" + mspContext);
                             return null;
                         }
@@ -539,7 +539,7 @@ public class PreRendManager {
         if (context == null) {
             context = GlobalHelper.getInstance().getContext();
         }
-        if (!TextUtils.isEmpty(str) && context != null) {
+        if (!StringUtils.isEmpty(str) && context != null) {
             if (str.contains("bizapp-collect-money")) {
                 try {
                     boolean isDegrade = DrmManager.getInstance(context).isDegrade(DrmKey.DEGRADE_PREREND_BIZAPP_COLLECT_MONEY, false, context);
@@ -554,7 +554,7 @@ public class PreRendManager {
                 if (drmValueFromKey != null && str.startsWith("QUICKPAY@")) {
                     String substring = str.substring(9);
                     String string = drmValueFromKey.getString(substring);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         boolean procGraySwitchWithRate = DrmManager.getInstance(context).procGraySwitchWithRate(context, Integer.parseInt(string));
                         LogUtil.record(2, "PreRendManager:needPreloadTpl", "tplId=" + substring + " needPreRend=" + procGraySwitchWithRate);
                         return procGraySwitchWithRate;

@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v4.content.res.ResourcesCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1709,7 +1709,7 @@ public class TBMaterialDialog extends TBDialogBase implements View.OnClickListen
         }
         this.content.setText(charSequence);
         TextView textView = this.content;
-        if (TextUtils.isEmpty(charSequence)) {
+        if (StringUtils.isEmpty(charSequence)) {
             i = 8;
         }
         textView.setVisibility(i);

@@ -1,7 +1,7 @@
 package com.taobao.tbliveinteractive.view.right_component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
@@ -73,7 +73,7 @@ public class b {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                        } else if (b.b(b.this) == null || TextUtils.isEmpty(AnonymousClass3.this.b.additionalAnimation)) {
+                        } else if (b.b(b.this) == null || StringUtils.isEmpty(AnonymousClass3.this.b.additionalAnimation)) {
                         } else {
                             AliUrlImageView aliUrlImageView = new AliUrlImageView(b.d(b.this));
                             aliUrlImageView.setSkipAutoSize(true);

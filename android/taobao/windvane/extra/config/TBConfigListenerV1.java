@@ -2,7 +2,7 @@ package android.taobao.windvane.extra.config;
 
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.g;
@@ -22,7 +22,7 @@ public class TBConfigListenerV1 implements g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9458c0f9", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             m.b("TBConfigReceiver", "ConfigName: " + str + " isFromLocal:" + z);
             if (!str.equalsIgnoreCase("WindVane")) {

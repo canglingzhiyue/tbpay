@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Message;
 import android.support.v4.graphics.drawable.DrawableCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -497,7 +497,7 @@ public class TopMessageViewSupportDx extends BaseTopMessageView implements com.t
         gradientDrawable.setColor(Color.parseColor("#000000"));
         try {
             String enterBgColor = getEnterBgColor();
-            if (!TextUtils.isEmpty(enterBgColor)) {
+            if (!StringUtils.isEmpty(enterBgColor)) {
                 int parseColor = Color.parseColor(enterBgColor);
                 if (parseColor != 0) {
                     Drawable wrap = DrawableCompat.wrap(gradientDrawable);
@@ -521,7 +521,7 @@ public class TopMessageViewSupportDx extends BaseTopMessageView implements com.t
             return (String) ipChange.ipc$dispatch("abbd51dd", new Object[]{this});
         }
         ChatTopMessage chatTopMessage = this.mTopMessage;
-        if (chatTopMessage == null || TextUtils.isEmpty(chatTopMessage.getTopMessageBgColor())) {
+        if (chatTopMessage == null || StringUtils.isEmpty(chatTopMessage.getTopMessageBgColor())) {
             return null;
         }
         return this.mTopMessage.getTopMessageBgColor();
@@ -628,7 +628,7 @@ public class TopMessageViewSupportDx extends BaseTopMessageView implements com.t
         }
         try {
             String str = this.mTopMessage.renders.get(com.taobao.taolive.room.ui.fanslevel.a.FANS_LEVEL_RENDER);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             return Integer.valueOf(str).intValue() >= ply.g();
@@ -648,7 +648,7 @@ public class TopMessageViewSupportDx extends BaseTopMessageView implements com.t
         }
         try {
             String str = this.mTopMessage.renders.get(com.taobao.taolive.room.ui.fanslevel.a.FANS_LEVEL_RENDER);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             return Integer.valueOf(str).intValue() >= ply.j();

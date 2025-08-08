@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -33,7 +33,7 @@ public class klv {
         } else if (this.c != null) {
         } else {
             this.c = new URL(this.b.e.f30167a);
-            this.e = new File(this.b.g, TextUtils.isEmpty(this.b.e.d) ? new File(this.c.getFile()).getName() : this.b.e.d);
+            this.e = new File(this.b.g, StringUtils.isEmpty(this.b.e.d) ? new File(this.c.getFile()).getName() : this.b.e.d);
             this.d = new File(this.b.g, kna.b(this.b.e.f30167a));
             if (!this.d.getParentFile().exists()) {
                 this.d.getParentFile().mkdirs();
@@ -41,7 +41,7 @@ public class klv {
             if (!this.d.getParentFile().canWrite()) {
                 this.d.getParentFile().setWritable(true);
             }
-            if (this.b.f.s || !TextUtils.isEmpty(this.b.e.c)) {
+            if (this.b.f.s || !StringUtils.isEmpty(this.b.e.c)) {
                 return;
             }
             this.e.delete();
@@ -72,7 +72,7 @@ public class klv {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : (0 != this.b.e.b || !TextUtils.isEmpty(this.b.e.c)) && this.d.exists() && (0 == this.b.e.b || this.b.e.b == this.d.length()) && kna.a(this.b.e.c, this.d.getAbsolutePath());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : (0 != this.b.e.b || !StringUtils.isEmpty(this.b.e.c)) && this.d.exists() && (0 == this.b.e.b || this.b.e.b == this.d.length()) && kna.a(this.b.e.c, this.d.getAbsolutePath());
     }
 
     public Pair<Boolean, String> d() {
@@ -80,16 +80,16 @@ public class klv {
         if (ipChange instanceof IpChange) {
             return (Pair) ipChange.ipc$dispatch("bbe3e075", new Object[]{this});
         }
-        if (0 == this.b.e.b && TextUtils.isEmpty(this.b.e.c)) {
+        if (0 == this.b.e.b && StringUtils.isEmpty(this.b.e.c)) {
             if (!this.b.f.j) {
                 return new Pair<>(true, "");
             }
             return new Pair<>(false, "");
         } else if (this.d.exists() && (0 == this.b.e.b || this.b.e.b == this.d.length())) {
-            if (TextUtils.isEmpty(this.b.e.c)) {
+            if (StringUtils.isEmpty(this.b.e.c)) {
                 return new Pair<>(true, "");
             }
-            if (TextUtils.isEmpty(this.d.getAbsolutePath())) {
+            if (StringUtils.isEmpty(this.d.getAbsolutePath())) {
                 return new Pair<>(false, "");
             }
             String a2 = kna.a(this.d.getAbsolutePath());

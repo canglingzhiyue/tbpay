@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.node.JhsNode;
@@ -59,7 +59,7 @@ public class m extends MainViewModel {
             this.f10433a = nodeBundle.priceNode.price;
             this.e = System.currentTimeMillis() - 1000;
             this.f = nodeBundle.verticalNode.pintuanNode.endTimeMillis;
-            this.g = TextUtils.equals("GROUP_WAITING", nodeBundle.verticalNode.pintuanNode.groupStatus);
+            this.g = StringUtils.equals("GROUP_WAITING", nodeBundle.verticalNode.pintuanNode.groupStatus);
             if (nodeBundle.priceNode.priceTags != null && !nodeBundle.priceNode.priceTags.isEmpty()) {
                 try {
                     this.o = nodeBundle.priceNode.priceTags.get(0).text;
@@ -90,11 +90,11 @@ public class m extends MainViewModel {
             String str = nodeBundle.verticalNode.ladyGoNode.mainPrice;
             String str2 = nodeBundle.verticalNode.ladyGoNode.tagPrice;
             String str3 = nodeBundle.verticalNode.ladyGoNode.tagPriceTitle;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.f10433a = new PriceNode.PriceData();
                 this.f10433a.priceText = str;
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 PriceNode.PriceData priceData = new PriceNode.PriceData();
                 priceData.priceText = str2;
                 priceData.priceTitle = str3;

@@ -1,7 +1,7 @@
 package com.taobao.pha.core;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.io.InputStream;
@@ -37,7 +37,7 @@ public class d implements g {
         if (ipChange instanceof IpChange) {
             return (InputStream) ipChange.ipc$dispatch("54091b62", new Object[]{this, uri});
         }
-        if (uri == null || !TextUtils.equals("g.alicdn.com", uri.getHost()) || (path = uri.getPath()) == null || (str = f18735a.get(path)) == null || (j = p.b().j()) == null) {
+        if (uri == null || !StringUtils.equals("g.alicdn.com", uri.getHost()) || (path = uri.getPath()) == null || (str = f18735a.get(path)) == null || (j = p.b().j()) == null) {
             return null;
         }
         return j.c("pha-built-in-library" + File.separator + str);

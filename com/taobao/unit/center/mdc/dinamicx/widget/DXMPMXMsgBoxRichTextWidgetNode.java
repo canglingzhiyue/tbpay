@@ -1,7 +1,7 @@
 package com.taobao.unit.center.mdc.dinamicx.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import android.view.View;
 import android.widget.TextView;
@@ -107,7 +107,7 @@ public class DXMPMXMsgBoxRichTextWidgetNode extends af {
             return;
         }
         String convertExpression = ExpressionTable.convertExpression(charSequence);
-        if (!TextUtils.isEmpty(convertExpression)) {
+        if (!StringUtils.isEmpty(convertExpression)) {
             textView.setText(convertExpression);
         } else {
             textView.setText("");

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import java.net.URLDecoder;
@@ -26,7 +26,7 @@ public class mwb extends fuf {
         if (objArr != null && objArr.length >= 2) {
             String valueOf = String.valueOf(objArr[0]);
             String valueOf2 = String.valueOf(objArr[1]);
-            if (TextUtils.isEmpty(valueOf2)) {
+            if (StringUtils.isEmpty(valueOf2)) {
                 return null;
             }
             try {

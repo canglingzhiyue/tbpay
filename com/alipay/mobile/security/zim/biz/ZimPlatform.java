@@ -2,7 +2,7 @@ package com.alipay.mobile.security.zim.biz;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.biometrics.ui.widget.LoadingProgressDialog;
 import com.alipay.bis.common.service.facade.gw.zim.ZimInitGwResponse;
 import com.alipay.mobile.security.bio.api.BioDetector;
@@ -122,7 +122,7 @@ public class ZimPlatform extends ZIMFacade implements BioProgressCallback, GwLis
             return (ZimInitGwResponse) ipChange.ipc$dispatch("30030e95", new Object[]{this, str});
         }
         ZimInitGwResponse zimInitGwResponse = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             zimInitGwResponse = this.f.convert(str);
         }
         BioLog.d("parse(): response=" + zimInitGwResponse);
@@ -278,7 +278,7 @@ public class ZimPlatform extends ZIMFacade implements BioProgressCallback, GwLis
             }
             String init = this.g.init(bioParameter, this);
             ZIMResponse zIMResponse = new ZIMResponse();
-            if (!TextUtils.isEmpty(init)) {
+            if (!StringUtils.isEmpty(init)) {
                 zIMResponse.code = 100;
                 zIMResponse.singleTag = init;
             } else {
@@ -333,7 +333,7 @@ public class ZimPlatform extends ZIMFacade implements BioProgressCallback, GwLis
             return ((Boolean) ipChange.ipc$dispatch("c4cbe4", new Object[]{this, map})).booleanValue();
         }
         if (this.b instanceof ZimProgressCallback) {
-            if (!TextUtils.isEmpty(this.e)) {
+            if (!StringUtils.isEmpty(this.e)) {
                 map.put(ZIMFacade.KEY_FACE_PAY_INFO, this.e);
             }
             ((ZimProgressCallback) this.b).onFaceDetected(map);

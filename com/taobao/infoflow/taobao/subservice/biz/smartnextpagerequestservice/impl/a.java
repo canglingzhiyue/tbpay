@@ -1,7 +1,7 @@
 package com.taobao.infoflow.taobao.subservice.biz.smartnextpagerequestservice.impl;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.bio.api.BioDetector;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -215,7 +215,7 @@ public class a {
         if (jSONObject == null) {
             jSONObject = new JSONObject();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 str = URLEncoder.encode(str, "UTF-8");
             } catch (UnsupportedEncodingException e) {

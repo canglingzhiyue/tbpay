@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.event;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -77,7 +77,7 @@ public class ae extends bca {
         a2.put("clickFilterItem", str);
         a2.put("title", jSONObject.getString("title"));
         a2.put("url", string);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             JSONObject c = c();
             c.put("url", (Object) string);
             c.put("pageType", (Object) jSONObject.getString("pageType"));

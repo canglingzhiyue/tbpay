@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -47,10 +47,10 @@ public class ak implements ezm {
         }
         String string = b.getString("skuId");
         String string2 = b.getString(com.taobao.android.detail.core.aura.utils.g.KEY_PV_PATH);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.b.e().a("lastPageSetSkuId", string);
             this.c.a(string);
-        } else if (!TextUtils.isEmpty(string2)) {
+        } else if (!StringUtils.isEmpty(string2)) {
             this.b.e().a(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH, com.taobao.android.detail.ttdetail.utils.k.a((String) this.b.e().a(com.taobao.android.detail.core.aura.observer.a.KEY_PROP_PATH), string2));
         }
         return true;

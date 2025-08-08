@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.provider.option;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.link.export.UMDimKey;
 import com.alibaba.android.umbrella.link.export.UMTagKey;
@@ -268,7 +268,7 @@ public class a implements com.taobao.android.detail.datasdk.protocol.adapter.opt
         }
         try {
             UMLinkLogInterface a2 = bpp.a();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "Page_Detail";
             }
             a2.commitSuccess(str3, str4, "2.0", str, str5, map);
@@ -315,7 +315,7 @@ public class a implements com.taobao.android.detail.datasdk.protocol.adapter.opt
             str7 = str6;
         }
         try {
-            bpp.a().commitFailure(str5, str6, "2.0", TextUtils.isEmpty(str) ? "Page_Detail" : str, str7, map, str3, str4);
+            bpp.a().commitFailure(str5, str6, "2.0", StringUtils.isEmpty(str) ? "Page_Detail" : str, str7, map, str3, str4);
         } catch (Throwable unused) {
         }
     }

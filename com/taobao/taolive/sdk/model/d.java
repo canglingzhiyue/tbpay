@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Intent;
 import android.os.Message;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -1028,7 +1028,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
                                     JSONObject jSONObject = new JSONObject();
                                     jSONObject.put("type", (Object) Integer.valueOf(i2));
                                     String str4 = new String(tLiveMsg.data);
-                                    if (!TextUtils.isEmpty(str4)) {
+                                    if (!StringUtils.isEmpty(str4)) {
                                         jSONObject.put("subType", (Object) com.taobao.taolive.sdk.utils.j.a(str4));
                                         try {
                                             jSONObject.put("data", (Object) JSONObject.parseObject(str4));
@@ -1090,7 +1090,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
             ipChange.ipc$dispatch("4533163a", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject parseObject = JSON.parseObject(str);
                 String string = parseObject.getString("type");
@@ -1110,7 +1110,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
                     }
                 } else if (a(parseObject)) {
                     String string3 = parseObject.getString(TYPE_MSG_UUID);
-                    if (!TextUtils.isEmpty(string3)) {
+                    if (!StringUtils.isEmpty(string3)) {
                         if (this.J == null) {
                             this.K = u.b();
                             this.J = new ArrayDeque(this.K);
@@ -1353,7 +1353,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3233dae8", new Object[]{this, comment})).booleanValue();
         }
-        return TextUtils.isEmpty(i) || comment.renders == null || !i.equals(comment.renders.get("userToken")) || (comment.renders != null && ("follow".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)) || "share".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)) || "fandomShare".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE))));
+        return StringUtils.isEmpty(i) || comment.renders == null || !i.equals(comment.renders.get("userToken")) || (comment.renders != null && ("follow".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)) || "share".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)) || "fandomShare".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE))));
     }
 
     private void a(Object obj, ArrayList<Comment> arrayList) {
@@ -1415,7 +1415,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
         }
         boolean z = comment.renders != null && ("follow".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)) || "share".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)) || "fandomShare".equals(comment.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE)));
         boolean z2 = !this.E.contains(comment.commentId);
-        if (!TextUtils.isEmpty(i) && comment.renders != null && i.equals(comment.renders.get("userToken")) && !z) {
+        if (!StringUtils.isEmpty(i) && comment.renders != null && i.equals(comment.renders.get("userToken")) && !z) {
             return false;
         }
         return z2;
@@ -1585,7 +1585,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
             for (String str : this.s) {
                 JSONArray jSONArray = parseObject.getJSONArray(str);
                 if (jSONArray != null && jSONArray.size() > 0) {
-                    if (TextUtils.equals(str, String.valueOf(10101))) {
+                    if (StringUtils.equals(str, String.valueOf(10101))) {
                         Iterator<Object> it = jSONArray.iterator();
                         while (it.hasNext()) {
                             Object next = it.next();
@@ -1597,7 +1597,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
                         Iterator<Object> it2 = jSONArray.iterator();
                         while (it2.hasNext()) {
                             Object next2 = it2.next();
-                            if ((next2 instanceof JSONObject) && TextUtils.equals(str, String.valueOf(10015))) {
+                            if ((next2 instanceof JSONObject) && StringUtils.equals(str, String.valueOf(10015))) {
                                 try {
                                     i(((JSONObject) next2).toJSONString());
                                 } catch (Exception e) {
@@ -1615,7 +1615,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
-        } else if (this.g && u.s() && !TextUtils.isEmpty(this.w)) {
+        } else if (this.g && u.s() && !StringUtils.isEmpty(this.w)) {
             if (this.H == null) {
                 this.H = new com.taobao.taolive.sdk.business.i(new com.taobao.taolive.sdk.business.f() { // from class: com.taobao.taolive.sdk.model.d.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -1647,7 +1647,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
                 });
             }
             this.H.a(this.w);
-        } else if (!this.g || TextUtils.isEmpty(this.v) || !u.r()) {
+        } else if (!this.g || StringUtils.isEmpty(this.v) || !u.r()) {
         } else {
             if (this.G == null) {
                 this.G = new com.taobao.taolive.sdk.business.h();
@@ -1757,7 +1757,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
             Map<String, String> map = shareGoodMessageArr[0].extendVal;
             if (map != null) {
                 String str2 = map.get(TYPE_MSG_UUID);
-                if (!TextUtils.isEmpty(str2) && this.J.contains(str2)) {
+                if (!StringUtils.isEmpty(str2) && this.J.contains(str2)) {
                     if (tLiveMsg == null) {
                         return;
                     }
@@ -1769,7 +1769,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
                     }
                     aVar.onMessageReceived(MSG_TYPE_PRODUCT_LIST_WITH_CDN_INVALID, tLiveMsg);
                     return;
-                } else if (!TextUtils.isEmpty(str2) && !this.J.contains(str2)) {
+                } else if (!StringUtils.isEmpty(str2) && !this.J.contains(str2)) {
                     e(str2);
                     Map<String, String> a4 = pqi.a().a(tLiveMsg);
                     a4.put("itemId", shareGoodsListMessage.goodsList[0].itemId);
@@ -1781,7 +1781,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
                     if (tLiveMsg != null) {
                         this.m.a(tLiveMsg, 106, true);
                     }
-                } else if (TextUtils.isEmpty(str2) && !z) {
+                } else if (StringUtils.isEmpty(str2) && !z) {
                     return;
                 }
             }
@@ -1801,15 +1801,15 @@ public class d implements com.taobao.taolive.sdk.model.a {
         } else if (chatMessage == null || chatMessage.renders == null) {
         } else {
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(chatMessage.renders.get("userReply2UserCommentId"))) {
+            if (!StringUtils.isEmpty(chatMessage.renders.get("userReply2UserCommentId"))) {
                 hashMap.put("is_reply", "1");
             } else {
                 hashMap.put("is_reply", "0");
             }
-            if (!TextUtils.isEmpty(chatMessage.renders.get("comment_type"))) {
+            if (!StringUtils.isEmpty(chatMessage.renders.get("comment_type"))) {
                 hashMap.put("comment_type", chatMessage.renders.get("comment_type"));
             }
-            if (!TextUtils.isEmpty(chatMessage.renders.get("comment_location"))) {
+            if (!StringUtils.isEmpty(chatMessage.renders.get("comment_location"))) {
                 hashMap.put("comment_location", chatMessage.renders.get("comment_location"));
             }
             pmd.a().e().a("Page_TaobaoLiveWatch", "Comment_LineDrop", hashMap);
@@ -1840,7 +1840,7 @@ public class d implements com.taobao.taolive.sdk.model.a {
                 this.K = u.b();
                 this.J = new ArrayDeque(this.K);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (this.J.size() == this.K) {

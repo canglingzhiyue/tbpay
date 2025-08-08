@@ -3,7 +3,7 @@ package com.taobao.android.order.bundle.cache;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.management.j;
 import com.alibaba.fastjson.JSON;
@@ -134,20 +134,20 @@ public class a {
             return null;
         }
         String userId = Login.getUserId();
-        if (TextUtils.isEmpty(userId)) {
+        if (StringUtils.isEmpty(userId)) {
             a(str2, false, "session 过期");
             return null;
         }
         jqd d2 = d();
         String e2 = d2.e(userId + str);
-        if (!spk.a(iro.ORANGE_KEY_MY_TAOBAO, "enablePreRequestOrderList", true) || !TextUtils.isEmpty(e2)) {
+        if (!spk.a(iro.ORANGE_KEY_MY_TAOBAO, "enablePreRequestOrderList", true) || !StringUtils.isEmpty(e2)) {
             str3 = "LSDB 命中";
         } else {
             j f = com.alibaba.android.ultron.vfw.weex2.highPerformance.management.a.a().f();
             e2 = f.a(userId + str, cts.a.BIZ_ORDER_LIST);
             str3 = "TradeCache 命中";
         }
-        if (!TextUtils.isEmpty(e2)) {
+        if (!StringUtils.isEmpty(e2)) {
             try {
                 JSONObject parseObject = JSONObject.parseObject(e2);
                 jqg.b(TAG, str + " use LSDBCache: " + str2);
@@ -185,7 +185,7 @@ public class a {
         } else if (!bxd.a("enableOrderListCache", true) || TabType.WAIT_RATE.getValue().equals(str)) {
         } else {
             final String userId = Login.getUserId();
-            if (TextUtils.isEmpty(userId)) {
+            if (StringUtils.isEmpty(userId)) {
                 jqg.b(TAG, "cache save failed: userId is null");
                 return;
             }
@@ -223,7 +223,7 @@ public class a {
             if (z && 3 == bax.a().f25741a) {
                 a(userId, str, str2);
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             jqd d2 = d();
@@ -239,7 +239,7 @@ public class a {
             jqg.b(TAG, str + " save imgs failed: cachedImgList is empty");
         } else {
             String userId = Login.getUserId();
-            if (TextUtils.isEmpty(userId)) {
+            if (StringUtils.isEmpty(userId)) {
                 jqg.b(TAG, str + " save imgs failed: userId is null");
                 return;
             }
@@ -326,7 +326,7 @@ public class a {
             int i2 = 0;
             for (int i3 = 0; i3 < optJSONArray.length(); i3++) {
                 String optString = optJSONArray.optString(i3);
-                if (!TextUtils.isEmpty(optString) && optString.startsWith("MainGroup")) {
+                if (!StringUtils.isEmpty(optString) && optString.startsWith("MainGroup")) {
                     i2++;
                     if (i2 > a2) {
                         org.json.JSONArray optJSONArray2 = optJSONObject.optJSONArray(optString);
@@ -384,8 +384,8 @@ public class a {
         } else {
             jqd d2 = d();
             String e2 = d2.e(str + str2 + "_orderIds");
-            boolean isEmpty = TextUtils.isEmpty(e2);
-            boolean isEmpty2 = TextUtils.isEmpty(str3);
+            boolean isEmpty = StringUtils.isEmpty(e2);
+            boolean isEmpty2 = StringUtils.isEmpty(str3);
             if ((!isEmpty || isEmpty2) && (isEmpty || !isEmpty2)) {
                 str4 = "";
                 z = false;

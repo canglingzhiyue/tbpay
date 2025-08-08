@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.openid.device.a;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -39,7 +39,7 @@ public class bzj {
                 if (f26199a != null) {
                     try {
                         String a2 = f26199a.a(context);
-                        if (!TextUtils.isEmpty(a2)) {
+                        if (!StringUtils.isEmpty(a2)) {
                             c = a2;
                         }
                         b = true;

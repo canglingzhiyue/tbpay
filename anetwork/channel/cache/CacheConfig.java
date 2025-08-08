@@ -1,6 +1,6 @@
 package anetwork.channel.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ALog;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -49,13 +49,13 @@ public class CacheConfig {
                     break;
                 }
             }
-            if (TextUtils.isEmpty(str2) || CacheConfig.access$000(CacheConfig.this).isEmpty()) {
+            if (StringUtils.isEmpty(str2) || CacheConfig.access$000(CacheConfig.this).isEmpty()) {
                 z = false;
             } else {
                 CacheConfig cacheConfig = CacheConfig.this;
                 z = CacheConfig.access$100(cacheConfig, str2, CacheConfig.access$000(cacheConfig));
             }
-            if (TextUtils.isEmpty(str) || CacheConfig.access$200(CacheConfig.this).isEmpty()) {
+            if (StringUtils.isEmpty(str) || CacheConfig.access$200(CacheConfig.this).isEmpty()) {
                 z2 = false;
             } else {
                 CacheConfig cacheConfig2 = CacheConfig.this;
@@ -101,7 +101,7 @@ public class CacheConfig {
             if (optJSONArray != null) {
                 for (int i = 0; i < optJSONArray.length(); i++) {
                     String string = optJSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         cacheConfig.refererList.add(string);
                     }
                 }
@@ -110,7 +110,7 @@ public class CacheConfig {
             if (optJSONArray2 != null) {
                 for (int i2 = 0; i2 < optJSONArray2.length(); i2++) {
                     String string2 = optJSONArray2.getString(i2);
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         cacheConfig.urlList.add(string2);
                     }
                 }
@@ -151,7 +151,7 @@ public class CacheConfig {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("efaebd46", new Object[]{this, str, list})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && list != null) {
+        if (!StringUtils.isEmpty(str) && list != null) {
             for (String str2 : list) {
                 if (str.contains(str2)) {
                     ALog.e(TAG, "containsKey", null, "key", str, "container", list);

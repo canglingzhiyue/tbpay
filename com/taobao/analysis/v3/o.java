@@ -1,6 +1,6 @@
 package com.taobao.analysis.v3;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Iterator;
@@ -77,14 +77,14 @@ public class o extends mzm implements n {
         b((mzi<mze>) f, (mze) 0);
         b((mzi<mzh>) g, (mzh) str3);
         if (p()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 b("_scene", str);
             } else {
                 b("_scene", "unknownScene");
             }
         }
         String h2 = h("_stage");
-        if (!TextUtils.isEmpty(h2)) {
+        if (!StringUtils.isEmpty(h2)) {
             b((mzi<mzh>) i, (mzh) h2);
             b("_stage", (String) null);
         }
@@ -150,7 +150,7 @@ public class o extends mzm implements n {
         if (ipChange instanceof IpChange) {
             return (n) ipChange.ipc$dispatch("d389b8d4", new Object[]{this, str});
         }
-        if (this.b && !TextUtils.isEmpty(str)) {
+        if (this.b && !StringUtils.isEmpty(str)) {
             this.n += str.length();
             this.l.dt_().releaseLog(this, b(str, (Map<String, ?>) null));
         }
@@ -268,7 +268,7 @@ public class o extends mzm implements n {
         if (ipChange instanceof IpChange) {
             return (p) ipChange.ipc$dispatch("99bf1733", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Iterator<q> it = this.r_.iterator();
@@ -310,7 +310,7 @@ public class o extends mzm implements n {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2e314d2e", new Object[]{this, str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         StringBuilder sb = new StringBuilder();
@@ -376,7 +376,7 @@ public class o extends mzm implements n {
         for (Map.Entry<String, String> entry : h().c()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value) && !"_scene".equals(key) && !"_stage".equals(key)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value) && !"_scene".equals(key) && !"_stage".equals(key)) {
                 if (z2) {
                     sb.append(",");
                 }
@@ -390,7 +390,7 @@ public class o extends mzm implements n {
         for (Map.Entry<String, ?> entry2 : j().entrySet()) {
             String key2 = entry2.getKey();
             Object value2 = entry2.getValue();
-            if (!TextUtils.isEmpty(key2) && value2 != null && !g.a().equals(key2) && !e.a().equals(key2) && !f.a().equals(key2) && !h.a().equals(key2) && !i.a().equals(key2)) {
+            if (!StringUtils.isEmpty(key2) && value2 != null && !g.a().equals(key2) && !e.a().equals(key2) && !f.a().equals(key2) && !h.a().equals(key2) && !i.a().equals(key2)) {
                 if (z) {
                     sb.append(",");
                 }

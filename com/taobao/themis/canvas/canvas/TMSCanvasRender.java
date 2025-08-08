@@ -3,7 +3,7 @@ package com.taobao.themis.canvas.canvas;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
@@ -418,8 +418,8 @@ public class TMSCanvasRender extends qqn implements iwj {
             ipChange.ipc$dispatch("5eb3ff1", new Object[]{this});
         } else if (!this.f33035a.q().isMiniAppDebug()) {
         } else {
-            boolean equals = TextUtils.equals("true", o.a(this.f33035a.g(), "enable_profile_memory"));
-            boolean equals2 = TextUtils.equals("true", o.a(this.f33035a.g(), "enableProfileFrame"));
+            boolean equals = StringUtils.equals("true", o.a(this.f33035a.g(), "enable_profile_memory"));
+            boolean equals2 = StringUtils.equals("true", o.a(this.f33035a.g(), "enableProfileFrame"));
             com.taobao.android.themis.graphics.d dVar = this.m;
             if (dVar == null || !(dVar instanceof com.taobao.android.themis.graphics.b)) {
                 return;
@@ -453,7 +453,7 @@ public class TMSCanvasRender extends qqn implements iwj {
         }
         try {
             String a3 = o.a(this.f33035a.g(), "query");
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 a2 = new HashMap();
             } else {
                 a2 = o.a("https://huodong.com/index.html?" + URLDecoder.decode(a3));
@@ -533,7 +533,7 @@ public class TMSCanvasRender extends qqn implements iwj {
         if (bVar == null) {
             return;
         }
-        if (n.bm() && !TextUtils.isEmpty(str) && str.endsWith("gm.v20.wlm") && this.f33035a.v() != null) {
+        if (n.bm() && !StringUtils.isEmpty(str) && str.endsWith("gm.v20.wlm") && this.f33035a.v() != null) {
             bVar.a(bArr, ONLINE_HOST_ONLY_FILENAME + str, com.taobao.themis.kernel.metaInfo.appinfo.b.a(this.f33035a.v().z(), str.replace("gm.v20.wlm", "gm.js.map")));
             return;
         }

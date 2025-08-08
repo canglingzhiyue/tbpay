@@ -1,6 +1,6 @@
 package com.taobao.flowcustoms.afc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.utils.c;
@@ -46,7 +46,7 @@ public class b {
             return;
         }
         c.a("linkx", "AfcOrange === initOrange === groupName: flow_customs_in");
-        OrangeConfig.getInstance().registerListener(new String[]{!TextUtils.isEmpty(kog.a().l) ? kog.a().l : "flow_customs_in"}, new d() { // from class: com.taobao.flowcustoms.afc.b.1
+        OrangeConfig.getInstance().registerListener(new String[]{!StringUtils.isEmpty(kog.a().l) ? kog.a().l : "flow_customs_in"}, new d() { // from class: com.taobao.flowcustoms.afc.b.1
             public static volatile transient /* synthetic */ IpChange $ipChange;
 
             @Override // com.taobao.orange.d
@@ -100,7 +100,7 @@ public class b {
             return str2;
         }
         String str3 = this.f17180a.get(str);
-        return TextUtils.isEmpty(str3) ? str2 : str3;
+        return StringUtils.isEmpty(str3) ? str2 : str3;
     }
 
     public <T> T a(String str, Class<T> cls) {

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.virtual_thread.face.VExecutors;
@@ -266,7 +266,7 @@ public class l implements com.taobao.android.weex_framework.adapter.d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ff8b2ab8", new Object[]{this, context, str, aVar, mUSImageQuality, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || aVar == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null) {
         } else {
             if (mUSImageQuality == null || (str2 = mUSImageQuality.toString()) == null) {
                 str2 = "auto";

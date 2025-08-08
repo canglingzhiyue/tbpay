@@ -1,6 +1,6 @@
 package com.taobao.search.mmd.datasource.bean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.address.themis.ThemisConfig;
 import com.taobao.search.mmd.util.d;
@@ -110,7 +110,7 @@ public class PromotionFilterBean implements Serializable {
         aVar.g = jSONObject.optString("actionType");
         aVar.e = parseStyle(jSONObject.optJSONObject("normal"));
         aVar.f = parseStyle(jSONObject.optJSONObject(gbk.TYPE_SELECTED));
-        aVar.f19158a = TextUtils.equals(jSONObject.optString("status"), ThemisConfig.SCENE_SELECT);
+        aVar.f19158a = StringUtils.equals(jSONObject.optString("status"), ThemisConfig.SCENE_SELECT);
         return aVar;
     }
 

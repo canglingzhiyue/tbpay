@@ -1,6 +1,6 @@
 package com.taobao.tao.log;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -147,7 +147,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (LogLevel) ipChange.ipc$dispatch("59515f18", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return this.b;
         }
         LogLevel logLevel = this.f20686a.get(str);

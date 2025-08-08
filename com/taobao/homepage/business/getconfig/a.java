@@ -1,6 +1,6 @@
 package com.taobao.homepage.business.getconfig;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -58,6 +58,6 @@ public class a {
 
     public boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f17233a) && !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.e);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f17233a) && !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.e);
     }
 }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.alinnpython.AliNNPython;
 import com.taobao.mrt.task.desc.MRTPythonLibDescription;
@@ -30,7 +30,7 @@ public class msi extends msj {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             a.d("MRTPythonLibsOperation", "python lib unzip error, download path null");
             return false;
         }

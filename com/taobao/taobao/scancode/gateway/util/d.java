@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -223,12 +223,12 @@ public class d extends e {
             }
             String lowerCase = a2.name().toLowerCase(Locale.getDefault());
             if (maResult.getType() == MaType.GEN3) {
-                if (!TextUtils.isEmpty(text) && text.length() >= 3) {
-                    lowerCase = TextUtils.equals(text.substring(0, 2), "0_") ? "anti_fake" : "qr";
+                if (!StringUtils.isEmpty(text) && text.length() >= 3) {
+                    lowerCase = StringUtils.equals(text.substring(0, 2), "0_") ? "anti_fake" : "qr";
                 }
                 return;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "unknown";
             }
             HashMap<String, String> hashMap = this.i == null ? new HashMap<>(2) : this.i.a();
@@ -355,7 +355,7 @@ public class d extends e {
         oye.a(e.type.toString(), System.currentTimeMillis() - this.m);
         a();
         a(maResult, str);
-        if (!TextUtils.isEmpty(this.j.d())) {
+        if (!StringUtils.isEmpty(this.j.d())) {
             oxw.a(this.b, this.j.d(), e);
             if (this.b != null) {
                 this.b.finish();
@@ -559,7 +559,7 @@ public class d extends e {
                             IpChange ipChange3 = $ipChange;
                             if (ipChange3 instanceof IpChange) {
                                 ipChange3.ipc$dispatch("5c510192", new Object[]{this});
-                            } else if (text == null || text.equals(str2) || TextUtils.isEmpty(str2) || str2.startsWith("alipays://")) {
+                            } else if (text == null || text.equals(str2) || StringUtils.isEmpty(str2) || str2.startsWith("alipays://")) {
                                 d.a(d.this, new MaResult(maResult.getType(), text), false);
                             } else {
                                 try {
@@ -576,7 +576,7 @@ public class d extends e {
             return false;
         }
         if (com.taobao.taobao.scancode.huoyan.util.f.a(text)) {
-            if (TextUtils.equals(OrangeConfig.getInstance().getConfig("android_scancode_client", "enable_white_list_for_important_activity", ""), "true") && !android.taobao.windvane.config.p.c(text) && !android.taobao.windvane.config.p.a(text)) {
+            if (StringUtils.equals(OrangeConfig.getInstance().getConfig("android_scancode_client", "enable_white_list_for_important_activity", ""), "true") && !android.taobao.windvane.config.p.c(text) && !android.taobao.windvane.config.p.a(text)) {
                 TBMaterialDialog build = new TBMaterialDialog.Builder(this.b).build();
                 build.setCancelable(true);
                 build.setTitle(com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_1_18640));
@@ -719,7 +719,7 @@ public class d extends e {
             java.lang.String r3 = "host_switch_list"
             java.lang.String r4 = ""
             java.lang.String r0 = r0.getConfig(r1, r3, r4)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L8c
             java.net.URL r1 = new java.net.URL     // Catch: java.lang.Exception -> L76
             r1.<init>(r6)     // Catch: java.lang.Exception -> L76
@@ -789,10 +789,10 @@ public class d extends e {
             return;
         }
         a(this.b.getApplicationContext(), str);
-        if (TextUtils.indexOf(str, "http://ma.taobao.com/rl") == 0 || TextUtils.indexOf(str, "ma.taobao.com/rl") == 0) {
+        if (StringUtils.indexOf(str, "http://ma.taobao.com/rl") == 0 || StringUtils.indexOf(str, "ma.taobao.com/rl") == 0) {
             str = LoginUrlConstants.getScanLoginUrl() + MyUrlEncoder.encod(str, "UTF-8");
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str = str.trim();
         }
         String a2 = r.a(str, z ? "_tbScancodeApproach_=photo" : "_tbScancodeApproach_=scan");
@@ -827,10 +827,10 @@ public class d extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("101aa6da", new Object[]{this, context, maResult});
-        } else if (maResult == null || TextUtils.isEmpty(maResult.getText())) {
+        } else if (maResult == null || StringUtils.isEmpty(maResult.getText())) {
         } else {
             String text = maResult.getText();
-            if (TextUtils.equals(text.substring(0, 2), "2_") || TextUtils.equals(text.substring(0, 1), "=")) {
+            if (StringUtils.equals(text.substring(0, 2), "2_") || StringUtils.equals(text.substring(0, 1), "=")) {
                 Bundle bundle = new Bundle();
                 bundle.putString("comeFromType", "scan");
                 j a2 = j.a(context, this.i).a(bundle);
@@ -838,7 +838,7 @@ public class d extends e {
                 return;
             }
             String config = OrangeConfig.getInstance().getConfig("android_scancode_client", "gen3_domain", "");
-            if (TextUtils.isEmpty(config)) {
+            if (StringUtils.isEmpty(config)) {
                 config = "//m.tb.cn/";
             }
             Bundle bundle2 = new Bundle();
@@ -854,7 +854,7 @@ public class d extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("be5f3af7", new Object[]{this, scancodeResult})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.j.g())) {
+        if (StringUtils.isEmpty(this.j.g())) {
             return false;
         }
         String g = this.j.g();
@@ -1053,7 +1053,7 @@ public class d extends e {
                                 return;
                             }
                             CainiaoLdDetailH5AuthGetResp cainiaoLdDetailH5AuthGetResp2 = cainiaoLdDetailH5AuthGetResp;
-                            if (cainiaoLdDetailH5AuthGetResp2 == null || cainiaoLdDetailH5AuthGetResp2.mo2429getData() == null || TextUtils.isEmpty(cainiaoLdDetailH5AuthGetResp.mo2429getData().getResult())) {
+                            if (cainiaoLdDetailH5AuthGetResp2 == null || cainiaoLdDetailH5AuthGetResp2.mo2429getData() == null || StringUtils.isEmpty(cainiaoLdDetailH5AuthGetResp.mo2429getData().getResult())) {
                                 d.c(d.this, maResult);
                             } else if (j.a(d.this.b, d.this.i).a(cainiaoLdDetailH5AuthGetResp.mo2429getData().getResult())) {
                             } else {

@@ -1,7 +1,7 @@
 package com.taobao.avplayer;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -58,7 +58,7 @@ public class ad implements com.taobao.avplayer.common.ad {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2dce2b7f", new Object[]{this, context, str, str2, new Boolean(z), dWStabilityData});
         } else if (z) {
-            if (dWStabilityData == null || TextUtils.isEmpty(dWStabilityData.args)) {
+            if (dWStabilityData == null || StringUtils.isEmpty(dWStabilityData.args)) {
                 AppMonitor.Alarm.commitSuccess(str, str2);
             } else {
                 AppMonitor.Alarm.commitSuccess(str, str2, dWStabilityData.args);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.editionswitcher.l;
@@ -106,7 +106,7 @@ public class qzj {
 
     public boolean g() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[]{this})).booleanValue() : TextUtils.equals("multiClass", this.f);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[]{this})).booleanValue() : StringUtils.equals("multiClass", this.f);
     }
 
     public boolean h() {
@@ -264,10 +264,10 @@ public class qzj {
                     } else if (l.d(Globals.getApplication())) {
                     } else {
                         String str = qzj.b(qzj.this, iContainerDataModel) ? "multiClass" : "homeMainLand";
-                        if (TextUtils.equals(str, qzj.a(qzj.this))) {
+                        if (StringUtils.equals(str, qzj.a(qzj.this))) {
                             return;
                         }
-                        c.a.b("multiClass", "multiClass", TextUtils.equals("multiClass", str));
+                        c.a.b("multiClass", "multiClass", StringUtils.equals("multiClass", str));
                         qzj.a(qzj.this, str);
                         qzj.b(qzj.this).onDestroy();
                         qzj.a(qzj.this, (IHomeSubTabController) null);

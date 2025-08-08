@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewGroupCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.transition.TransitionSet;
@@ -351,7 +351,7 @@ public class d implements h {
                         View view3 = (View) it2.next();
                         Iterator it4 = it;
                         boolean z2 = a2;
-                        if (TextUtils.equals((CharSequence) pair2.second, view3.getTransitionName())) {
+                        if (StringUtils.equals((CharSequence) pair2.second, view3.getTransitionName())) {
                             if (!arrayList8.contains(view3)) {
                                 arrayList8.add(view3);
                             }
@@ -586,7 +586,7 @@ public class d implements h {
                 while (true) {
                     if (i2 >= size) {
                         break;
-                    } else if (TextUtils.equals(str, arrayList3.get(i2))) {
+                    } else if (StringUtils.equals(str, arrayList3.get(i2))) {
                         ViewCompat.setTransitionName(arrayList2.get(i2), transitionName);
                         break;
                     } else {
@@ -1042,7 +1042,7 @@ public class d implements h {
                     }
                 }
             } else {
-                return TextUtils.equals(transition.getClass().getSimpleName(), str);
+                return StringUtils.equals(transition.getClass().getSimpleName(), str);
             }
         }
         return false;

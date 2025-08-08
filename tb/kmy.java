@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.a;
 import java.io.File;
@@ -50,7 +50,7 @@ public class kmy {
             return (String) ipChange.ipc$dispatch("a678c9b3", new Object[]{klvVar, str});
         }
         String str2 = (String) kmw.b(a.c, str, "");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return "";
         }
         StringBuilder sb = new StringBuilder();
@@ -88,7 +88,7 @@ public class kmy {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("4dba950b", new Object[]{str, str2, new Integer(i)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || str2.split(",") == null || (length = str2.split(",").length) == 0) {
+        if (StringUtils.isEmpty(str2) || str2.split(",") == null || (length = str2.split(",").length) == 0) {
             StringBuilder sb = new StringBuilder();
             sb.append(ResponseProtocolType.ID);
             sb.append(i);
@@ -101,7 +101,7 @@ public class kmy {
             return false;
         }
         String str3 = (String) kmw.b(a.c, str, "");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             kmv.d("Downloader.FragmentBoostUtils", ResponseProtocolType.ID + i + ", saveFileFragmentContext url=" + str + ", defaultValue = " + str3, new Object[0]);
             return false;
         }

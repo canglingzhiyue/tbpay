@@ -7,7 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.mobile.intelligentdecision.log.DecisionLogcat;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -90,7 +90,7 @@ public class IDeviceInfoUtil {
 
     public static String a(int i, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("cd4d069b", new Object[]{new Integer(i), str}) : (i > 0 && !TextUtils.isEmpty(str) && str.length() > i) ? str.substring(str.length() - i, str.length()) : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("cd4d069b", new Object[]{new Integer(i), str}) : (i > 0 && !StringUtils.isEmpty(str) && str.length() > i) ? str.substring(str.length() - i, str.length()) : "";
     }
 
     public static Object a(Bundle bundle, String str) {
@@ -98,7 +98,7 @@ public class IDeviceInfoUtil {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("34a853bc", new Object[]{bundle, str});
         }
-        if (bundle != null && !TextUtils.isEmpty(str)) {
+        if (bundle != null && !StringUtils.isEmpty(str)) {
             return bundle.get(str);
         }
         return null;

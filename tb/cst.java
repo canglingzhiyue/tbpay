@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.config.b;
 import com.etao.feimagesearch.mnn.utils.d;
@@ -34,7 +34,7 @@ public class cst {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fc35a1ac", new Object[]{context, str, str2});
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             File b = b(context, r.a(str) + str2);
             if (b != null && b.exists() && b.length() > 0) {
                 cot.c("LocalCacheFileManager", "find file " + b.getAbsolutePath());
@@ -51,7 +51,7 @@ public class cst {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2476d6f5", new Object[]{application, str, str2});
         }
-        if (application == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || (b = b(application, r.a(str))) == null || !b.exists() || b.length() == 0) {
+        if (application == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || (b = b(application, r.a(str))) == null || !b.exists() || b.length() == 0) {
             return "";
         }
         BufferedInputStream bufferedInputStream2 = null;
@@ -66,7 +66,7 @@ public class cst {
         try {
             bufferedInputStream.read(bArr, 0, length);
             d.a(bufferedInputStream);
-            if (!TextUtils.equals(r.b(bArr), str2)) {
+            if (!StringUtils.equals(r.b(bArr), str2)) {
                 i.a(b);
                 return "";
             }
@@ -96,7 +96,7 @@ public class cst {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("58e37205", new Object[]{context, str, bArr, str2});
         }
-        if (context != null && !TextUtils.isEmpty(str) && bArr != null && bArr.length != 0) {
+        if (context != null && !StringUtils.isEmpty(str) && bArr != null && bArr.length != 0) {
             String str3 = r.a(str) + str2;
             String a2 = a(context);
             File file = new File(a2);

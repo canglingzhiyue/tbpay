@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -64,7 +64,7 @@ public class oyn {
             return (a) ipChange.ipc$dispatch("f8d05eb6", new Object[]{bVar, fhiVar, str, new Integer(i), new Boolean(z)});
         }
         a aVar = new a(-1, -1);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return aVar;
         }
         String[] split = str.split(":");
@@ -201,7 +201,7 @@ public class oyn {
             i = 30;
         }
         int c = a2.c(i) + a(bVar).c(98);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 c += a(bVar).c(Integer.parseInt(str));
             } catch (Exception e) {
@@ -219,7 +219,7 @@ public class oyn {
         }
         Application application = Globals.getApplication();
         int a2 = gbg.a(application, z ? 9.0f : 15.0f) + gbg.a((Context) application, 49.0f);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 a2 += gbg.a(application, Integer.parseInt(str) / 2.0f);
             } catch (Exception e) {
@@ -236,7 +236,7 @@ public class oyn {
             return ((Number) ipChange.ipc$dispatch("9b9e30", new Object[]{xjiVar, new Boolean(z), str})).intValue();
         }
         int a2 = xjiVar.a(z ? 18 : 30) + xjiVar.a(98);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 a2 += xjiVar.a(Integer.parseInt(str));
             } catch (Exception e) {

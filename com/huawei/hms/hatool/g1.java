@@ -1,7 +1,7 @@
 package com.huawei.hms.hatool;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public class g1 {
@@ -133,7 +133,7 @@ public class g1 {
     }
 
     public String n() {
-        return TextUtils.isEmpty(this.e) ? this.d : this.e;
+        return StringUtils.isEmpty(this.e) ? this.d : this.e;
     }
 
     public void n(String str) {

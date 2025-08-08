@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.Vibrator;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -83,13 +83,13 @@ public class d {
             java.lang.String r0 = r9.getString(r0)
             com.alibaba.fastjson.JSONObject r1 = new com.alibaba.fastjson.JSONObject
             r1.<init>()
-            boolean r4 = android.text.TextUtils.isEmpty(r0)
+            boolean r4 = android.text.StringUtils.isEmpty(r0)
             java.lang.String r5 = "message"
             java.lang.String r6 = "result"
             if (r4 != 0) goto L84
             android.net.Uri r0 = android.net.Uri.parse(r0)
             java.lang.String r4 = r0.getScheme()
-            boolean r7 = android.text.TextUtils.isEmpty(r4)
+            boolean r7 = android.text.StringUtils.isEmpty(r4)
             if (r7 != 0) goto L7c
             java.lang.String r7 = "http"
             boolean r7 = r7.equalsIgnoreCase(r4)
@@ -166,7 +166,7 @@ public class d {
             return;
         }
         MUSDKInstance mUSDKInstance = (MUSDKInstance) mUSModule.getInstance();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (bVar == null) {
                 return;
             }
@@ -179,13 +179,13 @@ public class d {
         } else {
             try {
                 String string = JSON.parseObject(str).getString("url");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 Uri parse = Uri.parse(string);
                 String scheme = parse.getScheme();
                 Uri.Builder buildUpon = parse.buildUpon();
-                if (TextUtils.isEmpty(scheme)) {
+                if (StringUtils.isEmpty(scheme)) {
                     buildUpon.scheme("http");
                 }
                 Intent intent = new Intent("android.intent.action.VIEW", buildUpon.build());
@@ -219,7 +219,7 @@ public class d {
         }
         if (mUSDKInstance != null && mUSDKInstance.getMonitorInfo() != null) {
             String e = mUSDKInstance.getMonitorInfo().e();
-            if (!TextUtils.isEmpty(e) && (parse = Uri.parse(e)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
+            if (!StringUtils.isEmpty(e) && (parse = Uri.parse(e)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
                 l.a().p().a(mUSModule, str);
                 if (bVar == null) {
                     return;
@@ -257,7 +257,7 @@ public class d {
         mUSDKInstance.setIgnoreWhiteScreenReport(true);
         if (mUSDKInstance.getMonitorInfo() != null) {
             String e = mUSDKInstance.getMonitorInfo().e();
-            if (!TextUtils.isEmpty(e) && (parse = Uri.parse(e)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
+            if (!StringUtils.isEmpty(e) && (parse = Uri.parse(e)) != null && parse.isHierarchical() && parse.getQueryParameter("wx_popId") != null && l.a().p() != null) {
                 l.a().p().b(mUSModule, str);
                 if (bVar == null) {
                     return;
@@ -266,7 +266,7 @@ public class d {
                 return;
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (bVar == null) {
                 return;
             }
@@ -289,13 +289,13 @@ public class d {
         }
         try {
             String string = JSON.parseObject(str).getString("url");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Uri parse2 = Uri.parse(string);
             String scheme = parse2.getScheme();
             Uri.Builder buildUpon = parse2.buildUpon();
-            if (TextUtils.isEmpty(scheme)) {
+            if (StringUtils.isEmpty(scheme)) {
                 buildUpon.scheme("http");
             }
             Intent intent = new Intent("android.intent.action.VIEW", buildUpon.build());
@@ -380,7 +380,7 @@ public class d {
         L43:
             r7 = 0
         L44:
-            boolean r0 = android.text.TextUtils.isEmpty(r1)
+            boolean r0 = android.text.StringUtils.isEmpty(r1)
             if (r0 == 0) goto L51
             java.lang.String r6 = "toast param parse is null "
             com.taobao.android.weex_framework.util.g.f(r2, r6)
@@ -468,7 +468,7 @@ public class d {
             r6 = r3
             r5 = r4
         L56:
-            boolean r1 = android.text.TextUtils.isEmpty(r5)
+            boolean r1 = android.text.StringUtils.isEmpty(r5)
             if (r1 == 0) goto L5d
             goto L5e
         L5d:
@@ -479,13 +479,13 @@ public class d {
             android.content.Context r8 = r8.getUIContext()
             r1.<init>(r8)
             r1.setMessage(r4)
-            boolean r8 = android.text.TextUtils.isEmpty(r6)
+            boolean r8 = android.text.StringUtils.isEmpty(r6)
             if (r8 == 0) goto L75
             goto L76
         L75:
             r3 = r6
         L76:
-            boolean r8 = android.text.TextUtils.isEmpty(r9)
+            boolean r8 = android.text.StringUtils.isEmpty(r9)
             if (r8 == 0) goto L7d
             r9 = r0
         L7d:
@@ -580,7 +580,7 @@ public class d {
             r10 = r3
             r4 = r10
         L62:
-            boolean r7 = android.text.TextUtils.isEmpty(r4)
+            boolean r7 = android.text.StringUtils.isEmpty(r4)
             if (r7 == 0) goto L69
             goto L6a
         L69:
@@ -597,13 +597,13 @@ public class d {
             r3.<init>(r9)
             r3.setText(r10)
             r4.setView(r3)
-            boolean r9 = android.text.TextUtils.isEmpty(r5)
+            boolean r9 = android.text.StringUtils.isEmpty(r5)
             if (r9 == 0) goto L94
             goto L95
         L94:
             r1 = r5
         L95:
-            boolean r9 = android.text.TextUtils.isEmpty(r6)
+            boolean r9 = android.text.StringUtils.isEmpty(r6)
             if (r9 == 0) goto L9c
             goto L9d
         L9c:
@@ -681,7 +681,7 @@ public class d {
             r7 = r0
             r4 = r3
         L49:
-            boolean r1 = android.text.TextUtils.isEmpty(r4)
+            boolean r1 = android.text.StringUtils.isEmpty(r4)
             if (r1 == 0) goto L50
             goto L51
         L50:
@@ -692,7 +692,7 @@ public class d {
             android.content.Context r6 = r6.getUIContext()
             r1.<init>(r6)
             r1.setMessage(r3)
-            boolean r6 = android.text.TextUtils.isEmpty(r7)
+            boolean r6 = android.text.StringUtils.isEmpty(r7)
             if (r6 == 0) goto L68
             r7 = r0
         L68:
@@ -719,7 +719,7 @@ public class d {
             return;
         }
         MUSDKInstance mUSDKInstance = (MUSDKInstance) mUSModule.getInstance();
-        if (mUSDKInstance == null || mUSDKInstance.isDestroyed() || !TextUtils.equals("fontFace", str)) {
+        if (mUSDKInstance == null || mUSDKInstance.isDestroyed() || !StringUtils.equals("fontFace", str)) {
             return;
         }
         if (mUSDKInstance.getInstanceConfig() != null && mUSDKInstance.getInstanceConfig().j() == MUSInstanceConfig.MUSRenderType.MUSRenderTypeUnicorn) {
@@ -727,12 +727,12 @@ public class d {
             return;
         }
         FontDO a2 = a(jSONObject, mUSDKInstance);
-        if (a2 == null || TextUtils.isEmpty(a2.e())) {
+        if (a2 == null || StringUtils.isEmpty(a2.e())) {
             return;
         }
         synchronized (f16037a) {
             FontDO a3 = com.taobao.android.weex_framework.widget.a.a().a(a2.e());
-            if (a3 != null && TextUtils.equals(a3.a(), a2.a())) {
+            if (a3 != null && StringUtils.equals(a3.a(), a2.a())) {
                 com.taobao.android.weex_framework.widget.a.a().a(a3, true);
             }
             com.taobao.android.weex_framework.widget.a.a().a(a2);

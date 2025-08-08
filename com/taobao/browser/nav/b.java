@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.utils.BrowserUtil;
 import com.taobao.tao.tbmainfragment.SupportActivity;
@@ -90,7 +90,7 @@ public class b implements com.taobao.android.nav.e {
         }
         String a3 = a(context, intent.getDataString());
         m.e("BFProcessor", "BrowserFragmentProcessor process url=" + a3);
-        if (TextUtils.isEmpty(a3) || a(a3)) {
+        if (StringUtils.isEmpty(a3) || a(a3)) {
             return true;
         }
         if (context instanceof fpz) {
@@ -122,7 +122,7 @@ public class b implements com.taobao.android.nav.e {
         }
         com.taobao.browser.config.a.a().b();
         com.taobao.browser.config.a.a();
-        if (!TextUtils.isEmpty(com.taobao.browser.config.a.commonConfig.g)) {
+        if (!StringUtils.isEmpty(com.taobao.browser.config.a.commonConfig.g)) {
             com.taobao.browser.config.a.a();
             if (str.matches(com.taobao.browser.config.a.commonConfig.g)) {
                 try {
@@ -189,7 +189,7 @@ public class b implements com.taobao.android.nav.e {
                         m.e("BFProcessor", "hasCustomButton, abort");
                         android.taobao.windvane.monitor.a.commitFail("BFProcessor", 11, "hasCustomButton", str);
                         return true;
-                    } else if (!TextUtils.isEmpty(parse.getQueryParameter(Constants.MYBROWSERTITLE))) {
+                    } else if (!StringUtils.isEmpty(parse.getQueryParameter(Constants.MYBROWSERTITLE))) {
                         m.e("BFProcessor", "myBrowserTitle, abort");
                         android.taobao.windvane.monitor.a.commitFail("BFProcessor", 12, Constants.MYBROWSERTITLE, str);
                         return true;
@@ -197,7 +197,7 @@ public class b implements com.taobao.android.nav.e {
                         m.e("BFProcessor", "myBrowserHideTitle, abort");
                         android.taobao.windvane.monitor.a.commitFail("BFProcessor", 13, Constants.MYBROWSERHIDETITLE, str);
                         return true;
-                    } else if (!TextUtils.isEmpty(parse.getQueryParameter("customtitle"))) {
+                    } else if (!StringUtils.isEmpty(parse.getQueryParameter("customtitle"))) {
                         m.e("BFProcessor", "customtitle, abort");
                         android.taobao.windvane.monitor.a.commitFail("BFProcessor", 14, "customtitle", str);
                         return true;
@@ -209,7 +209,7 @@ public class b implements com.taobao.android.nav.e {
                         m.e("BFProcessor", "disableScreenShot, abort");
                         android.taobao.windvane.monitor.a.commitFail("BFProcessor", 16, "disableScreenShot", str);
                         return true;
-                    } else if (TextUtils.isEmpty(parse.getQueryParameter(com.taobao.downgrade.e.HARDWARE))) {
+                    } else if (StringUtils.isEmpty(parse.getQueryParameter(com.taobao.downgrade.e.HARDWARE))) {
                         return false;
                     } else {
                         m.e("BFProcessor", "hardware, abort");
@@ -258,7 +258,7 @@ public class b implements com.taobao.android.nav.e {
                     String readLine = bufferedReader.readLine();
                     if (readLine != null && readLine.trim().length() > 0) {
                         String trim = readLine.trim();
-                        if (!TextUtils.isEmpty(trim)) {
+                        if (!StringUtils.isEmpty(trim)) {
                             try {
                                 this.b = true;
                                 m.e("BFProcessor", "meetinghook url=" + trim);

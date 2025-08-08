@@ -1,6 +1,6 @@
 package com.alibaba.security.wukong.model.protocol;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.manager.CcrcContextImpl;
 import com.alibaba.security.ccrc.service.build.Yb;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,7 +61,7 @@ public abstract class RiskSample implements IRisk, Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("201ec3d9", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.riskID)) {
+        if (StringUtils.isEmpty(this.riskID)) {
             this.riskID = a();
         }
         return this.riskID;

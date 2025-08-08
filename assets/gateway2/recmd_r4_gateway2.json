@@ -1,0 +1,1226 @@
+{
+  "recommend_home_main": {
+    "ExpireTabs": [
+      {
+        "actionName": "recmd.expireTabs",
+        "actionParam": {
+          "expireType": "@eventParam{expireType}",
+          "containerIds": "@eventParam{containerIds}"
+        }
+      }
+    ],
+    "ViewCreate": [
+      {
+        "actionName": "recmd.loadCache",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "needSync": "@eventParam{needSync}"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "local"
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "local"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewAppear": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "pageEnter"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  },
+                  {
+                    "actionName": "recmd.scrollToTop",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "animated": "false"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.loadCache",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "needSync": "@eventParam{needSync}"
+              },
+              "callback": {
+                "success": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "local"
+                    }
+                  }
+                ],
+                "fail": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "local"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "PageBack": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "forceRequest": "@eventParam{forceRequest}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "pageBack",
+          "checkDeltaExpire": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "itemId": "@eventParam{bizParam.itemId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "switch.string",
+                    "actionParam": {
+                      "value": "@callbackParam{dataChangeType}"
+                    },
+                    "callback": {
+                      "base": [
+                        {
+                          "actionName": "recmd.uiRefresh",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}"
+                          }
+                        },
+                        {
+                          "actionName": "bizContext.record",
+                          "actionParam": {
+                            "_bizId": "@eventParam{containerId}",
+                            "clickId": ""
+                          }
+                        },
+                        {
+                          "actionName": "recmd.scrollToTop",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}",
+                            "animated": "false"
+                          }
+                        }
+                      ],
+                      "delta": [
+                        {
+                          "actionName": "recmd.uiRefresh",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewClick": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "pageRefresh"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "nativeCustomParams": "@eventParam{nativeCustomParams}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "NewInteractive": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "newInteractive",
+          "forceRequest": "true",
+          "bizParam": {
+            "isNeedSubSelectionData": "true"
+          }
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "requestType": "newInteractive"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote",
+                      "requestType": "newInteractive"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "newface.uiRefresh",
+              "actionParam": {
+                "containers": "@eventParam{containers}",
+                "dataSourceType": "remote",
+                "requestType": "newInteractive"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "PullToRefresh":[
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "forceRequest": "true",
+          "apiVersion": "1.0",
+          "requestType": "pullRefresh"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  },
+                  {
+                    "actionName": "recmd.scrollToTop",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "animated": "false"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.loadCache",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "needSync": "@eventParam{needSync}"
+              },
+              "callback": {
+                "success": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "local"
+                    }
+                  }
+                ],
+                "fail": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "local"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "OrderListPrefetch": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "pageEnter"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.prefetchDataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "OrderListPrefetchDataConsume": [
+      {
+        "actionName": "recmd.dataProcess",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}"
+        },
+        "callback": {
+          "finish": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            },
+            {
+              "actionName": "bizContext.record",
+              "actionParam": {
+                "_bizId": "@eventParam{containerId}",
+                "clickId": ""
+              }
+            },
+            {
+              "actionName": "recmd.scrollToTop",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "animated": "false"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_main.loading": {
+    "ViewClick": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "isNextPage": "true",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "scrollNextPage"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewAppear": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "isNextPage": "true",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "scrollNextPage"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_main.error": {
+    "ViewClick": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "errorRetry"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "recmd.scrollToTop",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "animated": "false"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_main.*.dinamicX": {
+    "RTapClick": [
+      {
+        "actionName": "bizContext.record",
+        "actionParam": {
+          "_bizId": "@eventParam{containerId}",
+          "clickId": "@recmdClickId{@bizContext{@eventParam{containerId},clickId}, @eventParam{itemId}}"
+        }
+      }
+    ]
+  },
+  "recommend_home_main.*.overlay": {
+    "DeleteOperation": [
+      {
+        "actionName": "recmd.dataDelete",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "deleteModel": "@eventParam{deleteModel}"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote",
+                "dataChangeType": "delta"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_main.*.video": {
+    "ViewAppear": [
+      {
+        "actionName": "recmd.playerQueue",
+        "actionParam": {
+          "_operation": "enqueue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "recmd.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewDisappear": [
+      {
+        "actionName": "recmd.playerQueue",
+        "actionParam": {
+          "_operation": "dequeue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "recmd.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "actionName": "recmd.widgetPostMsg",
+        "actionParam": {
+          "widgetNode": "@eventParam{widgetNode}",
+          "widgetParams": {
+            "type": "MSG",
+            "params": {
+              "videoOperation": "pause"
+            }
+          }
+        }
+      }
+    ],
+    "VideoEndPlaying": [
+      {
+        "actionName": "recmd.playerQueue",
+        "actionParam": {
+          "_operation": "dequeue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "recmd.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "actionName": "recmd.playerQueue",
+        "actionParam": {
+          "_operation": "enqueue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "recmd.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "VideoErrorPlaying": [
+      {
+        "actionName": "recmd.playerQueue",
+        "actionParam": {
+          "_operation": "dequeue"
+        },
+        "callback": {
+          "headerChanged": [
+            {
+              "actionName": "recmd.widgetPostMsg",
+              "actionParam": {
+                "widgetNode": "@callbackParam{widgetNode}",
+                "widgetParams": {
+                  "type": "MSG",
+                  "params": {
+                    "videoOperation": "play"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_main.*": {
+    "ViewAppear": [
+      {
+        "actionName": "switch.bool",
+        "actionParam": {
+          "value": "@ieq{@recmdItemLastIndex{@eventParam{containerId}, '10'}, @eventParam{index}}"
+        },
+        "callback": {
+          "true": [
+            {
+              "actionName": "recmd.request",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "bizParam": {
+                  "clickId": "@bizContext{@eventParam{containerId},clickId}"
+                },
+                "isNextPage": "true",
+                "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+                "apiVersion": "1.0",
+                "requestType": "scrollNextPage"
+              },
+              "callback": {
+                "success": [
+                  {
+                    "actionName": "recmd.dataProcess",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}"
+                    },
+                    "callback": {
+                      "finish": [
+                        {
+                          "actionName": "recmd.uiRefresh",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}",
+                            "dataSourceType": "remote"
+                          }
+                        },
+                        {
+                          "actionName": "bizContext.record",
+                          "actionParam": {
+                            "_bizId": "@eventParam{containerId}",
+                            "clickId": ""
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "fail": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_intl": {
+    "ExpireTabs": [
+      {
+        "actionName": "recmd.expireTabs",
+        "actionParam": {
+          "expireType": "@eventParam{expireType}",
+          "containerIds": "@eventParam{containerIds}"
+        }
+      }
+    ],
+    "ViewCreate": [
+      {
+        "actionName": "recmd.loadCache",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "needSync": "@eventParam{needSync}"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "local"
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "local"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewAppear": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "pageEnter"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  },
+                  {
+                    "actionName": "recmd.scrollToTop",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "animated": "false"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "PageBack": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "forceRequest": "@eventParam{forceRequest}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "pageBack",
+          "checkDeltaExpire": "true"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "itemId": "@eventParam{bizParam.itemId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "switch.string",
+                    "actionParam": {
+                      "value": "@callbackParam{dataChangeType}"
+                    },
+                    "callback": {
+                      "base": [
+                        {
+                          "actionName": "recmd.uiRefresh",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}"
+                          }
+                        },
+                        {
+                          "actionName": "bizContext.record",
+                          "actionParam": {
+                            "_bizId": "@eventParam{containerId}",
+                            "clickId": ""
+                          }
+                        },
+                        {
+                          "actionName": "recmd.scrollToTop",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}",
+                            "animated": "false"
+                          }
+                        }
+                      ],
+                      "delta": [
+                        {
+                          "actionName": "recmd.uiRefresh",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_intl.loading": {
+    "ViewClick": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "isNextPage": "true",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "scrollNextPage"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "ViewAppear": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "bizParam": {
+            "clickId": "@bizContext{@eventParam{containerId},clickId}"
+          },
+          "isNextPage": "true",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "scrollNextPage"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "bizContext.record",
+                    "actionParam": {
+                      "_bizId": "@eventParam{containerId}",
+                      "clickId": ""
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_intl.error": {
+    "ViewClick": [
+      {
+        "actionName": "recmd.request",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+          "apiVersion": "1.0",
+          "requestType": "errorRetry"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.dataProcess",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}"
+              },
+              "callback": {
+                "finish": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  },
+                  {
+                    "actionName": "recmd.scrollToTop",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "animated": "false"
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "fail": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_intl.*.dinamicX": {
+    "RTapClick": [
+      {
+        "actionName": "bizContext.record",
+        "actionParam": {
+          "_bizId": "@eventParam{containerId}",
+          "clickId": "@recmdClickId{@bizContext{@eventParam{containerId},clickId}, @eventParam{itemId}}"
+        }
+      }
+    ]
+  },
+  "recommend_home_intl.*.overlay": {
+    "DeleteOperation": [
+      {
+        "actionName": "recmd.dataDelete",
+        "actionParam": {
+          "containerId": "@eventParam{containerId}",
+          "deleteModel": "@eventParam{deleteModel}"
+        },
+        "callback": {
+          "success": [
+            {
+              "actionName": "recmd.uiRefresh",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "dataSourceType": "remote",
+                "dataChangeType": "delta"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "recommend_home_intl.*": {
+    "ViewAppear": [
+      {
+        "actionName": "switch.bool",
+        "actionParam": {
+          "value": "@ieq{@recmdItemLastIndex{@eventParam{containerId}, '10'}, @eventParam{index}}"
+        },
+        "callback": {
+          "true": [
+            {
+              "actionName": "recmd.request",
+              "actionParam": {
+                "containerId": "@eventParam{containerId}",
+                "bizParam": {
+                  "clickId": "@bizContext{@eventParam{containerId},clickId}"
+                },
+                "isNextPage": "true",
+                "apiName": "mtop.taobao.wireless.home.awesome.recommend",
+                "apiVersion": "1.0",
+                "requestType": "scrollNextPage"
+              },
+              "callback": {
+                "success": [
+                  {
+                    "actionName": "recmd.dataProcess",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}"
+                    },
+                    "callback": {
+                      "finish": [
+                        {
+                          "actionName": "recmd.uiRefresh",
+                          "actionParam": {
+                            "containerId": "@eventParam{containerId}",
+                            "dataSourceType": "remote"
+                          }
+                        },
+                        {
+                          "actionName": "bizContext.record",
+                          "actionParam": {
+                            "_bizId": "@eventParam{containerId}",
+                            "clickId": ""
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "fail": [
+                  {
+                    "actionName": "recmd.uiRefresh",
+                    "actionParam": {
+                      "containerId": "@eventParam{containerId}",
+                      "dataSourceType": "remote"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

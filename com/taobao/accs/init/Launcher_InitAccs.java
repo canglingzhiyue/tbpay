@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
 import com.alibaba.ut.abtest.pipeline.accs.EvoAccsService;
@@ -140,7 +140,7 @@ public class Launcher_InitAccs implements Serializable {
                     ipChange.ipc$dispatch("d2ee7e0b", new Object[]{this, str, new Integer(i)});
                     return;
                 }
-                ALog.e(Launcher_InitAccs.TAG, "onBindUser,", "isUserIdEmpty", Boolean.valueOf(TextUtils.isEmpty(str)), "errorCode", Integer.valueOf(i));
+                ALog.e(Launcher_InitAccs.TAG, "onBindUser,", "isUserIdEmpty", Boolean.valueOf(StringUtils.isEmpty(str)), "errorCode", Integer.valueOf(i));
                 if (i == 200 && UtilityImpl.isKeepAliveReport()) {
                     ALog.e(Launcher_InitAccs.TAG, "onBindUser return success by keepAliveReport", new Object[0]);
                     Launcher_InitAccs.mContext.getSharedPreferences(Constants.SP_FILE_NAME, 0).edit().putLong(Constants.SP_KEY_BIND_USER_TIME, System.currentTimeMillis()).apply();
@@ -173,8 +173,8 @@ public class Launcher_InitAccs implements Serializable {
                     }
                     GlobalClientInfo.getInstance(Launcher_InitAccs.mContext).registerListener(NotifManager.getServiceId(Launcher_InitAccs.mContext, TaobaoConstants.SERVICE_ID_DEVICECMD), Launcher_InitAccs.access$000());
                 }
-                if (TextUtils.isEmpty(Launcher_InitAccs.mUserId) || (!Launcher_InitAccs.mIsIdleTime && !UtilityImpl.needPeriodicReport(Launcher_InitAccs.mContext, Constants.SP_KEY_BIND_USER_TIME))) {
-                    ALog.e(Launcher_InitAccs.TAG, "onBindApp return early,", "isUserIdEmpty", Boolean.valueOf(TextUtils.isEmpty(Launcher_InitAccs.mUserId)), "mIsIdleTime", Boolean.valueOf(Launcher_InitAccs.mIsIdleTime));
+                if (StringUtils.isEmpty(Launcher_InitAccs.mUserId) || (!Launcher_InitAccs.mIsIdleTime && !UtilityImpl.needPeriodicReport(Launcher_InitAccs.mContext, Constants.SP_KEY_BIND_USER_TIME))) {
+                    ALog.e(Launcher_InitAccs.TAG, "onBindApp return early,", "isUserIdEmpty", Boolean.valueOf(StringUtils.isEmpty(Launcher_InitAccs.mUserId)), "mIsIdleTime", Boolean.valueOf(Launcher_InitAccs.mIsIdleTime));
                     return;
                 }
                 try {

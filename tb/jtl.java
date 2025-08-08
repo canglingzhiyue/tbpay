@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.nextrpc.a;
@@ -82,12 +82,12 @@ public final class jtl extends jte {
                     ((Activity) e).finish();
                 }
             } else {
-                String str3 = TextUtils.isEmpty(str2) ? a2 : str2;
+                String str3 = StringUtils.isEmpty(str2) ? a2 : str2;
                 String str4 = com.taobao.android.purchase.core.b.BUILD_ORDER_WARNING_TITLE_NEW;
                 a(e, g, str4, str3, str, false, true);
                 b = str4;
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = a2;
             }
             c.a(str2, b);

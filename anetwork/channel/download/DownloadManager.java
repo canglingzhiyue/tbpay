@@ -2,7 +2,7 @@ package anetwork.channel.download;
 
 import android.content.Context;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import anet.channel.util.ALog;
 import anet.channel.util.HttpConstant;
@@ -124,7 +124,7 @@ public class DownloadManager {
         }
         try {
             URL url = new URL(str);
-            if (!TextUtils.isEmpty(str2) && !prepareFolder(str2)) {
+            if (!StringUtils.isEmpty(str2) && !prepareFolder(str2)) {
                 ALog.e(TAG, "file folder invalid.", null, new Object[0]);
                 if (downloadListener != null) {
                     downloadListener.onFail(-1, -101, "file folder path invalid");
@@ -197,8 +197,8 @@ public class DownloadManager {
             this.useExternalCache = true;
             this.taskId = DownloadManager.this.taskIdGen.getAndIncrement();
             this.url = url;
-            str2 = TextUtils.isEmpty(str2) ? parseFileNameForURL(url) : str2;
-            if (TextUtils.isEmpty(str)) {
+            str2 = StringUtils.isEmpty(str2) ? parseFileNameForURL(url) : str2;
+            if (StringUtils.isEmpty(str)) {
                 this.filePath = DownloadManager.access$100(DownloadManager.this, str2);
             } else {
                 if (str.endsWith("/")) {
@@ -363,7 +363,7 @@ public class DownloadManager {
             if (lastIndexOf != -1) {
                 str = path.substring(lastIndexOf + 1, path.length());
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
             String md5ToHex = StringUtils.md5ToHex(url.toString());

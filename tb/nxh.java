@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -190,7 +190,7 @@ public class nxh extends iuf<TabLayout, ird> implements TabLayout.b, ire {
         if (h()) {
             i = tabBean.isSelected ? this.d.e : -1;
         }
-        if (!TextUtils.isEmpty(tabBean.templateImage)) {
+        if (!StringUtils.isEmpty(tabBean.templateImage)) {
             str = tabBean.templateImage;
             if (h()) {
                 if (tabBean.isSelected) {
@@ -206,7 +206,7 @@ public class nxh extends iuf<TabLayout, ird> implements TabLayout.b, ire {
             nxjVar.a(tabBean.showText, i);
         }
         nxjVar.a(tabBean.isSelected);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         nxjVar.a(str, tabBean.imageWidth, tabBean.imageHeight, tabBean.showText);
@@ -226,7 +226,7 @@ public class nxh extends iuf<TabLayout, ird> implements TabLayout.b, ire {
         }
         a2.isSelected = true;
         this.f31828a = a2.param;
-        if (!TextUtils.isEmpty(a2.bizName)) {
+        if (!StringUtils.isEmpty(a2.bizName)) {
             e.a(a2.bizName);
         }
         if (((nxj) dVar.a()) == null) {

@@ -25,7 +25,7 @@ import android.support.v4.view.NestedScrollingParentHelper;
 import android.support.v4.view.OnApplyWindowInsetsListener;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.SparseArray;
@@ -857,12 +857,12 @@ public class CoordinatorLayout extends ViewGroup implements NestedScrollingParen
 
     /* JADX WARN: Multi-variable type inference failed */
     static Behavior parseBehavior(Context context, AttributeSet attributeSet, String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.startsWith(".")) {
             str = context.getPackageName() + str;
-        } else if (str.indexOf(46) < 0 && !TextUtils.isEmpty(WIDGET_PACKAGE_NAME)) {
+        } else if (str.indexOf(46) < 0 && !StringUtils.isEmpty(WIDGET_PACKAGE_NAME)) {
             str = WIDGET_PACKAGE_NAME + '.' + str;
         }
         try {

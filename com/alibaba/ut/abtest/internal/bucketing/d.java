@@ -1,7 +1,7 @@
 package com.alibaba.ut.abtest.internal.bucketing;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentGroupV5;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.ut.abtest.internal.bucketing.model.ExperimentType;
@@ -206,12 +206,12 @@ public class d {
             return (String) ipChange.ipc$dispatch("f7e1cdd7", new Object[]{this, uri, str});
         }
         String path = uri.getPath();
-        return TextUtils.isEmpty(path) ? str : path;
+        return StringUtils.isEmpty(path) ? str : path;
     }
 
     private boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : TextUtils.indexOf(str, "UTABTEST-ANY") != -1;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : StringUtils.indexOf(str, "UTABTEST-ANY") != -1;
     }
 
     public boolean a(Uri uri, Uri uri2) {
@@ -222,8 +222,8 @@ public class d {
         String a2 = a(uri, "");
         String a3 = a(uri2, "");
         if (a(a2)) {
-            String[] split = TextUtils.split(a2, "/");
-            String[] split2 = TextUtils.split(a3, "/");
+            String[] split = StringUtils.split(a2, "/");
+            String[] split2 = StringUtils.split(a3, "/");
             if (split == null) {
                 return false;
             }
@@ -233,16 +233,16 @@ public class d {
                 String str = split[i];
                 String str2 = null;
                 String str3 = (split2 == null || i2 >= split2.length) ? null : split2[i2];
-                boolean equals = TextUtils.equals(str, "UTABTEST-ANY");
+                boolean equals = StringUtils.equals(str, "UTABTEST-ANY");
                 if (str3 == null) {
                     if (equals) {
                         if (i == split.length - 1) {
                             return true;
                         }
-                    } else if (TextUtils.isEmpty(str) && i == split.length - 1) {
+                    } else if (StringUtils.isEmpty(str) && i == split.length - 1) {
                         return true;
                     } else {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             return false;
                         }
                     }
@@ -253,10 +253,10 @@ public class d {
                         if (i4 < split.length) {
                             str2 = split[i4];
                         }
-                        if (str2 != null && TextUtils.equals(str2, str3)) {
+                        if (str2 != null && StringUtils.equals(str2, str3)) {
                             i += 2;
                         }
-                    } else if (!TextUtils.equals(str, str3)) {
+                    } else if (!StringUtils.equals(str, str3)) {
                         return false;
                     } else {
                         i++;
@@ -268,14 +268,14 @@ public class d {
                 return true;
             }
             while (i2 < split2.length) {
-                if (!TextUtils.isEmpty(split2[i2])) {
+                if (!StringUtils.isEmpty(split2[i2])) {
                     return false;
                 }
                 i2++;
             }
             return true;
         }
-        return TextUtils.equals(a2, a3);
+        return StringUtils.equals(a2, a3);
     }
 
     public boolean b(Uri uri, Uri uri2) {
@@ -298,10 +298,10 @@ public class d {
         }
         for (String str : queryParameterNames) {
             String queryParameter = uri.getQueryParameter(str);
-            if (!TextUtils.isEmpty(queryParameter) && !"UTABTEST-REG()UTABTEST-REG".equals(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter) && !"UTABTEST-REG()UTABTEST-REG".equals(queryParameter)) {
                 String queryParameter2 = uri2.getQueryParameter(str);
-                if (!cex.a().j().C() || !b(queryParameter) || TextUtils.isEmpty(queryParameter2) || !queryParameter2.matches(c(queryParameter))) {
-                    if (!TextUtils.equals(queryParameter, queryParameter2)) {
+                if (!cex.a().j().C() || !b(queryParameter) || StringUtils.isEmpty(queryParameter2) || !queryParameter2.matches(c(queryParameter))) {
+                    if (!StringUtils.equals(queryParameter, queryParameter2)) {
                         return false;
                     }
                 }
@@ -312,7 +312,7 @@ public class d {
 
     private boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !TextUtils.isEmpty(str) && str.startsWith("UTABTEST-REG(") && str.endsWith(")UTABTEST-REG");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue() : !StringUtils.isEmpty(str) && str.startsWith("UTABTEST-REG(") && str.endsWith(")UTABTEST-REG");
     }
 
     private String c(String str) {

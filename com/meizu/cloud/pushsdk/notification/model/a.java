@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.notification.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
 import org.json.JSONException;
@@ -55,7 +55,7 @@ public class a implements Parcelable {
 
     private static a a(String str) {
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return b(new JSONObject(str).getString("no"));
             }
         } catch (JSONException e) {
@@ -88,7 +88,7 @@ public class a implements Parcelable {
     public static a b(MessageV3 messageV3) {
         a a2;
         try {
-            a2 = !TextUtils.isEmpty(messageV3.getNotificationMessage()) ? a(new JSONObject(messageV3.getNotificationMessage()).getJSONObject("data").getJSONObject("extra").getJSONObject("no")) : null;
+            a2 = !StringUtils.isEmpty(messageV3.getNotificationMessage()) ? a(new JSONObject(messageV3.getNotificationMessage()).getJSONObject("data").getJSONObject("extra").getJSONObject("no")) : null;
         } catch (Exception e) {
             DebugLogger.e("NotifyOption", "parse flyme NotifyOption setting error " + e.getMessage() + " so get from notificationMessage");
             a2 = a(messageV3.getNotificationMessage());
@@ -99,7 +99,7 @@ public class a implements Parcelable {
 
     public static a b(String str) {
         JSONObject jSONObject;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 jSONObject = new JSONObject(str);
             } catch (JSONException e) {

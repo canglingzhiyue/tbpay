@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.model.psc_sdk_config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.mobile.auth.gatewayauth.model.TopErrorResponse;
 import com.nirvana.tools.jsoner.a;
@@ -22,7 +22,7 @@ public class ConfigRB implements e {
         try {
             ConfigRB configRB = new ConfigRB();
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return (ConfigRB) a.a(new JSONObject(str), (d<Object>) new d<ConfigRB>() { // from class: com.mobile.auth.gatewayauth.model.psc_sdk_config.ConfigRB.1
                     }, (List<Field>) null);
                 }

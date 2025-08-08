@@ -18,7 +18,7 @@ public final class azt extends ayu {
         kge.a(479207033);
     }
 
-    public static /* synthetic */ Object ipc$super(azt aztVar, String str, Object... objArr) {
+    public static /* synthetic */ Object ipc$super(azt aztVar, String str, Object... objArr) throws InstantReloadException {
         str.hashCode();
         throw new InstantReloadException(String.format("String switch could not find '%s'", str));
     }

@@ -1,6 +1,6 @@
 package com.ali.user.mobile.rpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.init.Debuggable;
 import com.ali.user.mobile.login.model.LoginConstant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -134,22 +134,22 @@ public class HistoryAccount implements Comparator {
         } else {
             this.biometricId = historyAccount.biometricId;
             this.autologinToken = historyAccount.autologinToken;
-            if (!TextUtils.isEmpty(historyAccount.userInputName)) {
+            if (!StringUtils.isEmpty(historyAccount.userInputName)) {
                 this.userInputName = historyAccount.userInputName;
             }
-            if (!TextUtils.isEmpty(historyAccount.tokenKey)) {
+            if (!StringUtils.isEmpty(historyAccount.tokenKey)) {
                 this.tokenKey = historyAccount.tokenKey;
             }
             this.email = historyAccount.email;
-            if (!TextUtils.isEmpty(historyAccount.headImg)) {
+            if (!StringUtils.isEmpty(historyAccount.headImg)) {
                 this.headImg = historyAccount.headImg;
             }
-            if (!TextUtils.isEmpty(historyAccount.loginType)) {
+            if (!StringUtils.isEmpty(historyAccount.loginType)) {
                 this.loginType = historyAccount.loginType;
             }
             this.nick = historyAccount.nick;
             this.mobile = historyAccount.mobile;
-            if (!TextUtils.isEmpty(historyAccount.loginAccount)) {
+            if (!StringUtils.isEmpty(historyAccount.loginAccount)) {
                 this.loginAccount = historyAccount.loginAccount;
             }
             long j = historyAccount.loginTime;
@@ -186,17 +186,17 @@ public class HistoryAccount implements Comparator {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("774e9962", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.loginAccount)) {
+        if (!StringUtils.isEmpty(this.loginAccount)) {
             return this.loginAccount;
         }
-        return TextUtils.isEmpty(this.mobile) ? this.email : this.mobile;
+        return StringUtils.isEmpty(this.mobile) ? this.email : this.mobile;
     }
 
     public void setSrcLoginType(String str) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ca820a12", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || TextUtils.equals(str, LoginConstant.LOGIN_TYPE_FINGERPRINT)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.equals(str, LoginConstant.LOGIN_TYPE_FINGERPRINT)) {
         } else {
             this.srcLoginType = str;
         }

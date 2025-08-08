@@ -2,7 +2,7 @@ package com.taobao.android.behavix;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -102,7 +102,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
                 parseObject.getInteger("actionLimitCount").intValue();
             }
             r rVar = new r();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 rVar.a("HY_PARAM_ERR");
                 wVCallBackContext.error(rVar);
                 return false;
@@ -144,7 +144,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             String string3 = parseObject.getString(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.BIZ_ARGS);
             String string4 = parseObject.getString(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.REQUEST_ID);
             r rVar = new r();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 rVar.a("HY_PARAM_ERR");
                 wVCallBackContext.error(rVar);
                 return false;
@@ -178,7 +178,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             String string4 = parseObject.getString(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.ACTION_ARGS);
             String string5 = parseObject.getString("actionName");
             r rVar = new r();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 rVar.a("HY_PARAM_ERR");
                 wVCallBackContext.error(rVar);
                 return false;
@@ -206,7 +206,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             String string3 = parseObject.getString(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.BIZ_ARGS);
             String string4 = parseObject.getString("actionName");
             r rVar = new r();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 rVar.a("HY_PARAM_ERR");
                 wVCallBackContext.error(rVar);
                 return false;
@@ -245,7 +245,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             int intValue2 = parseObject.getInteger(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.OFFSETY) == null ? 0 : parseObject.getInteger(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.OFFSETY).intValue();
             String string3 = parseObject.getString(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.BIZ_ARGS);
             r rVar = new r();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 rVar.a("HY_PARAM_ERR");
                 wVCallBackContext.error(rVar);
                 return false;
@@ -288,7 +288,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             String string3 = parseObject.getString("bizId");
             String string4 = parseObject.getString(com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.e.BIZ_ARGS);
             r rVar = new r();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 rVar.a("HY_PARAM_ERR");
                 wVCallBackContext.error(rVar);
                 return false;
@@ -320,7 +320,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             r rVar = new r();
             if (booleanValue) {
                 String string = parseObject.getString("scene");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     rVar.a("HY_PARAM_ERR");
                     wVCallBackContext.error(rVar);
                     return false;
@@ -330,7 +330,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             } else {
                 String string2 = parseObject.getString("topic");
                 JSONObject jSONObject = parseObject.getJSONObject("topicParam");
-                if (!TextUtils.isEmpty(string2) && jSONObject != null) {
+                if (!StringUtils.isEmpty(string2) && jSONObject != null) {
                     b.a().a(string2, new org.json.JSONObject(jSONObject));
                     wVCallBackContext.success();
                 }
@@ -355,7 +355,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
         r rVar = new r();
         String a2 = dsi.a();
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = "";
         }
         jSONObject.put("slideHands", (Object) a2);
@@ -408,7 +408,7 @@ public class UserActionBridge extends android.taobao.windvane.jsbridge.e {
             String string2 = parseObject.getString("bizIdentifier");
             String string3 = parseObject.getString("currentScene");
             r rVar = new r();
-            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3)) {
                 BUFS.QueryArgs queryArgs = new BUFS.QueryArgs();
                 if (jSONObject != null) {
                     for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {

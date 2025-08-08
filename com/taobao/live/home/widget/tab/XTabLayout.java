@@ -21,7 +21,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.ActionBar;
 import android.text.Layout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -1003,7 +1003,7 @@ public class XTabLayout extends HorizontalScrollView {
                     }
                     int width = d2.getWidth();
                     String text = d2.getText();
-                    if (TextUtils.isEmpty(text)) {
+                    if (StringUtils.isEmpty(text)) {
                         return;
                     }
                     Paint paint = new Paint();
@@ -1766,7 +1766,7 @@ public class XTabLayout extends HorizontalScrollView {
                 return ((Number) ipChange.ipc$dispatch("ca9d78dd", new Object[]{this})).intValue();
             }
             TextView textView = this.mTextView;
-            if (textView == null || TextUtils.isEmpty(textView.getText().toString())) {
+            if (textView == null || StringUtils.isEmpty(textView.getText().toString())) {
                 return 0;
             }
             Rect rect = new Rect();
@@ -2157,7 +2157,7 @@ public class XTabLayout extends HorizontalScrollView {
                 b = null;
             }
             if (view != null) {
-                if (!TextUtils.isEmpty(j) && tUrlImageView2 != null) {
+                if (!StringUtils.isEmpty(j) && tUrlImageView2 != null) {
                     tUrlImageView2.setImageUrl(j, new PhenixOptions().bitmapProcessors(new com.taobao.phenix.compat.effects.c()));
                     view.setVisibility(0);
                     setVisibility(0);
@@ -2175,7 +2175,7 @@ public class XTabLayout extends HorizontalScrollView {
                 }
                 view.setContentDescription(n);
             }
-            boolean z = !TextUtils.isEmpty(l);
+            boolean z = !StringUtils.isEmpty(l);
             if (textView != null) {
                 if (z) {
                     textView.setAllCaps(XTabLayout.access$3300(XTabLayout.this));
@@ -2205,7 +2205,7 @@ public class XTabLayout extends HorizontalScrollView {
             if (view != null && view.getVisibility() == 0) {
                 view.requestLayout();
             }
-            if (!z && !TextUtils.isEmpty(n)) {
+            if (!z && !StringUtils.isEmpty(n)) {
                 setOnLongClickListener(this);
                 return;
             }
@@ -2653,7 +2653,7 @@ public class XTabLayout extends HorizontalScrollView {
         while (true) {
             if (i < size) {
                 d dVar = this.mTabs.get(i);
-                if (dVar != null && dVar.i() != null && !TextUtils.isEmpty(dVar.l())) {
+                if (dVar != null && dVar.i() != null && !StringUtils.isEmpty(dVar.l())) {
                     break;
                 }
                 i++;

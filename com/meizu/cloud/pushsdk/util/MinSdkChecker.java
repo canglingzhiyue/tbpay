@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.util;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 
 /* loaded from: classes4.dex */
@@ -40,7 +40,7 @@ public class MinSdkChecker {
     }
 
     public static boolean isSupportTransmitMessageValue(Context context, String str) {
-        return !TextUtils.isEmpty(MzSystemUtils.findReceiver(context, PushConstants.MZ_PUSH_SYSTEM_RECEIVER_ACTION, str));
+        return !StringUtils.isEmpty(MzSystemUtils.findReceiver(context, PushConstants.MZ_PUSH_SYSTEM_RECEIVER_ACTION, str));
     }
 
     public static boolean isSupportVideoNotification() {

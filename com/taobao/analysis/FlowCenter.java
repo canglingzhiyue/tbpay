@@ -3,7 +3,7 @@ package com.taobao.analysis;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.status.NetworkStatusHelper;
 import anet.channel.util.ALog;
@@ -160,7 +160,7 @@ public class FlowCenter {
                     com.taobao.analysis.flow.a.a(FlowCenter.FALCO_GROUP);
                     try {
                         String config = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "full_trace_tlog_enable", null);
-                        if (!TextUtils.isEmpty(config)) {
+                        if (!StringUtils.isEmpty(config)) {
                             FullTraceAnalysis.getInstance().setTLogTraceEnable(Boolean.valueOf(config).booleanValue());
                         }
                     } catch (Exception e) {
@@ -168,7 +168,7 @@ public class FlowCenter {
                     }
                     try {
                         String config2 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "important_mtop_apis", null);
-                        if (!TextUtils.isEmpty(config2)) {
+                        if (!StringUtils.isEmpty(config2)) {
                             FullTraceAnalysis.getInstance().setImportantMtopApi(config2);
                         }
                     } catch (Exception e2) {
@@ -176,7 +176,7 @@ public class FlowCenter {
                     }
                     try {
                         String config3 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "background_flow_max_minute_value", null);
-                        if (!TextUtils.isEmpty(config3)) {
+                        if (!StringUtils.isEmpty(config3)) {
                             c.a(Integer.valueOf(config3).intValue());
                         }
                     } catch (Exception e3) {
@@ -184,7 +184,7 @@ public class FlowCenter {
                     }
                     try {
                         String config4 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "background_flow_monitor", null);
-                        if (!TextUtils.isEmpty(config4)) {
+                        if (!StringUtils.isEmpty(config4)) {
                             c.a(Boolean.valueOf(config4).booleanValue());
                         }
                     } catch (Exception e4) {
@@ -192,7 +192,7 @@ public class FlowCenter {
                     }
                     try {
                         String config5 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "important_network_urls", null);
-                        if (!TextUtils.isEmpty(config5)) {
+                        if (!StringUtils.isEmpty(config5)) {
                             FullTraceAnalysis.getInstance().setImportantNetworkUrl(config5);
                         }
                     } catch (Exception e5) {
@@ -200,7 +200,7 @@ public class FlowCenter {
                     }
                     try {
                         String config6 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_V3_ENABLE, null);
-                        if (!TextUtils.isEmpty(config6)) {
+                        if (!StringUtils.isEmpty(config6)) {
                             v.b().a(Boolean.valueOf(config6).booleanValue());
                         } else {
                             v.b().c();
@@ -210,7 +210,7 @@ public class FlowCenter {
                     }
                     try {
                         String config7 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_LOAD_ENABLE, null);
-                        if (!TextUtils.isEmpty(config7)) {
+                        if (!StringUtils.isEmpty(config7)) {
                             v.b().b(Boolean.valueOf(config7).booleanValue());
                         } else {
                             v.b().i();
@@ -220,7 +220,7 @@ public class FlowCenter {
                     }
                     try {
                         String config8 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_LOAD_HOOK_ACTIVITY_ENABLE, null);
-                        if (!TextUtils.isEmpty(config8)) {
+                        if (!StringUtils.isEmpty(config8)) {
                             v.b().c(Boolean.valueOf(config8).booleanValue());
                         } else {
                             v.b().j();
@@ -230,7 +230,7 @@ public class FlowCenter {
                     }
                     try {
                         String config9 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_LOAD_HOOK_WINDOW_ENABLE, null);
-                        if (!TextUtils.isEmpty(config9)) {
+                        if (!StringUtils.isEmpty(config9)) {
                             v.b().g(Boolean.valueOf(config9).booleanValue());
                         } else {
                             v.b().p();
@@ -240,7 +240,7 @@ public class FlowCenter {
                     }
                     try {
                         String config10 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_ENV_ENABLE, null);
-                        if (!TextUtils.isEmpty(config10)) {
+                        if (!StringUtils.isEmpty(config10)) {
                             v.b().f(Boolean.valueOf(config10).booleanValue());
                         } else {
                             v.b().n();
@@ -250,7 +250,7 @@ public class FlowCenter {
                     }
                     try {
                         String config11 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_ENV_REPORT_LIST, null);
-                        if (!TextUtils.isEmpty(config11)) {
+                        if (!StringUtils.isEmpty(config11)) {
                             v.b().h(config11);
                         }
                         v.b().b(v.KEY_ENV_REPORT_LIST, config11);
@@ -259,7 +259,7 @@ public class FlowCenter {
                     }
                     try {
                         String config12 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_ENV_INJECT_ENABLE, null);
-                        if (!TextUtils.isEmpty(config12)) {
+                        if (!StringUtils.isEmpty(config12)) {
                             v.b().d(Boolean.valueOf(config12).booleanValue());
                         } else {
                             v.b().k();
@@ -269,7 +269,7 @@ public class FlowCenter {
                     }
                     try {
                         String config13 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_ENV_CPU_REPORT_ENABLE, null);
-                        if (!TextUtils.isEmpty(config13)) {
+                        if (!StringUtils.isEmpty(config13)) {
                             v.b().h(Boolean.valueOf(config13).booleanValue());
                         } else {
                             v.b().q();
@@ -279,7 +279,7 @@ public class FlowCenter {
                     }
                     try {
                         String config14 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_EXCEPTION_REPORTER_ENABLE, null);
-                        if (!TextUtils.isEmpty(config14)) {
+                        if (!StringUtils.isEmpty(config14)) {
                             v.b().i(Boolean.valueOf(config14).booleanValue());
                         } else {
                             v.b().r();
@@ -289,7 +289,7 @@ public class FlowCenter {
                     }
                     try {
                         String config15 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_GC_MONITOR_ENABLE, null);
-                        if (!TextUtils.isEmpty(config15)) {
+                        if (!StringUtils.isEmpty(config15)) {
                             v.b().j(Boolean.valueOf(config15).booleanValue());
                         } else {
                             v.b().s();
@@ -299,7 +299,7 @@ public class FlowCenter {
                     }
                     try {
                         String config16 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_SCROLL_GC_MONITOR_ENABLE, null);
-                        if (!TextUtils.isEmpty(config16)) {
+                        if (!StringUtils.isEmpty(config16)) {
                             v.b().k(Boolean.valueOf(config16).booleanValue());
                         } else {
                             v.b().t();
@@ -309,7 +309,7 @@ public class FlowCenter {
                     }
                     try {
                         String config17 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_WEAK_GC_MONITOR_ENABLE, null);
-                        if (!TextUtils.isEmpty(config17)) {
+                        if (!StringUtils.isEmpty(config17)) {
                             v.b().l(Boolean.valueOf(config17).booleanValue());
                         } else {
                             v.b().u();
@@ -319,7 +319,7 @@ public class FlowCenter {
                     }
                     try {
                         String config18 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_SCREEN_SHOT_ENABLE, null);
-                        if (!TextUtils.isEmpty(config18)) {
+                        if (!StringUtils.isEmpty(config18)) {
                             v.b().e(Boolean.valueOf(config18).booleanValue());
                         } else {
                             v.b().m();
@@ -329,7 +329,7 @@ public class FlowCenter {
                     }
                     try {
                         String config19 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_MODULE_LIST, null);
-                        if (!TextUtils.isEmpty(config19)) {
+                        if (!StringUtils.isEmpty(config19)) {
                             v.b().a(config19);
                         }
                         v.b().b(v.KEY_MODULE_LIST, config19);
@@ -338,7 +338,7 @@ public class FlowCenter {
                     }
                     try {
                         String config20 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_SCENE_LIST, null);
-                        if (!TextUtils.isEmpty(config20)) {
+                        if (!StringUtils.isEmpty(config20)) {
                             v.b().b(config20);
                         }
                         v.b().b(v.KEY_SCENE_LIST, config20);
@@ -347,7 +347,7 @@ public class FlowCenter {
                     }
                     try {
                         String config21 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, v.KEY_METRICS_SCENE_LIST, null);
-                        if (!TextUtils.isEmpty(config21)) {
+                        if (!StringUtils.isEmpty(config21)) {
                             v.b().c(config21);
                         }
                         v.b().b(v.KEY_METRICS_SCENE_LIST, config21);
@@ -356,7 +356,7 @@ public class FlowCenter {
                     }
                     try {
                         String config22 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "important_utdids", null);
-                        if (!TextUtils.isEmpty(config22)) {
+                        if (!StringUtils.isEmpty(config22)) {
                             JSONArray jSONArray = new JSONArray(config22);
                             int i = 0;
                             while (true) {
@@ -375,35 +375,35 @@ public class FlowCenter {
                     }
                     try {
                         String config23 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "falco_extend_enable", null);
-                        if (!TextUtils.isEmpty(config23)) {
+                        if (!StringUtils.isEmpty(config23)) {
                             FullTraceAnalysis.getInstance().setFalcoExtendEnable(Boolean.valueOf(config23).booleanValue());
                         }
                     } catch (Exception unused2) {
                     }
                     try {
                         String config24 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "mtop_ssr_ut_enable", null);
-                        if (!TextUtils.isEmpty(config24)) {
+                        if (!StringUtils.isEmpty(config24)) {
                             FullTraceAnalysis.getInstance().setFalcoSSRMonitorEnable(Boolean.valueOf(config24).booleanValue());
                         }
                     } catch (Exception unused3) {
                     }
                     try {
                         String config25 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "falco_extend_timeout", null);
-                        if (!TextUtils.isEmpty(config25)) {
+                        if (!StringUtils.isEmpty(config25)) {
                             FullTraceAnalysis.getInstance().setFalcoExtendTimeout(Long.valueOf(config25).longValue());
                         }
                     } catch (Exception unused4) {
                     }
                     try {
                         String config26 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, "fix_timeout_clean", null);
-                        if (!TextUtils.isEmpty(config26)) {
+                        if (!StringUtils.isEmpty(config26)) {
                             FullTraceAnalysis.getInstance().setTimeoutFix(Boolean.valueOf(config26).booleanValue());
                         }
                     } catch (Exception unused5) {
                     }
                     try {
                         String config27 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, f.CHANNEL_MONITOR_SWITCH_KEY, null);
-                        if (!TextUtils.isEmpty(config27)) {
+                        if (!StringUtils.isEmpty(config27)) {
                             f.a().a(Boolean.valueOf(config27).booleanValue());
                         }
                     } catch (Exception e22) {
@@ -411,28 +411,28 @@ public class FlowCenter {
                     }
                     try {
                         String config28 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, JankContinuousMonitor.KEY_WHITE_LIST, null);
-                        if (!TextUtils.isEmpty(config28)) {
+                        if (!StringUtils.isEmpty(config28)) {
                             JankContinuousMonitor.a().a(config28);
                         }
                     } catch (Exception unused6) {
                     }
                     try {
                         String config29 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, JankContinuousMonitor.KEY_EXCLUDE_BIZ_CODES, null);
-                        if (!TextUtils.isEmpty(config29)) {
+                        if (!StringUtils.isEmpty(config29)) {
                             JankContinuousMonitor.a().b(config29);
                         }
                     } catch (Exception unused7) {
                     }
                     try {
                         String config30 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, JankContinuousMonitor.KEY_JANK_THRESHOLD, null);
-                        if (!TextUtils.isEmpty(config30)) {
+                        if (!StringUtils.isEmpty(config30)) {
                             JankContinuousMonitor.a().a(Float.valueOf(config30).floatValue());
                         }
                     } catch (Exception unused8) {
                     }
                     try {
                         String config31 = OrangeConfig.getInstance().getConfig(FlowCenter.FALCO_GROUP, JankContinuousMonitor.KEY_JANK_CHECK_INTERVAL, null);
-                        if (!TextUtils.isEmpty(config31)) {
+                        if (!StringUtils.isEmpty(config31)) {
                             JankContinuousMonitor.a().a(Long.valueOf(config31).longValue());
                         }
                     } catch (Exception unused9) {

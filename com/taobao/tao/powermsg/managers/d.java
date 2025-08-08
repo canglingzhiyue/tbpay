@@ -1,7 +1,7 @@
 package com.taobao.tao.powermsg.managers;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSClient;
 import com.taobao.accs.AccsClientConfig;
@@ -132,7 +132,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("737577e", new Object[]{this, new Integer(i), str, str2, str3, str4, str5, new Integer(i2), new Integer(i3), fVar, aVar})).intValue();
         }
-        String str9 = TextUtils.isEmpty(str2) ? "_default" : str2;
+        String str9 = StringUtils.isEmpty(str2) ? "_default" : str2;
         final String a3 = com.taobao.tao.powermsg.d.a(str4);
         synchronized (this.f20845a) {
             final String str10 = str9;
@@ -215,7 +215,7 @@ public class d {
                     create.setBizTag(str4);
                     create.body.b = i2;
                     create.body.d = i3;
-                    if (TextUtils.isEmpty(str5)) {
+                    if (StringUtils.isEmpty(str5)) {
                         str8 = "" + create.createTime;
                     } else {
                         str8 = str5;
@@ -241,7 +241,7 @@ public class d {
                         try {
                             bVar.m = true;
                             create.routeGroup = fVar.c();
-                            if (!TextUtils.isEmpty(Launcher_InitAccs.mUserId)) {
+                            if (!StringUtils.isEmpty(Launcher_InitAccs.mUserId)) {
                                 create.header.n = new HashMap(2);
                                 create.header.n.put("userId", Launcher_InitAccs.mUserId);
                             }
@@ -375,7 +375,7 @@ public class d {
                 if (e.a(i, str) != null) {
                     bVar.m = true;
                     create.sysCode = 5;
-                    if (!TextUtils.isEmpty(Launcher_InitAccs.mUserId)) {
+                    if (!StringUtils.isEmpty(Launcher_InitAccs.mUserId)) {
                         create.header.n = new HashMap(2);
                         create.header.n.put("userId", Launcher_InitAccs.mUserId);
                     }
@@ -425,7 +425,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("de6ed0dd", new Object[]{this, new Integer(i), str, str2, str3, str4, str5, new Integer(i2), new Integer(i3), fVar, aVar})).intValue();
         }
-        String str7 = TextUtils.isEmpty(str2) ? "_default" : str2;
+        String str7 = StringUtils.isEmpty(str2) ? "_default" : str2;
         final String a2 = com.taobao.tao.powermsg.d.a(str4);
         synchronized (this.f20845a) {
             try {
@@ -486,7 +486,7 @@ public class d {
                             }
                             create.header.f31524a = str;
                             create.bizCode = i;
-                            if (TextUtils.isEmpty(str5)) {
+                            if (StringUtils.isEmpty(str5)) {
                                 str6 = "" + put;
                             } else {
                                 str6 = str5;
@@ -500,7 +500,7 @@ public class d {
                             if (z) {
                                 try {
                                     bVar.m = true;
-                                    if (!TextUtils.isEmpty(Launcher_InitAccs.mUserId)) {
+                                    if (!StringUtils.isEmpty(Launcher_InitAccs.mUserId)) {
                                         create.header.n = new HashMap(2);
                                         create.header.n.put("userId", Launcher_InitAccs.mUserId);
                                     }

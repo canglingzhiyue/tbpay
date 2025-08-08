@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.event;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.model.CartGlobal;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.alibaba.fastjson.JSONObject;
@@ -121,7 +121,7 @@ public class ad extends bca {
             String str4 = "{\"items\":[";
             for (IDMComponent iDMComponent2 : list) {
                 String str5 = (String) bei.a(iDMComponent2, (Class<Object>) String.class, "h5CartParam");
-                if (!TextUtils.isEmpty(str5)) {
+                if (!StringUtils.isEmpty(str5)) {
                     str4 = str4 + str5 + ",";
                 }
             }
@@ -212,7 +212,7 @@ public class ad extends bca {
             for (IDMComponent iDMComponent : list) {
                 if (iDMComponent.getFields() != null) {
                     String string = iDMComponent.getFields().getString("bizCode");
-                    if (!TextUtils.isEmpty(string) && !arrayList.contains(string)) {
+                    if (!StringUtils.isEmpty(string) && !arrayList.contains(string)) {
                         arrayList.add(string);
                         sb.append(string);
                         sb.append(",");
@@ -249,7 +249,7 @@ public class ad extends bca {
                 IDMComponent next = it.next();
                 if (next != null) {
                     String str = (String) bei.a(next, (Class<Object>) String.class, "exclude");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         String a2 = a(str, controlParas);
                         String a3 = xib.a(str, controlParas);
                         a aVar3 = new a();
@@ -343,14 +343,14 @@ public class ad extends bca {
         if (j != -1) {
             bundle.putLong("START_CLICK_TIME", j);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             bundle.putString("PRELOAD", str4);
         }
         if (this.k) {
             bundle.putString("pageType", PopStrategy.IDENTIFIER_FLOAT);
             bundle.putString("openFrom", "carts");
         }
-        if (!TextUtils.isEmpty(this.n)) {
+        if (!StringUtils.isEmpty(this.n)) {
             bundle.putString(com.taobao.android.abilitykit.ability.pop.model.c.KEY_POP_CONFIG, this.n);
         }
         return bundle;

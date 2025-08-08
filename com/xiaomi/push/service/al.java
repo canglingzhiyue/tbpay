@@ -13,7 +13,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.service.notification.StatusBarNotification;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.widget.RemoteViews;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
@@ -81,7 +81,7 @@ public class al {
         @Override // java.util.concurrent.Callable
         /* renamed from: a */
         public Bitmap call() {
-            if (TextUtils.isEmpty(this.f920a)) {
+            if (StringUtils.isEmpty(this.f920a)) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("Failed get online picture/icon resource cause picUrl is empty");
             } else if (!this.f920a.startsWith("http")) {
                 Bitmap a2 = av.a(this.f24639a, this.f920a);
@@ -146,7 +146,7 @@ public class al {
 
     private static int a(Map<String, String> map) {
         String str = map == null ? null : map.get("timeout");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return Integer.parseInt(str);
             } catch (Exception unused) {
@@ -282,7 +282,7 @@ public class al {
             Map<String, String> m2069a = m2102a.m2069a();
             String str = m2069a.get("layout_name");
             String str2 = m2069a.get("layout_value");
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 try {
                     Resources resourcesForApplication = context.getPackageManager().getResourcesForApplication(a2);
                     int identifier = resourcesForApplication.getIdentifier(str, "layout", a2);
@@ -356,7 +356,7 @@ public class al {
             return a4;
         } else if ("2".equals(str2)) {
             ff ffVar = new ff(context);
-            Bitmap a5 = TextUtils.isEmpty(m2069a.get("notification_bigPic_uri")) ? null : a(context, m2069a.get("notification_bigPic_uri"), false);
+            Bitmap a5 = StringUtils.isEmpty(m2069a.get("notification_bigPic_uri")) ? null : a(context, m2069a.get("notification_bigPic_uri"), false);
             if (a5 == null) {
                 com.xiaomi.channel.commonutils.logger.b.m1616a("can not get big picture.");
                 return ffVar;
@@ -373,10 +373,10 @@ public class al {
             return ffVar2;
         } else if ("4".equals(str2) && com.xiaomi.push.j.m2117a()) {
             fe feVar = new fe(context, a3);
-            if (!TextUtils.isEmpty(m2069a.get("notification_banner_image_uri"))) {
+            if (!StringUtils.isEmpty(m2069a.get("notification_banner_image_uri"))) {
                 feVar.mo1922a(a(context, m2069a.get("notification_banner_image_uri"), false));
             }
-            if (!TextUtils.isEmpty(m2069a.get("notification_banner_icon_uri"))) {
+            if (!StringUtils.isEmpty(m2069a.get("notification_banner_icon_uri"))) {
                 feVar.b(a(context, m2069a.get("notification_banner_icon_uri"), false));
             }
             feVar.a(m2069a);
@@ -385,12 +385,12 @@ public class al {
             return new ff(context);
         } else {
             fg fgVar = new fg(context, i, a3);
-            if (!TextUtils.isEmpty(m2069a.get("notification_colorful_button_text")) && (a2 = a(context, a3, iyVar, bArr, i, 4)) != null) {
+            if (!StringUtils.isEmpty(m2069a.get("notification_colorful_button_text")) && (a2 = a(context, a3, iyVar, bArr, i, 4)) != null) {
                 fgVar.a(m2069a.get("notification_colorful_button_text"), a2).a(m2069a.get("notification_colorful_button_bg_color"));
             }
-            if (!TextUtils.isEmpty(m2069a.get("notification_colorful_bg_color"))) {
+            if (!StringUtils.isEmpty(m2069a.get("notification_colorful_bg_color"))) {
                 fgVar.b(m2069a.get("notification_colorful_bg_color"));
-            } else if (!TextUtils.isEmpty(m2069a.get("notification_colorful_bg_image_uri"))) {
+            } else if (!StringUtils.isEmpty(m2069a.get("notification_colorful_bg_image_uri"))) {
                 fgVar.mo1922a(a(context, m2069a.get("notification_colorful_bg_image_uri"), false));
             }
             fgVar.a(m2069a);
@@ -456,14 +456,14 @@ public class al {
                 cVar.f923a = a(iyVar);
                 Notification notification = a5.f922a;
                 if (com.xiaomi.push.j.m2117a()) {
-                    if (!TextUtils.isEmpty(m2102a.m2068a())) {
+                    if (!StringUtils.isEmpty(m2102a.m2068a())) {
                         notification.extras.putString(Constant.PROP_MESSAGE_ID, m2102a.m2068a());
                     }
                     notification.extras.putString("local_paid", iyVar.m2103a());
                     ax.a(map, notification.extras, "msg_busi_type");
                     ax.a(map, notification.extras, "disable_notification_flags");
                     String str3 = m2102a.m2074b() == null ? null : m2102a.m2074b().get("score_info");
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         notification.extras.putString("score_info", str3);
                     }
                     notification.extras.putString("pushUid", a(m2102a.f573a, "n_stats_expose"));
@@ -516,7 +516,7 @@ public class al {
                     }
                     com.xiaomi.push.ah a8 = com.xiaomi.push.ah.a(context);
                     int a9 = a(m2102a.m2069a());
-                    if (a9 > 0 && !TextUtils.isEmpty(str2)) {
+                    if (a9 > 0 && !StringUtils.isEmpty(str2)) {
                         String str5 = "n_timeout_" + str2;
                         a8.m1699a(str5);
                         a8.b(new am(str5, a7, b2), a9);
@@ -546,14 +546,14 @@ public class al {
     }
 
     private static String a(Context context, String str, Map<String, String> map) {
-        return (map == null || TextUtils.isEmpty(map.get("channel_name"))) ? com.xiaomi.push.g.m1950b(context, str) : map.get("channel_name");
+        return (map == null || StringUtils.isEmpty(map.get("channel_name"))) ? com.xiaomi.push.g.m1950b(context, str) : map.get("channel_name");
     }
 
     public static String a(iy iyVar) {
         ip m2102a;
         if ("com.xiaomi.xmsf".equals(iyVar.f665b) && (m2102a = iyVar.m2102a()) != null && m2102a.m2069a() != null) {
             String str = m2102a.m2069a().get("miui_package_name");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         }
@@ -576,11 +576,11 @@ public class al {
     }
 
     private static void a(Context context, Intent intent, iy iyVar, ip ipVar, String str, int i) {
-        if (iyVar == null || ipVar == null || TextUtils.isEmpty(str)) {
+        if (iyVar == null || ipVar == null || StringUtils.isEmpty(str)) {
             return;
         }
         String a2 = a(ipVar.m2069a(), i);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         if (!bj.f24670a.equals(a2) && !bj.b.equals(a2) && !bj.c.equals(a2)) {
@@ -588,7 +588,7 @@ public class al {
         }
         intent.putExtra("messageId", str);
         intent.putExtra("local_paid", iyVar.f661a);
-        if (!TextUtils.isEmpty(iyVar.f665b)) {
+        if (!StringUtils.isEmpty(iyVar.f665b)) {
             intent.putExtra(HiAnalyticsConstant.BI_KEY_TARGET_PACKAGE, iyVar.f665b);
         }
         intent.putExtra("job_key", a(ipVar.m2069a(), "jobkey"));
@@ -606,7 +606,7 @@ public class al {
 
     public static void a(Context context, String str, int i, int i2) {
         int hashCode;
-        if (context == null || TextUtils.isEmpty(str) || i < -1) {
+        if (context == null || StringUtils.isEmpty(str) || i < -1) {
             return;
         }
         aw a2 = aw.a(context, str);
@@ -628,7 +628,7 @@ public class al {
                 break;
             }
             StatusBarNotification next = it.next();
-            if (!TextUtils.isEmpty(String.valueOf(next.getId()))) {
+            if (!StringUtils.isEmpty(String.valueOf(next.getId()))) {
                 int id = next.getId();
                 if (z) {
                     linkedList.add(next);
@@ -668,7 +668,7 @@ public class al {
     }
 
     public static void a(Context context, String str, String str2, String str3) {
-        if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (context == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return;
         }
         aw a2 = aw.a(context, str);
@@ -679,11 +679,11 @@ public class al {
         LinkedList linkedList = new LinkedList();
         for (StatusBarNotification statusBarNotification : m2297b) {
             Notification notification = statusBarNotification.getNotification();
-            if (notification != null && !TextUtils.isEmpty(String.valueOf(statusBarNotification.getId()))) {
+            if (notification != null && !StringUtils.isEmpty(String.valueOf(statusBarNotification.getId()))) {
                 int id = statusBarNotification.getId();
                 String a3 = ax.a(notification);
                 String b2 = ax.b(notification);
-                if (!TextUtils.isEmpty(a3) && !TextUtils.isEmpty(b2) && a(a3, str2) && a(b2, str3)) {
+                if (!StringUtils.isEmpty(a3) && !StringUtils.isEmpty(b2) && a(a3, str2) && a(b2, str3)) {
                     linkedList.add(statusBarNotification);
                     a2.a(id);
                 }
@@ -716,32 +716,32 @@ public class al {
         PendingIntent a4;
         PendingIntent a5;
         Map<String, String> m2069a = iyVar.m2102a().m2069a();
-        if (TextUtils.equals("3", m2069a.get("notification_style_type")) || TextUtils.equals("4", m2069a.get("notification_style_type"))) {
+        if (StringUtils.equals("3", m2069a.get("notification_style_type")) || StringUtils.equals("4", m2069a.get("notification_style_type"))) {
             return;
         }
         if (m2280b(m2069a)) {
             for (int i2 = 1; i2 <= 3; i2++) {
                 String str2 = m2069a.get(String.format("cust_btn_%s_n", Integer.valueOf(i2)));
-                if (!TextUtils.isEmpty(str2) && (a5 = a(context, str, iyVar, bArr, i, i2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (a5 = a(context, str, iyVar, bArr, i, i2)) != null) {
                     ffVar.addAction(0, str2, a5);
                 }
             }
             return;
         }
-        if (!TextUtils.isEmpty(m2069a.get("notification_style_button_left_name")) && (a4 = a(context, str, iyVar, bArr, i, 1)) != null) {
+        if (!StringUtils.isEmpty(m2069a.get("notification_style_button_left_name")) && (a4 = a(context, str, iyVar, bArr, i, 1)) != null) {
             ffVar.addAction(0, m2069a.get("notification_style_button_left_name"), a4);
         }
-        if (!TextUtils.isEmpty(m2069a.get("notification_style_button_mid_name")) && (a3 = a(context, str, iyVar, bArr, i, 2)) != null) {
+        if (!StringUtils.isEmpty(m2069a.get("notification_style_button_mid_name")) && (a3 = a(context, str, iyVar, bArr, i, 2)) != null) {
             ffVar.addAction(0, m2069a.get("notification_style_button_mid_name"), a3);
         }
-        if (TextUtils.isEmpty(m2069a.get("notification_style_button_right_name")) || (a2 = a(context, str, iyVar, bArr, i, 3)) == null) {
+        if (StringUtils.isEmpty(m2069a.get("notification_style_button_right_name")) || (a2 = a(context, str, iyVar, bArr, i, 3)) == null) {
             return;
         }
         ffVar.addAction(0, m2069a.get("notification_style_button_right_name"), a2);
     }
 
     private static boolean a(Context context, iy iyVar, String str) {
-        if (iyVar != null && iyVar.m2102a() != null && iyVar.m2102a().m2069a() != null && !TextUtils.isEmpty(str)) {
+        if (iyVar != null && iyVar.m2102a() != null && iyVar.m2102a().m2069a() != null && !StringUtils.isEmpty(str)) {
             return Boolean.parseBoolean(iyVar.m2102a().m2069a().get("use_clicked_activity")) && m.a(context, a(str));
         }
         com.xiaomi.channel.commonutils.logger.b.m1616a("should clicked activity params are null.");
@@ -761,7 +761,7 @@ public class al {
     private static boolean a(ip ipVar) {
         if (ipVar != null) {
             String m2068a = ipVar.m2068a();
-            return !TextUtils.isEmpty(m2068a) && m2068a.length() == 22 && "satuigmo".indexOf(m2068a.charAt(0)) >= 0;
+            return !StringUtils.isEmpty(m2068a) && m2068a.length() == 22 && "satuigmo".indexOf(m2068a.charAt(0)) >= 0;
         }
         return false;
     }
@@ -773,7 +773,7 @@ public class al {
     }
 
     private static boolean a(String str, String str2) {
-        return TextUtils.isEmpty(str) || str2.contains(str);
+        return StringUtils.isEmpty(str) || str2.contains(str);
     }
 
     /* renamed from: a  reason: collision with other method in class */
@@ -785,10 +785,10 @@ public class al {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x004f, code lost:
-        if (android.text.TextUtils.isEmpty(r3) == false) goto L10;
+        if (android.text.StringUtils.isEmpty(r3) == false) goto L10;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0072, code lost:
-        if (android.text.TextUtils.isEmpty(r3) == false) goto L10;
+        if (android.text.StringUtils.isEmpty(r3) == false) goto L10;
      */
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0074, code lost:
         r1 = r3;
@@ -820,14 +820,14 @@ public class al {
             java.lang.String r3 = "title_short"
             java.lang.Object r3 = r4.get(r3)
             java.lang.String r3 = (java.lang.String) r3
-            boolean r2 = android.text.TextUtils.isEmpty(r3)
+            boolean r2 = android.text.StringUtils.isEmpty(r3)
             if (r2 != 0) goto L43
             r0 = r3
         L43:
             java.lang.String r3 = "description_short"
             java.lang.Object r3 = r4.get(r3)
             java.lang.String r3 = (java.lang.String) r3
-            boolean r4 = android.text.TextUtils.isEmpty(r3)
+            boolean r4 = android.text.StringUtils.isEmpty(r3)
             if (r4 != 0) goto L75
             goto L74
         L52:
@@ -836,14 +836,14 @@ public class al {
             java.lang.String r3 = "title_long"
             java.lang.Object r3 = r4.get(r3)
             java.lang.String r3 = (java.lang.String) r3
-            boolean r2 = android.text.TextUtils.isEmpty(r3)
+            boolean r2 = android.text.StringUtils.isEmpty(r3)
             if (r2 != 0) goto L66
             r0 = r3
         L66:
             java.lang.String r3 = "description_long"
             java.lang.Object r3 = r4.get(r3)
             java.lang.String r3 = (java.lang.String) r3
-            boolean r4 = android.text.TextUtils.isEmpty(r3)
+            boolean r4 = android.text.StringUtils.isEmpty(r3)
             if (r4 != 0) goto L75
         L74:
             r1 = r3
@@ -871,7 +871,7 @@ public class al {
     private static int b(Map<String, String> map) {
         if (map != null) {
             String str = map.get("channel_importance");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return 3;
             }
             try {
@@ -904,7 +904,7 @@ public class al {
 
     /* renamed from: b  reason: collision with other method in class */
     public static void m2277b(Context context, String str) {
-        if (!com.xiaomi.push.j.m2118a(context) || f917a == null || TextUtils.isEmpty(str)) {
+        if (!com.xiaomi.push.j.m2118a(context) || f917a == null || StringUtils.isEmpty(str)) {
             return;
         }
         f917a.a(str);
@@ -929,9 +929,9 @@ public class al {
             java.lang.String r0 = a(r5, r0)
             java.lang.String r1 = "fcm_icon_color"
             java.lang.String r5 = a(r5, r1)
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 != 0) goto L2c
-            boolean r1 = android.text.TextUtils.isEmpty(r5)
+            boolean r1 = android.text.StringUtils.isEmpty(r5)
             if (r1 != 0) goto L2c
             int r0 = a(r2, r3, r0)
             if (r0 <= 0) goto L2c
@@ -983,7 +983,7 @@ public class al {
     private static int c(Map<String, String> map) {
         if (map != null) {
             String str = map.get("notification_priority");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return 0;
             }
             try {

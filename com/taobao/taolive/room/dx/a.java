@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.dx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -143,7 +143,7 @@ public abstract class a implements com.taobao.taolive.sdk.adapter.network.d {
             return (String) ipChange.ipc$dispatch("31400281", new Object[]{this, context});
         }
         String a2 = com.taobao.taolive.room.utils.h.a(context);
-        if (!TextUtils.isEmpty(a2) || context == null || context.getResources() == null) {
+        if (!StringUtils.isEmpty(a2) || context == null || context.getResources() == null) {
             return a2;
         }
         try {
@@ -184,7 +184,7 @@ public abstract class a implements com.taobao.taolive.sdk.adapter.network.d {
         JSONObject jSONObject2 = (JSONObject) pqj.a(jSONObject);
         if (jSONObject2 == null || jSONObject2.getJSONArray("result") == null || jSONObject2.getJSONArray("result").isEmpty()) {
             String b = b(this.b);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             a(b);
@@ -193,7 +193,7 @@ public abstract class a implements com.taobao.taolive.sdk.adapter.network.d {
         this.c = jSONObject;
         com.taobao.android.live.plugin.proxy.f.m().setTemplateString(this.c);
         a(this.c);
-        if (TextUtils.isEmpty(this.c) || this.c.equals(b(this.b))) {
+        if (StringUtils.isEmpty(this.c) || this.c.equals(b(this.b))) {
             Log.e(d, "mTemplateString is null OR same cache");
         } else {
             com.taobao.taolive.room.utils.h.a(this.b, this.c);
@@ -257,15 +257,15 @@ public abstract class a implements com.taobao.taolive.sdk.adapter.network.d {
         if (ipChange instanceof IpChange) {
             return (DXRootView) ipChange.ipc$dispatch("fb6cf46d", new Object[]{this, context, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap hashMap = new HashMap();
         hashMap.put("name", str);
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = b(context);
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             pqi.a().a("DXManager_Create_Point", pqj.a(hashMap), "mTemplateString", "mTemplateString");
             return null;
         }

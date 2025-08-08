@@ -2,7 +2,7 @@ package com.taobao.android.external;
 
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.trace.UmbrellaTracker;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -117,7 +117,7 @@ public class UCPManager {
         TLog.loge("UCP:", "tryTriggerUCPEvent", JSON.toJSONString(jSONObject));
         String a2 = com.taobao.android.behavix.behavixswitch.a.a("splashADDowngradeUrl", "");
         String a3 = com.taobao.android.behavix.behavixswitch.a.a("splashADDowngradeIndexId", "");
-        if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(a3)) {
             jSONObject2.put("popIndexId", (Object) a3);
             jSONObject2.put("msg", (Object) "UCPDowngrade");
             Intent intent = new Intent("com.alibaba.poplayer.PopLayer.action.POP");
@@ -153,7 +153,7 @@ public class UCPManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("94183892", new Object[]{bVar, str});
-        } else if (TextUtils.isEmpty(str) || bVar == null) {
+        } else if (StringUtils.isEmpty(str) || bVar == null) {
         } else {
             b.put(str, bVar);
             bVar.registerStateSynchronizer(new com.taobao.android.external.c());
@@ -164,7 +164,7 @@ public class UCPManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             b.remove(str);
         }
@@ -179,7 +179,7 @@ public class UCPManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9d5d0b6a", new Object[]{str, str2, str3, jSONObject});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str3)) {
         } else {
             if (!com.taobao.android.behavix.d.e()) {
                 UtUtils.a("UCP", 19999, "behavixNull", "sendUCPEventWithScene", "", "");
@@ -238,7 +238,7 @@ public class UCPManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             com.taobao.android.behavir.util.a.a(str);
         }
@@ -259,7 +259,7 @@ public class UCPManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ac9222c7", new Object[]{str, bVar});
-        } else if (TextUtils.isEmpty(str) || bVar == null) {
+        } else if (StringUtils.isEmpty(str) || bVar == null) {
             if (bVar != null) {
                 bVar.callback(false, UCP_CHECK_PARAMS_FAILED, new JSONObject());
             }

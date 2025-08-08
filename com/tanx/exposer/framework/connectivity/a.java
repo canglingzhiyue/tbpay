@@ -10,7 +10,7 @@ import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
 import android.net.NetworkRequest;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tanx.exposer.d;
@@ -73,7 +73,7 @@ public class a {
                 if (dha.f26745a) {
                     dha.a("NetworkStateObserver", "onReceive: action = " + action);
                 }
-                if (!TextUtils.equals(action, "android.net.conn.CONNECTIVITY_CHANGE")) {
+                if (!StringUtils.equals(action, "android.net.conn.CONNECTIVITY_CHANGE")) {
                     return;
                 }
                 a.this.b();

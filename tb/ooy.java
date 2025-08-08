@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -32,7 +32,7 @@ public class ooy implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ff35999", new Object[]{this, jSONObject, gkcVar});
-        } else if (jSONObject == null || TextUtils.equals("download", jSONObject.getString("dataSourceType"))) {
+        } else if (jSONObject == null || StringUtils.equals("download", jSONObject.getString("dataSourceType"))) {
         } else {
             jSONObject.put("_msgType", "scrollToTop");
             d.c(this.f32246a.a()).a(RecmdContainerMsg.getMessage(jSONObject));

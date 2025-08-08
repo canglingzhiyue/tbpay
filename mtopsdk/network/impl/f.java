@@ -1,6 +1,6 @@
 package mtopsdk.network.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,7 +25,7 @@ public class f {
             return (f) ipChange.ipc$dispatch("3bc883e", new Object[]{str});
         }
         f fVar = new f();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return fVar;
         }
         try {

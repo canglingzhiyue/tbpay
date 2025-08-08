@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -165,7 +165,7 @@ public class hhc extends iot {
                     case 3:
                         if (objArr.length > 3 && (objArr[4] instanceof String)) {
                             String str2 = (String) objArr[4];
-                            if (!TextUtils.isEmpty(str2)) {
+                            if (!StringUtils.isEmpty(str2)) {
                                 HashMap hashMap3 = new HashMap();
                                 hashMap3.put("x", "0");
                                 hashMap3.put("y", String.valueOf(0));
@@ -203,7 +203,7 @@ public class hhc extends iot {
                         if (objArr.length > 4 && (objArr[4] instanceof String)) {
                             String str4 = (String) objArr[4];
                             q.a("DXTaoLiveAnchorCardActionEventHandler", "jumpUrl:" + objArr[4] + " " + str4);
-                            if (!TextUtils.isEmpty(str4)) {
+                            if (!StringUtils.isEmpty(str4)) {
                                 Bundle bundle = new Bundle();
                                 if (n.a() != null && n.a().M() != null) {
                                     bundle.putString("initMuteStatus", String.valueOf(n.a().M().b()));
@@ -214,7 +214,7 @@ public class hhc extends iot {
                             if (objArr[3] instanceof String) {
                                 String str5 = (String) objArr[3];
                                 HashMap<String, String> hashMap4 = new HashMap<>();
-                                if (TextUtils.equals("shopClick", str5)) {
+                                if (StringUtils.equals("shopClick", str5)) {
                                     if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() != null) {
                                         hashMap4.put("name", "shop");
                                         hashMap4.put("spm-cnt", "a2141.8001249");
@@ -223,10 +223,10 @@ public class hhc extends iot {
                                         com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j().a("LayerThickness_MiniProfile_GuideIcon", hashMap4);
                                         break;
                                     }
-                                } else if (TextUtils.equals("playbackInfoClick", str5)) {
+                                } else if (StringUtils.equals("playbackInfoClick", str5)) {
                                     a(objArr, hashMap4, "playback", cVar);
                                     break;
-                                } else if (TextUtils.equals("videoClick", str5)) {
+                                } else if (StringUtils.equals("videoClick", str5)) {
                                     if (objArr[2] instanceof JSONObject) {
                                         hashMap4.put("type", ((JSONObject) objArr[2]).getString("type"));
                                     }
@@ -236,10 +236,10 @@ public class hhc extends iot {
                                         com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j().a("LayerThickness_MiniProfile_FeedCard", hashMap4);
                                         break;
                                     }
-                                } else if (TextUtils.equals("preLiveInfoClick", str5)) {
+                                } else if (StringUtils.equals("preLiveInfoClick", str5)) {
                                     a(objArr, hashMap4, "preview", cVar);
                                     break;
-                                } else if (TextUtils.equals("anchorSubscribeInfoClick", str5)) {
+                                } else if (StringUtils.equals("anchorSubscribeInfoClick", str5)) {
                                     a(objArr, hashMap4, "subscribe", cVar);
                                     break;
                                 }
@@ -277,7 +277,7 @@ public class hhc extends iot {
         }
         try {
             LiveAvatarInfoCardResponseData.GenerateParams generateParams = (LiveAvatarInfoCardResponseData.GenerateParams) jSONObject.toJavaObject(LiveAvatarInfoCardResponseData.GenerateParams.class);
-            if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() == null || TextUtils.isEmpty(generateParams.controlName)) {
+            if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() == null || StringUtils.isEmpty(generateParams.controlName)) {
                 return;
             }
             HashMap<String, String> hashMap6 = new HashMap<>();

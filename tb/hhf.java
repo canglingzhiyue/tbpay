@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -80,7 +80,7 @@ public class hhf extends iot {
             a.a(cVar, liveItem, string);
             if (liveItem.itemActionData != null && liveItem.itemActionData.containsKey("userBehaviorEvents")) {
                 String string2 = liveItem.itemActionData.getString("userBehaviorEvents");
-                if (!TextUtils.isEmpty(string2) && a(string2, '@', "userbuy")) {
+                if (!StringUtils.isEmpty(string2) && a(string2, '@', "userbuy")) {
                     new sql().a(cVar, liveItem, new pox<Boolean>() { // from class: tb.hhf.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -143,15 +143,15 @@ public class hhf extends iot {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a1f25399", new Object[]{str, new Character(c), str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (c == 0) {
-            return TextUtils.equals(str, str2);
+            return StringUtils.equals(str, str2);
         }
         String[] split = str.split(Character.toString(c));
         for (String str3 : split) {
-            if (TextUtils.equals(str2, str3)) {
+            if (StringUtils.equals(str2, str3)) {
                 return true;
             }
         }

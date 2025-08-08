@@ -1,7 +1,7 @@
 package com.taobao.android.litecreator.util;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -46,7 +46,7 @@ public class n {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.contains("/LcTemp/PublishImage");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.contains("/LcTemp/PublishImage");
     }
 
     public static String a(Context context, String str) {

@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.ag;
 import com.vivo.vms.IPCInvoke;
 import java.util.HashMap;
@@ -38,7 +38,7 @@ public final class i implements ServiceConnection {
         boolean z = true;
         this.j = new Handler(Looper.getMainLooper(), new j(this));
         this.d = com.vivo.push.util.aa.a(context);
-        if (!TextUtils.isEmpty(this.d) && !TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.d) && !StringUtils.isEmpty(this.i)) {
             this.c = ag.a(context, this.d) < 1260 ? false : z;
             b();
             return;
@@ -114,7 +114,7 @@ public final class i implements ServiceConnection {
     public final boolean a() {
         this.d = com.vivo.push.util.aa.a(this.e);
         boolean z = false;
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             com.vivo.push.util.u.c(this.e, "push pkgname is null");
             return false;
         }

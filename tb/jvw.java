@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.ui.coordinatorcard.FactoryType;
@@ -146,7 +146,7 @@ public class jvw {
             str = jvuVar.b(str);
         }
         this.c = str;
-        this.c = TextUtils.isEmpty(this.c) ? "emptyPageName" : this.c;
+        this.c = StringUtils.isEmpty(this.c) ? "emptyPageName" : this.c;
         a("wxBizID", this.c);
     }
 

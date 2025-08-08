@@ -3,7 +3,7 @@ package com.taobao.android.tschedule.task;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -81,11 +81,11 @@ public abstract class ScheduleTask<T extends TaskContext> implements Serializabl
 
         public static THREAD_TYPE getType(String str) {
             THREAD_TYPE[] values;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return BACKGROUND;
             }
             for (THREAD_TYPE thread_type : values()) {
-                if (TextUtils.equals(str, thread_type.name)) {
+                if (StringUtils.equals(str, thread_type.name)) {
                     return thread_type;
                 }
             }
@@ -346,7 +346,7 @@ public abstract class ScheduleTask<T extends TaskContext> implements Serializabl
         }
         for (String str : arrayList) {
             Object remove = jSONObject.remove(str);
-            if (!TextUtils.isEmpty(str) && remove != null) {
+            if (!StringUtils.isEmpty(str) && remove != null) {
                 if (str.startsWith(a.STR_PREFIX)) {
                     String substring = str.substring(5);
                     this.strKey.add(substring);

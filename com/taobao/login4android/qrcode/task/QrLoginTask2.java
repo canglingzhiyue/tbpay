@@ -51,7 +51,7 @@ public class QrLoginTask2 implements Runnable {
             boolean r1 = r10.mStop
             if (r1 != 0) goto Lad
             java.lang.String r1 = r10.mToken
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             if (r1 == 0) goto L22
             goto Lad
         L22:

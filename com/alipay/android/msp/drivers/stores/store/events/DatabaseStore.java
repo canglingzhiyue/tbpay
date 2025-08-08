@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
@@ -48,7 +48,7 @@ public class DatabaseStore extends LocalEventStore {
                 String string = actionParamsJson.getString("type");
                 final String string2 = actionParamsJson.getString("action");
                 final String string3 = actionParamsJson.getString("table");
-                if (TextUtils.equals(string, g.CACHE_SQL)) {
+                if (StringUtils.equals(string, g.CACHE_SQL)) {
                     TaskHelper.executeForAI(new Runnable() { // from class: com.alipay.android.msp.drivers.stores.store.events.DatabaseStore.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -61,8 +61,8 @@ public class DatabaseStore extends LocalEventStore {
                             }
                             try {
                                 String string4 = actionParamsJson.getString(g.CACHE_SQL);
-                                if (!TextUtils.equals(string2, "query")) {
-                                    if (TextUtils.equals(string2, "update")) {
+                                if (!StringUtils.equals(string2, "query")) {
+                                    if (StringUtils.equals(string2, "update")) {
                                         MspDbManager.getDbManager().save(string4, new MspDbManager.MspDBSaveCallback() { // from class: com.alipay.android.msp.drivers.stores.store.events.DatabaseStore.1.5
                                             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -98,11 +98,11 @@ public class DatabaseStore extends LocalEventStore {
                                                 LocalEventStore.invokeCallback(eventAction, jSONObject);
                                             }
                                         });
-                                    } else if (!TextUtils.equals(string2, "log")) {
+                                    } else if (!StringUtils.equals(string2, "log")) {
                                     } else {
                                         LogUtil.record(2, "DatabaseStoreLog", actionParamsJson.getString(g.CACHE_SQL));
                                     }
-                                } else if (TextUtils.equals(string3, MspDBHelper.ActionEntry.TABLE_NAME)) {
+                                } else if (StringUtils.equals(string3, MspDBHelper.ActionEntry.TABLE_NAME)) {
                                     MspDbManager.getDbManager().queryActionModel(string4, new MspDbManager.MspDBQueryActionCallback() { // from class: com.alipay.android.msp.drivers.stores.store.events.DatabaseStore.1.1
                                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -122,7 +122,7 @@ public class DatabaseStore extends LocalEventStore {
                                             LocalEventStore.invokeCallback(eventAction, jSONObject);
                                         }
                                     });
-                                } else if (TextUtils.equals(string3, MspDBHelper.RecordEntry.TABLE_NAME)) {
+                                } else if (StringUtils.equals(string3, MspDBHelper.RecordEntry.TABLE_NAME)) {
                                     MspDbManager.getDbManager().queryRecordModel(string4, new MspDbManager.MspDBQueryRecordCallback() { // from class: com.alipay.android.msp.drivers.stores.store.events.DatabaseStore.1.2
                                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -142,7 +142,7 @@ public class DatabaseStore extends LocalEventStore {
                                             LocalEventStore.invokeCallback(eventAction, jSONObject);
                                         }
                                     });
-                                } else if (TextUtils.equals(string3, MspDBHelper.BizEntry.TABLE_NAME)) {
+                                } else if (StringUtils.equals(string3, MspDBHelper.BizEntry.TABLE_NAME)) {
                                     MspDbManager.getDbManager().queryBizInfoModel(string4, new MspDbManager.MspDBQueryBizInfoCallback() { // from class: com.alipay.android.msp.drivers.stores.store.events.DatabaseStore.1.3
                                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -162,7 +162,7 @@ public class DatabaseStore extends LocalEventStore {
                                             LocalEventStore.invokeCallback(eventAction, jSONObject);
                                         }
                                     });
-                                } else if (!TextUtils.equals(string3, MspDBHelper.BehaviorExperienceEntry.TABLE_NAME)) {
+                                } else if (!StringUtils.equals(string3, MspDBHelper.BehaviorExperienceEntry.TABLE_NAME)) {
                                 } else {
                                     MspDbManager.getDbManager().queryBehaviorExperienceModel(string4, new MspDbManager.MspDBQueryBehaviorExperienceCallback() { // from class: com.alipay.android.msp.drivers.stores.store.events.DatabaseStore.1.4
                                         public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -191,7 +191,7 @@ public class DatabaseStore extends LocalEventStore {
                         }
                     });
                     return InvokeActionPlugin.AYSNC_CALLBACK;
-                } else if (!TextUtils.equals(string, "orm")) {
+                } else if (!StringUtils.equals(string, "orm")) {
                     return InvokeActionPlugin.AYSNC_CALLBACK;
                 } else {
                     actionParamsJson.getString("orm");

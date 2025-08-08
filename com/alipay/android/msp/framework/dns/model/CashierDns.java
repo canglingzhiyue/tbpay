@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.dns.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.framework.dns.DnsValue;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorType;
@@ -32,12 +32,12 @@ public class CashierDns {
 
     public boolean isMobilegw() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("64d49ae7", new Object[]{this})).booleanValue() : TextUtils.equals(this.mDomain, DnsValue.DOMAIN_MOBILE_GW);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("64d49ae7", new Object[]{this})).booleanValue() : StringUtils.equals(this.mDomain, DnsValue.DOMAIN_MOBILE_GW);
     }
 
     public static boolean isMobilegw(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b77bf1f1", new Object[]{str})).booleanValue() : TextUtils.equals(str, DnsValue.DOMAIN_MOBILE_GW);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b77bf1f1", new Object[]{str})).booleanValue() : StringUtils.equals(str, DnsValue.DOMAIN_MOBILE_GW);
     }
 
     public void addIp(String str) {

@@ -9,7 +9,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Environment;
 import android.os.PowerManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.d.i;
@@ -42,7 +42,7 @@ public class MzSystemUtils {
     }
 
     public static String findReceiver(Context context, String str, String str2) {
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 Intent intent = new Intent(str);
                 intent.setPackage(str2);
@@ -117,7 +117,7 @@ public class MzSystemUtils {
                 return parseInt;
             } catch (Exception unused) {
                 String a2 = i.a("ro.flyme.version.id");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     a2 = i.a("ro.build.display.id");
                 }
                 int intValue = Integer.valueOf(a2.replace("Flyme", "").replace(" ", "").substring(0, 1)).intValue();
@@ -135,7 +135,7 @@ public class MzSystemUtils {
         try {
             String str = isWatch() ? PushConstants.WEARABLE_PUSH_PACKAGE_NAME : PushConstants.PUSH_PACKAGE_NAME;
             String servicesByPackageName = getServicesByPackageName(context, str);
-            if (!TextUtils.isEmpty(servicesByPackageName)) {
+            if (!StringUtils.isEmpty(servicesByPackageName)) {
                 if (servicesByPackageName.contains(PUSH_SERVICE_PROCESS_NAME)) {
                     return str;
                 }
@@ -219,13 +219,13 @@ public class MzSystemUtils {
     }
 
     public static boolean isExistReceiver(Context context, String str, String str2) {
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             return false;
         }
         Intent intent = new Intent(str2);
         intent.setPackage(str);
         List<ResolveInfo> queryBroadcastReceivers = context.getPackageManager().queryBroadcastReceivers(intent, 0);
-        return queryBroadcastReceivers != null && queryBroadcastReceivers.size() > 0 && !TextUtils.isEmpty(queryBroadcastReceivers.get(0).activityInfo.name);
+        return queryBroadcastReceivers != null && queryBroadcastReceivers.size() > 0 && !StringUtils.isEmpty(queryBroadcastReceivers.get(0).activityInfo.name);
     }
 
     public static boolean isIndiaLocal() {
@@ -254,7 +254,7 @@ public class MzSystemUtils {
 
     public static boolean isMeizu() {
         String str = Build.BRAND;
-        return "meizu".equalsIgnoreCase(str) || "mblu".equalsIgnoreCase(str) || !TextUtils.isEmpty(i.a("ro.vendor.meizu.product.model")) || !TextUtils.isEmpty(i.a("ro.meizu.product.model"));
+        return "meizu".equalsIgnoreCase(str) || "mblu".equalsIgnoreCase(str) || !StringUtils.isEmpty(i.a("ro.vendor.meizu.product.model")) || !StringUtils.isEmpty(i.a("ro.meizu.product.model"));
     }
 
     public static boolean isMeizuAndFlyme() {
@@ -279,10 +279,10 @@ public class MzSystemUtils {
     }
 
     public static boolean isWatch() {
-        if (TextUtils.isEmpty(sCharacteristics)) {
+        if (StringUtils.isEmpty(sCharacteristics)) {
             sCharacteristics = i.a("ro.build.characteristics");
         }
-        if (TextUtils.isEmpty(sCharacteristics)) {
+        if (StringUtils.isEmpty(sCharacteristics)) {
             sCharacteristics = "phone";
             return false;
         }
@@ -290,14 +290,14 @@ public class MzSystemUtils {
     }
 
     public static void sendMessageFromBroadcast(Context context, Intent intent, String str, String str2) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent.setAction(str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             intent.setPackage(str2);
         }
         String findReceiver = findReceiver(context, str, str2);
-        if (!TextUtils.isEmpty(findReceiver)) {
+        if (!StringUtils.isEmpty(findReceiver)) {
             intent.setClassName(str2, findReceiver);
         }
         context.sendBroadcast(intent);

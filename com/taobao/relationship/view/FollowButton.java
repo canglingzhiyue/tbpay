@@ -3,7 +3,7 @@ package com.taobao.relationship.view;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -173,7 +173,7 @@ public class FollowButton extends LinearLayout {
         layoutParams.rightMargin = getIconPadding(z);
         this.mFollowIcon.setLayoutParams(layoutParams);
         String followIcon = getFollowIcon(this.mIsFollow);
-        if (TextUtils.isEmpty(followIcon)) {
+        if (StringUtils.isEmpty(followIcon)) {
             this.mFollowIcon.setVisibility(8);
             return;
         }

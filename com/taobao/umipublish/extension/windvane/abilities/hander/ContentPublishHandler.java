@@ -1,6 +1,6 @@
 package com.taobao.umipublish.extension.windvane.abilities.hander;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -78,7 +78,7 @@ public class ContentPublishHandler extends BaseHandler {
         } else if (jSONObject == null) {
         } else {
             String e = e(jSONObject);
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 return;
             }
             rhs.a(this.c, e);

@@ -1,6 +1,6 @@
 package android.taobao.windvane.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
 import org.json.JSONArray;
@@ -37,7 +37,7 @@ public class o implements d {
             for (String str : list) {
                 jSONArray.put(str);
             }
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 rVar.a("state", this.c);
             }
             rVar.a("msg", this.b);
@@ -45,7 +45,7 @@ public class o implements d {
             this.f1670a.error(rVar);
         } else {
             r rVar2 = new r();
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 rVar2.a("state", this.c);
             }
             rVar2.a("msg", this.b);

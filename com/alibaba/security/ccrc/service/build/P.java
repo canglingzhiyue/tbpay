@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.enums.InitState;
 import com.alibaba.security.ccrc.interfaces.OnCcrcCallback;
@@ -237,7 +237,7 @@ public class P implements B {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8ad45f79", new Object[]{this, config, initState, new Long(j), str, map});
-        } else if (TextUtils.equals(X.a.e, str)) {
+        } else if (StringUtils.equals(X.a.e, str)) {
         } else {
             TrackManager.getExecutor().execute(new Runnable() { // from class: com.alibaba.security.ccrc.service.build.-$$Lambda$P$dH0bS0VjY9EBw6m7wIMgQYscfZY
                 @Override // java.lang.Runnable
@@ -259,7 +259,7 @@ public class P implements B {
         if (!a(initState)) {
             i2 = -1;
         }
-        if (i2 != -1 || !TextUtils.equals(str, X.a.f3284a)) {
+        if (i2 != -1 || !StringUtils.equals(str, X.a.f3284a)) {
             i = i2;
         }
         TrackManager.track(TrackLog.newBuilder().setpId(config != null ? config.getPid() : null).setCcrcCode(this.b).setPhase("init").setOperation("end").setStatus(i).addParam("state", Integer.valueOf(initState.getState())).addParam("errorMsg", str).addParam("costTime", Long.valueOf(j)).addParam("prepareID", this.c).addParam("supportLowDevice", Boolean.valueOf(Ib.a(this.b).b())).addAllParam(map).build());

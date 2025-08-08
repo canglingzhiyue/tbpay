@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -78,7 +78,7 @@ public class qbr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         File file = new File(str, "material.json");
@@ -90,7 +90,7 @@ public class qbr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         File file = new File(str, "material.json");
@@ -102,7 +102,7 @@ public class qbr {
                         return a(str, stickerMaiMaterialBean);
                     }
                     if (stickerMaiMaterialBean.info != null) {
-                        if (TextUtils.equals(stickerMaiMaterialBean.info.type, "Animation")) {
+                        if (StringUtils.equals(stickerMaiMaterialBean.info.type, "Animation")) {
                             return c(str, stickerMaiMaterialBean);
                         }
                         return b(str, stickerMaiMaterialBean);
@@ -129,7 +129,7 @@ public class qbr {
 
     private static String b(String str, StickerMaiMaterialBean stickerMaiMaterialBean) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ab8f424a", new Object[]{str, stickerMaiMaterialBean}) : TextUtils.isEmpty(stickerMaiMaterialBean.info.path) ? "" : new File(str, stickerMaiMaterialBean.info.path).getAbsolutePath();
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ab8f424a", new Object[]{str, stickerMaiMaterialBean}) : StringUtils.isEmpty(stickerMaiMaterialBean.info.path) ? "" : new File(str, stickerMaiMaterialBean.info.path).getAbsolutePath();
     }
 
     private static String c(String str, StickerMaiMaterialBean stickerMaiMaterialBean) {
@@ -156,7 +156,7 @@ public class qbr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("97661626", new Object[]{str, new Integer(i), str2});
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             String a2 = c.a(str2);
             return a2 == null ? String.valueOf(str2.hashCode()) : a2;
         } else if (i < 0) {

@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
@@ -68,7 +68,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
     }
 
     private boolean a(String str, MessageV3 messageV3, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             DebugLogger.e("AbstractMessageHandler", "security check fail, public key is null");
             return false;
         }
@@ -81,7 +81,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
 
     private boolean b(String str, MessageV3 messageV3, String str2) {
         String str3;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str3 = "sa, public key not empty";
         } else if (!"private".equals(str2)) {
             str3 = "sa, message not click method";
@@ -99,7 +99,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
         String str = null;
         for (int i = 0; i < 2; i++) {
             str = e();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 break;
             }
         }
@@ -109,7 +109,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
     public String a(String str) {
         try {
             JSONObject jSONObject = new JSONObject(str).getJSONObject("launcher");
-            if (jSONObject.has("pkg") && !TextUtils.isEmpty(jSONObject.getString("pkg"))) {
+            if (jSONObject.has("pkg") && !StringUtils.isEmpty(jSONObject.getString("pkg"))) {
                 return jSONObject.getString("pkg");
             }
         } catch (Exception unused) {
@@ -122,7 +122,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
     public void a(Context context, MessageV3 messageV3) {
         com.meizu.cloud.pushsdk.handler.e.b.a a2;
         com.meizu.cloud.pushsdk.notification.model.a b;
-        if (messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage()) || (a2 = com.meizu.cloud.pushsdk.b.a(context).a()) == null || (b = com.meizu.cloud.pushsdk.notification.model.a.b(messageV3)) == null) {
+        if (messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage()) || (a2 = com.meizu.cloud.pushsdk.b.a(context).a()) == null || (b = com.meizu.cloud.pushsdk.notification.model.a.b(messageV3)) == null) {
             return;
         }
         a2.a(b.a());
@@ -139,7 +139,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
             return;
         }
         DebugLogger.e("AbstractMessageHandler", "delete notifyId " + b.a() + " notifyKey " + b.b());
-        if (!TextUtils.isEmpty(b.b())) {
+        if (!StringUtils.isEmpty(b.b())) {
             com.meizu.cloud.pushsdk.platform.c.b.a(c()).a(messageV3.getUploadDataPackageName(), b.b());
         } else {
             com.meizu.cloud.pushsdk.platform.c.b.a(c()).a(messageV3.getUploadDataPackageName(), b.a());
@@ -170,7 +170,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean a(MessageV3 messageV3, String str) {
         String a2 = com.meizu.cloud.pushsdk.handler.e.j.e.a(messageV3);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             DebugLogger.i("AbstractMessageHandler", "message does not contain signature field");
             return false;
         }
@@ -209,7 +209,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
         com.meizu.cloud.pushsdk.notification.model.a b = com.meizu.cloud.pushsdk.notification.model.a.b(messageV3);
         if (b != null) {
             DebugLogger.i("AbstractMessageHandler", "delete notifyKey " + b.b() + " notifyId " + b.a());
-            if (!TextUtils.isEmpty(b.b())) {
+            if (!StringUtils.isEmpty(b.b())) {
                 com.meizu.cloud.pushsdk.notification.g.b.a(c(), messageV3.getUploadDataPackageName(), b.b());
             } else {
                 com.meizu.cloud.pushsdk.notification.g.b.b(c(), messageV3.getUploadDataPackageName(), b.a());
@@ -349,7 +349,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void c(MessageV3 messageV3) {
-        if (messageV3 == null || messageV3.getAdvertisementOption() == null || TextUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
+        if (messageV3 == null || messageV3.getAdvertisementOption() == null || StringUtils.isEmpty(messageV3.getAdvertisementOption().getAdPackage())) {
             if (!MinSdkChecker.isSupportSetDrawableSmallIcon()) {
                 b().b(c(), MzPushMessage.fromMessageV3(messageV3));
             } else if (!a(c(), messageV3.getUploadDataPackageName())) {
@@ -373,7 +373,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
     /* JADX INFO: Access modifiers changed from: protected */
     public String d(Intent intent) {
         String stringExtra = intent != null ? intent.getStringExtra(PushConstants.MZ_PUSH_MESSAGE_STATISTICS_IMEI_KEY) : null;
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             String a2 = com.meizu.cloud.pushsdk.d.c.a(c());
             DebugLogger.e("AbstractMessageHandler", "force get deviceId " + a2);
             return a2;
@@ -407,7 +407,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
     /* JADX INFO: Access modifiers changed from: protected */
     public String g(Intent intent) {
         String stringExtra = intent.getStringExtra(PushConstants.EXTRA_APP_PUSH_SERVICE_DEFAULT_PACKAGE_NAME);
-        return TextUtils.isEmpty(stringExtra) ? c().getPackageName() : stringExtra;
+        return StringUtils.isEmpty(stringExtra) ? c().getPackageName() : stringExtra;
     }
 
     protected void g(T t) {
@@ -417,7 +417,7 @@ public abstract class a<T> implements com.meizu.cloud.pushsdk.handler.c {
     public String h(Intent intent) {
         String stringExtra = intent.getStringExtra(PushConstants.EXTRA_APP_PUSH_TASK_TIMES_TAMP);
         DebugLogger.i("AbstractMessageHandler", "receive push timestamp from pushservice " + stringExtra);
-        return TextUtils.isEmpty(stringExtra) ? String.valueOf(System.currentTimeMillis() / 1000) : stringExtra;
+        return StringUtils.isEmpty(stringExtra) ? String.valueOf(System.currentTimeMillis() / 1000) : stringExtra;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

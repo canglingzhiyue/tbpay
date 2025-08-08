@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.z;
@@ -50,7 +50,7 @@ public class cre extends crb {
         if (i()) {
             return true;
         }
-        if (this.d != null && !TextUtils.isEmpty(this.d.b) && !TextUtils.isEmpty(this.d.c)) {
+        if (this.d != null && !StringUtils.isEmpty(this.d.b) && !StringUtils.isEmpty(this.d.c)) {
             this.e |= 8;
             z.a().a("INIT_OBJECT_REGION_DETECTION_MODEL", -1);
             crd crdVar = (crd) this.d;

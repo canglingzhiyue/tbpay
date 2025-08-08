@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.data.h;
@@ -244,14 +244,14 @@ public class eni implements enf {
         if (ipChange instanceof IpChange) {
             return (RuleModel) ipChange.ipc$dispatch("fc17d351", new Object[]{this, str, str2});
         }
-        if (eqg.a(this.i) || TextUtils.isEmpty(str)) {
+        if (eqg.a(this.i) || StringUtils.isEmpty(str)) {
             return null;
         }
         HashMap<String, RuleModel> hashMap = this.i.get(str);
         if (eqg.a(hashMap)) {
             return null;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "default";
         }
         return hashMap.get(str2);
@@ -263,7 +263,7 @@ public class eni implements enf {
         if (ipChange instanceof IpChange) {
             return (ActionModel) ipChange.ipc$dispatch("2f654ad5", new Object[]{this, str});
         }
-        if (eqg.a(this.j) || TextUtils.isEmpty(str)) {
+        if (eqg.a(this.j) || StringUtils.isEmpty(str)) {
             return null;
         }
         return new ActionModel(this.j.get(str));
@@ -285,7 +285,7 @@ public class eni implements enf {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ee3c37a9", new Object[]{context, str, obj})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         Object a2 = jjv.a(obj, str);

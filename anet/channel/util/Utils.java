@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.monitor.BandWidthSampler;
 import anet.channel.monitor.NetworkSpeed;
@@ -78,7 +78,7 @@ public class Utils {
         } catch (Exception e) {
             AppMonitor.getInstance().commitStat(new ExceptionStatistic(ErrorConstant.ERROR_GET_PROCESS_NULL, e.toString(), "rt"));
         }
-        return TextUtils.isEmpty(str) ? getProcessNameNew(i) : str;
+        return StringUtils.isEmpty(str) ? getProcessNameNew(i) : str;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x00a3, code lost:

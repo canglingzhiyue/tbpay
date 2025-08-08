@@ -3,7 +3,7 @@ package com.alipay.mobile.verifyidentity.prodmanger.biopen.helper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.verifyidentity.engine.MicroModuleContext;
 import com.alipay.mobile.verifyidentity.info.EnvInfoUtil;
@@ -139,7 +139,7 @@ public class BioListHelper {
                     String str6 = mICProdmngResponse.data.get("introduceUrl");
                     String str7 = f5971a;
                     VerifyLogCat.i(str7, "产品列表页面请求rpc结果，bioListData: " + str4 + ", introduceText: " + str5 + ", introduceUrl: " + str6);
-                    if (TextUtils.isEmpty(str4)) {
+                    if (StringUtils.isEmpty(str4)) {
                         c();
                         return;
                     }

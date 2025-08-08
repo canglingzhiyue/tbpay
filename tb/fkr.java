@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
@@ -187,7 +187,7 @@ public class fkr {
             return;
         }
         for (String str : this.f28015a.H()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Map<String, String> map = this.B;
                 map.put("nd_" + str, this.d.s.get(str));
             }
@@ -298,11 +298,11 @@ public class fkr {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("50938a53", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.d.I)) {
+        if (!StringUtils.isEmpty(this.d.I)) {
             return this.d.I;
         }
         String e = e();
-        return !TextUtils.isEmpty(e) ? e : NO_ID_DEFAULT;
+        return !StringUtils.isEmpty(e) ? e : NO_ID_DEFAULT;
     }
 
     public void a(JSONObject jSONObject) {
@@ -383,7 +383,7 @@ public class fkr {
         HashMap<String, String> a2 = this.u.a();
         StringBuilder sb = new StringBuilder();
         sb.append(str);
-        sb.append(TextUtils.isEmpty(this.d.F) ? "" : this.d.F);
+        sb.append(StringUtils.isEmpty(this.d.F) ? "" : this.d.F);
         return a2.get(sb.toString());
     }
 
@@ -454,7 +454,7 @@ public class fkr {
         String string = jSONObject2.getString("invokeId");
         String string2 = jSONObject2.getString("bizIdentifier");
         String string3 = jSONObject2.getString("currentScene");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3) || TextUtils.isEmpty(this.d.L)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3) || StringUtils.isEmpty(this.d.L)) {
             return;
         }
         this.E.a(string);
@@ -561,11 +561,11 @@ public class fkr {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3a97c4c", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(c())) {
+        if (StringUtils.isEmpty(c())) {
             return false;
         }
         for (String str : this.f28015a.j()) {
-            if (!TextUtils.isEmpty(str) && c().contains(str)) {
+            if (!StringUtils.isEmpty(str) && c().contains(str)) {
                 return true;
             }
         }

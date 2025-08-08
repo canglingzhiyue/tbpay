@@ -1,7 +1,7 @@
 package com.taobao.taobao.scancode.barcode.business;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.flexa.compat.c;
 import com.alipay.android.phone.inside.api.model.consultroute.ConsultRouteModel;
 import com.alipay.android.phone.inside.api.model.scan.CodeTypeEnum;
@@ -101,14 +101,14 @@ public class a {
         ConsultRouteModel consultRouteModel = new ConsultRouteModel();
         consultRouteModel.setCode(str);
         consultRouteModel.setTimeout(6);
-        if (TextUtils.equals("qrCode", "qrCode")) {
+        if (StringUtils.equals("qrCode", "qrCode")) {
             consultRouteModel.setCodeType(CodeTypeEnum.QRCODE);
         } else {
             consultRouteModel.setCodeType(CodeTypeEnum.BARCODE);
         }
         try {
             String string = new JSONObject(InsideOperationService.getInstance().startAction(this.f21218a, consultRouteModel).getResult()).getJSONObject("supportParams").getString("alipayRouteScheme");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 throw new NullPointerException();
             }
             if (interfaceC0882a == null) {

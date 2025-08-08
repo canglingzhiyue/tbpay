@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
@@ -31,10 +31,10 @@ public class l {
         }
         if (f4202a == null) {
             String a2 = a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return true;
             }
-            f4202a = Boolean.valueOf(TextUtils.equals(context.getPackageName(), a2));
+            f4202a = Boolean.valueOf(StringUtils.equals(context.getPackageName(), a2));
         }
         return f4202a.booleanValue();
     }

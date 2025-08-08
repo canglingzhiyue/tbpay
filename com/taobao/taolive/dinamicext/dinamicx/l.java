@@ -1,7 +1,7 @@
 package com.taobao.taolive.dinamicext.dinamicx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -158,14 +158,14 @@ public class l extends af {
         if (obj != null) {
             textView.setTag(obj);
         }
-        if (!TextUtils.isEmpty(this.f21420a)) {
+        if (!StringUtils.isEmpty(this.f21420a)) {
             try {
                 textView.setBackgroundResource(pbh.a(this.f21420a));
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             textView.setGravity(pbh.b(this.e));
         }
         c(textView);
@@ -177,7 +177,7 @@ public class l extends af {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a92d3edc", new Object[]{this, textView});
-        } else if (this.g <= 0 || TextUtils.isEmpty(getText()) || getText().length() <= this.g) {
+        } else if (this.g <= 0 || StringUtils.isEmpty(getText()) || getText().length() <= this.g) {
         } else {
             CharSequence subSequence = getText().subSequence(0, this.g);
             setText(subSequence);
@@ -190,14 +190,14 @@ public class l extends af {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a9d9ea7b", new Object[]{this, textView});
-        } else if (TextUtils.isEmpty(this.l)) {
+        } else if (StringUtils.isEmpty(this.l)) {
         } else {
             if ("overTenMillion".equals(this.c)) {
                 str = prk.a(pro.b(this.l));
             } else if ("onLineNumber".equals(this.c)) {
                 str = prk.b(pro.b(this.l));
             } else {
-                str = !TextUtils.isEmpty(this.l) ? this.l : (String) getText();
+                str = !StringUtils.isEmpty(this.l) ? this.l : (String) getText();
             }
             setText(str);
             textView.setText(str);
@@ -208,7 +208,7 @@ public class l extends af {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aa86961a", new Object[]{this, textView});
-        } else if (TextUtils.isEmpty(this.m) || TextUtils.isEmpty(this.b)) {
+        } else if (StringUtils.isEmpty(this.m) || StringUtils.isEmpty(this.b)) {
         } else {
             if (this.m.equals(this.b)) {
                 textView.setVisibility(0);
@@ -247,10 +247,10 @@ public class l extends af {
         }
         b(textView);
         a(textView);
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             textView.setGravity(pbh.b(this.e));
         }
-        if (!TextUtils.isEmpty(this.f21420a)) {
+        if (!StringUtils.isEmpty(this.f21420a)) {
             try {
                 textView.setBackgroundResource(pbh.a(this.f21420a));
             } catch (Exception e) {

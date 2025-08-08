@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.service.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.f;
 import com.alibaba.android.aura.q;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -87,7 +87,7 @@ public class b {
         }
         a();
         String eventType = aURAEventIO.getEventType();
-        if (TextUtils.isEmpty(eventType)) {
+        if (StringUtils.isEmpty(eventType)) {
             aqqVar.a(new com.alibaba.android.aura.b(1, "AURAEventServiceDomain", "-1000_EMPTY_TYPE", "执行事件失败, eventType 为空"));
             return;
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes.dex */
@@ -28,7 +28,7 @@ public class mqe {
         }
         try {
             String a2 = a(obj, (String) null);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return Long.parseLong(a2);
             }
         } catch (NumberFormatException e) {
@@ -47,7 +47,7 @@ public class mqe {
         }
         try {
             String a2 = a(obj, (String) null);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return Float.parseFloat(a2);
             }
         } catch (NumberFormatException e) {
@@ -73,7 +73,7 @@ public class mqe {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Integer.parseInt(str);
             }
         } catch (NumberFormatException e) {
@@ -94,11 +94,11 @@ public class mqe {
             if (obj instanceof Boolean) {
                 return ((Boolean) obj).booleanValue();
             }
-            if ((obj instanceof String) && !TextUtils.isEmpty((String) obj)) {
+            if ((obj instanceof String) && !StringUtils.isEmpty((String) obj)) {
                 return Boolean.parseBoolean((String) obj);
             }
             String obj2 = obj.toString();
-            return TextUtils.isEmpty(obj2) ? z : Boolean.parseBoolean(obj2);
+            return StringUtils.isEmpty(obj2) ? z : Boolean.parseBoolean(obj2);
         } catch (Exception e) {
             e.printStackTrace();
             return z;

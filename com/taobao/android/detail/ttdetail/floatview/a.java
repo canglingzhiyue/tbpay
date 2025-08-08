@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.floatview;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,7 +69,7 @@ public class a implements com.taobao.android.detail.ttdetail.communication.g<i> 
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-            } else if (!TextUtils.equals(ac.a(this.f10645a), "openUrl") || TextUtils.isEmpty(this.b)) {
+            } else if (!StringUtils.equals(ac.a(this.f10645a), "openUrl") || StringUtils.isEmpty(this.b)) {
             } else {
                 l.a(a.b(a.this), this.b);
                 m.b(2101, "Page_Detail_Button-NPS", new JSONObject() { // from class: com.taobao.android.detail.ttdetail.floatview.TTDFloatController$2$1

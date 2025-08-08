@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.common.page.provider.impl;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.common.page.provider.a;
 import com.alibaba.android.ultron.vfw.instance.d;
 import com.alibaba.android.umbrella.link.export.UMDimKey;
@@ -114,8 +114,8 @@ public class d extends a {
                     if (c != null) {
                         try {
                             JSONObject jSONObject3 = c.getJSONObject(bip.a.m);
-                            boolean z2 = jSONObject3 != null && TextUtils.equals("true", jSONObject3.getString(bip.a.n));
-                            if (jSONObject3 == null || !TextUtils.equals("true", jSONObject3.getString(bip.a.l))) {
+                            boolean z2 = jSONObject3 != null && StringUtils.equals("true", jSONObject3.getString(bip.a.n));
+                            if (jSONObject3 == null || !StringUtils.equals("true", jSONObject3.getString(bip.a.l))) {
                                 z = false;
                             }
                             bikVar.a(new bil(z2, z));

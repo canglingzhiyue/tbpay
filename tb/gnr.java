@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -110,7 +110,7 @@ public final class gnr extends emr {
         for (gnu gnuVar : this.f28394a.values()) {
             String a3 = gnuVar.a();
             long b = gnuVar.b();
-            if (!TextUtils.isEmpty(a3) && b != 0) {
+            if (!StringUtils.isEmpty(a3) && b != 0) {
                 hashMap.put(a3, Long.valueOf(b));
                 j += b;
             }

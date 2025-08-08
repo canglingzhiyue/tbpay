@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.model.ctcctoken;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.nirvana.tools.jsoner.a;
 import com.nirvana.tools.jsoner.d;
@@ -20,7 +20,7 @@ public class CTCCTokenRet implements e {
     public static CTCCTokenRet fromJson(String str) {
         try {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     JSONObject jSONObject = new JSONObject(str);
                     CTCCTokenRet cTCCTokenRet = (CTCCTokenRet) a.a(jSONObject, (d<Object>) new d<CTCCTokenRet>() { // from class: com.mobile.auth.gatewayauth.model.ctcctoken.CTCCTokenRet.1
                     }, (List<Field>) null);

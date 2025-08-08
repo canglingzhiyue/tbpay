@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.util.ConfigUtil;
@@ -83,7 +83,7 @@ public class ConfigManager {
         }
         checkCharset(str);
         checkCharset(str2);
-        String str3 = !TextUtils.isEmpty(str2) ? str + "_" + str2 : str;
+        String str3 = !StringUtils.isEmpty(str2) ? str + "_" + str2 : str;
         ConfigInfo configInfo = sConfigParseCacheMap.get(str3);
         if (!ApplicationUtil.isDebug() && configInfo != null) {
             return configInfo;

@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public final class cn extends co {
@@ -35,7 +35,7 @@ public final class cn extends co {
         long j = 0;
         if (this.b == 0) {
             String a2 = at.a(this.e, this.d);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 j = Long.parseLong(a2);
             }
             this.b = j;

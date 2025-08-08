@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.ultronengine;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.spindle.stage.StageType;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.emu;
@@ -29,7 +29,7 @@ public class d implements com.alibaba.android.ultron.vfw.instance.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d883fd33", new Object[]{this, str, str2, stageType});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || stageType == null || (bVar = this.f9924a) == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || stageType == null || (bVar = this.f9924a) == null) {
         } else {
             bVar.a(str, str2, stageType);
         }

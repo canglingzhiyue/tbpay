@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.logbuilder;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -104,7 +104,7 @@ public class f {
         }
         this.b = System.currentTimeMillis();
         this.c = "" + this.b;
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             if (this.c.length() >= 2) {
                 this.d = this.c.substring(this.c.length() - 2);
             } else {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -113,10 +113,10 @@ public final class bai extends atl {
             }
             try {
                 a2.a(aURARenderComponent);
-                if (aVar == null || TextUtils.isEmpty(aVar.a())) {
+                if (aVar == null || StringUtils.isEmpty(aVar.a())) {
                     aVar = b(aURARenderComponent);
                 }
-                if (aVar != null && !TextUtils.isEmpty(aVar.a())) {
+                if (aVar != null && !StringUtils.isEmpty(aVar.a())) {
                     for (bak bakVar : b) {
                         bakVar.a(a2, aURARenderComponent, frameLayout, i);
                     }
@@ -259,7 +259,7 @@ public final class bai extends atl {
             return null;
         }
         String str = (String) aURARenderComponent.data.fields.get("url");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Object obj = aURARenderComponent.data.fields.get("params");
@@ -312,7 +312,7 @@ public final class bai extends atl {
             arc.a().c("AURAWeex2ComponentExtension", "reportError", str);
         } else {
             b bVar = new b(1, "Weex2", str2, str);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 HashMap hashMap = new HashMap();
                 hashMap.put("AuraComponentKey", str3);
                 bVar.a(hashMap);

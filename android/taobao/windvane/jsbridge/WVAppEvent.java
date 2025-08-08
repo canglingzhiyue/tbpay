@@ -1,6 +1,6 @@
 package android.taobao.windvane.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -58,7 +58,7 @@ public class WVAppEvent extends e {
         }
         super.onResume();
         String dataOnActive = this.mWebView.getDataOnActive();
-        if (TextUtils.isEmpty(dataOnActive)) {
+        if (StringUtils.isEmpty(dataOnActive)) {
             dataOnActive = "{}";
         }
         this.mWebView.fireEvent("WV.Event.APP.Active", dataOnActive);

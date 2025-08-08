@@ -2,7 +2,7 @@ package com.taobao.tao.recommend3.newface.gateway.action;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.security.faceauth.api.AntDetector;
@@ -200,7 +200,7 @@ public class NewFaceDataProcessAction implements gke {
                             String string = jSONObject2.getString("experimentId");
                             String string2 = jSONObject2.getString("bucketId");
                             String string3 = jSONObject2.getString("publishId");
-                            if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3)) {
+                            if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3)) {
                                 bga.c.a("homepage", string, string2, string3);
                             }
                         }
@@ -216,7 +216,7 @@ public class NewFaceDataProcessAction implements gke {
             ipChange.ipc$dispatch("682edb8c", new Object[]{this, awesomeGetContainerData, jSONObject});
             return;
         }
-        String str = TextUtils.equals("coldStart", jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE)) ? "2" : "0";
+        String str = StringUtils.equals("coldStart", jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE)) ? "2" : "0";
         this.f20920a.a(awesomeGetContainerData.base, str);
         this.f20920a.a(awesomeGetContainerData.delta, str);
     }
@@ -436,9 +436,9 @@ public class NewFaceDataProcessAction implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ed3cf120", new Object[]{this, str, list, gkcVar, new Boolean(z)});
-        } else if (list == null || list.isEmpty() || str == null || TextUtils.isEmpty(str)) {
+        } else if (list == null || list.isEmpty() || str == null || StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.equals(oqc.a().c(str) ? "guess" : "homepage", "homepage")) {
+            if (StringUtils.equals(oqc.a().c(str) ? "guess" : "homepage", "homepage")) {
                 com.taobao.tao.homepage.f.a().a(list, "homepage", new f.b() { // from class: com.taobao.tao.recommend3.newface.gateway.action.NewFaceDataProcessAction.5
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

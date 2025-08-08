@@ -3,7 +3,7 @@ package com.alibaba.aliweex.bundle;
 import android.app.Activity;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.utils.WXLogUtils;
 import org.json.JSONObject;
@@ -42,15 +42,15 @@ public abstract class j extends amu implements com.taobao.weex.appfram.navigator
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("68dc3a2f", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 String optString = jSONObject.optString("url", "");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     Uri parse = Uri.parse(optString);
                     String scheme = parse.getScheme();
                     Uri.Builder buildUpon = parse.buildUpon();
-                    if (!TextUtils.equals(scheme, "http") && !TextUtils.equals(scheme, "https")) {
+                    if (!StringUtils.equals(scheme, "http") && !StringUtils.equals(scheme, "https")) {
                         buildUpon.scheme("http");
                     }
                     push(getFragmentActivity(), optString, jSONObject);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,7 +109,7 @@ public class fbr extends c<d> {
             return;
         }
         this.g = dVar.f9767a;
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             return;
         }
         this.h.loadUrl(this.g);

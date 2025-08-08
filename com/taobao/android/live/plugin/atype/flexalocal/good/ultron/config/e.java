@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.ultron.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.NetBaseOutDo;
@@ -31,7 +31,7 @@ public class e {
         if (mo1437getData == null) {
             return hashMap;
         }
-        if (!TextUtils.isEmpty(mo1437getData.taolivegoodspage)) {
+        if (!StringUtils.isEmpty(mo1437getData.taolivegoodspage)) {
             JSONObject b = pqj.b(mo1437getData.taolivegoodspage);
             if (b != null) {
                 a(b);
@@ -39,7 +39,7 @@ public class e {
             }
             hashMap.put("taolivegoodspage", mo1437getData.taolivegoodspage);
         }
-        if (!TextUtils.isEmpty(mo1437getData.taolivegoodspage2)) {
+        if (!StringUtils.isEmpty(mo1437getData.taolivegoodspage2)) {
             JSONObject b2 = pqj.b(mo1437getData.taolivegoodspage2);
             if (b2 != null) {
                 a(b2);
@@ -62,7 +62,7 @@ public class e {
                 return;
             }
             String string = jSONObject3.getString("root");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             JSONObject jSONObject4 = new JSONObject();

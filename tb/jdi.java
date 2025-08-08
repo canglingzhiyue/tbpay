@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sku.utils.o;
@@ -26,7 +26,7 @@ public class jdi {
             return (String) ipChange.ipc$dispatch("cf8a613", new Object[]{mtopResponse});
         }
         MtopStatistics mtopStat = mtopResponse.getMtopStat();
-        return (mtopStat != null && !TextUtils.isEmpty(mtopStat.eagleEyeTraceId)) ? mtopStat.eagleEyeTraceId : "";
+        return (mtopStat != null && !StringUtils.isEmpty(mtopStat.eagleEyeTraceId)) ? mtopStat.eagleEyeTraceId : "";
     }
 
     public static long a(JSONObject jSONObject) {
@@ -37,13 +37,13 @@ public class jdi {
         String string = jSONObject.getString(o.P_CART_BTN_CLICK);
         String string2 = jSONObject.getString(o.P_BUY_BTN_CLICK);
         String string3 = jSONObject.getString(o.P_SKUBAR_BTN_CLICK);
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             string3 = "";
         }
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             string3 = string;
         }
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             string3 = string2;
         }
         try {

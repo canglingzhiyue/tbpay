@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.card.BaseSectionModel;
@@ -22,7 +22,7 @@ public class thd {
             return ((Boolean) ipChange.ipc$dispatch("8f5d7194", new Object[]{iMainFeedsViewService})).booleanValue();
         }
         if (iMainFeedsViewService != null && (findItemDataByPosition = iMainFeedsViewService.findItemDataByPosition(0)) != null && (args = findItemDataByPosition.getArgs()) != null) {
-            return TextUtils.equals("1", args.getString(tim.S_ARGS_IS_CLIENT_CACHE));
+            return StringUtils.equals("1", args.getString(tim.S_ARGS_IS_CLIENT_CACHE));
         }
         return false;
     }

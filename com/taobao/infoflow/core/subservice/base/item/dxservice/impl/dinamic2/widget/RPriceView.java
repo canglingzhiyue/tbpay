@@ -3,7 +3,7 @@ package com.taobao.infoflow.core.subservice.base.item.dxservice.impl.dinamic2.wi
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -138,16 +138,16 @@ public class RPriceView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("212f610e", new Object[]{this, str});
-        } else if (TextUtils.equals(str, "normal")) {
+        } else if (StringUtils.equals(str, "normal")) {
             this.tvCentUnit.setTypeface(Typeface.defaultFromStyle(0));
             this.tvYuanSeparator.setTypeface(Typeface.defaultFromStyle(0));
-        } else if (TextUtils.equals(str, "bold")) {
+        } else if (StringUtils.equals(str, "bold")) {
             this.tvCentUnit.setTypeface(Typeface.defaultFromStyle(1));
             this.tvYuanSeparator.setTypeface(Typeface.defaultFromStyle(1));
-        } else if (TextUtils.equals(str, "italic")) {
+        } else if (StringUtils.equals(str, "italic")) {
             this.tvCentUnit.setTypeface(Typeface.defaultFromStyle(2));
             this.tvYuanSeparator.setTypeface(Typeface.defaultFromStyle(2));
-        } else if (!TextUtils.equals(str, "bold_italic")) {
+        } else if (!StringUtils.equals(str, "bold_italic")) {
         } else {
             this.tvCentUnit.setTypeface(Typeface.defaultFromStyle(3));
             this.tvYuanSeparator.setTypeface(Typeface.defaultFromStyle(3));

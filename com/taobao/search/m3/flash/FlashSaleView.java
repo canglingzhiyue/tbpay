@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -152,7 +152,7 @@ public final class FlashSaleView extends BaseItemView implements e {
             if (bVar == null) {
                 q.a();
             }
-            this.hasIcon = !TextUtils.isEmpty(bVar.e());
+            this.hasIcon = !StringUtils.isEmpty(bVar.e());
             reset();
             loadIcon();
             requestLayout();
@@ -297,7 +297,7 @@ public final class FlashSaleView extends BaseItemView implements e {
         long currentTimeStamp = instance.getCurrentTimeStamp();
         long b = bVar.b();
         boolean z = 1 <= b && currentTimeStamp >= b;
-        boolean z2 = !TextUtils.isEmpty(bVar.c());
+        boolean z2 = !StringUtils.isEmpty(bVar.c());
         if (!this.hasIcon || (z && !z2)) {
             f = 0.0f;
         } else {

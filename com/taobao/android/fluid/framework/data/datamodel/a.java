@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.data.datamodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -83,26 +83,26 @@ public final class a {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         String upperCase = str.toUpperCase();
-        if (TextUtils.equals(upperCase, "VIDEO")) {
+        if (StringUtils.equals(upperCase, "VIDEO")) {
             return 0;
         }
-        if (TextUtils.equals(upperCase, "COLLECTION")) {
+        if (StringUtils.equals(upperCase, "COLLECTION")) {
             return 1;
         }
-        if (TextUtils.equals(upperCase, "LIVE")) {
+        if (StringUtils.equals(upperCase, "LIVE")) {
             return 2;
         }
-        if (TextUtils.equals(upperCase, "PICTURE_ALBUM")) {
+        if (StringUtils.equals(upperCase, "PICTURE_ALBUM")) {
             return 3;
         }
-        if (TextUtils.equals(upperCase, "EXT")) {
+        if (StringUtils.equals(upperCase, "EXT")) {
             return 4;
         }
-        return (!com.taobao.android.fluid.framework.card.cards.web.c.a() || !TextUtils.equals(upperCase, "GGGAME")) ? -1 : 5;
+        return (!com.taobao.android.fluid.framework.card.cards.web.c.a() || !StringUtils.equals(upperCase, "GGGAME")) ? -1 : 5;
     }
 
     public static List<PicElement> b(MediaContentDetailData mediaContentDetailData) {
@@ -641,7 +641,7 @@ public final class a {
             try {
                 MediaContentDetailData i = i();
                 if (i != null && !ogv.a(i.contentAdParams) && !ogv.a(i.utPairs)) {
-                    if (TextUtils.equals(String.valueOf(i.utPairs.get("is_ad")), "1")) {
+                    if (StringUtils.equals(String.valueOf(i.utPairs.get("is_ad")), "1")) {
                         return true;
                     }
                 }
@@ -914,7 +914,7 @@ public final class a {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("136d6650", new Object[]{this});
             }
-            if (TextUtils.isEmpty(this.i)) {
+            if (StringUtils.isEmpty(this.i)) {
                 MediaContentDetailData mediaContentDetailData = this.h;
                 if (mediaContentDetailData == null) {
                     mediaContentDetailData = this.f;

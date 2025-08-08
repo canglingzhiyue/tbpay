@@ -3,7 +3,7 @@ package com.taobao.relationship.jsbridge;
 import android.app.Activity;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.constants.LoginConstants;
@@ -49,22 +49,22 @@ public class AllSparkFollowJsBridgeV3 extends e {
                 String optString = jSONObject.optString("guideToastUrl");
                 String optString2 = jSONObject.optString("guideCardUrl");
                 if (nmg.a()) {
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         b.h().a(optString);
                     }
-                    if (!TextUtils.isEmpty(optString2)) {
+                    if (!StringUtils.isEmpty(optString2)) {
                         b.h().a(optString2);
                     }
                 }
                 wVCallBackContext.success();
                 return true;
             }
-            if (!TextUtils.isEmpty(jSONObject.optString("accountId"))) {
+            if (!StringUtils.isEmpty(jSONObject.optString("accountId"))) {
                 parseLong = Long.parseLong(jSONObject.optString("accountId"));
             } else {
-                parseLong = !TextUtils.isEmpty(jSONObject.optString("followedId")) ? Long.parseLong(jSONObject.optString("followedId")) : 0L;
+                parseLong = !StringUtils.isEmpty(jSONObject.optString("followedId")) ? Long.parseLong(jSONObject.optString("followedId")) : 0L;
             }
-            int parseInt = !TextUtils.isEmpty(jSONObject.optString("accountType")) ? Integer.parseInt(jSONObject.optString("accountType")) : 0;
+            int parseInt = !StringUtils.isEmpty(jSONObject.optString("accountType")) ? Integer.parseInt(jSONObject.optString("accountType")) : 0;
             String optString3 = jSONObject.optString("originBiz");
             String optString4 = jSONObject.optString("originPage");
             String optString5 = jSONObject.optString("originFlag");
@@ -80,7 +80,7 @@ public class AllSparkFollowJsBridgeV3 extends e {
             bVar.d = optInt;
             bVar.e = optInt2;
             bVar.i = optString6;
-            bVar.m = !TextUtils.equals(jSONObject.optString(LoginConstants.SHOW_TOAST), "false");
+            bVar.m = !StringUtils.equals(jSONObject.optString(LoginConstants.SHOW_TOAST), "false");
             if (ACTION_ISFOLLOW.equals(str)) {
                 new a(wVCallBackContext).a(bVar);
                 return true;
@@ -91,7 +91,7 @@ public class AllSparkFollowJsBridgeV3 extends e {
                     activity = (Activity) this.mContext;
                 }
                 bVar.f18974a = activity;
-                if (TextUtils.equals(optString7, "true")) {
+                if (StringUtils.equals(optString7, "true")) {
                     String optString8 = jSONObject.optString("guideToastUrl");
                     String optString9 = jSONObject.optString("guideCardUrl");
                     bVar.j = true;

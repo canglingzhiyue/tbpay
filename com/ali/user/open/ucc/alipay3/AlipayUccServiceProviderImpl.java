@@ -1,7 +1,7 @@
 package com.ali.user.open.ucc.alipay3;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.util.ParamsConstants;
 import com.ali.user.open.oauth.OauthService;
@@ -22,7 +22,7 @@ public class AlipayUccServiceProviderImpl extends BaseUccServiceProvider {
     @Override // com.ali.user.open.ucc.base.BaseUccServiceProvider
     public boolean isAuthByNative(Context context, String str, Map<String, String> map) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4750fede", new Object[]{this, context, str, map})).booleanValue() : map != null && TextUtils.equals(map.get(ParamsConstants.Key.PARAM_FORCE_NATIVE), "1");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("4750fede", new Object[]{this, context, str, map})).booleanValue() : map != null && StringUtils.equals(map.get(ParamsConstants.Key.PARAM_FORCE_NATIVE), "1");
     }
 
     @Override // com.ali.user.open.ucc.base.BaseUccServiceProvider, com.ali.user.open.ucc.UccServiceProvider

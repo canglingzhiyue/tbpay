@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -1434,7 +1434,7 @@ public class jvb extends MUSDKInstance {
         if (ipChange instanceof IpChange) {
             return (WeexValue) ipChange.ipc$dispatch("26083d0f", new Object[]{this, str, str2, weexValueArr});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             com.taobao.android.weex_framework.util.g.b(this, "[MUSDKInstance] callModuleMethod methodName is empty");
             return null;
         }
@@ -1465,7 +1465,7 @@ public class jvb extends MUSDKInstance {
         if (ipChange instanceof IpChange) {
             return (MUSValue) ipChange.ipc$dispatch("a02c584d", new Object[]{this, mUSValue, mUSValue2, mUSValueArr});
         }
-        if (mUSValue2 == null || TextUtils.isEmpty(mUSValue2.getStringValue())) {
+        if (mUSValue2 == null || StringUtils.isEmpty(mUSValue2.getStringValue())) {
             com.taobao.android.weex_framework.util.g.b(this, "[MUSDKInstance] callModuleMethod methodName is empty");
             return null;
         }

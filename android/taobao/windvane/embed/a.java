@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.uc.webview.export.extension.EmbedViewConfig;
 import com.uc.webview.export.extension.IEmbedViewContainer;
@@ -42,7 +42,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3e0a6e9", new Object[]{str, cls, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || cls == null) {
+        } else if (StringUtils.isEmpty(str) || cls == null) {
         } else {
             ClassLoader classLoader = null;
             if (z) {

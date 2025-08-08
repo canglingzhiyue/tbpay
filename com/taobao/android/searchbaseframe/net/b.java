@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.net;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Param;
 import anetwork.channel.entity.StringParam;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -70,7 +70,7 @@ public class b {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 arrayList.add(new StringParam(key, value));
             }
         }

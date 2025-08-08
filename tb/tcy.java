@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.b;
 import com.alibaba.android.aura.datamodel.linkage.UMFLinkageTrigger;
@@ -97,7 +97,7 @@ public class tcy {
         if (this.c == null) {
             arc.a().a("stream", "UMFLinkageTrigger is null.");
             return false;
-        } else if (TextUtils.isEmpty(this.b)) {
+        } else if (StringUtils.isEmpty(this.b)) {
             arc.a().a("stream", "queryParams is null.");
             return false;
         } else {
@@ -282,7 +282,7 @@ public class tcy {
         if (ipChange instanceof IpChange) {
             return (AURARenderComponent) ipChange.ipc$dispatch("a43af0e", new Object[]{this, list, str});
         }
-        if (list != null && !TextUtils.isEmpty(str)) {
+        if (list != null && !StringUtils.isEmpty(str)) {
             for (AURARenderComponent aURARenderComponent : list) {
                 if (str.equals(aURARenderComponent.key)) {
                     return aURARenderComponent;

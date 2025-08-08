@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -609,9 +609,9 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
                 if (userLoginActivity == null || userLoginActivity.mHistoryAccount == null) {
                     return;
                 }
-                if (!TextUtils.isEmpty(UserLoginActivity.getMaskMobile())) {
+                if (!StringUtils.isEmpty(UserLoginActivity.getMaskMobile())) {
                     UserTrackAdapter.sendUT(getPageName(), "has_maskMobile");
-                } else if (TextUtils.isEmpty(UserLoginActivity.getMobileFromHistory(this.mUserLoginActivity.mHistoryAccount)) || !checkSMSLoginEnable(this.mUserLoginActivity.mHistoryAccount)) {
+                } else if (StringUtils.isEmpty(UserLoginActivity.getMobileFromHistory(this.mUserLoginActivity.mHistoryAccount)) || !checkSMSLoginEnable(this.mUserLoginActivity.mHistoryAccount)) {
                 } else {
                     new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.ali.user.mobile.login.ui.BaseLoginFragment.5
                         public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -723,19 +723,19 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
         HashMap hashMap = new HashMap();
         try {
             hashMap.put("intervel", String.valueOf(System.currentTimeMillis() - LoginStatus.launchTimestamp));
-            if (!TextUtils.isEmpty(LoginStatus.mtopApiReferer)) {
+            if (!StringUtils.isEmpty(LoginStatus.mtopApiReferer)) {
                 JSONObject jSONObject = new JSONObject(LoginStatus.mtopApiReferer);
                 hashMap.put("apiName", jSONObject.getString("apiName"));
                 hashMap.put("v", jSONObject.getString("v"));
                 hashMap.put("mtopEventName", jSONObject.optString("eventName"));
                 hashMap.put("eventName", "mtop");
-            } else if (!TextUtils.isEmpty(LoginStatus.jsbridgeRefUrl)) {
+            } else if (!StringUtils.isEmpty(LoginStatus.jsbridgeRefUrl)) {
                 hashMap.put("fromURL", LoginStatus.jsbridgeRefUrl);
                 hashMap.put("eventName", "jsbridge");
-            } else if (!TextUtils.isEmpty(LoginStatus.browserRefUrl)) {
+            } else if (!StringUtils.isEmpty(LoginStatus.browserRefUrl)) {
                 hashMap.put("fromURL", LoginStatus.browserRefUrl);
                 hashMap.put("eventName", "container");
-            } else if (!TextUtils.isEmpty(LoginStatus.source)) {
+            } else if (!StringUtils.isEmpty(LoginStatus.source)) {
                 hashMap.put("eventName", LoginStatus.source);
             } else {
                 hashMap.put("eventName", "native");
@@ -775,7 +775,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
         } else {
             if (System.currentTimeMillis() - ((Long) SharedPreferencesUtil.getData(getContext().getApplicationContext(), "pushLogoutTime", 0L)).longValue() < 60000) {
                 String str = (String) SharedPreferencesUtil.getData(getContext().getApplicationContext(), "pushLogoutContent", "");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     alert("", str, getString(R.string.aliuser_common_ok), new DialogInterface.OnClickListener() { // from class: com.ali.user.mobile.login.ui.BaseLoginFragment.7
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1005,7 +1005,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3eeb3893", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             Bitmap bitmapFromMemoryCache = ImageUtil.getBitmapFromMemoryCache(MD5Util.getMD5(str));
             CircleImageView circleImageView = this.mAvatarIV;
@@ -1209,7 +1209,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
         }
         if (userLoginActivity.mHistoryAccount != null) {
             boolean historyMatchMask = this.mUserLoginActivity.historyMatchMask();
-            if (!TextUtils.isEmpty(UserLoginActivity.getMaskMobile()) && !(this instanceof OneKeyLoginFragment) && !historyMatchMask && LoginSwitch.isInABTestRegion("rollback_history_to_first_onekey", 10000)) {
+            if (!StringUtils.isEmpty(UserLoginActivity.getMaskMobile()) && !(this instanceof OneKeyLoginFragment) && !historyMatchMask && LoginSwitch.isInABTestRegion("rollback_history_to_first_onekey", 10000)) {
                 Intent intent2 = new Intent();
                 for (Map.Entry<String, String> entry : ((NumberAuthService) ServiceFactory.getService(NumberAuthService.class)).getAuthInfoMap().entrySet()) {
                     intent2.putExtra(entry.getKey(), entry.getValue());
@@ -1475,7 +1475,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
 
     public boolean isFingerEnable(HistoryAccount historyAccount) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2e555d45", new Object[]{this, historyAccount})).booleanValue() : historyAccount != null && !TextUtils.isEmpty(historyAccount.biometricId) && ServiceFactory.getService(FingerprintService.class) != null && ((FingerprintService) ServiceFactory.getService(FingerprintService.class)).isFingerprintAvailable() && !TextUtils.isEmpty(this.mUserLoginActivity.mBiometricToken);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("2e555d45", new Object[]{this, historyAccount})).booleanValue() : historyAccount != null && !StringUtils.isEmpty(historyAccount.biometricId) && ServiceFactory.getService(FingerprintService.class) != null && ((FingerprintService) ServiceFactory.getService(FingerprintService.class)).isFingerprintAvailable() && !StringUtils.isEmpty(this.mUserLoginActivity.mBiometricToken);
     }
 
     public void addFingeritem(BottomMenuFragment bottomMenuFragment, List<com.ali.user.mobile.ui.widget.MenuItem> list) {
@@ -1524,7 +1524,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
             String mobileFromHistory = UserLoginActivity.getMobileFromHistory(historyAccount);
             String maskMobile = UserLoginActivity.getMaskMobile();
             boolean isCompareSuccess = UserLoginActivity.isCompareSuccess(mobileFromHistory, maskMobile);
-            if (!TextUtils.isEmpty(maskMobile) && !(this instanceof OneKeyLoginFragment) && isCompareSuccess && LoginSwitch.isInABTestRegion("rollback_history_to_onekey", 10000)) {
+            if (!StringUtils.isEmpty(maskMobile) && !(this instanceof OneKeyLoginFragment) && isCompareSuccess && LoginSwitch.isInABTestRegion("rollback_history_to_onekey", 10000)) {
                 UserTrackAdapter.sendUT(getPageName(), "canOnekeyHistory");
                 return true;
             }
@@ -1649,7 +1649,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
             r0.ipc$dispatch(r11, r1)
             return
         L1d:
-            boolean r0 = android.text.TextUtils.isEmpty(r13)
+            boolean r0 = android.text.StringUtils.isEmpty(r13)
             if (r0 == 0) goto L24
             return
         L24:
@@ -1657,7 +1657,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
             r0.<init>()
             com.ali.user.mobile.login.presenter.UserMobileLoginPresenter r1 = new com.ali.user.mobile.login.presenter.UserMobileLoginPresenter
             r1.<init>(r10, r0)
-            boolean r0 = android.text.TextUtils.isEmpty(r13)
+            boolean r0 = android.text.StringUtils.isEmpty(r13)
             if (r0 != 0) goto L4a
             java.lang.String r0 = "-"
             boolean r4 = r13.contains(r0)
@@ -1750,7 +1750,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
             return;
         }
         String string = getResources().getString(R.string.aliuser_common_ok);
-        if (rpcResponse != null && !TextUtils.isEmpty(rpcResponse.codeGroup) && loginParam != null && TextUtils.equals(ApiConstants.CodeGroup.PWD_CAN_SMS_ERROR, rpcResponse.codeGroup)) {
+        if (rpcResponse != null && !StringUtils.isEmpty(rpcResponse.codeGroup) && loginParam != null && StringUtils.equals(ApiConstants.CodeGroup.PWD_CAN_SMS_ERROR, rpcResponse.codeGroup)) {
             if (rpcResponse.returnValue == null || rpcResponse.returnValue.extMap == null) {
                 str = "";
                 str2 = str;
@@ -1777,7 +1777,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
                     BaseLoginFragment.this.pwdErrorToSMS();
                 }
             };
-        } else if (rpcResponse != null && !TextUtils.isEmpty(rpcResponse.codeGroup) && loginParam != null && TextUtils.equals(ApiConstants.CodeGroup.PWD_CAN_FACE_ERROR, rpcResponse.codeGroup) && ServiceFactory.getService(FaceService.class) != null) {
+        } else if (rpcResponse != null && !StringUtils.isEmpty(rpcResponse.codeGroup) && loginParam != null && StringUtils.equals(ApiConstants.CodeGroup.PWD_CAN_FACE_ERROR, rpcResponse.codeGroup) && ServiceFactory.getService(FaceService.class) != null) {
             if (rpcResponse.returnValue == null || rpcResponse.returnValue.extMap == null) {
                 str = "";
                 str2 = str;
@@ -1805,7 +1805,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
                     }
                 }
             };
-        } else if (rpcResponse != null && !TextUtils.isEmpty(rpcResponse.codeGroup) && loginParam != null && (userLoginActivity = this.mUserLoginActivity) != null && userLoginActivity.mAlipayInstall && TextUtils.equals(ApiConstants.CodeGroup.PWD_CAN_ALIPAY, rpcResponse.codeGroup) && LoginSwitch.isInABTestRegion(LoginSwitch.PWD_ERROR_TO_ALIPAY, 10000)) {
+        } else if (rpcResponse != null && !StringUtils.isEmpty(rpcResponse.codeGroup) && loginParam != null && (userLoginActivity = this.mUserLoginActivity) != null && userLoginActivity.mAlipayInstall && StringUtils.equals(ApiConstants.CodeGroup.PWD_CAN_ALIPAY, rpcResponse.codeGroup) && LoginSwitch.isInABTestRegion(LoginSwitch.PWD_ERROR_TO_ALIPAY, 10000)) {
             if (rpcResponse.returnValue == null || rpcResponse.returnValue.extMap == null) {
                 str = "";
                 str2 = str;
@@ -1834,7 +1834,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
                 }
             };
             z = false;
-        } else if (rpcResponse == null || TextUtils.isEmpty(rpcResponse.codeGroup) || loginParam == null || (!TextUtils.equals(ApiConstants.CodeGroup.PWD_ERROR, rpcResponse.codeGroup) && !TextUtils.equals("noRecord", rpcResponse.codeGroup))) {
+        } else if (rpcResponse == null || StringUtils.isEmpty(rpcResponse.codeGroup) || loginParam == null || (!StringUtils.equals(ApiConstants.CodeGroup.PWD_ERROR, rpcResponse.codeGroup) && !StringUtils.equals("noRecord", rpcResponse.codeGroup))) {
             positiveClickListener = null;
             str = "";
             str2 = str;
@@ -1867,10 +1867,10 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
             str3 = string;
             str4 = string2;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = rpcResponse == null ? "" : rpcResponse.message;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = str2;
             str2 = "";
         }
@@ -1901,7 +1901,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
                 UserTrackAdapter.sendControlUT(BaseLoginFragment.this.getPageName(), "Button-ShowPwd");
             }
         });
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             onNegativeClickListener.setOnPositiveClickListener(str4, positiveClickListener);
         }
         this.mAliUserDialog = onNegativeClickListener.build().shown();
@@ -1909,7 +1909,7 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
         if (rpcResponse != null) {
             hashMap.put("code", String.valueOf(rpcResponse.code));
         }
-        if (rpcResponse != null && !TextUtils.isEmpty(rpcResponse.codeGroup)) {
+        if (rpcResponse != null && !StringUtils.isEmpty(rpcResponse.codeGroup)) {
             hashMap.put("codeGroup", rpcResponse.codeGroup);
         }
         UserTrackAdapter.sendUserTrack(getPageName(), "ShowPwdError", hashMap);
@@ -1944,9 +1944,9 @@ public abstract class BaseLoginFragment extends BaseFragment implements View.OnC
         }
         boolean z = this.mAttachedActivity instanceof UserLoginActivity ? ((UserLoginActivity) this.mAttachedActivity).isMobileAvailable : true;
         if (!DataProviderFactory.getDataProvider().historySecurityMobileCanLogin()) {
-            return !TextUtils.isEmpty(historyAccount.loginPhone);
+            return !StringUtils.isEmpty(historyAccount.loginPhone);
         }
-        return !TextUtils.isEmpty(historyAccount.mobile) && z;
+        return !StringUtils.isEmpty(historyAccount.mobile) && z;
     }
 
     public void showBottomMenuForFirstPage() {

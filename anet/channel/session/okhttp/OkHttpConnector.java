@@ -1,6 +1,6 @@
 package anet.channel.session.okhttp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.RequestCb;
 import anet.channel.appmonitor.AppMonitor;
@@ -184,7 +184,7 @@ public class OkHttpConnector {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4fe3889a", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ThreadPoolExecutorFactory.submitPriorityTask(new Runnable() { // from class: anet.channel.session.okhttp.OkHttpConnector.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;

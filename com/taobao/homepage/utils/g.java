@@ -1,6 +1,6 @@
 package com.taobao.homepage.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -78,12 +78,12 @@ public class g extends com.ut.mini.module.plugin.a {
         }
         synchronized (this.f) {
             if (obj != null) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     if (newRangerOptions == null) {
                         newRangerOptions = new NewRangerOptions();
                     }
                     l lVar = this.f17287a;
-                    if (!TextUtils.isEmpty(newRangerOptions.trackGroup)) {
+                    if (!StringUtils.isEmpty(newRangerOptions.trackGroup)) {
                         l.a aVar = lVar.b.get(newRangerOptions.trackGroup);
                         if (aVar == null) {
                             Map<String, l.a> map = lVar.b;
@@ -97,12 +97,12 @@ public class g extends com.ut.mini.module.plugin.a {
                     } else {
                         Collections.addAll(lVar.c, str.split("[|_,\\s]+"));
                     }
-                    if (!TextUtils.isEmpty(newRangerOptions.rangerBucketsAlias)) {
+                    if (!StringUtils.isEmpty(newRangerOptions.rangerBucketsAlias)) {
                         Collections.addAll(lVar.d, newRangerOptions.rangerBucketsAlias.split("[,|\\s]+"));
                     }
                     HashSet hashSet = new HashSet(lVar.c);
                     Map<String, String> pageProperties = com.ut.mini.l.getInstance().getPageProperties(obj);
-                    if (pageProperties != null && !TextUtils.isEmpty(pageProperties.get(RANGER_BUCKETS_KEY))) {
+                    if (pageProperties != null && !StringUtils.isEmpty(pageProperties.get(RANGER_BUCKETS_KEY))) {
                         Collections.addAll(hashSet, pageProperties.get(RANGER_BUCKETS_KEY).split("[|_,\\s]+"));
                     }
                     for (l.a aVar3 : lVar.b.values()) {
@@ -111,7 +111,7 @@ public class g extends com.ut.mini.module.plugin.a {
                             Collections.addAll(hashSet, aVar3.f17293a);
                         }
                     }
-                    String join = TextUtils.join("_", hashSet);
+                    String join = StringUtils.join("_", hashSet);
                     HashMap hashMap = new HashMap();
                     if (!com.taobao.android.home.component.utils.j.a("enableDeleteRangerBucketsNative", true)) {
                         hashMap.put(RANGER_BUCKETS_KEY, join);
@@ -146,8 +146,8 @@ public class g extends com.ut.mini.module.plugin.a {
             return (Map) ipChange.ipc$dispatch("84d56f5f", new Object[]{this, str, new Integer(i), str2, str3, str4, map});
         }
         try {
-            if (TextUtils.equals(str, kss.f30292a) && this.b != null && this.b.get() != null) {
-                if (!TextUtils.isEmpty(map.get(RANGER_BUCKETS_KEY))) {
+            if (StringUtils.equals(str, kss.f30292a) && this.b != null && this.b.get() != null) {
+                if (!StringUtils.isEmpty(map.get(RANGER_BUCKETS_KEY))) {
                     return a(this.b.get(), map.get(RANGER_BUCKETS_KEY), null);
                 }
                 l lVar = this.f17287a;

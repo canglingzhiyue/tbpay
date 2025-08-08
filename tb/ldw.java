@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes7.dex */
@@ -17,11 +17,11 @@ public class ldw {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return str;
         }
         Uri parse = Uri.parse(str);
-        if (!TextUtils.equals("poplayer", parse.getScheme()) || !TextUtils.equals("homepage_interest", parse.getHost())) {
+        if (!StringUtils.equals("poplayer", parse.getScheme()) || !StringUtils.equals("homepage_interest", parse.getHost())) {
             return str;
         }
         Uri.Builder buildUpon = parse.buildUpon();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.globalmodel.TBShareContent;
 import java.util.concurrent.ConcurrentHashMap;
@@ -87,11 +87,11 @@ public class obk {
         String d = obh.d(bVar.b());
         TBShareContent a2 = bVar.a().a();
         String str = "";
-        if (!TextUtils.isEmpty(d)) {
-            if (!TextUtils.equals("saveVideo", bVar.b())) {
+        if (!StringUtils.isEmpty(d)) {
+            if (!StringUtils.equals("saveVideo", bVar.b())) {
                 return d;
             }
-            if (a2 != null && a2.extraParams != null && TextUtils.equals("true", a2.extraParams.get("isMarvelScheme"))) {
+            if (a2 != null && a2.extraParams != null && StringUtils.equals("true", a2.extraParams.get("isMarvelScheme"))) {
                 return d;
             }
             StringBuilder sb = new StringBuilder();

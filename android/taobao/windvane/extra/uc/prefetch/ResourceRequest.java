@@ -1,6 +1,6 @@
 package android.taobao.windvane.extra.uc.prefetch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -73,7 +73,7 @@ public class ResourceRequest {
             if (ipChange instanceof IpChange) {
                 return (Builder) ipChange.ipc$dispatch("a5e7cabd", new Object[]{this, str, str2});
             }
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 this.headers.put(str, str2);
             }
             return this;
@@ -116,7 +116,7 @@ public class ResourceRequest {
             if (ipChange instanceof IpChange) {
                 return (Builder) ipChange.ipc$dispatch("2aae3842", new Object[]{this, str, str2});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.extProperties.put(str, str2);
             }
             return this;

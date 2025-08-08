@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -54,14 +54,14 @@ public class hhm extends iot {
         } else {
             JSONObject jSONObject = (JSONObject) objArr[0];
             final Context m = dXRuntimeContext.m();
-            if (jSONObject == null && TextUtils.equals("update", (String) objArr[1]) && dXRuntimeContext.s() != null) {
+            if (jSONObject == null && StringUtils.equals("update", (String) objArr[1]) && dXRuntimeContext.s() != null) {
                 jSONObject = dXRuntimeContext.s().getData();
             }
             if (jSONObject == null || (liveItem = (LiveItem) pqj.a(jSONObject.toJSONString(), LiveItem.class)) == null || liveItem.itemExtData == null) {
                 return;
             }
             his.a("Handler_presale", "handleEvent | args1=" + ((String) objArr[1]) + "    liveId=" + liveItem.liveId + "  itemId=" + liveItem.itemId);
-            if (TextUtils.equals("subscribe", (String) objArr[1])) {
+            if (StringUtils.equals("subscribe", (String) objArr[1])) {
                 String string = liveItem.itemExtData.getString("subscribeStatus");
                 long longValue = liveItem.itemExtData.getLongValue("depositBegin");
                 long longValue2 = liveItem.itemExtData.getLongValue("depositEnd");
@@ -69,7 +69,7 @@ public class hhm extends iot {
                 final long b = l.b(liveItem.liveId);
                 String d = a.a().d(cVar);
                 b(liveItem);
-                if (!TextUtils.equals("1", string)) {
+                if (!StringUtils.equals("1", string)) {
                     a.a().i().a(cVar == null ? null : cVar.C(), m, str, "https://h5.m.taobao.com/taolive/video.html?userId=" + d + "&livesource=presale_subscribe&sjsdItemId=" + liveItem.itemId, longValue, longValue2, 1L, new k() { // from class: tb.hhm.1
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -176,7 +176,7 @@ public class hhm extends iot {
                         }
                     }
                 });
-            } else if (!TextUtils.equals("update", (String) objArr[1])) {
+            } else if (!StringUtils.equals("update", (String) objArr[1])) {
             } else {
                 hiq.a(liveItem, cVar);
             }

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,7 +95,7 @@ public class a extends RecyclerView.Adapter<C0897a> {
             return;
         }
         c0897a.f21452a.setText((CharSequence) null);
-        String str = (chatMessage.renders != null && TextUtils.equals(chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE), "rewardAutoComment")) ? chatMessage.mUserNick + " " : chatMessage.mUserNick + ResponseProtocolType.COMMENT;
+        String str = (chatMessage.renders != null && StringUtils.equals(chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE), "rewardAutoComment")) ? chatMessage.mUserNick + " " : chatMessage.mUserNick + ResponseProtocolType.COMMENT;
         SpannableString spannableString = new SpannableString(str);
         spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FFE8B4")), 0, str.length(), 33);
         c0897a.f21452a.append(spannableString);

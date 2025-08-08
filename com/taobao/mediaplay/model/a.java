@@ -1,6 +1,6 @@
 package com.taobao.mediaplay.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -28,7 +28,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.f18044a) && (jSONObject = this.b) != null) {
+        if (StringUtils.isEmpty(this.f18044a) && (jSONObject = this.b) != null) {
             Object opt = jSONObject.opt("cacheKey");
             this.f18044a = opt == null ? null : opt.toString();
         }
@@ -41,7 +41,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.c) && (jSONObject = this.b) != null) {
+        if (StringUtils.isEmpty(this.c) && (jSONObject = this.b) != null) {
             Object opt = jSONObject.opt("definition");
             this.c = opt == null ? null : opt.toString();
         }

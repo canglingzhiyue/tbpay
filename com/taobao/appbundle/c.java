@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.ab;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -363,7 +363,7 @@ public final class c {
                 throw new NullPointerException("null cannot be cast to non-null type java.lang.Class<T>");
             }
             return (Class) obj;
-        } else if (!TextUtils.isEmpty(com.android.tools.bundleInfo.b.a().a(featureName))) {
+        } else if (!StringUtils.isEmpty(com.android.tools.bundleInfo.b.a().a(featureName))) {
             Class<T> cls2 = (Class<T>) e(com.android.tools.bundleInfo.b.a().a(featureName));
             if (cls2 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type java.lang.Class<T>");

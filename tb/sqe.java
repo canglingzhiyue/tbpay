@@ -3,7 +3,7 @@ package tb;
 import android.graphics.Rect;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -36,10 +36,10 @@ public class sqe implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("77d86ebd", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "getNaviBarHeight")) {
+        if (StringUtils.equals(str, "getNaviBarHeight")) {
             return a(wVCallBackContext);
         }
-        if (!TextUtils.equals(str, "findDxViewInSearchBarPositionById")) {
+        if (!StringUtils.equals(str, "findDxViewInSearchBarPositionById")) {
             return false;
         }
         return a(str2, wVCallBackContext);
@@ -93,7 +93,7 @@ public class sqe implements b {
             return false;
         }
         String string = parseObject.getString("userId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return false;
         }
         lbq b = oiy.a().b();

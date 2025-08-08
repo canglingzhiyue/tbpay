@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.net.URLEncoder;
 import java.util.List;
@@ -213,7 +213,7 @@ public class O000O00o {
                 return "";
             }
             String jSONArray3 = jSONArray.toString();
-            if (!TextUtils.isEmpty(jSONArray3)) {
+            if (!StringUtils.isEmpty(jSONArray3)) {
                 try {
                     jSONArray2 = URLEncoder.encode(O0000O0o.O000000o(O00000o.O00000Oo(jSONArray3, O0000o00.O000000o(O00000Oo))), "UTF-8");
                 } catch (Exception e2) {
@@ -246,7 +246,7 @@ public class O000O00o {
                         JSONObject jSONObject = null;
                         int i2 = -1;
                         try {
-                            if (!TextUtils.isEmpty(O000000o3)) {
+                            if (!StringUtils.isEmpty(O000000o3)) {
                                 JSONObject jSONObject2 = new JSONObject(O000000o3);
                                 try {
                                     i2 = jSONObject2.getInt("code");
@@ -322,7 +322,7 @@ public class O000O00o {
                     e2.printStackTrace();
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             O00oOooO.O000000o(context, str);
@@ -340,7 +340,7 @@ public class O000O00o {
         synchronized (O000O00o.class) {
             concurrentLinkedQueue = new ConcurrentLinkedQueue();
             String O000000o2 = O00oOooO.O000000o(context);
-            if (!TextUtils.isEmpty(O000000o2)) {
+            if (!StringUtils.isEmpty(O000000o2)) {
                 try {
                     JSONArray jSONArray = new JSONArray(O00000o.O00000o0(O000000o2, O0000o00.O000000o(O00000Oo)));
                     int length = jSONArray.length();

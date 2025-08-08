@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ConsumerRightsNode;
 import com.taobao.android.detail.datasdk.model.datamodel.node.RightsNode;
@@ -38,7 +38,7 @@ public class fcm extends eoc {
         }
         ConsumerRightsNode p = eqb.p(bVar);
         RightsNode o = eqb.o(bVar);
-        if (p != null && p.rights != null && !TextUtils.isEmpty(p.url)) {
+        if (p != null && p.rights != null && !StringUtils.isEmpty(p.url)) {
             this.f27804a = p.rights;
             this.e = p.passValue;
             this.f = p.url;

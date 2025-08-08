@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail2.core.framework.data.model.d;
 
@@ -14,6 +14,6 @@ public class fjh {
 
     public static String a(d dVar, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1174d798", new Object[]{dVar, str}) : (dVar == null || dVar.J() == null || TextUtils.isEmpty(dVar.J().spmCnt)) ? str : dVar.J().spmCnt;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("1174d798", new Object[]{dVar, str}) : (dVar == null || dVar.J() == null || StringUtils.isEmpty(dVar.J().spmCnt)) ? str : dVar.J().spmCnt;
     }
 }

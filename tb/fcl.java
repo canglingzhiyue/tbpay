@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -27,12 +27,12 @@ public class fcl extends eoc {
 
     public fcl(JSONObject jSONObject) {
         if (jSONObject != null) {
-            if (!TextUtils.isEmpty(jSONObject.getString("url"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("url"))) {
                 this.f27803a = jSONObject.getString("url");
             } else {
                 this.f27803a = "";
             }
-            if (!TextUtils.isEmpty(jSONObject.getString("params"))) {
+            if (!StringUtils.isEmpty(jSONObject.getString("params"))) {
                 this.b = jSONObject.getJSONObject("params");
             } else {
                 this.b = new JSONObject();

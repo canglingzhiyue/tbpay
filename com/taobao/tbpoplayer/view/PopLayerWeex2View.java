@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.TextureView;
 import android.view.View;
@@ -212,7 +212,7 @@ public class PopLayerWeex2View extends PopLayerBaseView<View, d> {
             }
             this.mSnapshotScale = ((float) K) / 100.0f;
             String str = dVar.x().params;
-            JSONObject jSONObject = !TextUtils.isEmpty(str) ? (JSONObject) new JSONTokener(str).nextValue() : null;
+            JSONObject jSONObject = !StringUtils.isEmpty(str) ? (JSONObject) new JSONTokener(str).nextValue() : null;
             if (jSONObject == null) {
                 closeOnException("PARAMS_PARSE_ERROR", "params=" + dVar.x().params);
                 return;
@@ -221,7 +221,7 @@ public class PopLayerWeex2View extends PopLayerBaseView<View, d> {
             setPopRequest(dVar);
             String optString = jSONObject.optString("url");
             com.alibaba.poplayer.utils.c.a("PopLayerWeex2View.loadUrl=%s", optString);
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 closeOnException("URL_EMPTY", "");
                 return;
             }

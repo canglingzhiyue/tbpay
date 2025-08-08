@@ -1,7 +1,7 @@
 package com.taobao.tao.infoflow.multitab.viewprovider.viewpager;
 
 import android.support.v4.view.PagerAdapter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -115,7 +115,7 @@ public class b extends PagerAdapter {
         if (!(view.getTag(R.id.multi_tab_container_type) instanceof String) || !(view.getTag(R.id.multi_tab_position) instanceof Integer) || !(view.getTag(R.id.multi_tab_identifier) instanceof String)) {
             return -2;
         }
-        return (!TextUtils.equals((String) view.getTag(R.id.multi_tab_container_type), this.b.b(((Integer) view.getTag(R.id.multi_tab_position)).intValue())) || !TextUtils.equals((String) view.getTag(R.id.multi_tab_identifier), kst.d())) ? -2 : -1;
+        return (!StringUtils.equals((String) view.getTag(R.id.multi_tab_container_type), this.b.b(((Integer) view.getTag(R.id.multi_tab_position)).intValue())) || !StringUtils.equals((String) view.getTag(R.id.multi_tab_identifier), kst.d())) ? -2 : -1;
     }
 
     public List<JSONObject> a() {

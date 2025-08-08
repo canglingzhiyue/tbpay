@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.safe.AES;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -34,7 +34,7 @@ public class cyf {
 
     public static String a(String str, String str2) {
         String str3;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             str3 = "alias or encrypt content is null";
         } else {
             try {
@@ -140,7 +140,7 @@ public class cyf {
     public static byte[] a(String str, byte[] bArr) {
         String str2;
         byte[] bArr2 = new byte[0];
-        if (TextUtils.isEmpty(str) || bArr == null) {
+        if (StringUtils.isEmpty(str) || bArr == null) {
             str2 = "alias or encrypt content is null";
         } else if (a()) {
             return a(b(str), bArr);
@@ -225,7 +225,7 @@ public class cyf {
 
     public static String b(String str, String str2) {
         String str3;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             str3 = "alias or encrypt content is null";
         } else {
             try {
@@ -239,7 +239,7 @@ public class cyf {
     }
 
     private static SecretKey b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (f26597a.get(str) == null) {
@@ -251,7 +251,7 @@ public class cyf {
     public static byte[] b(String str, byte[] bArr) {
         String str2;
         byte[] bArr2 = new byte[0];
-        if (TextUtils.isEmpty(str) || bArr == null) {
+        if (StringUtils.isEmpty(str) || bArr == null) {
             str2 = "alias or encrypt content is null";
         } else if (!a()) {
             str2 = "sdk version is too low";

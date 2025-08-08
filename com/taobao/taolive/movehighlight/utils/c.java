@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.taolive.room.utils.v;
@@ -146,7 +146,7 @@ public class c {
         }
         boolean d = com.taobao.taolive.sdk.utils.l.d(pmd.a().d().a("tblive", "highlightSingleCardSwitch", "true"));
         String config = OrangeConfig.getInstance().getConfig("tblive", "higlightSingleCardSource", "");
-        if (!TextUtils.isEmpty(config) && !TextUtils.isEmpty(str) && d) {
+        if (!StringUtils.isEmpty(config) && !StringUtils.isEmpty(str) && d) {
             return Arrays.asList(config.split(",")).contains(str);
         }
         return false;

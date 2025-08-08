@@ -2,7 +2,7 @@ package com.taobao.android.behavix;
 
 import android.app.Application;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.adapter.BXBRBridge;
 import com.taobao.android.behavix.adapter.a;
@@ -77,13 +77,13 @@ public class d {
                 }
                 String str2 = (String) hashMap.get("ttid");
                 String str3 = (String) hashMap.get("userId");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     TLog.loge("BehaviX", "BehaviX", "appName cannot be null");
                     return;
                 }
                 a().a(application, str, str2);
                 b.a().a(hashMap);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     a().a(str3);
                 }
                 if (com.taobao.android.behavir.b.a() == null) {

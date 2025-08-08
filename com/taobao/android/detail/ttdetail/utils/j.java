@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.utils;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliConfigInterface;
@@ -59,7 +59,7 @@ public class j {
             return false;
         }
         String a3 = a2.a(ORANGE_GROUP, "close_wvhw_list", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             if (a3.contains("," + Build.MODEL.toLowerCase(Locale.getDefault()) + ",")) {
                 return true;
             }
@@ -255,7 +255,7 @@ public class j {
             return null;
         }
         String a3 = a2.a(ORANGE_GROUP, "append_abilitycenter_event_types", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             return am.a(a3.split(";"));
         }
         return null;
@@ -795,13 +795,13 @@ public class j {
             return null;
         }
         String a3 = a2.a(ORANGE_GROUP, "newArchScheme", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             String[] split = a3.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
             if (split.length > 0) {
                 arrayList = new ArrayList(split.length);
             }
             for (String str : split) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     arrayList.add(str);
                 }
             }
@@ -832,13 +832,13 @@ public class j {
             return null;
         }
         String a3 = a2.a(ORANGE_GROUP, "newArchHostPath", "");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             String[] split = a3.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
             if (split.length > 0) {
                 arrayList = new ArrayList(split.length);
             }
             for (String str : split) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     arrayList.add(str);
                 }
             }
@@ -915,7 +915,7 @@ public class j {
         }
         if (jSONObject != null && (jSONObject2 = jSONObject.getJSONObject("close")) != null) {
             String string = jSONObject2.getString("appVersion");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 return h.a(string.split("/"));
             }
         }

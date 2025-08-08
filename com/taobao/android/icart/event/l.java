@@ -1,6 +1,6 @@
 package com.taobao.android.icart.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.data.DataBizContext;
 import com.alibaba.android.icart.core.data.config.RequestConfig;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,7 +48,7 @@ public class l extends bca {
             return;
         }
         String str = (String) b(1);
-        if (TextUtils.isEmpty(str) || !(b(2) instanceof Integer)) {
+        if (StringUtils.isEmpty(str) || !(b(2) instanceof Integer)) {
             return;
         }
         final String b = this.b.b();

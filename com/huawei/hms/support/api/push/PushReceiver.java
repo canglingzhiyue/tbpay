@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
 import com.alipay.tianyan.mobilesdk.coco.OreoServiceUnlimitedTracker;
 import com.huawei.hms.aaid.constant.ErrorEnum;
@@ -165,7 +165,7 @@ public final class PushReceiver extends BroadcastReceiver {
         if (com.huawei.hms.push.c.a(a3, b(a3), string)) {
             return a2;
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {

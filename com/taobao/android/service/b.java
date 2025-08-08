@@ -1,7 +1,7 @@
 package com.taobao.android.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -132,7 +132,7 @@ public class b {
         }
         String b2 = b(context, i);
         apr.b("SecurityUtil", "getPackageName pid", Integer.valueOf(i), "processName", b2);
-        if (TextUtils.isEmpty(b2)) {
+        if (StringUtils.isEmpty(b2)) {
             return null;
         }
         int indexOf = b2.indexOf(58);
@@ -208,7 +208,7 @@ public class b {
             if (r1 == 0) goto L69
             r1.close()     // Catch: java.lang.Exception -> L56
         L69:
-            boolean r1 = android.text.TextUtils.isEmpty(r0)
+            boolean r1 = android.text.StringUtils.isEmpty(r0)
             if (r1 == 0) goto L91
             java.lang.String r1 = "activity"
             java.lang.Object r5 = r5.getSystemService(r1)

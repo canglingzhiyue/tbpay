@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.detail.kit.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -24,7 +24,7 @@ public class n {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2e9fa33a", new Object[]{new Long(j), str});
         }
-        if (j < 0 || TextUtils.isEmpty(str)) {
+        if (j < 0 || StringUtils.isEmpty(str)) {
             return null;
         }
         try {

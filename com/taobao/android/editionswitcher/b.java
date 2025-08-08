@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.localization.constants.Location;
 import com.alibaba.fastjson.JSON;
@@ -156,7 +156,7 @@ public class b {
         }
         SharedPreferences a2 = com.taobao.android.editionswitcher.homepage.c.a();
         String string = a2.getString(PREF_KEY_REAL_EDITION_CODE, null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             PositionInfo b = d.b();
             b.ovsPopExt = new OvsPopExt();
             return b;
@@ -171,10 +171,10 @@ public class b {
         a3.cityName = string3;
         a3.isVillageUser = string4;
         a3.area = a(context, "PREF_KEY_LOCATION_AREA", "");
-        if (!TextUtils.isEmpty(string5)) {
+        if (!StringUtils.isEmpty(string5)) {
             a3.ext = (PositionInfoExt) JSON.parseObject(string5, PositionInfoExt.class);
         }
-        if (!TextUtils.isEmpty(string6)) {
+        if (!StringUtils.isEmpty(string6)) {
             a3.ovsPopExt = (OvsPopExt) JSON.parseObject(string6, OvsPopExt.class);
         } else {
             a3.ovsPopExt = new OvsPopExt();
@@ -209,7 +209,7 @@ public class b {
 
     public static boolean e(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a0d012e0", new Object[]{context})).booleanValue() : TextUtils.equals("OLD", m(context));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a0d012e0", new Object[]{context})).booleanValue() : StringUtils.equals("OLD", m(context));
     }
 
     public static boolean f(Context context) {
@@ -219,12 +219,12 @@ public class b {
 
     public static boolean g(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a2296a1e", new Object[]{context})).booleanValue() : TextUtils.equals("CUN", m(context));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a2296a1e", new Object[]{context})).booleanValue() : StringUtils.equals("CUN", m(context));
     }
 
     public static boolean h(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a2d615bd", new Object[]{context})).booleanValue() : TextUtils.equals("OLD", c(context).editionCode);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a2d615bd", new Object[]{context})).booleanValue() : StringUtils.equals("OLD", c(context).editionCode);
     }
 
     public static boolean i(Context context) {
@@ -234,29 +234,29 @@ public class b {
 
     private static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.equals("CN", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.equals("CN", str);
     }
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.equals("CN", str) && !TextUtils.equals("CUN", str) && !TextUtils.equals("OLD", str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.equals("CN", str) && !StringUtils.equals("CUN", str) && !StringUtils.equals("OLD", str);
     }
 
     public static boolean j(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a42f6cfb", new Object[]{context})).booleanValue() : TextUtils.equals("CUN", c(context).editionCode);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a42f6cfb", new Object[]{context})).booleanValue() : StringUtils.equals("CUN", c(context).editionCode);
     }
 
     public static boolean k(Context context) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a4dc189a", new Object[]{context})).booleanValue() : TextUtils.equals(b(context).isVillageUser, "y") || TextUtils.equals(c(context).isVillageUser, "y");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a4dc189a", new Object[]{context})).booleanValue() : StringUtils.equals(b(context).isVillageUser, "y") || StringUtils.equals(c(context).isVillageUser, "y");
     }
 
     public static void b(Context context, String str) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b80d809", new Object[]{context, str});
-        } else if ((l(context) && TextUtils.equals(m(context), str)) || TextUtils.isEmpty(str)) {
+        } else if ((l(context) && StringUtils.equals(m(context), str)) || StringUtils.isEmpty(str)) {
         } else {
             MtopSetting.setParam(Mtop.Id.INNER, MtopParamType.HEADER, "x-region-channel", str);
             e(context, str);
@@ -295,7 +295,7 @@ public class b {
         hashMap.put("elderHome", str2);
         TBRevisionSwitchManager.i().a(hashMap, false, 1);
         TBRevisionSwitchManager.i().a(map, false, 1);
-        if ((l(context) && TextUtils.equals(m(context), str)) || TextUtils.isEmpty(str)) {
+        if ((l(context) && StringUtils.equals(m(context), str)) || StringUtils.isEmpty(str)) {
             return;
         }
         MtopSetting.setParam(Mtop.Id.INNER, MtopParamType.HEADER, "x-region-channel", str);
@@ -332,7 +332,7 @@ public class b {
         try {
             str = com.alibaba.ability.localization.b.d();
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = n(context);
                 }
             } catch (Exception unused) {
@@ -355,7 +355,7 @@ public class b {
             SharedPreferences a2 = com.taobao.android.editionswitcher.homepage.c.a();
             String string = a2.getString("PREF_KEY_SELECTED_EDITION_CODE", null);
             try {
-                return TextUtils.isEmpty(string) ? a2.getString("PREF_KEY_CHECKED_COUNTRY_CODE", "CN") : string;
+                return StringUtils.isEmpty(string) ? a2.getString("PREF_KEY_CHECKED_COUNTRY_CODE", "CN") : string;
             } catch (Exception unused) {
                 return str;
             }
@@ -502,7 +502,7 @@ public class b {
             return ((Number) ipChange.ipc$dispatch("5b2e1e0", new Object[0])).intValue();
         }
         String config = OrangeConfig.getInstance().getConfig("edition_switcher", "LocationLimitTimeSwitcher", "12");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             try {
                 return Integer.valueOf(config).intValue();
             } catch (Throwable unused) {

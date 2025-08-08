@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.hostcontainer.tnode.component;
 import android.app.Application;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -538,8 +538,8 @@ public class TBVideoListComponent extends Component<View, a> implements s {
         } else {
             String a2 = oec.a(eVar.d.get("type"), (String) null);
             ((ILifecycleService) this.mFluidInstance.getService(ILifecycleService.class)).getConfig().a(a2);
-            boolean z2 = TextUtils.equals(a2, "tab") || TextUtils.equals(a2, "page");
-            z = oeb.a("ShortVideo.fixVideoListAppearType", true) ? TextUtils.equals(a2, "add") | z2 : z2;
+            boolean z2 = StringUtils.equals(a2, "tab") || StringUtils.equals(a2, "page");
+            z = oeb.a("ShortVideo.fixVideoListAppearType", true) ? StringUtils.equals(a2, "add") | z2 : z2;
         }
         boolean a3 = oeb.a("ShortVideo.fixVideoListPageAppear", false);
         if ((str.equals("onwillappear") && z) || (a3 && str.equals("onpageappear"))) {
@@ -645,10 +645,10 @@ public class TBVideoListComponent extends Component<View, a> implements s {
                 return false;
             }
             String a2 = oec.a(pickPreloadArgs.get("url"), (String) null);
-            if (TextUtils.isEmpty(a2) || (parse = Uri.parse(a2)) == null) {
+            if (StringUtils.isEmpty(a2) || (parse = Uri.parse(a2)) == null) {
                 return false;
             }
-            return !TextUtils.isEmpty(parse.getQueryParameter("extParams"));
+            return !StringUtils.isEmpty(parse.getQueryParameter("extParams"));
         } catch (Throwable th) {
             spz.a(TAG, "", th);
             FluidException.throwException((FluidContext) null, FluidInstance.INSTANCE_PARSE_INSTANCE_CONFIG_ERROR, th);
@@ -665,7 +665,7 @@ public class TBVideoListComponent extends Component<View, a> implements s {
         try {
             if (this.node != null && !ogv.a(this.node.C())) {
                 String pageUrl = getPageUrl();
-                if (TextUtils.isEmpty(pageUrl) || (parse = Uri.parse(pageUrl)) == null) {
+                if (StringUtils.isEmpty(pageUrl) || (parse = Uri.parse(pageUrl)) == null) {
                     return false;
                 }
                 return isVideoColdLaunchParams(parse.getQueryParameter("sLaunch"), parse.getQueryParameter(CONFIG_TABID));
@@ -703,10 +703,10 @@ public class TBVideoListComponent extends Component<View, a> implements s {
             d b = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().b();
             if (b != null && b.a(this.mContext)) {
                 jSONObject = TBGuangPickPreloadModule.getPickPreloadExtParams();
-                if (ogv.a(jSONObject) && !TextUtils.isEmpty(str)) {
+                if (ogv.a(jSONObject) && !StringUtils.isEmpty(str)) {
                     jSONObject = sov.a(Uri.parse(str));
                 }
-            } else if (!TextUtils.isEmpty(str)) {
+            } else if (!StringUtils.isEmpty(str)) {
                 jSONObject = sov.a(Uri.parse(str));
             }
         }
@@ -751,7 +751,7 @@ public class TBVideoListComponent extends Component<View, a> implements s {
 
     private String getTabType() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("93d21060", new Object[]{this}) : TextUtils.isEmpty(((a) this.viewParams).i) ? "video" : ((a) this.viewParams).i;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("93d21060", new Object[]{this}) : StringUtils.isEmpty(((a) this.viewParams).i) ? "video" : ((a) this.viewParams).i;
     }
 
     private void createFluidInstance(Context context, boolean z, boolean z2, int i, String str, String str2, int i2, int i3, String str3, String str4, boolean z3, boolean z4) {
@@ -816,8 +816,8 @@ public class TBVideoListComponent extends Component<View, a> implements s {
             str5 = TAG;
         }
         try {
-            FluidInstanceConfig.a a3 = FluidInstanceConfig.a.a().a(context).a(this).a(Boolean.valueOf(z4)).m(true).a(hVar).a(new FrameLayout(context)).a("shortvideo").e("videoFullScreen").e((Boolean) true).l(Boolean.valueOf(z)).c(FluidInstanceConfig.CONTAINER_NAME_GG_TAG3).b(FluidInstanceConfig.appendBizName(FluidInstanceConfig.CONTAINER_NAME_GG_TAG3, str7, str6)).g(obw.f31903a).d(TextUtils.isEmpty(str3) ? FluidInstanceConfig.GG_TYPE_NAME_COMMUNITY : str3).h(Boolean.valueOf(z2)).i(str4).a(Integer.valueOf(i4));
-            if (TextUtils.isEmpty(str)) {
+            FluidInstanceConfig.a a3 = FluidInstanceConfig.a.a().a(context).a(this).a(Boolean.valueOf(z4)).m(true).a(hVar).a(new FrameLayout(context)).a("shortvideo").e("videoFullScreen").e((Boolean) true).l(Boolean.valueOf(z)).c(FluidInstanceConfig.CONTAINER_NAME_GG_TAG3).b(FluidInstanceConfig.appendBizName(FluidInstanceConfig.CONTAINER_NAME_GG_TAG3, str7, str6)).g(obw.f31903a).d(StringUtils.isEmpty(str3) ? FluidInstanceConfig.GG_TYPE_NAME_COMMUNITY : str3).h(Boolean.valueOf(z2)).i(str4).a(Integer.valueOf(i4));
+            if (StringUtils.isEmpty(str)) {
                 str7 = "video";
             }
             this.mFluidInstance = FluidSDK.createFluidInstance(a3.h(str7).b(Integer.valueOf(i2)).c(Integer.valueOf(i3)).k(Boolean.valueOf(fromLauncherByParseNodeUrlAndSetConfig)).j(Boolean.valueOf(z5)).a(str2, Uri.parse(replaceSourceForLauncher)).a(new com.taobao.android.fluid.framework.c()).b());
@@ -879,7 +879,7 @@ public class TBVideoListComponent extends Component<View, a> implements s {
             return false;
         }
         String a2 = oec.a(map.get(CONFIG_TABID), (String) null);
-        boolean equals = TextUtils.equals(str, a2);
+        boolean equals = StringUtils.equals(str, a2);
         spz.c(TAG, "PickPreloadControllerNew，isCurrentTab，queryTabType：" + a2 + "，tabType：" + str + "，是否需要承接：" + equals);
         return equals;
     }
@@ -891,12 +891,12 @@ public class TBVideoListComponent extends Component<View, a> implements s {
 
     private boolean isVideoColdLaunchParams(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("109c83cd", new Object[]{this, str, str2})).booleanValue() : TextUtils.equals(str, "0") && TextUtils.equals(str2, "video");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("109c83cd", new Object[]{this, str, str2})).booleanValue() : StringUtils.equals(str, "0") && StringUtils.equals(str2, "video");
     }
 
     private boolean isVideoTab() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6d2cf6ef", new Object[]{this})).booleanValue() : TextUtils.equals(((a) this.viewParams).i, "video");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6d2cf6ef", new Object[]{this})).booleanValue() : StringUtils.equals(((a) this.viewParams).i, "video");
     }
 
     private void normalRefresh() {
@@ -1009,7 +1009,7 @@ public class TBVideoListComponent extends Component<View, a> implements s {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b1d8deb7", new Object[]{this, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (!z || !str.contains(URL_SOURCE_COMMUNITY)) {
@@ -1072,7 +1072,7 @@ public class TBVideoListComponent extends Component<View, a> implements s {
             return;
         }
         spz.c(TAG, "PickPreloadControllerNew isDefaultTab3:" + z);
-        if (!TextUtils.equals(((a) this.viewParams).i, "video")) {
+        if (!StringUtils.equals(((a) this.viewParams).i, "video")) {
             return;
         }
         if (!z && !z2 && !z3) {

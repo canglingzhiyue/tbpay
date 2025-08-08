@@ -1,7 +1,7 @@
 package com.taobao.android.detail.industry.scene.trwidget;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -140,7 +140,7 @@ public final class a implements ejo {
         if (a2 == null) {
             com.taobao.android.detail.industry.tool.a.a("TriverWidget-PageLifecycle", "getTRWidgetInstance TRWidgetInstance is null");
             return null;
-        } else if (!TextUtils.isEmpty(aURARenderComponent.key)) {
+        } else if (!StringUtils.isEmpty(aURARenderComponent.key)) {
             return a2.get(aURARenderComponent.key);
         } else {
             return null;

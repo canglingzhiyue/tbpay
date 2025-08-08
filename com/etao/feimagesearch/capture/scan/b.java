@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.MeasureSet;
@@ -377,7 +377,7 @@ public final class b {
         }
         KakaLibImageWrapper b = cVar.b();
         q.a((Object) b, "decodeTaskV2.detectedImageWrapper");
-        return !TextUtils.isEmpty(b.g());
+        return !StringUtils.isEmpty(b.g());
     }
 
     private final boolean b(com.etao.feimagesearch.capture.scan.c cVar) {

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.amnet;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transportext.amnet.Storage;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -151,7 +151,7 @@ public class StorageManager {
             return (byte[]) ipChange.ipc$dispatch("66cda36e", new Object[]{this, str, new Boolean(z)});
         }
         try {
-            if (!TextUtils.isEmpty(str) && (bigData = this.f5654a.getBigData(str, z)) != null) {
+            if (!StringUtils.isEmpty(str) && (bigData = this.f5654a.getBigData(str, z)) != null) {
                 if (bigData.length > 0) {
                     return bigData;
                 }
@@ -165,7 +165,7 @@ public class StorageManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fa2f1a4a", new Object[]{this, str, new Boolean(z), new Integer(i), result});
-        } else if (TextUtils.isEmpty(str) || result == null) {
+        } else if (StringUtils.isEmpty(str) || result == null) {
         } else {
             this.f5654a.getBigDataAsync(str, z, i, result);
         }
@@ -178,7 +178,7 @@ public class StorageManager {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             if (bArr != null && bArr.length > 0) {
@@ -197,7 +197,7 @@ public class StorageManager {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             this.f5654a.removeBigData(str);

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -78,7 +78,7 @@ public class MspMemoryCache implements ICache<String, String> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f6158a19", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f4687a.get(str);
         }
         return null;
@@ -89,11 +89,11 @@ public class MspMemoryCache implements ICache<String, String> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("5dcf2000", new Object[]{this, str, strArr});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String str2 = this.f4687a.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         JSONObject parseObject = JSON.parseObject(str2);
@@ -125,7 +125,7 @@ public class MspMemoryCache implements ICache<String, String> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8deeb4fe", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return "{}";
         }
         JSONObject parseObject = JSONObject.parseObject(this.f4687a.get(str));
@@ -144,7 +144,7 @@ public class MspMemoryCache implements ICache<String, String> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("ccd9492b", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f4687a.remove(str);
         }
         return null;

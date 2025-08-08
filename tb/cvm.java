@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.service.notification.StatusBarNotification;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.heytap.mcssdk.constant.McsEventConstant;
 import com.heytap.msp.push.HeytapPushManager;
 import com.heytap.msp.push.constant.ConfigConstant;
@@ -72,7 +72,7 @@ public class cvm {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("isMcs", "false");
             String statisticData = notificationSortMessage.getStatisticData();
-            if (!TextUtils.isEmpty(statisticData)) {
+            if (!StringUtils.isEmpty(statisticData)) {
                 jSONObject.put("clientStatisticData", statisticData);
             }
             dataMessage.setStatisticsExtra(jSONObject.toString());

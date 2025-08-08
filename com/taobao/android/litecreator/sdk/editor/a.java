@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.editor.data.Adjust;
 import com.taobao.android.litecreator.sdk.editor.data.AiQuality;
@@ -107,7 +107,7 @@ public abstract class a implements x {
 
     private boolean a(ImageEditInfo imageEditInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e5a7c2a4", new Object[]{this, imageEditInfo})).booleanValue() : imageEditInfo != null && imageEditInfo.templateInfo != null && com.taobao.android.litecreator.util.k.a(imageEditInfo.templateInfo.draftPath) && (TextUtils.equals(imageEditInfo.templateInfo.resourceType, Resource.TYPE_TEMPLATE_IMG) || TextUtils.equals(imageEditInfo.templateInfo.resourceType, Resource.TYPE_TEMPLATE_TEXT_IMAGE));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e5a7c2a4", new Object[]{this, imageEditInfo})).booleanValue() : imageEditInfo != null && imageEditInfo.templateInfo != null && com.taobao.android.litecreator.util.k.a(imageEditInfo.templateInfo.draftPath) && (StringUtils.equals(imageEditInfo.templateInfo.resourceType, Resource.TYPE_TEMPLATE_IMG) || StringUtils.equals(imageEditInfo.templateInfo.resourceType, Resource.TYPE_TEMPLATE_TEXT_IMAGE));
     }
 
     private void w() {

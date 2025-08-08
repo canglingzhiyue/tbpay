@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.cctemplate.TemplateValue;
 import com.alipay.android.app.safepaylog.utils.LogUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
@@ -32,7 +32,7 @@ public class TemplateAssetsStorage {
             inputStream = assetManager.open(str);
         } catch (Throwable th) {
             try {
-                if (TextUtils.equals(str, "amc.js") || TextUtils.equals(str, "amc.css")) {
+                if (StringUtils.equals(str, "amc.js") || StringUtils.equals(str, "amc.css")) {
                     Object obj = StatisticCollector.GLOBAL_AGENT;
                     StatisticCollector.addError(obj, "tpl", TemplateValue.EC_TPL_ES_ASSETS_FIND_EX, str + th.getMessage());
                     inputStream = assetManager.openFd(str).createInputStream();

@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -151,7 +151,7 @@ public class axa extends DXWidgetNode {
         final FrameLayout frameLayout = (FrameLayout) view;
         if (frameLayout.getChildCount() > 0) {
             View childAt = frameLayout.getChildAt(0);
-            if (childAt != null && (childAt.getTag(R.id.aura_video_player) instanceof awz) && TextUtils.equals(this.g, ((awz) childAt.getTag(R.id.aura_video_player)).g())) {
+            if (childAt != null && (childAt.getTag(R.id.aura_video_player) instanceof awz) && StringUtils.equals(this.g, ((awz) childAt.getTag(R.id.aura_video_player)).g())) {
                 arc.a().a("DXAURAVideoViewWidgetNode.onRenderView:videoPlayer already added");
                 return;
             }

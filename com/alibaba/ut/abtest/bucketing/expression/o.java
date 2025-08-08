@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.bucketing.expression;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ut.abtest.internal.util.s;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -52,6 +52,6 @@ public class o {
         String trim = ((String) obj).trim();
         String trim2 = ((String) obj2).trim();
         com.alibaba.ut.abtest.internal.util.h.a("VersionUtils", "version equal compare: " + trim + "  " + trim2);
-        return TextUtils.equals(trim, trim2);
+        return StringUtils.equals(trim, trim2);
     }
 }

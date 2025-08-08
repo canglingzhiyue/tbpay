@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -48,7 +48,7 @@ public class bei {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bbaec200", new Object[]{bVar, str})).booleanValue();
         }
-        if (bVar != null && !TextUtils.isEmpty(str) && (b = bVar.b(str)) != null && b.getChildren() != null) {
+        if (bVar != null && !StringUtils.isEmpty(str) && (b = bVar.b(str)) != null && b.getChildren() != null) {
             for (IDMComponent iDMComponent : b.getChildren()) {
                 if (((DMComponent) iDMComponent).isExtendBlock()) {
                     return iDMComponent.getData().getBooleanValue("hasMore");
@@ -151,7 +151,7 @@ public class bei {
         if (b != null && b.size() > 0) {
             arrayList = new ArrayList();
             for (IDMComponent iDMComponent : b) {
-                if (TextUtils.equals("item", iDMComponent.getTag())) {
+                if (StringUtils.equals("item", iDMComponent.getTag())) {
                     arrayList.add(iDMComponent);
                 }
             }
@@ -215,7 +215,7 @@ public class bei {
                             j4 += l3.longValue();
                         }
                         String str3 = (String) a(next, (Class<Object>) String.class, "pay", "currencySymbol");
-                        if (TextUtils.isEmpty(str3)) {
+                        if (StringUtils.isEmpty(str3)) {
                             str3 = "￥";
                         }
                         hashSet.add(str3.trim());
@@ -251,7 +251,7 @@ public class bei {
                     a(iDMComponent, "", "pay", KEY_DISCOUNT_TIPS);
                 } else {
                     String str6 = str5 + bigDecimal2.toString();
-                    if (!TextUtils.isEmpty(str6) && str6.contains(".") && (indexOf = str6.indexOf(".")) != -1 && (i = indexOf + 1) < str6.length() && TextUtils.isEmpty(str6.substring(i).replace(str4, ""))) {
+                    if (!StringUtils.isEmpty(str6) && str6.contains(".") && (indexOf = str6.indexOf(".")) != -1 && (i = indexOf + 1) < str6.length() && StringUtils.isEmpty(str6.substring(i).replace(str4, ""))) {
                         str6 = str6.substring(0, indexOf);
                     }
                     a(iDMComponent, str6, "pay", "priceTitle");
@@ -419,7 +419,7 @@ public class bei {
             ipChange.ipc$dispatch("a706db87", new Object[]{iDMComponent});
         } else if (iDMComponent == null || iDMComponent.getData() == null) {
         } else {
-            if (TextUtils.equals(iDMComponent.getData().getString("status"), "hidden")) {
+            if (StringUtils.equals(iDMComponent.getData().getString("status"), "hidden")) {
                 e(iDMComponent);
             } else {
                 d(iDMComponent);
@@ -563,7 +563,7 @@ public class bei {
         if (ipChange instanceof IpChange) {
             return (IDMComponent) ipChange.ipc$dispatch("4ab55d13", new Object[]{jnyVar, str});
         }
-        if (TextUtils.isEmpty(str) || (m = ((b) jnyVar).m()) == null) {
+        if (StringUtils.isEmpty(str) || (m = ((b) jnyVar).m()) == null) {
             return null;
         }
         for (IDMComponent iDMComponent : m) {
@@ -609,7 +609,7 @@ public class bei {
         if (ipChange instanceof IpChange) {
             return (IDMComponent) ipChange.ipc$dispatch("339b7bba", new Object[]{iDMComponent, str});
         }
-        if (iDMComponent != null && !TextUtils.isEmpty(str)) {
+        if (iDMComponent != null && !StringUtils.isEmpty(str)) {
             if (str.equals(iDMComponent.getTag())) {
                 return iDMComponent;
             }
@@ -688,7 +688,7 @@ public class bei {
         for (IDMComponent iDMComponent : list) {
             if ("item".equals(iDMComponent.getTag())) {
                 String string = iDMComponent.getFields().getString("cartId");
-                if (!TextUtils.isEmpty(string) && (aVar == null || aVar.a(iDMComponent))) {
+                if (!StringUtils.isEmpty(string) && (aVar == null || aVar.a(iDMComponent))) {
                     sb.append(string);
                     sb.append(",");
                 }
@@ -725,7 +725,7 @@ public class bei {
         }
         boolean z2 = false;
         for (String str : arrayList) {
-            if (!TextUtils.isEmpty(str) && (a2 = bek.a(str, bVar.u())) != null) {
+            if (!StringUtils.isEmpty(str) && (a2 = bek.a(str, bVar.u())) != null) {
                 Iterator<String> it = a2.iterator();
                 DMComponent dMComponent = null;
                 int i = 0;
@@ -932,7 +932,7 @@ public class bei {
         if (b != null && b.size() > 0) {
             arrayList = new ArrayList();
             for (IDMComponent iDMComponent : b) {
-                if (TextUtils.equals("item", iDMComponent.getTag())) {
+                if (StringUtils.equals("item", iDMComponent.getTag())) {
                     arrayList.add(iDMComponent);
                 }
             }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliConfigInterface;
 import com.taobao.android.c;
@@ -137,7 +137,7 @@ public final class spk {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
         String str4 = (String) a(str, str2, str3);
-        return TextUtils.isEmpty(str4) ? str3 : str4;
+        return StringUtils.isEmpty(str4) ? str3 : str4;
     }
 
     public static boolean a(String str, String str2, boolean z) {

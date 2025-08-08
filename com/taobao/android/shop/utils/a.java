@@ -1,6 +1,6 @@
 package com.taobao.android.shop.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,9 +85,9 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[0])).booleanValue();
         }
         String nick = Login.getNick();
-        if ((!TextUtils.isEmpty(nick) && ("tmallapp".equals(nick) || "tyx测试账号001".equals(nick) || "行久".equals(nick) || "清锐".equals(nick) || "东煜".equals(nick) || "曹西".equals(nick))) || "小程序测试qa".equals(nick) || "c测试账号911".equals(nick)) {
+        if ((!StringUtils.isEmpty(nick) && ("tmallapp".equals(nick) || "tyx测试账号001".equals(nick) || "行久".equals(nick) || "清锐".equals(nick) || "东煜".equals(nick) || "曹西".equals(nick))) || "小程序测试qa".equals(nick) || "c测试账号911".equals(nick)) {
             c = true;
-        } else if (!TextUtils.isEmpty(nick) && OrangeConfig.getInstance().getConfig("shop_router", "private_window_whitelist", "").contains(nick)) {
+        } else if (!StringUtils.isEmpty(nick) && OrangeConfig.getInstance().getConfig("shop_router", "private_window_whitelist", "").contains(nick)) {
             c = true;
         } else {
             c = false;
@@ -264,7 +264,7 @@ public class a {
         }
         StringBuilder sb = new StringBuilder(str);
         sb.append("|");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "home";
         }
         sb.append(str2);

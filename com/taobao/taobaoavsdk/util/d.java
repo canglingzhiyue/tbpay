@@ -1,6 +1,6 @@
 package com.taobao.taobaoavsdk.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -40,7 +40,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.b.put(str, str2);
         }
@@ -50,7 +50,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.c.put(str, str2);
         }
@@ -69,14 +69,14 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str) && !str.equals(this.f21344a)) {
+        } else if (!StringUtils.isEmpty(str) && !str.equals(this.f21344a)) {
             this.d.clear();
             this.f21344a = str;
             try {
                 JSONArray parseArray = JSON.parseArray(str);
                 for (int i = 0; i < parseArray.size(); i++) {
                     String string = parseArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         this.d.add(new a(string));
                     }
                 }
@@ -120,7 +120,7 @@ public class d {
                 JSONArray jSONArray = parseObject.getJSONArray(str2);
                 for (int i = 0; i < jSONArray.size(); i++) {
                     String string = jSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         linkedList.add(string);
                     }
                 }

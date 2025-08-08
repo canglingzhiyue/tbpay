@@ -2,7 +2,7 @@ package com.alipay.android.msp.drivers.actions;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -286,7 +286,7 @@ public class ActionsCreator {
                         }
                     }
                 }, delayTime * 5);
-            } else if (eventAction.getMspEvents() != null && eventAction.getMspEvents().length == 1 && TextUtils.equals(eventAction.getMspEvents()[0].getActionName(), "submit")) {
+            } else if (eventAction.getMspEvents() != null && eventAction.getMspEvents().length == 1 && StringUtils.equals(eventAction.getMspEvents()[0].getActionName(), "submit")) {
                 createEventActionThisThread(eventAction);
             } else {
                 a(eventAction, null);
@@ -361,7 +361,7 @@ public class ActionsCreator {
             EventAction.MspEvent[] mspEvents = createMspEventWithJsonString.getMspEvents();
             if (mspEvents != null) {
                 for (EventAction.MspEvent mspEvent : mspEvents) {
-                    if (TextUtils.equals(mspEvent.getActionName(), "back")) {
+                    if (StringUtils.equals(mspEvent.getActionName(), "back")) {
                         z = true;
                         break;
                     }
@@ -373,7 +373,7 @@ public class ActionsCreator {
                 boolean z2 = true;
                 int i = 0;
                 for (EventAction.MspEvent mspEvent2 : mspEvents) {
-                    if (!z2 || !TextUtils.equals(mspEvent2.getActionName(), "back")) {
+                    if (!z2 || !StringUtils.equals(mspEvent2.getActionName(), "back")) {
                         mspEventArr[i] = mspEvent2;
                         i++;
                     } else {

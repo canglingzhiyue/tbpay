@@ -6,7 +6,7 @@ import android.content.IntentFilter;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -106,7 +106,7 @@ public class TBLiveBasePlugin extends e {
                     String string = b.getString("pageName");
                     String string2 = b.getString("arg1");
                     HashMap<String, String> a2 = psq.a(b.getJSONObject("args"));
-                    if (TextUtils.isEmpty(string)) {
+                    if (StringUtils.isEmpty(string)) {
                         string = b.PAGE_TAOBAOLIVECONTAINER;
                     }
                     c2.b(string, string2, a2);
@@ -128,7 +128,7 @@ public class TBLiveBasePlugin extends e {
                     String string3 = b2.getString("pageName");
                     String string4 = b2.getString("arg1");
                     HashMap<String, String> a3 = psq.a(b2.getJSONObject("args"));
-                    if (TextUtils.isEmpty(string3)) {
+                    if (StringUtils.isEmpty(string3)) {
                         string3 = b.PAGE_TAOBAOLIVECONTAINER;
                     }
                     c3.a(string3, string4, a3);

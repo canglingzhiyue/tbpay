@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.io;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -45,7 +45,7 @@ public class LogBuffer {
             this.bufferPath = file.getAbsolutePath();
         }
         this.bufferSize = i;
-        if (!this.mUseMmap || TextUtils.isEmpty(this.bufferPath)) {
+        if (!this.mUseMmap || StringUtils.isEmpty(this.bufferPath)) {
             return;
         }
         try {
@@ -64,7 +64,7 @@ public class LogBuffer {
             return false;
         }
         long j = this.initptr;
-        return j != -1 && j != 0 && this.isInited && !TextUtils.isEmpty(this.bufferPath);
+        return j != -1 && j != 0 && this.isInited && !StringUtils.isEmpty(this.bufferPath);
     }
 
     public String getBufferPath() {

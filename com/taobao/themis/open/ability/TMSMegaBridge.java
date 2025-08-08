@@ -2,7 +2,7 @@ package com.taobao.themis.open.ability;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Window;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
@@ -151,7 +151,7 @@ public final class TMSMegaBridge implements com.taobao.themis.kernel.ability.bas
         q.d(apiContext, "apiContext");
         q.d(url, "url");
         q.d(bridgeCallback, "bridgeCallback");
-        if (apiContext.a() == null || TextUtils.isEmpty(url)) {
+        if (apiContext.a() == null || StringUtils.isEmpty(url)) {
             bridgeCallback.sendBridgeResponse(new BridgeResponse.Error(10, "params error"));
             return;
         }

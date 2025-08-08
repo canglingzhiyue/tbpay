@@ -1,7 +1,7 @@
 package tb;
 
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.multiapp.ShareBizAdapter;
@@ -24,7 +24,7 @@ public class nyx {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (TextUtils.isEmpty(f31852a)) {
+        if (StringUtils.isEmpty(f31852a)) {
             f31852a = UTDevice.getUtdid(ShareBizAdapter.getInstance().getAppEnv().b());
         }
         return f31852a;
@@ -39,7 +39,7 @@ public class nyx {
         StringBuilder sb = new StringBuilder();
         if (hashMap != null && hashMap.size() > 0) {
             for (String str3 : hashMap.keySet()) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     sb.append(str3);
                     sb.append(":");
                     sb.append(hashMap.get(str3));

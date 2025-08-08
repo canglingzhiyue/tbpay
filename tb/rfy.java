@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -364,7 +364,7 @@ public class rfy implements rgb {
             ipChange.ipc$dispatch("5e98f756", new Object[]{this, updateData, patchType});
             return;
         }
-        if (!TextUtils.isEmpty(updateData.subFrom) && updateData.subFrom.equals(rfx.CACHE_SOURCE)) {
+        if (!StringUtils.isEmpty(updateData.subFrom) && updateData.subFrom.equals(rfx.CACHE_SOURCE)) {
             UpdateInfo data = com.taobao.update.datasource.local.a.getInstance(sContext).getData();
             if (data != null && data.updateList != null) {
                 data.updateList.remove(patchType.getKey());
@@ -592,7 +592,7 @@ public class rfy implements rgb {
                         response = str;
                     }
                     String str2 = response;
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         rfy.this.onUpdate(rfx.SCAN, null, false, str2, new String[0]);
                     }
                     return null;
@@ -634,7 +634,7 @@ public class rfy implements rgb {
             return (UpdateInfo) ipChange.ipc$dispatch("5e58b541", new Object[]{this, str, str2, str3});
         }
         JSONObject parseObject = JSON.parseObject(str3);
-        if (!TextUtils.isEmpty(str2) && str2.equals(rfx.CACHE_SOURCE)) {
+        if (!StringUtils.isEmpty(str2) && str2.equals(rfx.CACHE_SOURCE)) {
             return (UpdateInfo) JSON.parseObject(str3, UpdateInfo.class);
         }
         if (str.equals(rfx.ACCS_SOURCE) || str.equals(rfx.SAFE_MODE) || str.equals(rfx.SCAN)) {
@@ -674,7 +674,7 @@ public class rfy implements rgb {
                 }
                 rge rgeVar2 = this.p;
                 rgeVar2.d(" >>>>>> on " + str + " update info <<<<<<   " + str3);
-                if (!TextUtils.isEmpty(str3) && inited) {
+                if (!StringUtils.isEmpty(str3) && inited) {
                     UpdateInfo convertData = convertData(str, str2, str3);
                     if (convertData == null) {
                         this.p.e("updateInfo invalid!");
@@ -685,7 +685,7 @@ public class rfy implements rgb {
                         return;
                     }
                     this.c.startUpdate();
-                    if ((str.equals(rfx.ACCS_SOURCE) || str.equals(rfx.MTOP_SOURCE)) && TextUtils.isEmpty(str2)) {
+                    if ((str.equals(rfx.ACCS_SOURCE) || str.equals(rfx.MTOP_SOURCE)) && StringUtils.isEmpty(str2)) {
                         com.taobao.update.datasource.local.a.getInstance(sContext).resetData(convertData);
                     }
                     if (a()) {

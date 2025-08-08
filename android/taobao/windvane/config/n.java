@@ -1,6 +1,6 @@
 package android.taobao.windvane.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
@@ -65,7 +65,7 @@ public class n implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONObject jSONObject = null;
@@ -76,7 +76,7 @@ public class n implements b {
         if (jSONObject == null) {
             return false;
         }
-        if (!jSONObject.has("v") && !TextUtils.equals(a.a().i(), jSONObject.optString("appVersion"))) {
+        if (!jSONObject.has("v") && !StringUtils.equals(a.a().i(), jSONObject.optString("appVersion"))) {
             return false;
         }
         android.taobao.windvane.util.m.c("WVConfig", "当前更新orange配置，是否有v=[" + jSONObject.has("v") + riy.ARRAY_END_STR);
@@ -87,7 +87,7 @@ public class n implements b {
         String optString5 = jSONObject.optString("allowAccessDomain", "");
         String optString6 = jSONObject.optString("embedDomain", "");
         this.b = jSONObject.optString("forbiddenDomainRedirectURL", "");
-        if (!TextUtils.isEmpty(optString)) {
+        if (!StringUtils.isEmpty(optString)) {
             p.e = optString;
             try {
                 p.f = Pattern.compile(optString, 2);
@@ -96,7 +96,7 @@ public class n implements b {
                 android.taobao.windvane.util.m.e("WVDomainConfig", " PatternSyntaxException pattern:" + e.getMessage());
             }
         }
-        if (!TextUtils.isEmpty(optString2)) {
+        if (!StringUtils.isEmpty(optString2)) {
             p.i = optString2;
             try {
                 p.j = Pattern.compile(optString2, 2);
@@ -105,7 +105,7 @@ public class n implements b {
                 android.taobao.windvane.util.m.e("WVDomainConfig", " PatternSyntaxException pattern:" + e2.getMessage());
             }
         }
-        if (!TextUtils.isEmpty(optString3)) {
+        if (!StringUtils.isEmpty(optString3)) {
             p.k = optString3;
             try {
                 p.l = Pattern.compile(optString3, 2);
@@ -114,7 +114,7 @@ public class n implements b {
                 android.taobao.windvane.util.m.e("WVDomainConfig", " PatternSyntaxException pattern:" + e3.getMessage());
             }
         }
-        if (!TextUtils.isEmpty(optString5)) {
+        if (!StringUtils.isEmpty(optString5)) {
             p.m = optString5;
             try {
                 p.n = Pattern.compile(optString5, 2);
@@ -123,7 +123,7 @@ public class n implements b {
                 android.taobao.windvane.util.m.e("WVDomainConfig", " PatternSyntaxException pattern:" + e4.getMessage());
             }
         }
-        if (!TextUtils.isEmpty(optString6)) {
+        if (!StringUtils.isEmpty(optString6)) {
             p.o = optString6;
             try {
                 p.n = Pattern.compile(optString6, 2);
@@ -132,7 +132,7 @@ public class n implements b {
                 android.taobao.windvane.util.m.e("WVDomainConfig", " PatternSyntaxException pattern:" + e5.getMessage());
             }
         }
-        if (!TextUtils.isEmpty(optString4)) {
+        if (!StringUtils.isEmpty(optString4)) {
             p.g = optString4;
             try {
                 p.h = Pattern.compile(optString4, 2);
@@ -140,7 +140,7 @@ public class n implements b {
             } catch (PatternSyntaxException e6) {
                 android.taobao.windvane.util.m.e("WVDomainConfig", " PatternSyntaxException pattern:" + e6.getMessage());
             }
-            if (!TextUtils.isEmpty(this.b) && p.e(this.b)) {
+            if (!StringUtils.isEmpty(this.b) && p.e(this.b)) {
                 this.b = "";
             }
         }

@@ -5,7 +5,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Pair;
 import anet.channel.appmonitor.AppMonitor;
@@ -223,7 +223,7 @@ public class PowerMsg4WW extends e {
             } catch (Throwable th) {
                 MsgLog.c(PowerMsg4WW.TAG, th, "postStreamMessage err");
             }
-            if (TextUtils.isEmpty(this.d) || !this.d.equals(powerMessage.streamId)) {
+            if (StringUtils.isEmpty(this.d) || !this.d.equals(powerMessage.streamId)) {
                 this.d = powerMessage.streamId;
                 this.e = powerMessage.seqNum;
             } else if (powerMessage.seqNum < this.e || powerMessage.seqNum - this.e > 1) {
@@ -271,7 +271,7 @@ public class PowerMsg4WW extends e {
                 MsgLog.c(PowerMsg4WW.TAG, "onDispatch() msg = NULL");
             } else if (PowerMsg4WW.access$200(PowerMsg4WW.this) == null) {
                 MsgLog.c(PowerMsg4WW.TAG, "onDispatch() webView = NULL");
-            } else if (TextUtils.isEmpty(powerMessage.streamId)) {
+            } else if (StringUtils.isEmpty(powerMessage.streamId)) {
                 WVStandardEventCenter.postNotificationToJS(PowerMsg4WW.access$200(PowerMsg4WW.this), PowerMsg4WW.EVENT_DISPATCH, new JSONObject() { // from class: com.taobao.tao.powermsg.outter.PowerMsg4WW$Dispatcher$2
                     {
                         put("errorCode", (Object) 1000);
@@ -592,7 +592,7 @@ public class PowerMsg4WW extends e {
                     return false;
                 }
                 String string3 = parseObject.getString("streamId");
-                if (TextUtils.isEmpty(string3)) {
+                if (StringUtils.isEmpty(string3)) {
                     if (wVCallBackContext != null) {
                         wVCallBackContext.error("param 'streamId' is NULL");
                     }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.model.datamodel.action.IUiRefreshActionModel;
 import com.taobao.infoflow.protocol.subservice.framework.IContainerService;
@@ -25,7 +25,7 @@ public class lqh implements IContainerService.a {
         String containerId = iUiRefreshActionModel.getContainerId();
         String a2 = a(requestType, iUiRefreshActionModel.getDataSourceType());
         lqe.a(a(a2), a2, containerId);
-        if (!TextUtils.equals(requestType, "coldStart")) {
+        if (!StringUtils.equals(requestType, "coldStart")) {
             return;
         }
         lqe.a(containerId, "homeUiRefresh", 1);
@@ -46,7 +46,7 @@ public class lqh implements IContainerService.a {
 
     private String a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : TextUtils.isEmpty(str) ? TextUtils.equals(str2, "local") ? "loadCache" : "coldStart" : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{this, str, str2}) : StringUtils.isEmpty(str) ? StringUtils.equals(str2, "local") ? "loadCache" : "coldStart" : str;
     }
 
     private String a(String str) {

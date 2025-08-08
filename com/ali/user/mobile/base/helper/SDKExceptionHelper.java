@@ -1,6 +1,6 @@
 package com.ali.user.mobile.base.helper;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.utils.MainThreadExecutor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -39,7 +39,7 @@ public class SDKExceptionHelper {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         try {
                             ToastUtil.showToast(DataProviderFactory.getApplicationContext(), str, 0);

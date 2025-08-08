@@ -1,6 +1,6 @@
 package com.android.taobao.safeclean;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ public class h {
             return;
         }
         this.f6402a = g.a().c("local");
-        if (TextUtils.isEmpty(this.f6402a) || !g.a().e().booleanValue()) {
+        if (StringUtils.isEmpty(this.f6402a) || !g.a().e().booleanValue()) {
             return;
         }
         a("clean", "", this.f6402a);

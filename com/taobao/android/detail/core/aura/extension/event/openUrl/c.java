@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.aura.extension.event.openUrl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -59,7 +59,7 @@ public final class c implements axk {
             return (List) ipChange.ipc$dispatch("24b62e14", new Object[]{this, aURARenderComponent});
         }
         ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(aURARenderComponent.key)) {
+        if (!StringUtils.isEmpty(aURARenderComponent.key)) {
             arrayList.add(aURARenderComponent.key);
         }
         return arrayList;
@@ -76,15 +76,15 @@ public final class c implements axk {
         hashMap.put("currentClickTime", String.valueOf(System.currentTimeMillis()));
         DetailCoreActivity detailCoreActivity = this.f9394a;
         if (detailCoreActivity != null) {
-            if (detailCoreActivity.f9411a != null && !TextUtils.isEmpty(this.f9394a.f9411a.f27180a)) {
+            if (detailCoreActivity.f9411a != null && !StringUtils.isEmpty(this.f9394a.f9411a.f27180a)) {
                 hashMap.put("pre_item_id", this.f9394a.f9411a.f27180a);
             }
-            if (this.f9394a.C() != null && !TextUtils.isEmpty(this.f9394a.C().i())) {
+            if (this.f9394a.C() != null && !StringUtils.isEmpty(this.f9394a.C().i())) {
                 String i = this.f9394a.C().i();
                 hashMap.put(fgl.TARGETITEMID, i);
                 hashMap.put(fgl.ORIGINALITEMID, i);
             }
-            if (!TextUtils.isEmpty(this.f9394a.h)) {
+            if (!StringUtils.isEmpty(this.f9394a.h)) {
                 hashMap.put("token", this.f9394a.h);
             }
         }

@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.model.LogField;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -176,7 +176,7 @@ public class f extends n {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
         String a2 = a(str);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             try {
                 return Integer.valueOf(a2).intValue();
             } catch (Exception unused) {
@@ -204,7 +204,7 @@ public class f extends n {
                     while (keys.hasNext()) {
                         String next = keys.next();
                         String string = jSONObject.getString(next);
-                        if (!TextUtils.isEmpty(string) && (a2 = b.a(string)) != null) {
+                        if (!StringUtils.isEmpty(string) && (a2 = b.a(string)) != null) {
                             this.e.put(next, a2);
                         }
                     }
@@ -412,10 +412,10 @@ public class f extends n {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
             }
-            if (!TextUtils.isEmpty(str) && this.b != null) {
+            if (!StringUtils.isEmpty(str) && this.b != null) {
                 for (int i = 0; i < this.b.size(); i++) {
                     String str2 = this.b.get(i);
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         if (str2.length() > 2 && str2.startsWith(riy.MOD) && str2.endsWith(riy.MOD)) {
                             if (str.contains(str2.substring(1, str2.length() - 1))) {
                                 return true;

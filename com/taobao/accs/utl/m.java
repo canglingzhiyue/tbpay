@@ -2,7 +2,7 @@ package com.taobao.accs.utl;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.client.GlobalClientInfo;
@@ -393,11 +393,11 @@ public class m {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !UtilityImpl.isAppKeepAlive()) {
+        if (StringUtils.isEmpty(str) || !UtilityImpl.isAppKeepAlive()) {
             return false;
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] split = str.split("-");
                 Pair create = Pair.create(Integer.valueOf(Integer.parseInt(split[0])), Integer.valueOf(Integer.parseInt(split[1])));
                 int appKeepAliveBucketId = UtilityImpl.getAppKeepAliveBucketId(GlobalClientInfo.getContext());
@@ -422,7 +422,7 @@ public class m {
             String str = Build.BRAND;
             if (a2.contains(str)) {
                 for (String str2 : a2.split(",")) {
-                    if (!TextUtils.isEmpty(str2) && str2.contains("=")) {
+                    if (!StringUtils.isEmpty(str2) && str2.contains("=")) {
                         String[] split2 = str2.split("=");
                         if (str.equals(split2[0])) {
                             return split2[1];

@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Build;
 import android.os.PowerManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.adaemon.c;
 import com.taobao.adaemon.e;
@@ -39,7 +39,7 @@ public class dcx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ad11", new Object[]{str, new Integer(i)});
-        } else if (TextUtils.isEmpty(str) || (list = f26701a.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || (list = f26701a.get(str)) == null) {
         } else {
             if (list.size() > i) {
                 list.get(i).a();
@@ -53,7 +53,7 @@ public class dcx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             f26701a.remove(str);
         }
@@ -77,7 +77,7 @@ public class dcx {
                     }
                     try {
                         String b = dcx.b(bArr);
-                        if (TextUtils.isEmpty(b)) {
+                        if (StringUtils.isEmpty(b)) {
                             return;
                         }
                         dcx.a(b, 0);
@@ -138,7 +138,7 @@ public class dcx {
                             break;
                         }
                         String optString3 = optJSONObject2.optString("data");
-                        if (!TextUtils.isEmpty(optString3)) {
+                        if (!StringUtils.isEmpty(optString3)) {
                             dcyVar.a(optString3);
                         }
                         copyOnWriteArrayList.add(dcyVar);
@@ -176,7 +176,7 @@ public class dcx {
                     String d = l.d();
                     String[] split = jSONObject.optString("appversion").split(SymbolExpUtil.SYMBOL_VERTICALBAR);
                     String str = split[0];
-                    if (!TextUtils.isEmpty(str) && str.contains("-")) {
+                    if (!StringUtils.isEmpty(str) && str.contains("-")) {
                         String[] split2 = str.split("-");
                         if (split2.length != 2) {
                             e.b("ActionChains", "checkCondition, app version range err", new Object[0]);
@@ -194,7 +194,7 @@ public class dcx {
                             str = split.length == 2 ? split[1] : "";
                         }
                     }
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         boolean z = split.length == 1;
                         List asList = Arrays.asList(str.split(","));
                         if (z) {

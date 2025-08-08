@@ -2,7 +2,7 @@ package com.taobao.taolive.uikit.view;
 
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -80,7 +80,7 @@ public class TaoliveBigcardTopView extends RelativeLayout {
             this.mShopName.setText(simpleAccountInfo.accountNick);
             this.mShopLogo.setText(simpleAccountInfo.shopLogoTxt);
             this.mShopLogo.setVisibility(8);
-            if (!TextUtils.isEmpty(simpleAccountInfo.levelLogo)) {
+            if (!StringUtils.isEmpty(simpleAccountInfo.levelLogo)) {
                 b.h().a(simpleAccountInfo.levelLogo).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.taolive.uikit.view.TaoliveBigcardTopView.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -128,7 +128,7 @@ public class TaoliveBigcardTopView extends RelativeLayout {
                 }).fetch();
             }
             String str = liveInfoItem.location;
-            if ("true".equals(liveInfoItem.connectLocation) && !TextUtils.isEmpty(str)) {
+            if ("true".equals(liveInfoItem.connectLocation) && !StringUtils.isEmpty(str)) {
                 TextView textView = this.mLocNameView;
                 textView.setText(" | " + this.mContext.getString(R.string.tbliveuikit_video_item_location, str));
                 this.mLocNameView.setVisibility(0);

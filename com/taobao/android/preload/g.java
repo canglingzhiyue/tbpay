@@ -1,6 +1,6 @@
 package com.taobao.android.preload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.qrcode.data.QrCodeData;
 
@@ -27,7 +27,7 @@ public class g<T> {
         this.d = a.d(aVar);
         this.e = (T) a.e(aVar);
         this.f = a.f(aVar) == 0 ? System.currentTimeMillis() : a.f(aVar);
-        this.g = TextUtils.isEmpty(a.g(aVar)) ? "" : a.g(aVar);
+        this.g = StringUtils.isEmpty(a.g(aVar)) ? "" : a.g(aVar);
         this.h = a.h(aVar);
         this.i = a.i(aVar);
         this.j = a.j(aVar);
@@ -155,7 +155,7 @@ public class g<T> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             return false;
         }
         long currentTimeMillis = System.currentTimeMillis();

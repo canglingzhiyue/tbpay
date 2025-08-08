@@ -3,7 +3,7 @@ package com.taobao.analysis.monitor;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -60,7 +60,7 @@ public class c extends SQLiteOpenHelper {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ebbe4fab", new Object[]{this, sQLiteDatabase, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             sQLiteDatabase.execSQL("drop table " + str);
         }

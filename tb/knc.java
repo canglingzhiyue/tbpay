@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.downloader.a;
 
@@ -43,7 +43,7 @@ public class knc {
         }
         boolean equals = "".equals(a.l.b("dlconnection_anet"));
         String b = a.l.b("sizeSwitch_anet");
-        return equals && (0 == j || j > ((long) ((TextUtils.isEmpty(b) || !TextUtils.isDigitsOnly(b)) ? 0 : Integer.valueOf(b).intValue()))) && (!("".equals(a.l.b("lastUseHuc_anet")) ^ true) || (!klyVar.c() && !klyVar.d()));
+        return equals && (0 == j || j > ((long) ((StringUtils.isEmpty(b) || !StringUtils.isDigitsOnly(b)) ? 0 : Integer.valueOf(b).intValue()))) && (!("".equals(a.l.b("lastUseHuc_anet")) ^ true) || (!klyVar.c() && !klyVar.d()));
     }
 
     public static int b() {
@@ -55,7 +55,7 @@ public class knc {
             return kly.f30154a;
         }
         String b = a.l.b("dl_buffersize");
-        if (!TextUtils.isEmpty(b) && TextUtils.isDigitsOnly(b)) {
+        if (!StringUtils.isEmpty(b) && StringUtils.isDigitsOnly(b)) {
             return Integer.valueOf(b).intValue();
         }
         return kly.f30154a;

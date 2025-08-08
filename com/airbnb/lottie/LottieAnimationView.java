@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.v7.widget.AppCompatImageView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.taobao.taobao.R;
@@ -434,7 +434,7 @@ public class LottieAnimationView extends AppCompatImageView {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
         this.animationName = savedState.animationName;
-        if (!this.userActionsTaken.contains(UserActionTaken.SET_ANIMATION) && !TextUtils.isEmpty(this.animationName)) {
+        if (!this.userActionsTaken.contains(UserActionTaken.SET_ANIMATION) && !StringUtils.isEmpty(this.animationName)) {
             setAnimation(this.animationName);
         }
         this.animationResId = savedState.animationResId;

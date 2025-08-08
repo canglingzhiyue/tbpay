@@ -2,7 +2,7 @@ package com.taobao.login4android.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -149,10 +149,10 @@ public class TaobaoMobileHistoryFragment extends BaseHistoryFragment implements 
                 this.mPreviousChecked = arguments.getBoolean("check");
                 String str = (String) arguments.get(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM);
                 arguments.putString(UIBaseConstants.IntentExtrasNamesConstants.PARAM_LOGIN_PARAM, "");
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.loginParam = (LoginParam) JSON.parseObject(str, LoginParam.class);
                     if (this.loginParam != null) {
-                        if (!TextUtils.isEmpty(this.loginParam.smsSid)) {
+                        if (!StringUtils.isEmpty(this.loginParam.smsSid)) {
                             z = true;
                         }
                         this.hasSendSms = z;
@@ -202,7 +202,7 @@ public class TaobaoMobileHistoryFragment extends BaseHistoryFragment implements 
             java.lang.String r0 = r5.mobile
             r4.mCurrentSelectedAccount = r0
             java.lang.String r0 = r5.mobile
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             java.lang.String r1 = "-"
             if (r0 != 0) goto L3e
             java.lang.String r0 = r5.mobile
@@ -227,9 +227,9 @@ public class TaobaoMobileHistoryFragment extends BaseHistoryFragment implements 
             java.lang.String r0 = com.ali.user.mobile.utils.StringUtil.showSensitiveFieldForMobileLocal(r5, r0)     // Catch: java.lang.Throwable -> L7e
             android.widget.TextView r2 = r4.mTitleView     // Catch: java.lang.Throwable -> L7e
             if (r2 == 0) goto L7d
-            boolean r2 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L7e
+            boolean r2 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L7e
             if (r2 != 0) goto L7d
-            boolean r2 = android.text.TextUtils.isEmpty(r5)     // Catch: java.lang.Throwable -> L7e
+            boolean r2 = android.text.StringUtils.isEmpty(r5)     // Catch: java.lang.Throwable -> L7e
             if (r2 == 0) goto L66
             android.widget.TextView r5 = r4.mTitleView     // Catch: java.lang.Throwable -> L7e
             r5.setText(r0)     // Catch: java.lang.Throwable -> L7e
@@ -420,7 +420,7 @@ public class TaobaoMobileHistoryFragment extends BaseHistoryFragment implements 
             return "86";
         }
         String str = this.mUserLoginActivity.mHistoryAccount.mobile;
-        if (TextUtils.isEmpty(str) || !str.contains("-")) {
+        if (StringUtils.isEmpty(str) || !str.contains("-")) {
             return "86";
         }
         String[] split = str.split("-");
@@ -464,7 +464,7 @@ public class TaobaoMobileHistoryFragment extends BaseHistoryFragment implements 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6e52409c", new Object[]{this});
-        } else if (this.mMobileLoginPresenter.getLoginParam() == null || (this.mMobileLoginPresenter.getLoginParam() != null && TextUtils.isEmpty(this.mMobileLoginPresenter.getLoginParam().smsSid))) {
+        } else if (this.mMobileLoginPresenter.getLoginParam() == null || (this.mMobileLoginPresenter.getLoginParam() != null && StringUtils.isEmpty(this.mMobileLoginPresenter.getLoginParam().smsSid))) {
             toast(getString(R.string.aliuser_send_sms_first), 0);
         } else {
             this.mMobileLoginPresenter.buildSMSLoginParam(this.mCurrentAccount, this.mSmsCodeView.getText(), false);

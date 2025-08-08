@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.t;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class ref {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("55d9201a", new Object[]{str, new Integer(i), obj, obj2, obj3, strArr});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             TBS.Ext.commitEvent(i, obj, obj2, obj3, strArr);
         } else {
             TBS.Ext.commitEvent(str, i, obj, obj2, obj3, strArr);
@@ -91,7 +91,7 @@ public class ref {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             String valueOf = String.valueOf(entry.getValue());
-            if (!TextUtils.isEmpty(key)) {
+            if (!StringUtils.isEmpty(key)) {
                 hashMap.put(key, valueOf);
             }
         }
@@ -105,7 +105,7 @@ public class ref {
             return;
         }
         String str = map.get("biz_scene");
-        if (TextUtils.equals(str, "x_rate") || TextUtils.equals(str, "x_ask_everyone")) {
+        if (StringUtils.equals(str, "x_rate") || StringUtils.equals(str, "x_ask_everyone")) {
             return;
         }
         a("Page_UmiPublish", 2101, "Page_UmiPublish_ContentPubStart", null, null, (String[]) b(map).toArray(new String[0]));
@@ -159,7 +159,7 @@ public class ref {
             String str = map.get("umi_edit_session");
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(str) && TextUtils.equals("umi_pub_session", key)) {
+                if (!StringUtils.isEmpty(str) && StringUtils.equals("umi_pub_session", key)) {
                     arrayList.add(key + "=" + str);
                 } else {
                     arrayList.add(key + "=" + entry.getValue());

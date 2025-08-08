@@ -1,0 +1,123 @@
+{
+  "TemplateVersion": "5.9.5",
+  "QUICKPAY@cashier-card-detail-flex": {
+    "tplId": "QUICKPAY@cashier-card-detail-flex",
+    "tplVersion": "5.4.1",
+    "time": "0240",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-card-no-flex": {
+    "tplId": "QUICKPAY@cashier-card-no-flex",
+    "tplVersion": "5.4.1",
+    "time": "0480",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-card-select-bank-flex": {
+    "tplId": "QUICKPAY@cashier-card-select-bank-flex",
+    "tplVersion": "5.4.6",
+    "time": "0121",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-card-type-flex": {
+    "tplId": "QUICKPAY@cashier-card-type-flex",
+    "tplVersion": "5.4.6",
+    "time": "0301",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-channel-logo-flex": {
+    "tplId": "QUICKPAY@cashier-channel-logo-flex",
+    "tplVersion": "5.4.7",
+    "time": "0624",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-common-sign-flex": {
+    "tplId": "QUICKPAY@cashier-common-sign-flex",
+    "tplVersion": "5.3.9",
+    "time": "0230",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-default-result-flex": {
+    "tplId": "QUICKPAY@cashier-default-result-flex",
+    "tplVersion": "5.3.8",
+    "time": "0011",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-error-follow-action-flex": {
+    "tplId": "QUICKPAY@cashier-error-follow-action-flex",
+    "tplVersion": "5.2.4",
+    "time": "0007",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-home-flex": {
+    "tplId": "QUICKPAY@cashier-home-flex",
+    "tplVersion": "5.7.4",
+    "time": "0312",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-litepay-confirm-flex": {
+    "tplId": "QUICKPAY@cashier-litepay-confirm-flex",
+    "tplVersion": "5.4.1",
+    "time": "0072",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-peerpay-flex": {
+    "tplId": "QUICKPAY@cashier-peerpay-flex",
+    "tplVersion": "5.3.0",
+    "time": "0006",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-pre-confirm-flex": {
+    "tplId": "QUICKPAY@cashier-pre-confirm-flex",
+    "tplVersion": "5.3.9",
+    "time": "0002",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-promotion-wait-flex": {
+    "tplId": "QUICKPAY@cashier-promotion-wait-flex",
+    "tplVersion": "5.0.8",
+    "time": "0023",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@cashier-pwd-check-flex": {
+    "tplId": "QUICKPAY@cashier-pwd-check-flex",
+    "tplVersion": "5.3.7",
+    "time": "0302",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@mdeduct-agreement-manage-flex": {
+    "tplId": "QUICKPAY@mdeduct-agreement-manage-flex",
+    "tplVersion": "5.3.7",
+    "time": "0147",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@mdeduct-payandsign-flex": {
+    "tplId": "QUICKPAY@mdeduct-payandsign-flex",
+    "tplVersion": "5.3.7",
+    "time": "0217",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@mdeduct-sign-flex": {
+    "tplId": "QUICKPAY@mdeduct-sign-flex",
+    "tplVersion": "5.3.7",
+    "time": "0137",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@message-result-flex": {
+    "tplId": "QUICKPAY@message-result-flex",
+    "tplVersion": "5.5.1",
+    "time": "0106",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@open-account-auth-flex": {
+    "tplId": "QUICKPAY@open-account-auth-flex",
+    "tplVersion": "5.2.9",
+    "time": "0011",
+    "publishVersion": "150924"
+  },
+  "QUICKPAY@open-pwd-check-flex": {
+    "tplId": "QUICKPAY@open-pwd-check-flex",
+    "tplVersion": "5.3.5",
+    "time": "0002",
+    "publishVersion": "150924"
+  }
+}

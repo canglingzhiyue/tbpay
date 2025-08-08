@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -272,7 +272,7 @@ public class eyz {
             return null;
         }
         String key = mappingKey.key();
-        if (TextUtils.isEmpty(key)) {
+        if (StringUtils.isEmpty(key)) {
             i.a("DataEngine", "getMergedData failed with an empty MappingKey key(), in class: " + cls);
             return null;
         }
@@ -312,7 +312,7 @@ public class eyz {
         if (ipChange instanceof IpChange) {
             return (O) ipChange.ipc$dispatch("17307540", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         O o = (O) this.d.get(str);
@@ -332,7 +332,7 @@ public class eyz {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("27bd26d6", new Object[]{this, str, ezaVar});
-        } else if (TextUtils.isEmpty(str) || ezaVar == null) {
+        } else if (StringUtils.isEmpty(str) || ezaVar == null) {
         } else {
             if (this.e.get(str) != ezaVar) {
                 this.d.remove(str);

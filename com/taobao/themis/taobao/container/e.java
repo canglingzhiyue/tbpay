@@ -2,7 +2,7 @@ package com.taobao.themis.taobao.container;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.datamodel.imp.DMComponent;
@@ -271,7 +271,7 @@ public final class e implements d, ITBPublicMenu {
         jSONObject2.put((JSONObject) "templateId", k.g(this.f22824a));
         jSONObject2.put((JSONObject) "templateVersion", k.i(this.f22824a));
         String openModel = this.f22824a.q().getOpenModel();
-        if (TextUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_AFC_OPEN_LINK) || TextUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_BROWSER_LINK)) {
+        if (StringUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_AFC_OPEN_LINK) || StringUtils.equals(openModel, com.taobao.themis.kernel.i.KEY_BROWSER_LINK)) {
             jSONObject2.put((JSONObject) "isFromOuter", "true");
         }
         return jSONObject;

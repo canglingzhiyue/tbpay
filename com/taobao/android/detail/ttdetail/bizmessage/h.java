@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.bizmessage;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.handler.event.RuntimeAbilityParam;
@@ -37,7 +37,7 @@ public class h extends com.taobao.android.detail.ttdetail.communication.a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             return this.b;
         }
         JSONObject jSONObject = this.f10505a;
@@ -45,7 +45,7 @@ public class h extends com.taobao.android.detail.ttdetail.communication.a {
             return null;
         }
         String string = jSONObject.getString("type");
-        return TextUtils.isEmpty(string) ? this.f10505a.getString("key") : string;
+        return StringUtils.isEmpty(string) ? this.f10505a.getString("key") : string;
     }
 
     public JSONObject c() {

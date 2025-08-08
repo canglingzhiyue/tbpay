@@ -3,7 +3,7 @@ package com.taobao.android.litecreator.util;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.IOException;
@@ -78,7 +78,7 @@ public class ax {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("ccfd7169", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -105,7 +105,7 @@ public class ax {
             }
             String scheme = uri.getScheme();
             String scheme2 = uri2.getScheme();
-            if ((TextUtils.equals(scheme, scheme2) || ((TextUtils.equals(scheme, "http") || TextUtils.equals(scheme, "https")) && (TextUtils.equals(scheme2, "http") || TextUtils.equals(scheme2, "https")))) && TextUtils.equals(uri.getHost(), uri2.getHost()) && TextUtils.equals(uri.getPath(), uri2.getPath())) {
+            if ((StringUtils.equals(scheme, scheme2) || ((StringUtils.equals(scheme, "http") || StringUtils.equals(scheme, "https")) && (StringUtils.equals(scheme2, "http") || StringUtils.equals(scheme2, "https")))) && StringUtils.equals(uri.getHost(), uri2.getHost()) && StringUtils.equals(uri.getPath(), uri2.getPath())) {
                 z = true;
             }
             String str = "method[isSame] cost:" + (System.currentTimeMillis() - currentTimeMillis);
@@ -121,7 +121,7 @@ public class ax {
         }
         try {
             String encodedQuery = uri.getEncodedQuery();
-            if (TextUtils.isEmpty(encodedQuery)) {
+            if (StringUtils.isEmpty(encodedQuery)) {
                 str = sb.toString();
             } else {
                 str = ((Object) sb) + "&" + encodedQuery;
@@ -142,7 +142,7 @@ public class ax {
         }
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey())) {
+            if (!StringUtils.isEmpty(entry.getKey())) {
                 if (z) {
                     sb.append(entry.getKey());
                     sb.append("=");
@@ -166,7 +166,7 @@ public class ax {
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey())) {
+            if (!StringUtils.isEmpty(entry.getKey())) {
                 buildUpon.appendQueryParameter(entry.getKey(), entry.getValue().toString());
             }
         }
@@ -183,7 +183,7 @@ public class ax {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                if (!TextUtils.isEmpty(next)) {
+                if (!StringUtils.isEmpty(next)) {
                     buildUpon.appendQueryParameter(next, jSONObject.get(next).toString());
                 }
             }
@@ -200,7 +200,7 @@ public class ax {
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (Map.Entry<String, ?> entry : map.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey())) {
+            if (!StringUtils.isEmpty(entry.getKey())) {
                 buildUpon.appendQueryParameter(entry.getKey(), entry.getValue().toString());
             }
         }

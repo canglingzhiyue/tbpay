@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.newresult.perf;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -118,11 +118,11 @@ public final class IrpAvaRecord {
         q.c(avaType, "avaType");
         this.f6855a = avaType;
         this.b = false;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "unknown";
         }
         this.c = str;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "unknown";
         }
         this.d = str2;

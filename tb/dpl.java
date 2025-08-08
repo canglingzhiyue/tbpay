@@ -2,7 +2,7 @@ package tb;
 
 import android.net.Uri;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -325,7 +325,7 @@ public class dpl implements jvm {
         dVar2.b = i;
         if (g.a()) {
             for (jvm.b bVar2 : list) {
-                if (!TextUtils.isEmpty(bVar2.f29817a) && dVar2.f29819a.containsKey(bVar2.f29817a)) {
+                if (!StringUtils.isEmpty(bVar2.f29817a) && dVar2.f29819a.containsKey(bVar2.f29817a)) {
                     if (dVar2.f29819a.get(bVar2.f29817a).d()) {
                         g.b(LOG_TAG, "Template load cache success, tItemType: " + bVar2.b + ", url: " + bVar2.f29817a);
                     } else {
@@ -440,7 +440,7 @@ public class dpl implements jvm {
                             if (!isAllFromCache) {
                                 MUSAppMonitor.a(rVar, System.currentTimeMillis() - currentTimeMillis);
                             }
-                            if (!TextUtils.isEmpty(str3) && !dpl.a(dpl.this) && !TextUtils.equals(str3, c.b(data))) {
+                            if (!StringUtils.isEmpty(str3) && !dpl.a(dpl.this) && !StringUtils.equals(str3, c.b(data))) {
                                 String str5 = "Http request finished success, but data md5 check failed, expect: " + str3 + ", url: " + str;
                                 g.f(dpj.TAG, str5);
                                 for (b bVar2 : a()) {
@@ -596,7 +596,7 @@ public class dpl implements jvm {
                             }
                             byte[] bArr = bVar2.b;
                             if (bArr != null && bArr.length != 0) {
-                                if (!TextUtils.isEmpty(str3) && !dpl.a(dpl.this) && !TextUtils.equals(str3, c.b(bArr))) {
+                                if (!StringUtils.isEmpty(str3) && !dpl.a(dpl.this) && !StringUtils.equals(str3, c.b(bArr))) {
                                     String str5 = "Http request finished 200, but data md5 check failed, expect: " + str3 + ", url: " + str;
                                     g.f(dpj.TAG, str5);
                                     for (b bVar4 : b()) {
@@ -605,7 +605,7 @@ public class dpl implements jvm {
                                     }
                                     return;
                                 }
-                                if (((Integer) pair.second).intValue() == 1 && !z2 && (list2 = bVar2.f.get("etag")) != null && list2.size() > 0 && !TextUtils.isEmpty(list2.get(0))) {
+                                if (((Integer) pair.second).intValue() == 1 && !z2 && (list2 = bVar2.f.get("etag")) != null && list2.size() > 0 && !StringUtils.isEmpty(list2.get(0))) {
                                     dpm.a().a(dpl.this.d((Uri) pair.first), list2.get(0));
                                     if (g.a()) {
                                         g.a(dpj.TAG, "Save etag[" + list2.get(0) + "] for: " + str4);
@@ -741,13 +741,13 @@ public class dpl implements jvm {
         }
         try {
             Uri parse = Uri.parse(str);
-            if (TextUtils.isEmpty(parse.getPath())) {
+            if (StringUtils.isEmpty(parse.getPath())) {
                 g.f(LOG_TAG, "url parse error, path == null, url:" + str);
                 return null;
-            } else if (TextUtils.isEmpty(parse.getScheme())) {
+            } else if (StringUtils.isEmpty(parse.getScheme())) {
                 g.f(LOG_TAG, "url parse error, scheme == null, url:" + str);
                 return null;
-            } else if (TextUtils.isEmpty(parse.getHost())) {
+            } else if (StringUtils.isEmpty(parse.getHost())) {
                 g.f(LOG_TAG, "url parse error, host == null, url:" + str);
                 return null;
             } else if (a(parse)) {

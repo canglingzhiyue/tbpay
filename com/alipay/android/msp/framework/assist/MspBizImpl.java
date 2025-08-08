@@ -124,7 +124,7 @@ public class MspBizImpl implements IBizEngine {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0069, code lost:
-        if (android.text.TextUtils.isEmpty(r10) == false) goto L29;
+        if (android.text.StringUtils.isEmpty(r10) == false) goto L29;
      */
     /* JADX WARN: Removed duplicated region for block: B:28:0x0080  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x009a  */
@@ -188,7 +188,7 @@ public class MspBizImpl implements IBizEngine {
             java.lang.String r10 = "url"
             int r10 = r0.getColumnIndex(r10)     // Catch: java.lang.Throwable -> L75
             java.lang.String r10 = r0.getString(r10)     // Catch: java.lang.Throwable -> L75
-            boolean r11 = android.text.TextUtils.isEmpty(r10)     // Catch: java.lang.Throwable -> L75
+            boolean r11 = android.text.StringUtils.isEmpty(r10)     // Catch: java.lang.Throwable -> L75
             if (r11 != 0) goto L6c
             goto L6d
         L6c:
@@ -208,7 +208,7 @@ public class MspBizImpl implements IBizEngine {
         L77:
             com.alipay.android.msp.utils.LogUtil.printExceptionStackTrace(r0)
         L7a:
-            boolean r0 = android.text.TextUtils.isEmpty(r10)
+            boolean r0 = android.text.StringUtils.isEmpty(r10)
             if (r0 != 0) goto L9a
             com.alipay.android.msp.framework.assist.MspBizImpl$1 r0 = new com.alipay.android.msp.framework.assist.MspBizImpl$1
             r0.<init>()

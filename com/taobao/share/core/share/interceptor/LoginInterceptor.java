@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.broadcast.LoginAction;
@@ -106,9 +106,9 @@ public class LoginInterceptor implements b {
                 return;
             }
             nyy.b("ShareLoginBroadcastReceiver", "session change+ Sid:" + com.taobao.share.globalmodel.e.b().k() + " sid:" + this.e);
-            if (!TextUtils.equals(com.taobao.share.globalmodel.e.b().k(), this.e)) {
+            if (!StringUtils.equals(com.taobao.share.globalmodel.e.b().k(), this.e)) {
                 ShareBizAdapter.getInstance().getLogin().b(this);
-            } else if ((this.d && intent == null) || TextUtils.isEmpty(intent.getAction())) {
+            } else if ((this.d && intent == null) || StringUtils.isEmpty(intent.getAction())) {
             } else {
                 try {
                     if (LoginAction.valueOf(intent.getAction()) != LoginAction.NOTIFY_LOGIN_SUCCESS) {

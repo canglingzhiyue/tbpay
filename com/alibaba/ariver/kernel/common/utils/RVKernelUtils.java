@@ -2,7 +2,7 @@ package com.alibaba.ariver.kernel.common.utils;
 
 import android.app.Application;
 import android.content.res.Resources;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ariver.kernel.RVConstants;
 import com.alibaba.ariver.kernel.common.RVProxy;
@@ -72,7 +72,7 @@ public class RVKernelUtils {
             return ((Boolean) ipChange.ipc$dispatch("89296c6b", new Object[0])).booleanValue();
         }
         try {
-            z = TextUtils.equals("true", ((RVConfigService) RVProxy.get(RVConfigService.class)).getConfig("enableAriverActivityLeakV2", "false"));
+            z = StringUtils.equals("true", ((RVConfigService) RVProxy.get(RVConfigService.class)).getConfig("enableAriverActivityLeakV2", "false"));
         } catch (Exception e) {
             e.printStackTrace();
         }

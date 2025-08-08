@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
@@ -81,7 +81,7 @@ public class mzr implements mzs<myu> {
         } else {
             hashMap = null;
         }
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str)) {
             return new mzn(str, str2, hashMap);
         }
         return null;

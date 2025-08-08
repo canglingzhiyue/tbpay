@@ -2,7 +2,7 @@ package com.alibaba.aliweex.bundle;
 
 import android.net.Uri;
 import android.taobao.windvane.config.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.utils.WXLogUtils;
@@ -30,10 +30,10 @@ public class f {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             WXLogUtils.d("checkUrl expectedUrls is empty true");
             return false;
         }
@@ -53,7 +53,7 @@ public class f {
         } catch (Throwable th) {
             WXLogUtils.e(WXLogUtils.getStackTrace(th));
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             WXLogUtils.d("urlHost is empty");
             return false;
         }
@@ -62,13 +62,13 @@ public class f {
             return false;
         }
         String config = l.getConfig(CONFIG_GROUP_WEEX_BLACKURL_GROUP, CONFIG_KEY_WEEX_BLACKURL, "");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return false;
         }
         String[] split = config.split(",");
         if (split != null && split.length != 0) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && a(str, str2)) {
+                if (!StringUtils.isEmpty(str2) && a(str, str2)) {
                     return true;
                 }
             }
@@ -89,13 +89,13 @@ public class f {
         } catch (Throwable th) {
             WXLogUtils.e(WXLogUtils.getStackTrace(th));
         }
-        if (TextUtils.isEmpty(str) || (l = com.alibaba.aliweex.d.a().l()) == null) {
+        if (StringUtils.isEmpty(str) || (l = com.alibaba.aliweex.d.a().l()) == null) {
             return false;
         }
         String config = l.getConfig(CONFIG_GROUP_WEEX_WHITEURL_GROUP, CONFIG_KEY_WEEX_WHITEURL, "*.m.taobao.com,xilivr.ewszjk.m.jaeapp.com,luckygiftphp.ewszjk.m.jaeapp.com,xuan.ews.m.jaeapp.com");
-        if (!TextUtils.isEmpty(config) && (split = config.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(config) && (split = config.split(",")) != null && split.length != 0) {
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && a(str, str2)) {
+                if (!StringUtils.isEmpty(str2) && a(str, str2)) {
                     return true;
                 }
             }
@@ -115,11 +115,11 @@ public class f {
         } catch (Throwable th) {
             WXLogUtils.e(WXLogUtils.getStackTrace(th));
         }
-        if (TextUtils.isEmpty(str) || (l = com.alibaba.aliweex.d.a().l()) == null) {
+        if (StringUtils.isEmpty(str) || (l = com.alibaba.aliweex.d.a().l()) == null) {
             return false;
         }
         String config = l.getConfig(CONFIG_GROUP_WEEX_WHITE_SCHEME_GROUP, CONFIG_KEY_WEEX_WHITE_SCHEME, "");
-        if (TextUtils.isEmpty(config) || (split = config.split(",")) == null || split.length == 0) {
+        if (StringUtils.isEmpty(config) || (split = config.split(",")) == null || split.length == 0) {
             return false;
         }
         String str2 = null;
@@ -127,11 +127,11 @@ public class f {
             str2 = Uri.parse(str).getScheme();
         } catch (Throwable unused) {
         }
-        boolean z = !TextUtils.isEmpty(str2);
+        boolean z = !StringUtils.isEmpty(str2);
         for (String str3 : split) {
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 if (z) {
-                    if (TextUtils.equals(str3, str2)) {
+                    if (StringUtils.equals(str3, str2)) {
                         return true;
                     }
                 } else {
@@ -161,7 +161,7 @@ public class f {
         if (a(str2)) {
             return false;
         }
-        if (!p.a(str) && !TextUtils.isEmpty(str2) && !b(str2)) {
+        if (!p.a(str) && !StringUtils.isEmpty(str2) && !b(str2)) {
             return c(str);
         }
         return true;
@@ -189,7 +189,7 @@ public class f {
                 if (a(str2)) {
                     return false;
                 }
-                if (p.a(str) || TextUtils.isEmpty(str2) || b(str2) || c(str)) {
+                if (p.a(str) || StringUtils.isEmpty(str2) || b(str2) || c(str)) {
                     return true;
                 }
                 return booleanValue2;
@@ -208,7 +208,7 @@ public class f {
             str2 = Uri.parse(str).getHost();
         } catch (Throwable unused) {
         }
-        if (!TextUtils.isEmpty(str2) || TextUtils.isEmpty(str) || !str.startsWith("/")) {
+        if (!StringUtils.isEmpty(str2) || StringUtils.isEmpty(str) || !str.startsWith("/")) {
             return str2;
         }
         String substring = str.substring(1);

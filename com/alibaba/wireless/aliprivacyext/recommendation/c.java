@@ -3,7 +3,7 @@ package com.alibaba.wireless.aliprivacyext.recommendation;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import anet.channel.request.Request;
 import anetwork.channel.interceptor.Callback;
@@ -479,7 +479,7 @@ public class c {
             return (com.alibaba.wireless.aliprivacyext.recommendation.e) ipChange.ipc$dispatch("e7845a49", new Object[]{this});
         }
         String k2 = k();
-        if (TextUtils.isEmpty(k2)) {
+        if (StringUtils.isEmpty(k2)) {
             return com.alibaba.wireless.aliprivacyext.recommendation.e.NO_UID;
         }
         if (!cfz.a(this.f4249a, k2)) {
@@ -503,7 +503,7 @@ public class c {
             return ((Boolean) ipChange.ipc$dispatch("6076ef7", new Object[]{this})).booleanValue();
         }
         String b2 = cgf.b(this.f4249a);
-        if (TextUtils.isEmpty(b2) || !"0".equals(b2)) {
+        if (StringUtils.isEmpty(b2) || !"0".equals(b2)) {
             return false;
         }
         com.alibaba.wireless.aliprivacy.c.a(d, "syncSwitch:" + b2);
@@ -562,7 +562,7 @@ public class c {
             return (String) ipChange.ipc$dispatch("f1302f6e", new Object[]{this});
         }
         try {
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 return this.c;
             }
             if (Login.checkSessionValid()) {
@@ -700,7 +700,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (com.alibaba.wireless.aliprivacyext.recommendation.a.b(this.f4249a)) {
                 a(com.alibaba.wireless.aliprivacyext.recommendation.a.a(this.f4249a));
             }
@@ -843,7 +843,7 @@ public class c {
                 com.alibaba.wireless.aliprivacyext.model.a aVar = new com.alibaba.wireless.aliprivacyext.model.a();
                 String string = jSONObject.getString("api");
                 String string2 = jSONObject.getString("fromSource");
-                if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                     aVar.api = string;
                     aVar.fromSource = string2;
                     arrayList.add(aVar);
@@ -902,7 +902,7 @@ public class c {
         boolean b2 = b(z);
         if (l()) {
             aVar.b(null);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             aVar.b(null);
         } else {
             TrackLog.trackUpdateRecommendStatusStart(context, l(), z, str2);

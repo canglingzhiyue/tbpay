@@ -2,7 +2,7 @@ package com.taobao.taolive.room.service;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -357,7 +357,7 @@ public class g {
                 return (HashMap) ipChange.ipc$dispatch("a40d9915", new Object[]{this, str});
             }
             HashMap<String, List<String>> hashMap = new HashMap<>();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     JSONObject parseObject = JSON.parseObject(str);
                     if (parseObject.keySet().size() > 0) {

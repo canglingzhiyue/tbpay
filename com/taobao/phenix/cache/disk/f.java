@@ -1,6 +1,6 @@
 package com.taobao.phenix.cache.disk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -69,7 +69,7 @@ public class f extends a<njb, njb> {
                 try {
                     long currentTimeMillis = System.currentTimeMillis();
                     String str = B != null ? B.get("max-age") : "";
-                    if (!TextUtils.isEmpty(str) && TextUtils.isDigitsOnly(str)) {
+                    if (!StringUtils.isEmpty(str) && StringUtils.isDigitsOnly(str)) {
                         String str2 = nmvVar.e().w() + nmvVar.e().x();
                         long longValue = Long.valueOf(str).longValue();
                         nmvVar.e().b().n = !(this.f18869a.a(longValue) ? this.f18869a.a(str2, longValue) : false);
@@ -91,6 +91,6 @@ public class f extends a<njb, njb> {
             return ((Boolean) ipChange.ipc$dispatch("71690dc7", new Object[]{this, bVar})).booleanValue();
         }
         Map<String, String> B = bVar.B();
-        return this.f18869a != null && B != null && !TextUtils.isEmpty(B.get("max-age")) && this.f18869a.b(bVar.p());
+        return this.f18869a != null && B != null && !StringUtils.isEmpty(B.get("max-age")) && this.f18869a.b(bVar.p());
     }
 }

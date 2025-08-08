@@ -1,7 +1,7 @@
 package com.alibaba.android.bindingx.core.internal;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.android.bindingx.core.BindingXJSFunctionRegister;
 import com.alibaba.android.bindingx.core.BindingXPropertyInterceptor;
@@ -150,7 +150,7 @@ public abstract class AbstractEventHandler implements com.alibaba.android.bindin
                 } catch (Exception e) {
                     com.alibaba.android.bindingx.core.h.a("parse config failed", e);
                 }
-                if (!TextUtils.isEmpty(a2) || TextUtils.isEmpty(a4) || b == null) {
+                if (!StringUtils.isEmpty(a2) || StringUtils.isEmpty(a4) || b == null) {
                     com.alibaba.android.bindingx.core.h.d("skip illegal binding args[" + a2 + "," + a4 + "," + b + riy.ARRAY_END_STR);
                 } else {
                     k kVar = new k(a2, a3, b, a4, str, map);
@@ -165,7 +165,7 @@ public abstract class AbstractEventHandler implements com.alibaba.android.bindin
                 }
             }
             map = null;
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
             }
             com.alibaba.android.bindingx.core.h.d("skip illegal binding args[" + a2 + "," + a4 + "," + b + riy.ARRAY_END_STR);
         }
@@ -238,7 +238,7 @@ public abstract class AbstractEventHandler implements com.alibaba.android.bindin
             for (Map.Entry<String, l> entry : this.b.entrySet()) {
                 String key = entry.getKey();
                 l value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && value != null) {
+                if (!StringUtils.isEmpty(key) && value != null) {
                     a(key, value, map);
                 }
             }
@@ -288,8 +288,8 @@ public abstract class AbstractEventHandler implements com.alibaba.android.bindin
                     if (objArr != null && objArr.length > 0) {
                         Collections.addAll(linkedList, objArr);
                     }
-                    String str2 = TextUtils.isEmpty(kVar.b) ? this.e : kVar.b;
-                    if (!TextUtils.isEmpty(str2)) {
+                    String str2 = StringUtils.isEmpty(kVar.b) ? this.e : kVar.b;
+                    if (!StringUtils.isEmpty(str2)) {
                         linkedList.add(str2);
                     }
                     l lVar = kVar.c;
@@ -298,7 +298,7 @@ public abstract class AbstractEventHandler implements com.alibaba.android.bindin
                         if (jVar == null) {
                             jVar = j.a(lVar);
                             if (jVar != null) {
-                                if (!TextUtils.isEmpty(lVar.b)) {
+                                if (!StringUtils.isEmpty(lVar.b)) {
                                     this.n.put(lVar.b, jVar);
                                 }
                             }

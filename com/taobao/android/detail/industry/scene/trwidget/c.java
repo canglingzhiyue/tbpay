@@ -1,7 +1,7 @@
 package com.taobao.android.detail.industry.scene.trwidget;
 
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -189,7 +189,7 @@ public final class c extends atl {
             return (String) ipChange.ipc$dispatch("e2c2912d", new Object[]{this, aURARenderComponent});
         }
         String str = aURARenderComponent.key;
-        return TextUtils.isEmpty(str) ? "triverwidget" : str;
+        return StringUtils.isEmpty(str) ? "triverwidget" : str;
     }
 
     @Override // tb.atl, tb.arl
@@ -450,7 +450,7 @@ public final class c extends atl {
         if (ipChange instanceof IpChange) {
             return (TRWidgetInstance) ipChange.ipc$dispatch("78a71442", new Object[]{this, frameLayout, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Object tag = frameLayout.getTag(R.id.detail_industry_component_trwidget_instance);

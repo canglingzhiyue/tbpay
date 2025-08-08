@@ -1,7 +1,7 @@
 package com.taobao.taobao.scancode.gateway.OpenlinkBizQrCodeMapping;
 
 import android.taobao.util.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.abilitykit.ability.pop.model.b;
 import com.taobao.orange.OrangeConfig;
@@ -40,12 +40,12 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         k.a("UrlRouter", "needIntercept origin url:" + str);
         String customConfig = OrangeConfig.getInstance().getCustomConfig("scan_qr_code_android", "");
-        if (!TextUtils.isEmpty(customConfig)) {
+        if (!StringUtils.isEmpty(customConfig)) {
             try {
                 k.a("UrlRouter", "needIntercept orange config:" + customConfig);
                 JSONObject jSONObject = new JSONObject(customConfig.trim());
@@ -56,7 +56,7 @@ public class a {
                         JSONObject jSONObject2 = new JSONObject(jSONArray.getString(i));
                         String string = jSONObject2.getString("matchPattern");
                         String string2 = jSONObject2.getString(b.TAK_ABILITY_MATCH_CONTENT);
-                        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2)) {
+                        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2)) {
                             boolean a2 = a(string, string2, str);
                             k.a("UrlRouter", "--- needIntercept:--- " + a2);
                             if (a2) {
@@ -146,7 +146,7 @@ public class a {
                 }
                 try {
                     String string = mtopResponse.getDataJsonObject().getString("result");
-                    if (TextUtils.isEmpty(string) || a.InterfaceC0885a.this == null) {
+                    if (StringUtils.isEmpty(string) || a.InterfaceC0885a.this == null) {
                         return;
                     }
                     try {

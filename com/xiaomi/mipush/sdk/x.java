@@ -1,6 +1,6 @@
 package com.xiaomi.mipush.sdk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes9.dex */
 class x {
@@ -16,6 +16,6 @@ class x {
             return false;
         }
         x xVar = (x) obj;
-        return !TextUtils.isEmpty(xVar.f83a) && xVar.f83a.equals(this.f83a);
+        return !StringUtils.isEmpty(xVar.f83a) && xVar.f83a.equals(this.f83a);
     }
 }

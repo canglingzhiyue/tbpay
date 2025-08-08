@@ -1,7 +1,7 @@
 package com.ali.user.mobile.verify;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
 import com.ali.user.mobile.eventbus.Event;
@@ -61,7 +61,7 @@ public class VerifyApi {
         } else {
             if (verifyParam != null) {
                 try {
-                    if (!TextUtils.isEmpty(verifyParam.requestScene)) {
+                    if (!StringUtils.isEmpty(verifyParam.requestScene)) {
                         if (ServiceFactory.getService(FingerprintService.class) == null) {
                             commonCallback.onFail(4001, "未接入指纹SDK");
                             return;
@@ -183,7 +183,7 @@ public class VerifyApi {
         } else if (LoginSwitch.getSwitch("degradeFingerBackground", "true")) {
             SecurityGuardManagerWraper.saveFinger(fingerInfo, arrayList);
             try {
-                if (!TextUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(fingerInfo.key))) {
+                if (!StringUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(fingerInfo.key))) {
                     return;
                 }
                 UserTrackAdapter.sendUT("LostFingerToken");
@@ -203,7 +203,7 @@ public class VerifyApi {
                     }
                     SecurityGuardManagerWraper.saveFinger(FingerInfo.this, arrayList);
                     try {
-                        if (!TextUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(FingerInfo.this.key))) {
+                        if (!StringUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(FingerInfo.this.key))) {
                             return;
                         }
                         UserTrackAdapter.sendUT("LostFingerToken");
@@ -253,7 +253,7 @@ public class VerifyApi {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("4b349f7d", new Object[]{this, rpcResponse});
-            } else if (rpcResponse != null && rpcResponse.returnValue != null && !TextUtils.isEmpty(rpcResponse.returnValue.h5Url) && "H5".equals(rpcResponse.actionType)) {
+            } else if (rpcResponse != null && rpcResponse.returnValue != null && !StringUtils.isEmpty(rpcResponse.returnValue.h5Url) && "H5".equals(rpcResponse.actionType)) {
                 EventBus.getDefault().registerEventListener(EventBusEnum.EventName.ACTION_H5, new EventListener() { // from class: com.ali.user.mobile.verify.VerifyApi.4.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -271,8 +271,8 @@ public class VerifyApi {
                         }
                         String str = (String) event.params.get("token");
                         String str2 = (String) event.params.get("result");
-                        if (TextUtils.isEmpty(str) || !TextUtils.equals(str2, "success")) {
-                            if (TextUtils.equals(str2, "cancel")) {
+                        if (StringUtils.isEmpty(str) || !StringUtils.equals(str2, "success")) {
+                            if (StringUtils.equals(str2, "cancel")) {
                                 AnonymousClass4.this.val$callback.onFail(4002, "取消指纹开启");
                                 return;
                             } else {
@@ -315,7 +315,7 @@ public class VerifyApi {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("955d4e9f", new Object[]{context, commonCallback, rpcResponse});
-        } else if (rpcResponse == null || rpcResponse.returnValue == null || TextUtils.isEmpty(rpcResponse.returnValue.biometricKey) || TextUtils.isEmpty(rpcResponse.returnValue.biometricId)) {
+        } else if (rpcResponse == null || rpcResponse.returnValue == null || StringUtils.isEmpty(rpcResponse.returnValue.biometricKey) || StringUtils.isEmpty(rpcResponse.returnValue.biometricId)) {
             commonCallback.onFail(4001, "指纹开启失败");
         } else if (ServiceFactory.getService(FingerprintService.class) != null) {
             ((NavigatorService) ServiceFactory.getService(NavigatorService.class)).fingerSet(context, new CommonCallback() { // from class: com.ali.user.mobile.verify.VerifyApi.5
@@ -371,7 +371,7 @@ public class VerifyApi {
                 return;
             }
             try {
-                if (TextUtils.isEmpty(verifyParam.biometricId)) {
+                if (StringUtils.isEmpty(verifyParam.biometricId)) {
                     verifyParam.biometricId = SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getBiometricId();
                 }
                 VerifyServiceImpl.getInstance().closeFinger(verifyParam, new RpcRequestCallback<Void>() { // from class: com.ali.user.mobile.verify.VerifyApi.6

@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.aura.AURAFlowData;
@@ -101,7 +101,7 @@ public final class ffb extends atl {
             return (View) ipChange.ipc$dispatch("e8922edd", new Object[]{this, viewGroup, aURARenderComponentContainer});
         }
         android.taobao.windvane.jsbridge.q.a("NewPicGalleryBridge", (Class<? extends e>) TBDetailPicGalleryBridge.class);
-        if (TextUtils.equals(j, "true")) {
+        if (StringUtils.equals(j, "true")) {
             c();
         }
         final VesselView vesselView = new VesselView(viewGroup.getContext());
@@ -200,9 +200,9 @@ public final class ffb extends atl {
                 arc.a().a("AliSDetailVesselComponentExtension#", "onDowngrade", "渲染降级:" + str);
             }
         });
-        if (TextUtils.equals(j, "true")) {
+        if (StringUtils.equals(j, "true")) {
             this.h = vesselView;
-        } else if (aURARenderComponentContainer != null && !TextUtils.isEmpty(aURARenderComponentContainer.name)) {
+        } else if (aURARenderComponentContainer != null && !StringUtils.isEmpty(aURARenderComponentContainer.name)) {
             this.i.put(aURARenderComponentContainer.name, vesselView);
         }
         return vesselView;
@@ -251,7 +251,7 @@ public final class ffb extends atl {
             return;
         }
         String a2 = b.a(this.c);
-        if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(str) || (b = b.b(a2)) == null) {
+        if (StringUtils.isEmpty(a2) || StringUtils.isEmpty(str) || (b = b.b(a2)) == null) {
             return;
         }
         b.a(str, new com.taobao.android.detail.core.standard.mainscreen.interaction.a() { // from class: tb.ffb.3
@@ -408,7 +408,7 @@ public final class ffb extends atl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5889b6a", new Object[]{this});
-        } else if (TextUtils.equals(j, "true")) {
+        } else if (StringUtils.equals(j, "true")) {
             VesselView vesselView = this.h;
             if (vesselView == null) {
                 return;

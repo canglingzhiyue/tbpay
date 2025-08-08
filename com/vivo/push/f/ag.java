@@ -1,7 +1,7 @@
 package com.vivo.push.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.NotifyAdapterUtil;
 import java.util.HashMap;
 
@@ -22,7 +22,7 @@ public final class ag extends aa {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("messageID", String.valueOf(uVar.f()));
             String a2 = com.vivo.push.restructure.a.a().e().a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 hashMap.put("remoteAppId", a2);
             }
             xVar.a(hashMap);

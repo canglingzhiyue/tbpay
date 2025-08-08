@@ -2,7 +2,7 @@ package com.taobao.browser;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ValueCallback;
 import com.alibaba.security.realidentity.ui.activity.RPWebViewActivity;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -55,7 +55,7 @@ public class f implements com.taobao.pha.core.controller.g {
                     ipChange2.ipc$dispatch("138ac29e", new Object[]{this, str});
                     return;
                 }
-                if (!TextUtils.isEmpty(str) ? "true".equals(str.replace("\"", "").replace("'", "")) : false) {
+                if (!StringUtils.isEmpty(str) ? "true".equals(str.replace("\"", "").replace("'", "")) : false) {
                     f fVar = f.this;
                     f.$ipChange.getWVCallBackContext().fireEvent(RPWebViewActivity.l);
                     return;

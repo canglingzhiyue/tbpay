@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import org.json.JSONObject;
 import tb.kge;
@@ -31,7 +31,7 @@ public class b implements a {
         this.f23597a = str;
         this.b = str2;
         this.c = str3;
-        this.e = TextUtils.equals("com.eg.android.AlipayGphone", str2);
+        this.e = StringUtils.equals("com.eg.android.AlipayGphone", str2);
     }
 
     @Override // com.taobao.wireless.link.download.a

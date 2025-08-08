@@ -1,7 +1,7 @@
 package com.alipay.android.msp.ui.birdnest.plugin;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.RelativeLayout;
 import com.alipay.android.app.birdnest.api.OnFrameTplEventListener;
@@ -190,7 +190,7 @@ public class BNFramePlugin extends AbsFBPlugin {
                         if (mspContextByBizId2 != null && (obj instanceof FBDocument) && (mspWindowClient2 = (MspWindowClient) mspContextByBizId2.getMspUIClient()) != null && (currentWindowFrame = mspWindowClient2.getCurrentWindowFrame()) != null && currentWindowFrame.getFBDocument() == null) {
                             currentWindowFrame.setFBDocument((FBDocument) obj);
                         }
-                        if (!TextUtils.equals(mspEvent.getActionName(), MspFlybirdDefine.FLYBIRD_FRAME_EVENT)) {
+                        if (!StringUtils.equals(mspEvent.getActionName(), MspFlybirdDefine.FLYBIRD_FRAME_EVENT)) {
                             return false;
                         }
                         try {

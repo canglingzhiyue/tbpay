@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -71,7 +71,7 @@ public class i extends f {
         if (aVar == null) {
             return;
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             aVar.a("PARAM_INVALID", "");
             return;
         }
@@ -89,7 +89,7 @@ public class i extends f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cf10ef", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.b)) {
+        } else if (StringUtils.isEmpty(this.b)) {
         } else {
             try {
                 this.f.a().f().put("initServerParam", (Object) JSON.parseObject(this.b));
@@ -106,7 +106,7 @@ public class i extends f {
             return;
         }
         com.alibaba.poplayer.utils.c.a("DSLFetcher.fetchDSL.dsl=%s", this.f22228a);
-        if (TextUtils.isEmpty(this.f22228a)) {
+        if (StringUtils.isEmpty(this.f22228a)) {
             this.f.a("DSL_EMPTY", "");
             return;
         }
@@ -175,11 +175,11 @@ public class i extends f {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+            if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
                 return;
             }
             String string = parseObject.getString("clickAreas");
-            if (TextUtils.isEmpty(string) || (list = (List) JSON.parseObject(string, new TypeReference<ArrayList<JSONObject>>() { // from class: com.taobao.tbpoplayer.nativerender.i.1
+            if (StringUtils.isEmpty(string) || (list = (List) JSON.parseObject(string, new TypeReference<ArrayList<JSONObject>>() { // from class: com.taobao.tbpoplayer.nativerender.i.1
                 {
                     i.this = this;
                 }
@@ -189,7 +189,7 @@ public class i extends f {
             for (JSONObject jSONObject : list) {
                 if (jSONObject != null) {
                     String a2 = p.a(this.f, jSONObject.getString("deepUrl"), false);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         jSONObject.put("deepUrl", (Object) a2);
                     }
                 }

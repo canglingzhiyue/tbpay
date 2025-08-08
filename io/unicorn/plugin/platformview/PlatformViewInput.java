@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.text.Editable;
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.DisplayCutout;
 import android.view.KeyEvent;
@@ -216,7 +216,7 @@ public class PlatformViewInput extends WeexPlatformView {
                 } else {
                     str = null;
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     hashMap = new HashMap();
                     hashMap.put("value", str);
                 }
@@ -357,7 +357,7 @@ public class PlatformViewInput extends WeexPlatformView {
     public void fireChangeContent() {
         if (!this.mLastChangeText.equals(this.mEditTextContent)) {
             HashMap hashMap = null;
-            if (!TextUtils.isEmpty(this.mEditTextContent)) {
+            if (!StringUtils.isEmpty(this.mEditTextContent)) {
                 hashMap = new HashMap();
                 hashMap.put("value", this.mEditTextContent);
                 this.mLastChangeText = this.mEditTextContent;
@@ -446,7 +446,7 @@ public class PlatformViewInput extends WeexPlatformView {
         Calendar calendar3 = Calendar.getInstance(Locale.getDefault());
         calendar2.set(1900, 0, 1);
         calendar3.set(2100, 11, 31);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             if (datePicker.getMaxDate() >= parseDate(str3).getTime()) {
                 datePicker.setMinDate(parseDate(str3).getTime());
             } else {
@@ -454,7 +454,7 @@ public class PlatformViewInput extends WeexPlatformView {
                 datePicker.setMaxDate(calendar3.getTimeInMillis());
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if (datePicker.getMinDate() <= parseDate(str2).getTime()) {
                 timeInMillis = parseDate(str2).getTime();
             } else {
@@ -753,12 +753,12 @@ public class PlatformViewInput extends WeexPlatformView {
     public void setTextAlign(String str) {
         EditText editText;
         int i;
-        if (TextUtils.equals(str, "left")) {
+        if (StringUtils.equals(str, "left")) {
             getEditText().setTextAlignment(2);
             editText = getEditText();
             i = 19;
-        } else if (!TextUtils.equals(str, "center")) {
-            if (!TextUtils.equals(str, "right")) {
+        } else if (!StringUtils.equals(str, "center")) {
+            if (!StringUtils.equals(str, "right")) {
                 return;
             }
             getEditText().setTextAlignment(3);
@@ -784,11 +784,11 @@ public class PlatformViewInput extends WeexPlatformView {
     public void setVerticalAlign(String str) {
         EditText editText;
         int i;
-        if (TextUtils.equals(str, "top")) {
+        if (StringUtils.equals(str, "top")) {
             editText = getEditText();
             i = 48;
-        } else if (!TextUtils.equals(str, "middle")) {
-            if (!TextUtils.equals(str, "bottom")) {
+        } else if (!StringUtils.equals(str, "middle")) {
+            if (!StringUtils.equals(str, "bottom")) {
                 return;
             }
             getEditText().setGravity(80);

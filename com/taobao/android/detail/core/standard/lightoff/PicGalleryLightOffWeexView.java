@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.standard.lightoff;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -135,10 +135,10 @@ public class PicGalleryLightOffWeexView extends FrameLayout implements c {
                     ipChange.ipc$dispatch("88f82eeb", new Object[]{this, wXSDKInstance, str2, str3});
                     return;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "unknown";
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = "unknown";
                 }
                 ard a2 = arc.a();
@@ -211,10 +211,10 @@ public class PicGalleryLightOffWeexView extends FrameLayout implements c {
                     ipChange.ipc$dispatch("88f82eeb", new Object[]{this, wXSDKInstance, str2, str3});
                     return;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "unknown";
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = "unknown";
                 }
                 ard a2 = arc.a();
@@ -286,10 +286,10 @@ public class PicGalleryLightOffWeexView extends FrameLayout implements c {
                     ipChange.ipc$dispatch("88f82eeb", new Object[]{this, wXSDKInstance, str2, str3});
                     return;
                 }
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "unknown";
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = "unknown";
                 }
                 ard a2 = arc.a();
@@ -486,10 +486,10 @@ public class PicGalleryLightOffWeexView extends FrameLayout implements c {
             return (String) ipChange.ipc$dispatch("66a3363f", new Object[]{this});
         }
         String str = this.mLoadUrl;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = jqm.a() ? DEFAULT_DEVELOP_LOAD_URL : DEFAULT_LOAD_URL;
         }
-        if (TextUtils.isEmpty(this.mToken)) {
+        if (StringUtils.isEmpty(this.mToken)) {
             arc.a().b("PicGalleryLightOffWeexView", "loadView", "mToken is empty");
         } else {
             str = str + "&light_off_token=" + this.mToken;

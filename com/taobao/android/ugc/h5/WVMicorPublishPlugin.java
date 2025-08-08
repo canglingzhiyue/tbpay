@@ -8,7 +8,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.android.ugc.service.ICallback;
@@ -72,7 +72,7 @@ public class WVMicorPublishPlugin extends e implements ICallback {
             JSONObject parseObject = JSON.parseObject(str2);
             String string = parseObject.getString(TEMPLATE_URL);
             String string2 = parseObject.getString("data");
-            if (TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string2)) {
                 this.mCallback.error("data is invalid!");
                 return false;
             }

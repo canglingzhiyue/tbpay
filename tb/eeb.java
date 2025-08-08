@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -470,9 +470,9 @@ public final class eeb extends ctc<bry, com.etao.feimagesearch.model.b, CaptureM
             return;
         }
         String k = com.etao.feimagesearch.config.b.k("orangeCameraTab3Url");
-        if (TextUtils.isEmpty(k)) {
+        if (StringUtils.isEmpty(k)) {
             k = com.etao.feimagesearch.capture.dynamic.templates.b.a("plt_camera_page_tab3");
-            if (TextUtils.isEmpty(k)) {
+            if (StringUtils.isEmpty(k)) {
                 k = com.etao.feimagesearch.config.b.aQ();
             }
         }
@@ -486,7 +486,7 @@ public final class eeb extends ctc<bry, com.etao.feimagesearch.model.b, CaptureM
         q.a((Object) a2, "UrlUtil.appendQueryParam…,\n      innerParams\n    )");
         JSONObject jSONObject = new JSONObject();
         for (Map.Entry<String, String> entry : linkedHashMap.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+            if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                 jSONObject.put((JSONObject) entry.getKey(), entry.getValue());
             }
         }

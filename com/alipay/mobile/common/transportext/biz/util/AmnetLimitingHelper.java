@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transportext.biz.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.alipay.mobile.common.transportext.biz.mmtp.mrpc.internal.MRpcConnection;
@@ -21,7 +21,7 @@ public final class AmnetLimitingHelper {
         LogCatUtil.info("MRpcStream", " createLimitMrpcResponse.  limitPrompt=[" + limitPrompt + "] ");
         HashMap hashMap = new HashMap(3);
         hashMap.put(HeaderConstant.HEADER_KEY_RESULT_STATUS, "1002");
-        if (!TextUtils.isEmpty(limitPrompt)) {
+        if (!StringUtils.isEmpty(limitPrompt)) {
             hashMap.put(HeaderConstant.HEADER_KEY_CONTROL, limitPrompt);
         }
         hashMap.put(HeaderConstant.HEADER_KEY_MEMO, "系统流量太大，请稍后再试！");

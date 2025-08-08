@@ -2,7 +2,7 @@ package com.alibaba.ariver.resource.api.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -59,7 +59,7 @@ public class DynamicPluginInfo implements Parcelable {
                     break;
                 }
                 PluginModel next = it.next();
-                if (TextUtils.equals(pluginModel.getAppId(), next.getAppId()) && TextUtils.equals(pluginModel.getVersion(), next.getVersion())) {
+                if (StringUtils.equals(pluginModel.getAppId(), next.getAppId()) && StringUtils.equals(pluginModel.getVersion(), next.getVersion())) {
                     pluginModel2 = next;
                     break;
                 }

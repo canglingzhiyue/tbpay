@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.fastjson.JSONObject;
@@ -145,7 +145,7 @@ public class MagicWindowActivity extends FragmentActivity {
         HomePageUtility.a(this);
         this.d = (FrameLayout) findViewById(R.id.container);
         String b = b();
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             a(b, TMSEmbedSolutionType.WEB_SINGLE_PAGE, false);
         } else if (f()) {
             a();
@@ -289,7 +289,7 @@ public class MagicWindowActivity extends FragmentActivity {
             e.e("MagicWindowActivity", "parse activity end time error");
         }
         String string = jSONObject.getString("targetUrl");
-        if (TextUtils.isEmpty(string) || System.currentTimeMillis() > j) {
+        if (StringUtils.isEmpty(string) || System.currentTimeMillis() > j) {
             return null;
         }
         String b = b(string);
@@ -315,14 +315,14 @@ public class MagicWindowActivity extends FragmentActivity {
                         return;
                     }
                     String a2 = MagicWindowActivity.a(MagicWindowActivity.this);
-                    if (TextUtils.isEmpty(a2)) {
+                    if (StringUtils.isEmpty(a2)) {
                         if (MagicWindowActivity.b(MagicWindowActivity.this) == PageState.ORDER || !MagicWindowActivity.d(MagicWindowActivity.this)) {
                             return;
                         }
                         MagicWindowActivity.e(MagicWindowActivity.this);
                     } else if (MagicWindowActivity.b(MagicWindowActivity.this) != PageState.ACTIVITY) {
                         MagicWindowActivity.a(MagicWindowActivity.this, a2, TMSEmbedSolutionType.WEB_SINGLE_PAGE, false);
-                    } else if (TextUtils.equals(MagicWindowActivity.c(MagicWindowActivity.this), a2)) {
+                    } else if (StringUtils.equals(MagicWindowActivity.c(MagicWindowActivity.this), a2)) {
                     } else {
                         MagicWindowActivity.a(MagicWindowActivity.this, a2);
                     }
@@ -352,7 +352,7 @@ public class MagicWindowActivity extends FragmentActivity {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return Uri.parse(str).buildUpon().appendQueryParameter("hide_back", "true").appendQueryParameter("status_bar_transparent", "true").build().toString();
         }
         return null;

@@ -1,6 +1,6 @@
 package com.taobao.search.musie.pager;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.p;
@@ -56,7 +56,7 @@ public final class TbSlideItem extends Div implements p.b, com.taobao.android.we
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d2191683", new Object[]{this, str, uINode, bVar});
-        } else if (TextUtils.equals(str, "videostatus")) {
+        } else if (StringUtils.equals(str, "videostatus")) {
             this.videoNode = uINode;
             this.callback = bVar;
         } else {
@@ -69,7 +69,7 @@ public final class TbSlideItem extends Div implements p.b, com.taobao.android.we
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b8b6b0a", new Object[]{this, str, uINode, bVar});
-        } else if (TextUtils.equals(str, "videostatus")) {
+        } else if (StringUtils.equals(str, "videostatus")) {
             this.videoNode = null;
             this.callback = null;
         } else {
@@ -83,7 +83,7 @@ public final class TbSlideItem extends Div implements p.b, com.taobao.android.we
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3c0b91ed", new Object[]{this, str, uINode});
         }
-        if (!TextUtils.equals(str, "videostatus")) {
+        if (!StringUtils.equals(str, "videostatus")) {
             return super.getNativeState(str);
         }
         return this.canPlay ? "play" : "stop";
@@ -115,8 +115,8 @@ public final class TbSlideItem extends Div implements p.b, com.taobao.android.we
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8dc7cdc8", new Object[]{this, str, str2});
-        } else if (TextUtils.equals(str, "videocallback")) {
-            if (!TextUtils.equals(str2, "finish")) {
+        } else if (StringUtils.equals(str, "videocallback")) {
+            if (!StringUtils.equals(str2, "finish")) {
                 return;
             }
             UINode parentNode = getParentNode();

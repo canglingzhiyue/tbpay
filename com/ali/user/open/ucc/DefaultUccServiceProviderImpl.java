@@ -1,7 +1,7 @@
 package com.ali.user.open.ucc;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.model.LoginDataModel;
 import com.ali.user.open.core.model.LoginReturnData;
@@ -41,7 +41,7 @@ public class DefaultUccServiceProviderImpl extends BaseUccServiceProvider {
         }
         LoginReturnData loginReturnData = (LoginReturnData) JSON.parseObject(str2, LoginReturnData.class);
         try {
-            if (TextUtils.isEmpty(((LoginDataModel) JSONUtils.toPOJO(new JSONObject(loginReturnData.data), LoginDataModel.class)).sid)) {
+            if (StringUtils.isEmpty(((LoginDataModel) JSONUtils.toPOJO(new JSONObject(loginReturnData.data), LoginDataModel.class)).sid)) {
                 z = true;
             }
         } catch (Throwable unused) {

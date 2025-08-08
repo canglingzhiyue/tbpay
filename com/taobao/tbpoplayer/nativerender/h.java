@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
@@ -294,22 +294,22 @@ public class h implements e.a {
         HashMap hashMap = new HashMap();
         hashMap.put("WVPopLayer", new PopLayerWVPlugin(l()));
         this.f22224a.a(new qnw(new qnv(a3, l(), hashMap, string2)));
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             this.j = string;
             this.h = true;
         } else {
-            if (TextUtils.isEmpty(string3)) {
+            if (StringUtils.isEmpty(string3)) {
                 string3 = com.taobao.tbpoplayer.util.e.a(string2, "cdnId");
             }
-            if (!TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string3)) {
                 this.j = "https://poplayer.template.alibaba.com/" + string3 + ".json";
                 this.h = true;
             } else {
-                if (TextUtils.isEmpty(string4)) {
+                if (StringUtils.isEmpty(string4)) {
                     string4 = com.taobao.tbpoplayer.util.e.a(string2, "pageId");
                 }
                 this.h = false;
-                if (TextUtils.isEmpty(string4)) {
+                if (StringUtils.isEmpty(string4)) {
                     return "INIT_ERROR_PAGE_ID_NULL";
                 }
                 this.k = string4;
@@ -385,7 +385,7 @@ public class h implements e.a {
         try {
             n();
             String a2 = a(this.d);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.f22224a.a("EnvInitFailed", a2, "");
                 return;
             }
@@ -511,8 +511,8 @@ public class h implements e.a {
         } else {
             this.f22224a.a().a(true);
             DSLModel e = this.f22224a.a().e();
-            if (TextUtils.isEmpty(str3)) {
-                str3 = (e == null || TextUtils.isEmpty(e.defaultToastText)) ? "活动太火爆啦 弹窗一时没加载出来" : e.defaultToastText;
+            if (StringUtils.isEmpty(str3)) {
+                str3 = (e == null || StringUtils.isEmpty(e.defaultToastText)) ? "活动太火爆啦 弹窗一时没加载出来" : e.defaultToastText;
             }
             this.g.a(str, str2, str3);
             z();
@@ -665,11 +665,11 @@ public class h implements e.a {
                 JSONObject jSONObject2 = new JSONObject();
                 String a3 = jVar.a();
                 String str = "";
-                if (TextUtils.isEmpty(a3)) {
+                if (StringUtils.isEmpty(a3)) {
                     a3 = str;
                 }
                 jSONObject2.put("id", (Object) a3);
-                if (!TextUtils.isEmpty(jVar.b())) {
+                if (!StringUtils.isEmpty(jVar.b())) {
                     str = jVar.b();
                 }
                 jSONObject2.put(MspDBHelper.RecordEntry.COLUMN_NAME_VERSION, (Object) str);
@@ -910,7 +910,7 @@ public class h implements e.a {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         String str2 = this.f22224a.a().e().spm;
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             HashMap hashMap = new HashMap();
             hashMap.put("spm", str2);
             str = qnu.a(str, hashMap);
@@ -1267,7 +1267,7 @@ public class h implements e.a {
         }
         if (ABGlobal.isFeatureOpened(PopLayer.getReference().getApp(), "android_poplayer_native_dl_gradual_display") && (list = dSLModel.gradualDeviceLevel) != null && !list.isEmpty()) {
             String a2 = com.taobao.tbpoplayer.util.e.a();
-            if (!TextUtils.isEmpty(a2) && !list.contains(a2)) {
+            if (!StringUtils.isEmpty(a2) && !list.contains(a2)) {
                 return false;
             }
         }

@@ -1,7 +1,7 @@
 package com.alipay.sdk.m.f;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebView;
@@ -29,7 +29,7 @@ public abstract class b extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             CookieSyncManager.createInstance(this.f6160a.getApplicationContext()).sync();
             CookieManager.getInstance().setCookie(str, str2);

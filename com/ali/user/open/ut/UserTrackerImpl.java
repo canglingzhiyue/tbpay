@@ -1,7 +1,7 @@
 package com.ali.user.open.ut;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.service.UserTrackerService;
 import com.ali.user.open.core.trace.SDKLogger;
 import com.alibaba.fastjson.JSON;
@@ -38,7 +38,7 @@ public class UserTrackerImpl implements UserTrackerService {
             Map<String, String> appInfo = getAppInfo();
             StringBuilder sb = new StringBuilder();
             sb.append("[LoginUtAnalytics] sendUT, page=");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 uTCustomHitBuilder.setEventPage(str);
                 sb.append(str);
             }
@@ -66,7 +66,7 @@ public class UserTrackerImpl implements UserTrackerService {
         }
         try {
             UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = new UTHitBuilders.UTControlHitBuilder(str, str2);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 uTControlHitBuilder.setProperty(UTHitBuilders.a.FIELD_ARG2, str3);
             }
             uTControlHitBuilder.setProperties(map);

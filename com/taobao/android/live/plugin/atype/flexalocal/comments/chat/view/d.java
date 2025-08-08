@@ -14,7 +14,7 @@ import android.os.Message;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -555,18 +555,18 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
             String string = b.getString("bizType");
             JSONObject jSONObject = b.getJSONObject("data");
             String string2 = jSONObject != null ? jSONObject.getString("replyToUserId") : "";
-            boolean z2 = cgl.i() != null && !TextUtils.isEmpty(string2) && TextUtils.equals(cgl.i().a(), string2);
+            boolean z2 = cgl.i() != null && !StringUtils.isEmpty(string2) && StringUtils.equals(cgl.i().a(), string2);
             ChatMessage a2 = a(b, z2);
             if (a2 == null) {
                 return;
             }
-            if (!TextUtils.equals(string, BIZ_TYPE_AI_COPILOT_RESPONSE) || !hkk.y()) {
+            if (!StringUtils.equals(string, BIZ_TYPE_AI_COPILOT_RESPONSE) || !hkk.y()) {
                 z = false;
             }
-            if (!TextUtils.equals(string, "anchorResponse") && !TextUtils.equals(string, "rewardNotice") && !z) {
+            if (!StringUtils.equals(string, "anchorResponse") && !StringUtils.equals(string, "rewardNotice") && !z) {
                 return;
             }
-            if (z2 || TextUtils.equals(string, "rewardNotice")) {
+            if (z2 || StringUtils.equals(string, "rewardNotice")) {
                 hgk hgkVar = this.H;
                 if (hgkVar == null) {
                     return;
@@ -616,7 +616,7 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
         ChatMessage.ChatItemCommonData chatItemCommonData = new ChatMessage.ChatItemCommonData();
         chatItemCommonData.bizType = jSONObject.getString("bizType");
         chatItemCommonData.data = jSONObject.getJSONObject("data");
-        if (TextUtils.equals(chatItemCommonData.bizType, "rewardNotice") || TextUtils.equals(chatItemCommonData.bizType, BIZ_TYPE_AI_COPILOT_RESPONSE)) {
+        if (StringUtils.equals(chatItemCommonData.bizType, "rewardNotice") || StringUtils.equals(chatItemCommonData.bizType, BIZ_TYPE_AI_COPILOT_RESPONSE)) {
             chatItemCommonData.templateName = jSONObject.getString("templateName");
         } else if (z) {
             chatItemCommonData.templateName = "taolive_comment_response_mine";
@@ -643,13 +643,13 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
         ChatTopMessage chatTopMessage2 = null;
         if (i == 1011) {
             String g = v.g((String) obj);
-            if (TextUtils.isEmpty(g)) {
+            if (StringUtils.isEmpty(g)) {
                 return null;
             }
             chatTopMessage = new ChatTopMessage(i, g, null, null);
         } else if (i == 10035) {
             String g2 = v.g((String) obj);
-            if (TextUtils.isEmpty(g2)) {
+            if (StringUtils.isEmpty(g2)) {
                 return null;
             }
             chatTopMessage = new ChatTopMessage(i, g2, null, null);
@@ -668,12 +668,12 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
         } else {
             if (i == 1040) {
                 try {
-                    if (phg.d().a() || !(obj instanceof String) || !this.f13647a.b() || (userLevelAvatar = (UserLevelAvatar) JSON.parseObject((String) obj, UserLevelAvatar.class)) == null || TextUtils.isEmpty(userLevelAvatar.userid) || TextUtils.equals(userLevelAvatar.userid, cgl.i().a())) {
+                    if (phg.d().a() || !(obj instanceof String) || !this.f13647a.b() || (userLevelAvatar = (UserLevelAvatar) JSON.parseObject((String) obj, UserLevelAvatar.class)) == null || StringUtils.isEmpty(userLevelAvatar.userid) || StringUtils.equals(userLevelAvatar.userid, cgl.i().a())) {
                         return null;
                     }
                     ChatTopMessage chatTopMessage3 = new ChatTopMessage(i, userLevelAvatar.nick, v.a(userLevelAvatar.nick) + " 来了", null, userLevelAvatar.identify, this.f13647a.c());
                     try {
-                        if (!TextUtils.isEmpty(userLevelAvatar.flowSourceText)) {
+                        if (!StringUtils.isEmpty(userLevelAvatar.flowSourceText)) {
                             string = v.a(userLevelAvatar.nick) + userLevelAvatar.flowSourceText;
                         } else {
                             string = this.b.getString(R.string.taolive_user_update_hint_flexalocal, v.a(userLevelAvatar.nick));
@@ -696,7 +696,7 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
                     return null;
                 }
                 String str = (String) ((Map) obj).get("extParams");
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return null;
                 }
                 try {
@@ -724,10 +724,10 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
                 return null;
             } else {
                 try {
-                    if (!phg.d().a() || !(obj instanceof String) || !this.f13647a.b() || (userLevelAvatar2 = (UserLevelAvatar) JSON.parseObject((String) obj, UserLevelAvatar.class)) == null || TextUtils.isEmpty(userLevelAvatar2.userid) || TextUtils.equals(userLevelAvatar2.userid, cgl.i().a())) {
+                    if (!phg.d().a() || !(obj instanceof String) || !this.f13647a.b() || (userLevelAvatar2 = (UserLevelAvatar) JSON.parseObject((String) obj, UserLevelAvatar.class)) == null || StringUtils.isEmpty(userLevelAvatar2.userid) || StringUtils.equals(userLevelAvatar2.userid, cgl.i().a())) {
                         return null;
                     }
-                    if (!TextUtils.isEmpty(userLevelAvatar2.flowSourceText)) {
+                    if (!StringUtils.isEmpty(userLevelAvatar2.flowSourceText)) {
                         string2 = v.a(userLevelAvatar2.nick) + userLevelAvatar2.flowSourceText;
                     } else {
                         string2 = this.b.getString(R.string.taolive_user_update_hint_flexalocal, v.a(userLevelAvatar2.nick));
@@ -1182,13 +1182,13 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
             return;
         }
         TBLiveDataModel tBLiveDataModel = this.e;
-        if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null && !TextUtils.equals(this.e.mVideoInfo.roomStatus, "1")) {
+        if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null && !StringUtils.equals(this.e.mVideoInfo.roomStatus, "1")) {
             q.b("ChatView3", "processNewOnItemLongClick not live not support");
         } else if (com.taobao.android.live.plugin.atype.flexalocal.comments.chat.b.e() && "0".equals(chatMessage.mCommentId)) {
         } else {
-            if (chatMessage.mType == ChatMessage.MessageType.TXT && !TextUtils.isEmpty(chatMessage.mCommentId) && d(chatMessage)) {
+            if (chatMessage.mType == ChatMessage.MessageType.TXT && !StringUtils.isEmpty(chatMessage.mCommentId) && d(chatMessage)) {
                 n2 = m();
-            } else if (TextUtils.isEmpty(chatMessage.mCommentId)) {
+            } else if (StringUtils.isEmpty(chatMessage.mCommentId)) {
                 return;
             } else {
                 n2 = n();
@@ -1293,10 +1293,10 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
             return true;
         }
         String str = chatMessage.renders.get(aw.PARAM_CHAT_RENDERS_ENHANCE);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
-        return !TextUtils.equals(str, "follow") && !TextUtils.equals(str, "share") && !TextUtils.equals(str, "generalAction");
+        return !StringUtils.equals(str, "follow") && !StringUtils.equals(str, "share") && !StringUtils.equals(str, "generalAction");
     }
 
     private void e(ChatMessage chatMessage) {
@@ -2031,11 +2031,11 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
         if (arrayList != null) {
             for (int i = 0; i < arrayList.size(); i++) {
                 ConventionItem conventionItem = arrayList.get(i);
-                if (!TextUtils.isEmpty(conventionItem.content) && !TextUtils.isEmpty(conventionItem.mockNick) && !this.W) {
+                if (!StringUtils.isEmpty(conventionItem.content) && !StringUtils.isEmpty(conventionItem.mockNick) && !this.W) {
                     ChatMessage createConventionMessage = ChatTopMessage.createConventionMessage(conventionItem.mockNick, conventionItem.content, R.color.taolive_room_chat_color2);
                     createConventionMessage.isAnchor = true;
                     createConventionMessage.mTextColor = this.b.getResources().getColor(R.color.taolive_room_chat_color6);
-                    if (!TextUtils.isEmpty("")) {
+                    if (!StringUtils.isEmpty("")) {
                         createConventionMessage.mUserIcon = "";
                     }
                     c(createConventionMessage);
@@ -2084,8 +2084,8 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
         } else if (videoInfo.broadCaster != null) {
             str = videoInfo.broadCaster.accountName;
         }
-        String format = TextUtils.isEmpty(videoInfo.liveIntroduction) ? String.format(com.taobao.android.live.plugin.atype.flexalocal.comments.chat.b.k(), str) : videoInfo.liveIntroduction;
-        if (TextUtils.isEmpty(format) && "false".equals(valueOf) && ((TextUtils.isEmpty(str5) || TextUtils.isEmpty(str5.trim())) && TextUtils.isEmpty(str4))) {
+        String format = StringUtils.isEmpty(videoInfo.liveIntroduction) ? String.format(com.taobao.android.live.plugin.atype.flexalocal.comments.chat.b.k(), str) : videoInfo.liveIntroduction;
+        if (StringUtils.isEmpty(format) && "false".equals(valueOf) && ((StringUtils.isEmpty(str5) || StringUtils.isEmpty(str5.trim())) && StringUtils.isEmpty(str4))) {
             return;
         }
         chatItemCommonData.data.put("avatarUrl", (Object) str2);
@@ -2171,7 +2171,7 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
                             String str = d.this.e.mVideoInfo.broadCaster.accountId;
                             String a2 = ad.a("personlity_introduction_" + str);
                             String format = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-                            if (!TextUtils.isEmpty(a2)) {
+                            if (!StringUtils.isEmpty(a2)) {
                                 String[] split = a2.split(",");
                                 if (split.length != 2) {
                                     return;
@@ -2256,7 +2256,7 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
             r6.append(r2)     // Catch: java.lang.Exception -> L72
             java.lang.String r2 = r6.toString()     // Catch: java.lang.Exception -> L72
             java.lang.String r2 = com.taobao.taolive.room.utils.ad.a(r2)     // Catch: java.lang.Exception -> L72
-            boolean r6 = android.text.TextUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L72
+            boolean r6 = android.text.StringUtils.isEmpty(r2)     // Catch: java.lang.Exception -> L72
             if (r6 != 0) goto L92
             java.lang.String r6 = ","
             java.lang.String[] r2 = r2.split(r6)     // Catch: java.lang.Exception -> L72
@@ -2304,7 +2304,7 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
             r9.c(r0, r1)
             return r5
         Lb2:
-            boolean r1 = android.text.TextUtils.isEmpty(r9)
+            boolean r1 = android.text.StringUtils.isEmpty(r9)
             if (r1 == 0) goto Lc6
             tb.pmd r9 = tb.pmd.a()
             tb.pnj r9 = r9.m()
@@ -2313,7 +2313,7 @@ public class d implements MonitorSizeChangeLayout.a, a.b, hgl {
             return r4
         Lc6:
             java.lang.String r1 = com.taobao.android.live.plugin.atype.flexalocal.comments.chat.b.n()
-            boolean r2 = android.text.TextUtils.isEmpty(r1)
+            boolean r2 = android.text.StringUtils.isEmpty(r1)
             if (r2 == 0) goto Lde
             tb.pmd r9 = tb.pmd.a()
             tb.pnj r9 = r9.m()

@@ -3,7 +3,7 @@ package com.taobao.android.home.component.view.video;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -225,7 +225,7 @@ public class HVideoViewV2 extends FrameLayout {
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoViewV2.access$300(HVideoViewV2.this))) {
+                } else if (StringUtils.isEmpty(HVideoViewV2.access$300(HVideoViewV2.this))) {
                 } else {
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, HVideoViewV2.access$300(HVideoViewV2.this), null, null, HVideoViewV2.access$900(HVideoViewV2.this));
                 }
@@ -315,7 +315,7 @@ public class HVideoViewV2 extends FrameLayout {
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoViewV2.access$300(HVideoViewV2.this))) {
+                } else if (StringUtils.isEmpty(HVideoViewV2.access$300(HVideoViewV2.this))) {
                 } else {
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, HVideoViewV2.access$300(HVideoViewV2.this), null, null, HVideoViewV2.access$900(HVideoViewV2.this));
                 }
@@ -405,7 +405,7 @@ public class HVideoViewV2 extends FrameLayout {
                 IpChange ipChange = $ipChange;
                 if (ipChange instanceof IpChange) {
                     ipChange.ipc$dispatch("8faf4140", new Object[]{this, iMediaPlayer});
-                } else if (TextUtils.isEmpty(HVideoViewV2.access$300(HVideoViewV2.this))) {
+                } else if (StringUtils.isEmpty(HVideoViewV2.access$300(HVideoViewV2.this))) {
                 } else {
                     TBS.Ext.commitEvent("cnxh_special", IMediaPlayer.MEDIA_INFO_LIVE_DEFINIITON_AUTO_SWITCH_START, HVideoViewV2.access$300(HVideoViewV2.this), null, null, HVideoViewV2.access$900(HVideoViewV2.this));
                 }
@@ -751,7 +751,7 @@ public class HVideoViewV2 extends FrameLayout {
                 String a2 = c.a().a(this.mVideoUrl);
                 if (a2 != null) {
                     String mediaPlayUrl = this.mVideoView.getMediaPlayUrl();
-                    if (!TextUtils.equals(mediaPlayUrl, a2)) {
+                    if (!StringUtils.equals(mediaPlayUrl, a2)) {
                         this.mVideoView.release();
                         this.mVideoView.setVideoPath(a2);
                         if (!checkNeedPlay()) {
@@ -761,7 +761,7 @@ public class HVideoViewV2 extends FrameLayout {
                         }
                     }
                     com.taobao.android.home.component.utils.e.e(TAG, "playVideo  selfId:" + hashCode() + " localPath:" + a2 + " lastPath:" + mediaPlayUrl + " videoUrl:" + this.mVideoUrl);
-                    if (this.mVideoView.isPlaying() || !TextUtils.equals(a2, this.mVideoView.getMediaPlayUrl())) {
+                    if (this.mVideoView.isPlaying() || !StringUtils.equals(a2, this.mVideoView.getMediaPlayUrl())) {
                         return;
                     }
                     innerPlayVideo();
@@ -791,7 +791,7 @@ public class HVideoViewV2 extends FrameLayout {
             return ((Boolean) ipChange.ipc$dispatch("67e06a0a", new Object[]{this})).booleanValue();
         }
         boolean a2 = f.a(getContext());
-        if (this.mCanPlay && !TextUtils.isEmpty(this.mVideoUrl) && a2) {
+        if (this.mCanPlay && !StringUtils.isEmpty(this.mVideoUrl) && a2) {
             return true;
         }
         showCoverImageView();
@@ -826,7 +826,7 @@ public class HVideoViewV2 extends FrameLayout {
                     return;
                 }
                 com.taobao.android.home.component.utils.e.e(HVideoViewV2.TAG, "downLoadFinish playVideo  localPath = null; downloadVideo selfId:" + hashCode() + " videoUrl:" + HVideoViewV2.access$600(HVideoViewV2.this) + " downLoadUrl:" + str);
-                if (this.f12759a != HVideoViewV2.access$1000(HVideoViewV2.this) || !TextUtils.equals(HVideoViewV2.access$600(HVideoViewV2.this), str)) {
+                if (this.f12759a != HVideoViewV2.access$1000(HVideoViewV2.this) || !StringUtils.equals(HVideoViewV2.access$600(HVideoViewV2.this), str)) {
                     return;
                 }
                 com.taobao.android.home.component.utils.e.e(HVideoViewV2.TAG, "downLoadFinish playVideo  data == currentData;");
@@ -903,7 +903,7 @@ public class HVideoViewV2 extends FrameLayout {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1429a872", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mScm) && (jSONObject = this.mCurrentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
+        if (StringUtils.isEmpty(this.mScm) && (jSONObject = this.mCurrentData) != null && (jSONObject2 = jSONObject.getJSONObject("args")) != null) {
             this.mScm = jSONObject2.getString("scm");
         }
         return this.mScm;
@@ -915,7 +915,7 @@ public class HVideoViewV2 extends FrameLayout {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("edfaa715", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.mItemId) && (jSONObject = this.mCurrentData) != null && jSONObject.getJSONObject("item") != null && this.mCurrentData.getJSONObject("item").getJSONObject("0") != null && this.mCurrentData.getJSONObject("item").getJSONObject("0").getJSONObject("clickParam") != null) {
+        if (StringUtils.isEmpty(this.mItemId) && (jSONObject = this.mCurrentData) != null && jSONObject.getJSONObject("item") != null && this.mCurrentData.getJSONObject("item").getJSONObject("0") != null && this.mCurrentData.getJSONObject("item").getJSONObject("0").getJSONObject("clickParam") != null) {
             this.mItemId = this.mCurrentData.getJSONObject("item").getJSONObject("0").getJSONObject("clickParam").getString("itemId");
         }
         return this.mItemId;
@@ -938,7 +938,7 @@ public class HVideoViewV2 extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f364f581", new Object[]{this, str});
-        } else if (!j.a("openPreDownloadVideo", true) || TextUtils.isEmpty(str)) {
+        } else if (!j.a("openPreDownloadVideo", true) || StringUtils.isEmpty(str)) {
         } else {
             this.mPreDownLoadVideoLoadListener = new b() { // from class: com.taobao.android.home.component.view.video.HVideoViewV2.7
                 public static volatile transient /* synthetic */ IpChange $ipChange;

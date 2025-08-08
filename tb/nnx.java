@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.mmd.datasource.bean.AuctionBaseBean;
 import com.taobao.search.mmd.uikit.PriceView;
@@ -20,7 +20,7 @@ public class nnx {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f8246736", new Object[]{auctionBaseBean, priceView});
-        } else if (TextUtils.isEmpty(auctionBaseBean.price)) {
+        } else if (StringUtils.isEmpty(auctionBaseBean.price)) {
             a(priceView);
         } else {
             b(priceView);
@@ -54,7 +54,7 @@ public class nnx {
         }
         String substring = formatPriceStr.substring(indexOf + 1);
         if (!substring.equals("00")) {
-            if (!TextUtils.isEmpty(substring) && substring.endsWith("0") && (charAt = substring.charAt(0)) != '0') {
+            if (!StringUtils.isEmpty(substring) && substring.endsWith("0") && (charAt = substring.charAt(0)) != '0') {
                 priceView.setDecimalPriceText("." + charAt);
                 return;
             }

@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.core;
 import android.graphics.Rect;
 import android.os.Build;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -265,7 +265,7 @@ public class ad {
         if (ipChange instanceof IpChange) {
             return (aa) ipChange.ipc$dispatch("28434de4", new Object[]{aaVar, str});
         }
-        if (aaVar == null || TextUtils.isEmpty(str)) {
+        if (aaVar == null || StringUtils.isEmpty(str)) {
             return aaVar;
         }
         aa a2 = aaVar.a(str, false);
@@ -339,11 +339,11 @@ public class ad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("956925f3", new Object[]{eVar})).booleanValue();
         }
-        if (eVar == null || !TextUtils.equals(eVar.c, "onwillappear")) {
+        if (eVar == null || !StringUtils.equals(eVar.c, "onwillappear")) {
             return false;
         }
         String a2 = oec.a(eVar.d.get("type"), "item");
-        return TextUtils.equals(a2, "tab") || TextUtils.equals(a2, "page");
+        return StringUtils.equals(a2, "tab") || StringUtils.equals(a2, "page");
     }
 
     public static boolean b(aa.e eVar) {
@@ -351,11 +351,11 @@ public class ad {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("22a3d774", new Object[]{eVar})).booleanValue();
         }
-        if (eVar == null || !TextUtils.equals(eVar.c, "onwilldisappear")) {
+        if (eVar == null || !StringUtils.equals(eVar.c, "onwilldisappear")) {
             return false;
         }
         String a2 = oec.a(eVar.d.get("type"), "item");
-        return TextUtils.equals(a2, "tab") || TextUtils.equals(a2, "page");
+        return StringUtils.equals(a2, "tab") || StringUtils.equals(a2, "page");
     }
 
     public static String c(aa.e eVar) {
@@ -366,11 +366,11 @@ public class ad {
         if (eVar == null) {
             return "unknown";
         }
-        if (!TextUtils.equals(eVar.c, "onpagedisappear") && !TextUtils.equals(eVar.c, "onstop")) {
+        if (!StringUtils.equals(eVar.c, "onpagedisappear") && !StringUtils.equals(eVar.c, "onstop")) {
             return "unknown";
         }
         String a2 = oec.a(eVar.d.get("type"), "page");
-        return (!TextUtils.equals(a2, "page") || com.taobao.tao.flexbox.layoutmanager.adapter.a.a().n().a()) ? a2 : "background";
+        return (!StringUtils.equals(a2, "page") || com.taobao.tao.flexbox.layoutmanager.adapter.a.a().n().a()) ? a2 : "background";
     }
 
     public static List<aa> a(aa aaVar, aa aaVar2) {

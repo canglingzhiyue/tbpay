@@ -2,7 +2,7 @@ package com.etao.feimagesearch.capture.dynamic.module;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.pipline.c;
@@ -74,7 +74,7 @@ public final class PltToolModule extends MUSModule {
             if (a3 == null) {
                 a3 = "";
             }
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 this.b.put((JSONObject) "isSuccess", (String) false);
                 this.b.put((JSONObject) "errMsg", "EncodeBitmapFailure");
                 this.c.a(this.b);
@@ -122,7 +122,7 @@ public final class PltToolModule extends MUSModule {
         } else if (bVar == null) {
         } else {
             JSONObject jSONObject = new JSONObject();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 jSONObject.put((JSONObject) "value", "");
                 bVar.a(jSONObject);
                 return;
@@ -140,7 +140,7 @@ public final class PltToolModule extends MUSModule {
         } else if (bVar == null) {
         } else {
             JSONObject jSONObject = new JSONObject();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 jSONObject.put((JSONObject) "value", "");
                 bVar.a(jSONObject);
                 return;
@@ -158,7 +158,7 @@ public final class PltToolModule extends MUSModule {
         } else if (bVar == null) {
         } else {
             JSONObject jSONObject = new JSONObject();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 jSONObject.put((JSONObject) "value", "");
                 bVar.a(jSONObject);
                 return;
@@ -176,7 +176,7 @@ public final class PltToolModule extends MUSModule {
         } else if (bVar == null) {
         } else {
             JSONObject jSONObject = new JSONObject();
-            if (str == null || TextUtils.isEmpty(str)) {
+            if (str == null || StringUtils.isEmpty(str)) {
                 JSONObject jSONObject2 = jSONObject;
                 jSONObject2.put((JSONObject) "isSuccess", (String) false);
                 jSONObject2.put((JSONObject) "errMsg", "InvalidCacheKey");

@@ -3,7 +3,7 @@ package com.taobao.tao.recommend3.tracelog;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.homepage.utils.i;
 import com.taobao.tao.log.TLog;
@@ -82,7 +82,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("3d1b3789", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.equals(str, oqc.a().l())) {
+        if (StringUtils.isEmpty(str) || StringUtils.equals(str, oqc.a().l())) {
             str = oqc.a().m();
         }
         b bVar = f20951a.get(str);

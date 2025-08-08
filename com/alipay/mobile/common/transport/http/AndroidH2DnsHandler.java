@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.http;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.mobile.common.transport.context.TransportContext;
 import com.alipay.mobile.common.transport.httpdns.AlipayHttpDnsClient;
@@ -84,7 +84,7 @@ public class AndroidH2DnsHandler implements InvocationHandler {
             try {
                 str2 = (String) objArr[0];
                 try {
-                    if (!TextUtils.equals(methodDesc.dnsMethodName, method.getName())) {
+                    if (!StringUtils.equals(methodDesc.dnsMethodName, method.getName())) {
                         LogCatUtil.warn("AndroidH2DnsHandler", "Invoke method name it's " + method.getName() + ", method name not " + methodDesc.dnsMethodName);
                         try {
                             Object a2 = a(method, objArr);
@@ -232,7 +232,7 @@ public class AndroidH2DnsHandler implements InvocationHandler {
         if (this.d == null) {
             throw new IllegalArgumentException("rawAndroidH2DnsHandler field is null, you must first call this 'setRawAndroidH2DnsHandler' to set the field");
         }
-        if (TextUtils.equals(method.getName(), b[0]) || TextUtils.equals(method.getName(), b[1])) {
+        if (StringUtils.equals(method.getName(), b[0]) || StringUtils.equals(method.getName(), b[1])) {
             TransportContextThreadLocalUtils.addDnsType(RPCDataItems.VALUE_DT_LOCALDNS);
         }
         try {
@@ -298,7 +298,7 @@ public class AndroidH2DnsHandler implements InvocationHandler {
                     i2++;
                 }
             }
-            return !TextUtils.isEmpty(methodDesc.dnsMethodName);
+            return !StringUtils.isEmpty(methodDesc.dnsMethodName);
         }
     }
 

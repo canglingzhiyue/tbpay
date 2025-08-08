@@ -1,7 +1,7 @@
 package com.taobao.android.sku.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.apmobilesecuritysdk.face.APSecuritySdk;
@@ -99,7 +99,7 @@ public class b {
         }
         try {
             String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-            if (TextUtils.isEmpty(globalProperty)) {
+            if (StringUtils.isEmpty(globalProperty)) {
                 return "";
             }
             String[] split = globalProperty.split(mly.UNESCAPED_SEPARATOR);

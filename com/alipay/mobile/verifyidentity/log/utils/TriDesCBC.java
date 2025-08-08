@@ -1,6 +1,6 @@
 package com.alipay.mobile.verifyidentity.log.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alipay.mobile.security.bio.utils.DESCoder;
 import com.alipay.mobile.verifyidentity.log.VerifyLogCat;
@@ -22,7 +22,7 @@ public class TriDesCBC {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("327cf920", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str2;
         }
         byte[] encrypt = encrypt(str, str2.getBytes());
@@ -37,7 +37,7 @@ public class TriDesCBC {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("24104ef8", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str2;
         }
         byte[] decrypt = decrypt(str, Base64.decode(str2, 2));

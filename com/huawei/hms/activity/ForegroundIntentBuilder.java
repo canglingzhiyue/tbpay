@@ -3,7 +3,7 @@ package com.huawei.hms.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.activity.internal.BusResponseCallback;
 import com.huawei.hms.activity.internal.ForegroundBusResponseMgr;
 import com.huawei.hms.activity.internal.ForegroundInnerHeader;
@@ -74,7 +74,7 @@ public class ForegroundIntentBuilder {
             sb.append(this.b.getAppID());
         }
         requestHeader.setAppID(sb.toString());
-        if (TextUtils.isEmpty(this.b.getTransactionId())) {
+        if (StringUtils.isEmpty(this.b.getTransactionId())) {
             RequestHeader requestHeader2 = this.b;
             requestHeader2.setTransactionId(TransactionIdCreater.getId(requestHeader2.getAppID(), CoreNaming.HUBREQUEST));
         }
@@ -82,7 +82,7 @@ public class ForegroundIntentBuilder {
         intentStartBridgeActivity.putExtra(ForegroundBusDelegate.HMS_FOREGROUND_REQ_HEADER, this.b.toJson());
         intentStartBridgeActivity.putExtra(ForegroundBusDelegate.HMS_FOREGROUND_REQ_BODY, this.c);
         intentStartBridgeActivity.putExtra(ForegroundBusDelegate.HMS_FOREGROUND_REQ_INNER, this.d.toJson());
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             intentStartBridgeActivity.putExtra(ForegroundBusDelegate.INNER_PKG_NAME, this.e);
         }
         return intentStartBridgeActivity;

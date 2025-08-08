@@ -1,6 +1,6 @@
 package com.taobao.message.lab.comfrm.inner2.resource;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -237,7 +237,7 @@ public class ResourcePatchCenter {
                             return;
                         }
                         String access$200 = ResourcePatchCenter.access$200(ResourcePatchCenter.this);
-                        if (!TextUtils.equals(ResourcePatchCenter.access$300(ResourcePatchCenter.this), access$200)) {
+                        if (!StringUtils.equals(ResourcePatchCenter.access$300(ResourcePatchCenter.this), access$200)) {
                             ResourcePatchCenter.access$302(ResourcePatchCenter.this, access$200);
                             ResourcePatchCenter.access$400(ResourcePatchCenter.this, (long) (Math.random() * 5.0d * 60.0d * 1000.0d));
                         }
@@ -293,7 +293,7 @@ public class ResourcePatchCenter {
                                 IpChange ipChange3 = $ipChange;
                                 if (ipChange3 instanceof IpChange) {
                                     ipChange3.ipc$dispatch("5c510192", new Object[]{this});
-                                } else if (!TextUtils.equals(patchInfo.url, str) || TextUtils.isEmpty(str2)) {
+                                } else if (!StringUtils.equals(patchInfo.url, str) || StringUtils.isEmpty(str2)) {
                                     Logger.ftl(new Logger.FormatLog.Builder().type(1).module(16).point(1015).errCode("-1").errMsg("asyncGetRemotePath failed").ext("pathKey", str, "path", str2).build());
                                 } else {
                                     try {
@@ -336,14 +336,14 @@ public class ResourcePatchCenter {
             return (PatchInfo) ipChange.ipc$dispatch("dbee07ee", new Object[]{this});
         }
         String configStr = getConfigStr();
-        if (!TextUtils.isEmpty(configStr)) {
+        if (!StringUtils.isEmpty(configStr)) {
             try {
                 patchInfo = (PatchInfo) JSON.parseObject(configStr, PatchInfo.class);
             } catch (Exception unused) {
                 Logger.ftl(new Logger.FormatLog.Builder().type(1).module(16).point(1015).errCode("-1").ext("filePartName", "", "configStr", configStr).build());
                 patchInfo = null;
             }
-            if (patchInfo != null && !TextUtils.isEmpty(patchInfo.patchVersion) && !TextUtils.isEmpty(patchInfo.url) && patchInfo.fileList != null && !patchInfo.fileList.isEmpty()) {
+            if (patchInfo != null && !StringUtils.isEmpty(patchInfo.patchVersion) && !StringUtils.isEmpty(patchInfo.url) && patchInfo.fileList != null && !patchInfo.fileList.isEmpty()) {
                 return patchInfo;
             }
             PatchUtil.commitMonitor(patchInfo == null ? "unknow" : patchInfo.patchVersion, "3-orangeConfigNotMatch", "", false, "-1103");

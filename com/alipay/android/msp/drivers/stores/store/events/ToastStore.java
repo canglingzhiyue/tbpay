@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -33,7 +33,7 @@ public class ToastStore extends LocalEventStore {
             String string = actionParamsJson.getString("msg");
             String string2 = actionParamsJson.getString("img");
             long longValue = actionParamsJson.getLongValue("time");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return null;
             }
             mo545getIView.showToastView(string, string2, longValue);

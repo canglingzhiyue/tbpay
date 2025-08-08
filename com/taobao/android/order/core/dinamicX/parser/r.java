@@ -1,6 +1,6 @@
 package com.taobao.android.order.core.dinamicX.parser;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -49,15 +49,15 @@ public class r extends fuf {
             return ipChange.ipc$dispatch("ebd01cf8", new Object[]{this, objArr, dXRuntimeContext});
         }
         String a2 = hzq.a(objArr, 1, new Class[]{JSONArray.class});
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             throw new RuntimeException(a2);
         }
         JSONArray jSONArray = (JSONArray) objArr[0];
         StringBuilder sb = new StringBuilder("");
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
-            if (jSONObject != null && !TextUtils.isEmpty(jSONObject.getString("value"))) {
-                if (!TextUtils.isEmpty(jSONObject.getString("name"))) {
+            if (jSONObject != null && !StringUtils.isEmpty(jSONObject.getString("value"))) {
+                if (!StringUtils.isEmpty(jSONObject.getString("name"))) {
                     sb.append(jSONObject.getString("name"));
                     sb.append(ResponseProtocolType.COMMENT);
                 }

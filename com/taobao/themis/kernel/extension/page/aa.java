@@ -2,7 +2,7 @@ package com.taobao.themis.kernel.extension.page;
 
 import android.os.SystemClock;
 import android.taobao.windvane.export.network.Request;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
 import com.taobao.android.live.plugin.atype.flexalocal.input.AbsInputFrame2;
@@ -174,7 +174,7 @@ public final class aa implements z {
             }
             a3.p(this.c.b().h());
             a3.q(b(this.c));
-            if (!TextUtils.isEmpty(c.e().e())) {
+            if (!StringUtils.isEmpty(c.e().e())) {
                 a3.g_(c.e().e());
             }
             a3.n(this.f22513a);
@@ -298,7 +298,7 @@ public final class aa implements z {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("feb9cb6a", new Object[]{this, shcVar});
-        } else if (!TextUtils.equals(b(this.c), "tab") || (thkVar = (thk) this.c.b().b(thk.class)) == null || (a2 = thkVar.a()) == null) {
+        } else if (!StringUtils.equals(b(this.c), "tab") || (thkVar = (thk) this.c.b().b(thk.class)) == null || (a2 = thkVar.a()) == null) {
         } else {
             shcVar.a(a2);
         }

@@ -6,7 +6,7 @@ import android.os.IBinder;
 import android.taobao.windvane.jsbridge.c;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -46,7 +46,7 @@ public class DynamicJsbridgeService extends Service implements c {
             return (Class) ipChange.ipc$dispatch("fa8f40b7", new Object[]{this, str});
         }
         BrowserUtil.a(TAG, "getBridgeClass", str, null, null);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (str.equals("TBDeviceInfo")) {
@@ -78,7 +78,7 @@ public class DynamicJsbridgeService extends Service implements c {
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("57078ecd", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split("#");
@@ -86,11 +86,11 @@ public class DynamicJsbridgeService extends Service implements c {
             return null;
         }
         String str2 = split[1];
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         String config = OrangeConfig.getInstance().getConfig(i.KEY_ORANGE_GROUP_WVAPI_BROWSER, str2, "");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return null;
         }
         try {

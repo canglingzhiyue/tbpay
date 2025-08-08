@@ -2,7 +2,7 @@ package com.taobao.android.detail.kit.view.widget.base.uikit.utils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -59,7 +59,7 @@ public class FeatureList<T extends View> extends ArrayList<etp<? super T>> imple
         Iterator<etp<? super T>> it = iterator();
         while (it.hasNext()) {
             etp etpVar2 = (etp) it.next();
-            if (TextUtils.equals(etpVar2.getClass().getName(), etpVar.getClass().getName())) {
+            if (StringUtils.equals(etpVar2.getClass().getName(), etpVar.getClass().getName())) {
                 throw new RuntimeException(etpVar2.getClass().getName() + " already add to this view");
             }
         }

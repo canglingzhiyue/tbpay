@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ultronengine.event;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -53,7 +53,7 @@ public class o extends com.alibaba.android.ultron.event.q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f2fa1bd9", new Object[]{bVar, str});
-        } else if (bVar == null || TextUtils.isEmpty(str)) {
+        } else if (bVar == null || StringUtils.isEmpty(str)) {
         } else {
             boolean a2 = fgr.a("enableSkuBarVoCheck", true);
             com.taobao.android.detail.core.utils.i.a("OpenSkuUltronSubscriber", "2.0 updateSkuText enableSkuBarVoCheck:" + a2);

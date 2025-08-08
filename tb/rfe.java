@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.update.apk.ApkUpdateContext;
 import com.taobao.update.apk.MainUpdateData;
@@ -61,7 +61,7 @@ public class rfe implements b<ApkUpdateContext> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aeed841b", new Object[]{this, apkUpdateContext});
-        } else if (!TextUtils.isEmpty(apkUpdateContext.apkPath)) {
+        } else if (!StringUtils.isEmpty(apkUpdateContext.apkPath)) {
         } else {
             MainUpdateData mainUpdateData = apkUpdateContext.mainUpdate;
             String str = rgq.getStorePath(apkUpdateContext.context) + "/apkupdate/";
@@ -218,7 +218,7 @@ public class rfe implements b<ApkUpdateContext> {
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     } else {
-                        rfe.a(rfe.this, z).notifyDownloadError(TextUtils.isEmpty(str) ? "下载失败" : str);
+                        rfe.a(rfe.this, z).notifyDownloadError(StringUtils.isEmpty(str) ? "下载失败" : str);
                     }
                 }
             });

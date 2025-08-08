@@ -1,6 +1,6 @@
 package com.taobao.login4android.ui;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.ali.user.mobile.scan.model.CommonScanResponse;
 import com.ali.user.mobile.scan.model.CommonScanResult;
@@ -51,10 +51,10 @@ public class TaobaoQrScanFragment extends QrScanFragment {
             String str = ((CommonScanResult) commonScanResponse.returnValue).titleMsg;
             String str2 = ((CommonScanResult) commonScanResponse.returnValue).subTitleMsg;
             this.mConfirmMsg = ((CommonScanResult) commonScanResponse.returnValue).confirmMsg;
-            if (!TextUtils.isEmpty(str) && this.mScanTitleTextView != null) {
+            if (!StringUtils.isEmpty(str) && this.mScanTitleTextView != null) {
                 this.mScanTitleTextView.setText(str);
             }
-            if (!TextUtils.isEmpty(str2) && this.mScanSubTitleView != null) {
+            if (!StringUtils.isEmpty(str2) && this.mScanSubTitleView != null) {
                 this.mScanSubTitleView.setText(str2);
             }
         } else {

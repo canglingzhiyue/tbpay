@@ -1,7 +1,7 @@
 package com.taobao.search.common.uikit;
 
 import android.taobao.util.d;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.util.StringUtil;
 import tb.acw;
@@ -18,6 +18,6 @@ public class a {
     public static String a(String str) {
         d.a a2;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (StringUtil.isEmpty(str) || (a2 = acw.a(str)) == null || TextUtils.isEmpty(a2.d)) ? str : a2.d;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : (StringUtil.isEmpty(str) || (a2 = acw.a(str)) == null || StringUtils.isEmpty(a2.d)) ? str : a2.d;
     }
 }

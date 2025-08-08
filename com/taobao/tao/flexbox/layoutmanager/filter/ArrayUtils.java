@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.filter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.core.y;
@@ -73,7 +73,7 @@ public class ArrayUtils {
         if (list == null) {
             return "";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = ",";
         }
         ohe.a a2 = ohe.a();

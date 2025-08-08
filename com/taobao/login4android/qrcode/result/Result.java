@@ -1,6 +1,6 @@
 package com.taobao.login4android.qrcode.result;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.ali.user.mobile.rpc.login.model.LoginReturnData;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -102,7 +102,7 @@ public class Result implements Serializable {
 
     public String getResultMsg() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("5f82b84b", new Object[]{this}) : !TextUtils.isEmpty(this.mResultMsg) ? this.mResultMsg : this.mMsgMap.get(this.mResultCode) != null ? this.mMsgMap.get(this.mResultCode) : this.mMsgMap.get(-101);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("5f82b84b", new Object[]{this}) : !StringUtils.isEmpty(this.mResultMsg) ? this.mResultMsg : this.mMsgMap.get(this.mResultCode) != null ? this.mMsgMap.get(this.mResultCode) : this.mMsgMap.get(-101);
     }
 
     public void setResultMsg(String str) {

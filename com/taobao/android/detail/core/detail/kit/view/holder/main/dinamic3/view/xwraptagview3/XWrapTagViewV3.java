@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.main.dinamic3.view.xwraptagview3;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,7 +103,7 @@ public class XWrapTagViewV3 extends AutoWrapLayoutV3 implements View.OnClickList
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cb34b7d", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 this.mLineNum = Integer.parseInt(str);
@@ -128,12 +128,12 @@ public class XWrapTagViewV3 extends AutoWrapLayoutV3 implements View.OnClickList
                 String str = arrayList.get(i).b;
                 String str2 = arrayList.get(i).f9585a;
                 int i2 = i + MAIN_RATEINFO_TAG_ID;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     int i3 = this.tagHeight;
                     ModifiableRoundRadiusImageView createImageTag = createImageTag(i2, i3, i3, str2);
                     int i4 = this.tagHeight;
                     addView(createImageTag, new ViewGroup.LayoutParams(i4, i4));
-                } else if (!TextUtils.isEmpty(str)) {
+                } else if (!StringUtils.isEmpty(str)) {
                     addView(createTextTag(i2, this.maxTagWidth, str));
                 }
             }
@@ -189,7 +189,7 @@ public class XWrapTagViewV3 extends AutoWrapLayoutV3 implements View.OnClickList
         textView.setPadding(com.taobao.android.detail.core.detail.kit.view.dinamic_ext.view.xwraptagview.b.TAG_LEFT_RIGHT_PADDING, com.taobao.android.detail.core.detail.kit.view.dinamic_ext.view.xwraptagview.b.TAG_TOP_BOTTOM_PADDING, com.taobao.android.detail.core.detail.kit.view.dinamic_ext.view.xwraptagview.b.TAG_LEFT_RIGHT_PADDING, com.taobao.android.detail.core.detail.kit.view.dinamic_ext.view.xwraptagview.b.TAG_TOP_BOTTOM_PADDING);
         textView.setMaxWidth(i2);
         textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         textView.setIncludeFontPadding(false);
         textView.setTextSize(0, this.textSize);
         textView.setTextColor(this.textColor);

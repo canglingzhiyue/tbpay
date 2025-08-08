@@ -1,7 +1,7 @@
 package com.ali.user.mobile.login;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.base.helper.LoginDataHelper;
@@ -185,7 +185,7 @@ public class LoginServiceImpl implements LoginService {
                         ipChange2.ipc$dispatch("2811f422", new Object[]{this, rpcResponse});
                     } else if (rpcResponse != null) {
                         String str = rpcResponse.actionType;
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             if ("SUCCESS".equals(str)) {
                                 LoginReturnData loginReturnData = (LoginReturnData) ((DefaultLoginResponseData) rpcResponse).returnValue;
                                 if (loginReturnData != null) {
@@ -235,8 +235,8 @@ public class LoginServiceImpl implements LoginService {
                     }
                     if (rpcResponse != null) {
                         String str = rpcResponse.actionType;
-                        if (!TextUtils.isEmpty(str) && "H5".equals(str)) {
-                            if (TextUtils.isEmpty(((LoginReturnData) ((DefaultLoginResponseData) rpcResponse).returnValue).h5Url) || (commonCallback2 = commonCallback) == null) {
+                        if (!StringUtils.isEmpty(str) && "H5".equals(str)) {
+                            if (StringUtils.isEmpty(((LoginReturnData) ((DefaultLoginResponseData) rpcResponse).returnValue).h5Url) || (commonCallback2 = commonCallback) == null) {
                                 return;
                             }
                             commonCallback2.onFail(-3, "need iv");
@@ -280,7 +280,7 @@ public class LoginServiceImpl implements LoginService {
                 LoginStatus.resetLoginFlag();
                 if (map != null) {
                     String str2 = map.get(UccConstants.PARAM_LOGIN_DATA);
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         ?? r5 = (LoginReturnData) JSON.parseObject(str2, LoginReturnData.class);
                         RpcResponse rpcResponse2 = new RpcResponse();
                         rpcResponse2.returnValue = r5;

@@ -2,7 +2,7 @@ package com.taobao.taolive.uikit.mtop;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -232,7 +232,7 @@ public class LiveInfoItem implements Parcelable, IMTOPDataObject {
         int defalutQualityIndex = getDefalutQualityIndex();
         if (defalutQualityIndex != -1) {
             String str = this.liveUrlList.get(defalutQualityIndex).h265Url;
-            return (TextUtils.isEmpty(str) || !prr.a()) ? this.liveUrlList.get(defalutQualityIndex).flvUrl : str;
+            return (StringUtils.isEmpty(str) || !prr.a()) ? this.liveUrlList.get(defalutQualityIndex).flvUrl : str;
         }
         return this.liveUrl;
     }

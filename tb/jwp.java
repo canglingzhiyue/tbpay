@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.SurfaceTexture;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.standard.video.AbsPicGalleryVideoPlayer;
@@ -133,7 +133,7 @@ public class jwp implements aw, az, rtm {
         HashMap<String, String> hashMap = new HashMap<>();
         int a2 = c.a().a("deviceLevel", -1);
         String str = a2 == 1 ? "50" : a2 == 2 ? "100" : a2 == 3 ? "200" : "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("_progressTime", str);
             this.f29835a.c(hashMap);
         }

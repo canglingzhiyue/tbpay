@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tinct.ITinctOperater;
 import mtopsdk.mtop.domain.MtopResponse;
@@ -16,7 +16,7 @@ public class bga {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("c1453b77", new Object[]{str, mtopResponse});
-            } else if (TextUtils.isEmpty(str) || mtopResponse == null) {
+            } else if (StringUtils.isEmpty(str) || mtopResponse == null) {
             } else {
                 bgc.a(str, mtopResponse);
             }
@@ -26,7 +26,7 @@ public class bga {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("e6d94478", new Object[]{str, mtopResponse});
-            } else if (TextUtils.isEmpty(str) || mtopResponse == null) {
+            } else if (StringUtils.isEmpty(str) || mtopResponse == null) {
             } else {
                 bgc.b(str, mtopResponse);
             }
@@ -41,7 +41,7 @@ public class bga {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("ee2b490", new Object[]{str, str2, str3, str4});
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             } else {
                 ITinctOperater.getInstance().markABUsed(str, str2, str3, str4);
             }
@@ -51,7 +51,7 @@ public class bga {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             } else {
                 ITinctOperater.getInstance().markBatchTouchStoneUsed(str, str2);
             }
@@ -61,7 +61,7 @@ public class bga {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("fb13311", new Object[]{str, str2, str3, str4});
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4)) {
             } else {
                 ITinctOperater.getInstance().markUsed(str2, str3, str4, str);
             }
@@ -71,7 +71,7 @@ public class bga {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("cd749044", new Object[]{str, str2, str3, str4, new Boolean(z)});
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4)) {
             } else {
                 ITinctOperater.getInstance().markUsed(str2, str3, str4, str, z);
             }

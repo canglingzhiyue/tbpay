@@ -1,6 +1,6 @@
 package com.alibaba.ability.impl.file;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,7 +30,7 @@ public final class f {
         }
         q.d(path, "path");
         String str = path;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return kotlin.text.n.b(path, "../", false, 2, (Object) null) || kotlin.text.n.c(path, "/..", false, 2, (Object) null) || kotlin.text.n.b((CharSequence) str, (CharSequence) "/../", false, 2, (Object) null);
@@ -72,7 +72,7 @@ public final class f {
         }
         q.d(path, "path");
         q.d(referPath, "referPath");
-        if (TextUtils.isEmpty(path)) {
+        if (StringUtils.isEmpty(path)) {
             return path;
         }
         if (kotlin.text.n.c(path, "/", false, 2, (Object) null)) {
@@ -81,12 +81,12 @@ public final class f {
                 file.mkdirs();
             }
             String str = referPath;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return path + file.getName();
             }
             String substring = referPath.substring(kotlin.text.n.b((CharSequence) str, "/", 0, false, 6, (Object) null) + 1);
             q.b(substring, "(this as java.lang.String).substring(startIndex)");
-            if (TextUtils.isEmpty(substring)) {
+            if (StringUtils.isEmpty(substring)) {
                 return path + file.getName();
             }
             return path + substring;

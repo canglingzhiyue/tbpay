@@ -1,7 +1,7 @@
 package com.o2o.ad.expo;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.o2o.ad.click.common.O2OClickSendResponse;
@@ -112,7 +112,7 @@ public class O2OExpoCommitter {
         if (map == null || !map.containsKey(MspDBHelper.BizEntry.COLUMN_NAME_PID)) {
             try {
                 String queryParameter = Uri.parse(this.c).getQueryParameter(MspDBHelper.BizEntry.COLUMN_NAME_PID);
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     if (this.e == null) {
                         this.e = new HashMap();
                     }
@@ -123,7 +123,7 @@ public class O2OExpoCommitter {
         }
         dbh.a("o2o_expo_invoke_success", b.a(this.e), b(this.c));
         dbe.a("o2o_expo_invoke_success", b.a(this.e), "expo=" + this.c, b(this.c));
-        if (TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.d)) {
             dbe.a("o2o_expo_invalid_url", "msg=url_is_empty_or_hash_error", b.a(this.e), "expo=" + this.c, b(this.c));
             return ResultCode.INVALID_URL.name();
         } else if (f8104a.contains(this.d)) {

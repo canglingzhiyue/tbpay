@@ -10,7 +10,7 @@ import android.taobao.windvane.extra.uc.interfaces.EventHandler;
 import android.taobao.windvane.extra.uc.interfaces.INetwork;
 import android.taobao.windvane.extra.uc.interfaces.IRequest;
 import android.taobao.windvane.jsbridge.t;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -196,7 +196,7 @@ public class AliNetworkAdapterNew implements INetwork, adm {
             }
         };
         l stageRecorder = getStageRecorder();
-        if (prefetchInfo != null && eventHandler != null && !TextUtils.isEmpty(url) && TextUtils.equals(url, prefetchInfo.f1601a) && f.a(prefetchInfo.b, requestCallback, stageRecorder)) {
+        if (prefetchInfo != null && eventHandler != null && !StringUtils.isEmpty(url) && StringUtils.equals(url, prefetchInfo.f1601a) && f.a(prefetchInfo.b, requestCallback, stageRecorder)) {
             return true;
         }
         return f.a(url, requestCallback, stageRecorder);

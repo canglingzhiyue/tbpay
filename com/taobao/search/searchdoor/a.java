@@ -2,7 +2,7 @@ package com.taobao.search.searchdoor;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.r;
 import java.util.Set;
@@ -51,13 +51,13 @@ public final class a implements com.taobao.android.nav.e {
             if (path != null) {
                 str = path;
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String str2 = dataString;
-                if (TextUtils.isEmpty(str2) || (!q.a((Object) str, (Object) "/coudan/search_product.htm")) || n.b((CharSequence) str2, new String[]{"?"}, false, 0, 6, (Object) null).size() < 2) {
+                if (StringUtils.isEmpty(str2) || (!q.a((Object) str, (Object) "/coudan/search_product.htm")) || n.b((CharSequence) str2, new String[]{"?"}, false, 0, 6, (Object) null).size() < 2) {
                     return true;
                 }
                 String aW = r.aW();
-                if (TextUtils.isEmpty(aW)) {
+                if (StringUtils.isEmpty(aW)) {
                     return true;
                 }
                 Uri.Builder buildUpon = Uri.parse(aW).buildUpon();
@@ -65,9 +65,9 @@ public final class a implements com.taobao.android.nav.e {
                 q.a((Object) queryKeys, "queryKeys");
                 if (!queryKeys.isEmpty()) {
                     for (String str3 : queryKeys) {
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             String queryParameter = data.getQueryParameter(str3);
-                            if (!TextUtils.isEmpty(queryParameter)) {
+                            if (!StringUtils.isEmpty(queryParameter)) {
                                 buildUpon.appendQueryParameter(str3, queryParameter);
                             }
                         }

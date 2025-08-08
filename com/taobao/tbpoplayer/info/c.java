@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.info;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.PopLayer;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
@@ -55,9 +55,9 @@ public class c {
             return (a) ipChange.ipc$dispatch("a33aa756", new Object[]{this, str, cdnConfigModel});
         }
         a aVar = null;
-        if (cdnConfigModel != null && cdnConfigModel.isValid() && !TextUtils.isEmpty(str)) {
+        if (cdnConfigModel != null && cdnConfigModel.isValid() && !StringUtils.isEmpty(str)) {
             String b = b("config_cdn_url");
-            if (TextUtils.isEmpty(b) || !b.equals(str)) {
+            if (StringUtils.isEmpty(b) || !b.equals(str)) {
                 z = true;
             }
             com.alibaba.poplayer.utils.c.c("sdkLifeCycle", "", "PopNewLocalConfigManager.updateLocalConfigs.lastCdnUrl=" + b + ".newcdnUrl=" + str + ".urlChanged=" + z);
@@ -94,10 +94,10 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return true;
         }
         if (str.equals(str2)) {
@@ -150,7 +150,7 @@ public class c {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{this, str});
         }
         try {
-            return (!TextUtils.isEmpty(str) && (d = d()) != null) ? d.getString(str, "") : "";
+            return (!StringUtils.isEmpty(str) && (d = d()) != null) ? d.getString(str, "") : "";
         } catch (Throwable th) {
             com.alibaba.poplayer.utils.c.a("PopConfigLocalManager.getValueByKey.error.", th);
             return "";
@@ -188,7 +188,7 @@ public class c {
             Map<String, ?> all = d.getAll();
             SharedPreferences.Editor edit = d.edit();
             for (String str : all.keySet()) {
-                if (!TextUtils.isEmpty(str) && !"index_id_set".equals(str) && !"config_version".equals(str) && !"uri_map".equals(str) && !set.contains(str)) {
+                if (!StringUtils.isEmpty(str) && !"index_id_set".equals(str) && !"config_version".equals(str) && !"uri_map".equals(str) && !set.contains(str)) {
                     edit.remove(str);
                 }
             }

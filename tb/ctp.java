@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -629,7 +629,7 @@ public final class ctp extends ctq {
         textView.setTypeface(a3 ? this.n : Typeface.DEFAULT);
         textView.setTextColor(Color.parseColor("#FFFFFF"));
         textView.setSingleLine();
-        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setEllipsize(StringUtils.TruncateAt.END);
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-2, -2);
         if (a()) {
             layoutParams2.gravity = 8388629;

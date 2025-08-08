@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.c;
 import com.alibaba.android.ultron.event.base.e;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,6 +85,6 @@ public abstract class fgj implements c {
 
     public static boolean a() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig("android_detail", "closeProcessor", "false"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[0])).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig("android_detail", "closeProcessor", "false"), "true");
     }
 }

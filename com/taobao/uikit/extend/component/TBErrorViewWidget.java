@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -197,7 +197,7 @@ public class TBErrorViewWidget extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e70e8be", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mTopic = str;
         }
@@ -231,7 +231,7 @@ public class TBErrorViewWidget extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b4faa076", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mCustomTitle = str;
             updateInternalStatus(this.mStatus);
@@ -362,7 +362,7 @@ public class TBErrorViewWidget extends FrameLayout {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("cff0bcc7", new Object[]{this});
         }
-        return !TextUtils.isEmpty(this.mRefreshText) ? this.mRefreshText : getContext().getString(R.string.uik_error_view_widget_refresh);
+        return !StringUtils.isEmpty(this.mRefreshText) ? this.mRefreshText : getContext().getString(R.string.uik_error_view_widget_refresh);
     }
 
     private void setCustomRefreshButton(boolean z, String str, String str2, View.OnClickListener onClickListener) {
@@ -411,7 +411,7 @@ public class TBErrorViewWidget extends FrameLayout {
             ipChange.ipc$dispatch("c48739ef", new Object[]{this});
         } else if (this.mStatus == Status.STATUS_CUSTOM) {
             String string = getContext().getString(R.string.uik_default_error_title_v2);
-            if (!TextUtils.isEmpty(this.mCustomTitle)) {
+            if (!StringUtils.isEmpty(this.mCustomTitle)) {
                 string = this.mCustomTitle;
             }
             this.mTitleView.setText(string);
@@ -481,7 +481,7 @@ public class TBErrorViewWidget extends FrameLayout {
         } else if (!this.mNeedRefreshProgress) {
         } else {
             String string = getContext().getString(R.string.uik_error_view_widget_refreshing);
-            if (!TextUtils.isEmpty(this.mRefreshingText)) {
+            if (!StringUtils.isEmpty(this.mRefreshingText)) {
                 string = this.mRefreshingText;
             }
             this.mRefreshCircularView.setVisibility(0);
@@ -526,7 +526,7 @@ public class TBErrorViewWidget extends FrameLayout {
                 return;
             }
             String str = "";
-            if (TBErrorViewWidget.access$300(TBErrorViewWidget.this) != null && !TextUtils.isEmpty(TBErrorViewWidget.access$300(TBErrorViewWidget.this).errorCode)) {
+            if (TBErrorViewWidget.access$300(TBErrorViewWidget.this) != null && !StringUtils.isEmpty(TBErrorViewWidget.access$300(TBErrorViewWidget.this).errorCode)) {
                 str = TBErrorViewWidget.access$300(TBErrorViewWidget.this).errorCode;
             }
             String name = TBErrorViewWidget.this.getContext().getClass().getName();
@@ -564,7 +564,7 @@ public class TBErrorViewWidget extends FrameLayout {
             } catch (Exception unused) {
                 str = null;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.mUri = URI;
                 return;
             }
@@ -632,7 +632,7 @@ public class TBErrorViewWidget extends FrameLayout {
                 return;
             }
             String string = TBErrorViewWidget.this.getContext().getString(R.string.uik_error_view_widget_refresh);
-            if (!TextUtils.isEmpty(TBErrorViewWidget.access$600(TBErrorViewWidget.this))) {
+            if (!StringUtils.isEmpty(TBErrorViewWidget.access$600(TBErrorViewWidget.this))) {
                 string = TBErrorViewWidget.access$600(TBErrorViewWidget.this);
             }
             TBErrorViewWidget.access$700(TBErrorViewWidget.this).stop();

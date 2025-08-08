@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +25,7 @@ public class hgt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95562904", new Object[]{context, charSequence});
-        } else if (context == null || TextUtils.isEmpty(charSequence)) {
+        } else if (context == null || StringUtils.isEmpty(charSequence)) {
         } else {
             Toast toast = f28639a;
             if (toast == null) {
@@ -42,7 +42,7 @@ public class hgt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("af71a7a3", new Object[]{context, charSequence});
-        } else if (context == null || TextUtils.isEmpty(charSequence)) {
+        } else if (context == null || StringUtils.isEmpty(charSequence)) {
         } else {
             if (b == null) {
                 b = Toast.makeText(context.getApplicationContext(), charSequence, 0);

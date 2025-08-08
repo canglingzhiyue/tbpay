@@ -2,7 +2,7 @@ package com.ali.user.mobile.base.helper;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.DataCallback;
 import com.ali.user.mobile.common.api.AliUserLogin;
@@ -94,7 +94,7 @@ public class LoginDataHelper {
         } else if (!LoginStatus.isFromChangeAccount() || !z) {
         } else {
             SessionManager sessionManager = SessionManager.getInstance(DataProviderFactory.getApplicationContext());
-            if (aliUserResponseData != null && sessionManager != null && LoginSwitch.getSwitch(LoginSwitch.NEW_LOGOUT_BROADCAST_SWITCH, "true") && TextUtils.equals(sessionManager.getUserId(), aliUserResponseData.userId)) {
+            if (aliUserResponseData != null && sessionManager != null && LoginSwitch.getSwitch(LoginSwitch.NEW_LOGOUT_BROADCAST_SWITCH, "true") && StringUtils.equals(sessionManager.getUserId(), aliUserResponseData.userId)) {
                 return;
             }
             HashMap hashMap = new HashMap();
@@ -114,7 +114,7 @@ public class LoginDataHelper {
         } else if (!z) {
         } else {
             String str6 = "";
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 Intent intent = new Intent(LoginResActions.LOGIN_SUCCESS_ACTION);
                 intent.putExtra("nick", str2);
                 intent.putExtra("uid", str);
@@ -127,15 +127,15 @@ public class LoginDataHelper {
                 if (aliUserResponseData != null && aliUserResponseData.loginServiceExt != null) {
                     str6 = aliUserResponseData.loginServiceExt.get(LoginConstants.LOGIN_TYPE);
                 }
-                if (!TextUtils.isEmpty(str6) || loginReturnData.extMap == null) {
+                if (!StringUtils.isEmpty(str6) || loginReturnData.extMap == null) {
                     str5 = str6;
                 } else {
                     str5 = loginReturnData.extMap.get(LoginConstants.LOGIN_TYPE);
-                    if (TextUtils.isEmpty(str5)) {
+                    if (StringUtils.isEmpty(str5)) {
                         str5 = loginReturnData.extMap.get("rootLoginType");
                     }
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = str5;
                 }
                 intent.putExtra(LoginConstants.LOGIN_TYPE, str3);
@@ -157,8 +157,8 @@ public class LoginDataHelper {
             ipChange.ipc$dispatch("a37f6f6e", new Object[]{loginReturnData, iSession, aliUserResponseData, map});
             return;
         }
-        String str3 = (map == null || TextUtils.isEmpty(map.get(LoginConstants.LOGIN_TYPE))) ? "" : map.get(LoginConstants.LOGIN_TYPE);
-        if (!TextUtils.equals(str3, LoginType.ServerLoginType.AutoLogin.getType()) && !TextUtils.equals(str3, LoginConstant.LOGIN_TYPE_FINGERPRINT)) {
+        String str3 = (map == null || StringUtils.isEmpty(map.get(LoginConstants.LOGIN_TYPE))) ? "" : map.get(LoginConstants.LOGIN_TYPE);
+        if (!StringUtils.equals(str3, LoginType.ServerLoginType.AutoLogin.getType()) && !StringUtils.equals(str3, LoginConstant.LOGIN_TYPE_FINGERPRINT)) {
             SharedPreferencesUtil.saveData(DataProviderFactory.getApplicationContext(), "login_type", str3);
         }
         if (loginReturnData.deviceToken != null) {
@@ -171,11 +171,11 @@ public class LoginDataHelper {
         }
         int i = loginReturnData.site;
         String str5 = loginReturnData.showLoginId;
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = loginReturnData.taobaoNick;
         }
         HistoryAccount historyAccount = new HistoryAccount(str5, loginReturnData.mobile, aliUserResponseData.headPicLink, loginReturnData.hid == null ? 0L : loginReturnData.hid.longValue(), loginReturnData.alipayHid == null ? 0L : loginReturnData.alipayHid.longValue(), aliUserResponseData.autoLoginToken, aliUserResponseData.loginTime <= 0 ? System.currentTimeMillis() / 1000 : aliUserResponseData.loginTime, str2, "", loginReturnData.taobaoNick, loginReturnData.email, loginReturnData.alipayCrossed, i);
-        if (!TextUtils.isEmpty(loginReturnData.accountId)) {
+        if (!StringUtils.isEmpty(loginReturnData.accountId)) {
             historyAccount.setAccountId(loginReturnData.accountId);
         }
         if (loginReturnData.extMap != null) {
@@ -183,15 +183,15 @@ public class LoginDataHelper {
         }
         historyAccount.setLoginPhone(aliUserResponseData.loginPhone);
         if (aliUserResponseData.loginServiceExt != null) {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = aliUserResponseData.loginServiceExt.get(LoginConstants.LOGIN_TYPE);
             }
             String str6 = aliUserResponseData.loginServiceExt.get("loginEntrance");
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 SharedPreferencesUtil.saveData(DataProviderFactory.getApplicationContext(), LoginConstant.LOGIN_ENTRANCE, str6);
             }
             if (aliUserResponseData.loginServiceExt.containsKey("hasPwd")) {
-                if (TextUtils.equals("true", aliUserResponseData.loginServiceExt.get("hasPwd"))) {
+                if (StringUtils.equals("true", aliUserResponseData.loginServiceExt.get("hasPwd"))) {
                     historyAccount.hasPwd = 1;
                 } else {
                     historyAccount.hasPwd = 0;
@@ -200,7 +200,7 @@ public class LoginDataHelper {
                 historyAccount.hasPwd = -1;
             }
         }
-        if (!TextUtils.equals(str3, LoginType.ServerLoginType.AutoLogin.getType()) && !TextUtils.equals(str3, LoginConstant.LOGIN_TYPE_FINGERPRINT)) {
+        if (!StringUtils.equals(str3, LoginType.ServerLoginType.AutoLogin.getType()) && !StringUtils.equals(str3, LoginConstant.LOGIN_TYPE_FINGERPRINT)) {
             historyAccount.loginType = str3;
             SharedPreferencesUtil.saveData(DataProviderFactory.getApplicationContext(), "login_type", str3);
         }
@@ -264,7 +264,7 @@ public class LoginDataHelper {
         sessionModel.havanaSsoTokenExpiredTime = iSession.getHavanaSsoTokenExpiredTime();
         sessionModel.ssoToken = iSession.getSsoToken();
         sessionModel.expires = iSession.getSessionExpiredTime();
-        if (!TextUtils.isEmpty(iSession.getExtJson())) {
+        if (!StringUtils.isEmpty(iSession.getExtJson())) {
             try {
                 sessionModel.loginServiceExt = (Map) JSON.parseObject(iSession.getExtJson(), new TypeReference<Map<String, String>>() { // from class: com.ali.user.mobile.base.helper.LoginDataHelper.2
                 }, new Feature[0]);
@@ -274,7 +274,7 @@ public class LoginDataHelper {
         }
         sessionModel.site = iSession.getLoginSite();
         sessionModel.showLoginId = iSession.getEmail();
-        if (TextUtils.isEmpty(sessionModel.showLoginId)) {
+        if (StringUtils.isEmpty(sessionModel.showLoginId)) {
             sessionModel.showLoginId = iSession.getNick();
         }
         return sessionModel;

@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
@@ -187,7 +187,7 @@ public class InstantPatchUpdater extends com.taobao.update.framework.d implement
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("386abd4d", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             List asList = Arrays.asList(str.split(","));
             if (isNumeric((String) asList.get(0))) {
@@ -234,7 +234,7 @@ public class InstantPatchUpdater extends com.taobao.update.framework.d implement
         this.c = true;
         try {
             InstantUpdateInfo create = InstantUpdateInfo.create(jSONObject);
-            if (TextUtils.isEmpty(create.patchUrl) && !create.rollback) {
+            if (StringUtils.isEmpty(create.patchUrl) && !create.rollback) {
                 return;
             }
             if (create.rollback) {
@@ -280,7 +280,7 @@ public class InstantPatchUpdater extends com.taobao.update.framework.d implement
         this.e = instantUpdateInfo.patchVersion;
         String string = this.h.getString(InstantPatchChangeInfo.INSTANT_PATCH_EFFECTIVE_TYPE, "");
         String string2 = this.h.getString("instantpatch_effective_version", "");
-        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
             return true;
         }
         int i = AnonymousClass2.f23430a[this.d.ordinal()];
@@ -306,7 +306,7 @@ public class InstantPatchUpdater extends com.taobao.update.framework.d implement
         d dVar = new d();
         dVar.context = this.f23428a;
         dVar.workDir = dVar.getPatchPath();
-        if (!TextUtils.isEmpty(instantUpdateInfo.contentBase64)) {
+        if (!StringUtils.isEmpty(instantUpdateInfo.contentBase64)) {
             dVar.path = new File(dVar.getPatchPath(), instantUpdateInfo.name).getAbsolutePath();
             new com.taobao.update.instantpatch.flow.c(dVar).decode(instantUpdateInfo.contentBase64);
             if (!dVar.success || !new File(dVar.path).exists() || !rgp.isMd5Same(instantUpdateInfo.md5, dVar.path)) {
@@ -315,10 +315,10 @@ public class InstantPatchUpdater extends com.taobao.update.framework.d implement
                 rgj.stat(true, rgj.ARG_PATCHDECODE, System.currentTimeMillis() - currentTimeMillis, 0, "", Long.valueOf(instantUpdateInfo.patchVersion).longValue());
             }
         }
-        if (!dVar.success || TextUtils.isEmpty(dVar.path) || !new File(dVar.path).exists() || !rgp.isMd5Same(instantUpdateInfo.md5, dVar.path)) {
+        if (!dVar.success || StringUtils.isEmpty(dVar.path) || !new File(dVar.path).exists() || !rgp.isMd5Same(instantUpdateInfo.md5, dVar.path)) {
             long currentTimeMillis2 = System.currentTimeMillis();
             new com.taobao.update.instantpatch.flow.a(dVar).download(instantUpdateInfo);
-            if (!dVar.success || TextUtils.isEmpty(dVar.path)) {
+            if (!dVar.success || StringUtils.isEmpty(dVar.path)) {
                 if (str.equals(rfx.SCAN)) {
                     c("instantpatch download failed!");
                 }

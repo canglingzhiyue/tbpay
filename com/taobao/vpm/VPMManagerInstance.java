@@ -1,6 +1,6 @@
 package com.taobao.vpm;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -130,7 +130,7 @@ public class VPMManagerInstance {
                         }
                         try {
                             Log.e(c.MODULE_SDK_PAGE, this + " vpm1 fetchSo onFetchFinished " + fetchResult.getLibFullPath());
-                            if (TextUtils.isEmpty(fetchResult.getLibFullPath())) {
+                            if (StringUtils.isEmpty(fetchResult.getLibFullPath())) {
                                 return;
                             }
                             VPMManagerInstance.access$000();
@@ -257,7 +257,7 @@ public class VPMManagerInstance {
             return (HashMap) ipChange.ipc$dispatch("e2966e0f", new Object[]{str});
         }
         HashMap<String, String> hashMap = new HashMap<>();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             for (String str2 : str.split(",")) {
                 String[] split = str2.split("=");
                 if (split.length == 2) {
@@ -314,7 +314,7 @@ public class VPMManagerInstance {
             ipChange.ipc$dispatch("49ff9639", new Object[]{hashMap});
         } else if (hashMap != null && VPMAdapterManager.mCommitAdapter != null) {
             String str = hashMap.get("metric");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             HashMap hashMap2 = new HashMap();
@@ -348,11 +348,11 @@ public class VPMManagerInstance {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("ef6090a8", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return getHAMetricsInvalidResult();
         }
         String _getHAMetrics = _getHAMetrics(str);
-        if (TextUtils.isEmpty(_getHAMetrics)) {
+        if (StringUtils.isEmpty(_getHAMetrics)) {
             return getHAMetricsInvalidResult();
         }
         HashMap<String, String> string2Map = string2Map(_getHAMetrics);
@@ -365,11 +365,11 @@ public class VPMManagerInstance {
         if (ipChange instanceof IpChange) {
             return (HashMap) ipChange.ipc$dispatch("33f754d6", new Object[]{this, new Long(j), str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return getHAMetricsInvalidResult();
         }
         String _getHAMetrics = _getHAMetrics(j, str);
-        if (TextUtils.isEmpty(_getHAMetrics)) {
+        if (StringUtils.isEmpty(_getHAMetrics)) {
             return getHAMetricsInvalidResult();
         }
         return string2Map(_getHAMetrics);
@@ -380,7 +380,7 @@ public class VPMManagerInstance {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d4d9ca89", new Object[]{this, str, bool})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return _filterHAMetricsWithCriteria(str, bool.booleanValue());
         }
         return false;
@@ -402,9 +402,9 @@ public class VPMManagerInstance {
             HashMap<String, String> string2Map = string2Map(str3);
             if ("vpm_algorithm_heartbeat".equals(str2) && string2Map != null && string2Map.containsKey("media_url")) {
                 String str4 = string2Map.get("media_url");
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     String decode = URLDecoder.decode(str4);
-                    if (!TextUtils.isEmpty(decode)) {
+                    if (!StringUtils.isEmpty(decode)) {
                         string2Map.put("media_url", decode);
                     }
                 }
@@ -414,9 +414,9 @@ public class VPMManagerInstance {
         } else {
             String[] split = str3.split(",");
             for (int i = 0; i < split.length; i++) {
-                if (!TextUtils.isEmpty(split[i]) && split[i].startsWith("media_url=") && split[i].length() > 10) {
+                if (!StringUtils.isEmpty(split[i]) && split[i].startsWith("media_url=") && split[i].length() > 10) {
                     String decode2 = URLDecoder.decode(split[i].substring(10, split[i].length()));
-                    if (!TextUtils.isEmpty(decode2)) {
+                    if (!StringUtils.isEmpty(decode2)) {
                         split[i] = "media_url=" + decode2;
                     }
                 }

@@ -2,7 +2,7 @@ package com.vivo.push.b;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.model.InsideNotificationItem;
 
 /* loaded from: classes9.dex */
@@ -82,7 +82,7 @@ public final class p extends com.vivo.push.v {
         this.g = dVar.a("notify_componet_pkg");
         this.i = dVar.a("notify_componet_class_name");
         String a2 = dVar.a("notification_v1");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.e = com.vivo.push.util.v.a(a2);
         }
         InsideNotificationItem insideNotificationItem = this.e;
@@ -90,7 +90,7 @@ public final class p extends com.vivo.push.v {
             insideNotificationItem.setMsgId(this.d);
         }
         String a3 = dVar.a("notify_uri_data");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             this.h = e(a3);
         }
         this.j = dVar.b();

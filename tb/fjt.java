@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -91,7 +91,7 @@ public class fjt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c430ebf9", new Object[]{str, str2, th});
-        } else if (TextUtils.isEmpty(str2) && th == null) {
+        } else if (StringUtils.isEmpty(str2) && th == null) {
         } else {
             TLog.loge(str, str2, th);
         }

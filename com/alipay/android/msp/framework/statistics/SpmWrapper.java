@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.statistics;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.AlertIntelligenceEngine;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
@@ -35,7 +35,7 @@ public class SpmWrapper {
             return;
         }
         try {
-            if (GlobalHelper.getInstance().getContext() != null && mspWindowFrame != null && (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) != null && !TextUtils.isEmpty(spmInfo.spmId)) {
+            if (GlobalHelper.getInstance().getContext() != null && mspWindowFrame != null && (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) != null && !StringUtils.isEmpty(spmInfo.spmId)) {
                 if (f4849a.get(mspWindowFrame) != null && f4849a.get(mspWindowFrame).intValue() == i) {
                     return;
                 }
@@ -61,7 +61,7 @@ public class SpmWrapper {
             return;
         }
         try {
-            if (GlobalHelper.getInstance().getContext() == null || mspWindowFrame == null || (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) == null || TextUtils.isEmpty(spmInfo.spmId) || f4849a.get(mspWindowFrame) == null || f4849a.get(mspWindowFrame).intValue() != i || (mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i)) == null) {
+            if (GlobalHelper.getInstance().getContext() == null || mspWindowFrame == null || (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) == null || StringUtils.isEmpty(spmInfo.spmId) || f4849a.get(mspWindowFrame) == null || f4849a.get(mspWindowFrame).intValue() != i || (mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i)) == null) {
                 return;
             }
             MqpBehavior.getInstance().onPageAppear(mspContextByBizId, spmInfo, mspWindowFrame);
@@ -79,12 +79,12 @@ public class SpmWrapper {
         }
         try {
             Context context = GlobalHelper.getInstance().getContext();
-            if (context == null || mspWindowFrame == null || (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) == null || TextUtils.isEmpty(spmInfo.spmId) || f4849a.get(mspWindowFrame) == null || f4849a.get(mspWindowFrame).intValue() != i) {
+            if (context == null || mspWindowFrame == null || (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) == null || StringUtils.isEmpty(spmInfo.spmId) || f4849a.get(mspWindowFrame) == null || f4849a.get(mspWindowFrame).intValue() != i) {
                 return;
             }
             f4849a.remove(mspWindowFrame);
             Map<String, String> hashMap = new HashMap<>();
-            if (!TextUtils.isEmpty(spmInfo.param4)) {
+            if (!StringUtils.isEmpty(spmInfo.param4)) {
                 hashMap = JsonUtil.strJson2StringMap(spmInfo.param4);
             }
             updataParam4(i, hashMap);
@@ -96,7 +96,7 @@ public class SpmWrapper {
                 MqpBehavior.getInstance().onPageOut(mspContextByBizId, spmInfo, mspWindowFrame);
             }
             String str = spmInfo.bizCode;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "pay";
             }
             SpmTracker.onPagePause(mspWindowFrame, spmInfo.spmId, str, hashMap);
@@ -115,12 +115,12 @@ public class SpmWrapper {
         }
         try {
             Context context = GlobalHelper.getInstance().getContext();
-            if (context == null || mspWindowFrame == null || (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) == null || TextUtils.isEmpty(spmInfo.spmId) || f4849a.get(mspWindowFrame) == null || f4849a.get(mspWindowFrame).intValue() != i) {
+            if (context == null || mspWindowFrame == null || (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) == null || StringUtils.isEmpty(spmInfo.spmId) || f4849a.get(mspWindowFrame) == null || f4849a.get(mspWindowFrame).intValue() != i) {
                 return;
             }
             f4849a.remove(mspWindowFrame);
             Map<String, String> hashMap = new HashMap<>();
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap = JsonUtil.strJson2StringMap(spmInfo.param4);
             }
             updataParam4(i, hashMap);
@@ -147,11 +147,11 @@ public class SpmWrapper {
         try {
             if (GlobalHelper.getInstance().getContext() != null && mspWindowFrame != null) {
                 Map hashMap = new HashMap();
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     hashMap = JsonUtil.strJson2StringMap(str4);
                 }
                 updataParam4(i, hashMap);
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "pay";
                 }
                 MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i);
@@ -175,14 +175,14 @@ public class SpmWrapper {
             return;
         }
         try {
-            if (GlobalHelper.getInstance().getContext() != null && mspWindowFrame != null && !TextUtils.isEmpty(str)) {
+            if (GlobalHelper.getInstance().getContext() != null && mspWindowFrame != null && !StringUtils.isEmpty(str)) {
                 Map hashMap = new HashMap();
-                if (!TextUtils.isEmpty(str5)) {
+                if (!StringUtils.isEmpty(str5)) {
                     hashMap = JsonUtil.strJson2StringMap(str5);
                 }
                 Map map = hashMap;
                 updataParam4(i, map);
-                String str6 = TextUtils.isEmpty(str2) ? "pay" : str2;
+                String str6 = StringUtils.isEmpty(str2) ? "pay" : str2;
                 MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i);
                 if (mspContextByBizId != null) {
                     AlertIntelligenceEngine.startAction(mspContextByBizId, "exp", str, FastStartActivityHelper.getBoolConfig(mspContextByBizId.getContext(), DrmKey.GRAY_BEHAVIOR_SPM_EVENT_PARAMS) ? str5 : "", mspWindowFrame.getFrameId(), mspWindowFrame.getTplId(), null);
@@ -206,16 +206,16 @@ public class SpmWrapper {
             Context context = GlobalHelper.getInstance().getContext();
             String str = "null";
             if (tradeContextByBizId != null) {
-                if (!TextUtils.isEmpty(tradeContextByBizId.getSpmDpToken())) {
+                if (!StringUtils.isEmpty(tradeContextByBizId.getSpmDpToken())) {
                     str = tradeContextByBizId.getSpmDpToken();
                 }
-                if (TextUtils.isEmpty(tradeContextByBizId.getSpmUniqueId())) {
+                if (StringUtils.isEmpty(tradeContextByBizId.getSpmUniqueId())) {
                     spmUniqueId = i + GlobalHelper.getInstance().getUtdid(context);
                 } else {
                     spmUniqueId = tradeContextByBizId.getSpmUniqueId();
                 }
                 String apLinkToken = tradeContextByBizId.getApLinkToken();
-                if (!TextUtils.isEmpty(apLinkToken)) {
+                if (!StringUtils.isEmpty(apLinkToken)) {
                     map.put("ap_link_token", apLinkToken);
                 }
             } else if (i == -1) {
@@ -239,7 +239,7 @@ public class SpmWrapper {
         }
         try {
             Context context = GlobalHelper.getInstance().getContext();
-            if (context != null && mspWindowFrame != null && !DrmManager.getInstance(context).isDegrade(DrmKey.DEGRADE_SPM_PAGE_MONITOR_STAY_TIME, false, context) && (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) != null && !TextUtils.isEmpty(spmInfo.spmId)) {
+            if (context != null && mspWindowFrame != null && !DrmManager.getInstance(context).isDegrade(DrmKey.DEGRADE_SPM_PAGE_MONITOR_STAY_TIME, false, context) && (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) != null && !StringUtils.isEmpty(spmInfo.spmId)) {
                 SpmTracker.onPageResume(mspWindowFrame, spmInfo.spmId);
             }
         } catch (Throwable th) {
@@ -256,10 +256,10 @@ public class SpmWrapper {
         }
         try {
             Context context = GlobalHelper.getInstance().getContext();
-            if (context != null && mspWindowFrame != null && !DrmManager.getInstance(context).isDegrade(DrmKey.DEGRADE_SPM_PAGE_MONITOR_STAY_TIME, false, context) && (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) != null && !TextUtils.isEmpty(spmInfo.spmId)) {
-                String str = TextUtils.isEmpty(spmInfo.bizCode) ? "pay" : spmInfo.bizCode;
+            if (context != null && mspWindowFrame != null && !DrmManager.getInstance(context).isDegrade(DrmKey.DEGRADE_SPM_PAGE_MONITOR_STAY_TIME, false, context) && (spmInfo = MspTrackInfo.getInstance().getSpmInfo(mspWindowFrame)) != null && !StringUtils.isEmpty(spmInfo.spmId)) {
+                String str = StringUtils.isEmpty(spmInfo.bizCode) ? "pay" : spmInfo.bizCode;
                 Map<String, String> hashMap = new HashMap<>();
-                if (!TextUtils.isEmpty(spmInfo.param4)) {
+                if (!StringUtils.isEmpty(spmInfo.param4)) {
                     hashMap = JsonUtil.strJson2StringMap(spmInfo.param4);
                 }
                 updataParam4(i, hashMap);

@@ -1,7 +1,7 @@
 package com.alibaba.android.spindle.stage;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.android.umbrella.link.export.TraceLogEventType;
 import com.alibaba.fastjson.JSON;
@@ -44,7 +44,7 @@ public class b {
 
     public b(String str) {
         this.h = false;
-        this.b = TextUtils.isEmpty(str) ? "" : str;
+        this.b = StringUtils.isEmpty(str) ? "" : str;
         this.c = Long.valueOf(System.currentTimeMillis());
         this.d = new HashMap();
         this.e = new HashMap();
@@ -57,7 +57,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("19ea3c45", new Object[]{this, str, str2, stageType, activity});
-        } else if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && stageType != null) {
+        } else if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && stageType != null) {
             a(str, str2, stageType);
             if (stageType != StageType.STAGE_END) {
                 return;
@@ -94,7 +94,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e9fa1754", new Object[]{this, str, str2, l, stageType});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || stageType == null || (c = c(str)) == null || (a2 = a(str, c, str2)) == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || stageType == null || (c = c(str)) == null || (a2 = a(str, c, str2)) == null) {
         } else {
             if (StageType.STAGE_START.equals(stageType)) {
                 a2.b = l.longValue();
@@ -116,7 +116,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("349ce574", new Object[]{this, str, aVar});
-        } else if (TextUtils.isEmpty(str) || aVar == null || (c = c(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || aVar == null || (c = c(str)) == null) {
         } else {
             c.add(aVar);
             this.j.a(str, aVar.f2422a, Long.valueOf(aVar.b));
@@ -162,7 +162,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.e.put(str, str2);
         }
@@ -172,7 +172,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str2 == null) {
                 str2 = "";
@@ -248,7 +248,7 @@ public class b {
             if (!this.e.isEmpty()) {
                 str = JSON.toJSONString(this.e);
             }
-            if (!TextUtils.isEmpty(this.g)) {
+            if (!StringUtils.isEmpty(this.g)) {
                 a("umbrellaTraceID", this.g);
             }
             if (this.f) {
@@ -286,7 +286,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("eb209513", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         List<a> list = this.d.get(str);
@@ -305,7 +305,7 @@ public class b {
             return (a) ipChange.ipc$dispatch("5dcbf343", new Object[]{this, str, list, str2});
         }
         a aVar = null;
-        if (list == null || TextUtils.isEmpty(str2)) {
+        if (list == null || StringUtils.isEmpty(str2)) {
             return null;
         }
         Iterator<a> it = list.iterator();
@@ -333,7 +333,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f180e7f", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
         } else {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("biz", (Object) this.b);

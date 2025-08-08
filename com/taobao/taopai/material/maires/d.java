@@ -1,6 +1,6 @@
 package com.taobao.taopai.material.maires;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taopai2.material.MaterialDataServer;
 import com.taobao.taopai2.material.business.maires.MaiResResponseModel;
@@ -48,7 +48,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d5309ca6", new Object[]{qbtVar, maiResResponseModel});
-        } else if (maiResResponseModel != null && !TextUtils.isEmpty(maiResResponseModel.resourceUrl)) {
+        } else if (maiResResponseModel != null && !StringUtils.isEmpty(maiResResponseModel.resourceUrl)) {
             qbtVar.a(maiResResponseModel);
         } else {
             qbtVar.a("", com.taobao.vessel.utils.c.LOAD_DATA_NULL);
@@ -88,14 +88,14 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             String b = qbs.b(str, false);
-            if (!TextUtils.isEmpty(b) && new File(b).exists()) {
+            if (!StringUtils.isEmpty(b) && new File(b).exists()) {
                 String valueOf = String.valueOf(str2.hashCode());
                 File[] listFiles = new File(b).listFiles();
                 if (listFiles != null && listFiles.length > 0) {
                     for (File file : listFiles) {
-                        if (TextUtils.equals(valueOf, file.getName()) && qbr.a(file)) {
+                        if (StringUtils.equals(valueOf, file.getName()) && qbr.a(file)) {
                             return true;
                         }
                     }

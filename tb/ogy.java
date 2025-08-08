@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.sdk.sys.BizContext;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -77,7 +77,7 @@ public class ogy {
                     Map map = (Map) obj;
                     String a5 = oec.a(map.get("key"), (String) null);
                     String a6 = oec.a(map.get("value"), (String) null);
-                    if (replace.contains(a5.replace("dev.", "")) && !TextUtils.isEmpty(a6)) {
+                    if (replace.contains(a5.replace("dev.", "")) && !StringUtils.isEmpty(a6)) {
                         if (substring == null) {
                             return a6;
                         }

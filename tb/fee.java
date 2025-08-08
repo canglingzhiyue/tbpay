@@ -55,7 +55,7 @@ public class fee implements eow {
             return r0
         L1f:
             java.lang.String r1 = tb.eoy.a(r9)
-            boolean r5 = android.text.TextUtils.isEmpty(r1)
+            boolean r5 = android.text.StringUtils.isEmpty(r1)
             if (r5 == 0) goto L2a
             return r0
         L2a:

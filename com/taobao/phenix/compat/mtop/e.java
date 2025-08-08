@@ -1,7 +1,7 @@
 package com.taobao.phenix.compat.mtop;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ErrorConstant;
 import anet.channel.util.HttpConstant;
 import anetwork.channel.NetworkCallBack;
@@ -146,11 +146,11 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.InputS
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (split = str.replace(" ", "").split(",")) == null || split.length <= 0) {
+        if (StringUtils.isEmpty(str) || (split = str.replace(" ", "").split(",")) == null || split.length <= 0) {
             return "";
         }
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i]) && (split2 = split[i].split("=")) != null && split2.length > 1 && "max-age".equals(split2[0])) {
+            if (!StringUtils.isEmpty(split[i]) && (split2 = split[i].split("=")) != null && split2.length > 1 && "max-age".equals(split2[0])) {
                 return split2[1];
             }
         }
@@ -175,14 +175,14 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.InputS
             str2 = null;
         }
         if (this.b != null) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.b.put(b.MTOP_EXTRA_HIT_CDN_CACHE, str.contains(",H]") ? "1" : "0");
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 this.b.put(HttpConstant.EAGLE_EYE_ID_3, str3);
             }
             String a2 = a(str2);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.b.put("max-age", a2);
             }
             String str4 = this.b.get("inner_network_start_time");
@@ -190,7 +190,7 @@ public class e implements NetworkCallBack.FinishListener, NetworkCallBack.InputS
                 this.b.put(b.MTOP_EXTRA_RESPONSE_CODE, String.valueOf(System.currentTimeMillis() - Long.parseLong(str4)));
             }
             this.b.put("via", str);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 this.b.put(HttpConstant.CACHE_CONTROL, str2);
             }
         }

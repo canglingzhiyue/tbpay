@@ -1,7 +1,7 @@
 package com.taobao.infoflow.taobao.subservice.biz.smartnextpagerequestservice;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONException;
@@ -284,7 +284,7 @@ public class SmartNextPageRequestServiceImpl implements ISmartNextPageRequestSer
                 if (!bxn.c(iContainerDataModel) && bxn.a(iContainerDataModel)) {
                     SmartNextPageRequestServiceImpl.access$002(SmartNextPageRequestServiceImpl.this, true);
                 }
-                if (!TextUtils.equals(ScoreLevel.N0, SmartNextPageRequestServiceImpl.access$100(SmartNextPageRequestServiceImpl.this))) {
+                if (!StringUtils.equals(ScoreLevel.N0, SmartNextPageRequestServiceImpl.access$100(SmartNextPageRequestServiceImpl.this))) {
                     return;
                 }
                 ldf.d(SmartNextPageRequestServiceImpl.TAG, "触发：ScoreLevel.N0");
@@ -311,7 +311,7 @@ public class SmartNextPageRequestServiceImpl implements ISmartNextPageRequestSer
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("552c8b59", new Object[]{this, lliVar, str});
-                } else if (!TextUtils.equals(str, SmartNextPageRequestServiceImpl.REQUEST_TYPE_NEXT_PAGE)) {
+                } else if (!StringUtils.equals(str, SmartNextPageRequestServiceImpl.REQUEST_TYPE_NEXT_PAGE)) {
                 } else {
                     SmartNextPageRequestServiceImpl.access$500(SmartNextPageRequestServiceImpl.this).a(SmartNextPageRequestServiceImpl.access$300(SmartNextPageRequestServiceImpl.this), SmartNextPageRequestServiceImpl.access$400(SmartNextPageRequestServiceImpl.this));
                     SmartNextPageRequestServiceImpl.access$600(SmartNextPageRequestServiceImpl.this).b();
@@ -325,7 +325,7 @@ public class SmartNextPageRequestServiceImpl implements ISmartNextPageRequestSer
                     ipChange2.ipc$dispatch("d905f556", new Object[]{this, lliVar, iContainerDataModel, str});
                     return;
                 }
-                if (TextUtils.equals(str, SmartNextPageRequestServiceImpl.REQUEST_TYPE_NEXT_PAGE)) {
+                if (StringUtils.equals(str, SmartNextPageRequestServiceImpl.REQUEST_TYPE_NEXT_PAGE)) {
                     SmartNextPageRequestServiceImpl.access$500(SmartNextPageRequestServiceImpl.this).a(SmartNextPageRequestServiceImpl.access$700(SmartNextPageRequestServiceImpl.this));
                     int access$800 = SmartNextPageRequestServiceImpl.access$800(SmartNextPageRequestServiceImpl.this, iContainerDataModel);
                     if (access$800 > 0) {
@@ -371,7 +371,7 @@ public class SmartNextPageRequestServiceImpl implements ISmartNextPageRequestSer
                 }
                 HashMap hashMap = new HashMap();
                 hashMap.put("networkStatus", the.a());
-                if (TextUtils.equals(str, SmartNextPageRequestServiceImpl.REQUEST_TYPE_NEXT_PAGE)) {
+                if (StringUtils.equals(str, SmartNextPageRequestServiceImpl.REQUEST_TYPE_NEXT_PAGE)) {
                     SmartNextPageRequestServiceImpl.access$302(SmartNextPageRequestServiceImpl.this, b.a());
                     ldf.d(SmartNextPageRequestServiceImpl.TAG, "mNextPageBxIntention: " + SmartNextPageRequestServiceImpl.access$300(SmartNextPageRequestServiceImpl.this));
                     JSONObject a2 = b.a(SmartNextPageRequestServiceImpl.access$300(SmartNextPageRequestServiceImpl.this));
@@ -421,11 +421,11 @@ public class SmartNextPageRequestServiceImpl implements ISmartNextPageRequestSer
                     SmartNextPageRequestServiceImpl.access$002(SmartNextPageRequestServiceImpl.this, false);
                     SmartNextPageRequestServiceImpl.access$500(SmartNextPageRequestServiceImpl.this).a(SmartNextPageRequestServiceImpl.access$400(SmartNextPageRequestServiceImpl.this), SystemClock.uptimeMillis(), SmartNextPageRequestServiceImpl.access$1400(SmartNextPageRequestServiceImpl.this));
                 }
-                if (TextUtils.equals(ScoreLevel.N1, SmartNextPageRequestServiceImpl.access$100(SmartNextPageRequestServiceImpl.this)) && i2 > 0) {
+                if (StringUtils.equals(ScoreLevel.N1, SmartNextPageRequestServiceImpl.access$100(SmartNextPageRequestServiceImpl.this)) && i2 > 0) {
                     ldf.d(SmartNextPageRequestServiceImpl.TAG, "触发：ScoreLevel.N1");
                     SmartNextPageRequestServiceImpl.access$200(SmartNextPageRequestServiceImpl.this);
                 }
-                if (!TextUtils.equals(ScoreLevel.N2, SmartNextPageRequestServiceImpl.access$100(SmartNextPageRequestServiceImpl.this)) || SmartNextPageRequestServiceImpl.access$1300(SmartNextPageRequestServiceImpl.this) < SmartNextPageRequestServiceImpl.access$1500(SmartNextPageRequestServiceImpl.this)) {
+                if (!StringUtils.equals(ScoreLevel.N2, SmartNextPageRequestServiceImpl.access$100(SmartNextPageRequestServiceImpl.this)) || SmartNextPageRequestServiceImpl.access$1300(SmartNextPageRequestServiceImpl.this) < SmartNextPageRequestServiceImpl.access$1500(SmartNextPageRequestServiceImpl.this)) {
                     return;
                 }
                 ldf.d(SmartNextPageRequestServiceImpl.TAG, "触发：ScoreLevel.N2");

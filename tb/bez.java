@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -489,7 +489,7 @@ public class bez extends BaseViewManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str) && v() && (a2 = this.i.w().a(str)) != null) {
+        } else if (!StringUtils.isEmpty(str) && v() && (a2 = this.i.w().a(str)) != null) {
             for (IDMComponent iDMComponent : a2) {
                 iDMComponent.getFields().remove("cornerType");
             }

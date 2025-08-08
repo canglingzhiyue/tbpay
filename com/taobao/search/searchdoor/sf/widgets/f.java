@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.view.ViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -455,9 +455,9 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         this.f19370a.a(ntgVar);
         final TopCropImageView topCropImageView = new TopCropImageView(getActivity());
         topCropImageView.setLayoutParams(new ViewGroup.LayoutParams(-1, l.a(150)));
-        if (!TextUtils.isEmpty(ntgVar.c)) {
+        if (!StringUtils.isEmpty(ntgVar.c)) {
             topCropImageView.setImageUrl(ntgVar.c);
-        } else if (!TextUtils.isEmpty(ntgVar.d)) {
+        } else if (!StringUtils.isEmpty(ntgVar.d)) {
             topCropImageView.setBackgroundColor(com.taobao.search.mmd.util.d.a(ntgVar.d, 0));
         }
         topCropImageView.setTag(v.APM_VIEW_TOKEN, v.APM_VIEW_IGNORE);
@@ -472,7 +472,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
                     return;
                 }
                 f.b(f.this).addView(topCropImageView, 0);
-                if (TextUtils.isEmpty(ntgVar.e)) {
+                if (StringUtils.isEmpty(ntgVar.e)) {
                     return;
                 }
                 f.g(f.this).setImageUrl(ntgVar.e);
@@ -486,14 +486,14 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             return (ntg) ipChange.ipc$dispatch("3d324617", new Object[]{this});
         }
         String f = this.f19370a.f();
-        if (TextUtils.isEmpty(f)) {
+        if (StringUtils.isEmpty(f)) {
             return null;
         }
         String a2 = this.f19370a.a("pageCfg");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = this.f19370a.a("g_pageCfg");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             nuu.INSTANCE.b(f);
             return null;
         }
@@ -905,7 +905,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         } else {
             this.f19370a.a(com.taobao.search.mmd.util.c.a(this.mActivity.getIntent()));
             this.f19370a.a(noa.KEY_TB_2024, String.valueOf(this.v));
-            if (TextUtils.isEmpty(this.f19370a.a(noa.KEY_SEARCH_ELDER_HOME_OPEN))) {
+            if (StringUtils.isEmpty(this.f19370a.a(noa.KEY_SEARCH_ELDER_HOME_OPEN))) {
                 this.f19370a.a(noa.KEY_SEARCH_ELDER_HOME_OPEN, String.valueOf(com.taobao.search.mmd.util.j.INSTANCE.b()));
             }
             this.e = "true".equals(this.f19370a.a(noa.KEY_SEARCH_ELDER_HOME_OPEN));
@@ -1019,7 +1019,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
                         return;
                     }
                     String z = r.z();
-                    if (TextUtils.equals(z, f.j(f.this))) {
+                    if (StringUtils.equals(z, f.j(f.this))) {
                         return;
                     }
                     f.a(f.this, z);
@@ -1083,7 +1083,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
                 this.j.a(this.h.getSearchEditContent(), this.f19370a.i());
             }
         }
-        if (!TextUtils.isEmpty(this.f19370a.f())) {
+        if (!StringUtils.isEmpty(this.f19370a.f())) {
             return;
         }
         f();
@@ -1115,7 +1115,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             q.f("SearchDoorWidget", "关键词为空，不进行操作");
             return false;
         } else if (x.a(str, this.mActivity)) {
@@ -1133,7 +1133,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         }
         HashMap hashMap = new HashMap();
         postEvent(nre.a.a());
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             q.f("SearchDoorWidget", "要搜索的内容为空，不进行操作");
             return hashMap;
         }
@@ -1159,7 +1159,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             return;
         }
         String nick = Login.getNick();
-        if (TextUtils.isEmpty(nick) || (a2 = com.taobao.search.common.util.s.a()) == null) {
+        if (StringUtils.isEmpty(nick) || (a2 = com.taobao.search.common.util.s.a()) == null) {
             return;
         }
         SharedPreferences.Editor edit = a2.edit();
@@ -1198,7 +1198,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         map.putAll(this.f19370a.c());
         map.put("search_action", noa.VALUE_SEARCH_ACTION_ZD);
         String i = r.m() ? this.f19370a.i() : this.f19370a.e("");
-        if (!TextUtils.isEmpty(i)) {
+        if (!StringUtils.isEmpty(i)) {
             map.put("tab", i);
         }
         a(str, z, i);
@@ -1215,7 +1215,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             map.put(com.taobao.search.common.util.k.KEY_SEARCH_BAR_TAG, jSONArray.toJSONString());
         }
         String q = this.f19370a.q();
-        if (!TextUtils.isEmpty(q)) {
+        if (!StringUtils.isEmpty(q)) {
             map.put("lastQ", q);
         }
         this.f19370a.j(str);
@@ -1237,7 +1237,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         b.addParam("schemaType", "auction");
         if (z) {
             SearchDoorContext searchDoorContext = this.f19370a;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "all";
             }
             SearchBarHintBean f = searchDoorContext.f(str);
@@ -1298,7 +1298,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             for (com.taobao.search.mmd.datasource.bean.c cVar : list) {
                 if (currentTimeStamp >= cVar.f19163a && currentTimeStamp <= cVar.b) {
                     for (String str2 : cVar.c) {
-                        if (TextUtils.equals(str2, str)) {
+                        if (StringUtils.equals(str2, str)) {
                             e(str);
                             Nav.from(getActivity()).toUri(cVar.d);
                             return true;
@@ -1339,7 +1339,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             ipChange.ipc$dispatch("c3b0622c", new Object[]{this, str, new Boolean(z), str2});
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "all";
         }
         HashMap hashMap = new HashMap();
@@ -1349,7 +1349,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         SearchBarHintBean f = this.f19370a.f(str2);
         if (f != null) {
             hashMap.put("display_text", f.displayText);
-            if (!TextUtils.isEmpty(f.iconName)) {
+            if (!StringUtils.isEmpty(f.iconName)) {
                 hashMap.put(ChangeAppIconBridge.KEY_ICONNAME, f.iconName);
             }
             if (f.utParams != null && !f.utParams.isEmpty()) {
@@ -1358,7 +1358,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         }
         hashMap.put(com.taobao.search.common.util.k.KEY_SUGGEST_RN, this.f19370a.g(str2));
         String f2 = this.f19370a.f();
-        if (!TextUtils.isEmpty(f2)) {
+        if (!StringUtils.isEmpty(f2)) {
             hashMap.put("channelSrp", f2);
         }
         hashMap.put("item_id", this.f19370a.a(fgl.TARGETITEMID));
@@ -1375,10 +1375,10 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             return (String) ipChange.ipc$dispatch("bd890709", new Object[]{this, str});
         }
         String b = this.f19370a.b("from", "");
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return str;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return b;
         }
         return str + "-" + b;
@@ -1392,21 +1392,21 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             ipChange.ipc$dispatch("49d6ff89", new Object[]{this, str, searchBarHintBean});
             return;
         }
-        TextUtils.equals(str, com.taobao.android.searchbaseframe.chitu.e.SIGNAL);
+        StringUtils.equals(str, com.taobao.android.searchbaseframe.chitu.e.SIGNAL);
         String e = this.j.e();
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             ArrayMap arrayMap = new ArrayMap();
             arrayMap.put("suggestRN", e);
             com.taobao.search.mmd.util.e.a(ag.SEARCH_ENTRANCE_CLICK, (ArrayMap<String, String>) arrayMap);
         } else {
             com.taobao.search.mmd.util.e.a(ag.SEARCH_ENTRANCE_CLICK);
         }
-        if (!TextUtils.isEmpty(str) || searchBarHintBean == null || TextUtils.isEmpty(searchBarHintBean.searchText)) {
+        if (!StringUtils.isEmpty(str) || searchBarHintBean == null || StringUtils.isEmpty(searchBarHintBean.searchText)) {
             z = false;
         } else {
             str = searchBarHintBean.searchText;
         }
-        if (TextUtils.isEmpty(str) || b(str)) {
+        if (StringUtils.isEmpty(str) || b(str)) {
             return;
         }
         Map<String, String> a2 = a(str);
@@ -1427,7 +1427,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("62036207", new Object[]{this, bVar});
-        } else if (TextUtils.isEmpty(bVar.f31703a)) {
+        } else if (StringUtils.isEmpty(bVar.f31703a)) {
         } else {
             this.h.hideSoftKeyBoard();
             Nav.from(this.mActivity).toUri(bVar.f31703a);
@@ -1482,7 +1482,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("tab", this.f19370a.i());
         arrayMap.put("q", str);
-        if (!TextUtils.isEmpty(aVar.c)) {
+        if (!StringUtils.isEmpty(aVar.c)) {
             arrayMap.put(com.taobao.search.common.util.k.KEY_SUGGEST_RN, aVar.c);
         }
         arrayMap.put("channelSrp", this.f19370a.f());
@@ -1493,7 +1493,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         a2.put("subtype", activateBean.subType);
         a2.put("index", String.valueOf(i));
         a2.put("sugg", MyUrlEncoder.encod(this.h.getSearchEditContent(), "utf-8") + "_" + i + "_1");
-        if (!TextUtils.isEmpty(activateBean.suggestRn)) {
+        if (!StringUtils.isEmpty(activateBean.suggestRn)) {
             a2.put(com.taobao.search.common.util.k.KEY_SUGGEST_RN, activateBean.suggestRn);
         }
         if (activateBean.searchparams != null) {
@@ -1526,9 +1526,9 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             }
             Map<String, String> a2 = a(string);
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String string2 = jSONObject.getString(str);
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         a2.put(str, string2);
                     }
                 }
@@ -1542,11 +1542,11 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
                 for (Map.Entry<String, String> entry : fromJson.getParams().entrySet()) {
                     String key = entry.getKey();
                     String value = entry.getValue();
-                    if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                    if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                         a2.put(key, value);
                     }
                 }
-                if (!TextUtils.isEmpty(fromJson.getQ())) {
+                if (!StringUtils.isEmpty(fromJson.getQ())) {
                     string = string + " " + fromJson.getQ();
                     a2.put(noa.KEY_TAG_SEARCH_KEYWORD, string);
                 }
@@ -1567,11 +1567,11 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         arrayMap.put("query", searchEditContent);
         arrayMap.put(gbk.TYPE_SELECTED, str);
         arrayMap.put("sug_content", dVar.d);
-        if (!TextUtils.isEmpty(dVar.b)) {
+        if (!StringUtils.isEmpty(dVar.b)) {
             arrayMap.put(com.taobao.search.common.util.k.KEY_SUGGEST_RN, dVar.b);
         }
         String b = this.f19370a.b("searchDoorFrom", "");
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             b = "shouye";
         }
         arrayMap.put("stats_show", b);
@@ -1581,7 +1581,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             return;
         }
         Map<String, String> a2 = a(str);
-        if (!TextUtils.isEmpty(dVar.b)) {
+        if (!StringUtils.isEmpty(dVar.b)) {
             a2.put(com.taobao.search.common.util.k.KEY_SUGGEST_RN, dVar.b);
         }
         if (dVar.c != null) {
@@ -1599,19 +1599,19 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
             HashMap hashMap = new HashMap();
             hashMap.put("access_from", "search_door");
             String f = this.f19370a.f();
-            if (!TextUtils.isEmpty(f)) {
+            if (!StringUtils.isEmpty(f)) {
                 hashMap.put("channelSrp", f);
             }
             String a2 = this.f19370a.a("searchBoxTestParam");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 hashMap.put("searchBoxTestParam", a2);
             }
             String nick = Login.getNick();
-            if (!TextUtils.isEmpty(nick)) {
+            if (!StringUtils.isEmpty(nick)) {
                 hashMap.put(RVStartParams.KEY_URL_SHORT, nick);
             }
             String userId = Login.getUserId();
-            if (!TextUtils.isEmpty(userId)) {
+            if (!StringUtils.isEmpty(userId)) {
                 hashMap.put("user_id", userId);
             }
             c(hashMap);
@@ -1666,7 +1666,7 @@ public class f extends iut implements com.taobao.android.xsearchplugin.muise.e {
         } else if (map == null || !r.aL()) {
         } else {
             String a2 = com.taobao.search.common.util.b.c().a(com.taobao.search.common.util.b.INVOKE_ID_SEARCH_DOOR_BG_WORD, SearchDoorActivity.PAGE_NAME, Integer.valueOf(r.aM()));
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             map.put("bxFeature", a2);

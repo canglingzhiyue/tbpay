@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.fragment.msoa;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -189,7 +189,7 @@ public class FloatWeexFragment extends FloatFragment implements d {
         this.mInstance = new WXSDKInstance(getActivity());
         this.mInstance.a(this);
         Bundle arguments = getArguments();
-        if (arguments == null || TextUtils.isEmpty(arguments.getString("bundle_url"))) {
+        if (arguments == null || StringUtils.isEmpty(arguments.getString("bundle_url"))) {
             return;
         }
         this.mUrl = arguments.getString("bundle_url");

@@ -2,7 +2,7 @@ package com.taobao.android.dinamic.constructor;
 
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -95,13 +95,13 @@ public class DCountDownTimerConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9a74b4b6", new Object[]{this, dCountDownTimerView, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             dCountDownTimerView.hideCountDown();
             dCountDownTimerView.setFutureTime(-1L);
             dCountDownTimerView.getTimer().b();
         } else {
             dCountDownTimerView.setFutureTime(Long.valueOf(str).longValue());
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 dCountDownTimerView.setCurrentTime(Long.valueOf(str2).longValue());
             }
             if (dCountDownTimerView.getLastTime() > 0) {
@@ -125,7 +125,7 @@ public class DCountDownTimerConstructor extends h {
         TextView colonSecond = dCountDownTimerView.getColonSecond();
         setTextViewStyle(colonFirst, str, str2, str3, str4, str5, str6, str7, str8, this.colonTextDefaults);
         setTextViewStyle(colonSecond, str, str2, str3, str4, str5, str6, str7, str8, this.colonTextDefaults);
-        if (TextUtils.isEmpty(str9)) {
+        if (StringUtils.isEmpty(str9)) {
             return;
         }
         colonFirst.setText(str9);
@@ -154,21 +154,21 @@ public class DCountDownTimerConstructor extends h {
             ipChange.ipc$dispatch("3cb3e1fe", new Object[]{this, textView, str, str2, str3, str4, str5, str6, str7, str8, iArr});
             return;
         }
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             textView.setTextSize(0, fpr.a(textView.getContext(), str7, 0));
         }
-        if (!TextUtils.isEmpty(str8) && (a2 = fpn.a(str8, -16777216)) != -16777216) {
+        if (!StringUtils.isEmpty(str8) && (a2 = fpn.a(str8, -16777216)) != -16777216) {
             textView.setTextColor(a2);
         }
         int[] textViewMargin = getTextViewMargin(textView.getContext(), str, str2, str3, str4, iArr);
-        if (textViewMargin == null && TextUtils.isEmpty(str5) && TextUtils.isEmpty(str6)) {
+        if (textViewMargin == null && StringUtils.isEmpty(str5) && StringUtils.isEmpty(str6)) {
             return;
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) textView.getLayoutParams();
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             marginLayoutParams.width = fpr.a(textView.getContext(), str5, 0);
         }
-        if (!TextUtils.isEmpty(str6)) {
+        if (!StringUtils.isEmpty(str6)) {
             marginLayoutParams.height = fpr.a(textView.getContext(), str6, 0);
         }
         if (textViewMargin != null) {
@@ -183,7 +183,7 @@ public class DCountDownTimerConstructor extends h {
             ipChange.ipc$dispatch("fb47c793", new Object[]{this, textView, textView2, textView3, str, str2});
             return;
         }
-        int a2 = !TextUtils.isEmpty(str) ? fpn.a(str, -16777216) : -16777216;
+        int a2 = !StringUtils.isEmpty(str) ? fpn.a(str, -16777216) : -16777216;
         int a3 = fpr.a(textView.getContext(), str2, 0);
         if (a2 == -16777216 && a3 == 0) {
             return;

@@ -1,6 +1,6 @@
 package com.taobao.themis.open.permission.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.util.ParamsConstants;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -171,7 +171,7 @@ public final class a {
         q.d(appId, "appId");
         String a2 = tlp.INSTANCE.a(INSTANCE.g(appId));
         String str = a2;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             q.a((Object) a2);
             Object[] array = new Regex(",").split(str, 0).toArray(new String[0]);
             if (array != null) {

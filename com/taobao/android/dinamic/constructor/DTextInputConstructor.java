@@ -3,7 +3,7 @@ package com.taobao.android.dinamic.constructor;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.EditText;
@@ -94,7 +94,7 @@ public class DTextInputConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6388103a", new Object[]{this, editText, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Integer.MAX_VALUE)});
         } else {
             Integer valueOf = Integer.valueOf(str);
@@ -110,7 +110,7 @@ public class DTextInputConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123b0df", new Object[]{this, editText, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             editText.setInputType(1);
         } else {
             int intValue = Integer.valueOf(str).intValue();
@@ -200,7 +200,7 @@ public class DTextInputConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d2ca35e0", new Object[]{this, editText, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             editText.setTypeface(Typeface.defaultFromStyle(0));
         } else {
             int intValue = Integer.valueOf(str).intValue();
@@ -255,12 +255,12 @@ public class DTextInputConstructor extends h {
         if (intValue == 0) {
             editText.setEllipsize(null);
         } else if (intValue == 1) {
-            editText.setEllipsize(TextUtils.TruncateAt.START);
+            editText.setEllipsize(StringUtils.TruncateAt.START);
         } else if (intValue == 2) {
-            editText.setEllipsize(TextUtils.TruncateAt.MIDDLE);
+            editText.setEllipsize(StringUtils.TruncateAt.MIDDLE);
         } else if (intValue != 3) {
         } else {
-            editText.setEllipsize(TextUtils.TruncateAt.END);
+            editText.setEllipsize(StringUtils.TruncateAt.END);
         }
     }
 
@@ -333,7 +333,7 @@ public class DTextInputConstructor extends h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a8868001", new Object[]{this, editText, str});
-        } else if (!TextUtils.equals(PromotionFilterBean.SINGLE, str)) {
+        } else if (!StringUtils.equals(PromotionFilterBean.SINGLE, str)) {
         } else {
             editText.getPaint().setFlags(16);
         }

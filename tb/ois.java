@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -38,7 +38,7 @@ public class ois extends oio {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3095705c", new Object[]{this, context, bVar, new Integer(i), bVar2})).booleanValue();
         }
-        return TextUtils.equals((bVar == null ? ComponentType.CONTACT_ITEM : bVar.c()).desc, ComponentType.CONTACT_ITEM.desc);
+        return StringUtils.equals((bVar == null ? ComponentType.CONTACT_ITEM : bVar.c()).desc, ComponentType.CONTACT_ITEM.desc);
     }
 
     @Override // tb.oio
@@ -55,7 +55,7 @@ public class ois extends oio {
             com.taobao.tao.friends.model.b i2 = aVar.i();
             String str2 = "";
             oup.a(bVar.b(), str2, JSON.toJSONString(aVar.g()));
-            if (i2.c == ContactType.LINK && !TextUtils.isEmpty(aVar.h())) {
+            if (i2.c == ContactType.LINK && !StringUtils.isEmpty(aVar.h())) {
                 Nav.from(context).toUri(aVar.h());
                 if (AgooConstants.ACK_PACK_NOBIND.equals(i2.d)) {
                     TBS.Ext.commitEvent("Page_Share", 19999, "Page_Detail_creatgroup_click", (Object) null, (Object) null);
@@ -63,14 +63,14 @@ public class ois extends oio {
             } else {
                 if (aVar.g() != null) {
                     str = aVar.g().getUserId();
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         str = aVar.g().getCcode();
                     }
                 } else {
                     str = str2;
                 }
                 String contactClickEventName = UTAnalyticsHelper.getContactClickEventName(aVar);
-                if (!TextUtils.isEmpty(contactClickEventName)) {
+                if (!StringUtils.isEmpty(contactClickEventName)) {
                     TBS.Ext.commitEvent("Page_Share", 19999, contactClickEventName, j.businessId, str, j.businessId + "," + j.templateId + "," + ShareBizAdapter.getInstance().getLogin().a() + "," + bVar.b() + ",");
                 }
                 String str3 = j.url;

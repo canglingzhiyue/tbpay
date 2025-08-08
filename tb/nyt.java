@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.share.multiapp.ShareBizAdapter;
 import com.taobao.share.taopassword.busniess.model.f;
@@ -25,7 +25,7 @@ public class nyt {
             return (String) ipChange.ipc$dispatch("ab5f7db7", new Object[]{fVar});
         }
         String queryParameter = Uri.parse(fVar.z).getQueryParameter("ut_sk");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return "";
         }
         String[] split = queryParameter.split("\\.");

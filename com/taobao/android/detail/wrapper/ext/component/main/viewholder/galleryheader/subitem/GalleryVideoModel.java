@@ -1,6 +1,6 @@
 package com.taobao.android.detail.wrapper.ext.component.main.viewholder.galleryheader.subitem;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.GalleryNode;
 import com.taobao.android.detail.datasdk.model.viewmodel.main.SubItemModel;
@@ -128,7 +128,7 @@ public class GalleryVideoModel implements SubItemModel, Comparable<SubItemModel>
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d87272d0", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String[] split = str.split(":");
             try {
                 double intValue = Integer.valueOf(split[0]).intValue() / Integer.valueOf(split[1]).intValue();

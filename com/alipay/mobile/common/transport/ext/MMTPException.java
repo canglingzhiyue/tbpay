@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.ext;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.IOException;
 import tb.riy;
@@ -54,7 +54,7 @@ public class MMTPException extends IOException {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5d606c6c", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String lowerCase = str.trim().toLowerCase();

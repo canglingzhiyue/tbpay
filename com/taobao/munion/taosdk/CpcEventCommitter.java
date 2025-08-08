@@ -3,7 +3,7 @@ package com.taobao.munion.taosdk;
 import android.app.Application;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.net.pojo.request.SendCpcInfoRequest;
@@ -80,7 +80,7 @@ public class CpcEventCommitter extends MunionRemoteBusiness implements MunionEve
             return "";
         }
         try {
-            if (TextUtils.isEmpty(this.eadt)) {
+            if (StringUtils.isEmpty(this.eadt)) {
                 str2 = "";
             } else {
                 str2 = this.eadt + "_";

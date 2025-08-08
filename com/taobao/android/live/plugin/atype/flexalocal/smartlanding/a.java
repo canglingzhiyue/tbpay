@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.smartlanding;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.smartlanding.business.SmartLandingTask;
 import com.taobao.taolive.sdk.utils.q;
@@ -104,7 +104,7 @@ public abstract class a {
             } else if (SmartLandingTask.Operation.STR_EQUAL.equals(condition.operation)) {
                 return condition.paramValue.equals(str);
             } else {
-                return SmartLandingTask.Operation.STR_UNEQUAL.equals(condition.operation) ? !condition.paramValue.equals(str) : SmartLandingTask.Operation.STR_INCLUDE.equals(condition.operation) ? !TextUtils.isEmpty(str) && (asList2 = Arrays.asList(str.split(","))) != null && asList2.contains(condition.paramValue) : "in".equals(condition.operation) && (asList = Arrays.asList(condition.paramValue.split(","))) != null && asList.contains(str);
+                return SmartLandingTask.Operation.STR_UNEQUAL.equals(condition.operation) ? !condition.paramValue.equals(str) : SmartLandingTask.Operation.STR_INCLUDE.equals(condition.operation) ? !StringUtils.isEmpty(str) && (asList2 = Arrays.asList(str.split(","))) != null && asList2.contains(condition.paramValue) : "in".equals(condition.operation) && (asList = Arrays.asList(condition.paramValue.split(","))) != null && asList.contains(str);
             }
         }
         q.b(f14012a, "matchCondition: condition is null");

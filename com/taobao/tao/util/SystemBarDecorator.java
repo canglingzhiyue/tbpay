@@ -6,7 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.graphics.ColorUtils;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -123,7 +123,7 @@ public class SystemBarDecorator {
             return;
         }
         int parseColor = Color.parseColor("#ffffff");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             parseColor = Color.parseColor(str);
         }
         setStatusBarColor(parseColor, z);

@@ -3,7 +3,7 @@ package com.meizu.cloud.pushsdk.handler.e.k;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.handler.MessageV3;
@@ -23,7 +23,7 @@ public class b extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
     private Intent b(Context context, MessageV3 messageV3) {
         Intent intent;
         String uriPackageName = messageV3.getUriPackageName();
-        if (TextUtils.isEmpty(uriPackageName)) {
+        if (StringUtils.isEmpty(uriPackageName)) {
             uriPackageName = messageV3.getUploadDataPackageName();
         }
         DebugLogger.i("AbstractMessageHandler", "openClassName is " + uriPackageName);
@@ -32,7 +32,7 @@ public class b extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
             if (intent != null && messageV3.getParamsMap() != null) {
                 for (Map.Entry<String, String> entry : messageV3.getParamsMap().entrySet()) {
                     DebugLogger.i("AbstractMessageHandler", " launcher activity key " + entry.getKey() + " value " + entry.getValue());
-                    if (!TextUtils.isEmpty(entry.getKey()) && !TextUtils.isEmpty(entry.getValue())) {
+                    if (!StringUtils.isEmpty(entry.getKey()) && !StringUtils.isEmpty(entry.getValue())) {
                         intent.putExtra(entry.getKey(), entry.getValue());
                     }
                 }
@@ -42,7 +42,7 @@ public class b extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
             if (messageV3.getParamsMap() != null) {
                 for (Map.Entry<String, String> entry2 : messageV3.getParamsMap().entrySet()) {
                     DebugLogger.i("AbstractMessageHandler", " key " + entry2.getKey() + " value " + entry2.getValue());
-                    if (!TextUtils.isEmpty(entry2.getKey()) && !TextUtils.isEmpty(entry2.getValue())) {
+                    if (!StringUtils.isEmpty(entry2.getKey()) && !StringUtils.isEmpty(entry2.getValue())) {
                         intent.putExtra(entry2.getKey(), entry2.getValue());
                     }
                 }
@@ -52,7 +52,7 @@ public class b extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
         } else if (2 == messageV3.getClickType()) {
             Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(messageV3.getWebUrl()));
             String uriPackageName2 = messageV3.getUriPackageName();
-            if (!TextUtils.isEmpty(uriPackageName2)) {
+            if (!StringUtils.isEmpty(uriPackageName2)) {
                 intent2.setPackage(uriPackageName2);
                 DebugLogger.i("AbstractMessageHandler", "set uri package " + uriPackageName2);
             }
@@ -121,7 +121,7 @@ public class b extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
             return;
         }
         d2(messageV3);
-        if (!TextUtils.isEmpty(messageV3.getTitle()) && !TextUtils.isEmpty(messageV3.getContent()) && b() != null) {
+        if (!StringUtils.isEmpty(messageV3.getTitle()) && !StringUtils.isEmpty(messageV3.getContent()) && b() != null) {
             b().a(c(), MzPushMessage.fromMessageV3(messageV3));
         }
         a(messageV3);
@@ -145,7 +145,7 @@ public class b extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
     @Override // com.meizu.cloud.pushsdk.handler.e.a
     /* renamed from: e */
     public void d(MessageV3 messageV3) {
-        com.meizu.cloud.pushsdk.util.d.c(c(), messageV3.getUploadDataPackageName(), TextUtils.isEmpty(messageV3.getDeviceId()) ? d((Intent) null) : messageV3.getDeviceId(), messageV3.getTaskId(), messageV3.getSeqId(), messageV3.getPushTimestamp());
+        com.meizu.cloud.pushsdk.util.d.c(c(), messageV3.getUploadDataPackageName(), StringUtils.isEmpty(messageV3.getDeviceId()) ? d((Intent) null) : messageV3.getDeviceId(), messageV3.getTaskId(), messageV3.getSeqId(), messageV3.getPushTimestamp());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -154,6 +154,6 @@ public class b extends com.meizu.cloud.pushsdk.handler.e.a<MessageV3> {
     public MessageV3 f(Intent intent) {
         DebugLogger.e("AbstractMessageHandler", "parse message V3");
         String stringExtra = intent.getStringExtra(PushConstants.MZ_MESSAGE_VALUE);
-        return !TextUtils.isEmpty(stringExtra) ? c(stringExtra) : m(intent);
+        return !StringUtils.isEmpty(stringExtra) ? c(stringExtra) : m(intent);
     }
 }

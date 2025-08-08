@@ -13,7 +13,7 @@ public class rzc implements rzj {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x0077, code lost:
-        if (android.text.TextUtils.equals(r6, "SSRE_NETWORK_ERROR") != false) goto L17;
+        if (android.text.StringUtils.equals(r6, "SSRE_NETWORK_ERROR") != false) goto L17;
      */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0080  */
     /* JADX WARN: Removed duplicated region for block: B:37:0x0085  */
@@ -48,7 +48,7 @@ public class rzc implements rzj {
             java.util.Map<java.lang.String, java.util.List<java.lang.String>> r6 = r1.d
             java.lang.String r7 = "x-retcode"
             java.lang.String r6 = mtopsdk.common.util.HeaderHandlerUtil.getSingleHeaderFieldByKey(r6, r7)
-            boolean r7 = android.text.TextUtils.isEmpty(r6)
+            boolean r7 = android.text.StringUtils.isEmpty(r6)
             java.lang.String r8 = "SSRE_NETWORK_ERROR"
             r9 = 200(0xc8, float:2.8E-43)
             if (r7 == 0) goto L37
@@ -58,7 +58,7 @@ public class rzc implements rzj {
             r6 = r8
         L37:
             java.lang.String r7 = "SUCCESS"
-            boolean r7 = android.text.TextUtils.equals(r6, r7)
+            boolean r7 = android.text.StringUtils.equals(r6, r7)
             if (r7 == 0) goto L40
             return r0
         L40:
@@ -89,16 +89,16 @@ public class rzc implements rzj {
             goto L7a
         L68:
             java.lang.String r7 = "SSRE_URL_BLOCKED"
-            boolean r7 = android.text.TextUtils.equals(r6, r7)
+            boolean r7 = android.text.StringUtils.equals(r6, r7)
             if (r7 == 0) goto L73
             java.lang.String r5 = "URL被管控"
             goto L7a
         L73:
-            boolean r7 = android.text.TextUtils.equals(r6, r8)
+            boolean r7 = android.text.StringUtils.equals(r6, r8)
             if (r7 == 0) goto L7a
             goto L49
         L7a:
-            boolean r7 = android.text.TextUtils.isEmpty(r5)
+            boolean r7 = android.text.StringUtils.isEmpty(r5)
             if (r7 == 0) goto L83
             java.lang.String r5 = "其他网络失败"
         L83:

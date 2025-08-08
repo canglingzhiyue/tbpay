@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -795,7 +795,7 @@ public final class a extends com.taobao.mytaobao.base.d implements mts, mwp {
         if (ipChange instanceof IpChange) {
             return (DXWidgetNode) ipChange.ipc$dispatch("c707e44c", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (e2 = e()) != null && (layoutManager = e2.getLayoutManager()) != null) {
+        if (!StringUtils.isEmpty(str) && (e2 = e()) != null && (layoutManager = e2.getLayoutManager()) != null) {
             int itemCount = layoutManager.getItemCount();
             for (int i = 0; i < itemCount; i++) {
                 View findViewByPosition = layoutManager.findViewByPosition(i);

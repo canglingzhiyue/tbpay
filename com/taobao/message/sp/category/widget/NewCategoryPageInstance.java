@@ -8,7 +8,7 @@ import android.graphics.Color;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -321,7 +321,7 @@ public class NewCategoryPageInstance extends WidgetInstance<JSONObject> {
         } else {
             if (FestivalMgr.a().a("mytaobao")) {
                 String d = FestivalMgr.a().d("mytaobao", mxw.KEY_SKIN_PIC);
-                if (!TextUtils.isEmpty(d)) {
+                if (!StringUtils.isEmpty(d)) {
                     this.bgImageView.setImageUrl(d);
                     this.bgImageView.setBackgroundColor(0);
                     if (!ApplicationUtil.isDebug()) {
@@ -726,7 +726,7 @@ public class NewCategoryPageInstance extends WidgetInstance<JSONObject> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("123e0b3f", new Object[]{this});
-        } else if (!TextUtils.equals("1", ConfigUtil.getValue("mpm_business_switch", "subscribeElderFontChangeEnableV2", "0"))) {
+        } else if (!StringUtils.equals("1", ConfigUtil.getValue("mpm_business_switch", "subscribeElderFontChangeEnableV2", "0"))) {
         } else {
             this.elderFontChangeReceiver = new BroadcastReceiver() { // from class: com.taobao.message.sp.category.widget.NewCategoryPageInstance.9
                 public static volatile transient /* synthetic */ IpChange $ipChange;

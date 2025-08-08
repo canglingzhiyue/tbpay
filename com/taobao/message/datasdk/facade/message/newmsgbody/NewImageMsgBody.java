@@ -1,6 +1,6 @@
 package com.taobao.message.datasdk.facade.message.newmsgbody;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.util.ValueUtil;
 import com.taobao.weex.common.Constants;
@@ -100,7 +100,7 @@ public class NewImageMsgBody extends BaseMsgBody {
             return (String) ipChange.ipc$dispatch("de8f0660", new Object[]{this});
         }
         String string = ValueUtil.getString(this.originData, "url");
-        if (TextUtils.isEmpty(string) || !string.contains("&")) {
+        if (StringUtils.isEmpty(string) || !string.contains("&")) {
             return string;
         }
         try {

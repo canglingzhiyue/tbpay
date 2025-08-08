@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.amnet.service;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.amnet.service.ipcservice.OutEventNotifyServiceImpl;
 import com.alipay.mobile.common.amnet.service.util.AmnetManagerFactory;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
@@ -45,15 +45,15 @@ public class AmnetLinkStrategy {
                 String stringValue = AmnetLinkStrategy.access$000(AmnetLinkStrategy.this).getStringValue(TransportConfigureItem.AMNET_SMART_HEARTBEAT);
                 String stringValue2 = AmnetLinkStrategy.access$000(AmnetLinkStrategy.this).getStringValue(TransportConfigureItem.AMNET_ORTT);
                 String stringValue3 = AmnetLinkStrategy.access$000(AmnetLinkStrategy.this).getStringValue(TransportConfigureItem.AMNET_DELAY_HANDSHAKE);
-                if (!TextUtils.equals(stringValue, AmnetLinkStrategy.access$100(AmnetLinkStrategy.this))) {
+                if (!StringUtils.equals(stringValue, AmnetLinkStrategy.access$100(AmnetLinkStrategy.this))) {
                     AmnetLinkStrategy.access$102(AmnetLinkStrategy.this, stringValue);
                     AmnetLinkStrategy.this.notifySwitchSmartHeartBeat();
                 }
-                if (!TextUtils.equals(stringValue2, AmnetLinkStrategy.access$200(AmnetLinkStrategy.this))) {
+                if (!StringUtils.equals(stringValue2, AmnetLinkStrategy.access$200(AmnetLinkStrategy.this))) {
                     AmnetLinkStrategy.access$202(AmnetLinkStrategy.this, stringValue2);
                     AmnetLinkStrategy.this.notifySwitchOrtt();
                 }
-                if (TextUtils.equals(stringValue3, AmnetLinkStrategy.access$300(AmnetLinkStrategy.this))) {
+                if (StringUtils.equals(stringValue3, AmnetLinkStrategy.access$300(AmnetLinkStrategy.this))) {
                     return;
                 }
                 AmnetLinkStrategy.access$302(AmnetLinkStrategy.this, stringValue3);
@@ -199,15 +199,15 @@ public class AmnetLinkStrategy {
         String amnetDnsInfos = AmnetManagerFactory.getInstance().getAmnetDnsInfos();
         String amnetDnsInfosForShort = AmnetManagerFactory.getInstance().getAmnetDnsInfosForShort();
         String amnetDnsInfosForMultiplex = AmnetManagerFactory.getInstance().getAmnetDnsInfosForMultiplex();
-        if (!TextUtils.isEmpty(amnetDnsInfos)) {
+        if (!StringUtils.isEmpty(amnetDnsInfos)) {
             LogCatUtil.debug("AmnetLinkStrategy", "notifyUpdateAllDnsInfo,ipinfos:" + amnetDnsInfos);
             outEventNotifyServiceImpl.notifyUpdateDnsInfo((byte) 1, amnetDnsInfos);
         }
-        if (!TextUtils.isEmpty(amnetDnsInfosForShort)) {
+        if (!StringUtils.isEmpty(amnetDnsInfosForShort)) {
             LogCatUtil.debug("AmnetLinkStrategy", "notifyUpdateAllDnsInfo,ipInfosForShort:" + amnetDnsInfosForShort);
             outEventNotifyServiceImpl.notifyUpdateDnsInfo((byte) 2, amnetDnsInfosForShort);
         }
-        if (TextUtils.isEmpty(amnetDnsInfosForMultiplex)) {
+        if (StringUtils.isEmpty(amnetDnsInfosForMultiplex)) {
             return;
         }
         LogCatUtil.debug("AmnetLinkStrategy", "notifyUpdateAllDnsInfo,ipInfosForMultiplex:" + amnetDnsInfosForMultiplex);

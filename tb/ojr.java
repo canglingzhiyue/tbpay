@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -740,7 +740,7 @@ public class ojr extends a {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("7201fa60", new Object[]{this, str, str2});
         }
-        if (TextUtils.equals(str, com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE) || (bVar = this.l) == null) {
+        if (StringUtils.equals(str, com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE) || (bVar = this.l) == null) {
             return null;
         }
         return bVar.a(str, str2);

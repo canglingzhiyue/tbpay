@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.jsbridge.AliFestivalWVPlugin;
 import com.taobao.mrt.service.a;
@@ -53,7 +53,7 @@ public class rky implements d {
             }
             final msh mshVar = (msh) mRTFilesDescription.resourceOperation;
             String b3 = mshVar.b(str2);
-            if (!TextUtils.isEmpty(b3)) {
+            if (!StringUtils.isEmpty(b3)) {
                 hashMap.put("success", "1");
                 hashMap.put("path", b3);
                 return hashMap;

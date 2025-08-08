@@ -1,7 +1,7 @@
 package com.taobao.message.sp.chat.widget;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -104,14 +104,14 @@ public class VideoMessageWidget extends WidgetInstance<JSONObject> {
                 this.goodsIconImageView.setVisibility(8);
             }
             String string = jSONObject.getString("previewUrl");
-            if (TextUtils.isEmpty(this.localUrl) && !TextUtils.isEmpty(string) && !URLUtil.isNetUrl(string) && new File(string).exists()) {
+            if (StringUtils.isEmpty(this.localUrl) && !StringUtils.isEmpty(string) && !URLUtil.isNetUrl(string) && new File(string).exists()) {
                 this.localUrl = string;
             }
             ImageInfo imageInfo = new ImageInfo();
             imageInfo.origPath = string;
             imageInfo.origWidth = jSONObject.getIntValue("width");
             imageInfo.origHeight = jSONObject.getIntValue("height");
-            if (!TextUtils.isEmpty(this.localUrl)) {
+            if (!StringUtils.isEmpty(this.localUrl)) {
                 ImageMessageWidget.decideImageSize(this.previewIv, imageInfo);
                 UiUtils.setImageUrl(this.previewIv, this.localUrl);
                 return;

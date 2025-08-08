@@ -1,7 +1,7 @@
 package com.taobao.message.sp.chat.handler;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.kit.core.IObserver;
@@ -70,7 +70,7 @@ public final class SimpleSendTxtEventHandler implements EventHandler, UserIdenti
         String stringFromData = ActionExtKt.getStringFromData(action, "text");
         String stringFromData2 = ActionExtKt.getStringFromData(action, "targetId");
         String stringFromData3 = ActionExtKt.getStringFromData(action, "targetNick");
-        if (TextUtils.isEmpty(stringFromData)) {
+        if (StringUtils.isEmpty(stringFromData)) {
             UIHandler.postMain(new Runnable() { // from class: com.taobao.message.sp.chat.handler.SimpleSendTxtEventHandler$handle$1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -103,7 +103,7 @@ public final class SimpleSendTxtEventHandler implements EventHandler, UserIdenti
             q.a();
         }
         String buildTextMessageBody = simpleMessageSender.buildTextMessageBody(stringFromData);
-        if (!TextUtils.isEmpty(stringFromData3)) {
+        if (!StringUtils.isEmpty(stringFromData3)) {
             String str = this.userIdentifier;
             if (str == null) {
                 q.a();

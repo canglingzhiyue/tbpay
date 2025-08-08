@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -87,11 +87,11 @@ public class fdt implements j<eoi> {
         String str5 = e.NAV_URL_DETAIL_BASE + i + ".htm";
         String b = fgp.b(bVar);
         com.taobao.android.detail.core.utils.i.d("[share][title]ShareSubscriber", "ShareSubscriber serverShareUrl = " + b);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             b = str5;
         }
         Uri.Builder buildUpon = Uri.parse(b).buildUpon();
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             buildUpon.appendQueryParameter("price", str3);
         }
         if (extraPriceByType != null) {
@@ -124,20 +124,20 @@ public class fdt implements j<eoi> {
             shareModel.title = "想告诉谁";
         }
         try {
-            if (eqb.l(bVar).share.c.containsKey("bizId") && !TextUtils.isEmpty(eqb.l(bVar).share.c.get("bizId"))) {
+            if (eqb.l(bVar).share.c.containsKey("bizId") && !StringUtils.isEmpty(eqb.l(bVar).share.c.get("bizId"))) {
                 shareModel.businessId = eqb.l(bVar).share.c.get("bizId");
             }
         } catch (Exception e) {
             com.taobao.android.detail.core.utils.i.a("[share][title]ShareSubscriber", "handleEvent: 获取bizId过程中发生错误, exception: ", e);
         }
         this.f27846a.addAll(eqb.c(bVar).images);
-        if (TextUtils.isEmpty(shareModel.businessId) && !TextUtils.isEmpty(str4) && !TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(shareModel.businessId) && !StringUtils.isEmpty(str4) && !StringUtils.isEmpty(str)) {
             shareModel.businessId = str4;
             this.f27846a.remove(str);
             this.f27846a.add(0, str);
         }
         String a2 = fgp.a(bVar);
-        if (!TextUtils.isEmpty(a2) && TextUtils.isEmpty(shareModel.businessId)) {
+        if (!StringUtils.isEmpty(a2) && StringUtils.isEmpty(shareModel.businessId)) {
             shareModel.businessId = a2;
         }
         shareModel.picUrlList = this.f27846a;

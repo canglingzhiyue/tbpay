@@ -1,6 +1,6 @@
 package com.ali.user.open.cookies;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
@@ -38,7 +38,7 @@ public class LoginCookie {
         sb.append("; ");
         sb.append("Path=");
         sb.append(this.path);
-        if (!TextUtils.isEmpty(this.version)) {
+        if (!StringUtils.isEmpty(this.version)) {
             sb.append(";");
             sb.append("Version=");
             sb.append(this.version);

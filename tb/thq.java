@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -50,7 +50,7 @@ public final class thq extends h {
         if (args.length != 0) {
             z = false;
         }
-        if (z || TextUtils.isEmpty(args[0].toString())) {
+        if (z || StringUtils.isEmpty(args[0].toString())) {
             return;
         }
         r C = runtimeContext.C();
@@ -72,8 +72,8 @@ public final class thq extends h {
         }
         thr.INSTANCE.a(obj);
         String str = obj;
-        if (!TextUtils.equals(str, thr.DX_RECYCLER_LAYOUT_SCROLL_STATE_BEGIN)) {
-            TextUtils.equals(str, thr.DX_RECYCLER_LAYOUT_SCROLL_STATE_END);
+        if (!StringUtils.equals(str, thr.DX_RECYCLER_LAYOUT_SCROLL_STATE_BEGIN)) {
+            StringUtils.equals(str, thr.DX_RECYCLER_LAYOUT_SCROLL_STATE_END);
         } else if (b != null && (u = b.u()) != null) {
             u.d(recyclerView);
         }
@@ -88,7 +88,7 @@ public final class thq extends h {
             return;
         }
         q.d(state, "state");
-        if (!TextUtils.equals(state, thr.DX_RECYCLER_LAYOUT_SCROLL_STATE_END) || dinamicXEngine == null || (l = dinamicXEngine.l()) == null) {
+        if (!StringUtils.equals(state, thr.DX_RECYCLER_LAYOUT_SCROLL_STATE_END) || dinamicXEngine == null || (l = dinamicXEngine.l()) == null) {
             return;
         }
         l.a("RECYCLER_SCROLL_END", (JSONObject) null);

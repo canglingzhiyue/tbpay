@@ -1,6 +1,6 @@
 package com.taobao.android.searchbaseframe.datasource.param;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.param.SearchParam;
@@ -125,7 +125,7 @@ public class SearchParamImpl implements SearchParam {
         if (param.hasMultiValues()) {
             return param.containsValue(str2);
         }
-        return TextUtils.equals(param.getValue(), str2);
+        return StringUtils.equals(param.getValue(), str2);
     }
 
     @Override // com.taobao.android.searchbaseframe.datasource.param.SearchParam
@@ -219,7 +219,7 @@ public class SearchParamImpl implements SearchParam {
         for (Map.Entry<String, SearchParam.Param> entry : this.mMap.entrySet()) {
             String key = entry.getKey();
             SearchParam.Param value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && value != null) {
+            if (!StringUtils.isEmpty(key) && value != null) {
                 hashMap.put(key, value.toUrlParamString());
             }
         }

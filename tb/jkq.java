@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
 
@@ -18,7 +18,7 @@ public class jkq {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{str, str2});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "TSchedule_no_tag";
         }
         TLog.loge(str, str2);
@@ -30,7 +30,7 @@ public class jkq {
             ipChange.ipc$dispatch("c430ebf9", new Object[]{str, str2, th});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "TSchedule_no_tag";
         }
         TLog.loge(str, str2, th);

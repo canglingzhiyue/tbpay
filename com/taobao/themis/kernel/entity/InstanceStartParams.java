@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.AppInfoScene;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -176,7 +176,7 @@ public final class InstanceStartParams implements Parcelable {
             q.b(DxContainerActivity.PARAMS_URL_BUSINESS_PARAMS);
         }
         String a2 = com.taobao.themis.utils.e.a(bundle, NBSN);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return AppInfoScene.ONLINE;
         }
         for (AppInfoScene appInfoScene : AppInfoScene.values()) {
@@ -193,7 +193,7 @@ public final class InstanceStartParams implements Parcelable {
             q.b(DxContainerActivity.PARAMS_URL_BUSINESS_PARAMS);
         }
         String nbSource = com.taobao.themis.utils.e.a(bundle, DEBUG_FLAG);
-        if (TextUtils.isEmpty(nbSource)) {
+        if (StringUtils.isEmpty(nbSource)) {
             nbSource = "online";
         }
         q.b(nbSource, "nbSource");

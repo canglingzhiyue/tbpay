@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.v7.widget.AppCompatEditText;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -226,7 +226,7 @@ public class GoodListSearchView extends GoodsBaseView<hjq> implements View.OnCli
         this.mSearchBtn.setOnClickListener(this);
         this.mEditText = (AppCompatEditText) inflate.findViewById(R.id.taolive_good_search_edit_text);
         String c = hiw.c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             this.mEditText.setHint(c);
         }
         this.mEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.taobao.android.live.plugin.atype.flexalocal.good.view.search.GoodListSearchView.2
@@ -278,7 +278,7 @@ public class GoodListSearchView extends GoodsBaseView<hjq> implements View.OnCli
                     return;
                 }
                 String str = "afterTextChanged: s=" + ((Object) editable) + "   mStart=" + this.b + "   mCount=" + this.c + "   start=" + GoodListSearchView.access$000(GoodListSearchView.this).getSelectionStart() + " end=" + GoodListSearchView.access$000(GoodListSearchView.this).getSelectionEnd();
-                if (editable != null && !TextUtils.isEmpty(editable.toString())) {
+                if (editable != null && !StringUtils.isEmpty(editable.toString())) {
                     GoodListSearchView.access$400(GoodListSearchView.this).setVisibility(0);
                     String obj = editable.toString();
                     if (obj.length() <= 30) {
@@ -450,7 +450,7 @@ public class GoodListSearchView extends GoodsBaseView<hjq> implements View.OnCli
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("79deef47", new Object[]{this, searchHistory});
-        } else if (searchHistory == null || TextUtils.isEmpty(searchHistory.getKey())) {
+        } else if (searchHistory == null || StringUtils.isEmpty(searchHistory.getKey())) {
         } else {
             this.mCurrentResultKey = null;
             this.mEditText.setText(searchHistory.getKey());
@@ -507,7 +507,7 @@ public class GoodListSearchView extends GoodsBaseView<hjq> implements View.OnCli
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a17188f2", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             his.b(TAG, "buildSearchEntryView in blank | searchKey is empty.");
         } else if (y.b(this.mGoodLiveContext.f())) {
             his.b(TAG, "buildSearchEntryView in blank | Devices is tablet.");

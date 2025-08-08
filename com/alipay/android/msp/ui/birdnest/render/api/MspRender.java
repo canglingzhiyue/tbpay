@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Looper;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.TextView;
 import com.ali.user.mobile.app.constant.UTConstant;
@@ -251,7 +251,7 @@ public class MspRender implements IRender {
         if (TplIdentity.drmEnabled()) {
             com.alibaba.fastjson.JSONObject jSONObject3 = new com.alibaba.fastjson.JSONObject();
             jSONObject3.put("tplId", (Object) str);
-            TplIdentity generateTplIdentity = TplIdentity.generateTplIdentity(i, jSONObject3, TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_MAIN_SERVICE_TPL));
+            TplIdentity generateTplIdentity = TplIdentity.generateTplIdentity(i, jSONObject3, StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_MAIN_SERVICE_TPL));
             hashMap.put("tplIdentity", generateTplIdentity.toJSON().toString());
             tplIdentity = generateTplIdentity;
         } else {
@@ -372,7 +372,7 @@ public class MspRender implements IRender {
                     return;
                 }
                 LogUtil.record(1, "MspRender:setCancelTplClickInterval", "json=" + drmValueFromKey.toString());
-                if (!str.startsWith("QUICKPAY@") || !TextUtils.equals(drmValueFromKey.getString(str.substring(9)), "true")) {
+                if (!str.startsWith("QUICKPAY@") || !StringUtils.equals(drmValueFromKey.getString(str.substring(9)), "true")) {
                     return;
                 }
                 LogUtil.record(1, "MspRender:setCancelTplClickInterval", "cancelClickInterval");
@@ -388,13 +388,13 @@ public class MspRender implements IRender {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("eae350c1", new Object[]{str, context})).booleanValue();
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             try {
                 com.alibaba.fastjson.JSONObject drmValueFromKey = DrmManager.getInstance(context).getDrmValueFromKey(DrmKey.ENABLE_AGEDNESS_VERSION_TPL);
                 if (drmValueFromKey != null && str.startsWith("QUICKPAY@")) {
                     String substring = str.substring(9);
                     String string = drmValueFromKey.getString(substring);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         boolean procGraySwitchWithRate = DrmManager.getInstance(context).procGraySwitchWithRate(context, Integer.parseInt(string));
                         LogUtil.record(2, "MspRender:needEnableAgedVersion", "tplId=" + substring + " need=" + procGraySwitchWithRate);
                         return procGraySwitchWithRate;
@@ -429,10 +429,10 @@ public class MspRender implements IRender {
             if (authUserInfo != null) {
                 String str4 = authUserInfo.get(AlipayCallServiceActivity.ALIPAY_EXTERN_TOKEN);
                 String str5 = authUserInfo.get("logonId");
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     jSONObject5.put(AlipayCallServiceActivity.ALIPAY_EXTERN_TOKEN, str4);
                 }
-                if (!TextUtils.isEmpty(str5)) {
+                if (!StringUtils.isEmpty(str5)) {
                     jSONObject5.put("logonId", str5);
                 }
             }
@@ -448,11 +448,11 @@ public class MspRender implements IRender {
                 }
                 if (jSONObject6.has("expId")) {
                     String string = jSONObject6.getString("expId");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         jSONObject5.put("expId", string);
                     }
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     jSONObject5.put("tplInfo", str3);
                 }
             } catch (Exception e) {
@@ -484,7 +484,7 @@ public class MspRender implements IRender {
             if (TplIdentity.drmEnabled()) {
                 com.alibaba.fastjson.JSONObject jSONObject7 = new com.alibaba.fastjson.JSONObject();
                 jSONObject7.put("tplId", (Object) str2);
-                tplIdentity = TplIdentity.generateTplIdentity(i, jSONObject7, TextUtils.equals(str2, MspFlybirdDefine.FLYBIRD_MAIN_SERVICE_TPL));
+                tplIdentity = TplIdentity.generateTplIdentity(i, jSONObject7, StringUtils.equals(str2, MspFlybirdDefine.FLYBIRD_MAIN_SERVICE_TPL));
                 jSONObject5.put("tplIdentity", tplIdentity.toJSON().toString());
                 context2 = context;
             } else {
@@ -529,10 +529,10 @@ public class MspRender implements IRender {
             if (authUserInfo != null) {
                 String str2 = authUserInfo.get(AlipayCallServiceActivity.ALIPAY_EXTERN_TOKEN);
                 String str3 = authUserInfo.get("logonId");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     jSONObject3.put(AlipayCallServiceActivity.ALIPAY_EXTERN_TOKEN, str2);
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     jSONObject3.put("logonId", str3);
                 }
             }
@@ -564,7 +564,7 @@ public class MspRender implements IRender {
             if (TplIdentity.drmEnabled()) {
                 com.alibaba.fastjson.JSONObject jSONObject4 = new com.alibaba.fastjson.JSONObject();
                 jSONObject4.put("tplId", (Object) str);
-                jSONObject3.put("tplIdentity", TplIdentity.generateTplIdentity(i, jSONObject4, TextUtils.equals(str, MspFlybirdDefine.FLYBIRD_MAIN_SERVICE_TPL)).toJSON().toString());
+                jSONObject3.put("tplIdentity", TplIdentity.generateTplIdentity(i, jSONObject4, StringUtils.equals(str, MspFlybirdDefine.FLYBIRD_MAIN_SERVICE_TPL)).toJSON().toString());
             }
             if (needEnableAgedVersion(str, context)) {
                 jSONObject3.put("scale", "1");
@@ -836,7 +836,7 @@ public class MspRender implements IRender {
         if (ipChange instanceof IpChange) {
             return (Template) ipChange.ipc$dispatch("24a01415", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -867,7 +867,7 @@ public class MspRender implements IRender {
         if (ipChange instanceof IpChange) {
             return (Template) ipChange.ipc$dispatch("7be17b87", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

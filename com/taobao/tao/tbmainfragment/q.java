@@ -1,7 +1,7 @@
 package com.taobao.tao.tbmainfragment;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
 import tb.kge;
@@ -26,11 +26,11 @@ public class q {
         }
         try {
             String queryParameter = Uri.parse(str).getQueryParameter("spm");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 String[] split = queryParameter.split("\\.");
                 if (split.length >= 2) {
                     String str3 = split[1];
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         String[] split2 = str2.trim().split(",");
                         if (split2.length == 1 && "*".equals(split2[0])) {
                             return true;

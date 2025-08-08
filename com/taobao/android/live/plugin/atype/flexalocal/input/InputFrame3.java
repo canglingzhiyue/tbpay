@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.text.Editable;
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
@@ -176,7 +176,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
             return;
         }
         final String str = g.get("autoInputText");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.mHandler.postDelayed(new Runnable() { // from class: com.taobao.android.live.plugin.atype.flexalocal.input.InputFrame3.1
@@ -222,7 +222,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
                 hashMap.put("stickerId", checkOldExpression.id);
                 hashMap.put("stickerVersion", "2");
             }
-            if (TextUtils.equals(this.mInputType, TYPE_LIVE_LINK)) {
+            if (StringUtils.equals(this.mInputType, TYPE_LIVE_LINK)) {
                 this.mFrameContext.e().a(xkw.EVENT_START_LINKLIVE_BY_MTOP_MSG, str, observeUniqueIdentification());
             } else {
                 sendText4Comment(str, hashMap);
@@ -256,7 +256,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
                 i = -1;
             }
         }
-        if (!TextUtils.isEmpty(str2) && this.mFrameContext != null && (this.mFrameContext.I() instanceof ffg)) {
+        if (!StringUtils.isEmpty(str2) && this.mFrameContext != null && (this.mFrameContext.I() instanceof ffg)) {
             return ((ffg) this.mFrameContext.I()).e().get(str2);
         }
         return null;
@@ -302,44 +302,44 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
             if (obj instanceof Map) {
                 Map map = (Map) obj;
                 String str2 = (String) map.get("content");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     setTextString(str2);
                 } else {
                     setTextString("");
                 }
                 String str3 = (String) map.get(INPUT_HINT);
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     this.mEditText.setHint(str3);
                 }
                 String str4 = (String) map.get(INPUT_LIMIT_CNT);
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     try {
                         this.mLimitCnt = Integer.parseInt(str4);
                     } catch (Exception unused) {
                     }
                 }
                 String str5 = (String) map.get(INPUT_LIMIT_TOAST);
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     try {
                         this.showLimitToast = Boolean.parseBoolean(str5);
                     } catch (Exception unused2) {
                     }
                 }
                 String str6 = (String) map.get(INPUT_TYPE);
-                if (!TextUtils.isEmpty(str6)) {
+                if (!StringUtils.isEmpty(str6)) {
                     this.mInputType = str6;
                 }
                 this.mRepliedCommentId = (String) map.get(REPLIED_COMMENT_ID);
                 this.mRepliedCommentNick = (String) map.get(REPLIED_COMMENT_NICK);
-                if (!TextUtils.isEmpty(this.mRepliedCommentId) && !TextUtils.isEmpty(this.mRepliedCommentNick)) {
+                if (!StringUtils.isEmpty(this.mRepliedCommentId) && !StringUtils.isEmpty(this.mRepliedCommentNick)) {
                     String str7 = "@" + this.mRepliedCommentNick + " ";
                     this.mEditText.setText(str7);
                     this.mEditText.setSelection(str7.length());
                     this.mUnEnableDeleteLimit = str7.length();
-                    if (!TextUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
+                    if (!StringUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
                         this.mCommentType = Constants.PARAM_REPLY;
                     }
-                } else if (!TextUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
+                } else if (!StringUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
                     this.mCommentType = "normal";
                 }
                 String str8 = (String) map.get("enableQuickComment");
@@ -382,7 +382,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("77fdbb29", new Object[]{this, editable});
-                    } else if (!InputFrame3.access$100(InputFrame3.this) || TextUtils.isEmpty(InputFrame3.this.mEditText.getText()) || InputFrame3.this.mEditText.getText().length() < InputFrame3.this.mLimitCnt) {
+                    } else if (!InputFrame3.access$100(InputFrame3.this) || StringUtils.isEmpty(InputFrame3.this.mEditText.getText()) || InputFrame3.this.mEditText.getText().length() < InputFrame3.this.mLimitCnt) {
                     } else {
                         Context applicationContext = InputFrame3.this.mContext.getApplicationContext();
                         Context applicationContext2 = InputFrame3.this.mContext.getApplicationContext();
@@ -441,7 +441,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8097e1cc", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return true;
         }
         com.taobao.taolive.room.utils.d.a(this.mContext, this.mContext.getString(R.string.taolive_chat_none_flexalocal), 17);
@@ -510,7 +510,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
                 chatMessage.mTimestamp = cgl.j().a();
                 this.mFrameContext.e().a(xkw.EVENT_ADD_ITEM, chatMessage, observeUniqueIdentification());
             }
-            if (TextUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
+            if (StringUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
                 this.mFrameContext.e().a(hfr.HIDE_QUICK_COMMENT_EVENT, null, observeUniqueIdentification());
             }
             phl a2 = phg.a();
@@ -546,12 +546,12 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
                 break;
             }
             Map.Entry<String, String> next = it.next();
-            if (TextUtils.equals(next.getKey(), str)) {
+            if (StringUtils.equals(next.getKey(), str)) {
                 str2 = next.getValue();
                 break;
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         JSONArray jSONArray = new JSONArray();
@@ -599,13 +599,13 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
         if (this.mSyncQuestionLayout.isChecked()) {
             hashMap.put(aw.PARAM_CHAT_RENDERS_ENHANCE, ((CommentsProxy) com.taobao.android.live.plugin.proxy.f.e()).getEnhancedTypeQuestionAnswer());
         }
-        if (!TextUtils.isEmpty(this.mRepliedCommentId)) {
+        if (!StringUtils.isEmpty(this.mRepliedCommentId)) {
             hashMap.put("userReply2UserCommentId", this.mRepliedCommentId);
         }
-        if (!TextUtils.isEmpty(this.mCommentType)) {
-            if (TextUtils.equals(this.mCommentType, Constants.PARAM_REPLY) || TextUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
+        if (!StringUtils.isEmpty(this.mCommentType)) {
+            if (StringUtils.equals(this.mCommentType, Constants.PARAM_REPLY) || StringUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT)) {
                 hashMap.put("comment_type", this.mCommentType);
-            } else if (this.mEditText != null && !TextUtils.isEmpty(this.mEditText.getRecentlyPasteText()) && TextUtils.equals(this.mEditText.getRecentlyPasteText(), this.mEditText.getText().toString())) {
+            } else if (this.mEditText != null && !StringUtils.isEmpty(this.mEditText.getRecentlyPasteText()) && StringUtils.equals(this.mEditText.getRecentlyPasteText(), this.mEditText.getText().toString())) {
                 hashMap.put("comment_type", "paste");
             } else {
                 hashMap.put("comment_type", "normal");
@@ -635,7 +635,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5bd944f6", new Object[]{this, str, map, strArr});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ArrayList arrayList = new ArrayList();
             if (strArr != null && strArr.length != 0) {
@@ -656,9 +656,9 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
             }
             sb2.append(str2);
             arrayList.add(sb2.toString());
-            if (TextUtils.equals(this.mCommentType, Constants.PARAM_REPLY)) {
+            if (StringUtils.equals(this.mCommentType, Constants.PARAM_REPLY)) {
                 arrayList.add("comment_type=" + this.mCommentType);
-            } else if (TextUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT) && this.inputQuickCommentController != null) {
+            } else if (StringUtils.equals(this.mCommentType, hfs.COMMENT_TYPE_CONVENIENT) && this.inputQuickCommentController != null) {
                 QuickCommReport quickCommentReport = getQuickCommentReport();
                 if (quickCommentReport != null) {
                     arrayList.add(ag.ARG_ITEM_ID + quickCommentReport.itemId);
@@ -668,7 +668,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
                 arrayList.add("comment_type=" + this.mCommentType);
             } else if (map != null && hfv.KEY_ADD_ONE.equals(map.get("commentType"))) {
                 arrayList.add("comment_type=addOne");
-            } else if (this.mEditText != null && !TextUtils.isEmpty(this.mEditText.getRecentlyPasteText()) && TextUtils.equals(this.mEditText.getRecentlyPasteText(), this.mEditText.getText().toString())) {
+            } else if (this.mEditText != null && !StringUtils.isEmpty(this.mEditText.getRecentlyPasteText()) && StringUtils.equals(this.mEditText.getRecentlyPasteText(), this.mEditText.getText().toString())) {
                 arrayList.add("comment_type=paste");
             } else {
                 arrayList.add("comment_type=normal");
@@ -689,7 +689,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
             return;
         }
         super.showKeyBoard();
-        if (TextUtils.equals(this.mInputType, TYPE_LIVE_LINK)) {
+        if (StringUtils.equals(this.mInputType, TYPE_LIVE_LINK)) {
             return;
         }
         HashMap hashMap = new HashMap();
@@ -717,7 +717,7 @@ public class InputFrame3 extends AbsInputFrame2 implements ddv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("600a8431", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mEditText.setText(str);
             this.mEditText.setSelection(str.length());

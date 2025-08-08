@@ -3,7 +3,7 @@ package com.taobao.search.musie.component;
 import android.content.Context;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -114,7 +114,7 @@ public class MusShopInfo extends UINode {
             if (isDarkMode()) {
                 jSONObject.put(e.KEY_BG_COLOR, "#333333");
             }
-            if (!TextUtils.isEmpty(jSONObject.getString(e.KEY_BG_COLOR))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(e.KEY_BG_COLOR))) {
                 setExtra("background", com.taobao.search.mmd.uikit.shopinfo.a.a(jSONObject));
             } else {
                 setExtra("background", null);
@@ -158,10 +158,10 @@ public class MusShopInfo extends UINode {
         if (bVar == null) {
             return;
         }
-        if (TextUtils.equals(str, EXTRA_DRAW_LIST)) {
+        if (StringUtils.equals(str, EXTRA_DRAW_LIST)) {
             bVar.b();
             bVar.a((List) obj2);
-        } else if (!TextUtils.equals(str, "background")) {
+        } else if (!StringUtils.equals(str, "background")) {
         } else {
             bVar.a((com.taobao.search.mmd.uikit.shopinfo.a) obj2);
         }
@@ -250,7 +250,7 @@ public class MusShopInfo extends UINode {
                 break;
             }
             c cVar = list2.get(i10);
-            if (!TextUtils.isEmpty(cVar.b()) && cVar.f() > 0 && cVar.g() > 0) {
+            if (!StringUtils.isEmpty(cVar.b()) && cVar.f() > 0 && cVar.g() > 0) {
                 int h = cVar.h();
                 if (h <= 0) {
                     h = b.g;
@@ -281,7 +281,7 @@ public class MusShopInfo extends UINode {
                 str = str3;
                 i6 = size;
                 i4 = i8;
-                if (!TextUtils.isEmpty(cVar.c())) {
+                if (!StringUtils.isEmpty(cVar.c())) {
                     textPaint2.setFakeBoldText(cVar.j());
                     textPaint2.setTextSize(j.b(cVar.e()));
                     float measureText2 = textPaint2.measureText(cVar.c());
@@ -304,7 +304,7 @@ public class MusShopInfo extends UINode {
                         list2 = list;
                         size = i6;
                         str3 = str;
-                    } else if (TextUtils.equals(Constants.Name.SUFFIX, cVar.d())) {
+                    } else if (StringUtils.equals(Constants.Name.SUFFIX, cVar.d())) {
                         float measureText3 = textPaint2.measureText("...");
                         if (textPaint2.breakText(cVar.c(), true, f2 - measureText3, fArr) > 2) {
                             com.taobao.search.mmd.uikit.shopinfo.e eVar3 = new com.taobao.search.mmd.uikit.shopinfo.e(textPaint2, false);

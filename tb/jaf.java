@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.t;
@@ -22,7 +22,7 @@ public class jaf implements jae {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8c8e1c1a", new Object[]{this, context, str, jSONObject, str2, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String str4 = null;
             if (jSONObject != null) {
@@ -30,7 +30,7 @@ public class jaf implements jae {
             }
             if ("post".equals(str2)) {
                 Bundle bundle = new Bundle();
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     try {
                         bundle.putString("postdata", Uri.encode(str4));
                     } catch (Exception unused) {

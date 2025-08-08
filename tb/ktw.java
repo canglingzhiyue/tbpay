@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -37,7 +37,7 @@ public class ktw {
         jSONObject.put(KEY, (Object) jSONObject2);
         for (ktx ktxVar : this.f30315a) {
             String b = ktxVar.b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 lap.a("CreateCommonParams", "create", "IBizParamsBuilder getKey 返回空，请检查 ： " + ktxVar.getClass().getName());
             } else {
                 jSONObject2.put(b, (Object) ktxVar.a());

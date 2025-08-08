@@ -1,7 +1,7 @@
 package com.alipay.android.msp.core;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ariver.kernel.RVConstants;
 import com.alibaba.fastjson.JSON;
@@ -156,7 +156,7 @@ public class AlertIntelligenceEngine {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("38873cb1", new Object[]{map, str, str2});
-        } else if (map == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (map == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             map.put(str, str2);
         }
@@ -229,7 +229,7 @@ public class AlertIntelligenceEngine {
         } else {
             HashMap hashMap = new HashMap(8);
             hashMap.put("trace", mspContext.getAlertIntelligenceId());
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("session_id", str);
             }
             String bizType = TradeCollector.getBizType(mspContext.getBizId());
@@ -273,25 +273,25 @@ public class AlertIntelligenceEngine {
         } else {
             HashMap hashMap = new HashMap(8);
             hashMap.put("trace", mspContext.getAlertIntelligenceId());
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 hashMap.put("trade_no", str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 hashMap.put("session_id", str2);
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 hashMap.put("out_trade_no", str3);
             }
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 hashMap.put(MspDBHelper.BizEntry.COLUMN_NAME_PID, str4);
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 hashMap.put("biz_type", str5);
             }
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 hashMap.put("end_code", str6);
             }
-            if (!TextUtils.isEmpty(str7)) {
+            if (!StringUtils.isEmpty(str7)) {
                 hashMap.put(MspDBHelper.BizEntry.COLUMN_NAME_END_PAGE, str7);
             }
             try {
@@ -387,7 +387,7 @@ public class AlertIntelligenceEngine {
             }
             String alertIntelligenceId = mspContext.getAlertIntelligenceId();
             final String alertIntelligenceToken = mspContext.getAlertIntelligenceToken();
-            if (TextUtils.isEmpty(alertIntelligenceToken)) {
+            if (StringUtils.isEmpty(alertIntelligenceToken)) {
                 LogUtil.record(8, "AlertIntelligenceEngine.startAction", "token=".concat(String.valueOf(alertIntelligenceToken)));
                 return;
             }
@@ -406,11 +406,11 @@ public class AlertIntelligenceEngine {
             if (mspContext.getMspUIClient() != null) {
                 MspWindowClient mspWindowClient = (MspWindowClient) mspContext.getMspUIClient();
                 MspWindowFrame currentWindowFrame = mspWindowClient != null ? mspWindowClient.getCurrentWindowFrame() : null;
-                str7 = (currentWindowFrame == null || !TextUtils.isEmpty(str4)) ? str4 : currentWindowFrame.getFrameId();
-                if (currentWindowFrame != null && TextUtils.isEmpty(str5)) {
+                str7 = (currentWindowFrame == null || !StringUtils.isEmpty(str4)) ? str4 : currentWindowFrame.getFrameId();
+                if (currentWindowFrame != null && StringUtils.isEmpty(str5)) {
                     str8 = currentWindowFrame.getTplId();
                     final String[] strArr = {alertIntelligenceId, str7, str8, sb.toString(), str6};
-                    LogUtil.i("AlertIntelligenceEngine", RVConstants.EXTRA_PREPARE_START_ACTION, "trace=" + TextUtils.join(",", strArr));
+                    LogUtil.i("AlertIntelligenceEngine", RVConstants.EXTRA_PREPARE_START_ACTION, "trace=" + StringUtils.join(",", strArr));
                     TaskHelper.executeForAI(new Runnable() { // from class: com.alipay.android.msp.core.AlertIntelligenceEngine.3
                         public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -422,7 +422,7 @@ public class AlertIntelligenceEngine {
                                 return;
                             }
                             try {
-                                PhoneCashierMspEngine.getDataCollectorEngine().addFlowNode("payservice", alertIntelligenceToken, str, str2, TextUtils.isEmpty(str3) ? "" : str3, strArr);
+                                PhoneCashierMspEngine.getDataCollectorEngine().addFlowNode("payservice", alertIntelligenceToken, str, str2, StringUtils.isEmpty(str3) ? "" : str3, strArr);
                             } catch (Throwable th) {
                                 LogUtil.printExceptionStackTrace(th);
                             }
@@ -444,7 +444,7 @@ public class AlertIntelligenceEngine {
             }
             str8 = str5;
             final String[] strArr2 = {alertIntelligenceId, str7, str8, sb.toString(), str6};
-            LogUtil.i("AlertIntelligenceEngine", RVConstants.EXTRA_PREPARE_START_ACTION, "trace=" + TextUtils.join(",", strArr2));
+            LogUtil.i("AlertIntelligenceEngine", RVConstants.EXTRA_PREPARE_START_ACTION, "trace=" + StringUtils.join(",", strArr2));
             TaskHelper.executeForAI(new Runnable() { // from class: com.alipay.android.msp.core.AlertIntelligenceEngine.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -456,7 +456,7 @@ public class AlertIntelligenceEngine {
                         return;
                     }
                     try {
-                        PhoneCashierMspEngine.getDataCollectorEngine().addFlowNode("payservice", alertIntelligenceToken, str, str2, TextUtils.isEmpty(str3) ? "" : str3, strArr2);
+                        PhoneCashierMspEngine.getDataCollectorEngine().addFlowNode("payservice", alertIntelligenceToken, str, str2, StringUtils.isEmpty(str3) ? "" : str3, strArr2);
                     } catch (Throwable th2) {
                         LogUtil.printExceptionStackTrace(th2);
                     }
@@ -487,10 +487,10 @@ public class AlertIntelligenceEngine {
             }
             if (mspContext.getMspUIClient() != null) {
                 MspWindowFrame currentWindowFrame = ((MspWindowClient) mspContext.getMspUIClient()).getCurrentWindowFrame();
-                if (currentWindowFrame != null && TextUtils.isEmpty(str4)) {
+                if (currentWindowFrame != null && StringUtils.isEmpty(str4)) {
                     str4 = currentWindowFrame.getFrameId();
                 }
-                if (currentWindowFrame != null && TextUtils.isEmpty(str5)) {
+                if (currentWindowFrame != null && StringUtils.isEmpty(str5)) {
                     str5 = currentWindowFrame.getTplId();
                 }
             }
@@ -512,7 +512,7 @@ public class AlertIntelligenceEngine {
             }
             mQPBehaviorActionSeqModel.setPage_name(str5);
             mQPBehaviorActionSeqModel.setService_stack(sb.toString());
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 mQPBehaviorActionSeqModel.setExt(str6);
             }
             String format = ThreadSafeDateFormat.format(new Date(), "yyyy-MM-dd HH:mm:ss:SSS");
@@ -623,7 +623,7 @@ public class AlertIntelligenceEngine {
         if (drmValueFromKey != null && drmValueFromKey.containsKey(a.ATOM_length)) {
             i = drmValueFromKey.getInteger(a.ATOM_length).intValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             jSONObject.put("data", (Object) "");
         } else if (str2.length() > i) {
             try {
@@ -771,13 +771,13 @@ public class AlertIntelligenceEngine {
                         sb.append(str);
                         sb.append("jsCodeCache:");
                         String str2 = "NULL";
-                        sb.append(TextUtils.isEmpty(readCache) ? str2 : readCache);
+                        sb.append(StringUtils.isEmpty(readCache) ? str2 : readCache);
                         LogUtil.record(2, "BN_probe#injectJsCode", sb.toString());
-                        if (TextUtils.isEmpty(readCache) || (parseObject = JSON.parseObject(readCache)) == null || !parseObject.containsKey(str)) {
+                        if (StringUtils.isEmpty(readCache) || (parseObject = JSON.parseObject(readCache)) == null || !parseObject.containsKey(str)) {
                             return;
                         }
                         String string = parseObject.getString(str);
-                        if (!TextUtils.isEmpty(string)) {
+                        if (!StringUtils.isEmpty(string)) {
                             str2 = string;
                         }
                         LogUtil.record(2, "BN_probe#excuteJs", str2);

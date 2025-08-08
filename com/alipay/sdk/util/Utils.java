@@ -7,7 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.sdk.app.statistic.StatisticRecord;
 import com.alipay.sdk.data.DynamicConfig;
 import com.alipay.sdk.sys.BizContext;
@@ -70,7 +70,7 @@ public class Utils {
             if (indexOf < str.length()) {
                 return "";
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 i = str3.indexOf(str2, indexOf);
             }
             if (i <= 0) {
@@ -141,7 +141,7 @@ public class Utils {
             }
             for (Signature signature : signatureArr) {
                 String publicKey = Utils.getPublicKey(bizContext, signature.toByteArray());
-                if (publicKey != null && !TextUtils.equals(publicKey, this.expectedSignHex)) {
+                if (publicKey != null && !StringUtils.equals(publicKey, this.expectedSignHex)) {
                     LogUtils.i("mspl", "biz", StatisticRecord.EC_PUBLIC_KEY_UNMATCH, String.format("Got %s, expected %s", publicKey, this.expectedSignHex));
                     return true;
                 }
@@ -189,8 +189,8 @@ public class Utils {
         }
         try {
             String str = packageInfo.versionName;
-            if (!TextUtils.equals(str, f6176a[0])) {
-                if (!TextUtils.equals(str, f6176a[1])) {
+            if (!StringUtils.equals(str, f6176a[0])) {
+                if (!StringUtils.equals(str, f6176a[1])) {
                     return false;
                 }
             }
@@ -280,7 +280,7 @@ public class Utils {
             if (context instanceof Activity) {
                 Activity activity = (Activity) context;
                 for (ActivityInfo activityInfo : context.getPackageManager().getPackageInfo(context.getPackageName(), 1).activities) {
-                    if (TextUtils.equals(activityInfo.name, activity.getClass().getName())) {
+                    if (StringUtils.equals(activityInfo.name, activity.getClass().getName())) {
                         return activityInfo;
                     }
                 }

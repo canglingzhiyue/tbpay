@@ -2,7 +2,7 @@ package com.taobao.android.tbuprofen.adapter.anr;
 
 import android.os.Message;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transportext.biz.diagnose.network.Configuration;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -143,7 +143,7 @@ public class d {
         if (this.c != 1) {
             this.c = 1;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Integer num = this.m.get(str);
@@ -230,7 +230,7 @@ public class d {
                 Object obj = this.l;
                 if (obj != null && this.c != 2) {
                     String a2 = f.a(obj, this.k);
-                    if (!TextUtils.isEmpty(a2)) {
+                    if (!StringUtils.isEmpty(a2)) {
                         sb.append(" obj:");
                         sb.append(a2);
                     }

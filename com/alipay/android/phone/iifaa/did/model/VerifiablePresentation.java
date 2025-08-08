@@ -1,6 +1,6 @@
 package com.alipay.android.phone.iifaa.did.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Arrays;
@@ -33,7 +33,7 @@ public class VerifiablePresentation {
             return (VerifiablePresentation) ipChange.ipc$dispatch("d6dcb9d6", new Object[]{this, str, str2, str3});
         }
         this.proof = new Proof(str, str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             this.proof.setChallenge(str3);
         }
         return this;

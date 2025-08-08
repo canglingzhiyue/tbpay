@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -392,7 +392,7 @@ public final class a implements e {
             }
         } else {
             String a5 = result.a(this.i);
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 a(a5, result.j(), 0L, TipShowMsg.TipShowType.TEXT_TYPE);
             } else {
                 a(this.e, 0L, TipShowMsg.TipShowType.TEXT_TYPE);

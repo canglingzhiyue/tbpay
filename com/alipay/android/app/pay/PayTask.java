@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.selftest.SelfTestManager;
 import com.alipay.android.msp.core.MspEngine;
@@ -177,7 +177,7 @@ public class PayTask extends MspAsyncTask<Object, Void, MspResult> {
             return null;
         }
         String obj = objArr[0].toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             return null;
         }
         if (objArr.length >= 2 && objArr[1] != null) {
@@ -212,7 +212,7 @@ public class PayTask extends MspAsyncTask<Object, Void, MspResult> {
                         startPay = MspEngine.startPay(new MspPaySession(str, str2, false));
                     }
                 } else {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         str = str + "&bizcontext=\"{\"biz_type\":\"payment_setting\"}\"";
                     }
                     MspEngine.startPay(new MspPaySession(str, null, false));
@@ -333,10 +333,10 @@ public class PayTask extends MspAsyncTask<Object, Void, MspResult> {
             }
         }
         String str6 = "extern_token=\"" + str + "\"&trade_no=\"" + str2 + "\"&app_name=\"tb\"&partner=\"TAOBAO_PARTNER_ORDER\"";
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str6 = str6 + "&appevn=\"" + str3 + "\"";
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return str6;
         }
         return str6 + "&payPhaseId=\"" + str4 + "\"";
@@ -355,16 +355,16 @@ public class PayTask extends MspAsyncTask<Object, Void, MspResult> {
         if (this.x == null) {
             return;
         }
-        if (mspResult != null && TextUtils.equals(mspResult.resultStatus, "9000")) {
+        if (mspResult != null && StringUtils.equals(mspResult.resultStatus, "9000")) {
             OnPayListener onPayListener = this.x;
             if (onPayListener instanceof TaoBaoOnPayListener) {
                 ((TaoBaoOnPayListener) onPayListener).onTaoBaoPaySuccess(this.activity, mspResult.resultStatus, mspResult.memo, mspResult.result, mspResult.openTime, mspResult.netError, mspResult.extendInfo);
             } else {
                 onPayListener.onPaySuccess(this.activity, mspResult.resultStatus, mspResult.memo, mspResult.result);
             }
-        } else if (mspResult != null && TextUtils.equals(mspResult.resultStatus, "10000")) {
+        } else if (mspResult != null && StringUtils.equals(mspResult.resultStatus, "10000")) {
             String str3 = mspResult.result;
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 str3 = str3.replace("BANK_CARD-", "BANK_CARD;");
             }
             String str4 = str3;

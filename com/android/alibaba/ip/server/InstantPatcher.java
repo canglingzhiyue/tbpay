@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.common.IPatchVerifier;
@@ -136,7 +136,7 @@ public class InstantPatcher {
             return;
         }
         this.mDisabledClazzes.put(str, list);
-        if (list.size() <= 0 || TextUtils.isEmpty(str)) {
+        if (list.size() <= 0 || StringUtils.isEmpty(str)) {
             return;
         }
         PreferencesUtils.putString(this.context, PATCH_INFO_FILE_NAME, INSTANT_DISABLED_CLAZZES, JSON.toJSONString(this.mDisabledClazzes)).apply();
@@ -154,7 +154,7 @@ public class InstantPatcher {
             return;
         }
         final PatchInfo patchInfo = getPatchInfo();
-        if (TextUtils.isEmpty(patchInfo.baseVersion)) {
+        if (StringUtils.isEmpty(patchInfo.baseVersion)) {
             Log.e("InstantPatcher", "no patch");
             return;
         }
@@ -329,7 +329,7 @@ public class InstantPatcher {
             } catch (Exception e) {
                 e = e;
             }
-            if (TextUtils.isEmpty(str) || !new File(str).exists()) {
+            if (StringUtils.isEmpty(str) || !new File(str).exists()) {
                 handled = false;
                 return patchResult;
             } else if (this.patchVerifier != null && !isApkInDebug() && !this.patchVerifier.authenticate(new File(str))) {
@@ -629,7 +629,7 @@ public class InstantPatcher {
                     this.patchLoaderListener.onLoadAllFinish(true);
                 }
             } catch (Exception e) {
-                if (!(e instanceof ClassNotFoundException) || TextUtils.isEmpty(e.getMessage()) || !e.getMessage().contains("com.android.alibaba.ip.runtime.AppPatchesLoaderImpl")) {
+                if (!(e instanceof ClassNotFoundException) || StringUtils.isEmpty(e.getMessage()) || !e.getMessage().contains("com.android.alibaba.ip.runtime.AppPatchesLoaderImpl")) {
                     return;
                 }
                 Log.e("InstantPatcher", "add system class from ApkLoader");
@@ -660,7 +660,7 @@ public class InstantPatcher {
             return this.mDisabledClazzes.get(String.valueOf(i));
         }
         String string = PreferencesUtils.getString(this.context, PATCH_INFO_FILE_NAME, INSTANT_DISABLED_CLAZZES);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return new ArrayList();
         }
         this.mDisabledClazzes = (Map) JSON.parseObject(string, Map.class);
@@ -682,7 +682,7 @@ public class InstantPatcher {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a0f563aa", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

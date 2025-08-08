@@ -7,7 +7,7 @@ import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -251,7 +251,7 @@ public class FpFullViewDialog implements IHardwarePayDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.b == null || TextUtils.isEmpty(str)) {
+        } else if (this.b == null || StringUtils.isEmpty(str)) {
         } else {
             this.b.postDelayed(new Runnable() { // from class: com.alipay.android.msp.framework.hardwarepay.base.FpFullViewDialog.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -416,7 +416,7 @@ public class FpFullViewDialog implements IHardwarePayDialog {
             linearLayout.requestFocus();
             linearLayout.requestFocusFromTouch();
             this.b = (TextView) linearLayout.findViewById(R.id.fp_fullview_dialog_tips);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.b.setText(LanguageHelper.localizedStringForKey("flybird_fp_tips", activity.getString(R.string.flybird_fp_tips), new Object[0]));
             } else {
                 this.b.setText(str);
@@ -520,9 +520,9 @@ public class FpFullViewDialog implements IHardwarePayDialog {
         } catch (Throwable th) {
             LogUtil.printExceptionStackTrace(th);
         }
-        if (TextUtils.equals(lowerCase, "oppo")) {
+        if (StringUtils.equals(lowerCase, "oppo")) {
             return true;
         }
-        return TextUtils.equals(lowerCase, DeviceProperty.ALIAS_ONEPLUS);
+        return StringUtils.equals(lowerCase, DeviceProperty.ALIAS_ONEPLUS);
     }
 }

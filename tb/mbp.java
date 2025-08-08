@@ -5,7 +5,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
@@ -174,9 +174,9 @@ public class mbp {
                     }
                 }
             });
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 String string = Globals.getApplication().getResources().getString(R.string.afc_flout_toast);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     ((TextView) inflate.findViewById(R.id.confirm_title)).setText(string + str2);
                 }
             }

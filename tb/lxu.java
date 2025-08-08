@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.h;
@@ -47,7 +47,7 @@ public class lxu {
         StringBuilder sb = new StringBuilder(600);
         for (String str2 : jSONObject.keySet()) {
             String string = jSONObject.getString(str2);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 if (string.length() > 2048) {
                     TBS.Ext.commitEvent(str, 19999, "super_long_args", str2);
                 }

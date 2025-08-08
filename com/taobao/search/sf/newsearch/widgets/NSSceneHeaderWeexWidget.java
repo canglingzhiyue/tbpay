@@ -6,7 +6,7 @@ import android.os.Build;
 import android.support.v4.view.NestedScrollingParent2;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -284,7 +284,7 @@ public final class NSSceneHeaderWeexWidget extends SearchSceneEnhancedWeexModWid
                 return;
             }
             q.a((Object) b2, "FastJsonParseUtil.optJSO…model, \"style\") ?: return");
-            this.h = TextUtils.equals(b2.getString(nom.KEY_IMMERSE_STYLE), nom.VALUE_YES);
+            this.h = StringUtils.equals(b2.getString(nom.KEY_IMMERSE_STYLE), nom.VALUE_YES);
             JSONObject jSONObject2 = weexBean.extraStatus;
             q.a((Object) jSONObject2, "bean.extraStatus");
             jSONObject2.put((JSONObject) nom.KEY_IMMERSE_STYLE, String.valueOf(this.h));
@@ -293,7 +293,7 @@ public final class NSSceneHeaderWeexWidget extends SearchSceneEnhancedWeexModWid
             this.n = Integer.valueOf(SFPromotionBean.a(b2.getString("statusBarStyle")));
             String string = b2.getString("width");
             String string2 = b2.getString("height");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             int b3 = g.b(string, -1);

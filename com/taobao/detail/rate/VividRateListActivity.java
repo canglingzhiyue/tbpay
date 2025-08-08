@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.alibaba.fastjson.JSONObject;
@@ -88,7 +88,7 @@ public class VividRateListActivity extends CustomBaseActivity implements RateFee
         }
         super.onCreate(bundle);
         this.d = a(getIntent());
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             setTitle(a.a(R.string.rate_rate));
         } else {
             setTitle(this.c);
@@ -147,32 +147,32 @@ public class VividRateListActivity extends CustomBaseActivity implements RateFee
             if (!a2.isEmpty()) {
                 for (String str9 : a2) {
                     String str10 = str3;
-                    if (!TextUtils.isEmpty(str9)) {
-                        if (TextUtils.isEmpty(str5) && str9.equalsIgnoreCase(str4)) {
+                    if (!StringUtils.isEmpty(str9)) {
+                        if (StringUtils.isEmpty(str5) && str9.equalsIgnoreCase(str4)) {
                             str5 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(str6) && str9.equalsIgnoreCase("invokeSource")) {
+                        } else if (StringUtils.isEmpty(str6) && str9.equalsIgnoreCase("invokeSource")) {
                             str6 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(str7) && str9.equalsIgnoreCase("feedId")) {
+                        } else if (StringUtils.isEmpty(str7) && str9.equalsIgnoreCase("feedId")) {
                             str7 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(str8) && "rateTitle".equals(str9)) {
+                        } else if (StringUtils.isEmpty(str8) && "rateTitle".equals(str9)) {
                             str8 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(stringExtra5) && "foldFlag".equals(str9)) {
+                        } else if (StringUtils.isEmpty(stringExtra5) && "foldFlag".equals(str9)) {
                             stringExtra5 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(stringExtra6) && str9.equalsIgnoreCase("expression")) {
+                        } else if (StringUtils.isEmpty(stringExtra6) && str9.equalsIgnoreCase("expression")) {
                             stringExtra6 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(stringExtra7) && str9.equalsIgnoreCase("sellId")) {
+                        } else if (StringUtils.isEmpty(stringExtra7) && str9.equalsIgnoreCase("sellId")) {
                             stringExtra7 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(stringExtra8) && str9.equalsIgnoreCase("shopId")) {
+                        } else if (StringUtils.isEmpty(stringExtra8) && str9.equalsIgnoreCase("shopId")) {
                             stringExtra8 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(stringExtra9) && str9.equalsIgnoreCase("skuVids")) {
+                        } else if (StringUtils.isEmpty(stringExtra9) && str9.equalsIgnoreCase("skuVids")) {
                             stringExtra9 = data.getQueryParameter(str9);
-                        } else if (TextUtils.isEmpty(stringExtra10) && str9.equalsIgnoreCase("selectTag")) {
+                        } else if (StringUtils.isEmpty(stringExtra10) && str9.equalsIgnoreCase("selectTag")) {
                             stringExtra10 = data.getQueryParameter(str9);
                         } else {
                             str2 = str4;
                             if ("pageName".equals(str9)) {
                                 this.f17004a = data.getQueryParameter(str9);
-                                if (!TextUtils.isEmpty(this.f17004a)) {
+                                if (!StringUtils.isEmpty(this.f17004a)) {
                                     setUTPageName(this.f17004a);
                                 }
                             }
@@ -254,7 +254,7 @@ public class VividRateListActivity extends CustomBaseActivity implements RateFee
         } catch (Throwable th6) {
             bpp.a().commitFailure("rateList", "setRateKeywords", "1.0", "rateList", "", null, "setRateKeywords", th6.toString());
         }
-        if (TextUtils.isEmpty(aVar.a())) {
+        if (StringUtils.isEmpty(aVar.a())) {
             return null;
         }
         return aVar.b();

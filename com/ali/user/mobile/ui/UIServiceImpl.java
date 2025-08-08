@@ -1,7 +1,7 @@
 package com.ali.user.mobile.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.base.ui.BaseActivity;
 import com.ali.user.mobile.service.UIService;
 import com.ali.user.mobile.webview.WebViewActivity;
@@ -45,7 +45,7 @@ public class UIServiceImpl implements UIService {
         } else if (!(context instanceof WebViewActivity)) {
         } else {
             WebViewActivity webViewActivity = (WebViewActivity) context;
-            if (TextUtils.equals(str, d.CLOSE_TYPE_SKIP)) {
+            if (StringUtils.equals(str, d.CLOSE_TYPE_SKIP)) {
                 webViewActivity.switchSkipMenu(z);
             } else {
                 webViewActivity.switchHelpMenu(z, str);

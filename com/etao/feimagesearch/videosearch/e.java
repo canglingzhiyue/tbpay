@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.videosearch;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -29,7 +29,7 @@ public class e {
             return (e) ipChange.ipc$dispatch("d1a721f3", new Object[0]);
         }
         String b = com.etao.feimagesearch.config.b.b(CONFIG_NAME, "");
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return null;
         }
         try {
@@ -50,6 +50,6 @@ public class e {
 
     private boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.e) && this.f7047a != 0 && this.b != 0 && !TextUtils.isEmpty(this.c) && !TextUtils.isEmpty(this.d);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.e) && this.f7047a != 0 && this.b != 0 && !StringUtils.isEmpty(this.c) && !StringUtils.isEmpty(this.d);
     }
 }

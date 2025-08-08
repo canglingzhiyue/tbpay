@@ -2,7 +2,7 @@ package com.huawei.hms.utils;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hianalytics.process.HiAnalyticsConfig;
 import com.huawei.hianalytics.process.HiAnalyticsInstance;
 import com.huawei.hianalytics.process.HiAnalyticsManager;
@@ -43,7 +43,7 @@ public class HMSBIInitializer {
 
         @Override // com.huawei.hms.framework.network.grs.IQueryUrlCallBack
         public void onCallBackSuccess(String str) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (!HMSBIInitializer.this.c) {
                     HmsHiAnalyticsUtils.init(HMSBIInitializer.this.f7584a, false, false, false, str, "com.huawei.hwid");
                 } else {
@@ -120,10 +120,10 @@ public class HMSBIInitializer {
     public void initHaSDK() {
         if (this.b.compareAndSet(false, true)) {
             String issueCountryCode = GrsApp.getInstance().getIssueCountryCode(this.f7584a);
-            if (!TextUtils.isEmpty(issueCountryCode)) {
+            if (!StringUtils.isEmpty(issueCountryCode)) {
                 issueCountryCode = issueCountryCode.toUpperCase(Locale.ENGLISH);
             }
-            if (!"UNKNOWN".equalsIgnoreCase(issueCountryCode) && !TextUtils.isEmpty(issueCountryCode)) {
+            if (!"UNKNOWN".equalsIgnoreCase(issueCountryCode) && !StringUtils.isEmpty(issueCountryCode)) {
                 new b(this, null).execute(issueCountryCode);
                 return;
             }

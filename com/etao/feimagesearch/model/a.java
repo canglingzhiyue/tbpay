@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.al;
@@ -63,12 +63,12 @@ public class a extends e {
 
     public boolean isShowVideo() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa668bff", new Object[]{this})).booleanValue() : TextUtils.equals("true", this.b.get("album_show_video"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("aa668bff", new Object[]{this})).booleanValue() : StringUtils.equals("true", this.b.get("album_show_video"));
     }
 
     public boolean isDirectJumpAfterChoose() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3c7d775d", new Object[]{this})).booleanValue() : TextUtils.equals("true", this.b.get("direct_jump_after_album_choose"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3c7d775d", new Object[]{this})).booleanValue() : StringUtils.equals("true", this.b.get("direct_jump_after_album_choose"));
     }
 
     @Override // com.etao.feimagesearch.model.e
@@ -151,7 +151,7 @@ public class a extends e {
             return ((Number) ipChange.ipc$dispatch("60064dfb", new Object[]{this})).intValue();
         }
         String str = this.b.get("album_ar_type");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         try {

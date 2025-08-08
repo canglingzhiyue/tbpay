@@ -3,7 +3,7 @@ package com.taobao.bootimage.view;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -217,7 +217,7 @@ public class f extends b {
                 imageView.setVisibility(8);
                 imageView2.setVisibility(8);
             }
-            if (bootImageInfo != null && !TextUtils.isEmpty(bootImageInfo.videoLocalPath)) {
+            if (bootImageInfo != null && !StringUtils.isEmpty(bootImageInfo.videoLocalPath)) {
                 a(context);
             }
             this.r = (FrameLayout) this.g.findViewById(R.id.interact_view_container);
@@ -326,7 +326,7 @@ public class f extends b {
             return false;
         }
         final String a2 = a(this.h);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             kej.a("BootImageCommercialVideoController", "show video failed: imgUrl is null");
             return false;
         }
@@ -458,7 +458,7 @@ public class f extends b {
                     if (imageView != null) {
                         imageView.setVisibility(8);
                     }
-                    if (TextUtils.isEmpty(this.h.imgUrl) && this.d != null) {
+                    if (StringUtils.isEmpty(this.h.imgUrl) && this.d != null) {
                         kej.a("BootImageCommercialVideoController", "show video without default image. So on success");
                         this.d.a();
                         break;
@@ -504,10 +504,10 @@ public class f extends b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a9ec94d2", new Object[]{this, bootImageInfo});
         }
-        if (TextUtils.isEmpty(bootImageInfo.imgUrl)) {
+        if (StringUtils.isEmpty(bootImageInfo.imgUrl)) {
             kej.a("BootImageCommercialVideoController", "没有兜底图，直接返回空，不满足闪屏展示条件");
             return null;
-        } else if (!TextUtils.isEmpty(bootImageInfo.firstFrameImageUrl) && !TextUtils.isEmpty(bootImageInfo.videoLocalPath)) {
+        } else if (!StringUtils.isEmpty(bootImageInfo.firstFrameImageUrl) && !StringUtils.isEmpty(bootImageInfo.videoLocalPath)) {
             return bootImageInfo.firstFrameImageUrl;
         } else {
             return bootImageInfo.imgUrl;
@@ -642,14 +642,14 @@ public class f extends b {
             return;
         }
         a(succPhenixEvent.getDrawable());
-        if (!TextUtils.isEmpty(this.h.videoLocalPath)) {
+        if (!StringUtils.isEmpty(this.h.videoLocalPath)) {
             if (!e() || !f()) {
                 b(this.h);
             }
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("playService failed to start. videoPath is empty:");
-            sb.append(TextUtils.isEmpty(this.h.videoLocalPath));
+            sb.append(StringUtils.isEmpty(this.h.videoLocalPath));
             sb.append(" mPlayerView == null :");
             sb.append(this.n == null);
             sb.append(" mPlayService == null :");
@@ -672,7 +672,7 @@ public class f extends b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("692fed9a", new Object[]{this, textView, bootImageInfo});
-        } else if (textView == null || bootImageInfo == null || TextUtils.isEmpty(bootImageInfo.closeTxt)) {
+        } else if (textView == null || bootImageInfo == null || StringUtils.isEmpty(bootImageInfo.closeTxt)) {
         } else {
             textView.setText(bootImageInfo.closeTxt);
         }

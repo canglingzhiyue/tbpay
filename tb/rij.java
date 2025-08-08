@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class rij {
         }
         try {
             String str3 = "default_params_" + str;
-            if (!TextUtils.equals("20002", str) && !TextUtils.equals("guangguang", str) && !TextUtils.equals("ggdiscuss", str)) {
+            if (!StringUtils.equals("20002", str) && !StringUtils.equals("guangguang", str) && !StringUtils.equals("ggdiscuss", str)) {
                 str2 = "";
                 return JSON.parseObject(OrangeConfig.getInstance().getConfig("dx_comment_qk", str3, str2));
             }

@@ -2,7 +2,7 @@ package com.taobao.android.fluid.core;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.core.Component;
@@ -1169,10 +1169,10 @@ public final class FluidInstanceConfig {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("31c5c3d7", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return str;
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return str + "_" + str2;
         }
         return str + "_" + str2 + "@" + str3;
@@ -1183,7 +1183,7 @@ public final class FluidInstanceConfig {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6b5236e4", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         int indexOf = str.indexOf("@");

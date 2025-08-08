@@ -6,7 +6,7 @@ import android.taobao.windvane.config.j;
 import android.taobao.windvane.extra.storage.FirstChunkStorage;
 import android.taobao.windvane.extra.storage.ResponseContext;
 import android.taobao.windvane.extra.uc.prefetch.UCDefaultUserAgent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
@@ -130,7 +130,7 @@ public class FirstTruckCacheSSRService implements mtd {
         if (z) {
             firstChunkStorage.remove();
         }
-        final boolean z2 = read != null && !TextUtils.isEmpty(read.getHtml()) && !z;
+        final boolean z2 = read != null && !StringUtils.isEmpty(read.getHtml()) && !z;
         if (z2) {
             HashMap hashMap = new HashMap();
             hashMap.put("Content-Type", listOf("text/html"));
@@ -162,7 +162,7 @@ public class FirstTruckCacheSSRService implements mtd {
                 }
                 FirstTruckCacheSSRService.access$000(FirstTruckCacheSSRService.this, responseContext, map);
                 if (z2) {
-                    i2 = (!responseContext.isEnable() || !TextUtils.equals(responseContext.getVersion(), read.getVersion())) ? 2 : 1;
+                    i2 = (!responseContext.isEnable() || !StringUtils.equals(responseContext.getVersion(), read.getVersion())) ? 2 : 1;
                 } else if (!z) {
                     i2 = 0;
                 }
@@ -179,7 +179,7 @@ public class FirstTruckCacheSSRService implements mtd {
                 }
                 FirstTruckCacheSSRService.access$200(FirstTruckCacheSSRService.this, mtjVar2.f31244a, i2);
                 AtomicBoolean atomicBoolean3 = atomicBoolean2;
-                if (!z2 || !responseContext.isEnable() || TextUtils.equals(responseContext.getVersion(), read.getVersion())) {
+                if (!z2 || !responseContext.isEnable() || StringUtils.equals(responseContext.getVersion(), read.getVersion())) {
                     z3 = false;
                 }
                 atomicBoolean3.set(z3);
@@ -225,7 +225,7 @@ public class FirstTruckCacheSSRService implements mtd {
                             e.a(rVLLevel2, FirstTruckCacheSSRService.TAG, "toString error: " + e2.getMessage());
                             str = null;
                         }
-                        if (!TextUtils.isEmpty(str) && (indexOf = str.indexOf(FirstTruckCacheSSRService.FCC_SEPARATOR)) >= 0) {
+                        if (!StringUtils.isEmpty(str) && (indexOf = str.indexOf(FirstTruckCacheSSRService.FCC_SEPARATOR)) >= 0) {
                             int i = indexOf + 21;
                             try {
                                 str2 = str.substring(0, i);
@@ -340,25 +340,25 @@ public class FirstTruckCacheSSRService implements mtd {
         }
         if (treeMap.containsKey(RESPONSE_HEADER_ENABLE_FCC) && (list4 = (List) treeMap.get(RESPONSE_HEADER_ENABLE_FCC)) != null && list4.size() > 0) {
             String str = (String) list4.get(0);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 responseContext.setEnable("true".equals(str));
             }
         }
         if (treeMap.containsKey(RESPONSE_HEADER_FCC_RULE) && (list3 = (List) treeMap.get(RESPONSE_HEADER_FCC_RULE)) != null && list3.size() > 0) {
             String str2 = (String) list3.get(0);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 responseContext.setRule(str2);
             }
         }
         if (treeMap.containsKey(RESPONSE_HEADER_FCC_VERSION) && (list2 = (List) treeMap.get(RESPONSE_HEADER_FCC_VERSION)) != null && list2.size() > 0) {
             String str3 = (String) list2.get(0);
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 responseContext.setVersion(str3);
             }
         }
         if (treeMap.containsKey(RESPONSE_HEADER_FCC_EXPIRED_TIMESTAMP) && (list = (List) treeMap.get(RESPONSE_HEADER_FCC_EXPIRED_TIMESTAMP)) != null && list.size() > 0) {
             String str4 = (String) list.get(0);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 try {
                     responseContext.setExpiredTime(Long.parseLong(str4));
                 } catch (Exception unused) {

@@ -1,6 +1,6 @@
 package com.taobao.android.tblive.gift.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
@@ -50,12 +50,12 @@ public class TBLiveGiftEntity implements Serializable {
 
     public boolean isDataValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d3663cf3", new Object[]{this})).booleanValue() : (this.mGiftId == 0 || TextUtils.isEmpty(this.mSenderNick) || this.mExpireTime == 0 || this.buildPoolTime == 0 || System.currentTimeMillis() - this.buildPoolTime <= this.mExpireTime * 1000) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d3663cf3", new Object[]{this})).booleanValue() : (this.mGiftId == 0 || StringUtils.isEmpty(this.mSenderNick) || this.mExpireTime == 0 || this.buildPoolTime == 0 || System.currentTimeMillis() - this.buildPoolTime <= this.mExpireTime * 1000) ? false : true;
     }
 
     public boolean isBigGift() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bb915351", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.mAnimationMp4);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bb915351", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.mAnimationMp4);
     }
 
     public String toString() {

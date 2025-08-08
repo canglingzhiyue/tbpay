@@ -1,6 +1,6 @@
 package com.taobao.themis.pub_kit.favor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -84,7 +84,7 @@ public class AddFavorClient extends com.taobao.themis.kernel.network.a<AddFavorP
             hashMap.put("miniapp_id", getAppId());
             hashMap.put("page_name", "miniapp_client_container");
             hashMap.put("app_name", "miniapp_client_container");
-            if (!TextUtils.isEmpty(this.spm)) {
+            if (!StringUtils.isEmpty(this.spm)) {
                 hashMap.put("pre_spm_id", this.spm);
             }
             hashMap.put("spm_id", "miniapp_page");

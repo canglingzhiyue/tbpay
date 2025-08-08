@@ -6,7 +6,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.PointF;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -209,7 +209,7 @@ public class FavorCountFrame3 extends BaseFrame implements ddv {
             if (this.mFavorCount > 0 && (textView = this.mFavorCountView) != null && textView.getVisibility() == 0) {
                 str = str + "当前" + this.mFavorCount + "个爱心";
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 str = str + ",";
             }
             this.mRootView.setContentDescription(str + "点赞");
@@ -476,7 +476,7 @@ public class FavorCountFrame3 extends BaseFrame implements ddv {
         String ak = this.mLandscape ? ply.ak() : ply.aj();
         int a2 = com.taobao.taolive.room.utils.d.a(this.mContext, 60.0f) / 2;
         try {
-            if (!TextUtils.isEmpty(ak)) {
+            if (!StringUtils.isEmpty(ak)) {
                 String[] split = ak.split("-");
                 int a3 = com.taobao.taolive.room.utils.d.a(this.mContext, v.b(split[0])) + a2;
                 int a4 = com.taobao.taolive.room.utils.d.a(this.mContext, v.b(split[1])) + a2;

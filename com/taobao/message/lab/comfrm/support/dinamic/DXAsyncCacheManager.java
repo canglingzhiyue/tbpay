@@ -1,7 +1,7 @@
 package com.taobao.message.lab.comfrm.support.dinamic;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public class DXAsyncCacheManager {
                         return;
                     }
                     DXAsyncCacheManager.dxCache.put(String.valueOf(obj.hashCode()), dXRootView);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         DXAsyncCacheManager.dxCache.put(str, dXRootView);
                     }
                     TraceUtil.endTrace();

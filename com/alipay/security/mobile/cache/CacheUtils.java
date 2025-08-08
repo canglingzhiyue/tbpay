@@ -3,7 +3,7 @@ package com.alipay.security.mobile.cache;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -94,7 +94,7 @@ public class CacheUtils {
         }
         this.appSharePref = appContext.getSharedPreferences(APP_SHARED_PREFERENCE_NAME, 0);
         String string = this.appSharePref.getString(cls.getCanonicalName(), "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return (T) JSONObject.parseObject(string, cls);
         }
         return null;
@@ -104,7 +104,7 @@ public class CacheUtils {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9de56734", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mLocalDatas.put(str, str2);
         }
@@ -131,11 +131,11 @@ public class CacheUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("68833650", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String str2 = (String) this.mLocalDatas.get(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
         String pullFromPref = pullFromPref(str);

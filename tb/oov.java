@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -66,7 +66,7 @@ public class oov implements gke {
         e.c("gateway2.loadCache", "start action:", jSONObject.toJSONString());
         a.a("cacheProcess", "gateway2.loadCache", "start action");
         final String string = jSONObject == null ? null : jSONObject.getString("containerId");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             a(gkcVar, 1, "containerId不能为空");
             return;
         }
@@ -119,9 +119,9 @@ public class oov implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("de5cc834", new Object[]{this, str, list, gkcVar});
-        } else if (list == null || list.isEmpty() || str == null || TextUtils.isEmpty(str)) {
+        } else if (list == null || list.isEmpty() || str == null || StringUtils.isEmpty(str)) {
         } else {
-            if (TextUtils.equals(str.startsWith("recommend_") ? "guess" : "homepage", "homepage")) {
+            if (StringUtils.equals(str.startsWith("recommend_") ? "guess" : "homepage", "homepage")) {
                 f.a().a(list, "homepage", new f.b() { // from class: tb.oov.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 

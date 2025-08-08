@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.rule.b;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
 import com.alibaba.android.umf.datamodel.service.rule.a;
@@ -44,7 +44,7 @@ public class avh extends avc {
         Component component = new Component();
         component.fields = new HashMap(bVar.f2137a);
         String str = (String) bbc.a(component.getFields(), "state", String.class, null);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             arc.a a3 = arc.a.a();
             a3.b("SwitchSelectRule").a("AURARulesServiceDomain").a("errorCode", "-4001_EMPTY_STATE");
             arc.a().b("SwitchSelectRule规则state为空", a3.b());

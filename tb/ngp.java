@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
 import com.taobao.pha.core.p;
@@ -38,7 +38,7 @@ public class ngp {
             return (InputStream) ipChange.ipc$dispatch("bf46e8f6", new Object[]{str});
         }
         Context e = p.e();
-        if (e == null || TextUtils.isEmpty(str)) {
+        if (e == null || StringUtils.isEmpty(str)) {
             return null;
         }
         try {

@@ -1,7 +1,7 @@
 package anet.channel.strategy;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.entity.ConnType;
 import anet.channel.quic.Http3ConnectionDetector;
@@ -168,14 +168,14 @@ public class StrategyInstance implements IStrategyInstance, HttpDispatcher.IDisp
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("13d97841", new Object[]{this, str, str2, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (checkHolderIsNull()) {
             return (!AwcnConfig.isGetSchemeOptEnable() || str2 != null) ? str2 : getGuessSchemeByHost(str);
         }
         String safeAislesByHost = this.holder.strategyConfig.getSafeAislesByHost(str, z);
-        if (safeAislesByHost != null || TextUtils.isEmpty(str2)) {
+        if (safeAislesByHost != null || StringUtils.isEmpty(str2)) {
             str2 = safeAislesByHost;
         }
         if (str2 == null) {
@@ -200,7 +200,7 @@ public class StrategyInstance implements IStrategyInstance, HttpDispatcher.IDisp
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("11fc59b8", new Object[]{this, str});
         }
-        if (!checkHolderIsNull() && !TextUtils.isEmpty(str)) {
+        if (!checkHolderIsNull() && !StringUtils.isEmpty(str)) {
             return this.holder.getCurrStrategyTable().getCnameByHost(str);
         }
         return null;
@@ -288,7 +288,7 @@ public class StrategyInstance implements IStrategyInstance, HttpDispatcher.IDisp
             return (List) ipChange.ipc$dispatch("b84c8fe0", new Object[]{this, str2, iStrategyFilter, new Boolean(z), new Boolean(z2)});
         }
         isContainHttp3.set(false);
-        if (TextUtils.isEmpty(str) || checkHolderIsNull()) {
+        if (StringUtils.isEmpty(str) || checkHolderIsNull()) {
             return Collections.EMPTY_LIST;
         }
         if (z) {
@@ -296,7 +296,7 @@ public class StrategyInstance implements IStrategyInstance, HttpDispatcher.IDisp
         } else {
             cnameByHost = this.holder.getCurrStrategyTable().getCnameByHost(str2, z);
         }
-        if (!TextUtils.isEmpty(cnameByHost)) {
+        if (!StringUtils.isEmpty(cnameByHost)) {
             str2 = cnameByHost;
         }
         if (z) {
@@ -386,11 +386,11 @@ public class StrategyInstance implements IStrategyInstance, HttpDispatcher.IDisp
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("48be98ec", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || checkHolderIsNull()) {
+        if (StringUtils.isEmpty(str) || checkHolderIsNull()) {
             return Collections.EMPTY_LIST;
         }
         String cnameByHost = this.holder.getCurrStrategyTable().getCnameByHost(str);
-        if (!TextUtils.isEmpty(cnameByHost)) {
+        if (!StringUtils.isEmpty(cnameByHost)) {
             str = cnameByHost;
         }
         List<IConnStrategy> queryByHost = this.holder.getCurrStrategyTable().queryByHost(str);
@@ -411,7 +411,7 @@ public class StrategyInstance implements IStrategyInstance, HttpDispatcher.IDisp
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b5136f54", new Object[]{this, str});
-        } else if (checkHolderIsNull() || TextUtils.isEmpty(str)) {
+        } else if (checkHolderIsNull() || StringUtils.isEmpty(str)) {
         } else {
             ALog.i(TAG, "force refresh strategy", null, "host", str);
             this.holder.getCurrStrategyTable().sendAmdcRequest(str, true);
@@ -637,7 +637,7 @@ public class StrategyInstance implements IStrategyInstance, HttpDispatcher.IDisp
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e6cf1c1a", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !checkHolderIsNull()) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !checkHolderIsNull()) {
             return this.holder.getCurrStrategyTable().getAbStrategyStatusByHost(str, str2);
         }
         return false;

@@ -1,6 +1,6 @@
 package com.ali.user.mobile.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.ui.views.MspWebActivity;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -88,7 +88,7 @@ public class LoginType {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3e1bbd1c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (LocalLoginType.PWD_LOGIN.equals(str)) {

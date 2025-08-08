@@ -3,7 +3,7 @@ package com.alilive.adapter.business;
 import android.app.Activity;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.taobao.android.nav.Nav;
@@ -124,7 +124,7 @@ public class a {
                 hashMap.put("sourceType", contentBusinessModel.sourceType);
             }
             pmd.a().e().a("Page_TaobaoLiveWatch", "LiveCpsMonitor", hashMap);
-            if (!businessInfo.mIsJumpGoodsDetail || TextUtils.isEmpty(businessInfo.mJumpUrl)) {
+            if (!businessInfo.mIsJumpGoodsDetail || StringUtils.isEmpty(businessInfo.mJumpUrl)) {
                 return;
             }
             a(activity, com.taobao.taolive.room.utils.n.a(), str);
@@ -171,15 +171,15 @@ public class a {
         if (jSONObject == null) {
             jSONObject = new JSONObject();
         }
-        if (p.v() && !TextUtils.isEmpty(str)) {
+        if (p.v() && !StringUtils.isEmpty(str)) {
             try {
                 Uri parse = Uri.parse(str);
                 List<String> u = p.u();
                 if (parse != null) {
                     for (String str2 : u) {
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             String queryParameter = parse.getQueryParameter(str2);
-                            if (!TextUtils.isEmpty(queryParameter)) {
+                            if (!StringUtils.isEmpty(queryParameter)) {
                                 jSONObject.put(str2, queryParameter);
                             }
                         }
@@ -227,7 +227,7 @@ public class a {
         if (p.z()) {
             String L = poy.L(aVar);
             com.alibaba.fastjson.JSONObject jSONObject2 = new com.alibaba.fastjson.JSONObject();
-            if (!TextUtils.isEmpty(L) && (split = L.split("&")) != null) {
+            if (!StringUtils.isEmpty(L) && (split = L.split("&")) != null) {
                 int length = split.length;
                 int i = 0;
                 while (true) {
@@ -237,7 +237,7 @@ public class a {
                     String str2 = split[i];
                     if (str2 != null && str2.startsWith("liveAlgoParams:")) {
                         String replace = str2.replace("liveAlgoParams:", "");
-                        if (!TextUtils.isEmpty(replace)) {
+                        if (!StringUtils.isEmpty(replace)) {
                             for (String str3 : replace.split("#")) {
                                 String[] split2 = str3.split(Constants.WAVE_SEPARATOR);
                                 if (split2 != null && split2.length >= 2) {
@@ -259,6 +259,6 @@ public class a {
                 }
             }
         }
-        return !TextUtils.isEmpty(str) ? a(jSONObject, str) : jSONObject;
+        return !StringUtils.isEmpty(str) ? a(jSONObject, str) : jSONObject;
     }
 }

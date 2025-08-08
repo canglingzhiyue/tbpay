@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.httpdns;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
@@ -46,7 +46,7 @@ public class DnsEnv {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("288973ea", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = SharedPreUtils.getStringData(TransportEnvUtil.getContext(), "httpdns_uid");
         }
         return this.b;
@@ -79,7 +79,7 @@ public class DnsEnv {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("59e3704a", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             this.c = SharedPreUtils.getStringData(TransportEnvUtil.getContext(), "httpdns_tradeNo");
         }
         return this.c;

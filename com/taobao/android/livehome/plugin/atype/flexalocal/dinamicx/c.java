@@ -2,7 +2,7 @@ package com.taobao.android.livehome.plugin.atype.flexalocal.dinamicx;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public class c extends com.taobao.android.dinamicx.h {
             }
             String string = jSONObject.getString("jumpUrl");
             String string2 = jSONObject.getString("hotWordInfo");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Bundle bundle = new Bundle();

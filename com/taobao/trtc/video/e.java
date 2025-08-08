@@ -4,7 +4,7 @@ import android.media.MediaCodecInfo;
 import android.media.MediaCodecList;
 import android.media.MediaFormat;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.j3;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.trtc.impl.h;
@@ -103,7 +103,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return Arrays.asList(str.split(";"));
         }
         return new ArrayList();

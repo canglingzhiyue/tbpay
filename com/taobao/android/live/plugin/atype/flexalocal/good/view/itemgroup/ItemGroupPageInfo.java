@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.itemgroup;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.INetDataObject;
@@ -25,7 +25,7 @@ public class ItemGroupPageInfo implements INetDataObject {
 
     public boolean checkInfo() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9a75a361", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.title) && !TextUtils.isEmpty(this.id) && !TextUtils.isEmpty(this.type);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9a75a361", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.title) && !StringUtils.isEmpty(this.id) && !StringUtils.isEmpty(this.type);
     }
 
     public String toString() {

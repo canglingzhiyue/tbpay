@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.metrickit.utils.c;
 import com.taobao.popupcenter.strategy.PopStrategy;
@@ -66,10 +66,10 @@ public class mlw implements mly {
         this.e = false;
         this.c = application;
         this.d = file;
-        if (TextUtils.equals(KEY_PATH_SAVE_TYPE, str)) {
+        if (StringUtils.equals(KEY_PATH_SAVE_TYPE, str)) {
             this.b = "";
             this.e = true;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.b = "";
         } else {
             this.b = str + "^";
@@ -144,7 +144,7 @@ public class mlw implements mly {
             return (Map) ipChange.ipc$dispatch("6dbf0a5e", new Object[]{this});
         }
         String a2 = c.a(this.d);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return Collections.emptyMap();
         }
         HashMap hashMap = new HashMap();
@@ -152,11 +152,11 @@ public class mlw implements mly {
             throw new AssertionError();
         }
         for (String str : a2.split("\n")) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 String[] split2 = str.split(" ", 2);
                 if (split2.length == 2) {
                     String[] split3 = split2[1].split("=", 2);
-                    if (split3.length == 2 && !TextUtils.isEmpty(split3[0])) {
+                    if (split3.length == 2 && !StringUtils.isEmpty(split3[0])) {
                         String str2 = split2[0];
                         switch (str2.hashCode()) {
                             case -1808118735:
@@ -461,7 +461,7 @@ public class mlw implements mly {
             }
             if (map != null && !map.isEmpty()) {
                 for (Map.Entry<String, ?> entry : map.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey())) {
+                    if (!StringUtils.isEmpty(entry.getKey())) {
                         Object value = entry.getValue();
                         if (value instanceof String) {
                             a(entry.getKey(), (String) value);

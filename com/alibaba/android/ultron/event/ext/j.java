@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import android.widget.Toast;
@@ -133,7 +133,7 @@ public class j extends com.alibaba.android.ultron.event.q {
         if (jSONObject != null) {
             str3 = jSONObject.getString("__oldComponent");
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "post";
         }
         if (str3 == null || jSONObject == null) {
@@ -179,12 +179,12 @@ public class j extends com.alibaba.android.ultron.event.q {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("2c89e164", new Object[]{this, str, jSONObject});
         }
-        if (TextUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
+        if (StringUtils.isEmpty(str) || jSONObject == null || jSONObject.isEmpty()) {
             return str;
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
-            if (entry != null && !TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+            if (entry != null && !StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                 buildUpon.appendQueryParameter(entry.getKey(), String.valueOf(entry.getValue()));
             }
         }
@@ -200,7 +200,7 @@ public class j extends com.alibaba.android.ultron.event.q {
         Bundle bundle = new Bundle();
         if (jSONObject != null) {
             for (String str2 : jSONObject.keySet()) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     Object obj = jSONObject.get(str2);
                     if (obj instanceof Boolean) {
                         bundle.putBoolean(str2, ((Boolean) obj).booleanValue());
@@ -231,7 +231,7 @@ public class j extends com.alibaba.android.ultron.event.q {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("676c0fdd", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (Uri.parse(str).getScheme() == null) {
                 str = com.taobao.search.common.util.k.HTTPS_PREFIX + parse.getSchemeSpecificPart();
@@ -269,11 +269,11 @@ public class j extends com.alibaba.android.ultron.event.q {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Uri parse = Uri.parse(str);
-        return (TextUtils.equals(parse.getHost(), "meta.m.taobao.com") || TextUtils.equals(parse.getHost(), "meta.wapa.taobao.com")) && (TextUtils.equals(parse.getPath(), "/app/tb-trade/super-odetail/home") || TextUtils.equals(parse.getPath(), "/app/tb-trade/odetail/home"));
+        return (StringUtils.equals(parse.getHost(), "meta.m.taobao.com") || StringUtils.equals(parse.getHost(), "meta.wapa.taobao.com")) && (StringUtils.equals(parse.getPath(), "/app/tb-trade/super-odetail/home") || StringUtils.equals(parse.getPath(), "/app/tb-trade/odetail/home"));
     }
 
     private boolean d(String str) {
@@ -282,10 +282,10 @@ public class j extends com.alibaba.android.ultron.event.q {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
+        if (StringUtils.isEmpty(str) || (parse = Uri.parse(str)) == null) {
             return false;
         }
-        return (TextUtils.equals(parse.getHost(), "meta.m.taobao.com") || TextUtils.equals(parse.getHost(), "meta.wapa.taobao.com")) && TextUtils.equals(parse.getPath(), "/app/mtb/logisticsV2/detail");
+        return (StringUtils.equals(parse.getHost(), "meta.m.taobao.com") || StringUtils.equals(parse.getHost(), "meta.wapa.taobao.com")) && StringUtils.equals(parse.getPath(), "/app/mtb/logisticsV2/detail");
     }
 
     private void a(com.alibaba.android.ultron.event.base.e eVar, String str, JSONObject jSONObject, String str2) {
@@ -324,11 +324,11 @@ public class j extends com.alibaba.android.ultron.event.q {
             return;
         }
         JSONObject jSONObject3 = new JSONObject();
-        if (!TextUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null) {
+        if (!StringUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null) {
             for (String str3 : queryParameterNames) {
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     String queryParameter = parse.getQueryParameter(str3);
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         jSONObject3.put(str3, (Object) queryParameter);
                     }
                 }
@@ -471,7 +471,7 @@ public class j extends com.alibaba.android.ultron.event.q {
             return ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue();
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("global");
-        return jSONObject2 != null && TextUtils.equals("true", jSONObject2.getString("taoTmDegrade"));
+        return jSONObject2 != null && StringUtils.equals("true", jSONObject2.getString("taoTmDegrade"));
     }
 
     private void b(com.alibaba.android.ultron.event.base.e eVar, String str, JSONObject jSONObject, String str2) {
@@ -504,11 +504,11 @@ public class j extends com.alibaba.android.ultron.event.q {
                 return;
             }
             JSONObject jSONObject2 = new JSONObject();
-            if (!TextUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null) {
+            if (!StringUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null) {
                 for (String str3 : queryParameterNames) {
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         String queryParameter = parse.getQueryParameter(str3);
-                        if (!TextUtils.isEmpty(queryParameter)) {
+                        if (!StringUtils.isEmpty(queryParameter)) {
                             jSONObject2.put(str3, (Object) queryParameter);
                         }
                     }

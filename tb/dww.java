@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.s;
@@ -66,7 +66,7 @@ public final class dww extends arv {
         if ((e instanceof DetailCoreActivity) && (C = ((DetailCoreActivity) e).C()) != null && C.b()) {
             string = C.j();
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             arc.a().c("AliDetailCheckCollectEvent", "innerHandleEvent", "itemId is empty");
         } else {
             dwy.a(string, new a(b, d, c));

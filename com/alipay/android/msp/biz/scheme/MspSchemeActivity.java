@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.alipay.android.msp.framework.taskscheduler.TaskHelper;
@@ -71,7 +71,7 @@ public class MspSchemeActivity extends FragmentActivity {
             return;
         }
         String name = mspSchemeHandler.getName();
-        if (TextUtils.isEmpty(name)) {
+        if (StringUtils.isEmpty(name)) {
             return;
         }
         f4460a.put(name, mspSchemeHandler);
@@ -84,7 +84,7 @@ public class MspSchemeActivity extends FragmentActivity {
             return;
         }
         String name = mspSchemeHandler.getName();
-        if (TextUtils.isEmpty(name)) {
+        if (StringUtils.isEmpty(name)) {
             return;
         }
         f4460a.remove(name);

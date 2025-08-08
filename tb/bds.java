@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -46,7 +46,7 @@ public class bds extends bdr {
         }
         for (int i = 0; i < list.size(); i++) {
             IDMComponent iDMComponent = list.get(i);
-            if (TextUtils.equals(iDMComponent.getTag(), "checkedItemList")) {
+            if (StringUtils.equals(iDMComponent.getTag(), "checkedItemList")) {
                 JSONObject fields = iDMComponent.getFields();
                 if (fields == null) {
                     fields = new JSONObject();

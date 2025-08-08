@@ -1,6 +1,6 @@
 package android.taobao.windvane.extra.uc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.security.realidentity.p1;
 import com.alipay.mobile.common.amnet.biz.AmnetOperationManager;
@@ -119,26 +119,26 @@ public class Escape {
             return (String) ipChange.ipc$dispatch("55dd4e86", new Object[]{str});
         }
         String str2 = "";
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         try {
             str2 = URLDecoder.decode(str, "utf-8");
         } catch (Throwable unused) {
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str2 = URLDecoder.decode(str, "gbk");
             } catch (Throwable unused2) {
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             try {
                 str2 = unescape(str);
             } catch (Throwable unused3) {
             }
         }
-        return TextUtils.isEmpty(str2) ? str : str2;
+        return StringUtils.isEmpty(str2) ? str : str2;
     }
 
     private static String decodeUrl(String str) {
@@ -159,7 +159,7 @@ public class Escape {
             }
             String path = url.getPath();
             String query = url.getQuery();
-            if (!TextUtils.isEmpty(path)) {
+            if (!StringUtils.isEmpty(path)) {
                 if (path.length() <= 1 || path.lastIndexOf("/") != path.length() - 1) {
                     z = false;
                 }
@@ -168,7 +168,7 @@ public class Escape {
                     stringBuffer.append("/");
                     int length = split.length;
                     for (int i = 0; i < length; i++) {
-                        if (!TextUtils.isEmpty(split[i])) {
+                        if (!StringUtils.isEmpty(split[i])) {
                             stringBuffer.append(URLEncoder.encode(tryDecode(split[i]), "utf-8"));
                             if (i < length - 1) {
                                 stringBuffer.append("/");
@@ -180,7 +180,7 @@ public class Escape {
                     stringBuffer.append("/");
                 }
             }
-            if (!TextUtils.isEmpty(query)) {
+            if (!StringUtils.isEmpty(query)) {
                 stringBuffer.append("?");
                 String[] split2 = query.split("&");
                 if (split2 != null) {

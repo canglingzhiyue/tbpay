@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +89,7 @@ public class FpNormalAuthDialog extends IBiometricValidateDialog {
             this.d = (TextView) linearLayout.findViewById(R.id.fp_normal_auth_btn_cancel);
             this.e = (TextView) linearLayout.findViewById(R.id.fp_normal_auth_btn_switch);
             String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_SWITCH);
-            if (!TextUtils.isEmpty(clientText)) {
+            if (!StringUtils.isEmpty(clientText)) {
                 this.e.setText(clientText);
                 this.e.setVisibility(0);
                 ((RelativeLayout.LayoutParams) this.d.getLayoutParams()).addRule(9, -1);
@@ -142,7 +142,7 @@ public class FpNormalAuthDialog extends IBiometricValidateDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.c == null || TextUtils.isEmpty(str)) {
+        } else if (this.c == null || StringUtils.isEmpty(str)) {
         } else {
             this.c.postDelayed(new Runnable() { // from class: com.alipay.android.phone.seauthenticator.iotauth.fingerprint.FpNormalAuthDialog.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;

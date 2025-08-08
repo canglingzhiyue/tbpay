@@ -1,6 +1,6 @@
 package com.alipay.android.msp.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.framework.hardwarepay.old.fingerprint.FingerprintPayHelper;
@@ -31,7 +31,7 @@ public class FingerDataUtil {
             return ((Boolean) ipChange.ipc$dispatch("44de4923", new Object[]{str})).booleanValue();
         }
         String fingerUserStatus = getFingerUserStatus(str);
-        return TextUtils.isEmpty(fingerUserStatus) || TextUtils.equals("2", fingerUserStatus);
+        return StringUtils.isEmpty(fingerUserStatus) || StringUtils.equals("2", fingerUserStatus);
     }
 
     private static String getFingerUserStatus(final String str) {
@@ -39,7 +39,7 @@ public class FingerDataUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("55d98353", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {

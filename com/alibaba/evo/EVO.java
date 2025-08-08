@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.SystemClock;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.evo.internal.windvane.EVOApiPlugin;
 import com.alibaba.ut.abtest.UTABMethod;
@@ -340,7 +340,7 @@ public final class EVO {
             } else if (!cex.a().j().c()) {
                 h.d(TAG, "【运行实验】一休已禁止使用。");
                 return EMPTY_VARIATION_SET;
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 h.d(TAG, "【运行实验】开关名传入为空！");
                 return EMPTY_VARIATION_SET;
             } else {
@@ -415,7 +415,7 @@ public final class EVO {
             long nanoTime = System.nanoTime();
             if (!cex.a().j().c()) {
                 h.d(TAG, "【服务端实验】一休已禁止使用。");
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 h.d(TAG, "【服务端实验】添加埋点规则失败，埋点规则不合法。");
             } else {
                 if (z) {
@@ -441,12 +441,12 @@ public final class EVO {
                 }
                 long nanoTime2 = System.nanoTime();
                 if (z) {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         z2 = false;
                     }
                     com.alibaba.ut.abtest.internal.util.b.a(com.alibaba.ut.abtest.internal.util.b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER_SYNC, z2, nanoTime2 - nanoTime);
                 } else {
-                    if (TextUtils.isEmpty(str)) {
+                    if (StringUtils.isEmpty(str)) {
                         z2 = false;
                     }
                     com.alibaba.ut.abtest.internal.util.b.a(com.alibaba.ut.abtest.internal.util.b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER, z2, nanoTime2 - nanoTime);
@@ -465,7 +465,7 @@ public final class EVO {
                 ipChange.ipc$dispatch("782de874", new Object[]{str, str2});
             } else if (!isPreInitialized()) {
                 h.c(TAG, "updateUserAccount方法调用，需要先调用 initialize() 方法初始化SDK。");
-            } else if (!TextUtils.equals(cex.a().r(), str2)) {
+            } else if (!StringUtils.equals(cex.a().r(), str2)) {
                 h.b(TAG, "【登录信息】用户登录信息发生变化。用户ID: " + str2 + "，用户昵称: " + str + "，原用户ID：" + cex.a().r() + "，原用户昵称：" + cex.a().s());
                 cex.a().a(str2);
                 cex.a().b(str);
@@ -495,7 +495,7 @@ public final class EVO {
                         return;
                     }
                     try {
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             if (bVar == null) {
                                 return;
                             }

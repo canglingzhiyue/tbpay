@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.alipay.callservice.WVAlipayApiPlugin;
 import com.taobao.tao.alipay.callservice.WVIdleFishApiBridge;
@@ -29,7 +29,7 @@ public class CallJSBridgeService extends Service implements android.taobao.windv
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("fa8f40b7", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if ("WVIdleFishApi".equals(str)) {

@@ -1,7 +1,7 @@
 package com.taobao.tao.infoflow.multitab;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -104,7 +104,7 @@ public class e {
                 break;
             }
             SectionModel sectionModel2 = (SectionModel) obj;
-            if (TextUtils.equals(sectionModel2.getSectionBizCode(), com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE) && a(a(sectionModel2))) {
+            if (StringUtils.equals(sectionModel2.getSectionBizCode(), com.taobao.tao.infoflow.multitab.viewprovider.tablayout.panel.b.TAB_SECTION_CODE) && a(a(sectionModel2))) {
                 sectionModel = sectionModel2;
             }
         }
@@ -132,7 +132,7 @@ public class e {
                 break;
             }
             jSONObject = it.next();
-            if (TextUtils.equals(jSONObject.getString(PopConst.BRIDGE_KEY_BUSINESS_ID), BUSINESS_ID_GUIDE_POP)) {
+            if (StringUtils.equals(jSONObject.getString(PopConst.BRIDGE_KEY_BUSINESS_ID), BUSINESS_ID_GUIDE_POP)) {
                 break;
             }
         }
@@ -141,7 +141,7 @@ public class e {
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             JSONObject jSONObject2 = jSONArray.getJSONObject(i);
-            if (jSONObject2 != null && TextUtils.equals(jSONObject2.getString("sectionBizCode"), SECTION_BIZ_CODE_TAB_GUIDE)) {
+            if (jSONObject2 != null && StringUtils.equals(jSONObject2.getString("sectionBizCode"), SECTION_BIZ_CODE_TAB_GUIDE)) {
                 return jSONObject2;
             }
         }
@@ -201,7 +201,7 @@ public class e {
         if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("content")) == null) {
             return false;
         }
-        return !TextUtils.isEmpty(jSONObject2.getString(KEY_TAB_ID)) && !TextUtils.isEmpty(jSONObject2.getString("containerType")) && !TextUtils.isEmpty(jSONObject2.getString("text"));
+        return !StringUtils.isEmpty(jSONObject2.getString(KEY_TAB_ID)) && !StringUtils.isEmpty(jSONObject2.getString("containerType")) && !StringUtils.isEmpty(jSONObject2.getString("text"));
     }
 
     public static boolean a(List<JSONObject> list, List<JSONObject> list2) {
@@ -217,7 +217,7 @@ public class e {
                 return true;
             }
             for (int i = 0; i < list.size(); i++) {
-                if (!TextUtils.equals(f(list.get(i)), f(list2.get(i)))) {
+                if (!StringUtils.equals(f(list.get(i)), f(list2.get(i)))) {
                     return true;
                 }
             }
@@ -306,7 +306,7 @@ public class e {
             return false;
         }
         String string = jSONObject2.getString("refreshSearchText");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return Boolean.parseBoolean(string);
         }
         return true;
@@ -372,7 +372,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -399,7 +399,7 @@ public class e {
             return;
         }
         String string = jSONObject2.getString("spm");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         Matcher matcher = Pattern.compile("(\\d+)$").matcher(string);
@@ -429,7 +429,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         try {

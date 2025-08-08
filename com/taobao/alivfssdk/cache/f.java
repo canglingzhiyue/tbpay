@@ -1,6 +1,6 @@
 package com.taobao.alivfssdk.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayOutputStream;
@@ -28,7 +28,7 @@ public class f {
         this.f8492a = str;
         if (bVar instanceof com.taobao.alivfssdk.fresco.cache.common.f) {
             com.taobao.alivfssdk.fresco.cache.common.f fVar = (com.taobao.alivfssdk.fresco.cache.common.f) bVar;
-            if (!TextUtils.isEmpty(fVar.b)) {
+            if (!StringUtils.isEmpty(fVar.b)) {
                 this.b = fVar.b;
                 return;
             }
@@ -167,7 +167,7 @@ public class f {
         }
         if (bVar instanceof com.taobao.alivfssdk.fresco.cache.common.f) {
             com.taobao.alivfssdk.fresco.cache.common.f fVar = (com.taobao.alivfssdk.fresco.cache.common.f) bVar;
-            if (!TextUtils.isEmpty(fVar.b)) {
+            if (!StringUtils.isEmpty(fVar.b)) {
                 str2 = fVar.b;
                 return a(eVar, str, str2);
             }
@@ -255,7 +255,7 @@ public class f {
             if (r6 == 0) goto L49
         L36:
             java.lang.String r6 = r1.b(r3)     // Catch: java.lang.Throwable -> L4f java.lang.Exception -> L51
-            boolean r4 = android.text.TextUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L4f java.lang.Exception -> L51
+            boolean r4 = android.text.StringUtils.isEmpty(r6)     // Catch: java.lang.Throwable -> L4f java.lang.Exception -> L51
             if (r4 != 0) goto L43
             r0.add(r6)     // Catch: java.lang.Throwable -> L4f java.lang.Exception -> L51
         L43:

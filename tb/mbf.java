@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.utils.c;
 import java.lang.reflect.InvocationHandler;
@@ -116,7 +116,7 @@ public class mbf implements InvocationHandler {
                 }
             }
             c.a("linkx", "AMSInvocationHandler === packageName:" + str + "  componentName:" + str2 + "  intent:" + intent);
-            if (TextUtils.equals(str, "com.taobao.taobao")) {
+            if (StringUtils.equals(str, "com.taobao.taobao")) {
                 c.a("linkx", "AMSInvocationHandler === redirectIntent === 内部跳转调用！！！");
                 return true;
             } else if (f31008a != null) {

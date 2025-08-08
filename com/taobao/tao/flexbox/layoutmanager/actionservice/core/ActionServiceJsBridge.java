@@ -2,7 +2,7 @@ package com.taobao.tao.flexbox.layoutmanager.actionservice.core;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -100,10 +100,10 @@ public class ActionServiceJsBridge extends e {
                     jSONObject3.put("result", cVar.c);
                     if (cVar.c instanceof JSONObject) {
                         JSONObject jSONObject4 = (JSONObject) cVar.c;
-                        if (!TextUtils.isEmpty(jSONObject4.getString("errorCode"))) {
+                        if (!StringUtils.isEmpty(jSONObject4.getString("errorCode"))) {
                             jSONObject3.put("errorCode", (Object) jSONObject4.getString("errorCode"));
                         }
-                        if (!TextUtils.isEmpty(jSONObject4.getString("errorMsg"))) {
+                        if (!StringUtils.isEmpty(jSONObject4.getString("errorMsg"))) {
                             jSONObject3.put("errorMsg", (Object) jSONObject4.getString("errorMsg"));
                         }
                         if (jSONObject4.containsKey("result")) {

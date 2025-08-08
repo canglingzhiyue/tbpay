@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.IAURAInputField;
@@ -119,7 +119,7 @@ public final class azp extends arv {
             }
             RenderComponent renderComponent = (RenderComponent) c;
             final String str = renderComponent.key;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 a(0, "-1000_EMPTY_STATE", "浮层插件获取的popupWindowKey为空");
                 return;
             }
@@ -254,11 +254,11 @@ public final class azp extends arv {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("backgroundColor");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 bsqVar.a(string);
             }
             String string2 = jSONObject.getString(bsq.KEY_NEED_CLOSE_BUTTON);
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 bsqVar.b(Boolean.parseBoolean(string2));
                 bsqVar.a(false);
             }
@@ -270,7 +270,7 @@ public final class azp extends arv {
                 bsqVar.a(bsrVar);
             }
             String string3 = jSONObject.getString(bsq.KEY_AUTO_SIZE);
-            if (!TextUtils.isEmpty(string3) && !Boolean.parseBoolean(string3)) {
+            if (!StringUtils.isEmpty(string3) && !Boolean.parseBoolean(string3)) {
                 return;
             }
             bsqVar.c(this.g);
@@ -352,7 +352,7 @@ public final class azp extends arv {
         if (azrVar != null) {
             str = azrVar.d();
         }
-        return TextUtils.isEmpty(str) ? "aura.workflow.float" : str;
+        return StringUtils.isEmpty(str) ? "aura.workflow.float" : str;
     }
 
     private String i() {
@@ -365,7 +365,7 @@ public final class azp extends arv {
             return "aura_float_config.json";
         }
         String c = azrVar.c();
-        return TextUtils.isEmpty(c) ? "aura_float_config.json" : c;
+        return StringUtils.isEmpty(c) ? "aura_float_config.json" : c;
     }
 
     private k j() {
@@ -429,7 +429,7 @@ public final class azp extends arv {
             return null;
         }
         String string = c.getString("code");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         Object obj = c.get("popupData");

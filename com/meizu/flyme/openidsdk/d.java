@@ -1,6 +1,6 @@
 package com.meizu.flyme.openidsdk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import tb.kge;
 
 /* loaded from: classes4.dex */
@@ -26,10 +26,10 @@ class d {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        return TextUtils.equals(this.f8021a, str);
+        return StringUtils.equals(this.f8021a, str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

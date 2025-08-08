@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentLayout;
@@ -199,7 +199,7 @@ public abstract class atz implements aua {
         Object obj = b.get(str);
         if (obj instanceof String) {
             String str3 = (String) obj;
-            return TextUtils.isEmpty(str3) ? str2 : str3;
+            return StringUtils.isEmpty(str3) ? str2 : str3;
         }
         return String.valueOf(obj);
     }

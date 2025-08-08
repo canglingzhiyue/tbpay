@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.TextView;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -108,13 +108,13 @@ public class fha {
         } else {
             try {
                 String str = (String) textView.getText();
-                if (TextUtils.equals(str, "宝贝")) {
+                if (StringUtils.equals(str, "宝贝")) {
                     str = "naviTabInfo";
-                } else if (TextUtils.equals(str, "评价")) {
+                } else if (StringUtils.equals(str, "评价")) {
                     str = "naviTabRate";
-                } else if (TextUtils.equals(str, "详情")) {
+                } else if (StringUtils.equals(str, "详情")) {
                     str = "naviTabDesc";
-                } else if (TextUtils.equals(str, "推荐")) {
+                } else if (StringUtils.equals(str, "推荐")) {
                     str = "naviTabDescRecmd";
                 }
                 Jarvis.getTracker(context).onAreaAppear(str, null);

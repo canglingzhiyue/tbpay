@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -33,7 +33,7 @@ public class hym {
                     return;
                 }
                 String string = jSONObject.getString("redirectUrlWhenClose");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 this.f28842a = string;
@@ -49,7 +49,7 @@ public class hym {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("68a25be", new Object[]{this, activity})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.f28842a) && hyk.I()) {
+        if (!StringUtils.isEmpty(this.f28842a) && hyk.I()) {
             return Nav.from(activity).disableTransition().toUri(this.f28842a);
         }
         return false;

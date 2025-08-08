@@ -3,7 +3,7 @@ package com.ali.user.open.ucc.remote.broadcast;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.cookies.CookieManagerWrapper;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.config.ConfigManager;
@@ -33,10 +33,10 @@ public class UccBroadcastReceiver extends BroadcastReceiver {
         } else if (intent == null) {
         } else {
             String action = intent.getAction();
-            if (TextUtils.equals(action, UccResultAction.NOTIFY_UCC_LOGIN_SUCCESS.name())) {
+            if (StringUtils.equals(action, UccResultAction.NOTIFY_UCC_LOGIN_SUCCESS.name())) {
                 final String stringExtra = intent.getStringExtra("site");
                 String stringExtra2 = intent.getStringExtra("process");
-                if (!ConfigManager.getInstance().isMultiProcessEnable || TextUtils.isEmpty(stringExtra) || TextUtils.equals(stringExtra2, CommonUtils.getProcessName(context))) {
+                if (!ConfigManager.getInstance().isMultiProcessEnable || StringUtils.isEmpty(stringExtra) || StringUtils.equals(stringExtra2, CommonUtils.getProcessName(context))) {
                     return;
                 }
                 ((MemberExecutorService) AliMemberSDK.getService(MemberExecutorService.class)).postTask(new Runnable() { // from class: com.ali.user.open.ucc.remote.broadcast.UccBroadcastReceiver.1
@@ -52,7 +52,7 @@ public class UccBroadcastReceiver extends BroadcastReceiver {
                         }
                     }
                 });
-            } else if (ConfigManager.getInstance().isMultiProcessEnable && TextUtils.equals(action, UccResultAction.NOTIFY_UCC_LOGOUT.name())) {
+            } else if (ConfigManager.getInstance().isMultiProcessEnable && StringUtils.equals(action, UccResultAction.NOTIFY_UCC_LOGOUT.name())) {
                 final String stringExtra3 = intent.getStringExtra("site");
                 ((MemberExecutorService) AliMemberSDK.getService(MemberExecutorService.class)).postTask(new Runnable() { // from class: com.ali.user.open.ucc.remote.broadcast.UccBroadcastReceiver.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -67,7 +67,7 @@ public class UccBroadcastReceiver extends BroadcastReceiver {
                         }
                     }
                 });
-            } else if (TextUtils.equals(action, LoginBroadcastReceiver.NOTIFY_LOGIN_SUCCESS) || !TextUtils.equals(action, LoginBroadcastReceiver.NOTIFY_LOGOUT)) {
+            } else if (StringUtils.equals(action, LoginBroadcastReceiver.NOTIFY_LOGIN_SUCCESS) || !StringUtils.equals(action, LoginBroadcastReceiver.NOTIFY_LOGOUT)) {
             } else {
                 ((MemberExecutorService) AliMemberSDK.getService(MemberExecutorService.class)).postTask(new Runnable() { // from class: com.ali.user.open.ucc.remote.broadcast.UccBroadcastReceiver.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;

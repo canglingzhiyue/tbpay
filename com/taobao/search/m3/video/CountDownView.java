@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -151,7 +151,7 @@ public final class CountDownView extends View {
             return;
         }
         float f = pl + pr + iconSize;
-        if (this.showCountDown && !TextUtils.isEmpty(this.minuteStr) && !TextUtils.isEmpty(this.secondStr)) {
+        if (this.showCountDown && !StringUtils.isEmpty(this.minuteStr) && !StringUtils.isEmpty(this.secondStr)) {
             this.minuteWidth = this.paint.measureText(this.minuteStr);
             f = f + iconMargin + this.minuteWidth + this.paint.measureText(this.secondStr) + timeMargin;
         }

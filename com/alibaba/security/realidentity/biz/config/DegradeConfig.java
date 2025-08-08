@@ -1,6 +1,6 @@
 package com.alibaba.security.realidentity.biz.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 
@@ -42,7 +42,7 @@ public class DegradeConfig implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("409366cf", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.uploadTimeOut = 30L;
         } else {
             try {
@@ -57,7 +57,7 @@ public class DegradeConfig implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ef4cabf0", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.rpsdkWukongCallbackTimeout = 0L;
         } else {
             try {

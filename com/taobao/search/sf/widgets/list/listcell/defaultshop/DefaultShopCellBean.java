@@ -1,6 +1,6 @@
 package com.taobao.search.sf.widgets.list.listcell.defaultshop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.bean.ResultMainInfoBean;
@@ -338,7 +338,7 @@ public final class DefaultShopCellBean extends BaseCellBean {
             }
             map10.put("s_isEl", "1");
             String innerAuctionIds = getInnerAuctionIds();
-            if (!TextUtils.isEmpty(innerAuctionIds)) {
+            if (!StringUtils.isEmpty(innerAuctionIds)) {
                 Map<String, String> map11 = this.utParams;
                 if (map11 == null) {
                     q.a();
@@ -365,7 +365,7 @@ public final class DefaultShopCellBean extends BaseCellBean {
             Map<String, String> map = (cVar == null || (commonSearchResult = (CommonSearchResult) cVar.getTotalSearchResult()) == null || (mainInfo = commonSearchResult.getMainInfo()) == null) ? null : mainInfo.pageTraceArgs;
             if (map != null) {
                 String str2 = map.get("spm-cnt");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     StringBuilder sb = new StringBuilder();
                     if (str2 == null) {
                         q.a();
@@ -387,14 +387,14 @@ public final class DefaultShopCellBean extends BaseCellBean {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("e37e13e4", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.innerAuctionIds)) {
+        if (StringUtils.isEmpty(this.innerAuctionIds)) {
             if (this.auctions.size() > 0) {
                 StringBuilder sb = new StringBuilder();
                 int size = this.auctions.size();
                 for (int i = 0; i < size; i++) {
                     String optString = this.auctions.get(i).optString("nid");
                     q.a((Object) optString, "auction.optString(\"nid\")");
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         sb.append(optString);
                         sb.append(",");
                     }

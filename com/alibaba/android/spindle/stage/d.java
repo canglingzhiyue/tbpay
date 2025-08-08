@@ -1,6 +1,6 @@
 package com.alibaba.android.spindle.stage;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.v3.FalcoGlobalTracer;
 import com.taobao.analysis.v3.g;
@@ -65,7 +65,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6f854dbb", new Object[]{this, str, str2, l});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !this.d || (nVar = this.c.get(str)) == null) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || !this.d || (nVar = this.c.get(str)) == null) {
         } else {
             boolean z = nVar instanceof h;
             boolean z2 = nVar instanceof g;

@@ -2,7 +2,7 @@ package com.meizu.cloud.pushsdk.handler.e;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.util.b;
@@ -30,7 +30,7 @@ public class e extends a<String> {
     public boolean a(Intent intent) {
         DebugLogger.i("AbstractMessageHandler", "start RegisterMessageHandler match");
         if (!PushConstants.MZ_PUSH_ON_REGISTER_ACTION.equals(intent.getAction())) {
-            return PushConstants.REGISTRATION_CALLBACK_INTENT.equals(intent.getAction()) && !TextUtils.isEmpty(intent.getStringExtra("registration_id"));
+            return PushConstants.REGISTRATION_CALLBACK_INTENT.equals(intent.getAction()) && !StringUtils.isEmpty(intent.getStringExtra("registration_id"));
         }
         return true;
     }

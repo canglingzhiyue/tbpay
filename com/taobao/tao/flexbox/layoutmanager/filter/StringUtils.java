@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.filter;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.parser.JSONLexer;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorCode;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -30,7 +30,7 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("faab3c85", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         int length = str.length();
@@ -55,7 +55,7 @@ public class StringUtils {
             return ((Character) ipChange.ipc$dispatch("598e0943", new Object[]{str, obj})).charValue();
         }
         int a2 = oec.a(obj, 0);
-        if (!TextUtils.isEmpty(str) && a2 >= 0 && a2 < str.length()) {
+        if (!StringUtils.isEmpty(str) && a2 >= 0 && a2 < str.length()) {
             return str.charAt(a2);
         }
         return (char) 0;
@@ -73,7 +73,7 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("85c9cb57", new Object[]{str, str2})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         return str.indexOf(str2);
@@ -85,7 +85,7 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e11f09e1", new Object[]{str, str2})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         return str.lastIndexOf(str2);
@@ -94,13 +94,13 @@ public class StringUtils {
     @FilterHandler(name = com.taobao.android.weex_framework.util.a.ATOM_EXT_match)
     public static boolean match(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("216932e4", new Object[]{str, str2})).booleanValue() : !TextUtils.isEmpty(str) && str.matches(str2);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("216932e4", new Object[]{str, str2})).booleanValue() : !StringUtils.isEmpty(str) && str.matches(str2);
     }
 
     @FilterHandler(name = "replace")
     public static String replace(String str, String str2, String str3) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("91d0bce7", new Object[]{str, str2, str3}) : !TextUtils.isEmpty(str) ? str.replaceAll(str2, str3) : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("91d0bce7", new Object[]{str, str2, str3}) : !StringUtils.isEmpty(str) ? str.replaceAll(str2, str3) : str;
     }
 
     @FilterHandler(name = "search")
@@ -109,7 +109,7 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("d294dfb6", new Object[]{str, str2})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return -1;
         }
         return Pattern.compile(str2).matcher(str).start();
@@ -118,25 +118,25 @@ public class StringUtils {
     @FilterHandler(name = com.taobao.android.weex_framework.util.a.ATOM_EXT_toLocaleLowerCase)
     public static String toLocaleLowerCase(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("95d8a13", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.toLowerCase() : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("95d8a13", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.toLowerCase() : "";
     }
 
     @FilterHandler(name = com.taobao.android.weex_framework.util.a.ATOM_EXT_toLocaleUpperCase)
     public static String toLocaleUpperCase(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("74b281d2", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.toUpperCase() : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("74b281d2", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.toUpperCase() : "";
     }
 
     @FilterHandler(name = com.taobao.android.weex_framework.util.a.ATOM_EXT_toLowerCase)
     public static String toLowerCase(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("cac5b3d9", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.toLowerCase() : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("cac5b3d9", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.toLowerCase() : "";
     }
 
     @FilterHandler(name = com.taobao.android.weex_framework.util.a.ATOM_EXT_toUpperCase)
     public static String toUpperCase(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("361aab98", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.toUpperCase() : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("361aab98", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.toUpperCase() : "";
     }
 
     @FilterHandler(name = com.taobao.android.weex_framework.util.a.ATOM_length)
@@ -145,7 +145,7 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("5bb1a4ea", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         return str.length();
@@ -157,7 +157,7 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c1e3210d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         ohe.a a2 = ohe.a();
@@ -170,7 +170,7 @@ public class StringUtils {
     @FilterHandler(name = "trim")
     public static String trim(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f9c417cd", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.trim() : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("f9c417cd", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.trim() : "";
     }
 
     @FilterHandler(name = "trimAll")
@@ -192,7 +192,7 @@ public class StringUtils {
             return ((Map) obj).isEmpty();
         }
         if (obj instanceof String) {
-            return TextUtils.isEmpty(String.valueOf(obj));
+            return StringUtils.isEmpty(String.valueOf(obj));
         }
         return obj == null;
     }
@@ -212,13 +212,13 @@ public class StringUtils {
     @FilterHandler(name = "urlEncode")
     public static String urlEncode(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9986362a", new Object[]{str}) : !TextUtils.isEmpty(str) ? Uri.encode(str) : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9986362a", new Object[]{str}) : !StringUtils.isEmpty(str) ? Uri.encode(str) : "";
     }
 
     @FilterHandler(name = ErrorCode.DATA_URL_DECODE_EXCEPTION)
     public static String urlDecode(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("2495bf52", new Object[]{str}) : !TextUtils.isEmpty(str) ? Uri.decode(str) : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("2495bf52", new Object[]{str}) : !StringUtils.isEmpty(str) ? Uri.decode(str) : "";
     }
 
     @FilterHandler(name = "appendString")
@@ -228,13 +228,13 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("841e227a", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str)) {
             return str;
         }
         String[] split2 = str2.split("&");
         HashMap hashMap = new HashMap();
         for (int i = 0; i < split2.length; i++) {
-            if (!TextUtils.isEmpty(split2[i]) && (split = split2[i].split("=")) != null && split.length == 2 && !TextUtils.isEmpty(split[0]) && !TextUtils.isEmpty(split[1])) {
+            if (!StringUtils.isEmpty(split2[i]) && (split = split2[i].split("=")) != null && split.length == 2 && !StringUtils.isEmpty(split[0]) && !StringUtils.isEmpty(split[1])) {
                 hashMap.put(split[0], split[1]);
             }
         }
@@ -247,7 +247,7 @@ public class StringUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bfc3ceaf", new Object[]{str, obj});
         }
-        if (obj == null || TextUtils.isEmpty(str)) {
+        if (obj == null || StringUtils.isEmpty(str)) {
             return str;
         }
         if (obj instanceof String) {
@@ -259,7 +259,7 @@ public class StringUtils {
     @FilterHandler(name = "unescapeHTML")
     public static String unescapeHTML(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d736a78a", new Object[]{str}) : !TextUtils.isEmpty(str) ? a(str) : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d736a78a", new Object[]{str}) : !StringUtils.isEmpty(str) ? a(str) : "";
     }
 
     private static String a(String str) {
@@ -270,7 +270,7 @@ public class StringUtils {
     @FilterHandler(name = "escapeXMLCharactor")
     public static String escapeXMLCharactor(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("89582ce6", new Object[]{str}) : !TextUtils.isEmpty(str) ? b(str) : "";
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("89582ce6", new Object[]{str}) : !StringUtils.isEmpty(str) ? b(str) : "";
     }
 
     private static String b(String str) {

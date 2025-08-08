@@ -1,7 +1,7 @@
 package com.taobao.alimama;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.click.cpc.CpcClickBuilder;
 import com.taobao.alimama.click.cpm.CpmClickBuilder;
@@ -48,13 +48,13 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("c22dfcae", new Object[]{this, str, new Boolean(z), new Boolean(z2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
             Uri parse = Uri.parse(str);
             String queryParameter = parse.getQueryParameter(E_URL);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return str;
             }
             String queryParameter2 = parse.getQueryParameter("etype");
@@ -65,7 +65,7 @@ public class c {
             }
             try {
                 String queryParameter3 = parse.getQueryParameter("acttype");
-                if (!TextUtils.isEmpty(queryParameter3) && parse2.isHierarchical()) {
+                if (!StringUtils.isEmpty(queryParameter3) && parse2.isHierarchical()) {
                     queryParameter = parse2.buildUpon().appendQueryParameter("atype", queryParameter3).toString();
                     e.a("append_eurl_acttype", "eurl = " + queryParameter + ", url = " + str);
                 }
@@ -99,7 +99,7 @@ public class c {
 
     public String a(String str, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d7b527fe", new Object[]{this, str, new Boolean(z)}) : TextUtils.isEmpty(str) ? str : Uri.parse(a(str, z, false)).getQueryParameter("clickid");
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("d7b527fe", new Object[]{this, str, new Boolean(z)}) : StringUtils.isEmpty(str) ? str : Uri.parse(a(str, z, false)).getQueryParameter("clickid");
     }
 
     private Uri a(Uri uri) {
@@ -112,7 +112,7 @@ public class c {
             return null;
         }
         String encodedQuery = uri.getEncodedQuery();
-        if (TextUtils.isEmpty(encodedQuery)) {
+        if (StringUtils.isEmpty(encodedQuery)) {
             return uri;
         }
         ArrayList arrayList = new ArrayList();
@@ -124,7 +124,7 @@ public class c {
         }
         Uri.Builder buildUpon = uri.buildUpon();
         if (!arrayList.isEmpty()) {
-            buildUpon.encodedQuery(TextUtils.join("&", arrayList));
+            buildUpon.encodedQuery(StringUtils.join("&", arrayList));
         }
         return buildUpon.build();
     }

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes5.dex */
@@ -35,7 +35,7 @@ public class sow {
         this.e = i;
         this.f = i2;
         this.g = i3;
-        if (TextUtils.equals(str, this.h)) {
+        if (StringUtils.equals(str, this.h)) {
             if (i2 - i <= oeb.a("ShortVideo.totalHealthyValue", 2000)) {
                 this.i = true;
             }

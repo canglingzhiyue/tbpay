@@ -3,7 +3,7 @@ package com.taobao.taolive.sdk.jsbridge;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -111,7 +111,7 @@ public class TBLiveGlobalWVPlugin extends e {
             }
             String string2 = jSONObject.getString("topic");
             String string3 = jSONObject.getString(LiveAvatarNewFrame.LIVE_AVATAR_LIVE_ID);
-            if (!TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3)) {
+            if (!StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3)) {
                 final Map<String, String> a2 = qnb.a(jSONObject);
                 tii tiiVar = new tii(string, equals, string2, string3, new pnn() { // from class: com.taobao.taolive.sdk.jsbridge.TBLiveGlobalWVPlugin.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;

@@ -1,6 +1,6 @@
 package com.taobao.alimama.click.extend;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.click.extend.ExtendClickLink;
 import java.util.HashMap;
@@ -79,7 +79,7 @@ public class a {
             e.printStackTrace();
         }
         if (Integer.parseInt(extendClickLink.a()) >= 100) {
-            return !TextUtils.isEmpty(extendClickLink.a()) && extendClickLink.c() != ExtendClickLink.CustomClickType.NONE;
+            return !StringUtils.isEmpty(extendClickLink.a()) && extendClickLink.c() != ExtendClickLink.CustomClickType.NONE;
         }
         throw new IllegalArgumentException("etype 不合法，自定义链路etype需大于等于100");
     }

@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import java.util.Locale;
 import tb.tof;
@@ -106,7 +106,7 @@ public class O0000OOo {
 
     public static byte[] O000000o(String str, String str2) {
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 O000000o.O000000o(O000000o, "when getHmacSHA1,the key is null");
                 return null;
             }

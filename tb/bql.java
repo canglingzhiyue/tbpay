@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.rule.b;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Component;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
@@ -100,7 +100,7 @@ public class bql extends bqj {
             return false;
         }
         String c = bbd.b.c(map, "target");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return false;
         }
         return bbd.b.a(c) || bbd.b.b(c);
@@ -119,7 +119,7 @@ public class bql extends bqj {
                 JSONObject jSONObject = (JSONObject) obj;
                 if (a(jSONObject)) {
                     String string2 = jSONObject.getString("source");
-                    Object a3 = (TextUtils.isEmpty(string2) || TextUtils.equals(string2, "*")) ? map : bbd.b.a(string2.split("\\."), map);
+                    Object a3 = (StringUtils.isEmpty(string2) || StringUtils.equals(string2, "*")) ? map : bbd.b.a(string2.split("\\."), map);
                     if (a3 != null && (a2 = bbd.b.a((string = jSONObject.getString("target")), component)) != null) {
                         String[] f = bbd.b.f(string);
                         if (f == null) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,7 +44,7 @@ public class skj extends ezq {
         if (ipChange instanceof IpChange) {
             return (C) ipChange.ipc$dispatch("dfbaff7d", new Object[]{this, str});
         }
-        if (TextUtils.equals("mainScreen", str)) {
+        if (StringUtils.equals("mainScreen", str)) {
             return this.c;
         }
         return (C) this.c.findComponent(str);

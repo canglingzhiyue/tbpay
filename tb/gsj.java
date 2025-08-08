@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -37,7 +37,7 @@ public class gsj {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("7d253be4", new Object[]{str, new Integer(i)})).longValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         String[] split = str.split("\\.");

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
@@ -53,9 +53,9 @@ public class rjy {
                 Map.Entry<String, String> next = it.next();
                 String key = next.getKey();
                 String value = next.getValue();
-                if (TextUtils.equals(activityOutTime.id, key)) {
+                if (StringUtils.equals(activityOutTime.id, key)) {
                     if (rjw.a(activityOutTime.outTime)) {
-                        if (TextUtils.equals(value, "true")) {
+                        if (StringUtils.equals(value, "true")) {
                             arrayList.add(key);
                         }
                     } else {
@@ -88,7 +88,7 @@ public class rjy {
             if (keySet.size() > 0) {
                 for (String str : keySet) {
                     for (String str2 : map2.keySet()) {
-                        if (TextUtils.equals(str, str2)) {
+                        if (StringUtils.equals(str, str2)) {
                             map2.put(str2, (String) map.get(str));
                         }
                     }

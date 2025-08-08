@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class ae implements ezm {
             for (int i = 0; i < size; i++) {
                 JSONObject jSONObject = jSONArray.getJSONObject(i);
                 if (jSONObject != null) {
-                    if (TextUtils.equals(jSONObject.getString("imageUrl"), string)) {
+                    if (StringUtils.equals(jSONObject.getString("imageUrl"), string)) {
                         jSONObject.put(ThemisConfig.SCENE_SELECT, (Object) "true");
                     } else {
                         jSONObject.put(ThemisConfig.SCENE_SELECT, (Object) "false");

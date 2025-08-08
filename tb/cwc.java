@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public class cwc {
@@ -12,7 +12,7 @@ public class cwc {
     }
 
     public static int a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return Integer.parseInt(str);
             } catch (NumberFormatException e) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -60,11 +60,11 @@ public class oow implements gke {
         } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("dataModel")) == null) {
         } else {
             String string = jSONObject2.getString("sectionBizCode");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             String string2 = jSONObject.getString("_operation");
-            if (TextUtils.equals(string2, "enqueue")) {
+            if (StringUtils.equals(string2, "enqueue")) {
                 if (jSONObject.get("widgetNode") == null) {
                     return;
                 }
@@ -73,7 +73,7 @@ public class oow implements gke {
                 this.d.put(Integer.valueOf(identityHashCode), jSONObject);
                 e.c("gw2.playerQueue", "enqueue, sectionBizCode=" + string + ", dataHash=" + identityHashCode + ", queueSize=" + this.c.size() + ", queueDataSize=" + this.d.size());
                 a(gkcVar);
-            } else if (!TextUtils.equals(string2, "dequeue")) {
+            } else if (!StringUtils.equals(string2, "dequeue")) {
             } else {
                 this.c.remove(jSONObject2);
                 int identityHashCode2 = System.identityHashCode(jSONObject2);

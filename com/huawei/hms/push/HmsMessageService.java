@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.nlsclientsdk.requests.Constant;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.aaid.utils.BaseUtils;
@@ -68,13 +68,13 @@ public class HmsMessageService extends Service {
         String stringExtra = intent.getStringExtra(RemoteMessageConst.DEVICE_TOKEN);
         a(stringExtra, str);
         Context applicationContext = getApplicationContext();
-        boolean z = !TextUtils.isEmpty(BaseUtils.getCacheData(applicationContext, applicationContext.getPackageName(), false));
+        boolean z = !StringUtils.isEmpty(BaseUtils.getCacheData(applicationContext, applicationContext.getPackageName(), false));
         if (bundle.isEmpty() && z) {
             HMSLog.i("HmsMessageService", "onNewToken to host app.");
             onNewToken(stringExtra);
             BaseUtils.deleteCacheData(applicationContext, applicationContext.getPackageName());
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             HMSLog.i("HmsMessageService", "onNewToken to sub app, subjectId:" + str);
             onNewToken(stringExtra, bundle);
             return;
@@ -98,13 +98,13 @@ public class HmsMessageService extends Service {
 
     private synchronized void a(Intent intent, Bundle bundle, String str, int i) {
         Context applicationContext = getApplicationContext();
-        boolean z = !TextUtils.isEmpty(BaseUtils.getCacheData(applicationContext, applicationContext.getPackageName(), false));
+        boolean z = !StringUtils.isEmpty(BaseUtils.getCacheData(applicationContext, applicationContext.getPackageName(), false));
         if (bundle.isEmpty() && z) {
             HMSLog.i("HmsMessageService", "onTokenError to host app.");
             onTokenError(new BaseException(i));
             BaseUtils.deleteCacheData(applicationContext, applicationContext.getPackageName());
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             HMSLog.i("HmsMessageService", "onTokenError to sub app, subjectId:" + str);
             onTokenError(new BaseException(i), bundle);
             return;
@@ -131,10 +131,10 @@ public class HmsMessageService extends Service {
         String stringExtra2 = intent.getStringExtra("message_proxy_type");
         HMSLog.i("HmsMessageService", "doOnNewToken:transactionId = " + str + " , internalCode = " + intExtra + ",subjectId:" + stringExtra + ",proxyType:" + stringExtra2);
         Bundle bundle = new Bundle();
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             bundle.putString(SUBJECT_ID, stringExtra);
         }
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             bundle.putString(PROXY_TYPE, stringExtra2);
         }
         if (intExtra == ErrorEnum.SUCCESS.getInternalCode()) {
@@ -147,7 +147,7 @@ public class HmsMessageService extends Service {
     }
 
     private void a(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Context applicationContext = getApplicationContext();
@@ -155,14 +155,14 @@ public class HmsMessageService extends Service {
             HMSLog.i("HmsMessageService", "receive a new token, refresh the local token");
             BaseUtils.saveToken(applicationContext, str2, str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return;
         }
         BaseUtils.reportAaidToken(applicationContext, str);
     }
 
     private void a(String str, String str2, int i) {
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "null";
         }
         PushBiUtil.reportExit(getApplicationContext(), str, str2, i);
@@ -171,7 +171,7 @@ public class HmsMessageService extends Service {
     private void b(Intent intent) {
         HMSLog.i("HmsMessageService", "parse batch response.");
         String stringExtra = intent.getStringExtra("batchMsgbody");
-        if (TextUtils.isEmpty(stringExtra)) {
+        if (StringUtils.isEmpty(stringExtra)) {
             return;
         }
         try {

@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.sdk.sys.BizContext;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.notification.model.AdvertisementOption;
@@ -184,7 +184,7 @@ public class O0000o {
 
     public O0000o O0000O0o(String str) {
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.O0000oO = str;
             }
             return this;

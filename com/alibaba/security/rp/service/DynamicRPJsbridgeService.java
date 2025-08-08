@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.taobao.windvane.jsbridge.c;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.ui.webview.jsbridge.RP;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -19,7 +19,7 @@ public class DynamicRPJsbridgeService extends Service implements c {
         if (ipChange instanceof IpChange) {
             return (Class) ipChange.ipc$dispatch("fa8f40b7", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !str.equals("RP")) {
+        if (StringUtils.isEmpty(str) || !str.equals("RP")) {
             return null;
         }
         return RP.class;

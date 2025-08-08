@@ -2,7 +2,7 @@ package com.sina.weibo.sdk.net;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.HeaderConstant;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -58,7 +58,7 @@ public final class b implements a {
     public final f a(d dVar) {
         String url = dVar.getUrl();
         Bundle params = dVar.getParams();
-        if (params != null && params.size() != 0 && !TextUtils.isEmpty(url)) {
+        if (params != null && params.size() != 0 && !StringUtils.isEmpty(url)) {
             Uri parse = Uri.parse(url);
             if (params != null && !params.isEmpty()) {
                 Uri.Builder buildUpon = parse.buildUpon();

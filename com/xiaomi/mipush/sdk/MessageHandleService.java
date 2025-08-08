@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.mipush.sdk.PushMessageHandler;
 import com.xiaomi.push.fd;
 import com.xiaomi.push.fn;
@@ -103,7 +103,7 @@ public class MessageHandleService extends BaseService {
                     MiPushCommandMessage miPushCommandMessage = (MiPushCommandMessage) a3;
                     com.xiaomi.channel.commonutils.logger.b.c("MessageHandleService", "begin execute onCommandResult, command=" + miPushCommandMessage.getCommand() + ", resultCode=" + miPushCommandMessage.getResultCode() + ", reason=" + miPushCommandMessage.getReason());
                     m1635a.onCommandResult(context, miPushCommandMessage);
-                    if (!TextUtils.equals(miPushCommandMessage.getCommand(), fn.COMMAND_REGISTER.f362a)) {
+                    if (!StringUtils.equals(miPushCommandMessage.getCommand(), fn.COMMAND_REGISTER.f362a)) {
                         return;
                     }
                     m1635a.onReceiveRegisterResult(context, miPushCommandMessage);
@@ -127,7 +127,7 @@ public class MessageHandleService extends BaseService {
                 MiPushCommandMessage miPushCommandMessage2 = (MiPushCommandMessage) a2.getSerializableExtra(PushMessageHelper.KEY_COMMAND);
                 com.xiaomi.channel.commonutils.logger.b.e("(Local) begin execute onCommandResult, command=" + miPushCommandMessage2.getCommand() + ", resultCode=" + miPushCommandMessage2.getResultCode() + ", reason=" + miPushCommandMessage2.getReason());
                 m1635a.onCommandResult(context, miPushCommandMessage2);
-                if (!TextUtils.equals(miPushCommandMessage2.getCommand(), fn.COMMAND_REGISTER.f362a)) {
+                if (!StringUtils.equals(miPushCommandMessage2.getCommand(), fn.COMMAND_REGISTER.f362a)) {
                     return;
                 }
                 m1635a.onReceiveRegisterResult(context, miPushCommandMessage2);

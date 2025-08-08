@@ -1,6 +1,6 @@
 package com.taobao.message.sp.chat.transformer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.datasdk.facade.model.ResultData;
@@ -51,11 +51,11 @@ public class SimpleMessageSenderViewDataTransformer implements DiffTransfomer {
             jSONObject.put("headType", (Object) Integer.valueOf(headType));
             if (headType != 0 && simpleProfile != null && simpleProfile2 != null) {
                 String avatarURL = headType == 1 ? simpleProfile2.getAvatarURL() : simpleProfile.getAvatarURL();
-                if (!TextUtils.isEmpty(avatarURL)) {
+                if (!StringUtils.isEmpty(avatarURL)) {
                     jSONObject.put("headIcon", (Object) avatarURL);
                 }
                 String displayName = headType == 1 ? simpleProfile2.getDisplayName() : simpleProfile.getDisplayName();
-                if (!TextUtils.isEmpty(displayName)) {
+                if (!StringUtils.isEmpty(displayName)) {
                     jSONObject.put(SimpleProfile.KEY_DISPLAYNAME, (Object) displayName);
                 }
             }
@@ -72,10 +72,10 @@ public class SimpleMessageSenderViewDataTransformer implements DiffTransfomer {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3547dc52", new Object[]{str, str2, str3, str4})).intValue();
         }
-        if (TextUtils.isEmpty(str) ? !TextUtils.equals(str3, str2) : TextUtils.equals(str, str2)) {
+        if (StringUtils.isEmpty(str) ? !StringUtils.equals(str3, str2) : StringUtils.equals(str, str2)) {
             i = 1;
         }
-        if (!TextUtils.equals("imba", str4)) {
+        if (!StringUtils.equals("imba", str4)) {
             return i;
         }
         return 0;

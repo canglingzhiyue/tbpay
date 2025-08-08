@@ -8,7 +8,7 @@ import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import com.alibaba.fastjson.JSONObject;
@@ -61,7 +61,7 @@ public class b implements c {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("73c26791", new Object[]{this, ghjVar, ghoVar});
-            } else if (!n.n().j() || ghoVar == null || TextUtils.isEmpty(ghoVar.f28333a)) {
+            } else if (!n.n().j() || ghoVar == null || StringUtils.isEmpty(ghoVar.f28333a)) {
             } else {
                 String str = ghoVar.f28333a;
                 char c = 65535;
@@ -275,7 +275,7 @@ public class b implements c {
             return;
         }
         String str = l.b(context).hngCookie;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String replace = str.replace("|", "%7C");

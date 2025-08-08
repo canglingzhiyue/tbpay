@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
 import com.alibaba.fastjson.JSON;
@@ -270,7 +270,7 @@ public class qoh {
         Map<String, ShortcutConfig> b = qod.a().b();
         qif.a("updatesShortcuts.shortcutControlConfigMap=" + JSON.toJSONString(c), new Object[0]);
         qif.a("updatesShortcuts.shortcuts=" + JSON.toJSONString(b), new Object[0]);
-        boolean isEmpty = TextUtils.isEmpty(e2) ^ true;
+        boolean isEmpty = StringUtils.isEmpty(e2) ^ true;
         Map map2 = null;
         if (isEmpty) {
             VariationSet activate = UTABTest.activate("ReachFlow", e2);
@@ -293,7 +293,7 @@ public class qoh {
             map.put("abControlEnable", "true");
             if (variation2 != null) {
                 String valueAsString = variation2.getValueAsString("");
-                if (!TextUtils.isEmpty(valueAsString)) {
+                if (!StringUtils.isEmpty(valueAsString)) {
                     map2 = (Map) JSON.parseObject(valueAsString, new TypeReference<Map<String, ShortcutControlConfig>>() { // from class: tb.qoh.2
                         {
                             qoh.this = this;
@@ -362,11 +362,11 @@ public class qoh {
             } else {
                 JSONObject jSONObject = null;
                 long j = 0;
-                if (!TextUtils.isEmpty(shortcutConfig.getAbTestModule()) && (activate = UTABTest.activate("ReachFlow", shortcutConfig.getAbTestModule())) != null) {
+                if (!StringUtils.isEmpty(shortcutConfig.getAbTestModule()) && (activate = UTABTest.activate("ReachFlow", shortcutConfig.getAbTestModule())) != null) {
                     Variation variation = activate.getVariation("config");
                     if (variation != null) {
                         String valueAsString = variation.getValueAsString("");
-                        if (!TextUtils.isEmpty(valueAsString)) {
+                        if (!StringUtils.isEmpty(valueAsString)) {
                             jSONObject = JSON.parseObject(valueAsString);
                         }
                     }
@@ -589,7 +589,7 @@ public class qoh {
             if (this.c.isEmpty() && !e.get()) {
                 c();
                 String userId = Login.getUserId();
-                if (TextUtils.isEmpty(userId)) {
+                if (StringUtils.isEmpty(userId)) {
                     userId = "";
                 }
                 map.put("userId", userId);

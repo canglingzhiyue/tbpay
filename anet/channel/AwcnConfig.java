@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.preference.PreferenceManager;
 import android.taobao.windvane.cache.d;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.heartbeat.IHeartbeat;
 import anet.channel.session.dns.DnsNavConfigTask;
 import anet.channel.strategy.ConnProtocol;
@@ -1297,7 +1297,7 @@ public class AwcnConfig {
                 ipChange.ipc$dispatch("24ab20a6", new Object[]{str});
                 return;
             }
-            if (str != null && !TextUtils.isEmpty(str) && accessPointWhiteList != null) {
+            if (str != null && !StringUtils.isEmpty(str) && accessPointWhiteList != null) {
                 for (Map.Entry<String, List<String>> entry : accessPointWhiteList.entrySet()) {
                     String key = entry.getKey();
                     List<String> value = entry.getValue();
@@ -1611,7 +1611,7 @@ public class AwcnConfig {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("70dd1e10", new Object[]{str});
-        } else if (!GlobalAppRuntimeInfo.isTargetProcess() || TextUtils.isEmpty(str)) {
+        } else if (!GlobalAppRuntimeInfo.isTargetProcess() || StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONArray jSONArray = new JSONArray(str);
@@ -2165,7 +2165,7 @@ public class AwcnConfig {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("81a22dc6", new Object[]{str});
-        } else if (str == null || TextUtils.isEmpty(str)) {
+        } else if (str == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONArray jSONArray = new JSONArray(str);
@@ -2317,7 +2317,7 @@ public class AwcnConfig {
 
     public static boolean isHostInMtopInterceptorWhiteList(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d03e3f56", new Object[]{str})).booleanValue() : (str == null || TextUtils.isEmpty(str) || mtopInterceptorWhiteList == null || mtopInterceptorWhiteList.get(str) == null) ? false : true;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("d03e3f56", new Object[]{str})).booleanValue() : (str == null || StringUtils.isEmpty(str) || mtopInterceptorWhiteList == null || mtopInterceptorWhiteList.get(str) == null) ? false : true;
     }
 
     public static void setMultiConnectOpened(boolean z) {
@@ -2632,7 +2632,7 @@ public class AwcnConfig {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("37aa3370", new Object[]{str});
-        } else if (GlobalAppRuntimeInfo.isTargetProcess() && !TextUtils.isEmpty(str)) {
+        } else if (GlobalAppRuntimeInfo.isTargetProcess() && !StringUtils.isEmpty(str)) {
             try {
                 JSONArray jSONArray = new JSONArray(str);
                 int length = jSONArray.length();
@@ -2907,7 +2907,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return (CopyOnWriteArrayList) ipChange.ipc$dispatch("e991e4d3", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -2935,7 +2935,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return (ArrayList) ipChange.ipc$dispatch("666f3a0a", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -2943,7 +2943,7 @@ public class AwcnConfig {
             ArrayList<DnsNavConfigTask> arrayList = new ArrayList<>();
             for (int i = 0; i < jSONArray.length(); i++) {
                 String string = jSONArray.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     JSONObject jSONObject = new JSONObject(string);
                     arrayList.add(new DnsNavConfigTask(jSONObject.get(DnsNavConfigTask.MatchKey).toString(), jSONObject.get(DnsNavConfigTask.MatchType).toString(), setArrayList(jSONObject.get(DnsNavConfigTask.PreCONN).toString()), setArrayList(jSONObject.get(DnsNavConfigTask.PreDNS).toString())));
                 }
@@ -3050,7 +3050,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return (ConcurrentHashMap) ipChange.ipc$dispatch("d7dc4abc", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         ConcurrentHashMap<String, List<String>> concurrentHashMap = new ConcurrentHashMap<>();
@@ -3097,7 +3097,7 @@ public class AwcnConfig {
             for (int i = 0; i < jSONArray.length(); i++) {
                 try {
                     String string = jSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         copyOnWriteArrayList.add(string);
                     }
                 } catch (Exception e) {
@@ -3118,7 +3118,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return (ConcurrentHashMap) ipChange.ipc$dispatch("1c497109", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -3126,7 +3126,7 @@ public class AwcnConfig {
             ConcurrentHashMap<String, Integer> concurrentHashMap = new ConcurrentHashMap<>();
             for (int i = 0; i < jSONArray.length(); i++) {
                 String string = jSONArray.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     concurrentHashMap.put(string, Integer.valueOf(i));
                 }
             }
@@ -3142,7 +3142,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("70496b30", new Object[]{str, copyOnWriteArrayList})).booleanValue();
         }
-        if (str != null && !TextUtils.isEmpty(str) && copyOnWriteArrayList != null) {
+        if (str != null && !StringUtils.isEmpty(str) && copyOnWriteArrayList != null) {
             return copyOnWriteArrayList.contains(str);
         }
         return false;
@@ -3153,7 +3153,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f30d64a3", new Object[]{str, copyOnWriteArrayList})).booleanValue();
         }
-        if (str != null && !TextUtils.isEmpty(str) && copyOnWriteArrayList != null && !copyOnWriteArrayList.isEmpty()) {
+        if (str != null && !StringUtils.isEmpty(str) && copyOnWriteArrayList != null && !copyOnWriteArrayList.isEmpty()) {
             Iterator<String> it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 if (str.contains(it.next())) {
@@ -3169,7 +3169,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("32f4e3db", new Object[]{str, concurrentHashMap})).booleanValue();
         }
-        if (str != null && !TextUtils.isEmpty(str) && concurrentHashMap != null) {
+        if (str != null && !StringUtils.isEmpty(str) && concurrentHashMap != null) {
             for (Map.Entry<String, List<String>> entry : concurrentHashMap.entrySet()) {
                 if (str.startsWith(entry.getKey())) {
                     return true;
@@ -3184,7 +3184,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f20636", new Object[]{str, concurrentHashMap});
         }
-        if (str != null && !TextUtils.isEmpty(str) && concurrentHashMap != null) {
+        if (str != null && !StringUtils.isEmpty(str) && concurrentHashMap != null) {
             for (Map.Entry<String, List<String>> entry : concurrentHashMap.entrySet()) {
                 for (String str2 : entry.getValue()) {
                     if ("*".equalsIgnoreCase(str2)) {
@@ -3204,7 +3204,7 @@ public class AwcnConfig {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2ce104ea", new Object[]{str, list})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || list == null) {
+        if (StringUtils.isEmpty(str) || list == null) {
             return false;
         }
         return list.contains("*") || list.contains(str);
@@ -3301,7 +3301,7 @@ public class AwcnConfig {
         }
         if (str != null) {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     if (concurrentHashMap != null && !concurrentHashMap.isEmpty()) {
                         for (Map.Entry<String, List<String>> entry : concurrentHashMap.entrySet()) {
                             List<String> value = entry.getValue();
@@ -3461,7 +3461,7 @@ public class AwcnConfig {
                 lunchAfterAmdcList = new CopyOnWriteArraySet<>();
                 for (int i = 0; i < jSONArray.length(); i++) {
                     String string = jSONArray.getString(i);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         lunchAfterAmdcList.add(string);
                     }
                 }
@@ -3594,7 +3594,7 @@ public class AwcnConfig {
         } catch (Throwable th) {
             ALog.e(TAG, "[getZstdDictAttributes] error", null, th, new Object[0]);
         }
-        if (str != null && !TextUtils.isEmpty(str) && concurrentHashMap != null && i >= 0) {
+        if (str != null && !StringUtils.isEmpty(str) && concurrentHashMap != null && i >= 0) {
             Iterator<Map.Entry<String, List<String>>> it = concurrentHashMap.entrySet().iterator();
             while (true) {
                 if (!it.hasNext()) {
@@ -3619,7 +3619,7 @@ public class AwcnConfig {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e800b4dc", new Object[]{str});
-        } else if (str == null || TextUtils.isEmpty(str)) {
+        } else if (str == null || StringUtils.isEmpty(str)) {
         } else {
             try {
                 JSONArray jSONArray = new JSONArray(str);

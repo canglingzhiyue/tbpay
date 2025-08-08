@@ -1,6 +1,6 @@
 package com.xiaomi.clientreport.processor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.clientreport.data.PerfClientReport;
 import com.xiaomi.push.x;
 import java.io.BufferedReader;
@@ -30,7 +30,7 @@ public class e {
         PerfClientReport perfClientReport = null;
         try {
             String[] m1633a = m1633a(str);
-            if (m1633a == null || m1633a.length < 4 || TextUtils.isEmpty(m1633a[0]) || TextUtils.isEmpty(m1633a[1]) || TextUtils.isEmpty(m1633a[2]) || TextUtils.isEmpty(m1633a[3])) {
+            if (m1633a == null || m1633a.length < 4 || StringUtils.isEmpty(m1633a[0]) || StringUtils.isEmpty(m1633a[1]) || StringUtils.isEmpty(m1633a[2]) || StringUtils.isEmpty(m1633a[3])) {
                 return null;
             }
             perfClientReport = PerfClientReport.getBlankInstance();
@@ -62,7 +62,7 @@ public class e {
     private static HashMap<String, String> m1631a(String str) {
         BufferedReader bufferedReader;
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str) || !new File(str).exists()) {
+        if (StringUtils.isEmpty(str) || !new File(str).exists()) {
             return hashMap;
         }
         BufferedReader bufferedReader2 = 0;
@@ -80,7 +80,7 @@ public class e {
                         if (bufferedReader2 >= 2) {
                             bufferedReader2 = 0;
                             bufferedReader2 = 0;
-                            if (!TextUtils.isEmpty(split[0]) && !TextUtils.isEmpty(split[1])) {
+                            if (!StringUtils.isEmpty(split[0]) && !StringUtils.isEmpty(split[1])) {
                                 bufferedReader2 = split[0];
                                 hashMap.put(bufferedReader2, split[1]);
                             }
@@ -137,7 +137,7 @@ public class e {
         Throwable th;
         BufferedWriter bufferedWriter;
         Exception e;
-        if (TextUtils.isEmpty(str) || hashMap == null || hashMap.size() == 0) {
+        if (StringUtils.isEmpty(str) || hashMap == null || hashMap.size() == 0) {
             return;
         }
         File file = new File(str);
@@ -175,7 +175,7 @@ public class e {
 
     public static void a(String str, com.xiaomi.clientreport.data.a[] aVarArr) {
         RandomAccessFile randomAccessFile;
-        if (aVarArr == null || aVarArr.length <= 0 || TextUtils.isEmpty(str)) {
+        if (aVarArr == null || aVarArr.length <= 0 || StringUtils.isEmpty(str)) {
             return;
         }
         FileLock fileLock = null;
@@ -191,7 +191,7 @@ public class e {
                         String a2 = a((PerfClientReport) aVar);
                         long j = ((PerfClientReport) aVar).perfCounts;
                         long j2 = ((PerfClientReport) aVar).perfLatencies;
-                        if (!TextUtils.isEmpty(a2) && j > 0 && j2 >= 0) {
+                        if (!StringUtils.isEmpty(a2) && j > 0 && j2 >= 0) {
                             a(m1631a, a2, j, j2);
                         }
                     }
@@ -227,7 +227,7 @@ public class e {
     private static void a(HashMap<String, String> hashMap, String str, long j, long j2) {
         StringBuilder sb;
         String str2 = hashMap.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             hashMap.put(str, j + "#" + j2);
             return;
         }
@@ -263,7 +263,7 @@ public class e {
 
     /* renamed from: a  reason: collision with other method in class */
     private static String[] m1633a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         return str.split("#");

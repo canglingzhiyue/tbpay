@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
@@ -534,7 +534,7 @@ public class GoodsIconFrame extends BaseFrame implements ddv {
         }
         try {
             JSONObject b = pqj.b(hir.ad());
-            return (b == null || TextUtils.isEmpty(b.getString(str))) ? STATIC_IMAGE_URL : b.getString(str);
+            return (b == null || StringUtils.isEmpty(b.getString(str))) ? STATIC_IMAGE_URL : b.getString(str);
         } catch (JSONException e) {
             q.b(TAG, e.getMessage());
             return STATIC_IMAGE_URL;
@@ -593,7 +593,7 @@ public class GoodsIconFrame extends BaseFrame implements ddv {
             if (krcVar != null && krcVar.c()) {
                 return;
             }
-            if (TextUtils.equals(this.lastAnimType, str)) {
+            if (StringUtils.equals(this.lastAnimType, str)) {
                 this.mAuctionImg.post(new Runnable() { // from class: com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar.GoodsIconFrame.7
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -654,7 +654,7 @@ public class GoodsIconFrame extends BaseFrame implements ddv {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d025d4c6", new Object[]{this, str});
         } else {
-            this.mAuctionNum.animate().alpha(0.0f).setDuration(200L).withEndAction(new AnonymousClass10(TextUtils.equals(str, "normal") ? 2200L : 1200L)).setListener(new AnimatorListenerAdapter() { // from class: com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar.GoodsIconFrame.9
+            this.mAuctionNum.animate().alpha(0.0f).setDuration(200L).withEndAction(new AnonymousClass10(StringUtils.equals(str, "normal") ? 2200L : 1200L)).setListener(new AnimatorListenerAdapter() { // from class: com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar.GoodsIconFrame.9
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -731,7 +731,7 @@ public class GoodsIconFrame extends BaseFrame implements ddv {
             return ((Boolean) ipChange.ipc$dispatch("356da558", new Object[]{new Integer(i)})).booleanValue();
         }
         String V = u.V();
-        if (TextUtils.isEmpty(V) || (c = pqj.c(V)) == null) {
+        if (StringUtils.isEmpty(V) || (c = pqj.c(V)) == null) {
             return false;
         }
         return c.contains(Integer.valueOf(i));

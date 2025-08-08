@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.taobao.windvane.embed.BaseEmbedView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -314,7 +314,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             public boolean setValue(MyTBVideoEmbedView myTBVideoEmbedView, Object obj, boolean z) {
                 if (super.setValue(myTBVideoEmbedView, obj, z)) {
                     String valueOf = String.valueOf(obj);
-                    if (TextUtils.isEmpty(valueOf)) {
+                    if (StringUtils.isEmpty(valueOf)) {
                         return true;
                     }
                     try {
@@ -571,7 +571,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             public boolean doSomething(com.taobao.avplayer.embed.MyTBVideoEmbedView r7, java.lang.String r8, android.taobao.windvane.jsbridge.WVCallBackContext r9) {
                 /*
                     r6 = this;
-                    boolean r0 = android.text.TextUtils.isEmpty(r8)
+                    boolean r0 = android.text.StringUtils.isEmpty(r8)
                     r1 = 1
                     if (r0 != 0) goto L66
                     com.alibaba.fastjson.JSONObject r8 = com.alibaba.fastjson.JSON.parseObject(r8)
@@ -650,7 +650,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             @Override // com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
                 com.alibaba.fastjson.JSONObject parseObject;
-                if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+                if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
                     return true;
                 }
                 MyTBVideoEmbedView.access$1300(myTBVideoEmbedView, Boolean.TRUE.equals(parseObject.getBoolean(MusLiveVideo.ATTR_MUTE)));
@@ -666,7 +666,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
                 com.alibaba.fastjson.JSONObject parseObject;
                 Object obj;
-                if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (obj = parseObject.get("screenMode")) == null) {
+                if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (obj = parseObject.get("screenMode")) == null) {
                     return false;
                 }
                 myTBVideoEmbedView.setScreenMode(String.valueOf(obj), true);
@@ -717,7 +717,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
                 com.alibaba.fastjson.JSONObject parseObject;
                 Object obj;
-                if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (obj = parseObject.get("instanceMode")) == null) {
+                if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (obj = parseObject.get("instanceMode")) == null) {
                     return false;
                 }
                 myTBVideoEmbedView.setDWInstanceType(String.valueOf(obj), true);
@@ -730,7 +730,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         setAnchorErpList { // from class: com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod.11
             @Override // com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
-                if (myTBVideoEmbedView == null || TextUtils.isEmpty(str)) {
+                if (myTBVideoEmbedView == null || StringUtils.isEmpty(str)) {
                     return false;
                 }
                 AVSDKLog.e(c.MODULE_SDK_PAGE, "setAnchorErpList " + str);
@@ -748,13 +748,13 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         getErpList { // from class: com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod.12
             @Override // com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
-                return myTBVideoEmbedView != null && !TextUtils.isEmpty(str);
+                return myTBVideoEmbedView != null && !StringUtils.isEmpty(str);
             }
         },
         setFov { // from class: com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod.13
             @Override // com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
-                if (myTBVideoEmbedView == null || TextUtils.isEmpty(str)) {
+                if (myTBVideoEmbedView == null || StringUtils.isEmpty(str)) {
                     return false;
                 }
                 com.alibaba.fastjson.JSONObject parseObject = JSON.parseObject(str);
@@ -771,7 +771,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         getFov { // from class: com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod.14
             @Override // com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
-                if (myTBVideoEmbedView == null || TextUtils.isEmpty(str)) {
+                if (myTBVideoEmbedView == null || StringUtils.isEmpty(str)) {
                     return false;
                 }
                 if (wVCallBackContext == null) {
@@ -796,7 +796,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         getViewPortPlaneCoordinateFromERP { // from class: com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod.15
             @Override // com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
-                return myTBVideoEmbedView != null && !TextUtils.isEmpty(str);
+                return myTBVideoEmbedView != null && !StringUtils.isEmpty(str);
             }
         },
         updateEmbedProperty { // from class: com.taobao.avplayer.embed.MyTBVideoEmbedView.JSMethod.16
@@ -804,7 +804,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             public boolean doSomething(MyTBVideoEmbedView myTBVideoEmbedView, String str, WVCallBackContext wVCallBackContext) {
                 com.alibaba.fastjson.JSONObject parseObject;
                 EmbedProperties embedProperties;
-                if (myTBVideoEmbedView == null || TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
+                if (myTBVideoEmbedView == null || StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null) {
                     return false;
                 }
                 Object obj = parseObject.get("key");
@@ -1065,10 +1065,10 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         bk.a aVar = new bk.a((Activity) this.mContext);
         aVar.k("H5");
         aVar.a(this.mSrc);
-        if (!TextUtils.isEmpty(this.mPlayerScene)) {
+        if (!StringUtils.isEmpty(this.mPlayerScene)) {
             aVar.f(this.mPlayerScene);
         }
-        if (!TextUtils.isEmpty(this.mVideoPlayScenes)) {
+        if (!StringUtils.isEmpty(this.mVideoPlayScenes)) {
             aVar.g(this.mVideoPlayScenes);
         }
         DWInstanceType dWInstanceType = this.mDWInstanceType;
@@ -1077,7 +1077,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         }
         aVar.c(this.mIsVideoLoop);
         aVar.f(this.mMuted);
-        if (!TextUtils.isEmpty(this.mContentId)) {
+        if (!StringUtils.isEmpty(this.mContentId)) {
             aVar.h(this.mContentId);
         }
         aVar.j(this.mBackCoverDisPlay);
@@ -1104,7 +1104,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         if (j != -1) {
             aVar.b(j);
         }
-        if (!TextUtils.isEmpty(this.mThumbnailSrc)) {
+        if (!StringUtils.isEmpty(this.mThumbnailSrc)) {
             aVar.i(true);
             com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar2 = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
             DWFrontCoverBean dWFrontCoverBean = new DWFrontCoverBean(0L, null, this.mThumbnailSrc);
@@ -1132,10 +1132,10 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             for (Map.Entry<String, String> entry : hashMap2.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if ("showNotWifiHint".equals(key) && !TextUtils.isEmpty(value)) {
+                if ("showNotWifiHint".equals(key) && !StringUtils.isEmpty(value)) {
                     this.mTBDWInstance.setShowNotWifiHint(b.a(value));
                 }
-                if ("showPlayWithCacheHint".equals(key) && !TextUtils.isEmpty(value)) {
+                if ("showPlayWithCacheHint".equals(key) && !StringUtils.isEmpty(value)) {
                     this.mTBDWInstance.setShowPlayWithCacheHint(b.a(value));
                 }
             }
@@ -1187,7 +1187,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             aVar.a((Map<String, String>) hashMap);
         }
         this.mHigDWInstance = aVar.c();
-        if (!TextUtils.isEmpty(this.mThumbnailSrc)) {
+        if (!StringUtils.isEmpty(this.mThumbnailSrc)) {
             TUrlImageView tUrlImageView = new TUrlImageView(this.mContext);
             ImageView.ScaleType scaleType = this.mPosterScaleType;
             if (scaleType != null) {
@@ -1737,7 +1737,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bafed655", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (!"ERP".equals(str) && !"EAC".equals(str)) {
                 return;
@@ -1944,7 +1944,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             ipChange.ipc$dispatch("1b6db929", new Object[]{this, str, new Boolean(z)});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             char c = 65535;
             int hashCode = str.hashCode();
             if (hashCode != -1362001767) {
@@ -2076,7 +2076,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3fefef5f", new Object[]{this, str, new Boolean(z)});
-        } else if (!TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(str)) {
             for (DWInstanceType dWInstanceType : DWInstanceType.values()) {
                 if (dWInstanceType != null && str.equals(dWInstanceType.getValue())) {
                     this.mDWInstanceType = dWInstanceType;
@@ -2097,7 +2097,7 @@ public class MyTBVideoEmbedView extends BaseEmbedView implements av, ax, bc, u, 
             return;
         }
         this.mScreenMode = str;
-        if (!z || TextUtils.isEmpty(str) || this.mTBDWInstance == null) {
+        if (!z || StringUtils.isEmpty(str) || this.mTBDWInstance == null) {
             return;
         }
         char c = 65535;

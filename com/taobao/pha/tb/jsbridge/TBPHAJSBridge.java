@@ -5,7 +5,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -62,7 +62,7 @@ public class TBPHAJSBridge extends e {
         if (wVCallBackContext == null) {
             ngr.b(TAG, "WVCallBackContext is null.");
             return false;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ngr.b(TAG, "action is empty.");
             return false;
         } else {
@@ -826,7 +826,7 @@ public class TBPHAJSBridge extends e {
                     return;
                 }
                 String str5 = "*";
-                if (!TextUtils.isEmpty(str3) && !TextUtils.equals(str5, str3)) {
+                if (!StringUtils.isEmpty(str3) && !StringUtils.equals(str5, str3)) {
                     str5 = ngn.b(str3);
                 }
                 if (appController.E() == null) {
@@ -850,9 +850,9 @@ public class TBPHAJSBridge extends e {
                 ManifestModel u = appController.u();
                 for (int i = 0; i < parseArray.size(); i++) {
                     PageModel pageModel = (PageModel) parseArray.getObject(i, PageModel.class);
-                    if (pageModel != null && !TextUtils.isEmpty(pageModel.getUrl())) {
+                    if (pageModel != null && !StringUtils.isEmpty(pageModel.getUrl())) {
                         String b = ngn.b(pageModel.getUrl());
-                        if (!TextUtils.isEmpty(b)) {
+                        if (!StringUtils.isEmpty(b)) {
                             Iterator<PageModel> it = u.pages.iterator();
                             while (it.hasNext()) {
                                 PageModel next = it.next();
@@ -860,11 +860,11 @@ public class TBPHAJSBridge extends e {
                                     Iterator<PageModel> it2 = next.frames.iterator();
                                     while (it2.hasNext()) {
                                         PageModel next2 = it2.next();
-                                        if (TextUtils.equals(b, ngn.b(next2.getUrl()))) {
+                                        if (StringUtils.equals(b, ngn.b(next2.getUrl()))) {
                                             a(next2, pageModel);
                                         }
                                     }
-                                } else if (TextUtils.equals(b, ngn.b(next.getUrl()))) {
+                                } else if (StringUtils.equals(b, ngn.b(next.getUrl()))) {
                                     a(next, pageModel);
                                 }
                             }
@@ -877,12 +877,12 @@ public class TBPHAJSBridge extends e {
                 }
                 for (int i2 = 0; i2 < parseArray.size(); i2++) {
                     PageModel pageModel2 = (PageModel) parseArray.getObject(i2, PageModel.class);
-                    if (pageModel2 != null || !TextUtils.isEmpty(pageModel2.getUrl())) {
+                    if (pageModel2 != null || !StringUtils.isEmpty(pageModel2.getUrl())) {
                         String b2 = ngn.b(pageModel2.getUrl());
-                        if (!TextUtils.isEmpty(b2)) {
+                        if (!StringUtils.isEmpty(b2)) {
                             for (c cVar : M) {
                                 PageModel mo1202getPageModel = cVar.mo1202getPageModel();
-                                if (mo1202getPageModel != null && !TextUtils.isEmpty(mo1202getPageModel.getUrl())) {
+                                if (mo1202getPageModel != null && !StringUtils.isEmpty(mo1202getPageModel.getUrl())) {
                                     String b3 = ngn.b(mo1202getPageModel.getUrl());
                                     if (b2 != null && b2.equals(b3)) {
                                         cVar.updatePageModel(pageModel2);
@@ -903,10 +903,10 @@ public class TBPHAJSBridge extends e {
                 ipChange.ipc$dispatch("9341d0e8", new Object[]{pageModel, pageModel2});
             } else if (pageModel == null || pageModel2 == null) {
             } else {
-                if (!TextUtils.isEmpty(pageModel2.getUrl())) {
+                if (!StringUtils.isEmpty(pageModel2.getUrl())) {
                     pageModel.setUrl(pageModel2.getUrl());
                 }
-                if (!TextUtils.isEmpty(pageModel2.backgroundColor)) {
+                if (!StringUtils.isEmpty(pageModel2.backgroundColor)) {
                     pageModel.backgroundColor = pageModel2.backgroundColor;
                 }
                 pageModel.setEnableHardPullRefresh(Boolean.valueOf(pageModel2.isEnableHardPullRefresh()));

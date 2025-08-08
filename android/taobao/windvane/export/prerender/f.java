@@ -1,7 +1,7 @@
 package android.taobao.windvane.export.prerender;
 
 import android.taobao.windvane.export.prerender.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.riverlogger.RVLLevel;
@@ -92,9 +92,9 @@ public final class f {
             } else {
                 String customConfig = OrangeConfig.getInstance().getCustomConfig("themis_prerender_config", null);
                 String str2 = customConfig;
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     com.taobao.android.riverlogger.e.a(RVLLevel.Info, "Themis/Performance/Prerender").a("orangeUpdate").a("msg", (Object) "configValue is empty").a();
-                } else if (TextUtils.equals(str2, f.a(f.INSTANCE))) {
+                } else if (StringUtils.equals(str2, f.a(f.INSTANCE))) {
                     com.taobao.android.riverlogger.e.a(RVLLevel.Info, "Themis/Performance/Prerender").a("orangeUpdate").a("msg", (Object) "configValue is same").a();
                 } else {
                     com.taobao.android.riverlogger.b a2 = com.taobao.android.riverlogger.e.a(RVLLevel.Info, "Themis/Performance/Prerender").a("orangeUpdate");

@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.album;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
 import java.util.LinkedList;
@@ -51,7 +51,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (k) ipChange.ipc$dispatch("da15257", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (k kVar : this.f6493a) {

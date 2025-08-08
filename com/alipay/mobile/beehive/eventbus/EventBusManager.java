@@ -3,7 +3,7 @@ package com.alipay.mobile.beehive.eventbus;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.msp.framework.helper.MspConfig;
 import com.alipay.android.msp.framework.taskscheduler.TaskHelper;
@@ -283,7 +283,7 @@ public class EventBusManager {
         if (iEventSubscriber == null) {
             throw new IllegalArgumentException("target to register must not be null.");
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             throw new IllegalArgumentException("register eventName must not be empty");
         }
         return a(subscriberConfig, a(str, iEventSubscriber, threadMode, subscriberConfig), str);
@@ -307,7 +307,7 @@ public class EventBusManager {
         } else if (iEventSubscriber == null) {
             throw new IllegalArgumentException("target to unregister must not be null.");
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 throw new IllegalArgumentException("unregister eventName must not be empty");
             }
             Set<EventHandler> set = this.d.get(str);
@@ -477,7 +477,7 @@ public class EventBusManager {
             Iterator<String> it = list.iterator();
             while (true) {
                 if (it.hasNext()) {
-                    if (TextUtils.equals(eventHandler.getWhiteListKey(), it.next())) {
+                    if (StringUtils.equals(eventHandler.getWhiteListKey(), it.next())) {
                         z = true;
                         break;
                     }
@@ -733,7 +733,7 @@ public class EventBusManager {
         } else if (event != null) {
             ArrayList arrayList = new ArrayList();
             for (EventHandler eventHandler : set) {
-                if (eventHandler != null && TextUtils.isEmpty(eventHandler.getUniqueId())) {
+                if (eventHandler != null && StringUtils.isEmpty(eventHandler.getUniqueId())) {
                     arrayList.add(eventHandler.getUniqueId());
                 }
             }

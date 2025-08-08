@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAInputData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.a;
@@ -60,7 +60,7 @@ public final class avn extends arn {
         } else if (jSONObject == null || (jSONObject3 = jSONObject.getJSONObject("meta")) == null || (jSONObject4 = jSONObject3.getJSONObject("template")) == null) {
         } else {
             String string = jSONObject4.getString("id");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             s b = a().b();
@@ -83,7 +83,7 @@ public final class avn extends arn {
         } else {
             String string = jSONObject4.getString("id");
             String string2 = jSONObject4.getString("version");
-            if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+            if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                 return;
             }
             s b = a().b();
@@ -99,8 +99,8 @@ public final class avn extends arn {
                     break;
                 }
                 JSONObject jSONObject5 = jSONArray.getJSONObject(i);
-                if (jSONObject5 != null && TextUtils.equals(jSONObject5.getString("id"), string)) {
-                    if (!TextUtils.equals(jSONObject5.getString("version"), string2)) {
+                if (jSONObject5 != null && StringUtils.equals(jSONObject5.getString("id"), string)) {
+                    if (!StringUtils.equals(jSONObject5.getString("version"), string2)) {
                         jSONObject5.putAll(jSONObject4);
                         z = true;
                         z2 = true;

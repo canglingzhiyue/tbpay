@@ -1,7 +1,7 @@
 package com.taobao.android.fluid.framework.preload.task;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -194,7 +194,7 @@ public class f extends a {
             sorVar.g = this.d;
         }
         DetailCacheData detailCacheData = this.i;
-        if (detailCacheData != null && TextUtils.equals(detailCacheData.getSceneName(), IDetailCache.SCENE_NAME_SHORT_VIDEO_INTERNAL_UNEXPOSED)) {
+        if (detailCacheData != null && StringUtils.equals(detailCacheData.getSceneName(), IDetailCache.SCENE_NAME_SHORT_VIDEO_INTERNAL_UNEXPOSED)) {
             spz.c("PickPreloadController_NormalPreloadTask_PreloadVideoModule", "来自后台存储的未曝光的缓存不为null，设置isFromCache，isExposed");
             sorVar.s = true;
             sorVar.p = false;

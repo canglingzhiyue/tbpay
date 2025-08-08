@@ -1,7 +1,7 @@
 package com.taobao.android.riverlogger.inspector;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URI;
@@ -96,7 +96,7 @@ public class m extends c {
         }
         g = sharedPreferences;
         String string = sharedPreferences.getString("server", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         m mVar = new m(string);
@@ -281,7 +281,7 @@ public class m extends c {
                     ipChange2.ipc$dispatch("3dd7e573", new Object[]{this, str});
                     return;
                 }
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = "WebSocket error";
                 }
                 m.this.a(-1, str);
@@ -298,7 +298,7 @@ public class m extends c {
                 m.b(m.this);
                 if (i == 4040) {
                     str = "Debug page is closed";
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                     str = "WebSocket closed";
                 }
                 m.this.a(i, str);

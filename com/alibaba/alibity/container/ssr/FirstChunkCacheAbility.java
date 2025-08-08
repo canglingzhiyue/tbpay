@@ -9,7 +9,7 @@ import android.taobao.windvane.extra.core.WVCore;
 import android.taobao.windvane.extra.storage.FirstChunkStorage;
 import android.taobao.windvane.extra.storage.ResponseContext;
 import android.taobao.windvane.thread.WVThreadPool;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.FinishResult;
@@ -90,7 +90,7 @@ public final class FirstChunkCacheAbility extends alm {
             return;
         }
         String str = (String) alsVar.c("url");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             alnVar.a(a$a.Companion.b("url is empty"));
             return;
         }
@@ -105,10 +105,10 @@ public final class FirstChunkCacheAbility extends alm {
             read.setExpiredTime(ResponseContext.getDefaultExpiredTime());
         }
         read.setExpiredTime(a(map, "expireTime", read.getExpiredTime()));
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             read.setVersion(a3);
         }
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             read.setHtml(a2);
         }
         read.setPriority(1);
@@ -141,7 +141,7 @@ public final class FirstChunkCacheAbility extends alm {
         if (a2 == null) {
             a2 = (String) alsVar.c("url");
         }
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             alnVar.a(a$a.Companion.b("url is empty"));
             return;
         }
@@ -191,7 +191,7 @@ public final class FirstChunkCacheAbility extends alm {
         }
         String a2 = com.alibaba.ability.e.a(map, "url", (String) null);
         Boolean a3 = com.alibaba.ability.e.a(map, "forceUpdate", (Boolean) false);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             alnVar.a(a$a.Companion.b("url is empty"));
         } else if (a3 == null) {
             alnVar.a(a$a.Companion.b("forceUpdate shouldn't be null"));
@@ -278,7 +278,7 @@ public final class FirstChunkCacheAbility extends alm {
             return;
         }
         String a2 = com.alibaba.ability.e.a(map, "url", (String) null);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             alnVar.a(a$a.Companion.b("url is empty"));
             return;
         }

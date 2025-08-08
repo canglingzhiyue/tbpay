@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.trade.cart.constant.CartFrom;
 import com.taobao.orange.OrangeConfig;
@@ -24,7 +24,7 @@ public class jjo {
         }
         if (CartFrom.TSM_NATIVE_TAOBAO.equals(cartFrom)) {
             String config = OrangeConfig.getInstance().getConfig("cart_switch", ORANGE_TMS_CART_H5, "https://cart.m.tmall.com/cart/myCart.htm");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return config;
             }
             return config + "?tp_id=" + str;

@@ -2,7 +2,7 @@ package com.taobao.android.layoutmanager.module;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,7 +45,7 @@ public class RouteListenerModule {
         } else if (!"true".equals(OrangeConfig.getInstance().getConfig("tnode", "openRouteListenerModule", "true")) || !(cVar.b instanceof JSONObject)) {
         } else {
             String string = ((JSONObject) cVar.b).getString("scence");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             f13254a.put(string, cVar);

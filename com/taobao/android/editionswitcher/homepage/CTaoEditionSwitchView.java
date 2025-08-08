@@ -1,7 +1,7 @@
 package com.taobao.android.editionswitcher.homepage;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -73,9 +73,9 @@ public class CTaoEditionSwitchView extends EditionSwitchView {
         }
         PositionInfo c = com.taobao.android.editionswitcher.b.c(getContext());
         this.mAreaNameTextView.setTag(c.editionCode);
-        if (TextUtils.isEmpty(c.area)) {
+        if (StringUtils.isEmpty(c.area)) {
             String[] stringArray = getResources().getStringArray(R.array.edition_area_ctao_names);
-            if (TextUtils.equals(c.editionCode, "CUN")) {
+            if (StringUtils.equals(c.editionCode, "CUN")) {
                 this.mAreaNameTextView.setText(stringArray[1]);
             } else {
                 this.mAreaNameTextView.setText(stringArray[0]);
@@ -84,7 +84,7 @@ public class CTaoEditionSwitchView extends EditionSwitchView {
             this.mAreaNameTextView.setText(c.area);
         }
         TextView textView = (TextView) findViewById(R.id.textView_change_area_reason);
-        if (TextUtils.equals(c.editionCode, "CUN")) {
+        if (StringUtils.equals(c.editionCode, "CUN")) {
             textView.setText(getResources().getString(R.string.area_switch_ctao_reason));
         } else if (!com.taobao.android.editionswitcher.b.l(getContext()) && com.taobao.android.editionswitcher.b.k(getContext())) {
             textView.setText(getResources().getString(R.string.area_switch_ctao_reason));
@@ -112,13 +112,13 @@ public class CTaoEditionSwitchView extends EditionSwitchView {
             a aVar = new a();
             aVar.f12297a = stringArray[i2].trim();
             aVar.b = stringArray2[i2].trim();
-            if (TextUtils.equals(aVar.f12297a, str)) {
+            if (StringUtils.equals(aVar.f12297a, str)) {
                 aVar.d = true;
                 z = true;
             } else {
                 aVar.d = false;
             }
-            if (TextUtils.equals(aVar.f12297a, "CN")) {
+            if (StringUtils.equals(aVar.f12297a, "CN")) {
                 i = i2;
             }
             arrayList.add(aVar);
@@ -153,7 +153,7 @@ public class CTaoEditionSwitchView extends EditionSwitchView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("17a3024b", new Object[]{this, str});
-        } else if (this.mAreaNameTextView == null || this.mViewType != 0 || TextUtils.isEmpty(str)) {
+        } else if (this.mAreaNameTextView == null || this.mViewType != 0 || StringUtils.isEmpty(str)) {
         } else {
             this.mAreaNameTextView.setText(str);
         }
@@ -163,7 +163,7 @@ public class CTaoEditionSwitchView extends EditionSwitchView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("301de7d4", new Object[]{this, str});
-        } else if (this.mChangeAreaReasonTextView == null || this.mViewType != 0 || TextUtils.isEmpty(str)) {
+        } else if (this.mChangeAreaReasonTextView == null || this.mViewType != 0 || StringUtils.isEmpty(str)) {
         } else {
             this.mChangeAreaReasonTextView.setText(str);
         }
@@ -173,7 +173,7 @@ public class CTaoEditionSwitchView extends EditionSwitchView {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4d58443f", new Object[]{this, str});
-        } else if (this.mChangeAreaConfirmTextView == null || this.mViewType != 0 || TextUtils.isEmpty(str)) {
+        } else if (this.mChangeAreaConfirmTextView == null || this.mViewType != 0 || StringUtils.isEmpty(str)) {
         } else {
             this.mChangeAreaConfirmTextView.setText(str);
         }

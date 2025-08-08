@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import anet.channel.util.HttpHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -158,10 +158,10 @@ public class rzu implements ryp {
         try {
             String singleHeaderFieldByKey = HeaderHandlerUtil.getSingleHeaderFieldByKey(map, HttpHeaderConstant.X_SERVICE_DOMAIN);
             String singleHeaderFieldByKey2 = HeaderHandlerUtil.getSingleHeaderFieldByKey(map, HttpHeaderConstant.X_SSR_TOKEN_VALIDATION);
-            if (!TextUtils.isEmpty(singleHeaderFieldByKey2)) {
+            if (!StringUtils.isEmpty(singleHeaderFieldByKey2)) {
                 this.f33440a.d.T = singleHeaderFieldByKey2;
             }
-            if (TextUtils.isEmpty(singleHeaderFieldByKey)) {
+            if (StringUtils.isEmpty(singleHeaderFieldByKey)) {
                 return;
             }
             this.f33440a.d.X = singleHeaderFieldByKey;
@@ -241,12 +241,12 @@ public class rzu implements ryp {
 
     private boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : ErrorConstant.isSessionInvalid(str) && this.f33440a.h.g() == 0 && !TextUtils.equals(this.f33440a.h.i(), "none");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : ErrorConstant.isSessionInvalid(str) && this.f33440a.h.g() == 0 && !StringUtils.equals(this.f33440a.h.i(), "none");
     }
 
     private boolean a(int i, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("20f12ca9", new Object[]{this, new Integer(i), str})).booleanValue() : !TextUtils.isEmpty(str) && mtopsdk.ssrcore.util.b.a(this.f33440a.h.e, i);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("20f12ca9", new Object[]{this, new Integer(i), str})).booleanValue() : !StringUtils.isEmpty(str) && mtopsdk.ssrcore.util.b.a(this.f33440a.h.e, i);
     }
 
     private void b(String str) {

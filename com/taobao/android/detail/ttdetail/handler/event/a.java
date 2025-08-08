@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.handler.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -24,7 +24,7 @@ public class a {
     public a(JSONObject jSONObject) {
         this.f10733a = jSONObject.getString("type");
         this.b = jSONObject.getJSONObject("fields");
-        if (TextUtils.isEmpty(this.f10733a)) {
+        if (StringUtils.isEmpty(this.f10733a)) {
             this.f10733a = jSONObject.getString("key");
         }
         JSONObject jSONObject2 = this.b;

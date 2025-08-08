@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -147,7 +147,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
             }
             loadUniqueId();
             String str = this.uniqueId;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 ALog.e(TAG, "[amdc_file] restore loadFile 1, filename= " + str, null, new Object[0]);
                 loadFile(str, true);
             }
@@ -177,7 +177,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
                         }
                         StrategyInfoHolder.access$000(StrategyInfoHolder.this);
                         String access$100 = StrategyInfoHolder.access$100(StrategyInfoHolder.this);
-                        if (!TextUtils.isEmpty(access$100)) {
+                        if (!StringUtils.isEmpty(access$100)) {
                             ALog.e(StrategyInfoHolder.TAG, "[amdc_file] restore loadFile 2, filename= " + access$100, null, new Object[0]);
                             StrategyInfoHolder.this.loadFile(access$100, true);
                         }
@@ -281,7 +281,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
         }
         StrategyTable strategyTable = this.unknownStrategyTable;
         String str = this.uniqueId;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             synchronized (this.strategyTableMap) {
                 ALog.d(TAG, "[uniqueId] cur uniqueId=" + this.uniqueId, null, new Object[0]);
                 strategyTable = this.strategyTableMap.get(str);
@@ -302,7 +302,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
         StrategyTable strategyTable = this.unknownStrategyTable;
         NetworkStatusHelper.NetworkStatus networkStatus = NetworkStatusHelper.getNetworkStatus(NetworkStatusHelper.getCellularNetwork());
         String uniqueId = networkStatus == null ? this.uniqueId : getUniqueId(networkStatus);
-        if (!TextUtils.isEmpty(uniqueId)) {
+        if (!StringUtils.isEmpty(uniqueId)) {
             synchronized (this.strategyTableMap) {
                 ALog.d(TAG, "[uniqueId] cellular uniqueId=" + this.uniqueId, null, new Object[0]);
                 strategyTable = this.strategyTableMap.get(uniqueId);
@@ -324,10 +324,10 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
         if (!AwcnConfig.isVpnOptOpened()) {
             if (networkStatus.isWifi()) {
                 String wifiBSSID = NetworkStatusHelper.getWifiBSSID();
-                if (this.strategyConfig != null && !TextUtils.isEmpty(wifiBSSID) && !DEFAULT_BSSID.equals(wifiBSSID)) {
+                if (this.strategyConfig != null && !StringUtils.isEmpty(wifiBSSID) && !DEFAULT_BSSID.equals(wifiBSSID)) {
                     str = this.strategyConfig.getUniqueIdByBssid(StringUtils.md5ToHex(wifiBSSID));
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return str;
                 }
                 this.isSendAMDCEnable = true;
@@ -373,7 +373,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
                 return;
             }
             String str3 = "WIFI$" + str;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str3 = this.defaultUniqueId;
             }
             if (str3.equals(this.uniqueId)) {
@@ -382,7 +382,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
             ALog.i(TAG, "update uniqueId old uniqueId :" + this.uniqueId, str3, new Object[0]);
             this.uniqueId = str3;
             String wifiBSSID = NetworkStatusHelper.getWifiBSSID();
-            if (!TextUtils.isEmpty(wifiBSSID) && !DEFAULT_BSSID.equals(wifiBSSID) && !this.uniqueId.equals(this.defaultUniqueId)) {
+            if (!StringUtils.isEmpty(wifiBSSID) && !DEFAULT_BSSID.equals(wifiBSSID) && !this.uniqueId.equals(this.defaultUniqueId)) {
                 this.strategyConfig.updateBssidUniqueIdMap(StringUtils.md5ToHex(wifiBSSID), this.uniqueId);
             }
             synchronized (this.strategyTableMap) {
@@ -451,7 +451,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
         this.currentNetworkStatus = networkStatus;
         loadUniqueId();
         final String str = this.uniqueId;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         synchronized (this.strategyTableMap) {
@@ -512,7 +512,7 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
             this.currentNetworkStatus = NetworkStatusHelper.getStatus();
             loadUniqueId();
             String str = this.uniqueId;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 synchronized (this.strategyTableMap) {
                     if (!this.strategyTableMap.containsKey(str)) {
                         ALog.e(TAG, "[amdc_file] onVpnProxyStatusChanged loadFile, filename= " + this.uniqueId, null, new Object[0]);
@@ -684,6 +684,6 @@ public class StrategyInfoHolder implements NetworkStatusHelper.INetworkStatusCha
             }
             i++;
         }
-        return TextUtils.isEmpty(str2) ? this.defaultUniqueId : str2;
+        return StringUtils.isEmpty(str2) ? this.defaultUniqueId : str2;
     }
 }

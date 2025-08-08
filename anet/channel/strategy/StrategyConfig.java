@@ -1,6 +1,6 @@
 package anet.channel.strategy;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.StrategyResultParser;
 import anet.channel.strategy.utils.SerialLruCache;
 import anet.channel.strategy.utils.Utils;
@@ -108,7 +108,7 @@ public class StrategyConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("894d97ae", new Object[]{this, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str) || !Utils.checkHostValidAndNotIp(str)) {
+        if (StringUtils.isEmpty(str) || !Utils.checkHostValidAndNotIp(str)) {
             return null;
         }
         synchronized (this) {
@@ -137,7 +137,7 @@ public class StrategyConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("db8852d6", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (this) {
@@ -152,7 +152,7 @@ public class StrategyConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4acca4fa", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (this) {
@@ -165,7 +165,7 @@ public class StrategyConfig implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a9e84ed7", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             this.bssidUniqueIdMap.put(str, str2);
         }
@@ -176,7 +176,7 @@ public class StrategyConfig implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("21bb818b", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.bssidUniqueIdMap.get(str);
         }
         return null;
@@ -203,12 +203,12 @@ public class StrategyConfig implements Serializable {
                     } else {
                         this.schemeMap.put(dns.host, dns.safeAisles);
                     }
-                    if (!TextUtils.isEmpty(dns.unit)) {
+                    if (!StringUtils.isEmpty(dns.unit)) {
                         this.unitMap.put(dns.host, dns.unit);
                     } else {
                         this.unitMap.remove(dns.host);
                     }
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         this.accessPointMap.put(dns.host, str);
                     } else {
                         this.accessPointMap.remove(dns.host);

@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.appender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
@@ -46,7 +46,7 @@ public class AppenderManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8123ece2", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             LoggerFactory.getTraceLogger().error("AppenderManager", "backupCurrent: no category");
         } else {
             Appender appender = this.f5427a.get(str);

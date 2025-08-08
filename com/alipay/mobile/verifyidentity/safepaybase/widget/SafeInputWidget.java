@@ -11,7 +11,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -207,7 +207,7 @@ public class SafeInputWidget implements View.OnTouchListener {
                     SafeInputWidget.c(SafeInputWidget.this).onTextChanged();
                 }
                 if (SafeInputWidget.d(SafeInputWidget.this) != null) {
-                    if (TextUtils.isEmpty(charSequence)) {
+                    if (StringUtils.isEmpty(charSequence)) {
                         SafeInputWidget.d(SafeInputWidget.this).setTextColor(-7829368);
                         SafeInputWidget.d(SafeInputWidget.this).setClickable(false);
                     } else {
@@ -269,7 +269,7 @@ public class SafeInputWidget implements View.OnTouchListener {
             ipChange.ipc$dispatch("5879511a", new Object[]{safeInputWidget});
         } else if (!safeInputWidget.f6059a.isEnabled()) {
         } else {
-            if (!TextUtils.isEmpty(safeInputWidget.f6059a.getText()) && safeInputWidget.q != null && safeInputWidget.f6059a.isFocused()) {
+            if (!StringUtils.isEmpty(safeInputWidget.f6059a.getText()) && safeInputWidget.q != null && safeInputWidget.f6059a.isFocused()) {
                 safeInputWidget.p = true;
                 safeInputWidget.f6059a.setOnTouchListener(safeInputWidget);
                 safeInputWidget.f6059a.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, safeInputWidget.q, (Drawable) null);

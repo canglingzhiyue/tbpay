@@ -1,6 +1,6 @@
 package com.taobao.android.trade.cart.provider.msoa;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
 import com.taobao.tao.util.TaoHelper;
@@ -28,10 +28,10 @@ public class MsoaCartServiceImpl implements MsoaCartService, Serializable {
             ipChange.ipc$dispatch("e2461888", new Object[]{this, str, str2, str3, str4, str5, str6, str7, str8, str9});
             return;
         }
-        if (TextUtils.isEmpty(str8)) {
+        if (StringUtils.isEmpty(str8)) {
             str8 = TaoHelper.getTTID();
         }
-        if (TextUtils.isEmpty(str9)) {
+        if (StringUtils.isEmpty(str9)) {
             str9 = "97";
         }
         long j = 0;

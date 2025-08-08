@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -96,7 +96,7 @@ public class hgm implements a, com.taobao.taolive.sdk.model.a {
             q.b("BottomTrivialChatController", "startLoop bizType:" + chatItemCommonData.bizType);
             String string = chatItemCommonData.data.getString("permanent");
             this.c = true;
-            if (TextUtils.equals("true", string)) {
+            if (StringUtils.equals("true", string)) {
                 c(chatItemCommonData);
             } else {
                 b(chatItemCommonData);

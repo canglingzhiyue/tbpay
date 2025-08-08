@@ -2,7 +2,7 @@ package anet.channel;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.LruCache;
 import anet.channel.Config;
 import anet.channel.appmonitor.AppMonitor;
@@ -636,7 +636,7 @@ public class SessionCenter {
             return (SessionRequest) ipChange.ipc$dispatch("3ab76c54", new Object[]{this, httpUrl});
         }
         String concatString = StringUtils.concatString(httpUrl.scheme(), HttpConstant.SCHEME_SPLIT, httpUrl.host());
-        if (TextUtils.isEmpty(concatString)) {
+        if (StringUtils.isEmpty(concatString)) {
             return null;
         }
         synchronized (this.srConcurrencyCache) {
@@ -1108,7 +1108,7 @@ public class SessionCenter {
         if (ipChange instanceof IpChange) {
             return (SessionRequest) ipChange.ipc$dispatch("49e71bf9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         synchronized (this.srCacheMap) {

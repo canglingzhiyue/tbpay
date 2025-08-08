@@ -1,7 +1,7 @@
 package com.taobao.android.litecreator.sdk.framework.container;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,10 +71,10 @@ public abstract class j extends hez implements d, e {
         if (ipChange instanceof IpChange) {
             return (T) ipChange.ipc$dispatch("75f87684", new Object[]{this, str});
         }
-        if (TextUtils.equals(str, "undefine")) {
+        if (StringUtils.equals(str, "undefine")) {
             return null;
         }
-        if (TextUtils.equals(str, e())) {
+        if (StringUtils.equals(str, e())) {
             return this;
         }
         for (h hVar : this.b.values()) {
@@ -89,7 +89,7 @@ public abstract class j extends hez implements d, e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.f13447a.addAll(a.a(str));
             Iterator<PluginInfo> it = this.f13447a.iterator();

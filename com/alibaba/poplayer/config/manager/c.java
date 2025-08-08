@@ -1,7 +1,7 @@
 package com.alibaba.poplayer.config.manager;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
@@ -33,8 +33,8 @@ public class c {
             return (BaseConfigItem) ipChange.ipc$dispatch("869cc34c", new Object[]{str, str2, str3});
         }
         BaseConfigItem baseConfigItem = (BaseConfigItem) JSON.parseObject(str, BaseConfigItem.class);
-        if (baseConfigItem != null && TextUtils.isEmpty(baseConfigItem.type) && TextUtils.isEmpty(baseConfigItem.params)) {
-            if (!TextUtils.isEmpty(com.alibaba.poplayer.factory.a.a().b())) {
+        if (baseConfigItem != null && StringUtils.isEmpty(baseConfigItem.type) && StringUtils.isEmpty(baseConfigItem.params)) {
+            if (!StringUtils.isEmpty(com.alibaba.poplayer.factory.a.a().b())) {
                 baseConfigItem.type = com.alibaba.poplayer.factory.a.a().b();
             } else {
                 baseConfigItem.type = "webview";

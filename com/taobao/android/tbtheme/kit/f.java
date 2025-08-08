@@ -2,7 +2,7 @@ package com.taobao.android.tbtheme.kit;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.revisionswitch.TBRevisionSwitchManager;
@@ -72,7 +72,7 @@ public class f {
         }
         String a2 = sct.a();
         m.a("SwitchUtil", "getDefaultFromOrange", null);
-        return TextUtils.isEmpty(a2) ? "{\"skinPicForiPhoneX\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"skinPic\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"actionbarTextColor\":\"#111111\",\"actionBarBackgroundColor\":\"#FFFFFF\",\"statusBarStyle\":\"0\",\"naviStyle\":\"1\",\"isComplexTexture\":\"false\"}" : a.a(MODULE_NAME, a2, "{\"skinPicForiPhoneX\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"skinPic\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"actionbarTextColor\":\"#111111\",\"actionBarBackgroundColor\":\"#FFFFFF\",\"statusBarStyle\":\"0\",\"naviStyle\":\"1\",\"isComplexTexture\":\"false\"}");
+        return StringUtils.isEmpty(a2) ? "{\"skinPicForiPhoneX\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"skinPic\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"actionbarTextColor\":\"#111111\",\"actionBarBackgroundColor\":\"#FFFFFF\",\"statusBarStyle\":\"0\",\"naviStyle\":\"1\",\"isComplexTexture\":\"false\"}" : a.a(MODULE_NAME, a2, "{\"skinPicForiPhoneX\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"skinPic\":\"https://gw.alicdn.com/imgextra/i4/O1CN01QpdVAb1kZjNyqftN9_!!6000000004698-0-tps-1125-880.jpg\",\"actionbarTextColor\":\"#111111\",\"actionBarBackgroundColor\":\"#FFFFFF\",\"statusBarStyle\":\"0\",\"naviStyle\":\"1\",\"isComplexTexture\":\"false\"}");
     }
 
     private static boolean h() {
@@ -100,11 +100,11 @@ public class f {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String a2 = a("whiteBizList", "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return false;
         }
         String[] split = a2.split(",");

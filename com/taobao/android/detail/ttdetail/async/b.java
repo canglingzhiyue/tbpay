@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.async;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -383,7 +383,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("48075356", new Object[]{this, jSONObject, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !str.matches("^\\$\\{.+\\}$")) {
+        if (StringUtils.isEmpty(str) || !str.matches("^\\$\\{.+\\}$")) {
             return false;
         }
         try {
@@ -492,7 +492,7 @@ public class b {
         for (AsyncModule.KVMapping kVMapping : list) {
             if (a(kVMapping)) {
                 String a3 = kVMapping.a();
-                Object a4 = (TextUtils.isEmpty(a3) || TextUtils.equals(a3, "*")) ? jSONObject : au.b.a(a3.split("\\."), jSONObject);
+                Object a4 = (StringUtils.isEmpty(a3) || StringUtils.equals(a3, "*")) ? jSONObject : au.b.a(a3.split("\\."), jSONObject);
                 if (a4 != null && (a2 = au.b.a((b = kVMapping.b()), eyyVar)) != null) {
                     String[] c = au.b.c(b);
                     if (c == null) {
@@ -549,10 +549,10 @@ public class b {
         for (AsyncModule.KVMapping kVMapping : list) {
             if (a(kVMapping)) {
                 String a2 = kVMapping.a();
-                Object a3 = (TextUtils.isEmpty(a2) || TextUtils.equals(a2, "*")) ? jSONObject : au.b.a(a2.split("\\."), jSONObject);
+                Object a3 = (StringUtils.isEmpty(a2) || StringUtils.equals(a2, "*")) ? jSONObject : au.b.a(a2.split("\\."), jSONObject);
                 if (a3 != null) {
                     String b = kVMapping.b();
-                    if (TextUtils.isEmpty(b) || TextUtils.equals(b, "*")) {
+                    if (StringUtils.isEmpty(b) || StringUtils.equals(b, "*")) {
                         if (a3 instanceof Map) {
                             jSONObject2.putAll((Map) a3);
                         }

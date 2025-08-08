@@ -4,7 +4,7 @@ import android.taobao.windvane.util.a;
 import android.taobao.windvane.util.m;
 import android.taobao.windvane.util.p;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -69,7 +69,7 @@ public class WVWPManager {
                     if (iWVWebView instanceof IPerformance) {
                         String cachedUrl = ((IPerformance) iWVWebView).getCachedUrl();
                         boolean isPreInit = ((IPerformance) iWVWebView).isPreInit();
-                        if (TextUtils.equals(p.d(cachedUrl), p.d(str))) {
+                        if (StringUtils.equals(p.d(cachedUrl), p.d(str))) {
                             if (!isPreInit) {
                                 return wVWPData;
                             }

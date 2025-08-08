@@ -5,7 +5,7 @@ import android.graphics.Matrix;
 import android.media.MediaExtractor;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.marvel.java.OnFrameCallback;
 import com.alibaba.marvel.toolbox.FrameParam;
 import com.alibaba.marvel.toolbox.ToolBox;
@@ -168,7 +168,7 @@ public class az {
                 return false;
             }
             mediaExtractor.selectTrack(a2);
-            return TextUtils.equals(mediaExtractor.getTrackFormat(a2).getString("mime"), "video/hevc");
+            return StringUtils.equals(mediaExtractor.getTrackFormat(a2).getString("mime"), "video/hevc");
         } catch (Throwable unused) {
             return false;
         }

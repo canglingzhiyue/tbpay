@@ -2,7 +2,7 @@ package com.taobao.android.fcanvas.integration;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fcanvas.integration.FCanvasInstance;
@@ -85,7 +85,7 @@ public class FCanvas implements Serializable {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         FCanvasJNIBridge.nNotifyOnOnlineConfigChanged(str);
                     }
@@ -118,7 +118,7 @@ public class FCanvas implements Serializable {
             return (JSONArray) ipChange.ipc$dispatch("902e7806", new Object[0]);
         }
         String dumpProfileInfo = FCanvasJNIBridge.dumpProfileInfo();
-        if (!TextUtils.isEmpty(dumpProfileInfo)) {
+        if (!StringUtils.isEmpty(dumpProfileInfo)) {
             try {
                 return new JSONArray(dumpProfileInfo);
             } catch (Throwable th) {
@@ -149,7 +149,7 @@ public class FCanvas implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6b1c22ef", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             FCanvasJNIBridge.nNotifyOnOnlineConfigChanged(str);
         }

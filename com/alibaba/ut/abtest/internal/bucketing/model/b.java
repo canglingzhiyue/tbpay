@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.internal.bucketing.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.evo.internal.database.ExperimentDO;
 import com.alibaba.fastjson.JSON;
@@ -52,7 +52,7 @@ public class b {
             this.i.addAll(experimentV5.getTracks());
         }
         for (String str : experimentV5.getSwitchSet()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 a(str, a(aVar, str));
             }
         }
@@ -66,7 +66,7 @@ public class b {
 
     public b(String str) {
         this.d = 0L;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         JSONObject parseObject = JSON.parseObject(str);
@@ -105,7 +105,7 @@ public class b {
             return null;
         }
         String obj2 = obj.toString();
-        return TextUtils.equals("true", obj2) ? "true" : TextUtils.equals("false", obj2) ? "false" : obj2;
+        return StringUtils.equals("true", obj2) ? "true" : StringUtils.equals("false", obj2) ? "false" : obj2;
     }
 
     public String a() {

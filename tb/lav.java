@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.performance.UmbrellaProcessTracker;
 import com.alibaba.android.umbrella.performance.d;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class lav {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3489010", new Object[]{dVar, str, str2});
-        } else if (c || dVar == null || TextUtils.isEmpty(str)) {
+        } else if (c || dVar == null || StringUtils.isEmpty(str)) {
         } else {
             Map<String, a> map = b.get(dVar);
             if (map == null) {
@@ -130,7 +130,7 @@ public class lav {
                 while (it2.hasNext()) {
                     String next = it2.next();
                     a aVar = map2.get(next);
-                    if (!TextUtils.isEmpty(aVar.f30440a)) {
+                    if (!StringUtils.isEmpty(aVar.f30440a)) {
                         Object[] objArr = new Object[5];
                         objArr[c2] = aVar.f30440a;
                         objArr[1] = aVar.e;
@@ -140,7 +140,7 @@ public class lav {
                         objArr[3] = Long.valueOf(aVar.c);
                         objArr[4] = Long.valueOf(aVar.d);
                         String format = String.format("method=%s,desc=%s , startTime=%d,endTime=%d,cost=%d", objArr);
-                        if (TextUtils.isEmpty(aVar.e)) {
+                        if (StringUtils.isEmpty(aVar.e)) {
                             UmbrellaProcessTracker.addSubProcess("Page_HomePage", dVar, next, aVar.d);
                         } else {
                             UmbrellaProcessTracker.addSubProcess("Page_HomePage", dVar, next + "_" + aVar.e, aVar.d);

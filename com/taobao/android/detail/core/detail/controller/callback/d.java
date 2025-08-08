@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.controller.callback;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliConfigInterface;
@@ -47,9 +47,9 @@ public class d {
                 put("exceptionStack", str);
                 put("traceId", d.a(JSONObject.this));
                 put("isPreload", String.valueOf(d.c(JSONObject.this)));
-                put("is302", (!TextUtils.isEmpty(e) ? Boolean.TRUE : Boolean.FALSE).toString());
+                put("is302", (!StringUtils.isEmpty(e) ? Boolean.TRUE : Boolean.FALSE).toString());
                 try {
-                    put(Constants.WEIBO_REDIRECTURL_KEY, !TextUtils.isEmpty(e) ? URLEncoder.encode(e, "UTF-8") : "");
+                    put(Constants.WEIBO_REDIRECTURL_KEY, !StringUtils.isEmpty(e) ? URLEncoder.encode(e, "UTF-8") : "");
                 } catch (Throwable unused) {
                     put(Constants.WEIBO_REDIRECTURL_KEY, "encode exception");
                 }
@@ -151,7 +151,7 @@ public class d {
             return ((Boolean) ipChange.ipc$dispatch("9eca1003", new Object[]{this, context})).booleanValue();
         }
         String a4 = a(context);
-        if (TextUtils.isEmpty(a4) || (a2 = com.taobao.android.e.a()) == null || (a3 = a2.a("android_detail", "tcloud_downgrade_black_list", "")) == null || (split = a3.split("/")) == null) {
+        if (StringUtils.isEmpty(a4) || (a2 = com.taobao.android.e.a()) == null || (a3 = a2.a("android_detail", "tcloud_downgrade_black_list", "")) == null || (split = a3.split("/")) == null) {
             return false;
         }
         for (String str : split) {
@@ -192,10 +192,10 @@ public class d {
             return (String) ipChange.ipc$dispatch("d30e7dca", new Object[]{this, str, jSONObject, new Boolean(z)});
         }
         String e = e(jSONObject);
-        if (TextUtils.isEmpty(e)) {
+        if (StringUtils.isEmpty(e)) {
             e = f(jSONObject);
         }
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             return e;
         }
         return z ? b(str) : a(str);

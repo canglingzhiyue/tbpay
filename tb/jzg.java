@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.k;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class jzg {
         if (f29880a == null) {
             return "";
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             k.a("WeexTestUtil", "模板名称为空");
             return "";
         }

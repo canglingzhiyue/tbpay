@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.alibaba.fastjson.parser.Feature;
@@ -44,7 +44,7 @@ public class qfi<T extends qfg> implements qff {
             @Override // com.alibaba.fastjson.serializer.PropertyFilter
             public boolean apply(Object obj, String str2, Object obj2) {
                 IpChange ipChange2 = $ipChange;
-                return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("12c7643b", new Object[]{this, obj, str2, obj2})).booleanValue() : !TextUtils.equals("requestPolicy", str2) && !TextUtils.equals("requestName", str2) && !TextUtils.equals("priority", str2) && !TextUtils.equals("method", str2) && !TextUtils.equals("cachePath", str2) && !TextUtils.equals("aPI", str2) && !TextUtils.equals("cacheTimeS", str2);
+                return ipChange2 instanceof IpChange ? ((Boolean) ipChange2.ipc$dispatch("12c7643b", new Object[]{this, obj, str2, obj2})).booleanValue() : !StringUtils.equals("requestPolicy", str2) && !StringUtils.equals("requestName", str2) && !StringUtils.equals("priority", str2) && !StringUtils.equals("method", str2) && !StringUtils.equals("cachePath", str2) && !StringUtils.equals("aPI", str2) && !StringUtils.equals("cacheTimeS", str2);
             }
         }, new SerializerFeature[0]));
         mtopRequest.setVersion("1.0");

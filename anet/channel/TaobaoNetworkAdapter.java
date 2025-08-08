@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.Config;
 import anet.channel.analysis.DefaultFullTraceAnalysis;
 import anet.channel.analysis.DefaultFullTraceAnalysisV3;
@@ -101,19 +101,19 @@ public class TaobaoNetworkAdapter implements Serializable {
                 final String str = (String) hashMap.get("process");
                 try {
                     if (AwcnConfig.isParamsOpened()) {
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             GlobalAppRuntimeInfo.setCurrentProcess(str);
                         }
                         String str2 = (String) hashMap.get(OConstant.LAUNCH_ONLINEAPPKEY);
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             GlobalAppRuntimeInfo.setAppkey(str2);
                         }
                         String str3 = (String) hashMap.get("ttid");
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             GlobalAppRuntimeInfo.setTtid(str3);
                         }
                         String str4 = (String) hashMap.get("deviceId");
-                        if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.isEmpty(str4)) {
                             GlobalAppRuntimeInfo.setUtdid(str4);
                         }
                     }
@@ -235,7 +235,7 @@ public class TaobaoNetworkAdapter implements Serializable {
                         }
                     }, 1);
                     for (CacheConfig cacheConfig : NetworkConfigCenter.getHttpCacheConfigs()) {
-                        Boolean isABGlobalFeatureOpened = ABSwitchUtils.isABGlobalFeatureOpened(context, TextUtils.isEmpty(cacheConfig.getAbExperiment()) ? "network_http_cache_isolation" : "network_http_cache_" + cacheConfig.getAbExperiment());
+                        Boolean isABGlobalFeatureOpened = ABSwitchUtils.isABGlobalFeatureOpened(context, StringUtils.isEmpty(cacheConfig.getAbExperiment()) ? "network_http_cache_isolation" : "network_http_cache_" + cacheConfig.getAbExperiment());
                         if (isABGlobalFeatureOpened != null && isABGlobalFeatureOpened.booleanValue()) {
                             AVFSCacheImpl aVFSCacheImpl2 = new AVFSCacheImpl(cacheConfig);
                             aVFSCacheImpl2.initialize();
@@ -436,7 +436,7 @@ public class TaobaoNetworkAdapter implements Serializable {
             try {
                 HashMap hashMap = new HashMap();
                 hashMap.put("env", map.get(OConstant.LAUNCH_ENVINDEX));
-                hashMap.put("brand", TextUtils.isEmpty(Build.BRAND) ? Build.MANUFACTURER : Build.BRAND);
+                hashMap.put("brand", StringUtils.isEmpty(Build.BRAND) ? Build.MANUFACTURER : Build.BRAND);
                 hashMap.put("model", Build.MODEL);
                 hashMap.put("osVersion", Integer.valueOf(Build.VERSION.SDK_INT));
                 hashMap.put("appKey", map.get(OConstant.LAUNCH_ONLINEAPPKEY));

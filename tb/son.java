@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes5.dex */
@@ -130,7 +130,7 @@ public class son {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
         try {
-            return TextUtils.equals("1", oeb.b("AB_fullscreenpage_android.perfsmooth_hitch." + str, str2));
+            return StringUtils.equals("1", oeb.b("AB_fullscreenpage_android.perfsmooth_hitch." + str, str2));
         } catch (Exception e2) {
             spz.a("PerfConfig", "enableInHitchOptAB exception", e2);
             return false;
@@ -301,7 +301,7 @@ public class son {
         }
         int a2 = oeb.a("ShortVideoPerfConfig.frame_metric_sample", 1);
         String str = mnd.l;
-        return (TextUtils.isEmpty(str) || str.split("\\.").length < 4) ? a2 : a2 * oeb.a("ShortVideoPerfConfig.beta_version_scale", 1000);
+        return (StringUtils.isEmpty(str) || str.split("\\.").length < 4) ? a2 : a2 * oeb.a("ShortVideoPerfConfig.beta_version_scale", 1000);
     }
 
     public static boolean a(String str, boolean z) {

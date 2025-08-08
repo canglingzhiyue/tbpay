@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.R;
@@ -50,7 +50,7 @@ public class plz {
         if (pmzVar instanceof pmy) {
             str = ((pmy) pmzVar).f32766a;
         }
-        return !TextUtils.isEmpty(str) ? str : context.getString(R.string.taolive_user_follow_account_success);
+        return !StringUtils.isEmpty(str) ? str : context.getString(R.string.taolive_user_follow_account_success);
     }
 
     public static boolean a(VideoInfo videoInfo) {
@@ -68,7 +68,7 @@ public class plz {
 
     public static boolean b(VideoInfo videoInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("18b293c8", new Object[]{videoInfo})).booleanValue() : c(videoInfo) && videoInfo.displayInfo.diantaoOfficialAtmosphereInfo != null && !TextUtils.isEmpty(videoInfo.displayInfo.diantaoOfficialAtmosphereInfo.taoLiveIcon);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("18b293c8", new Object[]{videoInfo})).booleanValue() : c(videoInfo) && videoInfo.displayInfo.diantaoOfficialAtmosphereInfo != null && !StringUtils.isEmpty(videoInfo.displayInfo.diantaoOfficialAtmosphereInfo.taoLiveIcon);
     }
 
     public static boolean c(VideoInfo videoInfo) {
@@ -78,7 +78,7 @@ public class plz {
 
     public static boolean d(VideoInfo videoInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7463c886", new Object[]{videoInfo})).booleanValue() : videoInfo != null && a(videoInfo) && videoInfo.taoLiveAtmosphereInfo != null && !TextUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIcon);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7463c886", new Object[]{videoInfo})).booleanValue() : videoInfo != null && a(videoInfo) && videoInfo.taoLiveAtmosphereInfo != null && !StringUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIcon);
     }
 
     public static long b() {

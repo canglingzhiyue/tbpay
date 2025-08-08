@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Button;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -202,11 +202,11 @@ public class FaceAuthActivity extends Activity {
             this.b.setForceDarkAllowed(false);
         }
         String clientText = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_SWITCH);
-        if (!TextUtils.isEmpty(clientText)) {
+        if (!StringUtils.isEmpty(clientText)) {
             this.d.setText(clientText);
         }
         String clientText2 = PreDataHelper.getInstance().getClientText(Constants.STRING_AUTH_CANCEL);
-        if (!TextUtils.isEmpty(clientText2)) {
+        if (!StringUtils.isEmpty(clientText2)) {
             this.c.setText(clientText2);
         }
         this.c.setOnClickListener(new View.OnClickListener() { // from class: com.alipay.android.phone.seauthenticator.iotauth.face.FaceAuthActivity.2

@@ -1,6 +1,6 @@
 package com.taobao.android.jarviswe.tracker;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tmall.android.dai.internal.util.LogUtil;
@@ -306,7 +306,7 @@ public class d {
                                 arrayList3.add("null");
                             }
                         }
-                        String str2 = "INSERT INTO " + str + " (" + TextUtils.join(",", arrayList) + ") VALUES (" + TextUtils.join(",", arrayList3) + ");";
+                        String str2 = "INSERT INTO " + str + " (" + StringUtils.join(",", arrayList) + ") VALUES (" + StringUtils.join(",", arrayList3) + ");";
                         LogUtil.d("saveBizFeatureToDB", str2);
                         LogUtil.d("saveBizFeatureToDB", "result:" + dbManager.insert(str2, null, "JarvisFeatureTableManager", "saveBizFeatureToDB", hashMap));
                     }

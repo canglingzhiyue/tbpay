@@ -1,6 +1,6 @@
 package android.taobao.windvane.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -58,7 +58,7 @@ public class g {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             android.taobao.windvane.util.m.b("UCParamData", str);

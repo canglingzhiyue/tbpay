@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.notification.util.EnvUtil;
 import com.taobao.message.notification.util.ThreadPoolUtil;
@@ -262,7 +262,7 @@ public class VibratorAndMediaManager {
         if (!z2) {
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             doRing(str);
         } else {
             doRing();

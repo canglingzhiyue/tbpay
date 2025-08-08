@@ -8,7 +8,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
 import android.content.pm.ResolveInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +43,7 @@ public final class aa {
         } else {
             com.vivo.push.model.b bVar = null;
             String a3 = af.b(applicationContext).a("com.vivo.push.cur_pkg", null);
-            if (TextUtils.isEmpty(a3) || !a(applicationContext, a3, "com.vivo.pushservice.action.METHOD") || (c = f(applicationContext, a3)) == null || !c.d()) {
+            if (StringUtils.isEmpty(a3) || !a(applicationContext, a3, "com.vivo.pushservice.action.METHOD") || (c = f(applicationContext, a3)) == null || !c.d()) {
                 c = null;
             }
             if (f2 == null || !f2.d()) {
@@ -65,7 +65,7 @@ public final class aa {
             int size = a2.size();
             for (int i = 0; i < size; i++) {
                 String str3 = a2.get(i);
-                if (!TextUtils.isEmpty(str3) && (f = f(applicationContext, str3)) != null) {
+                if (!StringUtils.isEmpty(str3) && (f = f(applicationContext, str3)) != null) {
                     hashMap.put(str3, f);
                     if (f.d()) {
                         if (f.c()) {
@@ -139,7 +139,7 @@ public final class aa {
     }
 
     public static boolean a(Context context, String str) {
-        if (!TextUtils.isEmpty(str) && context != null) {
+        if (!StringUtils.isEmpty(str) && context != null) {
             Intent intent = new Intent("com.vivo.pushservice.action.PUSH_SERVICE");
             intent.setPackage(str);
             PackageManager packageManager = context.getPackageManager();
@@ -197,7 +197,7 @@ public final class aa {
             return bool.booleanValue();
         }
         String str = null;
-        if (context != null && !TextUtils.isEmpty("com.vivo.push.sdk.service.SystemPushConfig") && (resolveContentProvider = context.getPackageManager().resolveContentProvider("com.vivo.push.sdk.service.SystemPushConfig", 128)) != null) {
+        if (context != null && !StringUtils.isEmpty("com.vivo.push.sdk.service.SystemPushConfig") && (resolveContentProvider = context.getPackageManager().resolveContentProvider("com.vivo.push.sdk.service.SystemPushConfig", 128)) != null) {
             str = resolveContentProvider.packageName;
         }
         Boolean valueOf = Boolean.valueOf("BCC35D4D3606F154F0402AB7634E8490C0B244C2675C3C6238986987024F0C02".equals(g(context, str)));
@@ -208,7 +208,7 @@ public final class aa {
     private static com.vivo.push.model.b c(Context context) {
         String a2 = a(context);
         ApplicationInfo applicationInfo = null;
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return null;
         }
         com.vivo.push.model.b bVar = new com.vivo.push.model.b(a2);
@@ -246,7 +246,7 @@ public final class aa {
 
     private static com.vivo.push.model.b f(Context context, String str) {
         ApplicationInfo applicationInfo;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (a(context, str, "com.vivo.pushservice.action.METHOD") || a(context, str, "com.vivo.pushservice.action.RECEIVE")) {
                 com.vivo.push.model.b bVar = new com.vivo.push.model.b(str);
                 try {
@@ -273,7 +273,7 @@ public final class aa {
     }
 
     private static String g(Context context, String str) {
-        if (!TextUtils.isEmpty(str) && context != null) {
+        if (!StringUtils.isEmpty(str) && context != null) {
             try {
                 byte[] digest = MessageDigest.getInstance("SHA256").digest(context.getPackageManager().getPackageInfo(str, 64).signatures[0].toByteArray());
                 StringBuffer stringBuffer = new StringBuffer();

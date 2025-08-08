@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.media.ExifInterface;
 import android.support.v4.app.DialogFragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,11 +95,11 @@ public class RegionDialogFragment extends DialogFragment {
         }
         RegionInfo regionInfo2 = null;
         RegionInfo regionInfo3 = this.mCurrentRegion;
-        if (regionInfo3 != null && !TextUtils.isEmpty(regionInfo3.domain)) {
+        if (regionInfo3 != null && !StringUtils.isEmpty(regionInfo3.domain)) {
             RegionInfo regionInfo4 = null;
             for (int i = 0; i < this.mList.size(); i++) {
                 RegionInfo regionInfo5 = this.mList.get(i);
-                if (regionInfo5 == null || TextUtils.isEmpty(regionInfo5.domain) || !regionInfo5.domain.equals(this.mCurrentRegion.domain)) {
+                if (regionInfo5 == null || StringUtils.isEmpty(regionInfo5.domain) || !regionInfo5.domain.equals(this.mCurrentRegion.domain)) {
                     arrayList.add(regionInfo5);
                 } else {
                     regionInfo4 = regionInfo5;
@@ -253,10 +253,10 @@ public class RegionDialogFragment extends DialogFragment {
             return ((Number) ipChange.ipc$dispatch("fb420c50", new Object[]{this})).intValue();
         }
         RegionInfo regionInfo = this.mCurrentRegion;
-        if (regionInfo != null && !TextUtils.isEmpty(regionInfo.domain) && this.mList != null) {
+        if (regionInfo != null && !StringUtils.isEmpty(regionInfo.domain) && this.mList != null) {
             for (int i = 0; i < this.mList.size(); i++) {
                 RegionInfo regionInfo2 = this.mList.get(i);
-                if (regionInfo2 != null && !TextUtils.isEmpty(regionInfo2.domain) && regionInfo2.domain.equals(this.mCurrentRegion.domain)) {
+                if (regionInfo2 != null && !StringUtils.isEmpty(regionInfo2.domain) && regionInfo2.domain.equals(this.mCurrentRegion.domain)) {
                     return i;
                 }
             }

@@ -1,6 +1,6 @@
 package com.ut.mini.behavior;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.h;
 import com.ut.mini.i;
@@ -50,10 +50,10 @@ public class b {
             return;
         }
         apr.b("UTScrollTracker", "beginScroll scrollKey", str, "scrollX", Integer.valueOf(i), "scrollY", Integer.valueOf(i2), "properties", map);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
-        if (!TextUtils.isEmpty(this.f24081a)) {
+        if (!StringUtils.isEmpty(this.f24081a)) {
             if (this.f24081a.equals(str)) {
                 apr.c("UTScrollTracker", "repeat beginScroll", str);
                 return;
@@ -77,7 +77,7 @@ public class b {
             return;
         }
         apr.b("UTScrollTracker", "endScroll scrollKey", this.f24081a);
-        if (TextUtils.isEmpty(this.f24081a)) {
+        if (StringUtils.isEmpty(this.f24081a)) {
             return;
         }
         i.getInstance().endEvent(i.getInstance().getEventByKey(this.f24081a));
@@ -91,7 +91,7 @@ public class b {
             return;
         }
         apr.b("UTScrollTracker", "endScroll scrollKey", str, "scrollX", Integer.valueOf(i), "scrollY", Integer.valueOf(i2));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (!str.equals(this.f24081a)) {

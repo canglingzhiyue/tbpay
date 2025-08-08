@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.RelativeSizeSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -176,9 +176,9 @@ public class bmq extends af {
             return;
         }
         super.onBeforeMeasure(textView);
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             textView.setText(this.f);
-        } else if (TextUtils.isEmpty(this.g)) {
+        } else if (StringUtils.isEmpty(this.g)) {
         } else {
             this.g = a(this.g);
             textView.setText(this.g);
@@ -197,9 +197,9 @@ public class bmq extends af {
             return;
         }
         TradePriceTextView tradePriceTextView = (TradePriceTextView) view;
-        if (!TextUtils.isEmpty(this.f)) {
+        if (!StringUtils.isEmpty(this.f)) {
             tradePriceTextView.setText(this.f);
-        } else if (!TextUtils.isEmpty(this.g)) {
+        } else if (!StringUtils.isEmpty(this.g)) {
             this.g = a(this.g);
             tradePriceTextView.setText(this.g);
         }
@@ -246,7 +246,7 @@ public class bmq extends af {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{this, str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         char[] charArray = str.toCharArray();

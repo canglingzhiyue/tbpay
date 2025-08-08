@@ -3,7 +3,7 @@ package com.alibaba.security.ccrc.service.build;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
 import com.alibaba.security.ccrc.manager.CcrcContextImpl;
@@ -115,7 +115,7 @@ public class Ta implements Handler.Callback {
         }
         if (this.n.m()) {
             c(e2);
-        } else if (!TextUtils.isEmpty(e2) || !TextUtils.isEmpty(str)) {
+        } else if (!StringUtils.isEmpty(e2) || !StringUtils.isEmpty(str)) {
             a(str, C1235o.a(e2.getBytes()));
         }
         if (z) {
@@ -229,7 +229,7 @@ public class Ta implements Handler.Callback {
                 }
             }
         }
-        return TextUtils.isEmpty(str2) ? str : str2;
+        return StringUtils.isEmpty(str2) ? str : str2;
     }
 
     public String d() {
@@ -362,7 +362,7 @@ public class Ta implements Handler.Callback {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("669e4a77", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             Logging.w(f3276a, "restoreInfo is empty");
         } else {
             if (this.n.m()) {
@@ -436,7 +436,7 @@ public class Ta implements Handler.Callback {
             interfaceC1257vb.a(false, str2, null);
         } else {
             String a2 = a(wuKongBizConfigData, u, str);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 interfaceC1257vb.a(false, a2, null);
             } else {
                 this.s.a(i(), new InterfaceC1257vb() { // from class: com.alibaba.security.ccrc.service.build.-$$Lambda$Pit8WUq8w72ZoAS7bYV7tWRnBBw
@@ -462,7 +462,7 @@ public class Ta implements Handler.Callback {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             HashMap hashMap = new HashMap(1);
             hashMap.put("data", C1235o.a(str.getBytes()));
@@ -506,7 +506,7 @@ public class Ta implements Handler.Callback {
             return null;
         }
         for (RiskSceneInfo riskSceneInfo : list) {
-            if (riskSceneInfo.isPlugin && TextUtils.equals(riskSceneInfo.sceneName, baseWuKongContentRiskPlugin.name())) {
+            if (riskSceneInfo.isPlugin && StringUtils.equals(riskSceneInfo.sceneName, baseWuKongContentRiskPlugin.name())) {
                 Logging.d(f3276a, String.format("plugin %s isInConfig", baseWuKongContentRiskPlugin.name()));
                 return riskSceneInfo;
             }
@@ -553,7 +553,7 @@ public class Ta implements Handler.Callback {
                 List<Algo> list = a2.algoList;
                 if (list != null && !list.isEmpty()) {
                     for (Algo algo : list) {
-                        if (!TextUtils.isEmpty(algo.code) && !next.inputConfig(this.l, e(algo.code))) {
+                        if (!StringUtils.isEmpty(algo.code) && !next.inputConfig(this.l, e(algo.code))) {
                             StringBuilder a3 = Yb.a("dispatchConf fail by input conf fail, ");
                             a3.append(next.name());
                             return a3.toString();
@@ -584,7 +584,7 @@ public class Ta implements Handler.Callback {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9255d94", new Object[]{this, str, inferContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             Logging.e(f3276a, "doProcessData fail because rule id is null");
         } else {
             SampleData sampleData = inferContext.getSampleData();

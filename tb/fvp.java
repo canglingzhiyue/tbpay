@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.threads.AdThreadExecutor;
@@ -78,11 +78,11 @@ public class fvp {
         }
         Uri.Builder buildUpon = Uri.parse("https://ef-dongfeng.tanx.com/ud-sdk-monitor").buildUpon();
         String str5 = "0";
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             str3 = str5;
         }
         Uri.Builder appendQueryParameter = buildUpon.appendQueryParameter("itemid", str3);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = str5;
         }
         Uri.Builder appendQueryParameter2 = appendQueryParameter.appendQueryParameter("sellerid", str2);
@@ -99,7 +99,7 @@ public class fvp {
         String a2 = com.taobao.muniontaobaosdk.util.b.a(str);
         String str6 = "url=" + Uri.encode(str);
         String str7 = "url_hash=" + a2;
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(a2)) {
             e.a("ud_committer_invalid_url", "msg=url_is_empty_or_hash_error", str6, str7);
         } else if (f28146a.contains(a2)) {
             UserTrackLogs.trackAdLog("ud_committer_request_duplicated", str6, str7);

@@ -1,6 +1,6 @@
 package com.taobao.tao.flexbox.layoutmanager.core;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.flexa.compat.c;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.lab.comfrm.support.list.AbsListWidgetInstance;
@@ -139,7 +139,7 @@ public class e {
     }
 
     public static Component a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             for (com.taobao.tao.flexbox.layoutmanager.component.h hVar : b) {
                 Component a2 = hVar.a(str);
                 if (a2 != null) {
@@ -176,7 +176,7 @@ public class e {
             return true;
         }
         String str2 = f20346a.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         return a(str, str2, null);
@@ -194,7 +194,7 @@ public class e {
             return;
         }
         String str2 = f20346a.get(str);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             ogg.a("ComponentFactory loadComponent failed, remoteClassName is NULL for type " + str);
             aVar.a();
             return;

@@ -1,6 +1,6 @@
 package com.alibaba.android.umbrella.performance;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.List;
@@ -105,7 +105,7 @@ public class UmbrellaPerformanceTracker {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("77481392", new Object[]{str, str2, map, map2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || map == null || map.size() <= 0 || com.alibaba.android.umbrella.trace.b.e()) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || map == null || map.size() <= 0 || com.alibaba.android.umbrella.trace.b.e()) {
         } else {
             if ((!com.alibaba.android.umbrella.trace.b.c() || !com.alibaba.android.umbrella.trace.b.d()) && !com.alibaba.android.umbrella.trace.b.a(str, str2)) {
                 return;

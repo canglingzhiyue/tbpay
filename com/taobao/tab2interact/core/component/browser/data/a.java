@@ -1,7 +1,7 @@
 package com.taobao.tab2interact.core.component.browser.data;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -77,7 +77,7 @@ public class a {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("action", (Object) str);
             jSONObject.put("duration", (Object) Long.valueOf(j));
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.put("extParams", (Object) str2);
             }
             JSONObject jSONObject2 = new JSONObject();

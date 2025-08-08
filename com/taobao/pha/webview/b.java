@@ -9,7 +9,7 @@ import android.os.Build;
 import android.os.Message;
 import android.taobao.windvane.extra.uc.WVUCWebChromeClient;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.ConsoleMessage;
 import android.webkit.ValueCallback;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -98,7 +98,7 @@ public class b extends WVUCWebChromeClient {
             return;
         }
         String title = webView.getTitle();
-        if (title == null || TextUtils.isEmpty(title) || title.equals("0")) {
+        if (title == null || StringUtils.isEmpty(title) || title.equals("0")) {
             title = str;
         }
         if (p.b(title)) {

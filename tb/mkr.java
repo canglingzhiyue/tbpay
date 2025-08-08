@@ -3,7 +3,7 @@ package tb;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.monitor.performance.cpu.b;
 import com.taobao.monitor.performance.cpu.e;
@@ -83,7 +83,7 @@ public class mkr extends mky<mkq> {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         mkr.a(mkr.this).put(str, Integer.valueOf(i));
                     }

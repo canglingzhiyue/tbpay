@@ -1,7 +1,7 @@
 package com.taobao.weex.adapter;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.WXSDKInstance;
 import java.util.List;
@@ -28,7 +28,7 @@ public class DefaultUriAdapter implements URIAdapter {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("edd1c9b7", new Object[]{this, str, str2, uri});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return uri;
         }
         Uri parse = Uri.parse(str);
@@ -39,7 +39,7 @@ public class DefaultUriAdapter implements URIAdapter {
         if (uri.getEncodedPath().length() != 0) {
             return buildRelativeURI(buildUpon, parse, uri).build();
         }
-        return (!"image".equals(str2) || !TextUtils.isEmpty(uri.toString())) ? parse : uri;
+        return (!"image".equals(str2) || !StringUtils.isEmpty(uri.toString())) ? parse : uri;
     }
 
     private Uri.Builder buildRelativeURI(Uri.Builder builder, Uri uri, Uri uri2) {

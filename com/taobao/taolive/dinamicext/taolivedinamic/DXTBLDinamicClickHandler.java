@@ -1,7 +1,7 @@
 package com.taobao.taolive.dinamicext.taolivedinamic;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -33,7 +33,7 @@ public class DXTBLDinamicClickHandler extends h implements IMTOPDataObject {
         }
         if (jSONObject.get("nativeFeedDetailUrl") != null) {
             String string = jSONObject.getString("nativeFeedDetailUrl");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 Nav.from(m).toUri(string);
             }
         }

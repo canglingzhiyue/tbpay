@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -170,7 +170,7 @@ public class h extends i {
         this.k.setVisibility(0);
         this.k.setText(b(topAtmosphereMessage.data.getCountShow()));
         this.h.setVisibility(8);
-        if (!TextUtils.isEmpty(topAtmosphereMessage.data.atmosphere) && ply.n() && this.o != null && (this.o.I() instanceof ffg) && (a2 = ((ffg) this.o.I()).a(topAtmosphereMessage.data.atmosphere)) != null && !a2.isEmpty() && !TextUtils.isEmpty(a2.get(0).effectRes)) {
+        if (!StringUtils.isEmpty(topAtmosphereMessage.data.atmosphere) && ply.n() && this.o != null && (this.o.I() instanceof ffg) && (a2 = ((ffg) this.o.I()).a(topAtmosphereMessage.data.atmosphere)) != null && !a2.isEmpty() && !StringUtils.isEmpty(a2.get(0).effectRes)) {
             this.h.setVisibility(0);
             this.h.setImageUrl(cgl.b().a(a2.get(0).effectRes));
         }

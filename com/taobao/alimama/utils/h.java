@@ -1,7 +1,7 @@
 package com.taobao.alimama.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -24,14 +24,14 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("158dcde", new Object[]{str, list, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "tracking_json_null";
         }
         String str2 = null;
         try {
             JSONObject parseObject = JSONObject.parseObject(str);
             String string = parseObject.getString(AnimConstance.VIEW_ANIM_KEY_URLS);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 list.addAll(JSONObject.parseArray(string, String.class));
             }
             String string2 = parseObject.getString(MspDBHelper.BizEntry.COLUMN_NAME_PID);
@@ -47,8 +47,8 @@ public class h {
             if (list.size() <= 0) {
                 str2 = "exposure_urlList_empty";
             }
-            if (!TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string3) && !TextUtils.isEmpty(string4) && !TextUtils.isEmpty(string5)) {
-                if (!TextUtils.isEmpty(string6)) {
+            if (!StringUtils.isEmpty(string2) && !StringUtils.isEmpty(string3) && !StringUtils.isEmpty(string4) && !StringUtils.isEmpty(string5)) {
+                if (!StringUtils.isEmpty(string6)) {
                     return str2;
                 }
             }

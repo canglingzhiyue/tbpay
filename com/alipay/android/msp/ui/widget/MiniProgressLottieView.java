@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
@@ -103,7 +103,7 @@ public class MiniProgressLottieView extends LinearLayout {
             ipChange.ipc$dispatch("abc5e136", new Object[]{this});
         } else if (this.pd == null) {
         } else {
-            if (TextUtils.isEmpty(this.mMessage)) {
+            if (StringUtils.isEmpty(this.mMessage)) {
                 TextView textView = this.pb;
                 if (textView != null) {
                     textView.setVisibility(8);
@@ -127,15 +127,15 @@ public class MiniProgressLottieView extends LinearLayout {
             return;
         }
         LogUtil.record(2, "MiniProgressLottieView:setMessage", "message =".concat(String.valueOf(charSequence)));
-        if (!this.pf && TextUtils.isEmpty(charSequence)) {
+        if (!this.pf && StringUtils.isEmpty(charSequence)) {
             charSequence = LanguageHelper.localizedStringForKey("mini_loading", this.mContext.getString(R.string.mini_loading), new Object[0]);
         }
-        if (TextUtils.equals(charSequence, this.mMessage)) {
+        if (StringUtils.equals(charSequence, this.mMessage)) {
             return;
         }
-        if (TextUtils.isEmpty(this.mMessage)) {
+        if (StringUtils.isEmpty(this.mMessage)) {
             a(0.88f);
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
             a(1.12f);
         } else {
             ap();

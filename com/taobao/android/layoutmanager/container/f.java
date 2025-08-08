@@ -1,7 +1,7 @@
 package com.taobao.android.layoutmanager.container;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.layoutmanager.container.h;
 import com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.n;
@@ -25,7 +25,7 @@ public class f {
             return (Uri) ipChange.ipc$dispatch("2f59e7b3", new Object[]{uri, str, map});
         }
         String a2 = a(str);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return uri;
         }
         if (uri == null || !"true".equals(uri.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.b.KEY_PREFETCH_ALREADY))) {
@@ -49,7 +49,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("819a01b6", new Object[]{str, map})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if ((GUANGGUANG_DSL_KEY.equals(str) ? oeb.aS() : oeb.aT()) && (f = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().f()) != null) {
                 return f.a(str, new h.a(map));
             }

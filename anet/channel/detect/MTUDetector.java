@@ -2,7 +2,7 @@ package anet.channel.detect;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -108,7 +108,7 @@ public class MTUDetector {
         } else {
             ALog.e(TAG, "mtuDetectTask start", null, new Object[0]);
             SpdyAgent.getInstance(GlobalAppRuntimeInfo.getContext(), SpdyVersion.SPDY3, SpdySessionKind.NONE_SESSION);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
@@ -125,7 +125,7 @@ public class MTUDetector {
             }
             List<IConnStrategy> connStrategyListByHost = StrategyCenter.getInstance().getConnStrategyListByHost("guide-acs.m.taobao.com");
             String ip = (connStrategyListByHost == null || connStrategyListByHost.isEmpty()) ? null : connStrategyListByHost.get(0).getIp();
-            if (TextUtils.isEmpty(ip)) {
+            if (StringUtils.isEmpty(ip)) {
                 return;
             }
             ALog.e(TAG, "[mtuDetectTask]", null, c.IP, ip);

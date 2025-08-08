@@ -2,7 +2,7 @@ package com.taobao.taobao.scancode.huoyan.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -84,6 +84,6 @@ public class KakaLibBaseFragmentPage extends Fragment {
             return;
         }
         super.onDestroy();
-        TextUtils.isEmpty(this.pageName);
+        StringUtils.isEmpty(this.pageName);
     }
 }

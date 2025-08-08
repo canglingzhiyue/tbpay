@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -38,7 +38,7 @@ public class let extends h {
             return;
         }
         String sectionBizCode = b.getSectionBizCode();
-        if (TextUtils.isEmpty(sectionBizCode)) {
+        if (StringUtils.isEmpty(sectionBizCode)) {
             ldf.d("DXInsertCardsEventHandler", "sectionBizCode is null");
             return;
         }

@@ -3,7 +3,7 @@ package com.taobao.homepage.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ab.api.ABGlobal;
 import com.taobao.android.home.component.utils.c;
@@ -130,7 +130,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.equals(str, "coldStart")) {
+        if (StringUtils.equals(str, "coldStart")) {
             return b();
         }
         String oldUserId = Login.getOldUserId();
@@ -145,13 +145,13 @@ public class i {
         }
         if (a()) {
             String a2 = c.a.a("homepage_switch", "user_id", "");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 Mtop mtop = Mtop.getInstance(Mtop.Id.INNER);
                 if (mtop != null) {
                     a2 = mtop.getUserId();
                     com.taobao.android.home.component.utils.e.e("SecondRefreshUtils", "mtop getUserId: " + a2);
                 }
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     a2 = PreferenceManager.getDefaultSharedPreferences(Globals.getApplication()).getString("UserId", "");
                     com.taobao.android.home.component.utils.e.e("SecondRefreshUtils", "sp getUserId: " + a2);
                 }
@@ -167,7 +167,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.equals(str, "coldStart") && a()) {
+        if (StringUtils.equals(str, "coldStart") && a()) {
             return c.a.a("homepage_switch", "user_nick", "");
         }
         String oldNick = Login.getOldNick();
@@ -186,7 +186,7 @@ public class i {
             if (mtop != null) {
                 str = mtop.getSid();
             }
-            return !TextUtils.isEmpty(str);
+            return !StringUtils.isEmpty(str);
         }
         return Login.checkSessionValid();
     }
@@ -196,7 +196,7 @@ public class i {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (!b || !f17289a || !TextUtils.equals(str, "coldStart") || com.taobao.tao.topmultitab.a.c()) {
+        if (!b || !f17289a || !StringUtils.equals(str, "coldStart") || com.taobao.tao.topmultitab.a.c()) {
             return false;
         }
         boolean isFeatureOpened = ABGlobal.isFeatureOpened(Globals.getApplication(), "Home_Page_EnableStream");

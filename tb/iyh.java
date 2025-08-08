@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.sku.utils.o;
 import java.util.AbstractMap;
@@ -42,7 +42,7 @@ public class iyh {
         }
         String str3 = this.b.get(str);
         this.b.put(str, str2);
-        if (TextUtils.equals(str3, str2)) {
+        if (StringUtils.equals(str3, str2)) {
             o.c(TAG, "saveData: oldValue and newValue is same");
             return true;
         }
@@ -53,7 +53,7 @@ public class iyh {
         o.c(TAG, "notifyDataChanged: observer size: " + list.size());
         for (Map.Entry<Integer, a> entry : list) {
             String a2 = a(str);
-            if (TextUtils.equals(str3, str2)) {
+            if (StringUtils.equals(str3, str2)) {
                 o.c(TAG, "notifyDataChanged: has set same value internal");
             } else {
                 entry.getValue().a(str3, a2);
@@ -109,7 +109,7 @@ public class iyh {
         sb.append(" ,listener is ");
         sb.append(aVar == null ? "null" : "not null");
         o.c(TAG, sb.toString());
-        if (TextUtils.isEmpty(str) || aVar == null) {
+        if (StringUtils.isEmpty(str) || aVar == null) {
             return -1;
         }
         List<Map.Entry<Integer, a>> list = this.c.get(str);

@@ -3,7 +3,7 @@ package tb;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +62,7 @@ public class dlj {
             return;
         }
         View inflate = View.inflate(context, R.layout.ability_kit_loading, null);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             ((TextView) inflate.findViewById(R.id.mega_loading_text)).setText(str);
         }
         a(inflate, context);
@@ -120,7 +120,7 @@ public class dlj {
                     }
                     View inflate = View.inflate(context, R.layout.ability_kit_loading, null);
                     String string = jSONObject.getString("message");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         ((TextView) inflate.findViewById(R.id.mega_loading_text)).setText(string);
                     }
                     dlj.this.a(inflate, context);

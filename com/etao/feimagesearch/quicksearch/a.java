@@ -6,7 +6,7 @@ import android.hardware.display.VirtualDisplay;
 import android.media.Image;
 import android.media.ImageReader;
 import android.media.projection.MediaProjection;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.model.IrpParamModel;
@@ -267,7 +267,7 @@ public final class a {
         objectRef2.element = PhotoFrom.Values.WIDGET;
         Ref.ObjectRef objectRef3 = new Ref.ObjectRef();
         objectRef3.element = map != 0 ? map.get("pssource") : 0;
-        if (TextUtils.isEmpty((String) objectRef3.element)) {
+        if (StringUtils.isEmpty((String) objectRef3.element)) {
             objectRef3.element = "screen_widget";
             ((Map) objectRef.element).put("pssource", (String) objectRef3.element);
         } else {

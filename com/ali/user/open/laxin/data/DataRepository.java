@@ -1,6 +1,6 @@
 package com.ali.user.open.laxin.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.callback.MemberCallback;
 import com.ali.user.open.core.context.KernelContext;
@@ -45,7 +45,7 @@ public class DataRepository {
         rpcRequest.addParam("request", jSONObject.toString());
         StorageService storageService = (StorageService) AliMemberSDK.getService(StorageService.class);
         String umid = storageService == null ? "" : storageService.getUmid();
-        if (TextUtils.isEmpty(umid) || umid.length() == 24) {
+        if (StringUtils.isEmpty(umid) || umid.length() == 24) {
             storageService.getUmid(new MemberCallback<String>() { // from class: com.ali.user.open.laxin.data.DataRepository.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 

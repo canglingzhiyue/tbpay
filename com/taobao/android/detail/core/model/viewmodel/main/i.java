@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.model.viewmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.PriceNode;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ResourceNode;
@@ -48,7 +48,7 @@ public class i extends com.taobao.android.detail.datasdk.model.viewmodel.main.b 
         this.f9772a = m.price;
         this.b = m.subPrice;
         this.c = m.newExtraPrices;
-        if ((m.newExtraPrices == null || m.newExtraPrices.isEmpty()) && TextUtils.isEmpty(m.sugPromPrice.priceText)) {
+        if ((m.newExtraPrices == null || m.newExtraPrices.isEmpty()) && StringUtils.isEmpty(m.sugPromPrice.priceText)) {
             this.c = m.extraPrices;
         }
         this.d = m.priceTags;

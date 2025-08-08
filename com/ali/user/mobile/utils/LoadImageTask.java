@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -154,7 +154,7 @@ public class LoadImageTask extends AsyncTask<String, Void, Bitmap> {
         } else if (context == null) {
         } else {
             try {
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 File file = new File(context.getCacheDir().getPath() + "/" + str + "/");

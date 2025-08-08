@@ -1,7 +1,7 @@
 package com.taobao.desktop.channel.desktoplinktask.trigger;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -80,7 +80,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             synchronized (c.class) {
                 try {
@@ -249,7 +249,7 @@ public class c {
                 long currentTimeMillis = System.currentTimeMillis() / 1000;
                 jSONObject.put(Constants.KEY_TIMES, (Object) Integer.valueOf(i + 1));
                 jSONObject.put("lastTime", (Object) Long.valueOf(currentTimeMillis));
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     JSONObject jSONObject2 = jSONObject.getJSONObject("biz");
                     JSONObject jSONObject3 = jSONObject2.getJSONObject(str);
                     if (jSONObject3 == null) {
@@ -276,7 +276,7 @@ public class c {
         }
         try {
             String e = e(str);
-            return !TextUtils.isEmpty(e) ? JSON.parseObject(e) : new JSONObject();
+            return !StringUtils.isEmpty(e) ? JSON.parseObject(e) : new JSONObject();
         } catch (Throwable th) {
             th.printStackTrace();
             return new JSONObject();
@@ -310,7 +310,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("666b162a", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         File file = new File(str);
@@ -343,7 +343,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             Closeable closeable = null;
             try {

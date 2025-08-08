@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.linked.LinkedSplashData;
@@ -435,7 +435,7 @@ public class kqk implements b, kqn {
             return -1;
         }
         String string = jSONObject.getString("previewPosition");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return -1;
         }
         try {

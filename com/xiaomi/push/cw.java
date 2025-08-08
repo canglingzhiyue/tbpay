@@ -2,7 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -56,7 +56,7 @@ public abstract class cw {
     }
 
     static int a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         try {
@@ -69,10 +69,10 @@ public abstract class cw {
     static int a(List<bf> list) {
         int i = 0;
         for (bf bfVar : list) {
-            if (!TextUtils.isEmpty(bfVar.a())) {
+            if (!StringUtils.isEmpty(bfVar.a())) {
                 i += bfVar.a().length();
             }
-            if (!TextUtils.isEmpty(bfVar.b())) {
+            if (!StringUtils.isEmpty(bfVar.b())) {
                 i += bfVar.b().length();
             }
         }
@@ -121,7 +121,7 @@ public abstract class cw {
                     } catch (IOException e2) {
                         e = e2;
                     }
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         if (coVar != null) {
                             str3 = str2;
                             try {

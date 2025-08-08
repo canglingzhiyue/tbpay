@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class oag {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
             }
-            if (f31870a != null && !TextUtils.isEmpty(str)) {
+            if (f31870a != null && !StringUtils.isEmpty(str)) {
                 ArrayList arrayList = new ArrayList(f31870a);
                 for (int i = 0; i < arrayList.size(); i++) {
                     str = str.replace((String) arrayList.get(i), "");

@@ -1,6 +1,6 @@
 package com.ut.mini.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import mtopsdk.mtop.stat.IMtopMonitor;
@@ -23,11 +23,11 @@ public class c implements IMtopMonitor {
             return;
         }
         try {
-            if (!TextUtils.equals(IMtopMonitor.MtopMonitorType.TYPE_RESPONSE, str) || hashMap == null) {
+            if (!StringUtils.equals(IMtopMonitor.MtopMonitorType.TYPE_RESPONSE, str) || hashMap == null) {
                 return;
             }
             String str2 = hashMap.get("mtop-x-ut-config");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             b.a(str2);

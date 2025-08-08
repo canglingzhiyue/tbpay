@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.nx3.bean.TemplateBean;
@@ -79,7 +79,7 @@ public class nsg {
         if (a2 != null) {
             for (String str3 : a2) {
                 String a3 = searchDoorContext.a(str3);
-                if (!TextUtils.isEmpty(a3)) {
+                if (!StringUtils.isEmpty(a3)) {
                     hashMap.put(str3, a3);
                 }
             }
@@ -177,7 +177,7 @@ public class nsg {
         if (ipChange instanceof IpChange) {
             return (jvm.c) ipChange.ipc$dispatch("ad662293", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.d.get(str);
         }
         return null;

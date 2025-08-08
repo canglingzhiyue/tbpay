@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,11 +128,11 @@ public class eam extends c<TitleViewModel> implements Handler.Callback {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             this.g.setVisibility(8);
         } else {
             this.g.setVisibility(0);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 this.j.setVisibility(8);
             } else {
                 com.taobao.android.detail.core.detail.kit.utils.f.a(this.f9568a).a(this.j, str2);
@@ -157,7 +157,7 @@ public class eam extends c<TitleViewModel> implements Handler.Callback {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         for (int i = 0; i < arrayList.size(); i++) {
             Props2Node.a aVar = arrayList.get(i);
-            if (!TextUtils.isEmpty(aVar.f9988a) && !TextUtils.isEmpty(aVar.b)) {
+            if (!StringUtils.isEmpty(aVar.f9988a) && !StringUtils.isEmpty(aVar.b)) {
                 if (i != 0) {
                     spannableStringBuilder.append((CharSequence) " | ");
                 }
@@ -167,7 +167,7 @@ public class eam extends c<TitleViewModel> implements Handler.Callback {
         int i2 = 0;
         for (int i3 = 0; i3 < arrayList.size(); i3++) {
             Props2Node.a aVar2 = arrayList.get(i3);
-            if (!TextUtils.isEmpty(aVar2.f9988a) && !TextUtils.isEmpty(aVar2.b)) {
+            if (!StringUtils.isEmpty(aVar2.f9988a) && !StringUtils.isEmpty(aVar2.b)) {
                 if (i3 != 0) {
                     int i4 = i2 + 3;
                     spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.parseColor("#D5D5D5")), i2, i4, 33);
@@ -188,11 +188,11 @@ public class eam extends c<TitleViewModel> implements Handler.Callback {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("65d7b87d", new Object[]{this, str, str2});
         } else if (this.g != null) {
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 try {
                     SpannableString spannableString = new SpannableString(str);
                     for (String str3 : str2.split(",")) {
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             Matcher matcher = Pattern.compile(str3).matcher(spannableString);
                             while (matcher.find()) {
                                 spannableString.setSpan(new ForegroundColorSpan(this.f9568a.getResources().getColor(R.color.detail_theme_color)), matcher.start(), matcher.end(), 33);
@@ -281,7 +281,7 @@ public class eam extends c<TitleViewModel> implements Handler.Callback {
             return;
         }
         this.g.setVisibility(0);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             this.j.setVisibility(8);
         } else {
             com.taobao.android.detail.core.detail.kit.utils.f.a(this.f9568a).a(this.j, str2);
@@ -307,20 +307,20 @@ public class eam extends c<TitleViewModel> implements Handler.Callback {
         }
         c();
         this.o = titleViewModel;
-        if (ecu.b && !TextUtils.isEmpty(this.o.m) && this.o.n != null && this.o.n.size() != 0) {
+        if (ecu.b && !StringUtils.isEmpty(this.o.m) && this.o.n != null && this.o.n.size() != 0) {
             a(this.o.m, this.o.e);
             this.i.setVisibility(0);
             this.i.setText(a(this.o.n));
         } else {
             a(this.o.b, this.o.e, TitleViewModel.f10064a);
-            if (titleViewModel.d && !TextUtils.isEmpty(titleViewModel.c)) {
+            if (titleViewModel.d && !StringUtils.isEmpty(titleViewModel.c)) {
                 this.h.setVisibility(0);
                 this.h.setText(titleViewModel.c);
             } else {
                 this.h.setVisibility(8);
             }
         }
-        if (!TextUtils.isEmpty(titleViewModel.k)) {
+        if (!StringUtils.isEmpty(titleViewModel.k)) {
             this.m.setVisibility(8);
             this.n.setVisibility(8);
             this.k.setVisibility(0);
@@ -330,7 +330,7 @@ public class eam extends c<TitleViewModel> implements Handler.Callback {
         this.k.setVisibility(8);
         this.m.setVisibility(0);
         this.n.setVisibility(0);
-        if (TextUtils.isEmpty(titleViewModel.j)) {
+        if (StringUtils.isEmpty(titleViewModel.j)) {
             return;
         }
         this.m.setText(titleViewModel.j);

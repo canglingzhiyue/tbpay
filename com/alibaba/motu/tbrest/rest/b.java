@@ -1,7 +1,7 @@
 package com.alibaba.motu.tbrest.rest;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.HashMap;
 import java.util.Map;
 import tb.anz;
@@ -77,7 +77,7 @@ public class b {
             String a18 = a(com.alibaba.motu.tbrest.d.a().f);
             String a19 = a(com.alibaba.motu.tbrest.d.a().g);
             String a20 = a(com.alibaba.motu.tbrest.d.a().g);
-            String a21 = TextUtils.isEmpty(com.alibaba.motu.tbrest.d.a().j) ? a(bzb.c()) : com.alibaba.motu.tbrest.d.a().j;
+            String a21 = StringUtils.isEmpty(com.alibaba.motu.tbrest.d.a().j) ? a(bzb.c()) : com.alibaba.motu.tbrest.d.a().j;
             String a22 = a(bzb.b());
             String str6 = com.alibaba.motu.tbrest.d.a().b;
             String str7 = "a";
@@ -91,7 +91,7 @@ public class b {
             String a29 = a("dosa_revision_ab=" + com.alibaba.motu.tbrest.d.a().o);
             String a30 = a("languageInfo=" + com.alibaba.motu.tbrest.d.a().r);
             String str9 = com.alibaba.motu.tbrest.d.a().n;
-            if (!TextUtils.isEmpty(str9)) {
+            if (!StringUtils.isEmpty(str9)) {
                 str9 = byz.b(str9.getBytes());
             }
             String a31 = a(a26 + "," + a25 + "," + a27 + "," + a28 + "," + a("utabtest=" + str9) + "," + a29 + "," + a30);

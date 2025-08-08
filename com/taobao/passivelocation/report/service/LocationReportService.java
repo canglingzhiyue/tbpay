@@ -5,7 +5,7 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.location.Location;
 import android.taobao.util.a;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -81,7 +81,7 @@ public class LocationReportService extends IntentService {
         }
         nea.d(LOG, "[onStart] onStart invoked");
         super.onStart(intent, i);
-        if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+        if (intent == null || StringUtils.isEmpty(intent.getAction())) {
         }
     }
 
@@ -90,7 +90,7 @@ public class LocationReportService extends IntentService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1253e327", new Object[]{this, intent});
-        } else if (intent == null || TextUtils.isEmpty(intent.getAction())) {
+        } else if (intent == null || StringUtils.isEmpty(intent.getAction())) {
         } else {
             String action = intent.getAction();
             if (LOCATION_UPLOAD_SINGLE_ACTION.equals(action)) {
@@ -164,7 +164,7 @@ public class LocationReportService extends IntentService {
         }
         nea.d(LOG, "data to be reported through MTOP：" + jSONArray.toString());
         String jSONArray2 = jSONArray.toString();
-        if (!TextUtils.isEmpty(jSONArray2)) {
+        if (!StringUtils.isEmpty(jSONArray2)) {
             nea.d(LOG, "report data is: " + jSONArray2);
             passiveLocationBusiness.reportLbsData(jSONArray.toString());
             return;
@@ -187,7 +187,7 @@ public class LocationReportService extends IntentService {
         }
         try {
             String jSONString = JSON.toJSONString(storeLocationData);
-            if (!TextUtils.isEmpty(jSONString)) {
+            if (!StringUtils.isEmpty(jSONString)) {
                 jSONArray.put(new JSONObject(jSONString));
             } else {
                 nea.d(LOG, "this data is null");
@@ -215,7 +215,7 @@ public class LocationReportService extends IntentService {
         } else {
             for (LBSWifiDTO lBSWifiDTO : lbsdto.getWifis()) {
                 String ssid = lBSWifiDTO.getSsid();
-                if (!TextUtils.isEmpty(ssid)) {
+                if (!StringUtils.isEmpty(ssid)) {
                     lBSWifiDTO.setSsid(new String(a.a(ssid.getBytes())));
                 } else {
                     nea.d(LOG, "ssid=" + ssid + "，data：" + JSON.toJSONString(lBSWifiDTO));
@@ -252,7 +252,7 @@ public class LocationReportService extends IntentService {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("7a0f7033", new Object[]{this, mtopResponse, new Boolean(z)});
-            } else if (mtopResponse == null || TextUtils.isEmpty(mtopResponse.getRetCode()) || mtopResponse.getRetCode().startsWith("FAIL_SYS")) {
+            } else if (mtopResponse == null || StringUtils.isEmpty(mtopResponse.getRetCode()) || mtopResponse.getRetCode().startsWith("FAIL_SYS")) {
             } else {
                 nea.d(LocationReportService.LOG, "retCode=" + mtopResponse.getRetCode());
                 try {

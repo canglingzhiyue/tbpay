@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes4.dex */
@@ -27,10 +27,10 @@ public class eod extends enn {
     public eod(String str, String str2) {
         this.f27488a = "";
         this.b = "";
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f27488a = str;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             this.b = str2;
         }
         emu.a("com.taobao.android.detail.datasdk.event.sku.OpenAreaPickerWeexPageEvent");

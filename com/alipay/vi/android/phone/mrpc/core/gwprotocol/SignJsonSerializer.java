@@ -1,7 +1,7 @@
 package com.alipay.vi.android.phone.mrpc.core.gwprotocol;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.vi.android.phone.mrpc.core.Config;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -80,7 +80,7 @@ public class SignJsonSerializer implements Serializer {
         }
         Config config = this.c;
         String sign = config.sign(this.b, config.getAppKey(), sb.deleteCharAt(sb.length() - 1).toString());
-        if (TextUtils.isEmpty(sign)) {
+        if (StringUtils.isEmpty(sign)) {
             return;
         }
         list.add(new BasicNameValuePair("sign", sign));

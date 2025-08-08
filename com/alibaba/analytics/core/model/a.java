@@ -1,6 +1,6 @@
 package com.alibaba.analytics.core.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.db.annotation.Column;
 import com.alibaba.analytics.core.db.annotation.Ingore;
 import com.alibaba.analytics.core.db.annotation.TableName;
@@ -98,20 +98,20 @@ public class a extends aof {
         if (map != null) {
             hashMap.putAll(map);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put(LogField.PAGE.toString(), str);
         }
         hashMap.put(LogField.EVENTID.toString(), str2);
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             hashMap.put(LogField.ARG1.toString(), str3);
         }
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             hashMap.put(LogField.ARG2.toString(), str4);
         }
-        if (!TextUtils.isEmpty(str5)) {
+        if (!StringUtils.isEmpty(str5)) {
             hashMap.put(LogField.ARG3.toString(), str5);
         }
-        if (!TextUtils.isEmpty(this.e)) {
+        if (!StringUtils.isEmpty(this.e)) {
             hashMap.put(LogField.RECORD_TIMESTAMP.toString(), this.e);
         }
         f.a().a(str2, hashMap);

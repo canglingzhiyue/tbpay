@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -129,7 +129,7 @@ public class qzk extends a {
         if (bVar == null) {
             return false;
         }
-        return TextUtils.equals(bVar.j(), syc.DX_CONTAINER);
+        return StringUtils.equals(bVar.j(), syc.DX_CONTAINER);
     }
 
     @Override // com.taobao.tao.topmultitab.protocol.a, com.taobao.tao.topmultitab.protocol.IHomeSubTabController
@@ -319,7 +319,7 @@ public class qzk extends a {
         }
         String b = bVar.b();
         g.a("BaseSubMultiTab", "isOnRocketState：" + b);
-        return TextUtils.equals(b, NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET);
+        return StringUtils.equals(b, NavigationTabConstraints.TAB_ALIEN_EFFECTIVE_ROCKET);
     }
 
     @Override // com.taobao.tao.topmultitab.protocol.a, com.taobao.tao.topmultitab.protocol.IHomeSubTabController

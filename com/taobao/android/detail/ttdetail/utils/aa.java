@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.utils;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.BufferedReader;
 import java.io.File;
@@ -52,10 +52,10 @@ public class aa {
         a aVar = new a();
         aVar.f10956a = f10953a.f10956a;
         aVar.b = f10953a.b;
-        if (TextUtils.equals("0", aVar.f10956a)) {
+        if (StringUtils.equals("0", aVar.f10956a)) {
             d();
         }
-        if (TextUtils.equals("0", aVar.b)) {
+        if (StringUtils.equals("0", aVar.b)) {
             c();
         }
         return aVar;
@@ -69,7 +69,7 @@ public class aa {
         }
         final SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(f.a());
         String string = defaultSharedPreferences.getString("detail_CpuFrequency", "null");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             f10953a.b = string;
         } else {
             bf.a(new Runnable() { // from class: com.taobao.android.detail.ttdetail.utils.aa.1
@@ -91,7 +91,7 @@ public class aa {
                     }
                     try {
                         String readLine = bufferedReader.readLine();
-                        if (TextUtils.isEmpty(readLine)) {
+                        if (StringUtils.isEmpty(readLine)) {
                             try {
                                 bufferedReader.close();
                                 return;

@@ -9,7 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.taobao.util.k;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Window;
 import android.view.WindowManager;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -95,7 +95,7 @@ public class UrlFilterpriority implements UrlFilter.URLFilterinterface {
                     return false;
                 }
             }
-            if (!str.contains("taobao.wap.alipay.com/cmsCente") || TextUtils.isEmpty(Login.getSid())) {
+            if (!str.contains("taobao.wap.alipay.com/cmsCente") || StringUtils.isEmpty(Login.getSid())) {
                 return false;
             }
             BrowserUtil.a(TAG, "doFilter", "url_contains_cmsCente", str, null);

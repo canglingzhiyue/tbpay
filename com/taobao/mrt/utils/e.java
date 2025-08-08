@@ -1,6 +1,6 @@
 package com.taobao.mrt.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mrt.service.LogService;
 import com.taobao.tao.remotebusiness.IRemoteBaseListener;
@@ -116,7 +116,7 @@ public class e implements LogService {
                 a poll = c.poll(2L, TimeUnit.SECONDS);
                 if (poll == null) {
                     z = false;
-                } else if (TextUtils.equals(str2, poll.f18272a) && TextUtils.equals(str, poll.b)) {
+                } else if (StringUtils.equals(str2, poll.f18272a) && StringUtils.equals(str, poll.b)) {
                     if (sb.length() > 0) {
                         sb.append("\n");
                     }

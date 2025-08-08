@@ -1,7 +1,7 @@
 package com.taobao.tao.shop.rule;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.data.Result;
 import com.taobao.tao.shop.rule.data.TBUrlRule;
@@ -49,7 +49,7 @@ public class c {
                 result = RuleProcessCenter.process(it.next(), uri);
                 if (result.isMatch) {
                     aVar.f21094a = true;
-                    if (TextUtils.isEmpty(result.target)) {
+                    if (StringUtils.isEmpty(result.target)) {
                         aVar.b = tBUrlRuleSet.target;
                     }
                     aVar.c = tBUrlRuleSet.actionAfterMatch;

@@ -1,6 +1,6 @@
 package com.taobao.tao.image;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tlog.adapter.AdapterForTLog;
@@ -52,7 +52,7 @@ public class d {
         if (f20624a == null) {
             if (b) {
                 String logLevel = AdapterForTLog.getLogLevel();
-                f20624a = Integer.valueOf(b(TextUtils.isEmpty(logLevel) ? LEVEL_L : logLevel.charAt(0)));
+                f20624a = Integer.valueOf(b(StringUtils.isEmpty(logLevel) ? LEVEL_L : logLevel.charAt(0)));
             } else {
                 f20624a = Integer.valueOf(b(LEVEL_V));
             }

@@ -2,7 +2,7 @@ package com.taobao.tbpoplayer.mock;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
@@ -45,7 +45,7 @@ public class WVPopLayerMock extends e {
                 wVCallBackContext.success();
                 return true;
             } else if ("clearCount".equals(str)) {
-                int intValue = (TextUtils.isEmpty(str2) || (parseObject = JSON.parseObject(str2)) == null) ? 0 : parseObject.getInteger("clearMode").intValue();
+                int intValue = (StringUtils.isEmpty(str2) || (parseObject = JSON.parseObject(str2)) == null) ? 0 : parseObject.getInteger("clearMode").intValue();
                 if (intValue == 0) {
                     bzt.a().b();
                 } else if (intValue == 1) {

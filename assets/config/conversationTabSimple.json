@@ -1,0 +1,1053 @@
+{
+  "props": {
+    "treeId": "1",
+    "treeCode": "list",
+    "sectionTypeList": ["default"]
+  },
+  "source": {
+    "initTimeout": 6000,
+    "sourceList": [
+      {
+        "name": "treeSource",
+        "type": "source.message.category.simpleList",
+        "defaultLoad": 1
+      }
+    ]
+  },
+  "transformer": {
+    "nativeTransformerList": [
+      {
+        "name": "categoryList",
+        "type": "transformer.message.category.simpleList"
+      },
+      {
+        "name": "expiredSectionSort",
+        "type": "transformer.message.category.simpleSectionSort"
+      },
+      {
+        "name": "updateDownloadProgress",
+        "type": "transformer.message.category.updateDownloadProgress"
+      }
+    ]
+  },
+  "layout": {
+    "renderTemplate": {
+      "name": "widget.message.category.pageLayout",
+      "renderType": "native"
+    },
+    "data": {
+      "useTheme": 1,
+      "enablePullToRefresh": 1
+    },
+    "userTrack": {
+      "pageName": "Page_MsgCenter",
+      "spmB": "7631769",
+      "actions": {
+        "onAppear": {
+          "name": "Page_MsgCenter",
+          "eventId": "2001",
+          "spmC": "0",
+          "spmD": "0"
+        },
+        "onDisappear": {
+          "name": "Page_MsgCenter",
+          "eventId": "2001",
+          "spmC": "0",
+          "spmD": "0"
+        },
+        "refresh": {
+          "name": "MsgHomePage",
+          "eventId": "2101",
+          "spmC": "0",
+          "spmD": "0"
+        }
+      }
+    },
+    "eventHandler": {
+      "refresh": [
+        {
+          "type": "eventhandler.message.data.sync",
+          "data": {
+
+          }
+        },
+        {
+          "type": "eventhandler.message.data.messageLogin",
+          "data": {
+
+          }
+        },
+        {
+          "type": "eventhandler.message.common.notifySource",
+          "data": {
+            "sourceName": "operationArea",
+            "commandName": "refreshData"
+          }
+        }
+      ],
+      "doubleClick": [
+        {
+          "type": "eventhandler.message.common.updateState",
+          "data": {
+
+          }
+        }
+      ],
+      "updateProgress": [
+        {
+          "type": "eventhandler.message.common.updateState",
+          "data": {
+
+          }
+        }
+      ],
+      "onAppear": [{
+        "type": "eventhandler.message.common.notifySource",
+        "data": {
+          "sourceName": "operationArea",
+          "commandName": "reloadData"
+        }
+      },
+        {
+          "type": "eventhandler.message.tab.pushRecall",
+          "data": {
+            "source": "messageTab"
+          }
+        }]
+    },
+    "children": {
+      "content": {
+        "type": "layout",
+        "data": {
+          "renderTemplate": {
+            "name": "widget.message.common.sectionList",
+            "renderType": "native"
+          },
+          "data": {
+            "clipFirst": 1,
+            "scrollToUnread": "${jsRuntimeData.scrollToUnread.excute}",
+            "locatedUnreadUniqueId": "${jsRuntimeData.scrollToUnread.locatedUnreadNode.nodeId}"
+          },
+          "children": {
+            "header": {
+              "type": "layout",
+              "data": {
+                "renderTemplate": {
+                  "name": "widget.message.common.vertical",
+                  "renderType": "native"
+                },
+                "data": {
+
+                },
+                "style": {
+
+                }
+              }
+            },
+            "section": {
+              "type": "dynamic",
+              "data": {
+                "dynamicType": "${props.sectionTypeList[#0]}",
+                "dynamicData": "${runtimeData.sectionList}",
+                "pool": {
+                  "default": {
+                    "renderTemplate": {
+                      "name": "section",
+                      "renderType": "native"
+                    },
+                    "data": {
+
+                    },
+                    "children": {
+                      "content": {
+                        "type": "dynamic",
+                        "data": {
+                          "dynamicType": "default",
+                          "dynamicData": "${runtimeData.sectionList[#0]}",
+                          "pool": {
+                            "default": {
+                              "uniqueId": "${runtimeData.sectionList[#0][#1].nodeId}",
+                              "renderTemplate": {
+                                "name": "widget.message.common.itemwrapper",
+                                "renderType": "native"
+                              },
+                              "data": {
+                                "menu": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},menu}",
+                                "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}",
+                                "reuseId": "@query{${originalData.msgTabRecommendSource},${runtimeData.sectionList[#0][#1].originalObjectId},reuseId}"
+                              },
+                              "userTrack": {
+                                "actions": {
+                                  "swipeLeft": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick0": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick1": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick2": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick3": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick3_Confirm": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick4": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  }
+                                }
+                              },
+                              "eventHandler": {
+                                "typeClick0": [
+                                  {
+                                    "type": "eventhandler.message.node.delete",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}"
+                                    }
+                                  },{
+                                    "type": "eventHandler.conversation.delete.showGuid",
+                                    "data": {
+                                    }
+                                  }
+                                ],
+                                "typeClick1": [
+                                  {
+                                    "type": "eventhandler.message.node.revertStick",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}",
+                                      "currentStick": "${runtimeData.sectionList[#0][#1].computedData.stick}"
+                                    }
+                                  }
+                                ],
+                                "typeClick2": [
+                                  {
+                                    "type": "eventhandler.message.common.nav",
+                                    "data": {
+                                      "actionUrl": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},settingUrl}"
+                                    }
+                                  }
+                                ],
+                                "typeClick3": [
+                                  {
+                                    "type": "eventhandler.message.data.exitGroup",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}",
+                                      "groupId": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,target,targetId}"
+                                    }
+                                  }
+                                ],
+                                "typeClick4": [
+                                  {
+                                    "type": "eventhandler.message.node.unfollow",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": {
+                                "content": {
+                                  "type": "layout",
+                                  "data": {
+                                    "renderTemplate": {
+                                      "name": "categoryItem",
+                                      "renderType": "dinamicX",
+                                      "renderData": {
+                                        "name": "alimp_category_item",
+                                        "version": "33",
+                                        "url": "https://dinamicx.alibabausercontent.com/l_pub/alimp_category_item/1697609285936/alimp_category_item.zip"
+                                      }
+                                    },
+                                    "data": {
+                                      "title": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},title}",
+                                      "titleLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},titleLight}",
+                                      "titleExt": "",
+                                      "headIcon": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},headIcon}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "stick": "@query{${runtimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},stick}",
+                                      "leftIcon": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},leftIcon}",
+                                      "rightIcon": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},rightIcon}",
+                                      "contentTip": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTip}",
+                                      "contentTipLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTipLight}",
+                                      "content": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},summaryContent}",
+                                      "time": "@query{${runtimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},time}",
+                                      "tag": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},tag}",
+                                      "tipsGray":"@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},tipsGray}",
+                                      "separatorOffsetX":"@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},separatorOffsetX}",
+                                      "customDividerColor":"@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},customDividerColor}",
+                                      "recommendItem":"@query{${originalData.msgTabRecommendSource},${runtimeData.sectionList[#0][#1].originalObjectId},recommendItem}",
+                                      "recommendTitle":"@query{${originalData.msgTabRecommendSource},${runtimeData.sectionList[#0][#1].originalObjectId},recommendTitle}",
+                                      "recommendUrl":"@query{${originalData.msgTabRecommendSource},${runtimeData.sectionList[#0][#1].originalObjectId},url}",
+                                      "lastRecommendMessageTime":"@query{${originalData.msgTabRecommendSource},${runtimeData.sectionList[#0][#1].originalObjectId},lastRecommendMessageTime}"
+
+                                    },
+                                    "userTrack": {
+                                      "actions": {
+                                        "click": {
+                                          "name": "TBMSGConversation",
+                                          "eventId": "2101",
+                                          "spmC": "0",
+                                          "spmD": "0",
+                                          "args": {
+                                            "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                            "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                            "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                            "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                            "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                            "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                            "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                            "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                            "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                            "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}",
+                                            "customIndividuation": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customIndividuation}",
+                                            "customType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customType}",
+                                            "contentTip": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTip}",
+                                            "contentTipLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTipLight}"
+                                          }
+                                        },
+                                        "onExposed": {
+                                          "name": "TBMSGConversation",
+                                          "eventId": "2201",
+                                          "spmC": "0",
+                                          "spmD": "0",
+                                          "args": {
+                                            "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                            "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                            "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                            "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                            "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                            "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                            "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                            "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                            "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                            "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}",
+                                            "customIndividuation": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customIndividuation}",
+                                            "customType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customType}",
+                                            "contentTip": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTip}",
+                                            "contentTipLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTipLight}",
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "eventHandler": {
+                                      "click": [
+                                        {
+                                          "type": "eventhandler.message.common.nav",
+                                          "data": {
+                                            "actionUrl": "@query{${runtimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},actionUrl}"
+                                          },
+                                          "immediate": 1
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "expiredSection": {
+                    "renderTemplate": {
+                      "name": "section",
+                      "renderType": "native"
+                    },
+                    "data": {
+
+                    },
+                    "children": {
+                      "header": {
+                        "type": "layout",
+                        "data": {
+                          "uniqueId": "convSectionHeaderView",
+                          "renderTemplate": {
+                            "name": "alimp_conversation_section_headerview",
+                            "renderType": "dinamicX",
+                            "renderData": {
+                              "name": "alimp_conversation_section_headerview",
+                              "version": "1662628747535",
+                              "url": "https://dinamicx.alibabausercontent.com/pub/alimp_conversation_section_headerview/1662628747535/alimp_conversation_section_headerview.zip"
+                            }
+                          },
+                          "data": {
+                            "displayTutorial": "${runtimeData.expiredSectionHeadView.displayTutorial}",
+                            "overTitle": "${runtimeData.expiredSectionHeadView.overTitle}",
+                            "content": "${runtimeData.expiredSectionHeadView.content}"
+                          },
+                          "style": {
+
+                          },
+                          "eventHandler": {
+                            "closeOverView": [
+                              {
+                                "type": "eventhandler.message.close.expiredSectionTutorial",
+                                "data": {
+                                  "sourceName": "kvSource"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "content": {
+                        "type": "dynamic",
+                        "data": {
+                          "dynamicType": "default",
+                          "dynamicData": "${runtimeData.sectionList[#0]}",
+                          "pool": {
+                            "default": {
+                              "uniqueId": "${runtimeData.sectionList[#0][#1].nodeId}",
+                              "renderTemplate": {
+                                "name": "widget.message.common.itemwrapper",
+                                "renderType": "native"
+                              },
+                              "data": {
+                                "menu": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},menu}",
+                                "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}"
+                              },
+                              "userTrack": {
+                                "actions": {
+                                  "swipeLeft": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick0": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick1": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick2": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick3": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick3_Confirm": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  },
+                                  "typeClick4": {
+                                    "name": "Conversation",
+                                    "eventId": "2101",
+                                    "spmC": "0",
+                                    "spmD": "0",
+                                    "args": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                      "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                      "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                      "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                      "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                      "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                      "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                      "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}"
+                                    }
+                                  }
+                                }
+                              },
+                              "eventHandler": {
+                                "typeClick0": [
+                                  {
+                                    "type": "eventhandler.message.node.delete",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}"
+                                    }
+                                  },{
+                                    "type": "eventHandler.conversation.delete.showGuid",
+                                    "data": {
+                                    }
+                                  }
+                                ],
+                                "typeClick1": [
+                                  {
+                                    "type": "eventhandler.message.node.revertStick",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}",
+                                      "currentStick": "${runtimeData.sectionList[#0][#1].computedData.stick}"
+                                    }
+                                  }
+                                ],
+                                "typeClick2": [
+                                  {
+                                    "type": "eventhandler.message.common.nav",
+                                    "data": {
+                                      "actionUrl": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},settingUrl}"
+                                    }
+                                  }
+                                ],
+                                "typeClick3": [
+                                  {
+                                    "type": "eventhandler.message.data.exitGroup",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}",
+                                      "groupId": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,target,targetId}"
+                                    }
+                                  }
+                                ],
+                                "typeClick4": [
+                                  {
+                                    "type": "eventhandler.message.node.unfollow",
+                                    "data": {
+                                      "nodeId": "${runtimeData.sectionList[#0][#1].nodeId}"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": {
+                                "content": {
+                                  "type": "layout",
+                                  "data": {
+                                    "renderTemplate": {
+                                      "name": "categoryItem",
+                                      "renderType": "dinamicX",
+                                      "renderData": {
+                                        "name": "alimp_category_item",
+                                        "version": "33",
+                                        "url": "https://dinamicx.alibabausercontent.com/l_pub/alimp_category_item/1697609285936/alimp_category_item.zip"
+                                      }
+                                    },
+                                    "data": {
+                                      "title": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},title}",
+                                      "titleLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},titleLight}",
+                                      "titleExt": "",
+                                      "headIcon": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},headIcon}",
+                                      "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                      "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                      "stick": "@query{${runtimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},stick}",
+                                      "leftIcon": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},leftIcon}",
+                                      "rightIcon": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},rightIcon}",
+                                      "contentTip": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTip}",
+                                      "contentTipLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTipLight}",
+                                      "content": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},summaryContent}",
+                                      "time": "@query{${runtimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},time}",
+                                      "tag": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},tag}",
+                                      "tipsGray":"@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},tipsGray}",
+                                      "separatorOffsetX":"@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},separatorOffsetX}",
+                                      "customDividerColor":"@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},customDividerColor}"
+
+                                    },
+                                    "userTrack": {
+                                      "actions": {
+                                        "click": {
+                                          "name": "TBMSGConversation",
+                                          "eventId": "2101",
+                                          "spmC": "0",
+                                          "spmD": "0",
+                                          "args": {
+                                            "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                            "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                            "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                            "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                            "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                            "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                            "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                            "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                            "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                            "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}",
+                                            "customIndividuation": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customIndividuation}",
+                                            "customType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customType}",
+                                            "contentTip": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTip}",
+                                            "contentTipLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTipLight}"
+                                          }
+                                        },
+                                        "onExposed": {
+                                          "name": "TBMSGConversation",
+                                          "eventId": "2201",
+                                          "spmC": "0",
+                                          "spmD": "0",
+                                          "args": {
+                                            "nodeId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectId": "${runtimeData.sectionList[#0][#1].originalObjectId}",
+                                            "originalObjectType": "${runtimeData.sectionList[#0][#1].originalObjectType}",
+                                            "targetId": "${runtimeData.sectionList[#0][#1].computedData.targetId}",
+                                            "entityType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},conversationIdentifier,entityType}",
+                                            "bizType": "${runtimeData.sectionList[#0][#1].computedData.bizType}",
+                                            "remindType": "${runtimeData.sectionList[#0][#1].computedData.remindType}",
+                                            "tipType": "${runtimeData.sectionList[#0][#1].computedData.tipType}",
+                                            "tipNumber": "${runtimeData.sectionList[#0][#1].computedData.tipNumber}",
+                                            "conversationTime": "${runtimeData.sectionList[#0][#1].computedData.lastMessageTime}",
+                                            "lastMessageId": "${runtimeData.sectionList[#0][#1].computedData.lastMessageId}",
+                                            "lastMessageType": "${runtimeData.sectionList[#0][#1].computedData.lastMessageType}",
+                                            "customIndividuation": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customIndividuation}",
+                                            "customType": "@query{${originalData.treeSource.mergedData.originalDataPool.conversation},${runtimeData.sectionList[#0][#1].originalObjectId},localExt,customType}",
+                                            "contentTip": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTip}",
+                                            "contentTipLight": "@query{${jsRuntimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},contentTipLight}"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "eventHandler": {
+                                      "click": [
+                                        {
+                                          "type": "eventhandler.message.common.nav",
+                                          "data": {
+                                            "actionUrl": "@query{${runtimeData.conversationViewData},${runtimeData.sectionList[#0][#1].nodeId},actionUrl}"
+                                          },
+                                          "immediate": 1
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "eventHandler": {
+            "onExposed": [
+              {
+                "type": "eventhandler.message.dai.trigger",
+                "data": {
+                  "globalUnreadNum": "${runtimeData.headView.unreadNum}"
+                },
+                "runtimeType": "js"
+              }
+            ]
+          }
+        }
+      },
+      "navigator": {
+        "type": "layout",
+        "data": {
+          "renderTemplate": {
+            "name": "alimp_category_main_titlebar",
+            "renderType": "dinamicX",
+            "renderData": {
+              "name": "alimp_category_main_titlebar",
+              "version": "1694692670203",
+              "url": "https://dinamicx.alibabausercontent.com/l_pub/alimp_category_main_titlebar/1694692670203/alimp_category_main_titlebar.zip"
+            }
+          },
+          "data": {
+            "enableBack": "${props.enableBack}",
+            "unreadNum": "${runtimeData.headView.unreadNum}",
+            "title": "${runtimeData.headView.title}",
+            "leftTipNumber": "${originalData.contact.unreadInfo.tipNumber}",
+            "leftTipType": "${originalData.contact.unreadInfo.tipType}",
+            "markReadTxt":"${jsRuntimeData.headView.markReadTxt}",
+            "markReadIcon":"${jsRuntimeData.headView.markReadIcon}",
+            "disableFunc":"1"
+          },
+          "userTrack": {
+            "actions": {
+              "optionClick": {
+                "name": "MsgHomePage",
+                "eventId": "2101",
+                "spmC": "0",
+                "spmD": "0",
+                "args": {
+
+                }
+              },
+              "contactClick": {
+                "name": "MsgHomePage",
+                "eventId": "2101",
+                "spmC": "0",
+                "spmD": "0",
+                "args": {
+                  "tipType": "${originalData.contact.unreadInfo.tipType}",
+                  "tipNumber": "${originalData.contact.unreadInfo.tipNumber}"
+                }
+              },
+              "onAppear": {
+                "name": "ContactsList",
+                "eventId": "2201",
+                "spmC": "0",
+                "spmD": "0",
+                "args": {
+                  "tipType": "${originalData.contact.unreadInfo.tipType}",
+                  "tipNumber": "${originalData.contact.unreadInfo.tipNumber}"
+                }
+              }
+            }
+          },
+          "eventHandler": {
+            "backClick": [
+              {
+                "type": "eventhandler.message.common.finishPage",
+                "data": {
+
+                }
+              }
+            ],
+            "clearUnreadClick": [
+              {
+                "type": "eventhandler.message.data.clearGlobalUnread",
+                "data": {
+                  "globalUnreadNum": "${originalData.globalUnread.tipNumber}"
+                }
+              }
+            ],
+            "optionClick": [
+              {
+                "type": "eventhandler.message.common.poplayer",
+                "data": {
+                  "poplayerName": "menuPoplayer"
+                }
+              }
+            ],
+            "contactClick": [
+              {
+                "type": "eventhandler.message.common.nav",
+                "data": {
+                  "actionUrl": "https://web.m.taobao.com/app/tmall-wireless/tb-relations-h5/addressbook?pha=true&disableNav=YES"
+                }
+              }
+            ],
+            "searchClick": [{
+              "type": "eventhandler.message.common.nav",
+              "data": {
+                "actionUrl": "http://tb.cn/n/im/dynamic/search.html?autoFocus=1"
+              }
+            }]
+          }
+        }
+      }
+    }
+  },
+  "poplayer": {
+    "menuPoplayer": {
+      "layout": {
+        "renderTemplate": {
+          "name": "listMenu",
+          "renderType": "dinamicX",
+          "renderData": {
+            "name": "alimp_list_menu",
+            "version": "1649238826210",
+            "url": "https://ossgw.alicdn.com/rapid-oss-bucket/1649238826210/alimp_list_menu.zip"
+          }
+        },
+        "data": {
+          "menu": "${jsRuntimeData.homeMenu}"
+        },
+        "eventHandler": {
+          "typeClick0": [{
+            "type": "eventhandler.message.common.nav",
+            "data": {
+              "actionUrl": "${jsRuntimeData.homeMenuActionUrlMap.0}",
+              "navigationType": "present"
+            }
+          }],
+          "typeClick1": [{
+            "type": "eventhandler.message.common.nav",
+            "data": {
+              "actionUrl": "${jsRuntimeData.homeMenuActionUrlMap.1}"
+            }
+          }],
+          "typeClick2": [{
+            "type": "eventhandler.message.common.nav",
+            "data": {
+              "actionUrl": "${jsRuntimeData.homeMenuActionUrlMap.2}"
+            }
+          }],
+          "typeClick3": [{
+            "type": "eventhandler.message.common.nav",
+            "data": {
+              "actionUrl": "${jsRuntimeData.homeMenuActionUrlMap.3}"
+            }
+          }],
+          "typeClick4": [{
+            "type": "eventhandler.message.common.nav",
+            "data": {
+              "actionUrl": "${jsRuntimeData.homeMenuActionUrlMap.4}"
+            }
+          }]
+        },
+        "userTrack": {
+          "pageName": "Page_MsgCenter",
+          "actions": {
+            "typeClick0": {
+              "name": "MsgHomePageAddEntry",
+              "eventId": "2101",
+              "spmC": "0",
+              "spmD": "0",
+              "args": {}
+            },
+            "typeClick1": {
+              "name": "MsgHomePageAddEntry",
+              "eventId": "2101",
+              "spmC": "0",
+              "spmD": "0",
+              "args": {}
+            },
+            "typeClick2": {
+              "name": "MsgHomePageAddEntry",
+              "eventId": "2101",
+              "spmC": "0",
+              "spmD": "0",
+              "args": {}
+            },
+            "typeClick3": {
+              "name": "MsgHomePageAddEntry",
+              "eventId": "2101",
+              "spmC": "0",
+              "spmD": "0",
+              "args": {}
+            },
+            "typeClick5": {
+              "name": "AddMore_ShopTogether",
+              "eventId": "2101",
+              "spmC": "0",
+              "spmD": "0",
+              "args": {}
+            }
+          }
+        }
+      },
+      "anchor": {
+        "offsetOriginal": "rightTop",
+        "offsetX": -152,
+        "offsetY": 45
+      }
+    }
+  }
+}

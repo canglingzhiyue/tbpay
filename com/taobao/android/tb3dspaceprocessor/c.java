@@ -8,7 +8,7 @@ import android.os.Looper;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.core.splitinstall.j;
 import com.alibaba.android.split.core.splitinstall.m;
@@ -97,7 +97,7 @@ public class c implements com.taobao.android.nav.e {
             Log.e("TaoBaoLife", "process: isToH5 " + th3);
             z2 = false;
         }
-        if (TextUtils.isEmpty(str) || dVar.a() == null) {
+        if (StringUtils.isEmpty(str) || dVar.a() == null) {
             return true;
         }
         q.a("T3DNativeJSAPI", (Class<? extends android.taobao.windvane.jsbridge.e>) T3DNattiveJS.class);

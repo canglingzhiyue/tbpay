@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -45,7 +45,7 @@ public class pif extends ezg {
             for (String str : jSONObject2.keySet()) {
                 JSONObject jSONObject3 = jSONObject2.getJSONObject(str);
                 if (jSONObject3 != null) {
-                    if (TextUtils.equals("headerPic", str)) {
+                    if (StringUtils.equals("headerPic", str)) {
                         this.h.put(str, new eze(jSONObject3, ezoVar));
                     } else {
                         this.h.put(str, new eyy(jSONObject3, ezoVar));

@@ -83,7 +83,7 @@ public class lce extends fuf {
         L60:
             if (r2 == r1) goto L8d
             if (r10 == r1) goto L8d
-            boolean r3 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L8e
+            boolean r3 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L8e
             if (r3 == 0) goto L6b
             goto L8d
         L6b:

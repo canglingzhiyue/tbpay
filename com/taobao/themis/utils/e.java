@@ -1,7 +1,7 @@
 package com.taobao.themis.utils;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.util.TypeUtils;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -30,7 +30,7 @@ public class e {
         }
         if (bundle != null) {
             try {
-                if (TextUtils.isEmpty(str) || !bundle.containsKey(str)) {
+                if (StringUtils.isEmpty(str) || !bundle.containsKey(str)) {
                     return str2;
                 }
                 String castToString = TypeUtils.castToString(bundle.get(str));
@@ -52,7 +52,7 @@ public class e {
         }
         if (bundle != null) {
             try {
-                return (!TextUtils.isEmpty(str) && bundle.containsKey(str) && (castToBoolean = TypeUtils.castToBoolean(bundle.get(str))) != null) ? castToBoolean.booleanValue() : z;
+                return (!StringUtils.isEmpty(str) && bundle.containsKey(str) && (castToBoolean = TypeUtils.castToBoolean(bundle.get(str))) != null) ? castToBoolean.booleanValue() : z;
             } catch (Exception e) {
                 Log.e("TMS:BundleUtils", "get json value exception", e);
             }

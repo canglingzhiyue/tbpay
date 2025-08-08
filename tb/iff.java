@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -142,7 +142,7 @@ public class iff {
         this.p = FestivalMgr.a().a("trade", "rightButtonColorStart", 1);
         this.q = FestivalMgr.a().a("trade", "rightButtonColorEnd", 1);
         String a2 = FestivalMgr.a().a("trade", NavigationTabHelper.b.PHASE_ICONIMAGE);
-        if (this.x != null && !TextUtils.isEmpty(a2)) {
+        if (this.x != null && !StringUtils.isEmpty(a2)) {
             this.x.setImageUrl(a2);
         }
         int i4 = this.l;
@@ -213,27 +213,27 @@ public class iff {
             ipChange.ipc$dispatch("5c0f96e", new Object[]{this});
             return;
         }
-        if (this.r != null && !TextUtils.isEmpty(this.b)) {
+        if (this.r != null && !StringUtils.isEmpty(this.b)) {
             this.r.setText(this.b);
         }
-        if (this.s != null && !TextUtils.isEmpty(this.c)) {
+        if (this.s != null && !StringUtils.isEmpty(this.c)) {
             this.s.setText(this.c);
             this.s.setVisibility(0);
         }
-        if (this.t != null && !TextUtils.isEmpty(this.d)) {
+        if (this.t != null && !StringUtils.isEmpty(this.d)) {
             this.t.setText(this.d);
             this.t.setVisibility(0);
         }
-        if (this.x != null && !TextUtils.isEmpty(this.f)) {
+        if (this.x != null && !StringUtils.isEmpty(this.f)) {
             this.x.setImageUrl(this.f);
         }
-        if (this.u != null && !TextUtils.isEmpty(this.e)) {
+        if (this.u != null && !StringUtils.isEmpty(this.e)) {
             this.u.setText(this.e);
         }
-        if (this.v != null && !TextUtils.isEmpty(this.g)) {
+        if (this.v != null && !StringUtils.isEmpty(this.g)) {
             this.v.setText(this.g);
         }
-        if (this.w == null || TextUtils.isEmpty(this.h)) {
+        if (this.w == null || StringUtils.isEmpty(this.h)) {
             return;
         }
         this.w.setText(this.h);

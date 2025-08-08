@@ -3,7 +3,7 @@ package com.xiaomi.push;
 import android.content.Context;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -67,7 +67,7 @@ public class as implements ar, InvocationHandler {
         }
 
         boolean a() {
-            if (!TextUtils.isEmpty(this.f117a) || !TextUtils.isEmpty(this.b) || !TextUtils.isEmpty(this.c) || !TextUtils.isEmpty(this.d)) {
+            if (!StringUtils.isEmpty(this.f117a) || !StringUtils.isEmpty(this.b) || !StringUtils.isEmpty(this.c) || !StringUtils.isEmpty(this.d)) {
                 this.f116a = true;
             }
             return this.f116a != null;

@@ -1,6 +1,6 @@
 package com.ali.user.open.cookies;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.trace.SDKLogger;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
@@ -223,7 +223,7 @@ public class LoginCookieUtils {
             return (String) ipChange.ipc$dispatch("1437011c", new Object[]{loginCookie});
         }
         String str = loginCookie.domain;
-        if (!TextUtils.isEmpty(str) && str.startsWith(".")) {
+        if (!StringUtils.isEmpty(str) && str.startsWith(".")) {
             str = str.substring(1);
         }
         return k.HTTPS_PREFIX + str;
@@ -235,12 +235,12 @@ public class LoginCookieUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a4afea14", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
             String cookie = CookieManagerService.getWebViewProxy().getCookie(".taobao.com");
-            if (!TextUtils.isEmpty(cookie)) {
+            if (!StringUtils.isEmpty(cookie)) {
                 for (String str2 : cookie.split(";")) {
                     String[] split2 = str2.split("=");
                     if (split2.length >= 2 && str.equals(split2[0].trim())) {
@@ -265,12 +265,12 @@ public class LoginCookieUtils {
             return (JSONObject) ipChange.ipc$dispatch("f59388ea", new Object[]{str});
         }
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return jSONObject;
         }
         try {
             String cookie = CookieManagerService.getWebViewProxy().getCookie(".taobao.com");
-            if (!TextUtils.isEmpty(cookie)) {
+            if (!StringUtils.isEmpty(cookie)) {
                 for (String str2 : cookie.split(";")) {
                     String[] split2 = str2.split("=");
                     if (split2.length >= 2 && split2[0].contains(str)) {

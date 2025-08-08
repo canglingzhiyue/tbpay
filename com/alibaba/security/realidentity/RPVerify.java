@@ -2,7 +2,7 @@ package com.alibaba.security.realidentity;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.RPConfig;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -268,7 +268,7 @@ public class RPVerify {
             ipChange.ipc$dispatch("ab99f248", new Object[]{context, str, rPConfig, rPEventListener});
         } else if (rPEventListener == null) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 rPEventListener.onFinish(RPResult.AUDIT_NOT, new RPDetail(e2.a(e2.p), String.valueOf((int) e2.p), "url is empty", null));
                 return;
             }
@@ -288,7 +288,7 @@ public class RPVerify {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("99a292a0", new Object[]{context, str, rPConfig, rPEventListener, runnable});
         } else if (rPEventListener != null) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 rPEventListener.onFinish(RPResult.AUDIT_NOT, new RPDetail(e2.a(e2.o), String.valueOf((int) e2.o), "verifyToken is null", null));
                 return;
             }

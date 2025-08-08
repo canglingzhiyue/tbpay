@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
@@ -182,7 +182,7 @@ public class d implements d.a, com.taobao.taolive.sdk.playcontrol.a, ddt {
             L18:
                 java.lang.String r8 = r9.getAction()
                 if (r8 == 0) goto Lda
-                boolean r0 = android.text.TextUtils.isEmpty(r8)
+                boolean r0 = android.text.StringUtils.isEmpty(r8)
                 if (r0 != 0) goto Lda
                 java.lang.String r0 = "isMute"
                 boolean r0 = r9.getBooleanExtra(r0, r3)
@@ -656,7 +656,7 @@ public class d implements d.a, com.taobao.taolive.sdk.playcontrol.a, ddt {
         if (ipChange instanceof IpChange) {
             return (com.taobao.taolive.sdk.ui.media.d) ipChange.ipc$dispatch("8118db81", new Object[]{this, context, str, new Integer(i), str2, mediaData, str3});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.v = str;
         }
         this.w = i;
@@ -683,7 +683,7 @@ public class d implements d.a, com.taobao.taolive.sdk.playcontrol.a, ddt {
         String a2 = r.a(mediaData, str2);
         h hVar = new h();
         hVar.f21934a = str;
-        if (ad.a(this.b, OpenAbilityCompontentTypeEnum.TLOAbilityIdentifer_CustomizedSimpleLive) && TextUtils.isEmpty(str) && !TextUtils.isEmpty(a2)) {
+        if (ad.a(this.b, OpenAbilityCompontentTypeEnum.TLOAbilityIdentifer_CustomizedSimpleLive) && StringUtils.isEmpty(str) && !StringUtils.isEmpty(a2)) {
             hVar.f21934a = com.taobao.taolive.sdk.ui.media.g.e(a2);
         }
         hVar.b = a2;
@@ -694,7 +694,7 @@ public class d implements d.a, com.taobao.taolive.sdk.playcontrol.a, ddt {
         if (q != null) {
             this.c.e(q.a());
         }
-        if (!TextUtils.isEmpty(this.v)) {
+        if (!StringUtils.isEmpty(this.v)) {
             this.c.d(this.v);
         }
         com.taobao.taolive.sdk.ui.media.d dVar = this.c;
@@ -1407,13 +1407,13 @@ public class d implements d.a, com.taobao.taolive.sdk.playcontrol.a, ddt {
         HashMap hashMap = new HashMap();
         VideoInfo u = poy.u(this.b);
         if (u != null) {
-            if (!TextUtils.isEmpty(u.liveId)) {
+            if (!StringUtils.isEmpty(u.liveId)) {
                 hashMap.put("feed_id", u.liveId);
             }
-            if (!TextUtils.isEmpty(u.itemid)) {
+            if (!StringUtils.isEmpty(u.itemid)) {
                 hashMap.put("item_id", u.itemid);
             }
-            if (u.broadCaster != null && !TextUtils.isEmpty(u.broadCaster.accountId)) {
+            if (u.broadCaster != null && !StringUtils.isEmpty(u.broadCaster.accountId)) {
                 hashMap.put("account_id", u.broadCaster.accountId);
             }
         }
@@ -1516,7 +1516,7 @@ public class d implements d.a, com.taobao.taolive.sdk.playcontrol.a, ddt {
         }
         if (this.B <= 0.0f && (u = poy.u(this.b)) != null) {
             String str = u.liveConfigForStream;
-            if (!TextUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
+            if (!StringUtils.isEmpty(str) && (parseObject = JSON.parseObject(str)) != null) {
                 this.B = parseObject.getFloatValue("ntpStartLiveOffset");
                 String str2 = f21883a;
                 q.b(str2, "获取NTP,getLatestRenderFrameNTP mVideoBaseNTP = " + this.B);

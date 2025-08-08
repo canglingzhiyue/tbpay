@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -375,7 +375,7 @@ public class f implements av {
             return;
         }
         String str = a2.c;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         this.b.put("state", suz.VIDEO_STATE_CHANGE_ARGS_STATE_PROGRESS_UPDATE);

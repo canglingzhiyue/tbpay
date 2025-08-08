@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -247,8 +247,8 @@ public class FullScreenLiveFrame2 extends AbsFullScreenFrame implements d.a, ddv
             if (explainBehaviorReportMessage.segmentList == null || explainBehaviorReportMessage.segmentList.isEmpty() || this.mFrameContext == null) {
                 return;
             }
-            jzn.a(explainBehaviorReportMessage, TextUtils.equals(explainBehaviorReportMessage.explainType, "base") ? this.baseExplainBehaviorCache : this.expExplainBehaviorCache);
-            jzn.a(explainBehaviorReportMessage.segmentList, TextUtils.equals(explainBehaviorReportMessage.explainType, "base") ? this.mFrameContext.I : this.mFrameContext.H, explainBehaviorReportMessage.explainType);
+            jzn.a(explainBehaviorReportMessage, StringUtils.equals(explainBehaviorReportMessage.explainType, "base") ? this.baseExplainBehaviorCache : this.expExplainBehaviorCache);
+            jzn.a(explainBehaviorReportMessage.segmentList, StringUtils.equals(explainBehaviorReportMessage.explainType, "base") ? this.mFrameContext.I : this.mFrameContext.H, explainBehaviorReportMessage.explainType);
             if (explainBehaviorReportMessage.segmentList.size() != 2) {
                 return;
             }
@@ -542,12 +542,12 @@ public class FullScreenLiveFrame2 extends AbsFullScreenFrame implements d.a, ddv
         } else if (!hgs.f() || (a2 = k.a(this.mLiveDataModel)) == null || a2.accessInfo == null) {
         } else {
             if (a2.accessInfo.access) {
-                if (TextUtils.equals("PRIVATE", a2.accessInfo.accessType)) {
+                if (StringUtils.equals("PRIVATE", a2.accessInfo.accessType)) {
                     format = "欢迎进入会员专属直播间";
                 } else {
-                    format = TextUtils.equals("VIP", a2.accessInfo.accessType) ? String.format("欢迎%s\n进入您的专属直播间！", pmd.a().q().b()) : "";
+                    format = StringUtils.equals("VIP", a2.accessInfo.accessType) ? String.format("欢迎%s\n进入您的专属直播间！", pmd.a().q().b()) : "";
                 }
-                if (TextUtils.isEmpty(format)) {
+                if (StringUtils.isEmpty(format)) {
                     return;
                 }
                 hgt.b(this.mContext, format);
@@ -867,10 +867,10 @@ public class FullScreenLiveFrame2 extends AbsFullScreenFrame implements d.a, ddv
                 return;
             }
             qVar3.a((String[]) obj);
-        } else if (TextUtils.equals(str, xkw.EVENT_CHANGE_CONTAINER_OFFSET)) {
+        } else if (StringUtils.equals(str, xkw.EVENT_CHANGE_CONTAINER_OFFSET)) {
             com.taobao.taolive.sdk.utils.q.b(TAG, "沉浸式收到业务主动调用容器Offset方法，handleContainerOffset");
             handleContainerOffset(obj);
-        } else if (TextUtils.equals(str, xkw.f34361a)) {
+        } else if (StringUtils.equals(str, xkw.f34361a)) {
             if (this.isClearScreen || this.mFrameContext == null || this.mFrameContext.c() == null || !(this.mFrameContext.c() instanceof com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.c) || ((com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.c) this.mFrameContext.c()).J() || this.mFrameContext.T() || this.mFrameContext.U()) {
                 return;
             }
@@ -879,14 +879,14 @@ public class FullScreenLiveFrame2 extends AbsFullScreenFrame implements d.a, ddv
                 return;
             }
             ddw.a().a(xkw.b, obj, observeUniqueIdentification());
-        } else if (TextUtils.equals(str, xkw.c)) {
+        } else if (StringUtils.equals(str, xkw.c)) {
             initLowerComponentAnimator((int) ((this.mContext.getResources().getDisplayMetrics().widthPixels * 204) / 750.0f));
             ValueAnimator valueAnimator2 = this.lowerComponentUpAnimator;
             if (valueAnimator2 == null) {
                 return;
             }
             valueAnimator2.start();
-        } else if (TextUtils.equals(str, xkw.d)) {
+        } else if (StringUtils.equals(str, xkw.d)) {
             if (this.mFrameContext == null || this.mFrameContext.z() == null || !this.mFrameContext.z().M() || (valueAnimator = this.lowerComponentUpAnimator) == null) {
                 return;
             }

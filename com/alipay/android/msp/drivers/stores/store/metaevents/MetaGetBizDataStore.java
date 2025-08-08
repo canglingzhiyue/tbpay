@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.metaevents;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -36,7 +36,7 @@ public class MetaGetBizDataStore extends LocalEventStore {
             return "";
         }
         String string = actionParamsJson.getString("key");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return "";
         }
         JSONObject jSONObject = new JSONObject();

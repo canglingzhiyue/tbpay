@@ -12,7 +12,7 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -117,10 +117,10 @@ public class aav {
 
     public final String b(Context context, String str) {
         Signature[] signatureArr;
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = context.getPackageName();
         }
-        if (TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.c)) {
             String str2 = null;
             try {
                 signatureArr = context.getPackageManager().getPackageInfo(this.b, 64).signatures;
@@ -147,6 +147,6 @@ public class aav {
             this.c = str2;
         }
         String a2 = ((a.AbstractBinderC0000a.C0001a) this.f25193a).a(this.b, this.c, str);
-        return TextUtils.isEmpty(a2) ? "" : a2;
+        return StringUtils.isEmpty(a2) ? "" : a2;
     }
 }

@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.ultron.view;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -254,7 +254,7 @@ public class a extends com.alibaba.android.ultron.vfw.viewholder.b implements Ac
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str) || (iWXStorageAdapter = WXSDKEngine.getIWXStorageAdapter()) == null) {
+        } else if (StringUtils.isEmpty(str) || (iWXStorageAdapter = WXSDKEngine.getIWXStorageAdapter()) == null) {
         } else {
             iWXStorageAdapter.a(str, str2, new b.a() { // from class: com.taobao.android.order.bundle.ultron.view.a.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -387,7 +387,7 @@ public class a extends com.alibaba.android.ultron.vfw.viewholder.b implements Ac
             StringBuilder sb = new StringBuilder();
             sb.append("私域卡片加载失败,Code = ");
             sb.append(i);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 sb.append(",");
                 sb.append(str2);
             }

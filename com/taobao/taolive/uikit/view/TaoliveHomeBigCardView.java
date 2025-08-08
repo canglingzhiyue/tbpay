@@ -3,7 +3,7 @@ package com.taobao.taolive.uikit.view;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -544,7 +544,7 @@ public class TaoliveHomeBigCardView extends TRelativeLayout implements prx.b {
         this.mFavorBlock.setVisibility(0);
         this.mFavorLayout.setVisibility(0);
         this.mFavorImgUrl = liveInfoItem.favorImg;
-        if (!TextUtils.isEmpty(this.mFavorImgUrl)) {
+        if (!StringUtils.isEmpty(this.mFavorImgUrl)) {
             getFavorImgs();
         }
         this.mFavorNum.setText(prk.a(liveInfoItem.praiseCount));
@@ -672,7 +672,7 @@ public class TaoliveHomeBigCardView extends TRelativeLayout implements prx.b {
             }
             this.mShopTopView.setVisibility(8);
             String str = liveInfoItem.location;
-            if ("true".equals(liveInfoItem.connectLocation) && !TextUtils.isEmpty(str)) {
+            if ("true".equals(liveInfoItem.connectLocation) && !StringUtils.isEmpty(str)) {
                 TIconFontTextView tIconFontTextView = this.mLocNameView;
                 tIconFontTextView.setText(" | " + this.mContext.getString(R.string.tbliveuikit_video_item_location, str));
                 this.mLocNameView.setVisibility(0);

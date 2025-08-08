@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -36,7 +36,7 @@ public class T {
         } else {
             if (this.c == null) {
                 Logging.e(f3275a, "context is null");
-            } else if (TextUtils.isEmpty(this.d)) {
+            } else if (StringUtils.isEmpty(this.d)) {
                 Logging.e(f3275a, "ttid is null");
             } else {
                 com.taobao.mrt.f.a().a(new Q(this));

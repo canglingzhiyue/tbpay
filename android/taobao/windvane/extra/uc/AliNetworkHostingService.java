@@ -6,7 +6,7 @@ import android.taobao.windvane.extra.uc.interfaces.EventHandler;
 import android.taobao.windvane.extra.uc.interfaces.IRequest;
 import android.taobao.windvane.thread.WVThreadPool;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.IBodyHandler;
 import anetwork.channel.Request;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -286,7 +286,7 @@ public class AliNetworkHostingService extends INetworkHostingService {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("821380aa", new Object[]{this, str, str2});
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             } else {
                 if (this.mHeaders.containsKey(str)) {
                     synchronized (this.mHeaders) {
@@ -302,7 +302,7 @@ public class AliNetworkHostingService extends INetworkHostingService {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("b3768cb7", new Object[]{this, str, str2});
-            } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             } else {
                 this.mExtraInfo.put(str, str2);
             }
@@ -499,7 +499,7 @@ public class AliNetworkHostingService extends INetworkHostingService {
                     }
                 }
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.mStatusLine = str;
             }
             m.b(AliNetworkHostingService.TAG, "[onResponseCode] in2.");

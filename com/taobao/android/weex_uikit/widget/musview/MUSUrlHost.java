@@ -2,7 +2,7 @@ package com.taobao.android.weex_uikit.widget.musview;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -92,11 +92,11 @@ public class MUSUrlHost extends ViewGroup implements g {
         }
         this.mResult = c0623a;
         this.mTargetNode = uINode;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             com.taobao.android.weex_framework.util.g.d("url mustn't be null");
             return;
         }
-        if (!TextUtils.equals(this.mJsUrl, str)) {
+        if (!StringUtils.equals(this.mJsUrl, str)) {
             destroyInstance();
         } else {
             MUSDKInstance mUSDKInstance = this.mInstance;
@@ -117,7 +117,7 @@ public class MUSUrlHost extends ViewGroup implements g {
         this.mInstance.getInstanceTags().putAll(uINode.getInstance().getInstanceTags());
         try {
             this.mInstance.initWithURL(Uri.parse(str));
-            if (!TextUtils.equals(str, str2)) {
+            if (!StringUtils.equals(str, str2)) {
                 this.mInstance.getMonitorInfo().a(str2);
                 this.mInstance.addInstanceEnv("bundleUrl", str2);
             }

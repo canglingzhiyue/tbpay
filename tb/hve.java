@@ -11,7 +11,7 @@ import android.graphics.PathMeasure;
 import android.graphics.PointF;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -311,7 +311,7 @@ public class hve {
         }
         final TUrlImageView tUrlImageView = new TUrlImageView(this.f28802a);
         tUrlImageView.setImageUrl(addBagModel.getPic());
-        if (TextUtils.isEmpty(addBagModel.getPic())) {
+        if (StringUtils.isEmpty(addBagModel.getPic())) {
             tUrlImageView.setBackgroundResource(R.drawable.animation_pic_error);
             a(tUrlImageView);
             return tUrlImageView;

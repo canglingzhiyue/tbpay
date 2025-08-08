@@ -1,7 +1,7 @@
 package com.taobao.themis.ability_taobao;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeCallback;
 import com.alibaba.ariver.engine.api.bridge.extension.BridgeResponse;
 import com.alibaba.fastjson.JSONObject;
@@ -94,7 +94,7 @@ public class TMSUserTrackerBridge implements a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f2efe0cc", new Object[]{this, iTMSPage, str, map})).booleanValue();
         }
-        if (iTMSPage == null || (o = iTMSPage.b().o()) == null || TextUtils.isEmpty(str)) {
+        if (iTMSPage == null || (o = iTMSPage.b().o()) == null || StringUtils.isEmpty(str)) {
             return false;
         }
         if ("updatePageName".equals(str)) {
@@ -127,7 +127,7 @@ public class TMSUserTrackerBridge implements a {
             if (iTMSPage.b() != null) {
                 try {
                     String h = iTMSPage.b().h();
-                    if (TextUtils.isEmpty(h)) {
+                    if (StringUtils.isEmpty(h)) {
                         a2.put("miniapp_id", h);
                     }
                 } catch (Exception e) {

@@ -7,7 +7,7 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
@@ -149,7 +149,7 @@ public class a extends af {
         if (ipChange instanceof IpChange) {
             return (CharSequence) ipChange.ipc$dispatch("2d0b4348", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         Spanned fromHtml = Html.fromHtml(str);
@@ -240,7 +240,7 @@ public class a extends af {
                 JSONObject jSONObject = jSONArray.getJSONObject(i);
                 if (jSONObject != null) {
                     String string = jSONObject.getString("text");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         str = str + string;
                         C0580a a2 = a(jSONObject, str, string);
                         if (a2 != null) {
@@ -345,7 +345,7 @@ public class a extends af {
             return null;
         }
         String string = jSONObject.getString("openUrl");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         return new b(string, i);

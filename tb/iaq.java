@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.base.f;
 import com.alibaba.android.ultron.event.ext.p;
@@ -45,7 +45,7 @@ public class iaq extends p {
             return;
         }
         String string = e(eVar).getString("tabCode");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = h();
         }
         this.f28881a.c();

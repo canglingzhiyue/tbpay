@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.editor.data.base.EditableBean;
@@ -48,7 +48,7 @@ public class AiQuality extends EditableBean<AiQuality> {
             return false;
         }
         AiQuality aiQuality = (AiQuality) obj;
-        return TextUtils.equals(this.dirPath, aiQuality.dirPath) && this.enable == aiQuality.enable;
+        return StringUtils.equals(this.dirPath, aiQuality.dirPath) && this.enable == aiQuality.enable;
     }
 
     @Override // com.taobao.android.litecreator.sdk.editor.data.base.EditableBean

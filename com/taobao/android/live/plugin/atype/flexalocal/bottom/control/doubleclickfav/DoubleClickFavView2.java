@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -221,7 +221,7 @@ public class DoubleClickFavView2 extends View implements com.taobao.android.live
             return;
         }
         plx.a(TAG, "checkFavorPicByUrl = " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         com.taobao.taolive.room.service.b.a().a(str, new FavorAnimView2.a(this));

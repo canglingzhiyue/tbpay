@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.ultron.config;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.degrade.DegradableNetwork;
 import anetwork.channel.entity.RequestImpl;
 import com.alibaba.fastjson.JSONObject;
@@ -80,7 +80,7 @@ public class h extends j {
             return;
         }
         String a2 = v.b.a("goodlist", "mtConfigUrl", this.c);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.c = a2;
             his.b("MTCacheConfigModel", "initUrl | orange=" + this.c);
         }
@@ -88,7 +88,7 @@ public class h extends j {
             return;
         }
         String a3 = a();
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return;
         }
         this.c = a3;

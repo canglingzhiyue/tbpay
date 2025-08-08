@@ -3,7 +3,7 @@ package com.taobao.tao.flexbox.layoutmanager.usertracker;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.flexa.compat.c;
@@ -204,7 +204,7 @@ public class a {
             }
             for (int i = 0; i < this.f20502a.size(); i++) {
                 JSONObject jSONObject = this.f20502a.getJSONObject(i);
-                if (jSONObject != null && TextUtils.equals(str, jSONObject.getString("name"))) {
+                if (jSONObject != null && StringUtils.equals(str, jSONObject.getString("name"))) {
                     return jSONObject;
                 }
             }
@@ -359,20 +359,20 @@ public class a {
             return (JSONObject) ipChange.ipc$dispatch("8a99169e", new Object[]{this, str, str2});
         }
         try {
-            if (this.h == null && ogt.TASK_FRAGMENT_CREATE.equals(str2) && !TextUtils.equals(this.i, str2)) {
+            if (this.h == null && ogt.TASK_FRAGMENT_CREATE.equals(str2) && !StringUtils.equals(this.i, str2)) {
                 this.i = str2;
                 c();
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = this.d;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 if (this.c == null) {
                     this.c = new b();
                     b.a(this.c, System.currentTimeMillis());
                 }
                 return b.a(this.c, str2);
-            } else if (!TextUtils.isEmpty(str) && this.c != null) {
+            } else if (!StringUtils.isEmpty(str) && this.c != null) {
                 return b.a(c(str), str2);
             } else {
                 if (f20497a.get(str) != null && (bVar = f20497a.get(str)) != null) {
@@ -443,10 +443,10 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (JSONArray) ipChange.ipc$dispatch("e47bc7cc", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.d;
         }
-        if (TextUtils.isEmpty(str) && (bVar = this.c) != null) {
+        if (StringUtils.isEmpty(str) && (bVar = this.c) != null) {
             return b.b(bVar);
         }
         b bVar2 = f20497a.get(str);

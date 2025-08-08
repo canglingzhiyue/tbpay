@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import com.alibaba.fastjson.JSON;
@@ -93,7 +93,7 @@ public class m implements d<String> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
         } else {
             try {
                 CleanList cleanList = (CleanList) JSON.parseObject(str3, CleanList.class);

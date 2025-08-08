@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ public class oyd {
         } else if (uri == null) {
         } else {
             String query = uri.getQuery();
-            if (TextUtils.isEmpty(query)) {
+            if (StringUtils.isEmpty(query)) {
                 return;
             }
             this.b = query;

@@ -1,7 +1,7 @@
 package com.alipay.ma.analyze.helper;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.ma.common.result.ResultMaType;
 import com.alipay.ma.decode.DecodeResult;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -17,13 +17,13 @@ public class MaResultTypeHelper {
 
     private static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && ((str.startsWith("8") && str.length() == 20) || ((str.startsWith("10") || str.startsWith("11")) && str.length() == 16));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && ((str.startsWith("8") && str.length() == 20) || ((str.startsWith("10") || str.startsWith("11")) && str.length() == 16));
     }
 
     private static boolean b(String str) {
         Uri parse;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && (parse = Uri.parse(str)) != null && !TextUtils.isEmpty(parse.getHost()) && TextUtils.equals("s.tb.cn", parse.getHost().toLowerCase());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && (parse = Uri.parse(str)) != null && !StringUtils.isEmpty(parse.getHost()) && StringUtils.equals("s.tb.cn", parse.getHost().toLowerCase());
     }
 
     public static ResultMaType getMaType(DecodeResult decodeResult) {

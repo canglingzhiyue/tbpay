@@ -2,7 +2,7 @@ package com.xiaomi.mipush.sdk;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Map;
 
 /* loaded from: classes9.dex */
@@ -48,7 +48,7 @@ public class FTOSPushHelper {
             return;
         }
         String str = map.get("pushMsg");
-        if (TextUtils.isEmpty(str) || (a2 = i.a(context)) == null) {
+        if (StringUtils.isEmpty(str) || (a2 = i.a(context)) == null) {
             return;
         }
         MiPushMessage a3 = i.a(str);

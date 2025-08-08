@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -234,7 +234,7 @@ public final class DinamicXEngine extends m implements y.a {
                 }
                 for (int i = 0; i < u.f11936a.size(); i++) {
                     fut valueAt = u.f11936a.valueAt(i);
-                    if ((valueAt instanceof fuf) && !TextUtils.isEmpty(((fuf) valueAt).getDxFunctionName())) {
+                    if ((valueAt instanceof fuf) && !StringUtils.isEmpty(((fuf) valueAt).getDxFunctionName())) {
                         com.taobao.android.dinamicx.expression.expr_v2.d.a(((fuf) valueAt).getDxFunctionName(), (fuf) valueAt);
                     }
                 }
@@ -243,7 +243,7 @@ public final class DinamicXEngine extends m implements y.a {
                 }
                 for (int i2 = 0; i2 < u.b.size(); i2++) {
                     bn valueAt2 = u.b.valueAt(i2);
-                    if ((valueAt2 instanceof h) && !TextUtils.isEmpty(((h) valueAt2).getDxFunctionName())) {
+                    if ((valueAt2 instanceof h) && !StringUtils.isEmpty(((h) valueAt2).getDxFunctionName())) {
                         com.taobao.android.dinamicx.expression.expr_v2.d.a(((h) valueAt2).getDxFunctionName(), (h) valueAt2);
                     }
                 }
@@ -377,7 +377,7 @@ public final class DinamicXEngine extends m implements y.a {
             return;
         }
         for (ghe gheVar : list) {
-            if (gheVar != null && !TextUtils.isEmpty(gheVar.getDxFunctionName())) {
+            if (gheVar != null && !StringUtils.isEmpty(gheVar.getDxFunctionName())) {
                 gha.BUILD_IN_FUNC_MAP.put(gheVar.getDxFunctionName(), gfx.a(gheVar));
             }
         }
@@ -1055,7 +1055,7 @@ public final class DinamicXEngine extends m implements y.a {
         bVar.put(j, futVar);
         if (futVar instanceof fuf) {
             fuf fufVar = (fuf) futVar;
-            if (!TextUtils.isEmpty(fufVar.getDxFunctionName())) {
+            if (!StringUtils.isEmpty(fufVar.getDxFunctionName())) {
                 a(fufVar.getDxFunctionName(), fufVar);
             }
         }
@@ -1199,7 +1199,7 @@ public final class DinamicXEngine extends m implements y.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5c85ca44", new Object[]{this, str, jVar});
-        } else if (TextUtils.isEmpty(str) || jVar == null) {
+        } else if (StringUtils.isEmpty(str) || jVar == null) {
         } else {
             this.z.put(str, jVar);
         }
@@ -1237,7 +1237,7 @@ public final class DinamicXEngine extends m implements y.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2548ee00", new Object[]{this, str, dlnVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || dlnVar == null || (iVar = this.j) == null) {
+        if (StringUtils.isEmpty(str) || dlnVar == null || (iVar = this.j) == null) {
             return false;
         }
         iVar.d().a(str, dlnVar);
@@ -1249,7 +1249,7 @@ public final class DinamicXEngine extends m implements y.a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("25d1454a", new Object[]{this, str, str2, dlnVar})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str) || dlnVar == null) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str) || dlnVar == null) {
             return false;
         }
         if (this.P == null) {
@@ -1271,7 +1271,7 @@ public final class DinamicXEngine extends m implements y.a {
         if (ipChange instanceof IpChange) {
             return (dln) ipChange.ipc$dispatch("9538fd64", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str) && (map = this.P) != null && (map2 = map.get(str)) != null) {
+        if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str) && (map = this.P) != null && (map2 = map.get(str)) != null) {
             return map2.get(str2);
         }
         return null;
@@ -1326,7 +1326,7 @@ public final class DinamicXEngine extends m implements y.a {
                 hashMap.put("exactVersion", String.valueOf(b.b));
             }
             a(dXTemplateItem, DXMonitorConstant.DX_MONITOR_SERVICE_ID_ENGINE_FETCH, System.nanoTime() - nanoTime, hashMap);
-            if (!fqi.aK() || b == null || b.e || b.g == null || TextUtils.isEmpty(b.g.f11934a) || new File(b.g.f11934a).exists() || !fwn.a().b(b.g.f11934a)) {
+            if (!fqi.aK() || b == null || b.e || b.g == null || StringUtils.isEmpty(b.g.f11934a) || new File(b.g.f11934a).exists() || !fwn.a().b(b.g.f11934a)) {
             }
             return b;
         } catch (Throwable th) {
@@ -1705,7 +1705,7 @@ public final class DinamicXEngine extends m implements y.a {
             } else if (dXRootView == null || (expandWidgetNode2 = dXRootView.getExpandWidgetNode()) == null || (jSONObject2 = jSONObject3.getJSONObject("params")) == null) {
             } else {
                 String string3 = jSONObject2.getString("targetId");
-                if (TextUtils.isEmpty(string3) && jSONObject2.containsKey("target")) {
+                if (StringUtils.isEmpty(string3) && jSONObject2.containsKey("target")) {
                     string3 = jSONObject2.getString("target");
                 }
                 String string4 = jSONObject2.getString("method");
@@ -1724,7 +1724,7 @@ public final class DinamicXEngine extends m implements y.a {
         } catch (Throwable th) {
             com.taobao.android.dinamicx.exception.a.b(th);
             String a2 = a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 a2 = "dinamicx";
             }
             com.taobao.android.dinamicx.monitor.b.a(a2, null, DXMonitorConstant.DX_MONITOR_ENGINE, DXMonitorConstant.DX_MONITOR_SERVICE_ID_ENGINE_POST_MSG, 30014, com.taobao.android.dinamicx.exception.a.a(th));
@@ -1895,7 +1895,7 @@ public final class DinamicXEngine extends m implements y.a {
             return;
         }
         dXTemplateItem.d = new ArrayList();
-        if (TextUtils.isEmpty(dXTemplateItem.c)) {
+        if (StringUtils.isEmpty(dXTemplateItem.c)) {
             return;
         }
         char[] charArray = dXTemplateItem.c.toCharArray();
@@ -1955,7 +1955,7 @@ public final class DinamicXEngine extends m implements y.a {
         if (this.j == null) {
             jVarArr[0] = com.taobao.android.dinamicx.eventchain.j.a(-999, "eventChainManager ==  null");
             return jVarArr[0];
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             jVarArr[0] = com.taobao.android.dinamicx.eventchain.j.a(-998, "eventChainName 是空");
             return jVarArr[0];
         } else {
@@ -1971,7 +1971,7 @@ public final class DinamicXEngine extends m implements y.a {
                 jVarArr[0] = com.taobao.android.dinamicx.eventchain.j.a(-996, "rootExpandNode 是空");
                 return jVarArr[0];
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 expandWidgetNode = expandWidgetNode.queryWidgetNodeByUserId(str2);
             }
             new com.taobao.android.dinamicx.eventchain.f(new f.a() { // from class: com.taobao.android.dinamicx.DinamicXEngine.8
@@ -2005,7 +2005,7 @@ public final class DinamicXEngine extends m implements y.a {
         if (this.j == null) {
             jVarArr[0] = com.taobao.android.dinamicx.eventchain.j.a(-999, "eventChainManager ==  null");
             return jVarArr[0];
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             jVarArr[0] = com.taobao.android.dinamicx.eventchain.j.a(-998, "eventChainName 是空");
             return jVarArr[0];
         } else {

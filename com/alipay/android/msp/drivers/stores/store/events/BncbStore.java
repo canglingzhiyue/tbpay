@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.template.ITemplateClickCallback;
@@ -45,7 +45,7 @@ public class BncbStore extends LocalEventStore {
             String actionData = eventAction.getActionData();
             if (mspEvent.getActionParamsJson() != null) {
                 sb.append(mspEvent.getActionParamsJson().toJSONString());
-            } else if (!TextUtils.isEmpty(actionData)) {
+            } else if (!StringUtils.isEmpty(actionData)) {
                 if (JsonUtil.isJsonObjectString(actionData)) {
                     sb.append(actionData);
                     LogUtil.record(4, "phonecashiermsp#flybird", "LocBncbStore.onDialogAction.isjson", actionData);
@@ -57,7 +57,7 @@ public class BncbStore extends LocalEventStore {
             }
         }
         String sb2 = sb.toString();
-        if (TextUtils.isEmpty(sb2)) {
+        if (StringUtils.isEmpty(sb2)) {
             return null;
         }
         StEvent stEvent = this.f;
@@ -81,7 +81,7 @@ public class BncbStore extends LocalEventStore {
             return (JSONObject) ipChange.ipc$dispatch("73d7af52", new Object[]{str});
         }
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return jSONObject;
         }
         try {

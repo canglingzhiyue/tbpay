@@ -1,7 +1,7 @@
 package mtopsdk.mtop.intf;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.analysis.fulltrace.FullTraceAnalysis;
@@ -850,7 +850,7 @@ public class MtopBuilder {
         createMtopContext.f = new ApiID(null, createMtopContext);
         try {
             if (Mtop.mIsFullTrackValid) {
-                if (!TextUtils.isEmpty(this.mtopProp.fullTraceId)) {
+                if (!StringUtils.isEmpty(this.mtopProp.fullTraceId)) {
                     createRequest = this.mtopProp.fullTraceId;
                 } else {
                     createRequest = FullTraceAnalysis.getInstance().createRequest("mtop");
@@ -865,10 +865,10 @@ public class MtopBuilder {
                     createMtopContext.g.openTraceSpan = d;
                     createMtopContext.g.openTraceContext = rVar.a(d.h());
                 }
-                if (!TextUtils.isEmpty(createRequest)) {
+                if (!StringUtils.isEmpty(createRequest)) {
                     createMtopContext.g.falcoId = createRequest;
                     createMtopContext.g.fullTraceId = createMtopContext.g.falcoId;
-                    if (!TextUtils.isEmpty(this.mtopProp.bizIdStr)) {
+                    if (!StringUtils.isEmpty(this.mtopProp.bizIdStr)) {
                         createMtopContext.g.bizIdStr = this.mtopProp.bizIdStr;
                     } else {
                         createMtopContext.g.bizId = this.mtopProp.bizId;

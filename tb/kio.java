@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.intelligentdecision.model.IDecisionResult;
@@ -100,7 +100,7 @@ public final class kio {
 
     public final boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : TextUtils.equals(OrangeConfig.getInstance().getConfig(f30102a, USER_TEXTSIZE_STRATEGY, "true"), "true");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : StringUtils.equals(OrangeConfig.getInstance().getConfig(f30102a, USER_TEXTSIZE_STRATEGY, "true"), "true");
     }
 
     public final boolean c() {
@@ -144,7 +144,7 @@ public final class kio {
             q.b(instance, "Mtop.instance(null as Context?)");
             String str = instance.getMtopConfig().appVersion;
             q.b(str, "Mtop.instance(null as Co…t?).mtopConfig.appVersion");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             Object[] array = n.b((CharSequence) str, new String[]{"."}, false, 0, 6, (Object) null).toArray(new String[0]);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
@@ -41,7 +41,7 @@ public class nye {
         if (jSONObject == null) {
             q.b("JsonParseUtil", "getMapFromJson：jsonObject为空");
             return new ArrayMap<>();
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.b("JsonParseUtil", "getMapFromJson：key为空");
             return new ArrayMap<>();
         } else {

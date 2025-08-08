@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.watermark;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -127,7 +127,7 @@ public class WatermarkFrame3 extends BaseFrame {
         }
         if (tBLiveDataModel != null && tBLiveDataModel.mVideoInfo != null) {
             VideoInfo videoInfo = tBLiveDataModel.mVideoInfo;
-            if (plz.a(videoInfo) && videoInfo.taoLiveAtmosphereInfo != null && !TextUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIcon)) {
+            if (plz.a(videoInfo) && videoInfo.taoLiveAtmosphereInfo != null && !StringUtils.isEmpty(videoInfo.taoLiveAtmosphereInfo.taoLiveIcon)) {
                 return true;
             }
         }
@@ -141,7 +141,7 @@ public class WatermarkFrame3 extends BaseFrame {
 
     public static boolean isShowDiantaoOfficialBanner(VideoInfo videoInfo) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9b5ac76a", new Object[]{videoInfo})).booleanValue() : isDiantaoOfficial(videoInfo) && videoInfo.displayInfo.diantaoOfficialAtmosphereInfo != null && !TextUtils.isEmpty(videoInfo.displayInfo.diantaoOfficialAtmosphereInfo.taoLiveIcon);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("9b5ac76a", new Object[]{videoInfo})).booleanValue() : isDiantaoOfficial(videoInfo) && videoInfo.displayInfo.diantaoOfficialAtmosphereInfo != null && !StringUtils.isEmpty(videoInfo.displayInfo.diantaoOfficialAtmosphereInfo.taoLiveIcon);
     }
 
     public static boolean isDiantaoOfficial(VideoInfo videoInfo) {

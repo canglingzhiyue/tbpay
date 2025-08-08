@@ -2,7 +2,7 @@ package anet.channel.config;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.AwcnConfig;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.appmonitor.AppMonitor;
@@ -315,7 +315,7 @@ public class OrangeConfigImpl implements IRemoteConfig {
         try {
             SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(GlobalAppRuntimeInfo.getContext()).edit();
             String config = getConfig(str, NETWORK_DNS_WHITE_LIST, null);
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 AwcnConfig.setDnsOptWhiteList(config);
                 edit.putString(AwcnConfig.NETWORK_DNS_OPT_WHITE_LIST, config).apply();
                 return;
@@ -579,7 +579,7 @@ public class OrangeConfigImpl implements IRemoteConfig {
         try {
             String config = getConfig(str, AMDC_CONTROL_MODE, null);
             String config2 = getConfig(str, AMDC_CONTROL_LIST, null);
-            if (!TextUtils.isEmpty(config) && !TextUtils.isEmpty(config2)) {
+            if (!StringUtils.isEmpty(config) && !StringUtils.isEmpty(config2)) {
                 int intValue = Integer.valueOf(config).intValue();
                 JSONArray jSONArray = new JSONArray(config2);
                 ArrayList arrayList = new ArrayList();
@@ -593,7 +593,7 @@ public class OrangeConfigImpl implements IRemoteConfig {
         }
         try {
             String config3 = getConfig(str, AMDC_UPDATE_MODE_ENABLE_SWITCH, null);
-            if (TextUtils.isEmpty(config3)) {
+            if (StringUtils.isEmpty(config3)) {
                 return;
             }
             AmdcRuntimeInfo.setUpdateModeEnable(Boolean.parseBoolean(config3));

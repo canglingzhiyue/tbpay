@@ -3,7 +3,7 @@ package com.taobao.android.fluid.framework.card.cards.base.layer.interactive.eve
 import android.app.Activity;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -93,7 +93,7 @@ public final class a {
                 }
             }
             IUTAdapter withFluidContext = FluidSDK.getUTAdapter().withFluidContext(pswVar.z());
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "Page_videointeract";
             }
             withFluidContext.trackCustom(str, parseInt, str2, str3, str4, hashMap);
@@ -110,7 +110,7 @@ public final class a {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && map != null && !map.isEmpty()) {
+            if (!StringUtils.isEmpty(str) && map != null && !map.isEmpty()) {
                 FluidContext z2 = pswVar.z();
                 shw sessionIdRecorder = ((ICardService) pswVar.z().getService(ICardService.class)).getSessionIdRecorder();
                 if (sessionIdRecorder == null) {
@@ -187,11 +187,11 @@ public final class a {
             map.remove("repeatable");
             map.remove("needVideo");
             String I = a2.I();
-            if (TextUtils.isEmpty(I)) {
+            if (StringUtils.isEmpty(I)) {
                 I = a2.g();
             }
             jqu detailVideoPositiveFeedbackIdsModel = ((IDataService) fluidContext.getService(IDataService.class)).getDetailVideoPositiveFeedbackIdsModel();
-            if (TextUtils.isEmpty(I)) {
+            if (StringUtils.isEmpty(I)) {
                 spz.a("CardNativeMessageHandler", "positiveFeedback videoDetailInfo.videoId isEmpty");
                 return;
             }
@@ -244,7 +244,7 @@ public final class a {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("ff43b50d", new Object[]{this, map});
-                } else if (!TextUtils.equals(map.get(com.taobao.mtop.wvplugin.a.RESULT_KEY), "success")) {
+                } else if (!StringUtils.equals(map.get(com.taobao.mtop.wvplugin.a.RESULT_KEY), "success")) {
                 } else {
                     a.a(psw.this.z(), a2);
                 }
@@ -336,7 +336,7 @@ public final class a {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("a76735d3", new Object[]{fluidContext, qmqVar, viewGroup, str});
         }
-        if (TextUtils.equals(str, "moreButton")) {
+        if (StringUtils.equals(str, "moreButton")) {
             return b(((IContainerService) fluidContext.getService(IContainerService.class)).getMoreButton(), viewGroup);
         }
         aa c = qmqVar.c();

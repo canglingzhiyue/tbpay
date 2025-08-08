@@ -3,7 +3,7 @@ package com.taobao.order.downgrade.detail;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.android.order.bundle.constants.CoreConstants;
@@ -86,7 +86,7 @@ public class b implements com.taobao.android.nav.e {
                     return false;
                 } else {
                     String d = com.taobao.android.order.bundle.helper.g.d(intent);
-                    if (TextUtils.isEmpty(d)) {
+                    if (StringUtils.isEmpty(d)) {
                         jqg.b("OrderDetailNavProcessor.preInterceptODetail", "orderId is empty");
                         return false;
                     }

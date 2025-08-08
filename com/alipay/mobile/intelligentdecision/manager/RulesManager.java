@@ -1,7 +1,7 @@
 package com.alipay.mobile.intelligentdecision.manager;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alipay.mobile.intelligentdecision.db.model.DecisionModel;
@@ -89,7 +89,7 @@ public class RulesManager {
         int i2 = 0;
         while (i2 < arrayList4.size()) {
             RuleModel ruleModel = arrayList4.get(i2);
-            if (TextUtils.isEmpty(ruleModel.expression)) {
+            if (StringUtils.isEmpty(ruleModel.expression)) {
                 ruleModel.expression = "";
             }
             String str3 = ruleModel.expression;
@@ -177,7 +177,7 @@ public class RulesManager {
                             JsV8Manager.a();
                             JsV8Manager.a(duktape2);
                             String str5 = ruleModel.action;
-                            if (!TextUtils.isEmpty(str5) && str5.startsWith("#{") && str5.endsWith(riy.BLOCK_END_STR)) {
+                            if (!StringUtils.isEmpty(str5) && str5.startsWith("#{") && str5.endsWith(riy.BLOCK_END_STR)) {
                                 DecisionLogcat.b("RulesManager", "matchAction:" + ruleModel.action);
                                 ConcurrentHashMap<String, String> concurrentHashMap = this.f5748a.get(str);
                                 if (concurrentHashMap == null) {
@@ -353,7 +353,7 @@ public class RulesManager {
             return;
         }
         String str = featureModel.content;
-        if (TextUtils.isEmpty(str) || !str.contains("#{") || !str.contains(riy.BLOCK_END_STR)) {
+        if (StringUtils.isEmpty(str) || !str.contains("#{") || !str.contains(riy.BLOCK_END_STR)) {
             return;
         }
         JSONArray jSONArray = new JSONArray();
@@ -364,7 +364,7 @@ public class RulesManager {
                 int i = indexOf + 2;
                 if (i <= indexOf2) {
                     String substring = str.substring(i, indexOf2);
-                    if (!TextUtils.isEmpty(substring) && !substring.contains("#{") && !substring.contains(riy.BLOCK_END_STR) && !jSONArray.contains(substring)) {
+                    if (!StringUtils.isEmpty(substring) && !substring.contains("#{") && !substring.contains(riy.BLOCK_END_STR) && !jSONArray.contains(substring)) {
                         jSONArray.add(substring);
                     }
                 }

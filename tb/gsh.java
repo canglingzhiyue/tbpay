@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.o;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.api.Login;
@@ -40,7 +40,7 @@ public class gsh {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("9d025a96", new Object[]{new Integer(i), new Integer(i2), str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && i > 0 && i2 > 0) {
+        if (!StringUtils.isEmpty(str) && i > 0 && i2 > 0) {
             try {
                 byte[] digest = MessageDigest.getInstance("MD5").digest(str.getBytes());
                 byte[] bArr = new byte[8];

@@ -1,6 +1,6 @@
 package com.taobao.aranger.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.aranger.core.wrapper.MethodWrapper;
 import com.taobao.aranger.core.wrapper.ParameterWrapper;
@@ -230,7 +230,7 @@ public class j {
             return (Class) ipChange.ipc$dispatch("1ea00f05", new Object[]{this, aVar});
         }
         String name = aVar.getName();
-        if (!TextUtils.isEmpty(name)) {
+        if (!StringUtils.isEmpty(name)) {
             return a(name);
         }
         return null;

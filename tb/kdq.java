@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.ResultCode;
 import com.taobao.bootimage.data.BootImageInfo;
@@ -57,33 +57,33 @@ public class kdq implements kdu {
                     kej.a("AdColdStartInfoChooser", "chooseInteractImageInfo, continue, bootImageInfo = null");
                 } else {
                     h.b(this.b.getLocalClassName()).c(linkedSplashData);
-                    if (TextUtils.equals(linkedSplashData.getLinkedDataType(), "popView")) {
+                    if (StringUtils.equals(linkedSplashData.getLinkedDataType(), "popView")) {
                         this.d.d().a();
                         if (!h.b(this.b.getLocalClassName()).d()) {
                             kej.a("AdColdStartInfoChooser", "chooseInteractImageInfo, continue, isShouldShow = false");
                         } else {
-                            if (("commercialAdVideo".equals(a2.bizType) || "commercialAdNormal".equals(a2.bizType)) && !TextUtils.isEmpty(a2.animationType) && "1".equals(a2.animationType)) {
+                            if (("commercialAdVideo".equals(a2.bizType) || "commercialAdNormal".equals(a2.bizType)) && !StringUtils.isEmpty(a2.animationType) && "1".equals(a2.animationType)) {
                                 if (keo.a(tiq.BIZ_CODE, a2.animationLottie) == null) {
                                     ken.a(linkedSplashData, a2);
                                 } else if ("commercialAdVideo".equals(a2.bizType) && keo.a(tiq.BIZ_CODE, a2.videoUrl) == null) {
                                     ken.b(linkedSplashData, a2);
                                 }
                             }
-                            if (TextUtils.isEmpty(a2.interactImage) && keo.a(tiq.BIZ_CODE, a2.interactImage) == null) {
+                            if (StringUtils.isEmpty(a2.interactImage) && keo.a(tiq.BIZ_CODE, a2.interactImage) == null) {
                                 kej.a("AdColdStartInfoChooser", "check interactImage local not exist.");
                             } else {
                                 return new kdt(linkedSplashData, a2);
                             }
                         }
                     } else {
-                        if (TextUtils.equals(linkedSplashData.getLinkedDataType(), "feeds") && ("commercialAdVideo".equals(a2.bizType) || "commercialAdNormal".equals(a2.bizType))) {
+                        if (StringUtils.equals(linkedSplashData.getLinkedDataType(), "feeds") && ("commercialAdVideo".equals(a2.bizType) || "commercialAdNormal".equals(a2.bizType))) {
                             if (!kel.g()) {
                                 kej.a("AdColdStartInfoChooser", "chooseInteractImageInfo, continue, isEnableLinkedTexiuAd = false");
                             } else if (!h.b(this.b.getLocalClassName()).d()) {
                                 kej.a("AdColdStartInfoChooser", "chooseInteractImageInfo, continue, linked texiu, isShouldShow = false");
                             }
                         }
-                        if (TextUtils.isEmpty(a2.interactImage)) {
+                        if (StringUtils.isEmpty(a2.interactImage)) {
                         }
                         return new kdt(linkedSplashData, a2);
                     }

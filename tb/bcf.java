@@ -2,7 +2,7 @@ package tb;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -102,7 +102,7 @@ public final class bcf extends bce {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("3dd7e566", new Object[]{this, str})).intValue();
         }
-        if (!TextUtils.isEmpty(str) && this.b != null && (b = this.b.x().b()) != null && !b.isEmpty()) {
+        if (!StringUtils.isEmpty(str) && this.b != null && (b = this.b.x().b()) != null && !b.isEmpty()) {
             for (int i = 0; i < b.size(); i++) {
                 IDMComponent iDMComponent = b.get(i);
                 if (iDMComponent != null && iDMComponent.isNormalComponent() && str.equals(iDMComponent.getKey())) {

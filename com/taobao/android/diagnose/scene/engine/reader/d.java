@@ -1,7 +1,7 @@
 package com.taobao.android.diagnose.scene.engine.reader;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.util.ParamsConstants;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -144,7 +144,7 @@ public class d {
             return ((Number) ipChange.ipc$dispatch("9f667261", new Object[]{this, str, fmxVar, fmzVar})).intValue();
         }
         try {
-            if (this.c != null && !TextUtils.isEmpty(str)) {
+            if (this.c != null && !StringUtils.isEmpty(str)) {
                 return this.c.a(fmzVar, fmxVar, str);
             }
         } catch (Exception e) {
@@ -233,7 +233,7 @@ public class d {
         }
         try {
             String a3 = com.taobao.android.diagnose.common.d.a(this.e);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 v.a("RulesManager", "Channel config file is empty");
                 return null;
             }
@@ -353,7 +353,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d23b17f5", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             v.c("RulesManager", "The scene data is empty");
         } else {
             List<RuleDefine> a2 = new b(str).a();
@@ -397,7 +397,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             v.c("RulesManager", "The channel content is empty");
         } else {
             v.a("RulesManager", "updateChannelRule: " + str);
@@ -446,7 +446,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             v.c("RulesManager", "The channel content is empty");
         } else {
             v.a("RulesManager", "deleteChannelRule: " + str);

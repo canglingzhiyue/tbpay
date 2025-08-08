@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alipay.android.msp.constants.MspFlybirdDefine;
 import com.alipay.android.phone.seauthenticator.iotauth.authmanager.AuthenticatorManager;
@@ -112,7 +112,7 @@ public class BioVerifyStarter {
             }
             try {
                 String str3 = map.get("targetURL");
-                if (mICProdmngResponse.success && !TextUtils.isEmpty(str3)) {
+                if (mICProdmngResponse.success && !StringUtils.isEmpty(str3)) {
                     String str4 = f5947a;
                     VerifyLogCat.i(str4, "targetURL: " + str3);
                     str2 = Uri.parse(str3).getQueryParameter("sceneId");
@@ -144,7 +144,7 @@ public class BioVerifyStarter {
         String string = bundle.getString("productCode");
         String str = f5947a;
         VerifyLogCat.i(str, "initParams module: " + string);
-        if (!TextUtils.isEmpty(string) && ("BIC".equalsIgnoreCase(string) || "BIS".equalsIgnoreCase(string) || ModuleConstants.VI_MODULE_MENU.equalsIgnoreCase(string))) {
+        if (!StringUtils.isEmpty(string) && ("BIC".equalsIgnoreCase(string) || "BIS".equalsIgnoreCase(string) || ModuleConstants.VI_MODULE_MENU.equalsIgnoreCase(string))) {
             a(bundle, "BIC", "QUERY_USERID");
             return;
         }
@@ -163,7 +163,7 @@ public class BioVerifyStarter {
                 String a2 = BioVerifyStarter.a(BioVerifyStarter.this, mICProdmngResponse, str4);
                 String b2 = BioVerifyStarter.b(BioVerifyStarter.this, mICProdmngResponse, str4);
                 Bundle bundle2 = bundle;
-                if (!TextUtils.isEmpty(b2)) {
+                if (!StringUtils.isEmpty(b2)) {
                     bundle2.putString("sceneId", b2);
                 }
                 bundle2.putString("productCode", a2);
@@ -201,7 +201,7 @@ public class BioVerifyStarter {
             String str2 = map2.get("userId");
             if (!mICProdmngResponse.success && mICProdmngResponse.finish && "2001".equalsIgnoreCase(mICProdmngResponse.finishCode)) {
                 String str3 = map2.get("pageModel");
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     z = str3.contains("intelligentEnable");
                 }
                 try {
@@ -235,12 +235,12 @@ public class BioVerifyStarter {
                 Intent intent = new Intent(MicroModuleContext.getInstance().getContext(), BioDetailActivity.class);
                 intent.putExtras(bundle2);
                 MicroModuleContext.getInstance().startProdActivityByContext(intent);
-            } else if (!mICProdmngResponse.success || TextUtils.isEmpty(str2)) {
+            } else if (!mICProdmngResponse.success || StringUtils.isEmpty(str2)) {
             } else {
                 String secData = AuthenticatorManager.getInstance(MicroModuleContext.getInstance().getContext()).getSecData(str2);
                 Bundle bundle3 = bundle == null ? new Bundle() : bundle;
                 String string = bundle3.getString("productCode");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     string = "BIC";
                 }
                 bundle3.remove("productCode");
@@ -288,7 +288,7 @@ public class BioVerifyStarter {
                 return str2;
             }
             String str3 = map.get("module");
-            if (mICProdmngResponse.success && !TextUtils.isEmpty(str3) && !"NONE".equalsIgnoreCase(str3)) {
+            if (mICProdmngResponse.success && !StringUtils.isEmpty(str3) && !"NONE".equalsIgnoreCase(str3)) {
                 str2 = str3;
             }
             String str4 = f5947a;

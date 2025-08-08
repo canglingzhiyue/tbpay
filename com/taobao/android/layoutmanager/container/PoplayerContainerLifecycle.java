@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -92,7 +92,7 @@ public class PoplayerContainerLifecycle extends b {
             activity.overridePendingTransition(17432576, 0);
         }
         String queryParameter = this.b.b.getQueryParameter("extraData");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             this.e = (AnimationParams) JSON.parseObject(queryParameter, AnimationParams.class);
         } else {
             this.e.defaultValue();

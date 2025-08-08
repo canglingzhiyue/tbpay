@@ -1,6 +1,6 @@
 package com.alibaba.ariver.kernel.common.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.api.extension.Extension;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.Field;
@@ -150,7 +150,7 @@ public class ReflectUtils {
             return ((Boolean) ipChange.ipc$dispatch("f73f2773", new Object[]{clsArr, strArr})).booleanValue();
         }
         for (int i = 0; i < clsArr.length; i++) {
-            if (!TextUtils.equals(clsArr[i].getName(), strArr != null ? strArr[i] : null)) {
+            if (!StringUtils.equals(clsArr[i].getName(), strArr != null ? strArr[i] : null)) {
                 return false;
             }
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -41,7 +41,7 @@ public class srn {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{str, str2, str3});
-        } else if (TextUtils.equals("Market", str)) {
+        } else if (StringUtils.equals("Market", str)) {
             b.put(str2, str3);
         } else {
             f33864a.put(str2, str3);
@@ -73,7 +73,7 @@ public class srn {
             ipChange.ipc$dispatch("c1aa3523", new Object[]{str, list});
         } else if (list == null || list.isEmpty()) {
         } else {
-            if (TextUtils.equals("Market", str)) {
+            if (StringUtils.equals("Market", str)) {
                 e.addAll(list);
                 ssg.a().a("splashFailImages", JSON.toJSONString(e));
                 return;
@@ -122,7 +122,7 @@ public class srn {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !e.contains(str) && !d.contains(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !e.contains(str) && !d.contains(str);
     }
 
     public static String b(String str) {
@@ -130,7 +130,7 @@ public class srn {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (f33864a.containsKey(str)) {
@@ -163,7 +163,7 @@ public class srn {
             } catch (Exception e2) {
                 kej.a("LocalResourceUtils", "saveVideoPath error: -> ", e2);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             ssg.a().a("videoMapKey", str);
@@ -187,7 +187,7 @@ public class srn {
                         return;
                     }
                     kej.a("LocalResourceUtils", "loadRecord2Map: -> " + str2);
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         return;
                     }
                     try {
@@ -223,7 +223,7 @@ public class srn {
                     }
                     ArrayList arrayList = new ArrayList();
                     for (Map.Entry entry : srn.f().entrySet()) {
-                        if (TextUtils.equals(str, (CharSequence) entry.getKey())) {
+                        if (StringUtils.equals(str, (CharSequence) entry.getKey())) {
                             arrayList.add(entry.getValue());
                         }
                     }
@@ -285,7 +285,7 @@ public class srn {
                         return;
                     }
                     kej.a("LocalResourceUtils", "loadRecord2Map: -> " + str2);
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         return;
                     }
                     List list2 = null;

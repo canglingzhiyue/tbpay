@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.util.ab;
@@ -37,11 +37,11 @@ public class cqj {
             }
             if (onClickListener == null) {
                 str2 = null;
-            } else if (TextUtils.isEmpty(str2)) {
+            } else if (StringUtils.isEmpty(str2)) {
                 str2 = b.a(R.string.irp_error_message_retry_text);
             }
             String str4 = str2;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = b.a(R.string.irp_error_message_cancel_text);
             }
             this.b = ab.a(this.f26430a, "", str, str4, onClickListener, str3, onClickListener2);

@@ -3,7 +3,7 @@ package com.taobao.android.detail.wrapper.ext.uikit;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -233,7 +233,7 @@ public class SkuBar extends LinearLayout implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c0fad452", new Object[]{this, detailImageView, str, epmVar, bVar, eplVar});
-        } else if (detailImageView == null || TextUtils.isEmpty(str)) {
+        } else if (detailImageView == null || StringUtils.isEmpty(str)) {
         } else {
             epl eplVar2 = null;
             if (eplVar != null) {
@@ -390,25 +390,25 @@ public class SkuBar extends LinearLayout implements View.OnClickListener {
         } else if (aVar == null) {
         } else {
             setPropRate(aVar);
-            if (!TextUtils.isEmpty(aVar.c)) {
+            if (!StringUtils.isEmpty(aVar.c)) {
                 this.mComment.setVisibility(0);
                 setComment(aVar.c);
             } else {
                 this.mComment.setVisibility(4);
             }
-            if (!TextUtils.isEmpty(aVar.d)) {
+            if (!StringUtils.isEmpty(aVar.d)) {
                 this.mCommentCount.setVisibility(0);
                 this.mCommentCount.setText(aVar.d);
             } else {
                 this.mCommentCount.setVisibility(4);
             }
-            if (!TextUtils.isEmpty(aVar.f9994a)) {
+            if (!StringUtils.isEmpty(aVar.f9994a)) {
                 this.mPropName.setVisibility(0);
                 this.mPropName.setText(aVar.f9994a);
             } else {
                 this.mPropName.setVisibility(4);
             }
-            if (!TextUtils.isEmpty(aVar.b)) {
+            if (!StringUtils.isEmpty(aVar.b)) {
                 setAvatarUrl(aVar.b);
             } else {
                 setAvatarUrl(d.a(R.drawable.taodetail_avatar_new));
@@ -459,12 +459,12 @@ public class SkuBar extends LinearLayout implements View.OnClickListener {
             uTCustomHitBuilder.setEventPage("Page_Detail");
             uTCustomHitBuilder.setProperty(UTHitBuilders.a.FIELD_EVENT_ID, "2101");
             String str = eqb.c(this.nodeBundle).itemId;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             uTCustomHitBuilder.setProperty("item_id", str);
             String str2 = eqb.d(this.nodeBundle).userId;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "";
             }
             uTCustomHitBuilder.setProperty("seller_id", str2);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.widget.webview.plugin;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,7 +45,7 @@ public class OpenWindowPlugin extends e {
         }
         try {
             String str2 = (String) ((Map) JSON.parseObject(str, Map.class)).get("url");
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return false;
             }
             i.a("Page_detail", "open window");

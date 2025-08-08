@@ -6,7 +6,7 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -404,7 +404,7 @@ public final class cpk extends ctb<cpl> implements f, com.etao.feimagesearch.str
             return;
         }
         q.c(albumBean, "albumBean");
-        if (TextUtils.isEmpty(albumBean.getImgKey())) {
+        if (StringUtils.isEmpty(albumBean.getImgKey())) {
             return;
         }
         String imgKey = albumBean.getImgKey();
@@ -973,7 +973,7 @@ public final class cpk extends ctb<cpl> implements f, com.etao.feimagesearch.str
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3970beed", new Object[]{this, str, new Integer(i), new Boolean(z), str2});
-        } else if (str == null || TextUtils.isEmpty(str)) {
+        } else if (str == null || StringUtils.isEmpty(str)) {
         } else {
             cot.a("PltCameraPai", "processAlbumImageItem", String.valueOf(str));
             ((cpl) this.f26504a).b(true);

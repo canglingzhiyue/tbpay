@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -45,13 +45,13 @@ public class s extends q {
             return;
         }
         String string = fields.getString("page");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             String string2 = fields.getString("arg1");
             String string3 = fields.getString("arg2");
             String string4 = fields.getString("arg3");
             String str = "";
-            String str2 = TextUtils.isEmpty(string3) ? str : string3;
-            if (!TextUtils.isEmpty(string4)) {
+            String str2 = StringUtils.isEmpty(string3) ? str : string3;
+            if (!StringUtils.isEmpty(string4)) {
                 str = string4;
             }
             JSONObject jSONObject = fields.getJSONObject("args");
@@ -71,7 +71,7 @@ public class s extends q {
                 for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                     String key = entry.getKey();
                     Object value = entry.getValue();
-                    if (!TextUtils.isEmpty(key) && value != null) {
+                    if (!StringUtils.isEmpty(key) && value != null) {
                         if (this.g != null) {
                             valueOf2 = String.valueOf(jpy.a(this.g.getData(), value));
                         } else {
@@ -100,7 +100,7 @@ public class s extends q {
         for (Map.Entry<String, Object> entry2 : jSONObject2.entrySet()) {
             String key2 = entry2.getKey();
             Object value2 = entry2.getValue();
-            if (!TextUtils.isEmpty(key2) && value2 != null) {
+            if (!StringUtils.isEmpty(key2) && value2 != null) {
                 if (this.g != null) {
                     valueOf = String.valueOf(jpy.a(this.g.getData(), value2));
                 } else {

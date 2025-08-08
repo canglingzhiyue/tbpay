@@ -1,7 +1,7 @@
 package android.taobao.windvane.cache;
 
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import tb.kge;
@@ -119,7 +119,7 @@ public class c {
         } else {
             sb.append('_');
         }
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             sb.append("utf-8");
         } else {
             sb.append(this.g);

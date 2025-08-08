@@ -1,6 +1,6 @@
 package com.alipay.ma.decode;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.ma.MaLogger;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -18,7 +18,7 @@ public class MaSdkConfigManager {
             if (ipChange instanceof IpChange) {
                 return ((Boolean) ipChange.ipc$dispatch("94545f6e", new Object[0])).booleanValue();
             }
-            return !TextUtils.isEmpty(f5315a);
+            return !StringUtils.isEmpty(f5315a);
         }
     }
 

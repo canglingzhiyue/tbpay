@@ -3,7 +3,7 @@ package org.android.agoo.control;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.wukong.pipe.RiskDataPipeManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.ACCSManager;
@@ -80,23 +80,23 @@ public class NotifManager {
             ipChange.ipc$dispatch("274a8d25", new Object[]{this, msgDO, extraInfo});
         } else if (msgDO == null) {
         } else {
-            if (TextUtils.isEmpty(msgDO.msgIds) && TextUtils.isEmpty(msgDO.removePacks) && TextUtils.isEmpty(msgDO.errorCode)) {
+            if (StringUtils.isEmpty(msgDO.msgIds) && StringUtils.isEmpty(msgDO.removePacks) && StringUtils.isEmpty(msgDO.errorCode)) {
                 return;
             }
             try {
                 HashMap hashMap = new HashMap();
                 hashMap.put("api", AgooConstants.AGOO_SERVICE_AGOOACK);
                 hashMap.put("id", msgDO.msgIds + "@" + msgDO.messageSource);
-                if (!TextUtils.isEmpty(msgDO.removePacks)) {
+                if (!StringUtils.isEmpty(msgDO.removePacks)) {
                     hashMap.put("del_pack", msgDO.removePacks);
                 }
-                if (!TextUtils.isEmpty(msgDO.errorCode)) {
+                if (!StringUtils.isEmpty(msgDO.errorCode)) {
                     hashMap.put(RiskDataPipeManager.PIPE_RESULT_ERROR_CODE_KEY, msgDO.errorCode);
                 }
-                if (!TextUtils.isEmpty(msgDO.type)) {
+                if (!StringUtils.isEmpty(msgDO.type)) {
                     hashMap.put("type", msgDO.type);
                 }
-                if (!TextUtils.isEmpty(msgDO.extData)) {
+                if (!StringUtils.isEmpty(msgDO.extData)) {
                     hashMap.put("ext", msgDO.extData);
                 }
                 hashMap.put("appkey", Config.getAgooAppKey(mContext));
@@ -123,7 +123,7 @@ public class NotifManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bd369131", new Object[]{this, msgDO, extraInfo});
-        } else if (TextUtils.isEmpty(msgDO.reportStr)) {
+        } else if (StringUtils.isEmpty(msgDO.reportStr)) {
         } else {
             try {
                 if (Integer.parseInt(msgDO.reportStr) < -1) {
@@ -171,22 +171,22 @@ public class NotifManager {
         hashMap.put("id", msgDO.msgIds + "@" + msgDO.messageSource);
         hashMap.put("ext", msgDO.extData);
         hashMap.put("status", msgDO.msgStatus);
-        if (!TextUtils.isEmpty(msgDO.errorCode)) {
+        if (!StringUtils.isEmpty(msgDO.errorCode)) {
             hashMap.put(RiskDataPipeManager.PIPE_RESULT_ERROR_CODE_KEY, msgDO.errorCode);
         }
-        if (!TextUtils.isEmpty(msgDO.type)) {
+        if (!StringUtils.isEmpty(msgDO.type)) {
             hashMap.put("type", msgDO.type);
         }
-        if (!TextUtils.isEmpty(msgDO.fromPkg)) {
+        if (!StringUtils.isEmpty(msgDO.fromPkg)) {
             hashMap.put("fromPkg", msgDO.fromPkg);
         }
-        if (!TextUtils.isEmpty(msgDO.fromAppkey)) {
+        if (!StringUtils.isEmpty(msgDO.fromAppkey)) {
             hashMap.put(AgooConstants.MESSAGE_FROM_APPKEY, msgDO.fromAppkey);
         }
-        if (!TextUtils.isEmpty(msgDO.notifyEnable)) {
+        if (!StringUtils.isEmpty(msgDO.notifyEnable)) {
             hashMap.put("notifyEnable", msgDO.notifyEnable);
         }
-        if (!TextUtils.isEmpty(msgDO.extData)) {
+        if (!StringUtils.isEmpty(msgDO.extData)) {
             hashMap.put("ext", msgDO.extData);
         }
         hashMap.put("isStartProc", Boolean.toString(msgDO.isStartProc));
@@ -236,7 +236,7 @@ public class NotifManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5543f123", new Object[]{this, str, str2, str3, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ALog.i(TAG, "reportThirdPushToken thirdId is empty", new Object[0]);
         } else {
             ALog.e(TAG, "start reportThirdPushToken", "thirdId", str);
@@ -257,7 +257,7 @@ public class NotifManager {
                         hashMap.put("token", str);
                         hashMap.put("appkey", Config.getAgooAppKey(NotifManager.access$000()));
                         hashMap.put("utdid", c.d(NotifManager.access$000()));
-                        if (!TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(str3)) {
                             hashMap.put("vendorSdkVersion", str3);
                         }
                         NotifManager.access$100(hashMap, str, str2, z);
@@ -344,7 +344,7 @@ public class NotifManager {
         } catch (Throwable unused) {
             packageInfo = null;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         packageInfo = mContext.getPackageManager().getPackageInfo(str, 0);
@@ -361,7 +361,7 @@ public class NotifManager {
             return (String) ipChange.ipc$dispatch("6a58234d", new Object[]{this, str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "null";
             }
             String str2 = mContext.getPackageManager().getPackageInfo(str, 0).versionName;

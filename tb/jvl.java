@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.utils.i;
 import com.taobao.vessel.utils.b;
@@ -43,7 +43,7 @@ public class jvl {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("645552ff", new Object[]{str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

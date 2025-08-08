@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.hostcontainer.pageinterface.page;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -52,10 +52,10 @@ public final class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
-        if (TextUtils.isEmpty(str2) || (parseArray = JSONArray.parseArray(str2)) == null || (size = parseArray.size()) <= 0) {
+        if (StringUtils.isEmpty(str2) || (parseArray = JSONArray.parseArray(str2)) == null || (size = parseArray.size()) <= 0) {
             return false;
         }
         for (int i = 0; i < size; i++) {

@@ -1,7 +1,7 @@
 package com.taobao.android.weex_ability.modules;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.fastjson.JSONObject;
@@ -86,9 +86,9 @@ public class WeexMegaBridgeModule extends WeexInnerModule implements MegaModule 
         String str2 = "default";
         if (z) {
             String f = weexInstanceImpl.getInstanceConfig().f();
-            if (TextUtils.isEmpty(f)) {
+            if (StringUtils.isEmpty(f)) {
                 String bundleUrl = weexInstanceImpl.getBundleUrl();
-                if (!TextUtils.isEmpty(b.d(bundleUrl))) {
+                if (!StringUtils.isEmpty(b.d(bundleUrl))) {
                     str2 = b.d(bundleUrl);
                 }
                 f = str2;
@@ -96,7 +96,7 @@ public class WeexMegaBridgeModule extends WeexInnerModule implements MegaModule 
             this.mAbilityEnv = new alr(f, "Weex");
         } else {
             String bundleUrl2 = weexInstanceImpl.getBundleUrl();
-            if (!TextUtils.isEmpty(getOriginURLString(bundleUrl2))) {
+            if (!StringUtils.isEmpty(getOriginURLString(bundleUrl2))) {
                 str2 = getOriginURLString(bundleUrl2);
             }
             this.mAbilityEnv = new alr(str2, "Weex");
@@ -177,7 +177,7 @@ public class WeexMegaBridgeModule extends WeexInnerModule implements MegaModule 
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("239e120b", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         Uri parse = Uri.parse(str);

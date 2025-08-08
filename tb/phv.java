@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.alilive.adapter.uikit.AliUrlImageView;
@@ -359,11 +359,11 @@ public class phv {
             return;
         }
         a(ag.CALC_PRELIVE_ENTER, videoInfo);
-        if (videoInfo == null || videoInfo.broadCaster == null || TextUtils.isEmpty(videoInfo.broadCaster.accountId)) {
+        if (videoInfo == null || videoInfo.broadCaster == null || StringUtils.isEmpty(videoInfo.broadCaster.accountId)) {
             return;
         }
         String b = c.b(videoInfo.broadCaster.accountId);
-        if (!TextUtils.isEmpty(videoInfo.broadCaster.accountInfoNewUrl)) {
+        if (!StringUtils.isEmpty(videoInfo.broadCaster.accountInfoNewUrl)) {
             b = videoInfo.broadCaster.accountInfoNewUrl;
         }
         ai.c(this.q);
@@ -376,7 +376,7 @@ public class phv {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (aliUrlImageView = this.l) == null) {
+        } else if (StringUtils.isEmpty(str) || (aliUrlImageView = this.l) == null) {
         } else {
             aliUrlImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             this.l.setImageUrl(str);

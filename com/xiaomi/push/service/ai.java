@@ -2,7 +2,7 @@ package com.xiaomi.push.service;
 
 import android.content.Context;
 import android.os.Messenger;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.xiaomi.mipush.sdk.ErrorCode;
 import com.xiaomi.push.di;
 import com.xiaomi.push.gf;
@@ -88,7 +88,7 @@ public final class ai {
     private static String a(iy iyVar) {
         if (iyVar.f659a != null && iyVar.f659a.f577b != null) {
             String str = iyVar.f659a.f577b.get("ext_traffic_source_pkg");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -31,7 +31,7 @@ public class stp extends dlg<l> {
             return null;
         }
         String c = dlhVar.c("key");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             ldf.d("HSetExtAbility", "key is empty");
             return null;
         }

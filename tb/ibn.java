@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Pair;
 import com.alibaba.android.ultron.vfw.weex2.UltronWeex2DataPrefetchCache;
@@ -163,10 +163,10 @@ public class ibn {
         if (!ibl.t()) {
             UnifyLog.d("OrderWeex2PrefetchDataManager.getPrefetchDataByOrderId", "disableOrderWeex2Prefetch");
             return null;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             UnifyLog.d("OrderWeex2HighPerformanceHelper.getPrefetchDataByOrderId", "mainOrderId isEmpty");
             return null;
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             UnifyLog.d("OrderWeex2HighPerformanceHelper.getPrefetchDataByOrderId", "subOrderId isEmpty");
             return null;
         } else if (ultronWeex2DataPrefetchCache == null) {

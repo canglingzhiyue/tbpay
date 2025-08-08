@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -30,7 +30,7 @@ public class bl {
 
     /* renamed from: a  reason: collision with other method in class */
     public static byte[] m1741a(String str) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 MessageDigest messageDigest = MessageDigest.getInstance("MD5");
                 messageDigest.update(str.getBytes());

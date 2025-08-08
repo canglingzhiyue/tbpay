@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -30,7 +30,7 @@ public class dju {
         } else if (view == null) {
         } else {
             a(view);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "图片识别中";
             }
             view.setContentDescription(str);
@@ -44,7 +44,7 @@ public class dju {
         } else if (view == null) {
         } else {
             a(view);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "图片识别失败";
             }
             view.setContentDescription(str);

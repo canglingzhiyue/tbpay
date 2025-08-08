@@ -1,7 +1,7 @@
 package com.taobao.search.jarvis;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -94,7 +94,7 @@ public final class SearchJarvisCallback extends jxm {
             JSONObject jSONObject = a3.getJSONObject(i);
             String string = jSONObject.getString("action");
             String string2 = jSONObject.getString(JarvisConstant.KEY_ACTION_ID);
-            if (!TextUtils.isEmpty(string) && (a2 = com.taobao.android.xsearchplugin.jarvis.utils.b.a(string, this.mJarvisWidget)) != null) {
+            if (!StringUtils.isEmpty(string) && (a2 = com.taobao.android.xsearchplugin.jarvis.utils.b.a(string, this.mJarvisWidget)) != null) {
                 q.a((Object) a2, "JarvisKitUtils.getTarget…JarvisWidget) ?: continue");
                 Coordinator.execute(new a(a2, jSONObject, string2, "JarvisActionProcessor"));
             }

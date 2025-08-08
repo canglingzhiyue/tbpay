@@ -1,6 +1,6 @@
 package com.alibaba.ut.abtest.track;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.internal.bucketing.model.ExperimentV5;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.security.realidentity.g4;
@@ -158,9 +158,9 @@ public class c implements b {
         }
         if (map != null) {
             String str = map.get("evo");
-            if (!TextUtils.isEmpty(str) && (split = str.split("\\.")) != null) {
+            if (!StringUtils.isEmpty(str) && (split = str.split("\\.")) != null) {
                 for (String str2 : split) {
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         set.add(str2);
                     }
                 }
@@ -179,7 +179,7 @@ public class c implements b {
         } else if (!cex.a().j().e()) {
         } else {
             String b = b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             UTAnalytics.getInstance().getDefaultTracker().setGlobalProperty("aliab", b);
@@ -410,7 +410,7 @@ public class c implements b {
                 hashSet.addAll(set);
             }
         }
-        if (!TextUtils.isEmpty(str2) && (a2 = this.e.a((i<String, Set<ExperimentTrack>>) a(i, str, str2))) != null) {
+        if (!StringUtils.isEmpty(str2) && (a2 = this.e.a((i<String, Set<ExperimentTrack>>) a(i, str, str2))) != null) {
             if (hashSet == null) {
                 hashSet = new HashSet();
             }
@@ -456,7 +456,7 @@ public class c implements b {
             com.alibaba.ut.abtest.internal.util.b.a("TrackServiceImpl.getTrackIdV2", th);
         }
         String a3 = a(hashSet, map);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return null;
         }
         HashMap<String, String> hashMap = new HashMap<>();
@@ -501,7 +501,7 @@ public class c implements b {
             java.lang.String r1 = "utparam-cnt"
             java.lang.Object r9 = r9.get(r1)
             java.lang.String r9 = (java.lang.String) r9
-            boolean r1 = android.text.TextUtils.isEmpty(r9)
+            boolean r1 = android.text.StringUtils.isEmpty(r9)
             if (r1 != 0) goto L4d
             java.lang.String r8 = r6.a(r9, r8)
             com.alibaba.ut.abtest.track.c$1 r9 = new com.alibaba.ut.abtest.track.c$1
@@ -515,11 +515,11 @@ public class c implements b {
         L4e:
             java.lang.String r9 = "utabtest"
             if (r8 == 0) goto La1
-            boolean r1 = android.text.TextUtils.isEmpty(r7)
+            boolean r1 = android.text.StringUtils.isEmpty(r7)
             if (r1 != 0) goto La1
             java.lang.Object r8 = r8.get(r9)
             java.lang.String r8 = (java.lang.String) r8
-            boolean r1 = android.text.TextUtils.isEmpty(r8)
+            boolean r1 = android.text.StringUtils.isEmpty(r8)
             if (r1 != 0) goto La1
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
             r1.<init>()
@@ -550,7 +550,7 @@ public class c implements b {
         La0:
             return r0
         La1:
-            boolean r8 = android.text.TextUtils.isEmpty(r7)
+            boolean r8 = android.text.StringUtils.isEmpty(r7)
             if (r8 != 0) goto Lb4
             java.util.HashMap r8 = new java.util.HashMap
             r8.<init>()
@@ -618,7 +618,7 @@ public class c implements b {
         }
         String r = cex.a().r();
         int i = Calendar.getInstance().get(7);
-        if (TextUtils.isEmpty(r)) {
+        if (StringUtils.isEmpty(r)) {
             return o.a().b() + "_0_" + i + "_" + str;
         }
         return o.a().b() + "_" + r + "_" + i + "_" + str;
@@ -677,7 +677,7 @@ public class c implements b {
             java.util.List r7 = (java.util.List) r7
             return r7
         L18:
-            boolean r0 = android.text.TextUtils.isEmpty(r7)
+            boolean r0 = android.text.StringUtils.isEmpty(r7)
             r1 = 0
             java.lang.String r2 = "TrackServiceImpl"
             if (r0 == 0) goto L28
@@ -709,7 +709,7 @@ public class c implements b {
         L5c:
             r0 = r7
         L5d:
-            boolean r3 = android.text.TextUtils.isEmpty(r0)
+            boolean r3 = android.text.StringUtils.isEmpty(r0)
             java.lang.String r4 = "【服务端实验】添加埋点规则失败，埋点规则不合法。埋点规则："
             if (r3 == 0) goto L79
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
@@ -863,7 +863,7 @@ public class c implements b {
                     return;
                 }
                 for (String str : aVar.b()) {
-                    if (!TextUtils.isEmpty(str) && !this.k.contains(str)) {
+                    if (!StringUtils.isEmpty(str) && !this.k.contains(str)) {
                         this.k.add(str);
                         z = true;
                     }

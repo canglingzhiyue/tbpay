@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public class cwp {
@@ -40,7 +40,7 @@ public class cwp {
     }
 
     public boolean e() {
-        return (!TextUtils.isEmpty(this.d) || !TextUtils.isEmpty(this.c)) && !TextUtils.isEmpty(this.f26571a);
+        return (!StringUtils.isEmpty(this.d) || !StringUtils.isEmpty(this.c)) && !StringUtils.isEmpty(this.f26571a);
     }
 
     public String toString() {

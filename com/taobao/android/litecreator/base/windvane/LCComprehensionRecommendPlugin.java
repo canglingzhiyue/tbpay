@@ -3,7 +3,7 @@ package com.taobao.android.litecreator.base.windvane;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -125,7 +125,7 @@ public class LCComprehensionRecommendPlugin extends e {
             return;
         }
         b findComprehensionTool = findComprehensionTool();
-        if (findComprehensionTool == null || TextUtils.isEmpty(str)) {
+        if (findComprehensionTool == null || StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
         } else {
             findComprehensionTool.c(JSONObject.parseObject(str).getString("content"));
@@ -139,7 +139,7 @@ public class LCComprehensionRecommendPlugin extends e {
             return;
         }
         b findComprehensionTool = findComprehensionTool();
-        if (findComprehensionTool == null || TextUtils.isEmpty(str)) {
+        if (findComprehensionTool == null || StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
         } else {
             findComprehensionTool.a(JSONObject.parseObject(str));
@@ -153,7 +153,7 @@ public class LCComprehensionRecommendPlugin extends e {
             return;
         }
         b findComprehensionTool = findComprehensionTool();
-        if (findComprehensionTool == null || TextUtils.isEmpty(str)) {
+        if (findComprehensionTool == null || StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
             return;
         }
@@ -183,7 +183,7 @@ public class LCComprehensionRecommendPlugin extends e {
             return;
         }
         b findComprehensionTool = findComprehensionTool();
-        if (findComprehensionTool == null || TextUtils.isEmpty(str)) {
+        if (findComprehensionTool == null || StringUtils.isEmpty(str)) {
             wVCallBackContext.error();
             return;
         }
@@ -324,7 +324,7 @@ public class LCComprehensionRecommendPlugin extends e {
             jSONArray = jSONArray2;
         }
         String string = jSONArray.getString(0);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "topic";
         }
         if (j <= 0) {
@@ -375,7 +375,7 @@ public class LCComprehensionRecommendPlugin extends e {
             return ((Number) ipChange.ipc$dispatch("b7efaf15", new Object[]{this, str, new Long(j)})).longValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? j : Long.parseLong(str);
+            return StringUtils.isEmpty(str) ? j : Long.parseLong(str);
         } catch (Throwable unused) {
             return j;
         }

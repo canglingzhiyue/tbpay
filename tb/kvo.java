@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
@@ -149,7 +149,7 @@ public class kvo extends s {
             return;
         }
         float floatValue = (jSONObject == null || jSONObject.isEmpty() || jSONObject.getFloatValue("maxHeight") == 0.0f) ? 0.8f : jSONObject.getFloatValue("maxHeight");
-        String string = (jSONObject == null || jSONObject.isEmpty() || TextUtils.isEmpty(jSONObject.getString("title"))) ? "评价" : jSONObject.getString("title");
+        String string = (jSONObject == null || jSONObject.isEmpty() || StringUtils.isEmpty(jSONObject.getString("title"))) ? "评价" : jSONObject.getString("title");
         com.taobao.android.stdpop.api.c cVar = new com.taobao.android.stdpop.api.c();
         cVar.a(floatValue);
         cVar.a(string);

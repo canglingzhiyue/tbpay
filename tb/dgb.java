@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.click.extend.ExtendClickLink;
 import com.taobao.muniontaobaosdk.util.TaoLog;
@@ -26,12 +26,12 @@ public class dgb extends ExtendClickLink {
         }
         try {
             TaoLog.Logd("AlimamaSdk", this.f8418a);
-            if (TextUtils.isEmpty(this.f8418a)) {
+            if (StringUtils.isEmpty(this.f8418a)) {
                 return "mtop.ali.ad.settle.tanx.click";
             }
             Uri parse = Uri.parse(this.f8418a);
             String host = parse.getHost();
-            if (TextUtils.isEmpty(host)) {
+            if (StringUtils.isEmpty(host)) {
                 return "mtop.ali.ad.settle.tanx.click";
             }
             if (host.equals("click.tanx.com")) {
@@ -39,7 +39,7 @@ public class dgb extends ExtendClickLink {
                 return "mtop.ali.ad.settle.tanx.click";
             }
             String queryParameter = parse.getQueryParameter("mtop_api");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 TaoLog.Logd("AlimamaSdk", "return mtop_host : " + queryParameter);
                 return queryParameter;
             }

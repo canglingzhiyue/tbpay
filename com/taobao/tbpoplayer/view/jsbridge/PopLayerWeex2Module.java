@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.view.jsbridge;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -96,17 +96,17 @@ public class PopLayerWeex2Module extends MUSModule {
             string8 = null;
             str = null;
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = "commonJsClose";
         }
         String str3 = string;
-        String str4 = TextUtils.isEmpty(string2) ? null : string2;
-        String str5 = TextUtils.isEmpty(string3) ? null : string3;
+        String str4 = StringUtils.isEmpty(string2) ? null : string2;
+        String str5 = StringUtils.isEmpty(string3) ? null : string3;
         long j = 0;
-        long parseLong = !TextUtils.isEmpty(string4) ? Long.parseLong(string4) : 0L;
-        long parseLong2 = !TextUtils.isEmpty(string5) ? Long.parseLong(string5) : 0L;
-        long parseLong3 = !TextUtils.isEmpty(string6) ? Long.parseLong(string6) : 0L;
-        if (!TextUtils.isEmpty(string7)) {
+        long parseLong = !StringUtils.isEmpty(string4) ? Long.parseLong(string4) : 0L;
+        long parseLong2 = !StringUtils.isEmpty(string5) ? Long.parseLong(string5) : 0L;
+        long parseLong3 = !StringUtils.isEmpty(string6) ? Long.parseLong(string6) : 0L;
+        if (!StringUtils.isEmpty(string7)) {
             j = Long.parseLong(string7);
         }
         this.mJsBridgeAction.a(str3, str4, str5, str2, string8, str, parseLong, parseLong2, parseLong3, j, generateCallBack(bVar, bVar2));
@@ -434,10 +434,10 @@ public class PopLayerWeex2Module extends MUSModule {
             String string3 = jSONObject.getString("loadMaterialCostTime");
             String string4 = jSONObject.getString("mtopCostTime");
             long j = 0;
-            long parseLong = !TextUtils.isEmpty(string) ? Long.parseLong(string) : 0L;
-            long parseLong2 = !TextUtils.isEmpty(string2) ? Long.parseLong(string2) : 0L;
-            long parseLong3 = !TextUtils.isEmpty(string3) ? Long.parseLong(string3) : 0L;
-            if (!TextUtils.isEmpty(string4)) {
+            long parseLong = !StringUtils.isEmpty(string) ? Long.parseLong(string) : 0L;
+            long parseLong2 = !StringUtils.isEmpty(string2) ? Long.parseLong(string2) : 0L;
+            long parseLong3 = !StringUtils.isEmpty(string3) ? Long.parseLong(string3) : 0L;
+            if (!StringUtils.isEmpty(string4)) {
                 j = Long.parseLong(string4);
             }
             this.mJsBridgeAction.a(parseLong, parseLong2, parseLong3, j, generateCallBack(bVar, bVar2));

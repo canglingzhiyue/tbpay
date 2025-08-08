@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.umipublish.monitor.UmiPublishMonitor;
@@ -20,7 +20,7 @@ public class tmw {
             return;
         }
         UmiPublishMonitor a2 = UmiPublishMonitor.a();
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str = str + "_" + str2;
         }
         a2.a("stat_code", str, (JSONObject) null);

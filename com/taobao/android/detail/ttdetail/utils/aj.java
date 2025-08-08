@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.data.meta.MappingKey;
@@ -29,7 +29,7 @@ public class aj {
             str = "getMergedData failed for not MappingKey annotation, in class: ";
         } else {
             String key = mappingKey.key();
-            if (TextUtils.isEmpty(key)) {
+            if (StringUtils.isEmpty(key)) {
                 sb = new StringBuilder();
                 str = "getMergedData failed with an empty MappingKey key(), in class: ";
             } else {

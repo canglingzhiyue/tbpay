@@ -1,6 +1,6 @@
 package com.taobao.geofence.aidl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -274,7 +274,7 @@ public class GatherManager {
 
     private boolean extKeyEqual(TBFenceClient.TypeEnum typeEnum, String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("68d9ed36", new Object[]{this, typeEnum, str})).booleanValue() : TextUtils.equals(CacheData.access$100(this.cache.get(typeEnum)), str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("68d9ed36", new Object[]{this, typeEnum, str})).booleanValue() : StringUtils.equals(CacheData.access$100(this.cache.get(typeEnum)), str);
     }
 
     private String getCacheValue(TBFenceClient.TypeEnum typeEnum) {

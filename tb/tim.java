@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -35,12 +35,12 @@ public class tim {
             return;
         }
         String string = jSONObject.getString("ifs");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             jSONObject.put("ifs_backup", (Object) string);
             jSONObject.remove("ifs");
         }
         String string2 = jSONObject.getString("ifsArr");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return;
         }
         jSONObject.put("ifsArr_backup", (Object) string2);

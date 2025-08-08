@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -192,7 +192,7 @@ public class hhk extends iot {
         boolean a2 = a.a().i().a(cVar == null ? null : cVar.C(), qna.e(cVar));
         his.a("SeckillOpt", "follow :" + a2);
         if (com.taobao.taolive.sdk.goodlist.d.f()) {
-            if (!jSONObject2.containsKey("threshold") || (jSONObject3 = jSONObject2.getJSONObject("threshold")) == null || !jSONObject3.containsKey("isFollowThreshold") || !TextUtils.equals(jSONObject3.getString("isFollowThreshold"), "true")) {
+            if (!jSONObject2.containsKey("threshold") || (jSONObject3 = jSONObject2.getJSONObject("threshold")) == null || !jSONObject3.containsKey("isFollowThreshold") || !StringUtils.equals(jSONObject3.getString("isFollowThreshold"), "true")) {
                 z = false;
             } else {
                 his.a("SeckillOpt", "isFollowThreshold true");
@@ -333,7 +333,7 @@ public class hhk extends iot {
             str7 = "1";
         }
         hashMap.put("bubbleType", str7);
-        liveItem.cpsClickPos = hiq.a(liveItem, TextUtils.equals(str2, "btn"), "");
+        liveItem.cpsClickPos = hiq.a(liveItem, StringUtils.equals(str2, "btn"), "");
         if (a.a().i() != null) {
             str3 = "item_position";
             str4 = "";
@@ -384,7 +384,7 @@ public class hhk extends iot {
         if (jSONObject != null) {
             j = jSONObject.getLongValue("endTime");
         }
-        if (a.a().j() != null && !TextUtils.isEmpty(str)) {
+        if (a.a().j() != null && !StringUtils.isEmpty(str)) {
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put("action", "103".equals(liveItem.personalityData.getString("goodsSubscribeStatus")) ? "cancel" : "reserve");
             hashMap.put("itemId", String.valueOf(liveItem.itemId));

@@ -1,6 +1,6 @@
 package com.alibaba.android.ultron.trade.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
@@ -44,8 +44,8 @@ public class r extends d {
         String string3 = fields.getString("arg2");
         String string4 = fields.getString("arg3");
         String str = "";
-        String str2 = TextUtils.isEmpty(string3) ? str : string3;
-        if (!TextUtils.isEmpty(string4)) {
+        String str2 = StringUtils.isEmpty(string3) ? str : string3;
+        if (!StringUtils.isEmpty(string4)) {
             str = string4;
         }
         JSONObject jSONObject = fields.getJSONObject("args");
@@ -54,7 +54,7 @@ public class r extends d {
             for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key) && (value instanceof String)) {
+                if (!StringUtils.isEmpty(key) && (value instanceof String)) {
                     hashMap.put(key, String.valueOf(jpy.a(this.h.getData(), value)));
                 }
             }

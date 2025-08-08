@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.appender;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LogEvent;
 import com.alipay.mobile.common.logging.util.FileUtil;
@@ -72,7 +72,7 @@ public class ExternalFileAppender extends FileAppender {
         } else if (logEvent == null) {
         } else {
             String logEvent2 = logEvent.toString();
-            if (TextUtils.isEmpty(logEvent2)) {
+            if (StringUtils.isEmpty(logEvent2)) {
                 return;
             }
             if (this.o.length() + logEvent2.length() + e > this.p) {

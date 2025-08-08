@@ -1,7 +1,7 @@
 package com.alipay.android.msp.ui.base;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.app.birdnest.api.MspConstants;
@@ -43,7 +43,7 @@ public class ExchangeDataProcessor {
             MspCacheManager mspCacheManager = MspCacheManager.getInstance();
             String string = bundle.getString("CACHE_KEY");
             String string2 = bundle.getString("UID");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return a(false, "请求中没有 CACHE_KEY 或者 UID 字段", null);
             }
             JSONObject parseObject = JSON.parseObject(mspCacheManager.readCache(string, null, true, true));

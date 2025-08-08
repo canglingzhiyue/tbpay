@@ -2,7 +2,7 @@ package com.taobao.taobao;
 
 import android.app.Activity;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taobao.internal.PayRequest;
 import com.taobao.taobao.internal.helper.d;
@@ -39,7 +39,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("1a4c023", new Object[]{this, map});
         }
         String str = map.get("orderids");
-        return TextUtils.isEmpty(str) ? map.get("orderIds") : str;
+        return StringUtils.isEmpty(str) ? map.get("orderIds") : str;
     }
 
     public void a(Activity activity, PayRequest payRequest, com.taobao.taobao.internal.b bVar) {

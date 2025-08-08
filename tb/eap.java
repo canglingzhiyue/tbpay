@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -179,7 +179,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
             this.b.setVisibility(8);
         } else {
             String str = "";
-            if (!TextUtils.isEmpty(((c) this.c).h) && ((((c) this.c).j != null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).l)) || (((c) this.c).j == null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).mNodeBundle.a())))) {
+            if (!StringUtils.isEmpty(((c) this.c).h) && ((((c) this.c).j != null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).l)) || (((c) this.c).j == null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).mNodeBundle.a())))) {
                 this.h = 3;
                 e();
                 HashMap hashMap = new HashMap();
@@ -264,7 +264,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
             this.b.setVisibility(8);
         } else {
             String str = "";
-            if (!TextUtils.isEmpty(((c) this.c).h) && ((((c) this.c).j != null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).l)) || (((c) this.c).j == null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).mNodeBundle.a())))) {
+            if (!StringUtils.isEmpty(((c) this.c).h) && ((((c) this.c).j != null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).l)) || (((c) this.c).j == null && eni.a(epo.a(), ((c) this.c).h, ((c) this.c).mNodeBundle.a())))) {
                 this.h = 3;
                 e();
                 HashMap hashMap = new HashMap();
@@ -406,14 +406,14 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("739ef400", new Object[]{this, context, viewGroup});
         }
-        if (((c) this.c).d != null && !TextUtils.isEmpty(((c) this.c).d.f9766a) && !TextUtils.isEmpty(((c) this.c).d.d)) {
+        if (((c) this.c).d != null && !StringUtils.isEmpty(((c) this.c).d.f9766a) && !StringUtils.isEmpty(((c) this.c).d.d)) {
             c.a aVar = ((c) this.c).d;
             DXTemplateItem dXTemplateItem = new DXTemplateItem();
             dXTemplateItem.f11925a = aVar.f9766a;
             dXTemplateItem.b = Long.parseLong(aVar.d);
-            if (!TextUtils.isEmpty(aVar.c)) {
+            if (!StringUtils.isEmpty(aVar.c)) {
                 dXTemplateItem.c = aVar.c;
-            } else if (!TextUtils.isEmpty(aVar.b)) {
+            } else if (!StringUtils.isEmpty(aVar.b)) {
                 dXTemplateItem.c = aVar.b;
             }
             if (context instanceof DetailCoreActivity) {
@@ -429,7 +429,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
                     this.h = 0;
                     return frameLayout;
                 }
-                if (this.i == null || (!TextUtils.isEmpty(dXTemplateItem2.c) && !this.j.c.endsWith(".zip"))) {
+                if (this.i == null || (!StringUtils.isEmpty(dXTemplateItem2.c) && !this.j.c.endsWith(".zip"))) {
                     this.i = bdVar.a(context, viewGroup, this.j);
                 }
                 DXResult<DXRootView> dXResult = this.i;
@@ -440,7 +440,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
                     } catch (Throwable th) {
                         th.printStackTrace();
                     }
-                    if (!TextUtils.isEmpty(this.j.f11925a) && aVar != null && this.j.f11925a.equals(aVar.f9766a) && this.j.b == j) {
+                    if (!StringUtils.isEmpty(this.j.f11925a) && aVar != null && this.j.f11925a.equals(aVar.f9766a) && this.j.b == j) {
                         this.h = 3;
                     } else {
                         this.h = 2;
@@ -460,7 +460,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
         }
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, 0));
-        if (((c) this.c).d != null && TextUtils.isEmpty(((c) this.c).d.b)) {
+        if (((c) this.c).d != null && StringUtils.isEmpty(((c) this.c).d.b)) {
             i = 3;
         }
         this.h = i;
@@ -476,7 +476,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("f5e9a8df", new Object[]{this, context, viewGroup});
         }
-        if (((c) this.c).d != null && !TextUtils.isEmpty(((c) this.c).d.f9766a) && !TextUtils.isEmpty(((c) this.c).d.d)) {
+        if (((c) this.c).d != null && !StringUtils.isEmpty(((c) this.c).d.f9766a) && !StringUtils.isEmpty(((c) this.c).d.d)) {
             c.a aVar = ((c) this.c).d;
             DinamicTemplate dinamicTemplate = new DinamicTemplate();
             dinamicTemplate.name = aVar.f9766a;
@@ -514,7 +514,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
                         a3 = ear.a().a(context, viewGroup, d);
                     }
                     if (a3.c()) {
-                        if (TextUtils.isEmpty(aVar.b) || z) {
+                        if (StringUtils.isEmpty(aVar.b) || z) {
                             i2 = 3;
                         }
                         this.h = i2;
@@ -528,7 +528,7 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
         }
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setLayoutParams(new FrameLayout.LayoutParams(-1, 0));
-        if (((c) this.c).d != null && TextUtils.isEmpty(((c) this.c).d.b)) {
+        if (((c) this.c).d != null && StringUtils.isEmpty(((c) this.c).d.b)) {
             i3 = 3;
         }
         this.h = i3;
@@ -752,22 +752,22 @@ public abstract class eap<T extends c> extends com.taobao.android.detail.core.de
         } else if (sVar != null) {
             HashMap hashMap = new HashMap();
             hashMap.put(com.taobao.android.purchase.core.b.ACTIVITY_KEY_BIZ_TYPE, sVar.f11919a);
-            if (sVar.b != null && !TextUtils.isEmpty(sVar.b.f11925a)) {
+            if (sVar.b != null && !StringUtils.isEmpty(sVar.b.f11925a)) {
                 hashMap.put("templateItemName", sVar.b.f11925a);
-            } else if (cVar != null && cVar.d != null && !TextUtils.isEmpty(cVar.d.f9766a)) {
+            } else if (cVar != null && cVar.d != null && !StringUtils.isEmpty(cVar.d.f9766a)) {
                 hashMap.put("templateItemName", cVar.d.f9766a);
             }
             List<s.a> list = sVar.c;
             if (list != null) {
                 for (int i = 0; i < list.size(); i++) {
                     s.a aVar = list.get(i);
-                    if (!TextUtils.isEmpty(aVar.c)) {
+                    if (!StringUtils.isEmpty(aVar.c)) {
                         hashMap.put("featureType_" + i, aVar.c);
                     }
-                    if (!TextUtils.isEmpty(aVar.b)) {
+                    if (!StringUtils.isEmpty(aVar.b)) {
                         hashMap.put("serviceId_" + i, aVar.b);
                     }
-                    if (!TextUtils.isEmpty(aVar.e)) {
+                    if (!StringUtils.isEmpty(aVar.e)) {
                         hashMap.put("reason_" + i, aVar.e);
                     }
                     hashMap.put("code_" + i, String.valueOf(aVar.d));

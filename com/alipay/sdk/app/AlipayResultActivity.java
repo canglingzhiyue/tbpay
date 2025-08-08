@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -89,10 +89,10 @@ public class AlipayResultActivity extends Activity {
             if (b.a(stringExtra) == null) {
                 AFReportManager.getProvider().report(3001, "session is null");
                 finish();
-            } else if (TextUtils.equals("mqpSchemePay", stringExtra2)) {
+            } else if (StringUtils.equals("mqpSchemePay", stringExtra2)) {
                 a(stringExtra, bundleExtra);
             } else {
-                if ((TextUtils.isEmpty(stringExtra) || bundleExtra == null) && intent.getData() != null) {
+                if ((StringUtils.isEmpty(stringExtra) || bundleExtra == null) && intent.getData() != null) {
                     try {
                         JSONObject jSONObject2 = new JSONObject(new String(Base64.decode(intent.getData().getQuery(), 2), StandardCharsets.UTF_8));
                         jSONObject = jSONObject2.getJSONObject("result");
@@ -113,13 +113,13 @@ public class AlipayResultActivity extends Activity {
                         bundleExtra = bundle2;
                         Log.e("AlipayResultActivity", "retry exception", th);
                         AFReportManager.getProvider().report(3002, th.getMessage());
-                        if (TextUtils.isEmpty(stringExtra)) {
+                        if (StringUtils.isEmpty(stringExtra)) {
                         }
                         AFReportManager.getProvider().report(3001, "session or biz is null");
                         finish();
                     }
                 }
-                if (TextUtils.isEmpty(stringExtra) && bundleExtra != null) {
+                if (StringUtils.isEmpty(stringExtra) && bundleExtra != null) {
                     AFReportManager.getProvider().report(9000, icf.a.CONTROL_NAME_OK);
                     OpenAuthTask.returnResult(stringExtra, 9000, icf.a.CONTROL_NAME_OK, bundleExtra);
                     finish();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
 import com.taobao.android.fluid.core.FluidContext;
@@ -23,7 +23,7 @@ public final class sie {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2f940a57", new Object[]{fluidContext, sicVar, new Boolean(z)});
-        } else if ((TextUtils.equals(fluidContext.getInstanceConfig().getTab3CardType(), obw.TAB2_CONTAINER_TYPE_LIVE_LARGE) && !z) || !a() || sicVar == null) {
+        } else if ((StringUtils.equals(fluidContext.getInstanceConfig().getTab3CardType(), obw.TAB2_CONTAINER_TYPE_LIVE_LARGE) && !z) || !a() || sicVar == null) {
         } else {
             sicVar.S();
             sicVar.c(false);
@@ -45,7 +45,7 @@ public final class sie {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("39280405", new Object[]{fluidContext, snvVar, new Boolean(z)});
-        } else if (TextUtils.equals(fluidContext.getInstanceConfig().getTab3CardType(), obw.TAB2_CONTAINER_TYPE_LIVE_LARGE) && !z) {
+        } else if (StringUtils.equals(fluidContext.getInstanceConfig().getTab3CardType(), obw.TAB2_CONTAINER_TYPE_LIVE_LARGE) && !z) {
         } else {
             f.a(snvVar);
         }

@@ -6,7 +6,7 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -153,7 +153,7 @@ public class TBOrderWeexView extends VesselView {
         }
         hyn.a(TAG, "loadCard", "pageName =" + str, "url = " + str2, "md5 = " + str3);
         if (this.mNeedValidateMd5) {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = "NOT ALLOW EMPTY";
             }
             str4 = str3;
@@ -302,7 +302,7 @@ public class TBOrderWeexView extends VesselView {
             super.onLoadError(r6)
             r0 = 0
             java.lang.String r1 = r6.b
-            boolean r1 = android.text.TextUtils.isEmpty(r1)
+            boolean r1 = android.text.StringUtils.isEmpty(r1)
             r3 = -2147483648(0xffffffff80000000, float:-0.0)
             if (r1 != 0) goto L3b
             java.lang.String r1 = r6.b

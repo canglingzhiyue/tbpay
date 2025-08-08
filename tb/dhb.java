@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.tanx.exposer.b;
 import com.tanx.exposer.d;
@@ -46,7 +46,7 @@ public class dhb {
             while (keys.hasNext()) {
                 String next = keys.next();
                 String optString = jSONObject.optString(next);
-                if (!TextUtils.isEmpty(next) && !TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(next) && !StringUtils.isEmpty(optString)) {
                     str = str.replace(next, optString);
                 }
             }
@@ -67,7 +67,7 @@ public class dhb {
         while (keys.hasNext()) {
             String next = keys.next();
             Object opt = jSONObject.opt(next);
-            if (!TextUtils.isEmpty(next) && opt != null) {
+            if (!StringUtils.isEmpty(next) && opt != null) {
                 hashMap.put(next, opt);
             }
         }
@@ -79,16 +79,16 @@ public class dhb {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
-        if (!TextUtils.isEmpty(f26746a)) {
+        if (!StringUtils.isEmpty(f26746a)) {
             return f26746a;
         }
         b d = d.a().d();
         if (d == null) {
             return "";
         }
-        String b = TextUtils.isEmpty(d.i()) ? b(d.a().c()) : d.i();
-        String a2 = TextUtils.isEmpty(d.j()) ? a(d.a().c()) : d.j();
-        if (TextUtils.isEmpty(b) || TextUtils.isEmpty(a2)) {
+        String b = StringUtils.isEmpty(d.i()) ? b(d.a().c()) : d.i();
+        String a2 = StringUtils.isEmpty(d.j()) ? a(d.a().c()) : d.j();
+        if (StringUtils.isEmpty(b) || StringUtils.isEmpty(a2)) {
             return "";
         }
         f26746a = b + ";" + a2 + ";Android;" + Build.VERSION.RELEASE + ";" + Build.MODEL;

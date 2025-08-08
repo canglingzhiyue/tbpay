@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.io.SharedPreferencesUtils;
 import com.taobao.alimama.utils.c;
@@ -220,7 +220,7 @@ public class a {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{this, str, str2})).booleanValue();
         }
         try {
-            if (!c.r() || TextUtils.isEmpty(str2)) {
+            if (!c.r() || StringUtils.isEmpty(str2)) {
                 return false;
             }
             b();
@@ -256,7 +256,7 @@ public class a {
             return;
         }
         try {
-            if (!c.r() || !a(str) || TextUtils.isEmpty(str2)) {
+            if (!c.r() || !a(str) || StringUtils.isEmpty(str2)) {
                 return;
             }
             if (f8430a.size() > c) {
@@ -279,6 +279,6 @@ public class a {
         if (e.contains("all")) {
             return true;
         }
-        return !TextUtils.isEmpty(str) && e.contains(str);
+        return !StringUtils.isEmpty(str) && e.contains(str);
     }
 }

@@ -1,7 +1,7 @@
 package com.vivo.push.cache;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.vivo.push.util.ContextDelegate;
 import com.vivo.push.util.ad;
 import com.vivo.push.util.af;
@@ -35,7 +35,7 @@ public abstract class c<T> {
     }
 
     private void c(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             u.d("CacheSettings", "ClientManager init " + a() + " strApps empty.");
         } else if (str.length() > 10000) {
             u.d("CacheSettings", "sync " + a() + " strApps lenght too large");

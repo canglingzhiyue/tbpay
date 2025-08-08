@@ -1,7 +1,7 @@
 package com.taobao.homepage.page.weexv2;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
 import com.taobao.orange.OrangeConfig;
@@ -61,13 +61,13 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             e.e("WeexSecondFloorUtils", "targetUrl为空");
             return false;
         }
         Uri parse = Uri.parse(str);
         if (parse != null) {
-            return parse.isHierarchical() && (TextUtils.equals(parse.getQueryParameter("weex_mode"), "dom") || TextUtils.equals(parse.getQueryParameter("weex_mode"), KEY_MUS));
+            return parse.isHierarchical() && (StringUtils.equals(parse.getQueryParameter("weex_mode"), "dom") || StringUtils.equals(parse.getQueryParameter("weex_mode"), KEY_MUS));
         }
         e.e("WeexSecondFloorUtils", "uri == null");
         return false;

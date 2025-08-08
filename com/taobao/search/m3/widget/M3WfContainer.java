@@ -2,7 +2,7 @@ package com.taobao.search.m3.widget;
 
 import android.content.Context;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -317,7 +317,7 @@ public final class M3WfContainer extends BaseAuctionView {
         if (z) {
             getImagePic().setImageUrl("", bean.getWfRatio(), tbSearchStyle);
         } else {
-            if (!TextUtils.isEmpty(bean.getUprightImage())) {
+            if (!StringUtils.isEmpty(bean.getUprightImage())) {
                 picPath = bean.getUprightImage();
             } else {
                 picPath = bean.getPicPath();

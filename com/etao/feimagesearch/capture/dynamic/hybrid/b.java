@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -167,7 +167,7 @@ public final class b extends e {
         }
         p a2 = com.taobao.android.weex_framework.q.a().a(this.d);
         a(a2);
-        if (!TextUtils.isEmpty(ScreenType.a(v()))) {
+        if (!StringUtils.isEmpty(ScreenType.a(v()))) {
             a2.addInstanceEnv(com.etao.feimagesearch.p.KEY_SCREEN_STYLE, ScreenType.a(v()));
         }
         Activity activity = this.d;
@@ -383,7 +383,7 @@ public final class b extends e {
         }
         coy.a(com.etao.feimagesearch.structure.capture.a.f6987a, "loadTemplateWithCachedUrl", 19999, new String[0]);
         String a2 = com.etao.feimagesearch.capture.dynamic.templates.b.a(com.etao.feimagesearch.capture.dynamic.templates.b.b());
-        if (a2 == null || TextUtils.isEmpty(a2)) {
+        if (a2 == null || StringUtils.isEmpty(a2)) {
             a2 = com.etao.feimagesearch.config.b.dB();
         }
         cot.c(TAG, "loadTemplateWithCachedUrl " + a2);
@@ -404,7 +404,7 @@ public final class b extends e {
             cot.b(TAG, "mMuiseInstance is null");
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = com.etao.feimagesearch.config.b.dB();
         }
         String str2 = str;

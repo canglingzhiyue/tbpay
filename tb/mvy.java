@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.festival.FestivalMgr;
@@ -31,14 +31,14 @@ public class mvy extends fuf {
                 String obj = objArr[0].toString();
                 String obj2 = objArr[1].toString();
                 String obj3 = objArr.length > 2 ? objArr[2].toString() : null;
-                if (mxz.f31319a && this.c != null && System.currentTimeMillis() - this.d <= 1000 && TextUtils.equals(this.f31292a, obj) && TextUtils.equals(this.b, obj2)) {
+                if (mxz.f31319a && this.c != null && System.currentTimeMillis() - this.d <= 1000 && StringUtils.equals(this.f31292a, obj) && StringUtils.equals(this.b, obj2)) {
                     return this.c;
                 }
                 String a2 = FestivalMgr.a().a(obj, obj2);
                 this.f31292a = obj;
                 this.b = obj2;
                 this.d = System.currentTimeMillis();
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     this.c = obj3;
                     return obj3;
                 }

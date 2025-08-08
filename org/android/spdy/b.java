@@ -2,7 +2,7 @@ package org.android.spdy;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
@@ -53,12 +53,12 @@ public class b {
                 Context context = SpdyAgent.getContext();
                 if (sad.e() && context != null && (sharedPreferences = context.getSharedPreferences(sac.SP_NAME, 0)) != null) {
                     String string = sharedPreferences.getString(sac.TNET_TRUSTED_ROOT_CERT, "");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         spduLog.Tloge("tnetsdk.AndroidTrustAnchors", null, "root cert", string);
                         JSONArray jSONArray = new JSONArray(string);
                         for (int i = 0; i < jSONArray.length(); i++) {
                             String string2 = jSONArray.getString(i);
-                            if (!TextUtils.isEmpty(string2)) {
+                            if (!StringUtils.isEmpty(string2)) {
                                 this.c.add(new TrustAnchor((X509Certificate) certificateFactory.generateCertificate(new ByteArrayInputStream(string2.getBytes(StandardCharsets.ISO_8859_1))), null));
                             }
                         }

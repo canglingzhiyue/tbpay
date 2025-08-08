@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -104,7 +104,7 @@ public class cg {
 
         /* renamed from: a  reason: collision with other method in class */
         public boolean m1778a() {
-            return this.f162a == null || TextUtils.isEmpty(this.b) || this.f165a == null;
+            return this.f162a == null || StringUtils.isEmpty(this.b) || this.f165a == null;
         }
 
         public void b(Context context) {
@@ -114,7 +114,7 @@ public class cg {
         public final void run() {
             Context context;
             WeakReference<Context> weakReference = this.f165a;
-            if (weakReference == null || (context = weakReference.get()) == null || context.getFilesDir() == null || this.f162a == null || TextUtils.isEmpty(this.f164a)) {
+            if (weakReference == null || (context = weakReference.get()) == null || context.getFilesDir() == null || this.f162a == null || StringUtils.isEmpty(this.f164a)) {
                 return;
             }
             File file = new File(this.f164a);

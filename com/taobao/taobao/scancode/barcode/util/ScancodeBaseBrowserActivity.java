@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.WVUCWebViewClient;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -165,7 +165,7 @@ public abstract class ScancodeBaseBrowserActivity extends BaseActivity {
                     return ((Boolean) ipChange2.ipc$dispatch("dacf25f5", new Object[]{this, webView, str})).booleanValue();
                 }
                 try {
-                    if (TextUtils.equals(OrangeConfig.getInstance().getConfig("image_search", "disableProductCodeRedirect", "false"), "true")) {
+                    if (StringUtils.equals(OrangeConfig.getInstance().getConfig("image_search", "disableProductCodeRedirect", "false"), "true")) {
                         return j.a(ScancodeBaseBrowserActivity.this.getApplicationContext(), ScancodeBaseBrowserActivity.b(ScancodeBaseBrowserActivity.this)).a().a(str);
                     }
                     if (str != null && str.startsWith("http")) {
@@ -210,7 +210,7 @@ public abstract class ScancodeBaseBrowserActivity extends BaseActivity {
         this.c = c();
         getSupportActionBar().a(com.alibaba.ability.localization.b.a(R.string.taobao_app_1007_1_18633));
         try {
-            if (!TextUtils.isEmpty(this.c) && this.c.contains("setActionBarHide")) {
+            if (!StringUtils.isEmpty(this.c) && this.c.contains("setActionBarHide")) {
                 getSupportActionBar().e();
                 com.taobao.taobao.scancode.gateway.util.o.a("ScanBrowserActivity hide actionBar.url:" + this.c, new Object[0]);
             }

@@ -1,7 +1,7 @@
 package com.taobao.wireless.link.assistant.display;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -117,11 +117,11 @@ public class AssistantView extends LinearLayout {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d2221b56", new Object[]{new Integer(i), str, str2});
         } else if (i == 0) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 mTvBubbleText.setVisibility(0);
                 mTvBubbleText.setText(str);
             }
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             mIvCat.setStrategyConfig(ImageStrategyConfig.a("1111", "1111").a());

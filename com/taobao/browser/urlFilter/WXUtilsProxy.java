@@ -3,7 +3,7 @@ package com.taobao.browser.urlFilter;
 import android.app.Activity;
 import android.net.Uri;
 import android.taobao.util.a;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.utils.BrowserUtil;
 import com.taobao.browser.utils.b;
@@ -53,7 +53,7 @@ public class WXUtilsProxy {
                     str4 = str3;
                     str5 = str4;
                 }
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     WangxinControlerProxy.gotoWangxinChatWithFengliu(activity, str3, str4, str6, str5, null);
                     BrowserUtil.a("WXUtilsProxy", "parseWwURl", "wx_h5", str, null);
                     return true;
@@ -74,7 +74,7 @@ public class WXUtilsProxy {
             }
             String queryParameter4 = parse.getQueryParameter("item_num_id");
             String str10 = "toNick " + str2;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 WangxinControlerProxy.gotoWangxinChatWithFengliu(activity, str2, queryParameter4, queryParameter3, queryParameter2, null);
                 BrowserUtil.a("WXUtilsProxy", "parseWwURl", "wx_im", str, null);
                 return true;

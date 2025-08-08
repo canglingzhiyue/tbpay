@@ -1,6 +1,6 @@
 package com.taobao.android.goodprice.homepage.service.impl.bizservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import tb.kge;
@@ -28,6 +28,6 @@ public abstract class a {
     public boolean a(String str) {
         int length;
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : TextUtils.isEmpty(str) || (length = str.toCharArray().length) > this.f12712a || length < 5;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : StringUtils.isEmpty(str) || (length = str.toCharArray().length) > this.f12712a || length < 5;
     }
 }

@@ -1,7 +1,7 @@
 package com.taobao.taolive.room.controller2;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.security.realidentity.g4;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -72,7 +72,7 @@ public class t {
                     if (ipChange2 instanceof IpChange) {
                         return ((Boolean) ipChange2.ipc$dispatch("5ea65000", new Object[]{this, context, str6, str7, jSONObject})).booleanValue();
                     }
-                    if (TextUtils.equals("alive", str7)) {
+                    if (StringUtils.equals("alive", str7)) {
                         com.taobao.alilive.aliliveframework.frame.a a2 = com.taobao.taolive.room.utils.n.a();
                         if (a2 instanceof phq) {
                             phq phqVar = (phq) a2;
@@ -83,7 +83,7 @@ public class t {
                             }
                         }
                         return true;
-                    } else if (!TextUtils.equals("event", str7)) {
+                    } else if (!StringUtils.equals("event", str7)) {
                         return false;
                     } else {
                         com.taobao.alilive.aliliveframework.frame.a a3 = com.taobao.taolive.room.utils.n.a();
@@ -181,7 +181,7 @@ public class t {
             a("isUp", String.valueOf(poy.W(a2)));
             String T = poy.T(a2);
             a("entrySpm", String.valueOf(T));
-            if (!TextUtils.isEmpty(T) && (split = T.split("\\.")) != null && split.length >= 2) {
+            if (!StringUtils.isEmpty(T) && (split = T.split("\\.")) != null && split.length >= 2) {
                 a("entrySpmAB", split[0] + "." + split[1]);
             }
             a("entrySource", String.valueOf(poy.R(a2)));

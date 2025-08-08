@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.aura.source;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.umf.node.service.data.rule.RuleType;
@@ -78,7 +78,7 @@ public class a {
             Object next = it.next();
             if (next instanceof AURARenderComponent) {
                 aURARenderComponent = (AURARenderComponent) next;
-                if (TextUtils.equals(aURARenderComponent.key, jSONObject.getString("componentKey"))) {
+                if (StringUtils.equals(aURARenderComponent.key, jSONObject.getString("componentKey"))) {
                     break;
                 }
             }

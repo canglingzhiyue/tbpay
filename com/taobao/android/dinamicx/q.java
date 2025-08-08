@@ -11,7 +11,7 @@ public class q {
 
     /* renamed from: a  reason: collision with root package name */
     private bm f11917a;
-    private final Map<Float, Float> b = new ConcurrentHashMap(512);
+    final Map<Float, Float> b = new ConcurrentHashMap(512);
 
     static {
         kge.a(688485174);

@@ -1,6 +1,6 @@
 package com.alibaba.android.aura.datamodel.nextrpc;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -247,7 +247,7 @@ public class AURANextRPCEndpoint implements Serializable {
         } else if (map != null && !map.isEmpty()) {
             if (this.mDataParams != null) {
                 for (Map.Entry<String, String> entry : map.entrySet()) {
-                    if (!TextUtils.isEmpty(entry.getKey())) {
+                    if (!StringUtils.isEmpty(entry.getKey())) {
                         replaceMapValue(this.mDataParams, entry.getKey(), entry.getValue());
                     }
                 }

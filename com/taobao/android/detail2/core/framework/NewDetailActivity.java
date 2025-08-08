@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -432,7 +432,7 @@ public class NewDetailActivity extends AppCompatActivity implements a, j, o, com
                 fjp.a((a) this, "HPTargetType", (Object) extras.getString(DinamicxNativeConfig.TARGETTYPE));
                 fjp.a((a) this, "HPRequestND", (Object) extras.getString("requestNewDetailFlag"));
                 String string = extras.getString("requestNewDetailTime");
-                if (TextUtils.isEmpty(string)) {
+                if (StringUtils.isEmpty(string)) {
                     return;
                 }
                 fjp.a(this, fjp.SECTION_OPEN_IMMED_HP_TO_REAL_REQUEST, fkb.a(Long.parseLong(string)), "");

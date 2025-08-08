@@ -3,7 +3,7 @@ package com.alibaba.android.ultron.vfw.weex2.highPerformance.widget;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.Animation;
 import com.alibaba.android.ultron.vfw.weex2.UltronWeex2DialogFragment;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridPreRenderRecyclePolicy;
@@ -102,7 +102,7 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
         }
         if (reuseTradeHybridContainer() && (pageAllProperties = UTAnalytics.getInstance().getDefaultTracker().getPageAllProperties(getActivity())) != null && !pageAllProperties.isEmpty()) {
             String str = pageAllProperties.get("tradeHybridContainerSpmCnt");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "";
             }
             this.reusedContainerSpmCnt = str;
@@ -131,7 +131,7 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
             return;
         }
         String a2 = adh.a(this.mWeex2Url, "tradeHybridContainerSpmCnt");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         orNewUTPageStateObject.mSpmCnt = a2;
@@ -145,7 +145,7 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
             ipChange.ipc$dispatch("7ed0f9d9", new Object[]{this});
             return;
         }
-        if (reuseTradeHybridContainer() && (orNewUTPageStateObject = l.getInstance().getOrNewUTPageStateObject(getActivity())) != null && !TextUtils.isEmpty(this.reusedContainerSpmCnt)) {
+        if (reuseTradeHybridContainer() && (orNewUTPageStateObject = l.getInstance().getOrNewUTPageStateObject(getActivity())) != null && !StringUtils.isEmpty(this.reusedContainerSpmCnt)) {
             orNewUTPageStateObject.mSpmCnt = this.reusedContainerSpmCnt;
         }
         super.onDetach();
@@ -156,7 +156,7 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5cacafae", new Object[]{this});
-        } else if (TextUtils.equals(adh.a(this.mWeex2Url, "reuseTradeHybridContainer"), "true")) {
+        } else if (StringUtils.equals(adh.a(this.mWeex2Url, "reuseTradeHybridContainer"), "true")) {
         } else {
             super.dismissFragmentContainer();
         }
@@ -168,11 +168,11 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
         if (ipChange instanceof IpChange) {
             return (Animation) ipChange.ipc$dispatch("40dfa474", new Object[]{this, new Integer(i), new Boolean(z), new Integer(i2)});
         }
-        if (TextUtils.isEmpty(this.mWeex2Url)) {
+        if (StringUtils.isEmpty(this.mWeex2Url)) {
             return super.onCreateAnimation(i, z, i2);
         }
         Uri parse = Uri.parse(this.mWeex2Url);
-        if (TextUtils.equals(parse.getQueryParameter("skipEnterAnimation"), "true") || TextUtils.equals(parse.getQueryParameter("animated"), "NO") || reuseTradeHybridContainer()) {
+        if (StringUtils.equals(parse.getQueryParameter("skipEnterAnimation"), "true") || StringUtils.equals(parse.getQueryParameter("animated"), "NO") || reuseTradeHybridContainer()) {
             return null;
         }
         return super.onCreateAnimation(i, z, i2);
@@ -186,7 +186,7 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
             return;
         }
         com.alibaba.android.ultron.vfw.weex2.highPerformance.model.a c = this.mConfig.c(this.mWeex2Url);
-        if (c == null || TextUtils.isEmpty(c.e)) {
+        if (c == null || StringUtils.isEmpty(c.e)) {
             UnifyLog.d("UltronTradeHybridDialogFragment.doDestroy", "recyclePolicy invalid");
             destroyWeex2Instance();
             return;
@@ -266,7 +266,7 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("bba77783", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mWeex2Url)) {
+        } else if (StringUtils.isEmpty(this.mWeex2Url)) {
             String str = this.mWeex2Url;
             dsm.a(false, str, "OnError: mWeex2Url is empty, isFoldDevice: " + this.isFoldDevice);
         } else if (this.mWeex2Instance == null) {
@@ -282,10 +282,10 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
             }
             JSONObject jSONObject = new JSONObject();
             for (String str4 : queryParameterNames) {
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     String queryParameter = parse.getQueryParameter(str4);
-                    if (!TextUtils.isEmpty(queryParameter)) {
-                        if (TextUtils.equals(str4, "preRequestStorageKey")) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
+                        if (StringUtils.equals(str4, "preRequestStorageKey")) {
                             JSONObject a2 = this.mManager.c().a(queryParameter);
                             if (a2 == null) {
                                 a2 = new JSONObject();
@@ -309,7 +309,7 @@ public class UltronTradeHybridDialogFragment extends UltronWeex2DialogFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("621e8a39", new Object[]{this});
-        } else if (TextUtils.isEmpty(this.mWeex2Url)) {
+        } else if (StringUtils.isEmpty(this.mWeex2Url)) {
             jqg.a("UltronTradeHybridDialogFragment", "loadImmediateCreatedInstance", "mWeex2Url is empty");
         } else if (this.mWeex2Instance == null) {
             jqg.a("UltronTradeHybridDialogFragment", "loadImmediateCreatedInstance", "mWeex2Instance is null");

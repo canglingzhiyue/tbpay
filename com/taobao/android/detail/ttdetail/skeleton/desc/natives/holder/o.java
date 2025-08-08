@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -198,7 +198,7 @@ public class o extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         this.g.setScaleType(ImageView.ScaleType.FIT_XY);
         final TUrlImageView tUrlImageView = (TUrlImageView) this.g;
         if (com.taobao.android.detail.ttdetail.utils.j.aq()) {
-            tUrlImageView.setSkipAutoSize(!TextUtils.isEmpty(this.l) && this.l.toLowerCase().endsWith(".gif"));
+            tUrlImageView.setSkipAutoSize(!StringUtils.isEmpty(this.l) && this.l.toLowerCase().endsWith(".gif"));
         }
         if (!m.contains(Integer.valueOf(nVar.c.hashCode()))) {
             tUrlImageView.setFadeIn(true);
@@ -333,7 +333,7 @@ public class o extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("354dd1f8", new Object[]{this, nVar});
-        } else if (TextUtils.isEmpty(nVar.c)) {
+        } else if (StringUtils.isEmpty(nVar.c)) {
         } else {
             a2(nVar);
             this.g.setOnClickListener(this);
@@ -344,7 +344,7 @@ public class o extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
 
     public boolean d(com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel.n nVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("68fbfcbd", new Object[]{this, nVar})).booleanValue() : TextUtils.isEmpty(nVar.c);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("68fbfcbd", new Object[]{this, nVar})).booleanValue() : StringUtils.isEmpty(nVar.c);
     }
 
     private void c() {

@@ -1,6 +1,6 @@
 package com.taobao.mediaplay;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mediaplay.model.MediaLiveInfo;
 import com.taobao.mediaplay.model.PlayerQualityItem;
@@ -29,10 +29,10 @@ public class i {
             if (i == 1) {
                 for (int i2 = 0; i2 < mediaLiveInfo.liveUrlList.size(); i2++) {
                     QualityLiveItem qualityLiveItem = mediaLiveInfo.liveUrlList.get(i2);
-                    if (!TextUtils.isEmpty(qualityLiveItem.newDefinition)) {
+                    if (!StringUtils.isEmpty(qualityLiveItem.newDefinition)) {
                         for (int i3 = 0; i3 < list.size(); i3++) {
                             QualityLiveItem qualityLiveItem2 = list.get(i3);
-                            if (!TextUtils.isEmpty(qualityLiveItem2.newDefinition) && a(qualityLiveItem2, qualityLiveItem)) {
+                            if (!StringUtils.isEmpty(qualityLiveItem2.newDefinition) && a(qualityLiveItem2, qualityLiveItem)) {
                                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "updateMediaLiveInfo REPLACE_BY_URL_ID_OF_NEW_DEFINITION updateIndex=" + i3 + ", baseIndex=" + i2);
                                 qualityLiveItem.copy(qualityLiveItem2);
                             }
@@ -43,7 +43,7 @@ public class i {
                 LinkedList linkedList = new LinkedList();
                 for (int i4 = 0; i4 < list.size(); i4++) {
                     QualityLiveItem qualityLiveItem3 = list.get(i4);
-                    if (!TextUtils.isEmpty(qualityLiveItem3.newDefinition)) {
+                    if (!StringUtils.isEmpty(qualityLiveItem3.newDefinition)) {
                         int i5 = 0;
                         while (true) {
                             if (i5 >= mediaLiveInfo.liveUrlList.size()) {
@@ -88,7 +88,7 @@ public class i {
             return null;
         }
         String path = uri.getPath();
-        if (TextUtils.isEmpty(path) || (lastIndexOf = path.lastIndexOf(47)) < 0) {
+        if (StringUtils.isEmpty(path) || (lastIndexOf = path.lastIndexOf(47)) < 0) {
             return null;
         }
         return path.substring(lastIndexOf + 1);
@@ -99,19 +99,19 @@ public class i {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c0d24bee", new Object[]{qualityLiveItem, qualityLiveItem2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl) && !TextUtils.isEmpty(qualityLiveItem2.rtcLiveUrl)) {
+        if (!StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl) && !StringUtils.isEmpty(qualityLiveItem2.rtcLiveUrl)) {
             return a(qualityLiveItem.rtcLiveUrl, qualityLiveItem2.rtcLiveUrl);
         }
-        if (!TextUtils.isEmpty(qualityLiveItem.bfrtcUrl) && !TextUtils.isEmpty(qualityLiveItem2.bfrtcUrl)) {
+        if (!StringUtils.isEmpty(qualityLiveItem.bfrtcUrl) && !StringUtils.isEmpty(qualityLiveItem2.bfrtcUrl)) {
             return a(qualityLiveItem.bfrtcUrl, qualityLiveItem2.bfrtcUrl);
         }
         if (com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", "testEnFlv", "false"))) {
             return false;
         }
-        if (!TextUtils.isEmpty(qualityLiveItem.flvUrl) && !TextUtils.isEmpty(qualityLiveItem2.flvUrl)) {
+        if (!StringUtils.isEmpty(qualityLiveItem.flvUrl) && !StringUtils.isEmpty(qualityLiveItem2.flvUrl)) {
             return a(qualityLiveItem.flvUrl, qualityLiveItem2.flvUrl);
         }
-        if (!TextUtils.isEmpty(qualityLiveItem.hlsUrl) && !TextUtils.isEmpty(qualityLiveItem2.hlsUrl)) {
+        if (!StringUtils.isEmpty(qualityLiveItem.hlsUrl) && !StringUtils.isEmpty(qualityLiveItem2.hlsUrl)) {
             return a(qualityLiveItem.hlsUrl, qualityLiveItem2.hlsUrl);
         }
         return false;
@@ -122,10 +122,10 @@ public class i {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             String a2 = a(str);
             String a3 = a(str2);
-            if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(a3)) {
                 return a2.equals(a3);
             }
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import com.taobao.search.mmd.util.j;
@@ -39,7 +39,7 @@ public class npm extends npq {
             q.c(b, "获取utdid失败", th);
             str = "";
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a("utd_id", str);
         }
         a("ttid", TaoApplication.getTTID());

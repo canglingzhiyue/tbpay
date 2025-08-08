@@ -4,7 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.IBinder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -68,7 +68,7 @@ public class FakeServiceCenter {
         if (ipChange instanceof IpChange) {
             return (FakeService) ipChange.ipc$dispatch("5f6226ac", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (FakeService fakeService : this.b.values()) {
@@ -84,7 +84,7 @@ public class FakeServiceCenter {
         if (ipChange instanceof IpChange) {
             return (FakeService) ipChange.ipc$dispatch("7863784b", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.b.get(str);
         }
         return null;

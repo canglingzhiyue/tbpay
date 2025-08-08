@@ -2,7 +2,7 @@ package com.ut.mini.internal;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.analytics.AnalyticsMgr;
 import com.alibaba.analytics.core.logbuilder.g;
@@ -145,7 +145,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c43c267c", new Object[]{this, context, str, new Integer(i)});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             aqb.a(context, apb.TAG_STATIC_TNET_HOST_PORT, str + ":" + i);
         }
@@ -165,7 +165,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d921d4ca", new Object[]{this, context, str, new Integer(i)});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             aqb.a(context, i.TAG_TNET_HOST_PORT, str + ":" + i);
         }
@@ -185,7 +185,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("851b13d1", new Object[]{this, context, str, new Integer(i)});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             aqb.a(context, "utanalytics_tnet_host_port_ipv6", str + ":" + i);
         }
@@ -205,7 +205,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("934df3ca", new Object[]{this, context, str});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             aqb.a(context, com.alibaba.analytics.core.sync.c.TAG_HTTPS_HOST_PORT, str);
         }
@@ -225,7 +225,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f331c79a", new Object[]{this, context, str});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             aqb.a(context, "http_host", str);
         }
@@ -245,7 +245,7 @@ public class f {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1ce1b19c", new Object[]{this, context, str});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             aqb.a(context, g.TAG_TIME_ADJUST_HOST_PORT, str);
         }

@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.aura.observer;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -70,7 +70,7 @@ public class d extends c implements iyh.a {
             for (String str : keySet) {
                 if (!iok.KEY_PRICE_SECTION.equals(str) && !a.KEY_PROP_PATH.equals(str) && !"skuId".equals(str)) {
                     for (String str2 : a(c, str)) {
-                        if (!TextUtils.isEmpty(str2) && (a2 = a(Arrays.asList(str2), a3)) != null && a2.data != null && a2.data.fields != null && a(a2, str)) {
+                        if (!StringUtils.isEmpty(str2) && (a2 = a(Arrays.asList(str2), a3)) != null && a2.data != null && a2.data.fields != null && a(a2, str)) {
                             a2.data.fields.putAll(jSONObject.getJSONObject(str));
                             arrayList.add(a2);
                         }

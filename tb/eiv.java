@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.performance.e;
 import com.taobao.android.detail.core.performance.l;
@@ -35,7 +35,7 @@ public class eiv {
         i.c(l.a("PreloadTaskDataSource"), "更新数据源列表");
         PreloadTaskEntity parser = PreloadTaskEntity.parser(str);
         String str2 = parser.sourceFrom;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             i.a(l.a("PreloadTaskDataSource"), "sourceFrom is null");
         } else if (!e.a(str2)) {
             i.a(l.a("PreloadTaskDataSource"), "detailOpt is unEnable");
@@ -46,7 +46,7 @@ public class eiv {
                 return;
             }
             String str3 = parser.pageIndex;
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 i.a(l.a("PreloadTaskDataSource"), "preloadTaskEntity pageIndex is null");
                 return;
             }
@@ -74,9 +74,9 @@ public class eiv {
         i.c(l.a("PreloadTaskDataSource"), "清理数据源列表");
         PreloadTaskEntity parser = PreloadTaskEntity.parser(str);
         String str2 = parser.sourceFrom;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             i.a(l.a("PreloadTaskDataSource"), "sourceFrom is null");
-        } else if (TextUtils.isEmpty(parser.pageToken)) {
+        } else if (StringUtils.isEmpty(parser.pageToken)) {
             i.a(l.a("PreloadTaskDataSource"), "pageToken  is null");
         } else if (!e.a(str2)) {
             i.a(l.a("PreloadTaskDataSource"), "detailOpt is unEnable");

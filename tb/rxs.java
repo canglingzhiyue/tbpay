@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.MtopBusiness;
 import java.util.HashMap;
@@ -83,7 +83,7 @@ public class rxs implements rxm {
             }
             if (MtopMonitor.getHeaderMonitor() != null) {
                 String singleHeaderFieldByKey = HeaderHandlerUtil.getSingleHeaderFieldByKey(aVar.c.getHeaderFields(), HttpHeaderConstant.X_AB);
-                if (!TextUtils.isEmpty(singleHeaderFieldByKey)) {
+                if (!StringUtils.isEmpty(singleHeaderFieldByKey)) {
                     HashMap<String, String> hashMap2 = new HashMap<>();
                     hashMap2.put(HttpHeaderConstant.X_AB, singleHeaderFieldByKey);
                     hashMap2.put(IMtopMonitor.DATA_SEQ, aVar.h);

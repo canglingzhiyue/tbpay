@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import com.alibaba.ability.localization.b;
 import com.alibaba.ability.localization.constants.Language;
@@ -101,7 +101,7 @@ public class MtopInitializer implements Serializable {
                         return;
                     }
                     String q = l.q(context);
-                    if (TextUtils.isEmpty(q) || q.equals(MtopInitializer.access$000())) {
+                    if (StringUtils.isEmpty(q) || q.equals(MtopInitializer.access$000())) {
                         return;
                     }
                     MtopSetting.setParam("INNER", MtopParamType.HEADER, Constants.KEY_X_REGID, q);
@@ -129,7 +129,7 @@ public class MtopInitializer implements Serializable {
             mtopConfig.envMode = EnvModeEnum.TEST;
         } else if (i == 3) {
             mtopConfig.envMode = EnvModeEnum.TEST_SANDBOX;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 mtopConfig.registerMtopSdkProperty("mtopsdk.tb_eagleeyex_scm_project", str);
             }
         }
@@ -292,7 +292,7 @@ public class MtopInitializer implements Serializable {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("246661b", new Object[]{this, language, str});
-                } else if (MtopInitializer.access$200() != null && language != null && TextUtils.equals(MtopInitializer.access$200().getLanguage(), language.getLanguage())) {
+                } else if (MtopInitializer.access$200() != null && language != null && StringUtils.equals(MtopInitializer.access$200().getLanguage(), language.getLanguage())) {
                 } else {
                     MtopInitializer.access$202(language);
                     SwitchConfig.errorMappingMsgMap.put(ErrorConstant.ErrorMappingType.NETWORK_ERROR_MAPPING, b.a(R.string.taobao_app_1012_1_30273));
@@ -337,7 +337,7 @@ public class MtopInitializer implements Serializable {
             if (r0 == 0) goto L3e
             java.lang.String r0 = com.taobao.accs.utl.l.q(r6)
             com.taobao.android.middleware.compat.MtopInitializer.regId = r0
-            boolean r0 = android.text.TextUtils.isEmpty(r0)
+            boolean r0 = android.text.StringUtils.isEmpty(r0)
             if (r0 != 0) goto L3e
             java.lang.String r0 = com.taobao.android.middleware.compat.MtopInitializer.regId
             java.lang.String r1 = "INNER"

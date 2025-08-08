@@ -2,7 +2,7 @@ package com.alipay.mobile.common.rpc.transport.http;
 
 import android.content.Context;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.appinfo.AppInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorInfoUtil;
@@ -254,7 +254,7 @@ public class HttpCaller extends AbstractRpcCaller {
         }
         this.j = c();
         this.i = e();
-        if (!TextUtils.isEmpty(this.i)) {
+        if (!StringUtils.isEmpty(this.i)) {
             return this.i;
         }
         return this.j;
@@ -272,7 +272,7 @@ public class HttpCaller extends AbstractRpcCaller {
             return this.k.gwUrl;
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.MOBILEGW_URL);
-        if (!TextUtils.isEmpty(stringValue)) {
+        if (!StringUtils.isEmpty(stringValue)) {
             LogCatUtil.info("HttpCaller", "getRequestUrl.   config gw url: " + stringValue);
             return stringValue;
         }
@@ -282,7 +282,7 @@ public class HttpCaller extends AbstractRpcCaller {
                 return this.k.gwUrl;
             }
             String a2 = a(this.k.gwUrl);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 return a2;
             }
             LogCatUtil.info("HttpCaller", "getRequestUrl.  default gw url: " + this.k.gwUrl);
@@ -303,7 +303,7 @@ public class HttpCaller extends AbstractRpcCaller {
         }
         try {
             URI uri = new URI(str);
-            if (TextUtils.equals(uri.getScheme(), "https") && uri.getHost().endsWith("alipay.net")) {
+            if (StringUtils.equals(uri.getScheme(), "https") && uri.getHost().endsWith("alipay.net")) {
                 String str2 = k.HTTP_PREFIX + uri.getHost() + uri.getPath();
                 LogCatUtil.info("HttpCaller", "getRequestUrl.   " + uri + " replace to " + str2);
                 return str2;
@@ -396,24 +396,24 @@ public class HttpCaller extends AbstractRpcCaller {
             httpUrlRequest.setHeader(new BasicHeader("clientId", DeviceInfoUtil.getClientId()));
             httpUrlRequest.setHeader(new BasicHeader("TRACKERID", AppInfoUtil.getTrackerID()));
             RpcSignUtil.SignData signData = getSignData();
-            if (signData != null && !TextUtils.isEmpty(signData.sign) && signData.signType != -1) {
+            if (signData != null && !StringUtils.isEmpty(signData.sign) && signData.signType != -1) {
                 httpUrlRequest.setHeader(new BasicHeader("signType", String.valueOf(signData.signType)));
             }
         } else {
             f(httpUrlRequest);
             String deviceId = DeviceInfoUtil.getDeviceId();
-            if (!TextUtils.isEmpty(deviceId)) {
+            if (!StringUtils.isEmpty(deviceId)) {
                 httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_DID, deviceId));
             }
             httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_VERSION, "2"));
             httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_OPERATION_TYPE, this.mOperationType));
             httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_TS, this.c));
             httpUrlRequest.setHeader(new BasicHeader("Content-Type", this.mContentType));
-            if (!TextUtils.isEmpty(this.f)) {
+            if (!StringUtils.isEmpty(this.f)) {
                 httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_SENCE, this.f));
             }
             RpcSignUtil.SignData signData2 = getSignData();
-            if (signData2 != null && !TextUtils.isEmpty(signData2.sign)) {
+            if (signData2 != null && !StringUtils.isEmpty(signData2.sign)) {
                 httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_SIGN, signData2.sign));
                 if (signData2.signType != -1) {
                     httpUrlRequest.setHeader(new BasicHeader("signType", String.valueOf(signData2.signType)));
@@ -429,11 +429,11 @@ public class HttpCaller extends AbstractRpcCaller {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4e7f791f", new Object[]{this, httpUrlRequest});
-        } else if (!TextUtils.isEmpty(this.k.appId)) {
+        } else if (!StringUtils.isEmpty(this.k.appId)) {
             httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_APPID, this.k.appId));
         } else {
             String appIdForMPaaS = AppInfoUtil.getAppIdForMPaaS();
-            if (!TextUtils.isEmpty(appIdForMPaaS)) {
+            if (!StringUtils.isEmpty(appIdForMPaaS)) {
                 httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_APPID, appIdForMPaaS));
                 return;
             }
@@ -459,7 +459,7 @@ public class HttpCaller extends AbstractRpcCaller {
             }
             if (TransportConfigureManager.getInstance().equalsString(TransportConfigureItem.ALIPAY_CLIENT_VERSION, "T")) {
                 String productVersion = AppInfoUtil.getProductVersion();
-                if (!TextUtils.isEmpty(productVersion)) {
+                if (!StringUtils.isEmpty(productVersion)) {
                     httpUrlRequest.setHeader(new BasicHeader("clientVersion", productVersion));
                 }
             }
@@ -467,7 +467,7 @@ public class HttpCaller extends AbstractRpcCaller {
                 return;
             }
             String lastUserId = UserInfoUtil.getLastUserId();
-            if (TextUtils.isEmpty(lastUserId)) {
+            if (StringUtils.isEmpty(lastUserId)) {
                 return;
             }
             httpUrlRequest.setHeader(new BasicHeader("userId", lastUserId));
@@ -509,12 +509,12 @@ public class HttpCaller extends AbstractRpcCaller {
                 httpUrlRequest.addHeader(new BasicHeader(entry2.getKey(), entry2.getValue()));
             }
         }
-        if (!TextUtils.isEmpty(this.k.workspaceId)) {
+        if (!StringUtils.isEmpty(this.k.workspaceId)) {
             httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_WORKSPACE_ID, this.k.workspaceId));
             return;
         }
         String workspaceIdForMPaaS = AppInfoUtil.getWorkspaceIdForMPaaS();
-        if (TextUtils.isEmpty(workspaceIdForMPaaS)) {
+        if (StringUtils.isEmpty(workspaceIdForMPaaS)) {
             return;
         }
         httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_WORKSPACE_ID, workspaceIdForMPaaS));
@@ -603,7 +603,7 @@ public class HttpCaller extends AbstractRpcCaller {
 
     public boolean isRpcVersion2() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("414315e0", new Object[]{this})).booleanValue() : TextUtils.equals(this.e, "2");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("414315e0", new Object[]{this})).booleanValue() : StringUtils.equals(this.e, "2");
     }
 
     public void setScene(String str) {
@@ -655,19 +655,19 @@ public class HttpCaller extends AbstractRpcCaller {
             return "";
         }
         String str = this.mOperationType;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.CDN_APIS);
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             return "";
         }
         String stringValue2 = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.CDN_URL);
-        if (TextUtils.isEmpty(stringValue2)) {
+        if (StringUtils.isEmpty(stringValue2)) {
             return "";
         }
         for (String str2 : stringValue.split(",")) {
-            if (TextUtils.equals(str, str2)) {
+            if (StringUtils.equals(str, str2)) {
                 LogCatUtil.info("HttpCaller", "Modify gw url to cdn url. operationType=[" + str + "], cdnUrl=[" + stringValue2 + riy.ARRAY_END_STR);
                 return stringValue2;
             }
@@ -693,7 +693,7 @@ public class HttpCaller extends AbstractRpcCaller {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3855fb23", new Object[]{this, httpUrlRequest});
-        } else if (TextUtils.isEmpty(this.i)) {
+        } else if (StringUtils.isEmpty(this.i)) {
         } else {
             httpUrlRequest.addTags(TransportConstants.KEY_FORCE_HTTP, "true");
             try {
@@ -702,7 +702,7 @@ public class HttpCaller extends AbstractRpcCaller {
                     HttpDns.HttpdnsIP ipInfoByHost = AlipayHttpDnsClient.getDnsClient().getIpInfoByHost(url.getHost());
                     if (ipInfoByHost != null) {
                         String ip = ipInfoByHost.getIp();
-                        if (!TextUtils.isEmpty(ip)) {
+                        if (!StringUtils.isEmpty(ip)) {
                             httpUrlRequest.setHeader(new BasicHeader("backend", ip));
                             return;
                         }
@@ -751,7 +751,7 @@ public class HttpCaller extends AbstractRpcCaller {
         }
         if (this.k.shortOnly) {
             httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_PARAM_SHORTLINK_ONLY, "1"));
-            if (!TextUtils.isEmpty(this.k.getShortLinkIPList())) {
+            if (!StringUtils.isEmpty(this.k.getShortLinkIPList())) {
                 httpUrlRequest.setHeader(new BasicHeader(HeaderConstant.HEADER_KEY_PARAM_SHORTLINK_IPLIST, this.k.getShortLinkIPList()));
             }
         }

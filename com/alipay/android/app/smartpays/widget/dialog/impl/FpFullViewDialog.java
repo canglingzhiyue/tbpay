@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -176,7 +176,7 @@ public class FpFullViewDialog implements IHardwarePayDialog {
                 linearLayout.requestFocus();
                 linearLayout.requestFocusFromTouch();
                 this.d = (TextView) linearLayout.findViewById(this.f4429a.getId("safepay_fpfullview_dialog_tips"));
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     this.d.setText(this.f4429a.getId("safepay_fp_open"));
                 } else {
                     this.d.setText(str);
@@ -287,7 +287,7 @@ public class FpFullViewDialog implements IHardwarePayDialog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e3228a9", new Object[]{this, str, new Integer(i), new Integer(i2)});
-        } else if (this.d == null || TextUtils.isEmpty(str)) {
+        } else if (this.d == null || StringUtils.isEmpty(str)) {
         } else {
             this.d.postDelayed(new Runnable() { // from class: com.alipay.android.app.smartpays.widget.dialog.impl.FpFullViewDialog.6
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -486,7 +486,7 @@ public class FpFullViewDialog implements IHardwarePayDialog {
             return ((Boolean) ipChange.ipc$dispatch("56c6c6c", new Object[]{this})).booleanValue();
         }
         try {
-            return TextUtils.equals(Build.MANUFACTURER.toLowerCase(), "oppo");
+            return StringUtils.equals(Build.MANUFACTURER.toLowerCase(), "oppo");
         } catch (Throwable th) {
             LogUtils.printExceptionStackTrace(th);
             return false;

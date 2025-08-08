@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -65,10 +65,10 @@ public class ShowTplStore extends LocalEventStore {
                 MspWindowFrame mspWindowFrame2 = new MspWindowFrame();
                 mspWindowFrame2.setStatisticEvent(this.f);
                 mspWindowFrame2.setTplId(string);
-                if (!TextUtils.isEmpty(string2)) {
+                if (!StringUtils.isEmpty(string2)) {
                     mspWindowFrame2.setTplString(new String(Base64.decode(string2, 2)));
                 }
-                mspWindowFrame2.setTemplateContentData(!TextUtils.isEmpty(string3) ? JSON.parseObject(new String(Base64.decode(string3, 2))) : new JSONObject());
+                mspWindowFrame2.setTemplateContentData(!StringUtils.isEmpty(string3) ? JSON.parseObject(new String(Base64.decode(string3, 2))) : new JSONObject());
                 mspWindowFrame2.setNoBackTag(Integer.parseInt(string4));
                 mspWindowFrame2.setWindowType(11);
                 if (this.c == null || (frameStack = this.c.getFrameStack()) == null) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.i;
@@ -123,7 +123,7 @@ public class jxc extends a {
         if (ipChange instanceof IpChange) {
             return (CharSequence) ipChange.ipc$dispatch("20819ec6", new Object[]{this});
         }
-        if (TextUtils.isEmpty(j())) {
+        if (StringUtils.isEmpty(j())) {
             b(i);
         }
         return super.m();

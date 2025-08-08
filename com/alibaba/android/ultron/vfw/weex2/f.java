@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.vfw.weex2;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -99,16 +99,16 @@ public class f {
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.texture);
         } else if (c == 1) {
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.surface);
-        } else if (TextUtils.equals(adh.a(str2, "renderMode"), UltronTradeHybridInstanceRenderMode.SURFACE)) {
+        } else if (StringUtils.equals(adh.a(str2, "renderMode"), UltronTradeHybridInstanceRenderMode.SURFACE)) {
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.surface);
         } else {
             mUSInstanceConfig.f(false);
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.texture);
         }
         String a2 = adh.a(str2, "wx_opaque");
-        if (TextUtils.equals(a2, "0")) {
+        if (StringUtils.equals(a2, "0")) {
             mUSInstanceConfig.f(false);
-        } else if (TextUtils.equals(a2, "1")) {
+        } else if (StringUtils.equals(a2, "1")) {
             mUSInstanceConfig.f(true);
         }
         mUSInstanceConfig.a(new com.taobao.android.weex_framework.f() { // from class: com.alibaba.android.ultron.vfw.weex2.f.1
@@ -187,16 +187,16 @@ public class f {
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.texture);
         } else if (c == 1) {
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.surface);
-        } else if (TextUtils.equals(adh.a(str, "renderMode"), UltronTradeHybridInstanceRenderMode.SURFACE)) {
+        } else if (StringUtils.equals(adh.a(str, "renderMode"), UltronTradeHybridInstanceRenderMode.SURFACE)) {
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.surface);
         } else {
             mUSInstanceConfig.f(false);
             mUSInstanceConfig.a(MUSInstanceConfig.RenderMode.texture);
         }
         String a2 = adh.a(str, "wx_opaque");
-        if (TextUtils.equals(a2, "0")) {
+        if (StringUtils.equals(a2, "0")) {
             mUSInstanceConfig.f(false);
-        } else if (TextUtils.equals(a2, "1")) {
+        } else if (StringUtils.equals(a2, "1")) {
             mUSInstanceConfig.f(true);
         }
         mUSInstanceConfig.a(new com.taobao.android.weex_framework.f() { // from class: com.alibaba.android.ultron.vfw.weex2.f.3
@@ -224,7 +224,7 @@ public class f {
                 }
             }
         });
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             mUSInstanceConfig.c(str);
         }
         return q.a().a(context, mUSInstanceConfig);
@@ -269,16 +269,16 @@ public class f {
                 weexUnicornConfig.a(WeexUnicornConfig.RenderMode.texture);
             } else if (c == 1) {
                 weexUnicornConfig.a(WeexUnicornConfig.RenderMode.surface);
-            } else if (TextUtils.equals(adh.a(str, "renderMode"), UltronTradeHybridInstanceRenderMode.SURFACE)) {
+            } else if (StringUtils.equals(adh.a(str, "renderMode"), UltronTradeHybridInstanceRenderMode.SURFACE)) {
                 weexUnicornConfig.a(WeexUnicornConfig.RenderMode.surface);
             } else {
                 weexUnicornConfig.a(true);
                 weexUnicornConfig.a(WeexUnicornConfig.RenderMode.texture);
             }
             String a2 = adh.a(str, "wx_opaque");
-            if (TextUtils.equals(a2, "0")) {
+            if (StringUtils.equals(a2, "0")) {
                 weexUnicornConfig.a(true);
-            } else if (TextUtils.equals(a2, "1")) {
+            } else if (StringUtils.equals(a2, "1")) {
                 weexUnicornConfig.a(false);
             }
             com.taobao.android.weex.config.b bVar = new com.taobao.android.weex.config.b();

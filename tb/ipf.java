@@ -3,7 +3,7 @@ package tb;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -201,7 +201,7 @@ public class ipf extends k {
                 this.l.set(false);
                 JSONObject jSONObject3 = jSONObject.getJSONObject("img");
                 String string = jSONObject3.getString("url");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     this.f.put(str + "_img", string);
                 }
                 JSONArray jSONArray = jSONObject3.getJSONArray(AnimConstance.VIEW_ANIM_KEY_URLS);

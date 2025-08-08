@@ -1,6 +1,6 @@
 package com.taobao.vpm.pixai;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.vpm.VPMAdapterManager;
 import com.taobao.vpm.module.AlgLogParams;
@@ -27,16 +27,16 @@ public class PixAICommit extends rim {
             }
             new HashMap();
             Map<String, String> mapParams = renderLogParams.getMapParams();
-            if (!TextUtils.isEmpty(str) && str != null) {
+            if (!StringUtils.isEmpty(str) && str != null) {
                 mapParams.put("appName", str);
             }
-            if (!TextUtils.isEmpty(str2) && str2 != null) {
+            if (!StringUtils.isEmpty(str2) && str2 != null) {
                 mapParams.put("scene", str2);
             }
-            if (!TextUtils.isEmpty(str3) && str3 != null) {
+            if (!StringUtils.isEmpty(str3) && str3 != null) {
                 mapParams.put("renderName", str3);
             }
-            if (!TextUtils.isEmpty(str4) && str4 != null) {
+            if (!StringUtils.isEmpty(str4) && str4 != null) {
                 mapParams.put("token", str4);
             }
             if (map != null) {
@@ -62,13 +62,13 @@ public class PixAICommit extends rim {
             }
             new HashMap();
             Map<String, String> mapParams = algLogParams.getMapParams();
-            if (!TextUtils.isEmpty(str) && str != null) {
+            if (!StringUtils.isEmpty(str) && str != null) {
                 mapParams.put("scene", str);
             }
-            if (!TextUtils.isEmpty(str2) && str2 != null) {
+            if (!StringUtils.isEmpty(str2) && str2 != null) {
                 mapParams.put("renderName", str2);
             }
-            if (!TextUtils.isEmpty(str3) || str3 != null) {
+            if (!StringUtils.isEmpty(str3) || str3 != null) {
                 mapParams.put("token", str3);
             }
             if (map != null) {

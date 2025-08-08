@@ -3,7 +3,7 @@ package com.alibaba.android.ultron.vfw.weex2;
 import android.content.Context;
 import android.net.Uri;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -92,7 +92,7 @@ public class g extends com.alibaba.android.ultron.vfw.viewholder.b implements bm
         this.c = iDMComponent;
         String a2 = i.a(iDMComponent);
         this.g = a2;
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             i.a(this.e, this.c);
             UnifyLog.d("Weex2ViewHolder.onBindData", "url is empty");
             return;
@@ -430,7 +430,7 @@ public class g extends com.alibaba.android.ultron.vfw.viewholder.b implements bm
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f3a64c25", new Object[]{str})).intValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0;
         }
         char c = 65535;

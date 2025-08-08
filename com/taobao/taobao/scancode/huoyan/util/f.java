@@ -1,6 +1,6 @@
 package com.taobao.taobao.scancode.huoyan.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.k;
@@ -55,7 +55,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return str;
         }
         return a(k.HTTPS_PREFIX + str3 + str.substring(str.indexOf(str2) + str2.length(), str.length()), "xdomain=" + str2);

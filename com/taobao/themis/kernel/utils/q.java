@@ -1,7 +1,7 @@
 package com.taobao.themis.kernel.utils;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,13 +32,13 @@ public final class q {
         try {
             String queryParameter = addUtParamOnUri.getQueryParameter(aw.PARAM_UT_PARAMS);
             JSONObject jSONObject2 = new JSONObject();
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 jSONObject2 = JSON.parseObject(queryParameter);
                 kotlin.jvm.internal.q.b(jSONObject2, "JSON.parseObject(utParam)");
             }
             String c = instance.c();
             kotlin.jvm.internal.q.b(c, "instance.spmOri");
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 jSONObject2.put((JSONObject) "spm_ori", c);
             }
             if (o.b(instance)) {

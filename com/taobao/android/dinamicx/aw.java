@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -151,7 +151,7 @@ public class aw extends m {
                 fux.b(" getTemplateWT DX_LOAD_WT_ERROR_400016");
                 return null;
             } else if (a(c)) {
-                if (c.g == null || TextUtils.isEmpty(c.g.f11934a)) {
+                if (c.g == null || StringUtils.isEmpty(c.g.f11934a)) {
                     c.g = fwj.a().d(this.f11887a, c);
                 }
                 if (c.g == null) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.webkit.WebView;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -30,7 +30,7 @@ public class mnc extends mnb {
         }
         WebView webView = (WebView) view;
         String url = webView.getUrl();
-        if (!TextUtils.equals(this.f31129a, url)) {
+        if (!StringUtils.equals(this.f31129a, url)) {
             this.f31129a = url;
             return 0;
         }

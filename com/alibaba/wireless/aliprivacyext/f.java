@@ -3,7 +3,7 @@ package com.alibaba.wireless.aliprivacyext;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -236,7 +236,7 @@ public class f {
             return ((Number) ipChange.ipc$dispatch("8123ad04", new Object[]{str, new Integer(i)})).intValue();
         }
         try {
-            return TextUtils.isEmpty(str) ? i : Integer.parseInt(str);
+            return StringUtils.isEmpty(str) ? i : Integer.parseInt(str);
         } catch (Exception e) {
             com.alibaba.wireless.aliprivacy.c.b("CommonUtils", "strToInt error", e);
             return i;
@@ -249,7 +249,7 @@ public class f {
             return ((Number) ipChange.ipc$dispatch("88097ea8", new Object[]{str})).longValue();
         }
         long j = 0;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return 0L;
         }
         int length = str.length();

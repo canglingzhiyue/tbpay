@@ -2,7 +2,7 @@ package com.taobao.android.detail.wrapper.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.utils.i;
@@ -51,7 +51,7 @@ public class DetailFloatActivity extends FragmentActivity {
         if (!com.taobao.android.detail.wrapper.ext.uikit.b.a(this.f11099a)) {
             StringBuilder sb = new StringBuilder();
             sb.append("type is invalid ");
-            sb.append(TextUtils.isEmpty(this.f11099a) ? "null" : this.f11099a);
+            sb.append(StringUtils.isEmpty(this.f11099a) ? "null" : this.f11099a);
             a(sb.toString());
         } else if (com.taobao.android.detail.wrapper.ext.uikit.b.a(this, getIntent())) {
             finish();
@@ -71,10 +71,10 @@ public class DetailFloatActivity extends FragmentActivity {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             i.a(TAG, str);
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             com.taobao.android.msoa.c.a().b(this.b, "0", ERROR_MSG, null);
         }
         finish();

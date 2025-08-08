@@ -1,7 +1,7 @@
 package com.taobao.android.share.resource;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -97,12 +97,12 @@ public class a {
         ArrayList arrayList = new ArrayList();
         arrayList.add("https://web.m.taobao.com/app/message-social-front/share-panel/N4");
         arrayList.add("https://web.m.taobao.com/app/message-social-front/share-back/home");
-        if (!TextUtils.isEmpty(config)) {
+        if (!StringUtils.isEmpty(config)) {
             try {
                 List<ShareZCacheConfig> parseArray = JSON.parseArray(config, ShareZCacheConfig.class);
                 if (parseArray != null) {
                     for (ShareZCacheConfig shareZCacheConfig : parseArray) {
-                        if (!TextUtils.isEmpty(shareZCacheConfig.zcacheurl)) {
+                        if (!StringUtils.isEmpty(shareZCacheConfig.zcacheurl)) {
                             arrayList.add(shareZCacheConfig.zcacheurl);
                         }
                     }

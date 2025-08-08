@@ -1,7 +1,7 @@
 package com.taobao.login4android.ui.oversea;
 
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -439,7 +439,7 @@ public class OverseaLoginFragment extends RecommendLoginFragment {
         this.mRegionTV.setVisibility(loginModeState.regionTVVisibility);
         String str2 = "";
         if (loginModeState == LoginModeState.LOCATION) {
-            if (!TextUtils.isEmpty(this.mOriginUserInput)) {
+            if (!StringUtils.isEmpty(this.mOriginUserInput)) {
                 this.mLoginAccountET.setText(this.mOriginUserInput);
                 this.mLoginAccountET.setSelection(this.mOriginUserInput.length());
             }
@@ -457,7 +457,7 @@ public class OverseaLoginFragment extends RecommendLoginFragment {
                 this.mLoginAccountET.setInputType(1);
             }
             if (this.mTipsTV != null) {
-                if (this.mLoginFlowReturnData != null && !TextUtils.isEmpty(this.mLoginFlowReturnData.maskMobile)) {
+                if (this.mLoginFlowReturnData != null && !StringUtils.isEmpty(this.mLoginFlowReturnData.maskMobile)) {
                     this.mTipsTV.setVisibility(0);
                     this.mRegionTV.setVisibility(8);
                     TextView textView = this.mTipsTV;
@@ -495,7 +495,7 @@ public class OverseaLoginFragment extends RecommendLoginFragment {
         }
         this.mRecommendLoginNextBtn.setText(loginModeState.loginBtnText);
         if (this.supportOverseaSimLogin || LoginModeState.SMS_LOGIN.name().equals(this.paramModeState) || LoginModeState.PASSWORD.name().equals(this.paramModeState)) {
-            if (TextUtils.equals(LoginModeState.SMS_LOGIN.name(), loginModeState.name())) {
+            if (StringUtils.equals(LoginModeState.SMS_LOGIN.name(), loginModeState.name())) {
                 this.mRecommendLoginNextBtn.setText(R.string.aliuser_confirm);
             }
             ArrayList arrayList = new ArrayList();
@@ -545,11 +545,11 @@ public class OverseaLoginFragment extends RecommendLoginFragment {
         } else if (this.mAvailableLoginModes.size() == 2 && this.mCurrentLoginModeState != LoginModeState.SIM_LOGIN) {
             if (loginModeState != LoginModeState.LOCATION) {
                 for (String str : this.mAvailableLoginModes) {
-                    if (!TextUtils.equals(loginModeState.name(), str)) {
+                    if (!StringUtils.equals(loginModeState.name(), str)) {
                         final LoginModeState valueOf2 = LoginModeState.valueOf(str);
                         if (valueOf2.loginModeName > 0) {
                             this.mLeftFuncTV.setVisibility(0);
-                            if (TextUtils.equals(valueOf2.name(), LoginModeState.SMS_LOGIN.name())) {
+                            if (StringUtils.equals(valueOf2.name(), LoginModeState.SMS_LOGIN.name())) {
                                 this.mLeftFuncTV.setText(R.string.aliuser_login_sms_login_oversea);
                             } else {
                                 this.mLeftFuncTV.setText(valueOf2.loginModeName);

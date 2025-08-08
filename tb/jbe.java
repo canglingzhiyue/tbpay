@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.d;
@@ -105,7 +105,7 @@ public class jbe {
                 return;
             }
             File file = new File(jar.a().getFilesDir(), "ex_thread_pool.txt");
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 file.delete();
                 return;
             }

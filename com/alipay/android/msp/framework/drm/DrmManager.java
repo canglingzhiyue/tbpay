@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.drm;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -87,13 +87,13 @@ public class DrmManager {
         } else if (jSONObject == null) {
         } else {
             String string = jSONObject.getString("msp_switch");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             JSONObject parseObject = JSON.parseObject(string);
             JSONObject jSONObject2 = parseObject.getJSONObject("content");
             String string2 = parseObject.getString(MspDBHelper.RecordEntry.COLUMN_NAME_VERSION);
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 onUpdate(jSONObject2, string2);
             }
         }
@@ -124,7 +124,7 @@ public class DrmManager {
             return (String) ipChange.ipc$dispatch("2a8fef97", new Object[]{this});
         }
         if (!this.gc.a()) {
-            str = TextUtils.isEmpty(this.gb) ? FactoryType.TYPE_INVALID : this.gb;
+            str = StringUtils.isEmpty(this.gb) ? FactoryType.TYPE_INVALID : this.gb;
         } else {
             this.gc.update();
             this.mMspSwitch = new JSONObject();
@@ -143,7 +143,7 @@ public class DrmManager {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7967812a", new Object[]{this, str, new Boolean(z), context})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 String r = r(str);
                 if (r != null) {
@@ -168,7 +168,7 @@ public class DrmManager {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("1fd7de9e", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String r = r(str);
@@ -186,7 +186,7 @@ public class DrmManager {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4daa017e", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String r = r(str);
@@ -205,7 +205,7 @@ public class DrmManager {
                 GlobalHelper.getInstance().init(context);
             }
             String utdid = GlobalHelper.getInstance().getUtdid(context);
-            if (!TextUtils.isEmpty(utdid)) {
+            if (!StringUtils.isEmpty(utdid)) {
                 String replaceAll = utdid.replaceAll("=", "");
                 if (replaceAll.length() >= 5) {
                     replaceAll = replaceAll.substring(0, 5);
@@ -261,7 +261,7 @@ public class DrmManager {
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return PhoneCashierMspEngine.getMspWallet().getWalletConfig("MQP_".concat(String.valueOf(str)));
             }
             return null;

@@ -1,7 +1,7 @@
 package com.taobao.android.ultron.tracker;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
 import com.ut.mini.internal.UTOriginalCustomHitBuilder;
@@ -41,9 +41,9 @@ public class a {
             ipChange.ipc$dispatch("ed94cf40", new Object[]{str, new Integer(i), str2, str3, map});
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = l.getInstance().getCurrentPageName();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
         }

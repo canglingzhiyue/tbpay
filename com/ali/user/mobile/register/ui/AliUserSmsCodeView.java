@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.KeyEvent;
@@ -379,7 +379,7 @@ public class AliUserSmsCodeView extends View {
             return ((Boolean) ipChange.ipc$dispatch("52f6c589", new Object[]{this, new Integer(i), new Integer(i2), keyEvent})).booleanValue();
         }
         String characters = keyEvent.getCharacters();
-        if (!TextUtils.isEmpty(characters) && TextUtils.isDigitsOnly(characters)) {
+        if (!StringUtils.isEmpty(characters) && StringUtils.isDigitsOnly(characters)) {
             this.mTextBuilder.append(characters);
             OnTextChangedListener onTextChangedListener = this.mOnTextChangedListener;
             if (onTextChangedListener != null) {

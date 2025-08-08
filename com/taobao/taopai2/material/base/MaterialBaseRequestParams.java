@@ -1,6 +1,6 @@
 package com.taobao.taopai2.material.base;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import mtopsdk.mtop.domain.MethodEnum;
@@ -123,6 +123,6 @@ public abstract class MaterialBaseRequestParams implements b, Serializable {
 
     public static String adjustBizParam(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("578a6e26", new Object[]{str}) : TextUtils.isEmpty(str) ? "taopai" : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("578a6e26", new Object[]{str}) : StringUtils.isEmpty(str) ? "taopai" : str;
     }
 }

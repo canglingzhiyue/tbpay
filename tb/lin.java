@@ -2,7 +2,7 @@ package tb;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -112,12 +112,12 @@ public class lin {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("4269ea91", new Object[]{this, liaVar, str})).intValue();
         }
-        if (liaVar == null || TextUtils.isEmpty(str) || (b = liaVar.b()) == null) {
+        if (liaVar == null || StringUtils.isEmpty(str) || (b = liaVar.b()) == null) {
             return -1;
         }
         for (int i = 0; i < b.size(); i++) {
             BaseSectionModel baseSectionModel = b.get(i);
-            if (baseSectionModel != null && TextUtils.equals(str, baseSectionModel.getSectionBizCode())) {
+            if (baseSectionModel != null && StringUtils.equals(str, baseSectionModel.getSectionBizCode())) {
                 return i;
             }
         }

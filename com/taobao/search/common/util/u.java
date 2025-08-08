@@ -1,7 +1,7 @@
 package com.taobao.search.common.util;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.ut.abtest.UTABTest;
 import com.alibaba.ut.abtest.Variation;
@@ -65,12 +65,12 @@ public class u {
 
     public static boolean e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidSRPSearchBarTagStyle"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidSRPSearchBarTagStyle"));
     }
 
     public static boolean f() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : !TextUtils.isEmpty(a("tbAndroidMetaSearchEnabledV3"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5b2e1f1", new Object[0])).booleanValue() : !StringUtils.isEmpty(a("tbAndroidMetaSearchEnabledV3"));
     }
 
     public static boolean g() {
@@ -83,17 +83,17 @@ public class u {
         if (bool != null && bool.booleanValue()) {
             return false;
         }
-        return TextUtils.equals("enable", a("tbAndroidLoadMoreWhenAttached"));
+        return StringUtils.equals("enable", a("tbAndroidLoadMoreWhenAttached"));
     }
 
     public static boolean h() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidSrpHeaderResuse"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidSrpHeaderResuse"));
     }
 
     public static boolean k() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidTrimMemory"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5f95776", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidTrimMemory"));
     }
 
     public static boolean m() {
@@ -102,7 +102,7 @@ public class u {
             return ((Boolean) ipChange.ipc$dispatch("6158678", new Object[0])).booleanValue();
         }
         if (Build.VERSION.SDK_INT > 23) {
-            return TextUtils.equals("enable", a("tbAndroidRecycleNodeWhenPageLeave"));
+            return StringUtils.equals("enable", a("tbAndroidRecycleNodeWhenPageLeave"));
         }
         return false;
     }
@@ -113,27 +113,27 @@ public class u {
             return (String) ipChange.ipc$dispatch("b4719ea", new Object[0]);
         }
         String a2 = a("tbAndroidDynamicCardScene");
-        return TextUtils.isEmpty(a2) ? com.taobao.search.sf.realtimetag.data.b.APP_ID_VALUE : a2;
+        return StringUtils.isEmpty(a2) ? com.taobao.search.sf.realtimetag.data.b.APP_ID_VALUE : a2;
     }
 
     public static boolean r() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65bfbfd", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidNewSubscribe"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("65bfbfd", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidNewSubscribe"));
     }
 
     public static boolean v() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6945a01", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidEventBusReset"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6945a01", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidEventBusReset"));
     }
 
     public static boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidReplaceM3"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidReplaceM3"));
     }
 
     public static boolean d() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue() : TextUtils.equals("enable", b("tbAndroidKeepColdLaunchLink"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue() : StringUtils.equals("enable", b("tbAndroidKeepColdLaunchLink"));
     }
 
     private static void l() {
@@ -144,7 +144,7 @@ public class u {
         } else if (f19045a != null) {
         } else {
             DowngradeStrategy downgradeStrategy = Downgrade.getInstance().getDowngradeStrategy("search");
-            if (downgradeStrategy != null && TextUtils.equals("degrade", downgradeStrategy.getTacticsPerformance())) {
+            if (downgradeStrategy != null && StringUtils.equals("degrade", downgradeStrategy.getTacticsPerformance())) {
                 z = true;
             }
             f19045a = Boolean.valueOf(z);
@@ -158,22 +158,22 @@ public class u {
 
     public static boolean j() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5eb3ff5", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidSrpAsyncLoadV2"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5eb3ff5", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidSrpAsyncLoadV2"));
     }
 
     public static boolean p() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("63fccfb", new Object[0])).booleanValue() : TextUtils.equals("enable", b("tbAndroidFeedbackHideCard"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("63fccfb", new Object[0])).booleanValue() : StringUtils.equals("enable", b("tbAndroidFeedbackHideCard"));
     }
 
     public static boolean t() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6782aff", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidNewVoiceSearchEnabled"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6782aff", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidNewVoiceSearchEnabled"));
     }
 
     public static boolean b() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidTB2024StyleV2"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidTB2024StyleV2"));
     }
 
     public static boolean n() {
@@ -182,9 +182,9 @@ public class u {
             return ((Boolean) ipChange.ipc$dispatch("6239df9", new Object[0])).booleanValue();
         }
         if (SearchSdk.sRainbowInited) {
-            return TextUtils.equals("enable", a("tbAndroidSearchDoorFirstScreen"));
+            return StringUtils.equals("enable", a("tbAndroidSearchDoorFirstScreen"));
         }
-        return TextUtils.equals(w(), "enable");
+        return StringUtils.equals(w(), "enable");
     }
 
     private static String w() {
@@ -210,11 +210,11 @@ public class u {
 
     public static boolean s() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("66a137e", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidi18Preload"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("66a137e", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidi18Preload"));
     }
 
     public static boolean u() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6864280", new Object[0])).booleanValue() : TextUtils.equals("enable", a("tbAndroidWeakNetworkPerf"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("6864280", new Object[0])).booleanValue() : StringUtils.equals("enable", a("tbAndroidWeakNetworkPerf"));
     }
 }

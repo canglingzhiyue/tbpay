@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.a;
 import com.alibaba.android.split.j;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -63,7 +63,7 @@ public class bgz {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[]{this});
         }
-        if (TextUtils.isEmpty(this.d)) {
+        if (StringUtils.isEmpty(this.d)) {
             try {
                 this.b.v();
             } catch (IOException e) {
@@ -81,7 +81,7 @@ public class bgz {
         bgu bguVar = this.f;
         bguVar.d("SplitFileSyncer", "LastestAppVersion:" + b.a().h() + "-------" + str);
         if (b.a().h().contains(str)) {
-            if (TextUtils.isEmpty(this.d)) {
+            if (StringUtils.isEmpty(this.d)) {
                 this.d = str;
                 return true;
             } else if (this.d.equals(str)) {

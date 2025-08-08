@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.launch.turbo.profile.TurboBoot;
 import com.taobao.android.launch.turbo.profile.i;
@@ -50,7 +50,7 @@ public class gst {
             try {
                 PackageInfo packageInfo = application.getPackageManager().getPackageInfo(application.getPackageName(), 0);
                 int i = packageInfo.versionCode;
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = packageInfo.versionName;
                 }
                 boolean a2 = guc.a(application, "invokedAsFinish");

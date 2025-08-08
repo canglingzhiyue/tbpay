@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -92,7 +92,7 @@ public abstract class bdr implements bdu {
         }
         for (int i = 0; i < list.size(); i++) {
             IDMComponent iDMComponent = list.get(i);
-            if (TextUtils.equals(iDMComponent.getTag(), a())) {
+            if (StringUtils.equals(iDMComponent.getTag(), a())) {
                 pair = new Pair<>(iDMComponent, Integer.valueOf(i));
             }
         }

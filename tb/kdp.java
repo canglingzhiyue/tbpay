@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.d;
 import com.taobao.bootimage.linked.b;
@@ -55,7 +55,7 @@ public class kdp {
             kej.a("AdColdStartBizService", "startLinkedSplashAnimator, coldStartInfo == null");
             return new a(false, aVar);
         } else {
-            if (!TextUtils.equals(kdtVar.f29996a.getLinkedDataType(), "popView")) {
+            if (!StringUtils.equals(kdtVar.f29996a.getLinkedDataType(), "popView")) {
                 boolean d = h.b(this.f29986a).d();
                 kej.a("AdColdStartBizService", "LinkedSplashCooperator,  非 pop isShouldShow = " + d);
                 if (!d) {
@@ -65,7 +65,7 @@ public class kdp {
             boolean z2 = kdtVar.b != null && kdtVar.b.animation;
             kej.a("AdColdStartBizService", "LinkedSplashCooperator, shouldDoAnimation : " + z2);
             String a3 = a(str);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 kej.a("AdColdStartBizService", "LinkedSplashCooperator, return, convertFromAction failed, closeType = " + str);
                 return new a(false, aVar);
             }

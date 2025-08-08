@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.dynamicFeature.model.a;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
@@ -132,7 +132,7 @@ public class aar implements aap {
             return;
         }
         for (String str : list) {
-            if (!TextUtils.isEmpty(str) && (a2 = a(str)) != null) {
+            if (!StringUtils.isEmpty(str) && (a2 = a(str)) != null) {
                 a key = a2.getKey();
                 abb.c(key);
                 abb.e(key);
@@ -159,7 +159,7 @@ public class aar implements aap {
             return;
         }
         for (String str3 : list) {
-            if (!TextUtils.isEmpty(str3) && (a2 = a(str3)) != null) {
+            if (!StringUtils.isEmpty(str3) && (a2 = a(str3)) != null) {
                 a key = a2.getKey();
                 abb.a(key, str, str2);
                 abc.a(key, str, str2);
@@ -181,12 +181,12 @@ public class aar implements aap {
         if (ipChange instanceof IpChange) {
             return (Map.Entry) ipChange.ipc$dispatch("4ac2b4f9", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         for (Map.Entry<a, CopyOnWriteArrayList<aas>> entry : this.c.entrySet()) {
             a key = entry.getKey();
-            if (key != null && TextUtils.equals(key.f2138a, str)) {
+            if (key != null && StringUtils.equals(key.f2138a, str)) {
                 return entry;
             }
         }

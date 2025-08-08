@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -154,7 +154,7 @@ public class b {
 
     private static boolean f(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(Uri.parse(str).getScheme());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("669e4a7b", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(Uri.parse(str).getScheme());
     }
 
     private static String g(String str) {
@@ -162,7 +162,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("14a6f7e8", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR)) {
+        if (StringUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR)) {
             return str;
         }
         return HTTPS_SCHEMA + str;
@@ -196,11 +196,11 @@ public class b {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("1a00ca85", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return c.DEFAULT_URL;
         }
         Uri parse = Uri.parse(str);
-        if (!TextUtils.isEmpty(parse.getQueryParameter(WX_TPL))) {
+        if (!StringUtils.isEmpty(parse.getQueryParameter(WX_TPL))) {
             Uri.Builder buildUpon = Uri.parse(parse.getQueryParameter(WX_TPL)).buildUpon();
             Set<String> queryParameterNames = parse.getQueryParameterNames();
             if (queryParameterNames != null && queryParameterNames.size() > 0) {
@@ -211,7 +211,7 @@ public class b {
                 }
             }
             return buildUpon.toString();
-        } else if (TextUtils.equals("true", parse.getQueryParameter("wh_weex"))) {
+        } else if (StringUtils.equals("true", parse.getQueryParameter("wh_weex"))) {
             return parse.toString();
         } else {
             return null;
@@ -223,11 +223,11 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Uri parse = Uri.parse(str);
-        return parse.isHierarchical() && !TextUtils.isEmpty(parse.getQueryParameter(str2));
+        return parse.isHierarchical() && !StringUtils.isEmpty(parse.getQueryParameter(str2));
     }
 
     private static boolean k(String str) {
@@ -235,7 +235,7 @@ public class b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d99648c0", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (!f(str)) {
@@ -251,7 +251,7 @@ public class b {
             return (String) ipChange.ipc$dispatch("1a4c023", new Object[]{map});
         }
         String str = (map == null || map.isEmpty()) ? "" : (String) map.get("bundleUrl");
-        return TextUtils.isEmpty(str) ? c.DEFAULT_URL : str;
+        return StringUtils.isEmpty(str) ? c.DEFAULT_URL : str;
     }
 
     public static boolean a(Context context) {

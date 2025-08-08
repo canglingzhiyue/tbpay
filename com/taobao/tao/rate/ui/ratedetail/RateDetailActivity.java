@@ -2,7 +2,7 @@ package com.taobao.tao.rate.ui.ratedetail;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -61,11 +61,11 @@ public class RateDetailActivity extends CustomBaseActivity {
         }
         super.onCreate(bundle);
         tmw.a(getClass().getName());
-        if (getIntent() != null && getIntent().getData() != null && !TextUtils.isEmpty(getIntent().getData().getQueryParameter("rateId"))) {
+        if (getIntent() != null && getIntent().getData() != null && !StringUtils.isEmpty(getIntent().getData().getQueryParameter("rateId"))) {
             String queryParameter = getIntent().getData().getQueryParameter("rateId");
             boolean a2 = a.a();
             String g = b.g();
-            if (a2 && !TextUtils.isEmpty(g)) {
+            if (a2 && !StringUtils.isEmpty(g)) {
                 Nav from = Nav.from(this);
                 from.toUri(g + queryParameter);
             } else {

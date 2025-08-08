@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.codetrack.sdk.assets.AssetsDelegate;
@@ -42,9 +42,9 @@ public class dta implements dtc.a {
         JSONObject b = b();
         if (b != null) {
             for (String str : b.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     String string = b.getString(str);
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         String[] split = string.split(SymbolExpUtil.SYMBOL_VERTICALBAR);
                         if (split.length > 0) {
                             ArrayList arrayList = new ArrayList();

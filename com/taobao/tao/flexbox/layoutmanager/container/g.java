@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.container;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.Kb;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.lang.reflect.InvocationTargetException;
@@ -108,7 +108,7 @@ public class g {
                 return null;
             }
             String queryParameter = parse.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_LOCAL_VERSION);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return null;
             }
             return queryParameter;
@@ -125,7 +125,7 @@ public class g {
                 return null;
             }
             String queryParameter = parse.getQueryParameter(com.taobao.tao.flexbox.layoutmanager.container.a.CONFIG_LOCAL_PATH);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return null;
             }
             return queryParameter;
@@ -147,7 +147,7 @@ public class g {
                             break;
                         }
                         Map.Entry<String, a> next = it.next();
-                        if (TextUtils.equals(next.getKey(), b2)) {
+                        if (StringUtils.equals(next.getKey(), b2)) {
                             a value = next.getValue();
                             c = a(c(value.c), value.f20260a, value.b, false);
                             c = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().D().a(c, str);
@@ -166,7 +166,7 @@ public class g {
             return (String) ipChange.ipc$dispatch("aff6e538", new Object[0]);
         }
         for (Map.Entry<String, a> entry : b.entrySet()) {
-            if (TextUtils.equals(entry.getKey(), TAB2_VIDEO_LINK)) {
+            if (StringUtils.equals(entry.getKey(), TAB2_VIDEO_LINK)) {
                 a value = entry.getValue();
                 return a(c(value.c), value.f20260a, value.b, false);
             }
@@ -181,7 +181,7 @@ public class g {
             return;
         }
         String str2 = c;
-        if (str2 == null || str == null || !TextUtils.equals(oec.c(oec.d(str2)), oec.c(oec.d(str)))) {
+        if (str2 == null || str == null || !StringUtils.equals(oec.c(oec.d(str2)), oec.c(oec.d(str)))) {
             return;
         }
         c = null;
@@ -216,11 +216,11 @@ public class g {
         }
         ohg a2 = ohg.a();
         String a3 = a2.a(str2, substring + "_redirectkey", (String) null);
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             return str;
         }
         String queryParameter = uri.getQueryParameter(a3);
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return str;
         }
         String replace = str.replace(substring, substring + "_" + queryParameter);
@@ -250,14 +250,14 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (b) ipChange.ipc$dispatch("44be4b4e", new Object[]{uri, str, new Boolean(z), new Boolean(z2)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new b(str, str, str, false);
         }
         int indexOf = str.indexOf("?");
         String str7 = null;
         if (indexOf > 0) {
             str2 = str.substring(0, indexOf);
-            if (TextUtils.equals(str2, GUANGGUANG_SHORT_LINK)) {
+            if (StringUtils.equals(str2, GUANGGUANG_SHORT_LINK)) {
                 str2 = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().D().b(uri != null ? uri.toString() : null, str2);
             }
             str3 = str.substring(indexOf + 1);
@@ -292,8 +292,8 @@ public class g {
         }
         String c2 = c(a(uri, str6, str4));
         if (aVar != null) {
-            if (TextUtils.equals(str5, GUANGGUANG_SHORT_LINK) || TextUtils.equals(str5, TAB2_VIDEO_LINK)) {
-                if (!z2 || !TextUtils.equals(str5, TAB2_VIDEO_LINK)) {
+            if (StringUtils.equals(str5, GUANGGUANG_SHORT_LINK) || StringUtils.equals(str5, TAB2_VIDEO_LINK)) {
+                if (!z2 || !StringUtils.equals(str5, TAB2_VIDEO_LINK)) {
                     if (uri != null) {
                         str7 = uri.toString();
                     }
@@ -304,7 +304,7 @@ public class g {
             } else {
                 a2 = a(c2, str4, aVar.b, z);
             }
-            if (TextUtils.isEmpty(a2) || c2.equals(a2)) {
+            if (StringUtils.isEmpty(a2) || c2.equals(a2)) {
                 ogg.c("TPU", "打底映射获取短链失败, 入参url:" + str + "  返回:" + a2);
                 return new b(str2, c2, str, false);
             } else if (aVar.d != null && !a2.startsWith("null")) {
@@ -312,7 +312,7 @@ public class g {
             }
         } else {
             a2 = a(c2, str4, (String) null, z);
-            if (TextUtils.isEmpty(a2) || c2.equals(a2)) {
+            if (StringUtils.isEmpty(a2) || c2.equals(a2)) {
                 ogg.c("TPU", "获取短链失败, 入参url:" + str + "  返回:" + a2);
                 return new b(str2, c2, str, false);
             }

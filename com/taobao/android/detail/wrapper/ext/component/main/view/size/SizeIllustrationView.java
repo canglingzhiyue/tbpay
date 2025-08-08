@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.component.main.view.size;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -63,10 +63,10 @@ public class SizeIllustrationView extends LinearLayout implements b {
             ipChange.ipc$dispatch("6d1025f3", new Object[]{this, sizeChart});
         } else if (sizeChart == null) {
             setVisibility(8);
-        } else if (TextUtils.isEmpty(sizeChart.sketchMap)) {
+        } else if (StringUtils.isEmpty(sizeChart.sketchMap)) {
             setVisibility(8);
         } else {
-            this.mTvTitle.setText(TextUtils.isEmpty(sizeChart.picTitle) ? "" : sizeChart.picTitle);
+            this.mTvTitle.setText(StringUtils.isEmpty(sizeChart.picTitle) ? "" : sizeChart.picTitle);
             epm epmVar = new epm(-1, -1);
             epmVar.d = true;
             this.imageLoaderDecor.a(this.mImageView, sizeChart.sketchMap, epmVar, this);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.mtop.wvplugin.a;
@@ -157,12 +157,12 @@ public class oik implements oiq {
         ShareData shareData = new ShareData();
         shareData.setBusinessId(j.businessId);
         shareData.setTitle(j.title);
-        if (j.extraParams != null && !TextUtils.isEmpty(j.extraParams.get("bizType"))) {
+        if (j.extraParams != null && !StringUtils.isEmpty(j.extraParams.get("bizType"))) {
             shareData.setBizType(j.extraParams.get("bizType"));
         }
         shareData.setText(j.description);
         shareData.setSourceType(j.shareScene);
-        if (!TextUtils.isEmpty(j.imgPath)) {
+        if (!StringUtils.isEmpty(j.imgPath)) {
             shareData.setImagePath(j.imgPath);
             j.imageUrl = j.imgPath;
             shareData.setSourceType("");
@@ -171,7 +171,7 @@ public class oik implements oiq {
             shareData.setLink(j.url);
         }
         shareData.setUserInfo(j.activityParams);
-        if (!TextUtils.isEmpty(j.imageUrl)) {
+        if (!StringUtils.isEmpty(j.imageUrl)) {
             if (j.imageUrl.startsWith(k.HTTP_PREFIX) || j.imageUrl.startsWith(k.HTTPS_PREFIX)) {
                 shareData.setImageUrl(j.imageUrl);
             } else {
@@ -179,7 +179,7 @@ public class oik implements oiq {
             }
         } else if (ShareTargetType.Share2SinaWeibo.getValue().equals(str)) {
             String f = obi.b.f();
-            if (TextUtils.isEmpty(f)) {
+            if (StringUtils.isEmpty(f)) {
                 f = nym.a().getString(R.string.share_weibo_default_image);
             }
             j.imageUrl = f;
@@ -195,7 +195,7 @@ public class oik implements oiq {
             return;
         }
         b.a(str);
-        if (ShareTargetType.Share2Wangxin.getValue().equals(str) && (shareData.getType() == ShareData.MessageType.TEXT || TextUtils.equals("item", e.b().c()))) {
+        if (ShareTargetType.Share2Wangxin.getValue().equals(str) && (shareData.getType() == ShareData.MessageType.TEXT || StringUtils.equals("item", e.b().c()))) {
             shareData.setText(shareData.getLink());
             shareData.setImagePath(null);
             shareData.setImageUrl(null);
@@ -215,14 +215,14 @@ public class oik implements oiq {
             return ((Boolean) ipChange.ipc$dispatch("5a3dc131", new Object[]{this, shareData, str})).booleanValue();
         }
         SharePlatform b = b.b(str);
-        if (SharePlatform.Other.equals(b) || !ShareApi.getInstance().supportImageShare(b) || !TextUtils.isEmpty(shareData.getImagePath()) || TextUtils.isEmpty(shareData.getImageUrl())) {
+        if (SharePlatform.Other.equals(b) || !ShareApi.getInstance().supportImageShare(b) || !StringUtils.isEmpty(shareData.getImagePath()) || StringUtils.isEmpty(shareData.getImageUrl())) {
             return false;
         }
         if (ShareTargetType.Share2SinaWeibo.getValue().equals(str) || ShareTargetType.Share2Weixin.getValue().equals(str) || ShareTargetType.Share2WeixinTimeline.getValue().equals(str)) {
             a(str, shareData);
         } else {
             String decideUrl = ImageStrategyDecider.decideUrl(shareData.getImageUrl(), 100, 100, ImageStrategyConfig.a("default", 67).a());
-            if (!TextUtils.isEmpty(decideUrl)) {
+            if (!StringUtils.isEmpty(decideUrl)) {
                 shareData.setImageUrl(decideUrl);
             }
             a(str, shareData);

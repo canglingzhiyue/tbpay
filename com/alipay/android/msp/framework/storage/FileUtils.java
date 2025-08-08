@@ -1,7 +1,7 @@
 package com.alipay.android.msp.framework.storage;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.encrypt.EncryptUtil;
 import com.alipay.android.msp.framework.encrypt.TriDesCBC;
 import com.alipay.android.msp.framework.helper.GlobalHelper;
@@ -26,7 +26,7 @@ public class FileUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("257656f1", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         byte[] digest = MessageDigest.getInstance("MD5").digest(str.getBytes("UTF-8"));
@@ -107,7 +107,7 @@ public class FileUtils {
             boolean r8 = r8.booleanValue()
             return r8
         L1c:
-            boolean r0 = android.text.TextUtils.isEmpty(r8)
+            boolean r0 = android.text.StringUtils.isEmpty(r8)
             if (r0 == 0) goto L23
             return r3
         L23:
@@ -136,7 +136,7 @@ public class FileUtils {
             java.io.FileOutputStream r6 = new java.io.FileOutputStream     // Catch: java.lang.Throwable -> L9a
             r6.<init>(r8, r3)     // Catch: java.lang.Throwable -> L9a
             r5.<init>(r6)     // Catch: java.lang.Throwable -> L9a
-            boolean r8 = android.text.TextUtils.equals(r9, r0)     // Catch: java.lang.Throwable -> L93
+            boolean r8 = android.text.StringUtils.equals(r9, r0)     // Catch: java.lang.Throwable -> L93
             if (r8 == 0) goto L62
             byte[] r8 = r9.getBytes()     // Catch: java.lang.Throwable -> L93
             r5.write(r8)     // Catch: java.lang.Throwable -> L93
@@ -306,7 +306,7 @@ public class FileUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("602541f1", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return new File(str).exists();
         }
         return false;
@@ -314,7 +314,7 @@ public class FileUtils {
 
     public static boolean delete(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ea815e00", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && delete(new File(str));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("ea815e00", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && delete(new File(str));
     }
 
     public static boolean delete(File file) {
@@ -337,7 +337,7 @@ public class FileUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("c1aa3527", new Object[]{str, list})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         File file = new File(str);

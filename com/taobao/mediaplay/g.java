@@ -1,7 +1,7 @@
 package com.taobao.mediaplay;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.security.realidentity.g4;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -196,7 +196,7 @@ public class g {
             ipChange.ipc$dispatch("e1d4dae9", new Object[]{this, qualityLiveItem});
             return;
         }
-        if (!TextUtils.isEmpty(qualityLiveItem.unitType) && qualityLiveItem.unitType.startsWith("sub_")) {
+        if (!StringUtils.isEmpty(qualityLiveItem.unitType) && qualityLiveItem.unitType.startsWith("sub_")) {
             try {
                 i = Integer.parseInt(qualityLiveItem.unitType.substring(4));
             } catch (NumberFormatException unused) {
@@ -291,7 +291,7 @@ public class g {
                     return;
                 }
             }
-            if ((!TextUtils.isEmpty(this.h.mVideoId) && equals) || this.h.mTBLive) {
+            if ((!StringUtils.isEmpty(this.h.mVideoId) && equals) || this.h.mTBLive) {
                 if (!equals && !this.h.mTBLive) {
                     return;
                 }
@@ -369,17 +369,17 @@ public class g {
         }
         a(this.h.mMediaLiveInfo, z, i);
         String a2 = com.taobao.taobaoavsdk.util.f.a(MediaAdapteManager.mMediaNetworkUtilsAdapter, this.h.mContext);
-        if (((MediaAdapteManager.mConfigAdapter != null && !TextUtils.isEmpty(this.h.getVideoUrl()) && !this.h.getVideoUrl().contains(".m3u8") && this.h.mTBLive && this.h.getVideoUrl().contains("liveng.alicdn.com") && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "lowDeviceSVCEnable", "false"))) && this.h.mMediaLiveInfo.mMediaConfigData != null && this.h.mMediaLiveInfo.mMediaConfigData.enableSVC(this.h.getFrom())) && ((!this.h.isLiveRoom() && com.taobao.taobaoavsdk.util.b.a(this.h.getFrom(), MediaAdapteManager.mConfigAdapter.getConfig("MediaLive", "SVCFromWhiteList", ""), "ALL_FROM")) || (this.h.isLiveRoom() && !TextUtils.isEmpty(a2) && ("low".equals(this.h.getDevicePerformanceLevel()) || a2.equals("3G") || a2.equals("2G") || (this.h.getNetSpeed() > 0 && ((("WIFI".equals(a2) && this.h.getNetSpeed() <= 1500) || (("4G".equals(a2) || "5G".equals(a2)) && this.h.getNetSpeed() <= 2000)) && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "lowNetSpeedSVCEnable", "false")))))))) {
+        if (((MediaAdapteManager.mConfigAdapter != null && !StringUtils.isEmpty(this.h.getVideoUrl()) && !this.h.getVideoUrl().contains(".m3u8") && this.h.mTBLive && this.h.getVideoUrl().contains("liveng.alicdn.com") && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "lowDeviceSVCEnable", "false"))) && this.h.mMediaLiveInfo.mMediaConfigData != null && this.h.mMediaLiveInfo.mMediaConfigData.enableSVC(this.h.getFrom())) && ((!this.h.isLiveRoom() && com.taobao.taobaoavsdk.util.b.a(this.h.getFrom(), MediaAdapteManager.mConfigAdapter.getConfig("MediaLive", "SVCFromWhiteList", ""), "ALL_FROM")) || (this.h.isLiveRoom() && !StringUtils.isEmpty(a2) && ("low".equals(this.h.getDevicePerformanceLevel()) || a2.equals("3G") || a2.equals("2G") || (this.h.getNetSpeed() > 0 && ((("WIFI".equals(a2) && this.h.getNetSpeed() <= 1500) || (("4G".equals(a2) || "5G".equals(a2)) && this.h.getNetSpeed() <= 2000)) && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "lowNetSpeedSVCEnable", "false")))))))) {
             this.h.mSVCEnable = true;
         }
-        if ((this.h.isMute() && MediaAdapteManager.mConfigAdapter != null && !TextUtils.isEmpty(this.h.getVideoUrl()) && !this.h.getVideoUrl().contains(".m3u8") && this.h.mTBLive && this.h.getVideoUrl().contains("liveng.alicdn.com")) && this.h.mMediaLiveInfo.mMediaConfigData != null && this.h.mMediaLiveInfo.mMediaConfigData.enableOnlyVideo(this.h.getFrom())) {
+        if ((this.h.isMute() && MediaAdapteManager.mConfigAdapter != null && !StringUtils.isEmpty(this.h.getVideoUrl()) && !this.h.getVideoUrl().contains(".m3u8") && this.h.mTBLive && this.h.getVideoUrl().contains("liveng.alicdn.com")) && this.h.mMediaLiveInfo.mMediaConfigData != null && this.h.mMediaLiveInfo.mMediaConfigData.enableOnlyVideo(this.h.getFrom())) {
             z2 = true;
         }
-        if (z2 && !TextUtils.isEmpty(this.h.getFrom()) && !this.h.isLiveRoom() && com.taobao.taobaoavsdk.util.b.a(this.h.getFrom(), MediaAdapteManager.mConfigAdapter.getConfig("MediaLive", "OnlyVideoFromWhiteList", ""), "ALL_FROM")) {
+        if (z2 && !StringUtils.isEmpty(this.h.getFrom()) && !this.h.isLiveRoom() && com.taobao.taobaoavsdk.util.b.a(this.h.getFrom(), MediaAdapteManager.mConfigAdapter.getConfig("MediaLive", "OnlyVideoFromWhiteList", ""), "ALL_FROM")) {
             this.h.mOnlyVideoEnable = true;
         }
         MediaPlayControlContext mediaPlayControlContext = this.h;
-        if (mediaPlayControlContext != null && mediaPlayControlContext.getNetSpeed() > 2000 && !TextUtils.isEmpty(this.h.getVideoUrl()) && !this.h.getVideoUrl().contains(".m3u8") && !this.h.getVideoUrl().contains("artp") && !this.h.getVideoUrl().contains("artc") && this.h.mTBLive && this.h.mMediaLiveInfo.mMediaConfigData != null && this.h.mMediaLiveInfo.mMediaConfigData.getplayBuffer(this.h.getFrom()) > 0) {
+        if (mediaPlayControlContext != null && mediaPlayControlContext.getNetSpeed() > 2000 && !StringUtils.isEmpty(this.h.getVideoUrl()) && !this.h.getVideoUrl().contains(".m3u8") && !this.h.getVideoUrl().contains("artp") && !this.h.getVideoUrl().contains("artc") && this.h.mTBLive && this.h.mMediaLiveInfo.mMediaConfigData != null && this.h.mMediaLiveInfo.mMediaConfigData.getplayBuffer(this.h.getFrom()) > 0) {
             MediaPlayControlContext mediaPlayControlContext2 = this.h;
             mediaPlayControlContext2.setAvdataBufferedMaxMBytes(mediaPlayControlContext2.mMediaLiveInfo.mMediaConfigData.getplayBuffer(this.h.getFrom()));
         }
@@ -535,7 +535,7 @@ public class g {
                 String config = MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, MediaConstant.ORANGE_HARDWARE_HEVC_AUTHEN_BLACK, MediaConstant.DEFAULT_H265_HW_DECODE_BLACK_LIST_NEW);
                 String config2 = MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, MediaConstant.ORANGE_HARDWARE_HEVC_AUTHEN_BIZCODE_BLACK, "[\"WEITAO\"]");
                 boolean b = com.taobao.taobaoavsdk.util.b.b(Build.MODEL, config);
-                boolean isEmpty = TextUtils.isEmpty(this.h.getFrom());
+                boolean isEmpty = StringUtils.isEmpty(this.h.getFrom());
                 boolean z = Build.VERSION.SDK_INT < 23 && com.taobao.taobaoavsdk.util.b.b(this.h.getFrom(), config2);
                 if (b || ((isEmpty && a2) || z)) {
                     this.h.setHardwareHevc(false);
@@ -583,7 +583,7 @@ public class g {
             if (Build.VERSION.SDK_INT >= 21 && MediaAdapteManager.mConfigAdapter != null) {
                 boolean a2 = com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, MediaConstant.ORANGE_DISABLE_SET_HW_DECODER_FROM_BLACKLIST, "false"));
                 this.h.setHardwareHevc(((Build.VERSION.SDK_INT >= 23 && this.h.mTBLive) || (Build.VERSION.SDK_INT >= 21 && !this.h.mTBLive)) && com.taobao.taobaoavsdk.util.b.b(com.taobao.taobaoavsdk.util.b.a(), MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "h265HardwareDecodeWhiteList2", "")));
-                boolean isEmpty = TextUtils.isEmpty(this.h.getFrom());
+                boolean isEmpty = StringUtils.isEmpty(this.h.getFrom());
                 if (this.h.isHardwareHevc()) {
                     String config = MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "h265HardwareDecodeBlackList2", "[\"m1 note\",\"PRO 7 Plus\",\"PRO 7-H\",\"OPPO A73\",\"OPPO R9tm\",\"OPPO R9sk\",\"Redmi Note 4X\" , \"JMM-AL00\", \"JMM-AL10\", \"m3 note\", \"M5 Note\", \"MEIZU M6\", \"MI NOTE LTE\", \"OPPO A37m\", \"OPPO A59m\", \"OPPO A59s\", \"OPPO A59st\", \"OPPO A59t\", \"OPPO R9km\", \"OPPO R9m\", \"OPPO R9t\", \"Redmi 6A\", \"vivi Y67\", \"vivi Y67A\", \"vivo V3M A\", \"vivo X6D\", \"vivo X6L\", \"vivo X6Plus L\", \"vivo Y67\", \"vivo Y67\", \"vivo Y67L\", \"vivo Y69A\", \"vivo Y67A\"]");
                     String config2 = MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "h265HardwareDecodeBlackBizCodeList2", "[\"WEITAO\"]");
@@ -652,7 +652,7 @@ public class g {
             return;
         }
         boolean z2 = MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, MediaConstant.ORANGE_DISABLE_SET_HW_DECODER_FROM_BLACKLIST, "false"));
-        boolean z3 = !TextUtils.isEmpty(this.h.getFrom());
+        boolean z3 = !StringUtils.isEmpty(this.h.getFrom());
         if (((Build.VERSION.SDK_INT >= 23 && this.h.mTBLive) || (Build.VERSION.SDK_INT >= 21 && !this.h.mTBLive)) && MediaAdapteManager.mConfigAdapter != null) {
             String config = MediaAdapteManager.mConfigAdapter.getConfig("", "h264HardwareDecodeBlackList", "[\"m1 note\",\"PRO 7 Plus\",\"PRO 7-H\",\"OPPO A73\",\"OPPO R9tm\",\"OPPO R9sk\",\"Redmi Note 4X\" , \"JMM-AL00\", \"JMM-AL10\", \"m3 note\", \"M5 Note\", \"MEIZU M6\", \"MI NOTE LTE\", \"OPPO A37m\", \"OPPO A59m\", \"OPPO A59s\", \"OPPO A59st\", \"OPPO A59t\", \"OPPO R9km\", \"OPPO R9m\", \"OPPO R9t\", \"Redmi 6A\", \"vivi Y67\", \"vivi Y67A\", \"vivo V3M A\", \"vivo X6D\", \"vivo X6L\", \"vivo X6Plus L\", \"vivo Y67\", \"vivo Y67\", \"vivo Y67L\", \"vivo Y69A\", \"vivo Y67A\"]");
             String config2 = MediaAdapteManager.mConfigAdapter.getConfig("", "h264HardwareDecodeBlackBizCodeList", "[\"WEITAO\"]");
@@ -669,7 +669,7 @@ public class g {
             String config3 = MediaAdapteManager.mConfigAdapter.getConfig("", MediaConstant.ORANGE_HARDWARE_H264_BLACK_FOR_L, "");
             String config4 = MediaAdapteManager.mConfigAdapter.getConfig("", MediaConstant.ORANGE_HARDWARE_H264_BIZCODE_BLACK_FOR_L, "");
             boolean z6 = !com.taobao.taobaoavsdk.util.b.b(Build.MODEL, config3);
-            if (!TextUtils.isEmpty(this.h.getFrom()) && (Build.VERSION.SDK_INT >= 23 || !com.taobao.taobaoavsdk.util.b.b(this.h.getFrom(), config4))) {
+            if (!StringUtils.isEmpty(this.h.getFrom()) && (Build.VERSION.SDK_INT >= 23 || !com.taobao.taobaoavsdk.util.b.b(this.h.getFrom(), config4))) {
                 z = true;
             }
             if (z6 && ((z3 || !z2) && z)) {
@@ -690,7 +690,7 @@ public class g {
             return;
         }
         boolean z2 = MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, MediaConstant.ORANGE_DISABLE_SET_HW_DECODER_FROM_BLACKLIST, "false"));
-        boolean z3 = !TextUtils.isEmpty(this.h.getFrom());
+        boolean z3 = !StringUtils.isEmpty(this.h.getFrom());
         if (((Build.VERSION.SDK_INT >= 23 && this.h.mTBLive) || (Build.VERSION.SDK_INT >= 21 && !this.h.mTBLive)) && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.b(com.taobao.taobaoavsdk.util.b.a(), MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "h264HardwareDecodeWhiteList", ""))) {
             String config = MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "h264HardwareDecodeBlackList", "[\"m1 note\",\"PRO 7 Plus\",\"PRO 7-H\",\"OPPO A73\",\"OPPO R9tm\",\"OPPO R9sk\",\"Redmi Note 4X\" , \"JMM-AL00\", \"JMM-AL10\", \"m3 note\", \"M5 Note\", \"MEIZU M6\", \"MI NOTE LTE\", \"OPPO A37m\", \"OPPO A59m\", \"OPPO A59s\", \"OPPO A59st\", \"OPPO A59t\", \"OPPO R9km\", \"OPPO R9m\", \"OPPO R9t\", \"Redmi 6A\", \"vivi Y67\", \"vivi Y67A\", \"vivo V3M A\", \"vivo X6D\", \"vivo X6L\", \"vivo X6Plus L\", \"vivo Y67\", \"vivo Y67\", \"vivo Y67L\", \"vivo Y69A\", \"vivo Y67A\"]");
             String config2 = MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "h264HardwareDecodeBlackBizCodeList", "[\"WEITAO\"]");
@@ -750,13 +750,13 @@ public class g {
             return;
         }
         this.h.setRateAdaptePriority(a(i, z2));
-        if (!this.h.mLocalVideo && TextUtils.isEmpty(this.h.getVideoToken())) {
+        if (!this.h.mLocalVideo && StringUtils.isEmpty(this.h.getVideoToken())) {
             this.h.setVideoUrl("");
             this.h.setVideoDefinition("");
             this.h.setPlayableBytes(0);
         }
         if (this.h.getMediaInfoParams() != null) {
-            if (!TextUtils.isEmpty(this.h.getVideoToken())) {
+            if (!StringUtils.isEmpty(this.h.getVideoToken())) {
                 this.g = false;
                 cVar.a(true, "");
                 return;
@@ -803,7 +803,7 @@ public class g {
             return;
         }
         this.h.setRateAdaptePriority(a(i, z2));
-        if (!this.h.mLocalVideo && TextUtils.isEmpty(this.h.getVideoToken())) {
+        if (!this.h.mLocalVideo && StringUtils.isEmpty(this.h.getVideoToken())) {
             this.h.setVideoUrl("");
             this.h.setVideoDefinition("");
             this.h.setPlayableBytes(0);
@@ -821,7 +821,7 @@ public class g {
                 }
                 g.a(g.this, System.currentTimeMillis());
                 if (mediaVideoResponse != null && mediaVideoResponse.data != null) {
-                    if (!TextUtils.isEmpty(g.a(g.this).getVideoToken())) {
+                    if (!StringUtils.isEmpty(g.a(g.this).getVideoToken())) {
                         g.a(g.this, false);
                         cVar.a(true, "");
                         return;
@@ -883,14 +883,14 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("60ffa8e2", new Object[]{this, mediaPlayControlContext, map, str, str2});
-        } else if (TextUtils.isEmpty(str) || map == null || map.get(str) == null) {
+        } else if (StringUtils.isEmpty(str) || map == null || map.get(str) == null) {
         } else {
             String a2 = map.get(str).a();
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             String b = oyw.b(mediaPlayControlContext.mContext, a2);
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 return;
             }
             mediaPlayControlContext.setHighCachePath(b);
@@ -920,7 +920,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR)) {
+        if (StringUtils.isEmpty(str) || !str.startsWith(ado.URL_SEPARATOR)) {
             return str;
         }
         return "http:" + str;
@@ -949,7 +949,7 @@ public class g {
                 break;
             }
             str5 = list.get(i3);
-            if (str5 != null && !str5.isEmpty() && (bVar = map.get(str5)) != null && !TextUtils.isEmpty(bVar.a())) {
+            if (str5 != null && !str5.isEmpty() && (bVar = map.get(str5)) != null && !StringUtils.isEmpty(bVar.a())) {
                 str3 = bVar.a();
                 str = bVar.c();
                 str2 = O.get(str5);
@@ -962,7 +962,7 @@ public class g {
             i3++;
             str4 = str5;
         }
-        if (!TextUtils.isEmpty(str5) && !TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str5) && !StringUtils.isEmpty(str3)) {
             mediaPlayControlContext.setVideoUrl(a(str3));
             if (str5.contains("266")) {
                 mediaPlayControlContext.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H266, str2));
@@ -1110,7 +1110,7 @@ public class g {
             this.h.selecte266ToPlay();
             str = MediaConstant.DEFINITION_UD_H266;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Iterator<Map.Entry<String, Integer>> it2 = map.entrySet().iterator();
             double d3 = Double.MAX_VALUE;
             while (true) {
@@ -1130,7 +1130,7 @@ public class g {
                 }
             }
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Iterator<Map.Entry<String, Integer>> it3 = map.entrySet().iterator();
             double d4 = Double.MAX_VALUE;
             z2 = false;
@@ -1139,7 +1139,7 @@ public class g {
                 if (z3 || !MediaConstant.DEFINITION_UD_H266.equals(next2.getKey())) {
                     it = it3;
                     double intValue2 = next2.getValue().intValue();
-                    if (intValue2 < d4 && intValue2 > mto.a.GEO_NOT_SUPPORT && !TextUtils.isEmpty(next2.getKey()) && next2.getKey() != "null") {
+                    if (intValue2 < d4 && intValue2 > mto.a.GEO_NOT_SUPPORT && !StringUtils.isEmpty(next2.getKey()) && next2.getKey() != "null") {
                         str = next2.getKey();
                         d4 = intValue2;
                         z2 = true;
@@ -1152,7 +1152,7 @@ public class g {
                 z3 = z;
                 it3 = it;
             }
-            if (!TextUtils.isEmpty(str) && !str.contains("ud")) {
+            if (!StringUtils.isEmpty(str) && !str.contains("ud")) {
                 this.f18020a = 1;
             }
         } else {
@@ -1188,7 +1188,7 @@ public class g {
         } else {
             this.h.initVodSelectPolicyABIfNeed();
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "getIn setVideoUrlByNewNetPolicy with cacheFirst=" + this.h.mEnableCacheFirstByAB + ", qualityFirst=" + this.h.mEnableQualityFirstByAB);
-            if (!TextUtils.isEmpty(this.h.mVideoId) && l.a().b(this.h.mVideoId)) {
+            if (!StringUtils.isEmpty(this.h.mVideoId) && l.a().b(this.h.mVideoId)) {
                 Map<String, String> a2 = l.a().a(this.h.mVideoId);
                 this.J = a2.get("videoDefinition");
                 if (this.h.mEnableCacheFirstByAB) {
@@ -1196,14 +1196,14 @@ public class g {
                         String str = a2.get("cacheKey");
                         String str2 = a2.get("url");
                         this.U = oyu.a(mediaPlayControlContext.mContext, str, str2);
-                        if (!TextUtils.isEmpty(str) && cVar.o() != null) {
+                        if (!StringUtils.isEmpty(str) && cVar.o() != null) {
                             String str3 = cVar.o().get(str);
-                            if (!TextUtils.isEmpty(str3) && !TextUtils.equals(str3, str2)) {
+                            if (!StringUtils.isEmpty(str3) && !StringUtils.equals(str3, str2)) {
                                 mediaPlayControlContext.setVideoUrl(str3);
                                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "setVideoUrlByNewNetPolicy: use new url=" + mediaPlayControlContext.getVideoUrl() + " insteadOf cacheUrl=" + a2.get("url") + "when getCache.");
                             }
                         }
-                        if (TextUtils.isEmpty(mediaPlayControlContext.getVideoUrl())) {
+                        if (StringUtils.isEmpty(mediaPlayControlContext.getVideoUrl())) {
                             mediaPlayControlContext.setVideoUrl(str2);
                             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "setVideoUrlByNewNetPolicy: getUrl From New MediaInfo failed, set url in cache, url=" + mediaPlayControlContext.getVideoUrl());
                         }
@@ -1244,10 +1244,10 @@ public class g {
                         mediaPlayControlContext.setCacheKey(key);
                         if (cVar.p() != null) {
                             String str4 = cVar.p().get(key);
-                            if (!TextUtils.isEmpty(str4)) {
+                            if (!StringUtils.isEmpty(str4)) {
                                 mediaPlayControlContext.setVideoDefinition(str4);
                                 com.taobao.mediaplay.model.b bVar = map.get(str4);
-                                if (bVar != null && !TextUtils.isEmpty(bVar.a())) {
+                                if (bVar != null && !StringUtils.isEmpty(bVar.a())) {
                                     mediaPlayControlContext.setCurrentBitRate(bVar.e());
                                     mediaPlayControlContext.setVideoLength(bVar.d());
                                     this.E = 11;
@@ -1367,18 +1367,18 @@ public class g {
                 map.remove(MediaConstant.DEFINITION_SD_H266);
                 map.remove(MediaConstant.DEFINITION_LD_H266);
             }
-            if (!TextUtils.isEmpty(this.h.mVideoId) && l.a().b(this.h.mVideoId)) {
+            if (!StringUtils.isEmpty(this.h.mVideoId) && l.a().b(this.h.mVideoId)) {
                 Map<String, String> a2 = l.a().a(this.h.mVideoId);
                 if (com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_ENABLE_UPDATE_URL_WHEN_PLAY_AFTER_PREDOWNLOAD, "true"))) {
                     String str = a2.get("cacheKey");
-                    if (!TextUtils.isEmpty(str) && cVar.o() != null) {
+                    if (!StringUtils.isEmpty(str) && cVar.o() != null) {
                         String str2 = cVar.o().get(str);
-                        if (!TextUtils.isEmpty(str2) && !TextUtils.equals(str2, a2.get("url"))) {
+                        if (!StringUtils.isEmpty(str2) && !StringUtils.equals(str2, a2.get("url"))) {
                             mediaPlayControlContext.setVideoUrl(str2);
                             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "setVideoUrl: use new url=" + mediaPlayControlContext.getVideoUrl() + " insteadOf cacheUrl=" + a2.get("url") + "when getCache.");
                         }
                     }
-                    if (TextUtils.isEmpty(mediaPlayControlContext.getVideoUrl())) {
+                    if (StringUtils.isEmpty(mediaPlayControlContext.getVideoUrl())) {
                         mediaPlayControlContext.setVideoUrl(a2.get("url"));
                         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "setVideoUrl: getUrl From New MediaInfo failed, set url in cache, url=" + mediaPlayControlContext.getVideoUrl());
                     }
@@ -1431,7 +1431,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4b8942ce", new Object[]{this, mediaPlayControlContext, map});
-        } else if (TextUtils.isEmpty(this.h.getVideoDefinition())) {
+        } else if (StringUtils.isEmpty(this.h.getVideoDefinition())) {
         } else {
             if (mediaPlayControlContext.isH265()) {
                 if (!com.taobao.taobaoavsdk.util.b.f("h265", "sd").equals(this.h.getVideoDefinition())) {
@@ -1443,7 +1443,7 @@ public class g {
             } else if (!com.taobao.taobaoavsdk.util.b.f("h264", "ld").equals(this.h.getVideoDefinition())) {
             } else {
                 a(mediaPlayControlContext, map, "hd", com.taobao.taobaoavsdk.util.b.f("h264", "hd"));
-                if (!TextUtils.isEmpty(mediaPlayControlContext.getHighCachePath())) {
+                if (!StringUtils.isEmpty(mediaPlayControlContext.getHighCachePath())) {
                     return;
                 }
                 a(mediaPlayControlContext, map, "sd", com.taobao.taobaoavsdk.util.b.f("h264", "sd"));
@@ -1488,7 +1488,7 @@ public class g {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b5b8caf1", new Object[]{this, mediaPlayControlContext, map})).booleanValue();
         }
-        if (map == null || map.size() == 0 || (bVar = map.get("custom")) == null || TextUtils.isEmpty(bVar.a())) {
+        if (map == null || map.size() == 0 || (bVar = map.get("custom")) == null || StringUtils.isEmpty(bVar.a())) {
             return false;
         }
         mediaPlayControlContext.setVideoUrl(a(bVar.a()));
@@ -1664,7 +1664,7 @@ public class g {
         } else if (mediaLiveInfo.liveUrlList != null && com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_ENABLE_SELECT_LIVE_URL_BY_NEW_DEFINITION, "true"))) {
             int i = 0;
             for (int i2 = 0; i2 < mediaLiveInfo.liveUrlList.size(); i2++) {
-                if (!TextUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i2).newDefinition)) {
+                if (!StringUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i2).newDefinition)) {
                     i++;
                 }
             }
@@ -1690,7 +1690,7 @@ public class g {
                     hashMap = hashMap7;
                     hashMap2 = hashMap8;
                 }
-                if (!TextUtils.isEmpty(qualityLiveItem.newDefinition)) {
+                if (!StringUtils.isEmpty(qualityLiveItem.newDefinition)) {
                     long streamMaxBitrate = qualityLiveItem.getStreamMaxBitrate();
                     if (streamMaxBitrate > 0) {
                         hashMap3 = hashMap;
@@ -1702,7 +1702,7 @@ public class g {
                     }
                     if (MediaConstant.DEFINITION_UD_60.equals(qualityLiveItem.newDefinition)) {
                         String config = OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_ENABLE_PLAY_60FPS_DEVICE_LEVEL, "[0,1]");
-                        if (TextUtils.isEmpty(config) || !config.contains(String.valueOf(oyu.c()))) {
+                        if (StringUtils.isEmpty(config) || !config.contains(String.valueOf(oyu.c()))) {
                             z2 = false;
                         } else {
                             this.h.mSelectDefinitionReason |= 256;
@@ -1717,7 +1717,7 @@ public class g {
                         sb.append(Build.MODEL);
                         dVar.a("model", sb.toString());
                         dVar.a(config2);
-                        if (!TextUtils.isEmpty(config2) && dVar.b()) {
+                        if (!StringUtils.isEmpty(config2) && dVar.b()) {
                             this.h.mSelectDefinitionReason |= 512;
                             z3 = true;
                         }
@@ -1727,7 +1727,7 @@ public class g {
                     } else {
                         hashMap5 = hashMap2;
                     }
-                    if (!TextUtils.isEmpty(this.h.mInitDefinition) && this.h.mInitDefinition.equals(qualityLiveItem.newDefinition)) {
+                    if (!StringUtils.isEmpty(this.h.mInitDefinition) && this.h.mInitDefinition.equals(qualityLiveItem.newDefinition)) {
                         if (b(mediaLiveInfo.h265, qualityLiveItem, z && this.h.mH265Enable)) {
                             this.h.setCurrentPlayerQualityItem(qualityLiveItem, i3);
                             this.h.mSelectDefinitionReason |= 16;
@@ -1741,7 +1741,7 @@ public class g {
                         dVar2.a("model", "" + Build.MODEL);
                         dVar2.a(g4.a.f3423a, "" + Build.VERSION.SDK_INT);
                         dVar2.a(config3);
-                        if (TextUtils.isEmpty(config3) || !dVar2.b()) {
+                        if (StringUtils.isEmpty(config3) || !dVar2.b()) {
                             this.h.mSelectDefinitionReason |= 1;
                             hashMap4 = hashMap5;
                             i3++;
@@ -1811,13 +1811,13 @@ public class g {
         mediaLiveInfo.rateAdapte = false;
         this.h.setTopAnchor(mediaLiveInfo.rateAdapte);
         this.h.setRateAdapte(Boolean.FALSE.booleanValue());
-        if (!TextUtils.isEmpty(mediaLiveInfo.mediaSourceType)) {
+        if (!StringUtils.isEmpty(mediaLiveInfo.mediaSourceType)) {
             this.h.mMediaSourceType = mediaLiveInfo.mediaSourceType;
         }
-        if (!TextUtils.isEmpty(mediaLiveInfo.liveId)) {
+        if (!StringUtils.isEmpty(mediaLiveInfo.liveId)) {
             this.h.mVideoId = mediaLiveInfo.liveId;
         }
-        if (!TextUtils.isEmpty(mediaLiveInfo.anchorId)) {
+        if (!StringUtils.isEmpty(mediaLiveInfo.anchorId)) {
             this.h.mAccountId = mediaLiveInfo.anchorId;
         }
         if (MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "useRateAdapte", "true"))) {
@@ -1833,14 +1833,14 @@ public class g {
                 for (String str : this.w) {
                     for (int i2 = 0; i2 < mediaLiveInfo.liveUrlList.size(); i2++) {
                         String str2 = mediaLiveInfo.liveUrlList.get(i2).definition;
-                        if (mediaLiveInfo.liveUrlList.get(i2) != null && str.equals(str2) && !TextUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i2).flvUrl)) {
+                        if (mediaLiveInfo.liveUrlList.get(i2) != null && str.equals(str2) && !StringUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i2).flvUrl)) {
                             this.h.mLowQualityUrl = mediaLiveInfo.liveUrlList.get(i2).flvUrl;
                         }
                     }
                 }
             }
             a(mediaLiveInfo, z);
-            if (TextUtils.isEmpty(this.h.getVideoUrl())) {
+            if (StringUtils.isEmpty(this.h.getVideoUrl())) {
                 for (String str3 : strArr) {
                     for (int i3 = 0; i3 < mediaLiveInfo.liveUrlList.size(); i3++) {
                         String str4 = mediaLiveInfo.liveUrlList.get(i3).definition;
@@ -1856,7 +1856,7 @@ public class g {
                 }
             }
         }
-        if (!TextUtils.isEmpty(this.h.getVideoUrl()) || (a2 = a(this.h.mMediaLiveInfo)) < 0) {
+        if (!StringUtils.isEmpty(this.h.getVideoUrl()) || (a2 = a(this.h.mMediaLiveInfo)) < 0) {
             return;
         }
         boolean z3 = mediaLiveInfo.h265;
@@ -1882,18 +1882,18 @@ public class g {
         mediaLiveInfo.rateAdapte = false;
         this.h.setTopAnchor(mediaLiveInfo.rateAdapte);
         this.h.setRateAdapte(Boolean.FALSE.booleanValue());
-        if (!TextUtils.isEmpty(mediaLiveInfo.mediaSourceType)) {
+        if (!StringUtils.isEmpty(mediaLiveInfo.mediaSourceType)) {
             this.h.mMediaSourceType = mediaLiveInfo.mediaSourceType;
         }
-        if (!TextUtils.isEmpty(mediaLiveInfo.liveId)) {
+        if (!StringUtils.isEmpty(mediaLiveInfo.liveId)) {
             this.h.mVideoId = mediaLiveInfo.liveId;
         }
-        if (!TextUtils.isEmpty(mediaLiveInfo.anchorId)) {
+        if (!StringUtils.isEmpty(mediaLiveInfo.anchorId)) {
             this.h.mAccountId = mediaLiveInfo.anchorId;
         }
         for (int i = 0; i < mediaLiveInfo.liveUrlList.size(); i++) {
             String str = "sub_" + a();
-            if (mediaLiveInfo.liveUrlList.get(i) != null && !TextUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i).flvUrl) && !TextUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i).unitType) && mediaLiveInfo.liveUrlList.get(i).unitType.equals(str)) {
+            if (mediaLiveInfo.liveUrlList.get(i) != null && !StringUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i).flvUrl) && !StringUtils.isEmpty(mediaLiveInfo.liveUrlList.get(i).unitType) && mediaLiveInfo.liveUrlList.get(i).unitType.equals(str)) {
                 boolean z3 = mediaLiveInfo.h265;
                 QualityLiveItem qualityLiveItem = mediaLiveInfo.liveUrlList.get(i);
                 if (z && this.h.mH265Enable) {
@@ -1934,7 +1934,7 @@ public class g {
                 this.h.setCurrentPlayerQualityItem(qualityLiveItem, i);
             }
             cVar.a(b, "");
-        } else if (!TextUtils.isEmpty(this.h.getVideoUrl()) || (a2 = a(this.h.mMediaLiveInfo)) <= 0) {
+        } else if (!StringUtils.isEmpty(this.h.getVideoUrl()) || (a2 = a(this.h.mMediaLiveInfo)) <= 0) {
         } else {
             QualityLiveItem qualityLiveItem2 = this.h.mMediaLiveInfo.liveUrlList.get(a2);
             AVSDKLog.d("MediaPlayControlManager", "get default live index: " + a2);
@@ -1953,42 +1953,42 @@ public class g {
         }
         this.h.mSVCEnable = false;
         String str = (qualityLiveItem.newDefinition == null || qualityLiveItem.newDefinition.equals("")) ? qualityLiveItem.definition : qualityLiveItem.newDefinition;
-        if (!TextUtils.isEmpty(qualityLiveItem.videoUrl)) {
+        if (!StringUtils.isEmpty(qualityLiveItem.videoUrl)) {
             this.h.setVideoUrl(qualityLiveItem.videoUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h264", str));
             this.h.mSelectedUrlName = "videoUrl";
             return true;
-        } else if (!TextUtils.isEmpty(qualityLiveItem.replayUrl)) {
+        } else if (!StringUtils.isEmpty(qualityLiveItem.replayUrl)) {
             this.h.setVideoUrl(qualityLiveItem.replayUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h264", str));
             this.h.mSelectedUrlName = "replayUrl";
             return true;
         } else {
-            if (z2 && z && this.h.useArtp() && !TextUtils.isEmpty(qualityLiveItem.wholeH265ArtpUrl)) {
+            if (z2 && z && this.h.useArtp() && !StringUtils.isEmpty(qualityLiveItem.wholeH265ArtpUrl)) {
                 this.h.setVideoUrl(qualityLiveItem.wholeH265ArtpUrl);
                 this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H265_ARTP, str));
                 this.h.mSelectedUrlName = aw.PARAM_MEDIA_INFO_wholeH265ArtpUrl;
-            } else if (z2 && z && !TextUtils.isEmpty(qualityLiveItem.wholeH265FlvUrl)) {
+            } else if (z2 && z && !StringUtils.isEmpty(qualityLiveItem.wholeH265FlvUrl)) {
                 this.h.setVideoUrl(qualityLiveItem.wholeH265FlvUrl);
                 this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h265", str));
                 this.h.mSelectedUrlName = "wholeH265FlvUrl";
                 return true;
-            } else if (z2 && !z && !TextUtils.isEmpty(qualityLiveItem.h265Url) && this.h.useTransH265()) {
+            } else if (z2 && !z && !StringUtils.isEmpty(qualityLiveItem.h265Url) && this.h.useTransH265()) {
                 this.h.setVideoUrl(qualityLiveItem.h265Url);
                 this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h265", str));
                 this.h.mSelectedUrlName = "h265Url";
                 return true;
-            } else if (this.h.useBfrtc() && !z && !TextUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
+            } else if (this.h.useBfrtc() && !z && !StringUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
                 this.h.setVideoUrl(qualityLiveItem.bfrtcUrl);
                 this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H264_BFRTC, str));
                 this.h.mSelectedUrlName = MediaConstant.BFRTC_URL_NAME;
                 return true;
-            } else if (this.h.useArtp() && !z && !TextUtils.isEmpty(qualityLiveItem.artpUrl)) {
+            } else if (this.h.useArtp() && !z && !StringUtils.isEmpty(qualityLiveItem.artpUrl)) {
                 this.h.setVideoUrl(qualityLiveItem.artpUrl);
                 this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H264_ARTP, str));
                 this.h.mSelectedUrlName = "artpUrl";
                 return true;
-            } else if (!TextUtils.isEmpty(qualityLiveItem.flvUrl)) {
+            } else if (!StringUtils.isEmpty(qualityLiveItem.flvUrl)) {
                 this.h.setVideoUrl(qualityLiveItem.flvUrl);
                 this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h264", str));
                 this.h.mSelectedUrlName = "flvUrl";
@@ -2032,7 +2032,7 @@ public class g {
         boolean b = com.taobao.taobaoavsdk.c.b();
         String str = (qualityLiveItem.newDefinition == null || qualityLiveItem.newDefinition.equals("")) ? qualityLiveItem.definition : qualityLiveItem.newDefinition;
         if (!this.h.useTransCodeRtcLive()) {
-            if ((!"蓝光".equals(qualityLiveItem.newDefinition) && !MediaConstant.DEFINITION_MD.equals(qualityLiveItem.newName)) || !b || !this.h.useRtcLive() || z || TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl) || com.taobao.taobaoavsdk.util.b.b("transcode", qualityLiveItem.rtcLiveUrl)) {
+            if ((!"蓝光".equals(qualityLiveItem.newDefinition) && !MediaConstant.DEFINITION_MD.equals(qualityLiveItem.newName)) || !b || !this.h.useRtcLive() || z || StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl) || com.taobao.taobaoavsdk.util.b.b("transcode", qualityLiveItem.rtcLiveUrl)) {
                 return false;
             }
             if (this.P) {
@@ -2049,14 +2049,14 @@ public class g {
         if (t()) {
             try {
                 com.alibaba.fastjson.JSONObject parseObject = JSON.parseObject(qualityLiveItem.additionUrlMap);
-                if (oyu.u() && b && !TextUtils.isEmpty(parseObject.getString("rtc266Url")) && parseObject.getString("rtc266Url").contains("encoder_type=266")) {
+                if (oyu.u() && b && !StringUtils.isEmpty(parseObject.getString("rtc266Url")) && parseObject.getString("rtc266Url").contains("encoder_type=266")) {
                     this.h.selecte266ToPlay();
                     this.h.setVideoUrl(parseObject.getString("rtc266Url"));
                     this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H266, str));
                     this.h.mSelectedUrlName = MediaConstant.RTCLIVE_URL_NAME;
                     this.h.isRtcVVC = true;
                     return true;
-                } else if (!TextUtils.isEmpty(parseObject.getString("rtmp266Url")) && parseObject.getString("rtmp266Url").contains("encoder_type=266")) {
+                } else if (!StringUtils.isEmpty(parseObject.getString("rtmp266Url")) && parseObject.getString("rtmp266Url").contains("encoder_type=266")) {
                     this.h.selecte266ToPlay();
                     this.h.setVideoUrl(parseObject.getString("rtmp266Url"));
                     this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H266, str));
@@ -2066,7 +2066,7 @@ public class g {
             } catch (Throwable unused) {
             }
         }
-        if (oyu.u() && b && t() && !TextUtils.isEmpty(qualityLiveItem.wholeH265ArtpUrl) && qualityLiveItem.wholeH265ArtpUrl.contains("encoder_type=266")) {
+        if (oyu.u() && b && t() && !StringUtils.isEmpty(qualityLiveItem.wholeH265ArtpUrl) && qualityLiveItem.wholeH265ArtpUrl.contains("encoder_type=266")) {
             this.h.selecte266ToPlay();
             this.h.setVideoUrl(qualityLiveItem.wholeH265ArtpUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H266, str));
@@ -2074,43 +2074,43 @@ public class g {
             mediaPlayControlContext2.mSelectedUrlName = MediaConstant.RTCLIVE_URL_NAME;
             mediaPlayControlContext2.isRtcVVC = true;
             return true;
-        } else if (t() && !TextUtils.isEmpty(qualityLiveItem.h265Url) && qualityLiveItem.h265Url.contains("encoder_type=266")) {
+        } else if (t() && !StringUtils.isEmpty(qualityLiveItem.h265Url) && qualityLiveItem.h265Url.contains("encoder_type=266")) {
             this.h.selecte266ToPlay();
             this.h.setVideoUrl(qualityLiveItem.h265Url);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H266, str));
             this.h.mSelectedUrlName = "266FlvUrl";
             return true;
-        } else if (!TextUtils.isEmpty(qualityLiveItem.videoUrl)) {
+        } else if (!StringUtils.isEmpty(qualityLiveItem.videoUrl)) {
             this.h.setVideoUrl(qualityLiveItem.videoUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h264", str));
             this.h.mSelectedUrlName = "videoUrl";
             return true;
-        } else if (!TextUtils.isEmpty(qualityLiveItem.replayUrl)) {
+        } else if (!StringUtils.isEmpty(qualityLiveItem.replayUrl)) {
             this.h.setVideoUrl(qualityLiveItem.replayUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h264", str));
             this.h.mSelectedUrlName = "replayUrl";
             return true;
-        } else if (b && z2 && z && this.h.useArtp() && !TextUtils.isEmpty(qualityLiveItem.wholeH265ArtpUrl)) {
+        } else if (b && z2 && z && this.h.useArtp() && !StringUtils.isEmpty(qualityLiveItem.wholeH265ArtpUrl)) {
             this.h.setVideoUrl(qualityLiveItem.wholeH265ArtpUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H265_ARTP, str));
             this.h.mSelectedUrlName = aw.PARAM_MEDIA_INFO_wholeH265ArtpUrl;
             return false;
-        } else if (z2 && z && !TextUtils.isEmpty(qualityLiveItem.wholeH265FlvUrl)) {
+        } else if (z2 && z && !StringUtils.isEmpty(qualityLiveItem.wholeH265FlvUrl)) {
             this.h.setVideoUrl(qualityLiveItem.wholeH265FlvUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h265", str));
             this.h.mSelectedUrlName = "wholeH265FlvUrl";
             return true;
-        } else if (z2 && !z && !TextUtils.isEmpty(qualityLiveItem.h265Url) && this.h.useTransH265() && !qualityLiveItem.h265Url.contains("encoder_type=266")) {
+        } else if (z2 && !z && !StringUtils.isEmpty(qualityLiveItem.h265Url) && this.h.useTransH265() && !qualityLiveItem.h265Url.contains("encoder_type=266")) {
             this.h.setVideoUrl(qualityLiveItem.h265Url);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f("h265", str));
             this.h.mSelectedUrlName = "h265Url";
             return true;
-        } else if (b && this.h.useMiniBfrtc() && !z && !TextUtils.isEmpty(qualityLiveItem.liveUrlMiniBfrtc)) {
+        } else if (b && this.h.useMiniBfrtc() && !z && !StringUtils.isEmpty(qualityLiveItem.liveUrlMiniBfrtc)) {
             this.h.setVideoUrl(qualityLiveItem.liveUrlMiniBfrtc);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H264_MINI_BFRTC, str));
             this.h.mSelectedUrlName = MediaConstant.MINI_BFRTC_URL_NAME;
             return true;
-        } else if (b && this.h.useRtcLive() && !z && !TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl)) {
+        } else if (b && this.h.useRtcLive() && !z && !StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl)) {
             if (this.P) {
                 MediaPlayControlContext mediaPlayControlContext3 = this.h;
                 mediaPlayControlContext3.setVideoUrl(qualityLiveItem.rtcLiveUrl + "&grtn_fix_ts_reset=off");
@@ -2122,17 +2122,17 @@ public class g {
             mediaPlayControlContext4.mSelectedUrlName = MediaConstant.RTCLIVE_URL_NAME;
             mediaPlayControlContext4.isRtcVVC = false;
             return true;
-        } else if (b && this.h.useBfrtc() && !z && !TextUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
+        } else if (b && this.h.useBfrtc() && !z && !StringUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
             this.h.setVideoUrl(qualityLiveItem.bfrtcUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H264_BFRTC, str));
             this.h.mSelectedUrlName = MediaConstant.BFRTC_URL_NAME;
             return true;
-        } else if (b && this.h.useArtp() && !z && !TextUtils.isEmpty(qualityLiveItem.artpUrl)) {
+        } else if (b && this.h.useArtp() && !z && !StringUtils.isEmpty(qualityLiveItem.artpUrl)) {
             this.h.setVideoUrl(qualityLiveItem.artpUrl);
             this.h.setVideoDefinition(com.taobao.taobaoavsdk.util.b.f(MediaConstant.H264_ARTP, str));
             this.h.mSelectedUrlName = "artpUrl";
             return true;
-        } else if (TextUtils.isEmpty(qualityLiveItem.flvUrl)) {
+        } else if (StringUtils.isEmpty(qualityLiveItem.flvUrl)) {
             return false;
         } else {
             this.h.setVideoUrl(qualityLiveItem.flvUrl);
@@ -2143,7 +2143,7 @@ public class g {
                 this.h.mSelectFlvUrlReason = 2;
             } else if (z) {
                 this.h.mSelectFlvUrlReason = 3;
-            } else if (TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl)) {
+            } else if (StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl)) {
                 this.h.mSelectFlvUrlReason = 4;
             }
             if (!b) {
@@ -2196,7 +2196,7 @@ public class g {
         if (g()) {
             return 4;
         }
-        if (!TextUtils.isEmpty(str) && i > 0 && this.h != null && MediaAdapteManager.mMeasureAdapter != null && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "videoDeviceMeaseureEnable", "true"))) {
+        if (!StringUtils.isEmpty(str) && i > 0 && this.h != null && MediaAdapteManager.mMeasureAdapter != null && MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig(this.h.mConfigGroup, "videoDeviceMeaseureEnable", "true"))) {
             return this.h.mTBLive ? b(str, 20000, z) : b(str, i, z);
         }
         char c = 65535;
@@ -2276,7 +2276,7 @@ public class g {
         try {
             String replaceAll = this.K.replaceAll(",", "*");
             hashMap.put("bitRateMap", "" + replaceAll);
-            if (!TextUtils.isEmpty(replaceAll) && (replaceAll.contains("ud") || replaceAll.contains(MediaConstant.DEFINITION_2K) || replaceAll.contains(MediaConstant.DEFINITION_4K))) {
+            if (!StringUtils.isEmpty(replaceAll) && (replaceAll.contains("ud") || replaceAll.contains(MediaConstant.DEFINITION_2K) || replaceAll.contains(MediaConstant.DEFINITION_4K))) {
                 z = true;
             }
             hashMap.put("has_1080p_url", z ? "1" : "0");

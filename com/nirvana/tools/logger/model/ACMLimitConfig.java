@@ -1,6 +1,6 @@
 package com.nirvana.tools.logger.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.List;
@@ -56,7 +56,7 @@ public class ACMLimitConfig implements Serializable {
     public static ACMLimitConfig fromJson(String str) {
         ACMLimitConfig aCMLimitConfig = new ACMLimitConfig();
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.nirvana.tools.jsoner.a.a(new JSONObject(str), aCMLimitConfig, (List<Field>) null);
             }
         } catch (JSONException e) {

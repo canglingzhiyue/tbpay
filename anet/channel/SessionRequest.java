@@ -2,7 +2,7 @@ package anet.channel;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.detect.Ipv6Detector;
 import anet.channel.detect.WifiDetector;
@@ -372,7 +372,7 @@ public class SessionRequest {
             ipChange.ipc$dispatch("1f9106a7", new Object[]{this, context, new Integer(i), new Integer(i2), str, sessionGetCallback, new Long(j), sessionParamStat});
             return;
         }
-        String createSequenceNo = TextUtils.isEmpty(str) ? SessionSeq.createSequenceNo(null) : str;
+        String createSequenceNo = StringUtils.isEmpty(str) ? SessionSeq.createSequenceNo(null) : str;
         String str2 = sessionParamStat == null ? "" : sessionParamStat.req;
         boolean z = sessionParamStat != null && sessionParamStat.isRetry;
         ALog.e(TAG, "SessionRequest start", createSequenceNo, "host", this.mHost, "sessionType", Integer.valueOf(i), "protocolType", Integer.valueOf(i2), "sessionRequest", Integer.valueOf(this.hashCode), "reqSeq", str2, d.PARAM_IS_RETRY, Boolean.valueOf(z));
@@ -489,7 +489,7 @@ public class SessionRequest {
         }
         String str2 = sessionParamStat == null ? "" : sessionParamStat.req;
         boolean z2 = sessionParamStat != null && sessionParamStat.isRetry;
-        String createSequenceNo = TextUtils.isEmpty(str) ? SessionSeq.createSequenceNo(null) : str;
+        String createSequenceNo = StringUtils.isEmpty(str) ? SessionSeq.createSequenceNo(null) : str;
         ALog.e(TAG, "SessionRequest startAsync", createSequenceNo, "host", this.mHost, "type", Integer.valueOf(i), "reqSeq", str2, d.PARAM_IS_RETRY, Boolean.valueOf(z2));
         if (!this.mConnecting.compareAndSet(false, true)) {
             ALog.e(TAG, "session connecting", createSequenceNo, "host", getHost(), "reqSeq", str2);

@@ -2,7 +2,7 @@ package com.taobao.android.dxng.bridge;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -203,7 +203,7 @@ public final class DXNativeLogicBridge implements Serializable {
             obj2 = null;
         }
         String str2 = (String) obj2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             fuw.a(str2);
         } else {
             fuw.a(str, str2);

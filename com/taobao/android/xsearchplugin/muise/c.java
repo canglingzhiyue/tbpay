@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -277,7 +277,7 @@ public class c<MODEL extends iru<? extends com.taobao.android.searchbaseframe.da
         if (muiseCellBean.extraStatus != null && muiseCellBean.extraStatus.containsKey("layoutStyle")) {
             try {
                 String valueOf = String.valueOf(muiseCellBean.extraStatus.get("layoutStyle"));
-                if (!TextUtils.equals(valueOf, this.n)) {
+                if (!StringUtils.equals(valueOf, this.n)) {
                     this.w = 0;
                     a(this.itemView, ListStyle.fromNumString(valueOf));
                 }
@@ -581,9 +581,9 @@ public class c<MODEL extends iru<? extends com.taobao.android.searchbaseframe.da
         if (inyVar == null) {
             return;
         }
-        if (TextUtils.equals(str, "finish")) {
+        if (StringUtils.equals(str, "finish")) {
             inyVar.b((irw) this, m());
-        } else if (!TextUtils.equals(str, "start")) {
+        } else if (!StringUtils.equals(str, "start")) {
         } else {
             inyVar.c(this, m());
         }

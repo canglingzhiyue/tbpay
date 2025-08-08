@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.hotItemSubscribe.a;
 import com.taobao.android.live.plugin.atype.flexalocal.good.view.bean.c;
@@ -89,7 +89,7 @@ public class tpm {
         }
         String str = (cVar.t() == null || cVar.t().broadCaster == null) ? "" : cVar.t().broadCaster.accountName;
         String str2 = liveItem.itemName;
-        if (!TextUtils.isEmpty(liveItem.itemShortTitle)) {
+        if (!StringUtils.isEmpty(liveItem.itemShortTitle)) {
             str2 = liveItem.itemShortTitle;
         }
         return "你预约的" + str + str2 + "可以用补贴抢购啦～";
@@ -135,7 +135,7 @@ public class tpm {
         } else if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() == null || liveItem == null || liveItem.personalityData == null || liveItem.personalityData.getIntValue("hotItemPreheatSubscribeStatus") != 0) {
         } else {
             HashMap<String, String> a2 = hit.a(cVar, liveItem);
-            a2.put("clickSource", TextUtils.equals(str, "showcase") ? "itemwidow" : spy.BIZ_GOODS_LIST);
+            a2.put("clickSource", StringUtils.equals(str, "showcase") ? "itemwidow" : spy.BIZ_GOODS_LIST);
             com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j().a("gl_hotItemSubscribe", a2);
         }
     }

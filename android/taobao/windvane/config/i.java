@@ -1,6 +1,6 @@
 package android.taobao.windvane.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -36,7 +36,7 @@ public class i {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c10fe258", new Object[]{this, hVar});
-        } else if (hVar == null || TextUtils.isEmpty(hVar.e) || TextUtils.isEmpty(hVar.h)) {
+        } else if (hVar == null || StringUtils.isEmpty(hVar.e) || StringUtils.isEmpty(hVar.h)) {
         } else {
             this.b = hVar;
             this.c = true;

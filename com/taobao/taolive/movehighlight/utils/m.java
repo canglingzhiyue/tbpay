@@ -1,7 +1,7 @@
 package com.taobao.taolive.movehighlight.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -21,7 +21,7 @@ public class m {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95562904", new Object[]{context, charSequence});
-        } else if (context == null || TextUtils.isEmpty(charSequence)) {
+        } else if (context == null || StringUtils.isEmpty(charSequence)) {
         } else {
             Toast toast = f21483a;
             if (toast == null) {

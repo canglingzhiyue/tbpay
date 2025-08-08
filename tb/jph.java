@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -72,7 +72,7 @@ public class jph {
                 String str2 = "";
                 String trim = (split.length <= 0 || split[0] == null) ? str2 : split[0].trim();
                 String trim2 = (split.length <= 1 || split[1] == null) ? str2 : split[1].trim();
-                Object a3 = jpd.a(jSONObject, "${" + (TextUtils.isEmpty(trim2) ? trim + riy.ARRAY_START_STR + str + riy.ARRAY_END_STR : trim + riy.ARRAY_START_STR + str + riy.ARRAY_END_STR + "." + trim2) + riy.BLOCK_END_STR);
+                Object a3 = jpd.a(jSONObject, "${" + (StringUtils.isEmpty(trim2) ? trim + riy.ARRAY_START_STR + str + riy.ARRAY_END_STR : trim + riy.ARRAY_START_STR + str + riy.ARRAY_END_STR + "." + trim2) + riy.BLOCK_END_STR);
                 if (a3 != null) {
                     str2 = a3.toString();
                 }

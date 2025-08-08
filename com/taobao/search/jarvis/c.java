@@ -1,7 +1,7 @@
 package com.taobao.search.jarvis;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7a8ae625", new Object[]{str, str2, map, obj});
-        } else if (TextUtils.isEmpty(str) || obj == null || r.r()) {
+        } else if (StringUtils.isEmpty(str) || obj == null || r.r()) {
         } else {
             k.d("SearchUserBehavior", str + " enter, args:%s", map);
             h.a(str, str2, obj, a(map));
@@ -43,7 +43,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("94fbdf44", new Object[]{str, str2, map, obj});
-        } else if (TextUtils.isEmpty(str) || obj == null || r.r()) {
+        } else if (StringUtils.isEmpty(str) || obj == null || r.r()) {
         } else {
             k.d("SearchUserBehavior", str + " leave, args:%s", map);
             h.b(str, str2, obj, a(map));
@@ -81,7 +81,7 @@ public class c {
                     hashMap.put("sessionid", commonSearchResult.getMainInfo().rn);
                     if (commonSearchResult.getMainInfo().pageTraceArgs != null) {
                         String str2 = commonSearchResult.getMainInfo().pageTraceArgs.get("spm-cnt");
-                        if (!TextUtils.isEmpty(str2)) {
+                        if (!StringUtils.isEmpty(str2)) {
                             String replace = str2.replace(".0.0", "");
                             hashMap.put("spm", replace + ".itemlist." + i);
                         }
@@ -102,7 +102,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4d568ba9", new Object[]{str, str2, map, view});
-        } else if (TextUtils.isEmpty(str) || view == null || r.r()) {
+        } else if (StringUtils.isEmpty(str) || view == null || r.r()) {
         } else {
             h.a(str, "Search-ItemExposure", str2, view, a(map));
             com.taobao.android.jarviswe.a.a().a(str, "expose", map, null);
@@ -123,7 +123,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("68da74b3", new Object[]{str, auctionBaseBean, view});
-        } else if (auctionBaseBean == null || auctionBaseBean.itemDisappearTracked || r.r() || TextUtils.isEmpty(str) || view == null) {
+        } else if (auctionBaseBean == null || auctionBaseBean.itemDisappearTracked || r.r() || StringUtils.isEmpty(str) || view == null) {
         } else {
             h.b(str, "Search-ItemExposure", auctionBaseBean.itemId, view, a(new HashMap()));
             auctionBaseBean.itemDisappearTracked = true;
@@ -147,7 +147,7 @@ public class c {
             hashMap.put("search_sessionid", commonSearchResult.getMainInfo().rn);
             hashMap.put("page_size", String.valueOf(commonSearchResult2.getCellsCount()));
             hashMap.put("query", commonSearchResult.getMainInfo().keyword);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = l.getInstance().getCurrentPageName();
             }
             a(str, commonSearchResult2.getMainInfo().rn, hashMap);
@@ -167,7 +167,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("84162689", new Object[]{str, str2, map});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || r.r()) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || r.r()) {
         } else {
             k.e("SearchUserBehavior", "request,id:" + str2);
             h.c(str, "Search-Request", str2, a(map));
@@ -191,7 +191,7 @@ public class c {
             }
             if (context != null && (pageProperties = UTAnalytics.getInstance().getDefaultTracker().getPageProperties(context)) != null && !pageProperties.isEmpty()) {
                 String str2 = pageProperties.get("spm-url");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     hashMap.put("spm-url", str2);
                 }
             }
@@ -229,7 +229,7 @@ public class c {
         if (map != null && !map.isEmpty()) {
             for (String str : map.keySet()) {
                 Object obj = map.get(str);
-                if (!TextUtils.isEmpty(str) && obj != null) {
+                if (!StringUtils.isEmpty(str) && obj != null) {
                     arrayList.add(str + "=" + obj);
                 }
             }

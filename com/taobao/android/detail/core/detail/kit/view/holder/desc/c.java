@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.detail.kit.view.holder.desc;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -93,7 +93,7 @@ public class c extends b<epg> {
         } else if (i2 == 101) {
             this.n.setVisibility(0);
             this.m.setVisibility(8);
-            if (!TextUtils.isEmpty(epgVar.d)) {
+            if (!StringUtils.isEmpty(epgVar.d)) {
                 this.n.setText(epgVar.d);
             }
         }

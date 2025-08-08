@@ -2,7 +2,7 @@ package com.alibaba.ariver.kernel.ipc.uniform;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.RVLogger;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
@@ -43,7 +43,7 @@ public class IPCResult implements Parcelable {
             parcel.writeByte(this.serType);
             parcel.writeInt(this.resultCode);
             parcel.writeString(this.resultMsg);
-            if (TextUtils.isEmpty(this.resultType)) {
+            if (StringUtils.isEmpty(this.resultType)) {
                 this.resultType = Void.TYPE.getName();
                 parcel.writeString(this.resultType);
                 return;
@@ -68,7 +68,7 @@ public class IPCResult implements Parcelable {
             this.resultCode = parcel.readInt();
             this.resultMsg = parcel.readString();
             this.resultType = parcel.readString();
-            if (TextUtils.equals(this.resultType, Void.TYPE.getName())) {
+            if (StringUtils.equals(this.resultType, Void.TYPE.getName())) {
                 return;
             }
             if (this.serType == 2) {

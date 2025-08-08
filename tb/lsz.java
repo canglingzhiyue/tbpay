@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -145,7 +145,7 @@ public class lsz extends lsx {
         for (int i = 0; i < list.size(); i++) {
             b bVar = list.get(i);
             IVideoPlayControllerService.b a2 = bVar.a();
-            if ((a2 instanceof DXWidgetNode) && TextUtils.equals(((DXWidgetNode) a2).getUserId(), this.h)) {
+            if ((a2 instanceof DXWidgetNode) && StringUtils.equals(((DXWidgetNode) a2).getUserId(), this.h)) {
                 try {
                     list.remove(i);
                     list.add(0, bVar);

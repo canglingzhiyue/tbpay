@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -156,7 +156,7 @@ public class LazyPageFragment extends AbstractPageFragment implements c, d, nfj 
             this.mPullRefreshDelegate.a(pageModel);
         }
         PageModel pageModel2 = this.mPageModel;
-        if (pageModel2 != null && !TextUtils.isEmpty(pageModel2.title) && getActivity() != null) {
+        if (pageModel2 != null && !StringUtils.isEmpty(pageModel2.title) && getActivity() != null) {
             getActivity().setTitle(this.mPageModel.title);
         }
         AppController appController = getAppController();
@@ -244,11 +244,11 @@ public class LazyPageFragment extends AbstractPageFragment implements c, d, nfj 
         }
         PageModel pageModel = this.mPageModel;
         if (pageModel != null) {
-            if (!TextUtils.isEmpty(pageModel.backgroundColor) && (viewGroup2 = this.mPageViewContainer) != null) {
+            if (!StringUtils.isEmpty(pageModel.backgroundColor) && (viewGroup2 = this.mPageViewContainer) != null) {
                 viewGroup2.setBackgroundColor(ngn.f(this.mPageModel.backgroundColor));
             }
             if (this.mRefreshLayout != null) {
-                if (!TextUtils.isEmpty(this.mPageModel.pullRefreshBackgroundColor) && (g = ngn.g(this.mPageModel.pullRefreshBackgroundColor)) != null) {
+                if (!StringUtils.isEmpty(this.mPageModel.pullRefreshBackgroundColor) && (g = ngn.g(this.mPageModel.pullRefreshBackgroundColor)) != null) {
                     this.mRefreshLayout.setBackgroundColor(g.intValue());
                 }
                 setColorScheme(this.mPageModel.pullRefreshColorScheme);
@@ -304,7 +304,7 @@ public class LazyPageFragment extends AbstractPageFragment implements c, d, nfj 
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("pageUrl", (Object) this.mPageModel.getUrl());
         String str = this.mPageModel.key;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = this.mPageIndex + "_" + this.mPageFrameIndex;
         }
         jSONObject.put("pageId", (Object) str);
@@ -497,10 +497,10 @@ public class LazyPageFragment extends AbstractPageFragment implements c, d, nfj 
             ipChange.ipc$dispatch("e747200c", new Object[]{this, pageModel});
         } else if (this.mPageModel == null || pageModel == null) {
         } else {
-            if (!TextUtils.isEmpty(pageModel.getUrl())) {
+            if (!StringUtils.isEmpty(pageModel.getUrl())) {
                 this.mPageModel.setUrl(pageModel.getUrl());
             }
-            if (!TextUtils.isEmpty(pageModel.backgroundColor)) {
+            if (!StringUtils.isEmpty(pageModel.backgroundColor)) {
                 this.mPageModel.backgroundColor = pageModel.backgroundColor;
             }
             this.mPageModel.setEnableSoftPullRefresh(Boolean.valueOf(pageModel.isEnableSoftPullRefresh()));
@@ -680,10 +680,10 @@ public class LazyPageFragment extends AbstractPageFragment implements c, d, nfj 
             return 0;
         }
         String str = this.mPageHeaderPosition;
-        if (!TextUtils.isEmpty(this.mPageModel.headerPosition)) {
+        if (!StringUtils.isEmpty(this.mPageModel.headerPosition)) {
             str = this.mPageModel.headerPosition;
         }
-        if (this.mTabHeaderHeight <= 0 || !TextUtils.equals("static", str)) {
+        if (this.mTabHeaderHeight <= 0 || !StringUtils.equals("static", str)) {
             return 0;
         }
         int a2 = ngn.a(getContext(), this.mTabHeaderHeight);
@@ -903,7 +903,7 @@ public class LazyPageFragment extends AbstractPageFragment implements c, d, nfj 
         String str = TAG;
         ngr.a(str, "Init WebView in ms:" + (System.currentTimeMillis() - currentTimeMillis));
         PageModel pageModel = this.mPageModel;
-        if (pageModel != null && !TextUtils.isEmpty(pageModel.backgroundColor)) {
+        if (pageModel != null && !StringUtils.isEmpty(pageModel.backgroundColor)) {
             ViewGroup viewGroup = this.mPageViewContainer;
             if (viewGroup != null) {
                 viewGroup.setBackgroundColor(ngn.f(this.mPageModel.backgroundColor));

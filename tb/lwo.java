@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.gateway.exception.GatewayException;
@@ -31,10 +31,10 @@ public class lwo implements gke {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ff35999", new Object[]{this, jSONObject, gkcVar});
-        } else if (jSONObject == null || TextUtils.equals("download", jSONObject.getString("dataSourceType"))) {
+        } else if (jSONObject == null || StringUtils.equals("download", jSONObject.getString("dataSourceType"))) {
         } else {
             String string = jSONObject.getString("containerId");
-            if (TextUtils.equals(this.b.g(), string)) {
+            if (StringUtils.equals(this.b.g(), string)) {
                 return;
             }
             jSONObject.put("_msgType", "scrollToTop");

@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.hihonor.cloudservice.oaid.IOAIDCallBack;
 import com.hihonor.cloudservice.oaid.IOAIDService;
@@ -160,6 +160,6 @@ public class HonorDeviceIdSupplier implements bzi {
 
     private static boolean c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !str.equalsIgnoreCase("00000000-0000-0000-0000-000000000000");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !str.equalsIgnoreCase("00000000-0000-0000-0000-000000000000");
     }
 }

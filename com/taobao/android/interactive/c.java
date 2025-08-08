@@ -2,7 +2,7 @@ package com.taobao.android.interactive;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.interactive_common.video.b;
 import com.taobao.tao.log.TLog;
@@ -47,7 +47,7 @@ public class c implements com.taobao.android.nav.e {
             return true;
         }
         String queryParameter = data.getQueryParameter("wh_weex");
-        if (path.equals("/app/tb-source-app/video-fullpage/pages/index2") && TextUtils.isEmpty(queryParameter)) {
+        if (path.equals("/app/tb-source-app/video-fullpage/pages/index2") && StringUtils.isEmpty(queryParameter)) {
             return true;
         }
         Set<String> queryParameterNames = data.getQueryParameterNames();

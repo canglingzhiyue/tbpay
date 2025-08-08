@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.SpannableString;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -667,11 +667,11 @@ public class AliEmailFragment extends BaseLoginFragment implements View.OnClickL
                     ipChange2.ipc$dispatch("67397830", new Object[]{this, charSequence, new Integer(i), new Integer(i2), new Integer(i3)});
                     return;
                 }
-                if (!TextUtils.isEmpty(charSequence) && AliEmailFragment.this.mRecommendLoginNextBtn != null) {
+                if (!StringUtils.isEmpty(charSequence) && AliEmailFragment.this.mRecommendLoginNextBtn != null) {
                     AliEmailFragment.this.mRecommendLoginNextBtn.setEnabled(true);
                 }
                 AliEmailFragment.access$202(AliEmailFragment.this, true);
-                if (AliEmailFragment.access$300(AliEmailFragment.this) && !TextUtils.isEmpty(charSequence)) {
+                if (AliEmailFragment.access$300(AliEmailFragment.this) && !StringUtils.isEmpty(charSequence)) {
                     AliEmailFragment.access$302(AliEmailFragment.this, false);
                     UserTrackAdapter.sendUT(AliEmailFragment.this.getPageName(), "Input");
                 }
@@ -726,12 +726,12 @@ public class AliEmailFragment extends BaseLoginFragment implements View.OnClickL
                 }
                 String config = LoginSwitch.getConfig("email_suffixes", "");
                 String[] strArr = AliEmailFragment.this.emailSuffixes;
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     strArr = config.split(",");
                 }
                 ArrayList arrayList = new ArrayList();
                 for (String str3 : strArr) {
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         if (str2 == null || str2.length() == 0) {
                             arrayList.add(str + str3);
                         } else if (!str3.equals(str2) && str3.startsWith(str2)) {
@@ -828,7 +828,7 @@ public class AliEmailFragment extends BaseLoginFragment implements View.OnClickL
         } else if (this.mCurrentLoginModeState != LoginModeState.LOCATION) {
             updateLoginModeState(LoginModeState.LOCATION);
             LoginParam loginParam = this.mLoginParam;
-            if (loginParam != null && !TextUtils.isEmpty(loginParam.phoneCode)) {
+            if (loginParam != null && !StringUtils.isEmpty(loginParam.phoneCode)) {
                 addControl("sms_input");
             } else {
                 addControl("change_nick");
@@ -1182,7 +1182,7 @@ public class AliEmailFragment extends BaseLoginFragment implements View.OnClickL
         } else if (this.mAvailableLoginModes.size() == 2) {
             if (loginModeState != LoginModeState.LOCATION) {
                 for (String str : this.mAvailableLoginModes) {
-                    if (!TextUtils.equals(loginModeState.name(), str)) {
+                    if (!StringUtils.equals(loginModeState.name(), str)) {
                         if (LoginModeState.valueOf(str).loginModeName > 0) {
                             this.mLeftFuncTV.setVisibility(0);
                             if (LoginModeState.PASSWORD == loginModeState) {
@@ -1252,7 +1252,7 @@ public class AliEmailFragment extends BaseLoginFragment implements View.OnClickL
         String trim = this.mPasswordET.getText().toString().trim();
         int i = AnonymousClass13.$SwitchMap$com$ali$user$mobile$login$ui$LoginModeState[this.mCurrentLoginModeState.ordinal()];
         if (i == 1) {
-            if (TextUtils.isEmpty(getAccountName())) {
+            if (StringUtils.isEmpty(getAccountName())) {
                 toast(getString(R.string.aliuser_email_empty_hint), 0);
             } else if (!isEmailValid(getAccountName())) {
                 toast(getString(R.string.aliuser_email_format_error), 0);
@@ -1287,14 +1287,14 @@ public class AliEmailFragment extends BaseLoginFragment implements View.OnClickL
             this.mEmailLoginPresenter.buildLoginParam(getAccountName(), "");
             this.mEmailLoginPresenter.sendEmailCode(this.mAttachedActivity, this.mEmailLoginPresenter.getLoginParam(), getUICallback());
         } else if (i == 3) {
-            if (TextUtils.isEmpty(trim)) {
+            if (StringUtils.isEmpty(trim)) {
                 toast(getString(R.string.aliuser_sign_in_please_enter_password), 0);
             } else {
                 sendEmailCode(trim);
             }
         } else if (i != 4) {
         } else {
-            if (TextUtils.isEmpty(trim)) {
+            if (StringUtils.isEmpty(trim)) {
                 toast(getString(R.string.aliuser_sign_in_please_enter_password), 0);
                 return;
             }
@@ -1406,7 +1406,7 @@ public class AliEmailFragment extends BaseLoginFragment implements View.OnClickL
             intent.putExtra("email", getAccountName());
             intent.putExtra("session_id", smsApplyResult.emailSid);
             intent.putExtra(RegistConstants.REGISTER_CODE_LENGTH, smsApplyResult.codeLength);
-            if (smsApplyResult != null && !TextUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
+            if (smsApplyResult != null && !StringUtils.isEmpty(smsApplyResult.helpVideoUrl)) {
                 intent.putExtra("url", smsApplyResult.helpVideoUrl);
             }
             goToEmailVerificationPage(intent);

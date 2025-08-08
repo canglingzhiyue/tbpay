@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -32,13 +32,13 @@ public class GetSpmStore extends LocalEventStore {
             String miniPageId = SpmTracker.getMiniPageId(currentPresenter.getActivity());
             String pageId = SpmTracker.getPageId(currentPresenter.getActivity());
             String srcSpm = SpmTracker.getSrcSpm(currentPresenter.getActivity());
-            if (!TextUtils.isEmpty(miniPageId)) {
+            if (!StringUtils.isEmpty(miniPageId)) {
                 jSONObject.put("miniPageId", (Object) miniPageId);
             }
-            if (!TextUtils.isEmpty(pageId)) {
+            if (!StringUtils.isEmpty(pageId)) {
                 jSONObject.put("pageId", (Object) pageId);
             }
-            if (!TextUtils.isEmpty(srcSpm)) {
+            if (!StringUtils.isEmpty(srcSpm)) {
                 jSONObject.put("srcSpm", (Object) srcSpm);
             }
             return jSONObject.toJSONString();

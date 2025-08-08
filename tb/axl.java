@@ -2,7 +2,7 @@ package tb;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.service.event.AURAEventIO;
 import com.alibaba.android.aura.service.event.d;
@@ -54,7 +54,7 @@ public class axl {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1d3a4492", new Object[]{bundle, str, obj});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (obj instanceof Boolean) {
                 bundle.putBoolean(str, ((Boolean) obj).booleanValue());
@@ -83,7 +83,7 @@ public class axl {
         }
         Uri.Builder buildUpon = Uri.parse(str).buildUpon();
         for (Map.Entry<String, Object> entry : map.entrySet()) {
-            if (entry != null && !TextUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
+            if (entry != null && !StringUtils.isEmpty(entry.getKey()) && entry.getValue() != null) {
                 buildUpon.appendQueryParameter(entry.getKey(), String.valueOf(entry.getValue()));
             }
         }

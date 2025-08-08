@@ -2,7 +2,7 @@ package com.taobao.search.rainbow;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -86,7 +86,7 @@ public class b {
             return null;
         }
         String string = d.getString("tc_" + str, "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return (BucketDO) JSON.parseObject(string, BucketDO.class);
         }
         return null;
@@ -103,9 +103,9 @@ public class b {
         if (d != null && (all = d.getAll()) != null && !all.isEmpty()) {
             for (Map.Entry<String, ?> entry : all.entrySet()) {
                 String key = entry.getKey();
-                if (!TextUtils.isEmpty(key) && key.startsWith("tc_")) {
+                if (!StringUtils.isEmpty(key) && key.startsWith("tc_")) {
                     String str = (String) entry.getValue();
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         hashMap.put(key.substring(2), JSON.parseObject(str, BucketDO.class));
                     }
                 }
@@ -141,7 +141,7 @@ public class b {
             return null;
         }
         String string = d.getString(TBSearchChiTuJSBridge.ABTEST, "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return null;
         }
         try {

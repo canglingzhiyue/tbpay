@@ -1,7 +1,7 @@
 package com.alipay.mobile.security.bio.workspace;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alipay.bis.common.service.facade.gw.model.common.BisJson.BioAppConfig;
@@ -58,7 +58,7 @@ public class JsonToBioApp extends BaseBioParameterToBioApp {
                 BisClientConfigContent bisClientConfigContent = (BisClientConfigContent) JSON.parseObject(bisClientConfig.getContent(), BisClientConfigContent.class);
                 String content = bisClientConfig.getContent();
                 if ((extProperty == null || !extProperty.containsKey("mock")) ? false : Boolean.parseBoolean(extProperty.remove("mock"))) {
-                    if (TextUtils.isEmpty(bisClientConfig.getSign())) {
+                    if (StringUtils.isEmpty(bisClientConfig.getSign())) {
                         BioLog.e("config.getSign() is empty.");
                     } else {
                         int parseInt = Integer.parseInt(bisClientConfigContent.getEnv());
@@ -92,7 +92,7 @@ public class JsonToBioApp extends BaseBioParameterToBioApp {
                 String androidcfg = bisClientConfigContent2.getAndroidcfg();
                 BioAppConfig bioAppConfig = (BioAppConfig) JSON.parseObject(androidcfg, BioAppConfig.class);
                 if ((extProperty == null || !extProperty.containsKey("mock")) ? false : Boolean.parseBoolean(extProperty.remove("mock"))) {
-                    if (TextUtils.isEmpty(bisClientConfig2.getSign())) {
+                    if (StringUtils.isEmpty(bisClientConfig2.getSign())) {
                         BioLog.e("config.getSign() is empty.");
                         doCheck = false;
                     } else {

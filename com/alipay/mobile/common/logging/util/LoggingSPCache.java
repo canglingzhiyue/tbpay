@@ -2,7 +2,7 @@ package com.alipay.mobile.common.logging.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.framework.MpaasClassInfo;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -107,7 +107,7 @@ public class LoggingSPCache {
             return;
         }
         String string = this.c.getString(str, null);
-        if (this.c.contains(str) && TextUtils.equals(string, str2)) {
+        if (this.c.contains(str) && StringUtils.equals(string, str2)) {
             return;
         }
         this.c.edit().putString(str, str2).commit();
@@ -120,7 +120,7 @@ public class LoggingSPCache {
             return;
         }
         String string = this.c.getString(str, null);
-        if (this.c.contains(str) && TextUtils.equals(string, str2)) {
+        if (this.c.contains(str) && StringUtils.equals(string, str2)) {
             return;
         }
         this.c.edit().putString(str, str2).apply();

@@ -9,7 +9,7 @@ import android.content.pm.SigningInfo;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.hihonor.push.framework.aidl.entity.RequestHeader;
 import com.hihonor.push.sdk.common.data.ApiException;
 import com.hihonor.push.sdk.internal.HonorPushErrorEnum;
@@ -37,13 +37,13 @@ public class e {
         } catch (PackageManager.NameNotFoundException e) {
             g.a("ConfigUtils", "getPushAppId", e);
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             g.a("checkPushConfig Parameter is missing");
             throw HonorPushErrorEnum.ERROR_NO_APPID.toApiException();
         }
         String str2 = "checkPushAppId Parameter is " + str;
         String a3 = a(a2, a2.getPackageName());
-        if (TextUtils.isEmpty(a3)) {
+        if (StringUtils.isEmpty(a3)) {
             g.a("checkPushConfig Parameter is missing.");
             throw HonorPushErrorEnum.ERROR_CERT_FINGERPRINT_EMPTY.toApiException();
         }
@@ -58,7 +58,7 @@ public class e {
             iVar.b(a2);
             SharedPreferences sharedPreferences = i.f7275a.f7268a;
             string = sharedPreferences != null ? sharedPreferences.getString("key_aaid", "") : "";
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 string = UUID.randomUUID().toString().replace("-", "");
                 String str4 = "getRandomUUID UUID =" + string;
                 i.f7275a.a("key_aaid", string);
@@ -197,7 +197,7 @@ public class e {
 
     public static byte[] a(String str) {
         int i;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new byte[0];
         }
         String upperCase = str.toUpperCase(Locale.ENGLISH);

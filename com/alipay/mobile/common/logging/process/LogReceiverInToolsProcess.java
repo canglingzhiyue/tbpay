@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.trace.TraceLogger;
@@ -35,13 +35,13 @@ public class LogReceiverInToolsProcess extends BroadcastReceiver {
         }
         String action = intent.getAction();
         Bundle extras = intent.getExtras();
-        if (TextUtils.isEmpty(action) || extras == null) {
+        if (StringUtils.isEmpty(action) || extras == null) {
             return;
         }
         LoggerFactory.getTraceLogger().info("LogReceiverInTools", "action: ".concat(String.valueOf(action)));
         if (action.equals(context.getPackageName() + LogContext.ACTION_MONITOR_COMMAND)) {
             String string = extras.getString("action");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 String string2 = extras.getString("filePath");
                 String string3 = extras.getString("callStack");
                 boolean z = extras.getBoolean("isBoot");

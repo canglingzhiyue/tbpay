@@ -2,7 +2,7 @@ package com.taobao.android.shop.features.category;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -328,7 +328,7 @@ public class a extends RecyclerView.Adapter<C0578a> {
         } else if (this.h.get(i).f != 2 && this.h.get(i).f != 4) {
         } else {
             c cVar = this.h.get(i);
-            if (!TextUtils.isEmpty(cVar.c)) {
+            if (!StringUtils.isEmpty(cVar.c)) {
                 c0578a.b.setVisibility(0);
                 c0578a.b.setImageUrl(cVar.c);
             } else {

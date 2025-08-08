@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.performance.preload.core.task;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -82,10 +82,10 @@ public class PreloadTaskEntity implements Serializable {
             JSONObject jSONObject2 = jSONObject.getJSONObject("queryParams");
             String string2 = jSONObject.getString("itemId");
             String string3 = jSONObject.getString("itemIds");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 aVar.d = string;
                 aVar.c = p.a(string);
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     aVar.e = a(aVar.c);
                 } else {
                     aVar.e = string2;
@@ -95,7 +95,7 @@ public class PreloadTaskEntity implements Serializable {
                 aVar.e = jSONObject.getString("itemId");
             } else if (string2 != null) {
                 aVar.e = jSONObject.getString("itemId");
-            } else if (!TextUtils.isEmpty(string3)) {
+            } else if (!StringUtils.isEmpty(string3)) {
                 aVar.f = jSONObject.getString("itemIds");
             }
             return aVar;
@@ -110,7 +110,7 @@ public class PreloadTaskEntity implements Serializable {
                 return "";
             }
             String str = map.get("id");
-            return TextUtils.isEmpty(str) ? map.get("itemId") : str;
+            return StringUtils.isEmpty(str) ? map.get("itemId") : str;
         }
 
         public String toString() {
@@ -166,7 +166,7 @@ public class PreloadTaskEntity implements Serializable {
             JSONObject parseObject = JSONObject.parseObject(str);
             preloadTaskEntity.bizName = parseObject.getString("bizName");
             preloadTaskEntity.preloadType = parseObject.getString("preloadType");
-            if (TextUtils.isEmpty(preloadTaskEntity.bizName)) {
+            if (StringUtils.isEmpty(preloadTaskEntity.bizName)) {
                 preloadTaskEntity.bizName = "page_detail";
             }
             preloadTaskEntity.sourceFrom = parseObject.getString(SOURCE_FROM);
@@ -177,23 +177,23 @@ public class PreloadTaskEntity implements Serializable {
             ArrayList<a> arrayList = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 a a2 = a.a(jSONArray.getJSONObject(i));
-                if (TextUtils.isEmpty(a2.e)) {
+                if (StringUtils.isEmpty(a2.e)) {
                     ecg.d(preloadTaskEntity.sourceFrom, preloadTaskEntity.preloadType);
                 } else {
                     a2.f9788a = preloadTaskEntity.bizName;
                     a2.h = preloadTaskEntity.preloadType;
                     a2.b = preloadTaskEntity.sourceFrom;
                     a2.g = preloadTaskEntity.pageToken;
-                    if (TextUtils.isEmpty(a2.f) && a2.c == null) {
+                    if (StringUtils.isEmpty(a2.f) && a2.c == null) {
                         HashMap hashMap = new HashMap();
                         hashMap.put("from", a2.b);
                         hashMap.put("id", a2.e);
-                        if (!TextUtils.isEmpty(a2.h)) {
+                        if (!StringUtils.isEmpty(a2.h)) {
                             hashMap.put("preloadType", a2.h);
                         }
                         a2.c = hashMap;
                     }
-                    if (TextUtils.isEmpty(a2.f)) {
+                    if (StringUtils.isEmpty(a2.f)) {
                         arrayList.add(a2);
                     } else {
                         splitItemIds(a2, arrayList);
@@ -216,7 +216,7 @@ public class PreloadTaskEntity implements Serializable {
         }
         String[] split = aVar.f.split(",");
         for (int i = 0; i < split.length; i++) {
-            if (!TextUtils.isEmpty(split[i])) {
+            if (!StringUtils.isEmpty(split[i])) {
                 a aVar2 = new a();
                 aVar2.e = split[i];
                 aVar2.f9788a = aVar.f9788a;
@@ -224,7 +224,7 @@ public class PreloadTaskEntity implements Serializable {
                 HashMap hashMap = new HashMap();
                 hashMap.put("from", aVar2.b);
                 hashMap.put("id", aVar2.e);
-                if (!TextUtils.isEmpty(aVar.h)) {
+                if (!StringUtils.isEmpty(aVar.h)) {
                     hashMap.put("preloadType", aVar.h);
                 }
                 aVar2.c = hashMap;

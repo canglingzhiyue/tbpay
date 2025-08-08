@@ -3,7 +3,7 @@ package com.alipay.mobile.common.transport.http;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.HttpConstant;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.alipay.mobile.common.netsdkextdependapi.deviceinfo.DeviceInfoUtil;
@@ -214,11 +214,11 @@ public class HttpWorker implements Callable<Response> {
         transportContext2.bizLog = httpUrlRequest.getBizLog();
         this.redirectHandler = getHttpClient().getRedirectHandler();
         String tag = httpUrlRequest.getTag(TransportConstants.KEY_LOGGER_LEVEL);
-        if (!TextUtils.isEmpty(tag)) {
+        if (!StringUtils.isEmpty(tag)) {
             this.mTransportContext.loggerLevel = tag;
         }
         String tag2 = httpUrlRequest.getTag(TransportConstants.KEY_TARGET_SPI);
-        if (!TextUtils.isEmpty(tag2)) {
+        if (!StringUtils.isEmpty(tag2)) {
             this.mTransportContext.targetSpi = tag2;
         }
         this.mTransportContext.logAttachmentMap = httpUrlRequest.refLogAttachmentMap();
@@ -234,7 +234,7 @@ public class HttpWorker implements Callable<Response> {
             return uri;
         }
         String url = this.mOriginRequest.getUrl();
-        if (TextUtils.isEmpty(url)) {
+        if (StringUtils.isEmpty(url)) {
             throw new RuntimeException("url should not be null");
         }
         URI a2 = a(new URI(url));
@@ -310,7 +310,7 @@ public class HttpWorker implements Callable<Response> {
                 return;
             }
             ((AbstractHttpEntity) httpEntity).setContentType(r);
-        } else if (TextUtils.isEmpty(this.mOriginRequest.getContentType()) || !(httpEntity instanceof AbstractHttpEntity)) {
+        } else if (StringUtils.isEmpty(this.mOriginRequest.getContentType()) || !(httpEntity instanceof AbstractHttpEntity)) {
         } else {
             ((AbstractHttpEntity) httpEntity).setContentType(this.mOriginRequest.getContentType());
         }
@@ -373,7 +373,7 @@ public class HttpWorker implements Callable<Response> {
                                                     this.mTransportContext.url = getTargetHttpUriRequest().getURI().toString();
                                                     preCheck();
                                                     TransportContextThreadLocalUtils.setValue(this.mTransportContext);
-                                                    if (!TextUtils.isEmpty(getOperationType()) && !getOriginRequest().isBgRpc()) {
+                                                    if (!StringUtils.isEmpty(getOperationType()) && !getOriginRequest().isBgRpc()) {
                                                         Process.setThreadPriority(-4);
                                                         Thread.currentThread().setPriority(10);
                                                     }
@@ -468,7 +468,7 @@ public class HttpWorker implements Callable<Response> {
         }
         this.mOriginRequest.setNetworkThread(Thread.currentThread());
         if (!NetworkUtils.isNetworkAvailable(this.mContext)) {
-            if (TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.IGNORE_NETWORK_STATE), "T")) {
+            if (StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.IGNORE_NETWORK_STATE), "T")) {
                 this.w = true;
                 LogCatUtil.debug(TAG, "API=" + getOperationType() + ",ignoreNetState on,go on");
             } else if (!this.mOriginRequest.isAllowNonNet()) {
@@ -478,7 +478,7 @@ public class HttpWorker implements Callable<Response> {
             }
         }
         String url = this.mOriginRequest.getUrl();
-        if (!TextUtils.isEmpty(getOperationType())) {
+        if (!StringUtils.isEmpty(getOperationType())) {
             url = url + "#" + getOperationType();
         }
         if (!isTraficConsumeAccept(url)) {
@@ -606,7 +606,7 @@ public class HttpWorker implements Callable<Response> {
         }
         try {
             String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.SWITCH_TAG_LOG);
-            if (!TextUtils.isEmpty(stringValue)) {
+            if (!StringUtils.isEmpty(stringValue)) {
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.SWITCH_TAG_LOG, stringValue);
             }
             if (getOriginRequest().isBgRpc()) {
@@ -630,27 +630,27 @@ public class HttpWorker implements Callable<Response> {
                 Header firstHeader = this.mHttpResponse.getFirstHeader("via");
                 if (firstHeader != null) {
                     String value = firstHeader.getValue();
-                    if (!TextUtils.isEmpty(value)) {
+                    if (!StringUtils.isEmpty(value)) {
                         DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.CDN_VIA, value.replace(",", "，"));
                     }
                 }
                 Header firstHeader2 = this.mHttpResponse.getFirstHeader(RPCDataItems.CDN_EAGLEID);
                 if (firstHeader2 != null) {
                     String value2 = firstHeader2.getValue();
-                    if (!TextUtils.isEmpty(value2)) {
+                    if (!StringUtils.isEmpty(value2)) {
                         DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.CDN_EAGLEID, value2);
                     }
                 }
             }
             String tag = getOriginRequest().getTag("bizId");
-            if (!TextUtils.isEmpty(tag)) {
+            if (!StringUtils.isEmpty(tag)) {
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), "bizId", tag);
             }
             if (this.mOriginRequest != null && this.mOriginRequest.getDataLength() > 0) {
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.REQUSET_BODY_RAW_SIZE, String.valueOf(this.mOriginRequest.getDataLength()));
             }
             String requestMethod = this.mOriginRequest.getRequestMethod();
-            if (isRpcRequest() && TextUtils.equals(requestMethod, "GET")) {
+            if (isRpcRequest() && StringUtils.equals(requestMethod, "GET")) {
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), RPCDataItems.REQUEST_METHOD, requestMethod);
             }
             if (isUseSelfEncrypt()) {
@@ -673,7 +673,7 @@ public class HttpWorker implements Callable<Response> {
             if (this.q == null) {
                 return;
             }
-            if (TextUtils.equals(this.mTransportContext.getCurrentDataContainer().getDataItem("RETRY"), "T")) {
+            if (StringUtils.equals(this.mTransportContext.getCurrentDataContainer().getDataItem("RETRY"), "T")) {
                 ((HttpUrlResponse) this.q).getHeader().addHead(HeaderConstant.HEADER_KEY_PARAM_RETRY, "T");
             } else {
                 ((HttpUrlResponse) this.q).getHeader().addHead(HeaderConstant.HEADER_KEY_PARAM_RETRY, UTConstant.Args.UT_SUCCESS_F);
@@ -681,8 +681,8 @@ public class HttpWorker implements Callable<Response> {
             String dataItem = this.mTransportContext.getCurrentDataContainer().getDataItem(RPCDataItems.REQ_SIZE);
             String dataItem2 = this.mTransportContext.getCurrentDataContainer().getDataItem(RPCDataItems.RES_SIZE);
             long j = 0;
-            long parseLong = !TextUtils.isEmpty(dataItem) ? Long.parseLong(dataItem) : 0L;
-            if (!TextUtils.isEmpty(dataItem2)) {
+            long parseLong = !StringUtils.isEmpty(dataItem) ? Long.parseLong(dataItem) : 0L;
+            if (!StringUtils.isEmpty(dataItem2)) {
                 j = Long.parseLong(dataItem2);
             }
             ((HttpUrlResponse) this.q).getHeader().addHead(HeaderConstant.HEADER_KEY_PARAM_REQ_SIZE, String.valueOf(parseLong));
@@ -739,7 +739,7 @@ public class HttpWorker implements Callable<Response> {
                     StringBuilder sb = new StringBuilder();
                     sb.append(str);
                     sb.append(":");
-                    sb.append(TextUtils.isEmpty(th.getMessage()) ? th.toString() : th.getMessage());
+                    sb.append(StringUtils.isEmpty(th.getMessage()) ? th.toString() : th.getMessage());
                     DataItemsUtil.putDataItem2DataContainer(currentDataContainer, "ERROR", sb.toString());
                     monitorErrorLog(th);
                     a(str, i, th, f);
@@ -747,13 +747,13 @@ public class HttpWorker implements Callable<Response> {
             } else {
                 monitorErrorLog(th);
                 StringBuilder sb2 = new StringBuilder();
-                if (this.mOriginRequest.isCanceled() && !TextUtils.isEmpty(this.mOriginRequest.getCancelMsg())) {
+                if (this.mOriginRequest.isCanceled() && !StringUtils.isEmpty(this.mOriginRequest.getCancelMsg())) {
                     sb2.append(this.mOriginRequest.getCancelMsg());
                     sb2.append(" System error:");
                 }
                 sb2.append(str);
                 sb2.append(":");
-                sb2.append(TextUtils.isEmpty(th.getMessage()) ? th.toString() : th.getMessage());
+                sb2.append(StringUtils.isEmpty(th.getMessage()) ? th.toString() : th.getMessage());
                 DataItemsUtil.putDataItem2DataContainer(this.mTransportContext.getCurrentDataContainer(), "ERROR", sb2.toString());
                 a(str, i, th, f);
             }
@@ -763,7 +763,7 @@ public class HttpWorker implements Callable<Response> {
             abort();
             try {
                 String monitorLog = monitorLog();
-                if (!TextUtils.isEmpty(monitorLog)) {
+                if (!StringUtils.isEmpty(monitorLog)) {
                     th2 = th2 + " " + monitorLog;
                 }
             } catch (Throwable unused) {
@@ -861,7 +861,7 @@ public class HttpWorker implements Callable<Response> {
         }
         try {
             HashMap hashMap = new HashMap();
-            if (!TextUtils.isEmpty(getOperationType())) {
+            if (!StringUtils.isEmpty(getOperationType())) {
                 hashMap.put(HeaderConstant.HEADER_KEY_OPERATION_TYPE, getOperationType());
             }
             getOriginRequest();
@@ -965,7 +965,7 @@ public class HttpWorker implements Callable<Response> {
             getTargetHttpUriRequest().abort();
             StringBuilder sb = new StringBuilder();
             sb.append("abort request: ");
-            sb.append(TextUtils.isEmpty(getOperationType()) ? getTargetHttpUriRequest().getURI().toString() : getOperationType());
+            sb.append(StringUtils.isEmpty(getOperationType()) ? getTargetHttpUriRequest().getURI().toString() : getOperationType());
             LogCatUtil.warn(TAG, sb.toString());
         } catch (Exception e) {
             LogCatUtil.warn(TAG, "abort exception:", e);
@@ -1071,7 +1071,7 @@ public class HttpWorker implements Callable<Response> {
             return (HttpResponse) ipChange.ipc$dispatch("225e25dd", new Object[]{this});
         }
         LogCatUtil.debug(TAG, "By Http/Https to request. operationType=" + getOperationType() + "  method=" + getTargetHttpUriRequest().getMethod() + " url=" + getTargetHttpUriRequest().getURI().toString() + " allowRetry=" + this.mOriginRequest.allowRetry);
-        if (!TextUtils.isEmpty(getOperationType())) {
+        if (!StringUtils.isEmpty(getOperationType())) {
             this.mTransportContext.dcList.clear();
         }
         i();
@@ -1285,9 +1285,9 @@ public class HttpWorker implements Callable<Response> {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{this, str})).booleanValue();
         }
         String stringValue = TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.RPC_H2_LIST);
-        if (!TextUtils.isEmpty(stringValue) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(stringValue) && !StringUtils.isEmpty(str)) {
             for (String str2 : stringValue.split(",")) {
-                if (TextUtils.equals(str2, str)) {
+                if (StringUtils.equals(str2, str)) {
                     return true;
                 }
             }
@@ -1300,7 +1300,7 @@ public class HttpWorker implements Callable<Response> {
         if (ipChange instanceof IpChange) {
             return (HttpResponse) ipChange.ipc$dispatch("e1957663", new Object[]{this, httpRequest, httpParams, httpResponse});
         }
-        if ((!TextUtils.isEmpty(getOperationType()) && !TextUtils.equals(getOperationType(), DownloadRequest.OPERATION_TYPE) && !TextUtils.equals(getOperationType(), H5HttpUrlRequest.OPERATION_TYPE)) || !this.redirectHandler.isRedirectRequested(httpResponse, this.mLocalContext)) {
+        if ((!StringUtils.isEmpty(getOperationType()) && !StringUtils.equals(getOperationType(), DownloadRequest.OPERATION_TYPE) && !StringUtils.equals(getOperationType(), H5HttpUrlRequest.OPERATION_TYPE)) || !this.redirectHandler.isRedirectRequested(httpResponse, this.mLocalContext)) {
             return httpResponse;
         }
         processRespCookies(httpResponse);
@@ -1445,11 +1445,11 @@ public class HttpWorker implements Callable<Response> {
         }
         try {
             String tag = getOriginRequest().getTag(TransportConstants.KEY_RPC_VERSION);
-            if (TextUtils.isEmpty(tag) || !TextUtils.equals(tag, "2")) {
+            if (StringUtils.isEmpty(tag) || !StringUtils.equals(tag, "2")) {
                 return;
             }
             Header[] headers = httpResponse.getHeaders(HeaderConstant.HEADER_KEY_RESULT_STATUS);
-            if (httpResponse.getStatusLine().getStatusCode() != 200 || !TextUtils.equals(headers[0].getValue(), "8001")) {
+            if (httpResponse.getStatusLine().getStatusCode() != 200 || !StringUtils.equals(headers[0].getValue(), "8001")) {
                 return;
             }
             httpResponse.setStatusLine(HttpVersion.HTTP_1_1, 304, "Not Modified");
@@ -1495,11 +1495,11 @@ public class HttpWorker implements Callable<Response> {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("76cb9a4e", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.k)) {
+        if (!StringUtils.isEmpty(this.k)) {
             return this.k;
         }
         this.k = getOriginRequest().getTag("operationType");
-        return !TextUtils.isEmpty(this.k) ? this.k : "";
+        return !StringUtils.isEmpty(this.k) ? this.k : "";
     }
 
     public AndroidHttpClient getHttpClient() {
@@ -1518,7 +1518,7 @@ public class HttpWorker implements Callable<Response> {
         copyHeaders();
         addCookie2Header();
         String alipayLocaleDes = DeviceInfoUtil.getAlipayLocaleDes();
-        if (!TextUtils.isEmpty(alipayLocaleDes)) {
+        if (!StringUtils.isEmpty(alipayLocaleDes)) {
             getTargetHttpUriRequest().addHeader(HeaderConstant.HEADER_KEY_ACCEPT_LANGUAGE, alipayLocaleDes);
         }
         AndroidHttpClient.modifyRequestToAcceptGzipResponse(getTargetHttpUriRequest());
@@ -1546,7 +1546,7 @@ public class HttpWorker implements Callable<Response> {
                 return;
             }
             String stringData = SharedPreUtils.getStringData(this.mContext, TransportConstants.KEY_SOFA_GROUP_NAME);
-            if (TextUtils.isEmpty(stringData)) {
+            if (StringUtils.isEmpty(stringData)) {
                 return;
             }
             getTargetHttpUriRequest().addHeader(TransportConstants.KEY_SOFA_GROUP_NAME, stringData);
@@ -1607,7 +1607,7 @@ public class HttpWorker implements Callable<Response> {
             return ((Boolean) ipChange.ipc$dispatch("b999f214", new Object[]{this})).booleanValue();
         }
         String tag = this.mOriginRequest.getTag(TransportConstants.KEY_FORCE_HTTP);
-        if (!TextUtils.isEmpty(tag) && TextUtils.equals(tag, "true")) {
+        if (!StringUtils.isEmpty(tag) && StringUtils.equals(tag, "true")) {
             return false;
         }
         if (!MiscUtils.isInAlipayClient(this.mContext) && !TransportStrategy.isEnabledEnhanceNetworkModule()) {
@@ -1621,7 +1621,7 @@ public class HttpWorker implements Callable<Response> {
         } else {
             URL n = n();
             String tag2 = getOriginRequest().getTag(TransportConstants.KEY_IS_CUST_GW_URL);
-            if (!TextUtils.isEmpty(tag2) && tag2.equalsIgnoreCase("true") && TextUtils.equals("http", n.getProtocol())) {
+            if (!StringUtils.isEmpty(tag2) && tag2.equalsIgnoreCase("true") && StringUtils.equals("http", n.getProtocol())) {
                 LogCatUtil.debug(TAG, "isCanUseExtTransport,http protocol do not use ExtTransport");
                 return false;
             } else if (this.mOriginRequest.isRpcHttp2()) {
@@ -2036,7 +2036,7 @@ public class HttpWorker implements Callable<Response> {
                 String value = firstHeader.getValue();
                 LogCatUtil.debug(TAG, "response header [retryable] = " + value);
                 String operationType = getOperationType();
-                if (TextUtils.isEmpty(operationType)) {
+                if (StringUtils.isEmpty(operationType)) {
                     LogCatUtil.debug(TAG, "operationType is null,not rpc");
                 } else {
                     a(value, operationType);
@@ -2051,9 +2051,9 @@ public class HttpWorker implements Callable<Response> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.equals(str, "1")) {
+        } else if (StringUtils.equals(str, "1")) {
             e(str2);
-        } else if (!TextUtils.equals(str, "0")) {
+        } else if (!StringUtils.equals(str, "0")) {
         } else {
             f(str2);
         }
@@ -2094,13 +2094,13 @@ public class HttpWorker implements Callable<Response> {
         StringBuilder sb = new StringBuilder();
         sb.append(originRequest.getUrl());
         String tag = originRequest.getTag(TransportConstants.KEY_REQ_DATA_DIGEST);
-        if (!TextUtils.isEmpty(tag)) {
+        if (!StringUtils.isEmpty(tag)) {
             sb.append(tag);
         }
-        if (!TextUtils.isEmpty(originRequest.getContentType())) {
+        if (!StringUtils.isEmpty(originRequest.getContentType())) {
             sb.append(originRequest.getContentType());
         }
-        if (!TextUtils.isEmpty(getOperationType())) {
+        if (!StringUtils.isEmpty(getOperationType())) {
             sb.append(getOperationType());
         }
         return hashcode(sb.toString().hashCode());
@@ -2164,18 +2164,18 @@ public class HttpWorker implements Callable<Response> {
             }
             LinkedHashMap linkedHashMap = new LinkedHashMap();
             for (Cookie cookie : cookies) {
-                if (isRpcRequest() && !TextUtils.isEmpty(cookie.getName()) && !TextUtils.isEmpty(cookie.getValue())) {
+                if (isRpcRequest() && !StringUtils.isEmpty(cookie.getName()) && !StringUtils.isEmpty(cookie.getValue())) {
                     linkedHashMap.put(cookie.getName().trim(), cookie.getValue().trim());
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append(cookie.getName());
                 sb.append("=");
                 sb.append(cookie.getValue());
-                if (!TextUtils.isEmpty(cookie.getDomain())) {
+                if (!StringUtils.isEmpty(cookie.getDomain())) {
                     sb.append("; domain=");
                     sb.append(cookie.getDomain());
                 }
-                if (!TextUtils.isEmpty(cookie.getPath())) {
+                if (!StringUtils.isEmpty(cookie.getPath())) {
                     sb.append("; path=");
                     sb.append(cookie.getPath());
                 }
@@ -2195,7 +2195,7 @@ public class HttpWorker implements Callable<Response> {
                 String sb2 = sb.toString();
                 String uri = getTargetUri().toString();
                 String domain = cookie.getDomain();
-                if (TextUtils.isEmpty(domain)) {
+                if (StringUtils.isEmpty(domain)) {
                     domain = uri;
                 } else if (!domain.startsWith(".")) {
                     domain = "." + domain;
@@ -2233,7 +2233,7 @@ public class HttpWorker implements Callable<Response> {
             }
             for (Cookie cookie : list) {
                 String name = cookie.getName();
-                if (!TextUtils.isEmpty(name) && name.equalsIgnoreCase("ALIPAYJSESSIONID")) {
+                if (!StringUtils.isEmpty(name) && name.equalsIgnoreCase("ALIPAYJSESSIONID")) {
                     q();
                     return;
                 }
@@ -2245,7 +2245,7 @@ public class HttpWorker implements Callable<Response> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("64de478", new Object[]{this});
-        } else if (TextUtils.isEmpty(getOperationType())) {
+        } else if (StringUtils.isEmpty(getOperationType())) {
         } else {
             LogCatUtil.info(TAG, "reset cookie.  API=" + getOperationType());
             GwCookieCacheHelper.removeAllCookie();
@@ -2465,7 +2465,7 @@ public class HttpWorker implements Callable<Response> {
                 LogCatUtil.debug(TAG, "rpcSelfEncryptSwitch is off");
                 return false;
             }
-            boolean equals = TextUtils.equals(this.mOriginRequest.getRequestMethod(), "GET");
+            boolean equals = StringUtils.equals(this.mOriginRequest.getRequestMethod(), "GET");
             if (MiscUtils.isDebugger(this.mContext)) {
                 LogCatUtil.debug(TAG, "isRpc: " + isRpcRequest() + " ,isGetMethod: " + equals + " ,isNeedSelfEncrypt: " + SelfEncryptUtils.isNeedSelfEncrypt() + " ,isInGwWhiteList: " + SelfEncryptUtils.isInGwWhiteList(this.mOriginRequest.getUrl()) + " ,isDefaultGlobalCrypt: " + SelfEncryptUtils.isDefaultGlobalCrypt());
             }

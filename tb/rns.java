@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Map;
 
@@ -41,7 +41,7 @@ public class rns implements rnz {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str) && (map = this.b) != null) {
+        if (!StringUtils.isEmpty(str) && (map = this.b) != null) {
             return map.get(str);
         }
         return null;

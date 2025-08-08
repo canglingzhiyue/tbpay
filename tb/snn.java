@@ -8,7 +8,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -343,7 +343,7 @@ public final class snn {
             }
             sin.a(E);
             String e = E.e();
-            if (TextUtils.isEmpty(e)) {
+            if (StringUtils.isEmpty(e)) {
                 return;
             }
             FluidSDK.getImageAdapter().load(e, new com.taobao.android.fluid.framework.adapter.mtop.a<String, BitmapDrawable>() { // from class: tb.snn.1
@@ -818,7 +818,7 @@ public final class snn {
                     } else {
                         a2 = snn.b(snn.this).getContext() instanceof ogb ? com.taobao.android.layoutmanager.container.secondpage.biz.a.a((ogb) snn.b(snn.this).getContext()) : null;
                     }
-                    if (!TextUtils.isEmpty(B) && a2 != null) {
+                    if (!StringUtils.isEmpty(B) && a2 != null) {
                         ITrackService iTrackService = (ITrackService) snn.b(snn.this).getService(ITrackService.class);
                         if (iTrackService != null) {
                             Map<String, String> activeCardCommonTrack = iTrackService.getActiveCardCommonTrack();
@@ -952,7 +952,7 @@ public final class snn {
                     } else if (findFirstVisibleItemPosition < 2) {
                         snn.f(snn.this).postLoadUpRunnable();
                     }
-                    if (snn.f(snn.this).isLoadingUp() || snn.this.f().canScrollVertically(-1) || snn.f(snn.this).ismHasShowNoMoreMsgUp() || !snn.f(snn.this).isUpNoMoreData() || TextUtils.isEmpty(snn.f(snn.this).getNoMoreMsgUp())) {
+                    if (snn.f(snn.this).isLoadingUp() || snn.this.f().canScrollVertically(-1) || snn.f(snn.this).ismHasShowNoMoreMsgUp() || !snn.f(snn.this).isUpNoMoreData() || StringUtils.isEmpty(snn.f(snn.this).getNoMoreMsgUp())) {
                         return;
                     }
                     oce.b(context, snn.f(snn.this).getNoMoreMsgUp());
@@ -986,7 +986,7 @@ public final class snn {
                     } else if (snn.this.d().getItemCount() < snn.this.d().findFirstVisibleItemPosition() + 4) {
                         snn.f(snn.this).postLoadDownRunnable();
                     }
-                    if (snn.f(snn.this).isLoadingMore() || canScrollVertically || snn.f(snn.this).isHasShowNoMoreMsg() || !snn.f(snn.this).isNoMoreData() || TextUtils.isEmpty(snn.f(snn.this).getNoMoreMsg())) {
+                    if (snn.f(snn.this).isLoadingMore() || canScrollVertically || snn.f(snn.this).isHasShowNoMoreMsg() || !snn.f(snn.this).isNoMoreData() || StringUtils.isEmpty(snn.f(snn.this).getNoMoreMsg())) {
                         return;
                     }
                     spz.c("ListRenderManager", "VideoProcess PublicCardListController.mLoadMoreRunnable onDragUp。 isNoMoreData()=true；toast提示：" + snn.f(snn.this).getNoMoreMsg());

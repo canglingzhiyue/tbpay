@@ -2,7 +2,7 @@ package com.taobao.agoo.util;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.ALog;
@@ -52,7 +52,7 @@ public class AgooUtils {
         if (f8392a == null) {
             try {
                 String q = l.q(context);
-                if (TextUtils.isEmpty(q)) {
+                if (StringUtils.isEmpty(q)) {
                     return -1;
                 }
                 f8392a = Integer.valueOf(Math.abs(q.hashCode()) % 100);

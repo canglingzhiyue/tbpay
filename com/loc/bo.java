@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.loc.bt;
 import java.net.URL;
 import java.net.URLConnection;
@@ -122,11 +122,11 @@ public final class bo {
         d(btVar);
         try {
             String c2 = btVar.c();
-            if (TextUtils.isEmpty(c2)) {
+            if (StringUtils.isEmpty(c2)) {
                 return false;
             }
             String host = new URL(c2).getHost();
-            if (!TextUtils.isEmpty(btVar.g())) {
+            if (!StringUtils.isEmpty(btVar.g())) {
                 host = btVar.g();
             }
             return m.g(host);

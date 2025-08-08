@@ -2,7 +2,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.input;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,7 +128,7 @@ public class d extends RecyclerView.Adapter {
         if ("anchor_custom_sticker".equals(stickerGroup.type) || "official_strip_sticker".equals(stickerGroup.type)) {
             return 2;
         }
-        if (TextUtils.isEmpty(stickerGroup.stickerType)) {
+        if (StringUtils.isEmpty(stickerGroup.stickerType)) {
             return 3;
         }
         if ("icon".equals(stickerGroup.stickerType)) {

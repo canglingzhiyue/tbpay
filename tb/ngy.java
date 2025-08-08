@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import com.alibaba.ariver.kernel.common.service.RVEnvironmentService;
@@ -171,7 +171,7 @@ public abstract class ngy {
                 if (ipChange2 instanceof IpChange) {
                     return (nfd) ipChange2.ipc$dispatch("7c72d9e8", new Object[]{this, str});
                 }
-                if (!TextUtils.isEmpty(str) && !"mtop".equals(str)) {
+                if (!StringUtils.isEmpty(str) && !"mtop".equals(str)) {
                     return null;
                 }
                 if (this.f31458a == null) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAFlowData;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
@@ -301,7 +301,7 @@ public final class ayn extends arv implements ash {
         }
         JSONObject jSONObject = (JSONObject) aURAGlobalData.get("floatRawProtocol", JSONObject.class);
         String str = (String) this.c.get("floatRootKey", String.class);
-        if (jSONObject == null || TextUtils.isEmpty(str)) {
+        if (jSONObject == null || StringUtils.isEmpty(str)) {
             return null;
         }
         AURAParseIO aURAParseIO = new AURAParseIO(Arrays.asList(new a(jSONObject)));

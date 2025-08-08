@@ -11,7 +11,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.helper.DialogHelper;
@@ -136,7 +136,7 @@ public class VerifyJsbridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             UserTrackAdapter.sendUT(str);
         }
         if ("supportBiometricType".equals(str)) {
@@ -170,7 +170,7 @@ public class VerifyJsbridge extends e {
         r rVar = new r();
         String optString = new JSONObject(str).optString(SessionConstants.BIOMETRIC);
         if (ServiceFactory.getService(FingerprintService.class) != null) {
-            if (!TextUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(optString))) {
+            if (!StringUtils.isEmpty(SecurityGuardManagerWraper.getFingerValue(optString))) {
                 if (wVCallBackContext != null) {
                     rVar.a("supportBiometricType", MspFlybirdDefine.FLYBIRD_SETTING_FINGERPRINT);
                     wVCallBackContext.success(rVar);
@@ -194,7 +194,7 @@ public class VerifyJsbridge extends e {
         String optString = new JSONObject(str).optString(SessionConstants.BIOMETRIC);
         if (ServiceFactory.getService(FingerprintService.class) != null) {
             final String fingerValue = SecurityGuardManagerWraper.getFingerValue(optString);
-            if (!TextUtils.isEmpty(fingerValue)) {
+            if (!StringUtils.isEmpty(fingerValue)) {
                 ((NavigatorService) ServiceFactory.getService(NavigatorService.class)).fingerIV(this.mContext, new CommonCallback() { // from class: com.taobao.login4android.video.VerifyJsbridge.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -427,7 +427,7 @@ public class VerifyJsbridge extends e {
                                 return;
                             }
                             String stringExtra = intent.getStringExtra("token");
-                            if (TextUtils.isEmpty(stringExtra)) {
+                            if (StringUtils.isEmpty(stringExtra)) {
                                 VerifyJsbridge.access$500(VerifyJsbridge.this, wVCallBackContext, -2, "empty token");
                                 return;
                             }
@@ -476,7 +476,7 @@ public class VerifyJsbridge extends e {
         wVCallBackContext.success(rVar);
         Properties properties = new Properties();
         properties.put(UTConstant.Args.UT_PROPERTY_SUCCESS, "T");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         UserTrackAdapter.sendUT(str, properties);
@@ -496,7 +496,7 @@ public class VerifyJsbridge extends e {
         Properties properties = new Properties();
         properties.put(UTConstant.Args.UT_PROPERTY_SUCCESS, UTConstant.Args.UT_SUCCESS_F);
         properties.put("code", Integer.valueOf(i));
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         UserTrackAdapter.sendUT(str, properties);

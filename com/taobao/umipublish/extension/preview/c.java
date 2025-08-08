@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -394,7 +394,7 @@ public class c implements ViewPager.OnPageChangeListener {
         this.j.setText(a2);
         this.j.setFocusable(true);
         this.j.setFocusableInTouchMode(true);
-        this.j.setEllipsize(TextUtils.TruncateAt.MARQUEE);
+        this.j.setEllipsize(StringUtils.TruncateAt.MARQUEE);
         this.j.setMarqueeRepeatLimit(-1);
         this.j.setSelected(true);
         this.j.setSingleLine();

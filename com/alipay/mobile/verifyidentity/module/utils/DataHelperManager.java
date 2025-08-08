@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.verifyidentity.engine.MicroModuleContext;
 import com.alipay.mobile.verifyidentity.log.VerifyLogCat;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -87,7 +87,7 @@ public class DataHelperManager {
         if (this.c == null) {
             this.c = new ConcurrentHashMap<>();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.c.get(str);
         }
         return null;
@@ -97,7 +97,7 @@ public class DataHelperManager {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c9fe1263", new Object[]{this, str});
-        } else if (this.c == null || TextUtils.isEmpty(str)) {
+        } else if (this.c == null || StringUtils.isEmpty(str)) {
         } else {
             this.c.remove(str);
         }

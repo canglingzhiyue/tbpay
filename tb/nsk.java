@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -57,7 +57,7 @@ public class nsk extends isf {
 
     private boolean a(JSONObject jSONObject) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue() : !TextUtils.isEmpty(jSONObject.getString(KEY_NEW_SEARCH_URL));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("266fb8c", new Object[]{this, jSONObject})).booleanValue() : !StringUtils.isEmpty(jSONObject.getString(KEY_NEW_SEARCH_URL));
     }
 
     @Override // tb.isf
@@ -161,9 +161,9 @@ public class nsk extends isf {
             for (int i = 0; i < size; i++) {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                 String string = jSONObject2.getString("type");
-                if (!TextUtils.isEmpty(string) && (obj = jSONObject2.get("data")) != null) {
+                if (!StringUtils.isEmpty(string) && (obj = jSONObject2.get("data")) != null) {
                     String string2 = jSONObject2.getString("key");
-                    if (!TextUtils.isEmpty(string2)) {
+                    if (!StringUtils.isEmpty(string2)) {
                         Object obj2 = jSONObject.get(string2);
                         if (obj2 == null) {
                             jSONObject.put(string2, obj);
@@ -299,7 +299,7 @@ public class nsk extends isf {
             return;
         }
         String string = b.getString("for_bts");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             str = nth.a();
         } else {
             if (!string.endsWith(";")) {
@@ -349,7 +349,7 @@ public class nsk extends isf {
         for (Map.Entry<String, Object> entry : b.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && value != null) {
+            if (!StringUtils.isEmpty(key) && value != null) {
                 hashMap.put(key, value.toString());
             }
         }
@@ -386,7 +386,7 @@ public class nsk extends isf {
             return;
         }
         String string = jSONObject.getString(JarvisConstant.KEY_JARVIS_CONFIG);
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             result.addExtMod(JarvisConstant.KEY_JARVIS_CONFIG, string);
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject(JarvisConstant.KEY_JARVIS_CONTEXT);
@@ -411,7 +411,7 @@ public class nsk extends isf {
             result.addExtMod("filterMod", string);
         }
         String string2 = jSONObject.getString("sideMod");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             return;
         }
         result.addExtMod("sideMod", string2);
@@ -472,7 +472,7 @@ public class nsk extends isf {
             String string = b2.getString("param");
             String string2 = b.getString("name");
             String string3 = b.getString("version");
-            if (TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3) || TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3) || StringUtils.isEmpty(string)) {
                 return;
             }
             HashMap hashMap = null;
@@ -482,7 +482,7 @@ public class nsk extends isf {
                 for (Map.Entry<String, Object> entry : b3.entrySet()) {
                     String key = entry.getKey();
                     Object value = entry.getValue();
-                    if (!TextUtils.isEmpty(key) && value != null) {
+                    if (!StringUtils.isEmpty(key) && value != null) {
                         hashMap.put(key, value.toString());
                     }
                 }
@@ -499,23 +499,23 @@ public class nsk extends isf {
             return;
         }
         String string = "bizDegrade".equals(Downgrade.getInstance().getDowngradeStrategy(noa.VALUE_BIZ_TYPE_NEW_SEARCH).getTacticsFunction()) ? null : jSONObject.getString(KEY_NEW_SEARCH_URL);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = jSONObject.getString(KEY_GUIDE_SEARCH_URL);
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = jSONObject.getString(nom.KEY_BOX_SEARCH);
             z = false;
         } else {
             z = true;
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         if (result instanceof CommonSearchResult) {
             CommonSearchResult commonSearchResult = (CommonSearchResult) result;
             if (z) {
                 commonSearchResult.newSearch = true;
-                commonSearchResult.guideSearch = true ^ TextUtils.isEmpty(jSONObject.getString(KEY_GUIDE_SEARCH_URL));
+                commonSearchResult.guideSearch = true ^ StringUtils.isEmpty(jSONObject.getString(KEY_GUIDE_SEARCH_URL));
             }
         }
         jSONObject.remove(nom.KEY_BOX_SEARCH);
@@ -553,15 +553,15 @@ public class nsk extends isf {
         } else if (!(result instanceof CommonSearchResult) || jSONObject == null) {
         } else {
             CommonSearchResult commonSearchResult = (CommonSearchResult) result;
-            if (!TextUtils.isEmpty(jSONObject.getString(KEY_NEW_SEARCH_URL))) {
+            if (!StringUtils.isEmpty(jSONObject.getString(KEY_NEW_SEARCH_URL))) {
                 return;
             }
             String string = jSONObject.getString(nom.KEY_BOX_SEARCH);
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             Map<String, String> a2 = com.taobao.android.searchbaseframe.util.r.a(string);
-            if (a2.isEmpty() || !TextUtils.equals(nom.VALUE_YES, a2.get("_xsearchIsGiraffe"))) {
+            if (a2.isEmpty() || !StringUtils.equals(nom.VALUE_YES, a2.get("_xsearchIsGiraffe"))) {
                 return;
             }
             TemplateBean templateBean = new TemplateBean();
@@ -572,7 +572,7 @@ public class nsk extends isf {
             String b = com.taobao.android.searchbaseframe.util.r.b(templateBean.url);
             Map<String, String> a3 = com.taobao.android.searchbaseframe.util.r.a(templateBean.url);
             templateBean.binary = b != null && b.endsWith(".wlasm");
-            if (TextUtils.equals("1", a3.get("__cell_for_layout"))) {
+            if (StringUtils.equals("1", a3.get("__cell_for_layout"))) {
                 templateBean.cellBinary = true;
             }
             a2.put("tItemType", templateBean.templateName);
@@ -617,7 +617,7 @@ public class nsk extends isf {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95510c9c", new Object[]{jSONObject, str, str2});
-        } else if (jSONObject == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (jSONObject == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             jSONObject.put(str, (Object) str2);
         }
@@ -692,12 +692,12 @@ public class nsk extends isf {
         } else if (a(resultLayoutInfoBean, jSONArray)) {
         } else {
             String a2 = a(resultLayoutInfoBean.listHeaders, "nt_prepose_filter");
-            if (TextUtils.isEmpty(a2)) {
+            if (StringUtils.isEmpty(a2)) {
                 return;
             }
             resultLayoutInfoBean.stickyHeaders.add(0, a2);
             String a3 = a(resultLayoutInfoBean.stickyHeaders, str);
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             resultLayoutInfoBean.halfStickyHeaders.add(a3);
@@ -711,7 +711,7 @@ public class nsk extends isf {
             return ((Boolean) ipChange.ipc$dispatch("b49bda52", new Object[]{this, resultLayoutInfoBean, jSONArray})).booleanValue();
         }
         if (!resultLayoutInfoBean.sceneHeaders.isEmpty() && !jSONArray.isEmpty() && (b = a.b(jSONArray.getJSONObject(0), "style")) != null) {
-            return TextUtils.equals(nom.VALUE_YES, b.getString("isGiraffe"));
+            return StringUtils.equals(nom.VALUE_YES, b.getString("isGiraffe"));
         }
         return false;
     }
@@ -722,7 +722,7 @@ public class nsk extends isf {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("fe45281d", new Object[]{this, list, str});
         }
-        if (TextUtils.isEmpty(str) || list == null || list.isEmpty()) {
+        if (StringUtils.isEmpty(str) || list == null || list.isEmpty()) {
             return "";
         }
         int i2 = -1;
@@ -731,7 +731,7 @@ public class nsk extends isf {
                 break;
             }
             String str2 = list.get(i);
-            if (!TextUtils.isEmpty(str2) && str2.contains(str)) {
+            if (!StringUtils.isEmpty(str2) && str2.contains(str)) {
                 i2 = i;
                 break;
             }
@@ -770,7 +770,7 @@ public class nsk extends isf {
             return;
         }
         String string = jSONObject3.getString("enableSlide");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         result.addExtMod("enableSlide", string);
@@ -934,8 +934,8 @@ public class nsk extends isf {
             return "";
         }
         String string = jSONObject2.getString("tItemType");
-        if (TextUtils.isEmpty(string)) {
-            string = TextUtils.equals(nne.PAGE_NAME_INSHOP, str) ? "nt_inshop_topbar" : "nt_topbar";
+        if (StringUtils.isEmpty(string)) {
+            string = StringUtils.equals(nne.PAGE_NAME_INSHOP, str) ? "nt_inshop_topbar" : "nt_topbar";
             jSONObject2.put("tItemType", (Object) string);
         }
         jSONArray.add(0, jSONObject2);
@@ -1124,7 +1124,7 @@ public class nsk extends isf {
         JSONObject jSONObject2 = new JSONObject();
         for (String str : list) {
             String string = jSONObject.getString(str);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 jSONObject2.put(str, (Object) string);
             }
         }
@@ -1156,7 +1156,7 @@ public class nsk extends isf {
         if (a2 != null) {
             for (int i = 0; i < a2.size(); i++) {
                 String string = a2.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     arrayList.add(string);
                 }
             }

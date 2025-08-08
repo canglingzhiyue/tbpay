@@ -1,7 +1,7 @@
 package com.huawei.hms.framework.network.grs.f;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.Logger;
 import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.Collections;
@@ -36,14 +36,14 @@ public class e {
         String issueCountry = grsBaseInfo.getIssueCountry();
         for (String str4 : str.split(">")) {
             if (b.contains(str4.trim())) {
-                if ("ser_country".equals(str4.trim()) && !TextUtils.isEmpty(serCountry) && !"UNKNOWN".equals(serCountry)) {
+                if ("ser_country".equals(str4.trim()) && !StringUtils.isEmpty(serCountry) && !"UNKNOWN".equals(serCountry)) {
                     str2 = f7422a;
                     sb = new StringBuilder();
                     str3 = "current route_by is serCountry and routerCountry is: ";
-                } else if ("reg_country".equals(str4.trim()) && !TextUtils.isEmpty(regCountry) && !"UNKNOWN".equals(regCountry)) {
+                } else if ("reg_country".equals(str4.trim()) && !StringUtils.isEmpty(regCountry) && !"UNKNOWN".equals(regCountry)) {
                     Logger.i(f7422a, "current route_by is regCountry and routerCountry is: " + regCountry);
                     return regCountry;
-                } else if ("issue_country".equals(str4.trim()) && !TextUtils.isEmpty(issueCountry) && !"UNKNOWN".equals(issueCountry)) {
+                } else if ("issue_country".equals(str4.trim()) && !StringUtils.isEmpty(issueCountry) && !"UNKNOWN".equals(issueCountry)) {
                     Logger.i(f7422a, "current route_by is issueCountry and routerCountry is: " + issueCountry);
                     return issueCountry;
                 } else if ("geo_ip".equals(str4.trim())) {
@@ -62,7 +62,7 @@ public class e {
     }
 
     public static String b(Context context, com.huawei.hms.framework.network.grs.e.a aVar, String str, GrsBaseInfo grsBaseInfo, boolean z) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             Logger.w(f7422a, "routeBy must be not empty string or null.");
             return null;
         } else if (!"no_route".equals(str) && !"unconditional".equals(str)) {

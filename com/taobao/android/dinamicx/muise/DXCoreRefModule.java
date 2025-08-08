@@ -2,7 +2,7 @@ package com.taobao.android.dinamicx.muise;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -64,7 +64,7 @@ public class DXCoreRefModule extends MUSModule {
                     return (JSONObject) ipChange2.ipc$dispatch("709f7788", new Object[]{this});
                 }
                 Object executeContext = DXCoreRefModule.this.getInstance().getExecuteContext();
-                if (!(executeContext instanceof DXRuntimeContext) || TextUtils.isEmpty(str) || (d = ((DXRuntimeContext) executeContext).d()) == null || (queryRootWidgetNode = d.queryRootWidgetNode()) == null || (access$000 = DXCoreRefModule.access$000(DXCoreRefModule.this, queryRootWidgetNode, str)) == null) {
+                if (!(executeContext instanceof DXRuntimeContext) || StringUtils.isEmpty(str) || (d = ((DXRuntimeContext) executeContext).d()) == null || (queryRootWidgetNode = d.queryRootWidgetNode()) == null || (access$000 = DXCoreRefModule.access$000(DXCoreRefModule.this, queryRootWidgetNode, str)) == null) {
                     return null;
                 }
                 if ("render".equals(str2)) {

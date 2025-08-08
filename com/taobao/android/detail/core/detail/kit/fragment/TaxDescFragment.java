@@ -2,7 +2,7 @@ package com.taobao.android.detail.core.detail.kit.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +71,7 @@ public class TaxDescFragment extends GeneralFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b0807925", new Object[]{fragmentActivity, str, list});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || list == null || list.size() == 0) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || list == null || list.size() == 0) {
         } else {
             FloatFragment.startFragment(fragmentActivity, newInstance(str, list));
             dzh.j(fragmentActivity);
@@ -188,19 +188,19 @@ public class TaxDescFragment extends GeneralFragment {
             }
             Map map = (Map) TaxDescFragment.access$000(TaxDescFragment.this).get(i);
             for (String str : map.keySet()) {
-                if (!TextUtils.isEmpty(str) && map.get(str) != null && ((List) map.get(str)).size() > 0) {
+                if (!StringUtils.isEmpty(str) && map.get(str) != null && ((List) map.get(str)).size() > 0) {
                     aVar.f9529a.setText(str);
                     Pair pair = (Pair) ((List) map.get(str)).get(0);
                     if (pair == null) {
                         return;
                     }
-                    if (!TextUtils.isEmpty((CharSequence) pair.first)) {
+                    if (!StringUtils.isEmpty((CharSequence) pair.first)) {
                         aVar.b.setText((CharSequence) pair.first);
                         aVar.b.setVisibility(0);
                     } else {
                         aVar.b.setVisibility(8);
                     }
-                    if (!TextUtils.isEmpty((CharSequence) pair.second)) {
+                    if (!StringUtils.isEmpty((CharSequence) pair.second)) {
                         aVar.c.setText((CharSequence) pair.second);
                         aVar.c.setVisibility(0);
                     } else {

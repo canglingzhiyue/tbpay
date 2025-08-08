@@ -5,7 +5,7 @@ import android.hardware.Camera;
 import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.WindowManager;
 import com.alipay.mobile.security.bio.common.record.MetaRecord;
 import com.alipay.mobile.security.bio.service.BioServiceManager;
@@ -124,7 +124,7 @@ public abstract class rrh implements Camera.AutoFocusMoveCallback, rrm {
             return;
         }
         String a2 = a(parameters, this.s);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             parameters.setFocusMode(a2);
         }
         this.f33331a.setParameters(parameters);

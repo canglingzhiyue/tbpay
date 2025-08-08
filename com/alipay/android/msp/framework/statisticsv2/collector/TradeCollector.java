@@ -1,6 +1,6 @@
 package com.alipay.android.msp.framework.statisticsv2.collector;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.alipay.android.msp.core.context.MspContext;
@@ -173,7 +173,7 @@ public class TradeCollector {
         String str = Grammar.ATTR_DEFAULT_VALUE;
         try {
             MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(i);
-            return (mspContextByBizId == null || TextUtils.isEmpty(mspContextByBizId.getTradeNo())) ? str : mspContextByBizId.getTradeNo();
+            return (mspContextByBizId == null || StringUtils.isEmpty(mspContextByBizId.getTradeNo())) ? str : mspContextByBizId.getTradeNo();
         } catch (Throwable th) {
             LogUtil.printExceptionStackTrace(th);
             return str;
@@ -193,8 +193,8 @@ public class TradeCollector {
             }
             String str2 = tradeContextByBizId.getOrderInfoMap().get("out_trade_no");
             try {
-                String str3 = !TextUtils.isEmpty(tradeContextByBizId.getOrderInfoMap().get("ord_id_ext")) ? tradeContextByBizId.getOrderInfoMap().get("ord_id_ext") : str2;
-                return (!TextUtils.isEmpty(str3) || tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT) == null) ? str3 : new JSONObject(URLDecoder.decode(tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT), "utf-8")).optString("out_trade_no", Grammar.ATTR_DEFAULT_VALUE);
+                String str3 = !StringUtils.isEmpty(tradeContextByBizId.getOrderInfoMap().get("ord_id_ext")) ? tradeContextByBizId.getOrderInfoMap().get("ord_id_ext") : str2;
+                return (!StringUtils.isEmpty(str3) || tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT) == null) ? str3 : new JSONObject(URLDecoder.decode(tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT), "utf-8")).optString("out_trade_no", Grammar.ATTR_DEFAULT_VALUE);
             } catch (Throwable th) {
                 th = th;
                 str = str2;
@@ -234,7 +234,7 @@ public class TradeCollector {
             }
             String str2 = tradeContextByBizId.getOrderInfoMap().get("partner");
             try {
-                return (!TextUtils.isEmpty(str2) || tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT) == null) ? str2 : new JSONObject(URLDecoder.decode(tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT), "utf-8")).optString("seller_id", Grammar.ATTR_DEFAULT_VALUE);
+                return (!StringUtils.isEmpty(str2) || tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT) == null) ? str2 : new JSONObject(URLDecoder.decode(tradeContextByBizId.getOrderInfoMap().get(StatisticRecord.KEY_BIZ_CONTENT), "utf-8")).optString("seller_id", Grammar.ATTR_DEFAULT_VALUE);
             } catch (Throwable th) {
                 th = th;
                 str = str2;

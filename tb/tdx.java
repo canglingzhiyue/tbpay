@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.constants.MspGlobalDefine;
@@ -146,7 +146,7 @@ public class tdx {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("8123b0c6", new Object[]{this, str, new Long(j)})).longValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return Long.parseLong(str);
             } catch (Throwable unused) {
@@ -294,7 +294,7 @@ public class tdx {
             return (String) ipChange.ipc$dispatch("28f46725", new Object[]{this, map});
         }
         String str = map.get("orderids");
-        return TextUtils.isEmpty(str) ? "" : String.valueOf(str.split(",").length);
+        return StringUtils.isEmpty(str) ? "" : String.valueOf(str.split(",").length);
     }
 
     private String d(Map<String, String> map) {
@@ -303,7 +303,7 @@ public class tdx {
             return (String) ipChange.ipc$dispatch("3c9c3aa6", new Object[]{this, map});
         }
         String str = map.get("signStr");
-        return TextUtils.isEmpty(str) ? "" : str;
+        return StringUtils.isEmpty(str) ? "" : str;
     }
 
     private void a(Map<String, String> map, String str, String str2) {

@@ -1,7 +1,7 @@
 package com.taobao.umipublish.extension.windvane.abilities;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -249,7 +249,7 @@ public final class ImageStokeAbility extends BaseAbility {
             ArrayList arrayList = new ArrayList();
             for (Object obj : list) {
                 Image image = (Image) obj;
-                if (TextUtils.isEmpty(image.b()) && TextUtils.isEmpty(image.c())) {
+                if (StringUtils.isEmpty(image.b()) && StringUtils.isEmpty(image.c())) {
                     arrayList.add(obj);
                 }
             }

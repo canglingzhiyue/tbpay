@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.alibity.container.broadcast.b;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -34,7 +34,7 @@ public class dux {
             ipChange.ipc$dispatch("61b6362a", new Object[]{context, str});
         } else if (!b(context)) {
         } else {
-            if (d(context) && !TextUtils.isEmpty(str)) {
+            if (d(context) && !StringUtils.isEmpty(str)) {
                 b(context, str);
             } else {
                 c(context);

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hianalytics.process.HiAnalyticsManager;
 import com.huawei.hianalytics.util.HiAnalyticTools;
 import com.huawei.hms.hatool.HmsHiAnalyticsUtils;
@@ -287,7 +287,7 @@ public class HiAnalyticsUtils {
     }
 
     public static String versionCodeToName(String str) {
-        if (!TextUtils.isEmpty(str) && (str.length() == 8 || str.length() == 9)) {
+        if (!StringUtils.isEmpty(str) && (str.length() == 8 || str.length() == 9)) {
             try {
                 Integer.parseInt(str);
                 return Integer.parseInt(str.substring(0, str.length() - 7)) + "." + Integer.parseInt(str.substring(str.length() - 7, str.length() - 5)) + "." + Integer.parseInt(str.substring(str.length() - 5, str.length() - 3)) + "." + Integer.parseInt(str.substring(str.length() - 3));

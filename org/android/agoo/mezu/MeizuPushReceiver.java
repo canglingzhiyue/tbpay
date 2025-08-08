@@ -2,7 +2,7 @@ package org.android.agoo.mezu;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.triver.triver_shop.container.shopLoft.b;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
@@ -78,7 +78,7 @@ public class MeizuPushReceiver extends MzPushMessageReceiver {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("99d71175", new Object[]{this, context, registerStatus});
-        } else if (registerStatus == null || TextUtils.isEmpty(registerStatus.getPushId())) {
+        } else if (registerStatus == null || StringUtils.isEmpty(registerStatus.getPushId())) {
             Object[] objArr = new Object[2];
             objArr[0] = "status";
             objArr[1] = registerStatus == null ? "" : registerStatus.toString();
@@ -149,7 +149,7 @@ public class MeizuPushReceiver extends MzPushMessageReceiver {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1fbf10e6", new Object[]{context, str});
-        } else if (TextUtils.isEmpty(str) || context == null) {
+        } else if (StringUtils.isEmpty(str) || context == null) {
         } else {
             NotifManager notifManager = new NotifManager();
             notifManager.init(context.getApplicationContext());

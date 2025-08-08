@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1264,7 +1264,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
             ipChange.ipc$dispatch("5b2e1ed", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(e) && e.equals(this.param.tid)) {
+        if (!StringUtils.isEmpty(e) && e.equals(this.param.tid)) {
             final String str = this.param.tid;
             FBLogger.d("FBDocument", "got tidToDebug: " + e);
             this.b0.post(new Runnable() { // from class: com.flybird.FBDocument.3
@@ -1322,10 +1322,10 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
                         return;
                     }
                     String str3 = FBDocument.this.param.tplJson;
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         str3 = FBDocument.this.param.tplHtml;
                     }
-                    if (TextUtils.isEmpty(str3)) {
+                    if (StringUtils.isEmpty(str3)) {
                         throw new IllegalArgumentException("The template content is empty!");
                     }
                     if (str3 == null || str3.contains(riy.BLOCK_START_STR)) {
@@ -1392,10 +1392,10 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
         }
         e eVar = new e();
         String str2 = this.param.tplJson;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = this.param.tplHtml;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if (str2 != null && !str2.contains(riy.BLOCK_START_STR)) {
                 String str3 = new String(Base64.decode(str2));
                 if (!BirdNestEngine.useNoFootprint) {
@@ -1783,7 +1783,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5506bc5f", new Object[]{this, new Integer(i2), str, str2});
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             if ("content".equals(str)) {
                 String[] split2 = str2.split(";");
                 if (split2 == null) {
@@ -2158,9 +2158,9 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
             FBLogger.e("FBDocument", "dynamic exception case 000-006, this: " + this);
             return null;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             String queryViewId = queryViewId(this.mCore, str);
-            if (!TextUtils.isEmpty(queryViewId) && (hashMap = this.F) != null && (fBView = hashMap.get(queryViewId)) != null) {
+            if (!StringUtils.isEmpty(queryViewId) && (hashMap = this.F) != null && (fBView = hashMap.get(queryViewId)) != null) {
                 return fBView.getInnerView();
             }
         } else {
@@ -2432,7 +2432,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
                 JSONObject optJSONObject = jSONObject.optJSONObject("action");
                 if (optJSONObject.has("name")) {
                     String string = optJSONObject.getString("name");
-                    if ((TextUtils.equals(string, "loc:back") || TextUtils.equals(string, "loc:exit")) && (context = this.k) != null && (context instanceof Activity)) {
+                    if ((StringUtils.equals(string, "loc:back") || StringUtils.equals(string, "loc:exit")) && (context = this.k) != null && (context instanceof Activity)) {
                         hiddenKeyboardService(((Activity) context).getWindow().getDecorView(), true);
                     }
                 }
@@ -2608,24 +2608,24 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
         if (map == null) {
             return;
         }
-        if (TextUtils.equals(map.get("autoadaptwindow"), "true")) {
+        if (StringUtils.equals(map.get("autoadaptwindow"), "true")) {
             this.l = true;
         }
-        if (TextUtils.equals(params.appParams.get("asynclayout"), "true")) {
+        if (StringUtils.equals(params.appParams.get("asynclayout"), "true")) {
             this.d0 = true;
         }
         if (params.appParams.containsKey("actionSheetType")) {
             this.l0 = params.appParams.get("actionSheetType");
         }
         if (configRemScaled()) {
-            if (TextUtils.equals(params.appParams.get("pixelToRem"), "true")) {
+            if (StringUtils.equals(params.appParams.get("pixelToRem"), "true")) {
                 this.s = true;
             }
             if (params.appParams.containsKey("scale")) {
                 this.t = Float.parseFloat(params.appParams.get("scale"));
             }
         }
-        if (TextUtils.equals(params.appParams.get("useAgednessVersion"), "true")) {
+        if (StringUtils.equals(params.appParams.get("useAgednessVersion"), "true")) {
             FBLogger.d("FBDocument", "useAgednessVersion: true");
             Platform.e = true;
             return;
@@ -3153,7 +3153,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fa210a1c", new Object[]{this, str, new Long(j), str2});
-        } else if (TextUtils.equals(str2, "toast")) {
+        } else if (StringUtils.equals(str2, "toast")) {
             try {
                 JSONObject jSONObject = new JSONObject(str);
                 if (!jSONObject.has("text")) {
@@ -3183,16 +3183,16 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
             } catch (Throwable th) {
                 FBLogger.e("FBDocument", "toast", th);
             }
-        } else if (TextUtils.equals(str2, "confirm")) {
+        } else if (StringUtils.equals(str2, "confirm")) {
             this.b0.post(new AnonymousClass15(str, j));
-        } else if (TextUtils.equals(str2, "asyncSubmit")) {
+        } else if (StringUtils.equals(str2, "asyncSubmit")) {
             if (this.C == null) {
                 return;
             }
             FBClickCallBack fBClickCallBack = new FBClickCallBack(j, this);
             this.Y.add(fBClickCallBack);
             this.C.onAsyncEvent(this, str, fBClickCallBack);
-        } else if (TextUtils.equals(str2, "actionSheet")) {
+        } else if (StringUtils.equals(str2, "actionSheet")) {
             try {
                 JSONObject jSONObject2 = new JSONObject(str);
                 JSONArray optJSONArray = jSONObject2.optJSONArray("btns");
@@ -3207,7 +3207,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
                     strArr = new String[length + 1];
                     System.arraycopy(strArr2, 0, strArr, 0, length);
                     strArr[length] = jSONObject2.getString("cancelBtn");
-                    str3 = TextUtils.equals(this.l0, "AUActionSheet") ? jSONObject2.getString("cancelBtn") : "";
+                    str3 = StringUtils.equals(this.l0, "AUActionSheet") ? jSONObject2.getString("cancelBtn") : "";
                     z = true;
                 } else {
                     strArr = strArr2;
@@ -3217,7 +3217,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
                 final int length2 = strArr.length;
                 if (this.f0) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this.k);
-                    if (!TextUtils.isEmpty(optString)) {
+                    if (!StringUtils.isEmpty(optString)) {
                         builder.setTitle(optString);
                     }
                     builder.setItems(strArr, new DialogInterface.OnClickListener() { // from class: com.flybird.FBDocument.10
@@ -3273,7 +3273,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
                     builder.create().show();
                     return;
                 }
-                Dialog createDialog = this.k0.getConfig().getUiWidgetProvider().createDialog(this.k, TextUtils.equals(this.l0, "AUActionSheet") ? "AUActionSheet" : "actionSheet", optString, str3, strArr, new AdapterView.OnItemClickListener() { // from class: com.flybird.FBDocument.12
+                Dialog createDialog = this.k0.getConfig().getUiWidgetProvider().createDialog(this.k, StringUtils.equals(this.l0, "AUActionSheet") ? "AUActionSheet" : "actionSheet", optString, str3, strArr, new AdapterView.OnItemClickListener() { // from class: com.flybird.FBDocument.12
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
                     {
@@ -3329,7 +3329,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
             } catch (Throwable th2) {
                 FBLogger.e("FBDocument", "actionSheet", th2);
             }
-        } else if (TextUtils.equals(str2, "alert")) {
+        } else if (StringUtils.equals(str2, "alert")) {
             try {
                 JSONObject jSONObject3 = new JSONObject(str);
                 SystemDefaultDialog.showDialog(this.k, jSONObject3.optString("title"), jSONObject3.optString("message"), jSONObject3.optString(a.ATOM_EXT_button), new DialogInterface.OnClickListener() { // from class: com.flybird.FBDocument.14
@@ -3352,7 +3352,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
             } catch (Throwable th3) {
                 FBLogger.e("FBDocument", "alert", th3);
             }
-        } else if (TextUtils.equals(str2, "picker")) {
+        } else if (StringUtils.equals(str2, "picker")) {
             try {
                 JSONObject jSONObject4 = new JSONObject(str);
                 JSONArray jSONArray = jSONObject4.getJSONArray("btns");
@@ -3368,7 +3368,7 @@ public class FBDocument implements FBContext, FBRootFrameLayout.OnSizeChangedLis
             } catch (Throwable th4) {
                 FBLogger.e("FBDocument", "picker", th4);
             }
-        } else if (TextUtils.equals(str2, "submit")) {
+        } else if (StringUtils.equals(str2, "submit")) {
             submit(str);
         }
     }

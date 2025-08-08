@@ -12,7 +12,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -288,7 +288,7 @@ public class TBWeexShare extends e {
         }
         TBShareContent j = com.taobao.share.globalmodel.e.b().j();
         JSONObject parseObject = JSON.parseObject(str);
-        if (j != null && parseObject != null && TextUtils.equals(parseObject.getString("videoPath"), j.extraParams.get("videoPath")) && !TextUtils.isEmpty(parseObject.getString("waterMaskVideoPath"))) {
+        if (j != null && parseObject != null && StringUtils.equals(parseObject.getString("videoPath"), j.extraParams.get("videoPath")) && !StringUtils.isEmpty(parseObject.getString("waterMaskVideoPath"))) {
             j.extraParams.put("waterMaskVideoPath", parseObject.getString("waterMaskVideoPath"));
             wVCallBackContext.success();
             return;
@@ -454,7 +454,7 @@ public class TBWeexShare extends e {
                             IpChange ipChange2 = $ipChange;
                             if (ipChange2 instanceof IpChange) {
                                 ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                            } else if (TextUtils.isEmpty(oba.a(true, bitmap, externalStoragePublicDirectory, TBWeexShare.access$500(TBWeexShare.this)))) {
+                            } else if (StringUtils.isEmpty(oba.a(true, bitmap, externalStoragePublicDirectory, TBWeexShare.access$500(TBWeexShare.this)))) {
                                 nyy.c("TBWeexShare", " saveShareImageList save fail:" + TBWeexShare.access$400(TBWeexShare.this).get());
                             } else {
                                 TBWeexShare.access$400(TBWeexShare.this).getAndIncrement();
@@ -556,7 +556,7 @@ public class TBWeexShare extends e {
             TBShareContent j = com.taobao.share.globalmodel.e.b().j();
             if ("common".equals(j.templateId)) {
                 String config = OrangeConfig.getInstance().getConfig("android_share", "commonTemplateId", "");
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     j.templateId = config;
                 }
             }
@@ -634,7 +634,7 @@ public class TBWeexShare extends e {
                         return;
                     }
                     String str2 = (String) obj;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         wVCallBackContext.error();
                         return;
                     }

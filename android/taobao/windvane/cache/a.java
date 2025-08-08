@@ -3,7 +3,7 @@ package android.taobao.windvane.cache;
 import android.content.Context;
 import android.net.Uri;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
 import java.nio.ByteBuffer;
@@ -98,7 +98,7 @@ public class a {
             return false;
         }
         Uri parse = Uri.parse(str);
-        return parse == null || !parse.isHierarchical() || !TextUtils.isEmpty(parse.getQueryParameter("_wvcrc=")) || !"0".equals(parse.getQueryParameter("_wvcrc="));
+        return parse == null || !parse.isHierarchical() || !StringUtils.isEmpty(parse.getQueryParameter("_wvcrc=")) || !"0".equals(parse.getQueryParameter("_wvcrc="));
     }
 
     public boolean a(c cVar, byte[] bArr) {

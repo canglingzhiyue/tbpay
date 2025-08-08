@@ -2,7 +2,7 @@ package com.taobao.avplayer;
 
 import android.app.Activity;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -237,13 +237,13 @@ public class l implements aw {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.f16523a.mPlayContext.getVideoUrl())) {
+        if (StringUtils.isEmpty(this.f16523a.mPlayContext.getVideoUrl())) {
             return false;
         }
-        if (TextUtils.isEmpty(this.f16523a.mFrom)) {
+        if (StringUtils.isEmpty(this.f16523a.mFrom)) {
             this.f16523a.mFrom = "default";
         }
-        return !TextUtils.isEmpty(this.f16523a.mVideoId);
+        return !StringUtils.isEmpty(this.f16523a.mVideoId);
     }
 
     private void h() {
@@ -253,10 +253,10 @@ public class l implements aw {
             return;
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(this.f16523a.mFrom)) {
+        if (!StringUtils.isEmpty(this.f16523a.mFrom)) {
             hashMap.put("page", this.f16523a.mFrom.toLowerCase());
         }
-        if (!TextUtils.isEmpty(this.f16523a.mVideoId)) {
+        if (!StringUtils.isEmpty(this.f16523a.mVideoId)) {
             hashMap.put(com.taobao.android.fluid.business.usertrack.track.b.PROPERTY_VIDEO_ID, this.f16523a.mVideoId + "");
         }
         hashMap.put("userId", String.valueOf(this.f16523a.mUserId));
@@ -276,7 +276,7 @@ public class l implements aw {
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(this.f16523a.mWidth, this.f16523a.mHeight);
         layoutParams.gravity = 17;
         this.e.addView(this.f.d(), layoutParams);
-        if (bVar.p && !TextUtils.isEmpty(bVar.q)) {
+        if (bVar.p && !StringUtils.isEmpty(bVar.q)) {
             this.g = new k(this.f16523a, bVar.q);
             this.g.a().setOnClickListener(new View.OnClickListener() { // from class: com.taobao.avplayer.l.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -304,7 +304,7 @@ public class l implements aw {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                } else if (TextUtils.isEmpty(bVar.c) || l.this.f16523a.getDWEventAdapter() == null) {
+                } else if (StringUtils.isEmpty(bVar.c) || l.this.f16523a.getDWEventAdapter() == null) {
                 } else {
                     l.this.f16523a.getDWEventAdapter().a(bVar.c);
                     HashMap hashMap = new HashMap();

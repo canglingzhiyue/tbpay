@@ -1,6 +1,6 @@
 package com.huawei.hms.common.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.adapter.internal.CommonCode;
 import com.huawei.hms.support.log.HMSLog;
 import com.huawei.hms.utils.JsonUtil;
@@ -41,7 +41,7 @@ public class ResponseWrap {
     }
 
     public String getBody() {
-        if (TextUtils.isEmpty(this.f7402a)) {
+        if (StringUtils.isEmpty(this.f7402a)) {
             this.f7402a = new JSONObject().toString();
         }
         return this.f7402a;
@@ -72,10 +72,10 @@ public class ResponseWrap {
             jSONObject.put(CommonCode.MapKey.TRANSACTION_ID, this.b.getTransactionId());
             jSONObject.put(CommonCode.MapKey.HAS_RESOLUTION, this.b.getResolution());
             String sessionId = this.b.getSessionId();
-            if (!TextUtils.isEmpty(sessionId)) {
+            if (!StringUtils.isEmpty(sessionId)) {
                 jSONObject.put("session_id", sessionId);
             }
-            if (!TextUtils.isEmpty(this.f7402a)) {
+            if (!StringUtils.isEmpty(this.f7402a)) {
                 jSONObject.put(AgooConstants.MESSAGE_BODY, this.f7402a);
             }
         } catch (JSONException e) {

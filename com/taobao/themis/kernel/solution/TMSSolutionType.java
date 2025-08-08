@@ -1,7 +1,7 @@
 package com.taobao.themis.kernel.solution;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.themis.kernel.f;
 import com.taobao.themis.kernel.i;
 import com.taobao.themis.utils.o;
@@ -33,10 +33,10 @@ public enum TMSSolutionType {
         if (com.taobao.themis.kernel.utils.i.c(uri.toString())) {
             return WEEX;
         }
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return WEB_SINGLE_PAGE;
         }
-        if (!TextUtils.equals(queryParameter2, "gm") && !arrayList.contains(queryParameter)) {
+        if (!StringUtils.equals(queryParameter2, "gm") && !arrayList.contains(queryParameter)) {
             return "true".equals(queryParameter3) ? CLUSTER_WIDGET : "true".equals(queryParameter4) ? WIDGET : MIX;
         }
         return MINIGAME;
@@ -44,6 +44,6 @@ public enum TMSSolutionType {
 
     public static TMSSolutionType getType(f fVar) {
         String g = fVar.g();
-        return TextUtils.isEmpty(g) ? MIX : getType(o.b(g));
+        return StringUtils.isEmpty(g) ? MIX : getType(o.b(g));
     }
 }

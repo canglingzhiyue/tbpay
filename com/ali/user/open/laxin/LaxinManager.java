@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.AliMemberSDK;
 import com.ali.user.open.core.model.RpcRequestCallbackWithCode;
 import com.ali.user.open.core.model.RpcResponse;
@@ -88,7 +88,7 @@ public class LaxinManager {
             ipChange.ipc$dispatch("88afb344", new Object[]{this, context, str, str2, str3, uccCallback});
         } else if (uccCallback == null) {
         } else {
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
                 SDKLogger.e(TAG, "empty param");
                 uccCallback.onFail(str, LaxinCode.INVALID_PARAM, "请求参数不合法");
             }
@@ -107,7 +107,7 @@ public class LaxinManager {
                     if (map != null) {
                         SDKLogger.e(LaxinManager.TAG, "onData paramMap is not null，success：" + map.get("success"));
                         String str4 = (String) map.get("data");
-                        if (!TextUtils.isEmpty(str4)) {
+                        if (!StringUtils.isEmpty(str4)) {
                             SDKLogger.e(LaxinManager.TAG, "onData paramMap token is not null");
                             HashMap hashMap = new HashMap();
                             hashMap.put("token", str4);
@@ -203,7 +203,7 @@ public class LaxinManager {
                 }
                 String str2 = (String) map.get("data");
                 SDKLogger.e(LaxinManager.TAG, "applyLaxinInfo data=" + str2);
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     uccCallback.onSuccess(str, map);
                     return;
                 }

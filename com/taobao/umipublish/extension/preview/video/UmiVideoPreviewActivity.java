@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.split.core.splitcompat.j;
@@ -328,7 +328,7 @@ public class UmiVideoPreviewActivity extends BasePreviewActivity implements com.
             PreviewModel.Media a2 = this.d.a();
             String str = a2.path;
             String str2 = a2.ratio;
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                 return;
             }
             Uri.Builder path = new Uri.Builder().scheme("http").authority("h5.m.taobao.com").path("/taopai/tpdefault.html");

@@ -1,6 +1,6 @@
 package com.etao.feimagesearch.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.chat.aura.messageflow.input.ChatInputConstant;
 import tb.cpe;
@@ -66,7 +66,7 @@ public interface PhotoFrom {
         }
 
         public static PhotoFrom parseValue(String str) {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return UNKNOWN;
             }
             Values[] values = values();

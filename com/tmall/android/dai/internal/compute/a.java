@@ -1,6 +1,6 @@
 package com.tmall.android.dai.internal.compute;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.config.BHRTaskConfigBase;
@@ -238,7 +238,7 @@ public class a implements DAIComputeService {
                             boolean a3 = eVar.a();
                             if (obj instanceof List) {
                                 String str5 = ((List) obj).get(1) + "";
-                                if (!TextUtils.isEmpty(str5)) {
+                                if (!StringUtils.isEmpty(str5)) {
                                     map3 = (Map) JSON.parseObject(str5, Map.class);
                                 }
                             }

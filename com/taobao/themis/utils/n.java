@@ -1,7 +1,7 @@
 package com.taobao.themis.utils;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
@@ -22,7 +22,7 @@ public class n {
         }
         try {
             String queryParameter = o.b(str).getQueryParameter("spm");
-            return (!TextUtils.isEmpty(queryParameter) || activity == null) ? queryParameter : UTAnalytics.getInstance().getDefaultTracker().getPageSpmUrl(activity);
+            return (!StringUtils.isEmpty(queryParameter) || activity == null) ? queryParameter : UTAnalytics.getInstance().getDefaultTracker().getPageSpmUrl(activity);
         } catch (Throwable th) {
             Log.e("UserTrackerUtils", th.getLocalizedMessage());
             return "";

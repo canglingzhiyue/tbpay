@@ -1,6 +1,6 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.viewmodel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -44,10 +44,10 @@ public class m extends e {
             ipChange.ipc$dispatch("266fb88", new Object[]{this, jSONObject});
             return;
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("maxNoMoreRows"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("maxNoMoreRows"))) {
             this.b = Integer.parseInt(jSONObject.getString("maxNoMoreRows"));
         }
-        if (!TextUtils.isEmpty(jSONObject.getString("maxShowRows"))) {
+        if (!StringUtils.isEmpty(jSONObject.getString("maxShowRows"))) {
             this.c = Integer.parseInt(jSONObject.getString("maxShowRows"));
         }
         JSONArray jSONArray = jSONObject.getJSONArray("infoList");

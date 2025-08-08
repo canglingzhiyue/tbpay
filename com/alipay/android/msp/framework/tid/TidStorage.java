@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.helper.Tid;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.framework.drm.DrmKey;
@@ -223,7 +223,7 @@ public class TidStorage {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("dd629117", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.equals(str, str2)) {
+        if (StringUtils.equals(str, str2)) {
             return true;
         }
         try {
@@ -233,8 +233,8 @@ public class TidStorage {
             JSONObject jSONObject2 = new JSONObject(str2);
             String optString3 = jSONObject2.optString("tid", "");
             String optString4 = jSONObject2.optString("client_key", "");
-            if (TextUtils.equals(optString, optString3)) {
-                if (TextUtils.equals(optString2, optString4)) {
+            if (StringUtils.equals(optString, optString3)) {
+                if (StringUtils.equals(optString2, optString4)) {
                     return true;
                 }
             }
@@ -250,7 +250,7 @@ public class TidStorage {
             return ((Boolean) ipChange.ipc$dispatch("e1693f7c", new Object[]{this, str})).booleanValue();
         }
         String utdid = GlobalHelper.getInstance().getUtdid(mContext);
-        if (TextUtils.isEmpty(utdid) || TextUtils.isEmpty(str) || TextUtils.equals(str, utdid)) {
+        if (StringUtils.isEmpty(utdid) || StringUtils.isEmpty(str) || StringUtils.equals(str, utdid)) {
             z = false;
         }
         if (z) {
@@ -284,7 +284,7 @@ public class TidStorage {
             long r1 = java.lang.System.currentTimeMillis()
             r3 = 0
             java.lang.String r4 = r10.getNonSecTid()     // Catch: java.lang.Exception -> L66
-            boolean r5 = android.text.TextUtils.isEmpty(r4)     // Catch: java.lang.Exception -> L66
+            boolean r5 = android.text.StringUtils.isEmpty(r4)     // Catch: java.lang.Exception -> L66
             if (r5 != 0) goto L61
             org.json.JSONObject r5 = new org.json.JSONObject     // Catch: java.lang.Exception -> L66
             r5.<init>(r4)     // Catch: java.lang.Exception -> L66
@@ -407,7 +407,7 @@ public class TidStorage {
         L2d:
             java.lang.String r5 = r11.getNonSecTid()     // Catch: java.lang.Exception -> L7c
         L31:
-            boolean r6 = android.text.TextUtils.isEmpty(r5)     // Catch: java.lang.Exception -> L7c
+            boolean r6 = android.text.StringUtils.isEmpty(r5)     // Catch: java.lang.Exception -> L7c
             if (r6 != 0) goto L6f
             org.json.JSONObject r6 = new org.json.JSONObject     // Catch: java.lang.Exception -> L7c
             r6.<init>(r5)     // Catch: java.lang.Exception -> L7c
@@ -484,7 +484,7 @@ public class TidStorage {
 
     private boolean isIllegal(String str, String str2, String str3, String str4) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3c6be9f", new Object[]{this, str, str2, str3, str4})).booleanValue() : TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3c6be9f", new Object[]{this, str, str2, str3, str4})).booleanValue() : StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4);
     }
 
     private void resetTid() {
@@ -552,7 +552,7 @@ public class TidStorage {
             return;
         }
         LogUtil.record(2, "", "TidStorage::save", "tid=" + str + ",clientKey=" + str2);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         this.mTid = str;
@@ -673,24 +673,24 @@ public class TidStorage {
                 return null;
             }
             String string = TidStorage.access$000().getSharedPreferences(str, 0).getString(str2, null);
-            if (TextUtils.isEmpty(string) || !z) {
+            if (StringUtils.isEmpty(string) || !z) {
                 str3 = string;
             } else {
                 String generateAK = generateAK();
                 str3 = Des.decryptAES(string, generateAK);
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = Des.decrypt(string, generateDesKey());
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         putLocalPreferences(str, str2, str3, true);
                     }
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     str3 = Des.decrypt(string, generateOldDesKey());
-                    if (!TextUtils.isEmpty(str3)) {
+                    if (!StringUtils.isEmpty(str3)) {
                         putLocalPreferences(str, str2, str3, true);
                     }
                 }
-                if (TextUtils.isEmpty(str3)) {
+                if (StringUtils.isEmpty(str3)) {
                     TidStorage.access$100(ErrorType.DEFAULT, ErrorCode.DATA_TID_DECRPTY, "");
                     LogUtil.e(TidStorage.TAG, "getLocalPreferences", "decrypt fail, value=" + string + ", ak=" + generateAK);
                 }
@@ -718,10 +718,10 @@ public class TidStorage {
                 if (z) {
                     String generateAK = generateAK();
                     String encryptAES = Des.encryptAES(str3, generateAK);
-                    if (TextUtils.isEmpty(encryptAES)) {
+                    if (StringUtils.isEmpty(encryptAES)) {
                         encryptAES = Des.encrypt(str3, generateDesKey());
                     }
-                    if (TextUtils.isEmpty(encryptAES)) {
+                    if (StringUtils.isEmpty(encryptAES)) {
                         TidStorage.access$100(ErrorType.DATA, ErrorCode.DATA_TID_ENCRPTY, "");
                         LogUtil.record(8, AlipaySDKJSBridge.LOG_TAG, "TidStorage.putLocalPreferences", "encrypt fail, content=" + str3 + ", ak=" + generateAK);
                     }
@@ -745,7 +745,7 @@ public class TidStorage {
                 str = "";
             }
             LogUtil.record(2, "", "TidStorage.generateDesKey", "packageName:".concat(String.valueOf(str)));
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "unknow";
             }
             return (str + "00000000").substring(0, 8);
@@ -764,7 +764,7 @@ public class TidStorage {
                 str = "";
             }
             LogUtil.record(2, "", "TidStorage.generateDesKey", "packageName:".concat(String.valueOf(str)));
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "unknow";
             }
             return (str + "1111111111111111").substring(0, 16);

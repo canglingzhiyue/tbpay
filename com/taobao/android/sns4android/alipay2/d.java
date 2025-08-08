@@ -3,7 +3,7 @@ package com.taobao.android.sns4android.alipay2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.constant.UTConstant;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
@@ -186,7 +186,7 @@ public class d {
                     loginParam.sendLoginFailWhenWebviewCancel = true;
                     LoginResultHelper.gotoH5PlaceHolder(activity, loginReturnData, loginParam);
                     UserTrackAdapter.sendUT("Alipay_AuthCode_Login_H5");
-                } else if (rpcResponse != null && rpcResponse.actionType != null && !TextUtils.isEmpty(rpcResponse.message)) {
+                } else if (rpcResponse != null && rpcResponse.actionType != null && !StringUtils.isEmpty(rpcResponse.message)) {
                     Properties properties3 = new Properties();
                     properties3.setProperty("code", String.valueOf(rpcResponse.code));
                     properties3.setProperty("message", rpcResponse.message);
@@ -242,7 +242,7 @@ public class d {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                    } else if (TextUtils.isEmpty(str)) {
+                    } else if (StringUtils.isEmpty(str)) {
                     } else {
                         try {
                             ToastUtil.showToast(DataProviderFactory.getApplicationContext(), str, i);
@@ -272,7 +272,7 @@ public class d {
                     }
                     LoginStatus.setLastRefreshCookieTime(0L);
                     Intent intent = new Intent(LoginResActions.LOGIN_NETWORK_ERROR);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         intent.putExtra("message", str);
                     }
                     BroadCastHelper.sendLocalBroadCast(intent);
@@ -323,7 +323,7 @@ public class d {
                             properties.setProperty("username", LoginParam.this.loginId + "");
                             properties.setProperty("errorCode", String.valueOf(e.getCode()));
                             properties.setProperty("target", "RPCException");
-                            if (!TextUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
+                            if (!StringUtils.isEmpty(DataProviderFactory.getDataProvider().getAppkey())) {
                                 properties.setProperty("appName", DataProviderFactory.getDataProvider().getAppkey());
                             }
                             UserTrackAdapter.sendUT("Event_LoginFail", properties);
@@ -365,7 +365,7 @@ public class d {
                             LoginResultHelper.gotoH5PlaceHolder(activity, loginReturnData, loginParam2);
                         } else {
                             String string = DataProviderFactory.getApplicationContext().getString(R.string.aliuser_network_error);
-                            if (!TextUtils.isEmpty(rpcResponse.message)) {
+                            if (!StringUtils.isEmpty(rpcResponse.message)) {
                                 string = rpcResponse.message;
                             }
                             d.a(-2, string);

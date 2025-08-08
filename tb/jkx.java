@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tschedule.parser.a;
 
@@ -31,7 +31,7 @@ public class jkx extends jku {
         if (ipChange instanceof IpChange) {
             return (jkx) ipChange.ipc$dispatch("e2617d71", new Object[]{str, objArr});
         }
-        if (TextUtils.isEmpty(str) || !str.startsWith("@bizinfo_ald")) {
+        if (StringUtils.isEmpty(str) || !str.startsWith("@bizinfo_ald")) {
             return null;
         }
         return new jkx(str);
@@ -76,20 +76,20 @@ public class jkx extends jku {
             return (String) ipChange.ipc$dispatch("9e66ffe2", new Object[]{uri});
         }
         String path = uri.getPath();
-        String substring = (TextUtils.isEmpty(path) || (indexOf = path.indexOf("/wow/a/act/")) < 0 || (indexOf2 = path.indexOf("/", (i = indexOf + 11))) <= i) ? null : path.substring(i, indexOf2);
+        String substring = (StringUtils.isEmpty(path) || (indexOf = path.indexOf("/wow/a/act/")) < 0 || (indexOf2 = path.indexOf("/", (i = indexOf + 11))) <= i) ? null : path.substring(i, indexOf2);
         String queryParameter = uri.getQueryParameter("wh_pid");
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             String[] split = queryParameter.split("-");
             if (split.length > 0) {
                 str = split[split.length - 1];
-                if (!TextUtils.isEmpty(substring) || TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(substring) || StringUtils.isEmpty(str)) {
                     return null;
                 }
                 return "business=" + substring + ";page=" + str;
             }
         }
         str = null;
-        if (!TextUtils.isEmpty(substring)) {
+        if (!StringUtils.isEmpty(substring)) {
         }
         return null;
     }
@@ -106,7 +106,7 @@ public class jkx extends jku {
             if (split.length >= 2) {
                 str = split[split.length - 2];
                 String path = uri.getPath();
-                if (!TextUtils.isEmpty(str) || TextUtils.isEmpty(path)) {
+                if (!StringUtils.isEmpty(str) || StringUtils.isEmpty(path)) {
                     return null;
                 }
                 return "business=" + str + ";page=" + path;
@@ -114,7 +114,7 @@ public class jkx extends jku {
         }
         str = null;
         String path2 = uri.getPath();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
         }
         return null;
     }

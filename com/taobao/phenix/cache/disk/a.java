@@ -1,6 +1,6 @@
 package com.taobao.phenix.cache.disk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.esr;
@@ -119,7 +119,7 @@ public abstract class a<OUT, NEXT_OUT extends nmq> extends nmx<OUT, NEXT_OUT, co
                 if (i2 >= length) {
                     z = false;
                     break;
-                } else if (TextUtils.equals(bVar.b().b, strArr[i2])) {
+                } else if (StringUtils.equals(bVar.b().b, strArr[i2])) {
                     z = true;
                     break;
                 } else {

@@ -3,7 +3,7 @@ package com.sina.weibo.sdk.web.b;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.sina.weibo.sdk.a.b;
 import com.sina.weibo.sdk.api.ImageObject;
 import com.sina.weibo.sdk.api.WeiboMultiMessage;
@@ -57,7 +57,7 @@ public final class d extends b {
             public final /* synthetic */ void a(String str) {
                 String str2 = str;
                 com.sina.weibo.sdk.b.c.a("WbShareTag", "handle image result :".concat(String.valueOf(str2)));
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     b.a aVar2 = aVar;
                     if (aVar2 == null) {
                         return;
@@ -69,7 +69,7 @@ public final class d extends b {
                     JSONObject jSONObject = new JSONObject(str2);
                     int optInt = jSONObject.optInt("code");
                     String optString = jSONObject.optString("data");
-                    if (optInt != 1 || TextUtils.isEmpty(optString)) {
+                    if (optInt != 1 || StringUtils.isEmpty(optString)) {
                         if (aVar == null) {
                             return;
                         }
@@ -117,7 +117,7 @@ public final class d extends b {
         if (this.aE.imageObject != null) {
             ImageObject imageObject = this.aE.imageObject;
             String str = imageObject.imagePath;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 File file = new File(str);
                 if (file.exists() && file.canRead() && file.length() > 0) {
                     byte[] bArr2 = new byte[(int) file.length()];
@@ -183,16 +183,16 @@ public final class d extends b {
         buildUpon.appendQueryParameter("title", this.text);
         buildUpon.appendQueryParameter("version", "0041005000");
         String appKey = this.aC.a().getAppKey();
-        if (!TextUtils.isEmpty(appKey)) {
+        if (!StringUtils.isEmpty(appKey)) {
             buildUpon.appendQueryParameter("source", appKey);
         }
-        if (!TextUtils.isEmpty(this.ae)) {
+        if (!StringUtils.isEmpty(this.ae)) {
             buildUpon.appendQueryParameter("access_token", this.ae);
         }
-        if (!TextUtils.isEmpty(this.packageName)) {
+        if (!StringUtils.isEmpty(this.packageName)) {
             buildUpon.appendQueryParameter(NewHtcHomeBadger.PACKAGENAME, this.packageName);
         }
-        if (!TextUtils.isEmpty(this.aG)) {
+        if (!StringUtils.isEmpty(this.aG)) {
             buildUpon.appendQueryParameter("picinfo", this.aG);
         }
         buildUpon.appendQueryParameter("luicode", "10000360");

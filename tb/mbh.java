@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.taobao.windvane.extra.performance2.WVPageTracker;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.BrowserActivity;
@@ -123,7 +123,7 @@ public class mbh {
                 }
                 try {
                     String simpleName = activity.getClass().getSimpleName();
-                    if (TextUtils.equals(Welcome.class.getSimpleName(), simpleName)) {
+                    if (StringUtils.equals(Welcome.class.getSimpleName(), simpleName)) {
                         return;
                     }
                     mbh.a().a(simpleName, activity.getIntent());
@@ -157,7 +157,7 @@ public class mbh {
                     return;
                 }
                 c.a("linkx", "FlowInTimeManager === onPageFinish === 当前URL：" + str);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     z = str.contains("_afc_link=1");
                 }
                 if (!z) {
@@ -232,7 +232,7 @@ public class mbh {
             this.b = intent.getData().toString();
         }
         c.a("linkx", "FlowInTimeManager === processLandingData === data=" + this.b);
-        if (TextUtils.equals(BrowserActivity.class.getSimpleName(), str)) {
+        if (StringUtils.equals(BrowserActivity.class.getSimpleName(), str)) {
             WVPageTracker.registerH5LifeCallback(this.c);
             c.b("linkx", "FlowInTimeManager === processLandingData === h5页面，注册监听：" + str);
             return;

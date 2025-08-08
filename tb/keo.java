@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Looper;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -98,7 +98,7 @@ public class keo {
         if (ipChange instanceof IpChange) {
             return (Set) ipChange.ipc$dispatch("bf40e8a1", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(",");
@@ -114,7 +114,7 @@ public class keo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str) || str.toLowerCase().endsWith(".gif")) {
+        if (StringUtils.isEmpty(str) || str.toLowerCase().endsWith(".gif")) {
             return str;
         }
         DisplayMetrics displayMetrics = f.b().getResources().getDisplayMetrics();
@@ -126,12 +126,12 @@ public class keo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
             URL url = new URL(str);
-            if (TextUtils.isEmpty(url.getFile())) {
+            if (StringUtils.isEmpty(url.getFile())) {
                 return null;
             }
             String name = new File(url.getFile()).getName();
@@ -175,7 +175,7 @@ public class keo {
             }
             kej.a("BootImageUtil", "delete old file:" + file.delete());
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = tiq.BIZ_CODE;
         }
         File file3 = new File(filesDir, File.separator + "boot_image_resource" + File.separator + str);
@@ -183,7 +183,7 @@ public class keo {
             kej.a("BootImageUtil", "localResourcesRootPath createFile: " + file3.mkdirs());
         }
         String absolutePath = file3.getAbsolutePath();
-        if (!TextUtils.isEmpty(absolutePath)) {
+        if (!StringUtils.isEmpty(absolutePath)) {
             kej.a(kem.TAG, "get rootPath:" + absolutePath);
         }
         return absolutePath;
@@ -226,9 +226,9 @@ public class keo {
             ipChange.ipc$dispatch("57913112", new Object[]{bootImageData});
         } else if (bootImageData != null && bootImageData.result != null && bootImageData.result.size() > 0) {
             for (BootImageInfo bootImageInfo : bootImageData.result) {
-                if (!TextUtils.isEmpty(bootImageInfo.imgUrl) && !BootImageInfo.BIZ_TYPE_COLD_START_AD.equals(bootImageInfo.bizType)) {
+                if (!StringUtils.isEmpty(bootImageInfo.imgUrl) && !BootImageInfo.BIZ_TYPE_COLD_START_AD.equals(bootImageInfo.bizType)) {
                     bootImageInfo.imgUrl = b(bootImageInfo.imgUrl);
-                    if (!TextUtils.isEmpty(bootImageInfo.firstFrameImageUrl) && !BootImageInfo.BIZ_TYPE_COLD_START_AD.equals(bootImageInfo.bizType)) {
+                    if (!StringUtils.isEmpty(bootImageInfo.firstFrameImageUrl) && !BootImageInfo.BIZ_TYPE_COLD_START_AD.equals(bootImageInfo.bizType)) {
                         bootImageInfo.firstFrameImageUrl = b(bootImageInfo.firstFrameImageUrl);
                     }
                 }
@@ -242,7 +242,7 @@ public class keo {
             return ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[0])).booleanValue();
         }
         DowngradeStrategy downgradeStrategy = Downgrade.getInstance().getDowngradeStrategy(DOWNGRADE_HOMEPAGE_NAME);
-        return downgradeStrategy != null && TextUtils.equals("degrade", downgradeStrategy.getTacticsPerformance());
+        return downgradeStrategy != null && StringUtils.equals("degrade", downgradeStrategy.getTacticsPerformance());
     }
 
     public static boolean e() {
@@ -275,7 +275,7 @@ public class keo {
         sb.append((bootImageData == null || bootImageData.result == null) ? "0" : String.valueOf(bootImageData.result.size()));
         kej.a("BootImageUtil", sb.toString());
         String d = d(str);
-        if (TextUtils.isEmpty(d) || bootImageData == null) {
+        if (StringUtils.isEmpty(d) || bootImageData == null) {
             kej.a(kem.TAG, "check resources fail, roopath or data no value");
             return null;
         }
@@ -328,7 +328,7 @@ public class keo {
                     if (keu.a(kmoVar.f30167a, keu.SUFFIX_MP4)) {
                         arrayList.add(kmoVar);
                     }
-                    if (kel.c && !TextUtils.isEmpty(kmoVar.f30167a)) {
+                    if (kel.c && !StringUtils.isEmpty(kmoVar.f30167a)) {
                         arrayList.add(kmoVar);
                     }
                 }
@@ -362,7 +362,7 @@ public class keo {
             List<String> c2 = kek.c(bootImageInfo);
             if (c2 != null) {
                 for (String str2 : c2) {
-                    if (!TextUtils.isEmpty(str2) && !BootImageInfo.BIZ_TYPE_COLD_START_AD.equals(bootImageInfo.bizType)) {
+                    if (!StringUtils.isEmpty(str2) && !BootImageInfo.BIZ_TYPE_COLD_START_AD.equals(bootImageInfo.bizType)) {
                         arrayList.add(str2);
                     }
                 }
@@ -497,7 +497,7 @@ public class keo {
         }
         try {
             String c2 = c(str2);
-            if (TextUtils.isEmpty(c2)) {
+            if (StringUtils.isEmpty(c2)) {
                 return null;
             }
             File file = new File(d(str), c2);
@@ -549,7 +549,7 @@ public class keo {
             return (String) ipChange.ipc$dispatch("5d9eff91", new Object[0]);
         }
         String str = Build.BRAND;
-        return (!TextUtils.isEmpty(str) && !str.equalsIgnoreCase("HUAWEI") && !str.equalsIgnoreCase("HONOR")) ? (str.equalsIgnoreCase("XIAOMI") || str.equalsIgnoreCase("REDMI")) ? "force_fsg_nav_bar" : (!str.equalsIgnoreCase("VIVO") && !str.equalsIgnoreCase("OPPO")) ? "navigationbar_is_min" : "navigation_gesture_on" : "navigationbar_is_min";
+        return (!StringUtils.isEmpty(str) && !str.equalsIgnoreCase("HUAWEI") && !str.equalsIgnoreCase("HONOR")) ? (str.equalsIgnoreCase("XIAOMI") || str.equalsIgnoreCase("REDMI")) ? "force_fsg_nav_bar" : (!str.equalsIgnoreCase("VIVO") && !str.equalsIgnoreCase("OPPO")) ? "navigationbar_is_min" : "navigation_gesture_on" : "navigationbar_is_min";
     }
 
     public static String i() {
@@ -586,11 +586,11 @@ public class keo {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bd025a76", new Object[0]);
         }
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             return c;
         }
         String string = kel.a().getString("oaid", "");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             c = string;
             return string;
         }

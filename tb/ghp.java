@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -111,7 +111,7 @@ public class ghp {
 
     public boolean e(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : TextUtils.equals(str, this.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1c6cb13a", new Object[]{this, str})).booleanValue() : StringUtils.equals(str, this.b);
     }
 
     public ghp c(JSONObject jSONObject) {
@@ -128,6 +128,6 @@ public class ghp {
             return false;
         }
         ghp ghpVar = (ghp) obj;
-        return TextUtils.equals(ghpVar.f28334a, this.f28334a) && TextUtils.equals(ghpVar.b, this.b) && TextUtils.equals(ghpVar.c, this.c);
+        return StringUtils.equals(ghpVar.f28334a, this.f28334a) && StringUtils.equals(ghpVar.b, this.b) && StringUtils.equals(ghpVar.c, this.c);
     }
 }

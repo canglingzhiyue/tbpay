@@ -7,7 +7,7 @@ import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Trace;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -292,7 +292,7 @@ public class a implements AudioManager.OnAudioFocusChangeListener, j, TaoLiveVid
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8f64af7b", new Object[]{this, str});
-        } else if (this.f21372a == null || TextUtils.isEmpty(str)) {
+        } else if (this.f21372a == null || StringUtils.isEmpty(str)) {
         } else {
             this.f21372a.b("TBVideoVideoIDPlayer");
             this.f21372a.g("TBVideo");
@@ -690,7 +690,7 @@ public class a implements AudioManager.OnAudioFocusChangeListener, j, TaoLiveVid
         }
         Trace.beginSection("TLiveFFTrace -- player proxy start by token");
         if (this.f21372a != null) {
-            if (!TextUtils.isEmpty(this.s)) {
+            if (!StringUtils.isEmpty(this.s)) {
                 try {
                     this.f21372a.h(this.s);
                 } catch (Throwable th) {

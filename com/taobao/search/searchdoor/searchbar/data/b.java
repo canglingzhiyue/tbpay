@@ -1,6 +1,6 @@
 package com.taobao.search.searchdoor.searchbar.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import kotlin.jvm.JvmStatic;
@@ -52,7 +52,7 @@ public final class b extends com.taobao.search.searchdoor.searchbar.data.a {
             }
             b bVar = new b();
             bVar.a(com.taobao.android.searchbaseframe.util.a.a(jSONObject, "tagImageUrl", ""));
-            if (TextUtils.isEmpty(bVar.a())) {
+            if (StringUtils.isEmpty(bVar.a())) {
                 return null;
             }
             bVar.b(com.taobao.android.searchbaseframe.util.a.a(jSONObject, "tagImageWidth", 0));

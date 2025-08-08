@@ -3,7 +3,7 @@ package com.taobao.android.artry;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONException;
@@ -203,7 +203,7 @@ public class MetaServerAccsService extends TaoBaseService {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[0]);
-        } else if (TextUtils.isEmpty(c)) {
+        } else if (StringUtils.isEmpty(c)) {
         } else {
             b.post(new Runnable() { // from class: com.taobao.android.artry.MetaServerAccsService.2
                 public static volatile transient /* synthetic */ IpChange $ipChange;

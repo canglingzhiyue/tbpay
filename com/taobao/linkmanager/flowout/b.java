@@ -1,7 +1,7 @@
 package com.taobao.linkmanager.flowout;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.utils.f;
@@ -88,7 +88,7 @@ public class b {
                 }
                 com.taobao.flowcustoms.afc.utils.c.a("linkx", "FlowOutConfig === initConfig === 获取到的配置：" + b.e());
                 String str2 = (String) b.e().get("newFloutConfig");
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     b.a((FloutNewConfigData) JSON.parseObject(str2, FloutNewConfigData.class));
                 }
                 b.g();
@@ -121,7 +121,7 @@ public class b {
                     if (i >= length) {
                         break;
                     }
-                    if (TextUtils.equals(str, strArr[i]) && !TextUtils.equals(floutWhiteListBean.packageName, e.f17709a.get(str))) {
+                    if (StringUtils.equals(str, strArr[i]) && !StringUtils.equals(floutWhiteListBean.packageName, e.f17709a.get(str))) {
                         e.f17709a.put(str, floutWhiteListBean.packageName);
                         break;
                     }
@@ -165,7 +165,7 @@ public class b {
             return null;
         }
         String str = a2.get("newFloutConfig");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         FloutNewConfigData floutNewConfigData2 = (FloutNewConfigData) JSON.parseObject(str, FloutNewConfigData.class);

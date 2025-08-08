@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.util.a;
 import java.io.File;
@@ -273,7 +273,7 @@ public class rxf {
                         return;
                     }
                     try {
-                        if (TextUtils.isEmpty(rxf.b())) {
+                        if (StringUtils.isEmpty(rxf.b())) {
                             rxf.c(context.getExternalFilesDir(null).getAbsoluteFile() + "/mtop");
                         }
                         MtopUtils.writeObject(rxf.this.f33399a, new File(rxf.b()), "apiCacheConf");

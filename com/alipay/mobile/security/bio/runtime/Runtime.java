@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.bis.core.protocol.BioRuntimeDependency;
 import com.alipay.mobile.security.bio.config.BisRuntimeInfoEnum;
 import com.alipay.mobile.security.bio.exception.BioIllegalArgumentException;
@@ -105,7 +105,7 @@ public class Runtime {
 
     public static void replaceResources(Context context, String str, String str2) {
         BioLog.d(TAG, "replaceResources begin");
-        if (d == null || TextUtils.isEmpty(str2)) {
+        if (d == null || StringUtils.isEmpty(str2)) {
             return;
         }
         try {
@@ -182,7 +182,7 @@ public class Runtime {
             java.lang.Object r3 = r2.next()
             com.alipay.mobile.security.bio.service.BioServiceDescription r3 = (com.alipay.mobile.security.bio.service.BioServiceDescription) r3
             java.lang.String r4 = r3.getInterfaceName()
-            boolean r4 = android.text.TextUtils.equals(r5, r4)
+            boolean r4 = android.text.StringUtils.equals(r5, r4)
             if (r4 == 0) goto L3e
             r0 = r3
         L55:
@@ -299,7 +299,7 @@ public class Runtime {
                 return true;
             }
             String resVersion = cacheBioRuntimeDependency.getResVersion();
-            if (TextUtils.isEmpty(resVersion)) {
+            if (StringUtils.isEmpty(resVersion)) {
                 return true;
             }
             SharedPreferences sharedPreferences = context.getSharedPreferences("bioResKey", 0);
@@ -448,7 +448,7 @@ public class Runtime {
         int parseInt = Integer.parseInt(str.substring(lastIndexOf));
         for (BioMetaInfo bioMetaInfo : list) {
             String revision = bioMetaInfo.getRevision(context);
-            if (!TextUtils.isEmpty(revision)) {
+            if (!StringUtils.isEmpty(revision)) {
                 parseInt += Integer.parseInt(revision.replace(".", ""));
             }
         }

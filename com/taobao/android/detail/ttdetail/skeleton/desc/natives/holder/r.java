@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.skeleton.desc.natives.holder;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -168,7 +168,7 @@ public class r extends e<com.taobao.android.detail.ttdetail.skeleton.desc.native
         while (it.hasNext()) {
             g(it.next());
         }
-        if (!TextUtils.isEmpty(rVar.f10891a)) {
+        if (!StringUtils.isEmpty(rVar.f10891a)) {
             TextView textView = new TextView(this.f10821a);
             textView.setText(rVar.f10891a);
             textView.setGravity(17);

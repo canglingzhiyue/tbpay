@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service.build;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
 import com.alibaba.security.ccrc.service.build.C1222jb;
@@ -113,7 +113,7 @@ public abstract class AbstractC1219ib implements C1222jb.a {
             Map map = (Map) JsonUtils.parseObject(this.f3311a.input, (Class<Object>) Map.class);
             String str3 = "";
             String str4 = map == null ? str3 : (String) map.get("sep");
-            if (TextUtils.isEmpty(str4) || parseArray == null || parseArray.isEmpty()) {
+            if (StringUtils.isEmpty(str4) || parseArray == null || parseArray.isEmpty()) {
                 str3 = null;
             } else {
                 int size = parseArray.size();
@@ -180,7 +180,7 @@ public abstract class AbstractC1219ib implements C1222jb.a {
             Map map = (Map) JsonUtils.parseObject(this.f3311a.input, (Class<Object>) Map.class);
             List arrayList = new ArrayList();
             String str3 = map == null ? "" : (String) map.get("sep");
-            if (TextUtils.isEmpty(str3) || !str2.contains(str3)) {
+            if (StringUtils.isEmpty(str3) || !str2.contains(str3)) {
                 arrayList.add(str2);
             } else {
                 arrayList = Arrays.asList(str2.split(str3));
@@ -236,7 +236,7 @@ public abstract class AbstractC1219ib implements C1222jb.a {
             }
             BxData.OpConfItemValue opConfItemValue = this.f3311a;
             if (opConfItemValue.isKey) {
-                list.add(new BxData.OpResult(opConfItemValue.name, Double.valueOf(TextUtils.isEmpty(str2) ? mto.a.GEO_NOT_SUPPORT : Double.parseDouble(str2)), false));
+                list.add(new BxData.OpResult(opConfItemValue.name, Double.valueOf(StringUtils.isEmpty(str2) ? mto.a.GEO_NOT_SUPPORT : Double.parseDouble(str2)), false));
             }
             c1222jb.a(str2);
             return c1222jb.b();
@@ -285,7 +285,7 @@ public abstract class AbstractC1219ib implements C1222jb.a {
             }
             BxData.OpConfItemValue opConfItemValue = this.f3311a;
             if (opConfItemValue.isKey) {
-                list.add(new BxData.OpResult(opConfItemValue.name, Long.valueOf(TextUtils.isEmpty(str2) ? 0L : Long.parseLong(str2)), false));
+                list.add(new BxData.OpResult(opConfItemValue.name, Long.valueOf(StringUtils.isEmpty(str2) ? 0L : Long.parseLong(str2)), false));
             }
             c1222jb.a(str2);
             return c1222jb.b();

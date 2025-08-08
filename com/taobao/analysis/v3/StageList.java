@@ -1,6 +1,6 @@
 package com.taobao.analysis.v3;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -31,7 +31,7 @@ public class StageList extends CopyOnWriteArrayList<q> {
                     sb.append(":");
                     sb.append(next.c);
                     sb.append(":");
-                    sb.append(!TextUtils.isEmpty(next.e) ? mzq.a(next.e) : "");
+                    sb.append(!StringUtils.isEmpty(next.e) ? mzq.a(next.e) : "");
                 }
             }
             return sb.toString();

@@ -1,6 +1,6 @@
 package com.taobao.android.fluid.framework.preload.cache;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -324,7 +324,7 @@ public class a implements IDetailCache {
             return;
         }
         d(">>>>deleteByContentId：" + str + "; " + a());
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         Iterator<DetailCacheData> it = this.f12624a.iterator();
@@ -349,7 +349,7 @@ public class a implements IDetailCache {
             return;
         }
         d(">>>>markVideoHasDownload... contentid：" + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         d();

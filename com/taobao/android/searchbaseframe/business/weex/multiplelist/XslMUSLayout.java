@@ -2,7 +2,7 @@ package com.taobao.android.searchbaseframe.business.weex.multiplelist;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -157,7 +157,7 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5f6ae9cb", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) && z) {
+        } else if (StringUtils.isEmpty(str) && z) {
         } else {
             this.recommendModule.c(str);
         }
@@ -181,7 +181,7 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("94de1f4f", new Object[]{this, str, new Boolean(z)});
-        } else if (!TextUtils.isEmpty(str) || !z) {
+        } else if (!StringUtils.isEmpty(str) || !z) {
             if (str == null) {
                 this.scrollRangeEventItems = null;
                 return;
@@ -266,7 +266,7 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
                 return;
             }
             for (String str : jSONObject.keySet()) {
-                if (!TextUtils.equals("isFlatParams", str)) {
+                if (!StringUtils.equals("isFlatParams", str)) {
                     if ("params".equals(str)) {
                         JSONObject jSONObject2 = jSONObject.getJSONObject(str);
                         for (String str2 : jSONObject2.keySet()) {
@@ -363,7 +363,7 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
             return i;
         }
         String string = jSONObject.getString(str);
-        return TextUtils.isEmpty(string) ? i : (int) com.taobao.android.weex_framework.util.i.a(string);
+        return StringUtils.isEmpty(string) ? i : (int) com.taobao.android.weex_framework.util.i.a(string);
     }
 
     public void setDegradedConfig(JSONObject jSONObject, boolean z) {
@@ -403,9 +403,9 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b5f5964c", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) && z) {
+        } else if (StringUtils.isEmpty(str) && z) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.recommendModule.a(0);
             } else {
                 this.recommendModule.a((int) com.taobao.android.weex_framework.util.i.a(str));
@@ -433,7 +433,7 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4bfc50a4", new Object[]{this, uINode});
         } else {
-            this.recommendModule.h(TextUtils.equals((String) uINode.getAttribute(XslMUSComponent.KEY_DISABLE_LOADING), "true"));
+            this.recommendModule.h(StringUtils.equals((String) uINode.getAttribute(XslMUSComponent.KEY_DISABLE_LOADING), "true"));
         }
     }
 
@@ -459,9 +459,9 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6d5b9184", new Object[]{this, str, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) && z) {
+        } else if (StringUtils.isEmpty(str) && z) {
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.recommendModule.c(0);
             } else {
                 this.recommendModule.c((int) com.taobao.android.weex_framework.util.i.a(str));
@@ -644,7 +644,7 @@ public class XslMUSLayout extends FrameLayout implements XslModule.c, com.taobao
         if (xslDatasource == null) {
             return;
         }
-        if (TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string3)) {
             xslDatasource.setApi(string, string2);
         } else {
             xslDatasource.setApi(string, string2, string3);

@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.vmodel.main;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.node.NodeBundle;
 import com.taobao.android.detail.sdk.model.node.RightsNode;
@@ -39,7 +39,7 @@ public class ac extends MainViewModel {
     public ac(ComponentModel componentModel, NodeBundle nodeBundle) {
         super(componentModel, nodeBundle);
         tpc.a("com.taobao.android.detail.sdk.vmodel.main.RightsViewModel");
-        if (nodeBundle.consumerRightsNode != null && nodeBundle.consumerRightsNode.rights != null && !TextUtils.isEmpty(nodeBundle.consumerRightsNode.url)) {
+        if (nodeBundle.consumerRightsNode != null && nodeBundle.consumerRightsNode.rights != null && !StringUtils.isEmpty(nodeBundle.consumerRightsNode.url)) {
             this.f10408a = nodeBundle.consumerRightsNode.rights;
             this.e = nodeBundle.consumerRightsNode.passValue;
             this.f = nodeBundle.consumerRightsNode.url;

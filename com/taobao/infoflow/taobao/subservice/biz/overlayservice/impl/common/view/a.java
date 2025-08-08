@@ -3,7 +3,7 @@ package com.taobao.infoflow.taobao.subservice.biz.overlayservice.impl.common.vie
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -75,7 +75,7 @@ public class a {
             return;
         }
         String c = dlhVar.c("gravity");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return;
         }
         toast.setGravity(a(c), a(dlhVar.c("xOffset"), 0), a(dlhVar.c("yOffset"), 0));
@@ -118,7 +118,7 @@ public class a {
         String c2 = dlhVar.c("paddingRight");
         String c3 = dlhVar.c("paddingBottom");
         String c4 = dlhVar.c("paddingTop");
-        if (TextUtils.isEmpty(c3) || TextUtils.isEmpty(c) || TextUtils.isEmpty(c2) || TextUtils.isEmpty(c4)) {
+        if (StringUtils.isEmpty(c3) || StringUtils.isEmpty(c) || StringUtils.isEmpty(c2) || StringUtils.isEmpty(c4)) {
             return;
         }
         radiusFrameLayout.setPadding(b(c) << 1, b(c4) << 1, b(c2) << 1, b(c3) << 1);
@@ -131,7 +131,7 @@ public class a {
             return;
         }
         String c = dlhVar.c("cornerRadius");
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             return;
         }
         radiusFrameLayout.setRadius(a(c, 12) << 1);
@@ -178,7 +178,7 @@ public class a {
             return;
         }
         String c = dlhVar.c("isBold");
-        if (TextUtils.isEmpty(c) || !"true".equals(c)) {
+        if (StringUtils.isEmpty(c) || !"true".equals(c)) {
             return;
         }
         textView.setTypeface(Typeface.DEFAULT_BOLD);

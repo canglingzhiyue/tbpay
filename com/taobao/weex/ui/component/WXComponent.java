@@ -16,7 +16,7 @@ import android.os.Build;
 import android.support.v4.view.AccessibilityDelegateCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.Menu;
 import android.view.View;
@@ -596,7 +596,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         if (this.mAppendEvents == null) {
             this.mAppendEvents = new HashSet();
         }
-        if (TextUtils.isEmpty(str) || this.mAppendEvents.contains(str)) {
+        if (StringUtils.isEmpty(str) || this.mAppendEvents.contains(str)) {
             return;
         }
         View mo1594getRealView = mo1594getRealView();
@@ -1070,7 +1070,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
                 if (string == null) {
                     WXExceptionUtils.commitCriticalExceptionRT(getInstanceId(), WXErrorCode.WX_RENDER_ERR_NULL_KEY, "updateProperties", WXErrorCode.WX_RENDER_ERR_NULL_KEY.getErrorMsg(), null);
                 } else {
-                    if (TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string2)) {
                         value = convertEmptyProperty(string, string2);
                     }
                     if (setProperty(string, value)) {
@@ -1151,7 +1151,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("41ac3c05", new Object[]{this, wXComponent});
-        } else if (TextUtils.isEmpty(wXComponent.getComponentType()) || TextUtils.isEmpty(wXComponent.getRef()) || wXComponent.getLayoutPosition() == null || wXComponent.getLayoutSize() == null) {
+        } else if (StringUtils.isEmpty(wXComponent.getComponentType()) || StringUtils.isEmpty(wXComponent.getRef()) || wXComponent.getLayoutPosition() == null || wXComponent.getLayoutSize() == null) {
         } else {
             setLayout(wXComponent);
         }
@@ -1519,7 +1519,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
             return;
         }
         T mo1286getHostView = mo1286getHostView();
-        if (mo1286getHostView == null || TextUtils.isEmpty(str)) {
+        if (mo1286getHostView == null || StringUtils.isEmpty(str)) {
             return;
         }
         IWXAccessibilityRoleAdapter accessibilityRoleAdapter = WXSDKManager.getInstance().getAccessibilityRoleAdapter();
@@ -1666,7 +1666,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
                 if (t.getId() == -1) {
                     this.mHost.setId(WXViewInnerUtils.generateViewId());
                 }
-                if (TextUtils.isEmpty(this.mHost.getContentDescription())) {
+                if (StringUtils.isEmpty(this.mHost.getContentDescription())) {
                     WXEnvironment.isApkDebugable();
                 }
                 c C = getInstance().C();
@@ -1734,7 +1734,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("36761a87", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.equals(Constants.Event.LAYEROVERFLOW)) {
                 removeLayerOverFlowListener(getRef());
@@ -1860,7 +1860,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8b2a713c", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || !str.equals("sticky") || (parentScroller = getParentScroller()) == null) {
+        } else if (StringUtils.isEmpty(str) || !str.equals("sticky") || (parentScroller = getParentScroller()) == null) {
         } else {
             parentScroller.bindStickStyle(this);
         }
@@ -1870,7 +1870,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("29247c64", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             int color = WXResourceUtils.getColor(str);
             if (isRippleEnabled() && Build.VERSION.SDK_INT >= 21) {
@@ -2126,7 +2126,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b587523e", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
             char c = 65535;
             switch (str.hashCode()) {
@@ -2181,7 +2181,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d2dc49f0", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str2) || (color = WXResourceUtils.getColor(str2)) == Integer.MIN_VALUE) {
+        } else if (StringUtils.isEmpty(str2) || (color = WXResourceUtils.getColor(str2)) == Integer.MIN_VALUE) {
         } else {
             char c = 65535;
             switch (str.hashCode()) {
@@ -2253,9 +2253,9 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         if (mo1594getRealView == null) {
             return;
         }
-        if (TextUtils.equals(str, "visible")) {
+        if (StringUtils.equals(str, "visible")) {
             mo1594getRealView.setVisibility(0);
-        } else if (!TextUtils.equals(str, "hidden")) {
+        } else if (!StringUtils.equals(str, "hidden")) {
         } else {
             mo1594getRealView.setVisibility(8);
         }
@@ -2710,7 +2710,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         Iterator<Pair<String, Map<String, Object>>> it = concurrentLinkedQueue.iterator();
         while (it.hasNext()) {
             Pair<String, Map<String, Object>> next = it.next();
-            if (!TextUtils.isEmpty((CharSequence) next.first) && (createAnimationBean = createAnimationBean((String) next.first, (Map) next.second)) != null) {
+            if (!StringUtils.isEmpty((CharSequence) next.first) && (createAnimationBean = createAnimationBean((String) next.first, (Map) next.second)) != null) {
                 new GraphicActionAnimation(getInstance(), getRef(), createAnimationBean).executeAction();
             }
         }
@@ -2725,7 +2725,7 @@ public abstract class WXComponent<T extends View> extends WXBasicComponent imple
         if (map != null) {
             try {
                 Object obj = map.get("transform");
-                if ((obj instanceof String) && !TextUtils.isEmpty((String) obj)) {
+                if ((obj instanceof String) && !StringUtils.isEmpty((String) obj)) {
                     String str2 = (String) map.get("transformOrigin");
                     WXAnimationBean wXAnimationBean = new WXAnimationBean();
                     int layoutWidth = (int) getLayoutWidth();

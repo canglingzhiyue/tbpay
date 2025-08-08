@@ -9,7 +9,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import com.alibaba.ariver.kernel.RVStartParams;
@@ -410,9 +410,9 @@ public class SGApmMonitorManager {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("5c510192", new Object[]{this});
-            } else if (this.f4271a == null || !SGApmMonitorManager.e(SGApmMonitorManager.this) || SGApmMonitorManager.b() == null || this.b > 5 || TextUtils.equals("1004", this.f4271a)) {
+            } else if (this.f4271a == null || !SGApmMonitorManager.e(SGApmMonitorManager.this) || SGApmMonitorManager.b() == null || this.b > 5 || StringUtils.equals("1004", this.f4271a)) {
             } else {
-                if (TextUtils.equals(com.alibaba.ut.abtest.internal.util.b.TRACK_PAGE_COUNTER_TYPE_PLUGIN, this.f4271a) && this.b == 1) {
+                if (StringUtils.equals(com.alibaba.ut.abtest.internal.util.b.TRACK_PAGE_COUNTER_TYPE_PLUGIN, this.f4271a) && this.b == 1) {
                     return;
                 }
                 try {
@@ -593,7 +593,7 @@ public class SGApmMonitorManager {
             return;
         }
         try {
-            if (!TextUtils.equals(str2, "7L2OvtRdxzOJAe7ImU+4I2bAxvq1oDLyTCzRgSPGufNIb7ZY5FsHDFaEzD98Mn7K")) {
+            if (!StringUtils.equals(str2, "7L2OvtRdxzOJAe7ImU+4I2bAxvq1oDLyTCzRgSPGufNIb7ZY5FsHDFaEzD98Mn7K")) {
                 return;
             }
             boolean delete = new File(b(this.d), "init.config").delete();
@@ -617,7 +617,7 @@ public class SGApmMonitorManager {
         if (file.exists()) {
             String a2 = com.alibaba.wireless.security.framework.utils.a.a(file);
             try {
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     d2 = Double.parseDouble(a2);
                 }
             } catch (Exception unused) {
@@ -1147,7 +1147,7 @@ public class SGApmMonitorManager {
             return false;
         }
         String a2 = a("ttid");
-        if (TextUtils.equals(a2, "10004868") || TextUtils.equals(a2, "212200")) {
+        if (StringUtils.equals(a2, "10004868") || StringUtils.equals(a2, "212200")) {
             return false;
         }
         String packageName = this.d.getPackageName();

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -854,11 +854,11 @@ public class RateFeedsFragment extends Fragment implements c, aek {
             }
             if (uri != null) {
                 String queryParameter = uri.getQueryParameter("scm");
-                if (!TextUtils.isEmpty(queryParameter)) {
+                if (!StringUtils.isEmpty(queryParameter)) {
                     this.pageProps.put("scm-pre", queryParameter);
                 }
                 String queryParameter2 = uri.getQueryParameter("spm");
-                if (!TextUtils.isEmpty(queryParameter2)) {
+                if (!StringUtils.isEmpty(queryParameter2)) {
                     this.pageProps.put(bip.KEY_UMBRELLA_SPM_PRE, queryParameter2);
                 }
             }
@@ -903,11 +903,11 @@ public class RateFeedsFragment extends Fragment implements c, aek {
         } else if (rateInfo == null) {
         } else {
             this.mQuestionText = rateInfo.getQuestionText();
-            if (TextUtils.isEmpty(this.mQuestionText)) {
+            if (StringUtils.isEmpty(this.mQuestionText)) {
                 this.mQuestionText = this.DEFAULT_QUESTION_TEXT;
             }
             this.mQuestionLink = rateInfo.getQuestionLink();
-            if (TextUtils.isEmpty(rateInfo.getQuestionIcon())) {
+            if (StringUtils.isEmpty(rateInfo.getQuestionIcon())) {
                 questionIcon = this.DEFAULT_QUESTION_ICON;
             } else {
                 questionIcon = rateInfo.getQuestionIcon();

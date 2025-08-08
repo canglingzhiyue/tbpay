@@ -7,7 +7,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.DisplayMetrics;
 import com.unionpay.utils.UPUtils;
@@ -95,7 +95,7 @@ public class a {
         O = str4;
         G = str6;
         F = str5;
-        H = TextUtils.isEmpty(str6) ? "0" : "1";
+        H = StringUtils.isEmpty(str6) ? "0" : "1";
         A = null;
         B = null;
         C = null;
@@ -114,7 +114,7 @@ public class a {
         try {
             jSONObject.put("v", "1.5");
             jSONObject.put("os_name", "android");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put("tn", UPUtils.b(i2, com.unionpay.utils.b.b(str)));
             }
             try {
@@ -125,7 +125,7 @@ public class a {
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.put("package_name", str2);
             }
         } catch (Exception e3) {
@@ -146,7 +146,7 @@ public class a {
         if (eVar == null) {
             return;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "00";
         }
         try {
@@ -201,7 +201,7 @@ public class a {
                                     bundle.putString(b, L);
                                     bundle.putString(s, F);
                                     bundle.putString(u, G);
-                                    if (!TextUtils.isEmpty(G)) {
+                                    if (!StringUtils.isEmpty(G)) {
                                         bundle.putString(v, A);
                                         bundle.putString(w, B);
                                         bundle.putString(x, C);
@@ -357,7 +357,7 @@ public class a {
             jSONObject.put("v", "1.5");
             jSONObject.put("sdkVerMode", "02");
             jSONObject.put("os_name", "android");
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 jSONObject.put("tn", UPUtils.b(com.unionpay.utils.b.a(str), com.unionpay.utils.b.b(str2)));
             }
             jSONObject.put("appUuId", com.unionpay.utils.e.b(context));
@@ -381,7 +381,7 @@ public class a {
                 jSONObject.put("package", com.unionpay.utils.b.d(com.unionpay.utils.e.a(context)));
                 jSONObject.put("sign", com.unionpay.utils.e.a(context, com.unionpay.utils.b.d(com.unionpay.utils.e.a(context)), "SHA256"));
                 String str7 = Build.MANUFACTURER;
-                if (!TextUtils.isEmpty(str7)) {
+                if (!StringUtils.isEmpty(str7)) {
                     str7 = str7.toUpperCase();
                 }
                 jSONObject.put("phone_model", str7);
@@ -389,19 +389,19 @@ public class a {
                 e2.printStackTrace();
             }
             jSONObject.put("vendorCapacity", str4);
-            if (!TextUtils.isEmpty(null)) {
+            if (!StringUtils.isEmpty(null)) {
                 jSONObject.put("randKey", UPUtils.b(com.unionpay.utils.b.a(str), com.unionpay.utils.b.b(null)));
             }
-            if (!TextUtils.isEmpty(str3)) {
+            if (!StringUtils.isEmpty(str3)) {
                 jSONObject.put("has_sdk", str3);
             }
-            if (!TextUtils.isEmpty(null)) {
+            if (!StringUtils.isEmpty(null)) {
                 jSONObject.put("merId", (Object) null);
             }
-            if (!TextUtils.isEmpty(str5)) {
+            if (!StringUtils.isEmpty(str5)) {
                 jSONObject.put("isLimitSe", str5);
             }
-            if (!TextUtils.isEmpty(str6)) {
+            if (!StringUtils.isEmpty(str6)) {
                 jSONObject.put("seType", com.unionpay.utils.b.c(str6));
             }
         } catch (Exception e3) {
@@ -460,7 +460,7 @@ public class a {
         if (weakReference == null || weakReference.get() == null) {
             return 1;
         }
-        if (!TextUtils.isEmpty(F) || !TextUtils.isEmpty(G)) {
+        if (!StringUtils.isEmpty(F) || !StringUtils.isEmpty(G)) {
             I = true;
             if (z.equalsIgnoreCase(G)) {
                 F = t;
@@ -482,7 +482,7 @@ public class a {
         String a3 = UPUtils.a(q3, "mode" + G);
         Context q4 = q();
         String a4 = UPUtils.a(q4, "or" + G);
-        if (!TextUtils.isEmpty(a2) && !TextUtils.isEmpty(a3) && !TextUtils.isEmpty(a4)) {
+        if (!StringUtils.isEmpty(a2) && !StringUtils.isEmpty(a3) && !StringUtils.isEmpty(a4)) {
             try {
                 JSONObject jSONObject = new JSONObject(a2);
                 String a5 = com.unionpay.utils.i.a(jSONObject, "sign");
@@ -493,23 +493,23 @@ public class a {
                 }
                 String str = new String(Base64.decode(jSONObject.getString("configs"), 2));
                 String str2 = jSONObject.has("sePayConf") ? new String(Base64.decode(jSONObject.getString("sePayConf"), 2)) : "";
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     str2 = "";
                 }
                 String b2 = com.unionpay.utils.b.b(UPUtils.a(str + str2 + a4));
                 String a6 = UPUtils.a(i2, a5);
-                if (!TextUtils.isEmpty(a6) && a6.equals(b2)) {
-                    if (TextUtils.isEmpty(G)) {
+                if (!StringUtils.isEmpty(a6) && a6.equals(b2)) {
+                    if (StringUtils.isEmpty(G)) {
                         X = str;
                     } else if ("04".equals(G)) {
                         aa = str;
                     } else {
                         Z = str;
                     }
-                    if (!TextUtils.isEmpty(E)) {
+                    if (!StringUtils.isEmpty(E)) {
                         Context q5 = q();
                         String a7 = UPUtils.a(q5, "se_configs" + E);
-                        if (!TextUtils.isEmpty(a7)) {
+                        if (!StringUtils.isEmpty(a7)) {
                             d(a7);
                         }
                     }
@@ -518,11 +518,11 @@ public class a {
             }
         }
         try {
-            ab = TextUtils.isEmpty(G) ? b(new JSONArray(X), "sort") : "04".equals(G) ? b(new JSONArray(aa), "sort") : b(new JSONArray(Z), "sort");
+            ab = StringUtils.isEmpty(G) ? b(new JSONArray(X), "sort") : "04".equals(G) ? b(new JSONArray(aa), "sort") : b(new JSONArray(Z), "sort");
         } catch (Exception unused3) {
         }
         W = new Handler(ac);
-        if (TextUtils.isEmpty(G) || !com.unionpay.utils.b.a()) {
+        if (StringUtils.isEmpty(G) || !com.unionpay.utils.b.a()) {
             c("0");
         } else {
             com.huawei.nfc.sdk.service.a aVar = new com.huawei.nfc.sdk.service.a(q());

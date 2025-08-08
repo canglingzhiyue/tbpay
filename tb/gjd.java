@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -209,7 +209,7 @@ public class gjd {
             HashMap hashMap = new HashMap();
             for (Pair<String, String> pair : this.b) {
                 String a2 = FestivalMgr.a().a((String) pair.first, (String) pair.second, false);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     gjd.c(gjd.this).sendMessage(gjd.c(gjd.this).obtainMessage(1001, this.c));
                     return null;
                 } else if (!com.taobao.android.festival.utils.d.a(a2)) {
@@ -225,7 +225,7 @@ public class gjd {
                 gjd.c(gjd.this).sendMessage(gjd.c(gjd.this).obtainMessage(1000, this.c));
             } else {
                 SkinConfig d = gje.a().d();
-                if (d != null && !TextUtils.isEmpty(d.skinCode)) {
+                if (d != null && !StringUtils.isEmpty(d.skinCode)) {
                     Iterator it = hashMap.keySet().iterator();
                     while (true) {
                         if (!it.hasNext()) {

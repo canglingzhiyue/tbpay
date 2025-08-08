@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.standard.widget.anchor;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.emu;
@@ -50,7 +50,7 @@ public class b {
 
     public static boolean a(b bVar) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7fd41377", new Object[]{bVar})).booleanValue() : bVar != null && !TextUtils.isEmpty(bVar.f9889a) && !TextUtils.isEmpty(bVar.b);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7fd41377", new Object[]{bVar})).booleanValue() : bVar != null && !StringUtils.isEmpty(bVar.f9889a) && !StringUtils.isEmpty(bVar.b);
     }
 
     public String toString() {

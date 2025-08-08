@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.context.TransportContext;
 import com.alipay.mobile.common.transport.monitor.RPCDataItems;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class TransportContextThreadLocalUtils {
         }
         TransportContext value = getValue();
         if (value != null) {
-            return TextUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), RPCDataItems.VALUE_DT_LOCALDNS);
+            return StringUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), RPCDataItems.VALUE_DT_LOCALDNS);
         }
         return false;
     }
@@ -71,7 +71,7 @@ public class TransportContextThreadLocalUtils {
         }
         TransportContext value = getValue();
         if (value != null) {
-            return TextUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), RPCDataItems.VALUE_DT_LOCAL_CACHE_DNS);
+            return StringUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), RPCDataItems.VALUE_DT_LOCAL_CACHE_DNS);
         }
         return false;
     }
@@ -83,7 +83,7 @@ public class TransportContextThreadLocalUtils {
         }
         TransportContext value = getValue();
         if (value != null) {
-            return TextUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), RPCDataItems.VALUE_DT_IPRANK);
+            return StringUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), RPCDataItems.VALUE_DT_IPRANK);
         }
         return false;
     }
@@ -95,7 +95,7 @@ public class TransportContextThreadLocalUtils {
         }
         TransportContext value = getValue();
         if (value != null) {
-            return TextUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), "httpdns");
+            return StringUtils.equals(value.getCurrentDataContainer().getDataItem(RPCDataItems.DT), "httpdns");
         }
         return false;
     }

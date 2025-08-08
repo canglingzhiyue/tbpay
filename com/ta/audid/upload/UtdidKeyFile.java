@@ -3,7 +3,7 @@ package com.ta.audid.upload;
 import android.content.Context;
 import android.os.Environment;
 import android.provider.Settings;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.Variables;
 import com.ta.audid.permission.PermissionUtils;
@@ -49,9 +49,9 @@ public class UtdidKeyFile {
         }
         try {
             String audidFilePath = getAudidFilePath();
-            if (!TextUtils.isEmpty(audidFilePath)) {
+            if (!StringUtils.isEmpty(audidFilePath)) {
                 String readFile = FileUtils.readFile(audidFilePath);
-                if (!TextUtils.isEmpty(readFile) && readFile.length() != 32) {
+                if (!StringUtils.isEmpty(readFile) && readFile.length() != 32) {
                     if (readFile.length() != 36) {
                         return null;
                     }
@@ -72,10 +72,10 @@ public class UtdidKeyFile {
         try {
             UtdidLogger.sd("", "audid:" + str);
             String audidFilePath = getAudidFilePath();
-            if (TextUtils.isEmpty(audidFilePath)) {
+            if (StringUtils.isEmpty(audidFilePath)) {
                 return;
             }
-            if (!TextUtils.isEmpty(str) && str.length() != 32 && str.length() != 36) {
+            if (!StringUtils.isEmpty(str) && str.length() != 32 && str.length() != 36) {
                 return;
             }
             FileUtils.saveFile(audidFilePath, str);
@@ -226,7 +226,7 @@ public class UtdidKeyFile {
         }
         try {
             String sdcardUtdidFilePath = getSdcardUtdidFilePath();
-            if (TextUtils.isEmpty(sdcardUtdidFilePath)) {
+            if (StringUtils.isEmpty(sdcardUtdidFilePath)) {
                 return null;
             }
             return FileUtils.readFile(sdcardUtdidFilePath);
@@ -243,7 +243,7 @@ public class UtdidKeyFile {
         } else {
             try {
                 String sdcardUtdidFilePath = getSdcardUtdidFilePath();
-                if (TextUtils.isEmpty(sdcardUtdidFilePath)) {
+                if (StringUtils.isEmpty(sdcardUtdidFilePath)) {
                     return;
                 }
                 FileUtils.saveFile(sdcardUtdidFilePath, str);

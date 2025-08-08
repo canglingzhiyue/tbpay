@@ -1,6 +1,6 @@
 package com.taobao.android.sku.bizevent;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -85,7 +85,7 @@ public class e extends com.alibaba.android.ultron.event.i {
                         return ipChange2.ipc$dispatch("a12221e4", new Object[]{this, obj2, str2});
                     }
                     Object a3 = super.a(obj2, str2);
-                    if (TextUtils.isEmpty(str2) || !str2.startsWith("$response") || a3 != null || !(obj2 instanceof JSONObject)) {
+                    if (StringUtils.isEmpty(str2) || !str2.startsWith("$response") || a3 != null || !(obj2 instanceof JSONObject)) {
                         return a3;
                     }
                     JSONObject jSONObject4 = (JSONObject) obj2;
@@ -96,7 +96,7 @@ public class e extends com.alibaba.android.ultron.event.i {
                         str3 = matcher.group(1);
                         str4 = matcher.group(2);
                     }
-                    if (TextUtils.isEmpty(str3) || TextUtils.isEmpty(str4)) {
+                    if (StringUtils.isEmpty(str3) || StringUtils.isEmpty(str4)) {
                         return a3;
                     }
                     Object obj3 = jSONObject4.get("__Mtop__");

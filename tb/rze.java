@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import mtopsdk.common.util.HeaderHandlerUtil;
 import mtopsdk.common.util.HttpHeaderConstant;
@@ -37,9 +37,9 @@ public class rze implements rzj {
         ssrFinishEvent.statistics = mtopSsrStatistics;
         mtopSsrStatistics.K = HeaderHandlerUtil.getSingleHeaderFieldByKey(mtkVar.d, HttpHeaderConstant.SERVER_TRACE_ID);
         mtopSsrStatistics.L = HeaderHandlerUtil.getSingleHeaderFieldByKey(mtkVar.d, "eagleeye-traceid");
-        if (TextUtils.isEmpty(mtkVar.b)) {
+        if (StringUtils.isEmpty(mtkVar.b)) {
             String singleHeaderFieldByKey = HeaderHandlerUtil.getSingleHeaderFieldByKey(mtkVar.d, "x-sec-reason");
-            if (!TextUtils.isEmpty(singleHeaderFieldByKey)) {
+            if (!StringUtils.isEmpty(singleHeaderFieldByKey)) {
                 mtopSsrStatistics.r = singleHeaderFieldByKey;
             }
         } else {

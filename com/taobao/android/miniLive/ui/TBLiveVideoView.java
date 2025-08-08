@@ -1,7 +1,7 @@
 package com.taobao.android.miniLive.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -472,7 +472,7 @@ public class TBLiveVideoView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aaf0dfd", new Object[]{this, str, new Boolean(z), new Boolean(z2), new Integer(i), new Boolean(z3)});
-        } else if (this.mVideoView == null || TextUtils.isEmpty(str)) {
+        } else if (this.mVideoView == null || StringUtils.isEmpty(str)) {
         } else {
             this.mPlayUrl = str;
             this.isArtp = z;
@@ -648,10 +648,10 @@ public class TBLiveVideoView extends FrameLayout {
                         TBLiveVideoView.access$600(TBLiveVideoView.this).setImageResource(R.drawable.taolive_mini_live_play);
                         return;
                     }
-                    if (TextUtils.isEmpty(TBLiveVideoView.access$000(TBLiveVideoView.this).e()) && !TextUtils.isEmpty(TBLiveVideoView.access$700(TBLiveVideoView.this))) {
+                    if (StringUtils.isEmpty(TBLiveVideoView.access$000(TBLiveVideoView.this).e()) && !StringUtils.isEmpty(TBLiveVideoView.access$700(TBLiveVideoView.this))) {
                         TBLiveVideoView tBLiveVideoView = TBLiveVideoView.this;
                         tBLiveVideoView.playStreamUrl(TBLiveVideoView.access$700(tBLiveVideoView), TBLiveVideoView.access$800(TBLiveVideoView.this), TBLiveVideoView.access$900(TBLiveVideoView.this), TBLiveVideoView.access$1000(TBLiveVideoView.this), TBLiveVideoView.this.useH264);
-                    } else if (TextUtils.isEmpty(TBLiveVideoView.access$000(TBLiveVideoView.this).e())) {
+                    } else if (StringUtils.isEmpty(TBLiveVideoView.access$000(TBLiveVideoView.this).e())) {
                         if (TBLiveVideoView.access$400(TBLiveVideoView.this) != null) {
                             if (TBLiveVideoView.access$400(TBLiveVideoView.this).status != 0) {
                                 Toast.makeText(f.a().b(), "主播暂时离开一会哦", 1).show();
@@ -762,7 +762,7 @@ public class TBLiveVideoView extends FrameLayout {
             if (this.mVideoInfo.broadCaster != null) {
                 hashMap.put("accountId", this.mVideoInfo.broadCaster.accountId);
             }
-        } else if (!TextUtils.isEmpty(com.taobao.android.miniLive.services.c.a().c())) {
+        } else if (!StringUtils.isEmpty(com.taobao.android.miniLive.services.c.a().c())) {
             hashMap.put("feedId", com.taobao.android.miniLive.services.c.a().c());
         }
         hashMap.put("mute", this.isMute ? "true" : "false");

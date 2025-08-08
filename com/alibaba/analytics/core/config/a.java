@@ -1,7 +1,7 @@
 package com.alibaba.analytics.core.config;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.f;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.File;
@@ -41,7 +41,7 @@ public class a implements f.a {
             return;
         }
         apr.b("AudidConfigListener", "parseConfig value", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if ("0".equalsIgnoreCase(str)) {

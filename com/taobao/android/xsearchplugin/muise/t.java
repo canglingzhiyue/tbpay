@@ -1,6 +1,6 @@
 package com.taobao.android.xsearchplugin.muise;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashSet;
@@ -49,7 +49,7 @@ public class t implements Observer {
         } else if (!(observable instanceof r) || !(obj instanceof JSONObject)) {
         } else {
             this.b.add(observable);
-            this.f16269a.sendInstanceMessage("MUISE", TextUtils.equals(((r) observable).a(), "page") ? "pageStorageChanged" : "observableMapValue", (JSONObject) obj);
+            this.f16269a.sendInstanceMessage("MUISE", StringUtils.equals(((r) observable).a(), "page") ? "pageStorageChanged" : "observableMapValue", (JSONObject) obj);
         }
     }
 

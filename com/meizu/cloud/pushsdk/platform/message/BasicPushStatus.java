@@ -1,6 +1,6 @@
 package com.meizu.cloud.pushsdk.platform.message;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import java.io.Serializable;
 import org.json.JSONException;
@@ -39,7 +39,7 @@ public abstract class BasicPushStatus implements Serializable {
     protected JSONObject parse(String str) {
         JSONObject jSONObject;
         JSONObject jSONObject2 = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 jSONObject = new JSONObject(str);
             } catch (JSONException e) {

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -115,7 +115,7 @@ public class enj implements enf {
         if (ipChange instanceof IpChange) {
             return (RuleModel) ipChange.ipc$dispatch("fc17d351", new Object[]{this, str, str2});
         }
-        if (eqg.a(this.f27466a) || TextUtils.isEmpty(str2)) {
+        if (eqg.a(this.f27466a) || StringUtils.isEmpty(str2)) {
             return null;
         }
         return this.f27466a.get(str2);
@@ -127,7 +127,7 @@ public class enj implements enf {
         if (ipChange instanceof IpChange) {
             return (ActionModel) ipChange.ipc$dispatch("2f654ad5", new Object[]{this, str});
         }
-        if (eqg.a(this.b) || TextUtils.isEmpty(str)) {
+        if (eqg.a(this.b) || StringUtils.isEmpty(str)) {
             return null;
         }
         return new ActionModel(this.b.get(str));

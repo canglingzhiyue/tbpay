@@ -1,7 +1,7 @@
 package com.taobao.tbliveinteractive;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONArray;
@@ -119,7 +119,7 @@ public class b {
             return (InteractiveComponent) ipChange.ipc$dispatch("fb1d9f4e", new Object[]{this, str});
         }
         for (InteractiveComponent interactiveComponent : this.e) {
-            if (!TextUtils.isEmpty(str) && (str.equals(interactiveComponent.name) || str.equals(interactiveComponent.fedName))) {
+            if (!StringUtils.isEmpty(str) && (str.equals(interactiveComponent.name) || str.equals(interactiveComponent.fedName))) {
                 return interactiveComponent;
             }
         }
@@ -378,7 +378,7 @@ public class b {
         for (final InteractiveComponent interactiveComponent : this.e) {
             if (a(interactiveComponent)) {
                 if (interactiveComponent.customizedType == 1) {
-                    if (!TextUtils.isEmpty(interactiveComponent.customizedMtop)) {
+                    if (!StringUtils.isEmpty(interactiveComponent.customizedMtop)) {
                         new com.taobao.tbliveinteractive.business.list.a(new com.taobao.taolive.sdk.adapter.network.d() { // from class: com.taobao.tbliveinteractive.b.3
                             public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -416,7 +416,7 @@ public class b {
                             }
                         }).a(interactiveComponent.customizedMtop, interactiveComponent.fedName, this.i);
                     }
-                } else if (interactiveComponent.customizedType == 2 && !TextUtils.isEmpty(interactiveComponent.iconUrl)) {
+                } else if (interactiveComponent.customizedType == 2 && !StringUtils.isEmpty(interactiveComponent.iconUrl)) {
                     InteractiveShowInfo interactiveShowInfo = new InteractiveShowInfo();
                     interactiveShowInfo.isNeedShow = true;
                     interactiveComponent.isFistShow = true;
@@ -444,7 +444,7 @@ public class b {
             return;
         }
         String str2 = map.get("componentInfo");
-        if (!TextUtils.isEmpty(str2) && (sb = this.l) != null) {
+        if (!StringUtils.isEmpty(str2) && (sb = this.l) != null) {
             if (sb.length() > 0) {
                 StringBuilder sb2 = this.l;
                 sb2.append("^");
@@ -720,11 +720,11 @@ public class b {
             com.taobao.tbliveinteractive.InteractiveComponent r1 = (com.taobao.tbliveinteractive.InteractiveComponent) r1
             java.lang.String r4 = r7.name
             java.lang.String r5 = r1.name
-            boolean r4 = android.text.TextUtils.equals(r4, r5)
+            boolean r4 = android.text.StringUtils.equals(r4, r5)
             if (r4 != 0) goto L3b
             java.lang.String r4 = r7.fedName
             java.lang.String r5 = r1.fedName
-            boolean r4 = android.text.TextUtils.equals(r4, r5)
+            boolean r4 = android.text.StringUtils.equals(r4, r5)
             if (r4 == 0) goto L1b
         L3b:
             java.util.List<com.taobao.tbliveinteractive.InteractiveComponent> r0 = r6.m

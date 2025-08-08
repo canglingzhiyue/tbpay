@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v4.util.Pair;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.service.utils.LinkageUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -88,7 +88,7 @@ public class h implements com.taobao.orange.d {
         SharedPreferences b = b(context);
         String string = b.getString("__configVersion__", null);
         String str2 = map.get("configVersion");
-        if (TextUtils.equals(string, str2)) {
+        if (StringUtils.equals(string, str2)) {
             TLog.loge(gve.MODULE, "LinkRewriter", "version is not changed, discard it. local=" + string + ", remote=" + str2);
             return false;
         }
@@ -97,7 +97,7 @@ public class h implements com.taobao.orange.d {
         AppMonitor.Counter.commit(gve.MODULE, "LinkRewriter", a("orangeUpdate", jSONObject).toJSONString(), 1.0d);
         String customConfig = OrangeConfig.getInstance().getCustomConfig(str, null);
         SharedPreferences.Editor putString = b.edit().clear().putString("__configVersion__", str2);
-        if (TextUtils.equals("__empty__", customConfig)) {
+        if (StringUtils.equals("__empty__", customConfig)) {
             return putString.commit();
         }
         List<LinkRule> list = (List) JSON.parseObject(customConfig, new TypeReference<List<LinkRule>>() { // from class: com.taobao.android.launcher.bootstrap.tao.ability.h.1
@@ -106,7 +106,7 @@ public class h implements com.taobao.orange.d {
             return putString.commit();
         }
         for (LinkRule linkRule : list) {
-            if (!TextUtils.isEmpty(linkRule.component) && a(context, linkRule)) {
+            if (!StringUtils.isEmpty(linkRule.component) && a(context, linkRule)) {
                 putString.putString(linkRule.name, JSON.toJSONString(linkRule));
             }
         }
@@ -182,7 +182,7 @@ public class h implements com.taobao.orange.d {
             return (LinkRule) ipChange.ipc$dispatch("1e3f484e", new Object[]{str});
         }
         for (LinkRule linkRule : f13069a.values()) {
-            if (TextUtils.equals(str, linkRule.name)) {
+            if (StringUtils.equals(str, linkRule.name)) {
                 return linkRule;
             }
         }
@@ -198,7 +198,7 @@ public class h implements com.taobao.orange.d {
             return Pair.create(null, new ComponentName(str, "com.taobao.browser.BrowserActivity"));
         }
         String queryParameter = uri.getQueryParameter("h5Url");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             return Pair.create(null, new ComponentName(str, "com.taobao.browser.BrowserActivity"));
         }
         return a(context, str, queryParameter);
@@ -237,7 +237,7 @@ public class h implements com.taobao.orange.d {
             return pair;
         }
         String a3 = TMSSimpleLaunchSwitch.INSTANCE.a(a2);
-        return TextUtils.isEmpty(a3) ? pair : Pair.create(linkRule, new ComponentName(componentName.getPackageName(), a3));
+        return StringUtils.isEmpty(a3) ? pair : Pair.create(linkRule, new ComponentName(componentName.getPackageName(), a3));
     }
 
     public static boolean b(String str) {
@@ -245,14 +245,14 @@ public class h implements com.taobao.orange.d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         Uri parse = Uri.parse(str);
         if (parse.isOpaque()) {
             return false;
         }
-        return !TextUtils.isEmpty(parse.getQueryParameter("__moduleName__")) || !TextUtils.isEmpty(parse.getQueryParameter("sModuleName"));
+        return !StringUtils.isEmpty(parse.getQueryParameter("__moduleName__")) || !StringUtils.isEmpty(parse.getQueryParameter("sModuleName"));
     }
 
     public static LinkRule c(String str) {
@@ -316,7 +316,7 @@ public class h implements com.taobao.orange.d {
         if (ipChange instanceof IpChange) {
             return (LinkRule) ipChange.ipc$dispatch("8c2350f5", new Object[]{context, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Uri parse = Uri.parse(str);
@@ -341,7 +341,7 @@ public class h implements com.taobao.orange.d {
                 break;
             }
             LinkRule next = it.next();
-            if (!TextUtils.isEmpty(next.component) && (a2 = a(next, uri)) != null) {
+            if (!StringUtils.isEmpty(next.component) && (a2 = a(next, uri)) != null) {
                 TLog.loge(gve.MODULE, "LinkRewriter", "found matched condition");
                 if (a(context, next, a2)) {
                     return next;
@@ -357,11 +357,11 @@ public class h implements com.taobao.orange.d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ff42a64f", new Object[]{context, linkRule, condition})).booleanValue();
         }
-        if (TextUtils.equals(condition.abKey, "NONE")) {
+        if (StringUtils.equals(condition.abKey, "NONE")) {
             TLog.loge(gve.MODULE, "LinkRewriter", "abKey of biz '" + linkRule.name + "' is NONE, so it it open as default");
             return true;
         }
-        if (!TextUtils.isEmpty(condition.abKey)) {
+        if (!StringUtils.isEmpty(condition.abKey)) {
             str = "slim_afc_launch_" + linkRule.name + "_" + condition.abKey;
         } else {
             str = "slim_afc_launch_" + linkRule.name + "_" + condition.host + condition.path;
@@ -375,10 +375,10 @@ public class h implements com.taobao.orange.d {
             return (LinkRule) ipChange.ipc$dispatch("5dd19f98", new Object[]{context, uri});
         }
         String queryParameter = uri.getQueryParameter("__moduleName__");
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             queryParameter = uri.getQueryParameter("sModuleName");
         }
-        if (TextUtils.isEmpty(queryParameter)) {
+        if (StringUtils.isEmpty(queryParameter)) {
             TLog.loge(gve.MODULE, "LinkRewriter", "moduleName is empty");
             return null;
         }
@@ -386,7 +386,7 @@ public class h implements com.taobao.orange.d {
         if (a2 == null) {
             TLog.loge(gve.MODULE, "LinkRewriter", "no rule found for moduleName: " + queryParameter);
             return null;
-        } else if (TextUtils.isEmpty(a2.component) || a(a2, uri) == null) {
+        } else if (StringUtils.isEmpty(a2.component) || a(a2, uri) == null) {
             return null;
         } else {
             TLog.loge(gve.MODULE, "LinkRewriter", "found matched condition");
@@ -425,7 +425,7 @@ public class h implements com.taobao.orange.d {
         if (condition == null) {
             return false;
         }
-        if (condition.scheme != null && !TextUtils.equals(condition.scheme, uri.getScheme())) {
+        if (condition.scheme != null && !StringUtils.equals(condition.scheme, uri.getScheme())) {
             return false;
         }
         if (condition.host != null && !a(condition.host, uri.getHost())) {
@@ -448,7 +448,7 @@ public class h implements com.taobao.orange.d {
                 return false;
             }
             String queryParameter = uri.getQueryParameter(key);
-            if (!"*".equals(value) && !TextUtils.equals(value, queryParameter)) {
+            if (!"*".equals(value) && !StringUtils.equals(value, queryParameter)) {
                 return false;
             }
         }
@@ -460,7 +460,7 @@ public class h implements com.taobao.orange.d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d9378d80", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         if (str.startsWith("*")) {
@@ -469,6 +469,6 @@ public class h implements com.taobao.orange.d {
         if (str.endsWith("*")) {
             return str2.startsWith(str.substring(0, str.length() - 1));
         }
-        return TextUtils.equals(str2, str);
+        return StringUtils.equals(str2, str);
     }
 }

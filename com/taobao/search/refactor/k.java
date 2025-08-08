@@ -1,7 +1,7 @@
 package com.taobao.search.refactor;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -282,14 +282,14 @@ public final class k extends p<j, e, CommonSearchResult> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             g gVar = this.f19314a;
             if (gVar == null) {
                 kotlin.jvm.internal.q.b("controller");
             }
             CommonSearchContext g = gVar.g();
-            if (!TextUtils.isEmpty(g.getKeyword())) {
+            if (!StringUtils.isEmpty(g.getKeyword())) {
                 return;
             }
             g.setParam("q", str);
@@ -338,7 +338,7 @@ public final class k extends p<j, e, CommonSearchResult> {
         }
         Map<String, String> e = config.e();
         SearchParamImpl searchParamImpl = null;
-        if (TextUtils.equals(e != null ? e.get("searchType") : null, "auction") && (commonSearchResult = (CommonSearchResult) scopeDataSource.getTotalSearchResult()) != null && (mainInfo = commonSearchResult.getMainInfo()) != null && (listStyle = mainInfo.style) != null) {
+        if (StringUtils.equals(e != null ? e.get("searchType") : null, "auction") && (commonSearchResult = (CommonSearchResult) scopeDataSource.getTotalSearchResult()) != null && (mainInfo = commonSearchResult.getMainInfo()) != null && (listStyle = mainInfo.style) != null) {
             incoming.a().style = listStyle;
         }
         CommonSearchResult commonSearchResult3 = (CommonSearchResult) scopeDataSource.getTotalSearchResult();
@@ -425,7 +425,7 @@ public final class k extends p<j, e, CommonSearchResult> {
             return;
         }
         kotlin.jvm.internal.q.a((Object) commonSearchResult, "initDataSource.totalSearchResult ?: return");
-        if (TextUtils.isEmpty(commonSearchResult.poplayerUrl)) {
+        if (StringUtils.isEmpty(commonSearchResult.poplayerUrl)) {
             return;
         }
         g gVar = this.f19314a;
@@ -584,7 +584,7 @@ public final class k extends p<j, e, CommonSearchResult> {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x005e, code lost:
-        if (android.text.TextUtils.equals(r6, r5.param) == false) goto L23;
+        if (android.text.StringUtils.equals(r6, r5.param) == false) goto L23;
      */
     @Override // com.taobao.search.refactor.p, com.taobao.android.meta.logic.c
     /*
@@ -631,11 +631,11 @@ public final class k extends p<j, e, CommonSearchResult> {
             int r0 = r0.size()
             if (r0 <= r3) goto L60
             java.lang.CharSequence r6 = (java.lang.CharSequence) r6
-            boolean r0 = android.text.TextUtils.isEmpty(r6)
+            boolean r0 = android.text.StringUtils.isEmpty(r6)
             if (r0 != 0) goto L60
             java.lang.String r5 = r5.param
             java.lang.CharSequence r5 = (java.lang.CharSequence) r5
-            boolean r5 = android.text.TextUtils.equals(r6, r5)
+            boolean r5 = android.text.StringUtils.equals(r6, r5)
             if (r5 == 0) goto L63
         L60:
             r4.g = r3
@@ -726,7 +726,7 @@ public final class k extends p<j, e, CommonSearchResult> {
             if (jSONObject == null) {
                 kotlin.jvm.internal.q.a();
             }
-            if (TextUtils.isEmpty(jSONObject.getString(nsk.KEY_TAB_PAGE_URL)) || !r.cv()) {
+            if (StringUtils.isEmpty(jSONObject.getString(nsk.KEY_TAB_PAGE_URL)) || !r.cv()) {
                 this.f.a((MSearchResult) result, jSONObject, imnVar);
                 return;
             }
@@ -787,7 +787,7 @@ public final class k extends p<j, e, CommonSearchResult> {
         while (z < size) {
             BaseCellBean baseCellBean = combo.l().get(z);
             int i6 = size;
-            if (TextUtils.equals(baseCellBean.cardType, "item")) {
+            if (StringUtils.equals(baseCellBean.cardType, "item")) {
                 if (baseCellBean.isP4p) {
                     sb5.append("p,");
                     sb2.append(baseCellBean.itemId);
@@ -804,7 +804,7 @@ public final class k extends p<j, e, CommonSearchResult> {
                     sb.append(',');
                     i4++;
                 }
-            } else if (TextUtils.equals(baseCellBean.cardType, "multi_item")) {
+            } else if (StringUtils.equals(baseCellBean.cardType, "multi_item")) {
                 if (baseCellBean.curItemIds != null) {
                     String[] strArr = baseCellBean.curItemIds;
                     if (strArr == null) {
@@ -839,7 +839,7 @@ public final class k extends p<j, e, CommonSearchResult> {
                     }
                 }
                 i4 = i2;
-            } else if (!TextUtils.isEmpty(baseCellBean.cardType) && !TextUtils.isEmpty(baseCellBean.bizItemId)) {
+            } else if (!StringUtils.isEmpty(baseCellBean.cardType) && !StringUtils.isEmpty(baseCellBean.bizItemId)) {
                 sb3.append(baseCellBean.cardType);
                 sb3.append(":");
                 sb3.append(baseCellBean.bizItemId);

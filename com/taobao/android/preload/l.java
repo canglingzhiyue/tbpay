@@ -1,7 +1,7 @@
 package com.taobao.android.preload;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class l {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
+        if (!StringUtils.isEmpty(str) && (queryParameterNames = (parse = Uri.parse(str)).getQueryParameterNames()) != null && !queryParameterNames.isEmpty()) {
             for (String str2 : queryParameterNames) {
                 hashMap.put(str2, parse.getQueryParameter(str2));
             }

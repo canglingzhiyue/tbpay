@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
 import com.taobao.android.detail.core.event.a;
@@ -37,7 +37,7 @@ public class eet implements j<eny> {
         if (ipChange instanceof IpChange) {
             return (i) ipChange.ipc$dispatch("7f69da47", new Object[]{this, enyVar});
         }
-        if (TextUtils.isEmpty(enyVar.f27483a)) {
+        if (StringUtils.isEmpty(enyVar.f27483a)) {
             return a.FAILURE;
         }
         DetailCoreActivity detailCoreActivity = this.f27251a;

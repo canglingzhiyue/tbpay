@@ -8,7 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.RemoteException;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.LoginContext;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.callback.RpcRequestCallback;
@@ -138,13 +138,13 @@ public class LoginAccsService extends TaoBaseService {
         } else {
             try {
                 final AccsLoginMessageModel2 accsLoginMessageModel2 = (AccsLoginMessageModel2) JSON.parseObject(new String(bArr, "utf-8"), AccsLoginMessageModel2.class);
-                if (accsLoginMessageModel2 != null && TextUtils.equals(accsLoginMessageModel2.type, "logoutEventType")) {
+                if (accsLoginMessageModel2 != null && StringUtils.equals(accsLoginMessageModel2.type, "logoutEventType")) {
                     LoginTLogAdapter.e(this.TAG, "received logoutEventType");
                     SharedPreferencesUtil.saveData(DataProviderFactory.getApplicationContext(), "pushLogoutContent", accsLoginMessageModel2.content);
                     SharedPreferencesUtil.saveData(DataProviderFactory.getApplicationContext(), "pushLogoutTime", Long.valueOf(System.currentTimeMillis()));
                     LoginTLogAdapter.e(this.TAG, "local session valid, call logout");
                     Login.logout();
-                } else if (accsLoginMessageModel2 != null && !TextUtils.isEmpty(accsLoginMessageModel2.url)) {
+                } else if (accsLoginMessageModel2 != null && !StringUtils.isEmpty(accsLoginMessageModel2.url)) {
                     UserTrackAdapter.sendUT("Event_onekeylogin_receive_token");
                     if (isForground()) {
                         new LoginAsyncTask<Void, Void, Void>() { // from class: com.taobao.android.sso.v2.service.LoginAccsService.1
@@ -172,7 +172,7 @@ public class LoginAccsService extends TaoBaseService {
                                 if (ipChange2 instanceof IpChange) {
                                     return (Void) ipChange2.ipc$dispatch("54f0ab29", new Object[]{this, voidArr});
                                 }
-                                if (Login.checkSessionValid() || TextUtils.isEmpty(Login.getLoginToken()) || TextUtils.isEmpty(Login.getUserId())) {
+                                if (Login.checkSessionValid() || StringUtils.isEmpty(Login.getLoginToken()) || StringUtils.isEmpty(Login.getUserId())) {
                                     return null;
                                 }
                                 LoginTLogAdapter.e(LoginAsyncTask.TAG, "checkSessionValid, do autoLogin");
@@ -198,7 +198,7 @@ public class LoginAccsService extends TaoBaseService {
                     }
                     showLoginNotification(accsLoginMessageModel2.title, accsLoginMessageModel2.content, accsLoginMessageModel2.url);
                     saveLoginMessage(accsLoginMessageModel2);
-                } else if (accsLoginMessageModel2 == null || !TextUtils.equals(accsLoginMessageModel2.type, "dynamicCodeVerify")) {
+                } else if (accsLoginMessageModel2 == null || !StringUtils.equals(accsLoginMessageModel2.type, "dynamicCodeVerify")) {
                 } else {
                     LoginParam loginParam = new LoginParam();
                     loginParam.hid = Long.parseLong(Login.getUserId());
@@ -213,11 +213,11 @@ public class LoginAccsService extends TaoBaseService {
                                 ipChange2.ipc$dispatch("2811f422", new Object[]{this, rpcResponse});
                             } else if (rpcResponse == null) {
                                 LoginTLogAdapter.e("dynamicCodeVerify", "response is null");
-                            } else if (!TextUtils.equals("SUCCESS", rpcResponse.actionType)) {
+                            } else if (!StringUtils.equals("SUCCESS", rpcResponse.actionType)) {
                             } else {
                                 LoginReturnData loginReturnData = (LoginReturnData) ((DefaultLoginResponseData) rpcResponse).returnValue;
                                 LoginTLogAdapter.e("dynamicCodeVerify", "response suc h5url:" + loginReturnData.h5Url);
-                                if (loginReturnData == null || TextUtils.isEmpty(loginReturnData.h5Url)) {
+                                if (loginReturnData == null || StringUtils.isEmpty(loginReturnData.h5Url)) {
                                     return;
                                 }
                                 UrlParam urlParam = new UrlParam();

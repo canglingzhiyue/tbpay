@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class ltq extends ltp {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("556e6c5e", new Object[]{this, jSONObject, awesomeGetContainerData});
-        } else if (awesomeGetContainerData.getBase() == null || TextUtils.isEmpty(awesomeGetContainerData.getBase().getExpireType())) {
+        } else if (awesomeGetContainerData.getBase() == null || StringUtils.isEmpty(awesomeGetContainerData.getBase().getExpireType())) {
         } else {
             jSONObject.put("expireAction", (Object) awesomeGetContainerData.getBase().getExpireType());
         }

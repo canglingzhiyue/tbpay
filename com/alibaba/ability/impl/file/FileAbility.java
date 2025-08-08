@@ -1,7 +1,7 @@
 package com.alibaba.ability.impl.file;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.ability.result.ErrorResult;
 import com.alibaba.ability.result.ExecuteResult;
@@ -833,7 +833,7 @@ public final class FileAbility extends AbsFileAbility {
                                 ZipEntry zipEntry = (ZipEntry) a9.next();
                                 String name = zipEntry.getName();
                                 q.b(name, "zipEntry.name");
-                                if (!TextUtils.isEmpty(name)) {
+                                if (!StringUtils.isEmpty(name)) {
                                     Iterator it = a9;
                                     str2 = str4;
                                     try {

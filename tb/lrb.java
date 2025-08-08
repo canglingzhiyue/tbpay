@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.Color;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -78,7 +78,7 @@ public class lrb implements laj {
         }
         String weexUrl = iPopData.getPopConfig().getWeexUrl();
         c.a("WeexPopViewProvider ", "create weex pop, url=" + weexUrl);
-        if (TextUtils.isEmpty(weexUrl)) {
+        if (StringUtils.isEmpty(weexUrl)) {
             return null;
         }
         if (this.b != null) {

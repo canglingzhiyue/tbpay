@@ -16,7 +16,7 @@ import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.Editable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -263,7 +263,7 @@ public class DXWidgetInstance extends WidgetInstance implements UserIdentifier {
             }
             dXEngineRefInfo = new DXEngineRefInfo();
             WidgetRenderImpl.RenderConfig renderConfig = getRenderConfig();
-            if (renderConfig != null && !TextUtils.isEmpty(renderConfig.dxEngineBizType)) {
+            if (renderConfig != null && !StringUtils.isEmpty(renderConfig.dxEngineBizType)) {
                 dXEngineRefInfo.dinamicXEngine = MsgDinamicxEngine.createNewEngine(context, str, renderConfig.dxEngineBizType, bizTag, i, renderConfig.ap2dp);
             } else {
                 dXEngineRefInfo.dinamicXEngine = MsgDinamicxEngine.createNewEngine(context, str);
@@ -324,7 +324,7 @@ public class DXWidgetInstance extends WidgetInstance implements UserIdentifier {
             TraceUtil.endTrace();
         }
         if (this.frameLayout == null) {
-            boolean equals = TextUtils.equals(ValueUtil.getString(renderTemplate.renderData, "resizeFrame"), "1");
+            boolean equals = StringUtils.equals(ValueUtil.getString(renderTemplate.renderData, "resizeFrame"), "1");
             if (equals && (context instanceof Activity)) {
                 this.frameLayout = new ResizeFrameLayout((Activity) context);
             } else {
@@ -582,7 +582,7 @@ public class DXWidgetInstance extends WidgetInstance implements UserIdentifier {
                     this.dxRootView = dXRootView;
                 } else if (obj instanceof JSONObject) {
                     String string = ((JSONObject) obj).getString("VC_UNI_ID");
-                    if (!TextUtils.isEmpty(string) && (dXRootView = DXAsyncCacheManager.dxCache.remove(string)) != null) {
+                    if (!StringUtils.isEmpty(string) && (dXRootView = DXAsyncCacheManager.dxCache.remove(string)) != null) {
                         this.dxRootView = dXRootView;
                     }
                 }
@@ -601,7 +601,7 @@ public class DXWidgetInstance extends WidgetInstance implements UserIdentifier {
             }
             dXRootView2.setTag(R.id.messageDX, this);
             this.frameLayout.removeAllViews();
-            if (TextUtils.equals(ValueUtil.getString(renderTemplate.renderData, "heightMode"), "fullScreen") || TextUtils.equals(ValueUtil.getString(renderTemplate.renderData, "heightMode"), "matchParent")) {
+            if (StringUtils.equals(ValueUtil.getString(renderTemplate.renderData, "heightMode"), "fullScreen") || StringUtils.equals(ValueUtil.getString(renderTemplate.renderData, "heightMode"), "matchParent")) {
                 z = true;
             }
             if (renderTemplate.renderData != null && z) {
@@ -798,7 +798,7 @@ public class DXWidgetInstance extends WidgetInstance implements UserIdentifier {
                                 queryWTByUserId4.postEvent(new DxCustemDataEvent(DXMPRecyclerCompanionWidgetNode.DXMPRECYCLERCOMPANION_FIRSTPAGELOADFINISH));
                             }
                         } else if ("shimmerItem".equals(jSONObject2.getString("name"))) {
-                            shimmerCell(jSONObject2.getString("widgetNodeId"), jSONObject2.getJSONArray("list"), jSONObject2.getString("shimmerStyle"), TextUtils.equals("1", ConfigUtil.getValue(Constants.OrangeNS.CONTAINER, "shimmerPartItemV5", "1")) ? jSONObject2.getString("partShimmerNodeId") : null);
+                            shimmerCell(jSONObject2.getString("widgetNodeId"), jSONObject2.getJSONArray("list"), jSONObject2.getString("shimmerStyle"), StringUtils.equals("1", ConfigUtil.getValue(Constants.OrangeNS.CONTAINER, "shimmerPartItemV5", "1")) ? jSONObject2.getString("partShimmerNodeId") : null);
                         }
                         i++;
                         num = null;
@@ -955,7 +955,7 @@ public class DXWidgetInstance extends WidgetInstance implements UserIdentifier {
             if (!(findViewHolderForAdapterPosition.itemView instanceof ViewGroup) || (view = new ViewTraversalHelper((ViewGroup) findViewHolderForAdapterPosition.itemView).findDeepestChildOfSameSize()) == null) {
                 view = view2;
             }
-            if (!TextUtils.isEmpty(str) && (dXWidgetNode = (DXWidgetNode) view.getTag(DXWidgetNode.TAG_WIDGET_NODE)) != null && (queryWidgetNodeByUserId = dXWidgetNode.queryWidgetNodeByUserId(str)) != null && TextUtils.equals(queryWidgetNodeByUserId.getUserId(), str) && (v = queryWidgetNodeByUserId.getDXRuntimeContext().v()) != null) {
+            if (!StringUtils.isEmpty(str) && (dXWidgetNode = (DXWidgetNode) view.getTag(DXWidgetNode.TAG_WIDGET_NODE)) != null && (queryWidgetNodeByUserId = dXWidgetNode.queryWidgetNodeByUserId(str)) != null && StringUtils.equals(queryWidgetNodeByUserId.getUserId(), str) && (v = queryWidgetNodeByUserId.getDXRuntimeContext().v()) != null) {
                 view = v;
             }
             shimmerItem(view, str2, i2, animatorListenerAdapter);
@@ -1491,6 +1491,6 @@ public class DXWidgetInstance extends WidgetInstance implements UserIdentifier {
 
     private Object getReUseKey(Object obj) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ipChange.ipc$dispatch("cc4b20ee", new Object[]{this, obj}) : (getRenderConfig() == null || TextUtils.isEmpty(getRenderConfig().reUseKey)) ? obj : getRenderConfig().reUseKey;
+        return ipChange instanceof IpChange ? ipChange.ipc$dispatch("cc4b20ee", new Object[]{this, obj}) : (getRenderConfig() == null || StringUtils.isEmpty(getRenderConfig().reUseKey)) ? obj : getRenderConfig().reUseKey;
     }
 }

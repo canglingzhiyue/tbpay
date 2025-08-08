@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -252,7 +252,7 @@ public class TMThreeRowToast {
             TMThreeRowToast.a(TMThreeRowToast.this, inflate(getContext(), R.layout.x_detail_toast_three_row, null));
             TMThreeRowToast.a(TMThreeRowToast.this).setPadding(0, 0, 0, (((int) this.mContext.getResources().getDisplayMetrics().density) << 6) * 3);
             this.iconfontView = (DetailIconFontTextView) TMThreeRowToast.a(TMThreeRowToast.this).findViewById(R.id.iconfont_toast_icon);
-            if (!TextUtils.isEmpty(this.msgIconfontCode)) {
+            if (!StringUtils.isEmpty(this.msgIconfontCode)) {
                 this.iconfontView.setText(this.msgIconfontCode);
                 this.iconfontView.setVisibility(0);
             } else {
@@ -268,7 +268,7 @@ public class TMThreeRowToast {
                 this.toastMessage.setVisibility(8);
             }
             this.descView = (TextView) TMThreeRowToast.a(TMThreeRowToast.this).findViewById(R.id.toast_desc);
-            if (!TextUtils.isEmpty(this.desc)) {
+            if (!StringUtils.isEmpty(this.desc)) {
                 this.descView.setText(this.desc);
                 this.descView.setContentDescription(this.desc);
                 this.descView.setVisibility(0);

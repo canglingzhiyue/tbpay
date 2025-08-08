@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.datasdk.model.datamodel.node.RateNode;
@@ -65,7 +65,7 @@ public class enz extends enn {
             jSONObject = new JSONObject();
         }
         String string = jSONObject.getString("feedId");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             try {
                 enzVar.d = Long.parseLong(string);
             } catch (Throwable unused) {
@@ -73,7 +73,7 @@ public class enz extends enn {
         }
         enzVar.c = jSONObject.getString("skuVids");
         String string2 = jSONObject.getString("invokeSource");
-        if (!TextUtils.isEmpty(string2)) {
+        if (!StringUtils.isEmpty(string2)) {
             try {
                 enzVar.f = Integer.parseInt(string2);
             } catch (Throwable unused2) {

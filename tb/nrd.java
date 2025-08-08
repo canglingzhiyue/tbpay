@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.location.common.TBLocationDTO;
 import com.taobao.search.mmd.util.g;
@@ -28,14 +28,14 @@ public final class nrd extends nqa {
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     b(key, value);
                 }
             }
         }
         String d = g.d();
         q.a((Object) d, "SearchCountryUtil.getEditionCode()");
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             b(noa.KEY_EDITION_CODE, d);
         }
         TBLocationDTO a2 = nnq.a();

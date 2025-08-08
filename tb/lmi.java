@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -149,7 +149,7 @@ public class lmi extends DXImageWidgetNode {
         } else {
             HImageView hImageView = (HImageView) view;
             setImageScaleType(hImageView, this.g);
-            if (!TextUtils.isEmpty(this.f30709a)) {
+            if (!StringUtils.isEmpty(this.f30709a)) {
                 onq.a(hImageView, this.f30709a, null, lfx.GUESS_IMAGE_STRATEGY_CONFIG);
                 hImageView.setImageUrl(this.f30709a);
             }

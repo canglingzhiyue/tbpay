@@ -1,6 +1,6 @@
 package com.taobao.taolive.room.ui.goods.adapter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import com.taobao.taolive.room.utils.ai;
@@ -33,7 +33,7 @@ public class f implements l {
             a a2 = n.a();
             if (a2.z() != null && a2.z().aJ_() != null) {
                 String f = a2.z().aJ_().f();
-                if (!TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(f)) {
                     hashMap.put("trackInfo", f);
                 }
             }

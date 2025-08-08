@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -63,7 +63,7 @@ public class WVShortcutsPlugin extends e {
             return true;
         } else if ("checkPinnedShortcutAdded".equals(str)) {
             String a2 = qog.a(JSON.parseObject(str2).getString("iconId"));
-            rVar.a("isAdded", Boolean.valueOf(TextUtils.isEmpty(a2)));
+            rVar.a("isAdded", Boolean.valueOf(StringUtils.isEmpty(a2)));
             rVar.a("notAddedReason", a2);
             wVCallBackContext.success(rVar);
             return true;
@@ -161,7 +161,7 @@ public class WVShortcutsPlugin extends e {
             hashMap.put("success", String.valueOf(z));
             hashMap.put("failReason", str6);
             String a2 = qog.a(str2);
-            hashMap.put("isIconIdAdded", String.valueOf(TextUtils.isEmpty(a2)));
+            hashMap.put("isIconIdAdded", String.valueOf(StringUtils.isEmpty(a2)));
             hashMap.put("isIconIdAddedFailReason", a2);
             WVShortcutsPlugin.access$000(WVShortcutsPlugin.this, hashMap);
         }
@@ -175,7 +175,7 @@ public class WVShortcutsPlugin extends e {
         }
         try {
             String userId = Login.getUserId();
-            if (TextUtils.isEmpty(userId)) {
+            if (StringUtils.isEmpty(userId)) {
                 userId = "";
             }
             map.put("userId", userId);

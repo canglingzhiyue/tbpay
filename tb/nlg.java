@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -55,7 +55,7 @@ public class nlg extends nlf {
             return;
         }
         this.i = (ItemInfo) pqj.a(this.d, ItemInfo.class);
-        this.h = qmz.a(this.b.l(), this.f31547a, TextUtils.isEmpty(this.g) ? "taolive_newuser_panel" : this.g);
+        this.h = qmz.a(this.b.l(), this.f31547a, StringUtils.isEmpty(this.g) ? "taolive_newuser_panel" : this.g);
         if (this.h == null) {
             return;
         }
@@ -99,7 +99,7 @@ public class nlg extends nlf {
         }
         if (aVar != null && aVar.f32947a != null && aVar.f32947a.length >= 5 && (itemInfo = this.i) != null && itemInfo.cardInfoList != null && this.i.cardInfoList.size() > 0) {
             String str = (String) aVar.f32947a[4];
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 for (int i = 0; i < this.i.cardInfoList.size(); i++) {
                     ListItemPopView.ListItemInfo listItemInfo = (ListItemPopView.ListItemInfo) pqj.a(this.i.cardInfoList.getJSONObject(i), ListItemPopView.ListItemInfo.class);
                     if (listItemInfo.item != null && str.equals(listItemInfo.item.getString("id"))) {

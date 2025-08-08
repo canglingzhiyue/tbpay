@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.core.context.MspContext;
 import com.alipay.android.msp.core.context.MspContextManager;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorType;
@@ -38,16 +38,16 @@ public class JsExceptionReceiver extends BroadcastReceiver {
         String stringExtra3 = intent.getStringExtra("tplId");
         LogUtil.record(2, "JsExceptionReceiver:onReceive", "tplId=" + stringExtra3 + " exception=" + stringExtra + " script=" + stringExtra2);
         MspContext mspContextByBizId = MspContextManager.getInstance().getMspContextByBizId(MspContextManager.getInstance().getLatestBizId());
-        if (!TextUtils.isEmpty(stringExtra2)) {
+        if (!StringUtils.isEmpty(stringExtra2)) {
             if (stringExtra2.length() > 80) {
                 stringExtra2 = stringExtra2.substring(0, 80);
             }
             stringExtra2 = stringExtra2.replace("\n", "");
         }
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             stringExtra = stringExtra.replace("\n", " ");
         }
-        if (TextUtils.isEmpty(stringExtra3)) {
+        if (StringUtils.isEmpty(stringExtra3)) {
             return;
         }
         if (!stringExtra3.startsWith("QUICKPAY@")) {

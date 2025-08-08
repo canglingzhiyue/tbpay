@@ -1,6 +1,6 @@
 package com.alibaba.android.bindingx.core.internal;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,7 +31,7 @@ public class j {
         if (lVar == null) {
             return null;
         }
-        if (!TextUtils.isEmpty(lVar.b)) {
+        if (!StringUtils.isEmpty(lVar.b)) {
             return new j(lVar.b);
         }
         if (lVar.c == null) {

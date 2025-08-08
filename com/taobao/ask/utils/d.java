@@ -3,7 +3,7 @@ package com.taobao.ask.utils;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Window;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
@@ -125,7 +125,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("38873cb1", new Object[]{map, str, str2});
-        } else if (!TextUtils.isEmpty(map.get(str))) {
+        } else if (!StringUtils.isEmpty(map.get(str))) {
         } else {
             map.put(str, str2);
         }

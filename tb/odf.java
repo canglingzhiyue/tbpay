@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
@@ -73,7 +73,7 @@ public class odf implements nrt {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("56c6c68", new Object[]{this});
-        } else if (!TextUtils.equals(j.a("homePageBackRequestEnable", "true"), "true")) {
+        } else if (!StringUtils.equals(j.a("homePageBackRequestEnable", "true"), "true")) {
         } else {
             oqc.a().a(new String[]{oqc.a().l(), oqc.a().m()});
         }

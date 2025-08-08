@@ -2,7 +2,7 @@ package com.taobao.alimama.tanx;
 
 import android.app.Application;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.idst.nls.restapi.HttpRequest;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -127,7 +127,7 @@ public class a {
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("d7be6c00", new Object[]{this, str, new Integer(i), obj, obj2, obj3, map});
                     } else {
-                        TBS.Ext.commitEvent("TanxMonitor", i, obj, obj2, obj3, String.format("sdkversion=%s,bucket=%s", "5.15.6", TextUtils.join(";", c.l())), com.taobao.muniontaobaosdk.util.b.c(map));
+                        TBS.Ext.commitEvent("TanxMonitor", i, obj, obj2, obj3, String.format("sdkversion=%s,bucket=%s", "5.15.6", StringUtils.join(";", c.l())), com.taobao.muniontaobaosdk.util.b.c(map));
                     }
                 }
             }).a(ConnectionResult.SERVICE_UPDATING).b(3).b(true).a(true).a(Arrays.asList(AdMonitorType.CLICK, AdMonitorType.EXPOSE)).a(new dgm() { // from class: com.taobao.alimama.tanx.a.2

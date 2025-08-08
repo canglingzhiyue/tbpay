@@ -2,7 +2,7 @@ package com.taobao.android.litecreator.util;
 
 import android.graphics.Matrix;
 import android.graphics.RectF;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.marvel.Marvel;
 import com.alibaba.marvel.MeEditor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -105,7 +105,7 @@ public class ad implements com.alibaba.marvel.java.c {
             ipChange.ipc$dispatch("655a2dd6", new Object[]{meEditor, str, str2, map, str3, new Long(j), new Long(j2)});
             return;
         }
-        if (TextUtils.isEmpty(str2) || map == null) {
+        if (StringUtils.isEmpty(str2) || map == null) {
             z = false;
         }
         if (z) {
@@ -161,10 +161,10 @@ public class ad implements com.alibaba.marvel.java.c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a906fbd6", new Object[]{meEditor, str, new Long(j)});
-        } else if (!TextUtils.equals(meEditor.getClipType(str), "subProject")) {
+        } else if (!StringUtils.equals(meEditor.getClipType(str), "subProject")) {
         } else {
             String property = meEditor.getCoreEditor().getProperty(str, "clip", "project_id", "");
-            if (TextUtils.isEmpty(property)) {
+            if (StringUtils.isEmpty(property)) {
                 return;
             }
             a(meEditor, property, j);
@@ -175,9 +175,9 @@ public class ad implements com.alibaba.marvel.java.c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1bcc8665", new Object[]{meEditor, str, new Boolean(z)});
-        } else if (TextUtils.equals(meEditor.getClipType(str), "subProject")) {
+        } else if (StringUtils.equals(meEditor.getClipType(str), "subProject")) {
             String property = meEditor.getCoreEditor().getProperty(str, "clip", "project_id", "");
-            if (TextUtils.isEmpty(property)) {
+            if (StringUtils.isEmpty(property)) {
                 return;
             }
             meEditor.selectProject("");

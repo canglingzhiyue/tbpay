@@ -1,6 +1,6 @@
 package com.taobao.android.tab2liveroom.liveroom.preload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.room.utils.aw;
@@ -78,7 +78,7 @@ public class LivePreloadData implements INetDataObject {
             this.preloadStatus = 1;
         } else if (i == 3) {
             this.preloadStatus = 2;
-        } else if (TextUtils.isEmpty(this.customPlayCtrlParams) || TextUtils.isEmpty(this.id)) {
+        } else if (StringUtils.isEmpty(this.customPlayCtrlParams) || StringUtils.isEmpty(this.id)) {
             this.preloadStatus = 3;
         } else {
             this.preloadStatus = 0;
@@ -87,7 +87,7 @@ public class LivePreloadData implements INetDataObject {
 
     public boolean canComposeQuickOpenParams() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("34f5f946", new Object[]{this})).booleanValue() : this.isHitPreloadAB && !TextUtils.isEmpty(this.customPlayCtrlParams) && !TextUtils.isEmpty(this.id);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("34f5f946", new Object[]{this})).booleanValue() : this.isHitPreloadAB && !StringUtils.isEmpty(this.customPlayCtrlParams) && !StringUtils.isEmpty(this.id);
     }
 
     public String toString() {

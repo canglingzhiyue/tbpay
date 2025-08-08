@@ -1,7 +1,7 @@
 package com.taobao.android.detail.core.aura.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.umbrella.link.UMLinkLogInterface;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -53,15 +53,15 @@ public class h {
         UMLinkLogInterface a2 = bpp.a();
         String f = bVar.f();
         String a3 = bVar.a();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             a3 = a3 + "_" + str;
         }
         String str3 = a3;
         String str4 = "";
-        if (!TextUtils.isEmpty(bVar.b())) {
+        if (!StringUtils.isEmpty(bVar.b())) {
             str4 = str4 + bVar.b();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             str2 = str4 + "_" + str;
         } else {
             str2 = str4;
@@ -91,7 +91,7 @@ public class h {
             hashMap.put("flowCode", e.d());
         }
         String a2 = a(context);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("itemId", a2);
         }
         return hashMap;

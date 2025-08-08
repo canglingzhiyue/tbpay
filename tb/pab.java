@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.d;
@@ -25,12 +25,12 @@ public class pab implements pmi {
         }
         if (psm.H()) {
             String a2 = a(str, str2);
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 plx.b("TBOrangeConfig", "orange使用测试工具持久化值 " + str + "_" + str2 + " value " + a2);
                 return a2;
             }
         }
-        if (!TextUtils.isEmpty(poy.ak(n.b()))) {
+        if (!StringUtils.isEmpty(poy.ak(n.b()))) {
             OrangeConfig orangeConfig = OrangeConfig.getInstance();
             return orangeConfig.getConfig(str + "_" + poy.ak(n.b()), str2, OrangeConfig.getInstance().getConfig(str, str2, str3));
         }
@@ -44,7 +44,7 @@ public class pab implements pmi {
             return (String) ipChange.ipc$dispatch("87942679", new Object[]{this, str, str2, str3});
         }
         String a2 = psl.a(str2);
-        return TextUtils.isEmpty(a2) ? a(str, str2, str3) : a2;
+        return StringUtils.isEmpty(a2) ? a(str, str2, str3) : a2;
     }
 
     @Override // tb.pmi

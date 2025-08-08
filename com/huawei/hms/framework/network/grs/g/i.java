@@ -1,6 +1,6 @@
 package com.huawei.hms.framework.network.grs.g;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.taobao.android.detail.datasdk.model.datamodel.node.ServiceNode;
 import java.util.HashSet;
 import org.json.JSONArray;
@@ -14,13 +14,13 @@ public class i {
 
     private static String b(String str, String str2) {
         HashSet<String> hashSet = new HashSet();
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             JSONArray jSONArray = new JSONObject(str).getJSONArray(ServiceNode.TAG);
             for (int i = 0; i < jSONArray.length(); i++) {
                 hashSet.add(jSONArray.getString(i));
             }
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             JSONArray jSONArray2 = new JSONObject(str2).getJSONArray(ServiceNode.TAG);
             for (int i2 = 0; i2 < jSONArray2.length(); i2++) {
                 hashSet.add(jSONArray2.getString(i2));

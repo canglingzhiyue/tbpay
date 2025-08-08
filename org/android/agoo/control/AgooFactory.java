@@ -7,7 +7,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.analytics.core.sync.q;
 import com.alibaba.wireless.security.open.SecurityGuardManager;
@@ -127,10 +127,10 @@ public class AgooFactory {
                         if (ALog.isPrintLog(ALog.Level.I)) {
                             ALog.i(AgooFactory.TAG, "saveMsg msgId:" + str3 + ",message=" + str2 + ",currentPack=" + str4 + ",reportTimes=" + Config.getReportCacheMsg(AgooFactory.access$000()), new Object[0]);
                         }
-                        if (TextUtils.isEmpty(str4) || !TextUtils.equals(str4, AgooFactory.access$000().getPackageName())) {
+                        if (StringUtils.isEmpty(str4) || !StringUtils.equals(str4, AgooFactory.access$000().getPackageName())) {
                             return;
                         }
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             AgooFactory.access$100(AgooFactory.this).addAccsMessage(str3, str2, "0");
                         } else {
                             AgooFactory.access$100(AgooFactory.this).addAccsMessage(str3, str2, str);
@@ -212,11 +212,11 @@ public class AgooFactory {
         try {
             agooAppKey = Config.getAgooAppKey(mContext);
             String utdid = UtilityImpl.utdidChanged(Constants.SP_FILE_NAME, mContext) ? UtilityImpl.getUtdid(Constants.SP_FILE_NAME, mContext) : c.d(mContext);
-            if (TextUtils.isEmpty(utdid)) {
+            if (StringUtils.isEmpty(utdid)) {
                 utdid = c.d(mContext);
             }
             if (com.taobao.accs.client.a.f8207a == 2) {
-                if (!TextUtils.isEmpty(c.b)) {
+                if (!StringUtils.isEmpty(c.b)) {
                     hexStringToByteArray = EncryptUtil.hmacSha1(c.b.getBytes("utf-8"), (agooAppKey + utdid).getBytes("utf-8"));
                 } else {
                     ALog.e(TAG, "getAppsign secret null", new Object[0]);
@@ -304,7 +304,7 @@ public class AgooFactory {
                     }
                     try {
                         String str2 = new String(bArr, "utf-8");
-                        if (TextUtils.isEmpty(str2)) {
+                        if (StringUtils.isEmpty(str2)) {
                             d.a("accs", BaseMonitor.COUNT_AGOO_FAIL_ACK, "msg==null", mto.a.GEO_NOT_SUPPORT);
                             return;
                         }
@@ -313,21 +313,21 @@ public class AgooFactory {
                         String str3 = null;
                         String string = jSONObject.getString("api");
                         String string2 = jSONObject.getString("id");
-                        if (TextUtils.equals(string, "agooReport")) {
+                        if (StringUtils.equals(string, "agooReport")) {
                             str3 = jSONObject.getString("status");
                         }
-                        if (TextUtils.equals(string, AgooConstants.AGOO_SERVICE_AGOOACK)) {
+                        if (StringUtils.equals(string, AgooConstants.AGOO_SERVICE_AGOOACK)) {
                             d.a("accs", BaseMonitor.COUNT_AGOO_SUCCESS_ACK, "handlerACKMessage", mto.a.GEO_NOT_SUPPORT);
                         }
-                        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && !TextUtils.isEmpty(str3)) {
+                        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && !StringUtils.isEmpty(str3)) {
                             if (ALog.isPrintLog(ALog.Level.I)) {
                                 ALog.i(AgooFactory.TAG, "updateMsg data begin,api=" + string + ",id=" + string2 + ",status=" + str3 + ",reportTimes=" + Config.getReportCacheMsg(AgooFactory.access$000()), new Object[0]);
                             }
-                            if (!TextUtils.equals(string, "agooReport")) {
+                            if (!StringUtils.equals(string, "agooReport")) {
                                 return;
                             }
-                            if (!TextUtils.equals(str3, "4") || !z) {
-                                if ((TextUtils.equals(str3, "8") || TextUtils.equals(str3, "9")) && z) {
+                            if (!StringUtils.equals(str3, "4") || !z) {
+                                if ((StringUtils.equals(str3, "8") || StringUtils.equals(str3, "9")) && z) {
                                     access$100 = AgooFactory.access$100(AgooFactory.this);
                                     str = "100";
                                 }
@@ -378,13 +378,13 @@ public class AgooFactory {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 if (ALog.isPrintLog(ALog.Level.I)) {
                     ALog.i(TAG, "updateNotifyMsg begin,messageId=" + str + ",status=" + str2 + ",reportTimes=" + Config.getReportCacheMsg(mContext), new Object[0]);
                 }
-                if (TextUtils.equals(str2, "8")) {
+                if (StringUtils.equals(str2, "8")) {
                     this.messageService.updateAccsMessage(str, "2");
-                } else if (!TextUtils.equals(str2, "9")) {
+                } else if (!StringUtils.equals(str2, "9")) {
                 } else {
                     this.messageService.updateAccsMessage(str, "3");
                 }

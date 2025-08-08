@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
@@ -340,7 +340,7 @@ public final class SearchSdk {
             }
             String appVersion = TaobaoApplication.getAppVersion();
             String str = appVersion;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 kotlin.jvm.internal.q.a((Object) appVersion, "appVersion");
                 if (n.b((CharSequence) str, new String[]{"."}, false, 0, 6, (Object) null).size() > 3) {
                     z = true;

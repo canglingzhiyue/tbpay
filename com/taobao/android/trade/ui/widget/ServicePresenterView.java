@@ -3,7 +3,7 @@ package com.taobao.android.trade.ui.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -174,7 +174,7 @@ public class ServicePresenterView extends FrameLayout {
             ellipsizedView.setVisibility(0);
             for (int i = 0; i < list.size(); i++) {
                 a aVar = list.get(i);
-                if (aVar != null && !TextUtils.isEmpty(aVar.f15645a)) {
+                if (aVar != null && !StringUtils.isEmpty(aVar.f15645a)) {
                     TextView textView = this.b.get(i);
                     textView.setText(aVar.f15645a);
                     a(textView, aVar);
@@ -192,10 +192,10 @@ public class ServicePresenterView extends FrameLayout {
             }
             int color = this.f15646a.getResources().getColor(R.color.TC_D_D);
             try {
-                if (!TextUtils.isEmpty(aVar.c)) {
+                if (!StringUtils.isEmpty(aVar.c)) {
                     i = jkp.a(aVar.c, color);
                     a(textView, i);
-                } else if (!TextUtils.isEmpty(aVar.b)) {
+                } else if (!StringUtils.isEmpty(aVar.b)) {
                     textView.setBackgroundResource(R.drawable.trade_service_bg);
                     GradientDrawable gradientDrawable = (GradientDrawable) textView.getBackground();
                     if (gradientDrawable != null) {
@@ -256,7 +256,7 @@ public class ServicePresenterView extends FrameLayout {
             textView.setTextSize(this.c.unit, 10.0f);
             textView.setTextColor(-1);
             textView.setBackgroundResource(R.drawable.trade_service_bg);
-            textView.setEllipsize(TextUtils.TruncateAt.END);
+            textView.setEllipsize(StringUtils.TruncateAt.END);
             textView.setSingleLine();
             textView.setPadding(a2, a3, a2, a3);
             return textView;

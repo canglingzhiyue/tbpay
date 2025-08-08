@@ -16,7 +16,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.taobao.TBActionBar;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -236,7 +236,7 @@ public class a extends WXHCNavBarAdapter {
         }
         try {
             String str = FestivalMgr.a().j().get("isFestivalOn");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (Integer.valueOf(str).intValue() == 1) {
                     return true;
                 }
@@ -445,7 +445,7 @@ public class a extends WXHCNavBarAdapter {
                         if (Boolean.TRUE.toString().equals(OrangeConfig.getInstance().getConfig("shop_render", "miniapp_feedback_enable", Boolean.TRUE.toString())) && (wXSDKInstance instanceof AliWXSDKInstance)) {
                             String str = (String) ((AliWXSDKInstance) wXSDKInstance).getExtra("miniAppFeedBackUri", "");
                             JSONObject jSONObject2 = (JSONObject) ((AliWXSDKInstance) wXSDKInstance).getExtra("miniAppFeedBackExtraInfo", "");
-                            if (!TextUtils.isEmpty(str) && jSONObject2 != null) {
+                            if (!StringUtils.isEmpty(str) && jSONObject2 != null) {
                                 Bundle bundle3 = new Bundle();
                                 jSONObject2.put("shopId", (Object) this.h);
                                 bundle3.putSerializable("extraInfo", jSONObject2);
@@ -509,7 +509,7 @@ public class a extends WXHCNavBarAdapter {
                 add.setTitle(d().getString(aVar.b) + ":" + aVar.d);
             } else if (aVar.c != null && !aVar.c.isRecycled()) {
                 add.setIcon(a(new BitmapDrawable(d(), aVar.c)));
-            } else if (!TextUtils.isEmpty(aVar.e)) {
+            } else if (!StringUtils.isEmpty(aVar.e)) {
                 ImageView imageView = new ImageView(c());
                 WXImageStrategy wXImageStrategy = new WXImageStrategy();
                 wXImageStrategy.isClipping = true;
@@ -582,7 +582,7 @@ public class a extends WXHCNavBarAdapter {
         if (menuItemTitle == null || (supportActionBar = b().getSupportActionBar()) == null) {
             return;
         }
-        if (TextUtils.isEmpty(menuItemTitle.d)) {
+        if (StringUtils.isEmpty(menuItemTitle.d)) {
             supportActionBar.d(false);
             final ImageView imageView = new ImageView(c());
             if (menuItemTitle.g) {
@@ -594,7 +594,7 @@ public class a extends WXHCNavBarAdapter {
                 imageView.setImageDrawable(a(a(b(), menuItemTitle.b)));
             } else if (menuItemTitle.c != null && !menuItemTitle.c.isRecycled()) {
                 imageView.setImageDrawable(a(new BitmapDrawable(d(), menuItemTitle.c)));
-            } else if (!TextUtils.isEmpty(menuItemTitle.e)) {
+            } else if (!StringUtils.isEmpty(menuItemTitle.e)) {
                 WXImageStrategy wXImageStrategy = new WXImageStrategy();
                 wXImageStrategy.isClipping = true;
                 wXImageStrategy.setImageListener(new WXImageStrategy.ImageListener() { // from class: com.taobao.android.shop.weex.a.3
@@ -661,7 +661,7 @@ public class a extends WXHCNavBarAdapter {
             return;
         }
         final MenuItem add = menu.add(0, R.id.navigation_bar_right_id, 0, "");
-        if (!TextUtils.isEmpty(menuItemRight.d)) {
+        if (!StringUtils.isEmpty(menuItemRight.d)) {
             add.setTitle(menuItemRight.d);
         } else if (menuItemRight.f2025a > 0) {
             add.setIcon(menuItemRight.f2025a);
@@ -669,7 +669,7 @@ public class a extends WXHCNavBarAdapter {
             add.setTitle(AppcompatUtils.getMenuTitle("", menuItemRight.b));
         } else if (menuItemRight.c != null && !menuItemRight.c.isRecycled()) {
             add.setIcon(a(new BitmapDrawable(d(), menuItemRight.c)));
-        } else if (!TextUtils.isEmpty(menuItemRight.e)) {
+        } else if (!StringUtils.isEmpty(menuItemRight.e)) {
             ImageView imageView = new ImageView(c());
             WXImageStrategy wXImageStrategy = new WXImageStrategy();
             wXImageStrategy.isClipping = true;

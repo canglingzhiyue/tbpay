@@ -3,7 +3,7 @@ package com.taobao.android.detail.core.detail.kit.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,7 +91,7 @@ public class RightListFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6b8cd8fe", new Object[]{fragmentActivity, str, str2});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
         } else {
             FloatFragment.startFragment(fragmentActivity, newInstance(str, str2));
         }
@@ -101,7 +101,7 @@ public class RightListFragment extends FloatFragment {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d60a2df6", new Object[]{fragmentActivity, str, arrayList});
-        } else if (fragmentActivity == null || TextUtils.isEmpty(str) || arrayList == null || arrayList.isEmpty()) {
+        } else if (fragmentActivity == null || StringUtils.isEmpty(str) || arrayList == null || arrayList.isEmpty()) {
         } else {
             FloatFragment.startFragment(fragmentActivity, newInstance(str, arrayList));
         }
@@ -156,7 +156,7 @@ public class RightListFragment extends FloatFragment {
             return;
         }
         super.onViewCreated(view, bundle);
-        if (TextUtils.isEmpty(this.serviceIds)) {
+        if (StringUtils.isEmpty(this.serviceIds)) {
             update(true);
             return;
         }
@@ -321,7 +321,7 @@ public class RightListFragment extends FloatFragment {
                 RightListModel.RightItemModel rightItemModel = new RightListModel.RightItemModel();
                 rightItemModel.name = next.b;
                 rightItemModel.showType = next.d;
-                if (!TextUtils.isEmpty(next.c)) {
+                if (!StringUtils.isEmpty(next.c)) {
                     rightItemModel.desc = new ArrayList<>(1);
                     rightItemModel.desc.add(next.c);
                 }
@@ -444,23 +444,23 @@ public class RightListFragment extends FloatFragment {
                 ipChange.ipc$dispatch("bece1ec", new Object[]{this, new Integer(i), aVar});
             } else if (aVar == null || (rightItemModel = (RightListModel.RightItemModel) RightListFragment.access$000(RightListFragment.this).get(i)) == null) {
             } else {
-                if (!TextUtils.isEmpty(rightItemModel.link)) {
+                if (!StringUtils.isEmpty(rightItemModel.link)) {
                     aVar.d.setVisibility(0);
                     aVar.e.setVisibility(0);
                 } else {
                     aVar.d.setVisibility(8);
                     aVar.e.setVisibility(8);
                 }
-                if (!TextUtils.isEmpty(rightItemModel.icon)) {
+                if (!StringUtils.isEmpty(rightItemModel.icon)) {
                     epj.b().a(rightItemModel.icon, aVar.b);
                     aVar.c.setVisibility(8);
                     aVar.b.setVisibility(0);
-                } else if (!TextUtils.isEmpty(rightItemModel.name)) {
+                } else if (!StringUtils.isEmpty(rightItemModel.name)) {
                     aVar.c.setText(rightItemModel.name);
                     aVar.c.setVisibility(0);
                     aVar.b.setVisibility(8);
                 }
-                if (rightItemModel == null || TextUtils.isEmpty(rightItemModel.link)) {
+                if (rightItemModel == null || StringUtils.isEmpty(rightItemModel.link)) {
                     return;
                 }
                 aVar.d.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.android.detail.core.detail.kit.fragment.RightListFragment.RightListAdapter.1
@@ -474,7 +474,7 @@ public class RightListFragment extends FloatFragment {
                             return;
                         }
                         String str = ((RightListModel.RightItemModel) RightListFragment.access$000(RightListFragment.this).get(i)).link;
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             return;
                         }
                         f.a(RightListFragment.this.context, new enu(str));
@@ -501,7 +501,7 @@ public class RightListFragment extends FloatFragment {
                 } else {
                     bVar.c.setText("");
                 }
-                if (TextUtils.isEmpty(rightItemModel.icon)) {
+                if (StringUtils.isEmpty(rightItemModel.icon)) {
                     bVar.d.setVisibility(0);
                     bVar.f9525a.setVisibility(8);
                     if (rightItemModel.showType == 0) {

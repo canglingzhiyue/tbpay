@@ -1,7 +1,7 @@
 package com.taobao.update.monitor;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -149,7 +149,7 @@ public class UpdateMonitorImpl implements rev {
         } else if (this.updateAlarmDatas.containsKey("ddefficiency")) {
             SharedPreferences sharedPreferences = UpdateRuntime.getContext().getSharedPreferences("update_point", 0);
             String string = sharedPreferences.getString("dd_update", "");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 sharedPreferences.edit().putString("dd_update", JSON.toJSONString(this.updateAlarmDatas.get("ddefficiency"))).commit();
                 return;
             }

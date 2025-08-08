@@ -3,7 +3,7 @@ package com.taobao.search.m3.feedback;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Outline;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.LinearLayout;
@@ -68,7 +68,7 @@ public final class FeedbackButton extends LinearLayout {
         this.text.setTextSize(1, textSize);
         this.text.setTextColor(textColor);
         this.text.setMaxLines(1);
-        this.text.setEllipsize(TextUtils.TruncateAt.END);
+        this.text.setEllipsize(StringUtils.TruncateAt.END);
         setBackgroundColor(-1);
         setClipToOutline(true);
         setOutlineProvider(new ViewOutlineProvider() { // from class: com.taobao.search.m3.feedback.FeedbackButton.1

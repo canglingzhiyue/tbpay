@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -126,7 +126,7 @@ public class ena {
             return (b) ipChange.ipc$dispatch("82f2e07e", new Object[]{this, str});
         }
         eqc.a(this.f27453a, "mCreateDetailModel", "主接口数据序列化");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new b(-1);
         }
         JSONObject jSONObject = null;
@@ -357,7 +357,7 @@ public class ena {
         this.f.clear();
         for (IDMComponent iDMComponent : list) {
             String tag = iDMComponent.getTag();
-            if (!TextUtils.isEmpty(tag)) {
+            if (!StringUtils.isEmpty(tag)) {
                 if (iDMComponent.getChildren() != null && iDMComponent.getChildren().size() == 1) {
                     this.f.put(tag, iDMComponent.getChildren().get(0));
                 } else {
@@ -430,7 +430,7 @@ public class ena {
         L58:
             r5 = r0
         L59:
-            boolean r1 = android.text.TextUtils.isEmpty(r5)
+            boolean r1 = android.text.StringUtils.isEmpty(r5)
             if (r1 != 0) goto L63
             com.alibaba.fastjson.JSONObject r0 = com.alibaba.fastjson.JSON.parseObject(r5)     // Catch: java.lang.Throwable -> L63
         L63:

@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.comments.chat;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public class h {
             } catch (Exception unused) {
             }
             this.b.clear();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             HashMap<String, String> hashMap = new HashMap<>();

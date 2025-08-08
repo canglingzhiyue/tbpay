@@ -2,7 +2,7 @@ package com.taobao.android.address.wrapper.weex;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -120,7 +120,7 @@ public class WXAddressModule extends WXModule {
         } else if (this.mWXSDKInstance == null || jSONObject == null || this.mWXSDKInstance.O() == null || !(this.mWXSDKInstance.O() instanceof Activity)) {
         } else {
             String openH5Page = WVAddressModule.openH5Page((Activity) this.mWXSDKInstance.O(), jSONObject.toJSONString());
-            if (TextUtils.isEmpty(openH5Page)) {
+            if (StringUtils.isEmpty(openH5Page)) {
                 return;
             }
             this.currentSelectType = openH5Page;

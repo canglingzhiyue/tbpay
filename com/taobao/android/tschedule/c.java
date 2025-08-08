@@ -1,7 +1,7 @@
 package com.taobao.android.tschedule;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -58,7 +58,7 @@ public class c {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1fb84612", new Object[]{str, scheduleTask});
-        } else if (TextUtils.isEmpty(str) || scheduleTask == null) {
+        } else if (StringUtils.isEmpty(str) || scheduleTask == null) {
         } else {
             List<ScheduleTask> list = d.get(str);
             if (list != null) {
@@ -79,7 +79,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("287b5bd5", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         List<ScheduleTask> list2 = d.get(jmi.a(str));
@@ -121,12 +121,12 @@ public class c {
                 return;
             }
             jmf.a("update config");
-            if (TextUtils.equals(b, str) && TextUtils.equals(c, jmh.a(jmg.CONFIG_KEY_TRIGGER_NAV_BLACK_LIST, ""))) {
+            if (StringUtils.equals(b, str) && StringUtils.equals(c, jmh.a(jmg.CONFIG_KEY_TRIGGER_NAV_BLACK_LIST, ""))) {
                 return;
             }
             g.a();
             jkq.a("TS.Config", "updateConfig=" + str);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 d.clear();
                 e.clear();
                 f.clear();
@@ -161,7 +161,7 @@ public class c {
                             } else {
                                 while (it2.hasNext()) {
                                     String obj = it2.next().toString();
-                                    if (!TextUtils.isEmpty(obj)) {
+                                    if (!StringUtils.isEmpty(obj)) {
                                         if (obj.startsWith(REGULAR_EXPRESSION)) {
                                             copyOnWriteArrayList.add(obj);
                                             concurrentHashMap.put(obj, arrayList);
@@ -279,7 +279,7 @@ public class c {
                                         break;
                                     }
                                     String next = it.next();
-                                    if (!TextUtils.equals(uri.getQueryParameter(next), parse.getQueryParameter(next))) {
+                                    if (!StringUtils.equals(uri.getQueryParameter(next), parse.getQueryParameter(next))) {
                                         z = false;
                                         break;
                                     }

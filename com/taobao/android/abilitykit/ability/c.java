@@ -3,7 +3,7 @@ package com.taobao.android.abilitykit.ability;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.dkv;
@@ -50,10 +50,10 @@ public class c extends dlg {
                 c2 = hsu.a(c2, a2);
             }
             JSONObject a3 = dlhVar.a("params");
-            if ("Native".equalsIgnoreCase(c) && !TextUtils.isEmpty(c2)) {
+            if ("Native".equalsIgnoreCase(c) && !StringUtils.isEmpty(c2)) {
                 a(dleVar.a(), c2, a3);
             } else {
-                if (TextUtils.isEmpty(c2)) {
+                if (StringUtils.isEmpty(c2)) {
                     str = "open url ability has not inject impl,and url is empty";
                 } else {
                     str = "open url ability has not inject impl,and type is not native";

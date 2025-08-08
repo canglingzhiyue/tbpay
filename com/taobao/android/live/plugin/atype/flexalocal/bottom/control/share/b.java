@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.bottom.control.share;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.bottom.control.share.business.ShareReturnRequest;
@@ -37,9 +37,9 @@ public class b implements IBottomProxy.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d9378d7c", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.b("ShareFission", "[shareFissionReturn] url is empty");
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             q.b("ShareFission", "[shareFissionReturn] liveId is empty");
         } else {
             Uri parse = Uri.parse(str);
@@ -56,14 +56,14 @@ public class b implements IBottomProxy.a {
             ipChange.ipc$dispatch("d7b3cea7", new Object[]{this, map, str});
         } else if (map == null) {
             q.b("ShareFission", "[shareFissionReturn] params is empty");
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             q.b("ShareFission", "[shareFissionReturn] liveId is empty");
         } else {
             if (this.f13590a == null) {
                 this.f13590a = new HashSet();
             }
             String str2 = map.get(LIVE_SHARE_ACTION_INFO_PARAMS);
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 q.b("ShareFission", "[shareFissionReturn] liveShareActionInfoParams is empty");
             } else if (this.f13590a.contains(str2)) {
             } else {
@@ -88,12 +88,12 @@ public class b implements IBottomProxy.a {
                             return;
                         }
                         ShareReturnResponseData shareReturnResponseData = (ShareReturnResponseData) netBaseOutDo.mo1437getData();
-                        if (shareReturnResponseData != null && "true".equals(shareReturnResponseData.result) && !TextUtils.isEmpty(shareReturnResponseData.toast)) {
-                            Toast.makeText(pmd.a().u().c(), TextUtils.isEmpty(shareReturnResponseData.toast) ? "助力成功" : shareReturnResponseData.toast, 1).show();
+                        if (shareReturnResponseData != null && "true".equals(shareReturnResponseData.result) && !StringUtils.isEmpty(shareReturnResponseData.toast)) {
+                            Toast.makeText(pmd.a().u().c(), StringUtils.isEmpty(shareReturnResponseData.toast) ? "助力成功" : shareReturnResponseData.toast, 1).show();
                             q.b("ShareFission", "[onSuccess]  showToast  data.result: " + shareReturnResponseData.result + ", data.toast: " + shareReturnResponseData.toast);
                             return;
                         }
-                        Toast.makeText(pmd.a().u().c(), TextUtils.isEmpty(shareReturnResponseData.toast) ? "助力失败" : shareReturnResponseData.toast, 1).show();
+                        Toast.makeText(pmd.a().u().c(), StringUtils.isEmpty(shareReturnResponseData.toast) ? "助力失败" : shareReturnResponseData.toast, 1).show();
                     }
 
                     @Override // com.taobao.taolive.sdk.adapter.network.d

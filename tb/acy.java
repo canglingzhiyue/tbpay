@@ -3,7 +3,7 @@ package tb;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.f;
@@ -136,7 +136,7 @@ public class acy {
         }
         try {
             String config = OrangeConfig.getInstance().getConfig(onj.groupName, "sellerTalk", "false");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 z = "true".equals(config);
             }
         } catch (Exception unused) {
@@ -152,7 +152,7 @@ public class acy {
             return;
         }
         String config = OrangeConfig.getInstance().getConfig(onj.groupName, "video_close", "false");
-        boolean equals = !TextUtils.isEmpty(config) ? "true".equals(config) : false;
+        boolean equals = !StringUtils.isEmpty(config) ? "true".equals(config) : false;
         if (!equals) {
             equals = a("video_close_phone");
         }
@@ -168,7 +168,7 @@ public class acy {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
         String config = OrangeConfig.getInstance().getConfig(onj.groupName, str, "");
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return false;
         }
         return config.contains(Build.BRAND + ":" + Build.MODEL);

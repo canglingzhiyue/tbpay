@@ -1,6 +1,6 @@
 package com.taobao.taolive.adapterimpl.msg;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.messagekit.base.monitor.e;
 import com.taobao.tao.powermsg.common.PowerMessage;
@@ -77,7 +77,7 @@ public class c implements pns {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c716ecc7", new Object[]{this, new Integer(i), str, str2, str3, str4, str5, pnqVar, objArr});
         } else {
-            com.taobao.tao.powermsg.common.g.a(i, str, TextUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new com.taobao.tao.powermsg.common.b() { // from class: com.taobao.taolive.adapterimpl.msg.c.1
+            com.taobao.tao.powermsg.common.g.a(i, str, StringUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new com.taobao.tao.powermsg.common.b() { // from class: com.taobao.taolive.adapterimpl.msg.c.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 @Override // com.taobao.tao.powermsg.common.b
@@ -104,7 +104,7 @@ public class c implements pns {
             ipChange.ipc$dispatch("5dcda211", new Object[]{this, new Integer(i), str, str2, str3, str4, pnqVar, objArr});
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         com.taobao.tao.powermsg.common.g.a(i, str, str2, str3, str4, null, new com.taobao.tao.powermsg.common.b() { // from class: com.taobao.taolive.adapterimpl.msg.c.3
@@ -158,7 +158,7 @@ public class c implements pns {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e0c63188", new Object[]{this, new Integer(i), str, str2, str3, str4, str5, pnqVar, objArr});
         } else {
-            com.taobao.tao.powermsg.common.g.b(i, str, TextUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new com.taobao.tao.powermsg.common.b() { // from class: com.taobao.taolive.adapterimpl.msg.c.5
+            com.taobao.tao.powermsg.common.g.b(i, str, StringUtils.isEmpty(str2) ? "" : str2, str3, str4, str5, new com.taobao.tao.powermsg.common.b() { // from class: com.taobao.taolive.adapterimpl.msg.c.5
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
                 @Override // com.taobao.tao.powermsg.common.b
@@ -185,7 +185,7 @@ public class c implements pns {
             ipChange.ipc$dispatch("61554512", new Object[]{this, new Integer(i), str, str2, str3, str4, pnqVar, objArr});
             return;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "";
         }
         com.taobao.tao.powermsg.common.g.b(i, str, str2, str3, str4, null, new com.taobao.tao.powermsg.common.b() { // from class: com.taobao.taolive.adapterimpl.msg.c.6

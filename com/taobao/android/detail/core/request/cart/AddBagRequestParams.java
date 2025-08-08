@@ -1,6 +1,6 @@
 package com.taobao.android.detail.core.request.cart;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.icart.core.QueryParamsManager;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -37,7 +37,7 @@ public class AddBagRequestParams extends com.taobao.android.detail.core.request.
         this.quantity = str3;
         this.serviceId = str4;
         this.divisionId = str5;
-        this.cartFrom = TextUtils.isEmpty(str6) ? QueryParamsManager.DEFAULT_CART_FROM : str6;
+        this.cartFrom = StringUtils.isEmpty(str6) ? QueryParamsManager.DEFAULT_CART_FROM : str6;
         this.exParams = constructExParams(map);
         emu.a("com.taobao.android.detail.core.request.cart.AddBagRequestParams");
     }

@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.taobao.windvane.embed.BaseEmbedView;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -132,7 +132,7 @@ public class TRWidgetWVEmbedView extends BaseEmbedView implements Serializable {
             return null;
         }
         this.mActivity = (FragmentActivity) context;
-        if (TextUtils.isEmpty(this.mRenderUrl)) {
+        if (StringUtils.isEmpty(this.mRenderUrl)) {
             doRenderWidget();
         } else {
             doRenderWeex(this.mRenderUrl);
@@ -341,7 +341,7 @@ public class TRWidgetWVEmbedView extends BaseEmbedView implements Serializable {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("af2eb696", new Object[]{this, aVar, map});
-                } else if (TextUtils.equals(TRWidgetConstant.CL_TRIVER_INITING.f3640a, aVar.f3640a)) {
+                } else if (StringUtils.equals(TRWidgetConstant.CL_TRIVER_INITING.f3640a, aVar.f3640a)) {
                 } else {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("widgetId", (Object) TRWidgetWVEmbedView.access$200(TRWidgetWVEmbedView.this).getWidgetId());

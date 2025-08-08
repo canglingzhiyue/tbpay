@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.ttdetail.request.params.MtopRequestParams;
 import com.taobao.android.detail.ttdetail.utils.e;
@@ -108,7 +108,7 @@ public abstract class snb<E extends MtopRequestParams> {
         }
         this.c.mo1305reqMethod(d());
         String c = c();
-        if (TextUtils.equals("UNIT_TRADE", c) || TextUtils.equals("UNIT_GUIDE", c)) {
+        if (StringUtils.equals("UNIT_TRADE", c) || StringUtils.equals("UNIT_GUIDE", c)) {
             this.c.mo1328setUnitStrategy(c);
         }
         if (h()) {
@@ -118,7 +118,7 @@ public abstract class snb<E extends MtopRequestParams> {
         if (i != null && !i.isEmpty()) {
             this.c.mo1297headers(i);
         }
-        if (!TextUtils.isEmpty(m())) {
+        if (!StringUtils.isEmpty(m())) {
             this.c.mo1310setBizTopic(m());
         }
         this.c.mo1333upstreamCompress(l());

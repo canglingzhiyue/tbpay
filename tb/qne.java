@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.utils.b;
 import com.taobao.taolive.sdk.utils.l;
@@ -71,7 +71,7 @@ public class qne {
         }
         if (c == null) {
             String e2 = e();
-            if (!TextUtils.isEmpty(e2)) {
+            if (!StringUtils.isEmpty(e2)) {
                 c = Arrays.asList(e2.split(";"));
             }
         }
@@ -96,7 +96,7 @@ public class qne {
 
     public static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : TextUtils.equals(f(), str) || TextUtils.equals(J(), str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : StringUtils.equals(f(), str) || StringUtils.equals(J(), str);
     }
 
     public static String f() {
@@ -181,7 +181,7 @@ public class qne {
 
     public static String a(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2}) : TextUtils.isEmpty(str) ? str2 : pmd.a().d().a("tblive", str, str2);
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2}) : StringUtils.isEmpty(str) ? str2 : pmd.a().d().a("tblive", str, str2);
     }
 
     public static boolean p() {
@@ -207,7 +207,7 @@ public class qne {
         }
         if (l == null) {
             String K = K();
-            if (!TextUtils.isEmpty(K)) {
+            if (!StringUtils.isEmpty(K)) {
                 l = Arrays.asList(K.split(";"));
             }
         }
@@ -357,11 +357,11 @@ public class qne {
         }
         if (u == null) {
             String b2 = pmd.a().d().b("tblive", "isNeedShowH5LiveSourceBlackList", "");
-            if (!TextUtils.isEmpty(b2)) {
+            if (!StringUtils.isEmpty(b2)) {
                 u = Arrays.asList(b2.split(";"));
             }
         }
-        if (!TextUtils.isEmpty(str) && (list2 = u) != null) {
+        if (!StringUtils.isEmpty(str) && (list2 = u) != null) {
             for (String str3 : list2) {
                 if (str.startsWith(str3)) {
                     return false;
@@ -370,11 +370,11 @@ public class qne {
         }
         if (v == null) {
             String b3 = pmd.a().d().b("tblive", "isNeedShowH5EntryLiveSourceBlackList", "");
-            if (!TextUtils.isEmpty(b3)) {
+            if (!StringUtils.isEmpty(b3)) {
                 v = Arrays.asList(b3.split(";"));
             }
         }
-        if (!TextUtils.isEmpty(str2) && (list = v) != null) {
+        if (!StringUtils.isEmpty(str2) && (list = v) != null) {
             for (String str4 : list) {
                 if (str2.startsWith(str4)) {
                     return false;
@@ -416,7 +416,7 @@ public class qne {
         }
         if (j == null) {
             String k2 = k();
-            if (!TextUtils.isEmpty(k2)) {
+            if (!StringUtils.isEmpty(k2)) {
                 j = Arrays.asList(k2.split(";"));
             }
         }

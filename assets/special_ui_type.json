@@ -1,0 +1,17 @@
+{
+  "00000001003_1": {
+    "name": "passport",
+    "layout": "passport_half_frame",
+    "textResId": "main_message_default"
+  },
+  "00600000001_1": {
+    "name": "Mykad ID",
+    "layout": "layout_manual_stand_frame",
+    "textResId": "zdoc_standard_frame_tips_00600000001_1"
+  },
+  "00600000001_2": {
+    "name": "Mykad ID back",
+    "layout": "layout_manual_stand_frame",
+    "textResId": "zdoc_standard_frame_tips_00600000001_2"
+  }
+}

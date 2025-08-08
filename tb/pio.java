@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -303,13 +303,13 @@ public class pio {
         sps sessionParams = ((ISceneConfigService) fluidContext.getService(ISceneConfigService.class)).getSessionParams();
         String str = null;
         String str2 = sessionParams != null ? sessionParams.b : null;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "-";
         }
         if (mtopResponse != null) {
             str = mtopResponse.getApi();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "-";
         }
         a(str2, str, System.currentTimeMillis() - j, z);
@@ -330,7 +330,7 @@ public class pio {
             return (String) ipChange.ipc$dispatch("35756ca3", new Object[]{fluidContext});
         }
         sps sessionParams = ((ISceneConfigService) fluidContext.getService(ISceneConfigService.class)).getSessionParams();
-        return (sessionParams == null || TextUtils.isEmpty(sessionParams.b)) ? "-" : sessionParams.b;
+        return (sessionParams == null || StringUtils.isEmpty(sessionParams.b)) ? "-" : sessionParams.b;
     }
 
     public static void b() {
@@ -506,7 +506,7 @@ public class pio {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.equals(str, GG_VIDEOTAB_VIDEO_PREFETCH_MTOP)) {
+        if (StringUtils.equals(str, GG_VIDEOTAB_VIDEO_PREFETCH_MTOP)) {
             if (d) {
                 return false;
             }
@@ -520,7 +520,7 @@ public class pio {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d23b17f9", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.equals(str, GG_VIDEOTAB_VIDEO_PREFETCH_MTOP)) {
+        if (StringUtils.equals(str, GG_VIDEOTAB_VIDEO_PREFETCH_MTOP)) {
             if (d) {
                 return false;
             }

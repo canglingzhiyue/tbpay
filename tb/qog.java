@@ -7,7 +7,7 @@ import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.phenix.intf.b;
 import com.taobao.phenix.intf.event.FailPhenixEvent;
@@ -43,7 +43,7 @@ public class qog {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str4)) {
                 if (Build.VERSION.SDK_INT >= 26) {
                     final ShortcutManager shortcutManager = (ShortcutManager) TBHuDongServiceImp.getApplication().getSystemService(ShopConstants.PARAM_SHORTCUT);
                     if (shortcutManager != null && shortcutManager.isRequestPinShortcutSupported()) {
@@ -114,7 +114,7 @@ public class qog {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return "PARAM_INVALID";
             }
             if (Build.VERSION.SDK_INT < 26) {

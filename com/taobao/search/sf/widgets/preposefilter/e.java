@@ -1,6 +1,6 @@
 package com.taobao.search.sf.widgets.preposefilter;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -98,7 +98,7 @@ public class e extends isi<RecyclerPreposeFilterBean, CommonSearchResult> {
         for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && value != null) {
+            if (!StringUtils.isEmpty(key) && value != null) {
                 q.a((Object) key, "key");
                 hashMap.put(key, value.toString());
             }
@@ -316,7 +316,7 @@ public class e extends isi<RecyclerPreposeFilterBean, CommonSearchResult> {
         int size = a2.size();
         for (int i = 0; i < size; i++) {
             String string = a2.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 arrayList.add(string);
             }
         }

@@ -1,0 +1,34 @@
+{
+  "libFiles":[
+    {
+      "arch":"arm64-v8a",
+      "fileName":"libtoyger.so",
+      "md5":"77ffcf342a39cd28b04486e0e490ede2",
+      "url":"https://mdn.alipay.com/wsdk/img?fileid=A*HrvSTKKwCmMAAAAAAAAAAAAAAbowAQ&bz=antmedia&zoom=original",
+      "version":"2.0.0"
+    },
+
+    {
+      "arch":"armeabi",
+      "fileName":"libtoyger.so",
+      "md5":"e5a03d5e5eac070a7f9055f16a04a0fb",
+      "url":"https://mdn.alipay.com/wsdk/img?fileid=A*5lFjQYYWnPMAAAAAAAAAAAAAAbowAQ&bz=antmedia&zoom=original",
+      "version":"2.0.0"
+    }
+  ],
+  "modelFiles":[
+    {
+      "fileName":"toyger.face.dat",
+      "md5":"fd4ddd72c85fd5fe2913be520df32ed0",
+      "url":"https://mdn.alipay.com/wsdk/img?fileid=A*Jl69R4NuzHEAAAAAAAAAAABkARInAQ&bz=antmedia&zoom=original",
+      "version":"1.0.0"
+    },
+    {
+      "fileName":"toyger.face.dragonfly.dat",
+      "md5":"28e1ecec49130b27000552e8168c5e71",
+      "url":"https://mdn.alipay.com/wsdk/img?fileid=A*yNd0R67pGp8AAAAAAAAAAAAAAbowAQ&bz=antmedia&zoom=original",
+      "version":"2.0.0"
+    }
+  ],
+  "resVersion" : "2"
+}

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.RVStartParams;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.urlFilter.UrlFilter;
@@ -97,7 +97,7 @@ public class UrlpreLoadFilter extends UrlFilter {
                 str = UrlFormator.appendutd_id(this.mContext, parse);
             }
         }
-        if (!BrowserUtil.a(str, BrowserUtil.a(this.mContext, R.string.alipay_activity_url)) || TextUtils.isEmpty(Login.getSid())) {
+        if (!BrowserUtil.a(str, BrowserUtil.a(this.mContext, R.string.alipay_activity_url)) || StringUtils.isEmpty(Login.getSid())) {
             return str;
         }
         BrowserUtil.a(this.TAG, "preloadURL", "url_replace_s_id", str, null);

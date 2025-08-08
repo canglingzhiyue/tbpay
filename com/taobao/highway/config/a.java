@@ -2,7 +2,7 @@ package com.taobao.highway.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.data_highway.jni.DataHighwayNative;
@@ -85,11 +85,11 @@ public class a implements g {
             this.e = "true".equals(OrangeConfig.getInstance().getConfig("highway", "disableCompress", "false"));
             DataHighwayNative.a(Long.parseLong(OrangeConfig.getInstance().getConfig("highway", "mdDuration", "10000")));
             String config = OrangeConfig.getInstance().getConfig("highway", "highwayEventList_v2", "");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 DataHighwayNative.b(config);
             }
             String config2 = OrangeConfig.getInstance().getConfig("highway", "eventMap", "");
-            if (TextUtils.isEmpty(config2)) {
+            if (StringUtils.isEmpty(config2)) {
                 return;
             }
             DataHighwayNative.c(config2);
@@ -164,11 +164,11 @@ public class a implements g {
             this.e = "true".equals(a("highway", "disableCompress", "false"));
             DataHighwayNative.a(Long.parseLong(a("highway", "mdDuration", "10000")));
             String a2 = a("highway", "highwayEventList_v2", "");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 DataHighwayNative.b(a2);
             }
             String a3 = a("highway", "eventMap", "");
-            if (TextUtils.isEmpty(a3)) {
+            if (StringUtils.isEmpty(a3)) {
                 return;
             }
             DataHighwayNative.c(a3);
@@ -184,7 +184,7 @@ public class a implements g {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{this, str, str2, str3});
         }
         String a2 = C0662a.a(str, str2, str3);
-        return TextUtils.isEmpty(a2) ? str3 : a2;
+        return StringUtils.isEmpty(a2) ? str3 : a2;
     }
 
     private void a(String str, Map<String, String> map) {

@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.common.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ability.impl.log.LogAbility;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -93,7 +93,7 @@ public class UnifyLog {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             if (str.startsWith(riy.ARRAY_START_STR)) {
                 str = str.replace(riy.ARRAY_START_STR, "");
@@ -302,7 +302,7 @@ public class UnifyLog {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < strArr.length; i++) {
             if (i == 0) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     sb.append(str);
                     sb.append(".");
                 }

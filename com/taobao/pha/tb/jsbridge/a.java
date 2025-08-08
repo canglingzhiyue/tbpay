@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.IJsApiFailedCallBack;
 import android.taobao.windvane.jsbridge.IJsApiSucceedCallBack;
 import android.taobao.windvane.jsbridge.h;
 import android.taobao.windvane.jsbridge.l;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.impl.user.UserAbility;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -60,7 +60,7 @@ public class a extends nfb {
             }
             String string = jSONObject.getString("callbackId");
             JSONObject jSONObject2 = jSONObject.getJSONObject("data");
-            if (TextUtils.isEmpty(string) || jSONObject2 == null) {
+            if (StringUtils.isEmpty(string) || jSONObject2 == null) {
                 ngr.b(a.f18824a, "Param Invalid.");
             } else if (str.indexOf(".") <= 0) {
                 interfaceC0751a.a(PHAErrorType.RANGE_ERROR, "Function is error");
@@ -182,9 +182,9 @@ public class a extends nfb {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("64a6eb27", new Object[]{this, appController, aVar, str, str2, jSONObject, interfaceC0751a});
-        } else if (TextUtils.equals(str, "bridge")) {
+        } else if (StringUtils.equals(str, "bridge")) {
             b.a(appController, aVar, str2, jSONObject.toJSONString(), interfaceC0751a);
-        } else if (TextUtils.equals(str, nfc.PHA_MONITOR_MODULE)) {
+        } else if (StringUtils.equals(str, nfc.PHA_MONITOR_MODULE)) {
             TBPHAJSBridge.a.a(appController, null, str2, jSONObject.toJSONString(), null);
         } else {
             String str3 = str + "." + str2;
@@ -201,7 +201,7 @@ public class a extends nfb {
                 if (c == 1) {
                     String string = jSONObject.getString("func");
                     String string2 = jSONObject.getString("param");
-                    if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+                    if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                         return;
                     }
                     b.a(appController, aVar, string, string2, interfaceC0751a);
@@ -213,7 +213,7 @@ public class a extends nfb {
             String nick = Login.getNick();
             String userId = Login.getUserId();
             JSONObject jSONObject2 = new JSONObject();
-            if (!TextUtils.isEmpty(Login.getSid()) && Login.checkSessionValid() && !TextUtils.isEmpty(nick) && !TextUtils.isEmpty(userId)) {
+            if (!StringUtils.isEmpty(Login.getSid()) && Login.checkSessionValid() && !StringUtils.isEmpty(nick) && !StringUtils.isEmpty(userId)) {
                 jSONObject2.put(UserAbility.API_IS_LOGIN, (Object) true);
                 jSONObject2.put("nick", (Object) nick);
                 jSONObject2.put("userId", (Object) userId);

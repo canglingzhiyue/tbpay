@@ -2,7 +2,7 @@ package com.taobao.accs;
 
 import android.app.Application;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.SessionCenter;
 import anet.channel.entity.ENV;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -76,7 +76,7 @@ public class ACCSClient {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 return (String) ipChange.ipc$dispatch("b8da0465", new Object[]{context, str});
-            } else if (context == null || TextUtils.isEmpty(str)) {
+            } else if (context == null || StringUtils.isEmpty(str)) {
                 throw new AccsException("params error");
             } else {
                 AccsClientConfig configByTag = AccsClientConfig.getConfigByTag(str);
@@ -148,7 +148,7 @@ public class ACCSClient {
             if (ipChange instanceof IpChange) {
                 return (ACCSClient) ipChange.ipc$dispatch("56b41a1a", new Object[]{str});
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "default";
                 ALog.w(TAG, "getAccsClient", "configTag is null, use default!");
             }
@@ -665,7 +665,7 @@ public class ACCSClient {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d72ea9d5", new Object[]{this, str, messageFilter})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || messageFilter == null) {
+        if (StringUtils.isEmpty(str) || messageFilter == null) {
             String str2 = TAG;
             Object[] objArr = new Object[4];
             objArr[0] = "serviceId";
@@ -688,7 +688,7 @@ public class ACCSClient {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("97f141b8", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ALog.e(TAG, "unRegisterMessageFilter param err", "serviceId", str);
             return false;
         }

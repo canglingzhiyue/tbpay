@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.ui.activity.BaseBioNavigatorActivity;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -179,7 +179,7 @@ public abstract class BaseActivity extends AppCompatActivity implements c, ITBPu
         long longExtra2 = intent.getLongExtra("NAV_TO_URL_START_UPTIME", 0L);
         long longExtra3 = intent.getLongExtra("NAV_START_ACTIVITY_TIME", 0L);
         this.T = com.taobao.android.order.bundle.helper.g.b(intent, CoreConstants.IN_PARAMS_DETAILCLICK);
-        boolean z = !TextUtils.isEmpty(this.T);
+        boolean z = !StringUtils.isEmpty(this.T);
         long parseLong = z ? Long.parseLong(this.T) : 0L;
         if (parseLong <= 0) {
             jpoVar = b;

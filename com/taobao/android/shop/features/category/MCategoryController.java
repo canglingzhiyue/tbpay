@@ -2,7 +2,7 @@ package com.taobao.android.shop.features.category;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -171,9 +171,9 @@ public class MCategoryController implements a.b, IRemoteBaseListener {
         });
         this.recyclerView.setLayoutManager(gridLayoutManager);
         this.recyclerView.setAdapter(this.mAdapter);
-        if (!TextUtils.isEmpty(this.mSellerId)) {
+        if (!StringUtils.isEmpty(this.mSellerId)) {
             this.mUTArgs = "seller_id=" + this.mSellerId;
-        } else if (TextUtils.isEmpty(this.mShopId)) {
+        } else if (StringUtils.isEmpty(this.mShopId)) {
         } else {
             this.mUTArgs = "shop_id=" + this.mShopId;
         }

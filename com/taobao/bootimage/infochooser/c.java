@@ -1,6 +1,6 @@
 package com.taobao.bootimage.infochooser;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.mobile.auth.gatewayauth.ResultCode;
 import com.taobao.bootimage.data.BootImageInfo;
@@ -109,7 +109,7 @@ public class c implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("596b2ef", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.f16688a)) {
+        if (StringUtils.isEmpty(this.f16688a)) {
             return false;
         }
         return kes.a().c(this.f16688a);

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.framework.db.MspDBHelper;
@@ -173,7 +173,7 @@ public final class nns extends c {
             return;
         }
         for (BaseCellBean baseCellBean : list) {
-            if (TextUtils.equals(baseCellBean.cardType, "item")) {
+            if (StringUtils.equals(baseCellBean.cardType, "item")) {
                 JSONObject jSONObject = null;
                 if (baseCellBean instanceof SFAuctionBaseCellBean) {
                     jSONObject = ((SFAuctionBaseCellBean) baseCellBean).auctionBaseBean.jarvisData;
@@ -255,7 +255,7 @@ public final class nns extends c {
         if (str2 == null) {
             q.b("mScopeDataSrourceVersion");
         }
-        if (!TextUtils.equals(str, str2)) {
+        if (!StringUtils.equals(str, str2)) {
             k.a("SearchJarvisRerank", "扩召回结果被丢弃，因为请求中完成了翻页");
             e();
             return;

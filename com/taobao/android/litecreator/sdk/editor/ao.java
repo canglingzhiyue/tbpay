@@ -5,7 +5,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Size;
 import android.view.SurfaceView;
 import android.view.View;
@@ -583,7 +583,7 @@ public class ao extends c implements ag, hek {
         if (editorInfo.resource != null) {
             this.c = true;
             this.f13405a = editorInfo.resource.type;
-            if (!TextUtils.isEmpty(editorInfo.resource.draftPath)) {
+            if (!StringUtils.isEmpty(editorInfo.resource.draftPath)) {
                 String str = editorInfo.resource.draftPath;
                 this.c = false;
             } else {
@@ -1221,7 +1221,7 @@ public class ao extends c implements ag, hek {
                 String addMainClip = this.i.addMainClip(media.path, j < 0 ? 0L : j, j2 > j3 ? j3 : j2);
                 media.clipId = addMainClip;
                 this.v.add(addMainClip);
-                if (TextUtils.isEmpty(addMainClip)) {
+                if (StringUtils.isEmpty(addMainClip)) {
                     z = false;
                 }
             }
@@ -1387,7 +1387,7 @@ public class ao extends c implements ag, hek {
         } else if (filter.srcDirPath == null || this.i == null) {
         } else {
             if (d(filter)) {
-                if (!TextUtils.isEmpty(this.m)) {
+                if (!StringUtils.isEmpty(this.m)) {
                     this.i.deleteClip(this.m);
                 }
                 this.m = this.i.addLookupClip("", filter.srcDirPath, 0L, x());
@@ -1594,7 +1594,7 @@ public class ao extends c implements ag, hek {
             Iterator<String> it = this.v.iterator();
             while (it.hasNext()) {
                 String next = it.next();
-                if (TextUtils.isEmpty(canvas.bgPath)) {
+                if (StringUtils.isEmpty(canvas.bgPath)) {
                     this.i.setCanvasBackground(next, canvas.bgColor);
                 } else if (com.taobao.android.litecreator.util.k.a(canvas.bgPath)) {
                     this.i.setCanvasBackground(next, canvas.bgPath);
@@ -1674,7 +1674,7 @@ public class ao extends c implements ag, hek {
 
     private static boolean g(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{str})).booleanValue() : TextUtils.equals(str, Resource.TYPE_DEFAULT_MULTI) || TextUtils.equals(str, Resource.TYPE_RECORD_MULTI);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("b0cfe3bc", new Object[]{str})).booleanValue() : StringUtils.equals(str, Resource.TYPE_DEFAULT_MULTI) || StringUtils.equals(str, Resource.TYPE_RECORD_MULTI);
     }
 
     private boolean ad() {
@@ -1944,7 +1944,7 @@ public class ao extends c implements ag, hek {
         Iterator<String> it = this.v.iterator();
         while (it.hasNext()) {
             String next = it.next();
-            if (!TextUtils.isEmpty(next)) {
+            if (!StringUtils.isEmpty(next)) {
                 this.i.deleteClip(next);
             }
         }
@@ -2082,7 +2082,7 @@ public class ao extends c implements ag, hek {
             ipChange.ipc$dispatch("edda674f", new Object[]{this, music});
         } else if (this.e) {
             String str = this.u.get(0);
-            if (music != null && !TextUtils.isEmpty(music.musicId)) {
+            if (music != null && !StringUtils.isEmpty(music.musicId)) {
                 music.musicClipId = str;
                 long j = music.startClipTime * 1000;
                 this.i.changeClipRes(str, music.path, j, j + (this.d.durationMs * 1000));
@@ -2090,7 +2090,7 @@ public class ao extends c implements ag, hek {
                 this.i.changeClipRes(str, "", 0L, 0L);
             }
             h().isInputMusic = true;
-        } else if (music != null && !TextUtils.isEmpty(music.uniqueId())) {
+        } else if (music != null && !StringUtils.isEmpty(music.uniqueId())) {
             if (!music.uniqueId().equalsIgnoreCase(this.r)) {
                 ag();
                 c(music);

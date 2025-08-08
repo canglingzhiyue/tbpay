@@ -1,6 +1,6 @@
 package com.taobao.android.behavix.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.dro;
 import tb.dsb;
@@ -40,7 +40,7 @@ public abstract class b implements Runnable {
             return;
         }
         try {
-            if (!TextUtils.isEmpty(b())) {
+            if (!StringUtils.isEmpty(b())) {
                 dro.b(Thread.currentThread().getName(), b());
             }
             a();

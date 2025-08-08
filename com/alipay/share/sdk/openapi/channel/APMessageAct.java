@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alipay.share.sdk.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -20,7 +20,7 @@ public class APMessageAct {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("602cfc8b", new Object[]{context, str, str2, bundle})).booleanValue();
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str));
             if (bundle != null) {
                 intent.putExtras(bundle);

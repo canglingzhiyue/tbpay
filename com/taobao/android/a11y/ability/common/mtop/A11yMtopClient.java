@@ -1,6 +1,6 @@
 package com.taobao.android.a11y.ability.common.mtop;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -65,7 +65,7 @@ public class A11yMtopClient<T, V> implements IRemoteBaseListener {
         } else if (mtopResponse.getBytedata() == null) {
         } else {
             String str = new String(mtopResponse.getBytedata());
-            if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
+            if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null) {
                 return;
             }
             Object parseObject2 = JSON.parseObject(jSONObject.toJSONString(), this.responseDataClass);

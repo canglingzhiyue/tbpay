@@ -1,7 +1,7 @@
 package com.xiaomi.push;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.util.Collection;
 
 /* loaded from: classes9.dex */
@@ -28,7 +28,7 @@ public class s {
         }
 
         public a a(String str, Object obj) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 if (this.f858a.length() > 0) {
                     this.f858a.append(this.b);
                 }
@@ -46,7 +46,7 @@ public class s {
     }
 
     public static int a(String str, int i) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return Integer.parseInt(str);
             } catch (Exception unused) {
@@ -57,7 +57,7 @@ public class s {
     }
 
     public static long a(String str, long j) {
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             try {
                 return Long.parseLong(str);
             } catch (Exception unused) {
@@ -76,6 +76,6 @@ public class s {
     }
 
     public static int b(String str, int i) {
-        return !TextUtils.isEmpty(str) ? ((str.hashCode() / 10) * 10) + i : i;
+        return !StringUtils.isEmpty(str) ? ((str.hashCode() / 10) * 10) + i : i;
     }
 }

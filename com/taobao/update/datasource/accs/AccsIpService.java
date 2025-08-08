@@ -1,6 +1,6 @@
 package com.taobao.update.datasource.accs;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.base.TaoBaseService;
 import tb.kge;
@@ -60,7 +60,7 @@ public class AccsIpService extends TaoBaseService {
         } catch (Exception unused) {
             str4 = null;
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return;
         }
         reu reuVar = new reu();

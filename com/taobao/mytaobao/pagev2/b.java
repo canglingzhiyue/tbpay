@@ -5,7 +5,7 @@ import android.arch.lifecycle.Lifecycle;
 import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.ultron.vfw.weex2.highPerformance.model.UltronTradeHybridInstanceRenderMode;
@@ -882,7 +882,7 @@ public final class b implements com.taobao.mytaobao.base.e {
                 return;
             }
             q.c(url, "url");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 UTAnalytics uTAnalytics = UTAnalytics.getInstance();
                 q.a((Object) uTAnalytics, "UTAnalytics.getInstance()");
                 uTAnalytics.getDefaultTracker().updateNextPageProperties(ai.b(j.a("spm-url", str)));

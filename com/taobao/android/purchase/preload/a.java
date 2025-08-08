@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.buy.toggle.AliBuyPerfSwitcher;
 import com.taobao.phenix.cache.memory.f;
@@ -239,7 +239,7 @@ public class a {
         d.put("https://gw.alicdn.com/imgextra/i3/O1CN016eG6gK1NRHAxMEpf4_!!6000000001566-2-tps-48-48.png", Integer.valueOf(R.drawable.right_arrow));
         Collections.addAll(b, "https://img.alicdn.com/imgextra/i4/O1CN01DhxFsl1Ug74Neipic_!!6000000002546-2-tps-66-66.png", "https://img.alicdn.com/imgextra/i1/O1CN01VFY5Jb1tbPNzE4lwK_!!6000000005920-2-tps-32-32.png", "https://img.alicdn.com/imgextra/i1/O1CN01MTaKxl1DC1ZQfVKxt_!!6000000000179-2-tps-32-5.png", "https://gw.alicdn.com/imgextra/i3/O1CN016eG6gK1NRHAxMEpf4_!!6000000001566-2-tps-48-48.png", "//img.alicdn.com/imgextra/i3/O1CN01VVKCEj1JLzy7JwdqC_!!6000000001013-2-tps-88-88.png", "//gw.alicdn.com/tfs/TB1CzD7SXXXXXXJaXXXXXXXXXXX-32-32.png", "//img.alicdn.com/tps/i2/TB1wopUHVXXXXXyXpXXAAT2HVXX-63-63.png", "https://img.alicdn.com/imgextra/i4/O1CN017rfbTj1hByBjCGYmw_!!6000000004240-2-tps-60-48.png", "https://img.alicdn.com/imgextra/i2/O1CN01tjnqoR1Jb79T2if5y_!!6000000001046-2-tps-48-48.png", "https://img.alicdn.com/imgextra/i2/O1CN01iuN6Bp1OCRp2vn6bD_!!6000000001669-2-tps-66-66.png", "https://img.alicdn.com/imgextra/i1/O1CN01SM1aqA278SzDahErR_!!6000000007752-2-tps-66-66.png", "//img.alicdn.com/imgextra/i2/O1CN01GU2o4m1VzBAjv2zYV_!!6000000002723-2-tps-66-66.png", "//img.alicdn.com/imgextra/i4/O1CN01U4WSFq1cwcGj2zGOS_!!6000000003665-2-tps-66-66.png", "https://img.alicdn.com/imgextra/i1/O1CN01QKhsKS23TkxhwpL7L_!!6000000007257-2-tps-32-32.png", "https://img.alicdn.com/imgextra/i1/O1CN01EuZ7xH1DaIamKYT04_!!6000000000232-2-tps-66-66.png");
         String string = AliBuyPerfSwitcher.getString("thumbnailPreloadBlacklistList", "https://gw.alicdn.com/imgextra/i4/O1CN01xiK5xl1RJGfUvuGsJ_!!6000000002090-2-tps-76-36.png,//img.alicdn.com/imgextra/i2/O1CN016XDyFB1scUjGwta3x_!!6000000005787-2-tps-28-28.png,https://img.alicdn.com/imgextra/i2/O1CN01Hmr2Ci26MNUuPMsFy_!!6000000007647-2-tps-360-72.png,https://img.alicdn.com/imgextra/i2/O1CN011M9pg41KJzseITw00_!!6000000001144-2-tps-104-72.png,https://img.alicdn.com/imgextra/i2/O1CN014TcqC329wVaSq99sF_!!6000000008132-2-tps-32-36.png,https://img.alicdn.com/imgextra/i3/O1CN01sc2SfN1rZSd24UOE6_!!6000000005645-2-tps-75-77.png,https://img.alicdn.com/imgextra/i4/O1CN01tpw7ik1UOiAdmPi2G_!!6000000002508-2-tps-78-81.png,https://img.alicdn.com/imgextra/i3/O1CN01gwu5kE1KNf6mnFpUB_!!6000000001152-2-tps-75-75.png");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return;
         }
         String[] split = string.split(",");

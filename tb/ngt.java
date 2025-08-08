@@ -3,7 +3,7 @@ package tb;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes7.dex */
@@ -26,10 +26,10 @@ public class ngt {
         }
         if (b == null) {
             String b2 = b(context);
-            if (TextUtils.isEmpty(b2)) {
+            if (StringUtils.isEmpty(b2)) {
                 return true;
             }
-            if (context != null && TextUtils.equals(b2, context.getPackageName())) {
+            if (context != null && StringUtils.equals(b2, context.getPackageName())) {
                 z = true;
             }
             b = Boolean.valueOf(z);

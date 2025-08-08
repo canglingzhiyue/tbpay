@@ -2,7 +2,7 @@ package com.alipay.mobile.common.ipc.api.aidl;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.transport.utils.LogCatUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -60,7 +60,7 @@ public class IPCResult implements Parcelable {
             parcel.writeByte(this.serType);
             parcel.writeInt(this.resultCode);
             parcel.writeString(this.resultMsg);
-            if (TextUtils.isEmpty(this.resultType)) {
+            if (StringUtils.isEmpty(this.resultType)) {
                 this.resultType = Void.TYPE.getName();
                 parcel.writeString(this.resultType);
                 return;
@@ -85,7 +85,7 @@ public class IPCResult implements Parcelable {
             this.resultCode = parcel.readInt();
             this.resultMsg = parcel.readString();
             this.resultType = parcel.readString();
-            if (TextUtils.equals(this.resultType, Void.TYPE.getName())) {
+            if (StringUtils.equals(this.resultType, Void.TYPE.getName())) {
                 return;
             }
             if (this.serType == 2) {

@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alimama.AlimamaAdvertising;
 import com.taobao.android.detail.core.performance.j;
@@ -38,7 +38,7 @@ public class fgm {
         hashMap.put(b.AFC_ID, "");
         try {
             String globalProperty = UTAnalytics.getInstance().getDefaultTracker().getGlobalProperty("_afc_id");
-            if (!TextUtils.isEmpty(globalProperty)) {
+            if (!StringUtils.isEmpty(globalProperty)) {
                 hashMap.put(b.AFC_ID, globalProperty);
             }
         } catch (Throwable unused) {

@@ -2,7 +2,7 @@ package com.taobao.taopai.material.request.base;
 
 import android.os.AsyncTask;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -136,7 +136,7 @@ public abstract class BaseMaterialBusiness<T> implements IRemoteBaseListener, b 
             return;
         }
         String cacheFilePath = getCacheFilePath();
-        if (TextUtils.isEmpty(cacheFilePath)) {
+        if (StringUtils.isEmpty(cacheFilePath)) {
             return;
         }
         try {
@@ -256,7 +256,7 @@ public abstract class BaseMaterialBusiness<T> implements IRemoteBaseListener, b 
         }
         try {
             String d = qcg.d(cacheFilePath);
-            if (!TextUtils.isEmpty(d)) {
+            if (!StringUtils.isEmpty(d)) {
                 return mo1426parseCacheData(d);
             }
         } catch (Exception e) {
@@ -345,7 +345,7 @@ public abstract class BaseMaterialBusiness<T> implements IRemoteBaseListener, b 
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("50434fb4", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return true;
         }
         File file = new File(str);

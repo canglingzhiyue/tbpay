@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.split.core.splitcompat.j;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -51,7 +51,7 @@ public class TBOrderSearchOrFilterActivity extends TBOrderListActivity {
             return;
         }
         jqg.b("TBOrderSearchOrFilterActivity", i.b.MEASURE_ONCREATE);
-        if (!TextUtils.isEmpty(g.a(getIntent(), "searchKey"))) {
+        if (!StringUtils.isEmpty(g.a(getIntent(), "searchKey"))) {
             getIntent().putExtra("isSearch", "true");
         }
         super.a(bundle);

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.infoflow.protocol.subservice.ISubService;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ public class ldx {
         }
         for (ISubService iSubService : list) {
             String b = b(iSubService.getClass());
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 this.f30512a.put(b, iSubService);
             }
         }
@@ -67,7 +67,7 @@ public class ldx {
             return null;
         }
         String b = b(cls);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             T t = (T) this.f30512a.get(b);
             if (!cls.isInstance(t)) {
                 return null;
@@ -151,7 +151,7 @@ public class ldx {
                 return null;
             }
             String str = (String) obj;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return str;
             }
             a("服务：" + cls.getSimpleName() + " SERVICE_NAME 为空字符串！", (Throwable) null);

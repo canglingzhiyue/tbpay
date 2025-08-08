@@ -1,7 +1,7 @@
 package com.taobao.runtimepermission.group;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.Iterator;
 import java.util.Map;
@@ -38,7 +38,7 @@ public final class e {
         if (ipChange instanceof IpChange) {
             return (d) ipChange.ipc$dispatch("979a33f7", new Object[]{context, str, strArr});
         }
-        if (context == null || TextUtils.isEmpty(str)) {
+        if (context == null || StringUtils.isEmpty(str)) {
             return new d(false, null, "UNKNOWN_BIZ_ERROR", "The context or bizName parameter is empty");
         }
         if (strArr == null || strArr.length == 0) {

@@ -1,6 +1,6 @@
 package com.taobao.android.behavir.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavir.BehaviR;
@@ -51,7 +51,7 @@ public class a {
             return null;
         }
         String str2 = e.sessionId;
-        return configCenter.b(str, !TextUtils.isEmpty(str2) ? str2.substring(0, str2.indexOf(e.scene)) : "");
+        return configCenter.b(str, !StringUtils.isEmpty(str2) ? str2.substring(0, str2.indexOf(e.scene)) : "");
     }
 
     public void b() {
@@ -112,7 +112,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7851f581", new Object[]{this, str, bHRSolution});
-        } else if (TextUtils.isEmpty(str) || bHRSolution == null) {
+        } else if (StringUtils.isEmpty(str) || bHRSolution == null) {
         } else {
             if (bHRSolution.a() && !Utils.a()) {
                 return;
@@ -132,7 +132,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fa9caa60", new Object[]{this, str, bHRSolution});
-        } else if (!Utils.a() || TextUtils.isEmpty(str) || bHRSolution == null || (map = this.b.get(str)) == null) {
+        } else if (!Utils.a() || StringUtils.isEmpty(str) || bHRSolution == null || (map = this.b.get(str)) == null) {
         } else {
             map.remove((!bHRSolution.a() || bHRSolution.b() == null) ? "undefined" : Utils.a(bHRSolution.b()));
         }
@@ -149,7 +149,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (BHRSolution) ipChange.ipc$dispatch("9716d4e0", new Object[]{this, str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && (map = this.b.get(str)) != null) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && (map = this.b.get(str)) != null) {
             return map.get(str2);
         }
         return null;

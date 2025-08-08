@@ -1,7 +1,7 @@
 package com.ali.user.open.core.config;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.open.core.WebViewProxy;
 import com.ali.user.open.core.callback.DataProvider;
 import com.ali.user.open.core.callback.ThemeProvider;
@@ -367,7 +367,7 @@ public class ConfigManager {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("458a69db", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.mUccDataProviderClass)) {
+        if (!StringUtils.isEmpty(this.mUccDataProviderClass)) {
             return this.mUccDataProviderClass;
         }
         try {

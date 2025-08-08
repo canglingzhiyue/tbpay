@@ -2,7 +2,7 @@ package com.alibaba.poplayer.config.manager;
 
 import android.os.Build;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.config.model.keep.KeepModel;
@@ -316,7 +316,7 @@ public class ConfigFilterRule {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("fbc0fa76", new Object[]{event, baseConfigItem})).booleanValue();
         }
-        if (!Event.a.a(event.source) || baseConfigItem.protocolCheckInfo == null || !baseConfigItem.protocolCheckInfo.isValid() || TextUtils.isEmpty(event.curPage)) {
+        if (!Event.a.a(event.source) || baseConfigItem.protocolCheckInfo == null || !baseConfigItem.protocolCheckInfo.isValid() || StringUtils.isEmpty(event.curPage)) {
             return true;
         }
         if (event.curPage.equals(baseConfigItem.protocolCheckInfo.uri)) {
@@ -342,7 +342,7 @@ public class ConfigFilterRule {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("87037fb4", new Object[]{event, baseConfigItem})).booleanValue();
         }
-        if (!Event.a.a(event.source) || baseConfigItem.protocolChecks == null || baseConfigItem.protocolChecks.isEmpty() || TextUtils.isEmpty(event.curPage)) {
+        if (!Event.a.a(event.source) || baseConfigItem.protocolChecks == null || baseConfigItem.protocolChecks.isEmpty() || StringUtils.isEmpty(event.curPage)) {
             return true;
         }
         boolean z2 = false;
@@ -378,7 +378,7 @@ public class ConfigFilterRule {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("41623d15", new Object[]{event, baseConfigItem})).booleanValue();
         }
-        if (Event.a.a(event.source) && !TextUtils.isEmpty(baseConfigItem.sceneCheck)) {
+        if (Event.a.a(event.source) && !StringUtils.isEmpty(baseConfigItem.sceneCheck)) {
             return d.a(event.curPageUrl, baseConfigItem.sceneCheck);
         }
         return true;
@@ -392,11 +392,11 @@ public class ConfigFilterRule {
         }
         if (baseConfigItem.disableDeviceArray != null && baseConfigItem.disableDeviceArray.length != 0) {
             String str = Build.MODEL;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return true;
             }
             for (String str2 : baseConfigItem.disableDeviceArray) {
-                if (!TextUtils.isEmpty(str2) && str2.equals(str)) {
+                if (!StringUtils.isEmpty(str2) && str2.equals(str)) {
                     return false;
                 }
             }

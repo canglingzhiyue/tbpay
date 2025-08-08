@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.annotation.AURAExtensionImpl;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.f;
@@ -134,7 +134,7 @@ public final class AURAOpenUrlEvent extends arv {
         L2f:
             java.lang.String r5 = "url"
             java.lang.String r5 = r0.getString(r5)
-            boolean r6 = android.text.TextUtils.isEmpty(r5)
+            boolean r6 = android.text.StringUtils.isEmpty(r5)
             if (r6 == 0) goto L47
             tb.ard r10 = tb.arc.a()
             java.lang.String r0 = "url is null!"
@@ -148,7 +148,7 @@ public final class AURAOpenUrlEvent extends arv {
         L53:
             java.lang.String r6 = "pageType"
             java.lang.String r6 = r0.getString(r6)
-            boolean r7 = android.text.TextUtils.isEmpty(r6)
+            boolean r7 = android.text.StringUtils.isEmpty(r6)
             if (r7 == 0) goto L69
             tb.ard r10 = tb.arc.a()
             java.lang.String r0 = "pageType is null!"
@@ -290,7 +290,7 @@ public final class AURAOpenUrlEvent extends arv {
         String b = b(jSONObject);
         if (b == null) {
             str2 = "get";
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             str2 = "post";
         }
         Context e = b().e();

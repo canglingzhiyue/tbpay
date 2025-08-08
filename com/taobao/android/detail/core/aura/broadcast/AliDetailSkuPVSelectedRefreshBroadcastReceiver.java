@@ -6,7 +6,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAGlobalData;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -110,7 +110,7 @@ public class AliDetailSkuPVSelectedRefreshBroadcastReceiver extends AbsAliDetail
         }
         String stringExtra = intent.getStringExtra("uniqueId");
         Context context = this.f9384a;
-        if ((context instanceof DetailCoreActivity) && TextUtils.equals(((DetailCoreActivity) context).h, stringExtra)) {
+        if ((context instanceof DetailCoreActivity) && StringUtils.equals(((DetailCoreActivity) context).h, stringExtra)) {
             return intent.getStringExtra(KEY_SELECTED_PROP_PATH);
         }
         return null;

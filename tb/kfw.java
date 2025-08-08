@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -55,7 +55,7 @@ public class kfw implements Runnable {
             return;
         }
         String a2 = this.b.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             kft.a("CodeTrack-DumpTask", "build UploadInfo failed, buildTaskId is empty");
         } else if (!kgb.b()) {
             kft.a("CodeTrack-DumpTask", "!isCoverageEnabled");

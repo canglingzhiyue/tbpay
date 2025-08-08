@@ -2,7 +2,7 @@ package com.taobao.search.common.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public final class f {
         if (ipChange instanceof IpChange) {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
@@ -78,19 +78,19 @@ public final class f {
             HashMap hashMap = new HashMap();
             for (String key : parseObject2.keySet()) {
                 String value = parseObject2.getString(key);
-                if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+                if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                     kotlin.jvm.internal.q.a((Object) key, "key");
                     kotlin.jvm.internal.q.a((Object) value, "value");
                     hashMap.put(key, value);
                 }
             }
             String str2 = (String) hashMap.remove("searchPassParams");
-            if (TextUtils.isEmpty(str2) || (parseObject = JSON.parseObject(str2)) == null) {
+            if (StringUtils.isEmpty(str2) || (parseObject = JSON.parseObject(str2)) == null) {
                 return hashMap;
             }
             for (String key2 : parseObject.keySet()) {
                 String value2 = parseObject.getString(key2);
-                if (!TextUtils.isEmpty(key2) && !TextUtils.isEmpty(value2)) {
+                if (!StringUtils.isEmpty(key2) && !StringUtils.isEmpty(value2)) {
                     kotlin.jvm.internal.q.a((Object) key2, "key");
                     kotlin.jvm.internal.q.a((Object) value2, "value");
                     hashMap.put(key2, value2);
@@ -117,7 +117,7 @@ public final class f {
             for (String str : map.keySet()) {
                 if (d2.contains(str)) {
                     String str2 = map.get(str);
-                    if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                         hashMap.put(str, str2);
                     }
                 }
@@ -133,7 +133,7 @@ public final class f {
         }
         String b2 = com.taobao.android.searchbaseframe.util.q.b();
         String str = b2;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new ArrayList();
         }
         if (b2 == null) {

@@ -3,7 +3,7 @@ package com.alipay.security.mobile.alipayauthenticatorservice.fingerprint.util;
 import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyInfo;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.rpc.safe.AES;
 import com.alipay.security.mobile.auth.AuthenticatorLOG;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public class KeyMasterUtils {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7c7f9a9", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {

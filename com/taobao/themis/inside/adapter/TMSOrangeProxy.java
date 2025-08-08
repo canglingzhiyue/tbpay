@@ -1,7 +1,7 @@
 package com.taobao.themis.inside.adapter;
 
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.festival.jsbridge.AliFestivalWVPlugin;
 import com.taobao.orange.OConstant;
@@ -154,7 +154,7 @@ public final class TMSOrangeProxy implements IConfigAdapter {
         q.d(configName, "configName");
         String config = OrangeConfig.getInstance().getConfig(groupName, configName, "");
         a(groupName);
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             return str;
         }
         q.b(config, "config");
@@ -173,14 +173,14 @@ public final class TMSOrangeProxy implements IConfigAdapter {
         q.d(configName, "configName");
         String config2 = OrangeConfig.getInstance().getConfig(groupName, configName, "");
         a(groupName);
-        if (!TextUtils.isEmpty(config2)) {
+        if (!StringUtils.isEmpty(config2)) {
             q.b(config2, "config");
             a(groupName, configName, config2);
             config = config2;
         } else {
             config = a(groupName, configName);
         }
-        if (TextUtils.isEmpty(config)) {
+        if (StringUtils.isEmpty(config)) {
             config = str;
         }
         q.b(config, "config");
@@ -220,7 +220,7 @@ public final class TMSOrangeProxy implements IConfigAdapter {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("929ad046", new Object[]{this, str, str2, str3});
-        } else if (TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str3)) {
         } else {
             SharedPreferences.Editor edit = b.edit();
             edit.putString(str + '_' + str2, str3).apply();

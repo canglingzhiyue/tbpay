@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.android.ultron.vfw.viewholder.BundleLineComponent;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -277,7 +277,7 @@ public class gof {
             return ((Boolean) ipChange.ipc$dispatch("887771af", new Object[]{iDMComponent, iDMComponent2})).booleanValue();
         }
         if (iDMComponent != null && iDMComponent2 != null) {
-            if (TextUtils.equals(i(iDMComponent), i(iDMComponent2))) {
+            if (StringUtils.equals(i(iDMComponent), i(iDMComponent2))) {
                 return true;
             }
             String n = n(iDMComponent);

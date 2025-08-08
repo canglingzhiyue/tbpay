@@ -1,6 +1,6 @@
 package com.ta.audid.upload;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.utils.MD5Utils;
 import com.ta.audid.utils.UtdidLogger;
@@ -27,7 +27,7 @@ public class HttpResponse {
             return ((Boolean) ipChange.ipc$dispatch("3a9c6eaf", new Object[]{str, str2})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                 UtdidLogger.sd("", "result", str, SimpleProfile.KEY_SIGNATURE, str2);
                 if (str2.equals(Base64.encodeToString(MD5Utils.getHmacMd5Hex(str).getBytes(), 2))) {
                     UtdidLogger.d("", "signature is ok");

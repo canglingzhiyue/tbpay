@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.ViewCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -256,7 +256,7 @@ public class b extends com.taobao.search.sf.widgets.list.listcell.inshopauction.
             return;
         }
         InshopAuction2020CellBean inshopAuction2020CellBean = (InshopAuction2020CellBean) inshopAuctionCellBean;
-        if (TextUtils.isEmpty(inshopAuction2020CellBean.getTopIconUrl()) || inshopAuction2020CellBean.getTopIconWidth() <= 0 || inshopAuction2020CellBean.getTopIconHeight() <= 0) {
+        if (StringUtils.isEmpty(inshopAuction2020CellBean.getTopIconUrl()) || inshopAuction2020CellBean.getTopIconWidth() <= 0 || inshopAuction2020CellBean.getTopIconHeight() <= 0) {
             return;
         }
         TUrlImageView tUrlImageView2 = this.w;
@@ -302,13 +302,13 @@ public class b extends com.taobao.search.sf.widgets.list.listcell.inshopauction.
         q.c(dataObject, "dataObject");
         super.d(dataObject);
         this.g.setPriceIconSuffix(dataObject.priceIconSuffixText);
-        if (TextUtils.isEmpty(dataObject.originPrice)) {
+        if (StringUtils.isEmpty(dataObject.originPrice)) {
             this.g.setOriginPrice("", false);
         } else {
             PriceView priceView = this.g;
             priceView.setOriginPrice("¥" + dataObject.originPrice, dataObject.hidePriceUndline);
         }
-        if (TextUtils.isEmpty(dataObject.priceIconSuffixColor)) {
+        if (StringUtils.isEmpty(dataObject.priceIconSuffixColor)) {
             return;
         }
         this.g.setIconSuffixColor(d.a(dataObject.priceIconSuffixColor, -1));
@@ -324,13 +324,13 @@ public class b extends com.taobao.search.sf.widgets.list.listcell.inshopauction.
         q.c(dataObject, "dataObject");
         super.a(dataObject, priceView);
         this.g.setPriceIconSuffix(dataObject.priceIconSuffixText);
-        if (TextUtils.isEmpty(dataObject.originPrice)) {
+        if (StringUtils.isEmpty(dataObject.originPrice)) {
             this.g.setOriginPrice("", false);
         } else {
             PriceView priceView2 = this.g;
             priceView2.setOriginPrice("¥" + dataObject.originPrice, dataObject.hidePriceUndline);
         }
-        if (TextUtils.isEmpty(dataObject.priceIconSuffixColor)) {
+        if (StringUtils.isEmpty(dataObject.priceIconSuffixColor)) {
             return;
         }
         this.g.setIconSuffixColor(d.a(dataObject.priceIconSuffixColor, -1));

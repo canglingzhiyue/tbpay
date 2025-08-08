@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -217,9 +217,9 @@ public class tdg {
             return ((Boolean) ipChange.ipc$dispatch("5cf10f3", new Object[0])).booleanValue();
         }
         String b = oeb.b("AB_fullscreenpage_video.live_warmup.isOpenWarmup", String.valueOf(false));
-        boolean equals = TextUtils.equals("true", b);
+        boolean equals = StringUtils.equals("true", b);
         spz.c("LiveWarmupManager", "AB config enable:" + equals);
-        if (TextUtils.equals(b, String.valueOf(true)) || TextUtils.equals(b, String.valueOf(false))) {
+        if (StringUtils.equals(b, String.valueOf(true)) || StringUtils.equals(b, String.valueOf(false))) {
             i();
         }
         return equals;

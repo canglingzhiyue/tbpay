@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.datamodel.protocol.ultron;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.b;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
 import com.alibaba.fastjson.JSON;
@@ -142,7 +142,7 @@ public class Global extends BaseProtocol {
             }
             this.events = new HashMap();
             for (String str : jSONObject2.keySet()) {
-                if (!TextUtils.isEmpty(str) && (jSONObject2.get(str) instanceof JSONObject)) {
+                if (!StringUtils.isEmpty(str) && (jSONObject2.get(str) instanceof JSONObject)) {
                     this.events.put(str, new Event(jSONObject2.getJSONObject(str)));
                 }
             }

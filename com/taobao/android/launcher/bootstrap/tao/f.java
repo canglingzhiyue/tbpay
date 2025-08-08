@@ -3,7 +3,7 @@ package com.taobao.android.launcher.bootstrap.tao;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.adaemon.ADaemon;
 import com.taobao.android.launcher.bootstrap.tao.ability.BootstrapMode;
@@ -35,7 +35,7 @@ public class f {
         if (ipChange instanceof IpChange) {
             return (gtv) ipChange.ipc$dispatch("d9200d21", new Object[]{application, gtxVar});
         }
-        if (!TextUtils.equals(gtxVar.f28453a, gtxVar.b)) {
+        if (!StringUtils.equals(gtxVar.f28453a, gtxVar.b)) {
             return a(application) ? new p() : new j();
         } else if (!gty.a(application)) {
             return new k();

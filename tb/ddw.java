@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.annotations.MemCheck;
 import com.taobao.alilive.aliliveframework.frame.BaseFrame;
@@ -164,7 +164,7 @@ public class ddw implements ddu {
             ddv next = it.next();
             if (next != null) {
                 String observeUniqueIdentification = next.observeUniqueIdentification();
-                boolean contains = (TextUtils.isEmpty(str2) || TextUtils.isEmpty(observeUniqueIdentification)) ? true : observeUniqueIdentification.contains(str2);
+                boolean contains = (StringUtils.isEmpty(str2) || StringUtils.isEmpty(observeUniqueIdentification)) ? true : observeUniqueIdentification.contains(str2);
                 if (u.aO() || contains || ((list = f26712a) != null && list.contains(next.bizCode()))) {
                     String[] observeEvents = next.observeEvents();
                     if (observeEvents != null && observeEvents.length > 0) {

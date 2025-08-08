@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -324,7 +324,7 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
                 com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "处理红包数据，userPop不为JSONObject类型");
                 return;
             }
-            boolean equals = TextUtils.equals("NW", ((JSONObject) obj2).getString("type"));
+            boolean equals = StringUtils.equals("NW", ((JSONObject) obj2).getString("type"));
             String string = jSONObject.getString("status");
             String string2 = jSONObject2.getString("enhanceFlag");
             String string3 = jSONObject2.getString("activityStage");
@@ -341,11 +341,11 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
             }
             if (equals) {
                 com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "处理红包数据，判断为新用户，status=" + string);
-                if (TextUtils.equals("init", string)) {
-                    this.x = TextUtils.equals("true", string2) ? BrowserBadgeModel.UserType.REWARD_ENHANCED : BrowserBadgeModel.UserType.DEFAULT;
-                    this.n = TextUtils.equals("fresh", string3) ? BrowserBadgeModel.UserStage.SIMPLE_FOR_NEW_USER : BrowserBadgeModel.UserStage.DEFAULT;
+                if (StringUtils.equals("init", string)) {
+                    this.x = StringUtils.equals("true", string2) ? BrowserBadgeModel.UserType.REWARD_ENHANCED : BrowserBadgeModel.UserType.DEFAULT;
+                    this.n = StringUtils.equals("fresh", string3) ? BrowserBadgeModel.UserStage.SIMPLE_FOR_NEW_USER : BrowserBadgeModel.UserStage.DEFAULT;
                     return;
-                } else if (!TextUtils.equals("opened", string) || !Login.checkSessionValid()) {
+                } else if (!StringUtils.equals("opened", string) || !Login.checkSessionValid()) {
                     return;
                 } else {
                     com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "处理红包数据，判断为新用户且已开启红包且为登录状态，userId=" + Login.getUserId());
@@ -358,8 +358,8 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
                 return;
             }
             com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "处理红包数据，判断为老用户且首次接口请求未完成且为登录状态，userId=" + Login.getUserId());
-            this.x = TextUtils.equals("true", string2) ? BrowserBadgeModel.UserType.REWARD_ENHANCED : BrowserBadgeModel.UserType.DEFAULT;
-            this.n = TextUtils.equals("fresh", string3) ? BrowserBadgeModel.UserStage.SIMPLE_FOR_NEW_USER : BrowserBadgeModel.UserStage.DEFAULT;
+            this.x = StringUtils.equals("true", string2) ? BrowserBadgeModel.UserType.REWARD_ENHANCED : BrowserBadgeModel.UserType.DEFAULT;
+            this.n = StringUtils.equals("fresh", string3) ? BrowserBadgeModel.UserStage.SIMPLE_FOR_NEW_USER : BrowserBadgeModel.UserStage.DEFAULT;
             a(str3, str2, str);
         }
     }
@@ -411,7 +411,7 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
                 a(true);
                 this.E.a();
             }
-            if (TextUtils.equals(Login.getUserId(), this.g)) {
+            if (StringUtils.equals(Login.getUserId(), this.g)) {
                 this.c.a("refresh", 0L, this.N.b());
             } else {
                 M();
@@ -689,7 +689,7 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
         }
         com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "数据请求成功回调，action=" + str + "，costTime=" + j);
         this.o = true;
-        if (TextUtils.equals("render", str)) {
+        if (StringUtils.equals("render", str)) {
             this.F = false;
         }
         if (jSONObject == null || browserBadgeModel == null) {
@@ -724,7 +724,7 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
             boolean booleanValue = ((Boolean) a2.second).booleanValue();
             String c = this.N.c(str2);
             com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "数据请求成功回调，任务" + str2 + "的状态是否发生变化：" + booleanValue + ",当前最新状态：" + c);
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 if (booleanValue) {
                     k(str2);
                 }
@@ -774,7 +774,7 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
             } else if (j <= 0 || j2 < 0) {
             } else {
                 com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "处理浏览任务进度，totalTimingDuration=" + j + "，accumulatedTimingDuration=" + j2 + "，mTotalDurationWhenLastRequest=" + this.s + "，mAccumulatedDurationWhenLastRequest=" + this.r);
-                if (!TextUtils.equals("render", str) && (!TextUtils.equals("refresh", str) ? !(i == 0 || j != this.s || j2 != this.r) : !(this.s <= 0 || this.r < 0))) {
+                if (!StringUtils.equals("render", str) && (!StringUtils.equals("refresh", str) ? !(i == 0 || j != this.s || j2 != this.r) : !(this.s <= 0 || this.r < 0))) {
                     z = false;
                 }
                 if (z) {
@@ -877,11 +877,11 @@ public class a extends sjc implements a.InterfaceC0820a, a.InterfaceC0821a {
         }
         com.taobao.tab2interact.core.utils.a.b(this, "BrowserBadge", "数据请求失败回调，action=" + str + "，costTime=" + j);
         this.o = true;
-        if (TextUtils.equals("render", str)) {
+        if (StringUtils.equals("render", str)) {
             this.F = true;
         }
         c(str, j);
-        if (!TextUtils.equals("render", str) && !TextUtils.equals("refresh", str)) {
+        if (!StringUtils.equals("render", str) && !StringUtils.equals("refresh", str)) {
             return;
         }
         D();

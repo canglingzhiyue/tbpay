@@ -3,7 +3,7 @@ package com.taobao.android.xsearchplugin.muise;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -302,7 +302,7 @@ public class o extends itn implements com.taobao.android.searchbaseframe.uikit.s
         } else if (muiseBean == null) {
             c().b().b("MuiseModWidget", "bean is null");
         } else {
-            boolean z = this.d != null && !TextUtils.equals(muiseBean.type, this.d.type);
+            boolean z = this.d != null && !StringUtils.equals(muiseBean.type, this.d.type);
             this.d = muiseBean;
             a aVar = this.f16263a;
             if (aVar != null && z) {

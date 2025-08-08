@@ -3,7 +3,7 @@ package tb;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.wallet.spmtracker.Constant;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -361,7 +361,7 @@ public class lgs implements lgp {
                 if (ipChange2 instanceof IpChange) {
                     return (Map) ipChange2.ipc$dispatch("add74dce", new Object[]{this, lliVar, str});
                 }
-                if (!TextUtils.equals(str, Constant.KEY_PAGEBACK) && !TextUtils.equals(str, "coldStart")) {
+                if (!StringUtils.equals(str, Constant.KEY_PAGEBACK) && !StringUtils.equals(str, "coldStart")) {
                     return null;
                 }
                 lgs.a(lgs.this, lliVar);

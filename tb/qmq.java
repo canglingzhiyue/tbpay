@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -313,7 +313,7 @@ public class qmq extends ptk {
             skl j = ((IDataService) this.k.z().getService(IDataService.class)).getConfig().j();
             String str = null;
             final String str2 = j != null ? j.d : null;
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 str = Uri.parse(str2).getQueryParameter(a.CONFIG_POLICY);
                 int indexOf = str2.indexOf("?");
                 if (indexOf != -1) {

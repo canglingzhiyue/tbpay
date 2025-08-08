@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -78,7 +78,7 @@ public class f {
         String str = "";
         final keq h = com.taobao.bootimage.linked.h.a(str).h();
         FrameLayout b2 = d.b(this.f16681a);
-        if (bootImageInfo != null && !TextUtils.isEmpty(bootImageInfo.bizType)) {
+        if (bootImageInfo != null && !StringUtils.isEmpty(bootImageInfo.bizType)) {
             str = bootImageInfo.bizType;
         }
         final String str2 = str;
@@ -251,7 +251,7 @@ public class f {
             return false;
         }
         long b2 = keo.b();
-        return b2 >= bootImageInfo.gmtStartMs && b2 <= bootImageInfo.gmtEndMs && !TextUtils.isEmpty(bootImageInfo.itemId);
+        return b2 >= bootImageInfo.gmtStartMs && b2 <= bootImageInfo.gmtEndMs && !StringUtils.isEmpty(bootImageInfo.itemId);
     }
 
     private boolean d(BootImageInfo bootImageInfo) {
@@ -269,7 +269,7 @@ public class f {
             return ((Boolean) ipChange.ipc$dispatch("5b5ea40e", new Object[]{this, bootImageInfo})).booleanValue();
         }
         String c2 = keo.c(bootImageInfo.imgUrl);
-        if (!TextUtils.isEmpty(c2)) {
+        if (!StringUtils.isEmpty(c2)) {
             File file = new File(keo.d("Market"), c2);
             if (file.exists()) {
                 bootImageInfo.videoLocalPath = file.getAbsolutePath();

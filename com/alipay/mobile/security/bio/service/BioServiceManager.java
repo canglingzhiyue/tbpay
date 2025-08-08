@@ -1,7 +1,7 @@
 package com.alipay.mobile.security.bio.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.security.bio.exception.BioIllegalArgumentException;
 import com.alipay.mobile.security.bio.exception.InvalidCallException;
 import com.alipay.mobile.security.bio.module.MicroModule;
@@ -98,11 +98,11 @@ public abstract class BioServiceManager {
             } else if (b == null) {
                 BioLog.w(TAG, "BioServiceManager.createInstance() zimId=" + str);
                 b = new BioServiceManagerImpl(context, str);
-            } else if (TextUtils.isEmpty(b.c)) {
+            } else if (StringUtils.isEmpty(b.c)) {
                 BioLog.w(TAG, new InvalidCallException("BioServiceManager already exist with zimId=null"));
                 b.destroy();
                 b = new BioServiceManagerImpl(context, str);
-            } else if (TextUtils.equals(b.c, str)) {
+            } else if (StringUtils.equals(b.c, str)) {
                 BioLog.w(TAG, "Reuse the BioServiceManager.sInstance for zimId=" + str);
             } else {
                 MonitorLogService monitorLogService = (MonitorLogService) b.getBioService(MonitorLogService.class);

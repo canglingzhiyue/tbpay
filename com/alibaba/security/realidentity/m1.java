@@ -3,7 +3,7 @@ package com.alibaba.security.realidentity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.realidentity.algo.wrapper.entity.result.ALBiometricsResult;
 import com.alibaba.security.realidentity.biz.base.chain.BusinessType;
 import com.alibaba.security.realidentity.biz.biometrics.BiometricsBucketParams;
@@ -522,7 +522,7 @@ public class m1 extends i1 {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4d29d8f6", new Object[]{this, str, new Boolean(z), str2, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             UploadFileModel uploadFileModel = new UploadFileModel();
             String str4 = this.b;

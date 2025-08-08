@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
 import com.alibaba.mtl.appmonitor.model.DimensionValueSet;
@@ -40,14 +40,14 @@ public class qnx implements cad {
         try {
             String userId = Login.getUserId();
             String str = "none_value";
-            if (TextUtils.isEmpty(userId)) {
+            if (StringUtils.isEmpty(userId)) {
                 userId = str;
             }
             map.put("userId", userId);
-            if (TextUtils.isEmpty(this.f32969a)) {
+            if (StringUtils.isEmpty(this.f32969a)) {
                 this.f32969a = e.a();
             }
-            if (!TextUtils.isEmpty(this.f32969a)) {
+            if (!StringUtils.isEmpty(this.f32969a)) {
                 str = this.f32969a;
             }
             map.put("deviceLevel", str);
@@ -76,7 +76,7 @@ public class qnx implements cad {
                     map2 = new HashMap<>();
                 }
                 for (String str2 : map2.keySet()) {
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         create2.setValue(str2, map2.get(str2).doubleValue());
                     }
                 }

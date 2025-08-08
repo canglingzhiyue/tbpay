@@ -1,6 +1,6 @@
 package com.taobao.mytaobao.ultron.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -132,7 +132,7 @@ public class n implements com.alibaba.android.ultron.event.base.d {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("39a26282", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.split("\\.");
         }
         return null;

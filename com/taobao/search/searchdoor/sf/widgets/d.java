@@ -1,7 +1,7 @@
 package com.taobao.search.searchdoor.sf.widgets;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.u;
@@ -41,13 +41,13 @@ public class d {
                     return (SearchBarWidget) ipChange.ipc$dispatch("97e06a5b", new Object[]{this, activity, iumVar, searchDoorContext, viewGroup, iurVar});
                 }
                 String a2 = searchDoorContext.a("g_mainChannel");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     a2 = searchDoorContext.a("mainChannel");
                 }
                 if (!com.alibaba.ability.localization.b.b()) {
                     return new I18nSearchBarWidget(activity, iumVar, searchDoorContext, viewGroup, iurVar);
                 }
-                if (TextUtils.equals(a2, "dingyue") && u.r()) {
+                if (StringUtils.equals(a2, "dingyue") && u.r()) {
                     return new SubscribeSearchBarWidget(activity, iumVar, searchDoorContext, viewGroup, iurVar);
                 }
                 if (searchDoorContext.t()) {
@@ -84,6 +84,6 @@ public class d {
 
     public static c a(SearchDoorContext searchDoorContext) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (c) ipChange.ipc$dispatch("ca0aba9c", new Object[]{searchDoorContext}) : TextUtils.isEmpty(searchDoorContext.f()) ? f19368a : b;
+        return ipChange instanceof IpChange ? (c) ipChange.ipc$dispatch("ca0aba9c", new Object[]{searchDoorContext}) : StringUtils.isEmpty(searchDoorContext.f()) ? f19368a : b;
     }
 }

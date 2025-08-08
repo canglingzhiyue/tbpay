@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Process;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import anet.channel.Config;
 import anet.channel.entity.ENV;
@@ -146,18 +146,18 @@ public class GlobalAppRuntimeInfo {
         if (context2 == null) {
             return;
         }
-        if (AwcnConfig.isCurrentProcessOpt() && TextUtils.isEmpty(currentProcess) && (basicParams = getBasicParams()) != null && !basicParams.isEmpty()) {
+        if (AwcnConfig.isCurrentProcessOpt() && StringUtils.isEmpty(currentProcess) && (basicParams = getBasicParams()) != null && !basicParams.isEmpty()) {
             String str = (String) basicParams.get("process");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 ALog.e(TAG, "[Launcher] setContext, currentProcess=" + str, null, new Object[0]);
                 currentProcess = str;
             }
         }
-        if (TextUtils.isEmpty(currentProcess)) {
+        if (StringUtils.isEmpty(currentProcess)) {
             currentProcess = Utils.getProcessName(context2, Process.myPid());
             ALog.e(TAG, "[Launcher] setContext, getProcessName=" + currentProcess, null, new Object[0]);
         }
-        if (TextUtils.isEmpty(targetProcess)) {
+        if (StringUtils.isEmpty(targetProcess)) {
             targetProcess = Utils.getMainProcessName(context2);
         }
         if (sp == null) {
@@ -187,7 +187,7 @@ public class GlobalAppRuntimeInfo {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("81f8011f", new Object[0])).booleanValue();
         }
-        if (!TextUtils.isEmpty(targetProcess) && !TextUtils.isEmpty(currentProcess)) {
+        if (!StringUtils.isEmpty(targetProcess) && !StringUtils.isEmpty(currentProcess)) {
             return targetProcess.equalsIgnoreCase(currentProcess);
         }
         return true;
@@ -198,7 +198,7 @@ public class GlobalAppRuntimeInfo {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d915192f", new Object[]{context2})).booleanValue();
         }
-        if (TextUtils.isEmpty(currentProcess)) {
+        if (StringUtils.isEmpty(currentProcess)) {
             currentProcess = Utils.getProcessName(context2, Process.myPid());
         }
         return "com.taobao.taobao:channel".equalsIgnoreCase(currentProcess);
@@ -210,7 +210,7 @@ public class GlobalAppRuntimeInfo {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("86016141", new Object[0])).booleanValue();
         }
-        if (TextUtils.isEmpty(currentProcess) && (context2 = context) != null) {
+        if (StringUtils.isEmpty(currentProcess) && (context2 = context) != null) {
             currentProcess = Utils.getProcessName(context2, Process.myPid());
         }
         return "com.taobao.taobao:channel".equalsIgnoreCase(currentProcess);
@@ -221,7 +221,7 @@ public class GlobalAppRuntimeInfo {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d2173a29", new Object[]{str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(targetProcess) && !TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(targetProcess) && !StringUtils.isEmpty(str)) {
             return targetProcess.equalsIgnoreCase(str);
         }
         return true;
@@ -325,7 +325,7 @@ public class GlobalAppRuntimeInfo {
         }
         ttid = str;
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             int indexOf = str.indexOf("@");
@@ -436,7 +436,7 @@ public class GlobalAppRuntimeInfo {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a13b254", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || str.length() > 32 || str2.length() > 32) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || str.length() > 32 || str2.length() > 32) {
         } else {
             synchronized (GlobalAppRuntimeInfo.class) {
                 if (bucketInfos == null) {
@@ -529,7 +529,7 @@ public class GlobalAppRuntimeInfo {
             return (SessionCenter) ipChange.ipc$dispatch("8c52c77d", new Object[0]);
         }
         String appkey2 = getAppkey();
-        if (TextUtils.isEmpty(appkey2)) {
+        if (StringUtils.isEmpty(appkey2)) {
             return SessionCenter.getInstance();
         }
         ENV env2 = getEnv();
@@ -639,7 +639,7 @@ public class GlobalAppRuntimeInfo {
                     }
                     String multiPathUserToastText = AwcnConfig.getMultiPathUserToastText();
                     Context context3 = GlobalAppRuntimeInfo.getContext();
-                    if (TextUtils.isEmpty(multiPathUserToastText)) {
+                    if (StringUtils.isEmpty(multiPathUserToastText)) {
                         multiPathUserToastText = GlobalAppRuntimeInfo.DEFAULT_TOAST_TEXT;
                     }
                     Toast.makeText(context3, multiPathUserToastText, 0).show();

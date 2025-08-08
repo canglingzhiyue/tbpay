@@ -1,7 +1,7 @@
 package com.taobao.themis.kernel.ability.register;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.themis.kernel.ability.base.annotation.APIMethod;
 import com.taobao.themis.kernel.ability.base.annotation.AutoCallback;
@@ -55,7 +55,7 @@ public class c {
             aVar.b = str;
             aVar.c = abilityType;
             for (String str2 : list) {
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     b.put(str2, aVar);
                 }
             }
@@ -77,7 +77,7 @@ public class c {
                 APIMethod aPIMethod = (APIMethod) method.getAnnotation(APIMethod.class);
                 if (aPIMethod != null) {
                     String value = aPIMethod.value();
-                    if (TextUtils.isEmpty(value)) {
+                    if (StringUtils.isEmpty(value)) {
                         value = method.getName();
                     }
                     b bVar = new b();

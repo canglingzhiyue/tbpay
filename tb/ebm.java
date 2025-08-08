@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
@@ -191,7 +191,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             this.o.setTextColor(-1);
             this.o.setVisibility(0);
             if (!eVar.g || eVar.f <= 0) {
-                if (!TextUtils.isEmpty(eVar.o)) {
+                if (!StringUtils.isEmpty(eVar.o)) {
                     this.H.setText(eVar.o);
                     this.H.setVisibility(0);
                     this.G.setVisibility(8);
@@ -327,7 +327,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             return;
         }
         String str = aVar.f27175a;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         float f = epo.f27511a * 22.0f;
@@ -335,7 +335,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
         float a2 = a(this.z, str, (int) (epo.b - (epo.f27511a * 130.0f)), f);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
         String[] split = str.split("-");
-        if (split.length > 1 && !TextUtils.isEmpty(split[0]) && !TextUtils.isEmpty(split[1])) {
+        if (split.length > 1 && !StringUtils.isEmpty(split[0]) && !StringUtils.isEmpty(split[1])) {
             int indexOf = split[0].indexOf(".");
             if (indexOf != -1) {
                 int i = (int) a2;
@@ -370,7 +370,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             return ((Number) ipChange.ipc$dispatch("5b2e1dd", new Object[]{this})).floatValue();
         }
         if (this.i.a()) {
-            str = (TextUtils.isEmpty(this.i.d) ? "专柜价" : this.i.d) + this.i.c;
+            str = (StringUtils.isEmpty(this.i.d) ? "专柜价" : this.i.d) + this.i.c;
         } else {
             str = this.i.b;
         }
@@ -390,7 +390,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             this.C.setTextSize(0, f);
             if (this.i.a()) {
                 this.D.setTextSize(0, f);
-                if (TextUtils.isEmpty(this.i.d)) {
+                if (StringUtils.isEmpty(this.i.d)) {
                     this.D.setText("专柜价");
                 } else {
                     this.D.setText(this.i.d);
@@ -426,11 +426,11 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             ipChange.ipc$dispatch("331397f2", new Object[]{this, eVar});
         } else if (eVar.i == null) {
         } else {
-            if (!TextUtils.isEmpty(eVar.i.f9973a)) {
+            if (!StringUtils.isEmpty(eVar.i.f9973a)) {
                 epj.b().a(eVar.i.f9973a, this.w);
             }
             StringBuilder sb = new StringBuilder();
-            if (!TextUtils.isEmpty(eVar.i.b)) {
+            if (!StringUtils.isEmpty(eVar.i.b)) {
                 sb.append(eVar.i.b);
             }
             if (eVar.j != null && !eVar.j.isEmpty()) {
@@ -624,7 +624,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
         }
         i.b(TAG, "setSoldCount");
         String r = r(eVar);
-        if (TextUtils.isEmpty(r)) {
+        if (StringUtils.isEmpty(r)) {
             textView.setVisibility(8);
         } else {
             boolean z = !this.g ? k.a(eVar.d) > 0 : k.a(eVar.c) > 0;
@@ -674,19 +674,19 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             return;
         }
         if (this.i.a()) {
-            if (TextUtils.isEmpty(this.i.d)) {
+            if (StringUtils.isEmpty(this.i.d)) {
                 textView.setText("专柜价");
             } else {
                 textView.setText(this.i.d);
             }
             textView.setVisibility(0);
-            if (!TextUtils.isEmpty(this.i.c)) {
+            if (!StringUtils.isEmpty(this.i.c)) {
                 textView2.setText("¥" + this.i.c + " ");
                 textView2.getPaint().setFlags(16);
             }
         } else {
             textView.setVisibility(8);
-            if (!TextUtils.isEmpty(this.i.b)) {
+            if (!StringUtils.isEmpty(this.i.b)) {
                 textView2.setText("¥" + this.i.b + " ");
                 textView2.getPaint().setFlags(16);
             }
@@ -838,7 +838,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             return null;
         }
         String str = priceData.priceText;
-        if (TextUtils.isEmpty(str) || z) {
+        if (StringUtils.isEmpty(str) || z) {
             return str;
         }
         int i = -1;
@@ -995,7 +995,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
             return true;
         }
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(eVar.i.b)) {
+        if (!StringUtils.isEmpty(eVar.i.b)) {
             sb.append(eVar.i.b);
         }
         if (eVar.j != null && !eVar.j.isEmpty()) {
@@ -1022,7 +1022,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
         String str2 = aVar.f27175a;
         String str3 = "";
         if (this.i.a()) {
-            str3 = TextUtils.isEmpty(this.i.d) ? "专柜价" : this.i.d;
+            str3 = StringUtils.isEmpty(this.i.d) ? "专柜价" : this.i.d;
             str = "¥" + this.i.c;
         } else {
             str = str3;
@@ -1052,7 +1052,7 @@ public class ebm extends com.taobao.android.detail.core.detail.kit.view.holder.c
                 return null;
             }
             String priceText = priceData.getPriceText();
-            if (TextUtils.isEmpty(priceText)) {
+            if (StringUtils.isEmpty(priceText)) {
                 return null;
             }
             return eVar.n + priceText;

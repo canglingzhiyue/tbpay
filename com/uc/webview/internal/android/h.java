@@ -7,7 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.webkit.ConsoleMessage;
 import android.webkit.GeolocationPermissions;
@@ -122,7 +122,7 @@ final class h extends i implements IOpenFileChooser {
             @Override // com.uc.webview.export.WebChromeClient.FileChooserParams
             public final String[] getAcceptTypes() {
                 String[] strArr = new String[1];
-                strArr[0] = TextUtils.isEmpty(str) ? "*/*" : str;
+                strArr[0] = StringUtils.isEmpty(str) ? "*/*" : str;
                 return strArr;
             }
 
@@ -143,7 +143,7 @@ final class h extends i implements IOpenFileChooser {
 
             @Override // com.uc.webview.export.WebChromeClient.FileChooserParams
             public final boolean isCaptureEnabled() {
-                return !TextUtils.isEmpty(str2);
+                return !StringUtils.isEmpty(str2);
             }
         })) {
             return;

@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.smartlanding;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.trigger.g;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -35,9 +35,9 @@ public class d implements ISmartLandingProxy.c {
         }
         String str3 = b.f14013a;
         q.b(str3, "SmartLandingActionAdapter: " + str2 + " " + jSONObject.toString());
-        if (TextUtils.equals(str2, PopStrategy.IDENTIFIER_POPLAYER)) {
+        if (StringUtils.equals(str2, PopStrategy.IDENTIFIER_POPLAYER)) {
             String string = jSONObject.getString("url");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 g.a(string, jSONObject.toJSONString()).a(new g.a() { // from class: com.taobao.android.live.plugin.atype.flexalocal.smartlanding.d.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -73,7 +73,7 @@ public class d implements ISmartLandingProxy.c {
                 }).a();
             }
             return true;
-        } else if (TextUtils.equals(str2, "imagePop")) {
+        } else if (StringUtils.equals(str2, "imagePop")) {
             this.b = new ImageDialogAction(context, jSONObject);
             this.b.a();
             return true;

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -258,7 +258,7 @@ public abstract class FloatFragment extends DialogFragment {
         this.loadingViewWrapper = getLoadingViewWrapper();
         this.emptyViewWrapper = getEmptyViewWrapper();
         this.errorViewWrapper = getErrorViewWrapper();
-        if (!TextUtils.isEmpty(this.title)) {
+        if (!StringUtils.isEmpty(this.title)) {
             this.tvTitle.setText(this.title);
         } else {
             this.tvTitle.setVisibility(8);

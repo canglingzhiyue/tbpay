@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.taobao.windvane.export.network.Request;
 import android.taobao.windvane.export.network.f;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -157,7 +157,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a35a6232", new Object[]{this, str, new Boolean(z), new Boolean(z2)});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.k = str;
             Uri parse = Uri.parse(str);
@@ -172,7 +172,7 @@ public class b {
             if (z || this.i.f22052a) {
                 d();
             }
-            if (this.i.d && !TextUtils.isEmpty(queryParameter)) {
+            if (this.i.d && !StringUtils.isEmpty(queryParameter)) {
                 d(queryParameter);
             }
             if (this.i.b) {
@@ -265,7 +265,7 @@ public class b {
         this.j.setTag(R.id.taolive_container_prerender_status, false);
         if (this.f22051a.a(str)) {
             hashMap.put("pre_render_failed_code", "0");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("accessUrl", (Object) str);
                 WVStandardEventCenter.postNotificationToJS(this.j, "TBLiveBasePlugin.Event.PreRender.Attach", jSONObject.toJSONString());

@@ -1,7 +1,7 @@
 package com.taobao.accs.connection.state;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.accs.utl.ALog;
 import java.util.concurrent.ConcurrentHashMap;
@@ -45,7 +45,7 @@ public class TimeMeter {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("8123b0d6", new Object[]{str, new Long(j)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             ALog.e("TimeMeter", "isTimeOut() illegalArguments", new Object[0]);
             return false;
         }

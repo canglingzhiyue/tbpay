@@ -1,7 +1,7 @@
 package com.taobao.tbliveinteractive.view.system_component;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewStub;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSONObject;
@@ -68,7 +68,7 @@ public class g {
             JSONObject jSONObject = new JSONObject();
             if (this.c != null) {
                 String str = a(this.c) ? this.c.taolivePvFormat : this.c.viewCountFormat;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     str = "0";
                 }
                 jSONObject.put("watchNum", (Object) str);
@@ -82,7 +82,7 @@ public class g {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             try {
                 if (this.g == null) {

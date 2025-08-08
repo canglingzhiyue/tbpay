@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -181,7 +181,7 @@ public class FBWebView extends FBView implements BirdNestEngine.UiWidgetProvider
             ipChange.ipc$dispatch("c1044447", new Object[]{this, str, str2});
             return;
         }
-        if (!isDestroyed() && !TextUtils.isEmpty(str)) {
+        if (!isDestroyed() && !StringUtils.isEmpty(str)) {
             try {
                 this.mDoc.B = true;
                 FBView.nativePlatformOnCallback(getNode(), str, str2);

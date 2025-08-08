@@ -1,7 +1,7 @@
 package com.o2o.ad.click.common;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.db.MspDBHelper;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.muniontaobaosdk.util.TaoLog;
@@ -55,7 +55,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             TaoLog.Loge("O2OAdSdk", "广告请求参数或者点击URL为空");
             return "";
         }
@@ -86,7 +86,7 @@ public class a {
             this.c = URLEncoder.encode(str, "UTF-8");
         } catch (Exception unused) {
         }
-        if (TextUtils.isEmpty(this.b) && (parse = Uri.parse(str)) != null && parse.isHierarchical()) {
+        if (StringUtils.isEmpty(this.b) && (parse = Uri.parse(str)) != null && parse.isHierarchical()) {
             this.b = parse.getQueryParameter(MspDBHelper.BizEntry.COLUMN_NAME_PID);
         }
         return b(str, str2);
@@ -141,7 +141,7 @@ public class a {
                 return;
             }
             O2OClickSendResponseData mo2429getData = ((O2OClickSendResponse) obj).mo2429getData();
-            if (TextUtils.isEmpty(mo2429getData.o2otrackid)) {
+            if (StringUtils.isEmpty(mo2429getData.o2otrackid)) {
                 return;
             }
             String[] strArr = {"o2otrackid=" + mo2429getData.o2otrackid, "o2oclickid=" + this.b, "epid=" + this.c};

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes4.dex */
@@ -24,7 +24,7 @@ public class eau extends fnl {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("42bc9164", new Object[]{this, str, obj});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         String[] split = str.split(",");

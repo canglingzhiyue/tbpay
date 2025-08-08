@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.iconbackanimeservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -237,16 +237,16 @@ public class IconServiceImpl implements IIconService {
                     ipChange2.ipc$dispatch("d905f556", new Object[]{this, lliVar, iContainerDataModel, str});
                     return;
                 }
-                if (TextUtils.equals(str, "pullRefresh") || TextUtils.equals(str, "coldStart") || TextUtils.equals(str, "editionSwitch") || TextUtils.equals(str, LogContext.ENVENT_USERLOGIN) || TextUtils.equals(str, b.REFRESH_SOURCE_HOT_START)) {
+                if (StringUtils.equals(str, "pullRefresh") || StringUtils.equals(str, "coldStart") || StringUtils.equals(str, "editionSwitch") || StringUtils.equals(str, LogContext.ENVENT_USERLOGIN) || StringUtils.equals(str, b.REFRESH_SOURCE_HOT_START)) {
                     IconServiceImpl.access$002(IconServiceImpl.this, 0);
                 }
-                if (IconServiceImpl.access$000(IconServiceImpl.this) != 1 || TextUtils.isEmpty(IconServiceImpl.access$100(IconServiceImpl.this)) || iContainerDataModel == null || iContainerDataModel.getDelta() == null || (sections = iContainerDataModel.getDelta().getSections()) == null || sections.isEmpty()) {
+                if (IconServiceImpl.access$000(IconServiceImpl.this) != 1 || StringUtils.isEmpty(IconServiceImpl.access$100(IconServiceImpl.this)) || iContainerDataModel == null || iContainerDataModel.getDelta() == null || (sections = iContainerDataModel.getDelta().getSections()) == null || sections.isEmpty()) {
                     return;
                 }
                 int size = sections.size();
                 for (int i = 0; i < size; i++) {
                     BaseSectionModel baseSectionModel = (BaseSectionModel) sections.get(i);
-                    if (TextUtils.equals(baseSectionModel.getSectionBizCode(), IconServiceImpl.access$100(IconServiceImpl.this)) && baseSectionModel.mo1098getSubSection() != null && baseSectionModel.mo1098getSubSection().size() == 1) {
+                    if (StringUtils.equals(baseSectionModel.getSectionBizCode(), IconServiceImpl.access$100(IconServiceImpl.this)) && baseSectionModel.mo1098getSubSection() != null && baseSectionModel.mo1098getSubSection().size() == 1) {
                         IconServiceImpl.access$002(IconServiceImpl.this, 0);
                     }
                 }

@@ -13,7 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.n;
 import android.support.v7.taobao.TBActionBar;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -513,12 +513,12 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b464a892", new Object[]{this, searchBarBean});
-        } else if (!TextUtils.equals(searchBarBean.type, "title")) {
+        } else if (!StringUtils.equals(searchBarBean.type, "title")) {
             this.n.setVisibility(8);
         } else {
             final String str = searchBarBean.info;
             String str2 = searchBarBean.icon;
-            if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
                 this.n.setVisibility(8);
                 return;
             }
@@ -547,7 +547,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
             return;
         }
         String param = commonSearchContext.getParam(k.a.PARAM_COMBO_BIZ_NAME, "");
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             this.f19588a.setVisibility(8);
             return;
         }
@@ -576,7 +576,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
         this.o.addView(this.i);
         boolean booleanParam = commonSearchContext.getBooleanParam(noa.KEY_SRP_SEARCH_BAR_TAG_STYLE);
         List<SearchBarTagBean> t = getActivity() instanceof d ? ((d) getActivity()).t() : null;
-        if (!(!TextUtils.isEmpty(commonSearchContext.getParam(noa.KEY_SEARCH_BAR_ICON))) && (booleanParam || (t != null && !t.isEmpty()))) {
+        if (!(!StringUtils.isEmpty(commonSearchContext.getParam(noa.KEY_SEARCH_BAR_ICON))) && (booleanParam || (t != null && !t.isEmpty()))) {
             this.f.setBackgroundResource(R.drawable.tbsearch_searchbar_tag_background);
             this.j.setPadding(l.a(3), 0, l.a(15), 0);
             if (t == null || t.isEmpty()) {
@@ -603,7 +603,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
             return;
         }
         String param = ((CommonSearchContext) getModel().f()).getParam(noa.KEY_SEARCH_BAR_ICON);
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             return;
         }
         try {
@@ -671,10 +671,10 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
             string = Globals.getApplication().getString(R.string.shopsimilar_result_activity_title);
         }
         String param = commonSearchContext.getParam(k.KEY_SRP_CUSTOM_TITLE);
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             param = string;
         }
-        if (TextUtils.isEmpty(param)) {
+        if (StringUtils.isEmpty(param)) {
             return;
         }
         this.k.setText(param);
@@ -797,7 +797,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
                 try {
                     String str = "ssk";
                     String paramValueIncludingGlobal = g.this.getModel().d().getParamValueIncludingGlobal("channelSrp");
-                    if (!TextUtils.isEmpty(paramValueIncludingGlobal)) {
+                    if (!StringUtils.isEmpty(paramValueIncludingGlobal)) {
                         str = str + "-" + paramValueIncludingGlobal;
                     }
                     Nav.from(g.this.getActivity()).toUri("http://h5.m.taobao.com/tusou/index.html?pssource=" + str);
@@ -827,7 +827,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
             SearchBarBean searchBarInfo = mSearchResult.getSearchBarInfo();
             if ("search".equals(searchBarInfo.type)) {
                 this.j.setVisibility(0);
-                if (!TextUtils.isEmpty(searchBarInfo.text)) {
+                if (!StringUtils.isEmpty(searchBarInfo.text)) {
                     this.f.setText(searchBarInfo.text);
                 }
                 b(searchBarInfo);
@@ -851,7 +851,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
             this.i.setVisibility(8);
         } else {
             String str = searchBarBean.suffixIcon;
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 this.i.setVisibility(8);
                 return;
             }
@@ -877,7 +877,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
             SearchBarBean searchBarInfo = commonSearchResult.getSearchBarInfo();
             if ("search".equals(searchBarInfo.type)) {
                 this.j.setVisibility(0);
-                if (!TextUtils.isEmpty(searchBarInfo.text)) {
+                if (!StringUtils.isEmpty(searchBarInfo.text)) {
                     this.f.setText(searchBarInfo.text);
                 }
             } else {
@@ -1033,7 +1033,7 @@ public class g extends ius<Void, ViewGroup, iru<? extends com.taobao.android.sea
             str = "";
         }
         shareContent.url = y.a(r.bD(), hashMap);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             shareContent.description = y;
         } else {
             shareContent.description = String.format(x, str);

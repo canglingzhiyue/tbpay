@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.fluid.FluidSDK;
@@ -31,14 +31,14 @@ public class sln {
             return;
         }
         String unExposeIds = ((IDataService) fluidContext.getService(IDataService.class)).getUnExposeIds();
-        if (TextUtils.isEmpty(unExposeIds)) {
+        if (StringUtils.isEmpty(unExposeIds)) {
             return;
         }
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("recallContentIds", (Object) unExposeIds);
         sps sessionParams = ((ISceneConfigService) fluidContext.getService(ISceneConfigService.class)).getSessionParams();
         MediaMixDetailReportRequest mediaMixDetailReportRequest = new MediaMixDetailReportRequest();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = sessionParams.d;
         }
         mediaMixDetailReportRequest.contentId = str;

@@ -4,7 +4,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -173,7 +173,7 @@ public class BottomMenuFragment extends DialogFragment {
         });
         TextView textView2 = (TextView) inflate.findViewById(R.id.aliuser_bottom_menu_title_tv);
         View findViewById = inflate.findViewById(R.id.aliuser_bottom_menu_title_divider);
-        if (TextUtils.isEmpty(this.mMenuTitle)) {
+        if (StringUtils.isEmpty(this.mMenuTitle)) {
             textView2.setVisibility(8);
             findViewById.setVisibility(8);
         } else {
@@ -207,9 +207,9 @@ public class BottomMenuFragment extends DialogFragment {
             ipChange.ipc$dispatch("454030d6", new Object[]{this});
             return;
         }
-        if (!TextUtils.isEmpty(getTag())) {
+        if (!StringUtils.isEmpty(getTag())) {
             String str = "";
-            if (!TextUtils.isEmpty(this.controlHitPrefix)) {
+            if (!StringUtils.isEmpty(this.controlHitPrefix)) {
                 str = (str + this.controlHitPrefix) + "_";
             }
             UserTrackAdapter.sendControlUT(getTag(), str + "cancel");

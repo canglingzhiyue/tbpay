@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.nirvana.tools.jsoner.a;
 import com.nirvana.tools.jsoner.d;
@@ -31,7 +31,7 @@ public class ConfigRule {
         try {
             ConfigRule configRule = new ConfigRule();
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     return fromJson(new JSONObject(str));
                 }
             } catch (JSONException e) {

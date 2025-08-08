@@ -2,7 +2,7 @@ package com.alipay.mobile.verifyidentity.module.password.pay;
 
 import android.content.Context;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -24,7 +24,7 @@ public class PubKeyHelper {
             return (String) ipChange.ipc$dispatch("595d734c", new Object[]{context, str});
         }
         try {
-            return TextUtils.isEmpty(str) ? getPubKey(context) : str;
+            return StringUtils.isEmpty(str) ? getPubKey(context) : str;
         } catch (Exception e) {
             VerifyLogCat.e(f5919a, e);
             return null;
@@ -38,12 +38,12 @@ public class PubKeyHelper {
         }
         VerifyLogCat.i(f5919a, "获取本地或公钥");
         String string = PreferenceManager.getDefaultSharedPreferences(context).getString("VI_SP_LOCAL_PUB_KEY", "");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             VerifyLogCat.i(f5919a, "本地没有公钥，用内置的");
             String envType = MicroModuleContext.getInstance().getEnvType();
             String str = f5919a;
             VerifyLogCat.i(str, "pub_key_env：" + envType);
-            if (TextUtils.isEmpty(envType) || "ONLINE".equalsIgnoreCase(envType)) {
+            if (StringUtils.isEmpty(envType) || "ONLINE".equalsIgnoreCase(envType)) {
                 VerifyLogCat.i(f5919a, "用内置线上公钥");
                 return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo0z/L+pelCPu6DwDFAY/3ITzesr8lnNmYjHht4XUJvLYYBwvDbHMc8xi9sPK9ohVHIKRVLVmmZ9SdmuWYN9HzCyyZ6kEHx+IDBPnulwjdeN/N0w25mVRhYDWxJ2/1C6cPIuNcISchOQdGKuAC0xR37i/kWH9sjBidAQjageYgQoj1HX81flZaPve75Esue85AHZ0VIurjwx7uEuxvQtvCIUvX1bbF13TIYuTbJbn/LrNHby1Kxp42ggNUjAkYUVSF7SC3UP+YGKruii7Vh1UnJ/rpVhjdt3It8le9px8H4Ltt9N3hzU17rBnFpp2ZnmiZVtlfMvsStY54Fl5cSJVxQIDAQAB";
             }
@@ -70,7 +70,7 @@ public class PubKeyHelper {
             String str = f5919a;
             VerifyLogCat.e(str, "json fail " + mICRpcResponse.data, e);
         }
-        if (jSONObject == null || TextUtils.isEmpty(jSONObject.getString("pubKey"))) {
+        if (jSONObject == null || StringUtils.isEmpty(jSONObject.getString("pubKey"))) {
             return "";
         }
         String string = jSONObject.getString("pubKey");

@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -127,13 +127,13 @@ public class OCRFragment extends DialogFragment implements j<e> {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 return;
             }
             Bundle bundle = new Bundle();
             bundle.putCharSequence(KEY_PIC_URL, str2);
             dialogFragment.setArguments(bundle);
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = dialogFragment.getTag();
             }
             dialogFragment.show(fragmentActivity.getSupportFragmentManager(), str);
@@ -182,7 +182,7 @@ public class OCRFragment extends DialogFragment implements j<e> {
         initOCRFields(getActivity());
         View initViews = initViews(layoutInflater, viewGroup, bundle);
         this.mPicUrl = getArguments().getCharSequence(KEY_PIC_URL).toString();
-        if (!TextUtils.isEmpty(this.mPicUrl)) {
+        if (!StringUtils.isEmpty(this.mPicUrl)) {
             String str = "取得图片URL: " + this.mPicUrl;
         } else {
             dismiss();
@@ -270,7 +270,7 @@ public class OCRFragment extends DialogFragment implements j<e> {
             this.mRetryBtn.setVisibility(8);
             this.mCopyBtn.setVisibility(8);
             this.mCloseBtn.setVisibility(0);
-            if (this.mOCRManager != null && !TextUtils.isEmpty(this.mPicUrl)) {
+            if (this.mOCRManager != null && !StringUtils.isEmpty(this.mPicUrl)) {
                 this.mOCRManager.a(new String[]{this.mPicUrl});
             }
         } else if (i == 2) {
@@ -393,7 +393,7 @@ public class OCRFragment extends DialogFragment implements j<e> {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2a5750b7", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             ((ClipboardManager) getActivity().getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("ocr", str));
             Toast.makeText(getActivity(), " 复制成功", 1).show();

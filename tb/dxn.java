@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -120,7 +120,7 @@ public final class dxn implements ate {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8761d76", new Object[]{this, viewHolder, aURARenderComponent});
-        } else if (viewHolder == null || viewHolder.itemView == null || aURARenderComponent == null || TextUtils.isEmpty(aURARenderComponent.key) || (dxvVar = (dxv) this.f27064a.a(dxv.INSTANCE_TAG, dxv.class)) == null) {
+        } else if (viewHolder == null || viewHolder.itemView == null || aURARenderComponent == null || StringUtils.isEmpty(aURARenderComponent.key) || (dxvVar = (dxv) this.f27064a.a(dxv.INSTANCE_TAG, dxv.class)) == null) {
         } else {
             dxvVar.a(aURARenderComponent.key, viewHolder.itemView);
         }

@@ -11,7 +11,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.cash.activity.CustomBrowserActivity;
@@ -106,7 +106,7 @@ public class CashJSBridge extends e {
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 TLog.logd("cash4android", TAG, "skip2TNGD params 为空！");
                 wVCallBackContext.error("skip2TNGD params 为空！");
                 return;
@@ -138,7 +138,7 @@ public class CashJSBridge extends e {
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
-            if (TextUtils.isEmpty(jSONObject.isNull("url") ? null : jSONObject.getString("url"))) {
+            if (StringUtils.isEmpty(jSONObject.isNull("url") ? null : jSONObject.getString("url"))) {
                 TLog.logd(dvu.FRONT_CASHIER_MODULE_NAME, "frontCashier", "getPrefetchData url 为空！");
                 return;
             }
@@ -291,7 +291,7 @@ public class CashJSBridge extends e {
             JSONObject jSONObject = new JSONObject(str);
             if (jSONObject.has("url")) {
                 String string = jSONObject.getString("url");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     dwa.a(this.mContext, string);
                     return;
                 }
@@ -350,16 +350,16 @@ public class CashJSBridge extends e {
                 String optString2 = jSONObject.optString("hotCountryTitle");
                 String optString3 = jSONObject.optString("locale");
                 String optString4 = jSONObject.optString("errorMsg");
-                if (!TextUtils.isEmpty(optString)) {
+                if (!StringUtils.isEmpty(optString)) {
                     bundle.putString("title", optString);
                 }
-                if (!TextUtils.isEmpty(optString2)) {
+                if (!StringUtils.isEmpty(optString2)) {
                     bundle.putString("hotCountryTitle", optString2);
                 }
-                if (!TextUtils.isEmpty(optString3)) {
+                if (!StringUtils.isEmpty(optString3)) {
                     bundle.putString("locale", optString3);
                 }
-                if (!TextUtils.isEmpty(optString4)) {
+                if (!StringUtils.isEmpty(optString4)) {
                     bundle.putString("errorMsg", optString4);
                 }
                 bundle.putBoolean("from_jsbridge", true);
@@ -378,10 +378,10 @@ public class CashJSBridge extends e {
         } else if (wVCallBackContext == null) {
             TLog.loge(Tag, "Callback is null");
         } else {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     String string = new JSONObject(str).getString("url");
-                    if (!TextUtils.isEmpty(string)) {
+                    if (!StringUtils.isEmpty(string)) {
                         Intent intent = new Intent();
                         intent.setAction("android.intent.action.VIEW");
                         intent.setData(Uri.parse(string));
@@ -455,7 +455,7 @@ public class CashJSBridge extends e {
             TLog.loge(Tag, "Callback is null");
         } else {
             this.mCallback = wVCallBackContext;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 try {
                     JSONObject jSONObject = new JSONObject(str);
                     String string = jSONObject.getString("url");

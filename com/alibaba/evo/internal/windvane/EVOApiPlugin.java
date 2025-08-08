@@ -2,7 +2,7 @@ package com.alibaba.evo.internal.windvane;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.evo.EVO;
 import com.alibaba.ut.abtest.Variation;
 import com.alibaba.ut.abtest.VariationSet;
@@ -52,14 +52,14 @@ public class EVOApiPlugin extends e {
                 }
             }
         }
-        if (TextUtils.equals(nrh.TYPE_ACTIVATE, str)) {
+        if (StringUtils.equals(nrh.TYPE_ACTIVATE, str)) {
             activate(str2, wVCallBackContext);
             return true;
-        } else if (TextUtils.equals(b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER, str)) {
+        } else if (StringUtils.equals(b.EXPERIMENT_ACTIVATE_STAT_TYPE_ACTIVATE_SERVER, str)) {
             activateServer(str2, wVCallBackContext);
             return true;
         } else {
-            if (TextUtils.equals("getPageActivateTrackIds", str)) {
+            if (StringUtils.equals("getPageActivateTrackIds", str)) {
                 getPageActivateTrackIds(str2, wVCallBackContext);
                 return true;
             }
@@ -73,7 +73,7 @@ public class EVOApiPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("67059481", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (wVCallBackContext == null) {
                 return;
             }
@@ -82,7 +82,7 @@ public class EVOApiPlugin extends e {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("namespace");
             String optString2 = jSONObject.optString("key");
-            if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2)) {
+            if (StringUtils.isEmpty(optString) || StringUtils.isEmpty(optString2)) {
                 if (wVCallBackContext == null) {
                     return;
                 }
@@ -128,7 +128,7 @@ public class EVOApiPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f8f485e4", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (wVCallBackContext == null) {
                 return;
             }
@@ -136,7 +136,7 @@ public class EVOApiPlugin extends e {
         } else {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("data");
-            if (TextUtils.isEmpty(optString)) {
+            if (StringUtils.isEmpty(optString)) {
                 if (wVCallBackContext == null) {
                     return;
                 }

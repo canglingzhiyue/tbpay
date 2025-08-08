@@ -1,6 +1,6 @@
 package com.network.diagnosis.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.appmonitor.AppMonitor;
 import anet.channel.util.ALog;
 import anetwork.channel.NetworkCallBack;
@@ -170,7 +170,7 @@ public class a implements com.network.diagnosis.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (!cze.a() || TextUtils.isEmpty(str)) {
+        } else if (!cze.a() || StringUtils.isEmpty(str)) {
         } else {
             final long currentTimeMillis = System.currentTimeMillis();
             czd.a(new Runnable() { // from class: com.network.diagnosis.model.a.1
@@ -196,7 +196,7 @@ public class a implements com.network.diagnosis.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (!cze.a() || TextUtils.isEmpty(str)) {
+        } else if (!cze.a() || StringUtils.isEmpty(str)) {
         } else {
             final long currentTimeMillis = System.currentTimeMillis();
             czd.a(new Runnable() { // from class: com.network.diagnosis.model.a.2

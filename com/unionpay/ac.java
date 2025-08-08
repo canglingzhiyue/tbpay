@@ -2,7 +2,7 @@ package com.unionpay;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import com.taobao.android.weex_framework.common.expection.WXExceptionConfig;
@@ -30,7 +30,7 @@ final class ac extends WebViewClient {
     @Override // android.webkit.WebViewClient
     public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
         com.unionpay.utils.j.a("uppay", "shouldOverrideUrlLoading：" + str);
-        if (WebViewJavascriptBridge.access$200(this.f24016a) && !TextUtils.isEmpty(str) && !str.startsWith("http") && !str.startsWith(WXExceptionConfig.KEY_HTTP)) {
+        if (WebViewJavascriptBridge.access$200(this.f24016a) && !StringUtils.isEmpty(str) && !str.startsWith("http") && !str.startsWith(WXExceptionConfig.KEY_HTTP)) {
             try {
                 Intent intent = new Intent();
                 intent.setAction("android.intent.action.VIEW");

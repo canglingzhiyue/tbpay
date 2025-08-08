@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.relationship.application.RelationshipApplication;
@@ -25,12 +25,12 @@ public class nlx {
             return;
         }
         long j = 0;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             j = Long.parseLong(str);
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             j = Long.parseLong(str2);
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             i = Integer.parseInt(str3);
         }
         b bVar = new b();
@@ -61,15 +61,15 @@ public class nlx {
             return;
         }
         long j = 0;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             j = Long.parseLong(str);
-        } else if (!TextUtils.isEmpty(str2)) {
+        } else if (!StringUtils.isEmpty(str2)) {
             j = Long.parseLong(str2);
         }
-        int parseInt = TextUtils.isEmpty(str3) ? 1 : Integer.parseInt(str3);
-        if (!TextUtils.isEmpty(str8)) {
+        int parseInt = StringUtils.isEmpty(str3) ? 1 : Integer.parseInt(str3);
+        if (!StringUtils.isEmpty(str8)) {
             String lowerCase = str8.toLowerCase();
-            if (TextUtils.equals(lowerCase, "true") || TextUtils.equals(lowerCase, "1")) {
+            if (StringUtils.equals(lowerCase, "true") || StringUtils.equals(lowerCase, "1")) {
                 z = true;
             }
         }
@@ -94,10 +94,10 @@ public class nlx {
             return;
         }
         if (nmg.a()) {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.taobao.phenix.intf.b.h().a(str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 com.taobao.phenix.intf.b.h().a(str2);
             }
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.e;
 import com.taobao.android.home.component.utils.j;
@@ -53,7 +53,7 @@ public class xpe {
         } else if (!j.a("enableCheckPresetDta", false)) {
         } else {
             try {
-                if (TextUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
+                if (StringUtils.equals(str, ksk.NEW_FACE_PARENT.f30287a)) {
                     c(str, iContainerDataModel);
                 } else {
                     b(str, iContainerDataModel);
@@ -113,7 +113,7 @@ public class xpe {
         }
         for (int i = 0; i < list.size(); i++) {
             Object obj = list.get(i);
-            if ((obj instanceof SectionModel) && TextUtils.equals(((SectionModel) obj).getSectionBizCode(), "mainAndSubSeparator")) {
+            if ((obj instanceof SectionModel) && StringUtils.equals(((SectionModel) obj).getSectionBizCode(), "mainAndSubSeparator")) {
                 return i;
             }
         }
@@ -196,13 +196,13 @@ public class xpe {
         if (mo1099getTemplate == null || mo1099getTemplate2 == null) {
             e.e("CacheDataValidatorUtil", "cacheTemplate == null || coldStartTemplate == null");
             return false;
-        } else if (!TextUtils.equals(mo1099getTemplate.getName(), mo1099getTemplate2.getName())) {
+        } else if (!StringUtils.equals(mo1099getTemplate.getName(), mo1099getTemplate2.getName())) {
             e.e("CacheDataValidatorUtil", "模版名不一样");
             return true;
         } else {
             String version = mo1099getTemplate.getVersion();
             String version2 = mo1099getTemplate2.getVersion();
-            if (TextUtils.isEmpty(version) || TextUtils.isEmpty(version2)) {
+            if (StringUtils.isEmpty(version) || StringUtils.isEmpty(version2)) {
                 e.e("CacheDataValidatorUtil", "版本号为空");
                 return false;
             }

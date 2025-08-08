@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogCategory;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LogEvent;
@@ -26,7 +26,7 @@ public class UserLoginEvent implements ClientEvent {
         }
         LogContext logContext = LoggerFactory.getLogContext();
         String str = (String) obj;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         logContext.setUserId(str);

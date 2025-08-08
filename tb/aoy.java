@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.IConnStrategy;
 import anet.channel.strategy.IStrategyFilter;
 import anet.channel.strategy.StrategyCenter;
@@ -103,7 +103,7 @@ public class aoy {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a821d36c", new Object[]{this, new Boolean(z)});
-        } else if (TextUtils.isEmpty(this.c) || (list = this.f25488a) == null || list.isEmpty() || (aoxVar = this.f25488a.get(0)) == null || !this.c.equalsIgnoreCase(aoxVar.a())) {
+        } else if (StringUtils.isEmpty(this.c) || (list = this.f25488a) == null || list.isEmpty() || (aoxVar = this.f25488a.get(0)) == null || !this.c.equalsIgnoreCase(aoxVar.a())) {
         } else {
             if (z) {
                 aoxVar.a(0);

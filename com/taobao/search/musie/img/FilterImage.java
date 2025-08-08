@@ -1,7 +1,7 @@
 package com.taobao.search.musie.img;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.weex_framework.MUSDKInstance;
@@ -69,11 +69,11 @@ public class FilterImage extends Image {
         if (super.onUpdateAttr(uINode, str, mUSValue)) {
             return true;
         }
-        if (!TextUtils.equals(str, ATTR_COLOR_FILTER)) {
+        if (!StringUtils.equals(str, ATTR_COLOR_FILTER)) {
             return false;
         }
         String stringValue = mUSValue.getStringValue();
-        if (TextUtils.isEmpty(stringValue)) {
+        if (StringUtils.isEmpty(stringValue)) {
             setAttribute(ATTR_COLOR_FILTER, null);
             return true;
         }
@@ -94,7 +94,7 @@ public class FilterImage extends Image {
             return;
         }
         super.onRefreshAttribute(uINode, obj, str, obj2);
-        if (!TextUtils.equals(str, ATTR_COLOR_FILTER)) {
+        if (!StringUtils.equals(str, ATTR_COLOR_FILTER)) {
             return;
         }
         refreshColorFilter((com.taobao.search.musie.img.a) obj, obj2);

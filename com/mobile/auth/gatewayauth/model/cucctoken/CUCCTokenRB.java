@@ -1,6 +1,6 @@
 package com.mobile.auth.gatewayauth.model.cucctoken;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.nirvana.tools.jsoner.a;
 import com.nirvana.tools.jsoner.d;
@@ -21,7 +21,7 @@ public class CUCCTokenRB implements e {
     public static CUCCTokenRB fromJson(String str) {
         try {
             try {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     JSONObject jSONObject = new JSONObject(str);
                     CUCCTokenRB cUCCTokenRB = (CUCCTokenRB) a.a(jSONObject, (d<Object>) new d<CUCCTokenRB>() { // from class: com.mobile.auth.gatewayauth.model.cucctoken.CUCCTokenRB.1
                     }, (List<Field>) null);

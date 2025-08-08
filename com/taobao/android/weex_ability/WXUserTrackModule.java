@@ -2,7 +2,7 @@ package com.taobao.android.weex_ability;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.triver.triver_shop.newShop.ext.m;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -605,9 +605,9 @@ public final class WXUserTrackModule extends WeexInnerModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("45dd6182", new Object[]{this, str, str2, map});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
         } else {
-            UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = !TextUtils.isEmpty(str) ? new UTHitBuilders.UTControlHitBuilder(str, str2) : new UTHitBuilders.UTControlHitBuilder(str2);
+            UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = !StringUtils.isEmpty(str) ? new UTHitBuilders.UTControlHitBuilder(str, str2) : new UTHitBuilders.UTControlHitBuilder(str2);
             uTControlHitBuilder.setProperties(map);
             UTAnalytics.getInstance().getDefaultTracker().send(uTControlHitBuilder.build());
         }
@@ -621,7 +621,7 @@ public final class WXUserTrackModule extends WeexInnerModule {
         }
         UTAnalytics.getInstance().getDefaultTracker().updatePageName(getWeexInstance().getContext(), str);
         UTAnalytics.getInstance().getDefaultTracker().updatePageProperties(getWeexInstance().getContext(), map);
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         UTAnalytics.getInstance().getDefaultTracker().updatePageUrl(getWeexInstance().getContext(), Uri.parse(str2));

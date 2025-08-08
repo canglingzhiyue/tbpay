@@ -3,7 +3,7 @@ package com.taobao.search.m3.composite;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -59,7 +59,7 @@ public final class a extends com.taobao.search.m3.b {
         TextPaint textPaint = this.b;
         Integer a2 = this.g.a();
         textPaint.setColor(a2 != null ? a2.intValue() : j);
-        this.e = !TextUtils.isEmpty(this.g.b());
+        this.e = !StringUtils.isEmpty(this.g.b());
     }
 
     static {

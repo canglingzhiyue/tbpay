@@ -1,6 +1,6 @@
 package com.taobao.calendar.sdk;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.taobao.android.weex_framework.util.a;
@@ -82,7 +82,7 @@ public class TBCalendarConfig {
                 }
                 boolean unused = TBCalendarConfig.initEventTyping = true;
                 String config = OrangeConfig.getInstance().getConfig(TBCalendarConfig.groupName, TBCalendarConfig.key, "");
-                if (!TextUtils.isEmpty(config)) {
+                if (!StringUtils.isEmpty(config)) {
                     try {
                         JSONArray parseArray = JSONArray.parseArray(config);
                         if (parseArray != null && parseArray.size() > 0) {

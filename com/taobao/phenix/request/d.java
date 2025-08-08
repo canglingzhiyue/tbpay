@@ -1,6 +1,6 @@
 package com.taobao.phenix.request;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.musie.n;
 import java.util.List;
@@ -227,7 +227,7 @@ public class d {
                 dVar.e = 10000;
                 dVar.h = true;
             }
-            if (!TextUtils.isEmpty(dVar.b)) {
+            if (!StringUtils.isEmpty(dVar.b)) {
                 int lastIndexOf2 = dVar.b.lastIndexOf(47);
                 if (lastIndexOf2 > 0) {
                     dVar.c = dVar.b.substring(lastIndexOf2 + 1);

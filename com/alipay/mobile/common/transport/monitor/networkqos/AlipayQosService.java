@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.transport.monitor.networkqos;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.netsdkextdependapi.monitorinfo.MonitorLoggerModel;
 import com.alipay.mobile.common.transport.config.TransportConfigureItem;
 import com.alipay.mobile.common.transport.config.TransportConfigureManager;
@@ -105,7 +105,7 @@ public class AlipayQosService {
             return ((Number) ipChange.ipc$dispatch("272bc1df", new Object[]{this})).intValue();
         }
         try {
-            if (!TextUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.NET_QOS_SWITCH), "T")) {
+            if (!StringUtils.equals(TransportConfigureManager.getInstance().getStringValue(TransportConfigureItem.NET_QOS_SWITCH), "T")) {
                 LogCatUtil.debug("AlipayQosService", "qosSwitch is off,always return A level");
                 return 1;
             } else if (!NetworkUtils.isNetworkAvailable(TransportEnvUtil.getContext())) {

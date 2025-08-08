@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -197,7 +197,7 @@ public class rly {
         } else if (obj == null) {
         } else {
             String a2 = a(obj.getClass());
-            if (TextUtils.isEmpty(a2) || !this.f.containsKey(a2) || (rmgVar = this.f.get(a2)) == null) {
+            if (StringUtils.isEmpty(a2) || !this.f.containsKey(a2) || (rmgVar = this.f.get(a2)) == null) {
                 return;
             }
             rmgVar.a(obj, str, str2, rlwVar, this.c);
@@ -289,12 +289,12 @@ public class rly {
             ipChange.ipc$dispatch("6b9b1c8", new Object[]{this, view, str, str2, str3});
         } else if (view == null) {
         } else {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 this.c = this.b;
             } else if (!str3.equals(this.c)) {
                 this.c = str3;
             }
-            if (TextUtils.isEmpty(str2) || rlz.a().i(this.c) == null || !rlz.a().i(this.c).contains(str2)) {
+            if (StringUtils.isEmpty(str2) || rlz.a().i(this.c) == null || !rlz.a().i(this.c).contains(str2)) {
                 str2 = this.f33229a;
             }
             try {
@@ -318,7 +318,7 @@ public class rly {
         } else if (obj == null || hashMap == null || hashMap.size() == 0) {
         } else {
             String a2 = a(obj.getClass());
-            if (TextUtils.isEmpty(a2) || !this.f.containsKey(a2) || (rmgVar = this.f.get(a2)) == null) {
+            if (StringUtils.isEmpty(a2) || !this.f.containsKey(a2) || (rmgVar = this.f.get(a2)) == null) {
                 return;
             }
             rmgVar.a(obj, hashMap, null);

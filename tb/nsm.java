@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -148,7 +148,7 @@ public final class nsm extends j {
         if (map == null) {
             q.a();
         }
-        if (TextUtils.isEmpty(map.get("pvFeature"))) {
+        if (StringUtils.isEmpty(map.get("pvFeature"))) {
             AppMonitor.Alarm.commitFail("JarvisWE", "pvFeature_inshop", "", "", "");
         } else {
             AppMonitor.Alarm.commitSuccess("JarvisWE", "pvFeature_inshop");
@@ -198,7 +198,7 @@ public final class nsm extends j {
         if (commonSearchResult2 == null || (str = commonSearchResult2.crossShopRecPvUuid) == null) {
             str = "";
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             params.put("pvUuid", str);
         }
         com.taobao.search.sf.realtimetag.b realTimeTagManager = K();
@@ -228,7 +228,7 @@ public final class nsm extends j {
                 break;
             }
             String str = cell.itemId;
-            if (!(!q.a((Object) cell.cardType, (Object) "item")) && !TextUtils.isEmpty(str)) {
+            if (!(!q.a((Object) cell.cardType, (Object) "item")) && !StringUtils.isEmpty(str)) {
                 sb.append(str);
                 sb.append(",");
             }

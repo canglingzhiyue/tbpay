@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -68,7 +68,7 @@ public class len extends h {
                 i = -1;
             }
             String str = objArr[1] instanceof String ? (String) objArr[1] : null;
-            if (i == -1 || TextUtils.isEmpty(str)) {
+            if (i == -1 || StringUtils.isEmpty(str)) {
                 return;
             }
             if (objArr[2] instanceof Integer) {

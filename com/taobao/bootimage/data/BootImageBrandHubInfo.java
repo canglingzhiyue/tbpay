@@ -1,6 +1,6 @@
 package com.taobao.bootimage.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import mtopsdk.mtop.domain.IMTOPDataObject;
 import tb.kge;
@@ -18,7 +18,7 @@ public class BootImageBrandHubInfo implements IMTOPDataObject {
     }
 
     public BootImageBrandCreativeJson getCreativeJson() {
-        if (this.creativeJsonModel == null && !TextUtils.isEmpty(this.creativeJson)) {
+        if (this.creativeJsonModel == null && !StringUtils.isEmpty(this.creativeJson)) {
             this.creativeJsonModel = (BootImageBrandCreativeJson) JSONObject.parseObject(this.creativeJson, BootImageBrandCreativeJson.class);
         }
         return this.creativeJsonModel;

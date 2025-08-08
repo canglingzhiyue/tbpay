@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -82,7 +82,7 @@ public class fak extends b<fbb> implements View.OnClickListener {
             this.o = str;
         }
         this.q = (LinearLayout) this.k.findViewById(R.id.btnMore);
-        if (TextUtils.isEmpty(this.o)) {
+        if (StringUtils.isEmpty(this.o)) {
             this.o = this.i.getString(R.string.detail_desc_see_more);
         }
         if (this.m.size() <= 0) {
@@ -168,7 +168,7 @@ public class fak extends b<fbb> implements View.OnClickListener {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("daf50b49", new Object[]{this, str, onClickListener});
         }
-        if (TextUtils.isEmpty(str) || onClickListener == null) {
+        if (StringUtils.isEmpty(str) || onClickListener == null) {
             return new View(this.g);
         }
         if (this.p == null) {

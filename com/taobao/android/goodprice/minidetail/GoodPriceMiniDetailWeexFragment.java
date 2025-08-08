@@ -10,7 +10,7 @@ import android.os.Looper;
 import android.os.Parcelable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -165,7 +165,7 @@ public class GoodPriceMiniDetailWeexFragment extends TBMainBaseFragment implemen
             if (parcelable instanceof Intent) {
                 Intent intent = (Intent) parcelable;
                 this.realUrl = intent.getStringExtra("weexBundleUrl");
-                if (TextUtils.isEmpty(this.realUrl)) {
+                if (StringUtils.isEmpty(this.realUrl)) {
                     this.originUrl = intent.getStringExtra(i.URL_REFERER_ORIGIN);
                 }
             }
@@ -185,7 +185,7 @@ public class GoodPriceMiniDetailWeexFragment extends TBMainBaseFragment implemen
                     AppMonitor.Alarm.commitFail("GoodPriceMiniDetailWeexFragment", "module-render-weex-view", "-102", str + ",isFatal =" + z);
                 }
             });
-            if (!TextUtils.isEmpty(this.realUrl)) {
+            if (!StringUtils.isEmpty(this.realUrl)) {
                 this.goodPriceWeexInstance.a(getContext(), this.realUrl, new f() { // from class: com.taobao.android.goodprice.minidetail.GoodPriceMiniDetailWeexFragment.3
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -263,12 +263,12 @@ public class GoodPriceMiniDetailWeexFragment extends TBMainBaseFragment implemen
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f88b51a9", new Object[]{this})).booleanValue();
         }
-        String str = TextUtils.isEmpty(this.realUrl) ? this.originUrl : this.realUrl;
-        if (TextUtils.isEmpty(str)) {
+        String str = StringUtils.isEmpty(this.realUrl) ? this.originUrl : this.realUrl;
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String[] split = str.split("\\?");
-        if (split.length <= 1 || TextUtils.isEmpty(split[1])) {
+        if (split.length <= 1 || StringUtils.isEmpty(split[1])) {
             return false;
         }
         final Handler handler = new Handler(Looper.getMainLooper());

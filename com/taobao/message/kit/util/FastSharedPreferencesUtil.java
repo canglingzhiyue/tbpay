@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.uikit.util.ApplicationUtil;
 import com.taobao.tao.log.TLog;
@@ -37,7 +37,7 @@ public class FastSharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6edfbb6d", new Object[]{str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             TLog.loge(TAG, "addStringSharedPreference error: key:" + str);
         } else if (Build.VERSION.SDK_INT >= 24) {
             addStringSharedPreference(PreferenceManager.getDefaultSharedPreferencesName(ApplicationUtil.getApplication()), str, str2);
@@ -50,7 +50,7 @@ public class FastSharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9ed7c3f7", new Object[]{str, str2, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "addStringSharedPreference error: prefsName:" + str + "|key:" + str2);
         } else {
             SharedPreferences.Editor edit = kgo.a(ApplicationUtil.getApplication(), str, 0).edit();
@@ -80,7 +80,7 @@ public class FastSharedPreferencesUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3d3974", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "key is null:  " + str + str3);
             return str3;
         } else if (ApplicationUtil.getApplication() == null) {
@@ -95,7 +95,7 @@ public class FastSharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6ffdf272", new Object[]{str, str2, new Boolean(z)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "addStringSharedPreference error: prefsName:" + str + "|key:" + str2);
         } else {
             SharedPreferences.Editor edit = kgo.a(ApplicationUtil.getApplication(), str, 0).edit();
@@ -109,7 +109,7 @@ public class FastSharedPreferencesUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("dcade12b", new Object[]{str, str2, new Boolean(z)})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "key is null: " + str + z);
             return z;
         } else if (ApplicationUtil.getApplication() == null) {
@@ -124,7 +124,7 @@ public class FastSharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b66968ac", new Object[]{str, str2, new Long(j)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "addStringSharedPreference error: prefsName:" + str + "|key:" + str2);
         } else {
             SharedPreferences.Editor edit = kgo.a(ApplicationUtil.getApplication(), str, 0).edit();
@@ -138,7 +138,7 @@ public class FastSharedPreferencesUtil {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("e425fe0b", new Object[]{str, str2, new Long(j)})).longValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "key is null: " + str + j);
             return j;
         } else if (ApplicationUtil.getApplication() == null) {
@@ -153,7 +153,7 @@ public class FastSharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("b779693a", new Object[]{str, str2, new Integer(i)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "addStringSharedPreference error: prefsName:" + str + "|key:" + str2);
         } else {
             SharedPreferences.Editor edit = kgo.a(ApplicationUtil.getApplication(), str, 0).edit();
@@ -167,7 +167,7 @@ public class FastSharedPreferencesUtil {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("a86efa62", new Object[]{str, str2, new Integer(i)})).intValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "key is null: " + str + i);
             return i;
         } else if (ApplicationUtil.getApplication() == null) {
@@ -182,7 +182,7 @@ public class FastSharedPreferencesUtil {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e54a9fea", new Object[]{str, str2, new Float(f)});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "addStringSharedPreference error: prefsName:" + str + "|key:" + str2);
         } else {
             SharedPreferences.Editor edit = kgo.a(ApplicationUtil.getApplication(), str, 0).edit();
@@ -196,7 +196,7 @@ public class FastSharedPreferencesUtil {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("6f20b7cf", new Object[]{str, str2, new Float(f)})).floatValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TLog.loge(TAG, "key is null: " + str + f);
             return f;
         } else if (ApplicationUtil.getApplication() == null) {

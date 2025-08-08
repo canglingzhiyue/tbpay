@@ -1,6 +1,6 @@
 package com.taobao.taolive.movehighlight.bussiness.highlight.newModel;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.movehighlight.utils.c;
 import com.taobao.taolive.sdk.adapter.network.d;
@@ -29,11 +29,11 @@ public class a extends b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d4572870", new Object[]{this, str, new Integer(i), new Integer(i2), str2, str3, str4});
-        } else if (TextUtils.isEmpty(str) || !TextUtils.isDigitsOnly(str)) {
+        } else if (StringUtils.isEmpty(str) || !StringUtils.isDigitsOnly(str)) {
         } else {
             HighlightRowRequest highlightRowRequest = new HighlightRowRequest();
             highlightRowRequest.setLiveId(l.b(str));
-            if (!TextUtils.isEmpty(str2) && TextUtils.isDigitsOnly(str2)) {
+            if (!StringUtils.isEmpty(str2) && StringUtils.isDigitsOnly(str2)) {
                 highlightRowRequest.setWswgItemId(l.b(str2));
             }
             highlightRowRequest.s = i;

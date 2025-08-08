@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Environment;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -130,7 +130,7 @@ public class d extends oir {
                     com.taobao.tao.handler.worker.d r1 = com.taobao.tao.handler.worker.d.this     // Catch: java.lang.Throwable -> L68
                     com.taobao.tao.sharepanel.normal.view.b r1 = com.taobao.tao.handler.worker.d.a(r1)     // Catch: java.lang.Throwable -> L68
                     if (r1 == 0) goto L4f
-                    boolean r1 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L68
+                    boolean r1 = android.text.StringUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L68
                     if (r1 == 0) goto L25
                     goto L4f
                 L25:
@@ -209,7 +209,7 @@ public class d extends oir {
                     return;
                 }
                 String a2 = com.taobao.tao.sharegift.a.a();
-                if (d.a(d.this) == null || TextUtils.isEmpty(a2)) {
+                if (d.a(d.this) == null || StringUtils.isEmpty(a2)) {
                     d.a(d.this, null, bVar);
                 } else {
                     com.taobao.phenix.intf.b.h().a(com.taobao.tao.config.a.a().getApplicationContext()).a(a2).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.handler.worker.d.2.2
@@ -271,7 +271,7 @@ public class d extends oir {
         }
         com.taobao.tao.sharepanel.normal.view.b bVar2 = this.c;
         if (bVar2 == null || bVar2.f() == null) {
-            if (bVar == null || (!TextUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b()) && !TextUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()))) {
+            if (bVar == null || (!StringUtils.equals(ShareTargetType.Share2QQ.getValue(), bVar.b()) && !StringUtils.equals(ShareTargetType.Share2Weixin.getValue(), bVar.b()))) {
                 z = false;
             }
             new a(this.f32104a, bitmap, z).execute(new Void[0]);
@@ -389,7 +389,7 @@ public class d extends oir {
                 return "";
             }
             String g = obi.b.g();
-            if (!TextUtils.isEmpty(g)) {
+            if (!StringUtils.isEmpty(g)) {
                 this.h = new CountDownLatch(1);
                 com.taobao.phenix.intf.b.h().a(g).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.handler.worker.d.a.2
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -475,7 +475,7 @@ public class d extends oir {
                 return;
             }
             super.onPostExecute(str);
-            boolean z = !TextUtils.isEmpty(str);
+            boolean z = !StringUtils.isEmpty(str);
             Application a2 = com.taobao.tao.config.a.a();
             oup.a(str);
             if (z) {
@@ -488,7 +488,7 @@ public class d extends oir {
                     this.j.a(str);
                 }
                 ouk oukVar = this.e;
-                if (oukVar != null && !TextUtils.isEmpty(oukVar.c())) {
+                if (oukVar != null && !StringUtils.isEmpty(oukVar.c())) {
                     obc.a(a2, obc.TAO_PASSWORD_FROM_PIC_SAVE_KEY, this.e.c());
                     return;
                 } else if (!(ShareBizAdapter.getInstance().getShareEngine().mo1241getCurSharePanel() instanceof com.taobao.tao.sharepanel.weex.a)) {

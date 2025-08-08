@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.os.Process;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.GlobalAppRuntimeInfo;
 import anet.channel.status.NetworkStatusHelper;
 import anet.channel.util.Utils;
@@ -87,7 +87,7 @@ public class dir {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ad023781", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.split("_");
         }
         return null;
@@ -98,7 +98,7 @@ public class dir {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str.startsWith(ado.URL_SEPARATOR)) {
                 str = "http:" + str;
             }
@@ -127,7 +127,7 @@ public class dir {
         try {
             d = Utils.getMainProcessName(b);
             String processName = Utils.getProcessName(b, Process.myPid());
-            if (!TextUtils.isEmpty(d) && !TextUtils.isEmpty(processName)) {
+            if (!StringUtils.isEmpty(d) && !StringUtils.isEmpty(processName)) {
                 return processName.equalsIgnoreCase(d);
             }
             return true;
@@ -146,7 +146,7 @@ public class dir {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("43881515", new Object[0]);
         }
-        if (TextUtils.isEmpty(d)) {
+        if (StringUtils.isEmpty(d)) {
             d = Utils.getMainProcessName(b);
         }
         return d;

@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.android.split.k;
 import com.alibaba.android.split.p;
@@ -187,7 +187,7 @@ public class qte implements gox {
         }
         try {
             String a2 = bhy.a(k.a().b().t());
-            if (!TextUtils.isEmpty(a2) && a2.startsWith("arm64")) {
+            if (!StringUtils.isEmpty(a2) && a2.startsWith("arm64")) {
                 return new File(file, "oat/arm64");
             }
             return new File(file, "oat/arm");

@@ -2,7 +2,7 @@ package tb;
 
 import android.net.http.X509TrustManagerExtensions;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import java.security.KeyStore;
 import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
@@ -64,7 +64,7 @@ public final class rnk implements X509TrustManager {
             X500Principal issuerX500Principal = x509CertificateArr[0].getIssuerX500Principal();
             ArrayList arrayList = new ArrayList(0);
             arrayList.add(".*(GeoTrust|VeriSign|Symantec|GlobalSign|CFCA|Entrust|Thawte|DigiCert).*");
-            if (!TextUtils.isEmpty(this.c)) {
+            if (!StringUtils.isEmpty(this.c)) {
                 arrayList.add(this.c);
             }
             int i = 0;

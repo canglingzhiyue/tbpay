@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponentData;
@@ -183,7 +183,7 @@ public class bru {
         if (ipChange instanceof IpChange) {
             return (auh) ipChange.ipc$dispatch("9b3e00a1", new Object[]{this, aURARenderComponent});
         }
-        if (aURARenderComponent.isValidLayout() && (aURARenderComponentData = aURARenderComponent.data) != null && (aURARenderComponentLayout = aURARenderComponentData.layout) != null && (str = aURARenderComponentLayout.type) != null && !TextUtils.isEmpty(str)) {
+        if (aURARenderComponent.isValidLayout() && (aURARenderComponentData = aURARenderComponent.data) != null && (aURARenderComponentLayout = aURARenderComponentData.layout) != null && (str = aURARenderComponentLayout.type) != null && !StringUtils.isEmpty(str)) {
             return this.f26071a.get(str);
         }
         return null;

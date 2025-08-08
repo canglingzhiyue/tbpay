@@ -2,7 +2,7 @@ package com.taobao.android.tbuprofen.adapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
 import com.taobao.orange.f;
@@ -61,19 +61,19 @@ public class c {
                     String str12 = configs.get(TBProfConfig.CONFIG_CHECK_MUTATOR);
                     String str13 = configs.get(TBProfConfig.CONFIG_WAIT_PREVENT_GC);
                     String str14 = configs.get(TBProfConfig.CONFIG_DUMP_HEAP);
-                    if (!TextUtils.isEmpty(str4)) {
+                    if (!StringUtils.isEmpty(str4)) {
                         str2 = str14;
                         edit.putBoolean(TBProfConfig.CONFIG_IS_TBP_ENABLE, "true".equals(str4));
                     } else {
                         str2 = str14;
                         edit.remove(TBProfConfig.CONFIG_IS_TBP_ENABLE);
                     }
-                    if (!TextUtils.isEmpty(str5)) {
+                    if (!StringUtils.isEmpty(str5)) {
                         edit.putString(TBProfConfig.CONFIG_BLACK_LIST, str5);
                     } else {
                         edit.remove(TBProfConfig.CONFIG_BLACK_LIST);
                     }
-                    if (!TextUtils.isEmpty(str6)) {
+                    if (!StringUtils.isEmpty(str6)) {
                         try {
                             edit.putInt(TBProfConfig.CONFIG_MONITOR_SAMPLE, Integer.parseInt(str6));
                         } catch (Exception e) {
@@ -82,22 +82,22 @@ public class c {
                     } else {
                         edit.remove(TBProfConfig.CONFIG_MONITOR_SAMPLE);
                     }
-                    if (!TextUtils.isEmpty(str7)) {
+                    if (!StringUtils.isEmpty(str7)) {
                         edit.putString(TBProfConfig.CONFIG_PLUGIN_ARGS, str7);
                     } else {
                         edit.remove(TBProfConfig.CONFIG_PLUGIN_ARGS);
                     }
-                    if (!TextUtils.isEmpty(str8)) {
+                    if (!StringUtils.isEmpty(str8)) {
                         edit.putString(TBProfConfig.CONFIG_CAPS_LIST, str8);
                     } else {
                         edit.remove(TBProfConfig.CONFIG_CAPS_LIST);
                     }
-                    if (!TextUtils.isEmpty(str9)) {
+                    if (!StringUtils.isEmpty(str9)) {
                         edit.putString(TBProfConfig.CONFIG_LOG_LEVEL, str9);
                     } else {
                         edit.remove(TBProfConfig.CONFIG_LOG_LEVEL);
                     }
-                    if (!TextUtils.isEmpty(str10)) {
+                    if (!StringUtils.isEmpty(str10)) {
                         try {
                             edit.putInt(TBProfConfig.CONFIG_BIG_MEM_MONITOR_SAMPLE, Integer.parseInt(str10));
                         } catch (Exception e2) {
@@ -106,7 +106,7 @@ public class c {
                     } else {
                         edit.remove(TBProfConfig.CONFIG_BIG_MEM_MONITOR_SAMPLE);
                     }
-                    if (!TextUtils.isEmpty(str11)) {
+                    if (!StringUtils.isEmpty(str11)) {
                         try {
                             edit.putInt(TBProfConfig.CONFIG_MAIN_WAIT_MONITOR_SAMPLE, Integer.parseInt(str11));
                         } catch (Exception e3) {
@@ -115,17 +115,17 @@ public class c {
                     } else {
                         edit.remove(TBProfConfig.CONFIG_MAIN_WAIT_MONITOR_SAMPLE);
                     }
-                    if (!TextUtils.isEmpty(str12)) {
+                    if (!StringUtils.isEmpty(str12)) {
                         edit.putBoolean(TBProfConfig.CONFIG_CHECK_MUTATOR, "true".equals(str12));
                     } else {
                         edit.remove(TBProfConfig.CONFIG_CHECK_MUTATOR);
                     }
-                    if (!TextUtils.isEmpty(str13)) {
+                    if (!StringUtils.isEmpty(str13)) {
                         edit.putBoolean(TBProfConfig.CONFIG_WAIT_PREVENT_GC, "true".equals(str13));
                     } else {
                         edit.remove(TBProfConfig.CONFIG_WAIT_PREVENT_GC);
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         str3 = str2;
                         edit.putString(TBProfConfig.CONFIG_DUMP_HEAP, str3);
                     } else {
@@ -137,7 +137,7 @@ public class c {
                     SharedPreferences a3 = TBProfConfig.a(TBProfConfig.ANR_SP, context);
                     if (a3 != null) {
                         SharedPreferences.Editor edit2 = a3.edit();
-                        if (!TextUtils.isEmpty(str15)) {
+                        if (!StringUtils.isEmpty(str15)) {
                             edit2.putString(TBProfConfig.CONFIG_ANR_PROFILER, str15);
                         } else {
                             edit2.remove(TBProfConfig.CONFIG_ANR_PROFILER);

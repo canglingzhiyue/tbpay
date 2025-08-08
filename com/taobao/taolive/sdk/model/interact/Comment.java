@@ -1,6 +1,6 @@
 package com.taobao.taolive.sdk.model.interact;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.adapter.network.INetDataObject;
 import java.util.ArrayList;
@@ -33,12 +33,12 @@ public class Comment implements INetDataObject {
             return (String) ipChange.ipc$dispatch("42b49275", new Object[]{this, str});
         }
         StringBuilder sb = new StringBuilder("");
-        if (!TextUtils.isEmpty(this.tbNick)) {
+        if (!StringUtils.isEmpty(this.tbNick)) {
             sb.append(this.tbNick);
         } else {
             sb.append(this.publisherNick);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append(riy.BRACKET_START_STR);
             sb.append(this.publisherNick);
             sb.append(riy.BRACKET_END_STR);

@@ -8,7 +8,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -375,7 +375,7 @@ public class RealtimeSpeechView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f4a08e48", new Object[]{this, str, str2});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String charSequence = this.mResultMessageHint.getText().toString();
             if (charSequence.length() > str.length()) {
@@ -509,7 +509,7 @@ public class RealtimeSpeechView extends FrameLayout {
         boolean isAccessTokenValid = isAccessTokenValid();
         if (!isAccessTokenValid) {
             String string = this.mAddressSP.getString("speech_accesstoken", "");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 try {
                     JSONObject jSONObject = new JSONObject(string);
                     this.accessToken = jSONObject.optJSONObject("accessToken").optString("token");
@@ -533,7 +533,7 @@ public class RealtimeSpeechView extends FrameLayout {
                         if (mtopResponse != null && mtopResponse.isApiSuccess()) {
                             try {
                                 String optString = mtopResponse.getDataJsonObject().optString("returnValue");
-                                if (!TextUtils.isEmpty(optString)) {
+                                if (!StringUtils.isEmpty(optString)) {
                                     try {
                                         RealtimeSpeechView.access$500(RealtimeSpeechView.this).edit().putString("speech_accesstoken", optString).apply();
                                         JSONObject jSONObject2 = new JSONObject(optString);
@@ -584,7 +584,7 @@ public class RealtimeSpeechView extends FrameLayout {
 
     private boolean isAccessTokenValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("61e48f5c", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.accessToken) && !TextUtils.isEmpty(this.appKey) && this.accessTokenExpireTime >= System.currentTimeMillis() / 1000;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("61e48f5c", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.accessToken) && !StringUtils.isEmpty(this.appKey) && this.accessTokenExpireTime >= System.currentTimeMillis() / 1000;
     }
 
     /* renamed from: com.taobao.android.address.wrapper.widget.RealtimeSpeechView$8  reason: invalid class name */
@@ -626,7 +626,7 @@ public class RealtimeSpeechView extends FrameLayout {
                                 IpChange ipChange2 = $ipChange;
                                 if (ipChange2 instanceof IpChange) {
                                     ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                                } else if (TextUtils.isEmpty(str)) {
+                                } else if (StringUtils.isEmpty(str)) {
                                     RealtimeSpeechView.access$1100(RealtimeSpeechView.this);
                                     RealtimeSpeechView.this.showErrorTips("未能识别，请点击麦克风重试", "");
                                     RealtimeSpeechView.access$900(RealtimeSpeechView.this, 11);
@@ -667,7 +667,7 @@ public class RealtimeSpeechView extends FrameLayout {
                         IpChange ipChange2 = $ipChange;
                         if (ipChange2 instanceof IpChange) {
                             ipChange2.ipc$dispatch("5c510192", new Object[]{this});
-                        } else if (TextUtils.isEmpty(str)) {
+                        } else if (StringUtils.isEmpty(str)) {
                             RealtimeSpeechView.access$1100(RealtimeSpeechView.this);
                             RealtimeSpeechView.this.showErrorTips("未能识别，请点击麦克风重试", "");
                             RealtimeSpeechView.access$900(RealtimeSpeechView.this, 11);
@@ -834,7 +834,7 @@ public class RealtimeSpeechView extends FrameLayout {
                     L36:
                         r0 = r1
                     L37:
-                        boolean r3 = android.text.TextUtils.isEmpty(r0)
+                        boolean r3 = android.text.StringUtils.isEmpty(r0)
                         if (r3 != 0) goto L56
                         com.taobao.android.address.wrapper.widget.RealtimeSpeechView$8 r3 = com.taobao.android.address.wrapper.widget.RealtimeSpeechView.AnonymousClass8.this
                         com.taobao.android.address.wrapper.widget.RealtimeSpeechView r3 = com.taobao.android.address.wrapper.widget.RealtimeSpeechView.this
@@ -849,7 +849,7 @@ public class RealtimeSpeechView extends FrameLayout {
                         com.taobao.android.address.wrapper.widget.RealtimeSpeechView$8 r2 = com.taobao.android.address.wrapper.widget.RealtimeSpeechView.AnonymousClass8.this
                         com.taobao.android.address.wrapper.widget.RealtimeSpeechView r2 = com.taobao.android.address.wrapper.widget.RealtimeSpeechView.this
                         r2.showResultMessage(r0, r1)
-                        boolean r1 = android.text.TextUtils.isEmpty(r0)
+                        boolean r1 = android.text.StringUtils.isEmpty(r0)
                         if (r1 != 0) goto L8e
                         int r1 = r0.length()
                         r2 = 50
@@ -903,7 +903,7 @@ public class RealtimeSpeechView extends FrameLayout {
         this.speechRecognizerWithRecorder.enableIntermediateResult(true);
         this.speechRecognizerWithRecorder.setFormat("opu");
         this.speechRecognizerWithRecorder.enableVoiceDetection(true);
-        if (TextUtils.isEmpty(this.jsParams)) {
+        if (StringUtils.isEmpty(this.jsParams)) {
             this.speechRecognizerWithRecorder.setMaxEndSilence(0);
         } else {
             try {

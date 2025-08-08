@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -44,7 +44,7 @@ public class str extends fuf {
             return jSONObject;
         }
         String obj = objArr[0].toString();
-        if (TextUtils.isEmpty(obj)) {
+        if (StringUtils.isEmpty(obj)) {
             c.a("DXDataParserPopAnchorFrame", "sectionBizCode is empty");
             return jSONObject;
         }
@@ -62,7 +62,7 @@ public class str extends fuf {
             c.a("DXDataParserPopAnchorFrame", "not found rootView sectionBizCode=" + obj);
             return jSONObject;
         }
-        if (!TextUtils.isEmpty(obj2)) {
+        if (!StringUtils.isEmpty(obj2)) {
             View a3 = b.a(a2, obj2);
             if (a3 != null) {
                 a2 = a3;
@@ -104,7 +104,7 @@ public class str extends fuf {
         if (ipChange instanceof IpChange) {
             return (View) ipChange.ipc$dispatch("cf82d1f5", new Object[]{this, ladVar, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             c.a("DXDataParserPopAnchorFrame", "sectionBizCode is empty");
             return null;
         }

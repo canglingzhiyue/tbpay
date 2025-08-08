@@ -3,7 +3,7 @@ package org.android.agoo.honor;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.hihonor.push.sdk.b;
 import com.hihonor.push.sdk.c;
@@ -47,7 +47,7 @@ public class HonorRegister {
                         }
                         try {
                             ALog.e(HonorRegister.TAG, "honor.getPushToken.onSuccess", "token", str);
-                            if (TextUtils.isEmpty(str)) {
+                            if (StringUtils.isEmpty(str)) {
                                 return;
                             }
                             NotifManager notifManager = new NotifManager();

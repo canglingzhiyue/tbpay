@@ -6,7 +6,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.q;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -92,14 +92,14 @@ public class BaseWVApiPlugin extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, DOWNLOAD_RESOURCE)) {
+        if (StringUtils.equals(str, DOWNLOAD_RESOURCE)) {
             try {
                 downloadResource(this.mContext, d.b(str2), wVCallBackContext);
             } catch (Throwable th) {
                 Log.e(TAG, "failed to invoke the downloadResource..." + th);
             }
             return true;
-        } else if (TextUtils.equals(str, IS_SUPPORT)) {
+        } else if (StringUtils.equals(str, IS_SUPPORT)) {
             try {
                 JSONObject a2 = c.a(false, d.b(str2));
                 r rVar = new r("HY_SUCCESS");
@@ -138,7 +138,7 @@ public class BaseWVApiPlugin extends e {
         if (jSONObject != null) {
             jSONArray = jSONObject.getJSONArray(RESOURCE_LIST_KEY);
         }
-        if (TextUtils.isEmpty(string) || d.a(jSONArray)) {
+        if (StringUtils.isEmpty(string) || d.a(jSONArray)) {
             r rVar = new r("HY_FAILED");
             rVar.a("resultCode", ResultCode.FAILURE_INVALIDATE_PARAM.name());
             invokeWVCallbackSafety(false, rVar, wVCallBackContext);
@@ -223,7 +223,7 @@ public class BaseWVApiPlugin extends e {
                             this.c.error(this.b);
                         }
                     }
-                    if (this.f == null || TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e)) {
+                    if (this.f == null || StringUtils.isEmpty(this.d) || StringUtils.isEmpty(this.e)) {
                         return;
                     }
                     WVCallBackContext.fireEvent(this.f, this.d, this.e);

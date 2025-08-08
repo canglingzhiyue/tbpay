@@ -1,6 +1,6 @@
 package com.taobao.login4android.session.cookies;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.CookieManager;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.log.LoginTLogAdapter;
@@ -217,7 +217,7 @@ public class LoginCookieUtils {
             return (String) ipChange.ipc$dispatch("2e2aaef5", new Object[]{loginCookie, new Boolean(z)});
         }
         String str = loginCookie.domain;
-        if (!TextUtils.isEmpty(str) && str.startsWith(".")) {
+        if (!StringUtils.isEmpty(str) && str.startsWith(".")) {
             str = str.substring(1);
         }
         return k.HTTPS_PREFIX + str;
@@ -229,14 +229,14 @@ public class LoginCookieUtils {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("a4afea14", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {
             CookieManager cookieManager = CookieManager.getInstance();
             cookieManager.setAcceptCookie(true);
             String cookie = cookieManager.getCookie("https://.taobao.com");
-            if (!TextUtils.isEmpty(cookie)) {
+            if (!StringUtils.isEmpty(cookie)) {
                 for (String str2 : cookie.split(";")) {
                     String[] split2 = str2.split("=");
                     if (split2.length >= 2 && str.equals(split2[0].trim())) {

@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -84,7 +84,7 @@ public class DMEvent implements com.taobao.android.ultron.common.model.b, Serial
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6fac4fa5", new Object[]{this, str, obj});
-        } else if (this.mFields == null || TextUtils.isEmpty(str) || obj == null) {
+        } else if (this.mFields == null || StringUtils.isEmpty(str) || obj == null) {
         } else {
             this.mFields.put(str, obj);
         }

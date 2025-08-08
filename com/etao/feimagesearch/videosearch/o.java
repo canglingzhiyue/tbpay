@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.etao.feimagesearch.model.IrpParamModel;
@@ -218,7 +218,7 @@ public class o {
         HashMap hashMap = new HashMap(w.a(str2, null));
         hashMap.put("pssource", str2);
         hashMap.put(PicParamUtils.b(), PicParamUtils.CameraMode.unknown.name());
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put(com.etao.feimagesearch.util.o.KEY_IMG, a2);
         }
         hashMap.put(com.etao.feimagesearch.util.h.KEY_VIDEO_ID, String.valueOf(this.c));
@@ -313,13 +313,13 @@ public class o {
         int maxSize = IrpParamModel.getMaxSize(Globals.getApplication());
         Uri parse = Uri.parse(str);
         String scheme = parse.getScheme();
-        if (str.startsWith("/") || TextUtils.isEmpty(scheme)) {
+        if (str.startsWith("/") || StringUtils.isEmpty(scheme)) {
             return cui.a(BitmapFactory.decodeFile(str), 0, 1, 1, maxSize);
         }
-        if (TextUtils.equals(scheme, "file")) {
+        if (StringUtils.equals(scheme, "file")) {
             return cui.a(cui.a(Globals.getApplication(), parse, maxSize), 0, 1, 1, maxSize);
         }
-        if (!TextUtils.equals(scheme, "content")) {
+        if (!StringUtils.equals(scheme, "content")) {
             return null;
         }
         return cui.a(cui.a(Globals.getApplication(), parse, maxSize), 0, 1, 1, maxSize);

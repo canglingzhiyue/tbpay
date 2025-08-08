@@ -1,7 +1,7 @@
 package com.alibaba.openid.device;
 
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.DeviceProperty;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -25,7 +25,7 @@ public class a {
         }
         String str = Build.BRAND;
         bzk.a("Device", "Brand", str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (eyr.e()) {

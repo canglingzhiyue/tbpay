@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.template.b;
 import com.alibaba.android.ultron.vfw.template.c;
 import com.alibaba.android.ultron.vfw.template.f;
@@ -286,7 +286,7 @@ public final class aaf {
                     INSTANCE.a(cartPresenter, iDMComponent, true);
                 } else if (a2 > 0) {
                     String templateName = iDMComponent.getContainerInfo() != null ? iDMComponent.getContainerInfo().getString("name") : "";
-                    if (!TextUtils.isEmpty(templateName)) {
+                    if (!StringUtils.isEmpty(templateName)) {
                         INSTANCE.a(cartPresenter, iDMComponent, hashMap.get(templateName) == null);
                         q.b(templateName, "templateName");
                         hashMap.put(templateName, true);

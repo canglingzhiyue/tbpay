@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
 import com.taobao.taolive.sdk.controller.k;
@@ -73,7 +73,7 @@ public class pqh {
         } else {
             str5 = " newPMID = ";
             poy.e(k.a(tBLiveDataModel.mVideoInfo), aVar);
-            this.c = new c(1, str2, str4, str3, z2, z, tBLiveDataModel.mVideoInfo.forceCommentsUseCdn, false, "1".equals(tBLiveDataModel.mVideoInfo.roomStatus), z4, !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchMSGCdnUrl) || (tBLiveDataModel.mVideoInfo.fetchItemUseCdn && u.r() && !TextUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchItemUseCdnUrl)), aVar2);
+            this.c = new c(1, str2, str4, str3, z2, z, tBLiveDataModel.mVideoInfo.forceCommentsUseCdn, false, "1".equals(tBLiveDataModel.mVideoInfo.roomStatus), z4, !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchMSGCdnUrl) || (tBLiveDataModel.mVideoInfo.fetchItemUseCdn && u.r() && !StringUtils.isEmpty(tBLiveDataModel.mVideoInfo.fetchItemUseCdnUrl)), aVar2);
             pqi.a().a("Page_TaobaoLiveWatch", "LiveRoomInit", pqi.a().b());
         }
         if (u.aP() && tBLiveDataModel.mVideoInfo.isOfficialType()) {

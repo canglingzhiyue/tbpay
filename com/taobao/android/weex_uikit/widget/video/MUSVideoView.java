@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
@@ -84,7 +84,7 @@ public class MUSVideoView extends ViewGroup {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c7c374c9", new Object[]{this, mUSDKInstance, str, str2, new Integer(i), new Integer(i2), rect});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             releasePoster(mUSDKInstance);
         } else {
             this.posterDrawable = new UIImageDrawable();
@@ -163,7 +163,7 @@ public class MUSVideoView extends ViewGroup {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("8b0c3ee9", new Object[]{this, uINode, str, jSONObject});
-        } else if (uINode.getInstance() == null || uINode.getInstance().isDestroyed() || TextUtils.isEmpty(str)) {
+        } else if (uINode.getInstance() == null || uINode.getInstance().isDestroyed() || StringUtils.isEmpty(str)) {
         } else {
             uINode.getInstance().fireEventOnNode(uINode.getNodeId(), str, jSONObject);
         }

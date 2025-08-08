@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1079,6 +1079,6 @@ public class PlayerController2 implements Handler.Callback, SeekBar.OnSeekBarCha
         if (aVar == null || aVar.h == null) {
             return;
         }
-        this.mControllerHolder.h.setText(TextUtils.isEmpty(this.defaultPlayRateViewText) ? "倍速" : this.defaultPlayRateViewText);
+        this.mControllerHolder.h.setText(StringUtils.isEmpty(this.defaultPlayRateViewText) ? "倍速" : this.defaultPlayRateViewText);
     }
 }

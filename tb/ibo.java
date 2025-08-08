@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.android.ultron.vfw.weex2.UltronWeex2DataPrefetchCache;
 import com.alibaba.android.ultron.vfw.weex2.e;
@@ -110,7 +110,7 @@ public class ibo {
                     } else {
                         String string = jSONObject.getString("orderId");
                         String string2 = jSONObject.getString("orderLineId");
-                        if (TextUtils.isEmpty(string) || TextUtils.isEmpty(string2)) {
+                        if (StringUtils.isEmpty(string) || StringUtils.isEmpty(string2)) {
                             jqg.b("OrderWeex2PrefetchDataManager.prefetch", "component mainOrderId OR subOrderId is empty");
                         } else if (!a(string)) {
                             jqg.b("OrderWeex2PrefetchDataManager.prefetch", "component mainOrderId is not in allowOrderIds");
@@ -162,7 +162,7 @@ public class ibo {
         List<Pair<String, Long>> list = this.b.get(str);
         if (list != null && !list.isEmpty()) {
             for (Pair<String, Long> pair : list) {
-                if (TextUtils.equals(str2, (CharSequence) pair.first) && j - ((Long) pair.second).longValue() < ibl.o()) {
+                if (StringUtils.equals(str2, (CharSequence) pair.first) && j - ((Long) pair.second).longValue() < ibl.o()) {
                     return true;
                 }
             }
@@ -197,7 +197,7 @@ public class ibo {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return this.f28897a.contains(str);
         }
         return false;

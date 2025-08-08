@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 
@@ -47,7 +47,7 @@ public class b {
         if (aVar != null) {
             str = com.taobao.flowcustoms.afc.a.b;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         Uri parse = Uri.parse(str2);
@@ -55,7 +55,7 @@ public class b {
         intent.setData(parse);
         intent.setFlags(268435456);
         intent.setFlags(131072);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             intent.setPackage(str);
         }
         return intent;

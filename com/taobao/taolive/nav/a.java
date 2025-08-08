@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Trace;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -120,7 +120,7 @@ public class a implements e {
         }
         if (intent.getData() != null) {
             String uri = intent.getData().toString();
-            if (TextUtils.isEmpty(uri) || !uri.contains("h5.m.taobao.com/taolive/video.html")) {
+            if (StringUtils.isEmpty(uri) || !uri.contains("h5.m.taobao.com/taolive/video.html")) {
                 return true;
             }
             Trace.beginSection("TLiveFFTrace - preplay");
@@ -186,7 +186,7 @@ public class a implements e {
         } else if (!"detailLive".equals(queryParameter)) {
         } else {
             String queryParameter5 = data.getQueryParameter("id");
-            if (TextUtils.isEmpty(queryParameter5) || (d = tnn.a().d(queryParameter5)) == null || (mediaData = d.b) == null || intent.getExtras() == null || !(dVar.a() instanceof Activity)) {
+            if (StringUtils.isEmpty(queryParameter5) || (d = tnn.a().d(queryParameter5)) == null || (mediaData = d.b) == null || intent.getExtras() == null || !(dVar.a() instanceof Activity)) {
                 return;
             }
             Activity activity = (Activity) dVar.a();
@@ -205,7 +205,7 @@ public class a implements e {
         } else if (!a() || dVar == null || !(dVar.a() instanceof Activity) || intent == null || intent.getData() == null) {
         } else {
             Uri data = intent.getData();
-            if (!TextUtils.isEmpty(data.getQueryParameter(aw.PARAM_PLAY_VIEW_TOKEN))) {
+            if (!StringUtils.isEmpty(data.getQueryParameter(aw.PARAM_PLAY_VIEW_TOKEN))) {
                 return;
             }
             Window window = ((Activity) dVar.a()).getWindow();
@@ -225,7 +225,7 @@ public class a implements e {
             Trace.beginSection("TLiveFFTrace -- call player pre");
             f a3 = a(dVar, a2, data, (ViewGroup) decorView);
             Trace.endSection();
-            if (a3 == null || TextUtils.isEmpty(a3.L())) {
+            if (a3 == null || StringUtils.isEmpty(a3.L())) {
                 return;
             }
             Uri.Builder buildUpon = data.buildUpon();
@@ -334,7 +334,7 @@ public class a implements e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return "homepage".equals(str) || "follow".equals(str) || str.contains("homepage.") || str.contains("follow.");
@@ -388,7 +388,7 @@ public class a implements e {
         } else {
             Uri data = intent.getData();
             String queryParameter = data.getQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY);
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 parse = data.buildUpon().appendQueryParameter(com.taobao.android.detail.ttdetail.utils.e.LARGE_SCREEN_STYLE_KEY, "fullscreen").build();
             } else {
                 String uri = data.toString();
@@ -405,19 +405,19 @@ public class a implements e {
         } else if (!com.taobao.taolive.sdk.utils.u.aG()) {
         } else {
             Uri data = intent.getData();
-            if (data.getQueryParameterNames().contains("isSmallWindowBack") && TextUtils.equals("1", data.getQueryParameter("isSmallWindowBack"))) {
+            if (data.getQueryParameterNames().contains("isSmallWindowBack") && StringUtils.equals("1", data.getQueryParameter("isSmallWindowBack"))) {
                 ab.d("LiveRoomProcessor", "hit smallWindow and return");
             } else if (data.getQueryParameterNames().contains(aw.PARAM_PLAY_VIEW_TOKEN)) {
                 ab.d("LiveRoomProcessor", "hit playViewToken");
             } else if (data.getQueryParameterNames().contains(aw.PARAM_CUSTOM_PLAY_CTRL)) {
                 ab.d("LiveRoomProcessor", "hit customPlayCtrlParams");
-            } else if (!TextUtils.equals("detailLive", data.getQueryParameter("livesource"))) {
+            } else if (!StringUtils.equals("detailLive", data.getQueryParameter("livesource"))) {
                 ab.d("LiveRoomProcessor", "livesource is not detailLive");
             } else {
                 String queryParameter = data.getQueryParameter("id");
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     ab.d("LiveRoomProcessor", "liveId is null");
-                } else if (!TextUtils.isEmpty(poy.ao(n.a())) && TextUtils.equals(queryParameter, poy.ao(n.a()))) {
+                } else if (!StringUtils.isEmpty(poy.ao(n.a())) && StringUtils.equals(queryParameter, poy.ao(n.a()))) {
                     ab.d("LiveRoomProcessor", "liveId hit the same room");
                 } else {
                     com.taobao.taolive.room.pre.a.a().a(intent, u.a(intent));

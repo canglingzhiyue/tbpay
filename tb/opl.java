@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.recommend3.gateway.prefetch.tschedule.TSRecmdReqPrefetch;
@@ -24,7 +24,7 @@ public class opl implements a {
             return;
         }
         String b = b(str);
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             lap.a("recmdPrefetch", "OrderListRecmdPrefetch", "tab为空，无法识别是什么场景");
             return;
         }

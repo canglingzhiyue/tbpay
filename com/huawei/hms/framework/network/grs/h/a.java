@@ -3,7 +3,7 @@ package com.huawei.hms.framework.network.grs.h;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.framework.common.ContextHolder;
 import com.huawei.hms.framework.common.Logger;
 import java.util.Locale;
@@ -45,7 +45,7 @@ public class a {
         objArr[2] = str3;
         objArr[3] = str4;
         objArr[4] = a();
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "no_service_name";
         }
         objArr[5] = str2;

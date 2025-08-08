@@ -1,7 +1,7 @@
 package tb;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.q;
 import com.taobao.search.common.util.r;
@@ -65,7 +65,7 @@ public class npu {
             return false;
         }
         q.i("SearchFileCacheUtil", "save file " + str);
-        if (!TextUtils.isEmpty(str) && str2 != null) {
+        if (!StringUtils.isEmpty(str) && str2 != null) {
             a();
             if (!f31635a) {
                 q.e("SearchFileCacheUtil", "search file cache is not inited!");
@@ -100,7 +100,7 @@ public class npu {
             return "";
         }
         q.i("SearchFileCacheUtil", "load file " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         a();
@@ -133,7 +133,7 @@ public class npu {
                 q.a("SearchFileCacheUtil", "load file error:" + str, th);
                 str2 = null;
             }
-            return TextUtils.isEmpty(str2) ? "" : str2;
+            return StringUtils.isEmpty(str2) ? "" : str2;
         }
     }
 
@@ -147,7 +147,7 @@ public class npu {
             return false;
         }
         q.i("SearchFileCacheUtil", "delete file " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         a();
@@ -168,7 +168,7 @@ public class npu {
         if (ipChange instanceof IpChange) {
             return (File) ipChange.ipc$dispatch("aae8cad9", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         File c = c();

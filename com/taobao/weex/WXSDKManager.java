@@ -1,7 +1,7 @@
 package com.taobao.weex;
 
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.weex.adapter.ClassLoaderAdapter;
 import com.taobao.weex.adapter.DefaultUriAdapter;
@@ -358,7 +358,7 @@ public class WXSDKManager implements com.taobao.weex.remote.a<IWXBridgeManager> 
         if (ipChange instanceof IpChange) {
             return (WXSDKInstance) ipChange.ipc$dispatch("24a7b6e8", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         WXSDKInstance wXSDKInstance = this.mWXRenderManager.getWXSDKInstance(str);
@@ -537,7 +537,7 @@ public class WXSDKManager implements com.taobao.weex.remote.a<IWXBridgeManager> 
             return;
         }
         setCrashInfo(WXEnvironment.WEEX_CURRENT_KEY, "");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         if (!WXUtils.isUiThread()) {

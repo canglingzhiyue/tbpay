@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.phone.iifaa.did.api.DIDResult;
 import com.alipay.android.phone.iifaa.did.common.DigitalEnvelopeModel;
@@ -30,7 +30,7 @@ public class irh extends iqz {
                 return new DIDResult(DIDResult.a.WRONG_PARAMS);
             }
             String a2 = ifh.a("SM2_SM4_CBC_PKCS5", digitalEnvelopeModel, str);
-            return TextUtils.isEmpty(a2) ? new DIDResult(DIDResult.a.FAILED_OPT_CRYPTO) : new DIDResult(DIDResult.a.SUCCESS).setData(a2);
+            return StringUtils.isEmpty(a2) ? new DIDResult(DIDResult.a.FAILED_OPT_CRYPTO) : new DIDResult(DIDResult.a.SUCCESS).setData(a2);
         } catch (Exception e) {
             e.printStackTrace();
             return new DIDResult(DIDResult.a.FAILED_EXCP);

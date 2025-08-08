@@ -7,7 +7,7 @@ import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.OnLifecycleEvent;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.OnScreenChangedListener;
 import com.taobao.android.autosize.f;
@@ -247,7 +247,7 @@ public class ScreenType implements LifecycleObserver, OnScreenChangedListener {
             return;
         }
         String b = b();
-        if (TextUtils.isEmpty(b)) {
+        if (StringUtils.isEmpty(b)) {
             return;
         }
         map.put(com.etao.feimagesearch.p.KEY_DEVICE_TYPE, b);

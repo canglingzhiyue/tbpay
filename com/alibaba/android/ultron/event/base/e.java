@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.event.base;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -122,7 +122,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6635bcfe", new Object[]{this, str, jSONObject});
-        } else if (TextUtils.isEmpty(str) || jSONObject == null) {
+        } else if (StringUtils.isEmpty(str) || jSONObject == null) {
         } else {
             a.a(this.i).put(str, jSONObject);
         }
@@ -133,7 +133,7 @@ public class e {
         if (ipChange instanceof IpChange) {
             return (JSONObject) ipChange.ipc$dispatch("c68059d4", new Object[]{this, str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return (JSONObject) a.a(this.i).get(str);
         }
         return null;
@@ -143,7 +143,7 @@ public class e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c1453b77", new Object[]{this, str, mtopResponse});
-        } else if (TextUtils.isEmpty(str) || mtopResponse == null) {
+        } else if (StringUtils.isEmpty(str) || mtopResponse == null) {
         } else {
             a.b(this.i).put(str, mtopResponse);
         }

@@ -1,6 +1,6 @@
 package com.alipay.android.msp.network.decorator;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
@@ -68,7 +68,7 @@ public class BytesEncryptDecorator extends BaseDecorator {
         } catch (Exception unused) {
             this.c.isSupportGzip(false);
         }
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return jSONObject;
         }
         byte[] decrypt = TriDesCBC.decrypt(this.c.getTridesKey(), Base64.decode(string, 2));

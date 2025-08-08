@@ -1,6 +1,6 @@
 package com.taobao.android.detail.datasdk.model.datamodel.node;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
@@ -63,7 +63,7 @@ public class YxgDataNode extends DetailNode {
         this.fisrtLaunchKey = epw.a(jSONObject.getString("fisrtLaunchKey"));
         this.barBgIcon = epw.a(jSONObject.getString("barBgIcon"));
         this.crownIcon = epw.a(jSONObject.getString("crownIcon"));
-        this.fisrtLaunchKey = TextUtils.isEmpty(this.fisrtLaunchKey) ? "detail_fisrtLaunchKey" : "detail_" + this.fisrtLaunchKey.replace(" ", "");
+        this.fisrtLaunchKey = StringUtils.isEmpty(this.fisrtLaunchKey) ? "detail_fisrtLaunchKey" : "detail_" + this.fisrtLaunchKey.replace(" ", "");
         this.yxgParams = new HashMap();
         JSONObject jSONObject2 = jSONObject.getJSONObject("yxgParams");
         if (jSONObject2 != null && jSONObject2.keySet().size() > 0) {

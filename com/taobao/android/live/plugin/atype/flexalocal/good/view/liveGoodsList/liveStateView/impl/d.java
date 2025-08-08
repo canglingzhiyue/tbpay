@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.liveGoodsList.liveStateView.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.live.plugin.atype.flexalocal.good.business.ItemlistV2ResponseData;
@@ -107,7 +107,7 @@ public class d extends b {
             his.a("ListAllPresenter", "enableGoodsTopInteractBanner false return");
         } else if (!"全部".equals(this.e) || !"0".equals(this.f) || this.d == null || (e = this.d.e()) == null) {
         } else {
-            if (TextUtils.equals(e.visible, "show")) {
+            if (StringUtils.equals(e.visible, "show")) {
                 a(e);
             } else {
                 j();
@@ -144,7 +144,7 @@ public class d extends b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("a8219760", new Object[]{this, new Long(j)})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.j) || !com.taobao.taolive.sdk.goodlist.d.c()) {
+        if (StringUtils.isEmpty(this.j) || !com.taobao.taolive.sdk.goodlist.d.c()) {
             if (j <= 0) {
                 return false;
             }

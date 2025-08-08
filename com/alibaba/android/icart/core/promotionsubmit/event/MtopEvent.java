@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.promotionsubmit.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.android.icart.core.promotionsubmit.event.BaseEvent;
 import com.alibaba.android.icart.core.widget.d;
@@ -126,7 +126,7 @@ public class MtopEvent extends BaseEvent {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("dbc3761d", new Object[]{this, str});
-        } else if (!TextUtils.isEmpty(str) && (list = this.successEvents) != null) {
+        } else if (!StringUtils.isEmpty(str) && (list = this.successEvents) != null) {
             for (bdz.a aVar : list) {
                 if (aVar != null && str.equals(aVar.f25829a)) {
                     this.successEvents.remove(aVar);

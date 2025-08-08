@@ -1,6 +1,6 @@
 package com.taobao.analysis.flow;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OrangeConfig;
@@ -51,7 +51,7 @@ public class a {
                 b();
                 this.g = false;
             }
-            String b2 = (TextUtils.isEmpty(str3) || str3.length() <= 128) ? str3 : dir.b(str3);
+            String b2 = (StringUtils.isEmpty(str3) || str3.length() <= 128) ? str3 : dir.b(str3);
             if (this.f8542a.size() <= d) {
                 boolean z2 = dir.c;
                 this.f8542a.add(new d(str, str2, b2, z, dir.f26790a, j, j2));

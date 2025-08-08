@@ -1,6 +1,6 @@
 package com.taobao.update;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.application.common.a;
@@ -120,7 +120,7 @@ public class f {
         bVar.popDialogBeforeInstall = true;
         bVar.threadExecutorImpl = new rgh();
         bVar.logImpl = new rgi();
-        bVar.autoStart = !TextUtils.equals(map.get("bootstrapMode"), "1");
+        bVar.autoStart = !StringUtils.equals(map.get("bootstrapMode"), "1");
         return bVar;
     }
 

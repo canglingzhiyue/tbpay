@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.module;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -77,7 +77,7 @@ public class TrackerModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("39ff0c74", new Object[]{cVar, new Boolean(z), jSONObject, new Boolean(z2)});
-        } else if (TextUtils.isEmpty(any.d().c())) {
+        } else if (StringUtils.isEmpty(any.d().c())) {
         } else {
             final JSONObject jSONObject2 = null;
             if (jSONObject != null && jSONObject.containsKey("args")) {
@@ -86,7 +86,7 @@ public class TrackerModule {
             if (z2 && (jSONObject2 == null || !jSONObject2.containsKey("entryUtparam") || !jSONObject2.containsKey("entryUtparamPre"))) {
                 String e = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().e(getUTObjectWithContext(cVar));
                 String f = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().f(getUTObjectWithContext(cVar));
-                if (!TextUtils.isEmpty(e) || !TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(e) || !StringUtils.isEmpty(f)) {
                     if (jSONObject2 == null) {
                         jSONObject2 = new JSONObject();
                     }
@@ -318,7 +318,7 @@ public class TrackerModule {
             String string = jSONObject.getString("pageName");
             Object uTObjectWithContext = getUTObjectWithContext(cVar);
             u k = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 k.a(uTObjectWithContext, (String) null);
             } else {
                 k.b(uTObjectWithContext, string);
@@ -347,7 +347,7 @@ public class TrackerModule {
             String string = jSONObject.getString("pageName");
             Object uTObjectWithContext = getUTObjectWithContext(cVar);
             u k = com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k();
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 k.b(uTObjectWithContext, string);
             }
             k.a(uTObjectWithContext);

@@ -14,7 +14,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -444,7 +444,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("73899297", new Object[]{this, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             if (this.mLeftPrefTitleView == null) {
                 this.mLeftPrefTitleView = new DetailIconFontTextView(getContext());
@@ -463,12 +463,12 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("75683a49", new Object[]{this, charSequence, new Integer(i)});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             if (this.mLeftTitleView == null) {
                 this.mLeftTitleView = new TextView(getContext());
                 this.mLeftTitleView.setSingleLine();
-                this.mLeftTitleView.setEllipsize(TextUtils.TruncateAt.END);
+                this.mLeftTitleView.setEllipsize(StringUtils.TruncateAt.END);
                 this.mLeftTitleView.setTextSize(1, i);
                 this.mLeftTitleView.setTextColor(this.mTextColor);
                 this.mLeftTitleView.getPaint().setFakeBoldText(true);
@@ -489,7 +489,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
             ipChange.ipc$dispatch("1407cec", new Object[]{this, str});
         } else if (this.mType == 4) {
             this.double11TextIconUrl = str;
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             int i = 19;
             if (this.couponType == 15) {
@@ -533,7 +533,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
                 TextView textView2 = new TextView(getContext());
                 textView2.setTextSize(1, 10.0f);
                 textView2.setSingleLine();
-                textView2.setEllipsize(TextUtils.TruncateAt.END);
+                textView2.setEllipsize(StringUtils.TruncateAt.END);
                 textView2.setTextColor(this.mTextColor);
                 textView2.setLayoutParams(marginLayoutParams);
                 float f = this.mDensity;
@@ -587,7 +587,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("95e7192b", new Object[]{this, charSequence, new Boolean(z)});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             if (this.mType == 4) {
                 setRightText12(charSequence, z);
@@ -597,7 +597,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
                 this.mRightTitleView = new DetailIconFontTextView(getContext());
                 this.mRightTitleView.setGravity(17);
                 this.mRightTitleView.setMaxLines(2);
-                this.mRightTitleView.setEllipsize(TextUtils.TruncateAt.END);
+                this.mRightTitleView.setEllipsize(StringUtils.TruncateAt.END);
                 if (z) {
                     TextView textView = this.mRightTitleView;
                     int i = this.applyTextColor;
@@ -686,7 +686,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
                 this.mRightSubTitleView = new TextView(getContext());
                 this.mRightSubTitleView.setGravity(17);
                 this.mRightSubTitleView.setSingleLine();
-                this.mRightSubTitleView.setEllipsize(TextUtils.TruncateAt.END);
+                this.mRightSubTitleView.setEllipsize(StringUtils.TruncateAt.END);
                 if (z) {
                     TextView textView = this.mRightSubTitleView;
                     int i = this.countTextColor;
@@ -718,13 +718,13 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("4ddbf525", new Object[]{this, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             this.hasBottom = true;
             if (this.mBottomTextView == null) {
                 this.mBottomTextView = new TextView(getContext());
                 this.mBottomTextView.setSingleLine();
-                this.mBottomTextView.setEllipsize(TextUtils.TruncateAt.END);
+                this.mBottomTextView.setEllipsize(StringUtils.TruncateAt.END);
                 this.mBottomTextView.setTextColor(this.mBottomTextColor);
                 this.mBottomTextView.setTextSize(1, 12.0f);
                 ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-1, -2);
@@ -743,14 +743,14 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("acd52e6a", new Object[]{this, charSequence});
-        } else if (TextUtils.isEmpty(charSequence)) {
+        } else if (StringUtils.isEmpty(charSequence)) {
         } else {
             this.hasBottom = true;
             if (this.mBottomButton == null) {
                 this.mBottomButton = new DetailIconFontTextView(getContext());
                 this.mBottomButton.setGravity(5);
                 this.mBottomButton.setSingleLine();
-                this.mBottomButton.setEllipsize(TextUtils.TruncateAt.END);
+                this.mBottomButton.setEllipsize(StringUtils.TruncateAt.END);
                 this.mBottomButton.setTextColor(this.mBottomTextColor);
                 this.mBottomButton.setTextSize(1, 12.0f);
                 ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-2, -2);
@@ -829,7 +829,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("48d6a981", new Object[]{this, charSequence, new Boolean(z)});
-        } else if (TextUtils.isEmpty(charSequence) || (split = charSequence.toString().split("\n")) == null || split.length < 0) {
+        } else if (StringUtils.isEmpty(charSequence) || (split = charSequence.toString().split("\n")) == null || split.length < 0) {
         } else {
             this.rightText1 = "";
             this.rightText2 = "";
@@ -992,15 +992,15 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
             int b7 = epo.b(3);
             int b8 = epo.b(14);
             TextView textView3 = this.rightFirstTextView;
-            if (textView3 != null && TextUtils.isEmpty(textView3.getText())) {
+            if (textView3 != null && StringUtils.isEmpty(textView3.getText())) {
                 b5 = 0;
             }
             TextView textView4 = this.rightSecondTextView;
-            if (textView4 != null && TextUtils.isEmpty(textView4.getText())) {
+            if (textView4 != null && StringUtils.isEmpty(textView4.getText())) {
                 b6 = 0;
             }
             TextView textView5 = this.rightThirdTextView;
-            if (textView5 != null && TextUtils.isEmpty(textView5.getText())) {
+            if (textView5 != null && StringUtils.isEmpty(textView5.getText())) {
                 b7 = 0;
                 b8 = 0;
             }
@@ -1636,7 +1636,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
                 });
             }
         }
-        if (this.mWatermark != null || TextUtils.isEmpty(this.mWatermarkUrl)) {
+        if (this.mWatermark != null || StringUtils.isEmpty(this.mWatermarkUrl)) {
             return;
         }
         new AsyncTask<Object, Object, Object>() { // from class: com.taobao.android.detail.core.detail.widget.coupon.TMTicket.5
@@ -1848,7 +1848,7 @@ public class TMTicket extends ViewGroup implements View.OnClickListener {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("dce677e7", new Object[]{this, str, bVar});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
                 new AsyncTask<Object, Object, Object>() { // from class: com.taobao.android.detail.core.detail.widget.coupon.TMTicket.a.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;

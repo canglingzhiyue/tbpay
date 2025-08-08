@@ -1,7 +1,7 @@
 package com.taobao.android.detail.wrapper.ext.request.redpacket;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -63,7 +63,7 @@ public class OpenRedPacketClient extends MtopRequestClient<OpenRedPacketParams, 
         if (ipChange instanceof IpChange) {
             return (a) ipChange.ipc$dispatch("9311e2c8", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null || (jSONObject2 = jSONObject.getJSONObject("data")) == null) {
+        if (StringUtils.isEmpty(str) || (parseObject = JSON.parseObject(str)) == null || (jSONObject = parseObject.getJSONObject("data")) == null || (jSONObject2 = jSONObject.getJSONObject("data")) == null) {
             return null;
         }
         String string = jSONObject2.getString("message");

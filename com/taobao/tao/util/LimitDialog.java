@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -158,7 +158,7 @@ public class LimitDialog extends FrameLayout {
                 this.m11RefreshView.setBackground(gradientDrawable);
             }
             this.m11RefreshView.setTextColor(getResources().getColor(R.color.C_white));
-            if (!TextUtils.isEmpty(sFestivalTip2)) {
+            if (!StringUtils.isEmpty(sFestivalTip2)) {
                 this.m11Tip2View.setText(sFestivalTip2);
             } else {
                 this.m11Tip2View.setText(R.string.limit_11_tips2);
@@ -320,23 +320,23 @@ public class LimitDialog extends FrameLayout {
         this.m11RefreshView = (TextView) findViewById(R.id.limit_11_refresh_view);
         this.m11ProgressBar = (ProgressBar) findViewById(R.id.limit_11_progressbar);
         this.mStatus = 3;
-        if (!TextUtils.isEmpty(sFestivalIconUrl)) {
+        if (!StringUtils.isEmpty(sFestivalIconUrl)) {
             this.m11IconView.setImageUrl(sFestivalIconUrl);
             this.m11IconView.setErrorImageResId(R.drawable.limit_icon_default);
         } else {
             this.m11IconView.setBackgroundDrawable(ContextCompat.getDrawable(this.mContext, R.drawable.limit_icon_default));
         }
-        if (!TextUtils.isEmpty(sFestivalTip1)) {
+        if (!StringUtils.isEmpty(sFestivalTip1)) {
             this.m11Tip1View.setText(sFestivalTip1);
         } else {
             this.m11Tip1View.setText(getResources().getText(R.string.limit_11_tips1));
         }
-        if (!TextUtils.isEmpty(sFestivalTip2)) {
+        if (!StringUtils.isEmpty(sFestivalTip2)) {
             this.m11Tip2View.setText(sFestivalTip2);
         } else {
             this.m11Tip2View.setText(getResources().getText(R.string.limit_11_tips2));
         }
-        if (!TextUtils.isEmpty(sFestivalRefresh)) {
+        if (!StringUtils.isEmpty(sFestivalRefresh)) {
             this.m11RefreshView.setText(sFestivalRefresh);
         } else {
             this.m11RefreshView.setText(getResources().getText(R.string.limit_11_refresh_operation));
@@ -386,7 +386,7 @@ public class LimitDialog extends FrameLayout {
         } else {
             this.m11RefreshView.setBackground(drawable);
         }
-        if (!TextUtils.isEmpty(sFestivalTip3)) {
+        if (!StringUtils.isEmpty(sFestivalTip3)) {
             this.m11Tip2View.setText(sFestivalTip3);
         } else {
             this.m11Tip2View.setText(R.string.limit_11_refreshing_tip);

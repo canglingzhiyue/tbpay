@@ -1,6 +1,6 @@
 package com.taobao.android.tracker.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ut.mini.UTAnalytics;
 import com.ut.mini.UTHitBuilders;
@@ -53,7 +53,7 @@ public class h {
 
     private static String a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : TextUtils.isEmpty(str) ? l.getInstance().getCurrentPageName() : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str}) : StringUtils.isEmpty(str) ? l.getInstance().getCurrentPageName() : str;
     }
 
     public static void a(jjk jjkVar) {

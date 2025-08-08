@@ -7,7 +7,7 @@ import android.os.Looper;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSmoothScroller;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -646,7 +646,7 @@ public class SliderComponent extends Component<ViewGroup, a> implements com.taob
             this.c = oec.a(hashMap.get(Constants.Name.INTERVAL), 2000);
             this.d = oec.a(hashMap.get("delay"), 0);
             String str = (String) hashMap.get("mode");
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 this.e = str;
             }
             this.f = oec.a(hashMap.get("autoplay"), false);

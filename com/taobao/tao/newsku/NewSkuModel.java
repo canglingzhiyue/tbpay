@@ -1,6 +1,6 @@
 package com.taobao.tao.newsku;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.node.ContractNode;
@@ -121,7 +121,7 @@ public class NewSkuModel implements Serializable {
 
     public NewSkuModel(NodeBundle nodeBundle, String str) {
         this(nodeBundle);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             checkSkuId(str);
         }
     }
@@ -236,7 +236,7 @@ public class NewSkuModel implements Serializable {
             this.mBuyNum = this.mH5SkuModel.b;
             notifyBuyNumChanged();
         }
-        if (!TextUtils.isEmpty(this.mH5SkuModel.e)) {
+        if (!StringUtils.isEmpty(this.mH5SkuModel.e)) {
             this.mH5ServiceId = this.mH5SkuModel.e;
         }
         notifyPropValueIdChanged();
@@ -424,7 +424,7 @@ public class NewSkuModel implements Serializable {
 
     public boolean isH5Sku() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e76aa791", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(getH5SkuUrl());
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e76aa791", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(getH5SkuUrl());
     }
 
     public String getH5SkuUrl() {
@@ -466,7 +466,7 @@ public class NewSkuModel implements Serializable {
 
     public boolean isSkuPropComplete() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a85a59fa", new Object[]{this})).booleanValue() : !isSkuItem() || !TextUtils.isEmpty(this.mSkuId);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("a85a59fa", new Object[]{this})).booleanValue() : !isSkuItem() || !StringUtils.isEmpty(this.mSkuId);
     }
 
     public boolean isExtComponentComplete() {
@@ -751,18 +751,18 @@ public class NewSkuModel implements Serializable {
                     SkuBaseNode.SkuPropertyValue next = it.next();
                     if (next.vid.equals(d2)) {
                         StringBuilder sb = new StringBuilder("");
-                        if (!TextUtils.isEmpty(next.alias)) {
+                        if (!StringUtils.isEmpty(next.alias)) {
                             sb.append(next.alias);
                         } else {
                             sb.append(next.name);
                         }
-                        if (!TextUtils.isEmpty(next.colorSeries) && !TextUtils.isEmpty(next.colorMaterial)) {
+                        if (!StringUtils.isEmpty(next.colorSeries) && !StringUtils.isEmpty(next.colorMaterial)) {
                             sb.append(String.format("(色系为%s, 质地为%s)", next.colorSeries, next.colorMaterial));
-                        } else if (!TextUtils.isEmpty(next.colorSeries)) {
+                        } else if (!StringUtils.isEmpty(next.colorSeries)) {
                             sb.append("(色系为");
                             sb.append(next.colorSeries);
                             sb.append(riy.BRACKET_END_STR);
-                        } else if (!TextUtils.isEmpty(next.colorMaterial)) {
+                        } else if (!StringUtils.isEmpty(next.colorMaterial)) {
                             sb.append("(质地为");
                             sb.append(next.colorMaterial);
                             sb.append(riy.BRACKET_END_STR);
@@ -785,7 +785,7 @@ public class NewSkuModel implements Serializable {
         if (ewu.a(str, this.mSkuId)) {
             return this.mSkuId;
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             this.mSkuId = null;
             long j = this.mBuyNum;
             if (0 < j) {
@@ -849,11 +849,11 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("7b9bb93d", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         String c2 = eww.c(str);
-        return !TextUtils.isEmpty(c2) && !ewu.a(this.mPropId2PropValueIdMap) && this.mPropId2PropValueIdMap.containsKey(c2) && this.mPropId2PropValueIdMap.get(c2).equals(str);
+        return !StringUtils.isEmpty(c2) && !ewu.a(this.mPropId2PropValueIdMap) && this.mPropId2PropValueIdMap.containsKey(c2) && this.mPropId2PropValueIdMap.get(c2).equals(str);
     }
 
     public String checkSkuId(String str) {
@@ -861,7 +861,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("8f609d3f", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             resetAllChoice();
             return this.mSkuId;
         }
@@ -987,7 +987,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("249d8b2f", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         unCheckPropValueId(eww.c(str), str);
@@ -998,7 +998,7 @@ public class NewSkuModel implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a8d46035", new Object[]{this, str, str2});
-        } else if (ewu.a(this.mPropId2PropValueIdMap) || TextUtils.isEmpty(str) || !this.mPropId2PropValueIdMap.containsKey(str) || !ewu.a(str2, this.mPropId2PropValueIdMap.get(str))) {
+        } else if (ewu.a(this.mPropId2PropValueIdMap) || StringUtils.isEmpty(str) || !this.mPropId2PropValueIdMap.containsKey(str) || !ewu.a(str2, this.mPropId2PropValueIdMap.get(str))) {
         } else {
             this.mPropId2PropValueIdMap.remove(str);
             updateSelectedSkuId(ewv.a(this.mPropId2PropValueIdMap));
@@ -1037,7 +1037,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("e0a93afd", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         ArrayList arrayList = new ArrayList();
@@ -1059,7 +1059,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d3ea8578", new Object[]{this, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         ArrayList arrayList = new ArrayList();
@@ -1243,7 +1243,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("f5c9f5c6", new Object[]{this, str})).longValue();
         }
-        if (TextUtils.isEmpty(str) && (str2 = this.mCurrentSkuId) != null) {
+        if (StringUtils.isEmpty(str) && (str2 = this.mCurrentSkuId) != null) {
             str = str2;
         }
         SkuCoreNode.SkuAttribute skuAttributeBySkuId = getSkuAttributeBySkuId(str);
@@ -1319,7 +1319,7 @@ public class NewSkuModel implements Serializable {
             return "";
         }
         String str = this.mNodeBundle.shippingNode.completedTo;
-        return TextUtils.isEmpty(str) ? this.mNodeBundle.shippingNode.to : str;
+        return StringUtils.isEmpty(str) ? this.mNodeBundle.shippingNode.to : str;
     }
 
     public Map<String, SkuCoreNode.SkuAttribute> getSkuId2AttributeMap() {
@@ -1457,7 +1457,7 @@ public class NewSkuModel implements Serializable {
                                 bVar3.c = next.price <= mto.a.GEO_NOT_SUPPORT;
                                 bVar3.d = next.price;
                                 bVar3.e = next.extraDisplayText;
-                                if (!TextUtils.isEmpty(a2.name)) {
+                                if (!StringUtils.isEmpty(a2.name)) {
                                     bVar3.b = a2.name;
                                 } else {
                                     bVar3.b = serviceItem.name;
@@ -1483,7 +1483,7 @@ public class NewSkuModel implements Serializable {
         if (ewu.a(sku2ServiceMap)) {
             return null;
         }
-        return sku2ServiceMap.get(TextUtils.isEmpty(this.mSkuId) ? "0" : this.mSkuId);
+        return sku2ServiceMap.get(StringUtils.isEmpty(this.mSkuId) ? "0" : this.mSkuId);
     }
 
     public boolean isServiceChecked(String str) {
@@ -1491,7 +1491,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("eab1b891", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return isServiceChecked(ewx.a(str), ewx.b(str));
         }
         return false;
@@ -1517,7 +1517,7 @@ public class NewSkuModel implements Serializable {
         if (this.mServiceId2UniqueIdMap == null) {
             this.mServiceId2UniqueIdMap = new HashMap(getItemAllServiceMap().size());
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return;
         }
         String a2 = ewx.a(str);
@@ -1550,7 +1550,7 @@ public class NewSkuModel implements Serializable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a1d9c578", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             String a2 = ewx.a(str);
             if (!isServiceChecked(a2, ewx.b(str))) {
@@ -1613,7 +1613,7 @@ public class NewSkuModel implements Serializable {
                 if (serviceItem != null) {
                     String str = serviceItem.name;
                     ServiceNode.ServiceItem.SubServiceItem a2 = ewx.a(value, serviceItem.subServiceItems);
-                    if (a2 != null && !TextUtils.isEmpty(a2.name)) {
+                    if (a2 != null && !StringUtils.isEmpty(a2.name)) {
                         str = str + a2.name;
                     }
                     arrayList.add(str);
@@ -1648,7 +1648,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return (SkuCoreNode.SkuAttribute) ipChange.ipc$dispatch("5aa6b922", new Object[]{this, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "0";
         }
         Map<String, SkuCoreNode.SkuAttribute> skuId2AttributeMap = getSkuId2AttributeMap();
@@ -1674,7 +1674,7 @@ public class NewSkuModel implements Serializable {
             String value = entry.getValue();
             ServiceNode.ServicePrice b2 = ewx.b(entry.getKey(), currentSkuServicePriceList);
             if (b2 != null) {
-                if (TextUtils.isEmpty(value)) {
+                if (StringUtils.isEmpty(value)) {
                     d2 = b2.price;
                 } else {
                     ServiceNode.ServicePrice.SubServicePrice a3 = ewx.a(value, b2);
@@ -1699,7 +1699,7 @@ public class NewSkuModel implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Number) ipChange.ipc$dispatch("930db6e3", new Object[]{this})).doubleValue();
         }
-        if (TextUtils.isEmpty(this.mSkuId) || (installmentNode = getInstallmentNode()) == null || ewu.a(installmentNode.skuId2Installment)) {
+        if (StringUtils.isEmpty(this.mSkuId) || (installmentNode = getInstallmentNode()) == null || ewu.a(installmentNode.skuId2Installment)) {
             return -1.0d;
         }
         try {
@@ -1923,7 +1923,7 @@ public class NewSkuModel implements Serializable {
             hashMap.putAll(this.mNodeBundle.tradeNode.buyParam);
         }
         NodeBundle nodeBundle2 = this.mNodeBundle;
-        if (nodeBundle2 != null && nodeBundle2.shippingNode != null && !TextUtils.isEmpty(this.mNodeBundle.shippingNode.addressId)) {
+        if (nodeBundle2 != null && nodeBundle2.shippingNode != null && !StringUtils.isEmpty(this.mNodeBundle.shippingNode.addressId)) {
             hashMap.put("addressId", this.mNodeBundle.shippingNode.addressId);
         }
         return hashMap;
@@ -1979,7 +1979,7 @@ public class NewSkuModel implements Serializable {
         skuTradeVO.skuId = getSkuId();
         skuTradeVO.buyNum = getBuyNum();
         skuTradeVO.unitBuy = getUnitBuy();
-        if (!TextUtils.isEmpty(this.mH5ServiceId)) {
+        if (!StringUtils.isEmpty(this.mH5ServiceId)) {
             skuTradeVO.serviceId = this.mH5ServiceId;
         } else {
             skuTradeVO.serviceId = ewx.a(getCheckedServiceIdList());
@@ -2247,7 +2247,7 @@ public class NewSkuModel implements Serializable {
                 return (String) ipChange.ipc$dispatch("38369f53", new Object[]{this});
             }
             StringBuilder sb = new StringBuilder();
-            if (!TextUtils.isEmpty(this.currentAreaName)) {
+            if (!StringUtils.isEmpty(this.currentAreaName)) {
                 sb.append("配送至:");
                 sb.append(this.currentAreaName);
             }
@@ -2260,16 +2260,16 @@ public class NewSkuModel implements Serializable {
             } else {
                 String str = this.checkedPropValueNames;
                 String str2 = this.checkedServiceNames;
-                if (!TextUtils.isEmpty(str) || !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) || !StringUtils.isEmpty(str2)) {
                     if (sb.length() > 0) {
                         sb.append(",");
                     }
                     sb.append("已选:");
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         sb.append(str);
                         sb.append(",");
                     }
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         sb.append(str2);
                         sb.append(",");
                     }

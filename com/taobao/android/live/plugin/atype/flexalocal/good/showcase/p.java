@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.showcase;
 
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -152,8 +152,8 @@ public class p extends a {
         HashMap hashMap = new HashMap();
         hashMap.put("goodOpenFrom", str);
         com.taobao.android.live.plugin.atype.flexalocal.good.track.b.a(this.f, liveItem, this.b, "", hashMap);
-        if (!TextUtils.equals(str, "detailDefault")) {
-            TextUtils.equals(str, "hold");
+        if (!StringUtils.equals(str, "detailDefault")) {
+            StringUtils.equals(str, "hold");
         }
         boolean h = hiq.h(liveItem);
         this.c.a(this.f13782a, liveItem);
@@ -179,8 +179,8 @@ public class p extends a {
             com.taobao.android.live.plugin.atype.flexalocal.good.track.b.a(this.f, liveItem, this.b, "", hashMap);
         }
         k kVar = this.h;
-        if (!TextUtils.equals(str, "detailDefault")) {
-            TextUtils.equals(str, "hold");
+        if (!StringUtils.equals(str, "detailDefault")) {
+            StringUtils.equals(str, "hold");
         }
         boolean h = hiq.h(liveItem);
         if (a2) {
@@ -201,8 +201,8 @@ public class p extends a {
         } else {
             String l = Long.toString(liveItem.itemId);
             his.a("HighlifghtSingleGoodPlayer", "checkIsNeedShow | id=" + l + "    name=" + liveItem.itemName + "  index=" + liveItem.goodsIndex);
-            a(liveItem, TextUtils.equals(com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD, this.b.itemHoldType) ? SHOWCASE_SOURCE_HOLD : SHOWCASE_SOURCE_DETAIL_DEFAULT);
-            if (liveItem.extendVal == null || TextUtils.isEmpty(liveItem.extendVal.msgUuid)) {
+            a(liveItem, StringUtils.equals(com.taobao.taolive.sdk.mergeInfo.b.VALUE_ITEM_HOLD_TYPE_CARD, this.b.itemHoldType) ? SHOWCASE_SOURCE_HOLD : SHOWCASE_SOURCE_DETAIL_DEFAULT);
+            if (liveItem.extendVal == null || StringUtils.isEmpty(liveItem.extendVal.msgUuid)) {
                 return;
             }
             his.a("HighlifghtSingleGoodPlayer", "checkIsNeedShow | msgId=" + liveItem.extendVal.msgUuid);

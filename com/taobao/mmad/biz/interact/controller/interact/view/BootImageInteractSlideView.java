@@ -1,7 +1,7 @@
 package com.taobao.mmad.biz.interact.controller.interact.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.LinearLayout;
@@ -241,7 +241,7 @@ public abstract class BootImageInteractSlideView extends BootImageInteractBaseVi
         try {
             String string = this.splashObject.getJSONObject("item").getJSONObject("0").getString("targetUrl");
             kej.a(TAG, "processClick targetUrl = " + string);
-            if (context == null || TextUtils.isEmpty(string) || this.mBootImageInfo == null || !"3".equals(this.mBootImageInfo.actionResponse)) {
+            if (context == null || StringUtils.isEmpty(string) || this.mBootImageInfo == null || !"3".equals(this.mBootImageInfo.actionResponse)) {
                 return;
             }
             Nav.from(context).toUri(string);

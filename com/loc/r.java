@@ -1,7 +1,7 @@
 package com.loc;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 
 /* loaded from: classes4.dex */
 public abstract class r extends bt {
@@ -9,7 +9,7 @@ public abstract class r extends bt {
     public String c() {
         Uri.Builder buildUpon;
         String str;
-        if (TextUtils.isEmpty(b())) {
+        if (StringUtils.isEmpty(b())) {
             return b();
         }
         String b = b();

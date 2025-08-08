@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.service.event.AURAEventKey;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -51,7 +51,7 @@ public class eyy {
         }
         this.f27665a = jSONObject;
         this.b = jSONObject.getString("id");
-        if (TextUtils.isEmpty(this.b)) {
+        if (StringUtils.isEmpty(this.b)) {
             this.b = UUID.randomUUID().toString();
         }
         this.c = jSONObject.getString("type");

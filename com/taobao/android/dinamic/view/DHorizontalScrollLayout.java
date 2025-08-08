@@ -1,7 +1,7 @@
 package com.taobao.android.dinamic.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,10 +79,10 @@ public class DHorizontalScrollLayout extends DFrameLayout {
         this.scrollView = new HorizontalScrollView(getContext());
         this.scrollView.setOverScrollMode(2);
         this.scrollView.setVerticalScrollBarEnabled(false);
-        if (!TextUtils.equals((String) map.get("dScrollBar"), this.SL_SCROLLBAR_VISIBLE)) {
+        if (!StringUtils.equals((String) map.get("dScrollBar"), this.SL_SCROLLBAR_VISIBLE)) {
             this.scrollView.setHorizontalScrollBarEnabled(false);
         }
-        if (TextUtils.equals(str, this.SL_LAYOUT_TYPE_FRAME)) {
+        if (StringUtils.equals(str, this.SL_LAYOUT_TYPE_FRAME)) {
             this.containerView = (DFrameLayout) k.a("DFrameLayout", getContext(), attributeSet, fpdVar);
             this.scrollView.addView(this.containerView);
         } else {

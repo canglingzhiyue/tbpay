@@ -1,7 +1,7 @@
 package com.taobao.phenix.compat.mtop;
 
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.aidl.ParcelableInputStream;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -26,7 +26,7 @@ public class d extends InputStream {
 
     private boolean a(Exception exc) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dd91d322", new Object[]{this, exc})).booleanValue() : !TextUtils.isEmpty(exc.getMessage()) && exc.getMessage().contains("await timeout");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("dd91d322", new Object[]{this, exc})).booleanValue() : !StringUtils.isEmpty(exc.getMessage()) && exc.getMessage().contains("await timeout");
     }
 
     @Override // java.io.InputStream

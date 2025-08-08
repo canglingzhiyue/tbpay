@@ -3,7 +3,7 @@ package com.vivo.push.e;
 import android.content.Context;
 import android.os.Build;
 import android.security.KeyPairGeneratorSpec;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import com.ali.user.mobile.rpc.safe.AES;
 import com.vivo.push.util.u;
@@ -81,7 +81,7 @@ public final class c implements a {
     }
 
     private boolean b(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -139,7 +139,7 @@ public final class c implements a {
     @Override // com.vivo.push.e.a
     public final String a(String str) {
         try {
-            if (TextUtils.isEmpty(str) || c(this.e) == null) {
+            if (StringUtils.isEmpty(str) || c(this.e) == null) {
                 return null;
             }
             byte[] bytes = str.getBytes("UTF-8");

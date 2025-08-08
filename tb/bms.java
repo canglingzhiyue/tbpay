@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
@@ -38,7 +38,7 @@ public class bms extends fuf {
             return ipChange.ipc$dispatch("ebd01cf8", new Object[]{this, objArr, dXRuntimeContext});
         }
         String a2 = bmo.a(objArr, 1, new Class[]{String.class});
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             throw new RuntimeException(a2);
         }
         if ("Android".equalsIgnoreCase(((String) objArr[0]).trim())) {

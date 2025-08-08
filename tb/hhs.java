@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public class hhs implements d {
             return (String) ipChange.ipc$dispatch("cfe597b6", new Object[]{this, context, str});
         }
         String a2 = hio.a(context);
-        if (TextUtils.isEmpty(a2) && context != null && context.getResources() != null) {
+        if (StringUtils.isEmpty(a2) && context != null && context.getResources() != null) {
             return hio.b(context, str);
         }
         his.a("TBLiveGoodsDXManager", "使用cache预置数据");
@@ -146,7 +146,7 @@ public class hhs implements d {
             JSONObject jSONObject2 = (JSONObject) pqj.a(jSONObject);
             if (jSONObject2 == null || jSONObject2.getJSONArray("result") == null || jSONObject2.getJSONArray("result").isEmpty()) {
                 String a2 = a(this.d, "template_list.json");
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 b(a2);
@@ -154,7 +154,7 @@ public class hhs implements d {
             }
             this.e = jSONObject;
             b(this.e);
-            if (TextUtils.isEmpty(this.e)) {
+            if (StringUtils.isEmpty(this.e)) {
                 return;
             }
             hio.a(this.d, this.e);

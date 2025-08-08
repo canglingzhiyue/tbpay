@@ -3,7 +3,7 @@ package com.alibaba.android.aura.taobao.adapter.extension.common.render.rax;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.umf.datamodel.protocol.ultron.base.Event;
 import com.alibaba.android.umf.datamodel.service.rule.UMFRuleIO;
@@ -93,7 +93,7 @@ public abstract class RaxJSBridgeApiPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3fdabd34", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error(new r("params为空"));
         } else {
             try {
@@ -145,7 +145,7 @@ public abstract class RaxJSBridgeApiPlugin extends e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("5f4ad090", new Object[]{this, str, wVCallBackContext});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             wVCallBackContext.error(new r("params参数为空，请确保传参了"));
         } else {
             try {
@@ -156,7 +156,7 @@ public abstract class RaxJSBridgeApiPlugin extends e {
                     wVCallBackContext.error(new r("eventPayload为空"));
                 } else {
                     String str2 = uMFRaxRenderEventParams.componentKey;
-                    if (TextUtils.isEmpty(str2)) {
+                    if (StringUtils.isEmpty(str2)) {
                         wVCallBackContext.error(new r("componentKey为空"));
                         return;
                     }

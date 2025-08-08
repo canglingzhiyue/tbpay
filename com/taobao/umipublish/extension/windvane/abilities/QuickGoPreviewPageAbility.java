@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -144,7 +144,7 @@ public class QuickGoPreviewPageAbility extends BaseAbility {
             return;
         }
         String a2 = m.a((String) null, jSONObject2, aw.PARAM_EXTEND, "videoConfig", "musicId");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         AudioBean audioBean = new AudioBean();
@@ -164,7 +164,7 @@ public class QuickGoPreviewPageAbility extends BaseAbility {
             jSONObject2 = new JSONObject();
         }
         for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
-            if (!TextUtils.isEmpty(entry.getKey())) {
+            if (!StringUtils.isEmpty(entry.getKey())) {
                 buildUpon.appendQueryParameter(entry.getKey(), entry.getValue().toString());
             }
         }
@@ -328,7 +328,7 @@ public class QuickGoPreviewPageAbility extends BaseAbility {
             com.taobao.android.litecreator.util.u.d(r10, r7)
             r7 = r4
         L55:
-            boolean r10 = android.text.TextUtils.isEmpty(r9)
+            boolean r10 = android.text.StringUtils.isEmpty(r9)
             if (r10 == 0) goto L7e
             java.lang.String r10 = "materialTool"
             java.lang.String[] r3 = new java.lang.String[]{r3, r10}
@@ -348,15 +348,15 @@ public class QuickGoPreviewPageAbility extends BaseAbility {
             if (r6 == 0) goto L8a
             r6.put(r2, r5)
         L8a:
-            boolean r12 = android.text.TextUtils.isEmpty(r4)
+            boolean r12 = android.text.StringUtils.isEmpty(r4)
             if (r12 != 0) goto L99
-            boolean r12 = android.text.TextUtils.isEmpty(r9)
+            boolean r12 = android.text.StringUtils.isEmpty(r9)
             if (r12 == 0) goto L99
             r5.put(r1, r4)
         L99:
-            boolean r12 = android.text.TextUtils.isEmpty(r4)
+            boolean r12 = android.text.StringUtils.isEmpty(r4)
             if (r12 != 0) goto La8
-            boolean r12 = android.text.TextUtils.isEmpty(r7)
+            boolean r12 = android.text.StringUtils.isEmpty(r7)
             if (r12 == 0) goto La8
             r5.put(r0, r4)
         La8:

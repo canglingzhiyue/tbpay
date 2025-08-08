@@ -6,7 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -171,7 +171,7 @@ public class c implements f {
                 } else if (intent == null || !WXSDKInstance.e.equals(intent.getAction())) {
                 } else {
                     String stringExtra = intent.getStringExtra("instanceId");
-                    if (TextUtils.isEmpty(stringExtra) || c.a(c.this) == null || !stringExtra.equals(c.a(c.this).a())) {
+                    if (StringUtils.isEmpty(stringExtra) || c.a(c.this) == null || !stringExtra.equals(c.a(c.this).a())) {
                         return;
                     }
                     StringBuilder sb = new StringBuilder();
@@ -444,7 +444,7 @@ public class c implements f {
         } else if (this.o && !k.b(str)) {
             fjt.a(fjt.TAG_RENDER, "DetailWeexContainer binddata mNeedPendingRender为true，延迟渲染任务,index: " + this.h.b + ", itemId: " + this.h.f11499a + ", containerName: " + this.h.c);
             nlb.a("bindData_is_weex_v1", str);
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             if (aVar != null) {
                 fjt.a(fjt.TAG_RENDER, "DetailWeexContainer binddata url 为空，销毁weexInstanceWrapper, itemid: " + this.h.f11499a + ", index: " + this.h.b + ", containerName: " + this.h.c);
                 aVar.a();
@@ -455,8 +455,8 @@ public class c implements f {
                     bVar.a(this.f11492a, ContainerError.WEEX_URL_EMPTY, "weex url为空");
                 }
             }
-        } else if (this.f11492a == null || TextUtils.isEmpty(this.c) || !this.c.equals(str)) {
-            if (!str.equals(this.c) && !TextUtils.isEmpty(this.c)) {
+        } else if (this.f11492a == null || StringUtils.isEmpty(this.c) || !this.c.equals(str)) {
+            if (!str.equals(this.c) && !StringUtils.isEmpty(this.c)) {
                 fjp.b(fjp.SCENE_WEEX_CONTAINER, fjp.ERROR_CODE_WEEX_URL_CHANGE, "weex下发url不一致, beforeUrl: " + this.c + ", afterUrl: " + str + ", itemid: " + this.h.f11499a + ", index: " + this.h.b + ", containerName: " + this.h.c, l().T());
                 for (com.taobao.android.detail2.core.framework.base.weex.b bVar2 : this.g) {
                     if (bVar2 != null) {
@@ -547,7 +547,7 @@ public class c implements f {
 
     public boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : this.f11492a != null && !TextUtils.isEmpty(this.c) && this.c.equals(str);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue() : this.f11492a != null && !StringUtils.isEmpty(this.c) && this.c.equals(str);
     }
 
     private void n() {
@@ -679,7 +679,7 @@ public class c implements f {
         }
         HashMap hashMap = new HashMap();
         String j = this.f11492a.j();
-        if (!TextUtils.isEmpty(j)) {
+        if (!StringUtils.isEmpty(j)) {
             hashMap.put("mPageName", j);
         }
         hashMap.put("isWeexV2", Boolean.valueOf(this.f11492a.k()));

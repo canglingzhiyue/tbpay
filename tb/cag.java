@@ -1,7 +1,7 @@
 package tb;
 
 import android.app.Activity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.config.model.predeal.PreDealCustomEventParams;
@@ -155,7 +155,7 @@ public class cag extends com.alibaba.poplayer.trigger.a {
             e(event);
             long currentTimeMillis = System.currentTimeMillis();
             String b = InternalTriggerController.b();
-            if (TextUtils.isEmpty(event.attachKeyCode) || TextUtils.isEmpty(b) || !event.attachKeyCode.equals(b)) {
+            if (StringUtils.isEmpty(event.attachKeyCode) || StringUtils.isEmpty(b) || !event.attachKeyCode.equals(b)) {
                 c.c("triggerEvent", "", "PageTriggerService.accept.activeAccept Useless event,eventKeyCode=" + event.attachKeyCode + ",curKeyCode=" + b);
                 return;
             }
@@ -194,7 +194,7 @@ public class cag extends com.alibaba.poplayer.trigger.a {
             return;
         }
         String b = InternalTriggerController.b();
-        if (2 != event.source || TextUtils.isEmpty(b) || TextUtils.isEmpty(event.attachKeyCode) || !event.attachKeyCode.equals(b)) {
+        if (2 != event.source || StringUtils.isEmpty(b) || StringUtils.isEmpty(event.attachKeyCode) || !event.attachKeyCode.equals(b)) {
             c.a("%s activeAccept Useless event,eventKeyCode:%s,curKeyCode:%s.", d, event.attachKeyCode, b);
             return;
         }

@@ -1,6 +1,6 @@
 package com.taobao.android.litecreator.sdk.editor.data;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.sdk.editor.data.base.EditableBean;
@@ -37,7 +37,7 @@ public class Template extends EditableBean<Template> {
             return true;
         }
         if (obj instanceof Template) {
-            return TextUtils.equals(this.tid, ((Template) obj).tid);
+            return StringUtils.equals(this.tid, ((Template) obj).tid);
         }
         return false;
     }

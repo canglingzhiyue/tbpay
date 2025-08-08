@@ -100,7 +100,7 @@ public class WVReporterExtra extends WVReporter {
             if (r12 == 0) goto L7c
             java.lang.String r12 = "wvBizCode"
             java.lang.String r5 = r5.getQueryParameter(r12)     // Catch: java.lang.Exception -> Lae
-            boolean r12 = android.text.TextUtils.isEmpty(r5)     // Catch: java.lang.Exception -> Lae
+            boolean r12 = android.text.StringUtils.isEmpty(r5)     // Catch: java.lang.Exception -> Lae
             if (r12 != 0) goto L7c
             r17 = r5
             goto L7e

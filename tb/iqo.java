@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.animation.Animation;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.mtl.appmonitor.AppMonitor;
@@ -132,7 +132,7 @@ public class iqo extends iqn implements Animation.AnimationListener {
         if (jSONObject != null && jSONObject.size() != 0 && jSONObject.containsKey("dxTemplateName")) {
             String string = jSONObject.getString("dxTemplateName");
             kej.a("BootImageInteractController", "isUseDX is true, dxTemplateName = " + string);
-            return !TextUtils.isEmpty(string);
+            return !StringUtils.isEmpty(string);
         }
         kej.a("BootImageInteractController", "isUseDX is false");
         return false;

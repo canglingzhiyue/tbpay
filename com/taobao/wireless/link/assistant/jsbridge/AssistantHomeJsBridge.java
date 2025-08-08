@@ -2,7 +2,7 @@ package com.taobao.wireless.link.assistant.jsbridge;
 
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.kge;
 import tb.rjt;
@@ -26,7 +26,7 @@ public class AssistantHomeJsBridge extends e {
             return ((Boolean) ipChange.ipc$dispatch("bcd41fd1", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
         try {
-            if (TextUtils.equals(str, ACTION_ASSISTANT_HOME)) {
+            if (StringUtils.equals(str, ACTION_ASSISTANT_HOME)) {
                 rkg.a("link_tag", "AssistantHomeJsBridge === execute === h5调用跳转桌面");
                 rkj.g(rjt.a().f33186a);
             }

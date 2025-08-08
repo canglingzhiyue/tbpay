@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
@@ -211,7 +211,7 @@ public final class brn extends brm {
             AURARenderComponentContainer aURARenderComponentContainer = aURARenderComponentData.container;
             str = aURARenderComponentContainer.containerType + "_" + aURARenderComponentContainer.name + "_" + aURARenderComponentContainer.version;
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String valueOf = String.valueOf(System.currentTimeMillis());

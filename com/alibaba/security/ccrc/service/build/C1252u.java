@@ -1,6 +1,6 @@
 package com.alibaba.security.ccrc.service.build;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.service.CcrcService;
 import com.alibaba.security.client.smart.core.algo.SampleData;
@@ -101,7 +101,7 @@ public class C1252u {
         }
         HashMap hashMap = new HashMap();
         hashMap.put(BaseConfigKey.KEY_SAMPLE_DATA, SampleData.transform(cCRCRiskSample));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             hashMap.put("_errorMsg", str);
         }
         return hashMap;

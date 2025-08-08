@@ -1,6 +1,6 @@
 package com.ut.mini.module.plugin;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.config.UTClientConfigMgr;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -132,7 +132,7 @@ public class c {
             return false;
         }
         String other = this.d.getOther();
-        return TextUtils.isEmpty(other) || !other.equals("close");
+        return StringUtils.isEmpty(other) || !other.equals("close");
     }
 
     private synchronized void b(String str) {
@@ -242,10 +242,10 @@ public class c {
         } else if (aVar == null) {
         } else {
             String pluginName = aVar.getPluginName();
-            if (TextUtils.isEmpty(pluginName)) {
+            if (StringUtils.isEmpty(pluginName)) {
                 pluginName = "OldUTPlugin_" + aVar.hashCode();
             }
-            if (TextUtils.isEmpty(pluginName) || this.f24132a.containsKey(pluginName)) {
+            if (StringUtils.isEmpty(pluginName) || this.f24132a.containsKey(pluginName)) {
                 return;
             }
             if (this.e.a(pluginName)) {
@@ -273,10 +273,10 @@ public class c {
         } else if (aVar == null) {
         } else {
             String pluginName = aVar.getPluginName();
-            if (TextUtils.isEmpty(pluginName)) {
+            if (StringUtils.isEmpty(pluginName)) {
                 pluginName = "OldUTPlugin_" + aVar.hashCode();
             }
-            if (TextUtils.isEmpty(pluginName)) {
+            if (StringUtils.isEmpty(pluginName)) {
                 return;
             }
             this.f24132a.remove(pluginName);

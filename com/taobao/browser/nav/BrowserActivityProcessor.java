@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.browser.BrowserActivity;
 import com.taobao.browser.exbrowser.BrowserUpperActivity;
@@ -59,12 +59,12 @@ public class BrowserActivityProcessor implements com.taobao.android.nav.e {
         try {
             h c = p.c();
             String uri2 = uri.toString();
-            if (TextUtils.isEmpty(TMS_WHITE_LIST)) {
+            if (StringUtils.isEmpty(TMS_WHITE_LIST)) {
                 str = c.a("h5_to_tms_list");
             } else {
                 str = TMS_WHITE_LIST;
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return false;
             }
             if (str.equals("*")) {

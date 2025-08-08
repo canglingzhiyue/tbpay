@@ -1,6 +1,6 @@
 package com.alibaba.android.umf.node.service.parse;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.AURAInputData;
 import com.alibaba.android.aura.datamodel.render.AURARenderComponent;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
@@ -149,7 +149,7 @@ public class ParseProcess {
             return;
         }
         this.g = ultronProtocol.getHierarchy().getRoot();
-        if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(this.g)) {
             throw new UltronProtocolException("ultron protocol[hierarchy.root] is NULL!");
         }
         Component a2 = a(this.g);
@@ -211,7 +211,7 @@ public class ParseProcess {
                     Component component = treeNode2.data().getComponent();
                     if (component != null && component.getFields() != null) {
                         Object obj = component.getFields().get("code");
-                        if ((obj instanceof String) && !TextUtils.isEmpty(treeNode2.data().getKey()) && treeNode2.parent() != null && treeNode2.parent().data() != null) {
+                        if ((obj instanceof String) && !StringUtils.isEmpty(treeNode2.data().getKey()) && treeNode2.parent() != null && treeNode2.parent().data() != null) {
                             Component component2 = treeNode2.parent().data().getComponent();
                             if (component2 == null) {
                                 component2 = new Component();
@@ -292,8 +292,8 @@ public class ParseProcess {
         if (bqpVar != null) {
             str = bqpVar.a();
         }
-        if (TextUtils.isEmpty(str)) {
-            if (TextUtils.isEmpty(this.g)) {
+        if (StringUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(this.g)) {
                 return;
             }
             str = this.g;
@@ -320,7 +320,7 @@ public class ParseProcess {
         }
         for (int i = 0; i < jSONArray.size(); i++) {
             String string = jSONArray.getString(i);
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 ComponentView componentView = null;
                 Component a2 = a(string);
                 if (a2 != null) {

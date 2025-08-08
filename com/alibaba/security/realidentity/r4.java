@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -1554,11 +1554,11 @@ public class r4 implements i0, t4, u4 {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str});
         }
-        if (Build.VERSION.SDK_INT < 18 || TextUtils.isEmpty(str) || (a2 = com.alibaba.security.realidentity.c.a(str)) == null) {
+        if (Build.VERSION.SDK_INT < 18 || StringUtils.isEmpty(str) || (a2 = com.alibaba.security.realidentity.c.a(str)) == null) {
             return null;
         }
         String a3 = r.a().a(a2);
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             return a3;
         }
         return null;

@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.SystemClock;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -62,7 +62,7 @@ public class b extends com.taobao.android.fluid.business.videocollection.poplaye
             return false;
         }
         Uri fluidUrl = fluidContext.getInstanceConfig().getFluidUrl();
-        if (fluidUrl == null || !TextUtils.equals(fluidUrl.getQueryParameter("type"), com.taobao.android.fluid.business.globalinteraction.render.a.GUANGGUANG_COLLECTION)) {
+        if (fluidUrl == null || !StringUtils.equals(fluidUrl.getQueryParameter("type"), com.taobao.android.fluid.business.globalinteraction.render.a.GUANGGUANG_COLLECTION)) {
             spz.c("PopupDialog", "当前非二跳页");
             return false;
         }

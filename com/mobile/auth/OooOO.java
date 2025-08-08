@@ -1,7 +1,7 @@
 package com.mobile.auth;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.framework.dynfun.DynConstants;
 import com.mobile.auth.gatewayauth.Constant;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
@@ -317,7 +317,7 @@ public class OooOO extends com.mobile.auth.gatewayauth.manager.O000000o {
     @Override // com.mobile.auth.gatewayauth.manager.O000000o
     protected String O00000Oo(String str, String str2) {
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             try {
@@ -404,7 +404,7 @@ public class OooOO extends com.mobile.auth.gatewayauth.manager.O000000o {
                         String str2 = "";
                         strArr[2] = jSONObject == null ? str2 : jSONObject.toString();
                         O000000o.O000000o(strArr);
-                        if (jSONObject == null || TextUtils.isEmpty(jSONObject.toString())) {
+                        if (jSONObject == null || StringUtils.isEmpty(jSONObject.toString())) {
                             OooOO.O00000o(OooOO.this, requestCallback, Constant.CODE_ERROR_UNKNOWN_FAIL, "CMCC 获得的手机授权码结果为空", "", Constant.VENDOR_CMCC, monitorStruct, ResultCode.MSG_GET_MASK_FAIL);
                             return;
                         }
@@ -416,7 +416,7 @@ public class OooOO extends com.mobile.auth.gatewayauth.manager.O000000o {
                             OO0oO.O000000o(OooOO.O00000Oo(OooOO.this)).O00000o("Cmcc GetLoginInfo failed!", czp.a(e));
                             str = null;
                         }
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             OooOO.O000000o(OooOO.this, requestCallback, Constant.CODE_ERROR_UNKNOWN_FAIL, "CMCC 获得的手机授权码结果为空", str, Constant.VENDOR_CMCC, monitorStruct, ResultCode.CODE_GET_MASK_FAIL);
                         } else if (!"103000".equals(str)) {
                             if (jSONObject.has("resultDesc")) {
@@ -432,7 +432,7 @@ public class OooOO extends com.mobile.auth.gatewayauth.manager.O000000o {
                                 str3 = jSONObject.optString("securityphone");
                             }
                             monitorStruct.setCarrierTraceId(jSONObject.optString("traceId"));
-                            if (!TextUtils.isEmpty(str3)) {
+                            if (!StringUtils.isEmpty(str3)) {
                                 requestCallback.onSuccess(O000000o.C0294O000000o.O000000o().O00000o0(Constant.CMCC_PROTOCOL).O00000o(Constant.CMCC_PROTOCOL_URL).O000000o(str3).O000000o());
                                 monitorStruct.setPhoneNumber(str3);
                                 OooOO.O000000o(OooOO.this, str, "", "", true, Constant.VENDOR_CMCC, monitorStruct);
@@ -494,7 +494,7 @@ public class OooOO extends com.mobile.auth.gatewayauth.manager.O000000o {
                         String str2 = "";
                         strArr[2] = jSONObject == null ? str2 : jSONObject.toString();
                         O00000o0.O000000o(strArr);
-                        if (jSONObject == null || TextUtils.isEmpty(jSONObject.toString())) {
+                        if (jSONObject == null || StringUtils.isEmpty(jSONObject.toString())) {
                             OooOO.O0000OOo(OooOO.this, requestCallback, Constant.CODE_ERROR_UNKNOWN_FAIL, "CMCC 获得的Token结果为空", "", Constant.VENDOR_CMCC, monitorStruct, ResultCode.CODE_GET_TOKEN_FAIL);
                             return;
                         }
@@ -506,7 +506,7 @@ public class OooOO extends com.mobile.auth.gatewayauth.manager.O000000o {
                             OO0oO.O000000o(OooOO.O00000o(OooOO.this)).O00000o("Cmcc GetLoginToken failed!", czp.a(e));
                             str = null;
                         }
-                        if (TextUtils.isEmpty(str)) {
+                        if (StringUtils.isEmpty(str)) {
                             OooOO.O00000oO(OooOO.this, requestCallback, Constant.CODE_ERROR_UNKNOWN_FAIL, "CMCC 获得的Token结果为空", str, Constant.VENDOR_CMCC, monitorStruct, ResultCode.CODE_GET_TOKEN_FAIL);
                         } else if (!"103000".equals(str)) {
                             if (jSONObject.has("resultDesc")) {
@@ -522,7 +522,7 @@ public class OooOO extends com.mobile.auth.gatewayauth.manager.O000000o {
                                 str3 = jSONObject.optString("token");
                             }
                             monitorStruct.setCarrierTraceId(jSONObject.optString("traceId"));
-                            if (!TextUtils.isEmpty(str3)) {
+                            if (!StringUtils.isEmpty(str3)) {
                                 monitorStruct.setAccessCode(jSONObject.optString("token"));
                                 OooOO.O00000Oo(OooOO.this, str, "", "", true, Constant.VENDOR_CMCC, monitorStruct);
                                 requestCallback.onSuccess(O000000o.C0294O000000o.O000000o().O00000Oo(jSONObject.optString("token")).O000000o(System.currentTimeMillis() + 120000).O000000o());

@@ -1,7 +1,7 @@
 package tb;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.core.detail.activity.DetailCoreActivity;
@@ -134,9 +134,9 @@ public class els {
         }
         long j5 = j2 - j3;
         long H = j2 - y.H();
-        if (TextUtils.equals(str, "aura_preload_visible")) {
+        if (StringUtils.equals(str, "aura_preload_visible")) {
             h.b(detailCoreActivity, j4, j5, H);
-        } else if (TextUtils.equals(str, "aura_visible")) {
+        } else if (StringUtils.equals(str, "aura_visible")) {
             h.a(detailCoreActivity, j4, j5, H);
         }
         try {

@@ -7,7 +7,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.util.ErrorConstant;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -595,7 +595,7 @@ public class h implements ITrtcCallEngine.b {
         String string2 = jSONObject.getString("data");
         String str = f23172a;
         TrtcLog.d(str, "SEND DATA: " + string2);
-        if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && (iTrtcCallEngine = this.f) != null) {
+        if (!StringUtils.isEmpty(string) && !StringUtils.isEmpty(string2) && (iTrtcCallEngine = this.f) != null) {
             iTrtcCallEngine.c(string2, i);
         } else {
             aVar.a(-103);
@@ -713,7 +713,7 @@ public class h implements ITrtcCallEngine.b {
         dVar.b = com.taobao.trtc.utils.a.a(jSONObject, FluidException.SERVICE_NAME);
         dVar.f23068a = com.taobao.trtc.utils.a.a(jSONObject, "appKey", "21646297");
         dVar.c = this;
-        if (TextUtils.isEmpty(dVar.b) || TextUtils.isEmpty(dVar.f23068a)) {
+        if (StringUtils.isEmpty(dVar.b) || StringUtils.isEmpty(dVar.f23068a)) {
             return false;
         }
         JSONObject jSONObject2 = jSONObject.getJSONObject("extraParams");
@@ -738,7 +738,7 @@ public class h implements ITrtcCallEngine.b {
             } catch (Throwable unused) {
             }
         }
-        if (TextUtils.isEmpty(dVar.d)) {
+        if (StringUtils.isEmpty(dVar.d)) {
             dVar.d = Login.getUserId();
         }
         this.c.f23180a = dVar;
@@ -1010,7 +1010,7 @@ public class h implements ITrtcCallEngine.b {
                 return;
             }
             try {
-                if (TextUtils.isEmpty(str2)) {
+                if (StringUtils.isEmpty(str2)) {
                     return;
                 }
                 this.m.getActivity().runOnUiThread(new Runnable() { // from class: com.taobao.trtc.rtcroom.h.3
@@ -1034,7 +1034,7 @@ public class h implements ITrtcCallEngine.b {
             }
         } else if (fVar.b == 501) {
             try {
-                if (TextUtils.isEmpty(str2) || this.h == null) {
+                if (StringUtils.isEmpty(str2) || this.h == null) {
                     return;
                 }
                 this.m.getActivity().runOnUiThread(new Runnable() { // from class: com.taobao.trtc.rtcroom.h.4
@@ -1070,7 +1070,7 @@ public class h implements ITrtcCallEngine.b {
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("5c510192", new Object[]{this});
                     } else {
-                        h.b(h.this, "ServerCommand", !TextUtils.isEmpty(str2) ? com.taobao.trtc.utils.a.a(JSON.parseObject(str2), "cause", -1) : 0, false);
+                        h.b(h.this, "ServerCommand", !StringUtils.isEmpty(str2) ? com.taobao.trtc.utils.a.a(JSON.parseObject(str2), "cause", -1) : 0, false);
                     }
                 }
             });

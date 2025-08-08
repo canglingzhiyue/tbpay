@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.transport.utils;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 
 /* loaded from: classes3.dex */
@@ -18,7 +18,7 @@ public class APNetworkStartupUtil {
         f5617a = true;
         try {
             String stringFromMetaData = MiscUtils.getStringFromMetaData(TransportEnvUtil.getContext(), "apnetwork.startup.listener");
-            if (TextUtils.isEmpty(stringFromMetaData)) {
+            if (StringUtils.isEmpty(stringFromMetaData)) {
                 if (!MiscUtils.isDebugger(TransportEnvUtil.getContext())) {
                     return;
                 }

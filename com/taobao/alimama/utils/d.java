@@ -1,6 +1,6 @@
 package com.taobao.alimama.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,7 +66,7 @@ public class d {
             return (d) ipChange.ipc$dispatch("fded86fc", new Object[]{this, str, objArr});
         }
         if (objArr != null && objArr.length > 0) {
-            str = String.format("%s:%s", str, TextUtils.join(":", objArr));
+            str = String.format("%s:%s", str, StringUtils.join(":", objArr));
         }
         if (this.c.size() >= 128) {
             this.c.remove(0);

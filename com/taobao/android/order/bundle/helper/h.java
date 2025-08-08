@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.auth.mobile.common.AlipayAuthConstant;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.ultron.module.ReallyPayFiles;
@@ -51,7 +51,7 @@ public final class h {
         }
         String str = TAG;
         hyn.a(str, "goToSimplePay", "dataObj = " + reallyPayFiles.toString());
-        if (!TextUtils.isEmpty(reallyPayFiles.reason)) {
+        if (!StringUtils.isEmpty(reallyPayFiles.reason)) {
             a(activity, reallyPayFiles, reallyPayFiles.reason);
         } else {
             c(activity, reallyPayFiles);
@@ -86,7 +86,7 @@ public final class h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6bd7f450", new Object[]{activity, reallyPayFiles});
-        } else if (!reallyPayFiles.canPay || (TextUtils.isEmpty(reallyPayFiles.alipayUrl) && TextUtils.isEmpty(reallyPayFiles.signStr))) {
+        } else if (!reallyPayFiles.canPay || (StringUtils.isEmpty(reallyPayFiles.alipayUrl) && StringUtils.isEmpty(reallyPayFiles.signStr))) {
             String a2 = com.alibaba.ability.localization.b.a(R.string.order_biz_app_not_support_go_pc);
             com.alibaba.android.ultron.vfw.widget.a.a(activity, a2);
             hyn.a(TAG, "pay", a2);
@@ -99,7 +99,7 @@ public final class h {
                 HashMap hashMap = new HashMap();
                 hashMap.put("orderids", a3);
                 hashMap.put("signStr", reallyPayFiles.signStr);
-                if (!TextUtils.isEmpty(reallyPayFiles.unSuccessUrl)) {
+                if (!StringUtils.isEmpty(reallyPayFiles.unSuccessUrl)) {
                     hashMap.put("unSuccessUrl", reallyPayFiles.unSuccessUrl);
                 }
                 hashMap.put("simplepay", String.valueOf(z));

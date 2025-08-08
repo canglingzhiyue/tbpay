@@ -1,6 +1,6 @@
 package com.taobao.orange.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.orange.OConstant;
 import com.taobao.orange.candidate.MultiAnalyze;
@@ -28,7 +28,7 @@ public class CandidateDO implements Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("2b6d1a5f", new Object[]{this})).booleanValue();
         }
-        if (!TextUtils.isEmpty(this.resourceId) && !TextUtils.isEmpty(this.match) && !TextUtils.isEmpty(this.version)) {
+        if (!StringUtils.isEmpty(this.resourceId) && !StringUtils.isEmpty(this.match) && !StringUtils.isEmpty(this.version)) {
             return true;
         }
         OLog.w(TAG, "lack param", new Object[0]);

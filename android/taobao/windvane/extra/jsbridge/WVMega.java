@@ -10,7 +10,7 @@ import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.util.a;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.ability.result.ExecuteResult;
 import com.alibaba.ability.result.a$a;
@@ -78,7 +78,7 @@ public class WVMega extends e {
             return ((Boolean) ipChange.ipc$dispatch("e2c1d830", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
         String str2 = wVCallBackContext.currentUrlFromAsyncChannel;
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             if (Looper.myLooper() == Looper.getMainLooper()) {
                 return callOnUIThread(str, wVCallBackContext);
             }

@@ -2,7 +2,7 @@ package com.taobao.android.publisher.service.export.ayscpublish.core;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.publisher.service.export.ayscpublish.core.APublishTask;
 import java.io.File;
@@ -182,7 +182,7 @@ public final class d implements c {
             return;
         }
         String a2 = icp.a().b().a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             icp.a().b().c("PublishServiceImp", String.format("getIdleTasks, no session", new Object[0]));
             return;
         }

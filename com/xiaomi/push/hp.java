@@ -1,6 +1,6 @@
 package com.xiaomi.push;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.xiaomi.push.hf;
 import com.xiaomi.push.hj;
@@ -156,33 +156,33 @@ public class hp {
         }
         try {
             String attributeValue7 = xmlPullParser.getAttributeValue("", dck.COL_SEQ);
-            if (!TextUtils.isEmpty(attributeValue7)) {
+            if (!StringUtils.isEmpty(attributeValue7)) {
                 hgVar2.b(attributeValue7);
             }
         } catch (Exception unused2) {
         }
         try {
             String attributeValue8 = xmlPullParser.getAttributeValue("", "mseq");
-            if (!TextUtils.isEmpty(attributeValue8)) {
+            if (!StringUtils.isEmpty(attributeValue8)) {
                 hgVar2.c(attributeValue8);
             }
         } catch (Exception unused3) {
         }
         try {
             String attributeValue9 = xmlPullParser.getAttributeValue("", "fseq");
-            if (!TextUtils.isEmpty(attributeValue9)) {
+            if (!StringUtils.isEmpty(attributeValue9)) {
                 hgVar2.d(attributeValue9);
             }
         } catch (Exception unused4) {
         }
         try {
             String attributeValue10 = xmlPullParser.getAttributeValue("", "status");
-            if (!TextUtils.isEmpty(attributeValue10)) {
+            if (!StringUtils.isEmpty(attributeValue10)) {
                 hgVar2.e(attributeValue10);
             }
         } catch (Exception unused5) {
         }
-        hgVar2.a(!TextUtils.isEmpty(str) && str.equalsIgnoreCase("true"));
+        hgVar2.a(!StringUtils.isEmpty(str) && str.equalsIgnoreCase("true"));
         hgVar2.f(xmlPullParser.getAttributeValue("", "type"));
         String b = b(xmlPullParser);
         if (b == null || "".equals(b.trim())) {
@@ -195,7 +195,7 @@ public class hp {
             if (next2 == 2) {
                 String name = xmlPullParser.getName();
                 String namespace = xmlPullParser.getNamespace();
-                if (TextUtils.isEmpty(namespace)) {
+                if (StringUtils.isEmpty(namespace)) {
                     namespace = "xm";
                 }
                 if (name.equals("subject")) {
@@ -204,7 +204,7 @@ public class hp {
                 } else if (name.equals(AgooConstants.MESSAGE_BODY)) {
                     String attributeValue11 = xmlPullParser.getAttributeValue("", "encode");
                     String m2018a = m2018a(xmlPullParser);
-                    if (!TextUtils.isEmpty(attributeValue11)) {
+                    if (!StringUtils.isEmpty(attributeValue11)) {
                         hgVar2.a(m2018a, attributeValue11);
                     } else {
                         hgVar2.h(m2018a);

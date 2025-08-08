@@ -1,6 +1,6 @@
 package com.taobao.tao.remotebusiness.listener;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.remotebusiness.MtopBusiness;
@@ -56,7 +56,7 @@ public class MtopStreamListenerImpl extends b implements MtopCallback.MtopStream
         HandlerParam a2 = com.taobao.tao.remotebusiness.handler.a.a(this.listener, mtopFinishEvent, this.mtopBusiness);
         a2.mtopResponse = abnormalSituation;
         if (this.mtopBusiness.clazz != null) {
-            if (TextUtils.isEmpty(abnormalSituation.getRetCode())) {
+            if (StringUtils.isEmpty(abnormalSituation.getRetCode())) {
                 abnormalSituation.parseJsonByte();
             }
             if (abnormalSituation.isApiSuccess()) {

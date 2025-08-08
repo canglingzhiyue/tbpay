@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anetwork.channel.Response;
 import anetwork.channel.entity.RequestImpl;
 import anetwork.channel.http.HttpNetwork;
@@ -23,7 +23,7 @@ public class nnp {
             return (nnk) ipChange.ipc$dispatch("953d903f", new Object[]{str, str2});
         }
         nnk nnkVar = new nnk();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return nnkVar;
         }
         if (j.f19452a != null) {

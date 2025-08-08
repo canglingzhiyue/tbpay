@@ -2,7 +2,7 @@ package android.taobao.windvane.jsbridge;
 
 import android.os.Looper;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.ali.user.mobile.exception.ErrorCode;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -418,14 +418,14 @@ public class WVCallBackContext {
             return;
         }
         final long currentTimeMillis = System.currentTimeMillis();
-        if (android.taobao.windvane.util.m.a() && android.taobao.windvane.util.e.a() && !TextUtils.isEmpty(str2)) {
+        if (android.taobao.windvane.util.m.a() && android.taobao.windvane.util.e.a() && !StringUtils.isEmpty(str2)) {
             try {
                 new JSONObject(str2);
             } catch (JSONException unused) {
                 android.taobao.windvane.util.m.e(TAG, "return param is not a valid json!\n" + str + "\n" + str2);
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "{}";
         }
         try {
@@ -504,7 +504,7 @@ public class WVCallBackContext {
                     str3 = this.mCallBackContextUrl;
                 }
                 String str4 = str3;
-                if (TextUtils.equals(str, "MtopWVPlugin.send")) {
+                if (StringUtils.equals(str, "MtopWVPlugin.send")) {
                     String b3 = rVar.b("api", "UNKNOWN_MTOP_API");
                     if (android.taobao.windvane.monitor.o.getWvJsBridgeMonitorInterface() == null) {
                         return;
@@ -542,7 +542,7 @@ public class WVCallBackContext {
                     str4 = this.mCallBackContextUrl;
                 }
                 String str5 = str4;
-                if (TextUtils.equals(str2, "MtopWVPlugin.send")) {
+                if (StringUtils.equals(str2, "MtopWVPlugin.send")) {
                     String optString3 = jSONObject.optString("api", "UNKNOWN_MTOP_API");
                     if (android.taobao.windvane.monitor.o.getWvJsBridgeMonitorInterface() != null) {
                         android.taobao.windvane.monitor.o.getWvJsBridgeMonitorInterface().onMtopJsBridgeReturn(optString3, optString, optString2, str5);

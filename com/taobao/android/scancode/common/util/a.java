@@ -7,7 +7,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Bundle;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.nav.Nav;
 import com.taobao.android.scancode.common.object.ScancodeResult;
@@ -88,7 +88,7 @@ public class a {
         Uri.Builder buildUpon = Uri.parse("https://m.taobao.com/scan_imagesearch").buildUpon();
         buildUpon.appendQueryParameter("fromScan", "true");
         String a2 = a(scancodeTypeArr);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             buildUpon.appendQueryParameter("scanType", a2);
         }
         Uri build = buildUpon.build();
@@ -119,7 +119,7 @@ public class a {
             return (String) ipChange.ipc$dispatch("ebc0f3e6", new Object[]{scancodeTypeArr});
         }
         if (scancodeTypeArr != null && scancodeTypeArr.length > 0) {
-            return TextUtils.join("-", scancodeTypeArr);
+            return StringUtils.join("-", scancodeTypeArr);
         }
         return null;
     }
@@ -129,7 +129,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (String[]) ipChange.ipc$dispatch("ad023781", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str.split("-");
         }
         return null;
@@ -175,7 +175,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         return (str.startsWith("8") && str.length() == 20) || ((str.startsWith("10") || str.startsWith("11")) && str.length() == 16);

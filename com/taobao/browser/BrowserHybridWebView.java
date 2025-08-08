@@ -20,7 +20,7 @@ import android.taobao.windvane.extra.uc.WVUCWebView;
 import android.taobao.windvane.extra.uc.preRender.PreRenderWebView;
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.util.m;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.webkit.ValueCallback;
 import anet.channel.util.HttpConstant;
@@ -438,12 +438,12 @@ public class BrowserHybridWebView extends PreRenderWebView {
         }
         if (com.taobao.browser.config.a.commonConfig.q && p.b() != null && p.b().x() != null) {
             String c = p.b().x().c();
-            if (!TextUtils.isEmpty(c)) {
+            if (!StringUtils.isEmpty(c)) {
                 evaluateJavascript(c);
                 injectJsEarly(c);
             }
             String i = p.b().x().i();
-            if (p.b().x().h() && !TextUtils.isEmpty(i)) {
+            if (p.b().x().h() && !StringUtils.isEmpty(i)) {
                 injectJsEarly(i);
             }
         }
@@ -451,7 +451,7 @@ public class BrowserHybridWebView extends PreRenderWebView {
             return;
         }
         String a2 = qgo.a();
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         injectJsEarly(a2);
@@ -700,7 +700,7 @@ public class BrowserHybridWebView extends PreRenderWebView {
                 return;
             } else if (!j.commonConfig.ac && android.taobao.windvane.config.p.c(str, this)) {
                 String b = n.a().b();
-                if (TextUtils.isEmpty(b)) {
+                if (StringUtils.isEmpty(b)) {
                     onMessage(402, str);
                 } else {
                     try {
@@ -723,7 +723,7 @@ public class BrowserHybridWebView extends PreRenderWebView {
                     }
                     Intent intent = new Intent("NON_WHITELIST_URL_VISIT");
                     intent.putExtra("url", str);
-                    intent.putExtra("whitelistAvailable", !TextUtils.isEmpty(android.taobao.windvane.config.p.e) ? 1 : 0);
+                    intent.putExtra("whitelistAvailable", !StringUtils.isEmpty(android.taobao.windvane.config.p.e) ? 1 : 0);
                     intent.putExtra("from", "windvane");
                     if (_getContext() != null) {
                         LocalBroadcastManager.getInstance(_getContext().getApplicationContext()).sendBroadcast(intent);
@@ -894,7 +894,7 @@ public class BrowserHybridWebView extends PreRenderWebView {
                 str = com.taobao.browser.utils.i.e;
             } else {
                 String title = webView.getTitle();
-                if (title != null && !TextUtils.isEmpty(title) && !title.equals("0")) {
+                if (title != null && !StringUtils.isEmpty(title) && !title.equals("0")) {
                     str = title;
                 }
             }

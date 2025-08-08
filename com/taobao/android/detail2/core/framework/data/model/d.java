@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.data.model;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -258,7 +258,7 @@ public abstract class d {
         if (C().b().af()) {
             String y = C().y();
             String ag = C().b().ag();
-            if (!TextUtils.isEmpty(ag)) {
+            if (!StringUtils.isEmpty(ag)) {
                 y = ag;
             }
             fjt.a(fjt.TAG_INSIDE_DETAIL, "initDetailListener processContextData = sourceToken。" + y);
@@ -497,7 +497,7 @@ public abstract class d {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4c806420", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.o)) {
+        if (!StringUtils.isEmpty(this.o)) {
             return this.o;
         }
         return this.n;
@@ -611,7 +611,7 @@ public abstract class d {
             return ((Number) ipChange.ipc$dispatch("30f3b650", new Object[]{this, jSONObject})).intValue();
         }
         AtmosParams G = this.G.G();
-        if (G != null && G.showAtmos && !TextUtils.isEmpty(G.atmosColor)) {
+        if (G != null && G.showAtmos && !StringUtils.isEmpty(G.atmosColor)) {
             try {
                 return Color.parseColor(G.atmosColor);
             } catch (Exception e) {
@@ -621,7 +621,7 @@ public abstract class d {
             }
         }
         this.O = jSONObject.getString("naviBarColor");
-        if (TextUtils.isEmpty(this.O)) {
+        if (StringUtils.isEmpty(this.O)) {
             return -16777216;
         }
         try {
@@ -861,7 +861,7 @@ public abstract class d {
             return ((Boolean) ipChange.ipc$dispatch("3eff1d1", new Object[]{this})).booleanValue();
         }
         JSONObject jSONObject2 = this.H;
-        return (jSONObject2 == null || (jSONObject = jSONObject2.getJSONObject("trade")) == null || TextUtils.isEmpty(jSONObject.getString(Constants.WEIBO_REDIRECTURL_KEY))) ? false : true;
+        return (jSONObject2 == null || (jSONObject = jSONObject2.getJSONObject("trade")) == null || StringUtils.isEmpty(jSONObject.getString(Constants.WEIBO_REDIRECTURL_KEY))) ? false : true;
     }
 
     public JSONObject H() {
@@ -969,7 +969,7 @@ public abstract class d {
 
     public String c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str}) : TextUtils.isEmpty(this.h) ? str : this.h;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("b82f346c", new Object[]{this, str}) : StringUtils.isEmpty(this.h) ? str : this.h;
     }
 
     public JSONObject Q() {
@@ -1002,7 +1002,7 @@ public abstract class d {
             return b;
         }
         String uIStrategyTag = f.getUIStrategyTag();
-        if (TextUtils.isEmpty(uIStrategyTag)) {
+        if (StringUtils.isEmpty(uIStrategyTag)) {
             return b;
         }
         return b + "-" + uIStrategyTag;

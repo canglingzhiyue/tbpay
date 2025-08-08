@@ -3,7 +3,7 @@ package tb;
 import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -89,7 +89,7 @@ public class ffs implements j<eoi> {
             return "";
         }
         String string = jSONObject2.getString("itemId");
-        return TextUtils.isEmpty(string) ? "" : string;
+        return StringUtils.isEmpty(string) ? "" : string;
     }
 
     private String c(JSONObject jSONObject) {
@@ -102,7 +102,7 @@ public class ffs implements j<eoi> {
             return "";
         }
         String string = jSONObject2.getString("title");
-        return TextUtils.isEmpty(string) ? "" : string;
+        return StringUtils.isEmpty(string) ? "" : string;
     }
 
     private String d(JSONObject jSONObject) {
@@ -116,7 +116,7 @@ public class ffs implements j<eoi> {
             return "";
         }
         String string = jSONObject2.getString("priceText");
-        return TextUtils.isEmpty(string) ? "" : string;
+        return StringUtils.isEmpty(string) ? "" : string;
     }
 
     private String e(JSONObject jSONObject) {
@@ -144,7 +144,7 @@ public class ffs implements j<eoi> {
             }
             if (jSONObject3 != null && !jSONObject3.isEmpty()) {
                 String string = jSONObject3.getString("priceText");
-                return TextUtils.isEmpty(string) ? "" : string;
+                return StringUtils.isEmpty(string) ? "" : string;
             }
         }
         return "";
@@ -210,10 +210,10 @@ public class ffs implements j<eoi> {
         }
         String e = e(currentItemData);
         Uri.Builder buildUpon = Uri.parse(e.NAV_URL_DETAIL_BASE + b + ".htm").buildUpon();
-        if (!TextUtils.isEmpty(d)) {
+        if (!StringUtils.isEmpty(d)) {
             buildUpon.appendQueryParameter("price", d);
         }
-        if (!TextUtils.isEmpty(e)) {
+        if (!StringUtils.isEmpty(e)) {
             buildUpon.appendQueryParameter("original_price", e);
         }
         buildUpon.appendQueryParameter("sourceType", "item");
@@ -243,7 +243,7 @@ public class ffs implements j<eoi> {
             shareModel.title = "想告诉谁";
         }
         try {
-            if (this.e.containsKey("bizId") && !TextUtils.isEmpty(this.e.get("bizId"))) {
+            if (this.e.containsKey("bizId") && !StringUtils.isEmpty(this.e.get("bizId"))) {
                 shareModel.businessId = this.e.get("bizId");
             }
         } catch (Exception e2) {
@@ -253,7 +253,7 @@ public class ffs implements j<eoi> {
         if (g != null) {
             this.f27908a.addAll(g);
         }
-        if (TextUtils.isEmpty(shareModel.businessId) && !TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(shareModel.businessId) && !StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str)) {
             shareModel.businessId = str3;
             this.f27908a.remove(str);
             this.f27908a.add(0, str);

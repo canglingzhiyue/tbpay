@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.nx3.bean.TemplateBean;
@@ -44,7 +44,7 @@ public class itz {
                 for (Map.Entry<String, Object> entry : map.entrySet()) {
                     String key = entry.getKey();
                     Object value = entry.getValue();
-                    if (!TextUtils.isEmpty(key)) {
+                    if (!StringUtils.isEmpty(key)) {
                         jSONObject.put(key, value);
                     }
                 }
@@ -63,7 +63,7 @@ public class itz {
             for (Map.Entry<String, TemplateBean> entry : map2.entrySet()) {
                 String key = entry.getKey();
                 TemplateBean value = entry.getValue();
-                if (TextUtils.isEmpty(key)) {
+                if (StringUtils.isEmpty(key)) {
                     this.b.b().b("NxWeexUtil", "mergeTemplates: key is empty");
                 } else if (value == null) {
                     this.b.b().b("NxWeexUtil", "mergeTemplates: bean is empty");
@@ -84,19 +84,19 @@ public class itz {
         if (templateBean == null) {
             this.b.b().b("NxWeexUtil", "模板为空, 请检查templateName和tItemType是不是一致的.");
             return true;
-        } else if (TextUtils.isEmpty(templateBean.url)) {
+        } else if (StringUtils.isEmpty(templateBean.url)) {
             k b = this.b.b();
             b.b("NxWeexUtil", "模板url为空: " + templateBean);
             return true;
-        } else if (TextUtils.isEmpty(templateBean.templateName)) {
+        } else if (StringUtils.isEmpty(templateBean.templateName)) {
             k b2 = this.b.b();
             b2.b("NxWeexUtil", "模板名称为空: " + templateBean);
             return true;
-        } else if (TextUtils.isEmpty(templateBean.version)) {
+        } else if (StringUtils.isEmpty(templateBean.version)) {
             k b3 = this.b.b();
             b3.b("NxWeexUtil", "模板版本为空: " + templateBean);
             return true;
-        } else if (!TextUtils.isEmpty(templateBean.md5)) {
+        } else if (!StringUtils.isEmpty(templateBean.md5)) {
             return false;
         } else {
             k b4 = this.b.b();

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ability.localization.b;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -115,7 +115,7 @@ public class mud {
 
     public String c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this}) : TextUtils.isEmpty(this.c) ? b.a(R.string.setting_homepage_title) : this.c;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("bd025a76", new Object[]{this}) : StringUtils.isEmpty(this.c) ? b.a(R.string.setting_homepage_title) : this.c;
     }
 
     public String d() {
@@ -125,7 +125,7 @@ public class mud {
 
     public String e() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this}) : TextUtils.isEmpty(this.e) ? mtp.NAV_URL_SETTING : this.e;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("ca0dcfb4", new Object[]{this}) : StringUtils.isEmpty(this.e) ? mtp.NAV_URL_SETTING : this.e;
     }
 
     public String f() {

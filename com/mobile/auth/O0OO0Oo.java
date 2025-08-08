@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.cmic.sso.sdk.a;
 import com.taobao.tao.image.d;
 import java.security.SecureRandom;
@@ -28,7 +28,7 @@ public class O0OO0Oo {
     }
 
     public static void O000000o(a aVar, String str) {
-        if (TextUtils.isEmpty(aVar.b("interfaceType", ""))) {
+        if (StringUtils.isEmpty(aVar.b("interfaceType", ""))) {
             aVar.a("interfaceType", str);
             return;
         }
@@ -50,7 +50,7 @@ public class O0OO0Oo {
     }
 
     public static void O00000Oo(a aVar, String str) {
-        if (TextUtils.isEmpty(aVar.b("interfaceCode", ""))) {
+        if (StringUtils.isEmpty(aVar.b("interfaceCode", ""))) {
             aVar.a("interfaceCode", str);
             return;
         }
@@ -66,7 +66,7 @@ public class O0OO0Oo {
     }
 
     public static void O00000o0(a aVar, String str) {
-        if (TextUtils.isEmpty(aVar.b("interfaceElasped", ""))) {
+        if (StringUtils.isEmpty(aVar.b("interfaceElasped", ""))) {
             aVar.a("interfaceElasped", str);
             return;
         }

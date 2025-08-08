@@ -13,7 +13,7 @@ import android.os.PowerManager;
 import android.os.StatFs;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.security.ccrc.service.build.C1238p;
 import java.io.BufferedReader;
 import java.io.File;
@@ -126,7 +126,7 @@ public class i {
                         break;
                     case 2:
                         String b3 = ax.a(context).b();
-                        if (!TextUtils.isEmpty(b3)) {
+                        if (!StringUtils.isEmpty(b3)) {
                             b2 = b3 + b2;
                             i = 2;
                             break;
@@ -134,14 +134,14 @@ public class i {
                     case 3:
                     case 4:
                         String mo1730a = ax.a(context).mo1730a();
-                        if (!TextUtils.isEmpty(mo1730a) && !mo1730a.startsWith("00000000-0000-0000-0000-000000000000")) {
+                        if (!StringUtils.isEmpty(mo1730a) && !mo1730a.startsWith("00000000-0000-0000-0000-000000000000")) {
                             i = 4;
                             b2 = mo1730a;
                             break;
                         }
                         break;
                     case 5:
-                        if (!TextUtils.isEmpty(b2)) {
+                        if (!StringUtils.isEmpty(b2)) {
                             i = 5;
                             break;
                         }
@@ -167,7 +167,7 @@ public class i {
 
     private static void a(Context context, String str) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("device_info", 0);
-        if (TextUtils.isEmpty(sharedPreferences.getString("default_id", null))) {
+        if (StringUtils.isEmpty(sharedPreferences.getString("default_id", null))) {
             sharedPreferences.edit().putString("default_id", str).apply();
         } else {
             com.xiaomi.channel.commonutils.logger.b.m1616a("default_id exist,do not change it.");
@@ -191,7 +191,7 @@ public class i {
     }
 
     public static boolean a(String str) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         int i = 0;
@@ -223,7 +223,7 @@ public class i {
                 }
                 try {
                     String readLine = bufferedReader.readLine();
-                    if (!TextUtils.isEmpty(readLine) && (split = readLine.split("\\s+")) != null && split.length >= 2 && TextUtils.isDigitsOnly(split[1])) {
+                    if (!StringUtils.isEmpty(readLine) && (split = readLine.split("\\s+")) != null && split.length >= 2 && StringUtils.isDigitsOnly(split[1])) {
                         Integer.parseInt(split[1]);
                     }
                     bufferedReader.close();
@@ -307,7 +307,7 @@ public class i {
             ServiceInfo serviceInfo = context.getPackageManager().getServiceInfo(componentName, 128);
             if (serviceInfo.metaData != null) {
                 String string = serviceInfo.metaData.getString("supportGetAndroidID");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     return Boolean.parseBoolean(string);
                 }
                 return true;
@@ -370,7 +370,7 @@ public class i {
 
     private static String k(Context context) {
         String string = context.getSharedPreferences("device_info", 0).getString("default_id", null);
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             String l = l(context);
             a(context, l);
             return l;

@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.comments.chat;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -59,7 +59,7 @@ public class j extends iot {
             }
             JSONObject jSONObject = (JSONObject) objArr[1];
             String string = jSONObject.getString("jumpUrl");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             HashMap hashMap = new HashMap(b.a(string));
@@ -72,13 +72,13 @@ public class j extends iot {
             HashMap<String, String> hashMap3 = new HashMap<>();
             String string2 = jSONObject.getString("itemId");
             String string3 = jSONObject.getString("desc");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 hashMap3.put("item_id", string2);
             }
             if (string3 != null) {
                 hashMap3.put("recom_reason", string3);
             }
-            if (TextUtils.isEmpty(str2) || !"openGoodsContainer".equals(str2)) {
+            if (StringUtils.isEmpty(str2) || !"openGoodsContainer".equals(str2)) {
                 return;
             }
             if (com.taobao.android.live.plugin.atype.flexalocal.good.a.a().j() != null) {

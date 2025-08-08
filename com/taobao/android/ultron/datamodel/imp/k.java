@@ -1,6 +1,6 @@
 package com.taobao.android.ultron.datamodel.imp;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.aura.taobao.adapter.extension.linkage.event.AURASubmitEvent;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -62,7 +62,7 @@ public class k implements joe {
             }
             return a(bVar, hashSet, iDMComponent, true);
         } catch (Throwable th) {
-            bga.a.a(TextUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "SubmitModule.asyncRequestData", th);
+            bga.a.a(StringUtils.isEmpty(bVar.h()) ? "ultron" : bVar.h(), "SubmitModule.asyncRequestData", th);
             return null;
         }
     }
@@ -171,11 +171,11 @@ public class k implements joe {
             jSONObject5.put("operator", (Object) iDMComponent.getKey());
             if (z2) {
                 DMComponent dMComponent3 = (DMComponent) iDMComponent;
-                if (!TextUtils.isEmpty(dMComponent3.getTriggerEvent())) {
+                if (!StringUtils.isEmpty(dMComponent3.getTriggerEvent())) {
                     jSONObject5.put("operatorEvent", (Object) dMComponent3.getTriggerEvent());
                 }
             }
-            if (z2 && !TextUtils.isEmpty(iDMComponent.getAdjustOperatorAction())) {
+            if (z2 && !StringUtils.isEmpty(iDMComponent.getAdjustOperatorAction())) {
                 jSONObject5.put("operatorAction", (Object) iDMComponent.getAdjustOperatorAction());
             }
             if (z2 && iDMComponent.getExtMap().containsKey("subOperator")) {

@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -82,7 +82,7 @@ public class mqm extends DXImageWidgetNode {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("6198cb64", new Object[]{this, str, view})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || !a.b()) {
+        if (StringUtils.isEmpty(str) || !a.b()) {
             return false;
         }
         Drawable a2 = a.a(str);

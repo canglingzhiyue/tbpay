@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.alilive.aliliveframework.frame.a;
@@ -104,7 +104,7 @@ public class luc extends lrd {
         }
         String g = g();
         m.a("Tab2HalfScreenSmallWindowImpl", "insideDetailFlag:" + g);
-        return !TextUtils.isEmpty(g);
+        return !StringUtils.isEmpty(g);
     }
 
     private String g() {

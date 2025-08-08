@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.View;
@@ -252,7 +252,7 @@ public class BarChart extends View {
                 while (i11 < COLUMNS_PER_SECTION) {
                     a aVar2 = b.a(bVar)[i11];
                     String a3 = (aVar2.c.floatValue() / f2 <= 0.15f || aVar2.c.floatValue() == f2) ? aVar2.a() : aVar2.b();
-                    if (!TextUtils.isEmpty(a3)) {
+                    if (!StringUtils.isEmpty(a3)) {
                         this.mTextPaint.getTextBounds(a3, i, a3.length(), this.mTextBounds);
                         canvas2.drawText(a3, this.mTextPadding, ((i6 / 2) + i10) - this.mTextBounds.exactCenterY(), this.mTextPaint);
                     }

@@ -2,7 +2,7 @@ package tb;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -42,7 +42,7 @@ public final class hfi {
         if (map != null) {
             hashMap.putAll(map);
             String remove = map.remove(SPM_CD);
-            if (!TextUtils.isEmpty(remove)) {
+            if (!StringUtils.isEmpty(remove)) {
                 str2 = str2 + "." + remove;
             }
         }
@@ -50,12 +50,12 @@ public final class hfi {
         f28585a.put("spm-cnt", str2);
         Activity activity = (Activity) context;
         String pageSpmUrl = UTAnalytics.getInstance().getDefaultTracker().getPageSpmUrl(activity);
-        if (!TextUtils.isEmpty(pageSpmUrl)) {
+        if (!StringUtils.isEmpty(pageSpmUrl)) {
             hashMap.put("spm-url", pageSpmUrl);
             f28585a.put("spm-url", pageSpmUrl);
         }
         String pageSpmPre = UTAnalytics.getInstance().getDefaultTracker().getPageSpmPre(activity);
-        if (!TextUtils.isEmpty(pageSpmPre)) {
+        if (!StringUtils.isEmpty(pageSpmPre)) {
             f28585a.put(bip.KEY_UMBRELLA_SPM_PRE, pageSpmPre);
         }
         UTAnalytics.getInstance().getDefaultTracker().updatePageProperties(activity, hashMap);
@@ -167,7 +167,7 @@ public final class hfi {
         }
         for (String str2 : strArr) {
             String a3 = aVar.a(str2);
-            if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(str2) && !StringUtils.isEmpty(a3)) {
                 hashMap.put(str2, a3);
             }
         }
@@ -182,7 +182,7 @@ public final class hfi {
             map = new HashMap<>();
         }
         String str = map.get("session_id");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return map;
         }
         JSONObject b2 = gwt.a(str).b();
@@ -191,7 +191,7 @@ public final class hfi {
         } catch (Throwable unused) {
         }
         String str2 = MediaStatInfo.getGlobalStatInfo().get(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             if (z) {
                 try {
                     str2 = URLEncoder.encode(str2, "utf-8");

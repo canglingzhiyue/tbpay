@@ -1,6 +1,6 @@
 package com.alibaba.poplayer.info.frequency;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.trigger.BaseConfigItem;
 import com.alibaba.poplayer.utils.f;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -67,7 +67,7 @@ public class a {
         if (!f.a()) {
             com.alibaba.poplayer.utils.c.a("ColdLaunchFrequency.updateColdLaunched.set.not on MainThread!!! cur thread name = " + Thread.currentThread().getName());
         }
-        if (baseConfigItem == null || TextUtils.isEmpty(baseConfigItem.indexID) || !baseConfigItem.onlyColdLaunch) {
+        if (baseConfigItem == null || StringUtils.isEmpty(baseConfigItem.indexID) || !baseConfigItem.onlyColdLaunch) {
             return;
         }
         this.f3182a.add(baseConfigItem.indexID);

@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -42,7 +42,7 @@ public class c {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("e726022", new Object[]{jSONObject, str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         try {

@@ -1,6 +1,6 @@
 package com.flybird.deploy.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.birdnest.platform.ConnectionUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -118,7 +118,7 @@ public class FBTemplateContent extends FBFullTplInfo implements Serializable, id
                             } catch (Throwable th2) {
                                 cun.a(com.alibaba.security.realidentity.b.f3363a, "error while findJSONObjectFromArray", th2);
                             }
-                            if (TextUtils.equals(jSONObject2.optString("tag"), ivx.IMAGE_TYPE_HEAD)) {
+                            if (StringUtils.equals(jSONObject2.optString("tag"), ivx.IMAGE_TYPE_HEAD)) {
                                 break;
                             }
                         }
@@ -131,7 +131,7 @@ public class FBTemplateContent extends FBFullTplInfo implements Serializable, id
                             for (int i2 = 0; i2 < optJSONArray2.length(); i2++) {
                                 try {
                                     JSONObject optJSONObject = optJSONArray2.optJSONObject(i2);
-                                    if (TextUtils.equals(optJSONObject.optString("tag"), "meta")) {
+                                    if (StringUtils.equals(optJSONObject.optString("tag"), "meta")) {
                                         arrayList.add(optJSONObject);
                                     }
                                 } catch (Throwable th3) {
@@ -212,7 +212,7 @@ public class FBTemplateContent extends FBFullTplInfo implements Serializable, id
         if (jSONObject == null) {
             return null;
         }
-        return TextUtils.split(jSONObject.optString(str, ""), ";");
+        return StringUtils.split(jSONObject.optString(str, ""), ";");
     }
 
     public String getMetaInfoAsStr(String str) {

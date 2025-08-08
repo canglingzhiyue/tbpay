@@ -8,7 +8,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.util.LruCache;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
@@ -119,7 +119,7 @@ public class FBImageLoader implements ImageLoader {
             } catch (Throwable th2) {
                 th = th2;
             }
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             return null;
         } else {
             return loadLocalDrawable(resourceProvider, context, str2, str, iArr, z, view, z2, z3);
@@ -182,7 +182,7 @@ public class FBImageLoader implements ImageLoader {
             }
             Context context = view.getContext();
             BirdNestEngine.ResourceProvider resourceProvider = birdNestEngine.getConfig().getResourceProvider();
-            if (fBResourceClient != null && !TextUtils.isEmpty(str) && (shouldInterceptResource = fBResourceClient.shouldInterceptResource(str, FBResourceClient.Type.DRAWABLE)) != null) {
+            if (fBResourceClient != null && !StringUtils.isEmpty(str) && (shouldInterceptResource = fBResourceClient.shouldInterceptResource(str, FBResourceClient.Type.DRAWABLE)) != null) {
                 Drawable drawable = (Drawable) shouldInterceptResource;
                 if (iLayoutListener != null) {
                     iLayoutListener.requestLayout(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
@@ -194,7 +194,7 @@ public class FBImageLoader implements ImageLoader {
                 } else {
                     ((ImageView) view).setImageDrawable(drawable);
                 }
-            } else if (!TextUtils.isEmpty(str) && !str.startsWith("http") && !str.startsWith("https") && !str.startsWith("www") && !str.startsWith("data:") && str.contains("/")) {
+            } else if (!StringUtils.isEmpty(str) && !str.startsWith("http") && !str.startsWith("https") && !str.startsWith("www") && !str.startsWith("data:") && str.contains("/")) {
                 if (loadLocalDrawable(resourceProvider, context, str, str2, iArr, z, view, z2, true) != null) {
                     return;
                 }
@@ -313,7 +313,7 @@ public class FBImageLoader implements ImageLoader {
         if (ipChange instanceof IpChange) {
             return (Drawable) ipChange.ipc$dispatch("7a17b675", new Object[]{this, resourceProvider, context, str, str2, iArr, new Boolean(z), view, new Boolean(z2), new Boolean(z3)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (z3) {
                 if (z) {
                     view.setBackgroundDrawable(null);

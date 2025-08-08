@@ -1,6 +1,6 @@
 package com.taobao.infoflow.taobao.subservice.biz.carddebugmaskservice;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -163,11 +163,11 @@ public class AiCardDebugMaskServiceImpl implements IAiCardDebugMaskService {
             if (textView == null) {
                 return;
             }
-            if (TextUtils.isEmpty(aiDebugInfoString)) {
+            if (StringUtils.isEmpty(aiDebugInfoString)) {
                 i = 8;
             }
             textView.setVisibility(i);
-            if (TextUtils.isEmpty(aiDebugInfoString)) {
+            if (StringUtils.isEmpty(aiDebugInfoString)) {
                 return;
             }
             textView.setText(aiDebugInfoString);

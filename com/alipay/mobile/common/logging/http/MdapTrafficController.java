@@ -1,7 +1,7 @@
 package com.alipay.mobile.common.logging.http;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.strategy.LogStrategyManager;
 import com.alipay.mobile.common.logging.util.LoggingSPCache;
@@ -35,7 +35,7 @@ public class MdapTrafficController {
         long currentTimeMillis = System.currentTimeMillis() / TimeUnit.DAYS.toMillis(1L);
         long j = LoggingSPCache.getInstance().getLong(concat, 0L);
         String networkType = NetUtil.getNetworkType(context);
-        boolean z2 = !TextUtils.isEmpty(networkType);
+        boolean z2 = !StringUtils.isEmpty(networkType);
         boolean isPositiveDiagnose = LogStrategyManager.getInstance().isPositiveDiagnose();
         if (!isPositiveDiagnose && !"WIFI".equals(networkType)) {
             z = false;

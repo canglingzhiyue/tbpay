@@ -2,7 +2,7 @@ package com.taobao.message.notification.banner.view;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.alibaba.ability.localization.b;
@@ -49,7 +49,7 @@ public class DefaultBannerView2023 extends DefaultBannerView {
             return (DefaultBannerView2023) ipChange.ipc$dispatch("940260e2", new Object[]{this, viewDataModel});
         }
         super.mo1144init(viewDataModel);
-        if (!TextUtils.isEmpty(viewDataModel.mGoodsUrl)) {
+        if (!StringUtils.isEmpty(viewDataModel.mGoodsUrl)) {
             TUrlImageView tUrlImageView = (TUrlImageView) this.mView.findViewById(R.id.notification_icon_goods);
             tUrlImageView.setImageUrl(viewDataModel.mGoodsUrl);
             tUrlImageView.setVisibility(0);

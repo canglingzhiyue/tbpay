@@ -2,7 +2,7 @@ package com.taobao.mediaplay;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -354,7 +354,7 @@ public class MediaPlayControlContext implements Serializable {
 
     private static boolean checkDefaultValueAndList(String str, String str2, boolean z) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7cec1a0", new Object[]{str, str2, new Boolean(z)})).booleanValue() : (MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("DWInteractive", str, "true"))) ? (TextUtils.isEmpty(oyu.d()) || !com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_DISABLE_HARDWARD_IN_HARMONY, "false"))) && !com.taobao.taobaoavsdk.util.b.b(Build.MODEL, MediaAdapteManager.mConfigAdapter.getConfig("DWInteractive", str2, MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264)) : z;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7cec1a0", new Object[]{str, str2, new Boolean(z)})).booleanValue() : (MediaAdapteManager.mConfigAdapter != null && com.taobao.taobaoavsdk.util.b.a(MediaAdapteManager.mConfigAdapter.getConfig("DWInteractive", str, "true"))) ? (StringUtils.isEmpty(oyu.d()) || !com.taobao.taobaoavsdk.util.b.a(OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_DISABLE_HARDWARD_IN_HARMONY, "false"))) && !com.taobao.taobaoavsdk.util.b.b(Build.MODEL, MediaAdapteManager.mConfigAdapter.getConfig("DWInteractive", str2, MediaConstant.DEFALUT_H265_HW_BLACK_LIST_FOR_DEGRADE_H264)) : z;
     }
 
     public boolean isUseTBNet() {
@@ -977,17 +977,17 @@ public class MediaPlayControlContext implements Serializable {
         HashMap hashMap = new HashMap();
         for (int i = 0; i < this.mMediaLiveInfo.liveUrlList.size(); i++) {
             QualityLiveItem qualityLiveItem = this.mMediaLiveInfo.liveUrlList.get(i);
-            if (!TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl) || !TextUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
+            if (!StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl) || !StringUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
                 String str = qualityLiveItem.newDefinition;
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     if (str != null && MediaConstant.DEFINITION_UD_60.equals(str)) {
                         String config = OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_ENABLE_PLAY_60FPS_DEVICE_LEVEL, "[0]");
-                        boolean z2 = !TextUtils.isEmpty(config) && config.contains(String.valueOf(oyu.c()));
+                        boolean z2 = !StringUtils.isEmpty(config) && config.contains(String.valueOf(oyu.c()));
                         String config2 = OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_ENABLE_PLAY_60FPS_DEVICE_LIST, "");
                         com.taobao.taobaoavsdk.util.d dVar = new com.taobao.taobaoavsdk.util.d();
                         dVar.a("model", "" + Build.MODEL);
                         dVar.a(config2);
-                        if (!TextUtils.isEmpty(config2) && dVar.b()) {
+                        if (!StringUtils.isEmpty(config2) && dVar.b()) {
                             z2 = true;
                         }
                         if (!z2) {
@@ -1094,7 +1094,7 @@ public class MediaPlayControlContext implements Serializable {
         this.mEnableLiveRtcHomePageCardSVCDrop = oyu.br;
         addExperienceInfo(oyu.b("lowspeed"), oyu.d("lowspeed"), oyu.c("lowspeed"));
         this.mLiveRateAdapteUrlNewPolicyMap = new HashMap<>();
-        if (TextUtils.isEmpty(this.mLowSpeedNewPolicyConfigValue)) {
+        if (StringUtils.isEmpty(this.mLowSpeedNewPolicyConfigValue)) {
             return;
         }
         try {
@@ -1168,7 +1168,7 @@ public class MediaPlayControlContext implements Serializable {
             return this.mLowSpeedPolicy;
         }
         initLowSpeedPolicyABIfNeeded();
-        if (!this.mEnableLowSpeedPolicy || !this.mEnableLowSpeedPolicyAB || TextUtils.isEmpty(this.mLowSpeedPolicyABConfigValue)) {
+        if (!this.mEnableLowSpeedPolicy || !this.mEnableLowSpeedPolicyAB || StringUtils.isEmpty(this.mLowSpeedPolicyABConfigValue)) {
             return false;
         }
         this.mHasLowSpeedPolicy = true;
@@ -1207,7 +1207,7 @@ public class MediaPlayControlContext implements Serializable {
         if (i2 >= 0 && i2 < strArr.length) {
             for (int i3 = 0; i3 < this.mMediaLiveInfo.liveUrlList.size(); i3++) {
                 QualityLiveItem qualityLiveItem = this.mMediaLiveInfo.liveUrlList.get(i3);
-                if (strArr[i2].equals(qualityLiveItem.newDefinition) && !TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl) && !TextUtils.isEmpty(qualityLiveItem.newName)) {
+                if (strArr[i2].equals(qualityLiveItem.newDefinition) && !StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl) && !StringUtils.isEmpty(qualityLiveItem.newName)) {
                     return qualityLiveItem;
                 }
             }
@@ -1241,7 +1241,7 @@ public class MediaPlayControlContext implements Serializable {
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "setFrom=" + str + " by client.");
         this.mFrom = str;
         String config = OrangeConfig.getInstance().getConfig("DWInteractive", MediaConstant.ORANGE_LIVE_ROOM_BIZ_CODE, "LiveRoom");
-        if (!TextUtils.isEmpty(config) && config.equals(this.mFrom)) {
+        if (!StringUtils.isEmpty(config) && config.equals(this.mFrom)) {
             this.mIsLiveRoom = true;
         } else {
             this.mIsLiveRoom = false;
@@ -1261,10 +1261,10 @@ public class MediaPlayControlContext implements Serializable {
         HashMap hashMap = new HashMap();
         for (int i2 = 0; i2 < this.mMediaLiveInfo.liveUrlList.size(); i2++) {
             QualityLiveItem qualityLiveItem = this.mMediaLiveInfo.liveUrlList.get(i2);
-            if (!TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl) || !TextUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
+            if (!StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl) || !StringUtils.isEmpty(qualityLiveItem.bfrtcUrl)) {
                 String str = qualityLiveItem.newDefinition;
                 String str2 = qualityLiveItem.newName;
-                if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
                     hashMap.put(str, Integer.valueOf(i2));
                 }
             }
@@ -1338,7 +1338,7 @@ public class MediaPlayControlContext implements Serializable {
         org.json.JSONArray jSONArray = new org.json.JSONArray();
         for (int i = 0; i < mediaLiveInfo.liveUrlList.size(); i++) {
             QualityLiveItem qualityLiveItem = mediaLiveInfo.liveUrlList.get(i);
-            if (!TextUtils.isEmpty(qualityLiveItem.newDefinition) && !TextUtils.isEmpty(qualityLiveItem.rtcLiveUrl)) {
+            if (!StringUtils.isEmpty(qualityLiveItem.newDefinition) && !StringUtils.isEmpty(qualityLiveItem.rtcLiveUrl)) {
                 JSONObject jSONObject = new JSONObject();
                 try {
                     jSONObject.put("streamBitate", qualityLiveItem.getStreamAvgBitrate() == 0 ? "-1" : "" + qualityLiveItem.getStreamAvgBitrate());
@@ -1400,7 +1400,7 @@ public class MediaPlayControlContext implements Serializable {
         }
         if (!oyu.ad && com.taobao.taobaoavsdk.c.d()) {
             String m = ozr.e().m();
-            if (!TextUtils.isEmpty(m)) {
+            if (!StringUtils.isEmpty(m)) {
                 if (!TaobaoMediaPlayer.loadS266Decoder(m)) {
                     return;
                 }
@@ -1464,7 +1464,7 @@ public class MediaPlayControlContext implements Serializable {
         if (!canSelectS266Url()) {
             return false;
         }
-        if (!TextUtils.isEmpty(this.mEnableS266SBTForLive) && com.taobao.taobaoavsdk.util.b.b(getFrom(), this.mEnableS266SBTForLive)) {
+        if (!StringUtils.isEmpty(this.mEnableS266SBTForLive) && com.taobao.taobaoavsdk.util.b.b(getFrom(), this.mEnableS266SBTForLive)) {
             return true;
         }
         this.mChooseVVCReason = VVC_CHOOSE_REASON.VVC_CHOOSE_REASON_NOT_LIVE_SBT;
@@ -1479,7 +1479,7 @@ public class MediaPlayControlContext implements Serializable {
         if (!canSelectS266Url()) {
             return false;
         }
-        if (!TextUtils.isEmpty(this.mEnableS266SBTForVideo) && com.taobao.taobaoavsdk.util.b.b(getFrom(), this.mEnableS266SBTForVideo)) {
+        if (!StringUtils.isEmpty(this.mEnableS266SBTForVideo) && com.taobao.taobaoavsdk.util.b.b(getFrom(), this.mEnableS266SBTForVideo)) {
             return true;
         }
         this.mChooseVVCReason = VVC_CHOOSE_REASON.VVC_CHOOSE_REASON_NOT_VOD_SBT;

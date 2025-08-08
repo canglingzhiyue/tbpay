@@ -3,7 +3,7 @@ package tb;
 import android.os.Build;
 import android.os.Process;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.home.component.utils.m;
 import com.taobao.monitor.procedure.s;
@@ -45,9 +45,9 @@ public class oqd {
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("9afdf87d", new Object[]{str, str2, new Long(j), new Long(j2), hashMap, new Boolean(z)});
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
             } else {
-                if (TextUtils.equals(str2, MTOP_STAGE_ASSEMBLEPARAMS)) {
+                if (StringUtils.equals(str2, MTOP_STAGE_ASSEMBLEPARAMS)) {
                     a aVar = new a();
                     f32281a = aVar;
                     aVar.f32285a = str;
@@ -56,11 +56,11 @@ public class oqd {
                 if (f32281a == null) {
                     return;
                 }
-                if (!TextUtils.equals(str, f32281a.f32285a)) {
+                if (!StringUtils.equals(str, f32281a.f32285a)) {
                     f32281a = null;
                     return;
                 }
-                if (TextUtils.equals(str, "coldStart")) {
+                if (StringUtils.equals(str, "coldStart")) {
                     s.f18233a.d().a(str2, Long.valueOf(SystemClock.uptimeMillis()));
                 }
                 f32281a.h.put(str2, String.valueOf(j2));
@@ -71,7 +71,7 @@ public class oqd {
                     final HashMap hashMap2 = new HashMap();
                     hashMap2.put(i.CDN_REQUEST_TYPE, f32281a.f32285a);
                     hashMap2.put("totalTime", String.valueOf(j - f32281a.b));
-                    if (TextUtils.equals(f32281a.f32285a, "coldStart") && Build.VERSION.SDK_INT >= 24) {
+                    if (StringUtils.equals(f32281a.f32285a, "coldStart") && Build.VERSION.SDK_INT >= 24) {
                         hashMap2.put("startTotalTime", String.valueOf(j - Process.getStartUptimeMillis()));
                     }
                     hashMap2.put("level", g.b());
@@ -163,7 +163,7 @@ public class oqd {
         hashMap2.put("stage", str);
         hashMap2.put("duration", str3);
         hashMap2.put("level", g.b());
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             hashMap2.put("eventType", str2.toLowerCase());
         }
         if (hashMap != null && hashMap.size() > 0) {

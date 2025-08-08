@@ -3,7 +3,7 @@ package com.alipay.android.msp.framework.taskscheduler;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.app.safepaylogv2.api.StatisticCollector;
 import com.alipay.android.msp.framework.statisticsv2.value.ErrorType;
 import com.alipay.android.msp.utils.LogUtil;
@@ -327,7 +327,7 @@ public class TaskHelper {
         if (ipChange instanceof IpChange) {
             return (Handler) ipChange.ipc$dispatch("7cadc154", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         Handler handler = d.get(str);

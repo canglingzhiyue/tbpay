@@ -3,7 +3,7 @@ package com.taobao.android.tbsku.container;
 import android.content.Intent;
 import android.net.Uri;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URLEncoder;
@@ -77,17 +77,17 @@ public class a {
             return null;
         }
         String valueOf = String.valueOf(obj);
-        if (!TextUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
             String str = "";
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
                     String obj3 = obj2.toString();
-                    if (!TextUtils.isEmpty(obj3)) {
+                    if (!StringUtils.isEmpty(obj3)) {
                         str = str + "&" + str2 + "=" + obj3;
                     }
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             return str + "&transparent_key=" + valueOf;
@@ -107,17 +107,17 @@ public class a {
             return null;
         }
         String valueOf = String.valueOf(obj);
-        if (!TextUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
+        if (!StringUtils.isEmpty(valueOf) && (split = valueOf.split(",")) != null && split.length != 0) {
             String str = "";
             for (String str2 : split) {
-                if (!TextUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
+                if (!StringUtils.isEmpty(str2) && (obj2 = map.get(str2)) != null) {
                     String obj3 = obj2.toString();
-                    if (!TextUtils.isEmpty(obj3)) {
+                    if (!StringUtils.isEmpty(obj3)) {
                         str = str + "&" + str2 + "=" + obj3;
                     }
                 }
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return str;
             }
             return str + "&request_key=" + valueOf;
@@ -153,7 +153,7 @@ public class a {
             final String str2 = ILocalizationService.CONFIRM;
             if (jSONObject3 != null) {
                 String string = jSONObject3.getString("title");
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     str2 = string;
                 }
             }
@@ -187,7 +187,7 @@ public class a {
         }
         String str = "&sku_forbidH5=" + jSONObject.getString("sku_forbidH5");
         String string = jSONObject.getString("sku_forbidH5_toast");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return str;
         }
         return str + "&sku_forbidH5_toast=" + string;
@@ -203,7 +203,7 @@ public class a {
         }
         String str = "&sku_forbid_redirect=" + jSONObject.getString("sku_forbid_redirect");
         String string = jSONObject.getString("sku_forbid_redirect_toast");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             return str;
         }
         return str + "&sku_forbid_redirect_toast=" + string;
@@ -216,7 +216,7 @@ public class a {
         if (ipChange instanceof IpChange) {
             return (Intent) ipChange.ipc$dispatch("68f1eb99", new Object[]{str, str2, str3, str4, str5, str6, str7, new Boolean(z), str8, str9});
         }
-        if (!TextUtils.isEmpty(str7)) {
+        if (!StringUtils.isEmpty(str7)) {
             String jSONString = new JSONObject() { // from class: com.taobao.android.tbsku.container.MsoaDataConverter$4
                 {
                     put("bizName", (Object) str7);
@@ -235,11 +235,11 @@ public class a {
         sb.append(str2);
         sb.append("&bottomMode=");
         sb.append(str3);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             str4 = "";
         }
         sb.append(str4);
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             str5 = "";
         }
         sb.append(str5);

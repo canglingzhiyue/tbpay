@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.task.Coordinator;
 import com.taobao.augecore.data.GroupData;
@@ -95,7 +95,7 @@ public class kay {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{this, str, str2, str3})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             kbd.a(kaw.LOG_TAG, "bizCode或者crowdId为空了");
             return false;
         }
@@ -175,7 +175,7 @@ public class kay {
             return (List) ipChange.ipc$dispatch("1f4ad67a", new Object[]{this, str, list, str2});
         }
         final ArrayList arrayList = new ArrayList();
-        if (!TextUtils.isEmpty(str) && list != null && list.size() != 0 && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && list != null && list.size() != 0 && !StringUtils.isEmpty(str2)) {
             kbc.b(str);
             Map<String, String> map = this.i;
             if (map == null || map.size() == 0) {
@@ -197,7 +197,7 @@ public class kay {
                 final Set<String> keySet = this.i.keySet();
                 for (String str3 : list) {
                     for (String str4 : keySet) {
-                        if (TextUtils.equals(str3, str4)) {
+                        if (StringUtils.equals(str3, str4)) {
                             arrayList.add(str3);
                         }
                     }
@@ -236,7 +236,7 @@ public class kay {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6173fb52", new Object[]{this, str, str2, kazVar, str3});
-        } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || kazVar == null || TextUtils.isEmpty(str3)) {
+        } else if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2) || kazVar == null || StringUtils.isEmpty(str3)) {
             kbd.a(kaw.LOG_TAG, "groupId或者configGetListner空了");
         } else {
             kbc.b(str);
@@ -256,7 +256,7 @@ public class kay {
                 GroupData next = it.next();
                 String crowd = next.getCrowd();
                 String expireTime = next.getExpireTime();
-                if (TextUtils.equals(crowd, str2)) {
+                if (StringUtils.equals(crowd, str2)) {
                     if (kbc.a(expireTime)) {
                         kbd.a(kaw.LOG_TAG, "请求GroupId在本地人群里面，但是数据过期，需要重新请求接口");
                         b(str, str2, kazVar, str3);
@@ -291,7 +291,7 @@ public class kay {
             ipChange.ipc$dispatch("535d039", new Object[]{this, str, list, kazVar, str2});
         } else if (kazVar == null) {
             kbd.a(kaw.LOG_TAG, "configGetListner 空了");
-        } else if (TextUtils.isEmpty(str) || list == null || list.size() == 0 || TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str) || list == null || list.size() == 0 || StringUtils.isEmpty(str2)) {
             kazVar.a((List<String>) null);
             kbd.a(kaw.LOG_TAG, "传入的人群id集合  空了");
         } else {
@@ -433,7 +433,7 @@ public class kay {
             return ((Boolean) ipChange.ipc$dispatch("c1aa3527", new Object[]{str, list})).booleanValue();
         }
         for (GroupData groupData : list) {
-            if (groupData != null && TextUtils.equals(groupData.getCrowd(), str)) {
+            if (groupData != null && StringUtils.equals(groupData.getCrowd(), str)) {
                 return true;
             }
         }
@@ -448,7 +448,7 @@ public class kay {
         for (GroupData groupData : list) {
             if (groupData != null) {
                 String expireTime = groupData.getExpireTime();
-                if (TextUtils.equals(groupData.getCrowd(), str) && kbc.a(expireTime)) {
+                if (StringUtils.equals(groupData.getCrowd(), str) && kbc.a(expireTime)) {
                     return true;
                 }
             }
@@ -466,7 +466,7 @@ public class kay {
             for (String str : list2) {
                 for (GroupData groupData : list) {
                     String crowd = groupData.getCrowd();
-                    if (crowd != null && TextUtils.equals(crowd, str)) {
+                    if (crowd != null && StringUtils.equals(crowd, str)) {
                         arrayList.add(crowd);
                     }
                 }
@@ -494,7 +494,7 @@ public class kay {
             return false;
         }
         for (GroupData groupData : list) {
-            if (groupData != null && TextUtils.equals(str, groupData.getCrowd())) {
+            if (groupData != null && StringUtils.equals(str, groupData.getCrowd())) {
                 return true;
             }
         }

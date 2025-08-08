@@ -2,7 +2,7 @@ package com.taobao.android.detail2.core.mainpic;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -303,7 +303,7 @@ public class a {
         } else if (jSONObject == null || (jSONObject2 = jSONObject.getJSONObject("extra")) == null) {
         } else {
             String string = jSONObject2.getString("position");
-            if (TextUtils.isEmpty(string) || (a2 = a(Integer.parseInt(string))) == null) {
+            if (StringUtils.isEmpty(string) || (a2 = a(Integer.parseInt(string))) == null) {
                 return;
             }
             a2.a(jSONObject);
@@ -408,7 +408,7 @@ public class a {
         } else {
             if (qnk.f.equals(ovaVar.a()) && (ovaVar instanceof okd)) {
                 String a2 = fln.a(this.d, ((okd) ovaVar).f32136a);
-                if (TextUtils.isEmpty(a2)) {
+                if (StringUtils.isEmpty(a2)) {
                     return;
                 }
                 com.taobao.phenix.intf.b.h().a(a2).addLoaderExtra(esr.BUNDLE_BIZ_CODE, fln.PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).fetch();
@@ -423,7 +423,7 @@ public class a {
                     return;
                 }
                 String a3 = fln.a(this.d, ovbVar.b().data.videoThumbnailURL);
-                if (TextUtils.isEmpty(a3)) {
+                if (StringUtils.isEmpty(a3)) {
                     return;
                 }
                 com.taobao.phenix.intf.b.h().a(a3).addLoaderExtra(esr.BUNDLE_BIZ_CODE, fln.PHENIX_PLAVEHOLDER_PIC_BIZ_CODE).fetch();

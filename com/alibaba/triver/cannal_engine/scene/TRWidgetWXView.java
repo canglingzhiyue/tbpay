@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -113,7 +113,7 @@ public class TRWidgetWXView extends WXComponent implements Serializable {
         }
         if (context instanceof FragmentActivity) {
             this.mActivity = (FragmentActivity) context;
-            if (TextUtils.isEmpty(this.mRenderUrl)) {
+            if (StringUtils.isEmpty(this.mRenderUrl)) {
                 doRenderWidget();
             } else {
                 doRenderWeex(this.mRenderUrl);
@@ -196,7 +196,7 @@ public class TRWidgetWXView extends WXComponent implements Serializable {
         } catch (Exception e) {
             RVLogger.e(this.TAG, e);
         }
-        if (TextUtils.isEmpty(this.mStartParams.getWidgetId())) {
+        if (StringUtils.isEmpty(this.mStartParams.getWidgetId())) {
             this.mStartParams.setWidgetId(String.valueOf(getBasicComponentData().getAttrs().get("canalId")));
         }
         this.mRootView = new com.alibaba.triver.cannal_engine.event.nativeembed.NativeWidgetNestedRenderContainer(getContext(), cbs.a(this.mStartParams));
@@ -236,7 +236,7 @@ public class TRWidgetWXView extends WXComponent implements Serializable {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("af2eb696", new Object[]{this, aVar, map});
-                } else if (TextUtils.equals(TRWidgetConstant.CL_TRIVER_INITING.f3640a, aVar.f3640a)) {
+                } else if (StringUtils.equals(TRWidgetConstant.CL_TRIVER_INITING.f3640a, aVar.f3640a)) {
                 } else {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("errorCode", (Object) aVar.f3640a);
@@ -335,7 +335,7 @@ public class TRWidgetWXView extends WXComponent implements Serializable {
                 }
             }
         });
-        this.mWidgetInstance.render(this.mStartParams, TextUtils.equals("canal", getComponentType()));
+        this.mWidgetInstance.render(this.mStartParams, StringUtils.equals("canal", getComponentType()));
     }
 
     private void fireEventOnMainThread(final String str, final JSONObject jSONObject) {

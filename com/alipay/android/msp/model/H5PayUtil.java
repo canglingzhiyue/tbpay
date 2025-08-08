@@ -1,6 +1,6 @@
 package com.alipay.android.msp.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.utils.LogUtil;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.net.URLDecoder;
@@ -34,13 +34,13 @@ public class H5PayUtil {
                 break;
             }
             String str3 = strArr[i];
-            if (!TextUtils.isEmpty(map.get(str3))) {
+            if (!StringUtils.isEmpty(map.get(str3))) {
                 str2 = map.get(str3);
                 break;
             }
             i++;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             if (z2) {
                 return false;
             }
@@ -93,7 +93,7 @@ public class H5PayUtil {
             if (indexOf < str.length()) {
                 return "";
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 i = str3.indexOf(str2, indexOf);
             }
             if (i <= 0) {
@@ -115,7 +115,7 @@ public class H5PayUtil {
             jSONObject.put("appkey", "2014052600006128");
             jSONObject.put("ty", "sdk_and");
             jSONObject.put("sdk_start_time", System.currentTimeMillis());
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 jSONObject.put(str, str2);
             }
             return jSONObject.toString();

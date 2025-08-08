@@ -6,7 +6,7 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.android.taobao.aop.ANDROID_TELEPHONY_TELEPHONYMANAGER_PROXY;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
@@ -61,7 +61,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("bbc5dc40", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(f1542a)) {
+        if (!StringUtils.isEmpty(f1542a)) {
             return f1542a;
         }
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -97,7 +97,7 @@ public class h {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("31400281", new Object[]{context});
         }
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return b;
         }
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);

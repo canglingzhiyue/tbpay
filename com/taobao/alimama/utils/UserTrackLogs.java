@@ -1,6 +1,6 @@
 package com.taobao.alimama.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.api.ConnectionResult;
 import com.taobao.muniontaobaosdk.util.b;
@@ -59,7 +59,7 @@ public class UserTrackLogs {
             ipChange.ipc$dispatch("ab8cfc13", new Object[]{new Integer(i), str, str2});
             return;
         }
-        TBS.Ext.commitEvent(i, "", "", "", "sdkversion=5.15.6", "clickid=" + str2, "localinfo=", "bucket=" + TextUtils.join(";", c.l()), str);
+        TBS.Ext.commitEvent(i, "", "", "", "sdkversion=5.15.6", "clickid=" + str2, "localinfo=", "bucket=" + StringUtils.join(";", c.l()), str);
     }
 
     public static void trackClick(int i, String str, String str2, String str3) {
@@ -68,7 +68,7 @@ public class UserTrackLogs {
             ipChange.ipc$dispatch("df30671d", new Object[]{new Integer(i), str, str2, str3});
             return;
         }
-        TBS.Ext.commitEvent(i, "", "", "", "sdkversion=5.15.6", "clickid=" + str2, "localinfo=", "bucket=" + TextUtils.join(";", c.l()), str, "epid=" + str3);
+        TBS.Ext.commitEvent(i, "", "", "", "sdkversion=5.15.6", "clickid=" + str2, "localinfo=", "bucket=" + StringUtils.join(";", c.l()), str, "epid=" + str3);
     }
 
     public static void trackClick(int i, String str, String str2, String str3, String str4, String str5, String str6) {
@@ -77,7 +77,7 @@ public class UserTrackLogs {
             ipChange.ipc$dispatch("2fff913b", new Object[]{new Integer(i), str, str2, str3, str4, str5, str6});
             return;
         }
-        TBS.Ext.commitEvent(i, "", "", "", "sdkversion=5.15.6", "clickid=" + str2, "localinfo=", "bucket=" + TextUtils.join(";", c.l()), str, "epid=" + str3, "host=" + str4, "path=" + str5, "mmAdArgs=" + str6);
+        TBS.Ext.commitEvent(i, "", "", "", "sdkversion=5.15.6", "clickid=" + str2, "localinfo=", "bucket=" + StringUtils.join(";", c.l()), str, "epid=" + str3, "host=" + str4, "path=" + str5, "mmAdArgs=" + str6);
     }
 
     public static void trackAdLog(String str, String... strArr) {
@@ -85,7 +85,7 @@ public class UserTrackLogs {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3f813a18", new Object[]{str, strArr});
         } else {
-            trackLog(ConnectionResult.SERVICE_UPDATING, str, "", "", (strArr == null || strArr.length <= 0) ? "" : TextUtils.join(",", strArr));
+            trackLog(ConnectionResult.SERVICE_UPDATING, str, "", "", (strArr == null || strArr.length <= 0) ? "" : StringUtils.join(",", strArr));
         }
     }
 
@@ -94,7 +94,7 @@ public class UserTrackLogs {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1b2a2412", new Object[]{str, strArr});
         } else {
-            trackLog(ConnectionResult.SIGN_IN_FAILED, str, "", "", (strArr == null || strArr.length <= 0) ? "" : TextUtils.join(",", strArr));
+            trackLog(ConnectionResult.SIGN_IN_FAILED, str, "", "", (strArr == null || strArr.length <= 0) ? "" : StringUtils.join(",", strArr));
         }
     }
 
@@ -103,7 +103,7 @@ public class UserTrackLogs {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("91c56ee6", new Object[]{str, strArr});
         } else {
-            trackLog(19999, str, "", "", (strArr == null || strArr.length <= 0) ? "" : TextUtils.join(",", strArr));
+            trackLog(19999, str, "", "", (strArr == null || strArr.length <= 0) ? "" : StringUtils.join(",", strArr));
         }
     }
 
@@ -134,7 +134,7 @@ public class UserTrackLogs {
         }
         String a2 = b.a(new Throwable(), 1, 5);
         if (strArr != null && strArr.length > 0) {
-            a2 = a2 + "," + TextUtils.join(",", strArr);
+            a2 = a2 + "," + StringUtils.join(",", strArr);
         }
         trackLog(19999, "Munion_Invoke_Trace", "", "", a2);
     }
@@ -173,7 +173,7 @@ public class UserTrackLogs {
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("e613c382", new Object[]{new Integer(i), str, str2, str3, str4});
         } else {
-            TBS.Ext.commitEvent(UT_PAGE_NAME, i, str, str2, str3, String.format("sdkversion=%s,bucket=%s", "5.15.6", TextUtils.join(";", c.l())), str4);
+            TBS.Ext.commitEvent(UT_PAGE_NAME, i, str, str2, str3, String.format("sdkversion=%s,bucket=%s", "5.15.6", StringUtils.join(";", c.l())), str4);
         }
     }
 

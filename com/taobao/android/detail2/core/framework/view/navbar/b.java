@@ -1,7 +1,7 @@
 package com.taobao.android.detail2.core.framework.view.navbar;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -123,7 +123,7 @@ public class b {
         this.c = jSONObject;
         this.l = i;
         e();
-        if (this.b == null || this.c == null || TextUtils.isEmpty(this.e)) {
+        if (this.b == null || this.c == null || StringUtils.isEmpty(this.e)) {
             return;
         }
         this.b.setTextColor(this.l);
@@ -240,7 +240,7 @@ public class b {
                     return;
                 }
                 b.b(b.this, true);
-                if (!TextUtils.isEmpty(str2) && z) {
+                if (!StringUtils.isEmpty(str2) && z) {
                     if (ErrorConstant.isSessionInvalid(str) || "ANDROID_SYS_LOGIN_CANCEL".equals(str)) {
                         fjt.a(b.d(b.this), "亲,您暂未登录~");
                         return;
@@ -286,7 +286,7 @@ public class b {
                     return;
                 }
                 b.b(b.this, false);
-                if (!TextUtils.isEmpty(str2) && z) {
+                if (!StringUtils.isEmpty(str2) && z) {
                     if (ErrorConstant.isSessionInvalid(str) || "ANDROID_SYS_LOGIN_CANCEL".equals(str)) {
                         fjt.a(b.d(b.this), "亲,您暂未登录~");
                         return;

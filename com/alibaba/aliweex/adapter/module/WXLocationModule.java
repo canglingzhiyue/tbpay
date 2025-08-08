@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.aliweex.AliWXSDKInstance;
 import com.alibaba.aliweex.bundle.WeexPageFragment;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -53,7 +53,7 @@ public class WXLocationModule extends WXModule {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("ea862e45", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || this.mWXSDKInstance.O() == null || (findWeexPageFragment = findWeexPageFragment()) == null) {
+        } else if (StringUtils.isEmpty(str) || this.mWXSDKInstance.O() == null || (findWeexPageFragment = findWeexPageFragment()) == null) {
         } else {
             replace(findWeexPageFragment, str);
         }
@@ -69,7 +69,7 @@ public class WXLocationModule extends WXModule {
         String str = WeexPageFragment.FRAGMENT_TAG;
         if (this.mWXSDKInstance instanceof AliWXSDKInstance) {
             String a2 = ((AliWXSDKInstance) this.mWXSDKInstance).a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 str = a2;
             }
         }
@@ -88,12 +88,12 @@ public class WXLocationModule extends WXModule {
         }
         Uri parse = Uri.parse(str);
         String queryParameter = parse.getQueryParameter(b.WX_TPL);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             str2 = queryParameter;
         } else {
             str2 = "true".equals(parse.getQueryParameter("wh_weex")) ? str : "";
         }
-        if (TextUtils.isEmpty(str2) || weexPageFragment == null) {
+        if (StringUtils.isEmpty(str2) || weexPageFragment == null) {
             return;
         }
         weexPageFragment.replace(str, str2);

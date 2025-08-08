@@ -1,7 +1,7 @@
 package com.taobao.android.behavir;
 
 import android.app.Application;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -109,7 +109,7 @@ public class BehaviR extends com.taobao.android.behavir.a {
             return;
         }
         BHREvent e = BHRDecisionEngine.a().e();
-        if (e == null || drpVar == null || !TextUtils.equals(e.scene, drpVar.d) || !TextUtils.equals(e.sessionId, drpVar.b) || e.seqId != drpVar.f26928a) {
+        if (e == null || drpVar == null || !StringUtils.equals(e.scene, drpVar.d) || !StringUtils.equals(e.sessionId, drpVar.b) || e.seqId != drpVar.f26928a) {
             return;
         }
         e.bizArgs = drpVar.l;

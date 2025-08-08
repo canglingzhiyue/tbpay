@@ -3,7 +3,7 @@ package tb;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.GravityCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.facebook.yoga.YogaAlign;
 import com.facebook.yoga.YogaDisplay;
@@ -230,7 +230,7 @@ public final class odx {
         if (strArr != null && strArr2 != null) {
             for (String str : strArr) {
                 for (String str2 : strArr2) {
-                    if (TextUtils.equals(str, str2)) {
+                    if (StringUtils.equals(str, str2)) {
                         return true;
                     }
                 }
@@ -288,25 +288,25 @@ public final class odx {
         return null;
     }
 
-    public static TextUtils.TruncateAt e(String str) {
+    public static StringUtils.TruncateAt e(String str) {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
-            return (TextUtils.TruncateAt) ipChange.ipc$dispatch("13c5842c", new Object[]{str});
+            return (StringUtils.TruncateAt) ipChange.ipc$dispatch("13c5842c", new Object[]{str});
         }
         if (str.equals("start")) {
-            return TextUtils.TruncateAt.START;
+            return StringUtils.TruncateAt.START;
         }
         if (str.equals("middle")) {
-            return TextUtils.TruncateAt.MIDDLE;
+            return StringUtils.TruncateAt.MIDDLE;
         }
         if (str.equals("end")) {
-            return TextUtils.TruncateAt.END;
+            return StringUtils.TruncateAt.END;
         }
         if (str.equals("marquee")) {
-            return TextUtils.TruncateAt.MARQUEE;
+            return StringUtils.TruncateAt.MARQUEE;
         }
         if (!str.equals("clip")) {
-            return TextUtils.TruncateAt.END;
+            return StringUtils.TruncateAt.END;
         }
         return null;
     }

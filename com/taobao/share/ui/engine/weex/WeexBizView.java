@@ -1,7 +1,7 @@
 package com.taobao.share.ui.engine.weex;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -125,7 +125,7 @@ public class WeexBizView extends FrameLayout implements nzo.b {
             return;
         }
         nyy.a("调用WeexBizView#render");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             nyy.a("【异常】weex url empty");
             sListener.a(this);
             return;
@@ -145,7 +145,7 @@ public class WeexBizView extends FrameLayout implements nzo.b {
             return;
         }
         nyy.a("调用WeexBizView#render");
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             nyy.a("【异常】weex url empty");
             sListener.a(this);
             return;

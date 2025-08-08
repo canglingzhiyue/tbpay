@@ -5,7 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -365,7 +365,7 @@ public class TriverEmbedTBVideoView extends BaseEmbedView implements av, ax, u, 
                 } else if ("stop".equals(str)) {
                     b();
                 } else if ("changeControllerStatus".equals(str)) {
-                    this.H = TextUtils.equals(jSONObject.getString("status"), "1");
+                    this.H = StringUtils.equals(jSONObject.getString("status"), "1");
                     if (this.H) {
                         this.e.showController();
                     } else {
@@ -536,10 +536,10 @@ public class TriverEmbedTBVideoView extends BaseEmbedView implements av, ax, u, 
             ipChange.ipc$dispatch("7cb20669", new Object[]{this, jSONObject, bridgeCallback});
         } else if (jSONObject == null || jSONObject.size() == 0) {
         } else {
-            if (TextUtils.isEmpty(this.f16498a)) {
+            if (StringUtils.isEmpty(this.f16498a)) {
                 a(jSONObject);
             }
-            if ((!TextUtils.isEmpty(this.f16498a) || "TBVideo".equals(this.i) || ("YKVideo".equals(this.i) && !TextUtils.isEmpty(this.j))) && this.e == null) {
+            if ((!StringUtils.isEmpty(this.f16498a) || "TBVideo".equals(this.i) || ("YKVideo".equals(this.i) && !StringUtils.isEmpty(this.j))) && this.e == null) {
                 e();
             } else {
                 AVSDKLog.e("TriverEmbedTBVideoView", "src or videoid is empty");
@@ -737,10 +737,10 @@ public class TriverEmbedTBVideoView extends BaseEmbedView implements av, ax, u, 
             if (dWAspectRatio != null) {
                 aVar.a(dWAspectRatio);
             }
-            if (!TextUtils.isEmpty(this.h)) {
+            if (!StringUtils.isEmpty(this.h)) {
                 aVar.g(this.h);
             }
-            if (!TextUtils.isEmpty(this.l)) {
+            if (!StringUtils.isEmpty(this.l)) {
                 aVar.i(true);
                 com.taobao.avplayer.interactivelifecycle.frontcover.model.a aVar2 = new com.taobao.avplayer.interactivelifecycle.frontcover.model.a();
                 DWFrontCoverBean dWFrontCoverBean = new DWFrontCoverBean(0L, null, this.l);
@@ -940,7 +940,7 @@ public class TriverEmbedTBVideoView extends BaseEmbedView implements av, ax, u, 
             return ((Boolean) ipChange.ipc$dispatch("5c0f972", new Object[]{this})).booleanValue();
         }
         String config = OrangeConfig.getInstance().getConfig("DWInteractive", "canPlayRateViewInTriver", "*");
-        return !TextUtils.isEmpty(config) && ("*".equals(config) || b.b(this.g, config));
+        return !StringUtils.isEmpty(config) && ("*".equals(config) || b.b(this.g, config));
     }
 
     private boolean h() {

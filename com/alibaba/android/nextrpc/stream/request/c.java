@@ -1,7 +1,7 @@
 package com.alibaba.android.nextrpc.stream.request;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.nextrpc.internal.utils.UnifyLog;
 import com.alibaba.android.nextrpc.stream.internal.StreamNextRpcRequestImpl;
 import com.alibaba.android.nextrpc.stream.internal.mtop.IStreamMtopRequestCallback;
@@ -42,7 +42,7 @@ public class c implements a {
             list.add(this);
             b.put(str, list);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             this.f2397a = new com.alibaba.android.nextrpc.stream.internal.response.a(this.f);
             com.alibaba.android.nextrpc.internal.accs.a.a().a(context, str, this.f2397a);
         }
@@ -90,7 +90,7 @@ public class c implements a {
                 }
             }
         }
-        if (!TextUtils.isEmpty(this.e) && this.f2397a != null) {
+        if (!StringUtils.isEmpty(this.e) && this.f2397a != null) {
             com.alibaba.android.nextrpc.internal.accs.a.a().b(this.c, this.e, this.f2397a);
         }
         for (String str : this.f.keySet()) {

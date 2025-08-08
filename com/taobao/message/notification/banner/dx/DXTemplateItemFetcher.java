@@ -1,6 +1,6 @@
 package com.taobao.message.notification.banner.dx;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -94,7 +94,7 @@ public final class DXTemplateItemFetcher {
         }
         if (currentConfig == null) {
             String config = OrangeConfig.getInstance().getConfig("mpm_data_switch", "pushLayoutInfo", "");
-            if (!TextUtils.isEmpty(config)) {
+            if (!StringUtils.isEmpty(config)) {
                 try {
                     currentConfig = JSON.parseObject(config);
                 } catch (Exception unused) {

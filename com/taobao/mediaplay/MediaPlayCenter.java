@@ -6,7 +6,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.support.v4.view.InputDeviceCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Surface;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
@@ -267,7 +267,7 @@ public class MediaPlayCenter implements b, Serializable {
             return;
         }
         this.mSetup = true;
-        if (TextUtils.isEmpty(this.mUsingInterface)) {
+        if (StringUtils.isEmpty(this.mUsingInterface)) {
             this.mMediaContext.mUsingInterface = COMPONENT_NAME;
         } else {
             this.mMediaContext.mUsingInterface = this.mUsingInterface + "." + COMPONENT_NAME;
@@ -485,15 +485,15 @@ public class MediaPlayCenter implements b, Serializable {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("63bd6239", new Object[]{this})).booleanValue();
         }
-        if (TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.getFrom()) || TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoSource) || TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoId)) {
+        if (StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.getFrom()) || StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoSource) || StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoId)) {
             com.taobao.taobaoavsdk.util.c.b("TBDWInstance", "缺少必填参数 bizCode、videoSource、videoId！！");
             MediaPlayControlContext mediaPlayControlContext = this.mMediaContext.mMediaPlayContext;
             log(null, "checkParams from: " + mediaPlayControlContext.getFrom() + ", videoSource: " + mediaPlayControlContext.mVideoSource + ", videoId: " + mediaPlayControlContext.mVideoId);
         }
-        if (TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.getFrom())) {
+        if (StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.getFrom())) {
             this.mMediaContext.mMediaPlayContext.setFrom("default");
         }
-        if (!TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.getVideoUrl()) && TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoId) && "TBVideo".equals(this.mMediaContext.mMediaPlayContext.mVideoSource)) {
+        if (!StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.getVideoUrl()) && StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoId) && "TBVideo".equals(this.mMediaContext.mMediaPlayContext.mVideoSource)) {
             try {
                 String rawPath = new URI(this.mMediaContext.mMediaPlayContext.getVideoUrl()).getRawPath();
                 int lastIndexOf = rawPath.lastIndexOf(47);
@@ -504,7 +504,7 @@ public class MediaPlayCenter implements b, Serializable {
             } catch (Exception unused) {
             }
         }
-        return !TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoId);
+        return !StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mVideoId);
     }
 
     private void initMediaMode(MediaType mediaType) {
@@ -591,7 +591,7 @@ public class MediaPlayCenter implements b, Serializable {
             return;
         }
         try {
-            if (TextUtils.isEmpty(mediaLiveInfo.mediaConfig)) {
+            if (StringUtils.isEmpty(mediaLiveInfo.mediaConfig)) {
                 return;
             }
             mediaLiveInfo.mMediaConfigData = new MediaConfig();
@@ -1227,7 +1227,7 @@ public class MediaPlayCenter implements b, Serializable {
             return;
         }
         log(null, "setBizCode " + str);
-        if (TextUtils.isEmpty(this.mSubBusinessType)) {
+        if (StringUtils.isEmpty(this.mSubBusinessType)) {
             this.mSubBusinessType = str;
         }
         this.mMediaContext.mMediaPlayContext.setFrom(str);
@@ -1340,11 +1340,11 @@ public class MediaPlayCenter implements b, Serializable {
         if (hashMap == null) {
             return;
         }
-        if (!TextUtils.isEmpty(hashMap.get("LiveRoomInit"))) {
+        if (!StringUtils.isEmpty(hashMap.get("LiveRoomInit"))) {
             this.mLiveRoomInit = com.taobao.taobaoavsdk.util.b.a(hashMap.get("LiveRoomInit"));
             AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, "MediaPlayCenter: get LiveRoomInit=" + this.mLiveRoomInit + " from addControlParams");
         }
-        if (TextUtils.isEmpty(hashMap.get("hasPreloadVideoData"))) {
+        if (StringUtils.isEmpty(hashMap.get("hasPreloadVideoData"))) {
             return;
         }
         HashMap<String, String> hashMap2 = new HashMap<>();
@@ -2273,11 +2273,11 @@ public class MediaPlayCenter implements b, Serializable {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (MediaConstant.CMD_LIVE_PUSH_CONTROL_INFO.equals(key) && !TextUtils.isEmpty(value)) {
+            if (MediaConstant.CMD_LIVE_PUSH_CONTROL_INFO.equals(key) && !StringUtils.isEmpty(value)) {
                 this.mMediaContext.mLivePushControlInfo = value;
             } else if (MediaConstant.CMD_LIVE_REMOVE_CONTROL_INFO.equals(key)) {
                 this.mMediaContext.mLivePushControlInfo = null;
-            } else if (MediaConstant.CMD_UPDATE_PLAY_EX.equals(key) && !TextUtils.isEmpty(value)) {
+            } else if (MediaConstant.CMD_UPDATE_PLAY_EX.equals(key) && !StringUtils.isEmpty(value)) {
                 this.mMediaContext.mDynamicPlayEx = value;
             } else if (MediaConstant.CMD_SWITCH_SCENE.equals(key)) {
                 MediaContext mediaContext = this.mMediaContext;
@@ -2416,11 +2416,11 @@ public class MediaPlayCenter implements b, Serializable {
             }
             HashMap hashMap = new HashMap();
             hashMap.put(MediaConstant.CMD_REPLACE_FORCE_OF_NEW_DEFINITION, "1");
-            if (!TextUtils.isEmpty(this.mMediaContext.mLivePushControlInfo)) {
+            if (!StringUtils.isEmpty(this.mMediaContext.mLivePushControlInfo)) {
                 hashMap.put(MediaConstant.CMD_LIVE_PUSH_CONTROL_INFO, this.mMediaContext.mLivePushControlInfo);
             }
             callWithMsgAndResult(hashMap);
-            boolean z = !TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mPlayerQualityItem.newDefinition);
+            boolean z = !StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mPlayerQualityItem.newDefinition);
             if (!this.mMediaContext.mMediaPlayContext.isLiveDefinitionAutoSwitch() && (UpdataUrlListMode.REPLACE_FORCE_OF_NEW_DEFINITION != updataUrlListMode || z)) {
                 return;
             }
@@ -2447,9 +2447,9 @@ public class MediaPlayCenter implements b, Serializable {
             } catch (Exception unused) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, this + " updateUrlList and select url exception.");
             }
-            if (mediaPlayControlContext.mPlayerQualityItem == null || ((!MediaConstant.RTCLIVE_URL_NAME.equals(mediaPlayControlContext.mSelectedUrlName) && !MediaConstant.BFRTC_URL_NAME.equals(mediaPlayControlContext.mSelectedUrlName)) || TextUtils.isEmpty(mediaPlayControlContext.mPlayerQualityItem.newDefinition))) {
+            if (mediaPlayControlContext.mPlayerQualityItem == null || ((!MediaConstant.RTCLIVE_URL_NAME.equals(mediaPlayControlContext.mSelectedUrlName) && !MediaConstant.BFRTC_URL_NAME.equals(mediaPlayControlContext.mSelectedUrlName)) || StringUtils.isEmpty(mediaPlayControlContext.mPlayerQualityItem.newDefinition))) {
                 AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, this + " updateUrlList with select no rtc url.");
-            } else if (TextUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mPlayerQualityItem.newDefinition) || !this.mMediaContext.mMediaPlayContext.mPlayerQualityItem.newDefinition.equals(mediaPlayControlContext.mPlayerQualityItem.newDefinition)) {
+            } else if (StringUtils.isEmpty(this.mMediaContext.mMediaPlayContext.mPlayerQualityItem.newDefinition) || !this.mMediaContext.mMediaPlayContext.mPlayerQualityItem.newDefinition.equals(mediaPlayControlContext.mPlayerQualityItem.newDefinition)) {
                 switchToNewDefinition(9, mediaPlayControlContext.mPlayerQualityItem.newDefinition);
             }
         }
@@ -2506,7 +2506,7 @@ public class MediaPlayCenter implements b, Serializable {
             return ((Boolean) ipChange.ipc$dispatch("5be6cf26", new Object[]{this, new Integer(i), str})).booleanValue();
         }
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, this + " switchToNewDefinition " + i + ", " + str);
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         if (!this.mEnableSwitchToNewDefinition && this.mMediaSwitchListener != null) {

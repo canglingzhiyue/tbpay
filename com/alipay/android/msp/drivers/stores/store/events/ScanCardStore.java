@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.EventAction;
 import com.alipay.android.msp.drivers.stores.store.LocalEventStore;
@@ -74,7 +74,7 @@ public class ScanCardStore extends LocalEventStore {
             }
             if (c == 0) {
                 String string2 = actionParamsJson.getString("ocrImageFormat");
-                if (TextUtils.isEmpty(string2)) {
+                if (StringUtils.isEmpty(string2)) {
                     string2 = BlobManager.UPLOAD_IMAGE_TYPE_JPEG;
                 }
                 int intValue = actionParamsJson.getIntValue("ocrImageQuality");

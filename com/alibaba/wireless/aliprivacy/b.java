@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.security.realidentity.g4;
 import com.alibaba.wireless.aliprivacy.PrivacyAuthGetParam;
@@ -136,7 +136,7 @@ public class b {
         }
         ArrayList arrayList = new ArrayList();
         for (PrivacyAuthGetParam.a aVar : privacyAuthGetParam.getAuthListParams()) {
-            if (aVar.b() != null && !TextUtils.isEmpty(aVar.a())) {
+            if (aVar.b() != null && !StringUtils.isEmpty(aVar.a())) {
                 PrivacyAuthResult privacyAuthResult = new PrivacyAuthResult();
                 privacyAuthResult.setSceneCode(aVar.a());
                 privacyAuthResult.setPermissions(a(context, aVar));
@@ -193,7 +193,7 @@ public class b {
             return PrivacyCode.ERROR_INPUT_PARAMS;
         }
         for (PrivacyAuthParam privacyAuthParam : privacyAuthSetParam.getAuthSetParams()) {
-            if (TextUtils.isEmpty(privacyAuthParam.getSceneCode())) {
+            if (StringUtils.isEmpty(privacyAuthParam.getSceneCode())) {
                 a(context, true, PrivacyCode.ERROR_EMPTY_SCENE_CODE, cgb.a(privacyAuthSetParam), str);
                 return PrivacyCode.ERROR_EMPTY_SCENE_CODE;
             }
@@ -224,7 +224,7 @@ public class b {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         String b = cfy.a().b(str);
-        if (!TextUtils.isEmpty(b)) {
+        if (!StringUtils.isEmpty(b)) {
             return cgb.a(b);
         }
         return null;
@@ -234,7 +234,7 @@ public class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("9b80d809", new Object[]{context, str});
-        } else if (context == null || TextUtils.isEmpty(str)) {
+        } else if (context == null || StringUtils.isEmpty(str)) {
         } else {
             c.a("AliPrivacyCore", "Scene auth data:" + str);
             Map a2 = cgb.a(str);
@@ -253,7 +253,7 @@ public class b {
         } else if (map != null && !map.isEmpty()) {
             PrivacyAuthSetParam.a aVar = new PrivacyAuthSetParam.a();
             for (String str : map.keySet()) {
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     final String str2 = "android.permission." + str;
                     if (a(context, new String[]{str2}) == AuthStatus.GRANTED && (jSONArray = map.get(str)) != null && !jSONArray.isEmpty()) {
                         for (Object obj : jSONArray.toArray()) {
@@ -337,7 +337,7 @@ public class b {
             return (List) ipChange.ipc$dispatch("627608df", new Object[0]);
         }
         String e = cfy.a().e();
-        if (TextUtils.isEmpty(e) || (b = cgb.b(e)) == null || b.isEmpty()) {
+        if (StringUtils.isEmpty(e) || (b = cgb.b(e)) == null || b.isEmpty()) {
             return null;
         }
         return b;
@@ -354,7 +354,7 @@ public class b {
         } catch (Throwable th) {
             c.a("AliPrivacyCore", "getCurrentLoginUserId error", th);
         }
-        return TextUtils.isEmpty(str) ? "nonUtdId" : str;
+        return StringUtils.isEmpty(str) ? "nonUtdId" : str;
     }
 
     public static boolean a(Context context) {

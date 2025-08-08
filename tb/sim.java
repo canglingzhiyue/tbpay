@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -169,12 +169,12 @@ public class sim extends pta implements IMediaService.a, hni, sjd {
 
     public boolean c() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : TextUtils.equals("true", OrangeConfig.getInstance().getConfig("ShortVideo", "enableFixPause", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5889b6e", new Object[]{this})).booleanValue() : StringUtils.equals("true", OrangeConfig.getInstance().getConfig("ShortVideo", "enableFixPause", "true"));
     }
 
     public boolean i() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dd2874", new Object[]{this})).booleanValue() : TextUtils.equals("true", FluidSDK.getRemoteConfigAdapter().getOrangeStringConfig("enableResumePlay", "true"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("5dd2874", new Object[]{this})).booleanValue() : StringUtils.equals("true", FluidSDK.getRemoteConfigAdapter().getOrangeStringConfig("enableResumePlay", "true"));
     }
 
     @Override // tb.pta, tb.snd

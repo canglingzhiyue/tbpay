@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.autosize.l;
@@ -1272,7 +1272,7 @@ public class ipa {
             return;
         }
         String aU = fkt.aU();
-        if (TextUtils.isEmpty(aU)) {
+        if (StringUtils.isEmpty(aU)) {
             return;
         }
         av = aU;
@@ -1410,7 +1410,7 @@ public class ipa {
                 fjt.b(fjt.TAG_TIP, "执行 HomeClientABTestTool getAbTestValue 异常了(temp)。", th);
                 qxo.a("HomeClientABTestTool.getAbTestValue 调用异常。(temp)", th);
             }
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "f_async_nd|f_high_async_nd|f_async_parse|f_server_weex|f_close_img_load|f_idle_event|f_simple_video|f_delay_right_menu|f_base_opt|f_high_base_opt|f_second_holder|f_cloud_blur|f_home_skip_tran|f_wx_container_size|f_time_cre_sl_wx|f_skip_ab_check|f_time_pg_idle";
             }
             au = str;
@@ -1472,7 +1472,7 @@ public class ipa {
             qxo.a("HomeClientABTestTool.getAbTestValue 调用异常。", th);
             str2 = au;
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             str2 = "f_async_nd|f_high_async_nd|f_async_parse|f_server_weex|f_close_img_load|f_idle_event|f_simple_video|f_delay_right_menu|f_base_opt|f_high_base_opt|f_second_holder|f_cloud_blur|f_home_skip_tran|f_wx_container_size|f_time_cre_sl_wx|f_skip_ab_check|f_time_pg_idle";
         }
         fjt.c(fjt.TAG_TIP, str + ":forceUpdateFastSwitchListStr: " + str2);

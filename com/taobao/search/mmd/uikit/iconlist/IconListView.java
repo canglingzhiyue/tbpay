@@ -9,7 +9,7 @@ import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
@@ -205,10 +205,10 @@ public class IconListView extends View implements a.InterfaceC0770a {
                             }
                             int i8 = (boarderPaintColor || this.mBackgroundPaint.getColor() != 0) ? this.PADDING : 0;
                             setTextPaintSize(searchDomBean2);
-                            if (!TextUtils.isEmpty(iconBean.prefix)) {
+                            if (!StringUtils.isEmpty(iconBean.prefix)) {
                                 float measureText = this.mTextPaint.measureText(iconBean.prefix);
                                 int i9 = (searchDomBean2.separatorWidth <= 0 || searchDomBean2.separatorHeight <= 0) ? 0 : (this.ICON_HEIGHT / searchDomBean2.separatorHeight) * searchDomBean2.separatorWidth;
-                                if (!TextUtils.isEmpty(searchDomBean2.prefixBgColor)) {
+                                if (!StringUtils.isEmpty(searchDomBean2.prefixBgColor)) {
                                     int a2 = d.a(searchDomBean2.prefixBgColor, i2);
                                     if (this.mIsDarkMode && iconBean.darkDomBean == null) {
                                         a2 = d.a(25, a2);
@@ -234,7 +234,7 @@ public class IconListView extends View implements a.InterfaceC0770a {
                                 float f2 = i8;
                                 canvas.drawText(iconBean.prefix, f2, (this.ICON_HEIGHT - this.mTextPaint.descent()) - this.TEXT_TRANSLATE, this.mTextPaint);
                                 int i12 = (int) (f2 + measureText);
-                                if (TextUtils.isEmpty(searchDomBean2.separatorImg) || i9 <= 0) {
+                                if (StringUtils.isEmpty(searchDomBean2.separatorImg) || i9 <= 0) {
                                     i = width;
                                     i8 = i12;
                                 } else {
@@ -314,7 +314,7 @@ public class IconListView extends View implements a.InterfaceC0770a {
         if (this.mIsDarkMode && iconBean.darkDomBean != null) {
             searchDomBean = iconBean.darkDomBean;
         }
-        if (TextUtils.isEmpty(searchDomBean.borderColor)) {
+        if (StringUtils.isEmpty(searchDomBean.borderColor)) {
             return false;
         }
         int a2 = d.a(searchDomBean.borderColor, 0);
@@ -446,7 +446,7 @@ public class IconListView extends View implements a.InterfaceC0770a {
 
     private boolean hasGradientConfig(SearchDomBean searchDomBean) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c7860ce7", new Object[]{this, searchDomBean})).booleanValue() : !TextUtils.isEmpty(searchDomBean.backgroundGradientStart) && !TextUtils.isEmpty(searchDomBean.backgroundGradientEnd);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("c7860ce7", new Object[]{this, searchDomBean})).booleanValue() : !StringUtils.isEmpty(searchDomBean.backgroundGradientStart) && !StringUtils.isEmpty(searchDomBean.backgroundGradientEnd);
     }
 
     private int calImgIconWidth(SearchDomBean searchDomBean, IconBean iconBean) {
@@ -468,7 +468,7 @@ public class IconListView extends View implements a.InterfaceC0770a {
         }
         setTextPaintSize(searchDomBean);
         float measureText = this.mTextPaint.measureText(iconBean.text);
-        if (!TextUtils.isEmpty(iconBean.prefix)) {
+        if (!StringUtils.isEmpty(iconBean.prefix)) {
             measureText += this.mTextPaint.measureText(iconBean.prefix);
             if (searchDomBean.separatorWidth > 0 && searchDomBean.separatorHeight > 0) {
                 measureText += (this.ICON_HEIGHT / searchDomBean.separatorHeight) * searchDomBean.separatorWidth;
@@ -477,7 +477,7 @@ public class IconListView extends View implements a.InterfaceC0770a {
         if (d.a(searchDomBean.backgroundColor, 0) == 0 && !hasGradientConfig(searchDomBean)) {
             z = false;
         }
-        return (!TextUtils.isEmpty(searchDomBean.borderColor) || z) ? ((int) measureText) + (this.PADDING * 2) : (int) measureText;
+        return (!StringUtils.isEmpty(searchDomBean.borderColor) || z) ? ((int) measureText) + (this.PADDING * 2) : (int) measureText;
     }
 
     private void setTextPaintSize(SearchDomBean searchDomBean) {

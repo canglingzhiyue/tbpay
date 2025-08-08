@@ -5,7 +5,7 @@ import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.r;
 import android.taobao.windvane.standardmodal.WVStandardEventCenter;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.log.TLog;
@@ -124,7 +124,7 @@ public class pkh extends b implements TBLOpenPlatformView.a, pjm {
         try {
             if (obj instanceof Map) {
                 this.d = String.valueOf(((Map) obj).get("params"));
-                if (!TextUtils.isEmpty(this.d)) {
+                if (!StringUtils.isEmpty(this.d)) {
                     com.alibaba.fastjson.JSONObject b = pqj.b(this.d);
                     if (this.f32717a != null) {
                         this.f32717a.setData(b);

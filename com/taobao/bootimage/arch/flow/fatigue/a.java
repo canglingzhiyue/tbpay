@@ -1,6 +1,6 @@
 package com.taobao.bootimage.arch.flow.fatigue;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -79,7 +79,7 @@ public class a implements srf, srl {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                 } else {
                     try {
                         a.a(a.this, (RemoteFatigueDataModel) JSON.parseObject(str, RemoteFatigueDataModel.class));
@@ -98,7 +98,7 @@ public class a implements srf, srl {
                 IpChange ipChange2 = $ipChange;
                 if (ipChange2 instanceof IpChange) {
                     ipChange2.ipc$dispatch("f3a64c32", new Object[]{this, str});
-                } else if (TextUtils.isEmpty(str)) {
+                } else if (StringUtils.isEmpty(str)) {
                 } else {
                     try {
                         a.a(a.this, (LocalRecordModel) JSON.parseObject(str, LocalRecordModel.class));
@@ -173,7 +173,7 @@ public class a implements srf, srl {
         }
         String f = f();
         kej.a("2ARCH_FatigueWorkFlow", "isInLimitInSingleDay currentDay: " + f);
-        if (!TextUtils.equals(f, this.b.localLastShowDay)) {
+        if (!StringUtils.equals(f, this.b.localLastShowDay)) {
             kej.a("2ARCH_FatigueWorkFlow", "isInLimitInSingleDay diff lastShowDayValue : " + this.b.localLastShowDay);
             return false;
         }
@@ -187,7 +187,7 @@ public class a implements srf, srl {
             return ((Boolean) ipChange.ipc$dispatch("5a4ca70", new Object[]{this})).booleanValue();
         }
         long currentTimeMillis = System.currentTimeMillis();
-        if (TextUtils.isEmpty(this.b.localLastShowTime) || TextUtils.isEmpty(this.f16661a.globalLimitSeconds)) {
+        if (StringUtils.isEmpty(this.b.localLastShowTime) || StringUtils.isEmpty(this.f16661a.globalLimitSeconds)) {
             return false;
         }
         long parseLong = (currentTimeMillis - Long.parseLong(this.b.localLastShowTime)) / 1000;

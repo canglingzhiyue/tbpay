@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DinamicXEngine;
 import com.taobao.android.dinamicx.monitor.DXMonitorConstant;
@@ -59,7 +59,7 @@ public class fwh {
             ipChange.ipc$dispatch("d18de974", new Object[]{this, context, str, str2});
             return;
         }
-        if (context != null && !TextUtils.isEmpty(str)) {
+        if (context != null && !StringUtils.isEmpty(str)) {
             this.b = str2;
             if (this.f28152a == null) {
                 this.f28152a = new DXDataBaseHelper(context, str, str2);

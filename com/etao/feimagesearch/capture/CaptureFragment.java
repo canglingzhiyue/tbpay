@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.taobao.windvane.jsbridge.e;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -249,7 +249,7 @@ public final class CaptureFragment extends TBBaseFragment implements cpu {
         } else if (this.hasPreloadIrpTemplate || !b.cq()) {
         } else {
             String bW = b.bW();
-            if (TextUtils.isEmpty(bW)) {
+            if (StringUtils.isEmpty(bW)) {
                 return;
             }
             this.hasPreloadIrpTemplate = true;

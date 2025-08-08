@@ -2,7 +2,7 @@ package tb;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
 
@@ -49,7 +49,7 @@ public class hvo {
         }
         SharedPreferences a2 = a();
         String string = a2 != null ? a2.getString(CoreConstants.ORDER_APP_NAME_KEY, null) : "";
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = b;
         }
         hyn.a("OrderCore", "getAppName", "appName = " + string);
@@ -63,7 +63,7 @@ public class hvo {
         }
         SharedPreferences a2 = a();
         String string = a2 != null ? a2.getString(CoreConstants.ORDER_APP_V_KEY, null) : "";
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             string = c;
         }
         hyn.a("OrderCore", "getAppVersion", "appV = " + string);

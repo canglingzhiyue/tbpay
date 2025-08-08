@@ -1,7 +1,7 @@
 package com.taobao.tbpoplayer.adapter;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.poplayer.norm.IPopLayerViewAdapter;
@@ -51,13 +51,13 @@ public class j implements IPopLayerViewAdapter {
         if (baseConfigItem != null && list != null && uri != null) {
             try {
                 for (String str : list) {
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         Uri parse = Uri.parse(str);
-                        if (TextUtils.isEmpty(uri.getHost()) || TextUtils.isEmpty(parse.getHost()) || uri.getHost().equals(parse.getHost())) {
+                        if (StringUtils.isEmpty(uri.getHost()) || StringUtils.isEmpty(parse.getHost()) || uri.getHost().equals(parse.getHost())) {
                             String queryParameter = parse.getQueryParameter("uuid");
-                            if (TextUtils.isEmpty(queryParameter) || queryParameter.equals(baseConfigItem.uuid)) {
+                            if (StringUtils.isEmpty(queryParameter) || queryParameter.equals(baseConfigItem.uuid)) {
                                 String queryParameter2 = parse.getQueryParameter("params");
-                                if (TextUtils.isEmpty(queryParameter2)) {
+                                if (StringUtils.isEmpty(queryParameter2)) {
                                     return true;
                                 }
                                 JSONObject parseObject = JSON.parseObject(queryParameter2);
@@ -77,12 +77,12 @@ public class j implements IPopLayerViewAdapter {
                                 } else if (c == 1) {
                                     str3 = "weexUrl";
                                 }
-                                if (parseObject.containsKey(str3) && !TextUtils.isEmpty(parseObject.getString(str3))) {
+                                if (parseObject.containsKey(str3) && !StringUtils.isEmpty(parseObject.getString(str3))) {
                                     JSONObject parseObject2 = JSON.parseObject(baseConfigItem.params);
                                     if (parseObject2 != null) {
                                         String string = parseObject.getString(str3);
                                         String string2 = parseObject2.getString(str3);
-                                        if (!TextUtils.isEmpty(string2) && string2.contains(string)) {
+                                        if (!StringUtils.isEmpty(string2) && string2.contains(string)) {
                                         }
                                     } else {
                                         continue;

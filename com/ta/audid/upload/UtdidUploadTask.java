@@ -1,7 +1,7 @@
 package com.ta.audid.upload;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.ta.audid.store.UtdidContentBuilder;
 import com.ta.audid.store.UtdidContentUtil;
@@ -82,7 +82,7 @@ public class UtdidUploadTask implements Runnable {
         }
         UtdidLogger.d();
         String buildPostData = buildPostData();
-        if (TextUtils.isEmpty(buildPostData)) {
+        if (StringUtils.isEmpty(buildPostData)) {
             UtdidLogger.d("postData is empty", new Object[0]);
         } else if (reqServer(buildPostData)) {
             UtdidLogger.d("", "upload success");
@@ -97,7 +97,7 @@ public class UtdidUploadTask implements Runnable {
             return (String) ipChange.ipc$dispatch("ac8d7101", new Object[]{this});
         }
         String currentAppUtdid = AppUtdid.getInstance().getCurrentAppUtdid();
-        if (TextUtils.isEmpty(currentAppUtdid)) {
+        if (StringUtils.isEmpty(currentAppUtdid)) {
             return null;
         }
         String buildUDID = UtdidContentBuilder.buildUDID(currentAppUtdid);

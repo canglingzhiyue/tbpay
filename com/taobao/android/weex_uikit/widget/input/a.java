@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.text.InputFilter;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import com.alibaba.analytics.core.sync.q;
@@ -285,7 +285,7 @@ public class a {
             if (obj == null) {
                 obj = "";
             }
-            if (TextUtils.isEmpty(editText.getText())) {
+            if (StringUtils.isEmpty(editText.getText())) {
                 String valueOf = String.valueOf(obj);
                 editText.setText(valueOf);
                 editText.setSelection(valueOf.length());
@@ -343,7 +343,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("7f55a2a8", new Object[]{uINode, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             uINode.setAttribute("color", -16777216);
         } else {
             uINode.setAttribute("color", Integer.valueOf(com.taobao.android.weex_uikit.util.b.a(str)));
@@ -400,7 +400,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("fa78ae45", new Object[]{uINode, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             uINode.setAttribute("fontSize", Float.valueOf(32.0f));
         } else {
             uINode.setAttribute("fontSize", Integer.valueOf(Math.round(com.taobao.android.weex_framework.util.i.a(com.taobao.android.weex_framework.util.i.b(str, uINode.getInstance().getRpxPerRem())))));
@@ -420,7 +420,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("78d9b224", new Object[]{uINode, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             uINode.setAttribute("filter", null);
         } else {
             int i = Integer.MAX_VALUE;
@@ -529,7 +529,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3fcbdc1", new Object[]{uINode, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             uINode.setAttribute(Constants.Name.PLACEHOLDER_COLOR, -6710887);
         } else {
             uINode.setAttribute(Constants.Name.PLACEHOLDER_COLOR, Integer.valueOf(com.taobao.android.weex_uikit.util.b.a(str)));

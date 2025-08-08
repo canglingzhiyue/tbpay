@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.h;
 import com.alibaba.analytics.core.sync.i;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -25,12 +25,12 @@ public class aoq {
         try {
             Context k = aob.a().k();
             String a2 = apg.a(k, "utanalytics_tnet_host_port_ipv6");
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 this.b = true;
             }
             a(a2);
             String a3 = aqb.a(k, "utanalytics_tnet_host_port_ipv6");
-            if (!TextUtils.isEmpty(a3)) {
+            if (!StringUtils.isEmpty(a3)) {
                 this.b = true;
             }
             a(a3);
@@ -60,10 +60,10 @@ public class aoq {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
             return;
         }
-        if (!TextUtils.isEmpty(str) && (indexOf = (trim = str.trim()).indexOf(":")) != -1) {
+        if (!StringUtils.isEmpty(str) && (indexOf = (trim = str.trim()).indexOf(":")) != -1) {
             String substring = trim.substring(0, indexOf);
             int parseInt = Integer.parseInt(trim.substring(indexOf + 1, trim.length()));
-            if (!TextUtils.isEmpty(substring) && parseInt > 0) {
+            if (!StringUtils.isEmpty(substring) && parseInt > 0) {
                 this.f25481a.a(substring);
                 this.f25481a.a(parseInt);
             }

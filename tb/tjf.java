@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.bootimage.linked.h;
 import com.taobao.mmad.data.BaseMmAdModel;
@@ -23,7 +23,7 @@ public class tjf implements tje {
         stv.a("PopRule", "PopRule verify start.");
         BaseMmAdModel b = tiqVar.d().b();
         h.a("").d().a();
-        if (!TextUtils.isEmpty(b.animationType) && "1".equals(b.animationType)) {
+        if (!StringUtils.isEmpty(b.animationType) && "1".equals(b.animationType)) {
             if (stu.b(b.animationLottie) == null) {
                 tjo.a(tiqVar.d().e(), b);
                 stv.a("PopRule", "PopRule verify error, animationLottie not exist local.");

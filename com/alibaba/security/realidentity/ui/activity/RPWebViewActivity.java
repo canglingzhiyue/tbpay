@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.ValueCallback;
@@ -347,7 +347,7 @@ public class RPWebViewActivity extends Activity implements c4 {
         rPTopBar.getIvLeftParent().setOnClickListener(new a());
         frameLayout.addView(webView);
         String userAgentString = this.f3554a.getUserAgentString();
-        if (TextUtils.isEmpty(userAgentString)) {
+        if (StringUtils.isEmpty(userAgentString)) {
             f();
         }
         this.b = userAgentString;

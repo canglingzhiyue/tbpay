@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.alibaba.fastjson.JSON;
@@ -245,7 +245,7 @@ public class tmk extends qqn {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return false;
         }
         try {
@@ -265,7 +265,7 @@ public class tmk extends qqn {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return false;
         }
         if (!str.startsWith(k.HTTPS_PREFIX) || !str2.startsWith(k.HTTPS_PREFIX)) {
@@ -273,7 +273,7 @@ public class tmk extends qqn {
         }
         Uri b = o.b(str);
         Uri b2 = o.b(str2);
-        return b != null && b2 != null && TextUtils.equals(b.getHost(), b2.getHost()) && TextUtils.equals(b.getPath(), b2.getPath());
+        return b != null && b2 != null && StringUtils.equals(b.getHost(), b2.getHost()) && StringUtils.equals(b.getPath(), b2.getPath());
     }
 
     @Override // tb.qqn, tb.qqq

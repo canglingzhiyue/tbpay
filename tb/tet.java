@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import java.util.HashMap;
@@ -37,12 +37,12 @@ public class tet extends fuf {
         }
         String str = "" + obj + obj2 + obj3;
         String str2 = f34060a.get(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             his.a("TaoliveDxAB", "evalWithArgs | has cache, key=" + str + " value=" + str2);
             return str2;
         }
         String a2 = pmd.a().t().a((String) obj, (String) obj2, (String) obj3, (String) obj4);
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             his.a("TaoliveDxAB", "evalWithArgs |  activate, key=" + str + " value=" + a2);
             f34060a.put(str, a2);
         }

@@ -5,7 +5,7 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -79,7 +79,7 @@ public class DetailWvPlugin extends e {
             return false;
         }
         String string = jSONObject.getString("from");
-        if (TextUtils.isEmpty(string)) {
+        if (StringUtils.isEmpty(string)) {
             o.b("class:DetailWvPlugin### method:sendUpdateBroadcast from is null");
         }
         String string2 = jSONObject.getString("token");
@@ -88,13 +88,13 @@ public class DetailWvPlugin extends e {
         String string5 = jSONObject.getString(fgl.ORIGINALITEMID);
         String string6 = jSONObject.getString(fgl.TARGETITEMID);
         Object obj = jSONObject.get("params");
-        if (TextUtils.isEmpty(string2)) {
+        if (StringUtils.isEmpty(string2)) {
             o.d("DetailWvPlugin", "执行update_detail失败，token为空，业务来源：" + string);
             return false;
-        } else if (TextUtils.isEmpty(string5)) {
+        } else if (StringUtils.isEmpty(string5)) {
             o.d("DetailWvPlugin", "执行update_detail失败，originalItemId为空，业务来源：" + string);
             return false;
-        } else if (TextUtils.isEmpty(string6)) {
+        } else if (StringUtils.isEmpty(string6)) {
             o.d("DetailWvPlugin", "执行update_detail失败，targetItemId为空，业务来源：" + string);
             return false;
         } else {

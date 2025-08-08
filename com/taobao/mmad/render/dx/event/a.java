@@ -1,6 +1,6 @@
 package com.taobao.mmad.render.dx.event;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -134,7 +134,7 @@ public class a extends h {
         }
         if (c == 0) {
             tiv e = this.f18120a.e();
-            if (TextUtils.isEmpty(obj2)) {
+            if (StringUtils.isEmpty(obj2)) {
                 obj2 = b.getTargetUrl();
             }
             e.a(obj, tiv.a(obj2, this.b));

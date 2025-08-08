@@ -1,6 +1,6 @@
 package com.taobao.trade.common.kit.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
 import java.util.Map;
@@ -55,7 +55,7 @@ public class h {
             return (a) ipChange.ipc$dispatch("eae11b7b", new Object[]{str});
         }
         a aVar = null;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             aVar = f22991a.get(str);
         }
         return aVar == null ? f22991a.get("ultron") : aVar;

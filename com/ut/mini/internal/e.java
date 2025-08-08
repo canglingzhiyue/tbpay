@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.core.sync.q;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -121,7 +121,7 @@ public class e implements rqi {
             } else {
                 hashMap.put("from", queryParameter2);
             }
-            if (!TextUtils.isEmpty(data.getQueryParameter("store"))) {
+            if (!StringUtils.isEmpty(data.getQueryParameter("store"))) {
                 a(hashMap, true);
                 hashMap.put("debug_store", "true");
             } else {

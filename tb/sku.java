@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -184,7 +184,7 @@ public class sku {
             }
             if (c.a()) {
                 JSONObject jSONObject15 = jSONObject6.getJSONObject(IWebViewListener.BIZ_SCENE);
-                if (!ogv.a(jSONObject15) && TextUtils.equals("ggGame", jSONObject15.getString("type"))) {
+                if (!ogv.a(jSONObject15) && StringUtils.equals("ggGame", jSONObject15.getString("type"))) {
                     JSONObject jSONObject16 = jSONObject15.getJSONObject("data");
                     if (!ogv.a(jSONObject16)) {
                         content.material = (MediaContentDetailData.Material) JSONObject.toJavaObject(jSONObject16.getJSONObject("material"), MediaContentDetailData.Material.class);
@@ -195,7 +195,7 @@ public class sku {
             if (skk.o()) {
                 JSONObject jSONObject17 = jSONObject6.getJSONObject("hotTopic");
                 if (!ogv.a(jSONObject17)) {
-                    content.isSecondPageUpBar = TextUtils.equals("second", jSONObject17.getString("showBar"));
+                    content.isSecondPageUpBar = StringUtils.equals("second", jSONObject17.getString("showBar"));
                 }
             }
         }
@@ -275,7 +275,7 @@ public class sku {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("3a29568f", new Object[]{jSONObject, str});
         }
-        if (TextUtils.isEmpty(str) || ogv.a(jSONObject)) {
+        if (StringUtils.isEmpty(str) || ogv.a(jSONObject)) {
             return null;
         }
         try {

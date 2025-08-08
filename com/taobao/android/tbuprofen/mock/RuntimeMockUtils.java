@@ -2,7 +2,7 @@ package com.taobao.android.tbuprofen.mock;
 
 import android.content.Context;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.tbuprofen.common.d;
 import com.taobao.android.tbuprofen.f;
@@ -64,7 +64,7 @@ public class RuntimeMockUtils {
             return 0;
         }
         try {
-            if (!TextUtils.isEmpty(h.b().a("tbuprofen-util"))) {
+            if (!StringUtils.isEmpty(h.b().a("tbuprofen-util"))) {
                 return -100;
             }
             if (fVar != null) {

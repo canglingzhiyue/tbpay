@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.datasource.impl.BaseTypedBean;
 import com.taobao.android.searchbaseframe.util.ListStyle;
@@ -31,7 +31,7 @@ public class itc {
             return 0;
         }
         String str = baseTypedBean.type;
-        if (TextUtils.isEmpty(str) || str.length() == 0) {
+        if (StringUtils.isEmpty(str) || str.length() == 0) {
             return 0;
         }
         Integer num = this.b.get(str);

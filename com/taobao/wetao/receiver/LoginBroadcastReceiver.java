@@ -3,7 +3,7 @@ package com.taobao.wetao.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.login4android.broadcast.LoginAction;
 import java.util.ArrayList;
@@ -86,7 +86,7 @@ public class LoginBroadcastReceiver extends BroadcastReceiver {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3c04d85a", new Object[]{this, context, intent});
-        } else if (intent != null && !TextUtils.isEmpty(intent.getAction())) {
+        } else if (intent != null && !StringUtils.isEmpty(intent.getAction())) {
             int i = AnonymousClass1.f23565a[LoginAction.valueOf(intent.getAction()).ordinal()];
             if (i == 1) {
                 for (a aVar : this.b) {

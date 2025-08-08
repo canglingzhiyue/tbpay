@@ -3,7 +3,7 @@ package com.taobao.android.live.plugin.atype.flexalocal.bottom.bottombar;
 import android.content.Context;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -157,7 +157,7 @@ public class BottomBarFrame3 extends BaseFrame implements ddv {
         initMore();
         initMute();
         this.mContainer.addOnLayoutChangeListener(this.mOnLayoutChangeListener);
-        if (getFrameContext() == null || TextUtils.isEmpty(getFrameContext().d) || tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || TextUtils.equals(getFrameContext().d, tBLiveDataModel.mVideoInfo.liveId)) {
+        if (getFrameContext() == null || StringUtils.isEmpty(getFrameContext().d) || tBLiveDataModel == null || tBLiveDataModel.mVideoInfo == null || StringUtils.equals(getFrameContext().d, tBLiveDataModel.mVideoInfo.liveId)) {
             return;
         }
         q.b("BottomBarFrame3", "liveId is not equals error liveId:" + tBLiveDataModel.mVideoInfo.liveId + " correct liveId：" + this.mFrameContext.d);

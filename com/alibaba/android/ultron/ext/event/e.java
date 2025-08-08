@@ -1,7 +1,7 @@
 package com.alibaba.android.ultron.ext.event;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -94,9 +94,9 @@ public class e extends j {
         com.alibaba.android.ultron.vfw.instance.b h = eVar.h();
         String string5 = jSONObject.getString(com.taobao.themis.kernel.i.CDN_REQUEST_TYPE);
         HashMap hashMap = new HashMap();
-        if (TextUtils.equals(string5, "async")) {
+        if (StringUtils.equals(string5, "async")) {
             hashMap.put("params", a(h.b(), eVar.d()));
-        } else if (TextUtils.equals(string5, "submit")) {
+        } else if (StringUtils.equals(string5, "submit")) {
             hashMap.put("params", a(h.b()));
         }
         JSONObject jSONObject3 = new JSONObject();
@@ -109,7 +109,7 @@ public class e extends j {
             jSONObject3.putAll(map);
         }
         a(mtopRequest, jSONObject3);
-        if (TextUtils.isEmpty(string2) || TextUtils.isEmpty(string3)) {
+        if (StringUtils.isEmpty(string2) || StringUtils.isEmpty(string3)) {
             com.alibaba.android.ultron.ext.event.util.c.a(getClass().getSimpleName(), "EVENT_CHAIN_PARAMS_VALID_ERROR", "error: apiMethod or apiVersion is null");
             return;
         }
@@ -127,7 +127,7 @@ public class e extends j {
         String str = this.f2611a;
         if (str != null) {
             build.mo1328setUnitStrategy(str);
-        } else if (!TextUtils.isEmpty(string4)) {
+        } else if (!StringUtils.isEmpty(string4)) {
             build.mo1328setUnitStrategy(string4);
         }
         build.mo1337addListener((MtopListener) new IRemoteBaseListener() { // from class: com.alibaba.android.ultron.ext.event.MtopV2Subscriber$1
@@ -155,7 +155,7 @@ public class e extends j {
                 }
                 com.alibaba.android.ultron.ext.event.util.c.a("MtopV2Subscriber", "onSuccess", mtopResponse.getApi() + " onSuccess: " + mtopResponse.getRetMsg());
                 eVar.h().e();
-                if (!TextUtils.isEmpty(string) && com.alibaba.android.ultron.engine.utils.h.a(e.a(e.this), string, mtopResponse.getDataJsonObject())) {
+                if (!StringUtils.isEmpty(string) && com.alibaba.android.ultron.engine.utils.h.a(e.a(e.this), string, mtopResponse.getDataJsonObject())) {
                     com.alibaba.android.ultron.ext.event.util.c.a("MtopV2Subscriber", "onSuccess", "subfilter执行失败，请求判断为fail: " + string);
                     e.this.a(eVar, "fail", mtopResponse);
                     return;
@@ -202,7 +202,7 @@ public class e extends j {
                 JSONArray jSONArray = new JSONArray();
                 jSONObject.put(com.taobao.mtop.wvplugin.a.RESULT_KEY, (Object) jSONArray);
                 Object[] objArr = new Object[2];
-                objArr[0] = TextUtils.isEmpty(mtopResponse.getRetCode()) ? Integer.valueOf(mtopResponse.getResponseCode()) : mtopResponse.getRetCode();
+                objArr[0] = StringUtils.isEmpty(mtopResponse.getRetCode()) ? Integer.valueOf(mtopResponse.getResponseCode()) : mtopResponse.getRetCode();
                 objArr[1] = mtopResponse.getRetMsg();
                 jSONArray.add(String.format("%s::%s", objArr));
                 jSONObject.put("v", (Object) mtopResponse.getV());
@@ -218,14 +218,14 @@ public class e extends j {
                 if (mtopResponse != null && mtopResponse.getDataJsonObject() != null) {
                     str2 = mtopResponse.getDataJsonObject().optString("msg");
                 }
-                if (TextUtils.isEmpty(str2) && mtopResponse != null && str == "fail") {
+                if (StringUtils.isEmpty(str2) && mtopResponse != null && str == "fail") {
                     str2 = mtopResponse.getRetMsg();
                 }
             } else {
                 str2 = string;
             }
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return;
         }
         Toast.makeText(this.d, str2, 0).show();
@@ -238,7 +238,7 @@ public class e extends j {
             return;
         }
         JSONObject jSONObject = new JSONObject();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             str = "服务竟然崩溃了";
         }
         jSONObject.put("message", (Object) str);

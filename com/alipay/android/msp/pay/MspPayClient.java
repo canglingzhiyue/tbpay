@@ -2,7 +2,7 @@ package com.alipay.android.msp.pay;
 
 import android.content.Context;
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alipay.android.app.safepaylog.api.LogItem;
 import com.alipay.android.msp.biz.substitute.SpmHelper;
@@ -83,13 +83,13 @@ public class MspPayClient {
             return (MspPayResult) ipChange.ipc$dispatch("6a2dfb89", new Object[]{this});
         }
         String orderInfo = this.b.getOrderInfo();
-        if (TextUtils.isEmpty(orderInfo)) {
+        if (StringUtils.isEmpty(orderInfo)) {
             RpcRequestDecorator.getFirstRequestParamsString(new RequestConfig("", "", 0, true), "", 0);
             this.b.getStatisticInfo().addError(ErrorType.DEFAULT, "exit", "pay_nil");
             this.b.exit(0);
             LogUtil.record(4, "MspPayClient:pay", "preloadPayConn = ".concat(String.valueOf(orderInfo)));
             return this.c;
-        } else if (!this.b.isFromWallet() && !TextUtils.isEmpty(PhoneCashierMspEngine.getMspWallet().getProductId()) && PhoneCashierMspEngine.getMspWallet().getProductId().contains("WALLET_MO_ANDROID")) {
+        } else if (!this.b.isFromWallet() && !StringUtils.isEmpty(PhoneCashierMspEngine.getMspWallet().getProductId()) && PhoneCashierMspEngine.getMspWallet().getProductId().contains("WALLET_MO_ANDROID")) {
             TaskHelper.runOnUIThread(new Runnable() { // from class: com.alipay.android.msp.pay.MspPayClient.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -113,7 +113,7 @@ public class MspPayClient {
                 LogUtil.record(4, "MspPayClient:pay", "externalInfo = ".concat(String.valueOf(orderInfo)));
                 int hashCode = orderInfo.hashCode();
                 String a2 = a(orderInfo, hashCode);
-                if (!TextUtils.equals(a2, "continue")) {
+                if (!StringUtils.equals(a2, "continue")) {
                     try {
                         MspContextManager.getInstance().removeRawBizId(hashCode);
                     } catch (Exception e) {
@@ -149,7 +149,7 @@ public class MspPayClient {
                 if (paySession != null && (certPayModel = paySession.getCertPayModel()) != null) {
                     str = certPayModel.pid;
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     CashierSceneDictionary.getInstance().saveCertPaySession(sb2, i);
                 }
                 if (this.b.isExit() ? MqpConfigService.isTrue(DrmKey.DEGRADE_NOT_WAIT_EXITING_CONTEXT) : true) {
@@ -401,7 +401,7 @@ public class MspPayClient {
             str4 = certPayModel.packageName;
             str3 = certPayModel.callbackUrl;
         }
-        if (TextUtils.isEmpty(str5) || str.contains("biz_type=\"share_pp\"")) {
+        if (StringUtils.isEmpty(str5) || str.contains("biz_type=\"share_pp\"")) {
             return;
         }
         try {
@@ -409,7 +409,7 @@ public class MspPayClient {
             Intent intent = new Intent("com.alipay.android.app.certpayresult");
             intent.putExtra("certpay_session", sb2);
             intent.putExtra(MspGlobalDefine.SCHEME_PAY_RESULT, str2);
-            if (!TextUtils.isEmpty(str4)) {
+            if (!StringUtils.isEmpty(str4)) {
                 intent.setPackage(str4);
             }
             LogUtil.record(2, "MspPayClient:sendCertPayResult", "mspCtx=" + this.b);
@@ -447,10 +447,10 @@ public class MspPayClient {
             str4 = schemePayModel.desKey;
             str3 = schemePayModel.packageName;
         }
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return;
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             intent.setPackage(str3);
         }
         intent.putExtra(MspGlobalDefine.SCHEME_PAY_SESSION, TriDes.encrypt(str4, sb2));
@@ -471,7 +471,7 @@ public class MspPayClient {
             return;
         }
         String orderInfo = mspTradeContext.getOrderInfo();
-        if (TextUtils.isEmpty(orderInfo)) {
+        if (StringUtils.isEmpty(orderInfo)) {
             return;
         }
         MspPaySession paySession = this.b.getPaySession();
@@ -480,7 +480,7 @@ public class MspPayClient {
         if (orderInfo.contains("isMoveTaskToBack=\"true\"")) {
             z2 = true;
         }
-        if (!TextUtils.isEmpty((paySession == null || paySession.getCertPayModel() == null) ? null : paySession.getCertPayModel().pid) && !orderInfo.contains("external_spec_action=\"/shareppay/sendMsg\"")) {
+        if (!StringUtils.isEmpty((paySession == null || paySession.getCertPayModel() == null) ? null : paySession.getCertPayModel().pid) && !orderInfo.contains("external_spec_action=\"/shareppay/sendMsg\"")) {
             z2 = true;
         }
         if (this.b.isSchemePay()) {
@@ -495,12 +495,12 @@ public class MspPayClient {
                 break;
             }
             str = split[i];
-            if (!TextUtils.isEmpty(str) && str.startsWith("bizcontext=")) {
+            if (!StringUtils.isEmpty(str) && str.startsWith("bizcontext=")) {
                 break;
             }
             i++;
         }
-        if (!TextUtils.isEmpty(str) && str.contains("\"fromH5\":\"true\"") && !z) {
+        if (!StringUtils.isEmpty(str) && str.contains("\"fromH5\":\"true\"") && !z) {
             z2 = true;
         }
         String walletConfig = PhoneCashierMspEngine.getMspWallet().getWalletConfig(DrmKey.GO_WHERE_FROM_ON_PAY_END);

@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -98,7 +98,7 @@ public class d implements k.e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("c80c2013", new Object[]{this, str, str2, map, str3});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             m.c cVar = this.s;
             if (cVar != null) {
@@ -111,7 +111,7 @@ public class d implements k.e {
             this.m = str2;
             this.p = true;
             WXSDKInstance wXSDKInstance = this.h;
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = "AliWeex";
             }
             wXSDKInstance.a(str2, str, map, str3, a(this.j));
@@ -123,7 +123,7 @@ public class d implements k.e {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6942fc3b", new Object[]{this, map, str, str2, str3});
-        } else if (!TextUtils.isEmpty(str3)) {
+        } else if (!StringUtils.isEmpty(str3)) {
             k.g gVar = this.q;
             if (gVar != null) {
                 gVar.a(str3);
@@ -141,7 +141,7 @@ public class d implements k.e {
             this.j = map;
             this.k = str;
             HashMap hashMap = new HashMap();
-            if (TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str2)) {
                 str2 = str3;
             }
             hashMap.put("bundleUrl", str2);
@@ -166,7 +166,7 @@ public class d implements k.e {
         } else if (wXSDKInstance == null || uri == null) {
         } else {
             String queryParameter = uri.getQueryParameter("bgContainerColor");
-            if (TextUtils.isEmpty(queryParameter)) {
+            if (StringUtils.isEmpty(queryParameter)) {
                 return;
             }
             if (wXSDKInstance.am() == null) {
@@ -207,10 +207,10 @@ public class d implements k.e {
         if (fVar != null) {
             fVar.b(k());
         }
-        if (!TextUtils.isEmpty(l()) && !TextUtils.isEmpty(n())) {
+        if (!StringUtils.isEmpty(l()) && !StringUtils.isEmpty(n())) {
             b();
             a(this.j, this.k, l(), n());
-        } else if (TextUtils.isEmpty(this.l)) {
+        } else if (StringUtils.isEmpty(this.l)) {
         } else {
             b();
             a(this.l, this.m, this.j, this.k);
@@ -256,7 +256,7 @@ public class d implements k.e {
         }
         String m = m();
         AliWXSDKInstance aliWXSDKInstance = null;
-        if (!TextUtils.isEmpty(m)) {
+        if (!StringUtils.isEmpty(m)) {
             WXSDKInstance a2 = anu.a().a(m, context);
             if (a2 instanceof AliWXSDKInstance) {
                 aliWXSDKInstance = (AliWXSDKInstance) a2;
@@ -346,11 +346,11 @@ public class d implements k.e {
             ipChange.ipc$dispatch("7c85efcf", new Object[]{this, map, str, str2, str3, str4, str5});
             return;
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             a(str2, str3, map, str);
-        } else if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
+        } else if (!StringUtils.isEmpty(str3) && !StringUtils.isEmpty(str4)) {
             a(map, str, str3, str4);
-        } else if (!TextUtils.isEmpty(str5)) {
+        } else if (!StringUtils.isEmpty(str5)) {
             a(map, str, str5, str5);
         }
         this.h.onActivityCreate();
@@ -603,10 +603,10 @@ public class d implements k.e {
         boolean z = true;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f3a64c32", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
-            if (!TextUtils.equals(this.i, str)) {
-                if (TextUtils.isEmpty(this.i)) {
+            if (!StringUtils.equals(this.i, str)) {
+                if (StringUtils.isEmpty(this.i)) {
                     this.i = str;
                 } else {
                     z = false;

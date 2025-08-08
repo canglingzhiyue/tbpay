@@ -2,7 +2,7 @@ package com.taobao.message.kit.util;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.message.lab.comfrm.util.BeanUtil;
 import com.taobao.message.uikit.util.ApplicationUtil;
@@ -38,7 +38,7 @@ public class URLUtil {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("7b908d34", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         try {
@@ -76,7 +76,7 @@ public class URLUtil {
 
     public static boolean isNetUrl(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e95ea1f1", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && (str.startsWith("http") || str.startsWith("https"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("e95ea1f1", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && (str.startsWith("http") || str.startsWith("https"));
     }
 
     public static String getUrlWithoutParameters(String str) {
@@ -118,7 +118,7 @@ public class URLUtil {
             return (Map) ipChange.ipc$dispatch("577d6e4c", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(str) && (indexOf = str.indexOf(63)) >= 0) {
+        if (!StringUtils.isEmpty(str) && (indexOf = str.indexOf(63)) >= 0) {
             StringTokenizer stringTokenizer = new StringTokenizer(str.substring(indexOf + 1), "&");
             while (stringTokenizer.hasMoreTokens()) {
                 String nextToken = stringTokenizer.nextToken();
@@ -227,7 +227,7 @@ public class URLUtil {
                     }
                     str = str.replace(group, encode);
                 } else {
-                    if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.isEmpty(str2)) {
                         str3 = str2;
                     }
                     str = str.replace(group, str3);
@@ -243,7 +243,7 @@ public class URLUtil {
         if (ipChange instanceof IpChange) {
             return (List) ipChange.ipc$dispatch("88ff6c9", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return new ArrayList();
         }
         Matcher matcher = PatternsUtil.getWebUrlPattern().matcher(str);
@@ -253,11 +253,11 @@ public class URLUtil {
             String[] split = group.split("http");
             if (split.length > 1) {
                 for (String str2 : split) {
-                    if (!TextUtils.isEmpty(str2.trim())) {
+                    if (!StringUtils.isEmpty(str2.trim())) {
                         arrayList.add("http" + str2);
                     }
                 }
-            } else if (!TextUtils.isEmpty(group)) {
+            } else if (!StringUtils.isEmpty(group)) {
                 arrayList.add(group);
             }
         }
@@ -296,7 +296,7 @@ public class URLUtil {
         if (ipChange instanceof IpChange) {
             return (Uri) ipChange.ipc$dispatch("501010f1", new Object[]{str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (map == null || map.size() == 0) {

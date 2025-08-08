@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.poplayer.PopLayer;
 import com.alibaba.poplayer.utils.Monitor;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -156,7 +156,7 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
             return;
         }
         try {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 return;
             }
             a(e(), str, str2, z);
@@ -173,12 +173,12 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
             return;
         }
         try {
-            boolean z2 = !TextUtils.isEmpty(str);
-            if (!z || !TextUtils.isEmpty(str2)) {
+            boolean z2 = !StringUtils.isEmpty(str);
+            if (!z || !StringUtils.isEmpty(str2)) {
                 str3 = str2;
             } else {
                 String generateActivityInfo = PopLayer.getReference().getTriggerAdapter() != null ? PopLayer.getReference().getTriggerAdapter().generateActivityInfo(activity) : str2;
-                if (TextUtils.isEmpty(generateActivityInfo)) {
+                if (StringUtils.isEmpty(generateActivityInfo)) {
                     generateActivityInfo = d(activity);
                 }
                 str3 = generateActivityInfo;
@@ -440,7 +440,7 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
         sb.append(activity.getClass().getName());
         sb.append("@");
         sb.append(Integer.toHexString(activity.hashCode()));
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append("_frg_");
             sb.append(str);
         }
@@ -452,12 +452,12 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         StringBuilder sb = new StringBuilder();
         sb.append(str);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             sb.append("_frg_");
             sb.append(str2);
         }
@@ -466,7 +466,7 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && str.contains("_frg_");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && str.contains("_frg_");
     }
 
     private boolean b(String str, String str2) {
@@ -474,7 +474,7 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             return str.equals(str2);
         }
         return false;
@@ -482,17 +482,17 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
 
     private boolean c(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && str.equals(str2);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f277e382", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && str.equals(str2);
     }
 
     private boolean d(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7f180e83", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && str.equals(str2);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7f180e83", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && str.equals(str2);
     }
 
     private boolean e(String str, String str2) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bb83984", new Object[]{this, str, str2})).booleanValue() : !TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2) && str.equals(str2);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("bb83984", new Object[]{this, str, str2})).booleanValue() : !StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2) && str.equals(str2);
     }
 
     private String d(Activity activity) {
@@ -511,12 +511,12 @@ public class InternalTriggerController implements Application.ActivityLifecycleC
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4bf177bb", new Object[]{this, activity, str});
         }
-        boolean z = !TextUtils.isEmpty(str);
+        boolean z = !StringUtils.isEmpty(str);
         String str2 = null;
         if (PopLayer.getReference().getTriggerAdapter() != null) {
             str2 = PopLayer.getReference().getTriggerAdapter().generateUri(activity, str);
         }
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return str2;
         }
         if (z) {

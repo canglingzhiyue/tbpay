@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -261,13 +261,13 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
             return false;
         }
         String videoUrl = this.d.mPlayContext.getVideoUrl();
-        if (TextUtils.isEmpty(videoUrl)) {
+        if (StringUtils.isEmpty(videoUrl)) {
             return false;
         }
         this.k.q();
         this.k.a(this.H);
         String videoUrl2 = this.d.mPlayContext.getVideoUrl();
-        if (TextUtils.isEmpty(videoUrl2) || videoUrl2.equals(videoUrl)) {
+        if (StringUtils.isEmpty(videoUrl2) || videoUrl2.equals(videoUrl)) {
             return false;
         }
         this.d.mPlayContext.unselectS266OfPlay();
@@ -284,7 +284,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
         }
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, this + ", onMediaRetry what：" + i);
         String videoDefinition = this.d.mPlayContext.getVideoDefinition();
-        if (!TextUtils.isEmpty(videoDefinition) && videoDefinition.contains("266")) {
+        if (!StringUtils.isEmpty(videoDefinition) && videoDefinition.contains("266")) {
             return b(i, i2);
         }
         if ((i != -5 && i != -110) || !this.N) {
@@ -304,7 +304,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
         }
         String videoUrl = this.d.mPlayContext.getVideoUrl();
         AVSDKLog.e(com.taobao.taobaoavsdk.Tracer.c.MODULE_SDK_PAGE, this + ", onMediaRetryForTimeOut oldUrl：" + videoUrl);
-        if (TextUtils.isEmpty(videoUrl)) {
+        if (StringUtils.isEmpty(videoUrl)) {
             return false;
         }
         a(false);
@@ -422,7 +422,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
             } else {
                 if (cVar.f() == 1 && (o.this.f16542a || Build.VERSION.SDK_INT < 17)) {
                     o.this.a(DWLifecycleType.MID);
-                } else if (TextUtils.isEmpty(o.a(o.this).getVideoToken()) || cVar.f() != 1) {
+                } else if (StringUtils.isEmpty(o.a(o.this).getVideoToken()) || cVar.f() != 1) {
                     z = false;
                 } else {
                     o.this.a(DWLifecycleType.MID);
@@ -595,7 +595,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
             this.J = new InnerStartFuncListenerImpl();
             this.j.a(this.J);
         }
-        if ((TextUtils.isEmpty(this.d.mPlayContext.getVideoUrl()) && !this.C && !this.z) || this.h) {
+        if ((StringUtils.isEmpty(this.d.mPlayContext.getVideoUrl()) && !this.C && !this.z) || this.h) {
             this.h = false;
             this.C = true;
             this.k.a(this.H);
@@ -630,7 +630,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("63fccf7", new Object[]{this});
-        } else if (this.d.mPlayContext.getVideoUrl() == null || TextUtils.isEmpty(this.d.mPlayContext.getVideoUrl())) {
+        } else if (this.d.mPlayContext.getVideoUrl() == null || StringUtils.isEmpty(this.d.mPlayContext.getVideoUrl())) {
         } else {
             try {
                 JSONObject jSONObject = new JSONObject();
@@ -649,23 +649,23 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
                 String videoUrl = this.d.mPlayContext.getVideoUrl();
                 String a2 = a(videoUrl);
                 StringBuilder sb = new StringBuilder(100);
-                if (!TextUtils.isEmpty(a2)) {
+                if (!StringUtils.isEmpty(a2)) {
                     sb.append("cdnIp=" + a2);
                 }
-                if (!TextUtils.isEmpty(this.d.getPlayToken())) {
-                    if (!TextUtils.isEmpty(sb)) {
+                if (!StringUtils.isEmpty(this.d.getPlayToken())) {
+                    if (!StringUtils.isEmpty(sb)) {
                         sb.append("&");
                     }
                     sb.append("playTokenId=" + this.d.getPlayToken());
                 }
                 if (this.d.mConfigAdapter != null && this.d.mConfigAdapter.e() && this.d.mPlayContext.getVideoLength() > 0 && this.d.mPlayContext.getVideoLength() < 262144000 && this.d.mPlayContext.getVideoLength() != Integer.MAX_VALUE && this.d.mPlayContext.getVideoLength() > 0) {
-                    if (!TextUtils.isEmpty(sb)) {
+                    if (!StringUtils.isEmpty(sb)) {
                         sb.append("&");
                     }
                     sb.append("videoLength=" + this.d.mPlayContext.getVideoLength());
                 }
                 jSONObject2.put("url", com.taobao.taobaoavsdk.util.b.a(videoUrl, sb));
-                if (this.d.mPlayContext.getCacheKey() != null && !TextUtils.isEmpty(this.d.mPlayContext.getCacheKey())) {
+                if (this.d.mPlayContext.getCacheKey() != null && !StringUtils.isEmpty(this.d.mPlayContext.getCacheKey())) {
                     jSONObject2.put("cacheKey", this.d.mPlayContext.getCacheKey());
                 }
                 jSONArray.put(jSONObject2);
@@ -946,7 +946,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
                 }
                 stringBuffer.append(z);
                 stringBuffer.append(",url=");
-                stringBuffer.append(TextUtils.isEmpty(this.d.mPlayContext.getVideoUrl()) ? "" : this.d.mPlayContext.getVideoUrl());
+                stringBuffer.append(StringUtils.isEmpty(this.d.mPlayContext.getVideoUrl()) ? "" : this.d.mPlayContext.getVideoUrl());
                 stringBuffer.append(",videoSource=");
                 stringBuffer.append(this.d.getVideoSource());
                 stringBuffer.append(",playerType=");
@@ -969,7 +969,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
             dWStabilityData.args = stringBuffer.toString();
             com.taobao.avplayer.common.ad adVar = this.d.mDWAlarmAdapter;
             Activity activity = this.d.getActivity();
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 str = "videoPlay";
             }
             adVar.a(activity, "DWVideo", str, false, dWStabilityData);
@@ -1071,7 +1071,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
                 Uri data = this.d.getActivity().getIntent().getData();
                 if (data != null) {
                     String queryParameter = data.getQueryParameter("spm");
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         hashMap.put("spm-url", queryParameter);
                     }
                 }
@@ -1268,7 +1268,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
                 Uri data = this.d.getActivity().getIntent().getData();
                 if (data != null) {
                     String queryParameter = data.getQueryParameter("spm");
-                    if (!TextUtils.isEmpty(queryParameter)) {
+                    if (!StringUtils.isEmpty(queryParameter)) {
                         map.put("spm-url", queryParameter);
                     }
                 }
@@ -1403,7 +1403,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
                 o.h(o.this);
                 o.d(o.this, false);
             }
-            if (TextUtils.isEmpty(o.a(o.this).mPlayContext.getVideoUrl()) && TextUtils.isEmpty(o.a(o.this).getVideoToken())) {
+            if (StringUtils.isEmpty(o.a(o.this).mPlayContext.getVideoUrl()) && StringUtils.isEmpty(o.a(o.this).getVideoToken())) {
                 com.taobao.taobaoavsdk.util.c.c(o.a(o.this).mTlogAdapter, " DWVideoUrlPickCallBack.onPick## can not startVideo ,  url empty");
                 new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.taobao.avplayer.o.a.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -1422,7 +1422,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
                             com.taobao.taobaoavsdk.util.c.c(ddgVar, " DWVideoUrlPickCallBack.onPick## can not startVideo , url empty and exception" + e.getMessage());
                             return;
                         }
-                        if (!TextUtils.isEmpty(str)) {
+                        if (!StringUtils.isEmpty(str)) {
                             String str2 = str;
                             char c = 65535;
                             switch (str2.hashCode()) {
@@ -1483,8 +1483,8 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
                             }
                             o.e(o.this, true);
                         }
-                        o.this.a("videoPlayMtopError", String.valueOf(20002), TextUtils.isEmpty(str) ? String.valueOf(1) : str);
-                        o.a(o.this, "-1", TextUtils.isEmpty(str) ? "" : str);
+                        o.this.a("videoPlayMtopError", String.valueOf(20002), StringUtils.isEmpty(str) ? String.valueOf(1) : str);
+                        o.a(o.this, "-1", StringUtils.isEmpty(str) ? "" : str);
                         if (o.i(o.this) != null) {
                             o.i(o.this).a(2000, com.taobao.taobaoavsdk.util.b.b(str));
                         }
@@ -1541,7 +1541,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
             return;
         }
         DWContext dWContext = this.d;
-        if (dWContext == null || dWContext.getActivity() == null || this.e == null || this.d.getDWConfigObject() == null || this.d.getDWConfigObject().a() == null || TextUtils.isEmpty(this.d.getDWConfigObject().a().a()) || this.d.getDWConfigObject().a().b() <= 0 || this.d.getDWConfigObject().a().c() <= 0) {
+        if (dWContext == null || dWContext.getActivity() == null || this.e == null || this.d.getDWConfigObject() == null || this.d.getDWConfigObject().a() == null || StringUtils.isEmpty(this.d.getDWConfigObject().a().a()) || this.d.getDWConfigObject().a().b() <= 0 || this.d.getDWConfigObject().a().c() <= 0) {
             return;
         }
         if ((!this.d.getDWConfigObject().a().l() && !this.d.getDWConfigObject().a().m()) || this.d.getDWConfigObject().a().d() <= 0 || this.d.getDWConfigObject().a().e() <= 0) {
@@ -1590,7 +1590,7 @@ public class o implements aw, ax, com.taobao.mediaplay.player.h {
             float h = dWContext.screenType() == DWVideoScreenType.NORMAL ? dWContext.getDWConfigObject().a().h() : dWContext.getDWConfigObject().a().i();
             float j = dWContext.screenType() == DWVideoScreenType.NORMAL ? dWContext.getDWConfigObject().a().j() : dWContext.getDWConfigObject().a().k();
             String f4 = dWContext.screenType() == DWVideoScreenType.NORMAL ? dWContext.getDWConfigObject().a().f() : dWContext.getDWConfigObject().a().g();
-            if (h < 0.0f || j < 0.0f || j > 1.0f || h > 1.0f || TextUtils.isEmpty(f4)) {
+            if (h < 0.0f || j < 0.0f || j > 1.0f || h > 1.0f || StringUtils.isEmpty(f4)) {
                 layoutParams.rightMargin = dWContext.screenType() == DWVideoScreenType.NORMAL ? kcl.a(dWContext.getActivity(), 10.0f) : kcl.a(dWContext.getActivity(), 15.0f);
                 layoutParams.topMargin = dWContext.screenType() == DWVideoScreenType.NORMAL ? kcl.a(dWContext.getActivity(), 10.0f) : kcl.a(dWContext.getActivity(), 15.0f);
                 layoutParams.gravity = 53;

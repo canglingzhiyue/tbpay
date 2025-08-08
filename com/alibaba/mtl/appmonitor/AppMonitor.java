@@ -2,7 +2,7 @@ package com.alibaba.mtl.appmonitor;
 
 import android.app.Application;
 import android.os.RemoteException;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.analytics.AnalyticsMgr;
 import com.alibaba.appmonitor.event.EventType;
 import com.alibaba.mtl.appmonitor.model.DimensionSet;
@@ -927,7 +927,7 @@ public final class AppMonitor {
                 measureValueSet = MeasureValueSet.create();
                 for (int i2 = 0; i2 < strArr4.length; i2++) {
                     double d = mto.a.GEO_NOT_SUPPORT;
-                    if (!TextUtils.isEmpty(strArr4[i2])) {
+                    if (!StringUtils.isEmpty(strArr4[i2])) {
                         try {
                             d = Double.valueOf(strArr4[i2]).doubleValue();
                         } catch (Exception unused) {

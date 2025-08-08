@@ -1,6 +1,6 @@
 package com.alipay.android.msp.drivers.stores.store.events;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.android.msp.drivers.actions.ActionsCreator;
 import com.alipay.android.msp.drivers.actions.EventAction;
@@ -37,10 +37,10 @@ public class BnvbStore extends LocalEventStore {
             }
             String string = actionParamsJson.getString("succNotifyName");
             String string2 = actionParamsJson.getString("failNotifyName");
-            if (!TextUtils.isEmpty(string)) {
+            if (!StringUtils.isEmpty(string)) {
                 this.c.setSuccNotifyName(string);
             }
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 this.c.setFailNotifyName(string2);
             }
             ActionsCreator.get(this.f4584a).createUIShowAction(actionParamsJson, false, this.f);

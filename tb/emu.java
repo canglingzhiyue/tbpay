@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.AliConfigInterface;
 import com.taobao.android.AliUserTrackerInterface;
@@ -89,8 +89,8 @@ public class emu {
                     for (Map.Entry<String, String> entry : map.entrySet()) {
                         String key = entry.getKey();
                         String value = entry.getValue();
-                        if (!TextUtils.isEmpty(key)) {
-                            if (TextUtils.isEmpty(value)) {
+                        if (!StringUtils.isEmpty(key)) {
+                            if (StringUtils.isEmpty(value)) {
                                 value = "null";
                             }
                             sb.append(",");

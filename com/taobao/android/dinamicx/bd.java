@@ -1,7 +1,7 @@
 package com.taobao.android.dinamicx;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -82,7 +82,7 @@ public class bd extends m {
             for (int i = 0; i < list.size(); i++) {
                 DXTemplateItem dXTemplateItem = list.get(i);
                 if (!b(dXTemplateItem)) {
-                    if (!TextUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.c.endsWith(".xml")) {
+                    if (!StringUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.c.endsWith(".xml")) {
                         arrayList2.add(c(dXTemplateItem));
                     }
                 } else {
@@ -336,10 +336,10 @@ public class bd extends m {
         if (dXTemplateItem.d() == 20000) {
             return false;
         }
-        if (!TextUtils.isEmpty(dXTemplateItem.c) && (dXTemplateItem.c.endsWith(".zip") || dXTemplateItem.c.endsWith("._dxv4") || dXTemplateItem.c.contains("._dxv4") || dXTemplateItem.c.contains(".zip"))) {
+        if (!StringUtils.isEmpty(dXTemplateItem.c) && (dXTemplateItem.c.endsWith(".zip") || dXTemplateItem.c.endsWith("._dxv4") || dXTemplateItem.c.contains("._dxv4") || dXTemplateItem.c.contains(".zip"))) {
             return true;
         }
-        return TextUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.b >= 0;
+        return StringUtils.isEmpty(dXTemplateItem.c) && dXTemplateItem.b >= 0;
     }
 
     public DinamicTemplate c(DXTemplateItem dXTemplateItem) {
@@ -403,7 +403,7 @@ public class bd extends m {
         try {
             DXTemplateItem dXTemplateItem = new DXTemplateItem();
             dXTemplateItem.f11925a = dinamicTemplate.name;
-            if (!TextUtils.isEmpty(dinamicTemplate.version)) {
+            if (!StringUtils.isEmpty(dinamicTemplate.version)) {
                 dXTemplateItem.b = Long.parseLong(dinamicTemplate.version);
             } else {
                 dXTemplateItem.b = -1L;

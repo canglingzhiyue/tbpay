@@ -1,6 +1,6 @@
 package com.taobao.themis.kernel.utils;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.resource.api.models.PluginModel;
 import com.alibaba.ariver.resource.api.models.TemplateConfigModel;
 import com.alibaba.fastjson.JSONObject;
@@ -31,7 +31,7 @@ public final class k {
         kotlin.jvm.internal.q.d(getAppFrameType, "$this$getAppFrameType");
         TMSMetaInfoWrapper v = getAppFrameType.v();
         String string = (v == null || (m = v.m()) == null) ? null : m.getString("frameTempType");
-        return TextUtils.isEmpty(string) ? getAppFrameType.q().getAppFrameType() : string;
+        return StringUtils.isEmpty(string) ? getAppFrameType.q().getAppFrameType() : string;
     }
 
     public static final String b(com.taobao.themis.kernel.f getBizType) {
@@ -43,7 +43,7 @@ public final class k {
         kotlin.jvm.internal.q.d(getBizType, "$this$getBizType");
         TMSMetaInfoWrapper v = getBizType.v();
         String string = (v == null || (m = v.m()) == null) ? null : m.getString("bizType");
-        return TextUtils.isEmpty(string) ? getBizType.q().getBizType() : string;
+        return StringUtils.isEmpty(string) ? getBizType.q().getBizType() : string;
     }
 
     public static final String c(com.taobao.themis.kernel.f getAppSubType) {
@@ -58,14 +58,14 @@ public final class k {
         if (com.taobao.themis.utils.f.a(getAppSubType.o())) {
             str2 = getAppSubType.q().getAppSubType();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             TMSMetaInfoWrapper v = getAppSubType.v();
             if (v != null && (m = v.m()) != null) {
                 str = m.getString(com.taobao.tao.tbmainfragment.i.SUB_KEY_FRAGMENT_JUMP);
             }
             str2 = str;
         }
-        return TextUtils.isEmpty(str2) ? getAppSubType.q().getAppSubType() : str2;
+        return StringUtils.isEmpty(str2) ? getAppSubType.q().getAppSubType() : str2;
     }
 
     public static final String e(com.taobao.themis.kernel.f getOpenMode) {

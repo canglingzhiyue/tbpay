@@ -2,7 +2,7 @@ package com.taobao.android.order.bundle.nav.detail;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.order.bundle.constants.CoreConstants;
 import tb.hyk;
@@ -39,16 +39,16 @@ public class c extends com.taobao.android.order.bundle.nav.a<Intent> {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("15320aa", new Object[]{this, intent})).booleanValue();
         }
-        if (TextUtils.isEmpty(c(intent))) {
+        if (StringUtils.isEmpty(c(intent))) {
             intent.putExtra(CoreConstants.IN_PARAM_BIZ_ORDER_ID, d(intent));
         }
-        if (TextUtils.isEmpty(e(intent))) {
+        if (StringUtils.isEmpty(e(intent))) {
             intent.putExtra(CoreConstants.IN_PARAM_ARCHIVE, f(intent));
         }
         String str = "http://h5.m.taobao.com/awp/base/order/detailultron.htm";
         if (hyk.o() && (data = intent.getData()) != null) {
             String encodedQuery = data.getEncodedQuery();
-            if (!TextUtils.isEmpty(encodedQuery)) {
+            if (!StringUtils.isEmpty(encodedQuery)) {
                 str = str + "?" + encodedQuery;
             }
         }
@@ -67,11 +67,11 @@ public class c extends com.taobao.android.order.bundle.nav.a<Intent> {
             return (String) ipChange.ipc$dispatch("249b0259", new Object[]{intent});
         }
         String stringExtra = intent.getStringExtra(CoreConstants.IN_PARAM_BIZ_ORDER_ID);
-        if (!TextUtils.isEmpty(stringExtra)) {
+        if (!StringUtils.isEmpty(stringExtra)) {
             return stringExtra;
         }
         String stringExtra2 = intent.getStringExtra(CoreConstants.IN_PARAM_PAY_ORDER_ID);
-        return TextUtils.isEmpty(stringExtra2) ? intent.getStringExtra("orderId") : stringExtra2;
+        return StringUtils.isEmpty(stringExtra2) ? intent.getStringExtra("orderId") : stringExtra2;
     }
 
     private static String d(Intent intent) {
@@ -84,11 +84,11 @@ public class c extends com.taobao.android.order.bundle.nav.a<Intent> {
             return null;
         }
         String queryParameter = data.getQueryParameter(CoreConstants.IN_PARAM_PAY_ORDER_ID);
-        if (!TextUtils.isEmpty(queryParameter)) {
+        if (!StringUtils.isEmpty(queryParameter)) {
             return queryParameter;
         }
         String queryParameter2 = data.getQueryParameter(CoreConstants.IN_PARAM_BIZ_ORDER_ID);
-        return TextUtils.isEmpty(queryParameter2) ? data.getQueryParameter("orderId") : queryParameter2;
+        return StringUtils.isEmpty(queryParameter2) ? data.getQueryParameter("orderId") : queryParameter2;
     }
 
     private static String e(Intent intent) {
@@ -97,7 +97,7 @@ public class c extends com.taobao.android.order.bundle.nav.a<Intent> {
             return (String) ipChange.ipc$dispatch("978a1d97", new Object[]{intent});
         }
         String stringExtra = intent.getStringExtra(CoreConstants.IN_PARAM_ARCHIVE);
-        return TextUtils.isEmpty(stringExtra) ? intent.getStringExtra(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER) : stringExtra;
+        return StringUtils.isEmpty(stringExtra) ? intent.getStringExtra(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER) : stringExtra;
     }
 
     private static String f(Intent intent) {
@@ -109,6 +109,6 @@ public class c extends com.taobao.android.order.bundle.nav.a<Intent> {
             return null;
         }
         String queryParameter = intent.getData().getQueryParameter(CoreConstants.IN_PARAM_ARCHIVE);
-        return TextUtils.isEmpty(queryParameter) ? intent.getData().getQueryParameter(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER) : queryParameter;
+        return StringUtils.isEmpty(queryParameter) ? intent.getData().getQueryParameter(CoreConstants.IN_PARAM_IS_ARCHIVE_ORDER) : queryParameter;
     }
 }

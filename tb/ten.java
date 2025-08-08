@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.litecreator.util.j;
 import com.taobao.android.litecreator.util.u;
@@ -149,7 +149,7 @@ public class ten {
         if (ipChange instanceof IpChange) {
             return (TaopaiLoadConfig) ipChange.ipc$dispatch("5f27a5de", new Object[]{context, str, aVar});
         }
-        TaopaiLoadConfig a2 = new TaopaiLoadConfig.a().c(context.getResources().getString(R.string.gg_pub_shooting_module_load_failed_retry)).b(TextUtils.equals(str, "guangguang")).c(true).a(false).a("guangguang").b(str).a();
+        TaopaiLoadConfig a2 = new TaopaiLoadConfig.a().c(context.getResources().getString(R.string.gg_pub_shooting_module_load_failed_retry)).b(StringUtils.equals(str, "guangguang")).c(true).a(false).a("guangguang").b(str).a();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("action.taopai.load.success");
         intentFilter.addAction("action.taopai.load.fail");
@@ -204,7 +204,7 @@ public class ten {
 
     private static TaopaiLoadConfig b(Context context, String str, Intent intent) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (TaopaiLoadConfig) ipChange.ipc$dispatch("a9433c5", new Object[]{context, str, intent}) : new TaopaiLoadConfig.a().c(context.getResources().getString(R.string.gg_pub_shooting_module_load_failed_retry)).b(TextUtils.equals(str, "guangguang")).a(false).c(true).a(intent).a("guangguang").b(str).a();
+        return ipChange instanceof IpChange ? (TaopaiLoadConfig) ipChange.ipc$dispatch("a9433c5", new Object[]{context, str, intent}) : new TaopaiLoadConfig.a().c(context.getResources().getString(R.string.gg_pub_shooting_module_load_failed_retry)).b(StringUtils.equals(str, "guangguang")).a(false).c(true).a(intent).a("guangguang").b(str).a();
     }
 
     private static TaopaiLoadConfig a(Context context, String str) {

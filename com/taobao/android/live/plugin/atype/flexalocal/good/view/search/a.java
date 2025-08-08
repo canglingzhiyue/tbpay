@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.view.search;
 
 import android.os.ResultReceiver;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -86,7 +86,7 @@ public class a extends hja<hjp> implements TaoLiveSearchHistoryView.a, hjq {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("f703561c", new Object[]{this, arrayList, new Boolean(z), str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             his.b(GoodListSearchView.TAG, "addBottomSearchEntry | searchKey is empty.");
         } else if (y.b(this.d.f())) {
             his.b(GoodListSearchView.TAG, "addBottomSearchEntry | Devices is tablet.");
@@ -112,7 +112,7 @@ public class a extends hja<hjp> implements TaoLiveSearchHistoryView.a, hjq {
             return;
         }
         super.a(str, str2);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str.trim())) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str.trim())) {
             return;
         }
         e.a(((hjp) this.f13751a).getContentView(), (ResultReceiver) null);

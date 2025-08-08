@@ -1,7 +1,7 @@
 package com.taobao.tao.flexbox.layoutmanager.container;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.container.m;
 import com.taobao.tao.flexbox.layoutmanager.core.TNodeView;
@@ -77,7 +77,7 @@ public abstract class i {
 
     public static boolean b(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : f20262a && TextUtils.equals(str, g);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3dd7e577", new Object[]{str})).booleanValue() : f20262a && StringUtils.equals(str, g);
     }
 
     public static boolean e() {
@@ -96,7 +96,7 @@ public abstract class i {
 
     public static boolean c(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : c && TextUtils.equals(str, g);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("88097eb8", new Object[]{str})).booleanValue() : c && StringUtils.equals(str, g);
     }
 
     public static boolean h() {
@@ -137,7 +137,7 @@ public abstract class i {
             return false;
         }
         Object e = A.e("onbackclick");
-        return (e instanceof String) && !TextUtils.isEmpty((CharSequence) e);
+        return (e instanceof String) && !StringUtils.isEmpty((CharSequence) e);
     }
 
     private static boolean b(Context context, String str, boolean z) {

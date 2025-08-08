@@ -2,7 +2,7 @@ package com.taobao.taolive.movehighlight.utils;
 
 import android.content.Context;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.live.timemove.base.data.RecModel;
 import com.taobao.taolive.room.utils.aw;
@@ -71,16 +71,16 @@ public class d {
             return;
         }
         String a2 = a.a(str);
-        if (TextUtils.isEmpty(str4)) {
+        if (StringUtils.isEmpty(str4)) {
             return;
         }
         pfa a3 = pfa.a(com.taobao.taolive.room.utils.n.a());
         pfb a4 = pfb.a(com.taobao.taolive.room.utils.n.a());
         String str5 = a2 + "&" + aw.PARAM_FORCE_REFRESH + "=true&livesource=" + str4 + "&productType=timemove";
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str5 = str5 + "&" + aw.PARAM_SJSD_ITEM_ID + "=" + str2;
         }
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             str5 = str5 + "&timeMovingSpfPlayVideo=" + Uri.encode(str3);
         }
         if (c.p()) {
@@ -90,7 +90,7 @@ public class d {
         hashMap.put("url", str5);
         if (a3.b() != null) {
             String a5 = a3.b().a();
-            if (!TextUtils.isEmpty(a5)) {
+            if (!StringUtils.isEmpty(a5)) {
                 hashMap.put(aw.HIGHLIGHT_TRANSPARENT_PARAMS, a5);
             }
         }
@@ -120,7 +120,7 @@ public class d {
         if (timeMovingPlayInfo != null) {
             str = timeMovingPlayInfo.timeMovingM3u8Url;
         }
-        return TextUtils.isEmpty(str) ? liveItem.extendVal.playUrl : str;
+        return StringUtils.isEmpty(str) ? liveItem.extendVal.playUrl : str;
     }
 
     public static void a(HashMap<String, String> hashMap, Context context, com.taobao.alilive.aliliveframework.frame.a aVar) {
@@ -143,7 +143,7 @@ public class d {
                 b = RecModel.MEDIA_TYPE_TIMEMOVE;
                 poy.a(0, aVar);
                 String str = "switchTimemove";
-                if ((aVar instanceof com.taobao.taolive.sdk.core.e) && c.w() && !TextUtils.isEmpty(eVar.q)) {
+                if ((aVar instanceof com.taobao.taolive.sdk.core.e) && c.w() && !StringUtils.isEmpty(eVar.q)) {
                     str = "switchTimemove." + eVar.q;
                 }
                 poz.L(str, eVar);

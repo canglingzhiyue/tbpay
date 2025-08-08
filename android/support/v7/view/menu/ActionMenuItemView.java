@@ -12,7 +12,7 @@ import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.ForwardingListener;
 import android.support.v7.widget.TooltipCompat;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -93,7 +93,7 @@ public class ActionMenuItemView extends AppCompatTextView implements k.a, Action
 
     private void updateTextButtonVisibility() {
         boolean z = true;
-        boolean z2 = !TextUtils.isEmpty(this.mTitle);
+        boolean z2 = !StringUtils.isEmpty(this.mTitle);
         if (this.mIcon != null && (!this.mItemData.l() || (!this.mAllowTextWithIcon && !this.mExpandedFormat))) {
             z = false;
         }
@@ -101,12 +101,12 @@ public class ActionMenuItemView extends AppCompatTextView implements k.a, Action
         CharSequence charSequence = null;
         setText(z3 ? this.mTitle : null);
         CharSequence contentDescription = this.mItemData.getContentDescription();
-        if (TextUtils.isEmpty(contentDescription)) {
+        if (StringUtils.isEmpty(contentDescription)) {
             contentDescription = z3 ? null : this.mItemData.getTitle();
         }
         setContentDescription(contentDescription);
         CharSequence tooltipText = this.mItemData.getTooltipText();
-        if (!TextUtils.isEmpty(tooltipText)) {
+        if (!StringUtils.isEmpty(tooltipText)) {
             TooltipCompat.setTooltipText(this, tooltipText);
             return;
         }
@@ -122,7 +122,7 @@ public class ActionMenuItemView extends AppCompatTextView implements k.a, Action
     }
 
     public boolean hasText() {
-        return !TextUtils.isEmpty(getText());
+        return !StringUtils.isEmpty(getText());
     }
 
     @Override // android.support.v7.view.menu.k.a

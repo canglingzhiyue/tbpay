@@ -2,7 +2,7 @@ package com.taobao.search.sf.weex.module;
 
 import android.content.Context;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.searchbaseframe.util.k;
@@ -162,14 +162,14 @@ public class a {
             q.b("XSearchEventImpl", "options为空");
         } else {
             String string = jSONObject.getString("controlName");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 q.b("XSearchEventImpl", "controlName为空");
                 return;
             }
             String string2 = jSONObject.getString("spm");
             ArrayMap<String, String> a2 = nye.a(jSONObject, "args");
             String string3 = jSONObject.getString("pageName");
-            if (TextUtils.equals(jSONObject.getString("withoutPageName"), "true")) {
+            if (StringUtils.equals(jSONObject.getString("withoutPageName"), "true")) {
                 a2.put("spm", string2);
                 a2.put("rainbow", com.taobao.search.rainbow.a.c());
                 UTHitBuilders.UTControlHitBuilder uTControlHitBuilder = new UTHitBuilders.UTControlHitBuilder(string);
@@ -278,7 +278,7 @@ public class a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2e78e924", new Object[]{this, wXSDKInstance, context, str, jSONObject});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             k.a("XSearchEventImpl", "event为空");
         } else {
             d.a a2 = a(wXSDKInstance, context);

@@ -2,7 +2,7 @@ package com.taobao.android.detail.ttdetail.widget.video;
 
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -144,7 +144,7 @@ public class BizMiniVideoView extends AbsMiniVideoView<lfn> {
                 return;
             }
             play();
-        } else if (!TextUtils.isEmpty(this.mCurVideoType)) {
+        } else if (!StringUtils.isEmpty(this.mCurVideoType)) {
             updateVideoView(false);
         } else if (this.mOnMiniVideoListener == null) {
         } else {
@@ -181,7 +181,7 @@ public class BizMiniVideoView extends AbsMiniVideoView<lfn> {
             String h = lfnVar.h();
             JSONObject i = lfnVar.i();
             this.mTrackParams = lfnVar.j();
-            if (TextUtils.equals("liveVideo", h)) {
+            if (StringUtils.equals("liveVideo", h)) {
                 this.mBizVideoDataList.remove(0);
                 this.mCurVideoType = "liveVideo";
                 return getLiveVideoView(i);
@@ -215,7 +215,7 @@ public class BizMiniVideoView extends AbsMiniVideoView<lfn> {
                             return;
                         }
                         i.a(BizMiniVideoView.TAG, "liveVideo onEvent: type=" + str + ", eventCode=" + str2 + ", extra=" + str3);
-                        if (!TextUtils.isEmpty(str2) && !TextUtils.equals("TBL200001", str2) && !TextUtils.equals("TBL200002", str2) && !TextUtils.equals("TBL100006", str2) && !TextUtils.equals("TBL100007", str2) && !TextUtils.equals("TBL100008", str2)) {
+                        if (!StringUtils.isEmpty(str2) && !StringUtils.equals("TBL200001", str2) && !StringUtils.equals("TBL200002", str2) && !StringUtils.equals("TBL100006", str2) && !StringUtils.equals("TBL100007", str2) && !StringUtils.equals("TBL100008", str2)) {
                             return;
                         }
                         BizMiniVideoView.access$000(BizMiniVideoView.this, view, "destroy");
@@ -273,11 +273,11 @@ public class BizMiniVideoView extends AbsMiniVideoView<lfn> {
 
     private boolean isLiveVideo() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1199f2f0", new Object[]{this})).booleanValue() : TextUtils.equals("liveVideo", this.mCurVideoType);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("1199f2f0", new Object[]{this})).booleanValue() : StringUtils.equals("liveVideo", this.mCurVideoType);
     }
 
     private boolean reflectInvokeLiveMethod(View view, String str) {
-        if (view != null && !TextUtils.isEmpty(str)) {
+        if (view != null && !StringUtils.isEmpty(str)) {
             try {
                 Class.forName("com.taobao.taolive.room.openarchitecture.opendetail.TaoliveOpenDetailCardView").getDeclaredMethod(str, new Class[0]).invoke(view, new Object[0]);
                 return true;

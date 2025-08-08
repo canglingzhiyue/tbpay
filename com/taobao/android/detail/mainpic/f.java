@@ -3,7 +3,7 @@ package com.taobao.android.detail.mainpic;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,10 +119,10 @@ public class f {
             int i2 = -1;
             for (IDMComponent iDMComponent : f2.getChildren()) {
                 if (iDMComponent != null) {
-                    if (TextUtils.isEmpty(iDMComponent.getPosition())) {
+                    if (StringUtils.isEmpty(iDMComponent.getPosition())) {
                         arrayList.add(iDMComponent);
                     }
-                    if (f.this.f10146a.o().c() && TextUtils.equals("bottom", iDMComponent.getPosition())) {
+                    if (f.this.f10146a.o().c() && StringUtils.equals("bottom", iDMComponent.getPosition())) {
                         arrayList2.add(iDMComponent);
                         try {
                             JSONObject fields = iDMComponent.getFields();
@@ -362,7 +362,7 @@ public class f {
         });
         this.p = (TextView) this.q.findViewById(R.id.main_pic_scroll_limit_tip_text);
         String f = this.f10146a.k().f();
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             this.p.setText(f);
         }
         this.l = (TextView) this.c.findViewById(R.id.mainpic_text_indicator);
@@ -728,7 +728,7 @@ public class f {
                         return;
                     }
                     String a3 = bVar.a(mtopResponse, a2);
-                    if (TextUtils.isEmpty(a3)) {
+                    if (StringUtils.isEmpty(a3)) {
                         view.setContentDescription("宝贝图片");
                         return;
                     }
@@ -784,7 +784,7 @@ public class f {
                         return;
                     }
                     String a3 = cVar.a(mtopResponse);
-                    if (TextUtils.isEmpty(a3)) {
+                    if (StringUtils.isEmpty(a3)) {
                         view.setContentDescription("宝贝视频");
                         return;
                     }

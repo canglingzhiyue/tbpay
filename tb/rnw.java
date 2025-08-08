@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.webkit.MimeTypeMap;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public class rnw {
         }
         if (iVar != null) {
             try {
-                if (!TextUtils.isEmpty(iVar.getFilePath()) && !TextUtils.isEmpty(iVar.getBizType())) {
+                if (!StringUtils.isEmpty(iVar.getFilePath()) && !StringUtils.isEmpty(iVar.getBizType())) {
                     rnp rnpVar = new rnp();
                     rnpVar.f33244a = iVar.getFilePath();
                     rnpVar.f = iVar.getBizType();
@@ -58,7 +58,7 @@ public class rnw {
                         rnpVar.p = rnpVar.i.get("x-arup-track-id");
                         try {
                             String str = rnpVar.i.get("x-arup-page-background");
-                            if (!TextUtils.isEmpty(str)) {
+                            if (!StringUtils.isEmpty(str)) {
                                 if (Integer.valueOf(str).intValue() != 1) {
                                     z = false;
                                 }
@@ -87,7 +87,7 @@ public class rnw {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("9f352ae", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -102,7 +102,7 @@ public class rnw {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("6111438d", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -200,7 +200,7 @@ public class rnw {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b82f346c", new Object[]{str});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(str));
         }
         return null;

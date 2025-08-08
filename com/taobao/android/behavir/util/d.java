@@ -1,6 +1,6 @@
 package com.taobao.android.behavir.util;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.behavix.utils.Debuggable;
@@ -88,7 +88,7 @@ public class d {
 
     public static boolean a(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && (str.contains("209") || str.contains("83") || str.contains("84"));
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && (str.contains("209") || str.contains("83") || str.contains("84"));
     }
 
     private static Map<String, String> a(Throwable th) {

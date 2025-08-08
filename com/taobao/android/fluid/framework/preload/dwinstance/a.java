@@ -2,7 +2,7 @@ package com.taobao.android.fluid.framework.preload.dwinstance;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,7 +63,7 @@ public class a {
         pio.a(pio.GG_VIDEOTAB_VIDEO_NEW_DW_INSTANCE);
         pil.a(context, null, "gg_pickpreload_preCreateDW");
         String str8 = z ? "ggpick_preload" : "guangguang_pick";
-        boolean z4 = !TextUtils.isEmpty(str2);
+        boolean z4 = !StringUtils.isEmpty(str2);
         if (z4) {
             z2 = z4;
             str4 = "gg_pickpreload_preCreateDW";

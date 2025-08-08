@@ -8,7 +8,7 @@ import android.content.DialogInterface;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -296,7 +296,7 @@ public class a extends Dialog {
         if (obh.f(str)) {
             j = obh.x();
         }
-        if ((obh.f(str) && !TextUtils.isEmpty(j)) || (WXSDKEngine.isInitialized() && !z && obh.c(str) && !TextUtils.isEmpty(j))) {
+        if ((obh.f(str) && !StringUtils.isEmpty(j)) || (WXSDKEngine.isInitialized() && !z && obh.c(str) && !StringUtils.isEmpty(j))) {
             TBS.Ext.commitEvent("Page_Share", 19999, "Page_BackFlow", "WeexBackFlow", str, "weexUrl=" + j);
             this.A = new WeexBizView(context);
             com.taobao.android.share.resource.a.a().a(com.taobao.android.share.resource.a.KEY_SHAREBACKINITWEEX);
@@ -463,7 +463,7 @@ public class a extends Dialog {
             b(fVar);
         } else {
             ViewGroup viewGroup = null;
-            if (fVar == null || !TextUtils.isEmpty(fVar.F)) {
+            if (fVar == null || !StringUtils.isEmpty(fVar.F)) {
                 if (nyl.b(fVar != null ? fVar.F : null)) {
                     ViewGroup viewGroup2 = this.q;
                     if (viewGroup2 == null) {
@@ -508,7 +508,7 @@ public class a extends Dialog {
             return;
         }
         com.taobao.android.share.resource.a.a().a(com.taobao.android.share.resource.a.KEY_SHAREBACKRENDER);
-        if (fVar == null || !TextUtils.isEmpty(fVar.F)) {
+        if (fVar == null || !StringUtils.isEmpty(fVar.F)) {
             com.taobao.share.copy.a.a().k();
             return;
         }
@@ -591,7 +591,7 @@ public class a extends Dialog {
         if (fVar == null) {
             textView.setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17876));
             tUrlImageView.asyncSetImageUrl("https://img.alicdn.com/imgextra/i2/O1CN01Ba48wr1dRlADInLvO_!!6000000003733-2-tps-440-440.png");
-        } else if (TextUtils.equals("PASSWORD_INVALID", fVar.F) || TextUtils.equals("PASSWORD_NOT_EXIST", fVar.F)) {
+        } else if (StringUtils.equals("PASSWORD_INVALID", fVar.F) || StringUtils.equals("PASSWORD_NOT_EXIST", fVar.F)) {
             textView.setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17855));
             tUrlImageView.asyncSetImageUrl("https://img.alicdn.com/imgextra/i4/O1CN01lAMzMc1jrlLVhW0b6_!!6000000004602-2-tps-330-330.png");
         } else {
@@ -612,7 +612,7 @@ public class a extends Dialog {
             return null;
         }
         d(fVar);
-        if (TextUtils.equals((String) a(fVar.H, "weakShow", ""), "1")) {
+        if (StringUtils.equals((String) a(fVar.H, "weakShow", ""), "1")) {
             this.p = a(this.p, this.w, R.id.tpd_view_anti_hijack);
             ViewGroup viewGroup2 = this.p;
             b(viewGroup2, (oau) fVar);
@@ -629,7 +629,7 @@ public class a extends Dialog {
             oay oayVar = (oay) fVar;
             if (this.o == null) {
                 this.o = (ViewGroup) this.u.inflate().findViewById(R.id.tpd_view_weex);
-                if (!TextUtils.isEmpty(oayVar.U)) {
+                if (!StringUtils.isEmpty(oayVar.U)) {
                     if (oayVar.U.contains("bigMode")) {
                         this.o.getLayoutParams().height = nyq.a(this.c, 494.0f);
                     } else {
@@ -642,7 +642,7 @@ public class a extends Dialog {
             viewGroup = this.o;
             a(viewGroup, oayVar);
         } else {
-            if (TextUtils.isEmpty(str)) {
+            if (StringUtils.isEmpty(str)) {
                 oauVar = e(fVar);
             } else {
                 oauVar = (oau) fVar;
@@ -781,7 +781,7 @@ public class a extends Dialog {
         d(viewGroup);
         if (this.y) {
             TUrlImageView tUrlImageView = (TUrlImageView) viewGroup.findViewById(R.id.tpd_common_img);
-            if (!TextUtils.isEmpty(oauVar.P)) {
+            if (!StringUtils.isEmpty(oauVar.P)) {
                 tUrlImageView.succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.backflow.dialog.a.11
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -828,7 +828,7 @@ public class a extends Dialog {
                 str = oaxVar.P;
             }
             TUrlImageView tUrlImageView = (TUrlImageView) viewGroup.findViewById(R.id.tpd_shop_sign);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 tUrlImageView.succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.backflow.dialog.a.12
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -886,7 +886,7 @@ public class a extends Dialog {
         String f = obi.a.f();
         int h = obi.a.h();
         int g = obi.a.g();
-        if (!TextUtils.isEmpty(f)) {
+        if (!StringUtils.isEmpty(f)) {
             textView.setText(f);
         }
         if (h != -1 && findViewById != null) {
@@ -907,7 +907,7 @@ public class a extends Dialog {
         d(viewGroup);
         if (this.y) {
             TUrlImageView tUrlImageView = (TUrlImageView) viewGroup.findViewById(R.id.tpd_item_img);
-            if (!TextUtils.isEmpty(oawVar.P)) {
+            if (!StringUtils.isEmpty(oawVar.P)) {
                 tUrlImageView.succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.backflow.dialog.a.13
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -935,12 +935,12 @@ public class a extends Dialog {
         textView.setOnClickListener(this.b);
         if (oawVar.H != null) {
             Map<String, Object> map = oawVar.I;
-            if (map != null && !TextUtils.isEmpty(String.valueOf(map.get("tipimage")))) {
+            if (map != null && !StringUtils.isEmpty(String.valueOf(map.get("tipimage")))) {
                 TUrlImageView tUrlImageView2 = (TUrlImageView) viewGroup.findViewById(R.id.tpd_item_tag_image);
                 tUrlImageView2.setVisibility(0);
                 tUrlImageView2.setImageUrl(String.valueOf(map.get("tipimage")));
             }
-            if (map != null && !TextUtils.isEmpty(String.valueOf(map.get("buttonText")))) {
+            if (map != null && !StringUtils.isEmpty(String.valueOf(map.get("buttonText")))) {
                 textView.setText(String.valueOf(map.get("buttonText")));
             }
         }
@@ -950,7 +950,7 @@ public class a extends Dialog {
             tPriceTextView.setVisibility(0);
             tPriceTextView.setPrice(floatValue);
         } catch (Exception unused) {
-            if (!TextUtils.isEmpty(oawVar.U)) {
+            if (!StringUtils.isEmpty(oawVar.U)) {
                 tPriceTextView.setVisibility(0);
                 tPriceTextView.setText("¥ " + oawVar.U);
             } else {
@@ -974,7 +974,7 @@ public class a extends Dialog {
         } else {
             String b = obi.a.b();
             int a2 = obi.a.a();
-            if (!TextUtils.isEmpty(b)) {
+            if (!StringUtils.isEmpty(b)) {
                 com.taobao.phenix.intf.b.h().a(b).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.tao.backflow.dialog.a.14
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1028,7 +1028,7 @@ public class a extends Dialog {
             return;
         }
         String d2 = obi.a.d();
-        if (TextUtils.isEmpty(d2)) {
+        if (StringUtils.isEmpty(d2)) {
             d2 = com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17860);
         }
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.tao.backflow.dialog.a.15
@@ -1049,7 +1049,7 @@ public class a extends Dialog {
         }
         textView.setText(d2);
         String e2 = obi.a.e();
-        if (TextUtils.isEmpty(e2)) {
+        if (StringUtils.isEmpty(e2)) {
             e2 = "https://gw.alicdn.com/tfs/TB1KjBDxHGYBuNjy0FoXXciBFXa-41-41.png";
         }
         ((TUrlImageView) viewGroup.findViewById(R.id.iv_report)).setImageUrl(e2);
@@ -1064,7 +1064,7 @@ public class a extends Dialog {
         ViewGroup viewGroup2 = (ViewGroup) viewGroup.findViewById(R.id.ll_image);
         TextView textView3 = (TextView) viewGroup.findViewById(R.id.iv_share_tip);
         String str = oauVar.S;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             if (textView2 != null) {
                 textView2.setVisibility(4);
             }
@@ -1092,7 +1092,7 @@ public class a extends Dialog {
         if (c != -1) {
             textView2.setTextColor(c);
         }
-        if (viewGroup2 == null || !TextUtils.equals(oauVar.C, "true") || TextUtils.isEmpty(oauVar.D)) {
+        if (viewGroup2 == null || !StringUtils.equals(oauVar.C, "true") || StringUtils.isEmpty(oauVar.D)) {
             return;
         }
         TUrlImageView tUrlImageView2 = (TUrlImageView) viewGroup2.findViewWithTag("friendFlagIv");
@@ -1237,7 +1237,7 @@ public class a extends Dialog {
             return;
         }
         this.i = ShareBizAdapter.getInstance().getAppEnv().d();
-        if (TextUtils.isEmpty(this.i)) {
+        if (StringUtils.isEmpty(this.i)) {
             TLog.loge("NewTaoPasswordDialog", "mCurPageName", "mCurPageName isEmpty just show");
             show();
             return;
@@ -1347,7 +1347,7 @@ public class a extends Dialog {
             return;
         }
         nyy.a("淘口令弹窗dismiss");
-        if (this.h != null && !TextUtils.isEmpty(this.i)) {
+        if (this.h != null && !StringUtils.isEmpty(this.i)) {
             nyy.a("invoke IPopCenter#finishPopOperation, mCurPageName=" + this.i);
             njn.a(this.i).b(this.h);
         }

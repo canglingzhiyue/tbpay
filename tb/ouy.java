@@ -1,7 +1,7 @@
 package tb;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.shop.rule.util.c;
 import java.util.Map;
@@ -67,7 +67,7 @@ public class ouy {
         }
         for (Map.Entry<String, String> entry : map.entrySet()) {
             if (entry != null) {
-                if (!TextUtils.isEmpty(encodedQuery)) {
+                if (!StringUtils.isEmpty(encodedQuery)) {
                     encodedQuery = encodedQuery + "&";
                 }
                 encodedQuery = encodedQuery + entry.getKey() + "=" + entry.getValue();
@@ -124,11 +124,11 @@ public class ouy {
             return null;
         }
         String str = map.get("shop_id");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return Uri.decode(str);
         }
         String str2 = map.get("shopId");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         return Uri.decode(str2);
@@ -143,23 +143,23 @@ public class ouy {
             return null;
         }
         String str = map.get("userId");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return Uri.decode(str);
         }
         String str2 = map.get("sellerId");
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             return Uri.decode(str2);
         }
         String str3 = map.get("user_id");
-        if (!TextUtils.isEmpty(str3)) {
+        if (!StringUtils.isEmpty(str3)) {
             return Uri.decode(str3);
         }
         String str4 = map.get("seller_id");
-        if (!TextUtils.isEmpty(str4)) {
+        if (!StringUtils.isEmpty(str4)) {
             return Uri.decode(str4);
         }
         String str5 = map.get("uid");
-        if (TextUtils.isEmpty(str5)) {
+        if (StringUtils.isEmpty(str5)) {
             return null;
         }
         return Uri.decode(str5);
@@ -174,11 +174,11 @@ public class ouy {
             return null;
         }
         String str = map.get("nick");
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return str;
         }
         String str2 = map.get("sellerNick");
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             return null;
         }
         return str2;

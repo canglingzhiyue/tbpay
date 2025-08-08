@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -358,7 +358,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
             }
             try {
                 String substring = this.o.rn.substring(0, 8);
-                if (!TextUtils.isEmpty(this.o.mMuiseBean.model.getJSONObject("utLogMap").getString("replaced_nid"))) {
+                if (!StringUtils.isEmpty(this.o.mMuiseBean.model.getJSONObject("utLogMap").getString("replaced_nid"))) {
                     substring = substring + " reRanked";
                 }
                 this.r.setText(substring);
@@ -649,7 +649,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
             if (obj4 instanceof JSONObject) {
                 JSONObject jSONObject = (JSONObject) obj4;
                 jSONObject.put("pageName", (Object) currentPageName);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     jSONObject.put("spm", (Object) str);
                 }
                 ResultMainInfoBean mainInfo = commonSearchResult.getMainInfo();
@@ -724,7 +724,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
         if (getParent() instanceof iob) {
             ((iob) getParent()).A();
         }
-        if (l() == null || !TextUtils.equals(l().cardType, "item") || !(l().combo instanceof com.taobao.search.refactor.e)) {
+        if (l() == null || !StringUtils.equals(l().cardType, "item") || !(l().combo instanceof com.taobao.search.refactor.e)) {
             return;
         }
         ((com.taobao.search.refactor.e) l().combo).a(l().itemId, m());
@@ -842,7 +842,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
             return "category".equals(((iru) j()).d().getParamValue("from")) ? "a2141.7631684" : "a2141.11319901";
         }
         String paramStr = ((iru) j()).d().getParamStr("shopAuctionSpmCnt");
-        return !TextUtils.isEmpty(paramStr) ? paramStr : "a2141.7631671";
+        return !StringUtils.isEmpty(paramStr) ? paramStr : "a2141.7631671";
     }
 
     private com.taobao.search.refactor.g ab() {
@@ -939,7 +939,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
         } else if (jSONObject == null || jSONObject.isEmpty()) {
         } else {
             String string = jSONObject.getString("itemId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             d(string);
@@ -974,13 +974,13 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
         } else if (jSONObject == null || jSONObject.isEmpty()) {
         } else {
             String string = jSONObject.getString("itemId");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 return;
             }
             boolean equals = "true".equals(com.taobao.android.searchbaseframe.util.a.a(jSONObject, "needBackInsertCard", "true"));
             Map<String, String> a2 = com.taobao.android.searchbaseframe.util.a.a(com.taobao.android.searchbaseframe.util.a.b(jSONObject, "clickTraceParams"));
             String string2 = jSONObject.getString(nog.CLICK_TRACE);
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 a(string, string2, equals, a2);
             }
             d(string);
@@ -1093,7 +1093,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
         } else if (jSONObject != null && (a2 = com.taobao.android.searchbaseframe.util.a.a(jSONObject, "keys")) != null) {
             for (int i = 0; i < a2.size(); i++) {
                 String string = a2.getString(i);
-                if (!TextUtils.isEmpty(string)) {
+                if (!StringUtils.isEmpty(string)) {
                     c(string);
                 }
             }
@@ -1171,7 +1171,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
         StringBuilder sb = new StringBuilder();
         for (int max = Math.max(0, W - 10); max < min; max++) {
             BaseCellBean cell = commonSearchResult.getCell(max);
-            if (TextUtils.equals("item", cell.cardType)) {
+            if (StringUtils.equals("item", cell.cardType)) {
                 if (sb.length() > 0) {
                     sb.append(",");
                 }
@@ -1189,10 +1189,10 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
         }
         map.put("nextItemsType", str2 + "," + str);
         map.put("sessionid", commonSearchResult.getMainInfo().rn);
-        if (!TextUtils.isEmpty(commonSearchResult.sessionId)) {
+        if (!StringUtils.isEmpty(commonSearchResult.sessionId)) {
             map.put("sessionId", commonSearchResult.sessionId);
         }
-        if (!TextUtils.isEmpty(commonSearchResult.spClientSession)) {
+        if (!StringUtils.isEmpty(commonSearchResult.spClientSession)) {
             map.put("sp_client_session", commonSearchResult.spClientSession);
         }
         map.put("jarvis_dynamic_card", String.valueOf(false));
@@ -1370,7 +1370,7 @@ public class r extends c<iru<? extends com.taobao.android.searchbaseframe.dataso
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("5de27077", new Object[]{this, motionEvent})).booleanValue();
         }
-        if (!TextUtils.equals(l().cardType, "item") && com.taobao.search.common.util.r.aX()) {
+        if (!StringUtils.equals(l().cardType, "item") && com.taobao.search.common.util.r.aX()) {
             com.taobao.search.sf.realtimetag.d.a(l(), (Map<String, String>) null, getActivity(), W(), ((iru) j()).d());
         }
         return false;

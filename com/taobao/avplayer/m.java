@@ -1,6 +1,6 @@
 package com.taobao.avplayer;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.List;
@@ -67,7 +67,7 @@ public class m implements at {
         }
         this.f16530a = new com.taobao.avplayer.player.c(this.b, false);
         this.f16530a.a(z);
-        if (!TextUtils.isEmpty(this.b.mPlayContext.getVideoUrl())) {
+        if (!StringUtils.isEmpty(this.b.mPlayContext.getVideoUrl())) {
             a(this.b.mPlayContext.getVideoUrl());
         }
         f();

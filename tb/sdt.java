@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.Display;
 import android.view.WindowInsets;
 import android.view.WindowManager;
@@ -266,7 +266,7 @@ public class sdt {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         JSONArray jSONArray = new JSONArray(str);
@@ -284,7 +284,7 @@ public class sdt {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("367c9fd7", new Object[0]);
         }
-        if (TextUtils.isEmpty(f33496a)) {
+        if (StringUtils.isEmpty(f33496a)) {
             f33496a = Build.MODEL;
         }
         return f33496a;

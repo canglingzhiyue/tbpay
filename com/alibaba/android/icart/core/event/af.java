@@ -1,7 +1,7 @@
 package com.alibaba.android.icart.core.event;
 
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.model.IDMComponent;
@@ -148,7 +148,7 @@ public class af extends bca {
             for (Map.Entry<String, Object> entry : jSONObject3.entrySet()) {
                 String key = entry.getKey();
                 Object value = entry.getValue();
-                if (!TextUtils.isEmpty(key)) {
+                if (!StringUtils.isEmpty(key)) {
                     if (!(value instanceof String)) {
                         hashMap.put(key, value + "");
                     } else {
@@ -167,6 +167,6 @@ public class af extends bca {
         String string2 = jSONObject2.getString("arg1");
         String string3 = jSONObject2.getString("arg2");
         String string4 = jSONObject2.getString("arg3");
-        UTAnalytics.getInstance().getDefaultTracker().send(new UTOriginalCustomHitBuilder(string, i, TextUtils.isEmpty(string2) ? "" : string2, TextUtils.isEmpty(string3) ? "" : string3, TextUtils.isEmpty(string4) ? "" : string4, map).build());
+        UTAnalytics.getInstance().getDefaultTracker().send(new UTOriginalCustomHitBuilder(string, i, StringUtils.isEmpty(string2) ? "" : string2, StringUtils.isEmpty(string3) ? "" : string3, StringUtils.isEmpty(string4) ? "" : string4, map).build());
     }
 }

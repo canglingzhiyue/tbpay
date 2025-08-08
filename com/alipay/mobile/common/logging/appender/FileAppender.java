@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.appender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LogContext;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.api.encrypt.LogEncryptClient;
@@ -45,7 +45,7 @@ public abstract class FileAppender extends Appender {
                 StringBuffer stringBuffer = new StringBuffer();
                 for (int i = 0; i < length; i++) {
                     String encrypt = logEncryptClient.encrypt(split[i]);
-                    if (!TextUtils.isEmpty(encrypt)) {
+                    if (!StringUtils.isEmpty(encrypt)) {
                         stringBuffer.append("1_");
                         stringBuffer.append(encrypt);
                         stringBuffer.append("$$");

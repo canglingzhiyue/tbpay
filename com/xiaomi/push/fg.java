@@ -11,7 +11,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.RemoteViews;
 import tb.crd;
 
@@ -81,7 +81,7 @@ public class fg extends fh {
 
     @Override // com.xiaomi.push.ff
     public fg a(String str) {
-        if (b() && !TextUtils.isEmpty(str)) {
+        if (b() && !StringUtils.isEmpty(str)) {
             try {
                 this.b = Color.parseColor(str);
             } catch (Exception unused) {
@@ -123,7 +123,7 @@ public class fg extends fh {
         int a8 = a(resources, "content", "id", packageName);
         mo1930a().setTextViewText(a7, this.f347a);
         mo1930a().setTextViewText(a8, this.f352b);
-        if (!TextUtils.isEmpty(this.f344c)) {
+        if (!StringUtils.isEmpty(this.f344c)) {
             int a9 = a(resources, "buttonContainer", "id", packageName);
             int a10 = a(resources, com.taobao.android.weex_framework.util.a.ATOM_EXT_button, "id", packageName);
             int a11 = a(resources, "buttonBg", "id", packageName);
@@ -199,7 +199,7 @@ public class fg extends fh {
     }
 
     public fg b(String str) {
-        if (b() && !TextUtils.isEmpty(str)) {
+        if (b() && !StringUtils.isEmpty(str)) {
             try {
                 this.f24470a = Color.parseColor(str);
             } catch (Exception unused) {
@@ -215,7 +215,7 @@ public class fg extends fh {
     }
 
     public fg c(String str) {
-        if (b() && !TextUtils.isEmpty(str)) {
+        if (b() && !StringUtils.isEmpty(str)) {
             try {
                 this.c = Color.parseColor(str);
             } catch (Exception unused) {

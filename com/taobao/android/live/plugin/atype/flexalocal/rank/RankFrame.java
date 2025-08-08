@@ -1,7 +1,7 @@
 package com.taobao.android.live.plugin.atype.flexalocal.rank;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -198,7 +198,7 @@ public class RankFrame extends BaseFrame implements ddv {
         try {
             boolean z2 = tBLiveDataModel.mVideoInfo.admireInfo != null && tBLiveDataModel.mVideoInfo.admireInfo.contributionEnabled;
             boolean a2 = com.taobao.taolive.sdk.goodlist.d.a(tBLiveDataModel.mVideoInfo.itemTransferInfo);
-            boolean z3 = TextUtils.equals(tBLiveDataModel.mVideoInfo.roomStatus, "1") && tBLiveDataModel.mVideoInfo.status != 1 && !tBLiveDataModel.mIsDiantaoTimeShift;
+            boolean z3 = StringUtils.equals(tBLiveDataModel.mVideoInfo.roomStatus, "1") && tBLiveDataModel.mVideoInfo.status != 1 && !tBLiveDataModel.mIsDiantaoTimeShift;
             if ((z2 || a2) && !isLandscape() && z3) {
                 z = true;
             }

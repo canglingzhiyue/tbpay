@@ -1,7 +1,7 @@
 package com.taobao.login4android.qrcode.data;
 
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.Serializable;
 import tb.kge;
@@ -25,6 +25,6 @@ public class QrCodeData implements Serializable {
 
     public boolean isValid() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.qrCode) && !TextUtils.isEmpty(this.qrCodeUrl) && SystemClock.elapsedRealtime() - this.mCreateTime <= this.mValidPeriod;
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("3fef87d", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.qrCode) && !StringUtils.isEmpty(this.qrCodeUrl) && SystemClock.elapsedRealtime() - this.mCreateTime <= this.mValidPeriod;
     }
 }

@@ -2,7 +2,7 @@ package com.taobao.utils;
 
 import android.app.Application;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ariver.kernel.common.utils.ProcessUtils;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -32,7 +32,7 @@ public final class Global {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b4fb6b1e", new Object[0]);
         }
-        if (TextUtils.isEmpty(sPackageName) && getApplication() != null) {
+        if (StringUtils.isEmpty(sPackageName) && getApplication() != null) {
             sPackageName = getApplication().getPackageName();
         }
         return sPackageName;
@@ -43,7 +43,7 @@ public final class Global {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("f011eacc", new Object[0]);
         }
-        if (TextUtils.isEmpty(sVersionName)) {
+        if (StringUtils.isEmpty(sVersionName)) {
             try {
                 sVersionName = getApplication().getPackageManager().getPackageInfo(getApplication().getPackageName(), 0).versionName;
             } catch (Exception e) {

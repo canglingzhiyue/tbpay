@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -140,7 +140,7 @@ public class a implements ouj {
         this.k = (TUrlImageView) this.t.findViewById(R.id.share_save_img_finish);
         this.s = (TextView) this.t.findViewById(R.id.tv_cancel_share_common);
         this.u = this.o ? 0 : 55;
-        if (TextUtils.equals(this.m, "common")) {
+        if (StringUtils.equals(this.m, "common")) {
             this.s.setVisibility(0);
             if (this.n) {
                 this.q.setLayoutParams(new RelativeLayout.LayoutParams(-1, nyq.a(context, 208.0f)));
@@ -165,7 +165,7 @@ public class a implements ouj {
             ((ProgressBar) this.j).setIndeterminateDrawable(indeterminateDrawable);
         }
         String a2 = obi.b.a();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             this.k.setImageUrl(a2);
         }
         return this.t;
@@ -200,7 +200,7 @@ public class a implements ouj {
             return;
         }
         this.n = false;
-        if (TextUtils.equals(this.m, "common")) {
+        if (StringUtils.equals(this.m, "common")) {
             this.q.setLayoutParams(new RelativeLayout.LayoutParams(-1, nyq.a(this.f21055a, 137.0f)));
             this.h.setPadding(0, nyq.a(this.f21055a, 5.0f), 0, 0);
             this.p.setVisibility(8);
@@ -232,7 +232,7 @@ public class a implements ouj {
             return;
         }
         if (this.n) {
-            if (TextUtils.isEmpty(ShareBizAdapter.getInstance().getLogin().a())) {
+            if (StringUtils.isEmpty(ShareBizAdapter.getInstance().getLogin().a())) {
                 this.f.setVisibility(0);
                 this.f.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.tao.sharepanel.normal.view.a.1
                     public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -281,7 +281,7 @@ public class a implements ouj {
             final String text = bubbleTipsBean.getText();
             try {
                 final int parseInt = Integer.parseInt(index);
-                if (TextUtils.isEmpty(text) || parseInt < 0) {
+                if (StringUtils.isEmpty(text) || parseInt < 0) {
                     return;
                 }
                 this.c.post(new Runnable() { // from class: com.taobao.tao.sharepanel.normal.view.a.2
@@ -366,7 +366,7 @@ public class a implements ouj {
         } else {
             View childAt = this.c.getChildAt(i);
             int left = (childAt.getLeft() + (childAt.getWidth() / 2)) - nyq.a(com.taobao.tao.config.a.a().getApplicationContext(), 26.0f);
-            if (TextUtils.equals(this.m, "common")) {
+            if (StringUtils.equals(this.m, "common")) {
                 bottom = nyq.a(com.taobao.tao.config.a.a().getApplicationContext(), 0.0f);
             } else {
                 bottom = this.p.getBottom();
@@ -385,7 +385,7 @@ public class a implements ouj {
         this.h.setVisibility(4);
         this.i.setVisibility(0);
         String a2 = obi.b.a(1);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             return;
         }
         this.l.setText(a2);
@@ -398,7 +398,7 @@ public class a implements ouj {
             return;
         }
         String a2 = obi.b.a(2);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             this.l.setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17879));
         } else {
             this.l.setText(a2);
@@ -412,7 +412,7 @@ public class a implements ouj {
             return;
         }
         String a2 = obi.b.a(3);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             this.l.setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17881));
         } else {
             this.l.setText(a2);
@@ -428,7 +428,7 @@ public class a implements ouj {
         this.j.setVisibility(8);
         this.k.setVisibility(0);
         String a2 = obi.b.a(4);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             this.l.setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17839));
         } else {
             this.l.setText(a2);
@@ -442,7 +442,7 @@ public class a implements ouj {
             return;
         }
         String a2 = obi.b.a(1);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             this.l.setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17881));
         } else {
             this.l.setText(a2);
@@ -458,7 +458,7 @@ public class a implements ouj {
         this.j.setVisibility(8);
         this.k.setVisibility(0);
         String c = obi.b.c();
-        if (TextUtils.isEmpty(c)) {
+        if (StringUtils.isEmpty(c)) {
             this.l.setText(com.alibaba.ability.localization.b.a(R.string.taobao_app_1010_1_17839));
         } else {
             this.l.setText(c);

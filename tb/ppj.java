@@ -2,7 +2,7 @@ package tb;
 
 import android.graphics.PointF;
 import android.graphics.Rect;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -88,7 +88,7 @@ public class ppj {
             hashMap.put("accountId", this.f32799a);
             hashMap.put("feedId", this.b);
             hashMap.put("liveDuration", String.valueOf(System.currentTimeMillis() - this.c));
-            if (!TextUtils.isEmpty(this.A)) {
+            if (!StringUtils.isEmpty(this.A)) {
                 hashMap.put("errorCode", this.A);
             }
             if (jqm.a()) {

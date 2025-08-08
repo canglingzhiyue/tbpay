@@ -3,7 +3,7 @@ package com.taobao.monitor.adapter.test;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.e;
 import android.taobao.windvane.webview.IWVWebView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -50,14 +50,14 @@ public class AliAPMBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("dd0fb2e", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
             JSONObject parseObject = JSONObject.parseObject(str);
             String string = parseObject.getString(BaseMnnRunUnit.KEY_TASK_NAME);
             long longValue = parseObject.getLong("beginTimestamp").longValue();
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("'taskName' Parameter missing");
                 return false;
             } else if (longValue <= 0) {
@@ -83,7 +83,7 @@ public class AliAPMBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("b84ca53c", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -91,7 +91,7 @@ public class AliAPMBridge extends e {
             String string = parseObject.getString(BaseMnnRunUnit.KEY_TASK_NAME);
             long longValue = parseObject.getLong("endTimestamp").longValue();
             JSONObject jSONObject = parseObject.getJSONObject("extra");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("'taskName' Parameter missing");
                 return false;
             } else if (longValue <= 0) {
@@ -117,7 +117,7 @@ public class AliAPMBridge extends e {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("ed4e7656", new Object[]{this, str, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -126,7 +126,7 @@ public class AliAPMBridge extends e {
             long longValue = parseObject.getLong("beginTimestamp").longValue();
             long longValue2 = parseObject.getLong("endTimestamp").longValue();
             JSONObject jSONObject = parseObject.getJSONObject("extra");
-            if (TextUtils.isEmpty(string)) {
+            if (StringUtils.isEmpty(string)) {
                 wVCallBackContext.error("'taskName' Parameter missing");
                 return false;
             } else if (longValue <= 0) {

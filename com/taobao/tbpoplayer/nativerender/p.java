@@ -1,6 +1,6 @@
 package com.taobao.tbpoplayer.nativerender;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,7 +22,7 @@ public class p {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{str})).booleanValue();
         }
         try {
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 return Pattern.compile(PROP_REGEX).matcher(str).find();
             }
         } catch (Throwable th) {
@@ -103,7 +103,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("af696f50", new Object[]{eVar, str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str;
         }
         try {
@@ -142,7 +142,7 @@ public class p {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("dbe30a1f", new Object[]{eVar, str});
         }
-        if (TextUtils.isEmpty(str) || str.length() <= 4 || !str.startsWith("{{") || !str.endsWith("}}")) {
+        if (StringUtils.isEmpty(str) || str.length() <= 4 || !str.startsWith("{{") || !str.endsWith("}}")) {
             return str;
         }
         String substring = str.substring(2, str.length() - 2);

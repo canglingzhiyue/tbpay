@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import com.taobao.android.festival.FestivalMgr;
@@ -32,7 +32,7 @@ public class hwb extends fuf {
                 sb.append("festivalValue = ");
                 sb.append(a2);
                 hyn.a("DXDataParserGetFestival", "evalWithArgs", sb.toString());
-                return TextUtils.isEmpty(a2) ? obj3 : a2;
+                return StringUtils.isEmpty(a2) ? obj3 : a2;
             } catch (Throwable th) {
                 hyn.a("DXDataParserGetFestival", "evalWithArgs", th.toString());
                 hyq.b(dXRuntimeContext.m(), "DXDataParserGetFestival", "evalWithArgs", "8374386162445244297", th.toString(), null);

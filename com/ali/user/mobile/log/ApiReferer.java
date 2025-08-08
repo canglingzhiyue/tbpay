@@ -1,6 +1,6 @@
 package com.ali.user.mobile.log;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.ali.user.mobile.app.dataprovider.DataProviderFactory;
 import com.ali.user.mobile.info.AppInfo;
 import com.alibaba.fastjson.JSON;
@@ -48,7 +48,7 @@ public class ApiReferer {
         }
         try {
             String eventTrace = SessionManager.getInstance(DataProviderFactory.getApplicationContext()).getEventTrace();
-            return TextUtils.isEmpty(eventTrace) ? JSON.toJSONString(new Refer(LoginConstants.EVENT_SESSION_INVALID)) : eventTrace;
+            return StringUtils.isEmpty(eventTrace) ? JSON.toJSONString(new Refer(LoginConstants.EVENT_SESSION_INVALID)) : eventTrace;
         } catch (Exception e) {
             e.printStackTrace();
             return "";
@@ -70,14 +70,14 @@ public class ApiReferer {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("d15930", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         String str4 = str + "_" + AppInfo.getInstance().getUtdid() + "_" + (System.currentTimeMillis() / 1000);
-        if (!TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str2)) {
             str4 = str4 + "_" + str2.replaceAll("_", "");
         }
-        if (TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str3)) {
             return str4;
         }
         return str4 + "_" + str3;

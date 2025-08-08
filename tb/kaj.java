@@ -8,7 +8,7 @@ import android.net.Uri;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.SystemClock;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.aranger.constant.Constants;
@@ -86,7 +86,7 @@ public class kaj extends kae {
             try {
                 this.f29909a.unlinkToDeath(this, 0);
                 synchronized (kaj.class) {
-                    if (TextUtils.isEmpty(this.b) || !kaj.a().contains(this.b)) {
+                    if (StringUtils.isEmpty(this.b) || !kaj.a().contains(this.b)) {
                         z = false;
                     } else {
                         Intent intent = new Intent();

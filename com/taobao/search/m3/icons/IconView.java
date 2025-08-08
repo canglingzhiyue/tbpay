@@ -1,7 +1,7 @@
 package com.taobao.search.m3.icons;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.search.common.util.l;
@@ -314,7 +314,7 @@ public final class IconView extends BaseItemView {
                     if (c.equals("img")) {
                         this.drawList.add(new d(cVar, this));
                     }
-                } else if (hashCode == 3556653 && c.equals("text") && !TextUtils.isEmpty(cVar.d())) {
+                } else if (hashCode == 3556653 && c.equals("text") && !StringUtils.isEmpty(cVar.d())) {
                     this.drawList.add(new f(cVar, this, this.provider));
                 }
             } else if (c.equals("richText")) {

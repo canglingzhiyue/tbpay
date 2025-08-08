@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.taobao.windvane.export.adapter.ILocalizationService;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -35,7 +35,7 @@ public class qop {
         } else if (activity == null || activity.isFinishing()) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.UNKNOWN_ERROR);
         } else {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = ILocalizationService.CONFIRM;
             }
             DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: tb.qop.1
@@ -54,14 +54,14 @@ public class qop {
                     bridgeCallback.sendBridgeResponse(null);
                 }
             };
-            if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
                 TMSLogger.c("DialogAbility", "empty title and message");
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 builder.setTitle(str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 builder.setMessage(str2);
             }
             builder.setPositiveButton(str3, onClickListener);
@@ -81,10 +81,10 @@ public class qop {
         } else if (activity == null || activity.isFinishing()) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.UNKNOWN_ERROR);
         } else {
-            if (TextUtils.isEmpty(str3)) {
+            if (StringUtils.isEmpty(str3)) {
                 str3 = ILocalizationService.CONFIRM;
             }
-            if (TextUtils.isEmpty(str4)) {
+            if (StringUtils.isEmpty(str4)) {
                 str4 = ILocalizationService.CANCEL;
             }
             DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: tb.qop.2
@@ -123,14 +123,14 @@ public class qop {
                     bridgeCallback.sendJSONResponse(jSONObject);
                 }
             };
-            if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+            if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
                 TMSLogger.c("DialogAbility", "empty title and message");
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 builder.setTitle(str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 builder.setMessage(str2);
             }
             builder.setPositiveButton(str3, onClickListener);
@@ -151,17 +151,17 @@ public class qop {
         } else if (activity == null || activity.isFinishing()) {
             bridgeCallback.sendBridgeResponse(BridgeResponse.UNKNOWN_ERROR);
         } else {
-            String str8 = TextUtils.isEmpty(str3) ? ILocalizationService.CONFIRM : str3;
-            String str9 = TextUtils.isEmpty(str4) ? ILocalizationService.CANCEL : str4;
-            if (TextUtils.isEmpty(str) && TextUtils.isEmpty(str2)) {
+            String str8 = StringUtils.isEmpty(str3) ? ILocalizationService.CONFIRM : str3;
+            String str9 = StringUtils.isEmpty(str4) ? ILocalizationService.CANCEL : str4;
+            if (StringUtils.isEmpty(str) && StringUtils.isEmpty(str2)) {
                 TMSLogger.c("DialogAbility", "empty title and message");
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             final EditText editText = new EditText(activity);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 builder.setTitle(str);
             }
-            if (!TextUtils.isEmpty(str2)) {
+            if (!StringUtils.isEmpty(str2)) {
                 builder.setMessage(str2);
             }
             builder.setPositiveButton(str8, new DialogInterface.OnClickListener() { // from class: tb.qop.4

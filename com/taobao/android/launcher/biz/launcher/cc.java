@@ -2,7 +2,7 @@ package com.taobao.android.launcher.biz.launcher;
 
 import android.app.Application;
 import android.taobao.windvane.extra.PrefetchInitTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -30,7 +30,7 @@ public class cc extends com.taobao.android.launcher.biz.task.j {
             return;
         }
         android.taobao.safemode.k c = android.taobao.safemode.h.a().c();
-        if (c == null || TextUtils.isEmpty(c.h)) {
+        if (c == null || StringUtils.isEmpty(c.h)) {
             return;
         }
         HashMap hashMap2 = new HashMap();
@@ -49,7 +49,7 @@ public class cc extends com.taobao.android.launcher.biz.task.j {
             return intercept;
         }
         android.taobao.safemode.k c = android.taobao.safemode.h.a().c();
-        if (c != null && !TextUtils.isEmpty(c.h)) {
+        if (c != null && !StringUtils.isEmpty(c.h)) {
             return intercept;
         }
         return false;

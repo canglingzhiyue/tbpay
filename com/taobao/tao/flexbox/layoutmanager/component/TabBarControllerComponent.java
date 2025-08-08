@@ -8,7 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -88,7 +88,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("2fbbc07e", new Object[]{this, aaVar, cVar, str, obj});
-            } else if (cVar == null || !TextUtils.equals(str, "scroll")) {
+            } else if (cVar == null || !StringUtils.equals(str, "scroll")) {
             } else {
                 cVar.d = oec.a(obj, true);
             }
@@ -122,7 +122,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
             IpChange ipChange = $ipChange;
             if (ipChange instanceof IpChange) {
                 ipChange.ipc$dispatch("2fbbc07e", new Object[]{this, aaVar, cVar, str, obj});
-            } else if (cVar == null || !TextUtils.equals(str, "edgepan")) {
+            } else if (cVar == null || !StringUtils.equals(str, "edgepan")) {
             } else {
                 c.a(cVar, obj);
             }
@@ -542,7 +542,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
         hashMap.put("height", Integer.valueOf(this.measureResult.b));
         hashMap.put("offsetx", Integer.valueOf(i2));
         sendMessage(getNode(), "onpagescroll", null, hashMap, null);
-        if (TextUtils.equals(((c) this.viewParams).h, "none") || this.b == null || this.view == 0 || i2 <= 1) {
+        if (StringUtils.equals(((c) this.viewParams).h, "none") || this.b == null || this.view == 0 || i2 <= 1) {
             return;
         }
         int currentItem = ((ViewPager) this.view).getCurrentItem();
@@ -814,7 +814,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
             return (String) ipChange.ipc$dispatch("2276aaf", new Object[]{this, aaVar});
         }
         String a2 = oec.a(aaVar.e(Component.KEY_PAGE_NAME), (String) null);
-        return TextUtils.isEmpty(a2) ? (String) aaVar.a(1) : a2;
+        return StringUtils.isEmpty(a2) ? (String) aaVar.a(1) : a2;
     }
 
     private void a(com.taobao.tao.flexbox.layoutmanager.core.aa aaVar, final boolean z, final String str) {
@@ -864,7 +864,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
         }
         String a2 = str2 != null ? str2 : oec.a(aaVar.e(Component.KEY_PAGE_NAME), (String) null);
         Map map3 = map2 != null ? map2 : (Map) aaVar.a(4);
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             a2 = (String) aaVar.a(1);
         }
         Object a3 = aaVar.a(101);
@@ -875,8 +875,8 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
         if (!oec.a(aaVar.a(3), false)) {
             return;
         }
-        if (!TextUtils.equals(str, a2) && !TextUtils.isEmpty(str)) {
-            if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.equals(str, a2) && !StringUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().b(this.node, a2);
             }
             if (map3 != null && map3.size() > 0) {
@@ -885,7 +885,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
             com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().a(this.node);
             h(aaVar);
             aaVar.a(3, (Object) false);
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().b(this.node, str);
             }
             if (map != null && map.size() > 0) {
@@ -980,10 +980,10 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
         String a2 = oec.a(aaVar.e("spm"), (String) null);
         String a3 = oec.a(aaVar.e("spm-url"), (String) null);
         HashMap hashMap = new HashMap();
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             hashMap.put("spm-cnt", a2);
         }
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             hashMap.put("spm-url", a3);
         }
         if (oeb.d()) {
@@ -996,7 +996,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
         boolean a5 = oec.a(map.get("ignorePageTrack"), false);
         if (k(aaVar) && !a5) {
             com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().d(aaVar, b2);
-            if (!TextUtils.isEmpty(b2)) {
+            if (!StringUtils.isEmpty(b2)) {
                 com.taobao.tao.flexbox.layoutmanager.adapter.a.a().k().b(this.node, b2);
             }
             if (hashMap.size() > 0 && !l) {
@@ -1037,7 +1037,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
         } else {
             a(aaVar, map, false);
             String a2 = oec.a(map.get("type"), (String) null);
-            if (!TextUtils.equals(a2, "tab") && !TextUtils.equals(a2, "page")) {
+            if (!StringUtils.equals(a2, "tab") && !StringUtils.equals(a2, "page")) {
                 z = false;
             }
             if (!z) {
@@ -1173,7 +1173,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
             if (a3 == null) {
                 return;
             }
-            if (TextUtils.equals(bVar2.f20088a, a3) && TextUtils.equals(bVar2.b, a4)) {
+            if (StringUtils.equals(bVar2.f20088a, a3) && StringUtils.equals(bVar2.b, a4)) {
                 return;
             }
             a(aaVar, bVar2);
@@ -1187,10 +1187,10 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
             return (com.taobao.tao.flexbox.layoutmanager.core.c) ipChange.ipc$dispatch("1e262aca", new Object[]{this, str});
         }
         if (oeb.a("optTabbarControllerAttr", true)) {
-            if (TextUtils.equals(str, "scroll")) {
+            if (StringUtils.equals(str, "scroll")) {
                 return this.s;
             }
-            if (TextUtils.equals(str, "edgepan")) {
+            if (StringUtils.equals(str, "edgepan")) {
                 return this.t;
             }
         }
@@ -1435,7 +1435,7 @@ public class TabBarControllerComponent extends Component<ViewPager, c> implement
             }
             hashMap.put("sourcePage", map.get("sourcePage") != null ? map.get("sourcePage") : "page");
             String a3 = oec.a(map.get("type"), (String) null);
-            if (TextUtils.equals(a3, "tab") || TextUtils.equals(a3, "page")) {
+            if (StringUtils.equals(a3, "tab") || StringUtils.equals(a3, "page")) {
                 z = true;
             }
             if (!z) {

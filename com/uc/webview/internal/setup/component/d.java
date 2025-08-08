@@ -1,6 +1,6 @@
 package com.uc.webview.internal.setup.component;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.uc.webview.internal.setup.component.h;
 import com.uc.webview.stat.a;
 import tb.riy;
@@ -71,11 +71,11 @@ public final class d {
             sb.append("^de~");
             sb.append(com.uc.webview.stat.a.a(this.h));
         }
-        if (!TextUtils.isEmpty(this.b)) {
+        if (!StringUtils.isEmpty(this.b)) {
             sb.append("^v~");
             sb.append(this.b);
         }
-        if (!TextUtils.isEmpty(this.c)) {
+        if (!StringUtils.isEmpty(this.c)) {
             sb.append("^s~");
             sb.append(this.c);
         }
@@ -91,7 +91,7 @@ public final class d {
             sb.append("^pt~");
             sb.append(this.l - this.k);
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             sb.append("^m~");
             sb.append(str.replace('^', '.').replace(android.taobao.windvane.cache.c.DIVISION, '.'));
         }

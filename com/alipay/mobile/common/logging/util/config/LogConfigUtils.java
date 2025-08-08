@@ -1,6 +1,6 @@
 package com.alipay.mobile.common.logging.util.config;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.mobile.common.logging.api.LoggerFactory;
 import com.alipay.mobile.common.logging.strategy.LogStrategyInfo;
 import com.alipay.mobile.framework.MpaasClassInfo;
@@ -48,7 +48,7 @@ public class LogConfigUtils {
                 LoggerFactory.getTraceLogger().info("LogConfigUtils", "logCategorys size = ".concat(String.valueOf(size)));
                 for (int i = 0; i < size; i++) {
                     String str = leisureLogCategory.get(i);
-                    if (!TextUtils.isEmpty(str)) {
+                    if (!StringUtils.isEmpty(str)) {
                         if (z) {
                             LoggerFactory.getLogContext().flush(str, false);
                             LoggerFactory.getTraceLogger().info("LogConfigUtils", "isFlush = ".concat(String.valueOf(str)));

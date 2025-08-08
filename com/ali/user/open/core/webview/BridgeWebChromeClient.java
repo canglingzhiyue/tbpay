@@ -2,7 +2,7 @@ package com.ali.user.open.core.webview;
 
 import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -57,7 +57,7 @@ public class BridgeWebChromeClient extends WebChromeClient {
             handleWindVaneNoHandler(webView, str2);
             jsPromptResult.confirm("");
             return true;
-        } else if (!TextUtils.equals(str3, "hv_hybrid:") || !(webView instanceof MemberWebView)) {
+        } else if (!StringUtils.equals(str3, "hv_hybrid:") || !(webView instanceof MemberWebView)) {
             return false;
         } else {
             MemberWebView memberWebView = (MemberWebView) webView;
@@ -79,7 +79,7 @@ public class BridgeWebChromeClient extends WebChromeClient {
                     try {
                         Object[] objArr = new Object[2];
                         objArr[0] = bridgeCallbackContext;
-                        objArr[1] = TextUtils.isEmpty(parseMessage.param) ? "{}" : parseMessage.param;
+                        objArr[1] = StringUtils.isEmpty(parseMessage.param) ? "{}" : parseMessage.param;
                         method.invoke(bridgeObj, objArr);
                     } catch (Exception e) {
                         SDKLogger.e(TAG, e.toString());

@@ -91,7 +91,7 @@ public class b<T> {
                     if (r1 == 0) goto L5e
                     tb.dbk r0 = (tb.dbk) r0
                     java.lang.String r1 = r0.i     // Catch: com.opos.process.bridge.provider.BridgeExecuteException -> L5c
-                    boolean r1 = android.text.TextUtils.isEmpty(r1)     // Catch: com.opos.process.bridge.provider.BridgeExecuteException -> L5c
+                    boolean r1 = android.text.StringUtils.isEmpty(r1)     // Catch: com.opos.process.bridge.provider.BridgeExecuteException -> L5c
                     if (r1 == 0) goto L45
                     android.content.Context r1 = r0.f26657a     // Catch: com.opos.process.bridge.provider.BridgeExecuteException -> L5c
                     r0.a(r1)     // Catch: com.opos.process.bridge.provider.BridgeExecuteException -> L5c

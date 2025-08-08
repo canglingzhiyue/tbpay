@@ -9,7 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.taobao.TBActionBar;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.text.method.ScrollingMovementMethod;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
@@ -510,7 +510,7 @@ public class e implements SearchInfoController.a {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             com.taobao.phenix.intf.b.h().a(str).succListener(new com.taobao.phenix.intf.event.a<SuccPhenixEvent>() { // from class: com.taobao.android.detail.ttdetail.skeleton.navbar.e.3
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -572,10 +572,10 @@ public class e implements SearchInfoController.a {
                 this.k = new ArrayList();
                 String str = bVar.f33796a.f33799a;
                 String str2 = bVar.f33796a.b;
-                if (!TextUtils.isEmpty(str2)) {
+                if (!StringUtils.isEmpty(str2)) {
                     taoDetailActionBarV3.setExtraDetailTitleColor(str2);
                 }
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     this.k.add(str);
                     try {
                         JSONObject parseObject = JSONObject.parseObject(JSON.toJSONString(h()));
@@ -590,7 +590,7 @@ public class e implements SearchInfoController.a {
                     }
                 }
                 String str3 = bVar.f33796a.c;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     this.k.add(str3);
                     try {
                         JSONObject parseObject2 = JSONObject.parseObject(JSON.toJSONString(i()));
@@ -609,7 +609,7 @@ public class e implements SearchInfoController.a {
                 }
                 String str5 = bVar.f33796a.d;
                 String str6 = bVar.f33796a.e;
-                if (!TextUtils.isEmpty(str5) && !TextUtils.isEmpty(str6)) {
+                if (!StringUtils.isEmpty(str5) && !StringUtils.isEmpty(str6)) {
                     taoDetailActionBarV3.addShopTab(str5, str6);
                 }
                 taoDetailActionBarV3.setTabNum(this.k.size());
@@ -658,7 +658,7 @@ public class e implements SearchInfoController.a {
                     if (aVar != null) {
                         String str7 = aVar.b;
                         String str8 = aVar.f33795a;
-                        if (!TextUtils.isEmpty(str7)) {
+                        if (!StringUtils.isEmpty(str7)) {
                             taoDetailActionBarV3.addElevatorItem(str8, str7);
                         }
                     }
@@ -757,7 +757,7 @@ public class e implements SearchInfoController.a {
                     IpChange ipChange2 = $ipChange;
                     if (ipChange2 instanceof IpChange) {
                         ipChange2.ipc$dispatch("8dfcefe2", new Object[]{this, view});
-                    } else if (TextUtils.isEmpty(e.d(e.this))) {
+                    } else if (StringUtils.isEmpty(e.d(e.this))) {
                     } else {
                         try {
                             JSONObject parseObject = JSONObject.parseObject(JSON.toJSONString(e.e(e.this)));
@@ -794,7 +794,7 @@ public class e implements SearchInfoController.a {
         } else if (this.e == null || !b()) {
         } else {
             TextView textView2 = (TextView) this.e.findViewById(R.id.if_action_bar_search_text);
-            if (!TextUtils.isEmpty(str) && (textView = (TextView) this.e.findViewById(R.id.if_action_bar_search_icon)) != null) {
+            if (!StringUtils.isEmpty(str) && (textView = (TextView) this.e.findViewById(R.id.if_action_bar_search_icon)) != null) {
                 textView.setText(str);
                 u = textView.getWidth();
                 v = textView.getRight();
@@ -853,9 +853,9 @@ public class e implements SearchInfoController.a {
             this.D = true;
             f(aVar);
         }
-        if (aVar != null && !TextUtils.isEmpty(aVar.d)) {
+        if (aVar != null && !StringUtils.isEmpty(aVar.d)) {
             final String str = aVar.d;
-            if (!TextUtils.isEmpty(str)) {
+            if (!StringUtils.isEmpty(str)) {
                 d.setOnClickListener(new View.OnClickListener() { // from class: com.taobao.android.detail.ttdetail.skeleton.navbar.e.6
                     public static volatile transient /* synthetic */ IpChange $ipChange;
 
@@ -1141,7 +1141,7 @@ public class e implements SearchInfoController.a {
         } else if (bVar == null) {
         } else {
             this.d = bVar;
-            if (TextUtils.isEmpty(bVar.b)) {
+            if (StringUtils.isEmpty(bVar.b)) {
                 return;
             }
             this.i = bVar.b;

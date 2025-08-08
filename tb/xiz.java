@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -48,16 +48,16 @@ public class xiz extends dlg {
         }
         JSONObject c = dlhVar.c();
         String string = c.getString("action");
-        if (TextUtils.equals(string, "putContent")) {
+        if (StringUtils.equals(string, "putContent")) {
             String a2 = a(c);
-            if (!TextUtils.isEmpty(a2) && (jSONObject = c.getJSONObject("contentInfo")) != null) {
+            if (!StringUtils.isEmpty(a2) && (jSONObject = c.getJSONObject("contentInfo")) != null) {
                 for (Map.Entry<String, Object> entry : jSONObject.entrySet()) {
                     b.a(this.f34318a, a2, entry.getKey(), entry.getValue());
                 }
             }
-        } else if (TextUtils.equals(string, "runAbility")) {
+        } else if (StringUtils.equals(string, "runAbility")) {
             String string2 = c.getString("eventType");
-            if (!TextUtils.isEmpty(string2)) {
+            if (!StringUtils.isEmpty(string2)) {
                 b.a(this.f34318a, a(c), string2, aq.b(c.getJSONObject("eventInfo")));
             }
         } else {
@@ -72,11 +72,11 @@ public class xiz extends dlg {
             return (String) ipChange.ipc$dispatch("15c87a18", new Object[]{this, jSONObject});
         }
         String string = jSONObject.getString("componentName");
-        if (!TextUtils.isEmpty(string)) {
+        if (!StringUtils.isEmpty(string)) {
             return string;
         }
         String string2 = jSONObject.getString("ttHideComponentId");
-        return !TextUtils.isEmpty(string2) ? bq.a(this.b.b().a(string2)) : string;
+        return !StringUtils.isEmpty(string2) ? bq.a(this.b.b().a(string2)) : string;
     }
 
     /* loaded from: classes3.dex */

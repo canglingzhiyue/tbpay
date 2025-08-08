@@ -1,6 +1,6 @@
 package com.taobao.android.detail.sdk.request.combo;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.network.combo.QueryComboData;
 import com.taobao.android.detail.sdk.model.network.combo.QueryComboResult;
@@ -45,7 +45,7 @@ public class QueryComboRequestClient extends MtopRequestClient<a, QueryComboData
     @Override // com.taobao.android.detail.sdk.request.MtopRequestClient
     public String getApiVersion() {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("44c0ca25", new Object[]{this}) : TextUtils.isEmpty(this.mApiVersion) ? "1.0" : this.mApiVersion;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("44c0ca25", new Object[]{this}) : StringUtils.isEmpty(this.mApiVersion) ? "1.0" : this.mApiVersion;
     }
 
     @Override // com.taobao.android.detail.sdk.request.MtopRequestClient

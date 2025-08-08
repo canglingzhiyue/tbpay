@@ -1,7 +1,7 @@
 package mtopsdk.mtop.intf;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.strategy.dispatch.DispatchConstants;
 import anetwork.network.cache.b;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -221,7 +221,7 @@ public class Mtop {
         } else {
             str = str2;
         }
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str) || StringUtils.isEmpty(str2)) {
             return;
         }
         MtopAccountSiteUtils.bindInstanceId(str, str2);

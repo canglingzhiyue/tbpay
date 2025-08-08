@@ -3,7 +3,7 @@ package tb;
 import android.taobao.windvane.jsbridge.WVCallBackContext;
 import android.taobao.windvane.jsbridge.WindVaneInterface;
 import android.taobao.windvane.jsbridge.r;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.speed.TBSpeed;
@@ -39,13 +39,13 @@ public class sik implements b {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("77d86ebd", new Object[]{this, str, str2, wVCallBackContext})).booleanValue();
         }
-        if (TextUtils.equals(str, "isSpeed")) {
+        if (StringUtils.equals(str, "isSpeed")) {
             return a(str2, wVCallBackContext);
         }
-        if (TextUtils.equals(str, "getHomePageState")) {
+        if (StringUtils.equals(str, "getHomePageState")) {
             return a(wVCallBackContext);
         }
-        if (!TextUtils.equals(str, "getGlobalState")) {
+        if (!StringUtils.equals(str, "getGlobalState")) {
             return false;
         }
         return b(wVCallBackContext);

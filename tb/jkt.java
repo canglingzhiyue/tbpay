@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import tb.aks;
 
@@ -44,7 +44,7 @@ public class jkt {
             return ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue();
         }
         String a2 = jmh.a(jmg.TS_MEMORY_THRESHOLD, "");
-        if (TextUtils.isEmpty(a2)) {
+        if (StringUtils.isEmpty(a2)) {
             jkq.a("TS.TScheduleMonitor", "isTaskCanPerform[true] >> tsMemoryThreshold is empty");
             return true;
         }

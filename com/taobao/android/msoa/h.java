@@ -1,7 +1,7 @@
 package com.taobao.android.msoa;
 
 import android.app.ActivityManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.msoa.annotation.MSOAServiceDefinition;
 import com.taobao.android.msoa.annotation.MSOAServiceInvoke;
@@ -35,7 +35,7 @@ public class h {
         this.d = mSOAServiceInvoke.bizName();
         this.b = mSOAServiceInvoke.serviceId();
         this.c = mSOAServiceInvoke.version();
-        if (TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c)) {
+        if (StringUtils.isEmpty(this.d) || StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c)) {
             throw new IllegalArgumentException("MSOAServiceInvoke annotation should have bizName and serviceId and version");
         }
         try {
@@ -50,7 +50,7 @@ public class h {
         this.e = str;
         this.f = map;
         this.g = MSOAServiceDefinition.Platform.NATIVE.value();
-        if (TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.e)) {
             throw new IllegalArgumentException("params sceneName can not be null or empty");
         }
         this.f14435a = new g(this.b, this.c, this.d, this.e, this.f);
@@ -77,7 +77,7 @@ public class h {
         this.e = str4;
         this.f = map;
         this.g = MSOAServiceDefinition.Platform.NATIVE.value();
-        if (TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.d) || StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.e)) {
             throw new IllegalArgumentException("params bizName serviceId version sceneName all can not be null or empty");
         }
         this.f14435a = new g(this.b, this.c, this.d, this.e, this.f);
@@ -105,7 +105,7 @@ public class h {
         this.e = str5;
         this.f = map;
         this.g = i;
-        if (TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.c) || TextUtils.isEmpty(this.k) || TextUtils.isEmpty(this.e)) {
+        if (StringUtils.isEmpty(this.d) || StringUtils.isEmpty(this.b) || StringUtils.isEmpty(this.c) || StringUtils.isEmpty(this.k) || StringUtils.isEmpty(this.e)) {
             throw new IllegalArgumentException("params bizName serviceId version invokePageUrl sceneName all can not be null or empty");
         }
         this.f14435a = new g(this.b, this.c, this.d, this.e, this.f, this.g);

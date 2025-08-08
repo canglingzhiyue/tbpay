@@ -1,7 +1,7 @@
 package com.taobao.android.detail.ttdetail.handler.bizhandlers;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.Toast;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.InstantReloadException;
@@ -222,7 +222,7 @@ public class w extends xiy {
         String b2 = b(b);
         if (!z && "BUYNOW".equalsIgnoreCase(b2)) {
             String a2 = a();
-            if (!TextUtils.isEmpty(a2)) {
+            if (!StringUtils.isEmpty(a2)) {
                 com.taobao.android.sku.weex.c.a(this.c, "onSKUEntryClick", a2, this.d.e().a());
             }
         }

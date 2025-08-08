@@ -1,7 +1,7 @@
 package com.taobao.android.ultron.datamodel.imp;
 
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.vfw.viewholder.BundleLineComponent;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -204,7 +204,7 @@ public class DMComponent implements IDMComponent, Serializable, Cloneable {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("16c52370", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.componentKey)) {
+        if (!StringUtils.isEmpty(this.componentKey)) {
             return this.componentKey;
         }
         String tag = getTag();
@@ -401,7 +401,7 @@ public class DMComponent implements IDMComponent, Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("6fac4fa5", new Object[]{this, str, obj});
-        } else if (this.mFields == null || TextUtils.isEmpty(str) || obj == null) {
+        } else if (this.mFields == null || StringUtils.isEmpty(str) || obj == null) {
         } else {
             this.mFields.put(str, obj);
         }
@@ -635,7 +635,7 @@ public class DMComponent implements IDMComponent, Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("1fe09e69", new Object[]{this, str, dMComponent});
-        } else if (TextUtils.isEmpty(str) || dMComponent == null) {
+        } else if (StringUtils.isEmpty(str) || dMComponent == null) {
         } else {
             if (this.codePopupWindowMap == null) {
                 this.codePopupWindowMap = new HashMap();
@@ -772,7 +772,7 @@ public class DMComponent implements IDMComponent, Serializable, Cloneable {
         for (Map.Entry<String, Object> entry : jSONObject2.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && (value instanceof JSONArray)) {
+            if (!StringUtils.isEmpty(key) && (value instanceof JSONArray)) {
                 JSONArray jSONArray = (JSONArray) value;
                 ArrayList arrayList = new ArrayList(jSONArray.size());
                 Iterator<Object> it = jSONArray.iterator();
@@ -817,7 +817,7 @@ public class DMComponent implements IDMComponent, Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("2c04f837", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str) || (arrayMap = this.mExtMap) == null) {
+        } else if (StringUtils.isEmpty(str) || (arrayMap = this.mExtMap) == null) {
         } else {
             arrayMap.put("CardGroupTag", str);
         }
@@ -828,7 +828,7 @@ public class DMComponent implements IDMComponent, Serializable, Cloneable {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("aa3f4095", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             this.mExtMap.put("PositionTag", str);
         }

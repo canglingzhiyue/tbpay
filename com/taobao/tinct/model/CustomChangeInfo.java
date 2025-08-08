@@ -1,6 +1,6 @@
 package com.taobao.tinct.model;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.android.alibaba.ip.runtime.IpChange;
 
@@ -191,6 +191,6 @@ public class CustomChangeInfo extends BaseChangeInfo {
 
     private static boolean isParamValid(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7a362e0e", new Object[]{str})).booleanValue() : !TextUtils.isEmpty(str) && !str.contains("^") && !str.contains("|");
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("7a362e0e", new Object[]{str})).booleanValue() : !StringUtils.isEmpty(str) && !str.contains("^") && !str.contains("|");
     }
 }

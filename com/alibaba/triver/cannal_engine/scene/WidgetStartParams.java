@@ -1,7 +1,7 @@
 package com.alibaba.triver.cannal_engine.scene;
 
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.ariver.kernel.common.utils.RVLogger;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -311,7 +311,7 @@ public class WidgetStartParams implements Serializable {
         if (ipChange instanceof IpChange) {
             return (WidgetStartParams) ipChange.ipc$dispatch("6acd349c", new Object[]{this});
         }
-        if (!TextUtils.isEmpty(this.widgetInfo)) {
+        if (!StringUtils.isEmpty(this.widgetInfo)) {
             try {
                 TRWidgetInfo tRWidgetInfo = (TRWidgetInfo) JSON.parseObject(this.widgetInfo, TRWidgetInfo.class);
                 if (tRWidgetInfo == null) {
@@ -327,8 +327,8 @@ public class WidgetStartParams implements Serializable {
                 }
                 this.metaInfo = tRWidgetInfo.getMetaInfo();
                 this.relationUrl = tRWidgetInfo.getRelationUrl();
-                if (!TextUtils.isEmpty(tRWidgetInfo.getConfigData())) {
-                    JSONObject jSONObject = TextUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
+                if (!StringUtils.isEmpty(tRWidgetInfo.getConfigData())) {
+                    JSONObject jSONObject = StringUtils.isEmpty(this.sceneParams) ? new JSONObject() : JSONObject.parseObject(this.sceneParams);
                     jSONObject.put("moduleData", JSON.parse(tRWidgetInfo.getConfigData()));
                     this.sceneParams = jSONObject.toJSONString();
                 }
@@ -336,9 +336,9 @@ public class WidgetStartParams implements Serializable {
                 RVLogger.e("TRWidgetStartParams", e);
             }
         }
-        if (!TextUtils.isEmpty(this.debugUrl)) {
+        if (!StringUtils.isEmpty(this.debugUrl)) {
             String queryParameter = Uri.parse(this.debugUrl).getQueryParameter("relationUrl");
-            if (!TextUtils.isEmpty(queryParameter)) {
+            if (!StringUtils.isEmpty(queryParameter)) {
                 this.relationUrl = URLDecoder.decode(queryParameter);
             }
         }

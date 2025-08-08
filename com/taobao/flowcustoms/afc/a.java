@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.DisplayMetrics;
 import com.ali.user.mobile.model.LoginType;
 import com.alibaba.fastjson.JSONObject;
@@ -93,7 +93,7 @@ public class a {
         this.o = data.toString();
         a();
         a(data);
-        if (TextUtils.isEmpty(kog.a().m)) {
+        if (StringUtils.isEmpty(kog.a().m)) {
             return;
         }
         b = kog.a().m;
@@ -141,7 +141,7 @@ public class a {
                         break;
                     }
                     String next = it.next();
-                    if (!TextUtils.isEmpty(next) && "backurl".equals(next.toLowerCase())) {
+                    if (!StringUtils.isEmpty(next) && "backurl".equals(next.toLowerCase())) {
                         this.h = uri.getQueryParameter(next);
                         break;
                     }
@@ -157,7 +157,7 @@ public class a {
                 this.t = uri.getQueryParameter(LoginType.LocalLoginType.AUTO_LOGIN);
                 this.p = uri.getQueryParameter("afc_route");
                 String queryParameter = uri.getQueryParameter("params");
-                if (TextUtils.isEmpty(queryParameter)) {
+                if (StringUtils.isEmpty(queryParameter)) {
                     return;
                 }
                 org.json.JSONObject jSONObject = new org.json.JSONObject(queryParameter);

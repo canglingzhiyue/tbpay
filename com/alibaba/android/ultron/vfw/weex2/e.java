@@ -2,7 +2,7 @@ package com.alibaba.android.ultron.vfw.weex2;
 
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.ultron.common.utils.UnifyLog;
@@ -46,7 +46,7 @@ public class e {
             this.f2761a.setData(jSONObject.toJSONString());
         }
         this.b = MtopBusiness.build(this.f2761a);
-        if (TextUtils.equals("post", a.d(aVar))) {
+        if (StringUtils.equals("post", a.d(aVar))) {
             this.b.mo1305reqMethod(MethodEnum.POST);
         } else {
             this.b.mo1305reqMethod(MethodEnum.GET);
@@ -54,7 +54,7 @@ public class e {
         if (a.e(aVar)) {
             this.b.mo1335useWua();
         }
-        if (!TextUtils.isEmpty(a.f(aVar))) {
+        if (!StringUtils.isEmpty(a.f(aVar))) {
             this.b.mo1328setUnitStrategy(a.f(aVar));
         }
         this.b.registerListener((IRemoteListener) new IRemoteBaseListener() { // from class: com.alibaba.android.ultron.vfw.weex2.UltronWeex2DataPrefetchRequest$1
@@ -72,8 +72,8 @@ public class e {
                     dsm.a(false, mtopResponse, "onSystemError: mtopResponse is null");
                 } else {
                     String str = "unknown";
-                    String retCode = TextUtils.isEmpty(mtopResponse.getRetCode()) ? str : mtopResponse.getRetCode();
-                    if (!TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+                    String retCode = StringUtils.isEmpty(mtopResponse.getRetCode()) ? str : mtopResponse.getRetCode();
+                    if (!StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                         str = mtopResponse.getRetMsg();
                     }
                     if (e.this.c != null) {
@@ -129,8 +129,8 @@ public class e {
                     dsm.a(false, mtopResponse, "onError: mtopResponse is null");
                 } else {
                     String str = "unknown";
-                    String retCode = TextUtils.isEmpty(mtopResponse.getRetCode()) ? str : mtopResponse.getRetCode();
-                    if (!TextUtils.isEmpty(mtopResponse.getRetMsg())) {
+                    String retCode = StringUtils.isEmpty(mtopResponse.getRetCode()) ? str : mtopResponse.getRetCode();
+                    if (!StringUtils.isEmpty(mtopResponse.getRetMsg())) {
                         str = mtopResponse.getRetMsg();
                     }
                     if (e.this.c != null) {
@@ -312,7 +312,7 @@ public class e {
 
         private boolean b() {
             IpChange ipChange = $ipChange;
-            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : !TextUtils.isEmpty(this.f2763a) && !TextUtils.isEmpty(this.b);
+            return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("57a83ed", new Object[]{this})).booleanValue() : !StringUtils.isEmpty(this.f2763a) && !StringUtils.isEmpty(this.b);
         }
     }
 }

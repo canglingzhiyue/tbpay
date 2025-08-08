@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Log;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -101,7 +101,7 @@ public class gsi {
         JSONObject jSONObject = new JSONObject();
         try {
             String b = b(Base64.decode(str, 0));
-            if (!TextUtils.isEmpty(b) && (split = b.split("\n")) != null && split.length > 0) {
+            if (!StringUtils.isEmpty(b) && (split = b.split("\n")) != null && split.length > 0) {
                 for (String str2 : split) {
                     String[] split2 = str2.split("=", 2);
                     if (split2 != null && split2.length == 2) {

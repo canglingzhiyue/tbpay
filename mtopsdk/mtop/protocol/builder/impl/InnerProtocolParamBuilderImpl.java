@@ -1,6 +1,6 @@
 package mtopsdk.mtop.protocol.builder.impl;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alipay.android.msp.constants.MspGlobalDefine;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.util.HashMap;
@@ -106,7 +106,7 @@ public class InnerProtocolParamBuilderImpl implements ProtocolParamBuilder {
             JSONObject jSONObject = new JSONObject();
             if ((mtopNetworkProp.netParam & 1) != 0) {
                 String str3 = NetworkStateReceiver.f25047a;
-                if (!TextUtils.isEmpty(str3)) {
+                if (!StringUtils.isEmpty(str3)) {
                     try {
                         jSONObject.put(NetParam.NetParamKey.SSID, str3);
                     } catch (JSONException e) {
@@ -116,7 +116,7 @@ public class InnerProtocolParamBuilderImpl implements ProtocolParamBuilder {
             }
             if ((mtopNetworkProp.netParam & 2) != 0) {
                 String str4 = NetworkStateReceiver.b;
-                if (!TextUtils.isEmpty(str4)) {
+                if (!StringUtils.isEmpty(str4)) {
                     try {
                         jSONObject.put(NetParam.NetParamKey.BSSID, str4);
                     } catch (JSONException e2) {

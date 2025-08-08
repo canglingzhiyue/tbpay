@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.PowerManager;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import android.util.Pair;
 import com.alibaba.fastjson2.time.e;
@@ -562,7 +562,7 @@ public class LoggingUtil {
             return r10
         L1d:
             if (r10 == 0) goto L93
-            boolean r1 = android.text.TextUtils.isEmpty(r11)
+            boolean r1 = android.text.StringUtils.isEmpty(r11)
             if (r1 == 0) goto L26
             goto L93
         L26:
@@ -669,7 +669,7 @@ public class LoggingUtil {
     }
 
     public static String getSystemProperty(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return str2;
         }
         try {
@@ -723,7 +723,7 @@ public class LoggingUtil {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("d11b031a", new Object[]{context, str})).booleanValue();
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return false;
         }
         try {
@@ -827,7 +827,7 @@ public class LoggingUtil {
 
     public static String fliterChar(String str) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("57275a5b", new Object[]{str}) : !TextUtils.isEmpty(str) ? str.replace("\r\n", "###").replace("\n", "###").replace("\r", "###") : str;
+        return ipChange instanceof IpChange ? (String) ipChange.ipc$dispatch("57275a5b", new Object[]{str}) : !StringUtils.isEmpty(str) ? str.replace("\r\n", "###").replace("\n", "###").replace("\r", "###") : str;
     }
 
     public static boolean isProcessStartByClickLauncherIcon() {
@@ -852,7 +852,7 @@ public class LoggingUtil {
             return bool.booleanValue();
         }
         String packageName = context.getPackageName();
-        if (TextUtils.isEmpty(packageName)) {
+        if (StringUtils.isEmpty(packageName)) {
             return false;
         }
         for (String str : f) {

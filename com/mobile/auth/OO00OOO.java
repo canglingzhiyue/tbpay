@@ -1,6 +1,6 @@
 package com.mobile.auth;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.mobile.auth.gatewayauth.ExceptionProcessor;
 import com.taobao.search.common.util.k;
 import java.io.IOException;
@@ -69,24 +69,24 @@ public class OO00OOO {
             oO00Oo0.O00000Oo("请求参数为空");
             oO00Oo0.O000000o(false);
             return oO00Oo0;
-        } else if (TextUtils.isEmpty(this.O00000oO.getBaseUrl())) {
+        } else if (StringUtils.isEmpty(this.O00000oO.getBaseUrl())) {
             oO00Oo0.O000000o("100004");
             oO00Oo0.O00000Oo("url 为空");
             oO00Oo0.O000000o(false);
             return oO00Oo0;
         } else {
             try {
-                if (TextUtils.isEmpty(new URL(this.O00000oO.getBaseUrl()).getHost())) {
+                if (StringUtils.isEmpty(new URL(this.O00000oO.getBaseUrl()).getHost())) {
                     oO00Oo0.O000000o("100001");
                     oO00Oo0.O00000Oo("host 为空");
                     oO00Oo0.O000000o(false);
                     return oO00Oo0;
-                } else if (TextUtils.isEmpty(this.O00000oO.getMethod()) && TextUtils.isEmpty(this.O00000oO.getAction())) {
+                } else if (StringUtils.isEmpty(this.O00000oO.getMethod()) && StringUtils.isEmpty(this.O00000oO.getAction())) {
                     oO00Oo0.O000000o("100002");
                     oO00Oo0.O00000Oo("api 为空");
                     oO00Oo0.O000000o(false);
                     return oO00Oo0;
-                } else if (this.O00000oO.isSign() && TextUtils.isEmpty(this.O00000oO.getAccessKeySecret())) {
+                } else if (this.O00000oO.isSign() && StringUtils.isEmpty(this.O00000oO.getAccessKeySecret())) {
                     oO00Oo0.O000000o("100003");
                     oO00Oo0.O00000Oo("未设置secretkey");
                     oO00Oo0.O000000o(false);
@@ -96,7 +96,7 @@ public class OO00OOO {
                         this.O00000oO.setRequestMethod("POST");
                         this.O00000Oo = 0;
                         String O000000o2 = this.O00000oO.getBaseUrl().startsWith(k.HTTPS_PREFIX) ? OO00O0.O000000o(this.O00000oO, this.O00000o0, this.O00000o) : OO00O0.O000000o(this.O00000oO, this.O00000o0, this.O00000o, this.O00000Oo);
-                        if (!TextUtils.isEmpty(O000000o2) && !"{}".equals(O000000o2)) {
+                        if (!StringUtils.isEmpty(O000000o2) && !"{}".equals(O000000o2)) {
                             oO00Oo0.O000000o("100000");
                             oO00Oo0.O00000Oo("请求成功");
                             oO00Oo0.O000000o(true);

@@ -1,7 +1,7 @@
 package com.taobao.desktop.channel.desktoplinktask.widgetservice;
 
 import android.content.Intent;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.desktop.channel.desktoplinktask.floatwindow.b;
 import com.taobao.desktop.channel.desktoplinktask.trigger.f;
@@ -65,7 +65,7 @@ public class d {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("f3a64c36", new Object[]{this, str})).booleanValue();
         }
-        if (!TextUtils.isEmpty(str) && (list = this.f16956a.get(str)) != null && list.size() > 0) {
+        if (!StringUtils.isEmpty(str) && (list = this.f16956a.get(str)) != null && list.size() > 0) {
             for (b bVar : list) {
                 if (bVar != null && bVar.c()) {
                     return true;
@@ -116,7 +116,7 @@ public class d {
             return false;
         }
         String str = bVar.f16946a.c;
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             kgz.b("addNewRequest.bizCode.null.return", new Object[0]);
             return false;
         }
@@ -140,7 +140,7 @@ public class d {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("3dd7e573", new Object[]{this, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             kgz.b("close.bizCode.empty", new Object[0]);
         } else {
             kha.b(new Runnable() { // from class: com.taobao.desktop.channel.desktoplinktask.widgetservice.-$$Lambda$d$hcg4k9VhhB9k5E5QYpNy51nH2LU
@@ -188,7 +188,7 @@ public class d {
             f fVar = bVar.f16946a;
             if (fVar != null) {
                 String str = fVar.c;
-                if (TextUtils.isEmpty(str)) {
+                if (StringUtils.isEmpty(str)) {
                     return;
                 }
                 List<b> list = this.f16956a.get(str);

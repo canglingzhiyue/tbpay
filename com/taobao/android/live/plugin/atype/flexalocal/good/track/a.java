@@ -1,6 +1,6 @@
 package com.taobao.android.live.plugin.atype.flexalocal.good.track;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.taolive.sdk.goodlist.l;
 import com.taobao.taolive.sdk.model.common.LiveItem;
@@ -34,7 +34,7 @@ public class a {
         sb.append(str2);
         sb.append(liveItem.goodsIndex);
         a2.put("item_index", sb.toString());
-        if (!TextUtils.isEmpty(qna.d(cVar))) {
+        if (!StringUtils.isEmpty(qna.d(cVar))) {
             str2 = qna.d(cVar);
         }
         a2.put("glopenfrom", str2);
@@ -61,7 +61,7 @@ public class a {
         a2.put("button_type", z2 ? "cart" : "buy");
         a2.put("clickSource", liveItem.clickSource);
         if (z) {
-            if (!TextUtils.isEmpty(qna.d(cVar))) {
+            if (!StringUtils.isEmpty(qna.d(cVar))) {
                 str2 = qna.d(cVar);
             }
             a2.put("glopenfrom", str2);

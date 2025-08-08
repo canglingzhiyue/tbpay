@@ -1,7 +1,7 @@
 package tb;
 
 import android.graphics.Color;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamicx.DXRuntimeContext;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ public class mvv extends fuf {
         if (objArr != null && objArr.length >= 2 && (objArr[0] instanceof String) && (objArr[1] instanceof String)) {
             try {
                 String str = String.valueOf(objArr[0]) + String.valueOf(objArr[1]);
-                if (TextUtils.equals("LightColor", String.valueOf(objArr[0]))) {
+                if (StringUtils.equals("LightColor", String.valueOf(objArr[0]))) {
                     String valueOf = String.valueOf(objArr[1]);
                     if (f31290a.containsKey(str)) {
                         return f31290a.get(str);

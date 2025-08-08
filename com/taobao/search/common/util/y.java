@@ -2,7 +2,7 @@ package com.taobao.search.common.util;
 
 import android.net.Uri;
 import android.support.v4.util.ArrayMap;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -26,7 +26,7 @@ public class y {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4dcf7ed", new Object[]{str, map});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (map == null || map.size() == 0) {
@@ -46,7 +46,7 @@ public class y {
         for (Map.Entry<String, String> entry : a2.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 buildUpon = buildUpon.appendQueryParameter(key, value);
             }
         }
@@ -65,7 +65,7 @@ public class y {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b272507e", new Object[]{str, arrayMap});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (arrayMap == null || arrayMap.size() == 0) {
@@ -86,14 +86,14 @@ public class y {
         for (int i = 0; i < size; i++) {
             String keyAt = arrayMap.keyAt(i);
             String valueAt = arrayMap.valueAt(i);
-            if (!TextUtils.isEmpty(keyAt) && !TextUtils.isEmpty(valueAt)) {
+            if (!StringUtils.isEmpty(keyAt) && !StringUtils.isEmpty(valueAt)) {
                 a2.put(keyAt, valueAt);
             }
         }
         for (Map.Entry<String, String> entry : a2.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 buildUpon = buildUpon.appendQueryParameter(key, value);
             }
         }
@@ -107,7 +107,7 @@ public class y {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("457cf91a", new Object[]{str, str2, str3});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (c(str)) {
@@ -116,7 +116,7 @@ public class y {
         } else {
             z = false;
         }
-        if (TextUtils.isEmpty(str2) || TextUtils.isEmpty(str3)) {
+        if (StringUtils.isEmpty(str2) || StringUtils.isEmpty(str3)) {
             return str;
         }
         Uri parse = Uri.parse(str);
@@ -127,7 +127,7 @@ public class y {
         for (Map.Entry<String, String> entry : a2.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            if (!TextUtils.isEmpty(key) && !TextUtils.isEmpty(value)) {
+            if (!StringUtils.isEmpty(key) && !StringUtils.isEmpty(value)) {
                 buildUpon = buildUpon.appendQueryParameter(key, value);
             }
         }
@@ -141,7 +141,7 @@ public class y {
             return (Map) ipChange.ipc$dispatch("bf3e1ee7", new Object[]{str});
         }
         HashMap hashMap = new HashMap();
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return hashMap;
         }
         Uri parse = Uri.parse(d(str));
@@ -156,7 +156,7 @@ public class y {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("b5178ea4", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return Uri.parse(d(str)).getQueryParameter(str2);
         }
         return null;
@@ -167,7 +167,7 @@ public class y {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("4204a5c3", new Object[]{str, str2});
         }
-        if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(str2)) {
+        if (!StringUtils.isEmpty(str) && !StringUtils.isEmpty(str2)) {
             try {
                 return Uri.parse(d(str)).getQueryParameter(str2);
             } catch (Throwable th) {

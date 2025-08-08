@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.aaid.constant.ErrorEnum;
 import com.huawei.hms.aaid.encrypt.PushEncrypter;
 import com.huawei.hms.aaid.init.AutoInitHelper;
@@ -64,7 +64,7 @@ public class HmsMessaging {
             throw new IllegalArgumentException("Invalid topic: topic should match the format:[\\u4e00-\\u9fa5\\w-_.~%]{1,900}");
         } else if (ProxyCenter.getProxy() != null) {
             HMSLog.i("HmsMessaging", "use proxy subscribe.");
-            return TextUtils.equals(str2, "Sub") ? ProxyCenter.getProxy().subscribe(this.f7513a, str, reportEntry) : ProxyCenter.getProxy().unsubscribe(this.f7513a, str, reportEntry);
+            return StringUtils.equals(str2, "Sub") ? ProxyCenter.getProxy().subscribe(this.f7513a, str, reportEntry) : ProxyCenter.getProxy().unsubscribe(this.f7513a, str, reportEntry);
         } else {
             try {
                 ErrorEnum a2 = t.a(this.f7513a);
@@ -114,7 +114,7 @@ public class HmsMessaging {
             return cxu.a(new IntentCallable(this.f7513a, putExtra, reportEntry));
         } else if (c.b(this.f7513a) >= 110118300) {
             HMSLog.i("HmsMessaging", "turn on/off with broadcast v3");
-            if (TextUtils.isEmpty(BaseUtils.getLocalToken(this.f7513a, null))) {
+            if (StringUtils.isEmpty(BaseUtils.getLocalToken(this.f7513a, null))) {
                 cxs cxsVar2 = new cxs();
                 cxsVar2.a((Exception) ErrorEnum.ERROR_NO_TOKEN.toApiException());
                 return cxsVar2.a();
@@ -147,15 +147,15 @@ public class HmsMessaging {
             HMSLog.e("HmsMessaging", "Message sent failed:" + a2.getExternalCode() + riy.CONDITION_IF_MIDDLE + a2.getMessage());
             PushBiUtil.reportExit(this.f7513a, PushNaming.UPSEND_MSG, reportEntry, a2);
             throw new UnsupportedOperationException(a2.getMessage());
-        } else if (TextUtils.isEmpty(remoteMessage.getTo())) {
+        } else if (StringUtils.isEmpty(remoteMessage.getTo())) {
             HMSLog.e("HmsMessaging", "Mandatory parameter 'to' missing");
             PushBiUtil.reportExit(this.f7513a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
             throw new IllegalArgumentException("Mandatory parameter 'to' missing");
-        } else if (TextUtils.isEmpty(remoteMessage.getMessageId())) {
+        } else if (StringUtils.isEmpty(remoteMessage.getMessageId())) {
             HMSLog.e("HmsMessaging", "Mandatory parameter 'message_id' missing");
             PushBiUtil.reportExit(this.f7513a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
             throw new IllegalArgumentException("Mandatory parameter 'message_id' missing");
-        } else if (TextUtils.isEmpty(remoteMessage.getData())) {
+        } else if (StringUtils.isEmpty(remoteMessage.getData())) {
             HMSLog.e("HmsMessaging", "Mandatory parameter 'data' missing");
             PushBiUtil.reportExit(this.f7513a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
             throw new IllegalArgumentException("Mandatory parameter 'data' missing");

@@ -4,7 +4,7 @@ import android.app.Application;
 import android.net.Uri;
 import android.taobao.windvane.export.network.Request;
 import android.taobao.windvane.extra.launch.WVOptimizedStartup;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Log;
 import com.alibaba.ariver.resource.api.models.AppInfoModel;
 import com.alibaba.ariver.resource.api.models.AppModel;
@@ -240,7 +240,7 @@ public final class TBTMSColdLaunchTask implements Serializable {
         if (a2 != null) {
             str = a2.toString();
         }
-        if (TextUtils.isEmpty(obj2) || TextUtils.isEmpty(obj4) || (!q.a((Object) obj4, (Object) TMSCalendarBridge.namespace)) || TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(obj2) || StringUtils.isEmpty(obj4) || (!q.a((Object) obj4, (Object) TMSCalendarBridge.namespace)) || StringUtils.isEmpty(str)) {
             TMSLogger.d(TAG, "参数有误,启动失败: " + hashMap);
             return;
         }
@@ -561,7 +561,7 @@ public final class TBTMSColdLaunchTask implements Serializable {
         }
         MixPageInfo a3 = com.taobao.themis.mix.utils.a.a(url, com.taobao.themis.mix.utils.a.b(metaInfo));
         String str = null;
-        if (TextUtils.equals("h5", a3 != null ? a3.getPageType() : null)) {
+        if (StringUtils.equals("h5", a3 != null ? a3.getPageType() : null)) {
             if (a3 == null || (pageUrl = a3.getPageUrl()) == null) {
                 return;
             }
@@ -629,7 +629,7 @@ public final class TBTMSColdLaunchTask implements Serializable {
             return;
         }
         String queryParameter = uri.getQueryParameter("pha_active_page_key");
-        if (TextUtils.isEmpty(queryParameter) || manifestModel.tabBar == null) {
+        if (StringUtils.isEmpty(queryParameter) || manifestModel.tabBar == null) {
             return;
         }
         ArrayList<PageModel> arrayList = manifestModel.pages;
@@ -646,7 +646,7 @@ public final class TBTMSColdLaunchTask implements Serializable {
             if (pageModel != null) {
                 q.b(pageModel, "pageModels[i] ?: continue");
                 i2 = pageModel.getDefaultFrameIndex();
-                if (TextUtils.equals(pageModel.key, queryParameter)) {
+                if (StringUtils.equals(pageModel.key, queryParameter)) {
                     break;
                 } else if (pageModel.frames != null) {
                     ArrayList<PageModel> arrayList2 = pageModel.frames;
@@ -656,7 +656,7 @@ public final class TBTMSColdLaunchTask implements Serializable {
                         PageModel pageModel2 = pageModel.frames.get(i3);
                         if (pageModel2 != null) {
                             q.b(pageModel2, "pageModel.frames[j] ?: continue");
-                            if (TextUtils.equals(pageModel2.key, queryParameter)) {
+                            if (StringUtils.equals(pageModel2.key, queryParameter)) {
                                 i2 = i3;
                                 break loop0;
                             }
@@ -728,11 +728,11 @@ public final class TBTMSColdLaunchTask implements Serializable {
             L1f:
                 r0 = r7
                 java.lang.CharSequence r0 = (java.lang.CharSequence) r0
-                boolean r1 = android.text.TextUtils.isEmpty(r0)
+                boolean r1 = android.text.StringUtils.isEmpty(r0)
                 if (r1 != 0) goto L45
                 r1 = r8
                 java.lang.CharSequence r1 = (java.lang.CharSequence) r1
-                boolean r5 = android.text.TextUtils.isEmpty(r1)
+                boolean r5 = android.text.StringUtils.isEmpty(r1)
                 if (r5 != 0) goto L45
                 java.lang.String r5 = "requestUrl"
                 kotlin.jvm.internal.q.b(r7, r5)

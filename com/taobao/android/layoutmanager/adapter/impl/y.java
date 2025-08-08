@@ -2,7 +2,7 @@ package com.taobao.android.layoutmanager.adapter.impl;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.tao.flexbox.layoutmanager.adapter.interfaces.IStorage;
@@ -61,7 +61,7 @@ public class y implements IStorage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("45199658", new Object[]{this, str, str2, obj});
-        } else if (TextUtils.isEmpty(str2)) {
+        } else if (StringUtils.isEmpty(str2)) {
             ogg.b("putCache key is empty");
         } else if ("file".equals(str)) {
             if (obj instanceof byte[]) {
@@ -102,7 +102,7 @@ public class y implements IStorage {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a35a7c79", new Object[]{this, str, bArr});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
             ogg.b("saveFile fileName is empty");
         } else {
             ogg.a("saveFile with  fileName:" + str);
@@ -147,7 +147,7 @@ public class y implements IStorage {
         if (ipChange instanceof IpChange) {
             return ipChange.ipc$dispatch("c254b136", new Object[]{this, str, str2});
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             ogg.b("getCache key is empty");
             return null;
         } else if ("file".equals(str)) {
@@ -180,7 +180,7 @@ public class y implements IStorage {
         if (ipChange instanceof IpChange) {
             return ((Boolean) ipChange.ipc$dispatch("65d7b881", new Object[]{this, str, str2})).booleanValue();
         }
-        if (TextUtils.isEmpty(str2)) {
+        if (StringUtils.isEmpty(str2)) {
             ogg.b("removeCache failed, key is empty, type: " + str);
             return false;
         }

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.detail.sdk.model.node.NodeBundle;
 import com.taobao.android.detail.sdk.model.template.ComponentModel;
@@ -49,8 +49,8 @@ public class exe extends exk {
         tpc.a("com.taobao.android.detail.sdk.vmodel.bottombar.BottomBarPresaleViewModel");
         this.i = nodeBundle.tradeNode.isBuyEnable;
         this.j = nodeBundle.tradeNode.isCartEnable;
-        this.k = TextUtils.isEmpty(nodeBundle.tradeNode.buyText) ? "立即购买" : nodeBundle.tradeNode.buyText;
-        this.l = TextUtils.isEmpty(nodeBundle.tradeNode.cartText) ? "加入购物车" : nodeBundle.tradeNode.cartText;
+        this.k = StringUtils.isEmpty(nodeBundle.tradeNode.buyText) ? "立即购买" : nodeBundle.tradeNode.buyText;
+        this.l = StringUtils.isEmpty(nodeBundle.tradeNode.cartText) ? "加入购物车" : nodeBundle.tradeNode.cartText;
         this.g = nodeBundle.itemNode.title;
         this.h = nodeBundle.itemNode.itemUrl;
         if (nodeBundle.verticalNode == null || nodeBundle.verticalNode.presaleNode == null) {

@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Space;
@@ -60,7 +60,7 @@ public final class brp extends brl {
             return null;
         }
         String str = aURARenderComponentContainer.name;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             return a(str);
         }
         return null;

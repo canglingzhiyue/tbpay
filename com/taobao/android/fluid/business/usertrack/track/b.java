@@ -2,7 +2,7 @@ package com.taobao.android.fluid.business.usertrack.track;
 
 import android.os.AsyncTask;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import com.alibaba.fastjson.JSON;
@@ -212,13 +212,13 @@ public final class b {
         map.put("utExtParams", sessionParams.K);
         map.put("version", AfcCustomSdk.SDK_VERSION);
         map.put("spm-cnt", obw.f31903a);
-        if (!TextUtils.isEmpty(sessionParams.e)) {
+        if (!StringUtils.isEmpty(sessionParams.e)) {
             map.put("spm-url", sessionParams.e);
         }
         map.put("source", sessionParams.c);
         map.put("scm", sessionParams.D);
         map.put("sourceType", sessionParams.b);
-        if (!TextUtils.isEmpty(sessionParams.A) && !map.containsKey("trackInfo")) {
+        if (!StringUtils.isEmpty(sessionParams.A) && !map.containsKey("trackInfo")) {
             map.put("trackInfo", sessionParams.A);
         }
         map.put("sourcePageName", sessionParams.w);
@@ -253,7 +253,7 @@ public final class b {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("d7b3cea7", new Object[]{map, str});
-        } else if (TextUtils.isEmpty(str)) {
+        } else if (StringUtils.isEmpty(str)) {
         } else {
             map.put("svm_pid", str);
         }
@@ -375,7 +375,7 @@ public final class b {
         hashMap.put("isFromLauncher", String.valueOf(spj.f(fluidContext)));
         hashMap.put("processLauncherFlag", juo.a(fluidContext) ? "1" : "0");
         String c = ((ISceneConfigService) fluidContext.getService(ISceneConfigService.class)).getSessionExtParams().c();
-        if (!TextUtils.isEmpty(c)) {
+        if (!StringUtils.isEmpty(c)) {
             hashMap.put("launcherNodeUrl", c);
         }
         if (bool != null) {
@@ -419,7 +419,7 @@ public final class b {
                 map.remove("videoid");
             }
             map.put("cid", cVar.g());
-            if (TextUtils.isEmpty(cVar.e())) {
+            if (StringUtils.isEmpty(cVar.e())) {
                 map.put("content_account_id", cVar.c());
             } else {
                 map.put("content_account_id", cVar.d());
@@ -429,7 +429,7 @@ public final class b {
             cVar.r();
             if (slm.a(i.trackInfo)) {
                 map.put("trackInfo", i.trackInfo);
-            } else if (sessionParams != null && !TextUtils.isEmpty(sessionParams.A)) {
+            } else if (sessionParams != null && !StringUtils.isEmpty(sessionParams.A)) {
                 map.put("trackInfo", sessionParams.A);
             } else {
                 map.remove("trackInfo");
@@ -437,7 +437,7 @@ public final class b {
             map.remove("item_id");
             if (i.content != null && i.content.itemIds != null && i.content.itemIds.size() > 0) {
                 String str = i.content.itemIds.get(0);
-                if (!TextUtils.isEmpty(str)) {
+                if (!StringUtils.isEmpty(str)) {
                     map.put("item_id", str);
                 }
             }
@@ -608,7 +608,7 @@ public final class b {
             return;
         }
         Map<String, String> j = j(fluidContext);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             j.put("itemid", str);
         }
         b(fluidContext, "Button-picturemaodian", j);
@@ -697,7 +697,7 @@ public final class b {
             return;
         }
         Map<String, String> j = j(fluidContext);
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             j.put(KEY_IS_NATIVE_AD, "1");
         } else {
             j.put(KEY_IS_NATIVE_AD, "0");

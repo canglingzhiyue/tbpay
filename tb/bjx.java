@@ -1,7 +1,7 @@
 package tb;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.android.ultron.event.base.e;
 import com.alibaba.android.ultron.event.ext.p;
 import com.alibaba.fastjson.JSONArray;
@@ -81,10 +81,10 @@ public abstract class bjx extends p {
             return (JSONObject) ipChange.ipc$dispatch("15ec8cf4", new Object[]{this, jSONObject, str, str2, jSONObject2});
         }
         bkd.a(getClass().getSimpleName(), "combineEventAddNext", "add下一个事件");
-        if (jSONObject == null || TextUtils.isEmpty(str) || !(jSONObject.get("fields") instanceof JSONObject)) {
+        if (jSONObject == null || StringUtils.isEmpty(str) || !(jSONObject.get("fields") instanceof JSONObject)) {
             if (jSONObject == null) {
                 str3 = "addNextEvent 参数校验出错:targetEvent 为空";
-            } else if (TextUtils.isEmpty(str)) {
+            } else if (StringUtils.isEmpty(str)) {
                 str3 = "addNextEvent 参数校验出错:nextKey 为空";
             } else {
                 str3 = "addNextEvent 参数校验出错:fields 为空";

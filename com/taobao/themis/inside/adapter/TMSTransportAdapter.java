@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.LocaleList;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import anet.channel.request.ByteArrayEntry;
 import anetwork.channel.NetworkCallBack;
 import anetwork.channel.NetworkEvent;
@@ -91,7 +91,7 @@ public final class TMSTransportAdapter implements ITransportAdapter {
             q.b(d2, "httpRequest.headers");
             d2.put("triverRequestId", String.valueOf(f22458a));
         }
-        if (TextUtils.equals("async", a2)) {
+        if (StringUtils.equals("async", a2)) {
             return a(httpRequest);
         }
         Map<String, String> d3 = httpRequest.d();
@@ -123,13 +123,13 @@ public final class TMSTransportAdapter implements ITransportAdapter {
             }
         }
         requestImpl.addHeader(HeaderConstant.HEADER_KEY_ACCEPT_LANGUAGE, a());
-        if (TextUtils.isEmpty(c2)) {
+        if (StringUtils.isEmpty(c2)) {
             c2 = "GET";
         }
         requestImpl.setMethod(c2);
         requestImpl.setCharset("UTF-8");
         String retryTimeStr = qpyVar.a(u2.k);
-        if (!TextUtils.isEmpty(retryTimeStr)) {
+        if (!StringUtils.isEmpty(retryTimeStr)) {
             try {
                 q.b(retryTimeStr, "retryTimeStr");
                 i = Integer.parseInt(retryTimeStr);
@@ -148,7 +148,7 @@ public final class TMSTransportAdapter implements ITransportAdapter {
         requestImpl.setReadTimeout(i2);
         requestImpl.setConnectTimeout(i2);
         String a2 = qpyVar.a("cookie");
-        if (!TextUtils.isEmpty(a2)) {
+        if (!StringUtils.isEmpty(a2)) {
             requestImpl.addHeader("Cookie", a2);
         } else {
             requestImpl.setExtProperty(RequestConstant.KEEP_CUSTOM_COOKIE, "true");
@@ -398,13 +398,13 @@ public final class TMSTransportAdapter implements ITransportAdapter {
             }
         }
         requestImpl.addHeader(HeaderConstant.HEADER_KEY_ACCEPT_LANGUAGE, a());
-        if (TextUtils.isEmpty(c2)) {
+        if (StringUtils.isEmpty(c2)) {
             c2 = "GET";
         }
         requestImpl.setMethod(c2);
         requestImpl.setCharset("UTF-8");
         String retryTimeStr = qpyVar.a(u2.k);
-        if (!TextUtils.isEmpty(retryTimeStr)) {
+        if (!StringUtils.isEmpty(retryTimeStr)) {
             try {
                 q.b(retryTimeStr, "retryTimeStr");
                 i = Integer.parseInt(retryTimeStr);
@@ -423,7 +423,7 @@ public final class TMSTransportAdapter implements ITransportAdapter {
         requestImpl.setReadTimeout(i2);
         requestImpl.setConnectTimeout(i2);
         String a3 = qpyVar.a("cookie");
-        if (!TextUtils.isEmpty(a3)) {
+        if (!StringUtils.isEmpty(a3)) {
             requestImpl.addHeader("Cookie", a3);
         } else {
             requestImpl.setExtProperty(RequestConstant.KEEP_CUSTOM_COOKIE, "true");

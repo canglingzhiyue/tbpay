@@ -1,7 +1,7 @@
 package com.alibaba.security.ccrc.service.build;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Pair;
 import com.alibaba.security.ccrc.common.log.Logging;
 import com.alibaba.security.ccrc.common.util.JsonUtils;
@@ -53,7 +53,7 @@ public class Ra implements InterfaceC1194aa {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("275051e", new Object[]{this, interfaceC1248sb});
-        } else if (!TextUtils.isEmpty(this.g) && !TextUtils.isEmpty(this.f) && (u = this.i) != null) {
+        } else if (!StringUtils.isEmpty(this.g) && !StringUtils.isEmpty(this.f) && (u = this.i) != null) {
             a(this.g, u, true, true, new Qa(this, interfaceC1248sb));
         } else if (interfaceC1248sb == null) {
         } else {
@@ -115,7 +115,7 @@ public class Ra implements InterfaceC1194aa {
         ArrayList arrayList2 = new ArrayList();
         for (BaseWuKongContentRiskPlugin baseWuKongContentRiskPlugin : u.a()) {
             String configType = baseWuKongContentRiskPlugin.configType();
-            if (!TextUtils.isEmpty(configType)) {
+            if (!StringUtils.isEmpty(configType)) {
                 arrayList.add(configType);
             }
             Map<String, Object> configInfo = baseWuKongContentRiskPlugin.configInfo();
@@ -271,7 +271,7 @@ public class Ra implements InterfaceC1194aa {
             if (!wuKongEventConfigData.isValid(str)) {
                 return new Pair<>(false, "event config data is invalid");
             }
-            if (TextUtils.isEmpty(wuKongBizConfigData.eventConf.event)) {
+            if (StringUtils.isEmpty(wuKongBizConfigData.eventConf.event)) {
                 return new Pair<>(false, "rule is null");
             }
             return new Pair<>(true, "");

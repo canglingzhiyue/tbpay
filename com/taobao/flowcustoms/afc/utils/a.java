@@ -1,7 +1,7 @@
 package com.taobao.flowcustoms.afc.utils;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.flowcustoms.afc.AfcCustomSdk;
 import com.taobao.flowcustoms.afc.utils.AfcUtils;
@@ -52,14 +52,14 @@ public class a {
                 hashMap.put("flowLeave", String.valueOf(System.currentTimeMillis()));
                 String e = kog.a().e();
                 String g = kog.a().g();
-                if (!TextUtils.isEmpty(e)) {
-                    if (!TextUtils.isEmpty(g)) {
+                if (!StringUtils.isEmpty(e)) {
+                    if (!StringUtils.isEmpty(g)) {
                         e = e + "_" + g;
                     }
                     hashMap.put("pageName", e);
                 }
                 String f = kog.a().f();
-                if (!TextUtils.isEmpty(f)) {
+                if (!StringUtils.isEmpty(f)) {
                     hashMap.put("pageUrl", f);
                 }
                 b.a(1013, b.AFC_FLOW_LEAVE, globalProperty, "", hashMap);

@@ -9,7 +9,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Build;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.widget.ImageView;
 import com.alipay.android.msp.framework.minizxing.BarcodeFormat;
 import com.alipay.android.msp.framework.minizxing.BitMatrix;
@@ -96,8 +96,8 @@ public class ZXingHelper {
                     paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
                     paint2.setColor(-16777216);
                     paint2.setAntiAlias(true);
-                    if (!TextUtils.equals(str2, "DONT_DRAW_TEXT")) {
-                        if (!TextUtils.isEmpty(str2)) {
+                    if (!StringUtils.equals(str2, "DONT_DRAW_TEXT")) {
+                        if (!StringUtils.isEmpty(str2)) {
                             paint2.setTextSize(i6 / 20);
                             paint2.setColor(-10981992);
                             canvas.drawText(str2, (f - paint2.measureText(str2)) / 2.0f, i5 - 10, paint2);
@@ -217,7 +217,7 @@ public class ZXingHelper {
         if (ipChange instanceof IpChange) {
             return (String) ipChange.ipc$dispatch("668d18e6", new Object[]{str});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return "";
         }
         if (str.length() >= 20 || str.length() <= 12) {

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "expendDetailGallery"
+  },
+  {
+    "name": "shrinkDetailGallery"
+  },
+  {
+    "name": "joinChannel"
+  },
+  {
+    "name": "exitChannel"
+  },
+  {
+    "name": "sendChannelMessage"
+  }
+]

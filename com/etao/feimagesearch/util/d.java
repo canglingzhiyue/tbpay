@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.Base64;
 import android.util.Size;
 import com.android.alibaba.ip.runtime.IpChange;
@@ -321,7 +321,7 @@ public final class d {
         if (ipChange instanceof IpChange) {
             return (Bitmap) ipChange.ipc$dispatch("68b035c0", new Object[]{str, new Boolean(z)});
         }
-        if (TextUtils.isEmpty(str)) {
+        if (StringUtils.isEmpty(str)) {
             return null;
         }
         if (z) {

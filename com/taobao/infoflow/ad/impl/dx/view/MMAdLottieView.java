@@ -1,7 +1,7 @@
 package com.taobao.infoflow.ad.impl.dx.view;
 
 import android.content.Context;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -87,7 +87,7 @@ public class MMAdLottieView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("cec106a7", new Object[]{this, str});
-        } else if (this.bottomImageView == null || TextUtils.isEmpty(str)) {
+        } else if (this.bottomImageView == null || StringUtils.isEmpty(str)) {
         } else {
             this.bottomImageView.setImageUrl(str);
         }
@@ -97,7 +97,7 @@ public class MMAdLottieView extends FrameLayout {
         IpChange ipChange = $ipChange;
         if (ipChange instanceof IpChange) {
             ipChange.ipc$dispatch("a5a4b31f", new Object[]{this, str});
-        } else if (this.lottieAnimationView == null || TextUtils.isEmpty(str)) {
+        } else if (this.lottieAnimationView == null || StringUtils.isEmpty(str)) {
         } else {
             this.lottieAnimationView.setAnimationFromUrl(str);
         }

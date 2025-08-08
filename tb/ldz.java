@@ -1,6 +1,6 @@
 package tb;
 
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.taobao.android.dinamic.tempate.DinamicTemplate;
@@ -160,7 +160,7 @@ public class ldz {
 
     private boolean a(String str, String str2, String str3) {
         IpChange ipChange = $ipChange;
-        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{this, str, str2, str3})).booleanValue() : !TextUtils.isEmpty(str) && str.endsWith(".zip") && !TextUtils.isEmpty(str2) && !TextUtils.isEmpty(str3);
+        return ipChange instanceof IpChange ? ((Boolean) ipChange.ipc$dispatch("929ad04a", new Object[]{this, str, str2, str3})).booleanValue() : !StringUtils.isEmpty(str) && str.endsWith(".zip") && !StringUtils.isEmpty(str2) && !StringUtils.isEmpty(str3);
     }
 
     private long a(String str) {

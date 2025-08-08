@@ -11,7 +11,7 @@ import android.taobao.windvane.jsbridge.WVBridgeEngine;
 import android.taobao.windvane.jsbridge.l;
 import android.taobao.windvane.monitor.d;
 import android.taobao.windvane.util.p;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import android.webkit.SslErrorHandler;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
@@ -100,7 +100,7 @@ public class WVWebViewClient extends WebViewClient {
         }
         android.taobao.windvane.util.m.c(TAG, "onPageFinished : " + str);
         android.taobao.windvane.config.j.a();
-        if (!TextUtils.isEmpty(android.taobao.windvane.config.j.commonConfig.ba)) {
+        if (!StringUtils.isEmpty(android.taobao.windvane.config.j.commonConfig.ba)) {
             android.taobao.windvane.config.j.a();
             webView.evaluateJavascript(android.taobao.windvane.config.j.commonConfig.ba, new ValueCallback<String>() { // from class: android.taobao.windvane.webview.WVWebViewClient.1
                 public static volatile transient /* synthetic */ IpChange $ipChange;
@@ -232,7 +232,7 @@ public class WVWebViewClient extends WebViewClient {
         }
         if (p.b(str) && android.taobao.windvane.config.p.c(str, (g) webView)) {
             String b = s.a().b();
-            if (TextUtils.isEmpty(b)) {
+            if (StringUtils.isEmpty(b)) {
                 HashMap hashMap = new HashMap(2);
                 hashMap.put("cause", "ACCESS_FORBIDDEN");
                 hashMap.put("url", str);

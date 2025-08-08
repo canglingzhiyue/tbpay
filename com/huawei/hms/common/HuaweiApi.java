@@ -3,7 +3,7 @@ package com.huawei.hms.common;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Looper;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.huawei.hms.adapter.BinderAdapter;
 import com.huawei.hms.api.Api;
 import com.huawei.hms.api.Api.ApiOptions;
@@ -115,7 +115,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
         }
 
         private String a(String str, String str2) {
-            return TextUtils.isEmpty(str) ? TransactionIdCreater.getId(this.d.getAppID(), str2) : str;
+            return StringUtils.isEmpty(str) ? TransactionIdCreater.getId(this.d.getAppID(), str2) : str;
         }
 
         private void a(TaskApiCallbackWrapper taskApiCallbackWrapper) {
@@ -142,7 +142,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
                         RequestHandler.this.a();
                         HMSLog.i("HuaweiApi", "unbind service");
                     }
-                    if (!TextUtils.isEmpty(responseHeader.getResolution())) {
+                    if (!StringUtils.isEmpty(responseHeader.getResolution())) {
                         HMSLog.e("HuaweiApi", "Response has resolution: " + responseHeader.getResolution());
                     }
                     if (this.f7373a.compareAndSet(true, false)) {
@@ -525,7 +525,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
         b(context);
         this.g = new SubAppInfo("");
         this.i = i;
-        if (!TextUtils.isEmpty(str)) {
+        if (!StringUtils.isEmpty(str)) {
             if (str.equals(this.e)) {
                 HMSLog.e("HuaweiApi", "subAppId is host appid");
             } else {
@@ -575,7 +575,7 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
             cxsVar.a((Exception) new ApiException(Status.FAILURE));
             return cxsVar.a();
         }
-        HiAnalyticsInnerClient.reportEntryClient(this.f7370a, taskApiCall.getUri(), TextUtils.isEmpty(this.g.getSubAppID()) ? this.f : this.g.getSubAppID(), taskApiCall.getTransactionId(), String.valueOf(getKitSdkVersion()));
+        HiAnalyticsInnerClient.reportEntryClient(this.f7370a, taskApiCall.getUri(), StringUtils.isEmpty(this.g.getSubAppID()) ? this.f : this.g.getSubAppID(), taskApiCall.getTransactionId(), String.valueOf(getKitSdkVersion()));
         if (this.n == null) {
             this.n = RequestManager.getInstance();
         }
@@ -668,13 +668,13 @@ public class HuaweiApi<TOption extends Api.ApiOptions> {
         String str;
         HMSLog.i("HuaweiApi", "Enter setSubAppInfo");
         SubAppInfo subAppInfo2 = this.g;
-        if (subAppInfo2 != null && !TextUtils.isEmpty(subAppInfo2.getSubAppID())) {
+        if (subAppInfo2 != null && !StringUtils.isEmpty(subAppInfo2.getSubAppID())) {
             str = "subAppInfo is already set";
         } else if (subAppInfo == null) {
             str = "subAppInfo is null";
         } else {
             String subAppID = subAppInfo.getSubAppID();
-            if (TextUtils.isEmpty(subAppID)) {
+            if (StringUtils.isEmpty(subAppID)) {
                 str = "subAppId is empty";
             } else if (subAppID.equals(this.e)) {
                 str = "subAppId is host appid";

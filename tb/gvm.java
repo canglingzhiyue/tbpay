@@ -3,7 +3,7 @@ package tb;
 import android.app.Application;
 import android.taobao.safemode.h;
 import android.taobao.safemode.k;
-import android.text.TextUtils;
+import mtopsdk.common.util.StringUtils;
 import com.android.alibaba.ip.runtime.IpChange;
 import com.huawei.hms.support.api.entity.core.CommonCode;
 import com.taobao.monitor.procedure.g;
@@ -55,7 +55,7 @@ public class gvm {
             hashMap3.put("type", c.e.getType());
             hashMap2.put(CommonCode.Resolution.HAS_RESOLUTION_FROM_APK, hashMap3);
         }
-        if (!TextUtils.isEmpty(c.f)) {
+        if (!StringUtils.isEmpty(c.f)) {
             String[] split = c.f.split("[{}= ]");
             if (split.length > 1 && (split.length - 1) % 2 == 0) {
                 String str2 = split[0];
